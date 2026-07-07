@@ -18,8 +18,8 @@ Images are build artifacts. Treat them that way. Lolly runs from the CLI so you 
 - **Zero lock-in.** Open source engine, local compute, no API keys, no rate limits.
 
 ```bash
-brand-tool qr-code --url=https://suse.com --output=./og-qr.svg
-brand-tool quotes --quote="Ship it." --output=./quote.png
+lolly qr-code --url=https://suse.com --output=og-qr.svg
+lolly quotes --quote="Ship it." --output=quote.png
 ```
 
 ---
@@ -91,8 +91,13 @@ A URL with parameters is a few tokens. A creative brief plus image generation is
 - **Deterministic, auditable, version-controlled.** Every output is reproducible from its inputs. No stochastic surprises in production assets.
 
 ```
-Use Lolly to generate the event card. Parameters:
-  title: "KubeCon 2026"  date: "2026-11-10"  location: "Atlanta"
+Use Lolly to invite the team to KubeCon.
+
+Parameters:
+  title: "KubeCon 2026"
+  date: "2026-11-10"
+  location: "Atlanta"
+
 Output the file URL.
 ```
 

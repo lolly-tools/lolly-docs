@@ -115,7 +115,7 @@ lolly/
 │   │           └── free-canvas.ts # free-canvas editor overlay for render.layout:"editor" tools
 │   │
 │   ├── cli/          # Node.js CLI — same engine, headless jsdom
-│   │   ├── bin/brand-tool.ts
+│   │   ├── bin/lolly.ts
 │   │   └── src/
 │   │       ├── run.ts    # loadTool → createRuntime → export → write file
 │   │       └── bridge.ts # CLI implementation of HostV1
@@ -195,15 +195,15 @@ The web shell is responsive from one layout. On desktop a tool is a resizable co
 Packaged native app (small footprint via Tauri). Provides full offline availability, filesystem access for CLI-dependent tools (PDF Smasher, Font Outliner), and camera access. Scheduled for mid-2026 tooling enhancement.
 
 ### CLI
-`brand-tool <tool-id> [--input=value ...] --output=file.png`
+`lolly <tool-id> [--input=value ...] --output=file.png`
 
 Desktop users can invoke many tools from the terminal. The CLI shell loads the same engine, creates a jsdom DOM, runs the same render path, and writes the file. URL mode is the transport — CLI is not a separate implementation. This guarantees CLI and GUI outputs are identical.
 
 ```bash
-brand-tool qr-code --url=https://suse.com --output=qr.svg
-brand-tool quotes --quote="Ship it." --output=quote.png
-brand-tool                        # lists available tools
-brand-tool qr-code                # lists inputs for that tool
+lolly qr-code --url=https://suse.com --output=qr.svg
+lolly quotes --quote="Ship it." --output=quote.png
+lolly                        # lists available tools
+lolly qr-code                # lists inputs for that tool
 ```
 
 ### TUI
@@ -367,7 +367,7 @@ Same lifecycle in Tauri. Same lifecycle in CLI — jsdom provides the headless D
 
 ## Open-source plan
 
-The `engine/`, `shells/`, `schemas/`, and `docs/` directories are designed to be open-sourced as a vendor-neutral, brand-tool scaffolding platform. `tools/` and `assets/` are SUSE-specific content and will move to a private repository before that happens.
+The `engine/`, `shells/`, `schemas/`, and `docs/` directories are designed to be open-sourced as a vendor-neutral scaffolding platform for brand tooling. `tools/` and `assets/` are SUSE-specific content and will move to a private repository before that happens.
 
 The split is enforced now — there are no cross-imports from `engine/` to `tools/` or `assets/`. The eventual extraction is clean.
 

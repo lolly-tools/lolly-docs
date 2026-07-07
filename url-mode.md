@@ -112,7 +112,7 @@ Each object's keys must match the field `id`s defined in the tool's manifest. Fi
 
 **CLI:**
 ```bash
-brand-tool meeting-planner --people='[{"name":"Andy","city":"Nuremberg"},{"name":"Lisa","city":"Sydney"}]'
+lolly meeting-planner --people='[{"name":"Andy","city":"Nuremberg"},{"name":"Lisa","city":"Sydney"}]'
 ```
 
 The URL updates automatically as block items are added, removed, or edited in the UI — copy from the address bar to get a shareable link with all entries included.
@@ -124,7 +124,7 @@ The URL updates automatically as block items are added, removed, or edited in th
 A `vector` input is a fixed group of numbers edited as one control (e.g. a zoom + x/y offset). It has **no** single-param form — pass each field as a flat dotted param `<inputId>.<fieldId>`:
 
 ```
-?transform.zoom=200&transform.x=30&transform.y=70
+?imageFraming.zoom=200&imageFraming.x=30&imageFraming.y=70
 ```
 
 One readable value per param. Used by tools such as `bag-video`, `chart-creator`, `filter-duotone`, `dynamic-layout`, and `quotes`.
@@ -134,7 +134,7 @@ One readable value per param. Used by tools such as `bag-video`, `chart-creator`
 A `file` input (the user's own file, processed in memory) is **never** put in a URL — its bytes live only on the device, so there is nothing shareable to encode. On the CLI a file param is a filesystem path, loaded into memory before rendering:
 
 ```bash
-brand-tool strip-data --source=./photo.jpg --format=jpg --output=clean.jpg
+lolly strip-data --source=./photo.jpg --format=jpg --output=clean.jpg
 ```
 
 In the web shell a `file` input can't be pre-filled from a URL; a link that referenced one resolves as blank, and the recipient picks their own file.
@@ -200,7 +200,7 @@ For those, the app compresses the **entire readable query** into one `z` param:
 - **Codec.** `z`'s value is `<tag><base64url>`. The one-char `tag` (`1` today) is raw DEFLATE (RFC 1951, a frozen standard) via the platform-native `CompressionStream`; base64url keeps the whole value URL-safe. The tag versions the codec so a future variant can be added without breaking links minted today.
 - **Stable by construction.** The packed form compresses the app's own canonical readable query, so there's no separate encoding to keep in sync — and DEFLATE is standard, so a link packed in a browser decodes identically in Node's `zlib` (and the CLI), across app versions. There is no server-side or app-side lookup table that could drift.
 - **When it kicks in.** Packing is used only when it's actually shorter (it *loses* on short links — DEFLATE framing plus base64's ⁴⁄₃ blow-up exceed tiny payloads), and the address bar switches to it automatically once the readable query passes ~1800 characters. Below that, links stay readable and editable. The **Share** dialog surfaces a **Shortest link** checkbox (auto-ticked for large states) showing the character saving.
-- **Expansion.** `expandQuery()` (engine) turns a `z` link back into a plain query *before* parsing, so everything downstream — the web shell, the CLI (`brand-tool <id> --z=1eJ…`), and pasted-link composition — behaves identically to the readable form. On-visit flags (`export`, `full`, `_v`, …) can ride alongside `z` in readable form and still take effect.
+- **Expansion.** `expandQuery()` (engine) turns a `z` link back into a plain query *before* parsing, so everything downstream — the web shell, the CLI (`lolly <id> --z=1eJ…`), and pasted-link composition — behaves identically to the readable form. On-visit flags (`export`, `full`, `_v`, …) can ride alongside `z` in readable form and still take effect.
 
 ### Encrypted links (`zx`)
 
@@ -224,7 +224,7 @@ The state is DEFLATE'd then **AES-256-GCM**-encrypted under a key derived from a
 `px` is the default and behaves exactly as before (the CSS 96-DPI convention).
 
 ```
-brand-tool poster --title=Hello --width=210 --height=297 --unit=mm --export=svg --output=a4.svg
+lolly quotes --quote="Print me." --width=210 --height=297 --unit=mm --export=svg --output=a4.svg
 ```
 
 ### Print marks & bleed (`bleed=` + `marks=`)
@@ -430,13 +430,13 @@ The CLI uses the same param names as URL mode — `--key=value` instead of `?key
 
 ```bash
 # Web equivalent: /#/tool/qr-code?url=https://suse.com&format=png&export&filename=my-qr
-brand-tool qr-code --url=https://suse.com --format=png --export --output=my-qr.png
+lolly qr-code --url=https://suse.com --format=png --export --output=my-qr.png
 
 # Pipe SVG to another tool
-brand-tool qr-code --url=https://suse.com --format=svg > qr.svg
+lolly qr-code --url=https://suse.com --format=svg > qr.svg
 
 # Print available inputs for a tool
-brand-tool qr-code
+lolly qr-code
 ```
 
 ---
@@ -475,7 +475,7 @@ This is the URL-mode surface of composition. The declarative form — a manifest
 Call the CLI in a build pipeline to generate assets on demand:
 
 ```bash
-brand-tool qr-code \
+lolly qr-code \
   --url=https://suse.com/product/${SLUG} \
   --color=#0c322c \
   --format=svg \

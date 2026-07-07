@@ -841,7 +841,7 @@ body{font-family:'SUSE',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;c
 a{color:var(--green);text-decoration:none}
 a:hover{text-decoration:underline}
 code{font-family:'SUSE Mono','SF Mono','Fira Code',monospace;font-size:.875em;background:#eef5f0;padding:.15em .35em;border-radius:3px}
-pre{background:#f6f6f6;color:#0d1f17;padding:1.25rem 1.5rem;border-radius:8px;overflow-x:auto;font-size:.875rem;line-height:1.5;margin-bottom:1.25rem}
+pre{background:#f6f6f6;color:#0d1f17;padding:1.25rem 1.5rem;border-radius:8px;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.875rem;line-height:1.5;margin-bottom:1.25rem}
 pre code{background:none;padding:0;color:inherit;font-size:1em}
 h1,h2,h3,h4{line-height:1.25;font-weight:700}
 h2{font-size:2rem;letter-spacing:0;font-weight:900;text-transform:uppercase}
@@ -928,7 +928,7 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .card-audience{font-size:.6875rem;text-transform:uppercase;letter-spacing:.14em;color:var(--green);font-weight:700;margin-bottom:.375rem}
 .card-tagline{font-size:1.5rem;font-weight:800;color:var(--dark);margin-bottom:.75rem;line-height:1.2;letter-spacing:-.02em}
 .card-intro{font-size:.9375rem;color:var(--muted);line-height:1.75;margin-bottom:1.5rem}
-.card-main pre{font-size:.8rem;margin-top:0;margin-bottom:0;width:0;min-width:100%;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;box-sizing:border-box}
+.card-main pre{font-size:.8rem;margin-top:0;margin-bottom:0;white-space:pre-wrap;overflow-wrap:anywhere;box-sizing:border-box}
 .card-main pre::-webkit-scrollbar{display:none}
 .card-benefits{display:grid;grid-template-columns:1fr 1fr;gap:4em;padding-left:0;list-style:none;margin:0;padding-top:.25rem}
 .card-benefits li{display:flex;align-items:flex-start;gap:.75rem;font-size:.9375rem;line-height:1.6;color:var(--text)}

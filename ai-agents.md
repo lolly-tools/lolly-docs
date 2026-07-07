@@ -73,7 +73,7 @@ So a one-shot, ready-to-download link is just:
 A few tools won't hand back a file this way:
 
 - **Non-exporting utilities** (`color-palette`, `countdown-timer`, `strip-data`, `text-helper`, `compress-pdf`) set `render.export: false` — `&export`/`&copy` are no-ops.
-- **Experimental tools** (currently `bag-video`, `url-shot`) watermark every export until they're promoted, so their output isn't press-clean yet.
+- **Experimental tools** (currently `url-shot`) watermark every export until they're promoted, so their output isn't press-clean yet.
 - **File-input tools** like `strip-data` transform the user's own bytes in memory; they need a file the agent can't supply through a URL (see the device-local note below).
 
 ## The MCP server (native endpoint)

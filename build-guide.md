@@ -37,7 +37,7 @@ npm run cli -- qr-code --url=https://suse.com --color=#0c322c --output=./qr.svg
 npm run cli -- quotes --quote="Open source wins." --name="Andy" --export=png --output=./quote.png
 ```
 
-The CLI supports **SVG, EMF, HTML, and the text/data formats** (JSON, CSV, ICS, VCF) natively — these are hydrated by the engine with no browser engine needed (SVG/EMF only for tools with an `<svg>`-based template, since the lean CLI has no layout engine). Raster/PDF/ZIP and video formats (PNG, JPG, PDF, ZIP, GIF, WebM, MP4, …) require a real WebView renderer, so use the desktop app or the Tauri-bundled CLI for those.
+The CLI supports **SVG, EMF, EPS, HTML, and the text/data formats** (JSON, CSV, ICS, VCF, MD, TXT) natively — hydrated by the engine with no browser engine needed (SVG/EMF only for tools with an `<svg>`-based template, since the lean CLI has no layout engine). **PNG** from an `<svg>`-based tool is also browser-free: resvg rasterises the engine's own SVG (Tier A). The remaining raster formats — **JPG, WebP, PDF, and video (GIF, WebM, MP4)**, plus HTML-layout PNG — render through the CLI's own scoped headless Chromium (Tier B): install it once with `lolly install-browser`, then they export straight from the CLI. (ZIP is the one format the lean CLI leaves out — no zip dependency — so its batch writes a folder instead.)
 
 ### Standalone binary
 
@@ -47,27 +47,27 @@ To distribute the CLI without requiring Node.js installed:
 
 ```bash
 cd shells/cli
-npx esbuild bin/brand-tool.ts \
+npx esbuild bin/lolly.ts \
   --bundle \
   --platform=node \
   --target=node20 \
   --format=cjs \
-  --outfile=dist/brand-tool.cjs
+  --outfile=dist/lolly.cjs
 ```
 
 **2. Package with `@yao-pkg/pkg` (includes a Node runtime):**
 
 ```bash
-npx @yao-pkg/pkg dist/brand-tool.cjs \
+npx @yao-pkg/pkg dist/lolly.cjs \
   --targets node20-macos-arm64,node20-macos-x64,node20-linux-x64,node20-win-x64 \
-  --output dist/brand-tool
+  --output dist/lolly
 ```
 
 Output binaries land in `shells/cli/dist/` — one per platform target.
 
 > The `tools/` and `catalog/` directories must ship alongside the binary. The CLI resolves them relative to the binary location, so the expected layout is:
 > ```
-> brand-tool          ← binary
+> lolly          ← binary
 > tools/              ← tool definitions
 > catalog/            ← asset + tool catalogs
 > ```
@@ -366,13 +366,13 @@ BuildRequires:  cargo
 npm ci --offline
 # CLI binary: bundle with esbuild, then wrap with @yao-pkg/pkg (see CLI » Standalone binary above).
 # For the desktop app instead, run `npm run build:desktop`.
-npx esbuild shells/cli/bin/brand-tool.ts --bundle --platform=node \
-  --target=node20 --format=cjs --outfile=shells/cli/dist/brand-tool.cjs
-npx @yao-pkg/pkg shells/cli/dist/brand-tool.cjs \
-  --targets node20-linux-x64 --output shells/cli/dist/brand-tool
+npx esbuild shells/cli/bin/lolly.ts --bundle --platform=node \
+  --target=node20 --format=cjs --outfile=shells/cli/dist/lolly.cjs
+npx @yao-pkg/pkg shells/cli/dist/lolly.cjs \
+  --targets node20-linux-x64 --output shells/cli/dist/lolly
 
 %install
-install -Dm0755 shells/cli/dist/brand-tool %{buildroot}%{_bindir}/lolly
+install -Dm0755 shells/cli/dist/lolly %{buildroot}%{_bindir}/lolly
 cp -a tools   %{buildroot}%{_datadir}/lolly/tools
 cp -a catalog %{buildroot}%{_datadir}/lolly/catalog
 

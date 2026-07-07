@@ -199,7 +199,7 @@ valid.ts `isExpectedRow` :69 — all stay coherent):
 
 ### CLI
 
-`brand-tool validate <file> [--json] [--trust-anchor <root.pem>]` — same
+`lolly validate <file> [--json] [--trust-anchor <root.pem>]` — same
 verifier, same report; the flag loads PEM → DER and passes `trustAnchors`.
 
 ## CA service (`services/ca/`)

@@ -1,6 +1,6 @@
 # CLI
 
-`brand-tool` runs any tool from the terminal — same engine, same render path, same output as the web shell. It's **URL mode under a different transport**: `--foo=bar` argv pairs become the exact values the web shell parses from `?foo=bar`, so the CLI can never drift from the GUI. Great for build pipelines, CI, scripting, and batch generation.
+`lolly` runs any tool from the terminal — same engine, same render path, same output as the web shell. It's **URL mode under a different transport**: `--foo=bar` argv pairs become the exact values the web shell parses from `?foo=bar`, so the CLI can never drift from the GUI. Great for build pipelines, CI, scripting, and batch generation.
 
 > Want an **interactive** terminal experience instead of one-shot commands — browse tools, tweak inputs, save projects, all from the keyboard? See the [TUI](/info/tui.html). It shares this same engine and render path.
 
@@ -9,7 +9,7 @@ From the repo it's wired as an npm script (note the `--` to pass args through):
 ```bash
 npm run cli -- <tool-id> [--input=value ...] [--export=fmt] [--output=file]
 # or, if installed as a binary:
-brand-tool <tool-id> [--input=value ...] [--export=fmt] [--output=file]
+lolly <tool-id> [--input=value ...] [--export=fmt] [--output=file]
 ```
 
 ## Discovering tools & assets
@@ -52,19 +52,19 @@ If `--output` is given, the file is written and a byte count is reported on stde
 | `--width=`, `--height=` | Output size (numbers). |
 | `--unit=` | `px` (default), `mm`, `cm`, `in`, `pt`, `pc` — physical sizing. |
 | `--dpi=` | Raster DPI for physical units (default 300). |
-| `--c2pa[=7\|30\|90\|365]` | Stamp [Content Credentials](/info/exporting.html) into the output (`svg` on the bare CLI), signed with an ephemeral on-device certificate of that lifetime (default 30 days; `--c2pa=off` forces off for a `render.c2pa` tool). Verify with `brand-tool validate <file>`. |
+| `--c2pa[=7\|30\|90\|365]` | Stamp [Content Credentials](/info/exporting.html) into the output (`svg` on the bare CLI), signed with an ephemeral on-device certificate of that lifetime (default 30 days; `--c2pa=off` forces off for a `render.c2pa` tool). Verify with `lolly validate <file>`. |
 | `--<inputId>=<value>` | Any tool input (see the tool's schema). |
 | `--<flag>` | A bare flag (no `=`) is truthy — handy for boolean inputs. |
 
 Everything that isn't a reserved flag is treated as a tool input and validated against the manifest. Example — an A4 page:
 
 ```bash
-npm run cli -- some-tool --width=210 --height=297 --unit=mm --export=pdf --output=page.pdf
+npm run cli -- quotes --quote="Ship it." --width=210 --height=297 --unit=mm --export=pdf --output=page.pdf
 ```
 
 ## What the CLI can render
 
-The CLI renders in a headless DOM (jsdom), so **vector and structured** formats — **SVG, EMF, HTML, plus the data formats JSON, CSV, ICS, VCF** (the engine hydrates those payloads) — work natively and reproducibly. EMF is emitted straight from the template's vector primitives (no rasteriser), so it joins SVG for native-`<svg>` tools whose text is already outlined. Everything else needs a real layout/paint engine: **raster (PNG/JPG/WebP), PDF, video/GIF, and ZIP**, but also **MD and TXT** (which the web/desktop shell reads out of the rendered DOM). Those are produced by the **desktop app's** bundled binary rather than the bare node CLI. (Requesting an unsupported format prints a clear error listing what the tool supports.) See the [Build Guide](/info/build-guide.html) for packaging the desktop binary.
+The CLI renders in a headless DOM (jsdom), so **vector and structured** formats — **SVG, EMF, EPS, HTML, plus the data formats JSON, CSV, ICS, VCF, MD, TXT** (the engine hydrates those payloads) — work natively and reproducibly, no browser needed. EMF is emitted straight from the template's vector primitives (no rasteriser), so it joins SVG for native-`<svg>` tools whose text is already outlined. **PNG** from an `<svg>`-based tool is also browser-free — resvg rasterises the engine's own SVG (Tier A). The remaining raster formats — **JPG, WebP, PDF, and video (GIF/WebM/MP4)**, plus HTML-layout PNG — need a real paint engine, so the CLI drives its **own scoped headless Chromium** (Tier B): install it once with `lolly install-browser` (or `npm run install:browser`) and they export straight from the CLI. **ZIP** is the one format the lean CLI leaves out — no zip dependency — so its batch writes a folder instead. (Requesting a format a tool doesn't declare prints a clear error listing what it supports.)
 
 ## File inputs & on-device utilities
 
@@ -84,7 +84,7 @@ It follows the same vector stance as the rest of the CLI: an **SVG child compose
 
 ## Batch
 
-A batch is **many URL-mode rows under one file** — the same principle as a single render, tabulated. `brand-tool batch <rows.csv>` renders one output per row into a directory (a directory, not a zip: the lean CLI has no zip dependency, and a folder composes with your own `zip`/`tar`; the TUI's batch packs a zip instead).
+A batch is **many URL-mode rows under one file** — the same principle as a single render, tabulated. `lolly batch <rows.csv>` renders one output per row into a directory (a directory, not a zip: the lean CLI has no zip dependency, and a folder composes with your own `zip`/`tar`; the TUI's batch packs a zip instead).
 
 ```bash
 # Author a starter grid for one or more tools (their input columns + reserved columns):
@@ -97,10 +97,10 @@ npm run cli -- batch rows.csv --out-dir=./out [--keep-going]
 The header row names the columns: a **`toolId`** column is required; **`format` · `width` · `height` · `unit` · `dpi` · `filename`** are per-row output settings; every other column is a **tool input id** whose cell is a value (any URL-mode form — plain text, JSON/tilde blocks, `id.field` vectors). Rows can mix tools freely. Example:
 
 ```csv
-toolId,format,url,color
-qr-code,svg,https://suse.com,#0c322c
-qr-code,png,https://opensuse.org,#30ba78
-asset-export,pdf,suse/logo/hor-neg-green
+toolId,format,url,color,src
+qr-code,svg,https://suse.com,#0c322c,
+qr-code,png,https://opensuse.org,#30ba78,
+asset-export,pdf,,,suse/logo/hor-neg-green
 ```
 
 `--keep-going` renders past a failing row (otherwise the batch stops with a non-zero exit).
