@@ -1303,9 +1303,9 @@ const THEME_SVG_MOON = `<svg class="icon-moon" viewBox="0 0 24 24" fill="none" s
 const THEME_SVG_SUN  = `<svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`;
 const THEME_TOGGLE   = `<button class="nav-theme-toggle" aria-label="Toggle dark mode" title="Toggle dark/light mode">${THEME_SVG_MOON}${THEME_SVG_SUN}</button>`;
 
-const THEME_INIT_SCRIPT = `<script>(function(){var c=localStorage.getItem('theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches;if(c==='dark'||(c!=='light'&&s))document.documentElement.classList.add('dark');})();<\/script>`;
+const THEME_INIT_SCRIPT = `<script>(function(){var c=localStorage.getItem('theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches;if(c==='dark'||(c!=='light'&&s))document.documentElement.classList.add('dark');})();</script>`;
 
-const THEME_INTERACT_SCRIPT = `<script>(function(){var btn=document.querySelector('.nav-theme-toggle');if(!btn)return;btn.addEventListener('click',function(){var d=document.documentElement.classList.toggle('dark');localStorage.setItem('theme',d?'dark':'light');});window.matchMedia('(prefers-color-scheme:dark)').addEventListener('change',function(e){if(!localStorage.getItem('theme'))document.documentElement.classList.toggle('dark',e.matches);});})();<\/script>`;
+const THEME_INTERACT_SCRIPT = `<script>(function(){var btn=document.querySelector('.nav-theme-toggle');if(!btn)return;btn.addEventListener('click',function(){var d=document.documentElement.classList.toggle('dark');localStorage.setItem('theme',d?'dark':'light');});window.matchMedia('(prefers-color-scheme:dark)').addEventListener('change',function(e){if(!localStorage.getItem('theme'))document.documentElement.classList.toggle('dark',e.matches);});})();</script>`;
 
 const HAM_BTN = `<button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation" aria-expanded="false"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>`;
 
@@ -1316,7 +1316,7 @@ const SCROLL_REVEAL_SCRIPT = `<script>(function(){var els=document.querySelector
   var eager=window.matchMedia('(max-width:768px)').matches;
   var opts=eager?{threshold:0,rootMargin:'0px 0px 20% 0px'}:{threshold:0.1,rootMargin:'0px 0px -32px 0px'};
   var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},opts);
-  els.forEach(function(el){io.observe(el);});})();<\/script>`;
+  els.forEach(function(el){io.observe(el);});})();</script>`;
 
 const LIQUID_GLASS_SCRIPT = `<script>(function(){
   // Adapted from shuding/liquid-glass (https://github.com/shuding/liquid-glass)
@@ -1413,7 +1413,7 @@ const LIQUID_GLASS_SCRIPT = `<script>(function(){
   // on full load as a belt-and-braces guard for a cold image cache.
   requestAnimationFrame(function(){ requestAnimationFrame(paint); });
   window.addEventListener('load', paint);
-})();<\/script>`;
+})();</script>`;
 
 const HERO_CANVAS_SCRIPT = `<script>(function(){
   var canvas=document.getElementById('heroCanvas');
@@ -1583,9 +1583,9 @@ const HERO_CANVAS_SCRIPT = `<script>(function(){
   });
   while(floaters.length<targetFloaters()) floaters.push(makeFloater(true));
   tick();
-})();<\/script>`;
+})();</script>`;
 
-const HAMBURGER_SCRIPT = `<script>(function(){var ham=document.getElementById('navHamburger');var menu=document.getElementById('navMobileMenu');if(!ham||!menu)return;ham.addEventListener('click',function(){var open=menu.classList.toggle('open');ham.classList.toggle('open',open);ham.setAttribute('aria-expanded',open?'true':'false');});menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false');});});document.addEventListener('click',function(e){if(!menu.contains(e.target)&&!ham.contains(e.target)){menu.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false');}});})();<\/script>`;
+const HAMBURGER_SCRIPT = `<script>(function(){var ham=document.getElementById('navHamburger');var menu=document.getElementById('navMobileMenu');if(!ham||!menu)return;ham.addEventListener('click',function(){var open=menu.classList.toggle('open');ham.classList.toggle('open',open);ham.setAttribute('aria-expanded',open?'true':'false');});menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false');});});document.addEventListener('click',function(e){if(!menu.contains(e.target)&&!ham.contains(e.target)){menu.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false');}});})();</script>`;
 
 function buildNav(activeHref: string, isLanding: boolean | undefined) {
   const link = (n: NavLink) =>
