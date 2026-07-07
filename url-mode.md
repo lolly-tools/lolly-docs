@@ -258,28 +258,33 @@ Supported values:
 | Value | Output |
 |---|---|
 | `svg` | Scalable vector (requires `<svg>` root in the template) |
+| `svg-anim` | Animated SVG — self-contained vector flipbook (animated tools only) |
 | `emf` | Enhanced Metafile vector (for Office apps) |
 | `eps` | Encapsulated PostScript vector (RGB) |
 | `eps-cmyk` | Encapsulated PostScript vector — DeviceCMYK (naive conversion, no output intent) |
+| `dxf` | DXF vector cut file — AutoCAD R12, paths in mm (laser/vinyl/CNC) |
 | `png` | Lossless raster |
 | `jpg` / `jpeg` | Lossy raster |
 | `webp` | Lossy/lossless raster |
 | `avif` | AVIF raster |
+| `tiff` | Uncompressed sRGB raster (RGB TIFF) |
 | `pdf` | PDF document |
 | `pdf-cmyk` | Print PDF — CMYK with output intent (see print marks & bleed) |
 | `cmyk-tiff` | Print TIFF — flattened CMYK raster |
+| `pptx` | PowerPoint deck — native editable text/shapes + extractable images/vectors |
 | `ico` | Icon bundle (e.g. `tool-logo`) |
-| `zip` | Multi-file bundle |
+| `zip` | Multi-file bundle (optionally password-locked — see Exporting → Locked downloads) |
 | `html` | Static HTML document |
 | `md` / `txt` | Markdown / plain text |
 | `json` / `csv` | Structured data |
 | `ics` / `vcf` | Calendar event / contact card |
 | `gif` | Animated GIF (animated tools only) |
 | `apng` | Animated PNG — full colour + real alpha (animated tools only) |
+| `webp-anim` | Animated WebP — full colour + alpha, smallest file (animated tools only) |
 | `webm` | WebM video (animated tools only; Chrome/Firefox/Android) |
 | `mp4` | MP4 video (animated tools only; Safari/iOS and recent Chrome) |
 
-Not all tools support all formats — only the formats listed in the tool's manifest `render.formats` are valid (the full set is the 26-value enum in `schemas/tool.schema.json`). Requesting an unsupported format falls back gracefully.
+Not all tools support all formats — only the formats listed in the tool's manifest `render.formats` are valid (the full set is the 30-value enum in `schemas/tool.schema.json`). Requesting an unsupported format falls back gracefully.
 
 ---
 

@@ -130,7 +130,7 @@ Every time someone uploads a file to a third-party service to "just make it look
 
 **Accessible, with assistive sound.** An a11y-friendly UI throughout — plus optional interface sounds, and Neurospicy Mode: a calming background focus beat you can loop while you work.
 
-**Huge format support.** SVG · EMF · EPS · PDF · TIFF · PNG · JPG · WEBP · AVIF · GIF · APNG · WEBM · MP4 · HTML · MD · TXT · CSV · JSON · ICS · VCF · ICO · ZIP
+**Huge format support.** SVG · EMF · EPS · DXF · PDF · TIFF · PPTX · PNG · JPG · WEBP · AVIF · GIF · APNG · WEBM · MP4 · HTML · MD · TXT · CSV · JSON · ICS · VCF · ICO · ZIP
 
 **Ships new tools without app updates.** Tools are data, not bundled code. New tools appear automatically.
 

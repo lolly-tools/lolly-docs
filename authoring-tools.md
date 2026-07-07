@@ -59,7 +59,7 @@ Optional:
 
 ### The `render` block
 
-`render` carries `width`, `height`, `formats` (one or more of `svg`, `emf`, `eps`, `eps-cmyk`, `pdf`, `pdf-cmyk`, `cmyk-tiff`, `tiff`, `png`, `jpg`/`jpeg`, `webp`, `avif`, `webm`, `mp4`, `gif`, `apng`, `html`, `md`, `txt`, `json`, `csv`, `ics`, `vcf`, `ico`, `zip`), plus these optional keys:
+`render` carries `width`, `height`, `formats` (one or more of `svg`, `svg-anim`, `emf`, `eps`, `eps-cmyk`, `dxf`, `pdf`, `pdf-cmyk`, `cmyk-tiff`, `tiff`, `pptx`, `png`, `jpg`/`jpeg`, `webp`, `avif`, `webm`, `mp4`, `gif`, `apng`, `webp-anim`, `html`, `md`, `txt`, `json`, `csv`, `ics`, `vcf`, `ico`, `zip`), plus these optional keys:
 
 - `actions` — which action buttons to show. One or more of `copy`, `download`, `save`, `share`. **Defaults to `['copy','download','save']`** if omitted.
 - `export` — set `false` for utility/interactive tools with no export (hides the download/copy/format/dimension bar; shows **Save** only when the tool has inputs).

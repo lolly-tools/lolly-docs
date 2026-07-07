@@ -33,10 +33,10 @@ The intended flow is `lolly_list_tools` → `lolly_describe_tool` (read the exac
 
 `lolly_render` returns whatever format the tool declares — the server decides how to produce it, and the agent never has to know which engine ran:
 
-- **Vector** — `svg`, `pdf`, `pdf-cmyk`, `eps`, `emf`
+- **Vector** — `svg`, `pdf`, `pdf-cmyk`, `eps`, `emf`, `dxf` (cut file)
 - **Raster** — `png`, `jpg`, `webp`, `avif`, `tiff`, `cmyk-tiff`, `ico`
-- **Animation / video** — `gif`, `apng`, `webm`, `mp4`
-- **Data** — `html`, `md`, `txt`, `json`, `csv`, `ics`, `vcf`, `zip`
+- **Animation / video** — `gif`, `apng`, `webp-anim`, `svg-anim` (vector), `webm`, `mp4`
+- **Documents & data** — `pptx` (PowerPoint), `html`, `md`, `txt`, `json`, `csv`, `ics`, `vcf`, `zip`
 
 Formats are **per-tool** — you can only request one a tool declares (`lolly_describe_tool` lists them). Ask a QR tool for `svg` and you get vector; ask an animated-ad tool for `mp4` and you get video — the call shape is identical either way. Animation, print PDF and HTML-layout raster require the **full** endpoint.
 
