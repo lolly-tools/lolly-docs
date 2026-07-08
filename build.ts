@@ -441,25 +441,16 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
     ? tailLines.slice(whatsIdx + 1).filter(l => l.trim() && !l.startsWith('#'))
     : [];
 
-  // Platform feature renderer — formats row gets chip badges
+  // Platform feature renderer. A bullet whose description is a "·"-separated chip
+  // list still renders as chips (kept for flexibility); everything else — including
+  // the formats bullet, now a plain "creates N / ingests N" fact — renders as prose.
+  // The full format breakdown lives in its own Formats section, not this box.
   function renderPlatformFeature(f: { title: string; desc: string }, idx = 0) {
-    const isFormats = f.title.toLowerCase().includes('format') || f.title.toLowerCase().includes('huge');
-    const chips = (list: string) =>
-      `<div class="format-chips">${list.split(/\s·\s|·/).map(fmt => `<span class="format-chip">${esc(fmt.trim())}</span>`).join('')}</div>`;
-    // A bidirectional formats bullet ("in: … | out: …") renders two labelled chip
-    // rows so the ingest surface (3D, design files, photos, data) reads distinctly
-    // from the export surface; anything else falls back to a single chip row.
-    const io = f.desc.split(/\s*\|\s*/);
-    const [inPart, outPart] = io;
-    let body: string;
-    if (isFormats && io.length === 2 && inPart && outPart && /^in:/i.test(inPart) && /^out:/i.test(outPart)) {
-      body = `<div class="format-io">
-    <div class="format-row"><span class="format-dir">In</span>${chips(inPart.replace(/^in:\s*/i, ''))}</div>
-    <div class="format-row"><span class="format-dir">Out</span>${chips(outPart.replace(/^out:\s*/i, ''))}</div>
-  </div>`;
-    } else {
-      body = isFormats ? chips(f.desc) : `<p>${inline(f.desc)}</p>`;
-    }
+    const isChipList = f.desc.includes('·') &&
+      (f.title.toLowerCase().includes('format') || f.title.toLowerCase().includes('huge'));
+    const body = isChipList
+      ? `<div class="format-chips">${f.desc.split(/\s·\s|·/).map(fmt => `<span class="format-chip">${esc(fmt.trim())}</span>`).join('')}</div>`
+      : `<p>${inline(f.desc)}</p>`;
     return `<div class="platform-feature reveal reveal-${(idx % 6) + 1}">
   <div class="platform-feature-icon">${getPlatformIcon(f.title)}</div>
   <strong>${esc(f.title)}</strong>
@@ -782,6 +773,49 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   </div>
 </section>`;
 
+  // Dedicated Formats section — the full in/out breakdown, chips grouped by what
+  // each format is (vector / raster / motion / …). The engine box only states the
+  // counts; this section is the detail.
+  // Six formats round-trip — Lolly both READS and WRITES them — so they appear in BOTH
+  // columns. Mark those chips (⇄ + filled style) so the overlap reads as intentional
+  // rather than accidental duplication. Matched on the exact chip token, so the export-only
+  // "CMYK PDF" variant is NOT marked — only plain "PDF" round-trips.
+  const ROUNDTRIP = new Set(['PDF', 'SVG', 'TIFF', 'AVIF', 'CSV', 'JSON']);
+  const fmtChips = (list: string) =>
+    `<div class="format-chips">${list.split(/\s·\s|·/).map(fmt => {
+      const f = fmt.trim();
+      const rt = ROUNDTRIP.has(f.toUpperCase());
+      return `<span class="format-chip${rt ? ' format-chip--rt' : ''}"${rt ? ' title="Round-trips — Lolly reads and writes this format"' : ''}>${rt ? '<span class="rt-mark" aria-hidden="true">⇄</span>' : ''}${esc(f)}</span>`;
+    }).join('')}</div>`;
+  const fmtGroup = (cat: string, list: string) =>
+    `<div class="formats-group"><span class="formats-cat">${esc(cat)}</span>${fmtChips(list)}</div>`;
+  const FORMATS_HTML = `<section class="formats-section">
+  <div class="formats-inner">
+    <div class="formats-head reveal">
+      <h2>Every format, in and out</h2>
+      <p>Lolly reads 13 source formats and renders 25 — here's the full set, grouped by what each one is. Six <span class="rt-inline"><span class="rt-mark" aria-hidden="true">⇄</span>&nbsp;round-trip</span>: read <em>and</em> written, so they appear in both columns.</p>
+    </div>
+    <div class="formats-cols">
+      <div class="formats-col reveal reveal-1">
+        <div class="formats-col-top"><span class="formats-dir">Ingests</span><span class="formats-num">13 in</span></div>
+        ${fmtGroup('3D', 'GLB · glTF')}
+        ${fmtGroup('Design', 'Figma · Penpot · Illustrator · InDesign · PDF · SVG')}
+        ${fmtGroup('Photos', 'HEIC · TIFF · AVIF')}
+        ${fmtGroup('Data', 'CSV · JSON')}
+      </div>
+      <div class="formats-col reveal reveal-2">
+        <div class="formats-col-top"><span class="formats-dir">Exports</span><span class="formats-num">25 out</span></div>
+        ${fmtGroup('Vector', 'SVG · PDF · CMYK PDF · EPS · EMF · DXF')}
+        ${fmtGroup('Raster', 'PNG · JPG · WEBP · AVIF · TIFF · ICO')}
+        ${fmtGroup('Motion', 'MP4 · WEBM · GIF · APNG')}
+        ${fmtGroup('Document', 'PPTX · HTML · MD · TXT')}
+        ${fmtGroup('Data', 'CSV · JSON · ICS · VCF')}
+        ${fmtGroup('Bundle', 'ZIP')}
+      </div>
+    </div>
+  </div>
+</section>`;
+
   return `
 <section class="hero">
   <canvas id="heroCanvas" aria-hidden="true"></canvas>
@@ -881,6 +915,7 @@ ${whatsLines.length ? `<section class="whats-a-tool">
   </div>
 </section>` : ''}
 </div>
+${FORMATS_HTML}
 ${QOL_HTML}
 ${ASSURE_HTML}
 ${IMPORT_HTML}
@@ -968,6 +1003,12 @@ const CSS = `
 body{font-family:'SUSE',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--text);background:#fff;line-height:1.65}
 a{color:var(--green);text-decoration:none}
 a:hover{text-decoration:underline}
+/* Safety net for inline icon SVGs: every one carries only a viewBox (no width/height),
+   so without a scoped size rule it balloons to the CSS default 300×150 — or stretches to
+   fill a flex/grid parent — and reads as an unfinished giant glyph. Default them to a
+   text-sized square; sized contexts (.icon-*, .assure-card-ic, illustrations, …) override
+   this with a more specific selector. Keeps a missing/renamed rule from ever ballooning. */
+svg{width:1em;height:1em;flex:none}
 code{font-family:'SUSE Mono','SF Mono','Fira Code',monospace;font-size:.875em;background:#eef5f0;padding:.15em .35em;border-radius:3px}
 pre{background:#f6f6f6;color:#0d1f17;padding:1.25rem 1.5rem;border-radius:8px;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.875rem;line-height:1.5;margin-bottom:1.25rem}
 pre code{background:none;padding:0;color:inherit;font-size:1em}
@@ -1085,11 +1126,27 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .platform-feature p{color:rgba(255,255,255,.45);font-size:.85rem;margin:0;line-height:1.6}
 .platform-feature:last-child:nth-child(odd){grid-column:1 / -1}
 .format-chips{display:flex;flex-wrap:wrap;gap:.375rem;margin-top:.125rem}
-.format-chip{background:rgba(48,186,120,.12);color:var(--green);font-size:.72rem;font-family:'SUSE Mono','SF Mono',monospace;font-weight:600;padding:.2em .55em;border-radius:1em;letter-spacing:.04em;border:0}
-.format-io{display:flex;flex-direction:column;gap:.7rem}
-.format-row{display:flex;gap:.6rem;align-items:flex-start}
-.format-dir{flex-shrink:0;width:1.9rem;padding-top:.35rem;font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.5)}
-.format-row .format-chips{flex:1;min-width:0}
+.format-chip{display:inline-flex;align-items:center;background:rgba(48,186,120,.12);color:var(--green);font-size:.72rem;font-family:'SUSE Mono','SF Mono',monospace;font-weight:600;padding:.2em .55em;border-radius:1em;letter-spacing:.04em;border:0}
+/* Round-trip formats (read AND written): filled so the in/out overlap reads as intentional. */
+.format-chip--rt{background:var(--green);color:#fff}
+.rt-mark{font-family:'SUSE',sans-serif;font-weight:700;letter-spacing:0;margin-right:.32em;line-height:1}
+.rt-inline{color:var(--green);font-weight:600;white-space:nowrap}
+.rt-inline .rt-mark{margin-right:.1em}
+/* Dedicated Formats section — categorised in/out chips */
+.formats-section{background:#fff;padding:5.5rem 2rem;border-top:1px solid var(--border)}
+.formats-inner{max-width:1080px;margin:0 auto}
+.formats-head{margin-bottom:2.75rem}
+.formats-head h2{color:var(--dark);font-size:2rem;margin:0 0 .6rem}
+.formats-head p{color:var(--muted);font-size:1.05rem;line-height:1.65;margin:0;max-width:42rem}
+.formats-cols{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.formats-col-top{display:flex;align-items:baseline;gap:.7rem;padding-bottom:.85rem;margin-bottom:1.5rem;border-bottom:2px solid var(--border)}
+.formats-dir{font-size:1.1rem;font-weight:800;color:var(--dark)}
+.formats-num{font-size:.72rem;font-weight:700;color:var(--green);background:rgba(48,186,120,.12);padding:.2em .65em;border-radius:1em;font-family:'SUSE Mono','SF Mono',monospace;letter-spacing:.02em}
+.formats-group{display:flex;gap:1rem;align-items:baseline;margin-bottom:1.1rem}
+.formats-group:last-child{margin-bottom:0}
+.formats-cat{flex:0 0 5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding-top:.25rem}
+.formats-group .format-chips{flex:1;min-width:0}
+@media(max-width:768px){.formats-cols{grid-template-columns:1fr;gap:2.25rem}.formats-group{flex-direction:column;gap:.45rem}.formats-cat{flex:none}.formats-section{padding:4rem 1.25rem}}
 
 /* QoL pair — sound + bulk, side by side */
 .qol-section{background:var(--pale);padding:5.5rem 2rem}
@@ -1123,7 +1180,7 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .assure-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;margin-bottom:2.25rem}
 .assure-card{background:rgba(255,255,255,.03);padding:1.9rem 1.6rem;transition:background .15s}
 .assure-card:hover{background:rgba(255,255,255,.06)}
-.assure-card-ic{width:1.7rem;height:1.7rem;color:var(--light);margin-bottom:.85rem}
+.assure-card-ic{display:block;width:1.7rem;height:1.7rem;color:var(--light);margin-bottom:.85rem}
 .assure-card-ic svg{width:100%;height:100%}
 .assure-card strong{display:block;color:#fff;font-size:1rem;margin-bottom:.45rem}
 .assure-card p{color:rgba(255,255,255,.55);font-size:.88rem;line-height:1.6;margin:0}

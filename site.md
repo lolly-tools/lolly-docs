@@ -126,7 +126,7 @@ Every time someone uploads a file to a third-party service to "just make it look
 
 **Works offline.** Local compute, local storage. No internet required after first sync.
 
-**Huge format support.** in: GLB · glTF · Figma · Penpot · Illustrator · PDF · InDesign · SVG · HEIC · TIFF · AVIF · CSV · JSON | out: SVG · EMF · EPS · DXF · PDF · CMYK PDF · TIFF · PPTX · PNG · JPG · WEBP · AVIF · GIF · APNG · WEBM · MP4 · HTML · MD · TXT · CSV · JSON · ICS · VCF · ICO · ZIP
+**Formats, in and out.** Creates **25** export formats and ingests **13** source formats — see the full breakdown below.
 
 **Production quality.** Outlined type, Spot color support, 60FPS · Media fit for the studio.
 

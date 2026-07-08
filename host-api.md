@@ -96,7 +96,7 @@ See [Exporting & Formats](/info/exporting.html) for the user-facing view, and `e
 
 ## `host` — file inputs
 
-A `file`-typed input (the user's own file, picked into memory) arrives as an **`InputFile`**: `{ __file: true, name, mime, size, bytes (Uint8Array), url }`. The hook reads `bytes` directly — there's no `host.*` call, because the bytes ride in the input value (the sandbox has no `fetch`). A `file` value never serialises to a URL and is never persisted. The `exportFile` hook transforms those bytes and returns `{ bytes, mime, filename }`, which the shell delivers via `host.export.file`. See [Authoring Tools](/info/authoring-tools.html) for the full pattern; `strip-data` is the reference.
+A `file`-typed input (the user's own file, picked into memory) arrives as an **`InputFile`**: `{ __file: true, name, mime, size, bytes (Uint8Array), url }`. The hook reads `bytes` directly — there's no `host.*` call, because the bytes ride in the input value (by design: the portable `host.*` surface deliberately has no file-read API, so the same hook runs on every shell). A `file` value never serialises to a URL and is never persisted. The `exportFile` hook transforms those bytes and returns `{ bytes, mime, filename }`, which the shell delivers via `host.export.file`. See [Authoring Tools](/info/authoring-tools.html) for the full pattern; `strip-data` is the reference.
 
 ## `host.net` *(capability: `network`)*
 
@@ -200,6 +200,8 @@ An **`AudioLevel`** is the audio counterpart to `MediaFrame` (all amplitudes `0.
 
 `log(level, msg, ctx?)` — `level` is `debug`·`info`·`warn`·`error`. Goes to the console in dev and a diagnostics buffer for support. Hook errors are caught and logged, not thrown.
 
-## Sandbox
+## Hook execution — scope & time budgets
 
-Hooks run in a sandboxed `Function('host', …)` scope: only `host` is in reach. **No** `window`, `document`, `fetch`, `localStorage`, or module imports. `onInit` is allotted 5s, `onInput` 2s; overruns and errors are logged, never fatal. `onFrame` (live camera) and `onLevel` (audio meter) run once per frame / level sample and are **not** time-boxed — keep them cheap; the runtime simply drops a sample if the previous one is still rendering.
+Hooks are loaded via `new Function('host', …)` with the capability bridge injected as closure scope. That is a **portability contract, not a security boundary**: hooks still run in the page realm, so in a browser shell they *can* reach `window`, `document`, and `fetch` — `host.*` is simply the only surface guaranteed to exist on every shell (browser, Tauri, CLI). Module imports don't work (hooks ship as a single source string), and third-party/untrusted tool code is **not** safe to run until Worker isolation ships — today the catalog origin is the trust boundary.
+
+Async hook results are **time-boxed**: `onInit` 5s, `onInput` 2s, `beforeExport`/`afterExport` 5s, `exportFile` 10s. On overrun the runtime stops waiting and **discards the late result** — it never patches inputs or extras after the race is lost — but the hook itself keeps executing (there is no in-realm preemption; a *synchronous* runaway hook can't be interrupted at all, so its overrun is just measured and logged as a warning). `onInit`/`onInput` overruns and errors are logged, never fatal. Export-path hooks differ: a `beforeExport` or `exportFile` error (including a timeout) fails that export visibly, while `afterExport` — the cleanup guarantee — is always awaited and its errors only logged. `onFrame` (live camera) and `onLevel` (audio meter) run once per frame / level sample and are **not** time-boxed — keep them cheap; the runtime simply drops a sample if the previous one is still rendering.

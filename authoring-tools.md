@@ -238,7 +238,7 @@ A `file` input takes a file the user picks **into memory** and hands its raw byt
 - `accept` — allowlist of MIME types and/or extensions for the picker (a UX hint; still validate bytes in the hook). Omit to accept anything.
 - `maxSize` — max bytes; the host rejects larger files at pick time.
 
-The value is a **`FileRef`**: `{ __file: true, name, mime, size, bytes, url }`. The `bytes` are a `Uint8Array` the hook reads directly (no `host.*` call — the bytes ride in the value because the hook sandbox has no `fetch`). A `file` value is **never serialised into a URL** (binary has no shareable form) and **never persisted** — it lives only in memory on the device, which is the whole privacy point. In CLI transport a file param is a path the runner loads: `--photo=./pic.jpg`.
+The value is a **`FileRef`**: `{ __file: true, name, mime, size, bytes, url }`. The `bytes` are a `Uint8Array` the hook reads directly (no `host.*` call — the bytes ride in the value by design, because the portable `host.*` surface has no file-read API). A `file` value is **never serialised into a URL** (binary has no shareable form) and **never persisted** — it lives only in memory on the device, which is the whole privacy point. In CLI transport a file param is a path the runner loads: `--photo=./pic.jpg`.
 
 #### Producing output: the `exportFile` hook + `privacy: "on-device"`
 
@@ -387,7 +387,7 @@ function onFrame({ frame, model, host }) {
 }
 ```
 
-Declared hooks must be flagged in the manifest's `hooks` object (`{ "onInit": true, ... }`) — the loader only invokes hooks the manifest opts into.
+Declared hooks must be flagged in the manifest's `hooks` object (`{ "onInit": true, ... }`) — a manifest with no `hooks` object never loads hooks.js at all, and the flags are what validation and shell affordances (e.g. the transform-download wiring for `exportFile`) read.
 
 ### Motion-reactive tools (`onFrame`)
 
@@ -437,11 +437,12 @@ An **`AudioLevel`** is `{ rms, peak, dbfs, clipping, t }` — `rms` (0–1 loudn
 
 **What you can call:**
 - Everything on `host.*` your manifest's `capabilities` allows.
-- Pure JS computation. No fetch, no DOM, no globals.
+- Pure JS computation.
 
-**What you can't:**
-- `window`, `document`, `fetch`, `localStorage`. They're not in scope.
-- Importing other modules. Hooks are loaded as a single source string.
+**What to stay away from:**
+- `window`, `document`, `fetch`, `localStorage`. Hooks are loaded via `new Function` with `host` injected as closure scope — a **portability contract, not a sandbox** — so in a browser shell these globals *are* technically reachable. But leaning on them ties your tool to browser shells (it breaks headless in the CLI) and will break outright when hooks move into Worker isolation. `host.*` is the only supported surface. (Browser-only paths like the `onFrame` canvas trick above are the deliberate exception.)
+- Importing other modules. Hooks are loaded as a single source string, so `import` doesn't work.
+- Slow work. Async hook results are time-boxed (`onInit` 5s, `onInput` 2s, `beforeExport`/`afterExport` 5s, `exportFile` 10s) and a result that arrives late is discarded; a synchronous overrun can't be preempted and just gets logged as a warning.
 
 ## Composition (`composes`)
 
