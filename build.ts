@@ -444,9 +444,22 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   // Platform feature renderer — formats row gets chip badges
   function renderPlatformFeature(f: { title: string; desc: string }, idx = 0) {
     const isFormats = f.title.toLowerCase().includes('format') || f.title.toLowerCase().includes('huge');
-    const body = isFormats
-      ? `<div class="format-chips">${f.desc.split(/\s·\s|·/).map(fmt => `<span class="format-chip">${esc(fmt.trim())}</span>`).join('')}</div>`
-      : `<p>${inline(f.desc)}</p>`;
+    const chips = (list: string) =>
+      `<div class="format-chips">${list.split(/\s·\s|·/).map(fmt => `<span class="format-chip">${esc(fmt.trim())}</span>`).join('')}</div>`;
+    // A bidirectional formats bullet ("in: … | out: …") renders two labelled chip
+    // rows so the ingest surface (3D, design files, photos, data) reads distinctly
+    // from the export surface; anything else falls back to a single chip row.
+    const io = f.desc.split(/\s*\|\s*/);
+    const [inPart, outPart] = io;
+    let body: string;
+    if (isFormats && io.length === 2 && inPart && outPart && /^in:/i.test(inPart) && /^out:/i.test(outPart)) {
+      body = `<div class="format-io">
+    <div class="format-row"><span class="format-dir">In</span>${chips(inPart.replace(/^in:\s*/i, ''))}</div>
+    <div class="format-row"><span class="format-dir">Out</span>${chips(outPart.replace(/^out:\s*/i, ''))}</div>
+  </div>`;
+    } else {
+      body = isFormats ? chips(f.desc) : `<p>${inline(f.desc)}</p>`;
+    }
     return `<div class="platform-feature reveal reveal-${(idx % 6) + 1}">
   <div class="platform-feature-icon">${getPlatformIcon(f.title)}</div>
   <strong>${esc(f.title)}</strong>
@@ -662,6 +675,113 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   </div>
 </section>`;
 
+  // ── Bespoke landing illustrations (site-style inline SVG) ──────────────────
+  // Sound: flowing sound waves + musical notes — the "assistive sound / focus
+  // beat" motif, in the brand green→teal.
+  const ILLUS_SOUND = `<svg viewBox="0 0 300 150" role="img" aria-label="Sound waves with musical notes" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="sndGrad" x1="0" y1="0" x2="300" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#008657"/><stop offset="1" stop-color="#30ba78"/></linearGradient></defs>
+  <path d="M0 105 Q37.5 138 75 105 T150 105 T225 105 T300 105" fill="none" stroke="#90ebcd" stroke-width="3" stroke-opacity=".45" stroke-linecap="round"/>
+  <path d="M0 96 Q37.5 61 75 96 T150 96 T225 96 T300 96" fill="none" stroke="url(#sndGrad)" stroke-width="5" stroke-linecap="round"/>
+  <g fill="#008657">
+    <ellipse cx="70" cy="60" rx="8" ry="5.5" transform="rotate(-20 70 60)"/>
+    <rect x="76.5" y="28" width="3" height="34" rx="1.5"/>
+    <path d="M79.5 28 q15 5 9 22 q2 -11 -9 -15 Z"/>
+  </g>
+  <g fill="#30ba78">
+    <ellipse cx="150" cy="54" rx="8" ry="5.5" transform="rotate(-20 150 54)"/>
+    <ellipse cx="190" cy="45" rx="8" ry="5.5" transform="rotate(-20 190 45)"/>
+    <rect x="156.5" y="24" width="3" height="32" rx="1.5"/>
+    <rect x="196.5" y="15" width="3" height="32" rx="1.5"/>
+    <path d="M156.5 24 L199.5 15 L199.5 23 L156.5 32 Z"/>
+  </g>
+</svg>`;
+
+  // Bulk: nested project folders/cards rendered into one zip package.
+  const ILLUS_BULK = `<svg viewBox="0 0 300 150" role="img" aria-label="Nested project folders rendered into a single zip" xmlns="http://www.w3.org/2000/svg">
+  <rect x="24" y="48" width="70" height="84" rx="10" fill="#0c322c" opacity=".12" transform="rotate(-10 59 90)"/>
+  <rect x="30" y="42" width="70" height="84" rx="10" fill="#fff" stroke="#90ebcd" stroke-width="2" transform="rotate(-5 65 84)"/>
+  <rect x="36" y="36" width="70" height="84" rx="10" fill="#fff" stroke="#30ba78" stroke-width="2"/>
+  <rect x="46" y="48" width="50" height="30" rx="5" fill="#30ba78" opacity=".85"/>
+  <rect x="46" y="84" width="50" height="6" rx="3" fill="#d8ede4"/>
+  <rect x="46" y="96" width="34" height="6" rx="3" fill="#d8ede4"/>
+  <path d="M120 88 H154" stroke="#5a7067" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M147 80 L157 88 L147 96" stroke="#5a7067" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="178" y="40" width="86" height="92" rx="12" fill="#30ba78"/>
+  <rect x="178" y="40" width="86" height="30" rx="12" fill="#008657"/>
+  <rect x="178" y="56" width="86" height="14" fill="#008657"/>
+  <line x1="221" y1="70" x2="221" y2="124" stroke="#f0fbf5" stroke-width="2.5" stroke-dasharray="5 5"/>
+  <circle cx="221" cy="78" r="3" fill="#008657"/>
+  <rect x="214" y="82" width="14" height="16" rx="3" fill="#f0fbf5"/>
+</svg>`;
+
+  // Checker: a Lolly export carrying a verified Content Credential — a credential
+  // card (framed image + manifest) with a glowing shield-check. The signature.
+  const ILLUS_CHECK = `<svg viewBox="0 0 300 220" role="img" aria-label="A Lolly export carrying a verified Content Credential" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="cGlow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#30ba78" stop-opacity=".5"/><stop offset="1" stop-color="#30ba78" stop-opacity="0"/></radialGradient>
+    <clipPath id="cImg"><rect x="54" y="40" width="150" height="90" rx="10"/></clipPath>
+  </defs>
+  <circle cx="214" cy="170" r="60" fill="url(#cGlow)"/>
+  <rect x="40" y="26" width="180" height="160" rx="18" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.14)" stroke-width="1.5"/>
+  <rect x="54" y="40" width="150" height="90" rx="10" fill="#0a2621"/>
+  <g clip-path="url(#cImg)">
+    <circle cx="172" cy="66" r="14" fill="#fe7c3f"/>
+    <path d="M54 130 V102 L92 68 L128 108 L152 84 L204 128 V130 Z" fill="#30ba78" opacity=".9"/>
+  </g>
+  <rect x="54" y="142" width="130" height="8" rx="4" fill="rgba(255,255,255,.16)"/>
+  <rect x="54" y="158" width="92" height="8" rx="4" fill="rgba(255,255,255,.1)"/>
+  <path d="M214 116 l34 12 v24 c0 26 -16 40 -34 47 c-18 -7 -34 -21 -34 -47 v-24 z" fill="#30ba78" stroke="#0a2621" stroke-width="2.5"/>
+  <path d="M198 152 l11 11 l19 -22" fill="none" stroke="#0a2621" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`;
+
+  const IC_CHECK = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>`;
+  const IC_EYEOFF = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.9 4.24A9.1 9.1 0 0 1 12 4c7 0 10 8 10 8a13.2 13.2 0 0 1-1.67 2.68"/><path d="M6.6 6.6A13.5 13.5 0 0 0 2 12s3 8 10 8a9.7 9.7 0 0 0 5.4-1.6"/><line x1="2" y1="2" x2="22" y2="22"/></svg>`;
+  const IC_SCAN = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><line x1="7" y1="12" x2="17" y2="12"/></svg>`;
+  const IC_SERVER = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="6" rx="2"/><rect x="2" y="15" width="20" height="6" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>`;
+
+  const QOL_HTML = `<section class="qol-section">
+  <div class="qol-inner">
+    <div class="qol-panel reveal">
+      <div class="qol-illus">${ILLUS_SOUND}</div>
+      <div class="qol-text">
+        <h3>Accessible, with sound</h3>
+        <p>An interface that works the way you do — screen-reader friendly and fully keyboard-navigable throughout. Turn on gentle interface sounds, or switch to <strong>Neurospicy Mode</strong>: a calm focus beat that loops quietly while you work.</p>
+      </div>
+    </div>
+    <div class="qol-panel reveal reveal-1">
+      <div class="qol-illus">${ILLUS_BULK}</div>
+      <div class="qol-text">
+        <h3>Organise, then render in bulk</h3>
+        <p>Keep saved work in nested <strong>Projects</strong> folders. When it's time to ship, render a whole folder — or any handful you select — into a single zip. No spreadsheet, no batch grid required.</p>
+      </div>
+    </div>
+  </div>
+</section>`;
+
+  const ASSURE_HTML = `<section class="assure-section">
+  <div class="assure-inner">
+    <div class="assure-lede reveal">
+      <span class="assure-eyebrow">Provenance &amp; privacy</span>
+      <h2>Prove what you made.<br>Keep what's yours.</h2>
+      <p class="assure-lead">Every image, PDF, or video you export can carry a <strong>Content Credential</strong> — a tamper-evident <a href="https://c2pa.org" target="_blank" rel="noopener">C2PA</a> seal created entirely on your device. It proves the file hasn't changed since it left Lolly, and once you enrol an identity, records who signed it.</p>
+    </div>
+    <div class="assure-main reveal reveal-1">
+      <div class="assure-checker">${ILLUS_CHECK}</div>
+      <ul class="assure-checks">
+        <li><span class="assure-check-ic">${IC_CHECK}</span><div><strong>Tamper-evident by default</strong><span>The seal covers every exported byte. Change one pixel and any C2PA validator flags it.</span></div></li>
+        <li><span class="assure-check-ic">${IC_CHECK}</span><div><strong>Signed on your device</strong><span>Your signing key is generated locally and never leaves the device — not even Lolly can read it.</span></div></li>
+        <li><span class="assure-check-ic">${IC_CHECK}</span><div><strong>Verifiable by anyone, offline</strong><span>The file carries its own proof. Check it in the Verify tab, the CLI, or any C2PA validator — nothing is uploaded.</span></div></li>
+      </ul>
+    </div>
+    <div class="assure-grid reveal reveal-2">
+      <div class="assure-card"><span class="assure-card-ic">${IC_EYEOFF}</span><strong>Nothing leaves your device</strong><p>No cloud rendering, no telemetry, no analytics. What you make stays on your machine.</p></div>
+      <div class="assure-card"><span class="assure-card-ic">${IC_SCAN}</span><strong>Scrub and lock, on-device</strong><p>Strip Hidden Data removes EXIF and metadata locally. Lock a PDF, a download, or a share link with a password that never leaves your device.</p></div>
+      <div class="assure-card"><span class="assure-card-ic">${IC_SERVER}</span><strong>Self-host or air-gap</strong><p>No server, no database, no backend. Run entirely behind your firewall, fully offline.</p></div>
+    </div>
+    <div class="assure-cta reveal reveal-3"><a href="/info/content-credentials-identity.html">How Content Credentials work →</a></div>
+  </div>
+</section>`;
+
   return `
 <section class="hero">
   <canvas id="heroCanvas" aria-hidden="true"></canvas>
@@ -761,6 +881,8 @@ ${whatsLines.length ? `<section class="whats-a-tool">
   </div>
 </section>` : ''}
 </div>
+${QOL_HTML}
+${ASSURE_HTML}
 ${IMPORT_HTML}
 <section class="everywhere-section">
   <div class="everywhere-inner reveal">
@@ -956,8 +1078,57 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .platform-feature-icon svg{width:100%;height:100%}
 .platform-feature strong{font-size:.9375rem;font-weight:700;line-height:1.3}
 .platform-feature p{color:rgba(255,255,255,.45);font-size:.85rem;margin:0;line-height:1.6}
+.platform-feature:last-child:nth-child(odd){grid-column:1 / -1}
 .format-chips{display:flex;flex-wrap:wrap;gap:.375rem;margin-top:.125rem}
 .format-chip{background:rgba(48,186,120,.12);color:var(--green);font-size:.72rem;font-family:'SUSE Mono','SF Mono',monospace;font-weight:600;padding:.2em .55em;border-radius:1em;letter-spacing:.04em;border:0}
+.format-io{display:flex;flex-direction:column;gap:.7rem}
+.format-row{display:flex;gap:.6rem;align-items:flex-start}
+.format-dir{flex-shrink:0;width:1.9rem;padding-top:.35rem;font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.5)}
+.format-row .format-chips{flex:1;min-width:0}
+
+/* QoL pair — sound + bulk, side by side */
+.qol-section{background:var(--pale);padding:5.5rem 2rem}
+.qol-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:1.75rem}
+.qol-panel{background:#fff;border:1px solid var(--border);border-radius:20px;padding:2.5rem 2.25rem;box-shadow:0 4px 20px rgba(12,50,44,.06);display:flex;flex-direction:column;gap:1.5rem}
+.qol-illus{height:150px;display:flex;align-items:center;justify-content:center}
+.qol-illus svg{width:100%;height:100%;max-width:300px}
+.qol-panel h3{color:var(--dark);font-size:1.4rem;margin:0}
+.qol-panel p{color:var(--muted);font-size:1rem;line-height:1.7;margin:0}
+.qol-panel p strong{color:var(--dark);font-weight:700}
+@media(max-width:768px){.qol-inner{grid-template-columns:1fr;gap:1.25rem}.qol-section{padding:3.5rem 1.25rem}}
+
+/* Assurance / provenance — the trust band */
+.assure-section{background:linear-gradient(155deg,#061816 0%,#0c322c 55%,#0a3b30 100%);color:#fff;padding:6.5rem 2rem}
+.assure-inner{max-width:1080px;margin:0 auto}
+.assure-lede{max-width:46rem;margin-bottom:3.5rem}
+.assure-eyebrow{display:inline-block;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--light);margin-bottom:1rem}
+.assure-section h2{font-size:2.5rem;line-height:1.08;color:#fff;margin:0 0 1.25rem}
+.assure-lead{font-size:1.12rem;line-height:1.75;color:rgba(255,255,255,.72);margin:0}
+.assure-lead strong{color:#fff;font-weight:700}
+.assure-lead a{color:var(--light);text-decoration:underline;text-underline-offset:2px}
+.assure-main{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:3.5rem;align-items:center;margin-bottom:3.5rem}
+.assure-checker{display:flex;justify-content:center}
+.assure-checker svg{width:100%;max-width:300px;height:auto}
+.assure-checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1.5rem}
+.assure-checks li{display:flex;gap:1rem;align-items:flex-start}
+.assure-check-ic{width:1.7rem;height:1.7rem;flex-shrink:0;color:var(--green);margin-top:.05rem}
+.assure-check-ic svg{width:100%;height:100%}
+.assure-checks strong{display:block;color:#fff;font-size:1.05rem;font-weight:700;margin-bottom:.25rem}
+.assure-checks li>div>span{color:rgba(255,255,255,.6);font-size:.92rem;line-height:1.55;display:block}
+.assure-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;margin-bottom:2.25rem}
+.assure-card{background:rgba(255,255,255,.03);padding:1.9rem 1.6rem;transition:background .15s}
+.assure-card:hover{background:rgba(255,255,255,.06)}
+.assure-card-ic{width:1.7rem;height:1.7rem;color:var(--light);margin-bottom:.85rem}
+.assure-card-ic svg{width:100%;height:100%}
+.assure-card strong{display:block;color:#fff;font-size:1rem;margin-bottom:.45rem}
+.assure-card p{color:rgba(255,255,255,.55);font-size:.88rem;line-height:1.6;margin:0}
+.assure-cta a{color:var(--green);font-weight:700;text-decoration:none;font-size:1.02rem}
+.assure-cta a:hover{text-decoration:underline}
+@media(max-width:768px){.assure-section{padding:4.5rem 1.25rem}.assure-section h2{font-size:1.95rem}.assure-main{grid-template-columns:1fr;gap:2.25rem}.assure-checker svg{max-width:240px}.assure-grid{grid-template-columns:1fr}}
+.dark .qol-section{background:#061816}
+.dark .qol-panel{background:rgba(255,255,255,.035);border-color:rgba(255,255,255,.1);box-shadow:none}
+.dark .qol-panel h3,.dark .qol-panel p strong{color:#fff}
+.dark .qol-panel p{color:rgba(255,255,255,.6)}
 
 /* Everywhere section */
 .everywhere-section{padding:5rem 2rem;background:var(--dark);color:#fff}
