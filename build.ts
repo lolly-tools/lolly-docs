@@ -958,6 +958,11 @@ ${FAQ_JS}`;
 // ── HTML template ─────────────────────────────────────────────────────────────
 
 const CSS = `
+/* Self-hosted SUSE variable fonts — same-origin /catalog/fonts/ (no CDN egress; mirrors shells/web/src/styles/fonts.css). */
+@font-face{font-family:'SUSE';src:url('/catalog/fonts/webfonts/SUSE[wght].woff2') format('woff2-variations');font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:'SUSE';src:url('/catalog/fonts/webfonts/SUSE-Italic[wght].woff2') format('woff2-variations');font-weight:100 900;font-style:italic;font-display:swap}
+@font-face{font-family:'SUSE Mono';src:url('/catalog/fonts/webfonts/SUSEMono[wght].woff2') format('woff2-variations');font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:'SUSE Mono';src:url('/catalog/fonts/webfonts/SUSEMono-Italic[wght].woff2') format('woff2-variations');font-weight:100 900;font-style:italic;font-display:swap}
 :root{--green:#30ba78;--dark:#0c322c;--orange:#fe7c3f;--navy:#192072;--blue:#2453ff;--light:#90ebcd;--pale:#f0fbf5;--text:#1d2726;--muted:#5a7067;--border:#d8ede4;--col-cap:38rem}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'SUSE',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--text);background:#fff;line-height:1.65}
@@ -1831,9 +1836,7 @@ function wrapPage(page: Page, content: string, ogSlugs: Set<string>) {
 <link rel="icon" href="/favicon.ico">
 <link rel="icon" type="image/png" href="/icon.png">
 <link rel="apple-touch-icon" href="/icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&family=SUSE+Mono:wght@100..700&display=swap" rel="stylesheet">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/catalog/fonts/webfonts/SUSE[wght].woff2">
 ${THEME_INIT_SCRIPT}
 <style>${CSS}</style>
 </head>

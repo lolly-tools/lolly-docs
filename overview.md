@@ -74,7 +74,7 @@ The gap is clear: nothing in the existing landscape gives us constraints-first, 
 
 ```
 lolly/
-├── engine/           # Platform-agnostic core. Open-sourceable.
+├── engine/           # Platform-agnostic core. Open source (MPL-2.0).
 │   └── src/
 │       ├── index.ts          # public surface — loader, runtime, template, inputs, url-mode
 │       ├── loader.ts         # fetches and validates tool files
@@ -128,7 +128,7 @@ lolly/
 │   ├── tauri-desktop/ # downloadable desktop app
 │   └── tauri-mobile/  # iOS/Android app
 │
-├── tools/            # 44 tool definitions — data, not code. SUSE-specific. Stays private.
+├── tools/            # 46 tool definitions — data, not code. SUSE-specific, proprietary (not MPL).
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
@@ -344,7 +344,7 @@ Compose any tool's render: an **SVG** child stays a true vector when the parent 
 - **No asset CMS.** The asset catalog is git. Updates go through PR review. No upload UI, no auth, no moderation queue. The git review _is_ the moderation.
 - **No RBAC in MVP.** Public access. Brand risk managed by maturity tags + watermarks + the structural fact that all assets users see came through PR review.
 - **No central database.** All user state is per-device. SUSE ID integration is on the roadmap but not a launch blocker.
-- **No shared tools/engine code path.** When the engine is open-sourced, `tools/` and `assets/` stay private. The separation is enforced now (no cross-imports) so the eventual split is clean.
+- **No shared tools/engine code path.** The engine is open source; `tools/` and `assets/` remain proprietary SUSE content in their own repositories. The separation is enforced (no cross-imports) so the split stays clean.
 
 ---
 
@@ -365,11 +365,11 @@ Same lifecycle in Tauri. Same lifecycle in CLI — jsdom provides the headless D
 
 ---
 
-## Open-source plan
+## Open-source status
 
-The `engine/`, `shells/`, `schemas/`, and `docs/` directories are designed to be open-sourced as a vendor-neutral scaffolding platform for brand tooling. `tools/` and `assets/` are SUSE-specific content and will move to a private repository before that happens.
+The `engine/`, `shells/`, `schemas/`, and `docs/` directories are open source under **MPL-2.0** — a vendor-neutral scaffolding platform for brand tooling, with each shippable unit split into its own repository under [github.com/lolly-tools](https://github.com/lolly-tools). `tools/` and `catalog/assets/` are SUSE-specific content and remain **proprietary to SUSE** (all rights reserved — see each repo's `NOTICE.md`); they are not covered by the MPL.
 
-The split is enforced now — there are no cross-imports from `engine/` to `tools/` or `assets/`. The eventual extraction is clean.
+The split is enforced — there are no cross-imports from `engine/` to `tools/` or `assets/` — so the platform/content boundary stays clean.
 
 ---
 
@@ -396,4 +396,4 @@ The split is enforced now — there are no cross-imports from `engine/` to `tool
 If you can describe it in pure data + Handlebars → **engine**.
 If it touches the DOM, filesystem, network, or any browser/OS API → **host**.
 
-The line is sharp on purpose. The engine is what gets open-sourced. Everything that knows about SUSE, specific platforms, or runtime environments stays out of it.
+The line is sharp on purpose. The engine is the open-source part. Everything that knows about SUSE, specific platforms, or runtime environments stays out of it.

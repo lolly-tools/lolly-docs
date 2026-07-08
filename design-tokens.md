@@ -41,7 +41,7 @@ Two deliberate choices keep us interoperable with Penpot while serving Lolly's p
 
 ## The four layers
 
-**1. Engine — [`engine/src/tokens.ts`](../engine/src/tokens.ts).** Platform-agnostic, like `units.ts`. `createTokenSet(doc, { theme })` parses a document, inherits group `$type`, resolves `{}` aliases (chains, cycle-safe), applies the theme, and returns a flat lookup with `get` / `resolve` / `query({type})` / `colors()` / `themes()`. It knows DTCG and nothing else — no DOM, no storage, no SUSE — so it is open-sourceable.
+**1. Engine — [`engine/src/tokens.ts`](../engine/src/tokens.ts).** Platform-agnostic, like `units.ts`. `createTokenSet(doc, { theme })` parses a document, inherits group `$type`, resolves `{}` aliases (chains, cycle-safe), applies the theme, and returns a flat lookup with `get` / `resolve` / `query({type})` / `colors()` / `themes()`. It knows DTCG and nothing else — no DOM, no storage, no SUSE — so it ships as part of the open-source engine.
 
 **2. Catalog — a `tokens` asset.** The canonical brand document is `suse/tokens/brand` (a `tokens`-type catalog asset, `core` tier so it's always available offline). It is generated from the shell palette by [`scripts/build-brand-tokens.ts`](../scripts/build-brand-tokens.ts) and validated against [`schemas/tokens.schema.json`](../schemas/tokens.schema.json) by `npm run validate:catalog`. Versioned and checksummed like any asset.
 
