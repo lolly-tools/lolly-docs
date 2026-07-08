@@ -15,7 +15,7 @@ Lolly runs entirely in your browser. **We collect nothing, transmit nothing, and
 
 None of this is shared, uploaded, or used to identify or track you, so there is nothing to consent to — only this notice, so you know what's kept. You can wipe all of it at any time with **Profile → Clear all my data**, or by clearing the site's storage in your browser.
 
-This documentation site (`/info`) is even lighter: it sets **no cookies** and stores only your light/dark preference on your device.
+This documentation site (`/info`) is even lighter: it sets **no cookies**, stores only your light/dark preference on your device, and serves everything — fonts included — from lolly.tools itself, with no CDN or third-party requests.
 
 ## On-device utilities
 
