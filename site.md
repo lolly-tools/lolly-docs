@@ -132,8 +132,6 @@ Every time someone uploads a file to a third-party service to "just make it look
 
 **Huge format support.** SVG · EMF · EPS · DXF · PDF · TIFF · PPTX · PNG · JPG · WEBP · AVIF · GIF · APNG · WEBM · MP4 · HTML · MD · TXT · CSV · JSON · ICS · VCF · ICO · ZIP
 
-**Ships new tools without app updates.** Tools are data, not bundled code. New tools appear automatically.
-
 **Production quality.** Outlined type, Spot color support, 60FPS · Media fit for the studio.
 
 **Organise & render in bulk.** Keep saved work in nested Projects folders, then render a whole folder — or any multi-selection — as one zip. No batch grid required.

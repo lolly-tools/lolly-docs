@@ -1,5 +1,43 @@
 # Content Credentials identity — CA-issued signing for on-device C2PA
 
+> **In plain terms.** Every image, PDF, or video you export from Lolly can carry a
+> **Content Credential** — a signed [C2PA](https://c2pa.org) manifest, created
+> entirely on your device — that proves the file hasn't been altered since it left
+> Lolly, and (once you enrol an identity) records *who* signed it. Anyone can check
+> it offline: hit **Verify** in the app (the shield in the bottom bar), drop in a
+> file, and Lolly reports the result on-device. **Nothing is uploaded** — not the
+> file, not the check. The rest of this page is the how; here's the what.
+
+## What you get
+
+- **Tamper-evidence, on by default.** The credential is a cryptographic seal over
+  the exported bytes. Change a pixel and the seal breaks — the verifier says so.
+- **Verifiable identity, when you want it.** Enrol once (SUSE, GitHub, Google, or
+  an email link) and your exports are signed by a short-lived certificate that
+  names *you*. Verifiers pinning the Lolly root then report **trusted — signed by
+  \<your email\>** instead of an anonymous signer. Enrolment is optional; skip it
+  and you still get tamper-evidence from an anonymous on-device signer.
+- **Honest about its limits.** A credential is never inflated or silently
+  downgraded. If a certificate has expired, you get a distinct *expired* state
+  ("identity was verified, but the time of signing can't yet be proven"), never a
+  false green and never a misleading red. See the trust tiers below.
+- **Private and offline.** The signing key is generated on your device and is
+  **non-extractable** — even Lolly's own code can't read it. Signing happens
+  locally; only certificate *issuance* ever touches the network, and only when you
+  choose to enrol.
+
+## Verifying a file
+
+The **Verify** tab (aliases `/verify`, `/valid`, `/v`) checks any file's credential
+entirely on-device and shows one of three honest states: a **trusted** verdict with
+the verified identity when the signature chains to a pinned root, a neutral
+**valid-but-anonymous** state when the structure checks out but the signer isn't
+identified, and a clear **expired** warning otherwise. The same check runs in the
+CLI (`lolly validate <file>`) and in any third-party C2PA validator pointed at the
+public Lolly root (`c2patool --trust_anchors lolly-root.pem`).
+
+---
+
 Lolly embeds C2PA Content Credentials in every stampable export, signed **on
 device**. Until now the signer was always an ephemeral self-signed certificate,
 so every validator (including our own `/valid` view) reported
