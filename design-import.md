@@ -66,3 +66,44 @@ Import travels one direction; the **brand primitives travel both ways**. Lolly's
 - Imported SVG is treated as untrusted: scripts, event handlers and foreign objects are stripped **before** parsing, and anything flattened to disk is sanitised a second time on ingest. Nothing executes, nothing leaves the device.
 - Very large files are capped at **2,000 elements** — anything past that is dropped with a warning rather than locking the tab.
 - Effects outside the box model (complex blend stacks, exotic strokes) flatten into the image fallback rather than round-tripping as editable properties.
+
+## Every format Lolly can read
+
+Design files are one way in — the table above covers them. For the complete picture, here is everything Lolly ingests. As with a design import, **every file is parsed on your device and nothing is uploaded**.
+
+### Images
+
+Drop a photo or graphic into any image picker or your **My images** library.
+
+| Format | Notes |
+|---|---|
+| **`png` · `jpg`/`jpeg` · `webp`** | Decoded natively; stills are downscaled and stripped of EXIF/GPS on ingest, then kept in **My images**. |
+| **`gif` · `apng` · animated `webp`** | Animated rasters are recognised and stored **verbatim** — frames intact — so they stay animated when placed. |
+| **`avif`** | Read wherever your browser decodes it natively (no bundled fallback). |
+| **`heic` / `heif`** (`.heic`, `.hif`) | iPhone photos decode even where the browser can't, via a bundled libheif fallback. |
+| **`svg`** | Sanitised (scripts, `on*` handlers and `javascript:` URLs removed) and normalised to a clean viewBox. |
+
+### Data
+
+Paste or drop a table and a tool's repeating blocks fill from it (up to 1,000 rows).
+
+| Format | Notes |
+|---|---|
+| **`csv`** | RFC 4180 — quoted fields, `""` escaping, embedded commas/newlines, CRLF/LF, BOM. |
+| **`json`** | An array of row objects, headerless positional arrays, or a `{ "data": [...] }` / `{ "rows": [...] }` wrapper. |
+| **Lottie** (`.json`, `.lottie`) | Bodymovin JSON and dotLottie animations validate and place as live vector animations. |
+
+### Video
+
+| Format | Notes |
+|---|---|
+| **`mp4` · `mov`** | ISO-BMFF containers, stored **verbatim** (never transcoded); dimensions probed locally. |
+| **`webm`** | Matroska/EBML, stored verbatim. |
+
+### Content Credentials (verify)
+
+Lolly reads and cryptographically verifies a signed [C2PA](https://c2pa.org) manifest embedded in **PDF, PNG/APNG, JPG, GIF, SVG, TIFF, WebP, MP4 and WebM/MKV** — entirely on-device, against the signing certificate. See [Content Credentials](/info/exporting.html#content-credentials-c2pa). (HEIC and AVIF are read as images but carry no credential.)
+
+### Metadata (to strip it)
+
+The **Strip Hidden Data** utility *reads* embedded metadata so it can remove it — EXIF/GPS/IPTC/XMP from **JPEG**, text and time chunks from **PNG**, comments and editor namespaces from **SVG**, and document info from **PDF**. The cleaned file never leaves your device.

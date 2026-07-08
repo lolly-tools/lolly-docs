@@ -1,6 +1,6 @@
 # The Lolly MCP server
 
-Lolly ships a native **[Model Context Protocol](https://modelcontextprotocol.io) server** — a single endpoint any MCP client (claude.ai, Claude Code, an agent runtime, an IDE) connects to directly. It exposes the tool catalogue and the render path as callable tools, so an agent can discover a tool, fill its declared inputs, and get back an on-brand file plus an editable `lolly.tools` link. Because tools sync to the server as **data**, new tools appear with no server update.
+Lolly ships a native **[Model Context Protocol](https://modelcontextprotocol.io) server** — a single endpoint any MCP client (an agent runtime, an IDE, a CLI, a hosted assistant) connects to directly. It exposes the tool catalogue and the render path as callable tools, so an agent can discover a tool, fill its declared inputs, and get back an on-brand file plus an editable `lolly.tools` link. Because tools sync to the server as **data**, new tools appear with no server update.
 
 It is the programmatic sibling of [driving Lolly from a URL](/info/ai-agents.html): same render path, same reproducible output — just reached over MCP instead of a hand-built link.
 
@@ -44,23 +44,30 @@ Formats are **per-tool** — you can only request one a tool declares (`lolly_de
 
 Both endpoints authenticate against the same shared access token, which your Lolly operator holds. It is never printed in a link or a log.
 
-### claude.ai — as a custom connector (OAuth)
+### A custom connector (OAuth)
 
-The endpoint is also a stateless **OAuth 2.1** authorization server, so it drops straight into the connector UI:
+The endpoint is a stateless **OAuth 2.1** authorization server, so it drops straight into any MCP client that supports custom connectors:
 
-1. In claude.ai, open **Customize → Connectors** and click **`+` → Add custom connector** (Pro/Max). On **Team/Enterprise** this is admin-gated: an **Owner** adds it once under **Organization settings → Connectors → Add → Custom → Web**, after which members find it under Customize → Connectors and click **Connect**.
-2. URL: `https://mcp.lolly.tools/mcp` — leave the OAuth Client ID / Secret blank; the server registers your client automatically (dynamic client registration).
-3. It auto-discovers the OAuth server and opens a consent page. Paste the access token and **Allow** — done.
+1. In your client's connector settings, add a custom connector pointing at `https://mcp.lolly.tools/mcp`. (Hosted assistants usually expose this under a *Connectors* or *Integrations* panel; on team/enterprise plans an admin typically adds it once for everyone.)
+2. Leave the OAuth Client ID / Secret blank — the server registers your client automatically (dynamic client registration).
+3. The client auto-discovers the OAuth server and opens a consent page. Paste the access token and approve — done.
 
-Then ask Claude to *"list the Lolly tools"* or *"render the color-block tool as a PNG."*
+Then ask the agent to *"list the Lolly tools"* or *"render the color-block tool as a PNG."*
 
-### Claude Code / any HTTP client — with a bearer token
+### A bearer token (CLI / any HTTP client)
 
-The endpoint also accepts the raw token directly, so scripted clients skip the OAuth dance:
+The endpoint also accepts the raw token directly, so scripted clients skip the OAuth dance. Most MCP clients take a config entry like:
 
-```bash
-claude mcp add --transport http lolly https://mcp.lolly.tools/mcp \
-  --header "Authorization: Bearer <your-access-token>"
+```json
+{
+  "mcpServers": {
+    "lolly": {
+      "type": "http",
+      "url": "https://mcp.lolly.tools/mcp",
+      "headers": { "Authorization": "Bearer <your-access-token>" }
+    }
+  }
+}
 ```
 
 A quick smoke test with `curl` (expect a JSON list of the five tools; no token returns `401`):
