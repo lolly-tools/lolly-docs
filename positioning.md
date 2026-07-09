@@ -15,8 +15,12 @@ Where this platform fits in the wider creative-tools landscape, and where it del
 | Low skill required               | ✅ | ✅ | ❌ | ❌ | ✅ |
 | Easy internal access             | ❌ | ✅ | ❌ | ❌ | ✅ |
 | Intuitive editor (end user)      | ✅ | ✅ | ❌ | ❌ | ✅ |
-| Intuitive editor (designer)      | ✅ | ❌ | ✅ | ✅ | ❌ |
+| Intuitive editor (designer)      | ✅ | ❌ | ✅ | ✅ | ✅ |
 | Live collaboration               | ✅ | ❌ | ❌ | ✅ | ❌ |
+| Automatic C2PA Comply               | ❌ | ❌ | ❌ | ❌ | ✅ |
+| Nested templating               | ❌ | ❌ | ❌ | ❌ | ✅ |
+| Live collaboration               | ✅ | ❌ | ❌ | ✅ | ❌ |
+
 
 The shape of the gap is clear: nothing in the existing landscape gives us constraints-first, offline-capable, low-skill, internally accessible, generative output. Lolly now ships an open canvas of its own — **Layout Studio**, a direct-manipulation free canvas — but with a decisive difference from the Canva column: colours, type and assets placed on it conform to the brand globals, so even free arrangement stays constraints-first. What Lolly still is **not** is an unconstrained design suite; designers will continue to use Illustrator and Figma for bespoke work — and when that work needs to become a governed, reproducible asset, Layout Studio's [Import a design](/info/design-import.html) brings the finished Figma/Illustrator/Penpot file onto the canvas as editable, brand-conformed boxes.
 
