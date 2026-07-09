@@ -75,7 +75,9 @@ Click **Save** to store the current inputs as a session for that tool. You can k
 
 ## Sharing a link
 
-Every input is captured in the page URL, so a link *is* the design. Use **Share** in the export controls — or **Share link** on any saved session in Projects — to open the **Share dialog**: a ready-to-copy link plus toggles for what happens when it's opened (fullscreen, the export panel expanded, download-on-open with `&export`, or copy-to-clipboard with `&copy`). A big design would make a long URL, so the dialog also offers a **Shortest link** that packs the whole state into a compact token — the readable form is always there too. Paste it to a colleague, bookmark it, or commit it. (Full details: [URL Mode](/info/url-mode.html).)
+Every input is captured in the page URL, so a link *is* the design. Use **Share** in the export controls — or **Share link** on any saved session in Projects — to open the **Share dialog**: a ready-to-copy link plus toggles for encrypting the link and what happens when it's opened (fullscreen, the export panel expanded, download-on-open with `&export`, or copy-to-clipboard with `&copy`). 
+
+A big design would make a long URL, so the dialog also offers a **Shortest link** that packs the whole state into a compact token — the readable form is always there too. Paste it to a colleague, bookmark it, or commit it. (Full details: [URL Mode](/info/url-mode.html).)
 
 > Images you uploaded from your device are **not** included in a shared link — they only exist on your machine.
 

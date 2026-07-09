@@ -32,38 +32,68 @@ const TOOL_COUNT = JSON.parse(
   readFileSync(resolve(repoRoot, 'catalog/tools/index.json'), 'utf8')
 ).tools.length;
 
+type Pathway = 'quickstart' | 'builders' | 'creators' | 'operators';
+
 interface Page {
   slug: string;
   title: string;
   src: string;
   isLanding?: boolean;
+  // Which pathway this page belongs under — drives the docs sidebar + which top-nav
+  // link is highlighted. Omitted only for the landing page.
+  pathway?: Pathway;
+  // True for the four pathway landing pages (quickstart + the three hubs).
+  isHub?: boolean;
 }
+
+// A retired slug that now redirects to its new home. Emitted as a tiny meta-refresh
+// stub so inbound links + bookmarks keep resolving after the IA rebuild.
+interface Stub { slug: string; target: string; }
+const stubs: Stub[] = [
+  // Old front-door entry; the friendly start is now the Quickstart primary article.
+  { slug: 'getting-started', target: '/info/quickstart.html' },
+];
 
 const pages: Page[] = [
   { slug: 'index',            title: 'Lolly',     src: 'site.md',            isLanding: true },
-  { slug: 'about',            title: 'About',             src: '../README.md' },
-  { slug: 'getting-started', title: 'Getting Started',   src: 'getting-started.md' },
-  { slug: 'using',            title: 'Using Lolly', src: 'using.md' },
-  { slug: 'profile',          title: 'Profiles',          src: 'profile.md' },
-  { slug: 'extension',        title: 'Browser Extension', src: 'extension.md' },
-  { slug: 'design-import',    title: 'Import a design (Figma, Penpot, Illustrator, InDesign)', src: 'design-import.md' },
-  { slug: 'exporting',        title: 'Exporting & Formats', src: 'exporting.md' },
-  { slug: 'positioning',      title: 'Positioning',       src: 'positioning.md' },
-  { slug: 'adoption-governance', title: 'Adoption & Governance', src: 'adoption-governance.md' },
-  { slug: 'ai-agents',        title: 'AI Agents',         src: 'ai-agents.md' },
-  { slug: 'mcp',              title: 'MCP Server',        src: 'mcp.md' },
-  { slug: 'overview',         title: 'Overview',          src: 'overview.md' },
-  { slug: 'authoring-tools',  title: 'Authoring Tools',   src: 'authoring-tools.md' },
-  { slug: 'authoring-assets', title: 'Authoring Assets',  src: 'authoring-assets.md' },
-  { slug: 'host-api',         title: 'Host API',          src: 'host-api.md' },
-  { slug: 'url-mode',         title: 'URL Mode',          src: 'url-mode.md' },
-  { slug: 'data-transfer',    title: 'Data Transfer',     src: 'data-transfer.md' },
-  { slug: 'content-credentials-identity', title: 'Content Credentials Identity', src: 'content-credentials-identity.md' },
-  { slug: 'design-tokens',    title: 'Design Tokens',     src: 'design-tokens.md' },
-  { slug: 'cli',              title: 'CLI',               src: 'cli.md' },
-  { slug: 'tui',              title: 'TUI',               src: 'tui.md' },
-  { slug: 'build-guide',      title: 'Build Guide',       src: 'build-guide.md' },
-  { slug: 'privacy',          title: 'Privacy Policy',    src: 'privacy.md' },
+
+  // ── Primary article ──────────────────────────────────────────────────────
+  { slug: 'quickstart',       title: 'Quickstart', src: 'quickstart.md', pathway: 'quickstart', isHub: true },
+
+  // ── Pathway hubs ─────────────────────────────────────────────────────────
+  { slug: 'creators',         title: 'Lolly for Creators',  src: 'creators.md',  pathway: 'creators',  isHub: true },
+  { slug: 'builders',         title: 'Lolly for Builders',  src: 'builders.md',  pathway: 'builders',  isHub: true },
+  { slug: 'operators',        title: 'Lolly for Operators', src: 'operators.md', pathway: 'operators', isHub: true },
+
+  // ── Creators pathway ─────────────────────────────────────────────────────
+  { slug: 'using',            title: 'Using Lolly',       src: 'using.md',        pathway: 'creators' },
+  { slug: 'profile',          title: 'Profiles',          src: 'profile.md',      pathway: 'creators' },
+  { slug: 'design-import',    title: 'Import a design (Figma, Penpot, Illustrator, InDesign)', src: 'design-import.md', pathway: 'creators' },
+  { slug: 'exporting',        title: 'Exporting & Formats', src: 'exporting.md',  pathway: 'creators' },
+  { slug: 'positioning',      title: 'How Lolly compares', src: 'positioning.md', pathway: 'creators' },
+
+  // ── Builders pathway ─────────────────────────────────────────────────────
+  { slug: 'overview',         title: 'Overview',          src: 'overview.md',        pathway: 'builders' },
+  { slug: 'design-tokens',    title: 'Design Tokens',     src: 'design-tokens.md',   pathway: 'builders' },
+  { slug: 'authoring-tools',  title: 'Authoring Tools',   src: 'authoring-tools.md', pathway: 'builders' },
+  { slug: 'authoring-assets', title: 'Authoring Assets',  src: 'authoring-assets.md', pathway: 'builders' },
+  { slug: 'host-api',         title: 'Host API',          src: 'host-api.md',        pathway: 'builders' },
+  { slug: 'url-mode',         title: 'URL Mode',          src: 'url-mode.md',        pathway: 'builders' },
+  { slug: 'cli',              title: 'CLI',               src: 'cli.md',             pathway: 'builders' },
+  { slug: 'tui',              title: 'TUI',               src: 'tui.md',             pathway: 'builders' },
+  { slug: 'mcp',              title: 'MCP Server',        src: 'mcp.md',             pathway: 'builders' },
+  { slug: 'ai-agents',        title: 'AI Agents',         src: 'ai-agents.md',       pathway: 'builders' },
+  { slug: 'extension',        title: 'Browser Extension', src: 'extension.md',       pathway: 'builders' },
+  { slug: 'build-guide',      title: 'Build Guide',       src: 'build-guide.md',     pathway: 'builders' },
+  { slug: 'deployment',       title: 'Deployment',        src: 'deployment.md',      pathway: 'builders' },
+  { slug: 'configuration',    title: 'Configuration',     src: 'configuration.md',   pathway: 'builders' },
+  { slug: 'content-credentials-identity', title: 'Content Credentials Identity', src: 'content-credentials-identity.md', pathway: 'builders' },
+  { slug: 'data-transfer',    title: 'Data Transfer',     src: 'data-transfer.md',   pathway: 'builders' },
+  { slug: 'about',            title: 'About',             src: '../README.md',       pathway: 'builders' },
+
+  // ── Operators pathway ────────────────────────────────────────────────────
+  { slug: 'adoption-governance', title: 'Adoption & Governance', src: 'adoption-governance.md', pathway: 'operators' },
+  { slug: 'privacy',          title: 'Privacy Policy',    src: 'privacy.md',         pathway: 'operators' },
 ];
 
 // Top-nav links, grouped into clusters. Each inner array renders as one cluster
@@ -74,23 +104,102 @@ interface NavLink {
   href: string;
 }
 
+// Simplified top nav: the one primary article + the three pathways. Each nav link
+// maps to a pathway (via NAV_PATHWAY below) so the hub highlights on any child page,
+// not only on the hub itself.
 const NAV: NavLink[][] = [
-  [ { label: 'Overview',   href: '/info/overview.html' },
-    { label: 'Compare',    href: '/info/positioning.html' } ],
-  [ { label: 'Using',       href: '/info/using.html' },
-    { label: 'Profiles',    href: '/info/profile.html' },
-    { label: 'Import',      href: '/info/design-import.html' },
-    { label: 'Export',      href: '/info/exporting.html' },
-    { label: 'Credentials', href: '/info/content-credentials-identity.html' },
-    { label: 'AI',          href: '/info/ai-agents.html' } ],
-  [ { label: 'Authoring',  href: '/info/authoring-tools.html' },
-    { label: 'Build',      href: '/info/build-guide.html' },
-    { label: 'Extension',  href: '/info/extension.html' } ],
-  [ { label: 'Host API',   href: '/info/host-api.html' },
-    { label: 'CLI',        href: '/info/cli.html' },
-    { label: 'TUI',        href: '/info/tui.html' },
-    { label: 'MCP',        href: '/info/mcp.html' } ],
+  [ { label: 'Quickstart',    href: '/info/quickstart.html' } ],
+  [ { label: 'For Creators',  href: '/info/creators.html' },
+    { label: 'For Builders',  href: '/info/builders.html' },
+    { label: 'For Operators', href: '/info/operators.html' } ],
 ];
+// href → pathway, so a child page (e.g. host-api) lights up its hub's nav link.
+const NAV_PATHWAY: Record<string, Pathway> = {
+  '/info/quickstart.html': 'quickstart',
+  '/info/creators.html':   'creators',
+  '/info/builders.html':   'builders',
+  '/info/operators.html':  'operators',
+};
+
+// The docs sidebar, per pathway. Each group is a labelled cluster of links; the
+// first item of the first group is the pathway hub itself. Slugs must exist in
+// `pages` (or `stubs`). A page can appear in more than one pathway's sidebar
+// (e.g. Content Credentials is builder + operator) — its own `pathway` only picks
+// which sidebar renders when you're viewing it.
+interface SideItem { slug: string; label: string; }
+interface SideGroup { label: string; items: SideItem[]; }
+const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
+  quickstart: {
+    title: 'Quickstart',
+    groups: [
+      { label: 'Start here', items: [ { slug: 'quickstart', label: 'Quickstart' } ] },
+      { label: 'Then pick a path', items: [
+        { slug: 'creators',  label: 'For Creators' },
+        { slug: 'builders',  label: 'For Builders' },
+        { slug: 'operators', label: 'For Operators' } ] },
+    ],
+  },
+  creators: {
+    title: 'For Creators',
+    groups: [
+      { label: 'Creators', items: [
+        { slug: 'creators',   label: 'Why Lolly' },
+        { slug: 'quickstart', label: 'Quickstart' } ] },
+      { label: 'Make things', items: [
+        { slug: 'using',         label: 'Using Lolly' },
+        { slug: 'profile',       label: 'Your profile' },
+        { slug: 'design-import', label: 'Import a design' },
+        { slug: 'exporting',     label: 'Exporting & formats' } ] },
+      { label: 'Compare', items: [
+        { slug: 'positioning', label: 'How Lolly compares' } ] },
+    ],
+  },
+  builders: {
+    title: 'For Builders',
+    groups: [
+      { label: 'Builders', items: [
+        { slug: 'builders',   label: 'Overview' },
+        { slug: 'quickstart', label: 'Quickstart' } ] },
+      { label: 'Architecture', items: [
+        { slug: 'overview',      label: 'Architecture' },
+        { slug: 'design-tokens', label: 'Design Tokens' } ] },
+      { label: 'Author tools', items: [
+        { slug: 'authoring-tools',  label: 'Authoring Tools' },
+        { slug: 'authoring-assets', label: 'Authoring Assets' },
+        { slug: 'host-api',         label: 'Host API' },
+        { slug: 'url-mode',         label: 'URL Mode' } ] },
+      { label: 'Run & integrate', items: [
+        { slug: 'cli',       label: 'CLI' },
+        { slug: 'tui',       label: 'TUI' },
+        { slug: 'mcp',       label: 'MCP Server' },
+        { slug: 'ai-agents', label: 'AI Agents' },
+        { slug: 'extension', label: 'Chrome Extension' } ] },
+      { label: 'Ship & operate', items: [
+        { slug: 'build-guide',   label: 'Build Guide' },
+        { slug: 'deployment',    label: 'Deployment' },
+        { slug: 'configuration', label: 'Configuration' } ] },
+      { label: 'Trust & data', items: [
+        { slug: 'content-credentials-identity', label: 'Content Credentials' },
+        { slug: 'data-transfer', label: 'Data Transfer' },
+        { slug: 'about',         label: 'About' } ] },
+    ],
+  },
+  operators: {
+    title: 'For Operators',
+    groups: [
+      { label: 'Operators', items: [
+        { slug: 'operators',  label: 'Overview' },
+        { slug: 'quickstart', label: 'Quickstart' } ] },
+      { label: 'Adopt & govern', items: [
+        { slug: 'adoption-governance', label: 'Adoption & Governance' },
+        { slug: 'deployment',    label: 'Deployment' },
+        { slug: 'configuration', label: 'Configuration' } ] },
+      { label: 'Trust', items: [
+        { slug: 'content-credentials-identity', label: 'Content Credentials' },
+        { slug: 'privacy', label: 'Privacy Policy' } ] },
+    ],
+  },
+};
 
 const ICONS = {
   developers:  `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
@@ -912,6 +1021,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
     <p class="subtitle">${heroSubtitle}</p>
     <div class="hero-cta">
       <a href="/" class="btn btn-primary">Launch App ↗</a>
+      <a href="/info/quickstart.html" class="btn btn-primary btn-quickstart">Quickstart →</a>
       <a href="/info/about.html" class="btn btn-secondary">Learn More</a>
     </div>
     <div class="hero-trust">
@@ -933,6 +1043,32 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   </div>
   </div>
 
+</section>
+<section class="pathways-section reveal">
+  <div class="pathways-inner">
+    <h2 class="pathways-title">Three ways in</h2>
+    <p class="pathways-lead">Start with the <a href="/info/quickstart.html">Quickstart</a> — get your brand in and your first file out — then follow the path that fits you.</p>
+    <div class="pathways-grid">
+      <a class="pathway-card" href="/info/creators.html">
+        <span class="pathway-eyebrow">For Creators</span>
+        <span class="pathway-name">Make things</span>
+        <span class="pathway-desc">Finished, on-brand files in seconds — no design tool, no waiting. The advantages, and how to get the most from the app.</span>
+        <span class="pathway-go">Explore →</span>
+      </a>
+      <a class="pathway-card" href="/info/builders.html">
+        <span class="pathway-eyebrow">For Builders</span>
+        <span class="pathway-name">Author &amp; integrate</span>
+        <span class="pathway-desc">Author tools, drive them from the CLI, MCP, or an agent, and deploy the platform. The technical documentation.</span>
+        <span class="pathway-go">Read the docs →</span>
+      </a>
+      <a class="pathway-card" href="/info/operators.html">
+        <span class="pathway-eyebrow">For Operators</span>
+        <span class="pathway-name">Roll it out safely</span>
+        <span class="pathway-desc">A defence-in-depth data-loss-prevention strategy masquerading as a creative platform. Strategy, security, and adoption.</span>
+        <span class="pathway-go">See the strategy →</span>
+      </a>
+    </div>
+  </div>
 </section>
 ${WHY_MATRIX_HTML}
 <section class="audience-section">
@@ -1151,6 +1287,23 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
    liquid-displacement filter can't render. The buildGlass script overrides this
    inline with the refractive filter where it's supported. */
 .btn-primary,.btn-secondary{-webkit-backdrop-filter:blur(3px) saturate(1.45);backdrop-filter:blur(3px) saturate(1.45)}
+.btn-quickstart{background:rgba(254,124,63,.82);color:#0c322c}
+.btn-quickstart:hover{background:var(--orange);box-shadow:0 8px 28px rgba(254,124,63,.4)}
+
+/* Three-door pathways band — sits directly under the hero on the landing page. */
+.pathways-section{background:var(--dark);padding:4rem 1.5rem}
+.pathways-inner{max-width:1080px;margin:0 auto;text-align:center}
+.pathways-title{color:#fff;font-size:2rem;margin:0 0 .5rem}
+.pathways-lead{color:rgba(255,255,255,.7);font-size:1.0625rem;max-width:40rem;margin:0 auto 2.5rem}
+.pathways-lead a{color:var(--light);font-weight:600}
+.pathways-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;text-align:left}
+.pathway-card{display:flex;flex-direction:column;gap:.5rem;padding:1.75rem;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);transition:transform .18s ease,border-color .18s ease,background .18s ease}
+.pathway-card:hover{text-decoration:none;transform:translateY(-3px);border-color:var(--green);background:rgba(255,255,255,.08)}
+.pathway-eyebrow{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:var(--green)}
+.pathway-name{font-size:1.375rem;font-weight:700;color:#fff}
+.pathway-desc{font-size:.9375rem;line-height:1.55;color:rgba(255,255,255,.68);flex:1}
+.pathway-go{font-size:.9375rem;font-weight:600;color:var(--light);margin-top:.5rem}
+@media(max-width:820px){.pathways-grid{grid-template-columns:1fr}}
 
 /* Audience section */
 .audience-section{}
@@ -1374,6 +1527,9 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .docs-sidebar{padding:2rem 1.25rem;border-right:1px solid var(--border);position:sticky;top:3.75rem;height:calc(100vh - 3.75rem);overflow-y:auto}
 .sidebar-label{font-size:.6875rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700;margin:1.5rem 0 .5rem}
 .sidebar-label:first-child{margin-top:0}
+.sidebar-home{display:block;font-size:.8125rem;color:var(--muted)!important;margin-bottom:1rem;padding:0!important}
+.sidebar-home:hover{color:var(--green)!important;background:none!important}
+.sidebar-pathway{font-size:.9375rem;font-weight:700;color:var(--dark);margin-bottom:.75rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
 .docs-sidebar a{display:block;padding:.3rem .5rem;font-size:.875rem;color:var(--text);border-radius:5px}
 .docs-sidebar a:hover{color:var(--green);background:var(--pale);text-decoration:none}
 .docs-sidebar a.active{color:var(--green);font-weight:600;background:var(--pale)}
@@ -1974,9 +2130,11 @@ const HERO_CANVAS_SCRIPT = `<script>(function(){
 
 const HAMBURGER_SCRIPT = `<script>(function(){var ham=document.getElementById('navHamburger');var menu=document.getElementById('navMobileMenu');if(!ham||!menu)return;ham.addEventListener('click',function(){var open=menu.classList.toggle('open');ham.classList.toggle('open',open);ham.setAttribute('aria-expanded',open?'true':'false');});menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false');});});document.addEventListener('click',function(e){if(!menu.contains(e.target)&&!ham.contains(e.target)){menu.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false');}});})();</script>`;
 
-function buildNav(activeHref: string, isLanding: boolean | undefined) {
-  const link = (n: NavLink) =>
-    `<a href="${n.href}"${n.href === activeHref ? ' class="active"' : ''}>${esc(n.label)}</a>`;
+function buildNav(activeHref: string, isLanding: boolean | undefined, activePathway?: Pathway) {
+  const link = (n: NavLink) => {
+    const isActive = n.href === activeHref || NAV_PATHWAY[n.href] === activePathway;
+    return `<a href="${n.href}"${isActive ? ' class="active"' : ''}>${esc(n.label)}</a>`;
+  };
   // Desktop: one <span class="nav-group"> per cluster, dividers come from CSS.
   const groups = NAV.map(group => `<span class="nav-group">${group.map(link).join('')}</span>`).join('');
   // Mobile menu: a single flat vertical list (clusters collapse to plain rows).
@@ -1987,6 +2145,25 @@ function buildNav(activeHref: string, isLanding: boolean | undefined) {
 }
 
 const FOOTER = `<footer><p>Lolly — <a href="${REPO_URL}">Open Source</a></p>${FOUNDED_BY}</footer>`;
+
+// Docs sidebar for a page, driven by its pathway. Falls back to the builders
+// sidebar for any non-landing page without an explicit pathway.
+function buildSidebar(page: Page, activeHref: string) {
+  const pathway: Pathway = page.pathway ?? 'builders';
+  const sb = SIDEBARS[pathway];
+  const groups = sb.groups.map(g => {
+    const links = g.items.map(it => {
+      const href = `/info/${it.slug}.html`;
+      return `<a href="${href}"${href === activeHref ? ' class="active"' : ''}>${esc(it.label)}</a>`;
+    }).join('\n    ');
+    return `<div class="sidebar-label">${esc(g.label)}</div>\n    ${links}`;
+  }).join('\n    ');
+  return `<aside class="docs-sidebar">
+    <a href="/info/index.html" class="sidebar-home">← Home</a>
+    <div class="sidebar-pathway">${esc(sb.title)}</div>
+    ${groups}
+  </aside>`;
+}
 
 function wrapPage(page: Page, content: string, ogSlugs: Set<string>) {
   const activeHref = page.slug === 'index' ? '/info/index.html' : `/info/${page.slug}.html`;
@@ -1999,20 +2176,7 @@ function wrapPage(page: Page, content: string, ogSlugs: Set<string>) {
 
   const body = isLanding ? content : `
 <div class="docs-wrap">
-  <aside class="docs-sidebar">
-    <div class="sidebar-label">Marketing</div>
-    <a href="/info/index.html"${activeHref === '/info/index.html' ? ' class="active"' : ''}>Home</a>
-    <a href="/info/positioning.html"${activeHref.includes('positioning') ? ' class="active"' : ''}>Positioning</a>
-    <div class="sidebar-label">Project</div>
-    <a href="/info/about.html"${activeHref.includes('about') ? ' class="active"' : ''}>About</a>
-    <a href="/info/overview.html"${activeHref.includes('overview') ? ' class="active"' : ''}>Overview</a>
-    <div class="sidebar-label">Authoring</div>
-    <a href="/info/authoring-tools.html"${activeHref.includes('authoring-tools') ? ' class="active"' : ''}>Tools</a>
-    <a href="/info/authoring-assets.html"${activeHref.includes('authoring-assets') ? ' class="active"' : ''}>Assets</a>
-    <a href="/info/url-mode.html"${activeHref.includes('url-mode') ? ' class="active"' : ''}>URL Mode</a>
-    <div class="sidebar-label">Deployment</div>
-    <a href="/info/build-guide.html"${activeHref.includes('build-guide') ? ' class="active"' : ''}>Build Guide</a>
-  </aside>
+  ${buildSidebar(page, activeHref)}
   <main class="docs-content">
     ${content}
   </main>
@@ -2051,7 +2215,7 @@ ${THEME_INIT_SCRIPT}
 <style>${CSS}</style>
 </head>
 <body>
-${buildNav(activeHref, isLanding)}
+${buildNav(activeHref, isLanding, page.pathway)}
 ${body}
 ${FOOTER}
 ${THEME_INTERACT_SCRIPT}
@@ -2100,6 +2264,27 @@ function build() {
     writeFileSync(resolve(outDir, outFile), html, 'utf-8');
     console.log(`✓  /info/${outFile}`);
   }
+
+  // Redirect stubs for retired slugs — keep inbound links + bookmarks resolving.
+  for (const s of stubs) {
+    const dest = esc(s.target);
+    const stub = `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Moved — Lolly</title>
+<link rel="canonical" href="${SITE_URL}${dest}">
+<meta http-equiv="refresh" content="0; url=${dest}">
+<meta name="robots" content="noindex">
+<script>location.replace(${JSON.stringify(s.target)});</script>
+</head>
+<body>Redirecting to <a href="${dest}">${dest}</a>…</body>
+</html>`;
+    writeFileSync(resolve(outDir, `${s.slug}.html`), stub, 'utf-8');
+    console.log(`↪  /info/${s.slug}.html → ${s.target}`);
+  }
+
   console.log(`\nSite built → shells/web/public/info/`);
 }
 

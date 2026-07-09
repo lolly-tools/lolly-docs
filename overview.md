@@ -130,7 +130,8 @@ lolly/
 │   ├── tauri-desktop/ # downloadable desktop app
 │   └── tauri-mobile/  # iOS/Android app
 │
-├── tools/            # 46 tool definitions — data, not code. SUSE-specific, proprietary (not MPL).
+├── tools/            # profile VIEW (gitignored) — data, not code. Merged from packs:
+│                     #   community/ (public, brand-agnostic, MPL) + brands/<active>/tools (brand-owned).
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
