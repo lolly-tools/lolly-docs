@@ -1050,18 +1050,21 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
     <p class="pathways-lead">Start with the <a href="/info/quickstart.html">Quickstart</a> — get your brand in and your first file out — then follow the path that fits you.</p>
     <div class="pathways-grid">
       <a class="pathway-card" href="/info/creators.html">
+        <span class="pathway-ic" aria-hidden="true">${ICONS.media}</span>
         <span class="pathway-eyebrow">For Creators</span>
         <span class="pathway-name">Make things</span>
         <span class="pathway-desc">Finished, on-brand files in seconds — no design tool, no waiting. The advantages, and how to get the most from the app.</span>
         <span class="pathway-go">Explore →</span>
       </a>
       <a class="pathway-card" href="/info/builders.html">
+        <span class="pathway-ic" aria-hidden="true">${ICONS.developers}</span>
         <span class="pathway-eyebrow">For Builders</span>
         <span class="pathway-name">Author &amp; integrate</span>
         <span class="pathway-desc">Author tools, drive them from the CLI, MCP, or an agent, and deploy the platform. The technical documentation.</span>
         <span class="pathway-go">Read the docs →</span>
       </a>
       <a class="pathway-card" href="/info/operators.html">
+        <span class="pathway-ic" aria-hidden="true">${ICONS.security}</span>
         <span class="pathway-eyebrow">For Operators</span>
         <span class="pathway-name">Roll it out safely</span>
         <span class="pathway-desc">A defence-in-depth data-loss-prevention strategy masquerading as a creative platform. Strategy, security, and adoption.</span>
@@ -1299,6 +1302,9 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .pathways-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;text-align:left}
 .pathway-card{display:flex;flex-direction:column;gap:.5rem;padding:1.75rem;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);transition:transform .18s ease,border-color .18s ease,background .18s ease}
 .pathway-card:hover{text-decoration:none;transform:translateY(-3px);border-color:var(--green);background:rgba(255,255,255,.08)}
+.pathway-ic{align-self:flex-start;display:inline-flex;align-items:center;justify-content:center;width:2.75rem;height:2.75rem;margin-bottom:.35rem;border-radius:12px;color:#fff;background:linear-gradient(163deg,hsl(150 66% 51%),hsl(154 58% 33%));border:1px solid hsl(0 0% 100% / .3);box-shadow:inset 0 1px 0 hsl(0 0% 100% / .45),0 6px 16px -6px hsl(151 57% 40% / .75);transition:box-shadow .18s ease,transform .18s ease}
+.pathway-ic svg{width:1.45rem;height:1.45rem}
+.pathway-card:hover .pathway-ic{transform:translateY(-1px);box-shadow:inset 0 1px 0 hsl(0 0% 100% / .5),0 9px 22px -6px hsl(151 57% 40% / .9)}
 .pathway-eyebrow{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:var(--green)}
 .pathway-name{font-size:1.375rem;font-weight:700;color:#fff}
 .pathway-desc{font-size:.9375rem;line-height:1.55;color:rgba(255,255,255,.68);flex:1}
