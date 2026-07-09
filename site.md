@@ -1,39 +1,21 @@
 
 # Lolly — Landing page copy
 
-Save money, time, tokens, with deterministic assets.
-No cloud, no waiting, no worries.
-
----
-
-## Developers
-
-### Your build pipeline should include your visuals.
-
-Images are build artifacts. Treat them that way. Lolly runs from the CLI so you can generate assets the same way you generate everything else — repeatably, automatically, and as part of your workflow.
-
-- **Reproducible outputs.** Same inputs produce the same file, every time. Commit a URL, regenerate on demand — no more checking in images or chasing the latest version from Slack.
-- **Get media out of your codebase.** Generate OG images, QR codes, social cards, and data visuals at build time instead of storing binaries in Git.
-- **Execute logic inside assets.** Tools like Code Canvas and Chart Creator let you place real content — code snippets, structured data, live values — inside production-quality templates without building a custom renderer.
-- **Zero lock-in.** Open source engine, local compute, no API keys, no rate limits.
-
-```bash
-lolly qr-code --url=https://suse.com --output=og-qr.svg
-lolly quotes --quote="Ship it." --output=quote.png
-```
+On-brand files in seconds — no designer, no waiting, no guesswork.
+Runs on your own device. Nothing to upload, nothing to learn, works offline.
 
 ---
 
 ## Marketers
 
-### Brand consistency at the scale of a content factory.
+### Everything on-brand, without the wait.
 
-Design decisions are locked in at the template level — not in a style guide nobody reads. Every asset your team generates is already on-brand, even if they've never opened a design tool.
+You need a quote card, an event tile, a localized signature — today, not next sprint. Lolly hands it back finished and on-brand, even if you've never opened a design tool. The rules live in the template, so you can't get them wrong.
 
+- **Fill in a few fields, get the finished asset.** No fonts to pick, no colours to second-guess, no "is this the right logo?" The tool already knows. You bring the words.
 - **Infinite permutations, one source of truth.** Localize a quote card into 12 languages, swap a brand lockup across 40 campaigns, or generate every size variant for every placement — without touching the design. Drive it all from a spreadsheet in the batch grid: paste or import a CSV, get one finished asset per row.
-- **No creative agency bottleneck for routine assets.** Email signatures, event countdowns, quote cards, street maps — everything your team needs on a Tuesday at 4pm, self-serve.
+- **No creative-agency bottleneck for routine assets.** Email signatures, event countdowns, quote cards, street maps — everything your team needs on a Tuesday at 4pm, self-serve.
 - **Collaborate without compliance risk.** No customer data uploaded to third-party cloud services. No SaaS licensing to audit. Runs entirely on local device compute.
-- **Operationalize production.** Connect structured data — campaign names, dates, stats, speaker details — to templates that output print-ready files. Your operations team can run a campaign without touching design software.
 
 ---
 
@@ -75,6 +57,23 @@ You design systems and solve problems, not one-offs. Lolly is the execution laye
 - **Eliminate the tedious.** Optimal typesetting, logo placement, map pin positioning, color contrast checks, export sizing — all resolved at the template layer. You define the rules once, leave the repetition to the machine.
 - **Lock what shouldn't change, free what should.** Hard-code the brand constraints. Expose only the variables that are actually meant to vary. The tool becomes the creative guardrail.
 
+---
+
+## Developers
+
+### Your build pipeline should include your visuals.
+
+Images are build artifacts. Treat them that way. Lolly runs from the CLI so you can generate assets the same way you generate everything else — repeatably, automatically, and as part of your workflow.
+
+- **Reproducible outputs.** Same inputs produce the same file, every time. Commit a URL, regenerate on demand — no more checking in images or chasing the latest version from Slack.
+- **Get media out of your codebase.** Generate OG images, QR codes, social cards, and data visuals at build time instead of storing binaries in Git.
+- **Execute logic inside assets.** Tools like Code Canvas and Chart Creator let you place real content — code snippets, structured data, live values — inside production-quality templates without building a custom renderer.
+- **Zero lock-in.** Open source engine, local compute, no API keys, no rate limits.
+
+```bash
+lolly qr-code --url=https://suse.com --output=og-qr.svg
+lolly quotes --quote="Ship it." --output=quote.png
+```
 
 ---
 
@@ -114,11 +113,13 @@ Every time someone uploads a file to a third-party service to "just make it look
 - **Reduce vendor surface area.** One open-source platform replaces a sprawl of SaaS subscriptions for creative production. Fewer vendors means fewer contracts, fewer audits, and fewer breach vectors.
 - **Enforce brand governance at the infrastructure level.** Tools are authored once and distributed as data — not files, not manual processes. What goes out the door is exactly what was approved to go out the door.
 - **Get critical information into human-readable formats instantly.** Incident communications, compliance reports, executive briefings — structured data becomes publication-quality output in seconds, no design bottleneck.
-- **Automations and Humanans**  It can be an always-on report that requires exceptional graphical finish, or your workforce needing customization on the go, it's the same delivery.  Humans get a great mobile or desktop UI to experience, robots get a clean deterministic layer to surface value.
+- **Verify before you trust it, though.** Lolly is a closed-pilot prototype: its cryptography and file-parsing engines have not yet had an external security audit. Pilot it in a scoped, non-critical context and treat provenance and on-device encryption as strong-by-design, not certified. See [Adoption & governance](/info/adoption-governance.html#status).
 
 ---
 
 ## The Creator
+
+**An internal prototype, in a closed pilot.** Not a finished product — a fast-moving experiment. Its cryptography and parsing are not yet externally audited. [Where Lolly is right now →](/info/adoption-governance.html#status)
 
 **100% free and open source.** No SaaS fees, no usage limits, no vendor dependency.
 

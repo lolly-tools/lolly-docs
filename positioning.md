@@ -2,6 +2,8 @@
 
 Where this platform fits in the wider creative-tools landscape, and where it deliberately does **not** play.
 
+> **Pilot status:** Lolly is a closed-pilot prototype, not a finished product, and its security has not been externally audited. This positioning is where Lolly *aims* to sit — the [Adoption & Governance](/info/adoption-governance.html#status) page covers how that's being tested in practice.
+
 ## Landscape
 
 | Capability                       | Canva (Open canvas) | Brandfolder Content Automation (DAM templating) | Illustrator (Desktop pro) | Figma / Penpot (Online pro) | **Lolly (Constraints-first)** |

@@ -49,6 +49,7 @@ const pages: Page[] = [
   { slug: 'design-import',    title: 'Import a design (Figma, Penpot, Illustrator, InDesign)', src: 'design-import.md' },
   { slug: 'exporting',        title: 'Exporting & Formats', src: 'exporting.md' },
   { slug: 'positioning',      title: 'Positioning',       src: 'positioning.md' },
+  { slug: 'adoption-governance', title: 'Adoption & Governance', src: 'adoption-governance.md' },
   { slug: 'ai-agents',        title: 'AI Agents',         src: 'ai-agents.md' },
   { slug: 'mcp',              title: 'MCP Server',        src: 'mcp.md' },
   { slug: 'overview',         title: 'Overview',          src: 'overview.md' },
@@ -494,7 +495,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   // Activate from hash on load
   var hash=location.hash.slice(1);
   if(hash) activateBySlug(hash);
-  else activateBySlug('ai');
+  else activateBySlug('marketers');
   // Click: activate and push slug to hash
   tabs.forEach(function(tab,idx){
     tab.addEventListener('click',function(){
@@ -816,6 +817,89 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   </div>
 </section>`;
 
+  // ── "Why we built Lolly" + old-way vs Lolly-way matrix ──────────────────────
+  // The emotional hook for the people who actually have to adopt Lolly — the
+  // non-designers. Names the three everyday frustrations, then puts the old way
+  // and the Lolly way literally side by side (friction → relief), left vs right.
+  const OLD_VS_LOLLY = [
+    { pain: 'Email a brief to the design team, then wait days for one small graphic.',
+      relief: 'Fill in a few fields. The finished, on-brand asset is ready in seconds.' },
+    { pain: 'Guess at the right font, colour and logo — and hope it passes brand review.',
+      relief: 'The brand rules are baked into the tool. It can’t come out off-brand.' },
+    { pain: 'Upload a contract, payslip or private photo to a random free website to convert or crop it.',
+      relief: 'Everything runs on your own device. Nothing is uploaded; nothing leaves.' },
+    { pain: 'Re-make the same badge, card or banner a hundred times by hand.',
+      relief: 'Paste a spreadsheet. Get a hundred finished, print-ready files at once.' },
+    { pain: '“Which version is the latest?” — hunting through Slack threads and shared drives.',
+      relief: 'The asset is a link. Same inputs, same file, every single time.' },
+    { pain: 'No signal on the plane, or a locked-down network — so you’re simply blocked.',
+      relief: 'Works fully offline, on any device, once it has loaded once.' },
+  ];
+  const IC_ANXIETY = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`;
+  const IC_BOTTLE  = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>`;
+  const IC_CLOUDX  = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19a4.5 4.5 0 0 0 .5-8.97A6 6 0 0 0 6.3 8.4"/><path d="M13 16H7a4 4 0 0 1-.9-7.9"/><line x1="2" y1="2" x2="22" y2="22"/></svg>`;
+  const WHY_MATRIX_HTML = `<section class="why-section">
+  <div class="why-inner">
+    <div class="why-lede reveal">
+      <span class="why-eyebrow">Why we built Lolly</span>
+      <h2>Everyday creative work<br>shouldn’t be this hard.</h2>
+      <p class="why-lead">Most people don’t want a design studio. They want one correct file, now — without breaking the brand, without waiting on someone, and without handing a private document to a website they’ve never heard of. Lolly exists to take those three frustrations away.</p>
+    </div>
+    <div class="why-frustrations reveal reveal-1">
+      <div class="why-frustration"><span class="why-frustration-ic">${IC_ANXIETY}</span><strong>Off-brand anxiety</strong><p>The quiet dread of picking the wrong colour or font and getting it wrong in public.</p></div>
+      <div class="why-frustration"><span class="why-frustration-ic">${IC_BOTTLE}</span><strong>The bottleneck</strong><p>Every small asset stuck in a queue behind a busy designer, a slow tool, or one more approval.</p></div>
+      <div class="why-frustration"><span class="why-frustration-ic">${IC_CLOUDX}</span><strong>Cloud dependence</strong><p>Uploading sensitive files just to convert or crop them — and being stranded the moment you’re offline.</p></div>
+    </div>
+    <div class="matrix reveal reveal-2" role="table" aria-label="The old way compared with the Lolly way">
+      <div class="matrix-head matrix-head--old" role="columnheader">The old way</div>
+      <div class="matrix-head matrix-head--new" role="columnheader">The Lolly way</div>
+      ${OLD_VS_LOLLY.map(r => `<div class="matrix-cell matrix-cell--old" role="cell"><span class="matrix-mark" aria-hidden="true">✕</span><span>${esc(r.pain)}</span></div>
+      <div class="matrix-cell matrix-cell--new" role="cell"><span class="matrix-mark" aria-hidden="true">✓</span><span>${esc(r.relief)}</span></div>`).join('\n      ')}
+    </div>
+  </div>
+</section>`;
+
+  // ── "Where Lolly is right now" — the honest pilot-status section ─────────────
+  // Recentres the whole page from "finished marvel" to "closed pilot / behavioural
+  // experiment". Carries the two required disclaimers (unaudited crypto+parsing;
+  // pilot not complete, more on Aug 29) and the born-yesterday / customer-one /
+  // need-your-story message, plus a teaser of the 90-day → 30%-deflection metric.
+  const IC_SHIELDWARN = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`;
+  const IC_FLASK = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6l-5.5 9.5A2 2 0 0 0 6.2 21h11.6a2 2 0 0 0 1.7-2.5L14 9V3"/><line x1="7" y1="15" x2="17" y2="15"/></svg>`;
+  const IC_CHAT = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>`;
+  const PILOT_STATUS_HTML = `<section class="pilot-section" id="status">
+  <div class="pilot-inner">
+    <div class="pilot-lede reveal">
+      <span class="pilot-eyebrow">Status · closed pilot</span>
+      <h2>Where Lolly is right now</h2>
+      <p class="pilot-lead">Lolly is an <strong>internal prototype in a closed pilot</strong> — a fast-moving behavioural experiment inside the enterprise, not a finished product. It is arithmetically robust and, honestly, evidentially empty: it was born yesterday. <strong>SUSE is customer number one</strong> — and if you’re using it, we need your story to make it better.</p>
+    </div>
+    <div class="pilot-notes reveal reveal-1">
+      <div class="pilot-note pilot-note--warn">
+        <span class="pilot-note-ic">${IC_SHIELDWARN}</span>
+        <strong>Not externally audited yet</strong>
+        <p>Lolly’s cryptography and file-parsing engines — including the C2PA provenance seals and on-device encryption — have <strong>not</strong> yet been through an independent third-party security audit. Treat them as strong by design, not as certified.</p>
+      </div>
+      <div class="pilot-note">
+        <span class="pilot-note-ic">${IC_FLASK}</span>
+        <strong>The pilot isn’t finished</strong>
+        <p>This is a closed pilot that has not completed. Features, claims and defaults can still change as we learn. More on <strong>August 29</strong>.</p>
+      </div>
+      <div class="pilot-note">
+        <span class="pilot-note-ic">${IC_CHAT}</span>
+        <strong>We need your story</strong>
+        <p>The architecture is done; the evidence is not. Real usage — what worked, what didn’t, what you actually made — is what improves Lolly from here.</p>
+      </div>
+    </div>
+    <div class="pilot-scorecard reveal reveal-2">
+      <div class="pilot-stat"><span class="pilot-stat-num">90 days</span><span class="pilot-stat-label">The current adoption &amp; feedback cycle</span></div>
+      <div class="pilot-stat-arrow" aria-hidden="true">→</div>
+      <div class="pilot-stat pilot-stat--target"><span class="pilot-stat-num">30%</span><span class="pilot-stat-label">Target design-ticket deflection by month 6</span></div>
+    </div>
+    <div class="pilot-cta reveal reveal-3"><a href="/info/adoption-governance.html">Read the adoption &amp; governance plan →</a></div>
+  </div>
+</section>`;
+
   return `
 <section class="hero">
   <canvas id="heroCanvas" aria-hidden="true"></canvas>
@@ -824,6 +908,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
     <h1 class="hero-logo-h1"><a href="/" class="hero-logo-link" aria-label="Open Lolly — browse all tools"><img src="/info/icon-normal.webp" alt="Lolly" class="hero-logo"></a></h1>
   </div>
   <div class="hero-details">
+    <a class="hero-pilot" href="/info/adoption-governance.html#status" aria-label="Lolly is an internal prototype in a closed pilot that has not been externally security-audited — read where Lolly is right now"><span class="hero-pilot-tag">Prototype</span><span class="hero-pilot-text">Closed pilot in progress · not yet security-audited</span></a>
     <p class="subtitle">${heroSubtitle}</p>
     <div class="hero-cta">
       <a href="/" class="btn btn-primary">Launch App ↗</a>
@@ -849,6 +934,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   </div>
 
 </section>
+${WHY_MATRIX_HTML}
 <section class="audience-section">
   ${tabsHtml}
   <div class="audience-panels">
@@ -945,6 +1031,7 @@ ${IMPORT_HTML}
     </div>
   </div>
 </section>
+${PILOT_STATUS_HTML}
 <section class="social-proof">
   <div class="social-proof-inner reveal">
     <h2>Building &amp; brand new</h2>
@@ -1531,6 +1618,72 @@ footer .founded-badge{margin-top:.5rem}
 .dark .docs-content code{background:#112a1e;color:var(--text)}
 .dark .docs-content pre{background:#0d2419;color:var(--text);border:1px solid var(--border)}
 .dark .docs-content pre code{background:none;color:inherit}
+/* ── Pilot / prototype disclaimer badge (in the dark hero) ─────────────────── */
+.hero-pilot{display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1.1rem;padding:.32rem .34rem .32rem .5rem;border:1px solid rgba(254,124,63,.5);background:rgba(254,124,63,.12);border-radius:999px;text-decoration:none;font-size:.8125rem;color:#ffd9c4;transition:background .15s,border-color .15s}
+.hero-pilot:hover{background:rgba(254,124,63,.22);border-color:rgba(254,124,63,.8)}
+.hero-pilot-tag{background:var(--orange);color:#2a0f04;font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:.66rem;padding:.22em .62em;border-radius:999px}
+.hero-pilot-text{padding-right:.35rem}
+@media(max-width:600px){.hero-pilot-text{font-size:.74rem}}
+/* ── Why we built Lolly + old-way vs Lolly-way matrix ─────────────────────── */
+.why-section{padding:5rem 1.5rem;background:var(--pale)}
+.why-inner{max-width:1080px;margin:0 auto}
+.why-lede{text-align:center;max-width:44rem;margin:0 auto 2.5rem}
+.why-eyebrow{display:inline-block;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:var(--green);margin-bottom:.75rem}
+.why-section h2{font-size:clamp(1.8rem,4vw,2.5rem);color:var(--dark);line-height:1.12;margin-bottom:1rem}
+.why-lead{color:var(--muted);font-size:1.0625rem;line-height:1.7}
+.why-frustrations{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2.5rem}
+.why-frustration{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.5rem 1.375rem;text-align:center}
+.why-frustration-ic{display:inline-flex;width:2.75rem;height:2.75rem;align-items:center;justify-content:center;border-radius:50%;background:rgba(254,124,63,.12);color:var(--orange);margin-bottom:.75rem}
+.why-frustration-ic svg{width:1.4rem;height:1.4rem}
+.why-frustration strong{display:block;color:var(--dark);margin-bottom:.35rem;font-size:1.0625rem}
+.why-frustration p{color:var(--muted);font-size:.9rem;line-height:1.55}
+.matrix{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;align-items:stretch}
+.matrix-head{font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;padding:.85rem 1.1rem;border-radius:10px;text-align:center}
+.matrix-head--old{background:rgba(90,112,103,.14);color:var(--muted)}
+.matrix-head--new{background:var(--green);color:#04231a}
+.matrix-cell{display:flex;gap:.7rem;align-items:flex-start;padding:1rem 1.15rem;border-radius:12px;font-size:.95rem;line-height:1.5}
+.matrix-cell--old{background:#fff;border:1px solid var(--border);color:var(--muted)}
+.matrix-cell--new{background:#fff;border:1px solid rgba(48,186,120,.4);color:var(--text);box-shadow:0 2px 10px rgba(48,186,120,.08)}
+.matrix-mark{flex-shrink:0;width:1.35rem;height:1.35rem;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;font-size:.78rem;font-weight:800;margin-top:.05rem}
+.matrix-cell--old .matrix-mark{background:rgba(90,112,103,.16);color:var(--muted)}
+.matrix-cell--new .matrix-mark{background:var(--green);color:#04231a}
+@media(max-width:720px){.why-frustrations{grid-template-columns:1fr}.matrix{grid-template-columns:1fr;gap:.5rem}.matrix-head{display:none}.matrix-cell--old{margin-top:.5rem}}
+/* ── "Where Lolly is right now" — honest pilot-status section ──────────────── */
+.pilot-section{padding:5rem 1.5rem;background:var(--dark);color:#fff}
+.pilot-inner{max-width:960px;margin:0 auto}
+.pilot-lede{text-align:center;max-width:46rem;margin:0 auto 2.5rem}
+.pilot-eyebrow{display:inline-block;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:var(--orange);margin-bottom:.75rem}
+.pilot-section h2{color:#fff;font-size:clamp(1.8rem,4vw,2.4rem);margin-bottom:1rem}
+.pilot-lead{color:rgba(255,255,255,.82);font-size:1.0625rem;line-height:1.7}
+.pilot-lead strong{color:#fff}
+.pilot-notes{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2.5rem}
+.pilot-note{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:1.5rem 1.375rem}
+.pilot-note--warn{border-color:rgba(254,124,63,.5);background:rgba(254,124,63,.1)}
+.pilot-note-ic{display:inline-flex;width:2.5rem;height:2.5rem;align-items:center;justify-content:center;border-radius:10px;background:rgba(255,255,255,.08);color:var(--light);margin-bottom:.85rem}
+.pilot-note--warn .pilot-note-ic{background:rgba(254,124,63,.18);color:var(--orange)}
+.pilot-note-ic svg{width:1.35rem;height:1.35rem}
+.pilot-note strong{display:block;color:#fff;margin-bottom:.4rem;font-size:1.0625rem}
+.pilot-note p{color:rgba(255,255,255,.7);font-size:.9rem;line-height:1.55}
+.pilot-note--warn p{color:rgba(255,255,255,.85)}
+.pilot-scorecard{display:flex;align-items:center;justify-content:center;gap:1.25rem;flex-wrap:wrap;margin-bottom:2rem}
+.pilot-stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:1.5rem 1.75rem;text-align:center;min-width:14rem}
+.pilot-stat--target{border-color:rgba(48,186,120,.5);background:rgba(48,186,120,.12)}
+.pilot-stat-num{display:block;font-size:2rem;font-weight:800;color:#fff;line-height:1}
+.pilot-stat--target .pilot-stat-num{color:var(--green)}
+.pilot-stat-label{display:block;color:rgba(255,255,255,.7);font-size:.85rem;margin-top:.45rem}
+.pilot-stat-arrow{color:rgba(255,255,255,.4);font-size:1.5rem}
+.pilot-cta{text-align:center}
+.pilot-cta a{color:var(--green);font-weight:600;text-decoration:none}
+.pilot-cta a:hover{text-decoration:underline}
+@media(max-width:720px){.pilot-notes{grid-template-columns:1fr}.pilot-stat-arrow{transform:rotate(90deg)}}
+/* Dark-theme surfaces for the pale Why section (the dark pilot section already
+   ships its own dark palette, so it needs no override). */
+.dark .why-section{background:#061816}
+.dark .why-section h2{color:var(--text)}
+.dark .why-frustration{background:#112a1e}
+.dark .why-frustration strong{color:var(--text)}
+.dark .matrix-cell--old{background:#0d2419}
+.dark .matrix-cell--new{background:#112a1e}
 `.trim();
 
 const THEME_SVG_MOON = `<svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
