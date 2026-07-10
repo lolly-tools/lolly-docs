@@ -2150,7 +2150,7 @@ function buildNav(activeHref: string, isLanding: boolean | undefined, activePath
 <div class="nav-mobile-menu" id="navMobileMenu">${mobileLinks}<a href="/" class="nav-launch">Launch App ↗</a></div>`;
 }
 
-const FOOTER = `<footer><p>Lolly — <a href="${REPO_URL}">Open Source</a></p>${FOUNDED_BY}</footer>`;
+const FOOTER = `<footer><p>Lolly — <a href="${REPO_URL}">Open Source</a></p><p>Questions? Contact Andy Fitzsimon — <a href="mailto:fitzy@suse.com">fitzy@suse.com</a></p>${FOUNDED_BY}</footer>`;
 
 // Docs sidebar for a page, driven by its pathway. Falls back to the builders
 // sidebar for any non-landing page without an explicit pathway.
