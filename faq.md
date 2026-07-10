@@ -100,6 +100,20 @@ The SUSE-branded tools leave the project, and new generic example tools defined 
 
 SUSE will operate its own Lolly to protect its trademarks.
 
+## How much is SUSE keeping private? (aka when is the rug-pull)
+
+SUSE's trademarks and branded tools are for demonstration only, until August 29. You can find an unbranded instance of Lolly at [lolly.ART](https://lolly.art).
+
+SUSE is an enterprise open source infrastructure company with more than three decades of platform leadership. Its products include enterprise-tier Linux, Cloud Native, Edge, and AI infrastructure solutions.
+
+From SUSE's perspective, this is about walking the talk on sovereignty and security. As of today, the likelihood SUSE productizes Lolly is near absolute zero.
+
+Full disclosure: SUSE *is* building out internal tooling to integrate Lolly within its IT systems — that's about SUSE's internal set-up, not public vs. private development.
+
+Speaking of the public side, Lolly aims to be built through [Open Build Service](https://openbuildservice.org/), with secure supply-chain artifacts delivered by the [SUSE Application Collection](https://apps.rancher.io/applications).
+
+We'll build as much as we can in the open — you just won't see SUSE-branded tools for long, nor SUSE's internal workforce and commercial processes, which are unrelated to Lolly.
+
 ## What flavour is that Lolly logo?
 
 Some say Lime, others say Mint and sometimes Apple, Lolly brings the sweetness, you make the flavour happen!
