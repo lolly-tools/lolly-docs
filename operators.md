@@ -4,7 +4,7 @@
 
 The organizational immune system that wraps around what you already do — so the routine creative work your teams need every day happens *inside* your perimeter instead of leaking out of it.
 
-Lolly earns its place as a creative tool: it deletes the design queue and puts on-brand output in everyone's hands. But the reason it's *safe* to hand out that widely is architectural. Nothing uploads, everything is reproducible, and every export can carry a cryptographic record of where it came from. This page is the security and rollout story.
+Lolly earns its place as a creative tool: it deletes the design queue and puts production-quality output in everyone's hands. But the reason it's *safe* to hand out that widely is architectural. Nothing uploads, everything is reproducible, and every export can carry a cryptographic record of where it came from. This page is the security and rollout story.
 
 > **Honest framing first.** Lolly's security properties are strong *by design*; they have **not** been independently audited or certified. The seals, on-device signing, and encryption below are real and defensible — but where independent assurance is legally required, treat them as defence-in-depth, not as a certified control. We'd rather you know that up front.
 

@@ -1,6 +1,6 @@
 # Getting Started
 
-Lolly is a platform for generating on-brand creative assets — images, documents, social cards, reports, and more — without needing design skills or an internet connection.
+Lolly is a platform for turning design rules and structured content into finished assets — images, documents, labels, social cards, reports, and more — without needing design skills or an internet connection.
 
 This guide explains how it works and how your organisation can adopt it.
 
@@ -108,7 +108,7 @@ They do not gate output formats, export options, or any kind of API surface — 
 
 ### Experimental tools
 
-When a tool itself is still in development, its manifest carries `status: "experimental"`. The engine handles this directly: every export from an experimental tool gets a visible watermark applied automatically, so work-in-progress assets can't be mistaken for finished, on-brand output. This is how you put new capabilities in front of a subset of power users before they're promoted to a normal, watermark-free `official` tool.
+When a tool itself is still in development, its manifest carries `status: "experimental"`. The engine handles this directly: every export from an experimental tool gets a visible watermark applied automatically, so work-in-progress assets can't be mistaken for finished, production-ready output. This is how you put new capabilities in front of a subset of power users before they're promoted to a normal, watermark-free `official` tool.
 
 ---
 

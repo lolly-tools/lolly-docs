@@ -1,6 +1,6 @@
 # Driving Lolly from an AI agent
 
-Give your model a **deterministic, reviewable creative layer** instead of asking it to hallucinate pixels. A tool invocation is just a **URL with parameters** — a few tokens that produce a press-quality, on-brand file, the same way every time. No image model, no creative drift, no data leaving the device.
+Give your model a **deterministic, reviewable creative layer** instead of asking it to hallucinate pixels. A tool invocation is just a **URL with parameters** — a few tokens that produce a press-quality file, the same way every time. No image model, no creative drift, no data leaving the device.
 
 ## The model: a URL is the API
 
@@ -78,7 +78,7 @@ A few tools won't hand back a file this way:
 
 ## The MCP server (native endpoint)
 
-Beyond building URLs by hand, Lolly ships an optional **[Model Context Protocol](https://modelcontextprotocol.io) server** — a native endpoint any MCP client (an agent runtime, an IDE, a CLI, a hosted assistant) connects to directly. It exposes the catalogue and the render path as callable tools, so an agent can discover a tool, fill its declared inputs, and get back an on-brand file plus an editable `lolly.tools` link — with no app update, because tools sync to the server as data.
+Beyond building URLs by hand, Lolly ships an optional **[Model Context Protocol](https://modelcontextprotocol.io) server** — a native endpoint any MCP client (an agent runtime, an IDE, a CLI, a hosted assistant) connects to directly. It exposes the catalogue and the render path as callable tools, so an agent can discover a tool, fill its declared inputs, and get back a finished file plus an editable `lolly.tools` link — with no app update, because tools sync to the server as data.
 
 Five verbs:
 

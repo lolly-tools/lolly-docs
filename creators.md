@@ -1,13 +1,13 @@
 # Lolly for Creators
 
-You want to make something good, quickly, and have it come out right. Lolly is built for exactly that: fill in a few fields, get a finished, on-brand file — no design software, no waiting, no way to get the brand wrong. It runs on your own device and works offline.
+You want to make something good, quickly, and have it come out right. Lolly is built for exactly that: fill in a few fields, get a finished file — the layout, the type, the rules are enforced by the tool, not by your eye. No design software, no waiting. It runs on your own device and works offline.
 
 New here? Start with the **[Quickstart](/info/quickstart.html)** — it gets your brand in and your first file out. This page is why you'll want to stay.
 
 ## Why Lolly — your advantages
 
 - **Finished, not fiddly.** The tool already knows the fonts, the colours, the logo, the spacing. You bring the words; it hands back the asset. Nothing to second-guess.
-- **On-brand by construction.** The rules live in the template, so you *can't* drift off-brand — even if you've never opened a design tool. Wild creative range, inside guard-rails that hold.
+- **Correct by construction.** Design rules, layout constraints, and running logic live in the template — output can't drift from spec unless the tool's author deliberately leaves something open. Wild creative range, inside guard-rails that hold.
 - **One source, every format.** The same design exports as SVG, print-ready PDF, high-res PNG, or 60fps video. Make it once; ship it everywhere.
 - **Infinite permutations.** Localise a card into a dozen languages, generate every size for every placement, swap a lockup across forty campaigns — all from one design, driven by a spreadsheet.
 - **It's yours, offline, private.** Nothing uploads. No account, no cloud, no licence to audit. Close the laptop lid on a plane and keep working.
@@ -15,7 +15,7 @@ New here? Start with the **[Quickstart](/info/quickstart.html)** — it gets you
 
 ## How it compares
 
-Lolly isn't trying to be Canva or Figma. It sits where *central control of brand expression matters more than expressive flexibility* — turning your design decisions into tools your whole team can use without you in the loop for every asset.
+Lolly isn't trying to be Canva or Figma. It sits where *rules, repeatability, and hard constraints matter more than freehand flexibility* — turning design decisions into tools your whole team can use without you in the loop for every asset.
 
 | | Canva | Brand portals | Illustrator | Figma / Penpot | **Lolly** |
 |---|---|---|---|---|---|
@@ -32,11 +32,11 @@ Lolly isn't trying to be Canva or Figma. It sits where *central control of brand
 | Command Line & TUI  | ✗ | ✗ | ✗ | ✗ | **✓** |
 
 
-**Reach for Lolly** for the assets you make again and again — event signage, quote cards, localized banners, email signatures, social variants, data-driven charts and maps. **Reach for a design tool** for the bespoke hero piece, the one-off campaign concept, the ideation that's *meant* to escape the system. Lolly executes the system; it doesn't replace the studio.
+**Reach for Lolly** for the assets you make again and again — event signage, quote cards, localized banners, email signatures, shipping labels, social variants, data-driven charts and maps. **Reach for a design tool** for the bespoke hero piece, the one-off campaign concept, the ideation that's *meant* to escape the system. Lolly executes the system; it doesn't replace the studio.
 
 ## What you can make
 
-### Everything on-brand, without the wait
+### Everything correct, without the wait
 
 Fill in a few fields, get the finished asset — no fonts to pick, no colours to second-guess, no "is this the right logo?" The tool already knows. Email signatures, event countdowns, quote cards, badges, street maps — everything your team needs on a Tuesday at 4pm, self-serve. And because no customer data leaves the device, there's no compliance risk to collaborating.
 
@@ -46,7 +46,7 @@ Connect a **CSV** or **JSON** table to a chart, map, or table template and updat
 
 ### Tools that compose tools
 
-One tool can embed another tool's live output as an on-brand asset — a name badge that renders its own QR code, a card that drops in a live chart — with no design tool and no manual compositing. The embedded render stays live and re-renders on load; it's never a flattened picture.
+One tool can embed another tool's live output as an asset — a name badge that renders its own QR code, a card that drops in a live chart — with no design tool and no manual compositing. The embedded render stays live and re-renders on load; it's never a flattened picture.
 
 ### The frontier, when you need it
 

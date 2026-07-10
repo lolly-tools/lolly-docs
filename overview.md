@@ -8,13 +8,13 @@ This document captures the purpose, structure, and architectural decisions for t
 
 ## Why this exists
 
-Brand teams face a recurring problem: recurring creative work that is too predictable to justify a designer's time, but too brand-sensitive to hand off without guardrails. The result is either slow throughput (designer bottleneck), inconsistency (people using whatever tool they have), or vendor lock-in (a SaaS DAM that controls your templates).
+Teams face a recurring problem: repeatable creative and content work that is too predictable to justify skilled hands every time, but too quality-sensitive to hand off without guardrails. The result is either slow throughput (specialist bottleneck), inconsistency (people using whatever tool they have), or vendor lock-in (a SaaS DAM that controls your templates).
 
 This platform is the structural answer:
 
-> **Programmatic creative at scale** — zero-labor asset generation, with central brand control, for employees, vendors, and partners.
+> **Programmatic creative and content at scale** — zero-labor asset generation, with the rules under central control, for employees, vendors, and partners.
 
-The outcome is **brand abundance**: every event has correct signage, every CVE alert is on-brand, every email signature is current, all without a design ticket. The platform handles recurring operationalised creative. It is deliberately not a bespoke creative tool — designers still own flagship work.
+The outcome is **abundance**: every event has correct signage, every CVE alert matches the house style, every label prints clean, every email signature is current — all without a design ticket. The platform handles recurring operationalised creative. It is deliberately not a bespoke creative tool — designers still own flagship work.
 
 ### Where it fits in the landscape
 
@@ -34,7 +34,7 @@ The outcome is **brand abundance**: every event has correct signage, every CVE a
 
 The gap is clear: nothing in the existing landscape gives us constraints-first, offline-capable, low-skill, internally accessible output. Lolly even includes an open canvas — **Layout Studio** — where colours, type and assets conform to the brand globals, so free arrangement stays constraints-first. What it is **not** is an unconstrained design suite: designers continue to use Illustrator and Figma for bespoke flagship work. Permutations can be assembled with this tool.
 
-**Use it for:** Rapid generation of operationalised creative assets — event tiles, name badges, signatures, CVE alerts, QR codes, social cards.
+**Use it for:** Rapid generation of operationalised creative assets — event tiles, name badges, signatures, CVE alerts, QR codes, social cards, consignment labels, structured reports.
 
 **Do not use it for:** Bespoke hero content.
 
@@ -389,8 +389,8 @@ The split is enforced — there are no cross-imports from `engine/` to `tools/` 
 | **Establish formal tool roadmap** | Late 2026 | Customer reference kits, AI design ingest, GET/URL request mode |
 | **On-device privacy utilities** | 🚧 In progress | Content-transform tools that process *your own* file locally (file in → clean file out), replacing exfiltration to single-purpose SaaS. **Done:** `file` input type + `exportFile` transform path + `privacy:"on-device"` conventions (no watermark/provenance) + **Strip Hidden Data** (JPEG/PNG/SVG/PDF metadata, PDF via the `host.pdf` bridge) and **Text Helper** (the on-device workbench for the everyday paste-into-a-website jobs — JSON format, JWT decode, Base64, URL encode/decode, SHA hashing, plus a Novelty group). **Next:** crop/resize, image convert/compress; then a `host.image` codec bridge (spec: `plans/exfiltration-app-content.md`) |
 | **Design tokens (DTCG)** | 🚧 Colour shipped | Brand primitives as canonical [W3C Design Tokens (DTCG)](https://www.designtokens.org/TR/drafts/format/) — the format [Penpot imports/exports](https://help.penpot.app/user-guide/design-systems/design-tokens/). **Done:** colour tokens (`suse/tokens/brand`), `host.tokens` bridge, picker swatches + reference-linked values (spec: `docs/design-tokens.md`). **Next:** dimension/type tokens, Penpot import/export, user tokens in the transfer bundle (`tokens.json`) |
-| **MCP agent endpoint (render)** | ✅ Done | An [MCP](https://modelcontextprotocol.io) server exposes the catalogue + render path as callable tools (`lolly_list_tools` / `describe_tool` / `build_url` / `render` / `transform`) so any agent can produce on-brand assets — add it to any MCP client as a custom connector (OAuth 2.1) or point a CLI/HTTP client at it with a bearer token. Live at `mcp.lolly.tools` (full endpoint: raster/PDF/animation/video via a hosted headless browser) and `lolly.tools/api/mcp` (serverless browser-free tier). Distinct from the Penpot *authoring* MCP below, which is about tool **creation** (spec: `plans/mcp-server.md`; guide: `docs/mcp.md` + `docs/ai-agents.md`) |
-| **Penpot file ingest as tools** | 2027+ | Import a Penpot file and surface it *as a Lolly tool* (declarative, constraint-first), turning designs authored in Penpot into deterministic, on-brand generators |
+| **MCP agent endpoint (render)** | ✅ Done | An [MCP](https://modelcontextprotocol.io) server exposes the catalogue + render path as callable tools (`lolly_list_tools` / `describe_tool` / `build_url` / `render` / `transform`) so any agent can produce finished, rule-bound assets — add it to any MCP client as a custom connector (OAuth 2.1) or point a CLI/HTTP client at it with a bearer token. Live at `mcp.lolly.tools` (full endpoint: raster/PDF/animation/video via a hosted headless browser) and `lolly.tools/api/mcp` (serverless browser-free tier). Distinct from the Penpot *authoring* MCP below, which is about tool **creation** (spec: `plans/mcp-server.md`; guide: `docs/mcp.md` + `docs/ai-agents.md`) |
+| **Penpot file ingest as tools** | 2027+ | Import a Penpot file and surface it *as a Lolly tool* (declarative, constraint-first), turning designs authored in Penpot into deterministic generators |
 | **MCP + Penpot extension (online-only authoring)** | 2027+ | A Penpot MCP server articulates new tools with AI — the most visual way to create deterministic templates: a brand-informed first round, perfected with a human in the loop, targeting one-shot new contexts over time. Tool *creation* is online-only; the tools it produces run anywhere |
 | **RBAC + SUSE ID** | 2027+ | Gate specific tools behind SUSE ID; multi-device saved state; Google Drive ingest/export |
 

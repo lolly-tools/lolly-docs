@@ -1,6 +1,6 @@
 # The Lolly MCP server
 
-Lolly ships a native **[Model Context Protocol](https://modelcontextprotocol.io) server** — a single endpoint any MCP client (an agent runtime, an IDE, a CLI, a hosted assistant) connects to directly. It exposes the tool catalogue and the render path as callable tools, so an agent can discover a tool, fill its declared inputs, and get back an on-brand file plus an editable `lolly.tools` link. Because tools sync to the server as **data**, new tools appear with no server update.
+Lolly ships a native **[Model Context Protocol](https://modelcontextprotocol.io) server** — a single endpoint any MCP client (an agent runtime, an IDE, a CLI, a hosted assistant) connects to directly. It exposes the tool catalogue and the render path as callable tools, so an agent can discover a tool, fill its declared inputs, and get back a finished file plus an editable `lolly.tools` link. Because tools sync to the server as **data**, new tools appear with no server update.
 
 It is the programmatic sibling of [driving Lolly from a URL](/info/ai-agents.html): same render path, same reproducible output — just reached over MCP instead of a hand-built link.
 

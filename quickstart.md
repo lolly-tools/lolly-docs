@@ -1,6 +1,6 @@
 # Quickstart
 
-Lolly turns your brand into a set of tools anyone can use to make finished, on-brand files — images, PDFs, social cards, video — by filling in a few fields. There's nothing to learn and nothing to upload: it all runs on your device, online or off.
+Lolly turns your rules — colours, type, layouts, logic — into tools anyone can use to make finished files: images, PDFs, social cards, video, by filling in a few fields. There's nothing to learn and nothing to upload: it all runs on your device, online or off.
 
 This is the one page to read first. Two things get you productive: **make Lolly yours** (point it at your brand), and **bring in what you already have** (your design files and tokens). Everything else is a link away.
 
@@ -56,7 +56,7 @@ The whole import happens **on your device** — the file is parsed in your brows
 
 ### From a one-off to a template
 
-Here's the payoff: an imported layout is an ordinary Layout Studio session, so once you **save** it, it lives at a URL. Anyone with Lolly can open that URL, change the words, swap an image, and render their own version — no design app, no way to knock it off-brand. A once-off design becomes a reusable tool. That's the whole idea, reached without writing a line of configuration.
+Here's the payoff: an imported layout is an ordinary Layout Studio session, so once you **save** it, it lives at a URL. Anyone with Lolly can open that URL, change the words, swap an image, and render their own version — no design app, and the locked parts stay locked. A once-off design becomes a reusable tool. That's the whole idea, reached without writing a line of configuration.
 
 ### Open data and open tools
 
@@ -68,7 +68,7 @@ With a brand active and your material in hand, every tool produces a finished fi
 
 - **Render** any tool to **SVG, PDF, PNG, JPG, WebP, video**, and more — at true print sizes and physical units when you need them. See [Exporting & formats](/info/exporting.html).
 - **Share a link.** Every tool state is a URL, so a finished asset is reproducible and parameter-addressable — commit the link, regenerate on demand.
-- **Do it in bulk.** Drive a template from a spreadsheet in the [batch grid](/info/exporting.html): one on-brand asset per row.
+- **Do it in bulk.** Drive a template from a spreadsheet in the [batch grid](/info/exporting.html): one finished asset per row.
 - **Automate it.** The same render runs from the [CLI](/info/cli.html) and from an [AI agent](/info/ai-agents.html) — a URL is the API.
 
 ## Where to go next

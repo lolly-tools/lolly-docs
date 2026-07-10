@@ -19,7 +19,7 @@ You don't always start from a blank manifest. If the layout already exists in **
 
 A finished file — a native Figma `.fig`, a Penpot export, or *any SVG* (InDesign and Illustrator export it, and nearly every design app can) — is parsed on your device and lands on the free canvas as editable boxes: text stays retypable, shapes stay shapes, images join your library, and type and colours conform to the brand globals. From there it's an ordinary session, so it already behaves like a tool:
 
-- **Save it and it's a reusable template** at a URL — anyone with Lolly can open, refill and render it, on-brand, with no design app.
+- **Save it and it's a reusable template** at a URL — anyone with Lolly can open, refill and render it — locked parts still locked — with no design app.
 - **Mix in other tools.** Drop a QR code, a live chart, or another render into any box through the asset picker; embedded tools stay live and re-render on load.
 - **Render and scale** through the same deterministic export path — SVG/PDF/PNG/video, the batch grid, Projects folders.
 
@@ -465,7 +465,7 @@ A tool can embed **another tool's rendered output** as an image instead of re-im
 - String `inputs` values are **Handlebars**, hydrated against your tool's own context (its input values + extras), so a child input can bind to a parent value — e.g. `"url": "{{url}}"`.
 - `format` (defaults to the child tool's first declared format, `render.formats[0]`) fixes the child render; `width`/`height` (px) default to the child's native size. **Compose any tool's render: an `svg` child stays a true vector when the parent exports to SVG or PDF and rasterises crisply for PNG; raster children (`png`, `jpg`/`jpeg`, `webp`) embed as images.** `svg` is the only format wired declaratively today (`event-name-badge` composes `qr-code` as `svg`) and is the best-supported. The enum also lists `pdf`, but a **PDF child is not supported as a source** — nothing inlines a PDF blob, so don't set `format: "pdf"`. HTML / Markdown / plain-text composition is **not** supported.
 - The composed value is a **normal asset URL**, so it works in a CSS `url()` background just as well as in an `<img src>` — bring another tool in exactly like a library image.
-- The child renders through the **same engine path** (pixel-identical, on-brand) and is never watermarked or provenance-stamped (it's an intermediate). Recursion is **depth- and cycle-guarded**: `a → b → a` fails gracefully and the slot stays empty, so always `{{#if}}`-guard the reference.
+- The child renders through the **same engine path** (pixel-identical) and is never watermarked or provenance-stamped (it's an intermediate). Recursion is **depth- and cycle-guarded**: `a → b → a` fails gracefully and the slot stays empty, so always `{{#if}}`-guard the reference.
 - Works wherever the shell can render the child to bytes; the lean CLI composes `svg` children. The mechanism is `host.compose` — see [Host API](/info/host-api.html).
 - **End users get this too, without a manifest.** Any `asset` input can take a pasted Lolly tool link (see [`asset` — library or device upload](#asset--library-or-device-upload) above); the host renders it through the same `host.compose` path. `composes` is for renders *you* wire into the layout; the pasted-link path is for the user to choose which tool fills an image slot.
 

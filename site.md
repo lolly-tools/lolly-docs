@@ -1,16 +1,16 @@
 
 # Lolly — Landing page copy
 
-On-brand files in seconds — no designer, no waiting, no guesswork.
+Production-ready files in seconds — design rules, layout logic, and export quality built in. No waiting, no guesswork.
 Runs on your own device. Nothing to upload, nothing to learn, works offline.
 
 ---
 
 ## Marketers
 
-### Everything on-brand, without the wait.
+### Everything finished, without the wait.
 
-You need a quote card, an event tile, a localized signature — today, not next sprint. Lolly hands it back finished and on-brand, even if you've never opened a design tool. The rules live in the template, so you can't get them wrong.
+You need a quote card, an event tile, a localized signature — today, not next sprint. Lolly hands it back finished and on-brand, even if you've never opened a design tool. The rules live in the template, so the output comes out right.
 
 - **Fill in a few fields, get the finished asset.** No fonts to pick, no colours to second-guess, no "is this the right logo?" The tool already knows. You bring the words.
 - **Infinite permutations, one source of truth.** Localize a quote card into 12 languages, swap a brand lockup across 40 campaigns, or generate every size variant for every placement — without touching the design. Drive it all from a spreadsheet in the batch grid: paste or import a CSV, get one finished asset per row.
@@ -26,7 +26,7 @@ You need a quote card, an event tile, a localized signature — today, not next 
 You're on the road, the deck is wrong, the customer asked for something specific. Lolly turns any device into an asset studio — no designer, no wait, no excuses.
 
 - **Wait on nothing.** If you're on the road, there are no days left before your meeting, you need assets now. Generate them.
-- **One person army.** The power of a coordinated global campaign in the palm of your hand. Every rep, every region, always on-brand.
+- **One person army.** The power of a coordinated global campaign in the palm of your hand. Every rep, every region, the same polish.
 - **World class experience.** Nothing looks rushed even though it was rendered instantly. Nothing is a one-off — so every interaction gets a little more polished than the last.
 - **Wow your team is fast!** They're asleep. This was solved the first time I needed it.
 
@@ -45,6 +45,19 @@ Build your info-editorial style once, then generate publication-quality assets f
 
 ---
 
+## Operations
+
+### Industrial rigour for everyday output.
+
+Not everything is marketing. Consignment labels, badge runs, compliance one-pagers, incident notices — output where the layout is load-bearing and the data can't be wrong. Lolly treats structured content with the same rigour as elite design.
+
+- **Structured data in, exact output.** Feed a CSV or JSON table and every field lands precisely where the template expects it — one finished file per row.
+- **Physical precision.** Real units (mm/cm/in/pt), true DPI, bleed and crop marks. A label printer or a print shop gets exactly what it needs.
+- **Logic runs inside the tool.** Barcodes, date maths, conditional layouts, contrast checks — computed at render time, not by hand.
+- **Deterministic by design.** Same inputs, same file, every time. Auditable, repeatable, automatable from the CLI or a pipeline.
+
+---
+
 ## Media & Creatives
 
 ### Stop doing things machines do best.
@@ -52,7 +65,7 @@ Build your info-editorial style once, then generate publication-quality assets f
 You design systems and solve problems, not one-offs. Lolly is the execution layer that turns your design decisions into tools your whole organization can use — without you in the loop for every asset.
 
 - **This is the frontier.** Advanced filters, compositing, animation, generative design — the platform has no ceiling. Every web technology is available to the template author. Do more than any creative suite would allow - with all the power to get finished production quality.
-- **Tools compose tools.** One tool can embed another tool's output as an on-brand asset — a name badge that renders its own QR code, a card that drops in a live chart — with no design tool and no manual compositing.
+- **Tools compose tools.** One tool can embed another tool's output as a live asset — a name badge that renders its own QR code, a card that drops in a live chart — with no design tool and no manual compositing.
 - **Author tools, not files.** Build a template that generates 10,000 social cards rather than making 10,000 social cards. Your time goes to the design problem, not the production run.
 - **Eliminate the tedious.** Optimal typesetting, logo placement, map pin positioning, color contrast checks, export sizing — all resolved at the template layer. You define the rules once, leave the repetition to the machine.
 - **Lock what shouldn't change, free what should.** Hard-code the brand constraints. Expose only the variables that are actually meant to vary. The tool becomes the creative guardrail.
@@ -137,7 +150,7 @@ Every time someone uploads a file to a third-party service to "just make it look
 
 Think of it like a vending machine for design. Make a selection, get a result. Every time.
 
-A tool is a ready-to-use creative template that knows exactly what it's making and how. Give it a headline, a date, a number — and it produces a finished, on-brand asset.
+A tool is a ready-to-use creative template that knows exactly what it's making and how. Give it a headline, a date, a number — and it produces a finished asset, to spec.
 
 No design experience needed. No decisions about fonts, colors, or spacing — the tool already knows best. Whether you're a designer, a marketer, a developer, or an AI agent, the output is the same.
 

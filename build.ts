@@ -21,7 +21,7 @@ const REPO_URL = 'https://github.com/lolly-tools/lolly';
 const FOUNDED_BY = `<a class="founded-badge" href="https://www.suse.com" target="_blank" rel="noopener" aria-label="Founded by SUSE"><img src="/info/founded-by.svg" alt="Founded by SUSE"></a>`;
 const OG_IMAGE = `${SITE_URL}/og.png`;
 const OG_LOGO = `${SITE_URL}/info/icon-normal.png`;
-const SITE_DESCRIPTION = 'Lolly: constraint-first, template-driven platform for generating on-brand creative assets at scale.';
+const SITE_DESCRIPTION = 'Lolly: constraint-first, template-driven platform for generating production-ready creative and content assets at scale.';
 // Landing-page <title>/share title — the brand tagline (matches the web shell's
 // index.html). Other pages use "<page title> — Lolly", so this is landing-only.
 const LANDING_TITLE = 'Lolly — assets that stay the same so everything else can change';
@@ -735,8 +735,8 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
       title: 'It stays editable',
       desc: 'Text stays text, shapes stay shapes, images join your library. You keep working on the design — you never repaint a screenshot.' },
     { icon: `<svg viewBox="0 0 24 24" ${S}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>`,
-      title: 'It arrives on-brand',
-      desc: 'Fonts remap to the brand faces and every fill passes the same colour guard as a native box. A foreign artboard lands already governed.' },
+      title: 'It arrives conformed',
+      desc: 'Fonts remap to your faces and every fill passes the same colour guard as a native box. A foreign artboard lands already governed.' },
     { icon: `<svg viewBox="0 0 24 24" ${S}><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>`,
       title: 'It becomes a template',
       desc: 'Save it and the layout is a reusable, URL-addressable tool — one anyone with Lolly can open, refill and render. No design app required.' },
@@ -747,7 +747,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
     <div class="import-lede reveal">
       <span class="import-eyebrow">Bring what you've already made</span>
       <h2>Your design files aren't stranded</h2>
-      <p class="import-lead">Finished work in <strong>Figma, Penpot, Illustrator, InDesign or any SVG app</strong> doesn't have to stay locked in one app. Open <strong>Layout Studio</strong>, click <strong>Import a design</strong>, and the file opens as a living layout — not a flattened picture. Every layer becomes an editable box, ready to keep working on, mix with tools, and render on brand.</p>
+      <p class="import-lead">Finished work in <strong>Figma, Penpot, Illustrator, InDesign or any SVG app</strong> doesn't have to stay locked in one app. Open <strong>Layout Studio</strong>, click <strong>Import a design</strong>, and the file opens as a living layout — not a flattened picture. Every layer becomes an editable box, ready to keep working on, mix with tools, and render through the same rules.</p>
     </div>
     <div class="import-sources reveal reveal-1">
       ${IMPORT_SOURCES.map(s => `<div class="import-source">
@@ -932,17 +932,19 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   // and the Lolly way literally side by side (friction → relief), left vs right.
   const OLD_VS_LOLLY = [
     { pain: 'Email a brief to the design team, then wait days for one small graphic.',
-      relief: 'Fill in a few fields. The finished, on-brand asset is ready in seconds.' },
+      relief: 'Fill in a few fields. The finished asset is ready in seconds.' },
     { pain: 'Guess at the right font, colour and logo — and hope it passes brand review.',
-      relief: 'The brand rules are baked into the tool. It can’t come out off-brand.' },
+      relief: 'The design rules are baked into the tool. They bend, not break. ' },
     { pain: 'Upload a contract, payslip or private photo to a random free website to convert or crop it.',
-      relief: 'Everything runs on your own device. Nothing is uploaded; nothing leaves.' },
+      relief: 'Everything runs on your own device. Nothing is uploaded; nothing leaves the responsible individuals device.' },
     { pain: 'Re-make the same badge, card or banner a hundred times by hand.',
       relief: 'Paste a spreadsheet. Get a hundred finished, print-ready files at once.' },
     { pain: '“Which version is the latest?” — hunting through Slack threads and shared drives.',
       relief: 'The asset is a link. Same inputs, same file, every single time.' },
     { pain: 'No signal on the plane, or a locked-down network — so you’re simply blocked.',
       relief: 'Works fully offline, on any device, once it has loaded once.' },
+    { pain: 'Embargoed content:  Comms professionals are locked out of engaging collaborators securely.',
+      relief: 'lock, encrypt, and password files, zips, and share links - all with zero internet' },
   ];
   const IC_ANXIETY = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`;
   const IC_BOTTLE  = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>`;
@@ -1053,7 +1055,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
         <span class="pathway-ic" aria-hidden="true">${ICONS.media}</span>
         <span class="pathway-eyebrow">For Creators</span>
         <span class="pathway-name">Make things</span>
-        <span class="pathway-desc">Finished, on-brand files in seconds — no design tool, no waiting. The advantages, and how to get the most from the app.</span>
+        <span class="pathway-desc">Finished files in seconds — no design tool, no waiting. The advantages, and how to get the most from the app.</span>
         <span class="pathway-go">Explore →</span>
       </a>
       <a class="pathway-card" href="/info/builders.html">
@@ -2178,7 +2180,7 @@ function wrapPage(page: Page, content: string, ogSlugs: Set<string>) {
   // A page with its own generated card (subtitle = its title) points share tags at
   // it; the landing page and any page that failed generation keep the canonical og.png.
   const ogImage    = (!isLanding && ogSlugs?.has(page.slug)) ? `${SITE_URL}/info/og/${page.slug}.png` : OG_IMAGE;
-  const ogImageAlt = isLanding ? 'Lolly — on-brand creative tools' : `Lolly — ${page.title}`;
+  const ogImageAlt = isLanding ? 'Lolly — creative tools with the rules built in' : `Lolly — ${page.title}`;
 
   const body = isLanding ? content : `
 <div class="docs-wrap">

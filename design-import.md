@@ -2,7 +2,7 @@
 
 Bring a finished design **out of Figma, Penpot, Illustrator or InDesign and into Lolly** — not as a frozen picture, but as a live, editable layout you can keep working on, mix with tools, and render through Lolly's deterministic export path. Like everything else, the whole import happens **on your device**: the file is parsed in your browser and nothing is uploaded.
 
-The good news for everything you've already made: none of it is stranded in the app you drew it in. A design you spent hours on in another tool arrives as an editable, on-brand session — and once you save it, it's a reusable template anyone with Lolly can open and refill.
+The good news for everything you've already made: none of it is stranded in the app you drew it in. A design you spent hours on in another tool arrives as an editable session, already conformed to your design globals — and once you save it, it's a reusable template anyone with Lolly can open and refill.
 
 Import lives in **[Layout Studio](/info/using.html)**, Lolly's free canvas: open it, click **Import a design** in the canvas toolbar, and choose a file. The artboard resizes to the file's frame and every layer becomes an editable box on the same open canvas — so an imported artboard is just an ordinary Layout Studio session from the first click.
 
@@ -51,9 +51,9 @@ An imported design exports exactly like a native one: **SVG, PDF, PNG, JPG, WebP
 
 This is where import stops being a conversion and starts being *authoring*. An imported layout is an ordinary [Layout Studio](/info/using.html) session, so it inherits everything a native session can do:
 
-- **It's a template anyone can reuse.** Save it and the layout lives at a URL. Anyone with Lolly can open that URL, change the words, swap an image, and render their own version — no design app, no design skill, and no way to knock the design off-brand. The person who imported the artboard becomes its author; everyone else just fills in the blanks.
+- **It's a template anyone can reuse.** Save it and the layout lives at a URL. Anyone with Lolly can open that URL, change the words, swap an image, and render their own version — no design app, no design skill, and the parts the author locked stay locked. The person who imported the artboard becomes its author; everyone else just fills in the blanks.
 - **It mixes with tools.** Any box can hold another Lolly tool as a live asset — a badge that renders its own QR code, a card with a live chart, another render dropped in through the asset picker. Those stay live and re-render on load; they're never flattened pictures. So an imported poster can carry generated, always-current content the original file never could.
-- **It scales like any session.** Drive it from the [batch grid](/info/exporting.html) (one finished asset per spreadsheet row), keep it in a [Projects folder](/info/using.html), or render a whole folder as one zip. A single imported design turns into a whole run of on-brand variants.
+- **It scales like any session.** Drive it from the [batch grid](/info/exporting.html) (one finished asset per spreadsheet row), keep it in a [Projects folder](/info/using.html), or render a whole folder as one zip. A single imported design turns into a whole run of consistent variants.
 
 For a *fully declarative* tool — sidebar inputs, hard-coded constraints, the works — you'd still author a `tool.json` by hand (see [Authoring Tools](/info/authoring-tools.html)). Import gets you the fast, visual 90%: a governed, shareable, tool-embedding layout without writing a manifest.
 

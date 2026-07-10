@@ -24,7 +24,7 @@ New to the platform? The **[Quickstart](/info/quickstart.html)** gets a brand an
 - **[TUI](/info/tui.html)** — the interactive terminal shell.
 - **[MCP Server](/info/mcp.html)** — the native endpoint that lets an AI agent discover and run tools.
 - **[AI Agents](/info/ai-agents.html)** — driving Lolly from a model: a URL is the API.
-- **[Chrome Extension](/info/extension.html)** — capture a live URL as an on-brand asset.
+- **[Chrome Extension](/info/extension.html)** — capture a live URL as a reusable asset.
 
 ## Ship & operate it
 

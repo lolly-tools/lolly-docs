@@ -49,7 +49,7 @@ On narrow screens the layout reflows to one column:
 
 ## Controls (inputs)
 
-Tools expose only the inputs that are meant to vary — everything else (brand colours, layout, typography) is locked in by the tool author, so whatever you make is on-brand by construction. Inputs include text, sliders, colour pickers, dropdowns, dates, image pickers, and repeating row groups. Some are grouped under collapsible sections.
+Tools expose only the inputs that are meant to vary — everything else (colours, layout, typography, logic) is locked in by the tool author, so whatever you make meets the rules the author set. Inputs include text, sliders, colour pickers, dropdowns, dates, image pickers, and repeating row groups. Some are grouped under collapsible sections.
 
 **Reset:** *Clear changes* returns every input to its defaults.
 
