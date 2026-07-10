@@ -1,6 +1,6 @@
 # Lolly for Operators
 
-**A future-proof, defence-in-depth data-loss-prevention strategy masquerading as a creative platform.**
+**A future-proof, defence-in-depth data-loss-prevention & provenance strategy masquerading as a creative platform.**
 
 The organizational immune system that wraps around what you already do — so the routine creative work your teams need every day happens *inside* your perimeter instead of leaking out of it.
 

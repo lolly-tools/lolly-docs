@@ -21,7 +21,7 @@ Lolly isn't trying to be Canva or Figma. It sits where *central control of brand
 |---|---|---|---|---|---|
 | Mass content generation | partial | ✗ | ✗ | ✗ | **✓** |
 | Works fully offline | ✗ | ✗ | ✓ | partial | **✓** |
-| Template logic & hard constraints | ✗ | ✗ | ✗ | partial | **✓** |
+| Template logic & hard constraints | ✗ | partial | ✗ | partial | **✓** |
 | No design skill required | partial | ✓ | ✗ | ✗ | **✓** |
 | Automatic Content Credentials | ✗ | ✗ | partial | ✗ | **✓** |
 | Tools compose other tools | ✗ | ✗ | ✗ | ✗ | **✓** |

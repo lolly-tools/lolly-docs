@@ -18,17 +18,19 @@ The outcome is **brand abundance**: every event has correct signage, every CVE a
 
 ### Where it fits in the landscape
 
-| Capability | Canva | Brandfolder | Illustrator | Figma / Penpot | **Lolly** |
+| Capability | Canva | Brand portals | Illustrator | Figma / Penpot | **Lolly** |
 |---|---|---|---|---|---|
-| Mass content generation | partial | ✅ | partial | ✅ | ✅ |
-| Offline availability | ✅ | ❌ | ✅ | ❌ | ✅ |
-| Template logic / constraints | ❌ | ✅ | ❌ | ❌ | ✅ |
-| Generative design | ❌ | ✅ | partial | partial | ✅ |
-| Low skill required | ✅ | ✅ | ❌ | ❌ | ✅ |
-| Easy internal access | ❌ | ✅ | ❌ | ❌ | ✅ |
-| Intuitive editor (end user) | ✅ | ✅ | ❌ | ❌ | ✅ |
-| Intuitive editor (designer) | ✅ | ❌ | ✅ | ✅ | ❌ |
-| Live collaboration | ✅ | ❌ | ❌ | ✅ | ❌ |
+| Mass content generation | partial | ✗ | ✗ | ✗ | **✓** |
+| Works fully offline | ✗ | ✗ | ✓ | partial | **✓** |
+| Template logic & hard constraints | ✗ | partial | ✗ | partial | **✓** |
+| No design skill required | partial | ✓ | ✗ | ✗ | **✓** |
+| Automatic Content Credentials | ✗ | ✗ | partial | ✗ | **✓** |
+| Tools compose other tools | ✗ | ✗ | ✗ | ✗ | **✓** |
+| Open engine, not SaaS-locked | ✗ | ✗ | ✗ | partial | **✓** |
+| C2PA content credentials | ✗ | ✗ | ✗ | ✗ | **✓** |
+| Opt-in forensic-level provenance | ✗ | ✗ | ✗ | ✗ | **✓** |
+| Mobile and Desktop Apps | ✓ | ✗ | ✗ | partial | **✓** |
+| Command Line & TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
 The gap is clear: nothing in the existing landscape gives us constraints-first, offline-capable, low-skill, internally accessible output. Lolly even includes an open canvas — **Layout Studio** — where colours, type and assets conform to the brand globals, so free arrangement stays constraints-first. What it is **not** is an unconstrained design suite: designers continue to use Illustrator and Figma for bespoke flagship work. Permutations can be assembled with this tool.
 

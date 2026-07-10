@@ -1305,8 +1305,8 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .pathway-ic{align-self:flex-start;display:inline-flex;align-items:center;justify-content:center;width:2.75rem;height:2.75rem;margin-bottom:.35rem;border-radius:12px;color:#fff;background:linear-gradient(163deg,hsl(150 66% 51%),hsl(154 58% 33%));border:1px solid hsl(0 0% 100% / .3);box-shadow:inset 0 1px 0 hsl(0 0% 100% / .45),0 6px 16px -6px hsl(151 57% 40% / .75);transition:box-shadow .18s ease,transform .18s ease}
 .pathway-ic svg{width:1.45rem;height:1.45rem}
 .pathway-card:hover .pathway-ic{transform:translateY(-1px);box-shadow:inset 0 1px 0 hsl(0 0% 100% / .5),0 9px 22px -6px hsl(151 57% 40% / .9)}
-.pathway-eyebrow{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:var(--green)}
-.pathway-name{font-size:1.375rem;font-weight:700;color:#fff}
+.pathway-eyebrow{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:white;}
+.pathway-name{font-size:1.375rem;font-weight:700;color:var(--green)}
 .pathway-desc{font-size:.9375rem;line-height:1.55;color:rgba(255,255,255,.68);flex:1}
 .pathway-go{font-size:.9375rem;font-weight:600;color:var(--light);margin-top:.5rem}
 @media(max-width:820px){.pathways-grid{grid-template-columns:1fr}}
