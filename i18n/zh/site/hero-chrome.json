@@ -1,0 +1,31 @@
+{
+  "pilotTag": "原型",
+  "pilotText": "封闭试点进行中 · 正在强化以适配企业级规模",
+  "pilotAriaLabel": "Lolly 是一款内部原型,目前处于封闭试点阶段,正在强化以适配企业级规模",
+  "ctas": [
+    {
+      "href": "/",
+      "label": "启动应用 ↗",
+      "class": "btn btn-primary"
+    },
+    {
+      "href": "/info/quickstart.html",
+      "label": "快速入门 →",
+      "class": "btn btn-primary btn-quickstart"
+    },
+    {
+      "href": "/info/about.html",
+      "label": "了解更多",
+      "class": "btn btn-secondary"
+    }
+  ],
+  "trustChips": [
+    "100% 免费",
+    "无 Cookie",
+    "无需注册",
+    "支持离线使用",
+    "开源",
+    "隐私优先"
+  ],
+  "toolCountSuffix": "个示例工具已加载"
+}

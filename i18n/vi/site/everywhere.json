@@ -1,0 +1,19 @@
+{
+  "heading": "Tất cả,\nđúng như bạn,\ntrên mọi thiết bị",
+  "copy": "Chạy ngoại tuyến trên thiết bị của bạn, hoặc luôn sẵn sàng khi được lưu trữ trực tuyến — tùy bạn chọn.\nLolly Tools đều có thể hoạt động ở đó.",
+  "surfaces": [
+    { "icon": "surfaceWeb", "label": "Web" },
+    { "icon": "surfaceMacos", "label": "macOS" },
+    { "icon": "surfaceLinux", "label": "Linux" },
+    { "icon": "surfaceIos", "label": "iOS" },
+    { "icon": "surfaceAndroid", "label": "Android" },
+    { "icon": "surfaceCli", "label": "CLI" },
+    { "icon": "surfaceTui", "label": "TUI" }
+  ],
+  "modelsIntro": "Ba phương thức triển khai:",
+  "models": [
+    { "n": "1", "icon": "modelDeploy", "label": "Triển khai", "desc": "Đưa đến thiết bị qua MDM hiện có của bạn. Chạy hoàn toàn ngoại tuyến, đằng sau mọi tường lửa hay mạng cách ly — không gì rời khỏi thiết bị." },
+    { "n": "2", "icon": "modelServe", "label": "Phục vụ", "desc": "Một phiên bản được lưu trữ duy nhất, dùng được trên mọi trình duyệt. Không cần cài đặt — các bản cập nhật đã duyệt đến với mọi người ngay khi phát hành." },
+    { "n": "3", "icon": "modelHybrid", "label": "Kết hợp", "desc": "Ứng dụng cục bộ ngoại tuyến cộng với phiên bản web luôn cập nhật, dùng chung một thư viện công cụ — trên mọi hệ điều hành cùng lúc." }
+  ]
+}

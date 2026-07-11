@@ -1,0 +1,19 @@
+{
+  "heading": "Todo,\ntal como eres,\nen cualquier cosa",
+  "copy": "Ejecútalo sin conexión en tu dispositivo, o mantenlo siempre disponible alojado en línea, tú decides.\nLolly Tools puede funcionar ahí.",
+  "surfaces": [
+    { "icon": "surfaceWeb", "label": "Web" },
+    { "icon": "surfaceMacos", "label": "macOS" },
+    { "icon": "surfaceLinux", "label": "Linux" },
+    { "icon": "surfaceIos", "label": "iOS" },
+    { "icon": "surfaceAndroid", "label": "Android" },
+    { "icon": "surfaceCli", "label": "CLI" },
+    { "icon": "surfaceTui", "label": "TUI" }
+  ],
+  "modelsIntro": "Tres modos de entrega:",
+  "models": [
+    { "n": "1", "icon": "modelDeploy", "label": "Implementar", "desc": "Distribuye a los dispositivos mediante tu MDM actual. Funciona totalmente sin conexión, detrás de cualquier firewall o air-gap: nada sale del dispositivo." },
+    { "n": "2", "icon": "modelServe", "label": "Servir", "desc": "Una instancia alojada, usada en cualquier navegador. Nada que instalar: las actualizaciones aprobadas llegan a todos en el instante en que se publican." },
+    { "n": "3", "icon": "modelHybrid", "label": "Híbrido", "desc": "Apps locales sin conexión más una versión web siempre actualizada, compartiendo una única biblioteca de herramientas, en todos los sistemas operativos a la vez." }
+  ]
+}

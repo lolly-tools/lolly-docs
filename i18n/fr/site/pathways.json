@@ -1,0 +1,30 @@
+{
+  "title": "Trois façons de commencer",
+  "lead": "Commence par le [Démarrage rapide](/info/quickstart.html) — importe ta marque et sors ton premier fichier — puis suis le parcours qui te correspond.",
+  "cards": [
+    {
+      "href": "/info/creators.html",
+      "icon": "media",
+      "eyebrow": "Pour les créateurs",
+      "name": "Crée des choses",
+      "desc": "Des fichiers finis en quelques secondes — pas d'outil de design, pas d'attente. Les avantages, et comment tirer le meilleur parti de l'application.",
+      "cta": "Explorer →"
+    },
+    {
+      "href": "/info/builders.html",
+      "icon": "developers",
+      "eyebrow": "Pour les développeurs",
+      "name": "Créer et intégrer",
+      "desc": "Crée des outils, pilote-les depuis la CLI, MCP ou un agent, et déploie la plateforme. La documentation technique.",
+      "cta": "Lire la documentation →"
+    },
+    {
+      "href": "/info/operators.html",
+      "icon": "security",
+      "eyebrow": "Pour les opérateurs",
+      "name": "Déploie-le en toute sécurité",
+      "desc": "Une stratégie de prévention des pertes de données en profondeur déguisée en plateforme créative. Stratégie, sécurité et adoption.",
+      "cta": "Voir la stratégie →"
+    }
+  ]
+}

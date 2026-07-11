@@ -1,0 +1,23 @@
+{
+  "heading": "Công cụ",
+  "lead": "Một mẫu tự thân, khép kín.\nQuy tắc bố cục và phong cách, chỉ chờ dữ liệu",
+  "anatomy": [
+    { "file": "tool.json", "name": "Tệp khai báo", "desc": "Tên, đầu vào & siêu dữ liệu" },
+    { "file": "template.html", "name": "Mẫu", "desc": "HTML/CSS/JS tạo nên kết quả đầu ra" },
+    { "file": "hooks.js", "name": "Hooks", "desc": "Logic tùy chọn, chạy trong môi trường cô lập (sandbox)" }
+  ],
+  "features": [
+    { "icon": "toolFeatureStar", "title": "Một mẫu thông minh", "desc": "Tự biết bố cục, kiểu chữ, màu sắc và quy tắc thương hiệu của chính nó. Bạn chỉ cần mang nội dung tới — phần còn lại nó lo hết." },
+    { "icon": "toolFeaturePeople", "title": "Không cần kinh nghiệm thiết kế", "desc": "Được tạo một lần bởi người hiểu rõ thương hiệu. Những người còn lại chỉ cần điền vào chỗ trống." },
+    { "icon": "toolFeatureCode", "title": "Thiết kế như code", "desc": "HTML, CSS và JS thuần túy. Được quản lý phiên bản, có thể so sánh khác biệt (diff) và xem xét lại như bất kỳ tệp mã nguồn nào khác." },
+    { "icon": "toolFeatureMonitor", "title": "Không cần ứng dụng", "desc": "Mở `template.html` trong bất kỳ trình duyệt nào — nó hoạt động ngay. Công cụ chính là ứng dụng." },
+    { "icon": "toolFeatureShuffle", "title": "Bố cục canvas tự do", "desc": "Một số công cụ mở ra dưới dạng canvas thao tác trực tiếp — kéo, xoay và gắn các khối văn bản, hình dạng và hình ảnh, rồi xuất ra qua cùng một quy trình xác định." },
+    { "icon": "toolFeatureNested", "title": "Công cụ trong công cụ", "desc": "Xem một công cụ như một hình ảnh bên trong công cụ khác — một huy hiệu tự render mã QR riêng, một thẻ có biểu đồ trực tiếp — mà vẫn giữ nguyên sự thông minh: vẫn sống động, vẫn được render lại, không bao giờ là một hình ảnh phẳng, tĩnh." }
+  ],
+  "tryNow": {
+    "title": "Công cụ hoạt động tốt ngay cả khi đứng một mình.",
+    "desc": "Để xuất ra PNG, PDF, SVG, video và nhiều định dạng khác — hãy dùng nền tảng Lolly.",
+    "cta": "Mở ứng dụng ↗",
+    "href": "/"
+  }
+}

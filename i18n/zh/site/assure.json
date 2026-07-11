@@ -1,0 +1,18 @@
+{
+  "eyebrow": "来源与隐私",
+  "heading": "证明你的创作。\n保留属于你的一切。",
+  "lead": "每一张你导出的图片、PDF 或视频都可以携带一个 **Content Credential**——由 [C2PA](https://c2pa.org) 支持的防篡改印记,完全在你的设备上生成。它证明该文件自离开 Lolly 后从未被更改;一旦你注册身份,还会记录是谁签署的。",
+  "illustration": "illusCheck",
+  "checks": [
+    { "title": "默认防篡改", "desc": "该印记覆盖每一个导出的字节。哪怕只改动一个像素,任何 C2PA 验证工具都能检测到。" },
+    { "title": "在你的设备上签名", "desc": "你的签名密钥在本地生成,永远不会离开设备——就连 Lolly 也无法读取。" },
+    { "title": "任何人都可离线验证", "desc": "文件自带证明。可在 Verify 标签页、CLI 或任何 C2PA 验证工具中检查——无需上传任何内容。" }
+  ],
+  "cards": [
+    { "icon": "assureEyeOff", "title": "没有任何东西离开你的设备", "desc": "没有云端渲染,没有遥测,没有数据分析。你创作的内容始终留在你的电脑上。" },
+    { "icon": "assureScan", "title": "本地清除与加密锁定", "desc": "清除隐藏数据会在本地移除 EXIF 和元数据。为 PDF、下载文件或分享链接设置密码进行加密,该密码永远不会离开你的设备。" },
+    { "icon": "assureServer", "title": "自托管或物理隔离", "desc": "没有服务器,没有数据库,没有后端。完全在你的防火墙之后运行,彻底离线。" }
+  ],
+  "cta": "Content Credentials 的工作原理 →",
+  "ctaHref": "/info/content-credentials-identity.html"
+}

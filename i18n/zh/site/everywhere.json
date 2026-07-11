@@ -1,0 +1,19 @@
+{
+  "heading": "全部，\n如你所是，\n无所不在",
+  "copy": "离线运行在你的设备上，或托管在线随时可用，由你决定。\nLolly Tools 都能在那里运行。",
+  "surfaces": [
+    { "icon": "surfaceWeb", "label": "网页" },
+    { "icon": "surfaceMacos", "label": "macOS" },
+    { "icon": "surfaceLinux", "label": "Linux" },
+    { "icon": "surfaceIos", "label": "iOS" },
+    { "icon": "surfaceAndroid", "label": "Android" },
+    { "icon": "surfaceCli", "label": "CLI" },
+    { "icon": "surfaceTui", "label": "TUI" }
+  ],
+  "modelsIntro": "三种交付方式：",
+  "models": [
+    { "n": "1", "icon": "modelDeploy", "label": "部署", "desc": "通过你现有的 MDM 分发到设备。完全离线运行，可用于任何防火墙或物理隔离环境——没有任何数据离开设备。" },
+    { "n": "2", "icon": "modelServe", "label": "托管", "desc": "一个托管实例，可在任意浏览器中使用。无需安装——获批的更新一经发布即可触达所有人。" },
+    { "n": "3", "icon": "modelHybrid", "label": "混合", "desc": "离线本地应用加上始终保持最新的网页版本，共享同一个工具库——同时覆盖所有操作系统。" }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "eyebrow": "Provenance et confidentialité",
+  "heading": "Prouve ce que tu as créé.\nGarde ce qui t'appartient.",
+  "lead": "Chaque image, PDF ou vidéo que tu exportes peut porter un **Content Credential** — un sceau [C2PA](https://c2pa.org) inviolable, créé entièrement sur ton appareil. Il prouve que le fichier n'a pas changé depuis sa sortie de Lolly, et une fois que tu as enrôlé une identité, il enregistre qui l'a signé.",
+  "illustration": "illusCheck",
+  "checks": [
+    { "title": "Altération détectable par défaut", "desc": "Le sceau couvre chaque octet exporté. Change un seul pixel et n'importe quel validateur C2PA le détecte." },
+    { "title": "Signé sur ton appareil", "desc": "Ta clé de signature est générée localement et ne quitte jamais l'appareil — même Lolly ne peut pas la lire." },
+    { "title": "Vérifiable par n'importe qui, hors ligne", "desc": "Le fichier porte sa propre preuve. Vérifie-la dans l'onglet Verify, la CLI, ou n'importe quel validateur C2PA — rien n'est envoyé." }
+  ],
+  "cards": [
+    { "icon": "assureEyeOff", "title": "Rien ne quitte ton appareil", "desc": "Pas de rendu cloud, pas de télémétrie, pas d'analytics. Ce que tu crées reste sur ta machine." },
+    { "icon": "assureScan", "title": "Nettoyage et verrouillage, sur l'appareil", "desc": "Strip Hidden Data supprime les données EXIF et les métadonnées en local. Verrouille un PDF, un téléchargement ou un lien de partage avec un mot de passe qui ne quitte jamais ton appareil." },
+    { "icon": "assureServer", "title": "Auto-hébergement ou air-gap", "desc": "Pas de serveur, pas de base de données, pas de backend. Fonctionne entièrement derrière ton pare-feu, complètement hors ligne." }
+  ],
+  "cta": "Comment fonctionnent les Content Credentials →",
+  "ctaHref": "/info/content-credentials-identity.html"
+}

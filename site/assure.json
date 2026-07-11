@@ -1,0 +1,18 @@
+{
+  "eyebrow": "Provenance & privacy",
+  "heading": "Prove what you made.\nKeep what's yours.",
+  "lead": "Every image, PDF, or video you export can carry a **Content Credential** — a tamper-evident [C2PA](https://c2pa.org) seal created entirely on your device. It proves the file hasn't changed since it left Lolly, and once you enrol an identity, records who signed it.",
+  "illustration": "illusCheck",
+  "checks": [
+    { "title": "Tamper-evident by default", "desc": "The seal covers every exported byte. Change one pixel and any C2PA validator flags it." },
+    { "title": "Signed on your device", "desc": "Your signing key is generated locally and never leaves the device — not even Lolly can read it." },
+    { "title": "Verifiable by anyone, offline", "desc": "The file carries its own proof. Check it in the Verify tab, the CLI, or any C2PA validator — nothing is uploaded." }
+  ],
+  "cards": [
+    { "icon": "assureEyeOff", "title": "Nothing leaves your device", "desc": "No cloud rendering, no telemetry, no analytics. What you make stays on your machine." },
+    { "icon": "assureScan", "title": "Scrub and lock, on-device", "desc": "Strip Hidden Data removes EXIF and metadata locally. Lock a PDF, a download, or a share link with a password that never leaves your device." },
+    { "icon": "assureServer", "title": "Self-host or air-gap", "desc": "No server, no database, no backend. Run entirely behind your firewall, fully offline." }
+  ],
+  "cta": "How Content Credentials work →",
+  "ctaHref": "/info/content-credentials-identity.html"
+}

@@ -1,0 +1,14 @@
+{
+  "panels": [
+    {
+      "illustration": "illusSound",
+      "heading": "Accessible, with sound",
+      "desc": "An interface that works the way you do — screen-reader friendly and fully keyboard-navigable throughout. Turn on gentle interface sounds, or switch to **Neurospicy Mode**: a calm focus beat that loops quietly while you work."
+    },
+    {
+      "illustration": "illusBulk",
+      "heading": "Organise, then render in bulk",
+      "desc": "Keep saved work in nested **Projects** folders. When it's time to ship, render a whole folder — or any handful you select — into a single zip. No spreadsheet, no batch grid required."
+    }
+  ]
+}

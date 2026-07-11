@@ -1,0 +1,30 @@
+{
+  "title": "Three ways in",
+  "lead": "Start with the [Quickstart](/info/quickstart.html) — get your brand in and your first file out — then follow the path that fits you.",
+  "cards": [
+    {
+      "href": "/info/creators.html",
+      "icon": "media",
+      "eyebrow": "For Creators",
+      "name": "Make things",
+      "desc": "Finished files in seconds — no design tool, no waiting. The advantages, and how to get the most from the app.",
+      "cta": "Explore →"
+    },
+    {
+      "href": "/info/builders.html",
+      "icon": "developers",
+      "eyebrow": "For Builders",
+      "name": "Author & integrate",
+      "desc": "Author tools, drive them from the CLI, MCP, or an agent, and deploy the platform. The technical documentation.",
+      "cta": "Read the docs →"
+    },
+    {
+      "href": "/info/operators.html",
+      "icon": "security",
+      "eyebrow": "For Operators",
+      "name": "Roll it out safely",
+      "desc": "A defence-in-depth data-loss-prevention strategy masquerading as a creative platform. Strategy, security, and adoption.",
+      "cta": "See the strategy →"
+    }
+  ]
+}

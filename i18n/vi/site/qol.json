@@ -1,0 +1,14 @@
+{
+  "panels": [
+    {
+      "illustration": "illusSound",
+      "heading": "Dễ tiếp cận, có âm thanh",
+      "desc": "Một giao diện hoạt động theo cách của bạn — thân thiện với trình đọc màn hình và có thể điều hướng hoàn toàn bằng bàn phím. Bật âm thanh giao diện nhẹ nhàng, hoặc chuyển sang **Chế độ Neurospicy**: một nhịp tập trung êm dịu, phát lặp nhẹ nhàng trong lúc bạn làm việc."
+    },
+    {
+      "illustration": "illusBulk",
+      "heading": "Sắp xếp, rồi xuất hàng loạt",
+      "desc": "Lưu công việc đã lưu vào các thư mục **Dự án** lồng nhau. Khi đến lúc bàn giao, hãy xuất cả một thư mục — hoặc bất kỳ nhóm nào bạn chọn — thành một file zip duy nhất. Không cần bảng tính, không cần lưới xử lý hàng loạt."
+    }
+  ]
+}

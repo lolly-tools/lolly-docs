@@ -1,0 +1,31 @@
+{
+  "pilotTag": "Prototype",
+  "pilotText": "Closed pilot in progress · hardening for enterprise scale",
+  "pilotAriaLabel": "Lolly is an internal prototype in a closed pilot, hardening for enterprise scale",
+  "ctas": [
+    {
+      "href": "/",
+      "label": "Launch App ↗",
+      "class": "btn btn-primary"
+    },
+    {
+      "href": "/info/quickstart.html",
+      "label": "Quickstart →",
+      "class": "btn btn-primary btn-quickstart"
+    },
+    {
+      "href": "/info/about.html",
+      "label": "Learn More",
+      "class": "btn btn-secondary"
+    }
+  ],
+  "trustChips": [
+    "100% Free",
+    "No Cookies",
+    "No Sign-up",
+    "Works offline",
+    "Open Source",
+    "Privacy First"
+  ],
+  "toolCountSuffix": "Example Tools Loaded"
+}

@@ -1,0 +1,23 @@
+{
+  "heading": "Herramientas",
+  "lead": "Una plantilla autónoma.\nReglas de diseño y estilo, a la espera de datos",
+  "anatomy": [
+    { "file": "tool.json", "name": "Manifiesto", "desc": "Nombre, entradas y metadatos" },
+    { "file": "template.html", "name": "Plantilla", "desc": "HTML/CSS/JS que renderiza el resultado" },
+    { "file": "hooks.js", "name": "Hooks", "desc": "Lógica opcional, en sandbox" }
+  ],
+  "features": [
+    { "icon": "toolFeatureStar", "title": "Una plantilla inteligente", "desc": "Conoce su propio diseño, tipografía, colores y reglas de marca. Tú aportas el contenido — ella se encarga de todo lo demás." },
+    { "icon": "toolFeaturePeople", "title": "No se necesita experiencia en diseño", "desc": "Creada una vez por alguien que conoce la marca. Todos los demás solo completan los espacios en blanco." },
+    { "icon": "toolFeatureCode", "title": "Diseño como código", "desc": "HTML, CSS y JS puros. Con control de versiones, comparable (diff) y revisable como cualquier otro archivo de código fuente." },
+    { "icon": "toolFeatureMonitor", "title": "No se necesita ninguna app", "desc": "Abre `template.html` en cualquier navegador — simplemente funciona. La herramienta es la app." },
+    { "icon": "toolFeatureShuffle", "title": "Diseño de lienzo libre", "desc": "Algunas herramientas se abren como un lienzo de manipulación directa — arrastra, rota y encaja cajas de texto, formas e imágenes, exportadas a través del mismo proceso determinista." },
+    { "icon": "toolFeatureNested", "title": "Herramientas dentro de herramientas", "desc": "Trata una herramienta como una imagen dentro de otra herramienta — una insignia que renderiza su propio código QR, una tarjeta con un gráfico en vivo — y mantén la inteligencia intacta: sigue viva, sigue renderizándose, nunca una imagen aplanada." }
+  ],
+  "tryNow": {
+    "title": "Las herramientas funcionan bien por sí solas.",
+    "desc": "Para renderizar a PNG, PDF, SVG, vídeo y más — usa la plataforma Lolly.",
+    "cta": "Iniciar app ↗",
+    "href": "/"
+  }
+}

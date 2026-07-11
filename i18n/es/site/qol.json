@@ -1,0 +1,14 @@
+{
+  "panels": [
+    {
+      "illustration": "illusSound",
+      "heading": "Accesible, con sonido",
+      "desc": "Una interfaz que funciona como tú lo haces: compatible con lectores de pantalla y totalmente navegable con teclado. Activa sonidos suaves de interfaz, o cambia a **Neurospicy Mode**: un ritmo de concentración tranquilo que se repite en bucle suavemente mientras trabajas."
+    },
+    {
+      "illustration": "illusBulk",
+      "heading": "Organiza y luego renderiza en bloque",
+      "desc": "Guarda tu trabajo en carpetas anidadas de **Proyectos**. Cuando llegue el momento de publicar, renderiza una carpeta entera —o cualquier selección que elijas— en un único zip. No hace falta ninguna hoja de cálculo ni cuadrícula por lotes."
+    }
+  ]
+}

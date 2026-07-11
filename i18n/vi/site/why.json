@@ -1,0 +1,19 @@
+{
+  "eyebrow": "Lý do chúng tôi xây dựng Lolly",
+  "heading": "Công việc sáng tạo hàng ngày\nkhông nên khó khăn đến thế.",
+  "lead": "Hầu hết mọi người không cần một studio thiết kế. Họ chỉ cần một tệp đúng chuẩn, ngay bây giờ — mà không làm sai lệch thương hiệu, không phải chờ đợi ai đó, và không phải gửi một tài liệu riêng tư cho một trang web mà họ chưa từng nghe tới. Lolly ra đời để xóa bỏ ba nỗi bực bội đó.",
+  "frustrations": [
+    { "icon": "anxiety", "title": "Nỗi lo lệch thương hiệu", "desc": "Nỗi sợ thầm lặng khi chọn sai màu hay sai phông chữ, rồi mắc lỗi trước công chúng." },
+    { "icon": "bottleneck", "title": "Nút thắt cổ chai", "desc": "Mọi tài sản nhỏ đều bị kẹt trong hàng chờ, đằng sau một nhà thiết kế bận rộn, một công cụ chậm chạp, hoặc thêm một vòng phê duyệt nữa." },
+    { "icon": "cloudDependence", "title": "Phụ thuộc vào đám mây", "desc": "Phải tải lên các tệp nhạy cảm chỉ để chuyển đổi hay cắt xén — rồi bị mắc kẹt ngay khi mất mạng." }
+  ],
+  "matrix": [
+    { "pain": "Gửi email yêu cầu cho đội thiết kế, rồi chờ nhiều ngày chỉ để có một hình ảnh nhỏ.", "relief": "Điền vài trường thông tin. Tệp hoàn chỉnh sẽ sẵn sàng chỉ trong vài giây." },
+    { "pain": "Đoán mò phông chữ, màu sắc và logo phù hợp — rồi hy vọng nó qua được vòng kiểm duyệt thương hiệu.", "relief": "Các quy tắc thiết kế đã được tích hợp sẵn trong công cụ. Chúng có thể linh hoạt, nhưng không bao giờ bị phá vỡ. " },
+    { "pain": "Tải lên một hợp đồng, phiếu lương hay ảnh riêng tư lên một trang web miễn phí ngẫu nhiên chỉ để chuyển đổi hay cắt xén.", "relief": "Mọi thứ đều chạy ngay trên thiết bị của bạn. Không có gì được tải lên; không có gì rời khỏi thiết bị của người chịu trách nhiệm." },
+    { "pain": "Phải làm lại thủ công cùng một huy hiệu, thẻ hay banner hàng trăm lần.", "relief": "Dán một bảng tính vào. Nhận ngay hàng trăm tệp hoàn chỉnh, sẵn sàng để in cùng một lúc." },
+    { "pain": "“Phiên bản nào là mới nhất?” — lục tung các luồng tin nhắn Slack và ổ đĩa chia sẻ.", "relief": "Tài sản chính là một đường liên kết. Cùng một đầu vào, cùng một tệp, mọi lúc mọi nơi." },
+    { "pain": "Không có sóng trên máy bay, hoặc mạng bị khóa chặt — thế là bạn bị chặn hoàn toàn.", "relief": "Hoạt động hoàn toàn ngoại tuyến, trên bất kỳ thiết bị nào, chỉ cần đã tải một lần." },
+    { "pain": "Nội dung bị cấm công bố:  Các chuyên gia truyền thông không thể an toàn hợp tác với cộng sự.", "relief": "khóa, mã hóa, và đặt mật khẩu cho tệp, tệp zip, và đường liên kết chia sẻ - tất cả mà không cần internet" }
+  ]
+}

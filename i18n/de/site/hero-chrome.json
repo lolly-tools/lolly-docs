@@ -1,0 +1,31 @@
+{
+  "pilotTag": "Prototyp",
+  "pilotText": "Geschlossenes Pilotprojekt läuft · Optimierung für den Einsatz im Unternehmensmaßstab",
+  "pilotAriaLabel": "Lolly ist ein interner Prototyp in einem geschlossenen Pilotprojekt und wird für den Einsatz im Unternehmensmaßstab optimiert",
+  "ctas": [
+    {
+      "href": "/",
+      "label": "App starten ↗",
+      "class": "btn btn-primary"
+    },
+    {
+      "href": "/info/quickstart.html",
+      "label": "Schnellstart →",
+      "class": "btn btn-primary btn-quickstart"
+    },
+    {
+      "href": "/info/about.html",
+      "label": "Mehr erfahren",
+      "class": "btn btn-secondary"
+    }
+  ],
+  "trustChips": [
+    "100 % kostenlos",
+    "Keine Cookies",
+    "Keine Registrierung",
+    "Funktioniert offline",
+    "Open Source",
+    "Datenschutz zuerst"
+  ],
+  "toolCountSuffix": "Beispiel-Tools geladen"
+}

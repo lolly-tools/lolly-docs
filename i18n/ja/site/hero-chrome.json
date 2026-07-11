@@ -1,0 +1,31 @@
+{
+  "pilotTag": "プロトタイプ",
+  "pilotText": "非公開パイロット実施中 ・ エンタープライズ規模に向けて強化中",
+  "pilotAriaLabel": "Lollyは、エンタープライズ規模への対応を強化中の非公開パイロットにおける社内プロトタイプです",
+  "ctas": [
+    {
+      "href": "/",
+      "label": "アプリを起動 ↗",
+      "class": "btn btn-primary"
+    },
+    {
+      "href": "/info/quickstart.html",
+      "label": "クイックスタート →",
+      "class": "btn btn-primary btn-quickstart"
+    },
+    {
+      "href": "/info/about.html",
+      "label": "詳しく見る",
+      "class": "btn btn-secondary"
+    }
+  ],
+  "trustChips": [
+    "100%無料",
+    "Cookie不要",
+    "登録不要",
+    "オフラインで動作",
+    "オープンソース",
+    "プライバシー第一"
+  ],
+  "toolCountSuffix": "個のサンプルツールを読み込み済み"
+}

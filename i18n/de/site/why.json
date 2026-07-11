@@ -1,0 +1,19 @@
+{
+  "eyebrow": "Warum wir Lolly entwickelt haben",
+  "heading": "Alltägliche kreative Arbeit\nsollte nicht so schwer sein.",
+  "lead": "Die meisten Menschen wollen kein Designstudio. Sie wollen eine korrekte Datei, und zwar sofort — ohne die Marke zu verletzen, ohne auf jemanden warten zu müssen und ohne ein privates Dokument an eine Website weiterzugeben, von der sie noch nie gehört haben. Lolly wurde geschaffen, um genau diese drei Frustrationen zu beseitigen.",
+  "frustrations": [
+    { "icon": "anxiety", "title": "Angst vor Markenfehlern", "desc": "Die stille Angst, die falsche Farbe oder Schriftart zu wählen und öffentlich einen Fehler zu machen." },
+    { "icon": "bottleneck", "title": "Der Flaschenhals", "desc": "Jedes kleine Asset steckt in einer Warteschlange fest — hinter einem beschäftigten Designer, einem langsamen Tool oder einer weiteren Freigabe." },
+    { "icon": "cloudDependence", "title": "Abhängigkeit von der Cloud", "desc": "Sensible Dateien hochladen, nur um sie zu konvertieren oder zuzuschneiden — und offline plötzlich aufgeschmissen sein." }
+  ],
+  "matrix": [
+    { "pain": "Ein Briefing per E-Mail an das Designteam schicken und dann tagelang auf eine kleine Grafik warten.", "relief": "Ein paar Felder ausfüllen. Das fertige Asset ist in Sekunden bereit." },
+    { "pain": "Bei Schriftart, Farbe und Logo raten — und hoffen, dass es das Markenreview besteht.", "relief": "Die Gestaltungsregeln sind fest im Tool verankert. Sie biegen sich, sie brechen nicht. " },
+    { "pain": "Einen Vertrag, eine Gehaltsabrechnung oder ein privates Foto auf eine beliebige kostenlose Website hochladen, nur um es zu konvertieren oder zuzuschneiden.", "relief": "Alles läuft auf dem eigenen Gerät. Nichts wird hochgeladen; nichts verlässt das Gerät der verantwortlichen Person." },
+    { "pain": "Dasselbe Badge, dieselbe Karte oder denselben Banner hundertmal von Hand neu erstellen.", "relief": "Eine Tabelle einfügen. Hundert fertige, druckfertige Dateien auf einen Schlag erhalten." },
+    { "pain": "„Welche Version ist die aktuelle?“ — auf der Suche in Slack-Threads und gemeinsamen Laufwerken.", "relief": "Das Asset ist ein Link. Gleiche Eingaben, gleiche Datei, jedes Mal." },
+    { "pain": "Kein Signal im Flugzeug oder ein gesperrtes Netzwerk — und schon ist man blockiert.", "relief": "Funktioniert vollständig offline, auf jedem Gerät, sobald es einmal geladen wurde." },
+    { "pain": "Gesperrte Inhalte:  Kommunikationsprofis können nicht sicher mit Mitwirkenden zusammenarbeiten.", "relief": "Dateien, ZIPs und Freigabelinks sperren, verschlüsseln und mit einem Passwort schützen - ganz ohne Internet" }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "eyebrow": "Pourquoi nous avons créé Lolly",
+  "heading": "Le travail créatif du quotidien\nne devrait pas être aussi compliqué.",
+  "lead": "La plupart des gens ne veulent pas d’un studio de design. Ils veulent un seul fichier correct, tout de suite — sans casser la marque, sans attendre après quelqu’un, et sans confier un document privé à un site web dont ils n’ont jamais entendu parler. Lolly existe pour éliminer ces trois frustrations.",
+  "frustrations": [
+    { "icon": "anxiety", "title": "L’angoisse du hors-charte", "desc": "Cette peur discrète de choisir la mauvaise couleur ou la mauvaise police et de se tromper en public." },
+    { "icon": "bottleneck", "title": "Le goulot d’étranglement", "desc": "Chaque petit visuel coincé dans une file d’attente, derrière un designer débordé, un outil lent, ou une validation de plus." },
+    { "icon": "cloudDependence", "title": "La dépendance au cloud", "desc": "Envoyer des fichiers sensibles juste pour les convertir ou les recadrer — et se retrouver bloqué dès qu’on est hors ligne." }
+  ],
+  "matrix": [
+    { "pain": "Envoyer un brief par e-mail à l’équipe design, puis attendre des jours pour un petit visuel.", "relief": "Remplis quelques champs. Le visuel fini est prêt en quelques secondes." },
+    { "pain": "Deviner la bonne police, la bonne couleur et le bon logo — et espérer que ça passe la validation de marque.", "relief": "Les règles de design sont intégrées à l’outil. Elles plient, mais ne cassent pas. " },
+    { "pain": "Envoyer un contrat, une fiche de paie ou une photo privée sur un site gratuit inconnu juste pour la convertir ou la recadrer.", "relief": "Tout fonctionne sur ton propre appareil. Rien n’est envoyé ; rien ne quitte l’appareil de la personne responsable." },
+    { "pain": "Refaire à la main le même badge, la même carte ou la même bannière une centaine de fois.", "relief": "Colle un tableur. Obtiens d’un coup une centaine de fichiers finis, prêts à imprimer." },
+    { "pain": "« C’est laquelle, la dernière version ? » — à fouiller dans des fils Slack et des drives partagés.", "relief": "Le visuel est un lien. Mêmes données, même fichier, à chaque fois." },
+    { "pain": "Pas de réseau dans l’avion, ou un réseau verrouillé — et te voilà bloqué, tout simplement.", "relief": "Fonctionne entièrement hors ligne, sur n’importe quel appareil, une fois chargé la première fois." },
+    { "pain": "Contenu sous embargo :  les pros de la communication n’ont aucun moyen sécurisé de collaborer avec des partenaires externes.", "relief": "verrouille, chiffre et protège par mot de passe fichiers, zips et liens de partage - sans connexion internet" }
+  ]
+}

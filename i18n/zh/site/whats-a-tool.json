@@ -1,0 +1,23 @@
+{
+  "heading": "工具",
+  "lead": "一个自包含的模板。\n版式规则与样式,等待数据填充",
+  "anatomy": [
+    { "file": "tool.json", "name": "清单", "desc": "名称、输入和元数据" },
+    { "file": "template.html", "name": "模板", "desc": "渲染输出的 HTML/CSS/JS" },
+    { "file": "hooks.js", "name": "钩子", "desc": "可选逻辑,沙盒化运行" }
+  ],
+  "features": [
+    { "icon": "toolFeatureStar", "title": "智能模板", "desc": "了解自己的版式、类型、颜色和品牌规则。你只需提供内容——其余的它都会处理。" },
+    { "icon": "toolFeaturePeople", "title": "无需设计经验", "desc": "由了解品牌的人编写一次,其他人只需填空即可。" },
+    { "icon": "toolFeatureCode", "title": "设计即代码", "desc": "纯 HTML、CSS 和 JS。像任何其他源文件一样,可版本控制、可比对差异、可审查。" },
+    { "icon": "toolFeatureMonitor", "title": "无需应用程序", "desc": "在任意浏览器中打开 `template.html`——它就能直接运行。工具本身就是应用。" },
+    { "icon": "toolFeatureShuffle", "title": "自由画布布局", "desc": "部分工具以可直接操作的画布形式打开——拖动、旋转并对齐文本框、形状和图像,并通过相同的确定性路径导出。" },
+    { "icon": "toolFeatureNested", "title": "工具中的工具", "desc": "把一个工具当作另一个工具中的图像来使用——比如一个能渲染自己二维码的徽章,或一张带实时图表的卡片——并保持其智能特性不变:依然是实时的,依然会重新渲染,而不是被拍平成一张静态图片。" }
+  ],
+  "tryNow": {
+    "title": "工具本身就能正常运行。",
+    "desc": "要渲染为 PNG、PDF、SVG、视频等格式——请使用 Lolly 平台。",
+    "cta": "启动应用 ↗",
+    "href": "/"
+  }
+}

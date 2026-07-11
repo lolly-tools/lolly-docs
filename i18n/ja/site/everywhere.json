@@ -1,0 +1,19 @@
+{
+  "heading": "すべてを、\nそのままの姿で、\nどこにでも",
+  "copy": "デバイス上でオフラインに動かすか、常時利用できるオンラインでホストするか、選ぶのはあなたです。\nLolly Tools はそこで動作します。",
+  "surfaces": [
+    { "icon": "surfaceWeb", "label": "Web" },
+    { "icon": "surfaceMacos", "label": "macOS" },
+    { "icon": "surfaceLinux", "label": "Linux" },
+    { "icon": "surfaceIos", "label": "iOS" },
+    { "icon": "surfaceAndroid", "label": "Android" },
+    { "icon": "surfaceCli", "label": "CLI" },
+    { "icon": "surfaceTui", "label": "TUI" }
+  ],
+  "modelsIntro": "配信モードは3つあります:",
+  "models": [
+    { "n": "1", "icon": "modelDeploy", "label": "デプロイ", "desc": "既存のMDM経由でデバイスに配布します。完全にオフラインで動作するため、ファイアウォールの内側やエアギャップ環境でも、デバイスの外にデータが出ることはありません。" },
+    { "n": "2", "icon": "modelServe", "label": "サーブ", "desc": "1つのホスト型インスタンスを、あらゆるブラウザから利用できます。インストール不要で、承認済みのアップデートはリリースと同時に全員に届きます。" },
+    { "n": "3", "icon": "modelHybrid", "label": "ハイブリッド", "desc": "オフラインで動くローカルアプリと、常に最新のWeb版を組み合わせ、1つのツールライブラリをすべてのOSで同時に共有します。" }
+  ]
+}

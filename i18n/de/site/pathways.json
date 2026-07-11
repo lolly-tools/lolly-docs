@@ -1,0 +1,30 @@
+{
+  "title": "Drei Wege zum Einstieg",
+  "lead": "Beginnen Sie mit dem [Schnellstart](/info/quickstart.html) — bringen Sie Ihre Marke ein und erhalten Sie Ihre erste Datei — und folgen Sie dann dem Weg, der zu Ihnen passt.",
+  "cards": [
+    {
+      "href": "/info/creators.html",
+      "icon": "media",
+      "eyebrow": "Für Kreative",
+      "name": "Dinge gestalten",
+      "desc": "Fertige Dateien in Sekunden – kein Design-Tool, kein Warten. Die Vorteile und wie Sie das Meiste aus der App herausholen.",
+      "cta": "Entdecken →"
+    },
+    {
+      "href": "/info/builders.html",
+      "icon": "developers",
+      "eyebrow": "Für Entwickler",
+      "name": "Erstellen & integrieren",
+      "desc": "Erstellen Sie Tools, steuern Sie sie über die CLI, MCP oder einen Agenten, und stellen Sie die Plattform bereit. Die technische Dokumentation.",
+      "cta": "Dokumentation lesen →"
+    },
+    {
+      "href": "/info/operators.html",
+      "icon": "security",
+      "eyebrow": "Für Betreiber",
+      "name": "Sicher einführen",
+      "desc": "Eine Defense-in-Depth-Strategie zur Vermeidung von Datenverlust, getarnt als kreative Plattform. Strategie, Sicherheit und Einführung.",
+      "cta": "Strategie ansehen →"
+    }
+  ]
+}

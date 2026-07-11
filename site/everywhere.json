@@ -1,0 +1,19 @@
+{
+  "heading": "All of it,\nas you are,\non anything",
+  "copy": "Run offline on your device, be always available hosted online, you decide.\nLolly Tools can work there.",
+  "surfaces": [
+    { "icon": "surfaceWeb", "label": "Web" },
+    { "icon": "surfaceMacos", "label": "macOS" },
+    { "icon": "surfaceLinux", "label": "Linux" },
+    { "icon": "surfaceIos", "label": "iOS" },
+    { "icon": "surfaceAndroid", "label": "Android" },
+    { "icon": "surfaceCli", "label": "CLI" },
+    { "icon": "surfaceTui", "label": "TUI" }
+  ],
+  "modelsIntro": "Three modes of delivery:",
+  "models": [
+    { "n": "1", "icon": "modelDeploy", "label": "Deploy", "desc": "Ship to devices through your existing MDM. Runs fully offline, behind any firewall or air-gap — nothing leaves the device." },
+    { "n": "2", "icon": "modelServe", "label": "Serve", "desc": "One hosted instance, used in any browser. Nothing to install — approved updates reach everyone the instant they ship." },
+    { "n": "3", "icon": "modelHybrid", "label": "Hybrid", "desc": "Offline local apps plus an always-current web version, sharing one tool library — across every OS at once." }
+  ]
+}

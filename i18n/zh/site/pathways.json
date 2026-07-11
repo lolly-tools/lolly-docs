@@ -1,0 +1,30 @@
+{
+  "title": "三种入门方式",
+  "lead": "先从[快速入门](/info/quickstart.html)开始——导入你的品牌并导出第一个文件——然后选择适合你的路径。",
+  "cards": [
+    {
+      "href": "/info/creators.html",
+      "icon": "media",
+      "eyebrow": "面向创作者",
+      "name": "创作内容",
+      "desc": "几秒钟内生成成品文件——无需设计工具,无需等待。了解其优势,以及如何充分利用这款应用。",
+      "cta": "探索 →"
+    },
+    {
+      "href": "/info/builders.html",
+      "icon": "developers",
+      "eyebrow": "面向开发者",
+      "name": "创建与集成",
+      "desc": "创建工具,通过 CLI、MCP 或代理驱动它们,并部署该平台。技术文档。",
+      "cta": "阅读文档 →"
+    },
+    {
+      "href": "/info/operators.html",
+      "icon": "security",
+      "eyebrow": "面向运营者",
+      "name": "安全地部署上线",
+      "desc": "一套披着创意平台外衣的纵深防御型数据防泄漏策略。战略、安全与推广采用。",
+      "cta": "查看策略 →"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "eyebrow": "Por qué creamos Lolly",
+  "heading": "El trabajo creativo diario\nno debería ser tan difícil.",
+  "lead": "La mayoría de la gente no quiere un estudio de diseño. Quiere un archivo correcto, ahora mismo — sin romper la marca, sin esperar a nadie y sin entregar un documento privado a una web que nunca ha oído mencionar. Lolly existe para eliminar esas tres frustraciones.",
+  "frustrations": [
+    { "icon": "anxiety", "title": "Ansiedad de salirse de la marca", "desc": "El temor silencioso de elegir el color o la tipografía equivocados y equivocarte en público." },
+    { "icon": "bottleneck", "title": "El cuello de botella", "desc": "Cada pequeño recurso atascado en una cola, detrás de un diseñador ocupado, una herramienta lenta o una aprobación más." },
+    { "icon": "cloudDependence", "title": "Dependencia de la nube", "desc": "Subir archivos sensibles solo para convertirlos o recortarlos — y quedarte varado en cuanto te falte conexión." }
+  ],
+  "matrix": [
+    { "pain": "Enviar un brief por correo al equipo de diseño y esperar días por un gráfico pequeño.", "relief": "Rellena unos pocos campos. El recurso terminado está listo en segundos." },
+    { "pain": "Adivinar la tipografía, el color y el logo correctos — y esperar que pase la revisión de marca.", "relief": "Las reglas de diseño están integradas en la herramienta. Se doblan, no se rompen. " },
+    { "pain": "Subir un contrato, una nómina o una foto privada a una web gratuita cualquiera para convertirla o recortarla.", "relief": "Todo se ejecuta en tu propio dispositivo. No se sube nada; nada sale del dispositivo de la persona responsable." },
+    { "pain": "Rehacer a mano la misma insignia, tarjeta o banner cien veces.", "relief": "Pega una hoja de cálculo. Obtén cien archivos terminados y listos para imprimir de una sola vez." },
+    { "pain": "«¿Cuál es la última versión?» — rebuscando en hilos de Slack y unidades compartidas.", "relief": "El recurso es un enlace. Mismos datos, mismo archivo, siempre." },
+    { "pain": "Sin cobertura en el avión, o una red bloqueada — así que simplemente te quedas sin poder trabajar.", "relief": "Funciona totalmente sin conexión, en cualquier dispositivo, una vez que se ha cargado una vez." },
+    { "pain": "Contenido embargado:  los profesionales de comunicación no pueden colaborar de forma segura con sus colaboradores.", "relief": "bloquea, cifra y protege con contraseña archivos, zips y enlaces para compartir - todo sin conexión a internet" }
+  ]
+}

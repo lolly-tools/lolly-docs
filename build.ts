@@ -452,8 +452,9 @@ function mdToHtml(md: string) {
 // build script. Each `##` heading is a question; the lines beneath it (up to the
 // next `##`) are the answer, in the same lightweight markdown the rest of the site
 // uses. Everything before the first `##` (title + maintainer notes) is ignored.
-function loadFaqs() {
-  const md = readFileSync(resolve(__dirname, 'faq.md'), 'utf8');
+function loadFaqs(lang: Lang = 'en') {
+  const localized = lang !== 'en' ? resolve(__dirname, 'i18n', lang, 'faq.md') : null;
+  const md = readFileSync(localized && existsSync(localized) ? localized : resolve(__dirname, 'faq.md'), 'utf8');
   const faqs: { q: string; a: string }[] = [];
   let cur: { q: string; a: string[] } | null = null;
   for (const line of md.split('\n')) {
@@ -469,9 +470,143 @@ function loadFaqs() {
   return faqs;
 }
 
+// ── Landing content files (docs/site/*.{json,md}) ────────────────────────────
+// The landing page's copy — headings, leads, card text — lives in these files so
+// editing it never touches this build script. Bespoke SVG icons/illustrations
+// stay in code (SITE_ICONS below) since they're graphics, not content a
+// non-developer edits; content files reference them by string key.
+// Locale-aware: a `docs/i18n/<lang>/site/<name>` translation is used when present,
+// else the English source at `docs/site/<name>` (fallback, not a 404 — same
+// contract as resolvePageSrc/loadFaqs).
+function siteContentPath(name: string, lang: Lang): string {
+  if (lang !== 'en') {
+    const localized = resolve(__dirname, 'i18n', lang, 'site', name);
+    if (existsSync(localized)) return localized;
+  }
+  return resolve(__dirname, 'site', name);
+}
+function loadSiteJson(name: string, lang: Lang = 'en'): any {
+  return JSON.parse(readFileSync(siteContentPath(name, lang), 'utf8'));
+}
+function loadSiteMd(name: string, lang: Lang = 'en'): string {
+  return readFileSync(siteContentPath(name, lang), 'utf8');
+}
+// `\n` in a JSON string field becomes a literal <br> — the convention every
+// multi-line heading/copy field in docs/site/*.json uses.
+const br = (s: string) => esc(s).replace(/\n/g, '<br>');
+
+const SITE_ICON_S = `fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"`;
+const SITE_ICON_S18 = `fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"`;
+
+// Every bespoke icon the landing content files reference by key. Consolidates
+// what used to be a dozen scattered `IC_*`/local-array consts inside
+// buildLandingContent so a content file can name an icon without any code nearby.
+const SITE_ICONS: Record<string, string> = {
+  // why-section frustrations
+  anxiety: `<svg viewBox="0 0 24 24" ${SITE_ICON_S18}><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`,
+  bottleneck: `<svg viewBox="0 0 24 24" ${SITE_ICON_S18}><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>`,
+  cloudDependence: `<svg viewBox="0 0 24 24" ${SITE_ICON_S18}><path d="M17.5 19a4.5 4.5 0 0 0 .5-8.97A6 6 0 0 0 6.3 8.4"/><path d="M13 16H7a4 4 0 0 1-.9-7.9"/><line x1="2" y1="2" x2="22" y2="22"/></svg>`,
+  // assure section
+  assureCheck: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>`,
+  assureEyeOff: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.9 4.24A9.1 9.1 0 0 1 12 4c7 0 10 8 10 8a13.2 13.2 0 0 1-1.67 2.68"/><path d="M6.6 6.6A13.5 13.5 0 0 0 2 12s3 8 10 8a9.7 9.7 0 0 0 5.4-1.6"/><line x1="2" y1="2" x2="22" y2="22"/></svg>`,
+  assureScan: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><line x1="7" y1="12" x2="17" y2="12"/></svg>`,
+  assureServer: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="6" rx="2"/><rect x="2" y="15" width="20" height="6" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>`,
+  // import section — flow steps + points
+  importFlowFile: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>`,
+  importFlowCanvas: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>`,
+  importFlowMix: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+  importFlowRender: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>`,
+  importPointEdit: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>`,
+  importPointShield: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>`,
+  importPointGrid: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>`,
+  // whats-a-tool features
+  toolFeatureStar: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+  toolFeaturePeople: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>`,
+  toolFeatureCode: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
+  toolFeatureMonitor: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`,
+  toolFeatureShuffle: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><polyline points="5 9 2 12 5 15"/><polyline points="9 5 12 2 15 5"/><polyline points="15 19 12 22 9 19"/><polyline points="19 9 22 12 19 15"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="12" y1="2" x2="12" y2="22"/></svg>`,
+  toolFeatureNested: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><rect x="3" y="3" width="18" height="18" rx="2"/><rect x="8" y="8" width="8" height="8" rx="1.5"/></svg>`,
+  // about-section items
+  aboutAnimals: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><circle cx="6" cy="7" r="3"/><circle cx="18" cy="7" r="3"/><circle cx="10" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="14" cy="12" r="1" fill="currentColor" stroke="none"/><ellipse cx="12" cy="15.5" rx="2" ry="1.5"/></svg>`,
+  aboutGem: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg>`,
+  // everywhere-section surfaces + delivery models
+  surfaceWeb: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`,
+  surfaceMacos: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>`,
+  surfaceLinux: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`,
+  surfaceIos: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>`,
+  surfaceAndroid: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><polyline points="9 2 9 7 15 7 15 2"/></svg>`,
+  surfaceCli: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>`,
+  // TUI = the CLI's terminal prompt (chevron + command line), but framed in a
+  // box with a divider (title bar) — the CLI icon, drawn as a full-screen app.
+  surfaceTui: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="9" x2="22" y2="9"/><polyline points="7 12 10 15 7 18"/><line x1="13" y1="18" x2="17" y2="18"/></svg>`,
+  modelDeploy: `<svg class="everywhere-model-icon" viewBox="0 0 24 24" ${SITE_ICON_S}><path d="M16.5 9.4 7.5 4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>`,
+  modelServe: `<svg class="everywhere-model-icon" viewBox="0 0 24 24" ${SITE_ICON_S}><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>`,
+  modelHybrid: `<svg class="everywhere-model-icon" viewBox="0 0 24 24" ${SITE_ICON_S}><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>`,
+  // Bespoke landing illustrations (site-style inline SVG), referenced by qol.json/assure.json.
+  // Sound: flowing sound waves + musical notes — the "assistive sound / focus beat" motif.
+  illusSound: `<svg viewBox="0 0 300 150" role="img" aria-label="Sound waves with musical notes" xmlns="http://www.w3.org/2000/svg">
+  <defs><linearGradient id="sndGrad" x1="0" y1="0" x2="300" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#008657"/><stop offset="1" stop-color="#30ba78"/></linearGradient></defs>
+  <path d="M0 105 Q37.5 138 75 105 T150 105 T225 105 T300 105" fill="none" stroke="#90ebcd" stroke-width="3" stroke-opacity=".45" stroke-linecap="round"/>
+  <path d="M0 96 Q37.5 61 75 96 T150 96 T225 96 T300 96" fill="none" stroke="url(#sndGrad)" stroke-width="5" stroke-linecap="round"/>
+  <g fill="#008657">
+    <ellipse cx="70" cy="60" rx="8" ry="5.5" transform="rotate(-20 70 60)"/>
+    <rect x="76.5" y="28" width="3" height="34" rx="1.5"/>
+    <path d="M79.5 28 q15 5 9 22 q2 -11 -9 -15 Z"/>
+  </g>
+  <g fill="#30ba78">
+    <ellipse cx="150" cy="54" rx="8" ry="5.5" transform="rotate(-20 150 54)"/>
+    <ellipse cx="190" cy="45" rx="8" ry="5.5" transform="rotate(-20 190 45)"/>
+    <rect x="156.5" y="24" width="3" height="32" rx="1.5"/>
+    <rect x="196.5" y="15" width="3" height="32" rx="1.5"/>
+    <path d="M156.5 24 L199.5 15 L199.5 23 L156.5 32 Z"/>
+  </g>
+</svg>`,
+  // Bulk: nested project folders/cards rendered into one zip package.
+  illusBulk: `<svg viewBox="0 0 300 150" role="img" aria-label="Nested project folders rendered into a single zip" xmlns="http://www.w3.org/2000/svg">
+  <rect x="24" y="48" width="70" height="84" rx="10" fill="#0c322c" opacity=".12" transform="rotate(-10 59 90)"/>
+  <rect x="30" y="42" width="70" height="84" rx="10" fill="#fff" stroke="#90ebcd" stroke-width="2" transform="rotate(-5 65 84)"/>
+  <rect x="36" y="36" width="70" height="84" rx="10" fill="#fff" stroke="#30ba78" stroke-width="2"/>
+  <rect x="46" y="48" width="50" height="30" rx="5" fill="#30ba78" opacity=".85"/>
+  <rect x="46" y="84" width="50" height="6" rx="3" fill="#d8ede4"/>
+  <rect x="46" y="96" width="34" height="6" rx="3" fill="#d8ede4"/>
+  <path d="M120 88 H154" stroke="#5a7067" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M147 80 L157 88 L147 96" stroke="#5a7067" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="178" y="40" width="86" height="92" rx="12" fill="#30ba78"/>
+  <rect x="178" y="40" width="86" height="30" rx="12" fill="#008657"/>
+  <rect x="178" y="56" width="86" height="14" fill="#008657"/>
+  <line x1="221" y1="70" x2="221" y2="124" stroke="#f0fbf5" stroke-width="2.5" stroke-dasharray="5 5"/>
+  <circle cx="221" cy="78" r="3" fill="#008657"/>
+  <rect x="214" y="82" width="14" height="16" rx="3" fill="#f0fbf5"/>
+</svg>`,
+  // Checker: a Lolly export carrying a verified Content Credential — a credential
+  // card (framed image + manifest) with a glowing shield-check. The signature.
+  illusCheck: `<svg viewBox="0 0 300 220" role="img" aria-label="A Lolly export carrying a verified Content Credential" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="cGlow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#30ba78" stop-opacity=".5"/><stop offset="1" stop-color="#30ba78" stop-opacity="0"/></radialGradient>
+    <clipPath id="cImg"><rect x="54" y="40" width="150" height="90" rx="10"/></clipPath>
+  </defs>
+  <circle cx="214" cy="170" r="60" fill="url(#cGlow)"/>
+  <rect x="40" y="26" width="180" height="160" rx="18" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.14)" stroke-width="1.5"/>
+  <rect x="54" y="40" width="150" height="90" rx="10" fill="#0a2621"/>
+  <g clip-path="url(#cImg)">
+    <circle cx="172" cy="66" r="14" fill="#fe7c3f"/>
+    <path d="M54 130 V102 L92 68 L128 108 L152 84 L204 128 V130 Z" fill="#30ba78" opacity=".9"/>
+  </g>
+  <rect x="54" y="142" width="130" height="8" rx="4" fill="rgba(255,255,255,.16)"/>
+  <rect x="54" y="158" width="92" height="8" rx="4" fill="rgba(255,255,255,.1)"/>
+  <path d="M214 116 l34 12 v24 c0 26 -16 40 -34 47 c-18 -7 -34 -21 -34 -47 v-24 z" fill="#30ba78" stroke="#0a2621" stroke-width="2.5"/>
+  <path d="M198 152 l11 11 l19 -22" fill="none" stroke="#0a2621" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>`,
+};
+function siteIcon(key: string): string {
+  const svg = SITE_ICONS[key];
+  if (!svg) console.warn(`⚠  docs/site: unknown icon key "${key}"`);
+  return svg ?? '';
+}
+
 // ── Landing page special renderer ─────────────────────────────────────────────
 
-function buildLandingContent(md: string) {
+function buildLandingContent(md: string, lang: Lang = 'en') {
   const rawSections = md.split(/\n---\n/);
   const heroSection      = rawSections[0]!;
   const audienceSections = rawSections.slice(1, -1);
@@ -510,11 +645,12 @@ function buildLandingContent(md: string) {
   const cardData = audienceSections.map(s => parseAudienceCard(s));
 
   // Tab strip with header
+  const audienceChrome = loadSiteJson('audience-chrome.json', lang) as { title: string; subtitle: string };
   const tabsHtml = `<div class="audience-header reveal">
   <img src="/info/mascots/quoll.png" alt="" class="audience-mascot" aria-hidden="true">
   <div class="audience-header-text">
-    <h2 class="audience-title">Who needs Lolly?</h2>
-    <p class="audience-sub">Select your role to see what Lolly does for you.</p>
+    <h2 class="audience-title">${esc(audienceChrome.title)}</h2>
+    <p class="audience-sub">${esc(audienceChrome.subtitle)}</p>
   </div>
 </div>
 <div class="audience-tabs" role="tablist" aria-label="Who is it for?">
@@ -571,24 +707,19 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
 </div>`;
   }
 
+  const whatsATool = loadSiteJson('whats-a-tool.json', lang) as {
+    heading: string; lead: string;
+    anatomy: { file: string; name: string; desc: string }[];
+    features: { icon: string; title: string; desc: string }[];
+    tryNow: { title: string; desc: string; cta: string; href: string };
+  };
   const ANATOMY_HTML = `<div class="tool-anatomy reveal reveal-1">
+  ${whatsATool.anatomy.map((p, i) => `${i > 0 ? '<div class="tool-plus">+</div>' : ''}
   <div class="tool-part">
-    <div class="tool-part-file">tool.json</div>
-    <div class="tool-part-name">Manifest</div>
-    <div class="tool-part-desc">Name, inputs &amp; metadata</div>
-  </div>
-  <div class="tool-plus">+</div>
-  <div class="tool-part">
-    <div class="tool-part-file">template.html</div>
-    <div class="tool-part-name">Template</div>
-    <div class="tool-part-desc">HTML/CSS/JS that renders the output</div>
-  </div>
-  <div class="tool-plus">+</div>
-  <div class="tool-part">
-    <div class="tool-part-file">hooks.js</div>
-    <div class="tool-part-name">Hooks</div>
-    <div class="tool-part-desc">Optional logic, sandboxed</div>
-  </div>
+    <div class="tool-part-file">${esc(p.file)}</div>
+    <div class="tool-part-name">${esc(p.name)}</div>
+    <div class="tool-part-desc">${inline(p.desc)}</div>
+  </div>`).join('\n  ')}
 </div>`;
 
   const TAB_JS = `<script>
@@ -633,44 +764,18 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
 })();
 </script>`;
 
-  const S = `fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"`;
-  const SURFACES = [
-    { label: 'Web', icon: `<svg viewBox="0 0 24 24" ${S}><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>` },
-    { label: 'macOS',   icon: `<svg viewBox="0 0 24 24" ${S}><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>` },
-    { label: 'Linux',   icon: `<svg viewBox="0 0 24 24" ${S}><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>` },
-    { label: 'iOS',     icon: `<svg viewBox="0 0 24 24" ${S}><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>` },
-    { label: 'Android', icon: `<svg viewBox="0 0 24 24" ${S}><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><polyline points="9 2 9 7 15 7 15 2"/></svg>` },
-    { label: 'CLI',     icon: `<svg viewBox="0 0 24 24" ${S}><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>` },
-    // TUI = the CLI's terminal prompt (chevron + command line), but framed in a
-    // box with a divider (title bar) — the CLI icon, drawn as a full-screen app.
-    { label: 'TUI',     icon: `<svg viewBox="0 0 24 24" ${S}><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="9" x2="22" y2="9"/><polyline points="7 12 10 15 7 18"/><line x1="13" y1="18" x2="17" y2="18"/></svg>` },
-  ];
-
-  // The three distribution models from the getting-started guide, distilled to a
-  // visual 1/2/3 summary beneath the surface chips.
-  const MODELS = [
-    {
-      n: '1', label: 'Deploy',
-      icon: `<svg class="everywhere-model-icon" viewBox="0 0 24 24" ${S}><path d="M16.5 9.4 7.5 4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>`,
-      desc: 'Ship to devices through your existing MDM. Runs fully offline, behind any firewall or air-gap — nothing leaves the device.',
-    },
-    {
-      n: '2', label: 'Serve',
-      icon: `<svg class="everywhere-model-icon" viewBox="0 0 24 24" ${S}><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>`,
-      desc: 'One hosted instance, used in any browser. Nothing to install — approved updates reach everyone the instant they ship.',
-    },
-    {
-      n: '3', label: 'Hybrid',
-      icon: `<svg class="everywhere-model-icon" viewBox="0 0 24 24" ${S}><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>`,
-      desc: 'Offline local apps plus an always-current web version, sharing one tool library — across every OS at once.',
-    },
-  ];
+  const everywhere = loadSiteJson('everywhere.json', lang) as {
+    heading: string; copy: string;
+    surfaces: { icon: string; label: string }[];
+    modelsIntro: string;
+    models: { n: string; icon: string; label: string; desc: string }[];
+  };
 
   // Frequently asked questions — rendered as native <details> accordions (no JS,
   // keyboard-accessible, works offline). Answers are markdown; blank lines split
   // paragraphs. Add or edit an item in docs/faq.md (see loadFaqs above).
-  const FAQ_CHEVRON = `<svg viewBox="0 0 24 24" ${S}><polyline points="6 9 12 15 18 9"/></svg>`;
-  const FAQS = loadFaqs();
+  const FAQ_CHEVRON = `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><polyline points="6 9 12 15 18 9"/></svg>`;
+  const FAQS = loadFaqs(lang);
 
   // Each question gets a stable slug id (same rule as markdown headings, prefixed
   // `faq-`) so other surfaces can deep-link straight to it — e.g. the app's gallery
@@ -716,65 +821,43 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   // tools. They all arrive through Layout Studio's "Import a design" button —
   // natively (.fig / .penpot / .ai / .pdf / .idml) or as an SVG export (the wide
   // door: almost any design app exports SVG).
-  const IMPORT_SOURCES = [
-    { mono: 'Fig', name: 'Figma',       fmt: '.fig · SVG',  b: '#a259ff' },
-    { mono: 'Pen', name: 'Penpot',      fmt: '.penpot',     b: '#12b886' },
-    { mono: 'Ai',  name: 'Illustrator', fmt: '.ai · PDF',   b: '#ff9a00' },
-    { mono: 'Id',  name: 'InDesign',    fmt: '.idml',       b: '#fe4a72' },
-    { mono: 'SVG', name: 'Any SVG',     fmt: 'universal',   b: '#2453ff' },
-  ];
-  const IMPORT_FLOW = [
-    { icon: `<svg viewBox="0 0 24 24" ${S}><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>`,
-      title: 'Your design file', desc: 'Figma, Penpot, Illustrator, InDesign or any SVG' },
-    { icon: `<svg viewBox="0 0 24 24" ${S}><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>`,
-      title: 'Editable canvas', desc: 'Every layer a box you can retype, restyle and move' },
-    { icon: `<svg viewBox="0 0 24 24" ${S}><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
-      title: 'Mix in tools', desc: 'Drop in a QR code, a live chart or another render' },
-    { icon: `<svg viewBox="0 0 24 24" ${S}><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>`,
-      title: 'Render anywhere', desc: 'SVG, PDF, PNG, video — reproducible from a URL' },
-  ];
-  const IMPORT_POINTS = [
-    { icon: `<svg viewBox="0 0 24 24" ${S}><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>`,
-      title: 'It stays editable',
-      desc: 'Text stays text, shapes stay shapes, images join your library. You keep working on the design — you never repaint a screenshot.' },
-    { icon: `<svg viewBox="0 0 24 24" ${S}><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>`,
-      title: 'It arrives conformed',
-      desc: 'Fonts remap to your faces and every fill passes the same colour guard as a native box. A foreign artboard lands already governed.' },
-    { icon: `<svg viewBox="0 0 24 24" ${S}><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>`,
-      title: 'It becomes a template',
-      desc: 'Save it and the layout is a reusable, URL-addressable tool — one anyone with Lolly can open, refill and render. No design app required.' },
-  ];
-
+  const importData = loadSiteJson('import.json', lang) as {
+    eyebrow: string; heading: string; lead: string;
+    sources: { mono: string; name: string; fmt: string; color: string }[];
+    flow: { icon: string; title: string; desc: string }[];
+    points: { icon: string; title: string; desc: string }[];
+    cta: string; ctaHref: string;
+  };
   const IMPORT_HTML = `<section class="import-section">
   <div class="import-inner">
     <div class="import-lede reveal">
-      <span class="import-eyebrow">Bring what you've already made</span>
-      <h2>Your design files aren't stranded</h2>
-      <p class="import-lead">Finished work in <strong>Figma, Penpot, Illustrator, InDesign or any SVG app</strong> doesn't have to stay locked in one app. Open <strong>Layout Studio</strong>, click <strong>Import a design</strong>, and the file opens as a living layout — not a flattened picture. Every layer becomes an editable box, ready to keep working on, mix with tools, and render through the same rules.</p>
+      <span class="import-eyebrow">${esc(importData.eyebrow)}</span>
+      <h2>${esc(importData.heading)}</h2>
+      <p class="import-lead">${inline(importData.lead)}</p>
     </div>
     <div class="import-sources reveal reveal-1">
-      ${IMPORT_SOURCES.map(s => `<div class="import-source">
-        <span class="import-badge" style="--b:${s.b}">${esc(s.mono)}</span>
+      ${importData.sources.map(s => `<div class="import-source">
+        <span class="import-badge" style="--b:${s.color}">${esc(s.mono)}</span>
         <strong>${esc(s.name)}</strong>
         <span class="import-fmt">${esc(s.fmt)}</span>
       </div>`).join('\n      ')}
     </div>
     <div class="import-flow reveal reveal-2">
-      ${IMPORT_FLOW.map((f, i) => `<div class="import-step">
-        <div class="import-step-icon">${f.icon}</div>
+      ${importData.flow.map((f, i) => `<div class="import-step">
+        <div class="import-step-icon">${siteIcon(f.icon)}</div>
         <strong>${esc(f.title)}</strong>
         <p>${esc(f.desc)}</p>
-      </div>${i < IMPORT_FLOW.length - 1 ? '<span class="import-arrow" aria-hidden="true">→</span>' : ''}`).join('\n      ')}
+      </div>${i < importData.flow.length - 1 ? '<span class="import-arrow" aria-hidden="true">→</span>' : ''}`).join('\n      ')}
     </div>
     <div class="import-points reveal reveal-3">
-      ${IMPORT_POINTS.map(p => `<div class="import-point">
-        <div class="import-point-icon">${p.icon}</div>
+      ${importData.points.map(p => `<div class="import-point">
+        <div class="import-point-icon">${siteIcon(p.icon)}</div>
         <strong>${esc(p.title)}</strong>
         <p>${esc(p.desc)}</p>
       </div>`).join('\n      ')}
     </div>
     <div class="import-cta-row reveal reveal-4">
-      <a href="/info/design-import.html" class="import-more">See how importing a design works →</a>
+      <a href="${esc(importData.ctaHref)}" class="import-more">${esc(importData.cta)}</a>
     </div>
   </div>
 </section>`;
@@ -838,51 +921,42 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   <path d="M198 152 l11 11 l19 -22" fill="none" stroke="#0a2621" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>`;
 
-  const IC_CHECK = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>`;
-  const IC_EYEOFF = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.9 4.24A9.1 9.1 0 0 1 12 4c7 0 10 8 10 8a13.2 13.2 0 0 1-1.67 2.68"/><path d="M6.6 6.6A13.5 13.5 0 0 0 2 12s3 8 10 8a9.7 9.7 0 0 0 5.4-1.6"/><line x1="2" y1="2" x2="22" y2="22"/></svg>`;
-  const IC_SCAN = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><line x1="7" y1="12" x2="17" y2="12"/></svg>`;
-  const IC_SERVER = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="6" rx="2"/><rect x="2" y="15" width="20" height="6" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>`;
-
+  const qol = loadSiteJson('qol.json', lang) as { panels: { illustration: string; heading: string; desc: string }[] };
   const QOL_HTML = `<section class="qol-section">
   <div class="qol-inner">
-    <div class="qol-panel reveal">
-      <div class="qol-illus">${ILLUS_SOUND}</div>
+    ${qol.panels.map((p, i) => `<div class="qol-panel reveal${i > 0 ? ` reveal-${i}` : ''}">
+      <div class="qol-illus">${siteIcon(p.illustration)}</div>
       <div class="qol-text">
-        <h3>Accessible, with sound</h3>
-        <p>An interface that works the way you do — screen-reader friendly and fully keyboard-navigable throughout. Turn on gentle interface sounds, or switch to <strong>Neurospicy Mode</strong>: a calm focus beat that loops quietly while you work.</p>
+        <h3>${esc(p.heading)}</h3>
+        <p>${inline(p.desc)}</p>
       </div>
-    </div>
-    <div class="qol-panel reveal reveal-1">
-      <div class="qol-illus">${ILLUS_BULK}</div>
-      <div class="qol-text">
-        <h3>Organise, then render in bulk</h3>
-        <p>Keep saved work in nested <strong>Projects</strong> folders. When it's time to ship, render a whole folder — or any handful you select — into a single zip. No spreadsheet, no batch grid required.</p>
-      </div>
-    </div>
+    </div>`).join('\n    ')}
   </div>
 </section>`;
 
+  const assure = loadSiteJson('assure.json', lang) as {
+    eyebrow: string; heading: string; lead: string; illustration: string;
+    checks: { title: string; desc: string }[];
+    cards: { icon: string; title: string; desc: string }[];
+    cta: string; ctaHref: string;
+  };
   const ASSURE_HTML = `<section class="assure-section">
   <div class="assure-inner">
     <div class="assure-lede reveal">
-      <span class="assure-eyebrow">Provenance &amp; privacy</span>
-      <h2>Prove what you made.<br>Keep what's yours.</h2>
-      <p class="assure-lead">Every image, PDF, or video you export can carry a <strong>Content Credential</strong> — a tamper-evident <a href="https://c2pa.org" target="_blank" rel="noopener">C2PA</a> seal created entirely on your device. It proves the file hasn't changed since it left Lolly, and once you enrol an identity, records who signed it.</p>
+      <span class="assure-eyebrow">${esc(assure.eyebrow)}</span>
+      <h2>${br(assure.heading)}</h2>
+      <p class="assure-lead">${inline(assure.lead)}</p>
     </div>
     <div class="assure-main reveal reveal-1">
-      <div class="assure-checker">${ILLUS_CHECK}</div>
+      <div class="assure-checker">${siteIcon(assure.illustration)}</div>
       <ul class="assure-checks">
-        <li><span class="assure-check-ic">${IC_CHECK}</span><div><strong>Tamper-evident by default</strong><span>The seal covers every exported byte. Change one pixel and any C2PA validator flags it.</span></div></li>
-        <li><span class="assure-check-ic">${IC_CHECK}</span><div><strong>Signed on your device</strong><span>Your signing key is generated locally and never leaves the device — not even Lolly can read it.</span></div></li>
-        <li><span class="assure-check-ic">${IC_CHECK}</span><div><strong>Verifiable by anyone, offline</strong><span>The file carries its own proof. Check it in the Verify tab, the CLI, or any C2PA validator — nothing is uploaded.</span></div></li>
+        ${assure.checks.map(c => `<li><span class="assure-check-ic">${siteIcon('assureCheck')}</span><div><strong>${esc(c.title)}</strong><span>${inline(c.desc)}</span></div></li>`).join('\n        ')}
       </ul>
     </div>
     <div class="assure-grid reveal reveal-2">
-      <div class="assure-card"><span class="assure-card-ic">${IC_EYEOFF}</span><strong>Nothing leaves your device</strong><p>No cloud rendering, no telemetry, no analytics. What you make stays on your machine.</p></div>
-      <div class="assure-card"><span class="assure-card-ic">${IC_SCAN}</span><strong>Scrub and lock, on-device</strong><p>Strip Hidden Data removes EXIF and metadata locally. Lock a PDF, a download, or a share link with a password that never leaves your device.</p></div>
-      <div class="assure-card"><span class="assure-card-ic">${IC_SERVER}</span><strong>Self-host or air-gap</strong><p>No server, no database, no backend. Run entirely behind your firewall, fully offline.</p></div>
+      ${assure.cards.map(c => `<div class="assure-card"><span class="assure-card-ic">${siteIcon(c.icon)}</span><strong>${esc(c.title)}</strong><p>${inline(c.desc)}</p></div>`).join('\n      ')}
     </div>
-    <div class="assure-cta reveal reveal-3"><a href="/info/content-credentials-identity.html">How Content Credentials work →</a></div>
+    <div class="assure-cta reveal reveal-3"><a href="${esc(assure.ctaHref)}">${esc(assure.cta)}</a></div>
   </div>
 </section>`;
 
@@ -902,28 +976,27 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
     }).join('')}</div>`;
   const fmtGroup = (cat: string, list: string) =>
     `<div class="formats-group"><span class="formats-cat">${esc(cat)}</span>${fmtChips(list)}</div>`;
+  const formats = loadSiteJson('formats.json', lang) as {
+    heading: string; lead: string;
+    ingestsLabel: string; ingestsCount: string; exportsLabel: string; exportsCount: string;
+    ingests: { category: string; list: string }[];
+    exports: { category: string; list: string }[];
+  };
+  const RT_INLINE_HTML = `<span class="rt-inline"><span class="rt-mark" aria-hidden="true">⇄</span>&nbsp;round-trip</span>`;
   const FORMATS_HTML = `<section class="formats-section">
   <div class="formats-inner">
     <div class="formats-head reveal">
-      <h2>Every format, in and out</h2>
-      <p>Lolly reads 13 source formats and renders 25 — here's the full set, grouped by what each one is. Six <span class="rt-inline"><span class="rt-mark" aria-hidden="true">⇄</span>&nbsp;round-trip</span>: read <em>and</em> written, so they appear in both columns.</p>
+      <h2>${esc(formats.heading)}</h2>
+      <p>${inline(formats.lead).replace('{roundtrip}', RT_INLINE_HTML)}</p>
     </div>
     <div class="formats-cols">
       <div class="formats-col reveal reveal-1">
-        <div class="formats-col-top"><span class="formats-dir">Ingests</span><span class="formats-num">13 in</span></div>
-        ${fmtGroup('3D', 'GLB · glTF')}
-        ${fmtGroup('Design', 'Figma · Penpot · Illustrator · InDesign · PDF · SVG')}
-        ${fmtGroup('Photos', 'HEIC · TIFF · AVIF')}
-        ${fmtGroup('Data', 'CSV · JSON')}
+        <div class="formats-col-top"><span class="formats-dir">${esc(formats.ingestsLabel)}</span><span class="formats-num">${esc(formats.ingestsCount)}</span></div>
+        ${formats.ingests.map((g: { category: string; list: string }) => fmtGroup(g.category, g.list)).join('\n        ')}
       </div>
       <div class="formats-col reveal reveal-2">
-        <div class="formats-col-top"><span class="formats-dir">Exports</span><span class="formats-num">25 out</span></div>
-        ${fmtGroup('Vector', 'SVG · PDF · CMYK PDF · EPS · EMF · DXF')}
-        ${fmtGroup('Raster', 'PNG · JPG · WEBP · AVIF · TIFF · ICO')}
-        ${fmtGroup('Motion', 'MP4 · WEBM · GIF · APNG')}
-        ${fmtGroup('Document', 'PPTX · HTML · MD · TXT')}
-        ${fmtGroup('Data', 'CSV · JSON · ICS · VCF')}
-        ${fmtGroup('Bundle', 'ZIP')}
+        <div class="formats-col-top"><span class="formats-dir">${esc(formats.exportsLabel)}</span><span class="formats-num">${esc(formats.exportsCount)}</span></div>
+        ${formats.exports.map((g: { category: string; list: string }) => fmtGroup(g.category, g.list)).join('\n        ')}
       </div>
     </div>
   </div>
@@ -933,87 +1006,54 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   // The emotional hook for the people who actually have to adopt Lolly — the
   // non-designers. Names the three everyday frustrations, then puts the old way
   // and the Lolly way literally side by side (friction → relief), left vs right.
-  const OLD_VS_LOLLY = [
-    { pain: 'Email a brief to the design team, then wait days for one small graphic.',
-      relief: 'Fill in a few fields. The finished asset is ready in seconds.' },
-    { pain: 'Guess at the right font, colour and logo — and hope it passes brand review.',
-      relief: 'The design rules are baked into the tool. They bend, not break. ' },
-    { pain: 'Upload a contract, payslip or private photo to a random free website to convert or crop it.',
-      relief: 'Everything runs on your own device. Nothing is uploaded; nothing leaves the responsible individuals device.' },
-    { pain: 'Re-make the same badge, card or banner a hundred times by hand.',
-      relief: 'Paste a spreadsheet. Get a hundred finished, print-ready files at once.' },
-    { pain: '“Which version is the latest?” — hunting through Slack threads and shared drives.',
-      relief: 'The asset is a link. Same inputs, same file, every single time.' },
-    { pain: 'No signal on the plane, or a locked-down network — so you’re simply blocked.',
-      relief: 'Works fully offline, on any device, once it has loaded once.' },
-    { pain: 'Embargoed content:  Comms professionals are locked out of engaging collaborators securely.',
-      relief: 'lock, encrypt, and password files, zips, and share links - all with zero internet' },
-  ];
-  const IC_ANXIETY = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`;
-  const IC_BOTTLE  = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>`;
-  const IC_CLOUDX  = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 19a4.5 4.5 0 0 0 .5-8.97A6 6 0 0 0 6.3 8.4"/><path d="M13 16H7a4 4 0 0 1-.9-7.9"/><line x1="2" y1="2" x2="22" y2="22"/></svg>`;
+  const why = loadSiteJson('why.json', lang) as {
+    eyebrow: string; heading: string; lead: string;
+    frustrations: { icon: string; title: string; desc: string }[];
+    matrix: { pain: string; relief: string }[];
+  };
   const WHY_MATRIX_HTML = `<section class="why-section">
   <div class="why-inner">
     <div class="why-lede reveal">
-      <span class="why-eyebrow">Why we built Lolly</span>
-      <h2>Everyday creative work<br>shouldn’t be this hard.</h2>
-      <p class="why-lead">Most people don’t want a design studio. They want one correct file, now — without breaking the brand, without waiting on someone, and without handing a private document to a website they’ve never heard of. Lolly exists to take those three frustrations away.</p>
+      <span class="why-eyebrow">${esc(why.eyebrow)}</span>
+      <h2>${br(why.heading)}</h2>
+      <p class="why-lead">${inline(why.lead)}</p>
     </div>
     <div class="why-frustrations reveal reveal-1">
-      <div class="why-frustration"><span class="why-frustration-ic">${IC_ANXIETY}</span><strong>Off-brand anxiety</strong><p>The quiet dread of picking the wrong colour or font and getting it wrong in public.</p></div>
-      <div class="why-frustration"><span class="why-frustration-ic">${IC_BOTTLE}</span><strong>The bottleneck</strong><p>Every small asset stuck in a queue behind a busy designer, a slow tool, or one more approval.</p></div>
-      <div class="why-frustration"><span class="why-frustration-ic">${IC_CLOUDX}</span><strong>Cloud dependence</strong><p>Uploading sensitive files just to convert or crop them — and being stranded the moment you’re offline.</p></div>
+      ${why.frustrations.map(f => `<div class="why-frustration"><span class="why-frustration-ic">${siteIcon(f.icon)}</span><strong>${esc(f.title)}</strong><p>${inline(f.desc)}</p></div>`).join('\n      ')}
     </div>
     <div class="matrix reveal reveal-2" role="table" aria-label="The old way compared with the Lolly way">
       <div class="matrix-head matrix-head--old" role="columnheader">The old way</div>
       <div class="matrix-head matrix-head--new" role="columnheader">The Lolly way</div>
-      ${OLD_VS_LOLLY.map(r => `<div class="matrix-cell matrix-cell--old" role="cell"><span class="matrix-mark" aria-hidden="true">✕</span><span>${esc(r.pain)}</span></div>
+      ${why.matrix.map(r => `<div class="matrix-cell matrix-cell--old" role="cell"><span class="matrix-mark" aria-hidden="true">✕</span><span>${esc(r.pain)}</span></div>
       <div class="matrix-cell matrix-cell--new" role="cell"><span class="matrix-mark" aria-hidden="true">✓</span><span>${esc(r.relief)}</span></div>`).join('\n      ')}
     </div>
   </div>
 </section>`;
 
-  // ── "Where Lolly is right now" — the honest pilot-status section ─────────────
-  // Recentres the whole page from "finished marvel" to "closed pilot / behavioural
-  // experiment". Carries the status framing (crypto+parsing hardening for
-  // enterprise scale; pilot not complete, more on Aug 29) and the born-yesterday / customer-one /
-  // need-your-story message, plus a teaser of the 90-day → 30%-deflection metric.
-  const IC_SHIELDCHECK = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>`;
-  const IC_FLASK = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6l-5.5 9.5A2 2 0 0 0 6.2 21h11.6a2 2 0 0 0 1.7-2.5L14 9V3"/><line x1="7" y1="15" x2="17" y2="15"/></svg>`;
-  const IC_CHAT = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>`;
-  const PILOT_STATUS_HTML = `<section class="pilot-section" id="status">
-  <div class="pilot-inner">
-    <div class="pilot-lede reveal">
-      <span class="pilot-eyebrow">Status · closed pilot</span>
-      <h2>Where Lolly is right now</h2>
-      <p class="pilot-lead">Lolly is an <strong>internal prototype in a closed pilot</strong> — a fast-moving behavioural experiment inside the enterprise, not a finished product. It is arithmetically robust and, honestly, evidentially empty: it was born yesterday. <strong>SUSE is customer number one</strong> — and if you’re using it, we need your story to make it better.</p>
-    </div>
-    <div class="pilot-notes reveal reveal-1">
-      <div class="pilot-note">
-        <span class="pilot-note-ic">${IC_SHIELDCHECK}</span>
-        <strong>Hardening for enterprise scale</strong>
-        <p>Lolly’s cryptography and file-parsing engines — including the C2PA provenance seals and on-device encryption — are currently undergoing SUSE’s strict infrastructure hardening, preparing for enterprise scale. We’re really good at this.</p>
-      </div>
-      <div class="pilot-note">
-        <span class="pilot-note-ic">${IC_FLASK}</span>
-        <strong>The pilot isn’t finished</strong>
-        <p>This is a closed pilot that has not completed. Features, claims and defaults can still change as we learn. More on <strong>August 29</strong>.</p>
-      </div>
-      <div class="pilot-note">
-        <span class="pilot-note-ic">${IC_CHAT}</span>
-        <strong>We need your story</strong>
-        <p>The architecture is done; the evidence is not. Real usage — what worked, what didn’t, what you actually made — is what improves Lolly from here.</p>
-      </div>
-    </div>
-    <div class="pilot-scorecard reveal reveal-2">
-      <div class="pilot-stat"><span class="pilot-stat-num">90 days</span><span class="pilot-stat-label">The current adoption &amp; feedback cycle</span></div>
-      <div class="pilot-stat-arrow" aria-hidden="true">→</div>
-      <div class="pilot-stat pilot-stat--target"><span class="pilot-stat-num">30%</span><span class="pilot-stat-label">Target design-ticket deflection by month 6</span></div>
-    </div>
-    <div class="pilot-cta reveal reveal-3"><a href="/info/adoption-governance.html">Read the adoption &amp; governance plan →</a></div>
-  </div>
-</section>`;
-
+  const heroChrome = loadSiteJson('hero-chrome.json', lang) as {
+    pilotTag: string; pilotText: string; pilotAriaLabel: string;
+    ctas: { href: string; label: string; class: string }[];
+    trustChips: string[]; toolCountSuffix: string;
+  };
+  const pathways = loadSiteJson('pathways.json', lang) as {
+    title: string; lead: string;
+    cards: { href: string; icon: string; eyebrow: string; name: string; desc: string; cta: string }[];
+  };
+  const platformChrome = loadSiteJson('platform-chrome.json', lang) as { whatsLabel: string; heading: string; tagline: string };
+  const socialProof = loadSiteJson('social-proof.json', lang) as {
+    heading: string; date: string; descClassed1: string; descPlain: string; descClassed2: string;
+    creditPrefix: string; creditLinkLabel: string; creditLinkHref: string;
+  };
+  const aboutItems = loadSiteJson('about-items.json', lang) as { icon: string; desc: string }[];
+  // about.md: heading / lead paragraph / subheading, 3 blocks split on a blank line
+  // (kept a dedicated parse rather than mdToHtml so the lead paragraph keeps its
+  // `.about-lead` styling class, which generic markdown has no way to express).
+  const aboutMdBlocks = loadSiteMd('about.md', lang).trim().split(/\n\s*\n/);
+  const aboutMd = {
+    heading: (aboutMdBlocks[0] ?? '').replace(/^#+\s*/, '').trim(),
+    lead: (aboutMdBlocks[1] ?? '').trim(),
+    subheading: (aboutMdBlocks[2] ?? '').replace(/^#+\s*/, '').trim(),
+  };
   return `
 <section class="hero">
   <canvas id="heroCanvas" aria-hidden="true"></canvas>
@@ -1022,27 +1062,15 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
     <h1 class="hero-logo-h1"><a href="/" class="hero-logo-link" aria-label="Open Lolly — browse all tools"><img src="/info/icon-normal.webp" alt="Lolly" class="hero-logo"></a></h1>
   </div>
   <div class="hero-details">
-    <a class="hero-pilot" href="/info/adoption-governance.html#status" aria-label="Lolly is an internal prototype in a closed pilot, hardening for enterprise scale — read where Lolly is right now"><span class="hero-pilot-tag">Prototype</span><span class="hero-pilot-text">Closed pilot in progress · hardening for enterprise scale</span></a>
+    <span class="hero-pilot" aria-label="${esc(heroChrome.pilotAriaLabel)}"><span class="hero-pilot-tag">${esc(heroChrome.pilotTag)}</span><span class="hero-pilot-text">${esc(heroChrome.pilotText)}</span></span>
     <p class="subtitle">${heroSubtitle}</p>
     <div class="hero-cta">
-      <a href="/" class="btn btn-primary">Launch App ↗</a>
-      <a href="/info/quickstart.html" class="btn btn-primary btn-quickstart">Quickstart →</a>
-      <a href="/info/about.html" class="btn btn-secondary">Learn More</a>
+      ${heroChrome.ctas.map(c => `<a href="${esc(c.href)}" class="${esc(c.class)}">${esc(c.label)}</a>`).join('\n      ')}
     </div>
     <div class="hero-trust">
-      <span>100% Free</span>
+      ${heroChrome.trustChips.map(c => `<span>${esc(c)}</span>`).join('\n      <span class="trust-dot">·</span>\n      ')}
       <span class="trust-dot">·</span>
-      <span>No Cookies</span>
-      <span class="trust-dot">·</span>
-      <span>No Sign-up</span>
-      <span class="trust-dot">·</span>
-      <span>Works offline</span>
-      <span class="trust-dot">·</span>
-      <span>Open Source</span>
-      <span class="trust-dot">·</span>
-      <span>Privacy First</span>
-      <span class="trust-dot">·</span>
-      <span>${TOOL_COUNT} Example Tools Loaded</span>
+      <span>${TOOL_COUNT} ${esc(heroChrome.toolCountSuffix)}</span>
     </div>
     <div class="hero-founded">${FOUNDED_BY}</div>
   </div>
@@ -1051,34 +1079,19 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
 </section>
 <section class="pathways-section reveal">
   <div class="pathways-inner">
-    <h2 class="pathways-title">Three ways in</h2>
-    <p class="pathways-lead">Start with the <a href="/info/quickstart.html">Quickstart</a> — get your brand in and your first file out — then follow the path that fits you.</p>
+    <h2 class="pathways-title">${esc(pathways.title)}</h2>
+    <p class="pathways-lead">${inline(pathways.lead)}</p>
     <div class="pathways-grid">
-      <a class="pathway-card" href="/info/creators.html">
-        <span class="pathway-ic" aria-hidden="true">${ICONS.media}</span>
-        <span class="pathway-eyebrow">For Creators</span>
-        <span class="pathway-name">Make things</span>
-        <span class="pathway-desc">Finished files in seconds — no design tool, no waiting. The advantages, and how to get the most from the app.</span>
-        <span class="pathway-go">Explore →</span>
-      </a>
-      <a class="pathway-card" href="/info/builders.html">
-        <span class="pathway-ic" aria-hidden="true">${ICONS.developers}</span>
-        <span class="pathway-eyebrow">For Builders</span>
-        <span class="pathway-name">Author &amp; integrate</span>
-        <span class="pathway-desc">Author tools, drive them from the CLI, MCP, or an agent, and deploy the platform. The technical documentation.</span>
-        <span class="pathway-go">Read the docs →</span>
-      </a>
-      <a class="pathway-card" href="/info/operators.html">
-        <span class="pathway-ic" aria-hidden="true">${ICONS.security}</span>
-        <span class="pathway-eyebrow">For Operators</span>
-        <span class="pathway-name">Roll it out safely</span>
-        <span class="pathway-desc">A defence-in-depth data-loss-prevention strategy masquerading as a creative platform. Strategy, security, and adoption.</span>
-        <span class="pathway-go">See the strategy →</span>
-      </a>
+      ${pathways.cards.map(c => `<a class="pathway-card" href="${esc(c.href)}">
+        <span class="pathway-ic" aria-hidden="true">${(ICONS as Record<string, string>)[c.icon] ?? ''}</span>
+        <span class="pathway-eyebrow">${esc(c.eyebrow)}</span>
+        <span class="pathway-name">${esc(c.name)}</span>
+        <span class="pathway-desc">${esc(c.desc)}</span>
+        <span class="pathway-go">${esc(c.cta)}</span>
+      </a>`).join('\n      ')}
     </div>
   </div>
-</section>
-${WHY_MATRIX_HTML}
+</section>${WHY_MATRIX_HTML}
 <section class="audience-section">
   ${tabsHtml}
   <div class="audience-panels">
@@ -1086,12 +1099,12 @@ ${WHY_MATRIX_HTML}
   </div>
 </section>
 <div class="platform-whats-wrap">
-<div class="whats-label">What is this?</div>
+<div class="whats-label">${esc(platformChrome.whatsLabel)}</div>
 <section class="platform-section">
   <div class="platform-inner">
     <div class="platform-header reveal">
-      <h2>Lolly</h2>
-      <p class="platform-tagline">Rendering engine. production-quality. Zero lock-in.</p>
+      <h2>${esc(platformChrome.heading)}</h2>
+      <p class="platform-tagline">${esc(platformChrome.tagline)}</p>
     </div>
     <div class="platform-features">
       ${platformFeatures.map((f, i) => renderPlatformFeature(f, i)).join('\n      ')}
@@ -1100,47 +1113,22 @@ ${WHY_MATRIX_HTML}
 </section>
 ${whatsLines.length ? `<section class="whats-a-tool">
   <div class="whats-inner">
-  <h2 class="reveal">Tools</h2>
-  <p class="tool-lead reveal reveal-1">A self-contained template.<br>  Layout rules and style, waiting for data</p>
+  <h2 class="reveal">${esc(whatsATool.heading)}</h2>
+  <p class="tool-lead reveal reveal-1">${br(whatsATool.lead)}</p>
   ${ANATOMY_HTML}
   <div class="tool-features">
-    <div class="tool-feature reveal reveal-2">
-      <div class="tool-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-      <strong>A smart template</strong>
-      <p>Knows its own layout, type, colors, and brand rules. You bring the content — it handles everything else.</p>
-    </div>
-    <div class="tool-feature reveal reveal-3">
-      <div class="tool-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg></div>
-      <strong>No design experience needed</strong>
-      <p>Authored once by someone who knows the brand. Everyone else just fills in the blanks.</p>
-    </div>
-    <div class="tool-feature reveal reveal-4">
-      <div class="tool-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-      <strong>Design as code</strong>
-      <p>Plain HTML, CSS, and JS. Version-controlled, diff-able, and reviewable like any other source file.</p>
-    </div>
-    <div class="tool-feature reveal reveal-5">
-      <div class="tool-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-      <strong>No app needed</strong>
-      <p>Open <code>template.html</code> in any browser — it just works. The tool is the app.</p>
-    </div>
-    <div class="tool-feature reveal reveal-6">
-      <div class="tool-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="5 9 2 12 5 15"/><polyline points="9 5 12 2 15 5"/><polyline points="15 19 12 22 9 19"/><polyline points="19 9 22 12 19 15"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="12" y1="2" x2="12" y2="22"/></svg></div>
-      <strong>Free-canvas layout</strong>
-      <p>Some tools open as a direct-manipulation canvas — drag, rotate and snap boxes of text, shapes and images, exported through the same deterministic path.</p>
-    </div>
-    <div class="tool-feature reveal reveal-1">
-      <div class="tool-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><rect x="8" y="8" width="8" height="8" rx="1.5"/></svg></div>
-      <strong>Tools inside tools</strong>
-      <p>Treat a tool like an image inside another tool — a badge that renders its own QR code, a card with a live chart — and keep the smarts intact: still live, still re-rendered, never a flattened picture.</p>
-    </div>
+    ${whatsATool.features.map((f, i) => `<div class="tool-feature reveal reveal-${((i + 1) % 6) + 1}">
+      <div class="tool-feature-icon">${siteIcon(f.icon)}</div>
+      <strong>${esc(f.title)}</strong>
+      <p>${inline(f.desc)}</p>
+    </div>`).join('\n    ')}
   </div>
   <div class="try-now-callout">
     <div class="try-now-text">
-      <strong>Tools work fine on their own.</strong>
-      <p>To render to PNG, PDF, SVG, video, and more — use the Lolly platform.</p>
+      <strong>${esc(whatsATool.tryNow.title)}</strong>
+      <p>${esc(whatsATool.tryNow.desc)}</p>
     </div>
-    <a href="/" class="btn btn-primary">Launch App ↗</a>
+    <a href="${esc(whatsATool.tryNow.href)}" class="btn btn-primary">${esc(whatsATool.tryNow.cta)}</a>
   </div>
   </div>
 </section>` : ''}
@@ -1152,22 +1140,22 @@ ${IMPORT_HTML}
 <section class="everywhere-section">
   <div class="everywhere-inner reveal">
     <div class="everywhere-copy-col">
-      <h2>All of it,<br>as you are,<br>on anything</h2>
-      <p class="everywhere-copy">Run offline on your device, be always available hosted online, you decide.<br>Lolly Tools can work there.</p>
+      <h2>${br(everywhere.heading)}</h2>
+      <p class="everywhere-copy">${br(everywhere.copy)}</p>
       <div class="everywhere-chips">
-        ${SURFACES.map(s => `<span class="everywhere-chip">${s.icon}<span>${esc(s.label)}</span></span>`).join('')}
+        ${everywhere.surfaces.map(s => `<span class="everywhere-chip">${siteIcon(s.icon)}<span>${esc(s.label)}</span></span>`).join('')}
       </div>
     </div>
     <img src="/info/mascots/quokka.png" class="quokka" alt="" class="everywhere-mascot">
   </div>
   <div class="everywhere-models reveal">
-    <p class="everywhere-models-intro">Three modes of delivery:</p>
+    <p class="everywhere-models-intro">${esc(everywhere.modelsIntro)}</p>
     <div class="everywhere-models-grid">
-      ${MODELS.map(m => `
+      ${everywhere.models.map(m => `
       <div class="everywhere-model">
         <div class="everywhere-model-main">
-          <span class="everywhere-model-num">Option ${m.n}</span>
-          ${m.icon}
+          <span class="everywhere-model-num">Option ${esc(m.n)}</span>
+          ${siteIcon(m.icon)}
           <h3>${esc(m.label)}</h3>
         </div>
         <p>${esc(m.desc)}</p>
@@ -1175,45 +1163,39 @@ ${IMPORT_HTML}
     </div>
   </div>
 </section>
-${PILOT_STATUS_HTML}
 <section class="social-proof">
   <div class="social-proof-inner reveal">
-    <h2>Building &amp; brand new</h2>
-    <p class="social-proof-date">June 2026</p>
-    <p class="social-proof-desc">Made in the open, used in confidence.</p> <p>By design, we have no idea who or what runs Lolly — and that's exactly the point.</p>
-    <p class="social-proof-desc">Organisations that benefit most, are privacy aware ones!</p>
+    <h2>${esc(socialProof.heading)}</h2>
+    <p class="social-proof-date">${esc(socialProof.date)}</p>
+    <p class="social-proof-desc">${esc(socialProof.descClassed1)}</p> <p>${esc(socialProof.descPlain)}</p>
+    <p class="social-proof-desc">${esc(socialProof.descClassed2)}</p>
   </div>
   <div class="social-proof-founded">${FOUNDED_BY}</div>
-  <p class="social-proof-credit">Developed in-house at <a href="https://www.suse.com" target="_blank" rel="noopener"> SUSE</a></p>
+  <p class="social-proof-credit">${esc(socialProof.creditPrefix)} <a href="${esc(socialProof.creditLinkHref)}" target="_blank" rel="noopener"> ${esc(socialProof.creditLinkLabel)}</a></p>
 </section>
 <section class="about-section">
   <div class="about-inner reveal">
     <div class="about-header">
       <img src="/info/mascots/koala.png" alt="" class="about-mascot" aria-hidden="true">
       <div class="about-header-text">
-        <h2>Made for us</h2>
-        <p class="about-lead">We are a coalition of passionate designers, developers, marketers, and IT operations experts. Manual work, expensive ugly software, and anything that slows us down day to day is the only adversary.</p>
+        <h2>${esc(aboutMd.heading)}</h2>
+        <p class="about-lead">${inline(aboutMd.lead)}</p>
       </div>
     </div>
 
-    <h3>What's with the Quoll, Quokka, and Koala?</h3>
+    <h3>${esc(aboutMd.subheading)}</h3>
     <div class="about-items">
-      <div class="about-item">
-        <div class="about-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="8"/><circle cx="6" cy="7" r="3"/><circle cx="18" cy="7" r="3"/><circle cx="10" cy="12" r="1" fill="currentColor" stroke="none"/><circle cx="14" cy="12" r="1" fill="currentColor" stroke="none"/><ellipse cx="12" cy="15.5" rx="2" ry="1.5"/></svg></div>
-        <p><strong>They're adorable</strong> Australian animals who cause no harm to their environment. In a world of predators looking for your data, money, or time — give them none and thrive.</p>
-      </div>
-      <div class="about-item">
-        <div class="about-item-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg></div>
-        <p><strong>Quoll-tea. Koala-ty. Quo'lity.</strong> We are obsessed with quality. Studio-quality media. When evaluating tools and platform improvements we ask:  Is it good enough to make everything?</p>
-      </div>
+      ${aboutItems.map(it => `<div class="about-item">
+        <div class="about-item-icon">${siteIcon(it.icon)}</div>
+        <p>${inline(it.desc)}</p>
+      </div>`).join('\n      ')}
     </div>
 
   </div>
 </section>
 <section class="opensource-section">
   <div class="opensource-inner reveal">
-    <h2>Why open source?</h2>
-    <p>The more the platform is used, the more we improve the core engine — and the more time, money, and frustration we collectively save. Open source means anyone can build, audit, improve, and deploy Lolly. That's a better deal for everyone.</p>
+    ${mdToHtml(loadSiteMd('opensource.md', lang))}
   </div>
 </section>
 ${faqHtml}
@@ -1260,6 +1242,11 @@ nav.nav-solid{background:#0c322c}
 .brand:hover{color:var(--light);text-decoration:none}
 .brand-icon{width:1.5rem;height:1.5rem;border-radius:5px;flex-shrink:0;object-fit:contain}
 nav .gap{flex:1}
+.nav-lang-picker-wrap{display:inline-flex;align-items:center;gap:.35rem;color:rgba(255,255,255,.55)}
+.nav-lang-picker-wrap .lang-switch-icon{width:38px;height:38px;flex-shrink:0}
+.nav-lang-picker{background:transparent;color:rgba(255,255,255,.55);border:none;font-size:.8125rem;cursor:pointer}
+.nav-lang-picker:hover{color:#fff}
+.nav-lang-picker option{color:#000}
 nav a:not(.brand):not(.nav-launch){color:rgba(255,255,255,.55);font-size:.8125rem;padding:.25rem .5rem;white-space:nowrap;border-radius:2em;transition:color .12s}
 nav a:not(.brand):not(.nav-launch):hover{color:#fff;text-decoration:none}
 nav a.active:not(.nav-launch){color:#fff}
@@ -1815,36 +1802,7 @@ footer .founded-badge{margin-top:.5rem}
 .matrix-cell--old .matrix-mark{background:rgba(90,112,103,.16);color:var(--muted)}
 .matrix-cell--new .matrix-mark{background:var(--green);color:#04231a}
 @media(max-width:720px){.why-frustrations{grid-template-columns:1fr}.matrix{grid-template-columns:1fr;gap:.5rem}.matrix-head{display:none}.matrix-cell--old{margin-top:.5rem}}
-/* ── "Where Lolly is right now" — honest pilot-status section ──────────────── */
-.pilot-section{padding:5rem 1.5rem;background:var(--dark);color:#fff}
-.pilot-inner{max-width:960px;margin:0 auto}
-.pilot-lede{text-align:center;max-width:46rem;margin:0 auto 2.5rem}
-.pilot-eyebrow{display:inline-block;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:var(--orange);margin-bottom:.75rem}
-.pilot-section h2{color:#fff;font-size:clamp(1.8rem,4vw,2.4rem);margin-bottom:1rem}
-.pilot-lead{color:rgba(255,255,255,.82);font-size:1.0625rem;line-height:1.7}
-.pilot-lead strong{color:#fff}
-.pilot-notes{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2.5rem}
-.pilot-note{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:1.5rem 1.375rem}
-.pilot-note--warn{border-color:rgba(254,124,63,.5);background:rgba(254,124,63,.1)}
-.pilot-note-ic{display:inline-flex;width:2.5rem;height:2.5rem;align-items:center;justify-content:center;border-radius:10px;background:rgba(255,255,255,.08);color:var(--light);margin-bottom:.85rem}
-.pilot-note--warn .pilot-note-ic{background:rgba(254,124,63,.18);color:var(--orange)}
-.pilot-note-ic svg{width:1.35rem;height:1.35rem}
-.pilot-note strong{display:block;color:#fff;margin-bottom:.4rem;font-size:1.0625rem}
-.pilot-note p{color:rgba(255,255,255,.7);font-size:.9rem;line-height:1.55}
-.pilot-note--warn p{color:rgba(255,255,255,.85)}
-.pilot-scorecard{display:flex;align-items:center;justify-content:center;gap:1.25rem;flex-wrap:wrap;margin-bottom:2rem}
-.pilot-stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:1.5rem 1.75rem;text-align:center;min-width:14rem}
-.pilot-stat--target{border-color:rgba(48,186,120,.5);background:rgba(48,186,120,.12)}
-.pilot-stat-num{display:block;font-size:2rem;font-weight:800;color:#fff;line-height:1}
-.pilot-stat--target .pilot-stat-num{color:var(--green)}
-.pilot-stat-label{display:block;color:rgba(255,255,255,.7);font-size:.85rem;margin-top:.45rem}
-.pilot-stat-arrow{color:rgba(255,255,255,.4);font-size:1.5rem}
-.pilot-cta{text-align:center}
-.pilot-cta a{color:var(--green);font-weight:600;text-decoration:none}
-.pilot-cta a:hover{text-decoration:underline}
-@media(max-width:720px){.pilot-notes{grid-template-columns:1fr}.pilot-stat-arrow{transform:rotate(90deg)}}
-/* Dark-theme surfaces for the pale Why section (the dark pilot section already
-   ships its own dark palette, so it needs no override). */
+/* Dark-theme surfaces for the pale Why section. */
 .dark .why-section{background:#061816}
 .dark .why-section h2{color:var(--text)}
 .dark .why-frustration{background:#112a1e}
@@ -2177,6 +2135,12 @@ function hrefToSlug(href: string): string {
   return href.replace(/^\/info\//, '').replace(/\.html$/, '');
 }
 
+// Language-switcher indicator (~/Build/language-icon.svg), inlined with
+// fill="currentColor" so it themes with the surrounding nav text. Same markup
+// as shells/web/src/i18n.ts's LANG_ICON_SVG — duplicated (not imported) since
+// this static-site generator has no shared module boundary with the SPA.
+const LANG_ICON_SVG = `<svg class="lang-switch-icon" viewBox="0 0 841.89 595.276" fill="currentColor" aria-hidden="true"><path d="m512.547 488.238 12.531 20.616c-31.404 20.067-66.19 30.034-103.148 33.126h-16.436c-3.287 0-19.54-2.007-20.088-2.007-6.026-.913-12.235-2.01-17.896-3.287q-15.34-3.562-30.68-9.315c-7.487-2.74-15.34-6.391-22.28-9.861-3.469-1.644-6.573-3.286-9.86-5.295-1.096-.548-6.94-4.748-9.862-4.748-3.287 0-5.297 2.555-5.297 5.295 0 1.643.184 3.105 2.375 4.566 12.418 8.218 25.566 14.426 38.166 19.174 6.94 2.74 14.063 5.296 21.367 7.305 4.2 1.278 8.948 2.557 13.33 3.47 5.662 1.279 11.689 2.374 17.35 3.287 6.392.914 13.15 1.644 19.541 2.192 36.801 0 80.597-5.566 122.537-30.498 1.722-1.243 4.493-2.286 6.744-3.758l11.428 18.8 15.725-45.575zM639.838 180.403l-40.768-12.976V48.363c0-3.47-2.557-5.843-5.844-5.843-2.556 0-84.917 28.306-91.492 30.68-22.334 7.444-86.798 29.733-86.798 29.733-1.034.297-2.638.787-4.741 1.449L252.855 48.85a1.826 1.826 0 0 0-2.435 1.722v106.724c-24.405 8.17-41.808 14.02-42.701 14.335-1.644.548-4.2.913-5.662 2.922-.73.73-.913 2.009-1.278 2.922v306.982c0 .365.183.547.183.73 1.095 2.374 3.104 3.835 5.296 3.835 2.739 0 208.367-69.03 212.933-70.856.215-.072.458-.24.697-.438L638.73 487.48a1.826 1.826 0 0 0 2.38-1.74V182.143c0-.795-.514-1.5-1.272-1.74M410.973 409.4l-199.054 66.29V182.04l199.054-66.29ZM587.93 55.668v108.213l-164.492-52.354Zm-20.243 329.6-10.52-38.43-60.517-18.341-13.013 31.304-29.292-8.886 62.178-152.587 28.508 8.636 51.939 187.188zm-183.723-51.715c-1.658-.602-35.965-14.814-40.828-17.142-3.98-1.914-13.737-6.04-18.328-7.913 12.931-19.938 21.094-34.984 22.18-37.276 2.012-4.193 15.699-30.976 16.018-32.625.31-1.67.7-7.843.399-9.31-.302-1.495-5.32 1.38-12.134 3.69-6.824 2.3-19.794 10.735-24.803 11.793-5.027 1.048-21.094 7.135-29.316 9.863s-23.773 7.475-30.17 9.202c-6.406 1.728-11.998 1.865-15.581 2.951 0 0 .477 5.019 1.428 6.523.94 1.505 4.33 5.194 8.27 6.224 3.942 1.037 10.465.62 13.436-.058 2.97-.69 8.114-3.204 8.804-4.301.698-1.116-.36-4.553.814-5.592 1.186-1.028 16.843-4.688 22.755-6.474 5.911-1.817 28.54-9.61 31.607-9.213-.971 3.223-19.173 39.276-25.035 50.032-5.864 10.755-39.926 58.07-47.177 66.408-5.505 6.338-18.843 22.558-23.463 26.218 1.165.322 9.425-.387 10.93-1.318 9.377-5.777 24.996-25.22 30.026-31.142 14.949-17.532 28.083-35.947 38.497-51.75h.011c2.03.845 18.434 14.21 22.714 17.173 4.281 2.96 21.173 12.385 24.833 13.948 3.66 1.583 17.725 8.068 18.317 5.873.591-2.213-2.544-15.154-4.204-15.784m-106.167-120.33c-1.118-1.098 1.455 8.968 5.036 12.59 6.35 6.405 11.31 7.23 13.95 7.337 5.844.233 13.056-1.456 17.338-3.25 4.144-1.769 11.405-5.476 14.153-10.883.583-1.156 2.173-3.097 1.174-7.893-.757-3.689-3.106-4.98-5.97-4.775-2.863.193-11.532 2.505-15.725 3.794-4.194 1.273-12.834 3.903-16.6 4.72-3.756.814-12.038-.379-13.356-1.64"/><path d="m507.838 300.379 39.929 12.104-18.21-64.6z"/></svg>`;
+
 // The persistent, combined language picker — same control, same options, on
 // every /info page and (via the shared `lang` localStorage key — see i18n.ts's
 // initI18n) on the app itself. `value` is the equivalent page's URL in that
@@ -2186,7 +2150,7 @@ function langPickerHtml(lang: Lang, slug: string): string {
   const options = LANGS.map(l =>
     `<option value="${esc(localeHref(l, slug))}" data-lang="${l}"${l === lang ? ' selected' : ''}>${esc(LANG_META[l].nativeName)}</option>`,
   ).join('');
-  return `<select class="nav-lang-picker" data-lang-picker aria-label="${esc(t('Language'))}">${options}</select>`;
+  return `<span class="nav-lang-picker-wrap">${LANG_ICON_SVG}<select class="nav-lang-picker" data-lang-picker aria-label="${esc(t('Language'))}">${options}</select></span>`;
 }
 const LANG_PICKER_SCRIPT = `<script>document.addEventListener('change',function(e){var el=e.target.closest('[data-lang-picker]');if(!el)return;try{localStorage.setItem('lang',el.selectedOptions[0].dataset.lang);}catch(err){}location.href=el.value;});</script>`;
 
@@ -2335,7 +2299,7 @@ function build() {
         continue;
       }
 
-      const content = page.isLanding ? buildLandingContent(md) : mdToHtml(md);
+      const content = page.isLanding ? buildLandingContent(md, lang) : mdToHtml(md);
       const html    = wrapPage(lang, page, content, ogSlugs);
       const outFile = page.slug === 'index' ? 'index.html' : `${page.slug}.html`;
       writeFileSync(resolve(localeOutDir, outFile), html, 'utf-8');

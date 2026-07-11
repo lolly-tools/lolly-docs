@@ -1,0 +1,31 @@
+{
+  "pilotTag": "Nguyên mẫu",
+  "pilotText": "Đang thí điểm nội bộ · đang được củng cố để mở rộng quy mô doanh nghiệp",
+  "pilotAriaLabel": "Lolly là một nguyên mẫu nội bộ đang trong giai đoạn thí điểm khép kín, đang được củng cố để mở rộng quy mô doanh nghiệp",
+  "ctas": [
+    {
+      "href": "/",
+      "label": "Mở ứng dụng ↗",
+      "class": "btn btn-primary"
+    },
+    {
+      "href": "/info/quickstart.html",
+      "label": "Bắt đầu nhanh →",
+      "class": "btn btn-primary btn-quickstart"
+    },
+    {
+      "href": "/info/about.html",
+      "label": "Tìm hiểu thêm",
+      "class": "btn btn-secondary"
+    }
+  ],
+  "trustChips": [
+    "100% Miễn phí",
+    "Không Cookie",
+    "Không cần đăng ký",
+    "Hoạt động ngoại tuyến",
+    "Mã nguồn mở",
+    "Ưu tiên quyền riêng tư"
+  ],
+  "toolCountSuffix": "Công cụ mẫu đã tải"
+}

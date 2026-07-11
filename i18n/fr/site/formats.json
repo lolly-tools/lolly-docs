@@ -1,0 +1,22 @@
+{
+  "heading": "Tous les formats, à l'entrée comme à la sortie",
+  "lead": "Lolly lit 13 formats source et en génère 25 — voici l'ensemble complet, regroupé par nature. Six {roundtrip} : lus *et* écrits, donc ils apparaissent dans les deux colonnes.",
+  "ingestsLabel": "Entrées",
+  "ingestsCount": "13 en entrée",
+  "exportsLabel": "Sorties",
+  "exportsCount": "25 en sortie",
+  "ingests": [
+    { "category": "3D", "list": "GLB · glTF" },
+    { "category": "Design", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
+    { "category": "Photos", "list": "HEIC · TIFF · AVIF" },
+    { "category": "Données", "list": "CSV · JSON" }
+  ],
+  "exports": [
+    { "category": "Vectoriel", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
+    { "category": "Matriciel", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
+    { "category": "Animation", "list": "MP4 · WEBM · GIF · APNG" },
+    { "category": "Document", "list": "PPTX · HTML · MD · TXT" },
+    { "category": "Données", "list": "CSV · JSON · ICS · VCF" },
+    { "category": "Archive", "list": "ZIP" }
+  ]
+}

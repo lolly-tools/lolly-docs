@@ -1,0 +1,30 @@
+{
+  "title": "Ba cách bắt đầu",
+  "lead": "Bắt đầu với [Quickstart](/info/quickstart.html) — đưa thương hiệu của bạn vào và xuất ra tệp đầu tiên — sau đó đi theo con đường phù hợp với bạn.",
+  "cards": [
+    {
+      "href": "/info/creators.html",
+      "icon": "media",
+      "eyebrow": "For Creators",
+      "name": "Tạo ra mọi thứ",
+      "desc": "Tệp hoàn chỉnh chỉ trong vài giây — không cần công cụ thiết kế, không cần chờ đợi. Những lợi ích, và cách khai thác tối đa ứng dụng.",
+      "cta": "Khám phá →"
+    },
+    {
+      "href": "/info/builders.html",
+      "icon": "developers",
+      "eyebrow": "For Builders",
+      "name": "Soạn công cụ & tích hợp",
+      "desc": "Soạn công cụ, điều khiển chúng từ CLI, MCP, hoặc một agent, và triển khai nền tảng. Tài liệu kỹ thuật.",
+      "cta": "Đọc tài liệu →"
+    },
+    {
+      "href": "/info/operators.html",
+      "icon": "security",
+      "eyebrow": "For Operators",
+      "name": "Triển khai an toàn",
+      "desc": "Một chiến lược phòng thủ theo chiều sâu chống thất thoát dữ liệu, khoác vỏ bọc là một nền tảng sáng tạo. Chiến lược, bảo mật, và áp dụng.",
+      "cta": "Xem chiến lược →"
+    }
+  ]
+}
