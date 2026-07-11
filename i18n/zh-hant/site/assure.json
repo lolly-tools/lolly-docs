@@ -1,0 +1,18 @@
+{
+  "eyebrow": "來源與隱私",
+  "heading": "證明是你做的。\n留住屬於你的東西。",
+  "lead": "你匯出的每一張圖片、PDF 或影片,都能附帶一份 **Content Credential**——這是完全在你裝置上建立、具防竄改功能的 [C2PA](https://c2pa.org) 印記。它證明檔案自離開 Lolly 後不曾被更動,而一旦你註冊身分,還會記錄是誰簽署了它。",
+  "illustration": "illusCheck",
+  "checks": [
+    { "title": "預設即防竄改", "desc": "印記涵蓋每一個匯出的位元組。只要更動一個像素,任何 C2PA 驗證工具都會標示出來。" },
+    { "title": "在你的裝置上簽署", "desc": "你的簽署金鑰在本機產生,永遠不會離開裝置——就連 Lolly 也無法讀取。" },
+    { "title": "任何人都能離線驗證", "desc": "檔案本身就帶有證明。你可以在「驗證」分頁、CLI,或任何 C2PA 驗證工具中檢查——完全不需要上傳。" }
+  ],
+  "cards": [
+    { "icon": "assureEyeOff", "title": "沒有任何東西離開你的裝置", "desc": "沒有雲端渲染,沒有遙測,沒有分析追蹤。你做的東西留在你自己的電腦上。" },
+    { "icon": "assureScan", "title": "在裝置上清除與鎖定", "desc": "「清除隱藏資料」功能會在本機移除 EXIF 與中繼資料。你可以用一組永遠不會離開裝置的密碼,鎖定 PDF、下載檔案或分享連結。" },
+    { "icon": "assureServer", "title": "自架伺服器或實體隔離", "desc": "沒有伺服器,沒有資料庫,沒有後端。完全在你的防火牆之後執行,徹底離線運作。" }
+  ],
+  "cta": "Content Credentials 的運作方式 →",
+  "ctaHref": "/info/content-credentials-identity.html"
+}

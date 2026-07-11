@@ -1,0 +1,14 @@
+{
+  "panels": [
+    {
+      "illustration": "illusSound",
+      "heading": "Acessível, com som",
+      "desc": "Uma interface que funciona do jeito que você trabalha — compatível com leitores de tela e totalmente navegável pelo teclado, do início ao fim. Ative sons suaves de interface, ou mude para o **Neurospicy Mode**: um ritmo de foco calmo que toca em loop baixinho enquanto você trabalha."
+    },
+    {
+      "illustration": "illusBulk",
+      "heading": "Organize e depois renderize em lote",
+      "desc": "Guarde o trabalho salvo em pastas aninhadas de **Projetos**. Na hora de publicar, renderize uma pasta inteira — ou qualquer punhado que você selecionar — em um único zip. Não precisa de planilha, nem de grade de lote."
+    }
+  ]
+}

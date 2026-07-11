@@ -1,0 +1,23 @@
+{
+  "heading": "Nástroje",
+  "lead": "Samostatná šablona.\nPravidla rozvržení a styl, které čekají na data",
+  "anatomy": [
+    { "file": "tool.json", "name": "Manifest", "desc": "Název, vstupy a metadata" },
+    { "file": "template.html", "name": "Šablona", "desc": "HTML/CSS/JS, který vykresluje výstup" },
+    { "file": "hooks.js", "name": "Hooky", "desc": "Volitelná logika, izolovaná v sandboxu" }
+  ],
+  "features": [
+    { "icon": "toolFeatureStar", "title": "Chytrá šablona", "desc": "Zná svoje vlastní rozvržení, typ, barvy i pravidla značky. Ty přineseš obsah — o zbytek se postará sama." },
+    { "icon": "toolFeaturePeople", "title": "Nepotřebuješ zkušenosti s designem", "desc": "Jednou ji vytvoří někdo, kdo zná značku. Všichni ostatní jen vyplní, co chybí." },
+    { "icon": "toolFeatureCode", "title": "Design jako kód", "desc": "Čisté HTML, CSS a JS. Verzované, porovnatelné (diff) a kontrolovatelné jako každý jiný zdrojový soubor." },
+    { "icon": "toolFeatureMonitor", "title": "Nepotřebuješ aplikaci", "desc": "Otevři `template.html` v libovolném prohlížeči — prostě to funguje. Nástroj je aplikace." },
+    { "icon": "toolFeatureShuffle", "title": "Volné plátno", "desc": "Některé nástroje se otevřou jako plátno s přímou manipulací — přetahuj, otáčej a přichytávej rámečky s textem, tvary a obrázky, to vše se exportuje stejnou deterministickou cestou." },
+    { "icon": "toolFeatureNested", "title": "Nástroje v nástrojích", "desc": "Nástroj můžeš použít jako obrázek uvnitř jiného nástroje — třeba odznak, který si sám vykreslí QR kód, nebo kartu s živým grafem — a přitom zůstane zachovaná veškerá chytrost: pořád živé, pořád znovu vykreslované, nikdy jen zploštělý obrázek." }
+  ],
+  "tryNow": {
+    "title": "Nástroje fungují skvěle i samy o sobě.",
+    "desc": "Chceš je vykreslit do PNG, PDF, SVG, videa a dalších formátů — použij platformu Lolly.",
+    "cta": "Spustit aplikaci ↗",
+    "href": "/"
+  }
+}

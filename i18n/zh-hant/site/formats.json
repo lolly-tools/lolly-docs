@@ -1,0 +1,22 @@
+{
+  "heading": "所有格式,匯入匯出一應俱全",
+  "lead": "Lolly 可讀取 13 種來源格式,並匯出 25 種格式——以下依類型列出完整清單。其中六種{roundtrip}:既可讀取*也*可寫入,因此會同時出現在兩欄中。",
+  "ingestsLabel": "匯入",
+  "ingestsCount": "13 種格式",
+  "exportsLabel": "匯出",
+  "exportsCount": "25 種格式",
+  "ingests": [
+    { "category": "3D", "list": "GLB · glTF" },
+    { "category": "設計", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
+    { "category": "相片", "list": "HEIC · TIFF · AVIF" },
+    { "category": "資料", "list": "CSV · JSON" }
+  ],
+  "exports": [
+    { "category": "向量", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
+    { "category": "點陣", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
+    { "category": "動態", "list": "MP4 · WEBM · GIF · APNG" },
+    { "category": "文件", "list": "PPTX · HTML · MD · TXT" },
+    { "category": "資料", "list": "CSV · JSON · ICS · VCF" },
+    { "category": "封裝", "list": "ZIP" }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "heading": "全部功能，\n維持原樣，\n什麼裝置都能用",
+  "copy": "在你的裝置上離線執行，也可以代管在線上隨時使用，由你決定。\nLolly Tools 到處都能用。",
+  "surfaces": [
+    { "icon": "surfaceWeb", "label": "網頁" },
+    { "icon": "surfaceMacos", "label": "macOS" },
+    { "icon": "surfaceLinux", "label": "Linux" },
+    { "icon": "surfaceIos", "label": "iOS" },
+    { "icon": "surfaceAndroid", "label": "Android" },
+    { "icon": "surfaceCli", "label": "CLI" },
+    { "icon": "surfaceTui", "label": "TUI" }
+  ],
+  "modelsIntro": "三種交付模式：",
+  "models": [
+    { "n": "1", "icon": "modelDeploy", "label": "部署", "desc": "透過你現有的 MDM 部署到裝置。完全離線執行，無論是在防火牆之後還是實體隔離環境，資料都不會離開裝置。" },
+    { "n": "2", "icon": "modelServe", "label": "服務", "desc": "單一代管執行個體，可在任何瀏覽器使用。不需安裝——核准的更新一發布，所有人立即收到。" },
+    { "n": "3", "icon": "modelHybrid", "label": "混合", "desc": "離線本機應用程式，加上永遠是最新版本的網頁版，共用同一套工具庫——同時涵蓋所有作業系統。" }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "pilotTag": "Prototyp",
+  "pilotText": "Probíhá uzavřený pilotní program · ladíme pro podnikové nasazení",
+  "pilotAriaLabel": "Lolly je interní prototyp v uzavřeném pilotním programu, připravovaný pro podnikové nasazení",
+  "ctas": [
+    {
+      "href": "/",
+      "label": "Spustit aplikaci ↗",
+      "class": "btn btn-primary"
+    },
+    {
+      "href": "/info/quickstart.html",
+      "label": "Rychlý start →",
+      "class": "btn btn-primary btn-quickstart"
+    },
+    {
+      "href": "/info/about.html",
+      "label": "Zjistit více",
+      "class": "btn btn-secondary"
+    }
+  ],
+  "trustChips": [
+    "100% zdarma",
+    "Bez cookies",
+    "Bez registrace",
+    "Funguje offline",
+    "Otevřený zdroj",
+    "Soukromí na prvním místě"
+  ],
+  "toolCountSuffix": "Ukázkových nástrojů načteno"
+}

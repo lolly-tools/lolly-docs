@@ -1,0 +1,22 @@
+{
+  "heading": "Setiap format, masuk dan keluar",
+  "lead": "Lolly membaca 13 format sumber dan menghasilkan 25 — inilah set lengkapnya, dikumpulkan mengikut jenis setiap satu. Enam {roundtrip}: dibaca *dan* ditulis, jadi ia muncul dalam kedua-dua lajur.",
+  "ingestsLabel": "Import",
+  "ingestsCount": "13 masuk",
+  "exportsLabel": "Eksport",
+  "exportsCount": "25 keluar",
+  "ingests": [
+    { "category": "3D", "list": "GLB · glTF" },
+    { "category": "Reka Bentuk", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
+    { "category": "Foto", "list": "HEIC · TIFF · AVIF" },
+    { "category": "Data", "list": "CSV · JSON" }
+  ],
+  "exports": [
+    { "category": "Vektor", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
+    { "category": "Raster", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
+    { "category": "Gerakan", "list": "MP4 · WEBM · GIF · APNG" },
+    { "category": "Dokumen", "list": "PPTX · HTML · MD · TXT" },
+    { "category": "Data", "list": "CSV · JSON · ICS · VCF" },
+    { "category": "Pakej", "list": "ZIP" }
+  ]
+}

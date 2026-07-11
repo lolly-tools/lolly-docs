@@ -1,0 +1,30 @@
+{
+  "title": "Tři cesty, jak začít",
+  "lead": "Začni s [Rychlým startem](/info/quickstart.html) — nahraješ svou značku a vytvoříš první soubor — a pak pokračuj cestou, která ti sedí.",
+  "cards": [
+    {
+      "href": "/info/creators.html",
+      "icon": "media",
+      "eyebrow": "Pro tvůrce",
+      "name": "Tvoř věci",
+      "desc": "Hotové soubory za pár vteřin — žádný designový nástroj, žádné čekání. Výhody a jak z aplikace vytěžit maximum.",
+      "cta": "Prozkoumat →"
+    },
+    {
+      "href": "/info/builders.html",
+      "icon": "developers",
+      "eyebrow": "Pro vývojáře",
+      "name": "Vytvářej a integruj",
+      "desc": "Vytvářej nástroje, ovládej je z CLI, MCP nebo agenta a nasaď platformu. Technická dokumentace.",
+      "cta": "Číst dokumentaci →"
+    },
+    {
+      "href": "/info/operators.html",
+      "icon": "security",
+      "eyebrow": "Pro provozovatele",
+      "name": "Nasaď to bezpečně",
+      "desc": "Vícevrstvá strategie na ochranu proti úniku dat v přestrojení za kreativní platformu. Strategie, bezpečnost a zavádění.",
+      "cta": "Zobrazit strategii →"
+    }
+  ]
+}

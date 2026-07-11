@@ -1,0 +1,19 @@
+{
+  "eyebrow": "Por que criamos o Lolly",
+  "heading": "O trabalho criativo do dia a dia\nnão deveria ser tão difícil.",
+  "lead": "A maioria das pessoas não quer um estúdio de design. Elas querem um arquivo correto, agora — sem quebrar a marca, sem esperar por alguém e sem entregar um documento privado a um site que elas nunca ouviram falar. O Lolly existe para eliminar essas três frustrações.",
+  "frustrations": [
+    { "icon": "anxiety", "title": "Ansiedade de fugir da marca", "desc": "O medo silencioso de escolher a cor ou a fonte errada e errar publicamente." },
+    { "icon": "bottleneck", "title": "O gargalo", "desc": "Cada pequena peça presa em uma fila atrás de um designer ocupado, uma ferramenta lenta ou mais uma aprovação." },
+    { "icon": "cloudDependence", "title": "Dependência da nuvem", "desc": "Enviar arquivos sensíveis só para convertê-los ou recortá-los — e ficar na mão assim que você fica offline." }
+  ],
+  "matrix": [
+    { "pain": "Mandar um briefing por e-mail para a equipe de design e esperar dias por uma peça gráfica pequena.", "relief": "Preencha alguns campos. O arquivo final fica pronto em segundos." },
+    { "pain": "Tentar adivinhar a fonte, a cor e o logo certos — e torcer para passar na revisão de marca.", "relief": "As regras de design já vêm embutidas na ferramenta. Elas se ajustam, mas não se quebram. " },
+    { "pain": "Enviar um contrato, um contracheque ou uma foto pessoal para um site gratuito qualquer só para convertê-lo ou recortá-lo.", "relief": "Tudo roda no seu próprio dispositivo. Nada é enviado; nada sai do dispositivo da pessoa responsável." },
+    { "pain": "Refazer o mesmo crachá, cartão ou banner cem vezes à mão.", "relief": "Cole uma planilha. Receba cem arquivos prontos para impressão de uma só vez." },
+    { "pain": "“Qual é a versão mais recente?” — caçando em threads do Slack e drives compartilhados.", "relief": "O arquivo é um link. Mesmas entradas, mesmo arquivo, todas as vezes." },
+    { "pain": "Sem sinal no avião, ou em uma rede bloqueada — e você simplesmente fica impedido de continuar.", "relief": "Funciona totalmente offline, em qualquer dispositivo, depois de carregar uma vez." },
+    { "pain": "Conteúdo embargado: profissionais de comunicação ficam impedidos de colaborar com segurança.", "relief": "bloqueie, criptografe e proteja com senha arquivos, zips e links de compartilhamento - tudo sem precisar de internet" }
+  ]
+}

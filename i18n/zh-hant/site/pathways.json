@@ -1,0 +1,30 @@
+{
+  "title": "三種切入方式",
+  "lead": "先從 [快速入門](/info/quickstart.html) 開始 — 匯入你的品牌、產出第一個檔案 — 然後選擇最適合你的路徑。",
+  "cards": [
+    {
+      "href": "/info/creators.html",
+      "icon": "media",
+      "eyebrow": "給創作者",
+      "name": "開始創作",
+      "desc": "幾秒鐘內完成檔案 — 不需要設計工具,也不用等待。這些優勢,以及如何充分運用這款應用程式。",
+      "cta": "探索 →"
+    },
+    {
+      "href": "/info/builders.html",
+      "icon": "developers",
+      "eyebrow": "給開發者",
+      "name": "撰寫與整合",
+      "desc": "撰寫工具、透過 CLI、MCP 或代理程式驅動它們,並部署整個平台。技術文件。",
+      "cta": "閱讀文件 →"
+    },
+    {
+      "href": "/info/operators.html",
+      "icon": "security",
+      "eyebrow": "給維運者",
+      "name": "安全導入",
+      "desc": "以縱深防禦打造的資料外洩防護策略,包裝成一個創意平台。策略、安全性,以及導入採用。",
+      "cta": "查看策略 →"
+    }
+  ]
+}

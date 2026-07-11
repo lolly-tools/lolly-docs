@@ -1,0 +1,18 @@
+{
+  "eyebrow": "Ursprung & integritet",
+  "heading": "Bevisa vad du skapat.\nBehåll det som är ditt.",
+  "lead": "Varje bild, PDF eller video du exporterar kan bära en **Content Credential** — ett manipuleringssäkert [C2PA](https://c2pa.org)-sigill som skapas helt på din enhet. Det bevisar att filen inte har ändrats sedan den lämnade Lolly, och när du har registrerat en identitet visar det även vem som signerade den.",
+  "illustration": "illusCheck",
+  "checks": [
+    { "title": "Manipuleringssäker som standard", "desc": "Sigillet täcker varje exporterad byte. Ändra en enda pixel så flaggar vilken C2PA-validerare som helst det." },
+    { "title": "Signerad på din enhet", "desc": "Din signeringsnyckel genereras lokalt och lämnar aldrig enheten — inte ens Lolly kan läsa den." },
+    { "title": "Verifierbar av vem som helst, offline", "desc": "Filen bär sitt eget bevis. Kontrollera den i fliken Verifiera, i CLI:t eller med vilken C2PA-validerare som helst — inget laddas upp." }
+  ],
+  "cards": [
+    { "icon": "assureEyeOff", "title": "Inget lämnar din enhet", "desc": "Ingen molnrendering, ingen telemetri, ingen analys. Det du skapar stannar på din dator." },
+    { "icon": "assureScan", "title": "Rensa och lås, på enheten", "desc": "Rensa dold data tar bort EXIF och metadata lokalt. Lås en PDF, en nedladdning eller en delningslänk med ett lösenord som aldrig lämnar din enhet." },
+    { "icon": "assureServer", "title": "Självhosta eller air-gap", "desc": "Ingen server, ingen databas, ingen backend. Kör helt bakom din brandvägg, helt offline." }
+  ],
+  "cta": "Så fungerar Content Credentials →",
+  "ctaHref": "/info/content-credentials-identity.html"
+}

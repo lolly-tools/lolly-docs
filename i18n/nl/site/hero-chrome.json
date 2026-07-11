@@ -1,0 +1,31 @@
+{
+  "pilotTag": "Prototype",
+  "pilotText": "Besloten pilot in uitvoering · wordt gehard voor enterprise-schaal",
+  "pilotAriaLabel": "Lolly is een intern prototype in een besloten pilot, dat wordt gehard voor enterprise-schaal",
+  "ctas": [
+    {
+      "href": "/",
+      "label": "App starten ↗",
+      "class": "btn btn-primary"
+    },
+    {
+      "href": "/info/quickstart.html",
+      "label": "Snelstart →",
+      "class": "btn btn-primary btn-quickstart"
+    },
+    {
+      "href": "/info/about.html",
+      "label": "Meer weten",
+      "class": "btn btn-secondary"
+    }
+  ],
+  "trustChips": [
+    "100% gratis",
+    "Geen cookies",
+    "Geen aanmelding nodig",
+    "Werkt offline",
+    "Open source",
+    "Privacy voorop"
+  ],
+  "toolCountSuffix": "Voorbeeldtools geladen"
+}

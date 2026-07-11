@@ -1,0 +1,19 @@
+{
+  "heading": "Lahat ng ito,\nkung ano ka man,\nkahit saan",
+  "copy": "Patakbuhin nang offline sa device mo, o palaging available bilang naka-host online — ikaw ang magdesisyon.\nGagana ang Lolly Tools diyan.",
+  "surfaces": [
+    { "icon": "surfaceWeb", "label": "Web" },
+    { "icon": "surfaceMacos", "label": "macOS" },
+    { "icon": "surfaceLinux", "label": "Linux" },
+    { "icon": "surfaceIos", "label": "iOS" },
+    { "icon": "surfaceAndroid", "label": "Android" },
+    { "icon": "surfaceCli", "label": "CLI" },
+    { "icon": "surfaceTui", "label": "TUI" }
+  ],
+  "modelsIntro": "Tatlong paraan ng delivery:",
+  "models": [
+    { "n": "1", "icon": "modelDeploy", "label": "Deploy", "desc": "I-ship sa mga device gamit ang kasalukuyang MDM mo. Tumatakbo nang lubos na offline, sa likod ng kahit anong firewall o air-gap — walang aalis sa device." },
+    { "n": "2", "icon": "modelServe", "label": "Serve", "desc": "Isang hosted instance, magagamit sa anumang browser. Walang kailangang i-install — pag-release ng approved updates, agad itong naaabot ng lahat." },
+    { "n": "3", "icon": "modelHybrid", "label": "Hybrid", "desc": "Mga offline na local app kasabay ng palaging up-to-date na web version, parehong may iisang tool library — sa lahat ng OS nang sabay-sabay." }
+  ]
+}

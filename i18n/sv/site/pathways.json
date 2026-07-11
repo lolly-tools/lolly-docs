@@ -1,0 +1,30 @@
+{
+  "title": "Tre vägar in",
+  "lead": "Börja med [Snabbstart](/info/quickstart.html) — lägg in ditt varumärke och få ut din första fil — följ sedan den väg som passar dig.",
+  "cards": [
+    {
+      "href": "/info/creators.html",
+      "icon": "media",
+      "eyebrow": "För kreatörer",
+      "name": "Skapa saker",
+      "desc": "Färdiga filer på några sekunder — inget designverktyg, ingen väntan. Fördelarna, och hur du får ut mesta möjliga av appen.",
+      "cta": "Utforska →"
+    },
+    {
+      "href": "/info/builders.html",
+      "icon": "developers",
+      "eyebrow": "För utvecklare",
+      "name": "Skapa & integrera",
+      "desc": "Skapa verktyg, styr dem från CLI, MCP eller en agent, och driftsätt plattformen. Den tekniska dokumentationen.",
+      "cta": "Läs dokumentationen →"
+    },
+    {
+      "href": "/info/operators.html",
+      "icon": "security",
+      "eyebrow": "För driftansvariga",
+      "name": "Rulla ut det säkert",
+      "desc": "En strategi för dataförlustskydd med flera säkerhetslager, förklädd till en kreativ plattform. Strategi, säkerhet och införande.",
+      "cta": "Se strategin →"
+    }
+  ]
+}

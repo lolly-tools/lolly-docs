@@ -1,0 +1,30 @@
+{
+  "title": "Tiga cara untuk bermula",
+  "lead": "Mulakan dengan [Quickstart](/info/quickstart.html) — masukkan jenama anda dan hasilkan fail pertama anda — kemudian ikuti laluan yang paling sesuai dengan anda.",
+  "cards": [
+    {
+      "href": "/info/creators.html",
+      "icon": "media",
+      "eyebrow": "Untuk Pencipta",
+      "name": "Cipta sesuatu",
+      "desc": "Fail siap dalam beberapa saat — tanpa alat reka bentuk, tanpa menunggu. Kelebihannya, dan cara mendapat manfaat penuh daripada aplikasi ini.",
+      "cta": "Terokai →"
+    },
+    {
+      "href": "/info/builders.html",
+      "icon": "developers",
+      "eyebrow": "Untuk Pembina",
+      "name": "Cipta & Integrasikan",
+      "desc": "Cipta alat, jalankannya melalui CLI, MCP, atau ejen, dan lancarkan platform ini. Dokumentasi teknikal.",
+      "cta": "Baca dokumentasi →"
+    },
+    {
+      "href": "/info/operators.html",
+      "icon": "security",
+      "eyebrow": "Untuk Operator",
+      "name": "Laksanakan dengan selamat",
+      "desc": "Strategi pencegahan kehilangan data pertahanan-berlapis yang menyamar sebagai platform kreatif. Strategi, keselamatan, dan penerimaan pakai.",
+      "cta": "Lihat strategi →"
+    }
+  ]
+}

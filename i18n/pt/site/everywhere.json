@@ -1,0 +1,19 @@
+{
+  "heading": "Tudo isso,\ndo jeito que você é,\nem qualquer dispositivo",
+  "copy": "Rode offline no seu dispositivo, esteja sempre disponível hospedado online, você decide.\nAs Lolly Tools podem funcionar lá.",
+  "surfaces": [
+    { "icon": "surfaceWeb", "label": "Web" },
+    { "icon": "surfaceMacos", "label": "macOS" },
+    { "icon": "surfaceLinux", "label": "Linux" },
+    { "icon": "surfaceIos", "label": "iOS" },
+    { "icon": "surfaceAndroid", "label": "Android" },
+    { "icon": "surfaceCli", "label": "CLI" },
+    { "icon": "surfaceTui", "label": "TUI" }
+  ],
+  "modelsIntro": "Três modos de entrega:",
+  "models": [
+    { "n": "1", "icon": "modelDeploy", "label": "Implantar", "desc": "Distribua para os dispositivos através do seu MDM já existente. Funciona totalmente offline, atrás de qualquer firewall ou rede isolada (air-gap) — nada sai do dispositivo." },
+    { "n": "2", "icon": "modelServe", "label": "Servir", "desc": "Uma única instância hospedada, usada em qualquer navegador. Nada para instalar — atualizações aprovadas chegam a todo mundo no instante em que são lançadas." },
+    { "n": "3", "icon": "modelHybrid", "label": "Híbrido", "desc": "Aplicativos locais offline mais uma versão web sempre atualizada, compartilhando uma única biblioteca de ferramentas — em todos os sistemas operacionais ao mesmo tempo." }
+  ]
+}

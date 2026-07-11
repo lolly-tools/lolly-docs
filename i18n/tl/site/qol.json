@@ -1,0 +1,14 @@
+{
+  "panels": [
+    {
+      "illustration": "illusSound",
+      "heading": "Accessible, may tunog",
+      "desc": "Isang interface na gumagana ayon sa paraan mo — screen-reader friendly at lubos na keyboard-navigable sa buong app. I-on ang mahinahong interface sounds, o lumipat sa **Neurospicy Mode**: isang kalmadong focus beat na paulit-ulit na tumutugtog nang tahimik habang nagtatrabaho ka."
+    },
+    {
+      "illustration": "illusBulk",
+      "heading": "I-organize, tapos i-render nang bulk",
+      "desc": "Itago ang mga naka-save na gawa sa nested na **Projects** folders. Kapag oras na para i-ship, i-render ang buong folder — o kahit ilang piniling item lang — papunta sa iisang zip. Walang kailangang spreadsheet, walang batch grid."
+    }
+  ]
+}

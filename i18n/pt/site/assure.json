@@ -1,0 +1,18 @@
+{
+  "eyebrow": "Proveniência e privacidade",
+  "heading": "Prove o que você criou.\nMantenha o que é seu.",
+  "lead": "Toda imagem, PDF ou vídeo que você exporta pode carregar um **Content Credential** — um selo [C2PA](https://c2pa.org) à prova de violação, criado inteiramente no seu dispositivo. Ele prova que o arquivo não foi alterado desde que saiu do Lolly e, depois que você cadastra uma identidade, registra quem o assinou.",
+  "illustration": "illusCheck",
+  "checks": [
+    { "title": "À prova de violação por padrão", "desc": "O selo cobre cada byte exportado. Altere um único pixel e qualquer validador C2PA vai sinalizar isso." },
+    { "title": "Assinado no seu dispositivo", "desc": "Sua chave de assinatura é gerada localmente e nunca sai do dispositivo — nem mesmo o Lolly consegue lê-la." },
+    { "title": "Verificável por qualquer pessoa, offline", "desc": "O arquivo carrega sua própria prova. Verifique na aba Verify, na CLI ou em qualquer validador C2PA — nada é enviado." }
+  ],
+  "cards": [
+    { "icon": "assureEyeOff", "title": "Nada sai do seu dispositivo", "desc": "Sem renderização na nuvem, sem telemetria, sem análises. O que você cria permanece na sua máquina." },
+    { "icon": "assureScan", "title": "Limpeza e bloqueio, no dispositivo", "desc": "O Strip Hidden Data remove EXIF e metadados localmente. Bloqueie um PDF, um download ou um link de compartilhamento com uma senha que nunca sai do seu dispositivo." },
+    { "icon": "assureServer", "title": "Auto-hospedado ou isolado (air-gap)", "desc": "Sem servidor, sem banco de dados, sem backend. Rode totalmente atrás do seu firewall, completamente offline." }
+  ],
+  "cta": "Como funcionam os Content Credentials →",
+  "ctaHref": "/info/content-credentials-identity.html"
+}

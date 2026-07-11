@@ -1,0 +1,23 @@
+{
+  "heading": "工具",
+  "lead": "一個自成一體的範本。\n版面規則與樣式,靜候資料填入",
+  "anatomy": [
+    { "file": "tool.json", "name": "資訊清單", "desc": "名稱、輸入欄位與中繼資料" },
+    { "file": "template.html", "name": "範本", "desc": "用來算繪輸出結果的 HTML/CSS/JS" },
+    { "file": "hooks.js", "name": "掛勾", "desc": "選用邏輯,於沙盒中執行" }
+  ],
+  "features": [
+    { "icon": "toolFeatureStar", "title": "智慧範本", "desc": "了解自己的版面、字體、色彩與品牌規則。你只需提供內容——其餘全部交給它處理。" },
+    { "icon": "toolFeaturePeople", "title": "不需要設計經驗", "desc": "由熟悉品牌的人建立一次,之後任何人只需填空即可。" },
+    { "icon": "toolFeatureCode", "title": "設計即程式碼", "desc": "純粹的 HTML、CSS 與 JS。可版本控管、可比對差異,也能像其他原始碼檔案一樣接受審查。" },
+    { "icon": "toolFeatureMonitor", "title": "不需要應用程式", "desc": "在任何瀏覽器中開啟 `template.html`——就能直接運作。工具本身就是應用程式。" },
+    { "icon": "toolFeatureShuffle", "title": "自由畫布版面", "desc": "部分工具會以可直接操作的畫布開啟——拖曳、旋轉並吸附文字、形狀與圖片方塊,並透過相同的確定性流程匯出。" },
+    { "icon": "toolFeatureNested", "title": "工具中的工具", "desc": "把一個工具當成另一個工具裡的圖片來使用——例如會自行產生 QR code 的識別證、內含即時圖表的卡片——並保留完整的智慧功能:依然即時運作、依然會重新算繪,絕不會變成扁平化的圖片。" }
+  ],
+  "tryNow": {
+    "title": "工具本身就能獨立運作良好。",
+    "desc": "若要輸出成 PNG、PDF、SVG、影片等格式——請使用 Lolly 平台。",
+    "cta": "啟動應用程式 ↗",
+    "href": "/"
+  }
+}

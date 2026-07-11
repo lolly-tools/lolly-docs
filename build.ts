@@ -857,7 +857,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
       </div>`).join('\n      ')}
     </div>
     <div class="import-cta-row reveal reveal-4">
-      <a href="${esc(importData.ctaHref)}" class="import-more">${esc(importData.cta)}</a>
+      <a href="${esc(localizeHref(lang, importData.ctaHref))}" class="import-more">${esc(importData.cta)}</a>
     </div>
   </div>
 </section>`;
@@ -956,7 +956,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
     <div class="assure-grid reveal reveal-2">
       ${assure.cards.map(c => `<div class="assure-card"><span class="assure-card-ic">${siteIcon(c.icon)}</span><strong>${esc(c.title)}</strong><p>${inline(c.desc)}</p></div>`).join('\n      ')}
     </div>
-    <div class="assure-cta reveal reveal-3"><a href="${esc(assure.ctaHref)}">${esc(assure.cta)}</a></div>
+    <div class="assure-cta reveal reveal-3"><a href="${esc(localizeHref(lang, assure.ctaHref))}">${esc(assure.cta)}</a></div>
   </div>
 </section>`;
 
@@ -1059,13 +1059,13 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   <canvas id="heroCanvas" aria-hidden="true"></canvas>
   <div class="hero-inner">
   <div class="hero-heading">
-    <h1 class="hero-logo-h1"><a href="/" class="hero-logo-link" aria-label="Open Lolly — browse all tools"><img src="/info/icon-normal.webp" alt="Lolly" class="hero-logo"></a></h1>
+    <h1 class="hero-logo-h1"><a href="${esc(localizeHref(lang, '/'))}" class="hero-logo-link" aria-label="Open Lolly — browse all tools"><img src="/info/icon-normal.webp" alt="Lolly" class="hero-logo"></a></h1>
   </div>
   <div class="hero-details">
     <span class="hero-pilot" aria-label="${esc(heroChrome.pilotAriaLabel)}"><span class="hero-pilot-tag">${esc(heroChrome.pilotTag)}</span><span class="hero-pilot-text">${esc(heroChrome.pilotText)}</span></span>
     <p class="subtitle">${heroSubtitle}</p>
     <div class="hero-cta">
-      ${heroChrome.ctas.map(c => `<a href="${esc(c.href)}" class="${esc(c.class)}">${esc(c.label)}</a>`).join('\n      ')}
+      ${heroChrome.ctas.map(c => `<a href="${esc(localizeHref(lang, c.href))}" class="${esc(c.class)}">${esc(c.label)}</a>`).join('\n      ')}
     </div>
     <div class="hero-trust">
       ${heroChrome.trustChips.map(c => `<span>${esc(c)}</span>`).join('\n      <span class="trust-dot">·</span>\n      ')}
@@ -1128,7 +1128,7 @@ ${whatsLines.length ? `<section class="whats-a-tool">
       <strong>${esc(whatsATool.tryNow.title)}</strong>
       <p>${esc(whatsATool.tryNow.desc)}</p>
     </div>
-    <a href="${esc(whatsATool.tryNow.href)}" class="btn btn-primary">${esc(whatsATool.tryNow.cta)}</a>
+    <a href="${esc(localizeHref(lang, whatsATool.tryNow.href))}" class="btn btn-primary">${esc(whatsATool.tryNow.cta)}</a>
   </div>
   </div>
 </section>` : ''}
@@ -2135,6 +2135,19 @@ function hrefToSlug(href: string): string {
   return href.replace(/^\/info\//, '').replace(/\.html$/, '');
 }
 
+// Rewrite an href authored in the (always-English) landing-page JSON content —
+// either "/" (the app root) or an internal "/info/<slug>.html" page — to the
+// equivalent URL for `lang`, so a Spanish landing page's CTAs/links don't dump
+// the visitor back into English. The app root gets a `?lang=` query override
+// (a session-only override the SPA's initI18n reads at the top of its
+// precedence chain — see shells/web/src/main.ts/i18n.ts) since, unlike /info,
+// it has no per-locale path to link to instead.
+function localizeHref(lang: Lang, href: string): string {
+  if (href === '/') return lang === 'en' ? '/' : `/?lang=${lang}`;
+  const m = href.match(/^\/info\/([\w-]+)\.html$/);
+  return m ? localeHref(lang, m[1]!) : href;
+}
+
 // Language-switcher indicator (~/Build/language-icon.svg), inlined with
 // fill="currentColor" so it themes with the surrounding nav text. Same markup
 // as shells/web/src/i18n.ts's LANG_ICON_SVG — duplicated (not imported) since
@@ -2165,8 +2178,9 @@ function buildNav(lang: Lang, slug: string, activeHref: string, isLanding: boole
   const mobileLinks = NAV.flat().map(link).join('');
   const navClass = isLanding ? '' : ' class="nav-solid"';
   const launch = esc(t('Launch App ↗'));
-  return `<nav${navClass}><a href="${localeHref(lang, 'index')}" class="brand">Lolly</a>${groups}<div class="gap"></div>${langPickerHtml(lang, slug)}${THEME_TOGGLE}${HAM_BTN}<a href="/" class="nav-launch">${launch}</a></nav>
-<div class="nav-mobile-menu" id="navMobileMenu">${mobileLinks}<a href="/" class="nav-launch">${launch}</a></div>`;
+  const launchHref = esc(localizeHref(lang, '/'));
+  return `<nav${navClass}><a href="${localeHref(lang, 'index')}" class="brand">Lolly</a>${groups}<div class="gap"></div>${langPickerHtml(lang, slug)}${THEME_TOGGLE}${HAM_BTN}<a href="${launchHref}" class="nav-launch">${launch}</a></nav>
+<div class="nav-mobile-menu" id="navMobileMenu">${mobileLinks}<a href="${launchHref}" class="nav-launch">${launch}</a></div>`;
 }
 
 const FOOTER = () => `<footer><p>Lolly — <a href="${REPO_URL}">${esc(t('Open Source'))}</a></p><p>${esc(t('Questions? Contact Andy Fitzsimon —'))} <a href="mailto:fitzy@suse.com">fitzy@suse.com</a></p>${FOUNDED_BY}</footer>`;
@@ -2211,7 +2225,7 @@ function wrapPage(lang: Lang, page: Page, content: string, ogSlugs: Set<string>)
   const pageTitle  = isLanding ? LANDING_TITLE : `${t(page.title)} — Lolly`;
   const localeUrl  = `${SITE_URL}${localeHref(lang, page.slug)}`;
   const alternates = LANGS.map(l =>
-    `<link rel="alternate" hreflang="${l === 'zh' ? 'zh-Hans' : l}" href="${esc(`${SITE_URL}${localeHref(l, page.slug)}`)}">`,
+    `<link rel="alternate" hreflang="${LANG_META[l].htmlLang}" href="${esc(`${SITE_URL}${localeHref(l, page.slug)}`)}">`,
   ).join('\n') + `\n<link rel="alternate" hreflang="x-default" href="${esc(`${SITE_URL}${localeHref('en', page.slug)}`)}">`;
 
   return `<!doctype html>
@@ -2334,7 +2348,7 @@ function build() {
   // engines route each locale to the language it actually serves.
   const urlEntries = sitemapUrls.map(({ slug }) => {
     const alternates = LANGS.map(l =>
-      `      <xhtml:link rel="alternate" hreflang="${l === 'zh' ? 'zh-Hans' : l}" href="${esc(`${SITE_URL}${localeHref(l, slug)}`)}"/>`,
+      `      <xhtml:link rel="alternate" hreflang="${LANG_META[l].htmlLang}" href="${esc(`${SITE_URL}${localeHref(l, slug)}`)}"/>`,
     ).join('\n');
     return LANGS.map(lang => `  <url>\n    <loc>${esc(`${SITE_URL}${localeHref(lang, slug)}`)}</loc>\n${alternates}\n  </url>`).join('\n');
   }).join('\n');

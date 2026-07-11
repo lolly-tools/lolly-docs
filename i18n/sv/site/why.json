@@ -1,0 +1,19 @@
+{
+  "eyebrow": "Varför vi byggde Lolly",
+  "heading": "Vardagligt kreativt arbete\nborde inte vara så här svårt.",
+  "lead": "De flesta vill inte ha en designstudio. De vill ha en korrekt fil, nu — utan att bryta mot varumärket, utan att vänta på någon, och utan att lämna över ett privat dokument till en webbplats de aldrig hört talas om. Lolly finns för att ta bort just dessa tre frustrationer.",
+  "frustrations": [
+    { "icon": "anxiety", "title": "Oro för att bryta mot varumärket", "desc": "Den tysta rädslan för att välja fel färg eller typsnitt och göra bort sig offentligt." },
+    { "icon": "bottleneck", "title": "Flaskhalsen", "desc": "Varje liten fil fastnar i en kö bakom en upptagen designer, ett långsamt verktyg eller ännu ett godkännande." },
+    { "icon": "cloudDependence", "title": "Molnberoende", "desc": "Att ladda upp känsliga filer bara för att konvertera eller beskära dem — och stå helt handfallen så fort du är offline." }
+  ],
+  "matrix": [
+    { "pain": "Mejla en brief till designteamet och vänta sedan i flera dagar på en liten grafik.", "relief": "Fyll i några fält. Den färdiga filen är klar på några sekunder." },
+    { "pain": "Gissa dig till rätt typsnitt, färg och logotyp — och hoppas att det går igenom varumärkesgranskningen.", "relief": "Designreglerna är inbyggda i verktyget. De böjer sig, men brister inte. " },
+    { "pain": "Ladda upp ett kontrakt, en lönespecifikation eller ett privat foto till en slumpmässig gratis webbplats för att konvertera eller beskära det.", "relief": "Allt körs på din egen enhet. Inget laddas upp; inget lämnar den ansvariga personens enhet." },
+    { "pain": "Göra om samma bricka, kort eller banderoll hundra gånger för hand.", "relief": "Klistra in ett kalkylblad. Få hundra färdiga, tryckklara filer på en gång." },
+    { "pain": "”Vilken version är den senaste?” — att leta igenom Slack-trådar och delade enheter.", "relief": "Filen är en länk. Samma indata, samma fil, varje gång." },
+    { "pain": "Ingen signal på flyget, eller ett låst nätverk — så du är helt enkelt blockerad.", "relief": "Fungerar helt offline, på vilken enhet som helst, så snart den har laddats en gång." },
+    { "pain": "Embargobelagt innehåll:  Kommunikatörer stängs ute från att engagera samarbetspartners på ett säkert sätt.", "relief": "lås, kryptera och lösenordsskydda filer, zip-filer och delade länkar – helt utan internet" }
+  ]
+}

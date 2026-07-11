@@ -1,0 +1,18 @@
+{
+  "eyebrow": "Herkomst & privacy",
+  "heading": "Bewijs wat je hebt gemaakt.\nHoud wat van jou is.",
+  "lead": "Elke afbeelding, PDF of video die je exporteert kan een **Content Credential** dragen — een manipulatiebestendige [C2PA](https://c2pa.org)-verzegeling die volledig op je apparaat wordt gemaakt. Het bewijst dat het bestand niet is gewijzigd sinds het Lolly verliet, en zodra je een identiteit registreert, legt het vast wie het heeft ondertekend.",
+  "illustration": "illusCheck",
+  "checks": [
+    { "title": "Standaard manipulatiebestendig", "desc": "De verzegeling dekt elke geëxporteerde byte. Verander één pixel en elke C2PA-validator geeft dit aan." },
+    { "title": "Ondertekend op je apparaat", "desc": "Je ondertekeningssleutel wordt lokaal gegenereerd en verlaat het apparaat nooit — zelfs Lolly kan hem niet lezen." },
+    { "title": "Door iedereen te verifiëren, offline", "desc": "Het bestand draagt zijn eigen bewijs. Controleer het in het tabblad Verify, de CLI, of een willekeurige C2PA-validator — er wordt niets geüpload." }
+  ],
+  "cards": [
+    { "icon": "assureEyeOff", "title": "Niets verlaat je apparaat", "desc": "Geen cloud-rendering, geen telemetrie, geen analytics. Wat je maakt, blijft op je machine." },
+    { "icon": "assureScan", "title": "Opschonen en vergrendelen, op het apparaat", "desc": "Strip Hidden Data verwijdert lokaal EXIF en metadata. Vergrendel een PDF, een download, of een deellink met een wachtwoord dat je apparaat nooit verlaat." },
+    { "icon": "assureServer", "title": "Zelf hosten of air-gapped draaien", "desc": "Geen server, geen database, geen backend. Draai volledig achter je firewall, volledig offline." }
+  ],
+  "cta": "Hoe Content Credentials werken →",
+  "ctaHref": "/info/content-credentials-identity.html"
+}

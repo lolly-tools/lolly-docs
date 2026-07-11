@@ -1,0 +1,31 @@
+{
+  "pilotTag": "Prototaip",
+  "pilotText": "Pilot tertutup sedang dijalankan · pengukuhan untuk skala perusahaan",
+  "pilotAriaLabel": "Lolly ialah prototaip dalaman dalam pilot tertutup, sedang diperkukuh untuk skala perusahaan",
+  "ctas": [
+    {
+      "href": "/",
+      "label": "Lancar Aplikasi ↗",
+      "class": "btn btn-primary"
+    },
+    {
+      "href": "/info/quickstart.html",
+      "label": "Mula Pantas →",
+      "class": "btn btn-primary btn-quickstart"
+    },
+    {
+      "href": "/info/about.html",
+      "label": "Ketahui Lebih Lanjut",
+      "class": "btn btn-secondary"
+    }
+  ],
+  "trustChips": [
+    "100% Percuma",
+    "Tiada Kuki",
+    "Tiada Pendaftaran",
+    "Berfungsi Luar Talian",
+    "Sumber Terbuka",
+    "Privasi Diutamakan"
+  ],
+  "toolCountSuffix": "Contoh Alat Dimuatkan"
+}

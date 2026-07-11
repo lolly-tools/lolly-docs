@@ -1,0 +1,30 @@
+{
+  "title": "Três maneiras de começar",
+  "lead": "Comece pelo [Guia rápido](/info/quickstart.html) — coloque sua marca e gere seu primeiro arquivo — depois siga o caminho que combina com você.",
+  "cards": [
+    {
+      "href": "/info/creators.html",
+      "icon": "media",
+      "eyebrow": "Para criadores",
+      "name": "Crie coisas",
+      "desc": "Arquivos prontos em segundos — sem ferramenta de design, sem espera. As vantagens e como aproveitar ao máximo o aplicativo.",
+      "cta": "Explorar →"
+    },
+    {
+      "href": "/info/builders.html",
+      "icon": "developers",
+      "eyebrow": "Para desenvolvedores",
+      "name": "Crie e integre",
+      "desc": "Crie ferramentas, controle-as pela CLI, MCP ou um agente, e implante a plataforma. A documentação técnica.",
+      "cta": "Ler a documentação →"
+    },
+    {
+      "href": "/info/operators.html",
+      "icon": "security",
+      "eyebrow": "Para operadores",
+      "name": "Implemente com segurança",
+      "desc": "Uma estratégia de prevenção contra perda de dados em profundidade disfarçada de plataforma criativa. Estratégia, segurança e adoção.",
+      "cta": "Ver a estratégia →"
+    }
+  ]
+}

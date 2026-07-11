@@ -1,0 +1,14 @@
+{
+  "panels": [
+    {
+      "illustration": "illusSound",
+      "heading": "Přístupné, se zvukem",
+      "desc": "Rozhraní, které funguje tak, jak potřebuješ — po celou dobu přátelské ke čtečkám obrazovky a plně ovladatelné klávesnicí. Zapni jemné zvuky rozhraní, nebo přepni do **Neurospicy Mode**: klidný soustředěný rytmus, který tiše hraje ve smyčce, zatímco pracuješ."
+    },
+    {
+      "illustration": "illusBulk",
+      "heading": "Organizuj a pak vykresli hromadně",
+      "desc": "Ukládej rozpracovanou práci do vnořených složek **Projekty**. Až přijde čas na výstup, vykresli celou složku — nebo jakýkoliv výběr, který zvolíš — do jednoho zipu. Žádná tabulka, žádná dávková mřížka není potřeba."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "heading": "Alla format, in och ut",
+  "lead": "Lolly läser 13 källformat och renderar 25 — här är hela uppsättningen, grupperad efter vad varje sort är för typ. Sex {roundtrip}: läses *och* skrivs, så de dyker upp i båda kolumnerna.",
+  "ingestsLabel": "Importerar",
+  "ingestsCount": "13 in",
+  "exportsLabel": "Exporterar",
+  "exportsCount": "25 ut",
+  "ingests": [
+    { "category": "3D", "list": "GLB · glTF" },
+    { "category": "Design", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
+    { "category": "Foton", "list": "HEIC · TIFF · AVIF" },
+    { "category": "Data", "list": "CSV · JSON" }
+  ],
+  "exports": [
+    { "category": "Vektor", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
+    { "category": "Raster", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
+    { "category": "Rörlig bild", "list": "MP4 · WEBM · GIF · APNG" },
+    { "category": "Dokument", "list": "PPTX · HTML · MD · TXT" },
+    { "category": "Data", "list": "CSV · JSON · ICS · VCF" },
+    { "category": "Paket", "list": "ZIP" }
+  ]
+}

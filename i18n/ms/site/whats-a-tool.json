@@ -1,0 +1,23 @@
+{
+  "heading": "Alat",
+  "lead": "Templat yang lengkap dengan sendirinya.\nPeraturan susun atur dan gaya, menunggu data",
+  "anatomy": [
+    { "file": "tool.json", "name": "Manifest", "desc": "Nama, input & metadata" },
+    { "file": "template.html", "name": "Templat", "desc": "HTML/CSS/JS yang menghasilkan output" },
+    { "file": "hooks.js", "name": "Hooks", "desc": "Logik pilihan, dijalankan dalam sandbox" }
+  ],
+  "features": [
+    { "icon": "toolFeatureStar", "title": "Templat pintar", "desc": "Templat ini tahu susun atur, jenis, warna dan peraturan jenamanya sendiri. Anda bawa kandungan — ia uruskan selebihnya." },
+    { "icon": "toolFeaturePeople", "title": "Tidak perlukan pengalaman reka bentuk", "desc": "Dihasilkan sekali oleh seseorang yang memahami jenama. Orang lain hanya perlu isikan tempat kosong." },
+    { "icon": "toolFeatureCode", "title": "Reka bentuk sebagai kod", "desc": "HTML, CSS dan JS biasa. Terkawal versi, boleh dibandingkan (diff) dan disemak seperti mana-mana fail sumber lain." },
+    { "icon": "toolFeatureMonitor", "title": "Tidak perlukan aplikasi", "desc": "Buka `template.html` dalam mana-mana pelayar — ia terus berfungsi. Alat itu sendiri adalah aplikasinya." },
+    { "icon": "toolFeatureShuffle", "title": "Susun atur kanvas bebas", "desc": "Sebahagian alat dibuka sebagai kanvas manipulasi langsung — seret, putar dan lekapkan kotak teks, bentuk dan imej, dieksport melalui laluan deterministik yang sama." },
+    { "icon": "toolFeatureNested", "title": "Alat di dalam alat", "desc": "Layan sesuatu alat seperti imej di dalam alat lain — lencana yang menghasilkan kod QR sendiri, kad dengan carta langsung — sambil mengekalkan kepintarannya: kekal langsung, kekal dipapar semula, tidak pernah menjadi gambar rata." }
+  ],
+  "tryNow": {
+    "title": "Alat berfungsi dengan baik dengan sendirinya.",
+    "desc": "Untuk menghasilkan PNG, PDF, SVG, video dan banyak lagi — gunakan platform Lolly.",
+    "cta": "Lancar Aplikasi ↗",
+    "href": "/"
+  }
+}

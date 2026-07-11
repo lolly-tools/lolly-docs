@@ -1,0 +1,19 @@
+{
+  "eyebrow": "Bakit namin ginawa ang Lolly",
+  "heading": "Ang pang-araw-araw na creative work\nhindi dapat ganito kahirap.",
+  "lead": "Karamihan sa mga tao ay hindi naghahanap ng design studio. Gusto lang nila ng isang tamang file, ngayon na — nang hindi nasisira ang brand, nang hindi naghihintay sa iba, at nang hindi ibinibigay ang isang pribadong dokumento sa isang website na hindi pa nila narinig. Ang Lolly ay ginawa para alisin ang tatlong frustration na ito.",
+  "frustrations": [
+    { "icon": "anxiety", "title": "Pangamba sa off-brand", "desc": "Ang tahimik na kaba sa pagpili ng maling kulay o font, at ang pagkakamali nito sa publiko." },
+    { "icon": "bottleneck", "title": "Ang bottleneck", "desc": "Bawat maliit na asset na naka-stuck sa pila, naghihintay sa isang abalang designer, mabagal na tool, o isa pang approval." },
+    { "icon": "cloudDependence", "title": "Pag-asa sa cloud", "desc": "Pag-upload ng mga sensitibong file para lang i-convert o i-crop ang mga ito — at maiiwang walang magawa sa sandaling ma-offline ka." }
+  ],
+  "matrix": [
+    { "pain": "Mag-email ng brief sa design team, tapos maghintay ng ilang araw para lang sa isang maliit na graphic.", "relief": "Punan ang ilang fields. Handa na ang tapos na asset sa loob ng segundo." },
+    { "pain": "Manghula sa tamang font, kulay, at logo — at umasang makapasa sa brand review.", "relief": "Nakapaloob na sa tool ang mga design rules. Umaayon sila, hindi nasisira. " },
+    { "pain": "Mag-upload ng kontrata, payslip, o pribadong larawan sa isang random na libreng website para lang i-convert o i-crop ito.", "relief": "Lahat ay tumatakbo sa sarili mong device. Walang ina-upload; walang umaalis sa device ng responsableng indibidwal." },
+    { "pain": "Gawin muli ang parehong badge, card, o banner nang isang daang beses nang manu-mano.", "relief": "I-paste ang isang spreadsheet. Makakuha ng isang daang tapos na, print-ready na file nang sabay-sabay." },
+    { "pain": "“Alin ang pinakabagong bersyon?” — paghahanap sa mga Slack thread at shared drive.", "relief": "Ang asset ay isang link. Parehong inputs, parehong file, sa tuwina." },
+    { "pain": "Walang signal sa eroplano, o naka-lock-down na network — kaya basta na lang naka-block ka.", "relief": "Gumagana nang lubos offline, sa kahit anong device, kapag na-load na ito nang isang beses." },
+    { "pain": "Embargoed content:  Hindi makapag-secure na makipag-ugnayan ang mga Comms professional sa mga collaborator.", "relief": "mag-lock, mag-encrypt, at mag-password sa mga file, zip, at share link - lahat nang walang internet" }
+  ]
+}

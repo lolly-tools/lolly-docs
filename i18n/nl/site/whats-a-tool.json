@@ -1,0 +1,23 @@
+{
+  "heading": "Tools",
+  "lead": "Een zelfstandige sjabloon.\nLay-outregels en stijl, wachtend op data",
+  "anatomy": [
+    { "file": "tool.json", "name": "Manifest", "desc": "Naam, invoer & metadata" },
+    { "file": "template.html", "name": "Sjabloon", "desc": "HTML/CSS/JS dat de output rendert" },
+    { "file": "hooks.js", "name": "Hooks", "desc": "Optionele logica, sandboxed" }
+  ],
+  "features": [
+    { "icon": "toolFeatureStar", "title": "Een slimme sjabloon", "desc": "Kent zijn eigen lay-out, type, kleuren en merkregels. Jij levert de content — de rest regelt het zelf." },
+    { "icon": "toolFeaturePeople", "title": "Geen ontwerpervaring nodig", "desc": "Eenmaal gemaakt door iemand die het merk kent. Daarna hoeft iedereen alleen nog de lege plekken in te vullen." },
+    { "icon": "toolFeatureCode", "title": "Ontwerp als code", "desc": "Gewoon HTML, CSS en JS. Versiebeheerd, diff-baar en review-baar, zoals elk ander bronbestand." },
+    { "icon": "toolFeatureMonitor", "title": "Geen app nodig", "desc": "Open `template.html` in elke browser — het werkt gewoon. De tool is de app." },
+    { "icon": "toolFeatureShuffle", "title": "Vrije canvas-layout", "desc": "Sommige tools openen als een direct-manipuleerbaar canvas — sleep, roteer en klik vakken met tekst, vormen en afbeeldingen vast, geëxporteerd via hetzelfde deterministische pad." },
+    { "icon": "toolFeatureNested", "title": "Tools in tools", "desc": "Behandel een tool als een afbeelding binnen een andere tool — een badge die zijn eigen QR-code rendert, een kaart met een live grafiek — en behoud de intelligentie: nog steeds live, nog steeds opnieuw gerenderd, nooit een platgeslagen afbeelding." }
+  ],
+  "tryNow": {
+    "title": "Tools werken prima op zichzelf.",
+    "desc": "Om te renderen naar PNG, PDF, SVG, video en meer — gebruik het Lolly-platform.",
+    "cta": "App starten ↗",
+    "href": "/"
+  }
+}

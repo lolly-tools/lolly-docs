@@ -1,0 +1,14 @@
+{
+  "panels": [
+    {
+      "illustration": "illusSound",
+      "heading": "Tillgänglig, med ljud",
+      "desc": "Ett gränssnitt som fungerar som du vill — skärmläsarvänligt och fullt tangentbordsnavigerbart genomgående. Slå på milda gränssnittsljud, eller växla till **Neurospicy Mode**: en lugn fokusrytm som loopar tyst medan du arbetar."
+    },
+    {
+      "illustration": "illusBulk",
+      "heading": "Organisera, rendera sedan i bulk",
+      "desc": "Spara ditt arbete i nästlade **Projekt**-mappar. När det är dags att leverera renderar du en hel mapp — eller valfritt urval du själv väljer — till en enda zip-fil. Inget kalkylblad, inget bulk-rutnät krävs."
+    }
+  ]
+}
