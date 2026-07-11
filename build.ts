@@ -1298,6 +1298,20 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .nav-launch{background:var(--green);color:var(--dark)!important;padding:.375rem 1rem;border-radius:6px;font-weight:700;font-size:.875rem;white-space:nowrap;margin-left:.5rem;transition:background .15s}
 .nav-launch:hover{background:var(--light);text-decoration:none!important}
 
+/* Language FAB menu — popup language selector matching the app UX */
+.lang-fab-wrap{display:inline-flex}
+.lang-fab{background:none;border:none;padding:.45rem .6rem;border-radius:2em;color:rgba(255,255,255,.55);cursor:pointer;transition:color .12s,background .12s;width:32px;height:32px;display:flex;align-items:center;justify-content:center}
+.lang-fab:hover{color:#fff;background:rgba(255,255,255,.1)}
+.lang-fab svg{width:24px;height:24px}
+.lang-menu{position:fixed;top:auto;right:1.5rem;margin-top:0;background:rgba(12,50,44,.98);border:1px solid rgba(255,255,255,.15);border-radius:8px;min-width:200px;box-shadow:0 8px 32px rgba(0,0,0,.24);z-index:101;backdrop-filter:blur(8px)}
+.lang-menu[hidden]{display:none}
+.lang-menu-list{display:flex;flex-direction:column;max-height:calc(100vh - 7.5rem);overflow-y:auto}
+.lang-menu-item{background:none;border:none;display:flex;align-items:center;gap:.5rem;width:100%;padding:.625rem 1rem;color:rgba(255,255,255,.7);text-align:left;cursor:pointer;transition:background .12s,color .12s;font-size:.8125rem;font-family:inherit}
+.lang-menu-item:hover{background:rgba(255,255,255,.08);color:#fff}
+.lang-menu-item[aria-pressed=true]{background:rgba(48,186,120,.15);color:#fff}
+.lang-menu-flags{display:inline-flex;gap:.2em;min-width:2em}
+.lang-menu-name{flex:1}
+
 /* Hero */
 .hero{background:#1c4a2e;color:#fff;padding:7rem 1.5rem 6rem;text-align:center;position:relative;overflow:hidden;min-height:50vh;user-select:none;-webkit-user-select:none}
 /* Double-clicking the hero backdrop shouldn't highlight the heading/subtitle/trust copy; buttons keep normal selection. */
@@ -2206,16 +2220,80 @@ const LANG_ICON_SVG = `<svg class="lang-switch-icon" viewBox="0 0 440.332 510.23
 
 // The persistent, combined language picker — same control, same options, on
 // every /info page and (via the shared `lang` localStorage key — see i18n.ts's
-// initI18n) on the app itself. `value` is the equivalent page's URL in that
-// locale, computed server-side, so the client script is just "navigate there
-// and remember the choice" — no path-rewriting in the browser.
+// initI18n) on the app itself. Renders as a FAB button that opens a menu, matching
+// the app's UX. The menu lists all languages by speaking population (largest first)
+// with flags and native names. Clicking a language navigates to that locale's version
+// of the current page and saves the choice to localStorage.
 function langPickerHtml(lang: Lang, slug: string): string {
+  const flags = (code: Lang): string => {
+    const flagCodes = LANG_META[code].flags ?? [];
+    if (!flagCodes.length) return '';
+    const flagEmoji = (cc: string): string => {
+      const s = String(cc ?? '').trim().toUpperCase();
+      if (!/^[A-Z]{2}$/.test(s)) return '';
+      if (s === 'AU') return '🐨';
+      const RI = 0x1f1e6;
+      const A = 'A'.charCodeAt(0);
+      return String.fromCodePoint(RI + s.charCodeAt(0) - A, RI + s.charCodeAt(1) - A);
+    };
+    return `<span class="lang-menu-flags" aria-hidden="true">${flagCodes.map(flagEmoji).join('')}</span>`;
+  };
   const options = LANGS.map(l =>
-    `<option value="${esc(localeHref(l, slug))}" data-lang="${l}"${l === lang ? ' selected' : ''}>${esc(LANG_META[l].nativeName)}</option>`,
+    `<button type="button" class="lang-menu-item" data-lang="${l}" data-href="${esc(localeHref(l, slug))}" aria-pressed="${l === lang}">${flags(l)}<span class="lang-menu-name">${esc(LANG_META[l].nativeName)}</span></button>`,
   ).join('');
-  return `<label class="nav-lang-picker-wrap">${LANG_ICON_SVG}<select class="nav-lang-picker" data-lang-picker aria-label="${esc(t('Language'))}">${options}</select></label>`;
+  return `<div class="lang-fab-wrap"><button type="button" class="lang-fab" aria-label="${esc(t('Language'))}" aria-haspopup="menu" aria-expanded="false" title="${esc(t('Language'))}">${LANG_ICON_SVG}</button><div class="lang-menu" role="menu" aria-label="${esc(t('Language'))}" hidden><div class="lang-menu-list" role="none">${options}</div></div></div>`;
 }
-const LANG_PICKER_SCRIPT = `<script>document.addEventListener('change',function(e){var el=e.target.closest('[data-lang-picker]');if(!el)return;try{localStorage.setItem('lang',el.selectedOptions[0].dataset.lang);}catch(err){}location.href=el.value;});</script>`;
+const LANG_PICKER_SCRIPT = `<script>
+(function(){
+  const trigger = document.querySelector('.lang-fab');
+  const menu = document.querySelector('.lang-menu');
+  if (!trigger || !menu) return;
+  let isOpen = false;
+  function positionMenu() {
+    const rect = trigger.getBoundingClientRect();
+    menu.style.top = (rect.bottom + 8) + 'px';
+  }
+  function close() {
+    if (!isOpen) return;
+    menu.hidden = true;
+    trigger.setAttribute('aria-expanded', 'false');
+    isOpen = false;
+    document.removeEventListener('pointerdown', onOutside);
+    document.removeEventListener('keydown', onKey);
+    window.removeEventListener('resize', positionMenu);
+  }
+  function open() {
+    if (isOpen) return;
+    menu.hidden = false;
+    trigger.setAttribute('aria-expanded', 'true');
+    isOpen = true;
+    positionMenu();
+    setTimeout(() => document.addEventListener('pointerdown', onOutside), 0);
+    document.addEventListener('keydown', onKey);
+    window.addEventListener('resize', positionMenu);
+  }
+  function onOutside(e) {
+    if (!menu.contains(e.target) && !trigger.contains(e.target)) close();
+  }
+  function onKey(e) {
+    if (e.key === 'Escape') { e.stopPropagation(); close(); return; }
+    if (!['ArrowUp', 'ArrowDown'].includes(e.key)) return;
+    const items = [...menu.querySelectorAll('.lang-menu-item')];
+    const i = items.indexOf(document.activeElement);
+    if (i < 0) return;
+    e.preventDefault();
+    const step = e.key === 'ArrowDown' ? 1 : -1;
+    items[(i + step + items.length) % items.length].focus();
+  }
+  trigger.addEventListener('click', () => isOpen ? close() : open());
+  menu.addEventListener('click', e => {
+    const btn = e.target.closest('.lang-menu-item');
+    if (!btn) return;
+    try { localStorage.setItem('lang', btn.dataset.lang); } catch(err) {}
+    location.href = btn.dataset.href;
+  });
+})();
+</script>`;
 
 function buildNav(lang: Lang, slug: string, activeHref: string, isLanding: boolean | undefined, activePathway?: Pathway) {
   const link = (n: NavLink) => {
