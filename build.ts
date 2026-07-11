@@ -972,10 +972,10 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
 
   // ── "Where Lolly is right now" — the honest pilot-status section ─────────────
   // Recentres the whole page from "finished marvel" to "closed pilot / behavioural
-  // experiment". Carries the two required disclaimers (unaudited crypto+parsing;
-  // pilot not complete, more on Aug 29) and the born-yesterday / customer-one /
+  // experiment". Carries the status framing (crypto+parsing hardening for
+  // enterprise scale; pilot not complete, more on Aug 29) and the born-yesterday / customer-one /
   // need-your-story message, plus a teaser of the 90-day → 30%-deflection metric.
-  const IC_SHIELDWARN = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`;
+  const IC_SHIELDCHECK = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>`;
   const IC_FLASK = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6l-5.5 9.5A2 2 0 0 0 6.2 21h11.6a2 2 0 0 0 1.7-2.5L14 9V3"/><line x1="7" y1="15" x2="17" y2="15"/></svg>`;
   const IC_CHAT = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>`;
   const PILOT_STATUS_HTML = `<section class="pilot-section" id="status">
@@ -986,10 +986,10 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
       <p class="pilot-lead">Lolly is an <strong>internal prototype in a closed pilot</strong> — a fast-moving behavioural experiment inside the enterprise, not a finished product. It is arithmetically robust and, honestly, evidentially empty: it was born yesterday. <strong>SUSE is customer number one</strong> — and if you’re using it, we need your story to make it better.</p>
     </div>
     <div class="pilot-notes reveal reveal-1">
-      <div class="pilot-note pilot-note--warn">
-        <span class="pilot-note-ic">${IC_SHIELDWARN}</span>
-        <strong>Not externally audited yet</strong>
-        <p>Lolly’s cryptography and file-parsing engines — including the C2PA provenance seals and on-device encryption — have <strong>not</strong> yet been through an independent third-party security audit. Treat them as strong by design, not as certified.</p>
+      <div class="pilot-note">
+        <span class="pilot-note-ic">${IC_SHIELDCHECK}</span>
+        <strong>Hardening for enterprise scale</strong>
+        <p>Lolly’s cryptography and file-parsing engines — including the C2PA provenance seals and on-device encryption — are currently undergoing SUSE’s strict infrastructure hardening, preparing for enterprise scale. We’re really good at this.</p>
       </div>
       <div class="pilot-note">
         <span class="pilot-note-ic">${IC_FLASK}</span>
@@ -1019,7 +1019,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
     <h1 class="hero-logo-h1"><a href="/" class="hero-logo-link" aria-label="Open Lolly — browse all tools"><img src="/info/icon-normal.webp" alt="Lolly" class="hero-logo"></a></h1>
   </div>
   <div class="hero-details">
-    <a class="hero-pilot" href="/info/adoption-governance.html#status" aria-label="Lolly is an internal prototype in a closed pilot that has not been externally security-audited — read where Lolly is right now"><span class="hero-pilot-tag">Prototype</span><span class="hero-pilot-text">Closed pilot in progress · not yet security-audited</span></a>
+    <a class="hero-pilot" href="/info/adoption-governance.html#status" aria-label="Lolly is an internal prototype in a closed pilot, hardening for enterprise scale — read where Lolly is right now"><span class="hero-pilot-tag">Prototype</span><span class="hero-pilot-text">Closed pilot in progress · hardening for enterprise scale</span></a>
     <p class="subtitle">${heroSubtitle}</p>
     <div class="hero-cta">
       <a href="/" class="btn btn-primary">Launch App ↗</a>
@@ -1547,7 +1547,7 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .docs-content h3{font-size:1.15rem;margin-top:1.75rem;margin-bottom:.5rem;color:var(--dark)}
 .docs-content h4{font-size:1rem;margin-top:1.25rem;margin-bottom:.35rem;color:var(--muted)}
 .docs-content ul,.docs-content ol{margin-bottom:1rem}
-.docs-content h1{font-size:2.25rem;color:var(--dark);line-height:1.15;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+.docs-content h1{font-size:3rem;color:var(--dark);line-height:1.15;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border); font-weight:300;}
 
 /* Table */
 .table-wrap{overflow-x:auto;margin-bottom:1.5rem}

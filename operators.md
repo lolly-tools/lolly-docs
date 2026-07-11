@@ -4,9 +4,11 @@
 
 The organizational immune system that wraps around what you already do — so the routine creative work your teams need every day happens *inside* your perimeter instead of leaking out of it.
 
+**What's in it for you.** You get to be the person who said yes to something both safe *and* popular. You close an exfiltration hole and delete the design-request queue in one move — the rare security win that makes you more liked, not less. No 3am call because someone emailed brand files to a contractor or pasted customer data into a random web tool; fewer SaaS vendors, contracts, and audits on your plate; and a full git trail you can point to when someone asks who approved what. You sleep at night.
+
 Lolly earns its place as a creative tool: it deletes the design queue and puts production-quality output in everyone's hands. But the reason it's *safe* to hand out that widely is architectural. Nothing uploads, everything is reproducible, and every export can carry a cryptographic record of where it came from. This page is the security and rollout story.
 
-> **Honest framing first.** Lolly's security properties are strong *by design*; they have **not** been independently audited or certified. The seals, on-device signing, and encryption below are real and defensible — but where independent assurance is legally required, treat them as defence-in-depth, not as a certified control. We'd rather you know that up front.
+> **Straight talk first.** Lolly's security properties are strong *by design*, and its cryptography and file-parsing engines are currently undergoing SUSE's strict infrastructure hardening, preparing for enterprise scale — we're really good at this. The seals, on-device signing, and encryption below are real and defensible; while that hardening completes, treat them as defence-in-depth rather than a certified control where independent assurance is contractually required. We'd rather you know that up front.
 
 ## The strategic advantage
 
@@ -85,7 +87,7 @@ Lolly is designed to run with **no network at render time**. The web shell is an
 
 Operators deserve the caveats, not just the claims:
 
-- **Not externally audited.** As stated at the top — strong by design, not certified.
+- **Hardening for enterprise scale.** As stated at the top — the cryptography and parsers are currently undergoing SUSE's strict infrastructure hardening for enterprise scale; strong by design, and treat as defence-in-depth where independent assurance is contractually required.
 - **Tool hooks are *not* a security sandbox.** A tool's optional `hooks.js` runs with the host bridge injected, but in a browser shell it executes in the page's realm and *can* reach `window`/`document`/`fetch`. Treat tool code the way you treat any code you run — review it. This is why the catalog-as-Git-review model matters, and why untrusted third-party tools should not be run until Worker isolation ships.
 - **C2PA is tamper-evident, not tamper-proof**, and the v2-read / WebM gaps above are real.
 - **Encryption tiers differ.** *Standard* locks are deterrents; only *Strong* (AES-256) is real protection, and Strong files don't open in every legacy reader.

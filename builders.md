@@ -1,6 +1,8 @@
 # Lolly for Builders
 
-The technical documentation. If you author tools, integrate Lolly into a pipeline, self-host it, or extend the platform, this is your section.
+The technical documentation — for anyone who authors tools, integrates Lolly into a pipeline, self-hosts it, or extends the platform.
+
+**What's in it for you.** Build a tool once and the request stops coming back to you. The repetitive "can you just make me a…" that eats your afternoons becomes a template other people fill in themselves — correctly, without you in the loop. Your work is plain HTML/CSS/JS: version-controlled, diffable, reviewable, and running on an open engine with no vendor lock-in, so it stays yours. Automate the production run and your time goes to the interesting problem, not the ten-thousandth export.
 
 Lolly is a platform-agnostic **engine** that runs the same render path across several **shells** (web PWA, Tauri desktop/mobile, CLI, TUI). Tools are **data, not bundled code** — a manifest plus a template plus optional hooks — so new tools ship without an app update. Start with the [Overview](/info/overview.html) for the architecture, then follow the track that fits what you're building.
 

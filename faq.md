@@ -51,12 +51,13 @@ brand decisions don't live in git, you'll want a workflow that bridges them — 
 quietly becomes the strategic design partner and wider institutional gatekeeper.
 Which is preferred by many in long running production environments. 
 
-**It's deliberately narrow — frame it that way.** Lolly is not a DAM, and not for
-bespoke or hero content. It *does* have an open canvas (Layout Studio) — but even
-there, colours, type and assets conform to the active design globals, so free
+**It's deliberately narrow — frame it that way.** Lolly is not for bespoke or hero
+content. It *is* your personal DAM — hydrated and supercharged by your design
+system, tools and catalog — and it *does* have an open canvas (Layout Studio), but
+even there colours, type and assets conform to the active design globals, so free
 arrangement stays inside the system. Judged against Figma or Canva it will
 look limited. Judged as what it is — operationalised, recurring, massive-scale asset
-generation — nothing competes. The wrong framing is the most common set-back,.
+generation — nothing competes. The wrong framing is the most common set-back.
 
 **Change management on the producing side.** Existing processes work today, even if
 the output is off-brand. Re-pointing them at the engine means re-testing re-learning,

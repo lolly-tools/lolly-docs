@@ -78,6 +78,7 @@ You design systems and solve problems, not one-offs. Lolly is the execution laye
 
 Images are build artifacts. Treat them that way. Lolly runs from the CLI so you can generate assets the same way you generate everything else — repeatably, automatically, and as part of your workflow.
 
+- **Skip the genAI media lottery.** You tried genAI media — expensive, and not close enough. Lolly is free, faster, local content automation that removes their slop and your slog.
 - **Reproducible outputs.** Same inputs produce the same file, every time. Commit a URL, regenerate on demand — no more checking in images or chasing the latest version from Slack.
 - **Get media out of your codebase.** Generate OG images, QR codes, social cards, and data visuals at build time instead of storing binaries in Git.
 - **Execute logic inside assets.** Tools like Code Canvas and Chart Creator let you place real content — code snippets, structured data, live values — inside production-quality templates without building a custom renderer.
@@ -126,13 +127,13 @@ Every time someone uploads a file to a third-party service to "just make it look
 - **Reduce vendor surface area.** One open-source platform replaces a sprawl of SaaS subscriptions for creative production. Fewer vendors means fewer contracts, fewer audits, and fewer breach vectors.
 - **Enforce brand governance at the infrastructure level.** Tools are authored once and distributed as data — not files, not manual processes. What goes out the door is exactly what was approved to go out the door.
 - **Get critical information into human-readable formats instantly.** Incident communications, compliance reports, executive briefings — structured data becomes publication-quality output in seconds, no design bottleneck.
-- **Verify before you trust it, though.** Lolly is a closed-pilot prototype: its cryptography and file-parsing engines have not yet had an external security audit. Pilot it in a scoped, non-critical context and treat provenance and on-device encryption as strong-by-design, not certified. See [Adoption & governance](/info/adoption-governance.html#status).
+- **Hardening for enterprise scale.** Lolly is a closed-pilot prototype: its cryptography and file-parsing engines are currently undergoing SUSE's strict infrastructure hardening, preparing for enterprise scale — we're really good at this. Provenance and on-device encryption are strong by design; pilot them in a scoped context while that hardening completes. See [Adoption & governance](/info/adoption-governance.html#status).
 
 ---
 
 ## The Creator
 
-**An internal prototype, in a closed pilot.** Not a finished product — a fast-moving experiment. Its cryptography and parsing are not yet externally audited. [Where Lolly is right now →](/info/adoption-governance.html#status)
+**An internal prototype, in a closed pilot.** Not a finished product — a fast-moving experiment. Its cryptography and parsing are currently undergoing SUSE's strict infrastructure hardening, preparing for enterprise scale. [Where Lolly is right now →](/info/adoption-governance.html#status)
 
 **100% free and open source.** No SaaS fees, no usage limits, no vendor dependency.
 

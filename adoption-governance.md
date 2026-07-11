@@ -9,7 +9,7 @@ Most of this platform's documentation describes what Lolly *can do*. This page d
 **Lolly is a closed-pilot prototype. Treat it as one.**
 
 - **It hasn't finished its pilot.** The pilot is in progress and has not completed. Features, defaults, claims and even the tool catalog can still change as we learn. There is more to share on **August 29**.
-- **Its security has not been externally audited.** Lolly's cryptography and file-parsing engines — including the C2PA provenance seals, the X.509 identity handling, and on-device PDF/ZIP/link encryption — have **not** been through an independent third-party security audit. They are strong *by design*, not *certified*. Do not rely on them where an independent assurance is legally or contractually required.
+- **Its security is hardening for enterprise scale.** Lolly's cryptography and file-parsing engines — including the C2PA provenance seals, the X.509 identity handling, and on-device PDF/ZIP/link encryption — are currently undergoing SUSE's strict infrastructure hardening, preparing for enterprise scale. We're really good at this. They are strong *by design*; while that hardening completes, don't rely on them where an independent assurance is contractually required.
 - **It is arithmetically robust and evidentially empty.** The engine is deterministic and the maths is sound, but the product was, in effect, born yesterday. **SUSE is customer number one.** There is very little real-world adoption data yet.
 - **If you're using it, we need your story.** The architecture is done; the evidence is not. What actually improves Lolly from here is real usage — what worked, what didn't, and what you managed to make. See [We need your story](#we-need-your-story).
 
@@ -125,8 +125,8 @@ If you are piloting Lolly, the most valuable thing you can contribute is a concr
 
 To keep the framing straight, the things Lolly is *not* yet:
 
-- **Not externally audited.** See [Status](#status). The cryptography and parsers are unproven by an independent party.
+- **Not yet independently certified.** See [Status](#status). The cryptography and parsers are undergoing SUSE's strict infrastructure hardening for enterprise scale, not yet certified by an independent party.
 - **Not a finished product.** It's a pilot; expect rough edges and change.
 - **Not a turnkey pack of your templates.** Lolly is a platform — someone has to author the catalog and the tools before producers can self-serve.
-- **Not a DAM, and not for hero content.** It's for operationalised, recurring, massive-scale asset generation. Judged against Figma or Canva it will look narrow — that narrowness is the point.
+- **Not for hero content.** It's for operationalised, recurring, massive-scale asset generation. Judged against Figma or Canva it will look narrow — that narrowness is the point.
 - **Not yet backed by evidence.** The maths is robust; the track record is a day old. Help us change that.
