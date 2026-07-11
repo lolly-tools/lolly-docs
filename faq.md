@@ -40,16 +40,20 @@ Lolly slots in wherever you already generate files — the CLI is the same engin
 as the App, so a pipeline run at 2am can't drift from what a person previews in a
 browser. The friction to adoption is rarely technical; it's organisational. Expect these:
 
-**Tools and the brand catalog have to be authored.** Lolly is a platform, not a
-finished pack of your templates. Someone has to define the asset catalog (logos,
-palettes, fonts as permanent IDs) and write the manifest + template for each output
-type.  
+**A curated brand catalog has to be authored.** Lolly is a platform, not a
+finished pack of your templates. For a *governed rollout*, someone defines the shared
+asset catalog (logos, palettes, fonts as permanent IDs) and writes the manifest +
+template for each output type. Individuals don't have to wait for that, though — in
+the open app anyone can ingest their own files into the catalogue and build tools in
+Layout Studio from day one.
 
-**Governance runs on git.** "The PR review *is* the moderation" is elegant for
+**Governance-by-git is optional — and unfamiliar to non-engineers.** If you run a
+*shared, controlled* catalog, "the PR review *is* the moderation" is elegant for
 engineers and unfamiliar to most brand and marketing teams. If the people who own
 brand decisions don't live in git, you'll want a workflow that bridges them — or IT
-quietly becomes the strategic design partner and wider institutional gatekeeper.
-Which is preferred by many in long running production environments. 
+quietly becomes the strategic design partner and wider institutional gatekeeper
+(preferred by many in long-running production environments). Teams that don't want
+this simply skip it.
 
 **It's deliberately narrow — frame it that way.** Lolly is not for bespoke or hero
 content. It *is* your personal DAM — hydrated and supercharged by your design

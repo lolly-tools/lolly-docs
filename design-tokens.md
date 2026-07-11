@@ -4,7 +4,7 @@ Design tokens are Lolly's **single source of truth for brand primitives** — co
 
 This page is the spec. The engine model is [`engine/src/tokens.ts`](../engine/src/tokens.ts); the format contract is pinned by [`tests/tokens.test.ts`](../tests/tokens.test.ts).
 
-> **Status.** The **colour** slice is shipped: brand colours are canonical tokens, the picker's swatches come from them, and a chosen brand colour stays *linked* to its token. Other token types (dimension, typography), user import/export, and token-aware tool injection are on the [roadmap](/info/overview.html#roadmap) — the format below already reserves room for them.
+> **Status.** The **colour** slice is shipped: brand colours are canonical tokens, the picker's swatches come from them, and a chosen brand colour stays *linked* to its token. **Dimension tokens** (radius, spacing, sizing, stroke, opacity, rotation, shadows) and **typography** (brand fonts) are shipped too, editable in the [Brand Studio](/info/brand-studio.html)'s Tokens and Type tabs. **User import/export** is shipped — import W3C DTCG / Tokens Studio / Penpot in the Studio (or via [`ingest:brand`](/info/configuration.html#brand-packs)), and export a `LollyBrand` pack or a design-tokens palette. Token-aware tool *injection into templates* remains on the [roadmap](/info/overview.html#roadmap).
 
 ## Why tokens
 
@@ -45,7 +45,7 @@ Two deliberate choices keep us interoperable with Penpot while serving Lolly's p
 
 **2. Catalog — a `tokens` asset.** The canonical brand document is `suse/tokens/brand` (a `tokens`-type catalog asset, `core` tier so it's always available offline). It is generated from the shell palette by [`scripts/build-brand-tokens.ts`](../scripts/build-brand-tokens.ts) and validated against [`schemas/tokens.schema.json`](../schemas/tokens.schema.json) by `npm run validate:catalog`. Versioned and checksummed like any asset.
 
-**3. User tokens — *(planned)*.** A device-local store for tokens a user imports from Penpot, travelling in the portable backup as the reserved `tokens.json` part (see [Data Transfer](/info/data-transfer.html)). A management view will handle import, the active theme, and export back to DTCG.
+**3. User tokens — *shipped*.** A device-local store for the tokens a user creates or imports (from Penpot, DTCG, or a `LollyBrand` pack), travelling in the portable backup as the reserved `tokens.json` part (see [Data Transfer](/info/data-transfer.html)). The [Brand Studio](/info/brand-studio.html) handles import, editing, the active theme, and export back to DTCG.
 
 **4. Bridge — `host.tokens`.** An additive, optional v1 capability (like `net`/`text`): `get` / `colors` / `resolve` / `themes`. Each shell implements it over the engine model and its sources; a shell that doesn't is simply not token-driven. Loading is offline-safe (prefers the core-prefetched blob, falls back to a direct fetch, then to the built-in palette).
 
@@ -77,12 +77,12 @@ How it moves through the engine:
 
 ## Penpot interop
 
-- **Today:** the brand tokens are authored/generated as a DTCG document — already the shape Penpot reads.
-- **Planned:** import a Penpot single-file, ZIP, or multifile export (`$themes.json` + `$metadata.json` + one file per set), and export Lolly's tokens back as DTCG. CMYK survives Lolly→Lolly round-trips via `$extensions` and is ignored by Penpot, as the standard intends.
+- **Author/generate:** the brand tokens are a DTCG document — already the shape Penpot reads.
+- **Import/export (shipped):** import a Penpot single-file, ZIP, or multifile export (`$themes.json` + `$metadata.json` + one file per set) in the [Brand Studio](/info/brand-studio.html) or via [`ingest:brand`](/info/configuration.html#brand-packs), and export Lolly's tokens back as DTCG. CMYK survives Lolly→Lolly round-trips via `$extensions` and is ignored by Penpot, as the standard intends.
 
 ## Migration & status
 
-The brand colours moved into tokens without changing what anyone sees: `scripts/build-brand-tokens.ts` derives the token document from the existing palette, so the picker shows the same colours — now sourced canonically. The shell palette remains the fallback (and, for now, the source of CMYK anchors on export). As dimension/typography tokens and user import/export land, more of the app resolves from tokens and the standalone palette recedes.
+The brand colours moved into tokens without changing what anyone sees: `scripts/build-brand-tokens.ts` derives the token document from the existing palette, so the picker shows the same colours — now sourced canonically. The shell palette remains the fallback (and, for now, the source of CMYK anchors on export). With dimension/typography tokens and user import/export now shipped, most of the app resolves from tokens and the standalone palette recedes; template-level token *injection* is the main piece still to land.
 
 ## Reference
 

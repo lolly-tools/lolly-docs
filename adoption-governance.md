@@ -103,12 +103,12 @@ The goal the cycle serves is deflection, and it should ramp. The pilot targets *
 
 30% is deliberately a *pilot* target, not an end state. It's the threshold that says the behaviour change is real and worth scaling — not a ceiling on what deflection could eventually reach.
 
-## Governance
+## Governance (when you want it)
 
-Lolly governs creative output the way engineering governs code: **the rules are data, and changing them is a reviewable change.**
+Most people just make things — author their own tools in Layout Studio and ingest their own files into the catalogue, entirely in-app, with no git and no approval step. Governance is what you reach for when an organisation wants a **shared, controlled** catalog: an option that runs the rules the way engineering runs code — **the rules are data, and changing them is a reviewable change.**
 
-- **The catalog is the source of truth.** Tools and assets are git-tracked content — a manifest, a template, optional hooks. What ships is exactly what was approved to ship.
-- **The review *is* the moderation.** A change to a tool or asset is a pull request. This is elegant for engineers and unfamiliar to most brand and marketing teams — plan for that gap. If the people who own brand decisions don't live in git, you'll want a workflow that bridges them, or IT quietly becomes the strategic design gatekeeper (which some long-running production environments actually prefer).
+- **A shared catalog can be the source of truth.** Tools and assets are git-tracked content — a manifest, a template, optional hooks. What ships is exactly what was approved to ship.
+- **Review can be the moderation.** With that model, a change to a tool or asset is a pull request. It's elegant for engineers and unfamiliar to most brand and marketing teams — plan for that gap. If the people who own brand decisions don't live in git, you'll want a workflow that bridges them, or IT quietly becomes the strategic design gatekeeper (which some long-running production environments actually prefer). Teams that don't need this simply skip it.
 - **Guard-rails are structural, not advisory.** Brand constraints are hard-coded in the tool; even the open canvas (Layout Studio) conforms colours, type and assets to the brand globals. Off-brand output isn't policed after the fact — it's prevented at authoring time.
 - **Feature flags put control local.** Parts of Lolly can be turned on or off per deployment. Usually an administrator owns those; with Lolly, whoever runs the deployment does.
 - **Configuration is yours.** A deployment can overlay its own authentication, telemetry, or Certificate Authority to meet corporate compliance — none of it is on by default.

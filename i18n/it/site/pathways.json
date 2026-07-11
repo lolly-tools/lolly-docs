@@ -1,0 +1,30 @@
+{
+  "title": "Tre modi per iniziare",
+  "lead": "Inizia con la [Guida rapida](/info/quickstart.html) — porta dentro il tuo brand e ottieni il tuo primo file — poi segui il percorso più adatto a te.",
+  "cards": [
+    {
+      "href": "/info/creators.html",
+      "icon": "media",
+      "eyebrow": "Per i creator",
+      "name": "Crea cose",
+      "desc": "File finiti in pochi secondi — nessuno strumento di design, nessuna attesa. I vantaggi, e come sfruttare al meglio l'app.",
+      "cta": "Esplora →"
+    },
+    {
+      "href": "/info/builders.html",
+      "icon": "developers",
+      "eyebrow": "Per gli sviluppatori",
+      "name": "Crea e integra",
+      "desc": "Crea strumenti, guidali dalla CLI, da MCP o da un agente, e distribuisci la piattaforma. La documentazione tecnica.",
+      "cta": "Leggi la documentazione →"
+    },
+    {
+      "href": "/info/operators.html",
+      "icon": "security",
+      "eyebrow": "Per gli operatori",
+      "name": "Distribuiscilo in sicurezza",
+      "desc": "Una strategia di prevenzione della perdita di dati a difesa stratificata, travestita da piattaforma creativa. Strategia, sicurezza e adozione.",
+      "cta": "Scopri la strategia →"
+    }
+  ]
+}

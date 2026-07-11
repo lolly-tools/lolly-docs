@@ -1,0 +1,31 @@
+{
+  "pilotTag": "Prototype",
+  "pilotText": "Lukket pilot pågår · herdes for virksomhetsskala",
+  "pilotAriaLabel": "Lolly er en intern prototype i en lukket pilot, som herdes for virksomhetsskala",
+  "ctas": [
+    {
+      "href": "/",
+      "label": "Start appen ↗",
+      "class": "btn btn-primary"
+    },
+    {
+      "href": "/info/quickstart.html",
+      "label": "Hurtigstart →",
+      "class": "btn btn-primary btn-quickstart"
+    },
+    {
+      "href": "/info/about.html",
+      "label": "Les mer",
+      "class": "btn btn-secondary"
+    }
+  ],
+  "trustChips": [
+    "100 % gratis",
+    "Ingen infokapsler",
+    "Ingen registrering",
+    "Fungerer offline",
+    "Åpen kildekode",
+    "Personvern først"
+  ],
+  "toolCountSuffix": "eksempelverktøy lastet inn"
+}

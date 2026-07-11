@@ -1,0 +1,19 @@
+{
+  "eyebrow": "Perché abbiamo creato Lolly",
+  "heading": "Il lavoro creativo quotidiano\nnon dovrebbe essere così difficile.",
+  "lead": "La maggior parte delle persone non vuole uno studio di design. Vuole un file corretto, subito — senza compromettere il brand, senza aspettare qualcuno, e senza consegnare un documento privato a un sito web di cui non ha mai sentito parlare. Lolly esiste per eliminare queste tre frustrazioni.",
+  "frustrations": [
+    { "icon": "anxiety", "title": "L'ansia di sbagliare il brand", "desc": "Il timore silenzioso di scegliere il colore o il font sbagliato e di sbagliare in pubblico." },
+    { "icon": "bottleneck", "title": "Il collo di bottiglia", "desc": "Ogni piccolo asset bloccato in coda dietro un designer impegnato, uno strumento lento, o un'altra approvazione." },
+    { "icon": "cloudDependence", "title": "Dipendenza dal cloud", "desc": "Caricare file sensibili solo per convertirli o ritagliarli — e restare bloccati nel momento in cui vai offline." }
+  ],
+  "matrix": [
+    { "pain": "Mandare un brief via email al team di design, poi aspettare giorni per una piccola grafica.", "relief": "Compila pochi campi. L'asset finito è pronto in pochi secondi." },
+    { "pain": "Indovinare il font, il colore e il logo giusti — e sperare di superare la revisione del brand.", "relief": "Le regole di design sono integrate nello strumento. Si piegano, non si rompono. " },
+    { "pain": "Caricare un contratto, una busta paga o una foto privata su un sito gratuito qualsiasi per convertirla o ritagliarla.", "relief": "Tutto viene eseguito sul tuo dispositivo. Niente viene caricato; niente lascia il dispositivo della persona responsabile." },
+    { "pain": "Rifare a mano lo stesso badge, la stessa card o lo stesso banner cento volte.", "relief": "Incolla un foglio di calcolo. Ottieni cento file finiti e pronti per la stampa in un colpo solo." },
+    { "pain": "«Qual è l'ultima versione?» — a caccia tra thread di Slack e drive condivisi.", "relief": "L'asset è un link. Stessi input, stesso file, ogni volta." },
+    { "pain": "Niente segnale in aereo, o una rete bloccata — così resti semplicemente bloccato.", "relief": "Funziona completamente offline, su qualsiasi dispositivo, una volta caricato la prima volta." },
+    { "pain": "Contenuti sotto embargo: i professionisti della comunicazione non possono collaborare in modo sicuro con i propri collaboratori.", "relief": "blocca, cifra e proteggi con password file, zip e link di condivisione — tutto senza connessione a internet" }
+  ]
+}

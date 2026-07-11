@@ -1,0 +1,30 @@
+{
+  "title": "Trei căi de intrare",
+  "lead": "Începe cu [Pornire rapidă](/info/quickstart.html) — adaugă-ți brandul și obține primul tău fișier — apoi urmează calea potrivită pentru tine.",
+  "cards": [
+    {
+      "href": "/info/creators.html",
+      "icon": "media",
+      "eyebrow": "Pentru creatori",
+      "name": "Creează lucruri",
+      "desc": "Fișiere finalizate în câteva secunde — fără instrument de design, fără așteptare. Avantajele și cum să obții maximul din aplicație.",
+      "cta": "Explorează →"
+    },
+    {
+      "href": "/info/builders.html",
+      "icon": "developers",
+      "eyebrow": "Pentru dezvoltatori",
+      "name": "Creează și integrează",
+      "desc": "Creează instrumente, controlează-le din CLI, MCP sau un agent, și implementează platforma. Documentația tehnică.",
+      "cta": "Citește documentația →"
+    },
+    {
+      "href": "/info/operators.html",
+      "icon": "security",
+      "eyebrow": "Pentru operatori",
+      "name": "Implementeaz-o în siguranță",
+      "desc": "O strategie de prevenire a pierderii de date cu apărare în profunzime, deghizată în platformă creativă. Strategie, securitate și adopție.",
+      "cta": "Vezi strategia →"
+    }
+  ]
+}

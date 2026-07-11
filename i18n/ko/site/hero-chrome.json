@@ -1,0 +1,31 @@
+{
+  "pilotTag": "프로토타입",
+  "pilotText": "비공개 파일럿 진행 중 · 엔터프라이즈 규모에 맞춰 강화 중",
+  "pilotAriaLabel": "Lolly는 엔터프라이즈 규모에 맞춰 강화하고 있는 비공개 파일럿 단계의 사내 프로토타입이에요",
+  "ctas": [
+    {
+      "href": "/",
+      "label": "앱 열기 ↗",
+      "class": "btn btn-primary"
+    },
+    {
+      "href": "/info/quickstart.html",
+      "label": "빠른 시작 →",
+      "class": "btn btn-primary btn-quickstart"
+    },
+    {
+      "href": "/info/about.html",
+      "label": "자세히 보기",
+      "class": "btn btn-secondary"
+    }
+  ],
+  "trustChips": [
+    "100% 무료",
+    "쿠키 없음",
+    "가입 불필요",
+    "오프라인 지원",
+    "오픈소스",
+    "프라이버시 우선"
+  ],
+  "toolCountSuffix": "개 예제 도구 로드됨"
+}

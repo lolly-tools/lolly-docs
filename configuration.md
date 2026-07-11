@@ -24,7 +24,7 @@ npm run profile:suse       # community + SUSE tools, SUSE catalog
 npm run profile:start      # blank brand: community tools + one neutral tokens asset
 ```
 
-`scripts/use-profile.ts` builds the views: `catalog` becomes a symlink to the brand's catalog, and `tools/` becomes a directory of per-tool symlinks merged from the profile's tool roots — **later roots win on id collisions**, so a brand pack can override a community tool of the same id. On Vercel (`VERCEL=1`) the views are materialised as real copies instead of symlinks. Writes through the views land in the real pack checkouts, so the normal edit → commit workflow is unchanged.
+`scripts/use-profile.ts` builds the views: `catalog` becomes a symlink to the brand's catalog, and `tools/` becomes a directory of per-tool symlinks merged from the profile's tool roots — **later roots win on id collisions**, so a brand pack can override a community tool of the same id. In a hosted or serverless build, pass `--copy` to materialise the views as real copies instead of symlinks (symlinks don't survive a function bundle). Writes through the views land in the real pack checkouts, so the normal edit → commit workflow is unchanged.
 
 ## Brand packs
 
@@ -55,7 +55,9 @@ A shell that can't provide a capability **disables** the tool rather than lettin
 Two mechanisms narrow the catalog without forking it:
 
 - **Per-instance tool set** — point each instance at a different profile (or a brand pack with a curated `tools/` root) so marketing, sales, and IT can each see a different library from one codebase.
-- **Per-user feature flags** — surfaced in each person's Profile view, stored on their profile (so they sync), all defaulting to **on**. They show/hide whole gallery categories and the Batch entry. They are personal preferences, *not* an admin server setting, and they never gate output formats or any API surface. See [Getting Started → Administration](/info/operators.html) for the governance model around this.
+- **Per-user feature flags** — surfaced in each person's Profile view, stored on their profile (so they sync). The gallery-category and Batch flags default to **on** (they show/hide whole gallery categories and the Batch entry); one privacy flag, **Strip metadata from uploads**, defaults to **off** (opt-in — see below). They are personal preferences, *not* an admin server setting, and they never gate output formats or any API surface. See [Getting Started → Administration](/info/operators.html) for the governance model around this.
+
+  **Strip metadata from uploads** is the one opt-in (default-off) flag: turn it on and images uploaded to your catalogue are scrubbed of EXIF, location (GPS), and other embedded metadata on import. Content Credentials (C2PA provenance) are *always* preserved either way — a signed or AI-generated image keeps its credential whether the flag is on or off.
 
 ## Maturity & watermarking
 

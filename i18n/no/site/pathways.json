@@ -1,0 +1,30 @@
+{
+  "title": "Tre veier inn",
+  "lead": "Begynn med [Hurtigstart](/info/quickstart.html) — få merkevaren inn og den første filen ut — følg deretter veien som passer deg.",
+  "cards": [
+    {
+      "href": "/info/creators.html",
+      "icon": "media",
+      "eyebrow": "For skapere",
+      "name": "Lag ting",
+      "desc": "Ferdige filer på sekunder — ingen designverktøy, ingen venting. Fordelene, og hvordan du får mest ut av appen.",
+      "cta": "Utforsk →"
+    },
+    {
+      "href": "/info/builders.html",
+      "icon": "developers",
+      "eyebrow": "For utviklere",
+      "name": "Lag og integrer",
+      "desc": "Lag verktøy, styr dem fra CLI, MCP eller en agent, og distribuer plattformen. Den tekniske dokumentasjonen.",
+      "cta": "Les dokumentasjonen →"
+    },
+    {
+      "href": "/info/operators.html",
+      "icon": "security",
+      "eyebrow": "For driftsansvarlige",
+      "name": "Rull det ut trygt",
+      "desc": "En dybdeforsvarsstrategi mot datatap forkledd som en kreativ plattform. Strategi, sikkerhet og innføring.",
+      "cta": "Se strategien →"
+    }
+  ]
+}

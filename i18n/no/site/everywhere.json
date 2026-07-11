@@ -1,0 +1,19 @@
+{
+  "heading": "Alt,\nslik du er,\npå hva som helst",
+  "copy": "Kjør offline på enheten din, vær alltid tilgjengelig hostet online — du bestemmer.\nLolly Tools fungerer der.",
+  "surfaces": [
+    { "icon": "surfaceWeb", "label": "Web" },
+    { "icon": "surfaceMacos", "label": "macOS" },
+    { "icon": "surfaceLinux", "label": "Linux" },
+    { "icon": "surfaceIos", "label": "iOS" },
+    { "icon": "surfaceAndroid", "label": "Android" },
+    { "icon": "surfaceCli", "label": "CLI" },
+    { "icon": "surfaceTui", "label": "TUI" }
+  ],
+  "modelsIntro": "Tre leveringsmåter:",
+  "models": [
+    { "n": "1", "icon": "modelDeploy", "label": "Distribuer", "desc": "Send til enheter gjennom din eksisterende MDM-løsning. Kjører helt offline, bak en hvilken som helst brannmur eller air gap — ingenting forlater enheten." },
+    { "n": "2", "icon": "modelServe", "label": "Server", "desc": "Én hostet instans, brukt i en hvilken som helst nettleser. Ingenting å installere — godkjente oppdateringer når alle i det øyeblikket de slippes." },
+    { "n": "3", "icon": "modelHybrid", "label": "Hybrid", "desc": "Lokale offline-apper pluss en alltid oppdatert nettversjon, som deler ett felles verktøybibliotek — på tvers av alle operativsystemer samtidig." }
+  ]
+}

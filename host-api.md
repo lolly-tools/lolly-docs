@@ -108,12 +108,20 @@ Shape and outline a text run into an SVG path via HarfBuzz (correct kerning, lig
 
 | Method | Returns |
 |---|---|
-| `toPath({ text, fontUrl, fontSize, features?, letterSpacing? })` | `Promise<TextPathResult>` |
+| `toPath({ text, fontUrl, fontSize, features?, letterSpacing?, variations?, fallbackFonts? })` | `Promise<TextPathResult>` |
 | `preload(fontUrl)` | `Promise<void>` |
+| `axisDefaults(fontUrl)` *(optional, v1.30)* | `Promise<Record<string, number>>` |
 
-`TextPathResult`: `{ d, advanceWidth, bbox }` — baseline at `y=0`, Y-down; `bbox` is `null` for whitespace-only runs. The `brand-lockup` tool uses this to outline display type for crisp vector export.
+`TextPathResult`: `{ d, advanceWidth, bbox, notdef? }` — baseline at `y=0`, Y-down; `bbox` is `null` for whitespace-only runs. The `brand-lockup` tool uses this to outline display type for crisp vector export.
 
 `features` are OpenType tags (e.g. `['liga=0', 'salt=1']`) handed straight to HarfBuzz, so ligature and stylistic-alternate toggles bake into the outlined path (engine v1.12). `letterSpacing` (px, v1.12) adds uniform tracking to the pen advance, so letter-spaced type stays vector in SVG/PDF/EMF instead of falling back to a live `<text>` element.
+
+**Variable fonts and fallback (v1.29–1.30).**
+
+- `variations` — OpenType axis settings as HarfBuzz strings (`['wght=700']`). Without them a variable face shapes at its *default instance*, so a bold run would outline as regular. Unlisted axes take their default.
+- `fallbackFonts` — an ordered `[{ fontUrl, variations? }]` chain for characters `fontUrl` has no glyph for, the job the browser's own fallback does. It's needed because webfont families arrive as **disjoint subsets** (Google Fonts' `latin` file has no `Ł`; its `latin-ext` file has no ASCII), so one face can't outline `"Łódź"`.
+- `notdef` — how many glyphs fell back to `.notdef` (no glyph anywhere in the chain). Outlining draws blanks/tofu, so if this is non-zero keep a live `<text>` fallback. Absent on older hosts — treat as `0`.
+- `axisDefaults(fontUrl)` — the font's default axis values (`{ wght: 400 }`, `{}` for a static font). A caller that embeds the raw file into a renderer with no axis control (jsPDF) gets exactly this instance, so it needs the defaults to know the weight it will actually get. Feature-detect it.
 
 ## `host.tokens` *(optional)*
 
@@ -147,8 +155,14 @@ Rasterise a live URL to an image using a real browser engine. Only shells with a
 | Method | Returns |
 |---|---|
 | `page(spec)` | `Promise<AssetRef>` |
+| `vector(spec)` *(optional, v1.45)* | `Promise<AssetRef>` |
 
-`CaptureSpec`: `{ url, width, height?, scrollDepth?, waitMs?, dpr?, css? }`. Returns a raster `AssetRef` (`source: 'remote'`) that flows through the normal export path. `url-shot` uses it. Slow and side-effectful — call from an explicit action, not on every keystroke.
+`CaptureSpec`: `{ url, width, height?, scrollDepth?, rangeTo?, waitMs?, dpr?, css?, crop? }`. `page()` returns a raster `AssetRef` (`source: 'remote'`) that flows through the normal export path. `url-shot` uses it. Slow and side-effectful — call from an explicit action, not on every keystroke.
+
+Windowing and vector capture (v1.45):
+
+- `scrollDepth` frames a region (0..1 fraction of scroll height, or a px offset when > 1); `rangeTo` extends the shot *down* the page to that scroll position, producing a tall strip — the frame a scroll animation pans over. `crop` trims insets (each a `0..0.9` fraction). The returned ref's `width`/`height` are the **actual captured box** after crop/extension, so size your composite from the *result*, never the request. Hosts may also report `meta.pageWidth`/`pageHeight`/`scrollYPx` (treat as optional).
+- `vector(spec)` prints the URL to a **true vector** SVG `AssetRef` (`type: 'vector'`) — geometry, not pixels: crisp at any zoom and re-editable, at the cost of pixel-perfection (webfonts resolve by family name). Same windowing as `page()`. Feature-detect `host.capture.vector` and fall back to `page()` where absent.
 
 ## `host.compose` *(capability: `compose`)*
 

@@ -147,6 +147,8 @@ The web shell loads them via `@font-face` (`shells/web/src/styles/fonts.css`, wi
 4. PR review. Approval = brand approval.
 5. Merge → build catalog → deploy. Clients pick it up at next sync.
 
-For **catalog/brand** assets there is no upload UI, no admin tool, no moderation queue. The git review **is** the moderation. (This is separate from a user's own device-local image library — the web shell lets a person save their own uploads under the `user/` namespace, capped at 50; those never enter the catalog and are not brand-reviewed.)
+This git-reviewed flow is for a **shared, governed catalog** — the model where a whole organisation syncs one asset library and wants every change to carry PR review as brand approval. It's an *option for that case*, not how the app works day to day.
+
+Most people never touch it: in the open app you **ingest your own creative files straight into your catalogue** — drag them onto the [Catalogue](/info/using.html) view or the Brand Studio's Catalogue tab, and they're instantly available in every tool's asset picker, on your device. Those user assets live under the `user/` namespace and never enter a shared catalog. The git route matters only when you're curating a library many people depend on.
 
 Composed renders — a tool that embeds another tool's output via `composes` (see [Authoring tools](/info/authoring-tools.html)) — surface as ephemeral `AssetRef`s through the same `{{asset id}}` helper, but they are runtime intermediates, not catalog assets.

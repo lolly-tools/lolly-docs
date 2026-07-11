@@ -65,6 +65,7 @@ Advanced filters, compositing, animation, live camera effects, generative design
 ## Get the most out of it
 
 - **[Quickstart](/info/quickstart.html)** — brand in, first file out.
+- **[The Brand Studio](/info/brand-studio.html)** — shape your logos, colours, type, and tokens (`#/start`).
 - **[Using Lolly](/info/using.html)** — the canvas, controls, saving, projects, and phone use.
 - **[Your profile](/info/profile.html)** — the details tools pre-fill from, and how to carry them between devices.
 - **[Import a design](/info/design-import.html)** — bring in your Figma / Penpot / Illustrator / InDesign work.

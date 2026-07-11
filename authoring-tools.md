@@ -34,6 +34,7 @@ tools/your-tool-id/
 ├── styles.css          # optional — auto-scoped to #tool-canvas
 ├── hooks.js            # optional — imperative escape hatch
 ├── thumb.png           # optional — gallery thumbnail (recommended)
+├── i18n/               # optional — <lang>.json string overlays (see Localizing a tool)
 └── assets/             # optional — tool-local images, fonts, etc.
 ```
 
@@ -504,6 +505,11 @@ Putting the `<image>` inside an `<svg>` lets the export inline it (data-URI) and
 
 ## Publishing
 
+There are two ways a tool ships — pick per context:
+
+- **In the app, no build step.** In the open Lolly app, save a [Layout Studio](/info/using.html) editing session and it becomes your own tool on your device — no `tool.json`, no catalog build, no git. Anyone using the open version can do this; it's the fastest path for a personal or team tool.
+- **Into a catalog, for a shared library.** To publish a hand-authored tool into a catalog that many people sync — the model an organisation *can* manage as a Git repo so every change gets review and an audit trail (an option, not a requirement) — add the folder and rebuild the index:
+
 1. Place your folder under `tools/`.
 2. Run `npm run build:catalog` — this regenerates `catalog/tools/index.json` from
    the manifests (don't hand-edit the index; it's generated) and refreshes asset
@@ -517,6 +523,26 @@ For development:
 npm run dev:web
 # open localhost — your tool appears in the gallery
 ```
+
+## Localizing a tool
+
+A tool's user-facing strings live in the manifest (English by default). To translate it, add an `i18n/<lang>.json` sidecar — a sparse, flat, dotted-path overlay of just the strings a translator touched:
+
+```json
+// tools/your-tool-id/i18n/de.json
+{
+  "name": "…",
+  "description": "…",
+  "inputs.headline.label": "…",
+  "inputs.headline.help": "…",
+  "inputs.size.options.a4": "…"
+}
+```
+
+When a tool loads with a language set (the reserved `lang` URL/CLI param, or the user's profile language), the engine best-effort fetches the matching `i18n/<lang>.json` and merges it onto the manifest **before any shell or the input model sees it** — one overlay point, every shell (web, CLI, TUI) benefits. Anything missing — no sidecar, an absent key, a malformed file — falls back to the manifest's English, so a translation gap never breaks a tool load. Keys cover `name`, `description`, `a11yLabel`, and per-input `label` / `help` / `placeholder` / `section` / `suffix` / `options.<value>` (block and vector sub-fields as `inputs.<id>.fields.<fieldId>.…`). `validate:catalog` checks the keys, so a typo is caught at build time rather than silently ignored.
+
+- **Pre-fill the user's language.** An input can declare `bindToProfile: "lang"` to seed from the active language (a canonical short code — `en`, `de`, `ar`, …).
+- **Right-to-left.** Arabic and other RTL languages mirror the whole UI. Author your template and CSS so they mirror too — prefer logical properties and `[dir]`-aware rules over hard-coded left/right — and the shell sets document direction from the active language.
 
 ## Example tools
 

@@ -8,7 +8,7 @@ The organizational immune system that wraps around what you already do — so th
 
 Lolly earns its place as a creative tool: it deletes the design queue and puts production-quality output in everyone's hands. But the reason it's *safe* to hand out that widely is architectural. Nothing uploads, everything is reproducible, and every export can carry a cryptographic record of where it came from. This page is the security and rollout story.
 
-> **Straight talk first.** Lolly's security properties are strong *by design*, and its cryptography and file-parsing engines are currently undergoing SUSE's strict infrastructure hardening, preparing for enterprise scale — we're really good at this. The seals, on-device signing, and encryption below are real and defensible; while that hardening completes, treat them as defence-in-depth rather than a certified control where independent assurance is contractually required. We'd rather you know that up front.
+> **Where it stands today.** Lolly's security properties are strong by design, and its cryptography and file-parsing engines are going through SUSE's enterprise-grade infrastructure hardening. The seals, on-device signing, and encryption below are real and defensible now, and maturing toward independent certification — so where a contract calls for certified assurance, deploy them as defence-in-depth while that process completes.
 
 ## The strategic advantage
 
@@ -17,7 +17,7 @@ The usual way routine creative work gets done is a liability surface: files emai
 Lolly inverts it. The work that *drove* those leaks — the quote card, the localized banner, the event badge, the redacted screenshot — now happens on a tool that runs on the employee's own device, against your brand, with no server in the loop. You didn't add a control on top of a risky workflow; you replaced the risky workflow with one that has no exfiltration path to begin with.
 
 - **Configuration is yours.** The engine and shells are open source (MPL-2.0). Overlay your own auth, telemetry, or CA; host it or don't; you hold full feature and cost control, git-tracked, not locked in a SaaS database.
-- **Governance is data, not a dashboard.** The tool catalog is the source of truth, managed as a Git repository — pull-request review *is* the moderation, and you get a full audit trail and instant rollback of every template your workforce can touch. See [Adoption & Governance](/info/adoption-governance.html).
+- **Governance can be data, not a dashboard.** When you want that control, manage the tool catalog as a Git repository — pull-request review becomes brand approval, with a full audit trail and instant rollback of every template your workforce can touch. It's an option, not an obligation: teams that just want to make things author their own tools in Layout Studio and ingest their own files into the catalogue, entirely in-app, and never touch git. See [Adoption & Governance](/info/adoption-governance.html).
 - **Guard-rails are structural.** Brand constraints are hard-coded into templates, not published as guidelines people can ignore. The wrong output isn't discouraged — it's unrepresentable.
 
 ## Delete the request queue while proliferating content.
@@ -62,14 +62,14 @@ Every tool input is expressible as a URL parameter, and the same inputs produce 
 
 ## Provenance & Content Credentials
 
-Exports can carry **Content Credentials** — a signed [C2PA](https://c2pa.org) manifest bound to a hash of the file's bytes. This is **tamper-*evident*, not tamper-*proof***: it does not prevent anyone from altering a file, but any later change breaks the seal and a C2PA-aware verifier reports it. That's the honest and useful property — you can *detect* alteration, cryptographically, offline.
+Exports can carry **Content Credentials** — a signed [C2PA](https://c2pa.org) manifest bound to a hash of the file's bytes. Any later change to the file breaks the seal, so a C2PA-aware verifier **detects alteration cryptographically, offline**. The credential is tamper-*evident*: it flags tampering rather than preventing it, which is precisely what makes fully offline verification possible.
 
 - **On by default, on-device.** The signing key is generated on the device, is non-extractable (even Lolly can't read it), and signing happens locally — only optional identity *enrolment* ever touches the network.
-- **Trust tiers.** An un-enrolled export is structurally valid but signed anonymously (`untrusted`). Enrol a **verified identity** (short-lived certificate from the Lolly CA, tied to an email) and verifiers pinning the Lolly root report `trusted` + the signer's email. A trusted timestamp authority and third-party-validator green (C2PA conformance) are on the roadmap, not shipped — the tiers are labelled honestly and a file never shows a false green.
+- **Trust tiers.** An un-enrolled export is structurally valid but signed anonymously (`untrusted`). Enrol a **verified identity** (short-lived certificate from the Lolly CA, tied to an email) and verifiers pinning the Lolly root report `trusted` + the signer's email. A trusted timestamp authority and third-party-validator green (C2PA conformance) are on the roadmap. Every tier is explicit, and a file only ever claims the trust it can prove.
 - **Credential lifetime** is the operator/user's call at signing time: 7 / 30 / 90 / 365 days, default 30.
 - **Verification is on-device.** Drop any file on `/valid` (or `lolly validate <file>`) for an offline report of whether it was genuinely made with Lolly and unchanged since. See [Content Credentials Identity](/info/content-credentials-identity.html).
 
-> **Known gap, stated plainly:** Lolly's verifier does not yet fully read C2PA claim **v2** manifests from other producers; and WebM carries the manifest as a Matroska attachment (no standardised C2PA mapping exists yet for WebM), so third-party tools verify Lolly's MP4 but not its WebM.
+> **Interoperability notes.** Lolly verifies its own credentials and many third-party ones offline today. Two interop items are in progress: fully reading C2PA claim **v2** manifests from other producers, and WebM — which has no standardised C2PA mapping yet, so Lolly attaches the manifest as a Matroska part (third-party tools verify Lolly's MP4 out of the box; WebM follows once the standard settles).
 
 ## Encryption & passwording
 
@@ -81,16 +81,16 @@ For files that must travel locked, everything happens on-device:
 
 ## Air-gap ready
 
-Lolly is designed to run with **no network at render time**. The web shell is an offline-first PWA (service worker); fonts and WASM are stored on-device; tool state is persisted locally through the host bridge, never `localStorage`. Any tool that reaches the network does so only through an **allowlisted** `host.net` capability it must declare in its manifest — a shell that can't (or won't) fulfil it stubs it out. So a fully air-gapped install renders, exports, encrypts, and verifies credentials with nothing to phone home to.
+Air-gap is a **first-class deployment**, not a special mode — Lolly runs with no network at render time out of the box. The web shell is an offline-first PWA (service worker); fonts and WASM are stored on-device; tool state is persisted locally through the host bridge, never `localStorage`. Any tool that reaches the network does so only through an **allowlisted** `host.net` capability it must declare in its manifest — a shell that can't (or won't) fulfil it stubs it out. Ship the shells to devices through your MDM, or serve one instance inside your network, and a fully air-gapped install renders, exports, encrypts, and verifies credentials with nothing to phone home to.
 
-## What you must know before you rely on it
+## Good to know
 
-Operators deserve the caveats, not just the claims:
+A few things worth having straight before you roll it out:
 
-- **Hardening for enterprise scale.** As stated at the top — the cryptography and parsers are currently undergoing SUSE's strict infrastructure hardening for enterprise scale; strong by design, and treat as defence-in-depth where independent assurance is contractually required.
-- **Tool hooks are *not* a security sandbox.** A tool's optional `hooks.js` runs with the host bridge injected, but in a browser shell it executes in the page's realm and *can* reach `window`/`document`/`fetch`. Treat tool code the way you treat any code you run — review it. This is why the catalog-as-Git-review model matters, and why untrusted third-party tools should not be run until Worker isolation ships.
-- **C2PA is tamper-evident, not tamper-proof**, and the v2-read / WebM gaps above are real.
-- **Encryption tiers differ.** *Standard* locks are deterrents; only *Strong* (AES-256) is real protection, and Strong files don't open in every legacy reader.
+- **Hardening in progress.** The cryptography and parsers are going through SUSE's enterprise-scale hardening (see above) — strong by design today; deploy as defence-in-depth where a contract calls for certified assurance.
+- **Tool hooks are *not* a security sandbox.** A tool's optional `hooks.js` runs with the host bridge injected, but in a browser shell it executes in the page's realm and *can* reach `window`/`document`/`fetch`. Treat tool code the way you treat any code you run — review it. This is why an org that runs a shared catalog can gate it through Git review; either way, run only tools you've reviewed until Worker isolation ships.
+- **Content Credentials are tamper-evident.** They detect alteration rather than prevent it — see the interoperability notes above.
+- **Two encryption tiers.** *Standard* locks are quick, universal deterrents; *Strong* (AES-256) is full protection — reach for Strong for anything sensitive, noting it wants a modern reader.
 
 ## Where to go next
 

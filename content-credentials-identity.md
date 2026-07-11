@@ -49,8 +49,9 @@ This feature raises the ceiling without giving up offline signing or open
 source, by separating **certificate issuance** (needs the network, occasional)
 from **signing** (on device, always):
 
-1. A small **Lolly CA service** (same Vercel project as the app, at
-   `/api/ca/*`) holds the CA private key server-side and issues **short-lived
+1. A small **Lolly CA service** (a serverless function running alongside the
+   app, at `/api/ca/*`; self-hostable from the `services/ca` submodule on any
+   serverless platform) holds the CA private key server-side and issues **short-lived
    X.509 certificates** (user-selectable lifetime — 7/30/90/365 days, default
    30) bound to a **user identity** verified via OIDC
    — SUSE (id.suse.com / Okta), GitHub, Google, or an email magic link.
@@ -82,7 +83,7 @@ copy keeps making that distinction.
 This follows Kerckhoffs's principle as practised by Sigstore/Fulcio and
 Let's Encrypt: **the repo holds no secrets — only protocol and public
 anchors.** The CA *certificate* (public) is committed and served; the CA
-*private key* lives only in Vercel env / KMS; the device key is generated
+*private key* lives only in the host's environment store (or a KMS); the device key is generated
 locally and non-extractable.
 
 ## Trust tiers (what a verifier can conclude)
@@ -131,7 +132,7 @@ the user's call, offered at the moment the certificate is actually minted:
 ## Architecture
 
 ```
-┌───────────── device (open source) ─────────────┐   ┌── Vercel bt project ──┐
+┌───────────── device (open source) ─────────────┐   ┌─ serverless function ─┐
 │ WebCrypto P-256 keypair (non-extractable, IDB) │   │ /api/ca/* function     │
 │ shells/web/src/bridge/identity.ts              │──▶│ services/ca/handler    │
 │   enroll: popup OIDC → PoP → cert (cached)    │◀──│  - OIDC verify         │
@@ -249,11 +250,12 @@ ways from one `handler.mjs`:
 - `node services/ca/server.mjs` — local dev on `:8787` (Vite proxies
   `/api/ca` → `http://localhost:8787`; the string-shorthand proxy preserves
   the path, so the handler always routes on the full `/api/ca/*` prefix).
-- `api/ca/[...path].js` at the **repo root** — a standard Vercel function
-  entry that imports the same handler. `npx vercel build` traces the imports
-  (handler + engine x509) into `.vercel/output/functions` automatically — no
-  custom bundling. The service worker already bypasses `/api/` and Vercel
-  serves functions before rewrites, so the SPA catch-all never swallows it.
+- `api/ca/[...path].js` at the **repo root** — a standard serverless function
+  entry that imports the same handler. Building the function bundle traces the
+  imports (handler + engine x509) into the platform's functions output
+  automatically — no custom bundling. The service worker already bypasses
+  `/api/` and the platform serves functions before rewrites, so the SPA
+  catch-all never swallows it.
 - Imported directly by `tests/ca-service.test.ts` (pure logic tested without
   a socket).
 
@@ -275,14 +277,14 @@ Notes:
 - **Stateless.** Enrollment tokens are HMAC-signed values (email, provider,
   exp) — no session store. Replay within the 10-minute window re-issues a
   cert for the same identity+key, which is harmless.
-- **Issuance log.** Every issued cert is logged (JSON to stdout → Vercel
-  logs; optional `CA_LOG_WEBHOOK` POST). A public append-only transparency
-  log is the Tier-3 upgrade.
+- **Issuance log.** Every issued cert is logged (JSON to stdout → the
+  platform's logs; optional `CA_LOG_WEBHOOK` POST). A public append-only
+  transparency log is the Tier-3 upgrade.
 - **Dev provider.** With `CA_DEV_FAKE_PROVIDER=1` (never set in prod), a
   `dev` provider authenticates instantly as `dev@example.com` so the full
   enroll→sign→verify loop is testable with zero OAuth secrets.
 
-### Environment variables (Vercel project `bt` → also `.env` for local)
+### Environment variables (set in the host's environment store → also `.env` for local)
 
 | Var | What |
 |---|---|
@@ -328,13 +330,14 @@ Notes:
    ```
 
    Commit/paste `lolly-root-cert.pem` into `shells/web/src/ca-root.ts`.
-   **Never commit the key.** Store it in a password manager, then:
+   **Never commit the key.** Store it in a password manager, then set the
+   following secrets in your platform's environment store (production scope):
 
-   ```bash
-   npx vercel env add CA_ROOT_KEY_PEM production   # paste the key PEM
-   npx vercel env add CA_ROOT_CERT_PEM production
-   npx vercel env add CA_SERVICE_SECRET production # e.g. `openssl rand -hex 32`
-   npx vercel env add CA_ALLOWED_ORIGINS production # https://lolly.tools
+   ```
+   CA_ROOT_KEY_PEM       # paste the key PEM
+   CA_ROOT_CERT_PEM
+   CA_SERVICE_SECRET     # e.g. `openssl rand -hex 32`
+   CA_ALLOWED_ORIGINS    # https://lolly.tools
    ```
 
 2. **Register OIDC apps** (callback URL for all three:
@@ -350,38 +353,35 @@ Notes:
    - **Email** → resend.com API key + verified sender → `RESEND_API_KEY`,
      `EMAIL_FROM`.
 
-3. **Set the env vars** on the `bt` project (all `production`, and add a
-   `preview` copy so preview deploys can exercise it):
+3. **Set the env vars** in your platform's environment store (production
+   scope, and add a preview/staging copy so preview deploys can exercise it):
 
-   ```bash
-   npx vercel env add CA_ROOT_KEY_PEM production      # paste the key PEM
-   npx vercel env add CA_ROOT_CERT_PEM production
-   npx vercel env add CA_SERVICE_SECRET production    # openssl rand -hex 32
-   npx vercel env add CA_ALLOWED_ORIGINS production    # https://lolly.tools
+   ```
+   CA_ROOT_KEY_PEM       # paste the key PEM
+   CA_ROOT_CERT_PEM
+   CA_SERVICE_SECRET     # openssl rand -hex 32
+   CA_ALLOWED_ORIGINS    # https://lolly.tools
    # …plus the provider creds from step 2. Do NOT set CA_DEV_FAKE_PROVIDER in prod.
    ```
 
-4. **Deploy.** The CA lives at repo-root `api/ca/[...path].js` (a Vercel
+4. **Deploy.** The CA lives at repo-root `api/ca/[...path].js` (a serverless
    function) importing `services/ca/` + `engine/src/x509.ts`; both are
-   committed, and Vercel compiles `api/` independently of the Vite build. The
-   `vercel.json` catch-all `"/(.*)" → /index.html` is an *afterFiles* rewrite,
-   so `/api/ca/*` resolves to the function first — it is **not** swallowed by
-   the SPA fallback. Two ways to ship:
+   committed, and the platform compiles `api/` independently of the Vite build.
+   The app's catch-all rewrite `"/(.*)" → /index.html` is an *afterFiles*
+   rewrite, so `/api/ca/*` resolves to the function first — it is **not**
+   swallowed by the SPA fallback. Two ways to ship:
    - **Git push** (Andy's default — previews are committed, so a push builds
      the same output): the function ships automatically. Just push.
-   - **Prebuilt** — use `npx vercel build` (NOT the old hand-staged
-     `cp dist .vercel/output/static` recipe, which produces **no**
-     `functions/` dir and would drop the CA):
-
-     ```bash
-     npx vercel build --prod            # build:web + compiles api/ca into .vercel/output/functions
-     npx vercel deploy --prebuilt --prod
-     ```
+   - **Prebuilt** — build the function bundle (`build:web` **plus** compiling
+     `api/ca` into the platform's functions output) and deploy that prebuilt
+     bundle to your serverless platform. Do **not** hand-stage the deploy by
+     copying only the built `dist` into the static output directory: that recipe
+     produces **no** `functions/` dir and would drop the CA.
 
    Either way, confirm it's live: `curl https://lolly.tools/api/ca/health`
    should return JSON (`{"ok":true,…}`), **not** the SPA's HTML. If it returns
-   HTML, the function wasn't compiled — check the project's **Root Directory**
-   is the repo root (so repo-root `api/` is in scope), not `shells/web`.
+   HTML, the function wasn't compiled — check the project's **root directory**
+   setting is the repo root (so repo-root `api/` is in scope), not `shells/web`.
 
 5. **Local dev** (no secrets needed thanks to the dev provider):
 
@@ -449,7 +449,7 @@ implementation plans (local, under `plans/`): **`plans/sso-signing.md`** and
      uses, so a signed-in user is already enrol-ready for signing; sign-in for
      *access* and identity for *signing* share a session.
    - **Session handling.** A lightweight `/api/auth/*` companion to `/api/ca/*`
-     on the same Vercel project (httpOnly session cookie, PKCE, refresh),
+     on the same serverless deployment (httpOnly session cookie, PKCE, refresh),
      with role/group-based tool visibility.
    - **OSS-safe by default.** Access-gating is deployment policy: **off** in the
      open-source build so public lolly.tools stays open, enabled only by

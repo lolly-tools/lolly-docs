@@ -1,0 +1,18 @@
+{
+  "eyebrow": "Opprinnelse og personvern",
+  "heading": "Bevis det du har laget.\nBehold det som er ditt.",
+  "lead": "Hvert bilde, hver PDF eller video du eksporterer, kan bære en **Content Credential** — et manipuleringssikkert [C2PA](https://c2pa.org)-segl som opprettes helt på din egen enhet. Det beviser at filen ikke er endret siden den forlot Lolly, og når du har registrert en identitet, viser det også hvem som signerte den.",
+  "illustration": "illusCheck",
+  "checks": [
+    { "title": "Manipuleringssikker som standard", "desc": "Seglet dekker hver eneste eksporterte byte. Endre én piksel, og en hvilken som helst C2PA-validator flagger det." },
+    { "title": "Signert på din enhet", "desc": "Signeringsnøkkelen din genereres lokalt og forlater aldri enheten — ikke engang Lolly kan lese den." },
+    { "title": "Verifiserbar av hvem som helst, offline", "desc": "Filen bærer sitt eget bevis. Sjekk den i Verifiser-fanen, i CLI-en, eller med en hvilken som helst C2PA-validator — ingenting lastes opp." }
+  ],
+  "cards": [
+    { "icon": "assureEyeOff", "title": "Ingenting forlater enheten din", "desc": "Ingen skybasert rendering, ingen telemetri, ingen analyse. Det du lager, blir på din egen maskin." },
+    { "icon": "assureScan", "title": "Rens og lås, på enheten", "desc": "Strip Hidden Data fjerner EXIF og metadata lokalt. Lås en PDF, en nedlasting eller en delingslenke med et passord som aldri forlater enheten din." },
+    { "icon": "assureServer", "title": "Selvhost eller air-gap", "desc": "Ingen server, ingen database, ingen backend. Kjør helt bak din egen brannmur, helt offline." }
+  ],
+  "cta": "Slik fungerer Content Credentials →",
+  "ctaHref": "/info/content-credentials-identity.html"
+}

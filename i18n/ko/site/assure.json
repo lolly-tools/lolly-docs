@@ -1,0 +1,18 @@
+{
+  "eyebrow": "출처와 프라이버시",
+  "heading": "만든 것을 증명하세요.\n내 것은 지키세요.",
+  "lead": "내보내는 모든 이미지, PDF, 동영상에는 **Content Credential**을 담을 수 있어요 — 기기에서 완전히 만들어지는, 위변조를 감지할 수 있는 [C2PA](https://c2pa.org) 봉인이에요. 이 봉인은 파일이 Lolly를 떠난 뒤 변경되지 않았음을 증명하고, 신원을 등록하면 누가 서명했는지도 기록해요.",
+  "illustration": "illusCheck",
+  "checks": [
+    { "title": "기본으로 위변조 감지", "desc": "이 봉인은 내보낸 모든 바이트를 감싸요. 픽셀 하나만 바뀌어도 어떤 C2PA 검증 도구든 이를 잡아내요." },
+    { "title": "기기에서 서명", "desc": "서명 키는 로컬에서 생성되고 기기 밖으로 절대 나가지 않아요 — Lolly조차 읽을 수 없어요." },
+    { "title": "누구나 오프라인으로 검증 가능", "desc": "파일 자체가 증명을 담고 있어요. Verify 탭, CLI, 또는 어떤 C2PA 검증 도구로도 확인할 수 있어요 — 아무것도 업로드되지 않아요." }
+  ],
+  "cards": [
+    { "icon": "assureEyeOff", "title": "기기 밖으로는 아무것도 나가지 않아요", "desc": "클라우드 렌더링도, 텔레메트리도, 애널리틱스도 없어요. 만든 것은 그대로 내 컴퓨터에 남아요." },
+    { "icon": "assureScan", "title": "온디바이스에서 지우고 잠그기", "desc": "Strip Hidden Data는 EXIF와 메타데이터를 로컬에서 제거해요. PDF, 다운로드, 공유 링크는 기기 밖으로 절대 나가지 않는 비밀번호로 잠글 수 있어요." },
+    { "icon": "assureServer", "title": "셀프 호스팅 또는 에어갭", "desc": "서버도, 데이터베이스도, 백엔드도 없어요. 방화벽 안에서 완전히 오프라인으로 동작해요." }
+  ],
+  "cta": "Content Credentials의 작동 방식 알아보기 →",
+  "ctaHref": "/info/content-credentials-identity.html"
+}

@@ -1,0 +1,23 @@
+{
+  "heading": "Instrumente",
+  "lead": "Un template de sine stătător.\nReguli de layout și stil, așteptând date",
+  "anatomy": [
+    { "file": "tool.json", "name": "Manifest", "desc": "Nume, inputuri și metadate" },
+    { "file": "template.html", "name": "Template", "desc": "HTML/CSS/JS care randează rezultatul" },
+    { "file": "hooks.js", "name": "Hooks", "desc": "Logică opțională, rulată într-un sandbox" }
+  ],
+  "features": [
+    { "icon": "toolFeatureStar", "title": "Un template inteligent", "desc": "Își cunoaște propriul layout, tip, culorile și regulile de brand. Tu aduci conținutul — el se ocupă de tot restul." },
+    { "icon": "toolFeaturePeople", "title": "Nu ai nevoie de experiență în design", "desc": "Creat o singură dată de cineva care cunoaște brandul. Toți ceilalți doar completează golurile." },
+    { "icon": "toolFeatureCode", "title": "Design ca și cod", "desc": "HTML, CSS și JS simplu. Cu control de versiuni, comparabil (diff) și revizuibil ca orice alt fișier sursă." },
+    { "icon": "toolFeatureMonitor", "title": "Nu ai nevoie de nicio aplicație", "desc": "Deschide `template.html` în orice browser — pur și simplu funcționează. Instrumentul este aplicația." },
+    { "icon": "toolFeatureShuffle", "title": "Layout cu canvas liber", "desc": "Unele instrumente se deschid ca un canvas cu manipulare directă — tragi, rotești și aliniezi (snap) casete de text, forme și imagini, exportate prin același traseu determinist." },
+    { "icon": "toolFeatureNested", "title": "Instrumente în instrumente", "desc": "Tratează un instrument ca pe o imagine în interiorul altui instrument — un ecuson care își randează propriul cod QR, un card cu un grafic live — și păstrează inteligența intactă: tot live, tot re-randat, niciodată o imagine aplatizată." }
+  ],
+  "tryNow": {
+    "title": "Instrumentele funcționează bine și pe cont propriu.",
+    "desc": "Pentru a randa în PNG, PDF, SVG, video și altele — folosește platforma Lolly.",
+    "cta": "Lansează aplicația ↗",
+    "href": "/"
+  }
+}

@@ -70,6 +70,7 @@ const pages: Page[] = [
 
   // ── Creators pathway ─────────────────────────────────────────────────────
   { slug: 'using',            title: 'Using Lolly',       src: 'using.md',        pathway: 'creators' },
+  { slug: 'brand-studio',     title: 'The Brand Studio',  src: 'brand-studio.md', pathway: 'creators' },
   { slug: 'profile',          title: 'Profiles',          src: 'profile.md',      pathway: 'creators' },
   { slug: 'design-import',    title: 'Import a design (Figma, Penpot, Illustrator, InDesign)', src: 'design-import.md', pathway: 'creators' },
   { slug: 'exporting',        title: 'Exporting & Formats', src: 'exporting.md',  pathway: 'creators' },
@@ -150,6 +151,7 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
         { slug: 'quickstart', label: 'Quickstart' } ] },
       { label: 'Make things', items: [
         { slug: 'using',         label: 'Using Lolly' },
+        { slug: 'brand-studio',  label: 'The Brand Studio' },
         { slug: 'profile',       label: 'Your profile' },
         { slug: 'design-import', label: 'Import a design' },
         { slug: 'exporting',     label: 'Exporting & formats' } ] },
@@ -606,6 +608,27 @@ function siteIcon(key: string): string {
 
 // ── Landing page special renderer ─────────────────────────────────────────────
 
+// The audience-card icons and internal slug/anchor wiring are matched from ENGLISH
+// keywords (getIcon/toSlug). A translated landing page has translated headings, which
+// match nothing: every card falls through to the default monitor icon, and non-Latin
+// headings (CJK/Arabic) slug to empty strings that collide and break tab activation.
+// The cards are authored in the same order in every locale, so key the icon + slug off
+// the ENGLISH heading at the same index. The visible tab LABEL still uses the translated
+// heading — only the presentational icon and the wiring are shared across locales.
+let _enAudienceH2: string[] | null = null;
+function englishAudienceH2s(): string[] {
+  if (_enAudienceH2) return _enAudienceH2;
+  try {
+    const enMd = readFileSync(resolve(__dirname, 'site.md'), 'utf-8');
+    _enAudienceH2 = enMd.split(/\n---\n/).slice(1, -1).map(
+      s => s.split('\n').find(l => l.startsWith('## '))?.slice(3).trim() ?? '',
+    );
+  } catch {
+    _enAudienceH2 = [];
+  }
+  return _enAudienceH2;
+}
+
 function buildLandingContent(md: string, lang: Lang = 'en') {
   const rawSections = md.split(/\n---\n/);
   const heroSection      = rawSections[0]!;
@@ -644,6 +667,12 @@ function buildLandingContent(md: string, lang: Lang = 'en') {
 
   const cardData = audienceSections.map(s => parseAudienceCard(s));
 
+  // English heading per card, for locale-stable icons + slugs. For English this IS the
+  // card's own heading; for every other locale it's the same-index English heading.
+  const enH2 = lang === 'en' ? cardData.map(c => c.h2) : englishAudienceH2s();
+  const iconOf = (i: number, h2: string) => getIcon(enH2[i] ?? h2);
+  const slugOf = (i: number, h2: string) => toSlug(enH2[i] ?? h2);
+
   // Tab strip with header
   const audienceChrome = loadSiteJson('audience-chrome.json', lang) as { title: string; subtitle: string };
   const tabsHtml = `<div class="audience-header reveal">
@@ -654,16 +683,16 @@ function buildLandingContent(md: string, lang: Lang = 'en') {
   </div>
 </div>
 <div class="audience-tabs" role="tablist" aria-label="Who is it for?">
-${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-selected="${i === 0 ? 'true' : 'false'}" data-panel="${i}" data-slug="${toSlug(h2)}">
-    <span class="tab-icon">${getIcon(h2)}</span>
+${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-selected="${i === 0 ? 'true' : 'false'}" data-panel="${i}" data-slug="${slugOf(i, h2)}">
+    <span class="tab-icon">${iconOf(i, h2)}</span>
     <span class="tab-label">${esc(tabLabel(h2))}</span>
   </button>`).join('\n')}
 </div>`;
 
   // Cards as full-width panels (two-column on desktop)
-  const cardsHtml = cardData.map(({ h2, h3, intro, bullets, codeBlocks }, i) => `<div class="audience-card${i === 0 ? ' tab-active' : ''}" id="${toSlug(h2)}" data-panel="${i}">
+  const cardsHtml = cardData.map(({ h2, h3, intro, bullets, codeBlocks }, i) => `<div class="audience-card${i === 0 ? ' tab-active' : ''}" id="${slugOf(i, h2)}" data-panel="${i}">
   <div class="card-main">
-    <div class="card-icon">${getIcon(h2)}</div>
+    <div class="card-icon">${iconOf(i, h2)}</div>
     <div class="card-audience">${esc(h2)}</div>
     <div class="card-tagline">${inline(h3)}</div>
     ${intro ? `<p class="card-intro">${inline(intro)}</p>` : ''}
@@ -1249,10 +1278,16 @@ nav.nav-solid{background:#0c322c}
 .brand:hover{color:var(--light);text-decoration:none}
 .brand-icon{width:1.5rem;height:1.5rem;border-radius:5px;flex-shrink:0;object-fit:contain}
 nav .gap{flex:1}
-.nav-lang-picker-wrap{display:inline-flex;align-items:center;gap:.35rem;color:rgba(255,255,255,.55)}
-.nav-lang-picker-wrap .lang-switch-icon{width:38px;height:38px;flex-shrink:0}
-.nav-lang-picker{background:transparent;color:rgba(255,255,255,.55);border:none;font-size:.8125rem;cursor:pointer}
-.nav-lang-picker:hover{color:#fff}
+/* The <label> wrapping the icon + <select> is the WHOLE hit area — a generous
+   pill, matching .nav-theme-toggle's footprint — not just the select's own tight
+   text box. Clicking/tapping the icon activates the select exactly like clicking
+   the text does (native label→control delegation), and since hover/focus is
+   styled on the label, the icon (fill="currentColor") and the select text pick up
+   the SAME colour change together via inheritance — no separate icon hover rule. */
+.nav-lang-picker-wrap{display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .75rem .45rem .6rem;border-radius:2em;color:rgba(255,255,255,.55);cursor:pointer;transition:color .12s,background .12s}
+.nav-lang-picker-wrap:hover,.nav-lang-picker-wrap:focus-within{color:#fff;background:rgba(255,255,255,.1)}
+.nav-lang-picker-wrap .lang-switch-icon{width:16px;height:16px;flex-shrink:0;pointer-events:none}
+.nav-lang-picker{background:transparent;color:inherit;border:none;font-size:.8125rem;cursor:pointer;padding:0}
 .nav-lang-picker option{color:#000}
 nav a:not(.brand):not(.nav-launch){color:rgba(255,255,255,.55);font-size:.8125rem;padding:.25rem .5rem;white-space:nowrap;border-radius:2em;transition:color .12s}
 nav a:not(.brand):not(.nav-launch):hover{color:#fff;text-decoration:none}
@@ -1456,9 +1491,10 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .everywhere-model{position:relative;display:flex;align-items:stretch;gap:1.5rem;padding:3.5rem 1.75rem 2rem;background:rgba(255,255,255,.05);border-radius:18px;transition:background .2s,border-color .2s}
 .everywhere-model:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16)}
 .everywhere-model-main{flex:0 0 2em;min-width:0}
-.everywhere-model-num{position:absolute;top:-1rem;left:50%;transform:translateX(-50%);width:fit-content;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--dark);background:rgba(48,186,120,1.14);padding:.32rem .7rem;border-radius:999px;margin:0}
+.everywhere-model-num{position:absolute;top:-1rem;left:50%;transform:translateX(-50%);ox-shadow: inset 0 0 0 .25px #0002, inset 0 1px 1.5px #fff9, 0 .2rem .4rem #0002;
+    text-shadow: 0 1px .5px #fff2;width:fit-content;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--dark);background:rgba(48,186,120,1.14);padding:.32rem .7rem;border-radius:999px;margin:0}
 .everywhere-model-icon{width:2.25rem;height:2.25rem;color:var(--green);display:block;margin-bottom:.9rem}
-.everywhere-model h3{color:var(--green);font-size:1.2rem;margin:0}
+.everywhere-model h3{color:var(--green);font-size:1.2rem;margin:0;}
 .everywhere-model p{flex:1;min-width:0;font-size:.95rem;line-height:1.65;color:rgba(255,255,255,.6);margin:0;padding-left:1.5rem}
 @media(max-width:768px){.everywhere-models-grid{grid-template-columns:1fr;gap:2rem}.everywhere-models{margin-top:2.5rem}}
 
@@ -1498,7 +1534,7 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .import-sources{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-bottom:1.75rem}
 .import-source{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.5rem;background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.5rem 1rem;transition:box-shadow .15s,transform .15s}
 .import-source:hover{box-shadow:0 8px 24px rgba(12,50,44,.1);transform:translateY(-2px)}
-.import-badge{display:inline-flex;align-items:center;justify-content:center;width:2.75rem;height:2.75rem;border-radius:12px;background:var(--b,#30ba78);color:#fff;font-weight:800;font-size:.9rem;letter-spacing:-.01em}
+.import-badge{display:inline-flex;align-items:center;box-shadow:inset 0 0 0 1px #0002, inset 0 1.25px 2px #fff9,  0 .2rem .4rem #0002;justify-content:center;width:2.75rem;height:2.75rem;border-radius:12px;background:var(--b,#30ba78);color:#fff;font-weight:800;font-size:.9rem;letter-spacing:-.01em}
 .import-source strong{color:var(--dark);font-size:.95rem;font-weight:700}
 .import-fmt{font-family:'SUSE Mono','SF Mono',monospace;font-size:.72rem;color:var(--muted);letter-spacing:.02em}
 .import-flow{display:flex;align-items:stretch;gap:.5rem;margin-bottom:2.75rem}
@@ -2177,7 +2213,7 @@ function langPickerHtml(lang: Lang, slug: string): string {
   const options = LANGS.map(l =>
     `<option value="${esc(localeHref(l, slug))}" data-lang="${l}"${l === lang ? ' selected' : ''}>${esc(LANG_META[l].nativeName)}</option>`,
   ).join('');
-  return `<span class="nav-lang-picker-wrap">${LANG_ICON_SVG}<select class="nav-lang-picker" data-lang-picker aria-label="${esc(t('Language'))}">${options}</select></span>`;
+  return `<label class="nav-lang-picker-wrap">${LANG_ICON_SVG}<select class="nav-lang-picker" data-lang-picker aria-label="${esc(t('Language'))}">${options}</select></label>`;
 }
 const LANG_PICKER_SCRIPT = `<script>document.addEventListener('change',function(e){var el=e.target.closest('[data-lang-picker]');if(!el)return;try{localStorage.setItem('lang',el.selectedOptions[0].dataset.lang);}catch(err){}location.href=el.value;});</script>`;
 

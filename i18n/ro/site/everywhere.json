@@ -1,0 +1,19 @@
+{
+  "heading": "Totul,\nașa cum ești,\npe orice",
+  "copy": "Rulează offline pe dispozitivul tău sau fii mereu disponibil, găzduit online — tu decizi.\nLolly Tools poate funcționa acolo.",
+  "surfaces": [
+    { "icon": "surfaceWeb", "label": "Web" },
+    { "icon": "surfaceMacos", "label": "macOS" },
+    { "icon": "surfaceLinux", "label": "Linux" },
+    { "icon": "surfaceIos", "label": "iOS" },
+    { "icon": "surfaceAndroid", "label": "Android" },
+    { "icon": "surfaceCli", "label": "CLI" },
+    { "icon": "surfaceTui", "label": "TUI" }
+  ],
+  "modelsIntro": "Trei moduri de livrare:",
+  "models": [
+    { "n": "1", "icon": "modelDeploy", "label": "Implementare", "desc": "Distribuie pe dispozitive prin MDM-ul tău existent. Rulează integral offline, în spatele oricărui firewall sau air-gap — nimic nu părăsește dispozitivul." },
+    { "n": "2", "icon": "modelServe", "label": "Servire", "desc": "O singură instanță găzduită, folosită în orice browser. Nimic de instalat — actualizările aprobate ajung la toată lumea în clipa în care sunt publicate." },
+    { "n": "3", "icon": "modelHybrid", "label": "Hibrid", "desc": "Aplicații locale offline plus o versiune web mereu la zi, care împart o singură bibliotecă de instrumente — pe toate sistemele de operare deodată." }
+  ]
+}

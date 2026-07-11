@@ -14,7 +14,7 @@ See [Lolly for Operators](/info/operators.html) for the security rationale behin
 
 ## The web shell
 
-The web shell is a static PWA built by Vite, with two serverless API functions alongside it.
+The web shell is a static PWA built by Vite, with two *optional* serverless API functions alongside it.
 
 ```bash
 npm ci                 # installs workspace deps; postinstall builds the profile views
@@ -24,21 +24,13 @@ npm run build:web      # builds /info, per-tool + per-view OG images, then the V
 
 `build:web` runs `build:info` (the `/info` docs site) first, then the OG image generators, then the shell bundle — so a plain `vite build` inside `shells/web` is *not* enough on its own.
 
-### On Vercel
+### Any static host — including air-gapped
 
-The repo ships a `vercel.json` wired for a git build:
+The web build is plain static files, so this is the simplest and most portable path. Serve `shells/web/dist/` from any static host, CDN, or an internal file server, with a single catch-all rewrite to `index.html` for client-side routing. Once loaded the PWA runs **fully offline** — which makes this the air-gapped path too: drop the static bundle behind your firewall (or into an MDM-delivered app) and nothing phones home. If you don't need the optional services below, this is all you need.
 
-- **Build command:** `npm run build:web && npm run build:mcp-fn && npm run build:ca-fn`
-- **Output directory:** `shells/web/dist`
-- **Functions:** `api/mcp/**` and `api/ca/**` (the MCP and CA services, below), with the `tools/` and `catalog/` views bundled in via `includeFiles`.
-- **Rewrites** map the app's clean routes (`/d`, `/c`, `/p`, `/profile`, `/t/:id`) and the MCP/CA/OAuth well-known paths; everything else falls through to the SPA `index.html`.
-- **Redirects** funnel the `www.` host and the alternate `lolly.*` domains to the canonical `lolly.tools`.
+### With the optional services
 
-Because Vercel runs the build with `VERCEL=1`, `postinstall` materialises the `tools/` and `catalog/` **profile views as real copies** rather than symlinks (symlinks don't survive the function bundle), and those views are `.vercelignore`d so they never enter the git-tracked source. The API functions live under `api/` with their own `rootDirectory` handling — see [Configuration](/info/configuration.html).
-
-### Any static host
-
-The web build is plain static files. If you don't need the MCP/CA services, serve `shells/web/dist/` from any static host or an internal file server, with a catch-all rewrite to `index.html` for client-side routing. The PWA then works fully offline once loaded.
+To add the AI-agent (MCP) or verified-identity (CA) endpoints, deploy the two functions under `api/` (`api/mcp/**`, `api/ca/**`) to any serverless platform, or self-host the `services/mcp` / `services/ca` submodules as long-running processes. Route the app's `/api/mcp` and `/api/ca` paths to them, and let the SPA catch-all (`/(.*)` → `index.html`) handle the app's clean routes (`/d`, `/c`, `/p`, `/profile`, `/t/:id`). In a hosted or serverless build, materialise the `tools/` and `catalog/` **profile views as real copies** rather than symlinks (symlinks don't survive a function bundle) — the profile build's `--copy` flag does this. See [Configuration](/info/configuration.html) for the profile-view mechanics.
 
 ## Desktop & mobile apps
 
@@ -58,18 +50,22 @@ Two small services back optional features. Neither is required to render or expo
 
 | Service | What it powers | Build | Hosting |
 |---|---|---|---|
-| **MCP server** (`services/mcp`, `api/mcp`) | The AI-agent endpoint — lets a model discover and run tools over MCP | `npm run build:mcp-fn` | Vercel function, or self-host the `services/mcp` submodule |
-| **CA service** (`services/ca`, `api/ca`) | Content-Credentials **identity** — issues short-lived signing certificates for verified C2PA | `npm run build:ca-fn` | Vercel function, or self-host; needs `services/ca/.env` |
+| **MCP server** (`services/mcp`, `api/mcp`) | The AI-agent endpoint — lets a model discover and run tools over MCP | `npm run build:mcp-fn` | A serverless function on any platform, or self-host the `services/mcp` submodule |
+| **CA service** (`services/ca`, `api/ca`) | Content-Credentials **identity** — issues short-lived signing certificates for verified C2PA | `npm run build:ca-fn` | A serverless function on any platform, or self-host; needs `services/ca/.env` |
 
 The CA service holds policy server-side (certificate-day limits, allowed providers) and never sees a signing key — those are generated and kept on the user's device. See [Content Credentials Identity](/info/content-credentials-identity.html) for the operator runbook (root of trust, provider setup) and [MCP Server](/info/mcp.html) for the endpoint and auth model.
 
 ## Publishing tools
 
-Tools are **data, not code** — a manifest, a template, and optional hooks in a directory. You don't redeploy the app to ship a tool: merge the tool into the directory your instance reads, run the catalog build, and clients pick it up on next sync.
+Tools are **data, not code** — a manifest, a template, and optional hooks in a directory. You never redeploy the app to ship a tool.
+
+In the open app, anyone can make their own tools right there: save a Layout Studio editing session as a tool and ingest creative files into the catalogue, all on-device, no build step. That's the everyday path for individuals and teams.
+
+For a **shared catalog** that many people sync, merge the tool into the directory your instance reads and run the catalog build; clients pick it up on next sync:
 
 ```bash
 npm run build:catalog     # regenerate catalog/tools/index.json + asset checksums
 npm run validate:catalog  # enforce schema + invariants (fails CI on drift)
 ```
 
-Manage that directory as a Git repository so tool changes get pull-request review and a full audit trail. Which tools a given instance exposes is a [Configuration](/info/configuration.html) concern (profiles + brand packs), not a code change.
+If you want change control, manage that directory as a Git repository so tool changes get pull-request review and a full audit trail — an option, not a requirement. Which tools a given instance exposes is a [Configuration](/info/configuration.html) concern (profiles + brand packs), not a code change.

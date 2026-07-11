@@ -89,13 +89,33 @@ The photo **Filters** — Halftone, Scanline, Posterize, Duotone — show a **Go
 
 When a tool lets you add an image from your device, it's downscaled, stripped of EXIF/GPS, and saved to your personal **My images** library (under **Profile → Storage**). Reuse it across any tool. The library is capped and entirely local — manage or delete images there.
 
+## The Catalogue — your asset library
+
+The **Catalogue** (`#/c`, or the **Catalogue** link in the menu) gathers everything your tools can draw on — brand logos, images, audio, and motion, grouped by kind — and it's where your **own creative files** live too. No server, no admin console, no pull request: it's all on your device.
+
+- **Bring your files in.** Drag any image, SVG, audio clip, video, Lottie, or PDF onto the upload area — or click to choose — and it lands in your catalogue instantly, ready in every tool's asset picker. Ingest as much as you like; it never leaves your device.
+- **Favourite what you reach for.** ★ an asset (or a brand swatch) and it pins to the top of every picker, so your go-to logo or colour is one click away.
+- **Tidy up.** Recategorise an asset into a different group, hide a shared brand asset you don't use (with **Show hidden** to bring it back), or delete your own uploads outright.
+
+### Take your palette and fonts anywhere
+
+The Catalogue's **Swatches** panel isn't just for reference — click a colour to copy it, or **download the whole brand palette** in the format your other tool speaks:
+
+- **Design tokens (JSON)**, **CSS variables**, or **CSS classes** — drop the brand straight into a stylesheet or a build;
+- **Adobe Swatch Exchange (.ase)** — load it into Illustrator or Photoshop;
+- **GIMP palette (.gpl)** — for GIMP or Inkscape.
+
+The **Fonts** panel lists your brand faces with a **download** beside each, to install locally or hand to a print shop. (The [Brand Studio](/info/brand-studio.html)'s Colours tab offers the same palette download.)
+
+Assets are one half of the open, do-it-yourself path; the other is **making your own tools** — the free canvas (Layout Studio, described above) lets you build one visually, no code required.
+
 ## Sound & accessibility
 
 Lolly aims to be comfortable to use for everyone. The interface is keyboard-navigable, custom controls carry proper labels for screen readers, and every tool's live preview is exposed as a single labelled image describing what it's making.
 
 A gentle layer of **assistive sounds** confirms what you do — arriving in the gallery, a valid vs. invalid Content Credentials check, closing a panel, switching a filter. It's **on by default** but always optional: toggle **Sound** off anywhere the switch appears (each view's options popover, or **Profile**), and the choice is remembered.
 
-Beside that switch is **Neurospicy Mode** — an optional, calming background focus beat that loops quietly while you work. Pick a loop from the pill-shaped selector, play or pause it with the button beside it, and set its volume; it's **off by default** and, like Sound, is remembered across sessions and devices. Turning Sound off mutes the focus loop too.
+Beside that switch is **Neurospicy Mode** — an optional, calming background focus track that plays quietly while you work. Turning it on opens a small **player dock** in the bottom corner that follows you across the app; from it you can search and pick a track, skip forward and back, set the volume, and minimise or close it. The track list spans a few categories — procedural *Lolly Sings* tunes, ambient loops and beats, your own uploaded audio, and a handful of live internet **radio** stations (these need a connection; everything else plays offline). It's **off by default** and, like Sound, is remembered across sessions and devices. Turning Sound off mutes the focus track too.
 
 ## Storage & privacy
 

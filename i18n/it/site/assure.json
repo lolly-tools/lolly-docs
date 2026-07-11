@@ -1,0 +1,18 @@
+{
+  "eyebrow": "Provenienza e privacy",
+  "heading": "Dimostra cosa hai creato.\nConserva ciò che è tuo.",
+  "lead": "Ogni immagine, PDF o video che esporti può portare una **Content Credential** — un sigillo [C2PA](https://c2pa.org) a prova di manomissione, creato interamente sul tuo dispositivo. Dimostra che il file non è cambiato da quando ha lasciato Lolly e, una volta che registri un'identità, registra anche chi lo ha firmato.",
+  "illustration": "illusCheck",
+  "checks": [
+    { "title": "A prova di manomissione per impostazione predefinita", "desc": "Il sigillo copre ogni byte esportato. Cambia un solo pixel e qualsiasi validatore C2PA lo segnala." },
+    { "title": "Firmato sul tuo dispositivo", "desc": "La tua chiave di firma viene generata localmente e non lascia mai il dispositivo — nemmeno Lolly può leggerla." },
+    { "title": "Verificabile da chiunque, offline", "desc": "Il file porta con sé la propria prova. Verificalo nella scheda Verify, nella CLI o in qualsiasi validatore C2PA — non viene caricato nulla." }
+  ],
+  "cards": [
+    { "icon": "assureEyeOff", "title": "Niente lascia il tuo dispositivo", "desc": "Nessun rendering in cloud, nessuna telemetria, nessuna analitica. Ciò che crei resta sulla tua macchina." },
+    { "icon": "assureScan", "title": "Ripulisci e blocca, sul dispositivo", "desc": "Strip Hidden Data rimuove i dati EXIF e i metadati in locale. Blocca un PDF, un download o un link di condivisione con una password che non lascia mai il tuo dispositivo." },
+    { "icon": "assureServer", "title": "Self-host o air-gap", "desc": "Nessun server, nessun database, nessun backend. Funziona interamente dietro il tuo firewall, completamente offline." }
+  ],
+  "cta": "Come funzionano le Content Credentials →",
+  "ctaHref": "/info/content-credentials-identity.html"
+}
