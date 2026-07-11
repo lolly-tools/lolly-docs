@@ -1,5 +1,7 @@
 # Overview
 
+![Lolly Icon - Large green and white lollipop candy](https://lolly.tools/info/icon.webp)
+
 This document captures the purpose, structure, and architectural decisions for the Lolly platform. It reflects both the product vision and the current state of the codebase.
 
 > **Status:** Lolly is an internal prototype in a **closed pilot that hasn't completed**. The engine is deterministic and internally consistent, but the product is early — SUSE is customer number one — and its cryptography and file-parsing engines are currently undergoing SUSE's strict infrastructure hardening, preparing for enterprise scale (we're really good at this). Read the architecture below as design intent under test, not a finished, certified product. See [Adoption & Governance](/info/adoption-governance.html#status) for how the pilot is run and measured.

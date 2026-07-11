@@ -23,7 +23,8 @@ const REPO_URL = 'https://github.com/lolly-tools/lolly';
 // block, and the footer. Always links to suse.com in a new window.
 const FOUNDED_BY = `<a class="founded-badge" href="https://www.suse.com" target="_blank" rel="noopener" aria-label="Founded by SUSE"><img src="/info/founded-by.svg" alt="Founded by SUSE"></a>`;
 const OG_IMAGE = `${SITE_URL}/og.png`;
-const OG_LOGO = `${SITE_URL}/info/icon-normal.png`;
+// webp, not avif: og:logo consumers (and GitHub-style scrapers) don't decode avif.
+const OG_LOGO = `${SITE_URL}/info/icon.webp`;
 const SITE_DESCRIPTION = 'Lolly: constraint-first, template-driven platform for generating production-ready creative and content assets at scale.';
 // Landing-page <title>/share title — the brand tagline (matches the web shell's
 // index.html). Other pages use "<page title> — Lolly", so this is landing-only.
@@ -353,6 +354,8 @@ function inline(text: string) {
   s = s.replace(/`([^`]+)`/g, '<code>$1</code>');
   s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
   s = s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+  // Images before links, or the link regex eats `[alt](url)` and strands the `!`.
+  s = s.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" loading="lazy">');
   // External links (absolute http/https) open in a new tab; internal/relative links
   // (other /info pages, #anchors) stay in place.
   s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m, label, url) =>
@@ -1095,7 +1098,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   <canvas id="heroCanvas" aria-hidden="true"></canvas>
   <div class="hero-inner">
   <div class="hero-heading">
-    <h1 class="hero-logo-h1"><a href="${esc(localizeHref(lang, '/'))}" class="hero-logo-link" aria-label="Open Lolly — browse all tools"><img src="/info/icon-normal.webp" alt="Lolly" class="hero-logo"></a></h1>
+    <h1 class="hero-logo-h1"><a href="${esc(localizeHref(lang, '/'))}" class="hero-logo-link" aria-label="Open Lolly — browse all tools"><img src="/info/icon.avif" alt="Lolly" class="hero-logo"></a></h1>
   </div>
   <div class="hero-details">
     <span class="hero-pilot" aria-label="${esc(heroChrome.pilotAriaLabel)}"><span class="hero-pilot-tag">${esc(heroChrome.pilotTag)}</span><span class="hero-pilot-text">${esc(heroChrome.pilotText)}</span></span>
@@ -1589,6 +1592,7 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .docs-sidebar a:hover{color:var(--green);background:var(--pale);text-decoration:none}
 .docs-sidebar a.active{color:var(--green);font-weight:600;background:var(--pale)}
 .docs-content{padding:6rem 3.5rem;min-width:0}
+.docs-content img{max-width:min(100%,340px);height:auto}
 .docs-content h2{font-size:1.5rem;font-weight:700;letter-spacing:normal;text-transform:none;border-top:1px solid var(--border);padding-top:2rem;margin-top:2.5rem;margin-bottom:.75rem;color:var(--dark)}
 .docs-content h2:first-of-type{border-top:none;padding-top:0;margin-top:0}
 .docs-content h3{font-size:1.15rem;margin-top:1.75rem;margin-bottom:.5rem;color:var(--dark)}
@@ -2405,9 +2409,13 @@ ${isLanding ? LIQUID_GLASS_SCRIPT : ''}
 function build() {
   // Ensure output dirs exist and copy static assets (icons).
   mkdirSync(outDir, { recursive: true });
-  try { copyFileSync(resolve(repoRoot, 'icon.png'), resolve(repoRoot, 'shells/web/public/icon.png')); } catch {}
-  try { copyFileSync(resolve(repoRoot, 'icon-normal.webp'), resolve(outDir, 'icon-normal.webp')); } catch {}
-  try { copyFileSync(resolve(repoRoot, 'icon-normal.png'), resolve(outDir, 'icon-normal.png')); } catch {}
+  // icon.avif is the site icon (hero logo); icon.webp is the compatibility copy the
+  // GitHub README and overview doc hotlink (GitHub doesn't decode avif). A missing
+  // source is a broken landing page, so warn loudly instead of swallowing it.
+  for (const f of ['icon.avif', 'icon.webp']) {
+    try { copyFileSync(resolve(repoRoot, f), resolve(outDir, f)); }
+    catch { console.warn(`⚠  docs/site: ${f} missing at repo root — /info/${f} will 404`); }
+  }
   try { copyFileSync(resolve(repoRoot, 'founded-by.svg'), resolve(outDir, 'founded-by.svg')); } catch {}
 
   // Which pages actually have a generated OG card *on disk* right now. Derived from
