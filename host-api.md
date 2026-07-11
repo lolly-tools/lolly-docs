@@ -196,6 +196,21 @@ Record the microphone (and optionally the camera) to a finished media Blob, plus
 
 An **`AudioLevel`** is the audio counterpart to `MediaFrame` (all amplitudes `0..1` linear except `dbfs`): `{ rms, peak, dbfs, clipping, t }`, plus the optional **v1.19** background-noise cues `noiseFloor` / `snr` / `hum` / `hiss`. A tool rarely subscribes itself — it declares an `onLevel` hook and the runtime drives it from the meter (and the take). See [Authoring Tools](/info/authoring-tools.html) for the `onLevel` pattern and the full field list; `voice-recorder` (mic-only) and `top-tail-recorder` (camera+mic) are the reference tools.
 
+## `host.color` *(perceptual colour tools — optional, v1.40)*
+
+Extrapolate from **brand primitives** without shipping colour science in every tool: perceptual distance, contrast (WCAG + advisory APCA), smooth OKLab ramps, data class-breaks, and distinct categorical palettes. Every method is **pure and synchronous** — the same engine math on every shell (web, CLI, Tauri), so results never drift between them. Not a gated capability; feature-detect `host.color` and keep a small fallback for older shells. Colour arguments accept hex (`#rgb`…`#rrggbbaa`) or `oklch()`/`lch()` strings — the forms token values take (resolve other forms first); metrics return `NaN` on unparseable input, `ramp` throws; every emitted colour is a gamut-mapped `#rrggbb`.
+
+| Member | Type | Notes |
+|---|---|---|
+| `deltaE(a, b)` | `number` | ΔEOK — perceptual distance in OKLab. `0` identical … ≈`1` black↔white; ~`0.02` is a just-noticeable difference |
+| `contrast(a, b)` | `number` | WCAG 2.1 contrast ratio, 1–21, order-independent — the compliance number |
+| `apca(text, bg)` | `number` | APCA-W3 Lc, signed (`+` dark-on-light). **Advisory** — honest on dark-mode/mid-tone pairs where WCAG misjudges; \|60\| ≈ body text, \|75\| ≈ small text |
+| `ramp(stops, n, opts?)` | `string[]` | `n` colours along a smooth OKLab bézier through `stops`; `{ correctLightness: true }` re-spaces for perceptually even lightness steps — the "good multi-hue scale" recipe |
+| `breaks(data, mode, n)` | `number[]` | `n + 1` class boundaries over numeric data — `'e'` equal, `'l'` log₁₀ (positive data only), `'q'` quantile. Bin values onto a ramp |
+| `distinct(n, opts?)` | `string[]` | Up to `n` visually distinct categorical colours (chart series), seeded from `opts.anchorHex` (your brand primary) — the anchor is always the first colour |
+
+The idiomatic chart pattern — series colours that follow the **active brand** (see `chart-creator` / `d3`, the reference implementations): prefer the brand's own `color.spectrum.*` tokens from `host.tokens.colors()` (they carry measured print inks), top up with `distinct()` anchored on `{color.semantic.primary}`, and keep your shipped palette as the fallback for shells without `host.color`.
+
 ## `host.log`
 
 `log(level, msg, ctx?)` — `level` is `debug`·`info`·`warn`·`error`. Goes to the console in dev and a diagnostics buffer for support. Hook errors are caught and logged, not thrown.
