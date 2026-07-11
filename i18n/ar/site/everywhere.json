@@ -1,0 +1,19 @@
+{
+  "heading": "كل شيء،\nكما أنت،\nعلى أي جهاز",
+  "copy": "شغلها دون اتصال على جهازك، أو اجعلها متاحة دائما مستضافة على الإنترنت — أنت من يقرر.\nأدوات Lolly تعمل هناك.",
+  "surfaces": [
+    { "icon": "surfaceWeb", "label": "Web" },
+    { "icon": "surfaceMacos", "label": "macOS" },
+    { "icon": "surfaceLinux", "label": "Linux" },
+    { "icon": "surfaceIos", "label": "iOS" },
+    { "icon": "surfaceAndroid", "label": "Android" },
+    { "icon": "surfaceCli", "label": "CLI" },
+    { "icon": "surfaceTui", "label": "TUI" }
+  ],
+  "modelsIntro": "ثلاثة أنماط للتقديم:",
+  "models": [
+    { "n": "1", "icon": "modelDeploy", "label": "نشر", "desc": "وزعه على الأجهزة عبر نظام MDM لديك. يعمل دون اتصال تماما، خلف أي جدار حماية أو عزل تام — لا شيء يغادر الجهاز." },
+    { "n": "2", "icon": "modelServe", "label": "استضافة", "desc": "نسخة مستضافة واحدة تستخدم في أي متصفح. لا شيء يثبت — والتحديثات المعتمدة تصل الجميع فور صدورها." },
+    { "n": "3", "icon": "modelHybrid", "label": "هجين", "desc": "تطبيقات محلية دون اتصال إضافة إلى نسخة ويب محدثة دائما، تتشارك مكتبة أدوات واحدة — على كل أنظمة التشغيل في آن واحد." }
+  ]
+}

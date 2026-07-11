@@ -1,0 +1,22 @@
+{
+  "heading": "كل الصيغ، دخولا وخروجا",
+  "lead": "يقرأ Lolly 13 صيغة مصدر ويصدر 25 — إليك المجموعة كاملة، مصنفة حسب طبيعة كل صيغة. ست صيغ {roundtrip}: تقرأ *وتكتب* معا، لذا تظهر في العمودين.",
+  "ingestsLabel": "الاستيراد",
+  "ingestsCount": "13 واردة",
+  "exportsLabel": "التصدير",
+  "exportsCount": "25 صادرة",
+  "ingests": [
+    { "category": "3D", "list": "GLB · glTF" },
+    { "category": "تصميم", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
+    { "category": "صور", "list": "HEIC · TIFF · AVIF" },
+    { "category": "بيانات", "list": "CSV · JSON" }
+  ],
+  "exports": [
+    { "category": "متجهات", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
+    { "category": "نقطية", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
+    { "category": "حركة", "list": "MP4 · WEBM · GIF · APNG" },
+    { "category": "مستندات", "list": "PPTX · HTML · MD · TXT" },
+    { "category": "بيانات", "list": "CSV · JSON · ICS · VCF" },
+    { "category": "حزم", "list": "ZIP" }
+  ]
+}

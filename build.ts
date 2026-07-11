@@ -1298,7 +1298,7 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .pathways-title{color:#fff;font-size:2rem;margin:0 0 .5rem}
 .pathways-lead{color:rgba(255,255,255,.7);font-size:1.0625rem;max-width:40rem;margin:0 auto 2.5rem}
 .pathways-lead a{color:var(--light);font-weight:600}
-.pathways-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;text-align:left}
+.pathways-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;text-align:start}
 .pathway-card{display:flex;flex-direction:column;gap:.5rem;padding:1.75rem;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);transition:transform .18s ease,border-color .18s ease,background .18s ease}
 .pathway-card:hover{text-decoration:none;transform:translateY(-3px);border-color:var(--green);background:rgba(255,255,255,.08)}
 .pathway-ic{align-self:flex-start;display:inline-flex;align-items:center;justify-content:center;width:2.75rem;height:2.75rem;margin-bottom:.35rem;border-radius:12px;color:#fff;background:linear-gradient(163deg,hsl(150 66% 51%),hsl(154 58% 33%));border:1px solid hsl(0 0% 100% / .3);box-shadow:inset 0 1px 0 hsl(0 0% 100% / .45),0 6px 16px -6px hsl(151 57% 40% / .75);transition:box-shadow .18s ease,transform .18s ease}
@@ -1440,7 +1440,7 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 /* Everywhere section */
 .everywhere-section{padding:5rem 2rem;background:var(--dark);color:#fff}
 .everywhere-inner{display:flex;align-items:center;gap:4rem;max-width:1400px;margin:0 auto}
-.everywhere-copy-col{flex:1;text-align:left}
+.everywhere-copy-col{flex:1;text-align:start}
 .everywhere-mascot{width:20vw;max-width:420px;flex-shrink:0}
 .everywhere-section h2{color:#fff;margin-bottom:1rem}
 .everywhere-copy{font-size:1.125rem;line-height:1.75;color:rgba(255,255,255,.65);margin-bottom:3rem}
@@ -1551,13 +1551,13 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 table{border-collapse:collapse;width:100%;font-size:.875rem}
 thead tr th:first-child{border-radius: 1em 0 0 0}
 thead tr th:last-child{border-radius: 0 1em 0 0}
-th,td{padding:.55rem .9rem;text-align:left;border:1px solid var(--border)}
+th,td{padding:.55rem .9rem;text-align:start;border:1px solid var(--border)}
 th{background:var(--pale);font-weight:600;color:var(--dark)}
 tr:nth-child(even) td{background:#fafffe}
 
 /* Mascots */
 .audience-header{display:flex;align-items:center;justify-content:center;gap:2rem;padding:4rem 3rem 1.75rem}
-.audience-header-text{text-align:left}
+.audience-header-text{text-align:start}
 .audience-mascot{width:clamp(200px,26vw,430px);flex-shrink:0;filter:drop-shadow(0 6px 20px rgba(12,50,44,.18))}
 @media(max-width:900px){.audience-mascot{width:clamp(160px,22vw,280px)}}
 @media(max-width:600px){.audience-header{flex-direction:column;gap:1rem;padding:2.5rem 1.25rem 1.25rem}.audience-header-text{text-align:center}.audience-mascot{width:clamp(140px,44vw,220px)}}
@@ -1701,8 +1701,8 @@ footer .founded-badge{margin-top:.5rem}
 .hero-trust{animation:heroUp .65s ease both .65s}
 .hero-inner{display:flex;align-items:center;gap:4rem;max-width:1400px;margin:0 auto;width:100%}
 .hero-heading{margin-bottom:1.5rem;position:relative}
-.hero h1{margin-bottom:0;text-align:left;letter-spacing:0;font-weight:100}
-.hero-details{flex:1;text-align:left}
+.hero h1{margin-bottom:0;text-align:start;letter-spacing:0;font-weight:100}
+.hero-details{flex:1;text-align:start}
 .hero .subtitle{margin-left:0;max-width:none}
 .hero-cta{justify-content:flex-start}
 .hero-trust{justify-content:flex-start}
@@ -1818,6 +1818,11 @@ footer .founded-badge{margin-top:.5rem}
 .dark .why-frustration strong{color:var(--text)}
 .dark .matrix-cell--old{background:#0d2419}
 .dark .matrix-cell--new{background:#112a1e}
+
+/* RTL correctness (Arabic pages get dir="rtl" on <html>): code is Latin and
+   always reads LTR — isolate it so surrounding RTL prose doesn't scramble
+   leading/trailing punctuation. Mirrors the SPA's parts/rtl.css. */
+[dir="rtl"] pre,[dir="rtl"] code,[dir="rtl"] kbd,[dir="rtl"] samp{direction:ltr;text-align:left;unicode-bidi:isolate}
 `.trim();
 
 const THEME_SVG_MOON = `<svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
@@ -2238,7 +2243,7 @@ function wrapPage(lang: Lang, page: Page, content: string, ogSlugs: Set<string>)
   ).join('\n') + `\n<link rel="alternate" hreflang="x-default" href="${esc(`${SITE_URL}${localeHref('en', page.slug)}`)}">`;
 
   return `<!doctype html>
-<html lang="${LANG_META[lang].htmlLang}">
+<html lang="${LANG_META[lang].htmlLang}"${LANG_META[lang].dir ? ` dir="${LANG_META[lang].dir}"` : ''}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">

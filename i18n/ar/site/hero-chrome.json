@@ -1,0 +1,31 @@
+{
+  "pilotTag": "نموذج أولي",
+  "pilotText": "تجربة مغلقة جارية · تحصين لنطاق المؤسسات",
+  "pilotAriaLabel": "Lolly نموذج أولي داخلي في تجربة مغلقة، يجري تحصينه لنطاق المؤسسات",
+  "ctas": [
+    {
+      "href": "/",
+      "label": "افتح التطبيق ↗",
+      "class": "btn btn-primary"
+    },
+    {
+      "href": "/info/quickstart.html",
+      "label": "البداية السريعة →",
+      "class": "btn btn-primary btn-quickstart"
+    },
+    {
+      "href": "/info/about.html",
+      "label": "اعرف المزيد",
+      "class": "btn btn-secondary"
+    }
+  ],
+  "trustChips": [
+    "مجاني 100%",
+    "بلا كوكيز",
+    "بلا تسجيل",
+    "يعمل دون اتصال",
+    "مفتوح المصدر",
+    "الخصوصية أولا"
+  ],
+  "toolCountSuffix": "أداة نموذجية محملة"
+}
