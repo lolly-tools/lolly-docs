@@ -2301,9 +2301,9 @@ ${alternates}
 <meta name="twitter:title" content="${esc(pageTitle)}">
 <meta name="twitter:description" content="${esc(SITE_DESCRIPTION)}">
 <meta name="twitter:image" content="${esc(ogImage)}">
-<link rel="icon" href="/favicon.ico">
-<link rel="icon" type="image/png" href="/icon.png">
-<link rel="apple-touch-icon" href="/icon.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="/catalog/fonts/webfonts/SUSE[wght].woff2">
 ${THEME_INIT_SCRIPT}
 <style>${CSS}</style>
