@@ -469,6 +469,10 @@ A tool can embed **another tool's rendered output** as an image instead of re-im
 - Works wherever the shell can render the child to bytes; the lean CLI composes `svg` children. The mechanism is `host.compose` — see [Host API](/info/host-api.html).
 - **End users get this too, without a manifest.** Any `asset` input can take a pasted Lolly tool link (see [`asset` — library or device upload](#asset--library-or-device-upload) above); the host renders it through the same `host.compose` path. `composes` is for renders *you* wire into the layout; the pasted-link path is for the user to choose which tool fills an image slot.
 
+### Composition depth and baking
+
+Nesting is capped at **3 levels** — a tool composing a tool composing a tool. A deeper chain fails the same way a cycle does: gracefully, with an empty slot. When a design genuinely needs to go deeper, **bake** the inner render: tick *Freeze as a static image* in the picker's render card. A baked image is a frozen copy — self-contained bytes that consume **no** nesting depth and never live-re-render — so it won't update when the source tool changes. Its slot shows a "❄ baked from …" row with a **Re-bake** button (and an Edit path into the source tool's inputs) that re-renders on demand, so a stale copy is one click from fresh.
+
 ## Brand logo (auto-switching)
 
 The catalog ships the SUSE logo as **8 variants** under `suse/logo/` — `{hor|vert}-{neg|pos}-{green|white|black}` (`hor`/`vert` = wide vs stacked; `neg` = for **dark** backgrounds, `pos` = for **light**; `green` is the brand mark, `white`/`black` are the high-contrast mono pair). A tool shouldn't hard-code one — it should pick the variant that fits the current background and space, and use the **actual SVG image** (this is distinct from `brand-lockup`, which renders the wordmark from the SUSE font, outlined via HarfBuzz `host.text`).
