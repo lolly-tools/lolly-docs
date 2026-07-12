@@ -1,0 +1,31 @@
+{
+  "pilotTag": "प्रोटोटाइप",
+  "pilotText": "क्लोज़्ड पायलट जारी · एंटरप्राइज़ स्केल के लिए मज़बूत किया जा रहा है",
+  "pilotAriaLabel": "Lolly एक आंतरिक प्रोटोटाइप है, क्लोज़्ड पायलट में, जिसे एंटरप्राइज़ स्केल के लिए मज़बूत किया जा रहा है",
+  "ctas": [
+    {
+      "href": "/",
+      "label": "ऐप लॉन्च करें ↗",
+      "class": "btn btn-primary"
+    },
+    {
+      "href": "/info/quickstart.html",
+      "label": "क्विकस्टार्ट →",
+      "class": "btn btn-primary btn-quickstart"
+    },
+    {
+      "href": "/info/about.html",
+      "label": "और जानें",
+      "class": "btn btn-secondary"
+    }
+  ],
+  "trustChips": [
+    "100% मुफ़्त",
+    "कोई कुकीज़ नहीं",
+    "कोई साइन-अप नहीं",
+    "ऑफ़लाइन काम करता है",
+    "ओपन सोर्स",
+    "प्राइवेसी सबसे पहले"
+  ],
+  "toolCountSuffix": "उदाहरण टूल लोड किए गए"
+}

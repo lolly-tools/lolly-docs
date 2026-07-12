@@ -1,0 +1,31 @@
+{
+  "pilotTag": "প্রোটোটাইপ",
+  "pilotText": "ক্লোজড পাইলট চলমান · এন্টারপ্রাইজ স্কেলের জন্য মজবুত করা হচ্ছে",
+  "pilotAriaLabel": "Lolly একটি অভ্যন্তরীণ প্রোটোটাইপ, ক্লোজড পাইলটে রয়েছে, এন্টারপ্রাইজ স্কেলের জন্য মজবুত করা হচ্ছে",
+  "ctas": [
+    {
+      "href": "/",
+      "label": "অ্যাপ চালু করুন ↗",
+      "class": "btn btn-primary"
+    },
+    {
+      "href": "/info/quickstart.html",
+      "label": "কুইকস্টার্ট →",
+      "class": "btn btn-primary btn-quickstart"
+    },
+    {
+      "href": "/info/about.html",
+      "label": "আরও জানুন",
+      "class": "btn btn-secondary"
+    }
+  ],
+  "trustChips": [
+    "100% ফ্রি",
+    "কোনো কুকি নেই",
+    "কোনো সাইন-আপ নেই",
+    "অফলাইনে কাজ করে",
+    "ওপেন সোর্স",
+    "প্রাইভেসি সবার আগে"
+  ],
+  "toolCountSuffix": "উদাহরণ টুল লোড করা হয়েছে"
+}

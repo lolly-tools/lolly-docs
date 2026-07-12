@@ -7,7 +7,7 @@ import { readFileSync, writeFileSync, mkdirSync, copyFileSync, existsSync, watch
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { generateOgImages } from './og-image.ts';
-import { LANGS, LANG_META } from '../engine/src/lang.ts';
+import { LANGS, LANG_META, sortedLangs } from '../engine/src/lang.ts';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(__dirname, '..');
@@ -1308,11 +1308,16 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .lang-fab svg{width:24px;height:24px}
 .lang-menu{position:fixed;top:auto;right:1.5rem;margin-top:0;background:rgba(12,50,44,.98);border:1px solid rgba(255,255,255,.15);border-radius:8px;min-width:200px;box-shadow:0 8px 32px rgba(0,0,0,.24);z-index:101;backdrop-filter:blur(8px)}
 .lang-menu[hidden]{display:none}
+.lang-sort-tabs{display:flex;gap:2px;margin:6px 6px 2px;padding:3px;background:rgba(255,255,255,.08);border-radius:999px}
+.lang-sort-tab{flex:1 1 auto;white-space:nowrap;padding:4px 8px;border:0;cursor:pointer;background:transparent;color:rgba(255,255,255,.55);font-family:'SUSE Mono','SF Mono','Fira Code',monospace;font-size:10.5px;letter-spacing:.04em;border-radius:999px;transition:background .12s,color .12s}
+.lang-sort-tab:hover{color:#fff}
+.lang-sort-tab[aria-selected=true]{background:rgba(255,255,255,.16);color:#fff;font-weight:700;box-shadow:0 1px 2px rgba(0,0,0,.24)}
+.lang-sort-tab:focus-visible{outline:2px solid var(--green);outline-offset:1px}
 .lang-menu-list{display:flex;flex-direction:column;max-height:calc(100vh - 7.5rem);overflow-y:auto}
 .lang-menu-item{background:none;border:none;display:flex;align-items:center;gap:.5rem;width:100%;padding:.625rem 1rem;color:rgba(255,255,255,.7);text-align:left;cursor:pointer;transition:background .12s,color .12s;font-size:.8125rem;font-family:inherit}
 .lang-menu-item:hover{background:rgba(255,255,255,.08);color:#fff}
 .lang-menu-item[aria-pressed=true]{background:rgba(48,186,120,.15);color:#fff}
-.lang-menu-flags{display:inline-flex;gap:.2em;min-width:2em}
+.lang-menu-flags{display:inline-flex;gap:.2em;min-width:4em;     place-content: flex-end;}
 .lang-menu-name{flex:1}
 
 /* Hero */
@@ -1323,10 +1328,14 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 #heroCanvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;mix-blend-mode:color-dodge;opacity:.6}
 .hero h1{font-size:clamp(2.75rem,6vw,5rem);letter-spacing:-.04em;line-height:1.05;margin-bottom:1.5rem;color:#fff;position:relative;padding-left:.3em;font-weight:200}
 .hero-logo-h1{margin:0 0 1.5rem;padding:0;line-height:0;position:relative}
-.hero-logo-link{display:block;width:clamp(180px,32vw,340px);margin:0 auto;border-radius:50%;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease;box-shadow:0 0.5em 1em #0004,0 .1em .2em #0003}
-.hero-logo-link:hover,.hero-logo-link:focus-visible{transform:translateY(-3px) scale(1.02);box-shadow:0 0.9em 1.6em #0006,0 .15em .3em #0004;outline:none}
+/* Radius + shadow live on the img itself — on the link they trace its layout box,
+   which sits a hair off the rendered image edge and shows as a seam. */
+.hero-logo-link{display:block;width:clamp(180px,32vw,340px);margin:0 auto;border-radius:50%;cursor:pointer;transition:transform .2s ease}
+.hero-logo-link:hover,.hero-logo-link:focus-visible{transform:translateY(-3px) scale(1.02);outline:none}
+.hero-logo-link:hover .hero-logo,.hero-logo-link:focus-visible .hero-logo{box-shadow:0 0.9em 1.6em #0006,0 .15em .3em #0004}
 .hero-logo-link:active{transform:translateY(-1px) scale(1.0)}
-.hero-logo{display:block;width:100%;height:auto;position:relative;border-radius:50%}
+.hero-logo{display:block;width:100%;height:auto;position:relative;border-radius:50%;    filter: hue-rotate(-15deg);box-shadow:0 0.5em 1em #0004,0 .1em .2em #0003;transition:box-shadow .2s ease}
+.hero-logo:hover{filter: hue-rotate(-25deg) saturate(1.5) brightness(1.01)}
 .hero .subtitle{font-size:clamp(.9375rem,1.8vw,1.125rem);max-width:560px;margin:0 auto 2.75rem;color:rgba(255,255,255,.8);line-height:1.85;position:relative}
 .hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;margin-bottom:2.5rem}
 .hero-trust{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.5rem;position:relative}
@@ -1859,7 +1868,7 @@ footer .founded-badge{margin-top:.5rem}
 .matrix-head--old{background:rgba(90,112,103,.14);color:var(--muted)}
 .matrix-head--new{background:var(--green);color:#04231a}
 .matrix-cell{display:flex;gap:.7rem;align-items:flex-start;padding:1rem 1.15rem;border-radius:12px;font-size:.95rem;line-height:1.5}
-.matrix-cell--old{background:#fff;border:1px solid var(--border);color:var(--muted)}
+.matrix-cell--old{background:#fff;border:0;color:var(--muted)}
 .matrix-cell--new{background:#fff;border:1px solid rgba(48,186,120,.4);color:var(--text);box-shadow:0 2px 10px rgba(48,186,120,.08)}
 .matrix-mark{flex-shrink:0;width:1.35rem;height:1.35rem;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;font-size:.78rem;font-weight:800;margin-top:.05rem}
 .matrix-cell--old .matrix-mark{background:rgba(90,112,103,.16);color:var(--muted)}
@@ -1877,6 +1886,9 @@ footer .founded-badge{margin-top:.5rem}
    always reads LTR — isolate it so surrounding RTL prose doesn't scramble
    leading/trailing punctuation. Mirrors the SPA's parts/rtl.css. */
 [dir="rtl"] pre,[dir="rtl"] code,[dir="rtl"] kbd,[dir="rtl"] samp{direction:ltr;text-align:left;unicode-bidi:isolate}
+/* The nav row mirrors under RTL, putting the lang FAB toward the LEFT edge —
+   follow it with the menu (which is otherwise pinned right:1.5rem physically). */
+[dir="rtl"] .lang-menu{right:auto;left:1.5rem}
 `.trim();
 
 const THEME_SVG_MOON = `<svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
@@ -2225,8 +2237,10 @@ const LANG_ICON_SVG = `<svg class="lang-switch-icon" viewBox="0 0 440.332 510.23
 // The persistent, combined language picker — same control, same options, on
 // every /info page and (via the shared `lang` localStorage key — see i18n.ts's
 // initI18n) on the app itself. Renders as a FAB button that opens a menu, matching
-// the app's UX. The menu lists all languages by speaking population (largest first)
-// with flags and native names. Clicking a language navigates to that locale's version
+// the app's UX. The menu lists all languages with flags and native names, defaulting
+// to most-spoken-first order (total speakers, largest first) with an A–Z toggle at the top — the
+// choice is shared with the app's lang menu via the same-origin 'langSort'
+// localStorage key. Clicking a language navigates to that locale's version
 // of the current page and saves the choice to localStorage.
 function langPickerHtml(lang: Lang, slug: string): string {
   const flags = (code: Lang): string => {
@@ -2242,16 +2256,35 @@ function langPickerHtml(lang: Lang, slug: string): string {
     };
     return `<span class="lang-menu-flags" aria-hidden="true">${flagCodes.map(flagEmoji).join('')}</span>`;
   };
-  const options = LANGS.map(l =>
-    `<button type="button" class="lang-menu-item" data-lang="${l}" data-href="${esc(localeHref(l, slug))}" aria-pressed="${l === lang}">${flags(l)}<span class="lang-menu-name">${esc(LANG_META[l].nativeName)}</span></button>`,
+  // data-idx = position in the server-rendered speakers order — the client's
+  // speakers re-sort tie-breaks on it so an az→speakers round trip restores THIS
+  // exact order (equal-speakers pairs would otherwise settle in az-relative order).
+  const options = sortedLangs('speakers').map((l, i) =>
+    `<button type="button" class="lang-menu-item" data-lang="${l}" data-href="${esc(localeHref(l, slug))}" data-name="${esc(LANG_META[l].nativeName)}" data-speakers="${LANG_META[l].speakers}" data-idx="${i}" aria-pressed="${l === lang}">${flags(l)}<span class="lang-menu-name">${esc(LANG_META[l].nativeName)}</span></button>`,
   ).join('');
-  return `<div class="lang-fab-wrap"><button type="button" class="lang-fab" aria-label="${esc(t('Language'))}" aria-haspopup="menu" aria-expanded="false" title="${esc(t('Language'))}">${LANG_ICON_SVG}</button><div class="lang-menu" role="menu" aria-label="${esc(t('Language'))}" hidden><div class="lang-menu-list" role="none">${options}</div></div></div>`;
+  const sortTabs = `<div class="lang-sort-tabs" role="tablist" aria-label="${esc(t('Sort languages'))}"><button type="button" class="lang-sort-tab" role="tab" data-sort="speakers" aria-selected="true">№ ${esc(t('Speakers'))}</button><button type="button" class="lang-sort-tab" role="tab" data-sort="az" aria-selected="false">A–Z</button></div>`;
+  return `<div class="lang-fab-wrap"><button type="button" class="lang-fab" aria-label="${esc(t('Language'))}" aria-haspopup="menu" aria-expanded="false" title="${esc(t('Language'))}">${LANG_ICON_SVG}</button><div class="lang-menu" role="group" aria-label="${esc(t('Language'))}" hidden>${sortTabs}<div class="lang-menu-list" role="menu" aria-label="${esc(t('Language'))}">${options}</div></div></div>`;
 }
 const LANG_PICKER_SCRIPT = `<script>
 (function(){
   const trigger = document.querySelector('.lang-fab');
   const menu = document.querySelector('.lang-menu');
   if (!trigger || !menu) return;
+  const list = menu.querySelector('.lang-menu-list');
+  const sortTabs = [...menu.querySelectorAll('.lang-sort-tab')];
+  // Reorder the menu in place: speakers (descending data-speakers) or A–Z
+  // (data-name). The choice persists via the 'langSort' localStorage key,
+  // shared same-origin with the app's language menu.
+  function applySort(mode, persist) {
+    sortTabs.forEach(tab => tab.setAttribute('aria-selected', String(tab.dataset.sort === mode)));
+    const items = [...list.querySelectorAll('.lang-menu-item')];
+    items.sort((a, b) => mode === 'az'
+      ? a.dataset.name.localeCompare(b.dataset.name, 'en')
+      : (Number(b.dataset.speakers) - Number(a.dataset.speakers)) || (Number(a.dataset.idx) - Number(b.dataset.idx)));
+    items.forEach(item => list.appendChild(item));
+    if (persist) { try { localStorage.setItem('langSort', mode); } catch (err) {} }
+  }
+  try { if (localStorage.getItem('langSort') === 'az') applySort('az', false); } catch (err) {}
   let isOpen = false;
   function positionMenu() {
     const rect = trigger.getBoundingClientRect();
@@ -2291,6 +2324,15 @@ const LANG_PICKER_SCRIPT = `<script>
   }
   trigger.addEventListener('click', () => isOpen ? close() : open());
   menu.addEventListener('click', e => {
+    const tab = e.target.closest('.lang-sort-tab');
+    if (tab) {
+      if (tab.getAttribute('aria-selected') === 'true') return;
+      applySort(tab.dataset.sort === 'az' ? 'az' : 'speakers', true);
+      // Re-appending items blurs a focused one to <body> in browsers that don't
+      // focus buttons on click — keep focus inside the open menu.
+      if (!menu.contains(document.activeElement)) tab.focus();
+      return;
+    }
     const btn = e.target.closest('.lang-menu-item');
     if (!btn) return;
     try { localStorage.setItem('lang', btn.dataset.lang); } catch(err) {}

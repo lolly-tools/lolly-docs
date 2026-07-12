@@ -1,0 +1,22 @@
+{
+  "heading": "প্রতিটি ফরম্যাট, ভেতরে ও বাইরে",
+  "lead": "Lolly 13টি সোর্স ফরম্যাট পড়ে এবং 25টি রেন্ডার করে — এই রইল সম্পূর্ণ সেট, প্রতিটি যা তার ভিত্তিতে গ্রুপ করা। ছয়টি {roundtrip}: পড়া *এবং* লেখা দুটোই হয়, তাই এগুলো দুই কলামেই দেখা যায়।",
+  "ingestsLabel": "ইনজেস্ট",
+  "ingestsCount": "13 ভেতরে",
+  "exportsLabel": "এক্সপোর্ট",
+  "exportsCount": "25 বাইরে",
+  "ingests": [
+    { "category": "3D", "list": "GLB · glTF" },
+    { "category": "ডিজাইন", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
+    { "category": "ফটো", "list": "HEIC · TIFF · AVIF" },
+    { "category": "ডেটা", "list": "CSV · JSON" }
+  ],
+  "exports": [
+    { "category": "ভেক্টর", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
+    { "category": "রাস্টার", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
+    { "category": "মোশন", "list": "MP4 · WEBM · GIF · APNG" },
+    { "category": "ডকুমেন্ট", "list": "PPTX · HTML · MD · TXT" },
+    { "category": "ডেটা", "list": "CSV · JSON · ICS · VCF" },
+    { "category": "বান্ডেল", "list": "ZIP" }
+  ]
+}

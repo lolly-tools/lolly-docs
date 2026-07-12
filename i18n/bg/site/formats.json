@@ -1,0 +1,22 @@
+{
+  "heading": "Всеки формат — за вход и изход",
+  "lead": "Lolly чете 13 входни формата и рендира 25 — ето пълния набор, групиран според това какво представлява всеки. Шест са {roundtrip}: четат се *и* се записват, затова се появяват и в двете колони.",
+  "ingestsLabel": "Приема",
+  "ingestsCount": "13 входни",
+  "exportsLabel": "Експортира",
+  "exportsCount": "25 изходни",
+  "ingests": [
+    { "category": "3D", "list": "GLB · glTF" },
+    { "category": "Дизайн", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
+    { "category": "Снимки", "list": "HEIC · TIFF · AVIF" },
+    { "category": "Данни", "list": "CSV · JSON" }
+  ],
+  "exports": [
+    { "category": "Векторни", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
+    { "category": "Растерни", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
+    { "category": "Движение", "list": "MP4 · WEBM · GIF · APNG" },
+    { "category": "Документи", "list": "PPTX · HTML · MD · TXT" },
+    { "category": "Данни", "list": "CSV · JSON · ICS · VCF" },
+    { "category": "Пакет", "list": "ZIP" }
+  ]
+}

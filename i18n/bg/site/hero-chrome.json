@@ -1,0 +1,31 @@
+{
+  "pilotTag": "Прототип",
+  "pilotText": "Затворен пилот в ход · укрепване за корпоративен мащаб",
+  "pilotAriaLabel": "Lolly е вътрешен прототип в затворен пилот, укрепван за корпоративен мащаб",
+  "ctas": [
+    {
+      "href": "/",
+      "label": "Стартирай приложението ↗",
+      "class": "btn btn-primary"
+    },
+    {
+      "href": "/info/quickstart.html",
+      "label": "Бърз старт →",
+      "class": "btn btn-primary btn-quickstart"
+    },
+    {
+      "href": "/info/about.html",
+      "label": "Научи повече",
+      "class": "btn btn-secondary"
+    }
+  ],
+  "trustChips": [
+    "100% безплатно",
+    "Без бисквитки",
+    "Без регистрация",
+    "Работи офлайн",
+    "Отворен код",
+    "Поверителност на първо място"
+  ],
+  "toolCountSuffix": "заредени примерни инструмента"
+}

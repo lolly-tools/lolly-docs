@@ -1,0 +1,19 @@
+{
+  "heading": "Semuanya,\nsebagaimana Anda,\npada apa pun",
+  "copy": "Jalankan secara offline di perangkat Anda, atau tetap tersedia kapan saja dengan hosting online — Anda yang memutuskan.\nLolly Tools bisa berjalan di sana.",
+  "surfaces": [
+    { "icon": "surfaceWeb", "label": "Web" },
+    { "icon": "surfaceMacos", "label": "macOS" },
+    { "icon": "surfaceLinux", "label": "Linux" },
+    { "icon": "surfaceIos", "label": "iOS" },
+    { "icon": "surfaceAndroid", "label": "Android" },
+    { "icon": "surfaceCli", "label": "CLI" },
+    { "icon": "surfaceTui", "label": "TUI" }
+  ],
+  "modelsIntro": "Tiga mode penyampaian:",
+  "models": [
+    { "n": "1", "icon": "modelDeploy", "label": "Sebarkan", "desc": "Kirim ke perangkat melalui MDM yang sudah Anda miliki. Berjalan sepenuhnya offline, di balik firewall atau air-gap apa pun — tidak ada yang keluar dari perangkat." },
+    { "n": "2", "icon": "modelServe", "label": "Host", "desc": "Satu instans yang di-hosting, digunakan di browser mana pun. Tidak perlu instalasi — pembaruan yang disetujui langsung sampai ke semua orang begitu dirilis." },
+    { "n": "3", "icon": "modelHybrid", "label": "Hybrid", "desc": "Aplikasi lokal offline ditambah versi web yang selalu terkini, berbagi satu pustaka alat — di semua OS sekaligus." }
+  ]
+}

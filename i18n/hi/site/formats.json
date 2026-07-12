@@ -1,0 +1,22 @@
+{
+  "heading": "हर फ़ॉर्मैट, अंदर और बाहर",
+  "lead": "Lolly 13 सोर्स फ़ॉर्मैट पढ़ता है और 25 रेंडर करता है — यह रहा पूरा सेट, हर एक के प्रकार के अनुसार समूहित। छह {roundtrip} हैं: पढ़े *और* लिखे दोनों जाते हैं, इसलिए वे दोनों कॉलम में दिखते हैं।",
+  "ingestsLabel": "इनजेस्ट",
+  "ingestsCount": "13 अंदर",
+  "exportsLabel": "एक्सपोर्ट",
+  "exportsCount": "25 बाहर",
+  "ingests": [
+    { "category": "3D", "list": "GLB · glTF" },
+    { "category": "डिज़ाइन", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
+    { "category": "फ़ोटो", "list": "HEIC · TIFF · AVIF" },
+    { "category": "डेटा", "list": "CSV · JSON" }
+  ],
+  "exports": [
+    { "category": "वेक्टर", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
+    { "category": "रास्टर", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
+    { "category": "मोशन", "list": "MP4 · WEBM · GIF · APNG" },
+    { "category": "डॉक्युमेंट", "list": "PPTX · HTML · MD · TXT" },
+    { "category": "डेटा", "list": "CSV · JSON · ICS · VCF" },
+    { "category": "बंडल", "list": "ZIP" }
+  ]
+}

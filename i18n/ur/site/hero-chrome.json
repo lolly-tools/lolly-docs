@@ -1,0 +1,31 @@
+{
+  "pilotTag": "پروٹو ٹائپ",
+  "pilotText": "بند پائلٹ جاری ہے · انٹرپرائز اسکیل کے لیے مضبوط بنایا جا رہا ہے",
+  "pilotAriaLabel": "Lolly ایک اندرونی پروٹو ٹائپ ہے جو بند پائلٹ میں ہے، اور انٹرپرائز اسکیل کے لیے مضبوط بنایا جا رہا ہے",
+  "ctas": [
+    {
+      "href": "/",
+      "label": "ایپ لانچ کریں ↗",
+      "class": "btn btn-primary"
+    },
+    {
+      "href": "/info/quickstart.html",
+      "label": "فوری آغاز →",
+      "class": "btn btn-primary btn-quickstart"
+    },
+    {
+      "href": "/info/about.html",
+      "label": "مزید جانیں",
+      "class": "btn btn-secondary"
+    }
+  ],
+  "trustChips": [
+    "100% مفت",
+    "کوئی کوکیز نہیں",
+    "کوئی سائن اپ نہیں",
+    "آف لائن کام کرتا ہے",
+    "اوپن سورس",
+    "رازداری اولین"
+  ],
+  "toolCountSuffix": "نمونہ ٹولز لوڈ ہوئے"
+}
