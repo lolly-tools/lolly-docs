@@ -4,7 +4,7 @@ You want to make something good, quickly, and have it come out right. Lolly is b
 
 **What's in it for you:** you ship in minutes and it looks like you spent hours. You're never stuck waiting on a designer, and because the brand rules are baked in, it's never your name on the off-brand asset. You just look fast, polished, and reliable.
 
-New here? Start with the **[Quickstart](/info/quickstart.html)** — it gets your brand in and your first file out. This page is why you'll want to stay.
+This page tells you everything you need to know about getting the most out of Lolly.
 
 ## Why Lolly — your advantages
 
