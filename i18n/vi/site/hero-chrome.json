@@ -9,11 +9,6 @@
       "class": "btn btn-primary"
     },
     {
-      "href": "/info/quickstart.html",
-      "label": "Bắt đầu nhanh →",
-      "class": "btn btn-primary btn-quickstart"
-    },
-    {
       "href": "/info/about.html",
       "label": "Tìm hiểu thêm",
       "class": "btn btn-secondary"

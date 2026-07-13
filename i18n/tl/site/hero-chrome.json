@@ -9,11 +9,6 @@
       "class": "btn btn-primary"
     },
     {
-      "href": "/info/quickstart.html",
-      "label": "Mabilisang Simula →",
-      "class": "btn btn-primary btn-quickstart"
-    },
-    {
       "href": "/info/about.html",
       "label": "Alamin Pa",
       "class": "btn btn-secondary"

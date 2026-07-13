@@ -390,6 +390,18 @@ function onFrame({ frame, model, host }) {
 
 Declared hooks must be flagged in the manifest's `hooks` object (`{ "onInit": true, ... }`) — a manifest with no `hooks` object never loads hooks.js at all, and the flags are what validation and shell affordances (e.g. the transform-download wiring for `exportFile`) read.
 
+### Shared helper regions (`community/_shared/`)
+
+hooks.js must stay **self-contained** (no `import`/`require` — tools are data), so helpers that several tools need (the filter overlay block, `canRaster`, `loadImage`, `esc`, `clamp`, `safeColor`) are maintained once in `community/_shared/*.js` and copied byte-for-byte into each consumer between marker comments:
+
+```js
+// === lolly:shared clamp — generated from community/_shared/math.js; edit there and run npm run sync:shared ===
+function clamp(v, a, b) { return v < a ? a : (v > b ? b : v); }
+// === /lolly:shared clamp ===
+```
+
+Never hand-edit inside the markers: edit the canonical file, run `npm run sync:shared`, and `npm run validate:catalog` fails on any drift. See `community/_shared/README.md`.
+
 ### Motion-reactive tools (`onFrame`)
 
 Declare an `onFrame` hook and your tool can react to a **live camera** — the shell shows a "Go live" toggle wherever a camera is available (`host.media`), and the runtime drives `onFrame` once per frame. This is **pure progressive enhancement**: `onFrame` is never called where there's no camera, so the tool still works as an ordinary still-image tool. **Do not** add `camera` to `capabilities` — that would *require* a camera and hide the tool where there isn't one.
@@ -502,6 +514,28 @@ async function onInit({ model }) {
 ```
 
 Putting the `<image>` inside an `<svg>` lets the export inline it (data-URI) and emit **true vector SVG**; an `<img>` in an HTML canvas exports raster/PDF only. `tools/tool-logo/` is the reference implementation (background colour, orientation, brand/mono, transparent-bg export). Reusing this in another org: keep the structure and swap the `suse/logo/...` id prefix for your own logo namespace (same variant matrix).
+
+## Brand overlays (`extends`)
+
+A brand pack that only needs to tweak a community tool — a different template, a handful of re-worded translations — shouldn't carry a whole fork that silently drifts from its base. Instead, declare the brand's tool dir an **overlay**:
+
+```json
+// brands/<brand>/tools/<id>/tool.json — same id as the community tool
+{
+  "id": "color-palette",
+  "extends": "community",
+  ...
+}
+```
+
+and keep **only the files that differ** in the overlay dir. When `scripts/use-profile.ts` builds the `tools/` view, that tool's view dir becomes the per-file union of the base (`community/<id>/`) and the overlay (`brands/<brand>/tools/<id>/`):
+
+- **Overlay wins** on any filename collision; everything else comes from the base.
+- Composition recurses **one level** into subdirs (`i18n/`, `assets/`) — files there union per-file too; anything nested deeper is taken wholesale from the winning side.
+- The `extends` field is **stripped from the composed `tool.json`**, so the engine, shells, and catalog scripts always see a plain tool. That one file is materialised (a real file, not a symlink) — edit the pack source, not the view copy; every other composed file keeps normal write-through symlinks in local (symlink) mode, and the Vercel copy mode composes identically.
+- Overlay and base **share the same tool id** (ids are permanent contracts; the view path `tools/<id>/` never changes), so the overlay's `tool.json` doubles as the marker carrier even when it's otherwise identical to the base's.
+
+**Fail-closed:** a declared overlay whose base is missing (`community/<id>/tool.json` doesn't exist), an `extends` value other than `"community"` (the only base pack in v1), or an `extends` declared on a community tool itself fails the profile build loudly — even in `postinstall --auto` — and is also rejected by `npm run validate:catalog`. You never get a silent partial tool. The composed result is validated like any other tool, since the validator runs against the `tools/` view.
 
 ## Publishing
 

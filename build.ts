@@ -1319,6 +1319,13 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .lang-menu-item[aria-pressed=true]{background:rgba(48,186,120,.15);color:#fff}
 .lang-menu-flags{display:inline-flex;gap:.2em;min-width:4em;     place-content: flex-end;}
 .lang-menu-name{flex:1}
+.lang-sort-tab:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 1px; }
+@media (min-width:800px){
+.lang-menu-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    }
+}
 
 /* Hero */
 .hero{background:#1c4a2e;color:#fff;padding:7rem 1.5rem 6rem;text-align:center;position:relative;overflow:hidden;min-height:50vh;user-select:none;-webkit-user-select:none}
@@ -1350,8 +1357,6 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
    liquid-displacement filter can't render. The buildGlass script overrides this
    inline with the refractive filter where it's supported. */
 .btn-primary,.btn-secondary{-webkit-backdrop-filter:blur(3px) saturate(1.45);backdrop-filter:blur(3px) saturate(1.45)}
-.btn-quickstart{background:rgba(254,124,63,.82);color:#0c322c}
-.btn-quickstart:hover{background:var(--orange);box-shadow:0 8px 28px rgba(254,124,63,.4)}
 
 /* Three-door pathways band — sits directly under the hero on the landing page. */
 .pathways-section{background:var(--dark);padding:4rem 1.5rem}
@@ -1360,13 +1365,13 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .pathways-lead{color:rgba(255,255,255,.7);font-size:1.0625rem;max-width:40rem;margin:0 auto 2.5rem}
 .pathways-lead a{color:var(--light);font-weight:600}
 .pathways-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;text-align:start}
-.pathway-card{display:flex;flex-direction:column;gap:.5rem;padding:1.75rem;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);transition:transform .18s ease,border-color .18s ease,background .18s ease}
+.pathway-card{display:flex;flex-direction:column;gap:.5rem;padding:1.75rem;border-radius:14px;background:rgba(255,255,255,.05);border:0;    box-shadow: inset 0 1px #fff1, 0 .2em .5em #0002;transition:transform .18s ease,border-color .18s ease,background .18s ease}
 .pathway-card:hover{text-decoration:none;transform:translateY(-3px);border-color:var(--green);background:rgba(255,255,255,.08)}
 .pathway-ic{align-self:flex-start;display:inline-flex;align-items:center;justify-content:center;width:2.75rem;height:2.75rem;margin-bottom:.35rem;border-radius:12px;color:#fff;background:linear-gradient(163deg,hsl(150 66% 51%),hsl(154 58% 33%));border:1px solid hsl(0 0% 100% / .3);box-shadow:inset 0 1px 0 hsl(0 0% 100% / .45),0 6px 16px -6px hsl(151 57% 40% / .75);transition:box-shadow .18s ease,transform .18s ease}
 .pathway-ic svg{width:1.45rem;height:1.45rem}
 .pathway-card:hover .pathway-ic{transform:translateY(-1px);box-shadow:inset 0 1px 0 hsl(0 0% 100% / .5),0 9px 22px -6px hsl(151 57% 40% / .9)}
 .pathway-eyebrow{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:white;}
-.pathway-name{font-size:1.375rem;font-weight:700;color:var(--green)}
+.pathway-name{font-size:1.375rem;font-weight:200;color:var(--green)}
 .pathway-desc{font-size:.9375rem;line-height:1.55;color:rgba(255,255,255,.68);flex:1}
 .pathway-go{font-size:.9375rem;font-weight:600;color:var(--light);margin-top:.5rem}
 @media(max-width:820px){.pathways-grid{grid-template-columns:1fr}}
@@ -1858,7 +1863,7 @@ footer .founded-badge{margin-top:.5rem}
 .why-section h2{font-size:clamp(1.8rem,4vw,2.5rem);color:var(--dark);line-height:1.12;margin-bottom:1rem}
 .why-lead{color:var(--muted);font-size:1.0625rem;line-height:1.7}
 .why-frustrations{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2.5rem}
-.why-frustration{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.5rem 1.375rem;text-align:center}
+.why-frustration{background:#fff;border:0; box-shadow: inset 0 1px #fff1, 0 .2em .5em #0002;border-radius:14px;padding:1.5rem 1.375rem;text-align:center}
 .why-frustration-ic{display:inline-flex;width:2.75rem;height:2.75rem;align-items:center;justify-content:center;border-radius:50%;background:rgba(254,124,63,.12);color:var(--orange);margin-bottom:.75rem}
 .why-frustration-ic svg{width:1.4rem;height:1.4rem}
 .why-frustration strong{display:block;color:var(--dark);margin-bottom:.35rem;font-size:1.0625rem}

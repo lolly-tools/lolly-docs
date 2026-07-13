@@ -9,11 +9,6 @@
       "class": "btn btn-primary"
     },
     {
-      "href": "/info/quickstart.html",
-      "label": "Бърз старт →",
-      "class": "btn btn-primary btn-quickstart"
-    },
-    {
       "href": "/info/about.html",
       "label": "Научи повече",
       "class": "btn btn-secondary"

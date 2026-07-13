@@ -9,11 +9,6 @@
       "class": "btn btn-primary"
     },
     {
-      "href": "/info/quickstart.html",
-      "label": "Mulai Cepat →",
-      "class": "btn btn-primary btn-quickstart"
-    },
-    {
       "href": "/info/about.html",
       "label": "Pelajari Lebih Lanjut",
       "class": "btn btn-secondary"

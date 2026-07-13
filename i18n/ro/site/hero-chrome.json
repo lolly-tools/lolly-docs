@@ -9,11 +9,6 @@
       "class": "btn btn-primary"
     },
     {
-      "href": "/info/quickstart.html",
-      "label": "Pornire rapidă →",
-      "class": "btn btn-primary btn-quickstart"
-    },
-    {
       "href": "/info/about.html",
       "label": "Află mai multe",
       "class": "btn btn-secondary"
