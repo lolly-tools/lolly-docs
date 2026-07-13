@@ -1,0 +1,19 @@
+{
+  "heading": "Hepsi,\nolduğun gibi,\nher yerde",
+  "copy": "Cihazında çevrimdışı çalıştır, barındırılan çevrimiçi sürümle her zaman erişilebilir ol, karar senin.\nLolly araçları orada da çalışabilir.",
+  "surfaces": [
+    { "icon": "surfaceWeb", "label": "Web" },
+    { "icon": "surfaceMacos", "label": "macOS" },
+    { "icon": "surfaceLinux", "label": "Linux" },
+    { "icon": "surfaceIos", "label": "iOS" },
+    { "icon": "surfaceAndroid", "label": "Android" },
+    { "icon": "surfaceCli", "label": "CLI" },
+    { "icon": "surfaceTui", "label": "TUI" }
+  ],
+  "modelsIntro": "Üç teslimat modu:",
+  "models": [
+    { "n": "1", "icon": "modelDeploy", "label": "Dağıt", "desc": "Mevcut MDM'in üzerinden cihazlara gönder. Tamamen çevrimdışı çalışır, herhangi bir güvenlik duvarının ya da hava boşluklu ağın ardında — cihazdan hiçbir şey çıkmaz." },
+    { "n": "2", "icon": "modelServe", "label": "Sun", "desc": "Herhangi bir tarayıcıda kullanılan tek bir barındırılan örnek. Kurulacak bir şey yok — onaylanan güncellemeler yayınlandığı anda herkese ulaşır." },
+    { "n": "3", "icon": "modelHybrid", "label": "Hibrit", "desc": "Çevrimdışı yerel uygulamalar artı her zaman güncel bir web sürümü, tek bir araç kitaplığını paylaşarak — aynı anda her işletim sisteminde." }
+  ]
+}

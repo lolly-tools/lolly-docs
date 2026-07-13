@@ -1,0 +1,14 @@
+{
+  "panels": [
+    {
+      "illustration": "illusSound",
+      "heading": "Erişilebilir, sesli",
+      "desc": "Senin çalışma şekline uyan bir arayüz — ekran okuyucu dostu ve baştan sona tamamen klavyeyle gezilebilir. Yumuşak arayüz seslerini aç ya da **Neurospicy Mode**'a geç: çalışırken sessizce döngüye giren, sakin bir odak ritmi."
+    },
+    {
+      "illustration": "illusBulk",
+      "heading": "Düzenle, sonra toplu oluştur",
+      "desc": "Kaydedilmiş çalışmalarını iç içe geçmiş **Projects** klasörlerinde tut. Yayınlama zamanı geldiğinde, bütün bir klasörü — ya da seçtiğin herhangi bir grubu — tek bir zip dosyası halinde oluştur. Ne elektronik tablo ne de toplu işlem tablosu gerekir."
+    }
+  ]
+}

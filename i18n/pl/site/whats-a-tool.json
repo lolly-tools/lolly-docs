@@ -1,0 +1,59 @@
+{
+  "heading": "Narzędzia",
+  "lead": "Samodzielny szablon.\nReguły układu i styl, czekające na dane",
+  "anatomy": [
+    {
+      "file": "tool.json",
+      "name": "Manifest",
+      "desc": "Nazwa, dane wejściowe i metadane"
+    },
+    {
+      "file": "template.html",
+      "name": "Szablon",
+      "desc": "Kod HTML/CSS/JS renderujący wynik"
+    },
+    {
+      "file": "hooks.js",
+      "name": "Hooki",
+      "desc": "Opcjonalna logika, uruchamiana w piaskownicy"
+    }
+  ],
+  "features": [
+    {
+      "icon": "toolFeatureStar",
+      "title": "Inteligentny szablon",
+      "desc": "Zna swój układ, typografię, kolory i reguły marki. Ty dodajesz treść — on zajmuje się resztą."
+    },
+    {
+      "icon": "toolFeaturePeople",
+      "title": "Bez doświadczenia w projektowaniu",
+      "desc": "Tworzony raz przez kogoś, kto zna markę. Reszta tylko wypełnia puste pola."
+    },
+    {
+      "icon": "toolFeatureCode",
+      "title": "Design jako kod",
+      "desc": "Zwykły HTML, CSS i JS. Wersjonowany, porównywalny i możliwy do zrecenzowania jak każdy inny plik źródłowy."
+    },
+    {
+      "icon": "toolFeatureMonitor",
+      "title": "Bez aplikacji",
+      "desc": "Otwórz `template.html` w dowolnej przeglądarce — po prostu działa. Narzędzie jest aplikacją."
+    },
+    {
+      "icon": "toolFeatureShuffle",
+      "title": "Swobodne płótno",
+      "desc": "Niektóre narzędzia otwierają się jako płótno z bezpośrednią manipulacją — przeciągaj, obracaj i przyciągaj pola z tekstem, kształtami i obrazami, eksportowane tą samą deterministyczną ścieżką."
+    },
+    {
+      "icon": "toolFeatureNested",
+      "title": "Narzędzia w narzędziach",
+      "desc": "Traktuj narzędzie jak obraz wewnątrz innego narzędzia — plakietkę renderującą własny kod QR, kartę z wykresem na żywo — i zachowaj całą inteligencję: wciąż żywe, wciąż renderowane na nowo, nigdy spłaszczony obrazek."
+    }
+  ],
+  "tryNow": {
+    "title": "Narzędzia świetnie działają samodzielnie.",
+    "desc": "Aby renderować do PNG, PDF, SVG, wideo i wielu innych formatów — użyj platformy Lolly.",
+    "cta": "Uruchom aplikację ↗",
+    "href": "/"
+  }
+}

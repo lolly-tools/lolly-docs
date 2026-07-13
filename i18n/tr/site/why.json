@@ -1,0 +1,19 @@
+{
+  "eyebrow": "Lolly'yi neden yaptık",
+  "heading": "Günlük yaratıcı işler\nbu kadar zor olmamalı.",
+  "lead": "Çoğu insan bir tasarım stüdyosu istemiyor. Tek bir doğru dosya istiyorlar, hemen şimdi — markayı bozmadan, birini beklemeden ve hiç duymadıkları bir web sitesine özel bir belge vermeden. Lolly, bu üç sıkıntıyı ortadan kaldırmak için var.",
+  "frustrations": [
+    { "icon": "anxiety", "title": "Marka dışı kalma kaygısı", "desc": "Yanlış rengi ya da yazı tipini seçip herkesin önünde yanlış yapma konusundaki sessiz korku." },
+    { "icon": "bottleneck", "title": "Darboğaz", "desc": "Meşgul bir tasarımcının, yavaş bir aracın ya da bir onay daha bekleyen her küçük varlık, sırada takılıp kalır." },
+    { "icon": "cloudDependence", "title": "Bulut bağımlılığı", "desc": "Sadece dönüştürmek ya da kırpmak için hassas dosyaları yüklemek — ve çevrimdışı olduğun an mahsur kalmak." }
+  ],
+  "matrix": [
+    { "pain": "Tasarım ekibine bir brief e-postala, sonra küçük bir grafik için günlerce bekle.", "relief": "Birkaç alanı doldur. Bitmiş varlık saniyeler içinde hazır." },
+    { "pain": "Doğru yazı tipini, rengi ve logoyu tahmin et — ve marka incelemesinden geçmesini umut et.", "relief": "Tasarım kuralları aracın içine gömülüdür. Esnerler, kırılmazlar. " },
+    { "pain": "Bir sözleşmeyi, maaş bordrosunu ya da özel bir fotoğrafı dönüştürmek ya da kırpmak için rastgele bir ücretsiz web sitesine yükle.", "relief": "Her şey kendi cihazında çalışır. Hiçbir şey yüklenmez; hiçbir şey sorumlu kişinin cihazından çıkmaz." },
+    { "pain": "Aynı rozeti, kartı ya da afişi elle yüz kez yeniden yap.", "relief": "Bir elektronik tabloyu yapıştır. Aynı anda yüz tane bitmiş, baskıya hazır dosya al." },
+    { "pain": "“Hangi sürüm en güncel?” — Slack başlıklarında ve paylaşılan sürücülerde arama yapmak.", "relief": "Varlık bir bağlantıdır. Aynı girdiler, aynı dosya, her seferinde." },
+    { "pain": "Uçakta sinyal yok, ya da kilitli bir ağ — yani basitçe engellenmiş oluyorsun.", "relief": "Bir kez yüklendikten sonra, herhangi bir cihazda tamamen çevrimdışı çalışır." },
+    { "pain": "Ambargolu içerik:  İletişim profesyonelleri, iş birliği yaptığı kişilerle güvenli şekilde etkileşime giremiyor.", "relief": "dosyaları, zip'leri ve paylaşım bağlantılarını kilitle, şifrele ve parola koru - hepsi sıfır internetle" }
+  ]
+}

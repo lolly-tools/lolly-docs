@@ -1,0 +1,14 @@
+{
+  "panels": [
+    {
+      "illustration": "illusSound",
+      "heading": "Dostępne, z dźwiękiem",
+      "desc": "Interfejs, który działa tak jak ty — przyjazny dla czytników ekranu i w pełni dostępny z klawiatury. Włącz delikatne dźwięki interfejsu albo przełącz się na **Neurospicy Mode**: spokojny rytm do skupienia, który cicho gra w tle, kiedy pracujesz."
+    },
+    {
+      "illustration": "illusBulk",
+      "heading": "Uporządkuj, potem renderuj masowo",
+      "desc": "Przechowuj zapisane prace w zagnieżdżonych folderach **Projekty**. Gdy przyjdzie czas na eksport, wyrenderuj cały folder — albo wybraną garstkę plików — do jednego pliku zip. Bez arkusza kalkulacyjnego, bez siatki wsadowej."
+    }
+  ]
+}

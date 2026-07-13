@@ -1,0 +1,30 @@
+{
+  "title": "Başlamanın üç yolu",
+  "lead": "[Quickstart](/info/quickstart.html) ile başla — markanı ekle ve ilk dosyanı çıkar — sonra sana uyan yolu izle.",
+  "cards": [
+    {
+      "href": "/info/creators.html",
+      "icon": "media",
+      "eyebrow": "Yaratıcılar İçin",
+      "name": "Bir şeyler yap",
+      "desc": "Saniyeler içinde bitmiş dosyalar — tasarım aracı yok, bekleme yok. Avantajlar ve uygulamadan en iyi şekilde nasıl yararlanılacağı.",
+      "cta": "Keşfet →"
+    },
+    {
+      "href": "/info/builders.html",
+      "icon": "developers",
+      "eyebrow": "Geliştiriciler İçin",
+      "name": "Yaz ve entegre et",
+      "desc": "Araçlar yaz, onları CLI, MCP ya da bir ajandan çalıştır ve platformu dağıt. Teknik dokümantasyon.",
+      "cta": "Dokümanları oku →"
+    },
+    {
+      "href": "/info/operators.html",
+      "icon": "security",
+      "eyebrow": "Operatörler İçin",
+      "name": "Güvenle devreye al",
+      "desc": "Yaratıcı bir platform kılığına girmiş, çok katmanlı bir veri kaybı önleme stratejisi. Strateji, güvenlik ve benimseme.",
+      "cta": "Stratejiyi gör →"
+    }
+  ]
+}

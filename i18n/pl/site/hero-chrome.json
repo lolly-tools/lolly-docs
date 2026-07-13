@@ -1,0 +1,26 @@
+{
+  "pilotTag": "Prototyp",
+  "pilotText": "Zamknięty pilotaż w toku · przygotowanie pod skalę korporacyjną",
+  "pilotAriaLabel": "Lolly to wewnętrzny prototyp w zamkniętym pilotażu, przygotowywany pod skalę korporacyjną",
+  "ctas": [
+    {
+      "href": "/",
+      "label": "Uruchom aplikację ↗",
+      "class": "btn btn-primary"
+    },
+    {
+      "href": "/info/about.html",
+      "label": "Dowiedz się więcej",
+      "class": "btn btn-secondary"
+    }
+  ],
+  "trustChips": [
+    "100% bezpłatne",
+    "Bez plików cookie",
+    "Bez rejestracji",
+    "Działa offline",
+    "Open source",
+    "Prywatność na pierwszym miejscu"
+  ],
+  "toolCountSuffix": "przykładowych narzędzi wczytano"
+}

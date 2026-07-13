@@ -1,0 +1,26 @@
+{
+  "pilotTag": "Prototip",
+  "pilotText": "Kapalı pilot sürüyor · kurumsal ölçek için sağlamlaştırılıyor",
+  "pilotAriaLabel": "Lolly, kapalı bir pilotta yer alan ve kurumsal ölçek için sağlamlaştırılan dahili bir prototiptir",
+  "ctas": [
+    {
+      "href": "/",
+      "label": "Uygulamayı Başlat ↗",
+      "class": "btn btn-primary"
+    },
+    {
+      "href": "/info/about.html",
+      "label": "Daha Fazla Bilgi",
+      "class": "btn btn-secondary"
+    }
+  ],
+  "trustChips": [
+    "%100 Ücretsiz",
+    "Çerez Yok",
+    "Kayıt Yok",
+    "Çevrimdışı Çalışır",
+    "Açık Kaynak",
+    "Gizlilik Odaklı"
+  ],
+  "toolCountSuffix": "Örnek Araç Yüklendi"
+}

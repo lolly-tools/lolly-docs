@@ -1,0 +1,52 @@
+{
+  "eyebrow": "Dlaczego zbudowaliśmy Lolly",
+  "heading": "Codzienna praca kreatywna\nnie powinna być aż tak trudna.",
+  "lead": "Większość ludzi nie chce studia projektowego. Chcą jednego poprawnego pliku, już teraz — bez naruszania marki, bez czekania na kogoś i bez przekazywania prywatnego dokumentu witrynie, o której nigdy nie słyszeli. Lolly istnieje, by wyeliminować te trzy frustracje.",
+  "frustrations": [
+    {
+      "icon": "anxiety",
+      "title": "Strach przed złamaniem marki",
+      "desc": "Cichy niepokój, że wybierzesz zły kolor lub czcionkę i publicznie się pomylisz."
+    },
+    {
+      "icon": "bottleneck",
+      "title": "Wąskie gardło",
+      "desc": "Każdy mały plik czeka w kolejce za zajętym projektantem, wolnym narzędziem albo kolejną akceptacją."
+    },
+    {
+      "icon": "cloudDependence",
+      "title": "Zależność od chmury",
+      "desc": "Wysyłanie poufnych plików tylko po to, by je skonwertować albo przyciąć — i całkowita bezradność, gdy zabraknie internetu."
+    }
+  ],
+  "matrix": [
+    {
+      "pain": "Wysyłasz brief do zespołu projektowego i czekasz dni na jedną małą grafikę.",
+      "relief": "Wypełnij kilka pól. Plik jest gotowy w kilka sekund."
+    },
+    {
+      "pain": "Zgadujesz właściwą czcionkę, kolor i logo — i liczysz, że przejdzie kontrolę marki.",
+      "relief": "Zasady marki są wbudowane w narzędzie. Można je naginać, nie łamać. "
+    },
+    {
+      "pain": "Wgrywasz umowę, odcinek wypłaty albo prywatne zdjęcie na przypadkową darmową stronę, żeby je skonwertować lub przyciąć.",
+      "relief": "Wszystko działa na twoim własnym urządzeniu. Nic nie jest wgrywane; nic nie opuszcza urządzenia osoby odpowiedzialnej."
+    },
+    {
+      "pain": "Ręcznie robisz tę samą plakietkę, kartę czy baner sto razy.",
+      "relief": "Wklej arkusz kalkulacyjny. Otrzymaj sto gotowych, przygotowanych do druku plików naraz."
+    },
+    {
+      "pain": "„Która wersja jest najnowsza?” — przeszukiwanie wątków na Slacku i wspólnych dysków.",
+      "relief": "Plik to link. Te same dane, ten sam plik, każdym razem."
+    },
+    {
+      "pain": "Brak sygnału w samolocie albo zamknięta sieć — więc jesteś po prostu odcięty.",
+      "relief": "Działa całkowicie offline, na każdym urządzeniu, wystarczy, że wczyta się raz."
+    },
+    {
+      "pain": "Treści objęte embargiem:  specjaliści ds. komunikacji nie mają możliwości bezpiecznej współpracy z innymi osobami.",
+      "relief": "zablokuj, zaszyfruj i chroń hasłem pliki, archiwa zip oraz linki do udostępniania - całkowicie bez internetu"
+    }
+  ]
+}

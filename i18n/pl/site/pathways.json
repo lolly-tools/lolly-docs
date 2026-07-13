@@ -1,0 +1,30 @@
+{
+  "title": "Trzy sposoby na start",
+  "lead": "Zacznij od [Szybki start](/info/quickstart.html) — wgraj swoją markę i wyeksportuj pierwszy plik — a potem wybierz ścieżkę, która najbardziej ci pasuje.",
+  "cards": [
+    {
+      "href": "/info/creators.html",
+      "icon": "media",
+      "eyebrow": "Dla twórców",
+      "name": "Twórz rzeczy",
+      "desc": "Gotowe pliki w kilka sekund — bez narzędzi projektowych, bez czekania. Zalety i sposoby na jak najlepsze wykorzystanie aplikacji.",
+      "cta": "Odkryj →"
+    },
+    {
+      "href": "/info/builders.html",
+      "icon": "developers",
+      "eyebrow": "Dla deweloperów",
+      "name": "Twórz i integruj",
+      "desc": "Twórz narzędzia, uruchamiaj je z CLI, MCP lub agenta i wdrażaj platformę. Dokumentacja techniczna.",
+      "cta": "Przeczytaj dokumentację →"
+    },
+    {
+      "href": "/info/operators.html",
+      "icon": "security",
+      "eyebrow": "Dla operatorów",
+      "name": "Wdrażaj bezpiecznie",
+      "desc": "Wielowarstwowa strategia zapobiegania utracie danych, udająca platformę kreatywną. Strategia, bezpieczeństwo i wdrożenie.",
+      "cta": "Zobacz strategię →"
+    }
+  ]
+}

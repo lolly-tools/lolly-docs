@@ -1,0 +1,23 @@
+{
+  "heading": "Araçlar",
+  "lead": "Kendi kendine yeten bir şablon.\nVeri bekleyen düzen kuralları ve stil",
+  "anatomy": [
+    { "file": "tool.json", "name": "Manifest", "desc": "Ad, girdiler ve meta veri" },
+    { "file": "template.html", "name": "Şablon", "desc": "Çıktıyı oluşturan HTML/CSS/JS" },
+    { "file": "hooks.js", "name": "Hooks", "desc": "İsteğe bağlı mantık, sandbox içinde" }
+  ],
+  "features": [
+    { "icon": "toolFeatureStar", "title": "Akıllı bir şablon", "desc": "Kendi düzenini, türünü, renklerini ve marka kurallarını bilir. Sen içeriği getirirsin — gerisini o halleder." },
+    { "icon": "toolFeaturePeople", "title": "Tasarım deneyimi gerekmez", "desc": "Markayı bilen biri tarafından bir kez oluşturulur. Geri kalan herkes sadece boşlukları doldurur." },
+    { "icon": "toolFeatureCode", "title": "Kod olarak tasarım", "desc": "Sade HTML, CSS ve JS. Diğer her kaynak dosyası gibi sürüm kontrollü, karşılaştırılabilir ve incelenebilir." },
+    { "icon": "toolFeatureMonitor", "title": "Uygulama gerekmez", "desc": "`template.html` dosyasını herhangi bir tarayıcıda aç — hemen çalışır. Araç, uygulamanın ta kendisidir." },
+    { "icon": "toolFeatureShuffle", "title": "Serbest kanvas düzeni", "desc": "Bazı araçlar doğrudan manipülasyon kanvası olarak açılır — metin, şekil ve görsel kutularını sürükle, döndür ve hizala; hepsi aynı deterministik yoldan dışa aktarılır." },
+    { "icon": "toolFeatureNested", "title": "Araç içinde araç", "desc": "Bir aracı, başka bir aracın içinde bir görsel gibi ele al — kendi QR kodunu oluşturan bir rozet, canlı bir grafiği olan bir kart — ve tüm zekâyı korumuş olursun: hâlâ canlı, hâlâ yeniden oluşturuluyor, asla düzleştirilmiş bir resim değil." }
+  ],
+  "tryNow": {
+    "title": "Araçlar tek başlarına da gayet iyi çalışır.",
+    "desc": "PNG, PDF, SVG, video ve daha fazlasına oluşturmak için Lolly platformunu kullan.",
+    "cta": "Uygulamayı Başlat ↗",
+    "href": "/"
+  }
+}

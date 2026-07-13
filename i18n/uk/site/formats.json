@@ -1,0 +1,52 @@
+{
+  "heading": "Кожен формат — на вхід і на вихід",
+  "lead": "Lolly читає 13 вихідних форматів і рендерить 25 — ось повний перелік, згрупований за типом кожного. Шість {roundtrip}: читаються *і* записуються, тож з'являються в обох колонках.",
+  "ingestsLabel": "Імпорт",
+  "ingestsCount": "13 на вхід",
+  "exportsLabel": "Експорт",
+  "exportsCount": "25 на вихід",
+  "ingests": [
+    {
+      "category": "3D",
+      "list": "GLB · glTF"
+    },
+    {
+      "category": "Дизайн",
+      "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG"
+    },
+    {
+      "category": "Фото",
+      "list": "HEIC · TIFF · AVIF"
+    },
+    {
+      "category": "Дані",
+      "list": "CSV · JSON"
+    }
+  ],
+  "exports": [
+    {
+      "category": "Вектор",
+      "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF"
+    },
+    {
+      "category": "Растр",
+      "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO"
+    },
+    {
+      "category": "Анімація",
+      "list": "MP4 · WEBM · GIF · APNG"
+    },
+    {
+      "category": "Документ",
+      "list": "PPTX · HTML · MD · TXT"
+    },
+    {
+      "category": "Дані",
+      "list": "CSV · JSON · ICS · VCF"
+    },
+    {
+      "category": "Пакет",
+      "list": "ZIP"
+    }
+  ]
+}

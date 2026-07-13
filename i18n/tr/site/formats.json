@@ -1,0 +1,22 @@
+{
+  "heading": "Her format, içeri de dışarı da",
+  "lead": "Lolly 13 kaynak formatını okur, 25 format oluşturur — işte türüne göre gruplanmış tam liste. Altısı {roundtrip}: hem okunur *hem de* yazılır, bu yüzden her iki sütunda da yer alır.",
+  "ingestsLabel": "İçe Aktarılanlar",
+  "ingestsCount": "13 giriş",
+  "exportsLabel": "Dışa Aktarılanlar",
+  "exportsCount": "25 çıkış",
+  "ingests": [
+    { "category": "3D", "list": "GLB · glTF" },
+    { "category": "Tasarım", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
+    { "category": "Fotoğraflar", "list": "HEIC · TIFF · AVIF" },
+    { "category": "Veri", "list": "CSV · JSON" }
+  ],
+  "exports": [
+    { "category": "Vektör", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
+    { "category": "Raster", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
+    { "category": "Hareket", "list": "MP4 · WEBM · GIF · APNG" },
+    { "category": "Belge", "list": "PPTX · HTML · MD · TXT" },
+    { "category": "Veri", "list": "CSV · JSON · ICS · VCF" },
+    { "category": "Paket", "list": "ZIP" }
+  ]
+}
