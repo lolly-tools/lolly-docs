@@ -1,20 +1,23 @@
 {
   "heading": "所有格式,读取与导出",
-  "lead": "Lolly 可读取 13 种源格式,并能导出 25 种格式——以下是完整列表,按类别分组。其中 6 种{roundtrip}:可读取*也*可导出,因此会同时出现在两栏中。",
+  "lead": "Lolly 可读取 23 种源格式,并能导出 27 种格式——以下是完整列表,按类别分组。其中 10 种{roundtrip}:可读取*也*可导出,因此会同时出现在两栏中。",
   "ingestsLabel": "导入",
-  "ingestsCount": "13 种输入",
+  "ingestsCount": "23 种输入",
   "exportsLabel": "导出",
-  "exportsCount": "25 种输出",
+  "exportsCount": "27 种输出",
   "ingests": [
     { "category": "3D", "list": "GLB · glTF" },
     { "category": "设计", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
     { "category": "照片", "list": "HEIC · TIFF · AVIF" },
+    { "category": "视频", "list": "MP4 · WEBM · MOV" },
+    { "category": "音频", "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD" },
     { "category": "数据", "list": "CSV · JSON" }
   ],
   "exports": [
     { "category": "矢量", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
     { "category": "位图", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
     { "category": "动态", "list": "MP4 · WEBM · GIF · APNG" },
+    { "category": "音频", "list": "MP3 · M4A" },
     { "category": "文档", "list": "PPTX · HTML · MD · TXT" },
     { "category": "数据", "list": "CSV · JSON · ICS · VCF" },
     { "category": "打包", "list": "ZIP" }

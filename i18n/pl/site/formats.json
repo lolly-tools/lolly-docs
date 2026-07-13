@@ -1,10 +1,10 @@
 {
   "heading": "Każdy format, na wejściu i wyjściu",
-  "lead": "Lolly odczytuje 13 formatów źródłowych i renderuje 25 - oto pełny zestaw, pogrupowany według typu. Sześć {roundtrip}: odczytywane *i* zapisywane, więc pojawiają się w obu kolumnach.",
+  "lead": "Lolly odczytuje 23 formaty źródłowe i renderuje 27 - oto pełny zestaw, pogrupowany według typu. Dziesięć {roundtrip}: odczytywane *i* zapisywane, więc pojawiają się w obu kolumnach.",
   "ingestsLabel": "Import",
-  "ingestsCount": "13 wejść",
+  "ingestsCount": "23 wejścia",
   "exportsLabel": "Eksport",
-  "exportsCount": "25 wyjść",
+  "exportsCount": "27 wyjść",
   "ingests": [
     {
       "category": "3D",
@@ -17,6 +17,14 @@
     {
       "category": "Zdjęcia",
       "list": "HEIC · TIFF · AVIF"
+    },
+    {
+      "category": "Wideo",
+      "list": "MP4 · WEBM · MOV"
+    },
+    {
+      "category": "Audio",
+      "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD"
     },
     {
       "category": "Dane",
@@ -35,6 +43,10 @@
     {
       "category": "Animacja",
       "list": "MP4 · WEBM · GIF · APNG"
+    },
+    {
+      "category": "Audio",
+      "list": "MP3 · M4A"
     },
     {
       "category": "Dokument",

@@ -58,6 +58,7 @@ Advanced filters, compositing, animation, live camera effects, generative design
 
 - **Print, done right.** Real physical units (mm/cm/in/pt) and DPI, bleed and crop marks, CMYK and PDF/X-4 output-intent - a print shop gets exactly what it needs. See [Exporting](/info/exporting.html#size-print-units).
 - **Video and motion.** Export WebM/MP4 (with audio tracks), animated PNG/WebP, animated SVG, and Lottie - from the same template that makes your stills.
+- **Audio.** Record a voice note and save it as MP3 (or its native M4A/OGG/WebM), all on-device - and bring in MP3, WAV, OGG, M4A, FLAC, MIDI, or tracker modules (MOD/XM/IT/…) as a music bed under a video or an ambient track in Neurospicy Mode.
 - **Editable vectors.** SVG, EPS, EMF, and DXF export. Text becomes outlined paths in vector output, so a print shop or a cutter gets crisp geometry that opens anywhere. (Outlined text is no longer *re-typable* in Illustrator - that's the trade for perfect fidelity without the font.)
 - **Convenience that adds up.** Batch a spreadsheet into a folder of assets; save sessions and organise them into Projects; share any state as a URL; render a whole folder as one zip.
 - **A UI that's actually pleasant.** Undo/redo everywhere, a sound layer you can turn off, a theme cycle, live-camera filters, a masonry gallery - and **Neurospicy Mode** for a calmer, lower-stimulation interface.

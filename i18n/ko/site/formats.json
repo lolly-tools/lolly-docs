@@ -1,20 +1,23 @@
 {
   "heading": "모든 포맷, 가져오기부터 내보내기까지",
-  "lead": "Lolly는 13가지 소스 포맷을 읽어 들이고 25가지 포맷으로 내보내요 — 전체 목록을 종류별로 묶어서 소개할게요. {roundtrip} 6가지는 읽기*와* 쓰기 모두 가능해서 두 열 모두에 나타나요.",
+  "lead": "Lolly는 23가지 소스 포맷을 읽어 들이고 27가지 포맷으로 내보내요 — 전체 목록을 종류별로 묶어서 소개할게요. {roundtrip} 10가지는 읽기*와* 쓰기 모두 가능해서 두 열 모두에 나타나요.",
   "ingestsLabel": "가져오기",
-  "ingestsCount": "입력 13종",
+  "ingestsCount": "입력 23종",
   "exportsLabel": "내보내기",
-  "exportsCount": "출력 25종",
+  "exportsCount": "출력 27종",
   "ingests": [
     { "category": "3D", "list": "GLB · glTF" },
     { "category": "디자인", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
     { "category": "사진", "list": "HEIC · TIFF · AVIF" },
+    { "category": "비디오", "list": "MP4 · WEBM · MOV" },
+    { "category": "오디오", "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD" },
     { "category": "데이터", "list": "CSV · JSON" }
   ],
   "exports": [
     { "category": "벡터", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
     { "category": "래스터", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
     { "category": "모션", "list": "MP4 · WEBM · GIF · APNG" },
+    { "category": "오디오", "list": "MP3 · M4A" },
     { "category": "문서", "list": "PPTX · HTML · MD · TXT" },
     { "category": "데이터", "list": "CSV · JSON · ICS · VCF" },
     { "category": "번들", "list": "ZIP" }

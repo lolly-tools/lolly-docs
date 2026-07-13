@@ -1,20 +1,23 @@
 {
   "heading": "Elk formaat, in en uit",
-  "lead": "Lolly leest 13 bronformaten en exporteert er 25 - hier is de volledige set, gegroepeerd per type. Zes {roundtrip}: zowel gelezen *als* geschreven, dus ze staan in beide kolommen.",
+  "lead": "Lolly leest 23 bronformaten en exporteert er 27 - hier is de volledige set, gegroepeerd per type. Tien {roundtrip}: zowel gelezen *als* geschreven, dus ze staan in beide kolommen.",
   "ingestsLabel": "Importeert",
-  "ingestsCount": "13 in",
+  "ingestsCount": "23 in",
   "exportsLabel": "Exporteert",
-  "exportsCount": "25 uit",
+  "exportsCount": "27 uit",
   "ingests": [
     { "category": "3D", "list": "GLB · glTF" },
     { "category": "Ontwerp", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
     { "category": "Foto's", "list": "HEIC · TIFF · AVIF" },
+    { "category": "Video", "list": "MP4 · WEBM · MOV" },
+    { "category": "Audio", "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD" },
     { "category": "Data", "list": "CSV · JSON" }
   ],
   "exports": [
     { "category": "Vector", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
     { "category": "Raster", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
     { "category": "Animatie", "list": "MP4 · WEBM · GIF · APNG" },
+    { "category": "Audio", "list": "MP3 · M4A" },
     { "category": "Document", "list": "PPTX · HTML · MD · TXT" },
     { "category": "Data", "list": "CSV · JSON · ICS · VCF" },
     { "category": "Bundel", "list": "ZIP" }

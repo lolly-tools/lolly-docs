@@ -123,6 +123,14 @@ GIF works everywhere (great for chat/email; larger and lower-colour than video).
 
 **Sound.** Video exports aren't silent. A tool can lay a **music bed** under the clip - an audio asset from the catalogue, looped or trimmed to the clip length, with fade-in/out, volume, and automatic ducking under the footage's own sound - and the recording tools carry their footage's live audio straight through to the file. **MP4** and **WebM** keep the mixed track; GIF and the animated image formats (APNG, Animated WebP, Animated SVG) are silent by nature.
 
+## Audio
+
+Some tools export **audio on its own**, not just as a video track. The **Voice Recorder** captures a mic take with a live level meter and gentle coaching, then saves it as **MP3** (the default, transcoded in your browser) or in its native container - **M4A** (AAC), **OGG** or **WebM** (Opus), whichever your browser recorded. As with everything else, the encode happens on your device - nothing is uploaded.
+
+Audio you *bring in* is just as broad. The asset picker accepts **MP3**, **WAV**, **OGG**/**Opus**, **M4A**/**AAC** and **FLAC** (kept byte-for-byte and decoded on-device), **MIDI** (`.mid` - converted on import to a tiny on-device synth track), and **tracker modules** - **MOD**, **XM**, **IT**, **S3M**, **STM**, **MTM** (decoded on-device by a bundled player, a few kilobytes of song data). Any of these can become the **music bed** under a video export, or play in Neurospicy Mode's ambient player.
+
+Audio isn't part of the `format=` / `--export=` pipeline below - it comes out of the recording tools' capture flow, so it isn't a shareable-link format id.
+
 ## Provenance & watermark
 
 Where the format supports it, exports carry **provenance metadata** - software, source, the tool's name, and your profile credit line - embedded natively (PNG iTXt, JPEG EXIF, PDF info, SVG `<metadata>`, GIF comment). It's authorship only; nothing is uploaded. **Experimental** tools additionally stamp a visible watermark, applied by the host so it can't be removed by editing the tool.

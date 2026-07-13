@@ -1,20 +1,23 @@
 {
   "heading": "Semua format, masuk dan keluar",
-  "lead": "Lolly membaca 13 format sumber dan menghasilkan 25 - inilah kumpulan lengkapnya, dikelompokkan menurut jenisnya. Enam {roundtrip}: dibaca *dan* ditulis, sehingga muncul di kedua kolom.",
+  "lead": "Lolly membaca 23 format sumber dan menghasilkan 27 - inilah kumpulan lengkapnya, dikelompokkan menurut jenisnya. Sepuluh {roundtrip}: dibaca *dan* ditulis, sehingga muncul di kedua kolom.",
   "ingestsLabel": "Impor",
-  "ingestsCount": "13 masuk",
+  "ingestsCount": "23 masuk",
   "exportsLabel": "Ekspor",
-  "exportsCount": "25 keluar",
+  "exportsCount": "27 keluar",
   "ingests": [
     { "category": "3D", "list": "GLB · glTF" },
     { "category": "Desain", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
     { "category": "Foto", "list": "HEIC · TIFF · AVIF" },
+    { "category": "Video", "list": "MP4 · WEBM · MOV" },
+    { "category": "Audio", "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD" },
     { "category": "Data", "list": "CSV · JSON" }
   ],
   "exports": [
     { "category": "Vektor", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
     { "category": "Raster", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
     { "category": "Animasi", "list": "MP4 · WEBM · GIF · APNG" },
+    { "category": "Audio", "list": "MP3 · M4A" },
     { "category": "Dokumen", "list": "PPTX · HTML · MD · TXT" },
     { "category": "Data", "list": "CSV · JSON · ICS · VCF" },
     { "category": "Paket", "list": "ZIP" }

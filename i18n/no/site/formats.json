@@ -1,20 +1,23 @@
 {
   "heading": "Alle formater, inn og ut",
-  "lead": "Lolly leser 13 kildeformater og rendrer 25 - her er hele settet, gruppert etter hva hver type er. Seks {roundtrip}: både leses og skrives, så de vises i begge kolonner.",
+  "lead": "Lolly leser 23 kildeformater og rendrer 27 - her er hele settet, gruppert etter hva hver type er. Ti {roundtrip}: både leses og skrives, så de vises i begge kolonner.",
   "ingestsLabel": "Importerer",
-  "ingestsCount": "13 inn",
+  "ingestsCount": "23 inn",
   "exportsLabel": "Eksporterer",
-  "exportsCount": "25 ut",
+  "exportsCount": "27 ut",
   "ingests": [
     { "category": "3D", "list": "GLB · glTF" },
     { "category": "Design", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
     { "category": "Bilder", "list": "HEIC · TIFF · AVIF" },
+    { "category": "Video", "list": "MP4 · WEBM · MOV" },
+    { "category": "Lyd", "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD" },
     { "category": "Data", "list": "CSV · JSON" }
   ],
   "exports": [
     { "category": "Vektor", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
     { "category": "Raster", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
     { "category": "Bevegelse", "list": "MP4 · WEBM · GIF · APNG" },
+    { "category": "Lyd", "list": "MP3 · M4A" },
     { "category": "Dokument", "list": "PPTX · HTML · MD · TXT" },
     { "category": "Data", "list": "CSV · JSON · ICS · VCF" },
     { "category": "Pakke", "list": "ZIP" }

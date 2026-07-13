@@ -1,20 +1,23 @@
 {
   "heading": "ہر فارمیٹ، اندر اور باہر",
-  "lead": "Lolly 13 ماخذ فارمیٹس پڑھتا ہے اور 25 رینڈر کرتا ہے — یہاں مکمل فہرست ہے، ہر ایک کی نوعیت کے مطابق گروپ کی گئی۔ چھ {roundtrip}: پڑھے *اور* لکھے دونوں جاتے ہیں، اس لیے وہ دونوں کالموں میں نظر آتے ہیں۔",
+  "lead": "Lolly 23 ماخذ فارمیٹس پڑھتا ہے اور 27 رینڈر کرتا ہے — یہاں مکمل فہرست ہے، ہر ایک کی نوعیت کے مطابق گروپ کی گئی۔ دس {roundtrip}: پڑھے *اور* لکھے دونوں جاتے ہیں، اس لیے وہ دونوں کالموں میں نظر آتے ہیں۔",
   "ingestsLabel": "درآمدات",
-  "ingestsCount": "13 اندر",
+  "ingestsCount": "23 اندر",
   "exportsLabel": "برآمدات",
-  "exportsCount": "25 باہر",
+  "exportsCount": "27 باہر",
   "ingests": [
     { "category": "3D", "list": "GLB · glTF" },
     { "category": "ڈیزائن", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
     { "category": "تصاویر", "list": "HEIC · TIFF · AVIF" },
+    { "category": "ویڈیو", "list": "MP4 · WEBM · MOV" },
+    { "category": "آڈیو", "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD" },
     { "category": "ڈیٹا", "list": "CSV · JSON" }
   ],
   "exports": [
     { "category": "ویکٹر", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
     { "category": "راسٹر", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
     { "category": "حرکت", "list": "MP4 · WEBM · GIF · APNG" },
+    { "category": "آڈیو", "list": "MP3 · M4A" },
     { "category": "دستاویزات", "list": "PPTX · HTML · MD · TXT" },
     { "category": "ڈیٹا", "list": "CSV · JSON · ICS · VCF" },
     { "category": "بنڈل", "list": "ZIP" }

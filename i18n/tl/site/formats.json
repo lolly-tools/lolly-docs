@@ -1,20 +1,23 @@
 {
   "heading": "Bawat format, papasok at palabas",
-  "lead": "Nagbabasa ang Lolly ng 13 source format at nag-re-render ng 25 - heto ang kumpletong listahan, naka-grupo ayon sa uri ng bawat isa. Anim na {roundtrip}: binabasa *at* isinusulat, kaya lumalabas sila sa parehong column.",
+  "lead": "Nagbabasa ang Lolly ng 23 source format at nag-re-render ng 27 - heto ang kumpletong listahan, naka-grupo ayon sa uri ng bawat isa. Sampung {roundtrip}: binabasa *at* isinusulat, kaya lumalabas sila sa parehong column.",
   "ingestsLabel": "Papasok",
-  "ingestsCount": "13 papasok",
+  "ingestsCount": "23 papasok",
   "exportsLabel": "Palabas",
-  "exportsCount": "25 palabas",
+  "exportsCount": "27 palabas",
   "ingests": [
     { "category": "3D", "list": "GLB · glTF" },
     { "category": "Disenyo", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
     { "category": "Larawan", "list": "HEIC · TIFF · AVIF" },
+    { "category": "Video", "list": "MP4 · WEBM · MOV" },
+    { "category": "Audio", "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD" },
     { "category": "Datos", "list": "CSV · JSON" }
   ],
   "exports": [
     { "category": "Vector", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
     { "category": "Raster", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
     { "category": "Motion", "list": "MP4 · WEBM · GIF · APNG" },
+    { "category": "Audio", "list": "MP3 · M4A" },
     { "category": "Dokumento", "list": "PPTX · HTML · MD · TXT" },
     { "category": "Datos", "list": "CSV · JSON · ICS · VCF" },
     { "category": "Bundle", "list": "ZIP" }

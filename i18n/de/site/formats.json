@@ -1,20 +1,23 @@
 {
   "heading": "Jedes Format, ein und aus",
-  "lead": "Lolly liest 13 Quellformate ein und rendert 25 - hier die vollständige Übersicht, gruppiert danach, was jedes Format ist. Sechs {roundtrip}: werden gelesen *und* geschrieben und erscheinen daher in beiden Spalten.",
+  "lead": "Lolly liest 23 Quellformate ein und rendert 27 - hier die vollständige Übersicht, gruppiert danach, was jedes Format ist. Zehn {roundtrip}: werden gelesen *und* geschrieben und erscheinen daher in beiden Spalten.",
   "ingestsLabel": "Importe",
-  "ingestsCount": "13 ein",
+  "ingestsCount": "23 ein",
   "exportsLabel": "Exporte",
-  "exportsCount": "25 aus",
+  "exportsCount": "27 aus",
   "ingests": [
     { "category": "3D", "list": "GLB · glTF" },
     { "category": "Design", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
     { "category": "Fotos", "list": "HEIC · TIFF · AVIF" },
+    { "category": "Video", "list": "MP4 · WEBM · MOV" },
+    { "category": "Audio", "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD" },
     { "category": "Daten", "list": "CSV · JSON" }
   ],
   "exports": [
     { "category": "Vektor", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
     { "category": "Raster", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
     { "category": "Bewegtbild", "list": "MP4 · WEBM · GIF · APNG" },
+    { "category": "Audio", "list": "MP3 · M4A" },
     { "category": "Dokument", "list": "PPTX · HTML · MD · TXT" },
     { "category": "Daten", "list": "CSV · JSON · ICS · VCF" },
     { "category": "Paket", "list": "ZIP" }

@@ -1,20 +1,23 @@
 {
   "heading": "Každý formát, dovnitř i ven",
-  "lead": "Lolly čte 13 zdrojových formátů a vykresluje 25 - tady je kompletní přehled, roztříděný podle toho, čím každý formát je. Šest {roundtrip}: dá se číst *i* zapisovat, takže se objevují v obou sloupcích.",
+  "lead": "Lolly čte 23 zdrojových formátů a vykresluje 27 - tady je kompletní přehled, roztříděný podle toho, čím každý formát je. Deset {roundtrip}: dá se číst *i* zapisovat, takže se objevují v obou sloupcích.",
   "ingestsLabel": "Načítá",
-  "ingestsCount": "13 dovnitř",
+  "ingestsCount": "23 dovnitř",
   "exportsLabel": "Exportuje",
-  "exportsCount": "25 ven",
+  "exportsCount": "27 ven",
   "ingests": [
     { "category": "3D", "list": "GLB · glTF" },
     { "category": "Design", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
     { "category": "Fotky", "list": "HEIC · TIFF · AVIF" },
+    { "category": "Video", "list": "MP4 · WEBM · MOV" },
+    { "category": "Audio", "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD" },
     { "category": "Data", "list": "CSV · JSON" }
   ],
   "exports": [
     { "category": "Vektory", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
     { "category": "Rastr", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
     { "category": "Pohyb", "list": "MP4 · WEBM · GIF · APNG" },
+    { "category": "Audio", "list": "MP3 · M4A" },
     { "category": "Dokumenty", "list": "PPTX · HTML · MD · TXT" },
     { "category": "Data", "list": "CSV · JSON · ICS · VCF" },
     { "category": "Balíček", "list": "ZIP" }

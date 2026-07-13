@@ -1028,7 +1028,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   // columns. Mark those chips (⇄ + filled style) so the overlap reads as intentional
   // rather than accidental duplication. Matched on the exact chip token, so the export-only
   // "CMYK PDF" variant is NOT marked - only plain "PDF" round-trips.
-  const ROUNDTRIP = new Set(['PDF', 'SVG', 'TIFF', 'AVIF', 'CSV', 'JSON']);
+  const ROUNDTRIP = new Set(['PDF', 'SVG', 'TIFF', 'AVIF', 'CSV', 'JSON', 'MP3', 'M4A', 'MP4', 'WEBM']);
   const fmtChips = (list: string) =>
     `<div class="format-chips">${list.split(/\s·\s|·/).map(fmt => {
       const f = fmt.trim();
@@ -2047,8 +2047,8 @@ const HERO_CANVAS_SCRIPT = `<script>(function(){
   if(!canvas)return;
   var ctx=canvas.getContext('2d');
   // Every distinct file extension Lolly can export - vector, print, raster, video,
-  // markup, structured data and bundles (kept in step with docs/exporting.md).
-  var exts=['.SVG','.EMF','.EPS','.DXF','.PDF','.TIFF','.PPTX','.PNG','.JPG','.WEBP','.AVIF','.GIF','.WEBM','.MP4','.HTML','.MD','.TXT','.CSV','.JSON','.ICS','.VCF','.ICO','.ZIP'];
+  // audio, markup, structured data and bundles (kept in step with docs/exporting.md).
+  var exts=['.SVG','.EMF','.EPS','.DXF','.PDF','.TIFF','.PPTX','.PNG','.JPG','.WEBP','.AVIF','.GIF','.WEBM','.MP4','.MP3','.M4A','.HTML','.MD','.TXT','.CSV','.JSON','.ICS','.VCF','.ICO','.ZIP'];
   // Headline formats appear ~2x as often as the rest: listing them again weights
   // them double in the pick pool (each favored ext is in the pool twice).
   var extPool=exts.concat(['.PDF','.SVG','.PNG','.MP4','.PPTX']);
