@@ -1,7 +1,7 @@
 {
   "eyebrow": "Pochodzenie i prywatność",
   "heading": "Udowodnij, co stworzyłeś.\nZachowaj to, co twoje.",
-  "lead": "Każdy obraz, PDF lub film, który wyeksportujesz, może nosić **Content Credential** — pieczęć [C2PA](https://c2pa.org) wykrywającą każdą ingerencję, tworzoną w całości na twoim urządzeniu. Potwierdza, że plik nie zmienił się od momentu opuszczenia Lolly, a gdy zarejestrujesz tożsamość, zapisuje też, kto go podpisał.",
+  "lead": "Każdy obraz, PDF lub film, który wyeksportujesz, może nosić **Content Credential** - pieczęć [C2PA](https://c2pa.org) wykrywającą każdą ingerencję, tworzoną w całości na twoim urządzeniu. Potwierdza, że plik nie zmienił się od momentu opuszczenia Lolly, a gdy zarejestrujesz tożsamość, zapisuje też, kto go podpisał.",
   "illustration": "illusCheck",
   "checks": [
     {
@@ -10,11 +10,11 @@
     },
     {
       "title": "Podpisywane na twoim urządzeniu",
-      "desc": "Twój klucz podpisujący jest generowany lokalnie i nigdy nie opuszcza urządzenia — nawet Lolly nie może go odczytać."
+      "desc": "Twój klucz podpisujący jest generowany lokalnie i nigdy nie opuszcza urządzenia - nawet Lolly nie może go odczytać."
     },
     {
       "title": "Weryfikowalne przez każdego, offline",
-      "desc": "Plik zawiera własny dowód. Sprawdź go w zakładce Weryfikacja, w CLI lub w dowolnym walidatorze C2PA — nic nie jest wysyłane."
+      "desc": "Plik zawiera własny dowód. Sprawdź go w zakładce Weryfikacja, w CLI lub w dowolnym walidatorze C2PA - nic nie jest wysyłane."
     }
   ],
   "cards": [

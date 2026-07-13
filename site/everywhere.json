@@ -12,8 +12,8 @@
   ],
   "modelsIntro": "Three modes of delivery:",
   "models": [
-    { "n": "1", "icon": "modelDeploy", "label": "Deploy", "desc": "Ship to devices through your existing MDM. Runs fully offline, behind any firewall or air-gap — nothing leaves the device." },
-    { "n": "2", "icon": "modelServe", "label": "Serve", "desc": "One hosted instance, used in any browser. Nothing to install — approved updates reach everyone the instant they ship." },
-    { "n": "3", "icon": "modelHybrid", "label": "Hybrid", "desc": "Offline local apps plus an always-current web version, sharing one tool library — across every OS at once." }
+    { "n": "1", "icon": "modelDeploy", "label": "Deploy", "desc": "Ship to devices through your existing MDM. Runs fully offline, behind any firewall or air-gap - nothing leaves the device." },
+    { "n": "2", "icon": "modelServe", "label": "Serve", "desc": "One hosted instance, used in any browser. Nothing to install - approved updates reach everyone the instant they ship." },
+    { "n": "3", "icon": "modelHybrid", "label": "Hybrid", "desc": "Offline local apps plus an always-current web version, sharing one tool library - across every OS at once." }
   ]
 }

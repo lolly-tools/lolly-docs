@@ -12,8 +12,8 @@
   ],
   "modelsIntro": "Üç teslimat modu:",
   "models": [
-    { "n": "1", "icon": "modelDeploy", "label": "Dağıt", "desc": "Mevcut MDM'in üzerinden cihazlara gönder. Tamamen çevrimdışı çalışır, herhangi bir güvenlik duvarının ya da hava boşluklu ağın ardında — cihazdan hiçbir şey çıkmaz." },
-    { "n": "2", "icon": "modelServe", "label": "Sun", "desc": "Herhangi bir tarayıcıda kullanılan tek bir barındırılan örnek. Kurulacak bir şey yok — onaylanan güncellemeler yayınlandığı anda herkese ulaşır." },
-    { "n": "3", "icon": "modelHybrid", "label": "Hibrit", "desc": "Çevrimdışı yerel uygulamalar artı her zaman güncel bir web sürümü, tek bir araç kitaplığını paylaşarak — aynı anda her işletim sisteminde." }
+    { "n": "1", "icon": "modelDeploy", "label": "Dağıt", "desc": "Mevcut MDM'in üzerinden cihazlara gönder. Tamamen çevrimdışı çalışır, herhangi bir güvenlik duvarının ya da hava boşluklu ağın ardında - cihazdan hiçbir şey çıkmaz." },
+    { "n": "2", "icon": "modelServe", "label": "Sun", "desc": "Herhangi bir tarayıcıda kullanılan tek bir barındırılan örnek. Kurulacak bir şey yok - onaylanan güncellemeler yayınlandığı anda herkese ulaşır." },
+    { "n": "3", "icon": "modelHybrid", "label": "Hibrit", "desc": "Çevrimdışı yerel uygulamalar artı her zaman güncel bir web sürümü, tek bir araç kitaplığını paylaşarak - aynı anda her işletim sisteminde." }
   ]
 }

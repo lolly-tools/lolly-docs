@@ -7,16 +7,16 @@
     { "file": "hooks.js", "name": "Hooks", "desc": "Optional logic, sandboxed" }
   ],
   "features": [
-    { "icon": "toolFeatureStar", "title": "A smart template", "desc": "Knows its own layout, type, colors, and brand rules. You bring the content — it handles everything else." },
+    { "icon": "toolFeatureStar", "title": "A smart template", "desc": "Knows its own layout, type, colors, and brand rules. You bring the content - it handles everything else." },
     { "icon": "toolFeaturePeople", "title": "No design experience needed", "desc": "Authored once by someone who knows the brand. Everyone else just fills in the blanks." },
     { "icon": "toolFeatureCode", "title": "Design as code", "desc": "Plain HTML, CSS, and JS. Version-controlled, diff-able, and reviewable like any other source file." },
-    { "icon": "toolFeatureMonitor", "title": "No app needed", "desc": "Open `template.html` in any browser — it just works. The tool is the app." },
-    { "icon": "toolFeatureShuffle", "title": "Free-canvas layout", "desc": "Some tools open as a direct-manipulation canvas — drag, rotate and snap boxes of text, shapes and images, exported through the same deterministic path." },
-    { "icon": "toolFeatureNested", "title": "Tools inside tools", "desc": "Treat a tool like an image inside another tool — a badge that renders its own QR code, a card with a live chart — and keep the smarts intact: still live, still re-rendered, never a flattened picture." }
+    { "icon": "toolFeatureMonitor", "title": "No app needed", "desc": "Open `template.html` in any browser - it just works. The tool is the app." },
+    { "icon": "toolFeatureShuffle", "title": "Free-canvas layout", "desc": "Some tools open as a direct-manipulation canvas - drag, rotate and snap boxes of text, shapes and images, exported through the same deterministic path." },
+    { "icon": "toolFeatureNested", "title": "Tools inside tools", "desc": "Treat a tool like an image inside another tool - a badge that renders its own QR code, a card with a live chart - and keep the smarts intact: still live, still re-rendered, never a flattened picture." }
   ],
   "tryNow": {
     "title": "Tools work fine on their own.",
-    "desc": "To render to PNG, PDF, SVG, video, and more — use the Lolly platform.",
+    "desc": "To render to PNG, PDF, SVG, video, and more - use the Lolly platform.",
     "cta": "Launch App ↗",
     "href": "/"
   }

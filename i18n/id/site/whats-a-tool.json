@@ -7,16 +7,16 @@
     { "file": "hooks.js", "name": "Hooks", "desc": "Logika opsional, dijalankan dalam sandbox" }
   ],
   "features": [
-    { "icon": "toolFeatureStar", "title": "Template yang cerdas", "desc": "Tahu tata letak, tipe, warna, dan aturan brand-nya sendiri. Anda cukup membawa konten — sisanya ditangani olehnya." },
+    { "icon": "toolFeatureStar", "title": "Template yang cerdas", "desc": "Tahu tata letak, tipe, warna, dan aturan brand-nya sendiri. Anda cukup membawa konten - sisanya ditangani olehnya." },
     { "icon": "toolFeaturePeople", "title": "Tidak perlu pengalaman desain", "desc": "Dibuat sekali oleh seseorang yang memahami brand. Semua orang lain tinggal mengisi bagian yang kosong." },
     { "icon": "toolFeatureCode", "title": "Desain sebagai kode", "desc": "HTML, CSS, dan JS biasa. Terkontrol versi, dapat di-diff, dan dapat ditinjau seperti berkas sumber lainnya." },
-    { "icon": "toolFeatureMonitor", "title": "Tidak perlu aplikasi", "desc": "Buka `template.html` di browser mana pun — langsung berfungsi. Alat itu sendiri adalah aplikasinya." },
-    { "icon": "toolFeatureShuffle", "title": "Tata letak kanvas bebas", "desc": "Sebagian alat terbuka sebagai kanvas manipulasi langsung — menyeret, memutar, dan menjepret kotak teks, bentuk, dan gambar, diekspor melalui jalur deterministik yang sama." },
-    { "icon": "toolFeatureNested", "title": "Alat di dalam alat", "desc": "Perlakukan sebuah alat seperti gambar di dalam alat lain — badge yang merender kode QR-nya sendiri, kartu dengan grafik langsung — dan pertahankan kecerdasannya tetap utuh: tetap live, tetap dirender ulang, tidak pernah menjadi gambar yang diratakan." }
+    { "icon": "toolFeatureMonitor", "title": "Tidak perlu aplikasi", "desc": "Buka `template.html` di browser mana pun - langsung berfungsi. Alat itu sendiri adalah aplikasinya." },
+    { "icon": "toolFeatureShuffle", "title": "Tata letak kanvas bebas", "desc": "Sebagian alat terbuka sebagai kanvas manipulasi langsung - menyeret, memutar, dan menjepret kotak teks, bentuk, dan gambar, diekspor melalui jalur deterministik yang sama." },
+    { "icon": "toolFeatureNested", "title": "Alat di dalam alat", "desc": "Perlakukan sebuah alat seperti gambar di dalam alat lain - badge yang merender kode QR-nya sendiri, kartu dengan grafik langsung - dan pertahankan kecerdasannya tetap utuh: tetap live, tetap dirender ulang, tidak pernah menjadi gambar yang diratakan." }
   ],
   "tryNow": {
     "title": "Alat bekerja dengan baik dengan sendirinya.",
-    "desc": "Untuk merender ke PNG, PDF, SVG, video, dan lainnya — gunakan platform Lolly.",
+    "desc": "Untuk merender ke PNG, PDF, SVG, video, dan lainnya - gunakan platform Lolly.",
     "cta": "Buka Aplikasi ↗",
     "href": "/"
   }

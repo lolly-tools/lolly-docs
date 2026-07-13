@@ -22,7 +22,7 @@
     {
       "icon": "toolFeatureStar",
       "title": "Inteligentny szablon",
-      "desc": "Zna swój układ, typografię, kolory i reguły marki. Ty dodajesz treść — on zajmuje się resztą."
+      "desc": "Zna swój układ, typografię, kolory i reguły marki. Ty dodajesz treść - on zajmuje się resztą."
     },
     {
       "icon": "toolFeaturePeople",
@@ -37,22 +37,22 @@
     {
       "icon": "toolFeatureMonitor",
       "title": "Bez aplikacji",
-      "desc": "Otwórz `template.html` w dowolnej przeglądarce — po prostu działa. Narzędzie jest aplikacją."
+      "desc": "Otwórz `template.html` w dowolnej przeglądarce - po prostu działa. Narzędzie jest aplikacją."
     },
     {
       "icon": "toolFeatureShuffle",
       "title": "Swobodne płótno",
-      "desc": "Niektóre narzędzia otwierają się jako płótno z bezpośrednią manipulacją — przeciągaj, obracaj i przyciągaj pola z tekstem, kształtami i obrazami, eksportowane tą samą deterministyczną ścieżką."
+      "desc": "Niektóre narzędzia otwierają się jako płótno z bezpośrednią manipulacją - przeciągaj, obracaj i przyciągaj pola z tekstem, kształtami i obrazami, eksportowane tą samą deterministyczną ścieżką."
     },
     {
       "icon": "toolFeatureNested",
       "title": "Narzędzia w narzędziach",
-      "desc": "Traktuj narzędzie jak obraz wewnątrz innego narzędzia — plakietkę renderującą własny kod QR, kartę z wykresem na żywo — i zachowaj całą inteligencję: wciąż żywe, wciąż renderowane na nowo, nigdy spłaszczony obrazek."
+      "desc": "Traktuj narzędzie jak obraz wewnątrz innego narzędzia - plakietkę renderującą własny kod QR, kartę z wykresem na żywo - i zachowaj całą inteligencję: wciąż żywe, wciąż renderowane na nowo, nigdy spłaszczony obrazek."
     }
   ],
   "tryNow": {
     "title": "Narzędzia świetnie działają samodzielnie.",
-    "desc": "Aby renderować do PNG, PDF, SVG, wideo i wielu innych formatów — użyj platformy Lolly.",
+    "desc": "Aby renderować do PNG, PDF, SVG, wideo i wielu innych formatów - użyj platformy Lolly.",
     "cta": "Uruchom aplikację ↗",
     "href": "/"
   }

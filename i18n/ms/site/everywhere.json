@@ -1,6 +1,6 @@
 {
   "heading": "Semuanya,\nsebagaimana anda,\npada apa-apa sahaja",
-  "copy": "Jalankan secara luar talian pada peranti anda, atau kekal sentiasa tersedia dalam talian — anda yang menentukan.\nLolly Tools boleh berfungsi di sana.",
+  "copy": "Jalankan secara luar talian pada peranti anda, atau kekal sentiasa tersedia dalam talian - anda yang menentukan.\nLolly Tools boleh berfungsi di sana.",
   "surfaces": [
     { "icon": "surfaceWeb", "label": "Web" },
     { "icon": "surfaceMacos", "label": "macOS" },
@@ -12,8 +12,8 @@
   ],
   "modelsIntro": "Tiga mod penghantaran:",
   "models": [
-    { "n": "1", "icon": "modelDeploy", "label": "Sebar", "desc": "Hantar ke peranti melalui MDM sedia ada anda. Berjalan sepenuhnya luar talian, di sebalik mana-mana firewall atau air-gap — tiada apa-apa yang keluar daripada peranti." },
-    { "n": "2", "icon": "modelServe", "label": "Hos", "desc": "Satu instance yang dihoskan, digunakan dalam mana-mana pelayar. Tiada apa-apa perlu dipasang — kemas kini yang diluluskan sampai kepada semua orang serta-merta ia dilancarkan." },
-    { "n": "3", "icon": "modelHybrid", "label": "Hibrid", "desc": "Aplikasi tempatan luar talian ditambah versi web yang sentiasa terkini, berkongsi satu pustaka alat — merentasi setiap OS serentak." }
+    { "n": "1", "icon": "modelDeploy", "label": "Sebar", "desc": "Hantar ke peranti melalui MDM sedia ada anda. Berjalan sepenuhnya luar talian, di sebalik mana-mana firewall atau air-gap - tiada apa-apa yang keluar daripada peranti." },
+    { "n": "2", "icon": "modelServe", "label": "Hos", "desc": "Satu instance yang dihoskan, digunakan dalam mana-mana pelayar. Tiada apa-apa perlu dipasang - kemas kini yang diluluskan sampai kepada semua orang serta-merta ia dilancarkan." },
+    { "n": "3", "icon": "modelHybrid", "label": "Hibrid", "desc": "Aplikasi tempatan luar talian ditambah versi web yang sentiasa terkini, berkongsi satu pustaka alat - merentasi setiap OS serentak." }
   ]
 }

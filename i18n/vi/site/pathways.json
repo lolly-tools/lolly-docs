@@ -1,13 +1,13 @@
 {
   "title": "Ba cách bắt đầu",
-  "lead": "Bắt đầu với [Quickstart](/info/quickstart.html) — đưa thương hiệu của bạn vào và xuất ra tệp đầu tiên — sau đó đi theo con đường phù hợp với bạn.",
+  "lead": "Bắt đầu với [Quickstart](/info/quickstart.html) - đưa thương hiệu của bạn vào và xuất ra tệp đầu tiên - sau đó đi theo con đường phù hợp với bạn.",
   "cards": [
     {
       "href": "/info/creators.html",
       "icon": "media",
       "eyebrow": "For Creators",
       "name": "Tạo ra mọi thứ",
-      "desc": "Tệp hoàn chỉnh chỉ trong vài giây — không cần công cụ thiết kế, không cần chờ đợi. Những lợi ích, và cách khai thác tối đa ứng dụng.",
+      "desc": "Tệp hoàn chỉnh chỉ trong vài giây - không cần công cụ thiết kế, không cần chờ đợi. Những lợi ích, và cách khai thác tối đa ứng dụng.",
       "cta": "Khám phá →"
     },
     {

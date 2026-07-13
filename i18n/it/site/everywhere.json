@@ -1,6 +1,6 @@
 {
   "heading": "Tutto,\ncosì come sei,\nsu qualunque cosa",
-  "copy": "Eseguilo offline sul tuo dispositivo, oppure tienilo sempre disponibile online — decidi tu.\nLolly Tools può funzionare lì.",
+  "copy": "Eseguilo offline sul tuo dispositivo, oppure tienilo sempre disponibile online - decidi tu.\nLolly Tools può funzionare lì.",
   "surfaces": [
     { "icon": "surfaceWeb", "label": "Web" },
     { "icon": "surfaceMacos", "label": "macOS" },
@@ -12,8 +12,8 @@
   ],
   "modelsIntro": "Tre modalità di distribuzione:",
   "models": [
-    { "n": "1", "icon": "modelDeploy", "label": "Distribuisci", "desc": "Distribuiscilo sui dispositivi tramite il tuo MDM esistente. Funziona interamente offline, dietro qualsiasi firewall o air-gap — niente lascia il dispositivo." },
-    { "n": "2", "icon": "modelServe", "label": "Servi", "desc": "Un'unica istanza ospitata, utilizzabile in qualsiasi browser. Niente da installare — gli aggiornamenti approvati raggiungono tutti nell'istante in cui vengono pubblicati." },
-    { "n": "3", "icon": "modelHybrid", "label": "Ibrido", "desc": "App locali offline più una versione web sempre aggiornata, che condividono un'unica libreria di strumenti — su ogni sistema operativo contemporaneamente." }
+    { "n": "1", "icon": "modelDeploy", "label": "Distribuisci", "desc": "Distribuiscilo sui dispositivi tramite il tuo MDM esistente. Funziona interamente offline, dietro qualsiasi firewall o air-gap - niente lascia il dispositivo." },
+    { "n": "2", "icon": "modelServe", "label": "Servi", "desc": "Un'unica istanza ospitata, utilizzabile in qualsiasi browser. Niente da installare - gli aggiornamenti approvati raggiungono tutti nell'istante in cui vengono pubblicati." },
+    { "n": "3", "icon": "modelHybrid", "label": "Ibrido", "desc": "App locali offline più una versione web sempre aggiornata, che condividono un'unica libreria di strumenti - su ogni sistema operativo contemporaneamente." }
   ]
 }

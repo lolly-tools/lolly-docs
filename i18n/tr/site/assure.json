@@ -5,8 +5,8 @@
   "illustration": "illusCheck",
   "checks": [
     { "title": "Varsayılan olarak kurcalamaya karşı korumalı", "desc": "Mühür, dışa aktarılan her baytı kapsar. Tek bir pikseli değiştir, herhangi bir C2PA doğrulayıcısı bunu tespit eder." },
-    { "title": "Cihazında imzalanır", "desc": "İmzalama anahtarın yerel olarak oluşturulur ve cihazından asla çıkmaz — Lolly bile onu okuyamaz." },
-    { "title": "Herkes tarafından, çevrimdışı doğrulanabilir", "desc": "Dosya kendi kanıtını taşır. Verify sekmesinde, CLI'de ya da herhangi bir C2PA doğrulayıcısında kontrol et — hiçbir şey yüklenmez." }
+    { "title": "Cihazında imzalanır", "desc": "İmzalama anahtarın yerel olarak oluşturulur ve cihazından asla çıkmaz - Lolly bile onu okuyamaz." },
+    { "title": "Herkes tarafından, çevrimdışı doğrulanabilir", "desc": "Dosya kendi kanıtını taşır. Verify sekmesinde, CLI'de ya da herhangi bir C2PA doğrulayıcısında kontrol et - hiçbir şey yüklenmez." }
   ],
   "cards": [
     { "icon": "assureEyeOff", "title": "Hiçbir şey cihazından çıkmaz", "desc": "Bulutta oluşturma yok, telemetri yok, analitik yok. Yaptığın şey kendi makinende kalır." },

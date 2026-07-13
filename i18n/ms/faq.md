@@ -4,7 +4,7 @@ Soalan lazim yang dipaparkan dalam akordion pada halaman utama `/info`.
 
 **Cara mengekalkan:** setiap tajuk `##` di bawah adalah satu soalan; semua kandungan di bawahnya
 (sehingga `##` seterusnya) adalah jawapannya. Jawapan menggunakan format markdown ringkas yang sama seperti
-laman lain — pisahkan perenggan dengan baris kosong. Tambah, buang, atau
+laman lain - pisahkan perenggan dengan baris kosong. Tambah, buang, atau
 susun semula soalan di sini dan jalankan semula `npm run build:info` (atau `npm run dev:web`).
 Semua kandungan sebelum `##` yang pertama (tajuk ini dan nota-nota ini) diabaikan oleh proses build.
 
@@ -18,7 +18,7 @@ Lolly menghasilkan kandungan dalam jumlah besar. Kami mengamalkan pendekatan min
 
 ### Apakah itu feature flags?
 
-Feature flags menghidupkan atau mematikan bahagian-bahagian Lolly. Biasanya seorang pentadbir mengawal ini — dengan Lolly, andalah yang mengawal.
+Feature flags menghidupkan atau mematikan bahagian-bahagian Lolly. Biasanya seorang pentadbir mengawal ini - dengan Lolly, andalah yang mengawal.
 
 ## Bagaimana saya boleh dapatkan aplikasi mudah alih atau desktop?
 
@@ -28,7 +28,7 @@ Sesiapa sahaja boleh mengedarkan aplikasi mereka sendiri, alat dan konfigurasi a
 
 **Lolly** Kerana kebebasan itu manis.
 **Tools** tidak aktif apabila tidak digunakan. Bukan mengintip anda, bukan menjalankan program rahsia,
-suruh ia bekerja — ikut arahan, tindakan, dan syarat anda.
+suruh ia bekerja - ikut arahan, tindakan, dan syarat anda.
 
 **Lolly** ialah istilah Australia, New Zealand, dan British untuk 'gula-gula' atau 'manisan'. Sama seperti lolly, alat-alat ini amat 'menyelerakan' bagi mereka yang memerlukannya.
 
@@ -36,7 +36,7 @@ Kami juga tergelak memikirkan masa dan bil yang kami jimatkan dengan pendekatan 
 
 ## Apakah cabaran yang boleh saya jangkakan semasa menggunapakai Lolly?
 
-Lolly boleh disisipkan ke mana-mana sahaja anda sudah menjana fail — CLI menggunakan enjin yang sama
+Lolly boleh disisipkan ke mana-mana sahaja anda sudah menjana fail - CLI menggunakan enjin yang sama
 seperti Aplikasi, jadi larian pipeline pada jam 2 pagi tidak akan menyimpang daripada apa yang dilihat
 seseorang semasa pratonton dalam pelayar. Halangan untuk penggunapakaian jarang bersifat teknikal; ia lebih
 bersifat organisasi. Jangkakan perkara berikut:
@@ -48,18 +48,18 @@ output.
 
 **Tadbir urus berjalan melalui git.** "Semakan PR *itulah* moderasinya" adalah elegan bagi
 jurutera tetapi asing bagi kebanyakan pasukan jenama dan pemasaran. Jika mereka yang memiliki
-keputusan jenama tidak biasa dengan git, anda memerlukan aliran kerja yang menghubungkan mereka — atau IT
+keputusan jenama tidak biasa dengan git, anda memerlukan aliran kerja yang menghubungkan mereka - atau IT
 secara senyap-senyap menjadi rakan kongsi reka bentuk strategik dan penjaga pintu institusi yang lebih luas.
 Ini lebih digemari oleh ramai pihak dalam persekitaran pengeluaran jangka panjang.
 
-**Ia sengaja dibuat sempit — fahamilah ia sedemikian.** Lolly bukan untuk kandungan
-tersuai atau kandungan 'hero'. Ia *memang* DAM peribadi anda — dihidupkan dan
-dipertingkatkan oleh sistem reka bentuk, alat dan katalog anda — dan ia *memang*
+**Ia sengaja dibuat sempit - fahamilah ia sedemikian.** Lolly bukan untuk kandungan
+tersuai atau kandungan 'hero'. Ia *memang* DAM peribadi anda - dihidupkan dan
+dipertingkatkan oleh sistem reka bentuk, alat dan katalog anda - dan ia *memang*
 mempunyai kanvas terbuka (Layout Studio), tetapi walaupun di situ, warna, jenis
 huruf dan aset akur kepada global reka bentuk yang aktif, jadi susunan bebas kekal
 di dalam sistem. Jika dinilai berbanding Figma atau Canva, ia akan kelihatan terhad.
-Jika dinilai sebagai apa yang ia sebenarnya — penjanaan aset berskala besar,
-berulang, dan dioperasikan sepenuhnya — tiada yang dapat menandinginya. Salah faham
+Jika dinilai sebagai apa yang ia sebenarnya - penjanaan aset berskala besar,
+berulang, dan dioperasikan sepenuhnya - tiada yang dapat menandinginya. Salah faham
 kerangka ini adalah kemunduran yang paling biasa berlaku.
 
 **Pengurusan perubahan di pihak penerbitan.** Proses sedia ada berfungsi hari ini, walaupun
@@ -94,9 +94,9 @@ Kami memenangi perjuangan tadbir urus ini dengan kemudahan dan perkhidmatan yang
 
 ## Bolehkah Lolly mengedit dan memaparkan fail Figma, Penpot, Illustrator atau InDesign saya?
 
-Ya. Buka **Layout Studio** dan klik **Import reka bentuk**: ia menerima fail Figma asli **.fig** (Simpan salinan tempatan), eksport Penpot **.penpot**, fail Illustrator **.ai** atau **.pdf**, fail InDesign **.idml** (Fail → Eksport → InDesign Markup), atau **sebarang SVG** (pintu paling luas — hampir semua aplikasi reka bentuk boleh mengeksportnya). Semuanya dihurai sepenuhnya pada peranti anda sendiri, tiada akaun atau plugin diperlukan.
+Ya. Buka **Layout Studio** dan klik **Import reka bentuk**: ia menerima fail Figma asli **.fig** (Simpan salinan tempatan), eksport Penpot **.penpot**, fail Illustrator **.ai** atau **.pdf**, fail InDesign **.idml** (Fail → Eksport → InDesign Markup), atau **sebarang SVG** (pintu paling luas - hampir semua aplikasi reka bentuk boleh mengeksportnya). Semuanya dihurai sepenuhnya pada peranti anda sendiri, tiada akaun atau plugin diperlukan.
 
-Lapisan (layers) tiba sebagai kotak boleh edit pada kanvas terbuka: teks kekal boleh ditaip semula, bentuk kekal sebagai bentuk, imej menyertai pustaka pada peranti anda, dan jenis huruf serta warna akur kepada global jenama. Simpan dan susun atur itu menjadi templat boleh guna semula yang boleh dicapai melalui URL, yang boleh diisi semula oleh sesiapa yang mempunyai Lolly — dan anda boleh mencampurkan alat langsung (kod QR, carta) yang dipaparkan semula apabila dimuatkan. Dari situ, ia dipaparkan seperti apa-apa lain dalam Lolly — SVG, PDF, PNG dan selebihnya, boleh dihasilkan semula daripada URL-nya. Lihat [Import reka bentuk](/info/design-import.html).
+Lapisan (layers) tiba sebagai kotak boleh edit pada kanvas terbuka: teks kekal boleh ditaip semula, bentuk kekal sebagai bentuk, imej menyertai pustaka pada peranti anda, dan jenis huruf serta warna akur kepada global jenama. Simpan dan susun atur itu menjadi templat boleh guna semula yang boleh dicapai melalui URL, yang boleh diisi semula oleh sesiapa yang mempunyai Lolly - dan anda boleh mencampurkan alat langsung (kod QR, carta) yang dipaparkan semula apabila dimuatkan. Dari situ, ia dipaparkan seperti apa-apa lain dalam Lolly - SVG, PDF, PNG dan selebihnya, boleh dihasilkan semula daripada URL-nya. Lihat [Import reka bentuk](/info/design-import.html).
 
 ## Apa yang berlaku pada 29 Ogos?
 
@@ -112,11 +112,11 @@ SUSE ialah sebuah syarikat infrastruktur sumber terbuka perusahaan (enterprise o
 
 Dari perspektif SUSE, ini adalah tentang membuktikan kata-kata dengan tindakan berkenaan kedaulatan dan keselamatan. Setakat hari ini, kebarangkalian SUSE menjadikan Lolly sebagai produk komersial adalah hampir sifar mutlak.
 
-Pendedahan penuh: SUSE *memang* sedang membina alatan dalaman untuk mengintegrasikan Lolly ke dalam sistem IT-nya — ini berkaitan persediaan dalaman SUSE, bukan soal pembangunan awam berbanding persendirian.
+Pendedahan penuh: SUSE *memang* sedang membina alatan dalaman untuk mengintegrasikan Lolly ke dalam sistem IT-nya - ini berkaitan persediaan dalaman SUSE, bukan soal pembangunan awam berbanding persendirian.
 
 Bercakap tentang sisi awam pula, Lolly menyasarkan untuk dibina melalui [Open Build Service](https://openbuildservice.org/), dengan artifak rantaian bekalan yang selamat disampaikan oleh [SUSE Application Collection](https://apps.rancher.io/applications).
 
-Kami akan membina sebanyak mungkin secara terbuka — cuma anda tidak akan melihat alat-alat berjenama SUSE untuk tempoh yang lama, mahupun tenaga kerja dalaman SUSE dan proses komersialnya, yang tiada kaitan dengan Lolly.
+Kami akan membina sebanyak mungkin secara terbuka - cuma anda tidak akan melihat alat-alat berjenama SUSE untuk tempoh yang lama, mahupun tenaga kerja dalaman SUSE dan proses komersialnya, yang tiada kaitan dengan Lolly.
 
 ## Apakah perisa logo Lolly itu?
 

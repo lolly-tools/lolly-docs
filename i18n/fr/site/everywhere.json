@@ -12,8 +12,8 @@
   ],
   "modelsIntro": "Trois modes de diffusion :",
   "models": [
-    { "n": "1", "icon": "modelDeploy", "label": "Déployer", "desc": "Déploie sur les appareils via ton MDM existant. Fonctionne entièrement hors ligne, derrière n'importe quel pare-feu ou réseau isolé — rien ne quitte l'appareil." },
-    { "n": "2", "icon": "modelServe", "label": "Diffuser", "desc": "Une seule instance hébergée, utilisable dans n'importe quel navigateur. Rien à installer — les mises à jour approuvées arrivent à tout le monde dès leur publication." },
-    { "n": "3", "icon": "modelHybrid", "label": "Hybride", "desc": "Des applications locales hors ligne plus une version web toujours à jour, qui partagent une seule bibliothèque d'outils — sur tous les systèmes à la fois." }
+    { "n": "1", "icon": "modelDeploy", "label": "Déployer", "desc": "Déploie sur les appareils via ton MDM existant. Fonctionne entièrement hors ligne, derrière n'importe quel pare-feu ou réseau isolé - rien ne quitte l'appareil." },
+    { "n": "2", "icon": "modelServe", "label": "Diffuser", "desc": "Une seule instance hébergée, utilisable dans n'importe quel navigateur. Rien à installer - les mises à jour approuvées arrivent à tout le monde dès leur publication." },
+    { "n": "3", "icon": "modelHybrid", "label": "Hybride", "desc": "Des applications locales hors ligne plus une version web toujours à jour, qui partagent une seule bibliothèque d'outils - sur tous les systèmes à la fois." }
   ]
 }

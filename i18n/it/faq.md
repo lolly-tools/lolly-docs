@@ -4,7 +4,7 @@ Domande frequenti mostrate nell'accordion nella pagina di destinazione `/info`.
 
 **Come mantenere questo file:** ogni titolo `##` qui sotto è una domanda; tutto ciò che si trova
 sotto di esso (fino al `##` successivo) è la risposta. Le risposte usano lo stesso markdown
-leggero del resto del sito — separa i paragrafi con una riga vuota. Aggiungi, rimuovi o
+leggero del resto del sito - separa i paragrafi con una riga vuota. Aggiungi, rimuovi o
 riordina le domande qui e riesegui `npm run build:info` (o `npm run dev:web`).
 Tutto ciò che precede il primo `##` (questo titolo e queste note) viene ignorato dalla build.
 
@@ -18,7 +18,7 @@ Lolly produce un grande volume di contenuti. Adottiamo un approccio rigoroso di 
 
 ### Cosa sono le feature flags?
 
-Le feature flags attivano o disattivano parti di Lolly. Di solito sono controllate da un amministratore — con Lolly, il controllo è tuo.
+Le feature flags attivano o disattivano parti di Lolly. Di solito sono controllate da un amministratore - con Lolly, il controllo è tuo.
 
 ## Come ottengo le app mobile o desktop?
 
@@ -36,7 +36,7 @@ Ridiamo anche del tempo e dei soldi che risparmiamo con questo approccio.
 
 ## Quali ostacoli potrei aspettarmi adottando Lolly?
 
-Lolly si inserisce ovunque tu già generi file — la CLI è lo stesso motore
+Lolly si inserisce ovunque tu già generi file - la CLI è lo stesso motore
 dell'app, quindi una pipeline eseguita alle 2 del mattino non può divergere da ciò che una
 persona vede in anteprima in un browser. L'attrito nell'adozione è raramente tecnico;
 è organizzativo. Ecco cosa aspettarsi:
@@ -49,17 +49,17 @@ output.
 **La governance funziona su git.** "La revisione della PR *è* la moderazione" è elegante per
 gli sviluppatori ma poco familiare per la maggior parte dei team di marca e marketing. Se le
 persone che possiedono le decisioni di marca non vivono in git, ti servirà un workflow
-che faccia da ponte con loro — oppure l'IT diventa silenziosamente il partner strategico di
+che faccia da ponte con loro - oppure l'IT diventa silenziosamente il partner strategico di
 design e il guardiano istituzionale più ampio. Il che è preferito da molti in ambienti di
 produzione di lunga data.
 
-**È deliberatamente ristretto — presentalo così.** Lolly non è per contenuti su misura o
-contenuti hero. *È* il tuo DAM personale — idratato e potenziato dal tuo design
-system, dagli strumenti e dal catalogo — e *ha* davvero un canvas aperto (Layout Studio), ma
+**È deliberatamente ristretto - presentalo così.** Lolly non è per contenuti su misura o
+contenuti hero. *È* il tuo DAM personale - idratato e potenziato dal tuo design
+system, dagli strumenti e dal catalogo - e *ha* davvero un canvas aperto (Layout Studio), ma
 anche lì colori, tipografia e asset si conformano alle variabili di design globali attive, così la
 disposizione libera resta dentro il sistema. Confrontato con Figma o Canva
-sembrerà limitato. Giudicato per ciò che è — generazione di asset operazionalizzata, ricorrente,
-su scala massiva — niente compete. L'inquadramento sbagliato è l'intoppo più comune.
+sembrerà limitato. Giudicato per ciò che è - generazione di asset operazionalizzata, ricorrente,
+su scala massiva - niente compete. L'inquadramento sbagliato è l'intoppo più comune.
 
 **Gestione del cambiamento sul lato della produzione.** I processi esistenti funzionano oggi,
 anche se l'output non rispetta il brand. Ripuntarli verso il motore significa nuovi test e un
@@ -93,9 +93,9 @@ Vinciamo la guerra della governance con un'eccellente comodità e un servizio ec
 
 ## Lolly può modificare e renderizzare i miei file Figma, Penpot, Illustrator o InDesign?
 
-Sì. Apri **Layout Studio** e clicca su **Importa un design**: accetta un file Figma nativo **.fig** (Save local copy), un'esportazione Penpot **.penpot**, un file Illustrator **.ai** o **.pdf**, un file InDesign **.idml** (File → Export → InDesign Markup), oppure **qualsiasi SVG** (la porta larga — quasi ogni app di design lo esporta). Tutto viene analizzato interamente sul tuo dispositivo, senza bisogno di account o plugin.
+Sì. Apri **Layout Studio** e clicca su **Importa un design**: accetta un file Figma nativo **.fig** (Save local copy), un'esportazione Penpot **.penpot**, un file Illustrator **.ai** o **.pdf**, un file InDesign **.idml** (File → Export → InDesign Markup), oppure **qualsiasi SVG** (la porta larga - quasi ogni app di design lo esporta). Tutto viene analizzato interamente sul tuo dispositivo, senza bisogno di account o plugin.
 
-I livelli arrivano come riquadri modificabili sul canvas aperto: il testo resta modificabile, le forme restano forme, le immagini si uniscono alla tua libreria sul dispositivo, e la tipografia e i colori si conformano alle variabili globali di marca. Salvalo e il layout diventa un template riutilizzabile e indirizzabile via URL che chiunque abbia Lolly può compilare di nuovo — e puoi mescolarci strumenti dal vivo (un codice QR, un grafico) che vengono renderizzati di nuovo al caricamento. Da lì si renderizza come qualsiasi altra cosa in Lolly — SVG, PDF, PNG e il resto, riproducibile dal suo URL. Vedi [Importa un design](/info/design-import.html).
+I livelli arrivano come riquadri modificabili sul canvas aperto: il testo resta modificabile, le forme restano forme, le immagini si uniscono alla tua libreria sul dispositivo, e la tipografia e i colori si conformano alle variabili globali di marca. Salvalo e il layout diventa un template riutilizzabile e indirizzabile via URL che chiunque abbia Lolly può compilare di nuovo - e puoi mescolarci strumenti dal vivo (un codice QR, un grafico) che vengono renderizzati di nuovo al caricamento. Da lì si renderizza come qualsiasi altra cosa in Lolly - SVG, PDF, PNG e il resto, riproducibile dal suo URL. Vedi [Importa un design](/info/design-import.html).
 
 ## Cosa succede il 29 agosto?
 
@@ -111,12 +111,12 @@ SUSE è un'azienda di infrastrutture open source per le imprese, con oltre tre d
 
 Dal punto di vista di SUSE, si tratta di essere coerenti tra i fatti e le parole in materia di sovranità e sicurezza. A oggi, la probabilità che SUSE trasformi Lolly in un prodotto commerciale è vicina allo zero assoluto.
 
-Per totale trasparenza: SUSE *sta* effettivamente costruendo strumenti interni per integrare Lolly nei propri sistemi IT — questo riguarda l'assetto interno di SUSE, non una scelta tra sviluppo pubblico e privato.
+Per totale trasparenza: SUSE *sta* effettivamente costruendo strumenti interni per integrare Lolly nei propri sistemi IT - questo riguarda l'assetto interno di SUSE, non una scelta tra sviluppo pubblico e privato.
 
 Parlando del lato pubblico, Lolly punta a essere costruito tramite [Open Build Service](https://openbuildservice.org/), con artefatti di supply chain sicuri distribuiti dalla [SUSE Application Collection](https://apps.rancher.io/applications).
 
-Costruiremo il più possibile in modo aperto — semplicemente non vedrai ancora a lungo gli strumenti a marchio SUSE, né la forza lavoro interna di SUSE e i suoi processi commerciali, che non hanno nulla a che fare con Lolly.
+Costruiremo il più possibile in modo aperto - semplicemente non vedrai ancora a lungo gli strumenti a marchio SUSE, né la forza lavoro interna di SUSE e i suoi processi commerciali, che non hanno nulla a che fare con Lolly.
 
 ## Che gusto ha quel logo Lolly?
 
-Alcuni dicono Lime, altri dicono Menta e a volte Mela — Lolly porta la dolcezza, sei tu a creare il gusto!
+Alcuni dicono Lime, altri dicono Menta e a volte Mela - Lolly porta la dolcezza, sei tu a creare il gusto!

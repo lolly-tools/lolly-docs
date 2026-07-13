@@ -4,7 +4,7 @@ Perguntas frequentes exibidas no acordeão da página inicial `/info`.
 
 **Como manter:** cada título `##` abaixo é uma pergunta; tudo o que estiver abaixo dele
 (até o próximo `##`) é a resposta. As respostas usam o mesmo markdown simplificado do
-restante do site — separe os parágrafos com uma linha em branco. Adicione, remova ou
+restante do site - separe os parágrafos com uma linha em branco. Adicione, remova ou
 reordene perguntas aqui e rode novamente `npm run build:info` (ou `npm run dev:web`).
 Tudo o que estiver acima do primeiro `##` (este título e estas notas) é ignorado pelo build.
 
@@ -18,11 +18,11 @@ O Lolly produz um grande volume de conteúdo. Adotamos uma abordagem rígida de 
 
 ### O que são as feature flags?
 
-As feature flags ativam ou desativam partes do Lolly. Normalmente é um administrador quem controla isso — com o Lolly, quem está no controle é você.
+As feature flags ativam ou desativam partes do Lolly. Normalmente é um administrador quem controla isso - com o Lolly, quem está no controle é você.
 
 ## Como eu consigo os aplicativos para celular ou desktop?
 
-Qualquer pessoa pode distribuir seus próprios aplicativos; as ferramentas e a configuração desses aplicativos variam bastante dependendo do público a que se destinam. Portanto, não existe um único aplicativo — a menos que você mesmo o tenha criado ou que alguém relevante o forneça a você.
+Qualquer pessoa pode distribuir seus próprios aplicativos; as ferramentas e a configuração desses aplicativos variam bastante dependendo do público a que se destinam. Portanto, não existe um único aplicativo - a menos que você mesmo o tenha criado ou que alguém relevante o forneça a você.
 
 ## Por que o nome "Lolly Tools"?
 
@@ -36,7 +36,7 @@ E também estamos rindo do tempo e das contas que estamos economizando com essa 
 
 ## Quais obstáculos posso esperar ao adotar o Lolly?
 
-O Lolly se encaixa em qualquer lugar onde você já gera arquivos — a CLI é o mesmo motor
+O Lolly se encaixa em qualquer lugar onde você já gera arquivos - a CLI é o mesmo motor
 do aplicativo, então uma pipeline executada às 2h da manhã não pode divergir do que uma
 pessoa vê na pré-visualização em um navegador. O atrito da adoção raramente é técnico; é organizacional. Espere o seguinte:
 
@@ -48,16 +48,16 @@ saída.
 **A governança acontece no git.** A ideia de que "a revisão do PR *é* a moderação" é elegante para
 engenheiros e pouco familiar para a maioria das equipes de marca e marketing. Se as pessoas donas
 das decisões de marca não vivem no git, você vai precisar de um fluxo de trabalho que faça a ponte
-com elas — ou o TI silenciosamente se torna o parceiro estratégico de design e o guardião
+com elas - ou o TI silenciosamente se torna o parceiro estratégico de design e o guardião
 institucional mais amplo. O que é preferido por muitos em ambientes de produção de longa duração.
 
-**É deliberadamente restrito — apresente-o assim.** O Lolly não é para conteúdo personalizado ou
-de destaque. Ele *é* o seu DAM pessoal — hidratado e potencializado pelo seu sistema de
-design, ferramentas e catálogo — e *tem*, sim, uma tela aberta (Layout Studio), mas
+**É deliberadamente restrito - apresente-o assim.** O Lolly não é para conteúdo personalizado ou
+de destaque. Ele *é* o seu DAM pessoal - hidratado e potencializado pelo seu sistema de
+design, ferramentas e catálogo - e *tem*, sim, uma tela aberta (Layout Studio), mas
 mesmo ali as cores, a tipografia e os ativos seguem os globais de design ativos, de modo que a
 liberdade de composição permanece dentro do sistema. Comparado ao Figma ou ao Canva, ele vai
-parecer limitado. Julgado pelo que realmente é — geração de ativos operacionalizada, recorrente e
-em escala massiva — nada compete. O enquadramento errado é o contratempo mais comum.
+parecer limitado. Julgado pelo que realmente é - geração de ativos operacionalizada, recorrente e
+em escala massiva - nada compete. O enquadramento errado é o contratempo mais comum.
 
 **Gestão de mudanças do lado de quem produz.** Os processos existentes já funcionam hoje, mesmo que
 a saída esteja fora da marca. Redirecioná-los para o motor significa reteste e reaprendizado,
@@ -91,9 +91,9 @@ Vencemos a guerra pela governança com conveniência e serviço excelentes.
 
 ## O Lolly consegue editar e renderizar meus arquivos do Figma, Penpot, Illustrator ou InDesign?
 
-Sim. Abra o **Layout Studio** e clique em **Importar um design**: ele aceita um arquivo nativo do Figma em **.fig** (Salvar cópia local), uma exportação do Penpot em **.penpot**, um arquivo do Illustrator em **.ai** ou **.pdf**, um arquivo do InDesign em **.idml** (Arquivo → Exportar → InDesign Markup), ou **qualquer SVG** (a porta larga — quase qualquer aplicativo de design consegue exportar nesse formato). Tudo é processado inteiramente no seu dispositivo, sem necessidade de conta ou plugin.
+Sim. Abra o **Layout Studio** e clique em **Importar um design**: ele aceita um arquivo nativo do Figma em **.fig** (Salvar cópia local), uma exportação do Penpot em **.penpot**, um arquivo do Illustrator em **.ai** ou **.pdf**, um arquivo do InDesign em **.idml** (Arquivo → Exportar → InDesign Markup), ou **qualquer SVG** (a porta larga - quase qualquer aplicativo de design consegue exportar nesse formato). Tudo é processado inteiramente no seu dispositivo, sem necessidade de conta ou plugin.
 
-As camadas chegam como caixas editáveis na tela aberta: o texto continua editável, as formas continuam formas, as imagens entram para a sua biblioteca local no dispositivo, e a tipografia e as cores seguem os globais da marca. Salve, e o layout se torna um template reutilizável e endereçável por URL que qualquer pessoa com o Lolly pode preencher novamente — e você pode misturar ferramentas dinâmicas (um QR code, um gráfico) que se renderizam de novo ao carregar. A partir daí, ele é renderizado como qualquer outra coisa no Lolly — SVG, PDF, PNG e o resto, reproduzível a partir da sua URL. Veja [Importar um design](/info/design-import.html).
+As camadas chegam como caixas editáveis na tela aberta: o texto continua editável, as formas continuam formas, as imagens entram para a sua biblioteca local no dispositivo, e a tipografia e as cores seguem os globais da marca. Salve, e o layout se torna um template reutilizável e endereçável por URL que qualquer pessoa com o Lolly pode preencher novamente - e você pode misturar ferramentas dinâmicas (um QR code, um gráfico) que se renderizam de novo ao carregar. A partir daí, ele é renderizado como qualquer outra coisa no Lolly - SVG, PDF, PNG e o resto, reproduzível a partir da sua URL. Veja [Importar um design](/info/design-import.html).
 
 ## O que acontece em 29 de agosto?
 
@@ -109,12 +109,12 @@ A SUSE é uma empresa de infraestrutura open source empresarial, com mais de tr�
 
 Do ponto de vista da SUSE, isso é sobre colocar em prática o discurso de soberania e segurança. A partir de hoje, a probabilidade de a SUSE transformar o Lolly em produto é praticamente zero absoluto.
 
-Transparência total: a SUSE *está sim* construindo ferramentas internas para integrar o Lolly aos seus sistemas de TI — isso diz respeito à configuração interna da SUSE, não a desenvolvimento público versus privado.
+Transparência total: a SUSE *está sim* construindo ferramentas internas para integrar o Lolly aos seus sistemas de TI - isso diz respeito à configuração interna da SUSE, não a desenvolvimento público versus privado.
 
 Falando do lado público, o Lolly pretende ser construído por meio do [Open Build Service](https://openbuildservice.org/), com artefatos de cadeia de suprimentos seguros entregues pela [SUSE Application Collection](https://apps.rancher.io/applications).
 
-Vamos construir o máximo que pudermos de forma aberta — só que você não vai ver ferramentas com a marca SUSE por muito tempo, nem a força de trabalho interna e os processos comerciais da SUSE, que não têm relação com o Lolly.
+Vamos construir o máximo que pudermos de forma aberta - só que você não vai ver ferramentas com a marca SUSE por muito tempo, nem a força de trabalho interna e os processos comerciais da SUSE, que não têm relação com o Lolly.
 
 ## Qual é o sabor daquele logo do Lolly?
 
-Alguns dizem Limão, outros dizem Menta e às vezes Maçã — o Lolly traz a doçura, você é quem faz o sabor acontecer!
+Alguns dizem Limão, outros dizem Menta e às vezes Maçã - o Lolly traz a doçura, você é quem faz o sabor acontecer!

@@ -12,8 +12,8 @@
   ],
   "modelsIntro": "Tři způsoby nasazení:",
   "models": [
-    { "n": "1", "icon": "modelDeploy", "label": "Nasazení", "desc": "Nasaď do zařízení pomocí svého stávajícího MDM. Běží zcela offline, za jakýmkoli firewallem nebo air-gapem — ze zařízení nic neodejde." },
-    { "n": "2", "icon": "modelServe", "label": "Provoz", "desc": "Jedna hostovaná instance, dostupná v libovolném prohlížeči. Nic se neinstaluje — schválené aktualizace se ke všem dostanou ve chvíli, kdy vyjdou." },
-    { "n": "3", "icon": "modelHybrid", "label": "Hybrid", "desc": "Offline lokální aplikace plus vždy aktuální webová verze, sdílející jednu knihovnu nástrojů — napříč všemi OS najednou." }
+    { "n": "1", "icon": "modelDeploy", "label": "Nasazení", "desc": "Nasaď do zařízení pomocí svého stávajícího MDM. Běží zcela offline, za jakýmkoli firewallem nebo air-gapem - ze zařízení nic neodejde." },
+    { "n": "2", "icon": "modelServe", "label": "Provoz", "desc": "Jedna hostovaná instance, dostupná v libovolném prohlížeči. Nic se neinstaluje - schválené aktualizace se ke všem dostanou ve chvíli, kdy vyjdou." },
+    { "n": "3", "icon": "modelHybrid", "label": "Hybrid", "desc": "Offline lokální aplikace plus vždy aktuální webová verze, sdílející jednu knihovnu nástrojů - napříč všemi OS najednou." }
   ]
 }

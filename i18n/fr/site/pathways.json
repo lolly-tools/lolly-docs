@@ -1,13 +1,13 @@
 {
   "title": "Trois façons de commencer",
-  "lead": "Commence par le [Démarrage rapide](/info/quickstart.html) — importe ta marque et sors ton premier fichier — puis suis le parcours qui te correspond.",
+  "lead": "Commence par le [Démarrage rapide](/info/quickstart.html) - importe ta marque et sors ton premier fichier - puis suis le parcours qui te correspond.",
   "cards": [
     {
       "href": "/info/creators.html",
       "icon": "media",
       "eyebrow": "Pour les créateurs",
       "name": "Crée des choses",
-      "desc": "Des fichiers finis en quelques secondes — pas d'outil de design, pas d'attente. Les avantages, et comment tirer le meilleur parti de l'application.",
+      "desc": "Des fichiers finis en quelques secondes - pas d'outil de design, pas d'attente. Les avantages, et comment tirer le meilleur parti de l'application.",
       "cta": "Explorer →"
     },
     {

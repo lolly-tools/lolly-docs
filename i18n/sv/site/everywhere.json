@@ -1,6 +1,6 @@
 {
   "heading": "Allt,\nsom du är,\npå vad som helst",
-  "copy": "Kör offline på din enhet, var alltid tillgänglig hostad online – du bestämmer.\nLolly Tools funkar där.",
+  "copy": "Kör offline på din enhet, var alltid tillgänglig hostad online - du bestämmer.\nLolly Tools funkar där.",
   "surfaces": [
     { "icon": "surfaceWeb", "label": "Web" },
     { "icon": "surfaceMacos", "label": "macOS" },
@@ -12,8 +12,8 @@
   ],
   "modelsIntro": "Tre leveranssätt:",
   "models": [
-    { "n": "1", "icon": "modelDeploy", "label": "Distribuera", "desc": "Leverera till enheter via din befintliga MDM-lösning. Körs helt offline, bakom valfri brandvägg eller air gap — inget lämnar enheten." },
-    { "n": "2", "icon": "modelServe", "label": "Servera", "desc": "En hostad instans som används i valfri webbläsare. Inget att installera — godkända uppdateringar når alla så snart de släpps." },
-    { "n": "3", "icon": "modelHybrid", "label": "Hybrid", "desc": "Lokala offline-appar plus en alltid uppdaterad webbversion, som delar samma verktygsbibliotek — på alla operativsystem samtidigt." }
+    { "n": "1", "icon": "modelDeploy", "label": "Distribuera", "desc": "Leverera till enheter via din befintliga MDM-lösning. Körs helt offline, bakom valfri brandvägg eller air gap - inget lämnar enheten." },
+    { "n": "2", "icon": "modelServe", "label": "Servera", "desc": "En hostad instans som används i valfri webbläsare. Inget att installera - godkända uppdateringar når alla så snart de släpps." },
+    { "n": "3", "icon": "modelHybrid", "label": "Hybrid", "desc": "Lokala offline-appar plus en alltid uppdaterad webbversion, som delar samma verktygsbibliotek - på alla operativsystem samtidigt." }
   ]
 }

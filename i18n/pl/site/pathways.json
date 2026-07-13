@@ -1,13 +1,13 @@
 {
   "title": "Trzy sposoby na start",
-  "lead": "Zacznij od [Szybki start](/info/quickstart.html) — wgraj swoją markę i wyeksportuj pierwszy plik — a potem wybierz ścieżkę, która najbardziej ci pasuje.",
+  "lead": "Zacznij od [Szybki start](/info/quickstart.html) - wgraj swoją markę i wyeksportuj pierwszy plik - a potem wybierz ścieżkę, która najbardziej ci pasuje.",
   "cards": [
     {
       "href": "/info/creators.html",
       "icon": "media",
       "eyebrow": "Dla twórców",
       "name": "Twórz rzeczy",
-      "desc": "Gotowe pliki w kilka sekund — bez narzędzi projektowych, bez czekania. Zalety i sposoby na jak najlepsze wykorzystanie aplikacji.",
+      "desc": "Gotowe pliki w kilka sekund - bez narzędzi projektowych, bez czekania. Zalety i sposoby na jak najlepsze wykorzystanie aplikacji.",
       "cta": "Odkryj →"
     },
     {

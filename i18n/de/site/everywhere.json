@@ -1,6 +1,6 @@
 {
   "heading": "Alles,\nso wie Sie sind,\nauf allem",
-  "copy": "Arbeiten Sie offline auf Ihrem Gerät, oder seien Sie immer verfügbar, online gehostet – Sie entscheiden.\nLolly Tools funktioniert dort.",
+  "copy": "Arbeiten Sie offline auf Ihrem Gerät, oder seien Sie immer verfügbar, online gehostet - Sie entscheiden.\nLolly Tools funktioniert dort.",
   "surfaces": [
     { "icon": "surfaceWeb", "label": "Web" },
     { "icon": "surfaceMacos", "label": "macOS" },
@@ -12,8 +12,8 @@
   ],
   "modelsIntro": "Drei Arten der Bereitstellung:",
   "models": [
-    { "n": "1", "icon": "modelDeploy", "label": "Bereitstellung", "desc": "Verteilen Sie es über Ihr bestehendes MDM auf die Geräte. Läuft vollständig offline, hinter jeder Firewall oder Air-Gap – nichts verlässt das Gerät." },
-    { "n": "2", "icon": "modelServe", "label": "Hosting", "desc": "Eine gehostete Instanz, nutzbar in jedem Browser. Nichts zu installieren – genehmigte Updates erreichen alle in dem Moment, in dem sie veröffentlicht werden." },
-    { "n": "3", "icon": "modelHybrid", "label": "Hybrid", "desc": "Offline-Apps auf dem Gerät plus eine stets aktuelle Webversion, die sich eine gemeinsame Tool-Bibliothek teilen – auf jedem Betriebssystem gleichzeitig." }
+    { "n": "1", "icon": "modelDeploy", "label": "Bereitstellung", "desc": "Verteilen Sie es über Ihr bestehendes MDM auf die Geräte. Läuft vollständig offline, hinter jeder Firewall oder Air-Gap - nichts verlässt das Gerät." },
+    { "n": "2", "icon": "modelServe", "label": "Hosting", "desc": "Eine gehostete Instanz, nutzbar in jedem Browser. Nichts zu installieren - genehmigte Updates erreichen alle in dem Moment, in dem sie veröffentlicht werden." },
+    { "n": "3", "icon": "modelHybrid", "label": "Hybrid", "desc": "Offline-Apps auf dem Gerät plus eine stets aktuelle Webversion, die sich eine gemeinsame Tool-Bibliothek teilen - auf jedem Betriebssystem gleichzeitig." }
   ]
 }

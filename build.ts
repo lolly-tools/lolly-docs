@@ -15,22 +15,22 @@ const outDir = resolve(repoRoot, 'shells/web/public/info');
 
 type Lang = (typeof LANGS)[number];
 
-// Canonical site origin — used for absolute URLs in social/Open Graph tags.
+// Canonical site origin - used for absolute URLs in social/Open Graph tags.
 // Social crawlers (Slack, X, Facebook, LinkedIn, iMessage) require absolute og:image URLs.
 const SITE_URL = 'https://lolly.tools';
 const REPO_URL = 'https://github.com/lolly-tools/lolly';
-// "Founded by SUSE" badge — reused at the same size in the hero, the social-proof
+// "Founded by SUSE" badge - reused at the same size in the hero, the social-proof
 // block, and the footer. Always links to suse.com in a new window.
 const FOUNDED_BY = `<a class="founded-badge" href="https://www.suse.com" target="_blank" rel="noopener" aria-label="Founded by SUSE"><img src="/info/founded-by.svg" alt="Founded by SUSE"></a>`;
 const OG_IMAGE = `${SITE_URL}/og.png`;
 // webp, not avif: og:logo consumers (and GitHub-style scrapers) don't decode avif.
 const OG_LOGO = `${SITE_URL}/info/icon.webp`;
 const SITE_DESCRIPTION = 'Lolly: constraint-first, template-driven platform for generating production-ready creative and content assets at scale.';
-// Landing-page <title>/share title — the brand tagline (matches the web shell's
-// index.html). Other pages use "<page title> — Lolly", so this is landing-only.
-const LANDING_TITLE = 'Lolly — assets that stay the same so everything else can change';
+// Landing-page <title>/share title - the brand tagline (matches the web shell's
+// index.html). Other pages use "<page title> - Lolly", so this is landing-only.
+const LANDING_TITLE = 'Lolly - assets that stay the same so everything else can change';
 
-// Tool count for the hero badge — read from the generated catalog index so it
+// Tool count for the hero badge - read from the generated catalog index so it
 // tracks the real number of tools rather than drifting as a hand-edited literal.
 const TOOL_COUNT = JSON.parse(
   readFileSync(resolve(repoRoot, 'catalog/tools/index.json'), 'utf8')
@@ -43,7 +43,7 @@ interface Page {
   title: string;
   src: string;
   isLanding?: boolean;
-  // Which pathway this page belongs under — drives the docs sidebar + which top-nav
+  // Which pathway this page belongs under - drives the docs sidebar + which top-nav
   // link is highlighted. Omitted only for the landing page.
   pathway?: Pathway;
   // True for the four pathway landing pages (quickstart + the three hubs).
@@ -93,7 +93,7 @@ const pages: Page[] = [
   { slug: 'deployment',       title: 'Deployment',        src: 'deployment.md',      pathway: 'builders' },
   { slug: 'configuration',    title: 'Configuration',     src: 'configuration.md',   pathway: 'builders' },
   { slug: 'content-credentials-identity', title: 'Content Credentials Identity', src: 'content-credentials-identity.md', pathway: 'builders' },
-  { slug: 'content-credentials-engineering', title: 'Content Credentials — Engineering', src: 'content-credentials-engineering.md', pathway: 'builders' },
+  { slug: 'content-credentials-engineering', title: 'Content Credentials - Engineering', src: 'content-credentials-engineering.md', pathway: 'builders' },
   { slug: 'data-transfer',    title: 'Data Transfer',     src: 'data-transfer.md',   pathway: 'builders' },
   { slug: 'about',            title: 'About',             src: '../README.md',       pathway: 'builders' },
 
@@ -104,7 +104,7 @@ const pages: Page[] = [
 
 // Top-nav links, grouped into clusters. Each inner array renders as one cluster
 // (tight spacing); clusters are separated by a divider (see .nav-group CSS). Home
-// is intentionally omitted — the brand wordmark already links to /info/index.html.
+// is intentionally omitted - the brand wordmark already links to /info/index.html.
 interface NavLink {
   label: string;
   href: string;
@@ -130,7 +130,7 @@ const NAV_PATHWAY: Record<string, Pathway> = {
 // The docs sidebar, per pathway. Each group is a labelled cluster of links; the
 // first item of the first group is the pathway hub itself. Slugs must exist in
 // `pages` (or `stubs`). A page can appear in more than one pathway's sidebar
-// (e.g. Content Credentials is builder + operator) — its own `pathway` only picks
+// (e.g. Content Credentials is builder + operator) - its own `pathway` only picks
 // which sidebar renders when you're viewing it.
 interface SideItem { slug: string; label: string; }
 interface SideGroup { label: string; items: SideItem[]; }
@@ -498,12 +498,12 @@ function loadFaqs(lang: Lang = 'en') {
 }
 
 // ── Landing content files (docs/site/*.{json,md}) ────────────────────────────
-// The landing page's copy — headings, leads, card text — lives in these files so
+// The landing page's copy - headings, leads, card text - lives in these files so
 // editing it never touches this build script. Bespoke SVG icons/illustrations
 // stay in code (SITE_ICONS below) since they're graphics, not content a
 // non-developer edits; content files reference them by string key.
 // Locale-aware: a `docs/i18n/<lang>/site/<name>` translation is used when present,
-// else the English source at `docs/site/<name>` (fallback, not a 404 — same
+// else the English source at `docs/site/<name>` (fallback, not a 404 - same
 // contract as resolvePageSrc/loadFaqs).
 function siteContentPath(name: string, lang: Lang): string {
   if (lang !== 'en') {
@@ -518,7 +518,7 @@ function loadSiteJson(name: string, lang: Lang = 'en'): any {
 function loadSiteMd(name: string, lang: Lang = 'en'): string {
   return readFileSync(siteContentPath(name, lang), 'utf8');
 }
-// `\n` in a JSON string field becomes a literal <br> — the convention every
+// `\n` in a JSON string field becomes a literal <br> - the convention every
 // multi-line heading/copy field in docs/site/*.json uses.
 const br = (s: string) => esc(s).replace(/\n/g, '<br>');
 
@@ -538,7 +538,7 @@ const SITE_ICONS: Record<string, string> = {
   assureEyeOff: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.9 4.24A9.1 9.1 0 0 1 12 4c7 0 10 8 10 8a13.2 13.2 0 0 1-1.67 2.68"/><path d="M6.6 6.6A13.5 13.5 0 0 0 2 12s3 8 10 8a9.7 9.7 0 0 0 5.4-1.6"/><line x1="2" y1="2" x2="22" y2="22"/></svg>`,
   assureScan: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><line x1="7" y1="12" x2="17" y2="12"/></svg>`,
   assureServer: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="6" rx="2"/><rect x="2" y="15" width="20" height="6" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>`,
-  // import section — flow steps + points
+  // import section - flow steps + points
   importFlowFile: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>`,
   importFlowCanvas: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>`,
   importFlowMix: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
@@ -564,13 +564,13 @@ const SITE_ICONS: Record<string, string> = {
   surfaceAndroid: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><polyline points="9 2 9 7 15 7 15 2"/></svg>`,
   surfaceCli: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>`,
   // TUI = the CLI's terminal prompt (chevron + command line), but framed in a
-  // box with a divider (title bar) — the CLI icon, drawn as a full-screen app.
+  // box with a divider (title bar) - the CLI icon, drawn as a full-screen app.
   surfaceTui: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="9" x2="22" y2="9"/><polyline points="7 12 10 15 7 18"/><line x1="13" y1="18" x2="17" y2="18"/></svg>`,
   modelDeploy: `<svg class="everywhere-model-icon" viewBox="0 0 24 24" ${SITE_ICON_S}><path d="M16.5 9.4 7.5 4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>`,
   modelServe: `<svg class="everywhere-model-icon" viewBox="0 0 24 24" ${SITE_ICON_S}><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>`,
   modelHybrid: `<svg class="everywhere-model-icon" viewBox="0 0 24 24" ${SITE_ICON_S}><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>`,
   // Bespoke landing illustrations (site-style inline SVG), referenced by qol.json/assure.json.
-  // Sound: flowing sound waves + musical notes — the "assistive sound / focus beat" motif.
+  // Sound: flowing sound waves + musical notes - the "assistive sound / focus beat" motif.
   illusSound: `<svg viewBox="0 0 300 150" role="img" aria-label="Sound waves with musical notes" xmlns="http://www.w3.org/2000/svg">
   <defs><linearGradient id="sndGrad" x1="0" y1="0" x2="300" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#008657"/><stop offset="1" stop-color="#30ba78"/></linearGradient></defs>
   <path d="M0 105 Q37.5 138 75 105 T150 105 T225 105 T300 105" fill="none" stroke="#90ebcd" stroke-width="3" stroke-opacity=".45" stroke-linecap="round"/>
@@ -605,7 +605,7 @@ const SITE_ICONS: Record<string, string> = {
   <circle cx="221" cy="78" r="3" fill="#008657"/>
   <rect x="214" y="82" width="14" height="16" rx="3" fill="#f0fbf5"/>
 </svg>`,
-  // Checker: a Lolly export carrying a verified Content Credential — a credential
+  // Checker: a Lolly export carrying a verified Content Credential - a credential
   // card (framed image + manifest) with a glowing shield-check. The signature.
   illusCheck: `<svg viewBox="0 0 300 220" role="img" aria-label="A Lolly export carrying a verified Content Credential" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -639,7 +639,7 @@ function siteIcon(key: string): string {
 // headings (CJK/Arabic) slug to empty strings that collide and break tab activation.
 // The cards are authored in the same order in every locale, so key the icon + slug off
 // the ENGLISH heading at the same index. The visible tab LABEL still uses the translated
-// heading — only the presentational icon and the wiring are shared across locales.
+// heading - only the presentational icon and the wiring are shared across locales.
 let _enAudienceH2: string[] | null = null;
 function englishAudienceH2s(): string[] {
   if (_enAudienceH2) return _enAudienceH2;
@@ -728,7 +728,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
 
   // Parse platform features and "What's a tool?" from tail. Locate the two `## `
   // headings ("The Creator", "The Tools" in the English source) by ORDINAL
-  // POSITION, not literal English text — a translated tail section keeps the
+  // POSITION, not literal English text - a translated tail section keeps the
   // same two headings in the same order, but with translated text, so a
   // startsWith('## The Tools')-style match would find nothing (findIndex → -1)
   // for every non-English locale and silently drop the whole whats-a-tool
@@ -752,8 +752,8 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
     : [];
 
   // Platform feature renderer. A bullet whose description is a "·"-separated chip
-  // list still renders as chips (kept for flexibility); everything else — including
-  // the formats bullet, now a plain "creates N / ingests N" fact — renders as prose.
+  // list still renders as chips (kept for flexibility); everything else - including
+  // the formats bullet, now a plain "creates N / ingests N" fact - renders as prose.
   // The full format breakdown lives in its own Formats section, not this box.
   function renderPlatformFeature(f: { title: string; desc: string }, idx = 0) {
     const isChipList = f.desc.includes('·') &&
@@ -832,14 +832,14 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
     models: { n: string; icon: string; label: string; desc: string }[];
   };
 
-  // Frequently asked questions — rendered as native <details> accordions (no JS,
+  // Frequently asked questions - rendered as native <details> accordions (no JS,
   // keyboard-accessible, works offline). Answers are markdown; blank lines split
   // paragraphs. Add or edit an item in docs/faq.md (see loadFaqs above).
   const FAQ_CHEVRON = `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><polyline points="6 9 12 15 18 9"/></svg>`;
   const FAQS = loadFaqs(lang);
 
   // Each question gets a stable slug id (same rule as markdown headings, prefixed
-  // `faq-`) so other surfaces can deep-link straight to it — e.g. the app's gallery
+  // `faq-`) so other surfaces can deep-link straight to it - e.g. the app's gallery
   // "Utilities" strip links to #faq-what-makes-utilities-different-from-tools. The
   // FAQ_JS script below opens the matching <details> and scrolls it into view.
   const faqSlug = (q: string) =>
@@ -879,7 +879,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   // ── "Bring your existing design files" segment ──────────────────────────────
   // The good-news import story: finished Figma / Penpot / Illustrator / InDesign
   // files land as editable, on-brand layouts that anyone can reuse and mix with
-  // tools. They all arrive through Layout Studio's "Import a design" button —
+  // tools. They all arrive through Layout Studio's "Import a design" button -
   // natively (.fig / .penpot / .ai / .pdf / .idml) or as an SVG export (the wide
   // door: almost any design app exports SVG).
   const importData = loadSiteJson('import.json', lang) as {
@@ -924,7 +924,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
 </section>`;
 
   // ── Bespoke landing illustrations (site-style inline SVG) ──────────────────
-  // Sound: flowing sound waves + musical notes — the "assistive sound / focus
+  // Sound: flowing sound waves + musical notes - the "assistive sound / focus
   // beat" motif, in the brand green→teal.
   const ILLUS_SOUND = `<svg viewBox="0 0 300 150" role="img" aria-label="Sound waves with musical notes" xmlns="http://www.w3.org/2000/svg">
   <defs><linearGradient id="sndGrad" x1="0" y1="0" x2="300" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#008657"/><stop offset="1" stop-color="#30ba78"/></linearGradient></defs>
@@ -962,7 +962,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   <rect x="214" y="82" width="14" height="16" rx="3" fill="#f0fbf5"/>
 </svg>`;
 
-  // Checker: a Lolly export carrying a verified Content Credential — a credential
+  // Checker: a Lolly export carrying a verified Content Credential - a credential
   // card (framed image + manifest) with a glowing shield-check. The signature.
   const ILLUS_CHECK = `<svg viewBox="0 0 300 220" role="img" aria-label="A Lolly export carrying a verified Content Credential" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -1021,19 +1021,19 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   </div>
 </section>`;
 
-  // Dedicated Formats section — the full in/out breakdown, chips grouped by what
+  // Dedicated Formats section - the full in/out breakdown, chips grouped by what
   // each format is (vector / raster / motion / …). The engine box only states the
   // counts; this section is the detail.
-  // Six formats round-trip — Lolly both READS and WRITES them — so they appear in BOTH
+  // Six formats round-trip - Lolly both READS and WRITES them - so they appear in BOTH
   // columns. Mark those chips (⇄ + filled style) so the overlap reads as intentional
   // rather than accidental duplication. Matched on the exact chip token, so the export-only
-  // "CMYK PDF" variant is NOT marked — only plain "PDF" round-trips.
+  // "CMYK PDF" variant is NOT marked - only plain "PDF" round-trips.
   const ROUNDTRIP = new Set(['PDF', 'SVG', 'TIFF', 'AVIF', 'CSV', 'JSON']);
   const fmtChips = (list: string) =>
     `<div class="format-chips">${list.split(/\s·\s|·/).map(fmt => {
       const f = fmt.trim();
       const rt = ROUNDTRIP.has(f.toUpperCase());
-      return `<span class="format-chip${rt ? ' format-chip--rt' : ''}"${rt ? ' title="Round-trips — Lolly reads and writes this format"' : ''}>${rt ? '<span class="rt-mark" aria-hidden="true">⇄</span>' : ''}${esc(f)}</span>`;
+      return `<span class="format-chip${rt ? ' format-chip--rt' : ''}"${rt ? ' title="Round-trips - Lolly reads and writes this format"' : ''}>${rt ? '<span class="rt-mark" aria-hidden="true">⇄</span>' : ''}${esc(f)}</span>`;
     }).join('')}</div>`;
   const fmtGroup = (cat: string, list: string) =>
     `<div class="formats-group"><span class="formats-cat">${esc(cat)}</span>${fmtChips(list)}</div>`;
@@ -1064,7 +1064,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
 </section>`;
 
   // ── "Why we built Lolly" + old-way vs Lolly-way matrix ──────────────────────
-  // The emotional hook for the people who actually have to adopt Lolly — the
+  // The emotional hook for the people who actually have to adopt Lolly - the
   // non-designers. Names the three everyday frustrations, then puts the old way
   // and the Lolly way literally side by side (friction → relief), left vs right.
   const why = loadSiteJson('why.json', lang) as {
@@ -1121,7 +1121,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
 <section class="hero">
   <div class="hero-inner">
   <div class="hero-heading">
-    <h1 class="hero-logo-h1"><a href="${esc(localizeHref(lang, '/'))}" class="hero-logo-link" aria-label="Open Lolly — browse all tools"><img src="/info/icon.avif" alt="Lolly" class="hero-logo"></a></h1>
+    <h1 class="hero-logo-h1"><a href="${esc(localizeHref(lang, '/'))}" class="hero-logo-link" aria-label="Open Lolly - browse all tools"><img src="/info/icon.avif" alt="Lolly" class="hero-logo"></a></h1>
   </div>
   <div class="hero-details">
     <span class="hero-pilot" aria-label="${esc(heroChrome.pilotAriaLabel)}"><span class="hero-pilot-tag">${esc(heroChrome.pilotTag)}</span><span class="hero-pilot-text">${esc(heroChrome.pilotText)}</span></span>
@@ -1271,7 +1271,7 @@ ${FAQ_JS}`;
 // ── HTML template ─────────────────────────────────────────────────────────────
 
 const CSS = `
-/* Self-hosted SUSE variable fonts — same-origin /catalog/fonts/ (no CDN egress; mirrors shells/web/src/styles/fonts.css). */
+/* Self-hosted SUSE variable fonts - same-origin /catalog/fonts/ (no CDN egress; mirrors shells/web/src/styles/fonts.css). */
 @font-face{font-family:'SUSE';src:url('/catalog/fonts/webfonts/SUSE[wght].woff2') format('woff2-variations');font-weight:100 900;font-style:normal;font-display:swap}
 @font-face{font-family:'SUSE';src:url('/catalog/fonts/webfonts/SUSE-Italic[wght].woff2') format('woff2-variations');font-weight:100 900;font-style:italic;font-display:swap}
 @font-face{font-family:'SUSE Mono';src:url('/catalog/fonts/webfonts/SUSEMono[wght].woff2') format('woff2-variations');font-weight:100 900;font-style:normal;font-display:swap}
@@ -1282,8 +1282,8 @@ body{font-family:'SUSE',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;c
 a{color:var(--green);text-decoration:none}
 a:hover{text-decoration:underline}
 /* Safety net for inline icon SVGs: every one carries only a viewBox (no width/height),
-   so without a scoped size rule it balloons to the CSS default 300×150 — or stretches to
-   fill a flex/grid parent — and reads as an unfinished giant glyph. Default them to a
+   so without a scoped size rule it balloons to the CSS default 300×150 - or stretches to
+   fill a flex/grid parent - and reads as an unfinished giant glyph. Default them to a
    text-sized square; sized contexts (.icon-*, .assure-card-ic, illustrations, …) override
    this with a more specific selector. Keeps a missing/renamed rule from ever ballooning. */
 svg{width:1em;height:1em;flex:none}
@@ -1307,12 +1307,12 @@ nav.nav-solid{background:#0c322c}
 .brand:hover{color:var(--light);text-decoration:none}
 .brand-icon{width:1.5rem;height:1.5rem;border-radius:5px;flex-shrink:0;object-fit:contain}
 nav .gap{flex:1}
-/* The <label> wrapping the icon + <select> is the WHOLE hit area — a generous
-   pill, matching .nav-theme-toggle's footprint — not just the select's own tight
+/* The <label> wrapping the icon + <select> is the WHOLE hit area - a generous
+   pill, matching .nav-theme-toggle's footprint - not just the select's own tight
    text box. Clicking/tapping the icon activates the select exactly like clicking
    the text does (native label→control delegation), and since hover/focus is
    styled on the label, the icon (fill="currentColor") and the select text pick up
-   the SAME colour change together via inheritance — no separate icon hover rule. */
+   the SAME colour change together via inheritance - no separate icon hover rule. */
 .nav-lang-picker-wrap{display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .75rem .45rem .6rem;border-radius:2em;color:rgba(255,255,255,.55);cursor:pointer;transition:color .12s,background .12s}
 .nav-lang-picker-wrap:hover,.nav-lang-picker-wrap:focus-within{color:#fff;background:rgba(255,255,255,.1)}
 .nav-lang-picker-wrap .lang-switch-icon{width:16px;height:16px;flex-shrink:0;pointer-events:none}
@@ -1327,7 +1327,7 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .nav-launch{background:var(--green);color:var(--dark)!important;padding:.375rem 1rem;border-radius:6px;font-weight:700;font-size:.875rem;white-space:nowrap;margin-left:.5rem;transition:background .15s}
 .nav-launch:hover{background:var(--light);text-decoration:none!important}
 
-/* Language FAB menu — popup language selector matching the app UX */
+/* Language FAB menu - popup language selector matching the app UX */
 .lang-fab-wrap{display:inline-flex}
 .lang-fab{background:none;border:none;padding:.45rem .6rem;border-radius:2em;color:rgba(255,255,255,.55);cursor:pointer;transition:color .12s,background .12s;width:32px;height:32px;display:flex;align-items:center;justify-content:center}
 .lang-fab:hover{color:#fff;background:rgba(255,255,255,.1)}
@@ -1365,7 +1365,7 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 #heroCanvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;mix-blend-mode:color-dodge;opacity:.6}
 .hero h1{font-size:clamp(2.75rem,6vw,5rem);letter-spacing:-.04em;line-height:1.05;margin-bottom:1.5rem;color:#fff;position:relative;padding-left:.3em;font-weight:200}
 .hero-logo-h1{margin:0 0 1.5rem;padding:0;line-height:0;position:relative}
-/* Radius + shadow live on the img itself — on the link they trace its layout box,
+/* Radius + shadow live on the img itself - on the link they trace its layout box,
    which sits a hair off the rendered image edge and shows as a seam. */
 .hero-logo-link{display:block;width:clamp(180px,32vw,340px);margin:0 auto;border-radius:50%;cursor:pointer;transition:transform .2s ease}
 .hero-logo-link:hover,.hero-logo-link:focus-visible{transform:translateY(-3px) scale(1.02);outline:none}
@@ -1383,12 +1383,12 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .btn-primary:hover{background:var(--light);text-decoration:none;transform:translateY(-2px);box-shadow:0 8px 28px rgba(48,186,120,.35)}
 .btn-secondary{background:rgba(255,255,255,.05);color:#fff;border:1px solid rgba(255,255,255,.22);position:relative}
 .btn-secondary:hover{background:rgba(255,255,255,.1);text-decoration:none;transform:translateY(-1px)}
-/* Glass baseline — frosted blur so the buttons read as glass even where the JS
+/* Glass baseline - frosted blur so the buttons read as glass even where the JS
    liquid-displacement filter can't render. The buildGlass script overrides this
    inline with the refractive filter where it's supported. */
 .btn-primary,.btn-secondary{-webkit-backdrop-filter:blur(3px) saturate(1.45);backdrop-filter:blur(3px) saturate(1.45)}
 
-/* Three-door pathways band — sits directly under the hero on the landing page. */
+/* Three-door pathways band - sits directly under the hero on the landing page. */
 .pathways-section{background:transparent;position:relative;z-index:1;padding:4rem 1.5rem}
 .pathways-inner{max-width:1080px;margin:0 auto;text-align:center}
 .pathways-title{color:#fff;font-size:2rem;margin:0 0 .5rem}
@@ -1420,7 +1420,7 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .audience-tab[aria-selected=true]{background:var(--dark);color:var(--green);border-color:var(--dark);box-shadow:0 3px 12px rgba(12,50,44,.2)}
 .audience-tab:hover:not([aria-selected=true]){border-color:var(--green);color:var(--dark);background:var(--pale)}
 
-/* Audience panels — full-width, two-column on desktop */
+/* Audience panels - full-width, two-column on desktop */
 .audience-panels{display:block;margin-bottom:2em}
 .audience-card{display:none}
 .audience-card.tab-active{
@@ -1447,7 +1447,7 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .bullet-icon svg{width:100%;height:100%}
 .card-benefits strong{font-weight:700;color:var(--dark)}
 
-/* Platform + What's a tool — side by side on desktop */
+/* Platform + What's a tool - side by side on desktop */
 .platform-whats-wrap{position:relative;display:flex;align-items:stretch}
 .platform-whats-wrap .platform-section,.platform-whats-wrap .whats-a-tool{flex:1;min-width:0}
 .whats-label{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);z-index:10;border-radius:3rem;padding:.85rem 2rem;font-weight:700;font-size:1.0625rem;white-space:nowrap;box-shadow:0 6px 20px rgba(0,0,0,.18);     background: var(--muted);    color: var(--pale);}
@@ -1473,7 +1473,7 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .rt-mark{font-family:'SUSE',sans-serif;font-weight:700;letter-spacing:0;margin-right:.32em;line-height:1}
 .rt-inline{color:var(--green);font-weight:600;white-space:nowrap}
 .rt-inline .rt-mark{margin-right:.1em}
-/* Dedicated Formats section — categorised in/out chips */
+/* Dedicated Formats section - categorised in/out chips */
 .formats-section{background:#fff;padding:5.5rem 2rem;border-top:1px solid var(--border)}
 .formats-inner{max-width:1080px;margin:0 auto}
 .formats-head{margin-bottom:2.75rem}
@@ -1489,7 +1489,7 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .formats-group .format-chips{flex:1;min-width:0}
 @media(max-width:768px){.formats-cols{grid-template-columns:1fr;gap:2.25rem}.formats-group{flex-direction:column;gap:.45rem}.formats-cat{flex:none}.formats-section{padding:4rem 1.25rem}}
 
-/* QoL pair — sound + bulk, side by side */
+/* QoL pair - sound + bulk, side by side */
 .qol-section{background:var(--pale);padding:5.5rem 2rem}
 .qol-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:1.75rem}
 .qol-panel{background:#fff;border:1px solid var(--border);border-radius:20px;padding:2.5rem 2.25rem;box-shadow:0 4px 20px rgba(12,50,44,.06);display:flex;flex-direction:column;gap:1.5rem}
@@ -1500,7 +1500,7 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .qol-panel p strong{color:var(--dark);font-weight:700}
 @media(max-width:768px){.qol-inner{grid-template-columns:1fr;gap:1.25rem}.qol-section{padding:3.5rem 1.25rem}}
 
-/* Assurance / provenance — the trust band */
+/* Assurance / provenance - the trust band */
 .assure-section{background:linear-gradient(155deg,#061816 0%,#0c322c 55%,#0a3b30 100%);color:#fff;padding:6.5rem 2rem}
 .assure-inner{max-width:1080px;margin:0 auto}
 .assure-lede{max-width:46rem;margin-bottom:3.5rem}
@@ -1672,7 +1672,7 @@ tr:nth-child(even) td{background:#fafffe}
 .social-proof h2{font-size:2rem;color:var(--dark);margin-bottom:.375rem}
 .social-proof-date{font-size:.8125rem;color:var(--green);font-weight:600;margin-bottom:.625rem;letter-spacing:.02em;text-transform:uppercase}
 .social-proof-desc{color:var(--muted);font-size:.9375rem;line-height:1.6}
-/* "Founded by SUSE" badge — same size everywhere it appears (hero, social proof, footer) */
+/* "Founded by SUSE" badge - same size everywhere it appears (hero, social proof, footer) */
 .founded-badge{display:inline-block;line-height:0}
 .founded-badge img{display:block;width:10em;max-width:100%;height:auto}
 .social-proof-founded{margin:1.5rem 0 0;text-align:center}
@@ -1815,7 +1815,7 @@ footer .founded-badge{margin-top:.5rem}
 .reveal-4{transition-delay:.35s}
 .reveal-5{transition-delay:.45s}
 .reveal-6{transition-delay:.55s}
-/* Mobile: snappier reveals — drop the stagger and shorten the fade so content
+/* Mobile: snappier reveals - drop the stagger and shorten the fade so content
    doesn't lag behind the scroll (the observer also triggers earlier on mobile). */
 @media(max-width:768px){
   .reveal{transition-duration:.3s}
@@ -1874,7 +1874,7 @@ footer .founded-badge{margin-top:.5rem}
 /* Code in dark mode: the base code/pre rules hardcode light backgrounds, so in
    dark mode inline code became light-text-on-light-bg (invisible). Give chips a
    dark surface + light text, and the pre block a dark box. The third rule keeps
-   code inside pre background-free — .dark .docs-content code would otherwise
+   code inside pre background-free - .dark .docs-content code would otherwise
    out-specify the base "pre code background none" reset. */
 .dark .docs-content code{background:#112a1e;color:var(--text)}
 .dark .docs-content pre{background:#0d2419;color:var(--text);border:1px solid var(--border)}
@@ -1918,10 +1918,10 @@ footer .founded-badge{margin-top:.5rem}
 .dark .matrix-cell--new{background:#112a1e}
 
 /* RTL correctness (Arabic pages get dir="rtl" on <html>): code is Latin and
-   always reads LTR — isolate it so surrounding RTL prose doesn't scramble
+   always reads LTR - isolate it so surrounding RTL prose doesn't scramble
    leading/trailing punctuation. Mirrors the SPA's parts/rtl.css. */
 [dir="rtl"] pre,[dir="rtl"] code,[dir="rtl"] kbd,[dir="rtl"] samp{direction:ltr;text-align:left;unicode-bidi:isolate}
-/* The nav row mirrors under RTL, putting the lang FAB toward the LEFT edge —
+/* The nav row mirrors under RTL, putting the lang FAB toward the LEFT edge -
    follow it with the menu (which is otherwise pinned right:1.5rem physically). */
 [dir="rtl"] .lang-menu{right:auto;left:1.5rem}
 `.trim();
@@ -2022,7 +2022,7 @@ const LIQUID_GLASS_SCRIPT = `<script>(function(){
 
     var bf='url(#'+id+') blur(0.4px) contrast(1.15) brightness(1.07) saturate(1.2)';
     // Apply synchronously. The filter auto-re-renders when its feImage map finishes
-    // loading, so there's no need to defer — and NOT via img.decode(), which never
+    // loading, so there's no need to defer - and NOT via img.decode(), which never
     // resolves in a hidden/throttled tab and would leave the glass unapplied.
     btn.style.backdropFilter=bf;
     btn.style.webkitBackdropFilter=bf;
@@ -2046,7 +2046,7 @@ const HERO_CANVAS_SCRIPT = `<script>(function(){
   var canvas=document.getElementById('heroCanvas');
   if(!canvas)return;
   var ctx=canvas.getContext('2d');
-  // Every distinct file extension Lolly can export — vector, print, raster, video,
+  // Every distinct file extension Lolly can export - vector, print, raster, video,
   // markup, structured data and bundles (kept in step with docs/exporting.md).
   var exts=['.SVG','.EMF','.EPS','.DXF','.PDF','.TIFF','.PPTX','.PNG','.JPG','.WEBP','.AVIF','.GIF','.WEBM','.MP4','.HTML','.MD','.TXT','.CSV','.JSON','.ICS','.VCF','.ICO','.ZIP'];
   // Headline formats appear ~2x as often as the rest: listing them again weights
@@ -2222,7 +2222,7 @@ const HAMBURGER_SCRIPT = `<script>(function(){var ham=document.getElementById('n
 //
 // A flat {EnglishSource: Translated} catalog per language (docs/i18n/<lang>/
 // site.json), generated by `npm run translate -- --corpus site` (see
-// plans/localize.md §8) — the same English-as-key, identity-fallback contract
+// plans/localize.md §8) - the same English-as-key, identity-fallback contract
 // as the SPA's i18n.ts. Page BODY content follows the same fallback: a
 // docs/i18n/<lang>/<slug>.md sidecar is used when present, else the page ships
 // in English inside the localized chrome rather than 404ing.
@@ -2254,12 +2254,12 @@ function hrefToSlug(href: string): string {
   return href.replace(/^\/info\//, '').replace(/\.html$/, '');
 }
 
-// Rewrite an href authored in the (always-English) landing-page JSON content —
-// either "/" (the app root) or an internal "/info/<slug>.html" page — to the
+// Rewrite an href authored in the (always-English) landing-page JSON content -
+// either "/" (the app root) or an internal "/info/<slug>.html" page - to the
 // equivalent URL for `lang`, so a Spanish landing page's CTAs/links don't dump
 // the visitor back into English. The app root gets a `?lang=` query override
 // (a session-only override the SPA's initI18n reads at the top of its
-// precedence chain — see shells/web/src/main.ts/i18n.ts) since, unlike /info,
+// precedence chain - see shells/web/src/main.ts/i18n.ts) since, unlike /info,
 // it has no per-locale path to link to instead.
 function localizeHref(lang: Lang, href: string): string {
   if (href === '/') return lang === 'en' ? '/' : `/?lang=${lang}`;
@@ -2269,15 +2269,15 @@ function localizeHref(lang: Lang, href: string): string {
 
 // Language-switcher indicator (~/Build/language-icon.svg), inlined with
 // fill="currentColor" so it themes with the surrounding nav text. Same markup
-// as shells/web/src/i18n.ts's LANG_ICON_SVG — duplicated (not imported) since
+// as shells/web/src/i18n.ts's LANG_ICON_SVG - duplicated (not imported) since
 // this static-site generator has no shared module boundary with the SPA.
 const LANG_ICON_SVG = `<svg class="lang-switch-icon" viewBox="0 0 440.332 510.236" fill="currentColor" aria-hidden="true"><path d="m311.768 445.719 12.531 20.615c-31.404 20.067-66.19 30.034-103.148 33.127h-16.436c-3.287 0-19.54-2.008-20.088-2.008-6.026-.913-12.235-2.009-17.896-3.287q-15.34-3.562-30.68-9.315c-7.487-2.739-15.34-6.391-22.28-9.86-3.469-1.644-6.573-3.287-9.86-5.296-1.096-.548-6.94-4.748-9.862-4.748-3.287 0-5.297 2.556-5.297 5.295 0 1.644.184 3.106 2.375 4.566 12.418 8.218 25.566 14.426 38.166 19.174 6.94 2.74 14.063 5.296 21.367 7.305 4.2 1.278 8.948 2.558 13.33 3.47 5.662 1.279 11.689 2.375 17.35 3.288 6.392.913 13.15 1.643 19.541 2.191 36.8 0 80.597-5.566 122.537-30.498 1.721-1.243 4.493-2.286 6.744-3.758l11.428 18.801 15.725-45.576z"/><path d="m639.838 180.403-40.768-12.976V48.363c0-3.47-2.557-5.843-5.844-5.843-2.556 0-84.917 28.306-91.492 30.68-22.334 7.444-86.798 29.733-86.798 29.733-1.034.297-2.638.787-4.741 1.449L252.855 48.85a1.826 1.826 0 0 0-2.435 1.722v106.724c-24.405 8.17-41.808 14.02-42.701 14.335-1.644.548-4.2.913-5.662 2.922-.73.73-.913 2.009-1.278 2.922v306.982c0 .365.183.547.183.73 1.095 2.374 3.104 3.835 5.296 3.835 2.739 0 208.367-69.03 212.933-70.856.215-.072.458-.24.697-.438L638.73 487.48a1.826 1.826 0 0 0 2.38-1.74V182.143c0-.795-.514-1.5-1.272-1.74M410.973 409.4l-199.054 66.29V182.04l199.054-66.29ZM587.93 55.668v108.213l-164.492-52.354Zm-20.243 329.6-10.52-38.43-60.517-18.341-13.013 31.304-29.292-8.886 62.178-152.587 28.508 8.636 51.939 187.188zm-183.723-51.715c-1.658-.602-35.965-14.814-40.828-17.142-3.98-1.914-13.737-6.04-18.328-7.913 12.931-19.938 21.094-34.984 22.18-37.276 2.012-4.193 15.699-30.976 16.018-32.625.31-1.67.7-7.843.399-9.31-.302-1.495-5.32 1.38-12.134 3.69-6.824 2.3-19.794 10.735-24.803 11.793-5.027 1.048-21.094 7.135-29.316 9.863s-23.773 7.475-30.17 9.202c-6.406 1.728-11.998 1.865-15.581 2.951 0 0 .477 5.019 1.428 6.523.94 1.505 4.33 5.194 8.27 6.224 3.942 1.037 10.465.62 13.436-.058 2.97-.69 8.114-3.204 8.804-4.301.698-1.116-.36-4.553.814-5.592 1.186-1.028 16.843-4.688 22.755-6.474 5.911-1.817 28.54-9.61 31.607-9.213-.971 3.223-19.173 39.276-25.035 50.032-5.864 10.755-39.926 58.07-47.177 66.408-5.505 6.338-18.843 22.558-23.463 26.218 1.165.322 9.425-.387 10.93-1.318 9.377-5.777 24.996-25.22 30.026-31.142 14.949-17.532 28.083-35.947 38.497-51.75h.011c2.03.845 18.434 14.21 22.714 17.173 4.281 2.96 21.173 12.385 24.833 13.948 3.66 1.583 17.725 8.068 18.317 5.873.591-2.213-2.544-15.154-4.204-15.784m-106.167-120.33c-1.118-1.098 1.455 8.968 5.036 12.59 6.35 6.405 11.31 7.23 13.95 7.337 5.844.233 13.056-1.456 17.338-3.25 4.144-1.769 11.405-5.476 14.153-10.883.583-1.156 2.173-3.097 1.174-7.893-.757-3.689-3.106-4.98-5.97-4.775-2.863.193-11.532 2.505-15.725 3.794-4.194 1.273-12.834 3.903-16.6 4.72-3.756.814-12.038-.379-13.356-1.64" transform="translate(-200.78 -42.52)"/><path d="m529.556 247.883-21.718 52.496 39.929 12.104z" transform="translate(-200.78 -42.52)"/></svg>`;
 
-// The persistent, combined language picker — same control, same options, on
-// every /info page and (via the shared `lang` localStorage key — see i18n.ts's
+// The persistent, combined language picker - same control, same options, on
+// every /info page and (via the shared `lang` localStorage key - see i18n.ts's
 // initI18n) on the app itself. Renders as a FAB button that opens a menu, matching
 // the app's UX. The menu lists all languages with flags and native names, defaulting
-// to most-spoken-first order (total speakers, largest first) with an A–Z toggle at the top — the
+// to most-spoken-first order (total speakers, largest first) with an A–Z toggle at the top - the
 // choice is shared with the app's lang menu via the same-origin 'langSort'
 // localStorage key. Clicking a language navigates to that locale's version
 // of the current page and saves the choice to localStorage.
@@ -2295,7 +2295,7 @@ function langPickerHtml(lang: Lang, slug: string): string {
     };
     return `<span class="lang-menu-flags" aria-hidden="true">${flagCodes.map(flagEmoji).join('')}</span>`;
   };
-  // data-idx = position in the server-rendered speakers order — the client's
+  // data-idx = position in the server-rendered speakers order - the client's
   // speakers re-sort tie-breaks on it so an az→speakers round trip restores THIS
   // exact order (equal-speakers pairs would otherwise settle in az-relative order).
   const options = sortedLangs('speakers').map((l, i) =>
@@ -2368,7 +2368,7 @@ const LANG_PICKER_SCRIPT = `<script>
       if (tab.getAttribute('aria-selected') === 'true') return;
       applySort(tab.dataset.sort === 'az' ? 'az' : 'speakers', true);
       // Re-appending items blurs a focused one to <body> in browsers that don't
-      // focus buttons on click — keep focus inside the open menu.
+      // focus buttons on click - keep focus inside the open menu.
       if (!menu.contains(document.activeElement)) tab.focus();
       return;
     }
@@ -2396,7 +2396,7 @@ function buildNav(lang: Lang, slug: string, activeHref: string, isLanding: boole
 <div class="nav-mobile-menu" id="navMobileMenu">${mobileLinks}<a href="${launchHref}" class="nav-launch">${launch}</a></div>`;
 }
 
-const FOOTER = () => `<footer><p>Lolly — <a href="${REPO_URL}">${esc(t('Open Source'))}</a></p><p>${esc(t('Questions? Contact Andy Fitzsimon —'))} <a href="mailto:fitzy@suse.com">fitzy@suse.com</a></p>${FOUNDED_BY}</footer>`;
+const FOOTER = () => `<footer><p>Lolly - <a href="${REPO_URL}">${esc(t('Open Source'))}</a></p><p>${esc(t('Questions? Contact Andy Fitzsimon -'))} <a href="mailto:fitzy@suse.com">fitzy@suse.com</a></p>${FOUNDED_BY}</footer>`;
 
 // Docs sidebar for a page, driven by its pathway. Falls back to the builders
 // sidebar for any non-landing page without an explicit pathway.
@@ -2405,7 +2405,7 @@ function buildSidebar(lang: Lang, page: Page, activeHref: string) {
   const sb = SIDEBARS[pathway];
   const groups = sb.groups.map(g => {
     const links = g.items.map(it => {
-      const href = `/info/${it.slug}.html`; // logical (English) href — identity only
+      const href = `/info/${it.slug}.html`; // logical (English) href - identity only
       return `<a href="${localeHref(lang, it.slug)}"${href === activeHref ? ' class="active"' : ''}>${esc(t(it.label))}</a>`;
     }).join('\n    ');
     return `<div class="sidebar-label">${esc(t(g.label))}</div>\n    ${links}`;
@@ -2418,14 +2418,14 @@ function buildSidebar(lang: Lang, page: Page, activeHref: string) {
 }
 
 function wrapPage(lang: Lang, page: Page, content: string, ogSlugs: Set<string>) {
-  const activeHref = page.slug === 'index' ? '/info/index.html' : `/info/${page.slug}.html`; // logical (English) — identity only
+  const activeHref = page.slug === 'index' ? '/info/index.html' : `/info/${page.slug}.html`; // logical (English) - identity only
   const isLanding  = page.isLanding;
 
   // A page with its own generated card (subtitle = its title) points share tags at
   // it; the landing page and any page that failed generation keep the canonical og.png.
   // OG cards are generated once, in English, and shared across locales (see build()).
   const ogImage    = (!isLanding && ogSlugs?.has(page.slug)) ? `${SITE_URL}/info/og/${page.slug}.png` : OG_IMAGE;
-  const ogImageAlt = isLanding ? 'Lolly — creative tools with the rules built in' : `Lolly — ${page.title}`;
+  const ogImageAlt = isLanding ? 'Lolly - creative tools with the rules built in' : `Lolly - ${page.title}`;
 
   const body = isLanding ? content : `
 <div class="docs-wrap">
@@ -2435,7 +2435,7 @@ function wrapPage(lang: Lang, page: Page, content: string, ogSlugs: Set<string>)
   </main>
 </div>`;
 
-  const pageTitle  = isLanding ? LANDING_TITLE : `${t(page.title)} — Lolly`;
+  const pageTitle  = isLanding ? LANDING_TITLE : `${t(page.title)} - Lolly`;
   const localeUrl  = `${SITE_URL}${localeHref(lang, page.slug)}`;
   const alternates = LANGS.map(l =>
     `<link rel="alternate" hreflang="${LANG_META[l].htmlLang}" href="${esc(`${SITE_URL}${localeHref(l, page.slug)}`)}">`,
@@ -2490,13 +2490,13 @@ ${isLanding ? LIQUID_GLASS_SCRIPT : ''}
 function build() {
   // Ensure output dirs exist and copy static assets (icons).
   mkdirSync(outDir, { recursive: true });
-  // icon.avif is the site icon (hero logo; the README + overview doc use it too —
+  // icon.avif is the site icon (hero logo; the README + overview doc use it too -
   // GitHub decodes avif since 2023). icon.webp survives ONLY as the og:image
-  // compatibility copy (OG_LOGO above) — social crawlers still don't take avif.
+  // compatibility copy (OG_LOGO above) - social crawlers still don't take avif.
   // A missing source is a broken landing page, so warn loudly instead of swallowing it.
   for (const f of ['icon.avif', 'icon.webp']) {
     try { copyFileSync(resolve(repoRoot, f), resolve(outDir, f)); }
-    catch { console.warn(`⚠  docs/site: ${f} missing at repo root — /info/${f} will 404`); }
+    catch { console.warn(`⚠  docs/site: ${f} missing at repo root - /info/${f} will 404`); }
   }
   try { copyFileSync(resolve(repoRoot, 'founded-by.svg'), resolve(outDir, 'founded-by.svg')); } catch {}
 
@@ -2504,14 +2504,14 @@ function build() {
   // the filesystem rather than generateOgImages()'s return value so the share-tag
   // wiring is correct even when generation ran in a different process (a stale or
   // duplicate `--watch`), and so a page only points at its own card when the PNG
-  // truly exists — otherwise it falls back to the canonical og.png.
+  // truly exists - otherwise it falls back to the canonical og.png.
   const ogSlugs = new Set(
     pages
       .filter((p) => !p.isLanding && p.slug && existsSync(resolve(outDir, 'og', `${p.slug}.png`)))
       .map((p) => p.slug),
   );
 
-  // English at /info/, every other locale mirrored under /info/<lang>/ — same
+  // English at /info/, every other locale mirrored under /info/<lang>/ - same
   // page set, same slugs, translated chrome + (where a docs/i18n/<lang>/<slug>.md
   // sidecar exists) translated body; otherwise the English body ships inside the
   // localized chrome rather than 404ing. See plans/localize.md §8.
@@ -2541,7 +2541,7 @@ function build() {
   }
   activeCatalog = {};
 
-  // Redirect stubs for retired slugs — keep inbound links + bookmarks resolving.
+  // Redirect stubs for retired slugs - keep inbound links + bookmarks resolving.
   // English-only: these are legacy URLs, never linked from the localized nav tree.
   for (const s of stubs) {
     const dest = esc(s.target);
@@ -2550,7 +2550,7 @@ function build() {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Moved — Lolly</title>
+<title>Moved - Lolly</title>
 <link rel="canonical" href="${SITE_URL}${dest}">
 <meta http-equiv="refresh" content="0; url=${dest}">
 <meta name="robots" content="noindex">
@@ -2562,7 +2562,7 @@ function build() {
     console.log(`↪  /info/${s.slug}.html → ${s.target}`);
   }
 
-  // Sitemap — every page × every locale, with hreflang alternates so search
+  // Sitemap - every page × every locale, with hreflang alternates so search
   // engines route each locale to the language it actually serves.
   const urlEntries = sitemapUrls.map(({ slug }) => {
     const alternates = LANGS.map(l =>
@@ -2580,7 +2580,7 @@ function build() {
 // Per-page OG share images depend only on the page titles + brand assets (never the
 // docs markdown), so they're rasterised once here and reused by every build()
 // (including incremental --watch rebuilds). `ogSlugs` names the slugs that got their
-// own card; the rest fall back to og.png. Best-effort — a missing @resvg/resvg-js
+// own card; the rest fall back to og.png. Best-effort - a missing @resvg/resvg-js
 // (or any rasterise error) just yields an empty set, leaving every page on og.png.
 const ogGenerated = await generateOgImages(pages, outDir, repoRoot, (m) => console.log(m));
 const ogExpected = pages.filter((p) => !p.isLanding && p.slug && p.title).length;
@@ -2591,7 +2591,7 @@ if (ogExpected > 0 && ogGenerated.size < ogExpected) {
   console.warn(
     `⚠  og: generated ${ogGenerated.size}/${ogExpected} per-page share cards (${onDisk} present on disk).` +
       (onDisk === 0
-        ? ' Every /info page will use the fallback og.png — is @resvg/resvg-js installed for this platform?'
+        ? ' Every /info page will use the fallback og.png - is @resvg/resvg-js installed for this platform?'
         : ''),
   );
 }
@@ -2602,19 +2602,19 @@ build();
 // `node docs/build.ts --watch` rebuilds whenever a docs source changes, so the
 // /info pages stay current during `npm run dev:web`. Sources are everything under
 // docs/ (the markdown, faq.md, and src/*.svg) plus the repo-root README.md (the
-// About page). Output goes to shells/web/public/ — outside docs/ — so a rebuild
+// About page). Output goes to shells/web/public/ - outside docs/ - so a rebuild
 // never re-triggers the watcher.
 if (process.argv.includes('--watch')) {
   let timer: ReturnType<typeof setTimeout> | null = null;
   const scheduleRebuild = (label: string) => {
     clearTimeout(timer!);
     timer = setTimeout(() => {
-      console.log(`\n↻  ${label} changed — rebuilding /info…`);
+      console.log(`\n↻  ${label} changed - rebuilding /info…`);
       try { build(); } catch (err) { console.error('✗  Rebuild failed:', (err as Error).message); }
     }, 120);
   };
   // fs.watch types the filename as string | Buffer | null; it's a string here.
   watch(__dirname, { recursive: true }, (_event, file) => scheduleRebuild((file || 'docs') as string));
   try { watch(resolve(repoRoot, 'README.md'), () => scheduleRebuild('README.md')); } catch {}
-  console.log('\n👀  Watching docs/ for changes — Ctrl+C to stop.');
+  console.log('\n👀  Watching docs/ for changes - Ctrl+C to stop.');
 }

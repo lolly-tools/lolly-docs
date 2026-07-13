@@ -1,13 +1,13 @@
 {
   "title": "Trei căi de intrare",
-  "lead": "Începe cu [Pornire rapidă](/info/quickstart.html) — adaugă-ți brandul și obține primul tău fișier — apoi urmează calea potrivită pentru tine.",
+  "lead": "Începe cu [Pornire rapidă](/info/quickstart.html) - adaugă-ți brandul și obține primul tău fișier - apoi urmează calea potrivită pentru tine.",
   "cards": [
     {
       "href": "/info/creators.html",
       "icon": "media",
       "eyebrow": "Pentru creatori",
       "name": "Creează lucruri",
-      "desc": "Fișiere finalizate în câteva secunde — fără instrument de design, fără așteptare. Avantajele și cum să obții maximul din aplicație.",
+      "desc": "Fișiere finalizate în câteva secunde - fără instrument de design, fără așteptare. Avantajele și cum să obții maximul din aplicație.",
       "cta": "Explorează →"
     },
     {

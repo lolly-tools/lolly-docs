@@ -7,16 +7,16 @@
     { "file": "hooks.js", "name": "Hooks", "desc": "Valfri logik, sandboxad" }
   ],
   "features": [
-    { "icon": "toolFeatureStar", "title": "En smart mall", "desc": "Känner till sin egen layout, typografi, färger och varumärkesregler. Du bidrar med innehållet — den sköter resten." },
+    { "icon": "toolFeatureStar", "title": "En smart mall", "desc": "Känner till sin egen layout, typografi, färger och varumärkesregler. Du bidrar med innehållet - den sköter resten." },
     { "icon": "toolFeaturePeople", "title": "Ingen designerfarenhet krävs", "desc": "Skapad en gång av någon som känner varumärket. Alla andra fyller bara i det som saknas." },
     { "icon": "toolFeatureCode", "title": "Design som kod", "desc": "Ren HTML, CSS och JS. Versionshanterad, diffbar och granskningsbar som vilken annan källkodsfil som helst." },
-    { "icon": "toolFeatureMonitor", "title": "Ingen app behövs", "desc": "Öppna `template.html` i vilken webbläsare som helst — det bara fungerar. Verktyget är appen." },
-    { "icon": "toolFeatureShuffle", "title": "Fri canvas-layout", "desc": "Vissa verktyg öppnas som en direktmanipulerbar arbetsyta — dra, rotera och snäpp fast rutor med text, former och bilder, exporterade genom samma deterministiska process." },
-    { "icon": "toolFeatureNested", "title": "Verktyg inuti verktyg", "desc": "Behandla ett verktyg som en bild inuti ett annat verktyg — en badge som renderar sin egen QR-kod, ett kort med ett levande diagram — och behåll intelligensen intakt: fortfarande levande, fortfarande omrenderad, aldrig en platt bild." }
+    { "icon": "toolFeatureMonitor", "title": "Ingen app behövs", "desc": "Öppna `template.html` i vilken webbläsare som helst - det bara fungerar. Verktyget är appen." },
+    { "icon": "toolFeatureShuffle", "title": "Fri canvas-layout", "desc": "Vissa verktyg öppnas som en direktmanipulerbar arbetsyta - dra, rotera och snäpp fast rutor med text, former och bilder, exporterade genom samma deterministiska process." },
+    { "icon": "toolFeatureNested", "title": "Verktyg inuti verktyg", "desc": "Behandla ett verktyg som en bild inuti ett annat verktyg - en badge som renderar sin egen QR-kod, ett kort med ett levande diagram - och behåll intelligensen intakt: fortfarande levande, fortfarande omrenderad, aldrig en platt bild." }
   ],
   "tryNow": {
     "title": "Verktyg fungerar bra på egen hand.",
-    "desc": "För att rendera till PNG, PDF, SVG, video och mer — använd Lolly-plattformen.",
+    "desc": "För att rendera till PNG, PDF, SVG, video och mer - använd Lolly-plattformen.",
     "cta": "Starta appen ↗",
     "href": "/"
   }

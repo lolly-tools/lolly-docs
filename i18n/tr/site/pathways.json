@@ -1,13 +1,13 @@
 {
   "title": "Başlamanın üç yolu",
-  "lead": "[Quickstart](/info/quickstart.html) ile başla — markanı ekle ve ilk dosyanı çıkar — sonra sana uyan yolu izle.",
+  "lead": "[Quickstart](/info/quickstart.html) ile başla - markanı ekle ve ilk dosyanı çıkar - sonra sana uyan yolu izle.",
   "cards": [
     {
       "href": "/info/creators.html",
       "icon": "media",
       "eyebrow": "Yaratıcılar İçin",
       "name": "Bir şeyler yap",
-      "desc": "Saniyeler içinde bitmiş dosyalar — tasarım aracı yok, bekleme yok. Avantajlar ve uygulamadan en iyi şekilde nasıl yararlanılacağı.",
+      "desc": "Saniyeler içinde bitmiş dosyalar - tasarım aracı yok, bekleme yok. Avantajlar ve uygulamadan en iyi şekilde nasıl yararlanılacağı.",
       "cta": "Keşfet →"
     },
     {

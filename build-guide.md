@@ -37,7 +37,7 @@ npm run cli -- qr-code --url=https://suse.com --color=#0c322c --output=./qr.svg
 npm run cli -- quotes --quote="Open source wins." --name="Andy" --export=png --output=./quote.png
 ```
 
-The CLI supports **SVG, EMF, EPS, HTML, and the text/data formats** (JSON, CSV, ICS, VCF, MD, TXT) natively — hydrated by the engine with no browser engine needed (SVG/EMF only for tools with an `<svg>`-based template, since the lean CLI has no layout engine). **PNG** from an `<svg>`-based tool is also browser-free: resvg rasterises the engine's own SVG (Tier A). The remaining raster formats — **JPG, WebP, PDF, and video (GIF, WebM, MP4)**, plus HTML-layout PNG — render through the CLI's own scoped headless Chromium (Tier B): install it once with `lolly install-browser`, then they export straight from the CLI. (ZIP is the one format the lean CLI leaves out — no zip dependency — so its batch writes a folder instead.)
+The CLI supports **SVG, EMF, EPS, HTML, and the text/data formats** (JSON, CSV, ICS, VCF, MD, TXT) natively - hydrated by the engine with no browser engine needed (SVG/EMF only for tools with an `<svg>`-based template, since the lean CLI has no layout engine). **PNG** from an `<svg>`-based tool is also browser-free: resvg rasterises the engine's own SVG (Tier A). The remaining raster formats - **JPG, WebP, PDF, and video (GIF, WebM, MP4)**, plus HTML-layout PNG - render through the CLI's own scoped headless Chromium (Tier B): install it once with `lolly install-browser`, then they export straight from the CLI. (ZIP is the one format the lean CLI leaves out - no zip dependency - so its batch writes a folder instead.)
 
 ### Standalone binary
 
@@ -63,7 +63,7 @@ npx @yao-pkg/pkg dist/lolly.cjs \
   --output dist/lolly
 ```
 
-Output binaries land in `shells/cli/dist/` — one per platform target.
+Output binaries land in `shells/cli/dist/` - one per platform target.
 
 > The `tools/` and `catalog/` directories must ship alongside the binary. The CLI resolves them relative to the binary location, so the expected layout is:
 > ```
@@ -78,26 +78,26 @@ Output binaries land in `shells/cli/dist/` — one per platform target.
 
 ### Development use (no build needed)
 
-The interactive terminal shell runs straight from the repo — it needs a real TTY, so run it in your terminal rather than a captured pipe:
+The interactive terminal shell runs straight from the repo - it needs a real TTY, so run it in your terminal rather than a captured pipe:
 
 ```bash
 npm run tui
 ```
 
-It's the CLI's engine and render path under an interactive, keyboard-first UI (built on Ink, run through `tsx`). The DOM-free formats — **SVG, EMF, EPS, HTML, and the text/data formats** — render with nothing extra. State (saved sessions, project folders, profile) persists on disk under `~/.lolly` (override with `$LOLLY_TUI_DIR`); exports default to `~/Desktop`. See the [TUI guide](/info/tui.html) for the full key map and views.
+It's the CLI's engine and render path under an interactive, keyboard-first UI (built on Ink, run through `tsx`). The DOM-free formats - **SVG, EMF, EPS, HTML, and the text/data formats** - render with nothing extra. State (saved sessions, project folders, profile) persists on disk under `~/.lolly` (override with `$LOLLY_TUI_DIR`); exports default to `~/Desktop`. See the [TUI guide](/info/tui.html) for the full key map and views.
 
 ### Browser render tier (raster / PDF / video / URL capture)
 
-Unlike the bare CLI, the TUI can produce browser-bound formats via a scoped headless Chromium — the same one the MCP server uses. Set it up once:
+Unlike the bare CLI, the TUI can produce browser-bound formats via a scoped headless Chromium - the same one the MCP server uses. Set it up once:
 
 ```bash
 npm run install:browser   # Chromium → services/mcp/.browsers (shared with services/mcp)
 npm run build:web         # a built web shell the TUI drives for pixel-identical raster/pdf/video
 ```
 
-With those present, raster (PNG/JPG), PDF, video, and the `url-shot` live-URL capture all export from the terminal; without them, those formats fail with a clear setup message and the TUI writes HTML instead. The browser is lazy — it launches only on the first such export, never at startup. Override the browser with `LOLLY_BROWSER_CHANNEL` / `LOLLY_BROWSER_PATH`, or point at a running/prebuilt web shell with `LOLLY_WEB_BASE` / `LOLLY_WEB_DIST`.
+With those present, raster (PNG/JPG), PDF, video, and the `url-shot` live-URL capture all export from the terminal; without them, those formats fail with a clear setup message and the TUI writes HTML instead. The browser is lazy - it launches only on the first such export, never at startup. Override the browser with `LOLLY_BROWSER_CHANNEL` / `LOLLY_BROWSER_PATH`, or point at a running/prebuilt web shell with `LOLLY_WEB_BASE` / `LOLLY_WEB_DIST`.
 
-> No standalone-binary recipe yet — the TUI ships as a repo/dev surface today. Package it like the CLI (esbuild + `@yao-pkg/pkg`) once a target calls for it.
+> No standalone-binary recipe yet - the TUI ships as a repo/dev surface today. Package it like the CLI (esbuild + `@yao-pkg/pkg`) once a target calls for it.
 
 ---
 
@@ -112,7 +112,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustup update
 ```
 
-**Tauri CLI (Node package — installed per-shell):**
+**Tauri CLI (Node package - installed per-shell):**
 
 ```bash
 cd shells/tauri-desktop
@@ -140,7 +140,7 @@ npx @tauri-apps/cli icon path/to/icon-1024.png
 
 This writes all required sizes and formats (`32x32.png`, `128x128.png`, `128x128@2x.png`, `icon.icns`, `icon.ico`, etc.) to `src-tauri/icons/`.
 
-> Placeholder icons committed to the repo are solid-green squares — replace them with production artwork before releasing.
+> Placeholder icons committed to the repo are solid-green squares - replace them with production artwork before releasing.
 
 ### Development
 
@@ -151,7 +151,7 @@ npm run dev
 npm run dev:desktop
 ```
 
-Tauri opens a native window. The Vite dev server runs in the background; hot reload works. The state bridge uses the filesystem override (`bridge-overrides/state.ts`) — saved states go to `$APPDATA/Lolly/saved-state/`.
+Tauri opens a native window. The Vite dev server runs in the background; hot reload works. The state bridge uses the filesystem override (`bridge-overrides/state.ts`) - saved states go to `$APPDATA/Lolly/saved-state/`.
 
 ### Production build
 
@@ -187,7 +187,7 @@ Tauri does not support cross-compilation out of the box. Build each platform on 
 1. Install [Android Studio](https://developer.android.com/studio)
 2. In SDK Manager, install:
    - Android SDK Platform (API 33 or higher)
-   - NDK (Side by side) — version 26+
+   - NDK (Side by side) - version 26+
    - Android SDK Command-line Tools
 3. Set environment variables:
 
@@ -210,7 +210,7 @@ rustup target add \
 
 1. Install Xcode from the App Store (the full app, not just the Command Line Tools)
 2. Accept the license: `sudo xcodebuild -license accept`
-3. Install CocoaPods — `tauri ios init` generates a Podfile and runs `pod install`: `brew install cocoapods`
+3. Install CocoaPods - `tauri ios init` generates a Podfile and runs `pod install`: `brew install cocoapods`
 4. Add iOS Rust targets:
 
 ```bash
@@ -220,7 +220,7 @@ rustup target add \
   x86_64-apple-ios
 ```
 
-See `docs/ios-build.md` in the repository for the full iOS walkthrough — prerequisites, one-time init, the simulator dev loop, code signing, and camera permissions.
+See `docs/ios-build.md` in the repository for the full iOS walkthrough - prerequisites, one-time init, the simulator dev loop, code signing, and camera permissions.
 
 ### First-time platform init
 
@@ -237,7 +237,7 @@ npm run tauri android init
 npm run tauri ios init
 ```
 
-The `gen/` directory contains the generated Gradle / Xcode projects. It is gitignored — regenerate it with the init command on a fresh checkout.
+The `gen/` directory contains the generated Gradle / Xcode projects. It is gitignored - regenerate it with the init command on a fresh checkout.
 
 ### Icons (mobile)
 
@@ -257,7 +257,7 @@ npm run dev:android
 npm run dev:android
 ```
 
-**iOS** (macOS only — requires Simulator or provisioned device):
+**iOS** (macOS only - requires Simulator or provisioned device):
 
 ```bash
 cd shells/tauri-mobile
@@ -269,16 +269,16 @@ npm run dev:ios
 ### Production build
 
 ```bash
-# Android — outputs APK + AAB
+# Android - outputs APK + AAB
 npm run build:android
 # or: npm run build:android from repo root
 
-# iOS — outputs .ipa
+# iOS - outputs .ipa
 npm run build:ios
 # or: npm run build:ios from repo root
 ```
 
-**Android signing** — set these env vars before building for release:
+**Android signing** - set these env vars before building for release:
 
 ```bash
 export ANDROID_KEY_STORE=/path/to/keystore.jks
@@ -287,7 +287,7 @@ export ANDROID_KEY_ALIAS=...
 export ANDROID_KEY_PASSWORD=...
 ```
 
-**iOS signing** — configure your Development Team in Xcode:
+**iOS signing** - configure your Development Team in Xcode:
 
 ```bash
 cd gen/apple
@@ -314,22 +314,22 @@ Set the team in the project's Signing & Capabilities tab, then build from CLI or
 | Container images | OCI / Docker (built via Kiwi or a `Dockerfile`) | CLI as a container image |
 | Appliance / disk images | ISO, VM, and cloud images (built via Kiwi) | full preloaded image |
 
-The local Tauri build already emits a `.deb` and an `.AppImage` (see the Desktop table above). OBS does not replace that — its value is **fan-out across the rest of the matrix** (every RPM- and deb-based distro, Arch, Flatpak, containers, appliances) plus **signed, hosted repositories** that users can add and update from like any other system package.
+The local Tauri build already emits a `.deb` and an `.AppImage` (see the Desktop table above). OBS does not replace that - its value is **fan-out across the rest of the matrix** (every RPM- and deb-based distro, Arch, Flatpak, containers, appliances) plus **signed, hosted repositories** that users can add and update from like any other system package.
 
 ### How it fits Lolly's artifacts
 
 OBS packages one of the two Linux artifacts this guide already produces:
 
-- **The standalone CLI binary** — the esbuild + `@yao-pkg/pkg` output from the CLI section above. The `tools/` and `catalog/` directories must ship alongside the binary (the CLI resolves them relative to its own location), so that layout carries straight into the package's `%files` (RPM) or `debian/install` (deb) list.
-- **The Tauri desktop app** — the `tauri build` output, packaged as RPM / DEB / Flatpak / AppImage for desktop delivery.
+- **The standalone CLI binary** - the esbuild + `@yao-pkg/pkg` output from the CLI section above. The `tools/` and `catalog/` directories must ship alongside the binary (the CLI resolves them relative to its own location), so that layout carries straight into the package's `%files` (RPM) or `debian/install` (deb) list.
+- **The Tauri desktop app** - the `tauri build` output, packaged as RPM / DEB / Flatpak / AppImage for desktop delivery.
 
 ### Build-environment constraints
 
-> **No network at build time.** OBS builds inside clean, network-isolated chroots, so every build input must be present up front. For a Node + Vite + Rust/Tauri app this is the main porting effort: vendor the npm and Cargo dependencies (an offline npm cache / `cargo vendor`) or supply them through OBS source services, and declare the toolchain as `BuildRequires` — e.g. `nodejs>=20`, `npm`, `rust`, `cargo`, plus the desktop build's GTK/WebKit `-devel` packages (`libgtk-3-dev`, `libwebkit2gtk-4.1-dev`, `libappindicator3-dev` and equivalents).
+> **No network at build time.** OBS builds inside clean, network-isolated chroots, so every build input must be present up front. For a Node + Vite + Rust/Tauri app this is the main porting effort: vendor the npm and Cargo dependencies (an offline npm cache / `cargo vendor`) or supply them through OBS source services, and declare the toolchain as `BuildRequires` - e.g. `nodejs>=20`, `npm`, `rust`, `cargo`, plus the desktop build's GTK/WebKit `-devel` packages (`libgtk-3-dev`, `libwebkit2gtk-4.1-dev`, `libappindicator3-dev` and equivalents).
 
 ### Illustrative project layout
 
-The snippets below are **illustrative starting points, not a production-tested recipe** — they show the shape of an OBS package for Lolly.
+The snippets below are **illustrative starting points, not a production-tested recipe** - they show the shape of an OBS package for Lolly.
 
 A `_service` file fetches and versions the source from git at build time:
 
@@ -352,7 +352,7 @@ A trimmed RPM `.spec` declares the toolchain, builds the artifact, and installs 
 Name:           lolly
 Version:        1.0.0
 Release:        0
-Summary:        Lolly — template-driven creative asset generator
+Summary:        Lolly - template-driven creative asset generator
 License:        MPL-2.0
 URL:            https://lolly.tools
 Source0:        %{name}-%{version}.tar.gz
@@ -409,25 +409,25 @@ For readers wiring this up for real, see the [OBS documentation](https://openbui
 
 ## Web shell on Kubernetes (Helm)
 
-The web shell is a **static site** — `npm run build:web` produces a `dist/` folder of HTML, CSS, JS, the service worker, the HarfBuzz WASM, fonts, the bundled tool catalog, and the `/info` site. Anything that can serve static files can host it (which is why the production site runs behind a CDN). To run it **inside your own Kubernetes cluster** — air-gapped, on-prem, or alongside the rest of your platform — bake `dist/` into a container image built on a SUSE-maintained nginx base and deploy it with Helm.
+The web shell is a **static site** - `npm run build:web` produces a `dist/` folder of HTML, CSS, JS, the service worker, the HarfBuzz WASM, fonts, the bundled tool catalog, and the `/info` site. Anything that can serve static files can host it (which is why the production site runs behind a CDN). To run it **inside your own Kubernetes cluster** - air-gapped, on-prem, or alongside the rest of your platform - bake `dist/` into a container image built on a SUSE-maintained nginx base and deploy it with Helm.
 
-> **These are example charts, not a published product.** Lolly does not ship an official Helm chart, and the SUSE Application Collection does not contain one for it. The Dockerfile, `nginx.conf`, and chart below are a complete, self-contained example that *should actually deploy* — but treat them as a starting point to adapt, and pin the image tags and chart versions you verify yourself. Where a curated image or chart exists in the [SUSE Application Collection](https://apps.rancher.io), this section prefers it.
+> **These are example charts, not a published product.** Lolly does not ship an official Helm chart, and the SUSE Application Collection does not contain one for it. The Dockerfile, `nginx.conf`, and chart below are a complete, self-contained example that *should actually deploy* - but treat them as a starting point to adapt, and pin the image tags and chart versions you verify yourself. Where a curated image or chart exists in the [SUSE Application Collection](https://apps.rancher.io), this section prefers it.
 
 ### Why the SUSE Application Collection
 
-[The SUSE Application Collection](https://apps.rancher.io) is a curated, signed, continuously-rebuilt catalog of open-source container images and Helm charts, all based on SUSE Linux Enterprise Base Container Images (BCI). Pulling the nginx runtime from it — rather than an arbitrary upstream tag — gets you a hardened, attested base with a known CVE posture.
+[The SUSE Application Collection](https://apps.rancher.io) is a curated, signed, continuously-rebuilt catalog of open-source container images and Helm charts, all based on SUSE Linux Enterprise Base Container Images (BCI). Pulling the nginx runtime from it - rather than an arbitrary upstream tag - gets you a hardened, attested base with a known CVE posture.
 
 | Host | Role |
 |---|---|
 | `apps.rancher.io` | Browse / catalog UI (and where you mint credentials) |
 | `docs.apps.rancher.io` | Documentation |
-| `dp.apps.rancher.io` | **OCI distribution registry you pull from** — images under `/containers/<name>`, Helm charts under `/charts/<name>` |
+| `dp.apps.rancher.io` | **OCI distribution registry you pull from** - images under `/containers/<name>`, Helm charts under `/charts/<name>` |
 
 Access needs a free **SUSE Customer Center** account (`scc.suse.com`); sign in to `apps.rancher.io` and create either a personal **access token** (Settings → Access tokens) or an organization **service account** (Settings → Service accounts). Pulls are never anonymous.
 
-> **Free-tier gotcha for clusters.** A *user* access token on the Free tier allows pulls (≈100/24h), but a Free **service account is allowed 0 pulls** — so unattended in-cluster pulls through a service-account `imagePullSecret` realistically need a paid (Prime or higher) organization subscription. For builds on your own laptop a personal token on the Free tier is fine. If you can't subscribe, use the SUSE BCI nginx image from `registry.suse.com` instead (see the *Fallback* note under step 2) — it's free and needs no login.
+> **Free-tier gotcha for clusters.** A *user* access token on the Free tier allows pulls (≈100/24h), but a Free **service account is allowed 0 pulls** - so unattended in-cluster pulls through a service-account `imagePullSecret` realistically need a paid (Prime or higher) organization subscription. For builds on your own laptop a personal token on the Free tier is fine. If you can't subscribe, use the SUSE BCI nginx image from `registry.suse.com` instead (see the *Fallback* note under step 2) - it's free and needs no login.
 
-Log in — the same host for every client. The username/password pairing differs by credential type: a **user account** uses your username + an **access token**; a **service account** uses its username + a **secret** (never your account password):
+Log in - the same host for every client. The username/password pairing differs by credential type: a **user account** uses your username + an **access token**; a **service account** uses its username + a **secret** (never your account password):
 
 ```bash
 helm registry login dp.apps.rancher.io -u <username-or-sa-username> -p <access-token-or-sa-secret>
@@ -462,7 +462,7 @@ COPY deploy/nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 8080
 ```
 
-> **Fallback without an Application Collection subscription:** swap the runtime line for the free SUSE BCI image `FROM registry.suse.com/suse/nginx:1.27` (no login required). Its default document root is `/srv/www/htdocs/` — copy there instead, or just keep your own `root` directive in `nginx.conf`, which wins regardless of the base image's default.
+> **Fallback without an Application Collection subscription:** swap the runtime line for the free SUSE BCI image `FROM registry.suse.com/suse/nginx:1.27` (no login required). Its default document root is `/srv/www/htdocs/` - copy there instead, or just keep your own `root` directive in `nginx.conf`, which wins regardless of the base image's default.
 
 ### 3. Serve it like a PWA
 
@@ -474,7 +474,7 @@ Lolly is a single-page PWA: client-side URL-mode deep links (`/?tool=qr-code`) m
 server {
   listen 8080;                       # rootless SUSE/BCI nginx; use 80 if your base runs as root
   server_name _;
-  root /usr/share/nginx/html;        # set explicitly — the default doc root varies by base image
+  root /usr/share/nginx/html;        # set explicitly - the default doc root varies by base image
   index index.html;
 
   # nginx 1.21+ already maps these; harmless to restate for older bases
@@ -490,7 +490,7 @@ server {
   location = /sw.js       { add_header Cache-Control "no-cache, no-store, must-revalidate"; expires off; }
   location = /index.html  { add_header Cache-Control "no-cache"; }
 
-  # SPA fallback — unknown paths serve the app shell
+  # SPA fallback - unknown paths serve the app shell
   location / { try_files $uri $uri/ /index.html; }
 }
 ```
@@ -504,7 +504,7 @@ docker push     <your-registry>/lolly-web:1.0.0
 
 ### 4. An example Helm chart
 
-The Application Collection ships charts for stateful services (redis, postgresql, prometheus, cert-manager, …) but **not** a generic static-web-server chart — nginx lives there as a *container image only*. So the chart below is a small, self-contained one of your own; it's deliberately minimal and should deploy as-is.
+The Application Collection ships charts for stateful services (redis, postgresql, prometheus, cert-manager, …) but **not** a generic static-web-server chart - nginx lives there as a *container image only*. So the chart below is a small, self-contained one of your own; it's deliberately minimal and should deploy as-is.
 
 ```
 deploy/lolly-chart/
@@ -651,7 +651,7 @@ helm upgrade --install lolly ./deploy/lolly-chart -n lolly \
 
 ### TLS, the SUSE-curated way (optional)
 
-For HTTPS, pull **cert-manager** — which *is* a real chart in the Application Collection — and let it issue the Ingress certificate:
+For HTTPS, pull **cert-manager** - which *is* a real chart in the Application Collection - and let it issue the Ingress certificate:
 
 ```bash
 helm install cert-manager oci://dp.apps.rancher.io/charts/cert-manager \
@@ -668,7 +668,7 @@ Then add a `ClusterIssuer` (e.g. Let's Encrypt), set `ingress.tls=true` with a `
 
 ## How the Tauri shells relate to the web shell
 
-Both Tauri shells share the web shell's source (`shells/web/src/`). They build it with a Vite alias that swaps `bridge/state.ts` for a Tauri filesystem implementation at build time. Everything else — the engine, tools, templates, export logic — is identical to the web build. One render path, three delivery targets.
+Both Tauri shells share the web shell's source (`shells/web/src/`). They build it with a Vite alias that swaps `bridge/state.ts` for a Tauri filesystem implementation at build time. Everything else - the engine, tools, templates, export logic - is identical to the web build. One render path, three delivery targets.
 
 ```
 shells/web/src/         ← canonical source

@@ -1,6 +1,6 @@
 {
   "heading": "Każdy format, na wejściu i wyjściu",
-  "lead": "Lolly odczytuje 13 formatów źródłowych i renderuje 25 — oto pełny zestaw, pogrupowany według typu. Sześć {roundtrip}: odczytywane *i* zapisywane, więc pojawiają się w obu kolumnach.",
+  "lead": "Lolly odczytuje 13 formatów źródłowych i renderuje 25 - oto pełny zestaw, pogrupowany według typu. Sześć {roundtrip}: odczytywane *i* zapisywane, więc pojawiają się w obu kolumnach.",
   "ingestsLabel": "Import",
   "ingestsCount": "13 wejść",
   "exportsLabel": "Eksport",

@@ -1,12 +1,12 @@
 {
   "eyebrow": "Nguồn gốc & quyền riêng tư",
   "heading": "Chứng minh những gì bạn đã tạo.\nGiữ những gì thuộc về bạn.",
-  "lead": "Mọi hình ảnh, PDF hoặc video bạn xuất ra đều có thể mang một **Content Credential** — con dấu [C2PA](https://c2pa.org) chống giả mạo được tạo hoàn toàn trên thiết bị của bạn. Nó chứng minh tệp không bị thay đổi kể từ khi rời khỏi Lolly, và một khi bạn đăng ký danh tính, nó sẽ ghi lại ai đã ký tệp đó.",
+  "lead": "Mọi hình ảnh, PDF hoặc video bạn xuất ra đều có thể mang một **Content Credential** - con dấu [C2PA](https://c2pa.org) chống giả mạo được tạo hoàn toàn trên thiết bị của bạn. Nó chứng minh tệp không bị thay đổi kể từ khi rời khỏi Lolly, và một khi bạn đăng ký danh tính, nó sẽ ghi lại ai đã ký tệp đó.",
   "illustration": "illusCheck",
   "checks": [
     { "title": "Chống giả mạo theo mặc định", "desc": "Con dấu bao phủ từng byte được xuất ra. Chỉ cần đổi một pixel, bất kỳ trình xác thực C2PA nào cũng sẽ phát hiện ra." },
-    { "title": "Được ký ngay trên thiết bị của bạn", "desc": "Khóa ký của bạn được tạo cục bộ và không bao giờ rời khỏi thiết bị — ngay cả Lolly cũng không đọc được." },
-    { "title": "Ai cũng xác minh được, kể cả khi ngoại tuyến", "desc": "Tệp mang theo bằng chứng của chính nó. Kiểm tra trong tab Verify, CLI, hoặc bất kỳ trình xác thực C2PA nào — không có gì được tải lên." }
+    { "title": "Được ký ngay trên thiết bị của bạn", "desc": "Khóa ký của bạn được tạo cục bộ và không bao giờ rời khỏi thiết bị - ngay cả Lolly cũng không đọc được." },
+    { "title": "Ai cũng xác minh được, kể cả khi ngoại tuyến", "desc": "Tệp mang theo bằng chứng của chính nó. Kiểm tra trong tab Verify, CLI, hoặc bất kỳ trình xác thực C2PA nào - không có gì được tải lên." }
   ],
   "cards": [
     { "icon": "assureEyeOff", "title": "Không có gì rời khỏi thiết bị của bạn", "desc": "Không kết xuất trên đám mây, không telemetry, không phân tích dữ liệu. Những gì bạn tạo ra ở lại trên máy của bạn." },

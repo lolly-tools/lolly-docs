@@ -1,12 +1,12 @@
 {
   "eyebrow": "Asal usul & privasi",
   "heading": "Buktikan apa yang anda cipta.\nKekalkan milik anda.",
-  "lead": "Setiap imej, PDF, atau video yang anda eksport boleh membawa **Content Credential** — meterai [C2PA](https://c2pa.org) kalis gangguan yang dicipta sepenuhnya pada peranti anda. Ia membuktikan fail tidak berubah sejak ia meninggalkan Lolly, dan sebaik sahaja anda mendaftarkan identiti, ia merekodkan siapa yang menandatanganinya.",
+  "lead": "Setiap imej, PDF, atau video yang anda eksport boleh membawa **Content Credential** - meterai [C2PA](https://c2pa.org) kalis gangguan yang dicipta sepenuhnya pada peranti anda. Ia membuktikan fail tidak berubah sejak ia meninggalkan Lolly, dan sebaik sahaja anda mendaftarkan identiti, ia merekodkan siapa yang menandatanganinya.",
   "illustration": "illusCheck",
   "checks": [
     { "title": "Kalis gangguan secara lalai", "desc": "Meterai ini merangkumi setiap bait yang dieksport. Ubah walau satu piksel dan mana-mana pengesah C2PA akan mengesannya." },
-    { "title": "Ditandatangani pada peranti anda", "desc": "Kunci tandatangan anda dijana secara tempatan dan tidak sekali-kali meninggalkan peranti — malah Lolly sendiri tidak dapat membacanya." },
-    { "title": "Boleh disahkan oleh sesiapa sahaja, secara luar talian", "desc": "Fail ini membawa buktinya sendiri. Semaknya dalam tab Verify, CLI, atau mana-mana pengesah C2PA — tiada apa-apa yang dimuat naik." }
+    { "title": "Ditandatangani pada peranti anda", "desc": "Kunci tandatangan anda dijana secara tempatan dan tidak sekali-kali meninggalkan peranti - malah Lolly sendiri tidak dapat membacanya." },
+    { "title": "Boleh disahkan oleh sesiapa sahaja, secara luar talian", "desc": "Fail ini membawa buktinya sendiri. Semaknya dalam tab Verify, CLI, atau mana-mana pengesah C2PA - tiada apa-apa yang dimuat naik." }
   ],
   "cards": [
     { "icon": "assureEyeOff", "title": "Tiada apa-apa meninggalkan peranti anda", "desc": "Tiada pemaparan awan, tiada telemetri, tiada analitik. Apa yang anda cipta kekal pada mesin anda." },

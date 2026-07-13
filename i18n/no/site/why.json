@@ -1,19 +1,19 @@
 {
   "eyebrow": "Hvorfor vi bygde Lolly",
   "heading": "Hverdagslig kreativt arbeid\nburde ikke være så vanskelig.",
-  "lead": "De fleste vil ikke ha et designstudio. De vil ha én korrekt fil, nå — uten å bryte merkevaren, uten å vente på noen, og uten å levere fra seg et privat dokument til et nettsted de aldri har hørt om. Lolly finnes for å ta bort disse tre frustrasjonene.",
+  "lead": "De fleste vil ikke ha et designstudio. De vil ha én korrekt fil, nå - uten å bryte merkevaren, uten å vente på noen, og uten å levere fra seg et privat dokument til et nettsted de aldri har hørt om. Lolly finnes for å ta bort disse tre frustrasjonene.",
   "frustrations": [
     { "icon": "anxiety", "title": "Angst for å bryte merkevaren", "desc": "Den stille frykten for å velge feil farge eller skrift og gjøre det feil offentlig." },
     { "icon": "bottleneck", "title": "Flaskehalsen", "desc": "Hver liten ressurs sitter fast i en kø bak en opptatt designer, et tregt verktøy, eller enda en godkjenning." },
-    { "icon": "cloudDependence", "title": "Skyavhengighet", "desc": "Å laste opp sensitive filer bare for å konvertere eller beskjære dem — og stå fast i det øyeblikket du er offline." }
+    { "icon": "cloudDependence", "title": "Skyavhengighet", "desc": "Å laste opp sensitive filer bare for å konvertere eller beskjære dem - og stå fast i det øyeblikket du er offline." }
   ],
   "matrix": [
     { "pain": "Send en brief på e-post til designteamet, og vent så i dagevis på én liten grafikk.", "relief": "Fyll ut noen få felt. Den ferdige ressursen er klar på sekunder." },
-    { "pain": "Gjett deg til riktig skrift, farge og logo — og håp at det består merkevarekontrollen.", "relief": "Designreglene er bakt inn i verktøyet. De bøyer seg, de brekker ikke. " },
+    { "pain": "Gjett deg til riktig skrift, farge og logo - og håp at det består merkevarekontrollen.", "relief": "Designreglene er bakt inn i verktøyet. De bøyer seg, de brekker ikke. " },
     { "pain": "Last opp en kontrakt, lønnsslipp eller privat bilde til et tilfeldig gratis nettsted for å konvertere eller beskjære det.", "relief": "Alt kjører på din egen enhet. Ingenting lastes opp; ingenting forlater den ansvarlige personens enhet." },
     { "pain": "Lag den samme brikken, kortet eller banneret på nytt hundre ganger for hånd.", "relief": "Lim inn et regneark. Få hundre ferdige, trykkeklare filer på én gang." },
-    { "pain": "«Hvilken versjon er den nyeste?» — leting gjennom Slack-tråder og delte disker.", "relief": "Ressursen er en lenke. Samme inndata, samme fil, hver eneste gang." },
-    { "pain": "Ikke noe signal på flyet, eller et låst nettverk — så du er rett og slett blokkert.", "relief": "Fungerer helt offline, på hvilken som helst enhet, når den først er lastet én gang." },
-    { "pain": "Embargolagt innhold: Kommunikasjonsfolk stenges ute fra å samhandle trygt med samarbeidspartnere.", "relief": "lås, krypter og passordbeskytt filer, zip-filer og delelenker – helt uten internett" }
+    { "pain": "«Hvilken versjon er den nyeste?» - leting gjennom Slack-tråder og delte disker.", "relief": "Ressursen er en lenke. Samme inndata, samme fil, hver eneste gang." },
+    { "pain": "Ikke noe signal på flyet, eller et låst nettverk - så du er rett og slett blokkert.", "relief": "Fungerer helt offline, på hvilken som helst enhet, når den først er lastet én gang." },
+    { "pain": "Embargolagt innhold: Kommunikasjonsfolk stenges ute fra å samhandle trygt med samarbeidspartnere.", "relief": "lås, krypter og passordbeskytt filer, zip-filer og delelenker - helt uten internett" }
   ]
 }

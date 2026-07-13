@@ -1,12 +1,12 @@
 {
   "eyebrow": "Asal usul & privasi",
   "heading": "Buktikan apa yang Anda buat.\nJaga milik Anda.",
-  "lead": "Setiap gambar, PDF, atau video yang Anda ekspor dapat membawa **Content Credential** — segel [C2PA](https://c2pa.org) anti-manipulasi yang dibuat sepenuhnya di perangkat Anda. Ini membuktikan berkas belum berubah sejak keluar dari Lolly, dan setelah Anda mendaftarkan identitas, mencatat siapa yang menandatanganinya.",
+  "lead": "Setiap gambar, PDF, atau video yang Anda ekspor dapat membawa **Content Credential** - segel [C2PA](https://c2pa.org) anti-manipulasi yang dibuat sepenuhnya di perangkat Anda. Ini membuktikan berkas belum berubah sejak keluar dari Lolly, dan setelah Anda mendaftarkan identitas, mencatat siapa yang menandatanganinya.",
   "illustration": "illusCheck",
   "checks": [
     { "title": "Anti-manipulasi secara default", "desc": "Segel ini mencakup setiap byte yang diekspor. Ubah satu piksel saja dan validator C2PA mana pun akan menandainya." },
-    { "title": "Ditandatangani di perangkat Anda", "desc": "Kunci penandatanganan Anda dibuat secara lokal dan tidak pernah meninggalkan perangkat — bahkan Lolly pun tidak bisa membacanya." },
-    { "title": "Dapat diverifikasi siapa saja, secara offline", "desc": "Berkas ini membawa buktinya sendiri. Periksa di tab Verify, CLI, atau validator C2PA mana pun — tidak ada yang diunggah." }
+    { "title": "Ditandatangani di perangkat Anda", "desc": "Kunci penandatanganan Anda dibuat secara lokal dan tidak pernah meninggalkan perangkat - bahkan Lolly pun tidak bisa membacanya." },
+    { "title": "Dapat diverifikasi siapa saja, secara offline", "desc": "Berkas ini membawa buktinya sendiri. Periksa di tab Verify, CLI, atau validator C2PA mana pun - tidak ada yang diunggah." }
   ],
   "cards": [
     { "icon": "assureEyeOff", "title": "Tidak ada yang meninggalkan perangkat Anda", "desc": "Tanpa rendering di cloud, tanpa telemetri, tanpa analitik. Apa pun yang Anda buat tetap berada di komputer Anda." },

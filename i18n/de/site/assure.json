@@ -1,12 +1,12 @@
 {
   "eyebrow": "Herkunft & Datenschutz",
   "heading": "Beweisen Sie, was Sie erstellt haben.\nBehalten Sie, was Ihnen gehört.",
-  "lead": "Jedes Bild, PDF oder Video, das Sie exportieren, kann ein **Content Credential** tragen — ein manipulationssicheres [C2PA](https://c2pa.org)-Siegel, das vollständig auf Ihrem Gerät erstellt wird. Es beweist, dass die Datei sich seit dem Verlassen von Lolly nicht verändert hat, und erfasst, sobald Sie eine Identität registrieren, wer sie signiert hat.",
+  "lead": "Jedes Bild, PDF oder Video, das Sie exportieren, kann ein **Content Credential** tragen - ein manipulationssicheres [C2PA](https://c2pa.org)-Siegel, das vollständig auf Ihrem Gerät erstellt wird. Es beweist, dass die Datei sich seit dem Verlassen von Lolly nicht verändert hat, und erfasst, sobald Sie eine Identität registrieren, wer sie signiert hat.",
   "illustration": "illusCheck",
   "checks": [
     { "title": "Standardmäßig manipulationssicher", "desc": "Das Siegel umfasst jedes exportierte Byte. Ändern Sie ein einziges Pixel, und jeder C2PA-Validator meldet es." },
-    { "title": "Signiert auf Ihrem Gerät", "desc": "Ihr Signaturschlüssel wird lokal erzeugt und verlässt das Gerät nie — nicht einmal Lolly kann ihn lesen." },
-    { "title": "Von jedem offline überprüfbar", "desc": "Die Datei trägt ihren eigenen Nachweis. Prüfen Sie sie im Verify-Tab, in der CLI oder mit jedem C2PA-Validator — es wird nichts hochgeladen." }
+    { "title": "Signiert auf Ihrem Gerät", "desc": "Ihr Signaturschlüssel wird lokal erzeugt und verlässt das Gerät nie - nicht einmal Lolly kann ihn lesen." },
+    { "title": "Von jedem offline überprüfbar", "desc": "Die Datei trägt ihren eigenen Nachweis. Prüfen Sie sie im Verify-Tab, in der CLI oder mit jedem C2PA-Validator - es wird nichts hochgeladen." }
   ],
   "cards": [
     { "icon": "assureEyeOff", "title": "Nichts verlässt Ihr Gerät", "desc": "Kein Cloud-Rendering, keine Telemetrie, keine Analysen. Was Sie erstellen, bleibt auf Ihrem Rechner." },

@@ -7,16 +7,16 @@
     { "file": "hooks.js", "name": "Hooks", "desc": "Optionale Logik, in einer Sandbox ausgeführt" }
   ],
   "features": [
-    { "icon": "toolFeatureStar", "title": "Eine intelligente Vorlage", "desc": "Kennt ihr eigenes Layout, ihren Typ, ihre Farben und ihre Markenregeln. Sie bringen den Inhalt — um alles andere kümmert sie sich." },
+    { "icon": "toolFeatureStar", "title": "Eine intelligente Vorlage", "desc": "Kennt ihr eigenes Layout, ihren Typ, ihre Farben und ihre Markenregeln. Sie bringen den Inhalt - um alles andere kümmert sie sich." },
     { "icon": "toolFeaturePeople", "title": "Keine Designerfahrung notwendig", "desc": "Einmal von jemandem erstellt, der die Marke kennt. Alle anderen füllen einfach die Lücken aus." },
     { "icon": "toolFeatureCode", "title": "Design als Code", "desc": "Einfaches HTML, CSS und JS. Versionskontrolliert, diffbar und überprüfbar wie jede andere Quelldatei." },
-    { "icon": "toolFeatureMonitor", "title": "Keine App nötig", "desc": "Öffnen Sie `template.html` in einem beliebigen Browser — es funktioniert einfach. Das Tool ist die App." },
-    { "icon": "toolFeatureShuffle", "title": "Freies Canvas-Layout", "desc": "Einige Tools öffnen sich als direkt manipulierbare Canvas — Boxen mit Text, Formen und Bildern lassen sich ziehen, drehen und einrasten, exportiert über denselben deterministischen Pfad." },
-    { "icon": "toolFeatureNested", "title": "Tools in Tools", "desc": "Behandeln Sie ein Tool wie ein Bild innerhalb eines anderen Tools — ein Badge, das seinen eigenen QR-Code rendert, eine Karte mit einem Live-Chart — und bewahren Sie dabei die Intelligenz: weiterhin live, weiterhin neu gerendert, nie ein abgeflachtes Bild." }
+    { "icon": "toolFeatureMonitor", "title": "Keine App nötig", "desc": "Öffnen Sie `template.html` in einem beliebigen Browser - es funktioniert einfach. Das Tool ist die App." },
+    { "icon": "toolFeatureShuffle", "title": "Freies Canvas-Layout", "desc": "Einige Tools öffnen sich als direkt manipulierbare Canvas - Boxen mit Text, Formen und Bildern lassen sich ziehen, drehen und einrasten, exportiert über denselben deterministischen Pfad." },
+    { "icon": "toolFeatureNested", "title": "Tools in Tools", "desc": "Behandeln Sie ein Tool wie ein Bild innerhalb eines anderen Tools - ein Badge, das seinen eigenen QR-Code rendert, eine Karte mit einem Live-Chart - und bewahren Sie dabei die Intelligenz: weiterhin live, weiterhin neu gerendert, nie ein abgeflachtes Bild." }
   ],
   "tryNow": {
     "title": "Tools funktionieren auch eigenständig gut.",
-    "desc": "Um in PNG, PDF, SVG, Video und mehr zu rendern — nutzen Sie die Lolly-Plattform.",
+    "desc": "Um in PNG, PDF, SVG, Video und mehr zu rendern - nutzen Sie die Lolly-Plattform.",
     "cta": "App starten ↗",
     "href": "/"
   }

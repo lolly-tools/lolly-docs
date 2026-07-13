@@ -1,6 +1,6 @@
 {
   "heading": "Alle formater, inn og ut",
-  "lead": "Lolly leser 13 kildeformater og rendrer 25 — her er hele settet, gruppert etter hva hver type er. Seks {roundtrip}: både leses og skrives, så de vises i begge kolonner.",
+  "lead": "Lolly leser 13 kildeformater og rendrer 25 - her er hele settet, gruppert etter hva hver type er. Seks {roundtrip}: både leses og skrives, så de vises i begge kolonner.",
   "ingestsLabel": "Importerer",
   "ingestsCount": "13 inn",
   "exportsLabel": "Eksporterer",

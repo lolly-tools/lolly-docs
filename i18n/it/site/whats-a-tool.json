@@ -7,16 +7,16 @@
     { "file": "hooks.js", "name": "Hook", "desc": "Logica opzionale, in sandbox" }
   ],
   "features": [
-    { "icon": "toolFeatureStar", "title": "Un template intelligente", "desc": "Conosce il proprio layout, la tipografia, i colori e le regole del brand. Tu porti il contenuto — al resto ci pensa lui." },
+    { "icon": "toolFeatureStar", "title": "Un template intelligente", "desc": "Conosce il proprio layout, la tipografia, i colori e le regole del brand. Tu porti il contenuto - al resto ci pensa lui." },
     { "icon": "toolFeaturePeople", "title": "Non serve esperienza di design", "desc": "Creato una volta da chi conosce il brand. Tutti gli altri si limitano a riempire gli spazi vuoti." },
     { "icon": "toolFeatureCode", "title": "Design come codice", "desc": "HTML, CSS e JS puri. Con controllo di versione, confrontabile (diff) e revisionabile come qualsiasi altro file sorgente." },
-    { "icon": "toolFeatureMonitor", "title": "Non serve nessuna app", "desc": "Apri `template.html` in qualsiasi browser — funziona e basta. Lo strumento è l'app." },
-    { "icon": "toolFeatureShuffle", "title": "Layout a canvas libero", "desc": "Alcuni strumenti si aprono come un canvas a manipolazione diretta — trascina, ruota e aggancia riquadri di testo, forme e immagini, esportati attraverso lo stesso percorso deterministico." },
-    { "icon": "toolFeatureNested", "title": "Strumenti dentro strumenti", "desc": "Tratta uno strumento come un'immagine dentro un altro strumento — un badge che genera il proprio codice QR, una card con un grafico dal vivo — mantenendo intatta l'intelligenza: resta vivo, viene ri-renderizzato, mai un'immagine appiattita." }
+    { "icon": "toolFeatureMonitor", "title": "Non serve nessuna app", "desc": "Apri `template.html` in qualsiasi browser - funziona e basta. Lo strumento è l'app." },
+    { "icon": "toolFeatureShuffle", "title": "Layout a canvas libero", "desc": "Alcuni strumenti si aprono come un canvas a manipolazione diretta - trascina, ruota e aggancia riquadri di testo, forme e immagini, esportati attraverso lo stesso percorso deterministico." },
+    { "icon": "toolFeatureNested", "title": "Strumenti dentro strumenti", "desc": "Tratta uno strumento come un'immagine dentro un altro strumento - un badge che genera il proprio codice QR, una card con un grafico dal vivo - mantenendo intatta l'intelligenza: resta vivo, viene ri-renderizzato, mai un'immagine appiattita." }
   ],
   "tryNow": {
     "title": "Gli strumenti funzionano bene da soli.",
-    "desc": "Per renderizzare in PNG, PDF, SVG, video e altro ancora — usa la piattaforma Lolly.",
+    "desc": "Per renderizzare in PNG, PDF, SVG, video e altro ancora - usa la piattaforma Lolly.",
     "cta": "Avvia l'app ↗",
     "href": "/"
   }

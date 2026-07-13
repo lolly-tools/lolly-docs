@@ -1,6 +1,6 @@
 {
   "heading": "Todos os formatos, de entrada e saída",
-  "lead": "A Lolly lê 13 formatos de origem e renderiza 25 — aqui está o conjunto completo, agrupado pelo que cada um é. Seis são {roundtrip}: lidos *e* escritos, então aparecem em ambas as colunas.",
+  "lead": "A Lolly lê 13 formatos de origem e renderiza 25 - aqui está o conjunto completo, agrupado pelo que cada um é. Seis são {roundtrip}: lidos *e* escritos, então aparecem em ambas as colunas.",
   "ingestsLabel": "Importações",
   "ingestsCount": "13 de entrada",
   "exportsLabel": "Exportações",

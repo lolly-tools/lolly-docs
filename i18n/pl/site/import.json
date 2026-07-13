@@ -1,7 +1,7 @@
 {
   "eyebrow": "Wykorzystaj to, co już masz",
   "heading": "Twoje pliki projektowe nie są uwięzione",
-  "lead": "Gotowy projekt w **Figmie, Penpocie, Illustratorze, InDesignie lub jakiejkolwiek aplikacji SVG** nie musi zostać zablokowany w jednej aplikacji. Otwórz **Layout Studio**, kliknij **Zaimportuj projekt**, a plik otworzy się jako żywy układ — nie spłaszczony obrazek. Każda warstwa staje się edytowalnym polem, gotowym do dalszej pracy, łączenia z narzędziami i renderowania według tych samych reguł.",
+  "lead": "Gotowy projekt w **Figmie, Penpocie, Illustratorze, InDesignie lub jakiejkolwiek aplikacji SVG** nie musi zostać zablokowany w jednej aplikacji. Otwórz **Layout Studio**, kliknij **Zaimportuj projekt**, a plik otworzy się jako żywy układ - nie spłaszczony obrazek. Każda warstwa staje się edytowalnym polem, gotowym do dalszej pracy, łączenia z narzędziami i renderowania według tych samych reguł.",
   "sources": [
     {
       "mono": "Fig",
@@ -53,14 +53,14 @@
     {
       "icon": "importFlowRender",
       "title": "Renderuj wszędzie",
-      "desc": "SVG, PDF, PNG, wideo — powtarzalne z adresu URL"
+      "desc": "SVG, PDF, PNG, wideo - powtarzalne z adresu URL"
     }
   ],
   "points": [
     {
       "icon": "importPointEdit",
       "title": "Pozostaje edytowalny",
-      "desc": "Tekst zostaje tekstem, kształty zostają kształtami, a obrazy trafiają do twojej biblioteki. Nadal pracujesz nad projektem — nigdy nie przemalowujesz zrzutu ekranu."
+      "desc": "Tekst zostaje tekstem, kształty zostają kształtami, a obrazy trafiają do twojej biblioteki. Nadal pracujesz nad projektem - nigdy nie przemalowujesz zrzutu ekranu."
     },
     {
       "icon": "importPointShield",
@@ -70,7 +70,7 @@
     {
       "icon": "importPointGrid",
       "title": "Staje się szablonem",
-      "desc": "Zapisz go, a układ stanie się wielokrotnego użytku narzędziem z własnym adresem URL — takim, które każdy, kto ma Lolly, może otworzyć, wypełnić na nowo i wyrenderować. Aplikacja projektowa nie jest potrzebna."
+      "desc": "Zapisz go, a układ stanie się wielokrotnego użytku narzędziem z własnym adresem URL - takim, które każdy, kto ma Lolly, może otworzyć, wypełnić na nowo i wyrenderować. Aplikacja projektowa nie jest potrzebna."
     }
   ],
   "cta": "Zobacz, jak działa importowanie projektu →",

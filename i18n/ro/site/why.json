@@ -1,19 +1,19 @@
 {
   "eyebrow": "De ce am creat Lolly",
   "heading": "Munca creativă de zi cu zi\nnu ar trebui să fie atât de grea.",
-  "lead": "Majoritatea oamenilor nu își doresc un studio de design. Vor un singur fișier corect, acum — fără să încalce brandul, fără să aștepte după cineva și fără să predea un document privat unui site despre care nu au auzit niciodată. Lolly există ca să elimine exact aceste trei frustrări.",
+  "lead": "Majoritatea oamenilor nu își doresc un studio de design. Vor un singur fișier corect, acum - fără să încalce brandul, fără să aștepte după cineva și fără să predea un document privat unui site despre care nu au auzit niciodată. Lolly există ca să elimine exact aceste trei frustrări.",
   "frustrations": [
     { "icon": "anxiety", "title": "Anxietatea de a ieși din brand", "desc": "Teama surdă de a alege culoarea sau fontul greșit și de a greși în public." },
     { "icon": "bottleneck", "title": "Blocajul", "desc": "Fiecare resursă mică, blocată într-o coadă în spatele unui designer ocupat, al unui instrument lent sau al încă unei aprobări." },
-    { "icon": "cloudDependence", "title": "Dependența de cloud", "desc": "Încarci fișiere sensibile doar ca să le convertești sau să le decupezi — și rămâi blocat în clipa în care ești offline." }
+    { "icon": "cloudDependence", "title": "Dependența de cloud", "desc": "Încarci fișiere sensibile doar ca să le convertești sau să le decupezi - și rămâi blocat în clipa în care ești offline." }
   ],
   "matrix": [
     { "pain": "Trimiți un brief pe email echipei de design, apoi aștepți zile întregi pentru un grafic mic.", "relief": "Completezi câteva câmpuri. Resursa finalizată e gata în câteva secunde." },
-    { "pain": "Ghicești fontul, culoarea și logo-ul potrivite — și speri să treacă de revizuirea de brand.", "relief": "Regulile de design sunt integrate în instrument. Se îndoaie, nu se rup. " },
+    { "pain": "Ghicești fontul, culoarea și logo-ul potrivite - și speri să treacă de revizuirea de brand.", "relief": "Regulile de design sunt integrate în instrument. Se îndoaie, nu se rup. " },
     { "pain": "Încarci un contract, un fluturaș de salariu sau o fotografie privată pe un site web gratuit oarecare, ca s-o convertești sau s-o decupezi.", "relief": "Totul rulează pe propriul tău dispozitiv. Nimic nu este încărcat; nimic nu părăsește dispozitivul persoanei responsabile." },
     { "pain": "Refaci manual același ecuson, card sau banner de o sută de ori.", "relief": "Lipești un tabel. Obții o sută de fișiere finalizate, gata de tipar, dintr-odată." },
-    { "pain": "„Care e cea mai recentă versiune?” — cauți prin fire de discuție Slack și drive-uri partajate.", "relief": "Resursa e un link. Aceleași date de intrare, același fișier, de fiecare dată." },
-    { "pain": "Fără semnal în avion, sau o rețea blocată — și pur și simplu ești blocat.", "relief": "Funcționează complet offline, pe orice dispozitiv, odată ce s-a încărcat o singură dată." },
+    { "pain": "„Care e cea mai recentă versiune?” - cauți prin fire de discuție Slack și drive-uri partajate.", "relief": "Resursa e un link. Aceleași date de intrare, același fișier, de fiecare dată." },
+    { "pain": "Fără semnal în avion, sau o rețea blocată - și pur și simplu ești blocat.", "relief": "Funcționează complet offline, pe orice dispozitiv, odată ce s-a încărcat o singură dată." },
     { "pain": "Conținut sub embargo:  profesioniștii din comunicare nu au cum să colaboreze în siguranță cu colaboratorii externi.", "relief": "blochează, criptează și protejează cu parolă fișiere, arhive zip și linkuri de partajare - totul fără conexiune la internet" }
   ]
 }

@@ -1,12 +1,12 @@
 {
   "eyebrow": "Původ a soukromí",
   "heading": "Dokaž, co jsi vytvořil.\nNech si, co je tvoje.",
-  "lead": "Každý obrázek, PDF nebo video, který exportuješ, může nést **Content Credential** – pečeť [C2PA](https://c2pa.org) odhalující jakoukoli manipulaci, vytvořenou celou na tvém zařízení. Dokazuje, že se soubor od odchodu z Lolly nezměnil, a jakmile si zaregistruješ identitu, zaznamená také, kdo ho podepsal.",
+  "lead": "Každý obrázek, PDF nebo video, který exportuješ, může nést **Content Credential** - pečeť [C2PA](https://c2pa.org) odhalující jakoukoli manipulaci, vytvořenou celou na tvém zařízení. Dokazuje, že se soubor od odchodu z Lolly nezměnil, a jakmile si zaregistruješ identitu, zaznamená také, kdo ho podepsal.",
   "illustration": "illusCheck",
   "checks": [
     { "title": "Manipulace se vždy pozná", "desc": "Pečeť pokrývá každý exportovaný bajt. Změň jediný pixel a kterýkoli validátor C2PA to odhalí." },
-    { "title": "Podepsáno na tvém zařízení", "desc": "Tvůj podpisový klíč se vygeneruje lokálně a nikdy neopustí zařízení – nepřečte si ho ani Lolly." },
-    { "title": "Ověřitelné kýmkoli, offline", "desc": "Soubor si nese svůj vlastní důkaz. Zkontroluj ho na kartě Verify, v CLI nebo v libovolném validátoru C2PA – nikam se nic nenahrává." }
+    { "title": "Podepsáno na tvém zařízení", "desc": "Tvůj podpisový klíč se vygeneruje lokálně a nikdy neopustí zařízení - nepřečte si ho ani Lolly." },
+    { "title": "Ověřitelné kýmkoli, offline", "desc": "Soubor si nese svůj vlastní důkaz. Zkontroluj ho na kartě Verify, v CLI nebo v libovolném validátoru C2PA - nikam se nic nenahrává." }
   ],
   "cards": [
     { "icon": "assureEyeOff", "title": "Nic neopustí tvé zařízení", "desc": "Žádné cloudové vykreslování, žádná telemetrie, žádná analytika. Co vytvoříš, zůstává na tvém počítači." },

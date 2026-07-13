@@ -13,10 +13,10 @@
     { "icon": "importFlowFile", "title": "Tasarım dosyan", "desc": "Figma, Penpot, Illustrator, InDesign ya da herhangi bir SVG" },
     { "icon": "importFlowCanvas", "title": "Düzenlenebilir kanvas", "desc": "Yeniden yazabileceğin, yeniden biçimlendirebileceğin ve taşıyabileceğin her katman bir kutu" },
     { "icon": "importFlowMix", "title": "Araçlarla karıştır", "desc": "Bir QR kodu, canlı bir grafik ya da başka bir çıktı ekle" },
-    { "icon": "importFlowRender", "title": "Her yerde oluştur", "desc": "SVG, PDF, PNG, video — bir URL'den yeniden üretilebilir" }
+    { "icon": "importFlowRender", "title": "Her yerde oluştur", "desc": "SVG, PDF, PNG, video - bir URL'den yeniden üretilebilir" }
   ],
   "points": [
-    { "icon": "importPointEdit", "title": "Düzenlenebilir kalır", "desc": "Metin metin kalır, şekiller şekil kalır, görseller kütüphanene katılır. Tasarım üzerinde çalışmaya devam edersin — asla bir ekran görüntüsünü yeniden boyamazsın." },
+    { "icon": "importPointEdit", "title": "Düzenlenebilir kalır", "desc": "Metin metin kalır, şekiller şekil kalır, görseller kütüphanene katılır. Tasarım üzerinde çalışmaya devam edersin - asla bir ekran görüntüsünü yeniden boyamazsın." },
     { "icon": "importPointShield", "title": "Kurallara uygun şekilde gelir", "desc": "Yazı tipleri markanın yazı tiplerine yeniden eşlenir ve her dolgu, yerel bir kutuyla aynı renk denetiminden geçer. Yabancı bir çalışma alanı, zaten yönetilmiş biçimde gelir." },
     { "icon": "importPointGrid", "title": "Bir şablona dönüşür", "desc": "Kaydet, düzen; Lolly'si olan herkesin açabileceği, yeniden doldurabileceği ve oluşturabileceği, yeniden kullanılabilir, URL üzerinden erişilebilir bir araca dönüşür. Tasarım uygulaması gerekmez." }
   ],

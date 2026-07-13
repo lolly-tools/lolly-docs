@@ -4,7 +4,7 @@ Frequently asked questions shown in the accordion on the `/info` landing page.
 
 **How to maintain:** each `##` heading below is a question; everything beneath it
 (up to the next `##`) is the answer. Answers use the same lightweight markdown as
-the rest of the site — separate paragraphs with a blank line. Add, remove, or
+the rest of the site - separate paragraphs with a blank line. Add, remove, or
 reorder questions here and re-run `npm run build:info` (or `npm run dev:web`).
 Everything above the first `##` (this title and these notes) is ignored by the build.
 
@@ -18,7 +18,7 @@ Lolly produces a large volume of content. We take a strict data minimization app
 
 ### What are the feature flags?
 
-Feature flags turn parts of Lolly on or off. Usually an administrator controls these — with Lolly, you are in control.
+Feature flags turn parts of Lolly on or off. Usually an administrator controls these - with Lolly, you are in control.
 
 ## How do I get the mobile or desktop apps?
 
@@ -36,32 +36,32 @@ We're also laughing at the time and bills we are saving with this approach.
 
 ## What hurdles could I expect adopting Lolly?
 
-Lolly slots in wherever you already generate files — the CLI is the same engine
+Lolly slots in wherever you already generate files - the CLI is the same engine
 as the App, so a pipeline run at 2am can't drift from what a person previews in a
 browser. The friction to adoption is rarely technical; it's organisational. Expect these:
 
 **A curated brand catalog has to be authored.** Lolly is a platform, not a
 finished pack of your templates. For a *governed rollout*, someone defines the shared
 asset catalog (logos, palettes, fonts as permanent IDs) and writes the manifest +
-template for each output type. Individuals don't have to wait for that, though — in
+template for each output type. Individuals don't have to wait for that, though - in
 the open app anyone can ingest their own files into the catalogue and build tools in
 Layout Studio from day one.
 
-**Governance-by-git is optional — and unfamiliar to non-engineers.** If you run a
+**Governance-by-git is optional - and unfamiliar to non-engineers.** If you run a
 *shared, controlled* catalog, "the PR review *is* the moderation" is elegant for
 engineers and unfamiliar to most brand and marketing teams. If the people who own
-brand decisions don't live in git, you'll want a workflow that bridges them — or IT
+brand decisions don't live in git, you'll want a workflow that bridges them - or IT
 quietly becomes the strategic design partner and wider institutional gatekeeper
 (preferred by many in long-running production environments). Teams that don't want
 this simply skip it.
 
-**It's deliberately narrow — frame it that way.** Lolly is not for bespoke or hero
-content. It *is* your personal DAM — hydrated and supercharged by your design
-system, tools and catalog — and it *does* have an open canvas (Layout Studio), but
+**It's deliberately narrow - frame it that way.** Lolly is not for bespoke or hero
+content. It *is* your personal DAM - hydrated and supercharged by your design
+system, tools and catalog - and it *does* have an open canvas (Layout Studio), but
 even there colours, type and assets conform to the active design globals, so free
 arrangement stays inside the system. Judged against Figma or Canva it will
-look limited. Judged as what it is — operationalised, recurring, massive-scale asset
-generation — nothing competes. The wrong framing is the most common set-back.
+look limited. Judged as what it is - operationalised, recurring, massive-scale asset
+generation - nothing competes. The wrong framing is the most common set-back.
 
 **Change management on the producing side.** Existing processes work today, even if
 the output is off-brand. Re-pointing them at the engine means re-testing re-learning,
@@ -95,9 +95,9 @@ We win the war for governance with excellent conveinece and service.
 
 ## Can Lolly edit and render my Figma, Penpot, Illustrator or InDesign files?
 
-Yes. Open **Layout Studio** and click **Import a design**: it accepts a native Figma **.fig** (Save local copy), a Penpot **.penpot** export, an Illustrator **.ai** or **.pdf**, an InDesign **.idml** (File → Export → InDesign Markup), or **any SVG** (the wide door — almost any design app exports it). Everything is parsed entirely on your device, no account or plugin needed.
+Yes. Open **Layout Studio** and click **Import a design**: it accepts a native Figma **.fig** (Save local copy), a Penpot **.penpot** export, an Illustrator **.ai** or **.pdf**, an InDesign **.idml** (File → Export → InDesign Markup), or **any SVG** (the wide door - almost any design app exports it). Everything is parsed entirely on your device, no account or plugin needed.
 
-Layers arrive as editable boxes on the open canvas: text stays retypable, shapes stay shapes, images join your on-device library, and type and colours conform to the brand globals. Save it and the layout becomes a reusable, URL-addressable template anyone with Lolly can refill — and you can mix in live tools (a QR code, a chart) that re-render on load. From there it renders like anything else in Lolly — SVG, PDF, PNG and the rest, reproducible from its URL. See [Import a design](/info/design-import.html).
+Layers arrive as editable boxes on the open canvas: text stays retypable, shapes stay shapes, images join your on-device library, and type and colours conform to the brand globals. Save it and the layout becomes a reusable, URL-addressable template anyone with Lolly can refill - and you can mix in live tools (a QR code, a chart) that re-render on load. From there it renders like anything else in Lolly - SVG, PDF, PNG and the rest, reproducible from its URL. See [Import a design](/info/design-import.html).
 
 ## What happens on Aug 29?
 
@@ -113,11 +113,11 @@ SUSE is an enterprise open source infrastructure company with more than three de
 
 From SUSE's perspective, this is about walking the talk on sovereignty and security. As of today, the likelihood SUSE productizes Lolly is near absolute zero.
 
-Full disclosure: SUSE *is* building out internal tooling to integrate Lolly within its IT systems — that's about SUSE's internal set-up, not public vs. private development.
+Full disclosure: SUSE *is* building out internal tooling to integrate Lolly within its IT systems - that's about SUSE's internal set-up, not public vs. private development.
 
 Speaking of the public side, Lolly aims to be built through [Open Build Service](https://openbuildservice.org/), with secure supply-chain artifacts delivered by the [SUSE Application Collection](https://apps.rancher.io/applications).
 
-We'll build as much as we can in the open — you just won't see SUSE-branded tools for long, nor SUSE's internal workforce and commercial processes, which are unrelated to Lolly.
+We'll build as much as we can in the open - you just won't see SUSE-branded tools for long, nor SUSE's internal workforce and commercial processes, which are unrelated to Lolly.
 
 ## What flavour is that Lolly logo?
 

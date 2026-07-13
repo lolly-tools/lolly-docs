@@ -14,25 +14,25 @@ For the cross-platform overview (CLI, desktop, Android), see
 ## Status on this dev machine
 
 > **Point-in-time snapshot, not a spec.** The table below records one developer
-> machine's toolchain state as of **June 2026** — it goes stale the moment the
+> machine's toolchain state as of **June 2026** - it goes stale the moment the
 > prerequisites are installed. It's here to show *what a not-yet-ready machine
 > looks like*, not to describe the project. If you're setting up iOS builds, skip
 > to [Prerequisites](#prerequisites); the requirements there are durable.
 
 **iOS builds cannot run on that machine yet.** This was a tooling gap, not a code
-problem — the desktop `.app`/`.dmg` build works because it only needs Command
+problem - the desktop `.app`/`.dmg` build works because it only needs Command
 Line Tools.
 
 Verified state (2026-06):
 
 | Requirement | Needed for iOS | Present here |
 |---|---|---|
-| Full **Xcode** (`xcodebuild`) | yes | No — only Command Line Tools (`xcode-select -p` -> `/Library/Developer/CommandLineTools`) |
-| iOS **Simulator** (`simctl`) | yes | No — `xcrun simctl` needs full Xcode |
-| **CocoaPods** (`pod`) | yes | Yes — installed (`pod` 1.16.2, via Homebrew) |
-| iOS **Rust targets** | yes | Yes — `aarch64-apple-ios`, `aarch64-apple-ios-sim`, `x86_64-apple-ios` installed |
-| Mobile `node_modules` + Tauri CLI | yes | Yes — installed (`@tauri-apps/cli`, `plugin-fs`, `plugin-http`) |
-| `src-tauri/gen/apple/` (init output) | yes | No — iOS project not initialized |
+| Full **Xcode** (`xcodebuild`) | yes | No - only Command Line Tools (`xcode-select -p` -> `/Library/Developer/CommandLineTools`) |
+| iOS **Simulator** (`simctl`) | yes | No - `xcrun simctl` needs full Xcode |
+| **CocoaPods** (`pod`) | yes | Yes - installed (`pod` 1.16.2, via Homebrew) |
+| iOS **Rust targets** | yes | Yes - `aarch64-apple-ios`, `aarch64-apple-ios-sim`, `x86_64-apple-ios` installed |
+| Mobile `node_modules` + Tauri CLI | yes | Yes - installed (`@tauri-apps/cli`, `plugin-fs`, `plugin-http`) |
+| `src-tauri/gen/apple/` (init output) | yes | No - iOS project not initialized |
 
 `tauri ios init`, `npm run dev:ios`, and `npm run build:ios` all require full
 Xcode (plus CocoaPods), so each fails here until the prerequisites below are met.
@@ -43,7 +43,7 @@ remaining blockers are full Xcode and the one-time project init.
 
 ## Prerequisites
 
-1. **Xcode** (full app, from the App Store — not just Command Line Tools). Then
+1. **Xcode** (full app, from the App Store - not just Command Line Tools). Then
    point the toolchain at it and accept the license:
 
    ```bash
@@ -61,7 +61,7 @@ remaining blockers are full Xcode and the one-time project init.
    brew install cocoapods   # Homebrew is already present at /opt/homebrew/bin/brew
    ```
 
-3. **iOS Rust targets** (device + both simulator archs) — already installed here;
+3. **iOS Rust targets** (device + both simulator archs) - already installed here;
    the command is idempotent on a fresh checkout:
 
    ```bash
@@ -69,7 +69,7 @@ remaining blockers are full Xcode and the one-time project init.
    ```
 
 4. **Shell dependencies** (the mobile shell has its own `node_modules` and Tauri
-   CLI) — already installed here:
+   CLI) - already installed here:
 
    ```bash
    cd shells/tauri-mobile
@@ -86,7 +86,7 @@ the Apple Developer portal / Xcode account settings).
 
 Generates the native Xcode project under
 `shells/tauri-mobile/src-tauri/gen/apple/`. This directory is gitignored
-(`**/src-tauri/gen/`), so it is regenerated per checkout — it is not committed.
+(`**/src-tauri/gen/`), so it is regenerated per checkout - it is not committed.
 
 ```bash
 cd shells/tauri-mobile
@@ -143,7 +143,7 @@ reload works the same as the web and desktop shells.
   `npm run dev:ios -- --open`.
 - The state bridge uses `bridge-overrides/state.ts` (filesystem via
   `tauri-plugin-fs`, `$APPDATA/Lolly/saved-state/*.json`), not IndexedDB. iOS
-  sandboxing forbids absolute paths — keep all writes under AppData; never add
+  sandboxing forbids absolute paths - keep all writes under AppData; never add
   absolute-path fs scopes.
 
 ### Feature subset on iOS
@@ -152,7 +152,7 @@ The mobile shell provides the capabilities `network`, `clipboard`, `wasm`,
 `compose`, and `filesystem` (the last via `tauri-plugin-fs`; see
 `bridge-overrides/capabilities-provided.ts`). Tools that require `ffmpeg`
 (sidecar transcoding) or `capture` (native headless-Chrome page capture,
-desktop-only) are filtered out of the gallery — there is no `tauri-plugin-shell`
+desktop-only) are filtered out of the gallery - there is no `tauri-plugin-shell`
 and no capture path on mobile. Camera input works through the WebView's
 `getUserMedia` (an OS-permission-gated API, independent of Lolly's capability
 gating). This matches Android.
@@ -178,13 +178,13 @@ Xcode project.**
 
 | Env var | Purpose |
 |---|---|
-| `APPLE_DEVELOPMENT_TEAM` | Apple Developer **Team ID** (10 chars). Required — Tauri writes it as `DEVELOPMENT_TEAM` so a signing identity is selected non-interactively. |
+| `APPLE_DEVELOPMENT_TEAM` | Apple Developer **Team ID** (10 chars). Required - Tauri writes it as `DEVELOPMENT_TEAM` so a signing identity is selected non-interactively. |
 | `APPLE_API_ISSUER` | App Store Connect API **issuer ID** (UUID), for CI / non-interactive signing + upload. |
 | `APPLE_API_KEY` | App Store Connect API **key ID**. |
 | `APPLE_API_KEY_PATH` | Path to the `.p8` API private key file. |
 
 ```bash
-export APPLE_DEVELOPMENT_TEAM=XXXXXXXXXX          # your Team ID — placeholder, fill in locally / in CI secrets
+export APPLE_DEVELOPMENT_TEAM=XXXXXXXXXX          # your Team ID - placeholder, fill in locally / in CI secrets
 npm run build:ios -- --export-method app-store-connect
 ```
 
@@ -206,4 +206,4 @@ iOS and Android share the mobile shell, the bridge overrides, and the feature
 subset. The differences are toolchain-only: iOS requires macOS + full Xcode +
 CocoaPods and signs with an Apple Team ID / App Store Connect key; Android
 requires the Android SDK + NDK and signs with a Java keystore
-(`ANDROID_KEY_STORE*` — see `docs/build-guide.md`).
+(`ANDROID_KEY_STORE*` - see `docs/build-guide.md`).

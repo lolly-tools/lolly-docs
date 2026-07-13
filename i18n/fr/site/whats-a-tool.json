@@ -7,16 +7,16 @@
     { "file": "hooks.js", "name": "Hooks", "desc": "Logique optionnelle, sandboxée" }
   ],
   "features": [
-    { "icon": "toolFeatureStar", "title": "Un modèle intelligent", "desc": "Il connaît sa propre mise en page, sa typo, ses couleurs et les règles de marque. Tu apportes le contenu — il s'occupe du reste." },
+    { "icon": "toolFeatureStar", "title": "Un modèle intelligent", "desc": "Il connaît sa propre mise en page, sa typo, ses couleurs et les règles de marque. Tu apportes le contenu - il s'occupe du reste." },
     { "icon": "toolFeaturePeople", "title": "Aucune expérience en design requise", "desc": "Créé une fois par quelqu'un qui connaît la marque. Tout le monde n'a plus qu'à remplir les blancs." },
     { "icon": "toolFeatureCode", "title": "Le design en code", "desc": "Du simple HTML, CSS et JS. Versionné, diffable et relisable comme n'importe quel autre fichier source." },
-    { "icon": "toolFeatureMonitor", "title": "Aucune application nécessaire", "desc": "Ouvre `template.html` dans n'importe quel navigateur — ça marche, tout simplement. L'outil, c'est l'appli." },
-    { "icon": "toolFeatureShuffle", "title": "Mise en page en canevas libre", "desc": "Certains outils s'ouvrent comme un canevas à manipulation directe — fais glisser, pivote et aligne des blocs de texte, de formes et d'images, exportés via le même chemin déterministe." },
-    { "icon": "toolFeatureNested", "title": "Des outils dans des outils", "desc": "Traite un outil comme une image à l'intérieur d'un autre outil — un badge qui génère son propre QR code, une carte avec un graphique en direct — tout en gardant toute son intelligence : toujours en direct, toujours régénéré, jamais une image aplatie." }
+    { "icon": "toolFeatureMonitor", "title": "Aucune application nécessaire", "desc": "Ouvre `template.html` dans n'importe quel navigateur - ça marche, tout simplement. L'outil, c'est l'appli." },
+    { "icon": "toolFeatureShuffle", "title": "Mise en page en canevas libre", "desc": "Certains outils s'ouvrent comme un canevas à manipulation directe - fais glisser, pivote et aligne des blocs de texte, de formes et d'images, exportés via le même chemin déterministe." },
+    { "icon": "toolFeatureNested", "title": "Des outils dans des outils", "desc": "Traite un outil comme une image à l'intérieur d'un autre outil - un badge qui génère son propre QR code, une carte avec un graphique en direct - tout en gardant toute son intelligence : toujours en direct, toujours régénéré, jamais une image aplatie." }
   ],
   "tryNow": {
     "title": "Les outils fonctionnent très bien seuls.",
-    "desc": "Pour générer du PNG, PDF, SVG, vidéo, et plus encore — utilise la plateforme Lolly.",
+    "desc": "Pour générer du PNG, PDF, SVG, vidéo, et plus encore - utilise la plateforme Lolly.",
     "cta": "Lancer l'appli ↗",
     "href": "/"
   }

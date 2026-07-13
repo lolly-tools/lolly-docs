@@ -1,13 +1,13 @@
 {
   "title": "Tři cesty, jak začít",
-  "lead": "Začni s [Rychlým startem](/info/quickstart.html) — nahraješ svou značku a vytvoříš první soubor — a pak pokračuj cestou, která ti sedí.",
+  "lead": "Začni s [Rychlým startem](/info/quickstart.html) - nahraješ svou značku a vytvoříš první soubor - a pak pokračuj cestou, která ti sedí.",
   "cards": [
     {
       "href": "/info/creators.html",
       "icon": "media",
       "eyebrow": "Pro tvůrce",
       "name": "Tvoř věci",
-      "desc": "Hotové soubory za pár vteřin — žádný designový nástroj, žádné čekání. Výhody a jak z aplikace vytěžit maximum.",
+      "desc": "Hotové soubory za pár vteřin - žádný designový nástroj, žádné čekání. Výhody a jak z aplikace vytěžit maximum.",
       "cta": "Prozkoumat →"
     },
     {

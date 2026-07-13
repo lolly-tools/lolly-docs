@@ -7,16 +7,16 @@
     { "file": "hooks.js", "name": "Hooks", "desc": "Optional na logic, naka-sandbox" }
   ],
   "features": [
-    { "icon": "toolFeatureStar", "title": "Isang matalinong template", "desc": "Alam nito ang sarili nitong layout, type, kulay, at brand rules. Ikaw na lang ang maglalagay ng content — ito na ang bahala sa lahat ng iba pa." },
+    { "icon": "toolFeatureStar", "title": "Isang matalinong template", "desc": "Alam nito ang sarili nitong layout, type, kulay, at brand rules. Ikaw na lang ang maglalagay ng content - ito na ang bahala sa lahat ng iba pa." },
     { "icon": "toolFeaturePeople", "title": "Hindi kailangan ng design experience", "desc": "Ginawa nang isang beses ng taong may alam sa brand. Ang iba, magpupuno na lang ng mga blangko." },
     { "icon": "toolFeatureCode", "title": "Design bilang code", "desc": "Plain na HTML, CSS, at JS. Version-controlled, madaling i-diff, at puwedeng i-review tulad ng ibang source file." },
-    { "icon": "toolFeatureMonitor", "title": "Hindi kailangan ng app", "desc": "Buksan lang ang `template.html` sa kahit anong browser — gumagana agad. Ang tool mismo ang app." },
-    { "icon": "toolFeatureShuffle", "title": "Free-canvas na layout", "desc": "May mga tool na nagbubukas bilang direct-manipulation canvas — i-drag, i-rotate, at i-snap ang mga box ng text, shapes, at images, na ineeksport gamit ang parehong deterministic na proseso." },
-    { "icon": "toolFeatureNested", "title": "Mga tool sa loob ng tool", "desc": "Tratuhin ang isang tool na parang image sa loob ng ibang tool — isang badge na nagre-render ng sarili nitong QR code, isang card na may live chart — at mananatiling buo ang mga smarts nito: live pa rin, nire-render ulit pa rin, hindi kailanman naging flattened na larawan." }
+    { "icon": "toolFeatureMonitor", "title": "Hindi kailangan ng app", "desc": "Buksan lang ang `template.html` sa kahit anong browser - gumagana agad. Ang tool mismo ang app." },
+    { "icon": "toolFeatureShuffle", "title": "Free-canvas na layout", "desc": "May mga tool na nagbubukas bilang direct-manipulation canvas - i-drag, i-rotate, at i-snap ang mga box ng text, shapes, at images, na ineeksport gamit ang parehong deterministic na proseso." },
+    { "icon": "toolFeatureNested", "title": "Mga tool sa loob ng tool", "desc": "Tratuhin ang isang tool na parang image sa loob ng ibang tool - isang badge na nagre-render ng sarili nitong QR code, isang card na may live chart - at mananatiling buo ang mga smarts nito: live pa rin, nire-render ulit pa rin, hindi kailanman naging flattened na larawan." }
   ],
   "tryNow": {
     "title": "Gumagana nang maayos ang mga tool nang mag-isa.",
-    "desc": "Para mag-render sa PNG, PDF, SVG, video, at iba pa — gamitin ang Lolly platform.",
+    "desc": "Para mag-render sa PNG, PDF, SVG, video, at iba pa - gamitin ang Lolly platform.",
     "cta": "Buksan ang App ↗",
     "href": "/"
   }

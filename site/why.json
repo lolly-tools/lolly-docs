@@ -1,19 +1,19 @@
 {
   "eyebrow": "Why we built Lolly",
   "heading": "Everyday creative work\nshouldn’t be this hard.",
-  "lead": "Most people don’t want a design studio. They want one correct file, now — without breaking the brand, without waiting on someone, and without handing a private document to a website they’ve never heard of. Lolly exists to take those three frustrations away.",
+  "lead": "Most people don’t want a design studio. They want one correct file, now - without breaking the brand, without waiting on someone, and without handing a private document to a website they’ve never heard of. Lolly exists to take those three frustrations away.",
   "frustrations": [
     { "icon": "anxiety", "title": "Off-brand anxiety", "desc": "The quiet dread of picking the wrong colour or font and getting it wrong in public." },
     { "icon": "bottleneck", "title": "The bottleneck", "desc": "Every small asset stuck in a queue behind a busy designer, a slow tool, or one more approval." },
-    { "icon": "cloudDependence", "title": "Cloud dependence", "desc": "Uploading sensitive files just to convert or crop them — and being stranded the moment you’re offline." }
+    { "icon": "cloudDependence", "title": "Cloud dependence", "desc": "Uploading sensitive files just to convert or crop them - and being stranded the moment you’re offline." }
   ],
   "matrix": [
     { "pain": "Email a brief to the design team, then wait days for one small graphic.", "relief": "Fill in a few fields. The finished asset is ready in seconds." },
-    { "pain": "Guess at the right font, colour and logo — and hope it passes brand review.", "relief": "The design rules are baked into the tool. They bend, not break. " },
+    { "pain": "Guess at the right font, colour and logo - and hope it passes brand review.", "relief": "The design rules are baked into the tool. They bend, not break. " },
     { "pain": "Upload a contract, payslip or private photo to a random free website to convert or crop it.", "relief": "Everything runs on your own device. Nothing is uploaded; nothing leaves the responsible individuals device." },
     { "pain": "Re-make the same badge, card or banner a hundred times by hand.", "relief": "Paste a spreadsheet. Get a hundred finished, print-ready files at once." },
-    { "pain": "“Which version is the latest?” — hunting through Slack threads and shared drives.", "relief": "The asset is a link. Same inputs, same file, every single time." },
-    { "pain": "No signal on the plane, or a locked-down network — so you’re simply blocked.", "relief": "Works fully offline, on any device, once it has loaded once." },
+    { "pain": "“Which version is the latest?” - hunting through Slack threads and shared drives.", "relief": "The asset is a link. Same inputs, same file, every single time." },
+    { "pain": "No signal on the plane, or a locked-down network - so you’re simply blocked.", "relief": "Works fully offline, on any device, once it has loaded once." },
     { "pain": "Embargoed content:  Comms professionals are locked out of engaging collaborators securely.", "relief": "lock, encrypt, and password files, zips, and share links - all with zero internet" }
   ]
 }

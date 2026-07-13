@@ -55,10 +55,10 @@ Validated against `schemas/asset.schema.json`.
 | Tier         | What it means                                                  | When to use |
 |--------------|----------------------------------------------------------------|-------------|
 | `core`       | Bundled with the app. Always available offline.                | Logos, primary palette, design tokens, core mascot poses |
-| `catalog`    | Synced at boot, cached. Available offline once cached.         | Most things — event packs, icon sets |
-| `on-demand`  | Fetched when first used, then cached. Needs net first time.    | Heavy items — hi-res photo, video b-roll |
+| `catalog`    | Synced at boot, cached. Available offline once cached.         | Most things - event packs, icon sets |
+| `on-demand`  | Fetched when first used, then cached. Needs net first time.    | Heavy items - hi-res photo, video b-roll |
 
-The `core` tier is meant to stay small (target a few dozen brand essentials) — most assets ride in the `catalog` and `on-demand` tiers. Catalog-tier entries can set `"prefetch": true` (catalog tier only) to fetch their bytes at sync time rather than lazily on first use.
+The `core` tier is meant to stay small (target a few dozen brand essentials) - most assets ride in the `catalog` and `on-demand` tiers. Catalog-tier entries can set `"prefetch": true` (catalog tier only) to fetch their bytes at sync time rather than lazily on first use.
 
 ## Locales
 
@@ -98,11 +98,11 @@ Palettes are a special asset type whose payload is JSON, not an image:
 
 Tools reference palette swatches through `host.assets.get(id)` → `ref.meta.swatches`. Note this is wired up in the **CLI shell** today (its bridge parses the palette JSON and spreads `swatches` into `meta`); the web shell's assets bridge does not yet populate `meta.swatches`, so don't rely on it cross-shell.
 
-The `color` input type also accepts a `palette` field (schema-valid, mapped to a `palette-picker` control in `engine/src/inputs.ts`), but the web shell currently renders that control as a **stub**. For a working brand-restricted picker today, use a `color` input with `"swatchesOnly": true` — it renders the real brand swatch picker (no hex/native/alpha).
+The `color` input type also accepts a `palette` field (schema-valid, mapped to a `palette-picker` control in `engine/src/inputs.ts`), but the web shell currently renders that control as a **stub**. For a working brand-restricted picker today, use a `color` input with `"swatchesOnly": true` - it renders the real brand swatch picker (no hex/native/alpha).
 
 ## Themable two-colour icons
 
-An icon tagged `themable` is an SVG that expresses its two colours only as classes, with one overridable default block and nothing else — no other `fill`/`stroke`/`style` anywhere:
+An icon tagged `themable` is an SVG that expresses its two colours only as classes, with one overridable default block and nothing else - no other `fill`/`stroke`/`style` anywhere:
 
 ```svg
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
@@ -112,23 +112,23 @@ An icon tagged `themable` is an SVG that expresses its two colours only as class
 </svg>
 ```
 
-- `.c1` is the **accent**, `.c2` the **base**. The defaults (jungle on pine) are plain class rules, so inlining the SVG lets a page or tool override them — `.c1 { fill: … !important }` wins by design.
+- `.c1` is the **accent**, `.c2` the **base**. The defaults (jungle on pine) are plain class rules, so inlining the SVG lets a page or tool override them - `.c1 { fill: … !important }` wins by design.
 - The colour pairings the picker offers come from a palette-type asset tagged `icon-themes` (`suse/palette/icon-themes`); its first pairing must match the defaults baked into the icons.
-- A non-default pairing chosen in the picker travels **inside the asset id** — `suse/icons/ai?theme=ocean` — because an asset value persists as its id alone (URL mode). Both shell bridges parse that suffix (`parseThemedAssetId`) and bake the pairing at resolve time (`applyIconTheme`: style block removed, fills inlined as attributes) so two differently-themed copies never fight over class rules inside one exported SVG/PDF.
+- A non-default pairing chosen in the picker travels **inside the asset id** - `suse/icons/ai?theme=ocean` - because an asset value persists as its id alone (URL mode). Both shell bridges parse that suffix (`parseThemedAssetId`) and bake the pairing at resolve time (`applyIconTheme`: style block removed, fills inlined as attributes) so two differently-themed copies never fight over class rules inside one exported SVG/PDF.
 - The validator enforces the contract for every `themable`-tagged SVG (exactly one default style block; classes limited to `c1`/`c2`; no inline styles or strokes).
 
 ## Design tokens
 
-`type: "tokens"` is a DTCG (Design Tokens Community Group) JSON document — the canonical brand-color source. The core asset `suse/tokens/brand` feeds the color picker's swatches and the defaults for brand-bound inputs. Beyond the normal asset checks, the validator runs a dedicated DTCG-structure validation against `schemas/tokens.schema.json` (`scripts/validate-catalog.ts`). See [Design tokens](/info/design-tokens.html) for the token model and how palettes relate.
+`type: "tokens"` is a DTCG (Design Tokens Community Group) JSON document - the canonical brand-color source. The core asset `suse/tokens/brand` feeds the color picker's swatches and the defaults for brand-bound inputs. Beyond the normal asset checks, the validator runs a dedicated DTCG-structure validation against `schemas/tokens.schema.json` (`scripts/validate-catalog.ts`). See [Design tokens](/info/design-tokens.html) for the token model and how palettes relate.
 
 ## Fonts
 
-`font` is a valid asset type, but the shared SUSE typefaces don't live in the asset index — they ship as static files under `catalog/fonts/`, a sibling of `catalog/assets/`:
+`font` is a valid asset type, but the shared SUSE typefaces don't live in the asset index - they ship as static files under `catalog/fonts/`, a sibling of `catalog/assets/`:
 
 ```
 catalog/fonts/
 ├── variable/    # variable TTFs (SUSE[wght].ttf, SUSEMono[wght].ttf, + italic axes)
-├── webfonts/    # woff2 — the variable fonts plus per-weight statics
+├── webfonts/    # woff2 - the variable fonts plus per-weight statics
 ├── ttf/         # static TTFs
 └── otf/         # static OTFs
 ```
@@ -139,16 +139,16 @@ The web shell loads them via `@font-face` (`shells/web/src/styles/fonts.css`, wi
 
 1. Drop the file under `catalog/assets/<namespace>/...`.
 2. Add an entry to `catalog/assets/index.json` (the `checksum`/`size` can be left
-   as `sha256-PLACEHOLDER`/`0` — the next step fills them in).
-3. Run `npm run build:catalog` — `scripts/checksum-assets.ts` computes the real
+   as `sha256-PLACEHOLDER`/`0` - the next step fills them in).
+3. Run `npm run build:catalog` - `scripts/checksum-assets.ts` computes the real
    SHA-256 (SRI) and byte size for every asset format and writes them into the
    index. `npm run validate:catalog` then verifies every checksum against the
    bytes on disk.
 4. PR review. Approval = brand approval.
 5. Merge → build catalog → deploy. Clients pick it up at next sync.
 
-This git-reviewed flow is for a **shared, governed catalog** — the model where a whole organisation syncs one asset library and wants every change to carry PR review as brand approval. It's an *option for that case*, not how the app works day to day.
+This git-reviewed flow is for a **shared, governed catalog** - the model where a whole organisation syncs one asset library and wants every change to carry PR review as brand approval. It's an *option for that case*, not how the app works day to day.
 
-Most people never touch it: in the open app you **ingest your own creative files straight into your catalogue** — drag them onto the [Catalogue](/info/using.html) view or the Brand Studio's Catalogue tab, and they're instantly available in every tool's asset picker, on your device. Those user assets live under the `user/` namespace and never enter a shared catalog. The git route matters only when you're curating a library many people depend on.
+Most people never touch it: in the open app you **ingest your own creative files straight into your catalogue** - drag them onto the [Catalogue](/info/using.html) view or the Brand Studio's Catalogue tab, and they're instantly available in every tool's asset picker, on your device. Those user assets live under the `user/` namespace and never enter a shared catalog. The git route matters only when you're curating a library many people depend on.
 
-Composed renders — a tool that embeds another tool's output via `composes` (see [Authoring tools](/info/authoring-tools.html)) — surface as ephemeral `AssetRef`s through the same `{{asset id}}` helper, but they are runtime intermediates, not catalog assets.
+Composed renders - a tool that embeds another tool's output via `composes` (see [Authoring tools](/info/authoring-tools.html)) - surface as ephemeral `AssetRef`s through the same `{{asset id}}` helper, but they are runtime intermediates, not catalog assets.

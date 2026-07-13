@@ -1,12 +1,12 @@
 {
   "eyebrow": "Provenance at privacy",
   "heading": "Patunayan kung ano ang ginawa mo.\nPanatilihin ang sa'yo.",
-  "lead": "Bawat larawan, PDF, o video na i-export mo ay puwedeng magdala ng **Content Credential** — isang tamper-evident [C2PA](https://c2pa.org) na selyo na ginawa nang buo sa device mo. Pinapatunayan nito na hindi nagbago ang file mula nang umalis ito sa Lolly, at kapag nag-enrol ka na ng identity, itinatala kung sino ang pumirma dito.",
+  "lead": "Bawat larawan, PDF, o video na i-export mo ay puwedeng magdala ng **Content Credential** - isang tamper-evident [C2PA](https://c2pa.org) na selyo na ginawa nang buo sa device mo. Pinapatunayan nito na hindi nagbago ang file mula nang umalis ito sa Lolly, at kapag nag-enrol ka na ng identity, itinatala kung sino ang pumirma dito.",
   "illustration": "illusCheck",
   "checks": [
     { "title": "Tamper-evident bilang default", "desc": "Sakop ng selyo ang bawat na-export na byte. Baguhin mo man lang ang isang pixel, ma-fla-flag agad ito ng kahit anong C2PA validator." },
-    { "title": "Naka-sign sa device mo", "desc": "Ang signing key mo ay ginagawa nang lokal at hindi ito umaalis sa device — kahit si Lolly hindi ito mababasa." },
-    { "title": "Ma-ve-verify ng kahit sino, offline", "desc": "Dala ng file ang sarili nitong patunay. I-check ito sa Verify tab, sa CLI, o sa kahit anong C2PA validator — walang ina-upload." }
+    { "title": "Naka-sign sa device mo", "desc": "Ang signing key mo ay ginagawa nang lokal at hindi ito umaalis sa device - kahit si Lolly hindi ito mababasa." },
+    { "title": "Ma-ve-verify ng kahit sino, offline", "desc": "Dala ng file ang sarili nitong patunay. I-check ito sa Verify tab, sa CLI, o sa kahit anong C2PA validator - walang ina-upload." }
   ],
   "cards": [
     { "icon": "assureEyeOff", "title": "Walang umaalis sa device mo", "desc": "Walang cloud rendering, walang telemetry, walang analytics. Ang ginawa mo, nananatili sa machine mo." },

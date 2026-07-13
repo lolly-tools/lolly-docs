@@ -1,13 +1,13 @@
 {
   "title": "Tre vägar in",
-  "lead": "Börja med [Snabbstart](/info/quickstart.html) — lägg in ditt varumärke och få ut din första fil — följ sedan den väg som passar dig.",
+  "lead": "Börja med [Snabbstart](/info/quickstart.html) - lägg in ditt varumärke och få ut din första fil - följ sedan den väg som passar dig.",
   "cards": [
     {
       "href": "/info/creators.html",
       "icon": "media",
       "eyebrow": "För kreatörer",
       "name": "Skapa saker",
-      "desc": "Färdiga filer på några sekunder — inget designverktyg, ingen väntan. Fördelarna, och hur du får ut mesta möjliga av appen.",
+      "desc": "Färdiga filer på några sekunder - inget designverktyg, ingen väntan. Fördelarna, och hur du får ut mesta möjliga av appen.",
       "cta": "Utforska →"
     },
     {

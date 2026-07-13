@@ -1,19 +1,19 @@
 {
   "eyebrow": "Mengapa kami membangun Lolly",
   "heading": "Pekerjaan kreatif sehari-hari\ntidak seharusnya sesulit ini.",
-  "lead": "Kebanyakan orang tidak menginginkan studio desain. Mereka menginginkan satu berkas yang benar, sekarang — tanpa merusak brand, tanpa menunggu orang lain, dan tanpa menyerahkan dokumen pribadi ke situs web yang belum pernah mereka dengar. Lolly hadir untuk menghilangkan ketiga frustrasi itu.",
+  "lead": "Kebanyakan orang tidak menginginkan studio desain. Mereka menginginkan satu berkas yang benar, sekarang - tanpa merusak brand, tanpa menunggu orang lain, dan tanpa menyerahkan dokumen pribadi ke situs web yang belum pernah mereka dengar. Lolly hadir untuk menghilangkan ketiga frustrasi itu.",
   "frustrations": [
     { "icon": "anxiety", "title": "Kecemasan melenceng dari brand", "desc": "Kekhawatiran diam-diam karena memilih warna atau font yang salah, dan tampil salah di depan publik." },
     { "icon": "bottleneck", "title": "Bottleneck", "desc": "Setiap aset kecil tersangkut dalam antrean di belakang desainer yang sibuk, alat yang lambat, atau satu lagi persetujuan." },
-    { "icon": "cloudDependence", "title": "Ketergantungan pada cloud", "desc": "Mengunggah berkas sensitif hanya untuk mengonversi atau memangkasnya — dan langsung terhenti begitu Anda offline." }
+    { "icon": "cloudDependence", "title": "Ketergantungan pada cloud", "desc": "Mengunggah berkas sensitif hanya untuk mengonversi atau memangkasnya - dan langsung terhenti begitu Anda offline." }
   ],
   "matrix": [
     { "pain": "Kirim brief lewat email ke tim desain, lalu tunggu berhari-hari untuk satu grafik kecil.", "relief": "Isi beberapa kolom. Aset yang sudah jadi siap dalam hitungan detik." },
-    { "pain": "Menebak-nebak font, warna, dan logo yang tepat — lalu berharap lolos tinjauan brand.", "relief": "Aturan desain sudah tertanam dalam alat. Ia melentur, bukan patah. " },
+    { "pain": "Menebak-nebak font, warna, dan logo yang tepat - lalu berharap lolos tinjauan brand.", "relief": "Aturan desain sudah tertanam dalam alat. Ia melentur, bukan patah. " },
     { "pain": "Unggah kontrak, slip gaji, atau foto pribadi ke situs gratis sembarangan untuk mengonversi atau memangkasnya.", "relief": "Semuanya berjalan di perangkat Anda sendiri. Tidak ada yang diunggah; tidak ada yang keluar dari perangkat individu yang bertanggung jawab." },
     { "pain": "Membuat ulang badge, kartu, atau banner yang sama seratus kali secara manual.", "relief": "Tempel satu spreadsheet. Dapatkan seratus berkas siap cetak sekaligus." },
-    { "pain": "“Versi mana yang terbaru?” — mencari-cari di utas Slack dan drive bersama.", "relief": "Aset itu adalah sebuah tautan. Input yang sama, berkas yang sama, setiap kali." },
-    { "pain": "Tidak ada sinyal di pesawat, atau jaringan yang terkunci ketat — jadi Anda benar-benar terblokir.", "relief": "Berfungsi sepenuhnya offline, di perangkat apa pun, setelah dimuat sekali saja." },
+    { "pain": "“Versi mana yang terbaru?” - mencari-cari di utas Slack dan drive bersama.", "relief": "Aset itu adalah sebuah tautan. Input yang sama, berkas yang sama, setiap kali." },
+    { "pain": "Tidak ada sinyal di pesawat, atau jaringan yang terkunci ketat - jadi Anda benar-benar terblokir.", "relief": "Berfungsi sepenuhnya offline, di perangkat apa pun, setelah dimuat sekali saja." },
     { "pain": "Konten berembargo:  Profesional komunikasi tidak bisa melibatkan kolaborator secara aman.", "relief": "kunci, enkripsi, dan beri kata sandi pada berkas, zip, dan tautan berbagi - semuanya tanpa internet sama sekali" }
   ]
 }

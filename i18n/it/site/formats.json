@@ -1,6 +1,6 @@
 {
   "heading": "Ogni formato, in entrata e in uscita",
-  "lead": "Lolly legge 13 formati sorgente e ne genera 25 — ecco l'insieme completo, raggruppato per tipo. Sei {roundtrip}: letti *e* scritti, quindi compaiono in entrambe le colonne.",
+  "lead": "Lolly legge 13 formati sorgente e ne genera 25 - ecco l'insieme completo, raggruppato per tipo. Sei {roundtrip}: letti *e* scritti, quindi compaiono in entrambe le colonne.",
   "ingestsLabel": "In entrata",
   "ingestsCount": "13 in entrata",
   "exportsLabel": "In uscita",

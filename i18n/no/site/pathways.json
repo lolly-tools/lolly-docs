@@ -1,13 +1,13 @@
 {
   "title": "Tre veier inn",
-  "lead": "Begynn med [Hurtigstart](/info/quickstart.html) — få merkevaren inn og den første filen ut — følg deretter veien som passer deg.",
+  "lead": "Begynn med [Hurtigstart](/info/quickstart.html) - få merkevaren inn og den første filen ut - følg deretter veien som passer deg.",
   "cards": [
     {
       "href": "/info/creators.html",
       "icon": "media",
       "eyebrow": "For skapere",
       "name": "Lag ting",
-      "desc": "Ferdige filer på sekunder — ingen designverktøy, ingen venting. Fordelene, og hvordan du får mest ut av appen.",
+      "desc": "Ferdige filer på sekunder - ingen designverktøy, ingen venting. Fordelene, og hvordan du får mest ut av appen.",
       "cta": "Utforsk →"
     },
     {

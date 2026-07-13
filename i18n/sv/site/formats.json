@@ -1,6 +1,6 @@
 {
   "heading": "Alla format, in och ut",
-  "lead": "Lolly läser 13 källformat och renderar 25 — här är hela uppsättningen, grupperad efter vad varje sort är för typ. Sex {roundtrip}: läses *och* skrivs, så de dyker upp i båda kolumnerna.",
+  "lead": "Lolly läser 13 källformat och renderar 25 - här är hela uppsättningen, grupperad efter vad varje sort är för typ. Sex {roundtrip}: läses *och* skrivs, så de dyker upp i båda kolumnerna.",
   "ingestsLabel": "Importerar",
   "ingestsCount": "13 in",
   "exportsLabel": "Exporterar",

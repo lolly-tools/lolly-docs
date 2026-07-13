@@ -1,4 +1,4 @@
-# Content Credentials — engineering & operator guide
+# Content Credentials - engineering & operator guide
 
 The engineering companion to [Content Credentials identity](/info/content-credentials-identity.html)
 (the user-facing page). This covers the device/CA architecture, the engine
@@ -12,7 +12,7 @@ threat model, and the roadmap.
 > the trust list bundles the public C2PA/CAI anchors alongside the Lolly root. Read
 > the live `ENGINE_VERSION` and its changelog block in `engine/src/index.ts` rather
 > than trusting a pinned number here. Source line numbers are deliberately omitted
-> below — grep the named symbol; offsets drift.
+> below - grep the named symbol; offsets drift.
 
 ## Architecture
 
@@ -27,7 +27,7 @@ threat model, and the roadmap.
 └────────────────────────────────────────────────┘   └────────────────────────┘
 ```
 
-**Deliberately NOT a bridge capability.** Tools never touch identity —
+**Deliberately NOT a bridge capability.** Tools never touch identity -
 enrollment is app-level (profile UI) and the signer is consumed inside the
 shell's own export implementation. `HostV1` is unchanged; no tool can observe
 or depend on enrollment. The engine additions are ordinary options
@@ -42,7 +42,7 @@ or depend on enrollment. The engine additions are ordinary options
 Pure module shared by the ephemeral path, the CA service, and tests. No DOM,
 `globalThis.crypto` only. It owns the DER writer helpers (`der`, `derSeq`,
 `derSet`, `derOctet`, `derUint`, `derOid`, `derTime`, `ecdsaRawToDer`) and
-`generateSigner` (c2pa.ts re-imports them — **byte-identical output**, so the
+`generateSigner` (c2pa.ts re-imports them - **byte-identical output**, so the
 existing c2pa test suite is the regression harness), plus:
 
 ```js
@@ -60,7 +60,7 @@ export async function issueLeafCert({
 
 **c2pa-rs compatibility is non-negotiable in the leaf profile** (it hard-fails
 otherwise): subject MUST carry an `O=` attribute, EKU MUST be
-id-kp-emailProtection (`1.3.6.1.5.5.7.3.4` — anyEKU is rejected), keyUsage
+id-kp-emailProtection (`1.3.6.1.5.5.7.3.4` - anyEKU is rejected), keyUsage
 digitalSignature critical, SKI + AKI present, plus SAN rfc822Name = the
 verified email. Serial: random with the ephemeral path's stable-width trick.
 
@@ -72,10 +72,10 @@ optional `signer`. `buildC2paManifest` already threads it; the embedders use
 
 ```js
 opts.signer = {
-  privateKey,                        // CryptoKey (P-256, 'sign') — the normal device path
+  privateKey,                        // CryptoKey (P-256, 'sign') - the normal device path
   // OR sign: async (sigStructureBytes) => Uint8Array(64)  // raw r||s, NOT DER
   certDer,                           // leaf DER (back-compat single-cert shape)
-  chain,                             // Uint8Array[] leaf-first — wins over certDer in x5chain
+  chain,                             // Uint8Array[] leaf-first - wins over certDer in x5chain
 }
 ```
 
@@ -83,7 +83,7 @@ Inside the COSE signing step: the x5chain (label 33) becomes
 `signer.chain ?? [signer.certDer]`, and the sign call becomes
 `signer.sign ? await signer.sign(sigStructure) : subtle.sign(…, signer.privateKey, sigStructure)`.
 Two-pass safety: chain bytes are captured once per embed (byte-identical
-across passes), ES256 signatures are fixed 64 bytes, alg stays hardcoded −7 —
+across passes), ES256 signatures are fixed 64 bytes, alg stays hardcoded −7 -
 **P-256 only** by contract. `sign()` runs several times per embed (probe +
 fixed-point rounds + pass 2), fine for a WebCrypto key; a future
 user-presence key would need dummy probe signatures.
@@ -99,7 +99,7 @@ anchors it captures the full x5chain and verifies leaf-signed-by-anchor
 (issuer-name DER bytes match anchor subject bytes + a signature check over the
 leaf's tbsCertificate using the anchor SPKI). `parseCertificate` is extended
 **additively** (tbsBytes, rawSignature, issuer/subject bytes, SAN emails,
-signature algorithm) — existing fields unchanged. It reads both `c2pa.claim` and
+signature algorithm) - existing fields unchanged. It reads both `c2pa.claim` and
 `c2pa.claim.v2` (with `created_assertions`/`gathered_assertions` and
 `c2pa.actions.v2`), and multi-algorithm chains (ECDSA P-256/384/521, RSA
 PKCS#1 v1.5, RSA-PSS, Ed25519) walk an arbitrary but bounded depth to a pinned
@@ -120,17 +120,17 @@ Report verdict semantics (surfaced by the `/verify` view):
 
 ### CLI
 
-`lolly validate <file> [--json] [--trust-anchor <root.pem>]` — same
+`lolly validate <file> [--json] [--trust-anchor <root.pem>]` - same
 verifier, same report; the flag loads PEM → DER and passes `trustAnchors`.
 
 ## Trust anchors
 
-Trusted verification is **live** — the pinned Lolly root ships as a real PEM in
+Trusted verification is **live** - the pinned Lolly root ships as a real PEM in
 `shells/web/src/ca-root.ts` (`CA_ROOT_PEM`, public by design) and is also served at
 `/api/ca/root.pem`. The verifier additionally bundles the public C2PA/CAI trust
 anchors (`engine/src/c2pa-trust.ts`) so third-party credentials (camera makers,
 Adobe, Google's C2PA root, Truepic-signed OpenAI output, …) resolve to their real
-issuer. Presence in a list never trusts on its own — a verdict of trusted requires
+issuer. Presence in a list never trusts on its own - a verdict of trusted requires
 the chain to actually verify and no other check to fail.
 
 ## CA service (`services/ca/`)
@@ -138,12 +138,12 @@ the chain to actually verify and no other check to fail.
 Zero-dependency Node (node:http + WebCrypto), importing `engine/src/x509.ts`.
 A workspace package. Runs three ways from one `handler.mjs`:
 
-- `node services/ca/server.mjs` — local dev on `:8787` (Vite proxies
+- `node services/ca/server.mjs` - local dev on `:8787` (Vite proxies
   `/api/ca` → `http://localhost:8787`; the string-shorthand proxy preserves
   the path, so the handler always routes on the full `/api/ca/*` prefix).
-- `api/ca/[...path].js` at the **repo root** — a serverless function entry that
+- `api/ca/[...path].js` at the **repo root** - a serverless function entry that
   imports the same handler. (This bundle is generated by
-  `scripts/build-ca-fn.ts`; CI rebuilds it and fails on drift — never hand-edit
+  `scripts/build-ca-fn.ts`; CI rebuilds it and fails on drift - never hand-edit
   it.) The service worker bypasses `/api/`, and the platform serves functions
   before rewrites, so the SPA catch-all never swallows it.
 - Imported directly by `tests/ca-service.test.ts` (pure logic tested without
@@ -153,7 +153,7 @@ A workspace package. Runs three ways from one `handler.mjs`:
 
 | Route | Purpose |
 |---|---|
-| `GET /api/ca/root.pem` | The public Lolly root — for `c2patool --trust_anchors` and humans |
+| `GET /api/ca/root.pem` | The public Lolly root - for `c2patool --trust_anchors` and humans |
 | `GET /api/ca/auth/:provider?origin=` | Start OIDC (`suse` \| `github` \| `google`); sets HMAC state cookie, redirects to provider |
 | `GET /api/ca/callback/:provider` | Code exchange → verified email → mints a 10-min **enrollment token**; returns a tiny page that `postMessage`s the token to `origin` and closes |
 | `POST /api/ca/email/start` `{email}` | Magic link via Resend; the link lands on `/api/ca/email/verify` which finishes like a callback |
@@ -163,9 +163,9 @@ Notes:
 
 - **CSR-less enrollment.** The client sends its raw SPKI plus a
   proof-of-possession signature over the enrollment token instead of a
-  PKCS#10 CSR — same soundness, no ASN.1 CSR parser server-side.
+  PKCS#10 CSR - same soundness, no ASN.1 CSR parser server-side.
 - **Stateless.** Enrollment tokens are HMAC-signed values (email, provider,
-  exp) — no session store. Replay within the 10-minute window re-issues a
+  exp) - no session store. Replay within the 10-minute window re-issues a
   cert for the same identity+key, which is harmless.
 - **Issuance log.** Every issued cert is logged (JSON to stdout → the
   platform's logs; optional `CA_LOG_WEBHOOK` POST). A public append-only
@@ -193,21 +193,21 @@ Notes:
 
 ## Web shell
 
-- `shells/web/src/bridge/identity.ts` — the identity manager:
+- `shells/web/src/bridge/identity.ts` - the identity manager:
   `status()`, `enroll(provider)` (popup + postMessage + PoP + cert cache),
   `signer()` (null unless a valid cert is cached), `forget()`. Keypair and
   cert live in a dedicated IndexedDB store; CryptoKey objects structured-clone
   into IDB natively.
-- Export path passes `signer` into `embedC2pa*` when available — one line at
+- Export path passes `signer` into `embedC2pa*` when available - one line at
   the existing call site; ephemeral fallback is the engine default.
 - `/profile` gains a **Content Credentials** section: enrollment status
-  ("Signing as andy@… via GitHub — renews Jul 10"), four provider buttons,
+  ("Signing as andy@… via GitHub - renews Jul 10"), four provider buttons,
   and Forget this device.
 - `/verify` passes the pinned root (plus the bundled public anchors) as
   `trustAnchors` and renders the trusted state: shield goes green-with-identity,
   facts show the verified email + issuer.
 
-## Operator runbook (one-time setup — the parts only you can do)
+## Operator runbook (one-time setup - the parts only you can do)
 
 1. **Generate the root** (anywhere, then guard the key):
 
@@ -254,11 +254,11 @@ Notes:
    function) importing `services/ca/` + `engine/src/x509.ts`; both are
    committed, and the platform compiles `api/` independently of the Vite build.
    The app's catch-all rewrite `"/(.*)" → /index.html` is an *afterFiles*
-   rewrite, so `/api/ca/*` resolves to the function first — it is **not**
+   rewrite, so `/api/ca/*` resolves to the function first - it is **not**
    swallowed by the SPA fallback. Confirm it's live:
    `curl https://lolly.tools/api/ca/health` should return JSON
    (`{"ok":true,…}`), **not** the SPA's HTML. If it returns HTML, the function
-   wasn't compiled — check the project's **root directory** setting is the repo
+   wasn't compiled - check the project's **root directory** setting is the repo
    root (so repo-root `api/` is in scope), not `shells/web`.
 
 5. **Local dev** (no secrets needed thanks to the dev provider):
@@ -291,20 +291,20 @@ Notes:
 4. C2PA conformance program: audited KMS custody → the official trust list →
    green in Adobe Verify et al.
 
-### SSO — two distinct jobs, one identity provider
+### SSO - two distinct jobs, one identity provider
 
 id.suse.com (Keycloak) shows up in **two** places that must not be conflated.
 Both reuse the same OIDC client, but they answer different questions. Detailed
 implementation plans (local, under `plans/`): **`plans/sso-signing.md`** and
-**`plans/sso-tool-access.md`** — the summaries below are the roadmap view.
+**`plans/sso-tool-access.md`** - the summaries below are the roadmap view.
 
-5. **Complete SUSE SSO for *signing*** (deepens the identity in this doc —
+5. **Complete SUSE SSO for *signing*** (deepens the identity in this doc -
    "who signed"; full plan → `plans/sso-signing.md`). Today SUSE is one
    enrolment provider among several and each enrolment is a fresh popup. Bring
    it to true SSO:
    - **Session reuse / silent renewal.** While the id.suse.com session is
      live, a cert nearing expiry re-issues in the background via OIDC
-     `prompt=none` — no weekly popup, no interaction. This is what makes short
+     `prompt=none` - no weekly popup, no interaction. This is what makes short
      (7-day) certs painless and is the natural companion to Tier 3 timestamps.
    - **Org / domain enforcement.** Optional issuance policy
      (`CA_REQUIRE_ISSUER=suse`, `CA_ALLOWED_EMAIL_DOMAINS=suse.com`) so a SUSE
@@ -312,10 +312,10 @@ implementation plans (local, under `plans/`): **`plans/sso-signing.md`** and
      default IdP (other providers opt-in).
    - **Richer provenance identity.** Carry the SSO group / role / org-unit into
      the certificate (an OU or SAN otherName) so a credential can attest
-     "signed by a SUSE employee," not just an email — gated on the realm
+     "signed by a SUSE employee," not just an email - gated on the realm
      releasing those claims. Feeds the CreativeWork author assertion.
 
-6. **SSO for *tool access*** (a NEW authorization axis — "who may use the
+6. **SSO for *tool access*** (a NEW authorization axis - "who may use the
    app," separate from signing; full plan → `plans/sso-tool-access.md`). Gate
    who can open the app, specific tools, or gated features behind SUSE SSO:
    - **Shell-level auth guard, never the engine.** The engine stays

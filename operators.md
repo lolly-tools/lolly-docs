@@ -1,34 +1,34 @@
 # Lolly for Operators
 
-### A future-proof, defence-in-depth, data-loss-prevention & provenance strategy – that just happens to be a creative production platform
+### A future-proof, defence-in-depth, data-loss-prevention & provenance strategy - that just happens to be a creative production platform
 
-The organizational immune system that wraps around what you already do — so the routine creative work your teams need every day happens *inside* your perimeter instead of leaking out of it.
+The organizational immune system that wraps around what you already do - so the routine creative work your teams need every day happens *inside* your perimeter instead of leaking out of it.
 
-**What's in it for you.** You get to be the person who said yes to something both safe *and* popular. You close an exfiltration hole and delete the design-request queue in one move — the rare security win that makes you more liked, not less. No 3am call because someone emailed brand files to a contractor or pasted customer data into a random web tool; fewer SaaS vendors, contracts, and audits on your plate; and a full git trail you can point to when someone asks who approved what. You sleep at night.
+**What's in it for you.** You get to be the person who said yes to something both safe *and* popular. You close an exfiltration hole and delete the design-request queue in one move - the rare security win that makes you more liked, not less. No 3am call because someone emailed brand files to a contractor or pasted customer data into a random web tool; fewer SaaS vendors, contracts, and audits on your plate; and a full git trail you can point to when someone asks who approved what. You sleep at night.
 
 Lolly earns its place as a creative tool: it deletes the design queue and puts production-quality output in everyone's hands. But the reason it's *safe* to hand out that widely is architectural. Nothing uploads, everything is reproducible, and every export can carry a cryptographic record of where it came from. This page is the security and rollout story.
 
-> **Where it stands today.** Lolly's security properties are strong by design, and its cryptography and file-parsing engines are going through SUSE's enterprise-grade infrastructure hardening. The seals, on-device signing, and encryption below are real and defensible now, and maturing toward independent certification — so where a contract calls for certified assurance, deploy them as defence-in-depth while that process completes.
+> **Where it stands today.** Lolly's security properties are strong by design, and its cryptography and file-parsing engines are going through SUSE's enterprise-grade infrastructure hardening. The seals, on-device signing, and encryption below are real and defensible now, and maturing toward independent certification - so where a contract calls for certified assurance, deploy them as defence-in-depth while that process completes.
 
 ## The strategic advantage
 
 The usual way routine creative work gets done is a liability surface: files emailed to external design contractors, brand assets uploaded to a dozen SaaS editors, customer data pasted into a stranger's web tool to "just make a quick graphic." Every one of those is data leaving your control.
 
-Lolly inverts it. The work that *drove* those leaks — the quote card, the localized banner, the event badge, the redacted screenshot — now happens on a tool that runs on the employee's own device, against your brand, with no server in the loop. You didn't add a control on top of a risky workflow; you replaced the risky workflow with one that has no exfiltration path to begin with.
+Lolly inverts it. The work that *drove* those leaks - the quote card, the localized banner, the event badge, the redacted screenshot - now happens on a tool that runs on the employee's own device, against your brand, with no server in the loop. You didn't add a control on top of a risky workflow; you replaced the risky workflow with one that has no exfiltration path to begin with.
 
 - **Configuration is yours.** The engine and shells are open source (MPL-2.0). Overlay your own auth, telemetry, or CA; host it or don't; you hold full feature and cost control, git-tracked, not locked in a SaaS database.
-- **Governance can be data, not a dashboard.** When you want that control, manage the tool catalog as a Git repository — pull-request review becomes brand approval, with a full audit trail and instant rollback of every template your workforce can touch. It's an option, not an obligation: teams that just want to make things author their own tools in Layout Studio and ingest their own files into the catalogue, entirely in-app, and never touch git. See [Adoption & Governance](/info/adoption-governance.html).
-- **Guard-rails are structural.** Brand constraints are hard-coded into templates, not published as guidelines people can ignore. The wrong output isn't discouraged — it's unrepresentable.
+- **Governance can be data, not a dashboard.** When you want that control, manage the tool catalog as a Git repository - pull-request review becomes brand approval, with a full audit trail and instant rollback of every template your workforce can touch. It's an option, not an obligation: teams that just want to make things author their own tools in Layout Studio and ingest their own files into the catalogue, entirely in-app, and never touch git. See [Adoption & Governance](/info/adoption-governance.html).
+- **Guard-rails are structural.** Brand constraints are hard-coded into templates, not published as guidelines people can ignore. The wrong output isn't discouraged - it's unrepresentable.
 
 ## Delete the request queue while proliferating content.
 
 One goal of Lolly **design-request deflection**: routine requests that never need to reach a designer because the person who needed the asset made it themselves, correctly, in minutes. Every deflected ticket is both a productivity win and one fewer file changing hands.
 
-Lolly is built to fit how your organisation actually operates — there's no single right way to deploy it:
+Lolly is built to fit how your organisation actually operates - there's no single right way to deploy it:
 
-- **Deploy, don't serve.** Ship Lolly to devices through your existing MDM (Intune, Jamf, Munki…). It runs locally as a desktop/mobile app or an offline PWA — works behind any firewall, in any air-gapped environment, with no server to maintain and IT in control of the update cadence.
+- **Deploy, don't serve.** Ship Lolly to devices through your existing MDM (Intune, Jamf, Munki…). It runs locally as a desktop/mobile app or an offline PWA - works behind any firewall, in any air-gapped environment, with no server to maintain and IT in control of the update cadence.
 - **Serve only.** Run one instance inside your network (or behind a VPN); users reach it in a browser, nothing installed. Publish a tool once, everyone has it immediately; pair with your IdP for access control.
-- **Hybrid.** Local apps for offline field work, an always-current browser version for borrowed machines — both pointed at the same tool library.
+- **Hybrid.** Local apps for offline field work, an always-current browser version for borrowed machines - both pointed at the same tool library.
 
 The full deploy models and administration walkthrough live in [Deployment](/info/deployment.html) and [Configuration](/info/configuration.html).
 
@@ -54,44 +54,44 @@ All of these are on-device transforms: your file or data goes in, cleaned bytes 
 
 Every tool input is expressible as a URL parameter, and the same inputs produce the same file. That has two operator consequences:
 
-- **A URL is the artifact.** Commit the link, regenerate the asset on demand — no binaries checked into Git, no chasing "the latest version" in chat. Asset and tool IDs are permanent contracts, so a link minted today still resolves later.
+- **A URL is the artifact.** Commit the link, regenerate the asset on demand - no binaries checked into Git, no chasing "the latest version" in chat. Asset and tool IDs are permanent contracts, so a link minted today still resolves later.
 - **The CLI is the same render path** as the GUI, so build pipelines and the app never drift. Generate OG images, social cards, and data visuals at build time, reproducibly.
 
 ## Provenance & Content Credentials
 
-Exports can carry **Content Credentials** — a signed [C2PA](https://c2pa.org) manifest bound to a hash of the file's bytes. Any later change to the file breaks the seal, so a C2PA-aware verifier **detects alteration cryptographically, offline**. The credential is tamper-*evident*: it flags tampering rather than preventing it, which is precisely what makes fully offline verification possible.
+Exports can carry **Content Credentials** - a signed [C2PA](https://c2pa.org) manifest bound to a hash of the file's bytes. Any later change to the file breaks the seal, so a C2PA-aware verifier **detects alteration cryptographically, offline**. The credential is tamper-*evident*: it flags tampering rather than preventing it, which is precisely what makes fully offline verification possible.
 
-- **On by default, on-device.** The signing key is generated on the device, is non-extractable (even Lolly can't read it), and signing happens locally — only optional identity *enrolment* ever touches the network.
+- **On by default, on-device.** The signing key is generated on the device, is non-extractable (even Lolly can't read it), and signing happens locally - only optional identity *enrolment* ever touches the network.
 - **Trust tiers.** An un-enrolled export is structurally valid but signed anonymously (`untrusted`). Enrol a **verified identity** (short-lived certificate from the Lolly CA, tied to an email) and verifiers pinning the Lolly root report `trusted` + the signer's email. A trusted timestamp authority and third-party-validator green (C2PA conformance) are on the roadmap. Every tier is explicit, and a file only ever claims the trust it can prove.
 - **Credential lifetime** is the operator/user's call at signing time: 7 / 30 / 90 / 365 days, default 30.
 - **Verification is on-device.** Drop any file on `/verify` (or `lolly validate <file>`) for an offline report of whether it was genuinely made with Lolly and unchanged since. See [Content Credentials Identity](/info/content-credentials-identity.html).
 
-> **Interoperability notes.** Lolly verifies its own credentials and many third-party ones offline today. Two interop items are in progress: fully reading C2PA claim **v2** manifests from other producers, and WebM — which has no standardised C2PA mapping yet, so Lolly attaches the manifest as a Matroska part (third-party tools verify Lolly's MP4 out of the box; WebM follows once the standard settles).
+> **Interoperability notes.** Lolly verifies its own credentials and many third-party ones offline today. Two interop items are in progress: fully reading C2PA claim **v2** manifests from other producers, and WebM - which has no standardised C2PA mapping yet, so Lolly attaches the manifest as a Matroska part (third-party tools verify Lolly's MP4 out of the box; WebM follows once the standard settles).
 
 ## Encryption & passwording
 
 For files that must travel locked, everything happens on-device:
 
-- **PDF open-password** — *Standard* is a 40-bit RC4 deterrent (opens anywhere, may travel in a link); *Strong* is **AES-256** (PDF 2.0), typed at export and never put in a link.
-- **Locked downloads** — a ZIP, a Projects folder, or a batch run can be locked whole: *Standard* ZipCrypto (weak, universal) or *Strong* **AES-256** (WinZip AE-2). Defence-in-depth: any PDF inside a Strong zip is *also* individually AES-256-locked, so it stays locked after unpacking.
-- **Password-gated share links** — the whole link state is AES-256-encrypted under a PBKDF2-derived key; only ciphertext travels, the password is never in the link, and decryption happens in the recipient's browser.
+- **PDF open-password** - *Standard* is a 40-bit RC4 deterrent (opens anywhere, may travel in a link); *Strong* is **AES-256** (PDF 2.0), typed at export and never put in a link.
+- **Locked downloads** - a ZIP, a Projects folder, or a batch run can be locked whole: *Standard* ZipCrypto (weak, universal) or *Strong* **AES-256** (WinZip AE-2). Defence-in-depth: any PDF inside a Strong zip is *also* individually AES-256-locked, so it stays locked after unpacking.
+- **Password-gated share links** - the whole link state is AES-256-encrypted under a PBKDF2-derived key; only ciphertext travels, the password is never in the link, and decryption happens in the recipient's browser.
 
 ## Air-gap ready
 
-Air-gap is a **first-class deployment**, not a special mode — Lolly runs with no network at render time out of the box. The web shell is an offline-first PWA (service worker); fonts and WASM are stored on-device; tool state is persisted locally through the host bridge, never `localStorage`. Any tool that reaches the network does so only through an **allowlisted** `host.net` capability it must declare in its manifest — a shell that can't (or won't) fulfil it stubs it out. Ship the shells to devices through your MDM, or serve one instance inside your network, and a fully air-gapped install renders, exports, encrypts, and verifies credentials with nothing to phone home to.
+Air-gap is a **first-class deployment**, not a special mode - Lolly runs with no network at render time out of the box. The web shell is an offline-first PWA (service worker); fonts and WASM are stored on-device; tool state is persisted locally through the host bridge, never `localStorage`. Any tool that reaches the network does so only through an **allowlisted** `host.net` capability it must declare in its manifest - a shell that can't (or won't) fulfil it stubs it out. Ship the shells to devices through your MDM, or serve one instance inside your network, and a fully air-gapped install renders, exports, encrypts, and verifies credentials with nothing to phone home to.
 
 ## Good to know
 
 A few things worth having straight before you roll it out:
 
-- **Hardening in progress.** The cryptography and parsers are going through SUSE's enterprise-scale hardening (see above) — strong by design today; deploy as defence-in-depth where a contract calls for certified assurance.
-- **Tool hooks are *not* a security sandbox.** A tool's optional `hooks.js` runs with the host bridge injected, but in a browser shell it executes in the page's realm and *can* reach `window`/`document`/`fetch`. Treat tool code the way you treat any code you run — review it. This is why an org that runs a shared catalog can gate it through Git review; either way, run only tools you've reviewed until Worker isolation ships.
-- **Content Credentials are tamper-evident.** They detect alteration rather than prevent it — see the interoperability notes above.
-- **Two encryption tiers.** *Standard* locks are quick, universal deterrents; *Strong* (AES-256) is full protection — reach for Strong for anything sensitive, noting it wants a modern reader.
+- **Hardening in progress.** The cryptography and parsers are going through SUSE's enterprise-scale hardening (see above) - strong by design today; deploy as defence-in-depth where a contract calls for certified assurance.
+- **Tool hooks are *not* a security sandbox.** A tool's optional `hooks.js` runs with the host bridge injected, but in a browser shell it executes in the page's realm and *can* reach `window`/`document`/`fetch`. Treat tool code the way you treat any code you run - review it. This is why an org that runs a shared catalog can gate it through Git review; either way, run only tools you've reviewed until Worker isolation ships.
+- **Content Credentials are tamper-evident.** They detect alteration rather than prevent it - see the interoperability notes above.
+- **Two encryption tiers.** *Standard* locks are quick, universal deterrents; *Strong* (AES-256) is full protection - reach for Strong for anything sensitive, noting it wants a modern reader.
 
 ## Where to go next
 
-- **[Adoption & Governance](/info/adoption-governance.html)** — personas, the deflection metric, and governance-as-data in full.
-- **[Deployment](/info/deployment.html)** — deploy/serve/hybrid, MDM, and self-hosting the services.
-- **[Configuration](/info/configuration.html)** — profiles, brand packs, capability gating, and feature flags.
-- **[Privacy Policy](/info/privacy.html)** — the formal "collects nothing, uploads nothing" statement.
+- **[Adoption & Governance](/info/adoption-governance.html)** - personas, the deflection metric, and governance-as-data in full.
+- **[Deployment](/info/deployment.html)** - deploy/serve/hybrid, MDM, and self-hosting the services.
+- **[Configuration](/info/configuration.html)** - profiles, brand packs, capability gating, and feature flags.
+- **[Privacy Policy](/info/privacy.html)** - the formal "collects nothing, uploads nothing" statement.

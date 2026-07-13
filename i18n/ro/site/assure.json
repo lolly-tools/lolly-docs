@@ -1,12 +1,12 @@
 {
   "eyebrow": "Proveniență și confidențialitate",
   "heading": "Dovedește ce ai creat.\nPăstrează ce e al tău.",
-  "lead": "Fiecare imagine, PDF sau video pe care îl exporți poate purta un **Content Credential** — un sigiliu [C2PA](https://c2pa.org) care dezvăluie orice modificare, generat integral pe dispozitivul tău. Dovedește că fișierul nu s-a schimbat de când a părăsit Lolly și, odată ce îți înregistrezi o identitate, înregistrează cine l-a semnat.",
+  "lead": "Fiecare imagine, PDF sau video pe care îl exporți poate purta un **Content Credential** - un sigiliu [C2PA](https://c2pa.org) care dezvăluie orice modificare, generat integral pe dispozitivul tău. Dovedește că fișierul nu s-a schimbat de când a părăsit Lolly și, odată ce îți înregistrezi o identitate, înregistrează cine l-a semnat.",
   "illustration": "illusCheck",
   "checks": [
     { "title": "Dezvăluie orice modificare, implicit", "desc": "Sigiliul acoperă fiecare octet exportat. Schimbă un singur pixel și orice validator C2PA îl semnalează." },
-    { "title": "Semnat pe dispozitivul tău", "desc": "Cheia ta de semnare este generată local și nu părăsește niciodată dispozitivul — nici măcar Lolly nu o poate citi." },
-    { "title": "Verificabil de oricine, offline", "desc": "Fișierul își poartă propria dovadă. Verifică-l în tab-ul Verify, în CLI sau cu orice validator C2PA — nimic nu este încărcat." }
+    { "title": "Semnat pe dispozitivul tău", "desc": "Cheia ta de semnare este generată local și nu părăsește niciodată dispozitivul - nici măcar Lolly nu o poate citi." },
+    { "title": "Verificabil de oricine, offline", "desc": "Fișierul își poartă propria dovadă. Verifică-l în tab-ul Verify, în CLI sau cu orice validator C2PA - nimic nu este încărcat." }
   ],
   "cards": [
     { "icon": "assureEyeOff", "title": "Nimic nu părăsește dispozitivul tău", "desc": "Fără randare în cloud, fără telemetrie, fără analytics. Ce creezi rămâne pe calculatorul tău." },

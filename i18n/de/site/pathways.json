@@ -1,13 +1,13 @@
 {
   "title": "Drei Wege zum Einstieg",
-  "lead": "Beginnen Sie mit dem [Schnellstart](/info/quickstart.html) — bringen Sie Ihre Marke ein und erhalten Sie Ihre erste Datei — und folgen Sie dann dem Weg, der zu Ihnen passt.",
+  "lead": "Beginnen Sie mit dem [Schnellstart](/info/quickstart.html) - bringen Sie Ihre Marke ein und erhalten Sie Ihre erste Datei - und folgen Sie dann dem Weg, der zu Ihnen passt.",
   "cards": [
     {
       "href": "/info/creators.html",
       "icon": "media",
       "eyebrow": "Für Kreative",
       "name": "Dinge gestalten",
-      "desc": "Fertige Dateien in Sekunden – kein Design-Tool, kein Warten. Die Vorteile und wie Sie das Meiste aus der App herausholen.",
+      "desc": "Fertige Dateien in Sekunden - kein Design-Tool, kein Warten. Die Vorteile und wie Sie das Meiste aus der App herausholen.",
       "cta": "Entdecken →"
     },
     {

@@ -1,13 +1,13 @@
 {
   "title": "Três maneiras de começar",
-  "lead": "Comece pelo [Guia rápido](/info/quickstart.html) — coloque sua marca e gere seu primeiro arquivo — depois siga o caminho que combina com você.",
+  "lead": "Comece pelo [Guia rápido](/info/quickstart.html) - coloque sua marca e gere seu primeiro arquivo - depois siga o caminho que combina com você.",
   "cards": [
     {
       "href": "/info/creators.html",
       "icon": "media",
       "eyebrow": "Para criadores",
       "name": "Crie coisas",
-      "desc": "Arquivos prontos em segundos — sem ferramenta de design, sem espera. As vantagens e como aproveitar ao máximo o aplicativo.",
+      "desc": "Arquivos prontos em segundos - sem ferramenta de design, sem espera. As vantagens e como aproveitar ao máximo o aplicativo.",
       "cta": "Explorar →"
     },
     {

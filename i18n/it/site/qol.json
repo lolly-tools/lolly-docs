@@ -3,12 +3,12 @@
     {
       "illustration": "illusSound",
       "heading": "Accessibile, con audio",
-      "desc": "Un'interfaccia che funziona come lavori tu — compatibile con gli screen reader e completamente navigabile da tastiera. Attiva i suoni discreti dell'interfaccia, oppure passa alla **Neurospicy Mode**: un ritmo di concentrazione tranquillo che gira in loop a basso volume mentre lavori."
+      "desc": "Un'interfaccia che funziona come lavori tu - compatibile con gli screen reader e completamente navigabile da tastiera. Attiva i suoni discreti dell'interfaccia, oppure passa alla **Neurospicy Mode**: un ritmo di concentrazione tranquillo che gira in loop a basso volume mentre lavori."
     },
     {
       "illustration": "illusBulk",
       "heading": "Organizza, poi renderizza in blocco",
-      "desc": "Conserva il lavoro salvato in cartelle **Progetti** annidate. Quando è il momento di pubblicare, renderizza un'intera cartella — o una qualsiasi selezione — in un unico zip. Nessun foglio di calcolo, nessuna griglia batch necessaria."
+      "desc": "Conserva il lavoro salvato in cartelle **Progetti** annidate. Quando è il momento di pubblicare, renderizza un'intera cartella - o una qualsiasi selezione - in un unico zip. Nessun foglio di calcolo, nessuna griglia batch necessaria."
     }
   ]
 }

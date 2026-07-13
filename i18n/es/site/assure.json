@@ -1,12 +1,12 @@
 {
   "eyebrow": "Procedencia y privacidad",
   "heading": "Demuestra lo que hiciste.\nConserva lo que es tuyo.",
-  "lead": "Cada imagen, PDF o vídeo que exportes puede llevar una **Content Credential** — un sello [C2PA](https://c2pa.org) a prueba de manipulaciones, creado completamente en tu dispositivo. Demuestra que el archivo no ha cambiado desde que salió de Lolly y, una vez que registras una identidad, registra quién lo firmó.",
+  "lead": "Cada imagen, PDF o vídeo que exportes puede llevar una **Content Credential** - un sello [C2PA](https://c2pa.org) a prueba de manipulaciones, creado completamente en tu dispositivo. Demuestra que el archivo no ha cambiado desde que salió de Lolly y, una vez que registras una identidad, registra quién lo firmó.",
   "illustration": "illusCheck",
   "checks": [
     { "title": "A prueba de manipulaciones por defecto", "desc": "El sello cubre cada byte exportado. Cambia un solo píxel y cualquier validador C2PA lo detectará." },
-    { "title": "Firmado en tu dispositivo", "desc": "Tu clave de firma se genera localmente y nunca sale del dispositivo — ni siquiera Lolly puede leerla." },
-    { "title": "Verificable por cualquiera, sin conexión", "desc": "El archivo lleva su propia prueba. Compruébalo en la pestaña Verify, en la CLI o en cualquier validador C2PA — no se sube nada." }
+    { "title": "Firmado en tu dispositivo", "desc": "Tu clave de firma se genera localmente y nunca sale del dispositivo - ni siquiera Lolly puede leerla." },
+    { "title": "Verificable por cualquiera, sin conexión", "desc": "El archivo lleva su propia prueba. Compruébalo en la pestaña Verify, en la CLI o en cualquier validador C2PA - no se sube nada." }
   ],
   "cards": [
     { "icon": "assureEyeOff", "title": "Nada sale de tu dispositivo", "desc": "Sin renderizado en la nube, sin telemetría, sin analítica. Lo que creas se queda en tu máquina." },

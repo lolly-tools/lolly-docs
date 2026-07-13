@@ -1,6 +1,6 @@
 {
   "heading": "Mọi định dạng, vào và ra",
-  "lead": "Lolly đọc được 13 định dạng nguồn và xuất ra 25 định dạng — đây là toàn bộ danh sách, được nhóm theo loại. Sáu {roundtrip}: vừa đọc *vừa* ghi, nên chúng xuất hiện ở cả hai cột.",
+  "lead": "Lolly đọc được 13 định dạng nguồn và xuất ra 25 định dạng - đây là toàn bộ danh sách, được nhóm theo loại. Sáu {roundtrip}: vừa đọc *vừa* ghi, nên chúng xuất hiện ở cả hai cột.",
   "ingestsLabel": "Nhập vào",
   "ingestsCount": "13 vào",
   "exportsLabel": "Xuất ra",

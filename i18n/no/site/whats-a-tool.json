@@ -7,16 +7,16 @@
     { "file": "hooks.js", "name": "Hooks", "desc": "Valgfri logikk, sandkassebasert" }
   ],
   "features": [
-    { "icon": "toolFeatureStar", "title": "En smart mal", "desc": "Kjenner sin egen layout, typografi, farger og merkevareregler. Du bidrar med innholdet — den tar seg av resten." },
+    { "icon": "toolFeatureStar", "title": "En smart mal", "desc": "Kjenner sin egen layout, typografi, farger og merkevareregler. Du bidrar med innholdet - den tar seg av resten." },
     { "icon": "toolFeaturePeople", "title": "Ingen designkompetanse kreves", "desc": "Laget én gang av noen som kjenner merkevaren. Alle andre fyller bare inn det som mangler." },
     { "icon": "toolFeatureCode", "title": "Design som kode", "desc": "Ren HTML, CSS og JS. Versjonskontrollert, diffbar og enkel å gjennomgå, som en hvilken som helst annen kildefil." },
-    { "icon": "toolFeatureMonitor", "title": "Ingen app nødvendig", "desc": "Åpne `template.html` i en hvilken som helst nettleser — det bare fungerer. Verktøyet er appen." },
-    { "icon": "toolFeatureShuffle", "title": "Fri canvas-layout", "desc": "Noen verktøy åpnes som et canvas for direkte manipulasjon — dra, roter og fest bokser med tekst, former og bilder, eksportert gjennom samme deterministiske renderingsvei." },
-    { "icon": "toolFeatureNested", "title": "Verktøy inni verktøy", "desc": "Behandle et verktøy som et bilde inni et annet verktøy — en brikke som rendrer sin egen QR-kode, et kort med et levende diagram — og behold intelligensen intakt: fortsatt levende, fortsatt rendret på nytt, aldri et flatt bilde." }
+    { "icon": "toolFeatureMonitor", "title": "Ingen app nødvendig", "desc": "Åpne `template.html` i en hvilken som helst nettleser - det bare fungerer. Verktøyet er appen." },
+    { "icon": "toolFeatureShuffle", "title": "Fri canvas-layout", "desc": "Noen verktøy åpnes som et canvas for direkte manipulasjon - dra, roter og fest bokser med tekst, former og bilder, eksportert gjennom samme deterministiske renderingsvei." },
+    { "icon": "toolFeatureNested", "title": "Verktøy inni verktøy", "desc": "Behandle et verktøy som et bilde inni et annet verktøy - en brikke som rendrer sin egen QR-kode, et kort med et levende diagram - og behold intelligensen intakt: fortsatt levende, fortsatt rendret på nytt, aldri et flatt bilde." }
   ],
   "tryNow": {
     "title": "Verktøy fungerer fint på egen hånd.",
-    "desc": "For å rendre til PNG, PDF, SVG, video og mer — bruk Lolly-plattformen.",
+    "desc": "For å rendre til PNG, PDF, SVG, video og mer - bruk Lolly-plattformen.",
     "cta": "Start appen ↗",
     "href": "/"
   }

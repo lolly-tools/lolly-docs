@@ -1,19 +1,19 @@
 {
   "eyebrow": "Proč jsme vytvořili Lolly",
   "heading": "Každodenní tvůrčí práce\nneměla by být tak náročná.",
-  "lead": "Většina lidí nechce grafické studio. Chtějí jeden správný soubor, hned – bez porušení značky, bez čekání na někoho a bez odevzdávání soukromého dokumentu webu, o kterém nikdy neslyšeli. Lolly vzniklo přesně proto, aby tyhle tři starosti odstranilo.",
+  "lead": "Většina lidí nechce grafické studio. Chtějí jeden správný soubor, hned - bez porušení značky, bez čekání na někoho a bez odevzdávání soukromého dokumentu webu, o kterém nikdy neslyšeli. Lolly vzniklo přesně proto, aby tyhle tři starosti odstranilo.",
   "frustrations": [
-    { "icon": "anxiety", "title": "Strach z porušení značky", "desc": "Tichý strach z toho, že zvolíš špatnou barvu nebo písmo – a uděláš chybu veřejně." },
+    { "icon": "anxiety", "title": "Strach z porušení značky", "desc": "Tichý strach z toho, že zvolíš špatnou barvu nebo písmo - a uděláš chybu veřejně." },
     { "icon": "bottleneck", "title": "Úzké hrdlo", "desc": "Každý drobný podklad uvízne ve frontě za vytíženým designérem, pomalým nástrojem nebo dalším schvalováním." },
-    { "icon": "cloudDependence", "title": "Závislost na cloudu", "desc": "Nahráváš citlivé soubory jen kvůli převodu nebo oříznutí – a jakmile jsi offline, jsi v koncích." }
+    { "icon": "cloudDependence", "title": "Závislost na cloudu", "desc": "Nahráváš citlivé soubory jen kvůli převodu nebo oříznutí - a jakmile jsi offline, jsi v koncích." }
   ],
   "matrix": [
     { "pain": "Poslat zadání e-mailem designérskému týmu a pak dny čekat na jednu drobnou grafiku.", "relief": "Vyplň pár polí. Hotový podklad je připravený za pár vteřin." },
-    { "pain": "Hádat správné písmo, barvu a logo – a doufat, že to projde schválením značky.", "relief": "Pravidla designu jsou zabudovaná přímo v nástroji. Ohýbají se, ale nelámou. " },
+    { "pain": "Hádat správné písmo, barvu a logo - a doufat, že to projde schválením značky.", "relief": "Pravidla designu jsou zabudovaná přímo v nástroji. Ohýbají se, ale nelámou. " },
     { "pain": "Nahrát smlouvu, výplatní pásku nebo soukromou fotku na nějaký náhodný bezplatný web kvůli převodu nebo oříznutí.", "relief": "Všechno běží na tvém vlastním zařízení. Nic se nenahrává; nic neopustí zařízení zodpovědné osoby." },
     { "pain": "Znovu ručně vyrábět stejný odznak, kartu nebo banner stokrát dokola.", "relief": "Vlož tabulku. Získej najednou stovku hotových souborů připravených k tisku." },
-    { "pain": "„Která verze je ta poslední?“ – pátrání ve vláknech na Slacku a sdílených discích.", "relief": "Podklad je odkaz. Stejný vstup, stejný soubor, pokaždé." },
-    { "pain": "Žádný signál v letadle nebo uzamčená síť – a najednou jsi prostě zablokovaný.", "relief": "Funguje úplně offline, na jakémkoli zařízení, jakmile se jednou načte." },
+    { "pain": "„Která verze je ta poslední?“ - pátrání ve vláknech na Slacku a sdílených discích.", "relief": "Podklad je odkaz. Stejný vstup, stejný soubor, pokaždé." },
+    { "pain": "Žádný signál v letadle nebo uzamčená síť - a najednou jsi prostě zablokovaný.", "relief": "Funguje úplně offline, na jakémkoli zařízení, jakmile se jednou načte." },
     { "pain": "Embargovaný obsah:  komunikační profesionálové nemají bezpečný způsob, jak spolupracovat s externími partnery.", "relief": "zamkni, zašifruj a chraň heslem soubory, zipy a sdílené odkazy - vše bez připojení k internetu" }
   ]
 }

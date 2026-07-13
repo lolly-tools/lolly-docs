@@ -7,16 +7,16 @@
     { "file": "hooks.js", "name": "Hooks", "desc": "Lógica opcional, em sandbox" }
   ],
   "features": [
-    { "icon": "toolFeatureStar", "title": "Um template inteligente", "desc": "Conhece seu próprio layout, tipografia, cores e regras de marca. Você traz o conteúdo — ele cuida do resto." },
+    { "icon": "toolFeatureStar", "title": "Um template inteligente", "desc": "Conhece seu próprio layout, tipografia, cores e regras de marca. Você traz o conteúdo - ele cuida do resto." },
     { "icon": "toolFeaturePeople", "title": "Não é preciso experiência em design", "desc": "Criado uma vez por alguém que conhece a marca. Todo mundo mais só precisa preencher os espaços." },
     { "icon": "toolFeatureCode", "title": "Design como código", "desc": "HTML, CSS e JS puros. Versionado, comparável (diff) e revisável como qualquer outro arquivo de código-fonte." },
-    { "icon": "toolFeatureMonitor", "title": "Nenhum aplicativo necessário", "desc": "Abra `template.html` em qualquer navegador — e simplesmente funciona. A ferramenta é o aplicativo." },
-    { "icon": "toolFeatureShuffle", "title": "Layout em canvas livre", "desc": "Algumas ferramentas abrem como uma tela de manipulação direta — arraste, gire e encaixe caixas de texto, formas e imagens, exportadas pelo mesmo caminho determinístico." },
-    { "icon": "toolFeatureNested", "title": "Ferramentas dentro de ferramentas", "desc": "Trate uma ferramenta como uma imagem dentro de outra ferramenta — um crachá que renderiza seu próprio QR code, um cartão com um gráfico ao vivo — e mantenha a inteligência intacta: ainda ao vivo, ainda re-renderizado, nunca uma imagem achatada." }
+    { "icon": "toolFeatureMonitor", "title": "Nenhum aplicativo necessário", "desc": "Abra `template.html` em qualquer navegador - e simplesmente funciona. A ferramenta é o aplicativo." },
+    { "icon": "toolFeatureShuffle", "title": "Layout em canvas livre", "desc": "Algumas ferramentas abrem como uma tela de manipulação direta - arraste, gire e encaixe caixas de texto, formas e imagens, exportadas pelo mesmo caminho determinístico." },
+    { "icon": "toolFeatureNested", "title": "Ferramentas dentro de ferramentas", "desc": "Trate uma ferramenta como uma imagem dentro de outra ferramenta - um crachá que renderiza seu próprio QR code, um cartão com um gráfico ao vivo - e mantenha a inteligência intacta: ainda ao vivo, ainda re-renderizado, nunca uma imagem achatada." }
   ],
   "tryNow": {
     "title": "As ferramentas funcionam bem sozinhas.",
-    "desc": "Para renderizar em PNG, PDF, SVG, vídeo e muito mais — use a plataforma Lolly.",
+    "desc": "Para renderizar em PNG, PDF, SVG, vídeo e muito mais - use a plataforma Lolly.",
     "cta": "Abrir aplicativo ↗",
     "href": "/"
   }

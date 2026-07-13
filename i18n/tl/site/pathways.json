@@ -1,13 +1,13 @@
 {
   "title": "Tatlong paraan para makapasok",
-  "lead": "Magsimula sa [Quickstart](/info/quickstart.html) — i-set up ang brand mo at kunin ang first file mo — tapos sundan ang path na bagay sa'yo.",
+  "lead": "Magsimula sa [Quickstart](/info/quickstart.html) - i-set up ang brand mo at kunin ang first file mo - tapos sundan ang path na bagay sa'yo.",
   "cards": [
     {
       "href": "/info/creators.html",
       "icon": "media",
       "eyebrow": "Para sa mga Creator",
       "name": "Gumawa ng mga bagay",
-      "desc": "Kumpletong files sa loob ng ilang segundo — walang design tool, walang paghihintay. Ang mga bentahe, at kung paano ma-gamit nang husto ang app.",
+      "desc": "Kumpletong files sa loob ng ilang segundo - walang design tool, walang paghihintay. Ang mga bentahe, at kung paano ma-gamit nang husto ang app.",
       "cta": "Tuklasin →"
     },
     {

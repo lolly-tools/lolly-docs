@@ -1,6 +1,6 @@
 {
   "heading": "Wszystko,\ntak jak jesteś,\nna czymkolwiek",
-  "copy": "Działaj offline na swoim urządzeniu, bądź zawsze dostępny online — ty decydujesz.\nNarzędzia Lolly mogą tam działać.",
+  "copy": "Działaj offline na swoim urządzeniu, bądź zawsze dostępny online - ty decydujesz.\nNarzędzia Lolly mogą tam działać.",
   "surfaces": [
     {
       "icon": "surfaceWeb",
@@ -37,19 +37,19 @@
       "n": "1",
       "icon": "modelDeploy",
       "label": "Wdrożenie",
-      "desc": "Wysyłaj na urządzenia przez swój istniejący MDM. Działa w pełni offline, za firewallem czy w trybie air-gap — nic nie opuszcza urządzenia."
+      "desc": "Wysyłaj na urządzenia przez swój istniejący MDM. Działa w pełni offline, za firewallem czy w trybie air-gap - nic nie opuszcza urządzenia."
     },
     {
       "n": "2",
       "icon": "modelServe",
       "label": "Hostowanie",
-      "desc": "Jedna hostowana instancja, używana w każdej przeglądarce. Nic do instalowania — zatwierdzone aktualizacje trafiają do wszystkich w chwili wydania."
+      "desc": "Jedna hostowana instancja, używana w każdej przeglądarce. Nic do instalowania - zatwierdzone aktualizacje trafiają do wszystkich w chwili wydania."
     },
     {
       "n": "3",
       "icon": "modelHybrid",
       "label": "Hybryda",
-      "desc": "Lokalne aplikacje offline plus zawsze aktualna wersja webowa, współdzielące jedną bibliotekę narzędzi — na każdym systemie operacyjnym naraz."
+      "desc": "Lokalne aplikacje offline plus zawsze aktualna wersja webowa, współdzielące jedną bibliotekę narzędzi - na każdym systemie operacyjnym naraz."
     }
   ]
 }
