@@ -1116,8 +1116,9 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
     subheading: (aboutMdBlocks[2] ?? '').replace(/^#+\s*/, '').trim(),
   };
   return `
+<div class="hero-wrap">
+<canvas id="heroCanvas" aria-hidden="true"></canvas>
 <section class="hero">
-  <canvas id="heroCanvas" aria-hidden="true"></canvas>
   <div class="hero-inner">
   <div class="hero-heading">
     <h1 class="hero-logo-h1"><a href="${esc(localizeHref(lang, '/'))}" class="hero-logo-link" aria-label="Open Lolly — browse all tools"><img src="/info/icon.avif" alt="Lolly" class="hero-logo"></a></h1>
@@ -1152,7 +1153,8 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
       </a>`).join('\n      ')}
     </div>
   </div>
-</section>${WHY_MATRIX_HTML}
+</section>
+</div>${WHY_MATRIX_HTML}
 <section class="audience-section">
   ${tabsHtml}
   <div class="audience-panels">
@@ -1350,7 +1352,11 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 }
 
 /* Hero */
-.hero{background:#1c4a2e;color:#fff;padding:7rem 1.5rem 6rem;text-align:center;position:relative;overflow:hidden;min-height:50vh;user-select:none;-webkit-user-select:none}
+/* Hero + pathways share one canvas backdrop: the animated chips drift up through
+   both, and a single vertical gradient blends the hero green (#1c4a2e) into the
+   pathways dark (--dark) so the two bands read as one continuous surface. */
+.hero-wrap{position:relative;overflow:hidden;background:linear-gradient(180deg,#1c4a2e 0%,var(--dark) 100%)}
+.hero{background:transparent;color:#fff;padding:7rem 1.5rem 6rem;text-align:center;position:relative;z-index:1;min-height:50vh;user-select:none;-webkit-user-select:none}
 /* Double-clicking the hero backdrop shouldn't highlight the heading/subtitle/trust copy; buttons keep normal selection. */
 .hero .btn{user-select:auto;-webkit-user-select:auto}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 90% 55% at 50% -5%,rgba(48,186,120,.13) 0%,transparent 65%);pointer-events:none}
@@ -1381,7 +1387,7 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .btn-primary,.btn-secondary{-webkit-backdrop-filter:blur(3px) saturate(1.45);backdrop-filter:blur(3px) saturate(1.45)}
 
 /* Three-door pathways band — sits directly under the hero on the landing page. */
-.pathways-section{background:var(--dark);padding:4rem 1.5rem}
+.pathways-section{background:transparent;position:relative;z-index:1;padding:4rem 1.5rem}
 .pathways-inner{max-width:1080px;margin:0 auto;text-align:center}
 .pathways-title{color:#fff;font-size:2rem;margin:0 0 .5rem}
 .pathways-lead{color:rgba(255,255,255,.7);font-size:1.0625rem;max-width:40rem;margin:0 auto 2.5rem}
