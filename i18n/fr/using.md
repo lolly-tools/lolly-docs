@@ -2,7 +2,7 @@
 
 Un guide pratique pour vraiment *utiliser* l'application — ouvrir un outil, travailler sur le canevas, exporter, enregistrer et partager. Tout ici s'exécute **sur ton appareil** : pas de compte, pas d'envoi de fichiers, pas besoin d'internet après le premier chargement.
 
-> Nouveau ici ? [Prise en main](/info/getting-started.html) explique comment installer/déployer l'application ; cette page explique comment la piloter une fois ouverte.
+> Nouveau ici ? Le [Démarrage rapide](/info/quickstart.html) te permet de créer en quelques minutes, et [Lolly pour les opérateurs](/info/operators.html) explique comment installer/déployer l'application ; cette page explique comment la piloter une fois ouverte.
 
 ## Ouvrir un outil
 
@@ -89,13 +89,33 @@ Les **filtres photo** — Halftone, Scanline, Posterize, Duotone — affichent u
 
 Quand un outil te permet d'ajouter une image depuis ton appareil, elle est redimensionnée, débarrassée de ses données EXIF/GPS, puis enregistrée dans ta bibliothèque personnelle **Mes images** (sous **Profil → Stockage**). Réutilise-la dans n'importe quel outil. La bibliothèque a une capacité limitée et reste entièrement locale — gère ou supprime les images à cet endroit.
 
+## Le Catalogue — ta bibliothèque de ressources
+
+Le **Catalogue** (`#/c`, ou le lien **Catalogue** dans le menu) rassemble tout ce sur quoi tes outils peuvent s'appuyer — logos de marque, images, audio et animations, regroupés par type — et c'est aussi là que vivent tes **propres fichiers créatifs**. Pas de serveur, pas de console d'administration, pas de pull request : tout est sur ton appareil.
+
+- **Importe tes fichiers.** Fais glisser n'importe quelle image, SVG, clip audio, vidéo, Lottie ou PDF sur la zone d'import — ou clique pour choisir — et il atterrit instantanément dans ton catalogue, prêt dans le sélecteur de ressources de chaque outil. Importe autant que tu veux ; rien ne quitte ton appareil.
+- **Mets en favori ce que tu utilises souvent.** Marque une ressource (ou un échantillon de marque) d'une ★ et elle s'épingle en haut de chaque sélecteur, si bien que ton logo ou ta couleur de prédilection est à un clic.
+- **Fais le ménage.** Recatégorise une ressource dans un autre groupe, masque une ressource de marque partagée que tu n'utilises pas (avec **Afficher les éléments masqués** pour la faire revenir), ou supprime carrément tes propres imports.
+
+### Emporte ta palette et tes polices partout
+
+Le panneau **Nuancier** du Catalogue ne sert pas qu'à la référence — clique sur une couleur pour la copier, ou **télécharge toute la palette de marque** dans le format que parle ton autre outil :
+
+- **Design tokens (JSON)**, **variables CSS**, ou **classes CSS** — intègre la marque directement dans une feuille de style ou un build ;
+- **Adobe Swatch Exchange (.ase)** — charge-la dans Illustrator ou Photoshop ;
+- **Palette GIMP (.gpl)** — pour GIMP ou Inkscape.
+
+Le panneau **Polices** liste tes fontes de marque avec un **téléchargement** à côté de chacune, pour les installer localement ou les remettre à un imprimeur. (L'onglet Couleurs du [Brand Studio](/info/brand-studio.html) propose le même téléchargement de palette.)
+
+Les ressources sont une moitié du chemin ouvert et « fais-le toi-même » ; l'autre, c'est **créer tes propres outils** — le canevas libre (Layout Studio, décrit ci-dessus) te permet d'en construire un visuellement, sans aucun code.
+
 ## Son et accessibilité
 
 Lolly vise à être confortable à utiliser pour tout le monde. L'interface est navigable au clavier, les contrôles personnalisés portent des libellés appropriés pour les lecteurs d'écran, et l'aperçu en direct de chaque outil est exposé comme une image unique et libellée décrivant ce qu'il produit.
 
 Une couche discrète de **sons d'assistance** confirme tes actions — l'arrivée dans la galerie, une vérification Content Credentials valide ou invalide, la fermeture d'un panneau, le changement de filtre. C'est **activé par défaut**, mais toujours optionnel : désactive le **son** partout où l'interrupteur apparaît (le popover d'options de chaque vue, ou le **profil**), et ton choix est mémorisé.
 
-À côté de cet interrupteur se trouve le **Mode Neurospicy** — un rythme de fond apaisant et optionnel, qui joue en boucle discrètement pendant que tu travailles. Choisis une boucle dans le sélecteur en forme de pilule, lance-la ou mets-la en pause avec le bouton à côté, et règle son volume ; c'est **désactivé par défaut** et, comme le son, ton choix est mémorisé entre les sessions et les appareils. Désactiver le son coupe aussi la boucle de concentration.
+À côté de cet interrupteur se trouve le **Mode Neurospicy** — une piste de fond apaisante et optionnelle, qui joue discrètement pendant que tu travailles. L'activer ouvre un petit **dock de lecture** dans le coin inférieur qui te suit dans toute l'application ; depuis là, tu peux rechercher et choisir une piste, avancer et reculer, régler le volume, et le réduire ou le fermer. La liste de pistes couvre quelques catégories — des morceaux procéduraux *Lolly Sings*, des boucles et rythmes d'ambiance, tes propres fichiers audio importés, et une poignée de stations de **radio** internet en direct (celles-ci nécessitent une connexion ; tout le reste se joue hors ligne). C'est **désactivé par défaut** et, comme le son, ton choix est mémorisé entre les sessions et les appareils. Désactiver le son coupe aussi la piste de concentration.
 
 ## Stockage et confidentialité
 

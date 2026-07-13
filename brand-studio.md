@@ -118,7 +118,7 @@ This is how a colleague hands you a brand, or how you carry one to a second inst
 
 ## When the brand is fixed
 
-Some builds ship a **locked brand** — its colours, fonts, and tokens are what every tool and export use, and there's nothing to change. In that case the studio is replaced with a short note (*"This brand is set"*) rather than the editor. This is deliberate: it's how an organisation guarantees everything stays on-brand.
+Some builds ship a **locked brand** — its colours, fonts, and tokens are what every tool and export use, and there's nothing to change. In that case the studio is replaced with a short note explaining that this build ships with a fixed brand and editing is turned off. This is deliberate: it's how an organisation guarantees everything stays on-brand.
 
 ## Where to go next
 

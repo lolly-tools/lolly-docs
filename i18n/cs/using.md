@@ -2,7 +2,7 @@
 
 Praktický průvodce tím, jak aplikaci opravdu *používat* — otevření nástroje, práce s plátnem, export, ukládání a sdílení. Všechno tady běží **na tvém zařízení**: žádný účet, žádný upload, po prvním načtení není potřeba ani internet.
 
-> Jsi tu poprvé? [Začínáme](/info/getting-started.html) popisuje instalaci/nasazení aplikace; tahle stránka je o tom, jak ji ovládat, jakmile je otevřená.
+> Jsi tu poprvé? [Rychlý start](/info/quickstart.html) tě během pár minut naučí tvořit a [Lolly pro operátory](/info/operators.html) popisuje instalaci/nasazení aplikace; tahle stránka je o tom, jak ji ovládat, jakmile je otevřená.
 
 ## Otevření nástroje
 
@@ -89,13 +89,33 @@ Fotografické **filtry** — Halftone, Scanline, Posterize, Duotone — zobrazuj
 
 Když ti nástroj umožní přidat obrázek z tvého zařízení, zmenší se, zbaví se EXIF/GPS dat a uloží se do tvé osobní knihovny **Moje obrázky** (pod **Profil → Úložiště**). Znovu ho použij v libovolném nástroji. Knihovna má omezenou kapacitu a je čistě lokální — obrázky tam spravuješ nebo mažeš.
 
+## Katalog — tvoje knihovna assetů
+
+**Katalog** (`#/c`, nebo odkaz **Katalog** v nabídce) shromažďuje všechno, z čeho tvé nástroje mohou čerpat — brandová loga, obrázky, audio a pohyb, seskupené podle druhu — a je to zároveň místo, kde žijí i tvoje **vlastní kreativní soubory**. Žádný server, žádná administrátorská konzole, žádný pull request: všechno je na tvém zařízení.
+
+- **Přines si svoje soubory.** Přetáhni jakýkoli obrázek, SVG, zvukový klip, video, Lottie nebo PDF na oblast pro nahrávání — nebo klikni a vyber — a okamžitě přistane v tvém katalogu, připravený ve výběru assetů každého nástroje. Nahraj si, kolik chceš; nikdy to neopustí tvé zařízení.
+- **Označ si oblíbené to, po čem saháš.** Dej assetu (nebo brandovému vzorku) ★ a připne se na začátek každého výběru, takže tvoje oblíbené logo nebo barva je na jedno kliknutí.
+- **Ukliď si.** Přeřaď asset do jiné skupiny, skryj sdílený brandový asset, který nepoužíváš (a **Zobrazit skryté** ho vrátí zpět), nebo úplně smaž své vlastní nahrané soubory.
+
+### Vezmi si svou paletu a písma kamkoli
+
+Panel **Vzorky** v Katalogu není jen pro referenci — klikni na barvu a zkopíruj ji, nebo **stáhni celou brandovou paletu** ve formátu, kterým mluví tvůj druhý nástroj:
+
+- **Design tokeny (JSON)**, **CSS proměnné**, nebo **CSS třídy** — vlož brand rovnou do stylopisu nebo buildu;
+- **Adobe Swatch Exchange (.ase)** — načti ho do Illustratoru nebo Photoshopu;
+- **GIMP paleta (.gpl)** — pro GIMP nebo Inkscape.
+
+Panel **Písma** vypisuje tvé brandové řezy s **tlačítkem stažení** u každého, abys je nainstaloval/a lokálně nebo předal/a do tiskárny. (Záložka Barvy v [Brand Studiu](/info/brand-studio.html) nabízí stejné stažení palety.)
+
+Assety jsou jedna polovina otevřené cesty „udělej si sám"; ta druhá je **tvorba vlastních nástrojů** — volné plátno (Layout Studio, popsané výše) ti umožní jeden postavit vizuálně, bez psaní kódu.
+
 ## Zvuk a přístupnost
 
 Lolly usiluje o to, aby se s ním dalo pohodlně pracovat úplně každému. Rozhraní je ovladatelné klávesnicí, vlastní ovládací prvky mají řádné popisky pro čtečky obrazovky a živý náhled každého nástroje je zpřístupněný jako jeden popsaný obrázek popisující, co vytváří.
 
 Jemná vrstva **doprovodných zvuků** potvrzuje, co děláš — příchod do galerie, kontrola platných vs. neplatných Content Credentials, zavření panelu, přepnutí filtru. Je to **ve výchozím stavu zapnuté**, ale vždy volitelné: vypni **Zvuk** kdekoli, kde se přepínač objeví (v popupu možností každého zobrazení, nebo v **Profilu**), a volba se zapamatuje.
 
-Vedle tohoto přepínače je **Neurospicy Mode** — volitelný, konejšivý podkresový beat pro soustředění, který tiše hraje ve smyčce, zatímco pracuješ. Vyber smyčku z pilulkovitého selektoru, přehraj nebo pozastav ji tlačítkem vedle něj a nastav její hlasitost; je **ve výchozím stavu vypnutý** a stejně jako Zvuk se pamatuje napříč relacemi a zařízeními. Vypnutí Zvuku ztlumí i smyčku pro soustředění.
+Vedle tohoto přepínače je **Neurospicy Mode** — volitelná, konejšivá podkresová stopa pro soustředění, která tiše hraje, zatímco pracuješ. Když ji zapneš, otevře se v dolním rohu malý **dok přehrávače**, který tě provází celou aplikací; z něj můžeš vyhledat a vybrat stopu, přeskakovat vpřed a zpět, nastavit hlasitost a přehrávač minimalizovat nebo zavřít. Seznam stop zahrnuje několik kategorií — procedurální melodie *Lolly Sings*, ambientní smyčky a beaty, tvoje vlastní nahrané audio a hrstku živých internetových **rádiových** stanic (ty potřebují připojení; všechno ostatní hraje offline). Je **ve výchozím stavu vypnutý** a stejně jako Zvuk se pamatuje napříč relacemi a zařízeními. Vypnutí Zvuku ztlumí i stopu pro soustředění.
 
 ## Úložiště a soukromí
 

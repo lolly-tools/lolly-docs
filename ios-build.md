@@ -2,8 +2,8 @@
 
 How to build and run the Lolly mobile shell (`shells/tauri-mobile`, identifier
 `tools.lolly.app.mobile`) on iOS. iOS is a Tauri 2 mobile target: the same
-web-shell source and the same `bridge-overrides/` (filesystem `state.ts`, mobile
-`capabilities-provided.ts`) as the desktop shell, wrapped in a generated Xcode
+web-shell source and the same `bridge-overrides/` (filesystem `state.js`, mobile
+`capabilities-provided.js`) as the desktop shell, wrapped in a generated Xcode
 project.
 
 For the cross-platform overview (CLI, desktop, Android), see
@@ -13,9 +13,15 @@ For the cross-platform overview (CLI, desktop, Android), see
 
 ## Status on this dev machine
 
-**iOS builds cannot run on the current machine yet.** This is a tooling gap, not
-a code problem — the desktop `.app`/`.dmg` build works because it only needs
-Command Line Tools.
+> **Point-in-time snapshot, not a spec.** The table below records one developer
+> machine's toolchain state as of **June 2026** — it goes stale the moment the
+> prerequisites are installed. It's here to show *what a not-yet-ready machine
+> looks like*, not to describe the project. If you're setting up iOS builds, skip
+> to [Prerequisites](#prerequisites); the requirements there are durable.
+
+**iOS builds cannot run on that machine yet.** This was a tooling gap, not a code
+problem — the desktop `.app`/`.dmg` build works because it only needs Command
+Line Tools.
 
 Verified state (2026-06):
 

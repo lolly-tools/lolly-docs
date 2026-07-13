@@ -2,7 +2,7 @@
 
 En praktisk guide till att faktiskt *använda* appen – att öppna ett verktyg, arbeta med arbetsytan, exportera, spara och dela. Allt här körs **på din enhet**: inget konto, ingen uppladdning, ingen internetuppkoppling krävs efter den första inläsningen.
 
-> Ny här? [Komma igång](/info/getting-started.html) beskriver hur du installerar/driftsätter appen; den här sidan handlar om att använda den när den väl är öppen.
+> Ny här? [Snabbstart](/info/quickstart.html) får dig att skapa på några minuter, och [Lolly för operatörer](/info/operators.html) beskriver hur du installerar/driftsätter appen; den här sidan handlar om att använda den när den väl är öppen.
 
 ## Öppna ett verktyg
 
@@ -89,13 +89,33 @@ Fotofiltren – Halvton, Skanlinje, Posterisera, Duoton – visar en knapp **Gå
 
 När ett verktyg låter dig lägga till en bild från din enhet skalas den ned, rensas från EXIF/GPS och sparas i ditt personliga bibliotek **Mina bilder** (under **Profil → Lagring**). Återanvänd den i vilket verktyg som helst. Biblioteket har ett tak och är helt lokalt – hantera eller ta bort bilder där.
 
+## Katalogen – ditt tillgångsbibliotek
+
+**Katalogen** (`#/c`, eller länken **Katalog** i menyn) samlar allt dina verktyg kan använda – varumärkeslogotyper, bilder, ljud och rörelse, grupperade efter typ – och det är också här dina **egna kreativa filer** bor. Ingen server, ingen adminkonsol, ingen pull request: allt finns på din enhet.
+
+- **Ta in dina filer.** Dra valfri bild, SVG, ljudklipp, video, Lottie eller PDF till uppladdningsytan – eller klicka för att välja – så hamnar den i din katalog direkt, redo i varje verktygs tillgångsväljare. Mata in så mycket du vill; det lämnar aldrig din enhet.
+- **Favoritmarkera det du använder ofta.** ★ en tillgång (eller en varumärkesfärg) så fästs den överst i varje väljare, så att din självklara logotyp eller färg är ett klick bort.
+- **Städa upp.** Kategorisera om en tillgång till en annan grupp, dölj en delad varumärkestillgång du inte använder (med **Visa dolda** för att ta tillbaka den), eller radera dina egna uppladdningar helt.
+
+### Ta med din palett och dina typsnitt vart som helst
+
+Katalogens panel **Färgprover** är inte bara till för referens – klicka på en färg för att kopiera den, eller **ladda ner hela varumärkespaletten** i det format ditt andra verktyg talar:
+
+- **Designtokens (JSON)**, **CSS-variabler** eller **CSS-klasser** – släpp in varumärket direkt i en stilmall eller ett bygge;
+- **Adobe Swatch Exchange (.ase)** – läs in det i Illustrator eller Photoshop;
+- **GIMP-palett (.gpl)** – för GIMP eller Inkscape.
+
+Panelen **Typsnitt** listar dina varumärkessnitt med en **nedladdning** bredvid varje, för att installera lokalt eller lämna till ett tryckeri. ([Brand Studio](/info/brand-studio.html)s flik Färger erbjuder samma palettnedladdning.)
+
+Tillgångar är den ena halvan av den öppna gör-det-själv-vägen; den andra är att **skapa dina egna verktyg** – den fria arbetsytan (Layout Studio, beskriven ovan) låter dig bygga ett visuellt, utan kod.
+
 ## Ljud och tillgänglighet
 
 Lolly strävar efter att vara bekvämt att använda för alla. Gränssnittet är tangentbordsnavigerbart, anpassade kontroller har korrekta etiketter för skärmläsare, och varje verktygs live-förhandsvisning exponeras som en enda märkt bild som beskriver vad den skapar.
 
 Ett skönsamt lager av **hjälpljud** bekräftar det du gör – att komma in i galleriet, en giltig kontra ogiltig Content Credentials-kontroll, att stänga en panel, att byta filter. Det är **påslaget som standard** men alltid valfritt: slå av **Ljud** var som helst reglaget visas (varje vys alternativpopover, eller **Profil**), och valet kommer ihåg.
 
-Bredvid det reglaget finns **Neurospicy Mode** – ett valfritt, lugnande fokusljud i bakgrunden som loopar tyst medan du arbetar. Välj en loop från den pillerformade väljaren, spela upp eller pausa den med knappen bredvid, och ställ in volymen; det är **avstängt som standard** och, precis som Ljud, kommer det ihåg mellan sessioner och enheter. Att stänga av Ljud tystar även fokusloopen.
+Bredvid det reglaget finns **Neurospicy Mode** – ett valfritt, lugnande fokusspår i bakgrunden som spelas tyst medan du arbetar. När du slår på det öppnas en liten **spelardocka** i det nedre hörnet som följer med dig genom appen; därifrån kan du söka efter och välja ett spår, hoppa framåt och bakåt, ställa in volymen samt minimera eller stänga den. Spårlistan omfattar några kategorier – procedurella *Lolly Sings*-låtar, ambienta loopar och beats, ditt eget uppladdade ljud, och en handfull direktsända **radio**stationer från internet (dessa kräver en anslutning; allt annat spelas offline). Det är **avstängt som standard** och, precis som Ljud, kommer det ihåg mellan sessioner och enheter. Att stänga av Ljud tystar även fokusspåret.
 
 ## Lagring och integritet
 

@@ -1,6 +1,6 @@
 # Lolly för operatörer
 
-**En framtidssäker strategi för dataförlustskydd och proveniens i flera lager, förklädd till en kreativ plattform.**
+### En framtidssäker strategi för djupförsvar, dataförlustskydd och proveniens – som råkar vara en kreativ produktionsplattform
 
 Det organisatoriska immunförsvaret som omsluter det du redan gör — så att det rutinmässiga kreativa arbete dina team behöver varje dag sker *inom* din perimeter istället för att läcka ut ur den.
 
@@ -8,7 +8,7 @@ Det organisatoriska immunförsvaret som omsluter det du redan gör — så att d
 
 Lolly förtjänar sin plats som ett kreativt verktyg: det raderar designkön och ger alla tillgång till produktionsfärdiga resultat. Men anledningen till att det är *säkert* att dela ut så brett är arkitektonisk. Inget laddas upp, allt är reproducerbart, och varje export kan bära en kryptografisk uppgift om varifrån den kom. Den här sidan berättar säkerhets- och utrullningshistorien.
 
-> **Rakt på sak, direkt.** Lollys säkerhetsegenskaper är starka *till sin konstruktion*, och dess kryptografi- och filtolkningsmotorer genomgår för närvarande SUSE:s stränga infrastrukturhärdning inför skalning till företagsnivå — vi är verkligen bra på det här. Förseglingarna, signeringen på enheten och krypteringen nedan är verkliga och försvarbara; medan härdningen slutförs bör du behandla dem som skydd i flera lager snarare än en certifierad kontroll där oberoende granskning krävs enligt avtal. Vi vill hellre att du vet det direkt.
+> **Var det står idag.** Lollys säkerhetsegenskaper är starka till sin konstruktion, och dess kryptografi- och filtolkningsmotorer genomgår SUSE:s infrastrukturhärdning av företagsklass. Förseglingarna, signeringen på enheten och krypteringen nedan är verkliga och försvarbara nu, och mognar mot oberoende certifiering — så där ett avtal kräver certifierad garanti, driftsätt dem som skydd i flera lager medan den processen slutförs.
 
 ## Den strategiska fördelen
 
@@ -17,7 +17,7 @@ Det vanliga sättet rutinmässigt kreativt arbete utförs på är en riskyta: fi
 Lolly vänder på det. Arbetet som *drev* dessa läckor — citatkortet, den lokaliserade bannern, evenemangsmärket, den redigerade skärmdumpen — sker nu i ett verktyg som körs på medarbetarens egen enhet, mot ditt varumärke, utan någon server inblandad. Du lade inte till en kontroll ovanpå ett riskabelt arbetsflöde; du ersatte det riskabla arbetsflödet med ett som från grunden saknar exfiltreringsväg.
 
 - **Konfigurationen är din egen.** Motorn och skalen är öppen källkod (MPL-2.0). Lägg på din egen autentisering, telemetri eller CA; hosta det eller låt bli; du har full kontroll över funktioner och kostnader, git-spårat, inte inlåst i en SaaS-databas.
-- **Styrning är data, inte en instrumentpanel.** Verktygskatalogen är den enda sanningskällan, hanterad som ett Git-repository — granskning via pull request *är* moderationen, och du får ett fullständigt granskningsspår och omedelbar återställning av varje mall din personal kan röra vid. Se [Införande och styrning](/info/adoption-governance.html).
+- **Styrning kan vara data, inte en instrumentpanel.** När du vill ha den kontrollen, hantera verktygskatalogen som ett Git-repository — granskning via pull request blir varumärkesgodkännande, med ett fullständigt granskningsspår och omedelbar återställning av varje mall din personal kan röra vid. Det är ett alternativ, inte en skyldighet: team som bara vill skapa saker gör sina egna verktyg i Layout Studio och matar in sina egna filer i katalogen, helt och hållet i appen, utan att någonsin röra git. Se [Införande och styrning](/info/adoption-governance.html).
 - **Skyddsräcken är strukturella.** Varumärkesbegränsningar är hårdkodade i mallarna, inte publicerade som riktlinjer som folk kan strunta i. Fel resultat avråds inte bara — det går inte att åstadkomma.
 
 ## Radera beställningskön medan innehållet mångfaldigas.
@@ -62,14 +62,14 @@ Varje verktygsinmatning kan uttryckas som en URL-parameter, och samma indata ger
 
 ## Proveniens och Content Credentials
 
-Exporter kan bära **Content Credentials** — ett signerat [C2PA](https://c2pa.org)-manifest bundet till en hash av filens bytes. Det här är **manipulations-*avslöjande*, inte manipulations-*säkert***: det förhindrar inte att någon ändrar en fil, men varje senare ändring bryter förseglingen och en C2PA-medveten verifierare rapporterar det. Det är den ärliga och användbara egenskapen — du kan *upptäcka* manipulation, kryptografiskt, offline.
+Exporter kan bära **Content Credentials** — ett signerat [C2PA](https://c2pa.org)-manifest bundet till en hash av filens bytes. Varje senare ändring av filen bryter förseglingen, så en C2PA-medveten verifierare **upptäcker ändringar kryptografiskt, offline**. Autentiseringsuppgiften är manipulations-*avslöjande*: den flaggar manipulation snarare än förhindrar den, vilket är precis det som gör fullständig offline-verifiering möjlig.
 
 - **Aktiverat som standard, på enheten.** Signeringsnyckeln genereras på enheten, är icke-extraherbar (inte ens Lolly kan läsa den), och signeringen sker lokalt — endast valfri identitets*registrering* rör någonsin nätverket.
-- **Förtroendenivåer.** En oregistrerad export är strukturellt giltig men signerad anonymt (`untrusted`). Registrera en **verifierad identitet** (kortlivat certifikat från Lolly CA, kopplat till en e-postadress) så rapporterar verifierare som pinnar Lolly-roten `trusted` + signerarens e-postadress. En betrodd tidsstämplingsinstans och grönt ljus från tredjepartsvalidator (C2PA-konformitet) finns på färdplanen, men är inte lanserat — nivåerna märks ärligt och en fil visar aldrig ett falskt grönt.
+- **Förtroendenivåer.** En oregistrerad export är strukturellt giltig men signerad anonymt (`untrusted`). Registrera en **verifierad identitet** (kortlivat certifikat från Lolly CA, kopplat till en e-postadress) så rapporterar verifierare som pinnar Lolly-roten `trusted` + signerarens e-postadress. En betrodd tidsstämplingsinstans och grönt ljus från tredjepartsvalidator (C2PA-konformitet) finns på färdplanen. Varje nivå är explicit, och en fil gör bara anspråk på det förtroende den kan bevisa.
 - **Autentiseringsuppgiftens livslängd** avgörs av operatören/användaren vid signeringstillfället: 7 / 30 / 90 / 365 dagar, standard 30.
 - **Verifiering sker på enheten.** Släpp valfri fil på `/valid` (eller `lolly validate <file>`) för en offline-rapport om huruvida den verkligen skapades med Lolly och är oförändrad sedan dess. Se [Content Credentials-identitet](/info/content-credentials-identity.html).
 
-> **Känd brist, sagt rakt ut:** Lollys verifierare kan ännu inte fullt ut läsa C2PA-anspråk av typen **v2** från andra producenter; och WebM bär manifestet som en Matroska-bilaga (det finns ännu ingen standardiserad C2PA-mappning för WebM), så tredjepartsverktyg verifierar Lollys MP4 men inte dess WebM.
+> **Interoperabilitetsanmärkningar.** Lolly verifierar sina egna autentiseringsuppgifter och många från tredje part offline idag. Två interop-punkter pågår: att fullt ut läsa C2PA-anspråks-**v2**-manifest från andra producenter, och WebM — som ännu inte har någon standardiserad C2PA-mappning, så Lolly bifogar manifestet som en Matroska-del (tredjepartsverktyg verifierar Lollys MP4 direkt; WebM följer när standarden har satt sig).
 
 ## Kryptering och lösenordsskydd
 
@@ -81,16 +81,16 @@ För filer som måste färdas låsta sker allt på enheten:
 
 ## Redo för luftgap
 
-Lolly är designat för att köras med **inget nätverk vid renderingstillfället**. Webbskalet är en offline-first PWA (service worker); typsnitt och WASM lagras på enheten; verktygstillstånd sparas lokalt via värdbryggan, aldrig `localStorage`. Alla verktyg som når nätverket gör det endast via en **tillåtelselistad** `host.net`-funktion som måste deklareras i dess manifest — ett skal som inte kan (eller vill) uppfylla det stubbar ut det. Så en fullständigt luftgapad installation renderar, exporterar, krypterar och verifierar autentiseringsuppgifter utan något att ringa hem till.
+Luftgap är en **förstklassig driftsättning**, inte ett specialläge — Lolly körs med inget nätverk vid renderingstillfället direkt ur lådan. Webbskalet är en offline-first PWA (service worker); typsnitt och WASM lagras på enheten; verktygstillstånd sparas lokalt via värdbryggan, aldrig `localStorage`. Alla verktyg som når nätverket gör det endast via en **tillåtelselistad** `host.net`-funktion som måste deklareras i dess manifest — ett skal som inte kan (eller vill) uppfylla det stubbar ut det. Skicka ut skalen till enheter via din MDM, eller servera en instans inom ditt nätverk, så renderar, exporterar, krypterar och verifierar en fullständigt luftgapad installation autentiseringsuppgifter utan något att ringa hem till.
 
-## Det du måste veta innan du förlitar dig på det
+## Bra att veta
 
-Operatörer förtjänar förbehållen, inte bara påståendena:
+Några saker värda att ha klart för sig innan du rullar ut det:
 
-- **Härdning för företagsskala.** Som nämnt högst upp — kryptografin och parsrarna genomgår för närvarande SUSE:s stränga infrastrukturhärdning inför skalning till företagsnivå; starkt till sin konstruktion, och behandla som skydd i flera lager där oberoende granskning krävs enligt avtal.
-- **Verktygskrokar är *inte* en säkerhetssandlåda.** Ett verktygs valfria `hooks.js` körs med värdbryggan injicerad, men i ett webbläsarskal exekverar det i sidans realm och *kan* nå `window`/`document`/`fetch`. Behandla verktygskod på samma sätt som du behandlar all kod du kör — granska den. Det är därför katalogen-som-Git-granskning-modellen är viktig, och varför opålitliga tredjepartsverktyg inte bör köras förrän Worker-isolering lanseras.
-- **C2PA är manipulations-avslöjande, inte manipulations-säkert**, och v2-läsnings-/WebM-bristerna ovan är verkliga.
-- **Krypteringsnivåerna skiljer sig åt.** *Standard*-lås är avskräckande; endast *Stark* (AES-256) är verkligt skydd, och Stark-filer öppnas inte i alla äldre läsare.
+- **Härdning pågår.** Kryptografin och parsrarna genomgår SUSE:s härdning av företagsskala (se ovan) — starkt till sin konstruktion idag; driftsätt som skydd i flera lager där ett avtal kräver certifierad garanti.
+- **Verktygskrokar är *inte* en säkerhetssandlåda.** Ett verktygs valfria `hooks.js` körs med värdbryggan injicerad, men i ett webbläsarskal exekverar det i sidans realm och *kan* nå `window`/`document`/`fetch`. Behandla verktygskod på samma sätt som du behandlar all kod du kör — granska den. Det är därför en organisation som kör en delad katalog kan grinda den genom Git-granskning; oavsett vilket, kör bara verktyg du har granskat tills Worker-isolering lanseras.
+- **Content Credentials är manipulations-avslöjande.** De upptäcker ändringar snarare än förhindrar dem — se interoperabilitetsanmärkningarna ovan.
+- **Två krypteringsnivåer.** *Standard*-lås är snabba, universella avskräckningar; *Stark* (AES-256) är fullständigt skydd — ta till Stark för allt känsligt, med förbehållet att den vill ha en modern läsare.
 
 ## Vart du kan gå härnäst
 

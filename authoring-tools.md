@@ -52,7 +52,7 @@ Validated against `schemas/tool.schema.json`. Required fields:
 
 Optional:
 
-- `capabilities` — `["network", "filesystem", "clipboard", "camera", "ffmpeg", "wasm", "capture", "compose"]`. Required for the host to expose those APIs to your tool. Tools without `"network"` cannot call `host.net.fetch`; tools that use `composes` (below) declare `"compose"`.
+- `capabilities` — `["network", "filesystem", "clipboard", "camera", "microphone", "ffmpeg", "wasm", "capture", "compose"]`. Required for the host to expose those APIs to your tool. Tools without `"network"` cannot call `host.net.fetch`; tools that use `composes` (below) declare `"compose"`; a tool that records audio through `host.recorder` declares `"microphone"`.
 - `privacy` — `"on-device"`. Marks a content-transform utility that processes the user's own file entirely on the device. Shows the "Runs on your device — nothing is uploaded" badge; enforces (validated) that the tool is never `experimental` and (at runtime) that exports carry no provenance metadata and no watermark. See the `file` input + `exportFile` hook below.
 - `hooks` — `{ onInit?, onInput?, onFrame?, onLevel?, beforeExport?, afterExport?, exportFile? }` boolean flags. If any are true, you must ship `hooks.js` with the matching functions. (`exportFile` is the transform path — file bytes in → transformed bytes out; `onFrame` makes the tool react to a live camera; `onLevel` makes it react to live audio levels while recording — all covered below.)
 - `composes` — embed another tool's render as an image (tool composition; see below). Requires the `"compose"` capability.
@@ -69,13 +69,15 @@ Optional:
 - `transparentBg` — defaults `false`. Adds a **"No BG"** (transparent background) toggle to the export bar; the engine injects it into the input model so hooks can react via `onInit`/`onInput` (`chart-creator`).
 - `preview` — `{ format?, auto? }`. Marks a tool whose live canvas is a placeholder until an explicit, expensive render runs (e.g. a capture tool that screenshots a page in `beforeExport`); the shell wires a `[data-preview]` control. `auto: true` renders one frame on load. Used by `url-shot`.
 - `video` — `{ wait?, duration? }` (seconds; defaults `1` / `5`). Capture timing used when `webm`/`mp4`/`gif`/`apng` is in `formats` (`bag-video`).
-- `c2pa` — defaults `false`. Pre-selects the **Content Credentials** card in the export popup for every stampable format (`pdf`, `png`/`apng`, `jpg`, `gif`, `svg`, `tiff`/`cmyk-tiff`, `webp`, zip members): the finished file gets a signed C2PA manifest (on-device key, so viewers report it as an unverified credential). `multi-page-pdf` is the reference.
+- `c2pa` — defaults **`true`** (Content Credentials are **opt-out**). The **Content Credentials** card in the export popup is pre-checked for every stampable format (`pdf`, `png`/`apng`, `jpg`, `gif`, `svg`, `tiff`/`cmyk-tiff`, `webp`, zip members), so the finished file gets a signed C2PA manifest (on-device key, so viewers report it as an unverified credential). Set `false` to opt a tool out. Forced **off** for `privacy: "on-device"` tools, which must never embed provenance into a user's own file. A `?c2pa=` link/save value overrides this per export.
 - `dims` — set `false` to hide the export dimension inputs in the download bar.
 - `aspectWarning` — `{ min?, max?, message }`. An **editor-only** amber caution shown in the Export popup when the chosen page aspect (`width ÷ height`) falls outside `[min, max]` (either bound optional). It's purely a guard against picking a size that breaks the layout — it never appears in the exported output. `multi-page-pdf` declares `{ "max": 1, "message": "…" }` (portrait-only).
 
 **Physical units & print.** `width`/`height` are values in the export's `unit` (`px` default, or `mm`/`cm`/`in`/`pt`), and `dpi` sets raster resolution for physical units. PDF exports a true page size; the CMYK formats (`pdf-cmyk`, `cmyk-tiff`) pair with the `convertPaths` outlining toggle to produce print-ready, fonts-not-installed output. A `select` option can also carry `width`/`height`/`unit` to drive the export page size from a dropdown — e.g. `wayfinding-signage`'s **Sign size** select (A4/A3/A2… in mm) sets the printed page proportions when chosen.
 
 - `printMarks` — defaults `true`. Set `false` to opt a tool out of the single-page print-finishing card (crop/registration/bleed marks). Multi-page PDF tools set this because their output is a paginated RGB document, not a single marked plate.
+- `paged` — defaults `false`. Marks a multi-page document tool (one that lays out several `[data-pdf-page]` boxes, like `multi-page-pdf`); the gallery renders each page as its own horizontally-scrollable preview slide rather than input-variant examples.
+- `pages` — `{ count, width, height, gap?, min?, max? }`. Turns an `editor`-layout tool into a **multi-page canvas** (the carousel-maker pattern): the shell sizes the canvas to a horizontal strip of N same-size page frames and the free-canvas overlay places boxes across all of them. Box coordinates stay one flat, global, URL-expressible array; the tool's hook derives which page each box belongs to and emits one `[data-pdf-page]` frame per page, so headless CLI/URL renders match and export fans out (multi-page PDF, or one still per page). Requires `layout: "editor"` and `paged: true`. Each property names the input id the geometry is read from (`count`/`width`/`height` are number inputs), so the shell stays generic.
 
 **Multi-page PDF.** A tool builds a paginated PDF by marking page boxes in its template with `data-pdf-page` — each flagged element becomes one true PDF page sized to its own CSS box, so a cover, content that flows across pages, and a back page render as real pages rather than one tall image. Pages are drawn as vectors (text outlined to paths) and the document can carry an open-`password`. The path falls back to the normal single-page renderer when no `[data-pdf-page]` boxes are present, and it bypasses the crop/bleed print-finishing path (pair it with `printMarks: false`). See the `multi-page-pdf` tool for the reference layout (cover + flowing `blocks` content + back page).
 
@@ -90,7 +92,7 @@ Optional:
 | `color`          | string (hex)                                              | color picker, or constrained to a palette asset via `palette: "asset/id"` |
 | `select`         | string (one of `options[].value`); an option may carry `width`/`height`/`unit` to set the export page size | dropdown            |
 | `asset`          | `AssetRef` object (id, url, type, etc.)                   | host-provided asset picker |
-| `date`           | ISO date string                                           | date input          |
+| `date`           | ISO date string                                           | text input in the sidebar; native date field in the `/pro` grid |
 | `time`           | `HH:MM` string                                            | time input          |
 | `datetime-local` | ISO datetime string                                       | flatpickr datetime picker |
 | `url`            | string                                                    | text input          |
@@ -116,7 +118,7 @@ A `blocks` input is a list of repeating sub-records (e.g. team members, each wit
 
 In the template, iterate with `{{#each people}}…{{/each}}`. The value round-trips to the URL as a JSON array (see `docs/url-mode.md`); rows larger than ~8 KB fall back to saved-state slots. Blocks are edited in a side panel, and clicking a rendered block on the canvas focuses that block's field. `meeting-planner` is the reference implementation for the simple (homogeneous) case.
 
-**Advanced blocks (typed / heterogeneous rows).** Sub-fields aren't limited to `text` — a field may be `text`, `color`, `select`, `asset`, or `number`. And the row set can be **discriminated** by a `select` sub-field:
+**Advanced blocks (typed / heterogeneous rows).** Sub-fields aren't limited to `text` — a field may be `text`, `color`, `select`, `asset`, `number`, or `boolean`. And the row set can be **discriminated** by a `select` sub-field:
 
 - `addMenu: { field, label }` turns the **"+ Add"** button into a typed menu — each option of the named discriminator sub-field becomes a menu entry. The discriminator is fixed at creation and shown as the block's label rather than an editable control. An entry already used is disabled unless its option sets `repeatable: true`.
 - `showFor: ["kind"]` on a sub-field limits it to blocks whose discriminator value is listed.
@@ -125,6 +127,8 @@ In the template, iterate with `{{#each people}}…{{/each}}`. The value round-tr
 `color-block` is the reference for typed/heterogeneous blocks (`addMenu` keyed on a `kind` select, `showFor`, `multilineFor`, and the full sub-field type set).
 
 **Drop files to add rows.** A `blocks` input may declare `dropToAdd: { field, accept }` — dropping one or more files onto the blocks list appends one row per file, uploading each into the named `asset` sub-`field` (the row's other fields start at their defaults). `accept` is a MIME filter (default `image/*`). `logo-wall` is the reference: drop many logos → one block each.
+
+**Paste a Markdown document (`mdPaste`).** A `blocks` input may set `mdPaste: true` to add a **Paste Markdown** button to the blocks toolbar: it reads the clipboard, splits the Markdown into one block per heading (heading line → the block's `heading` field, the section beneath → its `body` field, kept as Markdown for a `{{markdown}}` render), and appends the blocks — so a whole document lands as editable, page-flowing blocks. Used by the paged/document tools.
 
 **Import rows from a spreadsheet (`importData`).** A `blocks` input may declare `importData: { formats?, mode?, columns? }` to offer an **Import data** button that fills the whole list from a **CSV or JSON** file — the ingest counterpart to CSV/JSON *export*. The engine (`parseDataRows`) maps columns onto the block's sub-fields: an explicit `columns` map (`{ fieldId: "Column Name" }`) wins, otherwise each column header/key is matched case-insensitively to a field's `id` then its `label`. `formats` limits the accepted types (default both); `mode` is `replace` (default) or `append`. JSON may be an array of objects, an array of arrays (positional, in field order), or `{ "data": [ … ] }`. The imported rows are ordinary blocks — they serialise to the URL and save like any hand-entered data. `chart-creator` is the reference: import a two-column `Label,Value` sheet to chart it.
 
@@ -317,9 +321,22 @@ Handlebars-flavoured. **Logic-less by design.**
 
 - `{{value}}` — HTML-escapes by default. Always use this for user input.
 - `{{{value}}}` — raw, no escape. Only for trusted, system-generated HTML.
-- `{{asset assetInput}}` — returns the resolved URL of an asset input. Use in `src`, `href`.
-- `{{asset assetInput "width"}}` — returns a specific property.
 - Block helpers: `{{#if}}`, `{{#each}}`, `{{#unless}}`. No arbitrary JS.
+
+**Custom helpers.** The engine registers these in `engine/src/template.ts` (the source of truth — this table should list exactly what it registers, no more, no fewer):
+
+| Helper | What it does |
+|---|---|
+| `{{default x "fallback"}}` | `x` unless it's null/undefined, then the fallback. |
+| `{{upper s}}` / `{{lower s}}` | Upper/lower-case a string. |
+| `{{eq a b}}` | Strict equality — use inside a condition, e.g. `{{#if (eq kind "note")}}`. |
+| `{{markdown body}}` | Render a **small Markdown subset** (headings, bold/italic, links, lists, code) to safe HTML. Used for `blocks` bodies and pasted Markdown. |
+| `{{arrow text}}` | A leading `>` `<` `^` `v` becomes `→ ← ↑ ↓` (for directional labels). |
+| `{{asset ref}}` | The resolved URL of an asset input. Use in `src`/`href`. |
+| `{{asset ref "width"}}` | A specific field of the asset (`width`, `height`, …). |
+| `{{media ref}}` | Emits the right element for **any** asset kind — `<img>`, `<video>`, or a Lottie marker — from one call. Options hash: `class`, `style`, `loop`, `autoplay`, `muted`, `controls`, `fit` (`contain`/`cover`), `key`. |
+
+The data-format helpers `{{icsStamp}}`, `{{rfcText}}`, and `{{csvCell}}` are for the sibling text templates — see [Data formats](#data-formats-json-csv-ics-vcf) below.
 
 ## Styles (`styles.css`)
 
@@ -348,7 +365,7 @@ END:VEVENT
 END:VCALENDAR
 ```
 
-Reference wirings: `meeting-planner`→ICS, `email-signature`→vCard, `chart-creator`→CSV. Raster (`png`/`jpg`/`webp`/`avif`/`gif`), `svg`, `pdf`, the print/CMYK formats (`pdf-cmyk`, `cmyk-tiff`), video (`webm`/`mp4`), `zip`, and `ico` come from the browser (web shell) or the Tauri-bundled CLI — the node CLI handles only text/data formats. The CMYK formats pair with the `convertPaths` outlining toggle (see [The `render` block](#the-render-block)) for fonts-not-installed print fidelity; `pdf-cmyk` ships on ten tools today and `cmyk-tiff` on six (a subset) — e.g. `qr-code` offers both, while `wayfinding-signage` and `event-name-badge` ship `pdf-cmyk`.
+Reference wirings: `meeting-planner`→ICS, `email-signature`→vCard, `chart-creator`→CSV. Raster (`png`/`jpg`/`webp`/`avif`/`gif`), `svg`, `pdf`, the print/CMYK formats (`pdf-cmyk`, `cmyk-tiff`), video (`webm`/`mp4`), `zip`, and `ico` come from the browser (web shell) or the Tauri-bundled CLI — the node CLI handles only text/data formats. The CMYK formats pair with the `convertPaths` outlining toggle (see [The `render` block](#the-render-block)) for fonts-not-installed print fidelity; `pdf-cmyk` ships on more tools than `cmyk-tiff` does (a subset) — e.g. `qr-code` offers both, while `wayfinding-signage` and `event-name-badge` ship `pdf-cmyk`.
 
 ## Hooks (`hooks.js`)
 

@@ -83,6 +83,13 @@ Three things sit near each other in the UI and are easy to confuse:
 
 A profile changes who an asset is *from*; the platform changes what it *looks like*; capabilities are *what you can make*.
 
+### "Profile" means two other things elsewhere — not this one
+
+The word is overloaded across the project. Neither of these is the personal profile this page is about:
+
+- **Content profile** — a build-time configuration in `profiles.json` that binds a set of tool packs to a brand catalog (e.g. `suse`, `lolly-start`). It's what an operator picks when deploying, and it's what the `profile` **URL/CLI parameter** also selects a *colour* variant of at export time (the ICC/CMYK press condition — see [URL Mode](/info/url-mode.html)). Both are about the *build/output*, not about *you*. See [Configuration](/info/configuration.html).
+- **Identity profile** — the optional **verified Content Credentials identity** you can enrol (a short-lived certificate that ties your email to your signed exports). That's a signing identity, separate from the personal profile's name/contact fields, though **Use my details** governs whether either is embedded. See [Content Credentials Identity](/info/content-credentials-identity.html).
+
 ## Privacy
 
 A profile is never transmitted, uploaded, or used to identify or track you — there's nothing to consent to, only this notice so you know what's kept. Wipe all of it at any time with **Profile → Clear all my data**. See the [Privacy Policy](/info/privacy.html).

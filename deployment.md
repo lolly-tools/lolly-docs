@@ -30,7 +30,7 @@ The web build is plain static files, so this is the simplest and most portable p
 
 ### With the optional services
 
-To add the AI-agent (MCP) or verified-identity (CA) endpoints, deploy the two functions under `api/` (`api/mcp/**`, `api/ca/**`) to any serverless platform, or self-host the `services/mcp` / `services/ca` submodules as long-running processes. Route the app's `/api/mcp` and `/api/ca` paths to them, and let the SPA catch-all (`/(.*)` → `index.html`) handle the app's clean routes (`/d`, `/c`, `/p`, `/profile`, `/t/:id`). In a hosted or serverless build, materialise the `tools/` and `catalog/` **profile views as real copies** rather than symlinks (symlinks don't survive a function bundle) — the profile build's `--copy` flag does this. See [Configuration](/info/configuration.html) for the profile-view mechanics.
+To add the AI-agent (MCP) or verified-identity (CA) endpoints, deploy the two functions under `api/` (`api/mcp/**`, `api/ca/**`) to any serverless platform, or self-host the `services/mcp` / `services/ca` submodules as long-running processes. Route the app's `/api/mcp` and `/api/ca` paths to them, and let the SPA catch-all (`/(.*)` → `index.html`) handle the app's clean routes (`/d`, `/c`, `/p`, `/v`, `/profile`, `/t/:id`). In a hosted or serverless build, materialise the `tools/` and `catalog/` **profile views as real copies** rather than symlinks (symlinks don't survive a function bundle) — the profile build's `--copy` flag does this. See [Configuration](/info/configuration.html) for the profile-view mechanics.
 
 ## Desktop & mobile apps
 
@@ -42,7 +42,7 @@ npm run build:android   # APK + AAB (shells/tauri-mobile)
 npm run build:ios       # .ipa    (shells/tauri-mobile)
 ```
 
-Signing, notarisation, and store submission are platform-specific — the [Build Guide](/info/build-guide.html) and [iOS build notes](/info/build-guide.html) cover prerequisites (Rust toolchain, Xcode, Android SDK) and the per-store steps. Distribute the resulting binaries through your MDM like any other managed app.
+Signing, notarisation, and store submission are platform-specific — the [Build Guide](/info/build-guide.html) covers the prerequisites (Rust toolchain, Xcode, Android SDK) and the per-store steps. Distribute the resulting binaries through your MDM like any other managed app.
 
 ## The backend services (optional)
 

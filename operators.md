@@ -44,9 +44,6 @@ A category of Lolly tools exists *specifically* to keep files inside the perimet
 Anonymize, encode, format, and manipulate structured and unstructured text. 
 
 - **Compress PDF**
-Prevent any chance of 'email limit crisis' where third party web tools prey and data 
-
-- **Compress PDF**
 Prevent any chance of 'email limit crisis' where third party web tools prey and data falls out the window. 
 
 All of these are on-device transforms: your file or data goes in, cleaned bytes come out, and **there is no server to upload to**. They are the deliberate opposite of the typical "upload your file to a stranger's website to clean it" tool that a well-meaning employee reaches for otherwise.
@@ -67,7 +64,7 @@ Exports can carry **Content Credentials** — a signed [C2PA](https://c2pa.org) 
 - **On by default, on-device.** The signing key is generated on the device, is non-extractable (even Lolly can't read it), and signing happens locally — only optional identity *enrolment* ever touches the network.
 - **Trust tiers.** An un-enrolled export is structurally valid but signed anonymously (`untrusted`). Enrol a **verified identity** (short-lived certificate from the Lolly CA, tied to an email) and verifiers pinning the Lolly root report `trusted` + the signer's email. A trusted timestamp authority and third-party-validator green (C2PA conformance) are on the roadmap. Every tier is explicit, and a file only ever claims the trust it can prove.
 - **Credential lifetime** is the operator/user's call at signing time: 7 / 30 / 90 / 365 days, default 30.
-- **Verification is on-device.** Drop any file on `/valid` (or `lolly validate <file>`) for an offline report of whether it was genuinely made with Lolly and unchanged since. See [Content Credentials Identity](/info/content-credentials-identity.html).
+- **Verification is on-device.** Drop any file on `/verify` (or `lolly validate <file>`) for an offline report of whether it was genuinely made with Lolly and unchanged since. See [Content Credentials Identity](/info/content-credentials-identity.html).
 
 > **Interoperability notes.** Lolly verifies its own credentials and many third-party ones offline today. Two interop items are in progress: fully reading C2PA claim **v2** manifests from other producers, and WebM — which has no standardised C2PA mapping yet, so Lolly attaches the manifest as a Matroska part (third-party tools verify Lolly's MP4 out of the box; WebM follows once the standard settles).
 

@@ -2,7 +2,7 @@
 
 A practical guide to actually *using* the app — opening a tool, working the canvas, exporting, saving, and sharing. Everything here runs **on your device**: no account, no upload, no internet required after the first load.
 
-> New here? [Getting Started](/info/getting-started.html) covers installing/deploying the app; this page is about driving it once it's open.
+> New here? The [Quickstart](/info/quickstart.html) gets you making things in minutes, and [Lolly for Operators](/info/operators.html) covers installing/deploying the app; this page is about driving it once it's open.
 
 ## Opening a tool
 

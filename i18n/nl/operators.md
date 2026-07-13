@@ -1,6 +1,6 @@
 # Lolly voor operators
 
-**Een toekomstbestendige dataverliespreventie- en herkomststrategie met defence-in-depth, vermomd als een creatief platform.**
+### Een toekomstbestendige dataverliespreventie- en herkomststrategie met defence-in-depth – die toevallig een creatief productieplatform is
 
 Het organisatorische immuunsysteem dat zich om wat je al doet heen vouwt — zodat het routinematige creatieve werk dat je teams elke dag nodig hebben *binnen* je perimeter gebeurt in plaats van eruit te lekken.
 
@@ -8,7 +8,7 @@ Het organisatorische immuunsysteem dat zich om wat je al doet heen vouwt — zod
 
 Lolly verdient zijn plek als creatieve tool: het schrapt de ontwerpwachtrij en legt output van productiekwaliteit in ieders handen. Maar de reden dat het *veilig* is om het zo breed uit te delen, zit in de architectuur. Niets wordt geüpload, alles is reproduceerbaar, en elke export kan een cryptografisch record dragen van waar hij vandaan komt. Deze pagina is het security- en uitrolverhaal.
 
-> **Eerst het eerlijke verhaal.** De securityeigenschappen van Lolly zijn sterk *by design*, en de cryptografie- en file-parsing-engines ondergaan momenteel SUSE's strikte infrastructuur-hardening, in voorbereiding op enterprise-schaal — we zijn hier echt goed in. De zegels, on-device signing en encryptie hieronder zijn reëel en verdedigbaar; zolang die hardening nog niet is afgerond, behandel ze als defence-in-depth in plaats van een gecertificeerde control waar contractueel onafhankelijke assurance vereist is. Dat weet je liever van tevoren.
+> **Waar het vandaag staat.** De securityeigenschappen van Lolly zijn sterk *by design*, en de cryptografie- en file-parsing-engines ondergaan momenteel SUSE's enterprise-grade infrastructuur-hardening. De zegels, on-device signing en encryptie hieronder zijn nu reëel en verdedigbaar, en rijpen richting onafhankelijke certificering — dus waar een contract om gecertificeerde assurance vraagt, zet je ze in als defence-in-depth terwijl dat proces wordt afgerond.
 
 ## Het strategische voordeel
 
@@ -17,7 +17,7 @@ De gebruikelijke manier waarop routinematig creatief werk tot stand komt, is een
 Lolly draait dit om. Het werk dat die lekken *veroorzaakte* — de quote card, de gelokaliseerde banner, het eventbadge, de geredigeerde screenshot — gebeurt nu op een tool die op het eigen apparaat van de medewerker draait, tegen jouw merk aan, zonder server ertussen. Je hebt geen control bovenop een risicovolle workflow gezet; je hebt de risicovolle workflow vervangen door een workflow die om te beginnen geen exfiltratiepad heeft.
 
 - **Configuratie is van jou.** De engine en shells zijn open source (MPL-2.0). Leg je eigen auth, telemetrie of CA erover heen; host het zelf of niet; jij hebt volledige controle over features en kosten, git-tracked, niet vastgezet in een SaaS-database.
-- **Governance is data, geen dashboard.** De toolcatalogus is de bron van waarheid, beheerd als een Git-repository — pull-request-review *is* de moderatie, en je krijgt een volledig audittrail en directe rollback van elk template dat je personeel kan aanraken. Zie [Adoptie & Governance](/info/adoption-governance.html).
+- **Governance kán data zijn, geen dashboard.** Als je die controle wilt, beheer je de toolcatalogus als een Git-repository — pull-request-review wordt merkgoedkeuring, met een volledig audittrail en directe rollback van elk template dat je personeel kan aanraken. Het is een optie, geen verplichting: teams die gewoon dingen willen maken, schrijven hun eigen tools in Layout Studio en halen hun eigen bestanden in de catalogus, volledig in-app, en raken git nooit aan. Zie [Adoptie & Governance](/info/adoption-governance.html).
 - **Guardrails zijn structureel.** Merkbeperkingen zijn hard-coded in templates, niet gepubliceerd als richtlijnen die mensen kunnen negeren. De verkeerde output wordt niet afgeraden — hij is niet te representeren.
 
 ## Schrap de verzoekenwachtrij en laat content tegelijk groeien.
@@ -64,14 +64,14 @@ Elke tool-invoer is uit te drukken als URL-parameter, en dezelfde invoer produce
 
 ## Herkomst & Content Credentials
 
-Exports kunnen **Content Credentials** dragen — een ondertekend [C2PA](https://c2pa.org)-manifest gebonden aan een hash van de bytes van het bestand. Dit is **manipulatie-*zichtbaar*, niet manipulatie-*bestendig***: het voorkomt niet dat iemand een bestand wijzigt, maar elke latere wijziging verbreekt het zegel en een C2PA-bewuste verifier meldt dit. Dat is de eerlijke en nuttige eigenschap — je kunt wijzigingen *detecteren*, cryptografisch, offline.
+Exports kunnen **Content Credentials** dragen — een ondertekend [C2PA](https://c2pa.org)-manifest gebonden aan een hash van de bytes van het bestand. Elke latere wijziging aan het bestand verbreekt het zegel, dus een C2PA-bewuste verifier **detecteert wijzigingen cryptografisch, offline**. Het credential is manipulatie-*zichtbaar*: het signaleert manipulatie in plaats van het te voorkomen, en juist dat maakt volledig offline verificatie mogelijk.
 
 - **Standaard aan, on-device.** De ondertekeningssleutel wordt op het apparaat gegenereerd, is niet-extraheerbaar (zelfs Lolly kan hem niet uitlezen), en ondertekenen gebeurt lokaal — alleen optionele identiteits*inschrijving* raakt ooit het netwerk.
-- **Vertrouwensniveaus.** Een niet-ingeschreven export is structureel geldig maar anoniem ondertekend (`untrusted`). Schrijf een **geverifieerde identiteit** in (kortlevend certificaat van de Lolly CA, gekoppeld aan een e-mailadres) en verifiers die de Lolly-root pinnen, melden `trusted` + het e-mailadres van de ondertekenaar. Een trusted timestamp authority en een groen vinkje van een externe validator (C2PA-conformiteit) staan op de roadmap, maar zijn nog niet uitgeleverd — de niveaus zijn eerlijk gelabeld en een bestand toont nooit een vals groen.
+- **Vertrouwensniveaus.** Een niet-ingeschreven export is structureel geldig maar anoniem ondertekend (`untrusted`). Schrijf een **geverifieerde identiteit** in (kortlevend certificaat van de Lolly CA, gekoppeld aan een e-mailadres) en verifiers die de Lolly-root pinnen, melden `trusted` + het e-mailadres van de ondertekenaar. Een trusted timestamp authority en groen van een externe validator (C2PA-conformiteit) staan op de roadmap. Elk niveau is expliciet, en een bestand claimt alleen ooit het vertrouwen dat het kan bewijzen.
 - **Levensduur van het credential** is de keuze van de operator/gebruiker op het moment van ondertekenen: 7 / 30 / 90 / 365 dagen, standaard 30.
 - **Verificatie gebeurt on-device.** Zet een willekeurig bestand op `/valid` (of `lolly validate <file>`) voor een offline rapport of het echt met Lolly is gemaakt en sindsdien ongewijzigd is gebleven. Zie [Content Credentials-identiteit](/info/content-credentials-identity.html).
 
-> **Bekende lacune, ronduit gezegd:** de verifier van Lolly leest C2PA-claim-**v2**-manifesten van andere producenten nog niet volledig; en WebM draagt het manifest als een Matroska-bijlage (er bestaat nog geen gestandaardiseerde C2PA-mapping voor WebM), dus tools van derden verifiëren de MP4 van Lolly wel, maar de WebM niet.
+> **Interoperabiliteitsnotities.** Lolly verifieert vandaag zijn eigen credentials en veel die van derden offline. Twee interop-items zijn in uitvoering: het volledig lezen van C2PA-claim-**v2**-manifesten van andere producenten, en WebM — waarvoor nog geen gestandaardiseerde C2PA-mapping bestaat, dus Lolly hangt het manifest eraan als een Matroska-onderdeel (tools van derden verifiëren de MP4 van Lolly out of the box; WebM volgt zodra de standaard is uitgekristalliseerd).
 
 ## Encryptie & wachtwoordbeveiliging
 
@@ -83,16 +83,16 @@ Voor bestanden die vergrendeld moeten reizen, gebeurt alles on-device:
 
 ## Air-gap-klaar
 
-Lolly is ontworpen om te draaien met **geen netwerk tijdens het renderen**. De webshell is een offline-first PWA (service worker); fonts en WASM worden on-device opgeslagen; tool-status wordt lokaal bewaard via de host-bridge, nooit via `localStorage`. Elke tool die het netwerk raakt, doet dat alleen via een **toegestane** `host.net`-capability die hij in zijn manifest moet declareren — een shell die dit niet kan (of wil) vervullen, stubt hem uit. Dus een volledig air-gapped installatie rendert, exporteert, versleutelt en verifieert credentials zonder iets om naar huis te bellen.
+Air-gap is een **eersteklas deployment**, geen speciale modus — Lolly draait standaard zonder netwerk tijdens het renderen. De webshell is een offline-first PWA (service worker); fonts en WASM worden on-device opgeslagen; tool-status wordt lokaal bewaard via de host-bridge, nooit via `localStorage`. Elke tool die het netwerk raakt, doet dat alleen via een **toegestane** `host.net`-capability die hij in zijn manifest moet declareren — een shell die dit niet kan (of wil) vervullen, stubt hem uit. Verspreid de shells naar apparaten via je MDM, of draai één instance binnen je netwerk, en een volledig air-gapped installatie rendert, exporteert, versleutelt en verifieert credentials zonder iets om naar huis te bellen.
 
-## Wat je moet weten voordat je erop vertrouwt
+## Goed om te weten
 
-Operators verdienen de kanttekeningen, niet alleen de claims:
+Een paar dingen die goed zijn om helder te hebben voordat je het uitrolt:
 
-- **Hardening voor enterprise-schaal.** Zoals bovenaan al gezegd — de cryptografie en parsers ondergaan momenteel SUSE's strikte infrastructuur-hardening voor enterprise-schaal; sterk by design, en behandel het als defence-in-depth waar contractueel onafhankelijke assurance vereist is.
-- **Tool-hooks zijn *geen* security sandbox.** De optionele `hooks.js` van een tool draait met de host-bridge geïnjecteerd, maar in een browsershell wordt hij uitgevoerd in het realm van de pagina en *kan* hij bij `window`/`document`/`fetch`. Behandel toolcode zoals je elke code behandelt die je uitvoert — review het. Dit is waarom het catalogus-als-Git-review-model ertoe doet, en waarom niet-vertrouwde tools van derden niet zouden moeten draaien totdat Worker-isolatie er is.
-- **C2PA is manipulatie-zichtbaar, niet manipulatie-bestendig**, en de hierboven genoemde v2-lees- / WebM-lacunes zijn reëel.
-- **Encryptieniveaus verschillen.** *Standaard*-vergrendelingen zijn afschrikmiddelen; alleen *Sterk* (AES-256) is echte bescherming, en Sterk-bestanden openen niet in elke legacy reader.
+- **Hardening in uitvoering.** De cryptografie en parsers ondergaan SUSE's enterprise-schaal-hardening (zie boven) — vandaag sterk by design; zet het in als defence-in-depth waar een contract om gecertificeerde assurance vraagt.
+- **Tool-hooks zijn *geen* security sandbox.** De optionele `hooks.js` van een tool draait met de host-bridge geïnjecteerd, maar in een browsershell wordt hij uitgevoerd in het realm van de pagina en *kan* hij bij `window`/`document`/`fetch`. Behandel toolcode zoals je elke code behandelt die je uitvoert — review het. Daarom kan een organisatie die een gedeelde catalogus draait, die afschermen via Git-review; hoe dan ook, draai alleen tools die je hebt gereviewd totdat Worker-isolatie er is.
+- **Content Credentials zijn manipulatie-zichtbaar.** Ze detecteren wijzigingen in plaats van ze te voorkomen — zie de interoperabiliteitsnotities hierboven.
+- **Twee encryptieniveaus.** *Standaard*-vergrendelingen zijn snelle, universele afschrikmiddelen; *Sterk* (AES-256) is volledige bescherming — grijp naar Sterk voor alles wat gevoelig is, met de kanttekening dat het een moderne reader vereist.
 
 ## Waar je verder kunt kijken
 

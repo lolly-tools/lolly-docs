@@ -1,6 +1,6 @@
 # Lolly untuk Operator
 
-**Strategi pencegahan kehilangan data (data-loss-prevention) dan asal-usul (provenance) yang kalis masa depan serta berlapis pertahanan (defence-in-depth), menyamar sebagai platform kreatif.**
+### Strategi kalis masa depan, berlapis pertahanan (defence-in-depth), pencegahan kehilangan data & asal-usul (provenance) — yang kebetulan pula menjadi platform pengeluaran kreatif
 
 Sistem imun organisasi yang membalut apa yang anda sudah lakukan — supaya kerja kreatif rutin yang diperlukan oleh pasukan anda setiap hari berlaku *di dalam* perimeter anda, bukannya bocor keluar daripadanya.
 
@@ -8,7 +8,7 @@ Sistem imun organisasi yang membalut apa yang anda sudah lakukan — supaya kerj
 
 Lolly memperoleh tempatnya sebagai alat kreatif: ia memadamkan baris gilir reka bentuk dan meletakkan output bertaraf pengeluaran di tangan setiap orang. Tetapi sebab ia *selamat* untuk diagihkan seluas itu adalah bersifat seni bina. Tiada apa yang dimuat naik, semuanya boleh dihasilkan semula, dan setiap eksport boleh membawa rekod kriptografi tentang asal-usulnya. Halaman ini ialah kisah keselamatan dan pelancarannya.
 
-> **Bercakap terus terang dahulu.** Ciri-ciri keselamatan Lolly adalah kukuh *mengikut reka bentuk*, dan enjin kriptografi serta penghurai failnya kini sedang menjalani pengukuhan infrastruktur ketat SUSE, bersiap untuk skala perusahaan — kami memang mahir dalam hal ini. Meterai, penandatanganan pada peranti (on-device), dan penyulitan di bawah adalah nyata dan boleh dipertahankan; semasa pengukuhan itu selesai, anggaplah ia sebagai pertahanan berlapis dan bukannya kawalan bertauliah di tempat yang memerlukan jaminan bebas secara kontrak. Kami lebih suka anda mengetahuinya terlebih dahulu.
+> **Di mana keadaannya hari ini.** Ciri-ciri keselamatan Lolly kukuh mengikut reka bentuk, dan enjin kriptografi serta penghurai failnya kini sedang menjalani pengukuhan infrastruktur bertaraf perusahaan SUSE. Meterai, penandatanganan pada peranti (on-device), dan penyulitan di bawah adalah nyata dan boleh dipertahankan sekarang, serta semakin matang ke arah pensijilan bebas — jadi di tempat yang kontrak menuntut jaminan bertauliah, gunakannya sebagai pertahanan berlapis (defence-in-depth) semasa proses itu selesai.
 
 ## Kelebihan strategik
 
@@ -17,7 +17,7 @@ Cara biasa kerja kreatif rutin dilaksanakan adalah satu permukaan liabiliti: fai
 Lolly membalikkan keadaan ini. Kerja yang *mendorong* kebocoran tersebut — kad petikan, sepanduk yang dilokalkan, lencana acara, tangkapan skrin yang disunting (redacted) — kini berlaku pada alat yang berjalan pada peranti pekerja itu sendiri, mengikut jenama anda, tanpa pelayan yang terlibat. Anda bukan menambah kawalan di atas aliran kerja berisiko; anda menggantikan aliran kerja berisiko itu dengan satu yang sejak awal lagi tiada laluan eksfiltrasi.
 
 - **Konfigurasi adalah milik anda.** Enjin dan shell adalah sumber terbuka (MPL-2.0). Tambahkan lapisan pengesahan (auth), telemetri, atau CA anda sendiri; hoskan atau tidak; anda memegang kawalan penuh ke atas ciri dan kos, dijejaki melalui git, tidak terkunci dalam pangkalan data SaaS.
-- **Governans adalah data, bukan papan pemuka.** Katalog alat ialah sumber kebenaran (source of truth), diurus sebagai repositori Git — semakan pull-request *itulah* moderasinya, dan anda mendapat jejak audit yang lengkap serta rollback segera untuk setiap templat yang boleh disentuh oleh tenaga kerja anda. Lihat [Penerimaan Pakai & Governans](/info/adoption-governance.html).
+- **Governans boleh menjadi data, bukan papan pemuka.** Apabila anda mahukan kawalan itu, uruskan katalog alat sebagai repositori Git — semakan pull-request menjadi kelulusan jenama, dengan jejak audit yang lengkap serta rollback segera bagi setiap templat yang boleh disentuh oleh tenaga kerja anda. Ia satu pilihan, bukan kewajipan: pasukan yang sekadar mahu menghasilkan sesuatu boleh mengarang alat mereka sendiri dalam Layout Studio dan memasukkan fail mereka sendiri ke dalam katalog, sepenuhnya dalam aplikasi, tanpa pernah menyentuh git. Lihat [Penerimaan Pakai & Governans](/info/adoption-governance.html).
 - **Pagar keselamatan (guard-rails) bersifat struktural.** Kekangan jenama dikodkan tegar (hard-coded) ke dalam templat, bukan diterbitkan sebagai garis panduan yang boleh diabaikan orang. Output yang salah bukan sekadar tidak digalakkan — ia langsung tidak boleh dihasilkan.
 
 ## Padamkan baris gilir permintaan sambil menggandakan kandungan.
@@ -62,14 +62,14 @@ Setiap input alat boleh dinyatakan sebagai parameter URL, dan input yang sama me
 
 ## Asal-usul & Content Credentials
 
-Eksport boleh membawa **Content Credentials** — manifes [C2PA](https://c2pa.org) yang ditandatangani, terikat kepada cincangan (hash) bait fail tersebut. Ini **boleh-*dikesan*-gangguan, bukan *kalis*-gangguan**: ia tidak menghalang sesiapa daripada mengubah fail, tetapi sebarang perubahan kemudian akan memecahkan meterai tersebut dan pengesah yang mesra-C2PA akan melaporkannya. Itulah ciri yang jujur dan berguna — anda boleh *mengesan* perubahan, secara kriptografi, luar talian.
+Eksport boleh membawa **Content Credentials** — manifes [C2PA](https://c2pa.org) yang ditandatangani, terikat kepada cincangan (hash) bait fail tersebut. Sebarang perubahan kemudian pada fail itu akan memecahkan meterai tersebut, jadi pengesah yang mesra-C2PA **mengesan pengubahan secara kriptografi, luar talian**. Kelayakan itu bersifat boleh-*dikesan*-gangguan (tamper-evident): ia menandakan gangguan dan bukannya menghalangnya, dan itulah justru yang membolehkan pengesahan luar talian sepenuhnya.
 
 - **Aktif secara lalai, pada peranti.** Kunci tandatangan dijana pada peranti, tidak boleh diekstrak (walaupun Lolly sendiri tidak boleh membacanya), dan penandatanganan berlaku secara tempatan — hanya *pendaftaran* identiti pilihan yang menyentuh rangkaian.
-- **Tingkat kepercayaan (trust tiers).** Eksport yang tidak didaftarkan adalah sah dari segi struktur tetapi ditandatangani secara tanpa nama (`untrusted`). Daftarkan **identiti yang disahkan** (sijil jangka pendek daripada Lolly CA, terikat kepada e-mel) dan pengesah yang menyematkan (pinning) root Lolly akan melaporkan `trusted` + e-mel penandatangan. Pihak berkuasa cap masa yang dipercayai (trusted timestamp authority) dan lampu hijau pengesah pihak ketiga (pematuhan C2PA) berada dalam roadmap, belum dihantar — tingkat-tingkat ini dilabel dengan jujur dan fail tidak akan sekali-kali menunjukkan lampu hijau palsu.
+- **Tingkat kepercayaan (trust tiers).** Eksport yang tidak didaftarkan adalah sah dari segi struktur tetapi ditandatangani secara tanpa nama (`untrusted`). Daftarkan **identiti yang disahkan** (sijil jangka pendek daripada Lolly CA, terikat kepada e-mel) dan pengesah yang menyematkan (pinning) root Lolly akan melaporkan `trusted` + e-mel penandatangan. Pihak berkuasa cap masa yang dipercayai (trusted timestamp authority) dan lampu hijau pengesah pihak ketiga (pematuhan C2PA) berada dalam roadmap. Setiap tingkat adalah eksplisit, dan sesuatu fail hanya menuntut kepercayaan yang boleh dibuktikannya.
 - **Tempoh sah kelayakan (credential lifetime)** adalah keputusan operator/pengguna pada masa penandatanganan: 7 / 30 / 90 / 365 hari, lalai 30.
 - **Pengesahan berlaku pada peranti.** Lepaskan (drop) mana-mana fail pada `/valid` (atau `lolly validate <file>`) untuk mendapatkan laporan luar talian sama ada ia benar-benar dibuat dengan Lolly dan tidak berubah sejak itu. Lihat [Identiti Content Credentials](/info/content-credentials-identity.html).
 
-> **Jurang yang diketahui, dinyatakan dengan jelas:** Pengesah Lolly masih belum dapat membaca sepenuhnya manifes tuntutan (claim) **v2** C2PA daripada penerbit lain; dan WebM membawa manifes tersebut sebagai lampiran Matroska (belum wujud pemetaan C2PA yang piawai untuk WebM), jadi alat pihak ketiga dapat mengesahkan MP4 Lolly tetapi tidak WebM-nya.
+> **Nota kesalinghubungan (interoperability).** Lolly mengesahkan kelayakannya sendiri dan banyak kelayakan pihak ketiga secara luar talian hari ini. Dua perkara interop sedang dalam proses: membaca sepenuhnya manifes tuntutan (claim) **v2** C2PA daripada penerbit lain, dan WebM — yang belum mempunyai pemetaan C2PA piawai, jadi Lolly melampirkan manifes tersebut sebagai bahagian Matroska (alat pihak ketiga mengesahkan MP4 Lolly secara terus; WebM menyusul sebaik sahaja piawai itu mantap).
 
 ## Penyulitan & kata laluan
 
@@ -81,16 +81,16 @@ Untuk fail yang perlu dihantar dalam keadaan terkunci, semuanya berlaku pada per
 
 ## Sedia untuk air-gap
 
-Lolly direka untuk berjalan **tanpa rangkaian semasa render**. Shell web adalah PWA offline-first (service worker); fon dan WASM disimpan pada peranti; keadaan (state) alat dikekalkan secara tempatan melalui host bridge, tidak sekali-kali `localStorage`. Mana-mana alat yang mencapai rangkaian hanya berbuat demikian melalui keupayaan `host.net` yang **disenaraikan-benar (allowlisted)**, yang mesti diisytiharkan dalam manifesnya — shell yang tidak boleh (atau tidak mahu) memenuhinya akan mengganti dengan stub. Jadi pemasangan air-gapped sepenuhnya boleh me-render, mengeksport, menyulitkan, dan mengesahkan kelayakan tanpa apa-apa untuk "phone home".
+Air-gap ialah **penggunaan kelas pertama (first-class deployment)**, bukan mod khas — Lolly berjalan tanpa rangkaian semasa render sedia daripada kotaknya. Shell web adalah PWA offline-first (service worker); fon dan WASM disimpan pada peranti; keadaan (state) alat dikekalkan secara tempatan melalui host bridge, tidak sekali-kali `localStorage`. Mana-mana alat yang mencapai rangkaian hanya berbuat demikian melalui keupayaan `host.net` yang **disenaraikan-benar (allowlisted)** yang mesti diisytiharkan dalam manifesnya — shell yang tidak boleh (atau tidak mahu) memenuhinya akan mengganti dengan stub. Hantar shell ke peranti melalui MDM anda, atau sajikan satu instance di dalam rangkaian anda, dan pemasangan air-gapped sepenuhnya akan me-render, mengeksport, menyulitkan, serta mengesahkan kelayakan tanpa apa-apa untuk "phone home".
 
-## Apa yang perlu anda ketahui sebelum bergantung padanya
+## Baik untuk diketahui
 
-Operator berhak mengetahui had-had (caveats) ini, bukan sekadar dakwaan:
+Beberapa perkara yang wajar difahami dengan jelas sebelum anda melancarkannya:
 
-- **Pengukuhan untuk skala perusahaan.** Seperti dinyatakan di atas — kriptografi dan penghurai (parsers) kini sedang menjalani pengukuhan infrastruktur ketat SUSE untuk skala perusahaan; kukuh mengikut reka bentuk, dan anggaplah sebagai pertahanan berlapis di tempat yang memerlukan jaminan bebas secara kontrak.
-- **Hook alat *bukan* sandbox keselamatan.** `hooks.js` pilihan bagi sesuatu alat berjalan dengan host bridge disuntik, tetapi dalam shell pelayar ia dilaksanakan dalam realm halaman tersebut dan *boleh* mencapai `window`/`document`/`fetch`. Layan kod alat sebagaimana anda melayan mana-mana kod yang anda jalankan — semak (review) ia. Inilah sebabnya model katalog-sebagai-semakan-Git penting, dan sebabnya alat pihak ketiga yang tidak dipercayai tidak sepatutnya dijalankan sehingga pengasingan Worker dihantar.
-- **C2PA boleh dikesan gangguan (tamper-evident), bukan kalis gangguan (tamper-proof)**, dan jurang pembacaan-v2 / WebM di atas adalah nyata.
-- **Tingkat penyulitan berbeza.** Kunci *Standard* adalah pencegah sahaja; hanya *Kuat (Strong)* (AES-256) merupakan perlindungan sebenar, dan fail Strong tidak dapat dibuka dalam setiap pembaca lama (legacy).
+- **Pengukuhan sedang berjalan.** Kriptografi dan penghurai (parsers) kini sedang menjalani pengukuhan skala perusahaan SUSE (lihat di atas) — kukuh mengikut reka bentuk hari ini; gunakan sebagai pertahanan berlapis di tempat yang kontrak menuntut jaminan bertauliah.
+- **Hook alat *bukan* sandbox keselamatan.** `hooks.js` pilihan bagi sesuatu alat berjalan dengan host bridge disuntik, tetapi dalam shell pelayar ia dilaksanakan dalam realm halaman tersebut dan *boleh* mencapai `window`/`document`/`fetch`. Layan kod alat sebagaimana anda melayan mana-mana kod yang anda jalankan — semak (review) ia. Inilah sebabnya organisasi yang menjalankan katalog kongsi boleh mengawalnya melalui semakan Git; walau apa pun, jalankan hanya alat yang telah anda semak sehingga pengasingan Worker dihantar.
+- **Content Credentials boleh dikesan gangguan (tamper-evident).** Ia mengesan pengubahan dan bukannya menghalangnya — lihat nota kesalinghubungan (interoperability) di atas.
+- **Dua tingkat penyulitan.** Kunci *Standard* adalah pencegah pantas dan sejagat; *Kuat (Strong)* (AES-256) ialah perlindungan penuh — pilih Strong untuk apa-apa yang sensitif, dengan mengambil kira ia memerlukan pembaca moden.
 
 ## Ke mana seterusnya
 

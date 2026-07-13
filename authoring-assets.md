@@ -58,7 +58,7 @@ Validated against `schemas/asset.schema.json`.
 | `catalog`    | Synced at boot, cached. Available offline once cached.         | Most things — event packs, icon sets |
 | `on-demand`  | Fetched when first used, then cached. Needs net first time.    | Heavy items — hi-res photo, video b-roll |
 
-The `core` tier is meant to stay small (target a few dozen brand essentials); today the catalog ships 10 core assets, the rest `on-demand`. Catalog-tier entries can set `"prefetch": true` (catalog tier only) to fetch their bytes at sync time rather than lazily on first use.
+The `core` tier is meant to stay small (target a few dozen brand essentials) — most assets ride in the `catalog` and `on-demand` tiers. Catalog-tier entries can set `"prefetch": true` (catalog tier only) to fetch their bytes at sync time rather than lazily on first use.
 
 ## Locales
 

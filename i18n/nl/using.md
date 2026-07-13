@@ -2,7 +2,7 @@
 
 Een praktische gids voor het daadwerkelijk *gebruiken* van de app — een tool openen, werken met het canvas, exporteren, opslaan en delen. Alles hier draait **op je eigen apparaat**: geen account, geen upload, geen internet nodig na de eerste keer laden.
 
-> Nieuw hier? [Aan de slag](/info/getting-started.html) behandelt het installeren/implementeren van de app; deze pagina gaat over het bedienen ervan zodra hij eenmaal open staat.
+> Nieuw hier? [Snelstart](/info/quickstart.html) helpt je binnen enkele minuten iets te maken, en [Lolly voor operators](/info/operators.html) behandelt het installeren/implementeren van de app; deze pagina gaat over het bedienen ervan zodra hij eenmaal open staat.
 
 ## Een tool openen
 
@@ -89,13 +89,33 @@ De foto-**filters** — Halftone, Scanline, Posterize, Duotone — tonen een **L
 
 Wanneer een tool je een afbeelding vanaf je apparaat laat toevoegen, wordt deze verkleind, ontdaan van EXIF/GPS-gegevens, en opgeslagen in je persoonlijke bibliotheek **Mijn afbeeldingen** (onder **Profiel → Opslag**). Hergebruik hem in elke tool. De bibliotheek heeft een maximum en is volledig lokaal — beheer of verwijder afbeeldingen daar.
 
+## De Catalogus — je assetbibliotheek
+
+De **Catalogus** (`#/c`, of de link **Catalogus** in het menu) verzamelt alles waar je tools uit kunnen putten — merklogo's, afbeeldingen, audio en beweging, gegroepeerd per soort — en het is ook waar je **eigen creatieve bestanden** leven. Geen server, geen adminconsole, geen pull request: alles staat op je apparaat.
+
+- **Breng je bestanden binnen.** Sleep een willekeurige afbeelding, SVG, audiofragment, video, Lottie of PDF naar het uploadgebied — of klik om te kiezen — en het belandt direct in je catalogus, klaar voor gebruik in de assetkiezer van elke tool. Haal binnen zoveel je wilt; het verlaat je apparaat nooit.
+- **Markeer als favoriet wat je vaak gebruikt.** Geef een asset (of een merkstaal) een ★ en het wordt bovenaan elke kiezer vastgezet, zodat je vaste logo of kleur één klik verwijderd is.
+- **Ruim op.** Hercategoriseer een asset naar een andere groep, verberg een gedeeld merkasset dat je niet gebruikt (met **Verborgen tonen** om het terug te halen), of verwijder je eigen uploads definitief.
+
+### Neem je palet en lettertypen overal mee naartoe
+
+Het **Stalen**-paneel van de Catalogus is niet alleen ter referentie — klik op een kleur om hem te kopiëren, of **download het volledige merkpalet** in het formaat dat je andere tool spreekt:
+
+- **Design tokens (JSON)**, **CSS-variabelen** of **CSS-classes** — zet het merk rechtstreeks in een stylesheet of een build;
+- **Adobe Swatch Exchange (.ase)** — laad het in Illustrator of Photoshop;
+- **GIMP-palet (.gpl)** — voor GIMP of Inkscape.
+
+Het **Lettertypen**-paneel toont je merklettertypen met een **download** naast elk, om lokaal te installeren of aan een drukkerij te geven. (Het tabblad Kleuren van de [Brand Studio](/info/brand-studio.html) biedt dezelfde paletdownload.)
+
+Assets zijn de ene helft van het open, doe-het-zelf-pad; de andere is **je eigen tools maken** — het vrije canvas (Layout Studio, hierboven beschreven) laat je er visueel een bouwen, zonder code.
+
 ## Geluid & toegankelijkheid
 
 Lolly streeft ernaar voor iedereen prettig te gebruiken te zijn. De interface is met het toetsenbord te navigeren, aangepaste bedieningselementen hebben correcte labels voor schermlezers, en de live voorvertoning van elke tool wordt weergegeven als één gelabelde afbeelding die beschrijft wat er wordt gemaakt.
 
 Een subtiele laag **ondersteunende geluiden** bevestigt wat je doet — aankomen in de galerij, een geldige versus ongeldige Content Credentials-controle, een paneel sluiten, een filter wisselen. Het staat **standaard aan**, maar is altijd optioneel: zet **Geluid** uit waar de schakelaar ook verschijnt (het optiepaneel van elke weergave, of **Profiel**), en de keuze wordt onthouden.
 
-Naast die schakelaar staat **Neurospicy-modus** — een optionele, rustgevende achtergrond-focusbeat die zachtjes blijft spelen terwijl je werkt. Kies een loop uit de pilvormige kiezer, speel hem af of pauzeer hem met de knop ernaast, en stel het volume in; hij staat **standaard uit** en wordt, net als Geluid, onthouden tussen sessies en apparaten. Geluid uitzetten dempt ook de focusloop.
+Naast die schakelaar staat **Neurospicy-modus** — een optionele, rustgevende achtergrond-focustrack die zachtjes speelt terwijl je werkt. Als je hem aanzet, opent er een klein **spelerdock** in de onderhoek dat je door de hele app volgt; van daaruit kun je een track zoeken en kiezen, vooruit- en terugspringen, het volume instellen, en hem minimaliseren of sluiten. De tracklijst omvat een paar categorieën — procedurele *Lolly Sings*-deuntjes, ambient loops en beats, je eigen geüploade audio, en een handjevol live internet-**radio**stations (deze hebben een verbinding nodig; al het andere speelt offline). Hij staat **standaard uit** en wordt, net als Geluid, onthouden tussen sessies en apparaten. Geluid uitzetten dempt ook de focustrack.
 
 ## Opslag & privacy
 

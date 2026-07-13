@@ -48,7 +48,7 @@ These are the common ones; anything outside the full reserved set is a tool inpu
 | `_v` | Pin the tool version for stable output |
 | `slot` | Open a saved session |
 
-The complete reserved set also includes `full` and `options`; everything else is forwarded to the tool as an input.
+The complete reserved set also includes `full`, `options`, `c2pa`, `imprint`, `lang`, `nostage`, `z` and `zx`; everything else is forwarded to the tool as an input. (The engine's `RESERVED` set in `engine/src/url-mode.ts` is the source of truth — see [URL Mode](/info/url-mode.html).)
 
 So a one-shot, ready-to-download link is just:
 
@@ -73,7 +73,7 @@ So a one-shot, ready-to-download link is just:
 A few tools won't hand back a file this way:
 
 - **Non-exporting utilities** (`color-palette`, `countdown-timer`, `strip-data`, `text-helper`, `compress-pdf`) set `render.export: false` — `&export`/`&copy` are no-ops.
-- **Experimental tools** (currently `url-shot`) watermark every export until they're promoted, so their output isn't press-clean yet.
+- **Experimental tools** (those with `status: "experimental"` in their manifest) watermark every export until they're promoted, so their output isn't press-clean yet.
 - **File-input tools** like `strip-data` transform the user's own bytes in memory; they need a file the agent can't supply through a URL (see the device-local note below).
 
 ## The MCP server (native endpoint)
@@ -147,4 +147,4 @@ The MCP server is the one part of Lolly that is a **server-side add-on**, not an
 - **Validate against the schema** before emitting a URL; unknown params are ignored and bad input values fall back to defaults, so a malformed call fails quietly rather than loudly.
 - **Device-local images** (user uploads) can't travel in a URL — agents should reference catalog assets by id, not local uploads.
 - **One tool, many outputs:** change `format`/`unit`/`width` to emit the same design as SVG, print PDF, and social MP4 from one set of inputs.
-- **Portable embed URL:** an agent can emit `https://lolly.tools/tool/<id>.<ext>?<inputs>` (image extensions `png`, `jpg`, `jpeg`, `webp`, `svg`) and drop it straight into HTML as an `<img src=…>`. It renders locally in the live web view — nothing is fetched from lolly.tools.
+- **Portable embed URL:** an agent can emit `https://lolly.tools/tool/<id>.<ext>?<inputs>` (image extensions `png`, `jpg`, `jpeg`, `webp`, `svg`, plus animated `gif` and `apng`) and drop it straight into HTML as an `<img src=…>`. It renders locally in the live web view — nothing is fetched from lolly.tools.

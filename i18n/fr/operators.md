@@ -1,6 +1,6 @@
 # Lolly pour les opérateurs
 
-**Une stratégie de prévention des pertes de données et de provenance en profondeur, pérenne, déguisée en plateforme créative.**
+### Une stratégie de provenance et de prévention des pertes de données, pérenne et en défense en profondeur — qui se trouve justement être une plateforme de production créative
 
 Le système immunitaire organisationnel qui s'enroule autour de ce que tu fais déjà — pour que le travail créatif courant dont tes équipes ont besoin au quotidien se déroule *à l'intérieur* de ton périmètre plutôt que de fuiter en dehors.
 
@@ -8,7 +8,7 @@ Le système immunitaire organisationnel qui s'enroule autour de ce que tu fais d
 
 Lolly mérite sa place en tant qu'outil créatif : il supprime la file d'attente de design et met un rendu de qualité production entre les mains de tout le monde. Mais la raison pour laquelle il est *sûr* de le diffuser aussi largement est architecturale. Rien n'est téléversé, tout est reproductible, et chaque export peut porter un enregistrement cryptographique de sa provenance. Cette page raconte l'histoire de la sécurité et du déploiement.
 
-> **Franchement, d'abord.** Les propriétés de sécurité de Lolly sont solides *par conception*, et ses moteurs de cryptographie et d'analyse de fichiers sont actuellement en cours de durcissement d'infrastructure strict chez SUSE, en préparation d'une échelle entreprise — on est vraiment bons à ça. Les scellés, la signature sur l'appareil et le chiffrement décrits ci-dessous sont réels et défendables ; en attendant la fin de ce durcissement, considère-les comme de la défense en profondeur plutôt que comme un contrôle certifié là où une assurance indépendante est contractuellement requise. On préfère que tu le saches d'emblée.
+> **Où en est-on aujourd'hui.** Les propriétés de sécurité de Lolly sont solides par conception, et ses moteurs de cryptographie et d'analyse de fichiers passent par le durcissement d'infrastructure de qualité entreprise de SUSE. Les scellés, la signature sur l'appareil et le chiffrement décrits ci-dessous sont réels et défendables dès aujourd'hui, et mûrissent vers une certification indépendante — donc là où un contrat exige une assurance certifiée, déploie-les comme de la défense en profondeur en attendant la fin de ce processus.
 
 ## L'avantage stratégique
 
@@ -17,7 +17,7 @@ La façon habituelle dont le travail créatif courant se fait est une surface de
 Lolly inverse la logique. Le travail qui *causait* ces fuites — la carte de citation, la bannière localisée, le badge d'événement, la capture d'écran expurgée — se fait désormais sur un outil qui tourne sur l'appareil de l'employé lui-même, contre ta marque, sans serveur dans la boucle. Tu n'as pas ajouté un contrôle par-dessus un flux de travail risqué ; tu as remplacé le flux de travail risqué par un autre qui n'a, dès le départ, aucune voie d'exfiltration.
 
 - **La configuration est la tienne.** Le moteur (engine) et les shells sont open source (MPL-2.0). Superpose ta propre authentification, télémétrie ou CA ; héberge-le ou non ; tu gardes le contrôle total des fonctionnalités et des coûts, suivi par git, sans être enfermé dans une base de données SaaS.
-- **La gouvernance, c'est de la donnée, pas un tableau de bord.** Le catalogue d'outils est la source de vérité, géré comme un dépôt Git — la revue de pull request *est* la modération, et tu obtiens une trace d'audit complète et un retour arrière instantané pour chaque template auquel tes équipes ont accès. Voir [Adoption et gouvernance](/info/adoption-governance.html).
+- **La gouvernance peut être de la donnée, pas un tableau de bord.** Quand tu veux ce contrôle, gère le catalogue d'outils comme un dépôt Git — la revue de pull request devient l'approbation de marque, avec une trace d'audit complète et un retour arrière instantané pour chaque template auquel tes équipes ont accès. C'est une option, pas une obligation : les équipes qui veulent simplement créer des choses conçoivent leurs propres outils dans Layout Studio et importent leurs propres fichiers dans le catalogue, entièrement dans l'application, sans jamais toucher à git. Voir [Adoption et gouvernance](/info/adoption-governance.html).
 - **Les garde-fous sont structurels.** Les contraintes de marque sont codées en dur dans les templates, et non publiées comme des directives que l'on peut ignorer. Le mauvais résultat n'est pas découragé — il est irreprésentable.
 
 ## Supprimer la file d'attente des demandes tout en démultipliant le contenu.
@@ -62,14 +62,14 @@ Chaque entrée d'outil peut s'exprimer comme un paramètre d'URL, et les mêmes 
 
 ## Provenance et Content Credentials
 
-Les exports peuvent porter des **Content Credentials** — un manifeste [C2PA](https://c2pa.org) signé, lié à un hash des octets du fichier. C'est **détectable en cas de *falsification*, pas *inviolable*** : cela n'empêche personne de modifier un fichier, mais tout changement ultérieur brise le sceau et un vérificateur compatible C2PA le signale. C'est la propriété honnête et utile — tu peux *détecter* une altération, cryptographiquement, hors ligne.
+Les exports peuvent porter des **Content Credentials** — un manifeste [C2PA](https://c2pa.org) signé, lié à un hash des octets du fichier. Tout changement ultérieur du fichier brise le sceau, si bien qu'un vérificateur compatible C2PA **détecte l'altération cryptographiquement, hors ligne**. Le credential est détectable en cas de *falsification* : il signale la falsification plutôt que de l'empêcher, ce qui est précisément ce qui rend possible une vérification entièrement hors ligne.
 
 - **Activé par défaut, sur l'appareil.** La clé de signature est générée sur l'appareil, elle est non extractible (même Lolly ne peut pas la lire), et la signature se fait localement — seule l'*inscription* d'identité optionnelle touche jamais le réseau.
-- **Niveaux de confiance.** Un export non inscrit est structurellement valide mais signé anonymement (`untrusted`). Inscris une **identité vérifiée** (certificat de courte durée émis par la CA Lolly, lié à un e-mail) et les vérificateurs qui épinglent la racine Lolly rapportent `trusted` + l'e-mail du signataire. Une autorité d'horodatage de confiance et un feu vert de validateur tiers (conformité C2PA) sont sur la feuille de route, pas encore livrés — les niveaux sont étiquetés honnêtement et un fichier n'affiche jamais un faux feu vert.
+- **Niveaux de confiance.** Un export non inscrit est structurellement valide mais signé anonymement (`untrusted`). Inscris une **identité vérifiée** (certificat de courte durée émis par la CA Lolly, lié à un e-mail) et les vérificateurs qui épinglent la racine Lolly rapportent `trusted` + l'e-mail du signataire. Une autorité d'horodatage de confiance et un feu vert de validateur tiers (conformité C2PA) sont sur la feuille de route. Chaque niveau est explicite, et un fichier ne revendique jamais que la confiance qu'il peut prouver.
 - **La durée de vie du credential** est décidée par l'opérateur/utilisateur au moment de la signature : 7 / 30 / 90 / 365 jours, 30 par défaut.
 - **La vérification se fait sur l'appareil.** Dépose n'importe quel fichier sur `/valid` (ou `lolly validate <file>`) pour obtenir un rapport hors ligne indiquant s'il a réellement été fait avec Lolly et s'il n'a pas changé depuis. Voir [Identité Content Credentials](/info/content-credentials-identity.html).
 
-> **Lacune connue, dite clairement :** le vérificateur de Lolly ne lit pas encore entièrement les manifestes de revendication C2PA **v2** provenant d'autres producteurs ; et WebM porte le manifeste comme une pièce jointe Matroska (aucun mappage C2PA standardisé n'existe encore pour WebM), donc les outils tiers vérifient le MP4 de Lolly mais pas son WebM.
+> **Notes d'interopérabilité.** Lolly vérifie ses propres credentials et beaucoup de ceux de tiers hors ligne dès aujourd'hui. Deux points d'interopérabilité sont en cours : la lecture complète des manifestes de revendication C2PA **v2** provenant d'autres producteurs, et WebM — qui n'a pas encore de mappage C2PA standardisé, si bien que Lolly attache le manifeste comme une pièce Matroska (les outils tiers vérifient le MP4 de Lolly d'emblée ; le WebM suivra une fois la norme stabilisée).
 
 ## Chiffrement et mots de passe
 
@@ -81,16 +81,16 @@ Pour les fichiers qui doivent voyager verrouillés, tout se passe sur l'appareil
 
 ## Prêt pour l'air-gap
 
-Lolly est conçu pour fonctionner **sans aucun réseau au moment du rendu**. Le shell web est une PWA offline-first (service worker) ; les polices et le WASM sont stockés sur l'appareil ; l'état des outils est persisté localement via le host bridge, jamais via `localStorage`. Tout outil qui contacte le réseau ne le fait que via une capacité `host.net` **en liste blanche** qu'il doit déclarer dans son manifeste — un shell qui ne peut (ou ne veut) pas la satisfaire la neutralise. Ainsi, une installation entièrement air-gapped effectue le rendu, l'export, le chiffrement et la vérification des credentials sans rien avoir à contacter au loin.
+L'air-gap est un **déploiement de plein droit**, pas un mode spécial — Lolly fonctionne sans aucun réseau au moment du rendu, d'emblée. Le shell web est une PWA offline-first (service worker) ; les polices et le WASM sont stockés sur l'appareil ; l'état des outils est persisté localement via le host bridge, jamais via `localStorage`. Tout outil qui contacte le réseau ne le fait que via une capacité `host.net` **en liste blanche** qu'il doit déclarer dans son manifeste — un shell qui ne peut (ou ne veut) pas la satisfaire la neutralise. Diffuse les shells sur les appareils via ton MDM, ou fais tourner une instance à l'intérieur de ton réseau, et une installation entièrement air-gapped effectue le rendu, l'export, le chiffrement et la vérification des credentials sans rien avoir à contacter au loin.
 
-## Ce que tu dois savoir avant d'en dépendre
+## Bon à savoir
 
-Les opérateurs méritent les réserves, pas seulement les promesses :
+Quelques points à avoir au clair avant de le déployer :
 
-- **Durcissement pour l'échelle entreprise.** Comme indiqué en haut de page — la cryptographie et les analyseurs (parsers) sont actuellement en cours de durcissement d'infrastructure strict chez SUSE pour l'échelle entreprise ; solides par conception, à considérer comme de la défense en profondeur là où une assurance indépendante est contractuellement requise.
-- **Les hooks d'outils *ne sont pas* un bac à sable de sécurité.** Le `hooks.js` optionnel d'un outil s'exécute avec le host bridge injecté, mais dans un shell navigateur il s'exécute dans le realm de la page et *peut* accéder à `window`/`document`/`fetch`. Traite le code d'un outil comme tu traiterais n'importe quel code que tu exécutes — relis-le. C'est pourquoi le modèle « catalogue comme revue Git » compte, et pourquoi des outils tiers non fiables ne devraient pas être exécutés avant l'arrivée de l'isolation par Worker.
-- **C2PA est détectable en cas d'altération, pas inviolable**, et les lacunes de lecture v2 / WebM mentionnées ci-dessus sont bien réelles.
-- **Les niveaux de chiffrement diffèrent.** Les verrous *Standard* sont dissuasifs ; seul *Fort* (AES-256) est une vraie protection, et les fichiers Fort ne s'ouvrent pas dans tous les lecteurs anciens.
+- **Durcissement en cours.** La cryptographie et les analyseurs (parsers) passent par le durcissement à l'échelle entreprise de SUSE (voir ci-dessus) — solides par conception dès aujourd'hui ; déploie-les comme de la défense en profondeur là où un contrat exige une assurance certifiée.
+- **Les hooks d'outils *ne sont pas* un bac à sable de sécurité.** Le `hooks.js` optionnel d'un outil s'exécute avec le host bridge injecté, mais dans un shell navigateur il s'exécute dans le realm de la page et *peut* accéder à `window`/`document`/`fetch`. Traite le code d'un outil comme tu traiterais n'importe quel code que tu exécutes — relis-le. C'est pourquoi une organisation qui fait tourner un catalogue partagé peut le contrôler via une revue Git ; dans tous les cas, n'exécute que des outils que tu as relus jusqu'à l'arrivée de l'isolation par Worker.
+- **Les Content Credentials sont détectables en cas de falsification.** Ils détectent l'altération plutôt que de l'empêcher — voir les notes d'interopérabilité ci-dessus.
+- **Deux niveaux de chiffrement.** Les verrous *Standard* sont des dissuasions rapides et universelles ; *Fort* (AES-256) est une protection complète — opte pour Fort pour tout ce qui est sensible, en notant qu'il lui faut un lecteur moderne.
 
 ## Pour aller plus loin
 

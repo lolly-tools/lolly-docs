@@ -2,7 +2,7 @@
 
 Isang praktikal na gabay sa aktwal na *paggamit* ng app — pagbukas ng tool, paggawa sa canvas, pag-export, pag-save, at pagshe-share. Lahat ng nasa dito ay tumatakbo **sa device mo**: walang account, walang upload, walang kailangang internet pagkatapos ng unang load.
 
-> Bago dito? Sinasaklaw ng [Mga Unang Hakbang](/info/getting-started.html) ang pag-install/pag-deploy ng app; ang page na ito ay tungkol sa paggamit nito kapag bukas na.
+> Bago dito? Ang [Quickstart](/info/quickstart.html) ang magpapasimula sa iyo sa paggawa ng mga bagay sa loob ng ilang minuto, at sinasaklaw ng [Lolly para sa mga Operator](/info/operators.html) ang pag-install/pag-deploy ng app; ang page na ito ay tungkol sa paggamit nito kapag bukas na.
 
 ## Pagbukas ng isang tool
 
@@ -89,13 +89,33 @@ Ipinapakita ng mga photo **Filters** — Halftone, Scanline, Posterize, Duotone 
 
 Kapag pinapayagan ka ng isang tool na magdagdag ng imahe mula sa device mo, ito ay dini-downscale, tinatanggalan ng EXIF/GPS, at sina-save sa personal mong **My images** library (sa ilalim ng **Profile → Storage**). Muling gamitin ito sa anumang tool. May cap ang library at ganap itong local — mamahala o magtanggal ng mga imahe doon.
 
+## Ang Catalogue — ang iyong asset library
+
+Tinitipon ng **Catalogue** (`#/c`, o ang **Catalogue** link sa menu) ang lahat ng maaaring gamitin ng iyong mga tool — mga brand logo, imahe, audio, at motion, naka-grupo ayon sa uri — at dito rin nabubuhay ang iyong **sariling mga creative file**. Walang server, walang admin console, walang pull request: nasa device mo lang ang lahat.
+
+- **Dalhin ang iyong mga file papasok.** I-drag ang anumang imahe, SVG, audio clip, video, Lottie, o PDF papunta sa upload area — o i-click para pumili — at agad itong napupunta sa iyong catalogue, handa na sa asset picker ng bawat tool. Mag-ingest nang kasing dami ng gusto mo; hindi ito kailanman umaalis sa device mo.
+- **I-favourite ang madalas mong gamitin.** ★ ang isang asset (o isang brand swatch) at ini-pin ito sa itaas ng bawat picker, kaya isang click na lang ang layo ng go-to logo o kulay mo.
+- **Maglinis.** I-recategorise ang isang asset papunta sa ibang grupo, itago ang isang shared brand asset na hindi mo ginagamit (gamit ang **Show hidden** para ibalik ito), o burahin nang tuluyan ang sarili mong mga upload.
+
+### Dalhin ang iyong palette at fonts kahit saan
+
+Ang **Swatches** panel ng Catalogue ay hindi lang para sa reference — i-click ang isang kulay para kopyahin ito, o **i-download ang buong brand palette** sa format na sinasalita ng iyong ibang tool:
+
+- **Design tokens (JSON)**, **CSS variables**, o **CSS classes** — ihulog ang brand nang direkta sa isang stylesheet o isang build;
+- **Adobe Swatch Exchange (.ase)** — i-load ito sa Illustrator o Photoshop;
+- **GIMP palette (.gpl)** — para sa GIMP o Inkscape.
+
+Nililista ng **Fonts** panel ang iyong mga brand face na may **download** sa tabi ng bawat isa, para i-install nang lokal o ibigay sa isang print shop. (Ang Colours tab ng [Brand Studio](/info/brand-studio.html) ay nag-aalok ng parehong palette download.)
+
+Ang mga asset ay isang kalahati ng bukas, do-it-yourself na landas; ang kabila ay ang **paggawa ng sarili mong mga tool** — hinahayaan ka ng free canvas (Layout Studio, inilarawan sa itaas) na bumuo ng isa nang biswal, walang kailangang code.
+
 ## Sound at accessibility
 
 Layunin ng Lolly na maging komportable gamitin para sa lahat. Ang interface ay keyboard-navigable, may tamang labels ang mga custom control para sa screen readers, at nakalantad ang live preview ng bawat tool bilang iisang labelled na imahe na naglalarawan kung ano ang ginagawa nito.
 
 Isang banayad na layer ng **assistive sounds** ang nagkukumpirma sa ginagawa mo — pagdating sa gallery, isang valid vs. invalid na Content Credentials check, pagsara ng panel, paglipat ng filter. **On by default** ito pero laging optional: i-toggle ang **Sound** off kahit saan lumitaw ang switch (options popover ng bawat view, o **Profile**), at naaalala ang pinili mo.
 
-Katabi ng switch na iyon ang **Neurospicy Mode** — isang optional, nakapapanatag na background focus beat na tahimik na umuulit habang nagtatrabaho ka. Pumili ng loop mula sa pill-shaped selector, i-play o i-pause ito gamit ang button sa tabi nito, at i-set ang volume nito; **off by default** ito at, tulad ng Sound, naaalala sa lahat ng session at device. Ang pag-off sa Sound ay nagpapa-mute din sa focus loop.
+Katabi ng switch na iyon ang **Neurospicy Mode** — isang optional, nakapapanatag na background focus track na tahimik na tumutugtog habang nagtatrabaho ka. Kapag ino-on ito, bumubukas ang isang maliit na **player dock** sa ibabang sulok na sumusunod sa iyo sa buong app; mula rito ay puwede kang maghanap at pumili ng track, mag-skip pasulong at pabalik, i-set ang volume, at i-minimise o isara ito. Sumasaklaw ang track list sa ilang kategorya — procedural na *Lolly Sings* na mga tono, ambient loops at beats, ang sarili mong na-upload na audio, at ilang live internet **radio** stations (kailangan ng mga ito ng koneksyon; lahat ng iba pa ay tumutugtog offline). **Off by default** ito at, tulad ng Sound, naaalala sa lahat ng session at device. Ang pag-off sa Sound ay nagpapa-mute din sa focus track.
 
 ## Storage at privacy
 

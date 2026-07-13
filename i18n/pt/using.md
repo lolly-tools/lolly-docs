@@ -2,7 +2,7 @@
 
 Um guia prático para realmente *usar* o app — abrir uma ferramenta, trabalhar na tela, exportar, salvar e compartilhar. Tudo aqui roda **no seu dispositivo**: sem conta, sem upload, sem necessidade de internet depois do primeiro carregamento.
 
-> Novo por aqui? [Primeiros passos](/info/getting-started.html) explica como instalar/implantar o app; esta página é sobre como usá-lo depois que já está aberto.
+> Novo por aqui? O [Guia rápido](/info/quickstart.html) coloca você para criar em minutos, e [Lolly para Operadores](/info/operators.html) explica como instalar/implantar o app; esta página é sobre como usá-lo depois que já está aberto.
 
 ## Abrindo uma ferramenta
 
@@ -89,13 +89,33 @@ Os **Filtros** de foto — Halftone, Scanline, Posterize, Duotone — mostram um
 
 Quando uma ferramenta permite adicionar uma imagem do seu dispositivo, ela é reduzida de tamanho, tem os dados EXIF/GPS removidos e é salva na sua biblioteca pessoal **Minhas imagens** (em **Perfil → Armazenamento**). Reutilize-a em qualquer ferramenta. A biblioteca tem um limite e é totalmente local — gerencie ou exclua imagens por lá.
 
+## O Catálogo — sua biblioteca de ativos
+
+O **Catálogo** (`#/c`, ou o link **Catálogo** no menu) reúne tudo o que suas ferramentas podem usar — logos de marca, imagens, áudio e animações, agrupados por tipo — e é onde os seus **próprios arquivos criativos** também ficam. Sem servidor, sem console de administração, sem pull request: está tudo no seu dispositivo.
+
+- **Traga seus arquivos.** Arraste qualquer imagem, SVG, clipe de áudio, vídeo, Lottie ou PDF para a área de upload — ou clique para escolher — e ele aparece no seu catálogo instantaneamente, pronto no seletor de ativos de todas as ferramentas. Importe quanto quiser; nada sai do seu dispositivo.
+- **Favorite o que você mais usa.** Marque um ativo (ou uma amostra de cor da marca) com ★ e ele é fixado no topo de todos os seletores, deixando seu logo ou cor favoritos a um clique de distância.
+- **Organize.** Recategorize um ativo em um grupo diferente, oculte um ativo de marca compartilhado que você não usa (com **Mostrar ocultos** para trazê-lo de volta), ou exclua definitivamente seus próprios uploads.
+
+### Leve sua paleta e suas fontes para qualquer lugar
+
+O painel de **Amostras** do Catálogo não é só para referência — clique em uma cor para copiá-la, ou **baixe toda a paleta da marca** no formato que a sua outra ferramenta entende:
+
+- **Design tokens (JSON)**, **variáveis CSS** ou **classes CSS** — leve a marca direto para uma folha de estilos ou um build;
+- **Adobe Swatch Exchange (.ase)** — carregue no Illustrator ou Photoshop;
+- **Paleta do GIMP (.gpl)** — para o GIMP ou o Inkscape.
+
+O painel de **Fontes** lista as fontes da sua marca com um botão de **download** ao lado de cada uma, para instalar localmente ou entregar a uma gráfica. (A aba Cores do [Brand Studio](/info/brand-studio.html) oferece o mesmo download de paleta.)
+
+Os ativos são metade do caminho aberto e faça-você-mesmo; a outra metade é **criar suas próprias ferramentas** — a tela livre (Layout Studio, descrita acima) permite construir uma visualmente, sem precisar de código.
+
 ## Som e acessibilidade
 
 O Lolly busca ser confortável de usar para todo mundo. A interface é navegável pelo teclado, os controles personalizados têm rótulos adequados para leitores de tela, e a pré-visualização ao vivo de cada ferramenta é exposta como uma única imagem rotulada, descrevendo o que está sendo criado.
 
 Uma camada suave de **sons assistivos** confirma o que você faz — chegar à galeria, uma verificação válida ou inválida de Content Credentials, fechar um painel, trocar de filtro. Isso vem **ativado por padrão**, mas é sempre opcional: desative o **Som** em qualquer lugar onde o interruptor aparecer (no popover de opções de cada view, ou no **Perfil**), e a escolha é lembrada.
 
-Ao lado desse interruptor fica o **Modo Neurospicy** — uma batida de foco de fundo, calma e opcional, que toca em loop suavemente enquanto você trabalha. Escolha um loop no seletor em formato de pílula, toque ou pause com o botão ao lado dele, e ajuste o volume; ele vem **desativado por padrão** e, assim como o Som, é lembrado entre sessões e dispositivos. Desativar o Som também silencia o loop de foco.
+Ao lado desse interruptor fica o **Modo Neurospicy** — uma faixa de foco de fundo, calma e opcional, que toca discretamente enquanto você trabalha. Ao ativá-la, abre-se um pequeno **dock de player** no canto inferior que acompanha você por todo o app; a partir dele você pode buscar e escolher uma faixa, avançar e voltar, ajustar o volume, e minimizá-lo ou fechá-lo. A lista de faixas abrange algumas categorias — músicas procedurais do *Lolly Sings*, loops e batidas ambiente, seu próprio áudio enviado, e algumas estações de **rádio** ao vivo da internet (estas precisam de conexão; todo o resto toca offline). Ele vem **desativado por padrão** e, assim como o Som, é lembrado entre sessões e dispositivos. Desativar o Som também silencia a faixa de foco.
 
 ## Armazenamento e privacidade
 

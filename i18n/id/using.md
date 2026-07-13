@@ -2,7 +2,7 @@
 
 Panduan praktis untuk benar-benar *menggunakan* aplikasi ini — membuka tool, mengolah kanvas, mengekspor, menyimpan, dan berbagi. Semua di sini berjalan **di perangkat Anda**: tanpa akun, tanpa unggah, tanpa internet setelah pemuatan pertama.
 
-> Baru di sini? [Memulai](/info/getting-started.html) membahas pemasangan/penerapan aplikasi; halaman ini tentang mengoperasikannya setelah terbuka.
+> Baru di sini? [Mulai Cepat](/info/quickstart.html) membuat kamu langsung berkarya dalam hitungan menit, dan [Lolly untuk Operator](/info/operators.html) membahas pemasangan/penerapan aplikasi; halaman ini tentang mengoperasikannya setelah terbuka.
 
 ## Membuka tool
 

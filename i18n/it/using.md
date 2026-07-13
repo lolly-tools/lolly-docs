@@ -2,7 +2,7 @@
 
 Una guida pratica per *usare* davvero l'app — aprire uno strumento, lavorare sul canvas, esportare, salvare e condividere. Tutto qui gira **sul tuo dispositivo**: nessun account, nessun caricamento, nessuna connessione richiesta dopo il primo caricamento.
 
-> Sei nuovo qui? [Come iniziare](/info/getting-started.html) copre l'installazione/la distribuzione dell'app; questa pagina riguarda come usarla una volta aperta.
+> Sei nuovo qui? La [Guida rapida](/info/quickstart.html) ti fa creare qualcosa in pochi minuti, e [Lolly per gli operatori](/info/operators.html) copre l'installazione/la distribuzione dell'app; questa pagina riguarda come usarla una volta aperta.
 
 ## Aprire uno strumento
 
@@ -88,6 +88,26 @@ I **Filtri** foto — Halftone, Scanline, Posterize, Duotone — mostrano un pul
 ## Le mie immagini
 
 Quando uno strumento ti permette di aggiungere un'immagine dal tuo dispositivo, questa viene ridimensionata, ripulita dai dati EXIF/GPS, e salvata nella tua libreria personale **Le mie immagini** (sotto **Profilo → Archiviazione**). Riutilizzala in qualsiasi strumento. La libreria ha un limite ed è interamente locale — gestisci o elimina le immagini da lì.
+
+## Il Catalogo — la tua libreria di asset
+
+Il **Catalogo** (`#/c`, oppure il link **Catalogo** nel menu) raccoglie tutto ciò a cui i tuoi strumenti possono attingere — loghi di brand, immagini, audio e animazioni, raggruppati per tipo — ed è anche dove vivono i **tuoi file creativi**. Nessun server, nessuna console di amministrazione, nessuna pull request: è tutto sul tuo dispositivo.
+
+- **Porta dentro i tuoi file.** Trascina qualsiasi immagine, SVG, clip audio, video, Lottie o PDF sull'area di caricamento — o fai clic per sceglierli — e atterra nel tuo catalogo all'istante, pronto nel selettore di asset di ogni strumento. Importane quanti vuoi; non lasciano mai il tuo dispositivo.
+- **Metti tra i preferiti ciò che usi di più.** Aggiungi una ★ a un asset (o a un campione di brand) e viene fissato in cima a ogni selettore, così il logo o il colore a cui ricorri più spesso è a un clic di distanza.
+- **Fai ordine.** Riclassifica un asset in un gruppo diverso, nascondi un asset di brand condiviso che non usi (con **Mostra nascosti** per riportarlo indietro), oppure elimina del tutto i tuoi caricamenti.
+
+### Porta la tua palette e i tuoi font ovunque
+
+Il pannello **Campioni** del Catalogo non serve solo come riferimento — fai clic su un colore per copiarlo, oppure **scarica l'intera palette del brand** nel formato che il tuo altro strumento parla:
+
+- **Design token (JSON)**, **variabili CSS**, o **classi CSS** — inserisci il brand direttamente in un foglio di stile o in una build;
+- **Adobe Swatch Exchange (.ase)** — caricalo in Illustrator o Photoshop;
+- **Palette GIMP (.gpl)** — per GIMP o Inkscape.
+
+Il pannello **Font** elenca i caratteri del tuo brand con un **download** accanto a ciascuno, per installarli localmente o consegnarli a una tipografia. (La scheda Colori del [Brand Studio](/info/brand-studio.html) offre lo stesso download della palette.)
+
+Gli asset sono una metà del percorso aperto e fai-da-te; l'altra è **creare i tuoi strumenti** — il canvas libero (Layout Studio, descritto sopra) ti permette di costruirne uno visivamente, senza bisogno di scrivere codice.
 
 ## Suoni e accessibilità
 

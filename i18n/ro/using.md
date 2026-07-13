@@ -2,7 +2,7 @@
 
 Un ghid practic despre cum să *folosești* efectiv aplicația — deschiderea unui instrument, lucrul pe canvas, exportul, salvarea și distribuirea. Totul de aici rulează **pe dispozitivul tău**: fără cont, fără upload, fără nevoie de internet după prima încărcare.
 
-> Ești nou aici? [Primii pași](/info/getting-started.html) acoperă instalarea/implementarea aplicației; această pagină este despre cum o folosești odată deschisă.
+> Ești nou aici? [Ghidul de pornire rapidă](/info/quickstart.html) te pune pe treabă în câteva minute, iar [Lolly pentru operatori](/info/operators.html) acoperă instalarea/implementarea aplicației; această pagină este despre cum o folosești odată deschisă.
 
 ## Deschiderea unui instrument
 
@@ -89,13 +89,33 @@ Un design mare ar produce o URL lungă, deci dialogul oferă și un **Shortest l
 
 Când un instrument îți permite să adaugi o imagine de pe dispozitiv, aceasta este redusă ca dimensiune, curățată de EXIF/GPS și salvată în biblioteca ta personală **My images** (sub **Profile → Storage**). Reutilizeaz-o în orice instrument. Biblioteca are o limită și este în întregime locală — gestionează sau șterge imagini acolo.
 
+## Catalogul — biblioteca ta de resurse
+
+**Catalogul** (`#/c`, sau link-ul **Catalogue** din meniu) adună tot ce pot folosi instrumentele tale — logo-uri de brand, imagini, audio și animație, grupate pe tipuri — și este locul unde trăiesc și **propriile tale fișiere creative**. Fără server, fără consolă de administrare, fără pull request: totul e pe dispozitivul tău.
+
+- **Adu-ți fișierele înăuntru.** Trage orice imagine, SVG, clip audio, video, Lottie sau PDF pe zona de upload — sau dă click pentru a alege — și ajunge instant în catalogul tău, gata în selectorul de resurse al fiecărui instrument. Adu câte vrei; nu-ți părăsesc niciodată dispozitivul.
+- **Marchează ca favorit ce folosești des.** Pune ★ pe o resursă (sau pe un eșantion de brand) și se fixează în vârful fiecărui selector, așa că logo-ul sau culoarea la care apelezi mereu sunt la un click distanță.
+- **Fă ordine.** Recategorisește o resursă într-un alt grup, ascunde o resursă de brand partajată pe care n-o folosești (cu **Show hidden** pentru a o readuce), sau șterge-ți definitiv propriile fișiere încărcate.
+
+### Ia-ți paleta și fonturile oriunde
+
+Panoul **Swatches** al Catalogului nu e doar pentru referință — dă click pe o culoare pentru a o copia, sau **descarcă întreaga paletă de brand** în formatul pe care îl vorbește celălalt instrument al tău:
+
+- **Design tokens (JSON)**, **variabile CSS** sau **clase CSS** — pune brandul direct într-un stylesheet sau într-un build;
+- **Adobe Swatch Exchange (.ase)** — încarc-o în Illustrator sau Photoshop;
+- **GIMP palette (.gpl)** — pentru GIMP sau Inkscape.
+
+Panoul **Fonts** listează fonturile tale de brand cu un buton de **download** lângă fiecare, pentru a le instala local sau a le da unei tipografii. (Tab-ul Culori din [Brand Studio](/info/brand-studio.html) oferă aceeași descărcare de paletă.)
+
+Resursele sunt jumătate din calea deschisă, de tip do-it-yourself; cealaltă este **crearea propriilor instrumente** — canvas-ul liber (Layout Studio, descris mai sus) îți permite să construiești unul vizual, fără cod.
+
 ## Sunet și accesibilitate
 
 Lolly își propune să fie confortabil de folosit pentru toată lumea. Interfața este navigabilă de la tastatură, controalele personalizate poartă etichete corecte pentru cititoarele de ecran, iar previzualizarea live a fiecărui instrument este expusă ca o singură imagine etichetată care descrie ce se creează.
 
 Un strat discret de **sunete asistive** confirmă ce faci — sosirea în galerie, o verificare validă vs. invalidă de Content Credentials, închiderea unui panou, comutarea unui filtru. Este **activat implicit**, dar mereu opțional: dezactivează **Sound** oriunde apare comutatorul (popover-ul de opțiuni al fiecărei vederi, sau **Profile**), iar alegerea este reținută.
 
-Lângă acel comutator este **Neurospicy Mode** — un beat de fundal opțional, calmant, pentru concentrare, care rulează încet în buclă cât timp lucrezi. Alege o buclă din selectorul în formă de pastilă, redă-o sau pune-o pe pauză cu butonul de lângă, și setează-i volumul; este **dezactivat implicit** și, la fel ca Sound, este reținut între sesiuni și dispozitive. Dezactivarea Sound oprește și bucla de concentrare.
+Lângă acel comutator este **Neurospicy Mode** — o piesă de fundal opțională, calmantă, pentru concentrare, care rulează încet cât timp lucrezi. Pornirea ei deschide un mic **dock de player** în colțul de jos, care te însoțește prin toată aplicația; din el poți căuta și alege o piesă, sări înainte și înapoi, seta volumul și-l poți minimiza sau închide. Lista de piese acoperă câteva categorii — melodii procedurale *Lolly Sings*, bucle ambientale și beat-uri, propriul tău audio încărcat și câteva posturi de **radio** live de pe internet (acestea au nevoie de conexiune; tot restul se redă offline). Este **dezactivat implicit** și, la fel ca Sound, este reținut între sesiuni și dispozitive. Dezactivarea Sound oprește și piesa de concentrare.
 
 ## Stocare și confidențialitate
 

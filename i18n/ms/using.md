@@ -2,7 +2,7 @@
 
 Panduan praktikal untuk *menggunakan* aplikasi ini — membuka alat, bekerja dengan kanvas, mengeksport, menyimpan, dan berkongsi. Semuanya di sini berjalan **pada peranti anda**: tiada akaun, tiada muat naik, tiada internet diperlukan selepas pemuatan pertama.
 
-> Baru di sini? [Bermula](/info/getting-started.html) menerangkan cara memasang/menggunakan aplikasi; halaman ini pula tentang cara mengendalikannya sebaik sahaja ia dibuka.
+> Baru di sini? [Mula Pantas](/info/quickstart.html) membolehkan anda mula menghasilkan sesuatu dalam beberapa minit, dan [Lolly untuk Operator](/info/operators.html) merangkumi pemasangan/penggunaan aplikasi; halaman ini pula tentang cara mengendalikannya sebaik sahaja ia dibuka.
 
 ## Membuka alat
 
@@ -89,13 +89,33 @@ Reka bentuk yang besar akan menghasilkan URL yang panjang, jadi dialog itu turut
 
 Apabila sesuatu alat membenarkan anda menambah imej daripada peranti anda, ia akan diturunskala, dibuang data EXIF/GPS-nya, dan disimpan ke dalam pustaka peribadi **Imej saya** anda (di bawah **Profil → Storan**). Guna semula imej itu merentasi mana-mana alat. Pustaka ini mempunyai had dan sepenuhnya setempat — urus atau padam imej di situ.
 
+## Katalog — pustaka aset anda
+
+**Katalog** (`#/c`, atau pautan **Katalog** dalam menu) mengumpulkan segala yang boleh digunakan oleh alat anda — logo jenama, imej, audio, dan gerakan (motion), dikumpulkan mengikut jenis — dan di situ jugalah **fail kreatif anda sendiri** disimpan. Tiada pelayan, tiada konsol pentadbir, tiada pull request: semuanya pada peranti anda.
+
+- **Bawa masuk fail anda.** Seret mana-mana imej, SVG, klip audio, video, Lottie, atau PDF ke kawasan muat naik — atau klik untuk memilih — dan ia akan mendarat dalam katalog anda serta-merta, sedia dalam pemilih aset setiap alat. Masukkan seberapa banyak yang anda mahu; ia tidak sekali-kali meninggalkan peranti anda.
+- **Jadikan kegemaran apa yang kerap anda guna.** Tandakan ★ pada sesuatu aset (atau swatch jenama) dan ia akan disemat di bahagian atas setiap pemilih, jadi logo atau warna pilihan utama anda hanya sejauh satu klik.
+- **Kemaskan.** Kategorikan semula sesuatu aset ke dalam kumpulan berbeza, sembunyikan aset jenama kongsi yang anda tidak guna (dengan **Show hidden** untuk membawanya kembali), atau padam terus muat naik anda sendiri.
+
+### Bawa palet dan fon anda ke mana-mana
+
+Panel **Swatches** Katalog bukan sekadar untuk rujukan — klik warna untuk menyalinnya, atau **muat turun keseluruhan palet jenama** dalam format yang difahami oleh alat anda yang lain:
+
+- **Token reka bentuk (JSON)**, **pemboleh ubah CSS (CSS variables)**, atau **kelas CSS (CSS classes)** — masukkan jenama terus ke dalam helaian gaya (stylesheet) atau binaan (build);
+- **Adobe Swatch Exchange (.ase)** — muatkannya ke dalam Illustrator atau Photoshop;
+- **Palet GIMP (.gpl)** — untuk GIMP atau Inkscape.
+
+Panel **Fonts** menyenaraikan muka taip jenama anda dengan **muat turun** di sebelah setiap satu, untuk dipasang secara tempatan atau diserahkan kepada kedai cetak. (Tab Warna [Brand Studio](/info/brand-studio.html) turut menawarkan muat turun palet yang sama.)
+
+Aset ialah separuh daripada laluan terbuka, buat-sendiri (do-it-yourself); separuh lagi ialah **membuat alat anda sendiri** — kanvas bebas (Layout Studio, diterangkan di atas) membolehkan anda membina satu secara visual, tanpa perlu kod.
+
 ## Bunyi & kebolehcapaian
 
 Lolly bermatlamat untuk selesa digunakan oleh semua orang. Antara muka boleh dinavigasi menggunakan papan kekunci, kawalan tersuai membawa label yang sesuai untuk pembaca skrin, dan pratonton langsung setiap alat didedahkan sebagai satu imej berlabel tunggal yang menerangkan apa yang sedang dihasilkan.
 
 Satu lapisan lembut **bunyi bantuan** mengesahkan apa yang anda lakukan — tiba di galeri, semakan Content Credentials yang sah lawan tidak sah, menutup panel, menukar penapis. Ia **dihidupkan secara lalai** tetapi sentiasa pilihan: matikan **Bunyi** di mana-mana sahaja suis itu muncul (popover pilihan setiap paparan, atau **Profil**), dan pilihan anda akan diingati.
 
-Di sebelah suis itu terdapat **Neurospicy Mode** — rentak fokus latar belakang yang menenangkan dan bersifat pilihan, yang berulang secara senyap semasa anda bekerja. Pilih gelung daripada pemilih berbentuk pil, mainkan atau jeda dengan butang di sebelahnya, dan tetapkan kelantangannya; ia **dimatikan secara lalai** dan, seperti Bunyi, diingati merentasi sesi dan peranti. Mematikan Bunyi turut membisukan gelung fokus tersebut.
+Di sebelah suis itu terdapat **Neurospicy Mode** — trek fokus latar belakang yang menenangkan dan bersifat pilihan, yang dimainkan secara senyap semasa anda bekerja. Menghidupkannya akan membuka **dok pemain (player dock)** kecil di penjuru bawah yang mengikut anda merentasi aplikasi; daripadanya anda boleh mencari dan memilih trek, melangkau ke depan dan ke belakang, menetapkan kelantangan, serta meminimum atau menutupnya. Senarai trek merangkumi beberapa kategori — lagu *Lolly Sings* prosedural, gelung dan rentak ambien, audio yang anda muat naik sendiri, dan segelintir stesen **radio** internet langsung (ini memerlukan sambungan; selebihnya dimainkan luar talian). Ia **dimatikan secara lalai** dan, seperti Bunyi, diingati merentasi sesi dan peranti. Mematikan Bunyi turut membisukan trek fokus tersebut.
 
 ## Storan & privasi
 

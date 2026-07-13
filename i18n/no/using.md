@@ -2,7 +2,7 @@
 
 En praktisk guide til å faktisk *bruke* appen — åpne et verktøy, jobbe med canvaset, eksportere, lagre og dele. Alt her kjører **på enheten din**: ingen konto, ingen opplasting, ingen internettforbindelse kreves etter første innlasting.
 
-> Ny her? [Kom i gang](/info/getting-started.html) dekker installering/utrulling av appen; denne siden handler om å bruke den når den først er åpen.
+> Ny her? [Hurtigstart](/info/quickstart.html) får deg i gang med å lage ting på minutter, og [Lolly for operatører](/info/operators.html) dekker installering/utrulling av appen; denne siden handler om å bruke den når den først er åpen.
 
 ## Åpne et verktøy
 

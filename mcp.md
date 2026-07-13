@@ -11,7 +11,7 @@ The render path has two tiers, so there are two endpoints. **They share the same
 | Endpoint | Tier | Produces |
 |---|---|---|
 | `https://mcp.lolly.tools/mcp` | **Full** (headless browser) | **Everything** — vector, all raster (`png`/`jpg`/`webp`/…), print PDF (incl. CMYK + crop marks), and animation/video (`gif`/`apng`/`webm`/`mp4`). |
-| `https://lolly.tools/api/mcp` | **Lightweight** (serverless, no browser) | Vector (`svg`/`eps`/`emf`/`pdf`), data/text formats, and `png` for SVG-native tools. |
+| `https://lolly.tools/api/mcp` | **Lightweight** (serverless, no browser) | Vector (`svg`/`eps`/`emf`), data/text formats (`md`/`txt`/`json`/`csv`/`ics`/`vcf`), and `png` for SVG-native tools. (Print PDF needs the full endpoint's browser.) |
 
 Use the **full** endpoint (`mcp.lolly.tools`) unless you have a reason not to — it is a superset. The lightweight endpoint runs browser-free on the same infrastructure as `lolly.tools`, and is handy for quick vector/data work.
 

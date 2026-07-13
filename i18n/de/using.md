@@ -2,7 +2,7 @@
 
 Ein praktischer Leitfaden zur tatsächlichen *Nutzung* der App — ein Tool öffnen, mit der Zeichenfläche arbeiten, exportieren, speichern und teilen. Alles hier läuft **auf Ihrem Gerät**: kein Konto, kein Upload, nach dem ersten Laden ist keine Internetverbindung mehr erforderlich.
 
-> Neu hier? [Erste Schritte](/info/getting-started.html) behandelt die Installation/Bereitstellung der App; auf dieser Seite geht es um die Bedienung, sobald sie geöffnet ist.
+> Neu hier? Der [Schnellstart](/info/quickstart.html) bringt dich in wenigen Minuten zum ersten Ergebnis, und [Lolly für Operatoren](/info/operators.html) behandelt die Installation/Bereitstellung der App; auf dieser Seite geht es um die Bedienung, sobald sie geöffnet ist.
 
 ## Ein Tool öffnen
 
@@ -89,13 +89,33 @@ Die Foto-**Filter** — Halftone, Scanline, Posterize, Duotone — zeigen eine S
 
 Wenn ein Tool Ihnen erlaubt, ein Bild von Ihrem Gerät hinzuzufügen, wird es verkleinert, von EXIF/GPS-Daten befreit und in Ihrer persönlichen Bibliothek **Meine Bilder** gespeichert (unter **Profil → Speicher**). Verwenden Sie es in jedem beliebigen Tool erneut. Die Bibliothek ist in ihrer Größe begrenzt und vollständig lokal — verwalten oder löschen Sie Bilder dort.
 
+## Der Katalog — Ihre Asset-Bibliothek
+
+Der **Katalog** (`#/c` oder der Link **Katalog** im Menü) sammelt alles, worauf Ihre Tools zurückgreifen können — Markenlogos, Bilder, Audio und Bewegtbild, nach Art gruppiert — und hier liegen auch Ihre **eigenen kreativen Dateien**. Kein Server, keine Admin-Konsole, kein Pull Request: alles liegt auf Ihrem Gerät.
+
+- **Bringen Sie Ihre Dateien herein.** Ziehen Sie ein beliebiges Bild, eine SVG-Datei, einen Audioclip, ein Video, eine Lottie-Datei oder ein PDF auf den Upload-Bereich — oder klicken Sie zur Auswahl — und es landet sofort in Ihrem Katalog, bereit im Asset-Picker jedes Tools. Nehmen Sie so viel auf, wie Sie möchten; es verlässt niemals Ihr Gerät.
+- **Favorisieren Sie, wonach Sie oft greifen.** Markieren Sie ein Asset (oder ein Marken-Farbfeld) mit ★, und es wird oben in jedem Picker angeheftet, sodass Ihr bevorzugtes Logo oder Ihre bevorzugte Farbe nur einen Klick entfernt ist.
+- **Aufräumen.** Kategorisieren Sie ein Asset in eine andere Gruppe um, blenden Sie ein geteiltes Marken-Asset aus, das Sie nicht nutzen (mit **Ausgeblendete anzeigen**, um es zurückzuholen), oder löschen Sie Ihre eigenen Uploads vollständig.
+
+### Nehmen Sie Ihre Palette und Schriften überallhin mit
+
+Das **Farbfelder**-Panel des Katalogs dient nicht nur als Referenz — klicken Sie auf eine Farbe, um sie zu kopieren, oder **laden Sie die gesamte Markenpalette herunter** in dem Format, das Ihr anderes Tool spricht:
+
+- **Design Tokens (JSON)**, **CSS-Variablen** oder **CSS-Klassen** — übernehmen Sie die Marke direkt in ein Stylesheet oder einen Build;
+- **Adobe Swatch Exchange (.ase)** — laden Sie sie in Illustrator oder Photoshop;
+- **GIMP-Palette (.gpl)** — für GIMP oder Inkscape.
+
+Das **Schriften**-Panel listet Ihre Markenschriften mit einem **Download** neben jeder auf, um sie lokal zu installieren oder einer Druckerei zu übergeben. (Der Tab „Farben“ des [Brand Studio](/info/brand-studio.html) bietet denselben Palettendownload.)
+
+Assets sind die eine Hälfte des offenen Do-it-yourself-Pfads; die andere ist das **Erstellen eigener Tools** — die freie Zeichenfläche (Layout Studio, oben beschrieben) lässt Sie eines visuell erstellen, ganz ohne Code.
+
 ## Sound & Barrierefreiheit
 
 Lolly soll für alle angenehm zu benutzen sein. Die Oberfläche ist per Tastatur navigierbar, benutzerdefinierte Steuerelemente tragen korrekte Beschriftungen für Screenreader, und die Live-Vorschau jedes Tools wird als ein einzelnes beschriftetes Bild verfügbar gemacht, das beschreibt, was gerade entsteht.
 
 Eine dezente Ebene **unterstützender Klänge** bestätigt, was Sie tun — die Ankunft in der Galerie, eine Prüfung gültiger vs. ungültiger Content Credentials, das Schließen eines Panels, das Wechseln eines Filters. Sie ist **standardmäßig aktiviert**, aber stets optional: Schalten Sie **Sound** überall dort aus, wo der Schalter erscheint (im Optionen-Popover jeder Ansicht oder unter **Profil**), und die Wahl wird gespeichert.
 
-Neben diesem Schalter befindet sich der **Neurospicy Mode** — ein optionaler, beruhigender Fokus-Beat im Hintergrund, der leise in einer Schleife läuft, während Sie arbeiten. Wählen Sie eine Schleife aus dem pillenförmigen Auswahlfeld, spielen Sie sie mit der danebenliegenden Schaltfläche ab oder pausieren Sie sie, und stellen Sie ihre Lautstärke ein; er ist **standardmäßig deaktiviert** und wird, wie Sound, geräte- und sitzungsübergreifend gespeichert. Wird Sound deaktiviert, wird auch die Fokus-Schleife stummgeschaltet.
+Neben diesem Schalter befindet sich der **Neurospicy Mode** — ein optionaler, beruhigender Fokus-Track im Hintergrund, der leise abgespielt wird, während Sie arbeiten. Wenn Sie ihn einschalten, öffnet sich in der unteren Ecke ein kleines **Player-Dock**, das Ihnen durch die App folgt; von dort aus können Sie einen Track suchen und auswählen, vor- und zurückspringen, die Lautstärke einstellen und es minimieren oder schließen. Die Trackliste umfasst einige Kategorien — prozedurale *Lolly Sings*-Melodien, Ambient-Loops und Beats, Ihre eigenen hochgeladenen Audiodateien sowie eine Handvoll Live-Internet-**Radio**-Sender (diese benötigen eine Verbindung; alles andere wird offline abgespielt). Er ist **standardmäßig deaktiviert** und wird, wie Sound, sitzungs- und geräteübergreifend gespeichert. Wird Sound deaktiviert, wird auch der Fokus-Track stummgeschaltet.
 
 ## Speicher & Datenschutz
 

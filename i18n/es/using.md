@@ -2,7 +2,7 @@
 
 Una guía práctica para *usar* de verdad la aplicación — abrir una herramienta, trabajar en el lienzo, exportar, guardar y compartir. Todo esto funciona **en tu dispositivo**: sin cuenta, sin subir archivos, sin necesidad de internet después de la primera carga.
 
-> ¿Eres nuevo aquí? [Primeros pasos](/info/getting-started.html) cubre la instalación/el despliegue de la app; esta página trata sobre cómo manejarla una vez abierta.
+> ¿Eres nuevo aquí? La [Guía rápida](/info/quickstart.html) te pone a crear en minutos, y [Lolly para Operadores](/info/operators.html) cubre la instalación/el despliegue de la app; esta página trata sobre cómo manejarla una vez abierta.
 
 ## Abrir una herramienta
 
@@ -89,13 +89,33 @@ Los **Filtros** de foto — Halftone, Scanline, Posterize, Duotone — muestran 
 
 Cuando una herramienta te permite añadir una imagen desde tu dispositivo, esta se reduce de tamaño, se le eliminan los datos EXIF/GPS, y se guarda en tu biblioteca personal **Mis imágenes** (en **Perfil → Almacenamiento**). Reutilízala en cualquier herramienta. La biblioteca tiene un límite y es totalmente local — gestiona o elimina imágenes ahí.
 
+## El Catálogo — tu biblioteca de recursos
+
+El **Catálogo** (`#/c`, o el enlace **Catálogo** en el menú) reúne todo lo que tus herramientas pueden aprovechar — logos de marca, imágenes, audio y animación, agrupados por tipo — y es también donde viven tus **propios archivos creativos**. Sin servidor, sin consola de administración, sin pull request: todo está en tu dispositivo.
+
+- **Trae tus archivos.** Arrastra cualquier imagen, SVG, clip de audio, vídeo, Lottie o PDF al área de subida — o haz clic para elegir — y aterriza en tu catálogo al instante, listo en el selector de recursos de cada herramienta. Incorpora tanto como quieras; nunca sale de tu dispositivo.
+- **Marca como favorito lo que más usas.** Pon ★ a un recurso (o a una muestra de marca) y se fija en la parte superior de cada selector, así tu logo o color de referencia está a un clic de distancia.
+- **Ordena.** Recategoriza un recurso en otro grupo, oculta un recurso de marca compartido que no uses (con **Mostrar ocultos** para recuperarlo), o elimina directamente tus propias subidas.
+
+### Lleva tu paleta y tus fuentes a cualquier parte
+
+El panel de **Muestras** del Catálogo no es solo para consultar — haz clic en un color para copiarlo, o **descarga toda la paleta de marca** en el formato que hable tu otra herramienta:
+
+- **Design tokens (JSON)**, **variables CSS** o **clases CSS** — lleva la marca directamente a una hoja de estilos o a una compilación;
+- **Adobe Swatch Exchange (.ase)** — cárgala en Illustrator o Photoshop;
+- **Paleta de GIMP (.gpl)** — para GIMP o Inkscape.
+
+El panel de **Fuentes** lista las tipografías de tu marca con una **descarga** junto a cada una, para instalarlas localmente o entregarlas a una imprenta. (La pestaña Colores del [Brand Studio](/info/brand-studio.html) ofrece la misma descarga de paleta.)
+
+Los recursos son una mitad del camino abierto y de hazlo-tú-mismo; la otra es **crear tus propias herramientas** — el lienzo libre (Layout Studio, descrito arriba) te permite construir una visualmente, sin necesidad de código.
+
 ## Sonido y accesibilidad
 
 Lolly aspira a ser cómodo de usar para todo el mundo. La interfaz se puede navegar con el teclado, los controles personalizados llevan etiquetas adecuadas para lectores de pantalla, y la vista previa en vivo de cada herramienta se expone como una única imagen etiquetada que describe lo que está creando.
 
 Una capa suave de **sonidos asistivos** confirma lo que haces — al llegar a la galería, al comprobar si unas Content Credentials son válidas o no, al cerrar un panel, al cambiar un filtro. Está **activado por defecto** pero siempre es opcional: desactiva **Sonido** en cualquier lugar donde aparezca el interruptor (el popover de opciones de cada vista, o **Perfil**), y la elección se recuerda.
 
-Junto a ese interruptor está el **Modo Neurospicy** — un ritmo de fondo relajante y opcional para concentrarte, que se repite en bucle mientras trabajas. Elige un bucle en el selector con forma de píldora, reprodúcelo o pausalo con el botón de al lado, y ajusta su volumen; está **desactivado por defecto** y, como el Sonido, se recuerda entre sesiones y dispositivos. Desactivar el Sonido también silencia el bucle de concentración.
+Junto a ese interruptor está el **Modo Neurospicy** — una pista de concentración de fondo, opcional y relajante, que suena en voz baja mientras trabajas. Al activarla se abre un pequeño **dock de reproductor** en la esquina inferior que te acompaña por toda la app; desde él puedes buscar y elegir una pista, avanzar y retroceder, ajustar el volumen, y minimizarlo o cerrarlo. La lista de pistas abarca varias categorías — melodías procedurales *Lolly Sings*, bucles y ritmos ambientales, tu propio audio subido, y un puñado de emisoras de **radio** de internet en directo (estas necesitan conexión; todo lo demás se reproduce sin conexión). Está **desactivado por defecto** y, como el Sonido, se recuerda entre sesiones y dispositivos. Desactivar el Sonido también silencia la pista de concentración.
 
 ## Almacenamiento y privacidad
 

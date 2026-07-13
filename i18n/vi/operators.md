@@ -1,6 +1,6 @@
 # Lolly cho Nhà vận hành
 
-**Một chiến lược phòng thủ theo chiều sâu, sẵn sàng cho tương lai, về ngăn ngừa thất thoát dữ liệu & xác thực nguồn gốc, khoác áo một nền tảng sáng tạo.**
+### Một chiến lược phòng thủ theo chiều sâu, sẵn sàng cho tương lai, ngăn ngừa thất thoát dữ liệu & xác thực nguồn gốc — mà lại tình cờ là một nền tảng sản xuất sáng tạo
 
 Hệ miễn dịch của tổ chức, bao bọc quanh những gì bạn đã và đang làm — để công việc sáng tạo thường nhật mà đội ngũ của bạn cần mỗi ngày diễn ra *bên trong* ranh giới bảo mật của bạn, thay vì rò rỉ ra ngoài nó.
 
@@ -8,7 +8,7 @@ Hệ miễn dịch của tổ chức, bao bọc quanh những gì bạn đã và
 
 Lolly xứng đáng có một vị trí như một công cụ sáng tạo: nó xóa sổ hàng đợi thiết kế và trao đầu ra chất lượng sản xuất vào tay mọi người. Nhưng lý do khiến việc phân phát rộng rãi như vậy *an toàn* nằm ở kiến trúc. Không có gì được tải lên, mọi thứ đều có thể tái tạo, và mỗi bản xuất ra đều có thể mang theo một bản ghi mật mã học cho biết nó đến từ đâu. Trang này kể câu chuyện về bảo mật và triển khai.
 
-> **Nói thẳng trước.** Các đặc tính bảo mật của Lolly vốn mạnh *theo thiết kế*, và các engine mật mã học cùng bộ phân tích tệp của nó hiện đang trải qua quá trình siết chặt hạ tầng nghiêm ngặt của SUSE, chuẩn bị cho quy mô doanh nghiệp — chúng tôi thực sự giỏi việc này. Các con dấu, chữ ký trên thiết bị, và mã hóa bên dưới là thật và có thể bảo vệ được; trong khi quá trình siết chặt đó hoàn tất, hãy xem chúng như phòng thủ theo chiều sâu chứ không phải một biện pháp kiểm soát đã được chứng nhận ở nơi mà sự đảm bảo độc lập là yêu cầu theo hợp đồng. Chúng tôi muốn bạn biết điều đó ngay từ đầu.
+> **Hiện trạng hôm nay.** Các đặc tính bảo mật của Lolly vốn mạnh theo thiết kế, và các engine mật mã học cùng bộ phân tích tệp của nó đang trải qua quá trình siết chặt hạ tầng cấp doanh nghiệp của SUSE. Các con dấu, chữ ký trên thiết bị, và mã hóa bên dưới là thật và có thể bảo vệ được ngay bây giờ, đồng thời đang dần tiến tới chứng nhận độc lập — nên ở nơi mà hợp đồng đòi hỏi sự đảm bảo đã được chứng nhận, hãy triển khai chúng như phòng thủ theo chiều sâu trong khi quá trình đó hoàn tất.
 
 ## Lợi thế chiến lược
 
@@ -17,7 +17,7 @@ Cách thông thường mà công việc sáng tạo thường nhật được th
 Lolly đảo ngược điều đó. Công việc từng *gây ra* những rò rỉ ấy — tấm thẻ trích dẫn, banner đã bản địa hóa, huy hiệu sự kiện, ảnh chụp màn hình đã che thông tin — giờ đây diễn ra trên một công cụ chạy ngay trên thiết bị của chính nhân viên, dựa theo thương hiệu của bạn, không có máy chủ nào tham gia. Bạn không thêm một lớp kiểm soát lên trên một quy trình rủi ro; bạn thay thế quy trình rủi ro đó bằng một quy trình vốn không hề có đường rò rỉ dữ liệu ngay từ đầu.
 
 - **Cấu hình thuộc về bạn.** Engine và các shell đều là mã nguồn mở (MPL-2.0). Lồng ghép hệ thống xác thực, đo lường từ xa, hay CA của riêng bạn; tự lưu trữ hoặc không; bạn nắm toàn quyền kiểm soát tính năng và chi phí, được theo dõi qua git, không bị khóa trong một cơ sở dữ liệu SaaS.
-- **Quản trị là dữ liệu, không phải một bảng điều khiển.** Danh mục công cụ (catalog) là nguồn chân lý duy nhất, được quản lý như một kho Git — việc xem xét pull-request *chính là* việc kiểm duyệt, và bạn có được dấu vết kiểm toán đầy đủ cùng khả năng khôi phục tức thì cho mọi mẫu (template) mà đội ngũ của bạn có thể chạm vào. Xem [Áp dụng & Quản trị](/info/adoption-governance.html).
+- **Quản trị có thể là dữ liệu, chứ không phải một bảng điều khiển.** Khi bạn muốn có sự kiểm soát đó, hãy quản lý danh mục công cụ như một kho Git — việc xem xét pull-request trở thành quy trình phê duyệt thương hiệu, với dấu vết kiểm toán đầy đủ và khả năng khôi phục tức thì cho mọi mẫu (template) mà đội ngũ của bạn có thể chạm vào. Đây là một tùy chọn, không phải nghĩa vụ: những đội chỉ muốn làm ra sản phẩm có thể tự tạo công cụ của riêng mình trong Layout Studio và đưa tệp của họ vào danh mục, hoàn toàn trong ứng dụng, và không bao giờ đụng đến git. Xem [Áp dụng & Quản trị](/info/adoption-governance.html).
 - **Rào chắn an toàn mang tính cấu trúc.** Các ràng buộc thương hiệu được viết cứng vào trong template, chứ không phải công bố như những hướng dẫn mà người ta có thể phớt lờ. Đầu ra sai không bị ngăn cản — nó đơn giản là không thể tồn tại.
 
 ## Xóa sổ hàng đợi yêu cầu trong khi vẫn nhân rộng nội dung.
@@ -62,14 +62,14 @@ Mọi đầu vào của công cụ đều có thể biểu diễn dưới dạng
 
 ## Nguồn gốc dữ liệu & Content Credentials
 
-Các bản xuất có thể mang **Content Credentials** — một manifest [C2PA](https://c2pa.org) đã được ký, gắn với một hash của các byte trong tệp. Đây là đặc tính **có thể *phát hiện* giả mạo, chứ không *chống* được giả mạo**: nó không ngăn được việc ai đó chỉnh sửa tệp, nhưng bất kỳ thay đổi nào sau đó sẽ phá vỡ con dấu và một trình xác minh hiểu C2PA sẽ báo cáo điều đó. Đó là đặc tính trung thực và hữu ích — bạn có thể *phát hiện* sự thay đổi, bằng mật mã học, ngay cả khi ngoại tuyến.
+Các bản xuất có thể mang **Content Credentials** — một manifest [C2PA](https://c2pa.org) đã được ký, gắn với một hash của các byte trong tệp. Bất kỳ thay đổi nào về sau đối với tệp đều phá vỡ con dấu, nên một trình xác minh hiểu C2PA sẽ **phát hiện sự thay đổi bằng mật mã học, khi ngoại tuyến**. Thông tin xác thực này *có thể phát hiện* giả mạo: nó báo hiệu việc giả mạo chứ không ngăn chặn nó, và đó chính xác là điều khiến việc xác minh hoàn toàn ngoại tuyến trở nên khả thi.
 
 - **Bật mặc định, thực hiện trên thiết bị.** Khóa ký được tạo ngay trên thiết bị, không thể trích xuất (ngay cả Lolly cũng không đọc được), và việc ký diễn ra cục bộ — chỉ có bước *đăng ký* danh tính tùy chọn mới chạm đến mạng.
-- **Các cấp độ tin cậy.** Một bản xuất chưa đăng ký thì vẫn hợp lệ về mặt cấu trúc nhưng được ký ẩn danh (`untrusted`). Đăng ký một **danh tính đã xác minh** (chứng chỉ ngắn hạn từ Lolly CA, gắn với một email) và các trình xác minh ghim gốc Lolly sẽ báo cáo `trusted` + email của người ký. Một cơ quan đóng dấu thời gian đáng tin cậy và dấu xanh xác thực từ bên thứ ba (tuân thủ C2PA) đang nằm trong lộ trình, chưa được phát hành — các cấp độ được gắn nhãn trung thực và một tệp không bao giờ hiển thị dấu xanh giả.
+- **Các cấp độ tin cậy.** Một bản xuất chưa đăng ký thì vẫn hợp lệ về mặt cấu trúc nhưng được ký ẩn danh (`untrusted`). Đăng ký một **danh tính đã xác minh** (chứng chỉ ngắn hạn từ Lolly CA, gắn với một email) và các trình xác minh ghim gốc Lolly sẽ báo cáo `trusted` + email của người ký. Một cơ quan đóng dấu thời gian đáng tin cậy và dấu xanh xác thực từ bên thứ ba (tuân thủ C2PA) đang nằm trong lộ trình. Mỗi cấp độ đều được nêu rõ ràng, và một tệp chỉ tuyên bố mức độ tin cậy mà nó có thể chứng minh.
 - **Thời hạn của thông tin xác thực** là lựa chọn của nhà vận hành/người dùng tại thời điểm ký: 7 / 30 / 90 / 365 ngày, mặc định là 30.
 - **Việc xác minh diễn ra trên thiết bị.** Thả bất kỳ tệp nào vào `/valid` (hoặc `lolly validate <file>`) để nhận báo cáo ngoại tuyến cho biết liệu nó có thực sự được tạo bằng Lolly và không bị thay đổi kể từ đó hay không. Xem [Danh tính Content Credentials](/info/content-credentials-identity.html).
 
-> **Khoảng trống đã biết, nói thẳng:** Trình xác minh của Lolly hiện chưa đọc được đầy đủ các manifest C2PA **v2** từ các nhà sản xuất khác; và WebM mang manifest dưới dạng một tệp đính kèm Matroska (chưa có ánh xạ C2PA chuẩn hóa nào cho WebM), nên các công cụ bên thứ ba xác minh được MP4 của Lolly nhưng không xác minh được WebM của nó.
+> **Lưu ý về khả năng tương tác.** Lolly hiện đã xác minh được thông tin xác thực của chính mình và nhiều thông tin từ bên thứ ba, ngoại tuyến. Có hai hạng mục tương tác đang được thực hiện: đọc đầy đủ các manifest C2PA claim **v2** từ những nhà sản xuất khác, và WebM — định dạng chưa có ánh xạ C2PA chuẩn hóa nào, nên Lolly đính kèm manifest dưới dạng một phần Matroska (các công cụ bên thứ ba xác minh được MP4 của Lolly ngay lập tức; WebM sẽ theo sau khi tiêu chuẩn ổn định).
 
 ## Mã hóa & đặt mật khẩu
 
@@ -81,16 +81,16 @@ Các bản xuất có thể mang **Content Credentials** — một manifest [C2P
 
 ## Sẵn sàng cho môi trường cách ly mạng (air-gap)
 
-Lolly được thiết kế để chạy **không cần mạng tại thời điểm dựng hình**. Web shell là một PWA ưu tiên ngoại tuyến (service worker); font và WASM được lưu trữ trên thiết bị; trạng thái công cụ được lưu cục bộ thông qua host bridge, không bao giờ dùng `localStorage`. Bất kỳ công cụ nào chạm đến mạng đều chỉ làm vậy thông qua một khả năng `host.net` **nằm trong danh sách cho phép**, phải được khai báo trong manifest của nó — một shell không thể (hoặc không muốn) đáp ứng điều đó sẽ giả lập nó ra. Vì vậy, một bản cài đặt cách ly mạng hoàn toàn vẫn có thể dựng hình, xuất tệp, mã hóa, và xác minh thông tin xác thực mà không có gì để "gọi về nhà" cả.
+Cách ly mạng là một **kiểu triển khai hạng nhất**, không phải một chế độ đặc biệt — Lolly chạy mà không cần mạng tại thời điểm dựng hình ngay từ đầu. Web shell là một PWA ưu tiên ngoại tuyến (service worker); font và WASM được lưu trữ trên thiết bị; trạng thái công cụ được lưu cục bộ thông qua host bridge, không bao giờ dùng `localStorage`. Bất kỳ công cụ nào chạm đến mạng đều chỉ làm vậy thông qua một khả năng `host.net` **nằm trong danh sách cho phép**, phải được khai báo trong manifest của nó — một shell không thể (hoặc không muốn) đáp ứng điều đó sẽ giả lập nó ra. Hãy phân phối các shell đến thiết bị qua MDM của bạn, hoặc chạy một thực thể bên trong mạng nội bộ, và một bản cài đặt cách ly mạng hoàn toàn vẫn có thể dựng hình, xuất tệp, mã hóa, và xác minh thông tin xác thực mà không có gì để "gọi về nhà" cả.
 
-## Những điều bạn cần biết trước khi dựa vào nó
+## Những điều nên biết
 
-Các nhà vận hành xứng đáng được biết những lưu ý, chứ không chỉ những tuyên bố:
+Một vài điều đáng làm rõ trước khi bạn triển khai rộng rãi:
 
-- **Siết chặt bảo mật cho quy mô doanh nghiệp.** Như đã nêu ở đầu trang — các thành phần mật mã học và bộ phân tích tệp hiện đang trải qua quá trình siết chặt hạ tầng nghiêm ngặt của SUSE cho quy mô doanh nghiệp; mạnh theo thiết kế, và hãy xem đây là phòng thủ theo chiều sâu ở những nơi mà sự đảm bảo độc lập là yêu cầu theo hợp đồng.
-- **Hook của công cụ *không* phải một sandbox bảo mật.** `hooks.js` tùy chọn của một công cụ chạy với host bridge được tiêm vào, nhưng trong một trình duyệt shell nó thực thi trong realm của trang và *có thể* chạm đến `window`/`document`/`fetch`. Hãy đối xử với mã của công cụ giống như bất kỳ đoạn mã nào bạn chạy — hãy review nó. Đây là lý do vì sao mô hình catalog-như-một-quy-trình-review-Git lại quan trọng, và vì sao các công cụ bên thứ ba không đáng tin cậy không nên được chạy cho đến khi tính năng cách ly Worker ra mắt.
-- **C2PA có thể phát hiện giả mạo, không phải chống giả mạo tuyệt đối**, và những khoảng trống về đọc v2 / WebM nêu trên là có thật.
-- **Các cấp độ mã hóa khác nhau.** Khóa *Tiêu chuẩn* chỉ mang tính ngăn cản; chỉ *Mạnh* (AES-256) mới là bảo vệ thực sự, và các tệp Mạnh không mở được trên mọi trình đọc cũ.
+- **Đang trong quá trình siết chặt.** Các thành phần mật mã học và bộ phân tích tệp đang trải qua quá trình siết chặt cấp doanh nghiệp của SUSE (xem ở trên) — mạnh theo thiết kế ngay hôm nay; hãy triển khai như phòng thủ theo chiều sâu ở nơi mà hợp đồng đòi hỏi sự đảm bảo đã được chứng nhận.
+- **Hook của công cụ *không* phải một sandbox bảo mật.** `hooks.js` tùy chọn của một công cụ chạy với host bridge được tiêm vào, nhưng trong một trình duyệt shell nó thực thi trong realm của trang và *có thể* chạm đến `window`/`document`/`fetch`. Hãy đối xử với mã của công cụ giống như bất kỳ đoạn mã nào bạn chạy — hãy review nó. Đây là lý do vì sao một tổ chức vận hành catalog dùng chung có thể kiểm soát nó qua quy trình review Git; dù bằng cách nào, chỉ chạy những công cụ bạn đã review cho đến khi tính năng cách ly Worker ra mắt.
+- **Content Credentials có thể phát hiện giả mạo.** Chúng phát hiện sự thay đổi chứ không ngăn chặn nó — xem các lưu ý về khả năng tương tác ở trên.
+- **Hai cấp độ mã hóa.** Khóa *Tiêu chuẩn* là biện pháp ngăn cản nhanh, phổ quát; *Mạnh* (AES-256) là bảo vệ đầy đủ — hãy dùng Mạnh cho bất cứ thứ gì nhạy cảm, lưu ý rằng nó cần một trình đọc hiện đại.
 
 ## Bước tiếp theo
 

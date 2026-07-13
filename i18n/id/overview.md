@@ -1,6 +1,6 @@
 # Ringkasan
 
-![Lolly Icon - Large green and white lollipop candy](https://lolly.tools/info/icon.webp)
+![Lolly Icon - Large green and white lollipop candy](https://lolly.tools/info/icon.avif)
 
 Dokumen ini merangkum tujuan, struktur, dan keputusan arsitektur untuk platform Lolly. Dokumen ini mencerminkan visi produk sekaligus keadaan basis kode saat ini.
 

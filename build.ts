@@ -93,6 +93,7 @@ const pages: Page[] = [
   { slug: 'deployment',       title: 'Deployment',        src: 'deployment.md',      pathway: 'builders' },
   { slug: 'configuration',    title: 'Configuration',     src: 'configuration.md',   pathway: 'builders' },
   { slug: 'content-credentials-identity', title: 'Content Credentials Identity', src: 'content-credentials-identity.md', pathway: 'builders' },
+  { slug: 'content-credentials-engineering', title: 'Content Credentials — Engineering', src: 'content-credentials-engineering.md', pathway: 'builders' },
   { slug: 'data-transfer',    title: 'Data Transfer',     src: 'data-transfer.md',   pathway: 'builders' },
   { slug: 'about',            title: 'About',             src: '../README.md',       pathway: 'builders' },
 
@@ -406,6 +407,27 @@ function mdToHtml(md: string) {
     }
 
     if (/^-{3,}$/.test(line.trim())) { out.push('<hr>'); i++; continue; }
+
+    // A standalone self-closing <img …/> line (the README hero icon). All other
+    // raw HTML stays escaped by design (that's what keeps pages audit-free); an
+    // image is safe to honour because only this whitelisted attribute set is
+    // re-emitted, re-escaped. Relative srcs are rooted at /info/ so the same tag
+    // resolves from GitHub (repo root), /info/x.html AND /info/<lang>/x.html.
+    const im = line.trim().match(/^<img\s+([^<>]*?)\/?>$/i);
+    if (im) {
+      const attrs: Record<string, string> = {};
+      for (const m of im[1]!.matchAll(/([a-zA-Z-]+)\s*=\s*"([^"]*)"/g)) attrs[m[1]!.toLowerCase()] = m[2]!;
+      const rawSrc = attrs['src'] ?? '';
+      const isHttp = /^https?:\/\//i.test(rawSrc);
+      const isSchemeless = !/^[a-z][a-z+.-]*:/i.test(rawSrc); // no javascript:/data:/etc.
+      if (rawSrc && (isHttp || isSchemeless)) {
+        const src = isSchemeless && !rawSrc.startsWith('/') ? `/info/${rawSrc}` : rawSrc;
+        const extra = (['alt', 'width', 'height'] as const)
+          .filter(k => attrs[k] != null).map(k => ` ${k}="${esc(attrs[k]!)}"`).join('');
+        out.push(`<p class="md-img"><img src="${esc(src)}"${extra} loading="lazy" decoding="async"></p>`);
+        i++; continue;
+      }
+    }
 
     if (line.includes('|') && i + 1 < lines.length && /^\|?[-|: ]+\|/.test(lines[i + 1]!)) {
       const headers = parseCells(line);
@@ -2456,9 +2478,10 @@ ${isLanding ? LIQUID_GLASS_SCRIPT : ''}
 function build() {
   // Ensure output dirs exist and copy static assets (icons).
   mkdirSync(outDir, { recursive: true });
-  // icon.avif is the site icon (hero logo); icon.webp is the compatibility copy the
-  // GitHub README and overview doc hotlink (GitHub doesn't decode avif). A missing
-  // source is a broken landing page, so warn loudly instead of swallowing it.
+  // icon.avif is the site icon (hero logo; the README + overview doc use it too —
+  // GitHub decodes avif since 2023). icon.webp survives ONLY as the og:image
+  // compatibility copy (OG_LOGO above) — social crawlers still don't take avif.
+  // A missing source is a broken landing page, so warn loudly instead of swallowing it.
   for (const f of ['icon.avif', 'icon.webp']) {
     try { copyFileSync(resolve(repoRoot, f), resolve(outDir, f)); }
     catch { console.warn(`⚠  docs/site: ${f} missing at repo root — /info/${f} will 404`); }
