@@ -1132,7 +1132,9 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
     <div class="hero-trust">
       ${heroChrome.trustChips.map(c => `<span>${esc(c)}</span>`).join('\n      <span class="trust-dot">·</span>\n      ')}
       <span class="trust-dot">·</span>
-      <span>${TOOL_COUNT} ${esc(heroChrome.toolCountSuffix)}</span>
+      <span>${heroChrome.toolCountSuffix.includes('{count}')
+        ? esc(heroChrome.toolCountSuffix).replace('{count}', String(TOOL_COUNT))
+        : `${TOOL_COUNT} ${esc(heroChrome.toolCountSuffix)}`}</span>
     </div>
     <div class="hero-founded">${FOUNDED_BY}</div>
   </div>
@@ -1393,7 +1395,7 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .pathways-lead{color:rgba(255,255,255,.7);font-size:1.0625rem;max-width:40rem;margin:0 auto 2.5rem}
 .pathways-lead a{color:var(--light);font-weight:600}
 .pathways-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;text-align:start}
-.pathway-card{display:flex;flex-direction:column;gap:.5rem;padding:1.75rem;border-radius:14px;background:rgba(255,255,255,.05);border:0;    box-shadow: inset 0 1px #fff1, 0 .2em .5em #0002;transition:transform .18s ease,border-color .18s ease,background .18s ease}
+.pathway-card{    backdrop-filter: blur(5px);display:flex;flex-direction:column;gap:.5rem;padding:1.75rem;border-radius:14px;background:rgba(255,255,255,.05);border:0;    box-shadow: inset 0 1px #fff1, 0 .2em .5em #0002;transition:transform .18s ease,border-color .18s ease,background .18s ease}
 .pathway-card:hover{text-decoration:none;transform:translateY(-3px);border-color:var(--green);background:rgba(255,255,255,.08)}
 .pathway-ic{align-self:flex-start;display:inline-flex;align-items:center;justify-content:center;width:2.75rem;height:2.75rem;margin-bottom:.35rem;border-radius:12px;color:#fff;background:linear-gradient(163deg,hsl(150 66% 51%),hsl(154 58% 33%));border:1px solid hsl(0 0% 100% / .3);box-shadow:inset 0 1px 0 hsl(0 0% 100% / .45),0 6px 16px -6px hsl(151 57% 40% / .75);transition:box-shadow .18s ease,transform .18s ease}
 .pathway-ic svg{width:1.45rem;height:1.45rem}
@@ -2200,6 +2202,10 @@ const HERO_CANVAS_SCRIPT = `<script>(function(){
 
   new ResizeObserver(resize).observe(canvas.parentElement);
   resize();
+  // Click/tap anywhere over the shared hero+pathways backdrop bursts a ring of
+  // chips from the point. The canvas is pointer-events:none, so we listen on the
+  // document and gate on its parent (the .hero-wrap that spans both bands); coords
+  // are mapped into the canvas box, which now covers the whole wrap.
   var hero=canvas.parentElement;
   document.addEventListener('pointerdown',function(e){
     if(!hero.contains(e.target))return;

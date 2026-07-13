@@ -1,8 +1,8 @@
 
 # Lolly — Landingpage-Texte
 
-Produktionsreife Dateien in Sekunden — Designregeln, Layoutlogik und Exportqualität sind integriert. Kein Warten, kein Rätselraten.
-Läuft auf Ihrem eigenen Gerät. Nichts hochzuladen, nichts zu lernen, funktioniert offline.
+Produktionsreife Dateien in Sekunden: Die Gestaltungsregeln greifen, das Layout sitzt, der Export stimmt. Kein Warten, kein Rätselraten.
+Läuft lokal auf dem eigenen Gerät. Kein Upload, keine Einarbeitung, auch offline.
 
 ---
 

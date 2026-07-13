@@ -1,7 +1,7 @@
 {
   "pilotTag": "Prototype",
-  "pilotText": "Besloten pilot in uitvoering · wordt gehard voor enterprise-schaal",
-  "pilotAriaLabel": "Lolly is een intern prototype in een besloten pilot, dat wordt gehard voor enterprise-schaal",
+  "pilotText": "Gesloten pilot in uitvoering · wordt gehard voor enterprise-schaal",
+  "pilotAriaLabel": "Lolly is een intern prototype in een gesloten pilot, dat wordt gehard voor enterprise-schaal",
   "ctas": [
     {
       "href": "/",
@@ -22,5 +22,5 @@
     "Open source",
     "Privacy voorop"
   ],
-  "toolCountSuffix": "Voorbeeldtools geladen"
+  "toolCountSuffix": "Komt met {count} voorbeelden"
 }

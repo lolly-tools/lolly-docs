@@ -1,19 +1,19 @@
 {
   "eyebrow": "Waarom we Lolly hebben gebouwd",
   "heading": "Alledaags creatief werk\nzou niet zo moeilijk moeten zijn.",
-  "lead": "De meeste mensen willen geen designstudio. Ze willen nu meteen één correct bestand — zonder het merk te breken, zonder op iemand te wachten en zonder een privédocument af te geven aan een website waar ze nog nooit van gehoord hebben. Lolly bestaat om die drie frustraties weg te nemen.",
+  "lead": "De meeste mensen willen geen designstudio. Ze willen nu meteen één correct bestand - zonder het merk te breken, zonder op iemand te wachten en zonder een privédocument af te geven aan een website waar ze nog nooit van gehoord hebben. Lolly bestaat om die drie frustraties weg te nemen.",
   "frustrations": [
     { "icon": "anxiety", "title": "Off-brand-angst", "desc": "Die stille angst om de verkeerde kleur of het verkeerde lettertype te kiezen en er in het openbaar naast te zitten." },
     { "icon": "bottleneck", "title": "Het knelpunt", "desc": "Elk klein bestand dat vastzit in een wachtrij achter een drukke designer, een traag hulpmiddel, of nog een goedkeuring." },
-    { "icon": "cloudDependence", "title": "Afhankelijkheid van de cloud", "desc": "Gevoelige bestanden uploaden alleen om ze te converteren of bij te snijden — en vastzitten zodra je offline bent." }
+    { "icon": "cloudDependence", "title": "Afhankelijkheid van de cloud", "desc": "Gevoelige bestanden uploaden alleen om ze te converteren of bij te snijden - en vastzitten zodra je offline bent." }
   ],
   "matrix": [
     { "pain": "Een briefing mailen naar het designteam en dan dagen wachten op één klein grafisch element.", "relief": "Vul een paar velden in. Het afgewerkte bestand is binnen seconden klaar." },
-    { "pain": "Gokken naar het juiste lettertype, de juiste kleur en het juiste logo — en hopen dat het de merkcontrole doorstaat.", "relief": "De ontwerpregels zitten ingebakken in het hulpmiddel. Ze buigen, maar breken niet. " },
+    { "pain": "Gokken naar het juiste lettertype, de juiste kleur en het juiste logo - en hopen dat het de merkcontrole doorstaat.", "relief": "De ontwerpregels zitten ingebakken in het hulpmiddel. Ze buigen, maar breken niet. " },
     { "pain": "Een contract, loonstrook of privéfoto uploaden naar een willekeurige gratis website om het te converteren of bij te snijden.", "relief": "Alles draait op je eigen apparaat. Er wordt niets geüpload; niets verlaat het apparaat van de verantwoordelijke persoon." },
     { "pain": "Hetzelfde insigne, dezelfde kaart of banner honderd keer met de hand opnieuw maken.", "relief": "Plak een spreadsheet. Krijg in één keer honderd afgewerkte, printklare bestanden." },
-    { "pain": "“Welke versie is de laatste?” — zoeken door Slack-threads en gedeelde schijven.", "relief": "Het bestand is een link. Dezelfde invoer, hetzelfde bestand, elke keer opnieuw." },
-    { "pain": "Geen bereik in het vliegtuig, of een afgesloten netwerk — waardoor je simpelweg vastzit.", "relief": "Werkt volledig offline, op elk apparaat, zodra het één keer geladen is." },
+    { "pain": "“Welke versie is de laatste?” - zoeken door Slack-threads en gedeelde schijven.", "relief": "Het bestand is een link. Dezelfde invoer, hetzelfde bestand, elke keer opnieuw." },
+    { "pain": "Geen bereik in het vliegtuig, of een afgesloten netwerk - waardoor je simpelweg vastzit.", "relief": "Werkt volledig offline, op elk apparaat, zodra het één keer geladen is." },
     { "pain": "Content onder embargo:  communicatieprofessionals kunnen niet veilig samenwerken met externe partners.", "relief": "vergrendel, versleutel en beveilig bestanden, zips en deellinks met een wachtwoord - allemaal zonder internet" }
   ]
 }

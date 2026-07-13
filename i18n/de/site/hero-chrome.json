@@ -1,7 +1,7 @@
 {
   "pilotTag": "Prototyp",
-  "pilotText": "Geschlossenes Pilotprojekt läuft · Optimierung für den Einsatz im Unternehmensmaßstab",
-  "pilotAriaLabel": "Lolly ist ein interner Prototyp in einem geschlossenen Pilotprojekt und wird für den Einsatz im Unternehmensmaßstab optimiert",
+  "pilotText": "Pilotbetrieb mit ausgewählten Kunden. Optimierung und Skalierung.",
+  "pilotAriaLabel": "Lolly ist ein interner Prototyp im Pilotbetrieb mit ausgewählten Kunden und wird laufend optimiert und skaliert",
   "ctas": [
     {
       "href": "/",

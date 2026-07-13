@@ -1,13 +1,13 @@
 {
   "title": "Drie manieren om te beginnen",
-  "lead": "Begin met de [Quickstart](/info/quickstart.html) — breng je merk binnen en haal je eerste bestand eruit — volg dan het pad dat bij jou past.",
+  "lead": "Begin met de [Quickstart](/info/quickstart.html) - breng je merk binnen en haal je eerste bestand eruit - volg dan het pad dat bij jou past.",
   "cards": [
     {
       "href": "/info/creators.html",
       "icon": "media",
       "eyebrow": "Voor makers",
       "name": "Maak dingen",
-      "desc": "Afgewerkte bestanden in seconden — geen ontwerptool, geen wachten. De voordelen, en hoe je het meeste uit de app haalt.",
+      "desc": "Verkrijg klare bestanden in seconden - geen ontwerptool, nooit wachten. De voordelen en hoe je het meeste uit de app haalt.",
       "cta": "Verken →"
     },
     {
@@ -15,13 +15,13 @@
       "icon": "developers",
       "eyebrow": "Voor bouwers",
       "name": "Maken & integreren",
-      "desc": "Maak tools, bedien ze vanuit de CLI, MCP of een agent, en deploy het platform. De technische documentatie.",
+      "desc": "Maak tools, bedien ze vanuit de CLI, MCP of een agent en deploy het platform. De technische documentatie.",
       "cta": "Lees de docs →"
     },
     {
       "href": "/info/operators.html",
       "icon": "security",
-      "eyebrow": "Voor operators",
+      "eyebrow": "Voor beheerders",
       "name": "Rol het veilig uit",
       "desc": "Een defense-in-depth-strategie tegen dataverlies, vermomd als creatief platform. Strategie, beveiliging en adoptie.",
       "cta": "Bekijk de strategie →"

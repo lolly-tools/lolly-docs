@@ -4,7 +4,7 @@ Veelgestelde vragen die worden getoond in de accordion op de `/info`-landingspag
 
 **Hoe onderhoud je dit:** elke `##`-kop hieronder is een vraag; alles eronder
 (tot de volgende `##`) is het antwoord. Antwoorden gebruiken dezelfde lichte markdown als
-de rest van de site — scheid alinea's met een lege regel. Voeg hier vragen toe, verwijder
+de rest van de site - scheid alinea's met een lege regel. Voeg hier vragen toe, verwijder
 ze, of wijzig de volgorde, en voer daarna `npm run build:info` opnieuw uit (of `npm run dev:web`).
 Alles boven de eerste `##` (deze titel en deze notities) wordt door de build genegeerd.
 
@@ -18,7 +18,7 @@ Lolly produceert een grote hoeveelheid content. We hanteren een strikte aanpak v
 
 ### Wat zijn de feature flags?
 
-Feature flags zetten onderdelen van Lolly aan of uit. Meestal heeft een beheerder daar controle over — bij Lolly heb jij de controle.
+Feature flags zetten onderdelen van Lolly aan of uit. Meestal heeft een beheerder daar controle over - bij Lolly heb jij de controle.
 
 ## Hoe kom ik aan de mobiele of desktop-apps?
 
@@ -36,7 +36,7 @@ We moeten ook lachen om de tijd en kosten die we besparen met deze aanpak.
 
 ## Welke hindernissen kan ik verwachten bij het invoeren van Lolly?
 
-Lolly past zich in waar je al bestanden genereert — de CLI is dezelfde engine
+Lolly past zich in waar je al bestanden genereert - de CLI is dezelfde engine
 als de app, dus een pipeline die om 2 uur 's nachts draait kan niet afwijken van wat iemand als preview in een
 browser ziet. De wrijving bij adoptie is zelden technisch; het is organisatorisch. Verwacht het volgende:
 
@@ -47,17 +47,17 @@ template schrijven.
 
 **Governance loopt via git.** "De PR-review *is* de moderatie" is elegant voor
 engineers, maar onbekend terrein voor de meeste merk- en marketingteams. Als de mensen die
-merkbeslissingen bezitten niet in git leven, heb je een workflow nodig die hen overbrugt — of IT
+merkbeslissingen bezitten niet in git leven, heb je een workflow nodig die hen overbrugt - of IT
 wordt stilzwijgend de strategische designpartner en bredere institutionele poortwachter.
 Dat heeft bij velen in langlopende productieomgevingen zelfs de voorkeur. 
 
-**Het is bewust beperkt — presenteer het ook zo.** Lolly is niet bedoeld voor maatwerk of hero-
-content. Het *is* je persoonlijke DAM — gevoed en versterkt door je designsysteem,
-tools en catalogus — en het *heeft* wel degelijk een open canvas (Layout Studio), maar
+**Het is bewust beperkt - presenteer het ook zo.** Lolly is niet bedoeld voor maatwerk of hero-
+content. Het *is* je persoonlijke DAM - gevoed en versterkt door je designsysteem,
+tools en catalogus - en het *heeft* wel degelijk een open canvas (Layout Studio), maar
 zelfs daar volgen kleuren, typografie en assets de actieve designglobals, zodat vrije
 opmaak binnen het systeem blijft. Afgezet tegen Figma of Canva zal het beperkt
-ogen. Beoordeeld als wat het is — geoperationaliseerde, terugkerende assetgeneratie op
-massale schaal — is er niets dat ermee kan concurreren. De verkeerde framing is de meest voorkomende tegenslag.
+ogen. Beoordeeld als wat het is - geoperationaliseerde, terugkerende assetgeneratie op
+massale schaal - is er niets dat ermee kan concurreren. De verkeerde framing is de meest voorkomende tegenslag.
 
 **Changemanagement aan de productiekant.** Bestaande processen werken vandaag, ook al is
 de output niet on-brand. Ze omleiden naar de engine betekent opnieuw testen, opnieuw leren,
@@ -91,9 +91,9 @@ We winnen de strijd om governance met uitstekend gemak en uitstekende service.
 
 ## Kan Lolly mijn Figma-, Penpot-, Illustrator- of InDesign-bestanden bewerken en renderen?
 
-Ja. Open **Layout Studio** en klik op **Een ontwerp importeren**: het accepteert een natieve Figma **.fig** (Save local copy), een Penpot **.penpot**-export, een Illustrator **.ai** of **.pdf**, een InDesign **.idml** (File → Export → InDesign Markup), of **elke SVG** (de brede deur — bijna elke ontwerptoepassing kan dit exporteren). Alles wordt volledig op je eigen apparaat verwerkt, geen account of plug-in nodig.
+Ja. Open **Layout Studio** en klik op **Een ontwerp importeren**: het accepteert een natieve Figma **.fig** (Save local copy), een Penpot **.penpot**-export, een Illustrator **.ai** of **.pdf**, een InDesign **.idml** (File → Export → InDesign Markup), of **elke SVG** (de brede deur - bijna elke ontwerptoepassing kan dit exporteren). Alles wordt volledig op je eigen apparaat verwerkt, geen account of plug-in nodig.
 
-Lagen komen binnen als bewerkbare vakken op het open canvas: tekst blijft herschrijfbaar, vormen blijven vormen, afbeeldingen worden toegevoegd aan je lokale bibliotheek, en typografie en kleuren volgen de merk-globals. Sla het op en de lay-out wordt een herbruikbare, via URL benaderbare template die iedereen met Lolly kan invullen — en je kunt er live tools doorheen mengen (een QR-code, een grafiek) die bij het laden opnieuw renderen. Van daaruit rendert het zoals al het andere in Lolly — SVG, PDF, PNG en de rest, reproduceerbaar vanaf de URL. Zie [Een ontwerp importeren](/info/design-import.html).
+Lagen komen binnen als bewerkbare vakken op het open canvas: tekst blijft herschrijfbaar, vormen blijven vormen, afbeeldingen worden toegevoegd aan je lokale bibliotheek, en typografie en kleuren volgen de merk-globals. Sla het op en de lay-out wordt een herbruikbare, via URL benaderbare template die iedereen met Lolly kan invullen - en je kunt er live tools doorheen mengen (een QR-code, een grafiek) die bij het laden opnieuw renderen. Van daaruit rendert het zoals al het andere in Lolly - SVG, PDF, PNG en de rest, reproduceerbaar vanaf de URL. Zie [Een ontwerp importeren](/info/design-import.html).
 
 ## Wat gebeurt er op 29 augustus?
 
@@ -109,12 +109,12 @@ SUSE is een enterprise open source infrastructuurbedrijf met meer dan drie decen
 
 Vanuit het perspectief van SUSE gaat dit om het waarmaken van soevereiniteit en veiligheid. Vandaag de dag is de kans dat SUSE Lolly tot product maakt vrijwel nul.
 
-Volledige openheid: SUSE *is* wel bezig met het bouwen van interne tooling om Lolly te integreren binnen zijn IT-systemen — dat gaat over de interne inrichting van SUSE, niet over publieke versus private ontwikkeling.
+Volledige openheid: SUSE *is* wel bezig met het bouwen van interne tooling om Lolly te integreren binnen zijn IT-systemen - dat gaat over de interne inrichting van SUSE, niet over publieke versus private ontwikkeling.
 
 Wat betreft de publieke kant: Lolly streeft ernaar gebouwd te worden via de [Open Build Service](https://openbuildservice.org/), met veilige supply-chain-artefacten die worden geleverd door de [SUSE Application Collection](https://apps.rancher.io/applications).
 
-We bouwen zo veel mogelijk in het openbaar — je zult alleen niet lang meer tools met SUSE-branding zien, en evenmin het interne personeelsbestand en de commerciële processen van SUSE, die geen verband houden met Lolly.
+We bouwen zo veel mogelijk in het openbaar - je zult alleen niet lang meer tools met SUSE-branding zien, en evenmin het interne personeelsbestand en de commerciële processen van SUSE, die geen verband houden met Lolly.
 
 ## Welke smaak heeft dat Lolly-logo?
 
-Sommigen zeggen Limoen, anderen zeggen Munt en soms Appel — Lolly brengt de zoetigheid, jij bepaalt de smaak!
+Sommigen zeggen Limoen, anderen zeggen Munt en soms Appel - Lolly brengt de zoetigheid, jij bepaalt de smaak!
