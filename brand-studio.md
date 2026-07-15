@@ -111,7 +111,8 @@ The **Export** button in the top action row writes a single **`LollyBrand-…zip
 
 - a **LollyBrand** pack (`.zip`) - installs in one step;
 - a **Penpot** export (`.penpot`) - pulls in its design tokens;
-- a **Design Tokens** file (`.json`) - W3C DTCG or Tokens Studio;
+- a **Design Tokens** file (`.json`) - W3C DTCG;
+- a **Tokens Studio** file (`.json`) - Tokens Studio;
 - a **plain SVG** (`.svg`) - Lolly scans its colours and lets you pick which to keep, the first becoming your primary.
 
 This is how a colleague hands you a brand, or how you carry one to a second install - no account, no cloud. To bring in a brand from the command line instead, see [`ingest:brand`](/info/configuration.html#brand-packs).
