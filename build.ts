@@ -2580,7 +2580,7 @@ function build() {
 // Per-page OG share images depend only on the page titles + brand assets (never the
 // docs markdown), so they're rasterised once here and reused by every build()
 // (including incremental --watch rebuilds). `ogSlugs` names the slugs that got their
-// own card; the rest fall back to og.png. Best-effort - a missing @resvg/resvg-js
+// own card; the rest fall back to og.png. Best-effort - a missing render browser
 // (or any rasterise error) just yields an empty set, leaving every page on og.png.
 const ogGenerated = await generateOgImages(pages, outDir, repoRoot, (m) => console.log(m));
 const ogExpected = pages.filter((p) => !p.isLanding && p.slug && p.title).length;
@@ -2591,7 +2591,7 @@ if (ogExpected > 0 && ogGenerated.size < ogExpected) {
   console.warn(
     `⚠  og: generated ${ogGenerated.size}/${ogExpected} per-page share cards (${onDisk} present on disk).` +
       (onDisk === 0
-        ? ' Every /info page will use the fallback og.png - is @resvg/resvg-js installed for this platform?'
+        ? ' Every /info page will use the fallback og.png - is the render browser (Playwright/Chromium) installed for this platform?'
         : ''),
   );
 }

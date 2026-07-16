@@ -1,7 +1,10 @@
 // Build-time generators for Open Graph (share preview) images.
 //
-// Two cards share the brand pine field + SUSE type, rasterised with @resvg/resvg-js
-// (a build-time-only dependency — a missing dep degrades to the static og.png):
+// All three cards share the brand pine field + SUSE type and are rasterised through OUR
+// OWN render path (Chromium via Playwright — scripts/lib/rasterize-svg-browser.ts), NOT a
+// second SVG interpreter like resvg. One render path means a card is shaped the way the
+// app paints, can't drift (resvg mis-rendered some brand illustrations / panicked on
+// others), and a missing browser degrades to the committed / static og.png:
 //
 //   • createOgRenderer  — the /info pages. Reproduces the standard Lolly OG image
 //     (pine field, 3D lollipop, "Lolly" wordmark) and swaps the subtitle for the
@@ -14,20 +17,21 @@
 //     description on the pine field, with a smaller framed preview of the tool's own
 //     output on the right. So a link to /t/qr-code previews as that tool's card.
 //
+//   • createViewCardRenderer — per-view share cards (scripts/build-view-og.ts). A dark
+//     brand-system panel for the app's own sections (Dashboard, Verify, …).
+//
 // Why generate rather than reuse one static og.png: social crawlers (Slack, X,
 // Facebook, LinkedIn, iMessage) cache one image per URL and only reliably render
 // raster (PNG/JPEG), never SVG — so each page/tool needs its own pre-rendered PNG.
 
 import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { createSvgRasterizer } from '../scripts/lib/rasterize-svg-browser.ts';
 
-// Structural shape of the injected @resvg/resvg-js Resvg class (dynamically imported
-// by the caller so a missing build-time dep degrades rather than crashes).
-interface ResvgRendered { asPng(): Buffer; }
-interface ResvgInstance { render(): ResvgRendered; }
-interface ResvgCtor {
-  new (svg: string, options?: Record<string, unknown>): ResvgInstance;
-}
+// A self-contained SVG string → PNG bytes, at the given size. Injected into each card
+// renderer so they rasterise through the browser path (createSvgRasterizer) — a missing
+// browser then degrades ("keep committed / og.png") rather than crashing the build.
+type SvgToPng = (svg: string, opts: { width: number; height: number; background?: string }) => Promise<Buffer>;
 
 // A page from the build's page list; only `slug` + `title` (non-landing) get a card.
 interface OgPage { slug?: string; title?: string; isLanding?: boolean; }
@@ -67,15 +71,13 @@ function fitTitle(title: string): number {
 }
 
 /**
- * Build a renderer bound to the repo's assets (the base card + the SUSE font),
- * loaded once and reused for every page. `Resvg` is injected so the dependency can
- * be loaded dynamically by the caller (a missing build-time dep then degrades to
- * "keep og.png" rather than crashing the whole site build). Throws if the brand
- * assets are missing.
+ * Build a renderer bound to the repo's base card (og.png), reused for every page.
+ * `rasterize` is injected so the card renders through the browser path (SUSE fonts are
+ * supplied there); a missing browser degrades to "keep og.png" rather than crashing the
+ * site build. Throws if the base card asset is missing.
  */
-function createOgRenderer(Resvg: ResvgCtor, repoRoot: string) {
+function createOgRenderer(rasterize: SvgToPng, repoRoot: string) {
   const ogBase = readFileSync(resolve(repoRoot, 'shells/web/public/og.png')).toString('base64');
-  const font   = readFileSync(resolve(repoRoot, 'catalog/fonts/ttf/SUSE-Medium.ttf'));
 
   const svgFor = (title: string): string => {
     const size = fitTitle(title);
@@ -90,13 +92,9 @@ function createOgRenderer(Resvg: ResvgCtor, repoRoot: string) {
   };
 
   return {
-    /** Render one page's card to PNG bytes. */
-    render(title: string): Buffer {
-      const resvg = new Resvg(svgFor(title), {
-        font: { fontBuffers: [font], defaultFontFamily: 'SUSE', loadSystemFonts: false },
-        background: FIELD,
-      });
-      return resvg.render().asPng();
+    /** Render one page's card to PNG bytes (via the injected browser rasteriser). */
+    render(title: string): Promise<Buffer> {
+      return rasterize(svgFor(title), { width: OG_W, height: OG_H, background: FIELD });
     },
   };
 }
@@ -171,13 +169,12 @@ function fitName(name: string, boxWidth: number): number {
 /**
  * Build a per-tool card renderer. `render({ name, description, iconSvg, previewDataUri })`
  * returns PNG bytes: the tool's icon + name + description on the pine field, with the
- * (already-rasterised) preview framed in a white panel on the right. With no preview,
- * a large tinted icon stands in. Same dynamic-import / degrade contract as createOgRenderer.
+ * preview framed in a white panel on the right (the preview rides in as an SVG data-URI
+ * and is painted by the same browser that rasterises the card — no second interpreter).
+ * With no preview, a large tinted icon stands in. `rasterize` is injected so a missing
+ * browser degrades ("keep committed card") instead of crashing, like the old resvg path.
  */
-export function createToolCardRenderer(Resvg: ResvgCtor, repoRoot: string) {
-  const fonts = ['Bold', 'Medium', 'Regular']
-    .map((w) => readFileSync(resolve(repoRoot, `catalog/fonts/ttf/SUSE-${w}.ttf`)));
-
+export function createToolCardRenderer(rasterize: SvgToPng) {
   const svgFor = ({ name, description, iconSvg, previewDataUri }: ToolCard): string => {
     const M = CARD_MARGIN;
     const P = CARD_PANEL;
@@ -229,13 +226,9 @@ export function createToolCardRenderer(Resvg: ResvgCtor, repoRoot: string) {
   };
 
   return {
-    /** Render one tool's card to PNG bytes. */
-    render(card: ToolCard): Buffer {
-      const resvg = new Resvg(svgFor(card), {
-        font: { fontBuffers: fonts, defaultFontFamily: 'SUSE', loadSystemFonts: false },
-        background: CARD_BG,
-      });
-      return resvg.render().asPng();
+    /** Render one tool's card to PNG bytes (via the injected browser rasteriser). */
+    render(card: ToolCard): Promise<Buffer> {
+      return rasterize(svgFor(card), { width: OG_W, height: OG_H, background: CARD_BG });
     },
   };
 }
@@ -280,13 +273,10 @@ function fitViewTitle(title: string, boxWidth: number): number {
 /**
  * Build a per-view card renderer. `render({ title, description, iconSvg })` returns
  * PNG bytes: a green app-icon tile, the view title and a one-line description on the
- * pine field, with a large translucent icon watermark bleeding off the right. Same
- * dynamic-import / degrade contract as createOgRenderer.
+ * pine field, with a large translucent icon watermark bleeding off the right. `rasterize`
+ * is injected (browser path) so a missing browser degrades like createOgRenderer.
  */
-export function createViewCardRenderer(Resvg: ResvgCtor, repoRoot: string) {
-  const fonts = ['Bold', 'Medium', 'Regular']
-    .map((w) => readFileSync(resolve(repoRoot, `catalog/fonts/ttf/SUSE-${w}.ttf`)));
-
+export function createViewCardRenderer(rasterize: SvgToPng) {
   const svgFor = ({ title, description, iconSvg }: ViewCard): string => {
     const M = VIEW_MARGIN;
     const textW = OG_W - M - 96;                 // title/description column width
@@ -326,13 +316,9 @@ export function createViewCardRenderer(Resvg: ResvgCtor, repoRoot: string) {
   };
 
   return {
-    /** Render one view's card to PNG bytes. */
-    render(card: ViewCard): Buffer {
-      const resvg = new Resvg(svgFor(card), {
-        font: { fontBuffers: fonts, defaultFontFamily: 'SUSE', loadSystemFonts: false },
-        background: VIEW_FIELD,
-      });
-      return resvg.render().asPng();
+    /** Render one view's card to PNG bytes (via the injected browser rasteriser). */
+    render(card: ViewCard): Promise<Buffer> {
+      return rasterize(svgFor(card), { width: OG_W, height: OG_H, background: VIEW_FIELD });
     },
   };
 }
@@ -351,9 +337,12 @@ export async function generateOgImages(
   log: (msg: string) => void = () => {},
 ): Promise<Set<string>> {
   let renderer: ReturnType<typeof createOgRenderer>;
+  let rasterizer: Awaited<ReturnType<typeof createSvgRasterizer>>;
   try {
-    const { Resvg } = await import('@resvg/resvg-js');   // dynamic: a missing dep falls back, not crashes
-    renderer = createOgRenderer(Resvg as unknown as ResvgCtor, repoRoot);
+    // Our own render path (Chromium). A missing browser / fonts throws → pages fall
+    // back to og.png, same degrade contract as the old dynamic-resvg import.
+    rasterizer = await createSvgRasterizer(repoRoot);
+    renderer = createOgRenderer(rasterizer.rasterize, repoRoot);
   } catch (e) {
     log(`og: image generation skipped (${(e as Error).message}); pages fall back to og.png`);
     return new Set();
@@ -363,12 +352,13 @@ export async function generateOgImages(
   for (const page of pages) {
     if (!page.slug || !page.title || page.isLanding) continue;
     try {
-      writeFileSync(resolve(outDir, 'og', `${page.slug}.png`), renderer.render(page.title));
+      writeFileSync(resolve(outDir, 'og', `${page.slug}.png`), await renderer.render(page.title));
       done.add(page.slug);
     } catch (e) {
       log(`og: ${page.slug} failed (${(e as Error).message}); falls back to og.png`);
     }
   }
+  await rasterizer.close();
   log(`og: generated ${done.size} page card${done.size === 1 ? '' : 's'}`);
   return done;
 }
