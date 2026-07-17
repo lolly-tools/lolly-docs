@@ -1593,15 +1593,15 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .import-lead{font-size:1.0625rem;line-height:1.8;color:var(--muted);margin:0}
 .import-lead strong{color:var(--dark);font-weight:700}
 .import-sources{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-bottom:1.75rem}
-.import-source{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.5rem;background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.5rem 1rem;transition:box-shadow .15s,transform .15s}
+.import-source{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.5rem;background:#fff;border:0;    box-shadow: 0 .3rem 1rem #00000016;border-radius:14px;padding:1.5rem 1rem;transition:box-shadow .15s,transform .15s}
 .import-source:hover{box-shadow:0 8px 24px rgba(12,50,44,.1);transform:translateY(-2px)}
 .import-badge{display:inline-flex;align-items:center;box-shadow:inset 0 0 0 1px #0002, inset 0 1.25px 2px #fff9,  0 .2rem .4rem #0002;justify-content:center;width:2.75rem;height:2.75rem;border-radius:12px;background:var(--b,#30ba78);color:#fff;font-weight:800;font-size:.9rem;letter-spacing:-.01em}
 .import-source strong{color:var(--dark);font-size:.95rem;font-weight:700}
 .import-fmt{font-family:'SUSE Mono','SF Mono',monospace;font-size:.72rem;color:var(--muted);letter-spacing:.02em}
 .import-flow{display:flex;align-items:stretch;gap:.5rem;margin-bottom:2.75rem}
-.import-step{flex:1;min-width:0;background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.5rem 1.25rem;text-align:center}
-.import-step-icon{width:1.75rem;height:1.75rem;color:var(--green);margin:0 auto .75rem}
-.import-step-icon svg{width:100%;height:100%}
+.import-step{flex:1;min-width:0;background:var(--border);border:1px solid var(--border);border-radius:14px;padding:1.5rem 1.25rem;text-align:center}
+.import-step-icon{width:1.75rem;height:1.75rem;color:var(--muted); margin:0 auto .75rem}
+.import-step-icon svg{width:100%;height:100%; stroke-width:1.5px}
 .import-step strong{display:block;color:var(--dark);font-size:.9rem;margin-bottom:.35rem}
 .import-step p{font-size:.8rem;color:var(--muted);line-height:1.55;margin:0}
 .import-arrow{align-self:center;color:var(--green);flex-shrink:0;font-size:1.4rem;font-weight:300;line-height:1}
