@@ -1,6 +1,6 @@
 # Privacy Policy
 
-*Last updated: June 2026*
+*Last updated: July 2026*
 
 ## The Lolly app
 
@@ -24,6 +24,16 @@ Some tools are **utilities** that work on a file *you* provide - for example **S
 These run **entirely in your browser**. The file you pick is read into memory on your device, transformed locally, and offered back as a download. **It is never uploaded** - there is no server to upload it to. The cleaned copy carries no watermark and none of our own identifying metadata; the whole point is to *remove* data, not add it. Nothing is stored after you leave, and these utilities work offline. You'll see a **"Runs on your device - nothing is uploaded"** badge on every one of them.
 
 This is the opposite of the typical "compress this PDF" / "convert this HEIC" website, which uploads your file to a stranger's server to do work your browser can do locally.
+
+## Hot-linked render links
+
+The app itself stays entirely on your device. Separately and **optionally**, lolly.tools answers **hot-link render URLs** - `https://lolly.tools/tool/<tool-id>.<ext>?<inputs>` - so a shared Lolly link can appear as a live image in a README, a wiki or a dashboard. Fetching one of those URLs asks our server to render **public tool and catalog data** with the inputs written into the URL, and that is the entire exchange:
+
+- **No accounts, no cookies, no user state.** The endpoint is anonymous; nothing about you is stored, and nothing on your device is read. Your documents, sessions and uploads never leave your browser - they cannot appear in these links at all.
+- **The inputs are public by construction** - they are whatever the link's author typed into the URL, readable by anyone the link reaches. Don't put secrets in a shared link.
+- Responses are **cached and rate-limited** like any public image, and marked `noindex` so search engines don't index your renders.
+
+Self-hosting Lolly and don't want a public render surface? Set `LOLLY_DISABLE_RENDER_GET=1` and every one of these URLs returns 404.
 
 ## The browser extension
 

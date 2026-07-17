@@ -52,7 +52,9 @@ Validated against `schemas/tool.schema.json`. Required fields:
 
 Optional:
 
-- `capabilities` - `["network", "filesystem", "clipboard", "camera", "microphone", "ffmpeg", "wasm", "capture", "compose"]`. Required for the host to expose those APIs to your tool. Tools without `"network"` cannot call `host.net.fetch`; tools that use `composes` (below) declare `"compose"`; a tool that records audio through `host.recorder` declares `"microphone"`.
+- `capabilities` - `["network", "filesystem", "clipboard", "camera", "microphone", "ffmpeg", "wasm", "capture", "compose", "screen"]`. Required for the host to expose those APIs to your tool, and what shells use to gate/label the tool where a capability can't be fulfilled. Tools without `"network"` cannot call `host.net.fetch` - and a `"network"` tool must also declare *which* URLs (see `network`, next); tools that use `composes` (below) declare `"compose"`; a tool that records audio through `host.recorder` declares `"microphone"`.
+- `network` - `{ "allowlist": [...] }`. The https URLs `host.net.fetch` may reach, for tools with the `"network"` capability. Fail-closed: no allowlist, no fetch. See [Network access](#network-access-host-net).
+- `examples` - example input value-sets that demonstrate the tool's range, rendered live as the gallery tile's preview strip. See [Example looks](#example-looks-examples).
 - `privacy` - `"on-device"`. Marks a content-transform utility that processes the user's own file entirely on the device. Shows the "Runs on your device - nothing is uploaded" badge; enforces (validated) that the tool is never `experimental` and (at runtime) that exports carry no provenance metadata and no watermark. See the `file` input + `exportFile` hook below.
 - `hooks` - `{ onInit?, onInput?, onFrame?, onLevel?, beforeExport?, afterExport?, exportFile? }` boolean flags. If any are true, you must ship `hooks.js` with the matching functions. (`exportFile` is the transform path - file bytes in → transformed bytes out; `onFrame` makes the tool react to a live camera; `onLevel` makes it react to live audio levels while recording - all covered below.)
 - `composes` - embed another tool's render as an image (tool composition; see below). Requires the `"compose"` capability.
@@ -80,6 +82,26 @@ Optional:
 - `pages` - `{ count, width, height, gap?, min?, max? }`. Turns an `editor`-layout tool into a **multi-page canvas** (the carousel-maker pattern): the shell sizes the canvas to a horizontal strip of N same-size page frames and the free-canvas overlay places boxes across all of them. Box coordinates stay one flat, global, URL-expressible array; the tool's hook derives which page each box belongs to and emits one `[data-pdf-page]` frame per page, so headless CLI/URL renders match and export fans out (multi-page PDF, or one still per page). Requires `layout: "editor"` and `paged: true`. Each property names the input id the geometry is read from (`count`/`width`/`height` are number inputs), so the shell stays generic.
 
 **Multi-page PDF.** A tool builds a paginated PDF by marking page boxes in its template with `data-pdf-page` - each flagged element becomes one true PDF page sized to its own CSS box, so a cover, content that flows across pages, and a back page render as real pages rather than one tall image. Pages are drawn as vectors (text outlined to paths) and the document can carry an open-`password`. The path falls back to the normal single-page renderer when no `[data-pdf-page]` boxes are present, and it bypasses the crop/bleed print-finishing path (pair it with `printMarks: false`). See the `multi-page-pdf` tool for the reference layout (cover + flowing `blocks` content + back page).
+
+### Example looks (`examples`)
+
+A tool ships one committed thumbnail, but `examples` lets its gallery tile demonstrate *range*: an array of example input value-sets, each rendered live on the client (the same off-screen engine path an export takes) as a horizontally-scrollable preview strip - and, when the tool is `featured`, as the hero row's cross-fade. Each look is memoised, so later visits are instant. Omit it for a tool whose single committed preview says enough.
+
+```jsonc
+"examples": [
+  { "label": "Launch teal",  "values": { "heading": "Ship it", "background": "#0c322c" } },
+  { "label": "Reverse mark", "theme": "dark", "values": { "ink": "mono" } }
+]
+```
+
+- **Key `values` by input `id` - never by `urlKey`.** Example values seed the runtime the way batch-row values do: resolved by input id only. A `urlKey` is URL-mode transport, so a urlKey-keyed value would silently render the tool's *default* look - and the validator errors on it. When transcribing a compact share link into an example, translate each short key back to its input id first.
+- `label` documents the look's intent (it isn't shown to end users). `theme` (`light` / `dark`) is only for looks that render ink on a **transparent** background (e.g. a reverse/white logo) - the clashing theme filters that look out of the strip; omit it when the look bakes its own background.
+- `width` / `height` in `values` are honoured as per-example preview dimensions even when the tool declares no such inputs.
+- An `asset` value must be a **ref object**, never a bare string: `{ "source": "library", "id": "your/asset/id", "_unresolved": true }` (optionally with a `?theme=` suffix on a themable icon id). A `blocks` value is an array of row objects keyed by the block's declared field ids.
+
+`npm run validate:catalog` checks every look: `values` keys must be declared input ids (a urlKey gets a pointed error naming the right id), catalog asset refs must exist (and any `?theme=` suffix must name a real icon theme), blocks-row keys must be declared fields. It also warns when a tool declares looks but no gallery-displayable format (svg/png/jpg/jpeg/webp), and when a strip exceeds 8 looks - each look is a live render, so keep it to a handful of genuinely different ones.
+
+The pre-`examples` alias `featured.variants` still renders but is deprecated - author `examples`.
 
 ### Input types
 
@@ -473,6 +495,51 @@ An **`AudioLevel`** is `{ rms, peak, dbfs, clipping, t }` - `rms` (0–1 loudnes
 - `window`, `document`, `fetch`, `localStorage`. Hooks are loaded via `new Function` with `host` injected as closure scope - a **portability contract, not a sandbox** - so in a browser shell these globals *are* technically reachable. But leaning on them ties your tool to browser shells (it breaks headless in the CLI) and will break outright when hooks move into Worker isolation. `host.*` is the only supported surface. (Browser-only paths like the `onFrame` canvas trick above are the deliberate exception.)
 - Importing other modules. Hooks are loaded as a single source string, so `import` doesn't work.
 - Slow work. Async hook results are time-boxed (`onInit` 5s, `onInput` 2s, `beforeExport`/`afterExport` 5s, `exportFile` 10s) and a result that arrives late is discarded; a synchronous overrun can't be preempted and just gets logged as a warning.
+
+### Newer optional host APIs (feature-detect)
+
+The bridge grows by **addition**: new `host.*` APIs arrive in minor engine versions, are never removed, and are optional - an older shell simply doesn't have them yet. Feature-detect and degrade. If your tool genuinely can't work without one, raise the manifest's `engineVersion` floor instead (e.g. `">=1.60"`) - the engine refuses to load a tool whose range excludes the running version, which fails clearer than a missing method would. Two recent additions (v1.60):
+
+- **`host.images`** - on-device image decode / resize / re-encode: the "HEIC to JPEG, compress to WebP, downscale" utility shape as a first-class API. Bytes (or a Blob) in, encoded bytes + dimensions out; `decode` reports EXIF-oriented dimensions and a MIME type sniffed from the bytes; `resize` never upscales; `encode` converts to `webp` / `jpeg` / `png` (it reads more formats than it writes); an animated source flattens to its first frame. Read the *result's* `mime`/`width`/`height` rather than assuming the request was honoured exactly - a shell may fall back (e.g. PNG where WebP encoding is unsupported). Not gated by a `capabilities` flag: `if (host.images) …` and degrade where it's absent. Everything runs locally; the bytes are never uploaded.
+- **`host.text.fontUrl(family, { weight?, italic? })`** - resolve a font *family* the host knows (brand statics, user-uploaded faces, on-device Google Fonts, the platform face) to a fetchable font file usable as `fontUrl` in `host.text.toPath()` / `preload()`. A variable face comes back with the `variations` (e.g. `["wght=700"]`) needed to reach the requested weight - pass them through to `toPath()`, which otherwise shapes the default instance. Resolves `null` when no file can be found for the family, so keep your `<text>`/CSS fallback. Feature-detect `host.text?.fontUrl`.
+
+## Network access (`host.net`)
+
+Tools are offline-first: by default a tool cannot reach the network at all. A live-data tool (weather, status, an RSS ticker, an iCal feed) opts in with two manifest declarations - the capability, and an explicit allowlist of what it may fetch:
+
+```jsonc
+"capabilities": ["network"],
+"network": {
+  "allowlist": [
+    "https://api.example.com/*",
+    "https://example.com/status.json"
+  ]
+}
+```
+
+The allowlist rules:
+
+- **`https` only.** Entries are full URLs; plain `http` never validates.
+- **A bare entry allows that exact URL only** - byte-for-byte, query string included.
+- **A trailing `/*` makes an entry a prefix wildcard** - `https://api.example.com/*` allows everything under that path. The wildcard must follow a path separator (`/*`, never a bare `*`), so a prefix can't bleed into a lookalike host: `https://api.example.com*` would also match `https://api.example.com.evil.io/`.
+- **1-32 entries.** Small by design - name the endpoints you actually call.
+- **Fail-closed everywhere.** No `network` block, or a URL no entry matches, means every `host.net.fetch` rejects - identically in the web shell, offscreen batch/gallery renders, the CLI and the TUI. The host applies the allowlist per mounted tool; nothing a hook does can widen it. Response bodies are also size-capped (64 MB), so a wrong or compromised endpoint can't stream unbounded bytes into memory.
+
+In hooks, `host.net.fetch` is an ordinary `fetch` - just gated:
+
+```js
+async function onInit({ model, host }) {
+  try {
+    const res = await host.net.fetch('https://api.example.com/v1/status');
+    if (!res.ok) return { statusText: 'unavailable' };
+    return { statusText: (await res.json()).status };
+  } catch {
+    return { statusText: 'offline' }; // the tool must still mount without a network
+  }
+}
+```
+
+Keep fetches inside the hook time budget (`onInit` 5s, `onInput` 2s), return template-ready extras, and always render something sensible when the fetch fails - a network tool that renders blank offline is a bug, not a constraint.
 
 ## Composition (`composes`)
 

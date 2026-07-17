@@ -2485,6 +2485,73 @@ ${isLanding ? LIQUID_GLASS_SCRIPT : ''}
 </html>`;
 }
 
+// ── llms.txt + markdown twins ─────────────────────────────────────────────────
+// Alongside each English HTML page the build emits a verbatim markdown twin at
+// /info/<slug>.md, indexed by /info/llms.txt (https://llmstxt.org) - the
+// agent-readable face of the docs. English only by design; locale sidecars stay
+// HTML-only.
+
+// No docs source carries front-matter today; strip a leading YAML block anyway so
+// a build-time-only header added later never leaks into the published twin.
+function stripFrontMatter(md: string): string {
+  const m = md.match(/^---\n[\s\S]*?\n---\n?/);
+  return m ? md.slice(m[0].length) : md;
+}
+
+// One-sentence description for a page's llms.txt line, derived from the first
+// body sentence of its English markdown so the listing can never drift from the
+// docs themselves. Skips headings, blockquotes, lists/tables, raw HTML (the
+// README hero <img>), and emphasis-only metadata lines (privacy's "*Last
+// updated*"), then flattens inline markdown to plain text.
+function mdDescription(md: string): string {
+  const blocks = md.replace(/```[\s\S]*?```/g, '').split(/\n\s*\n/);
+  for (const block of blocks) {
+    const line = block.trim().split('\n').map(l => l.trim()).join(' ');
+    if (!line || /^#{1,6} /.test(line) || line.startsWith('>') || line.startsWith('<')) continue;
+    if (/^-{3,}$/.test(line) || /^\s*[-*] /.test(line) || line.startsWith('|')) continue;
+    if (/^\*[^*]+\*$/.test(line) || /^!\[[^\]]*\]\([^)]+\)$/.test(line)) continue;
+    const plain = line
+      .replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1')
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+      .replace(/\*\*([^*]+)\*\*/g, '$1')
+      .replace(/\*([^*]+)\*/g, '$1')
+      .replace(/`([^`]+)`/g, '$1');
+    const sentence = plain.match(/^.*?[.!?](?=\s|$)/);
+    return (sentence ? sentence[0] : plain).trim();
+  }
+  return '';
+}
+
+// Section order + labels for llms.txt - mirrors the top nav (NAV/NAV_PATHWAY).
+const LLMS_SECTIONS: Array<{ pathway: Pathway; label: string }> = [
+  { pathway: 'quickstart', label: 'Quickstart' },
+  { pathway: 'creators',   label: 'For Creators' },
+  { pathway: 'builders',   label: 'For Builders' },
+  { pathway: 'operators',  label: 'For Operators' },
+];
+
+// slug → English markdown source, collected on the en pass. Membership doubles as
+// "the twin actually exists on disk" for the llms.txt lines (a missing source is
+// skipped by the page loop, so it must be skipped here too).
+function buildLlmsTxt(mdBySlug: Map<string, string>): string {
+  const sections = LLMS_SECTIONS.map(({ pathway, label }) => {
+    const lines = pages
+      .filter((p) => p.pathway === pathway && mdBySlug.has(p.slug))
+      .map((p) => `- [${p.title}](${SITE_URL}/info/${p.slug}.md): ${mdDescription(mdBySlug.get(p.slug)!)}`);
+    return `## ${label}\n\n${lines.join('\n')}`;
+  });
+  return `# Lolly
+
+> ${SITE_DESCRIPTION}
+
+Every page below is also served as plain markdown - a twin of the HTML page at
+the same slug under ${SITE_URL}/info/ - so fetch the .md URL directly. English
+only. Product landing copy: ${SITE_URL}/info/index.md
+
+${sections.join('\n\n')}
+`;
+}
+
 // ── Build all pages ───────────────────────────────────────────────────────────
 
 function build() {
@@ -2516,6 +2583,7 @@ function build() {
   // sidecar exists) translated body; otherwise the English body ships inside the
   // localized chrome rather than 404ing. See plans/localize.md §8.
   const sitemapUrls: Array<{ slug: string; isLanding?: boolean }> = [];
+  const mdBySlug = new Map<string, string>();
   for (const lang of LANGS) {
     activeCatalog = loadSiteCatalog(lang);
     const localeOutDir = lang === 'en' ? outDir : resolve(outDir, lang);
@@ -2536,7 +2604,14 @@ function build() {
       const outFile = page.slug === 'index' ? 'index.html' : `${page.slug}.html`;
       writeFileSync(resolve(localeOutDir, outFile), html, 'utf-8');
       console.log(`✓  ${localeHref(lang, page.slug)}`);
-      if (lang === 'en') sitemapUrls.push({ slug: page.slug, isLanding: page.isLanding });
+      if (lang === 'en') {
+        sitemapUrls.push({ slug: page.slug, isLanding: page.isLanding });
+        // Markdown twin: the verbatim English source, published next to the HTML
+        // so agents (and llms.txt below) can read the docs without a DOM.
+        const twin = stripFrontMatter(md);
+        writeFileSync(resolve(outDir, `${page.slug}.md`), twin, 'utf-8');
+        mdBySlug.set(page.slug, twin);
+      }
     }
   }
   activeCatalog = {};
@@ -2573,6 +2648,9 @@ function build() {
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urlEntries}\n</urlset>\n`;
   writeFileSync(resolve(outDir, 'sitemap.xml'), sitemap, 'utf-8');
   console.log(`✓  /info/sitemap.xml (${sitemapUrls.length} pages × ${LANGS.length} locales)`);
+
+  writeFileSync(resolve(outDir, 'llms.txt'), buildLlmsTxt(mdBySlug), 'utf-8');
+  console.log(`✓  /info/llms.txt (+${mdBySlug.size} markdown twins)`);
 
   console.log(`\nSite built → shells/web/public/info/`);
 }

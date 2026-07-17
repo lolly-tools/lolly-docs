@@ -11,13 +11,32 @@ The render path has two tiers, so there are two endpoints. **They share the same
 | Endpoint | Tier | Produces |
 |---|---|---|
 | `https://mcp.lolly.tools/mcp` | **Full** (headless browser) | **Everything** - vector, all raster (`png`/`jpg`/`webp`/…), print PDF (incl. CMYK + crop marks), and animation/video (`gif`/`apng`/`webm`/`mp4`). |
-| `https://lolly.tools/api/mcp` | **Lightweight** (serverless, no browser) | Vector (`svg`/`eps`/`emf`), data/text formats (`md`/`txt`/`json`/`csv`/`ics`/`vcf`), and `png` for SVG-native tools. (Print PDF needs the full endpoint's browser.) |
+| `https://lolly.tools/api/mcp` | **Lightweight** (serverless, no browser) | Vector (`svg`/`emf`/`eps`/`eps-cmyk`/`dxf`), data/text formats (`html`/`md`/`txt`/`json`/`csv`/`ics`/`vcf`), and `png` for SVG-native tools. (Print PDF needs the full endpoint's browser.) |
 
 Use the **full** endpoint (`mcp.lolly.tools`) unless you have a reason not to - it is a superset. The lightweight endpoint runs browser-free on the same infrastructure as `lolly.tools`, and is handy for quick vector/data work.
 
 > A render on either endpoint is **byte-for-byte what a user's export produces** - the server honours the full parameter contract (width/height/unit/dpi/colour profile/PDF password), and never watermarks or embeds anything a user's own download wouldn't.
 
-## The five tools
+## Hot-linkable render URLs (no auth)
+
+Alongside the authenticated MCP endpoints, `lolly.tools` answers the canonical embed URL directly:
+
+```
+GET https://lolly.tools/tool/<tool-id>.<ext>?<inputs>
+```
+
+This is the same "raw render URL" `lolly_build_url` returns - drop it into a README, wiki, Notion page or dashboard as an `<img src=…>` and it serves real bytes, no token needed. Its scope is deliberately narrow:
+
+- **No auth, no accounts, no state.** It renders public tool + catalog data only; the inputs are whatever the URL says, and nothing is stored per request. Fetching one of these URLs sends the server nothing but what's written in the URL itself - your on-device documents, sessions and uploads can never appear in one. The inputs are public by construction, so don't put secrets in a shared link. (The [privacy policy](/info/privacy.html) covers this surface in its own words.)
+- **Official and community tools only** - anything else is a 404.
+- **Browser-free formats only**: the vector and data set - `svg`, `emf`, `eps`, `eps-cmyk`, `dxf`, `html`, `md`, `txt`, `json`, `csv`, `ics`, `vcf` - plus `png` for SVG-native tools such as `qr-code`. Formats that need the browser tier return an honest `400` - use `lolly_render` or the app for those.
+- **Content Credentials are off here** so identical URLs return identical bytes - that determinism is what makes responses cacheable (a day at the CDN, `ETag` revalidation after that). A credentialed render is one `lolly_render` call away.
+- Renders are **rate-limited per address**; heavy automation belongs on the MCP endpoints.
+- Responses are marked **`noindex`**, so search engines don't index your renders.
+
+Self-hosters who don't want a public render surface can switch the route off entirely with `LOLLY_DISABLE_RENDER_GET=1` - every `/tool/<id>.<ext>` URL then returns 404.
+
+## The six tools
 
 | Tool | Does |
 |---|---|
@@ -26,8 +45,9 @@ Use the **full** endpoint (`mcp.lolly.tools`) unless you have a reason not to - 
 | `lolly_build_url` | Build a shareable, editable link + raw render URL - **without** rendering. |
 | `lolly_render` | Render a tool to a file - returns the bytes plus the editable link. |
 | `lolly_transform` | Run an on-device file utility (`strip-data`, `compress-pdf`) on a file you supply. |
+| `lolly_verify` | Verify a file's Content Credentials (C2PA): was it genuinely made with Lolly, who signed it, and has it changed since export. Returns the verdict, signer identity, edit history and embedded metadata - the same verify stack as the app's verify page and the CLI's `lolly validate`. The file is checked in-process and never stored. |
 
-The intended flow is `lolly_list_tools` → `lolly_describe_tool` (read the exact input schema) → `lolly_render`.
+The intended flow is `lolly_list_tools` → `lolly_describe_tool` (read the exact input schema) → `lolly_render`; `lolly_verify` closes the loop when an agent needs to prove a file it holds is an untouched Lolly export.
 
 ## Any format, transparently
 
@@ -39,6 +59,28 @@ The intended flow is `lolly_list_tools` → `lolly_describe_tool` (read the exac
 - **Documents & data** - `pptx` (PowerPoint), `html`, `md`, `txt`, `json`, `csv`, `ics`, `vcf`, `zip`
 
 Formats are **per-tool** - you can only request one a tool declares (`lolly_describe_tool` lists them). Ask a QR tool for `svg` and you get vector; ask an animated-ad tool for `mp4` and you get video - the call shape is identical either way. Animation, print PDF and HTML-layout raster require the **full** endpoint.
+
+## Resources - brand context without a render
+
+Agents shouldn't guess asset ids or brand colours. Alongside the callable tools, the server exposes read-only **MCP resources**:
+
+| Resource | Contents |
+|---|---|
+| `lolly://catalog` | The full generated tool index. |
+| `lolly://assets` | Every catalog asset id with its type, name, tags and formats - enumerate here first, so you never hallucinate an id. |
+| `lolly://tokens` | The brand's design tokens (DTCG): named colour swatches with CMYK. |
+| `lolly://tool/{id}` | One tool's manifest summary + input JSON Schema + examples. |
+| `lolly://tool/{id}/preview` | The tool's committed catalog preview (SVG), where one exists. |
+| `lolly://asset/{id}` | A catalog asset (logo, palette, font) resolved to bytes. |
+
+The intended pairing: read `lolly://assets` once, then pass a real id to any `asset`-typed input in `lolly_render`.
+
+## Prompts - guided invocations
+
+The server also publishes **MCP prompts**, for clients that surface them as slash-commands or quick actions:
+
+- **`create-branded-asset`** - the generic guided workflow: give it a plain-language `brief` (and optionally a `format`) and it walks the agent through pick a tool → read its schema → render → share the editable link.
+- **One prompt per featured tool**, named by tool id and derived from the live catalog at request time: its arguments are the tool's inputs (required ones first), its description the tool's blurb, and its message includes the tool's example looks. Nothing is hardcoded, so a newly featured tool gets a prompt for free - and a pinned prompt keeps resolving even if the tool later leaves the featured set (only the *listing* is curated).
 
 ## Connect a client
 
@@ -70,7 +112,7 @@ The endpoint also accepts the raw token directly, so scripted clients skip the O
 }
 ```
 
-A quick smoke test with `curl` (expect a JSON list of the five tools; no token returns `401`):
+A quick smoke test with `curl` (expect a JSON list of the six tools; no token returns `401`):
 
 ```bash
 curl -s -X POST https://mcp.lolly.tools/mcp \

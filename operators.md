@@ -1,12 +1,12 @@
 # Lolly for Operators
 
-### A future-proof, defence-in-depth, data-loss-prevention & provenance strategy - that just happens to be a creative production platform
+### A defence-in-depth security & intelligence strategy - that just happens to be a creative production platform
 
-The organizational immune system that wraps around what you already do - so the routine creative work your teams need every day happens *inside* your perimeter instead of leaking out of it.
+The zero-trust organizational immune system that wraps around what you already do - so the routine creative work your teams need every day happens *inside* your perimeter instead of leaking out of it.
 
-**What's in it for you.** You get to be the person who said yes to something both safe *and* popular. You close an exfiltration hole and delete the design-request queue in one move - the rare security win that makes you more liked, not less. No 3am call because someone emailed brand files to a contractor or pasted customer data into a random web tool; fewer SaaS vendors, contracts, and audits on your plate; and a full git trail you can point to when someone asks who approved what. You sleep at night.
+**What's in it for you.** You get to be the person who said yes to something both safe *and* popular. You close an exfiltration hole, gain capability, and delete a request queue in one move - the rare security win that makes you more liked, not less. No 3am call from legal because embargoed files or customer data found their way into a random web tool; fewer SaaS vendors, contracts, and audits on your plate; and a fullly reproducible audit trail you can point to when someone asks. You well sleep at night and brighten days.
 
-Lolly earns its place as a creative tool: it deletes the design queue and puts production-quality output in everyone's hands. But the reason it's *safe* to hand out that widely is architectural. Nothing uploads, everything is reproducible, and every export can carry a cryptographic record of where it came from. This page is the security and rollout story.
+Lolly is no second-class creative tool: it puts production-quality output in everyone's hands. The performance bests industry leaders and the brand-influenced creation experience is second to none.  The reason Lolly is *safe* to hand out widely is architectural. Nothing uploads you didnt put there, everything is reproducible, and every export can carry a multiple layers of industry leading cryptographics records. No matter what the journey was like before that document reached your desk, you can know the full provenance, if it's been tampered with, and if you can't recreate it pixel-perfect. 
 
 > **Where it stands today.** Lolly's security properties are strong by design, and its cryptography and file-parsing engines are going through SUSE's enterprise-grade infrastructure hardening. The seals, on-device signing, and encryption below are real and defensible now, and maturing toward independent certification - so where a contract calls for certified assurance, deploy them as defence-in-depth while that process completes.
 

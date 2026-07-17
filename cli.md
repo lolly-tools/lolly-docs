@@ -64,7 +64,7 @@ npm run cli -- quotes --quote="Ship it." --width=210 --height=297 --unit=mm --ex
 
 ## What the CLI can render
 
-The CLI renders in a headless DOM (jsdom), so **vector and structured** formats - **SVG, EMF, EPS, HTML, plus the data formats JSON, CSV, ICS, VCF, MD, TXT** (the engine hydrates those payloads) - work natively and reproducibly, no browser needed. EMF is emitted straight from the template's vector primitives (no rasteriser), so it joins SVG for native-`<svg>` tools whose text is already outlined. **PNG** from an `<svg>`-based tool is also browser-free - resvg rasterises the engine's own SVG (Tier A). The remaining raster formats - **JPG, WebP, PDF, and video (GIF/WebM/MP4)**, plus HTML-layout PNG - need a real paint engine, so the CLI drives its **own scoped headless Chromium** (Tier B): install it once with `lolly install-browser` (or `npm run install:browser`) and they export straight from the CLI. **ZIP** is the one format the lean CLI leaves out - no zip dependency - so its batch writes a folder instead. (Requesting a format a tool doesn't declare prints a clear error listing what it supports.)
+The CLI renders in a headless DOM (jsdom), so **vector and structured** formats - **SVG, EMF, EPS (and EPS-CMYK), DXF, HTML, plus the data formats JSON, CSV, ICS, VCF, MD, TXT** (the engine hydrates those payloads) - work natively and reproducibly, no browser needed. EMF, EPS and DXF are emitted straight from the template's vector primitives (no rasteriser), and the CLI carries the **same HarfBuzz text-shaping as the web shell** (`host.text`), so live `<text>` runs are outlined to true vector paths at export - those formats ship real text with no fonts needed on the receiving end, and font-driven tools (a wordmark lockup built on `host.text`, say) render headlessly too. Shaping resolves sfnt fonts (ttf/otf) under the repo root - catalog and tool-local faces; a browser-only woff2 face is rejected with a clear error rather than silently shaping blanks. **PNG** from an `<svg>`-based tool is also browser-free - resvg rasterises the engine's own SVG (Tier A). The remaining raster formats - **JPG, WebP, PDF, and video (GIF/WebM/MP4)**, plus HTML-layout PNG - need a real paint engine, so the CLI drives its **own scoped headless Chromium** (Tier B): install it once with `lolly install-browser` (or `npm run install:browser`) and they export straight from the CLI. **ZIP** is the one format the lean CLI leaves out - no zip dependency - so its batch writes a folder instead. (Requesting a format a tool doesn't declare prints a clear error listing what it supports.)
 
 ## File inputs & on-device utilities
 
@@ -105,6 +105,16 @@ asset-export,pdf,,,suse/logo/hor-neg-green
 
 `--keep-going` renders past a failing row (otherwise the batch stops with a non-zero exit).
 
+## Smoke-test the catalog (`lolly smoke`)
+
+```bash
+npm run cli -- smoke                              # render EVERY tool at manifest defaults
+npm run cli -- smoke --only=qr-code,chart-creator # just these ids
+npm run cli -- smoke --format=svg                 # force one Node-native format
+```
+
+`lolly smoke` is the catalog-wide render gate: every tool in the active profile renders at its manifest defaults to its first Node-native format - browser-free; a tool whose declared formats are all browser-only falls back to an `html` render, which still exercises load → hydrate → hooks. Every output is checked for blank or empty results, each tool prints a ✓/✗ row, and the exit code is non-zero if anything fails - so wired into CI, a `hooks.js` regression can never ship a tool that renders blank. Tools that legitimately can't render headlessly are skipped with a reason, never failed: transform tools (file in → bytes out; nothing to render at defaults) and tools gated on a live capture capability (camera / microphone / screen / capture).
+
 ## Scripting & CI
 
 Because output is deterministic - same inputs, same bytes - the CLI fits anywhere you generate other build artifacts:
@@ -115,6 +125,16 @@ npm run cli -- quotes --quote="Ship it." --export=svg --output=./public/og.svg
 ```
 
 Exit code is non-zero on error; messages go to stderr (set `DEBUG=1` for a stack trace). Input validation failures list each offending field.
+
+## Point it at another brand pack (`LOLLY_ROOT`)
+
+The CLI reads tools and the asset catalog from the repo root it finds itself in. Set `LOLLY_ROOT` to render from any directory with the same layout - a `tools/` directory of tool folders and a built `catalog/`:
+
+```bash
+LOLLY_ROOT=/path/to/brand-pack npm run cli -- qr-code --url=https://example.com --output=qr.svg
+```
+
+The override is **marker-validated**: the directory must hold a generated catalog index (`catalog/tools/index.json` or `catalog/assets/index.json`), and a `LOLLY_ROOT` without one is ignored - resolution falls back to walking up from the CLI itself, then the working directory. That makes the CLI a generic brand-pack renderer: build a pack's `tools/` + `catalog/` and every command here - render, batch, smoke, assets - runs against it, with zero code change.
 
 ## Related
 
