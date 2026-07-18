@@ -18,6 +18,8 @@ Several file kinds go in - a native Figma binary, a Penpot export, an Illustrato
 | **`.idml`** | An InDesign layout (*File → Export → InDesign Markup*). A raw `.indd` can't be read directly - export IDML first. |
 | **`.svg`** | Any SVG - Figma and Penpot SVG exports, or hand-written markup. *Tip: for editable text from a Figma SVG, untick "Outline text" on Figma's export dialog.* |
 
+Bringing a **PowerPoint deck** instead? Decks have their own doors - edit in Deck Builder, rebrand in place, or file slides as assets. See [Decks and documents](#decks-and-documents) below.
+
 ### Where each app fits
 
 - **Figma** - *File → Save local copy* for a native `.fig`, or export a frame as SVG. (Untick *Outline text* on the SVG export to keep headlines retypable.)
@@ -83,6 +85,13 @@ Drop a photo or graphic into any image picker or your **My images** library.
 | **`heic` / `heif`** (`.heic`, `.hif`) | iPhone photos decode even where the browser can't, via a bundled libheif fallback. |
 | **`svg`** | Sanitised (scripts, `on*` handlers and `javascript:` URLs removed) and normalised to a clean viewBox. |
 
+### Decks and documents
+
+| Format | Notes |
+|---|---|
+| **`pptx`** (PowerPoint) | Three ways in, all on-device. **Deck Builder**'s Load panel opens a deck as *editable slides* - text, shapes, images, tables and speaker notes become freeform objects, with colours snapped to your brand - ready to re-export as PPTX, PDF or video. The **Rebrand a Deck** utility re-themes a deck *without* re-authoring it: the theme palette, hardcoded colours and fonts swap to your brand while charts, SmartArt and animations pass through untouched, and you get a `.pptx` back. And dropping a `.pptx` on any upload area asks which slides to keep - each is stored as an SVG asset in your library. |
+| **`pdf` / `.ai`** | Besides the Layout Studio import above, dropping a PDF on an upload area asks which pages to keep - each page becomes a self-contained SVG asset (vector paint, text and images preserved). |
+
 ### Data
 
 Paste or drop a table and a tool's repeating blocks fill from it (up to 1,000 rows).
@@ -99,6 +108,16 @@ Paste or drop a table and a tool's repeating blocks fill from it (up to 1,000 ro
 |---|---|
 | **`mp4` · `mov`** | ISO-BMFF containers, stored **verbatim** (never transcoded); dimensions probed locally. |
 | **`webm`** | Matroska/EBML, stored verbatim. |
+
+### Audio
+
+Audio lands in the asset picker - ready as a **music bed** under a video export, or in Neurospicy Mode's ambient player.
+
+| Format | Notes |
+|---|---|
+| **`mp3` · `wav` · `ogg`/Opus · `m4a`/AAC · `flac`** | Kept byte-for-byte and decoded on-device. |
+| **`midi`** (`.mid`) | Converted on import to a tiny on-device synth track. |
+| **Tracker modules** (`mod` · `xm` · `it` · `s3m` · `stm` · `mtm`) | A few kilobytes of song data, decoded on-device by a bundled player. |
 
 ### Content Credentials (verify)
 

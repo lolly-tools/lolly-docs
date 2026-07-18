@@ -82,6 +82,8 @@ Multi-page and layout tools (Carousel, Doc Studio, Multi-Page PDF, the chart too
 
 Layout is approximate by design - the goal is faithful, reusable **content**, not a locked screenshot. Anything the walker can't express natively (a complex filtered or masked region) is embedded as a picture so nothing is lost. A deck has a single slide size, taken from the first page.
 
+PowerPoint is also a way **in** - the format round-trips. **Deck Builder** opens an existing `.pptx` as editable slides, snapped to your brand, and the **Rebrand a Deck** utility re-themes a deck in place - theme palette, hardcoded colours and fonts - without touching its charts, SmartArt or animations, handing back a `.pptx`. See [Import a design → Decks and documents](/info/design-import.html#decks-and-documents).
+
 ## DXF (cut files)
 
 Vector tools (Brand Lockup, QR Code, Street Map, Wayfinding Signage, Pose Geeko, the logo lockups, Diagram Builder) can export **DXF** - the AutoCAD R12 interchange format that laser cutters, vinyl plotters and CNC/CAD software read. Geometry is written as outline **paths in millimetres** (curves flattened to a fine tolerance), text is outlined to paths, and colour lands as the nearest AutoCAD Color Index (which typically drives the tool/operation on a cutter). DXF is line-art only - a photographic or filtered region has no cut-path form and is dropped (Lolly warns), so use SVG/PDF when you need to keep raster content.

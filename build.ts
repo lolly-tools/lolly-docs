@@ -569,61 +569,6 @@ const SITE_ICONS: Record<string, string> = {
   modelDeploy: `<svg class="everywhere-model-icon" viewBox="0 0 24 24" ${SITE_ICON_S}><path d="M16.5 9.4 7.5 4.21"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>`,
   modelServe: `<svg class="everywhere-model-icon" viewBox="0 0 24 24" ${SITE_ICON_S}><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>`,
   modelHybrid: `<svg class="everywhere-model-icon" viewBox="0 0 24 24" ${SITE_ICON_S}><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>`,
-  // Bespoke landing illustrations (site-style inline SVG), referenced by qol.json/assure.json.
-  // Sound: flowing sound waves + musical notes - the "assistive sound / focus beat" motif.
-  illusSound: `<svg viewBox="0 0 300 150" role="img" aria-label="Sound waves with musical notes" xmlns="http://www.w3.org/2000/svg">
-  <defs><linearGradient id="sndGrad" x1="0" y1="0" x2="300" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#008657"/><stop offset="1" stop-color="#30ba78"/></linearGradient></defs>
-  <path d="M0 105 Q37.5 138 75 105 T150 105 T225 105 T300 105" fill="none" stroke="#90ebcd" stroke-width="3" stroke-opacity=".45" stroke-linecap="round"/>
-  <path d="M0 96 Q37.5 61 75 96 T150 96 T225 96 T300 96" fill="none" stroke="url(#sndGrad)" stroke-width="5" stroke-linecap="round"/>
-  <g fill="#008657">
-    <ellipse cx="70" cy="60" rx="8" ry="5.5" transform="rotate(-20 70 60)"/>
-    <rect x="76.5" y="28" width="3" height="34" rx="1.5"/>
-    <path d="M79.5 28 q15 5 9 22 q2 -11 -9 -15 Z"/>
-  </g>
-  <g fill="#30ba78">
-    <ellipse cx="150" cy="54" rx="8" ry="5.5" transform="rotate(-20 150 54)"/>
-    <ellipse cx="190" cy="45" rx="8" ry="5.5" transform="rotate(-20 190 45)"/>
-    <rect x="156.5" y="24" width="3" height="32" rx="1.5"/>
-    <rect x="196.5" y="15" width="3" height="32" rx="1.5"/>
-    <path d="M156.5 24 L199.5 15 L199.5 23 L156.5 32 Z"/>
-  </g>
-</svg>`,
-  // Bulk: nested project folders/cards rendered into one zip package.
-  illusBulk: `<svg viewBox="0 0 300 150" role="img" aria-label="Nested project folders rendered into a single zip" xmlns="http://www.w3.org/2000/svg">
-  <rect x="24" y="48" width="70" height="84" rx="10" fill="#0c322c" opacity=".12" transform="rotate(-10 59 90)"/>
-  <rect x="30" y="42" width="70" height="84" rx="10" fill="#fff" stroke="#90ebcd" stroke-width="2" transform="rotate(-5 65 84)"/>
-  <rect x="36" y="36" width="70" height="84" rx="10" fill="#fff" stroke="#30ba78" stroke-width="2"/>
-  <rect x="46" y="48" width="50" height="30" rx="5" fill="#30ba78" opacity=".85"/>
-  <rect x="46" y="84" width="50" height="6" rx="3" fill="#d8ede4"/>
-  <rect x="46" y="96" width="34" height="6" rx="3" fill="#d8ede4"/>
-  <path d="M120 88 H154" stroke="#5a7067" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <path d="M147 80 L157 88 L147 96" stroke="#5a7067" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="178" y="40" width="86" height="92" rx="12" fill="#30ba78"/>
-  <rect x="178" y="40" width="86" height="30" rx="12" fill="#008657"/>
-  <rect x="178" y="56" width="86" height="14" fill="#008657"/>
-  <line x1="221" y1="70" x2="221" y2="124" stroke="#f0fbf5" stroke-width="2.5" stroke-dasharray="5 5"/>
-  <circle cx="221" cy="78" r="3" fill="#008657"/>
-  <rect x="214" y="82" width="14" height="16" rx="3" fill="#f0fbf5"/>
-</svg>`,
-  // Checker: a Lolly export carrying a verified Content Credential - a credential
-  // card (framed image + manifest) with a glowing shield-check. The signature.
-  illusCheck: `<svg viewBox="0 0 300 220" role="img" aria-label="A Lolly export carrying a verified Content Credential" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <radialGradient id="cGlow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#30ba78" stop-opacity=".5"/><stop offset="1" stop-color="#30ba78" stop-opacity="0"/></radialGradient>
-    <clipPath id="cImg"><rect x="54" y="40" width="150" height="90" rx="10"/></clipPath>
-  </defs>
-  <circle cx="214" cy="170" r="60" fill="url(#cGlow)"/>
-  <rect x="40" y="26" width="180" height="160" rx="18" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.14)" stroke-width="1.5"/>
-  <rect x="54" y="40" width="150" height="90" rx="10" fill="#0a2621"/>
-  <g clip-path="url(#cImg)">
-    <circle cx="172" cy="66" r="14" fill="#fe7c3f"/>
-    <path d="M54 130 V102 L92 68 L128 108 L152 84 L204 128 V130 Z" fill="#30ba78" opacity=".9"/>
-  </g>
-  <rect x="54" y="142" width="130" height="8" rx="4" fill="rgba(255,255,255,.16)"/>
-  <rect x="54" y="158" width="92" height="8" rx="4" fill="rgba(255,255,255,.1)"/>
-  <path d="M214 116 l34 12 v24 c0 26 -16 40 -34 47 c-18 -7 -34 -21 -34 -47 v-24 z" fill="#30ba78" stroke="#0a2621" stroke-width="2.5"/>
-  <path d="M198 152 l11 11 l19 -22" fill="none" stroke="#0a2621" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>`,
 };
 function siteIcon(key: string): string {
   const svg = SITE_ICONS[key];
@@ -923,70 +868,10 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   </div>
 </section>`;
 
-  // ── Bespoke landing illustrations (site-style inline SVG) ──────────────────
-  // Sound: flowing sound waves + musical notes - the "assistive sound / focus
-  // beat" motif, in the brand green→teal.
-  const ILLUS_SOUND = `<svg viewBox="0 0 300 150" role="img" aria-label="Sound waves with musical notes" xmlns="http://www.w3.org/2000/svg">
-  <defs><linearGradient id="sndGrad" x1="0" y1="0" x2="300" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#008657"/><stop offset="1" stop-color="#30ba78"/></linearGradient></defs>
-  <path d="M0 105 Q37.5 138 75 105 T150 105 T225 105 T300 105" fill="none" stroke="#90ebcd" stroke-width="3" stroke-opacity=".45" stroke-linecap="round"/>
-  <path d="M0 96 Q37.5 61 75 96 T150 96 T225 96 T300 96" fill="none" stroke="url(#sndGrad)" stroke-width="5" stroke-linecap="round"/>
-  <g fill="#008657">
-    <ellipse cx="70" cy="60" rx="8" ry="5.5" transform="rotate(-20 70 60)"/>
-    <rect x="76.5" y="28" width="3" height="34" rx="1.5"/>
-    <path d="M79.5 28 q15 5 9 22 q2 -11 -9 -15 Z"/>
-  </g>
-  <g fill="#30ba78">
-    <ellipse cx="150" cy="54" rx="8" ry="5.5" transform="rotate(-20 150 54)"/>
-    <ellipse cx="190" cy="45" rx="8" ry="5.5" transform="rotate(-20 190 45)"/>
-    <rect x="156.5" y="24" width="3" height="32" rx="1.5"/>
-    <rect x="196.5" y="15" width="3" height="32" rx="1.5"/>
-    <path d="M156.5 24 L199.5 15 L199.5 23 L156.5 32 Z"/>
-  </g>
-</svg>`;
-
-  // Bulk: nested project folders/cards rendered into one zip package.
-  const ILLUS_BULK = `<svg viewBox="0 0 300 150" role="img" aria-label="Nested project folders rendered into a single zip" xmlns="http://www.w3.org/2000/svg">
-  <rect x="24" y="48" width="70" height="84" rx="10" fill="#0c322c" opacity=".12" transform="rotate(-10 59 90)"/>
-  <rect x="30" y="42" width="70" height="84" rx="10" fill="#fff" stroke="#90ebcd" stroke-width="2" transform="rotate(-5 65 84)"/>
-  <rect x="36" y="36" width="70" height="84" rx="10" fill="#fff" stroke="#30ba78" stroke-width="2"/>
-  <rect x="46" y="48" width="50" height="30" rx="5" fill="#30ba78" opacity=".85"/>
-  <rect x="46" y="84" width="50" height="6" rx="3" fill="#d8ede4"/>
-  <rect x="46" y="96" width="34" height="6" rx="3" fill="#d8ede4"/>
-  <path d="M120 88 H154" stroke="#5a7067" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <path d="M147 80 L157 88 L147 96" stroke="#5a7067" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-  <rect x="178" y="40" width="86" height="92" rx="12" fill="#30ba78"/>
-  <rect x="178" y="40" width="86" height="30" rx="12" fill="#008657"/>
-  <rect x="178" y="56" width="86" height="14" fill="#008657"/>
-  <line x1="221" y1="70" x2="221" y2="124" stroke="#f0fbf5" stroke-width="2.5" stroke-dasharray="5 5"/>
-  <circle cx="221" cy="78" r="3" fill="#008657"/>
-  <rect x="214" y="82" width="14" height="16" rx="3" fill="#f0fbf5"/>
-</svg>`;
-
-  // Checker: a Lolly export carrying a verified Content Credential - a credential
-  // card (framed image + manifest) with a glowing shield-check. The signature.
-  const ILLUS_CHECK = `<svg viewBox="0 0 300 220" role="img" aria-label="A Lolly export carrying a verified Content Credential" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <radialGradient id="cGlow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#30ba78" stop-opacity=".5"/><stop offset="1" stop-color="#30ba78" stop-opacity="0"/></radialGradient>
-    <clipPath id="cImg"><rect x="54" y="40" width="150" height="90" rx="10"/></clipPath>
-  </defs>
-  <circle cx="214" cy="170" r="60" fill="url(#cGlow)"/>
-  <rect x="40" y="26" width="180" height="160" rx="18" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.14)" stroke-width="1.5"/>
-  <rect x="54" y="40" width="150" height="90" rx="10" fill="#0a2621"/>
-  <g clip-path="url(#cImg)">
-    <circle cx="172" cy="66" r="14" fill="#fe7c3f"/>
-    <path d="M54 130 V102 L92 68 L128 108 L152 84 L204 128 V130 Z" fill="#30ba78" opacity=".9"/>
-  </g>
-  <rect x="54" y="142" width="130" height="8" rx="4" fill="rgba(255,255,255,.16)"/>
-  <rect x="54" y="158" width="92" height="8" rx="4" fill="rgba(255,255,255,.1)"/>
-  <path d="M214 116 l34 12 v24 c0 26 -16 40 -34 47 c-18 -7 -34 -21 -34 -47 v-24 z" fill="#30ba78" stroke="#0a2621" stroke-width="2.5"/>
-  <path d="M198 152 l11 11 l19 -22" fill="none" stroke="#0a2621" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>`;
-
-  const qol = loadSiteJson('qol.json', lang) as { panels: { illustration: string; heading: string; desc: string }[] };
+  const qol = loadSiteJson('qol.json', lang) as { panels: { heading: string; desc: string }[] };
   const QOL_HTML = `<section class="qol-section">
   <div class="qol-inner">
     ${qol.panels.map((p, i) => `<div class="qol-panel reveal${i > 0 ? ` reveal-${i}` : ''}">
-      <div class="qol-illus">${siteIcon(p.illustration)}</div>
       <div class="qol-text">
         <h3>${esc(p.heading)}</h3>
         <p>${inline(p.desc)}</p>
@@ -996,7 +881,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
 </section>`;
 
   const assure = loadSiteJson('assure.json', lang) as {
-    eyebrow: string; heading: string; lead: string; illustration: string;
+    eyebrow: string; heading: string; lead: string;
     checks: { title: string; desc: string }[];
     cards: { icon: string; title: string; desc: string }[];
     cta: string; ctaHref: string;
@@ -1009,7 +894,6 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
       <p class="assure-lead">${inline(assure.lead)}</p>
     </div>
     <div class="assure-main reveal reveal-1">
-      <div class="assure-checker">${siteIcon(assure.illustration)}</div>
       <ul class="assure-checks">
         ${assure.checks.map(c => `<li><span class="assure-check-ic">${siteIcon('assureCheck')}</span><div><strong>${esc(c.title)}</strong><span>${inline(c.desc)}</span></div></li>`).join('\n        ')}
       </ul>
@@ -1024,11 +908,11 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   // Dedicated Formats section - the full in/out breakdown, chips grouped by what
   // each format is (vector / raster / motion / …). The engine box only states the
   // counts; this section is the detail.
-  // Six formats round-trip - Lolly both READS and WRITES them - so they appear in BOTH
+  // These formats round-trip - Lolly both READS and WRITES them - so they appear in BOTH
   // columns. Mark those chips (⇄ + filled style) so the overlap reads as intentional
   // rather than accidental duplication. Matched on the exact chip token, so the export-only
   // "CMYK PDF" variant is NOT marked - only plain "PDF" round-trips.
-  const ROUNDTRIP = new Set(['PDF', 'SVG', 'TIFF', 'AVIF', 'CSV', 'JSON', 'MP3', 'M4A', 'MP4', 'WEBM']);
+  const ROUNDTRIP = new Set(['PDF', 'SVG', 'TIFF', 'AVIF', 'CSV', 'JSON', 'MP3', 'M4A', 'MP4', 'WEBM', 'PPTX']);
   const fmtChips = (list: string) =>
     `<div class="format-chips">${list.split(/\s·\s|·/).map(fmt => {
       const f = fmt.trim();
@@ -1493,8 +1377,6 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .qol-section{background:var(--pale);padding:5.5rem 2rem}
 .qol-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:1.75rem}
 .qol-panel{background:#fff;border:1px solid var(--border);border-radius:20px;padding:2.5rem 2.25rem;box-shadow:0 4px 20px rgba(12,50,44,.06);display:flex;flex-direction:column;gap:1.5rem}
-.qol-illus{height:150px;display:flex;align-items:center;justify-content:center}
-.qol-illus svg{width:100%;height:100%;max-width:300px}
 .qol-panel h3{color:var(--dark);font-size:1.4rem;margin:0}
 .qol-panel p{color:var(--muted);font-size:1rem;line-height:1.7;margin:0}
 .qol-panel p strong{color:var(--dark);font-weight:700}
@@ -1509,9 +1391,7 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .assure-lead{font-size:1.12rem;line-height:1.75;color:rgba(255,255,255,.72);margin:0}
 .assure-lead strong{color:#fff;font-weight:700}
 .assure-lead a{color:var(--light);text-decoration:underline;text-underline-offset:2px}
-.assure-main{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:3.5rem;align-items:center;margin-bottom:3.5rem}
-.assure-checker{display:flex;justify-content:center}
-.assure-checker svg{width:100%;max-width:300px;height:auto}
+.assure-main{max-width:46rem;margin-bottom:3.5rem}
 .assure-checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1.5rem}
 .assure-checks li{display:flex;gap:1rem;align-items:flex-start}
 .assure-check-ic{width:1.7rem;height:1.7rem;flex-shrink:0;color:var(--green);margin-top:.05rem}
@@ -1527,7 +1407,7 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .assure-card p{color:rgba(255,255,255,.55);font-size:.88rem;line-height:1.6;margin:0}
 .assure-cta a{color:var(--green);font-weight:700;text-decoration:none;font-size:1.02rem}
 .assure-cta a:hover{text-decoration:underline}
-@media(max-width:768px){.assure-section{padding:4.5rem 1.25rem}.assure-section h2{font-size:1.95rem}.assure-main{grid-template-columns:1fr;gap:2.25rem}.assure-checker svg{max-width:240px}.assure-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.assure-section{padding:4.5rem 1.25rem}.assure-section h2{font-size:1.95rem}.assure-grid{grid-template-columns:1fr}}
 .dark .qol-section{background:#061816}
 .dark .qol-panel{background:rgba(255,255,255,.035);border-color:rgba(255,255,255,.1);box-shadow:none}
 .dark .qol-panel h3,.dark .qol-panel p strong{color:#fff}

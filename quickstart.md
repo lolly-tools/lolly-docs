@@ -54,6 +54,8 @@ Finished work in **Figma, Penpot, Illustrator, InDesign, or any SVG app** doesn'
 
 The whole import happens **on your device** - the file is parsed in your browser and nothing is uploaded. Full details, and exactly what carries over, are in [Import a design](/info/design-import.html).
 
+Got a **PowerPoint deck** instead? Drop the `.pptx` on **Deck Builder** to edit it slide by slide, already snapped to your brand - or run **Rebrand a Deck** to get the same deck back re-themed, charts and animations intact.
+
 ### From a one-off to a template
 
 Here's the payoff: an imported layout is an ordinary Layout Studio session, so once you **save** it, it lives at a URL. Anyone with Lolly can open that URL, change the words, swap an image, and render their own version - no design app, and the locked parts stay locked. A once-off design becomes a reusable tool. That's the whole idea, reached without writing a line of configuration.

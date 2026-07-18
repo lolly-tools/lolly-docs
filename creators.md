@@ -69,5 +69,5 @@ Advanced filters, compositing, animation, live camera effects, generative design
 - **[The Brand Studio](/info/brand-studio.html)** - shape your logos, colours, type, and tokens (`#/start`).
 - **[Using Lolly](/info/using.html)** - the canvas, controls, saving, projects, and phone use.
 - **[Your profile](/info/profile.html)** - the details tools pre-fill from, and how to carry them between devices.
-- **[Import a design](/info/design-import.html)** - bring in your Figma / Penpot / Illustrator / InDesign work.
+- **[Import a design](/info/design-import.html)** - bring in your Figma / Penpot / Illustrator / InDesign work, and your PowerPoint decks - edited or rebranded on-device.
 - **[Exporting & formats](/info/exporting.html)** - every format, print units, video, and batch.

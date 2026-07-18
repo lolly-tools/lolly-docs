@@ -10,7 +10,7 @@ threat model, and the roadmap.
 > grown since: it now reads **both C2PA 1.x and 2.x** claims (so credentials from
 > Gemini, Adobe, and other generators verify), Lolly **writes** 2.x by default, and
 > the trust list bundles the public C2PA/CAI anchors alongside the Lolly root. Read
-> the live `ENGINE_VERSION` and its changelog block in `engine/src/index.ts` rather
+> the live `ENGINE_VERSION` in `engine/src/version.ts` and its changelog in `engine/CHANGELOG.md` rather
 > than trusting a pinned number here. Source line numbers are deliberately omitted
 > below - grep the named symbol; offsets drift.
 

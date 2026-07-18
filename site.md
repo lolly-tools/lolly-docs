@@ -26,6 +26,7 @@ You need a quote card, an event tile, a localized signature - today, not next sp
 You're on the road, the deck is wrong, the customer asked for something specific. Lolly turns any device into an asset studio - no designer, no wait, no excuses.
 
 - **Wait on nothing.** If you're on the road, there are no days left before your meeting, you need assets now. Generate them.
+- **Fix the deck you already have.** Drop the PowerPoint on Lolly: rebrand it to the house style on your device and send the `.pptx` back, or open it as editable slides and fix it on the spot.
 - **One person army.** The power of a coordinated global campaign in the palm of your hand. Every rep, every region, the same polish.
 - **World class experience.** Nothing looks rushed even though it was rendered instantly. Nothing is a one-off - so every interaction gets a little more polished than the last.
 - **Wow your team is fast!** They're asleep. This was solved the first time I needed it.
@@ -133,7 +134,7 @@ Every time someone uploads a file to a third-party service to "just make it look
 
 ## The Creator
 
-**An internal prototype, in a closed pilot.** Not a finished product - a fast-moving experiment. Its cryptography and parsing are currently undergoing SUSE's strict infrastructure hardening, preparing for enterprise scale. [Where Lolly is right now →](/info/adoption-governance.html#status)
+**A powerful creative production platform.** The Lolly engine works to achieve the highest quality each format can produce - true vectors, outlined type, print-grade colour, native editable output.
 
 **100% free and open source.** No SaaS fees, no usage limits, no vendor dependency.
 
@@ -141,7 +142,7 @@ Every time someone uploads a file to a third-party service to "just make it look
 
 **Works offline.** Local compute, local storage. No internet required after first sync.
 
-**Formats, in and out.** Creates **25** export formats and ingests **13** source formats - see the full breakdown below.
+**Formats, in and out.** Renders **27** export formats and ingests **25** source formats - see the full breakdown below.
 
 **Production quality.** Outlined type, Spot color support, 60FPS · Media fit for the studio.
 

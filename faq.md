@@ -99,6 +99,10 @@ Yes. Open **Layout Studio** and click **Import a design**: it accepts a native F
 
 Layers arrive as editable boxes on the open canvas: text stays retypable, shapes stay shapes, images join your on-device library, and type and colours conform to the brand globals. Save it and the layout becomes a reusable, URL-addressable template anyone with Lolly can refill - and you can mix in live tools (a QR code, a chart) that re-render on load. From there it renders like anything else in Lolly - SVG, PDF, PNG and the rest, reproducible from its URL. See [Import a design](/info/design-import.html).
 
+## Can Lolly rebrand an existing PowerPoint deck?
+
+Yes - two ways, both on your device. The **Rebrand a Deck** utility takes a `.pptx` and swaps its theme, hardcoded colours and fonts to your brand while charts, SmartArt and animations pass through untouched - you get a `.pptx` back. Or open the deck in **Deck Builder** (Load → drop the file) to edit it slide by slide as freeform objects, already snapped to brand, and export PPTX, PDF or video. Dropping a `.pptx` on an upload area instead files the slides you choose as SVG assets in your library. See [Import a design → Decks and documents](/info/design-import.html#decks-and-documents).
+
 ## What happens on Aug 29?
 
 The SUSE-branded tools leave the project, and new generic example tools defined by the user take over.

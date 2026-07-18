@@ -1,13 +1,13 @@
 {
   "heading": "Every format, in and out",
-  "lead": "Lolly reads 24 source formats and renders 27 - here's the full set, grouped by what each one is. Ten {roundtrip}: read *and* written, so they appear in both columns.",
+  "lead": "Lolly reads 25 source formats and renders 27 - here's the full set, grouped by what each one is. Eleven {roundtrip}: read *and* written, so they appear in both columns.",
   "ingestsLabel": "Ingests",
-  "ingestsCount": "24 in",
+  "ingestsCount": "25 in",
   "exportsLabel": "Exports",
   "exportsCount": "27 out",
   "ingests": [
     { "category": "3D", "list": "GLB · glTF" },
-    { "category": "Design", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG · Lottie" },
+    { "category": "Design", "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie" },
     { "category": "Photos", "list": "HEIC · TIFF · AVIF" },
     { "category": "Video", "list": "MP4 · WEBM · MOV" },
     { "category": "Audio", "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD" },

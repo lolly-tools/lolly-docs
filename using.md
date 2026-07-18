@@ -93,7 +93,7 @@ When a tool lets you add an image from your device, it's downscaled, stripped of
 
 The **Catalogue** (`#/c`, or the **Catalogue** link in the menu) gathers everything your tools can draw on - brand logos, images, audio, and motion, grouped by kind - and it's where your **own creative files** live too. No server, no admin console, no pull request: it's all on your device.
 
-- **Bring your files in.** Drag any image, SVG, audio clip, video, Lottie, or PDF onto the upload area - or click to choose - and it lands in your catalogue instantly, ready in every tool's asset picker. Ingest as much as you like; it never leaves your device.
+- **Bring your files in.** Drag any image, SVG, audio clip, video, Lottie, PDF or PowerPoint deck onto the upload area - or click to choose - and it lands in your catalogue instantly, ready in every tool's asset picker. A multi-page PDF or a `.pptx` asks which pages or slides to keep - each becomes an SVG asset. Ingest as much as you like; it never leaves your device.
 - **Favourite what you reach for.** ★ an asset (or a brand swatch) and it pins to the top of every picker, so your go-to logo or colour is one click away.
 - **Tidy up.** Recategorise an asset into a different group, hide a shared brand asset you don't use (with **Show hidden** to bring it back), or delete your own uploads outright.
 

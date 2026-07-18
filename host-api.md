@@ -148,6 +148,17 @@ On-device PDF inspection, metadata removal and compression (pure pdf-lib for the
 
 Feature-detect each method (e.g. `host.pdf?.compress`) - an older shell may provide `analyze`/`strip` but not `compress`, or no `host.pdf` at all.
 
+## `host.pptx` *(optional)*
+
+On-device PowerPoint inspection and surgical rebranding (engine `1.58`; the shell unzips with fflate and injects its `DOMParser` - the engine's OOXML reader/patcher stays zip- and DOM-free). Used by `rebrand-deck`.
+
+| Method | Returns | Notes |
+|---|---|---|
+| `inspect(bytes, opts?)` | `Promise<{ ok, slideCount, theme, colors, fonts, themeSuggestion? }>` | Read a deck: slide count, theme palette + fonts, and the literal (non-theme-linked) colours and typefaces found on slides. Pass brand `swatches`/`fonts` in `opts` to get nearest-brand suggestions per colour/font plus a suggested 12-slot theme. Never throws - unreadable input reports `ok: false`. All colours are `#RRGGBB` |
+| `rebrand(bytes, plan?)` | `Promise<{ bytes, report }>` | Surgically re-theme the deck: swap the theme palette and fonts, remap hardcoded colours (`plan.colorMap`) and explicit typefaces (`plan.fontMap`), optionally strip embedded fonts. Everything else - charts, SmartArt, animations, media - passes through byte-identical. Throws on non-pptx input |
+
+Feature-detect (`host.pptx?.rebrand`) - an older shell may lack it entirely.
+
 ## `host.capture` *(capability: `capture`)*
 
 Rasterise a live URL to an image using a real browser engine. Only shells with an authoritative engine fulfil it (Tauri's webview, a headless-Chromium CLI, or the browser extension) - the plain web PWA cannot read cross-origin pixels, so it exposes a stub that throws.
