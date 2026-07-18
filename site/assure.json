@@ -1,12 +1,12 @@
 {
   "eyebrow": "Provenance & privacy",
   "heading": "Prove what you made.\nKeep what's yours.",
-  "lead": "Every image, PDF, or video you export can carry a **Content Credential** - a tamper-evident [C2PA](https://c2pa.org) seal created entirely on your device. It proves the file hasn't changed since it left Lolly, and once you enrol an identity, records who signed it.",
+  "lead": "Every image, PDF, or video you export can carry a **Content Credential** - a tamper-evident [C2PA](https://c2pa.org) seal created entirely on your device. It proves the file hasn't changed since it left Lolly, and once you enrol an identity, records who signed it. Rasters also carry the invisible **Lolly Imprint** in the pixels themselves, on by default, so a copy can still be recognised even after the credential is stripped.",
   "illustration": "illusCheck",
   "checks": [
     { "title": "Tamper-evident by default", "desc": "The seal covers every exported byte. Change one pixel and any C2PA validator flags it." },
     { "title": "Signed on your device", "desc": "Your signing key is generated locally and never leaves the device - not even Lolly can read it." },
-    { "title": "Verifiable by anyone, offline", "desc": "The file carries its own proof. Check it in the Verify tab, the CLI, or any C2PA validator - nothing is uploaded." }
+    { "title": "Verify anything, on-device", "desc": "The Verify tab checks a file's credential, flags AI-generated content, reads the Lolly Imprint, and surfaces hidden data - offline, nothing uploaded." }
   ],
   "cards": [
     { "icon": "assureEyeOff", "title": "Nothing leaves your device", "desc": "No cloud rendering, no telemetry, no analytics. What you make stays on your machine." },

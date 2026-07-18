@@ -45,7 +45,7 @@ Self-hosters who don't want a public render surface can switch the route off ent
 | `lolly_build_url` | Build a shareable, editable link + raw render URL - **without** rendering. |
 | `lolly_render` | Render a tool to a file - returns the bytes plus the editable link. |
 | `lolly_transform` | Run an on-device file utility (`strip-data`, `compress-pdf`) on a file you supply. |
-| `lolly_verify` | Verify a file's Content Credentials (C2PA): was it genuinely made with Lolly, who signed it, and has it changed since export. Returns the verdict, signer identity, edit history and embedded metadata - the same verify stack as the app's verify page and the CLI's `lolly validate`. The file is checked in-process and never stored. |
+| `lolly_verify` | Verify a file's Content Credentials (C2PA): was it genuinely made with Lolly, who signed it, and has it changed since export. Returns the verdict, signer identity, edit history and embedded metadata (including any AI-generated declaration and appended-data flags) - the same C2PA verifier as the CLI's `lolly validate`. (The web verify page's pixel-level reads - the Lolly Imprint, SEAL, the opt-in deep scan - are interactive, web-only.) The file is checked in-process and never stored. |
 
 The intended flow is `lolly_list_tools` → `lolly_describe_tool` (read the exact input schema) → `lolly_render`; `lolly_verify` closes the loop when an agent needs to prove a file it holds is an untouched Lolly export.
 

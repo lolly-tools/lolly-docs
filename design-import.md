@@ -102,7 +102,7 @@ Paste or drop a table and a tool's repeating blocks fill from it (up to 1,000 ro
 
 ### Content Credentials (verify)
 
-Lolly reads and cryptographically verifies a signed [C2PA](https://c2pa.org) manifest embedded in **PDF, PNG/APNG, JPG, GIF, SVG, TIFF, WebP, MP4 and WebM/MKV** - entirely on-device, against the signing certificate. See [Content Credentials](/info/exporting.html#content-credentials-c2pa). (HEIC and AVIF are read as images but carry no credential.)
+Lolly reads and cryptographically verifies a signed [C2PA](https://c2pa.org) manifest embedded in **PDF, PNG/APNG, JPG, GIF, SVG, TIFF, WebP, MP4 and WebM/MKV** - entirely on-device, against the signing certificate. The [/verify](/verify) view goes further: it flags AI-generated content, detects Lolly's own pixel **Imprint**, verifies **SEAL** signatures, optionally deep-scans for third-party pixel watermarks, and surfaces hidden data - none of it uploaded. See [Content Credentials](/info/exporting.html#content-credentials-c2pa) and [Content Credentials Identity](/info/content-credentials-identity.html#beyond-the-credential-what-else-verify-shows). (HEIC and AVIF are read as images but carry no credential.)
 
 ### Metadata (to strip it)
 

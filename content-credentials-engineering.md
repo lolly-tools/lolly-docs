@@ -123,6 +123,78 @@ Report verdict semantics (surfaced by the `/verify` view):
 `lolly validate <file> [--json] [--trust-anchor <root.pem>]` - same
 verifier, same report; the flag loads PEM → DER and passes `trustAnchors`.
 
+## Beyond C2PA: pixel- and byte-level verify reads
+
+The web `/verify` view runs several checks *around* the credential. Each is a pure,
+DOM-free engine (or shell-lib) module fed a decoded RGBA buffer or the raw file
+bytes by the shell; none is a bridge capability, and none uploads anything - SEAL's
+DNS key lookup and the deep-scan model download are the only network touches, both
+shell-side, and neither sends the file.
+
+### `engine/src/pixel-watermark.ts` - the Lolly Imprint
+
+Block-DCT spread-spectrum watermark (Cox/Kilian/Leighton/Shamoon) on the same 8×8
+grid JPEG's own DCT uses, so it survives recompression. `embedWatermark(rgba, opts)`
+adds a fixed ±1 chip to mid-band luma coefficients scaled by a perceptual mask;
+`detectWatermark(rgba, {width, height})` correlates and returns a presence score
+(`DetectResult`); `canCarryWatermark(w, h)` gates images too small to hold the mark
+(`MIN_IMPRINT_BLOCKS`). Presence-only, no payload. **Security posture is obscurity,
+not a hardened defence** - the chip key ships in this public source, so a motivated
+adversary who reads it can subtract the mark. It's honest cover against casual
+re-encoding/stripping, framed exactly like the self-signed on-device C2PA key
+(`plans/lollys-own-synth.md`). The shell embeds it two ways: the standalone raster
+encoders' `opts.imprint` branch, and `imprintEmbedCanvas` baking the mark into each
+Lolly-rendered raster as it's composited into a PDF page / PPTX slide - so a
+pure-vector page marks nothing, and the C2PA claim is gated on whether a mark was
+actually applied, never over-claimed. On by default; `?imprint=0` opts out.
+
+### `engine/src/steganalysis.ts` - LSB chi-square
+
+`analyzeLsb(rgba, {width, height})` runs a chi-square test on pixel-pair LSB
+statistics and returns a likelihood that the image hides LSB-embedded data. It's a
+heuristic (amber), never a cryptographic verdict; the view renders it as an
+`LSB steganography likely` pip plus an `LSB analysis` metadata row.
+
+### `engine/src/file-metadata.ts` - appended payloads
+
+`extractFileMetadata(bytes)` reads EXIF/XMP/IPTC and, for provenance, detects bytes
+appended *after* a container's real end (PNG `IEND`, JPEG `EOI`, GIF trailer, APNG),
+returning them as an `appended` field the view renders with view/download of the
+extracted bytes (rendered only as escaped hex/text - never parsed or executed). The
+legitimate motion-photo append (`kind: 'video (motion photo)'`) is recognised and
+shown without a warning. This read is bytes-only, so MCP surfaces it in its metadata
+output too (it lacks the interactive extractor, but sees the same `appended` field).
+
+### `engine/src/seal.ts` - SEAL cryptographic signatures
+
+`verifySeal(bytes, resolveKey?)` parses a hackerfactor [SEAL](https://github.com/hackerfactor/SEAL)
+record and verifies its signature over the covered byte ranges; the shell's
+`shells/web/src/lib/seal-dns.ts` supplies the `resolveKey` that fetches the public
+key from DNS. **This is a byte-signature format - not a pixel watermark, and NOT
+Meta's Content Seal despite the shared word.** A key resolved from DNS yields domain
+attribution (`Signed by <domain> (SEAL)`, proving domain control, not a CA-verified
+legal identity); a key the file itself carries but that DNS can't confirm yields an
+internally-consistent-but-unattributed result. The only network touch is the DNS
+lookup - the file never leaves the device.
+
+### Deep scan: `trustmark.ts` + `contentseal.ts` (web, opt-in)
+
+Two open pixel-watermark decoders behind a one-time consent - a ~90 MB detector
+download gated by a single batch-level banner, after which the scan is passive per
+file (`shells/web/src/lib/trustmark.ts` and `contentseal.ts`, with
+`engine/src/contentseal.ts` for the DOM-free decode math):
+
+- **Adobe TrustMark** - a real, ECC-verified decode; a payload that passes its
+  error-correction check is a genuine read (green pip + recovered bytes), not a
+  guess.
+- **Meta Content Seal** - the *open* Pixel Seal / Video Seal watermark. No ECC gate,
+  so a decode that stays consistent across several re-encodings is an amber
+  statistical "likely", and the note always carries the caveat that Meta's
+  proprietary **Muse** image variant is a different watermark this cannot read (so a
+  hit is never "Meta AI", and absence rules nothing out).
+
+Everything is on-device; nothing but the one-time model bytes is fetched.
+
 ## Trust anchors
 
 Trusted verification is **live** - the pinned Lolly root ships as a real PEM in

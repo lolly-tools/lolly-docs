@@ -48,15 +48,115 @@ one honest verdict:
 | **Credential broken** | The file carries Content Credentials, but they no longer match its bytes - modified after signing, or the manifest is damaged. |
 | **No Content Credentials** | Nothing to verify - the file carries no C2PA manifest. |
 
-A file whose credential **declares AI-generated content** also gets an **AI** badge
-alongside the verdict (whether the generator authored that declaration or Lolly
-detected a known generative source type). The page also shows the recorded edit
-history, the "made from" ingredients, and - when present - the CA-verified signer's
-email and issuer.
+The page also shows the recorded edit history, the "made from" ingredients, and -
+when present - the CA-verified signer's email and issuer. And it reads far more than
+the credential: a file that declares AI-generated content, carries Lolly's own pixel
+Imprint, or is quietly hiding data in its bytes gets flagged too - see [Beyond the
+credential](#beyond-the-credential-what-else-verify-shows) below.
 
-The same check runs in the CLI (`lolly validate <file>`) and in any third-party
-C2PA validator pointed at the public Lolly root
+The same credential check runs in the CLI (`lolly validate <file>`) and in any
+third-party C2PA validator pointed at the public Lolly root
 (`c2patool --trust_anchors lolly-root.pem`).
+
+## Beyond the credential: what else Verify shows
+
+Verify is more than a C2PA reader. Every file you drop is put through several
+independent checks, summarised as a row of pips ("Verification checks at a glance")
+under the headline verdict and then explained in full below it. **They all run on
+your device - nothing is uploaded.** The only two things that ever leave the machine
+are called out where they apply: a single public-key **DNS lookup** for SEAL, and a
+**one-time detector download** for the opt-in deep scan. The file itself never
+leaves.
+
+### The Lolly Imprint
+
+Alongside its Content Credential, Lolly can seal an **invisible watermark into the
+pixels themselves** - the *Lolly Imprint*. Where the credential travels in metadata
+and is lost to a re-save, a screenshot, or a metadata strip, the Imprint rides in
+the image and survives recompression - so it's a durable hint that an image came
+from Lolly even after the credential is gone. It's a supporting signal, not a
+cryptographic guarantee. When Verify finds it, a green **Lolly Imprint** pip joins
+the scorecard - marked *detected*, or *in an image* when the mark sits in a raster
+embedded inside a PDF or PPTX. The Imprint is now **on by default** on raster
+exports; see [Exporting → Provenance & watermark](/info/exporting.html#provenance-watermark).
+
+### AI-generated content
+
+When a file declares that its pixels came from a trained model, Verify raises an
+unmissable **AI-generated content** flag (or **Contains AI-generated content** when
+only part of it was). The declaration comes from one of two places, and Verify says
+which: a signed **C2PA assertion**, or a bare **IPTC "digital source type"** tag
+written into the file's metadata - the sidecar flag Gemini/Imagen, Midjourney and
+Meta AI write next to their output. The metadata tag is genuine when present but
+trivially stripped, so its *absence* never proves a file isn't AI-made. The flag
+fires across JPEG, PNG and SVG stills and MP4/QuickTime video.
+
+### "Likely carries" a maker's own watermark
+
+Large AI generators also stamp *their own* invisible watermark into the pixels -
+Google's **SynthID** (also adopted by OpenAI) or Meta's **Video Seal**. **Only the
+maker's own detector can read those; Lolly cannot.** So when a file's declared maker
+is one of them, Verify says the file *very likely carries* that watermark. This is a
+**likelihood inferred from the maker's declaration**, never a claim that Lolly read
+the watermark itself.
+
+### Deep scan (opt-in): TrustMark & Content Seal
+
+For a real read of two open pixel watermarks, Verify offers an opt-in **deep scan**.
+A one-click banner - *"Scan for invisible watermarks?"* - downloads the detector
+models once (~90 MB), after which every image in the batch is scanned automatically,
+all on-device, nothing uploaded. It reads two marks:
+
+- **Adobe TrustMark** - a genuine, error-correction-verified decode. When the
+  recovered payload passes its ECC check, Verify shows **Adobe TrustMark detected**
+  with the recovered bytes: a real read, not a guess, so it earns a green pip.
+- **Meta Content Seal** - a read of Meta's *open* Pixel Seal / Video Seal watermark.
+  This has no error-correcting gate, so a decode that stays consistent across several
+  re-encodings is reported as an amber **Meta Content Seal likely** - a statistical
+  match, not a certainty (a flat or low-detail image can read as a false positive).
+  It reads only the **open** watermark: Meta's production **"Muse"** image pipeline
+  uses a separate proprietary variant Lolly cannot read, so a hit never means "Meta
+  Muse" or "Meta AI", and absence rules nothing out.
+
+### SEAL signatures (a cryptographic signature, *not* a pixel watermark)
+
+Verify also checks for a **SEAL** record - the [hackerfactor SEAL](https://github.com/hackerfactor/SEAL)
+format, which despite the name has **nothing to do with Meta's Content Seal above**.
+SEAL is a **cryptographic signature over the file's bytes** whose public key is
+published in **DNS**. Lolly verifies it on-device; the only thing that leaves the
+machine is a single **public-key DNS lookup** - never the file. A signature that
+verifies against a key found in DNS shows **Signed by \<domain\> (SEAL)**: it proves
+**control of that domain** - domain-level attribution, not a CA-verified legal
+identity - and says nothing about the visual content. A signature that verifies
+against a key the file itself carries, but which isn't confirmed in DNS, is reported
+as internally consistent but unattributed.
+
+### Hidden data: appended payloads & steganalysis
+
+Two more reads look for data a file is quietly carrying:
+
+- **Appended payloads.** Bytes tacked on *after* a container legitimately ends -
+  after a PNG's `IEND`, a JPEG's `EOI`, a GIF trailer, or an APNG - are flagged as
+  **Appended data found**, and you can **View** the extracted bytes (a safe hex or
+  text preview) or **Download** them. The legitimate motion-photo case - a video
+  appended to a still - is recognised and shown as **Appended video data** with no
+  warning.
+- **LSB steganalysis.** A chi-square analysis of the image's least-significant bits
+  looks for the statistical fingerprint of LSB-hidden data; a match raises an amber
+  **LSB steganography likely** heuristic. It's a hint, not proof.
+
+Separately, every file's embedded **metadata** (EXIF/GPS/IPTC/XMP) is read out in
+full and grouped, with values that could identify a person, place or device marked -
+alongside a one-click **Download a cleaned copy** and a link to the **Hidden Data**
+tool to strip it.
+
+### Where each check runs
+
+The C2PA verdict runs in the CLI too (`lolly validate <file>`). The embedded-metadata
+read (EXIF/XMP, the AI declaration, appended-data) runs over MCP (`lolly_verify`) and in
+the web **Verify** view. The pixel-level reads - the Lolly Imprint, the opt-in deep scan,
+and LSB steganalysis - and SEAL verification are features of the web **Verify** view.
+Wherever they run, they run on your machine.
 
 ## Why identity, not app identity
 
