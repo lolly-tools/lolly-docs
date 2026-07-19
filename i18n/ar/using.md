@@ -6,6 +6,10 @@
 
 ## فتح أداة
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
+![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
+
 الشاشة الرئيسية هي **المعرض** — كل الأدوات مجمعة حسب الفئة. انقر بطاقة لفتح الأداة؛ وإذا سبق أن عملت عليها، فزر **متابعة** يستأنف أحدث جلساتك. استخدم مربع البحث للترشيح بالاسم.
 
 كل أداة عرض مقسوم: **عناصر التحكم** في جهة، و**معاينة** حية (اللوحة) في الجهة الأخرى. غير أي عنصر تحكم فتتحدث المعاينة فورا.
@@ -32,6 +36,8 @@
 تغيير الأبعاد يعيد العرض دائما إلى ملاءمة نظيفة.
 
 ### اللوحة الحرة (Layout Studio)
+
+![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 أدوات اللوحة الحرة تضيف سطح عمل *حول* لوح الرسم، مثل طاولة اللصق عند المصمم:
 
@@ -65,6 +71,8 @@
 
 ## المشاريع
 
+![Projects - saved sessions organised into nestable folders](/t/url-shot?url=%2F%23%2Fp&width=1440&height=900&dpi=192&waitMs=1200&format=svg&localize=1&filename=projects)
+
 **المشاريع** — افتحها من تبويب **المشاريع** بجوار **الأدوات**، أو من **الملف الشخصي ← التخزين ← التنظيم في المشاريع** — موطن لكل ما حفظته، وتعمل مثل مدير ملفات:
 
 - **مجلدات تتداخل.** جمع الجلسات المحفوظة في مجلدات، ومجلدات داخل مجلدات، بأي عمق تشاء. أنشئ مجلدا، أو أعد تسميته، أو اسحب بطاقة فوق مجلد آخر لنقلها؛ ويعيدك شريط المسار صعودا. ومجلد **غير مصنف** الحاضر دائما يضم كل ما لم يصنف بعد.
@@ -90,6 +98,8 @@
 حين تتيح لك أداة إضافة صورة من جهازك، تصغر أبعادها وتجرد من بيانات EXIF/GPS وتحفظ في مكتبتك الشخصية **صوري** (تحت **الملف الشخصي ← التخزين**). أعد استخدامها عبر أي أداة. المكتبة محدودة السعة ومحلية بالكامل — أدر الصور أو احذفها هناك.
 
 ## الكتالوج — مكتبة أصولك
+
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 **الكتالوج** (`#/c`، أو رابط **الكتالوج** في القائمة) يجمع كل ما يمكن لأدواتك الاعتماد عليه — شعارات العلامة والصور والصوت والحركة، مجمعة حسب النوع — وهو أيضا حيث تعيش **ملفاتك الإبداعية الخاصة**. لا خادم، ولا وحدة تحكم إدارية، ولا طلب سحب: كل شيء على جهازك.
 

@@ -8,6 +8,8 @@
 
 ## 프로필에 담기는 것
 
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
+
 | 항목 | 내용 |
 |---|---|
 | **성명** | 이름과 성. |

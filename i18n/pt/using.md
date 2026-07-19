@@ -6,6 +6,10 @@ Um guia prático para realmente *usar* o app - abrir uma ferramenta, trabalhar n
 
 ## Abrindo uma ferramenta
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
+![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
+
 A tela inicial é a **galeria** - todas as ferramentas, agrupadas por categoria. Clique em um cartão para abrir a ferramenta; se você já trabalhou nela antes, um botão **Continuar** retoma sua sessão mais recente. Use a caixa de busca para filtrar por nome.
 
 Cada ferramenta é uma visualização dividida: **controles** de um lado, uma **pré-visualização** ao vivo (a tela) do outro. Altere qualquer controle e a pré-visualização é atualizada instantaneamente.
@@ -32,6 +36,8 @@ A pré-visualização sempre mostra exatamente o que será exportado.
 Uma mudança de dimensão sempre encaixa a visualização de volta a um ajuste limpo.
 
 ### A tela livre (Layout Studio)
+
+![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 Ferramentas de tela livre adicionam uma superfície de trabalho *ao redor* da prancheta, como a mesa de composição de um designer:
 
@@ -65,6 +71,8 @@ Clique em **Salvar** para armazenar os inputs atuais como uma sessão daquela fe
 
 ## Projetos
 
+![Projects - saved sessions organised into nestable folders](/t/url-shot?url=%2F%23%2Fp&width=1440&height=900&dpi=192&waitMs=1200&format=svg&localize=1&filename=projects)
+
 **Projetos** - abra pela aba **Projetos**, ao lado de **Ferramentas**, ou por **Perfil → Armazenamento → Organizar em Projetos** - é o lar de tudo o que você salvou, e funciona como um gerenciador de arquivos:
 
 - **Pastas que se aninham.** Agrupe sessões salvas em pastas, e pastas dentro de pastas, quantos níveis quiser. Crie uma pasta, renomeie-a ou arraste um card sobre outra pasta para movê-lo; uma trilha (breadcrumb) leva você de volta para cima. Uma pasta **Sem categoria**, sempre presente, guarda tudo o que ainda não foi arquivado.
@@ -90,6 +98,8 @@ Os **Filtros** de foto - Halftone, Scanline, Posterize, Duotone - mostram um bot
 Quando uma ferramenta permite adicionar uma imagem do seu dispositivo, ela é reduzida de tamanho, tem os dados EXIF/GPS removidos e é salva na sua biblioteca pessoal **Minhas imagens** (em **Perfil → Armazenamento**). Reutilize-a em qualquer ferramenta. A biblioteca tem um limite e é totalmente local - gerencie ou exclua imagens por lá.
 
 ## O Catálogo - sua biblioteca de ativos
+
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 O **Catálogo** (`#/c`, ou o link **Catálogo** no menu) reúne tudo o que suas ferramentas podem usar - logos de marca, imagens, áudio e animações, agrupados por tipo - e é onde os seus **próprios arquivos criativos** também ficam. Sem servidor, sem console de administração, sem pull request: está tudo no seu dispositivo.
 

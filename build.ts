@@ -366,7 +366,11 @@ function inline(text: string) {
     const q = new URLSearchParams(src.slice(src.indexOf('?') + 1).replace(/&amp;/g, '&'));
     const slug = q.get('filename');
     const ext = (q.get('format') || 'svg').toLowerCase();
-    return slug ? `${pre}/info/shots/${slug}.${ext}${post}` : `${pre}${src}${post}`;
+    if (!slug) return `${pre}${src}${post}`;
+    // Prefer a localized shot (<slug>.<lang>.<ext>) on a translated page; fall back
+    // to the English baseline when this recipe wasn't captured for this locale.
+    const file = localizedShot(slug, ext) ?? `${slug}.${ext}`;
+    return `${pre}/info/shots/${file}${post}`;
   });
 
   // Images before links, or the link regex eats `[alt](url)` and strands the `!`.
@@ -2132,6 +2136,18 @@ function loadSiteCatalog(lang: Lang): Record<string, string> {
 let activeCatalog: Record<string, string> = {};
 function t(s: string): string { return activeCatalog[s] ?? s; }
 
+// The locale of the page currently being rendered (mirrors activeCatalog). Read by
+// inline()'s screenshot rewrite so a translated page can point at a localized shot
+// (<slug>.<lang>.<ext>, captured with ?lang= injected) when one exists, else the
+// English baseline. Set in build()'s per-locale loop.
+let activeLang: Lang = 'en';
+/** A `<slug>.<lang>.<ext>` localized shot exists on disk (docs/shots/) for this pass? */
+function localizedShot(slug: string, ext: string): string | null {
+  if (activeLang === 'en') return null;
+  const name = `${slug}.${activeLang}.${ext}`;
+  return existsSync(resolve(__dirname, 'shots', name)) ? name : null;
+}
+
 function resolvePageSrc(page: Page, lang: Lang): string {
   if (lang !== 'en') {
     const localized = resolve(__dirname, 'i18n', lang, `${page.slug}.md`);
@@ -2498,6 +2514,7 @@ function build() {
   const mdBySlug = new Map<string, string>();
   for (const lang of LANGS) {
     activeCatalog = loadSiteCatalog(lang);
+    activeLang = lang;
     const localeOutDir = lang === 'en' ? outDir : resolve(outDir, lang);
     mkdirSync(localeOutDir, { recursive: true });
 
@@ -2527,6 +2544,7 @@ function build() {
     }
   }
   activeCatalog = {};
+  activeLang = 'en';
 
   // Redirect stubs for retired slugs - keep inbound links + bookmarks resolving.
   // English-only: these are legacy URLs, never linked from the localized nav tree.

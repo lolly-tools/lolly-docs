@@ -6,6 +6,10 @@
 
 ## 開啟工具
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
+![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
+
 首頁是**畫廊**——依類別分組列出所有工具。點擊卡片即可開啟工具；如果你先前使用過該工具，**繼續**按鈕會恢復你最近一次的工作階段。使用搜尋框可依名稱篩選。
 
 每個工具都是分割畫面：一側是**控制項**，另一側是即時**預覽**（畫布）。變更任何控制項，預覽都會立即更新。
@@ -32,6 +36,8 @@
 變更尺寸時，畫面一律會自動回到整潔的符合視窗大小狀態。
 
 ### 自由畫布（版面工作室）
+
+![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 自由畫布類的工具會在畫板*周圍*加上一個工作區域，就像設計師的桌面貼版：
 
@@ -65,6 +71,8 @@
 
 ## 專案
 
+![Projects - saved sessions organised into nestable folders](/t/url-shot?url=%2F%23%2Fp&width=1440&height=900&dpi=192&waitMs=1200&format=svg&localize=1&filename=projects)
+
 **專案**——可從**工具**旁邊的**專案**分頁開啟，也可從**個人資料 → 儲存空間 → 在專案中整理**進入——是存放所有已儲存內容的地方，運作方式類似檔案總管：
 
 - **可巢狀的資料夾。** 將已儲存的工作階段歸類到資料夾中，資料夾裡還能再建立資料夾，層級不限。你可以建立資料夾、重新命名，或把方塊拖曳到另一個資料夾上以移動它；麵包屑導覽可以帶你一路返回上層。一個永遠存在的**未分類**資料夾會存放尚未歸檔的內容。
@@ -90,6 +98,8 @@
 當工具允許你從裝置新增圖片時，該圖片會被縮小尺寸、移除 EXIF／GPS 資訊，並儲存到你個人的**我的圖片**庫中（位於**個人資料 → 儲存空間**）。你可以在任何工具中重複使用它。該圖庫有容量上限，且完全儲存在本機——你可以在那裡管理或刪除圖片。
 
 ## 目錄——你的素材庫
+
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 **目錄**（`#/c`，或選單中的**目錄**連結）匯集了你的工具能取用的一切——品牌標誌、圖片、音訊與動態內容，依類型分組——同時也是你**自己的創作檔案**存放的地方。沒有伺服器、沒有管理主控台、沒有 pull request：一切都在你的裝置上。
 

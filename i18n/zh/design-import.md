@@ -1,5 +1,17 @@
 # 导入设计（Figma、Penpot、Illustrator、InDesign）
 
+![Layout Studio's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=layout-studio)
+
+![Layout Studio's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=layout-studio)
+
+![Layout Studio's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=layout-studio)
+
+![Layout Studio's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=layout-studio)
+
+![Layout Studio's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=layout-studio)
+
+![Layout Studio's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=layout-studio)
+
 把一份完成的设计**从 Figma、Penpot、Illustrator 或 InDesign 中带出来，带进 Lolly**——不是作为一张定格图片，而是作为一个鲜活、可编辑的版面，你可以继续在其中工作、与工具混合使用，并通过 Lolly 确定性的导出路径渲染它。和其他一切一样，整个导入过程都发生在**你的设备上**：文件在你的浏览器中解析，不会上传任何内容。
 
 对你已经做过的一切来说，这是个好消息：没有什么会被困在你绘制它时所用的那个应用里。你在别的工具里花了几个小时做的设计，抵达时就是一个可编辑的会话，并且已经符合你的设计全局设置——一旦你保存它，它就成为一个可复用的模板，任何使用 Lolly 的人都能打开并重新填充。

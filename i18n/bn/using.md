@@ -6,6 +6,10 @@
 
 ## একটি টুল খোলা
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
+![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
+
 হোম স্ক্রিনটি হলো **গ্যালারি** — প্রতিটি টুল, ক্যাটেগরি অনুযায়ী দলবদ্ধ। টুলটি খুলতে একটি কার্ডে ক্লিক করুন; আপনি যদি আগে এটি নিয়ে কাজ করে থাকেন, একটি **Continue** বোতাম আপনার সবচেয়ে সাম্প্রতিক সেশনটি আবার শুরু করে। নাম অনুযায়ী ফিল্টার করতে সার্চ বক্স ব্যবহার করুন।
 
 প্রতিটি টুল একটি স্প্লিট ভিউ: একদিকে **কন্ট্রোল**, অন্যদিকে একটি লাইভ **প্রিভিউ** (ক্যানভাস)। যেকোনো কন্ট্রোল পরিবর্তন করুন আর প্রিভিউ সঙ্গে সঙ্গে আপডেট হয়।
@@ -32,6 +36,8 @@
 একটি ডাইমেনশন পরিবর্তন সবসময় ভিউটিকে একটি পরিষ্কার ফিটে ফিরিয়ে স্ন্যাপ করে।
 
 ### ফ্রি ক্যানভাস (Layout Studio)
+
+![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 ফ্রি-ক্যানভাস টুলগুলো আর্টবোর্ডের *চারপাশে* একটি কাজের সারফেস যোগ করে, একজন ডিজাইনারের পেস্টবোর্ডের মতো:
 
@@ -65,6 +71,8 @@
 
 ## Projects
 
+![Projects - saved sessions organised into nestable folders](/t/url-shot?url=%2F%23%2Fp&width=1440&height=900&dpi=192&waitMs=1200&format=svg&localize=1&filename=projects)
+
 **Projects** — এটি **Tools**-এর পাশে থাকা **Projects** ট্যাব থেকে, বা **Profile → Storage → Organise in Projects** থেকে খুলুন — আপনি যা যা সেভ করেছেন সবকিছুর একটি ঘর, এবং এটি একটি ফাইল ম্যানেজারের মতো কাজ করে:
 
 - **নেস্ট হয় এমন ফোল্ডার।** সংরক্ষিত সেশনগুলোকে ফোল্ডারে দলবদ্ধ করুন, আর ফোল্ডারের ভিতরে ফোল্ডার, যত গভীরে খুশি। একটি ফোল্ডার তৈরি করুন, এর নাম বদলান, বা একটি টাইল অন্য একটি ফোল্ডারের উপর টেনে সরিয়ে সেটি সরান; একটি ব্রেডক্রাম্ব আপনাকে আবার উপরে ফিরিয়ে নিয়ে যায়। সবসময়-উপস্থিত একটি **Uncategorised** ফোল্ডার এখনও ফাইল না-করা যেকোনো কিছু ধরে রাখে।
@@ -90,6 +98,8 @@
 যখন একটি টুল আপনাকে আপনার ডিভাইস থেকে একটি ছবি যোগ করতে দেয়, সেটি ডাউনস্কেল করা হয়, EXIF/GPS ছেঁটে ফেলা হয়, এবং আপনার ব্যক্তিগত **My images** লাইব্রেরিতে (**Profile → Storage**-এর অধীনে) সেভ করা হয়। যেকোনো টুল জুড়ে এটি আবার ব্যবহার করুন। লাইব্রেরিটি সীমিত এবং সম্পূর্ণ লোকাল — সেখানে ছবি ম্যানেজ বা ডিলিট করুন।
 
 ## Catalogue — আপনার অ্যাসেট লাইব্রেরি
+
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 **Catalogue** (`#/c`, বা মেনুতে থাকা **Catalogue** লিঙ্ক) আপনার টুলগুলো যা কিছুতে ভর দিতে পারে সবকিছু একত্র করে — ব্র্যান্ড লোগো, ছবি, অডিও এবং মোশন, ধরন অনুযায়ী দলবদ্ধ — এবং এখানেই আপনার **নিজের সৃজনশীল ফাইল**গুলোও থাকে। কোনো সার্ভার নেই, কোনো অ্যাডমিন কনসোল নেই, কোনো পুল রিকোয়েস্ট নেই: সবকিছুই আপনার ডিভাইসে।
 

@@ -8,6 +8,8 @@ Tutto quello che c'è in un profilo vive **sul dispositivo**, nel database local
 
 ## Cosa c'è in un profilo
 
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
+
 | Parte | Cos'è |
 |---|---|
 | **Nome** | Nome e cognome. |

@@ -8,6 +8,8 @@ Tot ce ține de un profil trăiește **pe dispozitiv**, în baza de date locală
 
 ## Ce conține un profil
 
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
+
 | Parte | Ce este |
 |---|---|
 | **Nume** | Prenume și nume de familie. |

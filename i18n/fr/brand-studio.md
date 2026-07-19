@@ -8,6 +8,18 @@ Les changements s'affichent **en direct dans toute l'application** au fur et à 
 
 ## Les cinq étapes
 
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&filename=brand-studio)
+
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&filename=brand-studio)
+
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&filename=brand-studio)
+
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&filename=brand-studio)
+
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&filename=brand-studio)
+
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&filename=brand-studio)
+
 Le studio est un éditeur à cinq onglets. Travaille de gauche à droite - ou saute directement à n'importe quel onglet :
 
 1. **Logos** - tes marques graphiques, dans chaque orientation et chaque traitement.
@@ -34,6 +46,18 @@ Cela fait huit emplacements facultatifs. Clique sur un emplacement pour ajouter 
 - **Importe un SVG et Lolly lit ses couleurs.** Sur une installation toute neuve, il définit discrètement ta couleur principale à partir du logo. Sur une marque existante, il propose la couleur comme suggestion - *« Trouvée dans ton logo »* - dans l'onglet Couleurs.
 
 ## Couleurs
+
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-colours)
+
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-colours)
+
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-colours)
+
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-colours)
+
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-colours)
+
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-colours)
 
 L'étape la plus riche. Le volet gauche **dérive et génère** ; le volet droit est ta **palette en direct**. Fais glisser le séparateur pour redimensionner.
 
@@ -85,6 +109,18 @@ La pilule flottante en bas du volet de palette télécharge toute la palette en 
 
 ## Typographie
 
+![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-type)
+
+![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-type)
+
+![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-type)
+
+![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-type)
+
+![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-type)
+
+![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-type)
+
 Ajoute **n'importe quelle police Google Fonts** et elle se télécharge sur cet appareil - rendue dans l'application, tes outils et chaque export, hors ligne pour toujours, et emportée dans ton pack de marque. Rien n'est récupéré au moment du rendu.
 
 Cherche une famille (Inter, Fraunces, Space Grotesk…), puis **Ajouter la police**. Chaque police de la liste peut prendre un rôle :
@@ -95,6 +131,18 @@ Cherche une famille (Inter, Fraunces, Space Grotesk…), puis **Ajouter la polic
 Le panneau **Rôles typographiques** affiche un spécimen en direct de Titre, Corps et Code, pour voir chaque police faire son travail. Tout ce qui se trouve sur Google Fonts est publié sous licence ouverte (OFL/Apache/UFL).
 
 ## Tokens
+
+![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=png&filename=brand-tokens)
+
+![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=png&filename=brand-tokens)
+
+![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=png&filename=brand-tokens)
+
+![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=png&filename=brand-tokens)
+
+![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=png&filename=brand-tokens)
+
+![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=png&filename=brand-tokens)
 
 Le reste du système de design, modifiable sans toucher au code :
 

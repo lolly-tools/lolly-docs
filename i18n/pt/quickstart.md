@@ -1,5 +1,7 @@
 # Guia rápido
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
 O Lolly transforma suas regras - cores, tipografia, layouts, lógica - em ferramentas que qualquer pessoa pode usar para criar arquivos finalizados: imagens, PDFs, cartões para redes sociais, vídeos, preenchendo apenas alguns campos. Não há nada para aprender nem para enviar: tudo roda no seu dispositivo, online ou offline.
 
 Esta é a página que você deve ler primeiro. Duas coisas vão te deixar produtivo: **faça do Lolly o seu** (aponte-o para a sua marca), e **traga o que você já tem** (seus arquivos de design e tokens). Tudo o mais está a um link de distância.
@@ -11,6 +13,8 @@ Esta é a página que você deve ler primeiro. Duas coisas vão te deixar produt
 Sua marca no Lolly é um pequeno documento de **tokens de design** - cores, tipografia e algumas regras - que toda ferramenta usa como referência ao renderizar. Configure uma vez e tudo o que você criar estará alinhado à marca por construção, não por revisão. Há três formas de entrar; escolha a que combina com onde sua marca já vive.
 
 ### Comece do zero (o assistente)
+
+![The Brand Studio start screen - name, primary colour, and a derived palette](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&localize=1&filename=brand-studio)
 
 Na primeira execução, você cai na tela **Start** (`#/start`). Dê um nome e uma cor primária, e o Lolly *deriva* dali uma paleta completa e acessível - superfícies claras/escuras, texto, destaques - usando a mesma matemática de cores que o motor usa em todo o resto. Escolha uma fonte e você tem uma marca funcionando em menos de um minuto. Você pode refinar qualquer parte disso depois.
 
@@ -29,6 +33,8 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 `ingest:brand` aceita os três formatos em que Penpot / Tokens Studio exportam o mesmo documento - um único `tokens.json`, um diretório (`$metadata.json` + arquivos por conjunto), ou um arquivo `project.penpot`. Com `--activate`, ele registra a marca como um perfil, muda para ele e reconstrói o catálogo. Veja [Configuração](/info/configuration.html) para entender como pacotes de marca e perfis se encaixam.
 
 ### Ajuste no aplicativo
+
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand)
 
 Com uma marca ativa, o editor **Your brand** do painel (`#/d`) é um editor ao vivo - mude uma cor ou um papel e cada pré-visualização na página se atualiza enquanto você digita. A mesma marca aparece resumida no card **Perfil → Your brand**. As fontes são reais: escolha entre as do Google Fonts e o Lolly guarda o arquivo **no seu dispositivo** como um ativo de marca, então sua tipografia viaja offline e nada é buscado no momento da renderização.
 

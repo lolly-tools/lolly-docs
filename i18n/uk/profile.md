@@ -8,6 +8,8 @@
 
 ## Що є у профілі
 
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
+
 | Частина | Що це |
 |---|---|
 | **Ім'я** | Ім'я та прізвище. |

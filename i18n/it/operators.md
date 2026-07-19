@@ -1,12 +1,12 @@
 # Lolly per gli operatori
 
-### Una strategia di prevenzione della perdita di dati e di provenienza, a prova di futuro e con difesa in profondità - che per puro caso è anche una piattaforma di produzione creativa
+### Una strategia di sicurezza e intelligence a difesa in profondità - che per puro caso è anche una piattaforma di produzione creativa
 
-Il sistema immunitario organizzativo che si avvolge attorno a ciò che già fai - così che il lavoro creativo di routine di cui i tuoi team hanno bisogno ogni giorno avvenga *dentro* il tuo perimetro invece di fuoriuscirne.
+Il sistema immunitario organizzativo zero-trust che si avvolge attorno a ciò che già fai - così che il lavoro creativo di routine di cui i tuoi team hanno bisogno ogni giorno avvenga *dentro* il tuo perimetro invece di fuoriuscirne.
 
-**Cosa ci guadagni.** Diventi la persona che ha detto sì a qualcosa di sicuro *e* popolare allo stesso tempo. Chiudi una falla di esfiltrazione ed elimini la coda delle richieste di design in un'unica mossa - la rara vittoria di sicurezza che ti rende più apprezzato, non meno. Niente più telefonate alle 3 di notte perché qualcuno ha inviato via email file di brand a un fornitore esterno o incollato dati dei clienti in uno strumento web qualsiasi; meno fornitori SaaS, contratti e audit sul tuo piatto; e una traccia git completa a cui puoi rimandare quando qualcuno chiede chi ha approvato cosa. Dormi sonni tranquilli.
+**Cosa ci guadagni.** Diventi la persona che ha detto sì a qualcosa di sicuro *e* popolare allo stesso tempo. Chiudi una falla di esfiltrazione, acquisisci capacità ed elimini una coda di richieste in un'unica mossa - la rara vittoria di sicurezza che ti rende più apprezzato, non meno. Niente più telefonate alle 3 del mattino dall'ufficio legale perché file riservati o dati dei clienti sono finiti in uno strumento web qualsiasi; meno fornitori SaaS, contratti e audit sul tuo piatto; e una traccia di audit interamente riproducibile a cui puoi rimandare quando qualcuno chiede. Dormi meglio, e nel farlo rallegri qualche giornata.
 
-Lolly si guadagna il suo posto come strumento creativo: elimina la coda di design e mette output di qualità professionale nelle mani di tutti. Ma il motivo per cui è *sicuro* distribuirlo così ampiamente è architetturale. Niente viene caricato, tutto è riproducibile, e ogni esportazione può portare un registro crittografico della propria origine. Questa pagina racconta la storia della sicurezza e della distribuzione.
+Lolly non è uno strumento creativo di serie B: mette output di qualità professionale nelle mani di tutti, e l'esperienza di creazione guidata dal brand non ha eguali. Il motivo per cui è *sicuro* distribuirlo così ampiamente è architetturale: non viene caricato nulla che tu non abbia messo lì, ogni risultato è riproducibile, e ogni esportazione può portare più livelli di registri crittografici tra i migliori del settore. Indipendentemente da come un documento sia arrivato sulla tua scrivania, puoi vederne la provenienza completa, se è stato manomesso, e se puoi ricrearlo pixel per pixel.
 
 > **A che punto siamo oggi.** Le proprietà di sicurezza di Lolly sono solide per progettazione, e i suoi motori di crittografia e di analisi dei file stanno attraversando l'irrobustimento dell'infrastruttura di livello enterprise di SUSE. I sigilli, la firma sul dispositivo e la crittografia descritti di seguito sono reali e difendibili già ora, e stanno maturando verso una certificazione indipendente - quindi dove un contratto richiede una garanzia certificata, distribuiscili come difesa in profondità mentre quel processo si completa.
 
@@ -16,8 +16,8 @@ Il modo abituale in cui viene svolto il lavoro creativo di routine è una superf
 
 Lolly ribalta la situazione. Il lavoro che *causava* quelle fughe - la card di citazione, il banner localizzato, il badge per l'evento, lo screenshot redatto - avviene ora su uno strumento che gira sul dispositivo stesso del dipendente, contro il tuo brand, senza alcun server nel mezzo. Non hai aggiunto un controllo sopra un flusso di lavoro rischioso; hai sostituito il flusso di lavoro rischioso con uno che, fin dall'inizio, non ha alcuna via di esfiltrazione.
 
-- **La configurazione è tua.** Il motore e le shell sono open source (MPL-2.0). Sovrapponi la tua autenticazione, telemetria o CA; ospitalo oppure no; mantieni il pieno controllo su funzionalità e costi, tracciato in git, senza restare bloccato in un database SaaS.
-- **La governance è dati, non una dashboard.** Il catalogo degli strumenti è la fonte di verità, gestito come repository Git - la revisione delle pull request *è* la moderazione, e ottieni una traccia di audit completa e il rollback istantaneo di ogni template che la tua forza lavoro può toccare. Vedi [Adozione e governance](/info/adoption-governance.html).
+- **La configurazione è tua.** Il motore e le shell sono open source (MPL-2.0). Sovrapponi la tua autenticazione, telemetria o CA; ospitalo oppure no; mantieni il pieno controllo su funzionalità e costi, tracciato in Git, senza restare bloccato in un database SaaS.
+- **La governance può essere dati, non una dashboard.** Quando vuoi quel controllo, gestisci il catalogo degli strumenti come repository Git - la revisione delle pull request diventa l'approvazione del brand, con una traccia di audit completa e il rollback istantaneo di ogni template che la tua forza lavoro può toccare. È un'opzione, non un obbligo: i team che vogliono solo creare cose realizzano i propri strumenti in Layout Studio e importano i propri file nel catalogo, interamente all'interno dell'app, senza mai toccare Git. Vedi [Adozione e governance](/info/adoption-governance.html).
 - **I guard-rail sono strutturali.** I vincoli di brand sono scritti direttamente nei template, non pubblicati come linee guida che le persone possono ignorare. Il risultato sbagliato non viene scoraggiato - è irrappresentabile.
 
 ## Elimina la coda delle richieste moltiplicando i contenuti.
@@ -34,24 +34,18 @@ I modelli di distribuzione completi e la guida all'amministrazione si trovano in
 
 ## Utilità anti-esfiltrazione
 
-Esiste una categoria di strumenti Lolly pensata *appositamente* per mantenere i file dentro il perimetro. Le utilità per la privacy.
-
+Una categoria di strumenti Lolly - le utilità per la privacy - esiste *appositamente* per mantenere i file dentro il perimetro.
 
 - **Strip hidden data**
  Rimuove la posizione e tutte le informazioni identificative nascoste da documenti e file multimediali.
 
 - **Text Helper**  
-Anonimizza, codifica, formatta e manipola testo strutturato e non strutturato. 
+Anonimizza, codifica, formatta e manipola testo strutturato e non strutturato.
 
 - **Compress PDF**
-Previene qualsiasi rischio di 'crisi del limite email' in cui strumenti web di terze parti sono in agguato e i dati 
-
-- **Compress PDF**
-Previene qualsiasi rischio di 'crisi del limite email' in cui strumenti web di terze parti sono in agguato e i dati scappano dalla finestra. 
+Comprime un PDF troppo pesante sul dispositivo, così nessuno ricorre a un sito di terze parti per "comprimere il mio PDF" nel momento in cui un file è troppo grande per essere inviato via email - esattamente il punto in cui i dati scappano dalla finestra.
 
 Tutte queste sono trasformazioni sul dispositivo: il tuo file o i tuoi dati entrano, escono byte puliti, e **non c'è alcun server a cui caricarli**. Sono l'opposto deliberato del tipico strumento "carica il tuo file sul sito di uno sconosciuto per pulirlo" a cui altrimenti ricorrerebbe un dipendente in buona fede.
-
-
 
 ## Determinismo e riproducibilità
 
@@ -67,9 +61,11 @@ Le esportazioni possono portare **Content Credentials** - un manifest [C2PA](htt
 - **Attiva di default, sul dispositivo.** La chiave di firma viene generata sul dispositivo, non è estraibile (nemmeno Lolly può leggerla), e la firma avviene localmente - solo l'*iscrizione* opzionale dell'identità arriva mai a toccare la rete.
 - **Livelli di fiducia.** Un'esportazione non iscritta è strutturalmente valida ma firmata in modo anonimo (`untrusted`). Iscrivi un'**identità verificata** (certificato di breve durata emesso dalla CA di Lolly, legato a un'email) e i verificatori che si affidano alla root di Lolly riportano `trusted` + l'email del firmatario. Un'autorità di timestamping affidabile e il via libera di un validatore terzo (conformità C2PA) sono nella roadmap. Ogni livello è esplicito, e un file dichiara solo la fiducia che può dimostrare.
 - **La durata della credenziale** è una scelta dell'operatore/utente al momento della firma: 7 / 30 / 90 / 365 giorni, predefinita 30.
-- **La verifica avviene sul dispositivo.** Trascina qualsiasi file su `/valid` (oppure `lolly validate <file>`) per ottenere un report offline su se è stato realmente creato con Lolly e non è cambiato da allora. Vedi [Identità Content Credentials](/info/content-credentials-identity.html).
+- **Il Lolly Imprint.** Un secondo segnale complementare, **attivo di default**: una filigrana a pixel invisibile incorporata nelle esportazioni raster (e nei raster renderizzati da Lolly all'interno di un PDF/PPTX, mai nell'immagine incorporata dall'utente). Laddove la credenziale muore a qualsiasi modifica del contenitore, l'Imprint sopravvive a un nuovo salvataggio o a uno screenshot - un indizio duraturo del tipo "questi pixel sono passati attraverso Lolly", di sola presenza, senza dati personali. È sicurezza tramite offuscamento, non una difesa irrobustita, e completa la credenziale invece di sostituirla. `imprint=0` per disattivarla.
+- **Durable Content Credentials (opt-in).** Un'esportazione raster può inoltre portare un marchio *durevole* invisibile che codifica un identificatore di soft-binding, così la credenziale C2PA può essere recuperata anche dopo che un caricamento sui social o un nuovo salvataggio ha rimosso i metadati del file - il caso in cui una credenziale normale andrebbe persa. È disponibile solo per il raster e richiede un passaggio di codifica neurale, quindi è disattivata di default (`durable=1` per attivarla). Oggi Lolly riconosce offline il proprio marchio durevole su `/verify`; il recupero da parte di strumenti di terze parti (per esempio Adobe) seguirà non appena la risoluzione di soft-binding a livello di settore sarà in atto.
+- **La verifica avviene sul dispositivo.** Trascina qualsiasi file su `/verify` (oppure `lolly validate <file>`) per un report offline su se è stato realmente creato con Lolly e non è cambiato da allora. La vista Verify sul web segnala anche i contenuti generati dall'IA, rileva il Lolly Imprint, verifica le firme **SEAL** (una firma a livello di byte con chiave nel DNS - l'unico contatto con la rete è una ricerca della chiave nel DNS, mai il file), esegue opzionalmente una scansione approfondita per filigrane a pixel di terze parti (con un download del modello sul dispositivo una tantum), e mostra i dati nascosti - tutto senza caricare il file. Vedi [Identità Content Credentials](/info/content-credentials-identity.html).
 
-> **Note sull'interoperabilità.** Oggi Lolly verifica offline le proprie credenziali e molte di terze parti. Due elementi di interoperabilità sono in corso: la lettura completa dei manifest di rivendicazione C2PA **v2** di altri produttori, e il WebM - che non ha ancora una mappatura C2PA standardizzata, quindi Lolly allega il manifest come parte Matroska (gli strumenti di terze parti verificano l'MP4 di Lolly senza configurazioni aggiuntive; il WebM seguirà non appena lo standard si consoliderà).
+> **Note sull'interoperabilità.** Oggi Lolly verifica offline le proprie credenziali e molte di terze parti, inclusa la lettura dei manifest di rivendicazione C2PA **v2** di altri produttori. Resta in corso un solo elemento di interoperabilità: il WebM - che non ha ancora una mappatura C2PA standardizzata, quindi Lolly allega il manifest come parte Matroska (gli strumenti di terze parti verificano l'MP4 di Lolly senza configurazioni aggiuntive; il WebM seguirà non appena lo standard si consoliderà).
 
 ## Crittografia e password
 
@@ -88,13 +84,13 @@ L'air-gap è una **modalità di distribuzione di prima classe**, non una modalit
 Alcune cose che vale la pena avere chiare prima di distribuirlo:
 
 - **Irrobustimento in corso.** La crittografia e i parser stanno attraversando l'irrobustimento su scala enterprise di SUSE (vedi sopra) - oggi solidi per progettazione; distribuiscili come difesa in profondità dove un contratto richiede una garanzia certificata.
-- **Gli hook degli strumenti *non* sono un sandbox di sicurezza.** L'`hooks.js` opzionale di uno strumento gira con il ponte dell'host iniettato, ma in una shell browser viene eseguito nel realm della pagina e *può* raggiungere `window`/`document`/`fetch`. Tratta il codice degli strumenti come tratteresti qualsiasi codice che esegui - revisionalo. È esattamente a questo che serve il modello di catalogo-come-revisione-Git; esegui solo strumenti che hai revisionato finché non sarà disponibile l'isolamento tramite Worker.
+- **Gli hook degli strumenti *non* sono un sandbox di sicurezza.** L'`hooks.js` opzionale di uno strumento gira con il ponte dell'host iniettato, ma in una shell browser viene eseguito nel realm della pagina e *può* raggiungere `window`/`document`/`fetch`. Tratta il codice degli strumenti come tratteresti qualsiasi codice che esegui - revisionalo. Questo è il motivo per cui un'organizzazione che gestisce un catalogo condiviso può controllarlo tramite la revisione Git; in ogni caso, esegui solo strumenti che hai revisionato finché non sarà disponibile l'isolamento tramite Worker.
 - **Le Content Credentials sono a prova di manomissione rilevabile.** Rilevano l'alterazione invece di impedirla - vedi le note sull'interoperabilità sopra.
 - **Due livelli di crittografia.** I blocchi *Standard* sono deterrenti rapidi e universali; *Forte* (AES-256) è protezione piena - scegli Forte per qualsiasi cosa sensibile, tenendo conto che richiede un lettore moderno.
 
 ## Dove andare adesso
 
-- **[Adozione e governance](/info/adoption-governance.html)** - personas, la metrica di deviazione, e la governance-come-dati in dettaglio.
-- **[Distribuzione](/info/deployment.html)** - distribuzione/servizio/ibrido, MDM, e self-hosting dei servizi.
-- **[Configurazione](/info/configuration.html)** - profili, brand pack, controllo delle capacità, e feature flag.
+- **[Adozione e governance](/info/adoption-governance.html)** - personas, la metrica di deviazione e la governance-come-dati in dettaglio.
+- **[Distribuzione](/info/deployment.html)** - distribuzione/servizio/ibrido, MDM e self-hosting dei servizi.
+- **[Configurazione](/info/configuration.html)** - profili, brand pack, controllo delle capacità e feature flag.
 - **[Informativa sulla privacy](/info/privacy.html)** - la dichiarazione formale "non raccoglie nulla, non carica nulla".

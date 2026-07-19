@@ -1,5 +1,7 @@
 # Mula Pantas
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
 Lolly menukar peraturan anda - warna, jenis taip, susun atur, logik - menjadi alat yang boleh digunakan oleh sesiapa sahaja untuk menghasilkan fail siap: imej, PDF, kad sosial, video, hanya dengan mengisi beberapa medan. Tiada apa-apa untuk dipelajari dan tiada apa-apa untuk dimuat naik: semuanya berjalan pada peranti anda, dalam talian atau luar talian.
 
 Inilah satu-satunya halaman yang perlu dibaca dahulu. Dua perkara akan membuatkan anda produktif: **jadikan Lolly milik anda** (arahkannya kepada jenama anda), dan **bawa masuk apa yang anda sudah ada** (fail reka bentuk dan token anda). Semua yang lain hanya sejauh satu pautan.
@@ -11,6 +13,8 @@ Inilah satu-satunya halaman yang perlu dibaca dahulu. Dua perkara akan membuatka
 Jenama anda dalam Lolly ialah dokumen **token reka bentuk** yang kecil - warna, fon, dan beberapa peraturan - yang menjadi rujukan setiap alat semasa merender. Tetapkannya sekali sahaja dan segala yang anda hasilkan akan selari dengan jenama secara automatik, bukan melalui semakan. Terdapat tiga cara untuk bermula; pilih yang sepadan dengan tempat jenama anda kini berada.
 
 ### Mula dari kosong (wizard)
+
+![The Brand Studio start screen - name, primary colour, and a derived palette](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&localize=1&filename=brand-studio)
 
 Kali pertama anda menjalankannya, anda akan dibawa ke skrin **Start** (`#/start`). Berikan ia satu nama dan satu warna utama, dan Lolly akan *menghasilkan* palet yang lengkap dan mudah diakses daripadanya - permukaan terang/gelap, teks, aksen - menggunakan matematik warna yang sama yang digunakan oleh enjin di semua tempat lain. Pilih satu fon, dan anda akan mempunyai jenama yang berfungsi dalam masa kurang seminit. Anda boleh memperhalusi mana-mana bahagiannya kemudian.
 
@@ -29,6 +33,8 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 `ingest:brand` menerima kesemua tiga bekas yang digunakan oleh Penpot / Tokens Studio untuk mengeksport dokumen yang sama - satu fail `tokens.json`, satu direktori (`$metadata.json` + fail bagi setiap set), atau satu arkib `project.penpot`. Dengan `--activate`, ia mendaftarkan jenama tersebut sebagai profil, menukar kepadanya, dan membina semula katalog. Lihat [Konfigurasi](/info/configuration.html) untuk melihat bagaimana pek jenama dan profil saling berkait.
 
 ### Laraskan dalam aplikasi
+
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand)
 
 Setelah jenama diaktifkan, editor **Your brand** di dashboard (`#/d`) merupakan editor langsung - tukar satu warna atau satu peranan dan setiap pratonton pada halaman akan dikemas kini semasa anda menaip. Jenama yang sama diringkaskan pada kad **Profile → Your brand**. Fon adalah sebenar: pilih daripada Google Fonts dan Lolly menyimpan fail tersebut **pada peranti anda** sebagai aset jenama, jadi tipografi anda kekal tersedia luar talian dan tiada apa-apa yang diambil semasa merender.
 

@@ -6,6 +6,10 @@ Een praktische gids voor het daadwerkelijk *gebruiken* van de app - een tool ope
 
 ## Een tool openen
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
+![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
+
 Het startscherm is de **galerij** - elke tool, gegroepeerd per categorie. Klik op een kaart om de tool te openen; als je er eerder aan hebt gewerkt, hervat een **Doorgaan**-knop je meest recente sessie. Gebruik het zoekvak om op naam te filteren.
 
 Elke tool is een gesplitste weergave: **bedieningselementen** aan de ene kant, een live **voorvertoning** (het canvas) aan de andere. Verander een instelling en de voorvertoning wordt direct bijgewerkt.
@@ -32,6 +36,8 @@ De voorvertoning toont altijd precies wat er geëxporteerd wordt.
 Een wijziging van de afmetingen zet de weergave altijd terug naar een nette passende weergave.
 
 ### Het vrije canvas (Layout Studio)
+
+![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 Tools met een vrij canvas voegen een werkoppervlak toe *rondom* het tekenvlak, zoals het plakbord van een ontwerper:
 
@@ -65,6 +71,8 @@ Klik op **Opslaan** om de huidige invoer op te slaan als sessie voor die tool. J
 
 ## Projecten
 
+![Projects - saved sessions organised into nestable folders](/t/url-shot?url=%2F%23%2Fp&width=1440&height=900&dpi=192&waitMs=1200&format=svg&localize=1&filename=projects)
+
 **Projecten** - open het via het tabblad **Projecten** naast **Tools**, of via **Profiel → Opslag → Organiseren in Projecten** - is een thuisbasis voor alles wat je hebt opgeslagen, en het werkt als een bestandsbeheerder:
 
 - **Geneste mappen.** Groepeer opgeslagen sessies in mappen, en mappen in mappen, zo diep als je wilt. Maak een map aan, hernoem hem, of sleep een tegel op een andere map om die te verplaatsen; een broodkruimelpad brengt je weer terug omhoog. Een altijd aanwezige map **Ongecategoriseerd** bevat alles wat nog niet is opgeborgen.
@@ -90,6 +98,8 @@ De foto-**filters** - Halftone, Scanline, Posterize, Duotone - tonen een **Live 
 Wanneer een tool je een afbeelding vanaf je apparaat laat toevoegen, wordt deze verkleind, ontdaan van EXIF/GPS-gegevens, en opgeslagen in je persoonlijke bibliotheek **Mijn afbeeldingen** (onder **Profiel → Opslag**). Hergebruik hem in elke tool. De bibliotheek heeft een maximum en is volledig lokaal - beheer of verwijder afbeeldingen daar.
 
 ## De Catalogus - je assetbibliotheek
+
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 De **Catalogus** (`#/c`, of de link **Catalogus** in het menu) verzamelt alles waar je tools uit kunnen putten - merklogo's, afbeeldingen, audio en beweging, gegroepeerd per soort - en het is ook waar je **eigen creatieve bestanden** leven. Geen server, geen adminconsole, geen pull request: alles staat op je apparaat.
 

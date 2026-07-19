@@ -6,6 +6,10 @@
 
 ## ツールを開く
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
+![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
+
 ホーム画面は**ギャラリー**です — すべてのツールがカテゴリー別にまとめられています。カードをクリックするとツールが開きます。以前に作業したことがある場合は、**Continue** ボタンで直近のセッションを再開できます。検索ボックスで名前による絞り込みができます。
 
 各ツールは分割ビューになっており、片側に**コントロール**、もう片側にライブの**プレビュー**（キャンバス）が表示されます。コントロールを変更すると、プレビューは即座に更新されます。
@@ -32,6 +36,8 @@
 サイズを変更すると、ビューは常にきれいなフィット表示に戻ります。
 
 ### フリーキャンバス（Layout Studio）
+
+![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 フリーキャンバスのツールは、アートボードの*周囲*に作業スペースを追加します。デザイナーの貼り込み台のようなイメージです。
 
@@ -65,6 +71,8 @@
 
 ## Projects
 
+![Projects - saved sessions organised into nestable folders](/t/url-shot?url=%2F%23%2Fp&width=1440&height=900&dpi=192&waitMs=1200&format=svg&localize=1&filename=projects)
+
 **Projects** — **Tools** の隣にある **Projects** タブから、または **Profile → Storage → Organise in Projects** から開けます — は、保存したすべてのもののホームであり、ファイルマネージャーのように動作します。
 
 - **入れ子にできるフォルダー。** 保存したセッションをフォルダーにグループ化でき、フォルダーの中にさらにフォルダーを、好きなだけ深く作れます。フォルダーの作成、名前の変更、タイルを別のフォルダーへドラッグしての移動が可能で、パンくずリストで上の階層へ戻れます。常に存在する **Uncategorised** フォルダーには、まだ整理されていないものが入ります。
@@ -90,6 +98,8 @@
 ツールでデバイスから画像を追加できる場合、その画像は縮小され、EXIF/GPS 情報が除去された上で、個人用の **My images** ライブラリ（**Profile → Storage** 内）に保存されます。どのツールでも再利用できます。ライブラリには上限があり、完全にローカルです — そこで画像を管理・削除できます。
 
 ## Catalogue — あなたのアセットライブラリ
+
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 **Catalogue**（`#/c`、またはメニューの **Catalogue** リンク）は、ツールが利用できるすべて——ブランドロゴ、画像、音声、モーションを種類ごとにまとめたもの——を集めた場所であり、あなた**自身のクリエイティブファイル**が置かれる場所でもあります。サーバーも、管理コンソールも、プルリクエストも不要です。すべてがお使いのデバイス上にあります。
 

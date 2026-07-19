@@ -1,12 +1,12 @@
 # Lolly voor operators
 
-### Een toekomstbestendige dataverliespreventie- en herkomststrategie met defence-in-depth - die toevallig een creatief productieplatform is
+### Een security- en intelligencestrategie met defence-in-depth - die toevallig een creatief productieplatform is
 
-Het organisatorische immuunsysteem dat zich om wat je al doet heen vouwt - zodat het routinematige creatieve werk dat je teams elke dag nodig hebben *binnen* je perimeter gebeurt in plaats van eruit te lekken.
+Het organisatorische zero-trust-immuunsysteem dat zich om wat je al doet heen vouwt - zodat het routinematige creatieve werk dat je teams elke dag nodig hebben *binnen* je perimeter gebeurt in plaats van eruit te lekken.
 
-**Wat het jou oplevert.** Jij bent degene die ja zei tegen iets dat zowel veilig *als* populair is. Je dicht een exfiltratielek en schrapt de wachtrij met ontwerpverzoeken in één beweging - die zeldzame securitywinst die je juist populairder maakt, niet minder. Geen telefoontje om 3 uur 's nachts omdat iemand merkbestanden naar een contractor mailde of klantgegevens in een willekeurige webtool plakte; minder SaaS-leveranciers, contracten en audits op je bordje; en een volledig git-spoor waar je naar kunt wijzen als iemand vraagt wie wat heeft goedgekeurd. Jij slaapt 's nachts.
+**Wat het jou oplevert.** Jij bent degene die ja zei tegen iets dat zowel veilig *als* populair is. Je dicht een exfiltratielek, verwerft capaciteit en schrapt een verzoekenwachtrij in één beweging - die zeldzame securitywinst die je juist populairder maakt, niet minder. Geen telefoontje om 3 uur 's nachts van juridische zaken omdat bestanden onder embargo of klantgegevens hun weg vonden naar een willekeurige webtool; minder SaaS-leveranciers, contracten en audits op je bordje; en een volledig reproduceerbaar audittrail waar je naar kunt wijzen als iemand ernaar vraagt. Je slaapt beter, en fleurt er een paar dagen mee op.
 
-Lolly verdient zijn plek als creatieve tool: het schrapt de ontwerpwachtrij en legt output van productiekwaliteit in ieders handen. Maar de reden dat het *veilig* is om het zo breed uit te delen, zit in de architectuur. Niets wordt geüpload, alles is reproduceerbaar, en elke export kan een cryptografisch record dragen van waar hij vandaan komt. Deze pagina is het security- en uitrolverhaal.
+Lolly is geen tweederangs creatieve tool: het legt output van productiekwaliteit in ieders handen, en de merkgestuurde creatie-ervaring is ongeëvenaard. De reden dat het *veilig* is om het breed uit te delen, zit in de architectuur: er wordt niets geüpload dat je er niet zelf in hebt gezet, elk resultaat is reproduceerbaar, en elke export kan meerdere lagen toonaangevende cryptografische records dragen. Ongeacht hoe een document op je bureau is beland, kun je de volledige herkomst zien, of het is gemanipuleerd, en of je het pixel-perfect kunt reproduceren.
 
 > **Waar het vandaag staat.** De securityeigenschappen van Lolly zijn sterk *by design*, en de cryptografie- en file-parsing-engines ondergaan momenteel SUSE's enterprise-grade infrastructuur-hardening. De zegels, on-device signing en encryptie hieronder zijn nu reëel en verdedigbaar, en rijpen richting onafhankelijke certificering - dus waar een contract om gecertificeerde assurance vraagt, zet je ze in als defence-in-depth terwijl dat proces wordt afgerond.
 
@@ -17,7 +17,7 @@ De gebruikelijke manier waarop routinematig creatief werk tot stand komt, is een
 Lolly draait dit om. Het werk dat die lekken *veroorzaakte* - de quote card, de gelokaliseerde banner, het eventbadge, de geredigeerde screenshot - gebeurt nu op een tool die op het eigen apparaat van de medewerker draait, tegen jouw merk aan, zonder server ertussen. Je hebt geen control bovenop een risicovolle workflow gezet; je hebt de risicovolle workflow vervangen door een workflow die om te beginnen geen exfiltratiepad heeft.
 
 - **Configuratie is van jou.** De engine en shells zijn open source (MPL-2.0). Leg je eigen auth, telemetrie of CA erover heen; host het zelf of niet; jij hebt volledige controle over features en kosten, git-tracked, niet vastgezet in een SaaS-database.
-- **Governance kán data zijn, geen dashboard.** Als je die controle wilt, beheer je de toolcatalogus als een Git-repository - pull-request-review wordt merkgoedkeuring, met een volledig audittrail en directe rollback van elk template dat je personeel kan aanraken. Het is een optie, geen verplichting: teams die gewoon dingen willen maken, schrijven hun eigen tools in Layout Studio en halen hun eigen bestanden in de catalogus, volledig in-app, en raken git nooit aan. Zie [Adoptie & Governance](/info/adoption-governance.html).
+- **Governance kan data zijn, geen dashboard.** Als je die controle wilt, beheer je de toolcatalogus als een Git-repository - pull-request-review wordt merkgoedkeuring, met een volledig audittrail en directe rollback van elk template dat je personeel kan aanraken. Het is een optie, geen verplichting: teams die gewoon dingen willen maken, schrijven hun eigen tools in Layout Studio en halen hun eigen bestanden in de catalogus, volledig in-app, en raken git nooit aan. Zie [Adoptie & Governance](/info/adoption-governance.html).
 - **Guardrails zijn structureel.** Merkbeperkingen zijn hard-coded in templates, niet gepubliceerd als richtlijnen die mensen kunnen negeren. De verkeerde output wordt niet afgeraden - hij is niet te representeren.
 
 ## Schrap de verzoekenwachtrij en laat content tegelijk groeien.
@@ -34,8 +34,7 @@ De volledige uitrolmodellen en beheerwalkthrough vind je in [Uitrol](/info/deplo
 
 ## Anti-exfiltratiehulpprogramma's
 
-Een categorie Lolly-tools bestaat *specifiek* om bestanden binnen de perimeter te houden. De privacyhulpprogramma's.
-
+Een categorie Lolly-tools - de privacyhulpprogramma's - bestaat *specifiek* om bestanden binnen de perimeter te houden.
 
 - **Verborgen data verwijderen**
  Verwijder locatie en alle verborgen identificerende informatie uit documenten en mediabestanden.
@@ -44,16 +43,9 @@ Een categorie Lolly-tools bestaat *specifiek* om bestanden binnen de perimeter t
 Anonimiseer, codeer, formatteer en bewerk gestructureerde en ongestructureerde tekst. 
 
 - **PDF comprimeren**
-Voorkom elke kans op een 'e-maillimietcrisis' waarbij tools van derden azen en data 
-
-- **PDF comprimeren**
-Voorkom elke kans op een 'e-maillimietcrisis' waarbij tools van derden azen en data buiten de boot valt. 
-
-
+Comprimeer een te grote PDF on-device, zodat niemand grijpt naar de "comprimeer mijn pdf"-website van een derde partij zodra een bestand te groot is om te e-mailen - precies waar data het raam uit glipt. 
 
 Dit zijn allemaal on-device transformaties: je bestand of data gaat erin, schone bytes komen eruit, en **er is geen server om naar te uploaden**. Ze zijn het bewuste tegenovergestelde van de typische tool "upload je bestand naar de website van een vreemde om het te reinigen" waar een goedbedoelende medewerker anders naar grijpt.
-
-
 
 ## Determinisme & reproduceerbaarheid
 
@@ -69,9 +61,11 @@ Exports kunnen **Content Credentials** dragen - een ondertekend [C2PA](https://c
 - **Standaard aan, on-device.** De ondertekeningssleutel wordt op het apparaat gegenereerd, is niet-extraheerbaar (zelfs Lolly kan hem niet uitlezen), en ondertekenen gebeurt lokaal - alleen optionele identiteits*inschrijving* raakt ooit het netwerk.
 - **Vertrouwensniveaus.** Een niet-ingeschreven export is structureel geldig maar anoniem ondertekend (`untrusted`). Schrijf een **geverifieerde identiteit** in (kortlevend certificaat van de Lolly CA, gekoppeld aan een e-mailadres) en verifiers die de Lolly-root pinnen, melden `trusted` + het e-mailadres van de ondertekenaar. Een trusted timestamp authority en groen van een externe validator (C2PA-conformiteit) staan op de roadmap. Elk niveau is expliciet, en een bestand claimt alleen ooit het vertrouwen dat het kan bewijzen.
 - **Levensduur van het credential** is de keuze van de operator/gebruiker op het moment van ondertekenen: 7 / 30 / 90 / 365 dagen, standaard 30.
-- **Verificatie gebeurt on-device.** Zet een willekeurig bestand op `/valid` (of `lolly validate <file>`) voor een offline rapport of het echt met Lolly is gemaakt en sindsdien ongewijzigd is gebleven. Zie [Content Credentials-identiteit](/info/content-credentials-identity.html).
+- **De Lolly Imprint.** Een tweede, aanvullend signaal dat **standaard aan** staat: een onzichtbaar pixelwatermerk dat wordt ingebakken in rasterexports (en de door Lolly gerenderde rasters binnen een PDF/PPTX, nooit de eigen ingesloten afbeelding van een gebruiker). Waar het credential sneuvelt bij elke wijziging van de container, overleeft de Imprint een herbewaring of screenshot - een duurzame hint van "deze pixels zijn door Lolly gegaan", alleen aanwezigheid, geen persoonsgegevens. Het is security-through-obscurity, geen geharde verdediging, en vult het credential aan in plaats van het te vervangen. `imprint=0` schakelt het uit.
+- **Durable Content Credentials (opt-in).** Een rasterexport kan daarnaast een onzichtbaar *duurzaam* merkteken dragen dat een soft-binding-identifier codeert, zodat het C2PA-credential kan worden hersteld zelfs nadat een upload naar social media of een herbewaring de metadata van het bestand heeft gestript - precies het geval waarin een normaal credential verloren zou gaan. Het werkt alleen op rasters en kost een neurale encodeerpas, dus staat het standaard uit (`durable=1` om het aan te zetten). Lolly herkent zijn eigen duurzame merkteken vandaag al offline op `/verify`; herstel door tools van derden (bijv. Adobe) volgt zodra de soft-binding-resolutie van de sector op zijn plek is.
+- **Verificatie gebeurt on-device.** Zet een willekeurig bestand op `/verify` (of `lolly validate <file>`) voor een offline rapport of het echt met Lolly is gemaakt en sindsdien ongewijzigd is gebleven. De web-Verify-weergave signaleert ook AI-gegenereerde content, detecteert de Lolly Imprint, verifieert **SEAL**-handtekeningen (een handtekening op byteniveau die in DNS is verankerd - het enige netwerkcontact is een DNS-sleutelopzoeking, nooit het bestand zelf), scant optioneel diepgaand op pixelwatermerken van derden (een eenmalige on-device modeldownload), en brengt verborgen data aan het licht - allemaal zonder het bestand te uploaden. Zie [Content Credentials-identiteit](/info/content-credentials-identity.html).
 
-> **Interoperabiliteitsnotities.** Lolly verifieert vandaag zijn eigen credentials en veel die van derden offline. Twee interop-items zijn in uitvoering: het volledig lezen van C2PA-claim-**v2**-manifesten van andere producenten, en WebM - waarvoor nog geen gestandaardiseerde C2PA-mapping bestaat, dus Lolly hangt het manifest eraan als een Matroska-onderdeel (tools van derden verifiëren de MP4 van Lolly out of the box; WebM volgt zodra de standaard is uitgekristalliseerd).
+> **Interoperabiliteitsnotities.** Lolly verifieert vandaag zijn eigen credentials en veel van die van derden offline, inclusief het lezen van C2PA-claim-**v2**-manifesten van andere producenten. Eén interop-item is nog in uitvoering: WebM - waarvoor nog geen gestandaardiseerde C2PA-mapping bestaat, dus Lolly hangt het manifest eraan als een Matroska-onderdeel (tools van derden verifiëren de MP4 van Lolly out of the box; WebM volgt zodra de standaard is uitgekristalliseerd).
 
 ## Encryptie & wachtwoordbeveiliging
 

@@ -1,12 +1,12 @@
 # Lolly pentru operatori
 
-### O strategie durabilă în timp, de apărare în profunzime, pentru prevenirea pierderii de date și pentru proveniență - care se întâmplă să fie și o platformă de producție creativă
+### O strategie de securitate și informații în profunzime - care se întâmplă să fie și o platformă de producție creativă
 
-Sistemul imunitar organizațional care se înfășoară în jurul a ceea ce faci deja - astfel încât munca creativă de rutină de care echipele tale au nevoie zilnic are loc *în interiorul* perimetrului tău, în loc să se scurgă în afara lui.
+Sistemul imunitar organizațional zero-trust care se înfășoară în jurul a ceea ce faci deja - astfel încât munca creativă de rutină de care echipele tale au nevoie zilnic are loc *în interiorul* perimetrului tău, în loc să se scurgă în afara lui.
 
-**Ce câștigi tu din asta.** Devii persoana care a spus da la ceva deopotrivă sigur *și* popular. Închizi o breșă de exfiltrare și ștergi coada de cereri de design dintr-o singură mișcare - victoria rară de securitate care te face mai plăcut, nu mai puțin. Niciun apel la 3 dimineața pentru că cineva a trimis prin email fișiere de brand unui contractor extern sau a lipit date de clienți într-un instrument web oarecare; mai puțini furnizori SaaS, contracte și audituri pe masa ta; și o urmă completă în git la care poți arăta atunci când cineva întreabă cine a aprobat ce. Dormi liniștit noaptea.
+**Ce câștigi tu din asta.** Ajungi să fii persoana care a spus da la ceva deopotrivă sigur *și* popular. Închizi o breșă de exfiltrare, câștigi o capacitate nouă și ștergi o coadă de cereri, totul dintr-o singură mișcare - victoria rară de securitate care te face mai plăcut, nu mai puțin. Niciun apel la 3 dimineața de la departamentul juridic pentru că fișiere sub embargo sau date de clienți și-au găsit drumul într-un instrument web oarecare; mai puțini furnizori SaaS, contracte și audituri pe masa ta; și o urmă de audit complet reproductibilă la care poți arăta atunci când cineva întreabă. Dormi mai bine și, pe deasupra, mai înveselești câteva zile.
 
-Lolly își câștigă locul ca instrument creativ: șterge coada de design și pune în mâinile tuturor rezultate de calitate de producție. Dar motivul pentru care e *sigur* să fie distribuit atât de larg ține de arhitectură. Nimic nu se încarcă, totul e reproductibil, iar fiecare export poate purta o înregistrare criptografică a originii sale. Pagina asta e povestea securității și a implementării.
+Lolly nu este un instrument creativ de mâna a doua: pune în mâinile tuturor rezultate de calitate de producție, iar experiența de creare ghidată de brand nu are egal. Motivul pentru care e *sigur* să fie distribuit atât de larg ține de arhitectură: nu se încarcă nimic ce nu ai pus tu acolo, fiecare rezultat este reproductibil, iar fiecare export poate purta mai multe straturi de înregistrări criptografice de vârf din industrie. Indiferent cum a ajuns un document pe biroul tău, îi poți vedea proveniența completă, dacă a fost modificat și dacă îl poți recrea identic, pixel cu pixel.
 
 > **Unde se află astăzi.** Proprietățile de securitate ale Lolly sunt puternice prin design, iar motoarele sale de criptografie și de parsare a fișierelor trec prin hardening-ul de infrastructură de nivel enterprise al SUSE. Sigiliile, semnarea pe dispozitiv și criptarea de mai jos sunt reale și pot fi susținute acum, maturizându-se spre certificare independentă - așa că acolo unde un contract impune o asigurare certificată, implementează-le drept apărare în profunzime cât timp acel proces se finalizează.
 
@@ -34,20 +34,17 @@ Modelele complete de implementare și ghidul de administrare se află în [Deplo
 
 ## Utilitare anti-exfiltrare
 
-O categorie de instrumente Lolly există *special* pentru a păstra fișierele în interiorul perimetrului. Utilitarele de confidențialitate.
+O categorie de instrumente Lolly - utilitarele de confidențialitate - există *special* pentru a păstra fișierele în interiorul perimetrului.
 
 
 - **Elimină datele ascunse**
-Elimină locația și toate informațiile ascunse de identificare din documente și fișiere media.
+ Elimină locația și toate informațiile ascunse de identificare din documente și fișiere media.
 
-- **Asistent de text**
-Anonimizează, codifică, formatează și manipulează text structurat și nestructurat.
-
-- **Comprimă PDF**
-Previne orice risc de „criză a limitei de e-mail” în care instrumentele web terțe pândesc și datele
+- **Asistent de text**  
+Anonimizează, codifică, formatează și manipulează text structurat și nestructurat. 
 
 - **Comprimă PDF**
-Previne orice risc de „criză a limitei de e-mail” în care instrumentele web terțe pândesc și datele ies pe fereastră.
+Reduce dimensiunea unui PDF supradimensionat, pe dispozitiv, ca nimeni să nu mai apeleze la un site terț „comprimă-mi PDF-ul” în clipa în care un fișier e prea mare pentru a fi trimis prin email - exact acolo pe unde ies datele pe fereastră. 
 
 Toate acestea sunt transformări pe dispozitiv: fișierul sau datele tale intră, ies octeți curați, iar **nu există niciun server pe care să încarci ceva**. Sunt opusul deliberat al instrumentului tipic „încarcă-ți fișierul pe site-ul unui străin ca să-l cureți”, la care ar apela altfel un angajat bine intenționat.
 
@@ -67,9 +64,11 @@ Exporturile pot purta **Content Credentials** - un manifest [C2PA](https://c2pa.
 - **Activ implicit, pe dispozitiv.** Cheia de semnare este generată pe dispozitiv, nu poate fi extrasă (nici măcar Lolly nu o poate citi), iar semnarea are loc local - doar *înrolarea* opțională de identitate atinge vreodată rețeaua.
 - **Niveluri de încredere.** Un export neînrolat este structural valid, dar semnat anonim (`untrusted`). Înrolează o **identitate verificată** (certificat de scurtă durată de la CA-ul Lolly, legat de un email) și verificatorii care fixează (pin) rădăcina Lolly raportează `trusted` + emailul semnatarului. O autoritate de marcare temporală de încredere și un verde de la un validator terț (conformitate C2PA) sunt pe roadmap. Fiecare nivel este explicit, iar un fișier revendică întotdeauna doar încrederea pe care o poate dovedi.
 - **Durata de viață a credențialului** este decizia operatorului/utilizatorului la momentul semnării: 7 / 30 / 90 / 365 de zile, implicit 30.
-- **Verificarea are loc pe dispozitiv.** Trage orice fișier pe `/valid` (sau `lolly validate <file>`) pentru un raport offline despre dacă a fost cu adevărat făcut cu Lolly și neschimbat de atunci. Vezi [Identitate Content Credentials](/info/content-credentials-identity.html).
+- **The Lolly Imprint.** Un al doilea semnal, complementar, care este **activ implicit**: un filigran invizibil de pixeli, integrat în exporturile raster (și în rasterele randate de Lolly dintr-un PDF/PPTX, niciodată în imaginea proprie încorporată de utilizator). Acolo unde credențialul moare la orice modificare a containerului, Imprint-ul supraviețuiește unei resalvări sau unui screenshot - un indiciu durabil, de tipul „acești pixeli au trecut prin Lolly”, care indică doar prezența, fără date personale. Este securitate prin obscuritate, nu o apărare robustă, și completează credențialul în loc să îl înlocuiască. `imprint=0` dezactivează opțiunea.
+- **Durable Content Credentials (opțional).** Un export raster poate purta, suplimentar, o marcă invizibilă *durabilă* care codifică un identificator de soft-binding, astfel încât credențialul C2PA poate fi recuperat chiar și după ce o încărcare pe o rețea socială sau o resalvare a eliminat metadatele fișierului - cazul în care un credențial obișnuit s-ar pierde. Este disponibilă doar pentru raster și presupune o etapă de codare neuronală, așa că este dezactivată implicit (`durable=1` pentru a o activa). Lolly își recunoaște astăzi propria marcă durabilă offline pe `/verify`; recuperarea prin instrumente terțe (de exemplu Adobe) va urma odată ce rezoluția din industrie pentru soft-binding va fi pusă în aplicare.
+- **Verificarea are loc pe dispozitiv.** Trage orice fișier pe `/verify` (sau `lolly validate <file>`) pentru un raport offline despre dacă a fost cu adevărat făcut cu Lolly și neschimbat de atunci. Vizualizarea web Verify semnalează și conținutul generat de AI, detectează Lolly Imprint-ul, verifică semnăturile **SEAL** (o semnătură la nivel de octet, cu cheia păstrată în DNS - singurul contact cu rețeaua este o căutare de cheie DNS, niciodată fișierul), scanează opțional în profunzime pentru filigrane de pixeli terțe (o descărcare unică, pe dispozitiv, a unui model) și scoate la iveală datele ascunse - toate acestea fără a încărca fișierul. Vezi [Identitate Content Credentials](/info/content-credentials-identity.html).
 
-> **Note de interoperabilitate.** Lolly verifică propriile credențiale și multe dintre cele terțe offline chiar acum. Două aspecte de interoperabilitate sunt în lucru: citirea completă a manifestelor C2PA claim **v2** de la alți producători și WebM - care nu are încă o mapare C2PA standardizată, așa că Lolly atașează manifestul ca parte Matroska (instrumentele terțe verifică fișierele MP4 ale Lolly din start; WebM urmează odată ce standardul se stabilizează).
+> **Note de interoperabilitate.** Lolly verifică astăzi propriile credențiale și multe dintre cele terțe, offline, inclusiv citirea manifestelor C2PA claim **v2** de la alți producători. Mai rămâne un singur aspect de interoperabilitate în lucru: WebM - care nu are încă o mapare C2PA standardizată, așa că Lolly atașează manifestul ca parte Matroska (instrumentele terțe verifică fișierele MP4 ale Lolly din start; WebM urmează odată ce standardul se stabilizează).
 
 ## Criptare și parolare
 

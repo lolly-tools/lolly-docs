@@ -6,6 +6,10 @@ Una guía práctica para *usar* de verdad la aplicación - abrir una herramienta
 
 ## Abrir una herramienta
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
+![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
+
 La pantalla de inicio es la **galería** - todas las herramientas, agrupadas por categoría. Haz clic en una tarjeta para abrir la herramienta; si ya has trabajado en ella antes, un botón **Continuar** retoma tu sesión más reciente. Usa el cuadro de búsqueda para filtrar por nombre.
 
 Cada herramienta es una vista dividida: **controles** a un lado, una **vista previa** en vivo (el lienzo) al otro. Cambia cualquier control y la vista previa se actualiza al instante.
@@ -32,6 +36,8 @@ La vista previa siempre muestra exactamente lo que se exportará.
 Un cambio de dimensión siempre hace que la vista vuelva a un ajuste limpio.
 
 ### El lienzo libre (Layout Studio)
+
+![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 Las herramientas de lienzo libre añaden una superficie de trabajo *alrededor* del área de diseño, como la mesa de montaje de un diseñador:
 
@@ -65,6 +71,8 @@ Haz clic en **Guardar** para almacenar las entradas actuales como una sesión de
 
 ## Proyectos
 
+![Projects - saved sessions organised into nestable folders](/t/url-shot?url=%2F%23%2Fp&width=1440&height=900&dpi=192&waitMs=1200&format=svg&localize=1&filename=projects)
+
 **Proyectos** - ábrelo desde la pestaña **Proyectos** junto a **Herramientas**, o desde **Perfil → Almacenamiento → Organizar en Proyectos** - es un hogar para todo lo que has guardado, y funciona como un gestor de archivos:
 
 - **Carpetas anidables.** Agrupa las sesiones guardadas en carpetas, y carpetas dentro de carpetas, tan profundo como quieras. Crea una carpeta, cámbiale el nombre, o arrastra una miniatura sobre otra carpeta para moverla; una ruta de navegación (breadcrumb) te lleva de vuelta hacia arriba. Una carpeta **Sin clasificar**, siempre presente, guarda todo lo que aún no se ha archivado.
@@ -90,6 +98,8 @@ Los **Filtros** de foto - Halftone, Scanline, Posterize, Duotone - muestran un b
 Cuando una herramienta te permite añadir una imagen desde tu dispositivo, esta se reduce de tamaño, se le eliminan los datos EXIF/GPS, y se guarda en tu biblioteca personal **Mis imágenes** (en **Perfil → Almacenamiento**). Reutilízala en cualquier herramienta. La biblioteca tiene un límite y es totalmente local - gestiona o elimina imágenes ahí.
 
 ## El Catálogo - tu biblioteca de recursos
+
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 El **Catálogo** (`#/c`, o el enlace **Catálogo** en el menú) reúne todo lo que tus herramientas pueden aprovechar - logos de marca, imágenes, audio y animación, agrupados por tipo - y es también donde viven tus **propios archivos creativos**. Sin servidor, sin consola de administración, sin pull request: todo está en tu dispositivo.
 

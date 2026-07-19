@@ -1,5 +1,7 @@
 # Bắt đầu nhanh
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
 Lolly biến các quy tắc của bạn - màu sắc, kiểu chữ, bố cục, logic - thành các công cụ mà bất kỳ ai cũng có thể dùng để tạo ra tệp hoàn chỉnh: hình ảnh, PDF, thẻ mạng xã hội, video, chỉ bằng cách điền vào một vài trường. Không có gì để học và không cần tải lên gì cả: mọi thứ đều chạy trên thiết bị của bạn, dù online hay offline.
 
 Đây là trang đầu tiên bạn nên đọc. Có hai việc giúp bạn bắt tay vào làm ngay: **biến Lolly thành của riêng bạn** (gắn nó với thương hiệu của bạn), và **mang vào những gì bạn đã có sẵn** (các tệp thiết kế và token của bạn). Mọi thứ khác chỉ cách một đường liên kết.
@@ -11,6 +13,8 @@ Lolly biến các quy tắc của bạn - màu sắc, kiểu chữ, bố cục, 
 Thương hiệu của bạn trong Lolly là một tài liệu **token thiết kế** nhỏ gọn - màu sắc, phông chữ, và một vài quy tắc - mà mọi công cụ đều render dựa theo. Thiết lập một lần và mọi thứ bạn tạo ra đều đúng thương hiệu ngay từ gốc, chứ không phải nhờ soát lại. Có ba cách để bắt đầu; hãy chọn cách phù hợp với nơi thương hiệu của bạn đang tồn tại.
 
 ### Bắt đầu từ đầu (trình hướng dẫn)
+
+![The Brand Studio start screen - name, primary colour, and a derived palette](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&localize=1&filename=brand-studio)
 
 Lần chạy đầu tiên sẽ đưa bạn tới màn hình **Start** (`#/start`). Đặt cho nó một cái tên và một màu chủ đạo, Lolly sẽ *suy ra* một bảng màu hoàn chỉnh, dễ tiếp cận từ đó - các bề mặt sáng/tối, văn bản, điểm nhấn - bằng chính phép toán màu mà engine dùng ở mọi nơi khác. Chọn một phông chữ, và bạn đã có một thương hiệu hoạt động được trong chưa đầy một phút. Bạn có thể tinh chỉnh bất kỳ phần nào sau đó.
 
@@ -29,6 +33,8 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 `ingest:brand` chấp nhận cả ba dạng chứa mà Penpot / Tokens Studio dùng để xuất cùng một tài liệu - một tệp `tokens.json` duy nhất, một thư mục (`$metadata.json` + các tệp theo từng set), hoặc một gói `project.penpot`. Với `--activate`, nó đăng ký thương hiệu này thành một profile, chuyển sang dùng nó, và dựng lại danh mục. Xem [Cấu hình](/info/configuration.html) để biết gói thương hiệu và profile khớp với nhau ra sao.
 
 ### Tinh chỉnh trong ứng dụng
+
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand)
 
 Khi một thương hiệu đang hoạt động, trình chỉnh sửa **Your brand** trên dashboard (`#/d`) là một trình chỉnh sửa trực tiếp - đổi một màu hay một vai trò là mọi bản xem trước trên trang cập nhật ngay khi bạn gõ. Cùng thương hiệu đó được tóm tắt trên thẻ **Profile → Your brand**. Phông chữ là thật: chọn từ Google Fonts và Lolly lưu tệp đó **ngay trên thiết bị của bạn** như một tài sản thương hiệu, nên kiểu chữ của bạn vẫn dùng được khi offline và không có gì được tải về khi render.
 

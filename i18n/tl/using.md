@@ -6,6 +6,10 @@ Isang praktikal na gabay sa aktwal na *paggamit* ng app - pagbukas ng tool, pagg
 
 ## Pagbukas ng isang tool
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
+![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
+
 Ang home screen ay ang **gallery** - lahat ng tool, naka-grupo ayon sa kategorya. I-click ang isang card para buksan ang tool; kung nagtrabaho ka na dito dati, ire-resume ng **Continue** button ang pinakabagong session mo. Gamitin ang search box para mag-filter ayon sa pangalan.
 
 Ang bawat tool ay isang split view: **controls** sa isang side, at live na **preview** (ang canvas) sa kabila. Baguhin ang anumang control at agad na nag-a-update ang preview.
@@ -32,6 +36,8 @@ Palaging ipinapakita ng preview kung ano mismo ang mae-export.
 Ang pagbabago sa dimension ay laging nagbabalik sa view sa isang malinis na fit.
 
 ### Ang free canvas (Layout Studio)
+
+![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 Nagdaragdag ang mga free-canvas na tool ng working surface *sa paligid* ng artboard, tulad ng pasteboard ng isang designer:
 
@@ -65,6 +71,8 @@ I-click ang **Save** para i-store ang kasalukuyang mga input bilang isang sessio
 
 ## Projects
 
+![Projects - saved sessions organised into nestable folders](/t/url-shot?url=%2F%23%2Fp&width=1440&height=900&dpi=192&waitMs=1200&format=svg&localize=1&filename=projects)
+
 Ang **Projects** - buksan ito mula sa **Projects** tab sa tabi ng **Tools**, o mula sa **Profile → Storage → Organise in Projects** - ay isang tahanan para sa lahat ng na-save mo, at gumagana ito tulad ng isang file manager:
 
 - **Mga folder na naka-nest.** I-grupo ang mga naka-save na session sa mga folder, at mga folder sa loob ng mga folder, kasing lalim ng gusto mo. Gumawa ng folder, palitan ang pangalan nito, o i-drag ang isang tile papunta sa ibang folder para ilipat ito; may breadcrumb na magbabalik sa iyo pataas. Palaging naroroon ang **Uncategorised** folder na naghahawak ng kahit ano na hindi pa na-file.
@@ -90,6 +98,8 @@ Ipinapakita ng mga photo **Filters** - Halftone, Scanline, Posterize, Duotone - 
 Kapag pinapayagan ka ng isang tool na magdagdag ng imahe mula sa device mo, ito ay dini-downscale, tinatanggalan ng EXIF/GPS, at sina-save sa personal mong **My images** library (sa ilalim ng **Profile → Storage**). Muling gamitin ito sa anumang tool. May cap ang library at ganap itong local - mamahala o magtanggal ng mga imahe doon.
 
 ## Ang Catalogue - ang iyong asset library
+
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 Tinitipon ng **Catalogue** (`#/c`, o ang **Catalogue** link sa menu) ang lahat ng maaaring gamitin ng iyong mga tool - mga brand logo, imahe, audio, at motion, naka-grupo ayon sa uri - at dito rin nabubuhay ang iyong **sariling mga creative file**. Walang server, walang admin console, walang pull request: nasa device mo lang ang lahat.
 

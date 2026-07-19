@@ -4,6 +4,18 @@
 
 ## 書き出しの仕組み
 
+![The export panel - format, size and the Copy / Download / Save / Share actions](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=png&filename=export-panel)
+
+![The export panel - format, size and the Copy / Download / Save / Share actions](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=png&filename=export-panel)
+
+![The export panel - format, size and the Copy / Download / Save / Share actions](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=png&filename=export-panel)
+
+![The export panel - format, size and the Copy / Download / Save / Share actions](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=png&filename=export-panel)
+
+![The export panel - format, size and the Copy / Download / Save / Share actions](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=png&filename=export-panel)
+
+![The export panel - format, size and the Copy / Download / Save / Share actions](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=png&filename=export-panel)
+
 プレビューが*そのまま*ファイルになります。書き出すと、ホストがそのキャンバスを選んだフォーマットへレンダリングし、ダウンロードとして渡してくれます（またはクリップボードに置きます）。ツールが提供するのは、その作者が宣言したフォーマットだけであり、ピッカーは、お使いのブラウザが生成できないフォーマットを非表示にします（[動画](#video) を参照）。
 
 ファイルを生成する経路は3つあります。ほとんどのツールは、選んだフォーマットへ**キャンバスをレンダリング**します。テキストやデータ形式（HTML、MD、TXT、JSON、CSV、ICS、VCF）は、画像からラスタライズされるのではなく、代わりに**ツールのコンテンツから生成**されます。そしてプライバシーユーティリティ（例: *Strip Hidden Data*）は第3の経路を使います — *あなた自身*が選んだファイルがデバイス上でバイト単位で変換され、そのまま返されます — キャンバスも、透かしも、来歴（プロベナンス）メタデータの追加もありません。すでにあなた自身のファイルだからです。

@@ -1,5 +1,7 @@
 # Mulai Cepat
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
 Lolly mengubah aturan Anda - warna, tipografi, tata letak, logika - menjadi tool yang bisa dipakai siapa saja untuk membuat berkas jadi: gambar, PDF, kartu sosial, video, cukup dengan mengisi beberapa kolom. Tidak ada yang perlu dipelajari dan tidak ada yang perlu diunggah: semuanya berjalan di perangkat Anda, online maupun offline.
 
 Ini halaman pertama yang perlu Anda baca. Dua hal membuat Anda produktif: **jadikan Lolly milik Anda** dan **bawa masuk apa yang sudah Anda punya** (berkas desain dan token Anda). Selebihnya hanya berjarak satu tautan.
@@ -11,6 +13,8 @@ Ini halaman pertama yang perlu Anda baca. Dua hal membuat Anda produktif: **jadi
 Brand Anda di Lolly adalah sebuah dokumen **design-tokens** kecil - warna, font, dan beberapa aturan - yang menjadi acuan render setiap tool. Atur sekali dan semua yang Anda buat sudah sesuai brand sejak dirancang, bukan lewat peninjauan. Ada tiga cara masuk; pilih yang cocok dengan tempat brand Anda saat ini berada.
 
 ### Mulai dari nol (pembuat Design System)
+
+![The Brand Studio start screen - name, primary colour, and a derived palette](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&localize=1&filename=brand-studio)
 
 Saat pertama dijalankan, Anda dibawa ke layar **Start** (`#/start`) - [**Brand Studio**](/info/brand-studio.html). Beri nama dan sebuah warna utama, lalu Lolly *menurunkan* palet yang lengkap dan aksesibel darinya - permukaan terang/gelap, teks, aksen - memakai matematika warna yang sama yang dipakai engine di mana pun. Pilih sebuah font, dan Anda punya brand yang berfungsi dalam waktu kurang dari satu menit. Dari sana, lima tab studio (Logo, Warna, Tipografi, Token, Katalog) memungkinkan Anda mengembangkannya sejauh yang Anda mau - perhalus bagian mana pun nanti, kapan pun Anda kembali. Anda selalu bisa membuka ini lagi dari dasbor (asalkan Anda tidak memakai versi Lolly dengan brand terkunci)
 
@@ -29,6 +33,8 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 `ingest:brand` menerima ketiga wadah yang dipakai Penpot / Tokens Studio untuk mengekspor dokumen yang sama - satu berkas `tokens.json`, sebuah direktori (`$metadata.json` + berkas per-set), atau arsip `project.penpot`. Dengan `--activate`, ia mendaftarkan brand sebagai sebuah profil, beralih ke sana, dan membangun ulang katalog. Lihat [Konfigurasi](/info/configuration.html) untuk memahami bagaimana paket brand dan profil bekerja bersama.
 
 ### Sesuaikan di dalam aplikasi
+
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand)
 
 Setelah sebuah brand aktif, teruslah membentuknya di [**Brand Studio**](/info/brand-studio.html) (`#/start`) - ubah sebuah warna atau peran dan setiap pratinjau di seluruh aplikasi ikut diperbarui saat Anda mengetik. (Tab **Design system** di dasbor pada `#/d` *menampilkan* brand secara hanya-baca; Studio adalah tempat Anda menyuntingnya.) Brand yang sama diringkas pada kartu **Profil → Brand Anda**. Font-nya nyata: pilih dari Google Fonts dan Lolly menyimpan berkasnya **di perangkat Anda** sebagai aset brand, sehingga tipografi Anda ikut offline dan tidak ada yang diambil saat render.
 

@@ -1,5 +1,7 @@
 # Ghid de pornire rapidă
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
 Lolly îți transformă regulile - culori, tipografie, layout-uri, logică - în instrumente pe care oricine le poate folosi pentru a crea fișiere finite: imagini, PDF-uri, carduri pentru social media, video, doar completând câteva câmpuri. Nu ai nimic de învățat și nimic de încărcat: totul rulează pe dispozitivul tău, online sau offline.
 
 Aceasta este pagina pe care s-o citești prima. Două lucruri te fac productiv: **fă-l al tău** (orientează-l spre brandul tău) și **adu ce ai deja** (fișierele tale de design și tokenii). Orice altceva e la un click distanță.
@@ -11,6 +13,8 @@ Aceasta este pagina pe care s-o citești prima. Două lucruri te fac productiv: 
 Brandul tău în Lolly este un mic document de **design tokens** - culori, fonturi și câteva reguli - pe baza căruia randează fiecare instrument. Setează-l o dată și tot ce creezi este pe brand prin construcție, nu prin review. Există trei căi de intrare; alege-o pe cea care se potrivește cu locul unde brandul tău trăiește deja.
 
 ### Începe de la zero (asistentul)
+
+![The Brand Studio start screen - name, primary colour, and a derived palette](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&localize=1&filename=brand-studio)
 
 Prima rulare te duce pe ecranul **Start** (`#/start`). Dă-i un nume și o culoare primară, iar Lolly *derivă* o paletă completă, accesibilă, din ea - suprafețe deschise/închise, text, accente - folosind aceeași matematică a culorii pe care motorul o folosește peste tot. Alege un font și ai un brand funcțional în mai puțin de un minut. Poți rafina orice mai târziu.
 
@@ -29,6 +33,8 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 `ingest:brand` acceptă toate cele trei forme de container în care Penpot / Tokens Studio exportă același document - un singur `tokens.json`, un director (`$metadata.json` + fișiere per set) sau o arhivă `project.penpot`. Cu `--activate` înregistrează brandul ca profil, comută la el și reconstruiește catalogul. Vezi [Configurare](/info/configuration.html) pentru modul în care pachetele de brand și profilurile se îmbină.
 
 ### Ajustează-l în aplicație
+
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand)
 
 Odată ce un brand e activ, editorul **Brandul tău** din dashboard (`#/d`) este un editor live - schimbi o culoare sau un rol și fiecare previzualizare de pe pagină se actualizează pe măsură ce tastezi. Același brand este rezumat pe cardul **Profil → Brandul tău**. Fonturile sunt reale: alegi din Google Fonts, iar Lolly stochează fișierul **pe dispozitivul tău** ca resursă de brand, astfel încât tipografia ta călătorește offline și nimic nu este preluat la randare.
 

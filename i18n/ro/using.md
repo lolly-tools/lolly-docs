@@ -6,6 +6,10 @@ Un ghid practic despre cum să *folosești* efectiv aplicația - deschiderea unu
 
 ## Deschiderea unui instrument
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
+![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
+
 Ecranul de start este **galeria** - fiecare instrument, grupat pe categorii. Dă click pe un card pentru a deschide instrumentul; dacă ai mai lucrat la el, un buton **Continue** reia cea mai recentă sesiune. Folosește câmpul de căutare pentru a filtra după nume.
 
 Fiecare instrument este o vedere împărțită: **controale** pe o parte, o **previzualizare** live (canvas-ul) pe cealaltă. Schimbă orice control și previzualizarea se actualizează instant.
@@ -32,6 +36,8 @@ Previzualizarea arată întotdeauna exact ce se va exporta.
 O schimbare de dimensiune readuce întotdeauna vederea la o încadrare curată.
 
 ### Canvas-ul liber (Layout Studio)
+
+![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 Instrumentele cu canvas liber adaugă o suprafață de lucru *în jurul* planșei, ca o masă de lucru de designer:
 
@@ -65,6 +71,8 @@ Dă click pe **Save** pentru a stoca inputurile curente ca sesiune pentru acel i
 
 ## Projects
 
+![Projects - saved sessions organised into nestable folders](/t/url-shot?url=%2F%23%2Fp&width=1440&height=900&dpi=192&waitMs=1200&format=svg&localize=1&filename=projects)
+
 **Projects** - deschide-l din tab-ul **Projects** de lângă **Tools**, sau din **Profile → Storage → Organise in Projects** - este o casă pentru tot ce ai salvat și funcționează ca un manager de fișiere:
 
 - **Foldere care se imbrică.** Grupează sesiunile salvate în foldere, și foldere în interiorul folderelor, cât de adânc vrei. Creează un folder, redenumește-l, sau trage o dală peste alt folder pentru a o muta; un breadcrumb te duce înapoi în sus. Un folder mereu prezent **Uncategorised** conține tot ce nu a fost încă clasat.
@@ -90,6 +98,8 @@ Un design mare ar produce o URL lungă, deci dialogul oferă și un **Shortest l
 Când un instrument îți permite să adaugi o imagine de pe dispozitiv, aceasta este redusă ca dimensiune, curățată de EXIF/GPS și salvată în biblioteca ta personală **My images** (sub **Profile → Storage**). Reutilizeaz-o în orice instrument. Biblioteca are o limită și este în întregime locală - gestionează sau șterge imagini acolo.
 
 ## Catalogul - biblioteca ta de resurse
+
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 **Catalogul** (`#/c`, sau link-ul **Catalogue** din meniu) adună tot ce pot folosi instrumentele tale - logo-uri de brand, imagini, audio și animație, grupate pe tipuri - și este locul unde trăiesc și **propriile tale fișiere creative**. Fără server, fără consolă de administrare, fără pull request: totul e pe dispozitivul tău.
 

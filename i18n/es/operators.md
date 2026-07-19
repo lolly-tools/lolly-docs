@@ -1,12 +1,12 @@
 # Lolly para Operadores
 
-### Una estrategia de prevención de pérdida de datos y procedencia, en profundidad y a prueba de futuro - que resulta ser una plataforma de producción creativa
+### Una estrategia de seguridad e inteligencia de defensa en profundidad - que resulta ser una plataforma de producción creativa
 
-El sistema inmunológico organizacional que envuelve lo que ya haces - para que el trabajo creativo rutinario que tus equipos necesitan cada día ocurra *dentro* de tu perímetro en lugar de filtrarse fuera de él.
+El sistema inmunológico organizacional de confianza cero que envuelve lo que ya haces - para que el trabajo creativo rutinario que tus equipos necesitan cada día ocurra *dentro* de tu perímetro en lugar de filtrarse fuera de él.
 
-**Qué ganas tú.** Te conviertes en la persona que dijo que sí a algo seguro *y* popular a la vez. Cierras un agujero de exfiltración y eliminas la cola de solicitudes de diseño en un solo movimiento - la rara victoria de seguridad que te hace más querido, no menos. Sin llamadas a las 3 de la madrugada porque alguien envió por correo archivos de marca a un contratista o pegó datos de clientes en una herramienta web cualquiera; menos proveedores SaaS, contratos y auditorías en tu plato; y un registro completo en git al que puedes señalar cuando alguien pregunte quién aprobó qué. Duermes tranquilo por las noches.
+**Qué ganas tú.** Te conviertes en la persona que dijo que sí a algo seguro *y* popular a la vez. Cierras un agujero de exfiltración, ganas capacidad y eliminas una cola de solicitudes en un solo movimiento - la rara victoria de seguridad que te hace más querido, no menos. Sin llamadas a las 3 de la madrugada de parte de los abogados porque archivos con embargo o datos de clientes acabaron en una herramienta web cualquiera; menos proveedores SaaS, contratos y auditorías en tu plato; y un registro de auditoría totalmente reproducible al que puedes señalar cuando alguien pregunte. Duermes mejor, y de paso alegras algún que otro día.
 
-Lolly se gana su lugar como herramienta creativa: elimina la cola de diseño y pone resultados de calidad de producción en las manos de todos. Pero la razón por la que es *seguro* repartirlo tan ampliamente es arquitectónica. Nada se sube a ningún servidor, todo es reproducible, y cada exportación puede llevar un registro criptográfico de su origen. Esta página cuenta la historia de seguridad y despliegue.
+Lolly no es una herramienta creativa de segunda: pone resultados de calidad de producción en las manos de todos, y la experiencia de creación guiada por la marca no tiene rival. La razón por la que es *seguro* repartirlo tan ampliamente es arquitectónica: no se sube nada que tú no hayas puesto ahí, cada resultado es reproducible, y cada exportación puede llevar múltiples capas de registros criptográficos líderes del sector. No importa cómo llegó un documento hasta tu mesa: puedes ver su procedencia completa, si ha sido manipulado, y si puedes recrearlo pixel a pixel.
 
 > **Dónde está hoy.** Las propiedades de seguridad de Lolly son sólidas por diseño, y sus motores de criptografía y análisis de archivos están pasando por el fortalecimiento de infraestructura de nivel empresarial de SUSE. Los sellos, la firma en el dispositivo y el cifrado descritos abajo son reales y defendibles ahora, y maduran hacia una certificación independiente - así que allí donde un contrato requiera una garantía certificada, despliégalos como defensa en profundidad mientras ese proceso se completa.
 
@@ -34,7 +34,7 @@ Los modelos de despliegue completos y la guía de administración se encuentran 
 
 ## Utilidades antiexfiltración
 
-Existe una categoría de herramientas de Lolly *específicamente* para mantener los archivos dentro del perímetro. Las utilidades de privacidad.
+Una categoría de herramientas de Lolly - las utilidades de privacidad - existe *específicamente* para mantener los archivos dentro del perímetro.
 
 
 - **Eliminar datos ocultos**
@@ -44,10 +44,7 @@ Existe una categoría de herramientas de Lolly *específicamente* para mantener 
 Anonimiza, codifica, formatea y manipula texto estructurado y no estructurado. 
 
 - **Comprimir PDF**
-Evita cualquier posibilidad de que surja una «crisis de límite de correo» en la que las herramientas web de terceros acechan y los datos 
-
-- **Comprimir PDF**
-Evita cualquier posibilidad de que surja una «crisis de límite de correo» en la que las herramientas web de terceros acechan y los datos se escapan por la ventana. 
+Reduce el tamaño de un PDF grande en el dispositivo, para que nadie recurra a una web de terceros de «comprime mi PDF» en cuanto un archivo es demasiado grande para enviarlo por correo - que es justo por donde los datos se escapan por la ventana. 
 
 Todas estas son transformaciones en el dispositivo: tu archivo o datos entran, salen bytes limpios, y **no hay ningún servidor al que subirlos**. Son lo opuesto deliberado de la típica herramienta de «sube tu archivo al sitio web de un desconocido para limpiarlo» a la que, de otro modo, recurriría un empleado bienintencionado.
 
@@ -64,12 +61,14 @@ Cada entrada de una herramienta puede expresarse como un parámetro de URL, y la
 
 Las exportaciones pueden llevar **Content Credentials** - un manifiesto [C2PA](https://c2pa.org) firmado y vinculado a un hash de los bytes del archivo. Cualquier cambio posterior en el archivo rompe el sello, así que un verificador compatible con C2PA **detecta la alteración de forma criptográfica y sin conexión**. La credencial deja *evidencia* de manipulación: señala la manipulación en lugar de impedirla, que es precisamente lo que hace posible la verificación totalmente sin conexión.
 
-- **Activado por defecto, en el dispositivo.** La clave de firma se genera en el dispositivo, no es extraíble (ni siquiera Lolly puede leerla), y la firma ocurre localmente - solo la *inscripción* de identidad opcional llega a tocar la red.
+- **Activada por defecto, en el dispositivo.** La clave de firma se genera en el dispositivo, no es extraíble (ni siquiera Lolly puede leerla), y la firma ocurre localmente - solo la *inscripción* de identidad opcional llega a tocar la red.
 - **Niveles de confianza.** Una exportación sin inscribir es estructuralmente válida pero está firmada de forma anónima (`untrusted`). Inscribe una **identidad verificada** (certificado de corta duración de la CA de Lolly, vinculado a un correo electrónico) y los verificadores que fijan la raíz de Lolly reportarán `trusted` + el correo electrónico del firmante. Una autoridad de sellado de tiempo confiable y el visto bueno de un validador externo (conformidad C2PA) están en la hoja de ruta. Cada nivel es explícito, y un archivo solo reivindica la confianza que puede demostrar.
 - **La duración de la credencial** la decide el operador/usuario en el momento de firmar: 7 / 30 / 90 / 365 días, con 30 por defecto.
-- **La verificación se realiza en el dispositivo.** Suelta cualquier archivo en `/valid` (o `lolly validate <file>`) para obtener un informe sin conexión de si fue realmente creado con Lolly y no se ha modificado desde entonces. Consulta [Identidad de Content Credentials](/info/content-credentials-identity.html).
+- **El Lolly Imprint.** Una segunda señal complementaria que está **activada por defecto**: una marca de agua de píxeles invisible integrada en las exportaciones de trama (y en las tramas renderizadas por Lolly dentro de un PDF/PPTX, nunca en una imagen propia incrustada por el usuario). Allí donde la credencial muere ante cualquier cambio de contenedor, el Imprint sobrevive a un reguardado o a una captura de pantalla - una pista duradera de «estos píxeles pasaron por Lolly», solo de presencia, sin datos personales. Es seguridad por oscuridad, no una defensa endurecida, y complementa la credencial en lugar de reemplazarla. `imprint=0` desactiva la opción.
+- **Content Credentials duraderas (opcional).** Una exportación de trama puede llevar además una marca *duradera* invisible que codifica un identificador de vínculo suave (soft binding), de modo que la credencial C2PA pueda recuperarse incluso después de que una subida a redes sociales o un reguardado hayan eliminado los metadatos del archivo - el caso en el que una credencial normal se perdería. Es solo para trama y cuesta una pasada de codificación neuronal, así que está desactivada por defecto (`durable=1` para activarla). Hoy Lolly reconoce su propia marca duradera sin conexión en `/verify`; la recuperación por herramientas de terceros (p. ej. Adobe) llegará cuando la resolución de vínculo suave del sector esté en su sitio.
+- **La verificación se realiza en el dispositivo.** Suelta cualquier archivo en `/verify` (o usa `lolly validate <file>`) para obtener un informe sin conexión de si fue realmente creado con Lolly y no se ha modificado desde entonces. La vista Verify de la web también señala contenido generado por IA, detecta el Lolly Imprint, verifica firmas **SEAL** (una firma a nivel de bytes con la clave publicada en DNS - el único contacto con la red es la consulta de la clave en DNS, nunca el archivo), opcionalmente hace un análisis profundo en busca de marcas de agua de píxeles de terceros (una descarga de modelo única en el dispositivo), y saca a la luz datos ocultos - todo sin subir el archivo. Consulta [Identidad de Content Credentials](/info/content-credentials-identity.html).
 
-> **Notas de interoperabilidad.** Hoy Lolly verifica sin conexión sus propias credenciales y muchas de terceros. Hay dos asuntos de interoperabilidad en curso: leer por completo los manifiestos de reclamación **v2** de C2PA de otros productores, y WebM - que todavía no tiene una asignación C2PA estandarizada, así que Lolly adjunta el manifiesto como una parte de Matroska (las herramientas de terceros verifican el MP4 de Lolly de fábrica; WebM llegará cuando el estándar se asiente).
+> **Notas de interoperabilidad.** Hoy Lolly verifica sin conexión sus propias credenciales y muchas de terceros, incluida la lectura de manifiestos de reclamación **v2** de C2PA de otros productores. Queda un asunto de interoperabilidad en curso: WebM - que todavía no tiene una asignación C2PA estandarizada, así que Lolly adjunta el manifiesto como una parte de Matroska (las herramientas de terceros verifican el MP4 de Lolly de fábrica; WebM llegará cuando el estándar se asiente).
 
 ## Cifrado y protección con contraseña
 

@@ -20,7 +20,7 @@ A **Save & continue** button appears the moment you change something and moves y
 
 **Deep-link a tab** with `#/start?tab=<key>`, where the keys are `logos`, `color` *(note the US spelling in the URL)*, `type`, `tokens`, and `catalogue`.
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&filename=brand-studio)
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&localize=1&filename=brand-studio)
 
 ## Logos
 
