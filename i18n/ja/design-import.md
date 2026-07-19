@@ -1,5 +1,17 @@
 # デザインのインポート（Figma、Penpot、Illustrator、InDesign）
 
+![Layout Studio's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=layout-studio)
+
+![Layout Studio's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=layout-studio)
+
+![Layout Studio's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=layout-studio)
+
+![Layout Studio's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=layout-studio)
+
+![Layout Studio's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=layout-studio)
+
+![Layout Studio's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=layout-studio)
+
 完成したデザインを **Figma、Penpot、Illustrator、InDesign から取り出し、Lolly に持ち込みます** — 静止画として固定するのではなく、そのまま作業を続けられ、ツールと組み合わせられ、Lolly の決定論的な書き出し経路でレンダリングできる、生きた編集可能なレイアウトとしてです。他のすべてと同様に、インポートの全工程は**お使いのデバイス上**で行われます — ファイルはブラウザ内で解析され、アップロードは一切行われません。
 
 すでに作ったものすべてにとって朗報があります — どれも、描いたアプリの中に取り残されたままにはなりません。別のツールで何時間もかけたデザインは、あなたのデザインのグローバル設定にすでに沿った、編集可能なセッションとして届きます — 保存すれば、それは Lolly を持つ誰もが開いて中身を埋め直せる、再利用可能なテンプレートになります。

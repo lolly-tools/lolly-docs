@@ -1,5 +1,7 @@
 # Guida rapida
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
 Lolly trasforma le tue regole - colori, tipografia, layout, logica - in strumenti che chiunque può usare per creare file finiti: immagini, PDF, card per i social, video, semplicemente compilando alcuni campi. Non c'è niente da imparare e niente da caricare: tutto gira sul tuo dispositivo, online o offline.
 
 Questa è la prima pagina da leggere. Due cose ti rendono operativo da subito: **rendi Lolly tuo** (puntalo sul tuo brand), e **porta con te quello che hai già** (i tuoi file di design e i tuoi token). Tutto il resto è a un link di distanza.
@@ -11,6 +13,8 @@ Questa è la prima pagina da leggere. Due cose ti rendono operativo da subito: *
 Il tuo brand in Lolly è un piccolo documento di **design token** - colori, font e alcune regole - su cui ogni strumento renderizza. Configuralo una volta e tutto ciò che crei sarà in linea con il tuo brand per costruzione, non per revisione. Ci sono tre modi per iniziare; scegli quello più adatto a dove il tuo brand vive già.
 
 ### Parti da zero (il Brand Studio)
+
+![The Brand Studio start screen - name, primary colour, and a derived palette](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&localize=1&filename=brand-studio)
 
 Al primo avvio atterri sulla schermata **Start** (`#/start`) - il [**Brand Studio**](/info/brand-studio.html). Dagli un nome e un colore primario e Lolly *deriva* una palette completa e accessibile - superfici chiare/scure, testo, accenti - usando la stessa matematica del colore che il motore usa ovunque. Scegli un font e avrai un brand funzionante in meno di un minuto. Da lì, le cinque schede dello studio (Loghi, Colori, Tipografia, Token, Catalogo) ti permettono di spingerti quanto vuoi - perfeziona qualsiasi dettaglio più avanti, ogni volta che torni.
 
@@ -29,6 +33,8 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 `ingest:brand` accetta tutti e tre i contenitori in cui Penpot / Tokens Studio esportano lo stesso documento - un singolo `tokens.json`, una cartella (`$metadata.json` + file per ogni set), o un archivio `project.penpot`. Con `--activate` registra il brand come profilo, vi passa e ricostruisce il catalogo. Consulta [Configurazione](/info/configuration.html) per capire come si combinano pacchetti di brand e profili.
 
 ### Perfezionalo nell'app
+
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand)
 
 Una volta che un brand è attivo, continua a modellarlo nel [**Brand Studio**](/info/brand-studio.html) (`#/start`) - cambia un colore o un ruolo e ogni anteprima dell'app si aggiorna mentre scrivi. (La scheda **Design system** della dashboard su `#/d` *mostra* il brand in sola lettura; è nello Studio che lo modifichi.) Lo stesso brand è riassunto nella scheda **Profilo → Il tuo brand**. I font sono reali: scegli da Google Fonts e Lolly salva il file **sul tuo dispositivo** come asset di brand, così la tua tipografia viaggia offline e non viene scaricato nulla al momento del rendering.
 

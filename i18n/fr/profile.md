@@ -8,6 +8,8 @@ Tout ce qui compose un profil vit **sur l'appareil**, dans la base de données l
 
 ## Ce qu'il y a dans un profil
 
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
+
 | Partie | Ce que c'est |
 |---|---|
 | **Nom** | Prénom et nom de famille. |

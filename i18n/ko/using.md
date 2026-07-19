@@ -6,6 +6,10 @@
 
 ## 도구 열기
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
+![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
+
 홈 화면은 **갤러리**예요 — 모든 도구가 카테고리별로 묶여 있어요. 카드를 클릭하면 도구가 열려요. 예전에 작업한 적이 있으면 **Continue** 버튼으로 가장 최근 세션을 이어서 열 수 있어요. 검색창으로 이름을 기준으로 필터링할 수 있어요.
 
 각 도구는 분할 화면이에요. 한쪽에는 **컨트롤**, 다른 쪽에는 실시간 **미리보기**(캔버스)가 있어요. 컨트롤을 바꾸면 미리보기가 즉시 업데이트돼요.
@@ -32,6 +36,8 @@
 크기를 바꾸면 화면은 항상 깔끔한 Fit 상태로 돌아가요.
 
 ### 프리 캔버스(Layout Studio)
+
+![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 프리 캔버스 도구는 아트보드 *주위*에 작업 공간을 더해줘요. 디자이너의 페이스트보드 같은 느낌이에요.
 
@@ -65,6 +71,8 @@
 
 ## Projects
 
+![Projects - saved sessions organised into nestable folders](/t/url-shot?url=%2F%23%2Fp&width=1440&height=900&dpi=192&waitMs=1200&format=svg&localize=1&filename=projects)
+
 **Projects** — **Tools** 옆의 **Projects** 탭에서 열거나, **프로필 → 스토리지 → Organise in Projects**에서 열 수 있어요 — 는 저장한 모든 것의 보금자리이고, 파일 관리자처럼 동작해요.
 
 - **중첩되는 폴더.** 저장된 세션을 폴더로 묶고, 폴더 안에 폴더를 원하는 만큼 깊게 만들 수 있어요. 폴더를 만들고, 이름을 바꾸고, 타일을 다른 폴더 위로 드래그해서 옮길 수 있어요. 브레드크럼으로 상위 폴더로 돌아갈 수 있어요. 항상 존재하는 **Uncategorised** 폴더에는 아직 정리하지 않은 항목이 들어가요.
@@ -90,6 +98,8 @@
 도구에서 기기의 이미지를 추가할 수 있는 경우, 그 이미지는 축소되고 EXIF/GPS 정보가 제거된 뒤 개인 **My images** 라이브러리(**프로필 → 스토리지** 아래)에 저장돼요. 어떤 도구에서든 다시 사용할 수 있어요. 라이브러리는 용량 제한이 있고 완전히 로컬이에요 — 거기서 이미지를 관리하거나 삭제할 수 있어요.
 
 ## Catalogue — 내 에셋 라이브러리
+
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 **Catalogue**(`#/c`, 또는 메뉴의 **Catalogue** 링크)는 도구가 활용할 수 있는 모든 것 — 브랜드 로고, 이미지, 오디오, 모션 — 을 종류별로 모아둔 곳이고, **직접 만든 창작 파일**도 여기에 함께 있어요. 서버도, 관리 콘솔도, 풀 리퀘스트도 필요 없어요. 모든 게 기기 안에 있어요.
 

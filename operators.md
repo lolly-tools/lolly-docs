@@ -4,9 +4,9 @@
 
 The zero-trust organizational immune system that wraps around what you already do - so the routine creative work your teams need every day happens *inside* your perimeter instead of leaking out of it.
 
-**What's in it for you.** You get to be the person who said yes to something both safe *and* popular. You close an exfiltration hole, gain capability, and delete a request queue in one move - the rare security win that makes you more liked, not less. No 3am call from legal because embargoed files or customer data found their way into a random web tool; fewer SaaS vendors, contracts, and audits on your plate; and a fullly reproducible audit trail you can point to when someone asks. You well sleep at night and brighten days.
+**What's in it for you.** You get to be the person who said yes to something both safe *and* popular. You close an exfiltration hole, gain capability, and delete a request queue in one move - the rare security win that makes you more liked, not less. No 3am call from legal because embargoed files or customer data found their way into a random web tool; fewer SaaS vendors, contracts, and audits on your plate; and a fully reproducible audit trail you can point to when someone asks. You sleep better, and brighten a few days doing it.
 
-Lolly is no second-class creative tool: it puts production-quality output in everyone's hands. The performance bests industry leaders and the brand-influenced creation experience is second to none.  The reason Lolly is *safe* to hand out widely is architectural. Nothing uploads you didnt put there, everything is reproducible, and every export can carry a multiple layers of industry leading cryptographics records. No matter what the journey was like before that document reached your desk, you can know the full provenance, if it's been tampered with, and if you can't recreate it pixel-perfect. 
+Lolly is no second-class creative tool: it puts production-quality output in everyone's hands, and the brand-guided creation experience is second to none. The reason it is *safe* to hand out widely is architectural: nothing uploads that you didn't put there, every result is reproducible, and every export can carry multiple layers of industry-leading cryptographic records. No matter how a document reached your desk, you can see its full provenance, whether it has been tampered with, and whether you can recreate it pixel-perfect.
 
 > **Where it stands today.** Lolly's security properties are strong by design, and its cryptography and file-parsing engines are going through SUSE's enterprise-grade infrastructure hardening. The seals, on-device signing, and encryption below are real and defensible now, and maturing toward independent certification - so where a contract calls for certified assurance, deploy them as defence-in-depth while that process completes.
 
@@ -22,7 +22,7 @@ Lolly inverts it. The work that *drove* those leaks - the quote card, the locali
 
 ## Delete the request queue while proliferating content.
 
-One goal of Lolly **design-request deflection**: routine requests that never need to reach a designer because the person who needed the asset made it themselves, correctly, in minutes. Every deflected ticket is both a productivity win and one fewer file changing hands.
+One goal of Lolly is **design-request deflection**: routine requests that never need to reach a designer because the person who needed the asset made it themselves, correctly, in minutes. Every deflected ticket is both a productivity win and one fewer file changing hands.
 
 Lolly is built to fit how your organisation actually operates - there's no single right way to deploy it:
 
@@ -34,7 +34,7 @@ The full deploy models and administration walkthrough live in [Deployment](/info
 
 ## Anti-exfiltration utilities
 
-A category of Lolly tools exists *specifically* to keep files inside the perimeter. The privacy utilities.
+A category of Lolly tools - the privacy utilities - exists *specifically* to keep files inside the perimeter.
 
 
 - **Strip hidden data**
@@ -44,7 +44,7 @@ A category of Lolly tools exists *specifically* to keep files inside the perimet
 Anonymize, encode, format, and manipulate structured and unstructured text. 
 
 - **Compress PDF**
-Prevent any chance of 'email limit crisis' where third party web tools prey and data falls out the window. 
+Shrink an oversized PDF on-device, so nobody reaches for a third-party "compress my PDF" website the moment a file is too big to email - which is exactly where data slips out the window. 
 
 All of these are on-device transforms: your file or data goes in, cleaned bytes come out, and **there is no server to upload to**. They are the deliberate opposite of the typical "upload your file to a stranger's website to clean it" tool that a well-meaning employee reaches for otherwise.
 
@@ -65,6 +65,7 @@ Exports can carry **Content Credentials** - a signed [C2PA](https://c2pa.org) ma
 - **Trust tiers.** An un-enrolled export is structurally valid but signed anonymously (`untrusted`). Enrol a **verified identity** (short-lived certificate from the Lolly CA, tied to an email) and verifiers pinning the Lolly root report `trusted` + the signer's email. A trusted timestamp authority and third-party-validator green (C2PA conformance) are on the roadmap. Every tier is explicit, and a file only ever claims the trust it can prove.
 - **Credential lifetime** is the operator/user's call at signing time: 7 / 30 / 90 / 365 days, default 30.
 - **The Lolly Imprint.** A second, complementary signal that is **on by default**: an invisible pixel watermark baked into raster exports (and the Lolly-rendered rasters inside a PDF/PPTX, never a user's own embedded image). Where the credential dies to any container change, the Imprint survives a re-save or screenshot - a durable "these pixels passed through Lolly" hint, presence-only, no personal data. It is security-through-obscurity, not a hardened defence, and complements the credential rather than replacing it. `imprint=0` opts out.
+- **Durable Content Credentials (opt-in).** A raster export can additionally carry an invisible *durable* mark that encodes a soft-binding identifier, so the C2PA credential can be recovered even after a social upload or re-save has stripped the file's metadata - the case where a normal credential would be lost. It is raster-only and costs a neural-encode pass, so it is off by default (`durable=1` to turn it on). Lolly recognises its own durable mark offline on `/verify` today; recovery by third-party tools (e.g. Adobe) follows once the industry soft-binding resolution is in place.
 - **Verification is on-device.** Drop any file on `/verify` (or `lolly validate <file>`) for an offline report of whether it was genuinely made with Lolly and unchanged since. The web Verify view also flags AI-generated content, detects the Lolly Imprint, verifies **SEAL** signatures (a byte-level signature keyed in DNS - the only network touch is a DNS key lookup, never the file), optionally deep-scans for third-party pixel watermarks (a one-time on-device model download), and surfaces hidden data - all without uploading the file. See [Content Credentials Identity](/info/content-credentials-identity.html).
 
 > **Interoperability notes.** Lolly verifies its own credentials and many third-party ones offline today, including reading C2PA claim **v2** manifests from other producers. One interop item remains in progress: WebM - which has no standardised C2PA mapping yet, so Lolly attaches the manifest as a Matroska part (third-party tools verify Lolly's MP4 out of the box; WebM follows once the standard settles).

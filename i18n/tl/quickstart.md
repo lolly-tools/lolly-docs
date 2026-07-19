@@ -1,5 +1,7 @@
 # Quickstart
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
 Ginagawa ng Lolly ang iyong mga alituntunin - kulay, font, layout, lohika - na mga tool na magagamit ng kahit sino para gumawa ng mga natapos na file: mga larawan, PDF, social card, video, sa pamamagitan lang ng pagpuno ng ilang fields. Walang kailangang pag-aralan at walang kailangang i-upload: tumatakbo ang lahat sa device mo, online man o offline.
 
 Ito ang unang pahinang dapat basahin. Dalawang bagay ang magpapaproduktibo sa iyo: **gawing sarili mo ang Lolly** (i-point ito sa iyong brand), at **dalhin ang mga meron ka na** (iyong mga design file at tokens). Isang link na lang ang layo ang lahat ng iba pa.
@@ -11,6 +13,8 @@ Ito ang unang pahinang dapat basahin. Dalawang bagay ang magpapaproduktibo sa iy
 Ang brand mo sa Lolly ay isang maliit na **design-tokens** na dokumento - mga kulay, font, at ilang alituntunin - na ginagamit ng bawat tool bilang batayan sa pag-render. I-set ito nang isang beses at ang lahat ng gagawin mo ay on-brand na sa mismong pagkakabuo, hindi sa pag-review pa. May tatlong paraan para pumasok; piliin ang isa na tugma sa kung saan naroroon na ang iyong brand.
 
 ### Magsimula mula sa wala (ang wizard)
+
+![The Brand Studio start screen - name, primary colour, and a derived palette](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&localize=1&filename=brand-studio)
 
 Sa unang pagbukas, dadalhin ka sa **Start** screen (`#/start`). Bigyan ito ng pangalan at isang primary na kulay at *kukunin* ng Lolly ang isang kumpleto at accessible na palette mula rito - light/dark surfaces, text, accents - gamit ang parehong colour maths na ginagamit ng engine sa lahat ng dako. Pumili ng font, at may gumaganang brand ka na sa loob ng wala pang isang minuto. Puwede mong pinuhin ang alinman dito sa ibang pagkakataon.
 
@@ -29,6 +33,8 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 Tinatanggap ng `ingest:brand` ang lahat ng tatlong container kung saan ini-export ng Penpot / Tokens Studio ang parehong dokumento - isang solong `tokens.json`, isang directory (`$metadata.json` + mga per-set file), o isang `project.penpot` archive. Gamit ang `--activate`, ire-register nito ang brand bilang isang profile, lilipat dito, at ire-rebuild ang catalog. Tingnan ang [Configuration](/info/configuration.html) kung paano magkasya ang mga brand pack at profile.
 
 ### I-tune ito sa loob ng app
+
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand)
 
 Kapag aktibo na ang isang brand, ang **Your brand** editor ng dashboard (`#/d`) ay isang live editor - palitan ang isang kulay o isang role at nag-a-update ang bawat preview sa pahina habang nagta-type ka. Ang parehong brand ay buod sa **Profile → Your brand** card. Totoo ang mga font: pumili mula sa Google Fonts at ise-store ng Lolly ang file **sa device mo** bilang isang brand asset, kaya nagbibiyahe ang typography mo kahit offline at wala nang kinukuha sa oras ng pag-render.
 

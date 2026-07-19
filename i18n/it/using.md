@@ -6,6 +6,10 @@ Una guida pratica per *usare* davvero l'app - aprire uno strumento, lavorare sul
 
 ## Aprire uno strumento
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
+![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
+
 La schermata iniziale è la **galleria** - tutti gli strumenti, raggruppati per categoria. Fai clic su una card per aprire lo strumento; se ci hai già lavorato prima, un pulsante **Continua** riprende la tua sessione più recente. Usa il campo di ricerca per filtrare per nome.
 
 Ogni strumento è una vista divisa: **controlli** da un lato, un'**anteprima** dal vivo (il canvas) dall'altro. Cambia un controllo qualsiasi e l'anteprima si aggiorna all'istante.
@@ -32,6 +36,8 @@ L'anteprima mostra sempre esattamente ciò che verrà esportato.
 Un cambio di dimensione riporta sempre la vista a un adattamento pulito.
 
 ### Il canvas libero (Layout Studio)
+
+![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 Gli strumenti a canvas libero aggiungono una superficie di lavoro *intorno* all'area di disegno, come il tavolo di montaggio di un designer:
 
@@ -65,6 +71,8 @@ Fai clic su **Salva** per memorizzare gli input attuali come una sessione per qu
 
 ## Progetti
 
+![Projects - saved sessions organised into nestable folders](/t/url-shot?url=%2F%23%2Fp&width=1440&height=900&dpi=192&waitMs=1200&format=svg&localize=1&filename=projects)
+
 **Progetti** - aprilo dalla scheda **Progetti** accanto a **Strumenti**, oppure da **Profilo → Archiviazione → Organizza in Progetti** - è la casa di tutto quello che hai salvato, e funziona come un gestore di file:
 
 - **Cartelle annidabili.** Raggruppa le sessioni salvate in cartelle, e cartelle dentro altre cartelle, quanto in profondità vuoi. Crea una cartella, rinominala, o trascina un riquadro su un'altra cartella per spostarlo; un breadcrumb ti riporta indietro. Una cartella **Non categorizzati**, sempre presente, contiene tutto ciò che non è ancora stato archiviato.
@@ -90,6 +98,8 @@ I **Filtri** foto - Halftone, Scanline, Posterize, Duotone - mostrano un pulsant
 Quando uno strumento ti permette di aggiungere un'immagine dal tuo dispositivo, questa viene ridimensionata, ripulita dai dati EXIF/GPS, e salvata nella tua libreria personale **Le mie immagini** (sotto **Profilo → Archiviazione**). Riutilizzala in qualsiasi strumento. La libreria ha un limite ed è interamente locale - gestisci o elimina le immagini da lì.
 
 ## Il Catalogo - la tua libreria di asset
+
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 Il **Catalogo** (`#/c`, oppure il link **Catalogo** nel menu) raccoglie tutto ciò a cui i tuoi strumenti possono attingere - loghi di brand, immagini, audio e animazioni, raggruppati per tipo - ed è anche dove vivono i **tuoi file creativi**. Nessun server, nessuna console di amministrazione, nessuna pull request: è tutto sul tuo dispositivo.
 

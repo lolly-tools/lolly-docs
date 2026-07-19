@@ -1,5 +1,7 @@
 # Szybki start
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
 Lolly zamienia twoje reguły - kolory, typografię, układy, logikę - w narzędzia, których każdy może użyć do tworzenia gotowych plików: obrazów, PDF-ów, kart do mediów społecznościowych, wideo, wypełniając kilka pól. Nie ma się czego uczyć i nie trzeba niczego przesyłać: wszystko działa na twoim urządzeniu, online lub offline.
 
 To jest strona, którą warto przeczytać jako pierwszą. Dwie rzeczy uczynią cię produktywnym: **dostosuj Lolly do siebie** oraz **wykorzystaj to, co już masz** (swoje pliki projektowe i tokeny). Wszystko inne jest o jeden link dalej.
@@ -11,6 +13,8 @@ To jest strona, którą warto przeczytać jako pierwszą. Dwie rzeczy uczynią c
 Twoja marka w Lolly to niewielki dokument **design tokens** - kolory, czcionki i kilka reguł - względem którego renderowane jest każde narzędzie. Ustaw go raz, a wszystko, co stworzysz, będzie zgodne z marką z założenia, a nie dzięki weryfikacji. Są trzy sposoby na start; wybierz ten, który pasuje do miejsca, gdzie twoja marka już się znajduje.
 
 ### Zacznij od zera (kreator design systemu)
+
+![The Brand Studio start screen - name, primary colour, and a derived palette](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&localize=1&filename=brand-studio)
 
 Pierwsze uruchomienie przenosi cię na ekran **Start** (`#/start`) - [**Brand Studio**](/info/brand-studio.html). Nadaj nazwę i podaj kolor podstawowy, a Lolly *wyprowadzi* z niego kompletną, dostępną paletę - jasne/ciemne powierzchnie, tekst, akcenty - używając tej samej matematyki kolorów, której silnik używa wszędzie indziej. Wybierz czcionkę i masz działającą markę w niecałą minutę. Stamtąd pięć zakładek studia (Loga, Kolory, Typografia, Tokeny, Katalog) pozwala rozwinąć ją tak daleko, jak chcesz - dopracujesz dowolny element później, kiedy tylko wrócisz. Zawsze możesz wrócić do tego z panelu głównego (o ile nie używasz wersji Lolly z zablokowaną marką).
 
@@ -29,6 +33,8 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 `ingest:brand` przyjmuje wszystkie trzy kontenery, w których Penpot / Tokens Studio eksportują ten sam dokument - pojedynczy `tokens.json`, katalog (`$metadata.json` + pliki dla poszczególnych zestawów) lub archiwum `project.penpot`. Z opcją `--activate` rejestruje markę jako profil, przełącza się na nią i przebudowuje katalog. Zobacz [Konfiguracja](/info/configuration.html), aby dowiedzieć się, jak paczki marek i profile do siebie pasują.
 
 ### Dostrój ją w aplikacji
+
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand)
 
 Gdy marka jest już aktywna, kształtuj ją dalej w [**Brand Studio**](/info/brand-studio.html) (`#/start`) - zmień kolor lub rolę, a każdy podgląd w całej aplikacji zaktualizuje się w trakcie pisania. (Zakładka **Design system** w panelu głównym pod `#/d` *pokazuje* markę tylko do odczytu; edytujesz ją w Studio.) Ta sama marka jest podsumowana na karcie **Profil → Twoja marka**. Czcionki są prawdziwe: wybierz z Google Fonts, a Lolly przechowa plik **na twoim urządzeniu** jako zasób marki, dzięki czemu twoja typografia działa offline i nic nie jest pobierane w czasie renderowania.
 

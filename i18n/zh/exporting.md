@@ -4,6 +4,18 @@
 
 ## 导出的工作原理
 
+![The export panel - format, size and the Copy / Download / Save / Share actions](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=png&filename=export-panel)
+
+![The export panel - format, size and the Copy / Download / Save / Share actions](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=png&filename=export-panel)
+
+![The export panel - format, size and the Copy / Download / Save / Share actions](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=png&filename=export-panel)
+
+![The export panel - format, size and the Copy / Download / Save / Share actions](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=png&filename=export-panel)
+
+![The export panel - format, size and the Copy / Download / Save / Share actions](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=png&filename=export-panel)
+
+![The export panel - format, size and the Copy / Download / Save / Share actions](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=png&filename=export-panel)
+
 预览*就是*文件本身。导出时，host 会把该画布渲染为你所选择的格式，并交给你一个下载文件（或者把它放到你的剪贴板中）。一个工具只会提供其作者所声明的格式，选择器也会隐藏你的浏览器无法生成的格式（见[视频](#video)）。
 
 生成文件有三条路径。大多数工具会把画布**渲染**为所选格式。文本和数据格式（HTML、MD、TXT、JSON、CSV、ICS、VCF）则是从工具的内容**生成**出来的，而不是从画面栅格化而来。而隐私类工具（例如 *Strip Hidden Data*）走的是第三条路径：你选择的文件会在设备上按字节转换，然后直接返还给你——没有画布、没有水印，也不添加来源信息，因为这本来就是你自己的文件。

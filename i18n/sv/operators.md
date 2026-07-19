@@ -1,12 +1,12 @@
 # Lolly för operatörer
 
-### En framtidssäker strategi för djupförsvar, dataförlustskydd och proveniens - som råkar vara en kreativ produktionsplattform
+### En säkerhets- och underrättelsestrategi med djupförsvar - som råkar vara en kreativ produktionsplattform
 
-Det organisatoriska immunförsvaret som omsluter det du redan gör - så att det rutinmässiga kreativa arbete dina team behöver varje dag sker *inom* din perimeter istället för att läcka ut ur den.
+Det nolltillitsbaserade organisatoriska immunförsvaret som omsluter det du redan gör - så att det rutinmässiga kreativa arbete dina team behöver varje dag sker *inom* din perimeter istället för att läcka ut ur den.
 
-**Vad du får ut av det.** Du får vara personen som sa ja till något som är både säkert *och* populärt. Du täpper till ett exfiltreringshål och raderar designbeställningskön i ett och samma drag - den sällsynta säkerhetsvinsten som gör dig mer omtyckt, inte mindre. Inget larm klockan tre på natten för att någon mejlat varumärkesfiler till en underleverantör eller klistrat in kunddata i ett slumpmässigt webbverktyg; färre SaaS-leverantörer, avtal och granskningar att hålla koll på; och ett fullständigt git-spår du kan peka på när någon frågar vem som godkände vad. Du sover gott om natten.
+**Vad du får ut av det.** Du får vara personen som sa ja till något som är både säkert *och* populärt. Du täpper till ett exfiltreringshål, vinner kapacitet och raderar en beställningskö i ett och samma drag - den sällsynta säkerhetsvinsten som gör dig mer omtyckt, inte mindre. Inget samtal klockan tre på natten från juristerna för att embargobelagda filer eller kunddata hamnat i ett slumpmässigt webbverktyg; färre SaaS-leverantörer, avtal och granskningar att hålla koll på; och ett fullständigt reproducerbart granskningsspår du kan peka på när någon frågar. Du sover bättre, och gör några dagar lite ljusare på köpet.
 
-Lolly förtjänar sin plats som ett kreativt verktyg: det raderar designkön och ger alla tillgång till produktionsfärdiga resultat. Men anledningen till att det är *säkert* att dela ut så brett är arkitektonisk. Inget laddas upp, allt är reproducerbart, och varje export kan bära en kryptografisk uppgift om varifrån den kom. Den här sidan berättar säkerhets- och utrullningshistorien.
+Lolly är inget kreativt verktyg av andra klass: det lägger produktionsfärdiga resultat i allas händer, och den varumärkesstyrda skapandeupplevelsen är i särklass. Anledningen till att det är *säkert* att dela ut brett är arkitektonisk: inget laddas upp som du inte själv lagt dit, varje resultat är reproducerbart, och varje export kan bära flera lager av branschledande kryptografiska uppgifter. Oavsett hur ett dokument hamnade på ditt skrivbord kan du se dess fullständiga proveniens, om det har manipulerats, och om du kan återskapa det pixelperfekt.
 
 > **Var det står idag.** Lollys säkerhetsegenskaper är starka till sin konstruktion, och dess kryptografi- och filtolkningsmotorer genomgår SUSE:s infrastrukturhärdning av företagsklass. Förseglingarna, signeringen på enheten och krypteringen nedan är verkliga och försvarbara nu, och mognar mot oberoende certifiering - så där ett avtal kräver certifierad garanti, driftsätt dem som skydd i flera lager medan den processen slutförs.
 
@@ -34,24 +34,18 @@ Den fullständiga genomgången av driftsättningsmodeller och administration fin
 
 ## Verktyg mot exfiltrering
 
-En kategori av Lolly-verktyg finns *specifikt* för att hålla filer inom perimetern. Sekretessverktygen.
-
+En kategori Lolly-verktyg - sekretessverktygen - finns *specifikt* för att hålla filer innanför perimetern.
 
 - **Ta bort dold data**
  Ta bort plats och all dold identifierande information från dokument och mediefiler.
 
 - **Texthjälp**  
-Anonymisera, koda, formatera och bearbeta strukturerad och ostrukturerad text. 
+Anonymisera, koda, formatera och bearbeta strukturerad och ostrukturerad text.
 
 - **Komprimera PDF**
-Förhindra all risk för en 'e-postgränskris' där tredjepartswebbverktyg lurar och data 
-
-- **Komprimera PDF**
-Förhindra all risk för en 'e-postgränskris' där tredjepartswebbverktyg lurar och data trillar ur fönstret. 
+Krymp en överdimensionerad PDF på enheten, så att ingen behöver vända sig till en tredjepartswebbplats för att "komprimera min PDF" så fort en fil blir för stor för att mejla - exakt där data trillar ur fönstret.
 
 Alla dessa är transformationer på enheten: din fil eller data går in, rensade bytes kommer ut, och **det finns ingen server att ladda upp till**. De är den medvetna motsatsen till det typiska verktyget "ladda upp din fil till en främlings webbplats för att rensa den" som en välmenande medarbetare annars hade tagit till.
-
-
 
 ## Determinism och reproducerbarhet
 
@@ -67,9 +61,11 @@ Exporter kan bära **Content Credentials** - ett signerat [C2PA](https://c2pa.or
 - **Aktiverat som standard, på enheten.** Signeringsnyckeln genereras på enheten, är icke-extraherbar (inte ens Lolly kan läsa den), och signeringen sker lokalt - endast valfri identitets*registrering* rör någonsin nätverket.
 - **Förtroendenivåer.** En oregistrerad export är strukturellt giltig men signerad anonymt (`untrusted`). Registrera en **verifierad identitet** (kortlivat certifikat från Lolly CA, kopplat till en e-postadress) så rapporterar verifierare som pinnar Lolly-roten `trusted` + signerarens e-postadress. En betrodd tidsstämplingsinstans och grönt ljus från tredjepartsvalidator (C2PA-konformitet) finns på färdplanen. Varje nivå är explicit, och en fil gör bara anspråk på det förtroende den kan bevisa.
 - **Autentiseringsuppgiftens livslängd** avgörs av operatören/användaren vid signeringstillfället: 7 / 30 / 90 / 365 dagar, standard 30.
-- **Verifiering sker på enheten.** Släpp valfri fil på `/valid` (eller `lolly validate <file>`) för en offline-rapport om huruvida den verkligen skapades med Lolly och är oförändrad sedan dess. Se [Content Credentials-identitet](/info/content-credentials-identity.html).
+- **Lolly Imprint.** En andra, kompletterande signal som är **aktiverad som standard**: en osynlig pixelvattenstämpel inbakad i rasterexporter (och de Lolly-renderade rastren inuti en PDF/PPTX, aldrig en användares egen inbäddade bild). Där autentiseringsuppgiften dör vid varje containerändring överlever Imprint en omsparning eller skärmdump - en varaktig antydan om att "de här pixlarna har passerat genom Lolly", enbart närvaro, inga personuppgifter. Det är säkerhet genom dunkelhet, inte ett härdat skydd, och kompletterar autentiseringsuppgiften snarare än att ersätta den. `imprint=0` väljer bort det.
+- **Durable Content Credentials (valbart).** En rasterexport kan dessutom bära en osynlig *varaktig* markering som kodar en identifierare med mjuk bindning, så att C2PA-autentiseringsuppgiften kan återställas även efter att en uppladdning till sociala medier eller en omsparning har rensat bort filens metadata - fallet där en vanlig autentiseringsuppgift annars skulle gå förlorad. Den är enbart för raster och kräver en neural kodningsomgång, så den är avstängd som standard (`durable=1` för att aktivera den). Lolly känner idag igen sin egen varaktiga markering offline på `/verify`; återställning via tredjepartsverktyg (t.ex. Adobe) följer så snart branschens lösning för mjuk bindning finns på plats.
+- **Verifiering sker på enheten.** Släpp valfri fil på `/verify` (eller `lolly validate <file>`) för en offline-rapport om huruvida den verkligen skapades med Lolly och är oförändrad sedan dess. Webbens Verify-vy flaggar även AI-genererat innehåll, upptäcker Lolly Imprint, verifierar **SEAL**-signaturer (en signatur på bytenivå med nyckel i DNS - den enda nätverkskontakten är en DNS-nyckeluppslagning, aldrig själva filen), djupskannar valfritt efter tredjeparts pixelvattenstämplar (en engångsnedladdning av en modell på enheten), och blottar dold data - allt utan att ladda upp filen. Se [Content Credentials-identitet](/info/content-credentials-identity.html).
 
-> **Interoperabilitetsanmärkningar.** Lolly verifierar sina egna autentiseringsuppgifter och många från tredje part offline idag. Två interop-punkter pågår: att fullt ut läsa C2PA-anspråks-**v2**-manifest från andra producenter, och WebM - som ännu inte har någon standardiserad C2PA-mappning, så Lolly bifogar manifestet som en Matroska-del (tredjepartsverktyg verifierar Lollys MP4 direkt; WebM följer när standarden har satt sig).
+> **Interoperabilitetsanmärkningar.** Lolly verifierar sina egna autentiseringsuppgifter och många från tredje part offline idag, inklusive läsning av C2PA-anspråks-**v2**-manifest från andra producenter. En interop-punkt pågår fortfarande: WebM - som ännu inte har någon standardiserad C2PA-mappning, så Lolly bifogar manifestet som en Matroska-del (tredjepartsverktyg verifierar Lollys MP4 direkt; WebM följer när standarden har satt sig).
 
 ## Kryptering och lösenordsskydd
 

@@ -8,6 +8,18 @@
 
 ## 5つのステップ
 
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&filename=brand-studio)
+
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&filename=brand-studio)
+
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&filename=brand-studio)
+
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&filename=brand-studio)
+
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&filename=brand-studio)
+
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&filename=brand-studio)
+
 スタジオは5つのタブからなるエディタです。左から右へ進んでもよいですし、任意のタブへ直接ジャンプしても構いません：
 
 1. **Logos** — あらゆる向きと仕上げでの、あなたのマーク。
@@ -34,6 +46,18 @@
 - **SVG をアップロードすると、Lolly がその色を読み取ります。** まっさらなインストールでは、ロゴからプライマリカラーがそっと設定されます。既存のブランドでは、Colours タブでその色が提案として — *"Found in your logo"* として — 表示されます。
 
 ## Colours
+
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-colours)
+
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-colours)
+
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-colours)
+
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-colours)
+
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-colours)
+
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-colours)
 
 最も奥が深いステップです。左ペインは**導き出し、生成する**場所で、右ペインはあなたの**ライブパレット**です。分割線をドラッグしてリサイズできます。
 
@@ -85,6 +109,18 @@
 
 ## Type
 
+![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-type)
+
+![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-type)
+
+![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-type)
+
+![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-type)
+
+![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-type)
+
+![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-type)
+
 **任意の Google Font** を追加すると、このデバイスにダウンロードされます — アプリ内、ツール内、あらゆる書き出しでレンダリングされ、永久にオフラインで使え、ブランドパックにも同梱されます。レンダリング時に何かを取得することもありません。
 
 ファミリーを検索し（Inter、Fraunces、Space Grotesk…）、**Add font**。リスト内の各フォントには役割を割り当てられます：
@@ -95,6 +131,18 @@
 **Type roles** パネルには、Heading、Body、Code のライブなサンプルが表示され、それぞれの書体が実際に使われる様子を確認できます。Google Fonts にあるものはすべて、オープンライセンス（OFL/Apache/UFL）のもとで提供されています。
 
 ## Tokens
+
+![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=png&filename=brand-tokens)
+
+![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=png&filename=brand-tokens)
+
+![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=png&filename=brand-tokens)
+
+![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=png&filename=brand-tokens)
+
+![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=png&filename=brand-tokens)
+
+![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=png&filename=brand-tokens)
 
 デザインシステムの残りの部分を、コードに触れることなく編集できます：
 

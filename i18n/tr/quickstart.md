@@ -1,5 +1,7 @@
 # Hızlı Başlangıç
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
 Lolly; kurallarını -renkler, yazı tipleri, düzenler, mantık- birkaç alanı doldurarak herkesin bitmiş dosyalar oluşturmak için kullanabileceği araçlara dönüştürür: görseller, PDF'ler, sosyal medya kartları, video. Öğrenilecek ya da yüklenecek hiçbir şey yok: her şey cihazında çalışır, çevrimiçi ya da çevrimdışı.
 
 Önce okuman gereken tek sayfa bu. Seni üretken kılan iki şey var: **Lolly'yi kendine göre yap** ve **zaten sahip olduklarını içeri al** (tasarım dosyaların ve belirteçlerin). Geri kalan her şey bir bağlantı uzağında.
@@ -11,6 +13,8 @@ Lolly; kurallarını -renkler, yazı tipleri, düzenler, mantık- birkaç alanı
 Lolly'deki markan; renkler, yazı tipleri ve birkaç kuraldan oluşan küçük bir **tasarım belirteçleri** belgesidir - her araç bu belgeye göre oluşturulur. Bir kez ayarla, ürettiğin her şey incelemeyle değil, yapısı gereği markana uygun olsun. İçeri girmenin üç yolu var; markanın zaten bulunduğu yere uyanı seç.
 
 ### Sıfırdan başla (tasarım sistemi oluşturucu)
+
+![The Brand Studio start screen - name, primary colour, and a derived palette](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&localize=1&filename=brand-studio)
 
 İlk çalıştırmada **Başlangıç** ekranına (`#/start`) düşersin - yani [**Marka Stüdyosu**](/info/brand-studio.html)'na. Ona bir ad ve bir ana renk ver; Lolly da motorun her yerde kullandığı aynı renk matematiğiyle bundan eksiksiz, erişilebilir bir palet *türetir* - açık/koyu yüzeyler, metin, vurgular. Bir yazı tipi seç, bir dakikadan kısa sürede çalışan bir markan olsun. Oradan itibaren stüdyonun beş sekmesi (Logolar, Renkler, Yazı Tipi, Belirteçler, Katalog) istediğin kadar ileri götürmene izin verir - ne zaman geri dönersen dön, herhangi bir kısmını daha sonra da inceltebilirsin. Bunu her zaman kontrol panelinden tekrar ziyaret edebilirsin (Lolly'nin marka kilitli bir sürümünü kullanmıyorsan).
 
@@ -29,6 +33,8 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 `ingest:brand`, Penpot / Tokens Studio'nun aynı belgeyi dışa aktardığı üç kabın tümünü kabul eder - tek bir `tokens.json`, bir dizin (`$metadata.json` + set başına dosyalar) ya da bir `project.penpot` arşivi. `--activate` ile marka bir profil olarak kaydedilir, ona geçilir ve katalog yeniden oluşturulur. Marka paketlerinin ve profillerin nasıl bir araya geldiğini görmek için [Yapılandırma](/info/configuration.html) sayfasına bak.
 
 ### Uygulama içinde ince ayar yap
+
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand)
 
 Bir marka etkinleştirildiğinde, onu şekillendirmeye [**Marka Stüdyosu**](/info/brand-studio.html)'nda (`#/start`) devam et - bir rengi ya da bir rolü değiştir, yazdıkça uygulama genelindeki her önizleme güncellensin. (Kontrol panelindeki `#/d` adresindeki **Tasarım sistemi** sekmesi markayı salt okunur olarak *gösterir*; onu düzenlediğin yer Stüdyo'dur.) Aynı marka **Profil → Markan** kartında özetlenir. Yazı tipleri gerçektir: Google Fonts'tan seç, Lolly dosyayı bir marka varlığı olarak **cihazında** saklar; böylece tipografin çevrimdışı seninle gelir ve oluşturma sırasında hiçbir şey ağdan indirilmez.
 

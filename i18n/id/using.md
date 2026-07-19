@@ -6,6 +6,10 @@ Panduan praktis untuk benar-benar *menggunakan* aplikasi ini - membuka tool, men
 
 ## Membuka tool
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
+![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
+
 Layar utama adalah **galeri** - setiap tool, dikelompokkan berdasarkan kategori. Klik sebuah kartu untuk membuka tool; jika Anda pernah mengerjakannya sebelumnya, tombol **Lanjutkan** akan melanjutkan sesi terakhir Anda. Gunakan kotak pencarian untuk memfilter berdasarkan nama.
 
 Setiap tool berupa tampilan terbagi: **kontrol** di satu sisi, **pratinjau** langsung (kanvas) di sisi lain. Ubah kontrol apa pun dan pratinjau diperbarui secara instan.
@@ -32,6 +36,8 @@ Pratinjau selalu menampilkan persis apa yang akan diekspor.
 Perubahan dimensi selalu menjepretkan tampilan kembali ke paskan yang rapi.
 
 ### Kanvas bebas (Layout Studio)
+
+![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 Tool kanvas-bebas menambahkan permukaan kerja *di sekitar* artboard, seperti pasteboard seorang desainer:
 
@@ -65,6 +71,8 @@ Klik **Simpan** untuk menyimpan input saat ini sebagai sesi untuk tool tersebut.
 
 ## Proyek
 
+![Projects - saved sessions organised into nestable folders](/t/url-shot?url=%2F%23%2Fp&width=1440&height=900&dpi=192&waitMs=1200&format=svg&localize=1&filename=projects)
+
 **Proyek** - buka dari tab **Proyek** di samping **Tool**, atau dari **Profil → Penyimpanan → Tata di Proyek** - adalah rumah bagi semua yang telah Anda simpan, dan bekerja seperti pengelola berkas:
 
 - **Folder bersarang.** Kelompokkan sesi tersimpan ke dalam folder, dan folder di dalam folder, sedalam yang Anda suka. Buat folder, ganti namanya, atau seret sebuah ubin ke folder lain untuk memindahkannya; breadcrumb memandu Anda kembali ke atas. Folder **Tak berkategori** yang selalu ada menampung apa pun yang belum diarsipkan.
@@ -90,6 +98,8 @@ Desain besar akan menghasilkan URL panjang, jadi dialog ini juga menawarkan **Ta
 Ketika sebuah tool memungkinkan Anda menambahkan gambar dari perangkat Anda, gambar itu diperkecil, dilucuti data EXIF/GPS-nya, dan disimpan ke pustaka **Gambar saya** pribadi Anda (di bawah **Profil → Penyimpanan**). Gunakan kembali di tool mana pun. Pustaka ini dibatasi dan sepenuhnya lokal - kelola atau hapus gambar di sana.
 
 ## Katalog - pustaka aset Anda
+
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 **Katalog** (`#/c`, atau tautan **Katalog** di menu) mengumpulkan semua yang dapat digunakan tool Anda - logo brand, gambar, audio, dan motion, dikelompokkan berdasarkan jenis - dan di sinilah **berkas kreatif Anda sendiri** juga tinggal. Tanpa server, tanpa konsol admin, tanpa pull request: semuanya ada di perangkat Anda.
 

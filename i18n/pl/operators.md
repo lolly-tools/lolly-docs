@@ -1,12 +1,12 @@
 # Lolly dla operatorów
 
-### Odporna na przyszłość, wielowarstwowa strategia ochrony przed utratą danych i zapewnienia proweniencji - która przy okazji jest platformą do produkcji kreatywnej
+### Wielowarstwowa strategia bezpieczeństwa i wywiadu - która przy okazji jest platformą do produkcji kreatywnej
 
-Organizacyjny układ odpornościowy, który otacza to, co już robisz - dzięki czemu rutynowa praca kreatywna, której twoje zespoły potrzebują każdego dnia, odbywa się *wewnątrz* twojego perymetru, zamiast z niego wyciekać.
+Organizacyjny układ odpornościowy oparty na zasadzie zero-trust, który otacza to, co już robisz - dzięki czemu rutynowa praca kreatywna, której twoje zespoły potrzebują każdego dnia, odbywa się *wewnątrz* twojego perymetru, zamiast z niego wyciekać.
 
-**Co z tego masz.** Zostajesz osobą, która powiedziała „tak” czemuś zarazem bezpiecznemu *i* lubianemu. Zamykasz lukę umożliwiającą eksfiltrację i likwidujesz kolejkę zleceń projektowych za jednym zamachem - rzadka wygrana w obszarze bezpieczeństwa, która sprawia, że jesteś bardziej, a nie mniej lubiany. Żadnych telefonów o 3 nad ranem, bo ktoś wysłał mailem pliki z zasobami marki do zewnętrznego wykonawcy albo wkleił dane klientów do przypadkowego narzędzia internetowego; mniej dostawców SaaS, umów i audytów na twojej głowie; oraz pełny ślad w git, na który możesz wskazać, gdy ktoś zapyta, kto co zatwierdził. Śpisz spokojnie.
+**Co z tego masz.** Zostajesz osobą, która powiedziała „tak” czemuś zarazem bezpiecznemu *i* lubianemu. Zamykasz lukę umożliwiającą eksfiltrację, zyskujesz nowe możliwości i likwidujesz kolejkę zgłoszeń za jednym zamachem - rzadka wygrana w obszarze bezpieczeństwa, która sprawia, że stajesz się bardziej, a nie mniej lubiany. Żadnego telefonu od prawników o 3 nad ranem z powodu plików objętych embargiem albo danych klientów, które trafiły do przypadkowego narzędzia internetowego; mniej dostawców SaaS, umów i audytów na twojej głowie; oraz w pełni odtwarzalny ślad audytowy, na który możesz wskazać, gdy ktoś zapyta. Śpisz lepiej, a przy okazji umilasz sobie niejeden dzień.
 
-Lolly zasługuje na swoje miejsce jako narzędzie kreatywne: likwiduje kolejkę projektową i oddaje w ręce każdego wyniki jakości produkcyjnej. Ale to, że *bezpiecznie* jest udostępnić je tak szeroko, wynika z architektury. Nic nie jest wysyłane na serwer, wszystko jest odtwarzalne, a każdy eksport może nieść kryptograficzny zapis swojego pochodzenia. Ta strona opowiada o bezpieczeństwie i wdrożeniu.
+Lolly to nie narzędzie kreatywne drugiej kategorii: oddaje w ręce każdego wyniki jakości produkcyjnej, a doświadczenie tworzenia prowadzonego przez markę nie ma sobie równych. To, że *bezpiecznie* jest udostępnić je tak szeroko, wynika z architektury: nic nie jest wysyłane poza tym, co sam tam umieściłeś, każdy wynik jest odtwarzalny, a każdy eksport może nieść wiele warstw wiodących w branży zapisów kryptograficznych. Niezależnie od tego, jak dokument trafił na twoje biurko, możesz zobaczyć jego pełną proweniencję, czy został zmodyfikowany oraz czy da się go odtworzyć piksel w piksel.
 
 > **Jak to wygląda dzisiaj.** Właściwości bezpieczeństwa Lolly są mocne z założenia, a jego mechanizmy kryptograficzne i parsujące pliki przechodzą przez korporacyjne wzmacnianie infrastruktury SUSE. Pieczęcie, podpisywanie na urządzeniu i szyfrowanie opisane poniżej są już realne i możliwe do obrony, a dojrzewają w stronę niezależnej certyfikacji - więc tam, gdzie umowa wymaga certyfikowanej gwarancji, wdróż je jako element ochrony wielowarstwowej, dopóki ten proces się nie zakończy.
 
@@ -34,7 +34,7 @@ Pełne modele wdrożenia i przewodnik administracyjny znajdziesz w [Wdrożenie](
 
 ## Narzędzia zapobiegające eksfiltracji
 
-Istnieje kategoria narzędzi Lolly *specjalnie* po to, by trzymać pliki wewnątrz perymetru. Narzędzia ochrony prywatności.
+Pewna kategoria narzędzi Lolly - narzędzia ochrony prywatności - istnieje *specjalnie* po to, by trzymać pliki wewnątrz perymetru.
 
 
 - **Usuń ukryte dane**
@@ -44,10 +44,7 @@ Istnieje kategoria narzędzi Lolly *specjalnie* po to, by trzymać pliki wewnąt
 Anonimizuj, koduj, formatuj i przetwarzaj tekst ustrukturyzowany oraz nieustrukturyzowany. 
 
 - **Kompresuj PDF**
-Zapobiegaj wszelkim „kryzysom limitu maila”, w których żerują zewnętrzne narzędzia internetowe, a dane 
-
-- **Kompresuj PDF**
-Zapobiegaj wszelkim „kryzysom limitu maila”, w których żerują zewnętrzne narzędzia internetowe, a dane wypadają przez okno. 
+Zmniejsz zbyt duży PDF na urządzeniu, żeby nikt nie sięgał po zewnętrzną stronę typu „skompresuj mój PDF” w chwili, gdy plik jest za duży, by wysłać go mailem - a to właśnie wtedy dane wypadają przez okno. 
 
 Wszystkie te operacje to przekształcenia na urządzeniu: twój plik lub dane wchodzą, wychodzą oczyszczone bajty i **nie ma serwera, na który cokolwiek jest wysyłane**. Są celowym przeciwieństwem typowego narzędzia typu „wgraj swój plik na stronę obcej osoby, żeby go wyczyścić”, po które w innym wypadku sięga pełen dobrych intencji pracownik.
 
@@ -67,9 +64,11 @@ Eksporty mogą nieść **Content Credentials** - podpisany manifest [C2PA](https
 - **Włączone domyślnie, na urządzeniu.** Klucz podpisujący jest generowany na urządzeniu, jest niemożliwy do wyodrębnienia (nawet Lolly nie może go odczytać), a podpisywanie odbywa się lokalnie - jedynie opcjonalna *rejestracja* tożsamości w ogóle dotyka sieci.
 - **Poziomy zaufania.** Niezarejestrowany eksport jest poprawny strukturalnie, ale podpisany anonimowo (`untrusted`). Zarejestruj **zweryfikowaną tożsamość** (krótkotrwały certyfikat z Lolly CA, powiązany z adresem e-mail), a weryfikatory przypinające korzeń Lolly zgłoszą `trusted` + adres e-mail podpisującego. Zaufany urząd znaczników czasu oraz zielone światło zewnętrznego walidatora (zgodność z C2PA) są w planach. Każdy poziom jest jawny, a plik zawsze deklaruje tylko takie zaufanie, jakie potrafi udowodnić.
 - **Okres ważności poświadczenia** to decyzja operatora/użytkownika w chwili podpisywania: 7 / 30 / 90 / 365 dni, domyślnie 30.
-- **Weryfikacja odbywa się na urządzeniu.** Przeciągnij dowolny plik na `/valid` (lub `lolly validate <file>`), aby uzyskać offline'owy raport o tym, czy naprawdę powstał w Lolly i czy od tego czasu pozostał niezmieniony. Zobacz [Tożsamość Content Credentials](/info/content-credentials-identity.html).
+- **Lolly Imprint.** Drugi, uzupełniający sygnał, który jest **włączony domyślnie**: niewidoczny znak wodny na poziomie pikseli, wpieczony w eksporty rastrowe (oraz w rastry renderowane przez Lolly wewnątrz PDF/PPTX, nigdy we własny osadzony obraz użytkownika). Tam, gdzie poświadczenie ginie przy dowolnej zmianie kontenera, Lolly Imprint przetrwa ponowny zapis albo zrzut ekranu - trwała wskazówka „te piksele przeszły przez Lolly”, informująca wyłącznie o obecności, bez żadnych danych osobowych. To bezpieczeństwo przez niejawność, a nie twarde zabezpieczenie, i uzupełnia poświadczenie, zamiast je zastępować. `imprint=0` pozwala z niego zrezygnować.
+- **Durable Content Credentials (opcjonalnie).** Eksport rastrowy może dodatkowo nieść niewidoczny, *trwały* znak kodujący identyfikator miękkiego powiązania (soft-binding), dzięki czemu poświadczenie C2PA da się odzyskać nawet po tym, jak upload w mediach społecznościowych albo ponowny zapis usunął metadane pliku - czyli w sytuacji, w której zwykłe poświadczenie zostałoby utracone. Działa tylko dla rastrów i kosztuje dodatkowy przebieg kodowania sieci neuronowej, więc jest domyślnie wyłączone (`durable=1`, aby je włączyć). Lolly już dziś rozpoznaje własny trwały znak offline w `/verify`; odzyskiwanie przez narzędzia zewnętrzne (np. Adobe) nastąpi, gdy branżowe rozwiązanie soft-binding zostanie wdrożone.
+- **Weryfikacja odbywa się na urządzeniu.** Przeciągnij dowolny plik na `/verify` (lub użyj `lolly validate <file>`), aby uzyskać offline'owy raport o tym, czy naprawdę powstał w Lolly i czy od tego czasu pozostał niezmieniony. Widok Verify w wersji webowej dodatkowo oznacza treści wygenerowane przez AI, wykrywa Lolly Imprint, weryfikuje podpisy **SEAL** (podpis na poziomie bajtów, kluczowany w DNS - jedynym kontaktem z siecią jest odpytanie klucza w DNS, nigdy sam plik), opcjonalnie skanuje dogłębnie w poszukiwaniu zewnętrznych znaków wodnych na poziomie pikseli (jednorazowe pobranie modelu na urządzenie) i ujawnia ukryte dane - wszystko to bez wysyłania pliku na serwer. Zobacz [Tożsamość Content Credentials](/info/content-credentials-identity.html).
 
-> **Uwagi o interoperacyjności.** Lolly już dziś weryfikuje offline własne poświadczenia oraz wiele poświadczeń zewnętrznych. Dwie kwestie interoperacyjności są w toku: pełne odczytywanie manifestów roszczeń C2PA w wersji **v2** od innych producentów oraz WebM - który nie ma jeszcze ustandaryzowanego mapowania C2PA, więc Lolly dołącza manifest jako część Matroska (narzędzia zewnętrzne weryfikują pliki MP4 z Lolly od ręki; WebM dołączy, gdy standard się ustabilizuje).
+> **Uwagi o interoperacyjności.** Lolly już dziś weryfikuje offline własne poświadczenia oraz wiele poświadczeń zewnętrznych, w tym odczytuje manifesty roszczeń C2PA w wersji **v2** od innych producentów. Jedna kwestia interoperacyjności pozostaje w toku: WebM - który nie ma jeszcze ustandaryzowanego mapowania C2PA, więc Lolly dołącza manifest jako część Matroska (narzędzia zewnętrzne weryfikują pliki MP4 z Lolly od ręki; WebM dołączy, gdy standard się ustabilizuje).
 
 ## Szyfrowanie i zabezpieczanie hasłem
 

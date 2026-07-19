@@ -1,5 +1,7 @@
 # Hurtigstart
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
 Lolly omgjør reglene dine - farger, typografi, layouter, logikk - til verktøy som hvem som helst kan bruke for å lage ferdige filer: bilder, PDF-er, sosiale kort, video, ved å fylle inn noen få felt. Det finnes ingenting å lære og ingenting å laste opp: alt kjører på enheten din, på nett eller offline.
 
 Dette er siden du bør lese først. To ting gjør deg produktiv: **gjør Lolly til din egen** (rett den mot merkevaren din), og **ta inn det du allerede har** (designfilene og tokenene dine). Alt annet er bare et klikk unna.
@@ -11,6 +13,8 @@ Dette er siden du bør lese først. To ting gjør deg produktiv: **gjør Lolly t
 Merkevaren din i Lolly er et lite **designtokens**-dokument - farger, skrifttyper og noen få regler - som hvert verktøy rendres mot. Sett den opp én gang, så er alt du lager merkevareriktig av natur, ikke gjennom en gjennomgang. Det finnes tre veier inn; velg den som passer der merkevaren din allerede finnes.
 
 ### Start fra bunnen (Brand Studio)
+
+![The Brand Studio start screen - name, primary colour, and a derived palette](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&localize=1&filename=brand-studio)
 
 Første gang du åpner appen, havner du på skjermen **Start** (`#/start`) - [**Brand Studio**](/info/brand-studio.html). Gi den et navn og en primærfarge, så *utleder* Lolly en komplett, tilgjengelig palett fra den - lyse/mørke flater, tekst, aksenter - med den samme fargematematikken motoren bruker overalt ellers. Velg en skrifttype, og du har en fungerende merkevare på under et minutt. Derfra lar studioets fem faner (Logos, Colours, Type, Tokens, Catalogue) deg ta det så langt du vil - finpuss hva som helst senere, når du enn kommer tilbake.
 
@@ -29,6 +33,8 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 `ingest:brand` tar imot alle de tre formatene Penpot/Tokens Studio eksporterer det samme dokumentet i - en enkelt `tokens.json`, en mappe (`$metadata.json` + filer per sett), eller et `project.penpot`-arkiv. Med `--activate` registreres merkevaren som en profil, byttes det til den, og katalogen bygges på nytt. Se [Konfigurasjon](/info/configuration.html) for hvordan merkevarepakker og profiler henger sammen.
 
 ### Finjuster den i appen
+
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand)
 
 Når en merkevare er aktiv, fortsetter du å forme den i [**Brand Studio**](/info/brand-studio.html) (`#/start`) - endre en farge eller en rolle, og hver forhåndsvisning i appen oppdateres mens du skriver. (Dashbordets fane **Designsystem** på `#/d` *viser* merkevaren skrivebeskyttet; det er i Studio du redigerer den.) Den samme merkevaren oppsummeres på kortet **Profil → Din merkevare**. Skrifttyper er ekte: velg fra Google Fonts, og Lolly lagrer filen **på enheten din** som en merkevareressurs, slik at typografien din fungerer offline og ingenting hentes ved rendering.
 

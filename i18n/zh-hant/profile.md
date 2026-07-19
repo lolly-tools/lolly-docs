@@ -8,6 +8,8 @@
 
 ## 個人資料裡有什麼
 
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
+
 | 項目 | 內容 |
 |---|---|
 | **姓名** | 名字與姓氏。 |

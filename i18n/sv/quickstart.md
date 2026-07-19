@@ -1,5 +1,7 @@
 # Snabbstart
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
 Lolly omvandlar dina regler - färger, typografi, layouter, logik - till verktyg som vem som helst kan använda för att skapa färdiga filer: bilder, PDF:er, sociala kort, video, genom att fylla i några fält. Det finns inget att lära sig och inget att ladda upp: allt körs på din enhet, online eller offline.
 
 Det här är sidan du bör läsa först. Två saker gör dig produktiv: **gör Lolly till din** (peka den mot ditt varumärke) och **ta in det du redan har** (dina designfiler och tokens). Allt annat är bara ett klick bort.
@@ -11,6 +13,8 @@ Det här är sidan du bör läsa först. Två saker gör dig produktiv: **gör L
 Ditt varumärke i Lolly är ett litet **designtokens**-dokument - färger, typsnitt och några regler - som varje verktyg renderar mot. Ställ in det en gång så blir allt du skapar varumärkesriktigt per konstruktion, inte via granskning. Det finns tre sätt in; välj det som matchar var ditt varumärke redan finns.
 
 ### Börja från grunden (guiden)
+
+![The Brand Studio start screen - name, primary colour, and a derived palette](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&localize=1&filename=brand-studio)
 
 Första gången landar du på skärmen **Start** (`#/start`). Ge den ett namn och en primärfärg så *härleder* Lolly en komplett, tillgänglig palett från den - ljusa/mörka ytor, text, accenter - med samma färgmatematik som motorn använder överallt annars. Välj ett typsnitt, så har du ett fungerande varumärke på under en minut. Du kan finjustera allt senare.
 
@@ -29,6 +33,8 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 `ingest:brand` tar emot alla tre format som Penpot/Tokens Studio exporterar samma dokument i - en enda `tokens.json`, en katalog (`$metadata.json` + filer per set), eller ett `project.penpot`-arkiv. Med `--activate` registreras varumärket som en profil, växlar till den och bygger om katalogen. Se [Konfiguration](/info/configuration.html) för hur varumärkespaket och profiler hänger ihop.
 
 ### Finjustera i appen
+
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand)
 
 När ett varumärke är aktivt är instrumentpanelens redigerare **Ditt varumärke** (`#/d`) en direktredigerare - ändra en färg eller en roll och varje förhandsvisning på sidan uppdateras medan du skriver. Samma varumärke sammanfattas på kortet **Profil → Ditt varumärke**. Typsnitt är riktiga: välj från Google Fonts och Lolly lagrar filen **på din enhet** som en varumärkestillgång, så din typografi fungerar offline och inget hämtas vid rendering.
 

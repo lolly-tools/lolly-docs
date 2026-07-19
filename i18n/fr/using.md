@@ -6,6 +6,10 @@ Un guide pratique pour vraiment *utiliser* l'application - ouvrir un outil, trav
 
 ## Ouvrir un outil
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
+![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
+
 L'écran d'accueil est la **galerie** - tous les outils, regroupés par catégorie. Clique sur une carte pour ouvrir l'outil ; si tu y as déjà travaillé, un bouton **Continuer** reprend ta session la plus récente. Utilise la zone de recherche pour filtrer par nom.
 
 Chaque outil se présente en vue divisée : les **contrôles** d'un côté, un **aperçu** en direct (le canevas) de l'autre. Modifie n'importe quel contrôle et l'aperçu se met à jour instantanément.
@@ -32,6 +36,8 @@ L'aperçu montre toujours exactement ce qui sera exporté.
 Un changement de dimension ramène toujours la vue à un ajustement net.
 
 ### Le canevas libre (Layout Studio)
+
+![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 Les outils en canevas libre ajoutent une surface de travail *autour* du plan de travail, comme le plan de collage d'un designer :
 
@@ -65,6 +71,8 @@ Clique sur **Enregistrer** pour stocker les champs actuels comme session pour ce
 
 ## Projets
 
+![Projects - saved sessions organised into nestable folders](/t/url-shot?url=%2F%23%2Fp&width=1440&height=900&dpi=192&waitMs=1200&format=svg&localize=1&filename=projects)
+
 **Projets** - ouvre-le depuis l'onglet **Projets** à côté de **Outils**, ou depuis **Profil → Stockage → Organiser dans Projets** - est un espace pour tout ce que tu as enregistré, et fonctionne comme un gestionnaire de fichiers :
 
 - **Des dossiers imbriqués.** Regroupe les sessions enregistrées dans des dossiers, et des dossiers dans d'autres dossiers, aussi profondément que tu veux. Crée un dossier, renomme-le, ou fais glisser une tuile sur un autre dossier pour la déplacer ; un fil d'Ariane te permet de remonter. Un dossier **Non classé**, toujours présent, contient tout ce qui n'a pas encore été rangé.
@@ -90,6 +98,8 @@ Les **filtres photo** - Halftone, Scanline, Posterize, Duotone - affichent un bo
 Quand un outil te permet d'ajouter une image depuis ton appareil, elle est redimensionnée, débarrassée de ses données EXIF/GPS, puis enregistrée dans ta bibliothèque personnelle **Mes images** (sous **Profil → Stockage**). Réutilise-la dans n'importe quel outil. La bibliothèque a une capacité limitée et reste entièrement locale - gère ou supprime les images à cet endroit.
 
 ## Le Catalogue - ta bibliothèque de ressources
+
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 Le **Catalogue** (`#/c`, ou le lien **Catalogue** dans le menu) rassemble tout ce sur quoi tes outils peuvent s'appuyer - logos de marque, images, audio et animations, regroupés par type - et c'est aussi là que vivent tes **propres fichiers créatifs**. Pas de serveur, pas de console d'administration, pas de pull request : tout est sur ton appareil.
 

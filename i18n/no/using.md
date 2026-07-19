@@ -6,6 +6,10 @@ En praktisk guide til å faktisk *bruke* appen - åpne et verktøy, jobbe med ca
 
 ## Åpne et verktøy
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
+![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
+
 Hjemskjermen er **galleriet** - alle verktøy, gruppert etter kategori. Klikk på et kort for å åpne verktøyet; hvis du har jobbet med det før, gjenopptar en **Fortsett**-knapp din siste økt. Bruk søkefeltet for å filtrere etter navn.
 
 Hvert verktøy er en delt visning: **kontroller** på den ene siden, en direkte **forhåndsvisning** (canvaset) på den andre. Endre en kontroll, så oppdateres forhåndsvisningen umiddelbart.
@@ -32,6 +36,8 @@ Forhåndsvisningen viser alltid nøyaktig det som vil bli eksportert.
 En endring av dimensjonene fører alltid visningen tilbake til en ren tilpasning.
 
 ### Det frie canvaset (Layout Studio)
+
+![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 Verktøy med fritt canvas legger til en arbeidsflate *rundt* tegnebrettet, som en designers oppslagstavle:
 
@@ -65,6 +71,8 @@ Klikk **Lagre** for å lagre gjeldende inndata som en økt for det verktøyet. D
 
 ## Prosjekter
 
+![Projects - saved sessions organised into nestable folders](/t/url-shot?url=%2F%23%2Fp&width=1440&height=900&dpi=192&waitMs=1200&format=svg&localize=1&filename=projects)
+
 **Prosjekter** - åpne det fra fanen **Prosjekter** ved siden av **Verktøy**, eller fra **Profil → Lagring → Organiser i Prosjekter** - er et hjem for alt du har lagret, og det fungerer som en filbehandler:
 
 - **Mapper som kan nøstes.** Grupper lagrede økter i mapper, og mapper inni mapper, så dypt du vil. Opprett en mappe, gi den nytt navn, eller dra en flis til en annen mappe for å flytte den; en brødsmulesti fører deg tilbake opp. En alltid tilstedeværende mappe, **Ukategorisert**, inneholder alt som ennå ikke er arkivert.
@@ -90,6 +98,8 @@ Fotofiltrene - Halftone, Scanline, Posterize, Duotone - viser en **Go live**-kna
 Når et verktøy lar deg legge til et bilde fra enheten din, skaleres det ned, strippes for EXIF/GPS, og lagres i det personlige biblioteket **Mine bilder** (under **Profil → Lagring**). Gjenbruk det i et hvilket som helst verktøy. Biblioteket har en øvre grense og er helt lokalt - administrer eller slett bilder der.
 
 ## Katalogen - ressursbiblioteket ditt
+
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 **Katalogen** (`#/c`, eller lenken **Katalog** i menyen) samler alt verktøyene dine kan hente fra - merkevarelogoer, bilder, lyd og bevegelse, gruppert etter type - og det er også der dine **egne kreative filer** bor. Ingen server, ingen adminkonsoll, ingen pull request: alt er på enheten din.
 

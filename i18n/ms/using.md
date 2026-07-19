@@ -6,6 +6,10 @@ Panduan praktikal untuk *menggunakan* aplikasi ini - membuka alat, bekerja denga
 
 ## Membuka alat
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
+![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
+
 Skrin utama ialah **galeri** - setiap alat, dikumpulkan mengikut kategori. Klik kad untuk membuka alat; jika anda pernah menggunakannya sebelum ini, butang **Sambung** akan menyambung semula sesi terkini anda. Gunakan kotak carian untuk menapis mengikut nama.
 
 Setiap alat ialah paparan berpisah: **kawalan** di satu sisi, **pratonton** langsung (kanvas) di sisi lain. Ubah mana-mana kawalan dan pratonton akan dikemas kini serta-merta.
@@ -32,6 +36,8 @@ Pratonton sentiasa menunjukkan dengan tepat apa yang akan dieksport.
 Perubahan dimensi sentiasa akan menetapkan semula pandangan kepada muat yang kemas.
 
 ### Kanvas bebas (Layout Studio)
+
+![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 Alat kanvas bebas menambah permukaan kerja *di sekeliling* artboard, seperti pasteboard seorang pereka grafik:
 
@@ -65,6 +71,8 @@ Klik **Simpan** untuk menyimpan input semasa sebagai satu sesi bagi alat tersebu
 
 ## Projek
 
+![Projects - saved sessions organised into nestable folders](/t/url-shot?url=%2F%23%2Fp&width=1440&height=900&dpi=192&waitMs=1200&format=svg&localize=1&filename=projects)
+
 **Projek** - buka daripada tab **Projek** di sebelah **Alat**, atau daripada **Profil → Storan → Susun dalam Projek** - ialah tempat untuk segala yang telah anda simpan, dan ia berfungsi seperti pengurus fail:
 
 - **Folder yang boleh disarangkan.** Kumpulkan sesi yang disimpan ke dalam folder, dan folder di dalam folder, sedalam yang anda mahu. Cipta folder, namakan semula, atau seret jubin ke atas folder lain untuk memindahkannya; jejak roti (breadcrumb) membawa anda kembali ke atas. Folder **Tidak Dikategorikan** yang sentiasa wujud menyimpan apa-apa yang belum difailkan.
@@ -90,6 +98,8 @@ Reka bentuk yang besar akan menghasilkan URL yang panjang, jadi dialog itu turut
 Apabila sesuatu alat membenarkan anda menambah imej daripada peranti anda, ia akan diturunskala, dibuang data EXIF/GPS-nya, dan disimpan ke dalam pustaka peribadi **Imej saya** anda (di bawah **Profil → Storan**). Guna semula imej itu merentasi mana-mana alat. Pustaka ini mempunyai had dan sepenuhnya setempat - urus atau padam imej di situ.
 
 ## Katalog - pustaka aset anda
+
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 **Katalog** (`#/c`, atau pautan **Katalog** dalam menu) mengumpulkan segala yang boleh digunakan oleh alat anda - logo jenama, imej, audio, dan gerakan (motion), dikumpulkan mengikut jenis - dan di situ jugalah **fail kreatif anda sendiri** disimpan. Tiada pelayan, tiada konsol pentadbir, tiada pull request: semuanya pada peranti anda.
 

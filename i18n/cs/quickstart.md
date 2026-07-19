@@ -1,5 +1,7 @@
 # Rychlý start
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
 Lolly mění tvá pravidla - barvy, písmo, rozvržení, logiku - na nástroje, které může kdokoli použít k vytvoření hotových souborů: obrázků, PDF, sociálních karet, videa, prostým vyplněním pár polí. Není se co učit a nic se nenahrává: všechno běží na tvém zařízení, online i offline.
 
 Tohle je stránka, kterou si přečti jako první. K produktivitě tě dostanou dvě věci: **udělej si Lolly svým** (nasměruj ho na svou značku) a **přines si, co už máš** (své návrhové soubory a tokeny). Všechno ostatní je jen odkaz daleko.
@@ -11,6 +13,8 @@ Tohle je stránka, kterou si přečti jako první. K produktivitě tě dostanou 
 Tvá značka v Lolly je malý dokument s **design tokeny** - barvy, písma a pár pravidel - podle kterého vykresluje každý nástroj. Nastavíš ji jednou a všechno, co vytvoříš, je v souladu se značkou už ze své podstaty, ne díky kontrole. Vedou k tomu tři cesty; vyber tu, která odpovídá tomu, kde tvá značka už dnes žije.
 
 ### Začni od nuly (průvodce)
+
+![The Brand Studio start screen - name, primary colour, and a derived palette](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&localize=1&filename=brand-studio)
 
 Při prvním spuštění se ocitneš na obrazovce **Start** (`#/start`). Zadej název a primární barvu a Lolly z nich *odvodí* kompletní, přístupnou paletu - světlé/tmavé plochy, text, akcenty - pomocí stejné barevné matematiky, kterou engine používá všude jinde. Vyber písmo a za necelou minutu máš funkční značku. Cokoli z toho můžeš kdykoli později doladit.
 
@@ -29,6 +33,8 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 `ingest:brand` přijímá všechny tři kontejnery, ve kterých Penpot / Tokens Studio exportují tentýž dokument - jediný soubor `tokens.json`, adresář (`$metadata.json` + soubory po jednotlivých sadách), nebo archiv `project.penpot`. S `--activate` registruje značku jako profil, přepne se na ni a znovu sestaví katalog. Viz [Konfigurace](/info/configuration.html), jak spolu balíčky značek a profily souvisí.
 
 ### Dolaď ji v aplikaci
+
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand)
 
 Jakmile je značka aktivní, je editor **Tvá značka** na dashboardu (`#/d`) živý - změníš barvu nebo roli a každý náhled na stránce se aktualizuje při psaní. Stejná značka je shrnutá na kartě **Profil → Tvá značka**. Písma jsou opravdová: vyber si z Google Fonts a Lolly uloží soubor **na tvém zařízení** jako součást značky, takže tvé písmo funguje i offline a při renderování se nic nestahuje.
 

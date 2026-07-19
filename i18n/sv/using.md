@@ -6,6 +6,10 @@ En praktisk guide till att faktiskt *använda* appen - att öppna ett verktyg, a
 
 ## Öppna ett verktyg
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
+![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
+
 Startskärmen är **galleriet** - alla verktyg, grupperade efter kategori. Klicka på ett kort för att öppna verktyget; om du har arbetat med det tidigare återupptar en **Fortsätt**-knapp din senaste session. Använd sökrutan för att filtrera efter namn.
 
 Varje verktyg är en delad vy: **kontroller** på ena sidan, en live **förhandsvisning** (arbetsytan) på den andra. Ändra en kontroll så uppdateras förhandsvisningen omedelbart.
@@ -32,6 +36,8 @@ Förhandsvisningen visar alltid exakt det som kommer att exporteras.
 En ändring av måtten återställer alltid vyn till en ren anpassning.
 
 ### Den fria arbetsytan (Layout Studio)
+
+![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 Verktyg med fri arbetsyta lägger till en arbetsyta *runt* ritytan, som en formgivares arbetsbord:
 
@@ -65,6 +71,8 @@ Klicka på **Spara** för att lagra de aktuella inmatningarna som en session fö
 
 ## Projekt
 
+![Projects - saved sessions organised into nestable folders](/t/url-shot?url=%2F%23%2Fp&width=1440&height=900&dpi=192&waitMs=1200&format=svg&localize=1&filename=projects)
+
 **Projekt** - öppna det från fliken **Projekt** bredvid **Verktyg**, eller från **Profil → Lagring → Organisera i Projekt** - är ett hem för allt du har sparat, och det fungerar som en filhanterare:
 
 - **Mappar som kan nästlas.** Gruppera sparade sessioner i mappar, och mappar inuti mappar, så djupt du vill. Skapa en mapp, byt namn på den, eller dra en ruta till en annan mapp för att flytta den; en brödsmulsstig leder dig tillbaka upp. En alltid närvarande mapp, **Ej kategoriserat**, innehåller allt som ännu inte har arkiverats.
@@ -90,6 +98,8 @@ Fotofiltren - Halvton, Skanlinje, Posterisera, Duoton - visar en knapp **Gå liv
 När ett verktyg låter dig lägga till en bild från din enhet skalas den ned, rensas från EXIF/GPS och sparas i ditt personliga bibliotek **Mina bilder** (under **Profil → Lagring**). Återanvänd den i vilket verktyg som helst. Biblioteket har ett tak och är helt lokalt - hantera eller ta bort bilder där.
 
 ## Katalogen - ditt tillgångsbibliotek
+
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 **Katalogen** (`#/c`, eller länken **Katalog** i menyn) samlar allt dina verktyg kan använda - varumärkeslogotyper, bilder, ljud och rörelse, grupperade efter typ - och det är också här dina **egna kreativa filer** bor. Ingen server, ingen adminkonsol, ingen pull request: allt finns på din enhet.
 

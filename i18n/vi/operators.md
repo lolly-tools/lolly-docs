@@ -1,12 +1,12 @@
 # Lolly cho Nhà vận hành
 
-### Một chiến lược phòng thủ theo chiều sâu, sẵn sàng cho tương lai, ngăn ngừa thất thoát dữ liệu & xác thực nguồn gốc - mà lại tình cờ là một nền tảng sản xuất sáng tạo
+### Một chiến lược an ninh & tình báo phòng thủ theo chiều sâu - mà lại tình cờ là một nền tảng sản xuất sáng tạo
 
-Hệ miễn dịch của tổ chức, bao bọc quanh những gì bạn đã và đang làm - để công việc sáng tạo thường nhật mà đội ngũ của bạn cần mỗi ngày diễn ra *bên trong* ranh giới bảo mật của bạn, thay vì rò rỉ ra ngoài nó.
+Hệ miễn dịch của tổ chức theo mô hình zero-trust, bao bọc quanh những gì bạn đã và đang làm - để công việc sáng tạo thường nhật mà đội ngũ của bạn cần mỗi ngày diễn ra *bên trong* ranh giới bảo mật của bạn, thay vì rò rỉ ra ngoài nó.
 
-**Lợi ích dành cho bạn.** Bạn sẽ là người đã nói có với một thứ vừa an toàn *vừa* được yêu thích. Bạn bịt kín một lỗ hổng rò rỉ dữ liệu và xóa sổ hàng đợi yêu cầu thiết kế chỉ trong một nước đi - chiến thắng bảo mật hiếm hoi khiến bạn được yêu mến hơn, chứ không phải ít đi. Không còn cuộc gọi lúc 3 giờ sáng vì ai đó gửi email tệp thương hiệu cho một nhà thầu ngoài hay dán dữ liệu khách hàng vào một công cụ web ngẫu nhiên; ít nhà cung cấp SaaS, hợp đồng và kiểm toán hơn trên bàn làm việc của bạn; và một dấu vết git đầy đủ mà bạn có thể chỉ ra khi ai đó hỏi ai đã phê duyệt điều gì. Bạn có thể ngủ ngon.
+**Lợi ích dành cho bạn.** Bạn sẽ là người đã nói có với một thứ vừa an toàn *vừa* được yêu thích. Bạn bịt kín một lỗ hổng rò rỉ dữ liệu, có thêm năng lực mới và xóa sổ hàng đợi yêu cầu thiết kế chỉ trong một nước đi - chiến thắng bảo mật hiếm hoi khiến bạn được yêu mến hơn, chứ không phải ít đi. Không còn cuộc gọi lúc 3 giờ sáng từ bộ phận pháp lý vì tệp bị cấm công bố hay dữ liệu khách hàng lọt vào một công cụ web ngẫu nhiên nào đó; ít nhà cung cấp SaaS, hợp đồng và kiểm toán hơn trên bàn làm việc của bạn; và một dấu vết kiểm toán có thể tái tạo đầy đủ mà bạn có thể chỉ ra khi có ai đó hỏi. Bạn ngủ ngon hơn, và cũng làm bừng sáng thêm vài ngày khi làm điều đó.
 
-Lolly xứng đáng có một vị trí như một công cụ sáng tạo: nó xóa sổ hàng đợi thiết kế và trao đầu ra chất lượng sản xuất vào tay mọi người. Nhưng lý do khiến việc phân phát rộng rãi như vậy *an toàn* nằm ở kiến trúc. Không có gì được tải lên, mọi thứ đều có thể tái tạo, và mỗi bản xuất ra đều có thể mang theo một bản ghi mật mã học cho biết nó đến từ đâu. Trang này kể câu chuyện về bảo mật và triển khai.
+Lolly không phải một công cụ sáng tạo hạng hai: nó trao đầu ra chất lượng sản xuất vào tay mọi người, và trải nghiệm sáng tạo theo đúng thương hiệu của nó không thua kém bất kỳ ai. Lý do khiến việc phân phát rộng rãi như vậy *an toàn* nằm ở kiến trúc: không có gì được tải lên mà không phải do bạn đưa vào, mọi kết quả đều có thể tái tạo, và mỗi bản xuất ra đều có thể mang theo nhiều lớp bản ghi mật mã học hàng đầu ngành. Dù một tài liệu đến tay bạn bằng cách nào, bạn cũng có thể thấy đầy đủ nguồn gốc của nó, liệu nó có bị can thiệp hay không, và liệu bạn có thể tái tạo nó chính xác từng pixel hay không.
 
 > **Hiện trạng hôm nay.** Các đặc tính bảo mật của Lolly vốn mạnh theo thiết kế, và các engine mật mã học cùng bộ phân tích tệp của nó đang trải qua quá trình siết chặt hạ tầng cấp doanh nghiệp của SUSE. Các con dấu, chữ ký trên thiết bị, và mã hóa bên dưới là thật và có thể bảo vệ được ngay bây giờ, đồng thời đang dần tiến tới chứng nhận độc lập - nên ở nơi mà hợp đồng đòi hỏi sự đảm bảo đã được chứng nhận, hãy triển khai chúng như phòng thủ theo chiều sâu trong khi quá trình đó hoàn tất.
 
@@ -34,20 +34,17 @@ Toàn bộ các mô hình triển khai và hướng dẫn quản trị chi tiế
 
 ## Các tiện ích chống rò rỉ dữ liệu
 
-Có một nhóm công cụ của Lolly tồn tại *chuyên biệt* để giữ tệp bên trong ranh giới bảo mật. Đó là các tiện ích quyền riêng tư.
+Một nhóm công cụ của Lolly - các tiện ích quyền riêng tư - tồn tại *chuyên biệt* để giữ tệp bên trong ranh giới bảo mật.
 
 
 - **Xóa dữ liệu ẩn**
  Xóa vị trí địa lý và mọi thông tin nhận dạng ẩn khỏi tài liệu và tệp phương tiện.
 
 - **Trợ lý văn bản**  
-Ẩn danh, mã hóa, định dạng, và thao tác với văn bản có cấu trúc lẫn phi cấu trúc. 
+Ẩn danh, mã hóa, định dạng và thao tác với văn bản có cấu trúc lẫn phi cấu trúc. 
 
 - **Nén PDF**
-Ngăn chặn mọi khả năng xảy ra 'khủng hoảng giới hạn dung lượng email' nơi các công cụ web bên thứ ba rình rập và dữ liệu 
-
-- **Nén PDF**
-Ngăn chặn mọi khả năng xảy ra 'khủng hoảng giới hạn dung lượng email' nơi các công cụ web bên thứ ba rình rập và dữ liệu lọt ra ngoài. 
+Thu nhỏ một tệp PDF quá khổ ngay trên thiết bị, để không ai phải tìm đến một trang web bên thứ ba "nén PDF của tôi" ngay khi tệp quá lớn để gửi qua email - đó chính xác là nơi dữ liệu rò rỉ ra ngoài. 
 
 Tất cả những công cụ này đều là các phép biến đổi trên thiết bị: tệp hoặc dữ liệu của bạn đi vào, các byte đã được làm sạch đi ra, và **không hề có máy chủ nào để tải lên**. Chúng là đối lập có chủ đích với kiểu công cụ điển hình "tải tệp của bạn lên trang web của một người lạ để làm sạch nó" mà một nhân viên có thiện chí thường tìm đến khi không có lựa chọn khác.
 
@@ -67,9 +64,11 @@ Các bản xuất có thể mang **Content Credentials** - một manifest [C2PA]
 - **Bật mặc định, thực hiện trên thiết bị.** Khóa ký được tạo ngay trên thiết bị, không thể trích xuất (ngay cả Lolly cũng không đọc được), và việc ký diễn ra cục bộ - chỉ có bước *đăng ký* danh tính tùy chọn mới chạm đến mạng.
 - **Các cấp độ tin cậy.** Một bản xuất chưa đăng ký thì vẫn hợp lệ về mặt cấu trúc nhưng được ký ẩn danh (`untrusted`). Đăng ký một **danh tính đã xác minh** (chứng chỉ ngắn hạn từ Lolly CA, gắn với một email) và các trình xác minh ghim gốc Lolly sẽ báo cáo `trusted` + email của người ký. Một cơ quan đóng dấu thời gian đáng tin cậy và dấu xanh xác thực từ bên thứ ba (tuân thủ C2PA) đang nằm trong lộ trình. Mỗi cấp độ đều được nêu rõ ràng, và một tệp chỉ tuyên bố mức độ tin cậy mà nó có thể chứng minh.
 - **Thời hạn của thông tin xác thực** là lựa chọn của nhà vận hành/người dùng tại thời điểm ký: 7 / 30 / 90 / 365 ngày, mặc định là 30.
-- **Việc xác minh diễn ra trên thiết bị.** Thả bất kỳ tệp nào vào `/valid` (hoặc `lolly validate <file>`) để nhận báo cáo ngoại tuyến cho biết liệu nó có thực sự được tạo bằng Lolly và không bị thay đổi kể từ đó hay không. Xem [Danh tính Content Credentials](/info/content-credentials-identity.html).
+- **Lolly Imprint.** Một tín hiệu thứ hai, mang tính bổ sung, và **bật mặc định**: một hình mờ pixel vô hình được nhúng vào các bản xuất raster (và các phần raster do Lolly dựng hình bên trong PDF/PPTX, không bao giờ là ảnh mà người dùng tự nhúng vào). Trong khi thông tin xác thực sẽ mất hiệu lực trước bất kỳ thay đổi nào ở container, Lolly Imprint vẫn tồn tại qua một lần lưu lại hoặc một ảnh chụp màn hình - một dấu hiệu bền vững cho biết "những pixel này từng đi qua Lolly", chỉ báo sự hiện diện, không chứa dữ liệu cá nhân. Đây là kiểu bảo mật dựa trên sự che giấu, không phải một lớp phòng thủ vững chắc, và bổ sung cho thông tin xác thực chứ không thay thế nó. `imprint=0` để từ chối sử dụng.
+- **Durable Content Credentials (tùy chọn bật).** Một bản xuất raster có thể mang thêm một dấu hiệu vô hình *bền vững* (durable) mã hóa một định danh liên kết mềm (soft-binding), để thông tin xác thực C2PA vẫn có thể được khôi phục ngay cả sau khi một lượt tải lên mạng xã hội hoặc lưu lại đã xóa mất metadata của tệp - trường hợp mà một thông tin xác thực thông thường sẽ bị mất. Tính năng này chỉ áp dụng cho raster và tốn một lượt mã hóa bằng mạng nơ-ron, nên mặc định tắt (`durable=1` để bật). Lolly nhận diện được dấu hiệu bền vững của chính mình ngay trên thiết bị, ngoại tuyến, tại `/verify` ngay hôm nay; việc các công cụ bên thứ ba (ví dụ: Adobe) khôi phục được sẽ theo sau khi giải pháp liên kết mềm chung của ngành được hoàn thiện.
+- **Việc xác minh diễn ra trên thiết bị.** Thả bất kỳ tệp nào vào `/verify` (hoặc `lolly validate <file>`) để nhận một báo cáo ngoại tuyến cho biết liệu nó có thực sự được tạo bằng Lolly và không bị thay đổi kể từ đó hay không. Khung xem Verify trên web còn gắn cờ nội dung do AI tạo ra, phát hiện Lolly Imprint, xác minh chữ ký **SEAL** (một chữ ký cấp byte được khóa trong DNS - lượt chạm mạng duy nhất là một truy vấn khóa DNS, không bao giờ là bản thân tệp), tùy chọn quét sâu để tìm hình mờ pixel của bên thứ ba (một lượt tải mô hình về thiết bị, chỉ một lần), và phát hiện dữ liệu ẩn - tất cả mà không cần tải tệp lên đâu cả. Xem [Danh tính Content Credentials](/info/content-credentials-identity.html).
 
-> **Lưu ý về khả năng tương tác.** Lolly hiện đã xác minh được thông tin xác thực của chính mình và nhiều thông tin từ bên thứ ba, ngoại tuyến. Có hai hạng mục tương tác đang được thực hiện: đọc đầy đủ các manifest C2PA claim **v2** từ những nhà sản xuất khác, và WebM - định dạng chưa có ánh xạ C2PA chuẩn hóa nào, nên Lolly đính kèm manifest dưới dạng một phần Matroska (các công cụ bên thứ ba xác minh được MP4 của Lolly ngay lập tức; WebM sẽ theo sau khi tiêu chuẩn ổn định).
+> **Lưu ý về khả năng tương tác.** Lolly xác minh được thông tin xác thực của chính mình và nhiều thông tin xác thực từ bên thứ ba ngay hôm nay, ở chế độ ngoại tuyến, kể cả việc đọc các manifest C2PA claim **v2** từ những nhà sản xuất khác. Vẫn còn một hạng mục tương tác đang được hoàn thiện: WebM - định dạng chưa có ánh xạ C2PA chuẩn hóa, nên Lolly đính kèm manifest dưới dạng một phần Matroska (các công cụ bên thứ ba xác minh được MP4 của Lolly ngay lập tức; WebM sẽ theo sau khi tiêu chuẩn ổn định).
 
 ## Mã hóa & đặt mật khẩu
 

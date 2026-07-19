@@ -6,6 +6,10 @@ Praktický průvodce tím, jak aplikaci opravdu *používat* - otevření nástr
 
 ## Otevření nástroje
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
+![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
+
 Domovská obrazovka je **galerie** - všechny nástroje, seskupené podle kategorie. Klikni na kartu, čímž nástroj otevřeš; pokud jsi na něm už dřív pracoval/a, tlačítko **Pokračovat** obnoví tvou poslední relaci. Vyhledávací pole použij k filtrování podle názvu.
 
 Každý nástroj je rozdělené zobrazení: na jedné straně **ovládací prvky**, na druhé straně živý **náhled** (plátno). Změň libovolný ovládací prvek a náhled se okamžitě aktualizuje.
@@ -32,6 +36,8 @@ Náhled vždy zobrazuje přesně to, co se exportuje.
 Změna rozměrů vždy vrátí zobrazení zpět na čisté přizpůsobení.
 
 ### Volné plátno (Layout Studio)
+
+![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 Nástroje s volným plátnem přidávají pracovní plochu *kolem* kresebné plochy, podobně jako grafikova podložka (pasteboard):
 
@@ -65,6 +71,8 @@ Klikni na **Uložit** a aktuální vstupy se uloží jako relace pro daný nást
 
 ## Projekty
 
+![Projects - saved sessions organised into nestable folders](/t/url-shot?url=%2F%23%2Fp&width=1440&height=900&dpi=192&waitMs=1200&format=svg&localize=1&filename=projects)
+
 **Projekty** - otevřeš je z karty **Projekty** vedle **Nástroje**, nebo z **Profil → Úložiště → Uspořádat v Projektech** - jsou domovem pro všechno, co sis uložil/a, a fungují jako správce souborů:
 
 - **Vnořitelné složky.** Seskup uložené relace do složek a složky do dalších složek, tak hluboko, jak chceš. Vytvoř složku, přejmenuj ji, nebo přetáhni dlaždici na jinou složku, aby se do ní přesunula; drobečková navigace tě provede zpátky nahoru. Vždy přítomná složka **Netříděné** obsahuje všechno, co ještě nebylo zařazeno.
@@ -90,6 +98,8 @@ Fotografické **filtry** - Halftone, Scanline, Posterize, Duotone - zobrazují t
 Když ti nástroj umožní přidat obrázek z tvého zařízení, zmenší se, zbaví se EXIF/GPS dat a uloží se do tvé osobní knihovny **Moje obrázky** (pod **Profil → Úložiště**). Znovu ho použij v libovolném nástroji. Knihovna má omezenou kapacitu a je čistě lokální - obrázky tam spravuješ nebo mažeš.
 
 ## Katalog - tvoje knihovna assetů
+
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 **Katalog** (`#/c`, nebo odkaz **Katalog** v nabídce) shromažďuje všechno, z čeho tvé nástroje mohou čerpat - brandová loga, obrázky, audio a pohyb, seskupené podle druhu - a je to zároveň místo, kde žijí i tvoje **vlastní kreativní soubory**. Žádný server, žádná administrátorská konzole, žádný pull request: všechno je na tvém zařízení.
 

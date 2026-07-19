@@ -1,12 +1,12 @@
 # Lolly para sa mga Operator
 
-### Isang future-proof, defence-in-depth, data-loss-prevention at provenance strategy - na nagkataon lang na isang creative production platform
+### Isang defence-in-depth na estratehiya sa seguridad at intelligence - na nagkataon lang na isang creative production platform
 
-Ang organizational immune system na bumabalot sa ginagawa mo na - para ang routine creative work na kailangan ng iyong mga team araw-araw ay nangyayari *sa loob* ng iyong perimeter sa halip na tumagas palabas nito.
+Ang zero-trust na organizational immune system na bumabalot sa ginagawa mo na - para ang routine creative work na kailangan ng iyong mga team araw-araw ay nangyayari *sa loob* ng iyong perimeter sa halip na tumagas palabas nito.
 
-**Ano ang mapapala mo.** Ikaw ang magiging taong nagsabing oo sa isang bagay na parehong ligtas *at* popular. Isinasara mo ang isang exfiltration hole at binubura ang design-request queue sa isang kilos lang - ang bihirang security win na nagpapagusto sa iyo nang higit, hindi kabaliktaran. Walang tawag ng alas-3 ng madaling araw dahil may nag-email ng brand files sa isang contractor o nag-paste ng customer data sa isang random na web tool; mas kaunting SaaS vendors, contracts, at audits sa iyong plato; at isang kumpletong git trail na maaari mong ituro kapag may nagtanong kung sino ang nag-approve ng ano. Nakakatulog ka nang mahimbing sa gabi.
+**Ano ang mapapala mo.** Ikaw ang magiging taong nagsabing oo sa isang bagay na parehong ligtas *at* popular. Isinasara mo ang isang exfiltration hole, nakakakuha ng kakayahan, at binubura ang isang request queue sa isang kilos lang - ang bihirang security win na nagpapagusto sa iyo nang higit, hindi kabaliktaran. Walang tawag mula sa legal nang alas-3 ng madaling araw dahil may embargoed files o customer data na napadpad sa isang random na web tool; mas kaunting SaaS vendors, contracts, at audits sa iyong plato; at isang lubos na reproducible na audit trail na maaari mong ituro kapag may nagtanong. Natutulog ka nang mas mahimbing, at napapasaya mo ang ilang araw sa paggawa nito.
 
-Nakukuha ni Lolly ang lugar nito bilang creative tool: binubura nito ang design queue at inilalagay ang production-quality output sa kamay ng lahat. Pero ang dahilan kung bakit *ligtas* itong ipamahagi nang ganoon kalawak ay architectural. Walang nag-a-upload, lahat ay reproducible, at bawat export ay maaaring magdala ng cryptographic record kung saan ito nanggaling. Ang pahinang ito ang security at rollout story.
+Hindi si Lolly isang second-class na creative tool: inilalagay nito ang production-quality output sa kamay ng lahat, at walang kapantay ang brand-guided creation experience nito. Ang dahilan kung bakit *ligtas* itong ipamahagi nang malawakan ay architectural: walang nag-a-upload na hindi mo mismo inilagay, reproducible ang bawat resulta, at bawat export ay maaaring magdala ng maraming layer ng industry-leading na cryptographic records. Kahit paano man dumating ang isang dokumento sa iyong mesa, makikita mo ang buo nitong provenance, kung ito ba ay ginalaw, at kung kaya mo ba itong likhaing muli nang pixel-perfect.
 
 > **Kung nasaan ito ngayon.** Malakas *by design* ang mga security properties ni Lolly, at ang mga cryptography at file-parsing engine nito ay sumasailalim sa enterprise-grade na infrastructure hardening ng SUSE. Totoo at maipagtatanggol na ngayon ang mga seal, on-device signing, at encryption sa ibaba, at umuunlad patungo sa independent certification - kaya kung saan kontraktwal na kinakailangan ang certified assurance, i-deploy ang mga ito bilang defence-in-depth habang natatapos ang prosesong iyon.
 
@@ -34,7 +34,7 @@ Matatagpuan ang kumpletong deploy models at administration walkthrough sa [Deplo
 
 ## Mga anti-exfiltration na utility
 
-May isang kategorya ng mga tool ni Lolly na umiiral *partikular* para panatilihin ang mga file sa loob ng perimeter. Ang mga privacy utility.
+May isang kategorya ng mga tool ni Lolly - ang mga privacy utility - na umiiral *partikular* para panatilihin ang mga file sa loob ng perimeter.
 
 
 - **Strip hidden data**
@@ -44,10 +44,7 @@ May isang kategorya ng mga tool ni Lolly na umiiral *partikular* para panatilihi
 I-anonymize, i-encode, i-format, at manipulahin ang structured at unstructured text. 
 
 - **Compress PDF**
-Iwasan ang anumang tsansa ng 'email limit crisis' kung saan sinasamantala ito ng mga third party web tool at ang data 
-
-- **Compress PDF**
-Iwasan ang anumang tsansa ng 'email limit crisis' kung saan sinasamantala ito ng mga third party web tool at natatapon ang data sa daan. 
+Paliitin ang isang sobrang-laking PDF on-device, para walang aabot sa isang third-party na "compress my PDF" website sa sandaling masyadong malaki na ang isang file para i-email - na siya mismong lagusan ng pagtagas ng data.
 
 Lahat ng mga ito ay on-device transforms: pumapasok ang iyong file o data, lumalabas ang malinis na bytes, at **walang server na maaaring i-uploadan**. Sila ang sinadyang kabaligtaran ng karaniwang tool na "i-upload ang iyong file sa website ng isang estranghero para linisin ito" na siyang ginagamit ng isang mabuting-loob na empleyado kung wala nito.
 
@@ -66,10 +63,12 @@ Ang mga export ay maaaring magdala ng **Content Credentials** - isang naka-sign 
 
 - **Naka-on by default, on-device.** Ang signing key ay ginagawa sa device, hindi maaaring i-extract (kahit si Lolly ay hindi ito mababasa), at nangyayari lokal ang pag-sign - ang opsyonal na identity *enrolment* lamang ang humihipo sa network.
 - **Trust tiers.** Ang un-enrolled na export ay structurally valid pero anonymously naka-sign (`untrusted`). Mag-enrol ng **verified identity** (short-lived na certificate mula sa Lolly CA, nakatali sa isang email) at ang mga verifier na pinipin ang Lolly root ay magre-report ng `trusted` + email ng signer. Nasa roadmap ang isang trusted timestamp authority at ang third-party-validator green (C2PA conformance). Tahasan ang bawat tier, at ang isang file ay inaangkin lamang ang trust na kaya nitong patunayan.
-- Ang **credential lifetime** ay desisyon ng operator/user sa oras ng pag-sign: 7 / 30 / 90 / 365 araw, default na 30.
-- **On-device ang verification.** I-drop ang anumang file sa `/valid` (o `lolly validate <file>`) para sa offline na report kung ito ba ay tunay na ginawa gamit si Lolly at hindi pa nagbabago mula noon. Tingnan ang [Content Credentials Identity](/info/content-credentials-identity.html).
+- **Credential lifetime** ay desisyon ng operator/user sa oras ng pag-sign: 7 / 30 / 90 / 365 araw, default na 30.
+- **Ang Lolly Imprint.** Isang pangalawa, complementary na signal na **naka-on by default**: isang invisible na pixel watermark na naka-bake sa mga raster export (at ang mga raster na na-render ng Lolly sa loob ng isang PDF/PPTX, hindi kailanman ang sariling naka-embed na imahe ng user). Kung saan namamatay ang credential sa anumang pagbabago ng container, nabubuhay pa rin ang Imprint sa isang re-save o screenshot - isang matibay na "dumaan ang mga pixel na ito kay Lolly" na hint, presence-only, walang personal data. Ito ay security-through-obscurity, hindi isang hardened defence, at nagdaragdag ito sa credential sa halip na pumalit dito. `imprint=0` para mag-opt out.
+- **Durable Content Credentials (opt-in).** Ang isang raster export ay maaari pang magdala ng karagdagang invisible na *durable* na marka na nag-e-encode ng isang soft-binding identifier, para mabawi ang C2PA credential kahit pagkatapos alisin ng isang social upload o re-save ang metadata ng file - ang kaso kung saan mawawala ang isang normal na credential. Raster-only ito at may gastos na isang neural-encode pass, kaya naka-off ito by default (`durable=1` para i-on ito). Nakikilala ni Lolly ang sarili nitong durable mark offline sa `/verify` ngayon; susunod ang pagbawi ng mga third-party na tool (hal. Adobe) kapag naipatupad na ang industry soft-binding resolution.
+- **On-device ang verification.** I-drop ang anumang file sa `/verify` (o `lolly validate <file>`) para sa isang offline na report kung tunay ba itong ginawa gamit si Lolly at hindi pa nagbabago mula noon. May flag din ang web Verify view para sa AI-generated na content, natutukoy nito ang Lolly Imprint, ini-verify ang mga **SEAL** signature (isang byte-level na signature na naka-key sa DNS - ang tanging paghipo sa network ay isang DNS key lookup, hindi kailanman ang file), opsyonal na nagsasagawa ng deep-scan para sa mga third-party na pixel watermark (isang one-time na on-device na pag-download ng model), at inilalantad ang nakatagong data - lahat nang walang pag-upload ng file. Tingnan ang [Content Credentials Identity](/info/content-credentials-identity.html).
 
-> **Mga tala sa interoperability.** Nave-verify ng Lolly ang sarili nitong mga credential at marami sa mga third-party offline ngayon. May dalawang interop item na kasalukuyang ginagawa: ang lubusang pagbabasa ng C2PA claim **v2** manifests mula sa ibang producer, at ang WebM - na wala pang standardized na C2PA mapping, kaya inilalakip ng Lolly ang manifest bilang isang Matroska part (nave-verify ng mga third-party tool ang MP4 ni Lolly out of the box; susunod ang WebM kapag naayos na ang standard).
+> **Mga tala sa interoperability.** Nave-verify ng Lolly ang sarili nitong mga credential at marami sa mga third-party offline ngayon, kasama na ang pagbabasa ng C2PA claim **v2** manifests mula sa ibang producer. Isang interop item na lang ang kasalukuyang ginagawa: ang WebM - na wala pang standardized na C2PA mapping, kaya inilalakip ng Lolly ang manifest bilang isang Matroska part (nave-verify ng mga third-party tool ang MP4 ni Lolly out of the box; susunod ang WebM kapag naayos na ang standard).
 
 ## Encryption at Pag-password
 
@@ -87,7 +86,7 @@ Ang air-gap ay isang **first-class deployment**, hindi isang espesyal na mode - 
 
 Ilang bagay na dapat maliwanag bago mo ito i-roll out:
 
-- **Hardening na isinasagawa.** Ang cryptography at mga parser ay sumasailalim sa enterprise-scale na hardening ng SUSE (tingnan sa itaas) - malakas by design ngayon; i-deploy bilang defence-in-depth kung saan kontraktwal na kinakailangan ang certified assurance.
+- **Hardening in progress.** Ang cryptography at mga parser ay sumasailalim sa enterprise-scale na hardening ng SUSE (tingnan sa itaas) - malakas by design ngayon; i-deploy bilang defence-in-depth kung saan kontraktwal na kinakailangan ang certified assurance.
 - **Ang tool hooks ay *hindi* isang security sandbox.** Ang opsyonal na `hooks.js` ng isang tool ay tumatakbo nang naka-inject ang host bridge, pero sa isang browser shell ito ay nagpapatupad sa realm ng page at *maaaring* umabot sa `window`/`document`/`fetch`. Ituring ang tool code sa paraang ituring mo ang anumang code na pinapatakbo mo - suriin ito. Ito ang dahilan kung bakit ang isang organisasyong nagpapatakbo ng shared catalog ay maaaring i-gate ito sa pamamagitan ng Git review; alinman doon, magpatakbo lamang ng mga tool na sinuri mo hanggang sa mailabas ang Worker isolation.
 - **Ang Content Credentials ay tamper-evident.** Nade-detect nila ang pag-alter sa halip na pigilan ito - tingnan ang mga tala sa interoperability sa itaas.
 - **Dalawang encryption tier.** Ang mga *Standard* na lock ay mabilis at universal na deterrent; ang *Strong* (AES-256) ay ganap na proteksyon - gamitin ang Strong para sa anumang sensitibo, tandaan na kailangan nito ng isang modernong reader.

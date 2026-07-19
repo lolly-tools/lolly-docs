@@ -1,12 +1,12 @@
 # Lolly untuk Operator
 
-### Strategi tahan-masa-depan, pertahanan berlapis, pencegahan kehilangan data & provenans - yang kebetulan juga merupakan platform produksi kreatif
+### Strategi keamanan & intelijen dengan pertahanan berlapis - yang kebetulan juga merupakan platform produksi kreatif
 
-Sistem imun organisasi yang membungkus apa yang sudah Anda lakukan - sehingga pekerjaan kreatif rutin yang dibutuhkan tim Anda setiap hari terjadi *di dalam* perimeter Anda, bukan bocor keluar darinya.
+Sistem imun organisasi zero-trust yang membungkus apa yang sudah Anda lakukan - sehingga pekerjaan kreatif rutin yang dibutuhkan tim Anda setiap hari terjadi *di dalam* perimeter Anda, bukan bocor keluar darinya.
 
-**Apa untungnya bagi Anda.** Anda bisa menjadi orang yang berkata ya untuk sesuatu yang aman *sekaligus* populer. Anda menutup celah eksfiltrasi dan menghapus antrean permintaan desain dalam satu langkah - kemenangan keamanan langka yang membuat Anda lebih disukai, bukan sebaliknya. Tidak ada telepon jam 3 pagi karena seseorang mengirim berkas brand ke kontraktor lewat email atau menempelkan data pelanggan ke perkakas web sembarangan; lebih sedikit vendor SaaS, kontrak, dan audit di meja Anda; serta jejak git lengkap yang bisa Anda tunjukkan saat seseorang bertanya siapa menyetujui apa. Anda bisa tidur nyenyak di malam hari.
+**Apa untungnya bagi Anda.** Anda bisa menjadi orang yang berkata ya untuk sesuatu yang aman *sekaligus* populer. Anda menutup celah eksfiltrasi, memperoleh kapabilitas, dan menghapus antrean permintaan dalam satu langkah - kemenangan keamanan langka yang membuat Anda lebih disukai, bukan sebaliknya. Tidak ada telepon jam 3 pagi dari tim legal karena berkas berembargo atau data pelanggan berakhir di perkakas web sembarangan; lebih sedikit vendor SaaS, kontrak, dan audit di meja Anda; serta jejak audit yang sepenuhnya dapat direproduksi, yang bisa Anda tunjukkan saat seseorang bertanya. Anda tidur lebih nyenyak, dan menceriakan beberapa hari karenanya.
 
-Lolly memperoleh tempatnya sebagai perkakas kreatif: ia menghapus antrean desain dan menempatkan keluaran berkualitas produksi di tangan semua orang. Namun alasan mengapa *aman* membagikannya seluas itu bersifat arsitektural. Tidak ada yang diunggah, semuanya dapat direproduksi, dan setiap ekspor dapat membawa catatan kriptografis tentang asalnya. Halaman ini adalah kisah keamanan dan penggelarannya.
+Lolly bukan perkakas kreatif kelas dua: ia menempatkan keluaran berkualitas produksi di tangan semua orang, dan pengalaman berkarya yang terpandu brand ini tidak ada duanya. Alasan mengapa *aman* membagikannya seluas itu bersifat arsitektural: tidak ada yang diunggah kecuali yang Anda taruh sendiri, setiap hasil dapat direproduksi, dan setiap ekspor dapat membawa berlapis-lapis catatan kriptografis yang terdepan di industri. Tidak peduli bagaimana sebuah dokumen sampai ke meja Anda, Anda bisa melihat provenansnya secara utuh, apakah dokumen itu telah diubah, dan apakah Anda dapat membuatnya ulang dengan presisi sempurna hingga ke piksel.
 
 > **Posisinya hari ini.** Properti keamanan Lolly kuat secara rancangan, dan mesin kriptografi serta penguraian berkasnya sedang menjalani pengerasan infrastruktur berkelas enterprise dari SUSE. Segel, penandatanganan di perangkat, dan enkripsi di bawah ini nyata dan dapat dipertahankan sekarang, serta terus matang menuju sertifikasi independen - jadi bila sebuah kontrak menuntut jaminan bersertifikat, gelar semuanya sebagai pertahanan berlapis selama proses itu rampung.
 
@@ -34,7 +34,7 @@ Model penggelaran lengkap dan panduan administrasi tersedia di [Penggelaran](/in
 
 ## Utilitas anti-eksfiltrasi
 
-Ada satu kategori perkakas Lolly yang hadir *khusus* untuk menjaga berkas tetap di dalam perimeter. Utilitas privasi.
+Satu kategori perkakas Lolly - utilitas privasi - hadir *khusus* untuk menjaga berkas tetap di dalam perimeter.
 
 
 - **Buang Data Tersembunyi**
@@ -44,10 +44,7 @@ Ada satu kategori perkakas Lolly yang hadir *khusus* untuk menjaga berkas tetap 
 Anonimkan, enkode, format, dan manipulasi teks terstruktur maupun tak terstruktur. 
 
 - **Kompres PDF**
-Cegah segala kemungkinan 'krisis batas email' tempat perkakas web pihak ketiga mengintai dan data 
-
-- **Kompres PDF**
-Cegah segala kemungkinan 'krisis batas email' tempat perkakas web pihak ketiga mengintai dan data terjun keluar jendela. 
+Perkecil ukuran PDF yang kelewat besar di perangkat, sehingga tidak seorang pun perlu mencari situs pihak ketiga "kompres PDF saya" begitu sebuah berkas menjadi terlalu besar untuk dikirim lewat email - persis di situlah data biasa lolos keluar jendela. 
 
 Semua ini adalah transformasi di perangkat: berkas atau data Anda masuk, byte yang sudah dibersihkan keluar, dan **tidak ada server tujuan unggah**. Semuanya adalah lawan yang disengaja dari perkakas "unggah berkas Anda ke situs orang asing untuk membersihkannya" yang biasa dijangkau karyawan berniat baik jika tidak ada pilihan lain.
 
@@ -67,9 +64,11 @@ Ekspor dapat membawa **Content Credentials** - manifest [C2PA](https://c2pa.org)
 - **Aktif secara bawaan, di perangkat.** Kunci penandatanganan dibangkitkan di perangkat, tidak dapat diekstraksi (bahkan Lolly tidak bisa membacanya), dan penandatanganan terjadi secara lokal - hanya *pendaftaran* identitas opsional yang pernah menyentuh jaringan.
 - **Tingkatan kepercayaan.** Ekspor yang belum terdaftar valid secara struktural tetapi ditandatangani secara anonim (`untrusted`). Daftarkan sebuah **identitas terverifikasi** (sertifikat berumur pendek dari Lolly CA, terkait dengan sebuah email) dan verifikator yang menyematkan root Lolly melaporkan `trusted` + email penanda tangan. Otoritas stempel waktu tepercaya dan lampu hijau validator pihak ketiga (kesesuaian C2PA) ada dalam peta jalan. Setiap tingkatan bersifat eksplisit, dan sebuah berkas hanya mengklaim kepercayaan yang bisa dibuktikannya.
 - **Masa berlaku kredensial** ditentukan oleh operator/pengguna saat penandatanganan: 7 / 30 / 90 / 365 hari, bawaan 30.
-- **Verifikasi terjadi di perangkat.** Jatuhkan berkas apa pun ke `/valid` (atau `lolly validate <file>`) untuk laporan luring apakah berkas itu benar-benar dibuat dengan Lolly dan tidak berubah sejak itu. Lihat [Identitas Content Credentials](/info/content-credentials-identity.html).
+- **Lolly Imprint.** Sinyal kedua yang saling melengkapi dan **aktif secara bawaan**: watermark piksel tak kasatmata yang tertanam permanen dalam ekspor raster (termasuk raster hasil render Lolly di dalam PDF/PPTX, tidak pernah gambar milik pengguna sendiri yang disisipkan). Ketika kredensial mati akibat perubahan wadah apa pun, Imprint tetap bertahan melewati penyimpanan ulang atau tangkapan layar - petunjuk tahan lama berupa "piksel-piksel ini pernah melalui Lolly", hanya menandakan kehadiran, tanpa data pribadi. Ini adalah keamanan melalui ketersamaran, bukan pertahanan yang diperkeras, dan melengkapi kredensial itu alih-alih menggantikannya. `imprint=0` untuk memilih keluar.
+- **Durable Content Credentials (opsional).** Sebuah ekspor raster secara tambahan dapat membawa tanda *durable* (tahan lama) tak kasatmata yang mengenkode sebuah identifier soft-binding, sehingga kredensial C2PA dapat dipulihkan bahkan setelah unggahan ke media sosial atau penyimpanan ulang menghapus metadata berkasnya - kasus di mana kredensial biasa akan hilang. Fitur ini khusus raster dan memerlukan satu proses neural-encode, sehingga nonaktif secara bawaan (`durable=1` untuk mengaktifkannya). Lolly mengenali tanda durable buatannya sendiri secara luring di `/verify` hari ini; pemulihan oleh perkakas pihak ketiga (mis. Adobe) akan menyusul begitu resolusi soft-binding industri telah tersedia.
+- **Verifikasi terjadi di perangkat.** Jatuhkan berkas apa pun ke `/verify` (atau `lolly validate <file>`) untuk laporan luring apakah berkas itu benar-benar dibuat dengan Lolly dan tidak berubah sejak itu. Tampilan Verify di web juga menandai konten yang dihasilkan AI, mendeteksi Lolly Imprint, memverifikasi tanda tangan **SEAL** (tanda tangan tingkat byte yang kuncinya disimpan di DNS - satu-satunya sentuhan jaringan adalah pencarian kunci DNS, tidak pernah berkasnya sendiri), secara opsional melakukan pemindaian mendalam untuk watermark piksel pihak ketiga (unduhan model di perangkat satu kali), dan mengungkap data tersembunyi - semuanya tanpa mengunggah berkas. Lihat [Identitas Content Credentials](/info/content-credentials-identity.html).
 
-> **Catatan interoperabilitas.** Lolly memverifikasi kredensialnya sendiri dan banyak kredensial pihak ketiga secara luring saat ini. Dua item interop sedang berjalan: membaca sepenuhnya manifest klaim C2PA **v2** dari produsen lain, dan WebM - yang belum punya pemetaan C2PA terstandardisasi, sehingga Lolly melampirkan manifest sebagai bagian Matroska (perkakas pihak ketiga memverifikasi MP4 dari Lolly tanpa penyesuaian; WebM menyusul begitu standarnya mapan).
+> **Catatan interoperabilitas.** Lolly memverifikasi kredensialnya sendiri dan banyak kredensial pihak ketiga secara luring saat ini, termasuk membaca manifest klaim C2PA **v2** dari produsen lain. Satu item interop masih berjalan: WebM - yang belum punya pemetaan C2PA terstandardisasi, sehingga Lolly melampirkan manifest sebagai bagian Matroska (perkakas pihak ketiga memverifikasi MP4 dari Lolly tanpa penyesuaian; WebM menyusul begitu standarnya mapan).
 
 ## Enkripsi & pemberian kata sandi
 
@@ -81,7 +80,7 @@ Untuk berkas yang harus berpindah dalam keadaan terkunci, semuanya terjadi di pe
 
 ## Siap air-gap
 
-Air-gap adalah **penggelaran kelas satu**, bukan mode khusus - Lolly berjalan tanpa jaringan pada waktu render secara langsung. Web shell adalah PWA yang mengutamakan luring (service worker); font dan WASM disimpan di perangkat; state perkakas dipertahankan secara lokal melalui host bridge, bukan `localStorage`. Perkakas apa pun yang menjangkau jaringan hanya melakukannya melalui kapabilitas `host.net` yang **diizinkan** dan wajib dideklarasikan dalam manifestnya - shell yang tidak bisa (atau tidak mau) memenuhinya akan menyekatnya. Kirim shell ke perangkat melalui MDM Anda, atau sajikan satu instance di dalam jaringan Anda, dan instalasi yang sepenuhnya air-gapped akan merender, mengekspor, mengenkripsi, dan memverifikasi kredensial tanpa perlu menghubungi siapa pun.
+Air-gap adalah **penggelaran kelas satu**, bukan mode khusus - Lolly berjalan tanpa jaringan pada waktu render secara bawaan. Web shell adalah PWA yang mengutamakan luring (service worker); font dan WASM disimpan di perangkat; state perkakas dipertahankan secara lokal melalui host bridge, bukan `localStorage`. Perkakas apa pun yang menjangkau jaringan hanya melakukannya melalui kapabilitas `host.net` yang **diizinkan** dan wajib dideklarasikan dalam manifestnya - shell yang tidak bisa (atau tidak mau) memenuhinya akan menyekatnya. Kirim shell ke perangkat melalui MDM Anda, atau sajikan satu instance di dalam jaringan Anda, dan instalasi yang sepenuhnya air-gapped akan merender, mengekspor, mengenkripsi, dan memverifikasi kredensial tanpa perlu menghubungi siapa pun.
 
 ## Perlu diketahui
 
@@ -89,7 +88,7 @@ Beberapa hal yang perlu diluruskan sebelum Anda menggelarnya:
 
 - **Pengerasan sedang berlangsung.** Kriptografi dan parser sedang menjalani pengerasan berskala enterprise dari SUSE (lihat di atas) - kuat secara rancangan saat ini; gelar sebagai pertahanan berlapis bila sebuah kontrak menuntut jaminan bersertifikat.
 - **Hook perkakas *bukan* sandbox keamanan.** Berkas `hooks.js` opsional milik sebuah perkakas berjalan dengan host bridge yang disuntikkan, tetapi di dalam browser shell ia dieksekusi di realm halaman dan *bisa* menjangkau `window`/`document`/`fetch`. Perlakukan kode perkakas seperti Anda memperlakukan kode apa pun yang Anda jalankan - tinjau. Inilah sebabnya organisasi yang menjalankan katalog bersama bisa menggerbangnya melalui tinjauan Git; bagaimanapun juga, jalankan hanya perkakas yang sudah Anda tinjau sampai isolasi Worker tersedia.
-- **Content Credentials bersifat bukti-gangguan.** Keduanya mendeteksi perubahan alih-alih mencegahnya - lihat catatan interoperabilitas di atas.
+- **Content Credentials bersifat bukti-gangguan.** Ia mendeteksi perubahan alih-alih mencegahnya - lihat catatan interoperabilitas di atas.
 - **Dua tingkatan enkripsi.** Kunci *Standar* adalah penghalang cepat dan universal; *Kuat* (AES-256) adalah perlindungan penuh - pilih Kuat untuk apa pun yang sensitif, dengan catatan ia membutuhkan pembaca modern.
 
 ## Ke mana selanjutnya

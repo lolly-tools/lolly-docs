@@ -6,6 +6,10 @@
 
 ## टूल खोलना
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
+![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
+
 होम स्क्रीन ही **गैलरी** है — हर टूल, श्रेणी के अनुसार समूहित। किसी कार्ड पर क्लिक करें और टूल खुल जाता है; अगर आपने उस पर पहले काम किया है, तो **Continue** बटन आपका सबसे हालिया सेशन फिर से शुरू कर देता है। नाम से फ़िल्टर करने के लिए सर्च बॉक्स का उपयोग करें।
 
 हर टूल एक स्प्लिट व्यू है: एक तरफ़ **कंट्रोल**, दूसरी तरफ़ लाइव **प्रीव्यू** (कैनवस)। कोई भी कंट्रोल बदलें और प्रीव्यू तुरंत अपडेट हो जाता है।
@@ -32,6 +36,8 @@
 आयाम बदलने पर व्यू हमेशा एक साफ़ फ़िट पर वापस आ जाता है।
 
 ### फ़्री कैनवस (Layout Studio)
+
+![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 फ़्री-कैनवस टूल आर्टबोर्ड के *चारों ओर* एक कार्य-सतह जोड़ते हैं, किसी डिज़ाइनर के पेस्टबोर्ड की तरह:
 
@@ -65,6 +71,8 @@
 
 ## प्रोजेक्ट्स
 
+![Projects - saved sessions organised into nestable folders](/t/url-shot?url=%2F%23%2Fp&width=1440&height=900&dpi=192&waitMs=1200&format=svg&localize=1&filename=projects)
+
 **Projects** — इसे **Tools** के बगल वाले **Projects** टैब से खोलें, या **Profile → Storage → Organise in Projects** से — आपकी सहेजी हुई हर चीज़ का घर है, और यह फ़ाइल मैनेजर की तरह काम करता है:
 
 - **नेस्ट होने वाले फ़ोल्डर।** सहेजे गए सेशनों को फ़ोल्डरों में — और फ़ोल्डरों के भीतर फ़ोल्डरों में, जितनी गहराई तक चाहें — समूहित करें। फ़ोल्डर बनाएँ, नाम बदलें, या किसी टाइल को दूसरे फ़ोल्डर पर खींचकर उसे वहाँ ले जाएँ; ब्रेडक्रम्ब आपको वापस ऊपर ले आता है। हमेशा मौजूद **Uncategorised** फ़ोल्डर में वह सब रहता है जो अभी तक कहीं रखा नहीं गया।
@@ -90,6 +98,8 @@
 जब कोई टूल आपको अपने डिवाइस से इमेज जोड़ने देता है, तो वह छोटी (डाउनस्केल) की जाती है, उसका EXIF/GPS डेटा हटाया जाता है, और वह आपकी निजी **My images** लाइब्रेरी (**Profile → Storage** के अंतर्गत) में सहेजी जाती है। उसे किसी भी टूल में दोबारा इस्तेमाल करें। लाइब्रेरी की एक सीमा तय है और वह पूरी तरह लोकल है — इमेज वहीं प्रबंधित करें या हटाएँ।
 
 ## कैटलॉग — आपकी एसेट लाइब्रेरी
+
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 **कैटलॉग** (`#/c`, या मेन्यू में **Catalogue** लिंक) वह सब कुछ एक जगह इकट्ठा करता है जिस पर आपके टूल काम कर सकते हैं — ब्रांड लोगो, इमेज, ऑडियो और मोशन, प्रकार के अनुसार समूहित — और आपकी **अपनी क्रिएटिव फ़ाइलें** भी यहीं रहती हैं। न कोई सर्वर, न एडमिन कंसोल, न पुल रिक्वेस्ट: सब कुछ आपके डिवाइस पर है।
 

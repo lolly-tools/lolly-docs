@@ -6,6 +6,10 @@ Ein praktischer Leitfaden zur tatsächlichen *Nutzung* der App - ein Tool öffne
 
 ## Ein Tool öffnen
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
+![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
+
 Der Startbildschirm ist die **Galerie** - jedes Tool, nach Kategorie gruppiert. Klicken Sie auf eine Karte, um das Tool zu öffnen; wenn Sie zuvor schon damit gearbeitet haben, setzt eine Schaltfläche **Fortsetzen** Ihre letzte Sitzung fort. Verwenden Sie das Suchfeld, um nach Namen zu filtern.
 
 Jedes Tool ist eine geteilte Ansicht: **Steuerelemente** auf der einen Seite, eine Live-**Vorschau** (die Zeichenfläche) auf der anderen. Ändern Sie ein beliebiges Steuerelement, und die Vorschau aktualisiert sich sofort.
@@ -32,6 +36,8 @@ Die Vorschau zeigt immer genau das, was exportiert wird.
 Eine Änderung der Abmessungen setzt die Ansicht immer auf eine saubere Einpassung zurück.
 
 ### Die freie Zeichenfläche (Layout Studio)
+
+![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 Tools mit freier Zeichenfläche fügen eine Arbeitsfläche *um* das Artboard herum hinzu, wie ein Montagebrett bei Designern:
 
@@ -65,6 +71,8 @@ Klicken Sie auf **Speichern**, um die aktuellen Eingaben als Sitzung für dieses
 
 ## Projekte
 
+![Projects - saved sessions organised into nestable folders](/t/url-shot?url=%2F%23%2Fp&width=1440&height=900&dpi=192&waitMs=1200&format=svg&localize=1&filename=projects)
+
 **Projekte** - öffnen Sie es über den Tab **Projekte** neben **Tools** oder über **Profil → Speicher → In Projekten organisieren** - ist ein Zuhause für alles, was Sie gespeichert haben, und funktioniert wie ein Dateimanager:
 
 - **Verschachtelbare Ordner.** Gruppieren Sie gespeicherte Sitzungen in Ordner und Ordner innerhalb von Ordnern, so tief wie Sie möchten. Erstellen Sie einen Ordner, benennen Sie ihn um, oder ziehen Sie eine Kachel auf einen anderen Ordner, um sie zu verschieben; eine Breadcrumb-Navigation führt Sie zurück nach oben. Ein stets vorhandener Ordner **Nicht kategorisiert** enthält alles, was noch nicht abgelegt wurde.
@@ -90,6 +98,8 @@ Die Foto-**Filter** - Halftone, Scanline, Posterize, Duotone - zeigen eine Schal
 Wenn ein Tool Ihnen erlaubt, ein Bild von Ihrem Gerät hinzuzufügen, wird es verkleinert, von EXIF/GPS-Daten befreit und in Ihrer persönlichen Bibliothek **Meine Bilder** gespeichert (unter **Profil → Speicher**). Verwenden Sie es in jedem beliebigen Tool erneut. Die Bibliothek ist in ihrer Größe begrenzt und vollständig lokal - verwalten oder löschen Sie Bilder dort.
 
 ## Der Katalog - Ihre Asset-Bibliothek
+
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 Der **Katalog** (`#/c` oder der Link **Katalog** im Menü) sammelt alles, worauf Ihre Tools zurückgreifen können - Markenlogos, Bilder, Audio und Bewegtbild, nach Art gruppiert - und hier liegen auch Ihre **eigenen kreativen Dateien**. Kein Server, keine Admin-Konsole, kein Pull Request: alles liegt auf Ihrem Gerät.
 

@@ -1,12 +1,12 @@
 # Lolly pro operátory
 
-### Do budoucna odolná, vícevrstvá (defence-in-depth) strategie prevence úniku dat a ověřování původu - která je jen shodou okolností kreativní produkční platformou
+### Vícevrstvá (defence-in-depth) bezpečnostní a zpravodajská strategie - která je jen shodou okolností kreativní produkční platformou
 
-Organizační imunitní systém, který obepíná to, co už děláš - takže běžná kreativní práce, kterou tvé týmy potřebují každý den, probíhá *uvnitř* tvého perimetru místo toho, aby z něj unikala.
+Zero-trust organizační imunitní systém, který obepíná to, co už děláš - takže běžná kreativní práce, kterou tvé týmy potřebují každý den, probíhá *uvnitř* tvého perimetru místo toho, aby z něj unikala.
 
-**Co z toho budeš mít.** Staneš se tím, kdo řekl ano něčemu, co je zároveň bezpečné *i* oblíbené. Jedním tahem uzavřeš díru pro únik dat a zrušíš frontu designových požadavků - vzácné bezpečnostní vítězství, díky kterému tě budou mít radši, ne míň. Žádný telefonát ve 3 ráno kvůli tomu, že někdo poslal brandové soubory externímu dodavateli e-mailem nebo vložil data zákazníků do náhodného webového nástroje; méně SaaS dodavatelů, smluv a auditů na tvém stole; a kompletní git historie, na kterou můžeš ukázat, když se někdo zeptá, kdo co schválil. Budeš spát klidně.
+**Co z toho budeš mít.** Staneš se tím, kdo řekl ano něčemu, co je zároveň bezpečné *i* oblíbené. Jedním tahem uzavřeš díru pro únik dat, získáš novou schopnost a zrušíš frontu požadavků - vzácné bezpečnostní vítězství, díky kterému tě budou mít radši, ne míň. Žádný telefonát ve 3 ráno od právního oddělení kvůli tomu, že se embargované soubory nebo data zákazníků dostaly do náhodného webového nástroje; méně SaaS dodavatelů, smluv a auditů na tvém stole; a plně reprodukovatelný audit trail, na který můžeš ukázat, když se někdo zeptá. Budeš spát klidněji a zpříjemníš tím pár dní.
 
-Lolly si své místo jako kreativní nástroj zaslouží: ruší frontu designových požadavků a dává produkčně kvalitní výstup do rukou každému. Důvod, proč je bezpečné rozdat ho tak široko, je ale architektonický. Nic se nenahrává, všechno je reprodukovatelné a každý export může nést kryptografický záznam o svém původu. Tahle stránka je příběh o bezpečnosti a nasazení.
+Lolly není žádný kreativní nástroj druhé kategorie: dává produkčně kvalitní výstup do rukou každému a zážitek z tvorby vedené brandem nemá konkurenci. Důvod, proč je bezpečné rozdat ho tak široko, je ale architektonický: nic se nenahrává, co jsi tam sám nevložil, každý výsledek je reprodukovatelný a každý export může nést hned několik vrstev špičkových kryptografických záznamů. Bez ohledu na to, jak se dokument dostal na tvůj stůl, uvidíš jeho úplný původ, jestli s ním bylo manipulováno a jestli ho dokážeš znovu vytvořit pixel po pixelu.
 
 > **Kde to stojí dnes.** Bezpečnostní vlastnosti Lolly jsou silné už ze své podstaty a jeho kryptografické a souborové parsovací enginy procházejí infrastrukturním hardeningem na enterprise úrovni od SUSE. Pečetě, podepisování na zařízení a šifrování popsané níže jsou reálné a obhajitelné už teď a dozrávají směrem k nezávislé certifikaci - takže tam, kde smlouva vyžaduje certifikované ujištění, nasaď je jako vícevrstvou ochranu (defence-in-depth), zatímco tento proces probíhá.
 
@@ -34,24 +34,18 @@ Kompletní přehled modelů nasazení a administrace najdeš v sekcích [Nasazen
 
 ## Utility proti úniku dat
 
-Existuje kategorie nástrojů Lolly, která je *výslovně* určená k tomu, aby soubory zůstaly uvnitř perimetru. Utility na ochranu soukromí.
+Jedna kategorie nástrojů Lolly - utility na ochranu soukromí - existuje *výslovně* proto, aby soubory zůstávaly uvnitř perimetru.
 
-
-- **Odstranění skrytých dat**
- Odstraní polohu a všechny skryté identifikující informace z dokumentů a mediálních souborů.
+- **Odstranění skrytých dat**  
+Odstraní polohu a všechny skryté identifikující informace z dokumentů a mediálních souborů.
 
 - **Textový pomocník**  
-Anonymizuj, kóduj, formátuj a uprav strukturovaný i nestrukturovaný text. 
+Anonymizuj, kóduj, formátuj a uprav strukturovaný i nestrukturovaný text.
 
-- **Komprese PDF**
-Zabraň riziku „krize s limitem na e-mail", kdy číhají nástroje třetích stran a data 
-
-- **Komprese PDF**
-Zabraň riziku „krize s limitem na e-mail", kdy číhají nástroje třetích stran a data unikají pryč z okna. 
+- **Komprese PDF**  
+Zmenši předimenzované PDF přímo na zařízení, takže nikdo nesáhne po webu třetí strany na „zkomprimování mého PDF" ve chvíli, kdy je soubor na e-mail moc velký - a přesně tam data unikají z okna.
 
 Všechny tyto nástroje jsou transformace přímo na zařízení: vstoupí tvůj soubor nebo data, vystoupí vyčištěné bajty a **není žádný server, kam by se něco nahrávalo**. Jsou záměrným opakem typického nástroje typu „nahraj svůj soubor na cizí web a necháme ho vyčistit", po kterém by jinak sáhl dobře míněný zaměstnanec.
-
-
 
 ## Determinismus a reprodukovatelnost
 
@@ -67,9 +61,11 @@ Exporty mohou nést **Content Credentials** - podepsaný manifest [C2PA](https:/
 - **Ve výchozím stavu zapnuto, přímo na zařízení.** Podpisový klíč se generuje na zařízení, nedá se z něj extrahovat (ani Lolly ho nedokáže přečíst) a podepisování probíhá lokálně - sítě se dotkne jedině volitelná *registrace* identity.
 - **Úrovně důvěry.** Neregistrovaný export je strukturálně platný, ale podepsaný anonymně (`untrusted`). Zaregistruj si **ověřenou identitu** (krátkodobý certifikát od Lolly CA, navázaný na e-mail) a ověřovatelé, kteří pinují kořenový certifikát Lolly, nahlásí `trusted` + e-mail podepisující osoby. Důvěryhodná časová autorita a zelené hodnocení od validátoru třetí strany (shoda s C2PA) jsou na roadmapě. Každá úroveň je explicitní a soubor si nikdy nenárokuje víc důvěry, než dokáže prokázat.
 - **Platnost pověření** je na rozhodnutí operátora/uživatele v okamžiku podepisování: 7 / 30 / 90 / 365 dní, výchozí je 30.
-- **Ověřování probíhá na zařízení.** Přetáhni jakýkoli soubor na `/valid` (nebo `lolly validate <file>`) a získáš offline zprávu o tom, jestli byl opravdu vytvořen v Lolly a od té doby nezměněn. Viz [Identita Content Credentials](/info/content-credentials-identity.html).
+- **Lolly Imprint.** Druhý, doplňkový signál, který je **ve výchozím stavu zapnutý**: neviditelný pixelový vodoznak zapečený do rastrových exportů (a do rastrů, které vykreslila Lolly uvnitř PDF/PPTX, nikdy do vlastního vloženého obrázku uživatele). Zatímco pověření zanikne při jakékoli změně kontejneru, Imprint přežije opětovné uložení nebo screenshot - trvalá stopa „tyhle pixely prošly Lolly", jen přítomnost, žádná osobní data. Je to security-through-obscurity, ne tvrdá ochrana, a doplňuje pověření, místo aby ho nahrazoval. Vypnout ho jde přes `imprint=0`.
+- **Durable Content Credentials (volitelné).** Rastrový export může navíc nést neviditelnou *durable* značku, která kóduje identifikátor soft-bindingu, takže pověření C2PA lze obnovit i poté, co nahrání na sociální síť nebo opětovné uložení odstranilo metadata souboru - tedy přesně v případě, kdy by běžné pověření bylo ztraceno. Funguje jen pro rastry a stojí neuronový enkódovací průchod navíc, takže je ve výchozím stavu vypnutá (zapneš ji přes `durable=1`). Lolly dnes rozpozná vlastní durable značku offline na `/verify`; obnovení nástroji třetích stran (např. Adobe) bude následovat, jakmile bude hotové odvětvové řešení pro soft-binding.
+- **Ověřování probíhá na zařízení.** Přetáhni jakýkoli soubor na `/verify` (nebo `lolly validate <file>`) a získáš offline zprávu o tom, jestli byl opravdu vytvořen v Lolly a od té doby nezměněn. Webové zobrazení Verify navíc označí AI generovaný obsah, detekuje Lolly Imprint, ověří podpisy **SEAL** (podpis na úrovni bajtů zakotvený v DNS - jediný dotek sítě je vyhledání klíče v DNS, nikdy samotný soubor), volitelně hloubkově proskenuje soubor na vodoznaky třetích stran (jednorázové stažení modelu přímo na zařízení) a odhalí skrytá data - to všechno bez nahrávání souboru kamkoli. Viz [Identita Content Credentials](/info/content-credentials-identity.html).
 
-> **Poznámky k interoperabilitě.** Lolly dnes offline ověří svá vlastní pověření i řadu pověření třetích stran. Dvě věci ohledně interoperability se dodělávají: plné čtení manifestů C2PA claim **v2** od jiných tvůrců a WebM - pro který zatím neexistuje standardizované mapování C2PA, takže Lolly připojuje manifest jako část Matroska (nástroje třetích stran ověří Lolly MP4 rovnou; WebM bude následovat, jakmile se standard ustálí).
+> **Poznámky k interoperabilitě.** Lolly dnes offline ověří svá vlastní pověření i řadu pověření třetích stran, včetně čtení manifestů C2PA claim **v2** od jiných tvůrců. Jedna položka pro interoperabilitu ještě zbývá: WebM - pro který zatím neexistuje standardizované mapování C2PA, takže Lolly připojuje manifest jako část Matroska (nástroje třetích stran ověří Lolly MP4 rovnou; WebM bude následovat, jakmile se standard ustálí).
 
 ## Šifrování a heslování
 

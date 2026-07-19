@@ -8,6 +8,8 @@ Semua yang ada dalam profil disimpan **pada peranti**, dalam pangkalan data temp
 
 ## Apa yang ada dalam profil
 
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
+
 | Bahagian | Keterangan |
 |---|---|
 | **Nama** | Nama pertama dan nama akhir. |

@@ -8,6 +8,8 @@ Tudo em um perfil vive **no dispositivo**, no banco de dados local do navegador 
 
 ## O que há em um perfil
 
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
+
 | Parte | O que é |
 |---|---|
 | **Nome** | Nome e sobrenome. |

@@ -1,5 +1,7 @@
 # Snelstart
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+
 Lolly zet jouw regels - kleuren, typografie, lay-outs, logica - om in tools die iedereen kan gebruiken om afgewerkte bestanden te maken: afbeeldingen, pdf's, social cards, video, door een paar velden in te vullen. Er is niets te leren en niets te uploaden: alles draait op je eigen apparaat, online of offline.
 
 Dit is de ene pagina die je als eerste moet lezen. Twee dingen maken je productief: **maak Lolly van jou** (richt het op je merk), en **breng mee wat je al hebt** (je ontwerpbestanden en tokens). Al het andere is maar een klik verderop.
@@ -11,6 +13,8 @@ Dit is de ene pagina die je als eerste moet lezen. Twee dingen maken je producti
 Je merk in Lolly is een klein **design-tokens**-document - kleuren, lettertypen en een paar regels - waar elke tool tegen rendert. Stel het één keer in en alles wat je maakt is vanzelf on-brand, niet pas na controle. Er zijn drie manieren om te beginnen; kies degene die aansluit bij waar je merk al leeft.
 
 ### Begin vanaf nul (de wizard)
+
+![The Brand Studio start screen - name, primary colour, and a derived palette](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&localize=1&filename=brand-studio)
 
 Bij de eerste keer starten kom je op het **Start**-scherm (`#/start`) terecht. Geef het een naam en een primaire kleur, en Lolly *leidt* daar een compleet, toegankelijk kleurenpalet van af - light/dark-oppervlakken, tekst, accenten - met dezelfde kleurwiskunde die de engine overal elders gebruikt. Kies een lettertype en je hebt binnen een minuut een werkend merk. Je kunt alles later nog verfijnen.
 
@@ -29,6 +33,8 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 `ingest:brand` accepteert alle drie de containers waarin Penpot / Tokens Studio hetzelfde document exporteren - een losse `tokens.json`, een map (`$metadata.json` + bestanden per set), of een `project.penpot`-archief. Met `--activate` registreert het het merk als profiel, schakelt het ernaar over en bouwt het de catalogus opnieuw op. Zie [Configuratie](/info/configuration.html) voor hoe merkpakketten en profielen samenhangen.
 
 ### Verfijn het in de app
+
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand)
 
 Zodra een merk actief is, is de **Your brand**-editor van het dashboard (`#/d`) een live editor - verander een kleur of een rol en elke preview op de pagina wordt bijgewerkt terwijl je typt. Hetzelfde merk wordt samengevat op de kaart **Profile → Your brand**. Lettertypen zijn echt: kies er een uit Google Fonts en Lolly slaat het bestand **op je apparaat** op als merkasset, zodat je typografie ook offline meegaat en er bij het renderen niets wordt opgehaald.
 

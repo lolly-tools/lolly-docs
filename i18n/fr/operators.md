@@ -1,12 +1,12 @@
 # Lolly pour les opérateurs
 
-### Une stratégie de provenance et de prévention des pertes de données, pérenne et en défense en profondeur - qui se trouve justement être une plateforme de production créative
+### Une stratégie de sécurité et de renseignement en défense en profondeur - qui se trouve justement être une plateforme de production créative
 
-Le système immunitaire organisationnel qui s'enroule autour de ce que tu fais déjà - pour que le travail créatif courant dont tes équipes ont besoin au quotidien se déroule *à l'intérieur* de ton périmètre plutôt que de fuiter en dehors.
+Le système immunitaire organisationnel à confiance zéro qui s'enroule autour de ce que tu fais déjà - pour que le travail créatif courant dont tes équipes ont besoin au quotidien se déroule *à l'intérieur* de ton périmètre plutôt que de fuiter en dehors.
 
-**Ce que tu y gagnes.** Tu deviens la personne qui a dit oui à quelque chose à la fois sûr *et* populaire. Tu colmates une brèche d'exfiltration et supprimes la file d'attente des demandes de design en un seul geste - la rare victoire sécurité qui te rend plus apprécié, pas moins. Plus d'appel à 3h du matin parce que quelqu'un a envoyé des fichiers de marque par e-mail à un prestataire ou collé des données clients dans un outil web quelconque ; moins de fournisseurs SaaS, de contrats et d'audits sur les bras ; et une trace git complète à montrer quand on te demande qui a approuvé quoi. Tu dors tranquille la nuit.
+**Ce que tu y gagnes.** Tu deviens la personne qui a dit oui à quelque chose à la fois sûr *et* populaire. Tu colmates une brèche d'exfiltration, gagnes en capacité et supprimes une file d'attente de demandes en un seul geste - la rare victoire sécurité qui te rend plus apprécié, pas moins. Plus d'appel à 3h du matin du service juridique parce que des fichiers embargués ou des données clients ont atterri dans un outil web quelconque ; moins de fournisseurs SaaS, de contrats et d'audits sur les bras ; et une trace d'audit entièrement reproductible à montrer quand on te le demande. Tu dors mieux, et tu égaies quelques journées en le faisant.
 
-Lolly mérite sa place en tant qu'outil créatif : il supprime la file d'attente de design et met un rendu de qualité production entre les mains de tout le monde. Mais la raison pour laquelle il est *sûr* de le diffuser aussi largement est architecturale. Rien n'est téléversé, tout est reproductible, et chaque export peut porter un enregistrement cryptographique de sa provenance. Cette page raconte l'histoire de la sécurité et du déploiement.
+Lolly n'est pas un outil créatif de second rang : il met un rendu de qualité production entre les mains de tout le monde, et l'expérience de création guidée par la marque n'a pas d'égal. La raison pour laquelle il est *sûr* de le diffuser aussi largement est architecturale : rien n'est téléversé que tu n'y aies mis toi-même, chaque résultat est reproductible, et chaque export peut porter plusieurs couches d'enregistrements cryptographiques à la pointe du secteur. Peu importe comment un document est arrivé sur ton bureau, tu peux voir sa provenance complète, s'il a été altéré, et si tu peux le recréer au pixel près.
 
 > **Où en est-on aujourd'hui.** Les propriétés de sécurité de Lolly sont solides par conception, et ses moteurs de cryptographie et d'analyse de fichiers passent par le durcissement d'infrastructure de qualité entreprise de SUSE. Les scellés, la signature sur l'appareil et le chiffrement décrits ci-dessous sont réels et défendables dès aujourd'hui, et mûrissent vers une certification indépendante - donc là où un contrat exige une assurance certifiée, déploie-les comme de la défense en profondeur en attendant la fin de ce processus.
 
@@ -22,7 +22,7 @@ Lolly inverse la logique. Le travail qui *causait* ces fuites - la carte de cita
 
 ## Supprimer la file d'attente des demandes tout en démultipliant le contenu.
 
-Un objectif de Lolly : la **déviation des demandes de design** - des demandes courantes qui n'ont jamais besoin d'atteindre un designer, parce que la personne qui avait besoin de la ressource l'a créée elle-même, correctement, en quelques minutes. Chaque ticket dévié est à la fois un gain de productivité et un fichier de moins qui change de mains.
+Un objectif de Lolly est la **déviation des demandes de design** : des demandes courantes qui n'ont jamais besoin d'atteindre un designer, parce que la personne qui avait besoin de la ressource l'a créée elle-même, correctement, en quelques minutes. Chaque ticket dévié est à la fois un gain de productivité et un fichier de moins qui change de mains.
 
 Lolly est conçu pour s'adapter à la façon dont ton organisation fonctionne réellement - il n'y a pas une seule bonne façon de le déployer :
 
@@ -34,7 +34,7 @@ Le détail complet des modèles de déploiement et le guide d'administration se 
 
 ## Utilitaires anti-exfiltration
 
-Une catégorie d'outils Lolly existe *spécifiquement* pour garder les fichiers à l'intérieur du périmètre. Les utilitaires de confidentialité.
+Une catégorie d'outils Lolly - les utilitaires de confidentialité - existe *spécifiquement* pour garder les fichiers à l'intérieur du périmètre.
 
 
 - **Supprimer les données cachées**
@@ -44,12 +44,9 @@ Une catégorie d'outils Lolly existe *spécifiquement* pour garder les fichiers 
 Anonymise, encode, formate et manipule du texte structuré et non structuré. 
 
 - **Compresser le PDF**
-Évite tout risque de « crise de limite d'e-mail » où les outils web tiers rôdent et les données 
+Réduis un PDF trop volumineux sur l'appareil, pour que personne ne se tourne vers un site web tiers « compresser mon PDF » dès qu'un fichier est trop gros pour être envoyé par e-mail - exactement le moment où les données passent par la fenêtre. 
 
-- **Compresser le PDF**
-Évite tout risque de « crise de limite d'e-mail » où les outils web tiers rôdent et où les données passent par la fenêtre. 
-
-Ce sont toutes des transformations sur l'appareil : ton fichier ou tes données entrent, des octets nettoyés ressortent, et **il n'y a aucun serveur où les téléverser**. Ce sont l'exact opposé de l'outil typique « téléverse ton fichier sur le site web d'un inconnu pour le nettoyer » vers lequel un employé bien intentionné se tournerait sinon.
+Elles sont toutes des transformations sur l'appareil : ton fichier ou tes données entrent, des octets nettoyés ressortent, et **il n'y a aucun serveur où les téléverser**. Elles sont l'exact opposé de l'outil typique « téléverse ton fichier sur le site web d'un inconnu pour le nettoyer » vers lequel un employé bien intentionné se tournerait sinon.
 
 
 
@@ -67,9 +64,11 @@ Les exports peuvent porter des **Content Credentials** - un manifeste [C2PA](htt
 - **Activé par défaut, sur l'appareil.** La clé de signature est générée sur l'appareil, elle est non extractible (même Lolly ne peut pas la lire), et la signature se fait localement - seule l'*inscription* d'identité optionnelle touche jamais le réseau.
 - **Niveaux de confiance.** Un export non inscrit est structurellement valide mais signé anonymement (`untrusted`). Inscris une **identité vérifiée** (certificat de courte durée émis par la CA Lolly, lié à un e-mail) et les vérificateurs qui épinglent la racine Lolly rapportent `trusted` + l'e-mail du signataire. Une autorité d'horodatage de confiance et un feu vert de validateur tiers (conformité C2PA) sont sur la feuille de route. Chaque niveau est explicite, et un fichier ne revendique jamais que la confiance qu'il peut prouver.
 - **La durée de vie du credential** est décidée par l'opérateur/utilisateur au moment de la signature : 7 / 30 / 90 / 365 jours, 30 par défaut.
-- **La vérification se fait sur l'appareil.** Dépose n'importe quel fichier sur `/valid` (ou `lolly validate <file>`) pour obtenir un rapport hors ligne indiquant s'il a réellement été fait avec Lolly et s'il n'a pas changé depuis. Voir [Identité Content Credentials](/info/content-credentials-identity.html).
+- **Le Lolly Imprint.** Un second signal complémentaire, **activé par défaut** : un filigrane de pixels invisible intégré aux exports raster (et aux rasters rendus par Lolly à l'intérieur d'un PDF/PPTX, jamais l'image intégrée par l'utilisateur lui-même). Là où le credential meurt au moindre changement de conteneur, l'Imprint survit à un ré-enregistrement ou une capture d'écran - un indice durable « ces pixels sont passés par Lolly », présence uniquement, sans donnée personnelle. C'est de la sécurité par l'obscurité, pas une défense durcie, et cela complète le credential plutôt que de le remplacer. `imprint=0` permet de le désactiver.
+- **Durable Content Credentials (opt-in).** Un export raster peut en plus porter une marque *durable* invisible qui encode un identifiant de liaison souple, afin que le credential C2PA puisse être récupéré même après qu'une publication sur les réseaux sociaux ou un ré-enregistrement a supprimé les métadonnées du fichier - le cas où un credential normal serait perdu. Elle est réservée au raster et coûte une passe d'encodage neuronal, donc elle est désactivée par défaut (`durable=1` pour l'activer). Lolly reconnaît sa propre marque durable hors ligne sur `/verify` dès aujourd'hui ; la récupération par des outils tiers (par exemple Adobe) suivra une fois la résolution de liaison souple mise en place à l'échelle du secteur.
+- **La vérification se fait sur l'appareil.** Dépose n'importe quel fichier sur `/verify` (ou `lolly validate <file>`) pour obtenir un rapport hors ligne indiquant s'il a réellement été fait avec Lolly et s'il n'a pas changé depuis. La vue Verify du web signale aussi le contenu généré par IA, détecte le Lolly Imprint, vérifie les signatures **SEAL** (une signature au niveau des octets ancrée dans le DNS - le seul contact réseau est une recherche de clé DNS, jamais le fichier), effectue en option une analyse approfondie à la recherche de filigranes de pixels tiers (un téléchargement de modèle sur l'appareil, une seule fois), et fait apparaître les données cachées - le tout sans téléverser le fichier. Voir [Identité Content Credentials](/info/content-credentials-identity.html).
 
-> **Notes d'interopérabilité.** Lolly vérifie ses propres credentials et beaucoup de ceux de tiers hors ligne dès aujourd'hui. Deux points d'interopérabilité sont en cours : la lecture complète des manifestes de revendication C2PA **v2** provenant d'autres producteurs, et WebM - qui n'a pas encore de mappage C2PA standardisé, si bien que Lolly attache le manifeste comme une pièce Matroska (les outils tiers vérifient le MP4 de Lolly d'emblée ; le WebM suivra une fois la norme stabilisée).
+> **Notes d'interopérabilité.** Lolly vérifie ses propres credentials et beaucoup de ceux de tiers hors ligne dès aujourd'hui, y compris la lecture des manifestes de revendication C2PA **v2** provenant d'autres producteurs. Un point d'interopérabilité reste en cours : le WebM - qui n'a pas encore de mappage C2PA standardisé, si bien que Lolly attache le manifeste comme une pièce Matroska (les outils tiers vérifient le MP4 de Lolly d'emblée ; le WebM suivra une fois la norme stabilisée).
 
 ## Chiffrement et mots de passe
 
