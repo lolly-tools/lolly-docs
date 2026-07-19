@@ -6,6 +6,8 @@ The good news for everything you've already made: none of it is stranded in the 
 
 Import lives in **[Layout Studio](/info/using.html)**, Lolly's free canvas: open it, click **Import a design** in the canvas toolbar, and choose a file. The artboard resizes to the file's frame and every layer becomes an editable box on the same open canvas - so an imported artboard is just an ordinary Layout Studio session from the first click.
 
+![Layout Studio's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=layout-studio)
+
 ## What you can import
 
 Several file kinds go in - a native Figma binary, a Penpot export, an Illustrator or PDF file, an InDesign markup file, or **any SVG**. That last one is the wide door: SVG is a universal export (or native save) format, so almost any design app can reach Lolly through it.

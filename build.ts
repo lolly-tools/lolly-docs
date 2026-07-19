@@ -3,7 +3,7 @@
 // Run: node docs/build.ts            build the /info pages once
 //      node docs/build.ts --watch    rebuild on every change under docs/ (used by dev:web)
 // Output: shells/web/public/info/
-import { readFileSync, writeFileSync, mkdirSync, copyFileSync, existsSync, watch } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, copyFileSync, existsSync, readdirSync, rmSync, watch } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { generateOgImages } from './og-image.ts';
@@ -355,6 +355,20 @@ function inline(text: string) {
   s = s.replace(/`([^`]+)`/g, '<code>$1</code>');
   s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
   s = s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+  // Screenshot recipes: an image whose URL is a url-shot tool link IS the shot's
+  // recipe (see scripts/build-docs-shots.ts) — the page serves the committed
+  // baseline the pipeline captured from it, at /info/shots/<filename>.<format>.
+  // The recipe stays in the source .md as the reproducible record; when a GET
+  // renderer ships, this rewrite can simply be removed.
+  s = s.replace(/(!\[[^\]]*\]\()(\/t\/url-shot\?[^)\s]+)(\))/g, (_m, pre: string, src: string, post: string) => {
+    // By this point the body has been HTML-escaped, so the query's separators
+    // read `&amp;` - restore them or every param key parses as `amp;<key>`.
+    const q = new URLSearchParams(src.slice(src.indexOf('?') + 1).replace(/&amp;/g, '&'));
+    const slug = q.get('filename');
+    const ext = (q.get('format') || 'svg').toLowerCase();
+    return slug ? `${pre}/info/shots/${slug}.${ext}${post}` : `${pre}${src}${post}`;
+  });
+
   // Images before links, or the link regex eats `[alt](url)` and strands the `!`.
   s = s.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" loading="lazy">');
   // External links (absolute http/https) open in a new tab; internal/relative links
@@ -1516,7 +1530,9 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .docs-sidebar a:hover{color:var(--green);background:var(--pale);text-decoration:none}
 .docs-sidebar a.active{color:var(--green);font-weight:600;background:var(--pale)}
 .docs-content{padding:6rem 3.5rem;min-width:0}
-.docs-content img{max-width:min(100%,340px);height:auto}
+.docs-content img{height:auto;    max-width: min(100%, 40em);    height: auto;   margin: 0 auto; display: block;}
+/* App screenshots (docs/shots.json captures) read at full column width, framed like a window. */
+.docs-content img[src*="/info/shots/"]{max-width:100%;border:1px solid #8882;border-radius:10px;box-shadow:0 6px 24px #0002}
 .docs-content h2{font-size:1.5rem;font-weight:700;letter-spacing:normal;text-transform:none;border-top:1px solid var(--border);padding-top:2rem;margin-top:2.5rem;margin-bottom:.75rem;color:var(--dark)}
 .docs-content h2:first-of-type{border-top:none;padding-top:0;margin-top:0}
 .docs-content h3{font-size:1.15rem;margin-top:1.75rem;margin-bottom:.5rem;color:var(--dark)}
@@ -2446,6 +2462,22 @@ function build() {
     catch { console.warn(`⚠  docs/site: ${f} missing at repo root - /info/${f} will 404`); }
   }
   try { copyFileSync(resolve(repoRoot, 'founded-by.svg'), resolve(outDir, 'founded-by.svg')); } catch {}
+
+  // Docs screenshots - committed baselines captured by `npm run docs:shots` from
+  // the url-shot recipe links inline in docs/*.md (neutral lolly-start brand;
+  // scripts/build-docs-shots.ts). Served at /info/shots/ so every locale's pages
+  // reference one set. A checkout that never captured any still builds - the
+  // pages just show their alt text.
+  const shotsSrc = resolve(repoRoot, 'docs', 'shots');
+  if (existsSync(shotsSrc)) {
+    // Mirror, don't accumulate: a renamed/reformatted baseline must not leave its
+    // old copy behind in the (gitignored) output dir to be served stale.
+    rmSync(resolve(outDir, 'shots'), { recursive: true, force: true });
+    mkdirSync(resolve(outDir, 'shots'), { recursive: true });
+    for (const f of readdirSync(shotsSrc)) {
+      if (/\.(png|svg|jpg)$/.test(f)) copyFileSync(resolve(shotsSrc, f), resolve(outDir, 'shots', f));
+    }
+  }
 
   // Which pages actually have a generated OG card *on disk* right now. Derived from
   // the filesystem rather than generateOgImages()'s return value so the share-tag

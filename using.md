@@ -8,7 +8,11 @@ A practical guide to actually *using* the app - opening a tool, working the canv
 
 The home screen is the **gallery** - every tool, grouped by category. Click a card to open the tool; if you've worked on it before, a **Continue** button resumes your most recent session. Use the search box to filter by name.
 
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=gallery)
+
 Each tool is a split view: **controls** on one side, a live **preview** (the canvas) on the other. Change any control and the preview updates instantly.
+
+![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&filename=tool-qr-code)
 
 > A few tools (like **Layout Studio**) instead open as a **free canvas** - a chromeless, direct-manipulation surface where you drag, resize, rotate and snap boxes of text, shapes and images, and double-click to edit text in place. It exports through the same render path as every other tool, so the canvas *is* the file. See [The free canvas](#the-free-canvas-layout-studio) below.
 
@@ -40,6 +44,8 @@ Free-canvas tools add a working surface *around* the artboard, like a designer's
 - **Zoom out past Fit** (down to 20%) to see the whole pasteboard when you've staged things far outside the frame.
 - **Resizable artboard.** Changing the export dimensions resizes the frame in place; boxes keep their positions, so you can reframe a layout around existing content.
 
+![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=layout-studio)
+
 ## On a phone
 
 On narrow screens the layout reflows to one column:
@@ -67,6 +73,8 @@ Click **Save** to store the current inputs as a session for that tool. You can k
 
 **Projects** - open it from the **Projects** tab beside **Tools**, or from **Profile → Storage → Organise in Projects** - is a home for everything you've saved, and it works like a file manager:
 
+![Projects - saved sessions organised into nestable folders](/t/url-shot?url=%2F%23%2Fp&width=1440&height=900&dpi=192&waitMs=1200&format=svg&filename=projects)
+
 - **Folders that nest.** Group saved sessions into folders, and folders inside folders, as deep as you like. Create a folder, rename it, or drag a tile onto another folder to move it; a breadcrumb walks you back up. An always-present **Uncategorised** folder holds anything not yet filed.
 - **File new work straight in.** Inside a folder, **+ New tool** opens a tool and files its first save into that folder automatically.
 - **Multi-select (desktop).** Tick a tile's checkbox, drag a selection box across empty canvas, or **Shift/Cmd-click**; **right-click** a tile for its context menu. Then act on the whole selection at once.
@@ -92,6 +100,8 @@ When a tool lets you add an image from your device, it's downscaled, stripped of
 ## The Catalogue - your asset library
 
 The **Catalogue** (`#/c`, or the **Catalogue** link in the menu) gathers everything your tools can draw on - brand logos, images, audio, and motion, grouped by kind - and it's where your **own creative files** live too. No server, no admin console, no pull request: it's all on your device.
+
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&filename=catalogue)
 
 - **Bring your files in.** Drag any image, SVG, audio clip, video, Lottie, PDF or PowerPoint deck onto the upload area - or click to choose - and it lands in your catalogue instantly, ready in every tool's asset picker. A multi-page PDF or a `.pptx` asks which pages or slides to keep - each becomes an SVG asset. Ingest as much as you like; it never leaves your device.
 - **Favourite what you reach for.** ★ an asset (or a brand swatch) and it pins to the top of every picker, so your go-to logo or colour is one click away.
