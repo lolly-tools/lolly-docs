@@ -20,6 +20,8 @@ Everything in a profile lives **on the device**, in the browser's local database
 
 None of this is required. A blank profile is a perfectly good profile; you fill in only what saves you typing.
 
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&filename=profile-details)
+
 ## A profile is a context, not just a person
 
 The word "profile" suggests one fixed person, but in Lolly it's really a **creating context** - *who you are while you make this thing*. That context can be three different shapes, and Lolly handles all of them the same way.

@@ -20,6 +20,8 @@ A **Save & continue** button appears the moment you change something and moves y
 
 **Deep-link a tab** with `#/start?tab=<key>`, where the keys are `logos`, `color` *(note the US spelling in the URL)*, `type`, `tokens`, and `catalogue`.
 
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&filename=brand-studio)
+
 ## Logos
 
 Every brand mark has a home here - a grid of **orientation × treatment** slots:
@@ -36,6 +38,8 @@ That's eight optional slots. Click a slot to add a PNG, SVG, JPEG, or WebP; clic
 ## Colours
 
 The richest step. The left pane **derives and generates**; the right pane is your **live palette**. Drag the divider to resize.
+
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-colours)
 
 ### One colour, a whole palette
 
@@ -87,6 +91,8 @@ The floating pill at the bottom of the palette pane downloads the whole palette 
 
 Add **any Google Font** and it downloads to this device - rendered in the app, your tools, and every export, offline forever, and carried in your brand pack. Nothing is fetched at render time.
 
+![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-type)
+
 Search a family (Inter, Fraunces, Space Grotesk…), and **Add font**. Each font in the list can take a role:
 
 - **Primary** - your main brand and body face (**Make primary**).
@@ -97,6 +103,8 @@ The **Type roles** panel shows a live specimen of Heading, Body, and Code so you
 ## Tokens
 
 The rest of the design system, editable without touching code:
+
+![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=png&filename=brand-tokens)
 
 - **Rounded corners** - a single radius slider (0–1.5rem) that cards, buttons, and panels across the app follow.
 - **More tokens** - add and edit **spacing**, **sizing**, **stroke width**, **opacity**, **rotation**, plain **numbers**, and **shadows**. Pick a type, name it (*Gutter, Card shadow…*), and set its value. These are stored as standard [design tokens](/info/design-tokens.html) (DTCG) and travel with your brand.
