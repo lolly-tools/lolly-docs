@@ -27,6 +27,7 @@
 import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { createSvgRasterizer } from '../scripts/lib/rasterize-svg-browser.ts';
+import { stampBitmap } from '../scripts/lib/stamp-media.ts';
 
 // A self-contained SVG string → PNG bytes, at the given size. Injected into each card
 // renderer so they rasterise through the browser path (createSvgRasterizer) — a missing
@@ -352,7 +353,11 @@ export async function generateOgImages(
   for (const page of pages) {
     if (!page.slug || !page.title || page.isLanding) continue;
     try {
-      writeFileSync(resolve(outDir, 'og', `${page.slug}.png`), await renderer.render(page.title));
+      // Stamp our own brand card with the Lolly Imprint + "made with Lolly" C2PA
+      // before writing (see scripts/lib/stamp-media.ts).
+      const png = await renderer.render(page.title);
+      const stamped = await stampBitmap(new Uint8Array(png), 'png', { id: page.slug, name: page.title });
+      writeFileSync(resolve(outDir, 'og', `${page.slug}.png`), Buffer.from(stamped));
       done.add(page.slug);
     } catch (e) {
       log(`og: ${page.slug} failed (${(e as Error).message}); falls back to og.png`);
