@@ -1,25 +1,64 @@
 {
   "heading": "كل الصيغ، دخولا وخروجا",
-  "lead": "يقرأ Lolly 23 صيغة مصدر ويصدر 27 — إليك المجموعة كاملة، مصنفة حسب طبيعة كل صيغة. عشر صيغ {roundtrip}: تقرأ *وتكتب* معا، لذا تظهر في العمودين.",
+  "lead": "تقرأ Lolly 25 صيغة مصدر وتصدر 27 - إليك المجموعة الكاملة، مصنفة حسب طبيعة كل صيغة. أحد عشر {roundtrip}: تقرأ *و* تكتب، لذا تظهر في العمودين.",
   "ingestsLabel": "الاستيراد",
-  "ingestsCount": "23 واردة",
+  "ingestsCount": "25 وارد",
   "exportsLabel": "التصدير",
   "exportsCount": "27 صادرة",
   "ingests": [
-    { "category": "3D", "list": "GLB · glTF" },
-    { "category": "تصميم", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
-    { "category": "صور", "list": "HEIC · TIFF · AVIF" },
-    { "category": "فيديو", "list": "MP4 · WEBM · MOV" },
-    { "category": "صوت", "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD" },
-    { "category": "بيانات", "list": "CSV · JSON" }
+    {
+      "category": "3D",
+      "list": "GLB · glTF"
+    },
+    {
+      "category": "تصميم",
+      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
+    },
+    {
+      "category": "صور",
+      "list": "HEIC · TIFF · AVIF"
+    },
+    {
+      "category": "فيديو",
+      "list": "MP4 · WEBM · MOV"
+    },
+    {
+      "category": "صوت",
+      "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD"
+    },
+    {
+      "category": "بيانات",
+      "list": "CSV · JSON"
+    }
   ],
   "exports": [
-    { "category": "متجهات", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
-    { "category": "نقطية", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
-    { "category": "حركة", "list": "MP4 · WEBM · GIF · APNG" },
-    { "category": "صوت", "list": "MP3 · M4A" },
-    { "category": "مستندات", "list": "PPTX · HTML · MD · TXT" },
-    { "category": "بيانات", "list": "CSV · JSON · ICS · VCF" },
-    { "category": "حزم", "list": "ZIP" }
+    {
+      "category": "متجهات",
+      "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF"
+    },
+    {
+      "category": "نقطية",
+      "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO"
+    },
+    {
+      "category": "حركة",
+      "list": "MP4 · WEBM · GIF · APNG"
+    },
+    {
+      "category": "صوت",
+      "list": "MP3 · M4A"
+    },
+    {
+      "category": "مستندات",
+      "list": "PPTX · HTML · MD · TXT"
+    },
+    {
+      "category": "بيانات",
+      "list": "CSV · JSON · ICS · VCF"
+    },
+    {
+      "category": "حزم",
+      "list": "ZIP"
+    }
   ]
 }

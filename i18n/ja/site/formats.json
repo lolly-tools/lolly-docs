@@ -1,25 +1,64 @@
 {
   "heading": "あらゆるフォーマットに、入力も出力も対応",
-  "lead": "Lollyは23種類のソース形式を読み込み、27種類の形式で書き出します — こちらがその全体で、それぞれの種類ごとにグループ分けしています。10の{roundtrip}は読み込み*と*書き出しの両方に対応しているため、両方の列に表示されます。",
+  "lead": "Lolly は 25 のソース形式を読み込み、27 の形式で書き出せます - こちらが全形式を、それぞれの分類ごとにまとめたものです。11個の{roundtrip}は、読み込み *と* 書き出しの両方に対応しているため、両方の列に表示されます。",
   "ingestsLabel": "読み込み",
-  "ingestsCount": "入力23件",
+  "ingestsCount": "25 イン",
   "exportsLabel": "書き出し",
   "exportsCount": "出力27件",
   "ingests": [
-    { "category": "3D", "list": "GLB · glTF" },
-    { "category": "デザイン", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
-    { "category": "写真", "list": "HEIC · TIFF · AVIF" },
-    { "category": "動画", "list": "MP4 · WEBM · MOV" },
-    { "category": "音声", "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD" },
-    { "category": "データ", "list": "CSV · JSON" }
+    {
+      "category": "3D",
+      "list": "GLB · glTF"
+    },
+    {
+      "category": "デザイン",
+      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
+    },
+    {
+      "category": "写真",
+      "list": "HEIC · TIFF · AVIF"
+    },
+    {
+      "category": "動画",
+      "list": "MP4 · WEBM · MOV"
+    },
+    {
+      "category": "音声",
+      "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD"
+    },
+    {
+      "category": "データ",
+      "list": "CSV · JSON"
+    }
   ],
   "exports": [
-    { "category": "ベクター", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
-    { "category": "ラスター", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
-    { "category": "モーション", "list": "MP4 · WEBM · GIF · APNG" },
-    { "category": "音声", "list": "MP3 · M4A" },
-    { "category": "ドキュメント", "list": "PPTX · HTML · MD · TXT" },
-    { "category": "データ", "list": "CSV · JSON · ICS · VCF" },
-    { "category": "バンドル", "list": "ZIP" }
+    {
+      "category": "ベクター",
+      "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF"
+    },
+    {
+      "category": "ラスター",
+      "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO"
+    },
+    {
+      "category": "モーション",
+      "list": "MP4 · WEBM · GIF · APNG"
+    },
+    {
+      "category": "音声",
+      "list": "MP3 · M4A"
+    },
+    {
+      "category": "ドキュメント",
+      "list": "PPTX · HTML · MD · TXT"
+    },
+    {
+      "category": "データ",
+      "list": "CSV · JSON · ICS · VCF"
+    },
+    {
+      "category": "バンドル",
+      "list": "ZIP"
+    }
   ]
 }

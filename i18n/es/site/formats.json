@@ -1,25 +1,64 @@
 {
   "heading": "Todos los formatos, de entrada y salida",
-  "lead": "Lolly lee 23 formatos de origen y genera 27 - aquí tienes el conjunto completo, agrupado por lo que es cada uno. Diez {roundtrip}: se leen *y* se escriben, así que aparecen en ambas columnas.",
+  "lead": "Lolly lee 25 formatos de origen y renderiza 27 - aquí está el conjunto completo, agrupado según qué es cada uno. Once {roundtrip}: se leen *y* se escriben, así que aparecen en ambas columnas.",
   "ingestsLabel": "Entradas",
-  "ingestsCount": "23 de entrada",
+  "ingestsCount": "25 entrada",
   "exportsLabel": "Salidas",
   "exportsCount": "27 de salida",
   "ingests": [
-    { "category": "3D", "list": "GLB · glTF" },
-    { "category": "Diseño", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
-    { "category": "Fotos", "list": "HEIC · TIFF · AVIF" },
-    { "category": "Video", "list": "MP4 · WEBM · MOV" },
-    { "category": "Audio", "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD" },
-    { "category": "Datos", "list": "CSV · JSON" }
+    {
+      "category": "3D",
+      "list": "GLB · glTF"
+    },
+    {
+      "category": "Diseño",
+      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
+    },
+    {
+      "category": "Fotos",
+      "list": "HEIC · TIFF · AVIF"
+    },
+    {
+      "category": "Video",
+      "list": "MP4 · WEBM · MOV"
+    },
+    {
+      "category": "Audio",
+      "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD"
+    },
+    {
+      "category": "Datos",
+      "list": "CSV · JSON"
+    }
   ],
   "exports": [
-    { "category": "Vectorial", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
-    { "category": "Raster", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
-    { "category": "Animación", "list": "MP4 · WEBM · GIF · APNG" },
-    { "category": "Audio", "list": "MP3 · M4A" },
-    { "category": "Documento", "list": "PPTX · HTML · MD · TXT" },
-    { "category": "Datos", "list": "CSV · JSON · ICS · VCF" },
-    { "category": "Paquete", "list": "ZIP" }
+    {
+      "category": "Vectorial",
+      "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF"
+    },
+    {
+      "category": "Raster",
+      "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO"
+    },
+    {
+      "category": "Animación",
+      "list": "MP4 · WEBM · GIF · APNG"
+    },
+    {
+      "category": "Audio",
+      "list": "MP3 · M4A"
+    },
+    {
+      "category": "Documento",
+      "list": "PPTX · HTML · MD · TXT"
+    },
+    {
+      "category": "Datos",
+      "list": "CSV · JSON · ICS · VCF"
+    },
+    {
+      "category": "Paquete",
+      "list": "ZIP"
+    }
   ]
 }

@@ -1,25 +1,64 @@
 {
   "heading": "Her format, içeri de dışarı da",
-  "lead": "Lolly 23 kaynak formatını okur, 27 format oluşturur - işte türüne göre gruplanmış tam liste. Onu {roundtrip}: hem okunur *hem de* yazılır, bu yüzden her iki sütunda da yer alır.",
+  "lead": "Lolly 25 kaynak biçimi okur ve 27 biçim oluşturur - işte her birinin ne olduğuna göre gruplanmış tam küme. On bir tanesi {roundtrip}: okunur *hem de* yazılır, bu yüzden her iki sütunda da görünür.",
   "ingestsLabel": "İçe Aktarılanlar",
-  "ingestsCount": "23 giriş",
+  "ingestsCount": "25 iç",
   "exportsLabel": "Dışa Aktarılanlar",
   "exportsCount": "27 çıkış",
   "ingests": [
-    { "category": "3D", "list": "GLB · glTF" },
-    { "category": "Tasarım", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
-    { "category": "Fotoğraflar", "list": "HEIC · TIFF · AVIF" },
-    { "category": "Video", "list": "MP4 · WEBM · MOV" },
-    { "category": "Ses", "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD" },
-    { "category": "Veri", "list": "CSV · JSON" }
+    {
+      "category": "3D",
+      "list": "GLB · glTF"
+    },
+    {
+      "category": "Tasarım",
+      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
+    },
+    {
+      "category": "Fotoğraflar",
+      "list": "HEIC · TIFF · AVIF"
+    },
+    {
+      "category": "Video",
+      "list": "MP4 · WEBM · MOV"
+    },
+    {
+      "category": "Ses",
+      "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD"
+    },
+    {
+      "category": "Veri",
+      "list": "CSV · JSON"
+    }
   ],
   "exports": [
-    { "category": "Vektör", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
-    { "category": "Raster", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
-    { "category": "Hareket", "list": "MP4 · WEBM · GIF · APNG" },
-    { "category": "Ses", "list": "MP3 · M4A" },
-    { "category": "Belge", "list": "PPTX · HTML · MD · TXT" },
-    { "category": "Veri", "list": "CSV · JSON · ICS · VCF" },
-    { "category": "Paket", "list": "ZIP" }
+    {
+      "category": "Vektör",
+      "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF"
+    },
+    {
+      "category": "Raster",
+      "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO"
+    },
+    {
+      "category": "Hareket",
+      "list": "MP4 · WEBM · GIF · APNG"
+    },
+    {
+      "category": "Ses",
+      "list": "MP3 · M4A"
+    },
+    {
+      "category": "Belge",
+      "list": "PPTX · HTML · MD · TXT"
+    },
+    {
+      "category": "Veri",
+      "list": "CSV · JSON · ICS · VCF"
+    },
+    {
+      "category": "Paket",
+      "list": "ZIP"
+    }
   ]
 }

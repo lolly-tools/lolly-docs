@@ -1,25 +1,64 @@
 {
   "heading": "ہر فارمیٹ، اندر اور باہر",
-  "lead": "Lolly 23 ماخذ فارمیٹس پڑھتا ہے اور 27 رینڈر کرتا ہے — یہاں مکمل فہرست ہے، ہر ایک کی نوعیت کے مطابق گروپ کی گئی۔ دس {roundtrip}: پڑھے *اور* لکھے دونوں جاتے ہیں، اس لیے وہ دونوں کالموں میں نظر آتے ہیں۔",
+  "lead": "Lolly 25 سورس فارمیٹس پڑھتا ہے اور 27 رینڈر کرتا ہے - یہاں مکمل سیٹ ہے، ہر ایک کیا ہے اس کے حساب سے گروپ کیا گیا ہے۔ گیارہ {roundtrip}: پڑھے *اور* لکھے جاتے ہیں، اس لیے وہ دونوں کالموں میں ظاہر ہوتے ہیں۔",
   "ingestsLabel": "درآمدات",
-  "ingestsCount": "23 اندر",
+  "ingestsCount": "25 اندر",
   "exportsLabel": "برآمدات",
   "exportsCount": "27 باہر",
   "ingests": [
-    { "category": "3D", "list": "GLB · glTF" },
-    { "category": "ڈیزائن", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
-    { "category": "تصاویر", "list": "HEIC · TIFF · AVIF" },
-    { "category": "ویڈیو", "list": "MP4 · WEBM · MOV" },
-    { "category": "آڈیو", "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD" },
-    { "category": "ڈیٹا", "list": "CSV · JSON" }
+    {
+      "category": "3D",
+      "list": "GLB · glTF"
+    },
+    {
+      "category": "ڈیزائن",
+      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
+    },
+    {
+      "category": "تصاویر",
+      "list": "HEIC · TIFF · AVIF"
+    },
+    {
+      "category": "ویڈیو",
+      "list": "MP4 · WEBM · MOV"
+    },
+    {
+      "category": "آڈیو",
+      "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD"
+    },
+    {
+      "category": "ڈیٹا",
+      "list": "CSV · JSON"
+    }
   ],
   "exports": [
-    { "category": "ویکٹر", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
-    { "category": "راسٹر", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
-    { "category": "حرکت", "list": "MP4 · WEBM · GIF · APNG" },
-    { "category": "آڈیو", "list": "MP3 · M4A" },
-    { "category": "دستاویزات", "list": "PPTX · HTML · MD · TXT" },
-    { "category": "ڈیٹا", "list": "CSV · JSON · ICS · VCF" },
-    { "category": "بنڈل", "list": "ZIP" }
+    {
+      "category": "ویکٹر",
+      "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF"
+    },
+    {
+      "category": "راسٹر",
+      "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO"
+    },
+    {
+      "category": "حرکت",
+      "list": "MP4 · WEBM · GIF · APNG"
+    },
+    {
+      "category": "آڈیو",
+      "list": "MP3 · M4A"
+    },
+    {
+      "category": "دستاویزات",
+      "list": "PPTX · HTML · MD · TXT"
+    },
+    {
+      "category": "ڈیٹا",
+      "list": "CSV · JSON · ICS · VCF"
+    },
+    {
+      "category": "بنڈل",
+      "list": "ZIP"
+    }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "heading": "Кожен формат — на вхід і на вихід",
-  "lead": "Lolly читає 23 вихідних форматів і рендерить 27 — ось повний перелік, згрупований за типом кожного. Десять {roundtrip}: читаються *і* записуються, тож з'являються в обох колонках.",
+  "lead": "Lolly читає 25 вихідних форматів і рендерить 27 - ось повний перелік, згрупований за типом кожного. Одинадцять {roundtrip}: читаються *і* записуються, тому з'являються в обох колонках.",
   "ingestsLabel": "Імпорт",
-  "ingestsCount": "23 на вхід",
+  "ingestsCount": "25 вхід",
   "exportsLabel": "Експорт",
   "exportsCount": "27 на вихід",
   "ingests": [
@@ -12,7 +12,7 @@
     },
     {
       "category": "Дизайн",
-      "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG"
+      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
     },
     {
       "category": "Фото",

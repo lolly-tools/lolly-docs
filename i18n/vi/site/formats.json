@@ -1,25 +1,64 @@
 {
   "heading": "Mọi định dạng, vào và ra",
-  "lead": "Lolly đọc được 23 định dạng nguồn và xuất ra 27 định dạng - đây là toàn bộ danh sách, được nhóm theo loại. Mười {roundtrip}: vừa đọc *vừa* ghi, nên chúng xuất hiện ở cả hai cột.",
+  "lead": "Lolly đọc được 25 định dạng nguồn và dựng được 27 - đây là toàn bộ danh sách, được nhóm theo loại của từng định dạng. Mười một {roundtrip}: được đọc *và* ghi, nên chúng xuất hiện ở cả hai cột.",
   "ingestsLabel": "Nhập vào",
-  "ingestsCount": "23 vào",
+  "ingestsCount": "25 vào",
   "exportsLabel": "Xuất ra",
   "exportsCount": "27 ra",
   "ingests": [
-    { "category": "3D", "list": "GLB · glTF" },
-    { "category": "Thiết kế", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
-    { "category": "Ảnh", "list": "HEIC · TIFF · AVIF" },
-    { "category": "Video", "list": "MP4 · WEBM · MOV" },
-    { "category": "Âm thanh", "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD" },
-    { "category": "Dữ liệu", "list": "CSV · JSON" }
+    {
+      "category": "3D",
+      "list": "GLB · glTF"
+    },
+    {
+      "category": "Thiết kế",
+      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
+    },
+    {
+      "category": "Ảnh",
+      "list": "HEIC · TIFF · AVIF"
+    },
+    {
+      "category": "Video",
+      "list": "MP4 · WEBM · MOV"
+    },
+    {
+      "category": "Âm thanh",
+      "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD"
+    },
+    {
+      "category": "Dữ liệu",
+      "list": "CSV · JSON"
+    }
   ],
   "exports": [
-    { "category": "Vector", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
-    { "category": "Raster", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
-    { "category": "Chuyển động", "list": "MP4 · WEBM · GIF · APNG" },
-    { "category": "Âm thanh", "list": "MP3 · M4A" },
-    { "category": "Tài liệu", "list": "PPTX · HTML · MD · TXT" },
-    { "category": "Dữ liệu", "list": "CSV · JSON · ICS · VCF" },
-    { "category": "Gói", "list": "ZIP" }
+    {
+      "category": "Vector",
+      "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF"
+    },
+    {
+      "category": "Raster",
+      "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO"
+    },
+    {
+      "category": "Chuyển động",
+      "list": "MP4 · WEBM · GIF · APNG"
+    },
+    {
+      "category": "Âm thanh",
+      "list": "MP3 · M4A"
+    },
+    {
+      "category": "Tài liệu",
+      "list": "PPTX · HTML · MD · TXT"
+    },
+    {
+      "category": "Dữ liệu",
+      "list": "CSV · JSON · ICS · VCF"
+    },
+    {
+      "category": "Gói",
+      "list": "ZIP"
+    }
   ]
 }

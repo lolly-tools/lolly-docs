@@ -1,25 +1,64 @@
 {
   "heading": "Todos os formatos, de entrada e saída",
-  "lead": "A Lolly lê 23 formatos de origem e renderiza 27 - aqui está o conjunto completo, agrupado pelo que cada um é. Dez são {roundtrip}: lidos *e* escritos, então aparecem em ambas as colunas.",
+  "lead": "A Lolly lê 25 formatos de origem e renderiza 27 - aqui está o conjunto completo, agrupado pelo que cada um é. Onze {roundtrip}: lidos *e* escritos, então aparecem nas duas colunas.",
   "ingestsLabel": "Importações",
-  "ingestsCount": "23 de entrada",
+  "ingestsCount": "25 entrada",
   "exportsLabel": "Exportações",
   "exportsCount": "27 de saída",
   "ingests": [
-    { "category": "3D", "list": "GLB · glTF" },
-    { "category": "Design", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
-    { "category": "Fotos", "list": "HEIC · TIFF · AVIF" },
-    { "category": "Vídeo", "list": "MP4 · WEBM · MOV" },
-    { "category": "Áudio", "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD" },
-    { "category": "Dados", "list": "CSV · JSON" }
+    {
+      "category": "3D",
+      "list": "GLB · glTF"
+    },
+    {
+      "category": "Design",
+      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
+    },
+    {
+      "category": "Fotos",
+      "list": "HEIC · TIFF · AVIF"
+    },
+    {
+      "category": "Vídeo",
+      "list": "MP4 · WEBM · MOV"
+    },
+    {
+      "category": "Áudio",
+      "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD"
+    },
+    {
+      "category": "Dados",
+      "list": "CSV · JSON"
+    }
   ],
   "exports": [
-    { "category": "Vetor", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
-    { "category": "Raster", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
-    { "category": "Movimento", "list": "MP4 · WEBM · GIF · APNG" },
-    { "category": "Áudio", "list": "MP3 · M4A" },
-    { "category": "Documento", "list": "PPTX · HTML · MD · TXT" },
-    { "category": "Dados", "list": "CSV · JSON · ICS · VCF" },
-    { "category": "Pacote", "list": "ZIP" }
+    {
+      "category": "Vetor",
+      "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF"
+    },
+    {
+      "category": "Raster",
+      "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO"
+    },
+    {
+      "category": "Movimento",
+      "list": "MP4 · WEBM · GIF · APNG"
+    },
+    {
+      "category": "Áudio",
+      "list": "MP3 · M4A"
+    },
+    {
+      "category": "Documento",
+      "list": "PPTX · HTML · MD · TXT"
+    },
+    {
+      "category": "Dados",
+      "list": "CSV · JSON · ICS · VCF"
+    },
+    {
+      "category": "Pacote",
+      "list": "ZIP"
+    }
   ]
 }

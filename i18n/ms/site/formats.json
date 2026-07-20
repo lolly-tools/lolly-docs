@@ -1,25 +1,64 @@
 {
   "heading": "Setiap format, masuk dan keluar",
-  "lead": "Lolly membaca 23 format sumber dan menghasilkan 27 - inilah set lengkapnya, dikumpulkan mengikut jenis setiap satu. Sepuluh {roundtrip}: dibaca *dan* ditulis, jadi ia muncul dalam kedua-dua lajur.",
+  "lead": "Lolly membaca 25 format sumber dan merender 27 - berikut set lengkapnya, dikumpulkan mengikut apa setiap satu itu. Sebelas {roundtrip}: dibaca *dan* ditulis, jadi ia muncul dalam kedua-dua lajur.",
   "ingestsLabel": "Import",
-  "ingestsCount": "23 masuk",
+  "ingestsCount": "25 dalam",
   "exportsLabel": "Eksport",
   "exportsCount": "27 keluar",
   "ingests": [
-    { "category": "3D", "list": "GLB · glTF" },
-    { "category": "Reka Bentuk", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
-    { "category": "Foto", "list": "HEIC · TIFF · AVIF" },
-    { "category": "Video", "list": "MP4 · WEBM · MOV" },
-    { "category": "Audio", "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD" },
-    { "category": "Data", "list": "CSV · JSON" }
+    {
+      "category": "3D",
+      "list": "GLB · glTF"
+    },
+    {
+      "category": "Reka Bentuk",
+      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
+    },
+    {
+      "category": "Foto",
+      "list": "HEIC · TIFF · AVIF"
+    },
+    {
+      "category": "Video",
+      "list": "MP4 · WEBM · MOV"
+    },
+    {
+      "category": "Audio",
+      "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD"
+    },
+    {
+      "category": "Data",
+      "list": "CSV · JSON"
+    }
   ],
   "exports": [
-    { "category": "Vektor", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
-    { "category": "Raster", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
-    { "category": "Gerakan", "list": "MP4 · WEBM · GIF · APNG" },
-    { "category": "Audio", "list": "MP3 · M4A" },
-    { "category": "Dokumen", "list": "PPTX · HTML · MD · TXT" },
-    { "category": "Data", "list": "CSV · JSON · ICS · VCF" },
-    { "category": "Pakej", "list": "ZIP" }
+    {
+      "category": "Vektor",
+      "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF"
+    },
+    {
+      "category": "Raster",
+      "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO"
+    },
+    {
+      "category": "Gerakan",
+      "list": "MP4 · WEBM · GIF · APNG"
+    },
+    {
+      "category": "Audio",
+      "list": "MP3 · M4A"
+    },
+    {
+      "category": "Dokumen",
+      "list": "PPTX · HTML · MD · TXT"
+    },
+    {
+      "category": "Data",
+      "list": "CSV · JSON · ICS · VCF"
+    },
+    {
+      "category": "Pakej",
+      "list": "ZIP"
+    }
   ]
 }
