@@ -20,6 +20,8 @@ Lolly inverts it. The work that *drove* those leaks - the quote card, the locali
 - **Governance can be data, not a dashboard.** When you want that control, manage the tool catalog as a Git repository - pull-request review becomes brand approval, with a full audit trail and instant rollback of every template your workforce can touch. It's an option, not an obligation: teams that just want to make things author their own tools in Layout Studio and ingest their own files into the catalogue, entirely in-app, and never touch git. See [Adoption & Governance](/info/adoption-governance.html).
 - **Guard-rails are structural.** Brand constraints are hard-coded into templates, not published as guidelines people can ignore. The wrong output isn't discouraged - it's unrepresentable.
 
+> **You govern the whole relay.** A creative authors the rules and a developer scales them, but it's the operator who makes that lifecycle safe to run org-wide - the same tool that lets a rep self-serve on a plane is one you can gate through Git review, deploy through your MDM and verify cryptographically. See how the roles compound in [The lifecycle of a campaign](/info/overview.html#the-lifecycle-of-a-campaign), and how you govern it in [Adoption & Governance](/info/adoption-governance.html).
+
 ## Delete the request queue while proliferating content.
 
 One goal of Lolly is **design-request deflection**: routine requests that never need to reach a designer because the person who needed the asset made it themselves, correctly, in minutes. Every deflected ticket is both a productivity win and one fewer file changing hands.

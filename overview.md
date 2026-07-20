@@ -42,6 +42,34 @@ The gap is clear: nothing in the existing landscape gives us constraints-first, 
 
 ---
 
+## The lifecycle of a campaign
+
+The clearest way to see what Lolly is isn't a feature list - it's to follow a single asset as it passes from hand to hand. Watch one localized campaign card move through the organisation:
+
+1. **The creative sets the rules.** A designer authors the base template in Layout Studio, hard-coding the brand's typography and colour variables. They're not making one card - they're doing the foundational work *once* so they never have to hand-localize it again.
+2. **The developer scales it.** That same template is wired into a nightly pipeline through the CLI, so a fresh chart or a new language variant is generated automatically - no designer re-opens the file.
+3. **The producer just uses it.** A sales rep, offline on a plane, opens the same tool and generates a perfectly on-brand deck for a client meeting. No design skill, no network, no wait.
+
+The point isn't that Lolly is good for designers *and* good for developers *and* good for sales, each in a vacuum. It's a **relay race**: the creative's initial work is scaled by the developer, which in turn empowers the producer. The effortless experience for the non-technical rep on the plane is only *possible* because of the rigour the designer set and the developer deployed.
+
+That's the force multiplier. Lolly isn't a drawer of separate tools for separate roles - it's one deterministic asset lifecycle that every role touches, and each hand it passes through multiplies the value of the last.
+
+---
+
+## One approval, ten thousand assets
+
+Because approval lives in the tool and not the file (see [How Lolly compares](/info/positioning.html)), scale stops being a review problem. Approve a localized social-card tool once, then generate **10,000 assets across 12 languages** from a spreadsheet - and not one of them needs a fresh compliance check from legal or brand, because the template they all come from was already approved.
+
+The same deterministic tool reaches that scale three ways, all producing identical, pre-approved output:
+
+- **A person, in the app.** The `/pro` batch grid: paste or import the rows, get one finished asset per row, download the zip. No design skill, no ticket, no wait.
+- **A developer, from the command line.** The CLI runs the *same* engine and the *same* render path headless, so the tool can be sequenced over all 10,000 rows in a script or a nightly pipeline. A `lolly <tool> --field=…` call in a loop is the whole integration.
+- **A system or an AI agent, over MCP.** The same tool operated programmatically, at the same fidelity and even greater scale - because a machine won't get bored while thousands of files roll in.
+
+One set of brand constraints, fixed once by a designer; three routes to the identical pre-approved output - and the machine route scales furthest of all, because it never tires while the files roll in.
+
+---
+
 ## The big picture
 
 ```

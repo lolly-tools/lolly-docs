@@ -8,6 +8,8 @@ Lolly is a platform-agnostic **engine** that runs the same render path across se
 
 New to the platform? The **[Quickstart](/info/quickstart.html)** gets a brand and your first render in place before you go deep.
 
+> **You're the multiplier in the relay.** A creative authors a template ([Lolly for Creators](/info/creators.html)); you take that exact tool and scale it - into a pipeline, a CLI batch or an MCP endpoint - so a non-designer can self-serve the finished asset offline, and an AI agent can run it at a volume no person would sit through. See where your work sits in [The lifecycle of a campaign](/info/overview.html#the-lifecycle-of-a-campaign).
+
 ## Understand the architecture
 
 - **[Overview](/info/overview.html)** - why Lolly exists, the engine/shell/tools separation, the capability bridge, and the settled architectural commitments.
