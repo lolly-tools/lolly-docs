@@ -41,16 +41,20 @@ seperti Aplikasi, jadi larian pipeline pada jam 2 pagi tidak akan menyimpang dar
 seseorang semasa pratonton dalam pelayar. Halangan untuk penggunapakaian jarang bersifat teknikal; ia lebih
 bersifat organisasi. Jangkakan perkara berikut:
 
-**Alat dan katalog jenama perlu dikarang.** Lolly ialah sebuah platform, bukan
-pek templat yang sudah siap untuk anda. Seseorang perlu mentakrifkan katalog aset (logo,
-palet, fon sebagai ID kekal) dan menulis manifest + templat untuk setiap jenis
-output.
+**Katalog jenama yang terkurasi perlu dikarang.** Lolly ialah sebuah platform, bukan
+pek templat yang sudah siap untuk anda. Untuk *pelancaran yang ditadbir*, seseorang perlu mentakrifkan
+katalog aset yang dikongsi (logo, palet, fon sebagai ID kekal) dan menulis manifest + templat
+untuk setiap jenis output. Individu tidak perlu menunggu itu, walaupun begitu - dalam
+aplikasi terbuka, sesiapa sahaja boleh memasukkan fail mereka sendiri ke dalam katalog dan membina alat
+dalam Layout Studio sejak hari pertama.
 
-**Tadbir urus berjalan melalui git.** "Semakan PR *itulah* moderasinya" adalah elegan bagi
+**Tadbir urus melalui git adalah pilihan - dan asing bagi bukan jurutera.** Jika anda menjalankan katalog
+*yang dikongsi dan terkawal*, "semakan PR *itulah* moderasinya" adalah elegan bagi
 jurutera tetapi asing bagi kebanyakan pasukan jenama dan pemasaran. Jika mereka yang memiliki
 keputusan jenama tidak biasa dengan git, anda memerlukan aliran kerja yang menghubungkan mereka - atau IT
-secara senyap-senyap menjadi rakan kongsi reka bentuk strategik dan penjaga pintu institusi yang lebih luas.
-Ini lebih digemari oleh ramai pihak dalam persekitaran pengeluaran jangka panjang.
+secara senyap-senyap menjadi rakan kongsi reka bentuk strategik dan penjaga pintu institusi yang lebih luas
+(lebih digemari oleh ramai pihak dalam persekitaran pengeluaran jangka panjang). Pasukan yang tidak mahu
+ini boleh terus melangkauinya.
 
 **Ia sengaja dibuat sempit - fahamilah ia sedemikian.** Lolly bukan untuk kandungan
 tersuai atau kandungan 'hero'. Ia *memang* DAM peribadi anda - dihidupkan dan
@@ -97,6 +101,10 @@ Kami memenangi perjuangan tadbir urus ini dengan kemudahan dan perkhidmatan yang
 Ya. Buka **Layout Studio** dan klik **Import reka bentuk**: ia menerima fail Figma asli **.fig** (Simpan salinan tempatan), eksport Penpot **.penpot**, fail Illustrator **.ai** atau **.pdf**, fail InDesign **.idml** (Fail → Eksport → InDesign Markup), atau **sebarang SVG** (pintu paling luas - hampir semua aplikasi reka bentuk boleh mengeksportnya). Semuanya dihurai sepenuhnya pada peranti anda sendiri, tiada akaun atau plugin diperlukan.
 
 Lapisan (layers) tiba sebagai kotak boleh edit pada kanvas terbuka: teks kekal boleh ditaip semula, bentuk kekal sebagai bentuk, imej menyertai pustaka pada peranti anda, dan jenis huruf serta warna akur kepada global jenama. Simpan dan susun atur itu menjadi templat boleh guna semula yang boleh dicapai melalui URL, yang boleh diisi semula oleh sesiapa yang mempunyai Lolly - dan anda boleh mencampurkan alat langsung (kod QR, carta) yang dipaparkan semula apabila dimuatkan. Dari situ, ia dipaparkan seperti apa-apa lain dalam Lolly - SVG, PDF, PNG dan selebihnya, boleh dihasilkan semula daripada URL-nya. Lihat [Import reka bentuk](/info/design-import.html).
+
+## Bolehkah Lolly menjenamakan semula dek PowerPoint sedia ada?
+
+Ya - dua cara, kedua-duanya pada peranti anda sendiri. Utiliti **Rebrand a Deck** mengambil fail `.pptx` dan menukar tema, warna serta fon yang dikodkan keras kepada jenama anda, manakala carta, SmartArt dan animasi terus melepasi tanpa diubah - anda akan mendapat semula fail `.pptx`. Atau buka dek tersebut dalam **Deck Builder** (Load → lepaskan fail) untuk mengeditnya slaid demi slaid sebagai objek bebas bentuk, yang sudah pun akur kepada jenama, dan eksport sebagai PPTX, PDF atau video. Melepaskan fail `.pptx` pada kawasan muat naik pula akan menyimpan slaid yang anda pilih sebagai aset SVG dalam pustaka anda. Lihat [Import reka bentuk → Dek dan dokumen](/info/design-import.html#decks-and-documents).
 
 ## Apa yang berlaku pada 29 Ogos?
 

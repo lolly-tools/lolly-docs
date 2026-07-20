@@ -40,17 +40,20 @@ Lolly passar in överallt där du redan genererar filer - CLI:t är samma motor
 som appen, så ett pipeline-jobb som körs klockan 02 på natten inte kan avvika från det en person förhandsgranskar i
 webbläsaren. Friktionen vid införandet är sällan teknisk; den är organisatorisk. Räkna med följande:
 
-**Verktyg och varumärkeskatalogen måste skapas.** Lolly är en plattform, inte ett
-färdigt paket med dina mallar. Någon måste definiera tillgångskatalogen (loggor,
-paletter, typsnitt som permanenta ID:n) och skriva manifest + mall för varje
-utdatatyp.
+**En kurerad varumärkeskatalog måste skapas.** Lolly är en plattform, inte ett
+färdigt paket med dina mallar. För en *styrd utrullning* definierar någon den delade
+tillgångskatalogen (loggor, paletter, typsnitt som permanenta ID:n) och skriver
+manifest + mall för varje utdatatyp. Individer behöver dock inte vänta på det - i
+den öppna appen kan vem som helst importera sina egna filer till katalogen och
+bygga verktyg i Layout Studio från dag ett.
 
-**Styrningen sker i git.** "PR-granskningen *är* modereringen" är elegant för
+**Styrning genom git är valfritt - och obekant för icke-utvecklare.** Om du kör en
+*delad, kontrollerad* katalog är "PR-granskningen *är* modereringen" elegant för
 utvecklare men obekant för de flesta varumärkes- och marknadsföringsteam. Om de som
 äger varumärkesbesluten inte lever i git behöver du ett arbetsflöde som överbryggar
 dem - annars blir IT i tysthet den strategiska designpartnern och den bredare
-institutionella grindvakten. Något som föredras av många i långvariga
-produktionsmiljöer.
+institutionella grindvakten (att föredra för många i långvariga
+produktionsmiljöer). Team som inte vill ha detta hoppar helt enkelt över det.
 
 **Det är medvetet smalt - beskriv det så.** Lolly är inte till för skräddarsytt
 eller hjälte-innehåll. Det *är* din personliga DAM - hydrerad och superladdad av ditt
@@ -97,6 +100,10 @@ Vi vinner kampen om styrning genom utmärkt bekvämlighet och service.
 Ja. Öppna **Layout Studio** och klicka på **Importera en design**: den tar emot en inbyggd Figma **.fig** (Save local copy), en Penpot **.penpot**-export, en Illustrator **.ai** eller **.pdf**, en InDesign **.idml** (File → Export → InDesign Markup), eller **valfri SVG** (den breda dörren - nästan alla designprogram kan exportera det). Allt tolkas helt på din egen enhet, inget konto eller plugin behövs.
 
 Lager kommer in som redigerbara rutor på den öppna kanvasen: text går att skriva om, former förblir former, bilder ansluter till ditt bibliotek på enheten, och typsnitt och färger följer de globala varumärkesinställningarna. Spara den så blir layouten en återanvändningsbar, URL-adresserbar mall som vem som helst med Lolly kan fylla i på nytt - och du kan blanda in levande verktyg (en QR-kod, ett diagram) som renderas om vid inläsning. Därifrån renderas den precis som allt annat i Lolly - SVG, PDF, PNG och resten, reproducerbar från sin URL. Se [Importera en design](/info/design-import.html).
+
+## Kan Lolly byta varumärke på en befintlig PowerPoint-presentation?
+
+Ja - på två sätt, båda på din egen enhet. Verktyget **Rebrand a Deck** tar en `.pptx`-fil och byter ut dess tema, hårdkodade färger och typsnitt mot ditt varumärke, medan diagram, SmartArt och animationer passerar igenom orörda - du får tillbaka en `.pptx`-fil. Eller öppna presentationen i **Deck Builder** (Load → släpp filen) för att redigera den bild för bild som fritt placerade objekt, redan anpassade efter varumärket, och exportera som PPTX, PDF eller video. Om du i stället släpper en `.pptx`-fil på ett uppladdningsområde arkiveras de bilder du väljer som SVG-tillgångar i ditt bibliotek. Se [Importera en design → Presentationer och dokument](/info/design-import.html#decks-and-documents).
 
 ## Vad händer den 29 augusti?
 

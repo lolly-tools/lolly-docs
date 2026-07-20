@@ -8,8 +8,6 @@ Tutto quello che c'è in un profilo vive **sul dispositivo**, nel database local
 
 ## Cosa c'è in un profilo
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
-
 | Parte | Cos'è |
 |---|---|
 | **Nome** | Nome e cognome. |
@@ -21,6 +19,8 @@ Tutto quello che c'è in un profilo vive **sul dispositivo**, nel database local
 | **Il tuo lavoro** | Sessioni salvate (con miniature) - organizzate in cartelle annidate in **[Progetti](/info/using.html)** - la tua libreria **Le mie immagini**, e le statistiche di attività locale, tutto associato a questo profilo. |
 
 Niente di tutto questo è obbligatorio. Un profilo vuoto è un profilo perfettamente valido; compili solo quello che ti risparmia di scrivere.
+
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
 
 ## Un profilo è un contesto, non solo una persona
 
@@ -85,6 +85,14 @@ Tre elementi si trovano vicini nell'interfaccia e sono facili da confondere:
 
 Un profilo cambia da chi *proviene* un asset; la piattaforma cambia il suo *aspetto*; le capacità sono *cosa puoi creare*.
 
+### "Profilo" significa altre due cose altrove - non questa
+
+La parola è sovraccarica di significati in tutto il progetto. Nessuno dei due è il profilo personale di cui parla questa pagina:
+
+- **Profilo di contenuto** - una configurazione a tempo di build in `profiles.json` che associa un insieme di pacchetti di strumenti a un catalogo di brand (per esempio `suse`, `lolly-start`). È quello che un operatore sceglie al momento del deployment, ed è anche quello che il **parametro URL/CLI** `profile` seleziona come variante di *colore* al momento dell'esportazione (la condizione di stampa ICC/CMYK - consulta [Modalità URL](/info/url-mode.html)). Entrambi riguardano il *build/output*, non *te*. Consulta [Configurazione](/info/configuration.html).
+- **Profilo di identità** - l'opzionale **identità Content Credentials verificata** che puoi registrare (un certificato a breve durata che collega la tua email alle tue esportazioni firmate). Quella è un'identità di firma, distinta dai campi nome/contatto del profilo personale, sebbene **Usa i miei dati** governi se l'una o l'altra vengono incorporate. Consulta [Identità Content Credentials](/info/content-credentials-identity.html).
+
 ## Privacy
 
 Un profilo non viene mai trasmesso, caricato, o usato per identificarti o tracciarti - non c'è niente a cui acconsentire, solo questo avviso perché tu sappia cosa viene conservato. Cancella tutto in qualsiasi momento con **Profilo → Cancella tutti i miei dati**. Consulta l'[Informativa sulla privacy](/info/privacy.html).
+</content>

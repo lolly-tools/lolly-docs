@@ -8,8 +8,6 @@
 
 ## 個人資料裡有什麼
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
-
 | 項目 | 內容 |
 |---|---|
 | **姓名** | 名字與姓氏。 |
@@ -21,6 +19,8 @@
 | **你的作品** | 已儲存的工作階段（附縮圖）——在**[專案](/info/using.html)**中整理成巢狀資料夾——你的**我的圖片**圖庫，以及本機活動統計，全都對應到這個個人資料。 |
 
 這些都不是必填的。空白的個人資料本身就相當合用；你只需要填寫能省下打字功夫的部分。
+
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
 
 ## 個人資料是一種情境，而不只是一個人
 
@@ -84,6 +84,13 @@
 - **功能（Capabilities）**——*應用程式能做什麼*：完整的功能集合，以及你可以使用的工具。
 
 個人資料改變的是一項資產*來自誰*；平台改變的是它*看起來像什麼*；功能則是*你能做出什麼*。
+
+### 「Profile」在別處還有另外兩種意思——都不是這一個
+
+這個詞在整個專案裡疊用了好幾種意思。以下兩者都不是本頁所談的個人資料：
+
+- **內容設定檔（Content profile）**——`profiles.json` 中的一項建置期設定，將一組工具包綁定到某個品牌目錄（例如 `suse`、`lolly-start`）。這是操作者部署時所選擇的項目，也是 `profile` **URL／CLI 參數**在匯出時用來選擇*色彩*版本的依據（ICC/CMYK 印刷條件——見[URL 模式](/info/url-mode.html)）。這兩者談的都是*建置／輸出*，而不是*你*。詳見[設定](/info/configuration.html)。
+- **身分設定檔（Identity profile）**——你可以選擇註冊的**已驗證 Content Credentials 身分**（一張將你的電子郵件與已簽署匯出檔綁定的短期憑證）。這是一種簽署身分，和個人資料的姓名／聯絡欄位是分開的，不過**使用我的資料**會決定兩者是否會被嵌入。詳見[Content Credentials 身分](/info/content-credentials-identity.html)。
 
 ## 隱私
 

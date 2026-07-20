@@ -8,8 +8,6 @@ Alles in einem Profil befindet sich **auf dem Gerät**, in der lokalen Datenbank
 
 ## Was in einem Profil steckt
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
-
 | Teil | Was es ist |
 |---|---|
 | **Name** | Vor- und Nachname. |
@@ -21,6 +19,8 @@ Alles in einem Profil befindet sich **auf dem Gerät**, in der lokalen Datenbank
 | **Ihre Arbeit** | Gespeicherte Sitzungen (mit Vorschaubildern) - organisiert in verschachtelten Ordnern unter **[Projekte](/info/using.html)** - Ihre **Meine Bilder**-Bibliothek und die lokalen Aktivitätsstatistiken, alle diesem Profil zugeordnet. |
 
 Nichts davon ist erforderlich. Ein leeres Profil ist ein vollkommen gutes Profil; Sie füllen nur das aus, was Ihnen Tipparbeit erspart.
+
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
 
 ## Ein Profil ist ein Kontext, keine bloße Person
 
@@ -84,6 +84,13 @@ Drei Dinge liegen in der Benutzeroberfläche nah beieinander und lassen sich lei
 - **Fähigkeiten** - *was die App kann*: der vollständige Funktionsumfang und die Ihnen zur Verfügung stehenden Tools.
 
 Ein Profil ändert, *von wem* ein Asset stammt; die Plattform ändert, *wie* es aussieht; Fähigkeiten bestimmen, *was Sie erstellen können*.
+
+### „Profil" bedeutet anderswo zwei andere Dinge - nicht dieses hier
+
+Der Begriff ist im gesamten Projekt überladen. Keines der beiden ist das persönliche Profil, um das es auf dieser Seite geht:
+
+- **Content-Profil** - eine Konfiguration zur Build-Zeit in `profiles.json`, die eine Reihe von Tool-Paketen an einen Markenkatalog bindet (z. B. `suse`, `lolly-start`). Das wählt ein Operator beim Deployment, und genau das wählt auch der `profile`-**URL-/CLI-Parameter** als *Farb*-Variante beim Export (die ICC/CMYK-Druckbedingung - siehe [URL-Modus](/info/url-mode.html)). Beide betreffen den *Build/das Ergebnis*, nicht *Sie*. Siehe [Konfiguration](/info/configuration.html).
+- **Identitätsprofil** - die optionale **verifizierte Content Credentials-Identität**, die Sie anlegen können (ein kurzlebiges Zertifikat, das Ihre E-Mail-Adresse mit Ihren signierten Exporten verknüpft). Das ist eine Signaturidentität, getrennt von den Name- und Kontaktfeldern des persönlichen Profils, wobei **Meine Angaben verwenden** steuert, ob eines von beiden eingebettet wird. Siehe [Content Credentials-Identität](/info/content-credentials-identity.html).
 
 ## Datenschutz
 

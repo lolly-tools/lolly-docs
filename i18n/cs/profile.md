@@ -8,8 +8,6 @@ Všechno v profilu zůstává **na zařízení**, v místní databázi prohlíž
 
 ## Co je v profilu
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
-
 | Část | Co to je |
 |---|---|
 | **Name** | Jméno a příjmení. |
@@ -21,6 +19,8 @@ Všechno v profilu zůstává **na zařízení**, v místní databázi prohlíž
 | **Your work** | Uložené relace (s náhledy) - uspořádané do vnořených složek v sekci **[Projekty](/info/using.html)** - tvá knihovna **My images** a místní statistiky aktivity, to vše svázané s tímto profilem. |
 
 Nic z toho není povinné. Prázdný profil je naprosto v pořádku - vyplníš si jen to, co ti ušetří psaní.
+
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
 
 ## Profil je kontext, ne jen osoba
 
@@ -84,6 +84,13 @@ Tři věci, které v UI sedí blízko sebe a snadno se pletou:
 - **Capabilities** - *co aplikace umí*: celá sada funkcí a nástroje, které máš k dispozici.
 
 Profil mění, *od koho* asset je; platforma mění, *jak vypadá*; možnosti určují, *co dokážeš vytvořit*.
+
+### „Profil" znamená jinde ještě dvě jiné věci - ne tenhle
+
+Slovo je v projektu přetížené. Ani jedno z toho není osobní profil, o kterém je tahle stránka:
+
+- **Obsahový profil (content profile)** - konfigurace nastavovaná při buildu v `profiles.json`, která svazuje sadu balíčků nástrojů s katalogem značky (např. `suse`, `lolly-start`). Je to to, co si operátor vybírá při nasazení, a je to i to, co `profile` jako **URL/CLI parametr** vybírá jako *barevnou* variantu při exportu (tisková podmínka ICC/CMYK - viz [Režim URL](/info/url-mode.html)). Obojí se týká *buildu/výstupu*, ne *tebe*. Viz [Konfigurace](/info/configuration.html).
+- **Profil identity (identity profile)** - volitelná **ověřená identita Content Credentials**, kterou si můžeš zaregistrovat (krátkodobý certifikát, který svazuje tvůj e-mail s tvými podepsanými exporty). Jde o podpisovou identitu, oddělenou od polí jméno/kontakt osobního profilu, i když **Use my details** řídí, jestli se vloží jedno nebo druhé z nich. Viz [Identita Content Credentials](/info/content-credentials-identity.html).
 
 ## Soukromí
 

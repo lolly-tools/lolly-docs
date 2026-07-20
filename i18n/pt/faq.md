@@ -40,16 +40,20 @@ O Lolly se encaixa em qualquer lugar onde você já gera arquivos - a CLI é o m
 do aplicativo, então uma pipeline executada às 2h da manhã não pode divergir do que uma
 pessoa vê na pré-visualização em um navegador. O atrito da adoção raramente é técnico; é organizacional. Espere o seguinte:
 
-**As ferramentas e o catálogo de marca precisam ser criados.** O Lolly é uma plataforma, não um
-pacote pronto com os seus templates. Alguém precisa definir o catálogo de ativos (logotipos,
-paletas, fontes como IDs permanentes) e escrever o manifesto + template para cada tipo de
-saída.
+**Um catálogo de marca com curadoria precisa ser criado.** O Lolly é uma plataforma, não um
+pacote pronto com os seus templates. Para um *rollout governado*, alguém define o catálogo de
+ativos compartilhado (logotipos, paletas, fontes como IDs permanentes) e escreve o manifesto +
+template para cada tipo de saída. Isso não significa que as pessoas precisem esperar, porém - no
+aplicativo aberto, qualquer um pode importar seus próprios arquivos para o catálogo e criar
+ferramentas no Layout Studio desde o primeiro dia.
 
-**A governança acontece no git.** A ideia de que "a revisão do PR *é* a moderação" é elegante para
-engenheiros e pouco familiar para a maioria das equipes de marca e marketing. Se as pessoas donas
-das decisões de marca não vivem no git, você vai precisar de um fluxo de trabalho que faça a ponte
-com elas - ou o TI silenciosamente se torna o parceiro estratégico de design e o guardião
-institucional mais amplo. O que é preferido por muitos em ambientes de produção de longa duração.
+**A governança via git é opcional - e pouco familiar para quem não é engenheiro.** Se você mantém
+um catálogo *compartilhado e controlado*, a ideia de que "a revisão do PR *é* a moderação" é
+elegante para engenheiros e pouco familiar para a maioria das equipes de marca e marketing. Se as
+pessoas donas das decisões de marca não vivem no git, você vai precisar de um fluxo de trabalho
+que faça a ponte com elas - ou o TI silenciosamente se torna o parceiro estratégico de design e o
+guardião institucional mais amplo (preferido por muitos em ambientes de produção de longa
+duração). As equipes que não querem isso simplesmente pulam essa etapa.
 
 **É deliberadamente restrito - apresente-o assim.** O Lolly não é para conteúdo personalizado ou
 de destaque. Ele *é* o seu DAM pessoal - hidratado e potencializado pelo seu sistema de
@@ -95,6 +99,10 @@ Sim. Abra o **Layout Studio** e clique em **Importar um design**: ele aceita um 
 
 As camadas chegam como caixas editáveis na tela aberta: o texto continua editável, as formas continuam formas, as imagens entram para a sua biblioteca local no dispositivo, e a tipografia e as cores seguem os globais da marca. Salve, e o layout se torna um template reutilizável e endereçável por URL que qualquer pessoa com o Lolly pode preencher novamente - e você pode misturar ferramentas dinâmicas (um QR code, um gráfico) que se renderizam de novo ao carregar. A partir daí, ele é renderizado como qualquer outra coisa no Lolly - SVG, PDF, PNG e o resto, reproduzível a partir da sua URL. Veja [Importar um design](/info/design-import.html).
 
+## O Lolly consegue aplicar rebranding a uma apresentação do PowerPoint já existente?
+
+Sim - de duas maneiras, ambas no seu dispositivo. O utilitário **Rebrand a Deck** pega um `.pptx` e troca o tema, as cores fixas no código e as fontes pela sua marca, enquanto gráficos, SmartArt e animações passam intactos - você recebe de volta um `.pptx`. Ou abra a apresentação no **Deck Builder** (Carregar → solte o arquivo) para editá-la slide a slide como objetos livres, já ajustados à marca, e exportar em PPTX, PDF ou vídeo. Ao soltar um `.pptx` em uma área de upload, em vez disso, os slides escolhidos ficam arquivados como ativos SVG na sua biblioteca. Veja [Importar um design → Apresentações e documentos](/info/design-import.html#decks-and-documents).
+
 ## O que acontece em 29 de agosto?
 
 As ferramentas com a marca SUSE saem do projeto, e novas ferramentas de exemplo genéricas, definidas pelo usuário, assumem o lugar.
@@ -118,3 +126,5 @@ Vamos construir o máximo que pudermos de forma aberta - só que você não vai 
 ## Qual é o sabor daquele logo do Lolly?
 
 Alguns dizem Limão, outros dizem Menta e às vezes Maçã - o Lolly traz a doçura, você é quem faz o sabor acontecer!
+</content>
+</invoke>

@@ -8,8 +8,6 @@ Tudo em um perfil vive **no dispositivo**, no banco de dados local do navegador 
 
 ## O que há em um perfil
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
-
 | Parte | O que é |
 |---|---|
 | **Nome** | Nome e sobrenome. |
@@ -21,6 +19,8 @@ Tudo em um perfil vive **no dispositivo**, no banco de dados local do navegador 
 | **Seu trabalho** | Sessões salvas (com miniaturas) - organizadas em pastas aninhadas em **[Projetos](/info/using.html)** - sua biblioteca **Minhas imagens**, e as estatísticas de atividade local, tudo vinculado a este perfil. |
 
 Nada disso é obrigatório. Um perfil em branco já é um bom perfil; você preenche apenas o que economiza digitação.
+
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
 
 ## Um perfil é um contexto, não apenas uma pessoa
 
@@ -84,6 +84,13 @@ Três coisas ficam próximas na interface e são fáceis de confundir:
 - **Capacidades** - *o que o aplicativo pode fazer*: o conjunto completo de recursos e as ferramentas disponíveis para você.
 
 Um perfil muda de quem um ativo *é*; a plataforma muda a *aparência* dele; as capacidades são *o que você pode criar*.
+
+### "Perfil" significa duas outras coisas em outros lugares - não esta
+
+A palavra é sobrecarregada em todo o projeto. Nenhuma das duas é o perfil pessoal do qual esta página trata:
+
+- **Perfil de conteúdo** - uma configuração em tempo de build no `profiles.json` que vincula um conjunto de pacotes de ferramentas a um catálogo de marca (por exemplo, `suse`, `lolly-start`). É o que um operador escolhe ao fazer o deploy, e é também o que o **parâmetro de URL/CLI** `profile` seleciona como variante de *cor* no momento da exportação (a condição de impressão ICC/CMYK - veja [Modo URL](/info/url-mode.html)). Ambos dizem respeito ao *build/saída*, não a *você*. Veja [Configuração](/info/configuration.html).
+- **Perfil de identidade** - a **identidade verificada de Content Credentials** opcional que você pode registrar (um certificado de curta duração que vincula seu e-mail às suas exportações assinadas). Essa é uma identidade de assinatura, separada dos campos de nome/contato do perfil pessoal, embora **Usar meus dados** controle se algum dos dois é incorporado. Veja [Identidade de Content Credentials](/info/content-credentials-identity.html).
 
 ## Privacidade
 

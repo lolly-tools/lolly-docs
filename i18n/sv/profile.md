@@ -8,8 +8,6 @@ Allt i en profil finns **på enheten**, i webbläsarens lokala databas (IndexedD
 
 ## Vad som finns i en profil
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
-
 | Del | Vad det är |
 |---|---|
 | **Namn** | Förnamn och efternamn. |
@@ -21,6 +19,8 @@ Allt i en profil finns **på enheten**, i webbläsarens lokala databas (IndexedD
 | **Ditt arbete** | Sparade sessioner (med miniatyrer) - organiserade i nästlade mappar under **[Projekt](/info/using.html)** - ditt bibliotek **Mina bilder**, och lokal aktivitetsstatistik, allt kopplat till denna profil. |
 
 Inget av detta är obligatoriskt. En tom profil är en fullt godtagbar profil; du fyller bara i det som besparar dig onödigt skrivande.
+
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
 
 ## En profil är ett sammanhang, inte bara en person
 
@@ -84,6 +84,13 @@ Tre saker ligger nära varandra i gränssnittet och är lätta att blanda ihop:
 - **Funktioner** - *vad appen kan göra*: hela funktionsutbudet och verktygen som är tillgängliga för dig.
 
 En profil ändrar vem en tillgång är *från*; plattformen ändrar hur den *ser ut*; funktioner är *vad du kan skapa*.
+
+### "Profil" betyder två andra saker på andra ställen - inte det här
+
+Ordet är överanvänt i projektet. Ingen av dessa är den personliga profil som den här sidan handlar om:
+
+- **Innehållsprofil** - en byggtidskonfiguration i `profiles.json` som binder en uppsättning verktygspaket till en varumärkeskatalog (t.ex. `suse`, `lolly-start`). Det är vad en operatör väljer vid driftsättning, och det är även vad `profile`-**URL/CLI-parametern** väljer en *färg*variant av vid exporttillfället (ICC/CMYK-tryckförhållandet - se [URL-läge](/info/url-mode.html)). Båda handlar om *bygget/utdatan*, inte om *dig*. Se [Konfiguration](/info/configuration.html).
+- **Identitetsprofil** - den valfria **verifierade Content Credentials-identiteten** du kan registrera (ett kortlivat certifikat som knyter din e-post till dina signerade exporter). Det är en signeringsidentitet, skild från den personliga profilens namn-/kontaktfält, även om **Använd mina uppgifter** styr om någon av dem bäddas in. Se [Content Credentials-identitet](/info/content-credentials-identity.html).
 
 ## Integritet
 

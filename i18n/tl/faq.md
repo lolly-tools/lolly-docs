@@ -38,15 +38,16 @@ Natatawa rin kami sa oras at mga bayarin na naiipon namin sa approach na ito.
 
 Kumakasya ang Lolly kahit saan ka na gumagawa ng files - ang CLI ay parehong engine ng App, kaya't hindi maaaring lumihis ang isang pipeline run nang 2am mula sa napi-preview ng tao sa browser. Bihirang teknikal ang friction sa pag-adopt; organisasyonal ito. Asahan ang mga sumusunod:
 
-**Kailangang i-author ang mga tool at ang brand catalog.** Ang Lolly ay isang platform, hindi isang tapos nang pack ng iyong mga template. Kailangang tukuyin ng isang tao ang asset catalog (logos, palettes, fonts bilang permanenteng IDs) at isulat ang manifest + template para sa bawat output type.
+**Kailangang i-author ang isang curated na brand catalog.** Ang Lolly ay isang platform, hindi isang tapos nang pack ng iyong mga template. Para sa isang *governed rollout*, tinutukoy ng isang tao ang shared asset catalog (logos, palettes, fonts bilang permanenteng IDs) at isinusulat ang manifest + template para sa bawat output type. Hindi naman kailangang maghintay diyan ang mga indibidwal - sa open app, kahit sino ay maaaring mag-ingest ng sarili nilang mga file sa catalogue at bumuo ng mga tool sa Layout Studio simula sa unang araw.
 
-**Tumatakbo ang governance sa git.** Elegante para sa mga engineer ang "Ang PR review *ay* ang moderation" ngunit hindi pamilyar sa karamihan ng mga brand at marketing team. Kung ang mga taong may-ari ng mga desisyon sa brand ay hindi gumagalaw sa git, kakailanganin mo ng workflow na magiging tulay sa kanila - o tahimik na magiging strategic design partner at mas malawak na institutional gatekeeper ang IT. Mas gusto ito ng marami sa matagal nang tumatakbong production environment.
+**Opsyonal ang governance-by-git - at hindi ito pamilyar sa mga hindi engineer.** Kung nagpapatakbo ka ng *shared, controlled* na catalog, elegante para sa mga engineer ang "Ang PR review *ay* ang moderation" ngunit hindi pamilyar sa karamihan ng mga brand at marketing team. Kung ang mga taong may-ari ng mga desisyon sa brand ay hindi gumagalaw sa git, kakailanganin mo ng workflow na magiging tulay sa kanila - o tahimik na magiging strategic design partner at mas malawak na institutional gatekeeper ang IT (mas gusto ito ng marami sa matagal nang tumatakbong production environment). Ang mga team na ayaw nito ay basta nilalaktawan na lang ito.
 
 **Sadyang makitid ito - ganito ang pag-frame dito.** Hindi ang Lolly para sa bespoke o hero content. Ito *ay* ang iyong personal DAM - hydrated at supercharged ng iyong design system, tools at catalog - at *mayroon* itong open canvas (Layout Studio), pero kahit doon, sumusunod ang mga kulay, type, at assets sa aktibong design globals, kaya't nananatili sa loob ng system ang malayang pag-aayos. Kung ihahambing sa Figma o Canva, magmumukhang limitado ito. Pero kung tutuusin sa kung ano talaga ito - operationalized, paulit-ulit, massive-scale na asset generation - walang makakatapat. Ang maling framing ang pinakakaraniwang set-back.
 
 **Change management sa panig ng producing.** Gumagana ang mga umiiral na proseso ngayon, kahit off-brand ang output. Ang pag-re-point sa kanila papunta sa engine ay nangangahulugan ng muling pagsubok at muling pagkatuto, at ang "kaya na naming gumawa ng files" ay nagiging dahilan para hindi mag-migrate. Simulan sa pag-convert ng isang high-visibility, production-quality na output at ipakita ang before/after nang magkatabi.
 
 Itinataas ng Lolly ang lahat.
+
 
 ## Ano ang nagpapaiba sa utilities kumpara sa tools?
 
@@ -71,6 +72,10 @@ Nananalo kami sa digmaan para sa governance sa pamamagitan ng napakahusay na con
 Oo. Buksan ang **Layout Studio** at i-click ang **Mag-import ng Disenyo**: tinatanggap nito ang native Figma **.fig** (Save local copy), isang Penpot **.penpot** export, isang Illustrator **.ai** o **.pdf**, isang InDesign **.idml** (File → Export → InDesign Markup), o **anumang SVG** (ang malawak na pinto - halos lahat ng design app ay maaaring mag-export nito). Lahat ay pino-parse nang ganap sa iyong device, walang kailangang account o plugin.
 
 Dumarating ang mga layer bilang mga editable box sa bukas na canvas: mananatiling made-edit muli ang text, mananatiling shapes ang mga hugis, sumasali ang mga larawan sa iyong on-device library, at sumusunod ang type at mga kulay sa brand globals. I-save ito at magiging isang reusable, URL-addressable na template ang layout na maaaring punan ulit ng kahit sinong may Lolly - at maaari kang maghalo ng mga live tool (isang QR code, isang chart) na nag-re-render kapag na-load. Mula doon, nire-render ito tulad ng iba pang bagay sa Lolly - SVG, PDF, PNG at iba pa, reproducible mula sa URL nito. Tingnan ang [Mag-import ng Disenyo](/info/design-import.html).
+
+## Kaya bang i-rebrand ng Lolly ang isang umiiral na PowerPoint deck?
+
+Oo - dalawang paraan, pareho sa iyong device. Kinukuha ng **Rebrand a Deck** na utility ang isang `.pptx` at pinapalitan ang tema nito, hardcoded na mga kulay at fonts papunta sa iyong brand habang dumadaan nang hindi nagbabago ang mga chart, SmartArt at animation - makakakuha ka ng `.pptx` pabalik. O buksan ang deck sa **Deck Builder** (Load → i-drop ang file) para i-edit ito slide by slide bilang freeform objects, na naka-snap na sa brand, at i-export bilang PPTX, PDF o video. Sa halip, ang pag-drop ng `.pptx` sa isang upload area ay naglalagay sa mga slide na pinili mo bilang SVG assets sa iyong library. Tingnan ang [Mag-import ng Disenyo → Mga Deck at Dokumento](/info/design-import.html#decks-and-documents).
 
 ## Ano ang mangyayari sa Agosto 29?
 
