@@ -1,8 +1,8 @@
 {
   "heading": "Każdy format, na wejściu i wyjściu",
-  "lead": "Lolly odczytuje 23 formaty źródłowe i renderuje 27 - oto pełny zestaw, pogrupowany według typu. Dziesięć {roundtrip}: odczytywane *i* zapisywane, więc pojawiają się w obu kolumnach.",
+  "lead": "Lolly odczytuje 25 formatów źródłowych i renderuje 27 - oto pełny zestaw, pogrupowany według tego, czym każdy z nich jest. Jedenaście {roundtrip}: odczytywane *i* zapisywane, więc pojawiają się w obu kolumnach.",
   "ingestsLabel": "Import",
-  "ingestsCount": "23 wejścia",
+  "ingestsCount": "25 wejść",
   "exportsLabel": "Eksport",
   "exportsCount": "27 wyjść",
   "ingests": [
@@ -12,7 +12,7 @@
     },
     {
       "category": "Design",
-      "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG"
+      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
     },
     {
       "category": "Zdjęcia",

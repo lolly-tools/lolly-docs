@@ -1,25 +1,64 @@
 {
   "heading": "Всеки формат — за вход и изход",
-  "lead": "Lolly чете 23 входни формата и рендира 27 — ето пълния набор, групиран според това какво представлява всеки. Десет са {roundtrip}: четат се *и* се записват, затова се появяват и в двете колони.",
+  "lead": "Lolly чете 25 изходни формата и рендира 27 - ето пълния набор, групиран според това какъв е всеки. Единадесет {roundtrip}: четени *и* записвани, затова се появяват в двете колони.",
   "ingestsLabel": "Приема",
-  "ingestsCount": "23 входни",
+  "ingestsCount": "25 навътре",
   "exportsLabel": "Експортира",
   "exportsCount": "27 изходни",
   "ingests": [
-    { "category": "3D", "list": "GLB · glTF" },
-    { "category": "Дизайн", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
-    { "category": "Снимки", "list": "HEIC · TIFF · AVIF" },
-    { "category": "Видео", "list": "MP4 · WEBM · MOV" },
-    { "category": "Аудио", "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD" },
-    { "category": "Данни", "list": "CSV · JSON" }
+    {
+      "category": "3D",
+      "list": "GLB · glTF"
+    },
+    {
+      "category": "Дизайн",
+      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
+    },
+    {
+      "category": "Снимки",
+      "list": "HEIC · TIFF · AVIF"
+    },
+    {
+      "category": "Видео",
+      "list": "MP4 · WEBM · MOV"
+    },
+    {
+      "category": "Аудио",
+      "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD"
+    },
+    {
+      "category": "Данни",
+      "list": "CSV · JSON"
+    }
   ],
   "exports": [
-    { "category": "Векторни", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
-    { "category": "Растерни", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
-    { "category": "Движение", "list": "MP4 · WEBM · GIF · APNG" },
-    { "category": "Аудио", "list": "MP3 · M4A" },
-    { "category": "Документи", "list": "PPTX · HTML · MD · TXT" },
-    { "category": "Данни", "list": "CSV · JSON · ICS · VCF" },
-    { "category": "Пакет", "list": "ZIP" }
+    {
+      "category": "Векторни",
+      "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF"
+    },
+    {
+      "category": "Растерни",
+      "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO"
+    },
+    {
+      "category": "Движение",
+      "list": "MP4 · WEBM · GIF · APNG"
+    },
+    {
+      "category": "Аудио",
+      "list": "MP3 · M4A"
+    },
+    {
+      "category": "Документи",
+      "list": "PPTX · HTML · MD · TXT"
+    },
+    {
+      "category": "Данни",
+      "list": "CSV · JSON · ICS · VCF"
+    },
+    {
+      "category": "Пакет",
+      "list": "ZIP"
+    }
   ]
 }

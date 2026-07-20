@@ -1,25 +1,64 @@
 {
   "heading": "Alla format, in och ut",
-  "lead": "Lolly läser 23 källformat och renderar 27 - här är hela uppsättningen, grupperad efter vad varje sort är för typ. Tio {roundtrip}: läses *och* skrivs, så de dyker upp i båda kolumnerna.",
+  "lead": "Lolly läser 25 källformat och renderar 27 - här är hela uppsättningen, grupperad efter vad var och en är. Elva {roundtrip}: läses *och* skrivs, så de förekommer i båda kolumnerna.",
   "ingestsLabel": "Importerar",
-  "ingestsCount": "23 in",
+  "ingestsCount": "25 in",
   "exportsLabel": "Exporterar",
   "exportsCount": "27 ut",
   "ingests": [
-    { "category": "3D", "list": "GLB · glTF" },
-    { "category": "Design", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
-    { "category": "Foton", "list": "HEIC · TIFF · AVIF" },
-    { "category": "Video", "list": "MP4 · WEBM · MOV" },
-    { "category": "Ljud", "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD" },
-    { "category": "Data", "list": "CSV · JSON" }
+    {
+      "category": "3D",
+      "list": "GLB · glTF"
+    },
+    {
+      "category": "Design",
+      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
+    },
+    {
+      "category": "Foton",
+      "list": "HEIC · TIFF · AVIF"
+    },
+    {
+      "category": "Video",
+      "list": "MP4 · WEBM · MOV"
+    },
+    {
+      "category": "Ljud",
+      "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD"
+    },
+    {
+      "category": "Data",
+      "list": "CSV · JSON"
+    }
   ],
   "exports": [
-    { "category": "Vektor", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
-    { "category": "Raster", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
-    { "category": "Rörlig bild", "list": "MP4 · WEBM · GIF · APNG" },
-    { "category": "Ljud", "list": "MP3 · M4A" },
-    { "category": "Dokument", "list": "PPTX · HTML · MD · TXT" },
-    { "category": "Data", "list": "CSV · JSON · ICS · VCF" },
-    { "category": "Paket", "list": "ZIP" }
+    {
+      "category": "Vektor",
+      "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF"
+    },
+    {
+      "category": "Raster",
+      "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO"
+    },
+    {
+      "category": "Rörlig bild",
+      "list": "MP4 · WEBM · GIF · APNG"
+    },
+    {
+      "category": "Ljud",
+      "list": "MP3 · M4A"
+    },
+    {
+      "category": "Dokument",
+      "list": "PPTX · HTML · MD · TXT"
+    },
+    {
+      "category": "Data",
+      "list": "CSV · JSON · ICS · VCF"
+    },
+    {
+      "category": "Paket",
+      "list": "ZIP"
+    }
   ]
 }

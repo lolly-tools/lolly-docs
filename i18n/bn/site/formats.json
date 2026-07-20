@@ -1,25 +1,64 @@
 {
   "heading": "প্রতিটি ফরম্যাট, ভেতরে ও বাইরে",
-  "lead": "Lolly 23টি সোর্স ফরম্যাট পড়ে এবং 27টি রেন্ডার করে — এই রইল সম্পূর্ণ সেট, প্রতিটি যা তার ভিত্তিতে গ্রুপ করা। দশটি {roundtrip}: পড়া *এবং* লেখা দুটোই হয়, তাই এগুলো দুই কলামেই দেখা যায়।",
+  "lead": "Lolly ২৫টি সোর্স ফরম্যাট পড়ে এবং ২৭টি রেন্ডার করে - এই রইল পুরো সেট, প্রতিটি কী তা অনুযায়ী গোষ্ঠীভুক্ত। এগারোটি {roundtrip}: পড়া *এবং* লেখা হয়, তাই সেগুলো দুই কলামেই দেখা যায়।",
   "ingestsLabel": "ইনজেস্ট",
-  "ingestsCount": "23 ভেতরে",
+  "ingestsCount": "25 ইন",
   "exportsLabel": "এক্সপোর্ট",
   "exportsCount": "27 বাইরে",
   "ingests": [
-    { "category": "3D", "list": "GLB · glTF" },
-    { "category": "ডিজাইন", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
-    { "category": "ফটো", "list": "HEIC · TIFF · AVIF" },
-    { "category": "ভিডিও", "list": "MP4 · WEBM · MOV" },
-    { "category": "অডিও", "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD" },
-    { "category": "ডেটা", "list": "CSV · JSON" }
+    {
+      "category": "3D",
+      "list": "GLB · glTF"
+    },
+    {
+      "category": "ডিজাইন",
+      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
+    },
+    {
+      "category": "ফটো",
+      "list": "HEIC · TIFF · AVIF"
+    },
+    {
+      "category": "ভিডিও",
+      "list": "MP4 · WEBM · MOV"
+    },
+    {
+      "category": "অডিও",
+      "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD"
+    },
+    {
+      "category": "ডেটা",
+      "list": "CSV · JSON"
+    }
   ],
   "exports": [
-    { "category": "ভেক্টর", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
-    { "category": "রাস্টার", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
-    { "category": "মোশন", "list": "MP4 · WEBM · GIF · APNG" },
-    { "category": "অডিও", "list": "MP3 · M4A" },
-    { "category": "ডকুমেন্ট", "list": "PPTX · HTML · MD · TXT" },
-    { "category": "ডেটা", "list": "CSV · JSON · ICS · VCF" },
-    { "category": "বান্ডেল", "list": "ZIP" }
+    {
+      "category": "ভেক্টর",
+      "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF"
+    },
+    {
+      "category": "রাস্টার",
+      "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO"
+    },
+    {
+      "category": "মোশন",
+      "list": "MP4 · WEBM · GIF · APNG"
+    },
+    {
+      "category": "অডিও",
+      "list": "MP3 · M4A"
+    },
+    {
+      "category": "ডকুমেন্ট",
+      "list": "PPTX · HTML · MD · TXT"
+    },
+    {
+      "category": "ডেটা",
+      "list": "CSV · JSON · ICS · VCF"
+    },
+    {
+      "category": "বান্ডেল",
+      "list": "ZIP"
+    }
   ]
 }

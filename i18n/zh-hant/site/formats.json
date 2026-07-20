@@ -1,25 +1,64 @@
 {
   "heading": "所有格式,匯入匯出一應俱全",
-  "lead": "Lolly 可讀取 23 種來源格式,並匯出 27 種格式——以下依類型列出完整清單。其中十種{roundtrip}:既可讀取*也*可寫入,因此會同時出現在兩欄中。",
+  "lead": "Lolly 可讀取 25 種來源格式，並輸出 27 種格式 - 以下是完整清單，依各自類型分組。其中 11 個{roundtrip}：讀取*與*寫入，因此會同時出現在兩欄中。",
   "ingestsLabel": "匯入",
-  "ingestsCount": "23 種格式",
+  "ingestsCount": "25 漸入",
   "exportsLabel": "匯出",
   "exportsCount": "27 種格式",
   "ingests": [
-    { "category": "3D", "list": "GLB · glTF" },
-    { "category": "設計", "list": "Figma · Penpot · Illustrator · InDesign · PDF · SVG" },
-    { "category": "相片", "list": "HEIC · TIFF · AVIF" },
-    { "category": "影片", "list": "MP4 · WEBM · MOV" },
-    { "category": "音訊", "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD" },
-    { "category": "資料", "list": "CSV · JSON" }
+    {
+      "category": "3D",
+      "list": "GLB · glTF"
+    },
+    {
+      "category": "設計",
+      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
+    },
+    {
+      "category": "相片",
+      "list": "HEIC · TIFF · AVIF"
+    },
+    {
+      "category": "影片",
+      "list": "MP4 · WEBM · MOV"
+    },
+    {
+      "category": "音訊",
+      "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD"
+    },
+    {
+      "category": "資料",
+      "list": "CSV · JSON"
+    }
   ],
   "exports": [
-    { "category": "向量", "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF" },
-    { "category": "點陣", "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO" },
-    { "category": "動態", "list": "MP4 · WEBM · GIF · APNG" },
-    { "category": "音訊", "list": "MP3 · M4A" },
-    { "category": "文件", "list": "PPTX · HTML · MD · TXT" },
-    { "category": "資料", "list": "CSV · JSON · ICS · VCF" },
-    { "category": "封裝", "list": "ZIP" }
+    {
+      "category": "向量",
+      "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF"
+    },
+    {
+      "category": "點陣",
+      "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO"
+    },
+    {
+      "category": "動態",
+      "list": "MP4 · WEBM · GIF · APNG"
+    },
+    {
+      "category": "音訊",
+      "list": "MP3 · M4A"
+    },
+    {
+      "category": "文件",
+      "list": "PPTX · HTML · MD · TXT"
+    },
+    {
+      "category": "資料",
+      "list": "CSV · JSON · ICS · VCF"
+    },
+    {
+      "category": "封裝",
+      "list": "ZIP"
+    }
   ]
 }
