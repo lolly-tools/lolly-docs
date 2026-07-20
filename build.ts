@@ -2308,7 +2308,7 @@ function buildNav(lang: Lang, slug: string, activeHref: string, isLanding: boole
 <div class="nav-mobile-menu" id="navMobileMenu">${mobileLinks}<a href="${launchHref}" class="nav-launch">${launch}</a></div>`;
 }
 
-const FOOTER = () => `<footer><p>Lolly - <a href="${REPO_URL}">${esc(t('Open Source'))}</a></p><p>${esc(t('Questions? Contact Andy Fitzsimon -'))} <a href="mailto:fitzy@suse.com">fitzy@suse.com</a></p>${FOUNDED_BY}</footer>`;
+const FOOTER = (lang: Lang) => `<footer><p>Lolly - <a href="${REPO_URL}">${esc(t('Open Source'))}</a> · <a href="${localeHref(lang, 'privacy')}">${esc(t('Privacy Policy'))}</a></p><p>${esc(t('Questions? Contact Andy Fitzsimon -'))} <a href="mailto:fitzy@suse.com">fitzy@suse.com</a></p>${FOUNDED_BY}</footer>`;
 
 // Docs sidebar for a page, driven by its pathway. Falls back to the builders
 // sidebar for any non-landing page without an explicit pathway.
@@ -2386,7 +2386,7 @@ ${THEME_INIT_SCRIPT}
 <body>
 ${buildNav(lang, page.slug, activeHref, isLanding, page.pathway)}
 ${body}
-${FOOTER()}
+${FOOTER(lang)}
 ${THEME_INTERACT_SCRIPT}
 ${HAMBURGER_SCRIPT}
 ${LANG_PICKER_SCRIPT}
