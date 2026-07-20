@@ -93,6 +93,7 @@ A few things worth having straight before you roll it out:
 
 ## Where to go next
 
+- **[Security & Verification](/info/security.html)** - the standards, primitives, trust model, and testing behind the credentials and encryption above.
 - **[Adoption & Governance](/info/adoption-governance.html)** - personas, the deflection metric, and governance-as-data in full.
 - **[Deployment](/info/deployment.html)** - deploy/serve/hybrid, MDM, and self-hosting the services.
 - **[Configuration](/info/configuration.html)** - profiles, brand packs, capability gating, and feature flags.
