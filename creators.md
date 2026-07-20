@@ -6,6 +6,8 @@ You want to make something good, quickly, and have it come out right. Lolly is b
 
 This page tells you everything you need to know about getting the most out of Lolly.
 
+> **You're one hand in a relay.** The tools you author don't stop with you - a developer can wire them into an automated pipeline ([Lolly for Builders](/info/builders.html)) and a non-designer colleague can run them self-serve to get a finished, on-brand file without you in the loop. See how the whole lifecycle compounds in [The lifecycle of a campaign](/info/overview.html#the-lifecycle-of-a-campaign).
+
 ## Why Lolly - your advantages
 
 - **Finished, not fiddly.** The tool already knows the fonts, the colours, the logo, the spacing. You bring the words; it hands back the asset. Nothing to second-guess.
@@ -14,6 +16,8 @@ This page tells you everything you need to know about getting the most out of Lo
 - **Infinite permutations.** Localise a card into a dozen languages, generate every size for every placement, swap a lockup across forty campaigns - all from one design, driven by a spreadsheet.
 - **It's yours, offline, private.** Nothing uploads. No account, no cloud, no licence to audit. Close the laptop lid on a plane and keep working.
 - **Open, not locked in.** The engine is open source and your work lives at plain URLs, not inside a vendor's database.
+
+> **The constraints don't cage you - they catch you.** Think of the guard-rails as bumper lanes: you still throw the ball - the words, the image, the idea - and the code just keeps it out of the gutter so it can never break the brand. You're not being automated away; the tedious part is: the brand-checking, the re-exporting at every size, the hand-localizing into a dozen languages. What's left is the call that needed you. And the tool *you* author is what lets the rest of the company make good work without pulling you into every asset: your judgment, scaled.
 
 ## How it compares
 

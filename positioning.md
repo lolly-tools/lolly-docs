@@ -38,6 +38,22 @@ The shape of the gap is clear: nothing in the existing landscape gives us constr
 - Unique campaign work that genuinely needs a designer
 - Ideation that needs to escape the brand system entirely - Lolly's open canvas still conforms colours, type and assets to the brand globals, and that's the point
 
+## Approve the tool, not the file
+
+Every other tool in the landscape produces a *file* that then has to be checked - a brand manager in a Slack thread, legal on the disclaimer, a round of changes, another review. Lolly moves the approval **one step upstream**. The brand rules - exact hex codes, licensed font files, bleed margins, spacing - are hard-coded into the tool's HTML and CSS, so the template *physically cannot* emit an off-brand asset. The layout itself is load-bearing.
+
+So you stop approving outputs and start approving the **tool** that makes them. Approve it once, and every asset it ever produces is pre-approved by construction - no human in the loop, no review cycle, at any volume.
+
+This is the paradigm shift the deterministic engine actually delivers: it isn't a faster version of the old approval process, it removes the process. For the creative team it's a guard-rail, not a replacement - you still throw the ball (the data, the copy, the image) and the code is the bumper lane that keeps every throw out of the gutter.
+
+| Approving assets the old way | Approving the tool, the Lolly way |
+|---|---|
+| Every finished file is checked, one at a time | The tool is checked once |
+| Request → designer builds → brand review → legal check → changes → re-review | One parameter change → finished asset |
+| Designer, brand manager, legal and requester all in the loop | The producer, on their own |
+| Days per asset | Seconds per asset |
+| 10,000 assets = 10,000 review cycles | 10,000 assets = zero (the template was already approved) |
+
 ## What this uniquely provides
 
 - **Wild design potential delivered safely in context.** Tools can express adventurous design ideas inside hard coded guard-rails.
