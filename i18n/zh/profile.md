@@ -8,8 +8,6 @@
 
 ## 个人资料中有什么
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
-
 | 部分 | 内容 |
 |---|---|
 | **姓名** | 名字和姓氏。 |
@@ -21,6 +19,8 @@
 | **你的作品** | 已保存的工具会话(带缩略图)——在**[项目](/info/using.html)**中整理为嵌套文件夹——你的**我的图片**素材库,以及本地活动统计,均与此个人资料关联。 |
 
 以上都不是必填项。一个空白的个人资料本身就是完全可用的;你只需填写能替你省去重复输入的部分。
+
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
 
 ## 个人资料是一种情境,而不仅仅是一个人
 
@@ -84,6 +84,13 @@
 - **功能** ——*应用程序能做什么*:你可用的完整功能集和工具。
 
 个人资料决定一份资源*来自谁*;平台决定它*看起来是什么样*;功能决定*你能做出什么*。
+
+### “个人资料”一词在别处另有两种含义——都不是这一种
+
+这个词在整个项目中被反复借用。以下两者都不是本页所讲的个人资料:
+
+- **内容配置(Content profile)** —— `profiles.json` 中的一种构建期配置,将一组工具包与某个品牌目录绑定(例如 `suse`、`lolly-start`)。这是运营者在部署时所做的选择;导出时,`profile` 这个 **URL/CLI 参数**选择的也是这个含义下的一种*颜色*变体(即 ICC/CMYK 印刷条件——参见[URL 模式](/info/url-mode.html))。两者说的都是*构建/输出*,而不是*你*。参见[配置](/info/configuration.html)。
+- **身份档案(Identity profile)** —— 你可以注册的可选**已验证 Content Credentials 身份**(一种将你的邮箱与已签名导出内容相关联的短期证书)。这是一种签名身份,与个人资料中的姓名/联系方式字段是分开的,不过**使用我的详细信息**决定的是二者是否会被嵌入。参见 [Content Credentials 身份](/info/content-credentials-identity.html)。
 
 ## 隐私
 

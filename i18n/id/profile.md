@@ -8,8 +8,6 @@ Semua isi profil tersimpan **di perangkat**, dalam basis data lokal browser (Ind
 
 ## Apa yang ada dalam profil
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
-
 | Bagian | Apa itu |
 |---|---|
 | **Nama** | Nama depan dan nama belakang. |
@@ -21,6 +19,8 @@ Semua isi profil tersimpan **di perangkat**, dalam basis data lokal browser (Ind
 | **Karya Anda** | Sesi tersimpan (dengan thumbnail) - ditata dalam folder bertingkat di **[Proyek](/info/using.html)** - pustaka **Gambar saya** Anda, dan statistik aktivitas lokal, semuanya terkait ke profil ini. |
 
 Tidak ada satu pun dari ini yang wajib. Profil kosong adalah profil yang sangat baik; Anda hanya mengisi apa yang menghemat waktu pengetikan.
+
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
 
 ## Profil adalah sebuah konteks, bukan sekadar seseorang
 
@@ -84,6 +84,13 @@ Tiga hal berada berdekatan di antarmuka dan mudah tertukar:
 - **Kapabilitas** - *apa yang bisa dilakukan aplikasi*: seluruh rangkaian fitur dan tool yang tersedia untuk Anda.
 
 Profil mengubah aset itu berasal *dari siapa*; platform mengubah *tampilannya*; kapabilitas adalah *apa yang bisa Anda buat*.
+
+### "Profil" berarti dua hal lain di tempat lain - bukan ini
+
+Istilah ini dipakai berlebihan di seluruh proyek. Tidak satu pun dari keduanya adalah profil pribadi yang dibahas di halaman ini:
+
+- **Profil konten** - konfigurasi waktu-build di `profiles.json` yang mengikat sekumpulan paket tool ke sebuah katalog brand (misalnya `suse`, `lolly-start`). Ini yang dipilih operator saat men-deploy, dan ini juga yang dipilih oleh **parameter URL/CLI** `profile` untuk memilih varian *warna* saat ekspor (kondisi cetak ICC/CMYK - lihat [Mode URL](/info/url-mode.html)). Keduanya soal *build/output*, bukan soal *Anda*. Lihat [Konfigurasi](/info/configuration.html).
+- **Profil identitas** - identitas **Content Credentials** terverifikasi opsional yang bisa Anda daftarkan (sertifikat berumur pendek yang mengaitkan email Anda dengan ekspor yang Anda tanda tangani). Itu adalah identitas penanda tangan, terpisah dari field nama/kontak pada profil pribadi, meskipun **Gunakan detail saya** mengatur apakah salah satunya disematkan. Lihat [Identitas Content Credentials](/info/content-credentials-identity.html).
 
 ## Privasi
 

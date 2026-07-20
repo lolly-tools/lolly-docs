@@ -8,8 +8,6 @@ Tot ce ține de un profil trăiește **pe dispozitiv**, în baza de date locală
 
 ## Ce conține un profil
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
-
 | Parte | Ce este |
 |---|---|
 | **Nume** | Prenume și nume de familie. |
@@ -21,6 +19,8 @@ Tot ce ține de un profil trăiește **pe dispozitiv**, în baza de date locală
 | **Munca ta** | Sesiuni salvate (cu miniaturi) - organizate în foldere imbricate în **[Projects](/info/using.html)** - biblioteca ta **My images** și statisticile locale de activitate, toate asociate acestui profil. |
 
 Nimic din toate acestea nu este obligatoriu. Un profil gol este un profil perfect valid; completezi doar ce îți economisește tastarea.
+
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
 
 ## Un profil este un context, nu doar o persoană
 
@@ -84,6 +84,13 @@ Trei lucruri stau aproape unul de altul în interfață și se confundă ușor:
 - **Capabilități** - *ce poate face aplicația*: setul complet de funcționalități și instrumentele disponibile pentru tine.
 
 Un profil schimbă de la *cine* provine o resursă; platforma schimbă *cum arată*; capabilitățile sunt *ce poți crea*.
+
+### „Profil" mai înseamnă alte două lucruri în altă parte - nu pe acesta
+
+Cuvântul are mai multe sensuri diferite în tot proiectul. Niciunul dintre acestea nu este profilul personal despre care vorbește această pagină:
+
+- **Profil de conținut** - o configurație la momentul build-ului în `profiles.json` care leagă un set de pachete de instrumente de un catalog de brand (de ex. `suse`, `lolly-start`). Este ceea ce alege un operator la deploy, și tot el este ce selectează parametrul **URL/CLI** `profile` ca variantă de *culoare* la momentul exportului (condiția de tipar ICC/CMYK - vezi [URL Mode](/info/url-mode.html)). Amândouă țin de *build/output*, nu de *tine*. Vezi [Configurare](/info/configuration.html).
+- **Profil de identitate** - **identitatea Content Credentials verificată** opțională pe care o poți înregistra (un certificat de scurtă durată care leagă emailul tău de exporturile tale semnate). Aceasta este o identitate de semnare, separată de câmpurile nume/contact ale profilului personal, deși **Use my details** guvernează dacă vreuna dintre ele este încorporată. Vezi [Identitate Content Credentials](/info/content-credentials-identity.html).
 
 ## Confidențialitate
 

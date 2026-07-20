@@ -40,16 +40,20 @@ Lolly zapadne kamkoli, kde už dnes generuješ soubory - CLI používá stejný 
 jako aplikace, takže pipeline spuštěná ve 2 ráno se nemůže rozejít s tím, co si člověk
 prohlíží v prohlížeči. Tření při zavádění bývá málokdy technické; je organizační. Počítej s tímto:
 
-**Nástroje a katalog značky se musí vytvořit.** Lolly je platforma, ne hotový
-balíček tvých šablon. Někdo musí definovat katalog assetů (loga,
-palety, fonty jako trvalá ID) a napsat manifest a šablonu pro každý typ
-výstupu.
+**Kurátorovaný katalog značky se musí vytvořit.** Lolly je platforma, ne hotový
+balíček tvých šablon. Pro *řízené zavedení* někdo definuje sdílený katalog assetů
+(loga, palety, fonty jako trvalá ID) a napíše manifest a šablonu pro každý typ
+výstupu. Jednotlivci na to ale nemusí čekat - v otevřené aplikaci si každý může
+vložit vlastní soubory do katalogu a stavět nástroje v Layout Studio už od
+prvního dne.
 
-**Governance běží na gitu.** Věta „PR review *je* moderace“ zní elegantně pro
+**Governance přes git je volitelná - a lidem mimo vývojáře cizí.** Pokud provozuješ
+*sdílený, řízený* katalog, věta „PR review *je* moderace“ zní elegantně pro
 vývojáře, ale většině brand a marketingových týmů je cizí. Pokud lidé, kteří rozhodují
 o značce, nežijí v gitu, budeš potřebovat workflow, který je propojí - jinak se IT
-tiše stane strategickým partnerem pro design a širším institucionálním strážcem.
-To je stav, který mnozí v dlouhodobě běžících produkčních prostředích preferují.
+tiše stane strategickým partnerem pro design a širším institucionálním strážcem
+(to je stav, který mnozí v dlouhodobě běžících produkčních prostředích preferují).
+Týmy, které o to nestojí, to prostě přeskočí.
 
 **Je záměrně úzce zaměřené - tak to i prezentuj.** Lolly není pro zakázkový nebo
 hero obsah. *Je* to tvůj osobní DAM - nasycený a poháněný tvým design systémem,
@@ -95,6 +99,10 @@ Válku o governance vyhráváme skvělým pohodlím a službou.
 Ano. Otevři **Layout Studio** a klikni na **Importuj návrh**: přijímá nativní Figma soubor **.fig** (Save local copy), export z Penpotu **.penpot**, Illustrator **.ai** nebo **.pdf**, InDesign **.idml** (File → Export → InDesign Markup), nebo **jakékoli SVG** (široká brána - skoro každá návrhářská aplikace ho umí exportovat). Všechno se zpracovává výhradně na tvém zařízení, není potřeba účet ani plugin.
 
 Vrstvy se objeví jako editovatelné boxy na otevřeném plátně: text zůstává přepsatelný, tvary zůstávají tvary, obrázky se přidají do tvé knihovny na zařízení a typografie a barvy se řídí globálními hodnotami značky. Ulož to a layout se stane znovupoužitelnou šablonou adresovatelnou přes URL, kterou může kdokoli s Lolly znovu naplnit - a můžeš do ní zamíchat živé nástroje (QR kód, graf), které se při načtení znovu vyrenderují. Odtud se renderuje stejně jako cokoli jiného v Lolly - SVG, PDF, PNG a další, reprodukovatelné z jeho URL. Viz [Importuj návrh](/info/design-import.html).
+
+## Umí Lolly rebrandovat existující prezentaci v PowerPointu?
+
+Ano - dvěma způsoby, oba přímo na tvém zařízení. Utilita **Rebrand a Deck** vezme soubor `.pptx` a přepne motiv, natvrdo zadané barvy a fonty na tvou značku, zatímco grafy, SmartArt a animace projdou beze změny - zpátky dostaneš `.pptx`. Nebo otevři prezentaci v **Deck Builderu** (Load → přetáhni soubor) a uprav ji snímek po snímku jako volně umístěné objekty, už napasované na značku, a exportuj PPTX, PDF nebo video. Když místo toho přetáhneš `.pptx` na nahrávací plochu, uloží se vybrané snímky jako SVG assety do tvé knihovny. Viz [Importuj návrh → Prezentace a dokumenty](/info/design-import.html#decks-and-documents).
 
 ## Co se stane 29. srpna?
 

@@ -41,17 +41,20 @@ dell'app, quindi una pipeline eseguita alle 2 del mattino non può divergere da 
 persona vede in anteprima in un browser. L'attrito nell'adozione è raramente tecnico;
 è organizzativo. Ecco cosa aspettarsi:
 
-**Gli strumenti e il catalogo di marca vanno creati.** Lolly è una piattaforma, non un
-pacchetto già pronto dei tuoi template. Qualcuno deve definire il catalogo degli asset (loghi,
-palette, font come ID permanenti) e scrivere il manifest + template per ogni tipo di
-output.
+**Va creato un catalogo di marca curato.** Lolly è una piattaforma, non un
+pacchetto già pronto dei tuoi template. Per un *rollout governato*, qualcuno definisce il
+catalogo condiviso degli asset (loghi, palette, font come ID permanenti) e scrive il
+manifest + template per ogni tipo di output. I singoli però non devono aspettare che
+questo accada - nell'app aperta chiunque può importare i propri file nel catalogo e
+costruire strumenti in Layout Studio fin dal primo giorno.
 
-**La governance funziona su git.** "La revisione della PR *è* la moderazione" è elegante per
+**La governance-by-git è opzionale - e poco familiare a chi non è sviluppatore.** Se gestisci un
+catalogo *condiviso e controllato*, "la revisione della PR *è* la moderazione" è elegante per
 gli sviluppatori ma poco familiare per la maggior parte dei team di marca e marketing. Se le
 persone che possiedono le decisioni di marca non vivono in git, ti servirà un workflow
 che faccia da ponte con loro - oppure l'IT diventa silenziosamente il partner strategico di
-design e il guardiano istituzionale più ampio. Il che è preferito da molti in ambienti di
-produzione di lunga data.
+design e il guardiano istituzionale più ampio (preferito da molti in ambienti di
+produzione di lunga data). I team che non vogliono questo, semplicemente lo saltano.
 
 **È deliberatamente ristretto - presentalo così.** Lolly non è per contenuti su misura o
 contenuti hero. *È* il tuo DAM personale - idratato e potenziato dal tuo design
@@ -96,6 +99,10 @@ Vinciamo la guerra della governance con un'eccellente comodità e un servizio ec
 Sì. Apri **Layout Studio** e clicca su **Importa un design**: accetta un file Figma nativo **.fig** (Save local copy), un'esportazione Penpot **.penpot**, un file Illustrator **.ai** o **.pdf**, un file InDesign **.idml** (File → Export → InDesign Markup), oppure **qualsiasi SVG** (la porta larga - quasi ogni app di design lo esporta). Tutto viene analizzato interamente sul tuo dispositivo, senza bisogno di account o plugin.
 
 I livelli arrivano come riquadri modificabili sul canvas aperto: il testo resta modificabile, le forme restano forme, le immagini si uniscono alla tua libreria sul dispositivo, e la tipografia e i colori si conformano alle variabili globali di marca. Salvalo e il layout diventa un template riutilizzabile e indirizzabile via URL che chiunque abbia Lolly può compilare di nuovo - e puoi mescolarci strumenti dal vivo (un codice QR, un grafico) che vengono renderizzati di nuovo al caricamento. Da lì si renderizza come qualsiasi altra cosa in Lolly - SVG, PDF, PNG e il resto, riproducibile dal suo URL. Vedi [Importa un design](/info/design-import.html).
+
+## Lolly può rimarchiare una presentazione PowerPoint esistente?
+
+Sì - in due modi, entrambi sul tuo dispositivo. L'utilità **Rebrand a Deck** prende un `.pptx` e ne sostituisce il tema, i colori e i font hardcoded con quelli del tuo brand, mentre grafici, SmartArt e animazioni restano invariati - ottieni di nuovo un `.pptx`. Oppure apri la presentazione in **Deck Builder** (Load → trascina il file) per modificarla slide per slide come oggetti liberi, già allineati al brand, ed esportarla in PPTX, PDF o video. Trascinare invece un `.pptx` su un'area di upload archivia le slide che scegli come asset SVG nella tua libreria. Vedi [Importa un design → Presentazioni e documenti](/info/design-import.html#decks-and-documents).
 
 ## Cosa succede il 29 agosto?
 

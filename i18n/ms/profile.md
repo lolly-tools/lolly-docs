@@ -8,8 +8,6 @@ Semua yang ada dalam profil disimpan **pada peranti**, dalam pangkalan data temp
 
 ## Apa yang ada dalam profil
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
-
 | Bahagian | Keterangan |
 |---|---|
 | **Nama** | Nama pertama dan nama akhir. |
@@ -21,6 +19,8 @@ Semua yang ada dalam profil disimpan **pada peranti**, dalam pangkalan data temp
 | **Kerja anda** | Sesi yang disimpan (dengan lakaran kecil) - disusun ke dalam folder bersarang dalam **[Projek](/info/using.html)** - pustaka **Imej Saya** anda, dan statistik aktiviti tempatan, semuanya dikaitkan dengan profil ini. |
 
 Tiada satu pun daripada ini diwajibkan. Profil kosong adalah profil yang baik sepenuhnya; anda hanya mengisi apa yang menjimatkan masa menaip anda.
+
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
 
 ## Profil adalah konteks, bukan sekadar seorang individu
 
@@ -84,6 +84,13 @@ Tiga perkara ini terletak berdekatan antara satu sama lain dalam UI dan mudah di
 - **Keupayaan** - *apa yang boleh dilakukan oleh aplikasi ini*: keseluruhan set ciri dan alat yang tersedia untuk anda.
 
 Profil menentukan *daripada siapa* sesuatu aset itu; platform menentukan *rupa* sesuatu aset itu; keupayaan pula ialah *apa yang boleh anda hasilkan*.
+
+### "Profil" membawa dua maksud lain di tempat lain - bukan profil ini
+
+Perkataan ini digunakan secara bertindih di seluruh projek. Tiada satu pun daripada kedua-dua ini ialah profil peribadi yang dibincangkan dalam halaman ini:
+
+- **Profil kandungan** - satu konfigurasi masa-bina dalam `profiles.json` yang mengikat satu set pek alat kepada satu katalog jenama (contohnya `suse`, `lolly-start`). Inilah yang dipilih oleh pengendali semasa deploy, dan inilah juga yang dipilih oleh **parameter URL/CLI** `profile` sebagai varian *warna* pada masa eksport (keadaan percetakan ICC/CMYK - lihat [Mod URL](/info/url-mode.html)). Kedua-duanya berkaitan dengan *pembinaan/output*, bukan tentang *anda*. Lihat [Konfigurasi](/info/configuration.html).
+- **Profil identiti** - **identiti Content Credentials yang disahkan** pilihan yang boleh anda daftarkan (satu sijil jangka pendek yang mengaitkan e-mel anda dengan eksport anda yang ditandatangani). Itu ialah identiti menandatangan, berasingan daripada medan nama/hubungan profil peribadi, walaupun **Guna butiran saya** mengawal sama ada salah satu daripadanya disertakan. Lihat [Identiti Content Credentials](/info/content-credentials-identity.html).
 
 ## Privasi
 

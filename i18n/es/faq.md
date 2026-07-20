@@ -42,17 +42,22 @@ que la ejecución de un pipeline a las 2 de la madrugada no puede desviarse de l
 persona previsualiza en un navegador. La fricción a la hora de adoptarlo rara vez es
 técnica; es organizativa. Espera lo siguiente:
 
-**Las herramientas y el catálogo de marca hay que crearlos.** Lolly es una plataforma, no un
-paquete terminado con tus plantillas. Alguien tiene que definir el catálogo de activos
-(logotipos, paletas, tipografías como IDs permanentes) y escribir el manifiesto + la
-plantilla para cada tipo de salida.  
+**Hay que crear un catálogo de marca curado.** Lolly es una plataforma, no un
+paquete terminado con tus plantillas. Para un *despliegue gobernado*, alguien define el
+catálogo de activos compartido (logotipos, paletas, tipografías como IDs permanentes) y
+escribe el manifiesto + la plantilla para cada tipo de salida. Sin embargo, no hace
+falta esperar a eso a nivel individual: en la app abierta, cualquiera puede incorporar
+sus propios archivos al catálogo y crear herramientas en Layout Studio desde el primer
+día.
 
-**La gobernanza funciona sobre git.** "La revisión del PR *es* la moderación" resulta
-elegante para las personas ingenieras, pero es poco habitual para la mayoría de los
-equipos de marca y marketing. Si quienes deciden sobre la marca no viven en git,
-necesitarás un flujo de trabajo que los conecte - o, si no, TI se convierte
-silenciosamente en el socio de diseño estratégico y en el guardián institucional más
-amplio. Algo que muchos prefieren en entornos de producción de larga duración. 
+**La gobernanza mediante git es opcional - y resulta poco familiar para quienes no son
+ingenieros.** Si gestionas un catálogo *compartido y controlado*, "la revisión del PR
+*es* la moderación" resulta elegante para las personas ingenieras, pero es poco
+habitual para la mayoría de los equipos de marca y marketing. Si quienes deciden sobre
+la marca no viven en git, necesitarás un flujo de trabajo que los conecte - o, si no,
+TI se convierte silenciosamente en el socio de diseño estratégico y en el guardián
+institucional más amplio (preferido por muchos en entornos de producción de larga
+duración). Los equipos que no quieran esto simplemente lo omiten.
 
 **Es deliberadamente limitado - preséntalo así.** Lolly no es para contenido a medida o
 contenido estrella. *Sí* es tu DAM personal - hidratado y potenciado por tu sistema de
@@ -99,6 +104,10 @@ Ganamos la guerra de la gobernanza con una conveniencia y un servicio excelentes
 Sí. Abre **Layout Studio** y haz clic en **Import a design**: acepta un **.fig** nativo de Figma (Save local copy), una exportación **.penpot** de Penpot, un **.ai** o **.pdf** de Illustrator, un **.idml** de InDesign (File → Export → InDesign Markup), o **cualquier SVG** (la puerta ancha - casi cualquier aplicación de diseño lo exporta). Todo se procesa por completo en tu dispositivo, sin necesidad de cuenta ni de plugin.
 
 Las capas llegan como cajas editables en el lienzo abierto: el texto se puede volver a escribir, las formas siguen siendo formas, las imágenes se incorporan a tu biblioteca local, y la tipografía y los colores se ajustan a las variables globales de marca. Guárdalo y el diseño se convierte en una plantilla reutilizable y direccionable por URL que cualquier persona con Lolly puede rellenar de nuevo - y puedes combinar herramientas en vivo (un código QR, un gráfico) que se vuelven a renderizar al cargar. A partir de ahí se renderiza como cualquier otra cosa en Lolly - SVG, PDF, PNG y demás, reproducible desde su URL. Consulta [Import a design](/info/design-import.html).
+
+## ¿Puede Lolly cambiar la marca de una presentación de PowerPoint existente?
+
+Sí, de dos formas, ambas en tu dispositivo. La utilidad **Rebrand a Deck** toma un `.pptx` y cambia su tema, los colores fijos en el código y las tipografías a tu marca, mientras que los gráficos, el SmartArt y las animaciones pasan intactos - recibes de vuelta un `.pptx`. O abre la presentación en **Deck Builder** (Load → arrastra el archivo) para editarla diapositiva a diapositiva como objetos de disposición libre, ya ajustados a la marca, y exportarla como PPTX, PDF o vídeo. Si en cambio arrastras un `.pptx` a un área de subida, se archivan las diapositivas que elijas como activos SVG en tu biblioteca. Consulta [Import a design → Decks and documents](/info/design-import.html#decks-and-documents).
 
 ## ¿Qué ocurre el 29 de agosto?
 

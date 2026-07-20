@@ -8,8 +8,6 @@ Ang lahat ng nasa profile ay nananatili **sa device**, sa local database ng brow
 
 ## Ano ang laman ng profile
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
-
 | Bahagi | Ano ito |
 |---|---|
 | **Name** | Pangalan at apelyido. |
@@ -21,6 +19,8 @@ Ang lahat ng nasa profile ay nananatili **sa device**, sa local database ng brow
 | **Your work** | Mga saved session (may thumbnails) - nakaayos sa nested folders sa **[Projects](/info/using.html)** - ang iyong **My images** library, at ang local activity stats, lahat naka-key sa profile na ito. |
 
 Wala sa mga ito ang required. Ang blangkong profile ay perpektong profile pa rin; punan mo lang ang mga bagay na makakatipid sa iyo ng pag-type.
+
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
 
 ## Ang profile ay isang konteksto, hindi lang isang tao
 
@@ -85,7 +85,13 @@ Tatlong bagay ang magkalapit sa UI at madaling malito:
 
 Ang profile ang nagbabago kung *kanino galing* ang isang asset; ang platform ang nagbabago kung *ano ang itsura* nito; ang capabilities ang *magagawa mo*.
 
+### May dalawa pang kahulugan ang "profile" sa ibang bahagi - hindi ito ang tinutukoy dito
+
+Masyadong marami ang kahulugan ng salitang ito sa buong proyekto. Wala sa mga sumusunod ang tumutukoy sa personal na profile na pinag-uusapan ng pahinang ito:
+
+- **Content profile** - isang build-time na configuration sa `profiles.json` na nagbubuklod ng isang set ng tool packs sa isang brand catalog (hal. `suse`, `lolly-start`). Ito ang pinipili ng operator kapag nag-de-deploy, at ito rin ang pinipili ng `profile` **URL/CLI parameter** bilang isang *colour* variant sa oras ng export (ang ICC/CMYK press condition - tingnan ang [URL Mode](/info/url-mode.html)). Parehong tungkol sa *build/output*, hindi tungkol sa *iyo*. Tingnan ang [Configuration](/info/configuration.html).
+- **Identity profile** - ang opsyonal na **verified Content Credentials identity** na puwede mong i-enrol (isang short-lived na certificate na nag-uugnay sa iyong email sa mga naka-sign na export mo). Ito ay isang signing identity, hiwalay sa name/contact fields ng personal na profile, bagama't kinokontrol ng **Use my details** kung isasama man ang alinman dito. Tingnan ang [Content Credentials Identity](/info/content-credentials-identity.html).
+
 ## Privacy
 
 Ang profile ay hindi kailanman ipinapadala, ino-upload, o ginagamit upang tukuyin o subaybayan ka - walang kailangang pahintulutan, ito lang na paalala para malaman mo kung ano ang itinatago. Burahin ang lahat nito anumang oras gamit ang **Profile → Clear all my data**. Tingnan ang [Privacy Policy](/info/privacy.html).
-</content>

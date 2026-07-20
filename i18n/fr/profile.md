@@ -8,8 +8,6 @@ Tout ce qui compose un profil vit **sur l'appareil**, dans la base de données l
 
 ## Ce qu'il y a dans un profil
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
-
 | Partie | Ce que c'est |
 |---|---|
 | **Nom** | Prénom et nom de famille. |
@@ -21,6 +19,8 @@ Tout ce qui compose un profil vit **sur l'appareil**, dans la base de données l
 | **Ton travail** | Les sessions enregistrées (avec vignettes) - organisées en dossiers imbriqués dans **[Projets](/info/using.html)** - ta bibliothèque **Mes images**, et les statistiques d'activité locale, tout cela rattaché à ce profil. |
 
 Rien de tout cela n'est obligatoire. Un profil vide est un profil tout à fait valable ; tu ne remplis que ce qui t'évite de retaper.
+
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
 
 ## Un profil est un contexte, pas seulement une personne
 
@@ -84,6 +84,13 @@ Trois choses se côtoient dans l'interface et sont faciles à confondre :
 - **Capacités** - *ce que l'app peut faire* : l'ensemble des fonctionnalités et des outils qui te sont accessibles.
 
 Un profil change *de qui* vient un asset ; la plateforme change son *apparence* ; les capacités déterminent *ce que tu peux créer*.
+
+### « Profil » a deux autres sens ailleurs - pas celui-ci
+
+Le mot est surchargé de sens dans l'ensemble du projet. Aucun des deux n'est le profil personnel dont parle cette page :
+
+- **Profil de contenu** - une configuration au moment du build dans `profiles.json` qui associe un ensemble de packs d'outils à un catalogue de marque (par exemple `suse`, `lolly-start`). C'est ce qu'un opérateur choisit au moment du déploiement, et c'est aussi ce que le **paramètre URL/CLI** `profile` sélectionne comme variante de *couleur* au moment de l'export (la condition de presse ICC/CMYK - voir [Mode URL](/info/url-mode.html)). Les deux concernent le *build/la sortie*, pas *toi*. Voir [Configuration](/info/configuration.html).
+- **Profil d'identité** - l'**identité Content Credentials vérifiée** facultative que tu peux enrôler (un certificat de courte durée qui relie ton e-mail à tes exports signés). C'est une identité de signature, distincte des champs nom/contact du profil personnel, même si **Utiliser mes coordonnées** détermine si l'une ou l'autre est intégrée. Voir [Identité Content Credentials](/info/content-credentials-identity.html).
 
 ## Confidentialité
 

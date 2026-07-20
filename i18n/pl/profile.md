@@ -8,8 +8,6 @@ Wszystko w profilu znajduje się **na urządzeniu**, w lokalnej bazie danych prz
 
 ## Co zawiera profil
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
-
 | Element | Co to jest |
 |---|---|
 | **Imię i nazwisko** | Imię oraz nazwisko. |
@@ -21,6 +19,8 @@ Wszystko w profilu znajduje się **na urządzeniu**, w lokalnej bazie danych prz
 | **Twoja praca** | Zapisane sesje (z miniaturami) - uporządkowane w zagnieżdżone foldery w sekcji **[Projekty](/info/using.html)** - twoja biblioteka **Moje obrazy** oraz lokalne statystyki aktywności, wszystko powiązane z tym profilem. |
 
 Nic z tego nie jest wymagane. Pusty profil to całkowicie dobry profil; wypełniasz tylko to, co oszczędza ci pisania.
+
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
 
 ## Profil to kontekst, a nie tylko osoba
 
@@ -84,6 +84,13 @@ Trzy rzeczy sąsiadują ze sobą w interfejsie i łatwo je pomylić:
 - **Możliwości** - *to, co potrafi aplikacja*: pełny zestaw funkcji i narzędzia dostępne dla ciebie.
 
 Profil zmienia to, *od kogo* pochodzi zasób; platforma zmienia to, *jak wygląda*; możliwości to *to, co możesz stworzyć*.
+
+### „Profil" ma gdzie indziej jeszcze dwa inne znaczenia - nie to opisane tutaj
+
+Słowo to jest przeciążone znaczeniowo w całym projekcie. Żadne z poniższych nie jest osobistym profilem, o którym mowa na tej stronie:
+
+- **Profil zawartości** - konfiguracja czasu kompilacji w pliku `profiles.json`, wiążąca zestaw pakietów narzędzi z katalogiem marki (np. `suse`, `lolly-start`). To coś, co wybiera operator podczas wdrażania, i to samo wybiera też **parametr URL/CLI** `profile` - wariant *kolorystyczny* w momencie eksportu (warunek druku ICC/CMYK - zobacz [Tryb URL](/info/url-mode.html)). Oba dotyczą *budowy/wyniku*, a nie *ciebie*. Zobacz [Konfigurację](/info/configuration.html).
+- **Profil tożsamości** - opcjonalna **zweryfikowana tożsamość Content Credentials**, którą możesz zarejestrować (krótkotrwały certyfikat wiążący twój e-mail z podpisanymi eksportami). To tożsamość podpisująca, odrębna od pól imienia/nazwiska i kontaktu w profilu osobistym, choć to opcja **Użyj moich danych** decyduje, czy którakolwiek z nich zostanie osadzona. Zobacz [Tożsamość Content Credentials](/info/content-credentials-identity.html).
 
 ## Prywatność
 

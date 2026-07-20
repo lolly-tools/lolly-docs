@@ -85,6 +85,13 @@ Tres elementos están próximos entre sí en la interfaz y es fácil confundirlo
 
 Un perfil cambia de quién *proviene* un recurso; la plataforma cambia su *aspecto*; las capacidades son *lo que puedes crear*.
 
+### "Perfil" significa otras dos cosas en otro sitio - no esta
+
+La palabra está sobrecargada en todo el proyecto. Ninguna de estas dos es el perfil personal del que trata esta página:
+
+- **Perfil de contenido** - una configuración en tiempo de compilación en `profiles.json` que vincula un conjunto de paquetes de herramientas a un catálogo de marca (por ejemplo, `suse`, `lolly-start`). Es lo que elige un operador al desplegar, y también es lo que selecciona el **parámetro de URL/CLI** `profile`, que además selecciona una variante de *color* en el momento de exportar (la condición de imprenta ICC/CMYK - consulta [Modo URL](/info/url-mode.html)). Ambos tienen que ver con la *compilación/salida*, no contigo. Consulta [Configuración](/info/configuration.html).
+- **Perfil de identidad** - la **identidad verificada de Content Credentials** opcional que puedes registrar (un certificado de corta duración que vincula tu correo electrónico a tus exportaciones firmadas). Es una identidad de firma, distinta de los campos de nombre/contacto del perfil personal, aunque **Usar mis datos** determina si se incrusta una u otra. Consulta [Identidad de Content Credentials](/info/content-credentials-identity.html).
+
 ## Privacidad
 
 Un perfil nunca se transmite, se sube ni se usa para identificarte o rastrearte - no hay nada que consentir, solo este aviso para que sepas qué se conserva. Bórralo todo en cualquier momento con **Perfil → Borrar todos mis datos**. Consulta la [Política de privacidad](/info/privacy.html).

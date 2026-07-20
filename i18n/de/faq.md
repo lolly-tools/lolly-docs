@@ -40,15 +40,19 @@ Lolly fügt sich überall dort ein, wo Sie bereits Dateien erzeugen - die CLI nu
 wie die App, sodass ein um 2 Uhr nachts laufender Pipeline-Durchlauf nicht von dem abweichen kann, was eine Person in einem
 Browser als Vorschau sieht. Die Reibung bei der Einführung ist selten technischer Natur; sie ist organisatorisch. Rechnen Sie mit Folgendem:
 
-**Tools und der Markenkatalog müssen erstellt werden.** Lolly ist eine Plattform, kein
-fertiges Paket Ihrer Vorlagen. Jemand muss den Asset-Katalog definieren (Logos,
-Farbpaletten, Schriften als dauerhafte IDs) und für jeden Ausgabetyp das Manifest und die Vorlage schreiben.  
+**Ein kuratierter Markenkatalog muss erstellt werden.** Lolly ist eine Plattform, kein
+fertiges Paket Ihrer Vorlagen. Für einen *gesteuerten Rollout* definiert jemand den gemeinsamen
+Asset-Katalog (Logos, Farbpaletten, Schriften als dauerhafte IDs) und schreibt für jeden Ausgabetyp
+das Manifest und die Vorlage. Einzelpersonen müssen darauf jedoch nicht warten - in der offenen App
+kann jeder eigene Dateien in den Katalog einpflegen und von Tag eins an Tools in Layout Studio bauen.
 
-**Governance läuft über Git.** „Der PR-Review *ist* die Moderation“ ist für
+**Governance per Git ist optional - und für Nicht-Entwickler ungewohnt.** Wenn Sie einen
+*gemeinsamen, kontrollierten* Katalog betreiben, ist „der PR-Review *ist* die Moderation“ für
 Entwickler elegant und für die meisten Marken- und Marketingteams ungewohnt. Wenn die Personen, die
-Markenentscheidungen verantworten, nicht in Git zu Hause sind, brauchen Sie einen Workflow, der sie einbindet - oder die IT-Abteilung
-wird stillschweigend zum strategischen Design-Partner und umfassenderen institutionellen Torwächter.
-Das wird in lange laufenden Produktionsumgebungen von vielen bevorzugt. 
+Markenentscheidungen verantworten, nicht in Git zu Hause sind, brauchen Sie einen Workflow, der sie
+einbindet - oder die IT-Abteilung wird stillschweigend zum strategischen Design-Partner und umfassenderen
+institutionellen Torwächter (das wird in lange laufenden Produktionsumgebungen von vielen bevorzugt).
+Teams, die das nicht wollen, überspringen es einfach.
 
 **Es ist bewusst eng gefasst - stellen Sie es entsprechend dar.** Lolly ist nicht für maßgeschneiderte oder
 Hero-Inhalte gedacht. Es *ist* Ihr persönliches DAM - angereichert und verstärkt durch Ihr Design-
@@ -93,6 +97,10 @@ Wir gewinnen den Kampf um Governance mit hervorragender Bequemlichkeit und Servi
 Ja. Öffnen Sie **Layout Studio** und klicken Sie auf **Design importieren**: Es akzeptiert eine native Figma-**.fig**-Datei (Lokale Kopie speichern), einen Penpot-**.penpot**-Export, eine Illustrator-**.ai**- oder **.pdf**-Datei, ein InDesign-**.idml** (Datei → Exportieren → InDesign Markup) oder **jede SVG**-Datei (die breite Tür - fast jede Design-App exportiert sie). Alles wird vollständig auf Ihrem Gerät verarbeitet, kein Konto und kein Plugin nötig.
 
 Ebenen kommen als bearbeitbare Boxen auf der offenen Arbeitsfläche an: Text bleibt neu eintippbar, Formen bleiben Formen, Bilder werden Teil Ihrer geräteinternen Bibliothek, und Schrift und Farben richten sich nach den Marken-Vorgaben. Speichern Sie es, und das Layout wird zu einer wiederverwendbaren, über eine URL adressierbaren Vorlage, die jeder mit Lolly neu befüllen kann - und Sie können lebendige Tools einbinden (einen QR-Code, ein Diagramm), die beim Laden neu gerendert werden. Von dort aus wird es wie alles andere in Lolly gerendert - SVG, PDF, PNG und mehr, reproduzierbar aus seiner URL. Siehe [Design importieren](/info/design-import.html).
+
+## Kann Lolly das Branding eines vorhandenen PowerPoint-Decks anpassen?
+
+Ja - auf zwei Arten, beide direkt auf Ihrem Gerät. Das Utility **Rebrand a Deck** nimmt eine `.pptx`-Datei entgegen und passt deren Thema, fest codierte Farben und Schriften an Ihre Marke an, während Diagramme, SmartArt und Animationen unverändert bleiben - Sie erhalten eine `.pptx`-Datei zurück. Oder Sie öffnen das Deck im **Deck Builder** (Laden → Datei hineinziehen), um es Folie für Folie als frei platzierbare Objekte zu bearbeiten, die bereits an die Marke angepasst sind, und exportieren es als PPTX, PDF oder Video. Ziehen Sie stattdessen eine `.pptx`-Datei auf einen Upload-Bereich, werden die von Ihnen gewählten Folien als SVG-Assets in Ihrer Bibliothek abgelegt. Siehe [Design importieren → Decks und Dokumente](/info/design-import.html#decks-and-documents).
 
 ## Was passiert am 29. August?
 

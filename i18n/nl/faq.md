@@ -40,16 +40,19 @@ Lolly past zich in waar je al bestanden genereert - de CLI is dezelfde engine
 als de app, dus een pipeline die om 2 uur 's nachts draait kan niet afwijken van wat iemand als preview in een
 browser ziet. De wrijving bij adoptie is zelden technisch; het is organisatorisch. Verwacht het volgende:
 
-**Tools en de merkcatalogus moeten worden opgesteld.** Lolly is een platform, geen
-kant-en-klaar pakket met jouw templates. Iemand moet de assetcatalogus definiëren (logo's,
-paletten, lettertypen als permanente ID's) en voor elk outputtype het manifest + de
-template schrijven.  
+**Een samengestelde merkcatalogus moet worden opgesteld.** Lolly is een platform, geen
+kant-en-klaar pakket met jouw templates. Voor een *beheerde uitrol* definieert iemand de gedeelde
+assetcatalogus (logo's, paletten, lettertypen als permanente ID's) en schrijft voor elk outputtype
+het manifest + de template. Individuen hoeven daar niet op te wachten - in de open app kan iedereen
+zijn eigen bestanden in de catalogus opnemen en vanaf dag één tools bouwen in Layout Studio.
 
-**Governance loopt via git.** "De PR-review *is* de moderatie" is elegant voor
+**Governance-by-git is optioneel - en onbekend terrein voor niet-engineers.** Als je een
+*gedeelde, beheerde* catalogus draait, is "de PR-review *is* de moderatie" elegant voor
 engineers, maar onbekend terrein voor de meeste merk- en marketingteams. Als de mensen die
 merkbeslissingen bezitten niet in git leven, heb je een workflow nodig die hen overbrugt - of IT
-wordt stilzwijgend de strategische designpartner en bredere institutionele poortwachter.
-Dat heeft bij velen in langlopende productieomgevingen zelfs de voorkeur. 
+wordt stilzwijgend de strategische designpartner en bredere institutionele poortwachter
+(bij velen in langlopende productieomgevingen zelfs de voorkeur). Teams die dit niet willen,
+slaan het gewoon over.
 
 **Het is bewust beperkt - presenteer het ook zo.** Lolly is niet bedoeld voor maatwerk of hero-
 content. Het *is* je persoonlijke DAM - gevoed en versterkt door je designsysteem,
@@ -94,6 +97,10 @@ We winnen de strijd om governance met uitstekend gemak en uitstekende service.
 Ja. Open **Layout Studio** en klik op **Een ontwerp importeren**: het accepteert een natieve Figma **.fig** (Save local copy), een Penpot **.penpot**-export, een Illustrator **.ai** of **.pdf**, een InDesign **.idml** (File → Export → InDesign Markup), of **elke SVG** (de brede deur - bijna elke ontwerptoepassing kan dit exporteren). Alles wordt volledig op je eigen apparaat verwerkt, geen account of plug-in nodig.
 
 Lagen komen binnen als bewerkbare vakken op het open canvas: tekst blijft herschrijfbaar, vormen blijven vormen, afbeeldingen worden toegevoegd aan je lokale bibliotheek, en typografie en kleuren volgen de merk-globals. Sla het op en de lay-out wordt een herbruikbare, via URL benaderbare template die iedereen met Lolly kan invullen - en je kunt er live tools doorheen mengen (een QR-code, een grafiek) die bij het laden opnieuw renderen. Van daaruit rendert het zoals al het andere in Lolly - SVG, PDF, PNG en de rest, reproduceerbaar vanaf de URL. Zie [Een ontwerp importeren](/info/design-import.html).
+
+## Kan Lolly een bestaande PowerPoint-presentatie rebranden?
+
+Ja - op twee manieren, allebei op je eigen apparaat. De utility **Rebrand a Deck** neemt een `.pptx` en vervangt het thema, de hardgecodeerde kleuren en lettertypen door je merk, terwijl grafieken, SmartArt en animaties ongewijzigd blijven - je krijgt een `.pptx` terug. Of open de deck in **Deck Builder** (Laden → sleep het bestand erin) om hem dia voor dia te bewerken als vrij plaatsbare objecten, al aangepast aan je merk, en exporteer als PPTX, PDF of video. Sleep je in plaats daarvan een `.pptx` op een upload-gebied, dan worden de dia's die je kiest als SVG-assets in je bibliotheek opgeslagen. Zie [Een ontwerp importeren → Decks en documenten](/info/design-import.html#decks-and-documents).
 
 ## Wat gebeurt er op 29 augustus?
 

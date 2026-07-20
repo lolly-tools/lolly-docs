@@ -99,6 +99,10 @@ Ja. Åpne **Layout Studio** og klikk på **Importer en design**: det godtar en n
 
 Lag kommer inn som redigerbare bokser på den åpne canvasen: tekst forblir omskrivbar, former forblir former, bilder blir med i biblioteket ditt på enheten, og typografi og farger følger merkevarens globale verdier. Lagre den, så blir layouten en gjenbrukbar, URL-adresserbar mal som hvem som helst med Lolly kan fylle på nytt - og du kan blande inn levende verktøy (en QR-kode, et diagram) som rendres på nytt ved innlasting. Derfra rendres den som alt annet i Lolly - SVG, PDF, PNG og resten, reproduserbar fra URL-en sin. Se [Importer en design](/info/design-import.html).
 
+## Kan Lolly rebrande en eksisterende PowerPoint-presentasjon?
+
+Ja - på to måter, begge på din egen enhet. Verktøyet **Rebrand a Deck** tar en `.pptx` og bytter ut tema, hardkodede farger og skrifter til merkevaren din, mens diagrammer, SmartArt og animasjoner går gjennom uendret - du får en `.pptx` tilbake. Eller åpne presentasjonen i **Deck Builder** (Last inn → slipp filen) for å redigere den lysbilde for lysbilde som frittstående objekter, allerede tilpasset merkevaren, og eksporter PPTX, PDF eller video. Slipper du i stedet en `.pptx` på et opplastingsområde, arkiveres lysbildene du velger som SVG-ressurser i biblioteket ditt. Se [Importer en design → Presentasjoner og dokumenter](/info/design-import.html#decks-and-documents).
+
 ## Hva skjer 29. august?
 
 De SUSE-merkede verktøyene forlater prosjektet, og nye generiske eksempelverktøy definert av brukeren tar over.

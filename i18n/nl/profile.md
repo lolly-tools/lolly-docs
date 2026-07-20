@@ -8,8 +8,6 @@ Alles in een profiel leeft **op het apparaat**, in de lokale database van de bro
 
 ## Wat er in een profiel zit
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
-
 | Onderdeel | Wat het is |
 |---|---|
 | **Naam** | Voor- en achternaam. |
@@ -21,6 +19,8 @@ Alles in een profiel leeft **op het apparaat**, in de lokale database van de bro
 | **Jouw werk** | Opgeslagen sessies (met miniaturen) - georganiseerd in geneste mappen in **[Projecten](/info/using.html)** - je **Mijn afbeeldingen**-bibliotheek, en de lokale activiteitsstatistieken, allemaal gekoppeld aan dit profiel. |
 
 Niets hiervan is verplicht. Een leeg profiel is een prima profiel; je vult alleen in wat je typewerk bespaart.
+
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
 
 ## Een profiel is een context, niet alleen een persoon
 
@@ -84,6 +84,13 @@ Drie dingen staan dicht bij elkaar in de UI en zijn makkelijk te verwarren:
 - **Mogelijkheden** - *wat de app kan doen*: de volledige functieset en de tools die voor je beschikbaar zijn.
 
 Een profiel verandert van wie een asset *afkomstig* is; het platform verandert hoe het *eruitziet*; mogelijkheden bepalen *wat je kunt maken*.
+
+### "Profiel" betekent elders twee andere dingen - niet dit
+
+Het woord wordt in het hele project op meerdere manieren gebruikt. Geen van beide is het persoonlijke profiel waarover deze pagina gaat:
+
+- **Contentprofiel** - een build-time configuratie in `profiles.json` die een set toolpakketten koppelt aan een merkcatalogus (bijv. `suse`, `lolly-start`). Dit kiest een operator bij het deployen, en het is ook waarvan de `profile` **URL/CLI-parameter** bij export een *kleur*variant selecteert (de ICC/CMYK-persconditie - zie [URL Mode](/info/url-mode.html)). Beide gaan over de *build/output*, niet over *jou*. Zie [Configuratie](/info/configuration.html).
+- **Identiteitsprofiel** - de optionele **geverifieerde Content Credentials-identiteit** die je kunt registreren (een kortlevend certificaat dat je e-mailadres koppelt aan je ondertekende exports). Dat is een ondertekeningsidentiteit, los van de naam-/contactvelden van het persoonlijke profiel, al bepaalt **Mijn gegevens gebruiken** of een van beide wordt ingebed. Zie [Content Credentials Identity](/info/content-credentials-identity.html).
 
 ## Privacy
 

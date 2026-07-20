@@ -8,8 +8,6 @@
 
 ## 프로필에 담기는 것
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
-
 | 항목 | 내용 |
 |---|---|
 | **성명** | 이름과 성. |
@@ -21,6 +19,8 @@
 | **작업물** | 저장된 세션(썸네일 포함) — **[Projects](/info/using.html)**에서 중첩 폴더로 정리돼요 — **My images** 라이브러리, 그리고 이 프로필에 연결된 로컬 활동 통계. |
 
 이 중 어느 것도 필수가 아니에요. 빈 프로필도 완전히 정상적인 프로필이에요. 타이핑을 줄여주는 항목만 채우면 돼요.
+
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
 
 ## 프로필은 사람이 아니라 맥락이에요
 
@@ -84,6 +84,13 @@ Lolly에서 그 역할은 그저 **손 닿는 곳에 두는 또 하나의 프로
 - **기능** — *앱이 할 수 있는 일*이에요: 전체 기능 세트와 사용할 수 있는 도구들이에요.
 
 프로필은 에셋이 *누구로부터* 나온 것인지를 바꾸고, 플랫폼은 그게 *어떻게 보이는지*를 바꾸며, 기능은 *무엇을 만들 수 있는지*를 결정해요.
+
+### 다른 곳의 "프로필" — 이 페이지의 프로필이 아니에요
+
+이 단어는 프로젝트 전반에서 여러 의미로 쓰여요. 아래 둘 다 이 페이지에서 다루는 개인 프로필과는 달라요.
+
+- **콘텐츠 프로필(Content profile)** — `profiles.json`에 정의된 빌드 타임 설정으로, 도구 팩 묶음을 브랜드 카탈로그(예: `suse`, `lolly-start`)에 연결해요. 운영자가 배포할 때 고르는 값이고, 내보내기 시점에 `profile` **URL/CLI 매개변수**가 선택하는 *색상* 변형(ICC/CMYK 인쇄 조건 - [URL Mode](/info/url-mode.html) 참고)도 같은 이름으로 불려요. 둘 다 *빌드/출력물*에 관한 것이지 *나*에 관한 것이 아니에요. [Configuration](/info/configuration.html)을 참고하세요.
+- **아이덴티티 프로필(Identity profile)** — 선택적으로 등록할 수 있는 **검증된 Content Credentials 아이덴티티**예요(내보낸 서명 파일에 이메일을 연결하는 단기 인증서). 이건 서명용 아이덴티티로, 개인 프로필의 이름/연락처 필드와는 별개지만, 둘 중 어느 쪽이든 삽입 여부는 **Use my details**가 결정해요. [Content Credentials Identity](/info/content-credentials-identity.html)를 참고하세요.
 
 ## 프라이버시
 

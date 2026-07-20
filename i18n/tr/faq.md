@@ -102,6 +102,10 @@ Evet. **Layout Studio**'yu aç ve **Bir tasarım içe aktar**'a tıkla: yerel bi
 
 Katmanlar, açık kanvasta düzenlenebilir kutular olarak gelir: metin yeniden yazılabilir kalır, şekiller şekil olarak kalır, görseller cihaz-içi kitaplığına katılır, tipografi ve renkler ise marka globalleriyle uyumlu hale gelir. Kaydet ve düzen, Lolly'si olan herkesin yeniden doldurabileceği, yeniden kullanılabilir, URL ile adreslenebilir bir şablona dönüşür - ayrıca sayfa yüklendiğinde yeniden render edilen canlı araçları (bir QR kodu, bir grafik) da karıştırabilirsin. Buradan itibaren, Lolly'deki her şey gibi render edilir - SVG, PDF, PNG ve gerisi, kendi URL'sinden yeniden üretilebilir. Bkz. [Bir tasarım içe aktar](/info/design-import.html).
 
+## Lolly, mevcut bir PowerPoint sunumunu yeniden markalayabilir mi?
+
+Evet - ikisi de cihazında olmak üzere iki yolla. **Rebrand a Deck** yardımcı aracı bir `.pptx` dosyası alır, temasını, sabit kodlanmış renklerini ve yazı tiplerini markana göre değiştirir; grafikler, SmartArt ve animasyonlar ise dokunulmadan geçer - karşılığında bir `.pptx` alırsın. Ya da sunumu **Deck Builder**'da aç (Load → dosyayı bırak) ve zaten markaya oturmuş, serbest biçimli nesneler olarak slayt slayt düzenle, ardından PPTX, PDF veya video olarak dışa aktar. Bunun yerine bir `.pptx` dosyasını yükleme alanına bırakmak, seçtiğin slaytları kitaplığına SVG varlıkları olarak dosyalar. Bkz. [Bir tasarım içe aktar → Sunumlar ve belgeler](/info/design-import.html#decks-and-documents).
+
 ## 29 Ağustos'ta ne olacak?
 
 SUSE markalı araçlar projeden ayrılır ve kullanıcı tarafından tanımlanan yeni, genel örnek araçlar onların yerini alır.
