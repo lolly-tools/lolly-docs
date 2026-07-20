@@ -99,6 +99,7 @@ const pages: Page[] = [
 
   // ── Operators pathway ────────────────────────────────────────────────────
   { slug: 'adoption-governance', title: 'Adoption & Governance', src: 'adoption-governance.md', pathway: 'operators' },
+  { slug: 'security',         title: 'Security & Verification', src: 'security-verification.md', pathway: 'operators' },
   { slug: 'privacy',          title: 'Privacy Policy',    src: 'privacy.md',         pathway: 'operators' },
 ];
 
@@ -187,6 +188,7 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
         { slug: 'configuration', label: 'Configuration' } ] },
       { label: 'Trust & data', items: [
         { slug: 'content-credentials-identity', label: 'Content Credentials' },
+        { slug: 'security',      label: 'Security & Verification' },
         { slug: 'data-transfer', label: 'Data Transfer' },
         { slug: 'about',         label: 'About' } ] },
     ],
@@ -203,6 +205,7 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
         { slug: 'configuration', label: 'Configuration' } ] },
       { label: 'Trust', items: [
         { slug: 'content-credentials-identity', label: 'Content Credentials' },
+        { slug: 'security', label: 'Security & Verification' },
         { slug: 'privacy', label: 'Privacy Policy' } ] },
     ],
   },
