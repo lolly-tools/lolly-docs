@@ -34,6 +34,16 @@ Lolly 的設計是為了配合你的組織實際的運作方式——部署方�
 
 ## 防外洩工具
 
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data)
+
+Text Helper 提供的是同一筆交易，只是針對文字而不是檔案。它就是員工原本會跑到陌生網站上去找的那種分頁式工作台，而且它完全沒有宣告任何輸入項目，因為它處理的一切都不會離開這個頁面。
+
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+
+Compress PDF 補齊了這一組：過大的附件會依你選擇的品質等級縮小，而且就在那台原本就存著它的機器上完成。
+
+![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=ov2-compress-pdf)
+
 有一類 Lolly 工具——也就是隱私工具——是*專門*設計來把檔案留在防護邊界之內。
 
 
@@ -52,12 +62,18 @@ Lolly 的設計是為了配合你的組織實際的運作方式——部署方�
 
 ## 確定性與可重現性
 
+Prompt to Image 是確定性最樸素的樣子：文字就是全部的輸入，排好版的圖片就是全部的輸出，而同一段文字永遠會排成同樣的結果。
+
+![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-prompt-to-image)
+
 每個工具的輸入都能以 URL 參數表示，相同的輸入永遠會產生相同的檔案。這對維運人員來說，有兩個實際意義：
 
 - **URL 本身就是產出物。** 把連結提交（commit）進版控，需要時再依需求重新產生素材——不用把二進位檔案放進 Git，也不用在聊天紀錄裡追著找「最新版本」是哪個。素材與工具的 ID 是永久不變的約定，所以今天產生的連結，之後依然能正確解析出結果。
 - **CLI 走的是與 GUI 完全相同的渲染路徑**，所以建置流程（build pipeline）與應用程式不會出現落差。可以在建置時就以可重現的方式產生 OG 圖片、社群卡片與資料視覺化圖表。
 
 ## 來源追溯與 Content Credentials
+
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
 
 匯出的檔案可以附帶 **Content Credentials**——這是一份已簽署的 [C2PA](https://c2pa.org) 資訊清單（manifest），與檔案位元組的雜湊值（hash）綁定在一起。之後對檔案的任何更動都會破壞這個封印，因此支援 C2PA 的驗證工具能**在離線狀態下，以加密方式偵測出竄改**。這份憑證是*可偵測竄改（tamper-evident）*的：它會標示出竄改，而非阻止竄改——這正是讓完全離線驗證得以成立的關鍵。
 
@@ -71,6 +87,8 @@ Lolly 的設計是為了配合你的組織實際的運作方式——部署方�
 > **互通性說明。** Lolly 目前已能在離線狀態下驗證自己的憑證，以及許多第三方的憑證，其中包括讀取其他產生者所產出的 C2PA **v2** 版宣告（claim）資訊清單。目前還有一項互通性工作正在進行中：WebM——它目前還沒有標準化的 C2PA 對應方式，所以 Lolly 會把資訊清單以 Matroska part 的形式附加上去（第三方工具可以直接驗證 Lolly 產生的 MP4；WebM 則要等標準底定後跟進）。
 
 ## 加密與密碼保護
+
+![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&format=svg&filename=aud-pdf-lock)
 
 對於必須以加密狀態傳遞的檔案，所有處理都在裝置端完成：
 

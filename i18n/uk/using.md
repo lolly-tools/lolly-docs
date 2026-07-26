@@ -6,6 +6,8 @@
 
 ## Як відкрити інструмент
 
+![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Fct%3Dhorizontal-bar%26t%3DQuarterly%2520revenue%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&format=svg&filename=vt-tool-split-view)
+
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
 ![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
@@ -17,6 +19,8 @@
 > Кілька інструментів (як-от **Layout Studio**) натомість відкриваються як **вільне полотно** — поверхня без зайвого інтерфейсу з прямим маніпулюванням, де ви перетягуєте, змінюєте розмір, обертаєте та прив'язуєте блоки тексту, фігур і зображень, а подвійним клацанням редагуєте текст на місці. Воно експортується тим самим шляхом рендерингу, що й будь-який інший інструмент, тож полотно *і є* файл. Див. [Вільне полотно](#the-free-canvas-layout-studio) нижче.
 
 ## Полотно (попередній перегляд)
+
+![The zoom HUD in the corner of the canvas - minus, the live percentage, plus, Fit, then the theme and sound toggles](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=.stage-nav%7Bopacity%3A1!important%7D&cropSelector=.stage-nav&format=svg&filename=use-zoom-hud)
 
 Попередній перегляд завжди показує саме те, що буде експортовано.
 
@@ -48,12 +52,16 @@
 
 ## На телефоні
 
+![A tool on a phone-width screen - controls as a sheet up top, the generated palette filling the preview below, and the render pill floating bottom-centre](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3Df97316%26harmony%3Dadjacent-3%26steps%3D9&width=430&height=900&dpi=192&waitMs=2200&format=svg&filename=vt-phone-palette)
+
 На вузьких екранах компонування переформатовується в один стовпець:
 
 - **Елементи керування стають панеллю** угорі з **ручкою для перетягування** на нижньому краї. Перетягуйте ручку, щоб змінити її розмір — вона прив'язується до **вигляду / половини / повного розміру** — або **торкніться** ручки, щоб перемкнути згорнуто ↔ розгорнуто. Попередній перегляд заповнює простір нижче і залишається видимим під час редагування.
 - Плаваюча кнопка **Рендер** відкриває панель **Експорт** — усі елементи керування форматом, розміром, копіюванням, збереженням і завантаженням в одному місці. Закрийте її, торкнувшись фону.
 
 ## Елементи керування (поля вводу)
+
+![A tool's control stack - a text field, colour triggers and a slider, and nothing else the author chose to lock down](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-inputs&format=svg&filename=use-tool-inputs)
 
 Інструменти показують лише ті поля вводу, які мають змінюватися — усе інше (кольори, компонування, типографіка, логіка) зафіксовано автором інструмента, тож усе, що ви створюєте, відповідає правилам, встановленим автором. Поля вводу охоплюють текст, повзунки, палітри кольорів, розкривні списки, дати, засоби вибору зображень і повторювані групи рядків. Деякі згруповані під згортними секціями.
 
@@ -66,6 +74,8 @@
 Ваше фото та дані зберігаються **лише на цьому пристрої**. Профіль може бути не лише вами — це може бути команда чи роль, у яку ви час від часу входите. Див. **[Профілі](/info/profile.html)** для повної картини, зокрема про ведення кількох профілів.
 
 ## Збереження та продовження
+
+![The two-half render pill - an up arrow that opens the export panel, and a tick that saves the session in place](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=%23tool-inputs%7Bdisplay%3Anone%7D&cropSelector=.render-pill&format=svg&filename=use-render-pill)
 
 Клацніть **Зберегти**, щоб зберегти поточні поля вводу як сесію для цього інструмента. Ви можете тримати кілька іменованих сесій на інструмент; кнопка **Продовжити** кожного інструмента відкриває вашу найновішу, а **кнопка історії** (угорі праворуч, поряд із вашим профілем) перелічує кожну збережену сесію по всіх інструментах. Сесії зберігаються локально на пристрої. Щоб упорядкувати їх, відкрийте **Проєкти** (нижче).
 
@@ -108,6 +118,8 @@
 - **Наведіть лад.** Перекатегоризуйте ресурс до іншої групи, приховайте спільний брендовий ресурс, яким не користуєтеся (з **Показати приховані**, щоб повернути його), або видаліть власні завантаження остаточно.
 
 ### Беріть свою палітру та шрифти будь-куди
+
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 Панель **Зразки** в Каталозі — не лише для довідки: клацніть колір, щоб скопіювати його, або **завантажте всю брендову палітру** у форматі, яким говорить ваш інший інструмент:
 
@@ -153,6 +165,8 @@ Lolly прагне бути зручним для всіх. Інтерфейс �
 Повну історію дивіться в розділі **[Exporting & Formats](/info/exporting.html)** — вибір формату, розмір і одиниці друку, прозорість, відео та копіювання/спільний доступ. Коротко: виберіть формат, за потреби задайте розмір і натисніть **Download** (або **Copy**, щоб скопіювати в буфер обміну).
 
 ## Пакетний режим (Batch, Pro)
+
+![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&format=svg&filename=use-batch-toolbar)
 
 Для досвідчених користувачів **Batch** (посилання з галереї, обмежений функціональним прапорцем Pro, який типово увімкнено) рендерить одразу багато варіацій — сітку, де кожен рядок є набором вхідних даних, що експортуються разом. Ідеально підходить для локалізації картки на десяток мов або генерування всіх варіантів розміру за один прохід. Заповнюйте рядки, набираючи текст, вставляючи прямо з електронної таблиці або імпортуючи CSV (його ж можна експортувати назад), і задавайте формат, розмір та назву вихідного файлу для кожного рядка. Збережіть цілу сітку як іменовану **пакетну сесію (batch session)**, яка знову відкривається з галереї, і завантажте всі рядки одним `.zip`.
 

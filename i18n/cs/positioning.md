@@ -6,6 +6,8 @@ Kam tahle platforma zapadá do širšího prostředí kreativních nástrojů a 
 
 ## Přehled trhu
 
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&filename=aud-open-canvas)
+
 | Funkce | Canva (otevřené plátno) | Brand portály (DAM šablonování) | Illustrator (Desktop pro) | Figma / Penpot (Online pro) | **Lolly (omezení na prvním místě)** |
 |---|---|---|---|---|---|
 | Hromadná tvorba obsahu | částečně | ✗ | ✗ | ✗ | **✓** |
@@ -20,10 +22,11 @@ Kam tahle platforma zapadá do širšího prostředí kreativních nástrojů a 
 | Mobilní a desktopové aplikace | ✓ | ✗ | ✗ | částečně | **✓** |
 | Příkazová řádka a TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-
 Tvar mezery na trhu je jasný: nic v současném prostředí nenabízí generativní výstup, který by byl zároveň založený na omezeních, funkční offline, nenáročný na dovednosti a interně přístupný. Lolly teď má i své vlastní otevřené plátno - **Layout Studio**, volné plátno s přímou manipulací - ale s rozhodujícím rozdílem oproti sloupci Canva: barvy, typografie a assety na něm umístěné se řídí globálními hodnotami značky, takže i volné uspořádání zůstává založené na omezeních. Co Lolly pořád **není**, je neomezená sada nástrojů pro design; designéři budou pro zakázkovou práci nadále používat Illustrator a Figma - a když se z téhle práce má stát řízený, reprodukovatelný asset, funkce Layout Studia [Import návrhu](/info/design-import.html) přenese hotový soubor z Figmy/Illustratoru/Penpotu na plátno jako editovatelné bloky v souladu se značkou.
 
 ## Použij to pro
+
+![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&filename=ov2-deck-studio-output)
 
 - Rychlou tvorbu provozně nasazených kreativních assetů (dlaždice na akce, odznaky, podpisy, upozornění)
 - Volné uspořádání na otevřeném plátně (Layout Studio), když prvky - barvy, typografie, ikony, obrázky - musí zůstat v souladu s globálními hodnotami značky
@@ -32,15 +35,40 @@ Tvar mezery na trhu je jasný: nic v současném prostředí nenabízí generati
 - Trvalé, opakovaně generované výstupy v souladu se značkou
 - Situace, kdy je centrální kontrola nad vyjádřením značky důležitější než tvůrčí volnost
 
+Deck Studio je dobrým měřítkem toho, kam strop sahá: celá prezentace deklarovaná jako data, rozvržená naživo na plátně a exportovaná jako nativní editovatelný PowerPoint.
+
 ## Nepoužívej to pro
 
 - Zakázkový nebo vlajkový hero obsah (billboardy, velké video produkce)
 - Jedinečnou kampaňovou práci, která opravdu potřebuje designéra
 - Ideaci, která se má úplně vymanit ze systému značky - otevřené plátno Lolly i tak podřizuje barvy, typografii a assety globálním hodnotám značky, a to je záměr
 
+## Schvaluj nástroj, ne soubor
+
+![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-approve-the-tool)
+
+Každý jiný nástroj na trhu produkuje *soubor*, který se pak musí zkontrolovat - správce značky ve slackovém vlákně, právník kvůli disclaimeru, kolo změn, další revize. Lolly posouvá schvalování **o krok proti proudu**. Pravidla značky - přesné hex kódy, licencované soubory fontů, spadávky, rozestupy - jsou pevně zadrátovaná v HTML a CSS nástroje, takže šablona *fyzicky nemůže* vydat asset mimo značku. Samo rozvržení je nosné.
+
+Takže přestaneš schvalovat výstupy a začneš schvalovat **nástroj**, který je vyrábí. Schval ho jednou a každý asset, který kdy vyrobí, je předem schválený už svou konstrukcí - žádný člověk ve smyčce, žádný revizní cyklus, v jakémkoli objemu.
+
+Tohle je ten posun paradigmatu, který deterministický engine skutečně přináší: není to rychlejší verze starého schvalovacího procesu, ten proces to ruší. Pro kreativní tým je to mantinel, ne náhrada - pořád hodíš míč (data, texty, obrázek) a kód je ta bariéra v bowlingové dráze, která drží každý hod mimo žlábek.
+
+| Schvalování assetů starou cestou | Schvalování nástroje, cestou Lolly |
+|---|---|
+| Každý hotový soubor se kontroluje, jeden po druhém | Nástroj se zkontroluje jednou |
+| Zadání → designér staví → revize značky → právní kontrola → změny → další revize | Jedna změna parametru → hotový asset |
+| Designér, správce značky, právník i zadavatel jsou ve smyčce | Producent, sám za sebe |
+| Dny na jeden asset | Sekundy na jeden asset |
+| 10 000 assetů = 10 000 revizních cyklů | 10 000 assetů = nula (šablona už schválená byla) |
+
 ## Co tohle nabízí jedinečně
+
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=192&waitMs=3200&format=png&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
 
 - **Divoký designový potenciál doručený bezpečně v kontextu.** Nástroje mohou vyjádřit odvážné designové nápady uvnitř pevně daných mantinelů.
 - **Softwarově definovaná automatizace obsahu, která vrací hotový asset.** Vstup → finální soubor. Žádné "teď to ulož z návrhového nástroje a dodatečně zpracuj."
 - **Nástroje skládají nástroje.** Jeden nástroj může vložit vykreslený výstup jiného nástroje a vrátit ho jako součást jednoho hotového assetu, bez jakéhokoli provázání kódu mezi nástroji - primitivum, které nenabízí žádný produkt s otevřeným plátnem ani DAM šablonováním na trhu.
 - **Nezávislost na dodavateli.** Plná kontrola nad funkcemi i náklady. Open-source engine. Nástroje a assety jsou obsah sledovaný v gitu, ne uzamčený v databázi SaaS.
+
+První z nich lidé nejčastěji podceňují. Mapa města v plakátové kvalitě, nakreslená jako skutečné vektorové cesty ulic a vodních ploch, z jednoho rozbalovacího seznamu a dvou barevných polí, která nelze nasměrovat mimo značku:
+

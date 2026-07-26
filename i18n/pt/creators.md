@@ -40,9 +40,15 @@ O Lolly não está tentando ser o Canva ou o Figma. Ele ocupa o espaço onde *re
 
 ### Tudo certo, sem espera
 
+O Street Map é um bom exemplo dessa troca: você escolhe uma cidade e duas cores, e a cartografia, a espessura das vias e a água já vêm decididas.
+
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=192&waitMs=3200&cropSelector=%23tool-canvas&format=png&filename=vt-street-map-poster)
+
 Preencha alguns campos, receba o material pronto - sem fontes para escolher, sem cores para ficar em dúvida, sem "esse é o logotipo certo?". A ferramenta já sabe. Assinaturas de e-mail, contagens regressivas de eventos, cartões de citação, crachás, mapas de ruas - tudo o que sua equipe precisa numa terça-feira às 16h, por conta própria. E como nenhum dado de cliente sai do dispositivo, não há risco de compliance na colaboração.
 
 ### De dados ao vivo ao visual pronto
+
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&filename=use-chart-output)
 
 Conecte uma tabela **CSV** ou **JSON** a um gráfico, mapa ou template de tabela e atualize os números - o layout se ajusta sozinho. Resultados eleitorais, resultados trimestrais, eventos climáticos: construa o formato uma vez e reutilize toda vez que a matéria for ao ar. Combine com o estilo da sua casa *exatamente*, porque isso é aplicado no nível do template, não deixado como uma diretriz solta.
 
@@ -52,7 +58,11 @@ Uma ferramenta pode incorporar a saída ao vivo de outra ferramenta como um ativ
 
 ### A fronteira, quando você precisar dela
 
-Filtros avançados, composição, animação, efeitos de câmera ao vivo, design generativo - toda tecnologia web está disponível para quem cria um template, então o teto é alto. Crie *ferramentas*, não arquivos: construa a coisa que gera 10.000 cartões, em vez de fazer 10.000 cartões. Trave o que não deve mudar; exponha apenas o que deve variar.
+Filtros avançados, composição, animação, efeitos de câmera ao vivo, design generativo - toda tecnologia web está disponível para quem cria um template, então o teto é alto.
+
+![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=1440&height=900&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&format=png&filename=use-mesh-output)
+
+Crie *ferramentas*, não arquivos: construa a coisa que gera 10.000 cartões, em vez de fazer 10.000 cartões. Trave o que não deve mudar; exponha apenas o que deve variar.
 
 ## Detalhes que você vai notar
 

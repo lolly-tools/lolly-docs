@@ -20,6 +20,8 @@ Hasilnya adalah **kelimpahan**: setiap acara punya papan penanda yang benar, set
 
 ### Posisinya dalam lanskap
 
+![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-gallery-landscape)
+
 | Kapabilitas | Canva | Portal brand | Illustrator | Figma / Penpot | **Lolly** |
 |---|---|---|---|---|---|
 | Pembuatan konten massal | sebagian | ✗ | ✗ | ✗ | **✓** |
@@ -39,6 +41,40 @@ Kesenjangannya jelas: tak ada di lanskap yang ada memberi kita keluaran yang men
 **Gunakan untuk:** Pembuatan cepat aset kreatif operasional - kartu acara, tanda pengenal nama, tanda tangan, peringatan CVE, kode QR, kartu sosial, label konsinyasi, laporan terstruktur.
 
 **Jangan gunakan untuk:** Konten unggulan yang kustom.
+
+---
+
+## Siklus hidup sebuah kampanye
+
+![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-lifecycle-chart)
+
+Cara paling jelas untuk melihat apa itu Lolly bukanlah daftar fitur - melainkan mengikuti satu aset saat ia berpindah dari tangan ke tangan. Perhatikan satu kartu kampanye terlokalkan bergerak melintasi organisasi:
+
+1. **Tim kreatif menetapkan aturannya.** Seorang desainer menyusun template dasar di Layout Studio, mengodekan tipografi dan variabel warna brand secara kaku. Mereka tidak sedang membuat satu kartu - mereka mengerjakan fondasinya *sekali* agar tidak perlu lagi melokalkannya secara manual.
+2. **Developer menskalakannya.** Template yang sama itu dirangkai ke pipeline malam melalui CLI, sehingga grafik baru atau varian bahasa baru dihasilkan otomatis - tidak ada desainer yang membuka ulang berkasnya.
+3. **Produser tinggal memakainya.** Seorang sales rep, offline di dalam pesawat, membuka alat yang sama dan menghasilkan deck yang persis sesuai brand untuk rapat dengan klien. Tanpa keterampilan desain, tanpa jaringan, tanpa menunggu.
+
+"Grafik baru" pada langkah dua adalah render seperti ini, dihasilkan dari sebuah string data dan beberapa parameter tanpa seorang pun membuka berkas desain:
+
+Intinya bukan bahwa Lolly bagus untuk desainer *dan* bagus untuk developer *dan* bagus untuk sales, masing-masing secara terpisah. Ini sebuah **lomba lari estafet**: kerja awal tim kreatif diskalakan oleh developer, dan itu pada gilirannya memberdayakan produser. Pengalaman yang terasa mudah bagi rep non-teknis di dalam pesawat itu hanya *mungkin* karena kedisiplinan yang ditetapkan desainer dan diterapkan developer.
+
+Itulah pengganda dayanya. Lolly bukan lemari berisi alat-alat terpisah untuk peran-peran terpisah - ia satu siklus hidup aset deterministik yang disentuh setiap peran, dan setiap tangan yang dilaluinya menggandakan nilai tangan sebelumnya.
+
+---
+
+## Satu persetujuan, sepuluh ribu aset
+
+![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&format=svg&filename=ov2-batch-grid)
+
+Karena persetujuan berada pada alatnya dan bukan pada berkasnya (lihat [Bagaimana Lolly dibandingkan](/info/positioning.html)), skala berhenti menjadi persoalan peninjauan. Setujui satu alat kartu sosial terlokalkan sekali saja, lalu hasilkan **10.000 aset dalam 12 bahasa** dari sebuah spreadsheet - dan tidak satu pun di antaranya perlu pemeriksaan kepatuhan baru dari legal atau brand, karena template asal mereka semua sudah disetujui.
+
+Alat deterministik yang sama mencapai skala itu melalui tiga jalan, semuanya menghasilkan keluaran identik yang telah disetujui sebelumnya:
+
+- **Seorang manusia, di dalam aplikasi.** Grid batch `/pro`: tempel atau impor barisnya, dapatkan satu aset jadi per baris, unduh zipnya. Tanpa keterampilan desain, tanpa tiket, tanpa menunggu.
+- **Seorang developer, dari command line.** CLI menjalankan engine *yang sama* dan jalur render *yang sama* secara headless, sehingga alat itu dapat diurutkan melintasi seluruh 10.000 baris di dalam sebuah skrip atau pipeline malam. Satu panggilan `lolly <tool> --field=…` di dalam loop adalah seluruh integrasinya.
+- **Sebuah sistem atau agen AI, lewat MCP.** Alat yang sama dioperasikan secara programatis, pada fidelitas yang sama dan pada skala yang lebih besar lagi - karena mesin tidak akan bosan sementara ribuan berkas terus masuk.
+
+Satu set batasan brand, ditetapkan sekali oleh desainer; tiga rute menuju keluaran identik yang telah disetujui - dan rute mesinlah yang menskala paling jauh, karena ia tidak pernah lelah sementara berkas-berkas terus berdatangan.
 
 ---
 
@@ -192,6 +228,11 @@ lolly/
 Platform berjalan di beberapa permukaan - web PWA, Tauri desktop/seluler, CLI yang dapat diskripkan, dan TUI interaktif. Semuanya memakai engine yang sama dan berkas alat yang sama.
 
 ### Web (PWA) - distribusi utama
+
+![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&format=svg&filename=aud-web-split)
+
+![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&format=png&filename=ov2-phone-audiogram)
+
 Dihosting di URL yang dikendalikan SUSE. Bekerja offline setelah service worker menyimpan cache alat dan aset. Di sinilah sebagian besar karyawan, vendor, dan mitra akan memakai platform. Tak perlu akun - status disimpan di IndexedDB per perangkat.
 
 Shell web bersifat responsif dari satu tata letak. Di desktop, sebuah alat adalah sidebar kontrol yang dapat diubah ukurannya di samping panggung pratinjau dengan navigasi kanvas native-trackpad (Cmd/Ctrl-roda atau cubit untuk zoom mengarah ke kursor, Spasi- atau seret-tengah untuk geser, tombol `0`/`1`/`+`/`−`, dan HUD Fit/%). Di seluler (≤640px) kontrol menjadi lembar berlabuh-atas dengan pegangan seret yang mengunci intip/setengah/penuh (ketuk untuk beralih) di atas pratinjau layar-penuh statis, dan tombol **Render** mengambang membuka kontrol **Ekspor** dalam popup lembar-bawah. Sentuhan mendapat zoom-cubit dan geser-seret pada pratinjau. Jalur render dan kontrol ekspor identik di keduanya - hanya chrome yang mengalir ulang.
@@ -202,6 +243,9 @@ Shell web bersifat responsif dari satu tata letak. Di desktop, sebuah alat adala
 Aplikasi native terpaket (jejak kecil via Tauri). Menyediakan ketersediaan offline penuh, akses berkas untuk alat yang bergantung pada CLI (PDF Smasher, Font Outliner), dan akses kamera. Dijadwalkan untuk peningkatan perkakas pertengahan-2026.
 
 ### CLI
+
+Tool yang sama pada lebar ponsel, tanpa tata letak kedua yang harus dipelihara: kontrolnya menjadi lembar di bagian atas, pratinjau mengisi seluruh layar, dan pil Render mengapung di atasnya.
+
 `lolly <tool-id> [--input=value ...] --output=file.png`
 
 Pengguna desktop dapat menjalankan banyak alat dari terminal. Shell CLI memuat engine yang sama, membuat DOM jsdom, menjalankan jalur render yang sama, dan menulis berkasnya. Mode URL adalah transportnya - CLI bukan implementasi terpisah. Ini menjamin keluaran CLI dan GUI identik.
@@ -218,9 +262,13 @@ lolly qr-code                # lists inputs for that tool
 
 Padanan interaktif dari CLI: aplikasi terminal layar-penuh yang mengutamakan keyboard (dibangun di atas Ink) untuk menjelajahi alat, mengisi input, menyimpan proyek, dan mengekspor - semuanya tanpa GUI. Host bridge-nya **memakai ulang implementasi CLI** untuk format bebas-DOM (SVG/EMF/EPS/HTML + teks/data), dan menambahkan status pada-disk di bawah `~/.lolly` plus pratinjau inline opsional. Selain itu, ia punya **tingkat render browser**: Chromium headless bercakupan (yang sama yang dipasang server MCP) yang menghasilkan raster/PDF/video dan tangkapan URL-langsung sesuai permintaan - menggerakkan salinan terbangun dari shell web sehingga keluarannya identik, dan meluncur hanya saat Anda pertama kali mengekspor format semacam itu. Jadi `url-shot` (dengan pangkas + rewarna + PDF/SVG vektor) dan setiap alat raster/pdf juga berjalan di terminal. Lihat [panduan TUI](/info/tui.html).
 
+Di permukaan mana pun Anda berada, tab Kapabilitas pada dasbor adalah peta lengkap tentang apa yang dinyatakan mampu dilakukan platform ini - terkelompok dan mudah dibaca tanpa membuka satu tool pun.
+
 ---
 
 ## Kategori alat
+
+![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-utilities)
 
 Alat ditandai dengan `category` di manifesnya untuk pengelompokan galeri.
 
@@ -249,6 +297,8 @@ Alat juga diklasifikasikan berdasarkan status: `official` (disetujui brand, tanp
 Keputusan-keputusan ini sudah final. Mengubah salah satunya adalah upaya besar - mereka membentuk setiap keputusan lain dalam basis kode.
 
 ### 1. Alat deklaratif, dengan jalan keluar imperatif
+
+![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-street-map-controls)
 
 Sebuah alat adalah manifes (`tool.json`) + template (`template.html`) + `hooks.js` opsional.
 
@@ -295,6 +345,10 @@ Ini membuat status alat tersimpan dan tautan-berbagi-URL awet selama bertahun-ta
 
 ### 5. Mode URL adalah kelas-utama
 
+![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&format=svg&filename=aud-url-mode-qr)
+
+![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=%23tool-canvas&filename=ov2-url-palette)
+
 Setiap input harus dapat diekspresikan sebagai parameter URL:
 
 ```
@@ -312,6 +366,8 @@ Shell web: IndexedDB. Tauri: berkas. CLI: dalam-memori. Alat hanya melihat `host
 Pengguna dapat menyimpan beberapa slot edit bernama per alat dan kembali ke setiap sesi nanti. Tak perlu pembuatan akun; status bersifat per-perangkat. Karena bridge adalah satu-satunya jahitan, status per-perangkat itu juga *portabel*: `shells/web/src/data-transfer.ts` membaca semuanya kembali lewat `host.profile`/`host.state`/`host.assets` ke dalam satu zip `lolly-backup` yang diimpor pada instalasi lain mana pun - jawaban offline untuk "pindah ke perangkat baru" yang tak butuh server (spesifikasi lengkap: `docs/data-transfer.md`). Integrasi SUSE ID (sinkronisasi multi-perangkat) adalah tonggak masa depan di atas ini.
 
 ### 7. Tag kematangan menjawab risiko "disetujui brand" secara struktural
+
+Karena setiap input ikut berjalan di dalam tautan, satu perubahan parameter berarti satu aset jadi yang berbeda. Seluruh palet ini hanya berasal dari satu warna benih, satu harmoni, dan satu jumlah langkah:
 
 Setiap alat mendeklarasikan `status: official | community | experimental` di manifesnya. Galeri mengurutkan berdasarkan status. Alat eksperimental mem-watermark ekspornya secara otomatis - watermark diterapkan oleh `host.export.render`, bukan oleh alat, sehingga tak bisa dinonaktifkan oleh autor alat non-resmi.
 
@@ -336,6 +392,8 @@ Logika hidup di `hooks.js` tempat ia eksplisit dan dapat ditinjau. Helper Handle
 
 ### 10. Alat menyusun alat
 
+![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-slides-deck)
+
 Sebuah alat dapat menyematkan render alat **lain** tanpa impor alat-ke-alat - komposisi di-resolve oleh engine, tak pernah oleh kode alat. Ada dua permukaan:
 
 - **Manifes deklaratif** - `composes: [{ id, tool, inputs, format?, width?, height? }]`. Engine merender anak bernama dan menempatkan hasilnya di template tanpa-logika sebagai `{{asset <id>}}`. `event-name-badge` menyusun `qr-code` sebagai SVG hari ini.
@@ -356,6 +414,10 @@ Susun render alat apa pun: anak **SVG** tetap vektor sejati saat induk mengekspo
 ---
 
 ## Siklus hidup, ujung ke ujung
+
+![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&format=svg&filename=aud-export-popup)
+
+Tool Slides dibangun di atas permukaan kedua itu: slot mana pun pada slide mana pun bisa memuat tool Lolly lain, bukan cuma sebuah gambar.
 
 Seorang pengguna membuka `lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H`:
 

@@ -66,7 +66,11 @@ Oto korzyść: zaimportowany układ to zwykła sesja Layout Studio, więc gdy go
 
 ### Otwarte dane i otwarte narzędzia
 
-[Zestaw narzędzi społecznościowych](/info/builders.html) jest open source i niezależny od marki - kody QR, mapy ulic, filtry, narzędzia do prywatności - i renderuje się względem *twojej* marki w chwili, gdy ją aktywujesz. Nakarm narzędzia także własnymi otwartymi danymi: wklej lub upuść tabelę **CSV** albo **JSON**, a powtarzalne pola narzędzia wypełnią się z niej, dając jeden gotowy zasób na wiersz.
+[Zestaw narzędzi społecznościowych](/info/builders.html) jest open source i niezależny od marki - kody QR, mapy ulic, filtry, narzędzia do prywatności - i renderuje się względem *twojej* marki w chwili, gdy ją aktywujesz.
+
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
+Nakarm narzędzia także własnymi otwartymi danymi: wklej lub upuść tabelę **CSV** albo **JSON**, a powtarzalne pola narzędzia wypełnią się z niej, dając jeden gotowy zasób na wiersz.
 
 ## 3. Stwórz coś, a potem udostępnij lub zautomatyzuj
 
@@ -76,6 +80,10 @@ Z aktywną marką i materiałem w ręku każde narzędzie tworzy gotowy plik:
 - **Udostępnij link.** Każdy stan narzędzia to URL, więc gotowy zasób jest odtwarzalny i adresowalny parametrami - zatwierdź link, generuj na żądanie.
 - **Rób to masowo.** Zasil szablon z arkusza kalkulacyjnego w [siatce wsadowej](/info/exporting.html): jeden gotowy zasób na wiersz.
 - **Zautomatyzuj to.** Ten sam render działa z [CLI](/info/cli.html) i z [agenta AI](/info/ai-agents.html) - URL jest API.
+
+„URL jest API” to stwierdzenie dosłowne. Wykresu poniżej nikt nie narysował: jego typ, tytuł i cała tabela danych zostały wpisane w pasek adresu, a ten sam link renderuje ten sam wykres na każdym urządzeniu.
+
+![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&filename=vt-d3-url-chart)
 
 ## Dokąd dalej
 

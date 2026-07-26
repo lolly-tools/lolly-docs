@@ -18,6 +18,8 @@ Lolly erzeugt eine große Menge an Inhalten. Wir verfolgen einen strikten Ansatz
 
 ### Was sind die Feature-Flags?
 
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&filename=pd-feature-flags)
+
 Feature-Flags schalten Teile von Lolly ein oder aus. Normalerweise steuert ein Administrator diese - bei Lolly haben Sie die Kontrolle.
 
 ## Wie bekomme ich die mobilen Apps oder Desktop-Apps?
@@ -72,6 +74,8 @@ Lolly hebt alles auf ein höheres Niveau.
 
 ## Was unterscheidet Utilities von Tools?
 
+![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
 **Einfache Antwort →** Utilities müssen nicht immer rendern und können daher eine andere UX erhalten. 
 
 **Eigentliche Antwort →** Der Grund, warum Utilities innerhalb von Lolly Tools gehostet werden können, ist, eine weitere „Komfortebene“ als Schutz hinzuzufügen, um Datenexfiltration unattraktiv zu machen. 
@@ -93,6 +97,8 @@ trivial; der **Inhalt ist die Kosten.**
 Wir gewinnen den Kampf um Governance mit hervorragender Bequemlichkeit und Service. 
 
 ## Kann Lolly meine Figma-, Penpot-, Illustrator- oder InDesign-Dateien bearbeiten und rendern?
+
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 Ja. Öffnen Sie **Layout Studio** und klicken Sie auf **Design importieren**: Es akzeptiert eine native Figma-**.fig**-Datei (Lokale Kopie speichern), einen Penpot-**.penpot**-Export, eine Illustrator-**.ai**- oder **.pdf**-Datei, ein InDesign-**.idml** (Datei → Exportieren → InDesign Markup) oder **jede SVG**-Datei (die breite Tür - fast jede Design-App exportiert sie). Alles wird vollständig auf Ihrem Gerät verarbeitet, kein Konto und kein Plugin nötig.
 

@@ -18,6 +18,8 @@ Lolly produce un volum mare de conținut. Adoptăm o abordare strictă de minimi
 
 ### Ce sunt feature flag-urile?
 
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&filename=pd-feature-flags)
+
 Feature flag-urile activează sau dezactivează părți din Lolly. De obicei, un administrator controlează acest lucru - cu Lolly, tu ai controlul.
 
 ## Cum obțin aplicațiile mobile sau desktop?
@@ -76,6 +78,8 @@ Lolly ridică totul la un nivel superior.
 
 ## Ce diferențiază utilitarele de instrumente?
 
+![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
 **Răspuns simplu →** Utilitarele nu trebuie mereu să randeze și, prin urmare, pot avea o UX diferită. 
 
 **Răspuns real →** Motivul pentru care utilitarele pot fi găzduite în Lolly Tools este să adauge încă un „strat de comoditate” de apărare, care descurajează exfiltrarea de date. 
@@ -97,6 +101,8 @@ trivială; **conținutul este costul.**
 Câștigăm războiul pentru guvernanță prin comoditate și servicii excelente. 
 
 ## Poate Lolly să editeze și să randeze fișierele mele Figma, Penpot, Illustrator sau InDesign?
+
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 Da. Deschide **Layout Studio** și dă click pe **Importă un design**: acceptă un fișier Figma nativ **.fig** (Salvează o copie locală), un export Penpot **.penpot**, un fișier Illustrator **.ai** sau **.pdf**, un fișier InDesign **.idml** (Fișier → Export → InDesign Markup), sau **orice SVG** (ușa largă - aproape orice aplicație de design îl poate exporta). Totul este analizat integral pe dispozitivul tău, fără a fi nevoie de cont sau plugin.
 

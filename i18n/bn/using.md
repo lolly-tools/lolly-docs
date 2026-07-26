@@ -6,6 +6,8 @@
 
 ## একটি টুল খোলা
 
+![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Fct%3Dhorizontal-bar%26t%3DQuarterly%2520revenue%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&format=svg&filename=vt-tool-split-view)
+
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
 ![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
@@ -17,6 +19,8 @@
 > কয়েকটি টুল (যেমন **Layout Studio**) বদলে একটি **ফ্রি ক্যানভাস** হিসেবে খোলে — একটি ক্রোমহীন, সরাসরি-নিয়ন্ত্রণের সারফেস যেখানে আপনি টেক্সট, শেপ এবং ছবির বাক্স টেনে সরান, রিসাইজ, ঘোরান এবং স্ন্যাপ করেন, এবং টেক্সট জায়গায় বসেই এডিট করতে ডাবল-ক্লিক করেন। এটি অন্য প্রতিটি টুলের মতো একই রেন্ডার পাথ দিয়ে এক্সপোর্ট করে, তাই ক্যানভাসটাই *হলো* ফাইল। নিচে [ফ্রি ক্যানভাস](#the-free-canvas-layout-studio) দেখুন।
 
 ## ক্যানভাস (প্রিভিউ)
+
+![The zoom HUD in the corner of the canvas - minus, the live percentage, plus, Fit, then the theme and sound toggles](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=.stage-nav%7Bopacity%3A1!important%7D&cropSelector=.stage-nav&format=svg&filename=use-zoom-hud)
 
 প্রিভিউ সবসময় ঠিক যা এক্সপোর্ট হবে তা-ই দেখায়।
 
@@ -48,12 +52,16 @@
 
 ## ফোনে
 
+![A tool on a phone-width screen - controls as a sheet up top, the generated palette filling the preview below, and the render pill floating bottom-centre](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3Df97316%26harmony%3Dadjacent-3%26steps%3D9&width=430&height=900&dpi=192&waitMs=2200&format=svg&filename=vt-phone-palette)
+
 সরু স্ক্রিনে লেআউট এক কলামে পুনর্বিন্যস্ত হয়:
 
 - **কন্ট্রোলগুলো উপরে একটি শিট হয়ে যায়**, যার নিচের প্রান্তে একটি **ড্র্যাগ গ্রিপ** থাকে। রিসাইজ করতে গ্রিপটি টেনে সরান — এটি **peek / half / full**-এ স্ন্যাপ করে — অথবা কলাপ্সড ↔ এক্সপ্যান্ডেড টগল করতে গ্রিপে **ট্যাপ** করুন। প্রিভিউ নিচের জায়গাটি পূরণ করে এবং আপনি এডিট করার সময় দৃশ্যমান থাকে।
 - একটি ভাসমান **Render** বোতাম **Export** শিটটি খোলে — সব ফরম্যাট, সাইজ, কপি, সেভ এবং ডাউনলোড কন্ট্রোল এক জায়গায়। ব্যাকড্রপে ট্যাপ করে এটি বন্ধ করুন।
 
 ## কন্ট্রোল (ইনপুট)
+
+![A tool's control stack - a text field, colour triggers and a slider, and nothing else the author chose to lock down](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-inputs&format=svg&filename=use-tool-inputs)
 
 টুলগুলো কেবল সেই ইনপুটগুলোই প্রকাশ করে যা পরিবর্তন হওয়ার কথা — বাকি সবকিছু (রং, লেআউট, টাইপোগ্রাফি, লজিক) টুল লেখকের দ্বারা লক করা থাকে, তাই আপনি যা-ই বানান তা লেখকের নির্ধারিত নিয়ম মেনে চলে। ইনপুটের মধ্যে আছে টেক্সট, স্লাইডার, কালার পিকার, ড্রপডাউন, তারিখ, ইমেজ পিকার এবং পুনরাবৃত্ত রো গ্রুপ। কিছু কিছু কলাপ্সিবল সেকশনের অধীনে দলবদ্ধ।
 
@@ -66,6 +74,8 @@
 আপনার হেডশট এবং বিবরণ **কেবল এই ডিভাইসে** থাকে। একটি প্রোফাইল কেবল আপনি-ই নয়, তার চেয়েও বেশি কিছু হতে পারে — একটি টিম বা একটি ভূমিকা যাতে আপনি মাঝেমধ্যে ঢোকেন। একাধিক প্রোফাইল রাখা সহ পূর্ণ চিত্রের জন্য **[প্রোফাইল](/info/profile.html)** দেখুন।
 
 ## সেভ ও চালিয়ে যাওয়া
+
+![The two-half render pill - an up arrow that opens the export panel, and a tick that saves the session in place](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=%23tool-inputs%7Bdisplay%3Anone%7D&cropSelector=.render-pill&format=svg&filename=use-render-pill)
 
 সেই টুলের জন্য বর্তমান ইনপুটগুলো একটি সেশন হিসেবে সংরক্ষণ করতে **Save**-এ ক্লিক করুন। আপনি প্রতি টুলে একাধিক নামযুক্ত সেশন রাখতে পারেন; প্রতিটি টুলের **Continue** বোতাম আপনার সবচেয়ে সাম্প্রতিকটি আবার খোলে, এবং **হিস্টরি বোতাম** (উপরে-ডানে, আপনার প্রোফাইলের পাশে) সব টুল জুড়ে প্রতিটি সংরক্ষিত সেশনের তালিকা দেখায়। সেশনগুলো ডিভাইস-লোকাল। সেগুলো গুছিয়ে রাখতে, **Projects** (নিচে) খুলুন।
 
@@ -108,6 +118,8 @@
 - **গুছিয়ে নিন।** একটি অ্যাসেটকে একটি ভিন্ন গ্রুপে পুনরায় শ্রেণিবদ্ধ করুন, আপনি ব্যবহার করেন না এমন একটি শেয়ার করা ব্র্যান্ড অ্যাসেট লুকান (এটি ফিরিয়ে আনতে **Show hidden** সহ), বা আপনার নিজের আপলোডগুলো একেবারে ডিলিট করুন।
 
 ### আপনার প্যালেট এবং ফন্ট যেকোনো জায়গায় নিয়ে যান
+
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 Catalogue-এর **Swatches** প্যানেল কেবল রেফারেন্সের জন্য নয় — একটি রং কপি করতে সেটিতে ক্লিক করুন, বা আপনার অন্য টুল যে ফরম্যাটে কথা বলে সেই ফরম্যাটে **গোটা ব্র্যান্ড প্যালেট ডাউনলোড করুন**:
 
@@ -154,6 +166,8 @@ Lolly সবার জন্য ব্যবহারে স্বাচ্ছ�
 পূর্ণ কাহিনির জন্য **[এক্সপোর্ট ও ফরম্যাট](/info/exporting.html)** দেখুন — একটি ফরম্যাট বেছে নেওয়া, আউটপুট সাইজ ও প্রিন্ট ইউনিট, স্বচ্ছতা, ভিডিও, এবং কপি/শেয়ার। সংক্ষেপে: একটি ফরম্যাট বাছুন, দরকার হলে সাইজ সেট করুন, এবং **Download** করুন (বা ক্লিপবোর্ডে **Copy** করুন)।
 
 ## Batch (Pro) মোড
+
+![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&format=svg&filename=use-batch-toolbar)
 
 পাওয়ার ইউজারদের জন্য, **Batch** (গ্যালারি থেকে লিঙ্ক করা, Pro ফিচার ফ্ল্যাগের পিছনে গেট করা, যা ডিফল্টভাবে চালু) একসাথে অনেক ভ্যারিয়েশন রেন্ডার করে — একটি গ্রিড যেখানে প্রতিটি রো হলো এক সেট ইনপুট, একসাথে এক্সপোর্ট করা। একটি কার্ডকে ডজনখানেক ভাষায় লোকালাইজ করতে বা এক পাসে প্রতিটি সাইজ ভ্যারিয়েন্ট জেনারেট করতে আদর্শ। টাইপ করে, সরাসরি একটি স্প্রেডশিট থেকে পেস্ট করে, বা একটি CSV ইমপোর্ট করে রো পূরণ করুন (আপনি একটি আবার এক্সপোর্টও করতে পারেন), এবং প্রতি-রো ফরম্যাট, সাইজ এবং আউটপুট ফাইলনাম সেট করুন। গোটা একটি গ্রিড একটি নামযুক্ত **ব্যাচ সেশন** হিসেবে সেভ করুন যা গ্যালারি থেকে আবার খোলে, এবং প্রতিটি রো একটি একক `.zip` হিসেবে ডাউনলোড করুন।
 

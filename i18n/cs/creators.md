@@ -42,7 +42,13 @@ Lolly se nesnaží být Canva nebo Figma. Má své místo tam, kde *na pravidlec
 
 Vyplníš pár polí a dostaneš hotový výstup - žádné vybírání písma, žádné pochybování nad barvami, žádné „je tohle správné logo?“. Nástroj to už ví. E-mailové podpisy, odpočty do akcí, citátové karty, jmenovky, mapy ulic - všechno, co tvůj tým potřebuje v úterý ve čtyři odpoledne, samoobslužně. A protože žádná zákaznická data neopouštějí zařízení, spolupráce nenese žádné compliance riziko.
 
+Street Map je dobrý příklad té výměny: vybereš město a pár barev a kartografii, šířky ulic i vodní plochy rozhodne nástroj za tebe.
+
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=192&waitMs=3200&cropSelector=%23tool-canvas&format=png&filename=vt-street-map-poster)
+
 ### Od živých dat k hotovému vizuálu
+
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&filename=use-chart-output)
 
 Připoj tabulku **CSV** nebo **JSON** ke grafu, mapě nebo tabulkové šabloně a aktualizuj čísla - o rozvržení se postará šablona sama. Výsledky voleb, čtvrtletní výsledky hospodaření, povětrnostní jevy: formát postavíš jednou a pak ho použiješ pokaždé, když se příběh opakuje. Tvůj firemní styl budeš dodržovat *přesně*, protože je vynucený na úrovni šablony, ne ponechaný jako volné doporučení.
 
@@ -52,7 +58,11 @@ Jeden nástroj může vložit živý výstup jiného nástroje jako podklad - jm
 
 ### Hranice možností, když je potřebuješ
 
-Pokročilé filtry, skládání, animace, efekty s živou kamerou, generativní design - autorovi šablony je k dispozici veškerá webová technologie, takže strop je vysoko. Vytvářej *nástroje*, ne soubory: postav věc, která generuje 10 000 karet, namísto ručního vytváření 10 000 karet. Uzamkni to, co by se nemělo měnit; odkryj jen to, co má variovat.
+Pokročilé filtry, skládání, animace, efekty s živou kamerou, generativní design - autorovi šablony je k dispozici veškerá webová technologie, takže strop je vysoko.
+
+![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=1440&height=900&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&format=png&filename=use-mesh-output)
+
+Vytvářej *nástroje*, ne soubory: postav věc, která generuje 10 000 karet, namísto ručního vytváření 10 000 karet. Uzamkni to, co by se nemělo měnit; odkryj jen to, co má variovat.
 
 ## Detaily, kterých si všimneš
 

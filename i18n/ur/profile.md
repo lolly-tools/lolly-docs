@@ -8,8 +8,6 @@
 
 ## پروفائل میں کیا ہوتا ہے
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
-
 | حصہ | یہ کیا ہے |
 |---|---|
 | **نام** | پہلا اور آخری نام۔ |
@@ -22,11 +20,19 @@
 
 ان میں سے کوئی چیز لازمی نہیں۔ خالی پروفائل بھی بالکل ٹھیک پروفائل ہے؛ آپ صرف وہی بھرتے ہیں جو آپ کو ٹائپنگ سے بچائے۔
 
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
+
+ترجیحات ہی وہ ایک حصہ ہیں جو یہ بدلتی ہیں کہ ایپ آپ کو کیسا دکھائی دیتا ہے۔ تھیم کارڈز لائیو پری ویو ہیں اور جس لمحے آپ کوئی چنتے ہیں وہ لاگو ہو جاتا ہے — صرف اِسی ڈیوائس پر۔
+
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
+
 ## پروفائل ایک سیاق و سباق ہے، صرف ایک شخص نہیں
 
 لفظ "پروفائل" ایک مقررہ شخص کا تاثر دیتا ہے، لیکن Lolly میں یہ دراصل ایک **تخلیقی سیاق** ہے — *جب آپ یہ چیز بناتے ہیں تو آپ کون ہوتے ہیں*۔ وہ سیاق تین مختلف شکلیں اختیار کر سکتا ہے، اور Lolly ان سب کو یکساں طریقے سے سنبھالتا ہے۔
 
 ### ایک فرد کے طور پر
+
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
 
 پہلے سے طے شدہ۔ پروفائل آپ ہیں: آپ کا نام، آپ کا ای میل، آپ کا ہیڈ شاٹ۔ اسے ایک بار سیٹ کریں اور آپ کا دستخط، آپ کا بیج، آپ کا کانفرنس لاک اپ سب خود بخود بھر جاتے ہیں۔ زیادہ تر لوگوں کو بس اتنی ہی ضرورت ہوگی۔
 
@@ -50,9 +56,15 @@ Lolly میں، وہ کردار بس **ایک اور پروفائل ہے جو آ�
 - **پرت بندی:** پہلے صاف کیے *بغیر* امپورٹ کرنا **ضم** کر دیتا ہے — امپورٹ کی گئی پروفائل، سیشنز، اور تصاویر پہلے سے موجود چیزوں کے اوپر آ جاتی ہیں، ایک ہی نام والی کسی بھی چیز کو بدل دیتی ہیں اور باقی کو چھوڑ دیتی ہیں۔ کسی ایک ٹیم کے محفوظ شدہ سیشنز کو اپنے سیٹ اپ میں لانے کے لیے آسان؛ لیکن اگر آپ کو صاف کردار کی حد چاہیے تو یہ وہ نہیں جو آپ چاہتے ہیں۔
 - **ساتھ ساتھ:** چونکہ ہر چیز ڈیوائس تک محدود ہے، ایک الگ براؤزر پروفائل، ایک الگ صارف اکاؤنٹ، یا دوسرا انسٹال کردہ PWA — ہر ایک اپنی الگ خودمختار Lolly پروفائل رکھتا ہے۔ اپنا ذاتی انسٹال اور ایونٹ کیوسک انسٹال بیک وقت چلائیں، بغیر سوئچ کیے۔
 
+اسٹوریج ہی وہ جگہ ہے جہاں اِس کے دونوں حصے رہتے ہیں: میٹر زمرہ بہ زمرہ حساب دیتا ہے کہ یہ انسٹال کتنے بائٹ رکھے ہوئے ہے، اور اُس کے نیچے کے بٹن ہی وہ طریقہ ہیں جس سے آپ اسے صاف کرتے یا ساتھ لے جاتے ہیں۔
+
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
+
 > ہر سیاق کے لیے ایک بنڈل رکھیں اور فائلوں کا نام ان کی حیثیت کے مطابق رکھیں (`LollyTools-events-2026.zip`، `LollyTools-me.zip`)۔ فائل *ہی* پروفائل ہے۔
 
 ## پروفائل کو نئے ڈیوائس پر منتقل کرنا
+
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
 
 چونکہ پروفائل مکمل طور پر مقامی ہے، اسے کسی خالی انسٹال پر لانے کا واحد طریقہ — نیا لیپ ٹاپ، تازہ ری سیٹ کیا گیا براؤزر، کسی ساتھی کی مشین، ایک آف لائن باکس — یہ ہے کہ **فائل کو ساتھ لے جائیں**۔ کوئی لاگ ان اسے آپ کے لیے بحال نہیں کرتا، اور یہی نکتہ ہے: شروع سے ہی کچھ بھی آپ کے ڈیوائس سے باہر نہیں گیا۔
 
@@ -68,6 +80,8 @@ Lolly میں، وہ کردار بس **ایک اور پروفائل ہے جو آ�
 بنڈل کے صحیح لے آؤٹ، ورژن پالیسی، اور سالمیت کے قواعد کے لیے، **[Data Transfer](/info/data-transfer.html)** دیکھیں؛ ابتدا سے انتہا تک کے مکمل طریقہ کار کے لیے، **[Lolly استعمال کرنا → دوسرے ڈیوائس پر منتقل ہونا](/info/using.html#moving-to-another-device)**۔
 
 ## ٹولز آپ کی پروفائل کو کیسے استعمال کرتے ہیں
+
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
 
 کوئی ٹول صرف انہی پروفائل فیلڈز کو *پہلے سے بھرتا* ہے جنہیں بائنڈ کرنے کے لیے اسے واضح طور پر بنایا گیا تھا:
 

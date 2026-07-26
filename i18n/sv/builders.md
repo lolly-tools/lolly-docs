@@ -10,10 +10,20 @@ Ny på plattformen? **[Snabbstart](/info/quickstart.html)** ser till att du har 
 
 ## Förstå arkitekturen
 
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+
 - **[Översikt](/info/overview.html)** - varför Lolly finns, uppdelningen mellan motor/skal/verktyg, kapabilitetsbryggan och de fastslagna arkitektoniska besluten.
 - **[Design Tokens](/info/design-tokens.html)** - DTCG-tokenmodellen som varumärken uttrycks i, och hur verktyg använder den.
 
 ## Skapa verktyg
+
+Varje kontroll nedan genererades från en deklarerad indata i `tool.json`. Du skriver manifestraden, värden ritar kontrollen, och samma modell driver CLI:t och URL:en.
+
+![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&format=svg&filename=aud-manifest-controls)
+
+Det skalar längre än fem kontroller. Ge en indata en `section` och värden fäller in den, så att ett verktyg med femtio indata som D3 Chart Studio ändå öppnas som en kort stapel med resten inordnad bakom namngivna grupper.
+
+![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-d3-sections)
 
 - **[Skapa verktyg](/info/authoring-tools.html)** - den fullständiga guiden: manifest, mall, stilar, hooks, komposition och publicering.
 - **[Skapa tillgångar](/info/authoring-assets.html)** - katalogtillgångar, nivåer, språkversioner, paletter, temaikoner och typsnitt.
@@ -35,6 +45,10 @@ Ny på plattformen? **[Snabbstart](/info/quickstart.html)** ser till att du har 
 - **[Konfiguration](/info/configuration.html)** - profiler, varumärkespaket, kapabilitetsspärrar, funktionsflaggor och katalogvalidering.
 
 ## Förtroende och data
+
+Rättigheter och upphovsmannaskap är indata som alla andra. Embed & Track Image deklarerar fält för upphovsperson, copyright, licens och kontakt, och exporten skriver in dem i filens egna metadata och i dess C2PA-manifest.
+
+![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-rights-fields)
 
 - **[Content Credentials-identitet](/info/content-credentials-identity.html)** - CA-utfärdad signering för C2PA på enheten; motorns kontrakt och driftguiden för operatörer.
 - **[Dataöverföring](/info/data-transfer.html)** - `lolly-backup`-paketet: kuvertformat, integritet och skalöverskridande garantier.

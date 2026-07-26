@@ -66,9 +66,17 @@ Voici la récompense : une mise en page importée est une session Studio de mise
 
 ### Données ouvertes et outils ouverts
 
-L'[ensemble d'outils communautaires](/info/builders.html) est open source et indépendant de toute marque - codes QR, cartes routières, filtres, utilitaires de confidentialité - et il produit son rendu par rapport à *ta* marque dès que tu l'actives. Alimente aussi les outils avec tes propres données ouvertes : colle ou dépose un tableau **CSV** ou **JSON**, et les champs répétitifs d'un outil s'en remplissent, un fichier fini par ligne.
+L'[ensemble d'outils communautaires](/info/builders.html) est open source et indépendant de toute marque - codes QR, cartes routières, filtres, utilitaires de confidentialité - et il produit son rendu par rapport à *ta* marque dès que tu l'actives.
+
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
+Alimente aussi les outils avec tes propres données ouvertes : colle ou dépose un tableau **CSV** ou **JSON**, et les champs répétitifs d'un outil s'en remplissent, un fichier fini par ligne.
 
 ## 3. Crée quelque chose, puis partage-le ou automatise-le
+
+« Une URL, c'est l'API » est à prendre au pied de la lettre. Le graphique ci-dessous n'a été dessiné par personne : son type, son titre et tout son tableau de données ont été tapés dans la barre d'adresse, et le même lien produit le même graphique sur n'importe quel appareil.
+
+![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&filename=vt-d3-url-chart)
 
 Avec une marque active et ton matériel en main, chaque outil produit un fichier fini :
 

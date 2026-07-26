@@ -1621,6 +1621,14 @@ tr:nth-child(even) td{background:#fafffe}
 .faq-a{padding:0 1.5rem 1.4rem;color:var(--muted);line-height:1.75}
 .faq-a p{margin-bottom:.75rem}
 .faq-a p:last-child{margin-bottom:0}
+/* Screenshots inside an FAQ answer. faq.md is the one .md that renders into the
+   LANDING accordion rather than an /info/*.html docs page, so it never picks up
+   the .docs-content img rules above — and a shot baseline carries an intrinsic
+   width="1440", which without this would render at full size and push the whole
+   landing page sideways. Same framing as the docs-page treatment, capped to the
+   answer column. */
+.faq-a img{max-width:100%;height:auto;display:block;margin:.9rem 0 0;border-radius:10px}
+.faq-a img[src*="/info/shots/"]{border:1px solid #8882;box-shadow:0 6px 24px #0002}
 @media(max-width:800px){
   .about-header{flex-direction:column;text-align:center;gap:1.75rem}
   .about-mascot{width:clamp(160px,44vw,260px)}

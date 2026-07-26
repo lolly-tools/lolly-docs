@@ -6,6 +6,8 @@ Isang praktikal na gabay sa aktwal na *paggamit* ng app - pagbukas ng tool, pagg
 
 ## Pagbukas ng isang tool
 
+![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Fct%3Dhorizontal-bar%26t%3DQuarterly%2520revenue%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&format=svg&filename=vt-tool-split-view)
+
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
 ![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
@@ -17,6 +19,8 @@ Ang bawat tool ay isang split view: **controls** sa isang side, at live na **pre
 > Ilang tool (tulad ng **Layout Studio**) ang sa halip ay bubukas bilang isang **free canvas** - isang chromeless, direct-manipulation na surface kung saan mo dina-drag, rine-resize, ire-rotate, at sina-snap ang mga box ng text, shapes, at images, at dini-double-click para i-edit ang text nang mismo doon. Nag-e-export ito sa parehong render path tulad ng bawat ibang tool, kaya ang canvas *ay* mismo ang file. Tingnan ang [The free canvas](#the-free-canvas-layout-studio) sa ibaba.
 
 ## Ang canvas (preview)
+
+![The zoom HUD in the corner of the canvas - minus, the live percentage, plus, Fit, then the theme and sound toggles](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=.stage-nav%7Bopacity%3A1!important%7D&cropSelector=.stage-nav&format=svg&filename=use-zoom-hud)
 
 Palaging ipinapakita ng preview kung ano mismo ang mae-export.
 
@@ -48,12 +52,16 @@ Nagdaragdag ang mga free-canvas na tool ng working surface *sa paligid* ng artbo
 
 ## Sa telepono
 
+![A tool on a phone-width screen - controls as a sheet up top, the generated palette filling the preview below, and the render pill floating bottom-centre](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3Df97316%26harmony%3Dadjacent-3%26steps%3D9&width=430&height=900&dpi=192&waitMs=2200&format=svg&filename=vt-phone-palette)
+
 Sa mga makipot na screen, nagre-reflow ang layout papunta sa isang column:
 
 - Ang **controls ay nagiging isang sheet** sa itaas na may **drag grip** sa ibabang gilid nito. I-drag ang grip para i-resize ito - sumasnap ito sa **peek / half / full** - o **i-tap** ang grip para mag-toggle sa collapsed ↔ expanded. Pinupuno ng preview ang space sa ibaba at nananatiling nakikita habang nag-e-edit ka.
 - Ang isang floating **Render** button ay nagbubukas ng **Export** sheet - lahat ng format, size, copy, save, at download controls sa iisang lugar. I-dismiss ito sa pamamagitan ng pag-tap sa backdrop.
 
 ## Controls (mga input)
+
+![A tool's control stack - a text field, colour triggers and a slider, and nothing else the author chose to lock down](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-inputs&format=svg&filename=use-tool-inputs)
 
 Inilalantad lang ng mga tool ang mga input na nilalayong mag-iba - naka-lock na ang lahat ng iba pa (colours, layout, typography, logic) ng may-akda ng tool, kaya anuman ang gawin mo ay sumusunod sa mga tuntunin na itinakda ng may-akda. Kasama sa mga input ang text, sliders, colour pickers, dropdowns, dates, image pickers, at repeating row groups. Ang ilan ay naka-grupo sa ilalim ng mga collapsible section.
 
@@ -66,6 +74,8 @@ Hawak ng **Profile** (top-right ng gallery) ang pangalan mo, contact details, at
 Nananatili ang headshot at detalye mo **sa device na ito lang**. Ang isang profile ay puwedeng maging higit pa sa iyo lang - isang team o isang role na sinusuot mo paminsan-minsan. Tingnan ang **[Profiles](/info/profile.html)** para sa buong larawan, kasama ang pagpapanatili ng higit sa isa.
 
 ## Pag-save at pagpapatuloy
+
+![The two-half render pill - an up arrow that opens the export panel, and a tick that saves the session in place](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=%23tool-inputs%7Bdisplay%3Anone%7D&cropSelector=.render-pill&format=svg&filename=use-render-pill)
 
 I-click ang **Save** para i-store ang kasalukuyang mga input bilang isang session para sa tool na iyon. Puwede kang magkaroon ng maraming named session bawat tool; muling binubuksan ng **Continue** button ng bawat tool ang pinakabago mo, at nililista ng **history button** (top-right, katabi ng profile mo) ang bawat naka-save na session sa lahat ng tool. Device-local ang mga session. Para ayusin ang mga ito, buksan ang **Projects** (sa ibaba).
 
@@ -108,6 +118,8 @@ Tinitipon ng **Catalogue** (`#/c`, o ang **Catalogue** link sa menu) ang lahat n
 - **Maglinis.** I-recategorise ang isang asset papunta sa ibang grupo, itago ang isang shared brand asset na hindi mo ginagamit (gamit ang **Show hidden** para ibalik ito), o burahin nang tuluyan ang sarili mong mga upload.
 
 ### Dalhin ang iyong palette at fonts kahit saan
+
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 Ang **Swatches** panel ng Catalogue ay hindi lang para sa reference - i-click ang isang kulay para kopyahin ito, o **i-download ang buong brand palette** sa format na sinasalita ng iyong ibang tool:
 
@@ -154,6 +166,8 @@ Puwede mong dalhin ang isang existing design papasok sa Lolly at ipagpatuloy ang
 Tingnan ang **[Exporting & Formats](/info/exporting.html)** para sa buong kuwento - pagpili ng format, output size at print units, transparency, video, at copy/share. Sa madaling salita: pumili ng format, i-set ang size kung kailangan mo, at **Download** (o **Copy** papunta sa clipboard).
 
 ## Batch (Pro) mode
+
+![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&format=svg&filename=use-batch-toolbar)
 
 Para sa power users, ang **Batch** (naka-link mula sa gallery, naka-gate sa likod ng Pro feature flag, na naka-default on) ay nagre-render ng maraming variation nang sabay-sabay - isang grid kung saan ang bawat row ay isang set ng mga input, na na-export nang magkasama. Perfect para sa pag-localize ng isang card sa isang dosenang wika o paggawa ng bawat size variant sa isang pass. Punuin ang mga row sa pamamagitan ng pag-type, pag-paste nang direkta mula sa spreadsheet, o pag-import ng CSV (puwede mo ring i-export pabalik ang isa), at i-set ang per-row na format, size, at output filename. I-save ang isang buong grid bilang isang named **batch session** na muling bubukas mula sa gallery, at i-download ang bawat row bilang isang solong `.zip`.
 

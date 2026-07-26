@@ -8,6 +8,10 @@ Tot ce ține de un profil trăiește **pe dispozitiv**, în baza de date locală
 
 ## Ce conține un profil
 
+Preferințele sunt singura parte care schimbă cum arată aplicația pentru tine. Cardurile de temă sunt previzualizări live și se aplică din clipa în care alegi una, doar pe acest dispozitiv.
+
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
+
 | Parte | Ce este |
 |---|---|
 | **Nume** | Prenume și nume de familie. |
@@ -28,6 +32,8 @@ Cuvântul „profil" sugerează o singură persoană fixă, dar în Lolly este d
 
 ### Ca individ
 
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+
 Cazul implicit. Profilul ești tu: numele tău, emailul tău, fotografia ta de profil. Setează-l o dată, iar semnătura ta, ecusonul tău, lockup-ul tău de conferință se completează singure. Asta e tot ce va avea nevoie majoritatea oamenilor vreodată.
 
 ### Ca echipă
@@ -42,6 +48,10 @@ Acesta este cazul pe care modelul rigid „o persoană, un profil" îl ratează.
 
 ## O instalare, un profil activ - poți păstra multe
 
+Ambele jumătăți ale acestei povești stau în Storage: contorul ține socoteala fiecărui byte pe care îl păstrează instalarea asta, categorie cu categorie, iar butoanele de sub el sunt felul în care îl golești sau îl duci cu tine.
+
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
+
 În orice moment, o instalare are **un profil activ** - detaliile pe care le vede un instrument chiar acum. Nu există un comutator de profil în aplicație; în schimb, fiecare profil este un **pachet portabil** (un singur `.zip`, vezi [mai jos](#moving-a-profile-to-a-new-device)). Este, în mod deliberat, același mecanism ca mutarea pe un dispozitiv nou - un profil este un fișier pe care îl poți salva, copia și încărca.
 
 Deci dacă chiar jonglezi cu mai multe contexte (tu, echipa ta, pălăria de manager de eveniment), păstrezi mai multe pachete și încarci pe cel de care ai nevoie:
@@ -53,6 +63,8 @@ Deci dacă chiar jonglezi cu mai multe contexte (tu, echipa ta, pălăria de man
 > Păstrează un pachet per context și redenumește fișierele după ce reprezintă (`LollyTools-events-2026.zip`, `LollyTools-me.zip`). Fișierul *este* profilul.
 
 ## Mutarea unui profil pe un dispozitiv nou
+
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
 
 Pentru că un profil este în întregime local, singura modalitate de a-l aduce pe o instalare goală - un laptop nou, un browser resetat, mașina unui coleg, o cutie offline - este să **cari fișierul**. Niciun login nu îl restaurează pentru tine, și asta e ideea: nu a părăsit niciodată dispozitivul tău, de la bun început.
 
@@ -68,6 +80,8 @@ Ce nu călătorește: cache-ul de catalog (se re-descarcă singur pe noul dispoz
 Pentru layout-ul exact al pachetului, politica de versiuni și regulile de integritate, vezi **[Data Transfer](/info/data-transfer.html)**; pentru parcursul complet, **[Folosirea Lolly → Mutarea pe alt dispozitiv](/info/using.html#moving-to-another-device)**.
 
 ## Cum folosesc instrumentele profilul tău
+
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
 
 Un instrument doar *precompletează* câmpurile de profil pentru care a fost construit explicit să se lege:
 

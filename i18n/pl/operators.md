@@ -48,6 +48,16 @@ Zmniejsz zbyt duży PDF na urządzeniu, żeby nikt nie sięgał po zewnętrzną 
 
 Wszystkie te operacje to przekształcenia na urządzeniu: twój plik lub dane wchodzą, wychodzą oczyszczone bajty i **nie ma serwera, na który cokolwiek jest wysyłane**. Są celowym przeciwieństwem typowego narzędzia typu „wgraj swój plik na stronę obcej osoby, żeby go wyczyścić”, po które w innym wypadku sięga pełen dobrych intencji pracownik.
 
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data)
+
+Text Helper to ta sama umowa, tylko dla tekstu, a nie plików. To warsztat z zakładkami, którego pracownik szukałby w innym wypadku na obcej stronie, i nie deklaruje żadnych wejść, bo nic, czego dotyka, nigdy nie opuszcza strony.
+
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+
+Compress PDF domyka zestaw: zbyt duży załącznik zmniejsza się według ustawienia jakości, które sam wybierasz, na maszynie, która już go przechowuje.
+
+![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=ov2-compress-pdf)
+
 
 
 ## Determinizm i odtwarzalność
@@ -57,7 +67,13 @@ Każde wejście narzędzia da się wyrazić jako parametr URL, a te same dane we
 - **URL jest artefaktem.** Zatwierdź (commit) link, generuj zasób na żądanie - żadnych binariów w Git, żadnego ścigania „najnowszej wersji” na czacie. Identyfikatory zasobów i narzędzi to trwałe kontrakty, więc link wygenerowany dziś rozwiąże się także później.
 - **CLI to ta sama ścieżka renderowania** co GUI, więc potoki budowania i aplikacja nigdy się nie rozjeżdżają. Generuj obrazy OG, karty społecznościowe i wizualizacje danych na etapie budowania, w sposób odtwarzalny.
 
+Prompt to Image to determinizm w najprostszej postaci: tekst jest całym wejściem, złożony obraz jest całym wyjściem, a ten sam tekst zawsze składa się tak samo.
+
+![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-prompt-to-image)
+
 ## Proweniencja i Content Credentials
+
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
 
 Eksporty mogą nieść **Content Credentials** - podpisany manifest [C2PA](https://c2pa.org) powiązany z hashem bajtów pliku. Każda późniejsza zmiana pliku łamie pieczęć, więc weryfikator obsługujący C2PA **wykrywa modyfikację kryptograficznie, offline**. Poświadczenie jest odporne na manipulację w sposób *widoczny*: sygnalizuje manipulację, a nie zapobiega jej, co jest dokładnie tym, co umożliwia w pełni offline'ową weryfikację.
 
@@ -71,6 +87,8 @@ Eksporty mogą nieść **Content Credentials** - podpisany manifest [C2PA](https
 > **Uwagi o interoperacyjności.** Lolly już dziś weryfikuje offline własne poświadczenia oraz wiele poświadczeń zewnętrznych, w tym odczytuje manifesty roszczeń C2PA w wersji **v2** od innych producentów. Jedna kwestia interoperacyjności pozostaje w toku: WebM - który nie ma jeszcze ustandaryzowanego mapowania C2PA, więc Lolly dołącza manifest jako część Matroska (narzędzia zewnętrzne weryfikują pliki MP4 z Lolly od ręki; WebM dołączy, gdy standard się ustabilizuje).
 
 ## Szyfrowanie i zabezpieczanie hasłem
+
+![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&format=svg&filename=aud-pdf-lock)
 
 W przypadku plików, które muszą podróżować zablokowane, wszystko dzieje się na urządzeniu:
 

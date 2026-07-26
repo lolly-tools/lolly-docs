@@ -12,7 +12,7 @@ The home screen is the **gallery** - every tool, grouped by category. Click a ca
 
 Each tool is a split view: **controls** on one side, a live **preview** (the canvas) on the other. Change any control and the preview updates instantly.
 
-![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
+![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Fct%3Dhorizontal-bar%26t%3DQuarterly%2520revenue%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&format=svg&filename=vt-tool-split-view)
 
 > A few tools (like **Layout Studio**) instead open as a **free canvas** - a chromeless, direct-manipulation surface where you drag, resize, rotate and snap boxes of text, shapes and images, and double-click to edit text in place. It exports through the same render path as every other tool, so the canvas *is* the file. See [The free canvas](#the-free-canvas-layout-studio) below.
 
@@ -26,6 +26,8 @@ The preview always shows exactly what will export.
 - **Pan:** hold **Space** and drag, or drag with the **middle mouse button**. (Plain clicks stay free for clicking parts of the design.)
 - **Keyboard:** `0` = fit to window · `1` = 100% · `+` / `−` = zoom.
 - **Zoom HUD:** the small `−  NN%  +  Fit` control in the corner. Click the percentage to toggle Fit ↔ 100%.
+
+![The zoom HUD in the corner of the canvas - minus, the live percentage, plus, Fit, then the theme and sound toggles](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=.stage-nav%7Bopacity%3A1!important%7D&cropSelector=.stage-nav&format=svg&filename=use-zoom-hud)
 
 **Touch**
 
@@ -53,9 +55,13 @@ On narrow screens the layout reflows to one column:
 - The **controls become a sheet** at the top with a **drag grip** on its lower edge. Drag the grip to resize it - it snaps to **peek / half / full** - or **tap** the grip to toggle collapsed ↔ expanded. The preview fills the space below and stays visible while you edit.
 - A floating **Render** button opens the **Export** sheet - all the format, size, copy, save, and download controls in one place. Dismiss it by tapping the backdrop.
 
+![A tool on a phone-width screen - controls as a sheet up top, the generated palette filling the preview below, and the render pill floating bottom-centre](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3Df97316%26harmony%3Dadjacent-3%26steps%3D9&width=430&height=900&dpi=192&waitMs=2200&format=svg&filename=vt-phone-palette)
+
 ## Controls (inputs)
 
 Tools expose only the inputs that are meant to vary - everything else (colours, layout, typography, logic) is locked in by the tool author, so whatever you make meets the rules the author set. Inputs include text, sliders, colour pickers, dropdowns, dates, image pickers, and repeating row groups. Some are grouped under collapsible sections.
+
+![A tool's control stack - a text field, colour triggers and a slider, and nothing else the author chose to lock down](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-inputs&format=svg&filename=use-tool-inputs)
 
 **Reset:** *Clear changes* returns every input to its defaults.
 
@@ -68,6 +74,8 @@ Your headshot and details live **only on this device**. A profile can be more th
 ## Saving & continuing
 
 Click **Save** to store the current inputs as a session for that tool. You can keep multiple named sessions per tool; each tool's **Continue** button reopens your most recent, and the **history button** (top-right, beside your profile) lists every saved session across all tools. Sessions are device-local. To organise them, open **Projects** (below).
+
+![The two-half render pill - an up arrow that opens the export panel, and a tick that saves the session in place](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=%23tool-inputs%7Bdisplay%3Anone%7D&cropSelector=.render-pill&format=svg&filename=use-render-pill)
 
 ## Projects
 
@@ -101,7 +109,7 @@ When a tool lets you add an image from your device, it's downscaled, stripped of
 
 The **Catalogue** (`#/c`, or the **Catalogue** link in the menu) gathers everything your tools can draw on - brand logos, images, audio, and motion, grouped by kind - and it's where your **own creative files** live too. No server, no admin console, no pull request: it's all on your device.
 
-![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=svg&localize=1&filename=catalogue)
 
 - **Bring your files in.** Drag any image, SVG, audio clip, video, Lottie, PDF or PowerPoint deck onto the upload area - or click to choose - and it lands in your catalogue instantly, ready in every tool's asset picker. A multi-page PDF or a `.pptx` asks which pages or slides to keep - each becomes an SVG asset. Ingest as much as you like; it never leaves your device.
 - **Favourite what you reach for.** ★ an asset (or a brand swatch) and it pins to the top of every picker, so your go-to logo or colour is one click away.
@@ -114,6 +122,8 @@ The Catalogue's **Swatches** panel isn't just for reference - click a colour to 
 - **Design tokens (JSON)**, **CSS variables**, or **CSS classes** - drop the brand straight into a stylesheet or a build;
 - **Adobe Swatch Exchange (.ase)** - load it into Illustrator or Photoshop;
 - **GIMP palette (.gpl)** - for GIMP or Inkscape.
+
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 The **Fonts** panel lists your brand faces with a **download** beside each, to install locally or hand to a print shop. (The [Brand Studio](/info/brand-studio.html)'s Colours tab offers the same palette download.)
 
@@ -156,6 +166,8 @@ See **[Exporting & Formats](/info/exporting.html)** for the full story - choosin
 ## Batch (Pro) mode
 
 For power users, **Batch** (linked from the gallery, gated behind the Pro feature flag, which defaults on) renders many variations at once - a grid where each row is a set of inputs, exported together. Ideal for localising a card into a dozen languages or generating every size variant in one pass. Fill rows by typing, pasting straight from a spreadsheet, or importing a CSV (you can export one back too), and set per-row format, size, and output filename. Save a whole grid as a named **batch session** that reopens from the gallery, and download every row as a single `.zip`.
+
+![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&format=svg&filename=use-batch-toolbar)
 
 Batch is for generating **many variants of one template** at once. To re-render sessions you've **already saved**, use **Projects → Render folder / Render selection** (above) - no Pro needed.
 

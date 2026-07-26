@@ -10,10 +10,20 @@ Lolly **محرك** محايد تجاه المنصات يشغل مسار التص
 
 ## افهم البنية
 
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+
 - **[نظرة عامة](/info/overview.html)** — لماذا وجد Lolly، وفصل المحرك/الأغلفة/الأدوات، وجسر القدرات، والالتزامات المعمارية المستقرة.
 - **[رموز التصميم](/info/design-tokens.html)** — نموذج رموز DTCG الذي تعبر به العلامات التجارية، وكيف تستهلكه الأدوات.
 
 ## ألف الأدوات
+
+كل عنصر تحكم أدناه أنشئ من مدخل معلن في `tool.json`. أنت تكتب سطر بيان التعريف، والمضيف يرسم عنصر الواجهة، والنموذج نفسه يقود CLI والرابط.
+
+![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&format=svg&filename=aud-manifest-controls)
+
+وهذا يتوسع إلى ما يتجاوز خمسة عناصر تحكم. أعط المدخل `section` فيطويه المضيف، وبذلك تبقى أداة بخمسين مدخلا مثل D3 Chart Studio تفتح كقائمة قصيرة، والبقية مرتبة خلف مجموعات مسماة.
+
+![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-d3-sections)
 
 - **[تأليف الأدوات](/info/authoring-tools.html)** — الدليل الكامل: بيان التعريف، والقالب، والأنماط، والخطافات، والتركيب، والنشر.
 - **[تأليف الأصول](/info/authoring-assets.html)** — أصول الكتالوج، والمستويات، واللغات المحلية، ولوحات الألوان، والأيقونات المتوافقة مع السمات، والخطوط.
@@ -35,6 +45,10 @@ Lolly **محرك** محايد تجاه المنصات يشغل مسار التص
 - **[الإعداد](/info/configuration.html)** — ملفات التعريف، وحزم العلامات التجارية، وبوابات القدرات، وأعلام الميزات، والتحقق من الكتالوج.
 
 ## الثقة والبيانات
+
+الحقوق ونسبة التأليف مدخلات كغيرها. تعلن Embed & Track Image حقول المنشئ وحقوق النشر والترخيص وجهة الاتصال، والتصدير يكتبها في البيانات الوصفية للملف نفسه وفي بيان C2PA الخاص به.
+
+![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-rights-fields)
 
 - **[هوية Content Credentials](/info/content-credentials-identity.html)** — توقيع صادر عن مرجع إصدار (CA) لاعتمادات C2PA على الجهاز؛ عقود المحرك ودليل التشغيل للمشغلين.
 - **[نقل البيانات](/info/data-transfer.html)** — حزمة `lolly-backup`: الغلاف، والسلامة، والضمانات عبر الأغلفة.

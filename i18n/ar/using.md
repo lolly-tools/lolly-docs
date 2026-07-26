@@ -6,6 +6,8 @@
 
 ## فتح أداة
 
+![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Fct%3Dhorizontal-bar%26t%3DQuarterly%2520revenue%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&format=svg&filename=vt-tool-split-view)
+
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
 ![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
@@ -17,6 +19,8 @@
 > بعض الأدوات (مثل **Layout Studio**) تفتح بدلا من ذلك **لوحة حرة** — سطح تحكم مباشر بلا أطر تسحب فيه صناديق النصوص والأشكال والصور وتغير حجمها وتدورها وتثبتها بالجذب، وتنقر نقرا مزدوجا لتحرير النص في مكانه. وهي تصدر عبر مسار التصيير نفسه ككل أداة أخرى، فاللوحة *هي* الملف. انظر [اللوحة الحرة](#the-free-canvas-layout-studio) أدناه.
 
 ## اللوحة (المعاينة)
+
+![The zoom HUD in the corner of the canvas - minus, the live percentage, plus, Fit, then the theme and sound toggles](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=.stage-nav%7Bopacity%3A1!important%7D&cropSelector=.stage-nav&format=svg&filename=use-zoom-hud)
 
 تعرض المعاينة دائما ما سيصدر بالضبط.
 
@@ -48,12 +52,16 @@
 
 ## على الهاتف
 
+![A tool on a phone-width screen - controls as a sheet up top, the generated palette filling the preview below, and the render pill floating bottom-centre](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3Df97316%26harmony%3Dadjacent-3%26steps%3D9&width=430&height=900&dpi=192&waitMs=2200&format=svg&filename=vt-phone-palette)
+
 على الشاشات الضيقة يعاد تدفق التخطيط إلى عمود واحد:
 
 - **تتحول عناصر التحكم إلى ورقة** في الأعلى بمقبض **سحب** على حافتها السفلى. اسحب المقبض لتغيير حجمها — تثبت عند **إطلالة / نصف / كامل** — أو **انقر** المقبض للتبديل بين مطوية ↔ ممددة. تملأ المعاينة المساحة تحتها وتبقى مرئية وأنت تحرر.
 - زر **تصيير** عائم يفتح ورقة **التصدير** — كل عناصر التحكم في الصيغة والحجم والنسخ والحفظ والتنزيل في مكان واحد. أغلقها بالنقر على الخلفية.
 
 ## عناصر التحكم (المدخلات)
+
+![A tool's control stack - a text field, colour triggers and a slider, and nothing else the author chose to lock down](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-inputs&format=svg&filename=use-tool-inputs)
 
 تكشف الأدوات فقط المدخلات التي يفترض أن تتغير — وكل ما عداها (الألوان والتخطيط والخطوط والمنطق) مقفل من مؤلف الأداة، فكل ما تصنعه يلبي القواعد التي وضعها المؤلف. تشمل المدخلات النصوص وأشرطة التمرير ومنتقيات الألوان والقوائم المنسدلة والتواريخ ومنتقيات الصور ومجموعات الصفوف المتكررة. وبعضها مجمع تحت أقسام قابلة للطي.
 
@@ -66,6 +74,8 @@
 صورتك وبياناتك تعيش **على هذا الجهاز فقط**. والملف الشخصي قد يكون أكثر من مجرد شخصك — فريقا أو دورا تتقمصه بين حين وآخر. انظر **[الملفات الشخصية](/info/profile.html)** للصورة الكاملة، بما في ذلك الاحتفاظ بأكثر من ملف واحد.
 
 ## الحفظ والمتابعة
+
+![The two-half render pill - an up arrow that opens the export panel, and a tick that saves the session in place](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=%23tool-inputs%7Bdisplay%3Anone%7D&cropSelector=.render-pill&format=svg&filename=use-render-pill)
 
 انقر **حفظ** لتخزين المدخلات الحالية كجلسة لتلك الأداة. يمكنك الاحتفاظ بعدة جلسات مسماة لكل أداة؛ وزر **متابعة** في كل أداة يعيد فتح أحدثها، و**زر السجل** (أعلى اليمين، بجوار ملفك الشخصي) يسرد كل جلسة محفوظة عبر كل الأدوات. الجلسات محلية على الجهاز. ولتنظيمها افتح **المشاريع** (أدناه).
 
@@ -108,6 +118,8 @@
 - **رتب.** أعد تصنيف أصل إلى مجموعة أخرى، أو أخف أصل علامة مشتركا لا تستخدمه (مع **إظهار المخفي** لإعادته)، أو احذف ما رفعته بنفسك نهائيا.
 
 ### خذ لوحتك وخطوطك إلى أي مكان
+
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 لوحة **العينات** في الكتالوج ليست للمرجع فقط — انقر لونا لنسخه، أو **نزل لوحة العلامة كاملة** بالصيغة التي تتحدثها أداتك الأخرى:
 
@@ -154,6 +166,8 @@
 انظر **[التصدير والصيغ](/info/exporting.html)** للقصة الكاملة — اختيار الصيغة، وحجم الناتج ووحدات الطباعة، والشفافية، والفيديو، والنسخ/المشاركة. باختصار: اختر صيغة، واضبط الحجم إن احتجت، ثم **نزل** (أو **انسخ** إلى الحافظة).
 
 ## وضع الدفعات (Pro)
+
+![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&format=svg&filename=use-batch-toolbar)
 
 لمحترفي الاستخدام، **الدفعات** (يوصل إليها من المعرض، وهي خلف علم ميزة Pro المفعل افتراضيا) تصير تنويعات كثيرة دفعة واحدة — شبكة كل صف فيها مجموعة مدخلات، تصدر معا. مثالية لترجمة بطاقة إلى اثنتي عشرة لغة أو توليد كل متغيرات المقاس في تمريرة واحدة. املأ الصفوف بالكتابة، أو باللصق مباشرة من جدول بيانات، أو باستيراد CSV (ويمكنك تصدير واحد أيضا)، واضبط الصيغة والحجم واسم ملف الناتج لكل صف. احفظ شبكة كاملة **كجلسة دفعات** مسماة تعاد فتحها من المعرض، ونزل كل الصفوف كملف `.zip` واحد.
 

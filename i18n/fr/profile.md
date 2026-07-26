@@ -8,6 +8,10 @@ Tout ce qui compose un profil vit **sur l'appareil**, dans la base de données l
 
 ## Ce qu'il y a dans un profil
 
+Les préférences sont la seule partie qui change l'allure que l'appli te renvoie. Les cartes de thème sont des aperçus en direct et s'appliquent dès que tu en choisis une, sur cet appareil uniquement.
+
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
+
 | Partie | Ce que c'est |
 |---|---|
 | **Nom** | Prénom et nom de famille. |
@@ -28,6 +32,8 @@ Le mot « profil » suggère une personne fixe et unique, mais dans Lolly c'est 
 
 ### En tant qu'individu
 
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+
 Le cas par défaut. Le profil, c'est toi : ton nom, ton e-mail, ta photo de profil. Configure-le une fois et ta signature, ton badge, ton lockup de conférence se remplissent tout seuls. C'est ce dont la plupart des gens auront jamais besoin.
 
 ### En tant qu'équipe
@@ -42,6 +48,10 @@ Dans Lolly, ce rôle n'est qu'**un autre profil que tu gardes sous la main** - u
 
 ## Une installation, un profil actif - plusieurs que tu peux garder
 
+Stockage est l'endroit où vivent les deux moitiés de tout ça : la jauge rend compte de chaque octet que cette installation conserve, catégorie par catégorie, et les boutons en dessous servent à vider ou à emporter le tout.
+
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
+
 À tout moment, une installation a **un profil actif** - les détails qu'un outil voit à cet instant. Il n'y a pas de sélecteur de profil dans l'app ; à la place, chaque profil est un **bundle portable** (un simple `.zip`, voir [plus bas](#moving-a-profile-to-a-new-device)). C'est délibérément le même mécanisme que pour changer d'appareil - un profil est un fichier que tu peux enregistrer, copier et charger.
 
 Donc si tu jongles vraiment entre plusieurs contextes (toi, ton équipe, la casquette de responsable événementiel), tu gardes plusieurs bundles et tu charges celui dont tu as besoin :
@@ -53,6 +63,8 @@ Donc si tu jongles vraiment entre plusieurs contextes (toi, ton équipe, la casq
 > Garde un bundle par contexte et renomme les fichiers pour ce qu'ils sont (`LollyTools-events-2026.zip`, `LollyTools-me.zip`). Le fichier *est* le profil.
 
 ## Déplacer un profil vers un nouvel appareil
+
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
 
 Comme un profil est entièrement local, la seule façon de le faire arriver sur une installation vierge - un nouvel ordinateur portable, un navigateur fraîchement réinitialisé, la machine d'un collègue, une machine hors ligne - est de **transporter le fichier**. Aucune connexion ne le restaure pour toi, et c'est précisément le but : rien n'a jamais quitté ton appareil au départ.
 
@@ -68,6 +80,8 @@ Ce qui ne voyage pas : le cache du catalogue (il se retélécharge tout seul sur
 Pour la disposition exacte du bundle, la politique de version et les règles d'intégrité, voir **[Transfert de données](/info/data-transfer.html)** ; pour le tutoriel de bout en bout, **[Utiliser Lolly → Déplacer vers un autre appareil](/info/using.html#moving-to-another-device)**.
 
 ## Comment les outils utilisent ton profil
+
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
 
 Un outil ne fait jamais que *pré-remplir* les champs de profil qu'il a été explicitement conçu pour lier :
 

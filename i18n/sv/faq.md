@@ -18,6 +18,8 @@ Lolly genererar stora mängder innehåll. Vi tillämpar en strikt dataminimering
 
 ### Vad är funktionsflaggor?
 
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&filename=pd-feature-flags)
+
 Funktionsflaggor slår på eller av delar av Lolly. Vanligtvis är det en administratör som styr dessa - med Lolly är det du som har kontrollen.
 
 ## Hur får jag tag i mobil- eller skrivbordsapparna?
@@ -75,6 +77,8 @@ Lolly lyfter allt.
 
 ## Vad skiljer utilities från vanliga verktyg?
 
+![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
 **Enkelt svar →** Utilities behöver inte alltid rendera, och kan därför få en annan UX.
 
 **Egentligt svar →** Anledningen till att utilities kan finnas inuti Lolly Tools är för att lägga till ännu ett "bekvämlighetslager" av försvar som motverkar dataexfiltrering.
@@ -96,6 +100,8 @@ trivial; **innehållet är kostnaden.**
 Vi vinner kampen om styrning genom utmärkt bekvämlighet och service.
 
 ## Kan Lolly redigera och rendera mina Figma-, Penpot-, Illustrator- eller InDesign-filer?
+
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 Ja. Öppna **Layout Studio** och klicka på **Importera en design**: den tar emot en inbyggd Figma **.fig** (Save local copy), en Penpot **.penpot**-export, en Illustrator **.ai** eller **.pdf**, en InDesign **.idml** (File → Export → InDesign Markup), eller **valfri SVG** (den breda dörren - nästan alla designprogram kan exportera det). Allt tolkas helt på din egen enhet, inget konto eller plugin behövs.
 

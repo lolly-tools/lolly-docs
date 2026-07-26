@@ -66,7 +66,11 @@ A tady je ten zisk: importované rozvržení je obyčejná relace Layout Studia,
 
 ### Otevřená data a otevřené nástroje
 
-[Sada komunitních nástrojů](/info/builders.html) je open source a nezávislá na značce - QR kódy, mapy ulic, filtry, nástroje na ochranu soukromí - a jakmile ji aktivuješ, vykresluje se podle *tvé* značky. Nástrojům můžeš dodat i svá vlastní otevřená data: vlož nebo přetáhni tabulku **CSV** nebo **JSON** a opakující se pole nástroje se z ní vyplní, jeden hotový výstup na řádek.
+[Sada komunitních nástrojů](/info/builders.html) je open source a nezávislá na značce - QR kódy, mapy ulic, filtry, nástroje na ochranu soukromí - a jakmile ji aktivuješ, vykresluje se podle *tvé* značky.
+
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
+Nástrojům můžeš dodat i svá vlastní otevřená data: vlož nebo přetáhni tabulku **CSV** nebo **JSON** a opakující se pole nástroje se z ní vyplní, jeden hotový výstup na řádek.
 
 ## 3. Vytvoř něco a pak to sdílej nebo automatizuj
 
@@ -76,6 +80,10 @@ S aktivní značkou a materiálem po ruce vytvoří každý nástroj hotový sou
 - **Sdílej odkaz.** Stav každého nástroje je URL adresa, takže hotový výstup je reprodukovatelný a adresovatelný přes parametry - ulož si odkaz a znovu ho vygeneruj, kdykoli potřebuješ.
 - **Dělej to hromadně.** Řiď šablonu z tabulky v [hromadné mřížce](/info/exporting.html): jeden hotový výstup na řádek.
 - **Automatizuj to.** Stejné renderování běží z [CLI](/info/cli.html) i z [AI agenta](/info/ai-agents.html) - URL adresa je API.
+
+„URL adresa je API“ je myšleno doslova. Graf níže nikdo nekreslil: jeho typ, jeho nadpis i celá jeho datová tabulka se naťukaly do adresního řádku a stejný odkaz vykreslí stejný graf na jakémkoli zařízení.
+
+![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&filename=vt-d3-url-chart)
 
 ## Kam dál
 

@@ -10,10 +10,20 @@ Novo na plataforma? O **[Guia Rápido](/info/quickstart.html)** coloca uma marca
 
 ## Entenda a arquitetura
 
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+
 - **[Visão Geral](/info/overview.html)** - por que o Lolly existe, a separação entre engine/shell/tools, a bridge de capacidades e os compromissos arquiteturais já definidos.
 - **[Design Tokens](/info/design-tokens.html)** - o modelo de tokens DTCG em que as marcas são expressas, e como as ferramentas os consomem.
 
 ## Crie ferramentas
+
+Cada controle abaixo foi gerado a partir de um input declarado no `tool.json`. Você escreve a linha do manifest, o host desenha o widget, e o mesmo modelo alimenta a CLI e a URL.
+
+![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&format=svg&filename=aud-manifest-controls)
+
+E isso escala bem além de cinco controles. Dê a um input um `section` e o host o recolhe, então uma ferramenta de cinquenta inputs como o D3 Chart Studio ainda abre como uma pilha curta, com o resto guardado atrás de grupos nomeados.
+
+![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-d3-sections)
 
 - **[Criação de Ferramentas](/info/authoring-tools.html)** - o guia completo: manifest, template, estilos, hooks, composição e publicação.
 - **[Criação de Assets](/info/authoring-assets.html)** - assets do catálogo, tiers, locales, paletas, ícones temáveis e fontes.
@@ -35,6 +45,10 @@ Novo na plataforma? O **[Guia Rápido](/info/quickstart.html)** coloca uma marca
 - **[Configuração](/info/configuration.html)** - profiles, brand packs, capability gating, feature flags e validação do catálogo.
 
 ## Confiança e dados
+
+Direitos e autoria são inputs como quaisquer outros. O Embed & Track Image declara campos de autor, copyright, licença e contato, e a exportação grava tudo isso nos metadados do próprio arquivo e no manifest C2PA dele.
+
+![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-rights-fields)
 
 - **[Identidade de Content Credentials](/info/content-credentials-identity.html)** - assinatura emitida por uma CA para C2PA no dispositivo; contratos do engine e o runbook do operador.
 - **[Transferência de Dados](/info/data-transfer.html)** - o bundle `lolly-backup`: envelope, integridade e garantias entre shells.

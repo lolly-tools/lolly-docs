@@ -66,9 +66,17 @@ Her er gevinsten: en importert layout er en vanlig Layout Studio-økt, så så s
 
 ### Åpen data og åpne verktøy
 
-[Community-verktøysettet](/info/builders.html) er åpen kildekode og merkevareuavhengig - QR-koder, bykart, filtre, personvernverktøy - og det rendres mot *din* merkevare i det øyeblikket du aktiverer det. Mat verktøyene med din egen åpne data også: lim inn eller slipp en **CSV**- eller **JSON**-tabell, så fylles et verktøys gjentakende felter fra den, én ferdig ressurs per rad.
+[Community-verktøysettet](/info/builders.html) er åpen kildekode og merkevareuavhengig - QR-koder, bykart, filtre, personvernverktøy - og det rendres mot *din* merkevare i det øyeblikket du aktiverer det.
+
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
+Mat verktøyene med din egen åpne data også: lim inn eller slipp en **CSV**- eller **JSON**-tabell, så fylles et verktøys gjentakende felter fra den, én ferdig ressurs per rad.
 
 ## 3. Lag noe, del eller automatiser det
+
+«En URL er API-et» er bokstavelig ment. Diagrammet nedenfor har ingen tegnet: typen, overskriften og hele datatabellen ble skrevet inn i adressefeltet, og samme lenke rendrer samme diagram på hvilken som helst enhet.
+
+![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&filename=vt-d3-url-chart)
 
 Med en aktiv merkevare og materialet ditt klart, produserer hvert verktøy en ferdig fil:
 

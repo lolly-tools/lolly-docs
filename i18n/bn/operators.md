@@ -47,6 +47,16 @@ Lolly টুলের একটি শ্রেণি - প্রাইভেস
 
 এগুলো সবই অন-ডিভাইস ট্রান্সফর্ম: আপনার ফাইল বা ডেটা ভেতরে যায়, পরিষ্কার করা বাইট বেরিয়ে আসে, এবং **আপলোড করার জন্য কোনো সার্ভার নেই**। এগুলো সেই সাধারণ "পরিষ্কার করতে আপনার ফাইল কোনো অচেনা ওয়েবসাইটে আপলোড করুন" টুলের ইচ্ছাকৃত বিপরীত, যেটির দিকে একজন সদিচ্ছাসম্পন্ন কর্মচারী অন্যথায় হাত বাড়ায়।
 
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data)
+
+Text Helper ফাইলের বদলে টেক্সটের জন্য একই বোঝাপড়া। এটা সেই ট্যাব-ওয়ালা ওয়ার্কবেঞ্চ, যা না হলে কোনো কর্মী কোনো অপরিচিত সাইটে খুঁজতে যেত, আর এটা একটাও ইনপুট ঘোষণা করে না, কারণ এটা যা স্পর্শ করে তার কিছুই কখনও পেজ ছেড়ে যায় না।
+
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+
+Compress PDF এই সেটটা সম্পূর্ণ করে: বড় আকারের অ্যাটাচমেন্ট আপনার বেছে নেওয়া কোয়ালিটি সেটিং অনুযায়ী ছোট হয়ে যায় — যে মেশিনে সেটা আগে থেকেই আছে, সেখানেই।
+
+![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=ov2-compress-pdf)
+
 ## নির্ধারকতা ও পুনরুৎপাদনযোগ্যতা
 
 প্রতিটি টুল ইনপুট একটি URL প্যারামিটার হিসেবে প্রকাশযোগ্য, এবং একই ইনপুট একই ফাইল তৈরি করে। এর দুটি অপারেটর পরিণতি রয়েছে:
@@ -54,7 +64,13 @@ Lolly টুলের একটি শ্রেণি - প্রাইভেস
 - **একটি URL-ই আর্টিফ্যাক্ট।** লিংকটি কমিট করুন, চাহিদা অনুযায়ী অ্যাসেট পুনরায় তৈরি করুন - Git-এ কোনো বাইনারি চেক-ইন নেই, চ্যাটে "সর্বশেষ সংস্করণ" খোঁজাখুঁজি নেই। অ্যাসেট ও টুল ID স্থায়ী চুক্তি, তাই আজ তৈরি করা একটি লিংক পরেও রিজলভ হয়।
 - **CLI হলো একই রেন্ডার পথ** যা GUI-র, তাই বিল্ড পাইপলাইন ও অ্যাপ কখনো বিচ্যুত হয় না। বিল্ড টাইমে OG ইমেজ, সোশ্যাল কার্ড এবং ডেটা ভিজ্যুয়াল পুনরুৎপাদনযোগ্যভাবে তৈরি করুন।
 
+Prompt to Image নির্ধারকতার সবচেয়ে সরল রূপ: টেক্সটটাই পুরো ইনপুট, টাইপসেট করা ছবিটাই পুরো আউটপুট, আর একই টেক্সট সবসময় একই ভাবে বসে।
+
+![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-prompt-to-image)
+
 ## প্রোভেন্যান্স ও Content Credentials
+
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
 
 এক্সপোর্টগুলো **Content Credentials** বহন করতে পারে - একটি স্বাক্ষরিত [C2PA](https://c2pa.org) ম্যানিফেস্ট যা ফাইলের বাইটের একটি হ্যাশের সাথে আবদ্ধ। ফাইলে পরবর্তী যেকোনো পরিবর্তন সিলটি ভেঙে দেয়, তাই একটি C2PA-সচেতন যাচাইকারী **পরিবর্তন ক্রিপ্টোগ্রাফিকভাবে, অফলাইনে শনাক্ত করে**। ক্রেডেনশিয়ালটি টেম্পার-*এভিডেন্ট*: এটি টেম্পারিং প্রতিরোধ না করে বরং তা চিহ্নিত করে, যা ঠিক এই কারণেই সম্পূর্ণ অফলাইন যাচাই সম্ভব করে তোলে।
 
@@ -68,6 +84,8 @@ Lolly টুলের একটি শ্রেণি - প্রাইভেস
 > **ইন্টারঅপারেবিলিটি নোট।** Lolly আজ নিজের ক্রেডেনশিয়াল এবং অনেক তৃতীয়-পক্ষের ক্রেডেনশিয়াল অফলাইনে যাচাই করে, যার মধ্যে রয়েছে অন্যান্য প্রোডিউসারের C2PA claim **v2** ম্যানিফেস্ট পড়াও। একটি ইন্টারঅপ আইটেম এখনও চলমান: WebM - যেটির এখনও কোনো মানসম্মত C2PA ম্যাপিং নেই, তাই Lolly ম্যানিফেস্টটিকে একটি Matroska অংশ হিসেবে সংযুক্ত করে (তৃতীয়-পক্ষের টুল Lolly-র MP4 সরাসরি যাচাই করে; মান স্থির হলে WebM অনুসরণ করবে)।
 
 ## এনক্রিপশন ও পাসওয়ার্ডিং
+
+![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&format=svg&filename=aud-pdf-lock)
 
 যে ফাইলগুলো লক অবস্থায় ভ্রমণ করতেই হবে, তার জন্য সবকিছু অন-ডিভাইসে ঘটে:
 

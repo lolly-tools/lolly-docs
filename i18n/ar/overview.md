@@ -18,6 +18,8 @@
 
 ### أين تقع في المشهد
 
+![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-gallery-landscape)
+
 | القدرة | Canva | بوابات العلامة التجارية | Illustrator | Figma / Penpot | **Lolly** |
 |---|---|---|---|---|---|
 | توليد المحتوى على نطاق واسع | جزئي | ✗ | ✗ | ✗ | **✓** |
@@ -37,6 +39,40 @@
 **استخدمه من أجل:** التوليد السريع للأصول الإبداعية المشغلة — بطاقات الفعاليات، وشارات الأسماء، والتواقيع، وتنبيهات CVE، ورموز QR، وبطاقات التواصل الاجتماعي، وملصقات الشحنات، والتقارير المنظمة.
 
 **لا تستخدمه من أجل:** المحتوى البطولي المخصص.
+
+---
+
+## دورة حياة الحملة
+
+![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-lifecycle-chart)
+
+أوضح طريقة لرؤية ماهية Lolly ليست قائمة ميزات — بل تتبع أصل واحد وهو ينتقل من يد إلى يد. تابع بطاقة حملة واحدة مترجمة في مسيرها عبر المؤسسة:
+
+1. **المبدع يضع القواعد.** يؤلف مصمم القالب الأساسي في Layout Studio، مثبتا في الكود طبوغرافيا العلامة التجارية ومتغيرات ألوانها. هو لا يصنع بطاقة واحدة — بل ينجز العمل التأسيسي *مرة واحدة* حتى لا يعود مضطرا أبدا إلى ترجمة كل نسخة يدويا.
+2. **المطور يوسع نطاقها.** يوصل القالب نفسه بخط أنابيب ليلي عبر CLI، فيتولد مخطط جديد أو نسخة بلغة جديدة تلقائيا — دون أن يعيد أي مصمم فتح الملف.
+3. **المنتج يستخدمها فحسب.** يفتح مندوب مبيعات، دون اتصال على متن طائرة، الأداة نفسها فيولد عرضا متسقا تماما مع العلامة التجارية لاجتماع مع عميل. لا مهارة تصميم، ولا شبكة، ولا انتظار.
+
+«المخطط الجديد» في الخطوة الثانية هو تصيير مثل هذا، أنتج من سلسلة بيانات وحفنة من المعاملات من دون أن يفتح أحد ملف تصميم:
+
+المقصود ليس أن Lolly جيدة للمصممين *و* جيدة للمطورين *و* جيدة للمبيعات، كل واحد على حدة في فراغ. إنها **سباق تتابع**: عمل المبدع الأول يوسعه المطور، وهذا بدوره يمكن المنتج. التجربة السهلة للمندوب غير التقني على متن الطائرة *ممكنة* فقط بفضل الصرامة التي وضعها المصمم ونشرها المطور.
+
+هذا هو مضاعف القوة. Lolly ليست درجا من أدوات منفصلة لأدوار منفصلة — بل دورة حياة أصل حتمية واحدة يلمسها كل دور، وكل يد تمر بها تضاعف قيمة ما قبلها.
+
+---
+
+## موافقة واحدة، عشرة آلاف أصل
+
+![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&format=svg&filename=ov2-batch-grid)
+
+لأن الموافقة تسكن في الأداة لا في الملف (راجع [كيف يقارن Lolly بغيره](/info/positioning.html))، يتوقف التوسع عن كونه مشكلة مراجعة. اعتمد أداة بطاقة اجتماعية مترجمة مرة واحدة، ثم ولد **10000 أصل بـ 12 لغة** من جدول بيانات — ولن يحتاج أي منها إلى فحص امتثال جديد من الشؤون القانونية أو من فريق العلامة التجارية، لأن القالب الذي جاءت كلها منه كان معتمدا سلفا.
+
+الأداة الحتمية نفسها تصل إلى هذا النطاق بثلاث طرق، وكلها تنتج المخرجات نفسها المعتمدة سلفا:
+
+- **شخص، داخل التطبيق.** شبكة الدفعات `/pro`: الصق الصفوف أو استوردها، واحصل على أصل مكتمل لكل صف، ونزل ملف zip. لا مهارة تصميم، ولا تذكرة، ولا انتظار.
+- **مطور، من سطر الأوامر.** تشغل CLI المحرك *نفسه* ومسار التصيير *نفسه* بلا واجهة، فيمكن تسلسل الأداة على الصفوف العشرة آلاف كلها في سكربت أو خط أنابيب ليلي. نداء `lolly <tool> --field=…` داخل حلقة هو كامل التكامل.
+- **نظام أو وكيل ذكاء اصطناعي، عبر MCP.** الأداة نفسها تدار برمجيا، بالدقة نفسها وبنطاق أوسع — لأن الآلة لا تمل بينما تتدفق آلاف الملفات.
+
+مجموعة واحدة من قيود العلامة التجارية، يثبتها مصمم مرة واحدة؛ وثلاثة مسارات إلى المخرجات نفسها المعتمدة سلفا — والمسار الآلي هو الأبعد نطاقا، لأنه لا يتعب بينما تتدفق الملفات.
 
 ---
 
@@ -190,6 +226,11 @@ lolly/
 تعمل المنصة عبر عدة واجهات — تطبيق الويب PWA، و Tauri لسطح المكتب والجوال، وواجهة CLI القابلة للبرمجة النصية، وواجهة TUI التفاعلية. وكلها تستخدم المحرك نفسه وملفات الأدوات نفسها.
 
 ### الويب (PWA) — التوزيع الأساسي
+
+![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&format=svg&filename=aud-web-split)
+
+![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&format=png&filename=ov2-phone-audiogram)
+
 مستضاف على عنوان URL تتحكم فيه SUSE. يعمل دون اتصال متى ما خزن عامل الخدمة الأدوات والأصول مؤقتا. هنا سيستخدم المنصة معظم الموظفين والموردين والشركاء. لا حاجة إلى حساب — تخزن الحالة في IndexedDB لكل جهاز.
 
 غلاف الويب متجاوب انطلاقا من تخطيط واحد. على سطح المكتب تكون الأداة شريطا جانبيا لعناصر التحكم قابلا لتغيير الحجم بجوار منصة معاينة بتنقل أصيل للوحة اللمس داخل لوحة الرسم (Cmd/Ctrl مع عجلة التمرير أو القرص للتكبير حول المؤشر، والسحب بمفتاح المسافة أو بالزر الأوسط للتحريك، والمفاتيح `0`/`1`/`+`/`−`، وواجهة HUD للملاءمة/%). على الجوال (≤640px) تتحول عناصر التحكم إلى لوحة مثبتة في الأعلى بمقبض سحب يثبت عند أوضاع الإطلالة/النصف/الكامل (النقر يبدل بينها) فوق معاينة ثابتة بملء الشاشة، ويفتح زر **التصيير** العائم عناصر تحكم **التصدير** في نافذة منبثقة سفلية. تحصل شاشات اللمس على التكبير بالقرص والتحريك بالسحب على المعاينة. مسار التصيير وعناصر تحكم التصدير متطابقان في الحالتين — إطار الواجهة وحده هو الذي يعاد ترتيبه.
@@ -200,6 +241,9 @@ lolly/
 تطبيق أصلي مغلف (بصمة صغيرة بفضل Tauri). يوفر إتاحة كاملة دون اتصال، ووصولا إلى نظام الملفات للأدوات المعتمدة على CLI ‏(PDF Smasher و Font Outliner)، ووصولا إلى الكاميرا. مجدول لتحسين الأدوات في منتصف 2026.
 
 ### CLI
+
+الأداة نفسها بعرض الهاتف، من دون تخطيط ثان يجب صيانته: تصبح عناصر التحكم ورقة منسدلة في الأعلى، وتحتل المعاينة الشاشة كاملة، وتطفو كبسولة التصيير فوقها.
+
 `lolly <tool-id> [--input=value ...] --output=file.png`
 
 يستطيع مستخدمو سطح المكتب استدعاء كثير من الأدوات من الطرفية. يحمل غلاف CLI المحرك نفسه، وينشئ DOM عبر jsdom، ويشغل مسار التصيير نفسه، ويكتب الملف. وضع URL هو وسيلة النقل — CLI ليست تنفيذا منفصلا. وهذا يضمن تطابق مخرجات CLI و GUI.
@@ -216,9 +260,13 @@ lolly qr-code                # lists inputs for that tool
 
 النظير التفاعلي لواجهة CLI: تطبيق طرفية بملء الشاشة يعتمد لوحة المفاتيح أولا (مبني على Ink) لتصفح الأدوات وملء المدخلات وحفظ المشاريع والتصدير — كل ذلك دون واجهة رسومية. جسر المضيف فيه **يعيد استخدام تنفيذ CLI** للتنسيقات الخالية من DOM ‏(SVG/EMF/EPS/HTML + نص/بيانات)، ويضيف حالة على القرص تحت `~/.lolly` مع معاينة مضمنة اختيارية. وفوق ذلك لديه **طبقة تصيير بالمتصفح**: نسخة Chromium محدودة النطاق تعمل بلا واجهة (النسخة نفسها التي يثبتها خادم MCP) تنتج الصور النقطية/PDF/الفيديو والتقاط عناوين URL الحية عند الطلب — إذ تشغل نسخة مبنية من غلاف الويب فتكون المخرجات متطابقة، ولا تنطلق إلا عند أول تصدير لتنسيق من هذا النوع. وهكذا تعمل `url-shot` (مع القص وإعادة التلوين و PDF/SVG المتجهية) وكل أدوات الصور النقطية/pdf في الطرفية أيضا. راجع [دليل TUI](/info/tui.html).
 
+وأيا كان السطح الذي تعمل عليه، فتبويب القدرات في لوحة التحكم هو الخريطة الكاملة لما تعلن المنصة أنها قادرة عليه، مجمعا ومقروءا من دون فتح أي أداة.
+
 ---
 
 ## فئات الأدوات
+
+![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-utilities)
 
 توسم الأدوات بحقل `category` في بيان كل منها لأغراض التجميع في المعرض.
 
@@ -247,6 +295,8 @@ lolly qr-code                # lists inputs for that tool
 هذه القرارات محسومة. وتغيير أي منها مهمة كبرى — فهي تشكل كل قرار آخر في قاعدة الكود.
 
 ### 1. أدوات تصريحية، مع منفذ هروب أمري
+
+![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-street-map-controls)
 
 الأداة عبارة عن بيان (`tool.json`) + قالب (`template.html`) + ملف `hooks.js` اختياري.
 
@@ -293,6 +343,10 @@ lolly qr-code                # lists inputs for that tool
 
 ### 5. وضع URL مواطن من الدرجة الأولى
 
+![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&format=svg&filename=aud-url-mode-qr)
+
+![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=%23tool-canvas&filename=ov2-url-palette)
+
 يجب أن يكون كل مدخل قابلا للتعبير عنه كمعامل URL:
 
 ```
@@ -310,6 +364,8 @@ lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H
 يستطيع المستخدمون حفظ خانات تحرير مسماة متعددة لكل أداة والعودة إلى كل جلسة لاحقا. لا يلزم إنشاء حساب؛ فالحالة لكل جهاز. ولأن الجسر هو الدرز الوحيد، فإن تلك الحالة المحلية للجهاز *قابلة للنقل* أيضا: يقرأ `shells/web/src/data-transfer.ts` كل شيء مرة أخرى عبر `host.profile`/`host.state`/`host.assets` إلى ملف zip واحد باسم `lolly-backup` يستورد على أي تثبيت آخر — الجواب دون اتصال على سؤال "الانتقال إلى جهاز جديد" الذي لا يحتاج خادما (المواصفة الكاملة: `docs/data-transfer.md`). تكامل SUSE ID (المزامنة متعددة الأجهزة) معلم مستقبلي يبنى فوق هذا.
 
 ### 7. وسوم النضج تجيب بنيويا عن خطر "الاعتماد من العلامة التجارية"
+
+ولأن كل مدخل يسافر في الرابط، فتغيير معامل واحد يعني أصلا جاهزا مختلفا. هذه اللوحة كلها ليست إلا لونا بذريا وتناغما وعدد درجات:
 
 تصرح كل أداة بالحقل `status: official | community | experimental` في بيانها. يرتب المعرض حسب الحالة. الأدوات التجريبية توسم تصديراتها بعلامة مائية تلقائيا — تطبق العلامة المائية بواسطة `host.export.render`، لا بواسطة الأداة، فلا يستطيع مؤلف أداة غير رسمية التنصل منها.
 
@@ -334,6 +390,8 @@ lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H
 
 ### 10. الأدوات تركب أدوات
 
+![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-slides-deck)
+
 تستطيع أداة تضمين تصيير أداة **أخرى** دون أي استيراد من أداة إلى أداة — التركيب يحله المحرك، لا كود الأدوات أبدا. هناك سطحان:
 
 - **بيان تصريحي** — `composes: [{ id, tool, inputs, format?, width?, height? }]`. يقوم المحرك بتصيير الابن المسمى ويضع النتيجة في القالب الخالي من المنطق كـ `{{asset <id>}}`. تركب `event-name-badge` أداة `qr-code` كملف SVG اليوم.
@@ -354,6 +412,10 @@ lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H
 ---
 
 ## دورة الحياة، من البداية إلى النهاية
+
+![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&format=svg&filename=aud-export-popup)
+
+أداة Slides مبنية على هذا السطح الثاني: أي خانة في أي شريحة يمكن أن تحتوي أداة Lolly أخرى بدلا من صورة.
 
 يفتح مستخدم `lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H`:
 

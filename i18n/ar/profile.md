@@ -8,6 +8,10 @@
 
 ## ماذا يوجد في الملف الشخصي
 
+التفضيلات هي الجزء الوحيد الذي يغير شكل التطبيق أمامك. بطاقات السمات معاينات حية، وتطبق لحظة اختيارك إحداها، على هذا الجهاز وحده.
+
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
+
 ![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
 
 | الجزء | ما هو |
@@ -28,6 +32,8 @@
 
 ### كفرد
 
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+
 الوضع الافتراضي. الملف الشخصي هو أنت: اسمك وبريدك الإلكتروني وصورتك الشخصية. اضبطه مرة واحدة فيمتلئ توقيعك وشارتك وشعار مؤتمرك من تلقاء نفسها. هذا كل ما سيحتاجه معظم الناس.
 
 ### كفريق
@@ -42,6 +48,10 @@
 
 ## تثبيت واحد، ملف شخصي نشط واحد — وكثير يمكنك الاحتفاظ به
 
+التخزين هو المكان الذي يسكنه شطرا ذلك: العداد يحاسب على كل بايت يحتفظ به هذا التثبيت، فئة فئة، والأزرار تحته هي وسيلتك لمسحه أو حمله معك.
+
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
+
 في أي لحظة، للتثبيت **ملف شخصي نشط واحد** — التفاصيل التي تراها الأداة الآن. لا يوجد مبدل ملفات شخصية داخل التطبيق؛ بدلا من ذلك، كل ملف شخصي **حزمة قابلة للنقل** (ملف `.zip` واحد، انظر [أدناه](#moving-a-profile-to-a-new-device)). هذه عمدا الآلية نفسها المستخدمة للانتقال إلى جهاز جديد — الملف الشخصي ملف يمكنك حفظه ونسخه وتحميله.
 
 فإذا كنت فعلا تتنقل بين عدة سياقات (أنت، وفريقك، وقبعة مدير الفعاليات)، فاحتفظ بعدة حزم وحمل ما تحتاجه:
@@ -53,6 +63,8 @@
 > احتفظ بحزمة لكل سياق وأعد تسمية الملفات بما هي عليه (`LollyTools-events-2026.zip` و `LollyTools-me.zip`). الملف *هو* الملف الشخصي.
 
 ## نقل ملف شخصي إلى جهاز جديد
+
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
 
 لأن الملف الشخصي محلي بالكامل، فالطريقة الوحيدة لوضعه على تثبيت فارغ — حاسوب محمول جديد، أو متصفح أعيد ضبطه للتو، أو جهاز زميل، أو جهاز دون اتصال — هي **حمل الملف**. لا يوجد تسجيل دخول يستعيده لك، وهذا هو المقصود: لم يغادر شيء جهازك أصلا.
 
@@ -68,6 +80,8 @@
 للاطلاع على تخطيط الحزمة الدقيق وسياسة الإصدارات وقواعد السلامة، راجع **[نقل البيانات](/info/data-transfer.html)**؛ وللشرح الكامل من البداية إلى النهاية، **[استخدام Lolly ← الانتقال إلى جهاز آخر](/info/using.html#moving-to-another-device)**.
 
 ## كيف تستخدم الأدوات ملفك الشخصي
+
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
 
 الأداة لا تفعل أبدا سوى *الملء المسبق* لحقول الملف الشخصي التي بنيت صراحة لربطها:
 

@@ -10,10 +10,20 @@ Mới làm quen với nền tảng? **[Quickstart](/info/quickstart.html)** sẽ
 
 ## Tìm hiểu kiến trúc
 
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+
 - **[Tổng quan](/info/overview.html)** - vì sao Lolly tồn tại, sự tách biệt engine/shell/tools, capability bridge, và các cam kết kiến trúc đã chốt.
 - **[Token Thiết kế](/info/design-tokens.html)** - mô hình token DTCG mà các brand được biểu diễn qua đó, và cách tool sử dụng chúng.
 
 ## Viết tool
+
+Mọi điều khiển bên dưới đều được sinh ra từ một input đã khai báo trong `tool.json`. Bạn viết dòng manifest, host vẽ ra widget, và cùng một model đó điều khiển cả CLI lẫn URL.
+
+![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&format=svg&filename=aud-manifest-controls)
+
+Cách này còn mở rộng xa hơn năm điều khiển. Gán cho một input một `section` và host sẽ gấp nó lại, nên một công cụ có năm mươi input như D3 Chart Studio vẫn mở ra dưới dạng một danh sách ngắn, phần còn lại được xếp sau các nhóm có tên.
+
+![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-d3-sections)
 
 - **[Viết Tool](/info/authoring-tools.html)** - hướng dẫn đầy đủ: manifest, template, styles, hook, composition, và publishing.
 - **[Viết Asset](/info/authoring-assets.html)** - asset trong catalog, tier, locale, palette, icon có thể theo theme (themable), và font.
@@ -35,6 +45,10 @@ Mới làm quen với nền tảng? **[Quickstart](/info/quickstart.html)** sẽ
 - **[Cấu hình](/info/configuration.html)** - profile, brand pack, capability gating, feature flag, và catalog validation.
 
 ## Tin cậy & dữ liệu
+
+Quyền và quyền tác giả cũng là input như mọi input khác. Embed & Track Image khai báo các trường người tạo, bản quyền, giấy phép và liên hệ, còn bản xuất sẽ ghi chúng vào chính metadata của tệp và vào manifest C2PA của nó.
+
+![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-rights-fields)
 
 - **[Danh tính Content Credentials](/info/content-credentials-identity.html)** - chữ ký do CA cấp cho C2PA on-device; các hợp đồng (contract) của engine và runbook dành cho operator.
 - **[Truyền dữ liệu](/info/data-transfer.html)** - bundle `lolly-backup`: envelope, tính toàn vẹn (integrity), và đảm bảo cross-shell.

@@ -6,6 +6,8 @@
 
 ## टूल खोलना
 
+![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Fct%3Dhorizontal-bar%26t%3DQuarterly%2520revenue%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&format=svg&filename=vt-tool-split-view)
+
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
 ![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
@@ -17,6 +19,8 @@
 > कुछ टूल (जैसे **Layout Studio**) इसके बजाय एक **फ़्री कैनवस** के रूप में खुलते हैं — एक बिना-क्रोम, सीधे हाथ से संभालने वाली सतह, जहाँ आप टेक्स्ट, आकृतियों और इमेज के बॉक्स खींचते, आकार बदलते, घुमाते और स्नैप करते हैं, और टेक्स्ट को वहीं संपादित करने के लिए डबल-क्लिक करते हैं। यह हर दूसरे टूल की तरह उसी रेंडर पथ से एक्सपोर्ट होता है, इसलिए कैनवस ही *फ़ाइल है*। नीचे [फ़्री कैनवस](#the-free-canvas-layout-studio) देखें।
 
 ## कैनवस (प्रीव्यू)
+
+![The zoom HUD in the corner of the canvas - minus, the live percentage, plus, Fit, then the theme and sound toggles](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=.stage-nav%7Bopacity%3A1!important%7D&cropSelector=.stage-nav&format=svg&filename=use-zoom-hud)
 
 प्रीव्यू हमेशा ठीक वही दिखाता है जो एक्सपोर्ट होगा।
 
@@ -48,12 +52,16 @@
 
 ## फ़ोन पर
 
+![A tool on a phone-width screen - controls as a sheet up top, the generated palette filling the preview below, and the render pill floating bottom-centre](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3Df97316%26harmony%3Dadjacent-3%26steps%3D9&width=430&height=900&dpi=192&waitMs=2200&format=svg&filename=vt-phone-palette)
+
 संकरी स्क्रीन पर लेआउट एक कॉलम में ढल जाता है:
 
 - **कंट्रोल ऊपर एक शीट बन जाते हैं**, जिसके निचले किनारे पर एक **ड्रैग ग्रिप** होती है। ग्रिप को खींचकर आकार बदलें — यह **पीक / आधा / पूरा** पर स्नैप होती है — या ग्रिप पर **टैप** करके संक्षिप्त ↔ विस्तृत के बीच टॉगल करें। प्रीव्यू नीचे की जगह भरता है और संपादन के दौरान दिखता रहता है।
 - एक तैरता **Render** बटन **Export** शीट खोलता है — फ़ॉर्मैट, आकार, कॉपी, सेव और डाउनलोड के सारे कंट्रोल एक ही जगह। बैकड्रॉप पर टैप करके इसे बंद करें।
 
 ## कंट्रोल (इनपुट)
+
+![A tool's control stack - a text field, colour triggers and a slider, and nothing else the author chose to lock down](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-inputs&format=svg&filename=use-tool-inputs)
 
 टूल केवल वही इनपुट दिखाते हैं जिन्हें बदलना अपेक्षित है — बाकी सब कुछ (रंग, लेआउट, टाइपोग्राफ़ी, लॉजिक) टूल के लेखक द्वारा तय होता है, इसलिए आप जो भी बनाएँ वह लेखक के तय किए नियमों पर खरा उतरता है। इनपुट में टेक्स्ट, स्लाइडर, कलर पिकर, ड्रॉपडाउन, तारीख़ें, इमेज पिकर और दोहराए जाने वाले रो-समूह शामिल हैं। कुछ इनपुट समेटे जा सकने वाले खंडों में समूहित होते हैं।
 
@@ -66,6 +74,8 @@
 आपका हेडशॉट और विवरण **केवल इसी डिवाइस पर** रहते हैं। एक प्रोफ़ाइल सिर्फ़ आप ही नहीं हो सकती — कोई टीम या ऐसी भूमिका भी, जिसमें आप कभी-कभी आते हैं। पूरी तस्वीर के लिए — एक से अधिक प्रोफ़ाइल रखने समेत — **[प्रोफ़ाइल](/info/profile.html)** देखें।
 
 ## सेव करना और जारी रखना
+
+![The two-half render pill - an up arrow that opens the export panel, and a tick that saves the session in place](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=%23tool-inputs%7Bdisplay%3Anone%7D&cropSelector=.render-pill&format=svg&filename=use-render-pill)
 
 मौजूदा इनपुट को उस टूल के सेशन के रूप में सहेजने के लिए **Save** क्लिक करें। हर टूल के लिए कई नामित सेशन रखे जा सकते हैं; हर टूल का **Continue** बटन आपका सबसे हालिया सेशन फिर से खोलता है, और **हिस्ट्री बटन** (ऊपर-दाएँ, आपकी प्रोफ़ाइल के बगल में) सभी टूल के हर सहेजे गए सेशन की सूची दिखाता है। सेशन डिवाइस-लोकल होते हैं। इन्हें व्यवस्थित करने के लिए **Projects** खोलें (नीचे देखें)।
 
@@ -108,6 +118,8 @@
 - **सफ़ाई रखें।** किसी एसेट को किसी दूसरे समूह में पुनर्वर्गीकृत करें, जिस साझा ब्रांड एसेट का आप उपयोग नहीं करते उसे छिपा दें (**Show hidden** से वापस लाएँ), या अपने अपलोड सीधे हटा दें।
 
 ### अपना पैलेट और फ़ॉन्ट कहीं भी ले जाएँ
+
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 कैटलॉग का **Swatches** पैनल सिर्फ़ देखने भर के लिए नहीं है — किसी रंग पर क्लिक करके उसे कॉपी करें, या **पूरा ब्रांड पैलेट** उस फ़ॉर्मैट में **डाउनलोड करें** जिसे आपका दूसरा टूल समझता है:
 
@@ -154,6 +166,8 @@ Lolly का लक्ष्य है कि इसका उपयोग ह�
 पूरी जानकारी के लिए **[एक्सपोर्ट और फ़ॉर्मैट](/info/exporting.html)** देखें — फ़ॉर्मैट चुनना, आउटपुट आकार और प्रिंट इकाइयाँ, पारदर्शिता, वीडियो, और कॉपी/शेयर। संक्षेप में: फ़ॉर्मैट चुनें, ज़रूरत हो तो आकार सेट करें, और **Download** करें (या क्लिपबोर्ड पर **Copy**)।
 
 ## Batch (Pro) मोड
+
+![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&format=svg&filename=use-batch-toolbar)
 
 पावर उपयोगकर्ताओं के लिए, **Batch** (गैलरी से लिंक किया गया, Pro फ़ीचर फ़्लैग के पीछे, जो डिफ़ॉल्ट रूप से चालू है) एक साथ कई रूपांतर रेंडर करता है — एक ग्रिड, जिसकी हर पंक्ति इनपुट का एक सेट है, और सब साथ-साथ एक्सपोर्ट होते हैं। किसी कार्ड को दर्जन भर भाषाओं में लोकलाइज़ करने या हर आकार का वैरिएंट एक ही बार में बनाने के लिए आदर्श। पंक्तियाँ टाइप करके, सीधे स्प्रेडशीट से पेस्ट करके, या CSV इंपोर्ट करके भरें (एक CSV वापस एक्सपोर्ट भी कर सकते हैं), और हर पंक्ति के लिए फ़ॉर्मैट, आकार और आउटपुट फ़ाइलनाम सेट करें। पूरे ग्रिड को नामित **batch session** के रूप में सहेजें, जो गैलरी से फिर से खुलता है, और हर पंक्ति को एक ही `.zip` में डाउनलोड करें।
 

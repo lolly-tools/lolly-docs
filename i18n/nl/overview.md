@@ -18,6 +18,8 @@ Het resultaat is **overvloed**: elk event heeft correcte bewegwijzering, elke CV
 
 ### Waar het past in het landschap
 
+![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-gallery-landscape)
+
 | Mogelijkheid | Canva | Merkportals | Illustrator | Figma / Penpot | **Lolly** |
 |---|---|---|---|---|---|
 | Massale contentgeneratie | gedeeltelijk | ✗ | ✗ | ✗ | **✓** |
@@ -37,6 +39,40 @@ De vorm van het gat is duidelijk: niets in het bestaande landschap biedt ons con
 **Gebruik het voor:** Snelle generatie van geoperationaliseerd creatief werk - eventtegels, naambadges, handtekeningen, CVE-meldingen, QR-codes, social cards, verzendlabels, gestructureerde rapporten.
 
 **Gebruik het niet voor:** Maatwerk hero-content.
+
+---
+
+## De levenscyclus van een campagne
+
+![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-lifecycle-chart)
+
+De helderste manier om te zien wat Lolly is, is geen functielijst - het is één asset volgen terwijl het van hand tot hand gaat. Kijk hoe één gelokaliseerde campagnekaart door de organisatie beweegt:
+
+1. **De creative stelt de regels vast.** Een ontwerper maakt de basistemplate in Layout Studio en codeert de typografie- en kleurvariabelen van het merk hard. Hij maakt niet één kaart - hij doet het fundamentele werk *één keer*, zodat hij het nooit meer met de hand hoeft te lokaliseren.
+2. **De developer schaalt het op.** Precies diezelfde template wordt via de CLI in een nachtelijke pipeline gehangen, zodat een frisse grafiek of een nieuwe taalvariant automatisch wordt gegenereerd - geen ontwerper opent het bestand opnieuw.
+3. **De producer gebruikt het gewoon.** Een salesmedewerker opent offline in het vliegtuig dezelfde tool en genereert een perfect merkvaste deck voor een klantgesprek. Geen ontwerpvaardigheid, geen netwerk, geen wachttijd.
+
+De "frisse grafiek" in stap twee is een render zoals deze, gemaakt uit een datastring en een handvol parameters, zonder dat iemand een ontwerpbestand opent:
+
+Het punt is niet dat Lolly goed is voor ontwerpers *en* goed voor developers *en* goed voor sales, elk in een vacuüm. Het is een **estafette**: het beginwerk van de creative wordt opgeschaald door de developer, wat op zijn beurt de producer in staat stelt om te leveren. De moeiteloze ervaring voor de niet-technische medewerker in het vliegtuig is alleen *mogelijk* door de striktheid die de ontwerper vastlegde en de developer uitrolde.
+
+Dat is de krachtvermenigvuldiger. Lolly is geen lade met losse tools voor losse rollen - het is één deterministische levenscyclus van een asset die elke rol aanraakt, en elke hand waar het door gaat vermenigvuldigt de waarde van de vorige.
+
+---
+
+## Eén goedkeuring, tienduizend assets
+
+![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&format=svg&filename=ov2-batch-grid)
+
+Omdat de goedkeuring in de tool zit en niet in het bestand (zie [Hoe Lolly zich verhoudt](/info/positioning.html)), is schaal geen reviewprobleem meer. Keur een tool voor gelokaliseerde social cards één keer goed en genereer daarna **10.000 assets in 12 talen** uit een spreadsheet - en geen enkele daarvan heeft een nieuwe compliancecheck van legal of brand nodig, want de template waar ze allemaal uit komen was al goedgekeurd.
+
+Dezelfde deterministische tool haalt die schaal op drie manieren, die alle drie identieke, voorgekeurde output leveren:
+
+- **Een mens, in de app.** Het batchraster op `/pro`: plak of importeer de rijen, krijg één afgerond asset per rij, download de zip. Geen ontwerpvaardigheid, geen ticket, geen wachttijd.
+- **Een developer, vanaf de commandline.** De CLI draait *dezelfde* engine en *hetzelfde* renderpad headless, zodat de tool in een script of nachtelijke pipeline over alle 10.000 rijen kan worden afgelopen. Eén `lolly <tool> --field=…`-aanroep in een lus is de hele integratie.
+- **Een systeem of een AI-agent, via MCP.** Dezelfde tool programmatisch bediend, met dezelfde kwaliteit en op nog grotere schaal - want een machine verveelt zich niet terwijl duizenden bestanden binnenrollen.
+
+Één set merkbeperkingen, één keer vastgelegd door een ontwerper; drie routes naar identieke voorgekeurde output - en de machineroute schaalt het verst van allemaal, want die wordt nooit moe terwijl de bestanden binnenrollen.
 
 ---
 
@@ -190,6 +226,11 @@ lolly/
 Het platform draait op meerdere oppervlakken - web-PWA, Tauri desktop/mobile, de scriptbare CLI en de interactieve TUI. Ze gebruiken allemaal dezelfde engine en dezelfde toolbestanden.
 
 ### Web (PWA) - primaire distributie
+
+![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&format=svg&filename=aud-web-split)
+
+![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&format=png&filename=ov2-phone-audiogram)
+
 Gehost op een door SUSE beheerde URL. Werkt offline zodra de service worker tools en assets heeft gecachet. Hier zullen de meeste medewerkers, leveranciers en partners het platform gebruiken. Geen account nodig - status wordt per apparaat opgeslagen in IndexedDB.
 
 De webshell is responsive vanuit één layout. Op desktop is een tool een verstelbare zijbalk met bedieningselementen naast een voorvertoningsvlak, met trackpad-native canvasnavigatie (Cmd/Ctrl-scroll of knijpen om te zoomen rond de cursor, Spatie- of middelklik-slepen om te pannen, de toetsen `0`/`1`/`+`/`−`, en een Fit/%-HUD). Op mobiel (≤640px) worden de bedieningselementen een bovenaan verankerde sheet met een sleepgreep die vastklikt op kijkje / half / volledig (tikken wisselt), boven een statische, schermvullende voorvertoning, en een zwevende **Render**-knop opent de **Export**-bediening in een bottom-sheet-popup. Touch krijgt knijp-zoom en sleep-pan op de voorvertoning. Het renderpad en de exportbediening zijn in beide gevallen identiek - alleen de chrome herschikt.
@@ -200,6 +241,9 @@ De webshell is responsive vanuit één layout. Op desktop is een tool een verste
 Verpakt als native app (kleine footprint via Tauri). Biedt volledige offline beschikbaarheid, bestandssysteemtoegang voor CLI-afhankelijke tools (PDF Smasher, Font Outliner), en cameratoegang. Gepland voor tooling-uitbreiding medio 2026.
 
 ### CLI
+
+Dezelfde tool op telefoonbreedte, zonder een tweede lay-out om te onderhouden: de besturingselementen worden een blad bovenaan, de preview vult het hele scherm, en de renderknop zweeft eroverheen.
+
 `lolly <tool-id> [--input=value ...] --output=file.png`
 
 Desktopgebruikers kunnen veel tools vanaf de terminal aanroepen. De CLI-shell laadt dezelfde engine, maakt een jsdom-DOM aan, doorloopt hetzelfde renderpad en schrijft het bestand weg. URL-modus is het transport - de CLI is geen aparte implementatie. Dit garandeert dat CLI- en GUI-uitvoer identiek zijn.
@@ -216,9 +260,13 @@ lolly qr-code                # toont inputs voor die tool
 
 De interactieve tegenhanger van de CLI: een volledig-scherm, toetsenbord-eerst terminal-app (gebouwd op Ink) om tools te doorbladeren, invoer in te vullen, projecten op te slaan en te exporteren - allemaal zonder GUI. De host-bridge ervan **hergebruikt de implementatie van de CLI** voor de DOM-vrije formaten (SVG/EMF/EPS/HTML + tekst/data), en voegt status-op-schijf toe onder `~/.lolly` plus een optionele inline voorvertoning. Daarnaast heeft hij een **browser-rendertier**: een afgebakende headless Chromium (dezelfde die de MCP-server installeert) die raster/PDF/video en live-URL-capture op aanvraag produceert - hij stuurt daarvoor een gebouwde kopie van de webshell aan, zodat de uitvoer identiek is, en start pas op wanneer je voor het eerst zo'n formaat exporteert. Zo draaien ook `url-shot` (met bijsnijden + herkleuren + vector-PDF/SVG) en elke raster-/pdf-tool in de terminal. Zie de [TUI-gids](/info/tui.html).
 
+Op welk oppervlak je ook zit, het Capabilities-tabblad van het dashboard is de volledige kaart van wat het platform verklaart te kunnen, gegroepeerd en leesbaar zonder ook maar één tool te openen.
+
 ---
 
 ## Toolcategorieën
+
+![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-utilities)
 
 Tools krijgen een `category` mee in hun manifest, voor groepering in de gallery.
 
@@ -247,6 +295,8 @@ Tools worden ook ingedeeld naar status: `official` (merkgoedgekeurd, geen waterm
 Deze beslissingen liggen vast. Elke wijziging eraan is een majeure onderneming - ze bepalen elke andere beslissing in de codebase.
 
 ### 1. Declaratieve tools, met een imperatief ontsnappingsluik
+
+![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-street-map-controls)
 
 Een tool is een manifest (`tool.json`) + een template (`template.html`) + optionele `hooks.js`.
 
@@ -293,6 +343,10 @@ Dit maakt opgeslagen toolstatussen en via URL gedeelde links duurzaam over jaren
 
 ### 5. URL-modus is eersteklas
 
+![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&format=svg&filename=aud-url-mode-qr)
+
+![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=%23tool-canvas&filename=ov2-url-palette)
+
 Elke input moet uit te drukken zijn als URL-parameter:
 
 ```
@@ -310,6 +364,8 @@ Webshell: IndexedDB. Tauri: bestandssysteem. CLI: in-memory. Tools zien alleen `
 Gebruikers kunnen meerdere benoemde bewerkingsslots per tool opslaan en later naar elke sessie terugkeren. Er is geen accountaanmaak vereist; status is per apparaat. Omdat de bridge de enige naad is, is die per-apparaat-status ook *overdraagbaar*: `shells/web/src/data-transfer.ts` leest alles weer uit via `host.profile`/`host.state`/`host.assets` naar één `lolly-backup`-zip die op elke andere installatie te importeren is - het offline antwoord op "verhuizen naar een nieuw apparaat" zonder dat daar een server voor nodig is (volledige spec: `docs/data-transfer.md`). SUSE ID-integratie (multi-device-sync) is een toekomstige milestone die daar nog bovenop komt.
 
 ### 7. Maturity-tags beantwoorden het risico "merkgoedgekeurd" structureel
+
+Omdat elke input meereist in de link, is een gewijzigde parameter een ander afgewerkt asset. Dit hele palet is één startkleur, een harmonie en een aantal stappen:
 
 Elke tool declareert `status: official | community | experimental` in zijn manifest. De gallery sorteert op status. Experimentele tools watermerken hun exports automatisch - het watermerk wordt toegepast door `host.export.render`, niet door de tool zelf, zodat een niet-officiële tool-auteur het niet kan uitschakelen.
 
@@ -334,6 +390,8 @@ Logica leeft in `hooks.js`, waar die expliciet en review-baar is. Beschikbare Ha
 
 ### 10. Tools combineren tools
 
+![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-slides-deck)
+
 Een tool kan de render van **een andere** tool insluiten zonder tool-naar-tool-imports - compositie wordt opgelost door de engine, nooit door toolcode. Er zijn twee oppervlakken:
 
 - **Declaratief manifest** - `composes: [{ id, tool, inputs, format?, width?, height? }]`. De engine rendert het benoemde kind en plaatst het resultaat in het logicaloze template als `{{asset <id>}}`. `event-name-badge` stelt vandaag `qr-code` samen als SVG.
@@ -354,6 +412,10 @@ Stel de render van elke tool samen: een **SVG**-kind blijft een echte vector wan
 ---
 
 ## Levenscyclus, van begin tot eind
+
+![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&format=svg&filename=aud-export-popup)
+
+De Slides-tool is op dat tweede oppervlak gebouwd: elke slot op elke slide kan een andere Lolly-tool bevatten in plaats van een afbeelding.
 
 Een gebruiker opent `lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H`:
 

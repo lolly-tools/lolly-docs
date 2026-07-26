@@ -6,6 +6,8 @@ Praktický průvodce tím, jak aplikaci opravdu *používat* - otevření nástr
 
 ## Otevření nástroje
 
+![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Fct%3Dhorizontal-bar%26t%3DQuarterly%2520revenue%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&format=svg&filename=vt-tool-split-view)
+
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
 ![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
@@ -17,6 +19,8 @@ Každý nástroj je rozdělené zobrazení: na jedné straně **ovládací prvky
 > Několik nástrojů (jako **Layout Studio**) se místo toho otevře jako **volné plátno** - plocha bez rozhraní pro přímou manipulaci, kde přetahuješ, měníš velikost, otáčíš a přichytáváš boxy s textem, tvary a obrázky, a dvojklikem upravuješ text přímo na místě. Exportuje se stejnou vykreslovací cestou jako u každého jiného nástroje, takže plátno *je* soubor. Viz [Volné plátno](#the-free-canvas-layout-studio) níže.
 
 ## Plátno (náhled)
+
+![The zoom HUD in the corner of the canvas - minus, the live percentage, plus, Fit, then the theme and sound toggles](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=.stage-nav%7Bopacity%3A1!important%7D&cropSelector=.stage-nav&format=svg&filename=use-zoom-hud)
 
 Náhled vždy zobrazuje přesně to, co se exportuje.
 
@@ -48,12 +52,16 @@ Nástroje s volným plátnem přidávají pracovní plochu *kolem* kresebné plo
 
 ## Na telefonu
 
+![A tool on a phone-width screen - controls as a sheet up top, the generated palette filling the preview below, and the render pill floating bottom-centre](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3Df97316%26harmony%3Dadjacent-3%26steps%3D9&width=430&height=900&dpi=192&waitMs=2200&format=svg&filename=vt-phone-palette)
+
 Na úzkých obrazovkách se rozložení překreslí do jednoho sloupce:
 
 - **Ovládací prvky se stanou panelem** nahoře s **úchytem pro tažení** na spodním okraji. Přetažením úchytu změníš jeho velikost - přichytává se na **nahlédnutí / polovina / plná** - nebo **ťukni** na úchyt pro přepnutí mezi sbaleným a rozbaleným stavem. Náhled vyplní prostor pod ním a zůstává viditelný, zatímco upravuješ.
 - Plovoucí tlačítko **Vykreslit** otevře panel **Export** - všechny ovládací prvky pro formát, velikost, kopírování, ukládání a stahování na jednom místě. Zavřeš ho ťuknutím na pozadí.
 
 ## Ovládací prvky (vstupy)
+
+![A tool's control stack - a text field, colour triggers and a slider, and nothing else the author chose to lock down](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-inputs&format=svg&filename=use-tool-inputs)
 
 Nástroje zpřístupňují jen ty vstupy, které se mají měnit - všechno ostatní (barvy, rozložení, typografie, logika) je pevně dané autorem nástroje, takže cokoli vytvoříš, splňuje pravidla, která autor nastavil. Vstupy zahrnují text, posuvníky, výběr barvy, rozbalovací nabídky, data, výběr obrázků a opakující se skupiny řádků. Některé jsou seskupené do rozbalovacích sekcí.
 
@@ -66,6 +74,8 @@ Nástroje zpřístupňují jen ty vstupy, které se mají měnit - všechno osta
 Tvoje fotka a údaje žijí **jen na tomto zařízení**. Profil může být víc než jen ty - tým nebo role, do které se čas od času vžiješ. Kompletní obrázek, včetně vedení více profilů najednou, najdeš v **[Profily](/info/profile.html)**.
 
 ## Ukládání a pokračování
+
+![The two-half render pill - an up arrow that opens the export panel, and a tick that saves the session in place](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=%23tool-inputs%7Bdisplay%3Anone%7D&cropSelector=.render-pill&format=svg&filename=use-render-pill)
 
 Klikni na **Uložit** a aktuální vstupy se uloží jako relace pro daný nástroj. U každého nástroje můžeš mít víc pojmenovaných relací; tlačítko **Pokračovat** u každého nástroje znovu otevře tvou poslední relaci a **tlačítko historie** (vpravo nahoře, vedle profilu) vypisuje všechny uložené relace napříč nástroji. Relace jsou uložené jen na tomto zařízení. Chceš-li je uspořádat, otevři **Projekty** (níže).
 
@@ -108,6 +118,8 @@ Když ti nástroj umožní přidat obrázek z tvého zařízení, zmenší se, z
 - **Ukliď si.** Přeřaď asset do jiné skupiny, skryj sdílený brandový asset, který nepoužíváš (a **Zobrazit skryté** ho vrátí zpět), nebo úplně smaž své vlastní nahrané soubory.
 
 ### Vezmi si svou paletu a písma kamkoli
+
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 Panel **Vzorky** v Katalogu není jen pro referenci - klikni na barvu a zkopíruj ji, nebo **stáhni celou brandovou paletu** ve formátu, kterým mluví tvůj druhý nástroj:
 
@@ -154,6 +166,8 @@ Existující návrh můžeš přenést do Lolly a pokračovat v práci na něm: 
 Kompletní příběh najdeš v **[Export a formáty](/info/exporting.html)** - výběr formátu, výstupní velikosti a tiskových jednotek, průhlednosti, videa a kopírování/sdílení. Ve zkratce: vyber formát, podle potřeby nastav velikost a **Stáhnout** (nebo **Kopírovat** do schránky).
 
 ## Dávkové zpracování (Pro)
+
+![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&format=svg&filename=use-batch-toolbar)
 
 Pro pokročilé uživatele **Dávkové zpracování** (odkaz z galerie, uzamčené za feature flagem Pro, který je ve výchozím stavu zapnutý) vykreslí spoustu variant najednou - mřížku, kde je každý řádek sadou vstupů, exportovaných dohromady. Ideální pro lokalizaci karty do desítky jazyků nebo pro vygenerování každé velikostní varianty na jeden zátah. Řádky vyplníš psaním, vložením přímo z tabulkového procesoru, nebo importem CSV (jedno si můžeš i exportovat zpátky), a pro každý řádek nastavíš formát, velikost a název výstupního souboru. Celou mřížku ulož jako pojmenovanou **dávkovou relaci**, která se znovu otevře z galerie, a stáhni každý řádek jako jeden `.zip`.
 

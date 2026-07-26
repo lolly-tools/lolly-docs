@@ -6,6 +6,8 @@ Een praktische gids voor het daadwerkelijk *gebruiken* van de app - een tool ope
 
 ## Een tool openen
 
+![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Fct%3Dhorizontal-bar%26t%3DQuarterly%2520revenue%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&format=svg&filename=vt-tool-split-view)
+
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
 ![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
@@ -17,6 +19,8 @@ Elke tool is een gesplitste weergave: **bedieningselementen** aan de ene kant, e
 > Een paar tools (zoals **Layout Studio**) openen in plaats daarvan als een **vrij canvas** - een chromeloos oppervlak voor directe manipulatie waarop je vakken met tekst, vormen en afbeeldingen sleept, van grootte verandert, roteert en laat vastklikken, en waar je dubbelklikt om tekst ter plekke te bewerken. Het exporteert via hetzelfde renderpad als elke andere tool, dus het canvas *is* het bestand. Zie [Het vrije canvas](#the-free-canvas-layout-studio) hieronder.
 
 ## Het canvas (voorvertoning)
+
+![The zoom HUD in the corner of the canvas - minus, the live percentage, plus, Fit, then the theme and sound toggles](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=.stage-nav%7Bopacity%3A1!important%7D&cropSelector=.stage-nav&format=svg&filename=use-zoom-hud)
 
 De voorvertoning toont altijd precies wat er geëxporteerd wordt.
 
@@ -48,12 +52,16 @@ Tools met een vrij canvas voegen een werkoppervlak toe *rondom* het tekenvlak, z
 
 ## Op een telefoon
 
+![A tool on a phone-width screen - controls as a sheet up top, the generated palette filling the preview below, and the render pill floating bottom-centre](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3Df97316%26harmony%3Dadjacent-3%26steps%3D9&width=430&height=900&dpi=192&waitMs=2200&format=svg&filename=vt-phone-palette)
+
 Op smalle schermen vloeit de layout om naar één kolom:
 
 - De **bedieningselementen worden een sheet** bovenaan met een **sleepgreep** aan de onderrand. Sleep de greep om de grootte aan te passen - hij klikt vast op **kijkje / half / volledig** - of **tik** op de greep om te wisselen tussen ingeklapt ↔ uitgeklapt. De voorvertoning vult de ruimte eronder en blijft zichtbaar terwijl je bewerkt.
 - Een zwevende **Renderen**-knop opent de **Exporteren**-sheet - alle bedieningselementen voor formaat, grootte, kopiëren, opslaan en downloaden op één plek. Sluit hem door op de achtergrond te tikken.
 
 ## Bedieningselementen (invoervelden)
+
+![A tool's control stack - a text field, colour triggers and a slider, and nothing else the author chose to lock down](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-inputs&format=svg&filename=use-tool-inputs)
 
 Tools tonen alleen de invoervelden die bedoeld zijn om te variëren - al het andere (kleuren, layout, typografie, logica) ligt vast door de maker van de tool, zodat alles wat je maakt voldoet aan de regels die de maker heeft gesteld. Invoervelden zijn onder meer tekst, schuifregelaars, kleurkiezers, dropdowns, datums, afbeeldingkiezers en herhalende rijgroepen. Sommige zijn gegroepeerd onder inklapbare secties.
 
@@ -66,6 +74,8 @@ Tools tonen alleen de invoervelden die bedoeld zijn om te variëren - al het and
 Je pasfoto en gegevens staan **alleen op dit apparaat**. Een profiel kan meer zijn dan alleen jij - een team of een rol die je af en toe op je neemt. Zie **[Profielen](/info/profile.html)** voor het volledige verhaal, inclusief het bijhouden van meer dan één.
 
 ## Opslaan & doorgaan
+
+![The two-half render pill - an up arrow that opens the export panel, and a tick that saves the session in place](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=%23tool-inputs%7Bdisplay%3Anone%7D&cropSelector=.render-pill&format=svg&filename=use-render-pill)
 
 Klik op **Opslaan** om de huidige invoer op te slaan als sessie voor die tool. Je kunt meerdere benoemde sessies per tool bewaren; de **Doorgaan**-knop van elke tool heropent je meest recente, en de **geschiedenisknop** (rechtsboven, naast je profiel) toont elke opgeslagen sessie van alle tools. Sessies zijn apparaatgebonden. Om ze te organiseren open je **Projecten** (hieronder).
 
@@ -108,6 +118,8 @@ De **Catalogus** (`#/c`, of de link **Catalogus** in het menu) verzamelt alles w
 - **Ruim op.** Hercategoriseer een asset naar een andere groep, verberg een gedeeld merkasset dat je niet gebruikt (met **Verborgen tonen** om het terug te halen), of verwijder je eigen uploads definitief.
 
 ### Neem je palet en lettertypen overal mee naartoe
+
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 Het **Stalen**-paneel van de Catalogus is niet alleen ter referentie - klik op een kleur om hem te kopiëren, of **download het volledige merkpalet** in het formaat dat je andere tool spreekt:
 
@@ -154,6 +166,8 @@ Je kunt een bestaand ontwerp in Lolly binnenhalen en ermee verder werken: open *
 Zie **[Exporteren & formaten](/info/exporting.html)** voor het volledige verhaal - een formaat kiezen, uitvoergrootte en printeenheden, transparantie, video, en kopiëren/delen. Kort samengevat: kies een formaat, stel indien nodig de grootte in, en klik op **Downloaden** (of **Kopiëren** naar het klembord).
 
 ## Batch-modus (Pro)
+
+![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&format=svg&filename=use-batch-toolbar)
 
 Voor gevorderde gebruikers rendert **Batch** (gelinkt vanuit de galerij, afgeschermd achter de Pro-functievlag, die standaard aan staat) veel varianten tegelijk - een raster waarin elke rij een set invoer is, samen geëxporteerd. Ideaal om een kaart in een tiental talen te lokaliseren of om elke formaatvariant in één keer te genereren. Vul rijen door te typen, rechtstreeks vanuit een spreadsheet te plakken, of een CSV te importeren (je kunt er ook weer een exporteren), en stel per rij het formaat, de grootte en de uitvoerbestandsnaam in. Sla een heel raster op als een benoemde **batch-sessie** die vanuit de galerij weer opent, en download elke rij als één `.zip`.
 

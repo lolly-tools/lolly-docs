@@ -18,6 +18,8 @@ Rezultatul este **abundența**: fiecare eveniment are semnalistica corectă, fie
 
 ### Unde se încadrează în peisaj
 
+![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-gallery-landscape)
+
 | Capacitate | Canva | Portaluri de brand | Illustrator | Figma / Penpot | **Lolly** |
 |---|---|---|---|---|---|
 | Generare de conținut în masă | parțial | ✗ | ✗ | ✗ | **✓** |
@@ -37,6 +39,40 @@ Diferența e clară: nimic din peisajul existent nu ne oferă rezultate axate pe
 **Folosește-l pentru:** Generare rapidă de resurse creative operaționalizate - tile-uri de evenimente, ecusoane nominale, semnături, alerte CVE, coduri QR, carduri pentru social media, etichete de expediere, rapoarte structurate.
 
 **Nu îl folosi pentru:** Conținut hero personalizat.
+
+---
+
+## Ciclul de viață al unei campanii
+
+![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-lifecycle-chart)
+
+Cel mai clar mod de a vedea ce este Lolly nu e o listă de funcționalități - e să urmărești o singură resursă cum trece din mână în mână. Uită-te la un singur card de campanie localizat cum se plimbă prin organizație:
+
+1. **Creativul stabilește regulile.** Un designer creează template-ul de bază în Layout Studio, fixând în cod tipografia brandului și variabilele de culoare. Nu face un singur card - face munca de fundație *o singură dată*, ca să nu mai fie nevoit niciodată să o localizeze manual.
+2. **Developerul o scalează.** Același template e conectat la un pipeline nocturn prin CLI, așa că un grafic proaspăt sau o variantă într-o limbă nouă se generează automat - fără ca vreun designer să redeschidă fișierul.
+3. **Producătorul pur și simplu o folosește.** Un reprezentant de vânzări, offline în avion, deschide același instrument și generează o prezentare perfect conformă cu brandul pentru o întâlnire cu un client. Fără abilități de design, fără rețea, fără așteptare.
+
+„Graficul proaspăt” din pasul doi e un render exact ca acesta, produs dintr-un șir de date și o mână de parametri, fără ca nimeni să deschidă un fișier de design:
+
+Ideea nu e că Lolly e bună pentru designeri *și* bună pentru developeri *și* bună pentru vânzări, fiecare în vid. E o **ștafetă**: munca inițială a creativului e scalată de developer, iar asta, la rândul ei, îl împuternicește pe producător. Experiența fără efort a reprezentantului non-tehnic din avion e *posibilă* doar din cauza rigorii pe care designerul a stabilit-o și developerul a implementat-o.
+
+Acesta e multiplicatorul de forță. Lolly nu e un sertar cu instrumente separate pentru roluri separate - e un singur ciclu de viață determinist al resursei, pe care fiecare rol îl atinge, iar fiecare mână prin care trece multiplică valoarea celei dinainte.
+
+---
+
+## O aprobare, zece mii de resurse
+
+![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&format=svg&filename=ov2-batch-grid)
+
+Pentru că aprobarea stă în instrument, nu în fișier (vezi [Cum se compară Lolly](/info/positioning.html)), scara nu mai e o problemă de review. Aprobă o dată un instrument de card social localizat, apoi generează **10.000 de resurse în 12 limbi** dintr-o foaie de calcul - și niciuna nu are nevoie de o nouă verificare de conformitate din partea juridicului sau a brandului, pentru că template-ul din care provin toate era deja aprobat.
+
+Același instrument determinist ajunge la această scară pe trei căi, toate producând rezultate identice, pre-aprobate:
+
+- **O persoană, în aplicație.** Grila batch `/pro`: lipești sau imporți rândurile, primești o resursă finită pentru fiecare rând, descarci arhiva zip. Fără abilități de design, fără tichet, fără așteptare.
+- **Un developer, din linia de comandă.** CLI-ul rulează *același* motor și *același* traseu de randare, headless, așa că instrumentul poate fi secvențiat peste toate cele 10.000 de rânduri într-un script sau într-un pipeline nocturn. Un apel `lolly <tool> --field=…` într-o buclă e toată integrarea.
+- **Un sistem sau un agent AI, prin MCP.** Același instrument, operat programatic, la aceeași fidelitate și la o scară și mai mare - pentru că o mașină nu se plictisește în timp ce mii de fișiere se adună.
+
+Un singur set de constrângeri de brand, fixat o dată de un designer; trei rute către exact același rezultat pre-aprobat - iar ruta mașinii scalează cel mai departe, pentru că nu obosește niciodată în timp ce fișierele se adună.
 
 ---
 
@@ -190,6 +226,11 @@ lolly/
 Platforma rulează pe mai multe suprafețe - web PWA, Tauri desktop/mobil, CLI-ul scriptabil și TUI-ul interactiv. Toate folosesc același motor și aceleași fișiere de instrumente.
 
 ### Web (PWA) - distribuția principală
+
+![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&format=svg&filename=aud-web-split)
+
+![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&format=png&filename=ov2-phone-audiogram)
+
 Găzduit la un URL controlat de SUSE. Funcționează offline odată ce service worker-ul a pus în cache instrumentele și resursele. Aici vor folosi platforma majoritatea angajaților, furnizorilor și partenerilor. Nu este necesar niciun cont - starea este stocată în IndexedDB, per dispozitiv.
 
 Shell-ul web este responsive dintr-un singur layout. Pe desktop, un instrument este o bară laterală de control redimensionabilă, alături de o zonă de previzualizare cu navigare pe canvas nativă pentru trackpad (Cmd/Ctrl-scroll sau pinch pentru zoom în jurul cursorului, Space- sau drag cu butonul din mijloc pentru pan, tastele `0`/`1`/`+`/`−` și un HUD Potrivire/%). Pe mobil (≤640px) controalele devin o foaie ancorată sus, cu un mâner de tragere care se fixează pe parțial/jumătate/complet (tap comută între ele) deasupra unei previzualizări statice pe tot ecranul, iar un buton flotant **Randare** deschide controalele de **Export** într-un popup de tip foaie inferioară. Pe touch ai pinch-zoom și drag-pan pe previzualizare. Traseul de randare și controalele de export sunt identice pe ambele - doar interfața (chrome) se reflowează.
@@ -200,6 +241,9 @@ Shell-ul web este responsive dintr-un singur layout. Pe desktop, un instrument e
 Aplicație nativă împachetată (amprentă mică datorită Tauri). Oferă disponibilitate offline completă, acces la sistemul de fișiere pentru instrumentele dependente de CLI (PDF Smasher, Font Outliner) și acces la cameră. Programată pentru îmbunătățiri de tooling la mijlocul lui 2026.
 
 ### CLI
+
+Același instrument la lățime de telefon, fără un al doilea layout de întreținut: comenzile devin o foaie ancorată sus, previzualizarea ocupă tot ecranul, iar butonul de render plutește peste ea.
+
 `lolly <tool-id> [--input=value ...] --output=file.png`
 
 Utilizatorii de desktop pot invoca multe instrumente din terminal. Shell-ul CLI încarcă același motor, creează un DOM jsdom, rulează același traseu de randare și scrie fișierul. URL mode este transportul - CLI-ul nu este o implementare separată. Asta garantează că rezultatele CLI și GUI sunt identice.
@@ -216,9 +260,13 @@ lolly qr-code                # listează inputurile pentru acel instrument
 
 Omologul interactiv al CLI-ului: o aplicație de terminal pe tot ecranul, orientată pe tastatură (construită pe Ink), pentru navigarea prin instrumente, completarea inputurilor, salvarea proiectelor și exportul - totul fără GUI. Podul său de host **reutilizează implementarea CLI-ului** pentru formatele fără DOM (SVG/EMF/EPS/HTML + text/date) și adaugă stare pe disc sub `~/.lolly`, plus o previzualizare inline opțională. Dincolo de asta, are un **nivel de randare în browser**: un Chromium headless cu domeniu limitat (același pe care îl instalează serverul MCP), care produce raster/PDF/video și captură de URL live la cerere - folosind o copie compilată a shell-ului web, astfel încât rezultatul e identic, și pornind doar la primul export al unui astfel de format. Așa că `url-shot` (cu crop + recolorare + PDF/SVG vectorial) și fiecare instrument raster/pdf rulează și el în terminal. Vezi [ghidul TUI](/info/tui.html).
 
+Indiferent pe ce suprafață ești, tabul Capabilități din Panou e harta completă a ceea ce platforma declară că poate face, grupată și lizibilă fără să deschizi vreun instrument.
+
 ---
 
 ## Categorii de instrumente
+
+![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-utilities)
 
 Instrumentele sunt etichetate cu o `category` în manifest, pentru gruparea în galerie.
 
@@ -247,6 +295,8 @@ Instrumentele mai sunt clasificate și după status: `official` (aprobat de bran
 Aceste decizii sunt stabilite definitiv. Schimbarea oricăreia dintre ele este un demers major - ele modelează orice altă decizie din codebase.
 
 ### 1. Instrumente declarative, cu o portiță de scăpare imperativă
+
+![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-street-map-controls)
 
 Un instrument este un manifest (`tool.json`) + un template (`template.html`) + opțional `hooks.js`.
 
@@ -293,6 +343,10 @@ Asta face ca stările salvate ale instrumentelor și linkurile partajate prin UR
 
 ### 5. URL mode este un cetățean de prim rang
 
+![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&format=svg&filename=aud-url-mode-qr)
+
+![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=%23tool-canvas&filename=ov2-url-palette)
+
 Fiecare input trebuie să poată fi exprimat ca parametru URL:
 
 ```
@@ -310,6 +364,8 @@ Shell web: IndexedDB. Tauri: sistem de fișiere. CLI: în memorie. Instrumentele
 Utilizatorii pot salva mai multe sloturi de editare denumite per instrument și pot reveni ulterior la fiecare sesiune. Nu este necesară crearea unui cont; starea este per dispozitiv. Pentru că podul este singura cusătură (seam), acea stare per dispozitiv este și *portabilă*: `shells/web/src/data-transfer.ts` citește totul înapoi prin `host.profile`/`host.state`/`host.assets` într-o singură arhivă `lolly-backup`, care se importă pe orice altă instalare - răspunsul offline la „mută-mă pe un dispozitiv nou”, fără nevoie de server (specificația completă: `docs/data-transfer.md`). Integrarea SUSE ID (sincronizare multi-dispozitiv) este un jalon viitor, construit peste asta.
 
 ### 7. Etichetele de maturitate răspund structural riscului „aprobat de brand”
+
+Pentru că fiecare input călătorește în link, o schimbare de parametru înseamnă o cu totul altă resursă finită. Toată paleta asta e o singură culoare de start, o armonie și un număr de pași:
 
 Fiecare instrument declară `status: official | community | experimental` în manifest. Galeria sortează după status. Instrumentele experimentale marchează automat exporturile cu watermark - watermark-ul este aplicat de `host.export.render`, nu de instrument, deci un autor de instrumente non-official nu îl poate dezactiva.
 
@@ -334,6 +390,8 @@ Logica trăiește în `hooks.js`, unde este explicită și revizuibilă. Helper-
 
 ### 10. Instrumentele compun instrumente
 
+![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-slides-deck)
+
 Un instrument poate integra randarea **altui** instrument fără importuri instrument-la-instrument - compunerea este rezolvată de motor, niciodată de codul instrumentului. Există două suprafețe:
 
 - **Manifest declarativ** - `composes: [{ id, tool, inputs, format?, width?, height? }]`. Motorul randează copilul numit și plasează rezultatul în template-ul fără logică, ca `{{asset <id>}}`. `event-name-badge` compune astăzi `qr-code` ca SVG.
@@ -354,6 +412,10 @@ Poți compune randarea oricărui instrument: un copil **SVG** rămâne vector ad
 ---
 
 ## Ciclul de viață, de la un capăt la altul
+
+![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&format=svg&filename=aud-export-popup)
+
+Instrumentul Slides e construit pe această a doua suprafață: orice slot de pe orice slide poate găzdui un alt instrument Lolly în loc de o imagine.
 
 Un utilizator deschide `lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H`:
 

@@ -6,6 +6,8 @@
 
 ## 開啟工具
 
+![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Fct%3Dhorizontal-bar%26t%3DQuarterly%2520revenue%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&format=svg&filename=vt-tool-split-view)
+
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
 ![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
@@ -17,6 +19,8 @@
 > 少數工具（例如**版面工作室**）會改以**自由畫布**開啟——一個無邊框、可直接操作的介面，你可以拖曳、縮放、旋轉並貼齊文字、形狀與圖片的方框，也能雙擊就地編輯文字。它與其他所有工具走相同的渲染路徑匯出，因此畫布本身*就是*檔案。詳見下方的[自由畫布](#the-free-canvas-layout-studio)。
 
 ## 畫布（預覽）
+
+![The zoom HUD in the corner of the canvas - minus, the live percentage, plus, Fit, then the theme and sound toggles](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=.stage-nav%7Bopacity%3A1!important%7D&cropSelector=.stage-nav&format=svg&filename=use-zoom-hud)
 
 預覽畫面永遠精確呈現匯出後的結果。
 
@@ -48,12 +52,16 @@
 
 ## 在手機上
 
+![A tool on a phone-width screen - controls as a sheet up top, the generated palette filling the preview below, and the render pill floating bottom-centre](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3Df97316%26harmony%3Dadjacent-3%26steps%3D9&width=430&height=900&dpi=192&waitMs=2200&format=svg&filename=vt-phone-palette)
+
 在窄螢幕上，版面會重新排列為單欄：
 
 - **控制項會變成頂端的面板**，下緣有一個**拖曳握把**。拖曳握把可調整面板大小——會吸附至**微露／半展開／全展開**——或**點按**握把在收合與展開之間切換。預覽畫面會填滿下方空間，並在你編輯時持續顯示。
 - 懸浮的**渲染**按鈕會開啟**匯出**面板——格式、尺寸、複製、儲存與下載等所有控制項都集中在這裡。點按背景區域即可關閉。
 
 ## 控制項（輸入欄位）
+
+![A tool's control stack - a text field, colour triggers and a slider, and nothing else the author chose to lock down](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-inputs&format=svg&filename=use-tool-inputs)
 
 工具只會公開設計成可變動的輸入欄位——其餘一切（色彩、版面、字體排印、邏輯）都由工具作者鎖定，因此你做出來的成品必定符合作者設定的規則。輸入欄位包括文字、滑桿、色彩選擇器、下拉選單、日期、圖片選擇器與重複列群組。部分欄位會歸類在可收合的區塊中。
 
@@ -66,6 +74,8 @@
 你的大頭照與資料**只會存在這台裝置上**。個人資料所代表的不一定只是你自己——也可以是一個團隊，或是你偶爾扮演的某個角色。完整說明請見**[個人資料](/info/profile.html)**，包括如何保留多份資料。
 
 ## 儲存與繼續
+
+![The two-half render pill - an up arrow that opens the export panel, and a tick that saves the session in place](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=%23tool-inputs%7Bdisplay%3Anone%7D&cropSelector=.render-pill&format=svg&filename=use-render-pill)
 
 點擊**儲存**即可將目前的輸入內容存為該工具的一個工作階段。每個工具都可以保留多個具名工作階段；每個工具的**繼續**按鈕會重新開啟你最近一次的工作階段，而**歷史紀錄按鈕**（右上角，緊鄰個人資料旁）則會列出所有工具中每一個已儲存的工作階段。工作階段只儲存在裝置本機。若要整理它們，請開啟下方的**專案**。
 
@@ -108,6 +118,8 @@
 - **整理一下。** 把某個素材重新歸類到不同群組、隱藏你用不到的共用品牌素材（用**顯示隱藏項目**把它找回來），或直接刪除你自己上傳的檔案。
 
 ### 把你的調色盤與字型帶著走
+
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 目錄的**色票（Swatches）**面板不只是拿來參考的——點一個顏色即可複製它，或以你另一個工具所使用的格式**下載整組品牌調色盤**：
 
@@ -154,6 +166,8 @@ Lolly 致力於讓每個人都能舒適地使用。介面支援鍵盤操作，�
 完整說明請見**[匯出與格式](/info/exporting.html)**——包括選擇格式、輸出尺寸與列印單位、透明度、影片，以及複製／分享。簡單來說：選擇一種格式，視需要設定尺寸，然後**下載**（或**複製**到剪貼簿）。
 
 ## 批次（Pro）模式
+
+![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&format=svg&filename=use-batch-toolbar)
 
 對於進階使用者，**批次**（可從畫廊連結進入，由預設開啟的 Pro 功能旗標控管）可以一次渲染多種變化——一個網格，其中每一列都是一組輸入內容，一起匯出。非常適合把一張卡片在地化成十幾種語言，或一次產生所有尺寸的變化版本。你可以直接輸入、從試算表直接貼上，或匯入 CSV 檔來填入各列（也可以匯出回 CSV），並為每一列個別設定格式、尺寸與輸出檔名。整個網格可以儲存成一個具名的**批次工作階段**，從畫廊重新開啟，並將每一列下載成單一個 `.zip` 檔。
 

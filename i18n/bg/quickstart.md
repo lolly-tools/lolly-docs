@@ -66,7 +66,11 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### Отворени данни и отворени инструменти
 
-[Наборът от инструменти на общността](/info/builders.html) е с отворен код и брандово неутрален — QR кодове, улични карти, филтри, инструменти за поверителност — и рендерира спрямо *твоя* бранд в момента, в който го активираш. Захранвай инструментите и със собствените си отворени данни: постави или пусни таблица **CSV** или **JSON** и повтарящите се полета на инструмента се попълват от нея — по един готов актив на ред.
+[Наборът от инструменти на общността](/info/builders.html) е с отворен код и брандово неутрален — QR кодове, улични карти, филтри, инструменти за поверителност — и рендерира спрямо *твоя* бранд в момента, в който го активираш.
+
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
+Захранвай инструментите и със собствените си отворени данни: постави или пусни таблица **CSV** или **JSON** и повтарящите се полета на инструмента се попълват от нея — по един готов актив на ред.
 
 ## 3. Направи нещо, после го сподели или автоматизирай
 
@@ -76,6 +80,10 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 - **Сподели линк.** Всяко състояние на инструмент е URL, така че готовият актив е възпроизводим и адресируем чрез параметри — комитни линка, генерирай наново при нужда.
 - **Прави го на едро.** Управлявай шаблон от електронна таблица в [мрежата за пакетна обработка](/info/exporting.html): по един готов актив на ред.
 - **Автоматизирай го.** Същото рендериране се изпълнява от [CLI](/info/cli.html) и от [AI агент](/info/ai-agents.html) — URL-ът е API-то.
+
+„URL-ът е API-то“ е буквално. Диаграмата по-долу не е рисувана от никого: типът ѝ, заглавието ѝ и цялата ѝ таблица с данни бяха написани в адресната лента, а същият линк рендерира същата диаграма на всяко устройство.
+
+![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&filename=vt-d3-url-chart)
 
 ## Къде да продължиш
 

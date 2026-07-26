@@ -18,6 +18,8 @@
 
 ### 在整體格局中的定位
 
+![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-gallery-landscape)
+
 | 能力 | Canva | 品牌入口網站 | Illustrator | Figma / Penpot | **Lolly** |
 |---|---|---|---|---|---|
 | 大量內容生成 | 部分 | ✗ | ✗ | ✗ | **✓** |
@@ -37,6 +39,40 @@
 **適用情境：** 快速生成已作業化的創意素材——活動卡片、識別徽章、簽名檔、CVE 警示、QR code、社群卡片、託運標籤、結構化報告。
 
 **不適用情境：** 客製化的旗艦級主打內容。
+
+---
+
+## 一場行銷活動的生命週期
+
+![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-lifecycle-chart)
+
+要看清 Lolly 究竟是什麼，最清楚的方式不是列一長串功能，而是跟著一份素材，看它如何在不同人手中傳遞。下面就跟著一張本地化的行銷活動卡片，看它如何走過整個組織：
+
+1. **創意人員訂下規則。** 設計師在 Layout Studio 裡撰寫基礎範本，把品牌的字體與色彩變數寫死在裡面。他們做的不是一張卡片——他們只把這份底層工作做*一次*，從此再也不必手工做本地化。
+2. **開發者把它放大。** 同一個範本透過 CLI 接進每晚執行的流水線，於是一張新圖表或一個新語言版本都會自動產生——不需要任何設計師再打開檔案。
+3. **產出者直接拿來用。** 一位銷售代表在飛機上離線打開同一個工具，為客戶會議產出一份完全符合品牌的簡報。不需要設計技能，不需要網路，也不用等。
+
+第二步裡那張「新圖表」，就是下面這樣一次渲染：由一段資料字串加上少數幾個參數產生，沒有人需要打開任何設計檔案。
+
+重點並不是 Lolly 各自獨立地對設計師好用、*而且*對開發者好用、*而且*對銷售好用。它是一場**接力賽**：創意人員最初的工作被開發者放大，而這又讓產出者有了能力。飛機上那位非技術同事之所以能有毫不費力的體驗，*正是*因為設計師立下的嚴謹規則與開發者完成的部署。
+
+這就是它的力量倍增效果。Lolly 不是一個為不同角色擺放不同工具的抽屜——它是一條決定論式的素材生命週期，每個角色都會經手，而每一次傳遞都會放大上一環的價值。
+
+---
+
+## 一次核准，一萬份素材
+
+![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&format=svg&filename=ov2-batch-grid)
+
+因為核准發生在工具上而不是檔案上（參見 [Lolly 如何比較](/info/positioning.html)），規模就不再是審核問題。把一個本地化社群卡片工具核准一次，然後從一張試算表產出**橫跨 12 種語言的 10,000 份素材**——其中沒有任何一份需要法務或品牌部門再做一次合規檢查，因為它們共同來自的那個範本早已核准過了。
+
+同一個決定論式的工具有三條途徑可以達到這種規模，產出的結果完全一致，而且都已事先核准：
+
+- **一個人，在應用程式裡。** `/pro` 批次表格：貼上或匯入各列資料，每一列得到一份完成素材，然後下載 zip。不需要設計技能，不需要開單，不用等。
+- **一位開發者，在命令列裡。** CLI 以無介面方式執行*同一套*引擎、*同一條*渲染路徑，因此可以在腳本或每晚的流水線裡把這個工具跑遍全部 10,000 列。在迴圈裡呼叫一次 `lolly <tool> --field=…`，就是全部的整合工作。
+- **一個系統或一個 AI 代理，透過 MCP。** 同一個工具以程式方式操作，保真度相同，規模還能更大——因為檔案成千上萬地湧出來時，機器不會覺得無聊。
+
+一套品牌限制，由設計師訂下一次；三條路徑通往完全相同、事先核准好的產出——其中機器這條路走得最遠，因為檔案不斷湧出時它永遠不會累。
 
 ---
 
@@ -191,9 +227,15 @@ lolly/
 
 ### Web（PWA）——主要發布管道
 
+![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&format=svg&filename=aud-web-split)
+
+![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&format=png&filename=ov2-phone-audiogram)
+
 代管於 SUSE 掌控的網址上。一旦 service worker 快取好工具與素材，就能離線運作。多數員工、供應商與合作夥伴都會在這裡使用這個平台。不需要帳號——狀態依裝置各自儲存在 IndexedDB 中。
 
 網頁殼層採用單一版面的響應式設計。桌面上，一個工具是可調整寬度的控制項側欄，旁邊是預覽舞台，並支援原生觸控板的畫布導覽（Cmd/Ctrl + 滾輪或雙指縮放以游標為中心、按住空白鍵或用中鍵拖曳平移、`0`／`1`／`+`／`−` 按鍵，以及一個 Fit／% 的 HUD 顯示）。行動裝置上（螢幕寬度 ≤640px），控制項變成一個固定在頂端的面板，帶有拖曳把手，可吸附至半展開／半開／全展開三種狀態（點按可切換），覆蓋在靜態的全螢幕預覽上方，而一個懸浮的**渲染**按鈕會以底部彈出面板打開**匯出**控制項。觸控裝置在預覽畫面上可用雙指縮放與拖曳平移。渲染路徑與匯出控制項在兩者之間完全相同——只有外框介面會重新排版。
+
+同一個工具在手機寬度下也是同一套，不需要再維護第二種版面：控制項變成頂端的面板，預覽佔滿整個螢幕，懸浮的渲染按鈕就浮在它上面。
 
 **批次模式（`/pro`）。** 網頁殼層還內建一個試算表風格的批次網格（`shells/web/src/pro/`），可以跨一或多個工具，一次渲染大量列。它支援 CSV／TSV 雙向轉換與試算表貼上、每列各自的 template／格式／尺寸／單位／dpi、一個附即時預覽的區塊編輯側面板、可摺疊的匯出欄位、每列的「相關性」標籤列、左側拖曳把手可調整列順序、兩階段刪除確認、已儲存的批次工作階段，以及 `.zip` 下載。這就是「大量內容生成」定位背後那個一對多的介面。
 
@@ -220,9 +262,13 @@ lolly qr-code                # 列出該工具的輸入項目
 
 CLI 的互動式對應版本：一個全螢幕、以鍵盤為主要操作方式的終端機應用程式（以 Ink 打造），可以瀏覽工具、填寫輸入、儲存專案並匯出——完全不需要 GUI。它的主機橋接層在不需要 DOM 的格式（SVG/EMF/EPS/HTML ＋文字／資料）上**重複使用 CLI 的實作**，並額外加上位於 `~/.lolly` 的磁碟狀態，以及一個選用的行內預覽。除此之外，它還有一個**瀏覽器渲染層**：一個範圍受限的無介面 Chromium（與 MCP 伺服器安裝的是同一套），可依需求產生點陣圖／PDF／影片，並擷取即時網址畫面——驅動的是一份已建置好的網頁殼層副本，因此輸出結果完全相同，且只有在你第一次匯出這類格式時才會啟動。所以 `url-shot`（含裁切＋改色＋向量 PDF/SVG）以及每一個點陣圖／PDF 工具，也都能在終端機中執行。詳見 [TUI 指南](/info/tui.html)。
 
+不論你在哪個介面上，儀表板的功能（Capabilities）分頁都是這個平台宣告自己能做什麼的完整地圖——已經分好組、可以直接閱讀，不必打開任何一個工具。
+
 ---
 
 ## 工具分類
+
+![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-utilities)
 
 工具在其 manifest 中會標上一個 `category`，用於工具庫中的分組。
 
@@ -251,6 +297,8 @@ CLI 的互動式對應版本：一個全螢幕、以鍵盤為主要操作方式�
 這些決策已經拍板定案。更動其中任何一項都是重大工程——它們形塑了程式碼庫中的其他所有決策。
 
 ### 1. 宣告式工具，搭配命令式的逃生艙口
+
+![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-street-map-controls)
 
 一個工具由 manifest（`tool.json`）＋ template（`template.html`）＋選用的 `hooks.js` 組成。
 
@@ -297,6 +345,10 @@ CLI 的互動式對應版本：一個全螢幕、以鍵盤為主要操作方式�
 
 ### 5. URL 模式是第一等公民
 
+![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&format=svg&filename=aud-url-mode-qr)
+
+![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=%23tool-canvas&filename=ov2-url-palette)
+
 每一個輸入項目都必須能夠表示成一個 URL 參數：
 
 ```
@@ -306,6 +358,8 @@ lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H
 CLI 模式就是 URL 模式換了一種傳輸方式——CLI 殼層會從 argv 建立一個 URL 狀態物件，並執行**同一套**引擎流程。渲染路徑只有一條。CLI 不可能與 GUI 產生落差，因為它根本不是另一套獨立的實作。
 
 `url-mode.ts` 負責處理這個雙向轉換（解析與序列化）。保留參數（絕不會當作輸入項目轉發給工具）：`format`、`export`、`copy`、`slot`、`output`、`filename`、`_v`、`z`（封裝狀態——也就是「Shortest link」權杖）、`width`／`w`、`height`／`h`、`unit`、`dpi`、`profile`、`password`、`bleed`、`marks`、`full`、`options`、`nostage`。URL 模式中的素材輸入會以其 `id` 序列化；runtime 會在渲染之前透過 `host.assets.get()` 解析它們。`width`／`height` 是以 `unit` 為單位的數值（預設為 `px`，也支援 `mm`／`cm`／`in`／`pt`／`pc`）；使用實體單位時，`dpi` 會決定點陣圖解析度。它們會設定畫布文件尺寸，並預先填入匯出尺寸面板。
+
+因為每一個輸入項目都隨著連結一起傳遞，改一個參數就等於換成另一份完成的素材：一整套色盤，背後其實只是一個種子色、一種配色關係與一個階數。
 
 ### 6. 儲存一律透過橋接層，不能直接存取
 
@@ -338,10 +392,14 @@ CLI 模式就是 URL 模式換了一種傳輸方式——CLI 殼層會從 argv �
 
 ### 10. 工具可以組合工具
 
+![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-slides-deck)
+
 一個工具可以嵌入**另一個**工具的渲染結果，而不需要工具與工具之間互相 import——組合是由引擎解析的，絕不是由工具程式碼解析。有兩種介面：
 
 - **宣告式 manifest**——`composes: [{ id, tool, inputs, format?, width?, height? }]`。引擎會渲染指定的子工具，並把結果以 `{{asset <id>}}` 的形式放進不含邏輯的 template 中。目前 `event-name-badge` 會以 SVG 形式組合 `qr-code`。
 - **可攜式嵌入網址**——`<img src="https://lolly.tools/tool/<id>.<ext>?<inputs>">`。殼層會**在本機**渲染那個子工具（在本機渲染完成之前會先顯示一個佔位像素）；不會有任何內容真的從 `lolly.tools` 擷取。
+
+Slides 工具就建立在第二種介面之上：任何一張投影片上的任何一個位置，都可以放另一個 Lolly 工具，而不只是一張圖片。
 
 可以組合任何工具的渲染結果：當父工具匯出成 SVG 或 PDF 時，**SVG** 子項會維持真正的向量圖形，匯出成 PNG 時則會清晰地點陣化；**PNG／JPG／WEBP** 子項則以圖片形式內嵌。這需要 `compose` 能力。被組合的子項屬於中介產物——永遠不會加浮水印，也不會蓋來源印記——而且組合會優雅地降級：如果某個殼層無法渲染某個子項，就只會省略那個位置，父工具依然能正常渲染。
 
@@ -358,6 +416,8 @@ CLI 模式就是 URL 模式換了一種傳輸方式——CLI 殼層會從 argv �
 ---
 
 ## 完整的生命週期
+
+![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&format=svg&filename=aud-export-popup)
 
 使用者開啟 `lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H`：
 

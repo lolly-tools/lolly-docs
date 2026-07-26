@@ -40,9 +40,15 @@ Lolly는 Canva나 Figma가 되려는 게 아니에요. Lolly가 힘을 발휘하
 
 ### 기다림 없이, 모두 정확하게
 
+Street Map이 그 거래를 잘 보여주는 예예요: 도시 하나와 색 두 개만 고르면, 지도 표현과 도로 굵기, 수역 처리는 알아서 정해져요.
+
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=192&waitMs=3200&cropSelector=%23tool-canvas&format=png&filename=vt-street-map-poster)
+
 몇 가지 항목만 입력하면 완성된 에셋이 나와요——폰트를 고를 필요도, 색상을 고민할 필요도, "이게 맞는 로고인가?" 하고 물을 필요도 없어요. 도구가 이미 다 알고 있어요. 이메일 서명, 이벤트 카운트다운, 명언 카드, 배지, 시가지 지도까지——화요일 오후 4시에 팀이 필요로 하는 모든 것을 셀프서비스로 해결해요. 고객 데이터가 기기 밖으로 나가지 않으니, 협업에 컴플라이언스 리스크도 없어요.
 
 ### 라이브 데이터에서 완성된 비주얼로
+
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&filename=use-chart-output)
 
 **CSV**나 **JSON** 테이블을 차트, 지도, 표 템플릿에 연결하고 숫자만 갱신하세요——레이아웃은 알아서 처리돼요. 선거 결과, 분기 실적, 기상 이벤트까지, 포맷을 한 번 만들어 두면 이야기가 나올 때마다 재사용할 수 있어요. 하우스 스타일과 *정확히* 일치하는데, 느슨한 가이드라인이 아니라 템플릿 단계에서 강제되기 때문이에요.
 
@@ -52,7 +58,11 @@ Lolly는 Canva나 Figma가 되려는 게 아니에요. Lolly가 힘을 발휘하
 
 ### 필요할 때를 위한 프런티어
 
-고급 필터, 합성, 애니메이션, 라이브 카메라 효과, 생성형 디자인까지——모든 웹 기술을 템플릿 작성자가 쓸 수 있으니 천장이 아주 높아요. *파일*이 아니라 *도구*를 만드세요: 카드 1만 장을 직접 만드는 대신, 카드 1만 장을 생성해 내는 것을 만드세요. 바뀌면 안 되는 것은 잠그고, 바뀌어야 하는 것만 노출하세요.
+고급 필터, 합성, 애니메이션, 라이브 카메라 효과, 생성형 디자인까지——모든 웹 기술을 템플릿 작성자가 쓸 수 있으니 천장이 아주 높아요.
+
+![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=1440&height=900&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&format=png&filename=use-mesh-output)
+
+*파일*이 아니라 *도구*를 만드세요: 카드 1만 장을 직접 만드는 대신, 카드 1만 장을 생성해 내는 것을 만드세요. 바뀌면 안 되는 것은 잠그고, 바뀌어야 하는 것만 노출하세요.
 
 ## 눈에 띄는 디테일
 

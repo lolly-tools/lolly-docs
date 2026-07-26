@@ -40,6 +40,10 @@
 
 ## フォーマットを選ぶ
 
+![The filename field fused to the format picker, so the export reads as one name.format pair](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.filename-extension&filename=exp-format-picker)
+
+![A hairline wide-tracked wordmark reading Aurora, the kind of pure vector artwork the SVG row of the table is about](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DAurora%26weight%3D200%26tracking%3D16%26size%3D200%26full&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=%23tool-canvas&format=svg&filename=vt-wordmark-vector)
+
 | やりたいこと… | 使うフォーマット | 理由 |
 |---|---|---|
 | 拡大縮小してもくっきりしたロゴ／アートワーク | **SVG** | ベクター — 無限に拡大縮小可能、軽量、編集可能 |
@@ -64,6 +68,8 @@
 | ファビコン | **ICO** | 複数サイズを含むサイトアイコン（**ZIP** は複数フォーマットをまとめたもの） |
 
 ## サイズと印刷単位
+
+![The dimensions row set to 210 by 297 mm, with the DPI field revealed because the unit is physical](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26w%3D210%26h%3D297%26unit%3Dmm%26format%3Dpdf%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-dims&filename=exp-export-dims)
 
 既定では、書き出しはツールのネイティブなピクセルサイズを使用します。ツールが**寸法**を公開している場合は、幅×高さと**単位**を設定できます：
 
@@ -95,6 +101,8 @@ Multi-page PDF は RGB ドキュメントであり、トンボ／塗り足しは
 レイアウトは意図的に近似的です — 目的は、ロックされたスクリーンショットではなく、忠実で再利用可能な**コンテンツ**です。ウォーカーがネイティブに表現できないもの（複雑にフィルターやマスクがかかった領域）は、何も失われないよう画像として埋め込まれます。デッキのスライドサイズは1つに固定され、最初のページから決まります。
 
 ## DXF（カットファイル）
+
+![A Street Map render of Paris in ink on cream - pure line art, so every stroke survives the trip to a cutter](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dparis%26roadColor%3D1a1a2e%26waterColor%3D93c5fd%26background%3Dfaf7f2%26full&width=1440&height=900&dpi=192&waitMs=3200&cropSelector=%23tool-canvas&format=png&filename=vt-street-map-cut)
 
 ベクター系のツール（Brand Lockup、QR Code、Street Map、Wayfinding Signage、Pose Geeko、各種ロゴロックアップ、Diagram Builder）は **DXF** を書き出せます — レーザーカッター、カッティングプロッター、CNC/CAD ソフトウェアが読み込む AutoCAD R12 の相互交換フォーマットです。ジオメトリは**ミリメートル単位のアウトラインパス**として書き出され（曲線は精細な許容誤差でフラット化）、テキストはパスにアウトライン化され、色は最も近い AutoCAD Color Index に変換されます（カッターの工具／操作を切り替えるために使われるのが一般的です）。DXF は線画専用であり、写真やフィルター処理された領域はカットパスの形を持たないため破棄されます（Lolly が警告します）。ラスターのコンテンツを残す必要がある場合は SVG/PDF を使ってください。
 
@@ -143,6 +151,8 @@ GIF はどこでも動作します（チャットやメールに最適ですが�
 
 ## パスワード保護
 
+![The Content protection group opened on a PNG export, showing only the cards that apply to it](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26imprint%3D1%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-protection&filename=exp-content-protection)
+
 互いに独立した2種類のロックがあり、どちらも完全にお使いのデバイス上で完結します。
 
 **PDF の開封パスワード** — 書き出しパネルの *Password protect* カードには2つのティアが用意されています：
@@ -163,6 +173,8 @@ GIF はどこでも動作します（チャットやメールに最適ですが�
 
 ## Content Credentials（C2PA）
 
+![The Password protect card expanded on a PDF export, with the password field and the two lock tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-pdfpass&filename=exp-pdf-password)
+
 書き出したファイルには **Content Credentials** を付与できます — ファイルに埋め込まれた署名済みの [C2PA](https://c2pa.org) マニフェストで、そのファイルが Lolly で作られ、それ以降改変されていないことを、改ざんを検知できる形で記録します。これは、上記の来歴メタデータの標準規格版にあたります — ファイルのバイト列のハッシュに紐づいた暗号学的な主張（何がいつ誰によってどこで作ったか）であり、その後の編集はすべて C2PA 対応のビューアーで検知可能です。この標準は [Content Authenticity Initiative](https://contentauthenticity.org)（Adobe、BBC、Microsoft、Nikon など）によって運営されており、Lolly が書き込むクレデンシャルは、カメラメーカーや報道機関、クリエイティブスイートが採用しているものと同じです。
 
 - **フォーマット。** C2PA の埋め込みに対応するすべてのコンテナ: **PDF**（RGB・Print とも）、**PNG / Animated PNG**、**JPG**、**GIF**、**SVG**、**TIFF**（RGB・Print とも）、**WebP**（静止画・アニメーションとも）、**MP4**、**WebM**。**ZIP** バンドルは、対応する各メンバーに個別にスタンプを押します。MP4 は仕様の BMFF バインディングを使用するため、`c2patool` をはじめとする C2PA 対応ビューアーで検証できます。WebM にはまだ標準化された C2PA マッピングがないため、Lolly はマニフェストを Matroska の添付ファイルとして保持し、Lolly 自身の検証ツール（および CLI）がチェックします。（`avif` と Animated SVG はまだスタンプされません。`ico`、`eps`、`emf`、`dxf`、`pptx`、およびテキスト／データ系のフォーマットには C2PA コンテナがありません。）
@@ -174,6 +186,8 @@ GIF はどこでも動作します（チャットやメールに最適ですが�
 - **相互作用。** PDF の場合、Content Credentials と**パスワード保護**（どちらのティアでも — 前述）は併用できません（暗号化された PDF はクレデンシャルの添付を持てません）。クレデンシャルは、完成したバイト列に対する最終ステップとして追加されます — DPI/EXIF/カラープロファイルのスタンプ、PDF/X メタデータ、トンボの後になります。
 
 ## スマートフォンでの操作
+
+![The Content Credentials card, pre-ticked, with the credential lifetime beside it](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26c2pa%3D30%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-c2pa%5Bdata-c2pa-only%5D&filename=exp-c2pa-card)
 
 書き出しのコントロールは、フローティングの **Render** ボタンの奥にあり、タップすると **Export** シートが開きます — フォーマット、サイズ、コピー、ダウンロード、共有まで、同じ内容がタッチ操作向けのサイズで用意されています。
 

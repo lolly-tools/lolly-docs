@@ -66,9 +66,17 @@ Inilah ganjarannya: susun atur yang diimport adalah sesi Layout Studio biasa, ja
 
 ### Data terbuka dan alat terbuka
 
-[Set alat komuniti](/info/builders.html) adalah sumber terbuka dan tidak terikat kepada mana-mana jenama - kod QR, peta jalan, penapis, utiliti privasi - dan ia merender mengikut jenama *anda* sebaik sahaja anda mengaktifkannya. Suapkan juga data terbuka anda sendiri ke alat: tampal atau jatuhkan jadual **CSV** atau **JSON** dan medan berulang sesuatu alat akan diisi daripadanya, satu aset siap bagi setiap baris.
+[Set alat komuniti](/info/builders.html) adalah sumber terbuka dan tidak terikat kepada mana-mana jenama - kod QR, peta jalan, penapis, utiliti privasi - dan ia merender mengikut jenama *anda* sebaik sahaja anda mengaktifkannya.
+
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
+Suapkan juga data terbuka anda sendiri ke alat: tampal atau jatuhkan jadual **CSV** atau **JSON** dan medan berulang sesuatu alat akan diisi daripadanya, satu aset siap bagi setiap baris.
 
 ## 3. Hasilkan sesuatu, kemudian kongsi atau automasikannya
+
+"URL itu sendiri adalah API" adalah kenyataan yang literal. Carta di bawah tidak dilukis oleh sesiapa: jenisnya, tajuknya dan seluruh jadual datanya ditaip ke dalam bar alamat, dan pautan yang sama merender carta yang sama pada mana-mana peranti.
+
+![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&filename=vt-d3-url-chart)
 
 Dengan jenama yang aktif dan bahan anda di tangan, setiap alat menghasilkan satu fail siap:
 

@@ -20,6 +20,8 @@ Rezultatem jest **obfitość**: każde wydarzenie ma poprawne oznakowanie, każd
 
 ### Gdzie plasuje się na tle rynku
 
+![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-gallery-landscape)
+
 | Funkcja | Canva | Portale brandowe | Illustrator | Figma / Penpot | **Lolly** |
 |---|---|---|---|---|---|
 | Masowe generowanie treści | częściowo | ✗ | ✗ | ✗ | **✓** |
@@ -39,6 +41,40 @@ Luka jest oczywista: nic w istniejącym krajobrazie nie daje nam efektu, który 
 **Używaj do:** Szybkiego generowania zoperacjonalizowanych zasobów kreatywnych - kafelków wydarzeń, identyfikatorów, stopek, alertów CVE, kodów QR, kart do mediów społecznościowych, etykiet wysyłkowych, ustrukturyzowanych raportów.
 
 **Nie używaj do:** Dedykowanych treści flagowych.
+
+---
+
+## Cykl życia kampanii
+
+![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-lifecycle-chart)
+
+Najlepiej widać, czym jest Lolly, nie po liście funkcji - a wtedy, gdy prześledzisz jeden zasób przechodzący z rąk do rąk. Zobacz, jak jedna zlokalizowana karta kampanii wędruje przez organizację:
+
+1. **Osoba kreatywna ustala zasady.** Projektant tworzy bazowy szablon w Layout Studio, wpisując na stałe typografię i zmienne kolorystyczne marki. Nie robi jednej karty - wykonuje pracę fundamentalną *raz*, żeby już nigdy nie lokalizować jej ręcznie.
+2. **Programista to skaluje.** Ten sam szablon zostaje podłączony do nocnego potoku przez CLI, więc świeży wykres albo nowy wariant językowy powstaje automatycznie - żaden projektant nie otwiera pliku ponownie.
+3. **Producent po prostu tego używa.** Handlowiec offline w samolocie otwiera to samo narzędzie i generuje idealnie zgodną z marką prezentację na spotkanie z klientem. Zero umiejętności projektowych, zero sieci, zero czekania.
+
+„Świeży wykres" z kroku drugiego to render taki jak ten, powstały z ciągu danych i kilku parametrów, bez otwierania jakiegokolwiek pliku projektowego:
+
+Nie chodzi o to, że Lolly jest dobra dla projektantów *i* dobra dla programistów *i* dobra dla sprzedaży, każde w oderwaniu od reszty. To **sztafeta**: początkową pracę osoby kreatywnej skaluje programista, co z kolei daje moc producentowi. Bezwysiłkowe doświadczenie nietechnicznego handlowca w samolocie jest *możliwe* wyłącznie dzięki rygorowi, który ustawił projektant, a wdrożył programista.
+
+To właśnie jest ten mnożnik siły. Lolly nie jest szufladą z osobnymi narzędziami dla poszczególnych ról - to jeden deterministyczny cykl życia zasobu, którego dotyka każda rola, a każde ręce, przez które przechodzi, zwielokrotniają wartość poprzednich.
+
+---
+
+## Jedno zatwierdzenie, dziesięć tysięcy zasobów
+
+![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&format=svg&filename=ov2-batch-grid)
+
+Ponieważ zatwierdzenie żyje w narzędziu, a nie w pliku (zobacz [Jak Lolly wypada na tle innych](/info/positioning.html)), skala przestaje być problemem przeglądu. Zatwierdź raz narzędzie do zlokalizowanych kart społecznościowych, a potem wygeneruj z arkusza **10 000 zasobów w 12 językach** - i żaden z nich nie potrzebuje świeżej kontroli od działu prawnego ani od marki, bo szablon, z którego wszystkie powstały, był już zatwierdzony.
+
+To samo deterministyczne narzędzie osiąga tę skalę trzema drogami, a każda daje identyczny, wstępnie zatwierdzony wynik:
+
+- **Człowiek, w aplikacji.** Siatka wsadowa `/pro`: wklej albo zaimportuj wiersze, dostań jeden gotowy zasób na wiersz, pobierz zip. Zero umiejętności projektowych, zero zgłoszenia, zero czekania.
+- **Programista, z wiersza poleceń.** CLI uruchamia bezgłowo *ten sam* silnik i *tę samą* ścieżkę renderowania, więc narzędzie da się przepuścić przez wszystkie 10 000 wierszy w skrypcie albo nocnym potoku. Wywołanie `lolly <tool> --field=…` w pętli to cała integracja.
+- **System albo agent AI, przez MCP.** To samo narzędzie obsługiwane programowo, z tą samą wiernością i w jeszcze większej skali - bo maszyna się nie znudzi, kiedy sypią się tysiące plików.
+
+Jeden zestaw ograniczeń marki, ustalony raz przez projektanta; trzy drogi do identycznego, wstępnie zatwierdzonego wyniku - a droga maszynowa skaluje się najdalej, bo nigdy się nie zmęczy, gdy pliki się sypią.
 
 ---
 
@@ -192,9 +228,16 @@ lolly/
 Platforma działa na kilku powierzchniach - web PWA, desktop/mobile Tauri, skryptowalny CLI oraz interaktywny TUI. Wszystkie korzystają z tego samego silnika i tych samych plików narzędzi.
 
 ### Web (PWA) - główny kanał dystrybucji
+
+![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&format=svg&filename=aud-web-split)
+
+![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&format=png&filename=ov2-phone-audiogram)
+
 Hostowany pod adresem URL kontrolowanym przez SUSE. Działa offline, gdy service worker zbuforuje narzędzia i zasoby. Tutaj większość pracowników, dostawców i partnerów będzie korzystać z platformy. Konto nie jest wymagane - stan jest przechowywany w IndexedDB na każdym urządzeniu osobno.
 
 Powłoka webowa jest responsywna w ramach jednego układu. Na desktopie narzędzie to pasek boczny z regulowaną szerokością obok sceny podglądu, z natywną dla gładzika nawigacją po kanwie (Cmd/Ctrl-scroll lub uszczypnięcie, by przybliżać względem kursora, Spacja- lub przeciąganie środkowym przyciskiem, by przesuwać, klawisze `0`/`1`/`+`/`−` oraz HUD Dopasuj/%). Na urządzeniu mobilnym (≤640px) elementy sterujące zamieniają się w zakotwiczony u góry arkusz z uchwytem do przeciągania, który przyciąga się do pozycji podejrzenie/połowa/pełny (dotknięcie przełącza) nad statycznym pełnoekranowym podglądem, a pływający przycisk **Render** otwiera elementy sterujące **Eksportu** w wyskakującym arkuszu na dole. Dotyk umożliwia przybliżanie uszczypnięciem i przesuwanie przeciąganiem po podglądzie. Ścieżka renderowania i elementy sterujące eksportem są identyczne w obu przypadkach - przepływa jedynie chrome interfejsu.
+
+To samo narzędzie w szerokości telefonu, bez drugiego układu do utrzymywania: kontrolki zamieniają się w arkusz u góry, podgląd zajmuje cały ekran, a nad nim unosi się przycisk Render.
 
 **Tryb wsadowy (`/pro`).** Powłoka webowa dostarcza też siatkę wsadową w stylu arkusza kalkulacyjnego (`shells/web/src/pro/`), która renderuje wiele wierszy naraz w jednym lub wielu narzędziach. Obsługuje round-trip CSV/TSV oraz wklejanie z arkusza, szablon/format/rozmiar/jednostkę/dpi per wiersz, boczny panel edytora bloków z podglądem na żywo, zwijane kolumny eksportu, pasek tagów „trafności” per wiersz, zmianę kolejności wierszy przez uchwyt do przeciągania po lewej, dwustopniowe potwierdzenie usunięcia, zapisane sesje wsadowe oraz pobieranie `.zip`. To powierzchnia „jeden-do-wielu” stojąca za pozycjonowaniem „masowego generowania treści”.
 
@@ -218,9 +261,13 @@ lolly qr-code                # lists inputs for that tool
 
 Interaktywny odpowiednik CLI: pełnoekranowa, sterowana głównie klawiaturą aplikacja terminalowa (zbudowana na Ink) do przeglądania narzędzi, wypełniania danych wejściowych, zapisywania projektów i eksportowania - wszystko bez GUI. Jego host bridge **wykorzystuje ponownie implementację CLI** dla formatów niewymagających DOM (SVG/EMF/EPS/HTML + tekst/dane) i dodaje stan na dysku w `~/.lolly` oraz opcjonalny podgląd inline. Poza tym ma **poziom renderowania przez przeglądarkę**: ograniczony zakresowo bezgłowy Chromium (ten sam, który instaluje serwer MCP), który na żądanie produkuje raster/PDF/wideo oraz przechwytywanie URL na żywo - napędzając zbudowaną kopię powłoki webowej, tak by wynik był identyczny, i uruchamiając się dopiero przy pierwszym eksporcie takiego formatu. Dzięki temu `url-shot` (z kadrowaniem + zmianą kolorów + wektorowym PDF/SVG) oraz każde narzędzie raster/pdf działa również w terminalu. Zobacz [przewodnik TUI](/info/tui.html).
 
+Na której powierzchni byś nie był, zakładka Capabilities w panelu głównym jest pełną mapą tego, co platforma deklaruje, że potrafi - pogrupowaną i czytelną bez otwierania choćby jednego narzędzia.
+
 ---
 
 ## Kategorie narzędzi
+
+![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-utilities)
 
 Narzędzia są oznaczone kategorią `category` w swoim manifeście na potrzeby grupowania w galerii.
 
@@ -249,6 +296,8 @@ Narzędzia są też klasyfikowane według statusu: `official` (zatwierdzone prze
 Te decyzje są przesądzone. Zmiana którejkolwiek z nich to poważne przedsięwzięcie - kształtują one każdą inną decyzję w bazie kodu.
 
 ### 1. Narzędzia deklaratywne, z imperatywną furtką awaryjną
+
+![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-street-map-controls)
 
 Narzędzie to manifest (`tool.json`) + szablon (`template.html`) + opcjonalny `hooks.js`.
 
@@ -295,6 +344,10 @@ Dzięki temu zapisane stany narzędzi i linki udostępniane przez URL są trwał
 
 ### 5. Tryb URL jest pełnoprawny
 
+![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&format=svg&filename=aud-url-mode-qr)
+
+![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=%23tool-canvas&filename=ov2-url-palette)
+
 Każde wejście musi dać się wyrazić jako parametr URL:
 
 ```
@@ -304,6 +357,8 @@ lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H
 Tryb CLI to tryb URL w innym transporcie - powłoka CLI buduje obiekt stanu URL z argv i uruchamia **ten sam** potok silnika. Istnieje jedna ścieżka renderowania. CLI nie może odejść od GUI, bo nie jest osobną implementacją.
 
 `url-mode.ts` obsługuje obieg w obie strony (parsowanie i serializację). Parametry zarezerwowane (nigdy nieprzekazywane do narzędzia jako wejścia): `format`, `export`, `copy`, `slot`, `output`, `filename`, `_v`, `z` (stan spakowany - token „Najkrótszy link”), `width`/`w`, `height`/`h`, `unit`, `dpi`, `profile`, `password`, `bleed`, `marks`, `full`, `options`, `nostage`. Wejścia typu asset w trybie URL są serializowane przez ich `id`; środowisko uruchomieniowe rozwiązuje je przez `host.assets.get()` przed hydratacją. `width`/`height` to wartości w jednostce `unit` (domyślnie `px`, także `mm`/`cm`/`in`/`pt`/`pc`); przy jednostce fizycznej `dpi` ustawia rozdzielczość rastra. Ustawiają rozmiar dokumentu na kanwie i wstępnie wypełniają panel wymiarów eksportu.
+
+Ponieważ każde wejście podróżuje w linku, zmiana parametru to inny gotowy zasób. Cała ta paleta to jeden kolor bazowy, harmonia i liczba kroków:
 
 ### 6. Pamięć przechodzi przez pomost, nie bezpośrednio
 
@@ -336,10 +391,14 @@ Logika mieszka w `hooks.js`, gdzie jest jawna i podlega przeglądowi. Dostępne 
 
 ### 10. Narzędzia komponują narzędzia
 
+![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-slides-deck)
+
 Narzędzie może osadzić render **innego** narzędzia bez importów między narzędziami - kompozycja jest rozwiązywana przez silnik, nigdy przez kod narzędzia. Istnieją dwie powierzchnie:
 
 - **Manifest deklaratywny** - `composes: [{ id, tool, inputs, format?, width?, height? }]`. Silnik renderuje nazwane dziecko i umieszcza wynik w pozbawionym logiki szablonie jako `{{asset <id>}}`. `event-name-badge` komponuje obecnie `qr-code` jako SVG.
 - **Przenośny URL osadzenia** - `<img src="https://lolly.tools/tool/<id>.<ext>?<inputs>">`. Powłoka renderuje to dziecko **lokalnie** (do czasu rozwiązania lokalnego renderu wyświetlany jest piksel zastępczy); z `lolly.tools` nigdy nic nie jest pobierane.
+
+Narzędzie Slides jest zbudowane na tej drugiej powierzchni: każdy slot na każdym slajdzie może zamiast obrazu zawierać inne narzędzie Lolly.
 
 Komponuj render dowolnego narzędzia: dziecko **SVG** pozostaje prawdziwym wektorem, gdy rodzic eksportuje do SVG lub PDF, i rasteryzuje się ostro dla PNG; dzieci **PNG/JPG/WEBP** osadzają się jako obrazy. Wymaga możliwości `compose`. Skomponowane dzieci są elementami pośrednimi - nigdy nie są opatrzone znakiem wodnym ani znacznikiem pochodzenia - a kompozycja degraduje się łagodnie: powłoka, która nie potrafi wyrenderować dziecka, po prostu pomija slot, a rodzic i tak się renderuje.
 
@@ -354,7 +413,10 @@ Komponuj render dowolnego narzędzia: dziecko **SVG** pozostaje prawdziwym wekto
 - **Brak wspólnej ścieżki kodu narzędzi/silnika.** Silnik jest open source; `tools/` i `assets/` pozostają zastrzeżoną treścią SUSE we własnych repozytoriach. Rozdział jest egzekwowany (brak importów między nimi), więc podział pozostaje czysty.
 
 ---
+
 ## Cykl życia, od początku do końca
+
+![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&format=svg&filename=aud-export-popup)
 
 Użytkownik otwiera `lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H`:
 

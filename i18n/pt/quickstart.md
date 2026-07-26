@@ -66,9 +66,17 @@ Aqui está o ganho: um layout importado é uma sessão comum do Layout Studio, e
 
 ### Dados abertos e ferramentas abertas
 
-O [conjunto de ferramentas da comunidade](/info/builders.html) é open source e independente de marca - QR codes, mapas de rua, filtros, utilitários de privacidade - e renderiza contra *a sua* marca no momento em que você a ativa. Alimente as ferramentas com seus próprios dados abertos também: cole ou solte uma tabela **CSV** ou **JSON** e os campos repetidos de uma ferramenta se preenchem a partir dela, um ativo finalizado por linha.
+O [conjunto de ferramentas da comunidade](/info/builders.html) é open source e independente de marca - QR codes, mapas de rua, filtros, utilitários de privacidade - e renderiza contra *a sua* marca no momento em que você a ativa.
+
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
+Alimente as ferramentas com seus próprios dados abertos também: cole ou solte uma tabela **CSV** ou **JSON** e os campos repetidos de uma ferramenta se preenchem a partir dela, um ativo finalizado por linha.
 
 ## 3. Crie algo, depois compartilhe ou automatize
+
+"Uma URL é a API" é literal. O gráfico abaixo não foi desenhado por ninguém: o tipo dele, o título e toda a tabela de dados foram digitados na barra de endereços, e o mesmo link renderiza o mesmo gráfico em qualquer dispositivo.
+
+![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&filename=vt-d3-url-chart)
 
 Com uma marca ativa e seu material em mãos, toda ferramenta produz um arquivo finalizado:
 

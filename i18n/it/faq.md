@@ -18,6 +18,8 @@ Lolly produce un grande volume di contenuti. Adottiamo un approccio rigoroso di 
 
 ### Cosa sono le feature flags?
 
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&filename=pd-feature-flags)
+
 Le feature flags attivano o disattivano parti di Lolly. Di solito sono controllate da un amministratore - con Lolly, il controllo è tuo.
 
 ## Come ottengo le app mobile o desktop?
@@ -74,6 +76,8 @@ Lolly solleva tutto quanto.
 
 ## Cosa distingue le utilità dagli strumenti?
 
+![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
 **Risposta semplice →** Le utilità non hanno sempre bisogno di renderizzare e quindi possono avere una UX diversa.
 
 **Risposta vera →** Il motivo per cui le utilità possono essere ospitate dentro Lolly Tools è aggiungere un ulteriore "livello di comodità" di difesa per disincentivare l'esfiltrazione di dati.
@@ -95,6 +99,8 @@ banale; è **il contenuto ad avere un costo.**
 Vinciamo la guerra della governance con un'eccellente comodità e un servizio eccellente.
 
 ## Lolly può modificare e renderizzare i miei file Figma, Penpot, Illustrator o InDesign?
+
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 Sì. Apri **Layout Studio** e clicca su **Importa un design**: accetta un file Figma nativo **.fig** (Save local copy), un'esportazione Penpot **.penpot**, un file Illustrator **.ai** o **.pdf**, un file InDesign **.idml** (File → Export → InDesign Markup), oppure **qualsiasi SVG** (la porta larga - quasi ogni app di design lo esporta). Tutto viene analizzato interamente sul tuo dispositivo, senza bisogno di account o plugin.
 

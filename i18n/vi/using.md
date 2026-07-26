@@ -6,6 +6,8 @@ Một hướng dẫn thực tế về việc *sử dụng* ứng dụng - mở m
 
 ## Mở một công cụ
 
+![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Fct%3Dhorizontal-bar%26t%3DQuarterly%2520revenue%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&format=svg&filename=vt-tool-split-view)
+
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
 ![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
@@ -17,6 +19,8 @@ Mỗi công cụ có giao diện chia đôi: **các điều khiển** ở một 
 > Một vài công cụ (như **Layout Studio**) lại mở dưới dạng **canvas tự do** - một bề mặt thao tác trực tiếp, không khung giao diện, nơi bạn kéo, đổi kích thước, xoay và gắn (snap) các khối văn bản, hình khối và hình ảnh, đồng thời nhấp đúp để chỉnh sửa văn bản ngay tại chỗ. Nó xuất file qua cùng một quy trình render như mọi công cụ khác, vì vậy canvas *chính là* file. Xem [Canvas tự do](#the-free-canvas-layout-studio) bên dưới.
 
 ## Canvas (bản xem trước)
+
+![The zoom HUD in the corner of the canvas - minus, the live percentage, plus, Fit, then the theme and sound toggles](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=.stage-nav%7Bopacity%3A1!important%7D&cropSelector=.stage-nav&format=svg&filename=use-zoom-hud)
 
 Bản xem trước luôn hiển thị chính xác những gì sẽ được xuất ra.
 
@@ -48,12 +52,16 @@ Các công cụ canvas tự do bổ sung thêm một bề mặt làm việc *bao
 
 ## Trên điện thoại
 
+![A tool on a phone-width screen - controls as a sheet up top, the generated palette filling the preview below, and the render pill floating bottom-centre](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3Df97316%26harmony%3Dadjacent-3%26steps%3D9&width=430&height=900&dpi=192&waitMs=2200&format=svg&filename=vt-phone-palette)
+
 Trên màn hình hẹp, bố cục sẽ dồn về một cột:
 
 - **Các điều khiển trở thành một tấm trượt** ở phía trên với một **tay cầm kéo** ở mép dưới. Kéo tay cầm để đổi kích thước - nó sẽ tự chốt vào **peek / half / full** - hoặc **chạm** vào tay cầm để chuyển đổi giữa thu gọn ↔ mở rộng. Bản xem trước lấp đầy phần không gian bên dưới và luôn hiển thị trong khi bạn chỉnh sửa.
 - Nút **Render** nổi sẽ mở tấm trượt **Export** - toàn bộ các điều khiển định dạng, kích thước, sao chép, lưu và tải xuống đều nằm ở một chỗ. Đóng nó lại bằng cách chạm vào lớp nền phía sau.
 
 ## Điều khiển (đầu vào)
+
+![A tool's control stack - a text field, colour triggers and a slider, and nothing else the author chose to lock down](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-inputs&format=svg&filename=use-tool-inputs)
 
 Các công cụ chỉ hiển thị những trường đầu vào có thể thay đổi - mọi thứ khác (màu sắc, bố cục, kiểu chữ, logic) đều do tác giả công cụ khoá cố định, để bất cứ thứ gì bạn tạo ra đều tuân theo quy tắc mà tác giả đặt ra. Các trường đầu vào bao gồm văn bản, thanh trượt, bộ chọn màu, danh sách thả xuống, ngày tháng, bộ chọn ảnh và các nhóm hàng lặp lại. Một số được nhóm trong các mục có thể thu gọn.
 
@@ -66,6 +74,8 @@ Các công cụ chỉ hiển thị những trường đầu vào có thể thay 
 Ảnh chân dung và thông tin của bạn **chỉ tồn tại trên thiết bị này**. Một hồ sơ có thể không chỉ đại diện cho bạn - mà còn cho một nhóm hoặc một vai trò mà thỉnh thoảng bạn đảm nhận. Xem **[Hồ sơ](/info/profile.html)** để biết toàn cảnh, bao gồm cả cách giữ nhiều hơn một hồ sơ.
 
 ## Lưu & tiếp tục
+
+![The two-half render pill - an up arrow that opens the export panel, and a tick that saves the session in place](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=%23tool-inputs%7Bdisplay%3Anone%7D&cropSelector=.render-pill&format=svg&filename=use-render-pill)
 
 Nhấp **Save** để lưu các trường đầu vào hiện tại thành một phiên làm việc cho công cụ đó. Bạn có thể giữ nhiều phiên có tên riêng cho mỗi công cụ; nút **Continue** của mỗi công cụ sẽ mở lại phiên gần nhất, còn **nút lịch sử** (góc trên bên phải, cạnh hồ sơ của bạn) liệt kê mọi phiên đã lưu trên tất cả các công cụ. Các phiên làm việc được lưu cục bộ trên thiết bị. Để sắp xếp chúng, hãy mở **Projects** (bên dưới).
 
@@ -108,6 +118,8 @@ Khi một công cụ cho phép bạn thêm ảnh từ thiết bị, ảnh đó s
 - **Dọn dẹp gọn gàng.** Phân loại lại một tài sản sang nhóm khác, ẩn một tài sản thương hiệu dùng chung mà bạn không dùng (với **Show hidden** để hiện lại), hoặc xoá hẳn các tệp bạn tự tải lên.
 
 ### Mang bảng màu và font của bạn đi khắp nơi
+
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 Bảng **Swatches** của Catalogue không chỉ để tham khảo - nhấp vào một màu để sao chép nó, hoặc **tải xuống toàn bộ bảng màu thương hiệu** ở định dạng mà công cụ khác của bạn hiểu:
 
@@ -154,6 +166,8 @@ Bạn có thể đưa một thiết kế có sẵn vào Lolly và tiếp tục l
 Xem **[Xuất file & Định dạng](/info/exporting.html)** để biết toàn bộ câu chuyện - chọn định dạng, kích thước xuất và đơn vị in ấn, độ trong suốt, video, và sao chép/chia sẻ. Tóm tắt: chọn một định dạng, đặt kích thước nếu cần, rồi **Download** (hoặc **Copy** vào clipboard).
 
 ## Chế độ Batch (Pro)
+
+![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&format=svg&filename=use-batch-toolbar)
 
 Dành cho người dùng chuyên sâu, **Batch** (liên kết từ gallery, bị khoá sau cờ tính năng Pro, vốn bật theo mặc định) xuất nhiều biến thể cùng lúc - một bảng lưới nơi mỗi hàng là một tập hợp các trường đầu vào, được xuất cùng nhau. Lý tưởng để bản địa hoá một tấm thiệp sang hàng chục ngôn ngữ hoặc tạo ra mọi biến thể kích thước trong một lượt. Điền các hàng bằng cách gõ trực tiếp, dán thẳng từ một bảng tính, hoặc nhập một file CSV (bạn cũng có thể xuất ngược lại một file), và đặt định dạng, kích thước, tên file xuất theo từng hàng. Lưu cả một bảng lưới thành một **phiên batch** có tên riêng để mở lại từ gallery, và tải xuống mọi hàng dưới dạng một file `.zip` duy nhất.
 

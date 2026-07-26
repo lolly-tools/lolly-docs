@@ -18,6 +18,8 @@ Kết quả là **sự dồi dào**: mọi sự kiện đều có biển chỉ d
 
 ### Vị trí trong bối cảnh
 
+![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-gallery-landscape)
+
 | Khả năng | Canva | Cổng thương hiệu | Illustrator | Figma / Penpot | **Lolly** |
 |---|---|---|---|---|---|
 | Tạo nội dung hàng loạt | một phần | ✗ | ✗ | ✗ | **✓** |
@@ -37,6 +39,40 @@ Khoảng trống này rất rõ ràng: không có gì trong bối cảnh hiện 
 **Dùng để:** Tạo nhanh các asset sáng tạo mang tính vận hành - ô sự kiện, thẻ tên, chữ ký, cảnh báo CVE, mã QR, thẻ mạng xã hội, nhãn lô hàng, báo cáo có cấu trúc.
 
 **Không dùng để:** Nội dung chủ lực, đặt riêng theo yêu cầu.
+
+---
+
+## Vòng đời của một chiến dịch
+
+![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-lifecycle-chart)
+
+Cách rõ nhất để thấy Lolly là gì không phải một danh sách tính năng - mà là dõi theo một asset duy nhất khi nó được chuyền từ tay này sang tay khác. Hãy xem một thẻ chiến dịch đã bản địa hoá đi qua tổ chức:
+
+1. **Người sáng tạo đặt ra luật.** Một nhà thiết kế soạn template gốc trong Layout Studio, mã hoá cứng kiểu chữ và các biến màu của thương hiệu. Họ không làm ra một thẻ - họ làm phần việc nền tảng *một lần* để không bao giờ phải bản địa hoá thủ công lại nữa.
+2. **Lập trình viên nhân rộng nó.** Cũng chính template đó được nối vào một pipeline chạy hằng đêm qua CLI, nên một biểu đồ mới hay một biến thể ngôn ngữ mới được tạo ra tự động - không nhà thiết kế nào phải mở lại tệp.
+3. **Người sản xuất chỉ việc dùng.** Một nhân viên bán hàng, đang ngoại tuyến trên máy bay, mở đúng công cụ đó và tạo ra một bộ slide đúng chuẩn thương hiệu cho buổi gặp khách hàng. Không cần kỹ năng thiết kế, không cần mạng, không phải chờ.
+
+"Biểu đồ mới" ở bước hai là một bản render như thế này, được tạo ra từ một chuỗi dữ liệu và vài tham số, không ai phải mở tệp thiết kế nào:
+
+Vấn đề không phải là Lolly tốt cho nhà thiết kế *và* tốt cho lập trình viên *và* tốt cho bộ phận bán hàng, mỗi bên một cách riêng lẻ. Đó là một **cuộc chạy tiếp sức**: công việc ban đầu của người sáng tạo được lập trình viên nhân rộng, và điều đó lại tiếp sức cho người sản xuất. Trải nghiệm nhẹ nhàng của nhân viên không chuyên kỹ thuật trên máy bay chỉ *khả thi* nhờ sự chặt chẽ mà nhà thiết kế đặt ra và lập trình viên triển khai.
+
+Đó chính là hệ số nhân. Lolly không phải một ngăn tủ chứa các công cụ riêng lẻ cho từng vai trò - nó là một vòng đời asset mang tính xác định mà mọi vai trò đều chạm vào, và mỗi bàn tay nó đi qua lại nhân lên giá trị của bàn tay trước.
+
+---
+
+## Một lần phê duyệt, mười nghìn asset
+
+![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&format=svg&filename=ov2-batch-grid)
+
+Vì việc phê duyệt nằm ở công cụ chứ không ở tệp (xem [Lolly so sánh như thế nào](/info/positioning.html)), quy mô không còn là vấn đề của việc rà soát. Hãy phê duyệt một công cụ tạo thẻ mạng xã hội đã bản địa hoá đúng một lần, rồi tạo ra **10.000 asset trên 12 ngôn ngữ** từ một bảng tính - và không cái nào cần một lượt kiểm tra tuân thủ mới từ bộ phận pháp lý hay thương hiệu, bởi template mà tất cả chúng sinh ra từ đó đã được phê duyệt rồi.
+
+Cùng một công cụ mang tính xác định đó đạt tới quy mô ấy theo ba đường, tất cả đều cho ra đầu ra giống hệt nhau và đã được phê duyệt trước:
+
+- **Một con người, trong ứng dụng.** Lưới batch `/pro`: dán hoặc nhập các hàng, nhận một asset hoàn chỉnh cho mỗi hàng, tải zip về. Không cần kỹ năng thiết kế, không cần ticket, không phải chờ.
+- **Một lập trình viên, từ dòng lệnh.** CLI chạy *cùng* engine và *cùng* đường render đó ở chế độ headless, nên công cụ có thể được lặp qua toàn bộ 10.000 hàng trong một script hay một pipeline hằng đêm. Một lệnh `lolly <tool> --field=…` trong vòng lặp là toàn bộ phần tích hợp.
+- **Một hệ thống hay một AI agent, qua MCP.** Cùng công cụ đó được vận hành theo cách lập trình, với cùng độ trung thực và ở quy mô còn lớn hơn - bởi máy không biết chán khi hàng nghìn tệp lần lượt hiện ra.
+
+Một bộ ràng buộc thương hiệu, do nhà thiết kế cố định một lần; ba lối dẫn tới đúng một đầu ra đã được phê duyệt trước - và lối máy móc mở rộng xa nhất, vì nó không bao giờ mỏi khi các tệp lần lượt đổ về.
 
 ---
 
@@ -190,6 +226,11 @@ lolly/
 Nền tảng này chạy trên nhiều bề mặt khác nhau - web PWA, Tauri desktop/mobile, CLI có thể viết script, và TUI tương tác. Tất cả đều dùng chung một engine và cùng các tệp công cụ.
 
 ### Web (PWA) - kênh phân phối chính
+
+![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&format=svg&filename=aud-web-split)
+
+![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&format=png&filename=ov2-phone-audiogram)
+
 Được host tại một URL do SUSE kiểm soát. Hoạt động ngoại tuyến một khi service worker đã lưu bộ nhớ đệm cho các công cụ và asset. Đây là nơi hầu hết nhân viên, nhà cung cấp và đối tác sẽ dùng nền tảng. Không cần tài khoản - trạng thái được lưu trong IndexedDB theo từng thiết bị.
 
 Web shell là responsive từ một bố cục duy nhất. Trên desktop, một công cụ là một sidebar điều khiển có thể đổi kích thước nằm cạnh khung xem trước, với khả năng điều hướng canvas thuần trackpad (cuộn kèm Cmd/Ctrl hoặc chụm hai ngón để thu phóng quanh con trỏ, giữ Space hoặc kéo bằng nút chuột giữa để di chuyển khung nhìn, các phím `0`/`1`/`+`/`−`, và một HUD Fit/%). Trên di động (≤640px), các điều khiển trở thành một tấm trượt neo ở phía trên với tay cầm kéo tự chốt vào peek/half/full (chạm để chuyển đổi), nằm trên một bản xem trước toàn màn hình tĩnh, còn nút **Render** nổi sẽ mở các điều khiển **Export** trong một popup dạng tấm trượt. Cảm ứng thì dùng chụm để thu phóng và kéo để di chuyển khung nhìn trên bản xem trước. Render path và các điều khiển export giống hệt nhau ở cả hai - chỉ phần khung giao diện (chrome) là đổi cách bố trí.
@@ -200,6 +241,9 @@ Web shell là responsive từ một bố cục duy nhất. Trên desktop, một 
 Ứng dụng native đóng gói sẵn (dung lượng nhỏ nhờ Tauri). Cung cấp khả năng hoạt động ngoại tuyến đầy đủ, quyền truy cập hệ thống tệp cho các công cụ phụ thuộc CLI (PDF Smasher, Font Outliner), và quyền truy cập camera. Dự kiến được nâng cấp bộ công cụ vào giữa năm 2026.
 
 ### CLI
+
+Cùng một công cụ ở chiều rộng điện thoại, không cần bảo trì bố cục thứ hai: các điều khiển trở thành một tấm trượt ở phía trên, phần xem trước chiếm cả màn hình, và nút Render nổi bên trên.
+
 `lolly <tool-id> [--input=value ...] --output=file.png`
 
 Người dùng desktop có thể gọi nhiều công cụ ngay từ terminal. CLI shell nạp cùng một engine, tạo ra một DOM jsdom, chạy cùng render path, và ghi ra tệp. Chế độ URL chính là lớp truyền tải - CLI không phải là một cài đặt (implementation) riêng biệt. Điều này đảm bảo đầu ra của CLI và GUI luôn giống hệt nhau.
@@ -216,9 +260,13 @@ lolly qr-code                # liệt kê các đầu vào của công cụ đó
 
 Phiên bản tương tác song song với CLI: một ứng dụng terminal toàn màn hình, ưu tiên bàn phím (xây trên Ink) để duyệt công cụ, điền đầu vào, lưu project, và export - tất cả mà không cần GUI. Host bridge của nó **tái sử dụng cài đặt của CLI** cho các định dạng không cần DOM (SVG/EMF/EPS/HTML + văn bản/dữ liệu), và bổ sung trạng thái lưu trên đĩa dưới `~/.lolly` cùng một bản xem trước nội tuyến tùy chọn. Ngoài ra nó còn có một **tầng render trình duyệt**: một Chromium headless có phạm vi giới hạn (cùng loại mà MCP server cài đặt) tạo ra raster/PDF/video và chụp URL trực tiếp theo yêu cầu - vận hành một bản build của web shell nên đầu ra giống hệt nhau, và chỉ khởi chạy khi bạn export một định dạng như vậy lần đầu tiên. Vì vậy `url-shot` (với crop + đổi màu + vector PDF/SVG) và mọi công cụ raster/pdf khác cũng chạy được ngay trong terminal. Xem [hướng dẫn TUI](/info/tui.html).
 
+Dù bạn đang ở bề mặt nào, tab Năng lực trong bảng điều khiển vẫn là bản đồ đầy đủ về những gì nền tảng tuyên bố nó làm được, được nhóm lại và dễ đọc mà không cần mở một công cụ nào.
+
 ---
 
 ## Danh mục công cụ
+
+![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-utilities)
 
 Các công cụ được gắn nhãn bằng một `category` trong manifest của chúng để nhóm lại trong gallery.
 
@@ -247,6 +295,8 @@ Các công cụ cũng được phân loại theo `status`: `official` (được 
 Đây là những quyết định đã chốt. Thay đổi bất kỳ điều nào trong số đó là một việc lớn - chúng định hình mọi quyết định khác trong codebase.
 
 ### 1. Công cụ khai báo (declarative), với một lối thoát mệnh lệnh (imperative)
+
+![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-street-map-controls)
 
 Một công cụ là một manifest (`tool.json`) + một template (`template.html`) + `hooks.js` tùy chọn.
 
@@ -293,6 +343,10 @@ Bridge được đánh phiên bản. Thêm phương thức mới là một phiê
 
 ### 5. Chế độ URL là công dân hạng nhất
 
+![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&format=svg&filename=aud-url-mode-qr)
+
+![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=%23tool-canvas&filename=ov2-url-palette)
+
 Mọi đầu vào đều phải có thể biểu diễn được dưới dạng một tham số URL:
 
 ```
@@ -310,6 +364,8 @@ Web shell: IndexedDB. Tauri: hệ thống tệp. CLI: trong bộ nhớ. Công c�
 Người dùng có thể lưu nhiều slot chỉnh sửa có tên riêng cho mỗi công cụ và quay lại từng phiên làm việc sau này. Không cần tạo tài khoản; trạng thái là theo từng thiết bị. Vì bridge là điểm nối (seam) duy nhất, trạng thái theo thiết bị đó cũng *có thể mang đi được (portable)*: `shells/web/src/data-transfer.ts` đọc lại toàn bộ qua `host.profile`/`host.state`/`host.assets` thành một file zip `lolly-backup` duy nhất, có thể nhập vào bất kỳ bản cài đặt nào khác - câu trả lời ngoại tuyến cho việc "chuyển sang thiết bị mới" mà không cần máy chủ (đặc tả đầy đủ: `docs/data-transfer.md`). Tích hợp SUSE ID (đồng bộ đa thiết bị) là một cột mốc trong tương lai, xây trên nền tảng này.
 
 ### 7. Nhãn độ trưởng thành giải quyết rủi ro "được thương hiệu phê duyệt" một cách mang tính cấu trúc
+
+Vì mọi input đều đi theo liên kết, một thay đổi tham số là một tài nguyên hoàn chỉnh khác. Cả bảng màu này chỉ gồm một màu gốc, một quy tắc hòa sắc và một số bước:
 
 Mọi công cụ đều khai báo `status: official | community | experimental` trong manifest của nó. Gallery sắp xếp theo status. Các công cụ experimental tự động gắn watermark lên bản xuất - watermark được áp bởi `host.export.render`, không phải bởi công cụ, nên tác giả của một công cụ không chính thức (non-official) không thể tắt nó đi.
 
@@ -334,6 +390,8 @@ Logic nằm trong `hooks.js`, nơi nó tường minh và có thể review đư�
 
 ### 10. Công cụ kết hợp với công cụ
 
+![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-slides-deck)
+
 Một công cụ có thể nhúng bản render của **một công cụ khác** mà không cần import giữa công cụ với công cụ - việc kết hợp được engine giải quyết, không bao giờ do code của công cụ. Có hai bề mặt:
 
 - **Manifest khai báo** - `composes: [{ id, tool, inputs, format?, width?, height? }]`. Engine render công cụ con đã đặt tên và đặt kết quả vào template không chứa logic dưới dạng `{{asset <id>}}`. Hiện tại `event-name-badge` kết hợp `qr-code` dưới dạng SVG.
@@ -354,6 +412,10 @@ Có thể kết hợp bản render của bất kỳ công cụ nào: một công
 ---
 
 ## Vòng đời, từ đầu đến cuối
+
+![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&format=svg&filename=aud-export-popup)
+
+Công cụ Slides được xây trên bề mặt thứ hai đó: bất kỳ khe nào trên bất kỳ slide nào cũng có thể chứa một công cụ Lolly khác thay cho một hình ảnh.
 
 Một người dùng mở `lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H`:
 

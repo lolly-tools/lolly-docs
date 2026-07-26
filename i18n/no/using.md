@@ -6,6 +6,8 @@ En praktisk guide til å faktisk *bruke* appen - åpne et verktøy, jobbe med ca
 
 ## Åpne et verktøy
 
+![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Fct%3Dhorizontal-bar%26t%3DQuarterly%2520revenue%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&format=svg&filename=vt-tool-split-view)
+
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
 ![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
@@ -17,6 +19,8 @@ Hvert verktøy er en delt visning: **kontroller** på den ene siden, en direkte 
 > Noen få verktøy (som **Layout Studio**) åpnes i stedet som et **fritt canvas** - en kromfri flate for direkte manipulasjon der du drar, endrer størrelse på, roterer og fester bokser med tekst, former og bilder, og dobbeltklikker for å redigere tekst direkte på stedet. Det eksporteres via samme renderingsvei som alle andre verktøy, så canvaset *er* filen. Se [Det frie canvaset](#the-free-canvas-layout-studio) nedenfor.
 
 ## Canvaset (forhåndsvisning)
+
+![The zoom HUD in the corner of the canvas - minus, the live percentage, plus, Fit, then the theme and sound toggles](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=.stage-nav%7Bopacity%3A1!important%7D&cropSelector=.stage-nav&format=svg&filename=use-zoom-hud)
 
 Forhåndsvisningen viser alltid nøyaktig det som vil bli eksportert.
 
@@ -48,12 +52,16 @@ Verktøy med fritt canvas legger til en arbeidsflate *rundt* tegnebrettet, som e
 
 ## På en telefon
 
+![A tool on a phone-width screen - controls as a sheet up top, the generated palette filling the preview below, and the render pill floating bottom-centre](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3Df97316%26harmony%3Dadjacent-3%26steps%3D9&width=430&height=900&dpi=192&waitMs=2200&format=svg&filename=vt-phone-palette)
+
 På smale skjermer flyter layouten om til én kolonne:
 
 - **Kontrollene blir et ark** øverst med et **draghåndtak** på nedre kant. Dra håndtaket for å endre størrelse - det smetter til **kikk / halv / full** - eller **trykk** på håndtaket for å veksle mellom sammenslått og utvidet. Forhåndsvisningen fyller plassen under og forblir synlig mens du redigerer.
 - En flytende **Render**-knapp åpner arket **Eksport** - alle kontrollene for format, størrelse, kopiering, lagring og nedlasting på ett sted. Lukk det ved å trykke på bakgrunnen.
 
 ## Kontroller (inndata)
+
+![A tool's control stack - a text field, colour triggers and a slider, and nothing else the author chose to lock down](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-inputs&format=svg&filename=use-tool-inputs)
 
 Verktøy eksponerer bare inndataene som er ment å variere - alt annet (farger, layout, typografi, logikk) er låst av verktøyforfatteren, slik at det du lager alltid oppfyller reglene forfatteren har satt. Inndata omfatter tekst, glidebrytere, fargevelgere, nedtrekksmenyer, datoer, bildevelgere og gjentakende radgrupper. Noen er gruppert under sammenleggbare seksjoner.
 
@@ -66,6 +74,8 @@ Verktøy eksponerer bare inndataene som er ment å variere - alt annet (farger, 
 Portrettbildet og detaljene dine finnes **bare på denne enheten**. En profil kan være mer enn bare deg - et team eller en rolle du trer inn i nå og da. Se **[Profiler](/info/profile.html)** for hele bildet, inkludert hvordan du kan ha mer enn én.
 
 ## Lagre og fortsette
+
+![The two-half render pill - an up arrow that opens the export panel, and a tick that saves the session in place](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=%23tool-inputs%7Bdisplay%3Anone%7D&cropSelector=.render-pill&format=svg&filename=use-render-pill)
 
 Klikk **Lagre** for å lagre gjeldende inndata som en økt for det verktøyet. Du kan ha flere navngitte økter per verktøy; hvert verktøys **Fortsett**-knapp åpner den siste igjen, og **historikk-knappen** (øverst til høyre, ved siden av profilen din) lister opp hver lagrede økt på tvers av alle verktøy. Økter er enhetslokale. For å organisere dem, åpne **Prosjekter** (nedenfor).
 
@@ -108,6 +118,8 @@ Når et verktøy lar deg legge til et bilde fra enheten din, skaleres det ned, s
 - **Rydd opp.** Omkategoriser en ressurs til en annen gruppe, skjul en delt merkevareressurs du ikke bruker (med **Vis skjulte** for å hente den tilbake), eller slett dine egne opplastinger for godt.
 
 ### Ta med paletten og skrifttypene dine hvor som helst
+
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 Katalogens **Fargeprøver**-panel er ikke bare til referanse - klikk på en farge for å kopiere den, eller **last ned hele merkevarepaletten** i formatet det andre verktøyet ditt snakker:
 
@@ -154,6 +166,8 @@ Du kan ta med en eksisterende design inn i Lolly og fortsette å jobbe med den: 
 Se **[Eksport og formater](/info/exporting.html)** for hele historien - valg av format, utdatastørrelse og trykkenheter, gjennomsiktighet, video, og kopiering/deling. Kort sagt: velg et format, still inn størrelsen om du trenger det, og **Last ned** (eller **Kopier** til utklippstavlen).
 
 ## Batch-modus (Pro)
+
+![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&format=svg&filename=use-batch-toolbar)
 
 For avanserte brukere rendrer **Batch** (lenket fra galleriet, sperret bak Pro-funksjonsflagget, som er påslått som standard) mange varianter på én gang - et rutenett der hver rad er et sett med inndata, eksportert sammen. Ideelt for å lokalisere et kort til et dusin språk, eller generere hver størrelsesvariant i én omgang. Fyll ut rader ved å skrive, lime inn direkte fra et regneark, eller importere en CSV (du kan også eksportere en tilbake), og still inn format, størrelse og utfilnavn per rad. Lagre et helt rutenett som en navngitt **batch-økt** som åpnes igjen fra galleriet, og last ned hver rad som én samlet `.zip`.
 

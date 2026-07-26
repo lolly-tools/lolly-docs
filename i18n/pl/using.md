@@ -6,6 +6,8 @@ Praktyczny przewodnik po tym, jak faktycznie *korzystać* z aplikacji - otwiera�
 
 ## Otwieranie narzędzia
 
+![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Fct%3Dhorizontal-bar%26t%3DQuarterly%2520revenue%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&format=svg&filename=vt-tool-split-view)
+
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
 ![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
@@ -17,6 +19,8 @@ Każde narzędzie to widok podzielony: **elementy sterujące** po jednej stronie
 > Kilka narzędzi (jak **Layout Studio**) otwiera się zamiast tego jako **wolna kanwa** - powierzchnia bez ramek, z bezpośrednią manipulacją, na której przeciągasz, zmieniasz rozmiar, obracasz i przyciągasz bloki tekstu, kształtów i obrazów, a podwójne kliknięcie edytuje tekst w miejscu. Eksportuje przez tę samą ścieżkę renderowania co każde inne narzędzie, więc kanwa *jest* plikiem. Zobacz [Wolna kanwa](#the-free-canvas-layout-studio) poniżej.
 
 ## Kanwa (podgląd)
+
+![The zoom HUD in the corner of the canvas - minus, the live percentage, plus, Fit, then the theme and sound toggles](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=.stage-nav%7Bopacity%3A1!important%7D&cropSelector=.stage-nav&format=svg&filename=use-zoom-hud)
 
 Podgląd zawsze pokazuje dokładnie to, co zostanie wyeksportowane.
 
@@ -48,12 +52,16 @@ Narzędzia z wolną kanwą dodają powierzchnię roboczą *wokół* obszaru robo
 
 ## Na telefonie
 
+![A tool on a phone-width screen - controls as a sheet up top, the generated palette filling the preview below, and the render pill floating bottom-centre](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3Df97316%26harmony%3Dadjacent-3%26steps%3D9&width=430&height=900&dpi=192&waitMs=2200&format=svg&filename=vt-phone-palette)
+
 Na wąskich ekranach układ przepływa do jednej kolumny:
 
 - **Elementy sterujące stają się arkuszem** u góry z **uchwytem do przeciągania** na dolnej krawędzi. Przeciągnij uchwyt, aby zmienić jego rozmiar - przyciąga się do **podgląd / połowa / pełny** - albo **stuknij** uchwyt, aby przełączać zwinięty ↔ rozwinięty. Podgląd wypełnia przestrzeń poniżej i pozostaje widoczny podczas edycji.
 - Pływający przycisk **Renderuj** otwiera arkusz **Eksport** - wszystkie elementy sterujące formatem, rozmiarem, kopiowaniem, zapisem i pobieraniem w jednym miejscu. Zamknij go, stukając w tło.
 
 ## Elementy sterujące (pola)
+
+![A tool's control stack - a text field, colour triggers and a slider, and nothing else the author chose to lock down](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-inputs&format=svg&filename=use-tool-inputs)
 
 Narzędzia udostępniają tylko te pola, które mają się zmieniać - wszystko inne (kolory, układ, typografia, logika) jest zablokowane przez autora narzędzia, więc cokolwiek stworzysz, spełnia reguły ustalone przez autora. Pola obejmują tekst, suwaki, próbniki kolorów, listy rozwijane, daty, próbniki obrazów i powtarzające się grupy wierszy. Niektóre są zgrupowane w zwijanych sekcjach.
 
@@ -66,6 +74,8 @@ Narzędzia udostępniają tylko te pola, które mają się zmieniać - wszystko 
 Twoje zdjęcie i dane żyją **tylko na tym urządzeniu**. Profil może być czymś więcej niż tylko tobą - zespołem albo rolą, w którą wchodzisz od czasu do czasu. Zobacz **[Profile](/info/profile.html)**, aby zobaczyć pełny obraz, w tym prowadzenie więcej niż jednego.
 
 ## Zapisywanie i kontynuowanie
+
+![The two-half render pill - an up arrow that opens the export panel, and a tick that saves the session in place](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=%23tool-inputs%7Bdisplay%3Anone%7D&cropSelector=.render-pill&format=svg&filename=use-render-pill)
 
 Kliknij **Zapisz**, aby zapisać bieżące pola jako sesję dla tego narzędzia. Możesz prowadzić wiele nazwanych sesji na narzędzie; przycisk **Kontynuuj** każdego narzędzia otwiera ponownie twoją najnowszą, a **przycisk historii** (prawy górny róg, obok twojego profilu) wymienia każdą zapisaną sesję we wszystkich narzędziach. Sesje są lokalne dla urządzenia. Aby je uporządkować, otwórz **Projekty** (poniżej).
 
@@ -108,6 +118,8 @@ Gdy narzędzie pozwala dodać obraz z twojego urządzenia, jest on pomniejszany,
 - **Uporządkuj.** Przekategoryzuj zasób do innej grupy, ukryj współdzielony zasób marki, którego nie używasz (z **Pokaż ukryte**, aby go przywrócić), albo usuń własne wgrane pliki całkowicie.
 
 ### Zabierz swoją paletę i czcionki wszędzie
+
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 Panel **Próbki** w Katalogu nie służy tylko do odniesienia - kliknij kolor, aby go skopiować, albo **pobierz całą paletę marki** w formacie, którym mówi twoje inne narzędzie:
 
@@ -153,6 +165,8 @@ Możesz wczytać istniejący projekt do Lolly i pracować nad nim dalej: otwórz
 Pełną historię znajdziesz w **[Eksport i formaty](/info/exporting.html)** - wybór formatu, rozmiaru wyjściowego i jednostek druku, przezroczystość, wideo oraz kopiowanie/udostępnianie. W skrócie: wybierz format, w razie potrzeby ustaw rozmiar i kliknij **Pobierz** (albo **Kopiuj**, by przenieść do schowka).
 
 ## Tryb Batch (Pro)
+
+![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&format=svg&filename=use-batch-toolbar)
 
 Dla zaawansowanych użytkowników **Batch** (dostępny z poziomu galerii, ukryty za flagą funkcji Pro, domyślnie włączoną) renderuje wiele wariantów naraz - siatkę, w której każdy wiersz to zestaw danych wejściowych eksportowany razem z pozostałymi. Idealny do lokalizowania karty na kilkanaście języków albo generowania wszystkich wariantów rozmiaru za jednym razem. Wypełniaj wiersze, wpisując dane, wklejając je prosto z arkusza kalkulacyjnego lub importując CSV (możesz też wyeksportować go z powrotem), i ustaw format, rozmiar oraz nazwę pliku wyjściowego dla każdego wiersza. Zapisz całą siatkę jako nazwaną **sesję batch**, którą otworzysz ponownie z galerii, i pobierz wszystkie wiersze jako pojedynczy plik `.zip`.
 

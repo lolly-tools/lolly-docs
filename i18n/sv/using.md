@@ -6,6 +6,8 @@ En praktisk guide till att faktiskt *använda* appen - att öppna ett verktyg, a
 
 ## Öppna ett verktyg
 
+![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Fct%3Dhorizontal-bar%26t%3DQuarterly%2520revenue%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&format=svg&filename=vt-tool-split-view)
+
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
 ![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
@@ -17,6 +19,8 @@ Varje verktyg är en delad vy: **kontroller** på ena sidan, en live **förhands
 > Några verktyg (som **Layout Studio**) öppnas istället som en **fri arbetsyta** - en kromfri yta för direktmanipulation där du drar, ändrar storlek på, roterar och snäpper fast rutor med text, former och bilder, och dubbelklickar för att redigera text direkt på plats. Den exporteras via samma renderingsväg som alla andra verktyg, så arbetsytan *är* filen. Se [Den fria arbetsytan](#the-free-canvas-layout-studio) nedan.
 
 ## Arbetsytan (förhandsvisning)
+
+![The zoom HUD in the corner of the canvas - minus, the live percentage, plus, Fit, then the theme and sound toggles](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=.stage-nav%7Bopacity%3A1!important%7D&cropSelector=.stage-nav&format=svg&filename=use-zoom-hud)
 
 Förhandsvisningen visar alltid exakt det som kommer att exporteras.
 
@@ -48,12 +52,16 @@ Verktyg med fri arbetsyta lägger till en arbetsyta *runt* ritytan, som en formg
 
 ## På en telefon
 
+![A tool on a phone-width screen - controls as a sheet up top, the generated palette filling the preview below, and the render pill floating bottom-centre](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3Df97316%26harmony%3Dadjacent-3%26steps%3D9&width=430&height=900&dpi=192&waitMs=2200&format=svg&filename=vt-phone-palette)
+
 På smala skärmar flödar layouten om till en kolumn:
 
 - **Kontrollerna blir ett ark** högst upp med ett **draghandtag** på nederkanten. Dra i handtaget för att ändra storlek - det snäpper till **skymt / halv / full** - eller **tryck** på handtaget för att växla mellan hopfällt och expanderat. Förhandsvisningen fyller utrymmet nedanför och förblir synlig medan du redigerar.
 - En flytande **Rendera**-knapp öppnar arket **Export** - alla kontroller för format, storlek, kopiering, sparande och nedladdning på ett ställe. Stäng det genom att trycka på bakgrunden.
 
 ## Kontroller (inmatningar)
+
+![A tool's control stack - a text field, colour triggers and a slider, and nothing else the author chose to lock down](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-inputs&format=svg&filename=use-tool-inputs)
 
 Verktyg exponerar bara de inmatningar som är avsedda att varieras - allt annat (färger, layout, typografi, logik) är låst av verktygets upphovsperson, så det du gör uppfyller de regler som upphovspersonen har satt. Inmatningarna omfattar text, reglage, färgväljare, rullgardinsmenyer, datum, bildväljare och upprepande radgrupper. Vissa är grupperade under hopfällbara avsnitt.
 
@@ -66,6 +74,8 @@ Verktyg exponerar bara de inmatningar som är avsedda att varieras - allt annat 
 Din profilbild och dina uppgifter finns **bara på den här enheten**. En profil kan vara mer än bara du - ett team eller en roll du kliver in i då och då. Se **[Profiler](/info/profile.html)** för hela bilden, inklusive hur du behåller fler än en.
 
 ## Spara och fortsätta
+
+![The two-half render pill - an up arrow that opens the export panel, and a tick that saves the session in place](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=%23tool-inputs%7Bdisplay%3Anone%7D&cropSelector=.render-pill&format=svg&filename=use-render-pill)
 
 Klicka på **Spara** för att lagra de aktuella inmatningarna som en session för det verktyget. Du kan behålla flera namngivna sessioner per verktyg; varje verktygs **Fortsätt**-knapp öppnar din senaste igen, och **historikknappen** (uppe till höger, bredvid din profil) listar varje sparad session i alla verktyg. Sessioner är enhetslokala. För att organisera dem, öppna **Projekt** (nedan).
 
@@ -108,6 +118,8 @@ När ett verktyg låter dig lägga till en bild från din enhet skalas den ned, 
 - **Städa upp.** Kategorisera om en tillgång till en annan grupp, dölj en delad varumärkestillgång du inte använder (med **Visa dolda** för att ta tillbaka den), eller radera dina egna uppladdningar helt.
 
 ### Ta med din palett och dina typsnitt vart som helst
+
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 Katalogens panel **Färgprover** är inte bara till för referens - klicka på en färg för att kopiera den, eller **ladda ner hela varumärkespaletten** i det format ditt andra verktyg talar:
 
@@ -154,6 +166,8 @@ Du kan ta in en befintlig design i Lolly och fortsätta arbeta med den: öppna *
 Se **[Export och format](/info/exporting.html)** för hela historien - att välja ett format, utdatastorlek och tryckenheter, transparens, video och kopiera/dela. Kort sagt: välj ett format, ställ in storleken om du behöver, och **Ladda ner** (eller **Kopiera** till urklipp).
 
 ## Batch-läge (Pro)
+
+![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&format=svg&filename=use-batch-toolbar)
 
 För avancerade användare renderar **Batch** (länkad från galleriet, spärrad bakom Pro-funktionsflaggan, som är påslagen som standard) många varianter på en gång - ett rutnät där varje rad är en uppsättning inmatningar, exporterade tillsammans. Perfekt för att lokalisera ett kort till ett dussin språk eller generera varje storleksvariant i en enda omgång. Fyll i rader genom att skriva, klistra in direkt från ett kalkylblad, eller importera en CSV-fil (du kan även exportera en tillbaka), och ställ in format, storlek och utdatafilnamn per rad. Spara ett helt rutnät som en namngiven **batch-session** som öppnas igen från galleriet, och ladda ner varje rad som en enda `.zip`.
 

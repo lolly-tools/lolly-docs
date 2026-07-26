@@ -48,9 +48,22 @@ Kecilkan saiz PDF yang terlalu besar terus pada peranti (on-device), supaya tiad
 
 Semua ini adalah transformasi pada peranti (on-device): fail atau data anda masuk, bait yang telah dibersihkan keluar, dan **tiada pelayan untuk dimuat naik**. Ia adalah lawan yang disengajakan bagi alat "muat naik fail anda ke laman web orang asing untuk membersihkannya" yang biasa dicapai oleh pekerja yang berniat baik sebaliknya.
 
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data)
+
+Text Helper menawarkan tawaran yang sama tetapi untuk teks, bukan fail. Ia ialah meja kerja bertab yang jika tidak, seorang pekerja akan mencarinya di laman web orang asing, dan ia tidak mengisytiharkan sebarang input kerana apa-apa yang disentuhnya tidak sekali-kali meninggalkan halaman ini.
+
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+
+Compress PDF melengkapkan set ini: lampiran yang terlalu besar dikecilkan mengikut tahap kualiti yang anda pilih, pada mesin yang sudah pun memegang fail itu.
+
+![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=ov2-compress-pdf)
 
 
 ## Determinisme & kebolehulangan
+
+Prompt to Image ialah ketentuan dalam bentuk paling mudah: teks itulah keseluruhan input, imej yang disusun hurufnya itulah keseluruhan output, dan teks yang sama sentiasa disusun dengan cara yang sama.
+
+![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-prompt-to-image)
 
 Setiap input alat boleh dinyatakan sebagai parameter URL, dan input yang sama menghasilkan fail yang sama. Ini membawa dua kesan kepada operator:
 
@@ -58,6 +71,8 @@ Setiap input alat boleh dinyatakan sebagai parameter URL, dan input yang sama me
 - **CLI menggunakan laluan render yang sama** seperti GUI, jadi saluran paip binaan (build pipelines) dan aplikasi tidak akan pernah tersasar (drift) antara satu sama lain. Jana imej OG, kad sosial, dan visual data pada masa binaan (build time), secara boleh dihasilkan semula.
 
 ## Asal-usul & Content Credentials
+
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
 
 Eksport boleh membawa **Content Credentials** - manifes [C2PA](https://c2pa.org) yang ditandatangani, terikat kepada cincangan (hash) bait fail tersebut. Sebarang perubahan kemudian pada fail itu akan memecahkan meterai tersebut, jadi pengesah yang mesra-C2PA **mengesan pengubahan secara kriptografi, luar talian**. Kelayakan itu bersifat boleh-*dikesan*-gangguan (tamper-evident): ia menandakan gangguan dan bukannya menghalangnya, dan itulah justru yang membolehkan pengesahan luar talian sepenuhnya.
 
@@ -71,6 +86,8 @@ Eksport boleh membawa **Content Credentials** - manifes [C2PA](https://c2pa.org)
 > **Nota kesalinghubungan (interoperability).** Lolly mengesahkan kelayakannya sendiri dan banyak kelayakan pihak ketiga secara luar talian hari ini, termasuk membaca manifes tuntutan (claim) **v2** C2PA daripada penerbit lain. Satu perkara interop masih dalam proses: WebM - yang belum mempunyai pemetaan C2PA piawai, jadi Lolly melampirkan manifes tersebut sebagai bahagian Matroska (alat pihak ketiga mengesahkan MP4 Lolly secara terus; WebM akan menyusul sebaik sahaja piawai itu mantap).
 
 ## Penyulitan & kata laluan
+
+![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&format=svg&filename=aud-pdf-lock)
 
 Untuk fail yang perlu dihantar dalam keadaan terkunci, semuanya berlaku pada peranti:
 

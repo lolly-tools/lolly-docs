@@ -48,9 +48,22 @@ Thu nhỏ một tệp PDF quá khổ ngay trên thiết bị, để không ai ph
 
 Tất cả những công cụ này đều là các phép biến đổi trên thiết bị: tệp hoặc dữ liệu của bạn đi vào, các byte đã được làm sạch đi ra, và **không hề có máy chủ nào để tải lên**. Chúng là đối lập có chủ đích với kiểu công cụ điển hình "tải tệp của bạn lên trang web của một người lạ để làm sạch nó" mà một nhân viên có thiện chí thường tìm đến khi không có lựa chọn khác.
 
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data)
+
+Text Helper cũng là thỏa thuận đó, nhưng dành cho văn bản thay vì tệp. Nó chính là bàn làm việc dạng tab mà lẽ ra một nhân viên sẽ phải đi tìm trên trang web của người lạ, và nó không khai báo input nào cả, vì mọi thứ nó chạm đến đều không bao giờ rời khỏi trang.
+
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+
+Compress PDF hoàn tất bộ này: tệp đính kèm quá khổ được thu nhỏ theo mức chất lượng bạn chọn, ngay trên chiếc máy đang giữ nó.
+
+![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=ov2-compress-pdf)
 
 
 ## Tính xác định & khả năng tái tạo
+
+Prompt to Image là tính xác định ở dạng đơn giản nhất: văn bản là toàn bộ đầu vào, hình ảnh đã dàn chữ là toàn bộ đầu ra, và cùng một văn bản luôn được dàn theo cùng một cách.
+
+![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-prompt-to-image)
 
 Mọi đầu vào của công cụ đều có thể biểu diễn dưới dạng tham số URL, và cùng một đầu vào sẽ luôn tạo ra cùng một tệp. Điều đó kéo theo hai hệ quả đối với nhà vận hành:
 
@@ -58,6 +71,8 @@ Mọi đầu vào của công cụ đều có thể biểu diễn dưới dạng
 - **CLI đi theo cùng một đường dựng hình (render path)** như GUI, nên các pipeline build và ứng dụng không bao giờ lệch nhau. Tạo ảnh OG, thẻ mạng xã hội, và hình ảnh trực quan hóa dữ liệu ngay tại thời điểm build, một cách có thể tái tạo được.
 
 ## Nguồn gốc dữ liệu & Content Credentials
+
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
 
 Các bản xuất có thể mang **Content Credentials** - một manifest [C2PA](https://c2pa.org) đã được ký, gắn với một hash của các byte trong tệp. Bất kỳ thay đổi nào về sau đối với tệp đều phá vỡ con dấu, nên một trình xác minh hiểu C2PA sẽ **phát hiện sự thay đổi bằng mật mã học, khi ngoại tuyến**. Thông tin xác thực này *có thể phát hiện* giả mạo: nó báo hiệu việc giả mạo chứ không ngăn chặn nó, và đó chính xác là điều khiến việc xác minh hoàn toàn ngoại tuyến trở nên khả thi.
 
@@ -71,6 +86,8 @@ Các bản xuất có thể mang **Content Credentials** - một manifest [C2PA]
 > **Lưu ý về khả năng tương tác.** Lolly xác minh được thông tin xác thực của chính mình và nhiều thông tin xác thực từ bên thứ ba ngay hôm nay, ở chế độ ngoại tuyến, kể cả việc đọc các manifest C2PA claim **v2** từ những nhà sản xuất khác. Vẫn còn một hạng mục tương tác đang được hoàn thiện: WebM - định dạng chưa có ánh xạ C2PA chuẩn hóa, nên Lolly đính kèm manifest dưới dạng một phần Matroska (các công cụ bên thứ ba xác minh được MP4 của Lolly ngay lập tức; WebM sẽ theo sau khi tiêu chuẩn ổn định).
 
 ## Mã hóa & đặt mật khẩu
+
+![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&format=svg&filename=aud-pdf-lock)
 
 Đối với các tệp cần được khóa khi di chuyển, mọi thứ đều diễn ra trên thiết bị:
 

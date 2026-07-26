@@ -18,6 +18,8 @@ Lolly menghasilkan kandungan dalam jumlah besar. Kami mengamalkan pendekatan min
 
 ### Apakah itu feature flags?
 
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&filename=pd-feature-flags)
+
 Feature flags menghidupkan atau mematikan bahagian-bahagian Lolly. Biasanya seorang pentadbir mengawal ini - dengan Lolly, andalah yang mengawal.
 
 ## Bagaimana saya boleh dapatkan aplikasi mudah alih atau desktop?
@@ -76,6 +78,8 @@ Lolly mengangkat semuanya ke tahap yang lebih tinggi.
 
 ## Apakah yang membezakan utiliti daripada alat?
 
+![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
 **Jawapan Asas →** Utiliti tidak selalu perlu dipaparkan (render) dan oleh itu boleh mendapat UX yang berbeza.
 
 **Jawapan Sebenar →** Sebab utiliti boleh dihoskan di dalam Lolly Tools adalah untuk menambah satu lagi 'lapisan kemudahan' pertahanan bagi mengurangkan insentif eksfiltrasi data.
@@ -97,6 +101,8 @@ remeh; **kandungan itulah kosnya.**
 Kami memenangi perjuangan tadbir urus ini dengan kemudahan dan perkhidmatan yang cemerlang.
 
 ## Bolehkah Lolly mengedit dan memaparkan fail Figma, Penpot, Illustrator atau InDesign saya?
+
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 Ya. Buka **Layout Studio** dan klik **Import reka bentuk**: ia menerima fail Figma asli **.fig** (Simpan salinan tempatan), eksport Penpot **.penpot**, fail Illustrator **.ai** atau **.pdf**, fail InDesign **.idml** (Fail → Eksport → InDesign Markup), atau **sebarang SVG** (pintu paling luas - hampir semua aplikasi reka bentuk boleh mengeksportnya). Semuanya dihurai sepenuhnya pada peranti anda sendiri, tiada akaun atau plugin diperlukan.
 

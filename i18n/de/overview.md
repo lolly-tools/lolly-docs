@@ -18,6 +18,8 @@ Das Ergebnis ist **Fülle**: Jede Veranstaltung hat die korrekte Beschilderung, 
 
 ### Wo es in der Landschaft steht
 
+![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-gallery-landscape)
+
 | Funktion | Canva | Markenportale | Illustrator | Figma / Penpot | **Lolly** |
 |---|---|---|---|---|---|
 | Massenhafte Content-Erstellung | teilweise | ✗ | ✗ | ✗ | **✓** |
@@ -37,6 +39,40 @@ Die Lücke ist eindeutig: Nichts in der bestehenden Landschaft bietet uns eine r
 **Nutzen Sie es für:** Die schnelle Erstellung operationalisierter Kreativ-Assets - Event-Kacheln, Namensschilder, Signaturen, CVE-Warnungen, QR-Codes, Social Cards, Versandetiketten, strukturierte Berichte.
 
 **Nutzen Sie es nicht für:** Maßgeschneiderte Hero-Inhalte.
+
+---
+
+## Der Lebenszyklus einer Kampagne
+
+![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-lifecycle-chart)
+
+Am deutlichsten zeigt sich, was Lolly ist, nicht anhand einer Funktionsliste - sondern indem man ein einzelnes Asset verfolgt, während es von Hand zu Hand geht. Sehen wir uns an, wie eine lokalisierte Kampagnenkarte durch die Organisation wandert:
+
+1. **Die Kreativen setzen die Regeln.** Eine Designerin erstellt die Basisvorlage in Layout Studio und codiert die Typografie- und Farbvariablen der Marke fest ein. Sie gestaltet nicht eine einzelne Karte - sie erledigt die grundlegende Arbeit *einmal*, damit sie sie nie wieder von Hand lokalisieren muss.
+2. **Die Entwicklung skaliert sie.** Genau dieselbe Vorlage wird über die CLI in eine nächtliche Pipeline eingebunden, sodass ein frisches Diagramm oder eine neue Sprachvariante automatisch entsteht - kein Designer öffnet die Datei erneut.
+3. **Die Produktion nutzt sie einfach.** Ein Vertriebsmitarbeiter öffnet offline im Flugzeug dasselbe Tool und erzeugt ein perfekt markengerechtes Deck für ein Kundengespräch. Keine Design-Kenntnisse, kein Netz, keine Wartezeit.
+
+Das „frische Diagramm“ aus Schritt zwei ist ein Rendering wie dieses hier, erzeugt aus einer Datenzeichenkette und einer Handvoll Parameter, ohne dass jemand eine Design-Datei öffnet:
+
+Der Punkt ist nicht, dass Lolly gut für Designer *und* gut für Entwickler *und* gut für den Vertrieb ist, jeweils für sich im Vakuum. Es ist ein **Staffellauf**: Die anfängliche Arbeit der Kreativen wird von der Entwicklung skaliert, was wiederum die Produktion befähigt. Das mühelose Erlebnis für den nicht-technischen Vertriebsmitarbeiter im Flugzeug ist überhaupt nur *möglich* wegen der Sorgfalt, die die Designerin festgelegt und die Entwicklung ausgerollt hat.
+
+Das ist der Kraftverstärker. Lolly ist keine Schublade voller separater Tools für separate Rollen - es ist ein deterministischer Asset-Lebenszyklus, den jede Rolle berührt, und jede Hand, durch die er geht, vervielfacht den Wert der vorherigen.
+
+---
+
+## Eine Freigabe, zehntausend Assets
+
+![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&format=svg&filename=ov2-batch-grid)
+
+Weil die Freigabe im Tool und nicht in der Datei liegt (siehe [Wie Lolly im Vergleich abschneidet](/info/positioning.html)), ist Skalierung kein Prüfproblem mehr. Geben Sie ein Tool für lokalisierte Social Cards einmal frei und erzeugen Sie dann **10.000 Assets in 12 Sprachen** aus einer Tabelle - und keines davon braucht eine neue Compliance-Prüfung durch die Rechtsabteilung oder das Markenteam, weil die Vorlage, aus der sie alle stammen, bereits freigegeben war.
+
+Dasselbe deterministische Tool erreicht diesen Maßstab auf drei Wegen, die alle identische, vorab freigegebene Ausgaben liefern:
+
+- **Ein Mensch, in der App.** Das Batch-Raster unter `/pro`: Zeilen einfügen oder importieren, pro Zeile ein fertiges Asset erhalten, das Zip herunterladen. Keine Design-Kenntnisse, kein Ticket, keine Wartezeit.
+- **Eine Entwicklerin, auf der Kommandozeile.** Die CLI führt *dieselbe* Engine und *denselben* Render-Pfad headless aus, sodass das Tool in einem Skript oder einer nächtlichen Pipeline über alle 10.000 Zeilen hinweg abgearbeitet werden kann. Ein `lolly <tool> --field=…`-Aufruf in einer Schleife ist die gesamte Integration.
+- **Ein System oder ein KI-Agent, über MCP.** Dasselbe Tool programmatisch bedient, in derselben Qualität und in noch größerem Maßstab - denn eine Maschine wird nicht müde, während tausende Dateien eintrudeln.
+
+Ein Satz Markenvorgaben, einmal von einer Designerin festgelegt; drei Wege zu identischer, vorab freigegebener Ausgabe - und der Maschinenweg skaliert am weitesten, denn er ermüdet nie, während die Dateien eintrudeln.
 
 ---
 
@@ -190,6 +226,11 @@ lolly/
 Die Plattform läuft über mehrere Oberflächen hinweg - Web-PWA, Tauri Desktop/Mobile, die skriptfähige CLI und die interaktive TUI. Alle verwenden dieselbe Engine und dieselben Tool-Dateien.
 
 ### Web (PWA) - primärer Vertriebsweg
+
+![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&format=svg&filename=aud-web-split)
+
+![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&format=png&filename=ov2-phone-audiogram)
+
 Gehostet unter einer von SUSE kontrollierten URL. Funktioniert offline, sobald der Service Worker Tools und Assets zwischengespeichert hat. Hier werden die meisten Mitarbeitenden, Zulieferer und Partner die Plattform nutzen. Kein Konto erforderlich - der Zustand wird pro Gerät in IndexedDB gespeichert.
 
 Die Web-Shell ist von einem einzigen Layout aus responsiv. Auf dem Desktop ist ein Tool eine größenveränderbare Steuerungs-Seitenleiste neben einer Vorschaubühne mit trackpad-nativer Leinwand-Navigation (Cmd/Ctrl-Mausrad oder Pinch zum Zoomen um den Cursor, Leertaste oder mittlere Maustaste zum Ziehen/Schwenken, die Tasten `0`/`1`/`+`/`−` sowie ein Fit/%-HUD). Auf Mobilgeräten (≤640px) werden die Steuerelemente zu einem oben verankerten Sheet mit einem Zieh-Griff, der zwischen Peek/Halb/Voll einrastet (Tippen wechselt), über einer statischen Vollbild-Vorschau, und eine schwebende **Render**-Schaltfläche öffnet die **Export**-Steuerung in einem Bottom-Sheet-Popup. Touch erhält Pinch-Zoom und Ziehen zum Schwenken auf der Vorschau. Der Render-Pfad und die Export-Steuerung sind in beiden Fällen identisch - nur das Chrome (die Bedienoberfläche) ordnet sich neu an.
@@ -200,6 +241,9 @@ Die Web-Shell ist von einem einzigen Layout aus responsiv. Auf dem Desktop ist e
 Gepackte native App (kleiner Fußabdruck dank Tauri). Bietet vollständige Offline-Verfügbarkeit, Dateisystemzugriff für CLI-abhängige Tools (PDF Smasher, Font Outliner) und Kamerazugriff. Für Mitte 2026 ist ein Tooling-Ausbau geplant.
 
 ### CLI
+
+Dasselbe Tool in Telefonbreite, ohne ein zweites Layout, das gepflegt werden muss: Die Steuerelemente werden oben zu einer Leiste, die Vorschau nimmt den ganzen Bildschirm ein, und die Render-Schaltfläche schwebt darüber.
+
 `lolly <tool-id> [--input=value ...] --output=file.png`
 
 Desktop-Nutzerinnen und -Nutzer können viele Tools über das Terminal aufrufen. Die CLI-Shell lädt dieselbe Engine, erzeugt ein jsdom-DOM, durchläuft denselben Render-Pfad und schreibt die Datei. Der URL-Modus ist der Transportweg - die CLI ist keine eigenständige Implementierung. Das garantiert, dass CLI- und GUI-Ausgaben identisch sind.
@@ -216,9 +260,13 @@ lolly qr-code                # zeigt die Inputs für dieses Tool an
 
 Das interaktive Gegenstück zur CLI: eine Vollbild-Terminal-App mit tastaturzentrierter Bedienung (aufgebaut auf Ink) zum Durchstöbern von Tools, Ausfüllen von Inputs, Speichern von Projekten und Exportieren - alles ohne GUI. Ihre Host-Bridge **nutzt die Implementierung der CLI weiter** für die DOM-freien Formate (SVG/EMF/EPS/HTML + Text/Daten) und ergänzt sie um Zustand auf der Festplatte unter `~/.lolly` sowie eine optionale Inline-Vorschau. Darüber hinaus verfügt sie über eine **Browser-Render-Stufe**: ein abgegrenztes headless Chromium (dasselbe, das der MCP-Server installiert), das Raster/PDF/Video und Live-URL-Erfassung bei Bedarf erzeugt - es steuert dabei eine gebaute Kopie der Web-Shell an, sodass die Ausgabe identisch ist, und startet erst, wenn ein solches Format zum ersten Mal exportiert wird. So laufen auch `url-shot` (mit Zuschnitt + Neueinfärbung + vektorbasiertem PDF/SVG) und jedes Raster-/PDF-Tool im Terminal. Siehe den [TUI-Leitfaden](/info/tui.html).
 
+Unabhängig davon, auf welcher Oberfläche Sie arbeiten: Der Capabilities-Tab des Dashboards ist die vollständige Karte dessen, was die Plattform zu können erklärt - gruppiert und lesbar, ohne ein einziges Tool zu öffnen.
+
 ---
 
 ## Tool-Kategorien
+
+![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-utilities)
 
 Tools werden in ihrem Manifest mit einer `category` versehen, um sie in der Galerie zu gruppieren.
 
@@ -247,6 +295,8 @@ Tools werden außerdem nach Status klassifiziert: `official` (markenfreigegeben,
 Diese Entscheidungen sind getroffen. Jede davon zu ändern ist ein größeres Unterfangen - sie prägen jede weitere Entscheidung in der Codebasis.
 
 ### 1. Deklarative Tools mit einem imperativen Notausgang
+
+![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-street-map-controls)
 
 Ein Tool besteht aus einem Manifest (`tool.json`) + einer Vorlage (`template.html`) + optionalem `hooks.js`.
 
@@ -293,6 +343,10 @@ Das macht gespeicherte Tool-Zustände und per URL geteilte Links über Jahre hin
 
 ### 5. Der URL-Modus ist erstklassig
 
+![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&format=svg&filename=aud-url-mode-qr)
+
+![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=%23tool-canvas&filename=ov2-url-palette)
+
 Jeder Input muss sich als URL-Parameter ausdrücken lassen:
 
 ```
@@ -310,6 +364,8 @@ Web-Shell: IndexedDB. Tauri: Dateisystem. CLI: In-Memory. Tools sehen nur `host.
 Nutzerinnen und Nutzer können pro Tool mehrere benannte Bearbeitungs-Slots speichern und später zu jeder Sitzung zurückkehren. Es ist keine Kontoerstellung erforderlich; der Zustand ist pro Gerät. Da die Bridge die einzige Nahtstelle ist, ist dieser geräteweise Zustand auch *portabel*: `shells/web/src/data-transfer.ts` liest alles über `host.profile`/`host.state`/`host.assets` wieder aus und packt es in ein einziges `lolly-backup`-Zip, das sich auf jeder anderen Installation importieren lässt - die Offline-Antwort auf „auf ein neues Gerät umziehen", die keinen Server braucht (vollständige Spezifikation: `docs/data-transfer.md`). Die SUSE-ID-Integration (geräteübergreifende Synchronisierung) ist ein künftiger Meilenstein, der darauf aufbaut.
 
 ### 7. Reifegrad-Tags beantworten das Risiko „markenfreigegeben" strukturell
+
+Weil jede Eingabe im Link mitreist, ist ein geänderter Parameter ein anderes fertiges Asset. Diese ganze Palette besteht aus einer Ausgangsfarbe, einer Harmonie und einer Anzahl von Stufen:
 
 Jedes Tool deklariert in seinem Manifest `status: official | community | experimental`. Die Galerie sortiert nach Status. Experimentelle Tools versehen ihre Exporte automatisch mit einem Wasserzeichen - das Wasserzeichen wird von `host.export.render` angewendet, nicht vom Tool, sodass es von einer nicht-offiziellen Tool-Autorin oder einem nicht-offiziellen Tool-Autor nicht abgeschaltet werden kann.
 
@@ -334,6 +390,8 @@ Logik lebt in `hooks.js`, wo sie explizit und überprüfbar ist. Verfügbare Han
 
 ### 10. Tools komponieren Tools
 
+![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-slides-deck)
+
 Ein Tool kann den Render eines **anderen** Tools einbetten, ganz ohne Tool-zu-Tool-Imports - die Komposition wird von der Engine aufgelöst, nie vom Tool-Code. Es gibt zwei Oberflächen:
 
 - **Deklaratives Manifest** - `composes: [{ id, tool, inputs, format?, width?, height? }]`. Die Engine rendert das benannte Kind-Tool und platziert das Ergebnis in der logikfreien Vorlage als `{{asset <id>}}`. `event-name-badge` komponiert heute `qr-code` als SVG.
@@ -354,6 +412,10 @@ Der Render jedes Tools lässt sich komponieren: Ein **SVG**-Kind bleibt ein echt
 ---
 
 ## Lebenszyklus, Ende-zu-Ende
+
+![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&format=svg&filename=aud-export-popup)
+
+Das Tool Slides baut auf dieser zweiten Oberfläche auf: Jeder Slot auf jeder Folie kann anstelle eines Bildes ein anderes Lolly-Tool aufnehmen.
 
 Eine Nutzerin oder ein Nutzer öffnet `lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H`:
 

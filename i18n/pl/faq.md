@@ -18,6 +18,8 @@ Lolly generuje dużą ilość treści. Stosujemy rygorystyczne podejście do min
 
 ### Czym są flagi funkcji?
 
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&filename=pd-feature-flags)
+
 Flagi funkcji włączają i wyłączają części Lolly. Zwykle kontroluje je administrator - w Lolly to Ty masz kontrolę.
 
 ## Jak zdobyć aplikacje mobilne lub desktopowe?
@@ -75,6 +77,8 @@ Lolly podnosi wszystko na wyższy poziom.
 
 ## Czym narzędzia użytkowe różnią się od narzędzi?
 
+![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
 **Podstawowa odpowiedź →** Narzędzia użytkowe nie zawsze muszą renderować, więc mogą mieć inny interfejs.
 
 **Prawdziwa odpowiedź →** Powodem, dla którego narzędzia użytkowe można hostować w Lolly Tools, jest dodanie kolejnej „warstwy wygody" jako obrony, która zniechęca do wyprowadzania danych.
@@ -96,6 +100,8 @@ trywialna; **kosztem są treści.**
 Wojnę o ład wygrywamy dzięki znakomitej wygodzie i obsłudze.
 
 ## Czy Lolly może edytować i renderować moje pliki Figma, Penpot, Illustrator lub InDesign?
+
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 Tak. Otwórz **Layout Studio** i kliknij **Importuj projekt**: przyjmuje natywny plik Figma **.fig** (Save local copy), eksport Penpot **.penpot**, plik Illustratora **.ai** lub **.pdf**, plik InDesign **.idml** (File → Export → InDesign Markup) albo **dowolny SVG** (szerokie drzwi - eksportuje go niemal każda aplikacja projektowa). Wszystko jest przetwarzane w całości na Twoim urządzeniu, bez konta ani wtyczki.
 

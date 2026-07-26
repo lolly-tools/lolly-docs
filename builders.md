@@ -15,7 +15,17 @@ New to the platform? The **[Quickstart](/info/quickstart.html)** gets a brand an
 - **[Overview](/info/overview.html)** - why Lolly exists, the engine/shell/tools separation, the capability bridge, and the settled architectural commitments.
 - **[Design Tokens](/info/design-tokens.html)** - the DTCG token model brands are expressed in, and how tools consume them.
 
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+
 ## Author tools
+
+Every control below was generated from a declared input in `tool.json`. You write the manifest line, the host draws the widget, and the same model drives the CLI and the URL.
+
+![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&format=svg&filename=aud-manifest-controls)
+
+That scales further than five controls. Give an input a `section` and the host folds it away, so a fifty-input tool like the D3 Chart Studio still opens as a short stack with the rest filed behind named groups.
+
+![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-d3-sections)
 
 - **[Authoring Tools](/info/authoring-tools.html)** - the full guide: manifest, template, styles, hooks, composition, and publishing.
 - **[Authoring Assets](/info/authoring-assets.html)** - catalog assets, tiers, locales, palettes, themable icons, and fonts.
@@ -37,6 +47,10 @@ New to the platform? The **[Quickstart](/info/quickstart.html)** gets a brand an
 - **[Configuration](/info/configuration.html)** - profiles, brand packs, capability gating, feature flags, and catalog validation.
 
 ## Trust & data
+
+Rights and authorship are inputs like any other. Embed & Track Image declares creator, copyright, licence and contact fields, and the export writes them into the file's own metadata and its C2PA manifest.
+
+![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-rights-fields)
 
 - **[Content Credentials Identity](/info/content-credentials-identity.html)** - CA-issued signing for on-device C2PA; engine contracts and the operator runbook.
 - **[Data Transfer](/info/data-transfer.html)** - the `lolly-backup` bundle: envelope, integrity, and cross-shell guarantees.

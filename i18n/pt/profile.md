@@ -8,6 +8,10 @@ Tudo em um perfil vive **no dispositivo**, no banco de dados local do navegador 
 
 ## O que há em um perfil
 
+As preferências são a única parte que muda a cara que o app tem pra você. Os cartões de tema são pré-visualizações ao vivo e se aplicam no instante em que você escolhe um, só neste dispositivo.
+
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
+
 | Parte | O que é |
 |---|---|
 | **Nome** | Nome e sobrenome. |
@@ -28,6 +32,8 @@ A palavra "perfil" sugere uma única pessoa fixa, mas no Lolly é, na verdade, u
 
 ### Como indivíduo
 
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+
 O padrão. O perfil é você: seu nome, seu e-mail, sua foto de perfil. Configure uma vez e sua assinatura, seu crachá, seu lockup de conferência se preenchem sozinhos. É isso que a maioria das pessoas vai precisar.
 
 ### Como equipe
@@ -42,6 +48,10 @@ No Lolly, essa função é apenas **outro perfil que você mantém à mão** - u
 
 ## Uma instalação, um perfil ativo - vários que você pode manter
 
+Armazenamento é onde as duas metades disso vivem: o medidor dá conta de cada byte que esta instalação está guardando, categoria por categoria, e os botões abaixo dele são como você limpa ou leva tudo embora.
+
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
+
 A qualquer momento uma instalação tem **um perfil ativo** - os detalhes que uma ferramenta vê agora. Não há um seletor de perfil dentro do app; em vez disso, cada perfil é um **pacote portátil** (um único `.zip`, veja [abaixo](#moving-a-profile-to-a-new-device)). Esse é deliberadamente o mesmo mecanismo usado para migrar para um novo dispositivo - um perfil é um arquivo que você pode salvar, copiar e carregar.
 
 Então, se você realmente alterna entre vários contextos (você, sua equipe, o chapéu de gerente de eventos), você mantém vários pacotes e carrega o que precisar:
@@ -53,6 +63,8 @@ Então, se você realmente alterna entre vários contextos (você, sua equipe, o
 > Mantenha um pacote por contexto e renomeie os arquivos de acordo com o que representam (`LollyTools-events-2026.zip`, `LollyTools-me.zip`). O arquivo *é* o perfil.
 
 ## Movendo um perfil para um novo dispositivo
+
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
 
 Como um perfil é totalmente local, a única forma de levá-lo para uma instalação em branco - um laptop novo, um navegador recém-resetado, a máquina de um colega, um computador offline - é **carregar o arquivo**. Nenhum login o restaura para você, e esse é o objetivo: nada jamais saiu do seu dispositivo, para começar.
 
@@ -68,6 +80,8 @@ O que não viaja: o cache do catálogo (ele se baixa novamente sozinho no novo d
 Para o layout exato do pacote, a política de versão e as regras de integridade, veja **[Transferência de Dados](/info/data-transfer.html)**; para o passo a passo completo, **[Usando o Lolly → Mover para outro dispositivo](/info/using.html#moving-to-another-device)**.
 
 ## Como as ferramentas usam seu perfil
+
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
 
 Uma ferramenta só *pré-preenche* os campos do perfil para os quais foi explicitamente construída:
 

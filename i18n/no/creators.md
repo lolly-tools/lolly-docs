@@ -40,9 +40,15 @@ Lolly prøver ikke å være Canva eller Figma. Det har sin plass der *regler, re
 
 ### Alt riktig, uten venting
 
+Street Map er et godt eksempel på den byttehandelen: du velger en by og et par farger, og kartografien, veitykkelsene og vannet er allerede bestemt for deg.
+
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=192&waitMs=3200&cropSelector=%23tool-canvas&format=png&filename=vt-street-map-poster)
+
 Fyll ut noen få felt, få den ferdige ressursen - ingen skrifter å velge, ingen farger å tvile på, ingen «er dette riktig logo?». Verktøyet vet det allerede. E-postsignaturer, nedtellinger til arrangementer, sitatkort, navnebrikker, gatekart - alt teamet ditt trenger en tirsdag klokken fire, selvbetjent. Og siden ingen kundedata forlater enheten, er det ingen etterlevelsesrisiko ved å samarbeide.
 
 ### Fra levende data til ferdig visuelt uttrykk
+
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&filename=use-chart-output)
 
 Koble en **CSV**- eller **JSON**-tabell til en diagram-, kart- eller tabellmal og oppdater tallene - layouten tar seg av seg selv. Valgresultater, kvartalstall, værhendelser: bygg formatet én gang og gjenbruk det hver gang saken kjøres. Match husstilen din *nøyaktig*, fordi den håndheves på malnivå, ikke overlatt som en løs retningslinje.
 
@@ -52,7 +58,11 @@ Ett verktøy kan bygge inn et annet verktøys levende resultat som en ressurs - 
 
 ### Yttergrensen, når du trenger den
 
-Avanserte filtre, sammensetting, animasjon, effekter med direktekamera, generativ design - all webteknologi er tilgjengelig for den som lager maler, så taket er høyt. Lag *verktøy*, ikke filer: bygg det som genererer 10 000 kort i stedet for å lage 10 000 kort. Lås det som ikke skal endres; eksponer bare det som er ment å variere.
+Avanserte filtre, sammensetting, animasjon, effekter med direktekamera, generativ design - all webteknologi er tilgjengelig for den som lager maler, så taket er høyt.
+
+![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=1440&height=900&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&format=png&filename=use-mesh-output)
+
+Lag *verktøy*, ikke filer: bygg det som genererer 10 000 kort i stedet for å lage 10 000 kort. Lås det som ikke skal endres; eksponer bare det som er ment å variere.
 
 ## Detaljer du vil legge merke til
 

@@ -18,6 +18,8 @@ Výsledkem je **hojnost**: každá akce má správné značení, každé upozorn
 
 ### Kam v tomhle prostředí zapadá
 
+![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-gallery-landscape)
+
 | Funkce | Canva | Brand portály | Illustrator | Figma / Penpot | **Lolly** |
 |---|---|---|---|---|---|
 | Hromadná tvorba obsahu | částečně | ✗ | ✗ | ✗ | **✓** |
@@ -37,6 +39,40 @@ Mezera na trhu je jasná: nic v současném prostředí nenabízí výstup zalo�
 **Použij to pro:** Rychlou tvorbu provozně nasazených kreativních assetů - dlaždice na akce, jmenovky, podpisy, upozornění na CVE, QR kódy, karty na sociální sítě, přepravní štítky, strukturované reporty.
 
 **Nepoužívej to pro:** Zakázkový hero obsah.
+
+---
+
+## Životní cyklus kampaně
+
+![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-lifecycle-chart)
+
+Nejjasněji se dá vidět, co Lolly je, ne ze seznamu funkcí - ale když budeš sledovat jediný asset, jak putuje z ruky do ruky. Podívej se, jak jedna lokalizovaná kampaňová kartička prochází organizací:
+
+1. **Kreativec nastaví pravidla.** Designér vytvoří základní šablonu v Layout Studio a pevně do ní zadrátuje typografii a barevné proměnné značky. Nevyrábí jednu kartičku - odvádí tu základní práci *jednou*, aby ji už nikdy nemusel lokalizovat ručně.
+2. **Vývojář to naškáluje.** Tatáž šablona se přes CLI zapojí do noční pipeline, takže nový graf nebo nová jazyková varianta vznikne automaticky - žádný designér ten soubor znovu neotevírá.
+3. **Producent to jen použije.** Obchodník offline v letadle otevře tentýž nástroj a vygeneruje perfektně značkově konzistentní deck na schůzku s klientem. Žádné designové dovednosti, žádná síť, žádné čekání.
+
+„Nový graf" z druhého kroku je render jako tenhle, vytvořený z datového řetězce a hrstky parametrů, bez toho, aby kdokoli otevřel návrhový soubor:
+
+Pointa není, že Lolly je dobrá pro designéry *a* dobrá pro vývojáře *a* dobrá pro obchod, každé zvlášť ve vzduchoprázdnu. Je to **štafeta**: počáteční práci kreativce naškáluje vývojář, což zase posílí producenta. Bezproblémový zážitek netechnického obchodníka v letadle je *možný* jen díky té důslednosti, kterou nastavil designér a nasadil vývojář.
+
+Tohle je ten multiplikátor. Lolly není šuplík se samostatnými nástroji pro samostatné role - je to jeden deterministický životní cyklus assetu, kterého se dotkne každá role, a každá ruka, kterou projde, znásobí hodnotu té předchozí.
+
+---
+
+## Jedno schválení, deset tisíc assetů
+
+![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&format=svg&filename=ov2-batch-grid)
+
+Protože schválení žije v nástroji, a ne v souboru (viz [Jak si Lolly stojí v porovnání](/info/positioning.html)), přestává být škálování problémem revize. Schval jednou nástroj na lokalizované sociální kartičky a pak z tabulky vygeneruj **10 000 assetů ve 12 jazycích** - a ani jeden z nich nepotřebuje novou kontrolu od právního oddělení nebo od správce značky, protože šablona, ze které všechny vznikly, už schválená je.
+
+Tentýž deterministický nástroj dosáhne téhle škály třemi cestami a všechny produkují identický, předem schválený výstup:
+
+- **Člověk, v aplikaci.** Dávková mřížka `/pro`: vlož nebo naimportuj řádky, dostaneš jeden hotový asset na řádek, stáhneš zip. Žádné designové dovednosti, žádný tiket, žádné čekání.
+- **Vývojář, z příkazové řádky.** CLI běží headless na *stejném* enginu a *stejné* vykreslovací cestě, takže nástroj lze ve skriptu nebo noční pipeline pustit přes všech 10 000 řádků. Volání `lolly <tool> --field=…` ve smyčce je celá integrace.
+- **Systém nebo AI agent, přes MCP.** Tentýž nástroj obsluhovaný programově, ve stejné kvalitě a v ještě větší škále - protože stroj se nezačne nudit, když se sypou tisíce souborů.
+
+Jedna sada omezení značky, nastavená designérem jednou; tři cesty k identickému, předem schválenému výstupu - a strojová cesta škáluje nejdál ze všech, protože se neunaví, zatímco se soubory sypou.
 
 ---
 
@@ -190,9 +226,16 @@ lolly/
 Platforma běží na několika různých plochách - web PWA, Tauri desktop/mobile, skriptovatelné CLI a interaktivní TUI. Všechny používají stejný engine a stejné soubory nástrojů.
 
 ### Web (PWA) - hlavní distribuce
+
+![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&format=svg&filename=aud-web-split)
+
+![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&format=png&filename=ov2-phone-audiogram)
+
 Hostovaný na URL adrese pod kontrolou SUSE. Funguje offline, jakmile service worker nakešuje nástroje a assety. Tady bude platformu používat většina zaměstnanců, dodavatelů i partnerů. Účet není potřeba - stav se ukládá do IndexedDB, zvlášť na každém zařízení.
 
 Webový shell je responzivní z jednoho jediného rozvržení. Na desktopu je nástroj postranní panel s ovládacími prvky, který lze měnit velikost, vedle náhledové plochy s navigací po plátně nativní pro trackpad (Cmd/Ctrl-kolečko nebo sevření prstů pro přiblížení kolem kurzoru, mezerník nebo tažení prostředním tlačítkem pro posun, klávesy `0`/`1`/`+`/`−` a HUD s hodnotou Fit/%). Na mobilu (≤640px) se ovládací prvky změní na panel ukotvený nahoře s úchytem pro tažení, který se přichytí na náhled/půl/plnou velikost (klepnutím se přepíná) nad statickým celoobrazovkovým náhledem, a plovoucí tlačítko **Render** otevře ovládací prvky **Export** ve vyskakovacím panelu zespodu. Dotykové ovládání na náhledu podporuje sevření pro přiblížení a tažení pro posun. Vykreslovací cesta a ovládací prvky exportu jsou u obou stejné - mění se jen okolní rozhraní (chrome).
+
+Stejný nástroj v šířce telefonu, bez druhého rozvržení, které by se muselo udržovat: ovládací prvky se změní na panel nahoře, náhled zabere celou obrazovku a nad ním se vznáší plovoucí tlačítko Render.
 
 **Dávkový režim (`/pro`).** Webový shell navíc nabízí dávkovou mřížku ve stylu tabulkového procesoru (`shells/web/src/pro/`), která vykreslí najednou spoustu řádků napříč jedním nebo více nástroji. Umí obousměrný převod CSV/TSV i vkládání z tabulkového procesoru, šablonu/formát/velikost/jednotku/dpi pro každý řádek, postranní panel s editorem bloků a živým náhledem, sbalitelné sloupce exportu, lištu se štítky „relevance" pro každý řádek, přeuspořádání řádků tažením za úchyt vlevo, dvoukrokové potvrzení mazání, uložené dávkové relace a stažení jako `.zip`. Tohle je plocha typu jeden-ku-mnoha za pozicováním „hromadná tvorba obsahu".
 
@@ -216,9 +259,13 @@ lolly qr-code                # vypíše vstupy pro tento nástroj
 
 Interaktivní protějšek CLI: celoobrazovková terminálová aplikace ovládaná primárně klávesnicí (postavená na Ink) pro procházení nástrojů, vyplňování vstupů, ukládání projektů a export - a to všechno bez GUI. Její host bridge **znovu využívá implementaci CLI** pro formáty bez DOM (SVG/EMF/EPS/HTML + text/data) a přidává stav na disku pod `~/.lolly` plus volitelný náhled přímo v terminálu. Kromě toho má **vrstvu pro vykreslování v prohlížeči**: rozsahem omezený headless Chromium (ten samý, který instaluje MCP server), který na požádání vytváří rastr/PDF/video a zachytává živé URL adresy - pohání ho sestavená kopie webového shellu, takže výstup je identický, a spouští se, jen když poprvé exportuješ takový formát. Takže `url-shot` (s ořezem + přebarvením + vektorovým PDF/SVG) a úplně každý rastrový/pdf nástroj běží i v terminálu. Viz [průvodce TUI](/info/tui.html).
 
+Ať jsi na kterékoli ploše, karta Capabilities na dashboardu je kompletní mapa toho, co o sobě platforma deklaruje, že umí - seskupená a čitelná, aniž bys otevřel/a jediný nástroj.
+
 ---
 
 ## Kategorie nástrojů
+
+![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-utilities)
 
 Nástroje mají ve svém manifestu `category` pro seskupování v galerii.
 
@@ -247,6 +294,8 @@ Nástroje se dál třídí podle stavu: `official` (schválené značkou, bez vo
 Tahle rozhodnutí jsou uzavřená. Změnit kterékoli z nich je zásadní podnik - formují každé další rozhodnutí v kódové bázi.
 
 ### 1. Deklarativní nástroje s imperativní únikovou cestou
+
+![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-street-map-controls)
 
 Nástroj je manifest (`tool.json`) + šablona (`template.html`) + volitelný `hooks.js`.
 
@@ -293,6 +342,10 @@ Díky tomu jsou uložené stavy nástrojů a odkazy sdílené přes URL trvanliv
 
 ### 5. Režim URL je prvotřídní
 
+![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&format=svg&filename=aud-url-mode-qr)
+
+![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=%23tool-canvas&filename=ov2-url-palette)
+
 Každý vstup musí jít vyjádřit jako parametr URL:
 
 ```
@@ -302,6 +355,8 @@ lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H
 Režim CLI je režim URL v jiném transportu - CLI shell sestaví objekt stavu URL z argv a projede **stejnou** pipeline enginu. Existuje jedna jediná vykreslovací cesta. CLI se nemůže rozejít s GUI, protože to není samostatná implementace.
 
 `url-mode.ts` se stará o obousměrný převod (parsování a serializaci). Rezervované parametry (nikdy se nepředávají nástroji jako vstupy): `format`, `export`, `copy`, `slot`, `output`, `filename`, `_v`, `z` (sbalený stav - token „Nejkratší odkaz"), `width`/`w`, `height`/`h`, `unit`, `dpi`, `profile`, `password`, `bleed`, `marks`, `full`, `options`, `nostage`. Vstupy typu asset se v režimu URL serializují podle svého `id`; runtime je před hydratací vyresolvuje přes `host.assets.get()`. `width`/`height` jsou hodnoty v `unit` (výchozí `px`, dále `mm`/`cm`/`in`/`pt`/`pc`); u fyzické jednotky nastavuje rozlišení rastru `dpi`. Nastavují velikost dokumentu na plátně a předvyplňují panel rozměrů exportu.
+
+Protože každý vstup cestuje v odkazu, změna parametru znamená jiný hotový asset. Celá tahle paleta je jedna výchozí barva, harmonie a počet kroků:
 
 ### 6. Úložiště jde přes bridge, ne napřímo
 
@@ -334,10 +389,14 @@ Logika žije v `hooks.js`, kde je explicitní a dá se recenzovat. Dostupné hel
 
 ### 10. Nástroje skládají nástroje
 
+![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-slides-deck)
+
 Nástroj může vložit render **jiného** nástroje bez jakýchkoli importů mezi nástroji - kompozici řeší engine, nikdy kód nástroje. Existují dvě plochy:
 
 - **Deklarativní manifest** - `composes: [{ id, tool, inputs, format?, width?, height? }]`. Engine vyrenderuje pojmenovaného potomka a výsledek umístí do bezlogické šablony jako `{{asset <id>}}`. `event-name-badge` dnes skládá `qr-code` jako SVG.
 - **Přenositelná vkládací URL** - `<img src="https://lolly.tools/tool/<id>.<ext>?<inputs>">`. Shell vyrenderuje tohoto potomka **lokálně** (dokud se lokální render nedokončí, zobrazuje se zástupný pixel); z `lolly.tools` se nikdy nic nestahuje.
+
+Nástroj Slides stojí právě na téhle druhé ploše: každý slot na každém snímku může místo obrázku obsahovat jiný nástroj Lolly.
 
 Vložit lze render libovolného nástroje: potomek ve formátu **SVG** zůstává skutečným vektorem, když rodič exportuje do SVG nebo PDF, a pro PNG se ostře rasterizuje; potomci **PNG/JPG/WEBP** se vkládají jako obrázky. Vyžaduje schopnost `compose`. Vložení potomci jsou mezikroky - nikdy se neopatřují vodoznakem ani se do nich nerazí provenience - a kompozice degraduje elegantně: shell, který potomka neumí vyrenderovat, daný slot prostě vynechá a rodič se přesto vykreslí.
 
@@ -354,6 +413,8 @@ Vložit lze render libovolného nástroje: potomek ve formátu **SVG** zůstáv�
 ---
 
 ## Životní cyklus od začátku do konce
+
+![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&format=svg&filename=aud-export-popup)
 
 Uživatel otevře `lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H`:
 

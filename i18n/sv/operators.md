@@ -34,6 +34,16 @@ Den fullständiga genomgången av driftsättningsmodeller och administration fin
 
 ## Verktyg mot exfiltrering
 
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data)
+
+Text Helper är samma överenskommelse för text i stället för filer. Det är den flikbaserade arbetsbänken en medarbetare annars hade letat efter på en främlings webbplats, och den deklarerar inga indata alls, eftersom inget den rör vid någonsin lämnar sidan.
+
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+
+Compress PDF kompletterar uppsättningen: den överstora bilagan krymper under en kvalitetsnivå du väljer, på maskinen som redan har den.
+
+![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=ov2-compress-pdf)
+
 En kategori Lolly-verktyg - sekretessverktygen - finns *specifikt* för att hålla filer innanför perimetern.
 
 - **Ta bort dold data**
@@ -49,12 +59,18 @@ Alla dessa är transformationer på enheten: din fil eller data går in, rensade
 
 ## Determinism och reproducerbarhet
 
+Prompt to Image är determinism i sin enklaste form: texten är hela indatan, den satta bilden är hela utdatan, och samma text sätts alltid på samma sätt.
+
+![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-prompt-to-image)
+
 Varje verktygsinmatning kan uttryckas som en URL-parameter, och samma indata ger samma fil. Det får två konsekvenser för operatören:
 
 - **En URL är artefakten.** Committa länken, regenerera tillgången vid behov - inga binärfiler checkas in i Git, inget jagande efter "senaste versionen" i chatten. Tillgångs- och verktygs-ID:n är permanenta kontrakt, så en länk som skapas idag går fortfarande att slå upp senare.
 - **CLI:t är samma renderingsväg** som GUI:t, så byggpipelines och appen glider aldrig isär. Generera OG-bilder, sociala kort och datavisualiseringar vid byggtillfället, på ett reproducerbart sätt.
 
 ## Proveniens och Content Credentials
+
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
 
 Exporter kan bära **Content Credentials** - ett signerat [C2PA](https://c2pa.org)-manifest bundet till en hash av filens bytes. Varje senare ändring av filen bryter förseglingen, så en C2PA-medveten verifierare **upptäcker ändringar kryptografiskt, offline**. Autentiseringsuppgiften är manipulations-*avslöjande*: den flaggar manipulation snarare än förhindrar den, vilket är precis det som gör fullständig offline-verifiering möjlig.
 
@@ -68,6 +84,8 @@ Exporter kan bära **Content Credentials** - ett signerat [C2PA](https://c2pa.or
 > **Interoperabilitetsanmärkningar.** Lolly verifierar sina egna autentiseringsuppgifter och många från tredje part offline idag, inklusive läsning av C2PA-anspråks-**v2**-manifest från andra producenter. En interop-punkt pågår fortfarande: WebM - som ännu inte har någon standardiserad C2PA-mappning, så Lolly bifogar manifestet som en Matroska-del (tredjepartsverktyg verifierar Lollys MP4 direkt; WebM följer när standarden har satt sig).
 
 ## Kryptering och lösenordsskydd
+
+![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&format=svg&filename=aud-pdf-lock)
 
 För filer som måste färdas låsta sker allt på enheten:
 

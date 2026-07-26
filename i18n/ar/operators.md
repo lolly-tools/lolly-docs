@@ -34,6 +34,16 @@
 
 ## أدوات مكافحة التسريب
 
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data)
+
+Text Helper هي المقايضة نفسها لكن للنص لا للملفات. إنها منصة العمل ذات التبويبات التي كان الموظف سيبحث عنها لدى موقع غريب، وهي لا تعلن أي مدخلات على الإطلاق لأن ما تلمسه لا يغادر الصفحة أبدا.
+
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+
+وCompress PDF تكمل الثلاثي: المرفق المتضخم يتقلص وفق مستوى جودة تختاره أنت، على الجهاز الذي يحتفظ به أصلا.
+
+![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=ov2-compress-pdf)
+
 توجد فئة من أدوات Lolly - أدوات الخصوصية - موجودة *خصيصا* لإبقاء الملفات داخل المحيط.
 
 - **Strip hidden data**
@@ -49,12 +59,18 @@
 
 ## الحتمية وقابلية إعادة الإنتاج
 
+Prompt to Image هي الحتمية في أبسط صورها: النص هو كل المدخل، والصورة المنسقة طباعيا هي كل الناتج، والنص نفسه ينسق دائما بالطريقة نفسها.
+
+![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-prompt-to-image)
+
 كل مدخل أداة قابل للتعبير عنه كمعامل URL، والمدخلات نفسها تنتج الملف نفسه. ولهذا نتيجتان عند المشغل:
 
 - **الرابط هو المخرج النهائي.** أودع الرابط، وأعد توليد الأصل عند الطلب - لا ملفات ثنائية تودع في Git، ولا ملاحقة «أحدث نسخة» في الدردشة. معرفات الأصول والأدوات عقود دائمة، فالرابط المسكوك اليوم يظل يعمل لاحقا.
 - **CLI هو مسار التصيير نفسه** كالواجهة الرسومية، فلا تنحرف خطوط البناء عن التطبيق أبدا. ولد صور OG والبطاقات الاجتماعية والمرئيات البيانية وقت البناء، بشكل قابل لإعادة الإنتاج.
 
 ## المنشأ وContent Credentials
+
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
 
 يمكن أن تحمل التصديرات **Content Credentials** - بيان [C2PA](https://c2pa.org) موقّع ومربوط بتجزئة بايتات الملف. أي تغيير لاحق على الملف يكسر الختم، لذا **يكشف المتحقق الواعي بـC2PA العبث تشفيريا ودون اتصال بالشبكة**. الاعتماد *يكشف* العبث ولا يمنعه: فهو يُبلّغ عن التلاعب بدلا من منعه، وهذا بالتحديد ما يجعل التحقق الكامل دون اتصال بالشبكة ممكنا.
 
@@ -68,6 +84,8 @@
 > **ملاحظات حول التشغيل البيني.** يتحقق Lolly اليوم من اعتماداته الخاصة، ومن كثير من اعتمادات الأطراف الثالثة، دون اتصال بالشبكة، بما في ذلك قراءة بيانات مطالبات C2PA بالإصدار **v2** من منتجين آخرين. ويبقى بند تشغيل بيني واحد قيد الإنجاز: WebM - الذي لا يملك بعد تخطيطا موحدا لـC2PA، فيُرفق Lolly البيان كجزء Matroska (تتحقق الأدوات الخارجية من ملفات MP4 الصادرة عن Lolly مباشرة؛ أما WebM فسيلحق بذلك حالما يستقر المعيار).
 
 ## التشفير وكلمات المرور
+
+![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&format=svg&filename=aud-pdf-lock)
 
 للملفات التي يجب أن تسافر مقفلة، يجري كل شيء على الجهاز:
 

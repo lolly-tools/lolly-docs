@@ -10,10 +10,20 @@ Lolly е платформено-независим **енджин**, който 
 
 ## Разбери архитектурата
 
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+
 - **[Общ преглед](/info/overview.html)** — защо съществува Lolly, разделението енджин/обвивки/инструменти, мостът на възможностите и утвърдените архитектурни ангажименти.
 - **[Дизайн токени](/info/design-tokens.html)** — DTCG моделът на токени, чрез който се изразяват брандовете, и как инструментите ги използват.
 
 ## Създавай инструменти
+
+Всеки контрол по-долу е генериран от вход, деклариран в `tool.json`. Ти пишеш реда в манифеста, хостът рисува контрола, а същият модел движи CLI и URL.
+
+![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&format=svg&filename=aud-manifest-controls)
+
+И това се мащабира далеч над пет контрола. Дай на вход `section` и хостът го сгъва, така че инструмент с петдесет входа като D3 Chart Studio пак се отваря като кратък списък, а останалото стои подредено в наименувани групи.
+
+![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-d3-sections)
 
 - **[Създаване на инструменти](/info/authoring-tools.html)** — пълното ръководство: манифест, шаблон, стилове, hooks, композиция и публикуване.
 - **[Създаване на активи](/info/authoring-assets.html)** — каталожни активи, нива, локали, палитри, темизируеми икони и шрифтове.
@@ -35,6 +45,10 @@ Lolly е платформено-независим **енджин**, който 
 - **[Конфигурация](/info/configuration.html)** — профили, брандови пакети, ограничаване по възможности, функционални флагове и валидиране на каталога.
 
 ## Доверие и данни
+
+Правата и авторството са входове както всички останали. Embed & Track Image декларира полета за автор, авторско право, лиценз и контакт, а експортът ги записва в собствените метаданни на файла и в неговия C2PA манифест.
+
+![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-rights-fields)
 
 - **[Content Credentials идентичност](/info/content-credentials-identity.html)** — подписване с издадени от CA сертификати за C2PA на устройството; договорите на енджина и наръчникът за оператора.
 - **[Пренос на данни](/info/data-transfer.html)** — пакетът `lolly-backup`: обвивка (envelope), цялост и гаранции между обвивките.
