@@ -46,9 +46,15 @@ Lolly isn't trying to be Canva or Figma. It sits where *rules, repeatability, an
 
 Fill in a few fields, get the finished asset - no fonts to pick, no colours to second-guess, no "is this the right logo?" The tool already knows. Email signatures, event countdowns, quote cards, badges, street maps - everything your team needs on a Tuesday at 4pm, self-serve. And because no customer data leaves the device, there's no compliance risk to collaborating.
 
+Street Map is a fair example of the trade: you pick a city and a couple of colours, and the cartography, the road weights and the water are decided for you.
+
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=192&waitMs=3200&cropSelector=%23tool-canvas&format=png&filename=vt-street-map-poster)
+
 ### From live data to finished visual
 
 Connect a **CSV** or **JSON** table to a chart, map, or table template and update the numbers - the layout takes care of itself. Election results, quarterly earnings, weather events: build the format once and reuse it every time the story runs. Match your house style *exactly*, because it's enforced at the template level, not left as a loose guideline.
+
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&filename=use-chart-output)
 
 ### Tools that compose tools
 
@@ -56,7 +62,11 @@ One tool can embed another tool's live output as an asset - a name badge that re
 
 ### The frontier, when you need it
 
-Advanced filters, compositing, animation, live camera effects, generative design - every web technology is available to a template author, so the ceiling is high. Author *tools*, not files: build the thing that generates 10,000 cards rather than making 10,000 cards. Lock what shouldn't change; expose only what's meant to vary.
+Advanced filters, compositing, animation, live camera effects, generative design - every web technology is available to a template author, so the ceiling is high.
+
+![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=1440&height=900&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&format=png&filename=use-mesh-output)
+
+Author *tools*, not files: build the thing that generates 10,000 cards rather than making 10,000 cards. Lock what shouldn't change; expose only what's meant to vary.
 
 ## Touches you'll notice
 

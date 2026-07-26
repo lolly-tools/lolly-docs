@@ -8,6 +8,10 @@ Mọi thứ trong hồ sơ đều nằm **trên thiết bị**, trong cơ sở d
 
 ## Những gì có trong hồ sơ
 
+Tùy chọn là phần duy nhất làm thay đổi cách ứng dụng hiện ra trước mắt bạn. Các thẻ chủ đề là bản xem trước trực tiếp và được áp dụng ngay khi bạn chọn một thẻ, chỉ trên thiết bị này.
+
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
+
 | Phần | Là gì |
 |---|---|
 | **Tên** | Họ và tên. |
@@ -28,6 +32,8 @@ Từ "hồ sơ" gợi ý một con người cố định duy nhất, nhưng tron
 
 ### Với tư cách cá nhân
 
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+
 Mặc định. Hồ sơ chính là bạn: tên bạn, email của bạn, ảnh chân dung của bạn. Thiết lập một lần và chữ ký, huy hiệu, biểu trưng hội nghị của bạn sẽ tự động điền vào. Đây là tất cả những gì hầu hết mọi người sẽ cần.
 
 ### Với tư cách một nhóm
@@ -42,6 +48,10 @@ Trong Lolly, vai trò đó chỉ đơn giản là **một hồ sơ khác mà b�
 
 ## Một bản cài đặt, một hồ sơ đang hoạt động - nhiều hồ sơ bạn có thể giữ
 
+Lưu trữ là nơi cả hai nửa đó cùng tồn tại: đồng hồ đo tính đến từng byte mà bản cài đặt này đang giữ, theo từng hạng mục, và các nút bên dưới nó là cách bạn xóa hoặc mang chúng đi.
+
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
+
 Tại bất kỳ thời điểm nào, một bản cài đặt chỉ có **một hồ sơ đang hoạt động** - những thông tin mà một công cụ nhìn thấy ngay lúc đó. Không có bộ chuyển hồ sơ trong ứng dụng; thay vào đó, mỗi hồ sơ là một **gói di động** (một tệp `.zip` duy nhất, xem [bên dưới](#moving-a-profile-to-a-new-device)). Đây là chủ đích dùng chung cơ chế với việc chuyển sang thiết bị mới - một hồ sơ là một tệp mà bạn có thể lưu, sao chép, và nạp vào.
 
 Vì vậy nếu bạn thực sự phải xoay sở giữa nhiều bối cảnh (bạn, nhóm của bạn, chiếc mũ quản lý sự kiện), bạn giữ nhiều gói và nạp gói bạn cần:
@@ -53,6 +63,8 @@ Vì vậy nếu bạn thực sự phải xoay sở giữa nhiều bối cảnh (
 > Giữ một gói cho mỗi bối cảnh và đổi tên tệp theo đúng nội dung của chúng (`LollyTools-events-2026.zip`, `LollyTools-me.zip`). Tệp đó *chính là* hồ sơ.
 
 ## Chuyển hồ sơ sang thiết bị mới
+
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
 
 Vì hồ sơ hoàn toàn cục bộ, cách duy nhất để đưa nó vào một bản cài đặt trống - một laptop mới, một trình duyệt vừa được đặt lại, máy của đồng nghiệp, một thiết bị ngoại tuyến - là **mang theo tệp**. Không có đăng nhập nào khôi phục nó giúp bạn, và đó chính là mấu chốt: ngay từ đầu chưa từng có gì rời khỏi thiết bị của bạn.
 
@@ -68,6 +80,8 @@ Những gì không được mang theo: bộ nhớ đệm danh mục (nó sẽ t�
 Để biết chi tiết chính xác về cấu trúc gói, chính sách phiên bản, và các quy tắc toàn vẹn, xem **[Truyền dữ liệu](/info/data-transfer.html)**; để xem hướng dẫn từng bước đầy đủ, xem **[Sử dụng Lolly → Chuyển sang thiết bị khác](/info/using.html#moving-to-another-device)**.
 
 ## Cách các công cụ sử dụng hồ sơ của bạn
+
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
 
 Một công cụ chỉ bao giờ *điền sẵn* những trường hồ sơ mà nó được xây dựng rõ ràng để liên kết:
 

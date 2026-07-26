@@ -6,6 +6,8 @@ Uygulamayı gerçekten *kullanmaya* dair pratik bir rehber - bir araç açmak, k
 
 ## Bir araç açma
 
+![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Fct%3Dhorizontal-bar%26t%3DQuarterly%2520revenue%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&format=svg&filename=vt-tool-split-view)
+
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
 ![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
@@ -17,6 +19,8 @@ Her araç bölünmüş bir görünümdür: bir tarafta **kontroller**, diğer ta
 > Birkaç araç (**Layout Studio** gibi) bunun yerine bir **serbest kanvas** olarak açılır - sürükleyip yeniden boyutlandırdığın, döndürdüğün ve hizaladığın metin, şekil ve görsel kutularının bulunduğu, çerçevesiz, doğrudan-manipülasyon yüzeyi; metni yerinde düzenlemek için çift tıklarsın. Diğer her araçla aynı oluşturma yolundan dışa aktarılır, yani kanvas, dosyanın *ta kendisidir*. Aşağıda [Serbest kanvas](#the-free-canvas-layout-studio) bölümüne bak.
 
 ## Kanvas (önizleme)
+
+![The zoom HUD in the corner of the canvas - minus, the live percentage, plus, Fit, then the theme and sound toggles](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=.stage-nav%7Bopacity%3A1!important%7D&cropSelector=.stage-nav&format=svg&filename=use-zoom-hud)
 
 Önizleme her zaman tam olarak dışa aktarılacak şeyi gösterir.
 
@@ -48,12 +52,16 @@ Serbest kanvas araçları, bir tasarımcının yapıştırma tahtası gibi, çal
 
 ## Telefonda
 
+![A tool on a phone-width screen - controls as a sheet up top, the generated palette filling the preview below, and the render pill floating bottom-centre](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3Df97316%26harmony%3Dadjacent-3%26steps%3D9&width=430&height=900&dpi=192&waitMs=2200&format=svg&filename=vt-phone-palette)
+
 Dar ekranlarda düzen tek sütun haline gelir:
 
 - **Kontroller üstte bir panele dönüşür**, alt kenarında bir **sürükleme tutamacı** bulunur. Tutamacı sürükleyerek boyutlandır - **kısmi / yarım / tam** konumlarına yapışır - ya da daraltma ↔ genişletme arasında geçiş yapmak için tutamaca **dokun**. Önizleme alttaki alanı doldurur ve sen düzenlerken görünür kalmaya devam eder.
 - Yüzen bir **Oluştur** düğmesi **Dışa Aktar** panelini açar - format, boyut, kopyalama, kaydetme ve indirme kontrollerinin tümü tek bir yerde. Arka plana dokunarak kapat.
 
 ## Kontroller (girdiler)
+
+![A tool's control stack - a text field, colour triggers and a slider, and nothing else the author chose to lock down](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-inputs&format=svg&filename=use-tool-inputs)
 
 Araçlar yalnızca değişmesi amaçlanan girdileri gösterir - geri kalan her şey (renkler, düzen, tipografi, mantık) araç yazarı tarafından sabitlenmiştir, böylece oluşturduğun her şey yazarın koyduğu kurallara uyar. Girdiler arasında metin, kaydırıcılar, renk seçiciler, açılır menüler, tarihler, görsel seçiciler ve tekrar eden satır grupları bulunur. Bazıları katlanabilir bölümler altında gruplanmıştır.
 
@@ -66,6 +74,8 @@ Araçlar yalnızca değişmesi amaçlanan girdileri gösterir - geri kalan her �
 Profil fotoğrafın ve bilgilerin **yalnızca bu cihazda** yaşar. Bir profil sadece sen olmaktan fazlası olabilir - arada bir üstlendiğin bir takım ya da bir rol. Birden fazlasını tutmak dahil tam tabloyu görmek için **[Profiller](/info/profile.html)** sayfasına bak.
 
 ## Kaydetme ve devam etme
+
+![The two-half render pill - an up arrow that opens the export panel, and a tick that saves the session in place](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=%23tool-inputs%7Bdisplay%3Anone%7D&cropSelector=.render-pill&format=svg&filename=use-render-pill)
 
 Şu anki girdileri o araç için bir oturum olarak kaydetmek için **Kaydet**'e tıkla. Araç başına birden fazla adlandırılmış oturum tutabilirsin; her aracın **Devam Et** düğmesi en son oturumunu yeniden açar, ve **geçmiş düğmesi** (sağ üstte, profilinin yanında) tüm araçlardaki her kaydedilmiş oturumu listeler. Oturumlar cihaza özeldir. Bunları düzenlemek için **Projeler**'i aç (aşağıda).
 
@@ -108,6 +118,8 @@ Bir araç cihazından bir görsel eklemene izin verdiğinde, görsel küçültü
 - **Düzenle.** Bir varlığı farklı bir gruba yeniden kategorize et, kullanmadığın paylaşılan bir marka varlığını gizle (geri getirmek için **Gizlenenleri Göster** ile), ya da kendi yüklediklerini tamamen sil.
 
 ### Paletini ve yazı tiplerini her yere taşı
+
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 Kataloğun **Renk Örnekleri** paneli yalnızca referans için değil - bir rengi kopyalamak için tıkla, ya da diğer aracının konuştuğu formatta **markanın tüm paletini indir**:
 
@@ -154,6 +166,8 @@ Var olan bir tasarımı Lolly'ye getirip üzerinde çalışmaya devam edebilirsi
 Format seçme, çıktı boyutu ve baskı birimleri, şeffaflık, video ve kopyalama/paylaşma dahil tüm ayrıntılar için **[Dışa Aktarma ve Formatlar](/info/exporting.html)** sayfasına bak. Kısaca: bir format seç, gerekiyorsa boyutu ayarla ve **İndir**'e tıkla (ya da panoya **Kopyala**'ya).
 
 ## Batch (Pro) modu
+
+![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&format=svg&filename=use-batch-toolbar)
 
 Güçlü kullanıcılar için **Batch** (galeriden bağlantılı, varsayılan olarak açık olan Pro özellik bayrağının arkasında) birçok varyasyonu bir kerede oluşturur - her satırın birlikte dışa aktarılan bir girdi seti olduğu bir tablo. Bir kartı bir düzine dile yerelleştirmek ya da her boyut varyantını tek geçişte üretmek için ideal. Satırları yazarak, doğrudan bir e-tablodan yapıştırarak ya da bir CSV içe aktararak doldur (bir tane de dışa aktarabilirsin), ve satır başına format, boyut ve çıktı dosya adını ayarla. Bütün bir tabloyu galeriden yeniden açılan adlandırılmış bir **batch oturumu** olarak kaydet ve her satırı tek bir `.zip` olarak indir.
 

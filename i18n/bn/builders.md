@@ -10,10 +10,20 @@ Lolly হলো একটি প্ল্যাটফর্ম-নিরপে�
 
 ## আর্কিটেকচার বুঝুন
 
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+
 - **[Overview](/info/overview.html)** — কেন Lolly-র অস্তিত্ব, engine/shell/tools-এর পৃথকীকরণ, ক্যাপাবিলিটি ব্রিজ, এবং স্থির হয়ে যাওয়া আর্কিটেকচারাল প্রতিশ্রুতিগুলো।
 - **[Design Tokens](/info/design-tokens.html)** — যে DTCG টোকেন মডেলে ব্র্যান্ড প্রকাশ করা হয়, এবং টুল কীভাবে সেগুলো ব্যবহার করে।
 
 ## টুল তৈরি করুন
+
+নিচের প্রতিটি কন্ট্রোল `tool.json`-এ ঘোষিত একটি ইনপুট থেকে তৈরি হয়েছে। আপনি ম্যানিফেস্টের লাইনটা লেখেন, হোস্ট উইজেটটা আঁকে, আর একই মডেল CLI আর URL-ও চালায়।
+
+![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&format=svg&filename=aud-manifest-controls)
+
+এটা পাঁচটা কন্ট্রোলের চেয়ে অনেক দূর পর্যন্ত বাড়ে। কোনো ইনপুটকে একটা `section` দিন আর হোস্ট সেটা গুটিয়ে রাখে, তাই D3 Chart Studio-র মতো পঞ্চাশ-ইনপুটের টুলও একটা ছোট তালিকা হিসেবেই খোলে, বাকিটা নাম দেওয়া গ্রুপের পিছনে সাজানো থাকে।
+
+![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-d3-sections)
 
 - **[Authoring Tools](/info/authoring-tools.html)** — সম্পূর্ণ গাইড: ম্যানিফেস্ট, টেমপ্লেট, স্টাইল, hooks, কম্পোজিশন, এবং পাবলিশিং।
 - **[Authoring Assets](/info/authoring-assets.html)** — ক্যাটালগ অ্যাসেট, টিয়ার, লোকেল, প্যালেট, থিমযোগ্য আইকন, এবং ফন্ট।
@@ -35,6 +45,10 @@ Lolly হলো একটি প্ল্যাটফর্ম-নিরপে�
 - **[Configuration](/info/configuration.html)** — প্রোফাইল, ব্র্যান্ড প্যাক, ক্যাপাবিলিটি গেটিং, ফিচার ফ্ল্যাগ, এবং ক্যাটালগ যাচাই।
 
 ## ট্রাস্ট ও ডেটা
+
+অধিকার আর কৃতিত্বও আর সবকিছুর মতোই ইনপুট। Embed & Track Image ক্রিয়েটর, কপিরাইট, লাইসেন্স আর যোগাযোগের ঘর ঘোষণা করে, আর এক্সপোর্ট সেগুলো ফাইলের নিজের মেটাডেটা আর তার C2PA ম্যানিফেস্টে লিখে দেয়।
+
+![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-rights-fields)
 
 - **[Content Credentials Identity](/info/content-credentials-identity.html)** — অন-ডিভাইস C2PA-র জন্য CA-প্রদত্ত সাইনিং; ইঞ্জিন কন্ট্রাক্ট এবং অপারেটর রানবুক।
 - **[Data Transfer](/info/data-transfer.html)** — `lolly-backup` বান্ডল: এনভেলপ, ইন্টেগ্রিটি, এবং ক্রস-শেল গ্যারান্টি।

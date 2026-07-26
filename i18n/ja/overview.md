@@ -18,6 +18,8 @@
 
 ### ランドスケープの中での位置づけ
 
+![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-gallery-landscape)
+
 | 機能 | Canva | Brand portals | Illustrator | Figma / Penpot | **Lolly** |
 |---|---|---|---|---|---|
 | 大量コンテンツ生成 | 一部対応 | ✗ | ✗ | ✗ | **✓** |
@@ -37,6 +39,40 @@
 **こんな用途に:** 運用化されたクリエイティブアセットの迅速な生成——イベントタイル、ネームバッジ、署名、CVE アラート、QR コード、ソーシャルカード、出荷ラベル、構造化されたレポートなど。
 
 **こんな用途には向きません:** オーダーメイドのヒーローコンテンツ。
+
+---
+
+## キャンペーンのライフサイクル
+
+![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-lifecycle-chart)
+
+Lolly が何であるかを最もはっきり示してくれるのは機能一覧ではなく、1 つのアセットが人の手から手へ渡っていく様子を追うことです。ローカライズされたキャンペーンカードが 1 枚、組織の中をどう進んでいくかを見てみましょう。
+
+1. **クリエイターがルールを決めます。** デザイナーが Layout Studio でベーステンプレートを作り、ブランドのタイポグラフィとカラー変数をハードコードします。作っているのは 1 枚のカードではありません——この土台となる作業を*一度だけ*行い、以後は手作業でローカライズしなくて済むようにしているのです。
+2. **開発者がそれをスケールさせます。** その同じテンプレートを CLI 経由で毎晩のパイプラインに組み込めば、新しいチャートや新しい言語バリアントが自動的に生成されます——デザイナーがファイルを開き直すことはありません。
+3. **制作担当者はただ使うだけです。** 営業担当者が飛行機の中でオフラインのまま同じツールを開き、顧客との商談用に完全にブランドに沿ったデッキを生成します。デザインスキルも、ネットワークも、待ち時間も必要ありません。
+
+ステップ 2 の「新しいチャート」とは、たとえば下のようなレンダリングです。データ文字列といくつかのパラメータから生成されており、デザインファイルを開いた人は誰もいません。
+
+重要なのは、Lolly がそれぞれ独立に、デザイナーにとって良く、*かつ*開発者にとって良く、*かつ*営業にとって良い、ということではありません。これは**リレー競走**です。クリエイターの最初の仕事が開発者によってスケールされ、それがそのまま制作担当者の力になります。飛行機の中にいる非技術者の担当者が労せず使えるのは、デザイナーが定めた厳格さと開発者が展開した仕組みがあってこそ*可能*になっているのです。
+
+それが力の増幅です。Lolly は役割ごとに別々のツールをしまっておく引き出しではありません——あらゆる役割が触れる 1 本の決定論的なアセットライフサイクルであり、手を経るたびに前の工程の価値が何倍にもなっていきます。
+
+---
+
+## 1 回の承認で、1 万点のアセット
+
+![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&format=svg&filename=ov2-batch-grid)
+
+承認がファイルではなくツールに宿るため（[Lollyの比較](/info/positioning.html) を参照）、スケールはもはやレビューの問題ではなくなります。ローカライズされたソーシャルカードのツールを一度承認すれば、あとはスプレッドシートから**12 言語にまたがる 10,000 点のアセット**を生成できます——しかもそのどれ 1 つも、法務やブランドチームによる新たなコンプライアンスチェックを必要としません。すべての元になっているテンプレートが、すでに承認済みだからです。
+
+同じ決定論的なツールが、3 つの経路でそのスケールに到達し、いずれも同一の事前承認済み出力を生み出します。
+
+- **人が、アプリの中で。** `/pro` のバッチグリッド:行を貼り付けるかインポートすれば、1 行につき 1 点の完成アセットが得られ、zip でダウンロードできます。デザインスキルも、チケットも、待ち時間も不要です。
+- **開発者が、コマンドラインから。** CLI は*同じ*エンジンと*同じ*レンダリングパスをヘッドレスで実行するので、スクリプトや毎晩のパイプラインの中でツールを 10,000 行すべてに対して順に走らせられます。ループの中で `lolly <tool> --field=…` を呼ぶだけで、それが統合作業のすべてです。
+- **システムや AI エージェントが、MCP 経由で。** 同じツールをプログラムから操作し、忠実度は同じまま、さらに大きなスケールへ——ファイルが何千と流れ込んでくる間、機械は飽きたりしないからです。
+
+デザイナーが一度だけ定めた 1 組のブランド制約と、同一の事前承認済み出力へ至る 3 つの経路——そして最も遠くまでスケールするのは機械の経路です。ファイルが流れ込み続けても、決して疲れないからです。
 
 ---
 
@@ -190,9 +226,16 @@ lolly/
 このプラットフォームは、web PWA、Tauri デスクトップ/モバイル、スクリプト可能な CLI、対話型の TUI という複数のサーフェス上で動作します。そのすべてが同じエンジンと同じツールファイルを使用します。
 
 ### Web (PWA) — 主要な配信手段
+
+![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&format=svg&filename=aud-web-split)
+
+![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&format=png&filename=ov2-phone-audiogram)
+
 SUSE が管理する URL でホストされます。service worker がツールとアセットをキャッシュした後は、オフラインでも動作します。ほとんどの従業員、ベンダー、パートナーがこのプラットフォームを利用するのは、この形態です。アカウントは不要です——状態はデバイスごとに IndexedDB に保存されます。
 
 web シェルは単一のレイアウトからレスポンシブに対応します。デスクトップでは、ツールはリサイズ可能なコントロールサイドバーと、トラックパッドネイティブなキャンバスナビゲーション(Cmd/Ctrl + ホイール、またはピンチでカーソル位置を中心にズーム、Space キーまたは中ボタンドラッグでパン、`0`/`1`/`+`/`−` キー、Fit/% の HUD)を備えたプレビューステージが並ぶ構成になります。モバイル(640px 以下)では、コントロールは上部に固定されたシートとなり、ドラッググリップで peek/half/full を切り替えられ(タップでもトグル可能)、静的なフルスクリーンプレビューの上に重なります。フローティングの **Render** ボタンを押すと、ボトムシートのポップアップで **Export** コントロールが開きます。タッチ操作ではプレビュー上でピンチズームとドラッグパンが行えます。レンダリング経路と書き出しコントロールは両者で全く同一です——変わるのは chrome(外枠)のレイアウトだけです。
+
+同じツールをスマートフォンの幅で見ても、維持すべき2つ目のレイアウトは存在しません。コントロールは上部のシートになり、プレビューが画面全体を占め、フローティングの Render ボタンがその上に浮かびます。
 
 **バッチモード(`/pro`)。** web シェルには、1つまたは複数のツールにまたがって多数の行を一度にレンダリングする、スプレッドシート形式のバッチグリッド(`shells/web/src/pro/`)も搭載されています。CSV/TSV の往復変換に加えてスプレッドシートからの貼り付け、行ごとのテンプレート/フォーマット/サイズ/単位/DPI、ライブプレビュー付きのブロックエディタサイドパネル、折りたたみ可能な書き出し列、行ごとの「関連性」タグバー、左側のドラッグハンドルによる行の並べ替え、2段階の削除確認、保存済みバッチセッション、`.zip` ダウンロードに対応しています。これが「大量コンテンツ生成」というポジショニングを支える、1対多のサーフェスです。
 
@@ -200,6 +243,7 @@ web シェルは単一のレイアウトからレスポンシブに対応しま�
 パッケージ化されたネイティブアプリ(Tauri により小さなフットプリント)。完全なオフライン可用性、CLI 依存ツール(PDF Smasher、Font Outliner)向けのファイルシステムアクセス、カメラアクセスを提供します。2026年半ばのツール強化が予定されています。
 
 ### CLI
+
 `lolly <tool-id> [--input=value ...] --output=file.png`
 
 デスクトップユーザーは、ターミナルから多くのツールを呼び出せます。CLI シェルは同じエンジンを読み込み、jsdom の DOM を生成し、同じレンダリング経路を実行して、ファイルを書き出します。トランスポートとして URL モードを使用しており——CLI は別実装ではありません。これにより、CLI と GUI の出力が同一であることが保証されます。
@@ -216,9 +260,13 @@ lolly qr-code                # そのツールの入力を一覧表示する
 
 CLI に対応する対話型版です。ツールの閲覧、入力の記入、プロジェクトの保存、書き出しを、GUI なしに、フルスクリーンでキーボード主体のターミナルアプリ(Ink 製)として行えます。そのホストブリッジは、DOM を必要としないフォーマット(SVG/EMF/EPS/HTML + テキスト/データ)については **CLI の実装を再利用**し、それに加えて `~/.lolly` 以下のディスク上状態と、オプトインのインラインプレビューを備えます。それを超える範囲には**ブラウザレンダリング層**があります。スコープを限定したヘッドレス Chromium(MCP サーバーがインストールするものと同一)が、ラスター/PDF/動画とライブ URL のキャプチャをオンデマンドで生成します——ビルド済みの web シェルのコピーを駆動するため出力は同一であり、そうしたフォーマットを最初に書き出すときにだけ起動します。そのため `url-shot`(クロップ + 色変更 + ベクター PDF/SVG 対応)や、あらゆるラスター/pdf ツールもターミナル内で実行できます。詳しくは [TUI ガイド](/info/tui.html) を参照してください。
 
+どのサーフェスを使っていても、ダッシュボードの機能（Capabilities）タブは、このプラットフォームが自ら宣言している能力の全体像を示す地図です。グループごとに整理されて読める形になっており、ツールを1つも開く必要はありません。
+
 ---
 
 ## ツールのカテゴリ
+
+![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-utilities)
 
 ツールはギャラリーでのグルーピングのために、マニフェスト内で `category` によってタグ付けされます。
 
@@ -247,6 +295,8 @@ CLI に対応する対話型版です。ツールの閲覧、入力の記入、�
 これらの決定事項は確定済みです。いずれを変更するにも大がかりな作業が必要になります——これらはコードベース内の他のあらゆる決定を形作っています。
 
 ### 1. 宣言的なツールと、命令型のエスケープハッチ
+
+![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-street-map-controls)
 
 ツールとは、マニフェスト(`tool.json`)+ テンプレート(`template.html`)+ 任意の `hooks.js` から成るものです。
 
@@ -293,6 +343,10 @@ web と Tauri のアプリは、起動時に既知の URL からツールとア�
 
 ### 5. URL モードは第一級の機能
 
+![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&format=svg&filename=aud-url-mode-qr)
+
+![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=%23tool-canvas&filename=ov2-url-palette)
+
 あらゆる入力は URL パラメータとして表現可能でなければなりません:
 
 ```
@@ -302,6 +356,8 @@ lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H
 CLI モードは、別のトランスポート上で動く URL モードです——CLI シェルは argv から URL 状態オブジェクトを組み立て、**同じ**エンジンパイプラインを実行します。レンダリング経路は1つだけです。CLI は別実装ではないため、GUI からずれることがありません。
 
 `url-mode.ts` が往復変換(パースとシリアライズ)を担います。予約パラメータ(ツールへの入力としては決して渡されません):`format`、`export`、`copy`、`slot`、`output`、`filename`、`_v`、`z`(パックされた状態——「Shortest link」トークン)、`width`/`w`、`height`/`h`、`unit`、`dpi`、`profile`、`password`、`bleed`、`marks`、`full`、`options`、`nostage`。URL モードにおけるアセット入力はその `id` によってシリアライズされ、ランタイムはハイドレーション前に `host.assets.get()` を通じてそれを解決します。`width`/`height` は `unit`(デフォルトは `px`。他に `mm`/`cm`/`in`/`pt`/`pc`)の値です。物理単位を使う場合、`dpi` がラスター解像度を設定します。これらはキャンバスのドキュメントサイズを決定し、書き出しの寸法パネルを事前入力します。
+
+すべての入力がリンクに乗って運ばれるため、パラメータを1つ変えれば、それは別の完成アセットになります。パレット全体が、1つのシードカラーと配色の調和、そしてステップ数だけから生まれます。
 
 ### 6. ストレージは直接ではなくブリッジを経由する
 
@@ -334,10 +390,14 @@ Handlebars は、EJS ではなく意図的に選ばれました:
 
 ### 10. ツールはツールを組み合わせる
 
+![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-slides-deck)
+
 ツールは、ツール同士のインポートを一切行うことなく、**別の**ツールのレンダリングを埋め込むことができます——コンポジションはエンジンによって解決され、ツールのコードが行うことは決してありません。サーフェスは2つあります:
 
 - **宣言的なマニフェスト** — `composes: [{ id, tool, inputs, format?, width?, height? }]`。エンジンは指定された子を描画し、その結果をロジックレスなテンプレート内に `{{asset <id>}}` として配置します。`event-name-badge` は現在、`qr-code` を SVG として組み合わせています。
 - **ポータブルな埋め込み URL** — `<img src="https://lolly.tools/tool/<id>.<ext>?<inputs>">`。シェルはその子を**ローカルで**レンダリングします(ローカルのレンダリングが解決するまではプレースホルダーのピクセルが表示されます)。`lolly.tools` から何かが取得されることは決してありません。
+
+Slides ツールは、この2つ目のサーフェスの上に成り立っています。どのスライドのどのスロットにも、画像の代わりに別の Lolly ツールを置けます。
 
 どのツールのレンダリングも組み合わせられます。**SVG** の子は、親が SVG や PDF に書き出す際には真のベクターのままであり、PNG では鮮明にラスタライズされます。**PNG/JPG/WEBP** の子は画像として埋め込まれます。`compose` ケイパビリティが必要です。組み合わされた子は中間生成物であり——透かしも来歴の刻印も決して行われません——コンポジションは破綻せず縮退します。子をレンダリングできないシェルは、そのスロットを単に省略するだけで、親は引き続きレンダリングされます。
 
@@ -354,6 +414,8 @@ Handlebars は、EJS ではなく意図的に選ばれました:
 ---
 
 ## ライフサイクル:エンドツーエンドで
+
+![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&format=svg&filename=aud-export-popup)
 
 あるユーザーが `lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H` を開いたとします:
 

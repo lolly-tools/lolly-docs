@@ -48,9 +48,22 @@ Paliitin ang isang sobrang-laking PDF on-device, para walang aabot sa isang thir
 
 Lahat ng mga ito ay on-device transforms: pumapasok ang iyong file o data, lumalabas ang malinis na bytes, at **walang server na maaaring i-uploadan**. Sila ang sinadyang kabaligtaran ng karaniwang tool na "i-upload ang iyong file sa website ng isang estranghero para linisin ito" na siyang ginagamit ng isang mabuting-loob na empleyado kung wala nito.
 
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data)
+
+Ganoon din ang bargain ng Text Helper, para sa teksto at hindi sa mga file. Ito ang tabbed workbench na hahanapin pa sana ng isang empleyado sa site ng ibang tao, at wala man lang itong idineklarang input dahil walang anumang hinahawakan nito ang umaalis sa page.
+
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+
+Kinukumpleto ng Compress PDF ang set: lumiliit ang sobrang laking attachment ayon sa quality setting na pipiliin mo, sa makinang siya na ring may hawak nito.
+
+![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=ov2-compress-pdf)
 
 
 ## Determinism at reproducibility
+
+Ang Prompt to Image ang pinakapayak na anyo ng determinism: ang teksto ang buong input, ang na-typeset na imahe ang buong output, at pareho pa rin ang pagkakaayos ng parehong teksto sa tuwina.
+
+![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-prompt-to-image)
 
 Bawat tool input ay maipapahayag bilang isang URL parameter, at ang parehong mga input ay gumagawa ng parehong file. May dalawang epekto ito para sa operator:
 
@@ -58,6 +71,8 @@ Bawat tool input ay maipapahayag bilang isang URL parameter, at ang parehong mga
 - **Ang CLI ay parehong render path** ng GUI, kaya hindi kailanman maghihiwalay ang build pipelines at ang app. Bumuo ng OG images, social cards, at data visuals sa oras ng build, nang reproducible.
 
 ## Provenance at Content Credentials
+
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
 
 Ang mga export ay maaaring magdala ng **Content Credentials** - isang naka-sign na [C2PA](https://c2pa.org) manifest na nakatali sa hash ng bytes ng file. Sisira sa seal ang anumang susunod na pagbabago sa file, kaya **nade-detect ng isang C2PA-aware verifier ang pag-alter nang cryptographically, offline**. Ang credential ay tamper-*evident*: ini-flag nito ang pakikialam sa halip na pigilan ito, na siya mismong nagpapaposible sa ganap na offline na verification.
 
@@ -71,6 +86,8 @@ Ang mga export ay maaaring magdala ng **Content Credentials** - isang naka-sign 
 > **Mga tala sa interoperability.** Nave-verify ng Lolly ang sarili nitong mga credential at marami sa mga third-party offline ngayon, kasama na ang pagbabasa ng C2PA claim **v2** manifests mula sa ibang producer. Isang interop item na lang ang kasalukuyang ginagawa: ang WebM - na wala pang standardized na C2PA mapping, kaya inilalakip ng Lolly ang manifest bilang isang Matroska part (nave-verify ng mga third-party tool ang MP4 ni Lolly out of the box; susunod ang WebM kapag naayos na ang standard).
 
 ## Encryption at Pag-password
+
+![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&format=svg&filename=aud-pdf-lock)
 
 Para sa mga file na kailangang maglakbay nang naka-lock, lahat ay nangyayari on-device:
 

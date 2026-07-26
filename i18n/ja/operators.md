@@ -34,6 +34,16 @@ Lollyは、組織が実際にどう機能しているかに合わせて構築さ
 
 ## 情報漏えい防止ユーティリティ
 
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data)
+
+Text Helper は、ファイルではなくテキストに対して同じ取引を提供します。従業員が本来なら見知らぬサイトに探しに行くタブ式のワークベンチであり、扱う内容がページの外に出ることは一切ないため、入力をまったく宣言していません。
+
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+
+Compress PDF がこの組を完成させます。サイズが大きすぎる添付ファイルは、あなたが選んだ品質設定に従って、そのファイルをすでに保持しているマシン上で小さくなります。
+
+![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=ov2-compress-pdf)
+
 Lollyツールの中には、ファイルを境界の内側にとどめる*ことを専門とする*カテゴリーがあります。プライバシーユーティリティです。
 
 - **Strip hidden data**
@@ -49,12 +59,18 @@ Lollyツールの中には、ファイルを境界の内側にとどめる*こ�
 
 ## 決定性と再現性
 
+Prompt to Image は、決定性を最も素朴な形で示します。テキストが入力のすべてであり、組まれた画像が出力のすべてであり、同じテキストは常に同じように組まれます。
+
+![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-prompt-to-image)
+
 すべてのツール入力はURLパラメータとして表現でき、同じ入力からは常に同じファイルが生成されます。これはオペレーターにとって2つの意味を持ちます。
 
 - **URLそのものがアセットです。** リンクをコミットし、必要なときにアセットを再生成できます——バイナリをGitにチェックインする必要も、チャットで「最新版」を追いかける必要もありません。アセットIDとツールIDは恒久的な契約であるため、今日発行したリンクは後になっても解決できます。
 - **CLIはGUIと同じレンダリング経路をたどる**ため、ビルドパイプラインとアプリがずれることはありません。OG画像やソーシャルカード、データビジュアルをビルド時に再現可能な形で生成できます。
 
 ## 来歴とContent Credentials
+
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
 
 書き出したファイルには**Content Credentials**を付与できます——これはファイルのバイト列のハッシュに紐づいた、署名済みの[C2PA](https://c2pa.org)マニフェストです。ファイルにあとから加えられた変更はすべて封印を破るため、C2PA対応の検証ツールは**改ざんを暗号学的に、オフラインで検知します**。このクレデンシャルは改ざん*検知*可能です。改ざんを防ぐのではなく、その痕跡を示すものであり、まさにこの性質こそが完全にオフラインでの検証を可能にしています。
 
@@ -68,6 +84,8 @@ Lollyツールの中には、ファイルを境界の内側にとどめる*こ�
 > **相互運用性に関する注記。** Lollyは現在、自らのクレデンシャルに加え、多くのサードパーティ製クレデンシャルをオフラインで検証できます。これには、他の作成元によるC2PAクレーム**v2**マニフェストの読み取りも含まれます。相互運用に関して進行中の項目が1つ残っています。WebMです——WebMにはまだ標準化されたC2PAマッピングが存在しないため、LollyはマニフェストをMatroskaのパートとして添付しています（サードパーティ製ツールはLollyのMP4をそのまま検証できます。WebMは標準が固まり次第対応します）。
 
 ## 暗号化とパスワード保護
+
+![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&format=svg&filename=aud-pdf-lock)
 
 施錠した状態で受け渡す必要があるファイルについても、すべての処理はデバイス上で完結します。
 

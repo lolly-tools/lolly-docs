@@ -18,6 +18,8 @@ Lolly tạo ra một khối lượng nội dung lớn. Chúng tôi áp dụng c�
 
 ### Cờ tính năng (feature flags) là gì?
 
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&filename=pd-feature-flags)
+
 Cờ tính năng (feature flags) giúp bật hoặc tắt các phần của Lolly. Thông thường một quản trị viên sẽ kiểm soát những cờ này - nhưng với Lolly, chính bạn là người kiểm soát.
 
 ## Làm thế nào để tôi có được ứng dụng di động hoặc máy tính để bàn?
@@ -51,6 +53,8 @@ Lolly nâng tầm mọi thứ.
 
 ## Điều gì khiến utilities khác với tools?
 
+![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
 **Câu trả lời cơ bản →** Utilities không phải lúc nào cũng cần render, vì vậy có thể có một UX khác. 
 
 **Câu trả lời thật →** Lý do utilities có thể được host bên trong Lolly Tools là để bổ sung thêm một 'lớp phòng thủ tiện lợi' nhằm làm giảm động lực rò rỉ dữ liệu (data-exfiltration). 
@@ -69,6 +73,8 @@ chính sách lưu trữ (retention) không rõ ràng, thẩm quyền pháp lý (
 Chúng tôi thắng cuộc chiến quản trị (governance) bằng sự tiện lợi và dịch vụ xuất sắc. 
 
 ## Lolly có thể chỉnh sửa và render các file Figma, Penpot, Illustrator hoặc InDesign của tôi không?
+
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 Có. Mở **Layout Studio** và nhấp vào **Import a design**: nó chấp nhận file Figma gốc **.fig** (Save local copy), file xuất ra từ Penpot **.penpot**, file Illustrator **.ai** hoặc **.pdf**, file InDesign **.idml** (File → Export → InDesign Markup), hoặc **bất kỳ file SVG** nào (cánh cửa rộng - hầu như ứng dụng thiết kế nào cũng xuất được SVG). Mọi thứ được phân tích (parse) hoàn toàn trên thiết bị của bạn, không cần tài khoản hay plugin nào.
 

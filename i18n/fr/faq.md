@@ -18,6 +18,8 @@ Lolly produit un grand volume de contenu. Nous adoptons une approche stricte de 
 
 ### Que sont les feature flags ?
 
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&filename=pd-feature-flags)
+
 Les feature flags activent ou désactivent certaines parties de Lolly. Habituellement, c'est un administrateur qui les contrôle - avec Lolly, c'est toi qui as le contrôle.
 
 ## Comment puis-je obtenir les applications mobile ou de bureau ?
@@ -76,6 +78,8 @@ Lolly élève tout vers le haut.
 
 ## Qu'est-ce qui différencie les utilitaires des outils ?
 
+![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
 **Réponse simple →** Les utilitaires n'ont pas toujours besoin de faire du rendu, et peuvent donc avoir une UX différente.
 
 **Vraie réponse →** Si les utilitaires peuvent être hébergés dans Lolly Tools, c'est pour ajouter encore une « couche de confort » défensive supplémentaire qui dissuade l'exfiltration de données.
@@ -97,6 +101,8 @@ triviale ; **le contenu, lui, a un coût.**
 On gagne la guerre de la gouvernance grâce à une excellente commodité et un excellent service.
 
 ## Lolly peut-il éditer et générer le rendu de mes fichiers Figma, Penpot, Illustrator ou InDesign ?
+
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 Oui. Ouvre **Layout Studio** et clique sur **Importer un design** : il accepte un fichier Figma natif **.fig** (Enregistrer une copie locale), un export Penpot **.penpot**, un fichier Illustrator **.ai** ou **.pdf**, un fichier InDesign **.idml** (Fichier → Exporter → InDesign Markup), ou **n'importe quel SVG** (la porte grande ouverte - presque toutes les applications de design l'exportent). Tout est analysé entièrement sur ton appareil, sans compte ni plugin requis.
 

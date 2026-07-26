@@ -8,6 +8,10 @@ Bir profildeki her şey, tarayıcının yerel veritabanında **cihazda** yaşar 
 
 ## Bir profilde neler var
 
+Tercihler, uygulamanın sana nasıl göründüğünü değiştiren tek kısımdır. Tema kartları canlı önizlemelerdir ve birini seçtiğin anda, yalnızca bu cihazda uygulanır.
+
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
+
 ![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
 
 | Bölüm | Nedir |
@@ -28,6 +32,8 @@ Bunların hiçbiri zorunlu değildir. Boş bir profil gayet iyi bir profildir; y
 
 ### Bir birey olarak
 
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+
 Varsayılan. Profil sensin: adın, e-postan, vesikalık fotoğrafın. Bir kez ayarla; imzan, rozetin, konferans kilitlemen hepsi kendini doldursun. Çoğu insanın ihtiyaç duyacağı tek şey budur.
 
 ### Bir ekip olarak
@@ -42,6 +48,10 @@ Lolly'de o rol yalnızca **el altında tuttuğun bir başka profildir** - etkinl
 
 ## Tek kurulum, tek etkin profil - el altında tutabileceğin birçok profil
 
+Bunun iki yarısı da Depolama bölümünde yaşar: ölçer, bu kurulumun tuttuğu her baytı kategori kategori hesaba katar, altındaki düğmeler de bunları temizleme ya da yanında taşıma yoludur.
+
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
+
 Herhangi bir anda bir kurulumun **tek bir etkin profili** vardır - bir aracın şu anda gördüğü ayrıntılar. Uygulama içi bir profil değiştirici yoktur; bunun yerine her profil **taşınabilir bir pakettir** (tek bir `.zip`, bkz. [aşağıda](#bir-profili-yeni-bir-cihaza-tasima)). Bu, yeni bir cihaza geçmekle kasıtlı olarak aynı mekanizmadır - bir profil, kaydedebileceğin, kopyalayabileceğin ve yükleyebileceğin bir dosyadır.
 
 Yani gerçekten birkaç bağlamı bir arada yürütüyorsan (sen, ekibin, etkinlik yöneticisi şapkası) birkaç paket tutar ve ihtiyaç duyduğunu yüklersin:
@@ -53,6 +63,8 @@ Yani gerçekten birkaç bağlamı bir arada yürütüyorsan (sen, ekibin, etkinl
 > Bağlam başına bir paket tut ve dosyaları ne olduklarına göre yeniden adlandır (`LollyTools-events-2026.zip`, `LollyTools-me.zip`). Dosya, profilin *ta kendisidir*.
 
 ## Bir profili yeni bir cihaza taşıma
+
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
 
 Bir profil tamamen yerel olduğundan, onu boş bir kuruluma - yeni bir dizüstü, yeni sıfırlanmış bir tarayıcı, bir meslektaşın makinesi, çevrimdışı bir kutu - almanın tek yolu **dosyayı taşımaktır**. Hiçbir oturum açma onu senin için geri yüklemez ve mesele de budur: başından beri hiçbir şey cihazından çıkmadı.
 
@@ -68,6 +80,8 @@ Taşınmayan şeyler: katalog önbelleği (yeni cihazda kendini yeniden indirir)
 Tam paket düzeni, sürüm politikası ve bütünlük kuralları için bkz. **[Veri Aktarımı](/info/data-transfer.html)**; uçtan uca rehber için **[Lolly'yi Kullanma → Başka bir cihaza taşıma](/info/using.html#moving-to-another-device)**.
 
 ## Araçlar profilini nasıl kullanır
+
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
 
 Bir araç yalnızca bağlamak üzere açıkça yapıldığı profil alanlarını *önceden doldurur*:
 

@@ -131,6 +131,11 @@ bytes by the shell; none is a bridge capability, and none uploads anything - SEA
 DNS key lookup and the deep-scan model download are the only network touches, both
 shell-side, and neither sends the file.
 
+Each read has its own surface in the view, and the component library lists them
+against the module that defines them:
+
+![The Verify section of the component library, listing each verify surface - verdict states, change history, metadata reveal - beside the module and CSS classes that define it](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=2000&dpi=192&waitMs=2200&format=svg&css=.cl-head%2C.cl-recs%2C.cl-section%3Anot%28%23cl-verify-valid%29%7Bdisplay%3Anone%7D&cropSelector=%23cl-verify-valid&filename=ce-verify-components)
+
 ### `engine/src/pixel-watermark.ts` - the Lolly Imprint
 
 Block-DCT spread-spectrum watermark (Cox/Kilian/Leighton/Shamoon) on the same 8×8
@@ -194,6 +199,10 @@ file (`shells/web/src/lib/trustmark.ts` and `contentseal.ts`, with
   hit is never "Meta AI", and absence rules nothing out).
 
 Everything is on-device; nothing but the one-time model bytes is fetched.
+
+TrustMark's *write* side is one switch in the export panel, off by default for the
+same reason its scan is opt-in: a neural pass plus that one-time model download. It
+sits inside the Content protection card shown further down this page.
 
 ## Trust anchors
 
@@ -265,6 +274,12 @@ Notes:
 
 ## Web shell
 
+Everything below surfaces as one card in the export panel: the C2PA switch (plus
+its ephemeral lifetime picker), the pixel Imprint, and the opt-in durable mark,
+each gated per format by the predicates in `views/tool-actions.ts`.
+
+![The Content protection card as the shell assembles it, with one switch per provenance mechanism rather than a single blanket toggle](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26options%26c2pa%3D90%26imprint%3D1&width=1440&height=900&dpi=192&waitMs=2200&format=svg&css=%23tool-inputs%2C%23sidebar-utils%7Bdisplay%3Anone%7D&cropSelector=.export-protection&filename=cc-export-protection)
+
 - `shells/web/src/bridge/identity.ts` - the identity manager:
   `status()`, `enroll(provider)` (popup + postMessage + PoP + cert cache),
   `signer()` (null unless a valid cert is cached), `forget()`. Keypair and
@@ -278,6 +293,13 @@ Notes:
 - `/verify` passes the pinned root (plus the bundled public anchors) as
   `trustAnchors` and renders the trusted state: shield goes green-with-identity,
   facts show the verified email + issuer.
+
+The enrolment card is where the certificate lifetime is chosen, before any popup
+opens. The provider buttons are built from `/api/ca/health.configured`, so a
+deployment that has wired up no OIDC app says so instead of offering a button that
+would 501.
+
+![The Content Credentials section of Profile, expanded from the link, with the 7 / 30 / 90 / 365 day certificate lifetime picker above the provider row, which on a deployment with no OIDC app wired up says so instead of offering a button](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=1440&height=1400&dpi=192&waitMs=2600&format=svg&cropSelector=%23identity-section&filename=ce-identity-enrolment)
 
 ## Operator runbook (one-time setup - the parts only you can do)
 

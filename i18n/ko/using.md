@@ -6,6 +6,8 @@
 
 ## 도구 열기
 
+![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Fct%3Dhorizontal-bar%26t%3DQuarterly%2520revenue%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&format=svg&filename=vt-tool-split-view)
+
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
 ![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
@@ -17,6 +19,8 @@
 > 일부 도구(**Layout Studio** 등)는 대신 **프리 캔버스**로 열려요 — 크롬 없이 직접 조작하는 화면으로, 텍스트·도형·이미지 박스를 드래그, 크기 조절, 회전, 스냅할 수 있고, 더블클릭으로 텍스트를 그 자리에서 바로 편집할 수 있어요. 다른 모든 도구와 같은 렌더 경로로 내보내지므로 캔버스 *자체*가 파일이 돼요. 아래 [프리 캔버스](#the-free-canvas-layout-studio) 항목을 참고하세요.
 
 ## 캔버스(미리보기)
+
+![The zoom HUD in the corner of the canvas - minus, the live percentage, plus, Fit, then the theme and sound toggles](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=.stage-nav%7Bopacity%3A1!important%7D&cropSelector=.stage-nav&format=svg&filename=use-zoom-hud)
 
 미리보기에는 내보낼 결과가 항상 정확히 그대로 표시돼요.
 
@@ -48,12 +52,16 @@
 
 ## 휴대폰에서
 
+![A tool on a phone-width screen - controls as a sheet up top, the generated palette filling the preview below, and the render pill floating bottom-centre](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3Df97316%26harmony%3Dadjacent-3%26steps%3D9&width=430&height=900&dpi=192&waitMs=2200&format=svg&filename=vt-phone-palette)
+
 화면이 좁으면 레이아웃이 한 열로 재배치돼요.
 
 - **컨트롤은 상단의 시트**가 되고 아래쪽 가장자리에 **드래그 그립**이 붙어요. 그립을 드래그해서 크기를 조절할 수 있고 — **peek / half / full**로 스냅돼요 — 또는 그립을 **탭**해서 접기 ↔ 펼치기를 전환할 수 있어요. 미리보기는 아래 공간을 채우고, 편집하는 동안에도 계속 보여요.
 - 떠 있는 **Render** 버튼을 누르면 **Export** 시트가 열려요 — 포맷, 크기, 복사, 저장, 다운로드 컨트롤이 모두 한곳에 모여 있어요. 배경을 탭하면 닫을 수 있어요.
 
 ## 컨트롤(입력 항목)
+
+![A tool's control stack - a text field, colour triggers and a slider, and nothing else the author chose to lock down](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-inputs&format=svg&filename=use-tool-inputs)
 
 도구는 바뀔 수 있도록 의도된 입력 항목만 노출해요 — 그 외 나머지(색상, 레이아웃, 타이포그래피, 로직)는 도구 작성자가 고정해두었기 때문에, 무엇을 만들든 작성자가 정한 규칙을 따르게 돼요. 입력 항목에는 텍스트, 슬라이더, 색상 선택기, 드롭다운, 날짜, 이미지 선택기, 반복 행 그룹 등이 있어요. 일부는 접을 수 있는 섹션으로 묶여 있어요.
 
@@ -66,6 +74,8 @@
 프로필 사진과 정보는 **이 기기에만** 저장돼요. 프로필이 뜻하는 건 꼭 한 사람만이 아닐 수도 있어요 — 팀이거나, 가끔 맡는 역할일 수도 있고요. 여러 개를 유지하는 방법을 포함한 전체 내용은 **[Profiles](/info/profile.html)**를 참고하세요.
 
 ## 저장하고 이어서 하기
+
+![The two-half render pill - an up arrow that opens the export panel, and a tick that saves the session in place](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=%23tool-inputs%7Bdisplay%3Anone%7D&cropSelector=.render-pill&format=svg&filename=use-render-pill)
 
 **Save**를 클릭하면 현재 입력 내용이 해당 도구의 세션으로 저장돼요. 도구마다 이름이 붙은 세션을 여러 개 유지할 수 있고, 각 도구의 **Continue** 버튼으로 가장 최근 세션을 다시 열 수 있어요. **히스토리 버튼**(오른쪽 위, 프로필 옆)에는 모든 도구에 걸쳐 저장된 세션이 전부 나열돼요. 세션은 기기에 로컬로 저장돼요. 정리하려면 아래의 **Projects**를 열어보세요.
 
@@ -108,6 +118,8 @@
 - **정리하기.** 에셋을 다른 그룹으로 재분류하거나, 쓰지 않는 공유 브랜드 에셋을 숨기거나(**Show hidden**으로 다시 불러올 수 있어요), 직접 업로드한 파일을 완전히 삭제할 수 있어요.
 
 ### 팔레트와 폰트를 어디서나 쓰기
+
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 Catalogue의 **Swatches** 패널은 단순히 참고용이 아니에요 — 색상을 클릭해서 복사하거나, 다른 도구가 이해하는 포맷으로 **브랜드 팔레트 전체를 다운로드**할 수 있어요.
 
@@ -154,6 +166,8 @@ Lolly는 누구에게나 편안하게 쓸 수 있는 걸 목표로 해요. 인�
 포맷 선택, 출력 크기와 인쇄 단위, 투명도, 동영상, 복사/공유에 대한 자세한 내용은 **[Exporting & Formats](/info/exporting.html)**를 참고하세요. 요약하면, 포맷을 고르고, 필요하면 크기를 설정한 다음 **Download**(또는 클립보드로 **Copy**)하면 돼요.
 
 ## Batch(Pro) 모드
+
+![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&format=svg&filename=use-batch-toolbar)
 
 파워 유저를 위한 **Batch**(갤러리에서 연결되고, 기본으로 켜져 있는 Pro 기능 플래그 뒤에 있어요)는 여러 변형을 한 번에 렌더링해요 — 각 행이 하나의 입력 세트인 그리드로, 함께 내보내져요. 카드를 십여 개 언어로 로컬라이즈하거나 모든 크기 변형을 한 번에 생성하는 데 이상적이에요. 행은 직접 입력하거나, 스프레드시트에서 바로 붙여넣거나, CSV를 가져와서(다시 내보낼 수도 있어요) 채울 수 있고, 행마다 포맷, 크기, 출력 파일명을 설정할 수 있어요. 그리드 전체를 이름이 붙은 **batch 세션**으로 저장해서 갤러리에서 다시 열 수 있고, 모든 행을 `.zip` 하나로 다운로드할 수 있어요.
 

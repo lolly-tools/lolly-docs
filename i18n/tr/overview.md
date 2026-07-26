@@ -20,6 +20,8 @@ Sonuç **bolluk**tur: her etkinliğin doğru tabelası olur, her CVE uyarısı m
 
 ### Ekosistemdeki Yeri
 
+![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-gallery-landscape)
+
 | Özellik | Canva | Marka portalları | Illustrator | Figma / Penpot | **Lolly** |
 |---|---|---|---|---|---|
 | Toplu içerik üretimi | kısmi | ✗ | ✗ | ✗ | **✓** |
@@ -39,6 +41,40 @@ Boşluk açık: mevcut ortamda hiçbir şey bize kısıtlar-öncelikli, çevrimd
 **Şunun için kullan:** Operasyonelleştirilmiş yaratıcı varlıkların hızlı üretimi - etkinlik kartları, yaka kartları, imzalar, CVE uyarıları, QR kodları, sosyal medya kartları, sevkiyat etiketleri, yapılandırılmış raporlar.
 
 **Şunun için kullanma:** Ismarlama vitrin içerikler.
+
+---
+
+## Bir kampanyanın yaşam döngüsü
+
+![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-lifecycle-chart)
+
+Lolly'nin ne olduğunu görmenin en net yolu bir özellik listesi değil - tek bir varlığı elden ele geçerken izlemek. Yerelleştirilmiş tek bir kampanya kartının kurum içinde nasıl yol aldığına bak:
+
+1. **Yaratıcı kuralları koyar.** Bir tasarımcı temel şablonu Layout Studio'da yazar ve markanın tipografisini ve renk değişkenlerini sabit kodlar. Tek bir kart yapmıyor - temel işi *bir kez* yapıyor, böylece bir daha asla elle yerelleştirmek zorunda kalmıyor.
+2. **Geliştirici bunu ölçekler.** Aynı şablon, CLI üzerinden gecelik bir hatta bağlanır; böylece yeni bir grafik ya da yeni bir dil varyantı otomatik olarak üretilir - hiçbir tasarımcı dosyayı yeniden açmaz.
+3. **Üretici sadece kullanır.** Uçakta çevrimdışı olan bir satış temsilcisi aynı aracı açar ve müşteri görüşmesi için tamamen markaya uygun bir sunum üretir. Tasarım becerisi yok, ağ yok, bekleme yok.
+
+İkinci adımdaki "yeni grafik" tam olarak böyle bir render: bir veri dizesinden ve bir tutam parametreden üretildi, kimse bir tasarım dosyası açmadı:
+
+Mesele, Lolly'nin her biri kendi başına tasarımcılar için iyi *ve* geliştiriciler için iyi *ve* satış için iyi olması değil. Bu bir **bayrak yarışı**: yaratıcının ilk işini geliştirici ölçekler, o da üreticiyi güçlendirir. Uçaktaki teknik olmayan temsilcinin zahmetsiz deneyimi, ancak tasarımcının koyduğu ve geliştiricinin devreye aldığı titizlik sayesinde *mümkün*.
+
+İşte güç çarpanı bu. Lolly, ayrı roller için ayrı araçlar barındıran bir çekmece değil - her rolün dokunduğu tek bir deterministik varlık yaşam döngüsü; ve geçtiği her el, öncekinin değerini katlıyor.
+
+---
+
+## Bir onay, on bin varlık
+
+![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&format=svg&filename=ov2-batch-grid)
+
+Onay dosyada değil araçta yaşadığı için (bkz. [Lolly nasıl karşılaştırılır](/info/positioning.html)), ölçek artık bir inceleme problemi olmaktan çıkar. Yerelleştirilmiş bir sosyal medya kartı aracını bir kez onayla, sonra bir elektronik tablodan **12 dilde 10.000 varlık** üret - ve bunların hiçbiri hukuktan ya da markadan yeni bir uygunluk kontrolü gerektirmez, çünkü hepsinin çıktığı şablon zaten onaylanmıştı.
+
+Aynı deterministik araç bu ölçeğe üç yoldan ulaşır ve hepsi birebir aynı, önceden onaylanmış çıktıyı üretir:
+
+- **Bir insan, uygulama içinde.** `/pro` toplu ızgarası: satırları yapıştır veya içe aktar, her satır için bitmiş bir varlık al, zip'i indir. Tasarım becerisi yok, talep kaydı yok, bekleme yok.
+- **Bir geliştirici, komut satırından.** CLI *aynı* motoru ve *aynı* oluşturma yolunu başsız çalıştırır; böylece araç, bir betikte veya gecelik bir hatta 10.000 satırın tamamı üzerinde sırayla işletilebilir. Bir döngü içindeki `lolly <tool> --field=…` çağrısı, entegrasyonun tamamıdır.
+- **Bir sistem veya bir yapay zeka aracısı, MCP üzerinden.** Aynı araç programatik olarak işletilir; aynı doğrulukta ve daha da büyük ölçekte - çünkü dosyalar akıp gelirken bir makine sıkılmaz.
+
+Bir tasarımcının bir kez sabitlediği tek bir marka kısıtları kümesi; birebir aynı, önceden onaylanmış çıktıya giden üç ayrı yol - ve makine yolu hepsinden uzağa ölçeklenir, çünkü dosyalar akıp gelirken hiç yorulmaz.
 
 ---
 
@@ -192,6 +228,11 @@ lolly/
 Platform, birden fazla yüzeyde çalışır - web PWA, Tauri masaüstü/mobil, betiklenebilir CLI ve etkileşimli TUI. Bunların hepsi aynı motoru ve aynı araç dosyalarını kullanır.
 
 ### Web (PWA) - birincil dağıtım
+
+![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&format=svg&filename=aud-web-split)
+
+![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&format=png&filename=ov2-phone-audiogram)
+
 SUSE denetimli bir URL üzerinde barındırılır. Service worker, araçları ve varlıkları önbelleğe aldıktan sonra çevrimdışı çalışır. Çoğu çalışanın, tedarikçinin ve iş ortağının platformu kullanacağı yer burasıdır. Hesap gerekmez - durum, cihaz başına IndexedDB'de saklanır.
 
 Web shell tek bir düzenden duyarlıdır. Masaüstünde bir araç, trackpad'e özel kanvas gezintisine sahip bir önizleme sahnesinin yanında yeniden boyutlandırılabilir bir kontroller kenar çubuğu olarak görünür (imlecin etrafında yakınlaştırmak için Cmd/Ctrl-tekerlek ya da sıkıştırma, kaydırmak için Boşluk ya da orta tuşla sürükleme, `0`/`1`/`+`/`−` tuşları ve bir Sığdır/% HUD'u). Mobilde (≤640px) kontroller, statik tam ekran bir önizlemenin üzerinde peek/half/full arasında (dokunuşla) geçiş yapan sürükleme tutamaçlı, üstte sabit bir sayfaya dönüşür; yüzen bir **Oluştur** düğmesi ise **Dışa Aktar** kontrollerini bir alt sayfa açılır penceresinde açar. Dokunmatikte önizleme üzerinde sıkıştırarak yakınlaştırma ve sürükleyerek kaydırma kullanılır. Oluşturma yolu ve dışa aktarma kontrolleri ikisinde de birebir aynıdır - yalnızca arayüz düzeni değişir.
@@ -202,6 +243,9 @@ Web shell tek bir düzenden duyarlıdır. Masaüstünde bir araç, trackpad'e ö
 Paketlenmiş yerel bir uygulama (Tauri sayesinde küçük bir ayak izi). Tam çevrimdışı kullanılabilirlik, CLI'a bağımlı araçlar (PDF Smasher, Font Outliner) için dosya sistemi erişimi ve kamera erişimi sağlar. 2026 ortası için araç geliştirmesi planlanmıştır.
 
 ### CLI
+
+Aynı araç telefon genişliğinde, bakımı gereken ikinci bir düzen olmadan: kontroller üstte bir sayfaya dönüşür, önizleme tüm ekranı kaplar ve render düğmesi onun üzerinde yüzer.
+
 `lolly <tool-id> [--input=value ...] --output=file.png`
 
 Masaüstü kullanıcıları birçok aracı terminalden çalıştırabilir. CLI shell aynı motoru yükler, bir jsdom DOM'u oluşturur, aynı oluşturma yolunu çalıştırır ve dosyayı yazar. Taşıma katmanı URL modudur - CLI ayrı bir uygulama değildir. Bu, CLI ve GUI çıktılarının birebir aynı olmasını garanti eder.
@@ -218,9 +262,13 @@ lolly qr-code                # lists inputs for that tool
 
 CLI'ın etkileşimli karşılığı: araçlara göz atmak, girdileri doldurmak, projeleri kaydetmek ve dışa aktarmak için GUI olmadan çalışan, tam ekran, klavye öncelikli bir terminal uygulaması (Ink üzerine kurulu). Host köprüsü, DOM'suz formatlar (SVG/EMF/EPS/HTML + metin/veri) için **CLI'ın uygulamasını yeniden kullanır** ve `~/.lolly` altında diskte durum ile isteğe bağlı satır içi önizleme ekler. Bunun ötesinde bir **tarayıcı oluşturma katmanı** vardır: talep üzerine raster/PDF/video ve canlı URL yakalama üreten, kapsamı sınırlandırılmış başsız (headless) bir Chromium (MCP sunucusunun kurduğuyla aynısı) - çıktının birebir aynı olması için web shell'in derlenmiş bir kopyasını çalıştırır ve yalnızca böyle bir formatı ilk dışa aktardığınızda başlatılır. Böylece `url-shot` (kırpma + yeniden renklendirme + vektör PDF/SVG ile) ve her raster/pdf aracı da terminalde çalışır. Bkz. [TUI kılavuzu](/info/tui.html).
 
+Hangi yüzeyde olursan ol, kontrol panelindeki Yetenekler sekmesi platformun yapabildiğini beyan ettiği her şeyin tam haritasıdır: gruplanmış ve tek bir araç açmadan okunabilir.
+
 ---
 
 ## Araç kategorileri
+
+![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-utilities)
 
 Araçlar, galeri gruplaması için manifestolarında bir `category` ile etiketlenir.
 
@@ -249,6 +297,8 @@ Araçlar ayrıca duruma göre de sınıflandırılır: `official` (marka onaylı
 Bu kararlar kesinleşmiştir. Bunlardan herhangi birini değiştirmek büyük bir girişimdir - kod tabanındaki diğer her kararı şekillendirirler.
 
 ### 1. Bildirimsel araçlar, buyurgan bir kaçış kapısıyla
+
+![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-street-map-controls)
 
 Bir araç; bir manifesto (`tool.json`) + bir şablon (`template.html`) + isteğe bağlı `hooks.js`'ten oluşur.
 
@@ -295,6 +345,10 @@ Bu, kaydedilmiş araç durumlarını ve URL ile paylaşılan bağlantıları yı
 
 ### 5. URL modu birinci sınıftır
 
+![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&format=svg&filename=aud-url-mode-qr)
+
+![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=%23tool-canvas&filename=ov2-url-palette)
+
 Her girdi bir URL parametresi olarak ifade edilebilir olmalıdır:
 
 ```
@@ -312,6 +366,8 @@ Web shell: IndexedDB. Tauri: dosya sistemi. CLI: bellek içi. Araçlar yalnızca
 Kullanıcılar araç başına birden çok adlandırılmış düzenleme yuvası kaydedebilir ve daha sonra her oturuma geri dönebilir. Hesap oluşturma gerekmez; durum cihaz başınadır. Köprü tek dikiş noktası olduğundan, bu cihaz başına durum aynı zamanda *taşınabilirdir*: `shells/web/src/data-transfer.ts`, her şeyi `host.profile`/`host.state`/`host.assets` aracılığıyla geri okuyup, başka herhangi bir kuruluma içe aktarılabilen tek bir `lolly-backup` zip'ine dönüştürür - sunucu gerektirmeyen "yeni bir cihaza taşı" sorusunun çevrimdışı yanıtı (tam özellik: `docs/data-transfer.md`). SUSE ID entegrasyonu (çoklu cihaz senkronizasyonu), bunun üzerine kurulacak gelecekteki bir kilometre taşıdır.
 
 ### 7. Olgunluk etiketleri, "marka onaylı" riskine yapısal olarak yanıt verir
+
+Her girdi bağlantıda taşındığı için, bir parametreyi değiştirmek bambaşka bir bitmiş varlık demektir. Bu paletin tamamı tek bir çekirdek renk, bir harmoni ve bir adım sayısından oluşuyor:
 
 Her araç, manifestosunda `status: official | community | experimental` bildirir. Galeri, duruma göre sıralanır. Deneysel araçlar, dışa aktarımlarını otomatik olarak filigranlar - filigran, araç tarafından değil `host.export.render` tarafından uygulanır, dolayısıyla resmi olmayan bir araç yazarı bunu devre dışı bırakamaz.
 
@@ -336,6 +392,8 @@ Mantık, açık ve incelenebilir olduğu `hooks.js` içinde yaşar. Kullanılabi
 
 ### 10. Araçlar, araçları birleştirir
 
+![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-slides-deck)
+
 Bir araç, araçtan araca içe aktarma olmadan **başka** bir aracın oluşturduğunu gömebilir - birleştirme, araç kodu tarafından değil, her zaman motor tarafından çözümlenir. İki yüzey vardır:
 
 - **Bildirimsel manifesto** - `composes: [{ id, tool, inputs, format?, width?, height? }]`. Motor, adlandırılmış alt öğeyi oluşturur ve sonucu mantıksız şablona `{{asset <id>}}` olarak yerleştirir. `event-name-badge`, bugün `qr-code`'u bir SVG olarak birleştirir.
@@ -356,6 +414,10 @@ Herhangi bir aracın oluşturduğunu birleştirin: bir **SVG** alt öğesi, ebev
 ---
 
 ## Yaşam döngüsü, uçtan uca
+
+![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&format=svg&filename=aud-export-popup)
+
+Slides aracı bu ikinci yüzey üzerine kurulu: herhangi bir slayttaki herhangi bir alan, bir görsel yerine başka bir Lolly aracını taşıyabilir.
 
 Bir kullanıcı `lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H` adresini açar:
 

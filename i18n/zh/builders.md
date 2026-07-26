@@ -10,10 +10,20 @@ Lolly 是一个与平台无关的**引擎**，在多个**壳层**（web PWA、Ta
 
 ## 理解架构
 
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+
 - **[概览](/info/overview.html)** — Lolly 存在的原因、引擎/壳层/工具的分离方式、能力桥接（capability bridge），以及已经确定下来的架构承诺。
 - **[设计令牌](/info/design-tokens.html)** — 品牌所使用的 DTCG 令牌模型，以及工具如何使用这些令牌。
 
 ## 编写工具
+
+下面每一个控件都是由 `tool.json` 中声明的输入项生成的。你写下清单里的那一行，宿主负责画出控件，而同一个模型也驱动着 CLI 和 URL。
+
+![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&format=svg&filename=aud-manifest-controls)
+
+这套做法远不止能撑起五个控件。给一个输入项加上 `section`，宿主就会把它折叠收起，所以像 D3 Chart Studio 这样有五十个输入项的工具，打开时依然只是一小叠控件，其余的都归到具名分组之后。
+
+![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-d3-sections)
 
 - **[编写工具指南](/info/authoring-tools.html)** — 完整指南：清单、模板、样式、hooks、组合方式与发布流程。
 - **[编写素材指南](/info/authoring-assets.html)** — 目录素材、层级、语言区域、调色板、可主题化图标与字体。
@@ -35,6 +45,10 @@ Lolly 是一个与平台无关的**引擎**，在多个**壳层**（web PWA、Ta
 - **[配置](/info/configuration.html)** — 配置文件（profiles）、品牌包、能力开关、功能标志与目录校验。
 
 ## 信任与数据
+
+权利与署名信息也和其他输入项一样。Embed & Track Image 声明了创作者、版权、许可与联系方式等字段，导出时会把它们写入文件自身的元数据以及它的 C2PA 清单。
+
+![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-rights-fields)
 
 - **[Content Credentials Identity](/info/content-credentials-identity.html)** — 面向设备端 C2PA 的 CA 签发签名；引擎契约与运维手册。
 - **[数据传输](/info/data-transfer.html)** — `lolly-backup` 包：信封结构、完整性与跨壳层保证。

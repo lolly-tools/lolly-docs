@@ -6,6 +6,8 @@ Panduan praktis untuk benar-benar *menggunakan* aplikasi ini - membuka tool, men
 
 ## Membuka tool
 
+![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Fct%3Dhorizontal-bar%26t%3DQuarterly%2520revenue%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&format=svg&filename=vt-tool-split-view)
+
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
 ![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
@@ -17,6 +19,8 @@ Setiap tool berupa tampilan terbagi: **kontrol** di satu sisi, **pratinjau** lan
 > Beberapa tool (seperti **Layout Studio**) justru terbuka sebagai **kanvas bebas** - permukaan tanpa chrome dengan manipulasi langsung tempat Anda menyeret, mengubah ukuran, memutar, dan menjepret kotak teks, bentuk, dan gambar, serta klik ganda untuk menyunting teks di tempat. Ia mengekspor melalui jalur render yang sama dengan tool lainnya, jadi kanvas itu *adalah* berkasnya. Lihat [Kanvas bebas](#the-free-canvas-layout-studio) di bawah.
 
 ## Kanvas (pratinjau)
+
+![The zoom HUD in the corner of the canvas - minus, the live percentage, plus, Fit, then the theme and sound toggles](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=.stage-nav%7Bopacity%3A1!important%7D&cropSelector=.stage-nav&format=svg&filename=use-zoom-hud)
 
 Pratinjau selalu menampilkan persis apa yang akan diekspor.
 
@@ -48,12 +52,16 @@ Tool kanvas-bebas menambahkan permukaan kerja *di sekitar* artboard, seperti pas
 
 ## Di ponsel
 
+![A tool on a phone-width screen - controls as a sheet up top, the generated palette filling the preview below, and the render pill floating bottom-centre](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3Df97316%26harmony%3Dadjacent-3%26steps%3D9&width=430&height=900&dpi=192&waitMs=2200&format=svg&filename=vt-phone-palette)
+
 Pada layar sempit, tata letak mengalir ulang menjadi satu kolom:
 
 - **Kontrol menjadi sheet** di bagian atas dengan **pegangan seret** di tepi bawahnya. Seret pegangan untuk mengubah ukurannya - ia menjepret ke **intip / setengah / penuh** - atau **ketuk** pegangan untuk beralih tertutup ↔ terbuka. Pratinjau mengisi ruang di bawah dan tetap terlihat sementara Anda menyunting.
 - Tombol **Render** mengambang membuka sheet **Ekspor** - semua kontrol format, ukuran, salin, simpan, dan unduh di satu tempat. Tutup dengan mengetuk latar belakang.
 
 ## Kontrol (input)
+
+![A tool's control stack - a text field, colour triggers and a slider, and nothing else the author chose to lock down](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-inputs&format=svg&filename=use-tool-inputs)
 
 Tool hanya menampilkan input yang memang dimaksudkan untuk bervariasi - semua yang lain (warna, tata letak, tipografi, logika) dikunci oleh pembuat tool, sehingga apa pun yang Anda buat memenuhi aturan yang ditetapkan pembuatnya. Input mencakup teks, slider, pemilih warna, dropdown, tanggal, pemilih gambar, dan grup baris berulang. Beberapa dikelompokkan di bawah bagian yang dapat dilipat.
 
@@ -66,6 +74,8 @@ Tool hanya menampilkan input yang memang dimaksudkan untuk bervariasi - semua ya
 Foto diri dan detail Anda tinggal **hanya di perangkat ini**. Sebuah profil bisa lebih dari sekadar Anda - sebuah tim atau peran yang sesekali Anda jalani. Lihat **[Profil](/info/profile.html)** untuk gambaran lengkap, termasuk menyimpan lebih dari satu.
 
 ## Menyimpan & melanjutkan
+
+![The two-half render pill - an up arrow that opens the export panel, and a tick that saves the session in place](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=%23tool-inputs%7Bdisplay%3Anone%7D&cropSelector=.render-pill&format=svg&filename=use-render-pill)
 
 Klik **Simpan** untuk menyimpan input saat ini sebagai sesi untuk tool tersebut. Anda dapat menyimpan beberapa sesi bernama per tool; tombol **Lanjutkan** setiap tool membuka kembali sesi terakhir Anda, dan **tombol riwayat** (kanan-atas, di samping profil Anda) mencantumkan setiap sesi tersimpan di semua tool. Sesi bersifat lokal-perangkat. Untuk menatanya, buka **Proyek** (di bawah).
 
@@ -108,6 +118,8 @@ Ketika sebuah tool memungkinkan Anda menambahkan gambar dari perangkat Anda, gam
 - **Rapikan.** Kategorikan ulang sebuah aset ke grup berbeda, sembunyikan aset brand bersama yang tidak Anda gunakan (dengan **Tampilkan tersembunyi** untuk memunculkannya kembali), atau hapus unggahan Anda sendiri sepenuhnya.
 
 ### Bawa palet dan font Anda ke mana saja
+
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 Panel **Swatch** pada Katalog bukan sekadar untuk referensi - klik sebuah warna untuk menyalinnya, atau **unduh seluruh palet brand** dalam format yang dipahami tool lain Anda:
 
@@ -154,6 +166,8 @@ Anda dapat membawa desain yang sudah ada ke dalam Lolly dan terus mengerjakannya
 Lihat **[Ekspor & Format](/info/exporting.html)** untuk cerita lengkapnya - memilih format, ukuran keluaran dan satuan cetak, transparansi, video, serta salin/bagikan. Singkatnya: pilih format, atur ukuran jika perlu, dan **Unduh** (atau **Salin** ke papan klip).
 
 ## Mode Batch (Pro)
+
+![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&format=svg&filename=use-batch-toolbar)
 
 Untuk pengguna mahir, **Batch** (ditautkan dari galeri, dibatasi di balik flag fitur Pro, yang aktif secara bawaan) me-render banyak variasi sekaligus - sebuah kisi di mana setiap baris adalah satu set input, diekspor bersama. Ideal untuk melokalkan sebuah kartu ke belasan bahasa atau menghasilkan setiap varian ukuran dalam satu langkah. Isi baris dengan mengetik, menempel langsung dari spreadsheet, atau mengimpor CSV (Anda juga dapat mengekspornya kembali), dan atur format, ukuran, serta nama berkas keluaran per-baris. Simpan seluruh kisi sebagai **sesi batch** bernama yang membuka kembali dari galeri, dan unduh setiap baris sebagai satu `.zip`.
 

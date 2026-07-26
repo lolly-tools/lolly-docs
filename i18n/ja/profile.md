@@ -8,6 +8,10 @@
 
 ## プロフィールに含まれるもの
 
+環境設定は、アプリの見た目そのものを変える唯一の部分です。テーマカードはそれ自体がライブプレビューであり、選んだ瞬間に適用され、その効果はこのデバイスだけに留まります。
+
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
+
 | 項目 | 内容 |
 |---|---|
 | **氏名** | 姓と名。 |
@@ -28,6 +32,8 @@
 
 ### 個人として
 
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+
 これが既定の形です。プロフィールはあなた自身——氏名、メールアドレス、ヘッドショット——を表します。一度設定すれば、署名、バッジ、カンファレンス用ロックアップがすべて自動的に入力されます。ほとんどの人にとってはこれで十分でしょう。
 
 ### チームとして
@@ -42,6 +48,10 @@ Lollyでは、その役割は単に**手元に置いておく別のプロフィ�
 
 ## インストール1つにつきアクティブなプロフィールは1つ——保持できる数に制限はありません
 
+ストレージでは、その両方を扱います。メーターはこのインストールが保持しているすべてのバイトをカテゴリーごとに集計し、その下のボタンが、それを消去したり持ち出したりする手段になります。
+
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
+
 どの瞬間においても、インストールには**アクティブなプロフィールが1つ**だけ存在します——それが今ツールから見えている情報です。アプリ内にプロフィール切り替え機能はありません。その代わり、各プロフィールは**持ち運び可能なバンドル**（1つの`.zip`ファイル、[下記](#moving-a-profile-to-a-new-device)を参照）です。これは新しいデバイスへ移行する際の仕組みとまったく同じで、意図的にそうなっています——プロフィールとは、保存し、コピーし、読み込むことができる1つのファイルなのです。
 
 そのため、複数の文脈（あなた自身、チーム、イベントマネージャーという役割）を実際に使い分けている場合は、複数のバンドルを保持しておき、必要なものを読み込みます。
@@ -53,6 +63,8 @@ Lollyでは、その役割は単に**手元に置いておく別のプロフィ�
 > 文脈ごとにバンドルを保管し、内容がわかるようファイル名を変更しておきましょう（`LollyTools-events-2026.zip`、`LollyTools-me.zip`）。ファイルそのものが、プロフィール*なのです*。
 
 ## プロフィールを新しいデバイスへ移行する
+
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
 
 プロフィールは完全にローカルなものであるため、まっさらなインストール——新しいノートPC、リセットしたばかりのブラウザ、同僚のマシン、オフラインの端末——にそれを持ち込む唯一の方法は、**ファイルを運ぶこと**です。ログインによって復元されることはありません。それこそが重要な点であり、そもそもあなたのデバイスから何かが外に出たことは一度もないのです。
 
@@ -68,6 +80,8 @@ Lollyでは、その役割は単に**手元に置いておく別のプロフィ�
 バンドルの正確な構成、バージョンポリシー、整合性のルールについては**[データ移行](/info/data-transfer.html)**を、一連の流れを追った説明については**[Lollyの使い方 → 別のデバイスへ移行](/info/using.html#moving-to-another-device)**をご覧ください。
 
 ## ツールがプロフィールをどう使うか
+
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
 
 ツールは、明示的に紐づけるよう作られたプロフィールのフィールドを*事前入力*するだけです。
 

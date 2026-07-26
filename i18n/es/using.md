@@ -6,6 +6,8 @@ Una guía práctica para *usar* de verdad la aplicación - abrir una herramienta
 
 ## Abrir una herramienta
 
+![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Fct%3Dhorizontal-bar%26t%3DQuarterly%2520revenue%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&format=svg&filename=vt-tool-split-view)
+
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
 ![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
@@ -17,6 +19,8 @@ Cada herramienta es una vista dividida: **controles** a un lado, una **vista pre
 > Algunas herramientas (como **Layout Studio**) se abren en cambio como un **lienzo libre** - una superficie sin interfaz, de manipulación directa, donde arrastras, redimensionas, rotas y ajustas cajas de texto, formas e imágenes, y haces doble clic para editar el texto en el lugar. Se exporta a través de la misma ruta de renderizado que cualquier otra herramienta, así que el lienzo *es* el archivo. Consulta [El lienzo libre](#the-free-canvas-layout-studio) más abajo.
 
 ## El lienzo (vista previa)
+
+![The zoom HUD in the corner of the canvas - minus, the live percentage, plus, Fit, then the theme and sound toggles](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=.stage-nav%7Bopacity%3A1!important%7D&cropSelector=.stage-nav&format=svg&filename=use-zoom-hud)
 
 La vista previa siempre muestra exactamente lo que se exportará.
 
@@ -48,12 +52,16 @@ Las herramientas de lienzo libre añaden una superficie de trabajo *alrededor* d
 
 ## En un teléfono
 
+![A tool on a phone-width screen - controls as a sheet up top, the generated palette filling the preview below, and the render pill floating bottom-centre](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3Df97316%26harmony%3Dadjacent-3%26steps%3D9&width=430&height=900&dpi=192&waitMs=2200&format=svg&filename=vt-phone-palette)
+
 En pantallas estrechas, el diseño se reorganiza en una sola columna:
 
 - Los **controles se convierten en una hoja** en la parte superior con un **asa de arrastre** en su borde inferior. Arrastra el asa para redimensionarla - se ajusta a **asomada / media / completa** - o **toca** el asa para alternar entre colapsada y expandida. La vista previa llena el espacio de abajo y permanece visible mientras editas.
 - Un botón flotante **Renderizar** abre la hoja de **Exportar** - todos los controles de formato, tamaño, copiar, guardar y descargar en un solo lugar. Ciérrala tocando el fondo.
 
 ## Controles (entradas)
+
+![A tool's control stack - a text field, colour triggers and a slider, and nothing else the author chose to lock down](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-inputs&format=svg&filename=use-tool-inputs)
 
 Las herramientas exponen solo las entradas que están pensadas para variar - todo lo demás (colores, composición, tipografía, lógica) queda fijado por quien creó la herramienta, así que lo que hagas siempre cumple las reglas que estableció. Las entradas incluyen texto, deslizadores, selectores de color, menús desplegables, fechas, selectores de imagen y grupos de filas repetibles. Algunas se agrupan en secciones plegables.
 
@@ -66,6 +74,8 @@ Las herramientas exponen solo las entradas que están pensadas para variar - tod
 Tu foto y tus datos viven **solo en este dispositivo**. Un perfil puede ser más que solo tú - un equipo o un rol que asumes de vez en cuando. Consulta **[Perfiles](/info/profile.html)** para ver el panorama completo, incluido cómo mantener más de uno.
 
 ## Guardar y continuar
+
+![The two-half render pill - an up arrow that opens the export panel, and a tick that saves the session in place](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=%23tool-inputs%7Bdisplay%3Anone%7D&cropSelector=.render-pill&format=svg&filename=use-render-pill)
 
 Haz clic en **Guardar** para almacenar las entradas actuales como una sesión de esa herramienta. Puedes mantener varias sesiones con nombre por herramienta; el botón **Continuar** de cada herramienta reabre la más reciente, y el **botón de historial** (arriba a la derecha, junto a tu perfil) enumera todas las sesiones guardadas en todas las herramientas. Las sesiones son locales al dispositivo. Para organizarlas, abre **Proyectos** (más abajo).
 
@@ -108,6 +118,8 @@ El **Catálogo** (`#/c`, o el enlace **Catálogo** en el menú) reúne todo lo q
 - **Ordena.** Recategoriza un recurso en otro grupo, oculta un recurso de marca compartido que no uses (con **Mostrar ocultos** para recuperarlo), o elimina directamente tus propias subidas.
 
 ### Lleva tu paleta y tus fuentes a cualquier parte
+
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 El panel de **Muestras** del Catálogo no es solo para consultar - haz clic en un color para copiarlo, o **descarga toda la paleta de marca** en el formato que hable tu otra herramienta:
 
@@ -154,6 +166,8 @@ Puedes traer un diseño existente a Lolly y seguir trabajando en él: abre **Lay
 Consulta **[Exportar y formatos](/info/exporting.html)** para la historia completa - elegir un formato, el tamaño de salida y las unidades de impresión, la transparencia, el vídeo, y copiar/compartir. En resumen: elige un formato, ajusta el tamaño si lo necesitas, y **Descargar** (o **Copiar** al portapapeles).
 
 ## Modo Batch (Pro)
+
+![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&format=svg&filename=use-batch-toolbar)
 
 Para usuarios avanzados, **Batch** (enlazado desde la galería, protegido tras el indicador de función Pro, que está activado por defecto) renderiza muchas variaciones a la vez - una cuadrícula donde cada fila es un conjunto de entradas, exportadas juntas. Ideal para localizar una tarjeta en una docena de idiomas o generar cada variante de tamaño de una sola vez. Rellena las filas escribiendo, pegando directamente desde una hoja de cálculo, o importando un CSV (también puedes exportar uno de vuelta), y define el formato, el tamaño y el nombre de archivo de salida por fila. Guarda una cuadrícula completa como una **sesión de batch** con nombre que se reabre desde la galería, y descarga cada fila como un único `.zip`.
 

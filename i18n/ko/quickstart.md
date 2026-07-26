@@ -66,9 +66,17 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### 열린 데이터와 열린 도구
 
-[커뮤니티 도구 세트](/info/builders.html)는 오픈소스이고 브랜드에 종속되지 않아요 — QR 코드, 시가지 지도, 필터, 프라이버시 유틸리티 등이 있어요 — 그리고 브랜드를 활성화하는 순간 그 브랜드에 맞춰 렌더링돼요. 직접 가진 열린 데이터도 도구에 먹일 수 있어요. **CSV**나 **JSON** 표를 붙여넣거나 끌어다 놓으면 도구의 반복 필드가 거기서 채워지고, 행마다 완성된 에셋이 하나씩 나와요.
+[커뮤니티 도구 세트](/info/builders.html)는 오픈소스이고 브랜드에 종속되지 않아요 — QR 코드, 시가지 지도, 필터, 프라이버시 유틸리티 등이 있어요 — 그리고 브랜드를 활성화하는 순간 그 브랜드에 맞춰 렌더링돼요.
+
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
+직접 가진 열린 데이터도 도구에 먹일 수 있어요. **CSV**나 **JSON** 표를 붙여넣거나 끌어다 놓으면 도구의 반복 필드가 거기서 채워지고, 행마다 완성된 에셋이 하나씩 나와요.
 
 ## 3. 만들고, 공유하거나 자동화하기
+
+"URL이 곧 API"라는 말은 문자 그대로예요. 아래 차트는 누가 그린 게 아니에요: 차트 종류와 제목, 데이터 표 전체를 주소창에 입력한 것이고, 같은 링크는 어떤 기기에서든 같은 차트를 렌더링해요.
+
+![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&filename=vt-d3-url-chart)
 
 브랜드가 활성화되고 자료가 준비되면, 어떤 도구든 완성된 파일을 만들어내요.
 

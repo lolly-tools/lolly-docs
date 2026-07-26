@@ -34,6 +34,16 @@ Le détail complet des modèles de déploiement et le guide d'administration se 
 
 ## Utilitaires anti-exfiltration
 
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data)
+
+Text Helper propose le même marché, pour du texte plutôt que des fichiers. C'est l'atelier à onglets qu'un employé irait sinon chercher sur le site d'un inconnu, et il ne déclare aucune entrée, parce que rien de ce qu'il touche ne quitte jamais la page.
+
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+
+Compress PDF complète l'ensemble : la pièce jointe trop lourde est réduite selon un réglage de qualité que tu choisis, sur la machine qui la contient déjà.
+
+![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=ov2-compress-pdf)
+
 Une catégorie d'outils Lolly - les utilitaires de confidentialité - existe *spécifiquement* pour garder les fichiers à l'intérieur du périmètre.
 
 
@@ -52,12 +62,18 @@ Elles sont toutes des transformations sur l'appareil : ton fichier ou tes donné
 
 ## Déterminisme et reproductibilité
 
+Prompt to Image, c'est le déterminisme dans sa forme la plus simple : le texte est toute l'entrée, l'image composée est toute la sortie, et le même texte se compose toujours de la même façon.
+
+![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-prompt-to-image)
+
 Chaque entrée d'outil peut s'exprimer comme un paramètre d'URL, et les mêmes entrées produisent le même fichier. Cela a deux conséquences pour l'opérateur :
 
 - **Une URL, c'est l'artefact.** Commite le lien, régénère la ressource à la demande - aucun binaire versionné dans Git, plus besoin de traquer « la dernière version » dans le chat. Les identifiants (IDs) de ressources et d'outils sont des contrats permanents, donc un lien créé aujourd'hui se résout toujours plus tard.
 - **Le CLI emprunte le même chemin de rendu** que l'interface graphique, donc les pipelines de build et l'application ne divergent jamais. Génère des images OG, des cartes sociales et des visuels de données au moment du build, de façon reproductible.
 
 ## Provenance et Content Credentials
+
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
 
 Les exports peuvent porter des **Content Credentials** - un manifeste [C2PA](https://c2pa.org) signé, lié à un hash des octets du fichier. Tout changement ultérieur du fichier brise le sceau, si bien qu'un vérificateur compatible C2PA **détecte l'altération cryptographiquement, hors ligne**. Le credential est détectable en cas de *falsification* : il signale la falsification plutôt que de l'empêcher, ce qui est précisément ce qui rend possible une vérification entièrement hors ligne.
 
@@ -71,6 +87,8 @@ Les exports peuvent porter des **Content Credentials** - un manifeste [C2PA](htt
 > **Notes d'interopérabilité.** Lolly vérifie ses propres credentials et beaucoup de ceux de tiers hors ligne dès aujourd'hui, y compris la lecture des manifestes de revendication C2PA **v2** provenant d'autres producteurs. Un point d'interopérabilité reste en cours : le WebM - qui n'a pas encore de mappage C2PA standardisé, si bien que Lolly attache le manifeste comme une pièce Matroska (les outils tiers vérifient le MP4 de Lolly d'emblée ; le WebM suivra une fois la norme stabilisée).
 
 ## Chiffrement et mots de passe
+
+![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&format=svg&filename=aud-pdf-lock)
 
 Pour les fichiers qui doivent voyager verrouillés, tout se passe sur l'appareil :
 

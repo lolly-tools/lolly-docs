@@ -66,7 +66,11 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### کھلا ڈیٹا اور کھلے ٹولز
 
-[کمیونٹی ٹول سیٹ](/info/builders.html) اوپن سورس اور برانڈ سے آزاد ہے — QR کوڈز، اسٹریٹ میپس، فلٹرز، پرائیویسی یوٹیلیٹیز — اور جیسے ہی آپ اسے فعال کرتے ہیں یہ *آپ کے* برانڈ کے مقابل رینڈر کرتا ہے۔ ٹولز کو اپنا کھلا ڈیٹا بھی فراہم کریں: کوئی **CSV** یا **JSON** ٹیبل پیسٹ کریں یا ڈراپ کریں اور ایک ٹول کے دہرائے جانے والے خانے اس سے بھر جاتے ہیں، فی قطار ایک تیار اثاثہ۔
+[کمیونٹی ٹول سیٹ](/info/builders.html) اوپن سورس اور برانڈ سے آزاد ہے — QR کوڈز، اسٹریٹ میپس، فلٹرز، پرائیویسی یوٹیلیٹیز — اور جیسے ہی آپ اسے فعال کرتے ہیں یہ *آپ کے* برانڈ کے مقابل رینڈر کرتا ہے۔
+
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
+ٹولز کو اپنا کھلا ڈیٹا بھی فراہم کریں: کوئی **CSV** یا **JSON** ٹیبل پیسٹ کریں یا ڈراپ کریں اور ایک ٹول کے دہرائے جانے والے خانے اس سے بھر جاتے ہیں، فی قطار ایک تیار اثاثہ۔
 
 ## 3. کچھ بنائیں، پھر اسے شیئر کریں یا خودکار بنائیں
 
@@ -76,6 +80,10 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 - **ایک لنک شیئر کریں۔** ہر ٹول کی حالت ایک URL ہے، تو ایک تیار اثاثہ دوبارہ پیدا کرنے کے قابل اور پیرامیٹر سے قابلِ رسائی ہوتا ہے — لنک کمٹ کریں، طلب پر دوبارہ بنائیں۔
 - **اسے بلک میں کریں۔** [بیچ گرڈ](/info/exporting.html) میں کسی اسپریڈ شیٹ سے ایک ٹیمپلیٹ چلائیں: فی قطار ایک تیار اثاثہ۔
 - **اسے خودکار بنائیں۔** وہی رینڈر [CLI](/info/cli.html) سے اور کسی [AI ایجنٹ](/info/ai-agents.html) سے چلتا ہے — ایک URL ہی API ہے۔
+
+"URL ہی API ہے" یہ بات لفظی طور پر درست ہے۔ نیچے کا چارٹ کسی نے نہیں بنایا: اس کی قسم، اس کا عنوان اور اس کا پورا ڈیٹا ٹیبل ایڈریس بار میں ٹائپ کیا گیا تھا، اور وہی لنک کسی بھی ڈیوائس پر وہی چارٹ رینڈر کرتا ہے۔
+
+![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&filename=vt-d3-url-chart)
 
 ## آگے کہاں جائیں
 

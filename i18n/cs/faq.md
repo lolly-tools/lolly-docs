@@ -18,6 +18,8 @@ Lolly vytváří velké množství obsahu. Abychom omezili riziko, uplatňujeme 
 
 ### Co jsou feature flags?
 
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&filename=pd-feature-flags)
+
 Feature flags zapínají nebo vypínají části Lolly. Obvykle je ovládá administrátor - u Lolly máš kontrolu ty.
 
 ## Jak získám mobilní nebo desktopovou aplikaci?
@@ -74,6 +76,8 @@ Lolly pozvedne všechno.
 
 ## Čím se utility liší od nástrojů?
 
+![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
 **Základní odpověď →** Utility nemusí vždy renderovat, a proto mohou mít jiné UX.
 
 **Skutečná odpověď →** Důvod, proč lze utility hostovat uvnitř Lolly Tools, je přidat další „vrstvu pohodlí“ jako obranu, která odrazuje od exfiltrace dat.
@@ -95,6 +99,8 @@ operace je triviální; **obsah je ta cena.**
 Válku o governance vyhráváme skvělým pohodlím a službou.
 
 ## Umí Lolly upravit a vyrenderovat moje soubory z Figmy, Penpotu, Illustratoru nebo InDesignu?
+
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 Ano. Otevři **Layout Studio** a klikni na **Importuj návrh**: přijímá nativní Figma soubor **.fig** (Save local copy), export z Penpotu **.penpot**, Illustrator **.ai** nebo **.pdf**, InDesign **.idml** (File → Export → InDesign Markup), nebo **jakékoli SVG** (široká brána - skoro každá návrhářská aplikace ho umí exportovat). Všechno se zpracovává výhradně na tvém zařízení, není potřeba účet ani plugin.
 

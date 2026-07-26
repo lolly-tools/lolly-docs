@@ -19,6 +19,8 @@ The actions in the export controls:
 
 ![The export panel - format, size and the Copy / Download / Save / Share actions](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=png&filename=export-panel)
 
+Share opens over the tool, with the link already built and the on-visit toggles under it.
+
 ### Rendering many at once
 
 A single export is one file, but you can render **many** in one pass - each delivered as one `.zip`:
@@ -29,6 +31,10 @@ A single export is one file, but you can render **many** in one pass - each deli
 A saved session can also be re-shared as a tool link from Projects (it reconstructs the tool URL from the saved inputs), so a link reopens it with the exact same settings.
 
 ## Choosing a format
+
+The filename and the format picker sit at the top of the panel as one `name.format` pair, and the picker lists only the formats this tool's author declared.
+
+![The filename field fused to the format picker, so the export reads as one name.format pair](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.filename-extension&filename=exp-format-picker)
 
 | You want… | Use | Why |
 |---|---|---|
@@ -53,6 +59,10 @@ A saved session can also be re-shared as a tool link from Projects (it reconstru
 | Structured data to re-import | **JSON** / **CSV** | Round-trips the tool's content |
 | A favicon | **ICO** | Multi-size site icon (**ZIP** bundles several formats) |
 
+The first row is the common case. A wordmark set in your brand face exports as SVG, where every letter is an outlined path rather than a pixel, so it stays crisp at a business-card size and at a building-wrap size from the same file.
+
+![A hairline wide-tracked wordmark reading Aurora, the kind of pure vector artwork the SVG row of the table is about](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DAurora%26weight%3D200%26tracking%3D16%26size%3D200%26full&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=%23tool-canvas&format=svg&filename=vt-wordmark-vector)
+
 ## Size & print units
 
 By default exports use the tool's native pixel size. Where a tool exposes **dimensions**, you can set width × height and a **unit**:
@@ -63,6 +73,8 @@ By default exports use the tool's native pixel size. Where a tool exposes **dime
 To get a higher-resolution raster, enter a larger width/height, or choose a physical unit and raise the DPI (pixels = size × DPI). There's no one-click scale toggle.
 
 Example: width `210`, height `297`, unit `mm` → an A4 page.
+
+![The dimensions row set to 210 by 297 mm, with the DPI field revealed because the unit is physical](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26w%3D210%26h%3D297%26unit%3Dmm%26format%3Dpdf%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-dims&filename=exp-export-dims)
 
 ## Multi-page PDF
 
@@ -89,6 +101,10 @@ PowerPoint is also a way **in** - the format round-trips. **Deck Builder** opens
 ## DXF (cut files)
 
 Vector tools (Brand Lockup, QR Code, Street Map, Wayfinding Signage, Pose Geeko, the logo lockups, Diagram Builder) can export **DXF** - the AutoCAD R12 interchange format that laser cutters, vinyl plotters and CNC/CAD software read. Geometry is written as outline **paths in millimetres** (curves flattened to a fine tolerance), text is outlined to paths, and colour lands as the nearest AutoCAD Color Index (which typically drives the tool/operation on a cutter). DXF is line-art only - a photographic or filtered region has no cut-path form and is dropped (Lolly warns), so use SVG/PDF when you need to keep raster content.
+
+Street Map is the clearest case: the whole design is already strokes, so every road and canal becomes a cut path with nothing to drop.
+
+![A Street Map render of Paris in ink on cream - pure line art, so every stroke survives the trip to a cutter](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dparis%26roadColor%3D1a1a2e%26waterColor%3D93c5fd%26background%3Dfaf7f2%26full&width=1440&height=900&dpi=192&waitMs=3200&cropSelector=%23tool-canvas&format=png&filename=vt-street-map-cut)
 
 ## Animated SVG
 
@@ -143,6 +159,8 @@ Where the format supports it, exports carry **provenance metadata** - software, 
 
 **Content protection.** In the export panel, *Password protect*, Content Credentials, the Lolly Imprint and print marks fold into one collapsed, format-aware **Content protection** group, so all of a file's provenance and protection options live in one place - the group shows only the cards that apply to the chosen format.
 
+![The Content protection group opened on a PNG export, showing only the cards that apply to it](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26imprint%3D1%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-protection&filename=exp-content-protection)
+
 **Composed renders.** When a tool embeds another tool's output (e.g. an *Event Name Badge* embedding a *QR Code*), the nested render is inlined into the parent's export - it stays a **true vector** in SVG and PDF and rasterises crisply in PNG/JPG/WebP. The embedded child is an intermediate: it gets *no* watermark and *no* provenance of its own; only the finished parent asset does. (Composition covers SVG and the raster formats; HTML/MD/TXT can't be composed.)
 
 ## Password protection
@@ -150,6 +168,8 @@ Where the format supports it, exports carry **provenance metadata** - software, 
 Two independent kinds of lock, both entirely on-device.
 
 **PDF open-password** - the export panel's *Password protect* card offers two tiers:
+
+![The Password protect card expanded on a PDF export, with the password field and the two lock tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-pdfpass&filename=exp-pdf-password)
 
 - **Standard** - a basic 40-bit lock (RC4). It opens in *any* PDF app, and - being a light deterrent, not real protection - it can travel in a share link (clear-text, by design). RGB `pdf` only.
 - **Strong** - AES-256 (PDF 2.0). Its password is typed at export and is **never** put in a link; it opens only in newer PDF apps (Acrobat / Preview ~2018 on), and older apps may report the file as damaged. Strong also applies to **Print / CMYK PDFs** and to **each PDF inside a batch zip** (the batch confirm dialog collects the password). Because PDF/X-4 forbids encryption, a Strong-locked Print PDF keeps its CMYK, marks and output-intent but drops the PDF/X-4 conformance claim.
@@ -168,6 +188,8 @@ The same *Password protect* card in the export panel drives both the PDF and ZIP
 ## Content Credentials (C2PA)
 
 Exports can carry **Content Credentials** - a signed [C2PA](https://c2pa.org) manifest embedded in the file that records, in a tamper-evident way, that the file was made with Lolly and hasn't been altered since. It's the standards-track version of the provenance metadata above: a cryptographic claim (what made the file, when, by whom, and where) bound to a hash of the file's bytes, so any later edit is detectable by a C2PA-aware viewer. The standard is stewarded by the [Content Authenticity Initiative](https://contentauthenticity.org) (Adobe, BBC, Microsoft, Nikon and others), so the same credentials Lolly writes are the ones cameras, newsrooms and creative suites are adopting.
+
+![The Content Credentials card, pre-ticked, with the credential lifetime beside it](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26c2pa%3D30%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-c2pa%5Bdata-c2pa-only%5D&filename=exp-c2pa-card)
 
 - **Formats.** Every container with a C2PA embedding: **PDF** (both RGB and Print), **PNG / Animated PNG**, **JPG**, **GIF**, **SVG**, **TIFF** (RGB and Print), **WebP** (still and animated) **MP4** and **WebM**. A **ZIP** bundle stamps each supported member individually. MP4 uses the spec's BMFF binding, so `c2patool` and other C2PA-aware viewers verify it; WebM has no standardised C2PA mapping yet, so Lolly carries the manifest as a Matroska attachment that Lolly's own verifier (and CLI) checks. (`avif` and Animated SVG are not yet stamped; `ico`, `eps`, `emf`, `dxf`, `pptx` and the text/data formats have no C2PA container.)
 - **On by default.** The **Content Credentials** card in the export panel comes pre-selected for nearly every tool - untick it to skip the credential on a single export (or pass `c2pa=off` in a share link). A tool can opt out entirely in its manifest.

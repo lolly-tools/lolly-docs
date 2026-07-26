@@ -34,6 +34,8 @@
 
 ## 徽标
 
+![The logo matrix - each orientation across the top, each treatment as its own dashed slot, all of them optional](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dlogos&width=1440&height=1600&dpi=192&waitMs=1600&cropSelector=.be-logo-grid&format=svg&filename=bs-logo-slots)
+
 每一个品牌标志在这里都有属于自己的位置——一个由**方向 × 处理方式**组成的插槽网格：
 
 - **方向：** 横向（字标 + 图形符号并排）与纵向（堆叠排列，适用于方形和竖长空间）。
@@ -63,6 +65,8 @@
 
 ### 一个颜色，一整套调色板
 
+![The four ramps stacked above light and dark specimen cards, each card carrying its own WCAG contrast ratio](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&filename=bs-colour-ramps)
+
 选择一个**主色**，Lolly 就会推导出完整的调色板——明暗表面、文字、强调色，以及完整的深浅色阶——使用的是引擎在各处统一采用的同一套感知色彩数学（OKLCH）。可以调整推导方式：
 
 - **配色方案**——单色、互补色、类似色或三角配色——决定辅助色与主色之间的关系。
@@ -80,9 +84,15 @@
 
 ### 搭建你的调色板（配色生成器）
 
+![Generated accents, each with a swatch, an auto-generated name, its hex and an Add button](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&format=svg&filename=bs-harmony-candidates)
+
 在**搭建你的调色板**下，可以从主色生成与之搭配的强调色。选择一种配色关系——**互补色**、**邻近色**、**三角配色**或**四角配色**——每个候选颜色都会自动生成一个易读的名称，并配有一个**+ 添加**按钮。添加的颜色会立即进入你的调色板。“你的调色板，实际应用”会在真实图稿上预览这些颜色。
 
 ### 调色板、色轮与每一个色板
+
+![The palette pane, every group foldable, with the download pill parked at its bottom edge](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&format=svg&filename=bs-palette-pane)
+
+![The OKLCH wheel - angle is hue, distance out is chroma, and the greys ride a lightness rail down the side](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&format=svg&filename=bs-colour-wheel)
 
 右侧面板列出你的品牌拥有的每一个颜色，按分组排列（主色、中性色、辅助色、光谱色、自定义、角色），每个分组都可折叠，并各自带有**+ 添加**。打开**色彩图表**即可看到 **OKLCH 色轮**——拖动一个圆点即可重新上色，点击一个圆点即可编辑，点击空白处即可新建一个色板。
 
@@ -108,6 +118,8 @@
 调色板面板底部的悬浮胶囊按钮，可以把整套调色板下载为**设计令牌（JSON）**、**CSS 变量**、**CSS 类**、**GIMP 调色板（.gpl）**或 **Adobe Swatch Exchange（.ase）**——让品牌直接进入 Illustrator、Figma、GIMP，或某份样式表。（你也可以从[目录](/info/using.html)视图下载调色板。）
 
 ## 字体
+
+![The Type roles specimen - heading, body, italic and code, each set in the face that role resolves to, with the face name beside it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2000&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-typeroles&format=svg&filename=bs-type-specimen)
 
 ![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-type)
 
@@ -154,6 +166,8 @@
 把徽标以外、你的品牌所保留的文件都放到这里：**矢量**、**图片**、**音频**与**动态**（视频、Lottie、动画）素材。它们会进入你的[目录](/info/using.html)，按板块归类，并在每个工具的素材选择器中随时可用。一切都保留在本设备上。
 
 ## 把品牌迁移到另一台设备
+
+![The import card - the accepted formats lead as icon tiles, and the whole card is one drop target](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-import-drop&format=svg&filename=bs-brand-import-formats)
 
 顶部操作栏中的**导出**按钮会生成一个 `LollyBrand-…zip` 文件——包含你的令牌、字体、徽标和主题偏好设置，并附带一份完整性清单。**导入…**按钮（或直接把文件拖放到工作室中）可以接受：
 

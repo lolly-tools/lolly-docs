@@ -10,10 +10,20 @@ Lolly ایک پلیٹ فارم سے آزاد **انجن** ہے جو کئی **ش�
 
 ## آرکیٹیکچر کو سمجھیں
 
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+
 - **[جائزہ](/info/overview.html)** — Lolly کیوں وجود رکھتا ہے، engine/shell/tools کی علیحدگی، capability bridge، اور طے شدہ آرکیٹیکچرل وابستگیاں۔
 - **[ڈیزائن ٹوکنز](/info/design-tokens.html)** — وہ DTCG ٹوکن ماڈل جس میں برانڈز کا اظہار ہوتا ہے، اور ٹولز اُنہیں کیسے استعمال کرتے ہیں۔
 
 ## ٹولز تصنیف کریں
+
+نیچے دکھایا گیا ہر کنٹرول `tool.json` میں بیان کیے گئے کسی ان پٹ سے تیار ہوا ہے۔ آپ مینی فیسٹ کی لائن لکھتے ہیں، ہوسٹ ویجٹ بناتا ہے، اور وہی ماڈل CLI اور URL کو بھی چلاتا ہے۔
+
+![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&format=svg&filename=aud-manifest-controls)
+
+یہ پانچ کنٹرولز سے کہیں آگے تک پھیلتا ہے۔ کسی ان پٹ کو `section` دیں اور ہوسٹ اسے سمیٹ دیتا ہے، چنانچہ D3 Chart Studio جیسا پچاس ان پٹ والا ٹول بھی ایک مختصر فہرست کی صورت میں کھلتا ہے اور باقی سب نام والے گروپوں کے پیچھے ترتیب سے رہتا ہے۔
+
+![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-d3-sections)
 
 - **[ٹولز کی تصنیف](/info/authoring-tools.html)** — مکمل رہنما: مینی فیسٹ، ٹیمپلیٹ، اسٹائلز، hooks، کمپوزیشن، اور اشاعت۔
 - **[ایسیٹس کی تصنیف](/info/authoring-assets.html)** — کیٹلاگ ایسیٹس، ٹئیرز، لوکیلز، پیلیٹس، تھیم ایبل آئیکنز، اور فونٹس۔
@@ -35,6 +45,10 @@ Lolly ایک پلیٹ فارم سے آزاد **انجن** ہے جو کئی **ش�
 - **[کنفیگریشن](/info/configuration.html)** — پروفائلز، برانڈ پیکس، capability gating، فیچر فلیگز، اور کیٹلاگ ویلیڈیشن۔
 
 ## اعتماد اور ڈیٹا
+
+حقوق اور تصنیف بھی باقی سب کی طرح ان پٹ ہی ہیں۔ Embed & Track Image تخلیق کار، کاپی رائٹ، لائسنس اور رابطے کے خانے بیان کرتا ہے، اور ایکسپورٹ اُنہیں فائل کے اپنے میٹا ڈیٹا اور اُس کے C2PA مینی فیسٹ میں لکھ دیتا ہے۔
+
+![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-rights-fields)
 
 - **[Content Credentials Identity](/info/content-credentials-identity.html)** — آن ڈیوائس C2PA کے لیے CA سے جاری کردہ سائننگ؛ engine کنٹریکٹس اور آپریٹر رن بک۔
 - **[ڈیٹا ٹرانسفر](/info/data-transfer.html)** — `lolly-backup` بنڈل: اینویلپ، سالمیت، اور کراس شیل ضمانتیں۔

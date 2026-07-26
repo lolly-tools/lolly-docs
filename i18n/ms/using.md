@@ -6,6 +6,8 @@ Panduan praktikal untuk *menggunakan* aplikasi ini - membuka alat, bekerja denga
 
 ## Membuka alat
 
+![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Fct%3Dhorizontal-bar%26t%3DQuarterly%2520revenue%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&format=svg&filename=vt-tool-split-view)
+
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
 ![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
@@ -17,6 +19,8 @@ Setiap alat ialah paparan berpisah: **kawalan** di satu sisi, **pratonton** lang
 > Beberapa alat (seperti **Layout Studio**) pula dibuka sebagai **kanvas bebas** - permukaan manipulasi-langsung tanpa bingkai antara muka (chromeless), tempat anda menyeret, menyaiz semula, memutar dan melekatkan kotak teks, bentuk dan imej, serta dwiklik untuk menyunting teks di situ juga. Ia dieksport melalui laluan pemaparan yang sama seperti alat lain, jadi kanvas itu *adalah* fail itu sendiri. Lihat [Kanvas bebas](#the-free-canvas-layout-studio) di bawah.
 
 ## Kanvas (pratonton)
+
+![The zoom HUD in the corner of the canvas - minus, the live percentage, plus, Fit, then the theme and sound toggles](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=.stage-nav%7Bopacity%3A1!important%7D&cropSelector=.stage-nav&format=svg&filename=use-zoom-hud)
 
 Pratonton sentiasa menunjukkan dengan tepat apa yang akan dieksport.
 
@@ -48,12 +52,16 @@ Alat kanvas bebas menambah permukaan kerja *di sekeliling* artboard, seperti pas
 
 ## Pada telefon
 
+![A tool on a phone-width screen - controls as a sheet up top, the generated palette filling the preview below, and the render pill floating bottom-centre](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3Df97316%26harmony%3Dadjacent-3%26steps%3D9&width=430&height=900&dpi=192&waitMs=2200&format=svg&filename=vt-phone-palette)
+
 Pada skrin sempit, susun atur akan mengalir semula kepada satu lajur:
 
 - **Kawalan menjadi kepingan (sheet)** di bahagian atas dengan **pemegang seret** pada tepi bawahnya. Seret pemegang itu untuk menyaiz semulanya - ia akan melekat pada **peek / half / full** - atau **ketik** pemegang untuk menogol antara dilipat ↔ dikembangkan. Pratonton mengisi ruang di bawah dan kekal kelihatan semasa anda menyunting.
 - Butang terapung **Render** membuka kepingan **Eksport** - semua kawalan format, saiz, salin, simpan, dan muat turun di satu tempat. Tutupnya dengan mengetik latar belakang.
 
 ## Kawalan (input)
+
+![A tool's control stack - a text field, colour triggers and a slider, and nothing else the author chose to lock down](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-inputs&format=svg&filename=use-tool-inputs)
 
 Alat hanya mendedahkan input yang sepatutnya berubah-ubah - semua yang lain (warna, susun atur, tipografi, logik) dikunci oleh pencipta alat, jadi apa sahaja yang anda hasilkan akan mematuhi peraturan yang ditetapkan oleh pencipta itu. Input termasuk teks, penggelangsar (slider), pemilih warna, menu lungsur, tarikh, pemilih imej, dan kumpulan baris berulang. Sebahagiannya dikumpulkan di bawah seksyen yang boleh dilipat.
 
@@ -66,6 +74,8 @@ Alat hanya mendedahkan input yang sepatutnya berubah-ubah - semua yang lain (war
 Gambar kepala dan butiran anda kekal **hanya pada peranti ini**. Satu profil boleh menjadi lebih daripada sekadar diri anda - sebuah pasukan atau peranan yang anda ambil alih dari semasa ke semasa. Lihat **[Profil](/info/profile.html)** untuk gambaran penuh, termasuk cara menyimpan lebih daripada satu.
 
 ## Menyimpan & menyambung semula
+
+![The two-half render pill - an up arrow that opens the export panel, and a tick that saves the session in place](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=%23tool-inputs%7Bdisplay%3Anone%7D&cropSelector=.render-pill&format=svg&filename=use-render-pill)
 
 Klik **Simpan** untuk menyimpan input semasa sebagai satu sesi bagi alat tersebut. Anda boleh menyimpan pelbagai sesi bernama bagi setiap alat; butang **Sambung** pada setiap alat akan membuka semula sesi terkini anda, dan **butang sejarah** (penjuru kanan atas, di sebelah profil anda) menyenaraikan setiap sesi yang disimpan merentasi semua alat. Sesi adalah setempat pada peranti. Untuk menyusunnya, buka **Projek** (di bawah).
 
@@ -108,6 +118,8 @@ Apabila sesuatu alat membenarkan anda menambah imej daripada peranti anda, ia ak
 - **Kemaskan.** Kategorikan semula sesuatu aset ke dalam kumpulan berbeza, sembunyikan aset jenama kongsi yang anda tidak guna (dengan **Show hidden** untuk membawanya kembali), atau padam terus muat naik anda sendiri.
 
 ### Bawa palet dan fon anda ke mana-mana
+
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 Panel **Swatches** Katalog bukan sekadar untuk rujukan - klik warna untuk menyalinnya, atau **muat turun keseluruhan palet jenama** dalam format yang difahami oleh alat anda yang lain:
 
@@ -154,6 +166,8 @@ Anda boleh membawa reka bentuk sedia ada ke dalam Lolly dan terus mengerjakannya
 Lihat **[Mengeksport & Format](/info/exporting.html)** untuk cerita penuh - memilih format, saiz output dan unit cetakan, ketelusan, video, serta salin/kongsi. Ringkasnya: pilih format, tetapkan saiz jika perlu, dan **Muat turun** (atau **Salin** ke papan keratan).
 
 ## Mod Batch (Pro)
+
+![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&format=svg&filename=use-batch-toolbar)
 
 Untuk pengguna mahir, **Batch** (dipautkan daripada galeri, dikawal di sebalik flag ciri Pro, yang dihidupkan secara lalai) merender banyak variasi sekali gus - satu grid di mana setiap baris ialah satu set input, dieksport bersama. Sesuai untuk melokalkan kad ke dalam sedozen bahasa atau menjana setiap varian saiz dalam satu larian. Isikan baris dengan menaip, menampal terus daripada hamparan (spreadsheet), atau mengimport CSV (anda boleh mengeksport semula satu juga), dan tetapkan format, saiz, dan nama fail output bagi setiap baris. Simpan keseluruhan grid sebagai **sesi batch** bernama yang boleh dibuka semula daripada galeri, dan muat turun setiap baris sebagai satu `.zip` tunggal.
 

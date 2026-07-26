@@ -66,9 +66,17 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### 开放数据与开放工具
 
-[社区工具集](/info/builders.html)是开源的、与品牌无关——二维码、街道地图、滤镜、隐私工具——一旦你激活自己的品牌，它就会依据*你的*品牌进行渲染。你也可以把自己的开放数据喂给工具：粘贴或拖入一份 **CSV** 或 **JSON** 表格，工具的重复字段就会据此填充，每一行生成一个成品资源。
+[社区工具集](/info/builders.html)是开源的、与品牌无关——二维码、街道地图、滤镜、隐私工具——一旦你激活自己的品牌，它就会依据*你的*品牌进行渲染。
+
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
+你也可以把自己的开放数据喂给工具：粘贴或拖入一份 **CSV** 或 **JSON** 表格，工具的重复字段就会据此填充，每一行生成一个成品资源。
 
 ## 3. 制作，然后分享或自动化
+
+"一个 URL 就是 API"这句话是字面意思。下面这张图表并不是谁画出来的，它的类型、标题以及整张数据表都是在地址栏里敲进去的，而同一个链接在任何设备上都会渲染出同一张图表。
+
+![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&filename=vt-d3-url-chart)
 
 品牌激活、素材在手之后，每个工具都能产出一个成品文件：
 

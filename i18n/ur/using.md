@@ -6,6 +6,8 @@
 
 ## ٹول کھولنا
 
+![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Fct%3Dhorizontal-bar%26t%3DQuarterly%2520revenue%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&format=svg&filename=vt-tool-split-view)
+
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
 ![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
@@ -17,6 +19,8 @@
 > چند ٹولز (جیسے **لے آؤٹ اسٹوڈیو**) اس کے بجائے ایک **آزاد کینوس** کے طور پر کھلتے ہیں — ایک کروم لیس، براہِ راست ہیرا پھیری والی سطح جہاں آپ ٹیکسٹ، شکلوں اور تصاویر کے باکسز کو ڈریگ، ری سائز، گھماتے اور سنیپ کرتے ہیں، اور جگہ پر ٹیکسٹ ایڈٹ کرنے کے لیے ڈبل کلک کرتے ہیں۔ یہ ہر دوسرے ٹول جیسے ہی رینڈر پاتھ سے ایکسپورٹ ہوتا ہے، لہٰذا کینوس *ہی* فائل ہے۔ نیچے [آزاد کینوس](#the-free-canvas-layout-studio) دیکھیں۔
 
 ## کینوس (پیش نظارہ)
+
+![The zoom HUD in the corner of the canvas - minus, the live percentage, plus, Fit, then the theme and sound toggles](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=.stage-nav%7Bopacity%3A1!important%7D&cropSelector=.stage-nav&format=svg&filename=use-zoom-hud)
 
 پیش نظارہ ہمیشہ بالکل وہی دکھاتا ہے جو ایکسپورٹ ہوگا۔
 
@@ -48,12 +52,16 @@
 
 ## فون پر
 
+![A tool on a phone-width screen - controls as a sheet up top, the generated palette filling the preview below, and the render pill floating bottom-centre](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3Df97316%26harmony%3Dadjacent-3%26steps%3D9&width=430&height=900&dpi=192&waitMs=2200&format=svg&filename=vt-phone-palette)
+
 تنگ اسکرینز پر لے آؤٹ ایک کالم میں دوبارہ بہہ جاتا ہے:
 
 - **کنٹرولز اوپر ایک شیٹ بن جاتے ہیں** جس کے نچلے کنارے پر ایک **ڈریگ گرِپ** ہوتی ہے۔ اسے ری سائز کرنے کے لیے گرِپ کو ڈریگ کریں — یہ **جھلک / آدھا / پورا** پر سنیپ ہوتی ہے — یا سکڑے ↔ پھیلے کے درمیان ٹوگل کرنے کے لیے گرِپ کو **ٹیپ** کریں۔ پیش نظارہ نیچے کی جگہ بھر دیتا ہے اور جب آپ ایڈٹ کرتے ہیں تو نظر آتا رہتا ہے۔
 - ایک فلوٹنگ **رینڈر** بٹن **ایکسپورٹ** شیٹ کھولتا ہے — تمام فارمیٹ، سائز، کاپی، محفوظ کرنے، اور ڈاؤن لوڈ کے کنٹرولز ایک جگہ۔ اسے بند کرنے کے لیے پس منظر پر ٹیپ کریں۔
 
 ## کنٹرولز (ان پٹس)
+
+![A tool's control stack - a text field, colour triggers and a slider, and nothing else the author chose to lock down](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-inputs&format=svg&filename=use-tool-inputs)
 
 ٹولز صرف وہی ان پٹس ظاہر کرتے ہیں جو مختلف ہونے کے لیے مقصود ہیں — باقی سب کچھ (رنگ، لے آؤٹ، ٹائپوگرافی، منطق) ٹول کے مصنف کی طرف سے مقفل ہوتا ہے، لہٰذا آپ جو بھی بناتے ہیں وہ مصنف کے مقرر کردہ قواعد پر پورا اترتا ہے۔ ان پٹس میں ٹیکسٹ، سلائیڈرز، رنگ چننے والے، ڈراپ ڈاؤنز، تاریخیں، تصویر چننے والے، اور دہرائی جانے والی رو گروپس شامل ہیں۔ کچھ کو سکڑنے والے سیکشنز کے تحت گروپ کیا جاتا ہے۔
 
@@ -66,6 +74,8 @@
 آپ کا ہیڈ شاٹ اور تفصیلات **صرف اس آلے پر** رہتی ہیں۔ ایک پروفائل صرف آپ سے زیادہ ہو سکتا ہے — ایک ٹیم یا ایک کردار جس میں آپ کبھی کبھار قدم رکھتے ہیں۔ مکمل تصویر کے لیے **[پروفائلز](/info/profile.html)** دیکھیں، بشمول ایک سے زیادہ رکھنا۔
 
 ## محفوظ کرنا اور جاری رکھنا
+
+![The two-half render pill - an up arrow that opens the export panel, and a tick that saves the session in place](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=%23tool-inputs%7Bdisplay%3Anone%7D&cropSelector=.render-pill&format=svg&filename=use-render-pill)
 
 اس ٹول کے لیے موجودہ ان پٹس کو ایک سیشن کے طور پر محفوظ کرنے کے لیے **محفوظ کریں** پر کلک کریں۔ آپ فی ٹول متعدد نامزد سیشنز رکھ سکتے ہیں؛ ہر ٹول کا **جاری رکھیں** بٹن آپ کے تازہ ترین کو دوبارہ کھولتا ہے، اور **ہسٹری بٹن** (اوپری دائیں طرف، آپ کے پروفائل کے ساتھ) تمام ٹولز میں محفوظ کیے گئے ہر سیشن کی فہرست بناتا ہے۔ سیشنز آلے پر مقامی ہوتے ہیں۔ انہیں منظم کرنے کے لیے، **پروجیکٹس** (نیچے) کھولیں۔
 
@@ -108,6 +118,8 @@
 - **صفائی کریں۔** کسی اثاثے کو مختلف گروپ میں دوبارہ زمرہ بند کریں، ایک شیئر کیا گیا برانڈ اثاثہ جو آپ استعمال نہیں کرتے اسے چھپائیں (اسے واپس لانے کے لیے **چھپے ہوئے دکھائیں** کے ساتھ)، یا اپنے اپ لوڈز کو یکسر حذف کریں۔
 
 ### اپنا پیلیٹ اور فونٹس کہیں بھی لے جائیں
+
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 کیٹلاگ کا **سواچز** پینل صرف حوالے کے لیے نہیں ہے — کسی رنگ کو کاپی کرنے کے لیے اس پر کلک کریں، یا اس فارمیٹ میں **پورا برانڈ پیلیٹ ڈاؤن لوڈ کریں** جو آپ کا دوسرا ٹول بولتا ہے:
 
@@ -154,6 +166,8 @@ Lolly کا مقصد ہر کسی کے لیے استعمال میں آرام دہ 
 مکمل کہانی کے لیے **[ایکسپورٹ اور فارمیٹس](/info/exporting.html)** دیکھیں — ایک فارمیٹ چننا، آؤٹ پٹ سائز اور پرنٹ یونٹس، شفافیت، ویڈیو، اور کاپی/شیئر۔ مختصراً: ایک فارمیٹ چنیں، اگر ضرورت ہو تو سائز سیٹ کریں، اور **ڈاؤن لوڈ کریں** (یا کلپ بورڈ پر **کاپی کریں**)۔
 
 ## Batch (Pro) موڈ
+
+![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&format=svg&filename=use-batch-toolbar)
 
 پاور یوزرز کے لیے، **Batch** (گیلری سے لنک شدہ، Pro فیچر فلیگ کے پیچھے محدود، جو بطور ڈیفالٹ آن ہے) ایک ساتھ کئی مختلف حالتیں رینڈر کرتا ہے — ایک گرڈ جہاں ہر رو ان پٹس کا ایک سیٹ ہوتی ہے، ایک ساتھ ایکسپورٹ کی جاتی ہے۔ کسی کارڈ کو درجن بھر زبانوں میں مقامی بنانے یا ہر سائز ویریئنٹ کو ایک ہی بار میں تیار کرنے کے لیے مثالی۔ ٹائپ کر کے، براہِ راست کسی اسپریڈ شیٹ سے پیسٹ کر کے، یا کوئی CSV امپورٹ کر کے (آپ ایک واپس ایکسپورٹ بھی کر سکتے ہیں) روز بھریں، اور فی رو فارمیٹ، سائز، اور آؤٹ پٹ فائل نام سیٹ کریں۔ پورے گرڈ کو ایک نامزد **batch سیشن** کے طور پر محفوظ کریں جو گیلری سے دوبارہ کھلتا ہے، اور ہر رو کو ایک واحد `.zip` کے طور پر ڈاؤن لوڈ کریں۔
 

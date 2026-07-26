@@ -20,6 +20,8 @@ Lolly produces a large volume of content. We take a strict data minimization app
 
 Feature flags turn parts of Lolly on or off. Usually an administrator controls these - with Lolly, you are in control.
 
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&filename=pd-feature-flags)
+
 ## How do I get the mobile or desktop apps?
 
 Anybody can distribute their own apps, the tools and configuration of those apps should vary widely depending on what audience it's intended for. So there's no one app unless you made it or someone relevant gives it to you.
@@ -93,9 +95,13 @@ trivial; the **content is the cost.**
 
 We win the war for governance with excellent conveinece and service. 
 
+![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
 ## Can Lolly edit and render my Figma, Penpot, Illustrator or InDesign files?
 
 Yes. Open **Layout Studio** and click **Import a design**: it accepts a native Figma **.fig** (Save local copy), a Penpot **.penpot** export, an Illustrator **.ai** or **.pdf**, an InDesign **.idml** (File → Export → InDesign Markup), or **any SVG** (the wide door - almost any design app exports it). Everything is parsed entirely on your device, no account or plugin needed.
+
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 Layers arrive as editable boxes on the open canvas: text stays retypable, shapes stay shapes, images join your on-device library, and type and colours conform to the brand globals. Save it and the layout becomes a reusable, URL-addressable template anyone with Lolly can refill - and you can mix in live tools (a QR code, a chart) that re-render on load. From there it renders like anything else in Lolly - SVG, PDF, PNG and the rest, reproducible from its URL. See [Import a design](/info/design-import.html).
 

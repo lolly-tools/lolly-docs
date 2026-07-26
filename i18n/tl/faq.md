@@ -18,6 +18,8 @@ Gumagawa ang Lolly ng malaking dami ng content. Sumusunod kami sa mahigpit na da
 
 ### Ano ang mga feature flag?
 
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&filename=pd-feature-flags)
+
 Binubuksan o isinasara ng feature flags ang mga bahagi ng Lolly. Karaniwan, isang administrator ang kumokontrol dito - pero sa Lolly, ikaw ang may kontrol.
 
 ## Paano ko makukuha ang mobile o desktop apps?
@@ -51,6 +53,8 @@ Itinataas ng Lolly ang lahat.
 
 ## Ano ang nagpapaiba sa utilities kumpara sa tools?
 
+![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
 **Basic na Sagot →** Hindi laging kailangang mag-render ng utilities kaya maaari itong magkaroon ng ibang UX.
 
 **Tunay na Sagot →** Ang dahilan kung bakit ma-host ang utilities sa loob ng Lolly Tools ay para magdagdag ng isa pang 'convenience layer' ng depensa upang mabawasan ang insentibo para sa data-exfiltration.
@@ -68,6 +72,8 @@ Ang mga site na ito at ang malawak nilang clone long-tail ay **hindi mapagkakati
 Nananalo kami sa digmaan para sa governance sa pamamagitan ng napakahusay na convenience at serbisyo.
 
 ## Kaya bang i-edit at i-render ng Lolly ang aking mga Figma, Penpot, Illustrator o InDesign files?
+
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 Oo. Buksan ang **Layout Studio** at i-click ang **Mag-import ng Disenyo**: tinatanggap nito ang native Figma **.fig** (Save local copy), isang Penpot **.penpot** export, isang Illustrator **.ai** o **.pdf**, isang InDesign **.idml** (File → Export → InDesign Markup), o **anumang SVG** (ang malawak na pinto - halos lahat ng design app ay maaaring mag-export nito). Lahat ay pino-parse nang ganap sa iyong device, walang kailangang account o plugin.
 

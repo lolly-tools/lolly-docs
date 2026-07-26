@@ -8,6 +8,10 @@ Allt i en profil finns **på enheten**, i webbläsarens lokala databas (IndexedD
 
 ## Vad som finns i en profil
 
+Inställningarna är den enda delen som ändrar hur appen ser tillbaka på dig. Temakorten är levande förhandsvisningar och tillämpas i samma stund du väljer ett, bara på den här enheten.
+
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
+
 | Del | Vad det är |
 |---|---|
 | **Namn** | Förnamn och efternamn. |
@@ -28,6 +32,8 @@ Ordet "profil" antyder en fast person, men i Lolly är det egentligen ett **skap
 
 ### Som individ
 
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+
 Standardläget. Profilen är du: ditt namn, din e-post, ditt porträttfoto. Ställ in den en gång så fyller din signatur, din bricka och din konferenslockup i sig själva. Det här är allt de flesta någonsin behöver.
 
 ### Som ett team
@@ -42,6 +48,10 @@ I Lolly är den rollen bara **ännu en profil du har till hands** - ett sparat p
 
 ## En installation, en aktiv profil - men du kan ha flera
 
+Lagring är där båda halvorna av det bor: mätaren redovisar varje byte den här installationen håller, kategori för kategori, och knapparna under den är hur du rensar eller tar med den.
+
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
+
 I varje given stund har en installation **en aktiv profil** - de uppgifter ett verktyg ser just nu. Det finns ingen profilväxlare inbyggd i appen; istället är varje profil ett **portabelt paket** (en enda `.zip`, se [nedan](#moving-a-profile-to-a-new-device)). Det är medvetet samma mekanism som att flytta till en ny enhet - en profil är en fil du kan spara, kopiera och läsa in.
 
 Så om du verkligen jonglerar flera sammanhang (du, ditt team, eventansvarig-hatten), håller du flera paket och läser in det du behöver:
@@ -53,6 +63,8 @@ Så om du verkligen jonglerar flera sammanhang (du, ditt team, eventansvarig-hat
 > Håll ett paket per sammanhang och döp om filerna efter vad de är (`LollyTools-events-2026.zip`, `LollyTools-me.zip`). Filen *är* profilen.
 
 ## Flytta en profil till en ny enhet
+
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
 
 Eftersom en profil är helt lokal är det enda sättet att få den till en tom installation - en ny bärbar dator, en nyligen återställd webbläsare, en kollegas maskin, en offline-burk - att **ta med filen**. Ingen inloggning återställer den åt dig, och det är hela poängen: inget lämnade någonsin din enhet från början.
 
@@ -68,6 +80,8 @@ Det som inte följer med: katalogcachen (den laddas ner igen på den nya enheten
 För exakt paketlayout, versionspolicy och integritetsregler, se **[Dataöverföring](/info/data-transfer.html)**; för hela genomgången steg för steg, **[Använda Lolly → Flytta till en annan enhet](/info/using.html#moving-to-another-device)**.
 
 ## Hur verktyg använder din profil
+
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
 
 Ett verktyg *förifyller* bara någonsin de profilfält det uttryckligen är byggt för att binda till:
 

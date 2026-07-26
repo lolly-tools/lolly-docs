@@ -50,7 +50,15 @@ Shrink an oversized PDF on-device, so nobody reaches for a third-party "compress
 
 All of these are on-device transforms: your file or data goes in, cleaned bytes come out, and **there is no server to upload to**. They are the deliberate opposite of the typical "upload your file to a stranger's website to clean it" tool that a well-meaning employee reaches for otherwise.
 
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data)
 
+Text Helper is the same bargain for text rather than files. It is the tabbed workbench an employee would otherwise go looking for on a stranger's site, and it declares no inputs at all because nothing it touches ever leaves the page.
+
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+
+Compress PDF completes the set: the oversized attachment shrinks under a quality setting you choose, on the machine that already holds it.
+
+![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=ov2-compress-pdf)
 
 ## Determinism & reproducibility
 
@@ -59,7 +67,13 @@ Every tool input is expressible as a URL parameter, and the same inputs produce 
 - **A URL is the artifact.** Commit the link, regenerate the asset on demand - no binaries checked into Git, no chasing "the latest version" in chat. Asset and tool IDs are permanent contracts, so a link minted today still resolves later.
 - **The CLI is the same render path** as the GUI, so build pipelines and the app never drift. Generate OG images, social cards, and data visuals at build time, reproducibly.
 
+Prompt to Image is determinism at its plainest: the text is the whole input, the typeset image is the whole output, and the same text always sets the same way.
+
+![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-prompt-to-image)
+
 ## Provenance & Content Credentials
+
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
 
 Exports can carry **Content Credentials** - a signed [C2PA](https://c2pa.org) manifest bound to a hash of the file's bytes. Any later change to the file breaks the seal, so a C2PA-aware verifier **detects alteration cryptographically, offline**. The credential is tamper-*evident*: it flags tampering rather than preventing it, which is precisely what makes fully offline verification possible.
 
@@ -75,6 +89,8 @@ Exports can carry **Content Credentials** - a signed [C2PA](https://c2pa.org) ma
 ## Encryption & passwording
 
 For files that must travel locked, everything happens on-device:
+
+![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&format=svg&filename=aud-pdf-lock)
 
 - **PDF open-password** - *Standard* is a 40-bit RC4 deterrent (opens anywhere, may travel in a link); *Strong* is **AES-256** (PDF 2.0), typed at export and never put in a link.
 - **Locked downloads** - a ZIP, a Projects folder, or a batch run can be locked whole: *Standard* ZipCrypto (weak, universal) or *Strong* **AES-256** (WinZip AE-2). Defence-in-depth: any PDF inside a Strong zip is *also* individually AES-256-locked, so it stays locked after unpacking.

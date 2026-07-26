@@ -68,7 +68,11 @@ Here's the payoff: an imported layout is an ordinary Layout Studio session, so o
 
 ### Open data and open tools
 
-The [community tool set](/info/builders.html) is open source and brand-agnostic - QR codes, street maps, filters, privacy utilities - and it renders against *your* brand the moment you activate it. Feed tools your own open data too: paste or drop a **CSV** or **JSON** table and a tool's repeating fields fill from it, one finished asset per row.
+The [community tool set](/info/builders.html) is open source and brand-agnostic - QR codes, street maps, filters, privacy utilities - and it renders against *your* brand the moment you activate it.
+
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
+Feed tools your own open data too: paste or drop a **CSV** or **JSON** table and a tool's repeating fields fill from it, one finished asset per row.
 
 ## 3. Make something, then share or automate it
 
@@ -78,6 +82,10 @@ With a brand active and your material in hand, every tool produces a finished fi
 - **Share a link.** Every tool state is a URL, so a finished asset is reproducible and parameter-addressable - commit the link, regenerate on demand.
 - **Do it in bulk.** Drive a template from a spreadsheet in the [batch grid](/info/exporting.html): one finished asset per row.
 - **Automate it.** The same render runs from the [CLI](/info/cli.html) and from an [AI agent](/info/ai-agents.html) - a URL is the API.
+
+"A URL is the API" is literal. The chart below was not drawn by anyone: its type, its heading and its whole data table were typed into the address bar, and the same link renders the same chart on any device.
+
+![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&filename=vt-d3-url-chart)
 
 ## Where to go next
 

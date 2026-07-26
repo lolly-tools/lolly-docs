@@ -66,9 +66,17 @@ Inilah hasilnya: tata letak yang diimpor adalah sesi Layout Studio biasa, jadi b
 
 ### Data terbuka dan tool terbuka
 
-[Kumpulan tool komunitas](/info/builders.html) bersifat sumber terbuka dan tidak terikat brand - kode QR, peta jalan, filter, utilitas privasi - dan semuanya di-render sesuai brand *Anda* begitu Anda mengaktifkannya. Berikan pula data terbuka Anda sendiri kepada tool: tempel atau letakkan tabel **CSV** atau **JSON** dan kolom berulang sebuah tool akan terisi darinya, satu aset jadi per baris.
+[Kumpulan tool komunitas](/info/builders.html) bersifat sumber terbuka dan tidak terikat brand - kode QR, peta jalan, filter, utilitas privasi - dan semuanya di-render sesuai brand *Anda* begitu Anda mengaktifkannya.
+
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
+Berikan pula data terbuka Anda sendiri kepada tool: tempel atau letakkan tabel **CSV** atau **JSON** dan kolom berulang sebuah tool akan terisi darinya, satu aset jadi per baris.
 
 ## 3. Buat sesuatu, lalu bagikan atau otomatiskan
+
+"URL adalah API-nya" itu literal. Grafik di bawah ini tidak digambar oleh siapa pun: jenisnya, judulnya, dan seluruh tabel datanya diketikkan ke bilah alamat, dan tautan yang sama akan me-render grafik yang sama di perangkat apa pun.
+
+![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&filename=vt-d3-url-chart)
 
 Dengan brand aktif dan materi Anda di tangan, setiap tool menghasilkan berkas jadi:
 

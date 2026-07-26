@@ -8,6 +8,10 @@ Alt i en profil finnes **på enheten**, i nettleserens lokale database (IndexedD
 
 ## Hva som er i en profil
 
+Innstillingene er den eneste delen som endrer hvordan appen ser tilbake på deg. Temakortene er levende forhåndsvisninger og tas i bruk i det øyeblikket du velger ett, bare på denne enheten.
+
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
+
 | Del | Hva det er |
 |---|---|
 | **Navn** | Fornavn og etternavn. |
@@ -28,6 +32,8 @@ Ordet «profil» antyder én fast person, men i Lolly er det egentlig en **skape
 
 ### Som enkeltperson
 
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+
 Standardvalget. Profilen er deg: navnet ditt, e-posten din, portrettbildet ditt. Sett den opp én gang, så fyller signaturen din, merket ditt og konferanselockupen din seg selv inn. Dette er alt de fleste noensinne vil trenge.
 
 ### Som et team
@@ -42,6 +48,10 @@ I Lolly er den rollen bare **en annen profil du har for hånden** - en lagret pa
 
 ## Én installasjon, én aktiv profil - men du kan ha flere
 
+Lagring er der begge halvdelene av det bor: måleren gjør rede for hver byte denne installasjonen holder på, kategori for kategori, og knappene under den er måten du rydder eller tar den med deg.
+
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
+
 I ethvert øyeblikk har en installasjon **én aktiv profil** - detaljene et verktøy ser akkurat nå. Det finnes ingen profilbytter inne i appen; i stedet er hver profil en **portabel pakke** (en enkelt `.zip`, se [nedenfor](#moving-a-profile-to-a-new-device)). Det er bevisst den samme mekanismen som å flytte til en ny enhet - en profil er en fil du kan lagre, kopiere og laste inn.
 
 Så hvis du virkelig sjonglerer flere kontekster (deg, teamet ditt, eventansvarlig-hatten), holder du på flere pakker og laster inn den du trenger:
@@ -53,6 +63,8 @@ Så hvis du virkelig sjonglerer flere kontekster (deg, teamet ditt, eventansvarl
 > Hold én pakke per kontekst og gi filene nytt navn etter hva de er (`LollyTools-events-2026.zip`, `LollyTools-me.zip`). Filen *er* profilen.
 
 ## Flytte en profil til en ny enhet
+
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
 
 Fordi en profil er helt lokal, er den eneste måten å få den inn på en blank installasjon - en ny bærbar datamaskin, en nylig tilbakestilt nettleser, en kollegas maskin, en offline-boks - å **ta med filen**. Ingen innlogging gjenoppretter den for deg, og det er hele poenget: ingenting forlot noensinne enheten din i utgangspunktet.
 
@@ -68,6 +80,8 @@ Det som ikke følger med: katalog­mellomlageret (det laster seg ned på nytt p�
 For den eksakte pakkestrukturen, versjonspolicyen og integritetsreglene, se **[Dataoverføring](/info/data-transfer.html)**; for hele gjennomgangen fra start til slutt, **[Bruke Lolly → Flytte til en annen enhet](/info/using.html#moving-to-another-device)**.
 
 ## Hvordan verktøy bruker profilen din
+
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
 
 Et verktøy *forhåndsutfyller* bare noensinne de profilfeltene det eksplisitt er bygget for å binde til:
 

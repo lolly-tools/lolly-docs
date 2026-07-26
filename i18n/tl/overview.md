@@ -18,6 +18,8 @@ Ang resulta ay **kasaganaan**: may tamang signage ang bawat event, tumutugma sa 
 
 ### Saan ito bagay sa larangan
 
+![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-gallery-landscape)
+
 | Kakayahan | Canva | Mga Brand Portal | Illustrator | Figma / Penpot | **Lolly** |
 |---|---|---|---|---|---|
 | Malawakang paggawa ng content | bahagya | ✗ | ✗ | ✗ | **✓** |
@@ -37,6 +39,40 @@ Malinaw ang puwang: walang kahit ano sa kasalukuyang larangan ang nagbibigay sa 
 **Gamitin ito para sa:** Mabilis na paggawa ng operationalised creative assets - event tile, name badge, lagda, CVE alert, QR code, social card, consignment label, structured report.
 
 **Huwag itong gamitin para sa:** Bespoke hero content.
+
+---
+
+## Ang lifecycle ng isang kampanya
+
+![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-lifecycle-chart)
+
+Ang pinakamalinaw na paraan para matanto kung ano ang Lolly ay hindi isang listahan ng feature - ito ay ang pagsubaybay sa isang asset habang dumadaan ito sa kamay-kamay. Panoorin ang isang localized na campaign card habang gumagalaw ito sa buong organisasyon:
+
+1. **Ang creative ang nagtatakda ng mga patakaran.** Isang designer ang gumagawa ng base template sa Layout Studio, na hard-coded na ang typography at mga color variable ng brand. Hindi siya gumagawa ng isang card - ginagawa niya ang pundasyon nang *isang beses* para hindi na ito kailanganin pang i-localize nang manu-mano.
+2. **Ang developer ang nagpapalaki nito.** Ang parehong template ay naka-wire sa isang nightly pipeline sa pamamagitan ng CLI, kaya awtomatikong nabubuo ang bagong chart o bagong language variant - walang designer na magbubukas muli ng file.
+3. **Ginagamit lang ito ng producer.** Isang sales rep, offline sa eroplano, ang nagbubukas ng parehong tool at gumagawa ng perpektong on-brand na deck para sa isang client meeting. Walang kailangang design skill, walang network, walang hintayan.
+
+Ang "fresh chart" sa ikalawang hakbang ay isang render na katulad nito, gawa mula sa isang data string at ilang parameter nang wala nang nagbukas ng design file:
+
+Ang punto ay hindi na mabuti ang Lolly para sa mga designer *at* mabuti para sa mga developer *at* mabuti para sa sales, bawat isa nang hiwalay. Isa itong **relay race**: pinalalaki ng developer ang unang gawa ng creative, at iyon naman ang nagbibigay-lakas sa producer. Ang walang-hirap na karanasan ng non-technical na rep sa eroplano ay *posible* lamang dahil sa higpit na itinakda ng designer at inilunsad ng developer.
+
+Iyan ang force multiplier. Hindi ito drawer ng magkahiwalay na tool para sa magkahiwalay na role - isa itong deterministic na asset lifecycle na hinahawakan ng bawat role, at pinaparami ng bawat kamay na dinadaanan nito ang halaga ng nauna.
+
+---
+
+## Isang approval, sampung libong asset
+
+![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&format=svg&filename=ov2-batch-grid)
+
+Dahil nasa tool ang approval at hindi sa file (tingnan ang [Paano naihahambing ang Lolly](/info/positioning.html)), hindi na problema sa review ang scale. Aprubahan nang isang beses ang isang localized na social-card tool, tapos gumawa ng **10,000 asset sa 12 wika** mula sa isang spreadsheet - at wala ni isa sa kanila ang nangangailangan ng bagong compliance check mula sa legal o brand, dahil naaprubahan na ang template na pinanggalingan nilang lahat.
+
+Ang parehong deterministic na tool ay umaabot sa scale na iyon sa tatlong paraan, at lahat ay gumagawa ng iisang, pre-approved na output:
+
+- **Isang tao, sa loob ng app.** Ang `/pro` batch grid: i-paste o i-import ang mga row, kumuha ng isang tapos na asset kada row, i-download ang zip. Walang design skill, walang ticket, walang hintayan.
+- **Isang developer, mula sa command line.** Pinapatakbo ng CLI ang *parehong* engine at ang *parehong* render path nang headless, kaya puwedeng i-sequence ang tool sa lahat ng 10,000 row sa loob ng isang script o isang nightly pipeline. Isang `lolly <tool> --field=…` na tawag sa loob ng loop ang buong integration.
+- **Isang sistema o isang AI agent, sa pamamagitan ng MCP.** Ang parehong tool na pinapatakbo nang programmatic, sa parehong fidelity at sa mas malaki pang scale - dahil hindi mababagot ang makina habang pumapasok ang libu-libong file.
+
+Isang set ng brand constraints, itinakda nang isang beses ng designer; tatlong ruta tungo sa iisang pre-approved na output - at ang ruta ng makina ang pinakamalayong umaabot, dahil hindi ito napapagod habang dumarating ang mga file.
 
 ---
 
@@ -190,6 +226,11 @@ lolly/
 Tumatakbo ang platform sa ilang surface - web PWA, Tauri desktop/mobile, ang scriptable na CLI, at ang interactive na TUI. Ginagamit ng lahat ng ito ang parehong engine at ang parehong tool files.
 
 ### Web (PWA) - pangunahing distribution
+
+![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&format=svg&filename=aud-web-split)
+
+![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&format=png&filename=ov2-phone-audiogram)
+
 Naka-host sa isang SUSE-controlled na URL. Gumagana offline sa sandaling na-cache na ng service worker ang mga tool at asset. Dito gagamitin ng karamihan sa mga empleyado, vendor, at partner ang platform. Walang kailangang account - naka-store ang state sa IndexedDB kada device.
 
 Responsive ang web shell mula sa iisang layout. Sa desktop, ang isang tool ay isang resizable na controls sidebar sa tabi ng preview stage na may trackpad-native na canvas navigation (Cmd/Ctrl-wheel o pinch para mag-zoom paikot sa cursor, Space- o middle-drag para mag-pan, mga `0`/`1`/`+`/`−` key, at isang Fit/% HUD). Sa mobile (≤640px) ang controls ay nagiging isang top-anchored na sheet na may drag grip na sumasnap sa peek/half/full (nagto-toggle sa tap) sa ibabaw ng static na full-screen preview, at isang floating **Render** button ang nagbubukas ng mga **Export** control sa isang bottom-sheet popup. Nakukuha ng touch ang pinch-zoom at drag-pan sa preview. Magkapareho ang render path at ang export controls sa dalawa - ang chrome lang ang nagre-reflow.
@@ -200,6 +241,9 @@ Responsive ang web shell mula sa iisang layout. Sa desktop, ang isang tool ay is
 Packaged na native app (maliit na footprint sa pamamagitan ng Tauri). Nagbibigay ito ng ganap na offline availability, filesystem access para sa mga CLI-dependent na tool (PDF Smasher, Font Outliner), at camera access. Naka-iskedyul para sa tooling enhancement sa kalagitnaan ng 2026.
 
 ### CLI
+
+Ang parehong tool sa lapad ng telepono, nang walang pangalawang layout na kailangang alagaan: ang mga kontrol ay nagiging isang sheet sa itaas, hawak ng preview ang buong screen, at lumulutang sa ibabaw nito ang render pill.
+
 `lolly <tool-id> [--input=value ...] --output=file.png`
 
 Puwedeng i-invoke ng mga desktop user ang maraming tool mula sa terminal. Nilo-load ng CLI shell ang parehong engine, gumagawa ng jsdom DOM, pinapatakbo ang parehong render path, at isinusulat ang file. Ang URL mode ang transport - hindi ang CLI ay isang hiwalay na implementation. Ginagarantiya nito na magkapareho ang output ng CLI at GUI.
@@ -216,9 +260,13 @@ lolly qr-code                # nililista ang mga input para sa tool na iyon
 
 Ang interactive na kaanib ng CLI: isang full-screen, keyboard-first na terminal app (ginawa gamit ang Ink) para sa pag-browse ng mga tool, pagpuno ng mga input, pag-save ng projects, at pag-export - lahat nang walang GUI. **Muling ginagamit ng host bridge nito ang implementation ng CLI** para sa mga DOM-free na format (SVG/EMF/EPS/HTML + text/data), at nagdaragdag ito ng on-disk state sa ilalim ng `~/.lolly` kasama ang isang opt-in na inline preview. Bukod dito, mayroon itong **browser render tier**: isang scoped na headless Chromium (ang parehong ini-install ng MCP server) na gumagawa ng raster/PDF/video at live-URL capture on demand - pinapatakbo ang isang built copy ng web shell para magkapareho ang output, at nagla-launch lamang kapag unang beses kang nag-export ng ganoong format. Kaya ang `url-shot` (na may crop + recolor + vector PDF/SVG) at ang bawat raster/pdf na tool ay tumatakbo rin sa terminal. Tingnan ang [TUI guide](/info/tui.html).
 
+Nasaan mang surface ka, ang Capabilities tab sa dashboard ang buong mapa ng lahat ng idinedeklara ng platform na kaya nito - nakagrupo at madaling basahin nang hindi nagbubukas ng kahit isang tool.
+
 ---
 
 ## Mga kategorya ng tool
+
+![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-utilities)
 
 Naka-tag ang mga tool ng isang `category` sa manifest nila para sa gallery grouping.
 
@@ -247,6 +295,8 @@ Ang **Strip Hidden Data** ang unang **on-device utility** (`privacy: "on-device"
 Naisaayos na ang mga desisyong ito. Ang pagbabago sa kahit alin sa mga ito ay isang malaking undertaking - hinuhubog nila ang bawat ibang desisyon sa codebase.
 
 ### 1. Mga declarative na tool, na may imperative na escape hatch
+
+![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-street-map-controls)
 
 Ang isang tool ay isang manifest (`tool.json`) + isang template (`template.html`) + opsyonal na `hooks.js`.
 
@@ -293,6 +343,10 @@ Ginagawa nitong matibay sa paglipas ng mga taon ang mga naka-save na tool state 
 
 ### 5. First-class ang URL mode
 
+![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&format=svg&filename=aud-url-mode-qr)
+
+![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=%23tool-canvas&filename=ov2-url-palette)
+
 Dapat maipahayag ang bawat input bilang isang URL parameter:
 
 ```
@@ -310,6 +364,8 @@ Web shell: IndexedDB. Tauri: filesystem. CLI: in-memory. Ang nakikita lang ng mg
 Puwedeng mag-save ang mga user ng maraming named na edit slot kada tool at bumalik sa bawat session sa ibang pagkakataon. Walang kailangang gumawa ng account; per-device ang state. Dahil ang bridge lang ang tanging seam, ang per-device na state na iyon ay *portable* din: binabasa ulit ng `shells/web/src/data-transfer.ts` ang lahat sa pamamagitan ng `host.profile`/`host.state`/`host.assets` papunta sa iisang `lolly-backup` zip na puwedeng i-import sa kahit anong ibang install - ang offline na sagot sa "lumipat sa bagong device" na hindi na kailangan ng server (buong spec: `docs/data-transfer.md`). Ang SUSE ID integration (multi-device sync) ay isang darating na milestone sa ibabaw nito.
 
 ### 7. Sinasagot ng maturity tags ang "brand approved" na risk nang structural
+
+Dahil kasama sa link ang bawat input, ibang tapos na asset na ang isang pagbabago sa parameter. Ang buong palette na ito ay isang seed color, isang harmony at isang step count lamang:
 
 Idineklara ng bawat tool ang `status: official | community | experimental` sa manifest nito. Nag-so-sort ang gallery ayon sa status. Awtomatikong winawatermark ng mga experimental na tool ang mga export nila - inilalapat ang watermark ng `host.export.render`, hindi ng tool, kaya hindi ito puwedeng i-opt-out ng isang non-official na tool author.
 
@@ -334,6 +390,8 @@ Nakatira ang logic sa `hooks.js` kung saan ito explicit at reviewable. Mga avail
 
 ### 10. Ang mga tool ay kino-compose ang mga tool
 
+![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-slides-deck)
+
 Puwedeng i-embed ng isang tool ang render ng **ibang** tool nang walang tool-to-tool na imports - nire-resolve ang composition ng engine, hindi kailanman ng tool code. May dalawang surface:
 
 - **Declarative na manifest** - `composes: [{ id, tool, inputs, format?, width?, height? }]`. Nire-render ng engine ang named na child at inilalagay ang resulta sa logic-less na template bilang `{{asset <id>}}`. Kino-compose ngayon ng `event-name-badge` ang `qr-code` bilang isang SVG.
@@ -354,6 +412,10 @@ I-compose ang render ng kahit anong tool: nananatiling totoong vector ang isang 
 ---
 
 ## Lifecycle, mula simula hanggang katapusan
+
+![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&format=svg&filename=aud-export-popup)
+
+Nakabuo sa pangalawang surface na iyon ang Slides tool: puwedeng maglaman ang kahit aling slot sa kahit aling slide ng ibang Lolly tool sa halip na isang imahe.
 
 Nagbubukas ang isang user ng `lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H`:
 

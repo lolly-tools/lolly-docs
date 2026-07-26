@@ -18,6 +18,8 @@ Resultatet er **overflod**: hvert arrangement har korrekt skilting, hver CVE-var
 
 ### Hvor den passer inn i landskapet
 
+![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-gallery-landscape)
+
 | Funksjon | Canva | Merkevareportaler | Illustrator | Figma / Penpot | **Lolly** |
 |---|---|---|---|---|---|
 | Massegenerering av innhold | delvis | ✗ | ✗ | ✗ | **✓** |
@@ -37,6 +39,40 @@ Gapet er tydelig: ingenting i det eksisterende landskapet gir oss begrensningsst
 **Bruk det til:** Rask generering av operasjonalisert kreativt materiale - arrangementsfliser, navnebrikker, signaturer, CVE-varsler, QR-koder, sosiale kort, fraktetiketter, strukturerte rapporter.
 
 **Ikke bruk det til:** Skreddersydd hero-innhold.
+
+---
+
+## Livssyklusen til en kampanje
+
+![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-lifecycle-chart)
+
+Den klareste måten å se hva Lolly er, er ingen funksjonsliste - det er å følge én enkelt ressurs mens den går fra hånd til hånd. Se hvordan ett lokalisert kampanjekort beveger seg gjennom organisasjonen:
+
+1. **Kreatøren setter reglene.** En designer lager grunnmalen i Layout Studio og hardkoder merkevarens typografi- og fargevariabler. Hun lager ikke ett kort - hun gjør grunnarbeidet *én gang*, slik at hun aldri må lokalisere det for hånd igjen.
+2. **Utvikleren skalerer det.** Akkurat samme mal kobles inn i en nattlig pipeline via CLI, slik at et ferskt diagram eller en ny språkvariant genereres automatisk - ingen designer åpner filen på nytt.
+3. **Produsenten bare bruker det.** En selger åpner samme verktøy offline på et fly og genererer et helt merkevareriktig deck til et kundemøte. Ingen designkompetanse, ingen nettverkstilgang, ingen venting.
+
+Det «ferske diagrammet» i steg to er en rendering som denne, laget fra en datastreng og en håndfull parametere uten at noen åpner en designfil:
+
+Poenget er ikke at Lolly er bra for designere *og* bra for utviklere *og* bra for salg, hver for seg i et vakuum. Det er et **stafettløp**: kreatørens første arbeid skaleres av utvikleren, som i sin tur gir produsenten kraft. Den friksjonsfrie opplevelsen for den ikke-tekniske selgeren på flyet er bare *mulig* på grunn av grundigheten designeren la til grunn og utvikleren rullet ut.
+
+Det er kraftmultiplikatoren. Lolly er ingen skuff med separate verktøy for separate roller - det er én deterministisk livssyklus for en ressurs som hver rolle er innom, og hver hånd den går gjennom, mangedobler verdien av den forrige.
+
+---
+
+## Én godkjenning, ti tusen ressurser
+
+![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&format=svg&filename=ov2-batch-grid)
+
+Fordi godkjenningen ligger i verktøyet og ikke i filen (se [Hvordan Lolly sammenlignes](/info/positioning.html)), slutter skala å være et gjennomgangsproblem. Godkjenn et verktøy for lokaliserte sosiale kort én gang, og generer deretter **10 000 ressurser på 12 språk** fra et regneark - og ikke én av dem trenger en ny etterlevelsessjekk fra juridisk eller merkevareteamet, fordi malen de alle kommer fra, allerede var godkjent.
+
+Det samme deterministiske verktøyet når den skalaen på tre måter, som alle gir identisk, forhåndsgodkjent utdata:
+
+- **Et menneske, i appen.** Batch-rutenettet på `/pro`: lim inn eller importer radene, få én ferdig ressurs per rad, last ned zip-filen. Ingen designkompetanse, ingen sak i køen, ingen venting.
+- **En utvikler, fra kommandolinjen.** CLI-en kjører *samme* motor og *samme* renderingsvei headless, så verktøyet kan kjøres over alle 10 000 radene i et skript eller en nattlig pipeline. Ett `lolly <tool> --field=…`-kall i en løkke er hele integrasjonen.
+- **Et system eller en KI-agent, via MCP.** Samme verktøy styrt programmatisk, med samme kvalitet og i enda større skala - for en maskin blir ikke lei mens tusenvis av filer ruller inn.
+
+Ett sett merkevareregler, fastsatt én gang av en designer; tre veier til identisk forhåndsgodkjent utdata - og maskinveien skalerer aller lengst, for den blir aldri trøtt mens filene ruller inn.
 
 ---
 
@@ -190,6 +226,11 @@ lolly/
 Plattformen kjører på flere overflater - web-PWA, Tauri desktop/mobil, den skriptbare CLI-en og den interaktive TUI-en. Alle bruker samme motor og de samme verktøyfilene.
 
 ### Web (PWA) - primær distribusjon
+
+![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&format=svg&filename=aud-web-split)
+
+![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&format=png&filename=ov2-phone-audiogram)
+
 Driftet på en SUSE-kontrollert URL. Fungerer offline når service workeren har mellomlagret verktøy og ressurser. Det er her de fleste ansatte, leverandører og partnere vil bruke plattformen. Ingen konto kreves - tilstand lagres i IndexedDB per enhet.
 
 Nettskallet er responsivt fra ett enkelt oppsett. På skrivebordet er et verktøy en justerbar sidepanel med kontroller ved siden av en forhåndsvisningsflate, med trackpad-native canvas-navigasjon (Cmd/Ctrl-hjul eller knip for å zoome rundt markøren, mellomrom- eller midtre-dra for å panorere, tastene `0`/`1`/`+`/`−`, og en Fit/%-HUD). På mobil (≤640px) blir kontrollene et toppforankret ark med et draghåndtak som smetter til kikk/halv/full (trykk veksler), over en statisk fullskjerms forhåndsvisning, og en flytende **Render**-knapp åpner **Eksport**-kontrollene i en bunnark-popup. Touch får knipe-zoom og dra-panorering på forhåndsvisningen. Renderingsveien og eksportkontrollene er identiske i begge - bare kromet omorganiseres.
@@ -200,6 +241,9 @@ Nettskallet er responsivt fra ett enkelt oppsett. På skrivebordet er et verktø
 Pakket som en nativ app (lite fotavtrykk via Tauri). Gir full offline-tilgjengelighet, filsystemtilgang for CLI-avhengige verktøy (PDF Smasher, Font Outliner), og kameratilgang. Planlagt for verktøyforbedring midt i 2026.
 
 ### CLI
+
+Det samme verktøyet i telefonbredde, uten et andre oppsett å vedlikeholde: kontrollene blir et ark øverst, forhåndsvisningen fyller hele skjermen, og render-knappen flyter over den.
+
 `lolly <tool-id> [--input=value ...] --output=file.png`
 
 Skrivebordsbrukere kan kalle mange verktøy fra terminalen. CLI-skallet laster samme motor, oppretter en jsdom-DOM, kjører samme renderingsvei, og skriver filen. URL-modus er transporten - CLI-en er ikke en separat implementasjon. Dette garanterer at CLI- og GUI-resultater er identiske.
@@ -216,9 +260,13 @@ lolly qr-code                # lister inndata for det verktøyet
 
 Den interaktive motparten til CLI-en: en fullskjerms, tastaturførst terminal-app (bygget på Ink) for å bla i verktøy, fylle ut inndata, lagre prosjekter og eksportere - helt uten et GUI. Vertsbroen dens **gjenbruker CLI-ens implementasjon** for de DOM-frie formatene (SVG/EMF/EPS/HTML + tekst/data), og legger til tilstand på disk under `~/.lolly` pluss en valgfri inline forhåndsvisning. I tillegg har den et **nettleser-rendringsnivå**: en avgrenset hodeløs Chromium (den samme MCP-serveren installerer) som produserer raster/PDF/video og direkte URL-capture på forespørsel - den styrer en bygget kopi av nettskallet slik at resultatet blir identisk, og starter først når du eksporterer et slikt format for første gang. Så `url-shot` (med beskjæring + omfarging + vektor-PDF/SVG) og alle raster-/pdf-verktøy kjører i terminalen også. Se [TUI-guiden](/info/tui.html).
 
+Uansett hvilken flate du er på, er Capabilities-fanen i dashbordet det fullstendige kartet over hva plattformen erklærer at den kan, gruppert og lesbart uten at du åpner et eneste verktøy.
+
 ---
 
 ## Verktøykategorier
+
+![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-utilities)
 
 Verktøy merkes med en `category` i manifestet for galleri-gruppering.
 
@@ -247,6 +295,8 @@ Verktøy klassifiseres også etter status: `official` (merkevaregodkjent, ingen 
 Disse beslutningene er fastsatt. Å endre noen av dem er en stor oppgave - de former alle andre beslutninger i kodebasen.
 
 ### 1. Deklarative verktøy, med en imperativ nødutgang
+
+![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-street-map-controls)
 
 Et verktøy er et manifest (`tool.json`) + en mal (`template.html`) + valgfri `hooks.js`.
 
@@ -293,6 +343,10 @@ Dette gjør at lagrede verktøytilstander og URL-delte lenker holder seg over fl
 
 ### 5. URL-modus er førsteklasses
 
+![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&format=svg&filename=aud-url-mode-qr)
+
+![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=%23tool-canvas&filename=ov2-url-palette)
+
 Hver inndata må kunne uttrykkes som en URL-parameter:
 
 ```
@@ -310,6 +364,8 @@ Nettskall: IndexedDB. Tauri: filsystem. CLI: i minnet. Verktøy ser bare `host.s
 Brukere kan lagre flere navngitte redigeringsplasser per verktøy og komme tilbake til hver økt senere. Ingen kontooppretting kreves; tilstand er per enhet. Fordi broen er den eneste sømmen, er denne per-enhet-tilstanden også *portabel*: `shells/web/src/data-transfer.ts` leser alt ut igjen via `host.profile`/`host.state`/`host.assets` til en enkelt `lolly-backup`-zip som importeres på en hvilken som helst annen installasjon - det offline svaret på «flytt til en ny enhet» som ikke trenger en server (full spesifikasjon: `docs/data-transfer.md`). SUSE ID-integrasjon (synkronisering på tvers av enheter) er en fremtidig milepæl oppå dette.
 
 ### 7. Modenhetstagger svarer strukturelt på risikoen «merkevaregodkjent»
+
+Fordi hver inndata reiser med i lenken, er en endret parameter en annen ferdig ressurs. Hele denne paletten er én startfarge, en harmoni og et antall trinn:
 
 Hvert verktøy deklarerer `status: official | community | experimental` i manifestet. Galleriet sorterer etter status. Eksperimentelle verktøy vannmerker eksportene sine automatisk - vannmerket påføres av `host.export.render`, ikke av verktøyet, så det kan ikke velges bort av en ikke-offisiell verktøyforfatter.
 
@@ -334,6 +390,8 @@ Logikk lever i `hooks.js`, der den er eksplisitt og kan gjennomgås. Tilgjengeli
 
 ### 10. Verktøy komponerer verktøy
 
+![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-slides-deck)
+
 Et verktøy kan bygge inn **et annet** verktøys rendering uten verktøy-til-verktøy-importer - komposisjon løses opp av motoren, aldri av verktøykode. Det finnes to overflater:
 
 - **Deklarativt manifest** - `composes: [{ id, tool, inputs, format?, width?, height? }]`. Motoren rendrer det navngitte barnet og plasserer resultatet i den logikkfrie malen som `{{asset <id>}}`. `event-name-badge` komponerer `qr-code` som en SVG i dag.
@@ -354,6 +412,10 @@ Komponer et hvilket som helst verktøys rendering: et **SVG**-barn forblir en ek
 ---
 
 ## Livssyklus, fra start til slutt
+
+![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&format=svg&filename=aud-export-popup)
+
+Slides-verktøyet er bygget på den andre flaten: hver slot på hvert slide kan inneholde et annet Lolly-verktøy i stedet for et bilde.
 
 En bruker åpner `lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H`:
 

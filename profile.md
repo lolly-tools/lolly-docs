@@ -22,6 +22,10 @@ None of this is required. A blank profile is a perfectly good profile; you fill 
 
 ![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
 
+Preferences are the one part that changes how the app looks back at you. The theme cards are live previews and apply the moment you pick one, on this device only.
+
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
+
 ## A profile is a context, not just a person
 
 The word "profile" suggests one fixed person, but in Lolly it's really a **creating context** - *who you are while you make this thing*. That context can be three different shapes, and Lolly handles all of them the same way.
@@ -29,6 +33,8 @@ The word "profile" suggests one fixed person, but in Lolly it's really a **creat
 ### As an individual
 
 The default. The profile is you: your name, your email, your headshot. Set it once and your signature, your badge, your conference lockup all fill themselves in. This is what most people will ever need.
+
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
 
 ### As a team
 
@@ -50,6 +56,10 @@ So if you genuinely juggle several contexts (you, your team, the event-manager h
 - **Layering:** importing *without* clearing first **merges** - the imported profile, sessions, and images land on top of what's already there, replacing anything with the same name and leaving the rest. Handy for pulling one team's saved sessions into your own setup; not what you want if you need a clean role boundary.
 - **Side by side:** because everything is device-scoped, a separate browser profile, a separate user account, or a second installed PWA each carries its own independent Lolly profile. Run your personal install and the event kiosk install at once, no switching.
 
+Storage is where both halves of that live: the meter accounts for every byte this install is holding, category by category, and the buttons under it are how you clear or carry it.
+
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
+
 > Keep a bundle per context and rename the files for what they are (`LollyTools-events-2026.zip`, `LollyTools-me.zip`). The file *is* the profile.
 
 ## Moving a profile to a new device
@@ -60,6 +70,8 @@ Under **Profile → Storage → Move to another device**:
 
 - **Export my data** downloads one `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - named for the profile it belongs to, with a per-day sequence number so repeat exports don't collide (name parts are dropped when the profile doesn't have them). It contains your profile, every saved session (with its thumbnail), your uploaded images, and your preferences (theme, layout, local activity stats).
 - **Import data…** on the other install reads that file back in and you pick up exactly where you left off.
+
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
 
 The bundle is a plain, self-contained zip, so it travels by **any** means - USB, AirDrop, a network share, email-to-yourself - and the target can be completely offline. Each part is checksummed, so a file damaged in transit is caught on import rather than restored half-broken. Import **merges** (same-named profile/session/image is overwritten; everything else is kept), so it never wipes a target that was already in use.
 
@@ -74,6 +86,8 @@ A tool only ever *pre-fills* the profile fields it was explicitly built to bind:
 **Explicit binding.** A tool author marks an input as drawing from the profile (`bindToProfile: "firstname"`, `"email"`, `"headshot"`, …). When the tool opens, that input pre-fills from your profile - and you can still override it for that one session without changing the profile. Pre-fill is a local convenience and happens whether or not **Use my details** is on.
 
 **The opt-in (provenance).** When you export an asset, your details optionally ride along as **provenance** - an author/credit line embedded in the file's metadata (PNG, PDF, SVG, …) - so a finished asset can say who made it. *This* is what **Use my details** governs: leave it off and the export still carries the "Made with Lolly" tool/platform attribution, but no personal author/contact line is embedded. (The same opt-in sets the author on **/pro** batch runs.) (Tool authors: see [Authoring Tools → `bindToProfile`](/info/authoring-tools.html#bindtoprofile) and [Host API → `host.profile`](/info/host-api.html#host-profile).)
+
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
 
 ## Profile vs Platform vs Capabilities
 

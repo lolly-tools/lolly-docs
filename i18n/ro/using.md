@@ -6,6 +6,8 @@ Un ghid practic despre cum să *folosești* efectiv aplicația - deschiderea unu
 
 ## Deschiderea unui instrument
 
+![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Fct%3Dhorizontal-bar%26t%3DQuarterly%2520revenue%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&format=svg&filename=vt-tool-split-view)
+
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
 ![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
@@ -17,6 +19,8 @@ Fiecare instrument este o vedere împărțită: **controale** pe o parte, o **pr
 > Câteva instrumente (precum **Layout Studio**) se deschid în schimb ca un **canvas liber** - o suprafață fără chrome, cu manipulare directă, în care tragi, redimensionezi, rotești și aliniezi (snap) casete de text, forme și imagini, iar dublu-click editează textul pe loc. Exportă prin același traseu de randare ca orice alt instrument, deci canvas-ul *este* fișierul. Vezi [Canvas-ul liber](#the-free-canvas-layout-studio) mai jos.
 
 ## Canvas-ul (previzualizarea)
+
+![The zoom HUD in the corner of the canvas - minus, the live percentage, plus, Fit, then the theme and sound toggles](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=.stage-nav%7Bopacity%3A1!important%7D&cropSelector=.stage-nav&format=svg&filename=use-zoom-hud)
 
 Previzualizarea arată întotdeauna exact ce se va exporta.
 
@@ -48,12 +52,16 @@ Instrumentele cu canvas liber adaugă o suprafață de lucru *în jurul* planșe
 
 ## Pe telefon
 
+![A tool on a phone-width screen - controls as a sheet up top, the generated palette filling the preview below, and the render pill floating bottom-centre](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3Df97316%26harmony%3Dadjacent-3%26steps%3D9&width=430&height=900&dpi=192&waitMs=2200&format=svg&filename=vt-phone-palette)
+
 Pe ecrane înguste, layout-ul se reflowează pe o singură coloană:
 
 - **Controalele devin o foaie** sus, cu un **mâner de tragere** pe marginea inferioară. Trage mânerul pentru a-i redimensiona - se fixează pe **peek / half / full** - sau **atinge** mânerul pentru a comuta între restrâns ↔ extins. Previzualizarea umple spațiul de dedesubt și rămâne vizibilă cât timp editezi.
 - Un buton flotant **Render** deschide foaia **Export** - toate controalele de format, dimensiune, copiere, salvare și descărcare într-un singur loc. Închide-o atingând fundalul.
 
 ## Controale (inputuri)
+
+![A tool's control stack - a text field, colour triggers and a slider, and nothing else the author chose to lock down](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-inputs&format=svg&filename=use-tool-inputs)
 
 Instrumentele expun doar inputurile menite să varieze - restul (culori, layout, tipografie, logică) este blocat de autorul instrumentului, astfel încât orice creezi respectă regulile stabilite de autor. Inputurile includ text, slidere, selectoare de culoare, liste derulante, date, selectoare de imagini și grupuri de rânduri repetitive. Unele sunt grupate în secțiuni pliabile.
 
@@ -66,6 +74,8 @@ Instrumentele expun doar inputurile menite să varieze - restul (culori, layout,
 Fotografia de profil și datele tale trăiesc **doar pe acest dispozitiv**. Un profil poate fi mai mult decât doar tu - o echipă sau un rol în care intri din când în când. Vezi **[Profiluri](/info/profile.html)** pentru imaginea completă, inclusiv păstrarea mai multor profiluri.
 
 ## Salvare și continuare
+
+![The two-half render pill - an up arrow that opens the export panel, and a tick that saves the session in place](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=%23tool-inputs%7Bdisplay%3Anone%7D&cropSelector=.render-pill&format=svg&filename=use-render-pill)
 
 Dă click pe **Save** pentru a stoca inputurile curente ca sesiune pentru acel instrument. Poți păstra mai multe sesiuni denumite per instrument; butonul **Continue** al fiecărui instrument redeschide cea mai recentă, iar **butonul de istoric** (dreapta sus, lângă profilul tău) listează fiecare sesiune salvată din toate instrumentele. Sesiunile sunt locale dispozitivului. Pentru a le organiza, deschide **Projects** (mai jos).
 
@@ -108,6 +118,8 @@ Când un instrument îți permite să adaugi o imagine de pe dispozitiv, aceasta
 - **Fă ordine.** Recategorisește o resursă într-un alt grup, ascunde o resursă de brand partajată pe care n-o folosești (cu **Show hidden** pentru a o readuce), sau șterge-ți definitiv propriile fișiere încărcate.
 
 ### Ia-ți paleta și fonturile oriunde
+
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 Panoul **Swatches** al Catalogului nu e doar pentru referință - dă click pe o culoare pentru a o copia, sau **descarcă întreaga paletă de brand** în formatul pe care îl vorbește celălalt instrument al tău:
 
@@ -154,6 +166,8 @@ Poți aduce un design existent în Lolly și poți continua să lucrezi la el: d
 Vezi **[Export și formate](/info/exporting.html)** pentru povestea completă - alegerea unui format, dimensiunea de ieșire și unitățile de print, transparența, video-ul și copiere/distribuire. Pe scurt: alege un format, setează dimensiunea dacă ai nevoie, și **Download** (sau **Copy** în clipboard).
 
 ## Modul Batch (Pro)
+
+![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&format=svg&filename=use-batch-toolbar)
 
 Pentru utilizatorii avansați, **Batch** (link din galerie, condiționat de feature flag-ul Pro, activat implicit) randează multe variații deodată - o grilă unde fiecare rând este un set de inputuri, exportate împreună. Ideal pentru a localiza un card în o duzină de limbi sau pentru a genera fiecare variantă de dimensiune într-o singură trecere. Completează rândurile tastând, lipind direct dintr-o foaie de calcul, sau importând un CSV (poți exporta și unul înapoi), și setează formatul, dimensiunea și numele de fișier de ieșire per rând. Salvează o grilă întreagă ca o **sesiune batch** denumită, care se redeschide din galerie, și descarcă fiecare rând ca un singur `.zip`.
 

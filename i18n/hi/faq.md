@@ -18,6 +18,8 @@ Lolly बड़ी मात्रा में कॉन्टेंट बन�
 
 ### फ़ीचर फ़्लैग क्या हैं?
 
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&filename=pd-feature-flags)
+
 फ़ीचर फ़्लैग Lolly के हिस्सों को चालू या बंद करते हैं। आम तौर पर इन्हें कोई एडमिनिस्ट्रेटर नियंत्रित करता है — Lolly में नियंत्रण आपके हाथ में है।
 
 ## मोबाइल या डेस्कटॉप ऐप कैसे मिलेंगे?
@@ -73,6 +75,8 @@ Lolly हर चीज़ को ऊपर उठाता है।
 
 ## यूटिलिटी, टूल से किस तरह अलग हैं?
 
+![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
 **सीधा जवाब →** यूटिलिटियों को हमेशा रेंडर करने की ज़रूरत नहीं होती, इसलिए उन्हें अलग UX मिल सकता है।
 
 **असली जवाब →** यूटिलिटियों को Lolly Tools के भीतर होस्ट करने लायक़ इसलिए बनाया गया है ताकि डेटा-एक्सफ़िल्ट्रेशन को हतोत्साहित करने के लिए बचाव की एक और 'सुविधा-परत' जुड़ सके।
@@ -94,6 +98,8 @@ Lolly हर चीज़ को ऊपर उठाता है।
 गवर्नेंस की यह जंग हम बेहतरीन सुविधा और सेवा से जीतते हैं।
 
 ## क्या Lolly मेरी Figma, Penpot, Illustrator या InDesign फ़ाइलें एडिट और रेंडर कर सकता है?
+
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 हाँ। **Layout Studio** खोलें और **Import a design** पर क्लिक करें: यह नेटिव Figma **.fig** (Save local copy), Penpot का **.penpot** एक्सपोर्ट, Illustrator की **.ai** या **.pdf**, InDesign की **.idml** (File → Export → InDesign Markup), या **कोई भी SVG** (चौड़ा दरवाज़ा — लगभग हर डिज़ाइन ऐप इसे एक्सपोर्ट करता है) स्वीकार करता है। सब कुछ पूरी तरह आपके डिवाइस पर ही पार्स होता है — किसी अकाउंट या प्लगइन की ज़रूरत नहीं।
 

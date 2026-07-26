@@ -66,9 +66,17 @@ Iată câștigul: un layout importat este o sesiune obișnuită de Layout Studio
 
 ### Date deschise și instrumente deschise
 
-[Setul de instrumente al comunității](/info/builders.html) este open source și agnostic de brand - coduri QR, hărți stradale, filtre, utilitare de confidențialitate - și randează pe baza brandului *tău* în momentul în care îl activezi. Alimentează instrumentele și cu propriile tale date deschise: lipește sau trage un tabel **CSV** sau **JSON**, iar câmpurile repetitive ale unui instrument se completează din el, câte o resursă finită per rând.
+[Setul de instrumente al comunității](/info/builders.html) este open source și agnostic de brand - coduri QR, hărți stradale, filtre, utilitare de confidențialitate - și randează pe baza brandului *tău* în momentul în care îl activezi.
+
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
+Alimentează instrumentele și cu propriile tale date deschise: lipește sau trage un tabel **CSV** sau **JSON**, iar câmpurile repetitive ale unui instrument se completează din el, câte o resursă finită per rând.
 
 ## 3. Creează ceva, apoi distribuie-l sau automatizează-l
+
+„O URL este API-ul” e literal. Graficul de mai jos nu a fost desenat de nimeni: tipul, titlul și întregul tabel de date au fost scrise în bara de adrese, iar același link randează același grafic pe orice dispozitiv.
+
+![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&filename=vt-d3-url-chart)
 
 Cu un brand activ și materialul tău la îndemână, fiecare instrument produce un fișier finit:
 

@@ -71,6 +71,8 @@
 
 ## 品牌本身的双向往返
 
+![The Brand Studio's import card - a Penpot export, a DTCG or Tokens Studio file, or a plain SVG all come in through the same door](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-import-drop&format=svg&filename=bs-brand-import-formats)
+
 导入是单向的；而**品牌的基础元素则是双向流通的**。Lolly 的颜色是 [DTCG 设计令牌](/info/design-tokens.html)——与 Penpot 原生导入/导出、以及 Tokens Studio 带入 Figma 的格式相同——因此你在 Figma/Penpot 中用来*设计*的调色板，和 Lolly *强制执行*的调色板，是同一份文档，而不是两份需要手动保持同步的列表。
 
 ## 限制与安全性

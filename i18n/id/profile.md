@@ -8,6 +8,10 @@ Semua isi profil tersimpan **di perangkat**, dalam basis data lokal browser (Ind
 
 ## Apa yang ada dalam profil
 
+Preferensi adalah satu-satunya bagian yang mengubah tampilan aplikasi ini bagi Anda. Kartu tema adalah pratinjau langsung dan langsung diterapkan begitu Anda memilihnya, hanya di perangkat ini.
+
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
+
 | Bagian | Apa itu |
 |---|---|
 | **Nama** | Nama depan dan nama belakang. |
@@ -28,6 +32,8 @@ Kata "profil" mengesankan satu orang yang tetap, tapi di Lolly ini sebenarnya se
 
 ### Sebagai individu
 
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+
 Bawaan. Profil adalah Anda: nama Anda, email Anda, foto diri Anda. Atur sekali dan tanda tangan, badge, serta lockup konferensi Anda semuanya terisi sendiri. Inilah yang dibutuhkan kebanyakan orang.
 
 ### Sebagai tim
@@ -42,6 +48,10 @@ Di Lolly, peran itu hanyalah **profil lain yang Anda simpan siap pakai** - sebua
 
 ## Satu instalasi, satu profil aktif - banyak yang bisa Anda simpan
 
+Penyimpanan adalah tempat kedua sisi itu berada: meternya memperhitungkan setiap byte yang dipegang instalasi ini, kategori demi kategori, dan tombol-tombol di bawahnya adalah cara Anda membersihkan atau membawanya.
+
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
+
 Pada satu waktu, sebuah instalasi memiliki **satu profil aktif** - detail yang dilihat tool saat ini. Tidak ada pengalih profil di dalam aplikasi; sebagai gantinya, setiap profil adalah **bundel portabel** (satu `.zip`, lihat [di bawah](#moving-a-profile-to-a-new-device)). Ini sengaja dibuat sebagai mekanisme yang sama dengan berpindah ke perangkat baru - profil adalah berkas yang bisa Anda simpan, salin, dan muat.
 
 Jadi jika Anda benar-benar menjalankan beberapa konteks sekaligus (Anda, tim Anda, topi manajer acara), Anda menyimpan beberapa bundel dan memuat yang Anda butuhkan:
@@ -53,6 +63,8 @@ Jadi jika Anda benar-benar menjalankan beberapa konteks sekaligus (Anda, tim And
 > Simpan satu bundel per konteks dan ganti nama berkasnya sesuai isinya (`LollyTools-events-2026.zip`, `LollyTools-me.zip`). Berkas itu *adalah* profilnya.
 
 ## Memindahkan profil ke perangkat baru
+
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
 
 Karena sebuah profil sepenuhnya lokal, satu-satunya cara memindahkannya ke instalasi kosong - laptop baru, browser yang baru direset, mesin rekan kerja, kotak offline - adalah dengan **membawa berkasnya**. Tidak ada login yang memulihkannya untuk Anda, dan itulah intinya: tidak ada apa pun yang pernah meninggalkan perangkat Anda sejak awal.
 
@@ -68,6 +80,8 @@ Yang tidak ikut berpindah: cache katalog (ia mengunduh ulang dirinya di perangka
 Untuk tata letak bundel yang persis, kebijakan versi, dan aturan integritas, lihat **[Transfer Data](/info/data-transfer.html)**; untuk panduan menyeluruh, **[Menggunakan Lolly → Pindah ke perangkat lain](/info/using.html#moving-to-another-device)**.
 
 ## Cara tool menggunakan profil Anda
+
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
 
 Sebuah tool hanya *mengisi otomatis* field profil yang memang secara eksplisit dirancang untuk diikat:
 

@@ -66,9 +66,17 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### オープンなデータとオープンなツール
 
-[コミュニティツールセット](/info/builders.html) はオープンソースかつブランドに依存しません — QR コード、地図、フィルター、プライバシーユーティリティなど — そして、あなたがブランドを有効化した瞬間から*あなたの*ブランドに沿ってレンダリングされます。あなた自身のオープンなデータもツールに取り込めます。**CSV** や **JSON** のテーブルを貼り付けるかドロップすれば、ツールの繰り返しフィールドがそこから自動入力され、行ごとに1つの完成アセットが生成されます。
+[コミュニティツールセット](/info/builders.html) はオープンソースかつブランドに依存しません — QR コード、地図、フィルター、プライバシーユーティリティなど — そして、あなたがブランドを有効化した瞬間から*あなたの*ブランドに沿ってレンダリングされます。
+
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
+あなた自身のオープンなデータもツールに取り込めます。**CSV** や **JSON** のテーブルを貼り付けるかドロップすれば、ツールの繰り返しフィールドがそこから自動入力され、行ごとに1つの完成アセットが生成されます。
 
 ## 3. 何かを作り、共有または自動化する
+
+「URL が API である」というのは文字どおりの意味です。下のチャートは誰かが描いたものではありません。チャートの種類、見出し、データテーブル全体がアドレスバーに入力されたものであり、同じリンクはどのデバイスでも同じチャートをレンダリングします。
+
+![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&filename=vt-d3-url-chart)
 
 ブランドが有効になり、素材も手元にあれば、どのツールも完成したファイルを生成します。
 

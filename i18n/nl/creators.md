@@ -40,9 +40,15 @@ Lolly probeert geen Canva of Figma te zijn. Het vindt zijn plek waar *regels, he
 
 ### Alles correct, zonder te wachten
 
+Street Map is een mooi voorbeeld van die ruil: jij kiest een stad en een paar kleuren, en de cartografie, de weggewichten en het water zijn al voor je beslist.
+
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=192&waitMs=3200&cropSelector=%23tool-canvas&format=png&filename=vt-street-map-poster)
+
 Vul een paar velden in en krijg de afgewerkte asset - geen lettertypes om te kiezen, geen kleuren om over te twijfelen, geen "is dit wel het juiste logo?" De tool weet het al. E-mailhandtekeningen, aftelklokken voor evenementen, quote-kaarten, badges, plattegronden - alles wat je team op een dinsdagmiddag om 16:00 uur nodig heeft, zelfbediening. En omdat er geen klantgegevens het apparaat verlaten, loop je geen compliance-risico bij het samenwerken.
 
 ### Van live data naar een afgewerkt visual
+
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&filename=use-chart-output)
 
 Koppel een **CSV**- of **JSON**-tabel aan een grafiek-, kaart- of tabelsjabloon en werk de cijfers bij - de lay-out regelt zichzelf. Verkiezingsuitslagen, kwartaalcijfers, weersgebeurtenissen: bouw het format één keer en hergebruik het elke keer dat het verhaal opnieuw loopt. Je huisstijl wordt *exact* aangehouden, omdat die op sjabloonniveau wordt afgedwongen, niet losjes als richtlijn wordt meegegeven.
 
@@ -52,7 +58,11 @@ Eén tool kan de live output van een andere tool insluiten als asset - een naamb
 
 ### De grens verleggen, wanneer je dat nodig hebt
 
-Geavanceerde filters, compositing, animatie, live camera-effecten, generatief ontwerp - elke webtechnologie staat ter beschikking van een sjabloonmaker, dus het plafond ligt hoog. Maak *tools*, geen bestanden: bouw het ding dat 10.000 kaarten genereert in plaats van 10.000 kaarten te maken. Zet vast wat niet mag veranderen; geef alleen vrij wat bedoeld is om te variëren.
+Geavanceerde filters, compositing, animatie, live camera-effecten, generatief ontwerp - elke webtechnologie staat ter beschikking van een sjabloonmaker, dus het plafond ligt hoog.
+
+![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=1440&height=900&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&format=png&filename=use-mesh-output)
+
+Maak *tools*, geen bestanden: bouw het ding dat 10.000 kaarten genereert in plaats van 10.000 kaarten te maken. Zet vast wat niet mag veranderen; geef alleen vrij wat bedoeld is om te variëren.
 
 ## Details die je opvallen
 

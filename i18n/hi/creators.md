@@ -42,7 +42,13 @@ Lolly, Canva या Figma बनने की कोशिश नहीं क�
 
 कुछ फ़ील्ड भरें, तैयार एसेट पाएँ — न फ़ॉन्ट चुनने हैं, न रंगों पर माथापच्ची, न "क्या यही सही लोगो है?" टूल को पहले से पता है। ईमेल सिग्नेचर, इवेंट काउंटडाउन, कोट कार्ड, बैज, स्ट्रीट मैप — वह सब कुछ जो आपकी टीम को मंगलवार शाम 4 बजे चाहिए, सेल्फ़-सर्व। और चूँकि कोई ग्राहक डेटा डिवाइस से बाहर नहीं जाता, मिलकर काम करने में कोई कंप्लायंस जोखिम नहीं।
 
+Street Map इस सौदे का अच्छा उदाहरण है: आप एक शहर और दो-चार रंग चुनते हैं, और नक़्शानवीसी, सड़कों की मोटाई और पानी आपके लिए तय हो जाते हैं।
+
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=192&waitMs=3200&cropSelector=%23tool-canvas&format=png&filename=vt-street-map-poster)
+
 ### लाइव डेटा से तैयार विज़ुअल तक
+
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&filename=use-chart-output)
 
 किसी चार्ट, नक़्शे या टेबल टेम्पलेट से **CSV** या **JSON** टेबल जोड़ें और आँकड़े अपडेट करें — लेआउट अपना ख़याल ख़ुद रखता है। चुनाव नतीजे, तिमाही आय, मौसम की घटनाएँ: फ़ॉर्मैट एक बार बनाएँ और जब भी वह ख़बर चले, उसे फिर इस्तेमाल करें। अपनी हाउस स्टाइल से *हूबहू* मेल खाएँ, क्योंकि वह टेम्पलेट के स्तर पर लागू होती है, ढीली गाइडलाइन बनकर नहीं छूटती।
 
@@ -52,7 +58,11 @@ Lolly, Canva या Figma बनने की कोशिश नहीं क�
 
 ### फ़्रंटियर, जब आपको चाहिए
 
-एडवांस्ड फ़िल्टर, कंपोज़िटिंग, ऐनिमेशन, लाइव कैमरा इफ़ेक्ट, जेनरेटिव डिज़ाइन — टेम्पलेट लेखक के पास हर वेब तकनीक उपलब्ध है, इसलिए संभावनाओं की छत ऊँची है। फ़ाइलें नहीं, *टूल* बनाएँ: 10,000 कार्ड बनाने के बजाय वह चीज़ बनाएँ जो 10,000 कार्ड जेनरेट करे। जो नहीं बदलना चाहिए उसे लॉक करें; सिर्फ़ वही खुला रखें जिसे बदलना ही है।
+एडवांस्ड फ़िल्टर, कंपोज़िटिंग, ऐनिमेशन, लाइव कैमरा इफ़ेक्ट, जेनरेटिव डिज़ाइन — टेम्पलेट लेखक के पास हर वेब तकनीक उपलब्ध है, इसलिए संभावनाओं की छत ऊँची है।
+
+![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=1440&height=900&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&format=png&filename=use-mesh-output)
+
+फ़ाइलें नहीं, *टूल* बनाएँ: 10,000 कार्ड बनाने के बजाय वह चीज़ बनाएँ जो 10,000 कार्ड जेनरेट करे। जो नहीं बदलना चाहिए उसे लॉक करें; सिर्फ़ वही खुला रखें जिसे बदलना ही है।
 
 ## बारीकियाँ जो आपको महसूस होंगी
 

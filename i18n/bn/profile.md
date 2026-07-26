@@ -8,8 +8,6 @@
 
 ## প্রোফাইলে কী থাকে
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
-
 | অংশ | এটি কী |
 |---|---|
 | **নাম** | নামের প্রথম ও শেষ অংশ। |
@@ -22,11 +20,19 @@
 
 এর কোনোটিই বাধ্যতামূলক নয়। একটি ফাঁকা প্রোফাইলও পুরোপুরি ভালো প্রোফাইল; আপনি শুধু ততটুকুই পূরণ করেন যা আপনার টাইপ করার শ্রম বাঁচায়।
 
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
+
+পছন্দসমূহই সেই একটা অংশ, যা বদলে দেয় অ্যাপটা আপনার দিকে কেমন দেখায়। থিম কার্ডগুলো লাইভ প্রিভিউ, আর আপনি একটা বাছার সঙ্গে সঙ্গেই সেটা প্রয়োগ হয় — শুধু এই ডিভাইসে।
+
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
+
 ## প্রোফাইল একটি প্রেক্ষাপট, কেবল একজন ব্যক্তি নয়
 
 "প্রোফাইল" শব্দটি একজন নির্দিষ্ট ব্যক্তির ইঙ্গিত দেয়, কিন্তু Lolly-তে এটি আসলে একটি **তৈরি করার প্রেক্ষাপট** — *এই জিনিসটি তৈরি করার সময় আপনি কে*। সেই প্রেক্ষাপট তিনটি ভিন্ন রূপ নিতে পারে, এবং Lolly সবগুলোকেই একইভাবে সামলায়।
 
 ### একজন ব্যক্তি হিসেবে
+
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
 
 ডিফল্ট। প্রোফাইলটি আপনি নিজেই: আপনার নাম, আপনার ইমেল, আপনার হেডশট। একবার সেট করুন, আর আপনার সিগনেচার, আপনার ব্যাজ, আপনার কনফারেন্স লকআপ সবই নিজে থেকে পূরণ হয়ে যায়। বেশিরভাগ মানুষের কখনো এর বেশি কিছু লাগবে না।
 
@@ -50,9 +56,15 @@ Lolly-তে, সেই ভূমিকা কেবল **হাতের কা
 - **স্তর সাজানো:** আগে মুছে না ফেলে ইমপোর্ট করলে তা **মিশিয়ে দেয়** — ইমপোর্ট করা প্রোফাইল, সেশন এবং ছবি ইতিমধ্যে যা আছে তার উপরে বসে, একই নামের যা কিছু আছে তা প্রতিস্থাপন করে এবং বাকিগুলো রেখে দেয়। কোনো একটি দলের সেভ করা সেশন নিজের সেটআপে টেনে আনতে এটি সুবিধাজনক; কিন্তু আপনার যদি একটি পরিষ্কার ভূমিকার সীমানা দরকার হয় তবে এটি চাইবেন না।
 - **পাশাপাশি:** যেহেতু সবকিছু ডিভাইস-নির্ভর, তাই একটি আলাদা ব্রাউজার প্রোফাইল, একটি আলাদা ইউজার অ্যাকাউন্ট, বা দ্বিতীয়বার ইনস্টল করা একটি PWA — প্রত্যেকটি নিজস্ব স্বাধীন Lolly প্রোফাইল বহন করে। আপনার ব্যক্তিগত ইনস্টল আর ইভেন্ট কিয়স্ক ইনস্টল একসঙ্গে চালান, কোনো বদল ছাড়াই।
 
+স্টোরেজেই এর দুটো দিকই থাকে: মিটার ক্যাটেগরি ধরে ধরে হিসাব দেয় এই ইনস্টলটা কত বাইট ধরে রেখেছে, আর তার নিচের বোতামগুলোই হলো সেটা মুছে ফেলার বা সঙ্গে নিয়ে যাওয়ার উপায়।
+
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
+
 > প্রতিটি প্রেক্ষাপটের জন্য একটি করে বান্ডল রাখুন এবং ফাইলগুলো যা, তা অনুযায়ী নাম বদলান (`LollyTools-events-2026.zip`, `LollyTools-me.zip`)। ফাইলটিই *হলো* প্রোফাইল।
 
 ## নতুন ডিভাইসে প্রোফাইল সরানো
+
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
 
 যেহেতু একটি প্রোফাইল সম্পূর্ণ লোকাল, তাই এটি কোনো ফাঁকা ইনস্টলে নেওয়ার একমাত্র উপায় — একটি নতুন ল্যাপটপ, সদ্য রিসেট করা ব্রাউজার, সহকর্মীর মেশিন, একটি অফলাইন বক্স — হলো **ফাইলটি সঙ্গে নিয়ে যাওয়া**। কোনো লগইন এটি আপনার জন্য ফিরিয়ে আনে না, আর এটাই মূল কথা: প্রথম থেকেই কিছুই আপনার ডিভাইস ছেড়ে যায়নি।
 
@@ -68,6 +80,8 @@ Lolly-তে, সেই ভূমিকা কেবল **হাতের কা
 সঠিক বান্ডল বিন্যাস, ভার্সন নীতি এবং অখণ্ডতার নিয়মের জন্য দেখুন **[Data Transfer](/info/data-transfer.html)**; পূর্ণাঙ্গ ধাপে-ধাপে নির্দেশনার জন্য **[Lolly ব্যবহার → অন্য ডিভাইসে সরানো](/info/using.html#moving-to-another-device)**।
 
 ## আপনার প্রোফাইল টুল কীভাবে ব্যবহার করে
+
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
 
 একটি টুল কেবল সেই প্রোফাইল ফিল্ডগুলোই *প্রি-ফিল* করে যেগুলো বাঁধার জন্য এটি স্পষ্টভাবে তৈরি করা হয়েছিল:
 

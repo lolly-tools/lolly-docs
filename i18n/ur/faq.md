@@ -18,6 +18,8 @@ Lolly بڑی مقدار میں مواد تیار کرتا ہے۔ خطرے سے �
 
 ### فیچر فلیگز کیا ہیں؟
 
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&filename=pd-feature-flags)
+
 فیچر فلیگز Lolly کے حصوں کو آن یا آف کرتے ہیں۔ عام طور پر انہیں ایک ایڈمنسٹریٹر کنٹرول کرتا ہے — Lolly کے ساتھ، کنٹرول آپ کے ہاتھ میں ہے۔
 
 ## میں موبائل یا ڈیسک ٹاپ ایپس کیسے حاصل کروں؟
@@ -73,6 +75,8 @@ Lolly ہر چیز کو اوپر اٹھاتا ہے۔
 
 ## یوٹیلیٹیز کو ٹولز سے کیا چیز مختلف بناتی ہے؟
 
+![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
 **بنیادی جواب →** یوٹیلیٹیز کو ہمیشہ رینڈر کرنے کی ضرورت نہیں ہوتی اور اسی لیے انہیں مختلف UX مل سکتا ہے۔ 
 
 **اصل جواب →** یوٹیلیٹیز کو Lolly Tools کے اندر ہوسٹ کرنے کے قابل بنانے کی وجہ یہ ہے کہ دفاع کی ایک اور 'سہولت کی تہہ' شامل کی جائے تاکہ ڈیٹا کے اخراج (data-exfiltration) کی حوصلہ شکنی ہو۔ 
@@ -94,6 +98,8 @@ Lolly ہر چیز کو اوپر اٹھاتا ہے۔
 ہم گورننس کی جنگ بہترین سہولت اور خدمت سے جیتتے ہیں۔ 
 
 ## کیا Lolly میری Figma، Penpot، Illustrator یا InDesign فائلیں ایڈٹ اور رینڈر کر سکتا ہے؟
+
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 جی ہاں۔ **Layout Studio** کھولیں اور **ایک ڈیزائن امپورٹ کریں** پر کلک کریں: یہ ایک native Figma **.fig** (Save local copy)، Penpot **.penpot** ایکسپورٹ، Illustrator **.ai** یا **.pdf**، InDesign **.idml** (File → Export → InDesign Markup)، یا **کوئی بھی SVG** (کھلا دروازہ — تقریباً ہر ڈیزائن ایپ اسے ایکسپورٹ کرتی ہے) قبول کرتا ہے۔ ہر چیز مکمل طور پر آپ کے ڈیوائس پر پارس ہوتی ہے، کسی اکاؤنٹ یا پلگ ان کی ضرورت نہیں۔
 

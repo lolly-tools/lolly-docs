@@ -8,6 +8,8 @@ The short version: **verification is entirely on-device, the crypto is standards
 
 Everything Lolly verifies, it verifies **locally, offline, without uploading the file**. Dropping a file on `/verify` (or `lolly validate <file>`) parses it, walks its Content Credential, re-checks the signature and the byte-hash binding, and renders a verdict — all in your browser or on your machine. There is no verification server.
 
+![The Verify screen with nothing but a drop target - no upload button, no account, because the check runs where the file already is](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1400&format=svg&cropSelector=.valid-layout&filename=cc-verify-drop)
+
 The engine's crypto core is **platform-agnostic and uses only `globalThis.crypto` / WebCrypto** — no bespoke crypto library, no Node-only APIs, and **no network calls anywhere in the engine**. The single network-capable path in the whole verification surface is an optional DNS-over-HTTPS lookup of a **SEAL** signer's public key — and even that never sends the file, only fetches a public key the shell (not the engine) requests.
 
 ## Standards implemented
@@ -34,6 +36,8 @@ The engine's crypto core is **platform-agnostic and uses only `globalThis.crypto
 - **Encryption**: **AES-256** for the *Strong* PDF lock (PDF 2.0 / R6) and *Strong* locked downloads (WinZip AE-2), with **PBKDF2** key derivation and **HMAC** authentication. *Standard* tiers (40-bit RC4 for PDF, ZipCrypto for zip) are deliberately labelled as quick, universal **deterrents** — reach for *Strong* for anything sensitive.
 - **Hashing**: **SHA-256** throughout (SHA-384/512 where a curve or algorithm requires it).
 
+![The export panel's lock card, where Standard and Strong name the actual ciphers rather than hiding them behind a padlock icon](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Fformat%3Dpdf%26options%26password%3Dlolly&width=1440&height=900&dpi=192&waitMs=2200&format=svg&css=%23tool-inputs%2C%23sidebar-utils%7Bdisplay%3Anone%7D&cropSelector=.export-pdfpass&filename=cc-pdf-lock)
+
 All of the above run on the platform's audited WebCrypto implementation. The two symmetric ciphers use a small in-house block layer only because WebCrypto exposes no raw AES block — this is used **encrypt-only, over your own content**, never as a decryption oracle.
 
 ## How "trusted" is earned
@@ -54,7 +58,9 @@ Beyond the C2PA credential, Verify surfaces several read-only signals — each a
 - **The Lolly Imprint** — an invisible pixel watermark, on by default, that survives a screenshot or re-save (where the credential dies to any container change). Presence-only, no personal data. It is **security-through-obscurity — casual-stripping cover, not a hardened defence** — and complements the credential rather than replacing it.
 - **SEAL** byte-level signatures, **AI-generated-content** declarations, third-party **pixel-watermark** deep scans (opt-in, one-time on-device model download), and **hidden-data** detection — all computed locally.
 
-Lolly's provenance strategy is **read-broad, embed-narrow**: it *reads* many signals but only ever *writes* C2PA (plus its own Imprint), which keeps the write-side attack surface small.
+Lolly's provenance strategy is **read-broad, embed-narrow**: it *reads* many signals but only ever *writes* C2PA (plus its own Imprint), which keeps the write-side attack surface small. That narrow write side is visible in the export panel: three named switches, each a separate mechanism, rather than one blanket "protect this" claim.
+
+![The Content protection group on a PNG export, with the credential, the Imprint and the durable mark as three separate switches](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fformat%3Dpng%26c2pa%3D90%26imprint%3D1%26durable%3D1%26options&width=1440&height=900&dpi=192&waitMs=2400&format=svg&css=%23tool-inputs%2C%23sidebar-utils%7Bdisplay%3Anone%7D&cropSelector=.export-protection&filename=ce-protection-stack)
 
 ## How it's assured
 

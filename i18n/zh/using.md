@@ -6,6 +6,8 @@
 
 ## 打开工具
 
+![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Fct%3Dhorizontal-bar%26t%3DQuarterly%2520revenue%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&format=svg&filename=vt-tool-split-view)
+
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
 ![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
@@ -17,6 +19,8 @@
 > 少数工具（例如**版式工作室**）会以**自由画布**的形式打开——一个无边框、可直接操作的界面，你可以拖动、缩放、旋转并吸附文本、形状和图片的方框，双击即可就地编辑文本。它通过与其他所有工具相同的渲染路径导出，因此画布本身*就是*文件。详见下文[自由画布](#the-free-canvas-layout-studio)。
 
 ## 画布（预览）
+
+![The zoom HUD in the corner of the canvas - minus, the live percentage, plus, Fit, then the theme and sound toggles](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=.stage-nav%7Bopacity%3A1!important%7D&cropSelector=.stage-nav&format=svg&filename=use-zoom-hud)
 
 预览始终精确显示导出后的效果。
 
@@ -48,12 +52,16 @@
 
 ## 在手机上
 
+![A tool on a phone-width screen - controls as a sheet up top, the generated palette filling the preview below, and the render pill floating bottom-centre](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3Df97316%26harmony%3Dadjacent-3%26steps%3D9&width=430&height=900&dpi=192&waitMs=2200&format=svg&filename=vt-phone-palette)
+
 在窄屏幕上，布局会重新排列为单列：
 
 - **控件会变成一个位于顶部的面板**，其下边缘有一个**拖动把手**。拖动把手可以调整面板大小——它会吸附到**微露 / 半屏 / 全屏**——或**点按**把手在折叠与展开之间切换。预览会填满下方空间，并在你编辑时始终保持可见。
 - 一个悬浮的**渲染**按钮会打开**导出**面板——格式、尺寸、复制、保存和下载等所有控件都集中在这里。点按背景区域即可关闭它。
 
 ## 控件（输入项）
+
+![A tool's control stack - a text field, colour triggers and a slider, and nothing else the author chose to lock down](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-inputs&format=svg&filename=use-tool-inputs)
 
 工具只暴露那些设计为可变的输入项——其余的一切（配色、布局、排版、逻辑）都由工具作者锁定，因此你制作出的成品始终符合作者设定的规则。输入项包括文本、滑块、颜色选择器、下拉菜单、日期、图片选择器和重复行组。部分输入项会归入可折叠的分组中。
 
@@ -66,6 +74,8 @@
 你的头像照片和详细信息**仅保存在本设备上**。一份个人资料所代表的不一定只是你自己——也可以是一个团队，或你偶尔会扮演的某个角色。完整说明请见**[个人资料](/info/profile.html)**，包括如何保留多份资料。
 
 ## 保存与继续
+
+![The two-half render pill - an up arrow that opens the export panel, and a tick that saves the session in place](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=%23tool-inputs%7Bdisplay%3Anone%7D&cropSelector=.render-pill&format=svg&filename=use-render-pill)
 
 点击**保存**可将当前输入项存为该工具的一个会话。每个工具可以保留多个具名会话；每个工具的**继续**按钮会重新打开你最近的一个会话，而**历史记录按钮**（右上角，紧邻个人资料）会列出所有工具下的每一个已保存会话。会话保存在本机。如需整理它们，请打开下方的**项目**。
 
@@ -108,6 +118,8 @@
 - **整理归置。** 把某个素材重新归入不同的分组，隐藏你不用的共享品牌素材（用**显示隐藏项**再把它找回来），或直接删除你自己上传的内容。
 
 ### 把你的调色板与字体带到任何地方
+
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 目录的**色板**面板不只是供参考——点击某个颜色即可复制它，或以你的其他工具所使用的格式**下载整套品牌调色板**：
 
@@ -154,6 +166,8 @@ Lolly 致力于让每个人都能舒适地使用。界面支持键盘导航，�
 见**[导出与格式](/info/exporting.html)**了解完整内容——包括选择格式、输出尺寸与打印单位、透明度、视频，以及复制/分享。简而言之：选择一种格式，如有需要设置尺寸，然后点击**下载**（或**复制**到剪贴板）。
 
 ## 批量（Pro）模式
+
+![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&format=svg&filename=use-batch-toolbar)
 
 对于高级用户，**批量**（可从画廊中的链接进入，由默认开启的 Pro 功能开关控制）可以一次渲染多个变体——一个网格，其中每一行都是一组输入项，一起导出。非常适合把一张卡片本地化为十几种语言，或一次性生成所有尺寸变体。可以通过手动输入、直接从电子表格粘贴，或导入 CSV（也可以导出为 CSV）来填充各行，并为每一行分别设置格式、尺寸和输出文件名。整个网格可以保存为一个具名的**批量会话**，从画廊重新打开，并将每一行下载为一个 `.zip` 文件。
 

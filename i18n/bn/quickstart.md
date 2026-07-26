@@ -66,7 +66,11 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### ওপেন ডেটা আর ওপেন টুল
 
-[কমিউনিটি টুল সেট](/info/builders.html) ওপেন সোর্স আর ব্র্যান্ড-নিরপেক্ষ — QR কোড, স্ট্রিট ম্যাপ, ফিল্টার, প্রাইভেসি ইউটিলিটি — আর আপনি সক্রিয় করার মুহূর্তেই এটি *আপনার* ব্র্যান্ডের সাপেক্ষে রেন্ডার করে। টুলগুলোতে আপনার নিজের ওপেন ডেটাও দিন: একটি **CSV** বা **JSON** টেবিল পেস্ট করুন বা ছেড়ে দিন আর একটি টুলের পুনরাবৃত্ত ঘরগুলো তা থেকে পূরণ হয়, প্রতি সারিতে একটি তৈরি অ্যাসেট।
+[কমিউনিটি টুল সেট](/info/builders.html) ওপেন সোর্স আর ব্র্যান্ড-নিরপেক্ষ — QR কোড, স্ট্রিট ম্যাপ, ফিল্টার, প্রাইভেসি ইউটিলিটি — আর আপনি সক্রিয় করার মুহূর্তেই এটি *আপনার* ব্র্যান্ডের সাপেক্ষে রেন্ডার করে।
+
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
+টুলগুলোতে আপনার নিজের ওপেন ডেটাও দিন: একটি **CSV** বা **JSON** টেবিল পেস্ট করুন বা ছেড়ে দিন আর একটি টুলের পুনরাবৃত্ত ঘরগুলো তা থেকে পূরণ হয়, প্রতি সারিতে একটি তৈরি অ্যাসেট।
 
 ## 3. কিছু বানান, তারপর শেয়ার বা অটোমেট করুন
 
@@ -76,6 +80,10 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 - **একটি লিঙ্ক শেয়ার করুন।** প্রতিটি টুল স্টেট একটি URL, তাই একটি তৈরি অ্যাসেট পুনরুৎপাদনযোগ্য আর প্যারামিটার-অ্যাড্রেসযোগ্য — লিঙ্কটি কমিট করুন, চাহিদামতো আবার তৈরি করুন।
 - **বাল্কে করুন।** [ব্যাচ গ্রিড](/info/exporting.html)-এ একটি স্প্রেডশিট থেকে একটি টেমপ্লেট চালান: প্রতি সারিতে একটি তৈরি অ্যাসেট।
 - **অটোমেট করুন।** একই রেন্ডার [CLI](/info/cli.html) থেকে আর একটি [AI এজেন্ট](/info/ai-agents.html) থেকে চলে — একটি URL-ই হলো API।
+
+"URL-ই হলো API" কথাটা আক্ষরিক। নিচের চার্টটা কেউ আঁকেনি: এর ধরন, এর শিরোনাম আর এর গোটা ডেটা টেবিল অ্যাড্রেস বারে টাইপ করা হয়েছিল, আর একই লিঙ্ক যেকোনো ডিভাইসে একই চার্ট রেন্ডার করে।
+
+![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&filename=vt-d3-url-chart)
 
 ## এরপর কোথায় যাবেন
 

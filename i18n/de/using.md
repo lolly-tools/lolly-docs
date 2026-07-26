@@ -6,6 +6,8 @@ Ein praktischer Leitfaden zur tatsächlichen *Nutzung* der App - ein Tool öffne
 
 ## Ein Tool öffnen
 
+![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Fct%3Dhorizontal-bar%26t%3DQuarterly%2520revenue%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&format=svg&filename=vt-tool-split-view)
+
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
 ![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
@@ -17,6 +19,8 @@ Jedes Tool ist eine geteilte Ansicht: **Steuerelemente** auf der einen Seite, ei
 > Einige Tools (wie **Layout Studio**) öffnen stattdessen als **freie Zeichenfläche** - eine chromfreie Oberfläche zur direkten Bearbeitung, auf der Sie Boxen mit Text, Formen und Bildern ziehen, in der Größe ändern, drehen und einrasten lassen und per Doppelklick Text direkt bearbeiten. Sie exportiert über denselben Renderpfad wie jedes andere Tool, sodass die Zeichenfläche *die* Datei *ist*. Siehe [Die freie Zeichenfläche](#the-free-canvas-layout-studio) weiter unten.
 
 ## Die Zeichenfläche (Vorschau)
+
+![The zoom HUD in the corner of the canvas - minus, the live percentage, plus, Fit, then the theme and sound toggles](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=.stage-nav%7Bopacity%3A1!important%7D&cropSelector=.stage-nav&format=svg&filename=use-zoom-hud)
 
 Die Vorschau zeigt immer genau das, was exportiert wird.
 
@@ -48,12 +52,16 @@ Tools mit freier Zeichenfläche fügen eine Arbeitsfläche *um* das Artboard her
 
 ## Auf einem Smartphone
 
+![A tool on a phone-width screen - controls as a sheet up top, the generated palette filling the preview below, and the render pill floating bottom-centre](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3Df97316%26harmony%3Dadjacent-3%26steps%3D9&width=430&height=900&dpi=192&waitMs=2200&format=svg&filename=vt-phone-palette)
+
 Auf schmalen Bildschirmen wird das Layout zu einer einzigen Spalte umgeflossen:
 
 - Die **Steuerelemente werden zu einem Sheet (Bedienfeld)** oben mit einem **Ziehgriff** an der Unterkante. Ziehen Sie am Griff, um die Größe zu ändern - es rastet bei **Peek / Half / Full** ein - oder **tippen** Sie auf den Griff, um zwischen eingeklappt ↔ ausgeklappt umzuschalten. Die Vorschau füllt den Bereich darunter aus und bleibt während der Bearbeitung sichtbar.
 - Eine schwebende Schaltfläche **Render** öffnet das **Export**-Sheet - alle Steuerelemente für Format, Größe, Kopieren, Speichern und Herunterladen an einem Ort. Schließen Sie es, indem Sie auf den Hintergrund tippen.
 
 ## Steuerelemente (Eingaben)
+
+![A tool's control stack - a text field, colour triggers and a slider, and nothing else the author chose to lock down](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-inputs&format=svg&filename=use-tool-inputs)
 
 Tools legen nur die Eingaben offen, die variieren sollen - alles andere (Farben, Layout, Typografie, Logik) ist vom Tool-Autor festgelegt, sodass alles, was Sie erstellen, den vom Autor festgelegten Regeln entspricht. Zu den Eingaben gehören Text, Schieberegler, Farbwähler, Dropdowns, Daten, Bildauswahl und sich wiederholende Zeilengruppen. Manche sind unter einklappbaren Abschnitten gruppiert.
 
@@ -66,6 +74,8 @@ Tools legen nur die Eingaben offen, die variieren sollen - alles andere (Farben,
 Ihr Profilfoto und Ihre Angaben existieren **nur auf diesem Gerät**. Ein Profil kann mehr sein als nur Sie selbst - ein Team oder eine Rolle, in die Sie hin und wieder schlüpfen. Das vollständige Bild, einschließlich der Verwaltung mehrerer Profile, finden Sie unter **[Profile](/info/profile.html)**.
 
 ## Speichern & Fortsetzen
+
+![The two-half render pill - an up arrow that opens the export panel, and a tick that saves the session in place](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=%23tool-inputs%7Bdisplay%3Anone%7D&cropSelector=.render-pill&format=svg&filename=use-render-pill)
 
 Klicken Sie auf **Speichern**, um die aktuellen Eingaben als Sitzung für dieses Tool zu speichern. Sie können mehrere benannte Sitzungen pro Tool aufbewahren; die Schaltfläche **Fortsetzen** jedes Tools öffnet Ihre letzte Sitzung erneut, und die **Verlaufsschaltfläche** (oben rechts, neben Ihrem Profil) listet jede gespeicherte Sitzung über alle Tools hinweg auf. Sitzungen sind gerätelokal. Um sie zu organisieren, öffnen Sie **Projekte** (unten).
 
@@ -108,6 +118,8 @@ Der **Katalog** (`#/c` oder der Link **Katalog** im Menü) sammelt alles, worauf
 - **Aufräumen.** Kategorisieren Sie ein Asset in eine andere Gruppe um, blenden Sie ein geteiltes Marken-Asset aus, das Sie nicht nutzen (mit **Ausgeblendete anzeigen**, um es zurückzuholen), oder löschen Sie Ihre eigenen Uploads vollständig.
 
 ### Nehmen Sie Ihre Palette und Schriften überallhin mit
+
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 Das **Farbfelder**-Panel des Katalogs dient nicht nur als Referenz - klicken Sie auf eine Farbe, um sie zu kopieren, oder **laden Sie die gesamte Markenpalette herunter** in dem Format, das Ihr anderes Tool spricht:
 
@@ -154,6 +166,8 @@ Sie können ein bestehendes Design in Lolly übernehmen und daran weiterarbeiten
 Die vollständige Geschichte finden Sie unter **[Exportieren & Formate](/info/exporting.html)** - Formatwahl, Ausgabegröße und Druckeinheiten, Transparenz, Video sowie Kopieren/Teilen. Kurz gesagt: Wählen Sie ein Format, stellen Sie bei Bedarf die Größe ein, und klicken Sie auf **Herunterladen** (oder **Kopieren** in die Zwischenablage).
 
 ## Batch-Modus (Pro)
+
+![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&format=svg&filename=use-batch-toolbar)
 
 Für Power-User rendert **Batch** (von der Galerie aus verlinkt, hinter dem Pro-Feature-Flag, das standardmäßig aktiviert ist) viele Varianten auf einmal - ein Raster, in dem jede Zeile ein Satz von Eingaben ist, die gemeinsam exportiert werden. Ideal, um eine Karte in ein Dutzend Sprachen zu lokalisieren oder jede Größenvariante in einem Durchgang zu erzeugen. Füllen Sie Zeilen durch Eintippen, direktes Einfügen aus einer Tabellenkalkulation oder Importieren einer CSV (Sie können auch eine zurück exportieren), und legen Sie Format, Größe und Ausgabedateiname pro Zeile fest. Speichern Sie ein ganzes Raster als benannte **Batch-Sitzung**, die sich von der Galerie aus wieder öffnen lässt, und laden Sie jede Zeile als eine einzelne `.zip` herunter.
 

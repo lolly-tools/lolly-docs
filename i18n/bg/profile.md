@@ -22,11 +22,17 @@
 
 ![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
 
+Предпочитанията са единствената част, която променя как приложението изглежда за теб. Картите с теми са живи прегледи и се прилагат в момента, в който избереш някоя — само на това устройство.
+
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
+
 ## Профилът е контекст, а не просто човек
 
 Думата „профил“ подсказва един фиксиран човек, но в Lolly това всъщност е **контекст на създаване** — *кой си, докато правиш това нещо*. Този контекст може да има три различни форми и Lolly третира всичките по един и същ начин.
 
 ### Като отделен човек
+
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
 
 Стандартният случай. Профилът си ти: твоето име, твоят имейл, твоята портретна снимка. Настрой го веднъж и подписът ти, баджът ти, конферентният ти локъп се попълват сами. Това е всичко, от което повечето хора някога ще имат нужда.
 
@@ -50,9 +56,15 @@
 - **Наслагване:** импортирането *без* предварително изчистване **слива** — импортираният профил, сесии и изображения лягат върху това, което вече е там, като заменят всичко със същото име и оставят останалото. Удобно, когато искаш да изтеглиш запазените сесии на един екип в собствената си настройка; не е това, което искаш, ако ти трябва чиста граница между ролите.
 - **Едно до друго:** понеже всичко е обвързано с устройството, отделен браузърен профил, отделен потребителски акаунт или втора инсталирана PWA носят всеки свой независим Lolly профил. Пускай личната си инсталация и киоска на събитието едновременно, без превключване.
 
+И двете половини на това живеят в раздела Хранилище: измерителят отчита всеки байт, който тази инсталация държи, категория по категория, а бутоните под него са начинът да изчистиш или пренесеш данните.
+
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
+
 > Пази по един пакет за всеки контекст и преименувай файловете според това, което са (`LollyTools-events-2026.zip`, `LollyTools-me.zip`). Файлът *е* профилът.
 
 ## Преместване на профил на ново устройство
+
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
 
 Понеже профилът е изцяло локален, единственият начин да го качиш на празна инсталация — нов лаптоп, току-що нулиран браузър, машината на колега, офлайн компютър — е да **пренесеш файла**. Никакво влизане не го възстановява вместо теб и точно това е смисълът: нищо изобщо не е напускало устройството ти.
 
@@ -68,6 +80,8 @@
 За точното устройство на пакета, политиката за версии и правилата за цялост виж **[Прехвърляне на данни](/info/data-transfer.html)**; за пълното ръководство от край до край — **[Използване на Lolly → Преместване на друго устройство](/info/using.html#moving-to-another-device)**.
 
 ## Как инструментите използват профила ти
+
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
 
 Един инструмент само *попълва предварително* профилните полета, които изрично е създаден да обвързва:
 

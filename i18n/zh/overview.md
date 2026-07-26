@@ -18,6 +18,8 @@
 
 ### 它在这一格局中的位置
 
+![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-gallery-landscape)
+
 | 能力 | Canva | 品牌门户 | Illustrator | Figma / Penpot | **Lolly** |
 |---|---|---|---|---|---|
 | 批量内容生成 | 部分支持 | ✗ | ✗ | ✗ | **✓** |
@@ -37,6 +39,40 @@
 **适用场景：** 快速生成已操作化的创意素材——活动图块、姓名牌、签名、CVE 警报、二维码、社交卡片、托运标签、结构化报告。
 
 **不适用场景：** 定制主视觉内容。
+
+---
+
+## 一次营销活动的生命周期
+
+![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-lifecycle-chart)
+
+要看清 Lolly 究竟是什么，最清晰的方式不是列一串功能，而是跟着一份素材，看它如何在不同人手中传递。下面就跟着一张本地化的营销活动卡片，看它如何穿过整个组织：
+
+1. **创意人员定下规则。** 设计师在 Layout Studio 里编写基础模板，把品牌的字体和颜色变量写死在里面。他们做的不是一张卡片——他们只把这份底层工作做*一次*，从此再也不必手工本地化。
+2. **开发者把它放大。** 同一个模板通过 CLI 接入每晚运行的流水线，于是一张新图表或一个新语言版本都会自动生成——不需要任何设计师再打开文件。
+3. **产出方直接用起来。** 一位销售代表在飞机上离线打开同一个工具，为客户会议生成一份完全符合品牌的演示文稿。不需要设计技能，不需要网络，也不用等待。
+
+第二步里那张“新图表”，就是下面这样一次渲染：由一段数据字符串加上少数几个参数生成，没有人需要打开任何设计文件。
+
+重点并不是 Lolly 各自孤立地对设计师好用、*而且*对开发者好用、*而且*对销售好用。它是一场**接力赛**：创意人员最初的工作被开发者放大，而这又赋能了产出方。飞机上那位非技术同事之所以拥有毫不费力的体验，*正是*因为设计师立下的严谨规则和开发者完成的部署。
+
+这就是它的力量倍增效应。Lolly 不是一个为不同角色摆放不同工具的抽屉——它是一条确定性的素材生命周期，每个角色都会经手，而每一次传递都会放大上一环的价值。
+
+---
+
+## 一次批准，一万份素材
+
+![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&format=svg&filename=ov2-batch-grid)
+
+因为批准发生在工具上而不是文件上（参见 [Lolly 与同类产品的比较](/info/positioning.html)），规模就不再是审核问题。把一个本地化社交卡片工具批准一次，然后从一张电子表格里生成**跨 12 种语言的 10,000 份素材**——其中没有任何一份需要法务或品牌部门再做一次合规检查，因为它们共同来自的那个模板早已获得批准。
+
+同一个确定性工具有三条途径达到这种规模，产出的结果完全一致，而且都已预先批准：
+
+- **一个人，在应用里。** `/pro` 批量表格：粘贴或导入行数据，每行得到一份成品素材，然后下载 zip。不需要设计技能，不需要提单，不用等待。
+- **一位开发者，在命令行里。** CLI 以无界面方式运行*同一个*引擎、*同一条*渲染路径，因此可以在脚本或每晚的流水线里把这个工具跑遍全部 10,000 行。循环里调用一次 `lolly <tool> --field=…`，就是全部的集成工作。
+- **一个系统或一个 AI 智能体，通过 MCP。** 同一个工具以编程方式操作，保真度相同，规模还能更大——因为文件成千上万地涌出来时，机器不会觉得厌烦。
+
+一套品牌约束，由设计师定下一次；三条路径通往完全相同的、预先批准的产物——其中机器这条路走得最远，因为文件不断涌出时它永不疲倦。
 
 ---
 
@@ -190,9 +226,16 @@ lolly/
 这个平台以多种形态运行——web PWA、Tauri 桌面/移动端、可脚本化的 CLI，以及交互式 TUI。它们全部使用同一个引擎和同一套工具文件。
 
 ### Web（PWA）——主要分发渠道
+
+![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&format=svg&filename=aud-web-split)
+
+![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&format=png&filename=ov2-phone-audiogram)
+
 托管在一个由 SUSE 控制的 URL 上。一旦 service worker 缓存了工具和资源，就可以离线使用。大多数员工、供应商和合作伙伴都会在这里使用这个平台。无需账号——状态按设备存储在 IndexedDB 中。
 
 Web 壳层由同一套布局响应式适配。在桌面端，一个工具由一个可调整宽度的控制侧栏和一个预览舞台组成，画布支持原生触控板导航（Cmd/Ctrl + 滚轮或捏合可围绕光标缩放，按住空格或中键拖动可平移，`0`/`1`/`+`/`−` 键，以及一个 Fit/% 的 HUD 显示）。在移动端（≤640px），控制区变成一个吸附在顶部的面板，通过拖动把手在窥视/半屏/全屏之间切换（点击也可切换），叠加在一个静态的全屏预览之上；一个悬浮的**渲染**按钮会以底部弹出面板的形式打开**导出**控制项。触控操作在预览上支持捏合缩放和拖动平移。两种形态下的渲染路径和导出控制完全一致——变化的只是外层界面。
+
+同一个工具在手机宽度下也是这一套，不需要再维护第二种布局：控制区变成顶部的面板，预览占满整个屏幕，悬浮的渲染按钮就浮在它上面。
 
 **批量模式（`/pro`）。** Web 壳层还内置了一个电子表格式的批量网格（`shells/web/src/pro/`），可以跨一个或多个工具一次性渲染多行数据。它支持 CSV/TSV 互转外加电子表格粘贴、按行设置模板/格式/尺寸/单位/dpi、一个带实时预览的区块编辑侧边面板、可折叠的导出列、按行显示的“相关性”标签栏、左侧拖动把手实现行重排、两步确认删除、已保存的批量会话，以及 `.zip` 下载。这正是“批量内容生成”这一定位背后的一对多界面。
 
@@ -200,6 +243,7 @@ Web 壳层由同一套布局响应式适配。在桌面端，一个工具由一�
 打包为原生应用（借助 Tauri 实现小体积）。提供完整的离线可用性、供依赖 CLI 的工具（PDF Smasher、Font Outliner）使用的文件系统访问权限，以及摄像头访问权限。计划于 2026 年年中进行工具增强。
 
 ### CLI
+
 `lolly <tool-id> [--input=value ...] --output=file.png`
 
 桌面用户可以从终端调用大量工具。CLI 壳层加载同一个引擎，创建一个 jsdom DOM，运行同一条渲染路径，然后写入文件。URL 模式就是它的传输方式——CLI 并不是一套独立的实现。这保证了 CLI 与图形界面的输出完全一致。
@@ -216,9 +260,13 @@ lolly qr-code                # 列出该工具的输入项
 
 这是 CLI 的交互式对应物：一个全屏、以键盘操作为先的终端应用（基于 Ink 构建），用于浏览工具、填写输入、保存项目并导出——全程无需图形界面。对于无需 DOM 的格式（SVG/EMF/EPS/HTML + 文本/数据），它的 host 桥接**复用了 CLI 的实现**，并在此基础上增加了 `~/.lolly` 下的磁盘状态，以及一个可选的内联预览。除此之外，它还有一个**浏览器渲染层**：一个受限的无头 Chromium（与 MCP 服务器所安装的是同一个），按需生成栅格图/PDF/视频以及实时 URL 抓取——驱动的是一份构建好的 web 壳层副本，因此输出完全一致，并且只有在你第一次导出这类格式时才会启动。因此 `url-shot`（含裁剪 + 重新着色 + 矢量 PDF/SVG）以及每一个栅格图/PDF 工具，也都能在终端里运行。参见 [TUI 指南](/info/tui.html)。
 
+无论你在哪个界面上，仪表板的功能（Capabilities）标签页都是这个平台声明自己能做什么的完整地图——已经分好组、可以直接阅读，不必打开任何一个工具。
+
 ---
 
 ## 工具分类
+
+![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-utilities)
 
 工具在清单中通过 `category` 打标签，用于图库分组。
 
@@ -247,6 +295,8 @@ lolly qr-code                # 列出该工具的输入项
 以下决策都已经落定。改动其中任何一项都是一项重大工程——它们塑造了代码库中的所有其他决策。
 
 ### 1. 声明式工具，配一个命令式的逃生舱口
+
+![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-street-map-controls)
 
 一个工具由一份清单（`tool.json`）+ 一个模板（`template.html`）+ 可选的 `hooks.js` 组成。
 
@@ -293,6 +343,10 @@ web 和 Tauri 应用会在启动时从一个已知 URL 获取工具与资源目�
 
 ### 5. URL 模式是一等公民
 
+![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&format=svg&filename=aud-url-mode-qr)
+
+![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=%23tool-canvas&filename=ov2-url-palette)
+
 每一个输入项都必须能表示为一个 URL 参数：
 
 ```
@@ -302,6 +356,8 @@ lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H
 CLI 模式就是换了一种传输方式的 URL 模式——CLI 壳层从 argv 构建出一个 URL 状态对象，并运行**同一条**引擎流水线。渲染路径只有一条。CLI 不可能与图形界面产生偏差，因为它根本不是一套独立的实现。
 
 `url-mode.ts` 负责这一往返过程（解析与序列化）。保留参数（永远不会作为输入项转发给工具）：`format`、`export`、`copy`、`slot`、`output`、`filename`、`_v`、`z`（打包状态——即“最短链接”令牌）、`width`/`w`、`height`/`h`、`unit`、`dpi`、`profile`、`password`、`bleed`、`marks`、`full`、`options`、`nostage`。URL 模式下的资源输入按其 `id` 序列化；运行时会在渲染前通过 `host.assets.get()` 解析它们。`width`/`height` 是以 `unit` 为单位的数值（默认 `px`，也可以是 `mm`/`cm`/`in`/`pt`/`pc`）；使用物理单位时，`dpi` 决定栅格分辨率。它们会设置画布文档尺寸，并预填导出尺寸面板。
+
+因为每一个输入项都随链接一起传递，改动一个参数就等于换成另一份成品素材：一整套调色板，背后只是一个种子色、一种配色关系和一个色阶数量。
 
 ### 6. 存储必须经过桥接，不能直接访问
 
@@ -334,10 +390,14 @@ Web 壳层：IndexedDB。Tauri：文件系统。CLI：内存。工具看到的�
 
 ### 10. 工具组合工具
 
+![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-slides-deck)
+
 一个工具可以嵌入**另一个**工具的渲染结果，而无需工具之间互相导入——组合关系由引擎解析，从不由工具代码本身处理。这里有两种途径：
 
 - **声明式清单**——`composes: [{ id, tool, inputs, format?, width?, height? }]`。引擎会渲染指定的子工具，并把结果以 `{{asset <id>}}` 的形式放入无逻辑模板中。目前 `event-name-badge` 就把 `qr-code` 以 SVG 形式组合了进来。
 - **可移植的嵌入 URL**——`<img src="https://lolly.tools/tool/<id>.<ext>?<inputs>">`。壳层会在**本地**渲染这个子项（在本地渲染完成之前会显示一个占位像素）；不会从 `lolly.tools` 抓取任何内容。
+
+Slides 工具就建立在第二种途径之上：任意一页上的任意一个槽位，都可以放另一个 Lolly 工具，而不只是一张图片。
 
 可以组合任何工具的渲染结果：当父级导出为 SVG 或 PDF 时，**SVG** 子项会保持为真正的矢量图，导出为 PNG 时则会清晰栅格化；**PNG/JPG/WEBP** 子项则以图片形式嵌入。这需要 `compose` 能力。被组合的子项属于中间产物——从不加水印，也不打上来源标记——而且组合会优雅降级：如果某个壳层无法渲染某个子项，就直接省略该槽位，父级仍然能够渲染。
 
@@ -354,6 +414,8 @@ Web 壳层：IndexedDB。Tauri：文件系统。CLI：内存。工具看到的�
 ---
 
 ## 端到端的生命周期
+
+![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&format=svg&filename=aud-export-popup)
 
 一名用户打开 `lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H`：
 

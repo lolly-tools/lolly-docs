@@ -6,6 +6,8 @@
 
 ## Отваряне на инструмент
 
+![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Fct%3Dhorizontal-bar%26t%3DQuarterly%2520revenue%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&format=svg&filename=vt-tool-split-view)
+
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
 ![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
@@ -17,6 +19,8 @@
 > Няколко инструмента (като **Layout Studio**) вместо това се отварят като **свободен канвас** — повърхност без излишен интерфейс, с директна манипулация, където влачиш, преоразмеряваш, завърташ и прилепваш кутии с текст, форми и изображения, а с двойно кликване редактираш текста на място. Той се експортира през същия рендер път като всеки друг инструмент, така че канвасът *е* файлът. Виж [Свободният канвас](#the-free-canvas-layout-studio) по-долу.
 
 ## Канвасът (прегледът)
+
+![The zoom HUD in the corner of the canvas - minus, the live percentage, plus, Fit, then the theme and sound toggles](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=.stage-nav%7Bopacity%3A1!important%7D&cropSelector=.stage-nav&format=svg&filename=use-zoom-hud)
 
 Прегледът винаги показва точно това, което ще се експортира.
 
@@ -48,12 +52,16 @@
 
 ## На телефон
 
+![A tool on a phone-width screen - controls as a sheet up top, the generated palette filling the preview below, and the render pill floating bottom-centre](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3Df97316%26harmony%3Dadjacent-3%26steps%3D9&width=430&height=900&dpi=192&waitMs=2200&format=svg&filename=vt-phone-palette)
+
 На тесни екрани оформлението се преподрежда в една колона:
 
 - **Контролите се превръщат в панел** в горната част с **дръжка за влачене** на долния му ръб. Влачи дръжката, за да го преоразмериш — прилепва към **надникване / половина / цял екран** — или **докосни** дръжката, за да превключиш свито ↔ разгънато. Прегледът запълва пространството отдолу и остава видим, докато редактираш.
 - Плаващ бутон **Рендерирай** отваря панела **Експорт** — всички контроли за формат, размер, копиране, запазване и изтегляне на едно място. Затвори го с докосване на фона.
 
 ## Контроли (входни полета)
+
+![A tool's control stack - a text field, colour triggers and a slider, and nothing else the author chose to lock down](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-inputs&format=svg&filename=use-tool-inputs)
 
 Инструментите излагат само входните полета, които са предвидени да се променят — всичко останало (цветове, оформление, типография, логика) е заключено от автора на инструмента, така че каквото и да направиш, то спазва правилата, зададени от автора. Входните полета включват текст, плъзгачи, селектори на цвят, падащи менюта, дати, избор на изображения и повтарящи се групи от редове. Някои са групирани в сгъваеми секции.
 
@@ -66,6 +74,8 @@
 Портретната ти снимка и данните ти живеят **само на това устройство**. Профилът може да е нещо повече от теб самия — екип или роля, в която влизаш от време на време. Виж **[Профили](/info/profile.html)** за пълната картина, включително поддържането на повече от един.
 
 ## Запазване и продължаване
+
+![The two-half render pill - an up arrow that opens the export panel, and a tick that saves the session in place](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=%23tool-inputs%7Bdisplay%3Anone%7D&cropSelector=.render-pill&format=svg&filename=use-render-pill)
 
 Кликни **Запази**, за да съхраниш текущите входни стойности като сесия за този инструмент. Можеш да пазиш няколко именувани сесии за всеки инструмент; бутонът **Продължи** на всеки инструмент отваря отново най-скорошната ти, а **бутонът за история** (горе вдясно, до профила ти) изброява всяка запазена сесия от всички инструменти. Сесиите са локални за устройството. За да ги организираш, отвори **Проекти** (по-долу).
 
@@ -108,6 +118,8 @@
 - **Подреди.** Прекатегоризирай актив в друга група, скрий споделен актив на марката, който не използваш (с **Покажи скритите**, за да го върнеш), или изтрий собствените си качвания напълно.
 
 ### Вземи палитрата и шрифтовете си навсякъде
+
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 Панелът **Мостри** в Каталога не е само за справка — кликни върху цвят, за да го копираш, или **изтегли цялата палитра на марката** във формата, който говори другият ти инструмент:
 
@@ -154,6 +166,8 @@ Lolly се стреми да е удобен за използване от вс
 Виж **[Експортиране и формати](/info/exporting.html)** за пълната история — избор на формат, изходен размер и печатни единици, прозрачност, видео и копиране/споделяне. Накратко: избери формат, задай размера, ако е нужно, и **Изтегли** (или **Копирай** в клипборда).
 
 ## Режим Batch (Pro)
+
+![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&format=svg&filename=use-batch-toolbar)
 
 За напреднали потребители **Batch** (с връзка от галерията, зад функционалния флаг Pro, който е включен по подразбиране) рендерира много вариации наведнъж — таблица, в която всеки ред е набор от входни стойности, експортирани заедно. Идеален за локализиране на картичка на дузина езици или за генериране на всеки вариант на размер с едно минаване. Попълвай редове с писане, с поставяне направо от електронна таблица или с импортиране на CSV (можеш и да експортираш такъв обратно) и задавай формат, размер и изходно име на файла за всеки ред. Запази цяла таблица като именувана **batch сесия**, която се отваря отново от галерията, и изтегли всеки ред като един `.zip`.
 

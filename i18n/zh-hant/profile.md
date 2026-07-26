@@ -8,6 +8,10 @@
 
 ## 個人資料裡有什麼
 
+偏好設定是唯一會改變這個應用程式回看你時的樣子的部分。主題卡片本身就是即時預覽，你一選就立刻生效，而且只作用在這台裝置上。
+
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
+
 | 項目 | 內容 |
 |---|---|
 | **姓名** | 名字與姓氏。 |
@@ -28,6 +32,8 @@
 
 ### 作為個人
 
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+
 這是預設情況。個人資料就是你本人：你的姓名、你的電子郵件、你的大頭照。設定一次之後，你的簽名檔、識別證、研討會識別組合就會自動填好。大多數人所需要的，僅止於此。
 
 ### 作為團隊
@@ -42,6 +48,10 @@
 
 ## 一次安裝，一份使用中的個人資料——但你可以保留很多份
 
+儲存空間這一段同時管著這兩件事：計量條會逐類清算這次安裝所占用的每一個位元組，而它下方的按鈕就是你清除或帶走這些資料的方式。
+
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
+
 在任何時刻，一次安裝都只有**一份使用中的個人資料**——也就是工具此刻看得到的資料。應用程式內沒有個人資料切換器；相對地，每份個人資料都是一個**可攜式包裹**（單一個 `.zip` 檔，見[下文](#moving-a-profile-to-a-new-device)）。這是刻意設計成與換裝置時相同的機制——個人資料就是一個你可以儲存、複製、載入的檔案。
 
 所以如果你真的要同時應付好幾種情境（你自己、你的團隊、活動經理這頂帽子），就保留好幾個包裹，需要哪個就載入哪個：
@@ -53,6 +63,8 @@
 > 每個情境都保留一個包裹，並依內容重新命名檔案（`LollyTools-events-2026.zip`、`LollyTools-me.zip`）。這個檔案*就是*個人資料本身。
 
 ## 把個人資料搬到新裝置
+
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
 
 由於個人資料完全存放在本機，要把它帶到一個全新的安裝環境——新筆電、剛重設的瀏覽器、同事的電腦、離線的機器——唯一的方法就是**帶著檔案走**。沒有任何登入程序能幫你還原它，而這正是重點所在：一開始就沒有任何東西離開過你的裝置。
 
@@ -68,6 +80,8 @@
 想了解確切的包裹結構、版本政策與完整性規則，見**[資料傳輸](/info/data-transfer.html)**；想看完整的操作流程，見**[使用 Lolly → 搬到另一台裝置](/info/using.html#moving-to-another-device)**。
 
 ## 工具如何使用你的個人資料
+
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
 
 工具只會*預先填入*它明確設計要綁定的個人資料欄位：
 

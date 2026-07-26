@@ -18,6 +18,8 @@
 
 ### 시장 지형에서의 위치
 
+![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-gallery-landscape)
+
 | 기능 | Canva | Brand portals | Illustrator | Figma / Penpot | **Lolly** |
 |---|---|---|---|---|---|
 | 대량 콘텐츠 생성 | 부분 지원 | ✗ | ✗ | ✗ | **✓** |
@@ -37,6 +39,40 @@
 **이런 용도로 사용하세요:** 운영화된 크리에이티브 에셋의 빠른 생성——이벤트 타일, 네임 배지, 서명, CVE 경고, QR 코드, 소셜 카드, 탁송 라벨, 구조화된 보고서 등이에요.
 
 **이런 용도로는 사용하지 마세요:** 맞춤형 히어로 콘텐츠.
+
+---
+
+## 캠페인의 라이프사이클
+
+![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-lifecycle-chart)
+
+Lolly가 무엇인지 가장 분명하게 보여주는 건 기능 목록이 아니라, 에셋 하나가 사람의 손에서 손으로 넘어가는 과정을 따라가 보는 거예요. 현지화된 캠페인 카드 한 장이 조직 안을 어떻게 지나가는지 보세요.
+
+1. **크리에이티브가 규칙을 정해요.** 디자이너가 Layout Studio에서 기본 템플릿을 만들면서 브랜드의 타이포그래피와 색상 변수를 하드코딩해요. 카드 한 장을 만드는 게 아니에요——이 기초 작업을 *한 번만* 해두면, 다시는 손으로 현지화할 필요가 없어요.
+2. **개발자가 그것을 확장해요.** 같은 템플릿을 CLI로 야간 파이프라인에 연결하면, 새 차트나 새 언어 버전이 자동으로 생성돼요——디자이너가 파일을 다시 열 일은 없어요.
+3. **제작 담당자는 그냥 쓰기만 해요.** 영업 담당자가 비행기 안에서 오프라인으로 같은 도구를 열고, 고객 미팅용으로 브랜드에 완벽히 맞는 덱을 만들어요. 디자인 역량도, 네트워크도, 기다림도 필요 없어요.
+
+2단계의 그 "새 차트"가 바로 아래와 같은 렌더예요. 데이터 문자열 하나와 파라미터 몇 개로 생성된 것이고, 디자인 파일을 연 사람은 아무도 없어요.
+
+핵심은 Lolly가 각각 따로따로 디자이너에게 좋고, *또* 개발자에게 좋고, *또* 영업에게 좋다는 게 아니에요. 이건 **이어달리기**예요. 크리에이티브의 초기 작업이 개발자에 의해 확장되고, 그것이 다시 제작 담당자에게 힘을 실어줘요. 비행기 안의 비개발자 담당자가 힘 하나 안 들이고 쓸 수 있는 건, 디자이너가 세운 엄격함과 개발자가 배포한 구조가 있기에 *가능한* 일이에요.
+
+그게 바로 힘의 증폭이에요. Lolly는 역할마다 다른 도구를 넣어둔 서랍이 아니에요——모든 역할이 거쳐 가는 하나의 결정론적 에셋 라이프사이클이고, 손을 거칠 때마다 앞 단계의 가치가 몇 배로 커져요.
+
+---
+
+## 한 번의 승인, 만 개의 에셋
+
+![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&format=svg&filename=ov2-batch-grid)
+
+승인이 파일이 아니라 도구에 놓여 있기 때문에([Lolly 비교](/info/positioning.html) 참고), 규모는 더 이상 검토의 문제가 아니게 돼요. 현지화된 소셜 카드 도구를 한 번 승인해두면, 스프레드시트 하나에서 **12개 언어에 걸친 에셋 10,000개**를 만들어낼 수 있어요——그중 어느 하나도 법무나 브랜드팀의 새로운 컴플라이언스 검토를 받을 필요가 없어요. 그것들이 모두 나온 템플릿이 이미 승인됐으니까요.
+
+같은 결정론적 도구가 세 가지 경로로 그 규모에 도달하고, 세 경로 모두 동일한 사전 승인 결과물을 내놔요.
+
+- **사람이, 앱 안에서.** `/pro` 배치 그리드: 행을 붙여넣거나 가져오면 행마다 완성된 에셋 하나가 나오고, zip으로 내려받아요. 디자인 역량도, 티켓도, 기다림도 없어요.
+- **개발자가, 커맨드라인에서.** CLI는 *같은* 엔진과 *같은* 렌더 경로를 헤드리스로 실행하니까, 스크립트나 야간 파이프라인에서 그 도구를 10,000개 행 전체에 순서대로 돌릴 수 있어요. 루프 안에서 `lolly <tool> --field=…`를 한 번 호출하는 것이 통합 작업의 전부예요.
+- **시스템이나 AI 에이전트가, MCP를 통해.** 같은 도구를 프로그램으로 조작하면서 충실도는 그대로, 규모는 더 크게——파일이 수천 개씩 밀려들어와도 기계는 지루해하지 않으니까요.
+
+디자이너가 한 번 고정해둔 하나의 브랜드 제약, 그리고 동일한 사전 승인 결과물로 가는 세 가지 경로——그중 가장 멀리까지 확장되는 건 기계의 경로예요. 파일이 계속 밀려들어와도 결코 지치지 않으니까요.
 
 ---
 
@@ -190,9 +226,16 @@ lolly/
 이 플랫폼은 web PWA, Tauri 데스크톱/모바일, 스크립트 가능한 CLI, 대화형 TUI 등 여러 영역에서 동작해요. 이들 모두 동일한 엔진과 동일한 도구 파일을 사용해요.
 
 ### Web(PWA) — 주요 배포 경로
+
+![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&format=svg&filename=aud-web-split)
+
+![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&format=png&filename=ov2-phone-audiogram)
+
 SUSE가 관리하는 URL에서 호스팅돼요. 서비스 워커가 도구와 에셋을 캐시하고 나면 오프라인에서도 동작해요. 대부분의 직원, 벤더, 파트너가 이 플랫폼을 사용하는 곳이 바로 여기예요. 계정이 필요 없어요——상태는 기기별로 IndexedDB에 저장돼요.
 
 web 셸은 하나의 레이아웃에서 반응형으로 동작해요. 데스크톱에서는 도구가 크기 조절이 가능한 컨트롤 사이드바와, 트랙패드 네이티브 캔버스 내비게이션(Cmd/Ctrl-휠 또는 핀치로 커서 위치를 중심으로 확대/축소, Space 또는 가운데 버튼 드래그로 이동, `0`/`1`/`+`/`−` 키, Fit/% HUD)을 갖춘 미리보기 스테이지가 나란히 놓인 형태로 표시돼요. 모바일(640px 이하)에서는 컨트롤이 상단에 고정된 시트로 바뀌어, 드래그 그립으로 peek/half/full 사이를 스냅 전환하고(탭으로도 전환 가능), 정적인 전체 화면 미리보기 위에 떠 있어요. 떠 있는 **Render** 버튼을 누르면 바텀시트 팝업으로 **Export** 컨트롤이 열려요. 터치에서는 미리보기 화면에서 핀치 줌과 드래그 팬을 사용할 수 있어요. 렌더링 경로와 내보내기 컨트롤은 두 환경에서 동일해요——바뀌는 것은 크롬(외곽 UI)뿐이에요.
+
+같은 도구를 휴대폰 너비에서 봐도 유지해야 할 두 번째 레이아웃은 없어요. 컨트롤은 상단의 시트가 되고, 미리보기가 화면 전체를 차지하고, 떠 있는 Render 버튼이 그 위에 놓여요.
 
 **배치 모드(`/pro`).** web 셸에는 하나 또는 여러 도구에 걸쳐 여러 행을 한 번에 렌더링하는, 스프레드시트 형식의 배치 그리드(`shells/web/src/pro/`)도 탑재되어 있어요. CSV/TSV 왕복 변환과 스프레드시트 붙여넣기, 행별 템플릿/포맷/크기/단위/DPI, 라이브 미리보기가 있는 블록 편집기 사이드 패널, 접을 수 있는 내보내기 열, 행별 "관련성" 태그 바, 왼쪽 드래그 핸들을 이용한 행 재정렬, 2단계 삭제 확인, 저장된 배치 세션, `.zip` 다운로드를 지원해요. 이것이 "대량 콘텐츠 생성" 포지셔닝을 뒷받침하는 일대다 영역이에요.
 
@@ -200,6 +243,7 @@ web 셸은 하나의 레이아웃에서 반응형으로 동작해요. 데스크�
 패키징된 네이티브 앱이에요(Tauri 덕분에 설치 용량이 작아요). 완전한 오프라인 사용 가능성, CLI 의존 도구(PDF Smasher, Font Outliner)를 위한 파일시스템 접근, 카메라 접근을 제공해요. 2026년 중반의 도구 강화가 예정되어 있어요.
 
 ### CLI
+
 `lolly <tool-id> [--input=value ...] --output=file.png`
 
 데스크톱 사용자는 터미널에서 여러 도구를 실행할 수 있어요. CLI 셸은 동일한 엔진을 로드하고, jsdom DOM을 생성하고, 동일한 렌더링 경로를 실행해서 파일을 써요. 트랜스포트는 URL 모드예요——CLI는 별도의 구현이 아니에요. 이 덕분에 CLI와 GUI의 출력이 동일하다는 것이 보장돼요.
@@ -216,9 +260,13 @@ lolly qr-code                # 해당 도구의 입력 목록을 표시
 
 CLI에 대응하는 대화형 버전이에요. 도구를 탐색하고, 입력을 채우고, 프로젝트를 저장하고, 내보내는 작업을 GUI 없이——전체 화면의 키보드 우선 터미널 앱(Ink 기반)으로 수행해요. 이 호스트 브리지는 DOM이 필요 없는 포맷(SVG/EMF/EPS/HTML + 텍스트/데이터)에 대해서는 **CLI의 구현을 재사용**하고, 여기에 `~/.lolly` 아래의 디스크 상태와 옵트인 방식의 인라인 미리보기를 추가해요. 그 밖에는 **브라우저 렌더링 티어**가 있어요. 스코프가 제한된 헤드리스 Chromium(MCP 서버가 설치하는 것과 동일)이 래스터/PDF/동영상과 라이브 URL 캡처를 온디맨드로 생성해요——빌드된 web 셸 사본을 구동하기 때문에 출력이 동일하고, 그런 포맷을 처음 내보낼 때만 실행돼요. 그래서 `url-shot`(크롭 + 색상 변경 + 벡터 PDF/SVG 포함)과 모든 래스터/pdf 도구도 터미널에서 실행할 수 있어요. 자세한 내용은 [TUI 가이드](/info/tui.html)를 참고하세요.
 
+어떤 환경에 있든, 대시보드의 기능(Capabilities) 탭이 이 플랫폼이 할 수 있다고 선언한 것들의 전체 지도예요. 그룹으로 정리되어 읽기 좋고, 도구를 하나도 열지 않아도 돼요.
+
 ---
 
 ## 도구 카테고리
+
+![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-utilities)
 
 도구는 갤러리에서 그룹으로 묶이도록 매니페스트에서 `category`로 태그가 지정돼요.
 
@@ -247,6 +295,8 @@ CLI에 대응하는 대화형 버전이에요. 도구를 탐색하고, 입력을
 이 결정들은 이미 확정된 사항이에요. 이 중 하나라도 바꾸려면 대규모 작업이 필요해요——이 결정들이 코드베이스 안의 다른 모든 결정을 형성하고 있어요.
 
 ### 1. 선언적 도구, 그리고 명령형 탈출구
+
+![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-street-map-controls)
 
 도구는 매니페스트(`tool.json`) + 템플릿(`template.html`) + 선택적인 `hooks.js`로 이루어져요.
 
@@ -293,6 +343,10 @@ web과 Tauri 앱은 부팅 시 알려진 URL에서 도구와 에셋 카탈로그
 
 ### 5. URL 모드는 일급 기능이에요
 
+![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&format=svg&filename=aud-url-mode-qr)
+
+![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=%23tool-canvas&filename=ov2-url-palette)
+
 모든 입력은 URL 파라미터로 표현할 수 있어야 해요:
 
 ```
@@ -302,6 +356,8 @@ lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H
 CLI 모드는 다른 트랜스포트 위에서 동작하는 URL 모드예요——CLI 셸은 argv로부터 URL 상태 객체를 만들고 **동일한** 엔진 파이프라인을 실행해요. 렌더링 경로는 하나뿐이에요. CLI는 별도의 구현이 아니기 때문에 GUI에서 어긋날 수 없어요.
 
 `url-mode.ts`가 왕복 변환(파싱과 직렬화)을 처리해요. 예약된 파라미터(도구에 입력으로는 절대 전달되지 않음): `format`, `export`, `copy`, `slot`, `output`, `filename`, `_v`, `z`(패킹된 상태——"Shortest link" 토큰), `width`/`w`, `height`/`h`, `unit`, `dpi`, `profile`, `password`, `bleed`, `marks`, `full`, `options`, `nostage`. URL 모드에서 에셋 입력은 `id`로 직렬화되고, 런타임은 하이드레이션 전에 `host.assets.get()`을 통해 이를 해석해요. `width`/`height`는 `unit`(기본값 `px`, 그 외 `mm`/`cm`/`in`/`pt`/`pc`) 단위의 값이에요. 물리 단위를 사용할 때는 `dpi`가 래스터 해상도를 설정해요. 이 값들은 캔버스 문서 크기를 정하고 내보내기 크기 패널을 미리 채워요.
+
+모든 입력이 링크에 담겨 이동하기 때문에, 파라미터 하나를 바꾸면 그것은 다른 완성 에셋이 돼요. 팔레트 전체가 시드 색상 하나와 배색 규칙, 단계 수만으로 만들어져요.
 
 ### 6. 저장소는 직접이 아니라 브리지를 거쳐요
 
@@ -334,10 +390,14 @@ Handlebars는 EJS 대신 의도적으로 선택됐어요:
 
 ### 10. 도구가 도구를 조합해요
 
+![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-slides-deck)
+
 도구는 도구 간 임포트 없이 **다른** 도구의 렌더링을 임베드할 수 있어요——조합은 엔진이 해석하며, 도구 코드가 처리하는 일은 결코 없어요. 여기에는 두 가지 영역이 있어요:
 
 - **선언적 매니페스트** — `composes: [{ id, tool, inputs, format?, width?, height? }]`. 엔진은 지정된 자식을 렌더링하고, 그 결과를 로직 없는 템플릿 안에 `{{asset <id>}}`로 배치해요. `event-name-badge`는 현재 `qr-code`를 SVG로 조합해요.
 - **이식 가능한 임베드 URL** — `<img src="https://lolly.tools/tool/<id>.<ext>?<inputs>">`. 셸은 그 자식을 **로컬에서** 렌더링해요(로컬 렌더링이 완료될 때까지는 플레이스홀더 픽셀이 표시돼요). `lolly.tools`에서 실제로 무언가를 가져오는 일은 전혀 없어요.
+
+Slides 도구는 그 두 번째 영역 위에 만들어져 있어요: 어떤 슬라이드의 어떤 슬롯이든 이미지 대신 다른 Lolly 도구를 담을 수 있어요.
 
 어떤 도구의 렌더링이든 조합할 수 있어요. **SVG** 자식은 부모가 SVG나 PDF로 내보낼 때는 진짜 벡터로 유지되고, PNG에서는 선명하게 래스터화돼요. **PNG/JPG/WEBP** 자식은 이미지로 임베드돼요. `compose` 기능이 필요해요. 조합된 자식은 중간 산물이라——워터마크도, 출처 기록도 절대 남지 않아요——조합은 우아하게 저하돼요. 자식을 렌더링할 수 없는 셸은 그 슬롯을 그냥 생략하고, 부모는 계속 렌더링돼요.
 
@@ -354,6 +414,8 @@ Handlebars는 EJS 대신 의도적으로 선택됐어요:
 ---
 
 ## 라이프사이클, 처음부터 끝까지
+
+![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&format=svg&filename=aud-export-popup)
 
 한 사용자가 `lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H`를 열어요:
 

@@ -34,6 +34,16 @@ De volledige uitrolmodellen en beheerwalkthrough vind je in [Uitrol](/info/deplo
 
 ## Anti-exfiltratiehulpprogramma's
 
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data)
+
+Text Helper is dezelfde afspraak, maar voor tekst in plaats van bestanden. Het is de werkbank met tabs waar een medewerker anders op de site van een vreemde naar zou gaan zoeken, en het declareert helemaal geen inputs, omdat niets wat het aanraakt ooit de pagina verlaat.
+
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+
+Compress PDF maakt de set compleet: de te grote bijlage krimpt onder een kwaliteitsinstelling die jij kiest, op de machine die hem toch al heeft.
+
+![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=ov2-compress-pdf)
+
 Een categorie Lolly-tools - de privacyhulpprogramma's - bestaat *specifiek* om bestanden binnen de perimeter te houden.
 
 - **Verborgen data verwijderen**
@@ -49,12 +59,18 @@ Dit zijn allemaal on-device transformaties: je bestand of data gaat erin, schone
 
 ## Determinisme & reproduceerbaarheid
 
+Prompt to Image is determinisme in zijn eenvoudigste vorm: de tekst is de hele input, de gezette afbeelding is de hele output, en dezelfde tekst wordt altijd op dezelfde manier gezet.
+
+![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-prompt-to-image)
+
 Elke tool-invoer is uit te drukken als URL-parameter, en dezelfde invoer produceert hetzelfde bestand. Dat heeft twee gevolgen voor operators:
 
 - **Een URL is het artefact.** Commit de link, genereer het asset op aanvraag opnieuw - geen binaries ingecheckt in Git, geen achternajagen van "de laatste versie" in chat. Asset- en tool-ID's zijn permanente contracten, dus een link die vandaag wordt aangemaakt, blijft ook later oplosbaar.
 - **De CLI is hetzelfde renderpad** als de GUI, dus build-pipelines en de app lopen nooit uit elkaar. Genereer OG-afbeeldingen, social cards en datavisuals tijdens build time, reproduceerbaar.
 
 ## Herkomst & Content Credentials
+
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
 
 Exports kunnen **Content Credentials** dragen - een ondertekend [C2PA](https://c2pa.org)-manifest gebonden aan een hash van de bytes van het bestand. Elke latere wijziging aan het bestand verbreekt het zegel, dus een C2PA-bewuste verifier **detecteert wijzigingen cryptografisch, offline**. Het credential is manipulatie-*zichtbaar*: het signaleert manipulatie in plaats van het te voorkomen, en juist dat maakt volledig offline verificatie mogelijk.
 
@@ -68,6 +84,8 @@ Exports kunnen **Content Credentials** dragen - een ondertekend [C2PA](https://c
 > **Interoperabiliteitsnotities.** Lolly verifieert vandaag zijn eigen credentials en veel van die van derden offline, inclusief het lezen van C2PA-claim-**v2**-manifesten van andere producenten. Eén interop-item is nog in uitvoering: WebM - waarvoor nog geen gestandaardiseerde C2PA-mapping bestaat, dus Lolly hangt het manifest eraan als een Matroska-onderdeel (tools van derden verifiëren de MP4 van Lolly out of the box; WebM volgt zodra de standaard is uitgekristalliseerd).
 
 ## Encryptie & wachtwoordbeveiliging
+
+![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&format=svg&filename=aud-pdf-lock)
 
 Voor bestanden die vergrendeld moeten reizen, gebeurt alles on-device:
 

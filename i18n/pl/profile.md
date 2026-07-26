@@ -22,11 +22,17 @@ Nic z tego nie jest wymagane. Pusty profil to całkowicie dobry profil; wypełni
 
 ![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
 
+Preferencje to jedyna część, która zmienia to, jak aplikacja wygląda z twojej strony. Karty motywów są żywymi podglądami i stosują się w chwili, gdy którąś wybierzesz - tylko na tym urządzeniu.
+
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
+
 ## Profil to kontekst, a nie tylko osoba
 
 Słowo „profil" sugeruje jedną, stałą osobę, ale w Lolly to tak naprawdę **kontekst tworzenia** - *kim jesteś, gdy tworzysz daną rzecz*. Ten kontekst może przybierać trzy różne formy, a Lolly obsługuje je wszystkie tak samo.
 
 ### Jako osoba
+
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
 
 Wariant domyślny. Profil to ty: twoje imię i nazwisko, twój e-mail, twoje zdjęcie profilowe. Ustaw je raz, a twój podpis, twój identyfikator i twój układ konferencyjny wypełnią się same. To wszystko, czego większość ludzi kiedykolwiek potrzebuje.
 
@@ -50,9 +56,15 @@ Jeśli więc naprawdę żonglujesz kilkoma kontekstami (ty, twój zespół, kape
 - **Nakładanie:** import *bez* wcześniejszego czyszczenia **scala** dane - importowany profil, sesje i obrazy trafiają na to, co już jest, zastępując wszystko o tej samej nazwie i pozostawiając resztę. Przydatne do przeniesienia zapisanych sesji jednego zespołu do własnej konfiguracji; nie jest tym, czego chcesz, gdy potrzebujesz czystej granicy między rolami.
 - **Obok siebie:** ponieważ wszystko jest ograniczone do urządzenia, osobny profil przeglądarki, osobne konto użytkownika lub druga zainstalowana aplikacja PWA - każde z nich niesie własny, niezależny profil Lolly. Uruchamiaj swoją osobistą instalację i instalację kiosku wydarzenia jednocześnie, bez przełączania.
 
+Oba te warianty żyją w sekcji Pamięć: miernik rozlicza każdy bajt, który przechowuje ta instalacja, kategoria po kategorii, a przyciski pod nim służą do wyczyszczenia albo przeniesienia danych.
+
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
+
 > Trzymaj po jednym pakiecie na kontekst i zmieniaj nazwy plików tak, by odzwierciedlały ich zawartość (`LollyTools-events-2026.zip`, `LollyTools-me.zip`). Plik *jest* profilem.
 
 ## Przenoszenie profilu na nowe urządzenie
+
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
 
 Ponieważ profil jest w całości lokalny, jedynym sposobem, by przenieść go na pustą instalację - nowy laptop, świeżo zresetowaną przeglądarkę, komputer współpracownika, maszynę offline - jest **przeniesienie pliku**. Żadne logowanie go za ciebie nie przywróci, i o to właśnie chodzi: nic nigdy nie opuściło twojego urządzenia.
 
@@ -68,6 +80,8 @@ Co nie jest przenoszone: pamięć podręczna katalogu (pobiera się ponownie na 
 Dokładny układ pakietu, zasady wersjonowania i reguły integralności znajdziesz w **[Transfer danych](/info/data-transfer.html)**; pełny przewodnik krok po kroku - **[Korzystanie z Lolly → Przenoszenie na inne urządzenie](/info/using.html#moving-to-another-device)**.
 
 ## Jak narzędzia korzystają z twojego profilu
+
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
 
 Narzędzie zawsze tylko *wstępnie wypełnia* te pola profilu, do których powiązania zostało wyraźnie stworzone:
 

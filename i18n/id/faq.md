@@ -18,6 +18,8 @@ Lolly menghasilkan konten dalam jumlah besar. Kami menerapkan pendekatan minimal
 
 ### Apa itu feature flag?
 
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&filename=pd-feature-flags)
+
 Feature flag menyalakan atau mematikan bagian-bagian Lolly. Biasanya seorang administrator yang mengendalikannya - dengan Lolly, Anda yang memegang kendali.
 
 ## Bagaimana cara mendapatkan aplikasi seluler atau desktop?
@@ -73,6 +75,8 @@ Lolly mengangkat semuanya.
 
 ## Apa yang membuat utilitas berbeda dari alat?
 
+![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+
 **Jawaban Dasar →** Utilitas tidak selalu perlu merender sehingga bisa mendapatkan UX yang berbeda. 
 
 **Jawaban Sebenarnya →** Alasan utilitas dapat di-host di dalam Lolly Tools adalah untuk menambahkan satu lagi 'lapisan kenyamanan' pertahanan guna menekan insentif eksfiltrasi data. 
@@ -94,6 +98,8 @@ sepele; **kontennya adalah biayanya.**
 Kami memenangkan perang tata kelola dengan kenyamanan dan layanan yang unggul. 
 
 ## Bisakah Lolly menyunting dan merender berkas Figma, Penpot, Illustrator, atau InDesign saya?
+
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
 
 Ya. Buka **Layout Studio** dan klik **Impor desain**: ia menerima **.fig** asli Figma (Save local copy), ekspor **.penpot** Penpot, **.ai** atau **.pdf** Illustrator, **.idml** InDesign (File → Export → InDesign Markup), atau **SVG apa pun** (pintu lebar - hampir semua aplikasi desain mengekspornya). Semuanya diurai sepenuhnya di perangkat Anda, tanpa perlu akun atau plugin.
 

@@ -23,6 +23,8 @@ Where this platform fits in the wider creative-tools landscape, and where it del
 
 The shape of the gap is clear: nothing in the existing landscape gives us constraints-first, offline-capable, low-skill, internally accessible, generative output. Lolly now ships an open canvas of its own - **Layout Studio**, a direct-manipulation free canvas - but with a decisive difference from the Canva column: colours, type and assets placed on it conform to the brand globals, so even free arrangement stays constraints-first. What Lolly still is **not** is an unconstrained design suite; designers will continue to use Illustrator and Figma for bespoke work - and when that work needs to become a governed, reproducible asset, Layout Studio's [Import a design](/info/design-import.html) brings the finished Figma/Illustrator/Penpot file onto the canvas as editable, brand-conformed boxes.
 
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&filename=aud-open-canvas)
+
 ## Use it for
 
 - Rapid generation of operationalised creative assets (event tiles, badges, signatures, alerts)
@@ -31,6 +33,10 @@ The shape of the gap is clear: nothing in the existing landscape gives us constr
 - One-to-many "fill in three fields, get the finished asset" flows - including bulk runs from a spreadsheet/CSV in the `/pro` batch grid (paste or import rows, one finished asset per row, download as a zip)
 - Always-on, recurring branded outputs
 - Things where central control of brand expression matters more than expressive flexibility
+
+Deck Studio is a good measure of the ceiling here: a whole slide deck declared as data, laid out live on the canvas, and exported as a native editable PowerPoint.
+
+![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&filename=ov2-deck-studio-output)
 
 ## Do not use it for
 
@@ -46,6 +52,8 @@ So you stop approving outputs and start approving the **tool** that makes them. 
 
 This is the paradigm shift the deterministic engine actually delivers: it isn't a faster version of the old approval process, it removes the process. For the creative team it's a guard-rail, not a replacement - you still throw the ball (the data, the copy, the image) and the code is the bumper lane that keeps every throw out of the gutter.
 
+![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-approve-the-tool)
+
 | Approving assets the old way | Approving the tool, the Lolly way |
 |---|---|
 | Every finished file is checked, one at a time | The tool is checked once |
@@ -57,6 +65,11 @@ This is the paradigm shift the deterministic engine actually delivers: it isn't 
 ## What this uniquely provides
 
 - **Wild design potential delivered safely in context.** Tools can express adventurous design ideas inside hard coded guard-rails.
+
 - **Software-defined content automation that returns the final asset.** Input → final file. No "now save it from your design tool and post-process it."
 - **Tools compose tools.** One tool can embed another tool's render and return it as part of a single finished asset, with no tool-to-tool code coupling - a primitive no open-canvas or DAM-templating product in the landscape offers.
 - **Vendor neutrality.** Full feature and cost control. Open-source engine. Tools and assets are git-tracked content, not locked in a SaaS database.
+
+The first of those is the one people underestimate. A poster-grade city map, drawn as true vector road and water paths, from a dropdown and two colour fields that cannot be pointed outside the brand:
+
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=192&waitMs=3200&format=png&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
