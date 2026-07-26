@@ -18,6 +18,14 @@ This platform is the structural answer:
 
 The outcome is **abundance**: every event has correct signage, every CVE alert matches the house style, every label prints clean, every email signature is current - all without a design ticket. The platform handles recurring operationalised creative. It is deliberately not a bespoke creative tool - designers still own flagship work.
 
+### Innovate probabilistically, scale deterministically
+
+Every argument about AI in a creative pipeline stalls on the same question: which part of this is the machine's job? It is an old question with a settled answer. Scribes and illuminators already worked between two instruments - the loose sketch, where nothing was fixed and everything could be tried, and the printing press, intimidating precisely because it committed. The sketches were where the art happened. The press was how it reached anyone. Nobody confused the two, and both kept advancing - new inks, new faces, new presses - each improving in harmony with the craft and the intention it served.
+
+Lolly draws the same line. Explore probabilistically: a model, a designer, a rough idea, a prompt that goes somewhere nobody planned. Then scale deterministically - the thing that reaches ten thousand outputs is a *tool*, and a tool renders the same way every time from inputs you can read. The exploration stays free because nothing downstream depends on it landing the same way twice. The output earns trust because it is not a guess. Getting AI experimentation into predictable, reproducible outcomes is not a new discipline; it is the same division of labour that made printed work worth trusting in the first place.
+
+> Trust the creative process, scale with rigour.
+
 ### Where it fits in the landscape
 
 | Capability | Canva | Brand portals | Illustrator | Figma / Penpot | **Lolly** |

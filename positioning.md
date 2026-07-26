@@ -44,6 +44,14 @@ Deck Studio is a good measure of the ceiling here: a whole slide deck declared a
 - Unique campaign work that genuinely needs a designer
 - Ideation that needs to escape the brand system entirely - Lolly's open canvas still conforms colours, type and assets to the brand globals, and that's the point
 
+## Innovate probabilistically, scale deterministically
+
+Most "AI creative" pitches put the model on the wrong side of an old line. Scribes and illuminators already settled where it falls: you work loose on the sketch, where anything can be tried and nothing is committed, and then you go to the printing press, which is intimidating exactly because it commits. The sketches were where the art was. The press was how it travelled. Two instruments, two jobs, both of them inventive in their own register, and the printed work could be trusted because the press kept its promise on every pull.
+
+Lolly is the press, not the sketch. Bring whatever you like to the ideation - a model, a designer, a napkin - but the moment an idea has to become ten thousand assets it goes through something that renders the same way every time, from inputs anyone can read back. That is what the comparison above is really about: not who has the better generator, but who makes the committed step reproducible.
+
+> Trust the creative process, scale with rigour.
+
 ## Approve the tool, not the file
 
 Every other tool in the landscape produces a *file* that then has to be checked - a brand manager in a Slack thread, legal on the disclaimer, a round of changes, another review. Lolly moves the approval **one step upstream**. The brand rules - exact hex codes, licensed font files, bleed margins, spacing - are hard-coded into the tool's HTML and CSS, so the template *physically cannot* emit an off-brand asset. The layout itself is load-bearing.
