@@ -1539,7 +1539,7 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .docs-content{padding:6rem 3.5rem;min-width:0}
 .docs-content img{height:auto;    max-width: min(100%, 40em);    height: auto;   margin: 0 auto; display: block;}
 /* App screenshots (docs/shots.json captures) read at full column width, framed like a window. */
-.docs-content img[src*="/info/shots/"]{max-width:100%;border:1px solid #8882;border-radius:10px;box-shadow:0 6px 24px #0002}
+.docs-content img[src*="/info/shots/"]{max-width:100%;min-width:50%;border-radius:1.2em;box-shadow: inset 0 0 0 1px #0001, 0 3px 6px #0002, 0 6px 2em #0001}
 .docs-content h2{font-size:1.5rem;font-weight:700;letter-spacing:normal;text-transform:none;border-top:1px solid var(--border);padding-top:2rem;margin-top:2.5rem;margin-bottom:.75rem;color:var(--dark)}
 .docs-content h2:first-of-type{border-top:none;padding-top:0;margin-top:0}
 .docs-content h3{font-size:1.15rem;margin-top:1.75rem;margin-bottom:.5rem;color:var(--dark)}
