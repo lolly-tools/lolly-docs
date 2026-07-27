@@ -4,6 +4,7 @@
   "surfaces": [
     { "icon": "surfaceWeb", "label": "Web" },
     { "icon": "surfaceMacos", "label": "macOS" },
+    { "icon": "surfaceWindows", "label": "Windows" },
     { "icon": "surfaceLinux", "label": "Linux" },
     { "icon": "surfaceIos", "label": "iOS" },
     { "icon": "surfaceAndroid", "label": "Android" },

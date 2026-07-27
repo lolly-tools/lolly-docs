@@ -79,7 +79,7 @@ The right pane lists every colour your brand carries, grouped (Primary, Neutral,
 Click any swatch to open its editor:
 
 - **Rename** it.
-- **Set by value** - type a colour in Hex, RGB, RGBA, HSL, OKLCH, or CMYK. (Enter a CMYK value and it also becomes that swatch's print substitute - see below.)
+- **Set the colour** - the picker opens on perceptual **OKLCH** sliders, with tabs for **HSL**, **RGB** and **CMYK**; the value field reads and writes in whichever space is active, so you can paste a hex or type ink percentages. Note that entering CMYK sets the *screen* colour by conversion - to pin exact inks, use the print lock below.
 - **Stored as** - choose how the swatch is persisted: **LCH** (the default - perceptual, wide-gamut, the best choice for editing), Hex, RGB, or HSL. Override it when you need to pin an exact legacy hex or match an sRGB value.
 - **Print substitutes** (folded) - lock the colour's print behaviour:
   - **CMYK** - check it to override the automatic sRGB→CMYK conversion with exact ink values (C/M/Y/K, 0–100).
@@ -99,16 +99,18 @@ The floating pill at the bottom of the palette pane downloads the whole palette 
 
 ## Type
 
-Add **any Google Font** and it downloads to this device - rendered in the app, your tools, and every export, offline forever, and carried in your brand pack. Nothing is fetched at render time.
+Two doors, in this order. **Your fonts** takes font files off your own machine - upload a TTF, OTF or WOFF and it stays on this device, available to every tool and every export. That is the path for a licensed corporate typeface you already own. Below it, **Google Fonts** covers anything you don't: add **any Google Font** and it downloads to this device once. Either way the face is rendered in the app, your tools and every export, offline forever, and carried in your brand pack - nothing is fetched at render time.
 
 ![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-type)
 
 Search a family (Inter, Fraunces, Space Grotesk…), and **Add font**. Each font in the list can take a role:
 
 - **Primary** - your main brand and body face (**Make primary**).
+- **Headings** - a display face for `h1`/`h2` (**Use for headings**).
+- **Italic** - a true italic companion (**Use for italic**).
 - **Code** - an optional monospace face for code and data (**Use for code**).
 
-The **Type roles** panel shows a live specimen of Heading, Body, and Code so you can see each face doing its job. Everything on Google Fonts ships under an open licence (OFL/Apache/UFL).
+Headings, italic and code each fall back to the primary until you assign them, so a one-font brand needs no decisions here. The **Type roles** panel shows a live specimen of Heading, Body, Italic and Code so you can see each face doing its job. Everything on Google Fonts ships under an open licence (OFL/Apache/UFL).
 
 ![The Type roles specimen - heading, body, italic and code, each set in the face that role resolves to, with the face name beside it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2000&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-typeroles&format=svg&filename=bs-type-specimen)
 

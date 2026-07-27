@@ -1,48 +1,52 @@
 {
   "heading": "Mọi định dạng, vào và ra",
-  "lead": "Lolly đọc được 25 định dạng nguồn và dựng được 27 - đây là toàn bộ danh sách, được nhóm theo loại của từng định dạng. Mười một {roundtrip}: được đọc *và* ghi, nên chúng xuất hiện ở cả hai cột.",
+  "lead": "Lolly đọc được 29 định dạng nguồn và dựng được 31 - đây là toàn bộ danh sách, được nhóm theo loại của từng định dạng. Mười lăm {roundtrip}: được đọc *và* ghi, nên chúng xuất hiện ở cả hai cột.",
   "ingestsLabel": "Nhập vào",
-  "ingestsCount": "25 vào",
+  "ingestsCount": "29 vào",
   "exportsLabel": "Xuất ra",
-  "exportsCount": "27 ra",
+  "exportsCount": "31 ra",
   "ingests": [
     {
-      "category": "3D",
-      "list": "GLB · glTF"
+      "category": "Vector",
+      "list": "SVG · PDF · Illustrator · InDesign · Figma · Penpot"
     },
     {
-      "category": "Thiết kế",
-      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
+      "category": "Raster",
+      "list": "PNG · JPG · WEBP · GIF · HEIC · TIFF · AVIF"
     },
     {
-      "category": "Ảnh",
-      "list": "HEIC · TIFF · AVIF"
-    },
-    {
-      "category": "Video",
-      "list": "MP4 · WEBM · MOV"
+      "category": "Chuyển động",
+      "list": "MP4 · WEBM · MOV · Lottie"
     },
     {
       "category": "Âm thanh",
       "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD"
     },
     {
+      "category": "Tài liệu",
+      "list": "PPTX"
+    },
+    {
       "category": "Dữ liệu",
       "list": "CSV · JSON"
+    },
+    {
+      "category": "3D",
+      "list": "GLB · glTF"
     }
   ],
   "exports": [
     {
       "category": "Vector",
-      "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF"
+      "list": "SVG · PDF · CMYK PDF · EPS · CMYK EPS · EMF · DXF"
     },
     {
       "category": "Raster",
-      "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO"
+      "list": "PNG · JPG · WEBP · AVIF · TIFF · CMYK TIFF · ICO"
     },
     {
       "category": "Chuyển động",
-      "list": "MP4 · WEBM · GIF · APNG"
+      "list": "MP4 · WEBM · GIF · APNG · WebP động · SVG động"
     },
     {
       "category": "Âm thanh",

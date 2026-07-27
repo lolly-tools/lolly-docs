@@ -1,48 +1,52 @@
 {
   "heading": "所有格式,匯入匯出一應俱全",
-  "lead": "Lolly 可讀取 25 種來源格式，並輸出 27 種格式 - 以下是完整清單，依各自類型分組。其中 11 個{roundtrip}：讀取*與*寫入，因此會同時出現在兩欄中。",
+  "lead": "Lolly 可讀取 29 種來源格式，並輸出 31 種格式 - 以下是完整清單，依各自類型分組。其中 15 個{roundtrip}：讀取*與*寫入，因此會同時出現在兩欄中。",
   "ingestsLabel": "匯入",
-  "ingestsCount": "25 漸入",
+  "ingestsCount": "29 漸入",
   "exportsLabel": "匯出",
-  "exportsCount": "27 種格式",
+  "exportsCount": "31 種格式",
   "ingests": [
     {
-      "category": "3D",
-      "list": "GLB · glTF"
+      "category": "向量",
+      "list": "SVG · PDF · Illustrator · InDesign · Figma · Penpot"
     },
     {
-      "category": "設計",
-      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
+      "category": "點陣",
+      "list": "PNG · JPG · WEBP · GIF · HEIC · TIFF · AVIF"
     },
     {
-      "category": "相片",
-      "list": "HEIC · TIFF · AVIF"
-    },
-    {
-      "category": "影片",
-      "list": "MP4 · WEBM · MOV"
+      "category": "動態",
+      "list": "MP4 · WEBM · MOV · Lottie"
     },
     {
       "category": "音訊",
       "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD"
     },
     {
+      "category": "文件",
+      "list": "PPTX"
+    },
+    {
       "category": "資料",
       "list": "CSV · JSON"
+    },
+    {
+      "category": "3D",
+      "list": "GLB · glTF"
     }
   ],
   "exports": [
     {
       "category": "向量",
-      "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF"
+      "list": "SVG · PDF · CMYK PDF · EPS · CMYK EPS · EMF · DXF"
     },
     {
       "category": "點陣",
-      "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO"
+      "list": "PNG · JPG · WEBP · AVIF · TIFF · CMYK TIFF · ICO"
     },
     {
       "category": "動態",
-      "list": "MP4 · WEBM · GIF · APNG"
+      "list": "MP4 · WEBM · GIF · APNG · 動態 WebP · 動態 SVG"
     },
     {
       "category": "音訊",

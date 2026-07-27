@@ -1,48 +1,52 @@
 {
   "heading": "Každý formát, dovnitř i ven",
-  "lead": "Lolly umí číst 25 zdrojových formátů a vykreslit 27 - tady je celý seznam, seřazený podle toho, co každý formát je. Jedenáct {roundtrip}: čte se *i* zapisuje, takže se objevují v obou sloupcích.",
+  "lead": "Lolly umí číst 29 zdrojových formátů a vykreslit 31 - tady je celý seznam, seřazený podle toho, co každý formát je. Patnáct {roundtrip}: čte se *i* zapisuje, takže se objevují v obou sloupcích.",
   "ingestsLabel": "Načítá",
-  "ingestsCount": "25 dovnitř",
+  "ingestsCount": "29 dovnitř",
   "exportsLabel": "Exportuje",
-  "exportsCount": "27 ven",
+  "exportsCount": "31 ven",
   "ingests": [
     {
-      "category": "3D",
-      "list": "GLB · glTF"
+      "category": "Vektory",
+      "list": "SVG · PDF · Illustrator · InDesign · Figma · Penpot"
     },
     {
-      "category": "Design",
-      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
+      "category": "Rastr",
+      "list": "PNG · JPG · WEBP · GIF · HEIC · TIFF · AVIF"
     },
     {
-      "category": "Fotky",
-      "list": "HEIC · TIFF · AVIF"
-    },
-    {
-      "category": "Video",
-      "list": "MP4 · WEBM · MOV"
+      "category": "Pohyb",
+      "list": "MP4 · WEBM · MOV · Lottie"
     },
     {
       "category": "Audio",
       "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD"
     },
     {
+      "category": "Dokumenty",
+      "list": "PPTX"
+    },
+    {
       "category": "Data",
       "list": "CSV · JSON"
+    },
+    {
+      "category": "3D",
+      "list": "GLB · glTF"
     }
   ],
   "exports": [
     {
       "category": "Vektory",
-      "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF"
+      "list": "SVG · PDF · CMYK PDF · EPS · CMYK EPS · EMF · DXF"
     },
     {
       "category": "Rastr",
-      "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO"
+      "list": "PNG · JPG · WEBP · AVIF · TIFF · CMYK TIFF · ICO"
     },
     {
       "category": "Pohyb",
-      "list": "MP4 · WEBM · GIF · APNG"
+      "list": "MP4 · WEBM · GIF · APNG · Animované WebP · Animované SVG"
     },
     {
       "category": "Audio",

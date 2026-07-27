@@ -2,7 +2,7 @@
 
 The **capability bridge** is the versioned contract between a tool and whatever shell it runs in (web PWA, Tauri desktop/mobile, CLI, and the interactive TUI). Tools call `host.*`; each shell implements the same surface its own way. This is what lets one tool run unchanged everywhere. (The TUI reuses the CLI's bridge implementation, so anything true of the CLI here applies to it too.)
 
-Tools receive `host` inside their **hooks** (`hooks.js`). They never touch the DOM outside their template, never `fetch` directly, never read storage directly - they go through `host`. See [Authoring Tools](/info/authoring-tools.html) for the tool anatomy and [Overview](/info/overview.html) for the bigger picture. The canonical definition lives in `engine/src/bridge/host-v1.ts`.
+Tools receive `host` inside their **hooks** (`hooks.js`). They never touch the DOM outside their template, never `fetch` directly, never read storage directly - they go through `host`. See [Authoring Tools](/info/authoring-tools.html) for the tool anatomy and [Overview](/info/overview.html) for the bigger picture. The canonical definition lives in `packages/core/src/host-v1.ts` - the tool-author SDK `@lolly-tools/core`, so a third party can build against the contract without depending on the engine. `engine/src/bridge/host-v1.ts` is a type re-export of it.
 
 ```js
 function onInit({ model, host }) {
@@ -15,7 +15,7 @@ function onInit({ model, host }) {
 
 - **Additive only.** Methods may be added in a minor version; never removed or signature-changed without a major bump. When v2 ships, v1 keeps working.
 - **No platform-specific methods.** If only one shell can do something, it sits behind a `capabilities` flag in `tool.json` and shells that can't fulfil it expose a stub/error.
-- **Capabilities gate access.** `net` (`network`), `capture` and `compose` require a matching flag in the manifest's `capabilities`. `tokens`, `text`, `pdf` and `media` are optional and present only when the shell provides them (feature-detect, don't flag). Declare what you need.
+- **Capabilities gate access.** `net` (`network`), `capture` (`capture`), `compose` (`compose`) and `recorder` (`microphone` / `camera` / `screen`) require a matching flag in the manifest's `capabilities`. `tokens`, `text`, `pdf`, `pptx`, `media`, `color`, `images` and `geom` are optional and present only when the shell provides them (feature-detect, don't flag). Declare what you need.
 - `host.version` is `'1'`; `host.shell` is one of `web` · `tauri-desktop` · `tauri-mobile` · `cli`.
 
 ## `host.profile`
@@ -104,7 +104,7 @@ A `file`-typed input (the user's own file, picked into memory) arrives as an **`
 
 ## `host.text` *(text-to-path)*
 
-Shape and outline a text run into an SVG path via HarfBuzz (correct kerning, ligatures, GPOS/GSUB). Optional - not all shells implement it (CLI has no DOM).
+Shape and outline a text run into an SVG path via HarfBuzz (correct kerning, ligatures, GPOS/GSUB). Optional and feature-detected, but **DOM-free** - the web PWA, the CLI and the TUI all provide it (in the Node shells fonts resolve off disk).
 
 | Method | Returns |
 |---|---|

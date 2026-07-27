@@ -43,12 +43,14 @@ tools/your-tool-id/
 Validated against `schemas/tool.schema.json`. Required fields:
 
 - `id` - lowercase, hyphen-separated, **never changes** once published
-- `name`, `description`
+- `name`
 - `version` - SemVer; bump on every change
 - `engineVersion` - SemVer range, e.g. `"^1.0.0"`
 - `status` - `official` | `community` | `experimental`. Experimental tools **watermark every export** (the host applies it - your tool does nothing). This is the positive counterpart to the `privacy: "on-device"` "no watermark" rule below.
 - `render` - see [The `render` block](#the-render-block) below. At minimum `{ width, height, formats }`.
 - `inputs` - array of input declarations (see below)
+
+Strongly recommended but not schema-required: `description` (the gallery's About card reads it), `category`, and `tags`.
 
 Optional:
 
@@ -202,7 +204,7 @@ The value **stored** is the target row's *derived id* - `slug(value field)`, els
 
 A `blocks` input carrying a `canvas` object is the free-form WYSIWYG artboard behind `render.layout: "editor"` (see [The `render` block](#the-render-block)): its `*Field` keys map each row's geometry (`xField`/`yField`/`wField`/`hField`/`rotationField`, plus fill/text/image sub-fields) so the shell can mount its select / drag / resize / rotate overlay while the data stays a flat, URL-expressible array. The shell mounts the whole editor rail for you - add, arrange, undo and the primary export actions - so the manifest declares geometry fields and nothing else.
 
-![The free-canvas editor rail the shell mounts for an editor layout - add, arrange, undo and export, none of it declared by the manifest](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&cropSelector=.fc-toolbar&filename=auth-editor-rail)
+![The free-canvas editor rail the shell mounts for an editor layout - add, arrange, undo and export, none of it declared by the manifest](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&css=.fc-toolbar%7Bopacity%3A1!important%7D&format=svg&cropSelector=.fc-toolbar&filename=auth-editor-rail)
 
 Three of the `canvas` keys turn a plain box canvas into a **diagram editor**:
 
@@ -274,7 +276,7 @@ An `asset` input opens the host's asset picker and stores the chosen `AssetRef` 
 
 ![The Image row in the Halftone filter - a thumbnail slot and a Choose asset button that opens the host's picker, with nothing about pickers in the manifest](/t/url-shot?url=%2F%23%2Ftool%2Ffilter-halftone&width=1440&height=900&dpi=192&waitMs=2000&css=%23tool-canvas%7Bdisplay%3Anone%7D&format=svg&cropSelector=.input-row%3Ahas%28.asset-picker-trigger%5Bdata-input-id%3D%22image%22%5D%29&filename=at2-input-asset-picker)
 
-When `allowUpload` is `true`, the picker offers the user's **personal image library** alongside the catalog. Users add images from their device; the host downscales each to 3840px on the longest edge, re-encodes it (WebP, with EXIF/GPS metadata stripped), and stores it locally (IndexedDB on web and Tauri). The library is capped (currently 50 images), reusable across tools, and managed in **Profile → Storage → My images**. SVG uploads are sanitised on ingest (script/handler stripping) and pass through without rasterising.
+When `allowUpload` is `true`, the picker offers the user's **personal image library** alongside the catalog. Users add images from their device; the host stores the bytes **verbatim** (a silent re-encode would break a Content Credential's hard binding) and only offers to downscale when a file is genuinely huge. Metadata stripping is a separate, opt-in user preference (*Strip metadata from uploads*, default off). The library is **not capped by count** - the only limit is the device's own storage, checked before each write - and it is reusable across tools and managed in **Profile → Storage → My images**. SVG uploads are sanitised on ingest (script/handler stripping) and pass through without rasterising.
 
 These images are **device-local**: their `AssetRef.source` is `"user"` and their `user/…` id is meaningful only on the device that holds the bytes, so they are **omitted from shareable URLs** (see `docs/url-mode.md`). Tools treat `user` and `library` assets identically - no tool code is involved in the upload.
 

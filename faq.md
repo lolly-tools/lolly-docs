@@ -109,15 +109,13 @@ Layers arrive as editable boxes on the open canvas: text stays retypable, shapes
 
 Yes - two ways, both on your device. The **Rebrand a Deck** utility takes a `.pptx` and swaps its theme, hardcoded colours and fonts to your brand while charts, SmartArt and animations pass through untouched - you get a `.pptx` back. Or open the deck in **Deck Builder** (Load → drop the file) to edit it slide by slide as freeform objects, already snapped to brand, and export PPTX, PDF or video. Dropping a `.pptx` on an upload area instead files the slides you choose as SVG assets in your library. See [Import a design → Decks and documents](/info/design-import.html#decks-and-documents).
 
-## What happens on Aug 29?
+## Where did the SUSE-branded tools go?
 
-The SUSE-branded tools leave the project, and new generic example tools defined by the user take over.
-
-SUSE will operate its own Lolly to protect its trademarks.
+They already live in a separate, private repository. A public clone doesn't fetch the SUSE brand pack at all, so a public build runs the neutral `lolly-start` profile - the brand-agnostic community tools plus a blank brand you fill in with your own. SUSE operates its own instance to protect its trademarks.
 
 ## How much is SUSE keeping private? (aka when is the rug-pull)
 
-SUSE's trademarks and branded tools are for demonstration only, until August 29. You can find an unbranded instance of Lolly at [lolly.ART](https://lolly.art).
+The engine, the shells, the schemas and the brand-agnostic tools are open source; SUSE's trademarks and branded tools are the part that stays private, and they are already separated out. You can find an unbranded instance of Lolly at [lolly.ART](https://lolly.art).
 
 SUSE is an enterprise open source infrastructure company with more than three decades of platform leadership. Its products include enterprise-tier Linux, Cloud Native, Edge, and AI infrastructure solutions.
 

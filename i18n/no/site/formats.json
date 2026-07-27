@@ -1,48 +1,52 @@
 {
   "heading": "Alle formater, inn og ut",
-  "lead": "Lolly leser 25 kildeformater og rendrer 27 - her er hele settet, gruppert etter hva hver av dem er. Elleve {roundtrip}: lest *og* skrevet, så de vises i begge kolonnene.",
+  "lead": "Lolly leser 29 kildeformater og rendrer 31 - her er hele settet, gruppert etter hva hver av dem er. Femten {roundtrip}: lest *og* skrevet, så de vises i begge kolonnene.",
   "ingestsLabel": "Importerer",
-  "ingestsCount": "25 inn",
+  "ingestsCount": "29 inn",
   "exportsLabel": "Eksporterer",
-  "exportsCount": "27 ut",
+  "exportsCount": "31 ut",
   "ingests": [
     {
-      "category": "3D",
-      "list": "GLB · glTF"
+      "category": "Vektor",
+      "list": "SVG · PDF · Illustrator · InDesign · Figma · Penpot"
     },
     {
-      "category": "Design",
-      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
+      "category": "Raster",
+      "list": "PNG · JPG · WEBP · GIF · HEIC · TIFF · AVIF"
     },
     {
-      "category": "Bilder",
-      "list": "HEIC · TIFF · AVIF"
-    },
-    {
-      "category": "Video",
-      "list": "MP4 · WEBM · MOV"
+      "category": "Bevegelse",
+      "list": "MP4 · WEBM · MOV · Lottie"
     },
     {
       "category": "Lyd",
       "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD"
     },
     {
+      "category": "Dokument",
+      "list": "PPTX"
+    },
+    {
       "category": "Data",
       "list": "CSV · JSON"
+    },
+    {
+      "category": "3D",
+      "list": "GLB · glTF"
     }
   ],
   "exports": [
     {
       "category": "Vektor",
-      "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF"
+      "list": "SVG · PDF · CMYK PDF · EPS · CMYK EPS · EMF · DXF"
     },
     {
       "category": "Raster",
-      "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO"
+      "list": "PNG · JPG · WEBP · AVIF · TIFF · CMYK TIFF · ICO"
     },
     {
       "category": "Bevegelse",
-      "list": "MP4 · WEBM · GIF · APNG"
+      "list": "MP4 · WEBM · GIF · APNG · Animert WebP · Animert SVG"
     },
     {
       "category": "Lyd",

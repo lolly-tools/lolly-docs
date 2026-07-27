@@ -27,6 +27,7 @@ A bundle is a plain `.zip`. The download is named for the person it belongs to -
 | `assets.json` | yes | Metadata for each uploaded image, each pointing at its bytes under `assets/blobs/`. |
 | `assets/blobs/<n>.<ext>` | per image | The raw image bytes. Stored uncompressed (already-compressed formats). The extension is cosmetic; the MIME in `assets.json` is authoritative. |
 | `prefs.json` | yes | User-owned local preferences: `theme`, `sidebarWidth`, and the `ct-metrics` activity tally. |
+| `lolly.txt` | yes | A human-readable summary of the bundle (counts, profile, filename) for anyone who opens the zip without Lolly. Regenerated on every export and recognised on import, so it never counts as a skipped part - and written *after* the integrity map, so it is deliberately outside it. |
 
 Being a plain zip is deliberate: it survives any transport intact and can be inspected with any unzip tool.
 
@@ -81,7 +82,7 @@ When `manifest.integrity` is present, a reader verifies each listed part's SHA-2
 
 Integrity is best-effort by design: it's written only where Web Crypto is available (every secure browser context and modern Node), and verified only when both the map and Web Crypto are present. A bundle without the map - e.g. one from before integrity existed - imports unchanged. "Can't verify" is never treated as "corrupt".
 
-The manifest never lists itself; the digests cover the parts the manifest vouches for.
+The manifest lists neither itself nor the regenerated `lolly.txt` README; the digests cover the parts the manifest vouches for.
 
 ## Import semantics
 
@@ -110,7 +111,10 @@ The storage meter itemises the same split. Saved sessions and My images ride in 
 
 `data-transfer.ts` reads and writes exclusively through the capability bridge (`host.profile`, `host.state`, `host.assets`) and the shared `localStorage` prefs. Because the bridge is the only seam, the *same* module produces a byte-identical bundle on every shell even though the storage beneath differs - IndexedDB on web, the filesystem on Tauri. The Tauri shells reuse this module unchanged; only their `host.state` implementation differs. The headless test exercises the full round-trip against an in-memory bridge, which is why it stands in for all of them.
 
-The Node CLI shell is intentionally excluded: its state is in-memory and ephemeral per invocation, so there is no accumulated user data to carry.
+Two shells sit outside that guarantee, for different reasons:
+
+- The **one-shot CLI** has nothing to carry - its state is in-memory and ephemeral per invocation.
+- The **TUI** does persist state (`~/.lolly`: sessions, folders, profile) and its Profile view can back it up, but it writes a *simpler* archive of its own: `sessions/<slot>.json` per session plus `profile.json` and `folders.json`, with no manifest, no `formatVersion`/`minReader` and no integrity map. It is **not** importable by this format - a reader rejects it as "not a Lolly backup" - and confusingly it uses a similar name (`lolly-backup-<stamp>.zip`). Unifying the two is a known gap.
 
 ## Reserved extension points
 

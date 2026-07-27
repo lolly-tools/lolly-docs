@@ -1,48 +1,52 @@
 {
   "heading": "Jedes Format, ein und aus",
-  "lead": "Lolly liest 25 Quellformate und rendert 27 - hier ist die vollständige Liste, gruppiert danach, was jedes ist. Elf {roundtrip}: gelesen *und* geschrieben, daher erscheinen sie in beiden Spalten.",
+  "lead": "Lolly liest 29 Quellformate und rendert 31 - hier ist die vollständige Liste, gruppiert danach, was jedes ist. Fünfzehn {roundtrip}: gelesen *und* geschrieben, daher erscheinen sie in beiden Spalten.",
   "ingestsLabel": "Importe",
-  "ingestsCount": "25 Ein",
+  "ingestsCount": "29 Ein",
   "exportsLabel": "Exporte",
-  "exportsCount": "27 aus",
+  "exportsCount": "31 aus",
   "ingests": [
     {
-      "category": "3D",
-      "list": "GLB · glTF"
+      "category": "Vektor",
+      "list": "SVG · PDF · Illustrator · InDesign · Figma · Penpot"
     },
     {
-      "category": "Design",
-      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
+      "category": "Raster",
+      "list": "PNG · JPG · WEBP · GIF · HEIC · TIFF · AVIF"
     },
     {
-      "category": "Fotos",
-      "list": "HEIC · TIFF · AVIF"
-    },
-    {
-      "category": "Video",
-      "list": "MP4 · WEBM · MOV"
+      "category": "Bewegtbild",
+      "list": "MP4 · WEBM · MOV · Lottie"
     },
     {
       "category": "Audio",
       "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD"
     },
     {
+      "category": "Dokument",
+      "list": "PPTX"
+    },
+    {
       "category": "Daten",
       "list": "CSV · JSON"
+    },
+    {
+      "category": "3D",
+      "list": "GLB · glTF"
     }
   ],
   "exports": [
     {
       "category": "Vektor",
-      "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF"
+      "list": "SVG · PDF · CMYK PDF · EPS · CMYK EPS · EMF · DXF"
     },
     {
       "category": "Raster",
-      "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO"
+      "list": "PNG · JPG · WEBP · AVIF · TIFF · CMYK TIFF · ICO"
     },
     {
       "category": "Bewegtbild",
-      "list": "MP4 · WEBM · GIF · APNG"
+      "list": "MP4 · WEBM · GIF · APNG · Animiertes WebP · Animiertes SVG"
     },
     {
       "category": "Audio",

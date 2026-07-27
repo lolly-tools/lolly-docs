@@ -1,48 +1,52 @@
 {
   "heading": "প্রতিটি ফরম্যাট, ভেতরে ও বাইরে",
-  "lead": "Lolly ২৫টি সোর্স ফরম্যাট পড়ে এবং ২৭টি রেন্ডার করে - এই রইল পুরো সেট, প্রতিটি কী তা অনুযায়ী গোষ্ঠীভুক্ত। এগারোটি {roundtrip}: পড়া *এবং* লেখা হয়, তাই সেগুলো দুই কলামেই দেখা যায়।",
+  "lead": "Lolly ২৯টি সোর্স ফরম্যাট পড়ে এবং ৩১টি রেন্ডার করে - এই রইল পুরো সেট, প্রতিটি কী তা অনুযায়ী গোষ্ঠীভুক্ত। পনেরোটি {roundtrip}: পড়া *এবং* লেখা হয়, তাই সেগুলো দুই কলামেই দেখা যায়।",
   "ingestsLabel": "ইনজেস্ট",
-  "ingestsCount": "25 ইন",
+  "ingestsCount": "29 ইন",
   "exportsLabel": "এক্সপোর্ট",
-  "exportsCount": "27 বাইরে",
+  "exportsCount": "31 বাইরে",
   "ingests": [
     {
-      "category": "3D",
-      "list": "GLB · glTF"
+      "category": "ভেক্টর",
+      "list": "SVG · PDF · Illustrator · InDesign · Figma · Penpot"
     },
     {
-      "category": "ডিজাইন",
-      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
+      "category": "রাস্টার",
+      "list": "PNG · JPG · WEBP · GIF · HEIC · TIFF · AVIF"
     },
     {
-      "category": "ফটো",
-      "list": "HEIC · TIFF · AVIF"
-    },
-    {
-      "category": "ভিডিও",
-      "list": "MP4 · WEBM · MOV"
+      "category": "মোশন",
+      "list": "MP4 · WEBM · MOV · Lottie"
     },
     {
       "category": "অডিও",
       "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD"
     },
     {
+      "category": "ডকুমেন্ট",
+      "list": "PPTX"
+    },
+    {
       "category": "ডেটা",
       "list": "CSV · JSON"
+    },
+    {
+      "category": "3D",
+      "list": "GLB · glTF"
     }
   ],
   "exports": [
     {
       "category": "ভেক্টর",
-      "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF"
+      "list": "SVG · PDF · CMYK PDF · EPS · CMYK EPS · EMF · DXF"
     },
     {
       "category": "রাস্টার",
-      "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO"
+      "list": "PNG · JPG · WEBP · AVIF · TIFF · CMYK TIFF · ICO"
     },
     {
       "category": "মোশন",
-      "list": "MP4 · WEBM · GIF · APNG"
+      "list": "MP4 · WEBM · GIF · APNG · অ্যানিমেটেড WebP · অ্যানিমেটেড SVG"
     },
     {
       "category": "অডিও",

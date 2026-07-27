@@ -76,6 +76,21 @@ Example: width `210`, height `297`, unit `mm` → an A4 page.
 
 ![The dimensions row set to 210 by 297 mm, with the DPI field revealed because the unit is physical](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26w%3D210%26h%3D297%26unit%3Dmm%26format%3Dpdf%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-dims&filename=exp-export-dims)
 
+## Stills from a timed composition
+
+A **timed composition** - a [Sequence Studio](/info/using.html#timeline-sequence-studio) stage, or any timeline-driven artboard - is a moving thing, so a still export has to answer "which moment?". The rule is what you'd expect: **the frame at the playhead**. Park the playhead where you want the picture and export; what you see is what comes out.
+
+When you want more than one moment, the **Frames** field appears beside the output size (only for a timed composition, and only for a still format - PNG, JPG, WebP, SVG or PDF). Leave it at `1` for the playhead frame. Raise it and you get that many stills sampled at equal intervals across the whole sequence:
+
+- **Raster and SVG** come back as one **zip** - `<name>-01.png`, `-02.png`, and so on.
+- **PDF** comes back as a **single document of that many pages**.
+
+Useful for a storyboard, a thumbnail sheet, a contact sheet for review, or a social carousel cut straight from a video edit.
+
+Sampling is taken at the **midpoint** of each interval rather than at the edges, because the first instant of a sequence is often an enter transition that hasn't faded in yet and the last is the state after every clip has ended - endpoint sampling would spend two of your frames on near-blank ones. The count is capped at **64** (a contact sheet is for a human to read), and anything nonsensical typed into the field falls back to `1` rather than failing the export. Each frame is an ordinary still, so Content Credentials, the imprint, physical units and DPI all behave exactly as they do for a single export.
+
+The **Frames** field is the way to get a sheet today. The engine reserves a matching `cuts` URL param, but no shell reads it from a link yet, so a shared link always reopens on the playhead frame - see [URL Mode](/info/url-mode.html#contact-sheets-cuts).
+
 ## Multi-page PDF
 
 Some tools build a **multi-page PDF document** instead of a single artwork - a cover, content that flows onto as many pages as it needs, and a back page, all in one file (see the *Multi-Page PDF* tool). Each page is a **true PDF page** sized to that page's box, so readers and printers get real pages, not one tall image.
@@ -112,17 +127,19 @@ Motion tools (Animated Ad, Lottie Ad, Bag Video) can export **Animated SVG** - a
 
 ## Transparency
 
-Tools that support it offer a **transparent background** toggle (e.g. *No BG*). Transparency is preserved by PNG, WebP, AVIF, SVG (still and animated), APNG and Animated WebP. JPG and PDF are always opaque.
+Tools that support it offer a **transparent background** toggle (e.g. *No BG*). Transparency is preserved by PNG, WebP, AVIF, SVG (still and animated), APNG and Animated WebP. JPG and PDF are always opaque, and TIFF flattens onto white (onto black on the HDR path - see above).
 
 ## Colour spaces
 
 Two different questions, worth keeping apart: which colour spaces Lolly can **read and think in**, and which ones it **writes**.
 
-**Reading and thinking.** Anywhere a colour is written - a template, an imported SVG's paint, a token value, a gradient stop, a colour typed into a swatch - Lolly parses the full **CSS Color 4** vocabulary: `#hex`, `rgb()`, `hsl()`, `hwb()`, `lab()`, `lch()`, `oklab()`, `oklch()`, the CSS named colours, and `color()` in the predefined spaces - `srgb`, `srgb-linear`, `display-p3`, `a98-rgb`, `prophoto-rgb`, `rec2020`, `xyz-d50` and `xyz-d65` - including components written as `none`. Wide-gamut coordinates are kept as authored rather than clamped at the door, so nothing is silently crushed before it needs to be.
+**Reading.** Wherever a colour is written - a tool's stylesheet, an imported SVG's paint, a design token's value, a shadow or gradient inside a CSS shorthand - Lolly reads the full **CSS Color 4** vocabulary: `#hex`, `rgb()`, `hsl()`, `hwb()`, `lab()`, `lch()`, `oklab()`, `oklch()`, the CSS named colours, and `color()` in the predefined spaces - `srgb`, `srgb-linear`, `display-p3`, `a98-rgb`, `prophoto-rgb`, `rec2020`, `xyz-d50`, `xyz-d65` - including components written as the `none` keyword. One parser does this for the whole platform, so the browser and every export walker agree on what a colour string means.
 
-Colour *maths* then happens perceptually rather than in raw channels. Palette derivation, ramps, harmonies and contrast run in **OKLCH/OKLab**; gradients interpolate in a space you choose (OKLab by default, or `oklch`, `lab`, `lch`, `srgb`, `srgb-linear`, `hsl`, with a hue-travel direction for the polar ones) and mixing is **premultiplied**, so a fade to transparent stays the right colour instead of darkening toward black. One interpolator does this for both the preview and the export walkers - which is what stopped a conic gradient from being blended one way on screen and another in the exported SVG.
+That matters more than it sounds, because a browser resolves modern CSS into modern CSS. Write `color-mix(in oklab, …)` and Chrome computes `oklab(…)`; use a brand token stored as `oklch()` and that's the literal value the export walker sees. Colours in those forms are read correctly rather than dropped - which is what a walker that only understood `rgb()` did, exporting brand-coloured text as black, losing tinted panels and table rules, and reading `oklch(0.7 0.1 200) 0px 2px 4px` as a shadow offset of 0.7 by 0.1.
 
-**Writing.** The output is deliberately narrower than the input, because a file has to be readable by whatever opens it. Screen and web formats are written as **sRGB** and tagged as such; print formats are written as **CMYK** against a named press condition; and the HDR path is **Rec.2100 PQ**. A gradient authored in OKLab is *baked* to plain sRGB stops on the way out - with extra stops inserted only where sRGB would visibly diverge from the perceptual curve - because an SVG `<linearGradient>` and a PDF axial shading have no interpolation-space setting to carry the intent. One authored value, three renderers, no drift.
+**Thinking.** Colour maths happens perceptually rather than in raw channels. Palette derivation, ramps, harmonies and contrast run in **OKLCH/OKLab**, and an out-of-gamut colour is brought into range by CSS Color 4's own gamut-mapping algorithm - chroma reduction with a perceptual-distance check - rather than by clipping channels, so a vivid colour lands on the nearest colour you'd actually accept instead of a flattened one. Gradients interpolate in a space you pick (OKLab by default, or `oklch`, `lab`, `lch`, `srgb`, `srgb-linear`, `hsl`, with a hue-travel direction for the polar ones), and mixing is **premultiplied**, so a fade to transparent stays the right colour instead of darkening toward black on the way. One interpolator serves both the preview and the export walkers - which is what stopped a conic gradient from being blended one way on screen and another in the exported file.
+
+**Writing.** The output is deliberately narrower than the input, because a file has to be readable by whatever opens it, and a space is only ever *declared* on output when the numbers were really converted into it. Screen and web formats are written as **sRGB** and tagged as such; the print formats are written as **CMYK** against a named press condition (below); and the HDR path is **Rec.2100 PQ** (above). A wide-gamut colour that reaches an export is mapped into sRGB rather than mislabelled - carrying `color(display-p3 …)` through into a vector file is a planned extension, not something today's exports claim to do. A gradient authored in OKLab is *baked* to plain sRGB stops on the way out, with extra stops inserted only where sRGB would visibly diverge from the perceptual curve, because an SVG `<linearGradient>` and a PDF axial shading have no interpolation-space setting to carry the intent. One authored value, three renderers, no drift.
 
 ## Colour profiles
 

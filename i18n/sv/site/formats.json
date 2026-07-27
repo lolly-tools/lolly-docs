@@ -1,48 +1,52 @@
 {
   "heading": "Alla format, in och ut",
-  "lead": "Lolly läser 25 källformat och renderar 27 - här är hela uppsättningen, grupperad efter vad var och en är. Elva {roundtrip}: läses *och* skrivs, så de förekommer i båda kolumnerna.",
+  "lead": "Lolly läser 29 källformat och renderar 31 - här är hela uppsättningen, grupperad efter vad var och en är. Femton {roundtrip}: läses *och* skrivs, så de förekommer i båda kolumnerna.",
   "ingestsLabel": "Importerar",
-  "ingestsCount": "25 in",
+  "ingestsCount": "29 in",
   "exportsLabel": "Exporterar",
-  "exportsCount": "27 ut",
+  "exportsCount": "31 ut",
   "ingests": [
     {
-      "category": "3D",
-      "list": "GLB · glTF"
+      "category": "Vektor",
+      "list": "SVG · PDF · Illustrator · InDesign · Figma · Penpot"
     },
     {
-      "category": "Design",
-      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
+      "category": "Raster",
+      "list": "PNG · JPG · WEBP · GIF · HEIC · TIFF · AVIF"
     },
     {
-      "category": "Foton",
-      "list": "HEIC · TIFF · AVIF"
-    },
-    {
-      "category": "Video",
-      "list": "MP4 · WEBM · MOV"
+      "category": "Rörlig bild",
+      "list": "MP4 · WEBM · MOV · Lottie"
     },
     {
       "category": "Ljud",
       "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD"
     },
     {
+      "category": "Dokument",
+      "list": "PPTX"
+    },
+    {
       "category": "Data",
       "list": "CSV · JSON"
+    },
+    {
+      "category": "3D",
+      "list": "GLB · glTF"
     }
   ],
   "exports": [
     {
       "category": "Vektor",
-      "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF"
+      "list": "SVG · PDF · CMYK PDF · EPS · CMYK EPS · EMF · DXF"
     },
     {
       "category": "Raster",
-      "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO"
+      "list": "PNG · JPG · WEBP · AVIF · TIFF · CMYK TIFF · ICO"
     },
     {
       "category": "Rörlig bild",
-      "list": "MP4 · WEBM · GIF · APNG"
+      "list": "MP4 · WEBM · GIF · APNG · Animerad WebP · Animerad SVG"
     },
     {
       "category": "Ljud",

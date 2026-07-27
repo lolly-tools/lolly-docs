@@ -1,48 +1,52 @@
 {
   "heading": "모든 포맷, 가져오기부터 내보내기까지",
-  "lead": "Lolly는 25개 소스 형식을 읽고 27개 형식으로 내보내요 - 각각이 무엇인지 정리한 전체 목록이에요. {roundtrip} 11개는 읽기 *그리고* 쓰기가 모두 가능해서 두 열에 모두 나타나요.",
+  "lead": "Lolly는 29개 소스 형식을 읽고 31개 형식으로 내보내요 - 각각이 무엇인지 정리한 전체 목록이에요. {roundtrip} 15개는 읽기 *그리고* 쓰기가 모두 가능해서 두 열에 모두 나타나요.",
   "ingestsLabel": "가져오기",
-  "ingestsCount": "25 안쪽",
+  "ingestsCount": "29 안쪽",
   "exportsLabel": "내보내기",
-  "exportsCount": "출력 27종",
+  "exportsCount": "출력 31종",
   "ingests": [
     {
-      "category": "3D",
-      "list": "GLB · glTF"
+      "category": "벡터",
+      "list": "SVG · PDF · Illustrator · InDesign · Figma · Penpot"
     },
     {
-      "category": "디자인",
-      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
+      "category": "래스터",
+      "list": "PNG · JPG · WEBP · GIF · HEIC · TIFF · AVIF"
     },
     {
-      "category": "사진",
-      "list": "HEIC · TIFF · AVIF"
-    },
-    {
-      "category": "비디오",
-      "list": "MP4 · WEBM · MOV"
+      "category": "모션",
+      "list": "MP4 · WEBM · MOV · Lottie"
     },
     {
       "category": "오디오",
       "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD"
     },
     {
+      "category": "문서",
+      "list": "PPTX"
+    },
+    {
       "category": "데이터",
       "list": "CSV · JSON"
+    },
+    {
+      "category": "3D",
+      "list": "GLB · glTF"
     }
   ],
   "exports": [
     {
       "category": "벡터",
-      "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF"
+      "list": "SVG · PDF · CMYK PDF · EPS · CMYK EPS · EMF · DXF"
     },
     {
       "category": "래스터",
-      "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO"
+      "list": "PNG · JPG · WEBP · AVIF · TIFF · CMYK TIFF · ICO"
     },
     {
       "category": "모션",
-      "list": "MP4 · WEBM · GIF · APNG"
+      "list": "MP4 · WEBM · GIF · APNG · 애니메이션 WebP · 애니메이션 SVG"
     },
     {
       "category": "오디오",
