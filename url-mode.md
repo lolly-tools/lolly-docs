@@ -212,6 +212,7 @@ These keys are never treated as tool inputs. They control shell-level behaviour.
 | `c2pa` | web + CLI | Content Credentials for the stampable formats. `c2pa=7`/`30`/`90`/`365` embeds the credential with that ephemeral-certificate lifetime in days; `c2pa=1` (or a bare `--c2pa` on the CLI) uses the default (30); `c2pa=off` forces it **off**, overriding a tool's `render.c2pa` default. Web: an enrolled identity's certificate window (fixed at enrolment) takes precedence and the lifetime value is ignored. CLI: ephemeral signing only (`svg` in the lean CLI). Mutually exclusive with `password` on PDFs. |
 | `durable` | web (opt-in) | **Durable Content Credential** for raster exports (`png` / `jpg`/`jpeg` / `webp` / `avif` / `tiff`): an opt-in neural **TrustMark-format watermark** carrying Lolly's own identifier, so the "made with Lolly" link survives a metadata strip (a social upload, a re-save) and any TrustMark-aware tool can recover it. **Off by default** - a heavy on-device neural encode that also needs a model fetched once - so pass `durable=1` (or `durable=on`) to turn it on. A no-op if the encoder model isn't on-device (see `scripts/convert-trustmark-encoder-onnx.py`); raster-only for now (not the `pdf`/`pptx` container rasters). Complements - does not replace - the default `imprint` and the `c2pa` credential. Recognised on-device on the [/verify](/verify) page as a "Lolly durable mark" pip. See `plans/durable-content-credentials.md`. |
 | `imprint` | web (default-on) + CLI (opt-in) | Lolly **pixel watermark** for raster exports (`png` / `jpg`/`jpeg` / `webp` / `avif` / `tiff` - the RGB TIFF, not Print/CMYK TIFF), plus **Lolly-rendered raster content embedded inside a `pdf`, `pdf-cmyk`, or `pptx`** export - a composed tool render, a gradient/filter fallback, or an SVG illustration that gets walked to pixels still carries the mark even though the container itself isn't a raster format (a `zip` bundle carries it through to whichever of its members qualify). It never marks a user's own uploaded image - only art Lolly itself rasterised. **On by default on the web**, like `c2pa` - embedded unless explicitly disabled; `imprint=0` (or `imprint=off`) turns it **off**. `imprint=1` (or a bare `?imprint`) is still accepted for existing links (redundant with the web default). On the **CLI** it is opt-in - pass `--imprint` (and note the resvg PNG fast path can't embed it; use a browser-tier format). Unlike `c2pa` - which lives in a metadata container and dies to any re-save or strip - the imprint survives metadata stripping, recompression (down to ~JPEG q50) and an 8-pixel-aligned crop, so it's a durable **complement** to the credential. TIFF (lossless) round-trips the mark exactly; AVIF's AV1 encode applies the mark pre-encode but its survival through that encode is not yet calibrated/verified. It does **not** survive an arbitrary resize, and it is security-through-obscurity (the detector key is public), so it's an integrity hint, not a hardened claim. Detected on-device on the [/verify](/verify) page - for `pdf`/`pdf-cmyk`/`pptx` files, detection scans the embedded Lolly-rendered rasters, not the page/slide as a whole. |
+| `cuts` | web + CLI | **Contact sheet** for a still export (`png` / `jpg` / `webp` / `svg` / `pdf`) of a **timed composition** - a Sequence Studio stage, or any tool whose stage carries `data-sequence`. An integer, default `1`. `cuts=1` renders the frame at the **playhead** (what you see is what you get) and is identical to leaving the param off. `cuts=N` for `N > 1` samples `N` stills at equal intervals across the sequence and hands them back together: raster and SVG as `N` **zipped** files (`<filename>-01.png`, `-02.png`, …), `pdf` as **one document of `N` pages**. Sampling is **midpoint**, not endpoint - `t_i = duration x (i + 0.5) / N` - because at `t = 0` an `enter` transition is still at alpha 0 (a blank card) and at `t = duration` every clip has ended, so endpoint sampling would waste the first and last frame of a sheet on blanks. Clamped to `1`-`64`; junk (non-numeric, `0`, negative, `Infinity`) falls back to `1` rather than failing the export. Ignored for non-still formats (video/animation already have every frame) and for stages with no sequence. See `plans/fable-timeline-editing.md` §4.6. |
 | `lang` | web + CLI | UI/content language as a canonical short code: `en` (default), `es`, `de`, `fr`, `zh` (Simplified), `zh-hant` (Traditional), `ja`, `ko`, `vi`, `pt`, `it`, `nl`, `sv`, `no`, `pl`, `cs`, `ro`, `tr`, `uk`, `bg`, `ms`, `id`, `tl`, `hi`, `bn`, `ur`, and `ar` (the `LANGS` set in `engine/src/lang.ts` is the source of truth). Arabic and Urdu render right-to-left (the whole UI mirrors). Informal aliases (`cn`, `jp`, and `in` for `id`) are accepted and normalized on parse. Applies for that session only - it does **not** overwrite the recipient's saved language preference. Unset/unrecognized falls back to the profile, then `localStorage`, then the browser's language, then English. |
 | `nostage` | web only | Presence flag - for the `html` export only, drop the fixed-size canvas frame ("stage") so the saved page fills the whole window: the tool's content becomes the document body, with no centred card or grey backdrop. Mirrors the **Full page** toggle in the export panel. |
 | `z` | web + CLI | A **packed** whole-state token - the entire readable query, compressed (raw DEFLATE) and base64url-encoded, for complex tools whose readable link would blow past practical URL limits. See [Packed links](#packed-links-z) below. |
@@ -289,6 +290,33 @@ The CMYK press condition (`profile=`, e.g. `fogra51`) is carried for both CMYK f
 ```
 
 > Marks/bleed and the PDF open-`password` are mutually exclusive: print finishing is applied via pdf-lib, which can't write encrypted PDFs, so a `password` is ignored when marks/bleed are on. (`cmyk-tiff` has no password concept.)
+
+---
+
+### Contact sheets (`cuts=`)
+
+A still export of a **timed composition** renders the frame at the playhead. That's the
+contract: what you see on the stage is what lands in the file. `cuts=` is the one way to
+ask for more than that frame - `N` stills sampled at equal intervals across the sequence,
+for a storyboard, a thumbnail sheet, or a social carousel.
+
+```
+?cuts=6&format=pdf&export
+```
+
+...gives you **one 6-page PDF**, one page per sample, in time order. The same link with
+`format=png` gives you a **zip of six PNGs** (`-01` … `-06`) instead - PDF is the only
+still format that can hold several frames in one file. `cuts=1`, or no `cuts` at all, is
+the single playhead frame.
+
+Samples land at the **midpoint** of each slice - `t_i = duration x (i + 0.5) / N`, so a
+6-cut render of a 12-second sequence samples at 1s, 3s, 5s, 7s, 9s and 11s. Sampling the
+endpoints instead (0s and 12s) would hand you two blank cards: at `t = 0` an `enter`
+transition hasn't faded in yet, and at `t = duration` every clip has already ended.
+
+Values are clamped to `1`-`64` (a contact sheet is for a human to look at; 64 is already
+an 8x8 wall), and anything unparseable falls back to `1` rather than failing the export.
+Non-still formats ignore `cuts` entirely - a video already contains every frame.
 
 ---
 
