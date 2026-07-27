@@ -933,7 +933,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   // columns. Mark those chips (⇄ + filled style) so the overlap reads as intentional
   // rather than accidental duplication. Matched on the exact chip token, so the export-only
   // "CMYK PDF" variant is NOT marked - only plain "PDF" round-trips.
-  const ROUNDTRIP = new Set(['PDF', 'SVG', 'TIFF', 'AVIF', 'CSV', 'JSON', 'MP3', 'M4A', 'MP4', 'WEBM', 'PPTX']);
+  const ROUNDTRIP = new Set(['PDF', 'SVG', 'TIFF', 'AVIF', 'PNG', 'JPG', 'WEBP', 'GIF', 'CSV', 'JSON', 'MP3', 'M4A', 'MP4', 'WEBM', 'PPTX']);
   const fmtChips = (list: string) =>
     `<div class="format-chips">${list.split(/\s·\s|·/).map(fmt => {
       const f = fmt.trim();

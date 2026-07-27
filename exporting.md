@@ -114,6 +114,16 @@ Motion tools (Animated Ad, Lottie Ad, Bag Video) can export **Animated SVG** - a
 
 Tools that support it offer a **transparent background** toggle (e.g. *No BG*). Transparency is preserved by PNG, WebP, AVIF, SVG (still and animated), APNG and Animated WebP. JPG and PDF are always opaque.
 
+## Colour spaces
+
+Two different questions, worth keeping apart: which colour spaces Lolly can **read and think in**, and which ones it **writes**.
+
+**Reading and thinking.** Anywhere a colour is written - a template, an imported SVG's paint, a token value, a gradient stop, a colour typed into a swatch - Lolly parses the full **CSS Color 4** vocabulary: `#hex`, `rgb()`, `hsl()`, `hwb()`, `lab()`, `lch()`, `oklab()`, `oklch()`, the CSS named colours, and `color()` in the predefined spaces - `srgb`, `srgb-linear`, `display-p3`, `a98-rgb`, `prophoto-rgb`, `rec2020`, `xyz-d50` and `xyz-d65` - including components written as `none`. Wide-gamut coordinates are kept as authored rather than clamped at the door, so nothing is silently crushed before it needs to be.
+
+Colour *maths* then happens perceptually rather than in raw channels. Palette derivation, ramps, harmonies and contrast run in **OKLCH/OKLab**; gradients interpolate in a space you choose (OKLab by default, or `oklch`, `lab`, `lch`, `srgb`, `srgb-linear`, `hsl`, with a hue-travel direction for the polar ones) and mixing is **premultiplied**, so a fade to transparent stays the right colour instead of darkening toward black. One interpolator does this for both the preview and the export walkers - which is what stopped a conic gradient from being blended one way on screen and another in the exported SVG.
+
+**Writing.** The output is deliberately narrower than the input, because a file has to be readable by whatever opens it. Screen and web formats are written as **sRGB** and tagged as such; print formats are written as **CMYK** against a named press condition; and the HDR path is **Rec.2100 PQ**. A gradient authored in OKLab is *baked* to plain sRGB stops on the way out - with extra stops inserted only where sRGB would visibly diverge from the perceptual curve - because an SVG `<linearGradient>` and a PDF axial shading have no interpolation-space setting to carry the intent. One authored value, three renderers, no drift.
+
 ## Colour profiles
 
 So colours reproduce faithfully in colour-managed apps (print shops, Photoshop, browsers), exports are **tagged with a colour profile**:
@@ -124,7 +134,21 @@ So colours reproduce faithfully in colour-managed apps (print shops, Photoshop, 
 - **TIFF (RGB)** is the plain, uncompressed sRGB sibling - a lossless raster at the chosen DPI for archival or an editor round-trip, with provenance recorded in the same TIFF metadata. Any transparency is flattened onto white (this profile carries no alpha). Like the CMYK TIFF it's desktop-only, since browsers can't preview a TIFF and mobile downloads dead-end.
 - **SVG**, **EMF**, **EPS** and **DXF** are resolution- and profile-independent vectors with no embedded profile - SVG's colours are plain sRGB, EMF's and EPS's are device RGB (and **EPS (CMYK)** writes naive DeviceCMYK), and **DXF** carries the nearest AutoCAD Color Index. (All, like PDF, outline any text to vector paths, so the result renders even where the font isn't installed.) **SVG** also reproduces CSS `box-shadow` from the HTML - each outer shadow is painted behind the box, offset/spread and Gaussian-blurred to match the browser (inset shadows are skipped).
 
-This is automatic - no setting to fiddle with. Thumbnails and previews skip the tag to stay small.
+This is automatic - no setting to fiddle with. Thumbnails and previews skip the tag to stay small. One profile *is* a choice, because it changes the pixels rather than just labelling them - see **HDR** below.
+
+## HDR (bright colours)
+
+Ordinary exports are sRGB: white is white, and a saturated brand colour is as bright as the screen's normal white. On an HDR-capable display there's a lot of headroom above that, and the **HDR** card in the export panel uses it - your brand colours and white text are boosted toward peak brightness so they genuinely *glow*, while the dark areas stay dark and give the glow its contrast.
+
+![The HDR card in the export panel, switched on, with the White / Reach / Dark lift / Focus dials revealed under it](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26hdr%3D1%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-hdr&filename=exp-hdr-card)
+
+- **Formats.** The raster formats with a place to carry the signal: **PNG**, **JPG**, **AVIF** and **TIFF**. (Not WebP - it's 8-bit with no working HDR decode path, so a PQ WebP would simply look dark. Vectors and PDF have no HDR model at all.)
+- **Off by default**, unlike colour tagging - it changes the pixels, so it's opt-in. Tick the card, or pass `hdr=1` in a share link.
+- **What's actually written.** The pixels are re-encoded to **Rec.2100 PQ** - BT.2020 primaries with the SMPTE ST 2084 (PQ) transfer curve - and the container carries the matching signal so a colour-managed app knows to read them that way: a generated **ICC v4 profile with a `cicp` tag** (JPG, TIFF), a **`cICP` chunk** (PNG), or a rewritten `colr` box (AVIF). The boost is gated on **perceptual (OKLab) lightness**, so mid-and-above colours punch to peak and dark ones are calmed rather than blown out, and it's hue-preserving - a brand green gets brighter, not minty.
+- **The dials.** Four, revealed when the card is on: **White** (the peak-brightness ceiling, 400–2000 nits), **Reach** (how far down the tones the glow spreads), **Dark lift** (how much the darks brighten - `0` keeps them dark), and **Focus** (how much colour richness the boost keeps). They ride in the same param as a compact tuned value - `hdr=1600-60-0-50` is White 1600, Reach 60, Dark lift 0, Focus 50 - so a tuned look is reproducible from the link.
+- **Where you'll see it.** Colour-managed viewers on an HDR display: Preview / Quick Look / Safari on Apple devices, Chrome on an HDR monitor. On an ordinary SDR screen the file still shows as a normal image.
+- **Know before you ship it.** Many platforms **re-encode** what you upload and strip the HDR signal - social networks, messaging apps, some CMSes - which can leave the image looking dark or washed out. Use HDR where you control the destination (a site you build, a video wall, a deck on a bright panel), not as a default for everything.
+- **Transparency.** PNG and AVIF keep their alpha; JPG is opaque as always. The **TIFF** path flattens onto **black**, not the SDR path's white - in PQ, white is the 10,000-nit code, so flattening onto it would ring every edge with a blinding halo.
 
 ## Video
 

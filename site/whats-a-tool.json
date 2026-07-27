@@ -4,7 +4,7 @@
   "anatomy": [
     { "file": "tool.json", "name": "Manifest", "desc": "Name, inputs & metadata" },
     { "file": "template.html", "name": "Template", "desc": "HTML/CSS/JS that renders the output" },
-    { "file": "hooks.js", "name": "Hooks", "desc": "Optional logic, sandboxed" }
+    { "file": "hooks.js", "name": "Hooks", "desc": "Optional logic, host API only" }
   ],
   "features": [
     { "icon": "toolFeatureStar", "title": "A smart template", "desc": "Knows its own layout, type, colors, and brand rules. You bring the content - it handles everything else." },
