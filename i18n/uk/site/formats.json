@@ -1,48 +1,52 @@
 {
   "heading": "Кожен формат — на вхід і на вихід",
-  "lead": "Lolly читає 25 вихідних форматів і рендерить 27 - ось повний перелік, згрупований за типом кожного. Одинадцять {roundtrip}: читаються *і* записуються, тому з'являються в обох колонках.",
+  "lead": "Lolly читає 29 вихідних форматів і рендерить 31 - ось повний перелік, згрупований за типом кожного. П'ятнадцять {roundtrip}: читаються *і* записуються, тому з'являються в обох колонках.",
   "ingestsLabel": "Імпорт",
-  "ingestsCount": "25 вхід",
+  "ingestsCount": "29 вхід",
   "exportsLabel": "Експорт",
-  "exportsCount": "27 на вихід",
+  "exportsCount": "31 на вихід",
   "ingests": [
     {
-      "category": "3D",
-      "list": "GLB · glTF"
+      "category": "Вектор",
+      "list": "SVG · PDF · Illustrator · InDesign · Figma · Penpot"
     },
     {
-      "category": "Дизайн",
-      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
+      "category": "Растр",
+      "list": "PNG · JPG · WEBP · GIF · HEIC · TIFF · AVIF"
     },
     {
-      "category": "Фото",
-      "list": "HEIC · TIFF · AVIF"
-    },
-    {
-      "category": "Відео",
-      "list": "MP4 · WEBM · MOV"
+      "category": "Анімація",
+      "list": "MP4 · WEBM · MOV · Lottie"
     },
     {
       "category": "Аудіо",
       "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD"
     },
     {
+      "category": "Документ",
+      "list": "PPTX"
+    },
+    {
       "category": "Дані",
       "list": "CSV · JSON"
+    },
+    {
+      "category": "3D",
+      "list": "GLB · glTF"
     }
   ],
   "exports": [
     {
       "category": "Вектор",
-      "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF"
+      "list": "SVG · PDF · CMYK PDF · EPS · CMYK EPS · EMF · DXF"
     },
     {
       "category": "Растр",
-      "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO"
+      "list": "PNG · JPG · WEBP · AVIF · TIFF · CMYK TIFF · ICO"
     },
     {
       "category": "Анімація",
-      "list": "MP4 · WEBM · GIF · APNG"
+      "list": "MP4 · WEBM · GIF · APNG · Анімований WebP · Анімований SVG"
     },
     {
       "category": "Аудіо",

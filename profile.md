@@ -13,9 +13,9 @@ Everything in a profile lives **on the device**, in the browser's local database
 | **Name** | First and last name. |
 | **Contact** | Email and phone. |
 | **Location** | City and country. |
-| **Headshot** | An optional photo, cropped to a square and kept as a local image. Used by tools like email signatures, quote cards, color blocks, and dynamic layouts. |
+| **Headshot** | An optional photo, cropped to a square and kept as a local image. Used by tools like email signatures, quote cards, org charts, and dynamic layouts. |
 | **Use my details** | A single opt-in switch. It controls whether your personal details ride along as **provenance** - the author/credit line embedded in exported files - and as the author on **/pro** batch runs. (It doesn't gate pre-fill: see [How tools use your profile](#how-tools-use-your-profile).) |
-| **Preferences** | Your theme (light, dark, or SUSE) and which parts of the app you've enabled via **Feature flags**. |
+| **Preferences** | Your theme (Light, Dark, or Brand - the brand theme paints the app in your own palette) and which parts of the app you've enabled via **Feature flags**. |
 | **Your work** | Saved sessions (with thumbnails) - organised into nested folders in **[Projects](/info/using.html)** - your **My images** library, and the local activity stats, all keyed to this profile. |
 
 None of this is required. A blank profile is a perfectly good profile; you fill in only what saves you typing.
@@ -68,7 +68,7 @@ Because a profile is entirely local, the only way to get it onto a blank install
 
 Under **Profile → Storage → Move to another device**:
 
-- **Export my data** downloads one `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - named for the profile it belongs to, with a per-day sequence number so repeat exports don't collide (name parts are dropped when the profile doesn't have them). It contains your profile, every saved session (with its thumbnail), your uploaded images, and your preferences (theme, layout, local activity stats).
+- **Export my data** downloads one `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - named for the profile it belongs to, with a per-day sequence number so repeat exports don't collide (name parts are dropped when the profile doesn't have them). It contains your profile, every saved session (with its thumbnail), your uploaded images - your brand tokens and installed fonts ride along as user assets - and your preferences (theme, layout, local activity stats).
 - **Import data…** on the other install reads that file back in and you pick up exactly where you left off.
 
 ![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)

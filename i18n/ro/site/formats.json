@@ -1,48 +1,52 @@
 {
   "heading": "Fiecare format, la intrare și la ieșire",
-  "lead": "Lolly citește 25 de formate sursă și randează 27 - iată setul complet, grupat după tipul fiecăruia. Unsprezece {roundtrip}: citite *și* scrise, deci apar în ambele coloane.",
+  "lead": "Lolly citește 29 de formate sursă și randează 31 - iată setul complet, grupat după tipul fiecăruia. Cincisprezece {roundtrip}: citite *și* scrise, deci apar în ambele coloane.",
   "ingestsLabel": "Importuri",
-  "ingestsCount": "25 in",
+  "ingestsCount": "29 in",
   "exportsLabel": "Exporturi",
-  "exportsCount": "27 la ieșire",
+  "exportsCount": "31 la ieșire",
   "ingests": [
     {
-      "category": "3D",
-      "list": "GLB · glTF"
+      "category": "Vectorial",
+      "list": "SVG · PDF · Illustrator · InDesign · Figma · Penpot"
     },
     {
-      "category": "Design",
-      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
+      "category": "Raster",
+      "list": "PNG · JPG · WEBP · GIF · HEIC · TIFF · AVIF"
     },
     {
-      "category": "Fotografii",
-      "list": "HEIC · TIFF · AVIF"
-    },
-    {
-      "category": "Video",
-      "list": "MP4 · WEBM · MOV"
+      "category": "Animație",
+      "list": "MP4 · WEBM · MOV · Lottie"
     },
     {
       "category": "Audio",
       "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD"
     },
     {
+      "category": "Document",
+      "list": "PPTX"
+    },
+    {
       "category": "Date",
       "list": "CSV · JSON"
+    },
+    {
+      "category": "3D",
+      "list": "GLB · glTF"
     }
   ],
   "exports": [
     {
       "category": "Vectorial",
-      "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF"
+      "list": "SVG · PDF · CMYK PDF · EPS · CMYK EPS · EMF · DXF"
     },
     {
       "category": "Raster",
-      "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO"
+      "list": "PNG · JPG · WEBP · AVIF · TIFF · CMYK TIFF · ICO"
     },
     {
       "category": "Animație",
-      "list": "MP4 · WEBM · GIF · APNG"
+      "list": "MP4 · WEBM · GIF · APNG · WebP animat · SVG animat"
     },
     {
       "category": "Audio",

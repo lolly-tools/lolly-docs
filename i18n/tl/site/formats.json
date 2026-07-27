@@ -1,48 +1,52 @@
 {
   "heading": "Bawat format, papasok at palabas",
-  "lead": "Nagbabasa ang Lolly ng 25 source format at nagre-render ng 27 - narito ang buong set, nakapangkat ayon sa kung ano ang bawat isa. Labing-isang {roundtrip}: binabasa *at* isinusulat, kaya lumalabas sila sa parehong column.",
+  "lead": "Nagbabasa ang Lolly ng 29 source format at nagre-render ng 31 - narito ang buong set, nakapangkat ayon sa kung ano ang bawat isa. Labinlimang {roundtrip}: binabasa *at* isinusulat, kaya lumalabas sila sa parehong column.",
   "ingestsLabel": "Papasok",
-  "ingestsCount": "25 in",
+  "ingestsCount": "29 in",
   "exportsLabel": "Palabas",
-  "exportsCount": "27 palabas",
+  "exportsCount": "31 palabas",
   "ingests": [
     {
-      "category": "3D",
-      "list": "GLB · glTF"
+      "category": "Vector",
+      "list": "SVG · PDF · Illustrator · InDesign · Figma · Penpot"
     },
     {
-      "category": "Disenyo",
-      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
+      "category": "Raster",
+      "list": "PNG · JPG · WEBP · GIF · HEIC · TIFF · AVIF"
     },
     {
-      "category": "Larawan",
-      "list": "HEIC · TIFF · AVIF"
-    },
-    {
-      "category": "Video",
-      "list": "MP4 · WEBM · MOV"
+      "category": "Motion",
+      "list": "MP4 · WEBM · MOV · Lottie"
     },
     {
       "category": "Audio",
       "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD"
     },
     {
+      "category": "Dokumento",
+      "list": "PPTX"
+    },
+    {
       "category": "Datos",
       "list": "CSV · JSON"
+    },
+    {
+      "category": "3D",
+      "list": "GLB · glTF"
     }
   ],
   "exports": [
     {
       "category": "Vector",
-      "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF"
+      "list": "SVG · PDF · CMYK PDF · EPS · CMYK EPS · EMF · DXF"
     },
     {
       "category": "Raster",
-      "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO"
+      "list": "PNG · JPG · WEBP · AVIF · TIFF · CMYK TIFF · ICO"
     },
     {
       "category": "Motion",
-      "list": "MP4 · WEBM · GIF · APNG"
+      "list": "MP4 · WEBM · GIF · APNG · Animated WebP · Animated SVG"
     },
     {
       "category": "Audio",

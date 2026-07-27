@@ -1,48 +1,52 @@
 {
   "heading": "Her format, içeri de dışarı da",
-  "lead": "Lolly 25 kaynak biçimi okur ve 27 biçim oluşturur - işte her birinin ne olduğuna göre gruplanmış tam küme. On bir tanesi {roundtrip}: okunur *hem de* yazılır, bu yüzden her iki sütunda da görünür.",
+  "lead": "Lolly 29 kaynak biçimi okur ve 31 biçim oluşturur - işte her birinin ne olduğuna göre gruplanmış tam küme. On beş tanesi {roundtrip}: okunur *hem de* yazılır, bu yüzden her iki sütunda da görünür.",
   "ingestsLabel": "İçe Aktarılanlar",
-  "ingestsCount": "25 iç",
+  "ingestsCount": "29 iç",
   "exportsLabel": "Dışa Aktarılanlar",
-  "exportsCount": "27 çıkış",
+  "exportsCount": "31 çıkış",
   "ingests": [
     {
-      "category": "3D",
-      "list": "GLB · glTF"
+      "category": "Vektör",
+      "list": "SVG · PDF · Illustrator · InDesign · Figma · Penpot"
     },
     {
-      "category": "Tasarım",
-      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
+      "category": "Raster",
+      "list": "PNG · JPG · WEBP · GIF · HEIC · TIFF · AVIF"
     },
     {
-      "category": "Fotoğraflar",
-      "list": "HEIC · TIFF · AVIF"
-    },
-    {
-      "category": "Video",
-      "list": "MP4 · WEBM · MOV"
+      "category": "Hareket",
+      "list": "MP4 · WEBM · MOV · Lottie"
     },
     {
       "category": "Ses",
       "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD"
     },
     {
+      "category": "Belge",
+      "list": "PPTX"
+    },
+    {
       "category": "Veri",
       "list": "CSV · JSON"
+    },
+    {
+      "category": "3D",
+      "list": "GLB · glTF"
     }
   ],
   "exports": [
     {
       "category": "Vektör",
-      "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF"
+      "list": "SVG · PDF · CMYK PDF · EPS · CMYK EPS · EMF · DXF"
     },
     {
       "category": "Raster",
-      "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO"
+      "list": "PNG · JPG · WEBP · AVIF · TIFF · CMYK TIFF · ICO"
     },
     {
       "category": "Hareket",
-      "list": "MP4 · WEBM · GIF · APNG"
+      "list": "MP4 · WEBM · GIF · APNG · Animasyonlu WebP · Animasyonlu SVG"
     },
     {
       "category": "Ses",

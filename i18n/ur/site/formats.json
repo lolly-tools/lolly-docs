@@ -1,48 +1,52 @@
 {
   "heading": "ہر فارمیٹ، اندر اور باہر",
-  "lead": "Lolly 25 سورس فارمیٹس پڑھتا ہے اور 27 رینڈر کرتا ہے - یہاں مکمل سیٹ ہے، ہر ایک کیا ہے اس کے حساب سے گروپ کیا گیا ہے۔ گیارہ {roundtrip}: پڑھے *اور* لکھے جاتے ہیں، اس لیے وہ دونوں کالموں میں ظاہر ہوتے ہیں۔",
+  "lead": "Lolly 29 سورس فارمیٹس پڑھتا ہے اور 31 رینڈر کرتا ہے - یہاں مکمل سیٹ ہے، ہر ایک کیا ہے اس کے حساب سے گروپ کیا گیا ہے۔ پندرہ {roundtrip}: پڑھے *اور* لکھے جاتے ہیں، اس لیے وہ دونوں کالموں میں ظاہر ہوتے ہیں۔",
   "ingestsLabel": "درآمدات",
-  "ingestsCount": "25 اندر",
+  "ingestsCount": "29 اندر",
   "exportsLabel": "برآمدات",
-  "exportsCount": "27 باہر",
+  "exportsCount": "31 باہر",
   "ingests": [
     {
-      "category": "3D",
-      "list": "GLB · glTF"
+      "category": "ویکٹر",
+      "list": "SVG · PDF · Illustrator · InDesign · Figma · Penpot"
     },
     {
-      "category": "ڈیزائن",
-      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
+      "category": "راسٹر",
+      "list": "PNG · JPG · WEBP · GIF · HEIC · TIFF · AVIF"
     },
     {
-      "category": "تصاویر",
-      "list": "HEIC · TIFF · AVIF"
-    },
-    {
-      "category": "ویڈیو",
-      "list": "MP4 · WEBM · MOV"
+      "category": "حرکت",
+      "list": "MP4 · WEBM · MOV · Lottie"
     },
     {
       "category": "آڈیو",
       "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD"
     },
     {
+      "category": "دستاویزات",
+      "list": "PPTX"
+    },
+    {
       "category": "ڈیٹا",
       "list": "CSV · JSON"
+    },
+    {
+      "category": "3D",
+      "list": "GLB · glTF"
     }
   ],
   "exports": [
     {
       "category": "ویکٹر",
-      "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF"
+      "list": "SVG · PDF · CMYK PDF · EPS · CMYK EPS · EMF · DXF"
     },
     {
       "category": "راسٹر",
-      "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO"
+      "list": "PNG · JPG · WEBP · AVIF · TIFF · CMYK TIFF · ICO"
     },
     {
       "category": "حرکت",
-      "list": "MP4 · WEBM · GIF · APNG"
+      "list": "MP4 · WEBM · GIF · APNG · متحرک WebP · متحرک SVG"
     },
     {
       "category": "آڈیو",

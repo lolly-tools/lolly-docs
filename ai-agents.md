@@ -50,7 +50,7 @@ These are the common ones; anything outside the full reserved set is a tool inpu
 | `_v` | Pin the tool version for stable output |
 | `slot` | Open a saved session |
 
-The complete reserved set also includes `full`, `options`, `c2pa`, `imprint`, `lang`, `nostage`, `z` and `zx`; everything else is forwarded to the tool as an input. (The engine's `RESERVED` set in `engine/src/url-mode.ts` is the source of truth - see [URL Mode](/info/url-mode.html).)
+The complete reserved set also includes `full`, `options`, `c2pa`, `imprint`, `durable`, `hdr`, `cuts`, `lang`, `nostage`, `z` and `zx`; everything else is forwarded to the tool as an input. (The engine's `RESERVED` set in `engine/src/url-mode.ts` is the source of truth - see [URL Mode](/info/url-mode.html).)
 
 So a one-shot, ready-to-download link is just:
 

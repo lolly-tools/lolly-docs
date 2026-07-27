@@ -138,11 +138,11 @@ Every time someone uploads a file to a third-party service to "just make it look
 
 **100% free and open source.** No SaaS fees, no usage limits, no vendor dependency.
 
-**Works everywhere.** Web PWA, Mac, Linux, iOS, Android, CLI, terminal TUI - same engine, same output.
+**Works everywhere.** Web PWA, Mac, Windows, Linux, iOS, Android, CLI, terminal TUI - same engine, same output.
 
 **Works offline.** Local compute, local storage. No internet required after first sync.
 
-**Formats, in and out.** Renders **27** export formats and ingests **25** source formats - see the full breakdown below.
+**Formats, in and out.** Renders **31** export formats and ingests **29** source formats - see the full breakdown below.
 
 **Production quality.** Outlined type, Spot color support, 60FPS · Media fit for the studio.
 

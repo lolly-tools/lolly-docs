@@ -24,7 +24,7 @@ npm run cli -- assets --type=raster
 
 `<tool-id>` with no flags prints the input schema and a usage line - including a `↳` syntax hint for the non-scalar input types (how to express `asset`, `blocks`, `vector`, `file`, `color` values). The fastest way to learn what a tool accepts.
 
-Any listed **asset id** can be passed to an `asset`-type input (the engine resolves it to the embedded asset), and so can a **`lolly.tools` tool URL** - a whole tool's render becomes the asset. To render a **bare asset** straight to a file, use the built-in `asset-export` shim:
+Any listed **asset id** can be passed to an `asset`-type input (the engine resolves it to the embedded asset), and so can a **`lolly.tools` tool URL** - a whole tool's render becomes the asset. To render a **bare asset** straight to a file, use the `asset-export` tool - note it ships with the **SUSE brand pack**, so it is profile-dependent and absent on a community-only profile (where these commands print `Tool not found: asset-export`):
 
 ```bash
 npm run cli -- asset-export --src=suse/logo/hor-neg-green --export=svg --output=logo.svg
@@ -53,8 +53,20 @@ If `--output` is given, the file is written and a byte count is reported on stde
 | `--unit=` | `px` (default), `mm`, `cm`, `in`, `pt`, `pc` - physical sizing. |
 | `--dpi=` | Raster DPI for physical units (default 300). |
 | `--c2pa[=7\|30\|90\|365]` | Stamp [Content Credentials](/info/exporting.html) into the output (`svg` on the bare CLI), signed with an ephemeral on-device certificate of that lifetime (default 30 days; `--c2pa=off` forces off for a `render.c2pa` tool). Verify with `lolly validate <file>`. |
+| `--imprint` | Embed the [Lolly Imprint](/info/exporting.html) pixel watermark (opt-in on the CLI, unlike the web shell where it is on by default). |
+| `--durable=1` | Embed the opt-in durable (TrustMark-format) credential. Needs the encoder model on-device. |
+| `--password=<pw>` | Open password for a rendered PDF. |
+| `--bleed=<dim>`, `--marks=<list>` | Print bleed and marks (`crop`, `reg`, `bleed`, `bars`, `prov`) for the print formats. Browser tier only. |
+| `--press-profile=<cond>` | CMYK press condition (`fogra39`, `fogra51`, `swop`, `gracol`). **Not** `--profile` - see the warning below. |
+| `--profile=<file.json>` | A user-profile JSON file, used to pre-fill `bindToProfile` inputs. |
+| `--lang=<code>` | Content language (`de`, `ja`, `ar`, …). |
+| `--share`, `--link` | Print a shareable `lolly.tools` link for these inputs instead of rendering anything. |
+| `--z=<token>` | Expand a packed link token into the inputs it encodes. |
+| `--<blocksId>-data=<rows.csv>` | Import a CSV/JSON file into a `blocks` input (the ingest counterpart of CSV export). |
 | `--<inputId>=<value>` | Any tool input (see the tool's schema). |
 | `--<flag>` | A bare flag (no `=`) is truthy - handy for boolean inputs. |
+
+> **`--profile` and `--press-profile` are different things.** `--profile` takes a *user-profile JSON file*; `--press-profile` takes a *CMYK press condition*. URL mode's single `profile` param carries the press condition, so a pasted share link's `profile=fogra51` is remapped onto `--press-profile` for you.
 
 Everything that isn't a reserved flag is treated as a tool input and validated against the manifest. Example - an A4 page:
 
@@ -103,6 +115,8 @@ qr-code,png,https://opensuse.org,#30ba78,
 asset-export,pdf,,,suse/logo/hor-neg-green
 ```
 
+(That last row uses `asset-export` and a `suse/…` asset id, so it needs the SUSE brand pack mounted - swap in a tool and asset from your own profile.)
+
 `--keep-going` renders past a failing row (otherwise the batch stops with a non-zero exit).
 
 ## Smoke-test the catalog (`lolly smoke`)
@@ -125,6 +139,39 @@ npm run cli -- quotes --quote="Ship it." --export=svg --output=./public/og.svg
 ```
 
 Exit code is non-zero on error; messages go to stderr (set `DEBUG=1` for a stack trace). Input validation failures list each offending field.
+
+## Run a share link
+
+A pasted `lolly.tools` tool URL can be the **first argument**: the CLI splits it into a tool id plus its query and renders that, with any following flag overriding what the link carried.
+
+```bash
+npm run cli -- 'https://lolly.tools/t/qr-code?url=https://suse.com&color=%230c322c' --export=png --output=qr.png
+```
+
+The reverse direction is `--share` (or `--link`), which prints a link for the inputs you passed instead of rendering:
+
+```bash
+npm run cli -- qr-code --url=https://suse.com --share
+```
+
+## Verify a file (`lolly validate`)
+
+The read side of [Content Credentials](/info/content-credentials-identity.html) - entirely on-device, nothing uploaded:
+
+```bash
+npm run cli -- validate ./poster.pdf
+npm run cli -- validate ./poster.pdf --json
+npm run cli -- validate ./poster.png --deep
+npm run cli -- validate ./poster.pdf --trust-anchor=./corp-root.pem
+```
+
+| Flag | Meaning |
+|---|---|
+| `--json` | Machine-readable report instead of the human summary. |
+| `--deep` | Additionally run the neural pixel-watermark scan (TrustMark / Content Seal / the Lolly durable mark). Needs the browser tier, and is **advisory** - it never changes the exit code. |
+| `--trust-anchor=<root.pem>` | Trust an additional root certificate. Repeatable, for an organisation's own CA. |
+
+The summary headlines whether the file was genuinely made with Lolly and is unchanged since; the exit code is non-zero when a credential is present but fails validation.
 
 ## Point it at another brand pack (`LOLLY_ROOT`)
 

@@ -1,48 +1,52 @@
 {
   "heading": "Setiap format, masuk dan keluar",
-  "lead": "Lolly membaca 25 format sumber dan merender 27 - berikut set lengkapnya, dikumpulkan mengikut apa setiap satu itu. Sebelas {roundtrip}: dibaca *dan* ditulis, jadi ia muncul dalam kedua-dua lajur.",
+  "lead": "Lolly membaca 29 format sumber dan merender 31 - berikut set lengkapnya, dikumpulkan mengikut apa setiap satu itu. Lima belas {roundtrip}: dibaca *dan* ditulis, jadi ia muncul dalam kedua-dua lajur.",
   "ingestsLabel": "Import",
-  "ingestsCount": "25 dalam",
+  "ingestsCount": "29 dalam",
   "exportsLabel": "Eksport",
-  "exportsCount": "27 keluar",
+  "exportsCount": "31 keluar",
   "ingests": [
     {
-      "category": "3D",
-      "list": "GLB · glTF"
+      "category": "Vektor",
+      "list": "SVG · PDF · Illustrator · InDesign · Figma · Penpot"
     },
     {
-      "category": "Reka Bentuk",
-      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
+      "category": "Raster",
+      "list": "PNG · JPG · WEBP · GIF · HEIC · TIFF · AVIF"
     },
     {
-      "category": "Foto",
-      "list": "HEIC · TIFF · AVIF"
-    },
-    {
-      "category": "Video",
-      "list": "MP4 · WEBM · MOV"
+      "category": "Gerakan",
+      "list": "MP4 · WEBM · MOV · Lottie"
     },
     {
       "category": "Audio",
       "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD"
     },
     {
+      "category": "Dokumen",
+      "list": "PPTX"
+    },
+    {
       "category": "Data",
       "list": "CSV · JSON"
+    },
+    {
+      "category": "3D",
+      "list": "GLB · glTF"
     }
   ],
   "exports": [
     {
       "category": "Vektor",
-      "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF"
+      "list": "SVG · PDF · CMYK PDF · EPS · CMYK EPS · EMF · DXF"
     },
     {
       "category": "Raster",
-      "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO"
+      "list": "PNG · JPG · WEBP · AVIF · TIFF · CMYK TIFF · ICO"
     },
     {
       "category": "Gerakan",
-      "list": "MP4 · WEBM · GIF · APNG"
+      "list": "MP4 · WEBM · GIF · APNG · WebP Animasi · SVG Animasi"
     },
     {
       "category": "Audio",

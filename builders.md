@@ -29,7 +29,7 @@ That scales further than five controls. Give an input a `section` and the host f
 
 - **[Authoring Tools](/info/authoring-tools.html)** - the full guide: manifest, template, styles, hooks, composition, and publishing.
 - **[Authoring Assets](/info/authoring-assets.html)** - catalog assets, tiers, locales, palettes, themable icons, and fonts.
-- **[Host API](/info/host-api.html)** - the `HostV1` capability bridge every tool is written against (the only API tools see).
+- **[Host API](/info/host-api.html)** - the `HostV1` capability bridge every tool is written against (the portable API tools are written against - note hooks are not sandboxed, see [Authoring Tools](/info/authoring-tools.html)).
 - **[URL Mode](/info/url-mode.html)** - every input as a URL parameter; reserved params, compact encoding, packed links.
 
 ## Run & integrate

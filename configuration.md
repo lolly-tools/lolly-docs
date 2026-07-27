@@ -34,7 +34,7 @@ A brand pack is a directory (`brands/<name>/`) with a `catalog/` and optionally 
 npm run ingest:brand -- <source> --name <brand> [--label "Label"] [--register|--activate]
 ```
 
-`<source>` is any container Penpot / Tokens Studio export the same DTCG document in - a monolithic `tokens.json`, a one-file-per-set directory, or a `project.penpot` archive. The extracted document lands at `catalog/assets/<name>/tokens/brand.json` as the pack's single core-tier `tokens` asset. `--register` upserts the pack into `profiles.json`; `--activate` also switches to it and rebuilds the catalog. See [Design Tokens](/info/design-tokens.html) for the token model and [Quickstart](/info/quickstart.html) for the end-user brand flow.
+`<source>` is any container Penpot / Tokens Studio export the same DTCG document in - a monolithic `tokens.json`, a one-file-per-set directory, or a `project.penpot` archive. The extracted document lands at `catalog/assets/<ns>/tokens/brand.json` as the pack's core-tier `tokens` asset, where `<ns>` is `<brand>` with hyphens stripped (an asset id can't carry `-` in its first segment, so `--name acme-co` yields `assets/acmeco/…`). Ingest also *derives* the pack's photo-treatment and icon-theme palette documents under `catalog/assets/<ns>/palette/`, so uploaded photos get on-brand washes and themable icons get colour pairings out of the box (icon themes are skipped when the palette has no accent). `--register` upserts the pack into `profiles.json`; `--activate` also switches to it and rebuilds the catalog; `--out` picks a different destination and `--force` overwrites an existing pack. See [Design Tokens](/info/design-tokens.html) for the token model and [Quickstart](/info/quickstart.html) for the end-user brand flow.
 
 ### Brand lock
 
@@ -45,10 +45,10 @@ A brand's tokens asset can be marked authoritative (`brandLock` on its index ent
 Each `tool.json` declares the host capabilities it needs (`schemas/tool.schema.json`). The valid flags are:
 
 ```
-network · filesystem · clipboard · camera · microphone · ffmpeg · wasm · capture · compose
+network · filesystem · clipboard · camera · microphone · screen · ffmpeg · wasm · capture · compose
 ```
 
-A shell that can't provide a capability **disables** the tool rather than letting it fail - an `ffmpeg` tool is unavailable in the web PWA; a `microphone`/`camera` recording tool is unavailable in the headless CLI; a `capture` tool offers a browser add-on on Chromium and is marked desktop-only elsewhere. This is how one catalog serves web, desktop, and CLI without per-shell tool lists. `network` access is additionally **allowlisted** - a tool declares which hosts it may reach, and `host.net` enforces it.
+A shell that can't provide a capability **disables** the tool rather than letting it fail - an `ffmpeg` tool is unavailable in the web PWA; a `microphone`/`camera` recording tool is unavailable in the headless CLI; a `capture` tool offers a browser add-on on Chromium and is marked desktop-only elsewhere. `screen` is *display* capture the user grants in browser-native UI (picking a screen, window or tab, via `host.recorder`) - distinct from `capture`, which rasterises a URL the tool itself names. This is how one catalog serves web, desktop, and CLI without per-shell tool lists. `network` access is additionally **allowlisted** - a tool declares which hosts it may reach, and `host.net` enforces it.
 
 Notice the badge: URL Screenshot declares `capture`, the browser cannot provide it alone, so the tile offers the add-on instead of vanishing.
 
@@ -59,7 +59,7 @@ Notice the badge: URL Screenshot declares `capture`, the browser cannot provide 
 Two mechanisms narrow the catalog without forking it:
 
 - **Per-instance tool set** - point each instance at a different profile (or a brand pack with a curated `tools/` root) so marketing, sales, and IT can each see a different library from one codebase.
-- **Per-user feature flags** - surfaced in each person's Profile view, stored on their profile (so they sync). The gallery-category and Batch flags default to **on** (they show/hide whole gallery categories and the Batch entry); one privacy flag, **Strip metadata from uploads**, defaults to **off** (opt-in - see below). They are personal preferences, *not* an admin server setting, and they never gate output formats or any API surface. See [Getting Started → Administration](/info/operators.html) for the governance model around this.
+- **Per-user feature flags** - surfaced in each person's Profile view, stored on their profile (so they sync). The gallery-category and Batch flags default to **on** (they show/hide whole gallery categories and the Batch entry), as do **Neurospicy Mode** (the focus-music player) and the **Jelly effects** UI switch; one privacy flag, **Strip metadata from uploads**, defaults to **off** (opt-in - see below). The category and Batch flags are purely personal preferences. Three of them - Neurospicy, Jelly effects and Strip metadata from uploads - can additionally be **governed** by an optional deployment control plane, which sets the default applied when the user hasn't chosen and can hide the switch entirely; a hidden flag's governed default wins over a stored user value. None of them ever gate output formats or any API surface. See [Getting Started → Administration](/info/operators.html) for the governance model around this.
 
   ![Every feature flag as its own switch, with the gallery categories on and Strip metadata off](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&filename=pd-feature-flags)
 
@@ -70,7 +70,8 @@ Two mechanisms narrow the catalog without forking it:
 A tool's `status` controls trust signalling, enforced by the engine, not by convention:
 
 - `experimental` - every export is automatically watermarked by the host (the tool can't remove it), so work-in-progress can't be mistaken for finished output.
-- `official` - no watermark.
+- `community` - no watermark, but flagged as community-maintained rather than brand-approved. The most-used value in the shipped packs.
+- `official` - brand-approved, no watermark.
 
 Promote a tool by changing one field in its manifest. The status is not an internal note: every surface shows it, so a reader knows what they are picking up before they open it.
 
@@ -93,7 +94,7 @@ npm run validate:catalog  # schema + invariants: checksums, file existence,
 Most runtime behaviour is fixed contract rather than deploy-time config, but two things are worth knowing:
 
 - **Engine version** - `ENGINE_VERSION` in `engine/src/version.ts` (read the live value there; `engine/CHANGELOG.md` tracks every minor). The capability bridge is additive-only within a major, so shells and tools built against an older minor keep working. See [Host API](/info/host-api.html).
-- **Hook budgets** - `HOOK_BUDGET_MS` in `engine/src/runtime.ts` time-boxes async tool hooks (`onInit` 5s, `onInput` 2s, export hooks 5–10s). It's exported for tests; async overruns are abandoned, sync overruns only logged (hooks are not a sandbox - see [Operators](/info/operators.html#what-you-must-know-before-you-rely-on-it)).
+- **Hook budgets** - `HOOK_BUDGET_MS` in `engine/src/runtime.ts` time-boxes async tool hooks (`onInit` 5s, `onInput` 2s, export hooks 5–10s). It's exported for tests; async overruns are abandoned, sync overruns only logged (hooks are not a sandbox - see [Operators](/info/operators.html#good-to-know)).
 
 ## The services' own config
 

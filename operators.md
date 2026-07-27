@@ -98,7 +98,7 @@ For files that must travel locked, everything happens on-device:
 
 ## Air-gap ready
 
-Air-gap is a **first-class deployment**, not a special mode - Lolly runs with no network at render time out of the box. The web shell is an offline-first PWA (service worker); fonts and WASM are stored on-device; tool state is persisted locally through the host bridge, never `localStorage`. Any tool that reaches the network does so only through an **allowlisted** `host.net` capability it must declare in its manifest - a shell that can't (or won't) fulfil it stubs it out. Ship the shells to devices through your MDM, or serve one instance inside your network, and a fully air-gapped install renders, exports, encrypts, and verifies credentials with nothing to phone home to.
+Air-gap is a **first-class deployment**, not a special mode - Lolly runs with no network at render time out of the box. The web shell is an offline-first PWA (service worker); fonts and WASM are stored on-device; tool state is persisted locally through the host bridge, never `localStorage`. The supported way for a tool to reach the network is an **allowlisted** `host.net` capability it declares in its manifest - a shell that can't (or won't) fulfil it stubs it out. That is a portability contract rather than an enforced boundary (see the hooks note below), which is why reviewing tool code stays the control - though on an air-gapped device there is nothing to reach either way. Ship the shells to devices through your MDM, or serve one instance inside your network, and a fully air-gapped install renders, exports, encrypts, and verifies credentials with nothing to phone home to.
 
 ## Good to know
 

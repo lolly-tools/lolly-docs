@@ -581,6 +581,8 @@ const SITE_ICONS: Record<string, string> = {
   surfaceWeb: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`,
   surfaceMacos: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>`,
   surfaceLinux: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`,
+  // Four panes — the one glyph that reads as Windows without using the logo.
+  surfaceWindows: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg>`,
   surfaceIos: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>`,
   surfaceAndroid: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><polyline points="9 2 9 7 15 7 15 2"/></svg>`,
   surfaceCli: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>`,

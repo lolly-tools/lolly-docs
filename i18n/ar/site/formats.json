@@ -1,48 +1,52 @@
 {
   "heading": "كل الصيغ، دخولا وخروجا",
-  "lead": "تقرأ Lolly 25 صيغة مصدر وتصدر 27 - إليك المجموعة الكاملة، مصنفة حسب طبيعة كل صيغة. أحد عشر {roundtrip}: تقرأ *و* تكتب، لذا تظهر في العمودين.",
+  "lead": "تقرأ Lolly 29 صيغة مصدر وتصدر 31 - إليك المجموعة الكاملة، مصنفة حسب طبيعة كل صيغة. خمس عشرة {roundtrip}: تقرأ *و* تكتب، لذا تظهر في العمودين.",
   "ingestsLabel": "الاستيراد",
-  "ingestsCount": "25 وارد",
+  "ingestsCount": "29 وارد",
   "exportsLabel": "التصدير",
-  "exportsCount": "27 صادرة",
+  "exportsCount": "31 صادرة",
   "ingests": [
     {
-      "category": "3D",
-      "list": "GLB · glTF"
+      "category": "متجهات",
+      "list": "SVG · PDF · Illustrator · InDesign · Figma · Penpot"
     },
     {
-      "category": "تصميم",
-      "list": "Figma · Penpot · Illustrator · InDesign · PPTX · PDF · SVG · Lottie"
+      "category": "نقطية",
+      "list": "PNG · JPG · WEBP · GIF · HEIC · TIFF · AVIF"
     },
     {
-      "category": "صور",
-      "list": "HEIC · TIFF · AVIF"
-    },
-    {
-      "category": "فيديو",
-      "list": "MP4 · WEBM · MOV"
+      "category": "حركة",
+      "list": "MP4 · WEBM · MOV · Lottie"
     },
     {
       "category": "صوت",
       "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD"
     },
     {
+      "category": "مستندات",
+      "list": "PPTX"
+    },
+    {
       "category": "بيانات",
       "list": "CSV · JSON"
+    },
+    {
+      "category": "3D",
+      "list": "GLB · glTF"
     }
   ],
   "exports": [
     {
       "category": "متجهات",
-      "list": "SVG · PDF · CMYK PDF · EPS · EMF · DXF"
+      "list": "SVG · PDF · CMYK PDF · EPS · CMYK EPS · EMF · DXF"
     },
     {
       "category": "نقطية",
-      "list": "PNG · JPG · WEBP · AVIF · TIFF · ICO"
+      "list": "PNG · JPG · WEBP · AVIF · TIFF · CMYK TIFF · ICO"
     },
     {
       "category": "حركة",
-      "list": "MP4 · WEBM · GIF · APNG"
+      "list": "MP4 · WEBM · GIF · APNG · WebP متحرك · SVG متحرك"
     },
     {
       "category": "صوت",
