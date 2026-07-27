@@ -223,7 +223,7 @@ An **`AudioLevel`** is the audio counterpart to `MediaFrame` (all amplitudes `0.
 
 ## `host.color` *(perceptual colour tools - optional, v1.40)*
 
-Extrapolate from **brand primitives** without shipping colour science in every tool: perceptual distance, contrast (WCAG + advisory APCA), smooth OKLab ramps, data class-breaks, and distinct categorical palettes. Every method is **pure and synchronous** - the same engine math on every shell (web, CLI, Tauri), so results never drift between them. Not a gated capability; feature-detect `host.color` and keep a small fallback for older shells. Colour arguments accept hex (`#rgb`…`#rrggbbaa`) or `oklch()`/`lch()` strings - the forms token values take (resolve other forms first); metrics return `NaN` on unparseable input, `ramp` throws; every emitted colour is a gamut-mapped `#rrggbb`.
+Extrapolate from **brand primitives** without shipping colour science in every tool: perceptual distance, contrast (WCAG + advisory APCA), smooth OKLab ramps, data class-breaks, distinct categorical palettes, harmony schemes, CSS-correct mixing and gradient baking. Every method is **pure and synchronous** - the same engine math on every shell (web, CLI, Tauri), so results never drift between them. Not a gated capability; feature-detect `host.color` and keep a small fallback for older shells. Every emitted colour is a gamut-mapped `#rrggbb` (`#rrggbbaa` when translucent).
 
 | Member | Type | Notes |
 |---|---|---|
@@ -233,6 +233,22 @@ Extrapolate from **brand primitives** without shipping colour science in every t
 | `ramp(stops, n, opts?)` | `string[]` | `n` colours along a smooth OKLab bézier through `stops`; `{ correctLightness: true }` re-spaces for perceptually even lightness steps - the "good multi-hue scale" recipe |
 | `breaks(data, mode, n)` | `number[]` | `n + 1` class boundaries over numeric data - `'e'` equal, `'l'` log₁₀ (positive data only), `'q'` quantile. Bin values onto a ramp |
 | `distinct(n, opts?)` | `string[]` | Up to `n` visually distinct categorical colours (chart series), seeded from `opts.anchorHex` (your brand primary) - the anchor is always the first colour |
+| `schemes(seed, kind?)` | `ColorSchemeAccent[]` | **v1.60.** Harmony accents off one seed - `complement` (default), `adjacent-3`, `triad-3`, `tetrad-4`, `free-2`…`free-4` (the numeral is the scheme's total, seed included). The brand editor's own generator, attached verbatim, so a tool's harmonies match the editor's |
+| `mix(a, b, t, opts?)` | `string \| null` | **v1.68.** Interpolate two colours the way CSS Color 4 does. `opts.space` picks the interpolation space (`oklab` default, plus `oklch`, `lab`, `lch`, `srgb`, `srgb-linear`, `hsl`); `opts.hue` picks the travel around the circle for a polar space (`shorter` default, `longer`, `increasing`, `decreasing`). Alpha is **premultiplied** - a per-channel lerp toward `transparent` drags the colour toward transparent's *black*, so a red→transparent midpoint comes out dark red instead of plain red |
+| `gradientCss(spec)` | `string \| null` | **v1.68.** A [gradient spec](#gradient-specs) string → a `linear-gradient(…)`/`radial-gradient(…)`/`conic-gradient(…)` value ready for `background-image`. Interpolates in the spec's space and **bakes** the result down to plain sRGB stops, so the same value renders identically on screen, in an exported SVG `<linearGradient>` and in a PDF axial shading |
+
+**Which colour strings are accepted** differs by vintage, deliberately. The metrics and generators (`deltaE`, `contrast`, `apca`, `ramp`, `breaks`, `distinct`, `schemes`) take hex (`#rgb`…`#rrggbbaa`) or `oklch()`/`lch()` - the forms token values take; resolve anything else first. They return `NaN` on unparseable input, except `ramp`, which throws. `mix` goes through the engine's full **CSS Color 4** parser, so it also accepts `rgb()`, `hsl()`, `hwb()`, `lab()`, `oklab()`, the CSS named colours, and `color(display-p3 …)` / `color(rec2020 …)` / `color(prophoto-rgb …)` / `color(a98-rgb …)` / `color(srgb-linear …)` / `color(xyz-d50|xyz-d65 …)` - including `none` components; it returns `null` rather than guessing when either side won't parse.
+
+### Gradient specs
+
+An authored gradient is **one URL-safe string** - `lin_90_30ba78-0_efefef-100` is "linear, 90°, brand green at 0%, fog at 100%" - because a gradient has to survive the same round trip every other input does: editor → block row → shared link → CLI → identical render. The grammar is `<kind>_<angle>_<colour>-<pos>_<colour>-<pos>…`:
+
+- **Kind** - `lin` / `rad` / `con` (or the long `linear`/`radial`/`conic`).
+- **Interpolation space**, as a dot-suffix on the kind: `lin.srgb`, `lin.oklch.longer`. The spaces worth naming for a gradient are `oklab` (the default), `oklch`, `lab`, `lch`, `srgb`, `srgb-linear` and `hsl`; a polar space takes an optional hue travel (`shorter` default, `longer`, `increasing`, `decreasing`). The list is closed on purpose, so a typo reads as "unknown" rather than silently picking a space nobody meant.
+- **Angle** in degrees, CSS convention - `0` is to the top, `90` to the right. It's the gradient line for `linear`, the `from` angle for `conic`, and unused for `radial`.
+- **Stops** - up to 12, each a bare hex (`30ba78`, no `#`), a CSS colour name, or `transparent`, then `-<pos>` in percent. Parsing is lenient (a leading `#`, an `@` separator, a missing angle, unpositioned stops, upper case all read fine) and writing is strict, so the round trip is byte-stable. Fewer than two usable stops answers `null` - a caller should fall back to a flat fill rather than paint something half-specified.
+
+Read and written by `parseGradientSpec` / `formatGradientSpec` in the engine, baked to CSS by `gradientCss` above. Layout Studio's per-box gradient fill is the reference consumer.
 
 The idiomatic chart pattern - series colours that follow the **active brand** (see `chart-creator` / `d3`, the reference implementations): prefer the brand's own `color.spectrum.*` tokens from `host.tokens.colors()` (they carry measured print inks), top up with `distinct()` anchored on `{color.semantic.primary}`, and keep your shipped palette as the fallback for shells without `host.color`.
 
