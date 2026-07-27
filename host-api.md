@@ -236,6 +236,37 @@ Extrapolate from **brand primitives** without shipping colour science in every t
 
 The idiomatic chart pattern - series colours that follow the **active brand** (see `chart-creator` / `d3`, the reference implementations): prefer the brand's own `color.spectrum.*` tokens from `host.tokens.colors()` (they carry measured print inks), top up with `distinct()` anchored on `{color.semantic.primary}`, and keep your shipped palette as the fallback for shells without `host.color`.
 
+## `host.geom` *(exact vector geometry - optional, v1.64)*
+
+Path booleans, offsetting, stroke-to-fill outlining, pen-tool spline lowering, simplification and hit testing - the engine's geometry kernel, which keeps everything as real Béziers (nothing flattens, samples or rasterises). Every method is **pure and synchronous** - the same engine math on every shell, so a pen tool's geometry is identical in the browser, in Tauri and headlessly in the CLI. Not a gated capability; feature-detect `host.geom`.
+
+The currency both ways is an **SVG path-data string** - what already lives in your template, your saved state and your URL. `parse` / `toPathData` expose the structured form (contours of whole cubics, 8 numbers each) for callers that want to walk or edit curves themselves.
+
+**Failures are returned, never thrown.** Every method answers `{ ok: true, … }` or `{ ok: false, code, message }`, because a throw out of `onInit`/`onInput` is caught, logged and discarded by the runtime - which would leave a tool silently unresponsive rather than telling the user anything. A path result carries `{ d, contours, curves }`; a measurement result carries `{ value }`.
+
+| Member | Result | Notes |
+|---|---|---|
+| `union(paths, opts?)` | path | Everything any operand covers. `paths` is an array of `d` strings; one operand folds to its own canonical form |
+| `intersect(paths, opts?)` | path | Only what every operand covers, folded left to right |
+| `difference(paths, opts?)` | path | `paths[0]` minus every later one |
+| `xor(paths, opts?)` | path | Covered by an odd number of operands |
+| `selfUnion(d, opts?)` | path | Canonical form of ONE path: self-intersections resolved, holes wound opposite their shell, overlaps merged. Run it on a freshly-closed path before filling. The only boolean that never reports `'limit'` |
+| `offset(d, distance, opts?)` | path | Grow (`> 0`) / shrink (`< 0`). `opts`: `join` (`miter`·`round`·`bevel`), `miterLimit`, `tolerance` |
+| `stroke(d, width, opts?)` | path | A stroked path in, a **filled outline** out (fills identically under the nonzero rule). Adds `cap` (`butt`·`round`·`square`); defaults are SVG's own |
+| `simplify(d, opts?)` | path | Fewer segments within `opts.tolerance` (default `0.01`px). For a *finished* path - never between booleans, which rely on output points lying exactly on their inputs |
+| `fromNodes(authored)` | path | Lower `{ kind, nodes, closed, tension? }` to path data. Handles are **offsets** from the node (`hInX`/`hInY`/`hOutX`/`hOutY`); `kind` is a string the ENGINE validates, so a spline family added later needs no bridge change |
+| `continuity(node, moved)` | node | Re-apply a node's `corner`·`smooth`·`symmetric` constraint after one handle moved (`'in'`/`'out'`) - the operation a pen tool runs on every drag |
+| `bounds(d)` | box \| `null` | Tight extent (the curves' real bounds, not their control hull) |
+| `area(d)` | `number` | Signed, exact (Green's theorem per cubic). Positive = counter-clockwise in a y-up frame. Self-overlap gives the winding-weighted area - `selfUnion` first for the filled one |
+| `contains(d, x, y, opts?)` | `boolean` | Inside the fill, under `opts.fillRule` (`nonzero` default) |
+| `winding(d, x, y)` | `number` | Signed wrap count; `contains` under nonzero is `winding !== 0` |
+| `nearest(d, x, y)` | `{ x, y, distance, contour, curve, t }` | Nearest point ON the path, with the address that found it - hit test, snap, and the `t` to split at to insert a node |
+| `parse(d)` | contours | Every shorthand expanded: H/V → lines, Q/T → cubics exactly, A → cubics by the spec's endpoint parameterisation |
+| `toPathData(contours, opts?)` | path | Straight pieces written as `L`; `opts.decimals` defaults to 4 |
+| `limits()` | ceilings | `maxChars` / `maxCommands` / `maxCurves` / `maxCoordinate` / `maxPaths` / `maxNodes` - check a path before offering an operation on it |
+
+`code` on a failure tells you what to do, and the distinctions are deliberate: `'invalid-path'` (malformed `d` - reject it, don't retry), `'too-large'` (well-formed but past the ceilings above), `'limit'` (the answer exists and this engine declines to guess at it past its bounded-work ceiling - retry with simpler operands or a coarser `tolerance`), `'invalid-argument'`, `'unsupported'` (a spline kind this engine knows the name of but cannot lower yet), `'internal'` (a bug - report it). **`ok: true` with `d: ''` is an answer**, not a failure: a non-overlapping intersection and an offset shrunk past its inradius are both legitimately empty. There is no degraded fallback anywhere in the API - you are never handed a plausible-looking wrong path. Path data is parsed defensively (bounded size, command count, curve count and coordinate magnitude, with a grammar that rejects rather than guesses), so a `d` from a paste or a URL param is safe to hand straight in.
+
 ## `host.log`
 
 `log(level, msg, ctx?)` - `level` is `debug`·`info`·`warn`·`error`. Goes to the console in dev and a diagnostics buffer for support. Hook errors are caught and logged, not thrown.
