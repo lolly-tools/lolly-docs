@@ -221,6 +221,33 @@ Record the microphone (and optionally the camera) to a finished media Blob, plus
 
 An **`AudioLevel`** is the audio counterpart to `MediaFrame` (all amplitudes `0..1` linear except `dbfs`): `{ rms, peak, dbfs, clipping, t }`, plus the optional **v1.19** background-noise cues `noiseFloor` / `snr` / `hum` / `hiss`. A tool rarely subscribes itself - it declares an `onLevel` hook and the runtime drives it from the meter (and the take). See [Authoring Tools](/info/authoring-tools.html) for the `onLevel` pattern and the full field list; `voice-recorder` (mic-only) and `top-tail-recorder` (camera+mic) are the reference tools.
 
+## `host.audio` *(audio analysis - optional, v1.71)*
+
+Decode a finished clip and get back a **per-frame reactivity track**: loudness, a bass/mid/treble split, a log-spaced spectrum, brightness, onset strength, a tempo, beat times, and optionally raw time-domain windows. This is the primitive behind audio-reactive visuals - waveforms that actually move with the music rather than sweeping a playhead over a static shape.
+
+The dual of `host.recorder.meter`, which reports the **live** microphone one sample at a time. Anything *drawing* a clip needs the opposite: frame 200's bass while it is still rendering frame 1. Not a gated capability; feature-detect `host.audio` and fall back to a static waveform. The audio never leaves the device.
+
+| Method | Returns |
+|---|---|
+| `isAvailable()` | `boolean` - a decoder exists here. Does **not** promise a given file decodes |
+| `analyse(src, opts?)` | `Promise<AudioAnalysis>` - decode + analyse; rejects on unfetchable bytes or a missing codec |
+
+`src` is a URL (including `blob:` / `data:`), an `AssetRef`, or raw encoded bytes - the last so a `file` input's in-memory upload can be analysed without being stored first.
+
+`AudioAnalyseOpts`: `fps` (analysis frames per second, default 30 - match your export fps), `bands` (spectrum bins per frame, default 64), `buckets` (static overview columns, default 128), `start` / `window` (seconds - trim to the clip you are actually showing; clamped rather than erroring), `samples` (**opt in** to raw time-domain windows of N samples per frame, rounded up to a power of two).
+
+`AudioAnalysis`: `duration` (of the **whole** source, not the analysed window), `sampleRate`, `channels`, the `start` / `window` / `fps` actually used, `peaks` (the overview waveform), `frames`, `bpm`, and `beats`.
+
+`AudioFrames` is **struct-of-arrays**, indexed by frame - a minute at 60fps is 3,600 frames, and a draw loop wants flat typed arrays, not 3,600 objects: `count`, `bands`, `samples`, then `t`, `rms`, `peak`, `bass`, `mid`, `treb`, `centroid`, `flux` (one entry per frame) and `magnitude`, `wave`, `waveL`, `waveR` (`count` consecutive rows - row *i* of the spectrum starts at `i * bands`).
+
+Three behaviours worth designing around:
+
+- Everything is normalised `0..1` across the analysed window **except `peak`**, which stays absolute so you can still tell that a source clipped. Normalisation is what lets a quiet voice memo and a mastered single both fill the frame.
+- `bass` / `mid` / `treb` share **one** scale, so they read as a balance. Normalised separately, a bass-only clip would report treble pinned at 1.0.
+- **`bpm` is `null` when there is no rhythm to find**, and that is the common answer for speech, ambience and pads. Never treat null as 120 - a visual built on a wrong beat grid looks far worse than one built on none.
+
+The shell owns the decoder; the maths is the engine's `analysePcm`, attached rather than reimplemented, so the browser and the terminal read identical numbers off the same clip. What differs is *coverage*: the web shell gets everything `decodeAudioData` supports, while the Node shells (CLI/TUI) decode **WAV** plus our own **ZzFXM** songs and reject anything needing a platform codec by name - deliberately, rather than shelling out to whatever ffmpeg happens to be on `PATH`.
+
 ## `host.color` *(perceptual colour tools - optional, v1.40)*
 
 Extrapolate from **brand primitives** without shipping colour science in every tool: perceptual distance, contrast (WCAG + advisory APCA), smooth OKLab ramps, data class-breaks, distinct categorical palettes, harmony schemes, CSS-correct mixing and gradient baking. Every method is **pure and synchronous** - the same engine math on every shell (web, CLI, Tauri), so results never drift between them. Not a gated capability; feature-detect `host.color` and keep a small fallback for older shells. Every emitted colour is a gamut-mapped `#rrggbb` (`#rrggbbaa` when translucent).
