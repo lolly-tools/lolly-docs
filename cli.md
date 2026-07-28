@@ -57,7 +57,7 @@ If `--output` is given, the file is written and a byte count is reported on stde
 | `--durable=1` | Embed the opt-in durable (TrustMark-format) credential. Needs the encoder model on-device. |
 | `--password=<pw>` | Open password for a rendered PDF. |
 | `--bleed=<dim>`, `--marks=<list>` | Print bleed and marks (`crop`, `reg`, `bleed`, `bars`, `prov`) for the print formats. Browser tier only. |
-| `--press-profile=<cond>` | CMYK press condition (`fogra39`, `fogra51`, `swop`, `gracol`). **Not** `--profile` - see the warning below. |
+| `--press-profile=<cond>` | CMYK press condition (`fogra39`, `fogra51`, `swop`, `gracol`) - **named** in the PDF's output intent. The CLI has no profile store, so it cannot embed one, and a named-only intent is not PDF/X-4: the output intent is written, the `GTS_PDFXVersion` claim is not. Embedding a profile you loaded is a web-shell feature today (`profile=own`). **Not** `--profile` - see the warning below. |
 | `--profile=<file.json>` | A user-profile JSON file, used to pre-fill `bindToProfile` inputs. |
 | `--lang=<code>` | Content language (`de`, `ja`, `ar`, …). |
 | `--share`, `--link` | Print a shareable `lolly.tools` link for these inputs instead of rendering anything. |
