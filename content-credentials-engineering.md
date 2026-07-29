@@ -369,15 +369,19 @@ would 501.
 
 - **Repo is public** → contains no secrets; root cert is public by design.
 - **Device key theft** → key is non-extractable; even XSS can at worst *use*
-  it while the page is open, bounded by the cert lifetime and per-identity
-  revocation at the CA.
+  it while the page is open, bounded by the cert lifetime. Expiry is the only
+  recall mechanism - there is no revocation infrastructure, by design.
 - **CA key theft** → catastrophic for trust, as with any CA; mitigations:
-  env-only storage now, KMS/HSM at Tier 4, short leaf lifetimes limit the
-  blast radius of a missed revocation.
+  env-only storage now, KMS/HSM at Tier 4, and short leaf lifetimes bound how
+  long any misissued certificate stays usable (there is no revocation to miss).
 - **Fork abuse** → forks can request certs only through our OIDC-gated,
   origin-allowlisted, rate-limitable endpoint, and only for identities they
   actually control.
-- **Token replay** → 10-minute expiry + PoP binding to a specific keypair.
+- **Token replay** → the enrolment token is a stateless 10-minute HMAC, and
+  proof-of-possession binds the *presented* keypair, not the browser that
+  completed sign-in - so a token leaked inside its window yields a certificate
+  for that identity to whoever holds it. Accepted risk, bounded by the short
+  window; flagged for the PKI review.
 
 ## Roadmap
 

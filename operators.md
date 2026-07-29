@@ -115,4 +115,5 @@ A few things worth having straight before you roll it out:
 - **[Adoption & Governance](/info/adoption-governance.html)** - personas, the deflection metric, and governance-as-data in full.
 - **[Deployment](/info/deployment.html)** - deploy/serve/hybrid, MDM, and self-hosting the services.
 - **[Configuration](/info/configuration.html)** - profiles, brand packs, capability gating, and feature flags.
-- **[Privacy Policy](/info/privacy.html)** - the formal "collects nothing, uploads nothing" statement.
+- **[Privacy Policy](/info/privacy.html)** - the formal statement of what is and isn't collected, stored, and sent.
+- **[Server Surface](/info/server-surface.html)** - the complete inventory of what runs server-side (two optional components) versus on-device.

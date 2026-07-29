@@ -100,6 +100,7 @@ const pages: Page[] = [
   // ── Operators pathway ────────────────────────────────────────────────────
   { slug: 'adoption-governance', title: 'Adoption & Governance', src: 'adoption-governance.md', pathway: 'operators' },
   { slug: 'security',         title: 'Security & Verification', src: 'security-verification.md', pathway: 'operators' },
+  { slug: 'server-surface',   title: 'Server Surface',    src: 'server-surface.md',  pathway: 'operators' },
   { slug: 'privacy',          title: 'Privacy Policy',    src: 'privacy.md',         pathway: 'operators' },
 ];
 
@@ -206,6 +207,7 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
       { label: 'Trust', items: [
         { slug: 'content-credentials-identity', label: 'Content Credentials' },
         { slug: 'security', label: 'Security & Verification' },
+        { slug: 'server-surface', label: 'Server Surface' },
         { slug: 'privacy', label: 'Privacy Policy' } ] },
     ],
   },
@@ -1183,7 +1185,7 @@ const CSS = `
 @font-face{font-family:'SUSE';src:url('/catalog/fonts/webfonts/SUSE-Italic[wght].woff2') format('woff2-variations');font-weight:100 900;font-style:italic;font-display:swap}
 @font-face{font-family:'SUSE Mono';src:url('/catalog/fonts/webfonts/SUSEMono[wght].woff2') format('woff2-variations');font-weight:100 900;font-style:normal;font-display:swap}
 @font-face{font-family:'SUSE Mono';src:url('/catalog/fonts/webfonts/SUSEMono-Italic[wght].woff2') format('woff2-variations');font-weight:100 900;font-style:italic;font-display:swap}
-:root{--green:#30ba78;--dark:#0c322c;--orange:#fe7c3f;--navy:#192072;--blue:#2453ff;--light:#90ebcd;--pale:#f0fbf5;--text:#1d2726;--muted:#5a7067;--border:#d8ede4;--col-cap:38rem}
+:root{--green:#30ba78;--dark:#0c322c;--orange:#fe7c3f;--navy:#192072;--blue:#2453ff;--light:#90ebcd;--pale:#f0fbf5;--text:#1d2726;--muted:#5a7067;--border:#d8ede4;--red:#c8102e;--col-cap:38rem}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'SUSE',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--text);background:#fff;line-height:1.65}
 a{color:var(--green);text-decoration:none}
@@ -1213,6 +1215,11 @@ nav.nav-solid{background:#0c322c}
 .brand{display:inline-flex;align-items:center;gap:.5rem;font-weight:800;color:var(--pale);font-size:1.05rem;white-space:nowrap;margin-right:.75rem;letter-spacing:-.01em;text-transform:uppercase}
 .brand:hover{color:var(--light);text-decoration:none}
 .brand-icon{width:1.5rem;height:1.5rem;border-radius:5px;flex-shrink:0;object-fit:contain}
+/* Draft marker in the nav. English pages only (see buildNav) — the translated
+   pages are a fallback to English source anyway, and a red pill nobody can read
+   in their own language is a worse signal than none. flex:none so the scrolling
+   nav can never squeeze it to unreadable. */
+.nav-draft{display:inline-flex;align-items:center;flex:none;font-family:'SUSE Mono','SF Mono','Fira Code',monospace;font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#fff;background:var(--red);padding:.15em .6em;border-radius:999px;margin-right:.75rem;white-space:nowrap}
 nav .gap{flex:1}
 /* The <label> wrapping the icon + <select> is the WHOLE hit area - a generous
    pill, matching .nav-theme-toggle's footprint - not just the select's own tight
@@ -2317,7 +2324,11 @@ function buildNav(lang: Lang, slug: string, activeHref: string, isLanding: boole
   const navClass = isLanding ? '' : ' class="nav-solid"';
   const launch = esc(t('Launch App ↗'));
   const launchHref = esc(localizeHref(lang, '/'));
-  return `<nav${navClass}><a href="${localeHref(lang, 'index')}" class="brand">Lolly</a>${groups}<div class="gap"></div>${langPickerHtml(lang, slug)}${THEME_TOGGLE}${HAM_BTN}<a href="${launchHref}" class="nav-launch">${launch}</a></nav>
+  // Draft marker: English only, and deliberately not run through t() — it must
+  // not enter the translation corpora, because it is meant to come straight back
+  // out again once the docs are no longer a draft.
+  const draft = lang === 'en' ? '<span class="nav-draft">Draft only</span>' : '';
+  return `<nav${navClass}><a href="${localeHref(lang, 'index')}" class="brand">Lolly</a>${draft}${groups}<div class="gap"></div>${langPickerHtml(lang, slug)}${THEME_TOGGLE}${HAM_BTN}<a href="${launchHref}" class="nav-launch">${launch}</a></nav>
 <div class="nav-mobile-menu" id="navMobileMenu">${mobileLinks}<a href="${launchHref}" class="nav-launch">${launch}</a></div>`;
 }
 

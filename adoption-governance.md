@@ -68,7 +68,7 @@ The Dashboard's capability map is the inventory to scope that decision against: 
 
 ### IT & security
 
-1. Confirm the **data posture**: no telemetry, no backend, nothing uploaded by default.
+1. Confirm the **data posture**: no telemetry, nothing uploaded by default, and no backend in the core render/verify path - the two optional server components are inventoried on [Server Surface](/info/server-surface.html).
 2. Scope the **pilot** to a low-risk context while the security audit is still outstanding (see [Status](#status)).
 3. Decide who owns **governance** - see [Governance](#governance) below.
 
@@ -129,7 +129,7 @@ The most common adoption set-back is not technical; it's **framing and change ma
 
 ## We need your story
 
-Because Lolly collects no telemetry and phones nothing home, **we genuinely do not know who runs it or how well it's working** - and that's by design. The flip side is that the pilot depends on you telling us.
+Because Lolly collects no telemetry and no component reports usage back to us (see [Server Surface](/info/server-surface.html) for the two optional server components and what they keep), **we genuinely do not know who runs it or how well it's working** - and that's by design. The flip side is that the pilot depends on you telling us.
 
 If you are piloting Lolly, the most valuable thing you can contribute is a concrete before/after: what you used to do, what you did with Lolly, how long it took, and where it fell short. That evidence - not more architecture - is what moves this from a promising prototype to something proven.
 

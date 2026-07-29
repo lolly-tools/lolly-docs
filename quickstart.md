@@ -1,6 +1,6 @@
 # Quickstart
 
-Lolly turns your rules - colours, type, layouts, logic - into tools anyone can use to make finished files: images, PDFs, social cards, video, by filling in a few fields. There's nothing to learn and nothing to upload: it all runs on your device, online or off.
+Lolly turns your rules - colours, type, layouts, logic - into tools anyone can use to make finished files: images, PDFs, social cards, video, by filling in a few fields. There's nothing to learn and nothing to upload: making and exporting runs on your device, online or off.
 
 This is the one page to read first. Two things get you productive: **make Lolly yours** and **bring in what you already have** (your design files and tokens). Everything else is a link away.
 

@@ -8,9 +8,9 @@
     { "title": "Verify anything, on-device", "desc": "The Verify tab checks a file's credential, flags AI-generated content, reads the Lolly Imprint, and surfaces hidden data - offline, nothing uploaded." }
   ],
   "cards": [
-    { "icon": "assureEyeOff", "title": "Nothing leaves your device", "desc": "No cloud rendering, no telemetry, no analytics. What you make stays on your machine." },
+    { "icon": "assureEyeOff", "title": "Made on your device", "desc": "No cloud rendering, no telemetry, no analytics. What you make is stored on your machine, not on a server." },
     { "icon": "assureScan", "title": "Scrub and lock, on-device", "desc": "Strip Hidden Data removes EXIF and metadata locally. Lock a PDF, a download, or a share link with a password that never leaves your device." },
-    { "icon": "assureServer", "title": "Self-host or air-gap", "desc": "No server, no database, no backend. Run entirely behind your firewall, fully offline." }
+    { "icon": "assureServer", "title": "Self-host or air-gap", "desc": "No backend in the core render path — no database, no server-side processing to operate. Run entirely behind your firewall, fully offline; the optional server add-ons can be omitted." }
   ],
   "cta": "How Content Credentials work →",
   "ctaHref": "/info/content-credentials-identity.html"
