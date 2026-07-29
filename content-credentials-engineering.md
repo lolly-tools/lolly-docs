@@ -127,9 +127,12 @@ verifier, same report; the flag loads PEM → DER and passes `trustAnchors`.
 
 The web `/verify` view runs several checks *around* the credential. Each is a pure,
 DOM-free engine (or shell-lib) module fed a decoded RGBA buffer or the raw file
-bytes by the shell; none is a bridge capability, and none uploads anything - SEAL's
-DNS key lookup and the deep-scan model download are the only network touches, both
-shell-side, and neither sends the file.
+bytes by the shell; none is a bridge capability, and none uploads anything - the
+deep-scan model download (same-origin, opt-in, one-time) is the only network touch,
+and it never sends the file. The web shell deliberately passes **no SEAL key
+resolver** - a DNS-published key reports "no key resolver" instead of being fetched
+through a third-party DoH service; the Node shells (CLI/TUI/desktop) resolve keys
+through the machine's own DNS.
 
 Each read has its own surface in the view, and the component library lists them
 against the module that defines them:
@@ -173,14 +176,17 @@ output too (it lacks the interactive extractor, but sees the same `appended` fie
 ### `engine/src/seal.ts` - SEAL cryptographic signatures
 
 `verifySeal(bytes, resolveKey?)` parses a hackerfactor [SEAL](https://github.com/hackerfactor/SEAL)
-record and verifies its signature over the covered byte ranges; the shell's
-`shells/web/src/lib/seal-dns.ts` supplies the `resolveKey` that fetches the public
-key from DNS. **This is a byte-signature format - not a pixel watermark, and NOT
-Meta's Content Seal despite the shared word.** A key resolved from DNS yields domain
+record and verifies its signature over the covered byte ranges. The `resolveKey`
+resolver is optional and shell-supplied: **the web shell deliberately passes none**
+(zero network requests - a DNS-keyed record reports "no key resolver" there), while
+the Node shells (CLI/TUI/desktop) can supply one backed by the machine's own system
+DNS. **This is a byte-signature format - not a pixel watermark, and NOT Meta's
+Content Seal despite the shared word.** A key resolved from DNS yields domain
 attribution (`Signed by <domain> (SEAL)`, proving domain control, not a CA-verified
-legal identity); a key the file itself carries but that DNS can't confirm yields an
-internally-consistent-but-unattributed result. The only network touch is the DNS
-lookup - the file never leaves the device.
+legal identity); a key the file itself carries yields an
+internally-consistent-but-unattributed result. In the web app there is no network
+touch at all; in the Node shells the only network touch is a system-DNS key lookup -
+the file never leaves the device either way.
 
 ### Deep scan: `trustmark.ts` + `contentseal.ts` (web, opt-in)
 

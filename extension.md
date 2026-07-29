@@ -31,7 +31,7 @@ The extension lives in the repo at `shells/chrome-extension/`.
 
 - A small script tells Lolly the extension is present, so the **URL Screenshot** tool switches on automatically - no setup.
 - When you render, the extension opens the target page in a background tab, captures it via the DevTools Protocol (the same `Page.captureScreenshot` the desktop app uses), then closes the tab and hands the image back.
-- It runs entirely in your browser, on your network - so capturing `localhost` or an internal site works, and nothing is sent anywhere.
+- It runs entirely in your browser, on your network - so capturing `localhost` or an internal site works. The capture itself is never uploaded anywhere; the only network traffic is your own browser loading the page you asked to shoot.
 
 While a capture runs you may briefly see a *"…started debugging this browser"* banner on the temporary tab. That's the DevTools Protocol at work; it clears itself when the shot is done.
 

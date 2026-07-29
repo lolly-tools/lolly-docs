@@ -6,6 +6,20 @@ This document captures the purpose, structure, and architectural decisions for t
 
 > **Status:** Lolly is an internal prototype in a **closed pilot that hasn't completed**. The engine is deterministic and internally consistent, but the product is early - SUSE is customer number one - and its cryptography and file-parsing engines are currently undergoing SUSE's strict infrastructure hardening, preparing for enterprise scale (we're really good at this). Read the architecture below as design intent under test, not a finished, certified product. See [Adoption & Governance](/info/adoption-governance.html#status) for how the pilot is run and measured.
 
+> **How to read this page.** It carries two kinds of material, in order. The first half is
+> **why this exists**: the problem, the positioning, and the lifecycle a single asset travels
+> through. From [The big picture](#the-big-picture-how-the-layers-fit) onward it is
+> **how the layers fit**: the architecture document for contributors, covering the engine/shell/pack
+> separation, the repository layout, the delivery targets, and the commitments that constrain every
+> change to the platform. If you are here to change the codebase rather than to understand the
+> product, start at the big picture.
+>
+> Two companions go deeper than this page does. [`engine/README.md`](../engine/README.md) in the
+> repository is the module-by-module map of the engine, with a generated table of every module and
+> what it parses or writes. [Threat Model & Trust Boundaries](/info/threat-model.html)
+> is the same architecture read as trust boundaries, and it is the right page for any question about
+> what the engine treats as untrusted.
+
 ---
 
 ## Why this exists
@@ -86,7 +100,11 @@ One set of brand constraints, fixed once by a designer; three routes to the iden
 
 ---
 
-## The big picture
+## The big picture: how the layers fit
+
+Everything from here down is architecture. The diagram is the whole system in one view: tools are
+data at the top, the engine in the middle knows nothing of any platform, the shells below it
+implement one contract, and the catalogs supply the content.
 
 ```
                 ┌─────────────────────────────────────────────┐
@@ -121,6 +139,8 @@ One set of brand constraints, fixed once by a designer; three routes to the iden
 ```
 
 ### Repository layout
+
+Content is mounted as packs: `community/`, `docs/`, every `shells/*`, both `services/*`, and `brands/suse` are each their own repository, checked out as git submodules of this one. The parent owns `engine/`, `schemas/`, `scripts/`, `tests/`, `api/`, `brands/lolly-start/`, and `profiles.json`. See [Build Guide » Getting the source](/info/build-guide.html) for the checkout command and the cross-repo workflow.
 
 ```
 lolly/
@@ -487,3 +507,5 @@ If you can describe it in pure data + Handlebars → **engine**.
 If it touches the DOM, filesystem, network, or any browser/OS API → **host**.
 
 The line is sharp on purpose. The engine is the open-source part. Everything that knows about SUSE, specific platforms, or runtime environments stays out of it.
+
+For the next level of detail, [`engine/README.md`](../engine/README.md) enumerates every engine module and what it is responsible for, and [Threat Model & Trust Boundaries](/info/threat-model.html) records where that same line doubles as a trust boundary.

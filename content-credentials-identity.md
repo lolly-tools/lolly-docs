@@ -67,9 +67,11 @@ third-party C2PA validator pointed at the public Lolly root
 Verify is more than a C2PA reader. Every file you drop is put through several
 independent checks, summarised as a row of pips ("Verification checks at a glance")
 under the headline verdict and then explained in full below it. **They all run on
-your device - nothing is uploaded.** The only two things that ever leave the machine
-are called out where they apply: a single public-key **DNS lookup** for SEAL, and a
-**one-time detector download** for the opt-in deep scan. The file itself never
+your device - nothing is uploaded.** The one network touch that can ever happen is
+called out where it applies: a **one-time detector download** for the opt-in deep
+scan (from the app's own origin, not a third party). SEAL verification in the web
+app makes **zero network requests** - a record whose key lives in DNS resolves only
+in the desktop/CLI shells, through your own machine's DNS. The file itself never
 leaves.
 
 ### The Lolly Imprint
@@ -129,11 +131,14 @@ all on-device, nothing uploaded. It reads two marks:
 Verify also checks for a **SEAL** record - the [hackerfactor SEAL](https://github.com/hackerfactor/SEAL)
 format, which despite the name has **nothing to do with Meta's Content Seal above**.
 SEAL is a **cryptographic signature over the file's bytes** whose public key is
-published in **DNS**. Lolly verifies it on-device; the only thing that leaves the
-machine is a single **public-key DNS lookup** - never the file. A signature that
-verifies against a key found in DNS shows **Signed by \<domain\> (SEAL)**: it proves
-**control of that domain** - domain-level attribution, not a CA-verified legal
-identity - and says nothing about the visual content. A signature that verifies
+published in **DNS**. Lolly verifies it on-device - and in the web app with **zero
+network requests**: a record carrying its key inline verifies fully offline, and a
+DNS-keyed record reports "no key resolver" rather than being looked up through a
+third-party DNS service. The desktop and CLI shells resolve DNS-published keys
+through your own machine's DNS; a signature that verifies against a key found that
+way shows **Signed by \<domain\> (SEAL)**: it proves **control of that domain** -
+domain-level attribution, not a CA-verified legal identity - and says nothing about
+the visual content. A signature that verifies
 against a key the file itself carries, but which isn't confirmed in DNS, is reported
 as internally consistent but unattributed.
 

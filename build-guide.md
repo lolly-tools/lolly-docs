@@ -1,19 +1,81 @@
 # Build Guide
 
+> **Scope.** This page is *how each artefact is produced*: getting the source, toolchain prerequisites, and the per-platform build, signing and packaging steps. The [Deployment guide](/info/deployment.html) is *where each artefact runs* - delivery models, hosting and routing for the web shell, and what the optional MCP and CA services need. Compilers, SDKs and store submission here; hosts, rewrites and rollout there.
+
 How to build Lolly for each distribution target: standalone CLI binary, desktop app (macOS / Windows / Linux), mobile apps (iOS / Android), and the web shell as a container image for Kubernetes.
 
 ---
 
 ## Prerequisites (all targets)
 
-- **Node.js 20+** and **npm 10+**
-- Repo checked out, dependencies installed:
+- **Node.js** `^20.19` or `>=22.12`, and **npm 10+**
+- The repo and its submodules checked out, dependencies installed - see below
+
+---
+
+## Getting the source
+
+Lolly is a parent repo plus a set of git submodules. The parent owns `engine/`, `schemas/`, `scripts/`, `tests/`, `api/`, `brands/lolly-start/`, and `profiles.json`; everything else is mounted from its own repository under [github.com/lolly-tools](https://github.com/lolly-tools):
+
+| Path | Repository | Contains |
+|---|---|---|
+| `community/` | `lolly-tools` | the brand-agnostic tool definitions |
+| `docs/` | `lolly-docs` | this documentation |
+| `shells/web` | `lolly-web` | the PWA |
+| `shells/cli` | `lolly-cli` | the scriptable CLI |
+| `shells/tui` | `lolly-tui` | the interactive terminal shell |
+| `shells/tauri-desktop` | `lolly-desktop` | the desktop app |
+| `shells/tauri-mobile` | `lolly-mobile` | the iOS / Android app |
+| `shells/chrome-extension` | `lolly-chrome-extension` | the browser extension |
+| `services/mcp` | `lolly-mcp-server` | the MCP server |
+| `services/ca` | `lolly-ca` | the Content Credentials CA |
+| `brands/suse` | `suse-lolly` | **private** - the SUSE tool pack and catalog |
+
+All of those except `brands/suse` are public, so a read-only contributor gets a complete, buildable checkout with the single command below. Write access is enforced by the host at push time, not by the checkout, so the setup is identical whether you're a maintainer of a given repo or just reading it.
+
+### One command
 
 ```bash
-git clone https://github.com/lolly-tools/lolly.git
-cd lolly
+git -c url."git@github.com:".insteadOf=https://github.com/ \
+    clone --recurse-submodules git@github.com:lolly-tools/lolly.git && \
+cd lolly && \
+git config url."git@github.com:".insteadOf https://github.com/ && \
+git submodule foreach 'git checkout main' && \
 npm install
 ```
+
+What each step is for:
+
+- **`url.insteadOf`** rewrites the HTTPS URLs recorded in `.gitmodules` to SSH. SSH clones work for public repos regardless of write access, so this is safe for everyone - and it means the submodules you *can* push to are already set up to push, with no per-repo remote fiddling later. Repeating it as a `git config` after the clone makes the rewrite stick for future `git submodule update` runs. Drop both lines if you'd rather authenticate over HTTPS.
+- **`--recurse-submodules`** checks out every submodule in the table except `brands/suse`, which is marked `update = none` in `.gitmodules` precisely so that public clones and CI skip the private pack and fall back to the neutral `lolly-start` profile.
+- **`git submodule foreach 'git checkout main'`** puts each submodule on a branch. Submodules clone in detached HEAD, and a commit made there is easy to lose. Every submodule's default branch is `main`. Note this moves each one to the remote tip, which can sit ahead of the commit the parent recorded; `git submodule update` returns them to the recorded commits if a build starts behaving oddly.
+- **`npm install`** must run *after* the submodules exist, because the npm workspaces resolve against a `package.json` in each one. Its `postinstall` runs `scripts/use-profile.ts --auto`, which builds the gitignored `tools/` and `catalog/` profile views - see [Configuration](/info/configuration.html).
+
+Verify the result with `npm run profile` (shows the active profile) and `npm run cli` (lists the tools it can see).
+
+### The private SUSE brand pack
+
+`brands/suse` holds the SUSE tool pack and its catalog, including licensed fonts and music, so it lives in a private repository. If you have access, opt in explicitly:
+
+```bash
+git submodule update --init --checkout brands/suse
+npm run profile:suse
+```
+
+Without it, `npm run profile` reports `lolly-start` as active - the blank brand, which is the correct default for anyone not doing SUSE-specific work, and the profile the public site and CI build against.
+
+### Working across submodules
+
+A change inside a submodule is always **two commits**: one in the submodule repository, and one in the parent to move the recorded pointer. Push the submodule first, or the parent will point at a commit nobody else can fetch.
+
+One case deserves care. `catalog/tools/index.json` is generated **per brand**, and every brand's index lists the community tools - so editing a community `tool.json` leaves every *other* brand's index stale, and the single-profile `npm run build:catalog` can't see the drift because it only ever looks at the active view. After any community tool change, run the all-profiles variants instead:
+
+```bash
+npm run build:catalog:all      # rebuild every mounted profile, then restore the active one
+npm run validate:catalog:all   # validate every mounted profile; exits 1 on drift (the CI guard)
+```
+
+Day-to-day submodule workflow - syncing, status across all repos, verification - lives in `scripts/subrepo/README.md` in the parent repo.
 
 ---
 
