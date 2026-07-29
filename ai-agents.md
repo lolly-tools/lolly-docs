@@ -1,6 +1,6 @@
 # Driving Lolly from an AI agent
 
-Give your model a **deterministic, reviewable creative layer** instead of asking it to hallucinate pixels. A tool invocation is just a **URL with parameters** - a few tokens that produce a press-quality file, the same way every time. No image model, no creative drift, no data leaving the device.
+Give your model a **deterministic, reviewable creative layer** instead of asking it to hallucinate pixels. A tool invocation is just a **URL with parameters** - a few tokens that produce a press-quality file, the same way every time. No image model, no creative drift - and driven locally (URL or CLI), no data leaving the device. The hosted MCP endpoint is the one server-side path, covered below and inventoried on [Server Surface](/info/server-surface.html).
 
 ## The model: a URL is the API
 

@@ -81,8 +81,13 @@ The cryptography and parsers are additionally undergoing **SUSE's enterprise-sca
 - **Tool hooks are not a security sandbox.** A tool's optional `hooks.js` runs with the host bridge injected but, in a browser shell, executes in the page's realm. Run only tools you've reviewed until Worker isolation ships — an org running a shared catalog can gate it through Git review.
 - **Interoperability:** WebM has no standardised C2PA mapping yet, so Lolly attaches the manifest as a Matroska part (its own verifier reads it; MP4 verifies in third-party tools out of the box).
 
+## Reporting a vulnerability
+
+Found something? Report it privately — [fitzy+security@suse.com](mailto:fitzy+security@suse.com), the **Report a vulnerability** button on any [lolly-tools](https://github.com/lolly-tools) repository, or the machine-readable [`/.well-known/security.txt`](/.well-known/security.txt). The full policy, scope, and safe-harbour statement live in [SECURITY.md](https://github.com/lolly-tools/lolly/blob/main/SECURITY.md). We practise coordinated disclosure and credit reporters in the fix notes.
+
 ## Where to go next
 
+- **[Server Surface](/info/server-surface.html)** — the complete inventory of what runs server-side (two optional components) versus on-device.
 - **[Content Credentials — Engineering](/info/content-credentials-engineering.html)** — the engine contracts, trust anchors, CA service, and threat model in full.
 - **[Content Credentials Identity](/info/content-credentials-identity.html)** — how verified-identity enrolment and the Lolly CA work.
 - **[Lolly for Operators](/info/operators.html)** — provenance, encryption, and air-gap deployment in context.

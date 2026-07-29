@@ -227,7 +227,7 @@ Everything is stored in your browser's local database (IndexedDB): your profile,
 - **Clear cache** - drop downloaded catalog content (re-syncs next load).
 - **Clear all my data** - wipe profile, sessions, and images. *Cannot be undone.*
 
-Nothing is transmitted anywhere. No telemetry, no cloud rendering.
+None of this local data is transmitted anywhere - no telemetry, no cloud rendering. The complete list of what the app ever fetches or sends is in the [Privacy Policy](/info/privacy.html), and [Server Surface](/info/server-surface.html) inventories the optional server components.
 
 ## Moving to another device
 
