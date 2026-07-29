@@ -108,4 +108,4 @@ The word is overloaded across the project. Neither of these is the personal prof
 
 ## Privacy
 
-A profile is never transmitted, uploaded, or used to identify or track you - there's nothing to consent to, only this notice so you know what's kept. Wipe all of it at any time with **Profile → Clear all my data**. See the [Privacy Policy](/info/privacy.html).
+Outside the optional identity enrolment above (which sends the email you enrol to the certificate service - see [Server Surface](/info/server-surface.html)), a profile is never transmitted, uploaded, or used to identify or track you - there's nothing to consent to, only this notice so you know what's kept. Wipe all of it at any time with **Profile → Clear all my data**. See the [Privacy Policy](/info/privacy.html).

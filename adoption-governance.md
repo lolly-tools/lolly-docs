@@ -33,7 +33,7 @@ The pilot's centre of gravity is the **producer**. If producers don't self-serve
 
 ### The first 15 minutes (any producer)
 
-1. **Open Lolly** - the web app needs no install, no account, no sign-up. Nothing you type leaves your device.
+1. **Open Lolly** - the web app needs no install, no account, no sign-up. Nothing you type into a tool leaves your device.
 2. **Pick a tool** that matches what you need (an event tile, a quote card, a signature).
 3. **Fill in the fields.** No fonts, colours or spacing to decide - the tool already holds the brand rules.
 4. **Get the file.** Download it, copy a share link, or export a batch. Done.

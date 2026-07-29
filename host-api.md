@@ -100,7 +100,7 @@ A `file`-typed input (the user's own file, picked into memory) arrives as an **`
 
 ## `host.net` *(capability: `network`)*
 
-`fetch(url, init?) → Promise<Response>` - allowlisted fetch. Absent unless the tool declared `"network"`. Tools without it cannot reach the network at all.
+`fetch(url, init?) → Promise<Response>` - allowlisted fetch. Absent unless the tool declared `"network"`. Tools without it have **no supported network path** - though remember hooks are a portability contract, not a sandbox (see [Authoring Tools](/info/authoring-tools.html)), so "can't" here means "review failure", not "physically impossible" until Worker isolation ships.
 
 ## `host.text` *(text-to-path)*
 

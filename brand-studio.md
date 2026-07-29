@@ -2,7 +2,7 @@
 
 The **Brand Studio** at `#/start` is the one place you shape your brand - its logos, colours, type, the rest of your tokens, and the files it keeps. Set it here once and every tool, page, and export follows it *by construction*, not by review.
 
-Changes preview **live across the whole app** as you make them, so you can see a colour or a font land everywhere before you commit it. It's all on-device: your brand never leaves your machine, and it travels in a single [brand pack](#move-a-brand-between-devices) file.
+Changes preview **live across the whole app** as you make them, so you can see a colour or a font land everywhere before you commit it. It's all on-device: your brand files and tokens never leave your machine (picking a Google Font fetches that one family from Google, once, after a consent dialog), and the brand travels in a single [brand pack](#move-a-brand-between-devices) file.
 
 > **This is the editor. The dashboard is the mirror.** The Design-system tab on the [Dashboard](/info/using.html) (`#/d`) *shows* your brand read-only; you *edit* it here at `#/start`. If you want to change a colour later, come back to the Brand Studio.
 
@@ -112,7 +112,7 @@ Search a family (Inter, Fraunces, Space Grotesk…), and **Add font**. Each font
 
 Headings, italic and code each fall back to the primary until you assign them, so a one-font brand needs no decisions here. The **Type roles** panel shows a live specimen of Heading, Body, Italic and Code so you can see each face doing its job. Everything on Google Fonts ships under an open licence (OFL/Apache/UFL).
 
-![The Type roles specimen - heading, body, italic and code, each set in the face that role resolves to, with the face name beside it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2000&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-typeroles&format=svg&filename=bs-type-specimen)
+![The Type roles specimen - heading, body, italic and code, each set in the face that role resolves to, with the face name beside it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&format=svg&filename=bs-type-specimen)
 
 ## Tokens
 

@@ -28,7 +28,9 @@ npm run profile:start      # blank brand: community tools + one neutral tokens a
 
 ## Brand packs
 
-A brand pack is a directory (`brands/<name>/`) with a `catalog/` and optionally its own `tools/`. Stand one up from a design-tokens export:
+A brand pack is a directory (`brands/<name>/`) with a `catalog/` and optionally its own `tools/`. A pack can live in the parent repo (as `brands/lolly-start/` does) or be mounted from its own repository as a git submodule - which is how a private pack such as `brands/suse` stays out of public clones, so an instance without access to it simply falls back to `lolly-start`. See [Build Guide » Getting the source](/info/build-guide.html) for checking one out.
+
+Stand a new pack up from a design-tokens export:
 
 ```bash
 npm run ingest:brand -- <source> --name <brand> [--label "Label"] [--register|--activate]

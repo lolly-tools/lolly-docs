@@ -83,6 +83,8 @@ network. If it isn't here, the app doesn't do it.
 | Tool catalogue sync | Nothing personal - a request for Lolly's own public tool and asset index | On startup, then cached offline |
 | A tool's declared network capability | Whatever that specific tool requests (e.g. map tiles) to the specific host(s) it allowlists in its manifest | Only while using that tool |
 | Google Fonts | The chosen font family name and your IP address, to Google's font servers | Only if you add a Google Font in the brand editor, **and only after you agree to it in a dialog that says exactly this** - a one-time fetch per family, then it lives on your device and is used offline |
+| ICC press profiles | Nothing personal - a request for a standard printing-condition profile, to the ICC's public registry (color.org) | Only if you click an ICC preset in the print-profile manager - a one-time fetch per profile, then it lives on your device |
+| Internet radio | Nothing personal - a playlist request and an audio stream, to the station (SomaFM) | Only while you play the optional built-in radio in the sound player |
 | SEAL signature check | **Nothing.** The web app has no DNS resolver at all - see below | Never |
 | Deep-scan detector models | Nothing personal - a one-time same-origin model download (not a third party) | Only if you opt into Verify's deep scan |
 | Remote instance | Whatever the instance you name serves back, over the same catalogue sync described above | Only if you explicitly point the shell at another Lolly deployment |
@@ -101,8 +103,9 @@ here makes zero network requests. Files whose SEAL record carries its key inline
 still verify completely offline. Files whose key lives in DNS report "no key
 resolver" instead, and you can check those in the desktop or command-line app,
 which resolve DNS natively through your own machine with no third party
-involved. You can confirm this yourself: `grep -ri cloudflare` over the source
-tree returns nothing.
+involved. You can confirm this yourself: greppable checks for this and every
+other claim on this page, with the exact commands and expected output, live at
+[Verify It Yourself](/info/verify-yourself.html).
 
 ## Hot-linked render URLs
 

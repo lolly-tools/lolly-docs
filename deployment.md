@@ -1,6 +1,8 @@
 # Deployment guide
 
-Lolly has no single deployment - it's an engine plus several shells, and you ship the ones your organisation needs. This guide covers each target: the hosted web app, the desktop/mobile apps, and the two backend services. For the low-level per-platform build steps, the [Build Guide](/info/build-guide.html) is the companion reference; this page is the "where does each piece run" overview.
+> **Scope.** This page is *where each piece runs*: the delivery models, which artefact goes to which host, and what the optional services need. The [Build Guide](/info/build-guide.html) is *how each artefact is produced* - toolchain prerequisites, per-platform build and signing steps, the container image. Anything about compilers, SDKs or store submission belongs there; anything about hosting, routing and rollout belongs here.
+
+Lolly has no single deployment - it's an engine plus several shells, and you ship the ones your organisation needs. This guide covers each target: the hosted web app, the desktop/mobile apps, and the two backend services.
 
 ## Choose a delivery model
 
@@ -17,12 +19,12 @@ See [Lolly for Operators](/info/operators.html) for the security rationale behin
 The web shell is a static PWA built by Vite, with two *optional* serverless API functions alongside it.
 
 ```bash
-npm ci                 # installs workspace deps; postinstall builds the profile views
-npm run build:web      # builds /info, per-tool + per-view OG images, then the Vite bundle
+npm ci                 # preinstall checks the submodules are present; postinstall builds the profile views
+npm run build:web      # ONNX runtime copy, /info, per-tool + per-view OG images, then the Vite bundle
 # output: shells/web/dist/
 ```
 
-`build:web` runs `build:info` (the `/info` docs site) first, then the OG image generators, then the shell bundle - so a plain `vite build` inside `shells/web` is *not* enough on its own.
+`build:web` is a chain: `build:ort` (copies onnxruntime-web's WASM and loader files into `shells/web/public/ort/`, which are gitignored and regenerated at build time), then `build:info` (the `/info` docs site), then the two OG image generators, then the shell bundle - so a plain `vite build` inside `shells/web` is *not* enough on its own.
 
 ### Any static host - including air-gapped
 
@@ -30,7 +32,7 @@ The web build is plain static files, so this is the simplest and most portable p
 
 ### With the optional services
 
-To add the AI-agent (MCP) or verified-identity (CA) endpoints, deploy the two functions under `api/` (`api/mcp/**`, `api/ca/**`) to any serverless platform, or self-host the `services/mcp` / `services/ca` submodules as long-running processes. Route the app's `/api/mcp` and `/api/ca` paths to them, and let the SPA catch-all (`/(.*)` → `index.html`) handle the app's clean routes (`/d`, `/c`, `/p`, `/v`, `/profile`, `/t/:id`). In a hosted or serverless build, materialise the `tools/` and `catalog/` **profile views as real copies** rather than symlinks (symlinks don't survive a function bundle) - the profile build's `--copy` flag does this. See [Configuration](/info/configuration.html) for the profile-view mechanics.
+To add the AI-agent (MCP) or verified-identity (CA) endpoints, deploy the two functions under `api/` (`api/mcp/**`, `api/ca/**`) to any serverless platform, or self-host the `services/mcp` / `services/ca` submodules as long-running processes. Route the app's `/api/mcp` and `/api/ca` paths to them, and keep a SPA catch-all for everything else. Two details the reference `vercel.json` in this repo pins down: the clean routes get their **own** rewrites to prerendered per-view HTML so a shared link carries real OG tags (`/d` → `/view/d.html`, likewise `/v`, `/c`, `/p`, `/profile`, and `/t/:id` → `/t/:id.html`), and the catch-all is written to **exclude the API prefix** (`/((?!api/).*)` → `/index.html`, listed last) so it can't swallow the function routes. In a hosted or serverless build, materialise the `tools/` and `catalog/` **profile views as real copies** rather than symlinks (symlinks don't survive a function bundle) - the profile build's `--copy` flag does this. See [Configuration](/info/configuration.html) for the profile-view mechanics.
 
 ## Desktop & mobile apps
 

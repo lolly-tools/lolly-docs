@@ -10,7 +10,7 @@ Everything Lolly verifies, it verifies **locally, offline, without uploading the
 
 ![The Verify screen with nothing but a drop target - no upload button, no account, because the check runs where the file already is](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1400&format=svg&cropSelector=.valid-layout&filename=cc-verify-drop)
 
-The engine's crypto core is **platform-agnostic and uses only `globalThis.crypto` / WebCrypto** — no bespoke crypto library, no Node-only APIs, and **no network calls anywhere in the engine**. The single network-capable path in the whole verification surface is an optional DNS-over-HTTPS lookup of a **SEAL** signer's public key — and even that never sends the file, only fetches a public key the shell (not the engine) requests.
+The engine's crypto core is **platform-agnostic and uses only `globalThis.crypto` / WebCrypto** — no bespoke crypto library, no Node-only APIs, and **no network calls anywhere in the engine**. In the web app, verification makes **no network request to any third party** — the only fetch it can ever make is the opt-in deep scan's one-time detector download, from the app's own origin. Even a **SEAL** record whose signing key lives in DNS is reported as "no key resolver" rather than routed through a third-party DNS-over-HTTPS service (the desktop and command-line shells resolve such keys through your own machine's DNS, with no third party involved).
 
 ## Standards implemented
 
@@ -87,6 +87,7 @@ Found something? Report it privately — [fitzy+security@suse.com](mailto:fitzy+
 
 ## Where to go next
 
+- **[Verify It Yourself](/info/verify-yourself.html)** — every checkable claim on this page and the privacy policy as a runnable procedure: the exact commands and the output you should see.
 - **[Server Surface](/info/server-surface.html)** — the complete inventory of what runs server-side (two optional components) versus on-device.
 - **[Content Credentials — Engineering](/info/content-credentials-engineering.html)** — the engine contracts, trust anchors, CA service, and threat model in full.
 - **[Content Credentials Identity](/info/content-credentials-identity.html)** — how verified-identity enrolment and the Lolly CA work.

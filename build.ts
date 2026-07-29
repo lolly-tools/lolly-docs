@@ -100,7 +100,10 @@ const pages: Page[] = [
   // ── Operators pathway ────────────────────────────────────────────────────
   { slug: 'adoption-governance', title: 'Adoption & Governance', src: 'adoption-governance.md', pathway: 'operators' },
   { slug: 'security',         title: 'Security & Verification', src: 'security-verification.md', pathway: 'operators' },
+  { slug: 'threat-model',     title: 'Threat Model & Trust Boundaries', src: 'threat-model.md', pathway: 'operators' },
+  { slug: 'parser-inventory', title: 'Parser Inventory',  src: 'parser-inventory.md', pathway: 'operators' },
   { slug: 'server-surface',   title: 'Server Surface',    src: 'server-surface.md',  pathway: 'operators' },
+  { slug: 'verify-yourself',  title: 'Verify It Yourself', src: 'verify-yourself.md', pathway: 'operators' },
   { slug: 'privacy',          title: 'Privacy Policy',    src: 'privacy.md',         pathway: 'operators' },
 ];
 
@@ -190,6 +193,8 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
       { label: 'Trust & data', items: [
         { slug: 'content-credentials-identity', label: 'Content Credentials' },
         { slug: 'security',      label: 'Security & Verification' },
+        { slug: 'threat-model',     label: 'Threat Model' },
+        { slug: 'parser-inventory', label: 'Parser Inventory' },
         { slug: 'data-transfer', label: 'Data Transfer' },
         { slug: 'about',         label: 'About' } ] },
     ],
@@ -207,7 +212,10 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
       { label: 'Trust', items: [
         { slug: 'content-credentials-identity', label: 'Content Credentials' },
         { slug: 'security', label: 'Security & Verification' },
+        { slug: 'threat-model', label: 'Threat Model' },
+        { slug: 'parser-inventory', label: 'Parser Inventory' },
         { slug: 'server-surface', label: 'Server Surface' },
+        { slug: 'verify-yourself', label: 'Verify It Yourself' },
         { slug: 'privacy', label: 'Privacy Policy' } ] },
     ],
   },

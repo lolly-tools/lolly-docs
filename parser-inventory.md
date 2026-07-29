@@ -1,0 +1,132 @@
+# Parser inventory
+
+Every engine module that turns attacker-controlled bytes or text into structure, with the bounds it actually declares, the test that covers it, and whether the fuzz harness reaches it.
+
+"Attacker-controlled" here means one of four sources:
+
+- a file the user picked (upload, share target, drag-and-drop, `file` input),
+- an asset fetched over `host.net` or read back out of storage,
+- a URL param, because URL mode is first-class and every link is public,
+- a stream nested inside one of those, for example an ICC profile inside a JPEG, a CMap inside a PDF content stream, or an XML part inside a .pptx zip.
+
+Two things this page deliberately does *not* do. It does not list the engine's format **writers** as attack surface. `engine/src/tiff.ts`, `apng.ts`, `webp-anim.ts`, `emf.ts`, `eps.ts`, `dxf.ts`, `hdr.ts`, `pptx.ts`, `pdfx.ts`, `zip-crypto.ts` and `pdf-crypto-r6.ts` are byte emitters that consume engine-internal IR, pixel buffers, or already-encoded frames from the shell, so a hostile *file* never reaches them (see "Writers, not parsers" below). And it does not restate the shell's own gates: the web shell caps upload size and inflates zips before the engine sees a part map, and those caps live in `shells/web/src/bridge/`, not here.
+
+Fuzz coverage is the registered target list in `tests/fuzz/targets.ts` (`ALL_TARGETS`, line 586). There are thirteen: `c2pa-verify`, `cbor`, `media-sniff`, `pdf-map`, `x509`, `file-metadata`, `strip-metadata`, `video-meta`, `data-import`, `pptx-read`, `pptx-patch`, `pptx-bridge` and `icc`. `tests/fuzz-regression.test.ts` replays the seven saved regression inputs in `tests/fuzz/regressions/` and runs a few hundred seeded mutations per target inside the normal `npm test` glob; `node tests/fuzz/run.ts` is the standalone soak.
+
+## The parsers
+
+| Module | Input source | Bounds enforced | Direct test file | Fuzz target | Notes |
+|---|---|---|---|---|---|
+| `engine/src/pdf-map.ts` | PDF or Illustrator `.ai` content stream, decoded by the shell's pdf-lib pass; plus each font's `/ToUnicode` CMap text | `MAX_ARRAY_DEPTH = 16` (local to the tokenizer, line 550), `MAX_BF_RANGE = 0x10000` | `tests/pdf-map.test.ts` | `pdf-map` (`interpretPdfPage` + `parseToUnicode`) | Two of the seven saved regressions are this module: `pdf-map-deep-array-nesting.bin` and `pdf-map-tounicode-range-oom.bin`. The `MAX_BF_RANGE` comment names the exact hostile CMap (`<00000000> <ffffffff> <0041>`) that drove a four-billion-iteration loop. No cap on total node count. |
+| `engine/src/pdf-svg.ts` | the `PdfNode`s `pdf-map.ts` produced for one page | `MAX_CLIPS = 64`, `MAX_CLIP_D = 64_000`, `MAX_PATH_D = 400_000`, `MAX_OUTLINE_D = 400_000`, `MAX_COORD = 1e9` | `tests/pdf-svg.test.ts` | none (reached only indirectly, `pdf-map` fuzzing stops at the nodes) | Second-order: its input is already-interpreted structure, but every string it scans came from the file. The `MAX_COORD` comment is explicit that beyond that magnitude a coordinate is corruption, not geometry. |
+| `engine/src/pdf-text.ts` | the same interpreted text nodes, reassembled into reading order | `MAX_SKEW_DEG = 5`, `MAX_COLUMNS = 4` (both layout heuristics, not allocation caps) | `tests/pdf-text.test.ts` | none | Bounds here are about output quality rather than hostile input. Work is linear in the node count `pdf-map.ts` handed over, which is itself uncapped. |
+| `engine/src/pdf-artwork.ts` | interpreted PDF nodes, clustered into candidate logos | `MAX_NODES = 4000`, `MAX_CANDIDATES = 60`, plus the shape heuristics `MAX_CLUSTER_GAP = 48`, `MAX_PAGE_FRACTION = 0.55`, `MAX_ASPECT = 12` | `tests/pdf-artwork.test.ts` | none | `MAX_NODES` / `MAX_CANDIDATES` are the real allocation bounds and they are the cap `pdf-map.ts` itself lacks, for this consumer only. |
+| `engine/src/pdf-redaction.ts` | interpreted PDF nodes, looking for text under filled bars | `MAX_COVERS = 64` | `tests/pdf-redaction.test.ts` | none | Detection only, no byte surgery. |
+| `engine/src/pptx-read.ts` | an unzipped `.pptx` part map (`Record<path, Uint8Array \| string>`) plus an injected XML parser | `MAX_PART_BYTES = 24 MB`, `MAX_PART_CHARS = 16 M`, `MAX_SLIDES = 2000`, `MAX_NODES_PER_SLIDE = 8000`, `MAX_GROUP_DEPTH = 16`, `MAX_PARAS = 4000`, `MAX_RUNS_PER_PARA = 4000`, `MAX_TABLE_ROWS = 2000`, `MAX_TABLE_COLS = 512`, `MAX_TEXT_LEN = 200_000`, `MAX_DFS_VISITS = 200_000`, `MAX_COORD = 1e11` | `tests/pptx-read.test.ts` | `pptx-read` (`readPptx` + `isPptx`) | The exemplar. See "The standard to follow". Entity expansion is explicitly delegated to the injected parser, and the module compensates with a visited-node counter. |
+| `engine/src/pptx-patch.ts` | the same hostile part map, rewritten in place for a rebrand | `MAX_PART_CHARS = 32 M` | `tests/pptx-patch.test.ts` | `pptx-patch` (`rebrandPptxParts`) | Every rewrite is a delimited string or regex edit with linear regexes only, never a DOM parse, so no catastrophic backtracking. A part over the cap passes through verbatim rather than being rewritten. |
+| `engine/src/icc.ts` | an ICC profile lifted out of a user-supplied JPEG, PNG, PDF or TIFF | `MAX_TAGS = 512`, `MAX_CHANNELS = 15`, `MAX_TABLE_ENTRIES = 4096`, `MAX_CURVE_ENTRIES = 65536`, `MAX_CLUT_VALUES = 1 << 22`, `MAX_PARA_PARAMS = 7`, `MAX_CURVE_INVERT_STEPS = 40` | `tests/icc.test.ts`, `tests/icc-real-profiles.test.ts` | `icc` (`parseIccProfile` + evaluate) | The clearest statement of the house reader contract in the codebase: never throws, malformed input yields `null`, nothing the file declares is trusted, and every cap comment names the largest value seen across the forty-odd real profiles. Apple's over-reporting `gamt` tag is handled by name. |
+| `engine/src/file-metadata.ts` | raw bytes of any uploaded raster, vector, or MP4 or QuickTime video | `MAX_FIELDS = 64`, `MAX_VALUE_CHARS = 2048`, `MAX_TEXT_SCAN = 16 MB`, `MAX_GIF_BLOCKS = 1_000_000` | `tests/file-metadata.test.ts` | `file-metadata` (`extractFileMetadata`) | Best-effort throughout: a malformed block yields fewer fields, never an exception. PDF is deliberately out of scope here and goes through `host.pdf.analyze`. |
+| `engine/src/strip-metadata.ts` | the same uploaded bytes, for the clean-copy path | no numeric caps; the invariants are structural (`STRIPPABLE`, `PNG_STRIP`, `DROP_EL_PREFIX`, `DROP_EL_NAME`, `SPACE_SENSITIVE`, `DROP_XMLNS`) | `tests/strip-metadata.test.ts` | `strip-metadata` (`stripMetadata`) | Deliberately the inverse contract to its read-side sibling. This is a privacy control, so it must **fail closed**: if the surgery throws or leaves removable metadata behind, `stripMetadata()` throws rather than return an original a caller would present as clean (`hasResidualMetadata`). |
+| `engine/src/media-sniff.ts` | header prefix of any uploaded raster or video | none named; every read is an explicit `offset + len > bytes.length` check and the GIF/PNG walks bail at fixed counts | `tests/media-sniff.test.ts` | `media-sniff` (`sniffAnimatedRaster` + `sniffVideoContainer`) | Returns `string \| null`, allocates nothing beyond a short scan. The "GIF lesson" the DER and CBOR walkers cite as their invariant originated here. |
+| `engine/src/video-meta.ts` | a finished MP4 or WebM from MediaRecorder, or a user's video on the ingredient path | none named | `tests/video-meta.test.ts` | `video-meta` (`embedMp4Meta` + `embedWebmMeta`) | Mixed writer and walker. It writes tags, but to do so it must walk attacker-supplied container structure, and its `readId`/`readVint`/`walkBoxes`/`scanSegmentChildren` primitives are imported by both `c2pa-extract.ts` and `c2pa-containers.ts`, so this is the shared read path for BMFF and Matroska. `video-meta-stco-forged-count.bin` is a saved regression. Unrecognised structure returns the original bytes untouched. |
+| `engine/src/c2pa-extract.ts` | the JUMBF manifest store inside any user file, and the CBOR claims inside it | `MAX_CBOR_DEPTH = 64` | none named `c2pa-extract*`; covered through `tests/c2pa-verify.test.ts`, `tests/c2pa-formats.test.ts`, `tests/c2pa-foreign-fixture.test.ts`, `tests/c2pa-jpeg-segments.test.ts` | `cbor` (`decodeCbor`, hit directly) and `c2pa-verify` (end to end) | Split out of `c2pa-verify.ts` precisely so the parsing is reviewable apart from the cryptography; nothing in this file does or checks crypto. Four of the seven saved regressions are its CBOR decoder. The decoder deliberately accepts indefinite lengths and half/single/double floats because foreign manifests use them. |
+| `engine/src/c2pa-verify.ts` | a whole user file, plus the COSE signature and X.509 chain inside its manifest | `MAX_CHAIN_INTERMEDIATES = 8` | `tests/c2pa-verify.test.ts`, `tests/c2pa-trust.test.ts`, `tests/c2pa-verdict.test.ts`, `tests/c2pa-c2patool-conformance.test.ts` | `c2pa-verify` (`verifyC2pa`) | Reports failures as named checks rather than throwing, so a malformed manifest is a failed check and never an escaped exception. Chain walking consumes each intermediate at most once, so no A→B→A loop, and hostile chains are bounded to a trivial O(cap²). |
+| `engine/src/der-read.ts` | DER/ASN.1 straight out of attacker-controlled files, shared by `c2pa-verify.ts`, `x509.ts` and `seal.ts` | none named; the invariant is that every multi-byte length head is bounds-checked *before* its bytes are read | none | none directly; exercised through the `x509` and `c2pa-verify` targets | The opposite contract to the readers above, and correctly so: it **throws promptly** on truncation or an overrunning length. The module comment explains why silence would be worse, an out-of-range `Uint8Array` read yields `undefined`, which NaN-poisons the computed length and defeats the `j + len > b.length` guard. Not exported from `index.ts`. |
+| `engine/src/x509.ts` | certificate DER from a manifest's `x5chain`, or from the CA service | none named beyond the DER walker's own checks | `tests/x509.test.ts` | `x509` (`parseCertificate`) | Both a writer (`generateSigner`, `generateCaRoot`, `issueLeafCert`) and a reader. The read side is the exposed half. |
+| `engine/src/seal.ts` | raw bytes of any file, scanned for an embedded SEAL record | `SCAN_EDGE = 64 KB`, `SCAN_WHOLE_MAX = 128 KB`, plus a `Math.min(at + 64 * 1024, length)` window on terminator search | `tests/seal.test.ts` | none | Verification only, and network-free: DNS key lookup is an injected `resolveKey`. `locateRecords` never throws; a malformed or hostile file yields `[]`. |
+| `engine/src/data-import.ts` | a user's CSV or JSON file, read to text by the shell | `MAX_IMPORT_CHARS = 8 M`, `DEFAULT_ROW_LIMIT = 1000` (both exported) | `tests/data-import.test.ts` | `data-import` (`parseDataRows`) | The `MAX_IMPORT_CHARS` comment states the reason the engine enforces it rather than trusting the shell: a missing shell gate must not let a gigabyte "CSV" of nothing but commas balloon into cell allocations. |
+| `engine/src/brand-import.ts` | a Tokens Studio or DTCG token document, a per-set file tree, or a `.penpot` project zip | none found | `tests/brand-import.test.ts` | none | Takes already-parsed JSON and already-unzipped path→bytes entries, so inflation bounds are the caller's. Extraction never throws; problems accumulate in `warnings` and the worst case is `doc: null`. |
+| `engine/src/url-pack.ts` | the `z` and `zx` params of any shared link | `MAX_TOKEN = 64 KB`, `MAX_UNPACKED = 256 KB`; `PBKDF2_ITERATIONS = 210_000`, `ENC_SALT_BYTES = 16`, `ENC_IV_BYTES = 12` on the encrypted variant | `tests/url-pack.test.ts` | none | The one module whose entire input is a URL param. Both caps exist because raw DEFLATE expands roughly 1000×, so a decompression bomb must not hang the tab. |
+| `engine/src/svg-colors.ts` | raw SVG source text from an uploaded or fetched asset | `MATCH_CAP = 100_000` regex matches per call, shared by both passes | `tests/svg-colors.test.ts` | none | String and regex work only, no DOMParser. Candidates pass the same `SAFE_CSS_COLOR` shape gate the web colour field uses, and a bare identifier must additionally be a real CSS3 named colour so a class name or font family cannot be misread as a colour. Never throws. |
+| `engine/src/svg-custgeom.ts` | a flat SVG the user supplied, lowered to PowerPoint custom geometry | `MAX_SVG_LEN = 4_000_000`, `MAX_TAGS = 40_000`, `MAX_SHAPES = 4_000` | `tests/svg-custgeom.test.ts` | none | Its own tag-stream scan, no DOM, with a group `transform` stack. |
+| `engine/src/svg-path.ts` | an SVG path `d` string, from artwork, a template, or a URL param | none found | `tests/svg-path.test.ts` | none | A linear single-pass tokenizer with no recursion and no declared-length field to lie about, so work is bounded by the input length. That is a genuine structural argument, not an accident, but there is still no named cap on the emitted subpath or segment count. |
+| `engine/src/midi.ts` | a `.mid` a user uploaded, or fed to `scripts/ingest-midi.ts` | `MAX_NOTES = 200_000`, `MAX_STEPS = 1 << 15`, `MAX_VOICES = 8` | `tests/midi.test.ts` | none | Header states the hardening explicitly: every offset bounds-checked, malformed track lengths clamped to the buffer, note count and step span capped. |
+| `engine/src/wav.ts` | a `.wav` a user handed to `host.audio` on a headless shell | `MAX_CHANNELS = 32` | `tests/wav.test.ts` | none | Chunk walking cannot run backwards or off the end regardless of declared sizes. Unknown encodings (µ-law, ADPCM, a compressed payload in a RIFF skin) are refused by name rather than misread as PCM, because misreading them yields full-scale noise that would look like a plausibly loud track. |
+| `engine/src/zzfxm.ts` | a `ZzfxSong`, which on the MIDI and MOD paths derives from a user file | none found | `tests/zzfxm.test.ts`, `tests/zzfxm-seed-parity.test.ts` | none | Two vendored MIT functions kept faithful to upstream on purpose, so caps belong in the converters, and `midi.ts` is where they are. A hand-crafted song object reaching `renderZzfxm` directly is unbounded. |
+| `engine/src/png-unfilter.ts` | an inflated PNG IDAT or PDF `/Predictor >= 10` stream | none named; `Number.isSafeInteger(rowBytes)`, `Number.isSafeInteger(stride * h)` and `inflated.length < stride * h` guard the allocation | `tests/png-unfilter.test.ts` | none | The module the house reader contract is named after: never throws, a truncated buffer or unknown filter tag or non-positive dimension returns `null`. Only 8-bit-per-component images; sub-byte depths are the caller's to reject. |
+| `engine/src/steganalysis.ts` | RGBA pixels decoded from a user image | `MIN_PIXELS = 64 * 64`, `P_THRESHOLD = 0.95`, `PREFIXES = [0.25, 0.5, 1]` | `tests/steganalysis.test.ts` | none | Numeric input of known length, so no container grammar to attack. Bounds are statistical thresholds rather than allocation caps. Surfaced as an amber heuristic, never a verdict. |
+| `engine/src/trustmark.ts` | 100 booleans recovered by the shell's ONNX decoder from a user image | `TRUSTMARK_PAYLOAD_BITS = ECC_REGION_BITS + VERSION_FIELD_BITS` (96 + 4), `LOLLY_MAGIC_BITS = 16`, `LOLLY_SCHEME_BITS = 4`, `BCH_POLYNOMIAL = 137` | `tests/trustmark.test.ts` | none | Fixed-width bit input, so there is no length field and no allocation to bomb. The comment at line 689 records the rule that matters: a caller feeding untrusted or garbled bits must never throw. |
+| `engine/src/contentseal.ts` | several 256-bit vectors the shell's ONNX extractor produced from a user image | `CONTENTSEAL_MESSAGE_BITS = 256`, `CONTENTSEAL_DEFAULT_TAU = 72` | `tests/contentseal.test.ts` | none | Same shape as `trustmark.ts`: fixed-size numeric input, a consensus decision, no parsing. |
+
+## Writers, not parsers
+
+Listing these as attack surface would overstate the problem. Each consumes engine-internal IR or already-encoded bytes the shell produced, not a file a stranger sent.
+
+| Module | What it actually does |
+|---|---|
+| `engine/src/tiff.ts` | Baseline TIFF **encoder**, uncompressed single strip. One export, `packTiff(pixels, opts)`. It has no reader at all. |
+| `engine/src/apng.ts` | APNG **packer**. Chunk-level surgery over complete PNGs the shell encoded, one per frame. It does split input chunk streams, so the frames it reads are shell output rather than user files. |
+| `engine/src/webp-anim.ts` | Animated WebP **packer** over stills from `canvas.toBlob('image/webp')`. Same shape as `apng.ts`. |
+| `engine/src/emf.ts`, `eps.ts`, `dxf.ts` | The three non-SVG sinks on the vector pipeline. All three take the normalised device-px IR from `shells/web/src/bridge/svg-ir` and emit bytes or text. Text is outlined upstream, so none of them reads a font. |
+| `engine/src/hdr.ts` | Pixel transform, SDR RGBA in, PQ-encoded RGBA out. `pqEncode` and `hdrBoostToPQ` only. |
+| `engine/src/pptx.ts` | PPTX **builder**: OOXML scaffolding plus DrawingML serialisation. `MAX_TABLE_COLS = 128` and `MAX_TABLE_ROWS = 512` bound its own output. The reading half is `pptx-read.ts`. |
+| `engine/src/pdfx.ts` | PDF/X-4 metadata authority: XMP packet strings and descriptor objects. Interpolated values get an XML escape (`esc`), which is output hygiene, not parsing. `N_ALLOWED = new Set([1, 3, 4])` validates a caller's channel count. |
+| `engine/src/zip-crypto.ts` | ZipCrypto and WinZip AES-256 **encryption** plus zip framing, over bytes fflate already compressed in the shell. All randomness is injected via `opts.rng`. |
+| `engine/src/pdf-crypto-r6.ts` | PDF R6 AES-256 `/Encrypt` value computation. Deterministic given its inputs; the shell supplies the file key, all four salts, the Perms tail and every IV. |
+| `engine/src/c2pa-containers.ts` | The **placement** side of the C2PA writer. It splices a manifest into a container, which means walking that container's grammar, but the containers it splices into are normally Lolly's own render output; the read path for foreign files is `c2pa-extract.ts`. No `c2pa-containers*.test.ts` exists; coverage rides on `tests/c2pa-formats.test.ts` and `tests/c2pa.test.ts`. |
+| `engine/src/metadata.ts` | Assembles the provenance record from profile plus manifest. No format or byte knowledge. |
+
+## The standard to follow
+
+`engine/src/pptx-read.ts` is the module to copy when you add a parser. Its caps block sits at lines 156 to 167, immediately after the public types and before the first walker, so a reviewer meets the bounds before the code they bound:
+
+```ts
+// ─── hardening caps ──────────────────────────────────────────────────────────
+
+const MAX_PART_BYTES = 24 * 1024 * 1024; // skip parsing a part bigger than this
+const MAX_PART_CHARS = 16 * 1024 * 1024;
+const MAX_SLIDES = 2000;
+const MAX_NODES_PER_SLIDE = 8000;
+const MAX_GROUP_DEPTH = 16;
+const MAX_PARAS = 4000;
+const MAX_RUNS_PER_PARA = 4000;
+const MAX_TABLE_ROWS = 2000;
+const MAX_TABLE_COLS = 512;
+const MAX_TEXT_LEN = 200_000; // per run/cell text clamp
+const MAX_DFS_VISITS = 200_000; // bound any descendant search
+const MAX_COORD = 1e11; // EMU magnitude clamp (slide width is ~1.2e7)
+```
+
+Four properties make this the exemplar rather than merely a long list.
+
+**The threat model is written down.** The module header carries a `SECURITY` section that names it: "a hostile zip is the threat model, same as PDF". It then states the consequences as commitments, not hopes: every part is size-capped before parsing, slide, node, paragraph, run and table counts are capped, group-shape recursion is depth-capped, and "a malformed or hostile part NEVER throws, we return what parsed and skip the rest".
+
+**Every cap has a unit and a real-world comparison.** `MAX_COORD = 1e11` carries `// EMU magnitude clamp (slide width is ~1.2e7)`, which tells the next reader the cap sits four orders of magnitude above anything legitimate. A number with no comparison point is a number nobody can safely change later.
+
+**It says what it delegates.** "XML entity-expansion (billion-laughs) is the injected parser's responsibility, but we additionally bound every DFS by a visited-node counter so a pathologically deep/wide tree can't hang us." Naming the boundary is what lets a reviewer check the other side of it, and adding the counter anyway is defence in depth for the case where a shell injects a parser without those protections.
+
+**The contract is one sentence and it is testable.** Never throw, return what parsed. `tests/pptx-read.test.ts` asserts it, and the `pptx-read` fuzz target asserts it against mutated real decks.
+
+`engine/src/icc.ts` is the same discipline applied to a harder format, and its caps block header is worth borrowing verbatim: "Every one of these bounds something a hostile file declares", followed by the largest value each cap was measured against across forty real profiles.
+
+## Known gaps
+
+Verified against `ALL_TARGETS` in `tests/fuzz/targets.ts` and against each module's own source. An earlier pass over this ground over-counted, because it treated the format writers as parsers.
+
+**Genuine parsers with no fuzz target, and no named allocation bounds of their own.** These are the ones worth attention first.
+
+- `engine/src/der-read.ts` is the highest-value gap on this list. It is the shared TLV walker for every certificate and signature path, its own header says "DER inputs here come straight out of attacker-controlled files", it has no test file of its own, and it has no registered target. It is exercised only indirectly, through `x509` and `c2pa-verify`. Its bounds are per-read checks rather than named constants, which is defensible for a TLV walker, but the absence of a `tests/der-read.test.ts` is not.
+- `engine/src/brand-import.ts` accepts a `.penpot` project's unzipped entries and declares no caps at all. A pathological set count or a token document with thousands of sets is bounded only by the caller.
+- `engine/src/svg-path.ts` has a sound structural argument for safety, a linear tokenizer with no declared-length field, but no cap on emitted segment count and no fuzz target, despite taking `d` strings from URL params.
+- `engine/src/zzfxm.ts` renders whatever `ZzfxSong` it is given. `midi.ts` caps the MIDI path correctly, but nothing caps a song object arriving by another route.
+
+**Parsers with declared bounds but no fuzz target.** Lower risk, still uncovered by the mutation harness: `url-pack.ts`, `seal.ts`, `svg-colors.ts`, `svg-custgeom.ts`, `midi.ts`, `wav.ts`, `png-unfilter.ts`, `pdf-svg.ts`, `pdf-artwork.ts`, `pdf-text.ts`, `pdf-redaction.ts`. Of these, `url-pack.ts` and `wav.ts` are the best candidates to add next: `url-pack` because its input is a public URL param and its threat is a decompression bomb, `wav` because it is a full container walker with a single cap.
+
+**Missing test files.** `der-read.ts`, `c2pa-extract.ts` and `c2pa-containers.ts` have no same-name test. The latter two are covered in aggregate by the C2PA suites, which is not the same as having their own failure cases pinned. `der-read.ts` has neither its own test nor a target.
+
+**Named but unbounded.** `pdf-map.ts` caps array nesting and CMap ranges but not the total node count it emits. `pdf-artwork.ts` compensates with `MAX_NODES = 4000` for its own consumption, and `pdf-svg.ts` caps per-node path length, so no current consumer is unbounded. A new consumer of `interpretPdfPage` would be, and would have to bring its own cap.
+
+## Adding a new parser
+
+Four requirements. All four, before the module lands.
+
+1. **Declare named `MAX_*` constants in one block, near the top, before the walkers.** One constant per thing a hostile input can declare: byte length, element or record count, nesting depth, coordinate magnitude, text length. Each gets a comment with its unit and the largest legitimate value you measured. Never inline a bare number into a loop bound. If a bound is genuinely structural rather than numeric, say so in the header the way `svg-path.ts` and `der-read.ts` do, and explain why.
+
+2. **Bounds-check before reading, not after.** The invariant `der-read.ts` states is the one to internalise: check a multi-byte length head *before* consuming its bytes, because an out-of-range `Uint8Array` read yields `undefined`, `undefined` NaN-poisons the arithmetic, and a NaN comparison makes the guard that follows silently false. That is how a truncated TLV gets accepted.
+
+3. **Pick a contract, state it in the header, and honour it everywhere.** There are three legitimate contracts in this codebase and the choice follows from what the caller does with the answer.
+   - *Best-effort reader, never throws, returns `null` or a partial result.* The house contract, named after `png-unfilter.ts` and stated most fully in `icc.ts` and `file-metadata.ts`. Correct when a failure means "we could not read this", and the UI degrades gracefully.
+   - *Throws promptly on malformed input.* `der-read.ts` and the CBOR decoder in `c2pa-extract.ts`. Correct when a silent mis-parse would be worse than an error, which is the case for anything feeding a cryptographic check.
+   - *Fails closed by throwing.* `strip-metadata.ts`. Correct when returning the input unchanged would be presented to a user as a safety guarantee. A privacy or security control must never fail open.
+
+4. **Add a same-name test file and register a fuzz target.** `tests/<module>.test.ts` covers the truncation, garbage and cap-tripping cases by hand. Then add a `FuzzTarget` to `tests/fuzz/targets.ts` with a small seed corpus of *valid* inputs, built where possible from the engine's own writer so the seeds are real container layouts, an `invoke()` that does not swallow errors (the runner classifies a thrown validation error as the desired behaviour, and a hang or allocation blow-up as a finding), and an entry in `ALL_TARGETS`. Note the entry-point comment convention at the top of that file, which records exactly which function each target hits. Any input a discovery run finds goes into `tests/fuzz/regressions/` as a `.bin`, named for the module and the failure, and `tests/fuzz-regression.test.ts` will replay it on every `npm test` from then on.
