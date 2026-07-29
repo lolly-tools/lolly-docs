@@ -1,6 +1,6 @@
 # Privacy Policy
 
-*Last updated: 19 July 2026*
+*Last updated: 29 July 2026*
 
 > **In plain terms.** The documents, images, videos and files you make in Lolly stay
 > on your device. There are no accounts for ordinary use, no cookies from the app
@@ -82,38 +82,60 @@ network. If it isn't here, the app doesn't do it.
 |---|---|---|
 | Tool catalogue sync | Nothing personal - a request for Lolly's own public tool and asset index | On startup, then cached offline |
 | A tool's declared network capability | Whatever that specific tool requests (e.g. map tiles) to the specific host(s) it allowlists in its manifest | Only while using that tool |
-| Google Fonts | The chosen font family name and your IP address, to Google's font servers | Only if you add a Google Font in the brand editor - a one-time fetch per family, then it lives on your device |
-| SEAL signature check | A single DNS lookup for a public key, to the domain named inside the file being checked | Only if Verify finds a SEAL record in a file you check - never the file itself |
+| Google Fonts | The chosen font family name and your IP address, to Google's font servers | Only if you add a Google Font in the brand editor, **and only after you agree to it in a dialog that says exactly this** - a one-time fetch per family, then it lives on your device and is used offline |
+| SEAL signature check | **Nothing.** The web app has no DNS resolver at all - see below | Never |
 | Deep-scan detector models | Nothing personal - a one-time same-origin model download (not a third party) | Only if you opt into Verify's deep scan |
 | Remote instance | Whatever the instance you name serves back, over the same catalogue sync described above | Only if you explicitly point the shell at another Lolly deployment |
 
 None of these send your documents, projects, sessions or uploaded files anywhere.
-They exist to bring things *to* your device (tools, fonts, models, a public key),
-never to send things *from* it, with the exceptions named explicitly in the
-sections below.
+They exist to bring things *to* your device (tools, fonts, models), never to send
+things *from* it, with the exceptions named explicitly in the sections below.
+
+**A note on what we removed.** Verify can check SEAL signatures, a scheme where a
+file's signing key is published in DNS. Browsers can't make DNS queries, so any
+web implementation has to route the lookup through a third-party DNS-over-HTTPS
+resolver - which would show that operator the domain being checked plus your IP
+address. We used to use Cloudflare's. **We don't any more, and there is no
+replacement**: the web app now passes no resolver at all, so SEAL verification
+here makes zero network requests. Files whose SEAL record carries its key inline
+still verify completely offline. Files whose key lives in DNS report "no key
+resolver" instead, and you can check those in the desktop or command-line app,
+which resolve DNS natively through your own machine with no third party
+involved. You can confirm this yourself: `grep -ri cloudflare` over the source
+tree returns nothing.
 
 ## Hot-linked render URLs
 
-The app itself stays entirely on your device. Separately, and only if you use it,
-lolly.tools (and any self-hosted instance that leaves it enabled) answers
-**hot-link render URLs** - `https://lolly.tools/tool/<tool-id>.<ext>?<inputs>` -
-so a shared Lolly link can appear as a live image in a README, a wiki or a
-dashboard. Fetching one of those URLs asks the server to render **public tool and
-catalogue data** with the inputs written into the URL, and that is the entire
-exchange:
+> **Currently switched off on lolly.tools.** Every
+> `https://lolly.tools/tool/<tool-id>.<ext>` URL returns 404 today. The section
+> below describes what the feature does when an operator enables it, and why we
+> have not. It will be turned on here once the service moves to SUSE-operated
+> infrastructure, and this notice will change when it is.
 
-- **No accounts, no cookies, no state.** The endpoint is anonymous; nothing is
-  stored per request, and nothing on your device is read. Your documents,
-  sessions and uploads never leave your browser - they cannot appear in these
-  links at all.
-- **The inputs are public by construction** - they are whatever the link's author
-  typed into the URL, readable by anyone the link reaches. Don't put secrets in a
-  shared link, Lolly makes a link encryption feature for sensitive content available.
+The app itself stays entirely on your device. Separately, an operator can enable
+**hot-link render URLs** - `/tool/<tool-id>.<ext>?<inputs>` - so a shared Lolly
+link can appear as a live image in a README, a wiki or a dashboard. Fetching one
+asks the server to render **public tool and catalogue data** with the inputs
+written into the URL.
+
+- **No accounts, no cookies, no state.** The endpoint is anonymous, and nothing
+  on your device is read. Your documents, sessions and uploads never leave your
+  browser - they cannot appear in these links at all.
+- **But the URL itself is recorded.** A URL's query string is part of the request
+  line, so it lands in the hosting platform's ordinary access logs the same way
+  every requested path does. If a link's inputs contain someone's name or email -
+  a name badge, an email signature - **that text sits in those logs**, and no
+  amount of policy wording changes it. This is the specific reason the feature is
+  off here rather than on.
+- **The inputs are public by construction** anyway - they are whatever the link's
+  author typed into the URL, readable by anyone the link reaches. Don't put
+  secrets in a shared link; Lolly offers link encryption for sensitive content.
 - Responses are **cached and rate-limited** like any public image, and marked
   `noindex` so search engines don't index your renders.
 
 Self-hosting Lolly and don't want a public render surface? Set
-`LOLLY_DISABLE_RENDER_GET=1` and every one of these URLs returns 404.
+`LOLLY_DISABLE_RENDER_GET=1` - what lolly.tools itself currently does - and every
+one of these URLs returns 404.
 
 ## The MCP server (optional, for AI agents)
 
@@ -167,18 +189,24 @@ If you do enrol, here is exactly what happens:
    days, your choice, capped by the operator's policy) binding your verified
    email to the public half of the keypair generated on your device. The private
    half never leaves your browser.
-5. **The issuance is logged**: your email address, the provider you used, a short
-   hash of the certificate's serial number, and its expiry date, written to the
-   service's operational logs - and, only if the operator has configured one, to
-   a webhook they control. This is the one place a piece of your personal data is
-   retained on a server, and it exists so a compromised or misissued certificate
-   can be traced and so the CA's own issuance can be audited.
+5. **Nothing about the issuance is recorded.** The certificate service keeps no
+   issuance log: not your email, not the provider, not a serial number, not a
+   timestamp. No database, no log line, no webhook. Your email address exists in
+   the request only long enough to be written into the certificate that your own
+   device receives, and then it is gone from our side entirely.
 6. **After that, signing is offline again** for the certificate's whole lifetime.
    Exporting a file never contacts the certificate service - only enrolling did.
 
-For lolly.tools specifically: SUSE operates the certificate service and holds
-these issuance logs. See [Your rights](#your-rights) below for how to ask about
-or remove an entry.
+**The tradeoff, stated plainly.** An earlier version of this service did log each
+issuance, so that a misissued or compromised certificate could be traced. We
+removed it, because that log was the only place in all of Lolly where personal
+data came to rest on a server, and we would rather not hold it than hold it
+carefully. What we give up is server-side traceability: if a certificate is
+misused we cannot look up who obtained it. Certificates are short-lived by
+design - 7 to 365 days, your choice, capped by the operator - and expire on their
+own, which is the mitigation we rely on instead. Self-hosters whose own
+obligations require an audit log can add one, and become the controller of that
+data by doing so.
 
 ## The browser extension
 
@@ -215,13 +243,57 @@ one requested capture.
 
 Like any website, the servers behind lolly.tools - and behind any Lolly
 deployment - generate standard web-server access logs whenever a request reaches
-them at all: IP address, requested path, timestamp, user agent, kept for a
-limited window for security and abuse prevention. That's baseline hosting
-behaviour, not something Lolly adds on top, and it never contains the contents of
-your documents, because those never reach a server to begin with. The one
-deliberate exception is a file you explicitly hand to an MCP `lolly_transform` or
-`lolly_verify` call, which is processed in memory and never written to disk or a
-log, as described above.
+them at all: IP address, requested path, timestamp, user agent. That's baseline
+hosting behaviour, not something Lolly adds on top, and it never contains the
+contents of your documents, because those never reach a server to begin with. The
+one deliberate exception is a file you explicitly hand to an MCP
+`lolly_transform` or `lolly_verify` call, which is processed in memory and never
+written to disk or a log, as described above.
+
+**Lolly's own code writes nothing to those logs.** The MCP server contains no
+logging statements at all. The certificate service emits exactly two lines, both
+on failure and both deliberately stripped: a send-failure status code with no
+recipient address, and an error message with no stack trace or URL (a stack could
+carry an enrolment token). Everything else in the log is the hosting platform's,
+not ours.
+
+For lolly.tools, hosting is Vercel and access-log retention follows Vercel's own
+platform defaults for our plan; we configure no log drain, no long-term log
+export, and no analytics or monitoring product on top. We keep no copy of these
+logs ourselves, which also means we have no way to search them for you - see
+[Your rights](#your-rights).
+
+## Legal bases, retention and recipients
+
+Almost nothing here needs a legal basis, because almost nothing is processed. For
+completeness, the entire list:
+
+| Processing | Legal basis (GDPR Art. 6) | Retained for |
+|---|---|---|
+| Everything on your device (documents, prefs, cache, counters) | **Not our processing at all** - it never reaches us. Storage on your device is strictly necessary for the service you requested (ePrivacy Art. 5(3)), so it needs no consent | Until you delete it |
+| Your email address during Content Credentials enrolment | **Art. 6(1)(b)**, performance of a service you explicitly requested | Not retained. Present in memory for the duration of the request only |
+| Your IP address on the sign-in endpoints, for rate limiting | **Art. 6(1)(f)**, our legitimate interest in preventing abuse of a free service and of a third party's email quota. We consider this to pass a balancing test because it is in memory only, never written down, and discarded within about a minute | ~1 minute, in server memory, never persisted |
+| Hosting access logs (IP, path, timestamp, user agent) | **Art. 6(1)(f)**, our legitimate interest in service security, abuse prevention and diagnosing faults | Vercel's platform default for our plan; we add no drain or export |
+
+**Recipients.** The categories of recipient are: our hosting provider (Vercel
+Inc.), and - only if you use the email sign-in option - a transactional email
+provider (Resend). If you sign in with GitHub, Google or SUSE Okta, you interact
+with that provider directly under their own privacy policy; they tell us a
+verified email address and nothing else. We share personal data with no one else,
+and we do not sell data, run advertising, or profile users.
+
+**Transfers outside the EEA.** Vercel and Resend are US companies. Function
+compute for lolly.tools is pinned to Vercel's Frankfurt (`fra1`) region so
+processing happens in the EU, but as US-headquartered providers they may still
+access data as processors from the US. Those transfers rely on the European
+Commission's Standard Contractual Clauses and/or the EU-US Data Privacy
+Framework, as set out in each provider's data processing agreement. Because the
+personal data reaching either provider is so limited - an email address passed
+through to send one message, and ordinary access logs - the exposure is
+correspondingly small.
+
+**Automated decision-making.** None. There is no profiling and no automated
+decision producing legal or similarly significant effects (Art. 22).
 
 ## Children's privacy
 
@@ -239,11 +311,30 @@ anyone: your data lives in your browser's storage, in a form you can inspect,
 export (**Export & render everything**, above), or delete (**Profile → Clear all
 my data**).
 
-For the one piece of personal data that can end up on a server - your email
-address, if you enrolled for Content Credentials - contact us (below) to ask what
-we hold or to have it removed from active logs. Removing a log entry doesn't
-revoke a certificate already issued (it's short-lived by design and simply
-expires); it stops that entry appearing in future exports of the log.
+Formally, under GDPR Articles 15-22 you have the right to **access** your
+personal data, to **rectify** it, to **erase** it, to **restrict** or **object
+to** its processing (including objecting to anything we base on legitimate
+interests), to **data portability**, and - where processing rests on consent - to
+**withdraw that consent at any time**, without affecting the lawfulness of what
+happened before you withdrew it.
+
+Here is the honest position on exercising them against us. Since we no longer
+keep an issuance log, **we hold no personal data about you that we can look up,
+correct, export or delete.** If you write and ask what we have on you, the
+truthful answer is nothing, and we will say so. The one category that exists at
+all is hosting access logs keyed to an IP address, held by our hosting provider
+under their retention defaults; we have no facility to search or selectively
+delete those, and we will tell you that rather than pretend otherwise. Everything
+that is actually *yours* is on your device, where you can already read, export
+and destroy it without asking anyone's permission.
+
+**You have the right to complain.** If you think we have handled your data
+improperly, you can lodge a complaint with a data protection supervisory
+authority - in the EU, the authority in your country of residence, place of work,
+or where you believe the infringement occurred (Art. 77). Our lead supervisory
+authority is the *Bayerisches Landesamt für Datenschutzaufsicht* (BayLDA) in
+Ansbach, Germany. You do not need to contact us first, though we would like the
+chance to fix it.
 
 We don't sell data. We don't have any to sell.
 
@@ -254,9 +345,23 @@ what leaves your device or what's retained gets its own line here, not a silent
 edit - if you want to see what changed, ask (below) or compare against the
 [public source](https://github.com/lolly-tools/lolly/commits/main/docs/privacy.md).
 
-## Contact
+## Who is responsible, and how to reach us
 
-Questions, or a request under "Your rights" above: **Andy Fitzsimon**,
-[fitzy@suse.com](mailto:fitzy@suse.com). For a self-hosted or enterprise Lolly
-instance, contact whoever operates it instead - SUSE and the Lolly open source 
-project hold no data for deployments it doesn't run.
+The **data controller** for lolly.tools is:
+
+> SUSE Software Solutions Germany GmbH
+> Frankenstraße 146
+> 90461 Nürnberg
+> Germany
+
+SUSE has appointed a **Data Protection Officer**, reachable at
+[privacy@suse.com](mailto:privacy@suse.com). Use that address for any formal
+request under "Your rights" above.
+
+For anything about Lolly itself - how it works, why a thing is the way it is, or
+a correction to this document - contact **Andy Fitzsimon**,
+[fitzy@suse.com](mailto:fitzy@suse.com).
+
+For a self-hosted or enterprise Lolly instance, contact whoever operates it
+instead: the operator is the controller for their own deployment. SUSE and the
+Lolly open source project hold no data for deployments they don't run.
