@@ -248,9 +248,12 @@ Notes:
 - **Stateless.** Enrollment tokens are HMAC-signed values (email, provider,
   exp) - no session store. Replay within the 10-minute window re-issues a
   cert for the same identity+key, which is harmless.
-- **Issuance log.** Every issued cert is logged (JSON to stdout → the
-  platform's logs; optional `CA_LOG_WEBHOOK` POST). A public append-only
-  transparency log is the Tier-3 upgrade.
+- **No issuance log.** The CA retains nothing about who enrolled: no stdout
+  line, no webhook, no store. An issued cert exists only on the device that
+  requested it. The cost is that misissuance can't be traced server-side; the
+  mitigation is that leaves are short-lived and expire. A public append-only
+  transparency log - which records certificates, not identities - remains the
+  Tier-3 upgrade.
 - **Dev provider.** With `CA_DEV_FAKE_PROVIDER=1` (never set in prod), a
   `dev` provider authenticates instantly as `dev@example.com` so the full
   enroll→sign→verify loop is testable with zero OAuth secrets.
