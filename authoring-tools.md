@@ -292,7 +292,7 @@ A `file` input takes a file the user picks **into memory** and hands its raw byt
 
 With `layout: "canvas"` a single `file` input stops being a sidebar row and becomes the working area itself - the drop zone `strip-data` opens with.
 
-![Strip Hidden Data's canvas - a drag-and-drop file zone with a Choose a file button and the note that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=1800&format=svg&cropSelector=%23tool-canvas&filename=auth-file-input)
+![Strip Hidden Data's canvas - a drag-and-drop file zone with a Choose a file button and the note that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=1800&format=svg&cropSelector=%23tool-content&filename=auth-file-input)
 
 ```json
 {
