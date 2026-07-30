@@ -2,7 +2,7 @@
 
 How to build and run the Lolly mobile shell (`shells/tauri-mobile`, identifier
 `tools.lolly.app.mobile`) on iOS. iOS is a Tauri 2 mobile target: the same
-web-shell source and the same `bridge-overrides/` (filesystem `state.js`, mobile
+web-shell source and the same `bridge-overrides/` (filesystem `state.ts`, mobile
 `capabilities-provided.js`) as the desktop shell, wrapped in a generated Xcode
 project.
 

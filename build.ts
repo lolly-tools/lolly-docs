@@ -90,6 +90,7 @@ const pages: Page[] = [
   { slug: 'ai-agents',        title: 'AI Agents',         src: 'ai-agents.md',       pathway: 'builders' },
   { slug: 'extension',        title: 'Browser Extension', src: 'extension.md',       pathway: 'builders' },
   { slug: 'build-guide',      title: 'Build Guide',       src: 'build-guide.md',     pathway: 'builders' },
+  { slug: 'ios-build',        title: 'Building for iOS',  src: 'ios-build.md',       pathway: 'builders' },
   { slug: 'deployment',       title: 'Deployment',        src: 'deployment.md',      pathway: 'builders' },
   { slug: 'configuration',    title: 'Configuration',     src: 'configuration.md',   pathway: 'builders' },
   { slug: 'content-credentials-identity', title: 'Content Credentials Identity', src: 'content-credentials-identity.md', pathway: 'builders' },
@@ -188,6 +189,7 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
         { slug: 'extension', label: 'Chrome Extension' } ] },
       { label: 'Ship & operate', items: [
         { slug: 'build-guide',   label: 'Build Guide' },
+        { slug: 'ios-build',     label: 'Building for iOS' },
         { slug: 'deployment',    label: 'Deployment' },
         { slug: 'configuration', label: 'Configuration' } ] },
       { label: 'Trust & data', items: [

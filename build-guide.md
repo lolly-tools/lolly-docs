@@ -282,7 +282,7 @@ rustup target add \
   x86_64-apple-ios
 ```
 
-See `docs/ios-build.md` in the repository for the full iOS walkthrough - prerequisites, one-time init, the simulator dev loop, code signing, and camera permissions.
+See [Building for iOS](/info/ios-build.html) for the full iOS walkthrough - prerequisites, one-time init, the simulator dev loop, code signing, and camera permissions.
 
 ### First-time platform init
 
