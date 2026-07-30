@@ -14,7 +14,7 @@ Tvá značka v Lolly je malý dokument s **design tokeny** - barvy, písma a pá
 
 ### Začni od nuly (průvodce)
 
-![The Brand Studio start screen - name, primary colour, and a derived palette](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&localize=1&filename=brand-studio)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours)
 
 Při prvním spuštění se ocitneš na obrazovce **Start** (`#/start`). Zadej název a primární barvu a Lolly z nich *odvodí* kompletní, přístupnou paletu - světlé/tmavé plochy, text, akcenty - pomocí stejné barevné matematiky, kterou engine používá všude jinde. Vyber písmo a za necelou minutu máš funkční značku. Cokoli z toho můžeš kdykoli později doladit.
 

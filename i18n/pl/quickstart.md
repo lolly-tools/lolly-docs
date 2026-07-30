@@ -14,7 +14,7 @@ Twoja marka w Lolly to niewielki dokument **design tokens** - kolory, czcionki i
 
 ### Zacznij od zera (kreator design systemu)
 
-![The Brand Studio start screen - name, primary colour, and a derived palette](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&localize=1&filename=brand-studio)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours)
 
 Pierwsze uruchomienie przenosi cię na ekran **Start** (`#/start`) - [**Brand Studio**](/info/brand-studio.html). Nadaj nazwę i podaj kolor podstawowy, a Lolly *wyprowadzi* z niego kompletną, dostępną paletę - jasne/ciemne powierzchnie, tekst, akcenty - używając tej samej matematyki kolorów, której silnik używa wszędzie indziej. Wybierz czcionkę i masz działającą markę w niecałą minutę. Stamtąd pięć zakładek studia (Loga, Kolory, Typografia, Tokeny, Katalog) pozwala rozwinąć ją tak daleko, jak chcesz - dopracujesz dowolny element później, kiedy tylko wrócisz. Zawsze możesz wrócić do tego z panelu głównego (o ile nie używasz wersji Lolly z zablokowaną marką).
 

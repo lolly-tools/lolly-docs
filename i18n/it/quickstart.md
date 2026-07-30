@@ -14,7 +14,7 @@ Il tuo brand in Lolly è un piccolo documento di **design token** - colori, font
 
 ### Parti da zero (il Brand Studio)
 
-![The Brand Studio start screen - name, primary colour, and a derived palette](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&localize=1&filename=brand-studio)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours)
 
 Al primo avvio atterri sulla schermata **Start** (`#/start`) - il [**Brand Studio**](/info/brand-studio.html). Dagli un nome e un colore primario e Lolly *deriva* una palette completa e accessibile - superfici chiare/scure, testo, accenti - usando la stessa matematica del colore che il motore usa ovunque. Scegli un font e avrai un brand funzionante in meno di un minuto. Da lì, le cinque schede dello studio (Loghi, Colori, Tipografia, Token, Catalogo) ti permettono di spingerti quanto vuoi - perfeziona qualsiasi dettaglio più avanti, ogni volta che torni.
 

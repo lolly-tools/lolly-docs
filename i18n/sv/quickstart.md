@@ -14,7 +14,7 @@ Ditt varumärke i Lolly är ett litet **designtokens**-dokument - färger, typsn
 
 ### Börja från grunden (guiden)
 
-![The Brand Studio start screen - name, primary colour, and a derived palette](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&localize=1&filename=brand-studio)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours)
 
 Första gången landar du på skärmen **Start** (`#/start`). Ge den ett namn och en primärfärg så *härleder* Lolly en komplett, tillgänglig palett från den - ljusa/mörka ytor, text, accenter - med samma färgmatematik som motorn använder överallt annars. Välj ett typsnitt, så har du ett fungerande varumärke på under en minut. Du kan finjustera allt senare.
 

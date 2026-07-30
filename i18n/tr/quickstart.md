@@ -14,7 +14,7 @@ Lolly'deki markan; renkler, yazı tipleri ve birkaç kuraldan oluşan küçük b
 
 ### Sıfırdan başla (tasarım sistemi oluşturucu)
 
-![The Brand Studio start screen - name, primary colour, and a derived palette](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&localize=1&filename=brand-studio)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours)
 
 İlk çalıştırmada **Başlangıç** ekranına (`#/start`) düşersin - yani [**Marka Stüdyosu**](/info/brand-studio.html)'na. Ona bir ad ve bir ana renk ver; Lolly da motorun her yerde kullandığı aynı renk matematiğiyle bundan eksiksiz, erişilebilir bir palet *türetir* - açık/koyu yüzeyler, metin, vurgular. Bir yazı tipi seç, bir dakikadan kısa sürede çalışan bir markan olsun. Oradan itibaren stüdyonun beş sekmesi (Logolar, Renkler, Yazı Tipi, Belirteçler, Katalog) istediğin kadar ileri götürmene izin verir - ne zaman geri dönersen dön, herhangi bir kısmını daha sonra da inceltebilirsin. Bunu her zaman kontrol panelinden tekrar ziyaret edebilirsin (Lolly'nin marka kilitli bir sürümünü kullanmıyorsan).
 

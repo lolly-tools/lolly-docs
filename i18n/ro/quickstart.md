@@ -14,7 +14,7 @@ Brandul tău în Lolly este un mic document de **design tokens** - culori, fontu
 
 ### Începe de la zero (asistentul)
 
-![The Brand Studio start screen - name, primary colour, and a derived palette](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&localize=1&filename=brand-studio)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours)
 
 Prima rulare te duce pe ecranul **Start** (`#/start`). Dă-i un nume și o culoare primară, iar Lolly *derivă* o paletă completă, accesibilă, din ea - suprafețe deschise/închise, text, accente - folosind aceeași matematică a culorii pe care motorul o folosește peste tot. Alege un font și ai un brand funcțional în mai puțin de un minut. Poți rafina orice mai târziu.
 

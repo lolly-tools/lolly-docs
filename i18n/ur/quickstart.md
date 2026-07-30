@@ -14,7 +14,7 @@ Lolly میں آپ کا برانڈ ایک چھوٹا سا **design-tokens** دس�
 
 ### شروع سے آغاز کریں (ڈیزائن سسٹم بلڈر)
 
-![The Brand Studio start screen - name, primary colour, and a derived palette](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&localize=1&filename=brand-studio)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours)
 
 پہلی بار چلانے پر آپ **Start** اسکرین (`#/start`) پر پہنچتے ہیں — [**Brand Studio**](/info/brand-studio.html)۔ اسے ایک نام اور ایک بنیادی رنگ دیں اور Lolly اس سے ایک مکمل، قابلِ رسائی پیلیٹ *اخذ* کرتا ہے — روشن/تاریک سطحیں، متن، ایکسنٹس — وہی کلر ریاضی استعمال کرتے ہوئے جو انجن ہر جگہ استعمال کرتا ہے۔ ایک فونٹ چنیں، اور ایک منٹ سے بھی کم میں آپ کے پاس ایک کارآمد برانڈ ہے۔ وہاں سے اسٹوڈیو کے پانچ ٹیبز (لوگو، رنگ، ٹائپ، ٹوکنز، کیٹلاگ) آپ کو اسے جتنا چاہیں آگے لے جانے دیتے ہیں — بعد میں جب بھی واپس آئیں، اس کے کسی بھی حصے کو بہتر بنائیں۔ آپ اسے ہمیشہ ڈیش بورڈ سے دوبارہ دیکھ سکتے ہیں (بشرطیکہ آپ Lolly کا برانڈ-لاکڈ ورژن استعمال نہ کر رہے ہوں)
 
