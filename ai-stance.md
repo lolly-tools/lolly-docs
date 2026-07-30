@@ -1,6 +1,6 @@
 # Our AI stance
 
-Lolly was built in the middle of the biggest change in how media gets made since the printing press, by people who are neither panicked about AI nor breathless about it. This page states the project's position plainly, and - in the house style - pairs every claim with the mechanism that enforces it, so you can verify rather than trust.
+Lolly was built in the middle of the biggest change in how media gets made since the printing press, by people who are neither panicked about AI nor breathless about it. This page states the project's position plainly and pairs every claim with the mechanism that enforces it, so you can verify rather than trust.
 
 > "We're drinking like the tap could turn off at any moment. It won't - today's AI is the worst it will ever be. If we survive the flood, it won't be by hoarding what's in the rusty water tank down the hill, full of sediment. It will be by irrigating and reclaiming land for a prosperous future."
 >
