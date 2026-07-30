@@ -24,7 +24,7 @@ That path form is canonical - it's what the address bar shows once a tool has lo
 
 The first of those opens the QR tool with the address and the dark green already applied, no clicks in between.
 
-![A QR code rendered straight from the URL, in the dark green passed as ?color](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26color%3D%25230c322c&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=exp-url-qr-color)
+![A QR code rendered straight from the URL, in the dark green passed as ?color](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26color%3D%25230c322c&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&walker=1&filename=exp-url-qr-color)
 
 ### Clean URL redirect
 
@@ -53,7 +53,7 @@ Pass the value directly. URL-encode spaces and special characters.
 
 The Wordmark tool is nothing but text params, so a link is the whole brief: `/#/tool/wordmark?text=Ship it&weight=800&tracking=-12&size=200`.
 
-![The word "Ship it" outlined in a heavy weight with the letters pulled tight, both settings carried in by the link alone](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DShip%2520it%26weight%3D800%26tracking%3D-12%26size%3D200&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=um-text-wordmark)
+![The word "Ship it" outlined in a heavy weight with the letters pulled tight, both settings carried in by the link alone](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DShip%2520it%26weight%3D800%26tracking%3D-12%26size%3D200&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&walker=1&filename=um-text-wordmark)
 
 ### Select
 
@@ -66,7 +66,7 @@ Pass the option value (not the label).
 
 A one-word change swaps the whole render: `/#/tool/street-map?city=barcelona&theme=dark`.
 
-![Street Map drawn in its dark theme, picked entirely by the theme param](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dbarcelona%26theme%3Ddark&width=1440&height=900&dpi=192&waitMs=3000&format=svg&cropSelector=%23tool-canvas&filename=exp-url-select-theme)
+![Street Map drawn in its dark theme, picked entirely by the theme param](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dbarcelona%26theme%3Ddark&width=1440&height=900&dpi=192&waitMs=3000&format=svg&cropSelector=%23tool-canvas&walker=1&filename=exp-url-select-theme)
 
 ### Number
 
@@ -77,7 +77,7 @@ A one-word change swaps the whole render: `/#/tool/street-map?city=barcelona&the
 
 A number can also set how much of a thing gets made. Colour Palette builds one ramp cell per step, so `/#/tool/color-palette?steps=11` returns a wider sheet than the default seven.
 
-![A palette sheet eleven cells wide, the count set only by the steps param](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fsteps%3D11&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=um-number-steps)
+![A palette sheet eleven cells wide, the count set only by the steps param](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fsteps%3D11&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&walker=1&filename=um-number-steps)
 
 ### Boolean
 
@@ -90,7 +90,7 @@ A number can also set how much of a thing gets made. Colour Palette builds one r
 
 One flag can add a whole layer of information: `/#/tool/d3?showValues=1` prints the number on every bar.
 
-![The D3 bar chart with a value printed on each bar, switched on by a single boolean param](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FshowValues%3D1&width=1440&height=900&dpi=192&waitMs=2800&format=svg&cropSelector=%23tool-canvas&filename=um-boolean-values)
+![The D3 bar chart with a value printed on each bar, switched on by a single boolean param](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FshowValues%3D1&width=1440&height=900&dpi=192&waitMs=2800&format=svg&cropSelector=%23tool-canvas&walker=1&filename=um-boolean-values)
 
 ### Color
 
@@ -103,7 +103,7 @@ Pass a hex value (URL-encode the `#`).
 
 Colour params stack. Mesh Gradient takes one per stop, so three hex values in a link are three fields of colour in the render.
 
-![A generative gradient blooming in coral, amber and violet, one bloom per colour param](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Fcount%3D3%26blend%3Dnormal%26color1%3D%2523ff5f6d%26color2%3D%2523ffc371%26color3%3D%25236a11cb&width=1440&height=900&dpi=96&waitMs=2400&format=png&cropSelector=%23tool-canvas&filename=um-color-mesh)
+![A generative gradient blooming in coral, amber and violet, one bloom per colour param](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Fcount%3D3%26blend%3Dnormal%26color1%3D%2523ff5f6d%26color2%3D%2523ffc371%26color3%3D%25236a11cb&width=880&height=560&dpi=96&waitMs=2400&format=png&cropSelector=%23tool-canvas&filename=um-color-mesh)
 
 ### Asset
 
@@ -138,7 +138,7 @@ Blocks inputs are repeating groups of fields (e.g. a list of team members, each 
 
 Each object's keys must match the field `id`s defined in the tool's manifest. Fields can be omitted - missing fields are treated as empty strings. Chart Creator's `data` input is a blocks list of label, value and colour, so a whole dataset travels in the link:
 
-![A three bar chart whose labels, values and bar colours all arrived as one JSON blocks param](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3FchartType%3Dvertical-bar%26data%3D%5B%7B%22label%22%3A%22Berlin%22%2C%22value%22%3A%2242%22%2C%22color%22%3A%22%25232453ff%22%7D%2C%7B%22label%22%3A%22Sydney%22%2C%22value%22%3A%2231%22%2C%22color%22%3A%22%252300a3a3%22%7D%2C%7B%22label%22%3A%22Lisbon%22%2C%22value%22%3A%2219%22%2C%22color%22%3A%22%2523fe7c3f%22%7D%5D&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=um-blocks-chart)
+![A three bar chart whose labels, values and bar colours all arrived as one JSON blocks param](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3FchartType%3Dvertical-bar%26data%3D%5B%7B%22label%22%3A%22Berlin%22%2C%22value%22%3A%2242%22%2C%22color%22%3A%22%25232453ff%22%7D%2C%7B%22label%22%3A%22Sydney%22%2C%22value%22%3A%2231%22%2C%22color%22%3A%22%252300a3a3%22%7D%2C%7B%22label%22%3A%22Lisbon%22%2C%22value%22%3A%2219%22%2C%22color%22%3A%22%2523fe7c3f%22%7D%5D&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&walker=1&filename=um-blocks-chart)
 
 **CLI:**
 ```bash
@@ -159,7 +159,7 @@ A `vector` input is a fixed group of numbers edited as one control (e.g. a zoom 
 
 One readable value per param. Used by tools such as `bag-video`, `chart-creator`, `filter-duotone`, `dynamic-layout`, and `quotes`. Mesh Gradient parks each colour stop with one, so adding `?pos1.x=8&pos1.y=8&pos2.x=92&pos2.y=12&pos3.x=50&pos3.y=94` to the gradient above drives its three blooms out to the edges:
 
-![The coral, amber and violet gradient again, this time with each bloom pinned to an edge by its own dotted x and y param](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Fcount%3D3%26blend%3Dnormal%26color1%3D%2523ff5f6d%26color2%3D%2523ffc371%26color3%3D%25236a11cb%26pos1.x%3D8%26pos1.y%3D8%26pos2.x%3D92%26pos2.y%3D12%26pos3.x%3D50%26pos3.y%3D94&width=1440&height=900&dpi=96&waitMs=2400&format=png&cropSelector=%23tool-canvas&filename=um-vector-positions)
+![The coral, amber and violet gradient again, this time with each bloom pinned to an edge by its own dotted x and y param](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Fcount%3D3%26blend%3Dnormal%26color1%3D%2523ff5f6d%26color2%3D%2523ffc371%26color3%3D%25236a11cb%26pos1.x%3D8%26pos1.y%3D8%26pos2.x%3D92%26pos2.y%3D12%26pos3.x%3D50%26pos3.y%3D94&width=880&height=560&dpi=96&waitMs=2400&format=png&cropSelector=%23tool-canvas&filename=um-vector-positions)
 
 ### File
 
@@ -198,7 +198,7 @@ Tools can opt into a shorter URL form, which the web shell emits when you **copy
 
 `chart-creator` is a live tool that uses `urlKey`, so a link copied via its Copy URL / share button won't match the long-form examples in this doc - that's expected. `d3` uses them too: `?ct=radar&pl=cool&t=Short keys&lg=0` is chart type, palette, heading and legend in twelve characters of query.
 
-![A radar chart in the cool palette, drawn from four short-key params instead of their long names](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Dradar%26pl%3Dcool%26t%3DShort%2520keys%26lg%3D0&width=1440&height=900&dpi=192&waitMs=2800&format=svg&cropSelector=%23tool-canvas&filename=um-compact-shortkeys)
+![A radar chart in the cool palette, drawn from four short-key params instead of their long names](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Dradar%26pl%3Dcool%26t%3DShort%2520keys%26lg%3D0&width=1440&height=900&dpi=192&waitMs=2800&format=svg&cropSelector=%23tool-canvas&walker=1&filename=um-compact-shortkeys)
 
 ---
 
@@ -239,7 +239,7 @@ These keys are never treated as tool inputs. They control shell-level behaviour.
 
 `lang` is the one reserved param that changes the interface rather than the file. Adding `?lang=ja` to any tool link hands the recipient the whole sidebar in Japanese for that session, without touching their saved preference.
 
-![The Colour Palette controls with every label, hint and dropdown option in Japanese, from one lang param](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Flang%3Dja&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-inputs&css=%23tool-canvas%7Bdisplay%3Anone%7D&filename=um-lang-japanese)
+![The Colour Palette controls with every label, hint and dropdown option in Japanese, from one lang param](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Flang%3Dja&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-inputs&css=%23tool-canvas%7Bdisplay%3Anone%7D&walker=1&filename=um-lang-japanese)
 
 > **Building share links in the UI.** In the web shell you don't have to hand-write these. The **Share** button (in the export panel) opens a dialog with the ready-to-copy link plus a toggle for each on-visit flag - _open fullscreen_ (`full`), _open with the export panel expanded_ (`options`), _download automatically_ (`export`), _copy to clipboard_ (`copy`), and _pin tool version_ (`_v`). The copy toggle appears only for clipboard-friendly formats (bitmap/text/html) and is hidden for SVG, PDF, and video. Ticking a box rewrites the link in place. The **same dialog** is reachable from **Projects → Share link** on any saved session (it reconstructs the tool URL from the saved inputs).
 
@@ -280,7 +280,7 @@ The state is DEFLATE'd then **AES-256-GCM**-encrypted under a key derived from a
 
 `px` is the default and behaves exactly as before (the CSS 96-DPI convention). The canvas takes the physical shape straight away, so `?w=210&h=297&unit=mm&format=pdf` shows you a portrait A4 before you export anything.
 
-![The Wordmark canvas standing as a portrait A4 page, its shape set by the width, height and unit params before anything is exported](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DPrint%2520me%26size%3D120%26w%3D210%26h%3D297%26unit%3Dmm%26format%3Dpdf&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas-outer&filename=um-units-a4)
+![The Wordmark canvas standing as a portrait A4 page, its shape set by the width, height and unit params before anything is exported](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DPrint%2520me%26size%3D120%26w%3D210%26h%3D297%26unit%3Dmm%26format%3Dpdf&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas-outer&walker=1&filename=um-units-a4)
 
 ```
 lolly quotes --quote="Print me." --width=210 --height=297 --unit=mm --export=svg --output=a4.svg
@@ -293,7 +293,7 @@ For print-ready output, `bleed=` and `marks=` add the prep a print shop expects 
 for every other format. The two CMYK formats apply the same engine geometry - the PDF as
 vectors with declared page boxes, the TIFF rasterised onto an enlarged sheet.
 
-![The Print marks and bleed card opened by a bleed and marks link, with each mark toggle already set](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf-cmyk%26bleed%3D3mm%26marks%3Dcrop%2Creg%2Cbleed%2Cbars%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-print&filename=exp-print-marks-card)
+![The Print marks and bleed card opened by a bleed and marks link, with each mark toggle already set](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf-cmyk%26bleed%3D3mm%26marks%3Dcrop%2Creg%2Cbleed%2Cbars%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-print&walker=1&filename=exp-print-marks-card)
 
 - `bleed=3mm` - the design is scaled to fill the bleed (the trim area is unchanged). The PDF declares its `TrimBox` (final cut) and `BleedBox` for the RIP; the TIFF is enlarged to the full sheet, the artwork composited over white to cover the bleed.
 - `marks=crop,reg,bleed,bars` - draws, in the margin: **crop** (trim) marks, **reg**istration targets, **bleed** marks, and a colour **bars**. In `pdf-cmyk` the line marks are DeviceCMYK `1 1 1 1` so they print on every plate; in `cmyk-tiff` they're written straight into the pixel buffer as all four channels at full ink (`C=M=Y=K=255`, the raster analogue), drawn **after** the RGB→CMYK pass so they aren't remapped; in the RGB `pdf` they're black. Mark length, gap and stroke weight are fixed to print standards.
@@ -449,7 +449,7 @@ web-shell affordance; the CLI ignores it (use `--output` / stdout).
 
 Mixing long and short forms is fine - `?width=1200&h=630` works. The canvas preview updates to the new aspect ratio.
 
-![Mesh Gradient reshaped to a 1920 by 1080 canvas by the w and h params alone](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Fw%3D1920%26h%3D1080&width=1440&height=900&dpi=96&waitMs=2400&format=png&cropSelector=%23tool-canvas&filename=exp-url-dims)
+![Mesh Gradient reshaped to a 1920 by 1080 canvas by the w and h params alone](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Fw%3D1920%26h%3D1080&width=880&height=560&dpi=96&waitMs=2400&format=png&cropSelector=%23tool-canvas&filename=exp-url-dims)
 
 ---
 
@@ -463,7 +463,7 @@ Mixing long and short forms is fine - `?width=1200&h=630` works. The canvas prev
 
 Any tool takes it. Mesh Gradient with `full` is artwork and nothing else.
 
-![A tool opened with full - no sidebar and no chrome, just the artwork edge to edge](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=1440&height=900&dpi=96&waitMs=2400&format=png&filename=exp-url-full)
+![A tool opened with full - no sidebar and no chrome, just the artwork edge to edge](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2400&format=png&filename=exp-url-full)
 
 Combine with `export` for a clean unattended export flow:
 
@@ -481,7 +481,7 @@ Combine with `export` for a clean unattended export flow:
 /#/tool/qr-code?url=https://suse.com&options
 ```
 
-![The export panel already expanded at the foot of the sidebar, one click from a download](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-popup&filename=exp-options-panel)
+![The export panel already expanded at the foot of the sidebar, one click from a download](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-popup&walker=1&filename=exp-options-panel)
 
 `options` is the opposite of `full`: `full` hides all chrome to show only the preview, while `options` surfaces the export chrome. If both appear, `full` wins (there's nowhere to anchor the export panel once the sidebar is collapsed). The flag is web-only - the CLI ignores it.
 

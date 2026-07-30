@@ -41,7 +41,7 @@ The pilot's centre of gravity is the **producer**. If producers don't self-serve
 
 Step 3 is the one that carries the pilot. A tool opens with the brand already on it, so the only thing left to decide is the words.
 
-![Deck Studio's first slide opened cold, already carrying the brand's type, colour and title layout before a single field is filled in](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&css=%23tool-canvas%20.ds-slide~.ds-slide%7Bdisplay%3Anone%7D&cropSelector=%23tool-canvas%20.ds-slide&filename=ce-deck-studio-cold)
+![Deck Studio's first slide opened cold, already carrying the brand's type, colour and title layout before a single field is filled in](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&css=%23tool-canvas%20.ds-slide~.ds-slide%7Bdisplay%3Anone%7D&cropSelector=%23tool-canvas%20.ds-slide&walker=1&filename=ce-deck-studio-cold)
 
 The measure of a good onboarding here is blunt: *did they leave with a finished, on-brand file, without asking anyone?*
 
@@ -123,7 +123,7 @@ Most people just make things - author their own tools in Layout Studio and inges
 - **Feature flags put control local.** Parts of Lolly can be turned on or off per deployment. Usually an administrator owns those; with Lolly, whoever runs the deployment does.
 - **Configuration is yours.** A deployment can overlay its own authentication, telemetry, or Certificate Authority to meet corporate compliance - none of it is on by default.
 
-![Every part of Lolly as its own switch, so turning a whole category of tools off is one click, not a support ticket](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&cropSelector=%23feature-flags-section&format=svg&filename=aud-feature-switches)
+![Every part of Lolly as its own switch, so turning a whole category of tools off is one click, not a support ticket](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&cropSelector=%23feature-flags-section&format=svg&walker=1&filename=aud-feature-switches)
 
 The most common adoption set-back is not technical; it's **framing and change management**. Existing processes work today even when the output is off-brand, and "we can already make files" becomes the excuse not to migrate. The counter is to convert one high-visibility output well and let the before/after make the case. See the [FAQ on adoption hurdles](/info/index.html#faq-what-hurdles-could-i-expect-adopting-lolly).
 

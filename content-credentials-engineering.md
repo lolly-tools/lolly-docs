@@ -137,7 +137,7 @@ through the machine's own DNS.
 Each read has its own surface in the view, and the component library lists them
 against the module that defines them:
 
-![The Verify section of the component library, listing each verify surface - verdict states, change history, metadata reveal - beside the module and CSS classes that define it](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=2000&dpi=192&waitMs=2200&format=svg&css=.cl-head%2C.cl-recs%2C.cl-section%3Anot%28%23cl-verify-valid%29%7Bdisplay%3Anone%7D&cropSelector=%23cl-verify-valid&filename=ce-verify-components)
+![The Verify section of the component library, listing each verify surface - verdict states, change history, metadata reveal - beside the module and CSS classes that define it](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=2000&dpi=192&waitMs=2200&format=svg&css=.cl-head%2C.cl-recs%2C.cl-section%3Anot%28%23cl-verify-valid%29%7Bdisplay%3Anone%7D&cropSelector=%23cl-verify-valid&walker=1&filename=ce-verify-components)
 
 ### `engine/src/pixel-watermark.ts` - the Lolly Imprint
 
@@ -308,7 +308,7 @@ opens. The provider buttons are built from `/api/ca/health.configured`, so a
 deployment that has wired up no OIDC app says so instead of offering a button that
 would 501.
 
-![The Content Credentials section of Profile, expanded from the link, with the 7 / 30 / 90 / 365 day certificate lifetime picker above the provider row, which on a deployment with no OIDC app wired up says so instead of offering a button](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=1440&height=1400&dpi=192&waitMs=2600&format=svg&cropSelector=%23identity-section&filename=ce-identity-enrolment)
+![The Content Credentials section of Profile, expanded from the link, with the 7 / 30 / 90 / 365 day certificate lifetime picker above the provider row, which on a deployment with no OIDC app wired up says so instead of offering a button](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=1440&height=1400&dpi=192&waitMs=2600&format=svg&cropSelector=%23identity-section&walker=1&filename=ce-identity-enrolment)
 
 ## Operator runbook (one-time setup - the parts only you can do)
 

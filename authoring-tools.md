@@ -72,7 +72,7 @@ None of those fields stay private to the repo. The gallery's About card is the m
 
 Most of what `render` declares surfaces in one place the user sees: the export popup. Formats, page size and unit, the Convert paths outlining toggle and the Content Credentials card are all keys below.
 
-![The export popup - format and size fields, a Convert paths toggle and a pre-ticked Content Credentials card](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Foptions&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=.export-popup&filename=auth-export-popup)
+![The export popup - format and size fields, a Convert paths toggle and a pre-ticked Content Credentials card](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Foptions&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=.export-popup&walker=1&filename=auth-export-popup)
 
 `render` carries `width`, `height`, `formats` (one or more of `svg`, `svg-anim`, `emf`, `eps`, `eps-cmyk`, `dxf`, `pdf`, `pdf-cmyk`, `cmyk-tiff`, `tiff`, `pptx`, `png`, `jpg`/`jpeg`, `webp`, `avif`, `webm`, `mp4`, `gif`, `apng`, `webp-anim`, `html`, `md`, `txt`, `json`, `csv`, `ics`, `vcf`, `ico`, `zip`), plus these optional keys:
 
@@ -151,7 +151,7 @@ Some tools aren't finished when the render is. An email signature is finished th
 
 Each declaration becomes a real control, built by the shell from the input model - you never write the UI. Six lines of `inputs` in `qr-code`'s manifest produce this entire sidebar.
 
-![The QR tool's sidebar - a URL field, two colour swatches, an error-correction dropdown, a quiet-zone slider and a joined-modules toggle, all generated from the manifest](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-inputs&filename=auth-input-controls)
+![The QR tool's sidebar - a URL field, two colour swatches, an error-correction dropdown, a quiet-zone slider and a joined-modules toggle, all generated from the manifest](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-inputs&walker=1&filename=auth-input-controls)
 
 | Type             | What it produces                                          | UI control          |
 |------------------|-----------------------------------------------------------|---------------------|
@@ -175,11 +175,11 @@ A `table` input is the batch-creation primitive: paste a table copied from Excel
 
 Four declarations of four different types are four different controls. `color-palette` declares exactly that and nothing else: a `color`, a `select`, a `number` and a `boolean`.
 
-![Colour Palette's whole sidebar - a swatch trigger, a harmony dropdown, a shades slider and a neutrals switch, one control per declared type](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3D%25232563eb%26harmony%3Dtetrad-4%26steps%3D9&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=%23tool-inputs&filename=at2-input-types-palette)
+![Colour Palette's whole sidebar - a swatch trigger, a harmony dropdown, a shades slider and a neutrals switch, one control per declared type](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3D%25232563eb%26harmony%3Dtetrad-4%26steps%3D9&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=%23tool-inputs&walker=1&filename=at2-input-types-palette)
 
 `text` and `longtext` differ only in the declaration, and the shell picks the control: a single-line field for one, a sized textarea for the other. `prompt-to-image`'s prompt is a `longtext`.
 
-![The prompt field in Prompt to Image - a tall textarea holding many lines, produced by nothing more than type longtext](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image&width=1440&height=900&dpi=192&waitMs=2000&css=%23tool-canvas%7Bdisplay%3Anone%7D&format=svg&cropSelector=.input-row%3Ahas%28%5Bdata-input-id%3D%22text%22%5D%29&filename=at2-input-longtext)
+![The prompt field in Prompt to Image - a tall textarea holding many lines, produced by nothing more than type longtext](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image&width=1440&height=900&dpi=192&waitMs=2000&css=%23tool-canvas%7Bdisplay%3Anone%7D&format=svg&cropSelector=.input-row%3Ahas%28%5Bdata-input-id%3D%22text%22%5D%29&walker=1&filename=at2-input-longtext)
 
 The three moment types (`date`, `time`, `datetime-local`) are real input types with real controls, but no tool in the open community set declares one, so there is no screenshot of them here.
 
@@ -201,7 +201,7 @@ A `blocks` input is a list of repeating sub-records (e.g. team members, each wit
 
 In the template, iterate with `{{#each people}}…{{/each}}`. The value round-trips to the URL as a JSON array (see `docs/url-mode.md`); very large lists outgrow a pasteable link - the shell auto-compresses long queries (the packed `z` form) and warns past ~2,000 chars, so share those states via a saved-state `slot` instead. Blocks are edited in a side panel, and clicking a rendered block on the canvas focuses that block's field. `meeting-planner` is the reference implementation for the simple (homogeneous) case.
 
-![The Slides tool's blocks input - each row is its own card of fields, carrying the row type as its label and an Add slide button below the stack](/t/url-shot?url=%2F%23%2Ftool%2Fslides&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=.blocks-input%5Bdata-input-id%3D%22deck%22%5D&filename=auth-blocks-rows)
+![The Slides tool's blocks input - each row is its own card of fields, carrying the row type as its label and an Add slide button below the stack](/t/url-shot?url=%2F%23%2Ftool%2Fslides&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=.blocks-input%5Bdata-input-id%3D%22deck%22%5D&walker=1&filename=auth-blocks-rows)
 
 **Advanced blocks (typed / heterogeneous rows).** Sub-fields aren't limited to `text` - a field may be `text`, `color`, `select`, `asset`, `number`, or `boolean`. And the row set can be **discriminated** by a `select` sub-field:
 
@@ -241,7 +241,7 @@ The value **stored** is the target row's *derived id* - `slug(value field)`, els
 
 A `blocks` input carrying a `canvas` object is the free-form WYSIWYG artboard behind `render.layout: "editor"` (see [The `render` block](#the-render-block)): its `*Field` keys map each row's geometry (`xField`/`yField`/`wField`/`hField`/`rotationField`, plus fill/text/image sub-fields) so the shell can mount its select / drag / resize / rotate overlay while the data stays a flat, URL-expressible array. The shell mounts the whole editor rail for you - add, arrange, undo and the primary export actions - so the manifest declares geometry fields and nothing else.
 
-![The free-canvas editor rail the shell mounts for an editor layout - add, arrange, undo and export, none of it declared by the manifest](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&css=.fc-toolbar%7Bopacity%3A1!important%7D&format=svg&cropSelector=.fc-toolbar&filename=auth-editor-rail)
+![The free-canvas editor rail the shell mounts for an editor layout - add, arrange, undo and export, none of it declared by the manifest](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&css=.fc-toolbar%7Bopacity%3A1!important%7D&format=svg&cropSelector=.fc-toolbar&walker=1&filename=auth-editor-rail)
 
 Three of the `canvas` keys turn a plain box canvas into a **diagram editor**:
 
@@ -287,7 +287,7 @@ Use `vector` when a few related numbers belong together - zoom + pan, an x/y off
 }
 ```
 
-![A vector control in Mesh Gradient - one labelled row of compact number fields you can drag to scrub or type into](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient&width=1440&height=900&dpi=192&waitMs=2000&css=%23tool-canvas%7Bdisplay%3Anone%7D&format=svg&cropSelector=.input-row%3Ahas%28.vector-input%5Bdata-input-id%3D%22pos1%22%5D%29&filename=auth-vector-control)
+![A vector control in Mesh Gradient - one labelled row of compact number fields you can drag to scrub or type into](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient&width=1440&height=900&dpi=192&waitMs=2000&css=%23tool-canvas%7Bdisplay%3Anone%7D&format=svg&cropSelector=.input-row%3Ahas%28.vector-input%5Bdata-input-id%3D%22pos1%22%5D%29&walker=1&filename=auth-vector-control)
 
 The value is an object keyed by field id, so the template reads each part with dot access: `{{imageFraming.zoom}}`, `{{imageFraming.x}}`, `{{imageFraming.y}}`. Each field clamps to its own `min`/`max` and falls back to its `default`.
 
@@ -311,7 +311,7 @@ An `asset` input opens the host's asset picker and stores the chosen `AssetRef` 
 
 `assetType` constrains what the picker offers: `raster` (bitmaps only), `vector` (SVG only - for inline-recolourable logos), `image` (**any still image - raster _or_ vector**, the right choice for a generic picture slot), `video`, `audio` (`audiogram` uses this), `lottie`, or `any` (everything, including non-image assets). Prefer `image` over `raster` for photo/illustration slots so users can also pick or upload SVGs.
 
-![The Image row in the Halftone filter - a thumbnail slot and a Choose asset button that opens the host's picker, with nothing about pickers in the manifest](/t/url-shot?url=%2F%23%2Ftool%2Ffilter-halftone&width=1440&height=900&dpi=192&waitMs=2000&css=%23tool-canvas%7Bdisplay%3Anone%7D&format=svg&cropSelector=.input-row%3Ahas%28.asset-picker-trigger%5Bdata-input-id%3D%22image%22%5D%29&filename=at2-input-asset-picker)
+![The Image row in the Halftone filter - a thumbnail slot and a Choose asset button that opens the host's picker, with nothing about pickers in the manifest](/t/url-shot?url=%2F%23%2Ftool%2Ffilter-halftone&width=1440&height=900&dpi=192&waitMs=2000&css=%23tool-canvas%7Bdisplay%3Anone%7D&format=svg&cropSelector=.input-row%3Ahas%28.asset-picker-trigger%5Bdata-input-id%3D%22image%22%5D%29&walker=1&filename=at2-input-asset-picker)
 
 When `allowUpload` is `true`, the picker offers the user's **personal image library** alongside the catalog. Users add images from their device; the host stores the bytes **verbatim** (a silent re-encode would break a Content Credential's hard binding) and only offers to downscale when a file is genuinely huge. Metadata stripping is a separate, opt-in user preference (*Strip metadata from uploads*, default off). The library is **not capped by count** - the only limit is the device's own storage, checked before each write - and it is reusable across tools and managed in **Profile → Storage → My images**. SVG uploads are sanitised on ingest (script/handler stripping) and pass through without rasterising.
 
@@ -325,7 +325,7 @@ A `file` input takes a file the user picks **into memory** and hands its raw byt
 
 With `layout: "canvas"` a single `file` input stops being a sidebar row and becomes the working area itself - the drop zone `strip-data` opens with.
 
-![Strip Hidden Data's canvas - a drag-and-drop file zone with a Choose a file button and the note that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=1800&format=svg&cropSelector=%23tool-content&filename=auth-file-input)
+![Strip Hidden Data's canvas - a drag-and-drop file zone with a Choose a file button and the note that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=1800&format=svg&cropSelector=%23tool-content&walker=1&filename=auth-file-input)
 
 ```json
 {
@@ -754,7 +754,7 @@ A tool's user-facing strings live in the manifest (English by default). To trans
 
 The same sidebar, opened with `?lang=de`: labels, help text and select options all come from the sidecar, and the tool code is untouched.
 
-![The QR tool's sidebar in German - every label, hint and dropdown option translated by the i18n sidecar](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Flang%3Dde%26url%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-inputs&filename=auth-tool-localized)
+![The QR tool's sidebar in German - every label, hint and dropdown option translated by the i18n sidecar](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Flang%3Dde%26url%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-inputs&walker=1&filename=auth-tool-localized)
 
 When a tool loads with a language set (the reserved `lang` URL/CLI param, or the user's profile language), the engine best-effort fetches the matching `i18n/<lang>.json` and merges it onto the manifest **before any shell or the input model sees it** - one overlay point, every shell (web, CLI, TUI) benefits. Anything missing - no sidecar, an absent key, a malformed file - falls back to the manifest's English, so a translation gap never breaks a tool load. Keys cover `name`, `description`, `a11yLabel`, per-input `label` / `help` / `placeholder` / `section` / `suffix` / `options.<value>` (block and vector sub-fields as `inputs.<id>.fields.<fieldId>.…`), and the walkthrough (`guide.title`, `guide.tracks.<id>.label` / `.note` / `.steps.<index>`). `validate:catalog` checks the keys, so a typo is caught at build time rather than silently ignored.
 
