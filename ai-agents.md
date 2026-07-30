@@ -82,7 +82,7 @@ A few tools won't hand back a file this way:
 
 Beyond building URLs by hand, Lolly ships an optional **[Model Context Protocol](https://modelcontextprotocol.io) server** - a native endpoint any MCP client (an agent runtime, an IDE, a CLI, a hosted assistant) connects to directly. It exposes the catalogue and the render path as callable tools, so an agent can discover a tool, fill its declared inputs, and get back a finished file plus an editable `lolly.tools` link - with no app update, because tools sync to the server as data.
 
-Five verbs:
+Six verbs:
 
 | Tool | Does |
 |---|---|
@@ -91,6 +91,7 @@ Five verbs:
 | `lolly_build_url` | Build a shareable, editable link + raw render URL - without rendering. |
 | `lolly_render` | Render a tool to a file (returns the bytes plus the editable link). |
 | `lolly_transform` | Run an on-device file utility (`strip-data`, `compress-pdf`) on a file you supply. |
+| `lolly_verify` | Verify a file's Content Credentials (C2PA) - the verdict, signer identity, edit history and embedded metadata. Checked in-process, never stored. |
 
 ### Any format, transparently
 
@@ -149,4 +150,4 @@ The MCP server is the one part of Lolly that is a **server-side add-on**, not an
 - **Validate against the schema** before emitting a URL; unknown params are ignored and bad input values fall back to defaults, so a malformed call fails quietly rather than loudly.
 - **Device-local images** (user uploads) can't travel in a URL - agents should reference catalog assets by id, not local uploads.
 - **One tool, many outputs:** change `format`/`unit`/`width` to emit the same design as SVG, print PDF, and social MP4 from one set of inputs.
-- **Portable embed URL:** an agent can emit `https://lolly.tools/tool/<id>.<ext>?<inputs>` (image extensions `png`, `jpg`, `jpeg`, `webp`, `svg`, plus animated `gif` and `apng`) and drop it straight into HTML as an `<img src=…>`. Inside the live web view it renders locally - nothing fetched. On the open web the same URL is served for real by `lolly.tools` for the browser-free formats (`svg` for every tool, `png` for SVG-native ones), so those links work as plain hot-linked images in READMEs and wikis - see [MCP Server](/info/mcp.html) for that endpoint's scope.
+- **Portable embed URL:** an agent can emit `https://lolly.tools/tool/<id>.<ext>?<inputs>` (image extensions `png`, `jpg`, `jpeg`, `webp`, `svg`, plus animated `gif` and `apng`) and drop it straight into HTML as an `<img src=…>`. Inside the live web view it renders locally - nothing fetched. On the open web the same URL is served for real by deployments that leave hot-link renders enabled - live on `lolly.art`, switched off on `lolly.tools` - for the browser-free formats (`svg` for every tool, `png` for SVG-native ones), so those links work as plain hot-linked images in READMEs and wikis - see [MCP Server](/info/mcp.html) for that endpoint's scope and current state.

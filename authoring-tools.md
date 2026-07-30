@@ -85,7 +85,7 @@ Most of what `render` declares surfaces in one place the user sees: the export p
 - `preview` - `{ format?, auto? }`. Marks a tool whose live canvas is a placeholder until an explicit, expensive render runs (e.g. a capture tool that screenshots a page in `beforeExport`); the shell wires a `[data-preview]` control. `auto: true` renders one frame on load. Used by `url-shot`.
 - `video` - `{ wait?, duration? }` (seconds; defaults `1` / `5`). Capture timing used when `webm`/`mp4`/`gif`/`apng` is in `formats` (`bag-video`).
 - `liveMaxEdge` - integer px. For `onFrame` (live camera) tools only: the requested longest edge of the working camera frame handed to the hook. The shell downscales the source camera to a small default that suits a vector trace, so a raster-output tool (`filter-pixel-stretch`) raises this for sharper output. The shell clamps it to the native camera frame - it never upscales - and to its own ceiling, and ignores it for tools without `onFrame`.
-- `c2pa` - defaults **`true`** (Content Credentials are **opt-out**). The **Content Credentials** card in the export popup is pre-checked for every stampable format (`pdf`, `png`/`apng`, `jpg`, `gif`, `svg`, `tiff`/`cmyk-tiff`, `webp`, zip members), so the finished file gets a signed C2PA manifest (on-device key, so viewers report it as an unverified credential). Set `false` to opt a tool out. Forced **off** for `privacy: "on-device"` tools, which must never embed provenance into a user's own file. A `?c2pa=` link/save value overrides this per export.
+- `c2pa` - defaults **`true`** (Content Credentials are **opt-out**). The **Content Credentials** card in the export popup is pre-checked for every stampable format (`pdf`, `png`/`apng`, `jpg`, `gif`, `svg`, `tiff`/`cmyk-tiff`, `webp`, `mp4`/`webm`, zip members), so the finished file gets a signed C2PA manifest (on-device key, so viewers report it as an unverified credential). Set `false` to opt a tool out. Forced **off** for `privacy: "on-device"` tools, which must never embed provenance into a user's own file. A `?c2pa=` link/save value overrides this per export.
 - `dims` - set `false` to hide the export dimension inputs in the download bar.
 - `aspectWarning` - `{ min?, max?, message }`. An **editor-only** amber caution shown in the Export popup when the chosen page aspect (`width ÷ height`) falls outside `[min, max]` (either bound optional). It's purely a guard against picking a size that breaks the layout - it never appears in the exported output. `multi-page-pdf` declares `{ "max": 1, "message": "…" }` (portrait-only).
 
@@ -166,7 +166,7 @@ A `blocks` input is a list of repeating sub-records (e.g. team members, each wit
 }
 ```
 
-In the template, iterate with `{{#each people}}…{{/each}}`. The value round-trips to the URL as a JSON array (see `docs/url-mode.md`); rows larger than ~8 KB fall back to saved-state slots. Blocks are edited in a side panel, and clicking a rendered block on the canvas focuses that block's field. `meeting-planner` is the reference implementation for the simple (homogeneous) case.
+In the template, iterate with `{{#each people}}…{{/each}}`. The value round-trips to the URL as a JSON array (see `docs/url-mode.md`); very large lists outgrow a pasteable link - the shell auto-compresses long queries (the packed `z` form) and warns past ~2,000 chars, so share those states via a saved-state `slot` instead. Blocks are edited in a side panel, and clicking a rendered block on the canvas focuses that block's field. `meeting-planner` is the reference implementation for the simple (homogeneous) case.
 
 ![The Slides tool's blocks input - each row is its own card of fields, carrying the row type as its label and an Add slide button below the stack](/t/url-shot?url=%2F%23%2Ftool%2Fslides&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=.blocks-input%5Bdata-input-id%3D%22deck%22%5D&filename=auth-blocks-rows)
 
@@ -271,12 +271,12 @@ An `asset` input opens the host's asset picker and stores the chosen `AssetRef` 
   "id": "logo",
   "type": "asset",
   "label": "Logo",
-  "assetType": "image",    // vector | raster | image | video | lottie | any - constrains the picker
+  "assetType": "image",    // vector | raster | image | video | audio | lottie | any - constrains the picker
   "allowUpload": true       // also let the user add an image from their device
 }
 ```
 
-`assetType` constrains what the picker offers: `raster` (bitmaps only), `vector` (SVG only - for inline-recolourable logos), `image` (**any still image - raster _or_ vector**, the right choice for a generic picture slot), `video`, `lottie`, or `any` (everything, including non-image assets). Prefer `image` over `raster` for photo/illustration slots so users can also pick or upload SVGs.
+`assetType` constrains what the picker offers: `raster` (bitmaps only), `vector` (SVG only - for inline-recolourable logos), `image` (**any still image - raster _or_ vector**, the right choice for a generic picture slot), `video`, `audio` (`audiogram` uses this), `lottie`, or `any` (everything, including non-image assets). Prefer `image` over `raster` for photo/illustration slots so users can also pick or upload SVGs.
 
 ![The Image row in the Halftone filter - a thumbnail slot and a Choose asset button that opens the host's picker, with nothing about pickers in the manifest](/t/url-shot?url=%2F%23%2Ftool%2Ffilter-halftone&width=1440&height=900&dpi=192&waitMs=2000&css=%23tool-canvas%7Bdisplay%3Anone%7D&format=svg&cropSelector=.input-row%3Ahas%28.asset-picker-trigger%5Bdata-input-id%3D%22image%22%5D%29&filename=at2-input-asset-picker)
 
@@ -433,7 +433,7 @@ END:VEVENT
 END:VCALENDAR
 ```
 
-Reference wirings: `meeting-planner`→ICS, `email-signature`→vCard, `chart-creator`→CSV. Raster (`png`/`jpg`/`webp`/`avif`/`gif`), `svg`, `pdf`, the print/CMYK formats (`pdf-cmyk`, `cmyk-tiff`), video (`webm`/`mp4`), `zip`, and `ico` come from the browser (web shell) or the Tauri-bundled CLI - the node CLI handles only text/data formats. The CMYK formats pair with the `convertPaths` outlining toggle (see [The `render` block](#the-render-block)) for fonts-not-installed print fidelity; `pdf-cmyk` ships on more tools than `cmyk-tiff` does (a subset) - e.g. `qr-code` offers both, while `wayfinding-signage` and `event-name-badge` ship `pdf-cmyk`.
+Reference wirings: `meeting-planner`→ICS, `email-signature`→vCard, `chart-creator`→CSV. Raster, `pdf`, video, `zip` and `ico` come from a browser engine - the web shell, the Tauri-bundled CLI, or the node CLI's raster tiers (resvg renders `png` from SVG-native tools browser-free; a scoped Chromium via `lolly install-browser` covers the rest) - while the node CLI writes `svg`/`emf`/`eps`/`eps-cmyk`/`dxf` and the text/data formats DOM-free. The CMYK formats pair with the `convertPaths` outlining toggle (see [The `render` block](#the-render-block)) for fonts-not-installed print fidelity; `pdf-cmyk` ships on more tools than `cmyk-tiff` does (a subset) - e.g. `qr-code` offers both, while `wayfinding-signage` and `event-name-badge` ship `pdf-cmyk`.
 
 ## Hooks (`hooks.js`)
 
@@ -730,7 +730,7 @@ When a tool loads with a language set (the reserved `lang` URL/CLI param, or the
 
 ## Example tools
 
-- `tools/color-palette/` - pure declarative, no inputs, asset reference only
+- `tools/color-palette/` - one input per simple type (`color`, `select`, `number`, `boolean`) with `onInit`/`onInput` deriving the palette - the tool shown in the input-types section above
 - `tools/qr-code/` - uses `hooks.js` (`onInit`/`onInput`/`beforeExport`) to encode the QR matrix; composed as an `svg` child by `event-name-badge`
 - `tools/quotes/` - multi-input form with `longtext`, `select`, and `asset` inputs with `allowUpload: true` (personal-image library)
 - `tools/meeting-planner/` - `blocks` input for repeating rows; `onInit`/`onInput` shaping; ICS data export

@@ -21,7 +21,7 @@ deployment that omits both is a fully working Lolly.
 |---|---|---|---|
 | Web shell | `/` (static files) | The app itself, served once, runs on-device | The app *is* this |
 | MCP endpoint | `/api/mcp` (and the hosted `mcp.lolly.tools`) | Lets AI agents discover and render tools over [MCP](https://modelcontextprotocol.io) | Yes — remove it and the app is unaffected |
-| Hot-link render | `GET /tool/<id>.<ext>` (part of the MCP function) | Renders a public catalogue tool from a plain URL — **public, unauthenticated by design** (public tool + catalogue data only; no Content Credentials) | Yes — disable with `LOLLY_DISABLE_RENDER_GET=1` |
+| Hot-link render | `GET /tool/<id>.<ext>` (part of the MCP function) | Renders a public catalogue tool from a plain URL — **public, unauthenticated by design** (public tool + catalogue data only; no Content Credentials) | Yes — **currently disabled on lolly.tools** (`LOLLY_DISABLE_RENDER_GET=1`, returns 404); live on the lolly.art demo instance |
 | MCP OAuth discovery | `/.well-known/oauth-authorization-server`, `/.well-known/oauth-protected-resource` (part of the MCP function) | Standard OAuth 2.1 metadata for MCP connector registration | Removed with the MCP endpoint |
 | CA service | `/api/ca` | Issues short-lived signing certificates so exports can carry a **verified identity** in their Content Credentials | Yes — without it, exports still sign, anonymously |
 

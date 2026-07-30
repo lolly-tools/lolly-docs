@@ -243,7 +243,7 @@ A workspace package. Runs three ways from one `handler.mjs`:
 | `GET /api/ca/root.pem` | The public Lolly root - for `c2patool --trust_anchors` and humans |
 | `GET /api/ca/auth/:provider?origin=` | Start OIDC (`suse` \| `github` \| `google`); sets HMAC state cookie, redirects to provider |
 | `GET /api/ca/callback/:provider` | Code exchange → verified email → mints a 10-min **enrollment token**; returns a tiny page that `postMessage`s the token to `origin` and closes |
-| `POST /api/ca/email/start` `{email}` | Magic link via Resend; the link lands on `/api/ca/email/verify` which finishes like a callback |
+| `POST /api/ca/email/start` `{email, origin, days?}` | Magic link via Resend; the link returns the user to the app (`/#/profile?enrollToken=…`), which finishes enrollment via the normal `POST /api/ca/enroll` PoP exchange |
 | `POST /api/ca/enroll` `{token, spki, pop, days?}` | Verify token HMAC+expiry, verify PoP (ECDSA over the token bytes with the presented SPKI), issue a leaf valid for `days` ∈ {7, 30, 90, 365} (anything else → `CA_CERT_DAYS`, capped at `CA_CERT_MAX_DAYS`) → `{cert, chain, identity, notAfter}` (PEM) |
 
 Notes:
@@ -276,7 +276,7 @@ Notes:
 | `CA_ALLOWED_ORIGINS` | Comma list, e.g. `https://lolly.tools,http://localhost:5173` |
 | `GITHUB_CLIENT_ID` / `GITHUB_CLIENT_SECRET` | GitHub OAuth app |
 | `GOOGLE_CLIENT_ID` / `GOOGLE_CLIENT_SECRET` | Google OAuth client (web) |
-| `SUSE_ISSUER` | `https://id.suse.com` (Okta OIDC discovery) |
+| `SUSE_ISSUER` | `https://id.suse.com` (Keycloak OIDC discovery) |
 | `SUSE_CLIENT_ID` / `SUSE_CLIENT_SECRET` | id.suse.com OIDC app |
 | `RESEND_API_KEY` / `EMAIL_FROM` | Email magic links |
 | `CA_DEV_FAKE_PROVIDER` | `1` only in local dev |
@@ -336,8 +336,8 @@ would 501.
      Scope used: `user:email`. Set `GITHUB_CLIENT_ID`/`SECRET`.
    - **Google** → console.cloud.google.com → Credentials → OAuth client
      (Web). Scopes: `openid email`. Set `GOOGLE_CLIENT_ID`/`SECRET`.
-   - **id.suse.com (Okta)** → your Okta admin → Applications → Create App
-     Integration → OIDC Web App. Scopes: `openid email`. Set `SUSE_ISSUER`
+   - **id.suse.com (Keycloak)** → your Keycloak admin → create an OIDC client
+     (Web). Scopes: `openid email profile`. Set `SUSE_ISSUER`
      (the issuer from the app's OIDC discovery), `SUSE_CLIENT_ID`/`SECRET`.
    - **Email** → resend.com API key + verified sender → `RESEND_API_KEY`,
      `EMAIL_FROM`.
@@ -356,9 +356,10 @@ would 501.
 4. **Deploy.** The CA lives at repo-root `api/ca/[...path].js` (a serverless
    function) importing `services/ca/` + `engine/src/x509.ts`; both are
    committed, and the platform compiles `api/` independently of the Vite build.
-   The app's catch-all rewrite `"/(.*)" → /index.html` is an *afterFiles*
-   rewrite, so `/api/ca/*` resolves to the function first - it is **not**
-   swallowed by the SPA fallback. Confirm it's live:
+   The app's catch-all rewrite `"/((?!api/).*)" → /index.html` excludes `/api/`
+   by pattern (and functions are served before rewrites anyway), so `/api/ca/*`
+   resolves to the function first - it is **not** swallowed by the SPA fallback.
+   Confirm it's live:
    `curl https://lolly.tools/api/ca/health` should return JSON
    (`{"ok":true,…}`), **not** the SPA's HTML. If it returns HTML, the function
    wasn't compiled - check the project's **root directory** setting is the repo

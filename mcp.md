@@ -19,11 +19,18 @@ Use the **full** endpoint (`mcp.lolly.tools`) unless you have a reason not to - 
 
 ## Hot-linkable render URLs (no auth)
 
-Alongside the authenticated MCP endpoints, `lolly.tools` answers the canonical embed URL directly:
+Alongside the authenticated MCP endpoints, a deployment can answer the canonical embed URL directly:
 
 ```
-GET https://lolly.tools/tool/<tool-id>.<ext>?<inputs>
+GET https://<host>/tool/<tool-id>.<ext>?<inputs>
 ```
+
+> **Where this is live.** The route is per-deployment. It is **switched off on
+> lolly.tools** (`LOLLY_DISABLE_RENDER_GET=1` - every such URL returns 404) until that
+> service moves to organisation-owned hosting, because a GET's query string lands in
+> the host's access logs and a link's inputs can carry personal data. It is
+> deliberately **live on lolly.art**, the public demo instance. The
+> [privacy policy](/info/privacy.html) explains the reasoning.
 
 This is the same "raw render URL" `lolly_build_url` returns - drop it into a README, wiki, Notion page or dashboard as an `<img src=…>` and it serves real bytes, no token needed. Its scope is deliberately narrow:
 
@@ -34,7 +41,7 @@ This is the same "raw render URL" `lolly_build_url` returns - drop it into a REA
 - Renders are **rate-limited per address**; heavy automation belongs on the MCP endpoints.
 - Responses are marked **`noindex`**, so search engines don't index your renders.
 
-Self-hosters who don't want a public render surface can switch the route off entirely with `LOLLY_DISABLE_RENDER_GET=1` - every `/tool/<id>.<ext>` URL then returns 404.
+Operators who don't want a public render surface switch the route off entirely with `LOLLY_DISABLE_RENDER_GET=1` - every `/tool/<id>.<ext>` URL then returns 404. That is what lolly.tools itself currently does.
 
 ## The six tools
 
