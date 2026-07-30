@@ -119,7 +119,7 @@ asset-export,pdf,,,suse/logo/hor-neg-green
 
 `--keep-going` renders past a failing row (otherwise the batch stops with a non-zero exit).
 
-## Smoke-test the catalog (`lolly smoke`)
+## Render-check the catalog (`lolly smoke`)
 
 ```bash
 npm run cli -- smoke                              # render EVERY tool at manifest defaults
