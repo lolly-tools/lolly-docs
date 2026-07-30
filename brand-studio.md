@@ -20,7 +20,7 @@ A **Save & continue** button appears the moment you change something and moves y
 
 **Deep-link a tab** with `#/start?tab=<key>`, where the keys are `logos`, `color` *(note the US spelling in the URL)*, `type`, `tokens`, and `catalogue`.
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&localize=1&filename=brand-studio)
+![The five-step tab rail - Logos, Colours, Type, Tokens and Catalogue, with step 1 active](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&filename=brand-studio)
 
 ## Logos
 
@@ -41,7 +41,7 @@ That's eight optional slots. Click a slot to add a PNG, SVG, JPEG, or WebP; clic
 
 The richest step. The left pane **derives and generates**; the right pane is your **live palette**. Drag the divider to resize.
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-colours)
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours)
 
 ### One colour, a whole palette
 

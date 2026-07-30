@@ -14,7 +14,7 @@ Lolly превръща твоите правила — цветове, типо�
 
 ### Започни от нулата (конструкторът на дизайн системи)
 
-![The Brand Studio start screen - name, primary colour, and a derived palette](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&localize=1&filename=brand-studio)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours)
 
 Първото стартиране те отвежда на екрана **Start** (`#/start`) — [**Brand Studio**](/info/brand-studio.html). Дай му име и основен цвят и Lolly *извежда* от тях пълна, достъпна палитра — светли/тъмни повърхности, текст, акценти — със същата цветова математика, която енджинът използва навсякъде другаде. Избери шрифт и имаш работещ бранд за по-малко от минута. Оттам петте раздела на студиото (Лога, Цветове, Типография, Токени, Каталог) ти позволяват да стигнеш докъдето пожелаеш — прецизирай всяка част по-късно, когато се върнеш. Винаги можеш да се върнеш тук от таблото (стига да не използваш заключена за бранд версия на Lolly)
 

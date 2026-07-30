@@ -39,6 +39,8 @@ preferences on your profile:
   step inside a tool, so the one place high-stimulus imagery appears is the one
   place you chose to work on it.
 
+![The Accessibility card on the profile page: four plain switches - Reduce motion, Hide colourful previews, High contrast and Large text - each with a help tip](/t/url-shot?url=%2F%23%2Fprofile&width=430&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&cropSelector=.profile-card--a11y&filename=incl-a11y-card)
+
 Alongside the preferences: controls carry accessible names and pressed states,
 changes are announced to screen readers, overlays close on Escape, keyboard
 focus is visible and strengthened further under high contrast, and every one of
@@ -65,6 +67,8 @@ opt-in:
   calm, sound rich" and the reverse are both real configurations, not a single
   accessibility bundle someone else composed for you.
 
+![A utility card on a phone-width screen: a calm icon and text tile that keeps its favourite, pin and info actions](/t/url-shot?url=%2F%23%2Fu&width=430&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&cropSelector=.gtile--utility%5Bdata-tool-id%5D&filename=incl-utility-card)
+
 ## Language and localization priority
 
 - Lolly's interface and documentation are translated into more than 25
@@ -80,6 +84,8 @@ opt-in:
 - The language menu lists every language in its own name and script, and can be
   ordered by speaker population, so finding yours never requires knowing its
   English name.
+
+![The appearance settings rendered in Arabic on a phone-width screen: a fully right-to-left layout, not a mirrored afterthought](/t/url-shot?url=%2F%23%2Fprofile%3Flang%3Dar&width=430&height=900&dpi=192&waitMs=1800&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&cropSelector=.profile-card--appearance&filename=incl-profile-rtl)
 
 ## Cultural inclusion
 

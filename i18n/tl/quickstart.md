@@ -14,7 +14,7 @@ Ang brand mo sa Lolly ay isang maliit na **design-tokens** na dokumento - mga ku
 
 ### Magsimula mula sa wala (ang wizard)
 
-![The Brand Studio start screen - name, primary colour, and a derived palette](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&localize=1&filename=brand-studio)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours)
 
 Sa unang pagbukas, dadalhin ka sa **Start** screen (`#/start`). Bigyan ito ng pangalan at isang primary na kulay at *kukunin* ng Lolly ang isang kumpleto at accessible na palette mula rito - light/dark surfaces, text, accents - gamit ang parehong colour maths na ginagamit ng engine sa lahat ng dako. Pumili ng font, at may gumaganang brand ka na sa loob ng wala pang isang minuto. Puwede mong pinuhin ang alinman dito sa ibang pagkakataon.
 

@@ -16,7 +16,7 @@ Your brand in Lolly is a small **design-tokens** document - colours, fonts, and 
 
 First run drops you on the **Start** screen (`#/start`) - the [**Brand Studio**](/info/brand-studio.html). Give it a name and a primary colour and Lolly *derives* a complete, accessible palette from it - light/dark surfaces, text, accents - using the same colour maths the engine uses everywhere else.
 
-![The Brand Studio start screen - name, primary colour, and a derived palette](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&localize=1&filename=brand-studio) Pick a font, and you have a working brand in under a minute. From there the studio's five tabs (Logos, Colours, Type, Tokens, Catalogue) let you take it as far as you like - refine any of it later, whenever you come back. You can always revisit this from the dashboard (provided you arent using a brand-locked version of lolly)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours) Pick a font, and you have a working brand in under a minute. From there the studio's five tabs (Logos, Colours, Type, Tokens, Catalogue) let you take it as far as you like - refine any of it later, whenever you come back. You can always revisit this from the dashboard (provided you arent using a brand-locked version of lolly)
 
 ### Import a brand you already have
 

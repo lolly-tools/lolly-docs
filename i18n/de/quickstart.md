@@ -14,7 +14,7 @@ Ihre Marke in Lolly ist ein kleines **Design-Tokens**-Dokument - Farben, Schrift
 
 ### Von Grund auf neu beginnen (der Assistent)
 
-![The Brand Studio start screen - name, primary colour, and a derived palette](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&localize=1&filename=brand-studio)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours)
 
 Beim ersten Start gelangen Sie auf den **Start**-Bildschirm (`#/start`). Geben Sie einen Namen und eine Primärfarbe ein, und Lolly *leitet* daraus eine vollständige, barrierefreie Palette ab - helle/dunkle Oberflächen, Text, Akzente - unter Verwendung derselben Farbmathematik, die die Engine überall sonst verwendet. Wählen Sie eine Schriftart, und Sie haben in weniger als einer Minute eine funktionierende Marke. Sie können später alles davon verfeinern.
 
