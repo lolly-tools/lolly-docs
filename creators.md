@@ -1,6 +1,6 @@
 # Lolly for Creators
 
-You want to make something good, quickly, and have it come out right. Lolly is built for exactly that: fill in a few fields, get a finished file - the layout, the type, the rules are enforced by the tool, not by your eye. No design software, no waiting. It runs on your own device and works offline.
+You want to make something good, quickly, and have it come out right. Lolly is built for exactly that: fill in a few fields, get a finished file - the layout, the type, the rules are enforced by the tool, not by your eye (unless you want to - then you have a media powerhouse at your fingertips). No design software, no waiting. It runs on your own device and works offline.
 
 **What's in it for you:** you ship in minutes and it looks like you spent hours. You're never stuck waiting on a designer, and because the brand rules are baked in, it's never your name on the off-brand asset. You just look fast, polished, and reliable.
 
@@ -16,6 +16,7 @@ This page tells you everything you need to know about getting the most out of Lo
 - **Infinite permutations.** Localise a card into a dozen languages, generate every size for every placement, swap a lockup across forty campaigns - all from one design, driven by a spreadsheet.
 - **It's yours, offline, private.** Your work stays on your device - no account needed, nothing uploaded to make or export an asset, no licence to audit. Close the laptop lid on a plane and keep working. (Two optional server add-ons exist and can be ignored entirely - see [Server Surface](/info/server-surface.html).)
 - **Open, not locked in.** The engine is open source and your work lives at plain URLs, not inside a vendor's database.
+- **Superpowers when you want them.** You never *have* to design - but the moment you decide to, the ceiling is high. Lay out pages freehand in Layout Studio. Cut clips, cards and music on a timeline in Sequence Studio. Record clean voice and camera takes with live coaching. Stand up an entire brand yourself, guided by a colour picker that tells you more about a colour than most design suites ever will.
 
 > **The constraints don't cage you - they catch you.** Think of the guard-rails as bumper lanes: you still throw the ball - the words, the image, the idea - and the code just keeps it out of the gutter so it can never break the brand. You're not being automated away; the tedious part is: the brand-checking, the re-exporting at every size, the hand-localizing into a dozen languages. What's left is the call that needed you. And the tool *you* author is what lets the rest of the company make good work without pulling you into every asset: your judgment, scaled.
 
