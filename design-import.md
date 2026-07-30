@@ -51,6 +51,17 @@ This is the point of importing rather than pasting a screenshot: the result is a
 
 An imported design exports exactly like a native one: **SVG, PDF, print CMYK PDF, CMYK TIFF, PNG, JPG, WebP** through the same deterministic pipeline - true page sizes and physical units, outlined type in vector output, [Content Credentials](/info/exporting.html) on every stampable format. The design's new home is its URL, so a once-off Figma file becomes a reproducible, parameter-addressable asset.
 
+## Frames become a video
+
+The same files open in **Sequence Studio** - and there the import means something different: **every frame becomes a scene on the timeline**. A Figma file's top-level frames, a Penpot file's boards, a PDF's pages - each arrives as its own timed clip, already playing through in order. From that first play-through you're in an ordinary sequence session: drag clips to reorder, trim and retime them, add a music bed, record a voiceover, drop text overlays on top, and export **MP4, WebM, GIF or APNG** through the same deterministic pipeline.
+
+Two ways in:
+
+- In **Sequence Studio**, open **Import a design** in the canvas toolbar and choose the file.
+- Drop the file anywhere on the gallery or dashboard and pick **Make a video from its frames**.
+
+Each frame is baked through Layout Studio's own renderer into a crisp vector still (text as outlines, images embedded), so scenes stay sharp at any export size and need no fonts at playback. A storyboard drawn in Penpot or Figma becomes a finished cut - titles, soundtrack, provenance and all - without a video editor in sight.
+
 ## From a one-off design to a reusable template
 
 This is where import stops being a conversion and starts being *authoring*. An imported layout is an ordinary [Layout Studio](/info/using.html) session, so it inherits everything a native session can do:
