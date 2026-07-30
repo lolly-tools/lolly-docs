@@ -14,7 +14,7 @@ Tvá značka v Lolly je malý dokument s **design tokeny** - barvy, písma a pá
 
 ### Začni od nuly (průvodce)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
 
 Při prvním spuštění se ocitneš na obrazovce **Start** (`#/start`). Zadej název a primární barvu a Lolly z nich *odvodí* kompletní, přístupnou paletu - světlé/tmavé plochy, text, akcenty - pomocí stejné barevné matematiky, kterou engine používá všude jinde. Vyber písmo a za necelou minutu máš funkční značku. Cokoli z toho můžeš kdykoli později doladit.
 
@@ -34,7 +34,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### Dolaď ji v aplikaci
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand)
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=dashboard-brand)
 
 Jakmile je značka aktivní, je editor **Tvá značka** na dashboardu (`#/d`) živý - změníš barvu nebo roli a každý náhled na stránce se aktualizuje při psaní. Stejná značka je shrnutá na kartě **Profil → Tvá značka**. Písma jsou opravdová: vyber si z Google Fonts a Lolly uloží soubor **na tvém zařízení** jako součást značky, takže tvé písmo funguje i offline a při renderování se nic nestahuje.
 
@@ -68,7 +68,7 @@ A tady je ten zisk: importované rozvržení je obyčejná relace Layout Studia,
 
 [Sada komunitních nástrojů](/info/builders.html) je open source a nezávislá na značce - QR kódy, mapy ulic, filtry, nástroje na ochranu soukromí - a jakmile ji aktivuješ, vykresluje se podle *tvé* značky.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
 
 Nástrojům můžeš dodat i svá vlastní otevřená data: vlož nebo přetáhni tabulku **CSV** nebo **JSON** a opakující se pole nástroje se z ní vyplní, jeden hotový výstup na řádek.
 

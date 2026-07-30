@@ -14,7 +14,7 @@ Lolly 會把你的規則——色彩、字體、版面、邏輯——轉換成�
 
 ### 從零開始（精靈工具）
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
 
 第一次執行時，你會進入**起始**畫面（`#/start`）。輸入名稱和主色，Lolly 就會*推導*出一套完整、無障礙的調色盤——涵蓋亮／暗背景色、文字色、強調色——所用的正是引擎在其他地方使用的同一套色彩運算。選一款字體，不到一分鐘就有一個可運作的品牌。之後你隨時可以再調整任何細節。
 
@@ -34,7 +34,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### 在應用程式中微調
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand)
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=dashboard-brand)
 
 品牌啟用後，儀表板的**你的品牌**編輯器（`#/d`）是即時編輯器——修改一個色彩或角色，頁面上所有預覽都會隨你輸入即時更新。同一個品牌也會摘要顯示在**個人檔案 → 你的品牌**卡片上。字體是真實的：從 Google Fonts 中挑選，Lolly 會把檔案當作品牌資產儲存**在你的裝置上**，讓你的字體排印能離線使用，渲染時也完全不需要向外抓取。
 
@@ -68,7 +68,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 [社群工具集](/info/builders.html)是開源、與品牌無關的——QR code、街道地圖、濾鏡、隱私工具——一旦你啟用品牌，它就會依*你的*品牌渲染。
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
 
 你也可以餵給工具你自己的開放資料：貼上或拖放一份 **CSV** 或 **JSON** 表格，工具的重複欄位就會依此填入，每一列產生一個完成的檔案。
 

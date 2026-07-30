@@ -14,7 +14,7 @@ Je merk in Lolly is een klein **design-tokens**-document - kleuren, lettertypen 
 
 ### Begin vanaf nul (de wizard)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
 
 Bij de eerste keer starten kom je op het **Start**-scherm (`#/start`) terecht. Geef het een naam en een primaire kleur, en Lolly *leidt* daar een compleet, toegankelijk kleurenpalet van af - light/dark-oppervlakken, tekst, accenten - met dezelfde kleurwiskunde die de engine overal elders gebruikt. Kies een lettertype en je hebt binnen een minuut een werkend merk. Je kunt alles later nog verfijnen.
 
@@ -34,7 +34,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### Verfijn het in de app
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand)
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=dashboard-brand)
 
 Zodra een merk actief is, is de **Your brand**-editor van het dashboard (`#/d`) een live editor - verander een kleur of een rol en elke preview op de pagina wordt bijgewerkt terwijl je typt. Hetzelfde merk wordt samengevat op de kaart **Profile → Your brand**. Lettertypen zijn echt: kies er een uit Google Fonts en Lolly slaat het bestand **op je apparaat** op als merkasset, zodat je typografie ook offline meegaat en er bij het renderen niets wordt opgehaald.
 
@@ -68,7 +68,7 @@ Dit is de beloning: een geïmporteerde lay-out is een gewone Layout Studio-sessi
 
 De [community-toolset](/info/builders.html) is open source en merk-onafhankelijk - QR-codes, plattegronden, filters, privacyhulpmiddelen - en rendert tegen *jouw* merk zodra je het activeert.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
 
 Voer tools ook met je eigen open data: plak of sleep een **CSV**- of **JSON**-tabel en de herhalende velden van een tool vullen zich daarmee, één afgewerkt bestand per rij.
 

@@ -14,7 +14,7 @@ Ang brand mo sa Lolly ay isang maliit na **design-tokens** na dokumento - mga ku
 
 ### Magsimula mula sa wala (ang wizard)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
 
 Sa unang pagbukas, dadalhin ka sa **Start** screen (`#/start`). Bigyan ito ng pangalan at isang primary na kulay at *kukunin* ng Lolly ang isang kumpleto at accessible na palette mula rito - light/dark surfaces, text, accents - gamit ang parehong colour maths na ginagamit ng engine sa lahat ng dako. Pumili ng font, at may gumaganang brand ka na sa loob ng wala pang isang minuto. Puwede mong pinuhin ang alinman dito sa ibang pagkakataon.
 
@@ -34,7 +34,7 @@ Tinatanggap ng `ingest:brand` ang lahat ng tatlong container kung saan ini-expor
 
 ### I-tune ito sa loob ng app
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand)
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=dashboard-brand)
 
 Kapag aktibo na ang isang brand, ang **Your brand** editor ng dashboard (`#/d`) ay isang live editor - palitan ang isang kulay o isang role at nag-a-update ang bawat preview sa pahina habang nagta-type ka. Ang parehong brand ay buod sa **Profile → Your brand** card. Totoo ang mga font: pumili mula sa Google Fonts at ise-store ng Lolly ang file **sa device mo** bilang isang brand asset, kaya nagbibiyahe ang typography mo kahit offline at wala nang kinukuha sa oras ng pag-render.
 
@@ -68,7 +68,7 @@ Ito ang bunga: ang na-import na layout ay isa lamang ordinaryong Layout Studio s
 
 Ang [koleksyon ng community tools](/info/builders.html) ay open source at brand-agnostic - QR code, street map, filter, privacy utilities - at nagre-render ito laban sa *iyong* brand sa sandaling i-activate mo ito.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
 
 Pakainin din ang mga tool ng sarili mong open data: i-paste o i-drop ang isang **CSV** o **JSON** table at pupunuin mula rito ang mga repeating fields ng isang tool, isang natapos na asset kada row.
 

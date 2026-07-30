@@ -10,7 +10,6 @@ Un ghid practic despre cum să *folosești* efectiv aplicația - deschiderea unu
 
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
-![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
 
 Ecranul de start este **galeria** - fiecare instrument, grupat pe categorii. Dă click pe un card pentru a deschide instrumentul; dacă ai mai lucrat la el, un buton **Continue** reia cea mai recentă sesiune. Folosește câmpul de căutare pentru a filtra după nume.
 
@@ -109,7 +108,7 @@ Când un instrument îți permite să adaugi o imagine de pe dispozitiv, aceasta
 
 ## Catalogul - biblioteca ta de resurse
 
-![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 **Catalogul** (`#/c`, sau link-ul **Catalogue** din meniu) adună tot ce pot folosi instrumentele tale - logo-uri de brand, imagini, audio și animație, grupate pe tipuri - și este locul unde trăiesc și **propriile tale fișiere creative**. Fără server, fără consolă de administrare, fără pull request: totul e pe dispozitivul tău.
 
@@ -119,7 +118,7 @@ Când un instrument îți permite să adaugi o imagine de pe dispozitiv, aceasta
 
 ### Ia-ți paleta și fonturile oriunde
 
-![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=96&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 Panoul **Swatches** al Catalogului nu e doar pentru referință - dă click pe o culoare pentru a o copia, sau **descarcă întreaga paletă de brand** în formatul pe care îl vorbește celălalt instrument al tău:
 

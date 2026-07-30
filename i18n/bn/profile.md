@@ -20,7 +20,7 @@
 
 এর কোনোটিই বাধ্যতামূলক নয়। একটি ফাঁকা প্রোফাইলও পুরোপুরি ভালো প্রোফাইল; আপনি শুধু ততটুকুই পূরণ করেন যা আপনার টাইপ করার শ্রম বাঁচায়।
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details)
 
 পছন্দসমূহই সেই একটা অংশ, যা বদলে দেয় অ্যাপটা আপনার দিকে কেমন দেখায়। থিম কার্ডগুলো লাইভ প্রিভিউ, আর আপনি একটা বাছার সঙ্গে সঙ্গেই সেটা প্রয়োগ হয় — শুধু এই ডিভাইসে।
 

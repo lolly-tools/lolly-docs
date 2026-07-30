@@ -10,7 +10,6 @@ Een praktische gids voor het daadwerkelijk *gebruiken* van de app - een tool ope
 
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
-![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
 
 Het startscherm is de **galerij** - elke tool, gegroepeerd per categorie. Klik op een kaart om de tool te openen; als je er eerder aan hebt gewerkt, hervat een **Doorgaan**-knop je meest recente sessie. Gebruik het zoekvak om op naam te filteren.
 
@@ -109,7 +108,7 @@ Wanneer een tool je een afbeelding vanaf je apparaat laat toevoegen, wordt deze 
 
 ## De Catalogus - je assetbibliotheek
 
-![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 De **Catalogus** (`#/c`, of de link **Catalogus** in het menu) verzamelt alles waar je tools uit kunnen putten - merklogo's, afbeeldingen, audio en beweging, gegroepeerd per soort - en het is ook waar je **eigen creatieve bestanden** leven. Geen server, geen adminconsole, geen pull request: alles staat op je apparaat.
 
@@ -119,7 +118,7 @@ De **Catalogus** (`#/c`, of de link **Catalogus** in het menu) verzamelt alles w
 
 ### Neem je palet en lettertypen overal mee naartoe
 
-![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=96&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 Het **Stalen**-paneel van de Catalogus is niet alleen ter referentie - klik op een kleur om hem te kopiëren, of **download het volledige merkpalet** in het formaat dat je andere tool spreekt:
 

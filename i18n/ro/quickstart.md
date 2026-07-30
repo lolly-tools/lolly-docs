@@ -14,7 +14,7 @@ Brandul tău în Lolly este un mic document de **design tokens** - culori, fontu
 
 ### Începe de la zero (asistentul)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
 
 Prima rulare te duce pe ecranul **Start** (`#/start`). Dă-i un nume și o culoare primară, iar Lolly *derivă* o paletă completă, accesibilă, din ea - suprafețe deschise/închise, text, accente - folosind aceeași matematică a culorii pe care motorul o folosește peste tot. Alege un font și ai un brand funcțional în mai puțin de un minut. Poți rafina orice mai târziu.
 
@@ -34,7 +34,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### Ajustează-l în aplicație
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand)
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=dashboard-brand)
 
 Odată ce un brand e activ, editorul **Brandul tău** din dashboard (`#/d`) este un editor live - schimbi o culoare sau un rol și fiecare previzualizare de pe pagină se actualizează pe măsură ce tastezi. Același brand este rezumat pe cardul **Profil → Brandul tău**. Fonturile sunt reale: alegi din Google Fonts, iar Lolly stochează fișierul **pe dispozitivul tău** ca resursă de brand, astfel încât tipografia ta călătorește offline și nimic nu este preluat la randare.
 
@@ -68,7 +68,7 @@ Iată câștigul: un layout importat este o sesiune obișnuită de Layout Studio
 
 [Setul de instrumente al comunității](/info/builders.html) este open source și agnostic de brand - coduri QR, hărți stradale, filtre, utilitare de confidențialitate - și randează pe baza brandului *tău* în momentul în care îl activezi.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
 
 Alimentează instrumentele și cu propriile tale date deschise: lipește sau trage un tabel **CSV** sau **JSON**, iar câmpurile repetitive ale unui instrument se completează din el, câte o resursă finită per rând.
 

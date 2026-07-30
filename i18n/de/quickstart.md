@@ -14,7 +14,7 @@ Ihre Marke in Lolly ist ein kleines **Design-Tokens**-Dokument - Farben, Schrift
 
 ### Von Grund auf neu beginnen (der Assistent)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
 
 Beim ersten Start gelangen Sie auf den **Start**-Bildschirm (`#/start`). Geben Sie einen Namen und eine Primärfarbe ein, und Lolly *leitet* daraus eine vollständige, barrierefreie Palette ab - helle/dunkle Oberflächen, Text, Akzente - unter Verwendung derselben Farbmathematik, die die Engine überall sonst verwendet. Wählen Sie eine Schriftart, und Sie haben in weniger als einer Minute eine funktionierende Marke. Sie können später alles davon verfeinern.
 
@@ -34,7 +34,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### In der App feinabstimmen
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand)
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=dashboard-brand)
 
 Sobald eine Marke aktiv ist, ist der Editor **Ihre Marke** im Dashboard (`#/d`) ein Live-Editor - ändern Sie eine Farbe oder eine Rolle, und jede Vorschau auf der Seite aktualisiert sich während der Eingabe. Dieselbe Marke wird auf der Karte **Profil → Ihre Marke** zusammengefasst. Schriftarten sind echt: Wählen Sie aus Google Fonts, und Lolly speichert die Datei **auf Ihrem Gerät** als Marken-Asset, sodass Ihre Typografie offline verfügbar bleibt und beim Rendern nichts abgerufen wird.
 
@@ -68,7 +68,7 @@ Und hier liegt der Gewinn: Ein importiertes Layout ist eine ganz normale Layout-
 
 Die [Community-Werkzeugsammlung](/info/builders.html) ist Open Source und markenunabhängig - QR-Codes, Stadtpläne, Filter, Datenschutz-Werkzeuge - und rendert gegen *Ihre* Marke, sobald Sie sie aktivieren.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
 
 Füttern Sie die Werkzeuge auch mit Ihren eigenen offenen Daten: Fügen Sie eine **CSV**- oder **JSON**-Tabelle ein oder legen Sie sie ab, und die sich wiederholenden Felder eines Werkzeugs werden daraus befüllt - ein fertiges Asset pro Zeile.
 

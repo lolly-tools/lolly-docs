@@ -10,7 +10,6 @@ Praktický průvodce tím, jak aplikaci opravdu *používat* - otevření nástr
 
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
-![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
 
 Domovská obrazovka je **galerie** - všechny nástroje, seskupené podle kategorie. Klikni na kartu, čímž nástroj otevřeš; pokud jsi na něm už dřív pracoval/a, tlačítko **Pokračovat** obnoví tvou poslední relaci. Vyhledávací pole použij k filtrování podle názvu.
 
@@ -109,7 +108,7 @@ Když ti nástroj umožní přidat obrázek z tvého zařízení, zmenší se, z
 
 ## Katalog - tvoje knihovna assetů
 
-![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 **Katalog** (`#/c`, nebo odkaz **Katalog** v nabídce) shromažďuje všechno, z čeho tvé nástroje mohou čerpat - brandová loga, obrázky, audio a pohyb, seskupené podle druhu - a je to zároveň místo, kde žijí i tvoje **vlastní kreativní soubory**. Žádný server, žádná administrátorská konzole, žádný pull request: všechno je na tvém zařízení.
 
@@ -119,7 +118,7 @@ Když ti nástroj umožní přidat obrázek z tvého zařízení, zmenší se, z
 
 ### Vezmi si svou paletu a písma kamkoli
 
-![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=96&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 Panel **Vzorky** v Katalogu není jen pro referenci - klikni na barvu a zkopíruj ji, nebo **stáhni celou brandovou paletu** ve formátu, kterým mluví tvůj druhý nástroj:
 

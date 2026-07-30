@@ -10,7 +10,6 @@ Panduan praktikal untuk *menggunakan* aplikasi ini - membuka alat, bekerja denga
 
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
-![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
 
 Skrin utama ialah **galeri** - setiap alat, dikumpulkan mengikut kategori. Klik kad untuk membuka alat; jika anda pernah menggunakannya sebelum ini, butang **Sambung** akan menyambung semula sesi terkini anda. Gunakan kotak carian untuk menapis mengikut nama.
 
@@ -109,7 +108,7 @@ Apabila sesuatu alat membenarkan anda menambah imej daripada peranti anda, ia ak
 
 ## Katalog - pustaka aset anda
 
-![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 **Katalog** (`#/c`, atau pautan **Katalog** dalam menu) mengumpulkan segala yang boleh digunakan oleh alat anda - logo jenama, imej, audio, dan gerakan (motion), dikumpulkan mengikut jenis - dan di situ jugalah **fail kreatif anda sendiri** disimpan. Tiada pelayan, tiada konsol pentadbir, tiada pull request: semuanya pada peranti anda.
 
@@ -119,7 +118,7 @@ Apabila sesuatu alat membenarkan anda menambah imej daripada peranti anda, ia ak
 
 ### Bawa palet dan fon anda ke mana-mana
 
-![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=96&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 Panel **Swatches** Katalog bukan sekadar untuk rujukan - klik warna untuk menyalinnya, atau **muat turun keseluruhan palet jenama** dalam format yang difahami oleh alat anda yang lain:
 

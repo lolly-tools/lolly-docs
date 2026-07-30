@@ -24,7 +24,7 @@
 
 這些都不是必填的。空白的個人資料本身就相當合用；你只需要填寫能省下打字功夫的部分。
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details)
 
 ## 個人資料是一種情境，而不只是一個人
 

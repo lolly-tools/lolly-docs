@@ -20,7 +20,7 @@
 
 Нищо от това не е задължително. Празният профил е напълно добър профил; попълваш само това, което ти спестява писане.
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details)
 
 Предпочитанията са единствената част, която променя как приложението изглежда за теб. Картите с теми са живи прегледи и се прилагат в момента, в който избереш някоя — само на това устройство.
 

@@ -24,7 +24,7 @@ Ang Preferences ang tanging bahaging nagbabago sa kung paano ka tinitingnan paba
 
 Wala sa mga ito ang required. Ang blangkong profile ay perpektong profile pa rin; punan mo lang ang mga bagay na makakatipid sa iyo ng pag-type.
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details)
 
 ## Ang profile ay isang konteksto, hindi lang isang tao
 

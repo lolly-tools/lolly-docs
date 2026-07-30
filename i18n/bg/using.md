@@ -10,7 +10,6 @@
 
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
-![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
 
 Началният екран е **галерията** — всички инструменти, групирани по категории. Кликни върху карта, за да отвориш инструмента; ако си работил по него преди, бутонът **Продължи** възобновява най-скорошната ти сесия. Използвай полето за търсене, за да филтрираш по име.
 
@@ -109,7 +108,7 @@
 
 ## Каталогът — твоята библиотека с активи
 
-![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 **Каталогът** (`#/c`, или връзката **Каталог** в менюто) събира всичко, от което инструментите ти могат да черпят — лога на марката, изображения, аудио и анимации, групирани по вид — и там живеят и **собствените ти творчески файлове**. Без сървър, без административна конзола, без pull request: всичко е на твоето устройство.
 
@@ -119,7 +118,7 @@
 
 ### Вземи палитрата и шрифтовете си навсякъде
 
-![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=96&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 Панелът **Мостри** в Каталога не е само за справка — кликни върху цвят, за да го копираш, или **изтегли цялата палитра на марката** във формата, който говори другият ти инструмент:
 

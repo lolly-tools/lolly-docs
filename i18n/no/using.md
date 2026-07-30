@@ -10,7 +10,6 @@ En praktisk guide til å faktisk *bruke* appen - åpne et verktøy, jobbe med ca
 
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
-![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
 
 Hjemskjermen er **galleriet** - alle verktøy, gruppert etter kategori. Klikk på et kort for å åpne verktøyet; hvis du har jobbet med det før, gjenopptar en **Fortsett**-knapp din siste økt. Bruk søkefeltet for å filtrere etter navn.
 
@@ -109,7 +108,7 @@ Når et verktøy lar deg legge til et bilde fra enheten din, skaleres det ned, s
 
 ## Katalogen - ressursbiblioteket ditt
 
-![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 **Katalogen** (`#/c`, eller lenken **Katalog** i menyen) samler alt verktøyene dine kan hente fra - merkevarelogoer, bilder, lyd og bevegelse, gruppert etter type - og det er også der dine **egne kreative filer** bor. Ingen server, ingen adminkonsoll, ingen pull request: alt er på enheten din.
 
@@ -119,7 +118,7 @@ Når et verktøy lar deg legge til et bilde fra enheten din, skaleres det ned, s
 
 ### Ta med paletten og skrifttypene dine hvor som helst
 
-![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=96&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 Katalogens **Fargeprøver**-panel er ikke bare til referanse - klikk på en farge for å kopiere den, eller **last ned hele merkevarepaletten** i formatet det andre verktøyet ditt snakker:
 

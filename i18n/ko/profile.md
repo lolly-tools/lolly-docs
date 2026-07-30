@@ -24,7 +24,7 @@
 
 이 중 어느 것도 필수가 아니에요. 빈 프로필도 완전히 정상적인 프로필이에요. 타이핑을 줄여주는 항목만 채우면 돼요.
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details)
 
 ## 프로필은 사람이 아니라 맥락이에요
 

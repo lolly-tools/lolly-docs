@@ -14,7 +14,7 @@ Tu marca en Lolly es un pequeño documento de **tokens de diseño** -colores, ti
 
 ### Empezar desde cero (el asistente)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
 
 La primera vez que abres la app aterrizas en la pantalla **Start** (`#/start`). Dale un nombre y un color primario, y Lolly *deriva* una paleta completa y accesible a partir de él -superficies claras/oscuras, texto, acentos- usando las mismas matemáticas de color que usa el motor en todas partes. Elige una tipografía y tendrás una marca funcional en menos de un minuto. Podrás afinar cualquier detalle más adelante.
 
@@ -34,7 +34,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### Ajústala en la app
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand)
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=dashboard-brand)
 
 Una vez activa una marca, el editor **Tu marca** del panel (`#/d`) es un editor en vivo - cambia un color o un rol y cada vista previa de la página se actualiza mientras escribes. La misma marca se resume en la tarjeta **Perfil → Tu marca**. Las tipografías son reales: elige entre Google Fonts y Lolly guarda el archivo **en tu dispositivo** como recurso de marca, así que tu tipografía viaja sin conexión y nada se descarga en el momento de renderizar.
 
@@ -68,7 +68,7 @@ Aquí está la recompensa: un diseño importado es una sesión normal de Layout 
 
 El [conjunto de herramientas de la comunidad](/info/builders.html) es de código abierto y agnóstico de marca -códigos QR, mapas de calles, filtros, utilidades de privacidad- y se renderiza contra *tu* marca en cuanto la activas.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
 
 Alimenta las herramientas también con tus propios datos abiertos: pega o suelta una tabla **CSV** o **JSON** y los campos repetibles de una herramienta se rellenan a partir de ella, un recurso terminado por fila.
 

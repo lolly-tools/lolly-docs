@@ -41,7 +41,7 @@ That's eight optional slots. Click a slot to add a PNG, SVG, JPEG, or WebP; clic
 
 The richest step. The left pane **derives and generates**; the right pane is your **live palette**. Drag the divider to resize.
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours)
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
 
 ### One colour, a whole palette
 
@@ -101,7 +101,7 @@ The floating pill at the bottom of the palette pane downloads the whole palette 
 
 Two doors, in this order. **Your fonts** takes font files off your own machine - upload a TTF, OTF or WOFF and it stays on this device, available to every tool and every export. That is the path for a licensed corporate typeface you already own. Below it, **Google Fonts** covers anything you don't: add **any Google Font** and it downloads to this device once. Either way the face is rendered in the app, your tools and every export, offline forever, and carried in your brand pack - nothing is fetched at render time.
 
-![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=png&filename=brand-type)
+![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&filename=brand-type)
 
 Search a family (Inter, Fraunces, Space Grotesk…), and **Add font**. Each font in the list can take a role:
 
@@ -118,7 +118,7 @@ Headings, italic and code each fall back to the primary until you assign them, s
 
 The rest of the design system, editable without touching code:
 
-![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=png&filename=brand-tokens)
+![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&filename=brand-tokens)
 
 - **Rounded corners** - a single radius slider (0–1.5rem) that cards, buttons, and panels across the app follow.
 - **More tokens** - add and edit **spacing**, **sizing**, **stroke width**, **opacity**, **rotation**, plain **numbers**, and **shadows**. Pick a type, name it (*Gutter, Card shadow…*), and set its value. These are stored as standard [design tokens](/info/design-tokens.html) (DTCG) and travel with your brand.

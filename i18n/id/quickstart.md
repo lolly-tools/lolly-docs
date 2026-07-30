@@ -14,7 +14,7 @@ Brand Anda di Lolly adalah sebuah dokumen **design-tokens** kecil - warna, font,
 
 ### Mulai dari nol (pembuat Design System)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
 
 Saat pertama dijalankan, Anda dibawa ke layar **Start** (`#/start`) - [**Brand Studio**](/info/brand-studio.html). Beri nama dan sebuah warna utama, lalu Lolly *menurunkan* palet yang lengkap dan aksesibel darinya - permukaan terang/gelap, teks, aksen - memakai matematika warna yang sama yang dipakai engine di mana pun. Pilih sebuah font, dan Anda punya brand yang berfungsi dalam waktu kurang dari satu menit. Dari sana, lima tab studio (Logo, Warna, Tipografi, Token, Katalog) memungkinkan Anda mengembangkannya sejauh yang Anda mau - perhalus bagian mana pun nanti, kapan pun Anda kembali. Anda selalu bisa membuka ini lagi dari dasbor (asalkan Anda tidak memakai versi Lolly dengan brand terkunci)
 
@@ -34,7 +34,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### Sesuaikan di dalam aplikasi
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand)
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=dashboard-brand)
 
 Setelah sebuah brand aktif, teruslah membentuknya di [**Brand Studio**](/info/brand-studio.html) (`#/start`) - ubah sebuah warna atau peran dan setiap pratinjau di seluruh aplikasi ikut diperbarui saat Anda mengetik. (Tab **Design system** di dasbor pada `#/d` *menampilkan* brand secara hanya-baca; Studio adalah tempat Anda menyuntingnya.) Brand yang sama diringkas pada kartu **Profil → Brand Anda**. Font-nya nyata: pilih dari Google Fonts dan Lolly menyimpan berkasnya **di perangkat Anda** sebagai aset brand, sehingga tipografi Anda ikut offline dan tidak ada yang diambil saat render.
 
@@ -68,7 +68,7 @@ Inilah hasilnya: tata letak yang diimpor adalah sesi Layout Studio biasa, jadi b
 
 [Kumpulan tool komunitas](/info/builders.html) bersifat sumber terbuka dan tidak terikat brand - kode QR, peta jalan, filter, utilitas privasi - dan semuanya di-render sesuai brand *Anda* begitu Anda mengaktifkannya.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
 
 Berikan pula data terbuka Anda sendiri kepada tool: tempel atau letakkan tabel **CSV** atau **JSON** dan kolom berulang sebuah tool akan terisi darinya, satu aset jadi per baris.
 

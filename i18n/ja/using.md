@@ -10,7 +10,6 @@
 
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
-![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
 
 ホーム画面は**ギャラリー**です — すべてのツールがカテゴリー別にまとめられています。カードをクリックするとツールが開きます。以前に作業したことがある場合は、**Continue** ボタンで直近のセッションを再開できます。検索ボックスで名前による絞り込みができます。
 
@@ -109,7 +108,7 @@
 
 ## Catalogue — あなたのアセットライブラリ
 
-![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 **Catalogue**（`#/c`、またはメニューの **Catalogue** リンク）は、ツールが利用できるすべて——ブランドロゴ、画像、音声、モーションを種類ごとにまとめたもの——を集めた場所であり、あなた**自身のクリエイティブファイル**が置かれる場所でもあります。サーバーも、管理コンソールも、プルリクエストも不要です。すべてがお使いのデバイス上にあります。
 
@@ -119,7 +118,7 @@
 
 ### パレットとフォントをどこへでも
 
-![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=96&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 Catalogue の **Swatches** パネルは、単なる参照用ではありません——色をクリックしてコピーしたり、他のツールが扱える形式で**ブランドパレット全体をダウンロード**したりできます。
 

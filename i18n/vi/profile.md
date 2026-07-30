@@ -24,7 +24,7 @@ Tùy chọn là phần duy nhất làm thay đổi cách ứng dụng hiện ra 
 
 Không có mục nào là bắt buộc. Một hồ sơ trống vẫn là một hồ sơ hoàn toàn tốt; bạn chỉ cần điền những gì giúp bạn đỡ phải gõ lại.
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details)
 
 ## Hồ sơ là một bối cảnh, không chỉ là một con người
 

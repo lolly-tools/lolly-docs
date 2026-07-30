@@ -14,7 +14,7 @@ Lolly에서 브랜드는 색상, 폰트, 몇 가지 규칙으로 이루어진 �
 
 ### 처음부터 시작하기(디자인 시스템 빌더)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
 
 처음 실행하면 **Start** 화면(`#/start`) — [**Brand Studio**](/info/brand-studio.html) — 이 나와요. 이름과 기본 색상을 입력하면 Lolly가 엔진이 다른 곳에서도 쓰는 것과 똑같은 색상 수학으로 라이트/다크 표면, 텍스트, 강조색까지 갖춘 완전하고 접근성 있는 팔레트를 *도출*해줘요. 폰트를 고르면 1분도 안 돼 바로 쓸 수 있는 브랜드가 완성돼요. 여기서부터는 스튜디오의 다섯 개 탭(Logos, Colours, Type, Tokens, Catalogue)으로 원하는 만큼 더 다듬을 수 있고, 언제든 다시 돌아와서 손볼 수 있어요. 브랜드가 잠긴 버전의 Lolly를 쓰고 있지 않다면, 대시보드에서 언제든 이 화면으로 다시 돌아올 수 있어요.
 
@@ -34,7 +34,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### 앱에서 다듬기
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand)
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=dashboard-brand)
 
 브랜드가 활성화된 뒤에도 [**Brand Studio**](/info/brand-studio.html)(`#/start`)에서 계속 다듬을 수 있어요 — 색상이나 역할을 바꾸면 앱 전체의 미리보기가 입력하는 대로 바로 업데이트돼요. (대시보드의 **Design system** 탭(`#/d`)은 브랜드를 읽기 전용으로 *보여주기만* 해요. 편집은 Studio에서 해요.) 같은 브랜드가 **프로필 → Your brand** 카드에도 요약돼서 나와요. 폰트는 실제 파일이에요. Google Fonts에서 고르면 Lolly가 그 파일을 브랜드 에셋으로 **기기에** 저장하기 때문에, 타이포그래피가 오프라인에서도 그대로 유지되고 렌더링할 때 아무것도 새로 내려받지 않아요.
 
@@ -68,7 +68,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 [커뮤니티 도구 세트](/info/builders.html)는 오픈소스이고 브랜드에 종속되지 않아요 — QR 코드, 시가지 지도, 필터, 프라이버시 유틸리티 등이 있어요 — 그리고 브랜드를 활성화하는 순간 그 브랜드에 맞춰 렌더링돼요.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
 
 직접 가진 열린 데이터도 도구에 먹일 수 있어요. **CSV**나 **JSON** 표를 붙여넣거나 끌어다 놓으면 도구의 반복 필드가 거기서 채워지고, 행마다 완성된 에셋이 하나씩 나와요.
 

@@ -10,7 +10,6 @@ Ein praktischer Leitfaden zur tatsächlichen *Nutzung* der App - ein Tool öffne
 
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
-![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
 
 Der Startbildschirm ist die **Galerie** - jedes Tool, nach Kategorie gruppiert. Klicken Sie auf eine Karte, um das Tool zu öffnen; wenn Sie zuvor schon damit gearbeitet haben, setzt eine Schaltfläche **Fortsetzen** Ihre letzte Sitzung fort. Verwenden Sie das Suchfeld, um nach Namen zu filtern.
 
@@ -109,7 +108,7 @@ Wenn ein Tool Ihnen erlaubt, ein Bild von Ihrem Gerät hinzuzufügen, wird es ve
 
 ## Der Katalog - Ihre Asset-Bibliothek
 
-![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 Der **Katalog** (`#/c` oder der Link **Katalog** im Menü) sammelt alles, worauf Ihre Tools zurückgreifen können - Markenlogos, Bilder, Audio und Bewegtbild, nach Art gruppiert - und hier liegen auch Ihre **eigenen kreativen Dateien**. Kein Server, keine Admin-Konsole, kein Pull Request: alles liegt auf Ihrem Gerät.
 
@@ -119,7 +118,7 @@ Der **Katalog** (`#/c` oder der Link **Katalog** im Menü) sammelt alles, worauf
 
 ### Nehmen Sie Ihre Palette und Schriften überallhin mit
 
-![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=96&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 Das **Farbfelder**-Panel des Katalogs dient nicht nur als Referenz - klicken Sie auf eine Farbe, um sie zu kopieren, oder **laden Sie die gesamte Markenpalette herunter** in dem Format, das Ihr anderes Tool spricht:
 
