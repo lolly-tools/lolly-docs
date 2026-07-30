@@ -14,7 +14,7 @@ Ditt varumärke i Lolly är ett litet **designtokens**-dokument - färger, typsn
 
 ### Börja från grunden (guiden)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
 
 Första gången landar du på skärmen **Start** (`#/start`). Ge den ett namn och en primärfärg så *härleder* Lolly en komplett, tillgänglig palett från den - ljusa/mörka ytor, text, accenter - med samma färgmatematik som motorn använder överallt annars. Välj ett typsnitt, så har du ett fungerande varumärke på under en minut. Du kan finjustera allt senare.
 
@@ -34,7 +34,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### Finjustera i appen
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand)
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=dashboard-brand)
 
 När ett varumärke är aktivt är instrumentpanelens redigerare **Ditt varumärke** (`#/d`) en direktredigerare - ändra en färg eller en roll och varje förhandsvisning på sidan uppdateras medan du skriver. Samma varumärke sammanfattas på kortet **Profil → Ditt varumärke**. Typsnitt är riktiga: välj från Google Fonts och Lolly lagrar filen **på din enhet** som en varumärkestillgång, så din typografi fungerar offline och inget hämtas vid rendering.
 
@@ -68,7 +68,7 @@ Här är vinsten: en importerad layout är en vanlig Layout Studio-session, så 
 
 [Community-verktygssamlingen](/info/builders.html) är öppen källkod och varumärkesoberoende - QR-koder, stadskartor, filter, integritetsverktyg - och den renderar mot *ditt* varumärke i samma stund du aktiverar den.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
 
 Mata verktygen med din egen öppna data också: klistra in eller släpp en **CSV**- eller **JSON**-tabell så fylls ett verktygs repeterande fält från den, en färdig tillgång per rad.
 

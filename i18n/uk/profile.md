@@ -20,7 +20,7 @@
 
 Нічого з цього не є обов'язковим. Порожній профіль — цілком нормальний профіль; ви заповнюєте лише те, що заощадить вам набір тексту.
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details)
 
 Налаштування — єдина частина, яка змінює те, як застосунок виглядає для вас. Картки тем — це живі попередні перегляди, і вони застосовуються в мить, коли ви обираєте одну з них, лише на цьому пристрої.
 

@@ -10,7 +10,6 @@
 
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
-![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
 
 হোম স্ক্রিনটি হলো **গ্যালারি** — প্রতিটি টুল, ক্যাটেগরি অনুযায়ী দলবদ্ধ। টুলটি খুলতে একটি কার্ডে ক্লিক করুন; আপনি যদি আগে এটি নিয়ে কাজ করে থাকেন, একটি **Continue** বোতাম আপনার সবচেয়ে সাম্প্রতিক সেশনটি আবার শুরু করে। নাম অনুযায়ী ফিল্টার করতে সার্চ বক্স ব্যবহার করুন।
 
@@ -109,7 +108,7 @@
 
 ## Catalogue — আপনার অ্যাসেট লাইব্রেরি
 
-![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 **Catalogue** (`#/c`, বা মেনুতে থাকা **Catalogue** লিঙ্ক) আপনার টুলগুলো যা কিছুতে ভর দিতে পারে সবকিছু একত্র করে — ব্র্যান্ড লোগো, ছবি, অডিও এবং মোশন, ধরন অনুযায়ী দলবদ্ধ — এবং এখানেই আপনার **নিজের সৃজনশীল ফাইল**গুলোও থাকে। কোনো সার্ভার নেই, কোনো অ্যাডমিন কনসোল নেই, কোনো পুল রিকোয়েস্ট নেই: সবকিছুই আপনার ডিভাইসে।
 
@@ -119,7 +118,7 @@
 
 ### আপনার প্যালেট এবং ফন্ট যেকোনো জায়গায় নিয়ে যান
 
-![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=96&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 Catalogue-এর **Swatches** প্যানেল কেবল রেফারেন্সের জন্য নয় — একটি রং কপি করতে সেটিতে ক্লিক করুন, বা আপনার অন্য টুল যে ফরম্যাটে কথা বলে সেই ফরম্যাটে **গোটা ব্র্যান্ড প্যালেট ডাউনলোড করুন**:
 

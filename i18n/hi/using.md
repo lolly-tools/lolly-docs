@@ -10,7 +10,6 @@
 
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
-![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
 
 होम स्क्रीन ही **गैलरी** है — हर टूल, श्रेणी के अनुसार समूहित। किसी कार्ड पर क्लिक करें और टूल खुल जाता है; अगर आपने उस पर पहले काम किया है, तो **Continue** बटन आपका सबसे हालिया सेशन फिर से शुरू कर देता है। नाम से फ़िल्टर करने के लिए सर्च बॉक्स का उपयोग करें।
 
@@ -109,7 +108,7 @@
 
 ## कैटलॉग — आपकी एसेट लाइब्रेरी
 
-![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 **कैटलॉग** (`#/c`, या मेन्यू में **Catalogue** लिंक) वह सब कुछ एक जगह इकट्ठा करता है जिस पर आपके टूल काम कर सकते हैं — ब्रांड लोगो, इमेज, ऑडियो और मोशन, प्रकार के अनुसार समूहित — और आपकी **अपनी क्रिएटिव फ़ाइलें** भी यहीं रहती हैं। न कोई सर्वर, न एडमिन कंसोल, न पुल रिक्वेस्ट: सब कुछ आपके डिवाइस पर है।
 
@@ -119,7 +118,7 @@
 
 ### अपना पैलेट और फ़ॉन्ट कहीं भी ले जाएँ
 
-![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=96&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 कैटलॉग का **Swatches** पैनल सिर्फ़ देखने भर के लिए नहीं है — किसी रंग पर क्लिक करके उसे कॉपी करें, या **पूरा ब्रांड पैलेट** उस फ़ॉर्मैट में **डाउनलोड करें** जिसे आपका दूसरा टूल समझता है:
 

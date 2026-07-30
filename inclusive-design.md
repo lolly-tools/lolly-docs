@@ -26,15 +26,15 @@ Beyond following the platform's own signals (system dark mode, the OS
 reduced-motion preference), Lolly ships explicit, opt-in accessibility
 preferences on your profile:
 
-- **Reduce motion** turns off transitions, slides and animated flourishes in the
+- <!--i:pause--> **Reduce motion** turns off transitions, slides and animated flourishes in the
   app, and combines with (never overrides) your operating system's setting.
   Animated exports keep moving exactly as designed.
-- **High contrast** strengthens borders, text and focus rings around your work.
+- <!--i:sunburst--> **High contrast** strengthens borders, text and focus rings around your work.
   Your brand colours and canvas stay exactly as you set them.
-- **Large text** grows the app's type and icon glyphs without reflowing your
+- <!--i:font--> **Large text** grows the app's type and icon glyphs without reflowing your
   designs, so what you export is byte-identical.
-- **Hide colourful previews** swaps the gallery's preview artwork for calm icon
-  and text cards, and softens project thumbnails to a single brand hue so they
+- <!--i:eyeoff--> **Hide colourful previews** swaps the gallery's preview artwork for calm icon
+  and text cards, and softens project thumbnails, halving their colour and contrast, so they
   stay recognisable without the colour noise. Full colour returns the moment you
   step inside a tool, so the one place high-stimulus imagery appears is the one
   place you chose to work on it.
@@ -54,16 +54,16 @@ overwhelmed by a wall of colourful thumbnails on a hard day may seek strong
 sensory input on another, so Lolly accommodates in both directions, always
 opt-in:
 
-- **Turning it down.** Reduce motion and Hide colourful previews strip the
+- <!--i:moon--> **Turning it down.** Reduce motion and Hide colourful previews strip the
   interface back to icons, text and one accent colour. Navigation stays busy-free
   for people with ADHD, autistic people and dyslexic people who find dense,
   high-variance imagery hard to scan; nothing you need (favourites, pinning,
   actions) is taken away in the calmer presentation.
-- **Turning it up.** Neurospicy Mode is a deliberate sensory layer - focus
+- <!--i:neurobeat--> **Turning it up.** Neurospicy Mode is a deliberate sensory layer - focus
   loops, an atmosphere mixer with individually levelled ambient beds, procedural
   music and interface sound effects - for people who focus best with rich input.
   It is off by default and never auto-plays before you ask.
-- **Sound is separable.** Every audible layer has its own switch, so "visuals
+- <!--i:sliders--> **Sound is separable.** Every audible layer has its own switch, so "visuals
   calm, sound rich" and the reverse are both real configurations, not a single
   accessibility bundle someone else composed for you.
 
@@ -71,17 +71,17 @@ opt-in:
 
 ## Language and localization priority
 
-- Lolly's interface and documentation are translated into more than 25
+- <!--i:globe--> Lolly's interface and documentation are translated into more than 25
   languages, and we **prioritise languages by how many people speak them**, not
   by market revenue - Hindi, Bengali, Urdu and Indonesian arrived in the same
   waves as French and German.
-- Right-to-left scripts are first-class: Arabic ships with full RTL layout, not
+- <!--i:convert--> Right-to-left scripts are first-class: Arabic ships with full RTL layout, not
   a mirrored afterthought.
-- Languages are distinct, not interchangeable: Indonesian and Malay are separate
+- <!--i:layers--> Languages are distinct, not interchangeable: Indonesian and Malay are separate
   catalogs, Traditional and Simplified Chinese are separate catalogs, and the
   language attribute is set before first paint so Han characters and script
   fallbacks render correctly for your language, not a lookalike.
-- The language menu lists every language in its own name and script, and can be
+- <!--i:checklist--> The language menu lists every language in its own name and script, and can be
   ordered by speaker population, so finding yours never requires knowing its
   English name.
 
@@ -89,31 +89,31 @@ opt-in:
 
 ## Cultural inclusion
 
-- The neutral starting brand assumes nothing about who you are; Lolly exists so
+- <!--i:palette--> The neutral starting brand assumes nothing about who you are; Lolly exists so
   your own identity, palette and type replace ours in minutes.
-- Type is treated as a cultural surface: uploaded and Google fonts are shaped
+- <!--i:pentool--> Type is treated as a cultural surface: uploaded and Google fonts are shaped
   with proper text shaping across scripts, so names, diacritics and non-Latin
   text export as correctly drawn outlines rather than tofu or substitutions.
-- Copy avoids idioms and culture-bound references that translate poorly, and
+- <!--i:people--> Copy avoids idioms and culture-bound references that translate poorly, and
   translators receive clean, bare strings rather than sentences with markup
   fragments baked in.
 
 ## Ethical commitments
 
-- **Privacy by architecture.** Your work stays on your device. There are no
+- <!--i:lock--> **Privacy by architecture.** Your work stays on your device. There are no
   trackers or analytics in the codebase, and the few network touchpoints are
   enumerated in the [Privacy Policy](/info/privacy.html). Accessibility and
   language preferences are stored in your own profile, on your device - a
   disability or a language is never telemetry.
-- **Honest provenance.** Exports can carry Content Credentials, and
+- <!--i:shieldcheck--> **Honest provenance.** Exports can carry Content Credentials, and
   AI-generated content is labelled as such. We believe audiences deserve to know
   how media was made, and creators deserve tools that can prove their work is
   theirs.
-- **No dark patterns.** Preferences are plain switches that do what they say,
+- <!--i:check--> **No dark patterns.** Preferences are plain switches that do what they say,
   defaults are dormant until you choose them, and platform conventions (native
   scrolling, browser shortcuts, standard dialogs) are respected rather than
   hijacked.
-- **Open source.** The engine, shells and community tools are public. Every
+- <!--i:code--> **Open source.** The engine, shells and community tools are public. Every
   claim in this document is checkable in the source, and several are enforced by
   tests that fail the build when broken - the additive-by-default rule for
   accessibility attributes, the ban on preferences reaching exports, and the

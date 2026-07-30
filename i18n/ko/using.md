@@ -10,7 +10,6 @@
 
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
-![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
 
 홈 화면은 **갤러리**예요 — 모든 도구가 카테고리별로 묶여 있어요. 카드를 클릭하면 도구가 열려요. 예전에 작업한 적이 있으면 **Continue** 버튼으로 가장 최근 세션을 이어서 열 수 있어요. 검색창으로 이름을 기준으로 필터링할 수 있어요.
 
@@ -109,7 +108,7 @@
 
 ## Catalogue — 내 에셋 라이브러리
 
-![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 **Catalogue**(`#/c`, 또는 메뉴의 **Catalogue** 링크)는 도구가 활용할 수 있는 모든 것 — 브랜드 로고, 이미지, 오디오, 모션 — 을 종류별로 모아둔 곳이고, **직접 만든 창작 파일**도 여기에 함께 있어요. 서버도, 관리 콘솔도, 풀 리퀘스트도 필요 없어요. 모든 게 기기 안에 있어요.
 
@@ -119,7 +118,7 @@
 
 ### 팔레트와 폰트를 어디서나 쓰기
 
-![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=96&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 Catalogue의 **Swatches** 패널은 단순히 참고용이 아니에요 — 색상을 클릭해서 복사하거나, 다른 도구가 이해하는 포맷으로 **브랜드 팔레트 전체를 다운로드**할 수 있어요.
 

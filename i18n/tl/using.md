@@ -10,7 +10,6 @@ Isang praktikal na gabay sa aktwal na *paggamit* ng app - pagbukas ng tool, pagg
 
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
-![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
 
 Ang home screen ay ang **gallery** - lahat ng tool, naka-grupo ayon sa kategorya. I-click ang isang card para buksan ang tool; kung nagtrabaho ka na dito dati, ire-resume ng **Continue** button ang pinakabagong session mo. Gamitin ang search box para mag-filter ayon sa pangalan.
 
@@ -109,7 +108,7 @@ Kapag pinapayagan ka ng isang tool na magdagdag ng imahe mula sa device mo, ito 
 
 ## Ang Catalogue - ang iyong asset library
 
-![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 Tinitipon ng **Catalogue** (`#/c`, o ang **Catalogue** link sa menu) ang lahat ng maaaring gamitin ng iyong mga tool - mga brand logo, imahe, audio, at motion, naka-grupo ayon sa uri - at dito rin nabubuhay ang iyong **sariling mga creative file**. Walang server, walang admin console, walang pull request: nasa device mo lang ang lahat.
 
@@ -119,7 +118,7 @@ Tinitipon ng **Catalogue** (`#/c`, o ang **Catalogue** link sa menu) ang lahat n
 
 ### Dalhin ang iyong palette at fonts kahit saan
 
-![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=96&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 Ang **Swatches** panel ng Catalogue ay hindi lang para sa reference - i-click ang isang kulay para kopyahin ito, o **i-download ang buong brand palette** sa format na sinasalita ng iyong ibang tool:
 

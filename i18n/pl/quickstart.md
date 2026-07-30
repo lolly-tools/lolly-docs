@@ -14,7 +14,7 @@ Twoja marka w Lolly to niewielki dokument **design tokens** - kolory, czcionki i
 
 ### Zacznij od zera (kreator design systemu)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
 
 Pierwsze uruchomienie przenosi cię na ekran **Start** (`#/start`) - [**Brand Studio**](/info/brand-studio.html). Nadaj nazwę i podaj kolor podstawowy, a Lolly *wyprowadzi* z niego kompletną, dostępną paletę - jasne/ciemne powierzchnie, tekst, akcenty - używając tej samej matematyki kolorów, której silnik używa wszędzie indziej. Wybierz czcionkę i masz działającą markę w niecałą minutę. Stamtąd pięć zakładek studia (Loga, Kolory, Typografia, Tokeny, Katalog) pozwala rozwinąć ją tak daleko, jak chcesz - dopracujesz dowolny element później, kiedy tylko wrócisz. Zawsze możesz wrócić do tego z panelu głównego (o ile nie używasz wersji Lolly z zablokowaną marką).
 
@@ -34,7 +34,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### Dostrój ją w aplikacji
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand)
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=dashboard-brand)
 
 Gdy marka jest już aktywna, kształtuj ją dalej w [**Brand Studio**](/info/brand-studio.html) (`#/start`) - zmień kolor lub rolę, a każdy podgląd w całej aplikacji zaktualizuje się w trakcie pisania. (Zakładka **Design system** w panelu głównym pod `#/d` *pokazuje* markę tylko do odczytu; edytujesz ją w Studio.) Ta sama marka jest podsumowana na karcie **Profil → Twoja marka**. Czcionki są prawdziwe: wybierz z Google Fonts, a Lolly przechowa plik **na twoim urządzeniu** jako zasób marki, dzięki czemu twoja typografia działa offline i nic nie jest pobierane w czasie renderowania.
 
@@ -68,7 +68,7 @@ Oto korzyść: zaimportowany układ to zwykła sesja Layout Studio, więc gdy go
 
 [Zestaw narzędzi społecznościowych](/info/builders.html) jest open source i niezależny od marki - kody QR, mapy ulic, filtry, narzędzia do prywatności - i renderuje się względem *twojej* marki w chwili, gdy ją aktywujesz.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
 
 Nakarm narzędzia także własnymi otwartymi danymi: wklej lub upuść tabelę **CSV** albo **JSON**, a powtarzalne pola narzędzia wypełnią się z niej, dając jeden gotowy zasób na wiersz.
 

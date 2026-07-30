@@ -14,7 +14,7 @@ Jenama anda dalam Lolly ialah dokumen **token reka bentuk** yang kecil - warna, 
 
 ### Mula dari kosong (wizard)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
 
 Kali pertama anda menjalankannya, anda akan dibawa ke skrin **Start** (`#/start`). Berikan ia satu nama dan satu warna utama, dan Lolly akan *menghasilkan* palet yang lengkap dan mudah diakses daripadanya - permukaan terang/gelap, teks, aksen - menggunakan matematik warna yang sama yang digunakan oleh enjin di semua tempat lain. Pilih satu fon, dan anda akan mempunyai jenama yang berfungsi dalam masa kurang seminit. Anda boleh memperhalusi mana-mana bahagiannya kemudian.
 
@@ -34,7 +34,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### Laraskan dalam aplikasi
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand)
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=dashboard-brand)
 
 Setelah jenama diaktifkan, editor **Your brand** di dashboard (`#/d`) merupakan editor langsung - tukar satu warna atau satu peranan dan setiap pratonton pada halaman akan dikemas kini semasa anda menaip. Jenama yang sama diringkaskan pada kad **Profile → Your brand**. Fon adalah sebenar: pilih daripada Google Fonts dan Lolly menyimpan fail tersebut **pada peranti anda** sebagai aset jenama, jadi tipografi anda kekal tersedia luar talian dan tiada apa-apa yang diambil semasa merender.
 
@@ -68,7 +68,7 @@ Inilah ganjarannya: susun atur yang diimport adalah sesi Layout Studio biasa, ja
 
 [Set alat komuniti](/info/builders.html) adalah sumber terbuka dan tidak terikat kepada mana-mana jenama - kod QR, peta jalan, penapis, utiliti privasi - dan ia merender mengikut jenama *anda* sebaik sahaja anda mengaktifkannya.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
 
 Suapkan juga data terbuka anda sendiri ke alat: tampal atau jatuhkan jadual **CSV** atau **JSON** dan medan berulang sesuatu alat akan diisi daripadanya, satu aset siap bagi setiap baris.
 

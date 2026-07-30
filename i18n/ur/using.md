@@ -10,7 +10,6 @@
 
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
-![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
 
 ہوم اسکرین **گیلری** ہے — ہر ٹول، زمرے کے حساب سے گروپ کیا گیا۔ ٹول کھولنے کے لیے کسی کارڈ پر کلک کریں؛ اگر آپ اس پر پہلے کام کر چکے ہیں، تو **جاری رکھیں** بٹن آپ کے تازہ ترین سیشن کو دوبارہ شروع کر دیتا ہے۔ نام کے حساب سے فلٹر کرنے کے لیے سرچ باکس استعمال کریں۔
 
@@ -109,7 +108,7 @@
 
 ## کیٹلاگ — آپ کی اثاثہ لائبریری
 
-![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 **کیٹلاگ** (`#/c`، یا مینو میں **کیٹلاگ** لنک) وہ سب کچھ جمع کرتا ہے جس پر آپ کے ٹولز انحصار کر سکتے ہیں — برانڈ لوگو، تصاویر، آڈیو، اور موشن، قسم کے حساب سے گروپ — اور یہ وہ جگہ بھی ہے جہاں آپ کی **اپنی تخلیقی فائلیں** رہتی ہیں۔ کوئی سرور نہیں، کوئی ایڈمن کنسول نہیں، کوئی پل ریکویسٹ نہیں: یہ سب آپ کے آلے پر ہے۔
 
@@ -119,7 +118,7 @@
 
 ### اپنا پیلیٹ اور فونٹس کہیں بھی لے جائیں
 
-![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=96&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 کیٹلاگ کا **سواچز** پینل صرف حوالے کے لیے نہیں ہے — کسی رنگ کو کاپی کرنے کے لیے اس پر کلک کریں، یا اس فارمیٹ میں **پورا برانڈ پیلیٹ ڈاؤن لوڈ کریں** جو آپ کا دوسرا ٹول بولتا ہے:
 

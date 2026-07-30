@@ -14,7 +14,7 @@ Lolly میں آپ کا برانڈ ایک چھوٹا سا **design-tokens** دس�
 
 ### شروع سے آغاز کریں (ڈیزائن سسٹم بلڈر)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
 
 پہلی بار چلانے پر آپ **Start** اسکرین (`#/start`) پر پہنچتے ہیں — [**Brand Studio**](/info/brand-studio.html)۔ اسے ایک نام اور ایک بنیادی رنگ دیں اور Lolly اس سے ایک مکمل، قابلِ رسائی پیلیٹ *اخذ* کرتا ہے — روشن/تاریک سطحیں، متن، ایکسنٹس — وہی کلر ریاضی استعمال کرتے ہوئے جو انجن ہر جگہ استعمال کرتا ہے۔ ایک فونٹ چنیں، اور ایک منٹ سے بھی کم میں آپ کے پاس ایک کارآمد برانڈ ہے۔ وہاں سے اسٹوڈیو کے پانچ ٹیبز (لوگو، رنگ، ٹائپ، ٹوکنز، کیٹلاگ) آپ کو اسے جتنا چاہیں آگے لے جانے دیتے ہیں — بعد میں جب بھی واپس آئیں، اس کے کسی بھی حصے کو بہتر بنائیں۔ آپ اسے ہمیشہ ڈیش بورڈ سے دوبارہ دیکھ سکتے ہیں (بشرطیکہ آپ Lolly کا برانڈ-لاکڈ ورژن استعمال نہ کر رہے ہوں)
 
@@ -34,7 +34,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### ایپ میں اسے ٹیون کریں
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand)
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=dashboard-brand)
 
 ایک بار برانڈ فعال ہو جائے، تو اسے [**Brand Studio**](/info/brand-studio.html) (`#/start`) میں شکل دیتے رہیں — کوئی رنگ یا کردار بدلیں اور جیسے جیسے آپ ٹائپ کرتے ہیں پوری ایپ میں ہر پیش منظر اپ ڈیٹ ہوتا ہے۔ (ڈیش بورڈ کا **ڈیزائن سسٹم** ٹیب `#/d` پر برانڈ کو صرف پڑھنے کے لیے *دکھاتا* ہے؛ اسٹوڈیو وہ جگہ ہے جہاں آپ اسے ترمیم کرتے ہیں۔) وہی برانڈ **پروفائل → آپ کا برانڈ** کارڈ پر خلاصہ کیا جاتا ہے۔ فونٹس حقیقی ہیں: Google Fonts میں سے چنیں اور Lolly فائل کو ایک برانڈ اثاثے کے طور پر **آپ کے ڈیوائس پر** محفوظ کرتا ہے، تاکہ آپ کی ٹائپوگرافی آف لائن ساتھ چلے اور رینڈر کے وقت کچھ حاصل نہ کیا جائے۔
 
@@ -68,7 +68,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 [کمیونٹی ٹول سیٹ](/info/builders.html) اوپن سورس اور برانڈ سے آزاد ہے — QR کوڈز، اسٹریٹ میپس، فلٹرز، پرائیویسی یوٹیلیٹیز — اور جیسے ہی آپ اسے فعال کرتے ہیں یہ *آپ کے* برانڈ کے مقابل رینڈر کرتا ہے۔
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
 
 ٹولز کو اپنا کھلا ڈیٹا بھی فراہم کریں: کوئی **CSV** یا **JSON** ٹیبل پیسٹ کریں یا ڈراپ کریں اور ایک ٹول کے دہرائے جانے والے خانے اس سے بھر جاتے ہیں، فی قطار ایک تیار اثاثہ۔
 

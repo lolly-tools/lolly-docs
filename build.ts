@@ -492,13 +492,23 @@ function mdToHtml(md: string) {
       !lines[i]!.trim().startsWith('```');
 
     if (/^\s*[-*] /.test(line)) {
-      out.push('<ul>');
+      // Buffered so the <ul> can learn whether any item carried an icon marker.
+      const items: string[] = [];
+      let anyIcon = false;
       while (i < lines.length && /^\s*[-*] /.test(lines[i]!)) {
         const item = [lines[i]!.replace(/^\s*[-*] /, '')]; i++;
         while (itemContinues()) { item.push(lines[i]!.trim()); i++; }
-        out.push(`<li>${inline(item.join(' '))}</li>`);
+        let text = item.join(' ');
+        // `<!--i:key-->` opens the bullet with a doc icon (invisible on GitHub).
+        const im2 = /^<!--i:([a-z-]+)-->\s*/.exec(text);
+        const iconSvg = im2 ? docIcon(im2[1]!) : '';
+        if (im2) text = text.slice(im2[0].length);
+        if (iconSvg) {
+          anyIcon = true;
+          items.push(`<li class="ic"><span class="li-icon">${iconSvg}</span><span>${inline(text)}</span></li>`);
+        } else items.push(`<li>${inline(text)}</li>`);
       }
-      out.push('</ul>'); continue;
+      out.push(`<ul${anyIcon ? ' class="icon-list"' : ''}>`, ...items, '</ul>'); continue;
     }
 
     if (/^\d+\. /.test(line)) {
@@ -630,6 +640,41 @@ function siteIcon(key: string): string {
   const svg = SITE_ICONS[key];
   if (!svg) console.warn(`⚠  docs/site: unknown icon key "${key}"`);
   return svg ?? '';
+}
+
+// ── Per-bullet icons for policy/doc pages (the `<!--i:key-->` list marker) ────
+// A bullet may open with an HTML-comment marker `<!--i:lock-->` — invisible on
+// GitHub and in the .md twins — which mdToHtml maps to an inline SVG here and a
+// `.icon-list` layout. Aliases reuse the maps above; the rest are path strings
+// lifted from shells/web/src/lib/icons.ts (the app's own glyphs, so the doc and
+// the product agree on iconography). All stroke currentColor → theme-safe.
+const DOC_ICON_S = `fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"`;
+const DOC_ICONS: Record<string, string> = {
+  pause:      `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>`,
+  sunburst:   `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>`,
+  font:       `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>`,
+  moon:       `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>`,
+  neurobeat:  `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><path d="M2 12h3l2-7 4 18 3-14 2 7h6"/></svg>`,
+  convert:    `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>`,
+  checklist:  `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><path d="M9 6h11M9 12h11M9 18h11"/><path d="m3 6 1.3 1.3L6.5 5"/><path d="m3 12 1.3 1.3 2.2-2.3"/><path d="m3 18 1.3 1.3 2.2-2.3"/></svg>`,
+  palette:    `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>`,
+  pentool:    `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"/><path d="m2.3 2.3 7.286 7.286"/><circle cx="11" cy="11" r="2"/></svg>`,
+  eyeoff:     '', // aliased below
+  sliders: '', lock: '', layers: '', globe: '', people: '', shieldcheck: '', check: '', code: '',
+};
+DOC_ICONS.eyeoff = SITE_ICONS.assureEyeOff!;
+DOC_ICONS.sliders = BICONS.sliders;
+DOC_ICONS.lock = BICONS.lock;
+DOC_ICONS.layers = BICONS.layers;
+DOC_ICONS.globe = SITE_ICONS.surfaceWeb!;
+DOC_ICONS.people = SITE_ICONS.toolFeaturePeople!;
+DOC_ICONS.shieldcheck = SITE_ICONS.importPointShield!;
+DOC_ICONS.check = SITE_ICONS.assureCheck!;
+DOC_ICONS.code = SITE_ICONS.toolFeatureCode!;
+function docIcon(key: string): string {
+  const svg = DOC_ICONS[key];
+  if (!svg) { console.warn(`⚠  unknown doc bullet icon "${key}"`); return ''; }
+  return svg;
 }
 
 // ── Landing page special renderer ─────────────────────────────────────────────
@@ -1576,6 +1621,12 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .docs-sidebar a{display:block;padding:.3rem .5rem;font-size:.875rem;color:var(--text);border-radius:5px}
 .docs-sidebar a:hover{color:var(--green);background:var(--pale);text-decoration:none}
 .docs-sidebar a.active{color:var(--green);font-weight:600;background:var(--pale)}
+/* Icon bullet lists (the <!--i:key--> md marker — policy pages). Logical
+   properties so the Arabic build mirrors correctly. */
+.docs-content ul.icon-list{list-style:none;padding-inline-start:0;display:flex;flex-direction:column;gap:.9rem}
+.docs-content ul.icon-list>li.ic{display:flex;align-items:flex-start;gap:.75rem}
+.li-icon{flex-shrink:0;width:1.35rem;height:1.35rem;margin-top:.2rem;color:var(--green)}
+.li-icon svg{width:100%;height:100%;display:block}
 .docs-content{padding:6rem 3.5rem;min-width:0}
 .docs-content img{height:auto;    max-width: min(100%, 40em);    height: auto;   margin: 0 auto; display: block;}
 /* App screenshots (docs/shots.json captures) read at full column width, framed like a window. */

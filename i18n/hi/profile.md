@@ -20,7 +20,7 @@
 
 इनमें से कुछ भी अनिवार्य नहीं है। खाली प्रोफ़ाइल भी पूरी तरह अच्छी प्रोफ़ाइल है; आप बस वही भरते हैं जिससे आपकी टाइपिंग बचे।
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details)
 
 प्राथमिकताएँ वही एक हिस्सा हैं जो बदलती हैं कि ऐप आपको कैसा दिखता है। थीम कार्ड लाइव प्रीव्यू हैं और जिस पल आप कोई चुनते हैं, वह लागू हो जाता है — सिर्फ़ इस डिवाइस पर।
 

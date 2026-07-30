@@ -20,7 +20,7 @@
 
 ان میں سے کوئی چیز لازمی نہیں۔ خالی پروفائل بھی بالکل ٹھیک پروفائل ہے؛ آپ صرف وہی بھرتے ہیں جو آپ کو ٹائپنگ سے بچائے۔
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=profile-details)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details)
 
 ترجیحات ہی وہ ایک حصہ ہیں جو یہ بدلتی ہیں کہ ایپ آپ کو کیسا دکھائی دیتا ہے۔ تھیم کارڈز لائیو پری ویو ہیں اور جس لمحے آپ کوئی چنتے ہیں وہ لاگو ہو جاتا ہے — صرف اِسی ڈیوائس پر۔
 

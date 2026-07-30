@@ -16,7 +16,7 @@ Your brand in Lolly is a small **design-tokens** document - colours, fonts, and 
 
 First run drops you on the **Start** screen (`#/start`) - the [**Brand Studio**](/info/brand-studio.html). Give it a name and a primary colour and Lolly *derives* a complete, accessible palette from it - light/dark surfaces, text, accents - using the same colour maths the engine uses everywhere else.
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours) Pick a font, and you have a working brand in under a minute. From there the studio's five tabs (Logos, Colours, Type, Tokens, Catalogue) let you take it as far as you like - refine any of it later, whenever you come back. You can always revisit this from the dashboard (provided you arent using a brand-locked version of lolly)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours) Pick a font, and you have a working brand in under a minute. From there the studio's five tabs (Logos, Colours, Type, Tokens, Catalogue) let you take it as far as you like - refine any of it later, whenever you come back. You can always revisit this from the dashboard (provided you arent using a brand-locked version of lolly)
 
 ### Import a brand you already have
 
@@ -36,7 +36,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 Once a brand is active, keep shaping it in the [**Brand Studio**](/info/brand-studio.html) (`#/start`) - change a colour or a role and every preview across the app updates as you type. (The dashboard's **Design system** tab at `#/d` *shows* the brand read-only; the Studio is where you edit it.)
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand) The same brand is summarised on the **Profile → Your brand** card. Fonts are real: pick from Google Fonts and Lolly stores the file **on your device** as a brand asset, so your typography travels offline and nothing is fetched at render time.
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=dashboard-brand) The same brand is summarised on the **Profile → Your brand** card. Fonts are real: pick from Google Fonts and Lolly stores the file **on your device** as a brand asset, so your typography travels offline and nothing is fetched at render time.
 
 When you're happy, **export the brand as a `LollyBrand` pack** - a single file a colleague can import to get the exact same palette, fonts, and rules. That's how a brand moves between people and machines without a server in the middle.
 
@@ -70,7 +70,7 @@ Here's the payoff: an imported layout is an ordinary Layout Studio session, so o
 
 The [community tool set](/info/builders.html) is open source and brand-agnostic - QR codes, street maps, filters, privacy utilities - and it renders against *your* brand the moment you activate it.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
 
 Feed tools your own open data too: paste or drop a **CSV** or **JSON** table and a tool's repeating fields fill from it, one finished asset per row.
 

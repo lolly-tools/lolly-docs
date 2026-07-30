@@ -10,7 +10,6 @@ Một hướng dẫn thực tế về việc *sử dụng* ứng dụng - mở m
 
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
-![A tool's split view - controls on one side, the live canvas on the other](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&format=png&localize=1&filename=tool-qr-code)
 
 Màn hình chính là **gallery** - nơi liệt kê mọi công cụ, được nhóm theo danh mục. Nhấp vào một thẻ để mở công cụ đó; nếu bạn đã từng làm việc với nó trước đây, nút **Continue** sẽ khôi phục phiên làm việc gần nhất của bạn. Dùng ô tìm kiếm để lọc theo tên.
 
@@ -109,7 +108,7 @@ Khi một công cụ cho phép bạn thêm ảnh từ thiết bị, ảnh đó s
 
 ## Catalogue - thư viện tài sản của bạn
 
-![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=192&waitMs=1600&format=png&localize=1&filename=catalogue)
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=1600&format=png&localize=1&filename=catalogue)
 
 **Catalogue** (`#/c`, hoặc liên kết **Catalogue** trong menu) tập hợp mọi thứ mà các công cụ của bạn có thể sử dụng - logo thương hiệu, hình ảnh, âm thanh và chuyển động, được nhóm theo loại - và đây cũng là nơi lưu **các tệp sáng tạo của riêng bạn**. Không máy chủ, không bảng quản trị, không pull request: tất cả đều nằm trên thiết bị của bạn.
 
@@ -119,7 +118,7 @@ Khi một công cụ cho phép bạn thêm ảnh từ thiết bị, ảnh đó s
 
 ### Mang bảng màu và font của bạn đi khắp nơi
 
-![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=192&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
+![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=96&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&format=png&filename=use-swatch-downloads)
 
 Bảng **Swatches** của Catalogue không chỉ để tham khảo - nhấp vào một màu để sao chép nó, hoặc **tải xuống toàn bộ bảng màu thương hiệu** ở định dạng mà công cụ khác của bạn hiểu:
 

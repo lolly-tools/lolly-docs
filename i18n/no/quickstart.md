@@ -14,7 +14,7 @@ Merkevaren din i Lolly er et lite **designtokens**-dokument - farger, skrifttype
 
 ### Start fra bunnen (Brand Studio)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
 
 Første gang du åpner appen, havner du på skjermen **Start** (`#/start`) - [**Brand Studio**](/info/brand-studio.html). Gi den et navn og en primærfarge, så *utleder* Lolly en komplett, tilgjengelig palett fra den - lyse/mørke flater, tekst, aksenter - med den samme fargematematikken motoren bruker overalt ellers. Velg en skrifttype, og du har en fungerende merkevare på under et minutt. Derfra lar studioets fem faner (Logos, Colours, Type, Tokens, Catalogue) deg ta det så langt du vil - finpuss hva som helst senere, når du enn kommer tilbake.
 
@@ -34,7 +34,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### Finjuster den i appen
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand)
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=dashboard-brand)
 
 Når en merkevare er aktiv, fortsetter du å forme den i [**Brand Studio**](/info/brand-studio.html) (`#/start`) - endre en farge eller en rolle, og hver forhåndsvisning i appen oppdateres mens du skriver. (Dashbordets fane **Designsystem** på `#/d` *viser* merkevaren skrivebeskyttet; det er i Studio du redigerer den.) Den samme merkevaren oppsummeres på kortet **Profil → Din merkevare**. Skrifttyper er ekte: velg fra Google Fonts, og Lolly lagrer filen **på enheten din** som en merkevareressurs, slik at typografien din fungerer offline og ingenting hentes ved rendering.
 
@@ -68,7 +68,7 @@ Her er gevinsten: en importert layout er en vanlig Layout Studio-økt, så så s
 
 [Community-verktøysettet](/info/builders.html) er åpen kildekode og merkevareuavhengig - QR-koder, bykart, filtre, personvernverktøy - og det rendres mot *din* merkevare i det øyeblikket du aktiverer det.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
 
 Mat verktøyene med din egen åpne data også: lim inn eller slipp en **CSV**- eller **JSON**-tabell, så fylles et verktøys gjentakende felter fra den, én ferdig ressurs per rad.
 

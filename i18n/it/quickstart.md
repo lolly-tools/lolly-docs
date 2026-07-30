@@ -14,7 +14,7 @@ Il tuo brand in Lolly è un piccolo documento di **design token** - colori, font
 
 ### Parti da zero (il Brand Studio)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
 
 Al primo avvio atterri sulla schermata **Start** (`#/start`) - il [**Brand Studio**](/info/brand-studio.html). Dagli un nome e un colore primario e Lolly *deriva* una palette completa e accessibile - superfici chiare/scure, testo, accenti - usando la stessa matematica del colore che il motore usa ovunque. Scegli un font e avrai un brand funzionante in meno di un minuto. Da lì, le cinque schede dello studio (Loghi, Colori, Tipografia, Token, Catalogo) ti permettono di spingerti quanto vuoi - perfeziona qualsiasi dettaglio più avanti, ogni volta che torni.
 
@@ -34,7 +34,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### Perfezionalo nell'app
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=png&localize=1&filename=dashboard-brand)
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=dashboard-brand)
 
 Una volta che un brand è attivo, continua a modellarlo nel [**Brand Studio**](/info/brand-studio.html) (`#/start`) - cambia un colore o un ruolo e ogni anteprima dell'app si aggiorna mentre scrivi. (La scheda **Design system** della dashboard su `#/d` *mostra* il brand in sola lettura; è nello Studio che lo modifichi.) Lo stesso brand è riassunto nella scheda **Profilo → Il tuo brand**. I font sono reali: scegli da Google Fonts e Lolly salva il file **sul tuo dispositivo** come asset di brand, così la tua tipografia viaggia offline e non viene scaricato nulla al momento del rendering.
 
@@ -68,7 +68,7 @@ Ecco il vantaggio: un layout importato è una normale sessione di Layout Studio,
 
 Il [set di strumenti della community](/info/builders.html) è open source e agnostico rispetto al brand - codici QR, mappe stradali, filtri, utilità per la privacy - e renderizza sul *tuo* brand nel momento in cui lo attivi.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
 
 Alimenta gli strumenti anche con i tuoi dati aperti: incolla o trascina una tabella **CSV** o **JSON** e i campi ripetibili di uno strumento si compilano da essa, un asset finito per riga.
 
