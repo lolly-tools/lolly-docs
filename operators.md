@@ -54,7 +54,7 @@ All of these are on-device transforms: your file or data goes in, cleaned bytes 
 
 Text Helper is the same bargain for text rather than files. It is the tabbed workbench an employee would otherwise go looking for on a stranger's site, and it declares no inputs at all because nothing it touches ever leaves the page.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&filename=ov2-text-helper)
 
 Compress PDF completes the set: the oversized attachment shrinks under a quality setting you choose, on the machine that already holds it.
 
