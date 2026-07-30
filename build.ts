@@ -108,6 +108,7 @@ const pages: Page[] = [
   { slug: 'verify-yourself',  title: 'Verify It Yourself', src: 'verify-yourself.md', pathway: 'operators' },
   { slug: 'privacy',          title: 'Privacy Policy',    src: 'privacy.md',         pathway: 'operators' },
   { slug: 'inclusive-design', title: 'Inclusive Design',  src: 'inclusive-design.md', pathway: 'operators' },
+  { slug: 'ai-stance',        title: 'Our AI Stance',     src: 'ai-stance.md',       pathway: 'operators' },
 ];
 
 // Top-nav links, grouped into clusters. Each inner array renders as one cluster
@@ -221,7 +222,8 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
         { slug: 'server-surface', label: 'Server Surface' },
         { slug: 'verify-yourself', label: 'Verify It Yourself' },
         { slug: 'privacy', label: 'Privacy Policy' },
-        { slug: 'inclusive-design', label: 'Inclusive Design' } ] },
+        { slug: 'inclusive-design', label: 'Inclusive Design' },
+        { slug: 'ai-stance', label: 'Our AI Stance' } ] },
     ],
   },
 };

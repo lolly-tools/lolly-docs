@@ -119,7 +119,7 @@ The endpoint also accepts the raw token directly, so scripted clients skip the O
 }
 ```
 
-A quick smoke test with `curl` (expect a JSON list of the six tools; no token returns `401`):
+A quick check with `curl` (expect a JSON list of the six tools; no token returns `401`):
 
 ```bash
 curl -s -X POST https://mcp.lolly.tools/mcp \

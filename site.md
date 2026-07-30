@@ -50,7 +50,7 @@ Build your info-editorial style once, then generate publication-quality assets f
 
 ### Industrial rigour for everyday output.
 
-Not everything is marketing. Consignment labels, badge runs, compliance one-pagers, incident notices - output where the layout is load-bearing and the data can't be wrong. Lolly treats structured content with the same rigour as elite design.
+Not everything is marketing. Consignment labels, badge runs, compliance one-pagers, incident notices - output where the layout carries the meaning and the data can't be wrong. Lolly treats structured content with the same rigour as elite design.
 
 - **Structured data in, exact output.** Feed a CSV or JSON table and every field lands precisely where the template expects it - one finished file per row.
 - **Physical precision.** Real units (mm/cm/in/pt), true DPI, bleed and crop marks. A label printer or a print shop gets exactly what it needs.
