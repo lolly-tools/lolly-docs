@@ -15,7 +15,7 @@ function onInit({ model, host }) {
 
 - **Additive only.** Methods may be added in a minor version; never removed or signature-changed without a major bump. When v2 ships, v1 keeps working.
 - **No platform-specific methods.** If only one shell can do something, it sits behind a `capabilities` flag in `tool.json` and shells that can't fulfil it expose a stub/error.
-- **Capabilities gate access.** `net` (`network`), `capture` (`capture`), `compose` (`compose`) and `recorder` (`microphone` / `camera` / `screen`) require a matching flag in the manifest's `capabilities`. `tokens`, `text`, `pdf`, `pptx`, `media`, `color`, `images` and `geom` are optional and present only when the shell provides them (feature-detect, don't flag). Declare what you need.
+- **Capabilities gate access.** `net` (`network`), `capture` (`capture`), `compose` (`compose`) and `recorder` (`microphone` / `camera` / `screen`) require a matching flag in the manifest's `capabilities`. `tokens`, `text`, `pdf`, `pptx`, `media`, `audio`, `viz`, `color`, `images` and `geom` are optional and present only when the shell provides them (feature-detect, don't flag). Declare what you need.
 - `host.version` is `'1'`; `host.shell` is one of `web` · `tauri-desktop` · `tauri-mobile` · `cli`.
 
 ## `host.profile`
@@ -27,7 +27,7 @@ User details. Tools read; the user manages them via the host UI.
 | `get()` | `Promise<Profile>` | Current profile |
 | `subscribe(fn)` | `() => void` | Calls `fn(profile)` on change; returns an unsubscribe |
 
-`Profile`: `firstname, lastname, email, phone, city, country, headshot (AssetRef), custom, featureFlags` (`featureFlags` is the user's local UI flag map, default ON - not a tool concern). Most tools don't call this directly - declare `bindToProfile: "firstname"` on an input and the host pre-fills it for you.
+`Profile`: `firstname, lastname, email, phone, title, city, country, lang, headshot (AssetRef), useDetails, custom, featureFlags`, plus per-user UI overlays (`favourites`, `favouriteAssets`, `assetCategories`, `hiddenAssets`) (`featureFlags` is the user's local UI flag map, default ON - not a tool concern; `useDetails` is the opt-in that gates embedding author/contact details into export provenance). Most tools don't call this directly - declare `bindToProfile: "firstname"` on an input and the host pre-fills it for you.
 
 ## `host.assets`
 
@@ -74,7 +74,7 @@ The host owns the renderer - tools don't bundle their own.
 | `download(blob, filename)` | `Promise<void>` | Trigger a download (throws on CLI - pipe via `--output` instead) |
 | `file(blob, opts?)` | `Promise<void>` | Deliver a blob the **tool** produced (the transform path: file in → transformed file out), with `opts.filename`. Carries no watermark and no provenance - for on-device utilities whose `exportFile` hook returns the bytes |
 
-`format` is an `ExportFormat` - the render formats are `png · jpg/jpeg · webp · avif · svg · svg-anim · emf · eps · eps-cmyk · dxf · pdf · pdf-cmyk · cmyk-tiff · tiff · pptx · html · ico · zip · webm · mp4 · gif · apng · webp-anim` (availability is per-tool via the manifest, and per-browser for the recorded video formats `webm`/`mp4` - Safari records mp4, Firefox webm; `gif`/`apng`/`webp-anim` are encoded in-engine, `svg-anim` is a self-contained vector flipbook, `dxf` is an AutoCAD cut file, `pptx` decomposes each page into native PowerPoint shapes, `tiff` is a plain RGB raster and `cmyk-tiff` its print sibling, and `ico`/`zip` are icon/bundle outputs). Separately, tools produce the **text/data formats** `md · txt · json · csv · ics · vcf` from the input model (not a DOM render - see [Exporting & Formats](/info/exporting.html)). This is the same 30-value enum the catalog validator enforces in `schemas/tool.schema.json`. *(The `ExportFormat` union in `engine/src/bridge/host-v1.ts` is itself stale - it carries a defunct token and omits the raster/bundle formats - and is being reconciled with the schema; track the schema, not the type.)*
+`format` is an `ExportFormat` - the render formats are `png · jpg/jpeg · webp · avif · svg · svg-anim · emf · eps · eps-cmyk · dxf · pdf · pdf-cmyk · cmyk-tiff · tiff · pptx · html · ico · zip · webm · mp4 · gif · apng · webp-anim` (availability is per-tool via the manifest, and per-browser for the recorded video formats `webm`/`mp4` - Safari records mp4, Firefox webm; `gif`/`apng`/`webp-anim` are encoded in-engine, `svg-anim` is a self-contained vector flipbook, `dxf` is an AutoCAD cut file, `pptx` decomposes each page into native PowerPoint shapes, `tiff` is a plain RGB raster and `cmyk-tiff` its print sibling, and `ico`/`zip` are icon/bundle outputs). Separately, tools produce the **text/data formats** `md · txt · json · csv · ics · vcf` from the input model (not a DOM render - see [Exporting & Formats](/info/exporting.html)). This is the same 30-value enum the catalog validator enforces in `schemas/tool.schema.json`. *(The `ExportFormat` union in `engine/src/bridge/host-v1.ts` is itself stale - it omits most of the raster/bundle formats - and is being reconciled with the schema; track the schema, not the type.)*
 
 `ExportOpts`:
 
@@ -111,6 +111,7 @@ Shape and outline a text run into an SVG path via HarfBuzz (correct kerning, lig
 | `toPath({ text, fontUrl, fontSize, features?, letterSpacing?, variations?, fallbackFonts? })` | `Promise<TextPathResult>` |
 | `preload(fontUrl)` | `Promise<void>` |
 | `axisDefaults(fontUrl)` *(optional, v1.30)* | `Promise<Record<string, number>>` |
+| `fontUrl(family, opts?)` *(optional, v1.60)* | `Promise<{ url, variations? } \| null>` - resolve a family the host knows (brand statics, user fonts, on-device Google Fonts, the platform face) to a fetchable file for `toPath()`; `null` when none matches, so keep a `<text>` fallback |
 
 `TextPathResult`: `{ d, advanceWidth, bbox, notdef? }` - baseline at `y=0`, Y-down; `bbox` is `null` for whitespace-only runs. The `brand-lockup` tool uses this to outline display type for crisp vector export.
 
@@ -203,19 +204,20 @@ A **`MediaFrame`** is `{ width, height, data: Uint8ClampedArray (RGBA), t }` - p
 
 You rarely call `subscribe` yourself. A tool declares an **`onFrame`** hook and the runtime drives it once per camera frame - it owns the start → subscribe → `onFrame` → re-render loop and **drops overlapping frames** so a slow per-frame render self-throttles. The shell shows a "Go live" toggle that calls `runtime.startLive()` / `runtime.stopLive()` (released on unmount, so no camera outlives the tool). See [Authoring Tools](/info/authoring-tools.html) for the `onFrame` pattern; the four `filter-*` tools are the reference. Web + Tauri (its webview) provide it via `getUserMedia`; the headless CLI does not.
 
-## `host.recorder` *(device capture - optional, v1.17; capability: `microphone` / `camera`)*
+## `host.recorder` *(device capture - optional, v1.17; capability: `microphone` / `camera` / `screen`)*
 
 Record the microphone (and optionally the camera) to a finished media Blob, plus a DOM-free **level meter** for a pre-record sound check. The dual of `host.media`: where `media` is a live frame *source*, `recorder` is a *sink* - the shell owns `getUserMedia` + `MediaRecorder` and the engine only ever sees plain numbers (`AudioLevel`) and finished Blobs, never a `MediaStream` or `<video>`. Because recording prompts for a permission a shell may be unable to grant, it **is** gated - declare `"microphone"` (and `"camera"` for video) in `capabilities`; the headless CLI provides none. Feature-detect `host.recorder`.
 
 | Member | Type | Notes |
 |---|---|---|
-| `isAvailable(kind?)` | `boolean` | Is capture of `'audio'` (default) / `'video'` usable right now (a secure context)? A `true` doesn't pre-grant permission |
+| `isAvailable(kind?)` | `boolean` | Is capture of `'audio'` (default) / `'video'` / `'screen'` usable right now (a secure context)? A `true` doesn't pre-grant permission |
 | `meter` | `MeterAPI` | Live input-level meter - a pre-record "sound check" (below) |
 | `record(opts?)` | `Promise<RecordSession>` | Open a capture session (prompts the first time); resolves once recording |
+| `still(opts?)` *(v1.54)* | `Promise<Blob>` | One frame as an encoded image - `'screen'` (default) prompts the display picker, `'camera'` takes a camera frame. DOM-free: the shell owns the stream and the grab |
 
 `MeterAPI`: `start()` (begin the mic + level loop, prompting once; reference-counted + idempotent like `media`), `stop()` (release one `start()`; the mic stops at the last release), `subscribe(cb) → () => void` (receive `AudioLevel` frames; throttled, paused while the document is hidden). The web shell opens the meter **raw** - noise-suppression / AGC / echo-cancellation off - so the level and the noise cues reflect the true room; `record()` keeps suppression on for a clean file, so the two use separate streams (the grant is per-origin, so a sound-check then a record still prompts only once).
 
-`RecordOpts`: `audio` (default `true`), `video` (default `false` - an audio+video clip when `true`), `format` (`'webm' | 'mp4'` - a hint; the shell falls back across containers, so read the returned Blob's `type`), `maxEdge` (video downscale, longest edge in px), `maxMs` (hard length ceiling; the session auto-stops), `meta` (provenance stamped into the Blob).
+`RecordOpts`: `audio` (default `true`), `video` (default `false` - an audio+video clip when `true`), `source` (`'device'` default, or `'screen'` to record the display - gated by the `screen` capability), `systemAudio`, `format` (`'webm' | 'mp4'` - a hint; the shell falls back across containers, so read the returned Blob's `type`), `maxEdge` (video downscale, longest edge in px), `maxMs` (hard length ceiling; the session auto-stops), `meta` (provenance stamped into the Blob).
 
 `RecordSession`: `subscribe(cb)` (live `AudioLevel` during the take, same shape as the meter, so coaching UI updates while recording), `stop() → Promise<Blob>` (finalise and resolve the media Blob), `cancel()` (discard and release the devices - no Blob).
 
@@ -263,8 +265,10 @@ Extrapolate from **brand primitives** without shipping colour science in every t
 | `schemes(seed, kind?)` | `ColorSchemeAccent[]` | **v1.60.** Harmony accents off one seed - `complement` (default), `adjacent-3`, `triad-3`, `tetrad-4`, `free-2`…`free-4` (the numeral is the scheme's total, seed included). The brand editor's own generator, attached verbatim, so a tool's harmonies match the editor's |
 | `mix(a, b, t, opts?)` | `string \| null` | **v1.68.** Interpolate two colours the way CSS Color 4 does. `opts.space` picks the interpolation space (`oklab` default, plus `oklch`, `lab`, `lch`, `srgb`, `srgb-linear`, `hsl`); `opts.hue` picks the travel around the circle for a polar space (`shorter` default, `longer`, `increasing`, `decreasing`). Alpha is **premultiplied** - a per-channel lerp toward `transparent` drags the colour toward transparent's *black*, so a red→transparent midpoint comes out dark red instead of plain red |
 | `gradientCss(spec)` | `string \| null` | **v1.68.** A [gradient spec](#gradient-specs) string → a `linear-gradient(…)`/`radial-gradient(…)`/`conic-gradient(…)` value ready for `background-image`. Interpolates in the spec's space and **bakes** the result down to plain sRGB stops, so the same value renders identically on screen, in an exported SVG `<linearGradient>` and in a PDF axial shading |
+| `gamut(color, space?)` · `maxChroma(l, h, space?)` · `slice(…)` · `gamutRegion(…)` · `oklch(color)` · `fromOklch(…)` | varies | **v1.69.** Gamut interrogation and OKLCH conversion - is a colour inside `srgb`/`display-p3`/`rec2020`, the most chroma available at a lightness/hue, and 2-D slices of the solid for plotting. Feature-detect each |
+| `iccProfile(bytes)` · `inProfileGamut(color, profile)` · `profileMaxChroma(…)` · `inkCoverage(color, profile)` | varies | **v1.70.** Treat a real ICC profile as the gamut - parse a press profile, ask whether a colour is printable in it, and read total ink coverage. Feature-detect each |
 
-**Which colour strings are accepted** differs by vintage, deliberately. The metrics and generators (`deltaE`, `contrast`, `apca`, `ramp`, `breaks`, `distinct`, `schemes`) take hex (`#rgb`…`#rrggbbaa`) or `oklch()`/`lch()` - the forms token values take; resolve anything else first. They return `NaN` on unparseable input, except `ramp`, which throws. `mix` goes through the engine's full **CSS Color 4** parser, so it also accepts `rgb()`, `hsl()`, `hwb()`, `lab()`, `oklab()`, the CSS named colours, and `color(display-p3 …)` / `color(rec2020 …)` / `color(prophoto-rgb …)` / `color(a98-rgb …)` / `color(srgb-linear …)` / `color(xyz-d50|xyz-d65 …)` - including `none` components; it returns `null` rather than guessing when either side won't parse.
+**Which colour strings are accepted** differs by vintage, deliberately. The metrics and generators (`deltaE`, `contrast`, `apca`, `ramp`, `breaks`, `distinct`, `schemes`) take hex (`#rgb`…`#rrggbbaa`) or `oklch()`/`lch()` - the forms token values take; resolve anything else first. The metrics (`deltaE`, `contrast`, `apca`) return `NaN` on unparseable input; `ramp` throws; `schemes` falls back to a neutral mid-blue seed; and `distinct` ignores an unparseable anchor and still returns colours. `mix` goes through the engine's full **CSS Color 4** parser, so it also accepts `rgb()`, `hsl()`, `hwb()`, `lab()`, `oklab()`, the CSS named colours, and `color(display-p3 …)` / `color(rec2020 …)` / `color(prophoto-rgb …)` / `color(a98-rgb …)` / `color(srgb-linear …)` / `color(xyz-d50|xyz-d65 …)` - including `none` components; it returns `null` rather than guessing when either side won't parse.
 
 ### Gradient specs
 
@@ -307,6 +311,8 @@ The currency both ways is an **SVG path-data string** - what already lives in yo
 | `parse(d)` | contours | Every shorthand expanded: H/V → lines, Q/T → cubics exactly, A → cubics by the spec's endpoint parameterisation |
 | `toPathData(contours, opts?)` | path | Straight pieces written as `L`; `opts.decimals` defaults to 4 |
 | `limits()` | ceilings | `maxChars` / `maxCommands` / `maxCurves` / `maxCoordinate` / `maxPaths` / `maxNodes` - check a path before offering an operation on it |
+| `encodeAuthored(path \| paths)` | string | One versioned, delimiter-safe string, so authored geometry survives an input value, a `blocks` sub-field and a share link unchanged |
+| `decodeAuthored(value)` | authored paths | Always a list. `invalid-argument` on garbage or a newer format version; `too-large` past `limits().maxNodes` |
 
 `code` on a failure tells you what to do, and the distinctions are deliberate: `'invalid-path'` (malformed `d` - reject it, don't retry), `'too-large'` (well-formed but past the ceilings above), `'limit'` (the answer exists and this engine declines to guess at it past its bounded-work ceiling - retry with simpler operands or a coarser `tolerance`), `'invalid-argument'`, `'unsupported'` (a spline kind this engine knows the name of but cannot lower yet), `'internal'` (a bug - report it). **`ok: true` with `d: ''` is an answer**, not a failure: a non-overlapping intersection and an offset shrunk past its inradius are both legitimately empty. There is no degraded fallback anywhere in the API - you are never handed a plausible-looking wrong path. Path data is parsed defensively (bounded size, command count, curve count and coordinate magnitude, with a grammar that rejects rather than guesses), so a `d` from a paste or a URL param is safe to hand straight in.
 
