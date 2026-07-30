@@ -167,7 +167,7 @@
 
 ## 把品牌迁移到另一台设备
 
-![The import card - the accepted formats lead as icon tiles, and the whole card is one drop target](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-import-drop&format=svg&filename=bs-brand-import-formats)
+![The import card - the accepted formats lead as icon tiles, and the whole card is one drop target](/t/url-shot?url=%2F%23%2Fstart%3Fimport&width=1440&height=900&dpi=192&waitMs=1600&css=.start-import-modal%20.modal-msg%2C.start-import-modal%20.modal-title%7Bdisplay%3Anone%7D&cropSelector=.start-import-drop&format=svg&filename=bs-brand-import-formats)
 
 顶部操作栏中的**导出**按钮会生成一个 `LollyBrand-…zip` 文件——包含你的令牌、字体、徽标和主题偏好设置，并附带一份完整性清单。**导入…**按钮（或直接把文件拖放到工作室中）可以接受：
 
