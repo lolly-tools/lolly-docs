@@ -1,6 +1,6 @@
 // Build-time generators for Open Graph (share preview) images.
 //
-// All three cards share the brand pine field + SUSE type and are rasterised through OUR
+// All three cards are light-on-dark in the brand's own field + type, and are rasterised through OUR
 // OWN render path (Chromium via Playwright — scripts/lib/rasterize-svg-browser.ts), NOT a
 // second SVG interpreter like resvg. One render path means a card is shaped the way the
 // app paints, can't drift (resvg mis-rendered some brand illustrations / panicked on
@@ -12,20 +12,28 @@
 //     "Authoring Tools". The original og.png is embedded as the background and only
 //     its subtitle band is repainted, so the lollipop + wordmark stay byte-faithful.
 //
-//   • createToolCardRenderer — per-tool share cards (scripts/build-tool-og.ts). A
-//     gallery-tile look rather than the lollipop card: the tool's icon, name and
-//     description on the pine field, with a smaller framed preview of the tool's own
-//     output on the right. So a link to /t/qr-code previews as that tool's card.
+//   • createToolCardRenderer — per-tool share cards (scripts/build-tool-og.ts). The
+//     tool's icon, name and description light-on-dark on the brand's own field, under a
+//     co-brand row (the Lolly lollipop lockup + the brand's reverse logo), with a framed
+//     preview of the tool's own output on the right. So a link to /t/qr-code previews as
+//     that tool's card.
 //
-//   • createViewCardRenderer — per-view share cards (scripts/build-view-og.ts). A dark
-//     brand-system panel for the app's own sections (Dashboard, Verify, …).
+//   • createViewCardRenderer — per-view share cards (scripts/build-view-og.ts). The same
+//     light-on-dark language for the app's own sections (Tools, Projects, Catalogue,
+//     Dashboard, …): an app-icon tile, the section title, and the lollipop cropped by
+//     the bottom-right corner.
+//
+// Both card renderers take the `BrandChrome` from loadBrandChrome() — field, accent, ink
+// and marks resolved from the ACTIVE profile's catalog — so nothing below hardcodes one
+// brand's palette, and every mounted profile's cards come out in its own colours.
 //
 // Why generate rather than reuse one static og.png: social crawlers (Slack, X,
 // Facebook, LinkedIn, iMessage) cache one image per URL and only reliably render
 // raster (PNG/JPEG), never SVG — so each page/tool needs its own pre-rendered PNG.
 
-import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { createTokenSet, colorToHex } from '../engine/src/tokens.ts';
 import { createSvgRasterizer } from '../scripts/lib/rasterize-svg-browser.ts';
 import { stampBitmap } from '../scripts/lib/stamp-media.ts';
 
@@ -100,25 +108,174 @@ function createOgRenderer(rasterize: SvgToPng, repoRoot: string) {
   };
 }
 
+// ── Brand chrome, resolved from the ACTIVE PROFILE ───────────────────────────
+//
+// The tool and view cards are painted light-on-dark in the active brand's own
+// colours: the dark theme's `surface` is the field, its `primary` the accent and
+// its `text` the ink. Those three semantic tokens exist in every brand pack
+// (SUSE's resolve to pine/jungle/white; an ingested brand's to its own ramps), so
+// nothing here hardcodes SUSE — which matters because this module renders cards
+// for every profile, and `catalog/` is only ever the ACTIVE one (see
+// scripts/build-og-all.ts, which rebuilds each mounted profile in turn).
+//
+// The marks are the co-brand: Lolly's own lollipop (repo-root icon.webp, parent-
+// owned and brand-agnostic) top-left as a lockup with the wordmark, and the
+// brand's REVERSE (on-dark) horizontal logo top-right, resolved from the catalog
+// by asset TAGS rather than by id — `suse/logo/hor-neg-white` is a SUSE-only id,
+// but `['logo','horizontal','on-dark']` is how any brand pack describes the same
+// thing. A brand with no logo asset (lolly-start) simply gets no second mark.
+
+export interface BrandLogo {
+  /** The logo SVG as a data-URI, ready for an <image href>. */
+  href: string;
+  /** width / height, from its viewBox — the caller sets width and derives height. */
+  ratio: number;
+}
+
+export interface BrandChrome {
+  /** Card field — the brand's dark-theme surface. */
+  field: string;
+  /** Accent for the tool icon / app-icon tile — the dark-theme primary. */
+  accent: string;
+  /** Primary type — the dark-theme text colour. */
+  ink: string;
+  /** Descriptions: ink mixed back toward the field. */
+  muted: string;
+  /** Footer: one step dimmer again. */
+  footer: string;
+  /** The brand's reverse (on-dark) horizontal logo, or null when it ships none. */
+  logo: BrandLogo | null;
+  /** Lolly's own lollipop mark as a data-URI, or null if the asset is missing. */
+  mark: string | null;
+}
+
+// Fallbacks when a brand ships no readable tokens: the SUSE-sampled pine family
+// the /info card (FIELD/SUBTLE above) has always used, so a tokenless profile
+// still renders a card in the house style rather than failing.
+const CHROME_FALLBACK = { field: '#0c322c', accent: '#30ba78', ink: '#ffffff' };
+
+/** Blend two #rrggbb colours in sRGB. Chrome only — never a palette value. */
+function mixHex(a: string, b: string, t: number): string {
+  const parse = (h: string) => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
+  const [ar, ag, ab] = parse(a), [br, bg, bb] = parse(b);
+  const ch = (x: number, y: number) => Math.round(x + (y - x) * t).toString(16).padStart(2, '0');
+  return `#${ch(ar!, br!)}${ch(ag!, bg!)}${ch(ab!, bb!)}`;
+}
+
+/** Read the active catalog's asset index, or null when there isn't one. */
+function readAssetIndex(repoRoot: string): { assets?: unknown[] } | null {
+  const file = resolve(repoRoot, 'catalog/assets/index.json');
+  if (!existsSync(file)) return null;
+  try { return JSON.parse(readFileSync(file, 'utf8')); } catch { return null; }
+}
+
+// Asset-index entries are dynamic JSON; only the fields read here are typed.
+interface IndexAsset {
+  id?: string;
+  type?: string;
+  tags?: string[];
+  formats?: Array<{ format?: string; url?: string }>;
+}
+
+/** The URL of an asset's format, resolved to a path inside the active catalog view. */
+function assetFile(repoRoot: string, asset: IndexAsset, format: string): string | null {
+  const url = asset.formats?.find(f => f.format === format)?.url;
+  if (!url) return null;
+  const file = resolve(repoRoot, url.replace(/^\//, ''));
+  return existsSync(file) ? file : null;
+}
+
+/** The dark-theme semantic colours of the active brand's DTCG token asset. */
+function brandColors(repoRoot: string, assets: IndexAsset[]): typeof CHROME_FALLBACK {
+  const tokens = assets.find(a => a.type === 'tokens' && a.tags?.includes('brand'));
+  const file = tokens ? assetFile(repoRoot, tokens, 'json') : null;
+  if (!file) return CHROME_FALLBACK;
+  try {
+    // The dark theme is the one the cards paint in — light-on-dark by design.
+    const set = createTokenSet(JSON.parse(readFileSync(file, 'utf8')), { theme: 'dark' });
+    const hex = (path: string, fallback: string) =>
+      colorToHex(set.resolve(path)) || fallback;
+    return {
+      field:  hex('color.semantic.surface', CHROME_FALLBACK.field),
+      accent: hex('color.semantic.primary', CHROME_FALLBACK.accent),
+      ink:    hex('color.semantic.text',    CHROME_FALLBACK.ink),
+    };
+  } catch { return CHROME_FALLBACK; }
+}
+
+/** The brand's reverse (on-dark) horizontal logo, by tags — never by brand-specific id. */
+function brandLogo(repoRoot: string, assets: IndexAsset[]): BrandLogo | null {
+  const onDark = assets.filter(a => a.tags?.includes('logo') && a.tags.includes('on-dark'));
+  // Prefer a horizontal mono/white lockup (it sits beside white type without
+  // introducing a second hue), then any horizontal one, then anything on-dark.
+  const pick = onDark.find(a => a.tags!.includes('horizontal') && a.tags!.includes('mono'))
+    ?? onDark.find(a => a.tags!.includes('horizontal'))
+    ?? onDark[0];
+  const file = pick ? assetFile(repoRoot, pick, 'svg') : null;
+  if (!file) return null;
+  const svg = readFileSync(file, 'utf8');
+  const vb = /viewBox="([\d.eE+\-\s]+)"/.exec(svg)?.[1]?.trim().split(/\s+/).map(Number);
+  if (!vb || vb.length < 4 || !vb[2] || !vb[3]) return null;
+  return { href: `data:image/svg+xml,${encodeURIComponent(svg)}`, ratio: vb[2] / vb[3] };
+}
+
+/**
+ * Resolve the card chrome for whatever profile is currently mounted. Pure reads —
+ * a missing/unreadable catalog degrades to the pine fallback rather than throwing,
+ * because a card is worth more than a build failure (same contract as the missing
+ * browser). Call once per run and pass the result to both card renderers.
+ */
+export function loadBrandChrome(repoRoot: string): BrandChrome {
+  const assets = (readAssetIndex(repoRoot)?.assets ?? []) as IndexAsset[];
+  const { field, accent, ink } = brandColors(repoRoot, assets);
+  const markFile = resolve(repoRoot, 'icon.webp');
+  return {
+    field, accent, ink,
+    muted:  mixHex(ink, field, 0.38),
+    footer: mixHex(ink, field, 0.58),
+    logo: brandLogo(repoRoot, assets),
+    mark: existsSync(markFile)
+      ? `data:image/webp;base64,${readFileSync(markFile).toString('base64')}`
+      : null,
+  };
+}
+
+/** The Lolly lollipop + wordmark lockup, top-left of every card. */
+function lockup(chrome: BrandChrome, x: number, baseline: number, size = 54): string {
+  const mark = chrome.mark
+    ? `<image x="${x}" y="${baseline - size + 8}" width="${size}" height="${size}" href="${chrome.mark}"/>`
+    : '';
+  const tx = chrome.mark ? x + size + 18 : x;
+  return `${mark}<text x="${tx}" y="${baseline}" font-family="SUSE" font-weight="700"`
+    + ` font-size="36" fill="${chrome.ink}">Lolly</text>`;
+}
+
+/** The brand's reverse logo at a given width, or nothing when the brand ships none. */
+function brandMark(chrome: BrandChrome, x: number, y: number, w: number): string {
+  if (!chrome.logo) return '';
+  return `<image x="${x}" y="${y}" width="${w}" height="${w / chrome.logo.ratio}" href="${chrome.logo.href}"/>`;
+}
+
 // ── Per-tool share card (gallery-tile style) ─────────────────────────────────
 
 const CARD_MARGIN = 72;
 // Framed preview panel on the right; the left column is everything to its left.
-const CARD_PANEL  = { x: 696, y: 96, w: 432, h: 438, r: 28, pad: 26 };
+// It sits BELOW the header rule (y 150, not 96) so the co-brand row reads as chrome.
+const CARD_PANEL  = { x: 696, y: 150, w: 432, h: 372, r: 28, pad: 24 };
 
-// Tool-card palette: a light theme (white field, black type), distinct from the
-// /info card's pine field (FIELD/SUBTLE above, shared with createOgRenderer — leave
-// those alone). Keeping these separate means the two cards can diverge freely.
-const CARD_BG          = '#ffffff';   // white background
-const CARD_INK         = '#1a1a1a';   // primary type + tool icon (black)
-const CARD_MUTED       = '#5f5f5f';   // description / footer (dark grey, subordinate)
-const CARD_PLACEHOLDER = '#d4d4d4';   // no-preview placeholder icon tint (visible on white)
-const CARD_PANEL_LINE  = '#e6e6e6';   // hairline framing the white preview panel on white
+// The panel stays WHITE even though the field is dark: tool previews are authored
+// for a light canvas (the brand-lockup preview's black wordmark disappears on a
+// tinted dark panel), so the card frames the tool's own output on white and leaves
+// the brand colours to the field around it.
+const CARD_PANEL_BG    = '#ffffff';
+const CARD_PLACEHOLDER = '#d8e0dc';   // no-preview placeholder icon tint (on the white panel)
 
-// Left-column vertical rhythm: a large icon up top, then a generous gap to the name.
-const CARD_ICON_SIZE   = 120;   // was 60 — a much larger, icon-forward card
-const CARD_ICON_Y      = 138;   // icon top edge, below the wordmark
-const CARD_NAME_Y      = 340;   // first name baseline — the space between icon and title
+// Left-column vertical rhythm: co-brand row, rule, tool icon, name, description.
+const CARD_RULE_Y      = 120;   // hairline under the co-brand row
+const CARD_LOGO_W      = 150;   // brand reverse logo width, top-right
+const CARD_ICON_SIZE   = 96;    // tool icon, in the accent
+const CARD_ICON_Y      = 172;   // icon top edge, below the rule
+const CARD_NAME_Y      = 360;   // first name baseline
 const CARD_STROKE_W    = 1.2;   // icon stroke-width (lucide viewBox units)
 
 // Position the catalog's inlined icon SVG (lucide-style: 24×24 viewBox,
@@ -169,58 +326,61 @@ function fitName(name: string, boxWidth: number): number {
 
 /**
  * Build a per-tool card renderer. `render({ name, description, iconSvg, previewDataUri })`
- * returns PNG bytes: the tool's icon + name + description on the pine field, with the
- * preview framed in a white panel on the right (the preview rides in as an SVG data-URI
- * and is painted by the same browser that rasterises the card — no second interpreter).
- * With no preview, a large tinted icon stands in. `rasterize` is injected so a missing
- * browser degrades ("keep committed card") instead of crashing, like the old resvg path.
+ * returns PNG bytes: the co-brand row (Lolly lockup + the brand's reverse logo), then the
+ * tool's icon + name + description on the brand's dark field, with the preview framed in a
+ * white panel on the right (the preview rides in as an SVG data-URI and is painted by the
+ * same browser that rasterises the card — no second interpreter). With no preview, a large
+ * tinted icon stands in. `rasterize` is injected so a missing browser degrades ("keep
+ * committed card") instead of crashing, like the old resvg path; `chrome` comes from
+ * loadBrandChrome() so the card is painted in the ACTIVE profile's colours and marks.
  */
-export function createToolCardRenderer(rasterize: SvgToPng) {
+export function createToolCardRenderer(rasterize: SvgToPng, chrome: BrandChrome) {
   const svgFor = ({ name, description, iconSvg, previewDataUri }: ToolCard): string => {
     const M = CARD_MARGIN;
     const P = CARD_PANEL;
-    const textW = P.x - M - 40;                  // left column width
+    const textW = P.x - M - 48;                  // left column width
 
     const nameSize = fitName(name, textW);
     const nameLines = wrapLines(name, nameSize, textW, 2);
 
     const out: string[] = [];
     out.push(`<svg xmlns="http://www.w3.org/2000/svg" width="${OG_W}" height="${OG_H}" viewBox="0 0 ${OG_W} ${OG_H}">`);
-    out.push(`<rect width="${OG_W}" height="${OG_H}" fill="${CARD_BG}"/>`);
+    out.push(`<rect width="${OG_W}" height="${OG_H}" fill="${chrome.field}"/>`);
 
-    // Brand wordmark, top-left.
-    out.push(`<text x="${M}" y="98" font-family="SUSE" font-weight="700" font-size="34" fill="${CARD_INK}">Lolly</text>`);
+    // Co-brand row: Lolly lockup left, the brand's reverse logo right, hairline under both.
+    out.push(lockup(chrome, M, 96));
+    out.push(brandMark(chrome, OG_W - M - CARD_LOGO_W, 62, CARD_LOGO_W));
+    out.push(`<rect x="${M}" y="${CARD_RULE_Y}" width="${OG_W - 2 * M}" height="1" fill="${chrome.ink}" opacity="0.16"/>`);
 
-    // Preview panel: soft shadow → white card (hairline-framed so it reads on the
-    // white field) → contain-fit preview (or a tinted placeholder icon when the tool
-    // has no preview yet).
-    out.push(`<rect x="${P.x + 6}" y="${P.y + 12}" width="${P.w}" height="${P.h}" rx="${P.r}" fill="rgba(0,0,0,0.12)"/>`);
-    out.push(`<rect x="${P.x}" y="${P.y}" width="${P.w}" height="${P.h}" rx="${P.r}" fill="#ffffff" stroke="${CARD_PANEL_LINE}" stroke-width="1"/>`);
+    // Preview panel: soft shadow → white card → contain-fit preview (or a tinted
+    // placeholder icon when the tool has no preview yet).
+    out.push(`<rect x="${P.x + 6}" y="${P.y + 12}" width="${P.w}" height="${P.h}" rx="${P.r}" fill="#000000" opacity="0.22"/>`);
+    out.push(`<rect x="${P.x}" y="${P.y}" width="${P.w}" height="${P.h}" rx="${P.r}" fill="${CARD_PANEL_BG}"/>`);
     if (previewDataUri) {
       const ix = P.x + P.pad, iy = P.y + P.pad, iw = P.w - 2 * P.pad, ih = P.h - 2 * P.pad;
       out.push(`<image x="${ix}" y="${iy}" width="${iw}" height="${ih}" preserveAspectRatio="xMidYMid meet" href="${previewDataUri}"/>`);
     } else if (iconSvg) {
-      const s = 190;
+      const s = 170;
       out.push(placeIcon(iconSvg, P.x + (P.w - s) / 2, P.y + (P.h - s) / 2, s, CARD_PLACEHOLDER));
     }
 
-    // Tool icon (left column) — large, thin-stroked, above the name.
-    if (iconSvg) out.push(placeIcon(iconSvg, M, CARD_ICON_Y, CARD_ICON_SIZE, CARD_INK));
+    // Tool icon (left column) — thin-stroked in the brand accent, above the name.
+    if (iconSvg) out.push(placeIcon(iconSvg, M, CARD_ICON_Y, CARD_ICON_SIZE, chrome.accent));
 
     // Tool name (1–2 lines), then description (≤3 lines).
     let y = CARD_NAME_Y;
     for (const line of nameLines) {
-      out.push(`<text x="${M}" y="${y}" font-family="SUSE" font-weight="700" font-size="${nameSize}" fill="${CARD_INK}">${xmlEsc(line)}</text>`);
+      out.push(`<text x="${M}" y="${y}" font-family="SUSE" font-weight="700" font-size="${nameSize}" fill="${chrome.ink}">${xmlEsc(line)}</text>`);
       y += Math.round(nameSize * 1.06);
     }
-    y += 16;
+    y += 14;
     for (const line of wrapLines(description, 26, textW, 3)) {
-      out.push(`<text x="${M}" y="${y}" font-family="SUSE" font-weight="400" font-size="26" fill="${CARD_MUTED}">${xmlEsc(line)}</text>`);
+      out.push(`<text x="${M}" y="${y}" font-family="SUSE" font-weight="400" font-size="26" fill="${chrome.muted}">${xmlEsc(line)}</text>`);
       y += 36;
     }
 
     // Footer.
-    out.push(`<text x="${M}" y="${OG_H - 54}" font-family="SUSE" font-weight="500" font-size="24" fill="${CARD_MUTED}">lolly.tools</text>`);
+    out.push(`<text x="${M}" y="${OG_H - 54}" font-family="SUSE" font-weight="500" font-size="24" fill="${chrome.footer}">lolly.tools</text>`);
 
     out.push(`</svg>`);
     return out.join('');
@@ -229,34 +389,34 @@ export function createToolCardRenderer(rasterize: SvgToPng) {
   return {
     /** Render one tool's card to PNG bytes (via the injected browser rasteriser). */
     render(card: ToolCard): Promise<Buffer> {
-      return rasterize(svgFor(card), { width: OG_W, height: OG_H, background: CARD_BG });
+      return rasterize(svgFor(card), { width: OG_W, height: OG_H, background: chrome.field });
     },
   };
 }
 
 // ── Per-view share card (app-section header style) ───────────────────────────
 //
-// Distinct from BOTH cards above: where the tool card is a light gallery tile, a
-// VIEW card is a dark "brand-system" panel — the app's own sections (Dashboard,
-// Verify, Catalogue, Projects, Profile) shared as clean deep links (/d, /v, /c,
-// /p, /profile). Pine field, a green app-icon tile up top, a big SUSE-Bold title,
-// a one-line description, and a large low-opacity watermark of the same icon
-// bleeding off the right edge. Cohesive as a family; distinguished by icon + title.
+// The app's own sections (Tools, Utilities, Projects, Catalogue, Dashboard, Verify,
+// Brand setup, Colour Lab, Batch mode, PDF, Profile) shared as clean deep links
+// (/tools, /u, /p, /c, /d, /v, …). Same field, marks and type as the tool card — what
+// differs is the composition: no preview panel, but an app-icon tile in the accent, a
+// much bigger title, a low-opacity watermark of the same icon bleeding off the right
+// edge, and the lollipop cropped by the corner. Cohesive as a family; distinguished by
+// icon + title.
 
 const VIEW_MARGIN = 72;
-const VIEW_FIELD    = '#1c4a2e';   // pine field — shared with og.png so the family reads as one brand
-const VIEW_INK      = '#ffffff';   // title (bright white on pine)
-const VIEW_WORDMARK = '#e4e9e6';   // "Lolly" wordmark — the softer off-white of the /info card subtitle
-const VIEW_MUTED    = '#a7bcb0';   // description (dim green-grey)
-const VIEW_FOOTER   = '#7f9a8c';   // footer, one step dimmer again
-const VIEW_ACCENT   = '#30ba78';   // SUSE Pine Green — the icon tile + watermark
-
-// The green app-icon tile (top-left) and the title beneath it.
-const VIEW_TILE   = { x: VIEW_MARGIN, y: 150, size: 128, r: 30 };
-const VIEW_ICON_INSET = 30;          // icon padding inside the tile
-const VIEW_TITLE_Y   = 408;          // title baseline
+// Colours come from the active brand (loadBrandChrome) — the view card is the same
+// light-on-dark family as the tool card, so only its composition differs.
+const VIEW_LOGO_W = 150;             // brand reverse logo width, top-right
+// The accent app-icon tile (top-left) and the title beneath it.
+const VIEW_TILE   = { x: VIEW_MARGIN, y: 176, size: 120, r: 28 };
+const VIEW_ICON_INSET = 28;          // icon padding inside the tile
+const VIEW_TITLE_Y   = 418;          // title baseline
 const VIEW_TITLE_SIZE = 82;
 const VIEW_TITLE_MIN  = 52;
+// The lollipop, big and cropped by the bottom-right corner — brand texture that
+// says "Lolly" without competing with the type column on the left.
+const VIEW_MARK_SIZE = 300;
 
 // The per-view card inputs. `iconSvg` is a lucide-style 24×24 stroke icon.
 interface ViewCard {
@@ -277,40 +437,47 @@ function fitViewTitle(title: string, boxWidth: number): number {
  * pine field, with a large translucent icon watermark bleeding off the right. `rasterize`
  * is injected (browser path) so a missing browser degrades like createOgRenderer.
  */
-export function createViewCardRenderer(rasterize: SvgToPng) {
+export function createViewCardRenderer(rasterize: SvgToPng, chrome: BrandChrome) {
   const svgFor = ({ title, description, iconSvg }: ViewCard): string => {
     const M = VIEW_MARGIN;
-    const textW = OG_W - M - 96;                 // title/description column width
+    const textW = OG_W - M - 480;                // type column — clear of the lollipop
     const titleSize = fitViewTitle(title, textW);
 
     const out: string[] = [];
     out.push(`<svg xmlns="http://www.w3.org/2000/svg" width="${OG_W}" height="${OG_H}" viewBox="0 0 ${OG_W} ${OG_H}">`);
-    out.push(`<rect width="${OG_W}" height="${OG_H}" fill="${VIEW_FIELD}"/>`);
+    out.push(`<rect width="${OG_W}" height="${OG_H}" fill="${chrome.field}"/>`);
 
     // Watermark: the view's own icon, huge and faint, bleeding off the right edge —
     // brand texture that names the section without competing with the type.
-    const wm = 620;
-    out.push(`<g opacity="0.09">${placeIcon(iconSvg, OG_W - wm + 168, (OG_H - wm) / 2, wm, VIEW_ACCENT, 1.1)}</g>`);
+    const wm = 600;
+    out.push(`<g opacity="0.10">${placeIcon(iconSvg, OG_W - wm + 176, (OG_H - wm) / 2, wm, chrome.accent, 1.1)}</g>`);
 
-    // Brand wordmark, top-left.
-    out.push(`<text x="${M}" y="98" font-family="SUSE" font-weight="700" font-size="34" fill="${VIEW_WORDMARK}">Lolly</text>`);
+    // The lollipop, cropped by the bottom-right corner.
+    if (chrome.mark) {
+      const s = VIEW_MARK_SIZE;
+      out.push(`<image x="${OG_W - s - 40}" y="${OG_H - s + 96}" width="${s}" height="${s}" href="${chrome.mark}"/>`);
+    }
 
-    // App-icon tile: a rounded green square with the view icon in dark pine — reads
-    // like a real app icon, so each section has a recognisable mark.
+    // Co-brand row: Lolly lockup left, the brand's reverse logo right.
+    out.push(lockup(chrome, M, 96));
+    out.push(brandMark(chrome, OG_W - M - VIEW_LOGO_W, 62, VIEW_LOGO_W));
+
+    // App-icon tile: a rounded accent square with the view icon in the field colour —
+    // reads like a real app icon, so each section has a recognisable mark.
     const T = VIEW_TILE;
-    out.push(`<rect x="${T.x}" y="${T.y}" width="${T.size}" height="${T.size}" rx="${T.r}" fill="${VIEW_ACCENT}"/>`);
-    out.push(placeIcon(iconSvg, T.x + VIEW_ICON_INSET, T.y + VIEW_ICON_INSET, T.size - 2 * VIEW_ICON_INSET, VIEW_FIELD, 2));
+    out.push(`<rect x="${T.x}" y="${T.y}" width="${T.size}" height="${T.size}" rx="${T.r}" fill="${chrome.accent}"/>`);
+    out.push(placeIcon(iconSvg, T.x + VIEW_ICON_INSET, T.y + VIEW_ICON_INSET, T.size - 2 * VIEW_ICON_INSET, chrome.field, 2));
 
     // Title, then a one-line (≤2) description beneath it.
-    out.push(`<text x="${M}" y="${VIEW_TITLE_Y}" font-family="SUSE" font-weight="700" font-size="${titleSize}" fill="${VIEW_INK}">${xmlEsc(title)}</text>`);
-    let y = VIEW_TITLE_Y + 58;
+    out.push(`<text x="${M}" y="${VIEW_TITLE_Y}" font-family="SUSE" font-weight="700" font-size="${titleSize}" fill="${chrome.ink}">${xmlEsc(title)}</text>`);
+    let y = VIEW_TITLE_Y + 56;
     for (const line of wrapLines(description, 30, textW, 2)) {
-      out.push(`<text x="${M}" y="${y}" font-family="SUSE" font-weight="400" font-size="30" fill="${VIEW_MUTED}">${xmlEsc(line)}</text>`);
+      out.push(`<text x="${M}" y="${y}" font-family="SUSE" font-weight="400" font-size="30" fill="${chrome.muted}">${xmlEsc(line)}</text>`);
       y += 42;
     }
 
     // Footer.
-    out.push(`<text x="${M}" y="${OG_H - 54}" font-family="SUSE" font-weight="500" font-size="24" fill="${VIEW_FOOTER}">lolly.tools</text>`);
+    out.push(`<text x="${M}" y="${OG_H - 44}" font-family="SUSE" font-weight="500" font-size="24" fill="${chrome.footer}">lolly.tools</text>`);
 
     out.push(`</svg>`);
     return out.join('');
@@ -319,7 +486,7 @@ export function createViewCardRenderer(rasterize: SvgToPng) {
   return {
     /** Render one view's card to PNG bytes (via the injected browser rasteriser). */
     render(card: ViewCard): Promise<Buffer> {
-      return rasterize(svgFor(card), { width: OG_W, height: OG_H, background: VIEW_FIELD });
+      return rasterize(svgFor(card), { width: OG_W, height: OG_H, background: chrome.field });
     },
   };
 }
