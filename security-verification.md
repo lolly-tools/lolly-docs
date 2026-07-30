@@ -8,7 +8,7 @@ The short version: **verification is entirely on-device, the crypto is standards
 
 Everything Lolly verifies, it verifies **locally, offline, without uploading the file**. Dropping a file on `/verify` (or `lolly validate <file>`) parses it, walks its Content Credential, re-checks the signature and the byte-hash binding, and renders a verdict — all in your browser or on your machine. There is no verification server.
 
-![The Verify screen with nothing but a drop target - no upload button, no account, because the check runs where the file already is](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1400&format=svg&cropSelector=.valid-layout&filename=cc-verify-drop)
+![The Verify screen with nothing but a drop target - no upload button, no account, because the check runs where the file already is](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1400&format=svg&cropSelector=.valid-layout&walker=1&filename=cc-verify-drop)
 
 The engine's crypto core is **platform-agnostic and uses only `globalThis.crypto` / WebCrypto** — no bespoke crypto library, no Node-only APIs, and **no network calls anywhere in the engine**. In the web app, verification makes **no network request to any third party** — the only fetch it can ever make is the opt-in deep scan's one-time detector download, from the app's own origin. Even a **SEAL** record whose signing key lives in DNS is reported as "no key resolver" rather than routed through a third-party DNS-over-HTTPS service (the desktop and command-line shells resolve such keys through your own machine's DNS, with no third party involved).
 

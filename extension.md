@@ -6,11 +6,11 @@ It runs on Chromium-based browsers: **Chrome, Edge, Brave, Arc, Opera**.
 
 Until it is installed, **URL Screenshot** still opens so you can compose a shot, and a note at the top of the tool's controls says what is missing.
 
-![The URL Screenshot tool's note offering the extension, shown when capture to file has no host to run on](/t/url-shot?url=%2F%23%2Ftool%2Furl-shot&width=1440&height=900&dpi=192&waitMs=2400&format=svg&cropSelector=%23capture-hint-notice&filename=exp-url-shot-notice)
+![The URL Screenshot tool's note offering the extension, shown when capture to file has no host to run on](/t/url-shot?url=%2F%23%2Ftool%2Furl-shot&width=1440&height=900&dpi=192&waitMs=2400&format=svg&cropSelector=%23capture-hint-notice&walker=1&filename=exp-url-shot-notice)
 
 Every control is live while you wait: the target URL, the scroll depth, the settle delay, the crop insets and the recolour. Only the capture itself needs a host.
 
-![The URL Screenshot controls with a target URL, scroll depth, settle delay and crop insets, all usable before the extension exists](/t/url-shot?url=%2F%23%2Ftool%2Furl-shot%3Furl%3Dhttps%3A%2F%2Flolly.tools%26scrollDepth%3D0.3%26waitMs%3D1200&width=1440&height=2200&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=fq-url-shot-controls)
+![The URL Screenshot controls with a target URL, scroll depth, settle delay and crop insets, all usable before the extension exists](/t/url-shot?url=%2F%23%2Ftool%2Furl-shot%3Furl%3Dhttps%3A%2F%2Flolly.tools%26scrollDepth%3D0.3%26waitMs%3D1200&width=1440&height=2200&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&walker=1&filename=fq-url-shot-controls)
 
 ## Install
 

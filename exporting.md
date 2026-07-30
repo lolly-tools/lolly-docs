@@ -34,7 +34,7 @@ A saved session can also be re-shared as a tool link from Projects (it reconstru
 
 The filename and the format picker sit at the top of the panel as one `name.format` pair, and the picker lists only the formats this tool's author declared.
 
-![The filename field fused to the format picker, so the export reads as one name.format pair](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.filename-extension&filename=exp-format-picker)
+![The filename field fused to the format picker, so the export reads as one name.format pair](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.filename-extension&walker=1&filename=exp-format-picker)
 
 | You want… | Use | Why |
 |---|---|---|
@@ -61,7 +61,7 @@ The filename and the format picker sit at the top of the panel as one `name.form
 
 The first row is the common case. A wordmark set in your brand face exports as SVG, where every letter is an outlined path rather than a pixel, so it stays crisp at a business-card size and at a building-wrap size from the same file.
 
-![A hairline wide-tracked wordmark reading Aurora, the kind of pure vector artwork the SVG row of the table is about](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DAurora%26weight%3D200%26tracking%3D16%26size%3D200%26full&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=%23tool-canvas&format=svg&filename=vt-wordmark-vector)
+![A hairline wide-tracked wordmark reading Aurora, the kind of pure vector artwork the SVG row of the table is about](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DAurora%26weight%3D200%26tracking%3D16%26size%3D200%26full&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=%23tool-canvas&format=svg&walker=1&filename=vt-wordmark-vector)
 
 ## Size & print units
 
@@ -74,7 +74,7 @@ To get a higher-resolution raster, enter a larger width/height, or choose a phys
 
 Example: width `210`, height `297`, unit `mm` → an A4 page.
 
-![The dimensions row set to 210 by 297 mm, with the DPI field revealed because the unit is physical](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26w%3D210%26h%3D297%26unit%3Dmm%26format%3Dpdf%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-dims&filename=exp-export-dims)
+![The dimensions row set to 210 by 297 mm, with the DPI field revealed because the unit is physical](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26w%3D210%26h%3D297%26unit%3Dmm%26format%3Dpdf%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-dims&walker=1&filename=exp-export-dims)
 
 ## Stills from a timed composition
 
@@ -129,7 +129,7 @@ Vector tools (Brand Lockup, QR Code, Street Map, Wayfinding Signage, Pose Geeko,
 
 Street Map is the clearest case: the whole design is already strokes, so every road and canal becomes a cut path with nothing to drop.
 
-![A Street Map render of Paris in ink on cream - pure line art, so every stroke survives the trip to a cutter](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dparis%26roadColor%3D1a1a2e%26waterColor%3D93c5fd%26background%3Dfaf7f2%26full&width=1440&height=900&dpi=192&waitMs=3200&cropSelector=%23tool-canvas&format=png&filename=vt-street-map-cut)
+![A Street Map render of Paris in ink on cream - pure line art, so every stroke survives the trip to a cutter](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dparis%26roadColor%3D1a1a2e%26waterColor%3D93c5fd%26background%3Dfaf7f2%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&format=png&filename=vt-street-map-cut)
 
 ## Animated SVG
 
@@ -167,7 +167,7 @@ This is automatic - no setting to fiddle with. Thumbnails and previews skip the 
 
 Ordinary exports are sRGB: white is white, and a saturated brand colour is as bright as the screen's normal white. On an HDR-capable display there's a lot of headroom above that, and the **HDR** card in the export panel uses it - your brand colours and white text are boosted toward peak brightness so they genuinely *glow*, while the dark areas stay dark and give the glow its contrast.
 
-![The HDR card in the export panel, switched on, with the White / Reach / Dark lift / Focus dials revealed under it](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26hdr%3D1%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-hdr&filename=exp-hdr-card)
+![The HDR card in the export panel, switched on, with the White / Reach / Dark lift / Focus dials revealed under it](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26hdr%3D1%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-hdr&walker=1&filename=exp-hdr-card)
 
 - **Formats.** The raster formats with a place to carry the signal: **PNG**, **JPG**, **AVIF** and **TIFF**. (Not WebP - it's 8-bit with no working HDR decode path, so a PQ WebP would simply look dark. Vectors and PDF have no HDR model at all.)
 - **Off by default**, unlike colour tagging - it changes the pixels, so it's opt-in. Tick the card, or pass `hdr=1` in a share link.
@@ -240,7 +240,7 @@ The same *Password protect* card in the export panel drives both the PDF and ZIP
 
 Exports can carry **Content Credentials** - a signed [C2PA](https://c2pa.org) manifest embedded in the file that records, in a tamper-evident way, that the file was made with Lolly and hasn't been altered since. It's the standards-track version of the provenance metadata above: a cryptographic claim (what made the file, when, by whom, and where) bound to a hash of the file's bytes, so any later edit is detectable by a C2PA-aware viewer. The standard is stewarded by the [Content Authenticity Initiative](https://contentauthenticity.org) (Adobe, BBC, Microsoft, Nikon and others), so the same credentials Lolly writes are the ones cameras, newsrooms and creative suites are adopting.
 
-![The Content Credentials card, pre-ticked, with the credential lifetime beside it](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26c2pa%3D30%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-c2pa%5Bdata-c2pa-only%5D&filename=exp-c2pa-card)
+![The Content Credentials card, pre-ticked, with the credential lifetime beside it](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26c2pa%3D30%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-c2pa%5Bdata-c2pa-only%5D&walker=1&filename=exp-c2pa-card)
 
 - **Formats.** Every container with a C2PA embedding: **PDF** (both RGB and Print), **PNG / Animated PNG**, **JPG**, **GIF**, **SVG**, **TIFF** (RGB and Print), **WebP** (still and animated) **MP4** and **WebM**. A **ZIP** bundle stamps each supported member individually. MP4 uses the spec's BMFF binding, so `c2patool` and other C2PA-aware viewers verify it; WebM has no standardised C2PA mapping yet, so Lolly carries the manifest as a Matroska attachment that Lolly's own verifier (and CLI) checks. (`avif` and Animated SVG are not yet stamped; `ico`, `eps`, `emf`, `dxf`, `pptx` and the text/data formats have no C2PA container.)
 - **On by default.** The **Content Credentials** card in the export panel comes pre-selected for nearly every tool - untick it to skip the credential on a single export (or pass `c2pa=off` in a share link). A tool can opt out entirely in its manifest.

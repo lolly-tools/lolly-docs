@@ -30,7 +30,7 @@
 
 ## Verifying a file
 
-![The Verify screen with nothing but a drop target - no upload button, no account, because the check runs where the file already is](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1400&format=svg&cropSelector=.valid-layout&filename=cc-verify-drop)
+![The Verify screen with nothing but a drop target - no upload button, no account, because the check runs where the file already is](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1400&format=svg&cropSelector=.valid-layout&walker=1&filename=cc-verify-drop)
 
 The **Verify** tab (canonical `/verify`; the aliases `/valid` and `/v` redirect to
 it) checks any file's credential entirely on-device. It reads the whole C2PA
@@ -56,7 +56,7 @@ the credential: a file that declares AI-generated content, carries Lolly's own p
 Imprint, or is quietly hiding data in its bytes gets flagged too - see [Beyond the
 credential](#beyond-the-credential-what-else-verify-shows) below.
 
-![The Change history panel, where every step names the software that made it and Lolly's own leg of the journey reads green](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&css=.cl-head%2C.cl-recs%2C.cl-section%3Anot%28%23cl-verify-valid%29%7Bdisplay%3Anone%7D&cropSelector=.valid-steps&filename=cc-change-history)
+![The Change history panel, where every step names the software that made it and Lolly's own leg of the journey reads green](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&css=.cl-head%2C.cl-recs%2C.cl-section%3Anot%28%23cl-verify-valid%29%7Bdisplay%3Anone%7D&cropSelector=.valid-steps&walker=1&filename=cc-change-history)
 
 The same credential check runs in the CLI (`lolly validate <file>`) and in any
 third-party C2PA validator pointed at the public Lolly root
@@ -86,7 +86,7 @@ the scorecard - marked *detected*, or *in an image* when the mark sits in a rast
 embedded inside a PDF or PPTX. The Imprint is now **on by default** on raster
 exports; see [Exporting → Provenance & watermark](/info/exporting.html#provenance-watermark).
 
-![The Lolly Imprint switch in the export panel, already on, with the question mark opening what it does and does not promise](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26options%26c2pa%3D90%26imprint%3D1&width=1440&height=900&dpi=192&waitMs=2200&format=svg&css=%23tool-inputs%2C%23sidebar-utils%7Bdisplay%3Anone%7D&cropSelector=.export-imprint&filename=cc-export-imprint)
+![The Lolly Imprint switch in the export panel, already on, with the question mark opening what it does and does not promise](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26options%26c2pa%3D90%26imprint%3D1&width=1440&height=900&dpi=192&waitMs=2200&format=svg&css=%23tool-inputs%2C%23sidebar-utils%7Bdisplay%3Anone%7D&cropSelector=.export-imprint&walker=1&filename=cc-export-imprint)
 
 ### AI-generated content
 
@@ -212,7 +212,7 @@ long an exported file keeps its verified badge - the verifier compares the
 cert window against *verification* time, not signing time. So the lifetime is
 the user's call, offered at the moment the certificate is actually minted:
 
-![The C2PA Credentials card carrying its own Expires picker, so the window is chosen on the export that uses it](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26options%26c2pa%3D90%26imprint%3D1&width=1440&height=900&dpi=192&waitMs=2200&format=svg&css=%23tool-inputs%2C%23sidebar-utils%7Bdisplay%3Anone%7D&cropSelector=.export-c2pa%5Bdata-c2pa-only%5D&filename=cc-c2pa-lifetime)
+![The C2PA Credentials card carrying its own Expires picker, so the window is chosen on the export that uses it](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26options%26c2pa%3D90%26imprint%3D1&width=1440&height=900&dpi=192&waitMs=2200&format=svg&css=%23tool-inputs%2C%23sidebar-utils%7Bdisplay%3Anone%7D&cropSelector=.export-c2pa%5Bdata-c2pa-only%5D&walker=1&filename=cc-c2pa-lifetime)
 
 - **Not enrolled (ephemeral path):** the self-signed cert is generated fresh
   per export, so the **export panel's Content Credentials card** carries the

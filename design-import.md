@@ -65,7 +65,7 @@ For a *fully declarative* tool - sidebar inputs, hard-coded constraints, the wor
 
 Import travels one direction; the **brand primitives travel both ways**. Lolly's colours are [DTCG design tokens](/info/design-tokens.html) - the same format Penpot imports/exports natively and Tokens Studio brings to Figma - so the palette you design *with* in Figma/Penpot and the palette Lolly enforces are one document, not two hand-synced lists.
 
-![The Brand Studio's import card - a Penpot export, a DTCG or Tokens Studio file, or a plain SVG all come in through the same door](/t/url-shot?url=%2F%23%2Fstart%3Fimport&width=1440&height=900&dpi=192&waitMs=1600&css=.start-import-modal%20.modal-msg%2C.start-import-modal%20.modal-title%7Bdisplay%3Anone%7D&cropSelector=.start-import-drop&format=svg&filename=bs-brand-import-formats)
+![The Brand Studio's import card - a Penpot export, a DTCG or Tokens Studio file, or a plain SVG all come in through the same door](/t/url-shot?url=%2F%23%2Fstart%3Fimport&width=1440&height=900&dpi=192&waitMs=1600&css=.start-import-modal%20.modal-msg%2C.start-import-modal%20.modal-title%7Bdisplay%3Anone%7D&cropSelector=.start-import-drop&format=svg&walker=1&filename=bs-brand-import-formats)
 
 ## Limits & safety
 
