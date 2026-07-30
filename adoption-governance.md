@@ -64,7 +64,7 @@ Onboarding is about handing over control of the rules, not the output:
 
 The Dashboard's capability map is the inventory to scope that decision against: every part of the platform as its own card, grouped by what it makes and where it runs.
 
-![The Dashboard's What Lolly can do panel, the whole feature set laid out as grouped cards rather than a prose feature list](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dcaps&width=1440&height=900&dpi=192&waitMs=2600&format=svg&filename=ce-capability-map)
+![The Dashboard's What Lolly can do panel, the whole feature set laid out as grouped cards rather than a prose feature list](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dcaps&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23dash-caps&format=svg&filename=ce-capability-map)
 
 ### IT & security
 
