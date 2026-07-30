@@ -100,6 +100,16 @@ Some tools build a **multi-page PDF document** instead of a single artwork - a c
 
 Multi-page PDFs are RGB documents and don't carry crop/bleed marks - those belong to the single-page **Print PDF** path above. They do carry the same **PDF/X-4 metadata** as every PDF export (page boxes, XMP, document ID, an sRGB output intent with embedded profile), and they offer **Content Credentials** (below) - on the *Multi-Page PDF* tool the option comes pre-selected.
 
+## Making many things at once
+
+Lolly has three distinct ways to work at volume, and they solve different jobs — batch editing is a first-class capability of the platform, not something each tool reinvents:
+
+- **One design × a table of rows → one multi-page document.** Tools with a `table` input (like *Battlecards*) turn every row into a page automatically — paste a table from your spreadsheet, get a deck-sized PDF. Your real batch editor stays the spreadsheet: fix ten rows there, paste again. The tool itself never manages pages.
+- **One design × a data file → many separate files.** The `/pro` batch grid takes a CSV and renders one export *per row* — name badges, certificates, one file each.
+- **Many different assets, edited side by side.** *Multi-edit* opens several saved sessions in one view for coordinated touch-ups across distinct designs.
+
+Rule of thumb: rows of the same design that belong in **one document** → a table-driven tool; rows that must ship as **separate files** → `/pro`; **different designs** that need the same tweak → multi-edit. (A planned "combine media" render option will bridge the first two — concatenating same-format exports into one PDF, one video, or a proofing contact sheet.)
+
 ## PowerPoint (PPTX)
 
 Multi-page and layout tools (Carousel, Doc Studio, Multi-Page PDF, the chart tools, and the single-canvas card/layout tools) can export a **PowerPoint deck** - one slide per page. The point isn't a pixel-perfect screenshot; it's to hand a colleague a deck they can actually **edit and take assets out of**. So each page is decomposed into native objects:
