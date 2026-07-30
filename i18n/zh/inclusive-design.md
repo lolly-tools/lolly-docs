@@ -18,6 +18,8 @@ Lolly 自己的界面：菜单、卡片、导航、字体。它们经过专门�
 
 ## 无障碍
 
+![The Accessibility card on the profile page: four plain switches - Reduce motion, Hide colourful previews, High contrast and Large text - each with a help tip](/t/url-shot?url=%2F%23%2Fprofile&width=430&height=900&dpi=192&waitMs=2000&scrollDepth=1300&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&cropSelector=.profile-card--a11y&filename=incl-a11y-card)
+
 除了跟随平台自身的信号（系统深色模式、操作系统的减弱动效偏好）之外，Lolly 还在
 你的个人资料中提供明确的、需自行开启的无障碍偏好设置：
 
@@ -39,6 +41,8 @@ Lolly 自己的界面：菜单、卡片、导航、字体。它们经过专门�
 
 ## 降低与增强刺激
 
+![A utility card on a phone-width screen: a calm icon and text tile that keeps its favourite, pin and info actions](/t/url-shot?url=%2F%23%2Fu&width=430&height=900&dpi=192&waitMs=2400&scrollDepth=900&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D.gtile%7Bcontent-visibility%3Avisible%7D&format=svg&walker=1&cropSelector=.gtile--utility%5Bdata-tool-id%5D&filename=incl-utility-card)
+
 神经多样性人群不是只有一种需求的单一群体。同一个大脑，在艰难的一天会被满墙的
 彩色缩略图压垮，在另一天却可能寻求强烈的感官输入，因此 Lolly 在两个方向上都提供
 适配，并且始终由你自行开启：
@@ -55,6 +59,8 @@ Lolly 自己的界面：菜单、卡片、导航、字体。它们经过专门�
   单一无障碍方案。
 
 ## 语言与本地化优先级
+
+![The appearance settings rendered in Arabic on a phone-width screen: a fully right-to-left layout, not a mirrored afterthought](/t/url-shot?url=%2F%23%2Fprofile%3Flang%3Dar&width=430&height=900&dpi=192&waitMs=2200&scrollDepth=950&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=png&cropSelector=.profile-card--appearance&filename=incl-profile-rtl)
 
 - <!--i:globe--> Lolly 的界面和文档被翻译成超过 25 种语言，并且我们**按使用
   人数排定语言的优先级**，而不是按市场收入：印地语、孟加拉语、乌尔都语和印尼语
