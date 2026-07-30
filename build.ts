@@ -107,6 +107,7 @@ const pages: Page[] = [
   { slug: 'server-surface',   title: 'Server Surface',    src: 'server-surface.md',  pathway: 'operators' },
   { slug: 'verify-yourself',  title: 'Verify It Yourself', src: 'verify-yourself.md', pathway: 'operators' },
   { slug: 'privacy',          title: 'Privacy Policy',    src: 'privacy.md',         pathway: 'operators' },
+  { slug: 'inclusive-design', title: 'Inclusive Design',  src: 'inclusive-design.md', pathway: 'operators' },
 ];
 
 // Top-nav links, grouped into clusters. Each inner array renders as one cluster
@@ -219,7 +220,8 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
         { slug: 'parser-inventory', label: 'Parser Inventory' },
         { slug: 'server-surface', label: 'Server Surface' },
         { slug: 'verify-yourself', label: 'Verify It Yourself' },
-        { slug: 'privacy', label: 'Privacy Policy' } ] },
+        { slug: 'privacy', label: 'Privacy Policy' },
+        { slug: 'inclusive-design', label: 'Inclusive Design' } ] },
     ],
   },
 };
@@ -434,9 +436,13 @@ function mdToHtml(md: string) {
     }
 
     if (line.startsWith('> ')) {
+      // Join hard-wrapped quote lines into real paragraphs (a bare `>` line is
+      // the separator) — one <p> per SOURCE LINE broke the reading flow at the
+      // author's wrap points.
       const ql: string[] = [];
-      while (i < lines.length && lines[i]!.startsWith('> ')) { ql.push(lines[i]!.slice(2)); i++; }
-      out.push(`<blockquote>${ql.map(l => `<p>${inline(l)}</p>`).join('')}</blockquote>`);
+      while (i < lines.length && lines[i]!.startsWith('>')) { ql.push(lines[i]!.replace(/^>\s?/, '')); i++; }
+      const paras = ql.join('\n').split(/\n\s*\n/).map(p => p.replace(/\s*\n\s*/g, ' ').trim()).filter(Boolean);
+      out.push(`<blockquote>${paras.map(p => `<p>${inline(p)}</p>`).join('')}</blockquote>`);
       continue;
     }
 
@@ -475,10 +481,22 @@ function mdToHtml(md: string) {
       continue;
     }
 
+    // A hard-wrapped list item continues on indented follow-up lines (standard
+    // markdown lazy continuation). Without absorbing them the tail of every
+    // wrapped bullet fell through to the paragraph branch and rendered as its
+    // own <p> OUTSIDE the list — mid-sentence. Indented code fences inside a
+    // list item are NOT absorbed (they keep their existing rendering).
+    const itemContinues = () =>
+      i < lines.length && /^\s+\S/.test(lines[i]!) &&
+      !/^\s*[-*] /.test(lines[i]!) && !/^\s*\d+\. /.test(lines[i]!) &&
+      !lines[i]!.trim().startsWith('```');
+
     if (/^\s*[-*] /.test(line)) {
       out.push('<ul>');
       while (i < lines.length && /^\s*[-*] /.test(lines[i]!)) {
-        out.push(`<li>${inline(lines[i]!.replace(/^\s*[-*] /, ''))}</li>`); i++;
+        const item = [lines[i]!.replace(/^\s*[-*] /, '')]; i++;
+        while (itemContinues()) { item.push(lines[i]!.trim()); i++; }
+        out.push(`<li>${inline(item.join(' '))}</li>`);
       }
       out.push('</ul>'); continue;
     }
@@ -486,7 +504,9 @@ function mdToHtml(md: string) {
     if (/^\d+\. /.test(line)) {
       out.push('<ol>');
       while (i < lines.length && /^\d+\. /.test(lines[i]!)) {
-        out.push(`<li>${inline(lines[i]!.replace(/^\d+\. /, ''))}</li>`); i++;
+        const item = [lines[i]!.replace(/^\d+\. /, '')]; i++;
+        while (itemContinues()) { item.push(lines[i]!.trim()); i++; }
+        out.push(`<li>${inline(item.join(' '))}</li>`);
       }
       out.push('</ol>'); continue;
     }
@@ -2343,7 +2363,7 @@ function buildNav(lang: Lang, slug: string, activeHref: string, isLanding: boole
 <div class="nav-mobile-menu" id="navMobileMenu">${mobileLinks}<a href="${launchHref}" class="nav-launch">${launch}</a></div>`;
 }
 
-const FOOTER = (lang: Lang) => `<footer><p>Lolly - <a href="${REPO_URL}">${esc(t('Open Source'))}</a> · <a href="${localeHref(lang, 'privacy')}">${esc(t('Privacy Policy'))}</a></p><p>${esc(t('Questions? Contact Andy Fitzsimon -'))} <a href="mailto:fitzy@suse.com">fitzy@suse.com</a></p>${FOUNDED_BY}</footer>`;
+const FOOTER = (lang: Lang) => `<footer><p>Lolly - <a href="${REPO_URL}">${esc(t('Open Source'))}</a> · <a href="${localeHref(lang, 'privacy')}">${esc(t('Privacy Policy'))}</a> · <a href="${localeHref(lang, 'inclusive-design')}">${esc(t('Inclusive Design'))}</a></p><p>${esc(t('Questions? Contact Andy Fitzsimon -'))} <a href="mailto:fitzy@suse.com">fitzy@suse.com</a></p>${FOUNDED_BY}</footer>`;
 
 // Docs sidebar for a page, driven by its pathway. Falls back to the builders
 // sidebar for any non-landing page without an explicit pathway.
