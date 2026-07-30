@@ -25,6 +25,8 @@ cómoda y un render fiel.
 
 ## Accesibilidad
 
+![The Accessibility card on the profile page: four plain switches - Reduce motion, Hide colourful previews, High contrast and Large text - each with a help tip](/t/url-shot?url=%2F%23%2Fprofile&width=430&height=900&dpi=192&waitMs=2000&scrollDepth=1300&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&cropSelector=.profile-card--a11y&filename=incl-a11y-card)
+
 Además de seguir las señales de la propia plataforma (el modo oscuro del
 sistema, la preferencia de movimiento reducido del sistema operativo), Lolly
 incluye preferencias de accesibilidad explícitas y opcionales en tu perfil:
@@ -57,6 +59,8 @@ importa.
 
 ## Estimulación reducida y aumentada
 
+![A utility card on a phone-width screen: a calm icon and text tile that keeps its favourite, pin and info actions](/t/url-shot?url=%2F%23%2Fu&width=430&height=900&dpi=192&waitMs=2400&scrollDepth=900&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D.gtile%7Bcontent-visibility%3Avisible%7D&format=svg&walker=1&cropSelector=.gtile--utility%5Bdata-tool-id%5D&filename=incl-utility-card)
+
 Las personas neurodivergentes no son una sola audiencia con una sola necesidad.
 El mismo cerebro que un día difícil se siente abrumado por un muro de miniaturas
 coloridas puede buscar un estímulo sensorial intenso otro día, así que Lolly se
@@ -79,6 +83,8 @@ adapta en ambas direcciones, siempre de forma opcional:
   compuso por ti.
 
 ## Prioridad de idiomas y localización
+
+![The appearance settings rendered in Arabic on a phone-width screen: a fully right-to-left layout, not a mirrored afterthought](/t/url-shot?url=%2F%23%2Fprofile%3Flang%3Dar&width=430&height=900&dpi=192&waitMs=2200&scrollDepth=950&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=png&cropSelector=.profile-card--appearance&filename=incl-profile-rtl)
 
 - <!--i:globe--> La interfaz y la documentación de Lolly están traducidas a más
   de 25 idiomas, y **priorizamos los idiomas por cuántas personas los hablan**,
