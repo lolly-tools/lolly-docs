@@ -108,7 +108,9 @@ opt-in:
   trackers or analytics in the codebase, and the few network touchpoints are
   enumerated in the [Privacy Policy](/info/privacy.html). Accessibility and
   language preferences are stored in your own profile, on your device - a
-  disability or a language is never telemetry.
+  person's disability or language is never telemetry, because telemetry is not
+  this project's friend. Firstly, we don't want it. Secondly, nobody should
+  have to give their data away.
 - <!--i:shieldcheck--> **Honest provenance.** Exports can carry Content Credentials, and
   AI-generated content is labelled as such. We believe audiences deserve to know
   how media was made, and creators deserve tools that can prove their work is
