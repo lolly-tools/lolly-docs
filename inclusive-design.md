@@ -1,4 +1,4 @@
-# Inclusive Design Policy
+# Lolly Inclusive Design Policy
 
 *Last updated: 30 July 2026*
 
@@ -14,11 +14,11 @@
 
 Lolly is a creative tool: people come here to make things that represent them.
 That shapes every accommodation below in one specific way - **adjusting the app
-never adjusts your work**. Accessibility preferences restyle Lolly's own chrome:
-menus, cards, navigation, type. They are engineered never to reach inside the
-tool canvas or the export pipeline, and automated tests fail our builds if a
-preference could move a single pixel of an exported file. You should never have
-to choose between a comfortable app and a faithful render.
+never adjusts your work**. Accessibility preferences restyle Lolly's own
+interface: menus, cards, navigation, type. They are engineered never to reach
+inside the tool canvas or the export pipeline, and automated tests fail our
+builds if a preference could move a single pixel of an exported file. You should
+never have to choose between a comfortable app and a faithful render.
 
 ## Accessibility
 
@@ -117,8 +117,8 @@ opt-in:
 
 Inclusive design here is a policy in the engineering sense: invariants with
 tests, not aspirations with adjectives. When an accommodation and a feature
-conflict, we redesign the feature (when hiding previews clipped the favourite
-and pin actions off utility cards, the fix was to keep the actions, not to
-excuse the loss). If something in Lolly excludes you - a missing language, an
-overwhelming surface, an assumption we baked in without noticing - that is a
-bug. Tell us: [fitzy@suse.com](mailto:fitzy@suse.com).
+conflict, we redesign the feature (when a 'hide previews' setting also hid icons
+off utility cards, the fix was to keep the actions, not to excuse the loss). If
+something in Lolly excludes you - a missing language, an overwhelming moment, an
+assumption we baked in without noticing - that is a bug. Tell us:
+[fitzy@suse.com](mailto:fitzy@suse.com).
