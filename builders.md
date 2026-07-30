@@ -21,7 +21,7 @@ New to the platform? The **[Quickstart](/info/quickstart.html)** gets a brand an
 
 Every control below was generated from a declared input in `tool.json`. You write the manifest line, the host draws the widget, and the same model drives the CLI and the URL.
 
-![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&format=svg&walker=1&filename=aud-manifest-controls)
+![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&format=svg&filename=aud-manifest-controls)
 
 That scales further than five controls. Give an input a `section` and the host folds it away, so a fifty-input tool like the D3 Chart Studio still opens as a short stack with the rest filed behind named groups.
 

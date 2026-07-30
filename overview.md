@@ -76,7 +76,7 @@ The clearest way to see what Lolly is isn't a feature list - it's to follow a si
 
 The "fresh chart" in step two is a render like this one, produced from a data string and a handful of parameters with nobody opening a design file:
 
-![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&walker=1&filename=ov2-lifecycle-chart)
+![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-lifecycle-chart)
 
 The point isn't that Lolly is good for designers *and* good for developers *and* good for sales, each in a vacuum. It's a **relay race**: the creative's initial work is scaled by the developer, which in turn empowers the producer. The effortless experience for the non-technical rep on the plane is only *possible* because of the rigour the designer set and the developer deployed.
 
@@ -330,7 +330,7 @@ A tool is a manifest (`tool.json`) + a template (`template.html`) + optional `ho
 
 **The manifest declares inputs.** Not the template. Inputs are not inferred from Handlebars tokens. The manifest is the contract; the template consumes named variables by `{{id}}`.
 
-![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&walker=1&filename=ov2-street-map-controls)
+![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-street-map-controls)
 
 **Hooks are optional.** Most tools are pure declarative - manifest + template is enough. Tools needing computed values (QR encoding, chart data shaping) provide `hooks.js` exposing named lifecycle functions (`onInit`, `onInput`, `onFrame` - the per-frame live-camera hook for motion-reactive tools - `beforeExport`, `afterExport`, and `exportFile` - the file-in/file-out transform path used by on-device utilities like Strip Hidden Data). The host loads hooks via `new Function('host', …)` with the capability bridge injected as closure scope. This is a **portability contract, not a security sandbox**: hooks still run in the page realm and *can* reach `window`/`fetch`/`document` in a browser shell - `host.*` is the supported, portable surface, not an enforced boundary. Async hook results are time-boxed (onInit 5s, onInput 2s, others 5s) and late results discarded; a runaway *synchronous* hook cannot be preempted. Untrusted third-party hook code is therefore not safe to run until Worker isolation ships.
 
@@ -400,7 +400,7 @@ CLI mode is URL mode under a different transport - the CLI shell builds a URL-st
 
 Because every input travels in the link, a parameter change is a different finished asset. This whole palette is one seed colour, a harmony and a step count:
 
-![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=%23tool-canvas&walker=1&filename=ov2-url-palette)
+![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=%23tool-canvas&filename=ov2-url-palette)
 
 ### 6. Storage goes through the bridge, not direct
 
@@ -440,7 +440,7 @@ A tool can embed **another** tool's render with no tool-to-tool imports - compos
 
 The Slides tool is built on that second surface: any slot on any slide can hold another Lolly tool instead of an image.
 
-![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&walker=1&filename=ov2-slides-deck)
+![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-slides-deck)
 
 Compose any tool's render: an **SVG** child stays a true vector when the parent exports to SVG or PDF and rasterises crisply for PNG; **PNG/JPG/WEBP** children embed as images. Requires the `compose` capability. Composed children are intermediates - never watermarked or provenance-stamped - and composition degrades gracefully: a shell that can't render a child just omits the slot and the parent still renders.
 
@@ -469,7 +469,7 @@ A user opens `lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H`:
 7. **Interact.** User types in an input → `runtime.setInput(id, value)` → constraints applied → `hooks.onInput` called → re-hydrate → re-render. The canvas updates live.
 8. **Export.** User clicks Download(PNG) → `runtime.export(canvasNode, 'png')` → `host.export.render` (rasterises via dom-to-image-more; SVG/PDF go through dedicated DOM-walking vectorisers) → blob → `host.export.download`. The format range a tool can opt into is broad - the enum in `schemas/tool.schema.json` is the authority: the rasters `png`, `jpg`/`jpeg`, `webp`, `avif`, `tiff`, `ico`; the vectors `svg`, `emf`, `eps`, `dxf` (cut files) and `pdf`; the print/CMYK formats `pdf-cmyk`, `cmyk-tiff`, `eps-cmyk`; the motion formats `webm`, `mp4`, `gif`, `apng`, `webp-anim` and the vector `svg-anim`; the editable-document format `pptx`; and the data/text formats `html`, `md`, `txt`, `json`, `csv`, `ics`, `vcf`, `zip`. Audio is a separate path - the recording tools' `render.capture` mode drives `host.recorder`, whose take is saved as MP3 (on-device transcode) or the browser's native `m4a`/`ogg`/`webm` container, so audio never flows through the `render.formats` enum. (Tools that set `render.export: false` - e.g. Color Palette, Countdown Timer, Strip Hidden Data, Text Helper, Compress PDF - hide the download/format/dimension controls.) Physical units are converted per format here (PDF → true page points, raster → pixels at DPI with a `pHYs` chunk). Authorship/provenance metadata (author, tool, source - built by `engine/src/metadata.ts`) is embedded per format: PNG iTXt, JPEG EXIF, PDF info dict, SVG `<metadata>`, GIF comment. Experimental tools get a watermark inserted by the host, not the tool.
 
-![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&format=svg&walker=1&filename=aud-export-popup)
+![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&format=svg&filename=aud-export-popup)
 
 Same lifecycle in Tauri. Same lifecycle in CLI - jsdom provides the headless DOM; output goes to a file or stdout.
 

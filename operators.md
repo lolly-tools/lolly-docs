@@ -54,7 +54,7 @@ All of these are on-device transforms: your file or data goes in, cleaned bytes 
 
 Text Helper is the same bargain for text rather than files. It is the tabbed workbench an employee would otherwise go looking for on a stranger's site, and it declares no inputs at all because nothing it touches ever leaves the page.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&walker=1&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&filename=ov2-text-helper)
 
 Compress PDF completes the set: the oversized attachment shrinks under a quality setting you choose, on the machine that already holds it.
 
@@ -69,7 +69,7 @@ Every tool input is expressible as a URL parameter, and the same inputs produce 
 
 Prompt to Image is determinism at its plainest: the text is the whole input, the typeset image is the whole output, and the same text always sets the same way.
 
-![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&walker=1&filename=ov2-prompt-to-image)
+![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-prompt-to-image)
 
 ## Provenance & Content Credentials
 

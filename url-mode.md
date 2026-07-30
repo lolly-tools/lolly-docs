@@ -24,7 +24,7 @@ That path form is canonical - it's what the address bar shows once a tool has lo
 
 The first of those opens the QR tool with the address and the dark green already applied, no clicks in between.
 
-![A QR code rendered straight from the URL, in the dark green passed as ?color](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26color%3D%25230c322c&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&walker=1&filename=exp-url-qr-color)
+![A QR code rendered straight from the URL, in the dark green passed as ?color](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26color%3D%25230c322c&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=exp-url-qr-color)
 
 ### Clean URL redirect
 
@@ -53,7 +53,7 @@ Pass the value directly. URL-encode spaces and special characters.
 
 The Wordmark tool is nothing but text params, so a link is the whole brief: `/#/tool/wordmark?text=Ship it&weight=800&tracking=-12&size=200`.
 
-![The word "Ship it" outlined in a heavy weight with the letters pulled tight, both settings carried in by the link alone](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DShip%2520it%26weight%3D800%26tracking%3D-12%26size%3D200&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&walker=1&filename=um-text-wordmark)
+![The word "Ship it" outlined in a heavy weight with the letters pulled tight, both settings carried in by the link alone](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DShip%2520it%26weight%3D800%26tracking%3D-12%26size%3D200&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=um-text-wordmark)
 
 ### Select
 
@@ -66,7 +66,7 @@ Pass the option value (not the label).
 
 A one-word change swaps the whole render: `/#/tool/street-map?city=barcelona&theme=dark`.
 
-![Street Map drawn in its dark theme, picked entirely by the theme param](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dbarcelona%26theme%3Ddark&width=1440&height=900&dpi=192&waitMs=3000&format=svg&cropSelector=%23tool-canvas&walker=1&filename=exp-url-select-theme)
+![Street Map drawn in its dark theme, picked entirely by the theme param](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dbarcelona%26theme%3Ddark&width=1440&height=900&dpi=192&waitMs=3000&format=svg&cropSelector=%23tool-canvas&filename=exp-url-select-theme)
 
 ### Number
 
@@ -77,7 +77,7 @@ A one-word change swaps the whole render: `/#/tool/street-map?city=barcelona&the
 
 A number can also set how much of a thing gets made. Colour Palette builds one ramp cell per step, so `/#/tool/color-palette?steps=11` returns a wider sheet than the default seven.
 
-![A palette sheet eleven cells wide, the count set only by the steps param](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fsteps%3D11&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&walker=1&filename=um-number-steps)
+![A palette sheet eleven cells wide, the count set only by the steps param](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fsteps%3D11&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=um-number-steps)
 
 ### Boolean
 
@@ -90,7 +90,7 @@ A number can also set how much of a thing gets made. Colour Palette builds one r
 
 One flag can add a whole layer of information: `/#/tool/d3?showValues=1` prints the number on every bar.
 
-![The D3 bar chart with a value printed on each bar, switched on by a single boolean param](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FshowValues%3D1&width=1440&height=900&dpi=192&waitMs=2800&format=svg&cropSelector=%23tool-canvas&walker=1&filename=um-boolean-values)
+![The D3 bar chart with a value printed on each bar, switched on by a single boolean param](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FshowValues%3D1&width=1440&height=900&dpi=192&waitMs=2800&format=svg&cropSelector=%23tool-canvas&filename=um-boolean-values)
 
 ### Color
 
@@ -138,7 +138,7 @@ Blocks inputs are repeating groups of fields (e.g. a list of team members, each 
 
 Each object's keys must match the field `id`s defined in the tool's manifest. Fields can be omitted - missing fields are treated as empty strings. Chart Creator's `data` input is a blocks list of label, value and colour, so a whole dataset travels in the link:
 
-![A three bar chart whose labels, values and bar colours all arrived as one JSON blocks param](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3FchartType%3Dvertical-bar%26data%3D%5B%7B%22label%22%3A%22Berlin%22%2C%22value%22%3A%2242%22%2C%22color%22%3A%22%25232453ff%22%7D%2C%7B%22label%22%3A%22Sydney%22%2C%22value%22%3A%2231%22%2C%22color%22%3A%22%252300a3a3%22%7D%2C%7B%22label%22%3A%22Lisbon%22%2C%22value%22%3A%2219%22%2C%22color%22%3A%22%2523fe7c3f%22%7D%5D&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&walker=1&filename=um-blocks-chart)
+![A three bar chart whose labels, values and bar colours all arrived as one JSON blocks param](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3FchartType%3Dvertical-bar%26data%3D%5B%7B%22label%22%3A%22Berlin%22%2C%22value%22%3A%2242%22%2C%22color%22%3A%22%25232453ff%22%7D%2C%7B%22label%22%3A%22Sydney%22%2C%22value%22%3A%2231%22%2C%22color%22%3A%22%252300a3a3%22%7D%2C%7B%22label%22%3A%22Lisbon%22%2C%22value%22%3A%2219%22%2C%22color%22%3A%22%2523fe7c3f%22%7D%5D&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=um-blocks-chart)
 
 **CLI:**
 ```bash
@@ -198,7 +198,7 @@ Tools can opt into a shorter URL form, which the web shell emits when you **copy
 
 `chart-creator` is a live tool that uses `urlKey`, so a link copied via its Copy URL / share button won't match the long-form examples in this doc - that's expected. `d3` uses them too: `?ct=radar&pl=cool&t=Short keys&lg=0` is chart type, palette, heading and legend in twelve characters of query.
 
-![A radar chart in the cool palette, drawn from four short-key params instead of their long names](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Dradar%26pl%3Dcool%26t%3DShort%2520keys%26lg%3D0&width=1440&height=900&dpi=192&waitMs=2800&format=svg&cropSelector=%23tool-canvas&walker=1&filename=um-compact-shortkeys)
+![A radar chart in the cool palette, drawn from four short-key params instead of their long names](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Dradar%26pl%3Dcool%26t%3DShort%2520keys%26lg%3D0&width=1440&height=900&dpi=192&waitMs=2800&format=svg&cropSelector=%23tool-canvas&filename=um-compact-shortkeys)
 
 ---
 
@@ -239,7 +239,7 @@ These keys are never treated as tool inputs. They control shell-level behaviour.
 
 `lang` is the one reserved param that changes the interface rather than the file. Adding `?lang=ja` to any tool link hands the recipient the whole sidebar in Japanese for that session, without touching their saved preference.
 
-![The Colour Palette controls with every label, hint and dropdown option in Japanese, from one lang param](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Flang%3Dja&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-inputs&css=%23tool-canvas%7Bdisplay%3Anone%7D&walker=1&filename=um-lang-japanese)
+![The Colour Palette controls with every label, hint and dropdown option in Japanese, from one lang param](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Flang%3Dja&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-inputs&css=%23tool-canvas%7Bdisplay%3Anone%7D&filename=um-lang-japanese)
 
 > **Building share links in the UI.** In the web shell you don't have to hand-write these. The **Share** button (in the export panel) opens a dialog with the ready-to-copy link plus a toggle for each on-visit flag - _open fullscreen_ (`full`), _open with the export panel expanded_ (`options`), _download automatically_ (`export`), _copy to clipboard_ (`copy`), and _pin tool version_ (`_v`). The copy toggle appears only for clipboard-friendly formats (bitmap/text/html) and is hidden for SVG, PDF, and video. Ticking a box rewrites the link in place. The **same dialog** is reachable from **Projects → Share link** on any saved session (it reconstructs the tool URL from the saved inputs).
 
@@ -280,7 +280,7 @@ The state is DEFLATE'd then **AES-256-GCM**-encrypted under a key derived from a
 
 `px` is the default and behaves exactly as before (the CSS 96-DPI convention). The canvas takes the physical shape straight away, so `?w=210&h=297&unit=mm&format=pdf` shows you a portrait A4 before you export anything.
 
-![The Wordmark canvas standing as a portrait A4 page, its shape set by the width, height and unit params before anything is exported](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DPrint%2520me%26size%3D120%26w%3D210%26h%3D297%26unit%3Dmm%26format%3Dpdf&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas-outer&walker=1&filename=um-units-a4)
+![The Wordmark canvas standing as a portrait A4 page, its shape set by the width, height and unit params before anything is exported](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DPrint%2520me%26size%3D120%26w%3D210%26h%3D297%26unit%3Dmm%26format%3Dpdf&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas-outer&filename=um-units-a4)
 
 ```
 lolly quotes --quote="Print me." --width=210 --height=297 --unit=mm --export=svg --output=a4.svg
@@ -481,7 +481,7 @@ Combine with `export` for a clean unattended export flow:
 /#/tool/qr-code?url=https://suse.com&options
 ```
 
-![The export panel already expanded at the foot of the sidebar, one click from a download](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-popup&walker=1&filename=exp-options-panel)
+![The export panel already expanded at the foot of the sidebar, one click from a download](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-popup&filename=exp-options-panel)
 
 `options` is the opposite of `full`: `full` hides all chrome to show only the preview, while `options` surfaces the export chrome. If both appear, `full` wins (there's nowhere to anchor the export panel once the sidebar is collapsed). The flag is web-only - the CLI ignores it.
 
