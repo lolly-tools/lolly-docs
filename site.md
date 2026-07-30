@@ -142,7 +142,7 @@ Every time someone uploads a file to a third-party service to "just make it look
 
 **Works offline.** Local compute, local storage. No internet required after first sync.
 
-**Formats, in and out.** Renders **31** export formats and ingests **29** source formats - see the full breakdown below.
+**Formats, in and out.** Renders **31** export formats and ingests **29** source formats - see the [full breakdown](/info/exporting.html).
 
 **Production quality.** Outlined type, Spot color support, 60FPS · Media fit for the studio.
 

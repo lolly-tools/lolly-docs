@@ -59,8 +59,8 @@ Directive Art. 5(3), storage that is strictly necessary for the service you aske
 for doesn't require consent - only transparency, which is what this document and
 the in-app notice both are.)
 
-Your own backup of this data - the `lolly-backup` bundle produced by **Export &
-render everything** - is a file you keep and control. It never touches our
+Your own backup of this data - the `lolly-backup` bundle produced by **Export my
+data & render everything** - is a file you keep and control. It never touches our
 servers unless you choose to send it somewhere yourself. See [Data
 Transfer](/info/data-transfer.html).
 
@@ -311,7 +311,7 @@ Because almost everything Lolly touches is stored only on your own device, most 
 what data-protection law calls "your rights" - access, correction, deletion,
 portability - are things you can already do yourself, instantly, without asking
 anyone: your data lives in your browser's storage, in a form you can inspect,
-export (**Export & render everything**, above), or delete (**Profile → Clear all
+export (**Export my data & render everything**, above), or delete (**Profile → Clear all
 my data**).
 
 Formally, under GDPR Articles 15-22 you have the right to **access** your
