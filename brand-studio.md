@@ -137,7 +137,7 @@ The **Export** button in the top action row writes a single **`LollyBrand-…zip
 - a **Tokens Studio** file (`.json`) - Tokens Studio;
 - a **plain SVG** (`.svg`) - Lolly scans its colours and lets you pick which to keep, the first becoming your primary.
 
-![The import card - the accepted formats lead as icon tiles, and the whole card is one drop target](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-import-drop&format=svg&filename=bs-brand-import-formats)
+![The import card - the accepted formats lead as icon tiles, and the whole card is one drop target](/t/url-shot?url=%2F%23%2Fstart%3Fimport&width=1440&height=900&dpi=192&waitMs=1600&css=.start-import-modal%20.modal-msg%2C.start-import-modal%20.modal-title%7Bdisplay%3Anone%7D&cropSelector=.start-import-drop&format=svg&filename=bs-brand-import-formats)
 
 This is how a colleague hands you a brand, or how you carry one to a second install - no account, no cloud. To bring in a brand from the command line instead, see [`ingest:brand`](/info/configuration.html#brand-packs).
 

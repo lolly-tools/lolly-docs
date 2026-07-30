@@ -167,7 +167,7 @@ Dépose ici les fichiers que ta marque conserve - logos mis à part : des ressou
 
 ## Déplacer une marque entre appareils
 
-![The import card - the accepted formats lead as icon tiles, and the whole card is one drop target](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-import-drop&format=svg&filename=bs-brand-import-formats)
+![The import card - the accepted formats lead as icon tiles, and the whole card is one drop target](/t/url-shot?url=%2F%23%2Fstart%3Fimport&width=1440&height=900&dpi=192&waitMs=1600&css=.start-import-modal%20.modal-msg%2C.start-import-modal%20.modal-title%7Bdisplay%3Anone%7D&cropSelector=.start-import-drop&format=svg&filename=bs-brand-import-formats)
 
 Le bouton **Exporter** dans la rangée d'actions du haut écrit un unique **`LollyBrand-…zip`** - tes tokens, polices, logos et préférence de thème, avec un manifeste d'intégrité. Le bouton **Importer…** (ou un glisser-déposer sur le studio) accepte :
 

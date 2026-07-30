@@ -119,6 +119,34 @@ A tool ships one committed thumbnail, but `examples` lets its gallery tile demon
 
 The pre-`examples` alias `featured.variants` still renders but is deprecated - author `examples`.
 
+### A short walkthrough (`guide`)
+
+Some tools aren't finished when the render is. An email signature is finished the moment it's pasted into Gmail's settings, and nothing on the canvas says so. `guide` is a handful of steps for that last mile, shown by the shell as a dialog behind a help button beside the tool's name - and opened once automatically the first time a device lands on the tool.
+
+```jsonc
+"guide": {
+  "title": "Put it in Gmail",
+  "tracks": [
+    {
+      "id": "desktop",
+      "label": "On a computer",
+      "steps": [
+        "Open **Export**, set the format to **HTML**, and press **Copy**.",
+        "In Gmail, open **Settings** and choose **See all settings**.",
+        "Paste into **General → Signature**, then press **Save Changes**."
+      ],
+      "note": "Outlook and Apple Mail take the same paste."
+    },
+    { "id": "mobile", "label": "On a phone", "steps": ["…"] }
+  ]
+}
+```
+
+- **One track per route the user might take** (on a computer vs on a phone). A single track renders as a plain numbered list; two or more render as tabs, so the alternative is visible rather than buried. Up to four tracks, eight steps each.
+- **Steps are plain text.** `**bold**` is the only markup, for naming the control a step points at - everything else is escaped. Link to the docs from a step when the long version is what's wanted: this is a nudge, not documentation.
+- **`id` is a contract like an input id** - the i18n sidecar path is built from it (`guide.tracks.<id>.label` / `.note` / `.steps.<index>`, plus `guide.title`), so renaming one orphans its translations.
+- Point at controls the shell actually has. If a step says "set the format to HTML", `render.formats` had better still include `html`.
+
 ### Input types
 
 Each declaration becomes a real control, built by the shell from the input model - you never write the UI. Six lines of `inputs` in `qr-code`'s manifest produce this entire sidebar.
@@ -728,7 +756,7 @@ The same sidebar, opened with `?lang=de`: labels, help text and select options a
 
 ![The QR tool's sidebar in German - every label, hint and dropdown option translated by the i18n sidecar](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Flang%3Dde%26url%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-inputs&filename=auth-tool-localized)
 
-When a tool loads with a language set (the reserved `lang` URL/CLI param, or the user's profile language), the engine best-effort fetches the matching `i18n/<lang>.json` and merges it onto the manifest **before any shell or the input model sees it** - one overlay point, every shell (web, CLI, TUI) benefits. Anything missing - no sidecar, an absent key, a malformed file - falls back to the manifest's English, so a translation gap never breaks a tool load. Keys cover `name`, `description`, `a11yLabel`, and per-input `label` / `help` / `placeholder` / `section` / `suffix` / `options.<value>` (block and vector sub-fields as `inputs.<id>.fields.<fieldId>.…`). `validate:catalog` checks the keys, so a typo is caught at build time rather than silently ignored.
+When a tool loads with a language set (the reserved `lang` URL/CLI param, or the user's profile language), the engine best-effort fetches the matching `i18n/<lang>.json` and merges it onto the manifest **before any shell or the input model sees it** - one overlay point, every shell (web, CLI, TUI) benefits. Anything missing - no sidecar, an absent key, a malformed file - falls back to the manifest's English, so a translation gap never breaks a tool load. Keys cover `name`, `description`, `a11yLabel`, per-input `label` / `help` / `placeholder` / `section` / `suffix` / `options.<value>` (block and vector sub-fields as `inputs.<id>.fields.<fieldId>.…`), and the walkthrough (`guide.title`, `guide.tracks.<id>.label` / `.note` / `.steps.<index>`). `validate:catalog` checks the keys, so a typo is caught at build time rather than silently ignored.
 
 - **Pre-fill the user's language.** An input can declare `bindToProfile: "lang"` to seed from the active language (a canonical short code - `en`, `de`, `ar`, …).
 - **Right-to-left.** Arabic and other RTL languages mirror the whole UI. Author your template and CSS so they mirror too - prefer logical properties and `[dir]`-aware rules over hard-coded left/right - and the shell sets document direction from the active language.
