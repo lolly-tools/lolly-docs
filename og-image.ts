@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: MPL-2.0
 // Build-time generators for Open Graph (share preview) images.
 //
 // All three cards are light-on-dark in the brand's own field + type, and are rasterised through OUR

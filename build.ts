@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// SPDX-License-Identifier: MPL-2.0
 // Minimal static site generator for Lolly.
 // Run: node docs/build.ts            build the /info pages once
 //      node docs/build.ts --watch    rebuild on every change under docs/ (used by dev:web)
