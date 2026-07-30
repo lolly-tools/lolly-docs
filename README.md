@@ -66,6 +66,7 @@ security posture).
 | [ai-agents.md](ai-agents.md) | tool author | Driving Lolly from an agent by building a URL or CLI command instead of generating pixels. |
 | [extension.md](extension.md) | end user | The Lolly URL Screenshot browser extension, which gives the web app page capture that a browser tab cannot do alone. |
 | [build-guide.md](build-guide.md) | operator | Per-target build steps: CLI binary, desktop app, mobile apps, and the web shell as a container image. |
+| [ios-build.md](ios-build.md) | contributor | The full iOS walkthrough for `shells/tauri-mobile`: prerequisites, one-time init, the simulator dev loop, code signing, camera permissions. Sits next to the Build Guide under Builders, which links to it. |
 | [deployment.md](deployment.md) | operator | Where each piece runs, and the delivery postures (distribute to devices, host the PWA, run the services). |
 | [configuration.md](configuration.md) | operator | Profiles, brand packs, tool sets and per-tool capabilities as files rather than in-app settings. |
 | [content-credentials-identity.md](content-credentials-identity.md) | end user | What a Content Credential is, what enrolling an identity adds, and how anyone checks a file. |
@@ -92,7 +93,6 @@ The Builders sidebar also carries an **About** entry, which renders the repo-roo
 
 | Doc | Audience | What it covers |
 |---|---|---|
-| [ios-build.md](ios-build.md) | contributor | **Orphaned from the nav.** Building and running `shells/tauri-mobile` on iOS: prerequisites, one-time init, the simulator loop, signing, camera permissions. It has no `pages` entry and no sidebar item, so it is unreachable from `/info`; the only pointer to it is a prose mention in [build-guide.md](build-guide.md) that names the repository path. Either register it under Builders or fold it into the Build Guide. |
 | [faq.md](faq.md) | end user | Intentionally not a page. `loadFaqs` in `build.ts` parses each `##` heading as a question and compiles the lot into the landing page's FAQ accordion, with per-question `#faq-…` anchors other surfaces deep-link to. |
 | README.md | contributor | This index. |
 
@@ -100,6 +100,14 @@ The Builders sidebar also carries an **About** entry, which renders the repo-roo
 `pages` entry so `/info/content-credentials-engineering.html` is built, but no `SIDEBARS` item, so
 it is reachable only through the cross-links in
 [content-credentials-identity.md](content-credentials-identity.md).
+
+Both kinds of gap are now mechanically enforced rather than described here. `npm run check:docs-nav`
+(`scripts/check-docs-nav.ts`, a CI step in the typecheck job) fails when a `docs/*.md` has no `pages`
+entry, when a `pages` entry has no `SIDEBARS` item, or when a `src` no longer exists — and both
+tables above are its **declared exceptions**, `NOT_PAGES` and `NOT_IN_SIDEBAR`, each carrying the
+reason it is exempt. Add a doc without registering it and CI says so; exempt one and you have to
+write down why. That guard is what closed the `ios-build.md` orphan (2026-07-30), which sat
+unreachable from `/info` for as long as it existed.
 
 ## Everything else in this directory
 
