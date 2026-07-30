@@ -24,8 +24,8 @@ A bundle is a plain `.zip`. The download is named for the person it belongs to -
 | `manifest.json` | yes | Format id, versions, counts, and per-part integrity. The first thing a reader looks at. |
 | `profile.json` | when set | The user's `me` record (name, contact, headshot ref, flags). Read via `host.profile`. |
 | `sessions.json` | yes | Every saved session: slot, tool id/version, label, thumbnail (data-URL), and full input data. Read via `host.state`. |
-| `assets.json` | yes | Metadata for each uploaded image, each pointing at its bytes under `assets/blobs/`. |
-| `assets/blobs/<n>.<ext>` | per image | The raw image bytes. Stored uncompressed (already-compressed formats). The extension is cosmetic; the MIME in `assets.json` is authoritative. |
+| `assets.json` | yes | Metadata for each uploaded asset (images, fonts, brand tokens), each pointing at its bytes under `assets/blobs/`. |
+| `assets/blobs/<n>.<ext>` | per asset | The raw asset bytes (image and font files). Stored uncompressed (already-compressed formats). The extension is cosmetic; the MIME in `assets.json` is authoritative. |
 | `prefs.json` | yes | User-owned local preferences: `theme`, `sidebarWidth`, and the `ct-metrics` activity tally. |
 | `lolly.txt` | yes | A human-readable summary of the bundle (counts, profile, filename) for anyone who opens the zip without Lolly. Regenerated on every export and recognised on import, so it never counts as a skipped part - and written *after* the integrity map, so it is deliberately outside it. |
 
@@ -94,7 +94,7 @@ Import is **merge-overwrite**, never replace-all:
 
 Saved sessions re-link to their images automatically: asset references are kept by id, and the bridge re-resolves them after the uploaded images are restored (it must anyway, since `blob:` URLs don't survive a reload).
 
-The import summary reports `{ profile, sessions, userAssets, prefs, skipped }`. `skipped` is the count of parts from a forward-compatible newer writer that this build didn't recognise - surfaced in the UI ("… · N newer items skipped") so the restore is honest about what it left behind.
+The import summary reports `{ profile, sessions, userAssets, prefs, skipped, failedAssets }`. `failedAssets` counts uploaded assets that couldn't be restored (device storage full, say) - distinct from `skipped`, which is the count of parts from a forward-compatible newer writer that this build didn't recognise - surfaced in the UI ("… · N newer items skipped") so the restore is honest about what it left behind.
 
 ## What does not travel
 
