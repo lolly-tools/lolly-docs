@@ -1,6 +1,6 @@
 # 快速入門
 
-![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&localize=1&filename=gallery)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
 
 Lolly 會把你的規則——色彩、字體、版面、邏輯——轉換成任何人都能使用的工具，只要填入幾個欄位，就能做出最終檔案：圖片、PDF、社群卡片、影片。不需要學習，也不需要上傳：一切都在你的裝置上執行，不論連線與否。
 

@@ -474,9 +474,82 @@ function parseCells(line: string) {
   return s.split('|').map(c => c.trim());
 }
 
+/**
+ * The id a heading gets in the rendered HTML — and therefore the anchor the
+ * search index links to.
+ *
+ * Latin headings keep the historical derivation byte for byte. A heading that
+ * strips to nothing falls back to its position on the page: the character class
+ * is `[a-z0-9]`, so EVERY heading in a non-Latin locale (zh, ja, ko, ar, hi, bn,
+ * ur, uk, bg, …) used to render `id=""` — the same empty id on all of them, which
+ * is invalid and makes every deep link into those pages dead. The fallback is
+ * positional rather than transliterated so it stays stable and script-agnostic.
+ */
+function headingId(text: string, ordinal: number): string {
+  const slug = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  return slug || `section-${ordinal}`;
+}
+
+// ── Search index ─────────────────────────────────────────────────────────────
+// One record per SECTION, not per page: 41 pages is a list you can read, but the
+// thing a reader actually wants is the paragraph, and a page like authoring-tools
+// is 773 lines across 16 sections. Built from the RENDERED HTML rather than the
+// markdown so the anchors are the ids that exist on the page by construction —
+// re-deriving them from the source would be a second implementation of
+// headingId() free to drift from the first.
+//
+// Keys are short because this file ships 27 times (once per locale) and is fetched
+// by the reader: p=page slug, t=page title, h=heading, a=anchor, x=text.
+interface SearchRecord { p: string; t: string; h: string; a: string; x: string }
+
+/** Longest section body kept per record. The lead of a section carries almost all
+ *  of its search signal, and an uncapped index is ~4x the size for the tail. */
+const SEARCH_SNIPPET_MAX = 240;
+
+const HTML_ENTITIES: Record<string, string> = {
+  '&amp;': '&', '&lt;': '<', '&gt;': '>', '&quot;': '"', '&#39;': "'", '&nbsp;': ' ',
+};
+
+/** Rendered HTML → the plain text a human reads, collapsed onto one line. */
+function htmlToText(html: string): string {
+  return html
+    .replace(/<(script|style)\b[^>]*>[\s\S]*?<\/\1>/gi, ' ')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&[a-z#0-9]+;/gi, (e) => HTML_ENTITIES[e.toLowerCase()] ?? ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/** Split one rendered page into per-heading search records. */
+function indexSections(html: string, slug: string, title: string): SearchRecord[] {
+  const records: SearchRecord[] = [];
+  const heading = /<h([2-4])\s+id="([^"]*)"[^>]*>([\s\S]*?)<\/h\1>/g;
+  const push = (h: string, a: string, body: string) => {
+    const x = htmlToText(body).slice(0, SEARCH_SNIPPET_MAX);
+    // A heading with no prose under it is still worth finding — it is a place in
+    // the document. One with neither heading nor body is not.
+    if (h || x) records.push({ p: slug, t: title, h, a, x });
+  };
+
+  const marks: Array<{ h: string; a: string; start: number; end: number }> = [];
+  for (let m = heading.exec(html); m; m = heading.exec(html)) {
+    marks.push({ h: htmlToText(m[3]!), a: m[2]!, start: m.index, end: heading.lastIndex });
+  }
+
+  // Everything above the first heading belongs to the page itself — on most pages
+  // that intro is the best one-line answer to "what is this page".
+  push('', '', html.slice(0, marks.length ? marks[0]!.start : html.length));
+  marks.forEach((mark, n) => {
+    const next = marks[n + 1];
+    push(mark.h, mark.a, html.slice(mark.end, next ? next.start : html.length));
+  });
+  return records;
+}
+
 function mdToHtml(md: string) {
   const lines = md.split('\n');
   const out: string[] = [];
+  let headingOrdinal = 0;
   let i = 0;
 
   while (i < lines.length) {
@@ -527,7 +600,7 @@ function mdToHtml(md: string) {
     const hm = line.match(/^(#{1,4}) (.+)/);
     if (hm) {
       const lvl = hm[1]!.length, text = hm[2]!;
-      const id = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+      const id = headingId(text, ++headingOrdinal);
       out.push(`<h${lvl} id="${id}">${inline(text)}</h${lvl}>`);
       i++; continue;
     }
@@ -1784,6 +1857,23 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .sidebar-label:first-child{margin-top:0}
 .sidebar-home{display:block;font-size:.8125rem;color:var(--muted)!important;margin-bottom:1rem;padding:0!important}
 .sidebar-home:hover{color:var(--green)!important;background:none!important}
+/* Docs search. Logical properties throughout so the Arabic build mirrors without
+   a second rule set, and the results panel is a normal block on mobile (where the
+   sidebar is a static strip above the content) rather than a floating overlay. */
+.sidebar-search{position:relative;margin-bottom:1rem}
+.sidebar-search-input{width:100%;box-sizing:border-box;padding:.45rem .6rem;font:inherit;font-size:.875rem;color:var(--text);background:var(--pale);border:1px solid var(--border);border-radius:6px}
+.sidebar-search-input::placeholder{color:var(--muted)}
+.sidebar-search-input:focus{outline:2px solid var(--green);outline-offset:1px;background:#fff}
+.sidebar-search-results{position:absolute;inset-inline:0;top:calc(100% + .35rem);z-index:20;max-height:min(60vh,26rem);overflow-y:auto;background:#fff;border:1px solid var(--border);border-radius:8px;box-shadow:0 6px 24px #0002;padding:.25rem}
+.sidebar-search-hit{display:block;padding:.45rem .55rem;border-radius:5px;color:var(--text)}
+.sidebar-search-hit .hit-h{display:block;font-size:.8125rem;font-weight:600;color:var(--dark)}
+.sidebar-search-hit .hit-c{display:block;font-size:.6875rem;color:var(--green);margin-top:.05rem}
+.sidebar-search-hit .hit-x{display:block;font-size:.75rem;color:var(--muted);margin-top:.15rem;line-height:1.4;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.sidebar-search-hit:hover,.sidebar-search-hit.is-active{background:var(--pale);text-decoration:none}
+.sidebar-search-empty{padding:.5rem .55rem;font-size:.8125rem;color:var(--muted)}
+.dark .sidebar-search-input:focus{background:#0e1a17}
+.dark .sidebar-search-results{background:#0e1a17;box-shadow:0 6px 24px #0006}
+@media(max-width:768px){.sidebar-search-results{position:static;max-height:22rem;box-shadow:none;margin-top:.35rem}}
 .sidebar-pathway{font-size:.9375rem;font-weight:700;color:var(--dark);margin-bottom:.75rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
 .docs-sidebar a{display:flex;align-items:flex-start;gap:.5rem;padding:.3rem .5rem;font-size:.875rem;color:var(--text);border-radius:5px}
 .docs-sidebar a:hover{color:var(--green);background:var(--pale);text-decoration:none}
@@ -2496,6 +2586,102 @@ const HERO_CANVAS_SCRIPT = `<script>(function(){
 // The href stays a real link (middle-click / ctrl-click / no-JS all still work).
 const VERIFY_POPOUT_SCRIPT = `<script>(function(){document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href$="/verify"]');if(!a||e.metaKey||e.ctrlKey||e.shiftKey||e.button!==0)return;e.preventDefault();var w=Math.min(1100,screen.availWidth*.8),h=Math.min(850,screen.availHeight*.9);window.open(a.href,'lolly-verify','popup,width='+w+',height='+h+',left='+((screen.availWidth-w)/2)+',top='+((screen.availHeight-h)/2));});})();</script>`;
 
+// Docs search. The index is fetched on first interaction, never on load, so a
+// reader who doesn't search pays nothing. Results are built with DOM calls rather
+// than innerHTML: the records are plain text lifted out of rendered pages, and
+// code samples in them legitimately contain < and &.
+const DOCS_SEARCH_SCRIPT = `<script>(function(){
+var wrap=document.querySelector('.sidebar-search');if(!wrap)return;
+var input=document.getElementById('docs-search');
+var out=document.getElementById('docs-search-results');
+var base=wrap.getAttribute('data-search-base')||'/info';
+var records=null,pending=null,active=-1,timer;
+
+// Fold case and diacritics, so "recuperer" finds "récupérer" and the reverse.
+// NFD splits an accented letter into base + combining mark and the range strip
+// removes the mark; scripts that neither case-fold nor decompose pass through
+// unchanged, which is the correct no-op rather than a wrong transform.
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g,'');}
+
+function load(){
+  if(records)return Promise.resolve(records);
+  if(!pending)pending=fetch(base+'/search-index.json')
+    .then(function(r){return r.ok?r.json():[];})
+    .then(function(j){records=j.map(function(r){r._=norm(r.h+' '+r.t+' '+r.x);return r;});return records;})
+    .catch(function(){records=[];return records;});
+  return pending;
+}
+
+// Every term must appear somewhere in the record — an AND, so adding a word
+// narrows rather than widens. Where it matched decides the rank: a heading beats
+// a page title beats body prose.
+function score(r,terms){
+  var h=norm(r.h),t=norm(r.t),s=0;
+  for(var i=0;i<terms.length;i++){
+    var q=terms[i];
+    if(r._.indexOf(q)<0)return 0;
+    if(h.indexOf(q)===0)s+=8;else if(h.indexOf(q)>=0)s+=5;
+    else if(t.indexOf(q)>=0)s+=3;else s+=1;
+  }
+  if(!r.h)s+=1;
+  return s;
+}
+
+function close(){out.hidden=true;out.textContent='';active=-1;input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');}
+
+function render(list){
+  out.textContent='';active=-1;input.removeAttribute('aria-activedescendant');
+  if(!list.length){
+    var e=document.createElement('div');
+    e.className='sidebar-search-empty';
+    e.textContent=out.getAttribute('data-empty')||'No matches';
+    out.appendChild(e);
+  }else{
+    list.forEach(function(r,n){
+      var a=document.createElement('a');
+      a.className='sidebar-search-hit';a.id='docs-hit-'+n;a.setAttribute('role','option');
+      a.href=base+'/'+r.p+'.html'+(r.a?'#'+r.a:'');
+      var h=document.createElement('span');h.className='hit-h';h.textContent=r.h||r.t;a.appendChild(h);
+      if(r.h){var c=document.createElement('span');c.className='hit-c';c.textContent=r.t;a.appendChild(c);}
+      if(r.x){var x=document.createElement('span');x.className='hit-x';x.textContent=r.x;a.appendChild(x);}
+      out.appendChild(a);
+    });
+  }
+  out.hidden=false;input.setAttribute('aria-expanded','true');
+}
+
+function run(){
+  var q=input.value.trim();
+  if(!q){close();return;}
+  load().then(function(rs){
+    if(input.value.trim()!==q)return;   // a later keystroke already won
+    var terms=norm(q).split(/\\s+/).filter(Boolean);
+    var hits=[];
+    for(var i=0;i<rs.length;i++){var s=score(rs[i],terms);if(s>0)hits.push({r:rs[i],s:s});}
+    hits.sort(function(a,b){return b.s-a.s;});
+    render(hits.slice(0,12).map(function(x){return x.r;}));
+  });
+}
+
+function move(d){
+  var links=out.querySelectorAll('.sidebar-search-hit');if(!links.length)return;
+  active=(active+d+links.length)%links.length;
+  for(var i=0;i<links.length;i++)links[i].classList.toggle('is-active',i===active);
+  input.setAttribute('aria-activedescendant',links[active].id);
+  links[active].scrollIntoView({block:'nearest'});
+}
+
+input.addEventListener('input',function(){clearTimeout(timer);timer=setTimeout(run,90);});
+input.addEventListener('focus',load);
+input.addEventListener('keydown',function(e){
+  if(e.key==='ArrowDown'){e.preventDefault();move(1);}
+  else if(e.key==='ArrowUp'){e.preventDefault();move(-1);}
+  else if(e.key==='Enter'){var l=out.querySelector('.sidebar-search-hit.is-active');if(l){e.preventDefault();l.click();}}
+  else if(e.key==='Escape'){if(input.value){input.value='';close();}else{input.blur();}}
+});
+document.addEventListener('click',function(e){if(!wrap.contains(e.target))close();});
+})();</script>`;
+
 const HAMBURGER_SCRIPT = `<script>(function(){var ham=document.getElementById('navHamburger');var menu=document.getElementById('navMobileMenu');if(!ham||!menu)return;ham.addEventListener('click',function(){var open=menu.classList.toggle('open');ham.classList.toggle('open',open);ham.setAttribute('aria-expanded',open?'true':'false');});menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false');});});document.addEventListener('click',function(e){if(!menu.contains(e.target)&&!ham.contains(e.target)){menu.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false');}});})();</script>`;
 
 // ── i18n: site chrome (nav/sidebar/footer labels) + per-locale page sources ──
@@ -2753,8 +2939,25 @@ function buildSidebar(lang: Lang, page: Page, activeHref: string) {
     }).join('\n    ');
     return `<div class="sidebar-label">${esc(t(g.label))}</div>\n    ${links}`;
   }).join('\n    ');
+  // Search sits above the pathway list because it answers a different question:
+  // the list is "what is there", the box is "where is the thing I already know I
+  // want". A combobox rather than a bare input so the arrow-key result walk is
+  // announced; `data-search-base` carries the locale prefix so the inline script
+  // stays locale-agnostic.
+  //
+  // Deliberately NO global "press / to search" shortcut, though every docs site
+  // has one: `/` is Firefox's own quick-find, and not fighting the browser's
+  // defaults outranks saving a click here. Tab and click both reach the field.
+  const search = `<div class="sidebar-search" data-search-base="${lang === 'en' ? '/info' : `/info/${lang}`}">
+      <input type="search" id="docs-search" class="sidebar-search-input" autocomplete="off" spellcheck="false"
+             role="combobox" aria-expanded="false" aria-controls="docs-search-results" aria-autocomplete="list"
+             placeholder="${esc(t('Search the docs…'))}" aria-label="${esc(t('Search the docs'))}">
+      <div id="docs-search-results" class="sidebar-search-results" role="listbox" hidden
+           data-empty="${esc(t('No matches'))}"></div>
+    </div>`;
   return `<aside class="docs-sidebar">
     <a href="${localeHref(lang, 'index')}" class="sidebar-home">${esc(t('← Home'))}</a>
+    ${search}
     <div class="sidebar-pathway">${esc(t(sb.title))}</div>
     ${groups}
   </aside>`;
@@ -2825,6 +3028,7 @@ ${body}
 ${FOOTER(lang)}
 ${THEME_INTERACT_SCRIPT}
 ${HAMBURGER_SCRIPT}
+${isLanding ? '' : DOCS_SEARCH_SCRIPT}
 ${VERIFY_POPOUT_SCRIPT}
 ${LANG_PICKER_SCRIPT}
 ${SCROLL_REVEAL_SCRIPT}
@@ -2968,6 +3172,7 @@ function build() {
     activeLang = lang;
     const localeOutDir = lang === 'en' ? outDir : resolve(outDir, lang);
     mkdirSync(localeOutDir, { recursive: true });
+    const searchRecords: SearchRecord[] = [];
 
     for (const page of pages) {
       const srcPath = resolvePageSrc(page, lang);
@@ -2983,6 +3188,10 @@ function build() {
       const html    = wrapPage(lang, page, content, ogSlugs, md);
       const outFile = page.slug === 'index' ? 'index.html' : `${page.slug}.html`;
       writeFileSync(resolve(localeOutDir, outFile), html, 'utf-8');
+      // Indexed from `content`, this locale's actual rendered body — so a locale
+      // with no sidecar (English body inside translated chrome) indexes the English
+      // it really shows, rather than claiming a translation it doesn't have.
+      searchRecords.push(...indexSections(content, page.slug, t(page.title)));
       console.log(`✓  ${localeHref(lang, page.slug)}`);
       if (lang === 'en') {
         sitemapUrls.push({ slug: page.slug, isLanding: page.isLanding });
@@ -2993,6 +3202,10 @@ function build() {
         mdBySlug.set(page.slug, twin);
       }
     }
+    // One index per locale, fetched lazily by the sidebar search on first use —
+    // never on page load, so a reader who doesn't search pays nothing for it.
+    writeFileSync(resolve(localeOutDir, 'search-index.json'), JSON.stringify(searchRecords), 'utf-8');
+    console.log(`✓  ${lang === 'en' ? '' : `/${lang}`}/info/search-index.json (${searchRecords.length} sections)`);
   }
   activeCatalog = {};
   activeLang = 'en';

@@ -6,7 +6,7 @@ This is the one page to read first. Two things get you productive: **make Lolly 
 
 > New to Lolly and just want to make something? Open the app, pick any tool from the gallery, fill in the blanks, and hit **Render**. Come back here when you want it wearing *your* brand.
 
-![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&localize=1&filename=gallery)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
 
 ## 1. Make it yours - configure your Design System
 
@@ -69,8 +69,6 @@ Here's the payoff: an imported layout is an ordinary Layout Studio session, so o
 ### Open data and open tools
 
 The [community tool set](/info/builders.html) is open source and brand-agnostic - QR codes, street maps, filters, privacy utilities - and it renders against *your* brand the moment you activate it.
-
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
 
 Feed tools your own open data too: paste or drop a **CSV** or **JSON** table and a tool's repeating fields fill from it, one finished asset per row.
 

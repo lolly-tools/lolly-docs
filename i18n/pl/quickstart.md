@@ -1,6 +1,6 @@
 # Szybki start
 
-![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&localize=1&filename=gallery)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
 
 Lolly zamienia twoje reguły - kolory, typografię, układy, logikę - w narzędzia, których każdy może użyć do tworzenia gotowych plików: obrazów, PDF-ów, kart do mediów społecznościowych, wideo, wypełniając kilka pól. Nie ma się czego uczyć i nie trzeba niczego przesyłać: wszystko działa na twoim urządzeniu, online lub offline.
 

@@ -1,6 +1,6 @@
 # Quickstart
 
-![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&localize=1&filename=gallery)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
 
 Ginagawa ng Lolly ang iyong mga alituntunin - kulay, font, layout, lohika - na mga tool na magagamit ng kahit sino para gumawa ng mga natapos na file: mga larawan, PDF, social card, video, sa pamamagitan lang ng pagpuno ng ilang fields. Walang kailangang pag-aralan at walang kailangang i-upload: tumatakbo ang lahat sa device mo, online man o offline.
 

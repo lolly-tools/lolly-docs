@@ -1,6 +1,6 @@
 # Mulai Cepat
 
-![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&localize=1&filename=gallery)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
 
 Lolly mengubah aturan Anda - warna, tipografi, tata letak, logika - menjadi tool yang bisa dipakai siapa saja untuk membuat berkas jadi: gambar, PDF, kartu sosial, video, cukup dengan mengisi beberapa kolom. Tidak ada yang perlu dipelajari dan tidak ada yang perlu diunggah: semuanya berjalan di perangkat Anda, online maupun offline.
 
