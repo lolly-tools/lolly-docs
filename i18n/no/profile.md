@@ -24,7 +24,7 @@ Innstillingene er den eneste delen som endrer hvordan appen ser tilbake på deg.
 
 Ingenting av dette er obligatorisk. En blank profil er en helt utmerket profil; du fyller bare inn det som sparer deg for skriving.
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details&sweep=1)
 
 ## En profil er en kontekst, ikke bare en person
 
@@ -64,7 +64,7 @@ Så hvis du virkelig sjonglerer flere kontekster (deg, teamet ditt, eventansvarl
 
 ## Flytte en profil til en ny enhet
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls&sweep=1)
 
 Fordi en profil er helt lokal, er den eneste måten å få den inn på en blank installasjon - en ny bærbar datamaskin, en nylig tilbakestilt nettleser, en kollegas maskin, en offline-boks - å **ta med filen**. Ingen innlogging gjenoppretter den for deg, og det er hele poenget: ingenting forlot noensinne enheten din i utgangspunktet.
 

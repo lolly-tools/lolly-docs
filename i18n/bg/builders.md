@@ -10,7 +10,7 @@ Lolly е платформено-независим **енджин**, който 
 
 ## Разбери архитектурата
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib&sweep=1)
 
 - **[Общ преглед](/info/overview.html)** — защо съществува Lolly, разделението енджин/обвивки/инструменти, мостът на възможностите и утвърдените архитектурни ангажименти.
 - **[Дизайн токени](/info/design-tokens.html)** — DTCG моделът на токени, чрез който се изразяват брандовете, и как инструментите ги използват.

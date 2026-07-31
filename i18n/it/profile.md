@@ -24,7 +24,7 @@ Le preferenze sono l'unica parte che cambia l'aspetto con cui l'app ti si presen
 
 Niente di tutto questo è obbligatorio. Un profilo vuoto è un profilo perfettamente valido; compili solo quello che ti risparmia di scrivere.
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details&sweep=1)
 
 ## Un profilo è un contesto, non solo una persona
 
@@ -64,7 +64,7 @@ Quindi se gestisci davvero più contesti contemporaneamente (tu, il tuo team, il
 
 ## Spostare un profilo su un nuovo dispositivo
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls&sweep=1)
 
 Poiché un profilo è interamente locale, l'unico modo per portarlo su un'installazione vuota - un nuovo laptop, un browser appena resettato, il computer di un collega, una macchina offline - è **portare il file con te**. Nessun login lo ripristina al posto tuo, ed è proprio questo il punto: niente è mai uscito dal tuo dispositivo, per cominciare.
 

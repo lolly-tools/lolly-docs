@@ -6,7 +6,7 @@ It runs on Chromium-based browsers: **Chrome, Edge, Brave, Arc, Opera**.
 
 Until it is installed, **URL Screenshot** still opens so you can compose a shot, and a note at the top of the tool's controls says what is missing.
 
-![The URL Screenshot tool's note offering the extension, shown when capture to file has no host to run on](/t/url-shot?url=%2F%23%2Ftool%2Furl-shot&width=1440&height=900&dpi=192&waitMs=2400&format=svg&cropSelector=%23capture-hint-notice&filename=exp-url-shot-notice)
+![The URL Screenshot tool's note offering the extension, shown when capture to file has no host to run on](/t/url-shot?url=%2F%23%2Ftool%2Furl-shot&width=1440&height=900&dpi=192&waitMs=2400&format=svg&cropSelector=%23capture-hint-notice&filename=exp-url-shot-notice&sweep=1)
 
 Every control is live while you wait: the target URL, the scroll depth, the settle delay, the crop insets and the recolour. Only the capture itself needs a host.
 

@@ -10,7 +10,7 @@ Nieuw bij het platform? De **[Quickstart](/info/quickstart.html)** zet een merk 
 
 ## De architectuur begrijpen
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib&sweep=1)
 
 - **[Overzicht](/info/overview.html)** - waarom Lolly bestaat, de scheiding tussen engine/shell/tools, de capability bridge, en de vastgelegde architecturale keuzes.
 - **[Design Tokens](/info/design-tokens.html)** - het DTCG-tokenmodel waarin merken worden uitgedrukt, en hoe tools deze gebruiken.

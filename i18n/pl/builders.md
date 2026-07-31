@@ -10,7 +10,7 @@ Nowość na platformie? **[Szybki start](/info/quickstart.html)** pozwoli ci ust
 
 ## Poznaj architekturę
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib&sweep=1)
 
 - **[Przegląd](/info/overview.html)** - dlaczego Lolly istnieje, rozdział na silnik/powłokę/narzędzia, most zdolności (capability bridge) oraz utrwalone decyzje architektoniczne.
 - **[Design Tokens](/info/design-tokens.html)** - model tokenów DTCG, w którym wyrażane są marki, i sposób, w jaki korzystają z nich narzędzia.

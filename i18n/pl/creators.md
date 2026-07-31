@@ -44,7 +44,7 @@ Wypełnij kilka pól, dostań gotowy materiał - żadnego wybierania fontów, ż
 
 Street Map to dobry przykład tej wymiany: wybierasz miasto i parę kolorów, a kartografia, grubości dróg i woda są ustalone za ciebie.
 
-![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&filename=vt-street-map-poster)
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&filename=vt-street-map-poster&sweep=1)
 
 ### Od danych na żywo do gotowej grafiki
 

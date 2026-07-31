@@ -10,7 +10,7 @@ Platforma yeni mi geldin? **[Hızlı Başlangıç](/info/quickstart.html)** deri
 
 ## Mimariyi anla
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib&sweep=1)
 
 - **[Genel Bakış](/info/overview.html)** - Lolly'nin neden var olduğu, motor/kabuk/araçlar ayrımı, yetenek köprüsü ve yerleşik mimari kararlar.
 - **[Tasarım Belirteçleri](/info/design-tokens.html)** - markaların ifade edildiği DTCG belirteç modeli ve araçların bunları nasıl tükettiği.

@@ -24,7 +24,7 @@
 
 以上都不是必填项。一个空白的个人资料本身就是完全可用的;你只需填写能替你省去重复输入的部分。
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details&sweep=1)
 
 ## 个人资料是一种情境,而不仅仅是一个人
 
@@ -64,7 +64,7 @@
 
 ## 将个人资料迁移到新设备
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls&sweep=1)
 
 由于个人资料完全保存在本地,要把它带到一次全新的安装——一台新笔记本电脑、一个刚重置的浏览器、同事的电脑、一台离线设备——唯一的方法就是**携带这个文件**。没有登录能替你恢复它,而这正是重点所在:从一开始就没有任何东西离开过你的设备。
 

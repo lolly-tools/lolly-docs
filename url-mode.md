@@ -24,7 +24,7 @@ That path form is canonical - it's what the address bar shows once a tool has lo
 
 The first of those opens the QR tool with the address and the dark green already applied, no clicks in between.
 
-![A QR code rendered straight from the URL, in the dark green passed as ?color](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26color%3D%25230c322c&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=exp-url-qr-color)
+![A QR code rendered straight from the URL, in the dark green passed as ?color](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26color%3D%25230c322c&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=exp-url-qr-color&sweep=1)
 
 ### Clean URL redirect
 

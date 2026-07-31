@@ -42,7 +42,7 @@ Lolly는 Canva나 Figma가 되려는 게 아니에요. Lolly가 힘을 발휘하
 
 Street Map이 그 거래를 잘 보여주는 예예요: 도시 하나와 색 두 개만 고르면, 지도 표현과 도로 굵기, 수역 처리는 알아서 정해져요.
 
-![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&filename=vt-street-map-poster)
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&filename=vt-street-map-poster&sweep=1)
 
 몇 가지 항목만 입력하면 완성된 에셋이 나와요——폰트를 고를 필요도, 색상을 고민할 필요도, "이게 맞는 로고인가?" 하고 물을 필요도 없어요. 도구가 이미 다 알고 있어요. 이메일 서명, 이벤트 카운트다운, 명언 카드, 배지, 시가지 지도까지——화요일 오후 4시에 팀이 필요로 하는 모든 것을 셀프서비스로 해결해요. 고객 데이터가 기기 밖으로 나가지 않으니, 협업에 컴플라이언스 리스크도 없어요.
 

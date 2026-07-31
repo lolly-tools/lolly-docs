@@ -42,7 +42,7 @@ Lolly non cerca di essere Canva o Figma. Si colloca dove *le regole, la ripetibi
 
 Street Map è un buon esempio dello scambio: tu scegli una città e un paio di colori, e la cartografia, lo spessore delle strade e l'acqua sono già decisi per te.
 
-![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&filename=vt-street-map-poster)
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&filename=vt-street-map-poster&sweep=1)
 
 Compila qualche campo, ottieni l'asset finito - niente font da scegliere, niente colori da rimettere in discussione, niente "è questo il logo giusto?". Lo strumento lo sa già. Firme email, countdown per eventi, card di citazione, badge, mappe stradali - tutto ciò di cui il tuo team ha bisogno un martedì alle 16, in autoservizio. E poiché nessun dato cliente lascia il dispositivo, collaborare non comporta alcun rischio di conformità.
 

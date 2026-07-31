@@ -10,7 +10,7 @@ Mới làm quen với nền tảng? **[Quickstart](/info/quickstart.html)** sẽ
 
 ## Tìm hiểu kiến trúc
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib&sweep=1)
 
 - **[Tổng quan](/info/overview.html)** - vì sao Lolly tồn tại, sự tách biệt engine/shell/tools, capability bridge, và các cam kết kiến trúc đã chốt.
 - **[Token Thiết kế](/info/design-tokens.html)** - mô hình token DTCG mà các brand được biểu diễn qua đó, và cách tool sử dụng chúng.

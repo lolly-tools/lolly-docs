@@ -42,7 +42,7 @@ Lolly 不打算成為 Canva 或 Figma。它的定位在於*規則、可重複性
 
 Street Map 就是這種取捨的好例子：你挑一座城市和兩個顏色，製圖方式、道路粗細與水域的處理都已經替你決定好了。
 
-![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&filename=vt-street-map-poster)
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&filename=vt-street-map-poster&sweep=1)
 
 填幾個欄位，就能得到完成的素材——不用挑字體，不用猜顏色，不用問「這是對的標誌嗎？」工具早就知道答案。電子郵件簽名檔、活動倒數計時、語錄卡片、識別證、街道地圖——星期二下午四點，團隊需要的一切都能自助完成。而且因為客戶資料完全不離開裝置，協作也沒有合規風險。
 

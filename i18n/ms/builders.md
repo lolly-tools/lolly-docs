@@ -10,7 +10,7 @@ Baru dengan platform ini? **[Mula Pantas](/info/quickstart.html)** akan menyedia
 
 ## Fahami seni bina
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib&sweep=1)
 
 - **[Gambaran Keseluruhan](/info/overview.html)** - sebab Lolly wujud, pemisahan engine/shell/tools, jambatan keupayaan, dan komitmen seni bina yang telah ditetapkan.
 - **[Token Reka Bentuk](/info/design-tokens.html)** - model token DTCG yang menjadi asas cara jenama diungkapkan, dan cara alat menggunakannya.

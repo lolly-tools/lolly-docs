@@ -10,7 +10,7 @@ Lolly एक प्लैटफ़ॉर्म-अज्ञेय **इंजन
 
 ## आर्किटेक्चर समझें
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib&sweep=1)
 
 - **[ओवरव्यू](/info/overview.html)** — Lolly क्यों मौजूद है, इंजन/शेल/टूल्स का अलगाव, कैपेबिलिटी ब्रिज, और तय हो चुकी आर्किटेक्चरल प्रतिबद्धताएँ।
 - **[डिज़ाइन टोकन](/info/design-tokens.html)** — DTCG टोकन मॉडल जिसमें ब्रांड व्यक्त किए जाते हैं, और टूल उन्हें कैसे उपयोग करते हैं।

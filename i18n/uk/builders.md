@@ -10,7 +10,7 @@ Lolly — це платформонезалежний **рушій**, який �
 
 ## Розберіться в архітектурі
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib&sweep=1)
 
 - **[Огляд](/info/overview.html)** — навіщо існує Lolly, розділення рушій/оболонка/інструменти, місток можливостей та усталені архітектурні рішення.
 - **[Дизайн-токени](/info/design-tokens.html)** — модель токенів DTCG, якою виражаються бренди, і як інструменти їх споживають.

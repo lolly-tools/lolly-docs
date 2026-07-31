@@ -18,7 +18,7 @@ Lolly 自己的界面：菜单、卡片、导航、字体。它们经过专门�
 
 ## 无障碍
 
-![The Accessibility card on the profile page: four plain switches - Reduce motion, Hide colourful previews, High contrast and Large text - each with a help tip](/t/url-shot?url=%2F%23%2Fprofile&width=430&height=900&dpi=192&waitMs=2000&scrollDepth=1300&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&cropSelector=.profile-card--a11y&filename=incl-a11y-card)
+![The Accessibility card on the profile page: four plain switches - Reduce motion, Hide colourful previews, High contrast and Large text - each with a help tip](/t/url-shot?url=%2F%23%2Fprofile&width=430&height=900&dpi=192&waitMs=2000&scrollDepth=1300&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&cropSelector=.profile-card--a11y&filename=incl-a11y-card&sweep=1)
 
 除了跟随平台自身的信号（系统深色模式、操作系统的减弱动效偏好）之外，Lolly 还在
 你的个人资料中提供明确的、需自行开启的无障碍偏好设置：

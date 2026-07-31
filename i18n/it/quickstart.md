@@ -1,6 +1,6 @@
 # Guida rapida
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
 
 Lolly trasforma le tue regole - colori, tipografia, layout, logica - in strumenti che chiunque può usare per creare file finiti: immagini, PDF, card per i social, video, semplicemente compilando alcuni campi. Non c'è niente da imparare e niente da caricare: tutto gira sul tuo dispositivo, online o offline.
 
@@ -68,7 +68,7 @@ Ecco il vantaggio: un layout importato è una normale sessione di Layout Studio,
 
 Il [set di strumenti della community](/info/builders.html) è open source e agnostico rispetto al brand - codici QR, mappe stradali, filtri, utilità per la privacy - e renderizza sul *tuo* brand nel momento in cui lo attivi.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
 
 Alimenta gli strumenti anche con i tuoi dati aperti: incolla o trascina una tabella **CSV** o **JSON** e i campi ripetibili di uno strumento si compilano da essa, un asset finito per riga.
 

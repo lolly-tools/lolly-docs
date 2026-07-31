@@ -10,7 +10,7 @@ Lolly **محرك** محايد تجاه المنصات يشغل مسار التص
 
 ## افهم البنية
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib&sweep=1)
 
 - **[نظرة عامة](/info/overview.html)** — لماذا وجد Lolly، وفصل المحرك/الأغلفة/الأدوات، وجسر القدرات، والالتزامات المعمارية المستقرة.
 - **[رموز التصميم](/info/design-tokens.html)** — نموذج رموز DTCG الذي تعبر به العلامات التجارية، وكيف تستهلكه الأدوات.

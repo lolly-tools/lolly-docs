@@ -1,6 +1,6 @@
 # Quickstart
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
 
 Ginagawa ng Lolly ang iyong mga alituntunin - kulay, font, layout, lohika - na mga tool na magagamit ng kahit sino para gumawa ng mga natapos na file: mga larawan, PDF, social card, video, sa pamamagitan lang ng pagpuno ng ilang fields. Walang kailangang pag-aralan at walang kailangang i-upload: tumatakbo ang lahat sa device mo, online man o offline.
 
@@ -68,7 +68,7 @@ Ito ang bunga: ang na-import na layout ay isa lamang ordinaryong Layout Studio s
 
 Ang [koleksyon ng community tools](/info/builders.html) ay open source at brand-agnostic - QR code, street map, filter, privacy utilities - at nagre-render ito laban sa *iyong* brand sa sandaling i-activate mo ito.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
 
 Pakainin din ang mga tool ng sarili mong open data: i-paste o i-drop ang isang **CSV** o **JSON** table at pupunuin mula rito ang mga repeating fields ng isang tool, isang natapos na asset kada row.
 

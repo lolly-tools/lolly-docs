@@ -48,7 +48,7 @@ Zmniejsz zbyt duży PDF na urządzeniu, żeby nikt nie sięgał po zewnętrzną 
 
 Wszystkie te operacje to przekształcenia na urządzeniu: twój plik lub dane wchodzą, wychodzą oczyszczone bajty i **nie ma serwera, na który cokolwiek jest wysyłane**. Są celowym przeciwieństwem typowego narzędzia typu „wgraj swój plik na stronę obcej osoby, żeby go wyczyścić”, po które w innym wypadku sięga pełen dobrych intencji pracownik.
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data)
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data&sweep=1)
 
 Text Helper to ta sama umowa, tylko dla tekstu, a nie plików. To warsztat z zakładkami, którego pracownik szukałby w innym wypadku na obcej stronie, i nie deklaruje żadnych wejść, bo nic, czego dotyka, nigdy nie opuszcza strony.
 

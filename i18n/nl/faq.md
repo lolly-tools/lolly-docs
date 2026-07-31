@@ -18,7 +18,7 @@ Lolly produceert een grote hoeveelheid content. We hanteren een strikte aanpak v
 
 ### Wat zijn de feature flags?
 
-![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&filename=pd-feature-flags)
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&filename=pd-feature-flags&sweep=1)
 
 Feature flags zetten onderdelen van Lolly aan of uit. Meestal heeft een beheerder daar controle over - bij Lolly heb jij de controle.
 
@@ -74,7 +74,7 @@ Lolly tilt alles naar een hoger niveau.
 
 ## Wat maakt utilities anders dan tools?
 
-![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
+![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
 
 **Kort antwoord →** Utilities hoeven niet altijd te renderen en kunnen daardoor een andere UX krijgen. 
 
@@ -98,7 +98,7 @@ We winnen de strijd om governance met uitstekend gemak en uitstekende service.
 
 ## Kan Lolly mijn Figma-, Penpot-, Illustrator- of InDesign-bestanden bewerken en renderen?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio&sweep=1)
 
 Ja. Open **Layout Studio** en klik op **Een ontwerp importeren**: het accepteert een natieve Figma **.fig** (Save local copy), een Penpot **.penpot**-export, een Illustrator **.ai** of **.pdf**, een InDesign **.idml** (File → Export → InDesign Markup), of **elke SVG** (de brede deur - bijna elke ontwerptoepassing kan dit exporteren). Alles wordt volledig op je eigen apparaat verwerkt, geen account of plug-in nodig.
 

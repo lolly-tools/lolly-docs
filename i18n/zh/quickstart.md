@@ -1,6 +1,6 @@
 # 快速入门
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
 
 Lolly 将你的规则——颜色、字体、版式、逻辑——转化为任何人都能使用的工具，只需填写几个字段，就能制作出成品文件：图片、PDF、社交卡片、视频。没有什么需要学习，也没有什么需要上传：一切都在你的设备上运行，无论在线还是离线。
 
@@ -68,7 +68,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 [社区工具集](/info/builders.html)是开源的、与品牌无关——二维码、街道地图、滤镜、隐私工具——一旦你激活自己的品牌，它就会依据*你的*品牌进行渲染。
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
 
 你也可以把自己的开放数据喂给工具：粘贴或拖入一份 **CSV** 或 **JSON** 表格，工具的重复字段就会据此填充，每一行生成一个成品资源。
 

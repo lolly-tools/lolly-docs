@@ -24,7 +24,7 @@ Les préférences sont la seule partie qui change l'allure que l'appli te renvoi
 
 Rien de tout cela n'est obligatoire. Un profil vide est un profil tout à fait valable ; tu ne remplis que ce qui t'évite de retaper.
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details&sweep=1)
 
 ## Un profil est un contexte, pas seulement une personne
 
@@ -64,7 +64,7 @@ Donc si tu jongles vraiment entre plusieurs contextes (toi, ton équipe, la casq
 
 ## Déplacer un profil vers un nouvel appareil
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls&sweep=1)
 
 Comme un profil est entièrement local, la seule façon de le faire arriver sur une installation vierge - un nouvel ordinateur portable, un navigateur fraîchement réinitialisé, la machine d'un collègue, une machine hors ligne - est de **transporter le fichier**. Aucune connexion ne le restaure pour toi, et c'est précisément le but : rien n'a jamais quitté ton appareil au départ.
 

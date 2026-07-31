@@ -1,6 +1,6 @@
 # クイックスタート
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
 
 Lolly は、色・タイポグラフィ・レイアウト・ロジックといったあなたのルールを、誰でも使えるツールに変換します。いくつかの項目を入力するだけで、画像、PDF、ソーシャルカード、動画などの完成ファイルを作成できます。学ぶことは何もなく、アップロードも不要です。すべてお使いのデバイス上で、オンラインでもオフラインでも動作します。
 
@@ -68,7 +68,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 [コミュニティツールセット](/info/builders.html) はオープンソースかつブランドに依存しません — QR コード、地図、フィルター、プライバシーユーティリティなど — そして、あなたがブランドを有効化した瞬間から*あなたの*ブランドに沿ってレンダリングされます。
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
 
 あなた自身のオープンなデータもツールに取り込めます。**CSV** や **JSON** のテーブルを貼り付けるかドロップすれば、ツールの繰り返しフィールドがそこから自動入力され、行ごとに1つの完成アセットが生成されます。
 

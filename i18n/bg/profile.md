@@ -20,7 +20,7 @@
 
 Нищо от това не е задължително. Празният профил е напълно добър профил; попълваш само това, което ти спестява писане.
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details&sweep=1)
 
 Предпочитанията са единствената част, която променя как приложението изглежда за теб. Картите с теми са живи прегледи и се прилагат в момента, в който избереш някоя — само на това устройство.
 
@@ -64,7 +64,7 @@
 
 ## Преместване на профил на ново устройство
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls&sweep=1)
 
 Понеже профилът е изцяло локален, единственият начин да го качиш на празна инсталация — нов лаптоп, току-що нулиран браузър, машината на колега, офлайн компютър — е да **пренесеш файла**. Никакво влизане не го възстановява вместо теб и точно това е смисълът: нищо изобщо не е напускало устройството ти.
 

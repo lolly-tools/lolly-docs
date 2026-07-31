@@ -24,7 +24,7 @@
 
 이 중 어느 것도 필수가 아니에요. 빈 프로필도 완전히 정상적인 프로필이에요. 타이핑을 줄여주는 항목만 채우면 돼요.
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details&sweep=1)
 
 ## 프로필은 사람이 아니라 맥락이에요
 
@@ -64,7 +64,7 @@ Lolly에서 그 역할은 그저 **손 닿는 곳에 두는 또 하나의 프로
 
 ## 프로필을 새 기기로 옮기기
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls&sweep=1)
 
 프로필은 완전히 로컬에만 있기 때문에, 이를 새 설치본 — 새 노트북, 방금 초기화한 브라우저, 동료의 컴퓨터, 오프라인 기기 — 으로 옮기는 유일한 방법은 **파일을 직접 옮기는 것**이에요. 로그인으로는 복원되지 않아요. 그게 핵심이에요 — 애초에 기기 밖으로 나간 적이 없으니까요.
 

@@ -1,6 +1,6 @@
 # فوری آغاز
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
 
 Lolly آپ کے اصولوں — رنگ، ٹائپ، لے آؤٹ، منطق — کو ایسے ٹولز میں بدل دیتا ہے جنہیں کوئی بھی استعمال کر کے تیار فائلیں بنا سکتا ہے: تصاویر، PDFs، سوشل کارڈز، ویڈیو، صرف چند خانے بھر کر۔ نہ کچھ سیکھنے کی ضرورت ہے اور نہ کچھ اپ لوڈ کرنے کی: سب کچھ آپ کے ڈیوائس پر چلتا ہے، آن لائن ہو یا آف لائن۔
 
@@ -68,7 +68,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 [کمیونٹی ٹول سیٹ](/info/builders.html) اوپن سورس اور برانڈ سے آزاد ہے — QR کوڈز، اسٹریٹ میپس، فلٹرز، پرائیویسی یوٹیلیٹیز — اور جیسے ہی آپ اسے فعال کرتے ہیں یہ *آپ کے* برانڈ کے مقابل رینڈر کرتا ہے۔
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
 
 ٹولز کو اپنا کھلا ڈیٹا بھی فراہم کریں: کوئی **CSV** یا **JSON** ٹیبل پیسٹ کریں یا ڈراپ کریں اور ایک ٹول کے دہرائے جانے والے خانے اس سے بھر جاتے ہیں، فی قطار ایک تیار اثاثہ۔
 

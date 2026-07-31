@@ -1,6 +1,6 @@
 # Guia rápido
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
 
 O Lolly transforma suas regras - cores, tipografia, layouts, lógica - em ferramentas que qualquer pessoa pode usar para criar arquivos finalizados: imagens, PDFs, cartões para redes sociais, vídeos, preenchendo apenas alguns campos. Não há nada para aprender nem para enviar: tudo roda no seu dispositivo, online ou offline.
 
@@ -68,7 +68,7 @@ Aqui está o ganho: um layout importado é uma sessão comum do Layout Studio, e
 
 O [conjunto de ferramentas da comunidade](/info/builders.html) é open source e independente de marca - QR codes, mapas de rua, filtros, utilitários de privacidade - e renderiza contra *a sua* marca no momento em que você a ativa.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
 
 Alimente as ferramentas com seus próprios dados abertos também: cole ou solte uma tabela **CSV** ou **JSON** e os campos repetidos de uma ferramenta se preenchem a partir dela, um ativo finalizado por linha.
 

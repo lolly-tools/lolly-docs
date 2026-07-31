@@ -8,17 +8,17 @@
 
 ## 五个步骤
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&filename=brand-studio)
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&filename=brand-studio&sweep=1)
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&filename=brand-studio)
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&filename=brand-studio&sweep=1)
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&filename=brand-studio)
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&filename=brand-studio&sweep=1)
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&filename=brand-studio)
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&filename=brand-studio&sweep=1)
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&filename=brand-studio)
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&filename=brand-studio&sweep=1)
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&filename=brand-studio)
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&filename=brand-studio&sweep=1)
 
 工作室是一个五个标签页的编辑器。可以从左到右依次操作——也可以直接跳到任意一个标签页：
 

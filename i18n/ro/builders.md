@@ -10,7 +10,7 @@ Ești nou pe platformă? **[Pornire rapidă](/info/quickstart.html)** pune la pu
 
 ## Înțelege arhitectura
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib&sweep=1)
 
 - **[Prezentare generală](/info/overview.html)** - de ce există Lolly, separarea motor/shell/instrumente, podul de capabilități și angajamentele arhitecturale stabilite definitiv.
 - **[Design Tokens](/info/design-tokens.html)** - modelul de tokeni DTCG în care sunt exprimate brandurile și cum îi consumă instrumentele.

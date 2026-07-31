@@ -6,7 +6,7 @@
 
 ## ল্যান্ডস্কেপ
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&filename=aud-open-canvas)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&filename=aud-open-canvas&sweep=1)
 
 | ক্ষমতা | Canva (ওপেন ক্যানভাস) | ব্র্যান্ড পোর্টাল (DAM টেমপ্লেটিং) | Illustrator (ডেস্কটপ প্রো) | Figma / Penpot (অনলাইন প্রো) | **Lolly (কনস্ট্রেইন্টস-ফার্স্ট)** |
 |---|---|---|---|---|---|

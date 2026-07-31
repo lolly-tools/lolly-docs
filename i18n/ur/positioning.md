@@ -6,7 +6,7 @@
 
 ## منظرنامہ
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&filename=aud-open-canvas)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&filename=aud-open-canvas&sweep=1)
 
 | صلاحیت | Canva (اوپن کینوس) | برانڈ پورٹلز (DAM ٹیمپلیٹنگ) | Illustrator (ڈیسک ٹاپ پرو) | Figma / Penpot (آن لائن پرو) | **Lolly (کنسٹرینٹس-فرسٹ)** |
 |---|---|---|---|---|---|

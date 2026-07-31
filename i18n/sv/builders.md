@@ -10,7 +10,7 @@ Ny på plattformen? **[Snabbstart](/info/quickstart.html)** ser till att du har 
 
 ## Förstå arkitekturen
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib&sweep=1)
 
 - **[Översikt](/info/overview.html)** - varför Lolly finns, uppdelningen mellan motor/skal/verktyg, kapabilitetsbryggan och de fastslagna arkitektoniska besluten.
 - **[Design Tokens](/info/design-tokens.html)** - DTCG-tokenmodellen som varumärken uttrycks i, och hur verktyg använder den.

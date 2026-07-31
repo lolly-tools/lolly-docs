@@ -18,7 +18,7 @@ Lolly produserer store mengder innhold. Vi følger en streng dataminimeringstiln
 
 ### Hva er funksjonsflagg?
 
-![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&filename=pd-feature-flags)
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&filename=pd-feature-flags&sweep=1)
 
 Funksjonsflagg slår deler av Lolly av eller på. Vanligvis er det en administrator som styrer disse - med Lolly er det du som har kontrollen.
 
@@ -75,7 +75,7 @@ Lolly løfter alt.
 
 ## Hva skiller utilities fra verktøy?
 
-![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
+![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
 
 **Enkelt svar →** Utilities trenger ikke alltid å rendre, og kan derfor få en annen UX. 
 
@@ -99,7 +99,7 @@ Vi vinner kampen om styring med utmerket bekvemmelighet og service.
 
 ## Kan Lolly redigere og rendre mine Figma-, Penpot-, Illustrator- eller InDesign-filer?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio&sweep=1)
 
 Ja. Åpne **Layout Studio** og klikk på **Importer en design**: det godtar en nativ Figma **.fig** (Save local copy), en Penpot **.penpot**-eksport, en Illustrator **.ai** eller **.pdf**, en InDesign **.idml** (File → Export → InDesign Markup), eller **hvilken som helst SVG** (den brede døren - nesten alle designprogrammer kan eksportere det). Alt tolkes fullstendig på din egen enhet, ingen konto eller plugin nødvendig.
 

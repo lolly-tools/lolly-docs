@@ -41,7 +41,7 @@ The pilot's centre of gravity is the **producer**. If producers don't self-serve
 
 Step 3 is the one that carries the pilot. A tool opens with the brand already on it, so the only thing left to decide is the words.
 
-![Deck Studio's first slide opened cold, already carrying the brand's type, colour and title layout before a single field is filled in](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&css=%23tool-canvas%20.ds-slide~.ds-slide%7Bdisplay%3Anone%7D&cropSelector=%23tool-canvas%20.ds-slide&filename=ce-deck-studio-cold)
+![Deck Studio's first slide opened cold, already carrying the brand's type, colour and title layout before a single field is filled in](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&css=%23tool-canvas%20.ds-slide~.ds-slide%7Bdisplay%3Anone%7D&cropSelector=%23tool-canvas%20.ds-slide&filename=ce-deck-studio-cold&sweep=1)
 
 The measure of a good onboarding here is blunt: *did they leave with a finished, on-brand file, without asking anyone?*
 

@@ -24,7 +24,7 @@
 
 これらはすべて任意です。空欄のプロフィールもそれはそれで問題なく機能します。入力の手間が省ける項目だけを埋めれば十分です。
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details&sweep=1)
 
 ## プロフィールは単なる「人」ではなく「文脈」
 
@@ -64,7 +64,7 @@ Lollyでは、その役割は単に**手元に置いておく別のプロフィ�
 
 ## プロフィールを新しいデバイスへ移行する
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls&sweep=1)
 
 プロフィールは完全にローカルなものであるため、まっさらなインストール——新しいノートPC、リセットしたばかりのブラウザ、同僚のマシン、オフラインの端末——にそれを持ち込む唯一の方法は、**ファイルを運ぶこと**です。ログインによって復元されることはありません。それこそが重要な点であり、そもそもあなたのデバイスから何かが外に出たことは一度もないのです。
 

@@ -20,7 +20,7 @@
 
 এর কোনোটিই বাধ্যতামূলক নয়। একটি ফাঁকা প্রোফাইলও পুরোপুরি ভালো প্রোফাইল; আপনি শুধু ততটুকুই পূরণ করেন যা আপনার টাইপ করার শ্রম বাঁচায়।
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details&sweep=1)
 
 পছন্দসমূহই সেই একটা অংশ, যা বদলে দেয় অ্যাপটা আপনার দিকে কেমন দেখায়। থিম কার্ডগুলো লাইভ প্রিভিউ, আর আপনি একটা বাছার সঙ্গে সঙ্গেই সেটা প্রয়োগ হয় — শুধু এই ডিভাইসে।
 
@@ -64,7 +64,7 @@ Lolly-তে, সেই ভূমিকা কেবল **হাতের কা
 
 ## নতুন ডিভাইসে প্রোফাইল সরানো
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls&sweep=1)
 
 যেহেতু একটি প্রোফাইল সম্পূর্ণ লোকাল, তাই এটি কোনো ফাঁকা ইনস্টলে নেওয়ার একমাত্র উপায় — একটি নতুন ল্যাপটপ, সদ্য রিসেট করা ব্রাউজার, সহকর্মীর মেশিন, একটি অফলাইন বক্স — হলো **ফাইলটি সঙ্গে নিয়ে যাওয়া**। কোনো লগইন এটি আপনার জন্য ফিরিয়ে আনে না, আর এটাই মূল কথা: প্রথম থেকেই কিছুই আপনার ডিভাইস ছেড়ে যায়নি।
 

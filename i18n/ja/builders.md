@@ -10,7 +10,7 @@ Lolly はプラットフォームに依存しない**エンジン**であり、�
 
 ## アーキテクチャを理解する
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib&sweep=1)
 
 - **[Overview](/info/overview.html)** — Lolly が存在する理由、エンジン/シェル/ツールの分離、ケイパビリティブリッジ、そして確定したアーキテクチャ上の方針について。
 - **[Design Tokens](/info/design-tokens.html)** — ブランドが表現される DTCG トークンモデルと、ツールがそれをどのように利用するかについて。

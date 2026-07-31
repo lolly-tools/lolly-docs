@@ -34,7 +34,7 @@ I modelli di distribuzione completi e la guida all'amministrazione si trovano in
 
 ## Utilità anti-esfiltrazione
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data)
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data&sweep=1)
 
 Text Helper è lo stesso patto, ma per il testo invece dei file. È il banco di lavoro a schede che altrimenti una persona andrebbe a cercare sul sito di uno sconosciuto, e non dichiara alcun input, perché nulla di ciò che tocca lascia mai la pagina.
 
