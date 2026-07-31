@@ -1653,6 +1653,10 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .docs-content img{height:auto;    max-width: min(100%, 40em);    height: auto;   margin: 0 auto; display: block;}
 /* App screenshots (docs/shots.json captures) read at full column width, framed like a window. */
 .docs-content img[src*="/info/shots/"]{max-width:100%;min-width:50%;border-radius:1.2em;box-shadow: inset 0 0 0 1px #0001, 0 3px 6px #0002, 0 6px 2em #0001}
+/* The AI-stance hero photo is an 8 MB signed original (bytes can't be re-encoded
+   without breaking its C2PA credential) — let it fill the column so the download
+   is worth it. */
+.docs-content img[src*="ai-stance-storm"]{width:100%;max-width:100%;border-radius:1.2em;box-shadow:0 3px 6px #0002, 0 6px 2em #0001}
 .docs-content h2{font-size:1.5rem;font-weight:700;letter-spacing:normal;text-transform:none;border-top:1px solid var(--border);padding-top:2rem;margin-top:2.5rem;margin-bottom:.75rem;color:var(--dark)}
 .docs-content h2:first-of-type{border-top:none;padding-top:0;margin-top:0}
 .docs-content h3{font-size:1.15rem;margin-top:1.75rem;margin-bottom:.5rem;color:var(--dark)}
@@ -2240,6 +2244,13 @@ const HERO_CANVAS_SCRIPT = `<script>(function(){
   tick();
 })();</script>`;
 
+// Links into the app's /verify view open as a POPOUT WINDOW, not a tab — the
+// whole point of the link is dragging an image from THIS page into that drop
+// zone, which needs both windows visible side by side. Plain target=_blank
+// backgrounds the docs page and the reader loses the image they meant to drag.
+// The href stays a real link (middle-click / ctrl-click / no-JS all still work).
+const VERIFY_POPOUT_SCRIPT = `<script>(function(){document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href$="/verify"]');if(!a||e.metaKey||e.ctrlKey||e.shiftKey||e.button!==0)return;e.preventDefault();var w=Math.min(1100,screen.availWidth*.8),h=Math.min(850,screen.availHeight*.9);window.open(a.href,'lolly-verify','popup,width='+w+',height='+h+',left='+((screen.availWidth-w)/2)+',top='+((screen.availHeight-h)/2));});})();</script>`;
+
 const HAMBURGER_SCRIPT = `<script>(function(){var ham=document.getElementById('navHamburger');var menu=document.getElementById('navMobileMenu');if(!ham||!menu)return;ham.addEventListener('click',function(){var open=menu.classList.toggle('open');ham.classList.toggle('open',open);ham.setAttribute('aria-expanded',open?'true':'false');});menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false');});});document.addEventListener('click',function(e){if(!menu.contains(e.target)&&!ham.contains(e.target)){menu.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false');}});})();</script>`;
 
 // ── i18n: site chrome (nav/sidebar/footer labels) + per-locale page sources ──
@@ -2517,6 +2528,7 @@ ${body}
 ${FOOTER(lang)}
 ${THEME_INTERACT_SCRIPT}
 ${HAMBURGER_SCRIPT}
+${VERIFY_POPOUT_SCRIPT}
 ${LANG_PICKER_SCRIPT}
 ${SCROLL_REVEAL_SCRIPT}
 ${isLanding ? HERO_CANVAS_SCRIPT : ''}
