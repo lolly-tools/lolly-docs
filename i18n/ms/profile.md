@@ -10,7 +10,7 @@ Semua yang ada dalam profil disimpan **pada peranti**, dalam pangkalan data temp
 
 Keutamaan ialah satu-satunya bahagian yang mengubah rupa aplikasi ini kepada anda. Kad tema ialah pratonton langsung dan digunakan sebaik sahaja anda memilihnya, pada peranti ini sahaja.
 
-![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
 
 | Bahagian | Keterangan |
 |---|---|
@@ -24,7 +24,7 @@ Keutamaan ialah satu-satunya bahagian yang mengubah rupa aplikasi ini kepada and
 
 Tiada satu pun daripada ini diwajibkan. Profil kosong adalah profil yang baik sepenuhnya; anda hanya mengisi apa yang menjimatkan masa menaip anda.
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details&sweep=1)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&dark=1&filename=profile-details&sweep=1)
 
 ## Profil adalah konteks, bukan sekadar seorang individu
 
@@ -32,7 +32,7 @@ Perkataan "profil" memberi kesan seolah-olah ia satu individu yang tetap, tetapi
 
 ### Sebagai individu
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
 
 Lalai. Profil ialah anda: nama anda, e-mel anda, gambar potret anda. Tetapkan sekali sahaja dan tandatangan anda, lencana anda, lockup persidangan anda semuanya akan terisi dengan sendirinya. Inilah yang diperlukan oleh kebanyakan orang.
 
@@ -50,7 +50,7 @@ Dalam Lolly, peranan itu hanyalah **satu lagi profil yang anda simpan berdekatan
 
 Storan ialah tempat kedua-dua bahagian itu berada: meter mengira setiap bait yang dipegang oleh pemasangan ini, kategori demi kategori, dan butang di bawahnya ialah cara anda membersihkan atau membawanya.
 
-![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
 
 Pada bila-bila masa, sesuatu pemasangan mempunyai **satu profil aktif** - butiran yang dilihat oleh alat pada masa itu. Tiada suis profil dalam-aplikasi; sebaliknya, setiap profil ialah **bungkusan mudah alih** (satu fail `.zip` tunggal, lihat [di bawah](#moving-a-profile-to-a-new-device)). Itu memang sengaja mekanisme yang sama seperti berpindah ke peranti baharu - profil ialah fail yang boleh anda simpan, salin, dan muatkan.
 
@@ -64,7 +64,7 @@ Jadi jika anda benar-benar mengendalikan beberapa konteks serentak (anda, pasuka
 
 ## Memindahkan profil ke peranti baharu
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls&sweep=1)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
 
 Oleh sebab profil adalah sepenuhnya tempatan, satu-satunya cara untuk memasukkannya ke dalam pemasangan kosong - komputer riba baharu, pelayar yang baru sahaja ditetapkan semula, komputer rakan sekerja, atau kotak luar talian - adalah dengan **membawa fail itu sendiri**. Tiada log masuk yang memulihkannya untuk anda, dan itulah intinya: tiada apa-apa pun yang pernah meninggalkan peranti anda pada mulanya.
 
@@ -81,7 +81,7 @@ Untuk susun atur bungkusan yang tepat, dasar versi, dan peraturan integriti, lih
 
 ## Bagaimana alat menggunakan profil anda
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&dark=1&filename=pd-use-my-details)
 
 Sesuatu alat hanya sekali-kali *pra-isi* medan profil yang direka khusus untuknya:
 
@@ -101,7 +101,7 @@ Profil menentukan *daripada siapa* sesuatu aset itu; platform menentukan *rupa* 
 
 ### "Profil" membawa dua maksud lain di tempat lain - bukan profil ini
 
-![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&filename=pv-identity-enrol)
+![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&dark=1&filename=pv-identity-enrol)
 
 Perkataan ini digunakan secara bertindih di seluruh projek. Tiada satu pun daripada kedua-dua ini ialah profil peribadi yang dibincangkan dalam halaman ini:
 

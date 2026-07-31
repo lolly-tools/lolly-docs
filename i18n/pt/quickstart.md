@@ -1,6 +1,6 @@
 # Guia rápido
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
 
 O Lolly transforma suas regras - cores, tipografia, layouts, lógica - em ferramentas que qualquer pessoa pode usar para criar arquivos finalizados: imagens, PDFs, cartões para redes sociais, vídeos, preenchendo apenas alguns campos. Não há nada para aprender nem para enviar: tudo roda no seu dispositivo, online ou offline.
 
@@ -14,7 +14,7 @@ Sua marca no Lolly é um pequeno documento de **tokens de design** - cores, tipo
 
 ### Comece do zero (o assistente)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 Na primeira execução, você cai na tela **Start** (`#/start`). Dê um nome e uma cor primária, e o Lolly *deriva* dali uma paleta completa e acessível - superfícies claras/escuras, texto, destaques - usando a mesma matemática de cores que o motor usa em todo o resto. Escolha uma fonte e você tem uma marca funcionando em menos de um minuto. Você pode refinar qualquer parte disso depois.
 
@@ -34,7 +34,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### Ajuste no aplicativo
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=dashboard-brand)
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=dashboard-brand)
 
 Com uma marca ativa, o editor **Your brand** do painel (`#/d`) é um editor ao vivo - mude uma cor ou um papel e cada pré-visualização na página se atualiza enquanto você digita. A mesma marca aparece resumida no card **Perfil → Your brand**. As fontes são reais: escolha entre as do Google Fonts e o Lolly guarda o arquivo **no seu dispositivo** como um ativo de marca, então sua tipografia viaja offline e nada é buscado no momento da renderização.
 
@@ -68,7 +68,7 @@ Aqui está o ganho: um layout importado é uma sessão comum do Layout Studio, e
 
 O [conjunto de ferramentas da comunidade](/info/builders.html) é open source e independente de marca - QR codes, mapas de rua, filtros, utilitários de privacidade - e renderiza contra *a sua* marca no momento em que você a ativa.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
 
 Alimente as ferramentas com seus próprios dados abertos também: cole ou solte uma tabela **CSV** ou **JSON** e os campos repetidos de uma ferramenta se preenchem a partir dela, um ativo finalizado por linha.
 
@@ -76,7 +76,7 @@ Alimente as ferramentas com seus próprios dados abertos também: cole ou solte 
 
 "Uma URL é a API" é literal. O gráfico abaixo não foi desenhado por ninguém: o tipo dele, o título e toda a tabela de dados foram digitados na barra de endereços, e o mesmo link renderiza o mesmo gráfico em qualquer dispositivo.
 
-![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&filename=vt-d3-url-chart)
+![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&dark=1&filename=vt-d3-url-chart)
 
 Com uma marca ativa e seu material em mãos, toda ferramenta produz um arquivo finalizado:
 

@@ -20,7 +20,7 @@ A **Save & continue** button appears the moment you change something and moves y
 
 **Deep-link a tab** with `#/start?tab=<key>`, where the keys are `logos`, `color` *(note the US spelling in the URL)*, `type`, `tokens`, and `catalogue`.
 
-![The five-step tab rail - Logos, Colours, Type, Tokens and Catalogue, with step 1 active](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&filename=brand-studio&sweep=1)
+![The five-step tab rail - Logos, Colours, Type, Tokens and Catalogue, with step 1 active](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&sweep=1)
 
 ## Logos
 
@@ -31,7 +31,7 @@ Every brand mark has a home here - a grid of **orientation × treatment** slots:
 
 That's eight optional slots. Click a slot to add a PNG, SVG, JPEG, or WebP; click a filled slot to replace it. Every slot is optional and everything stays on this device.
 
-![The logo matrix - each orientation across the top, each treatment as its own dashed slot, all of them optional](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dlogos&width=1440&height=1600&dpi=192&waitMs=1600&cropSelector=.be-logo-grid&format=svg&walker=1&filename=bs-logo-slots)
+![The logo matrix - each orientation across the top, each treatment as its own dashed slot, all of them optional](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dlogos&width=1440&height=1600&dpi=192&waitMs=1600&cropSelector=.be-logo-grid&format=svg&walker=1&dark=1&filename=bs-logo-slots)
 
 - **Custom marks** - add marks your brand names its own way (an icon, a crest, a favicon) under **Custom marks**; name it and choose a file.
 - **More identities** - a sub-brand, product, or event can have its own full set of logos. Use **+ Add another logo** and name it; your main set is simply "Your logo".
@@ -41,7 +41,7 @@ That's eight optional slots. Click a slot to add a PNG, SVG, JPEG, or WebP; clic
 
 The richest step. The left pane **derives and generates**; the right pane is your **live palette**. Drag the divider to resize.
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 ### One colour, a whole palette
 
@@ -60,21 +60,21 @@ Everything on this tab is **draft-until-saved**, so experiment freely; only **Sa
 
 Below the primary you'll see live **Primary / Neutral / Secondary / Blend** ramps and light/dark specimen cards with their WCAG contrast ratios. **Click a step in the Neutral or Secondary ramp** to pick that shade instead of the derived default.
 
-![The four ramps stacked above light and dark specimen cards, each card carrying its own WCAG contrast ratio](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&filename=bs-colour-ramps)
+![The four ramps stacked above light and dark specimen cards, each card carrying its own WCAG contrast ratio](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
 ### Build your palette (harmony generator)
 
 Under **Build your palette**, generate matching accent colours from your primary. Pick a harmony - **Complementary**, **Adjacent**, **Triad**, or **Tetrad** - and each candidate comes with an auto-generated human-readable name and a **+ Add** button. Added colours land in your palette immediately. *"Your palette, applied"* previews them on real graphics.
 
-![Generated accents, each with a swatch, an auto-generated name, its hex and an Add button](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&format=svg&filename=bs-harmony-candidates)
+![Generated accents, each with a swatch, an auto-generated name, its hex and an Add button](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&format=svg&dark=1&filename=bs-harmony-candidates)
 
 ### The palette, the wheel, and each swatch
 
 The right pane lists every colour your brand carries, grouped (Primary, Neutral, Secondary, Spectrum, Custom, Roles), each group foldable with its own **+ Add**. Open **Colour chart** for the **OKLCH wheel** - drag a dot to recolour it, click a dot to edit it, or click empty space to drop a new swatch.
 
-![The palette pane, every group foldable, with the download pill parked at its bottom edge](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&format=svg&filename=bs-palette-pane)
+![The palette pane, every group foldable, with the download pill parked at its bottom edge](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&format=svg&dark=1&filename=bs-palette-pane)
 
-![The OKLCH wheel - angle is hue, distance out is chroma, and the greys ride a lightness rail down the side](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&format=svg&filename=bs-colour-wheel)
+![The OKLCH wheel - angle is hue, distance out is chroma, and the greys ride a lightness rail down the side](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&format=svg&dark=1&filename=bs-colour-wheel)
 
 Click any swatch to open its editor:
 
@@ -101,7 +101,7 @@ The floating pill at the bottom of the palette pane downloads the whole palette 
 
 Two doors, in this order. **Your fonts** takes font files off your own machine - upload a TTF, OTF or WOFF and it stays on this device, available to every tool and every export. That is the path for a licensed corporate typeface you already own. Below it, **Google Fonts** covers anything you don't: add **any Google Font** and it downloads to this device once. Either way the face is rendered in the app, your tools and every export, offline forever, and carried in your brand pack - nothing is fetched at render time.
 
-![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&filename=brand-type)
+![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
 
 Search a family (Inter, Fraunces, Space Grotesk…), and **Add font**. Each font in the list can take a role:
 
@@ -112,13 +112,13 @@ Search a family (Inter, Fraunces, Space Grotesk…), and **Add font**. Each font
 
 Headings, italic and code each fall back to the primary until you assign them, so a one-font brand needs no decisions here. The **Type roles** panel shows a live specimen of Heading, Body, Italic and Code so you can see each face doing its job. Everything on Google Fonts ships under an open licence (OFL/Apache/UFL).
 
-![The Type roles specimen - heading, body, italic and code, each set in the face that role resolves to, with the face name beside it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&format=svg&filename=bs-type-specimen)
+![The Type roles specimen - heading, body, italic and code, each set in the face that role resolves to, with the face name beside it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&format=svg&dark=1&filename=bs-type-specimen)
 
 ## Tokens
 
 The rest of the design system, editable without touching code:
 
-![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&filename=brand-tokens)
+![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
 
 - **Rounded corners** - a single radius slider (0–1.5rem) that cards, buttons, and panels across the app follow.
 - **More tokens** - add and edit **spacing**, **sizing**, **stroke width**, **opacity**, **rotation**, plain **numbers**, and **shadows**. Pick a type, name it (*Gutter, Card shadow…*), and set its value. These are stored as standard [design tokens](/info/design-tokens.html) (DTCG) and travel with your brand.
@@ -137,7 +137,7 @@ The **Export** button in the top action row writes a single **`LollyBrand-…zip
 - a **Tokens Studio** file (`.json`) - Tokens Studio;
 - a **plain SVG** (`.svg`) - Lolly scans its colours and lets you pick which to keep, the first becoming your primary.
 
-![The import card - the accepted formats lead as icon tiles, and the whole card is one drop target](/t/url-shot?url=%2F%23%2Fstart%3Fimport&width=1440&height=900&dpi=192&waitMs=1600&css=.start-import-modal%20.modal-msg%2C.start-import-modal%20.modal-title%7Bdisplay%3Anone%7D&cropSelector=.start-import-drop&format=svg&filename=bs-brand-import-formats)
+![The import card - the accepted formats lead as icon tiles, and the whole card is one drop target](/t/url-shot?url=%2F%23%2Fstart%3Fimport&width=1440&height=900&dpi=192&waitMs=1600&css=.start-import-modal%20.modal-msg%2C.start-import-modal%20.modal-title%7Bdisplay%3Anone%7D&cropSelector=.start-import-drop&format=svg&dark=1&filename=bs-brand-import-formats)
 
 This is how a colleague hands you a brand, or how you carry one to a second install - no account, no cloud. To bring in a brand from the command line instead, see [`ingest:brand`](/info/configuration.html#brand-packs).
 

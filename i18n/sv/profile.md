@@ -10,7 +10,7 @@ Allt i en profil finns **på enheten**, i webbläsarens lokala databas (IndexedD
 
 Inställningarna är den enda delen som ändrar hur appen ser tillbaka på dig. Temakorten är levande förhandsvisningar och tillämpas i samma stund du väljer ett, bara på den här enheten.
 
-![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
 
 | Del | Vad det är |
 |---|---|
@@ -24,7 +24,7 @@ Inställningarna är den enda delen som ändrar hur appen ser tillbaka på dig. 
 
 Inget av detta är obligatoriskt. En tom profil är en fullt godtagbar profil; du fyller bara i det som besparar dig onödigt skrivande.
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details&sweep=1)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&dark=1&filename=profile-details&sweep=1)
 
 ## En profil är ett sammanhang, inte bara en person
 
@@ -32,7 +32,7 @@ Ordet "profil" antyder en fast person, men i Lolly är det egentligen ett **skap
 
 ### Som individ
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
 
 Standardläget. Profilen är du: ditt namn, din e-post, ditt porträttfoto. Ställ in den en gång så fyller din signatur, din bricka och din konferenslockup i sig själva. Det här är allt de flesta någonsin behöver.
 
@@ -50,7 +50,7 @@ I Lolly är den rollen bara **ännu en profil du har till hands** - ett sparat p
 
 Lagring är där båda halvorna av det bor: mätaren redovisar varje byte den här installationen håller, kategori för kategori, och knapparna under den är hur du rensar eller tar med den.
 
-![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
 
 I varje given stund har en installation **en aktiv profil** - de uppgifter ett verktyg ser just nu. Det finns ingen profilväxlare inbyggd i appen; istället är varje profil ett **portabelt paket** (en enda `.zip`, se [nedan](#moving-a-profile-to-a-new-device)). Det är medvetet samma mekanism som att flytta till en ny enhet - en profil är en fil du kan spara, kopiera och läsa in.
 
@@ -64,7 +64,7 @@ Så om du verkligen jonglerar flera sammanhang (du, ditt team, eventansvarig-hat
 
 ## Flytta en profil till en ny enhet
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls&sweep=1)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
 
 Eftersom en profil är helt lokal är det enda sättet att få den till en tom installation - en ny bärbar dator, en nyligen återställd webbläsare, en kollegas maskin, en offline-burk - att **ta med filen**. Ingen inloggning återställer den åt dig, och det är hela poängen: inget lämnade någonsin din enhet från början.
 
@@ -81,7 +81,7 @@ För exakt paketlayout, versionspolicy och integritetsregler, se **[Dataöverfö
 
 ## Hur verktyg använder din profil
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&dark=1&filename=pd-use-my-details)
 
 Ett verktyg *förifyller* bara någonsin de profilfält det uttryckligen är byggt för att binda till:
 
@@ -101,7 +101,7 @@ En profil ändrar vem en tillgång är *från*; plattformen ändrar hur den *ser
 
 ### "Profil" betyder två andra saker på andra ställen - inte det här
 
-![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&filename=pv-identity-enrol)
+![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&dark=1&filename=pv-identity-enrol)
 
 Ordet är överanvänt i projektet. Ingen av dessa är den personliga profil som den här sidan handlar om:
 

@@ -10,7 +10,7 @@ Nowość na platformie? **[Szybki start](/info/quickstart.html)** pozwoli ci ust
 
 ## Poznaj architekturę
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib&sweep=1)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-components-lib&sweep=1)
 
 - **[Przegląd](/info/overview.html)** - dlaczego Lolly istnieje, rozdział na silnik/powłokę/narzędzia, most zdolności (capability bridge) oraz utrwalone decyzje architektoniczne.
 - **[Design Tokens](/info/design-tokens.html)** - model tokenów DTCG, w którym wyrażane są marki, i sposób, w jaki korzystają z nich narzędzia.
@@ -19,11 +19,11 @@ Nowość na platformie? **[Szybki start](/info/quickstart.html)** pozwoli ci ust
 
 Każda kontrolka poniżej powstała z wejścia zadeklarowanego w `tool.json`. Ty piszesz linię manifestu, host rysuje widżet, a ten sam model napędza CLI i URL.
 
-![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&format=svg&filename=aud-manifest-controls)
+![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&format=svg&dark=1&filename=aud-manifest-controls)
 
 To skaluje się dalej niż do pięciu kontrolek. Nadaj wejściu `section`, a host je zwinie, więc narzędzie z pięćdziesięcioma wejściami, takie jak D3 Chart Studio, wciąż otwiera się jako krótka lista, a reszta jest poukładana w nazwanych grupach.
 
-![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-d3-sections)
+![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-d3-sections)
 
 - **[Tworzenie narzędzi](/info/authoring-tools.html)** - pełny przewodnik: manifest, szablon, style, hooki, kompozycja i publikowanie.
 - **[Tworzenie zasobów](/info/authoring-assets.html)** - zasoby katalogu, poziomy (tiers), lokalizacje, palety, ikony podatne na motyw i czcionki.
@@ -48,7 +48,7 @@ To skaluje się dalej niż do pięciu kontrolek. Nadaj wejściu `section`, a hos
 
 Prawa i autorstwo to wejścia jak każde inne. Embed & Track Image deklaruje pola twórcy, praw autorskich, licencji i kontaktu, a eksport wpisuje je w metadane samego pliku oraz w jego manifest C2PA.
 
-![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-rights-fields)
+![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-rights-fields)
 
 - **[Tożsamość Content Credentials](/info/content-credentials-identity.html)** - podpisywanie wydawane przez CA dla C2PA na urządzeniu; kontrakty silnika i runbook operatora.
 - **[Transfer danych](/info/data-transfer.html)** - pakiet `lolly-backup`: koperta, integralność i gwarancje między powłokami.

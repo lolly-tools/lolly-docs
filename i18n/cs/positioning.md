@@ -6,7 +6,7 @@ Kam tahle platforma zapadá do širšího prostředí kreativních nástrojů a 
 
 ## Přehled trhu
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&filename=aud-open-canvas&sweep=1)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
 
 | Funkce | Canva (otevřené plátno) | Brand portály (DAM šablonování) | Illustrator (Desktop pro) | Figma / Penpot (Online pro) | **Lolly (omezení na prvním místě)** |
 |---|---|---|---|---|---|
@@ -26,7 +26,7 @@ Tvar mezery na trhu je jasný: nic v současném prostředí nenabízí generati
 
 ## Použij to pro
 
-![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&filename=ov2-deck-studio-output)
+![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&dark=1&filename=ov2-deck-studio-output)
 
 - Rychlou tvorbu provozně nasazených kreativních assetů (dlaždice na akce, odznaky, podpisy, upozornění)
 - Volné uspořádání na otevřeném plátně (Layout Studio), když prvky - barvy, typografie, ikony, obrázky - musí zůstat v souladu s globálními hodnotami značky
@@ -45,7 +45,7 @@ Deck Studio je dobrým měřítkem toho, kam strop sahá: celá prezentace dekla
 
 ## Schvaluj nástroj, ne soubor
 
-![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-approve-the-tool)
+![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-approve-the-tool)
 
 Každý jiný nástroj na trhu produkuje *soubor*, který se pak musí zkontrolovat - správce značky ve slackovém vlákně, právník kvůli disclaimeru, kolo změn, další revize. Lolly posouvá schvalování **o krok proti proudu**. Pravidla značky - přesné hex kódy, licencované soubory fontů, spadávky, rozestupy - jsou pevně zadrátovaná v HTML a CSS nástroje, takže šablona *fyzicky nemůže* vydat asset mimo značku. Samo rozvržení je nosné.
 
@@ -63,7 +63,7 @@ Tohle je ten posun paradigmatu, který deterministický engine skutečně přin�
 
 ## Co tohle nabízí jedinečně
 
-![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-street-map-poster)
 
 - **Divoký designový potenciál doručený bezpečně v kontextu.** Nástroje mohou vyjádřit odvážné designové nápady uvnitř pevně daných mantinelů.
 - **Softwarově definovaná automatizace obsahu, která vrací hotový asset.** Vstup → finální soubor. Žádné "teď to ulož z návrhového nástroje a dodatečně zpracuj."

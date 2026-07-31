@@ -1,6 +1,6 @@
 # البدء السريع
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
 
 يحول Lolly قواعدك — الألوان والخطوط والتخطيطات والمنطق — إلى أدوات يستطيع أي شخص استخدامها لصنع ملفات جاهزة: صور وملفات PDF وبطاقات اجتماعية وفيديو، بملء بضعة حقول فقط. لا شيء تتعلمه ولا شيء ترفعه: كل شيء يعمل على جهازك، متصلا كنت أو غير متصل.
 
@@ -14,7 +14,7 @@
 
 ### ابدأ من الصفر (المعالج)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 التشغيل الأول ينزلك على شاشة **Start‏** (`#/start`). أعطها اسما ولونا أساسيا فإن Lolly *يشتق* منه لوحة ألوان كاملة ومراعية لسهولة الوصول — أسطح فاتحة/داكنة ونصوص ولمسات لونية — بالرياضيات اللونية نفسها التي يستخدمها المحرك في كل مكان آخر. اختر خطا، فيصبح لديك علامة تجارية عاملة في أقل من دقيقة. ويمكنك تحسين أي جزء منها لاحقا.
 
@@ -34,7 +34,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### اضبطه بدقة داخل التطبيق
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=dashboard-brand)
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=dashboard-brand)
 
 متى صارت علامة تجارية نشطة، فإن محرر **علامتك التجارية** في لوحة التحكم (`#/d`) محرر حي — غير لونا أو دورا فتتحدث كل معاينة على الصفحة وأنت تكتب. العلامة نفسها ملخصة في بطاقة **الملف الشخصي ← علامتك التجارية**. والخطوط حقيقية: اختر من Google Fonts فيخزن Lolly الملف **على جهازك** كأصل من أصول العلامة، فتسافر خطوطك معك دون اتصال ولا يجلب شيء وقت التصيير.
 
@@ -68,7 +68,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 [مجموعة أدوات المجتمع](/info/builders.html) مفتوحة المصدر ومحايدة تجاه العلامات التجارية — رموز QR وخرائط شوارع وفلاتر وأدوات خصوصية — وهي تصير وفق علامتك *أنت* لحظة تفعيلها.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
 
 غذ الأدوات ببياناتك المفتوحة أيضا: الصق أو أسقط جدول **CSV** أو **JSON** فتمتلئ الحقول المتكررة في الأداة منه، أصل جاهز لكل صف.
 
@@ -76,7 +76,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 «الرابط هو الواجهة البرمجية» عبارة حرفية. المخطط أدناه لم يرسمه أحد: نوعه وعنوانه وجدول بياناته كله كتب في شريط العنوان، والرابط نفسه يصير المخطط نفسه على أي جهاز.
 
-![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&filename=vt-d3-url-chart)
+![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&dark=1&filename=vt-d3-url-chart)
 
 مع علامة تجارية نشطة ومادتك في يدك، تنتج كل أداة ملفا جاهزا:
 

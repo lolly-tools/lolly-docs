@@ -1,6 +1,6 @@
 # Hızlı Başlangıç
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
 
 Lolly; kurallarını -renkler, yazı tipleri, düzenler, mantık- birkaç alanı doldurarak herkesin bitmiş dosyalar oluşturmak için kullanabileceği araçlara dönüştürür: görseller, PDF'ler, sosyal medya kartları, video. Öğrenilecek ya da yüklenecek hiçbir şey yok: her şey cihazında çalışır, çevrimiçi ya da çevrimdışı.
 
@@ -14,7 +14,7 @@ Lolly'deki markan; renkler, yazı tipleri ve birkaç kuraldan oluşan küçük b
 
 ### Sıfırdan başla (tasarım sistemi oluşturucu)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 İlk çalıştırmada **Başlangıç** ekranına (`#/start`) düşersin - yani [**Marka Stüdyosu**](/info/brand-studio.html)'na. Ona bir ad ve bir ana renk ver; Lolly da motorun her yerde kullandığı aynı renk matematiğiyle bundan eksiksiz, erişilebilir bir palet *türetir* - açık/koyu yüzeyler, metin, vurgular. Bir yazı tipi seç, bir dakikadan kısa sürede çalışan bir markan olsun. Oradan itibaren stüdyonun beş sekmesi (Logolar, Renkler, Yazı Tipi, Belirteçler, Katalog) istediğin kadar ileri götürmene izin verir - ne zaman geri dönersen dön, herhangi bir kısmını daha sonra da inceltebilirsin. Bunu her zaman kontrol panelinden tekrar ziyaret edebilirsin (Lolly'nin marka kilitli bir sürümünü kullanmıyorsan).
 
@@ -34,7 +34,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### Uygulama içinde ince ayar yap
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=dashboard-brand)
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=dashboard-brand)
 
 Bir marka etkinleştirildiğinde, onu şekillendirmeye [**Marka Stüdyosu**](/info/brand-studio.html)'nda (`#/start`) devam et - bir rengi ya da bir rolü değiştir, yazdıkça uygulama genelindeki her önizleme güncellensin. (Kontrol panelindeki `#/d` adresindeki **Tasarım sistemi** sekmesi markayı salt okunur olarak *gösterir*; onu düzenlediğin yer Stüdyo'dur.) Aynı marka **Profil → Markan** kartında özetlenir. Yazı tipleri gerçektir: Google Fonts'tan seç, Lolly dosyayı bir marka varlığı olarak **cihazında** saklar; böylece tipografin çevrimdışı seninle gelir ve oluşturma sırasında hiçbir şey ağdan indirilmez.
 
@@ -68,7 +68,7 @@ Tüm içe aktarma **cihazında** gerçekleşir - dosya tarayıcında ayrıştır
 
 [Topluluk araç seti](/info/builders.html) açık kaynaklı ve markadan bağımsızdır - QR kodları, sokak haritaları, filtreler, gizlilik yardımcı araçları - ve onu etkinleştirdiğin an *senin* markana göre oluşturulur.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
 
 Araçlara kendi açık verilerini de besle: bir **CSV** veya **JSON** tablosunu yapıştır ya da bırak, bir aracın tekrarlayan alanları ondan dolsun, satır başına bir bitmiş varlık.
 
@@ -76,7 +76,7 @@ Araçlara kendi açık verilerini de besle: bir **CSV** veya **JSON** tablosunu 
 
 "Bir URL, API'dir" sözü birebir doğru. Aşağıdaki grafiği kimse çizmedi: türü, başlığı ve bütün veri tablosu adres çubuğuna yazıldı ve aynı bağlantı her cihazda aynı grafiği oluşturur.
 
-![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&filename=vt-d3-url-chart)
+![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&dark=1&filename=vt-d3-url-chart)
 
 Etkin bir marka ve elinde malzemenle her araç bitmiş bir dosya üretir:
 

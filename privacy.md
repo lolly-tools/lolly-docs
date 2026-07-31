@@ -59,7 +59,7 @@ Directive Art. 5(3), storage that is strictly necessary for the service you aske
 for doesn't require consent - only transparency, which is what this document and
 the in-app notice both are.)
 
-![The storage section of the profile page on a phone-width screen: every category of on-device data named, with the Clear all my data button right beside it](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%2C.store-manages%2C.storage-subsection%2C.store-selbar%2C.store-chip-val%2C%23store-hero-num%2C%23store-headroom%2C%23store-quota%2C%23store-reclaim%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23storage-section&filename=pv-storage-clear&sweep=1)
+![The storage section of the profile page on a phone-width screen: every category of on-device data named, with the Clear all my data button right beside it](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%2C.store-manages%2C.storage-subsection%2C.store-selbar%2C.store-chip-val%2C%23store-hero-num%2C%23store-headroom%2C%23store-quota%2C%23store-reclaim%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23storage-section&dark=1&filename=pv-storage-clear&sweep=1)
 
 Your own backup of this data - the `lolly-backup` bundle produced by **Export my
 data & render everything** - is a file you keep and control. It never touches our
@@ -75,7 +75,7 @@ It is never uploaded, because there is no server in the path to upload it to.
 These utilities work offline, and their output carries no watermark or metadata of
 ours - the point of most of them is to remove & protect data, not add risk.
 
-![The badge these tools carry: Runs on your device - nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2400&format=svg&cropSelector=.on-device-badge&filename=pv-ondevice-badge)
+![The badge these tools carry: Runs on your device - nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2400&format=svg&cropSelector=.on-device-badge&dark=1&filename=pv-ondevice-badge)
 
 ## When the app talks to a network, in full
 
@@ -109,7 +109,7 @@ resolver" instead, and you can check those in the desktop or command-line app,
 which resolve DNS natively through your own machine with no third party
 involved.
 
-![The Verify screen: a drop target and nothing else - the file is checked where it already is, with no upload and no account](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1400&format=svg&cropSelector=.valid-layout&filename=cc-verify-drop&sweep=1) You can confirm this yourself: greppable checks for this and every
+![The Verify screen: a drop target and nothing else - the file is checked where it already is, with no upload and no account](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1400&format=svg&cropSelector=.valid-layout&dark=1&filename=cc-verify-drop&sweep=1) You can confirm this yourself: greppable checks for this and every
 other claim on this page, with the exact commands and expected output, live at
 [Verify It Yourself](/info/verify-yourself.html).
 
@@ -177,7 +177,7 @@ enrolling a verified identity, so your exports say "Verified - signed by
 \<your email\>" instead of an anonymous key. **If you skip enrolment, nothing in
 this section applies to you, and no personal data ever leaves your device.**
 
-![The Verified identity card on the profile page, phone-width: the certificate lifetime picker and the enrolment step beneath it, dormant until you start it yourself](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&filename=pv-identity-enrol)
+![The Verified identity card on the profile page, phone-width: the certificate lifetime picker and the enrolment step beneath it, dormant until you start it yourself](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&dark=1&filename=pv-identity-enrol)
 
 If you do enrol, here is exactly what happens:
 

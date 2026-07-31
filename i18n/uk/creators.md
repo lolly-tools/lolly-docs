@@ -44,11 +44,11 @@ Lolly не намагається бути Canva чи Figma. Він живе т�
 
 Street Map — гарний приклад цього обміну: ви обираєте місто й пару кольорів, а картографію, товщину доріг і воду вирішено за вас.
 
-![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&filename=vt-street-map-poster&sweep=1)
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-street-map-poster&sweep=1)
 
 ### Від живих даних до готового візуалу
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
 
 Під'єднайте таблицю **CSV** чи **JSON** до шаблону діаграми, мапи чи таблиці й оновіть числа — про макет подбає він сам. Результати виборів, квартальні звіти, погодні події: збудуйте формат один раз і повторно використовуйте його щоразу, коли виходить сюжет. Точно дотримуйтеся свого фірмового стилю, бо він забезпечується на рівні шаблону, а не залишений як розмита рекомендація.
 
@@ -60,7 +60,7 @@ Street Map — гарний приклад цього обміну: ви оби�
 
 Просунуті фільтри, компонування, анімація, ефекти з живою камерою, генеративний дизайн — авторові шаблону доступна кожна вебтехнологія, тож стеля висока.
 
-![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&filename=use-mesh-output)
+![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 Створюйте *інструменти*, а не файли: побудуйте те, що згенерує 10 000 карток, замість того, щоб робити 10 000 карток. Заблокуйте те, що не має змінюватися; відкрийте лише те, що має варіюватися.
 

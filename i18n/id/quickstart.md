@@ -1,6 +1,6 @@
 # Mulai Cepat
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
 
 Lolly mengubah aturan Anda - warna, tipografi, tata letak, logika - menjadi tool yang bisa dipakai siapa saja untuk membuat berkas jadi: gambar, PDF, kartu sosial, video, cukup dengan mengisi beberapa kolom. Tidak ada yang perlu dipelajari dan tidak ada yang perlu diunggah: semuanya berjalan di perangkat Anda, online maupun offline.
 
@@ -14,7 +14,7 @@ Brand Anda di Lolly adalah sebuah dokumen **design-tokens** kecil - warna, font,
 
 ### Mulai dari nol (pembuat Design System)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 Saat pertama dijalankan, Anda dibawa ke layar **Start** (`#/start`) - [**Brand Studio**](/info/brand-studio.html). Beri nama dan sebuah warna utama, lalu Lolly *menurunkan* palet yang lengkap dan aksesibel darinya - permukaan terang/gelap, teks, aksen - memakai matematika warna yang sama yang dipakai engine di mana pun. Pilih sebuah font, dan Anda punya brand yang berfungsi dalam waktu kurang dari satu menit. Dari sana, lima tab studio (Logo, Warna, Tipografi, Token, Katalog) memungkinkan Anda mengembangkannya sejauh yang Anda mau - perhalus bagian mana pun nanti, kapan pun Anda kembali. Anda selalu bisa membuka ini lagi dari dasbor (asalkan Anda tidak memakai versi Lolly dengan brand terkunci)
 
@@ -34,7 +34,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### Sesuaikan di dalam aplikasi
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=dashboard-brand)
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=dashboard-brand)
 
 Setelah sebuah brand aktif, teruslah membentuknya di [**Brand Studio**](/info/brand-studio.html) (`#/start`) - ubah sebuah warna atau peran dan setiap pratinjau di seluruh aplikasi ikut diperbarui saat Anda mengetik. (Tab **Design system** di dasbor pada `#/d` *menampilkan* brand secara hanya-baca; Studio adalah tempat Anda menyuntingnya.) Brand yang sama diringkas pada kartu **Profil → Brand Anda**. Font-nya nyata: pilih dari Google Fonts dan Lolly menyimpan berkasnya **di perangkat Anda** sebagai aset brand, sehingga tipografi Anda ikut offline dan tidak ada yang diambil saat render.
 
@@ -68,7 +68,7 @@ Inilah hasilnya: tata letak yang diimpor adalah sesi Layout Studio biasa, jadi b
 
 [Kumpulan tool komunitas](/info/builders.html) bersifat sumber terbuka dan tidak terikat brand - kode QR, peta jalan, filter, utilitas privasi - dan semuanya di-render sesuai brand *Anda* begitu Anda mengaktifkannya.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
 
 Berikan pula data terbuka Anda sendiri kepada tool: tempel atau letakkan tabel **CSV** atau **JSON** dan kolom berulang sebuah tool akan terisi darinya, satu aset jadi per baris.
 
@@ -76,7 +76,7 @@ Berikan pula data terbuka Anda sendiri kepada tool: tempel atau letakkan tabel *
 
 "URL adalah API-nya" itu literal. Grafik di bawah ini tidak digambar oleh siapa pun: jenisnya, judulnya, dan seluruh tabel datanya diketikkan ke bilah alamat, dan tautan yang sama akan me-render grafik yang sama di perangkat apa pun.
 
-![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&filename=vt-d3-url-chart)
+![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&dark=1&filename=vt-d3-url-chart)
 
 Dengan brand aktif dan materi Anda di tangan, setiap tool menghasilkan berkas jadi:
 

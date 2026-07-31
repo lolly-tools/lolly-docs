@@ -1,6 +1,6 @@
 # クイックスタート
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
 
 Lolly は、色・タイポグラフィ・レイアウト・ロジックといったあなたのルールを、誰でも使えるツールに変換します。いくつかの項目を入力するだけで、画像、PDF、ソーシャルカード、動画などの完成ファイルを作成できます。学ぶことは何もなく、アップロードも不要です。すべてお使いのデバイス上で、オンラインでもオフラインでも動作します。
 
@@ -14,7 +14,7 @@ Lolly におけるあなたのブランドとは、色・フォント・いく�
 
 ### ゼロから始める(ウィザード)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 初回起動時には **Start** 画面(`#/start`)が表示されます。名前とプライマリカラーを指定すると、Lolly はエンジンが他の箇所でも使用しているのと同じ色彩計算を用いて、ライト/ダークのサーフェス・テキスト・アクセントを含む、完全でアクセシブルなパレットを*導出*します。フォントを選べば、1分足らずで動作するブランドが完成します。どの項目も後から調整できます。
 
@@ -34,7 +34,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### アプリ内で調整する
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=dashboard-brand)
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=dashboard-brand)
 
 ブランドが有効になると、ダッシュボードの **Your brand** エディタ(`#/d`)はライブエディタとして機能し、色やロールを変更するたびにページ上のすべてのプレビューがその場で更新されます。同じブランドは **Profile → Your brand** カードにも要約表示されます。フォントは実体のあるファイルです。Google Fonts から選択すると、Lolly はそのファイルをブランドアセットとして**お使いのデバイス上**に保存するため、タイポグラフィはオフラインでも持ち運べ、レンダリング時に何かを取得することもありません。
 
@@ -68,7 +68,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 [コミュニティツールセット](/info/builders.html) はオープンソースかつブランドに依存しません — QR コード、地図、フィルター、プライバシーユーティリティなど — そして、あなたがブランドを有効化した瞬間から*あなたの*ブランドに沿ってレンダリングされます。
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
 
 あなた自身のオープンなデータもツールに取り込めます。**CSV** や **JSON** のテーブルを貼り付けるかドロップすれば、ツールの繰り返しフィールドがそこから自動入力され、行ごとに1つの完成アセットが生成されます。
 
@@ -76,7 +76,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 「URL が API である」というのは文字どおりの意味です。下のチャートは誰かが描いたものではありません。チャートの種類、見出し、データテーブル全体がアドレスバーに入力されたものであり、同じリンクはどのデバイスでも同じチャートをレンダリングします。
 
-![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&filename=vt-d3-url-chart)
+![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&dark=1&filename=vt-d3-url-chart)
 
 ブランドが有効になり、素材も手元にあれば、どのツールも完成したファイルを生成します。
 

@@ -44,11 +44,11 @@ Lolly, Canva বা Figma হতে চাইছে না। এটা সে�
 
 Street Map এই বোঝাপড়ার একটা ভালো উদাহরণ: আপনি একটা শহর আর দু-একটা রং বাছেন, আর মানচিত্রের আঁকা, রাস্তার পুরুত্ব আর জল আপনার হয়ে ঠিক হয়ে যায়।
 
-![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&filename=vt-street-map-poster&sweep=1)
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-street-map-poster&sweep=1)
 
 ### লাইভ ডেটা থেকে তৈরি ভিজ্যুয়াল
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
 
 একটা **CSV** বা **JSON** টেবিল কোনো চার্ট, ম্যাপ বা টেবিল টেমপ্লেটের সাথে যুক্ত করুন আর সংখ্যাগুলো আপডেট করুন — লেআউট নিজেই সামলে নেয়। নির্বাচনের ফলাফল, ত্রৈমাসিক আয়, আবহাওয়ার ঘটনা: ফরম্যাটটা একবার বানান আর যতবার গল্পটা আসে ততবার ব্যবহার করুন। আপনার হাউস স্টাইলের সাথে *হুবহু* মিলিয়ে নিন, কারণ এটা টেমপ্লেট স্তরে প্রয়োগ হয়, কোনো ঢিলেঢালা নির্দেশনা হিসেবে ছেড়ে দেওয়া হয় না।
 
@@ -60,7 +60,7 @@ Street Map এই বোঝাপড়ার একটা ভালো উদ�
 
 অ্যাডভান্সড ফিল্টার, কম্পোজিটিং, অ্যানিমেশন, লাইভ ক্যামেরা ইফেক্ট, জেনারেটিভ ডিজাইন — টেমপ্লেট নির্মাতার কাছে প্রতিটি ওয়েব প্রযুক্তি উপলব্ধ, তাই সিলিং অনেক উঁচু।
 
-![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&filename=use-mesh-output)
+![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 ফাইল নয়, *টুল* বানান: 10,000টা কার্ড বানানোর বদলে এমন জিনিস বানান যা 10,000টা কার্ড তৈরি করে। যা বদলানো উচিত নয় তা লক করুন; শুধু যা পরিবর্তিত হওয়ার কথা তাই খোলা রাখুন।
 

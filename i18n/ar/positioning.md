@@ -6,7 +6,7 @@
 
 ## المشهد
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&filename=aud-open-canvas&sweep=1)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
 
 | القدرة | Canva (لوحة رسم مفتوحة) | بوابات العلامة التجارية (قوالب DAM) | Illustrator (احترافي لسطح المكتب) | Figma / Penpot (احترافي عبر الإنترنت) | **Lolly (القيود أولا)** |
 |---|---|---|---|---|---|
@@ -26,7 +26,7 @@
 
 ## استخدمه من أجل
 
-![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&filename=ov2-deck-studio-output)
+![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&dark=1&filename=ov2-deck-studio-output)
 
 Deck Studio مقياس جيد للسقف هنا: عرض شرائح كامل معلن كبيانات، يرتب حيا على اللوحة، ويصدر كملف PowerPoint أصلي قابل للتحرير.
 
@@ -45,7 +45,7 @@ Deck Studio مقياس جيد للسقف هنا: عرض شرائح كامل مع
 
 ## اعتمد الأداة، لا الملف
 
-![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-approve-the-tool)
+![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-approve-the-tool)
 
 كل أداة أخرى في المشهد تنتج *ملفا* يجب فحصه بعد ذلك — مدير علامة تجارية في محادثة Slack، والشؤون القانونية على نص إخلاء المسؤولية، ودورة تعديلات، ثم مراجعة أخرى. Lolly تحرك الموافقة **خطوة واحدة إلى أعلى المنبع**. قواعد العلامة التجارية — أكواد hex الدقيقة، وملفات الخطوط المرخصة، وهوامش النزيف، والتباعد — مثبتة في كود HTML و CSS الخاص بالأداة، فالقالب *لا يستطيع فيزيائيا* أن يصدر أصلا خارجا عن العلامة التجارية. التخطيط نفسه عنصر حامل.
 
@@ -63,7 +63,7 @@ Deck Studio مقياس جيد للسقف هنا: عرض شرائح كامل مع
 
 ## ما توفره هذه المنصة حصريا
 
-![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-street-map-poster)
 
 - **إمكانات تصميم جامحة تقدم بأمان داخل سياقها.** تستطيع الأدوات التعبير عن أفكار تصميم جريئة داخل حواجز حماية مثبتة في الكود.
 - **أتمتة محتوى معرفة برمجيا تعيد الأصل النهائي.** مدخل ← ملف نهائي. لا "احفظه الآن من أداة التصميم ثم عالجه لاحقا".

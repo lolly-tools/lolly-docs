@@ -1,6 +1,6 @@
 # 快速入门
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
 
 Lolly 将你的规则——颜色、字体、版式、逻辑——转化为任何人都能使用的工具，只需填写几个字段，就能制作出成品文件：图片、PDF、社交卡片、视频。没有什么需要学习，也没有什么需要上传：一切都在你的设备上运行，无论在线还是离线。
 
@@ -14,7 +14,7 @@ Lolly 将你的规则——颜色、字体、版式、逻辑——转化为任�
 
 ### 从零开始（向导）
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 首次运行会将你带到 **Start** 屏幕（`#/start`）。给它一个名称和一个主色，Lolly 就会用引擎在其他地方使用的同一套色彩数学，从中*推导*出一整套无障碍的调色板——明暗表面、文本、强调色。选一种字体，不到一分钟你就拥有了一个可用的品牌。之后你可以随时进一步调整。
 
@@ -34,7 +34,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### 在应用内调整
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=dashboard-brand)
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=dashboard-brand)
 
 品牌激活后，仪表盘的**你的品牌**编辑器（`#/d`）就是一个实时编辑器——更改一个颜色或一个角色，页面上的每个预览都会随输入即时更新。同一个品牌也会汇总显示在**个人资料 → 你的品牌**卡片上。字体是真实的：从 Google Fonts 中选择，Lolly 会将该文件作为品牌资源**存储在你的设备上**，因此你的字体排印可以离线使用，渲染时无需再次获取。
 
@@ -68,7 +68,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 [社区工具集](/info/builders.html)是开源的、与品牌无关——二维码、街道地图、滤镜、隐私工具——一旦你激活自己的品牌，它就会依据*你的*品牌进行渲染。
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
 
 你也可以把自己的开放数据喂给工具：粘贴或拖入一份 **CSV** 或 **JSON** 表格，工具的重复字段就会据此填充，每一行生成一个成品资源。
 
@@ -76,7 +76,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 "一个 URL 就是 API"这句话是字面意思。下面这张图表并不是谁画出来的，它的类型、标题以及整张数据表都是在地址栏里敲进去的，而同一个链接在任何设备上都会渲染出同一张图表。
 
-![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&filename=vt-d3-url-chart)
+![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&dark=1&filename=vt-d3-url-chart)
 
 品牌激活、素材在手之后，每个工具都能产出一个成品文件：
 

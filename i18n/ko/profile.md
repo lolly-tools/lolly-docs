@@ -10,7 +10,7 @@
 
 환경설정은 앱이 여러분을 마주하는 모습 자체를 바꾸는 유일한 부분이에요. 테마 카드는 그 자체로 라이브 미리보기이고, 고르는 순간 적용되며, 이 기기에만 적용돼요.
 
-![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
 
 | 항목 | 내용 |
 |---|---|
@@ -24,7 +24,7 @@
 
 이 중 어느 것도 필수가 아니에요. 빈 프로필도 완전히 정상적인 프로필이에요. 타이핑을 줄여주는 항목만 채우면 돼요.
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details&sweep=1)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&dark=1&filename=profile-details&sweep=1)
 
 ## 프로필은 사람이 아니라 맥락이에요
 
@@ -32,7 +32,7 @@
 
 ### 개인으로서
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
 
 기본값이에요. 프로필은 곧 나예요. 이름, 이메일, 프로필 사진이죠. 한 번 설정해두면 서명, 배지, 컨퍼런스 락업이 전부 저절로 채워져요. 대부분의 사람에게는 이것만으로 충분해요.
 
@@ -50,7 +50,7 @@ Lolly에서 그 역할은 그저 **손 닿는 곳에 두는 또 하나의 프로
 
 스토리지에서 이 두 가지가 함께 다뤄져요: 미터는 이 설치본이 갖고 있는 모든 바이트를 항목별로 계산해 주고, 그 아래 버튼들은 그것을 지우거나 옮기는 방법이에요.
 
-![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
 
 어느 순간이든 설치본에는 **활성 프로필이 하나**만 있어요 — 지금 도구가 보고 있는 정보예요. 앱 안에 프로필 전환기는 없어요. 대신 각 프로필은 **이동 가능한 번들**(`.zip` 파일 하나, [아래](#moving-a-profile-to-a-new-device) 참고)이에요. 이건 새 기기로 옮기는 것과 의도적으로 같은 방식이에요 — 프로필은 저장하고, 복사하고, 불러올 수 있는 파일이에요.
 
@@ -64,7 +64,7 @@ Lolly에서 그 역할은 그저 **손 닿는 곳에 두는 또 하나의 프로
 
 ## 프로필을 새 기기로 옮기기
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls&sweep=1)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
 
 프로필은 완전히 로컬에만 있기 때문에, 이를 새 설치본 — 새 노트북, 방금 초기화한 브라우저, 동료의 컴퓨터, 오프라인 기기 — 으로 옮기는 유일한 방법은 **파일을 직접 옮기는 것**이에요. 로그인으로는 복원되지 않아요. 그게 핵심이에요 — 애초에 기기 밖으로 나간 적이 없으니까요.
 
@@ -81,7 +81,7 @@ Lolly에서 그 역할은 그저 **손 닿는 곳에 두는 또 하나의 프로
 
 ## 도구가 프로필을 사용하는 방식
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&dark=1&filename=pd-use-my-details)
 
 도구는 명시적으로 연결하도록 만들어진 프로필 필드만 *미리 채워요*.
 
@@ -101,7 +101,7 @@ Lolly에서 그 역할은 그저 **손 닿는 곳에 두는 또 하나의 프로
 
 ### 다른 곳의 "프로필" — 이 페이지의 프로필이 아니에요
 
-![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&filename=pv-identity-enrol)
+![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&dark=1&filename=pv-identity-enrol)
 
 이 단어는 프로젝트 전반에서 여러 의미로 쓰여요. 아래 둘 다 이 페이지에서 다루는 개인 프로필과는 달라요.
 

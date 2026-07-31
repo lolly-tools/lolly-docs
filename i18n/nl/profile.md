@@ -10,7 +10,7 @@ Alles in een profiel leeft **op het apparaat**, in de lokale database van de bro
 
 Voorkeuren zijn het enige deel dat verandert hoe de app naar jou terugkijkt. De themakaarten zijn live previews en gaan meteen in zodra je er een kiest, alleen op dit apparaat.
 
-![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
 
 | Onderdeel | Wat het is |
 |---|---|
@@ -24,7 +24,7 @@ Voorkeuren zijn het enige deel dat verandert hoe de app naar jou terugkijkt. De 
 
 Niets hiervan is verplicht. Een leeg profiel is een prima profiel; je vult alleen in wat je typewerk bespaart.
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details&sweep=1)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&dark=1&filename=profile-details&sweep=1)
 
 ## Een profiel is een context, niet alleen een persoon
 
@@ -32,7 +32,7 @@ Het woord "profiel" doet een vaste persoon vermoeden, maar in Lolly is het eigen
 
 ### Als individu
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
 
 De standaard. Het profiel ben jij: je naam, je e-mail, je pasfoto. Stel het één keer in en je handtekening, je badge, je conferentie-lockup vullen zichzelf in. Dit is alles wat de meeste mensen ooit nodig zullen hebben.
 
@@ -50,7 +50,7 @@ In Lolly is die rol gewoon **een ander profiel dat je bij de hand houdt** - een 
 
 Opslag is waar beide helften daarvan wonen: de meter verantwoordt elke byte die deze installatie vasthoudt, categorie per categorie, en met de knoppen eronder ruim je die op of neem je die mee.
 
-![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
 
 Op elk moment heeft een installatie **één actief profiel** - de gegevens die een tool op dit moment ziet. Er is geen profielwisselaar in de app; in plaats daarvan is elk profiel een **draagbare bundel** (een enkele `.zip`, zie [hieronder](#moving-a-profile-to-a-new-device)). Dat is bewust hetzelfde mechanisme als verhuizen naar een nieuw apparaat - een profiel is een bestand dat je kunt opslaan, kopiëren en laden.
 
@@ -64,7 +64,7 @@ Dus als je echt met meerdere contexten jongleert (jij, je team, het eventmanager
 
 ## Een profiel verplaatsen naar een nieuw apparaat
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls&sweep=1)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
 
 Omdat een profiel volledig lokaal is, is de enige manier om het op een lege installatie te krijgen - een nieuwe laptop, een net gereset browser, de machine van een collega, een offline machine - door **het bestand mee te nemen**. Geen enkele login herstelt het voor je, en dat is precies het punt: er heeft nooit iets je apparaat verlaten.
 
@@ -81,7 +81,7 @@ Voor de exacte bundelindeling, het versiebeleid en de integriteitsregels, zie **
 
 ## Hoe tools je profiel gebruiken
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&dark=1&filename=pd-use-my-details)
 
 Een tool *vult* alleen ooit de profielvelden *vooraf in* die het expliciet is gebouwd om te koppelen:
 
@@ -101,7 +101,7 @@ Een profiel verandert van wie een asset *afkomstig* is; het platform verandert h
 
 ### "Profiel" betekent elders twee andere dingen - niet dit
 
-![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&filename=pv-identity-enrol)
+![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&dark=1&filename=pv-identity-enrol)
 
 Het woord wordt in het hele project op meerdere manieren gebruikt. Geen van beide is het persoonlijke profiel waarover deze pagina gaat:
 

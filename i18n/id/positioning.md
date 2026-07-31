@@ -6,7 +6,7 @@ Di mana platform ini berada dalam lanskap alat kreatif yang lebih luas, dan di m
 
 ## Lanskap
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&filename=aud-open-canvas&sweep=1)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
 
 | Kemampuan | Canva (Kanvas terbuka) | Portal brand (Templating DAM) | Illustrator (Desktop pro) | Figma / Penpot (Online pro) | **Lolly (Mengutamakan batasan)** |
 |---|---|---|---|---|---|
@@ -26,7 +26,7 @@ Bentuk kesenjangannya jelas: tidak ada satu pun dalam lanskap yang ada memberi k
 
 ## Gunakan untuk
 
-![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&filename=ov2-deck-studio-output)
+![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&dark=1&filename=ov2-deck-studio-output)
 
 Deck Studio adalah tolok ukur yang baik untuk batas atas di sini: satu dek slide utuh dideklarasikan sebagai data, ditata langsung di kanvas, lalu diekspor sebagai PowerPoint native yang bisa disunting.
 
@@ -45,7 +45,7 @@ Deck Studio adalah tolok ukur yang baik untuk batas atas di sini: satu dek slide
 
 ## Setujui alatnya, bukan berkasnya
 
-![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-approve-the-tool)
+![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-approve-the-tool)
 
 Setiap alat lain dalam lanskap ini menghasilkan sebuah *berkas* yang setelah itu harus diperiksa - seorang brand manager di sebuah utas Slack, legal untuk disklaimernya, satu putaran perubahan, satu peninjauan lagi. Lolly memindahkan persetujuan **satu langkah ke hulu**. Aturan brand - kode hex yang persis, berkas font berlisensi, margin bleed, spasi - dikodekan secara kaku ke dalam HTML dan CSS alat itu, sehingga template tersebut *secara fisik tidak mampu* mengeluarkan aset yang menyimpang dari brand. Tata letaknya sendiri yang menanggung beban.
 
@@ -63,7 +63,7 @@ Inilah pergeseran paradigma yang benar-benar dihadirkan engine deterministik: ia
 
 ## Yang secara unik ditawarkan
 
-![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-street-map-poster)
 
 - **Potensi desain liar yang dihadirkan dengan aman dalam konteks.** Alat dapat mengekspresikan ide desain yang berani di dalam pagar pengaman yang dikodekan secara kaku.
 - **Otomasi konten berbasis perangkat lunak yang mengembalikan aset final.** Input → berkas final. Tanpa "sekarang simpan dari alat desain Anda lalu proses lagi."

@@ -1,6 +1,6 @@
 # Hurtigstart
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
 
 Lolly omgjør reglene dine - farger, typografi, layouter, logikk - til verktøy som hvem som helst kan bruke for å lage ferdige filer: bilder, PDF-er, sosiale kort, video, ved å fylle inn noen få felt. Det finnes ingenting å lære og ingenting å laste opp: alt kjører på enheten din, på nett eller offline.
 
@@ -14,7 +14,7 @@ Merkevaren din i Lolly er et lite **designtokens**-dokument - farger, skrifttype
 
 ### Start fra bunnen (Brand Studio)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 Første gang du åpner appen, havner du på skjermen **Start** (`#/start`) - [**Brand Studio**](/info/brand-studio.html). Gi den et navn og en primærfarge, så *utleder* Lolly en komplett, tilgjengelig palett fra den - lyse/mørke flater, tekst, aksenter - med den samme fargematematikken motoren bruker overalt ellers. Velg en skrifttype, og du har en fungerende merkevare på under et minutt. Derfra lar studioets fem faner (Logos, Colours, Type, Tokens, Catalogue) deg ta det så langt du vil - finpuss hva som helst senere, når du enn kommer tilbake.
 
@@ -34,7 +34,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### Finjuster den i appen
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=dashboard-brand)
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=dashboard-brand)
 
 Når en merkevare er aktiv, fortsetter du å forme den i [**Brand Studio**](/info/brand-studio.html) (`#/start`) - endre en farge eller en rolle, og hver forhåndsvisning i appen oppdateres mens du skriver. (Dashbordets fane **Designsystem** på `#/d` *viser* merkevaren skrivebeskyttet; det er i Studio du redigerer den.) Den samme merkevaren oppsummeres på kortet **Profil → Din merkevare**. Skrifttyper er ekte: velg fra Google Fonts, og Lolly lagrer filen **på enheten din** som en merkevareressurs, slik at typografien din fungerer offline og ingenting hentes ved rendering.
 
@@ -68,7 +68,7 @@ Her er gevinsten: en importert layout er en vanlig Layout Studio-økt, så så s
 
 [Community-verktøysettet](/info/builders.html) er åpen kildekode og merkevareuavhengig - QR-koder, bykart, filtre, personvernverktøy - og det rendres mot *din* merkevare i det øyeblikket du aktiverer det.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
 
 Mat verktøyene med din egen åpne data også: lim inn eller slipp en **CSV**- eller **JSON**-tabell, så fylles et verktøys gjentakende felter fra den, én ferdig ressurs per rad.
 
@@ -76,7 +76,7 @@ Mat verktøyene med din egen åpne data også: lim inn eller slipp en **CSV**- e
 
 «En URL er API-et» er bokstavelig ment. Diagrammet nedenfor har ingen tegnet: typen, overskriften og hele datatabellen ble skrevet inn i adressefeltet, og samme lenke rendrer samme diagram på hvilken som helst enhet.
 
-![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&filename=vt-d3-url-chart)
+![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&dark=1&filename=vt-d3-url-chart)
 
 Med en aktiv merkevare og materialet ditt klart, produserer hvert verktøy en ferdig fil:
 

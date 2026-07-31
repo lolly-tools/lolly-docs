@@ -1,6 +1,6 @@
 # Bắt đầu nhanh
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
 
 Lolly biến các quy tắc của bạn - màu sắc, kiểu chữ, bố cục, logic - thành các công cụ mà bất kỳ ai cũng có thể dùng để tạo ra tệp hoàn chỉnh: hình ảnh, PDF, thẻ mạng xã hội, video, chỉ bằng cách điền vào một vài trường. Không có gì để học và không cần tải lên gì cả: mọi thứ đều chạy trên thiết bị của bạn, dù online hay offline.
 
@@ -14,7 +14,7 @@ Thương hiệu của bạn trong Lolly là một tài liệu **token thiết k�
 
 ### Bắt đầu từ đầu (trình hướng dẫn)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 Lần chạy đầu tiên sẽ đưa bạn tới màn hình **Start** (`#/start`). Đặt cho nó một cái tên và một màu chủ đạo, Lolly sẽ *suy ra* một bảng màu hoàn chỉnh, dễ tiếp cận từ đó - các bề mặt sáng/tối, văn bản, điểm nhấn - bằng chính phép toán màu mà engine dùng ở mọi nơi khác. Chọn một phông chữ, và bạn đã có một thương hiệu hoạt động được trong chưa đầy một phút. Bạn có thể tinh chỉnh bất kỳ phần nào sau đó.
 
@@ -34,7 +34,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### Tinh chỉnh trong ứng dụng
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=dashboard-brand)
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=dashboard-brand)
 
 Khi một thương hiệu đang hoạt động, trình chỉnh sửa **Your brand** trên dashboard (`#/d`) là một trình chỉnh sửa trực tiếp - đổi một màu hay một vai trò là mọi bản xem trước trên trang cập nhật ngay khi bạn gõ. Cùng thương hiệu đó được tóm tắt trên thẻ **Profile → Your brand**. Phông chữ là thật: chọn từ Google Fonts và Lolly lưu tệp đó **ngay trên thiết bị của bạn** như một tài sản thương hiệu, nên kiểu chữ của bạn vẫn dùng được khi offline và không có gì được tải về khi render.
 
@@ -68,7 +68,7 @@ Toàn bộ quá trình nhập diễn ra **ngay trên thiết bị của bạn** 
 
 [Bộ công cụ cộng đồng](/info/builders.html) là mã nguồn mở và trung lập về thương hiệu - mã QR, bản đồ đường phố, bộ lọc, tiện ích quyền riêng tư - và nó render theo *thương hiệu của bạn* ngay khi bạn kích hoạt.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
 
 Đưa dữ liệu mở của riêng bạn vào công cụ nữa: dán hoặc thả một bảng **CSV** hay **JSON** vào, và các trường lặp lại của công cụ sẽ tự điền theo đó, mỗi hàng cho ra một tệp hoàn chỉnh.
 
@@ -76,7 +76,7 @@ Toàn bộ quá trình nhập diễn ra **ngay trên thiết bị của bạn** 
 
 "URL chính là API" phải hiểu đúng theo nghĩa chữ. Biểu đồ dưới đây không do ai vẽ ra: loại biểu đồ, tiêu đề và toàn bộ bảng dữ liệu của nó đều được gõ vào thanh địa chỉ, và cùng một liên kết sẽ render ra cùng một biểu đồ trên mọi thiết bị.
 
-![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&filename=vt-d3-url-chart)
+![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&dark=1&filename=vt-d3-url-chart)
 
 Với một thương hiệu đang hoạt động và tư liệu trong tay, mọi công cụ đều tạo ra một tệp hoàn chỉnh:
 

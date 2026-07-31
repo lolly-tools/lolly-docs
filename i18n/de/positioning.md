@@ -6,7 +6,7 @@ Wo diese Plattform in der breiteren Landschaft der Kreativ-Tools steht - und wo 
 
 ## Landscape
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&filename=aud-open-canvas&sweep=1)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
 
 | Funktion | Canva (Offene Leinwand) | Marken-Portale (DAM-Vorlagen) | Illustrator (Desktop-Profi) | Figma / Penpot (Online-Profi) | **Lolly (regelbasiert)** |
 |---|---|---|---|---|---|
@@ -26,7 +26,7 @@ Die Form der Lücke ist eindeutig: Nichts in der bestehenden Landschaft bietet u
 
 ## Wofür es sich eignet
 
-![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&filename=ov2-deck-studio-output)
+![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&dark=1&filename=ov2-deck-studio-output)
 
 Deck Studio zeigt gut, wo hier die Obergrenze liegt: ein ganzes Foliendeck als Daten deklariert, live auf der Leinwand angeordnet und als natives, bearbeitbares PowerPoint exportiert.
 
@@ -45,7 +45,7 @@ Deck Studio zeigt gut, wo hier die Obergrenze liegt: ein ganzes Foliendeck als D
 
 ## Das Tool freigeben, nicht die Datei
 
-![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-approve-the-tool)
+![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-approve-the-tool)
 
 Jedes andere Tool in dieser Landschaft erzeugt eine *Datei*, die anschließend geprüft werden muss - ein Brand Manager in einem Slack-Thread, die Rechtsabteilung beim Haftungsausschluss, eine Änderungsrunde, noch eine Prüfung. Lolly verschiebt die Freigabe **einen Schritt nach vorne**. Die Markenregeln - exakte Hex-Codes, lizenzierte Schriftdateien, Anschnittränder, Abstände - sind fest in HTML und CSS des Tools codiert, sodass die Vorlage *physisch nicht* in der Lage ist, ein markenwidriges Asset auszugeben. Das Layout selbst ist tragend.
 
@@ -63,7 +63,7 @@ Das ist der Paradigmenwechsel, den die deterministische Engine tatsächlich lief
 
 ## Was Lolly einzigartig bietet
 
-![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-street-map-poster)
 
 - **Wildes Gestaltungspotenzial, sicher im Kontext ausgeliefert.** Tools können gewagte Designideen innerhalb fest codierter Leitplanken umsetzen.
 - **Softwaredefinierte Content-Automatisierung, die das fertige Asset liefert.** Eingabe → fertige Datei. Kein „jetzt aus dem Design-Tool speichern und nachbearbeiten“.

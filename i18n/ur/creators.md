@@ -44,11 +44,11 @@ Lolly، Canva یا Figma بننے کی کوشش نہیں کر رہا۔ یہ وہ
 
 Street Map اس سودے کی اچھی مثال ہے: آپ ایک شہر اور دو چار رنگ چنتے ہیں، اور نقشہ نگاری، سڑکوں کی موٹائی اور پانی آپ کے لیے طے ہو جاتے ہیں۔
 
-![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&filename=vt-street-map-poster&sweep=1)
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-street-map-poster&sweep=1)
 
 ### لائیو ڈیٹا سے مکمل بصری تک
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
 
 کسی **CSV** یا **JSON** ٹیبل کو چارٹ، نقشے، یا ٹیبل ٹیمپلیٹ سے جوڑیں اور اعداد اپ ڈیٹ کریں — لے آؤٹ خود سنبھال لیتا ہے۔ الیکشن کے نتائج، سہ ماہی آمدنی، موسمی واقعات: فارمیٹ ایک بار بنائیں اور جب بھی کہانی چلے اسے دوبارہ استعمال کریں۔ اپنے ہاؤس اسٹائل سے *بالکل* مطابقت رکھیں، کیونکہ یہ ٹیمپلیٹ کی سطح پر نافذ ہوتا ہے، محض ایک ڈھیلی ہدایت کے طور پر نہیں چھوڑا جاتا۔
 
@@ -60,7 +60,7 @@ Street Map اس سودے کی اچھی مثال ہے: آپ ایک شہر اور 
 
 ایڈوانسڈ فلٹرز، کمپوزٹنگ، اینیمیشن، لائیو کیمرہ ایفیکٹس، جنریٹو ڈیزائن — ہر ویب ٹیکنالوجی ٹیمپلیٹ مصنف کو دستیاب ہے، اس لیے حد بہت اونچی ہے۔
 
-![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&filename=use-mesh-output)
+![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 فائلیں نہیں، *ٹولز* تخلیق کریں: 10,000 کارڈز بنانے کے بجائے وہ چیز بنائیں جو 10,000 کارڈز تیار کرے۔ جو تبدیل نہیں ہونا چاہیے اسے مقفل کریں؛ صرف وہی ظاہر کریں جو بدلنے کے لیے ہو۔
 
