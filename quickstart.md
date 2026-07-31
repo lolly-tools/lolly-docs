@@ -6,7 +6,7 @@ This is the one page to read first. Two things get you productive: **make Lolly 
 
 > New to Lolly and just want to make something? Open the app, pick any tool from the gallery, fill in the blanks, and hit **Render**. Come back here when you want it wearing *your* brand.
 
-![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&walker=1&format=svg&localize=1&filename=gallery)
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
 
 ## 1. Make it yours - configure your Design System
 
