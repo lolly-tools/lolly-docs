@@ -18,7 +18,7 @@ Lolly genererar stora mängder innehåll. Vi tillämpar en strikt dataminimering
 
 ### Vad är funktionsflaggor?
 
-![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&filename=pd-feature-flags)
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&filename=pd-feature-flags)
 
 Funktionsflaggor slår på eller av delar av Lolly. Vanligtvis är det en administratör som styr dessa - med Lolly är det du som har kontrollen.
 

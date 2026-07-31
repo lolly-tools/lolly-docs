@@ -42,7 +42,7 @@ Lolly no pretende ser Canva ni Figma. Se sitúa donde *las reglas, la repetibili
 
 Street Map es un buen ejemplo del trato: tú eliges una ciudad y un par de colores, y la cartografía, el grosor de las calles y el agua ya se deciden por ti.
 
-![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=192&waitMs=3200&cropSelector=%23tool-canvas&format=png&filename=vt-street-map-poster)
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&filename=vt-street-map-poster)
 
 Rellena algunos campos, obtén el recurso terminado - sin fuentes que elegir, sin colores que cuestionar, sin preguntarte "¿es este el logo correcto?". La herramienta ya lo sabe. Firmas de correo, cuentas atrás de eventos, tarjetas de citas, acreditaciones, mapas callejeros - todo lo que tu equipo necesita un martes a las 4 de la tarde, en modo autoservicio. Y como ningún dato de cliente sale del dispositivo, colaborar no supone ningún riesgo de cumplimiento.
 
@@ -60,7 +60,7 @@ Una herramienta puede incrustar el resultado en vivo de otra herramienta como re
 
 Filtros avanzados, composición, animación, efectos de cámara en vivo, diseño generativo - toda la tecnología web está disponible para quien crea plantillas, así que el techo es alto.
 
-![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=1440&height=900&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&format=png&filename=use-mesh-output)
+![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&filename=use-mesh-output)
 
 Crea *herramientas*, no archivos: construye lo que genera 10.000 tarjetas en lugar de hacer 10.000 tarjetas. Bloquea lo que no debería cambiar; expón solo lo que está pensado para variar.
 

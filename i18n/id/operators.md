@@ -52,7 +52,7 @@ Semua ini adalah transformasi di perangkat: berkas atau data Anda masuk, byte ya
 
 Text Helper menawarkan kesepakatan yang sama, tetapi untuk teks alih-alih berkas. Inilah meja kerja bertab yang jika tidak ada, seorang karyawan akan mencarinya di situs orang asing, dan tool ini sama sekali tidak mendeklarasikan input karena apa pun yang disentuhnya tidak pernah meninggalkan halaman.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&filename=ov2-text-helper)
 
 Compress PDF melengkapi rangkaian ini: lampiran yang kelewat besar menyusut sesuai tingkat kualitas yang Anda pilih, di mesin yang memang sudah menyimpannya.
 
@@ -72,7 +72,7 @@ Setiap masukan perkakas dapat dinyatakan sebagai parameter URL, dan masukan yang
 
 ## Provenans & Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&filename=aud-verify-drop)
 
 Ekspor dapat membawa **Content Credentials** - manifest [C2PA](https://c2pa.org) bertanda tangan yang terikat pada hash dari byte berkas. Perubahan apa pun pada berkas setelahnya merusak segelnya, sehingga verifikator yang mengenali C2PA **mendeteksi perubahan secara kriptografis, luring**. Kredensial ini *menunjukkan* gangguan: ia menandai upaya perusakan alih-alih mencegahnya, dan justru itulah yang memungkinkan verifikasi sepenuhnya luring.
 

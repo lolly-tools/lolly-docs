@@ -38,7 +38,7 @@ Lolly 的设计初衷是贴合你的组织实际运作方式——部署它并�
 
 Text Helper 提供的是同一笔交易，只是针对文本而不是文件。它就是员工原本会跑到陌生网站上去找的那种分页式工作台，而且它完全没有声明任何输入项，因为它处理的一切都不会离开这个页面。
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&filename=ov2-text-helper)
 
 Compress PDF 补齐了这一组：过大的附件会按照你选择的质量档位被压小，而且就在那台本来就存着它的机器上完成。
 
@@ -70,7 +70,7 @@ Prompt to Image 是确定性最朴素的样子：文字就是全部的输入，�
 
 ## 溯源与 Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&filename=aud-verify-drop)
 
 导出的文件可以携带 **Content Credentials**——一份签过名的 [C2PA](https://c2pa.org) 清单，与文件字节的哈希值绑定。之后对文件的任何改动都会破坏这枚封印，因此支持 C2PA 的验证工具能够**在离线状态下、以密码学手段检出篡改**。这份凭证是可*察觉*篡改的：它标示出篡改，而不是阻止篡改——而这恰恰正是完全离线验证得以实现的原因。
 

@@ -8,17 +8,17 @@ Les changements s'affichent **en direct dans toute l'application** au fur et à 
 
 ## Les cinq étapes
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&filename=brand-studio)
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&filename=brand-studio)
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&filename=brand-studio)
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&filename=brand-studio)
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&filename=brand-studio)
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&filename=brand-studio)
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&filename=brand-studio)
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&filename=brand-studio)
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&filename=brand-studio)
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&filename=brand-studio)
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&format=svg&filename=brand-studio)
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&filename=brand-studio)
 
 Le studio est un éditeur à cinq onglets. Travaille de gauche à droite - ou saute directement à n'importe quel onglet :
 
@@ -34,7 +34,7 @@ Un bouton **Enregistrer et continuer** apparaît dès que tu changes quelque cho
 
 ## Logos
 
-![The logo matrix - each orientation across the top, each treatment as its own dashed slot, all of them optional](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dlogos&width=1440&height=1600&dpi=192&waitMs=1600&cropSelector=.be-logo-grid&format=svg&filename=bs-logo-slots)
+![The logo matrix - each orientation across the top, each treatment as its own dashed slot, all of them optional](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dlogos&width=1440&height=1600&dpi=192&waitMs=1600&cropSelector=.be-logo-grid&format=svg&walker=1&filename=bs-logo-slots)
 
 Chaque marque graphique a sa place ici - une grille d'emplacements **orientation × traitement** :
 
@@ -49,23 +49,23 @@ Cela fait huit emplacements facultatifs. Clique sur un emplacement pour ajouter 
 
 ## Couleurs
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&filename=brand-colours)
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&filename=brand-colours)
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&filename=brand-colours)
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&filename=brand-colours)
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&filename=brand-colours)
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&filename=brand-colours)
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
 
 L'étape la plus riche. Le volet gauche **dérive et génère** ; le volet droit est ta **palette en direct**. Fais glisser le séparateur pour redimensionner.
 
 ### Une couleur, une palette entière
 
-![The four ramps stacked above light and dark specimen cards, each card carrying its own WCAG contrast ratio](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&filename=bs-colour-ramps)
+![The four ramps stacked above light and dark specimen cards, each card carrying its own WCAG contrast ratio](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&filename=bs-colour-ramps)
 
 Choisis une **Couleur principale** et Lolly dérive la palette complète - surfaces claires et sombres, texte, accents, et des rampes complètes de tons clairs et foncés - en utilisant les mêmes calculs de couleur perceptuels (OKLCH) que le moteur utilise partout. Ajuste la dérivation :
 
@@ -119,7 +119,7 @@ La pilule flottante en bas du volet de palette télécharge toute la palette en 
 
 ## Typographie
 
-![The Type roles specimen - heading, body, italic and code, each set in the face that role resolves to, with the face name beside it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2000&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-typeroles&format=svg&filename=bs-type-specimen)
+![The Type roles specimen - heading, body, italic and code, each set in the face that role resolves to, with the face name beside it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&format=svg&filename=bs-type-specimen)
 
 ![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&filename=brand-type)
 

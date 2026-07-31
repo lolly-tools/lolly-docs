@@ -63,7 +63,7 @@ Este es el cambio de paradigma que aporta de verdad un motor determinista: no es
 
 ## Lo que esto ofrece de forma única
 
-![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=192&waitMs=3200&format=png&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
 
 - **Potencial de diseño audaz entregado de forma segura y en contexto.** Las herramientas pueden expresar ideas de diseño atrevidas dentro de barreras de protección codificadas.
 - **Automatización de contenido definida por software que devuelve el recurso final.** Entrada → archivo final. Nada de "ahora guárdalo desde tu herramienta de diseño y procésalo después."

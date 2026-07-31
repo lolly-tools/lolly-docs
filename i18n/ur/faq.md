@@ -18,7 +18,7 @@ Lolly بڑی مقدار میں مواد تیار کرتا ہے۔ خطرے سے �
 
 ### فیچر فلیگز کیا ہیں؟
 
-![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&filename=pd-feature-flags)
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&filename=pd-feature-flags)
 
 فیچر فلیگز Lolly کے حصوں کو آن یا آف کرتے ہیں۔ عام طور پر انہیں ایک ایڈمنسٹریٹر کنٹرول کرتا ہے — Lolly کے ساتھ، کنٹرول آپ کے ہاتھ میں ہے۔
 

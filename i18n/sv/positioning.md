@@ -63,7 +63,7 @@ Det här är paradigmskiftet som den deterministiska motorn faktiskt levererar: 
 
 ## Vad detta erbjuder som är unikt
 
-![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=192&waitMs=3200&format=png&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
 
 - **Vild designpotential levererad säkert i sitt sammanhang.** Verktyg kan uttrycka djärva designidéer inom hårdkodade skyddsräcken.
 - **Mjukvarudefinierad innehållsautomation som returnerar den slutgiltiga tillgången.** Input → färdig fil. Inget "nu får du spara den från ditt designverktyg och efterbehandla den."

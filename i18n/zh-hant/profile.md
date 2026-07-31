@@ -32,7 +32,7 @@
 
 ### 作為個人
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&filename=pd-profile-headshot)
 
 這是預設情況。個人資料就是你本人：你的姓名、你的電子郵件、你的大頭照。設定一次之後，你的簽名檔、識別證、研討會識別組合就會自動填好。大多數人所需要的，僅止於此。
 
@@ -81,7 +81,7 @@
 
 ## 工具如何使用你的個人資料
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&filename=pd-use-my-details)
 
 工具只會*預先填入*它明確設計要綁定的個人資料欄位：
 

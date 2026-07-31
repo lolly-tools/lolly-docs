@@ -63,7 +63,7 @@ Deck Studio는 여기서의 천장이 얼마나 높은지 잘 보여줘요: 슬�
 
 ## Lolly만이 제공하는 가치
 
-![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=192&waitMs=3200&format=png&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
 
 - **문맥 안에서 안전하게 발휘되는 대담한 디자인 잠재력.** 도구는 하드코딩된 가드레일 안에서 과감한 디자인 아이디어를 표현할 수 있어요.
 - **최종 에셋을 그대로 돌려주는 소프트웨어 정의 콘텐츠 자동화.** 입력 → 완성 파일. "디자인 도구에서 저장한 다음 후처리하기"가 필요 없어요.

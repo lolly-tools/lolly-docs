@@ -38,7 +38,7 @@ Die vollständigen Bereitstellungsmodelle und die Administrationsanleitung finde
 
 Text Helper ist dieselbe Abmachung, nur für Text statt für Dateien. Es ist die Werkbank mit Tabs, nach der Mitarbeitende sonst auf der Website eines Fremden suchen würden, und es deklariert überhaupt keine Eingaben, weil nichts, was es anfasst, jemals die Seite verlässt.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&filename=ov2-text-helper)
 
 Compress PDF vervollständigt die Reihe: Der zu große Anhang schrumpft mit einer Qualitätsstufe, die Sie wählen - auf dem Rechner, auf dem er ohnehin schon liegt.
 
@@ -73,7 +73,7 @@ Jede Tool-Eingabe lässt sich als URL-Parameter ausdrücken, und dieselben Einga
 
 ## Herkunft & Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&filename=aud-verify-drop)
 
 Exporte können **Content Credentials** tragen - ein signiertes [C2PA](https://c2pa.org)-Manifest, das an einen Hash der Datei-Bytes gebunden ist. Jede spätere Änderung an der Datei bricht das Siegel, sodass ein C2PA-fähiges Prüfprogramm **Veränderungen kryptografisch und offline erkennt**. Das Credential ist manipulations*sichtbar*: Es meldet Manipulationen, statt sie zu verhindern - und genau das macht eine vollständig offline durchführbare Prüfung möglich.
 

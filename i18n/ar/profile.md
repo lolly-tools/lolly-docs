@@ -32,7 +32,7 @@
 
 ### كفرد
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&filename=pd-profile-headshot)
 
 الوضع الافتراضي. الملف الشخصي هو أنت: اسمك وبريدك الإلكتروني وصورتك الشخصية. اضبطه مرة واحدة فيمتلئ توقيعك وشارتك وشعار مؤتمرك من تلقاء نفسها. هذا كل ما سيحتاجه معظم الناس.
 
@@ -81,7 +81,7 @@
 
 ## كيف تستخدم الأدوات ملفك الشخصي
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&filename=pd-use-my-details)
 
 الأداة لا تفعل أبدا سوى *الملء المسبق* لحقول الملف الشخصي التي بنيت صراحة لربطها:
 

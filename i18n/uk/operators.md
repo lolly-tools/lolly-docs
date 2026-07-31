@@ -51,7 +51,7 @@ Lolly збудовано так, щоб він пасував до того, я�
 
 Text Helper — та сама угода, тільки для тексту, а не для файлів. Це майстерня з вкладками, яку співробітник інакше шукав би на чужому сайті, і вона не оголошує жодних входів, бо ніщо з того, до чого вона торкається, не покидає сторінку.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&filename=ov2-text-helper)
 
 Compress PDF доповнює цей набір: завеликий вкладений файл стискається за налаштуванням якості, яке ви обираєте, на тій самій машині, що вже його тримає.
 
@@ -70,7 +70,7 @@ Prompt to Image — це детермінованість у найпрості�
 
 ## Походження та Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&filename=aud-verify-drop)
 
 Експорти можуть нести **Content Credentials** — підписаний маніфест [C2PA](https://c2pa.org), прив'язаний до геша байтів файлу. Будь-яка подальша зміна файлу ламає печатку, тож верифікатор, обізнаний із C2PA, **виявляє зміну криптографічно, офлайн**. Посвідчення є *очевидним* до втручання: воно позначає підробку, а не запобігає їй, і саме це робить можливою повністю офлайнову верифікацію.
 

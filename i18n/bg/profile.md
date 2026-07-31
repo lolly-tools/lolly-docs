@@ -32,7 +32,7 @@
 
 ### Като отделен човек
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&filename=pd-profile-headshot)
 
 Стандартният случай. Профилът си ти: твоето име, твоят имейл, твоята портретна снимка. Настрой го веднъж и подписът ти, баджът ти, конферентният ти локъп се попълват сами. Това е всичко, от което повечето хора някога ще имат нужда.
 
@@ -81,7 +81,7 @@
 
 ## Как инструментите използват профила ти
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&filename=pd-use-my-details)
 
 Един инструмент само *попълва предварително* профилните полета, които изрично е създаден да обвързва:
 

@@ -38,7 +38,7 @@ I modelli di distribuzione completi e la guida all'amministrazione si trovano in
 
 Text Helper è lo stesso patto, ma per il testo invece dei file. È il banco di lavoro a schede che altrimenti una persona andrebbe a cercare sul sito di uno sconosciuto, e non dichiara alcun input, perché nulla di ciò che tocca lascia mai la pagina.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&filename=ov2-text-helper)
 
 Compress PDF completa il set: l'allegato troppo pesante si riduce secondo un livello di qualità che scegli tu, sulla stessa macchina che già lo contiene.
 
@@ -70,7 +70,7 @@ Ogni input di uno strumento è esprimibile come parametro URL, e gli stessi inpu
 
 ## Provenienza e Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&filename=aud-verify-drop)
 
 Le esportazioni possono portare **Content Credentials** - un manifest [C2PA](https://c2pa.org) firmato e vincolato a un hash dei byte del file. Qualsiasi modifica successiva al file rompe il sigillo, quindi un verificatore compatibile con C2PA **rileva l'alterazione in modo crittografico, offline**. La credenziale è a prova di manomissione in senso *rilevabile*: segnala la manomissione invece di impedirla, ed è esattamente questo che rende possibile una verifica interamente offline.
 

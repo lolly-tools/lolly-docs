@@ -38,7 +38,7 @@ De volledige uitrolmodellen en beheerwalkthrough vind je in [Uitrol](/info/deplo
 
 Text Helper is dezelfde afspraak, maar voor tekst in plaats van bestanden. Het is de werkbank met tabs waar een medewerker anders op de site van een vreemde naar zou gaan zoeken, en het declareert helemaal geen inputs, omdat niets wat het aanraakt ooit de pagina verlaat.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&filename=ov2-text-helper)
 
 Compress PDF maakt de set compleet: de te grote bijlage krimpt onder een kwaliteitsinstelling die jij kiest, op de machine die hem toch al heeft.
 
@@ -70,7 +70,7 @@ Elke tool-invoer is uit te drukken als URL-parameter, en dezelfde invoer produce
 
 ## Herkomst & Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&filename=aud-verify-drop)
 
 Exports kunnen **Content Credentials** dragen - een ondertekend [C2PA](https://c2pa.org)-manifest gebonden aan een hash van de bytes van het bestand. Elke latere wijziging aan het bestand verbreekt het zegel, dus een C2PA-bewuste verifier **detecteert wijzigingen cryptografisch, offline**. Het credential is manipulatie-*zichtbaar*: het signaleert manipulatie in plaats van het te voorkomen, en juist dat maakt volledig offline verificatie mogelijk.
 

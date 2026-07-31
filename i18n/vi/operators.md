@@ -52,7 +52,7 @@ Tất cả những công cụ này đều là các phép biến đổi trên thi
 
 Text Helper cũng là thỏa thuận đó, nhưng dành cho văn bản thay vì tệp. Nó chính là bàn làm việc dạng tab mà lẽ ra một nhân viên sẽ phải đi tìm trên trang web của người lạ, và nó không khai báo input nào cả, vì mọi thứ nó chạm đến đều không bao giờ rời khỏi trang.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&filename=ov2-text-helper)
 
 Compress PDF hoàn tất bộ này: tệp đính kèm quá khổ được thu nhỏ theo mức chất lượng bạn chọn, ngay trên chiếc máy đang giữ nó.
 
@@ -72,7 +72,7 @@ Mọi đầu vào của công cụ đều có thể biểu diễn dưới dạng
 
 ## Nguồn gốc dữ liệu & Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&filename=aud-verify-drop)
 
 Các bản xuất có thể mang **Content Credentials** - một manifest [C2PA](https://c2pa.org) đã được ký, gắn với một hash của các byte trong tệp. Bất kỳ thay đổi nào về sau đối với tệp đều phá vỡ con dấu, nên một trình xác minh hiểu C2PA sẽ **phát hiện sự thay đổi bằng mật mã học, khi ngoại tuyến**. Thông tin xác thực này *có thể phát hiện* giả mạo: nó báo hiệu việc giả mạo chứ không ngăn chặn nó, và đó chính xác là điều khiến việc xác minh hoàn toàn ngoại tuyến trở nên khả thi.
 

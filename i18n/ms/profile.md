@@ -32,7 +32,7 @@ Perkataan "profil" memberi kesan seolah-olah ia satu individu yang tetap, tetapi
 
 ### Sebagai individu
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&filename=pd-profile-headshot)
 
 Lalai. Profil ialah anda: nama anda, e-mel anda, gambar potret anda. Tetapkan sekali sahaja dan tandatangan anda, lencana anda, lockup persidangan anda semuanya akan terisi dengan sendirinya. Inilah yang diperlukan oleh kebanyakan orang.
 
@@ -81,7 +81,7 @@ Untuk susun atur bungkusan yang tepat, dasar versi, dan peraturan integriti, lih
 
 ## Bagaimana alat menggunakan profil anda
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&filename=pd-use-my-details)
 
 Sesuatu alat hanya sekali-kali *pra-isi* medan profil yang direka khusus untuknya:
 

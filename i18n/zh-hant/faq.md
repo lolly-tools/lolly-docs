@@ -14,7 +14,7 @@ Lolly 會產出大量內容，因此我們採取嚴格的資料最小化原則�
 
 ### 什麼是功能旗標（feature flags）？
 
-![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&filename=pd-feature-flags)
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&filename=pd-feature-flags)
 
 功能旗標可以開啟或關閉 Lolly 的部分功能。這類設定通常由管理員控管──但在 Lolly，由你自己掌控。
 

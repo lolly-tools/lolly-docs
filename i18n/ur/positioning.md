@@ -63,7 +63,7 @@ Deck Studio یہاں کی حد کا اچھا پیمانہ ہے: ایک پوری 
 
 ## یہ منفرد طور پر کیا فراہم کرتا ہے
 
-![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=192&waitMs=3200&format=png&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
 
 - **بے لگام ڈیزائن کی صلاحیت جو سیاق و سباق میں محفوظ طریقے سے فراہم کی جاتی ہے۔** ٹولز ہارڈ کوڈڈ گارڈ-ریلز کے اندر جرات مندانہ ڈیزائن آئیڈیاز کا اظہار کر سکتے ہیں۔
 - **سافٹ ویئر-ڈیفائنڈ مواد آٹومیشن جو حتمی اثاثہ واپس کرتی ہے۔** ان پٹ → حتمی فائل۔ کوئی "اب اسے اپنے ڈیزائن ٹول سے محفوظ کریں اور پوسٹ-پروسیس کریں" نہیں۔

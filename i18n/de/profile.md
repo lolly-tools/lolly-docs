@@ -32,7 +32,7 @@ Das Wort „Profil" legt eine feste Person nahe, aber in Lolly ist es eigentlich
 
 ### Als Einzelperson
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&filename=pd-profile-headshot)
 
 Der Standardfall. Das Profil sind Sie: Ihr Name, Ihre E-Mail, Ihr Porträtfoto. Einmal eingerichtet, füllen sich Ihre Signatur, Ihr Badge und Ihr Konferenz-Lockup von selbst aus. Das ist alles, was die meisten Menschen jemals brauchen werden.
 
@@ -81,7 +81,7 @@ Für das genaue Bundle-Layout, die Versionsrichtlinie und die Integritätsregeln
 
 ## Wie Tools Ihr Profil nutzen
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&filename=pd-use-my-details)
 
 Ein Tool *füllt* stets nur die Profilfelder *vor*, für deren Bindung es ausdrücklich gebaut wurde:
 

@@ -38,7 +38,7 @@ Den fullständiga genomgången av driftsättningsmodeller och administration fin
 
 Text Helper är samma överenskommelse för text i stället för filer. Det är den flikbaserade arbetsbänken en medarbetare annars hade letat efter på en främlings webbplats, och den deklarerar inga indata alls, eftersom inget den rör vid någonsin lämnar sidan.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&filename=ov2-text-helper)
 
 Compress PDF kompletterar uppsättningen: den överstora bilagan krymper under en kvalitetsnivå du väljer, på maskinen som redan har den.
 
@@ -70,7 +70,7 @@ Varje verktygsinmatning kan uttryckas som en URL-parameter, och samma indata ger
 
 ## Proveniens och Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&filename=aud-verify-drop)
 
 Exporter kan bära **Content Credentials** - ett signerat [C2PA](https://c2pa.org)-manifest bundet till en hash av filens bytes. Varje senare ändring av filen bryter förseglingen, så en C2PA-medveten verifierare **upptäcker ändringar kryptografiskt, offline**. Autentiseringsuppgiften är manipulations-*avslöjande*: den flaggar manipulation snarare än förhindrar den, vilket är precis det som gör fullständig offline-verifiering möjlig.
 

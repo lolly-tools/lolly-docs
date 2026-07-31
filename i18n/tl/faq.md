@@ -18,7 +18,7 @@ Gumagawa ang Lolly ng malaking dami ng content. Sumusunod kami sa mahigpit na da
 
 ### Ano ang mga feature flag?
 
-![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&filename=pd-feature-flags)
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&filename=pd-feature-flags)
 
 Binubuksan o isinasara ng feature flags ang mga bahagi ng Lolly. Karaniwan, isang administrator ang kumokontrol dito - pero sa Lolly, ikaw ang may kontrol.
 

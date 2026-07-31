@@ -32,7 +32,7 @@ Ang salitang "profile" ay parang tumutukoy sa iisang fixed na tao, pero sa Lolly
 
 ### Bilang indibidwal
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&filename=pd-profile-headshot)
 
 Ito ang default. Ang profile ay ikaw: ang iyong pangalan, email, headshot. I-set mo ito nang isang beses at awtomatiko nang mapupunan ang iyong signature, badge, at conference lockup. Ito ang kailangan ng karamihan sa mga tao.
 
@@ -81,7 +81,7 @@ Para sa eksaktong bundle layout, version policy, at integrity rules, tingnan ang
 
 ## Paano ginagamit ng mga tool ang iyong profile
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&filename=pd-use-my-details)
 
 Ang isang tool ay *nagpu-pre-fill* lamang ng mga field ng profile na talagang dinisenyo nitong i-bind:
 

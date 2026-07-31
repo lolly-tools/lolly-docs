@@ -63,7 +63,7 @@ Così smetti di approvare gli output e inizi ad approvare lo **strumento** che l
 
 ## Ciò che questo offre in modo unico
 
-![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=192&waitMs=3200&format=png&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
 
 - **Potenziale di design audace, offerto in sicurezza e nel contesto.** Gli strumenti possono esprimere idee di design audaci entro barriere di protezione codificate.
 - **Automazione dei contenuti definita via software, che restituisce l'asset finale.** Input → file finale. Niente "adesso salvalo dal tuo strumento di design e rielaboralo".

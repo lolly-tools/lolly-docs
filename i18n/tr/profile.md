@@ -32,7 +32,7 @@ Bunların hiçbiri zorunlu değildir. Boş bir profil gayet iyi bir profildir; y
 
 ### Bir birey olarak
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&filename=pd-profile-headshot)
 
 Varsayılan. Profil sensin: adın, e-postan, vesikalık fotoğrafın. Bir kez ayarla; imzan, rozetin, konferans kilitlemen hepsi kendini doldursun. Çoğu insanın ihtiyaç duyacağı tek şey budur.
 
@@ -81,7 +81,7 @@ Tam paket düzeni, sürüm politikası ve bütünlük kuralları için bkz. **[V
 
 ## Araçlar profilini nasıl kullanır
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&filename=pd-use-my-details)
 
 Bir araç yalnızca bağlamak üzere açıkça yapıldığı profil alanlarını *önceden doldurur*:
 

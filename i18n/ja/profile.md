@@ -32,7 +32,7 @@
 
 ### 個人として
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&filename=pd-profile-headshot)
 
 これが既定の形です。プロフィールはあなた自身——氏名、メールアドレス、ヘッドショット——を表します。一度設定すれば、署名、バッジ、カンファレンス用ロックアップがすべて自動的に入力されます。ほとんどの人にとってはこれで十分でしょう。
 
@@ -81,7 +81,7 @@ Lollyでは、その役割は単に**手元に置いておく別のプロフィ�
 
 ## ツールがプロフィールをどう使うか
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&filename=pd-use-my-details)
 
 ツールは、明示的に紐づけるよう作られたプロフィールのフィールドを*事前入力*するだけです。
 

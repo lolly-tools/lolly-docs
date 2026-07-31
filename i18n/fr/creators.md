@@ -42,7 +42,7 @@ Lolly n'essaie pas d'être Canva ou Figma. Il se positionne là où *les règles
 
 Street Map illustre bien le marché : tu choisis une ville et deux couleurs, et la cartographie, l'épaisseur des voies et l'eau sont décidées pour toi.
 
-![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=192&waitMs=3200&cropSelector=%23tool-canvas&format=png&filename=vt-street-map-poster)
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&filename=vt-street-map-poster)
 
 Renseigne quelques champs, obtiens le visuel fini - aucune police à choisir, aucune couleur à remettre en question, aucun « est-ce bien le bon logo ? ». L'outil sait déjà. Signatures email, comptes à rebours d'événements, cartes de citation, badges, plans de rues - tout ce dont ton équipe a besoin un mardi à 16h, en libre-service. Et comme aucune donnée client ne quitte l'appareil, collaborer ne présente aucun risque de conformité.
 
@@ -60,7 +60,7 @@ Un outil peut intégrer le rendu en direct d'un autre outil comme visuel - un ba
 
 Filtres avancés, compositing, animation, effets caméra en direct, design génératif - toute la technologie web est à la disposition de l'auteur d'un gabarit, donc le plafond est haut.
 
-![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=1440&height=900&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&format=png&filename=use-mesh-output)
+![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&filename=use-mesh-output)
 
 Crée des *outils*, pas des fichiers : construis la chose qui génère 10 000 cartes plutôt que de fabriquer 10 000 cartes. Verrouille ce qui ne doit pas changer ; n'expose que ce qui est censé varier.
 

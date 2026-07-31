@@ -32,7 +32,7 @@ Từ "hồ sơ" gợi ý một con người cố định duy nhất, nhưng tron
 
 ### Với tư cách cá nhân
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&filename=pd-profile-headshot)
 
 Mặc định. Hồ sơ chính là bạn: tên bạn, email của bạn, ảnh chân dung của bạn. Thiết lập một lần và chữ ký, huy hiệu, biểu trưng hội nghị của bạn sẽ tự động điền vào. Đây là tất cả những gì hầu hết mọi người sẽ cần.
 
@@ -81,7 +81,7 @@ Những gì không được mang theo: bộ nhớ đệm danh mục (nó sẽ t�
 
 ## Cách các công cụ sử dụng hồ sơ của bạn
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&filename=pd-use-my-details)
 
 Một công cụ chỉ bao giờ *điền sẵn* những trường hồ sơ mà nó được xây dựng rõ ràng để liên kết:
 

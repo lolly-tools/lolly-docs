@@ -52,7 +52,7 @@ Semua ini adalah transformasi pada peranti (on-device): fail atau data anda masu
 
 Text Helper menawarkan tawaran yang sama tetapi untuk teks, bukan fail. Ia ialah meja kerja bertab yang jika tidak, seorang pekerja akan mencarinya di laman web orang asing, dan ia tidak mengisytiharkan sebarang input kerana apa-apa yang disentuhnya tidak sekali-kali meninggalkan halaman ini.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&filename=ov2-text-helper)
 
 Compress PDF melengkapkan set ini: lampiran yang terlalu besar dikecilkan mengikut tahap kualiti yang anda pilih, pada mesin yang sudah pun memegang fail itu.
 
@@ -72,7 +72,7 @@ Setiap input alat boleh dinyatakan sebagai parameter URL, dan input yang sama me
 
 ## Asal-usul & Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&filename=aud-verify-drop)
 
 Eksport boleh membawa **Content Credentials** - manifes [C2PA](https://c2pa.org) yang ditandatangani, terikat kepada cincangan (hash) bait fail tersebut. Sebarang perubahan kemudian pada fail itu akan memecahkan meterai tersebut, jadi pengesah yang mesra-C2PA **mengesan pengubahan secara kriptografi, luar talian**. Kelayakan itu bersifat boleh-*dikesan*-gangguan (tamper-evident): ia menandakan gangguan dan bukannya menghalangnya, dan itulah justru yang membolehkan pengesahan luar talian sepenuhnya.
 

@@ -38,7 +38,7 @@ Devreye alma modellerinin tamamı ve yönetim rehberi [Dağıtım](/info/deploym
 
 Text Helper, dosyalar için değil metin için aynı anlaşmayı sunar. Bir çalışanın normalde yabancı bir sitede arayacağı sekmeli çalışma tezgâhıdır ve hiç girdi bildirmez, çünkü dokunduğu hiçbir şey sayfadan dışarı çıkmaz.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&filename=ov2-text-helper)
 
 Compress PDF ise seti tamamlar: boyutu şişmiş ek, senin seçtiğin bir kalite ayarıyla, dosyayı zaten elinde tutan makinede küçülür.
 
@@ -70,7 +70,7 @@ Her araç girdisi bir URL parametresi olarak ifade edilebilir ve aynı girdiler 
 
 ## Köken ve Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&filename=aud-verify-drop)
 
 Dışa aktarımlar **Content Credentials** taşıyabilir - dosyanın baytlarının bir karmasına (hash) bağlı, imzalı bir [C2PA](https://c2pa.org) manifesti. Dosyada sonradan yapılan herhangi bir değişiklik mührü bozar; böylece C2PA farkındalığı olan bir doğrulayıcı **değişikliği kriptografik olarak, çevrimdışı algılar**. Kimlik bilgisi kurcalamayı *belli eder*: kurcalamayı engellemek yerine işaretler ve tamamen çevrimdışı doğrulamayı mümkün kılan da tam olarak budur.
 

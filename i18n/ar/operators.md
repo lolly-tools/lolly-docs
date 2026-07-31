@@ -38,7 +38,7 @@
 
 Text Helper هي المقايضة نفسها لكن للنص لا للملفات. إنها منصة العمل ذات التبويبات التي كان الموظف سيبحث عنها لدى موقع غريب، وهي لا تعلن أي مدخلات على الإطلاق لأن ما تلمسه لا يغادر الصفحة أبدا.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&filename=ov2-text-helper)
 
 وCompress PDF تكمل الثلاثي: المرفق المتضخم يتقلص وفق مستوى جودة تختاره أنت، على الجهاز الذي يحتفظ به أصلا.
 
@@ -70,7 +70,7 @@ Prompt to Image هي الحتمية في أبسط صورها: النص هو كل
 
 ## المنشأ وContent Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&filename=aud-verify-drop)
 
 يمكن أن تحمل التصديرات **Content Credentials** - بيان [C2PA](https://c2pa.org) موقّع ومربوط بتجزئة بايتات الملف. أي تغيير لاحق على الملف يكسر الختم، لذا **يكشف المتحقق الواعي بـC2PA العبث تشفيريا ودون اتصال بالشبكة**. الاعتماد *يكشف* العبث ولا يمنعه: فهو يُبلّغ عن التلاعب بدلا من منعه، وهذا بالتحديد ما يجعل التحقق الكامل دون اتصال بالشبكة ممكنا.
 

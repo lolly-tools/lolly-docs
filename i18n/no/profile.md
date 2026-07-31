@@ -32,7 +32,7 @@ Ordet «profil» antyder én fast person, men i Lolly er det egentlig en **skape
 
 ### Som enkeltperson
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&filename=pd-profile-headshot)
 
 Standardvalget. Profilen er deg: navnet ditt, e-posten din, portrettbildet ditt. Sett den opp én gang, så fyller signaturen din, merket ditt og konferanselockupen din seg selv inn. Dette er alt de fleste noensinne vil trenge.
 
@@ -81,7 +81,7 @@ For den eksakte pakkestrukturen, versjonspolicyen og integritetsreglene, se **[D
 
 ## Hvordan verktøy bruker profilen din
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&filename=pd-use-my-details)
 
 Et verktøy *forhåndsutfyller* bare noensinne de profilfeltene det eksplisitt er bygget for å binde til:
 

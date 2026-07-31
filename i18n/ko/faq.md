@@ -16,7 +16,7 @@ Lolly는 대량의 콘텐츠를 생성해요. 저희는 위험을 방지하기 �
 
 ### 피처 플래그란 무엇인가요?
 
-![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&filename=pd-feature-flags)
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&filename=pd-feature-flags)
 
 피처 플래그는 Lolly의 일부 기능을 켜거나 꺼요. 보통은 관리자가 이를 제어하지만, Lolly에서는 사용자 자신이 제어해요.
 

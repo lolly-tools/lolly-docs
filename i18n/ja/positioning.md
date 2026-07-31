@@ -63,7 +63,7 @@ Deck Studio は、その天井の高さをよく示す例です。スライド�
 
 ## Lollyならではの提供価値
 
-![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=192&waitMs=3200&format=png&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
 
 - **文脈の中で安全に発揮される、大胆なデザインの可能性。** ツールは、ハードコードされたガードレールの中で冒険的なデザインのアイデアを表現できます。
 - **最終アセットをそのまま返す、ソフトウェア定義のコンテンツ自動化。** 入力 → 完成ファイル。「デザインツールから保存して後処理する」という手間はありません。

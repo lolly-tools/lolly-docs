@@ -32,7 +32,7 @@
 
 ### Як окрема особа
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&filename=pd-profile-headshot)
 
 За замовчуванням. Профіль — це ви: ваше ім'я, ваш email, ваше фото. Налаштуйте його один раз — і ваш підпис, ваш бейдж, ваш конференційний лого-локап заповнюються самі. Це те, що більшості людей коли-небудь знадобиться.
 
@@ -81,7 +81,7 @@
 
 ## Як інструменти використовують ваш профіль
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&filename=pd-use-my-details)
 
 Інструмент лише *попередньо заповнює* ті поля профілю, для прив'язки до яких його було явно створено:
 

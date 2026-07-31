@@ -63,7 +63,7 @@ C'est le changement de paradigme que le moteur déterministe apporte réellement
 
 ## Ce que cela apporte de façon unique
 
-![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=192&waitMs=3200&format=png&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
 
 - **Un potentiel créatif débridé, livré en toute sécurité et en contexte.** Les outils peuvent exprimer des idées de design audacieuses à l'intérieur de garde-fous codés en dur.
 - **Une automatisation logicielle du contenu qui restitue l'actif final.** Entrée → fichier final. Pas de « maintenant, enregistre-le depuis ton outil de design et post-traite-le ».

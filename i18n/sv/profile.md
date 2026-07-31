@@ -32,7 +32,7 @@ Ordet "profil" antyder en fast person, men i Lolly är det egentligen ett **skap
 
 ### Som individ
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&filename=pd-profile-headshot)
 
 Standardläget. Profilen är du: ditt namn, din e-post, ditt porträttfoto. Ställ in den en gång så fyller din signatur, din bricka och din konferenslockup i sig själva. Det här är allt de flesta någonsin behöver.
 
@@ -81,7 +81,7 @@ För exakt paketlayout, versionspolicy och integritetsregler, se **[Dataöverfö
 
 ## Hur verktyg använder din profil
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&filename=pd-use-my-details)
 
 Ett verktyg *förifyller* bara någonsin de profilfält det uttryckligen är byggt för att binda till:
 

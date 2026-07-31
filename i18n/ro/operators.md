@@ -38,7 +38,7 @@ Modelele complete de implementare și ghidul de administrare se află în [Deplo
 
 Text Helper e același târg, dar pentru text în loc de fișiere. E bancul de lucru cu taburi pe care un angajat s-ar duce altfel să îl caute pe site-ul unui necunoscut, și nu declară niciun input, pentru că nimic din ce atinge nu părăsește vreodată pagina.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&filename=ov2-text-helper)
 
 Compress PDF completează setul: atașamentul supradimensionat se micșorează după un nivel de calitate pe care îl alegi tu, pe mașina care îl are deja.
 
@@ -73,7 +73,7 @@ Fiecare input al unui instrument poate fi exprimat ca parametru URL, iar acelea�
 
 ## Proveniență și Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&filename=aud-verify-drop)
 
 Exporturile pot purta **Content Credentials** - un manifest [C2PA](https://c2pa.org) semnat, legat de un hash al octeților fișierului. Orice schimbare ulterioară a fișierului rupe sigiliul, așa că un verificator compatibil C2PA **detectează modificarea criptografic, offline**. Credențialul este sesizabil la *falsificare*: semnalează manipularea în loc să o împiedice, ceea ce este exact ceea ce face posibilă verificarea complet offline.
 

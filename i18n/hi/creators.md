@@ -44,7 +44,7 @@ Lolly, Canva या Figma बनने की कोशिश नहीं क�
 
 Street Map इस सौदे का अच्छा उदाहरण है: आप एक शहर और दो-चार रंग चुनते हैं, और नक़्शानवीसी, सड़कों की मोटाई और पानी आपके लिए तय हो जाते हैं।
 
-![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=192&waitMs=3200&cropSelector=%23tool-canvas&format=png&filename=vt-street-map-poster)
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&filename=vt-street-map-poster)
 
 ### लाइव डेटा से तैयार विज़ुअल तक
 
@@ -60,7 +60,7 @@ Street Map इस सौदे का अच्छा उदाहरण है:
 
 एडवांस्ड फ़िल्टर, कंपोज़िटिंग, ऐनिमेशन, लाइव कैमरा इफ़ेक्ट, जेनरेटिव डिज़ाइन — टेम्पलेट लेखक के पास हर वेब तकनीक उपलब्ध है, इसलिए संभावनाओं की छत ऊँची है।
 
-![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=1440&height=900&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&format=png&filename=use-mesh-output)
+![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&filename=use-mesh-output)
 
 फ़ाइलें नहीं, *टूल* बनाएँ: 10,000 कार्ड बनाने के बजाय वह चीज़ बनाएँ जो 10,000 कार्ड जेनरेट करे। जो नहीं बदलना चाहिए उसे लॉक करें; सिर्फ़ वही खुला रखें जिसे बदलना ही है।
 
