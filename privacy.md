@@ -17,10 +17,10 @@ Lolly is open-source software - an engine, several app shells (web, desktop,
 mobile, CLI), and a browser extension - that anyone can run. This policy has two
 parts:
 
-- **The software itself**: what it does and doesn't do with your data, wherever it
+- <!--i:code--> **The software itself**: what it does and doesn't do with your data, wherever it
   runs. This is a property of the code, so it's true of every Lolly deployment,
   ours or anyone else's.
-- **lolly.tools**, the reference deployment SUSE operates: the specific choices
+- <!--i:server--> **lolly.tools**, the reference deployment SUSE operates: the specific choices
   made running its optional server-side pieces (what's logged, for how long, by
   whom).
 
@@ -40,15 +40,15 @@ device - no server is involved, and the app works offline once loaded.
 **The app sets no cookies.** To function, it keeps a small amount of data **on
 your device only**, never transmitted:
 
-- **Interface preferences** - theme, language, sound settings, sidebar/zoom
+- <!--i:sliders--> **Interface preferences** - theme, language, sound settings, sidebar/zoom
   sizing, sort and view choices, which onboarding tips you've seen - in
   `localStorage`, so they're available before the app has finished booting.
-- **An offline cache of the tool catalogue and asset previews**, so the gallery
+- <!--i:download--> **An offline cache of the tool catalogue and asset previews**, so the gallery
   works without a connection.
-- **Local usage counters** for your profile card's stats (how many exports, which
+- <!--i:hash--> **Local usage counters** for your profile card's stats (how many exports, which
   tools) - a small bounded blob in `localStorage`, never read by us, never sent
   anywhere.
-- **Your own documents, saved sessions, uploaded assets and fonts** - stored in
+- <!--i:folder--> **Your own documents, saved sessions, uploaded assets and fonts** - stored in
   IndexedDB on your device, never uploaded, never read by anyone but you.
 
 None of this is shared, sold, or used to identify or track you. There is nothing
@@ -58,6 +58,8 @@ my data**, or by clearing the site's storage in your browser. (Under the ePrivac
 Directive Art. 5(3), storage that is strictly necessary for the service you asked
 for doesn't require consent - only transparency, which is what this document and
 the in-app notice both are.)
+
+![The storage section of the profile page on a phone-width screen: every category of on-device data named and measured, with the Clear all my data button right beside it](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%2C.store-manages%2C.storage-subsection%2C.store-selbar%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23storage-section&filename=pv-storage-clear)
 
 Your own backup of this data - the `lolly-backup` bundle produced by **Export my
 data & render everything** - is a file you keep and control. It never touches our
@@ -72,6 +74,8 @@ into memory in your browser, transformed locally, and offered back as a download
 It is never uploaded, because there is no server in the path to upload it to.
 These utilities work offline, and their output carries no watermark or metadata of
 ours - the point of most of them is to remove & protect data, not add risk.
+
+![The badge these tools carry: Runs on your device - nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2400&format=svg&cropSelector=.on-device-badge&filename=pv-ondevice-badge)
 
 ## When the app talks to a network, in full
 
@@ -103,7 +107,9 @@ here makes zero network requests. Files whose SEAL record carries its key inline
 still verify completely offline. Files whose key lives in DNS report "no key
 resolver" instead, and you can check those in the desktop or command-line app,
 which resolve DNS natively through your own machine with no third party
-involved. You can confirm this yourself: greppable checks for this and every
+involved.
+
+![The Verify screen: a drop target and nothing else - the file is checked where it already is, with no upload and no account](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1400&format=svg&cropSelector=.valid-layout&filename=cc-verify-drop) You can confirm this yourself: greppable checks for this and every
 other claim on this page, with the exact commands and expected output, live at
 [Verify It Yourself](/info/verify-yourself.html).
 
@@ -121,19 +127,19 @@ link can appear as a live image in a README, a wiki or a dashboard. Fetching one
 asks the server to render **public tool and catalogue data** with the inputs
 written into the URL.
 
-- **No accounts, no cookies, no state.** The endpoint is anonymous, and nothing
+- <!--i:usercheck--> **No accounts, no cookies, no state.** The endpoint is anonymous, and nothing
   on your device is read. Your documents, sessions and uploads never leave your
   browser - they cannot appear in these links at all.
-- **But the URL itself is recorded.** A URL's query string is part of the request
+- <!--i:document--> **But the URL itself is recorded.** A URL's query string is part of the request
   line, so it lands in the hosting platform's ordinary access logs the same way
   every requested path does. If a link's inputs contain someone's name or email -
   a name badge, an email signature - **that text sits in those logs**, and no
   amount of policy wording changes it. This is the specific reason the feature is
   off here rather than on.
-- **The inputs are public by construction** anyway - they are whatever the link's
+- <!--i:globe--> **The inputs are public by construction** anyway - they are whatever the link's
   author typed into the URL, readable by anyone the link reaches. Don't put
   secrets in a shared link; Lolly offers link encryption for sensitive content.
-- Responses are **cached and rate-limited** like any public image, and marked
+- <!--i:eyeoff--> Responses are **cached and rate-limited** like any public image, and marked
   `noindex` so search engines don't index your renders.
 
 Self-hosting Lolly and don't want a public render surface? Set
@@ -147,15 +153,15 @@ operator-run endpoint (lolly.tools runs one; anyone can self-host their own,
 including fully air-gapped). It shares the render path's no-accounts posture,
 plus two tools that necessarily handle file bytes:
 
-- **`lolly_transform`** (run an on-device utility server-side, on the calling
+- <!--i:cpu--> **`lolly_transform`** (run an on-device utility server-side, on the calling
   agent's behalf) and **`lolly_verify`** (check Content Credentials) both accept
   a file's bytes from the caller. They are processed **in-process, in memory**,
   and the result is returned in that same call - the file is never written to
   disk and never stored once the request completes.
-- Every other tool - `lolly_render`, `lolly_build_url`, `lolly_list_tools`,
+- <!--i:checklist--> Every other tool - `lolly_render`, `lolly_build_url`, `lolly_list_tools`,
   `lolly_describe_tool` - works from parameters only (text, numbers, colours,
   URLs, catalogue asset ids), the same inputs a hot-link render URL takes.
-- Access is either a shared token the operator issues to clients they trust, or
+- <!--i:lock--> Access is either a shared token the operator issues to clients they trust, or
   stateless OAuth 2.1: short-lived signed tokens verified against a shared
   secret, nothing stored server-side, and the token itself is never written to a
   log or a render URL.
@@ -170,6 +176,8 @@ happens offline. This section covers the one *optional* step on top of that:
 enrolling a verified identity, so your exports say "Verified - signed by
 \<your email\>" instead of an anonymous key. **If you skip enrolment, nothing in
 this section applies to you, and no personal data ever leaves your device.**
+
+![The Verified identity card on the profile page, phone-width: the certificate lifetime picker and the four sign-in choices, dormant until you press one](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&filename=pv-identity-enrol)
 
 If you do enrol, here is exactly what happens:
 
@@ -223,19 +231,19 @@ the tab. Everything happens locally, on your own device and network.
 
 **Data.**
 
-- **We collect nothing.** The extension has no servers and makes no network
+- <!--i:shieldcheck--> **We collect nothing.** The extension has no servers and makes no network
   requests of its own.
-- **Captured images** go straight to the Lolly app in the same browser - never
+- <!--i:photos--> **Captured images** go straight to the Lolly app in the same browser - never
   uploaded by the extension.
-- **The URLs you capture** are used only to load that one page for that one
+- <!--i:link--> **The URLs you capture** are used only to load that one page for that one
   screenshot. They are not logged or shared.
 
 **Permissions.**
 
-- **`debugger`** - to capture the rendered page via the DevTools Protocol (the
+- <!--i:wrench--> **`debugger`** - to capture the rendered page via the DevTools Protocol (the
   same mechanism the Lolly desktop app uses).
-- **`tabs`** - to open and close the temporary tab the page loads in.
-- **Host access (`<all_urls>`)** - because the page you choose to capture can be
+- <!--i:monitor--> **`tabs`** - to open and close the temporary tab the page loads in.
+- <!--i:globe--> **Host access (`<all_urls>`)** - because the page you choose to capture can be
   on any site. Chrome surfaces this at install time as a broad permission
   warning; the extension only ever visits the URL you give it.
 

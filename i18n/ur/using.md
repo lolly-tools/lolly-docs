@@ -8,7 +8,7 @@
 
 ![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&format=svg&filename=vt-tool-split-view)
 
-![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&walker=1&format=svg&localize=1&filename=gallery)
 
 
 ہوم اسکرین **گیلری** ہے — ہر ٹول، زمرے کے حساب سے گروپ کیا گیا۔ ٹول کھولنے کے لیے کسی کارڈ پر کلک کریں؛ اگر آپ اس پر پہلے کام کر چکے ہیں، تو **جاری رکھیں** بٹن آپ کے تازہ ترین سیشن کو دوبارہ شروع کر دیتا ہے۔ نام کے حساب سے فلٹر کرنے کے لیے سرچ باکس استعمال کریں۔
@@ -118,7 +118,7 @@
 
 ## کیٹلاگ — آپ کی اثاثہ لائبریری
 
-![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=2400&walker=1&format=svg&localize=1&filename=catalogue)
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=2400&css=.plat-swatch-grid~%2A%7Bdisplay%3Anone%7D&walker=1&format=svg&localize=1&filename=catalogue)
 
 **کیٹلاگ** (`#/c`، یا مینو میں **کیٹلاگ** لنک) وہ سب کچھ جمع کرتا ہے جس پر آپ کے ٹولز انحصار کر سکتے ہیں — برانڈ لوگو، تصاویر، آڈیو، اور موشن، قسم کے حساب سے گروپ — اور یہ وہ جگہ بھی ہے جہاں آپ کی **اپنی تخلیقی فائلیں** رہتی ہیں۔ کوئی سرور نہیں، کوئی ایڈمن کنسول نہیں، کوئی پل ریکویسٹ نہیں: یہ سب آپ کے آلے پر ہے۔
 

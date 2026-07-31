@@ -1,6 +1,6 @@
 # Rychlý start
 
-![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&walker=1&format=svg&localize=1&filename=gallery)
 
 Lolly mění tvá pravidla - barvy, písmo, rozvržení, logiku - na nástroje, které může kdokoli použít k vytvoření hotových souborů: obrázků, PDF, sociálních karet, videa, prostým vyplněním pár polí. Není se co učit a nic se nenahrává: všechno běží na tvém zařízení, online i offline.
 

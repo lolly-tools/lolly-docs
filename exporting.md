@@ -10,10 +10,10 @@ Three paths produce a file. Most tools **render the canvas** to the chosen forma
 
 The actions in the export controls:
 
-- **Download** - save the file (the primary action).
-- **Copy** - put the image on your clipboard to paste straight into Slack, email, a doc. Where a browser can't copy images, it downloads instead and tells you.
-- **Save** - keep the current design as a saved tool session in your library.
-- **Share** - opens the **Share dialog**: a copyable link that reproduces the design, on-visit toggles (fullscreen, export panel, download- or copy-on-open), and an optional **Shortest link** that packs the whole state into a compact token (see [URL Mode](/info/url-mode.html)).
+- <!--i:download--> **Download** - save the file (the primary action).
+- <!--i:photos--> **Copy** - put the image on your clipboard to paste straight into Slack, email, a doc. Where a browser can't copy images, it downloads instead and tells you.
+- <!--i:folder--> **Save** - keep the current design as a saved tool session in your library.
+- <!--i:link--> **Share** - opens the **Share dialog**: a copyable link that reproduces the design, on-visit toggles (fullscreen, export panel, download- or copy-on-open), and an optional **Shortest link** that packs the whole state into a compact token (see [URL Mode](/info/url-mode.html)).
 
 (A tool's author picks which of these appear; the default set is Copy, Download, and Save.)
 
@@ -25,8 +25,8 @@ Share opens over the tool, with the link already built and the on-visit toggles 
 
 A single export is one file, but you can render **many** in one pass - each delivered as one `.zip`:
 
-- **Projects → Render folder** exports every saved session in a folder (and its sub-folders) as one nested zip; **Render selection** does the same for any multi-selection; a single saved session renders straight to its own file. No Batch/Pro needed - see [Using Lolly → Projects](/info/using.html).
-- **Batch (Pro)** renders a grid of input sets - every variant of one template at once.
+- <!--i:folder--> **Projects → Render folder** exports every saved session in a folder (and its sub-folders) as one nested zip; **Render selection** does the same for any multi-selection; a single saved session renders straight to its own file. No Batch/Pro needed - see [Using Lolly → Projects](/info/using.html).
+- <!--i:layers--> **Batch (Pro)** renders a grid of input sets - every variant of one template at once.
 
 A saved session can also be re-shared as a tool link from Projects (it reconstructs the tool URL from the saved inputs), so a link reopens it with the exact same settings.
 
@@ -104,9 +104,9 @@ Multi-page PDFs are RGB documents and don't carry crop/bleed marks - those belon
 
 Lolly has three distinct ways to work at volume, and they solve different jobs — batch editing is a first-class capability of the platform, not something each tool reinvents:
 
-- **One design × a table of rows → one multi-page document.** Tools with a `table` input (like *Battlecards*) turn every row into a page automatically — paste a table from your spreadsheet, get a deck-sized PDF. Your real batch editor stays the spreadsheet: fix ten rows there, paste again. The tool itself never manages pages.
-- **One design × a data file → many separate files.** The `/pro` batch grid takes a CSV and renders one export *per row* — name badges, certificates, one file each.
-- **Many different assets, edited side by side.** *Multi-edit* opens several saved sessions in one view for coordinated touch-ups across distinct designs.
+- <!--i:document--> **One design × a table of rows → one multi-page document.** Tools with a `table` input (like *Battlecards*) turn every row into a page automatically — paste a table from your spreadsheet, get a deck-sized PDF. Your real batch editor stays the spreadsheet: fix ten rows there, paste again. The tool itself never manages pages.
+- <!--i:layers--> **One design × a data file → many separate files.** The `/pro` batch grid takes a CSV and renders one export *per row* — name badges, certificates, one file each.
+- <!--i:sliders--> **Many different assets, edited side by side.** *Multi-edit* opens several saved sessions in one view for coordinated touch-ups across distinct designs.
 
 Rule of thumb: rows of the same design that belong in **one document** → a table-driven tool; rows that must ship as **separate files** → `/pro`; **different designs** that need the same tweak → multi-edit. (A planned "combine media" render option will bridge the first two — concatenating same-format exports into one PDF, one video, or a proofing contact sheet.)
 
@@ -114,10 +114,10 @@ Rule of thumb: rows of the same design that belong in **one document** → a tab
 
 Multi-page and layout tools (Carousel, Doc Studio, Multi-Page PDF, the chart tools, and the single-canvas card/layout tools) can export a **PowerPoint deck** - one slide per page. The point isn't a pixel-perfect screenshot; it's to hand a colleague a deck they can actually **edit and take assets out of**. So each page is decomposed into native objects:
 
-- **Text** becomes real, **editable PowerPoint text boxes** - with the font size, colour, weight, italics and alignment from the layout - so you can fix a typo or restyle in PowerPoint.
-- **Vectors** (logos, icons, the SUSE mark) are embedded as **real SVG pictures** - they stay crisp at any size, and PowerPoint can even *Convert to Shape* on them.
-- **Images** come through at their native resolution as their own extractable pictures (a `cover`-cropped hero keeps the full image behind the crop, so you can re-frame it), with any on-image treatment (filters, blends) baked in faithfully.
-- **Backgrounds, borders and rules** become real rectangle/line shapes.
+- <!--i:font--> **Text** becomes real, **editable PowerPoint text boxes** - with the font size, colour, weight, italics and alignment from the layout - so you can fix a typo or restyle in PowerPoint.
+- <!--i:pentool--> **Vectors** (logos, icons, the SUSE mark) are embedded as **real SVG pictures** - they stay crisp at any size, and PowerPoint can even *Convert to Shape* on them.
+- <!--i:photos--> **Images** come through at their native resolution as their own extractable pictures (a `cover`-cropped hero keeps the full image behind the crop, so you can re-frame it), with any on-image treatment (filters, blends) baked in faithfully.
+- <!--i:layers--> **Backgrounds, borders and rules** become real rectangle/line shapes.
 
 Layout is approximate by design - the goal is faithful, reusable **content**, not a locked screenshot. Anything the walker can't express natively (a complex filtered or masked region) is embedded as a picture so nothing is lost. A deck has a single slide size, taken from the first page.
 

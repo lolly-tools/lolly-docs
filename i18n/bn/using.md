@@ -8,7 +8,7 @@
 
 ![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&format=svg&filename=vt-tool-split-view)
 
-![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&walker=1&format=svg&localize=1&filename=gallery)
 
 
 হোম স্ক্রিনটি হলো **গ্যালারি** — প্রতিটি টুল, ক্যাটেগরি অনুযায়ী দলবদ্ধ। টুলটি খুলতে একটি কার্ডে ক্লিক করুন; আপনি যদি আগে এটি নিয়ে কাজ করে থাকেন, একটি **Continue** বোতাম আপনার সবচেয়ে সাম্প্রতিক সেশনটি আবার শুরু করে। নাম অনুযায়ী ফিল্টার করতে সার্চ বক্স ব্যবহার করুন।
@@ -118,7 +118,7 @@
 
 ## Catalogue — আপনার অ্যাসেট লাইব্রেরি
 
-![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=2400&walker=1&format=svg&localize=1&filename=catalogue)
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=2400&css=.plat-swatch-grid~%2A%7Bdisplay%3Anone%7D&walker=1&format=svg&localize=1&filename=catalogue)
 
 **Catalogue** (`#/c`, বা মেনুতে থাকা **Catalogue** লিঙ্ক) আপনার টুলগুলো যা কিছুতে ভর দিতে পারে সবকিছু একত্র করে — ব্র্যান্ড লোগো, ছবি, অডিও এবং মোশন, ধরন অনুযায়ী দলবদ্ধ — এবং এখানেই আপনার **নিজের সৃজনশীল ফাইল**গুলোও থাকে। কোনো সার্ভার নেই, কোনো অ্যাডমিন কনসোল নেই, কোনো পুল রিকোয়েস্ট নেই: সবকিছুই আপনার ডিভাইসে।
 

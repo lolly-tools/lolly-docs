@@ -8,7 +8,7 @@ A practical guide to actually *using* the app - opening a tool, working the canv
 
 The home screen is the **gallery** - every tool, grouped by category. Click a card to open the tool; if you've worked on it before, a **Continue** button resumes your most recent session. Use the search box to filter by name.
 
-![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&walker=1&format=svg&localize=1&filename=gallery)
 
 Each tool is a split view: **controls** on one side, a live **preview** (the canvas) on the other. Change any control and the preview updates instantly.
 
@@ -166,11 +166,11 @@ Click **Save** to store the current inputs as a session for that tool. You can k
 
 ![Projects - saved sessions organised into nestable folders](/t/url-shot?url=%2F%23%2Fp&width=1440&height=900&dpi=192&waitMs=1200&format=svg&localize=1&filename=projects)
 
-- **Folders that nest.** Group saved sessions into folders, and folders inside folders, as deep as you like. Create a folder, rename it, or drag a tile onto another folder to move it; a breadcrumb walks you back up. An always-present **Uncategorised** folder holds anything not yet filed.
-- **File new work straight in.** Inside a folder, **+ New tool** opens a tool and files its first save into that folder automatically.
-- **Multi-select (desktop).** Tick a tile's checkbox, drag a selection box across empty canvas, or **Shift/Cmd-click**; **right-click** a tile for its context menu. Then act on the whole selection at once.
-- **Render a whole folder or selection.** **Render folder** exports every saved session in a folder - including its sub-folders - as one nested `.zip`. **Render selection** does the same for any multi-selection, and a single session renders straight to its own file. No Batch/Pro needed.
-- **Share a saved session.** Right-click a session → **Share link** to copy a link that reopens it with the exact same inputs (the full Share dialog - see below).
+- <!--i:folder--> **Folders that nest.** Group saved sessions into folders, and folders inside folders, as deep as you like. Create a folder, rename it, or drag a tile onto another folder to move it; a breadcrumb walks you back up. An always-present **Uncategorised** folder holds anything not yet filed.
+- <!--i:document--> **File new work straight in.** Inside a folder, **+ New tool** opens a tool and files its first save into that folder automatically.
+- <!--i:checklist--> **Multi-select (desktop).** Tick a tile's checkbox, drag a selection box across empty canvas, or **Shift/Cmd-click**; **right-click** a tile for its context menu. Then act on the whole selection at once.
+- <!--i:download--> **Render a whole folder or selection.** **Render folder** exports every saved session in a folder - including its sub-folders - as one nested `.zip`. **Render selection** does the same for any multi-selection, and a single session renders straight to its own file. No Batch/Pro needed.
+- <!--i:link--> **Share a saved session.** Right-click a session → **Share link** to copy a link that reopens it with the exact same inputs (the full Share dialog - see below).
 
 ## Sharing a link
 
@@ -194,17 +194,17 @@ The **Catalogue** (`#/c`, or the **Catalogue** link in the menu) gathers everyth
 
 ![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=2400&css=.plat-swatch-grid~%2A%7Bdisplay%3Anone%7D&walker=1&format=svg&localize=1&filename=catalogue)
 
-- **Bring your files in.** Drag any image, SVG, audio clip, video, Lottie, PDF or PowerPoint deck onto the upload area - or click to choose - and it lands in your catalogue instantly, ready in every tool's asset picker. A multi-page PDF or a `.pptx` asks which pages or slides to keep - each becomes an SVG asset. Ingest as much as you like; it never leaves your device.
-- **Favourite what you reach for.** ★ an asset (or a brand swatch) and it pins to the top of every picker, so your go-to logo or colour is one click away.
-- **Tidy up.** Recategorise an asset into a different group, hide a shared brand asset you don't use (with **Show hidden** to bring it back), or delete your own uploads outright.
+- <!--i:upload--> **Bring your files in.** Drag any image, SVG, audio clip, video, Lottie, PDF or PowerPoint deck onto the upload area - or click to choose - and it lands in your catalogue instantly, ready in every tool's asset picker. A multi-page PDF or a `.pptx` asks which pages or slides to keep - each becomes an SVG asset. Ingest as much as you like; it never leaves your device.
+- <!--i:star--> **Favourite what you reach for.** ★ an asset (or a brand swatch) and it pins to the top of every picker, so your go-to logo or colour is one click away.
+- <!--i:folder--> **Tidy up.** Recategorise an asset into a different group, hide a shared brand asset you don't use (with **Show hidden** to bring it back), or delete your own uploads outright.
 
 ### Take your palette and fonts anywhere
 
 The Catalogue's **Swatches** panel isn't just for reference - click a colour to copy it, or **download the whole brand palette** in the format your other tool speaks:
 
-- **Design tokens (JSON)**, **CSS variables**, or **CSS classes** - drop the brand straight into a stylesheet or a build;
-- **Adobe Swatch Exchange (.ase)** - load it into Illustrator or Photoshop;
-- **GIMP palette (.gpl)** - for GIMP or Inkscape.
+- <!--i:code--> **Design tokens (JSON)**, **CSS variables**, or **CSS classes** - drop the brand straight into a stylesheet or a build;
+- <!--i:palette--> **Adobe Swatch Exchange (.ase)** - load it into Illustrator or Photoshop;
+- <!--i:pentool--> **GIMP palette (.gpl)** - for GIMP or Inkscape.
 
 ![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=96&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&walker=1&format=svg&filename=use-swatch-downloads)
 
@@ -224,8 +224,10 @@ Beside that switch is **Neurospicy Mode** - an optional, calming background focu
 
 Everything is stored in your browser's local database (IndexedDB): your profile, saved sessions, uploaded images, and a cache of downloaded catalog content. **Profile → Storage** shows usage and lets you:
 
-- **Clear cache** - drop downloaded catalog content (re-syncs next load).
-- **Clear all my data** - wipe profile, sessions, and images. *Cannot be undone.*
+- <!--i:box--> **Clear cache** - drop downloaded catalog content (re-syncs next load).
+- <!--i:trash--> **Clear all my data** - wipe profile, sessions, and images. *Cannot be undone.*
+
+![The storage card on a phone-width screen: every category of on-device data measured, with the Clear all my data button at the bottom](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%2C.store-manages%2C.storage-subsection%2C.store-selbar%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23storage-section&filename=pv-storage-clear)
 
 None of this local data is transmitted anywhere - no telemetry, no cloud rendering. The complete list of what the app ever fetches or sends is in the [Privacy Policy](/info/privacy.html), and [Server Surface](/info/server-surface.html) inventories the optional server components.
 
@@ -233,8 +235,8 @@ None of this local data is transmitted anywhere - no telemetry, no cloud renderi
 
 Because everything lives on your device, **Profile → Storage → Move to another device** lets you carry it all to a second install - no account, no cloud:
 
-- **Export my data** downloads a single `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` (the name parts come from your profile and are dropped if unset; `<n>` is a per-day counter so same-day exports don't collide) containing your profile, every saved session (with its thumbnail), your uploaded images, and your preferences (theme, sidebar width, local activity stats).
-- **Import data…** on the other install reads that file back in. It **merges**: anything with the same name (your profile, a session slot, an image) is replaced by the imported copy; everything else on that device is kept. Saved sessions re-link to your imported images automatically.
+- <!--i:download--> **Export my data** downloads a single `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` (the name parts come from your profile and are dropped if unset; `<n>` is a per-day counter so same-day exports don't collide) containing your profile, every saved session (with its thumbnail), your uploaded images, and your preferences (theme, sidebar width, local activity stats).
+- <!--i:upload--> **Import data…** on the other install reads that file back in. It **merges**: anything with the same name (your profile, a session slot, an image) is replaced by the imported copy; everything else on that device is kept. Saved sessions re-link to your imported images automatically.
 
 The catalog cache isn't included - it re-downloads itself on the new device. The bundle is a plain zip (`manifest.json` + `profile.json` + `sessions.json` + `assets.json` + `assets/blobs/…` + `prefs.json`, format id `lolly-backup`), so it survives email, USB, or AirDrop intact and is the same format every shell reads. Each part is checksummed, so a file damaged in transit is caught on import rather than restored half-broken. (Full format spec: [Data Transfer](/info/data-transfer.html).)
 

@@ -1,6 +1,6 @@
 # Bắt đầu nhanh
 
-![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&walker=1&format=svg&localize=1&filename=gallery)
 
 Lolly biến các quy tắc của bạn - màu sắc, kiểu chữ, bố cục, logic - thành các công cụ mà bất kỳ ai cũng có thể dùng để tạo ra tệp hoàn chỉnh: hình ảnh, PDF, thẻ mạng xã hội, video, chỉ bằng cách điền vào một vài trường. Không có gì để học và không cần tải lên gì cả: mọi thứ đều chạy trên thiết bị của bạn, dù online hay offline.
 

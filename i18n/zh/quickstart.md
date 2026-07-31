@@ -1,6 +1,6 @@
 # 快速入门
 
-![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&walker=1&format=svg&localize=1&filename=gallery)
 
 Lolly 将你的规则——颜色、字体、版式、逻辑——转化为任何人都能使用的工具，只需填写几个字段，就能制作出成品文件：图片、PDF、社交卡片、视频。没有什么需要学习，也没有什么需要上传：一切都在你的设备上运行，无论在线还是离线。
 

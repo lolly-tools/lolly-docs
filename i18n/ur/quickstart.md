@@ -1,6 +1,6 @@
 # فوری آغاز
 
-![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&walker=1&format=svg&localize=1&filename=gallery)
 
 Lolly آپ کے اصولوں — رنگ، ٹائپ، لے آؤٹ، منطق — کو ایسے ٹولز میں بدل دیتا ہے جنہیں کوئی بھی استعمال کر کے تیار فائلیں بنا سکتا ہے: تصاویر، PDFs، سوشل کارڈز، ویڈیو، صرف چند خانے بھر کر۔ نہ کچھ سیکھنے کی ضرورت ہے اور نہ کچھ اپ لوڈ کرنے کی: سب کچھ آپ کے ڈیوائس پر چلتا ہے، آن لائن ہو یا آف لائن۔
 

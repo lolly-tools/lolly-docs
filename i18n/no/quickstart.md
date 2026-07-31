@@ -1,6 +1,6 @@
 # Hurtigstart
 
-![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&walker=1&format=svg&localize=1&filename=gallery)
 
 Lolly omgjør reglene dine - farger, typografi, layouter, logikk - til verktøy som hvem som helst kan bruke for å lage ferdige filer: bilder, PDF-er, sosiale kort, video, ved å fylle inn noen få felt. Det finnes ingenting å lære og ingenting å laste opp: alt kjører på enheten din, på nett eller offline.
 

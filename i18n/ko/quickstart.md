@@ -1,6 +1,6 @@
 # 빠른 시작
 
-![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&walker=1&format=svg&localize=1&filename=gallery)
 
 Lolly는 색상, 타이포그래피, 레이아웃, 로직 같은 규칙을 누구나 쓸 수 있는 도구로 바꿔줘요. 몇 가지 항목만 채우면 이미지, PDF, 소셜 카드, 동영상 같은 완성된 파일을 만들 수 있어요. 배울 것도 없고 업로드할 것도 없어요. 온라인이든 오프라인이든 모든 작업이 기기 안에서 실행돼요.
 

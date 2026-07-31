@@ -8,7 +8,7 @@
 
 ![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&format=svg&filename=vt-tool-split-view)
 
-![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&walker=1&format=svg&localize=1&filename=gallery)
 
 
 홈 화면은 **갤러리**예요 — 모든 도구가 카테고리별로 묶여 있어요. 카드를 클릭하면 도구가 열려요. 예전에 작업한 적이 있으면 **Continue** 버튼으로 가장 최근 세션을 이어서 열 수 있어요. 검색창으로 이름을 기준으로 필터링할 수 있어요.
@@ -118,7 +118,7 @@
 
 ## Catalogue — 내 에셋 라이브러리
 
-![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=2400&walker=1&format=svg&localize=1&filename=catalogue)
+![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=2400&css=.plat-swatch-grid~%2A%7Bdisplay%3Anone%7D&walker=1&format=svg&localize=1&filename=catalogue)
 
 **Catalogue**(`#/c`, 또는 메뉴의 **Catalogue** 링크)는 도구가 활용할 수 있는 모든 것 — 브랜드 로고, 이미지, 오디오, 모션 — 을 종류별로 모아둔 곳이고, **직접 만든 창작 파일**도 여기에 함께 있어요. 서버도, 관리 콘솔도, 풀 리퀘스트도 필요 없어요. 모든 게 기기 안에 있어요.
 

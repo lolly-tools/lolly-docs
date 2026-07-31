@@ -43,7 +43,7 @@ Lolly 自己的界面：菜单、卡片、导航、字体。它们经过专门�
 
 ![The Neurospicy player docked over the app: track title and transport, separate Music and Effects volumes, and the Atmosphere mixer with Wind, Birdsong and Crickets raised](/t/url-shot?url=%2F%23%2F%3Fneuro%3Dplayer&width=1440&height=1000&dpi=192&waitMs=3200&css=%5Bdata-dock-viz-slot%5D%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23neuro-dock&filename=incl-neuro-player)
 
-![The visualiser open over the app, painting the music as a full-motion field, with its own transport and volume controls](/t/url-shot?url=%2F%23%2F%3Fneuro%3Dviz&width=1440&height=900&dpi=96&waitMs=12000&walker=1&format=svg&cropSelector=.viz-surface&css=.viz-surface%20*%7Bbackdrop-filter%3Anone%21important%7D&filename=incl-neuro-viz)
+![The visualiser open over the app, painting the music as a full-motion field, with its own transport and volume controls](/t/url-shot?url=%2F%23%2F%3Fneuro%3Dviz&width=1440&height=900&dpi=96&waitMs=2000&waitSelector=.viz-panel%5Bdata-demo-settled%5D&walker=1&format=svg&cropSelector=.viz-surface&css=.viz-surface%20*%7Bbackdrop-filter%3Anone%21important%7D&filename=incl-neuro-viz)
 
 ![A utility card on a phone-width screen: a calm icon and text tile that keeps its favourite, pin and info actions](/t/url-shot?url=%2F%23%2Fu&width=430&height=900&dpi=192&waitMs=2400&scrollDepth=900&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D.gtile%7Bcontent-visibility%3Avisible%7D&format=svg&walker=1&cropSelector=.gtile--utility%5Bdata-tool-id%5D&filename=incl-utility-card)
 

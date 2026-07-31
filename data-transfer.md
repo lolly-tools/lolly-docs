@@ -10,10 +10,10 @@ This page is the format spec. For the end-user walkthrough see [Using Lolly → 
 
 ## Goals
 
-- **One format, every shell.** The same bytes are produced and consumed by the web PWA, the Tauri desktop/mobile apps, and any future shell. The bundle is the contract; each shell's capability bridge is the per-platform adapter behind it.
-- **Survives the trip.** A bundle mangled or truncated in transit fails loudly on import, never half-restores.
-- **Outlives this version.** An older app can still import a newer bundle's recognised parts; a genuinely breaking format is refused cleanly.
-- **Safe to merge.** Importing onto an install that's already in use never wipes anything that wasn't in the bundle.
+- <!--i:box--> **One format, every shell.** The same bytes are produced and consumed by the web PWA, the Tauri desktop/mobile apps, and any future shell. The bundle is the contract; each shell's capability bridge is the per-platform adapter behind it.
+- <!--i:shieldcheck--> **Survives the trip.** A bundle mangled or truncated in transit fails loudly on import, never half-restores.
+- <!--i:clock--> **Outlives this version.** An older app can still import a newer bundle's recognised parts; a genuinely breaking format is refused cleanly.
+- <!--i:check--> **Safe to merge.** Importing onto an install that's already in use never wipes anything that wasn't in the bundle.
 
 ## The envelope
 

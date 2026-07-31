@@ -58,7 +58,7 @@ Lolly draws the same line. Explore probabilistically: a model, a designer, a rou
 
 The gap is clear: nothing in the existing landscape gives us constraints-first, offline-capable, low-skill, internally accessible output. Lolly even includes an open canvas - **Layout Studio** - where colours, type and assets conform to the brand globals, so free arrangement stays constraints-first. What it is **not** is an unconstrained design suite: designers continue to use Illustrator and Figma for bespoke flagship work. Permutations can be assembled with this tool.
 
-![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-gallery-landscape)
+![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&walker=1&format=svg&filename=aud-gallery-landscape)
 
 **Use it for:** Rapid generation of operationalised creative assets - event tiles, name badges, signatures, CVE alerts, QR codes, social cards, consignment labels, structured reports.
 
@@ -90,9 +90,9 @@ Because approval lives in the tool and not the file (see [How Lolly compares](/i
 
 The same deterministic tool reaches that scale three ways, all producing identical, pre-approved output:
 
-- **A person, in the app.** The `/pro` batch grid: paste or import the rows, get one finished asset per row, download the zip. No design skill, no ticket, no wait.
-- **A developer, from the command line.** The CLI runs the *same* engine and the *same* render path headless, so the tool can be sequenced over all 10,000 rows in a script or a nightly pipeline. A `lolly <tool> --field=…` call in a loop is the whole integration.
-- **A system or an AI agent, over MCP.** The same tool operated programmatically, at the same fidelity and even greater scale - because a machine won't get bored while thousands of files roll in.
+- <!--i:people--> **A person, in the app.** The `/pro` batch grid: paste or import the rows, get one finished asset per row, download the zip. No design skill, no ticket, no wait.
+- <!--i:code--> **A developer, from the command line.** The CLI runs the *same* engine and the *same* render path headless, so the tool can be sequenced over all 10,000 rows in a script or a nightly pipeline. A `lolly <tool> --field=…` call in a loop is the whole integration.
+- <!--i:cpu--> **A system or an AI agent, over MCP.** The same tool operated programmatically, at the same fidelity and even greater scale - because a machine won't get bored while thousands of files roll in.
 
 ![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&format=svg&filename=ov2-batch-grid)
 
