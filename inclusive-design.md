@@ -71,7 +71,7 @@ opt-in:
 
 ![The Neurospicy player docked over the app: track title and transport, separate Music and Effects volumes, and the Atmosphere mixer with Wind, Birdsong and Crickets raised](/t/url-shot?url=%2F%23%2F%3Fneuro%3Dplayer&width=1440&height=1000&dpi=192&waitMs=3200&css=%5Bdata-dock-viz-slot%5D%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23neuro-dock&filename=incl-neuro-player)
 
-![The visualiser open over the app, painting the music as a full-motion field, with its own transport and volume controls](/t/url-shot?url=%2F%23%2F%3Fneuro%3Dviz&width=1440&height=900&dpi=192&waitMs=4500&tolerance=0.02&format=png&cropSelector=.viz-surface&filename=incl-neuro-viz)
+![The visualiser open over the app, painting the music as a full-motion field, with its own transport and volume controls](/t/url-shot?url=%2F%23%2F%3Fneuro%3Dviz&width=1440&height=900&dpi=96&waitMs=12000&walker=1&format=svg&cropSelector=.viz-surface&css=.viz-surface%20*%7Bbackdrop-filter%3Anone%21important%7D&filename=incl-neuro-viz)
 
 ## Language and localization priority
 
