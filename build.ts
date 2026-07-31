@@ -1653,10 +1653,11 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .docs-content img{height:auto;    max-width: min(100%, 40em);    height: auto;   margin: 0 auto; display: block;}
 /* App screenshots (docs/shots.json captures) read at full column width, framed like a window. */
 .docs-content img[src*="/info/shots/"]{max-width:100%;min-width:50%;border-radius:1.2em;box-shadow: inset 0 0 0 1px #0001, 0 3px 6px #0002, 0 6px 2em #0001}
-/* The AI-stance hero photo is an 8 MB signed original (bytes can't be re-encoded
-   without breaking its C2PA credential) — let it fill the column so the download
-   is worth it. */
-.docs-content img[src*="ai-stance-storm"]{width:100%;max-width:100%;border-radius:1.2em;box-shadow:0 3px 6px #0002, 0 6px 2em #0001}
+/* The AI-stance hero photo carries a three-manifest C2PA chain (Google's two as
+   ingredients, Lolly's own on top) that readers are invited to verify, so its
+   bytes are exactly what Lolly exported — never re-encode it in a build step.
+   Full column width: it is the page's one image and the argument's evidence. */
+.docs-content img[src*="the-flood"]{width:100%;max-width:100%;border-radius:1.2em;box-shadow:0 3px 6px #0002, 0 6px 2em #0001}
 .docs-content h2{font-size:1.5rem;font-weight:700;letter-spacing:normal;text-transform:none;border-top:1px solid var(--border);padding-top:2rem;margin-top:2.5rem;margin-bottom:.75rem;color:var(--dark)}
 .docs-content h2:first-of-type{border-top:none;padding-top:0;margin-top:0}
 .docs-content h3{font-size:1.15rem;margin-top:1.75rem;margin-bottom:.5rem;color:var(--dark)}

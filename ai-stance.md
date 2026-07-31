@@ -6,9 +6,9 @@ Lolly was built in the middle of the biggest change in how media gets made since
 >
 > - Andy Fitzsimon, Architect of Lolly
 
-![A supercell storm bearing down on an outback homestead - a lone vehicle on a dirt road, the rusty tank and windmill below, floodwater on the way](/info/ai-stance-storm.png)
+![A supercell storm breaking over an outback homestead - the tank and sheds below, floodwater already cutting channels through the dry paddock](/info/the-flood.webp)
 
-Gemini Generated Image - Signed by Google LLC - [Verify this now](https://lolly.tools/verify)
+Gemini_Generated_Image_vmy7thvmy7thvmy7.png - Gemini generated image - signed by Google LLC - opened, resized and exported to WebP as the-flood.webp, 10.6 MB down to 0.8 MB - signed by Lolly - [Verify this now](https://lolly.tools/verify)
 
 The image is from where Andy grew up, and it decodes like this: the scarcity posture toward AI - grab what you can, ship it fast, worry later - is drinking spoiled tank water while the rain sets in and floodwater races across the plains toward you. Generated content is about to be effectively infinite. When something becomes infinite, its value moves to whatever remains scarce around it: trust, provenance, brand coherence and human judgment. Lolly is not a bigger bucket for the flood. It is irrigation - channels that direct the water, and soil where things actually grow.
 
