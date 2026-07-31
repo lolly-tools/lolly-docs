@@ -1,6 +1,6 @@
 # Snelstart
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
 
 Lolly zet jouw regels - kleuren, typografie, lay-outs, logica - om in tools die iedereen kan gebruiken om afgewerkte bestanden te maken: afbeeldingen, pdf's, social cards, video, door een paar velden in te vullen. Er is niets te leren en niets te uploaden: alles draait op je eigen apparaat, online of offline.
 
@@ -68,7 +68,7 @@ Dit is de beloning: een geïmporteerde lay-out is een gewone Layout Studio-sessi
 
 De [community-toolset](/info/builders.html) is open source en merk-onafhankelijk - QR-codes, plattegronden, filters, privacyhulpmiddelen - en rendert tegen *jouw* merk zodra je het activeert.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
 
 Voer tools ook met je eigen open data: plak of sleep een **CSV**- of **JSON**-tabel en de herhalende velden van een tool vullen zich daarmee, één afgewerkt bestand per rij.
 

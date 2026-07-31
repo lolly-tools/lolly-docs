@@ -50,7 +50,7 @@ Shrink an oversized PDF on-device, so nobody reaches for a third-party "compress
 
 All of these are on-device transforms: your file or data goes in, cleaned bytes come out, and **there is no server to upload to**. They are the deliberate opposite of the typical "upload your file to a stranger's website to clean it" tool that a well-meaning employee reaches for otherwise.
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data)
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data&sweep=1)
 
 Text Helper is the same bargain for text rather than files. It is the tabbed workbench an employee would otherwise go looking for on a stranger's site, and it declares no inputs at all because nothing it touches ever leaves the page.
 

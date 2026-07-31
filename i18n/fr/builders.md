@@ -10,7 +10,7 @@ Nouveau sur la plateforme ? Le **[Guide de démarrage rapide](/info/quickstart.h
 
 ## Comprendre l'architecture
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib&sweep=1)
 
 - **[Vue d'ensemble](/info/overview.html)** - pourquoi Lolly existe, la séparation moteur/shell/outils, le pont de capacités, et les décisions d'architecture arrêtées.
 - **[Jetons de design](/info/design-tokens.html)** - le modèle de jetons DTCG dans lequel les marques sont exprimées, et comment les outils les consomment.

@@ -18,7 +18,7 @@ O Lolly produz um grande volume de conteúdo. Adotamos uma abordagem rígida de 
 
 ### O que são as feature flags?
 
-![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&filename=pd-feature-flags)
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&filename=pd-feature-flags&sweep=1)
 
 As feature flags ativam ou desativam partes do Lolly. Normalmente é um administrador quem controla isso - com o Lolly, quem está no controle é você.
 
@@ -75,7 +75,7 @@ O Lolly eleva tudo.
 
 ## O que diferencia utilitários de ferramentas?
 
-![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
+![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
 
 **Resposta básica →** Os utilitários nem sempre precisam renderizar e, por isso, podem ter uma UX diferente.
 
@@ -99,7 +99,7 @@ Vencemos a guerra pela governança com conveniência e serviço excelentes.
 
 ## O Lolly consegue editar e renderizar meus arquivos do Figma, Penpot, Illustrator ou InDesign?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio&sweep=1)
 
 Sim. Abra o **Layout Studio** e clique em **Importar um design**: ele aceita um arquivo nativo do Figma em **.fig** (Salvar cópia local), uma exportação do Penpot em **.penpot**, um arquivo do Illustrator em **.ai** ou **.pdf**, um arquivo do InDesign em **.idml** (Arquivo → Exportar → InDesign Markup), ou **qualquer SVG** (a porta larga - quase qualquer aplicativo de design consegue exportar nesse formato). Tudo é processado inteiramente no seu dispositivo, sem necessidade de conta ou plugin.
 

@@ -34,7 +34,7 @@ Lolly 的設計是為了配合你的組織實際的運作方式——部署方�
 
 ## 防外洩工具
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data)
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data&sweep=1)
 
 Text Helper 提供的是同一筆交易，只是針對文字而不是檔案。它就是員工原本會跑到陌生網站上去找的那種分頁式工作台，而且它完全沒有宣告任何輸入項目，因為它處理的一切都不會離開這個頁面。
 

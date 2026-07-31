@@ -6,7 +6,7 @@
 
 ## Ландшафт
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&filename=aud-open-canvas)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&filename=aud-open-canvas&sweep=1)
 
 | Можливість | Canva (Відкрите полотно) | Бренд-портали (шаблонізація DAM) | Illustrator (Настільний профі) | Figma / Penpot (Онлайн профі) | **Lolly (Спершу обмеження)** |
 |---|---|---|---|---|---|

@@ -34,7 +34,7 @@ Lollyは、組織が実際にどう機能しているかに合わせて構築さ
 
 ## 情報漏えい防止ユーティリティ
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data)
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data&sweep=1)
 
 Text Helper は、ファイルではなくテキストに対して同じ取引を提供します。従業員が本来なら見知らぬサイトに探しに行くタブ式のワークベンチであり、扱う内容がページの外に出ることは一切ないため、入力をまったく宣言していません。
 

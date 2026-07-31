@@ -42,7 +42,7 @@ Lolly will nicht Canva oder Figma sein. Es positioniert sich dort, wo *Regeln, W
 
 Street Map ist ein gutes Beispiel für diesen Tauschhandel: Sie wählen eine Stadt und ein paar Farben, und die Kartografie, die Straßenstärken und das Wasser sind für Sie entschieden.
 
-![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&filename=vt-street-map-poster)
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&filename=vt-street-map-poster&sweep=1)
 
 Füllen Sie ein paar Felder aus und erhalten Sie das fertige Asset - keine Schriften auswählen, keine Farben infrage stellen, kein „Ist das das richtige Logo?" Das Tool weiß es bereits. E-Mail-Signaturen, Event-Countdowns, Zitatkarten, Badges, Straßenkarten - alles, was Ihr Team an einem Dienstag um 16 Uhr braucht, im Selbstbedienungsprinzip. Und weil keine Kundendaten das Gerät verlassen, entsteht bei der Zusammenarbeit kein Compliance-Risiko.
 

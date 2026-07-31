@@ -34,7 +34,7 @@ Devreye alma modellerinin tamamı ve yönetim rehberi [Dağıtım](/info/deploym
 
 ## Sızıntı önleyici yardımcı araçlar
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data)
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data&sweep=1)
 
 Text Helper, dosyalar için değil metin için aynı anlaşmayı sunar. Bir çalışanın normalde yabancı bir sitede arayacağı sekmeli çalışma tezgâhıdır ve hiç girdi bildirmez, çünkü dokunduğu hiçbir şey sayfadan dışarı çıkmaz.
 

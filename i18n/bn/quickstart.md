@@ -1,6 +1,6 @@
 # দ্রুত শুরু
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
 
 Lolly আপনার নিয়ম — রং, টাইপ, লেআউট, লজিক — কে এমন টুলে পরিণত করে যা দিয়ে যে কেউ কয়েকটি ঘর পূরণ করে তৈরি ফাইল বানাতে পারে: ছবি, PDF, সোশ্যাল কার্ড, ভিডিও। শেখার কিছু নেই, আপলোড করারও কিছু নেই: সবটাই আপনার ডিভাইসে চলে, অনলাইনে বা অফলাইনে।
 
@@ -68,7 +68,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 [কমিউনিটি টুল সেট](/info/builders.html) ওপেন সোর্স আর ব্র্যান্ড-নিরপেক্ষ — QR কোড, স্ট্রিট ম্যাপ, ফিল্টার, প্রাইভেসি ইউটিলিটি — আর আপনি সক্রিয় করার মুহূর্তেই এটি *আপনার* ব্র্যান্ডের সাপেক্ষে রেন্ডার করে।
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
 
 টুলগুলোতে আপনার নিজের ওপেন ডেটাও দিন: একটি **CSV** বা **JSON** টেবিল পেস্ট করুন বা ছেড়ে দিন আর একটি টুলের পুনরাবৃত্ত ঘরগুলো তা থেকে পূরণ হয়, প্রতি সারিতে একটি তৈরি অ্যাসেট।
 

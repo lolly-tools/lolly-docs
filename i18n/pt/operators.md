@@ -34,7 +34,7 @@ Os modelos completos de implantação e o passo a passo de administração estã
 
 ## Utilitários anti-exfiltração
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data)
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data&sweep=1)
 
 O Text Helper é o mesmo acordo, mas para texto em vez de arquivos. É a bancada com abas que uma pessoa do time iria procurar no site de um estranho, e ele não declara input nenhum, porque nada do que ele toca sai da página.
 

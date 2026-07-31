@@ -20,7 +20,7 @@ A **Save & continue** button appears the moment you change something and moves y
 
 **Deep-link a tab** with `#/start?tab=<key>`, where the keys are `logos`, `color` *(note the US spelling in the URL)*, `type`, `tokens`, and `catalogue`.
 
-![The five-step tab rail - Logos, Colours, Type, Tokens and Catalogue, with step 1 active](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&filename=brand-studio)
+![The five-step tab rail - Logos, Colours, Type, Tokens and Catalogue, with step 1 active](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&filename=brand-studio&sweep=1)
 
 ## Logos
 

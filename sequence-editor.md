@@ -4,7 +4,7 @@
 
 Everything here happens on your device, and none of it changes what a render produces. The chrome described below - ghosts, badges, banners, outlines - lives outside the exported node, so a file exported with onion skin on is byte-identical to the same file exported with it off.
 
-![The timeline, tool bar first: add, record, the split blade with its resolved label, snap, onion skin, zoom, fit and the keyboard shortcuts sheet, over the ruler, the overlay lane, the magnetic sequence row and the Always on strip](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1440&height=900&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A252px!important%7D&cropSelector=.tl-panel&format=svg&walker=1&tolerance=0.03&filename=seq-studio-timeline)
+![The timeline, tool bar first: add, record, the split blade with its resolved label, snap, onion skin, zoom, fit and the keyboard shortcuts sheet, over the ruler, the overlay lane, the magnetic sequence row and the Always on strip](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1440&height=900&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A252px!important%7D&cropSelector=.tl-panel&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-timeline&sweep=1)
 
 ## The one rule
 
@@ -24,11 +24,15 @@ While a selection is off-playhead the keyboard refuses every key that would chan
 
 **The fallbacks are never gated.** The timeline's own inspector (Length, Trim in, Speed, the two transitions, Mute) and the tool sidebar edit the selected clip whatever the playhead is doing. They are the precision route, and the accessible one.
 
+![A clip selected in the sequence row: the playhead has stepped inside it, the canvas shows that scene with its selection outline and handles, and the timeline inspector fills with the clip’s Length, Trim in, Speed and transitions](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1440&height=900&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A300px%21important%7D%23tool-stage%7Bbackground-image%3Anone%21important%7D&drive=click%3A.tool-canvas%7Cat%3D0.5%2C0.5%3Bclick%3A.tl-ruler%7Cat%3D0.92%2C0.5&format=svg&dark=1&sweep=1&filename=seq-rule-selection)
+
 ### What a click on the canvas hits
 
 Clips that are not live at the playhead are not painted, and a click **falls through** them to the topmost visible box underneath - the same resolution a click already uses for a stack of overlapping boxes, so it needs no explanation in the moment and produces no interruption. Ghosted onion-skin frames are drawn in a layer that ignores the pointer entirely, so they can never be clicked either.
 
 The one state that does get words is the stuck one: a selection that is off-playhead, which is exactly the case you cannot reason your way out of by clicking somewhere else.
+
+![The canvas at one instant: only the clip live at the playhead is painted, so a click lands on it or falls through to whatever is underneath](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1440&height=900&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A300px%21important%7D%23tool-stage%7Bbackground-image%3Anone%21important%7D&drive=wait%3A600&cropBottom=0.35&format=svg&dark=1&filename=seq-click-live-scene)
 
 ## Onion skin
 
@@ -38,8 +42,12 @@ It is **off by default and stays off until you turn it on**, and the preference 
 
 - The **Onion skin** button in the timeline's tool bar toggles it. `O` does the same from the keyboard.
 - **Long-press** the button, right-click it, or press `Shift+O` for its options: the mode, how many clips to ghost before and after (up to two each, independently), and the strength.
+
+![The onion skin options popover: the mode, how many scenes to ghost before and after, and the strength](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1440&height=900&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A300px!important%7D&drive=click%3A.tl-onion%3Bpress%3AShift%2BO&cropSelector=.tl-onion-pop&format=svg&walker=1&dark=1&filename=seq-onion-options)
 - **Outlines** is the default mode - each neighbour as a plain rectangle where its boxes sit. It stays readable *over* an opaque scene, which a filled ghost cannot. **Filled** adds each ghost's own colour and picture, for the animation-style work that wants it.
 - Past clips are drawn warm, future clips cool blue. Colour is never the only signal: each ghost carries a small `-1` / `+2` chip in its corner saying how far away in the sequence it is, so the direction survives any kind of colour vision. With **Hide colourful previews** on (see [Inclusive Design](/info/inclusive-design.html)) filled mode falls back to outlines.
+
+![Onion skin on: the neighbouring scenes drawn as ghosts over the live one, each carrying a small -1 or +1 chip saying how far away in the sequence it is](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1440&height=900&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A300px%21important%7D%23tool-stage%7Bbackground-image%3Anone%21important%7D&drive=click%3A.tl-onion%3Bhover%3A.tl-ruler%7Cat%3D0.01%2C0.5&cropBottom=0.35&format=png&dark=1&sweep=1&filename=seq-onion-ghosts)
 
 **Onion skin cannot reach a file.** The ghosts are drawn in the editor's overlay layer, which is a sibling of the exported canvas rather than a part of it, and they are additionally tagged so the export path strips them before any format is written. They never set a class or a style on a real box. An export taken with ghosts on screen is the same bytes as one taken without.
 
@@ -48,6 +56,8 @@ It is **off by default and stays off until you turn it on**, and the preference 
 **Split at playhead** cuts one clip into two at the current instant. The blade is in the tool bar, `S` does it from the keyboard, and it is in a clip's right-click menu.
 
 **The button says what it will cut before you press it.** It reads *Split clip* when the playhead is inside one, *Split 3 clips* when a selection spans it, and *Split at playhead* - greyed out - when there is nothing to cut. A refusal you can see beforehand beats a refusal announced afterwards.
+
+![The split blade naming its own scope before it is pressed: with the playhead inside a clip the tooltip reads Split clip](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1100&height=760&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A300px%21important%7D%5Bdata-tip%5D%3A%3Aafter%7Bbottom%3Aauto%21important%3Btop%3Acalc%28100%25%20%2B%208px%29%21important%7D%5Bdata-tip%5D%3A%3Abefore%7Bbottom%3Aauto%21important%3Btop%3Acalc%28100%25%20%2B%203px%29%21important%3Bborder-top-color%3Atransparent%21important%3Bborder-bottom-color%3Ahsl%28var%28--foreground%29%29%21important%7D&drive=click%3A.tl-ruler%7Cat%3D0.42%2C0.5%3Bhover%3A.tl-split&cropSelector=.tl-panel&format=svg&walker=1&dark=1&filename=seq-split-blade)
 
 The scope resolves in one order, everywhere:
 
@@ -63,7 +73,11 @@ The cut snaps to clip edges and whole seconds like every other timeline gesture,
 
 A cut you have not acted on yet is a **through edit**: the two halves still run continuously, and the sequence plays as if the cut were not there. Those seams are marked with a hairline rather than left to look like every other edit, so at a glance you can tell which cuts are decisions and which are just "I cut here and then changed my mind".
 
+![A through edit: the two halves of a fresh cut still run continuously, and the seam is marked with a hairline rather than looking like every other edit](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1100&height=760&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A300px!important%7D&drive=click%3A.tl-ruler%7Cat%3D0.42%2C0.5%3Bclick%3A.tl-split%3Bhover%3A.tl-ruler%7Cat%3D0.01%2C0.5&cropSelector=.tl-panel&format=svg&walker=1&dark=1&filename=seq-through-edit)
+
 Click the seam and the transition dialog offers **Join clips** alongside Cut and Crossfade. Join is also in a clip's right-click menu, and it works from either side - select one half, join, and the two become one clip again with the second half's ending restored. It is only offered where it is real: a seam whose sides have been trimmed apart, sped up differently, or given a transition is a decision, and it gets no Join.
+
+![The transition dialog opened from a seam: Cut, Crossfade, a length, and Join clips — offered only where the two sides are still continuous](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1440&height=900&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A300px!important%7D&drive=click%3A.tl-ruler%7Cat%3D0.42%2C0.5%3Bclick%3A.tl-split%3Bclick%3A.tl-seam.is-through&cropSelector=.tl-junction-modal&format=svg&walker=1&dark=1&filename=seq-junction-dialog)
 
 ## Detaching a clip's audio
 
@@ -80,6 +94,8 @@ This is deliberately not the one-way detach some editors ship, where the only wa
 
 Detach is only offered where it means something: the tool has to declare the field that stores the link and have an audio clip kind to create, and the clip has to be a video that is not already linked.
 
+![A clip’s right-click menu. This clip is a card, so it offers Split at playhead, Make always on and Delete — Detach audio is absent because there is no sound to detach](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1440&height=900&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A300px!important%7D&drive=click%3A.tl-clip-seq%7Cright%7Cat%3D0.5%2C0.15&cropSelector=.tl-ctx-menu&format=svg&walker=1&dark=1&filename=seq-clip-menu)
+
 ## Trimming
 
 Drag either end of a clip to trim it. The grip is a narrow bar, but the **area that responds is wider than it looks** - and wider again for a finger or a pen, where it is at least the 24px that the accessibility guidelines ask of any target. A clip too narrow to carry two grips without swallowing its own middle offers neither, and says so in its tooltip: zoom in, or use the inspector.
@@ -94,6 +110,8 @@ While you drag:
 
 Nothing is written until you let go: one drag is one undo step.
 
+![A trim in flight: the dragged edge lit, a readout showing the clip’s new length and the signed change, and a ghost extent showing how much source is still reachable past the edge](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1100&height=760&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A300px!important%7D&drive=drag%3A.tl-clip-seq%7Cdx%3D90%7Cat%3D0.99%2C0.15%7Chold&cropSelector=.tl-panel&format=svg&walker=1&dark=1&sweep=1&filename=seq-trim-drag)
+
 ### Trimming from the keyboard
 
 Every trim is reachable without a pointer, which is also the fastest route once you know it.
@@ -107,8 +125,12 @@ Every trim is reachable without a pointer, which is also the fastest route once 
 
 Each press is one write and one undo step.
 
+![Trimming from the keyboard: the in edge of the selected clip is aimed and has been nudged two frames earlier](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1100&height=760&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A300px!important%7D&drive=click%3A.tl-clip-seq%7Cat%3D0.5%2C0.15%3Bpress%3ABracketLeft%3Bpress%3AComma%3Bpress%3AComma&cropSelector=.tl-panel&format=svg&walker=1&dark=1&filename=seq-trim-keyboard)
+
 ## The shortcut sheet
 
 Every shortcut the timeline binds is a bare letter or a punctuation key. That is not a style choice: the familiar editor chords (`Ctrl/Cmd+B`, `Ctrl/Cmd+K`) collide with browser bindings that a web page cannot reliably take over, and a shortcut that silently does nothing is worse than one you have to learn.
 
 So the list is printed in the app. Press `?` with the timeline focused, or click the keyboard button at the end of the tool bar, and every key the panel handles is listed with what it does. The sheet is generated from the same list the key handler is written against, so it cannot fall out of date. Escape closes it and puts focus back where you were.
+
+![The shortcut sheet, printed in the app: every key the timeline binds with what it does, generated from the same list the key handler is written against](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1440&height=900&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A300px!important%7D&drive=click%3A.tl-panel%7Cat%3D0.5%2C0.02%3Bpress%3A%3F&cropSelector=.tl-keys-modal&format=svg&walker=1&dark=1&filename=seq-shortcut-sheet)

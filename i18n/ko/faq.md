@@ -16,7 +16,7 @@ Lolly는 대량의 콘텐츠를 생성해요. 저희는 위험을 방지하기 �
 
 ### 피처 플래그란 무엇인가요?
 
-![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&filename=pd-feature-flags)
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&filename=pd-feature-flags&sweep=1)
 
 피처 플래그는 Lolly의 일부 기능을 켜거나 꺼요. 보통은 관리자가 이를 제어하지만, Lolly에서는 사용자 자신이 제어해요.
 
@@ -51,7 +51,7 @@ Lolly는 모든 것을 한 단계 끌어올려요.
 
 ## 유틸리티는 도구와 무엇이 다른가요?
 
-![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
+![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
 
 **기본적인 답변 →** 유틸리티는 항상 렌더링이 필요한 건 아니라서, 다른 UX를 가질 수 있어요.
 
@@ -71,7 +71,7 @@ Lolly는 모든 것을 한 단계 끌어올려요.
 
 ## Lolly가 제 Figma, Penpot, Illustrator, InDesign 파일을 편집하고 렌더링할 수 있나요?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio&sweep=1)
 
 네. **Layout Studio**를 열고 **디자인 가져오기**를 클릭하세요. 네이티브 Figma **.fig**(Save local copy로 저장), Penpot의 **.penpot** 내보내기, Illustrator의 **.ai**나 **.pdf**, InDesign의 **.idml**(File → Export → InDesign Markup), 또는 **어떤 SVG**든(거의 모든 디자인 앱이 내보낼 수 있는 가장 폭넓은 통로예요) 받아들여요. 모든 처리는 전적으로 사용자의 기기에서 이뤄지고, 계정이나 플러그인이 전혀 필요 없어요.
 

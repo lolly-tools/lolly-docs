@@ -6,7 +6,7 @@ Var den här plattformen passar in i det bredare landskapet av kreativa verktyg,
 
 ## Landskap
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&filename=aud-open-canvas)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&filename=aud-open-canvas&sweep=1)
 
 | Förmåga | Canva (Öppen canvas) | Varumärkesportaler (DAM-mallar) | Illustrator (professionellt skrivbordsprogram) | Figma / Penpot (professionellt, online) | **Lolly (Regelstyrd)** |
 |---|---|---|---|---|---|

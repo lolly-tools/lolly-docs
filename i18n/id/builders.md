@@ -10,7 +10,7 @@ Baru mengenal platform ini? **[Mulai Cepat](/info/quickstart.html)** menyiapkan 
 
 ## Memahami arsitektur
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib&sweep=1)
 
 - **[Ikhtisar](/info/overview.html)** - mengapa Lolly ada, pemisahan engine/shell/tools, capability bridge, dan komitmen arsitektur yang sudah ditetapkan.
 - **[Token Desain](/info/design-tokens.html)** - model token DTCG yang digunakan untuk mengekspresikan brand, dan bagaimana tool mengonsumsinya.

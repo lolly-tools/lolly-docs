@@ -10,7 +10,7 @@ Lolly 是一個與平台無關的引擎,能在多種殼層(web PWA、Tauri 桌�
 
 ## 了解架構
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib&sweep=1)
 
 - **[總覽](/info/overview.html)** — Lolly 存在的原因、引擎/殼層/工具的分層方式、能力橋接層(capability bridge),以及已經拍板定案的架構決策。
 - **[設計權杖](/info/design-tokens.html)** — 品牌所使用的 DTCG token 模型,以及工具如何運用這些權杖。

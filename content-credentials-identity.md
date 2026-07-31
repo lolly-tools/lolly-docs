@@ -30,7 +30,7 @@
 
 ## Verifying a file
 
-![The Verify screen with nothing but a drop target - no upload button, no account, because the check runs where the file already is](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1400&format=svg&cropSelector=.valid-layout&filename=cc-verify-drop)
+![The Verify screen with nothing but a drop target - no upload button, no account, because the check runs where the file already is](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1400&format=svg&cropSelector=.valid-layout&filename=cc-verify-drop&sweep=1)
 
 The **Verify** tab (canonical `/verify`; the aliases `/valid` and `/v` redirect to
 it) checks any file's credential entirely on-device. It reads the whole C2PA

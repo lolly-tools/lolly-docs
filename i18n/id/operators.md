@@ -48,7 +48,7 @@ Perkecil ukuran PDF yang kelewat besar di perangkat, sehingga tidak seorang pun 
 
 Semua ini adalah transformasi di perangkat: berkas atau data Anda masuk, byte yang sudah dibersihkan keluar, dan **tidak ada server tujuan unggah**. Semuanya adalah lawan yang disengaja dari perkakas "unggah berkas Anda ke situs orang asing untuk membersihkannya" yang biasa dijangkau karyawan berniat baik jika tidak ada pilihan lain.
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data)
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data&sweep=1)
 
 Text Helper menawarkan kesepakatan yang sama, tetapi untuk teks alih-alih berkas. Inilah meja kerja bertab yang jika tidak ada, seorang karyawan akan mencarinya di situs orang asing, dan tool ini sama sekali tidak mendeklarasikan input karena apa pun yang disentuhnya tidak pernah meninggalkan halaman.
 

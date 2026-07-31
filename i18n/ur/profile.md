@@ -20,7 +20,7 @@
 
 ان میں سے کوئی چیز لازمی نہیں۔ خالی پروفائل بھی بالکل ٹھیک پروفائل ہے؛ آپ صرف وہی بھرتے ہیں جو آپ کو ٹائپنگ سے بچائے۔
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details&sweep=1)
 
 ترجیحات ہی وہ ایک حصہ ہیں جو یہ بدلتی ہیں کہ ایپ آپ کو کیسا دکھائی دیتا ہے۔ تھیم کارڈز لائیو پری ویو ہیں اور جس لمحے آپ کوئی چنتے ہیں وہ لاگو ہو جاتا ہے — صرف اِسی ڈیوائس پر۔
 
@@ -64,7 +64,7 @@ Lolly میں، وہ کردار بس **ایک اور پروفائل ہے جو آ�
 
 ## پروفائل کو نئے ڈیوائس پر منتقل کرنا
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls&sweep=1)
 
 چونکہ پروفائل مکمل طور پر مقامی ہے، اسے کسی خالی انسٹال پر لانے کا واحد طریقہ — نیا لیپ ٹاپ، تازہ ری سیٹ کیا گیا براؤزر، کسی ساتھی کی مشین، ایک آف لائن باکس — یہ ہے کہ **فائل کو ساتھ لے جائیں**۔ کوئی لاگ ان اسے آپ کے لیے بحال نہیں کرتا، اور یہی نکتہ ہے: شروع سے ہی کچھ بھی آپ کے ڈیوائس سے باہر نہیں گیا۔
 

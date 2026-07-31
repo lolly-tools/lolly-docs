@@ -137,7 +137,7 @@ through the machine's own DNS.
 Each read has its own surface in the view, and the component library lists them
 against the module that defines them:
 
-![The Verify section of the component library, listing each verify surface - verdict states, change history, metadata reveal - beside the module and CSS classes that define it](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=2000&dpi=192&waitMs=2200&format=svg&css=.cl-head%2C.cl-recs%2C.cl-section%3Anot%28%23cl-verify-valid%29%7Bdisplay%3Anone%7D&cropSelector=%23cl-verify-valid&filename=ce-verify-components)
+![The Verify section of the component library, listing each verify surface - verdict states, change history, metadata reveal - beside the module and CSS classes that define it](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=2000&dpi=192&waitMs=2200&format=svg&css=.cl-head%2C.cl-recs%2C.cl-section%3Anot%28%23cl-verify-valid%29%7Bdisplay%3Anone%7D&cropSelector=%23cl-verify-valid&filename=ce-verify-components&sweep=1)
 
 ### `engine/src/pixel-watermark.ts` - the Lolly Imprint
 

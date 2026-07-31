@@ -24,7 +24,7 @@ Voorkeuren zijn het enige deel dat verandert hoe de app naar jou terugkijkt. De 
 
 Niets hiervan is verplicht. Een leeg profiel is een prima profiel; je vult alleen in wat je typewerk bespaart.
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details&sweep=1)
 
 ## Een profiel is een context, niet alleen een persoon
 
@@ -64,7 +64,7 @@ Dus als je echt met meerdere contexten jongleert (jij, je team, het eventmanager
 
 ## Een profiel verplaatsen naar een nieuw apparaat
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls&sweep=1)
 
 Omdat een profiel volledig lokaal is, is de enige manier om het op een lege installatie te krijgen - een nieuwe laptop, een net gereset browser, de machine van een collega, een offline machine - door **het bestand mee te nemen**. Geen enkele login herstelt het voor je, en dat is precies het punt: er heeft nooit iets je apparaat verlaten.
 

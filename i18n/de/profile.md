@@ -24,7 +24,7 @@ Die Einstellungen sind der einzige Teil, der verändert, wie die App Ihnen entge
 
 Nichts davon ist erforderlich. Ein leeres Profil ist ein vollkommen gutes Profil; Sie füllen nur das aus, was Ihnen Tipparbeit erspart.
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details&sweep=1)
 
 ## Ein Profil ist ein Kontext, keine bloße Person
 
@@ -64,7 +64,7 @@ Wenn Sie also tatsächlich mehrere Kontexte jonglieren (Sie selbst, Ihr Team, de
 
 ## Ein Profil auf ein neues Gerät übertragen
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls&sweep=1)
 
 Da ein Profil vollständig lokal ist, besteht die einzige Möglichkeit, es auf eine leere Installation zu bringen - einen neuen Laptop, einen frisch zurückgesetzten Browser, den Rechner eines Kollegen, eine Offline-Maschine - darin, **die Datei mitzunehmen**. Kein Login stellt es für Sie wieder her, und genau das ist der Punkt: Es hat Ihr Gerät von vornherein nie verlassen.
 

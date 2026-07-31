@@ -39,7 +39,7 @@ preferences on your profile:
   step inside a tool, so the one place high-stimulus imagery appears is the one
   place you chose to work on it.
 
-![The Accessibility card on the profile page: four plain switches - Reduce motion, Hide colourful previews, High contrast and Large text - each with a help tip](/t/url-shot?url=%2F%23%2Fprofile&width=430&height=900&dpi=192&waitMs=2000&scrollDepth=1300&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&cropSelector=.profile-card--a11y&filename=incl-a11y-card)
+![The Accessibility card on the profile page: four plain switches - Reduce motion, Hide colourful previews, High contrast and Large text - each with a help tip](/t/url-shot?url=%2F%23%2Fprofile&width=430&height=900&dpi=192&waitMs=2000&scrollDepth=1300&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&cropSelector=.profile-card--a11y&filename=incl-a11y-card&sweep=1)
 
 Alongside the preferences: controls carry accessible names and pressed states,
 changes are announced to screen readers, overlays close on Escape, keyboard

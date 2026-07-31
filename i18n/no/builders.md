@@ -10,7 +10,7 @@ Ny på plattformen? **[Hurtigstart](/info/quickstart.html)** får en merkevare o
 
 ## Forstå arkitekturen
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib&sweep=1)
 
 - **[Oversikt](/info/overview.html)** - hvorfor Lolly finnes, skillet mellom motor/skall/verktøy, kapabilitetsbroen, og de fastsatte arkitektoniske forpliktelsene.
 - **[Design Tokens](/info/design-tokens.html)** - DTCG-tokenmodellen som merkevarer uttrykkes i, og hvordan verktøy bruker den.

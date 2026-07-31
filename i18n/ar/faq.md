@@ -18,7 +18,7 @@
 
 ### ما أعلام الميزات؟
 
-![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&filename=pd-feature-flags)
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&filename=pd-feature-flags&sweep=1)
 
 تشغل أعلام الميزات أجزاء من Lolly أو توقفها. عادة يتحكم فيها مسؤول — أما مع Lolly، فأنت من يتحكم.
 
@@ -74,7 +74,7 @@ Lolly يرفع كل شيء.
 
 ## ما الذي يميز الأدوات المساعدة عن الأدوات؟
 
-![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
+![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
 
 **الجواب البسيط ←** الأدوات المساعدة لا تحتاج دائما إلى التصيير، فيمكنها بالتالي الحصول على تجربة استخدام مختلفة.
 
@@ -98,7 +98,7 @@ Lolly يرفع كل شيء.
 
 ## هل يستطيع Lolly تحرير ملفات Figma أو Penpot أو Illustrator أو InDesign الخاصة بي وتصييرها؟
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio&sweep=1)
 
 نعم. افتح **Layout Studio** وانقر على **استيراد تصميم**: يقبل ملف Figma أصليا بصيغة **.fig** ‏(Save local copy)، أو تصدير Penpot بصيغة **.penpot**، أو ملف Illustrator بصيغة **.ai** أو **.pdf**، أو ملف InDesign بصيغة **.idml** ‏(File → Export → InDesign Markup)، أو **أي SVG** (الباب الواسع — يصدره تقريبا كل تطبيق تصميم). كل شيء يحلل بالكامل على جهازك، دون حاجة إلى حساب أو ملحق.
 

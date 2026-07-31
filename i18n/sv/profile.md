@@ -24,7 +24,7 @@ Inställningarna är den enda delen som ändrar hur appen ser tillbaka på dig. 
 
 Inget av detta är obligatoriskt. En tom profil är en fullt godtagbar profil; du fyller bara i det som besparar dig onödigt skrivande.
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details&sweep=1)
 
 ## En profil är ett sammanhang, inte bara en person
 
@@ -64,7 +64,7 @@ Så om du verkligen jonglerar flera sammanhang (du, ditt team, eventansvarig-hat
 
 ## Flytta en profil till en ny enhet
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls&sweep=1)
 
 Eftersom en profil är helt lokal är det enda sättet att få den till en tom installation - en ny bärbar dator, en nyligen återställd webbläsare, en kollegas maskin, en offline-burk - att **ta med filen**. Ingen inloggning återställer den åt dig, och det är hela poängen: inget lämnade någonsin din enhet från början.
 

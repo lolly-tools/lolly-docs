@@ -14,7 +14,7 @@ To be precise about it, because this page argues that precision matters: the ima
 
 Here is what that looks like when you check it. Nine steps survive in the file: five recorded by Google as it generated and watermarked the image, then four recorded by Lolly as it opened, created, marked and converted the version on this page. Lolly did not generate anything, and its entry says so.
 
-![The change history Lolly reads back out of the finished file - five steps recorded by Google, then four by Lolly, ending in the WebP on this page](/t/url-shot?url=%2F%23%2Fverify%3Fsrc%3D%2Finfo%2Fthe-flood.webp&width=1440&height=1400&dpi=192&waitMs=6000&walker=1&format=svg&cropSelector=.valid-steps&filename=ai-stance-change-history)
+![The change history Lolly reads back out of the finished file - five steps recorded by Google, then four by Lolly, ending in the WebP on this page](/t/url-shot?url=%2F%23%2Fverify%3Fsrc%3D%2Finfo%2Fthe-flood.webp&width=1440&height=1400&dpi=192&waitMs=6000&walker=1&format=svg&cropSelector=.valid-steps&filename=ai-stance-change-history&sweep=1)
 
 Andy's metaphor for a flood is this: the scarcity posture toward AI - invest everything in the few, diminish yourself today, and worry later - is drinking spoiled tank water while the rain sets in and floodwater races across the plains toward you. Generated content is about to be effectively infinite. When something becomes infinite, its value moves to whatever remains scarce around it: trust, provenance, brand coherence and human judgment. Lolly is not a bigger bucket for the flood. It is irrigation - channels that direct the water, and soil where things actually grow.
 

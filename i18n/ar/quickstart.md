@@ -1,6 +1,6 @@
 # البدء السريع
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
 
 يحول Lolly قواعدك — الألوان والخطوط والتخطيطات والمنطق — إلى أدوات يستطيع أي شخص استخدامها لصنع ملفات جاهزة: صور وملفات PDF وبطاقات اجتماعية وفيديو، بملء بضعة حقول فقط. لا شيء تتعلمه ولا شيء ترفعه: كل شيء يعمل على جهازك، متصلا كنت أو غير متصل.
 
@@ -68,7 +68,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 [مجموعة أدوات المجتمع](/info/builders.html) مفتوحة المصدر ومحايدة تجاه العلامات التجارية — رموز QR وخرائط شوارع وفلاتر وأدوات خصوصية — وهي تصير وفق علامتك *أنت* لحظة تفعيلها.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
 
 غذ الأدوات ببياناتك المفتوحة أيضا: الصق أو أسقط جدول **CSV** أو **JSON** فتمتلئ الحقول المتكررة في الأداة منه، أصل جاهز لكل صف.
 

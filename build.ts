@@ -9,6 +9,7 @@ import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { generateOgImages } from './og-image.ts';
 import { LANGS, LANG_META, sortedLangs } from '../engine/src/lang.ts';
+import { readShotProvenance } from './shot-provenance.ts';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(__dirname, '..');
@@ -415,6 +416,12 @@ function esc(s: string) {
 
 function inline(text: string) {
   let s = esc(text);
+  // Two facts the recipe carries that the rewritten `src` cannot: the dark twin to
+  // pair with, and whether this shot was authored to draw itself in. Collected in
+  // the recipe pass below and read a few lines later by the wrapper pass — same
+  // call, so a plain local map is the whole mechanism.
+  const darkFor = new Map<string, string>();
+  const sweepSrcs = new Set<string>();
   s = s.replace(/`([^`]+)`/g, '<code>$1</code>');
   s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
   s = s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
@@ -423,17 +430,26 @@ function inline(text: string) {
   // baseline the pipeline captured from it, at /info/shots/<filename>.<format>.
   // The recipe stays in the source .md as the reproducible record; when a GET
   // renderer ships, this rewrite can simply be removed.
-  s = s.replace(/(!\[[^\]]*\]\()(\/t\/url-shot\?[^)\s]+)(\))/g, (_m, pre: string, src: string, post: string) => {
+  // The parameter is `recipe`, not `src`: the body below declares `src` for the
+  // REWRITTEN /info/shots/ path (which is what darkFor and sweepSrcs are keyed on),
+  // and a callback parameter of the same name shadows it — a SyntaxError that takes
+  // the whole build with it.
+  s = s.replace(/(!\[[^\]]*\]\()(\/t\/url-shot\?[^)\s]+)(\))/g, (_m, pre: string, recipe: string, post: string) => {
     // By this point the body has been HTML-escaped, so the query's separators
     // read `&amp;` - restore them or every param key parses as `amp;<key>`.
-    const q = new URLSearchParams(src.slice(src.indexOf('?') + 1).replace(/&amp;/g, '&'));
+    const q = new URLSearchParams(recipe.slice(recipe.indexOf('?') + 1).replace(/&amp;/g, '&'));
     const slug = q.get('filename');
     const ext = (q.get('format') || 'svg').toLowerCase();
-    if (!slug) return `${pre}${src}${post}`;
+    // No filename to resolve — leave the recipe link exactly as authored.
+    if (!slug) return `${pre}${recipe}${post}`;
     // Prefer a localized shot (<slug>.<lang>.<ext>) on a translated page; fall back
     // to the English baseline when this recipe wasn't captured for this locale.
     const file = localizedShot(slug, ext) ?? `${slug}.${ext}`;
-    return `${pre}/info/shots/${file}${post}`;
+    const shotSrc = `/info/shots/${file}`;
+    const dark = darkShot(file);
+    if (dark) darkFor.set(shotSrc, `/info/shots/${dark}`);
+    if (q.get('sweep') === '1') sweepSrcs.add(shotSrc);
+    return `${pre}${shotSrc}${post}`;
   });
 
   // Provenance pills: `%entity{…}` `%sig{…}` `%act{…}` `%file{…}` `%detail{…}`.
@@ -458,6 +474,44 @@ function inline(text: string) {
 
   // Images before links, or the link regex eats `[alt](url)` and strands the `!`.
   s = s.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" loading="lazy">');
+  // A screenshot gets a wrapper, because the <img> alone cannot carry what a shot
+  // needs: the settle-in motion has to animate a box that ISN'T also subject to
+  // the `.docs-content img` centring rules, and a corner credential line needs a
+  // positioned parent. `width:fit-content` (see the CSS) keeps the wrapper on the
+  // image's real box rather than the full column, so the credential lands on the
+  // artwork's corner instead of out in the margin beside a portrait-shaped shot.
+  s = s.replace(/<img src="(\/info\/shots\/[^"]+)"([^>]*)>/g, (_m, src: string, rest: string) => {
+    const file = src.slice('/info/shots/'.length);
+    const size = shotSize(file);
+    const dims = size ? ` width="${size.w}" height="${size.h}"` : '';
+    // The dark twin ships as a SECOND <img> rather than a <picture> source: the
+    // site's dark mode is a class the reader toggles, and a `prefers-color-scheme`
+    // source would follow the OS and ignore that toggle. Two images, one shown —
+    // the same mechanism the nav's own sun/moon pair uses.
+    const darkSrc = darkFor.get(src);
+    let twin = '';
+    if (darkSrc) {
+      const dfile = darkSrc.slice('/info/shots/'.length);
+      const dsize = shotSize(dfile);
+      // Measured from the DARK file, never reused from the light one: a missing
+      // width/height on a lazy image inside a fit-content wrapper is the 0x0
+      // deadlock documented on shotSize.
+      const ddims = dsize ? ` width="${dsize.w}" height="${dsize.h}"` : '';
+      // Its OWN credential: the two files are separately signed, and one line
+      // describing both would be a claim neither file backs.
+      twin = `<img class="shot-alt" src="${darkSrc}"${ddims}${rest}>${shotCredential(dfile, 'shot-cred--alt')}`;
+    }
+    // A swept shot needs its source as a custom property (CSS cannot read an
+    // <img>'s src) and, when it has a twin, the dark file too — otherwise the ink
+    // layer would draw the light picture over the dark one.
+    const sweep = sweepSrcs.has(src);
+    const styleBits = sweep
+      ? ` style="--shot-src:url(${src})${darkSrc ? `;--shot-src-dark:url(${darkSrc})` : ''}"`
+      : '';
+    const cls = `shot${darkSrc ? ' shot--dual' : ''}${sweep ? ' shot--sweep' : ''}`;
+    return `<span class="${cls}" data-shot="${src}"${darkSrc ? ` data-shot-dark="${darkSrc}"` : ''}${styleBits}>`
+      + `<img src="${src}"${dims}${rest}>${shotCredential(file)}${twin}</span>`;
+  });
   // External links (absolute http/https) open in a new tab; internal/relative links
   // (other /info pages, #anchors) stay in place.
   s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m, label, url) =>
@@ -465,6 +519,227 @@ function inline(text: string) {
       ? `<a href="${url}" target="_blank" rel="noopener">${label}</a>`
       : `<a href="${url}">${label}</a>`);
   return s;
+}
+
+/**
+ * The credential line a screenshot carries: a photo-credit in the corner, except
+ * the credit is checkable.
+ *
+ * Deliberately almost invisible. At rest it is one small imprint glyph at low
+ * opacity — the same weight a photographer's byline carries in a magazine, which
+ * readers are practised at skimming past. It only becomes words on hover, focus or
+ * tap. Every shot on the site was made the same way, so a permanently visible line
+ * on all 155 would be noise repeated 155 times; the people who go looking are the
+ * people it convinces.
+ *
+ * The facts come from the file's own manifest (docs/shot-provenance.ts), never from
+ * anything hardcoded here, and the two links act on the SERVED FILE:
+ *   - verify   → #/verify?src=/info/shots/<file>, the shell's same-origin verify
+ *                path, which fetches those bytes and checks them on the reader's
+ *                machine. The site never marks its own homework.
+ *   - download → the signed file itself, so the credential can be taken elsewhere
+ *                (c2patool, Content Credentials Verify) and checked independently.
+ *
+ * A shot whose credential will not decode gets NO line, rather than a line that
+ * implies more than the file can back up.
+ */
+let credSeq = 0;
+function shotCredential(file: string, extraClass = ''): string {
+  const p = readShotProvenance(resolve(__dirname, 'shots', file));
+  if (!p) return '';
+  const src = `/info/shots/${file}`;
+  const id = `shot-cred-${++credSeq}`;
+  const ext = (file.split('.').pop() ?? '').toUpperCase();
+  // "vector SVG" earns its adjective; a raster says only what it is.
+  const kind = ext === 'SVG' ? `${t('vector')} SVG` : ext;
+  const day = p.when?.slice(0, 10) ?? null;
+
+  // ONE row, three facts, two actions. The shots are 236px wide in places, and a
+  // credit that wraps to four rows ends up taller than the artwork it credits.
+  // Everything omitted here (capture dimensions, engine version, the recipe) is on
+  // the other end of the verify link, which is the right place for the long form —
+  // and all of it stays in the trigger's accessible label below.
+  const bits: string[] = [];
+  if (p.signer) {
+    bits.push(`<span class="prov-pill prov-sig">${PROV_SEAL}${esc(t('signed by'))} `
+      + `<span class="prov-pill prov-entity">${esc(p.signer)}</span></span>`);
+  }
+  if (kind) bits.push(`<span class="prov-pill prov-detail">${esc(kind)}</span>`);
+  if (day) bits.push(`<time class="prov-pill prov-detail" datetime="${esc(day)}">${esc(day)}</time>`);
+  // An AI declaration is the one fact that must never be tucked behind a hover, so
+  // it stays in the line AND in the trigger's label, and lights the glyph up.
+  if (p.ai) bits.push(`<span class="prov-pill prov-entity">${esc(t(p.ai === 'generated' ? 'AI generated' : 'AI edited'))}</span>`);
+
+  const label = [p.ai ? t(p.ai === 'generated' ? 'AI generated' : 'AI edited') : '', t('Content Credentials'),
+    p.signer ? `${t('signed by')} ${p.signer}` : '', kind, p.dimensions, day, p.generator].filter(Boolean).join(' — ');
+
+  return `<span class="shot-cred${p.ai ? ' shot-cred--ai' : ''}${extraClass ? ` ${extraClass}` : ''}">`
+    + `<button type="button" class="shot-cred-btn" aria-expanded="false" aria-controls="${id}" aria-label="${esc(label)}">`
+    + `${docIcon('imprint')}</button>`
+    + `<span class="shot-cred-line" id="${id}">${bits.join('')}`
+    + `<a class="shot-cred-do" href="/#/verify?src=${encodeURIComponent(src)}">${esc(t('Check it yourself'))}</a>`
+    + `<a class="shot-cred-do" href="${src}" download>${esc(t('Get the signed file'))}</a>`
+    + `</span></span>`;
+}
+
+/**
+ * A screenshot's intrinsic pixel size, read straight out of the committed file.
+ *
+ * This is load-bearing, not a nicety. `.shot` is `width:fit-content`, so with a
+ * `loading="lazy"` image that has no declared size the wrapper lays out 0×0 — and
+ * a zero-area box never comes near the viewport, so the image never loads, so the
+ * box never gains size. A deadlock that silently leaves every screenshot on the
+ * site invisible (it did, before these attributes existed). Declaring width/height
+ * also gives the reader reserved space instead of the page jumping as shots arrive.
+ *
+ * Cached across the 27-locale build: the same handful of files would otherwise be
+ * re-read for every page in every language.
+ */
+const shotSizeCache = new Map<string, { w: number; h: number } | null>();
+function shotSize(file: string): { w: number; h: number } | null {
+  const hit = shotSizeCache.get(file);
+  if (hit !== undefined) return hit;
+  const out = (() => {
+    const path = resolve(__dirname, 'shots', file);
+    if (!existsSync(path)) return null;
+    if (file.endsWith('.svg')) {
+      // The walker writes width/height in px on the root; fall back to the viewBox
+      // extent, which is the same number for every shot the pipeline produces.
+      const head = readFileSync(path, 'utf-8').slice(0, 2048);
+      const w = Number(/<svg[^>]*\swidth="([\d.]+)"/.exec(head)?.[1]);
+      const h = Number(/<svg[^>]*\sheight="([\d.]+)"/.exec(head)?.[1]);
+      if (Number.isFinite(w) && Number.isFinite(h) && w > 0 && h > 0) return { w: Math.round(w), h: Math.round(h) };
+      const vb = /viewBox="([\d.\-\s]+)"/.exec(head)?.[1]?.trim().split(/\s+/).map(Number);
+      if (vb?.length === 4 && vb[2]! > 0 && vb[3]! > 0) return { w: Math.round(vb[2]!), h: Math.round(vb[3]!) };
+      return null;
+    }
+    const b = readFileSync(path);
+    // PNG: IHDR is always the first chunk, width/height as big-endian u32.
+    if (b.length > 24 && b[0] === 0x89 && b[1] === 0x50) {
+      return { w: b.readUInt32BE(16), h: b.readUInt32BE(20) };
+    }
+    // JPEG: walk the marker segments to the first SOF (0xC0-0xCF, excluding the
+    // non-frame markers C4/C8/CC) and read the frame's dimensions.
+    if (b.length > 4 && b[0] === 0xff && b[1] === 0xd8) {
+      let i = 2;
+      while (i + 9 < b.length) {
+        if (b[i] !== 0xff) { i++; continue; }
+        const m = b[i + 1]!;
+        if (m >= 0xc0 && m <= 0xcf && m !== 0xc4 && m !== 0xc8 && m !== 0xcc) {
+          return { h: b.readUInt16BE(i + 5), w: b.readUInt16BE(i + 7) };
+        }
+        i += 2 + b.readUInt16BE(i + 2);
+      }
+    }
+    return null;
+  })();
+  shotSizeCache.set(file, out);
+  if (!out) console.warn(`⚠  docs/shots/${file}: could not read intrinsic size — the shot will not reserve space and may not settle`);
+  return out;
+}
+
+/**
+ * How many draft-to-render sweeps one page may carry before the build says so.
+ *
+ * The sweep is a laplacian over a column-width element, and the browser keeps a
+ * filtered composited surface alive for each one. It used to be structurally
+ * impossible to have more than one (the build promoted the first shot and no
+ * other); now that authors opt in per recipe, the ceiling has to be a thing the
+ * build can see and complain about, or "one per page, deliberately" quietly
+ * becomes "however many someone typed".
+ */
+const MAX_SWEEPS_PER_PAGE = 4;
+
+/**
+ * Count the sweeps an authored page asked for and warn past the budget.
+ *
+ * A pass-through, not a fixer: which shots draw themselves in is an editorial
+ * decision that belongs in the markdown next to the words it illustrates. This
+ * only keeps the cost visible in the build log, where the old "first shot only"
+ * rule used to keep it visible in the code.
+ */
+function auditSweeps(html: string, slug: string): string {
+  const n = (html.match(/class="shot[^"]*shot--sweep/g) ?? []).length;
+  if (n > MAX_SWEEPS_PER_PAGE) {
+    console.warn(`⚠  ${slug}.md declares ${n} drawing sweeps (budget ${MAX_SWEEPS_PER_PAGE})`
+      + ' — each one keeps a filtered layer alive; drop `sweep=1` from the least important.');
+  }
+  return html;
+}
+
+/**
+ * `::: showcase` — the one screenshot on the site that is INLINED as live SVG
+ * rather than served through an <img>, so scroll can drive its real `viewBox`.
+ *
+ * Why this exists: the settle motion above transform-scales an <img>, and Blink
+ * rasterises an SVG image at the composited scale — so the one thing the docs most
+ * want to demonstrate (that these screenshots are geometry, not pixels) is exactly
+ * the thing a transform cannot show. Animating a viewBox is a true camera move
+ * over the geometry: nothing re-rasterises, and because the captured strokes carry
+ * `vector-effect="non-scaling-stroke"`, they stay hairline at every zoom the way a
+ * CAD viewer does. A bitmap cannot fake either property.
+ *
+ * PROVENANCE — the important part. Inlining takes the FILE off the page, and a
+ * C2PA hash binding covers file bytes, not DOM. Two consequences, both handled:
+ *
+ *  1. The manifest is STRIPPED from the inlined copy. Left in, a reader who saved
+ *     the inline markup out of devtools would hold a file whose credential fails to
+ *     validate — a false negative on a genuine Lolly asset, which is worse than no
+ *     credential at all.
+ *  2. The signed file is still served at /info/shots/<slug>.svg and the credential
+ *     line points at it, so "verify" and "download" both act on the real bytes.
+ *     The inline copy is presentation; the file remains the record.
+ *
+ * WHY THE INLINING HAPPENS AT RUNTIME, not here. Emitting the SVG into the page
+ * took exporting.html from 35 KB to 285 KB gzipped — a quarter-megabyte of
+ * BLOCKING markup charged to every reader, scroll that far or not, neither lazily
+ * loaded nor cacheable apart from the page. So the build emits the ordinary <img>
+ * and SHOWCASE_SCRIPT swaps in live SVG when the block first approaches the
+ * viewport. The file was going to be fetched anyway, so the motion costs no extra
+ * bytes — and the geometry being animated is then literally the signed file's own,
+ * parsed from the exact bytes the credential covers.
+ *
+ * With no JS the <img> simply stays: the finished artwork, no motion, no penalty.
+ *
+ * The block wraps an ordinary url-shot recipe line, so the shot pipeline
+ * (scripts/build-docs-shots.ts, which regex-scans every docs page) still captures,
+ * compares and credentials it exactly like the other 154.
+ */
+function buildShowcase(body: string): string {
+  const recipe = /!\[([^\]]*)\]\((\/t\/url-shot\?[^)\s]+)\)/.exec(body);
+  const caption = body.replace(recipe?.[0] ?? '', '').trim();
+  const bail = (why: string) => {
+    // Loud, and still renders: a showcase that cannot be inlined falls back to the
+    // ordinary <img> path rather than dropping the screenshot off the page.
+    console.warn(`⚠  ::: showcase — ${why}; falling back to a plain screenshot`);
+    return mdToHtml(body);
+  };
+  if (!recipe) return bail('no url-shot recipe line inside the fence');
+
+  const q = new URLSearchParams(recipe[2]!.slice(recipe[2]!.indexOf('?') + 1));
+  const slug = q.get('filename');
+  const fmt  = (q.get('format') || 'svg').toLowerCase();
+  if (!slug) return bail('the recipe has no filename= param');
+  if (fmt !== 'svg') return bail(`${slug} is captured as ${fmt} — only a vector shot can be inlined`);
+
+  const file = `${slug}.svg`;
+  const path = resolve(__dirname, 'shots', file);
+  if (!existsSync(path)) return bail(`docs/shots/${file} has not been captured yet`);
+
+  // The viewBox is read HERE, at build time, even though the SVG itself is fetched
+  // in the browser: it is the camera's start and end frame, so a shot that could
+  // never animate (no viewBox) has to fail during the build, loudly, rather than
+  // silently render a still image in production.
+  const vb = /viewBox="([\d.\-\s]+)"/.exec(readFileSync(path, 'utf-8'))?.[1]?.trim().split(/\s+/).map(Number);
+  if (!vb || vb.length !== 4 || vb.some(n => !Number.isFinite(n))) return bail(`${file} has no usable viewBox`);
+
+  const alt  = esc(recipe[1] ?? '');
+  const size = shotSize(file);
+  const dims = size ? ` width="${size.w}" height="${size.h}"` : '';
+  return `<figure class="showcase" data-viewbox="${vb.join(' ')}" data-shot="/info/shots/${file}">
+  <div class="showcase-stage"><img src="/info/shots/${file}" alt="${alt}"${dims} class="showcase-fallback">${shotCredential(file)}</div>
+  ${caption ? `<figcaption>${mdToHtml(caption)}</figcaption>` : ''}
+</figure>`;
 }
 
 function parseCells(line: string) {
@@ -581,6 +856,8 @@ function mdToHtml(md: string) {
         // explicitly rather than inferred from position, so moving a list around
         // the page cannot silently turn the timeline on or off.
         out.push(`<div class="md-timeline">${mdToHtml(body)}</div>`);
+      } else if (label === 'showcase') {
+        out.push(buildShowcase(body));
       } else {
         out.push(mdToHtml(body));
       }
@@ -820,6 +1097,10 @@ function siteIcon(key: string): string {
 // the product agree on iconography). All stroke currentColor → theme-safe.
 const DOC_ICON_S = `fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"`;
 const DOC_ICONS: Record<string, string> = {
+  // A framed ripple — the app's "in-pixel imprint" glyph (shells/web/src/lib/icons.ts),
+  // reused as the mark on every screenshot's credential line so the same symbol means
+  // the same thing in the product and in the docs.
+  imprint:    `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M6.5 13.5c1.8-3 3.6-3 5.5 0s3.7 3 5.5 0"/><path d="M6.5 9.5c1.8-2.4 3.6-2.4 5.5 0s3.7 2.4 5.5 0"/></svg>`,
   pause:      `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>`,
   sunburst:   `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>`,
   font:       `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><path d="M4 7V4h16v3"/><path d="M9 20h6"/><path d="M12 4v16"/></svg>`,
@@ -1857,23 +2138,60 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .sidebar-label:first-child{margin-top:0}
 .sidebar-home{display:block;font-size:.8125rem;color:var(--muted)!important;margin-bottom:1rem;padding:0!important}
 .sidebar-home:hover{color:var(--green)!important;background:none!important}
-/* Docs search. Logical properties throughout so the Arabic build mirrors without
-   a second rule set, and the results panel is a normal block on mobile (where the
-   sidebar is a static strip above the content) rather than a floating overlay. */
-.sidebar-search{position:relative;margin-bottom:1rem}
-.sidebar-search-input{width:100%;box-sizing:border-box;padding:.45rem .6rem;font:inherit;font-size:.875rem;color:var(--text);background:var(--pale);border:1px solid var(--border);border-radius:6px}
-.sidebar-search-input::placeholder{color:var(--muted)}
-.sidebar-search-input:focus{outline:2px solid var(--green);outline-offset:1px;background:#fff}
-.sidebar-search-results{position:absolute;inset-inline:0;top:calc(100% + .35rem);z-index:20;max-height:min(60vh,26rem);overflow-y:auto;background:#fff;border:1px solid var(--border);border-radius:8px;box-shadow:0 6px 24px #0002;padding:.25rem}
-.sidebar-search-hit{display:block;padding:.45rem .55rem;border-radius:5px;color:var(--text)}
-.sidebar-search-hit .hit-h{display:block;font-size:.8125rem;font-weight:600;color:var(--dark)}
-.sidebar-search-hit .hit-c{display:block;font-size:.6875rem;color:var(--green);margin-top:.05rem}
-.sidebar-search-hit .hit-x{display:block;font-size:.75rem;color:var(--muted);margin-top:.15rem;line-height:1.4;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
-.sidebar-search-hit:hover,.sidebar-search-hit.is-active{background:var(--pale);text-decoration:none}
-.sidebar-search-empty{padding:.5rem .55rem;font-size:.8125rem;color:var(--muted)}
-.dark .sidebar-search-input:focus{background:#0e1a17}
-.dark .sidebar-search-results{background:#0e1a17;box-shadow:0 6px 24px #0006}
-@media(max-width:768px){.sidebar-search-results{position:static;max-height:22rem;box-shadow:none;margin-top:.35rem}}
+/* Docs search — in the TOPBAR, not the rail. It sits with the other whole-site
+   controls (language, theme, launch) because it acts on the whole site: the rail
+   answers "what is there", the box answers "where is the thing I already know I
+   want", and that second question does not belong inside the first question's list.
+   It is also where readers look for it.
+
+   Logical properties throughout so the Arabic build mirrors without a second rule
+   set. The field lives inside a fixed-height (3.75rem) nav on purpose — .docs-sidebar
+   pins its sticky top and height to that number, so this must not change it. */
+.docs-search{position:relative;flex:none;margin-inline-start:.25rem}
+.docs-search-input{inline-size:11rem;box-sizing:border-box;padding:.4rem .7rem;font:inherit;font-size:.8125rem;
+  color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);border-radius:2em;
+  transition:inline-size .18s ease,background .15s ease,border-color .15s ease}
+.docs-search-input::placeholder{color:rgba(255,255,255,.5)}
+.docs-search-input:hover{background:rgba(255,255,255,.14)}
+.docs-search-input:focus{outline:none;inline-size:15rem;background:rgba(255,255,255,.18);border-color:var(--green)}
+/* Only on genuinely small screens does the field collapse to a puck that opens on
+   focus. The breakpoint is 560px, not the ~900px that looks natural in isolation,
+   because the nav sheds its whole link row at 1100px (see the hamburger block) —
+   from there down to 560px the bar is just brand, search and three controls, so a
+   readable field fits easily and shrinking it early would cost function for nothing.
+   Below 560px the remaining controls do start to crowd, so it becomes a glyph. */
+@media(max-width:560px){
+  .docs-search-input{inline-size:2.1rem;padding-inline:0;text-align:center}
+  .docs-search-input:focus{inline-size:min(60vw,14rem);padding-inline:.7rem;text-align:start}
+  .docs-search-input::placeholder{color:transparent}
+}
+/* FIXED, not absolute: the nav is a horizontally scrolling flex bar, so an absolute
+   panel would be clipped to a 3.75rem-tall strip and scroll away with the field.
+   Fixed escapes it (nothing on the ancestor chain establishes a containing block —
+   no transform, no filter, no backdrop-filter on nav, which is what would trap it),
+   and the script positions it from the input's rect on scroll and resize.
+
+   Width: wide enough for a result to read as three lines of prose rather than a
+   column of single words. It is a floating overlay anchored to the field, so it is
+   free to be wider than whatever it hangs from. */
+.docs-search-results{position:fixed;z-index:110;inline-size:min(30rem,calc(100vw - 2rem));max-height:min(60vh,28rem);overflow-y:auto;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 10px 34px #00000026;padding:.25rem}
+/* A hit is explicitly a flex COLUMN rather than a block. It used to be a block that
+   had to out-specify the rail's .docs-sidebar a{display:flex} — and when that
+   fight was lost the three spans became flex items in a ROW, so every result was
+   three narrow columns of one-word-per-line text. The panel no longer lives in the
+   rail, but declaring the axis means the layout cannot be decided by whichever
+   ancestor rule happens to win a specificity contest later. */
+.docs-search-hit{display:flex;flex-direction:column;align-items:stretch;padding:.5rem .6rem;border-radius:7px;color:var(--text)}
+.docs-search-hit .hit-h{font-size:.875rem;font-weight:600;color:var(--dark);line-height:1.35}
+.docs-search-hit .hit-c{font-size:.6875rem;color:var(--green);margin-top:.1rem}
+.docs-search-hit .hit-x{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:.8125rem;color:var(--muted);margin-top:.25rem;line-height:1.45}
+.docs-search-hit:hover,.docs-search-hit.is-active{background:var(--pale);text-decoration:none}
+.docs-search-empty{padding:.6rem .55rem;font-size:.8125rem;color:var(--muted)}
+.dark .docs-search-results{background:#0e1a17;box-shadow:0 10px 34px #0000008c}
+/* --dark is NOT remapped by the .dark theme (it overrides --text/--muted/--border
+   /--pale only), so every var(--dark) foreground is near-black on the dark panel.
+   The docs headings solve it the same way one block up: repoint to --text. */
+.dark .docs-search-hit .hit-h{color:var(--text)}
 .sidebar-pathway{font-size:.9375rem;font-weight:700;color:var(--dark);margin-bottom:.75rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
 .docs-sidebar a{display:flex;align-items:flex-start;gap:.5rem;padding:.3rem .5rem;font-size:.875rem;color:var(--text);border-radius:5px}
 .docs-sidebar a:hover{color:var(--green);background:var(--pale);text-decoration:none}
@@ -1948,6 +2266,211 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .docs-content img{height:auto;    max-width: min(100%, 40em);    height: auto;   margin: 0 auto; display: block;}
 /* App screenshots (docs/shots.json captures) read at full column width, framed like a window. */
 .docs-content img[src*="/info/shots/"]{max-width:100%;min-width:50%;border-radius:1.2em;box-shadow: inset 0 0 0 1px #0001, 0 3px 6px #0002, 0 6px 2em #0001}
+
+/* ── Screenshot settle ──────────────────────────────────────────────────────
+   Every shot enters slightly oversized and lifted, with a wide diffuse shadow,
+   then lands: the shadow tightens under it as the scale returns to 1. Read as a
+   sheet being set down on the page.
+
+   fit-content, not 100%: the wrapper must hug the IMAGE, because the credential
+   line is positioned against this box. A portrait shot in a wide column would
+   otherwise strand its credential in the empty margin.
+
+   Honest note on the scale: an <img> of an SVG is rasterised by Blink at the
+   composited scale, so a transform-zoomed shot is soft DURING the motion and
+   snaps crisp at rest. 1.045 is chosen to keep that imperceptible — this
+   animation is a settle, and is deliberately NOT the argument that the shots are
+   vector. The showcase block below is (it animates real geometry). */
+.shot{display:block;position:relative;width:fit-content;max-width:100%;margin:0 auto}
+.shot>img{margin:0}
+/* The hidden start state is gated on .shots-motion, which the pre-paint script in
+   <head> adds. A shot must NEVER be able to strand itself at opacity 0: with no
+   JS (or a script that failed to parse) the class is absent, no rule below
+   matches, and every screenshot is simply visible. The gate is set before first
+   paint rather than by the observer at end-of-body, or a long page would paint
+   the shots once and then blink them out to animate them back in. */
+@media(prefers-reduced-motion:no-preference){
+  .shots-motion .shot{opacity:0;transform:translateY(30px) scale(1.045);
+    transition:opacity .5s ease,transform .75s cubic-bezier(.16,.84,.3,1)}
+  /* Every rule that undoes the start state carries the SAME .shots-motion
+     qualifier, so it matches the (0,2,0) above. A bare .shot--in here is
+     (0,1,0) and loses to the hidden state — which would leave every screenshot
+     on the site invisible forever. */
+  .shots-motion .shot--in{opacity:1;transform:none}
+  .shots-motion .shot>img{transition:box-shadow .75s cubic-bezier(.16,.84,.3,1)}
+  .shots-motion .shot:not(.shot--in)>img{box-shadow:inset 0 0 0 1px #0001, 0 28px 60px #00000030}
+}
+
+/* ── Screenshot credential line ─────────────────────────────────────────────
+   A photo-credit that can be checked. At rest: one imprint glyph in the corner at
+   low opacity. On hover, keyboard focus or tap it becomes a line of provenance
+   pills plus two actions.
+
+   NO JavaScript is required for the reveal, and that is a deliberate a11y choice.
+   The line is never display:none — it is opacity 0 with pointer-events off — so it
+   stays in the accessibility tree and in tab order, and :focus-within brings it
+   into view the instant a keyboard reaches one of its links. A hidden-until-JS
+   popover would have had to lie about aria-expanded in the no-JS case; this cannot.
+   The script only adds tap-to-open and Escape-to-close, which hover cannot do. */
+/* width:max-content is doing real work. An absolutely positioned box shrink-to-fits
+   against its containing block, so on a 247px-wide shot the line was squeezed until
+   even "signed by Lolly" broke across three lines. Given intrinsic width and an
+   inline-end anchor with no inline-start, it lays out at its natural size and grows
+   LEFTWARDS across (and past) the artwork, like a caption.
+
+   pointer-events are handed to the children, not the container: the closed line
+   still occupies its full box, and a transparent 350px strip that opens on hover
+   would fire whenever the pointer crossed the bottom of the shot. */
+.shot-cred{position:absolute;inset-block-end:.55rem;inset-inline-end:.7rem;z-index:2;
+  display:flex;align-items:center;justify-content:flex-end;gap:.4rem;flex-direction:row-reverse;
+  width:max-content;max-width:min(28rem,calc(100vw - 3rem));pointer-events:none}
+.shot-cred-btn{display:grid;place-items:center;width:1.4rem;height:1.4rem;flex:none;padding:0;
+  border:0;border-radius:50%;cursor:pointer;color:var(--dark);background:#ffffffb8;
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);pointer-events:auto;
+  opacity:.34;transition:opacity .2s ease,background .2s ease}
+.shot-cred-btn svg{width:.85rem;height:.85rem;display:block}
+/* Approaching the shot at all lifts it to legible; it never shouts. */
+.shot:hover .shot-cred-btn,.showcase:hover .shot-cred-btn{opacity:.72}
+.shot-cred-btn:hover,.shot-cred-btn:focus-visible{opacity:1;background:#fff}
+/* Sized against the VIEWPORT, never the shot. Some shots are a 236px-wide crop of
+   one control, and a line clamped to that width wraps into a stack taller than the
+   artwork. Because .shot-cred is anchored to the inline-end and nothing on the way
+   up clips, a wider line simply extends back across the shot (and past its edge on
+   a small one), which is how a caption behaves rather than how a box does. */
+.shot-cred-line{display:flex;align-items:center;gap:.3rem;flex-wrap:nowrap;justify-content:flex-end;
+  max-width:min(26rem,calc(100vw - 3rem));padding:.28rem .45rem;border-radius:.9rem;
+  background:#ffffffdd;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  box-shadow:0 2px 10px #0000001f, inset 0 0 0 1px #0000000f;
+  opacity:0;pointer-events:none;transform:translateX(.4rem);
+  transition:opacity .22s ease,transform .22s ease}
+/* Hover is keyed off the GLYPH (and then the line itself, so the pointer can travel
+   onto it without it closing) rather than off the container, which is
+   pointer-events:none for the reason given above. */
+.shot-cred-btn:hover + .shot-cred-line,.shot-cred-btn:focus-visible + .shot-cred-line,
+.shot-cred-line:hover,.shot-cred:focus-within .shot-cred-line,
+.shot-cred[data-open] .shot-cred-line{opacity:1;pointer-events:auto;transform:none}
+/* The line's pills are chips on a chip, so they sit a step quieter than the ones
+   the prose uses — and they must not inherit the docs paragraph line-height, which
+   would make the row twice as tall as the glyph beside it. */
+.shot-cred-line>*{flex:none}
+.shot-cred-line .prov-pill{font-size:.6875rem;line-height:1.3;padding:.1em .5em;margin:0;white-space:nowrap}
+.shot-cred-line .prov-seal{width:.8em;height:.8em}
+.shot-cred-do{font-size:.6875rem;font-weight:600;white-space:nowrap;padding:.1em .35em;border-radius:.6em}
+.shot-cred-do:hover{background:var(--pale);text-decoration:underline}
+/* An AI declaration is not a detail to be discovered — if a shot ever carries one,
+   its glyph is fully opaque from the start. */
+.shot-cred--ai .shot-cred-btn{opacity:1;background:#fff}
+.dark .shot-cred-btn{color:var(--pale);background:#0e1a17c4}
+.dark .shot-cred-btn:hover,.dark .shot-cred-btn:focus-visible{background:#0e1a17}
+.dark .shot-cred-line{background:#0e1a17ee;box-shadow:0 2px 10px #0007, inset 0 0 0 1px #ffffff14}
+.dark .shot-cred-do:hover{background:#ffffff14}
+@media(prefers-reduced-motion:reduce){.shot-cred-line{transition:none;transform:none}}
+/* Narrow columns: the line would be wider than the shot, so it stacks above the
+   glyph instead of beside it and takes the shot's full width. */
+@media(max-width:640px){
+  .shot-cred{flex-direction:column;align-items:flex-end;inset-inline-start:.7rem}
+  .shot-cred-line{max-width:100%;transform:translateY(.4rem)}
+}
+
+/* ── Geometry showcase (::: showcase — one inlined vector shot) ─────────────
+   Scroll drives --p from 0 to 1. Everything that moves is geometry:
+
+     camera  the svg viewBox is lerped from a centre crop out to full extent (JS —
+             viewBox is an attribute, not a CSS property). The captured strokes are
+             non-scaling-stroke, so they stay hairline all the way in. No re-raster,
+             no blur, at any zoom — the whole point of the block.
+     ink     grayscale(1 - p): the drawing arrives as ink and takes on its colour.
+             A filter function list CAN transition, unlike the url() case above.
+     order   each leaf shape appears when p passes its share of the paint order, so
+             the map assembles itself layer by layer (water, then road classes by
+             weight) instead of fading in as one flat picture.
+
+   --p is set by JS, so with no JS the fallbacks below (p:1) render the finished
+   artwork at full extent, in colour, every layer visible. */
+.showcase{--p:1;margin:2.5rem auto;max-width:100%;width:fit-content}
+/* The radius lives on the artwork, NOT as overflow:hidden on the stage — the stage
+   also holds the credential line, which is allowed to extend past the artwork's
+   edge, and a clipping stage would cut it off. */
+.showcase-stage{position:relative;border-radius:1.2em;
+  box-shadow:inset 0 0 0 1px #0001, 0 3px 6px #0002, 0 6px 2em #0001}
+/* The <img> the build emits, and the live SVG that replaces it, must occupy the
+   same box — the swap happens under the reader's eyes and any size change would
+   read as a jump rather than an upgrade. */
+.showcase-fallback,.showcase-art{display:block;width:min(100%,40em);height:auto;margin:0;border-radius:1.2em}
+.showcase-art{filter:grayscale(calc(1 - var(--p)))}
+/* The stagger. Each leaf gets --i (its paint-order index) and the root gets --n
+   (the total) from the showcase script; ×2.2 fades each shape over a fraction of
+   the scroll rather than all of it, so the layers overlap into one motion.
+
+   The +1 is what makes this read as drawing rather than loading: it puts the FIRST
+   leaf (the sheet the artwork sits on) on screen at p=0, so the block opens as
+   blank paper and the ink arrives onto it. Without it every layer including the
+   background starts at zero, and the opening frame is an empty box that looks like
+   a screenshot that failed to load. */
+.showcase-art [data-sc-i]{opacity:clamp(0,calc((var(--p) * var(--n) - var(--i) + 1) * 2.2),1)}
+.showcase figcaption{margin-top:.9rem;font-size:.8125rem;color:var(--muted);text-align:center;
+  max-width:34em;margin-inline:auto}
+.showcase figcaption p{margin:0}
+@media(prefers-reduced-motion:reduce){
+  /* No camera, no ink phase, no stagger — the finished artwork, still. */
+  .showcase{--p:1 !important}
+  .showcase-art{filter:none}
+  .showcase-art [data-sc-i]{opacity:1}
+}
+
+/* ── Theme twin: two committed files, one shown ────────────────────────────
+   A "dark=1" recipe ships a second baseline captured with the app pinned dark, and
+   the reader's own toggle decides which one is on screen. NOT a <picture> with a
+   prefers-color-scheme source: the site's dark mode is a CLASS the reader flips,
+   so a media-query source would follow the OS and contradict the toggle.
+
+   Ungated (no .shots-motion, no media query) so it holds with JS off, and scoped
+   to .shot--dual so a shot with no twin is byte-identical to before. Each twin
+   carries its OWN credential line — two separately signed files. */
+.shot-alt,.shot--dual .shot-cred--alt{display:none}
+.dark .shot--dual>img:not(.shot-alt),.dark .shot--dual .shot-cred:not(.shot-cred--alt){display:none}
+.dark .shot--dual>.shot-alt{display:block}
+.dark .shot--dual .shot-cred--alt{display:flex}
+
+/* ── Draft-to-render sweep ("sweep=1" on the recipe) ────────────────────────
+   A luminance-edge pass (feConvolveMatrix laplacian, see DRAFT_FILTER_DEF)
+   turns the shot into a line drawing that dissolves into the full-colour render.
+   The outlines are DERIVED from the artwork rather than drawn by hand, so the
+   effect cannot drift out of sync with the shot it sits on.
+
+   It is an overlay, not a filter on the <img>, because the filter property cannot
+   transition from url(#…) to none — so the filtered copy is a background layer
+   that fades out instead.
+   Same URL as the <img>, so it costs a cache hit and one extra decode, no fetch.
+
+   WHICH shots draw themselves in is now authored ("sweep=1"), not "whichever came
+   first in the document" — see auditSweeps for the per-page budget. Cost is still
+   bounded: desktop only (a laplacian over a full-width element is the wrong thing
+   to hand a phone GPU), and never under reduced-motion.
+
+   TIMING. 1.4s of dissolve after a 0.25s beat, against the settle's own .75s — the
+   sheet lands, then the ink lifts off it, and the two read as one gesture rather
+   than a race. Slower than the 0.9s this started at, because at 0.9s the drawing
+   was gone before a reader who had just scrolled to it had focused on it; much past
+   1.5s and the shot reads as finished while ink is still sitting on top of it.
+   ease-in-out, not ease: the lift starts gently, so the line drawing is legible
+   as a drawing for a moment before it goes. */
+@media(prefers-reduced-motion:no-preference) and (min-width:900px){
+  .shots-motion{--sweep-dur:1.4s;--sweep-delay:.25s}
+  .shots-motion .shot--sweep::after{content:'';position:absolute;inset:0;border-radius:1.2em;pointer-events:none;
+    background:var(--shot-src) center/100% 100% no-repeat;
+    filter:url(#lolly-draft);opacity:1;
+    transition:opacity var(--sweep-dur) ease-in-out var(--sweep-delay)}
+  /* In dark mode the ink must be drawn from the DARK file, or the sweep would
+     briefly paint the light screenshot over its own dark twin. */
+  .dark .shots-motion .shot--sweep::after{background:var(--shot-src-dark,var(--shot-src)) center/100% 100% no-repeat}
+  .shots-motion .shot--sweep.shot--in::after{opacity:0}
+  /* Teardown once the ink has lifted: a pseudo-element cannot transition filter
+     away, so at opacity 0 it is still a live filtered composited surface. Harmless
+     at one per page, not at four — the script adds this class when the transition
+     is over. */
+  .shots-motion .shot--swept::after{content:none}
+}
 /* Provenance pills (the typed markers authors write in the markdown - see inline()).
    A provenance line reads as
    data tags in sentence order, so the hierarchy is carried by weight and fill, not
@@ -2295,9 +2818,212 @@ const THEME_TOGGLE   = `<button class="nav-theme-toggle" aria-label="Toggle dark
 
 const THEME_INIT_SCRIPT = `<script>(function(){var c=localStorage.getItem('theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches;if(c==='dark'||(c!=='light'&&s))document.documentElement.classList.add('dark');})();</script>`;
 
+// Pre-paint, beside the theme flag and for the same reason: it decides how the
+// first frame is painted. It only ARMS the screenshot motion — SHOT_MOTION_SCRIPT
+// at end-of-body is what lands each shot. Without JS neither runs, the class is
+// absent, and the shots are plain visible images.
+const SHOT_MOTION_INIT = `<script>document.documentElement.classList.add('shots-motion');</script>`;
+
 const THEME_INTERACT_SCRIPT = `<script>(function(){var btn=document.querySelector('.nav-theme-toggle');if(!btn)return;btn.addEventListener('click',function(){var d=document.documentElement.classList.toggle('dark');localStorage.setItem('theme',d?'dark':'light');});window.matchMedia('(prefers-color-scheme:dark)').addEventListener('change',function(e){if(!localStorage.getItem('theme'))document.documentElement.classList.toggle('dark',e.matches);});})();</script>`;
 
 const HAM_BTN = `<button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation" aria-expanded="false"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>`;
+
+/**
+ * The edge-detect pass behind the hero shot's draft-to-render sweep. A 3×3
+ * laplacian over the DESATURATED artwork (so a colour edge and a tonal edge both
+ * register), then inverted and boosted so the result is ink on paper rather than
+ * bright lines on black.
+ *
+ * sRGB interpolation is explicit: the filter default is linearRGB, which crushes
+ * the mid-tone edges this depends on into near-nothing.
+ */
+const DRAFT_FILTER_DEF = `<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+  <filter id="lolly-draft" color-interpolation-filters="sRGB">
+    <feColorMatrix type="saturate" values="0"/>
+    <feConvolveMatrix order="3" preserveAlpha="true" kernelMatrix="0 -1 0 -1 4 -1 0 -1 0"/>
+    <feComponentTransfer>
+      <feFuncR type="linear" slope="-2.4" intercept="1"/>
+      <feFuncG type="linear" slope="-2.4" intercept="1"/>
+      <feFuncB type="linear" slope="-2.4" intercept="1"/>
+    </feComponentTransfer>
+  </filter>
+</svg>`;
+
+/**
+ * Screenshot settle. Its own observer rather than a `.reveal` class on each shot,
+ * because a shot has a second condition the text blocks don't: it waits for the
+ * image to actually decode. Shots are `loading="lazy"`, so reusing `.reveal`
+ * would animate an empty box and then pop the pixels in afterwards.
+ */
+const SHOT_MOTION_SCRIPT = `<script>(function(){
+  var els=document.querySelectorAll('.shot');if(!els.length)return;
+  if(!('IntersectionObserver' in window)){els.forEach(function(el){el.classList.add('shot--in');});return;}
+  function land(el){
+    // The RENDERED image, which on a dual shot in dark mode is the second one.
+    // Blink fetches display:none images too, so keying off the first would happen
+    // to work — and would be landing the motion on the wrong file's decode.
+    var imgs=el.querySelectorAll('img'),img=imgs[0];
+    for(var k=0;k<imgs.length;k++){if(getComputedStyle(imgs[k]).display!=='none'){img=imgs[k];break;}}
+    // Decoded already (cache) → settle now. Otherwise settle on load, so the
+    // motion always carries real pixels. A failed image still lands, or the shot
+    // would be stuck invisible at opacity 0.
+    var swept=function(){
+      // Plain timeout, not transitionend: below 900px or under reduced motion the
+      // ::after never exists and no transition ever fires, so there would be
+      // nothing to listen for.
+      if(el.classList.contains('shot--sweep'))setTimeout(function(){el.classList.add('shot--swept');},2000);
+    };
+    if(!img||img.complete){el.classList.add('shot--in');swept();return;}
+    var go=function(){el.classList.add('shot--in');swept();};
+    img.addEventListener('load',go,{once:true});
+    img.addEventListener('error',go,{once:true});
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){io.unobserve(e.target);land(e.target);}});
+  },{threshold:0,rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(el){io.observe(el);});
+})();</script>`;
+
+/**
+ * The showcase camera. Maps the block's travel through the viewport onto --p, and
+ * lerps the inlined SVG's viewBox from a centre crop out to full extent.
+ *
+ * The zoom crop is derived from the shot's own viewBox and keeps its aspect ratio,
+ * so preserveAspectRatio never letterboxes mid-flight (which would read as the
+ * artwork jumping rather than the camera moving).
+ *
+ * Everything is rAF-coalesced: a scroll event only marks the frame dirty. Writing
+ * the viewBox attribute directly in the scroll handler would force layout on every
+ * event, on the one element on the page that is expensive to lay out.
+ */
+const SHOWCASE_SCRIPT = `<script>(function(){
+  var els=document.querySelectorAll('.showcase');if(!els.length)return;
+  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;  // the <img> is already the finished state
+  var ZOOM=0.22;   // p=0 shows this fraction of each axis, centred — deep in the streets
+  var items=[];
+
+  // Swap the <img> for live SVG parsed from the same file. Only ever an upgrade:
+  // any failure (offline, 404, unparseable, no <svg> root) leaves the image alone,
+  // so the worst case is a still screenshot rather than a broken one.
+  function upgrade(fig,done){
+    var src=fig.getAttribute('data-shot');if(!src)return;
+    fetch(src,{credentials:'same-origin'}).then(function(r){
+      if(!r.ok)throw new Error(r.status);return r.text();
+    }).then(function(text){
+      // Strip the credential from the DOM copy: a manifest whose hash binding no
+      // longer matches its bytes is a FALSE NEGATIVE waiting to happen if anyone
+      // saves this markup out. The file keeps its credential; the credential line
+      // on this block points at the file.
+      text=text.replace(/<metadata>[\\s\\S]*?<\\/metadata>/g,'').replace(/<\\?xml[^>]*\\?>/g,'');
+      // An inline SVG joins the PAGE's id space, so namespace anything it defines
+      // before it can collide with another asset's clipPath or filter.
+      text=text.replace(/\\bid="([^"]+)"/g,'id="sc-$1"')
+               .replace(/url\\(#([^)]+)\\)/g,'url(#sc-$1)')
+               .replace(/\\bhref="#([^"]+)"/g,'href="#sc-$1"');
+      var doc=new DOMParser().parseFromString(text,'image/svg+xml');
+      var svg=doc.documentElement;
+      if(!svg||svg.nodeName!=='svg'||doc.querySelector('parsererror'))throw new Error('unparseable');
+      svg.setAttribute('class','showcase-art');
+      svg.setAttribute('aria-hidden','true');
+      svg.setAttribute('focusable','false');
+      svg.removeAttribute('width');svg.removeAttribute('height');
+      var img=fig.querySelector('.showcase-fallback');
+      var stage=fig.querySelector('.showcase-stage');
+      if(!stage)return;
+      // The image carried the accessible description; the live SVG is decorative,
+      // so the description moves to the stage rather than being lost in the swap.
+      if(img){stage.setAttribute('role','img');stage.setAttribute('aria-label',img.getAttribute('alt')||'');}
+      stage.appendChild(document.importNode(svg,true));
+      if(img)img.remove();
+      done(fig,stage.querySelector('.showcase-art'));
+    }).catch(function(){/* keep the <img> */});
+  }
+
+  function activate(fig,svg){
+    var vb=(fig.getAttribute('data-viewbox')||'').split(/\\s+/).map(Number);
+    if(!svg||vb.length!==4||vb.some(function(n){return !isFinite(n);}))return;
+    // Index the leaves in paint order for the stagger. Leaves only: a <g> wrapping
+    // half the drawing would otherwise fade as one lump and swallow the layering.
+    var leaves=svg.querySelectorAll('path,rect,circle,ellipse,line,polyline,polygon,image,text,use');
+    for(var i=0;i<leaves.length;i++){leaves[i].setAttribute('data-sc-i','');leaves[i].style.setProperty('--i',i);}
+    svg.style.setProperty('--n',leaves.length||1);
+    items.push({fig:fig,svg:svg,vb:vb});
+    fig.classList.add('showcase--live');
+    mark();
+  }
+
+  // Fetch when the block is within a screen of the viewport, not on load: this is
+  // the one shot on the site worth a few hundred KB, and only for a reader who is
+  // actually heading towards it.
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){io.unobserve(e.target);upgrade(e.target,activate);}});
+    },{rootMargin:'100% 0px'});
+    els.forEach(function(el){io.observe(el);});
+  }else{
+    els.forEach(function(el){upgrade(el,activate);});
+  }
+
+  var dirty=false;
+  function frame(){
+    dirty=false;
+    var vh=window.innerHeight||document.documentElement.clientHeight;
+    items.forEach(function(it){
+      var r=it.fig.getBoundingClientRect();
+      // 0 when the block's top is still near the fold, 1 by the time its middle
+      // has risen to just above centre. Clamped, so scrolling past holds the end.
+      var p=(vh*0.9-r.top)/Math.max(1,(vh*0.55+r.height*0.35));
+      p=p<0?0:p>1?1:p;
+      it.fig.style.setProperty('--p',p.toFixed(4));
+      var e=1-Math.pow(1-p,3);                       // ease-out: the camera decelerates into the wide shot
+      var f=ZOOM+(1-ZOOM)*e;                         // fraction of each axis on show
+      var w=it.vb[2]*f,h=it.vb[3]*f;
+      var x=it.vb[0]+(it.vb[2]-w)/2,y=it.vb[1]+(it.vb[3]-h)/2;
+      it.svg.setAttribute('viewBox',x.toFixed(2)+' '+y.toFixed(2)+' '+w.toFixed(2)+' '+h.toFixed(2));
+    });
+  }
+  function mark(){if(!dirty){dirty=true;requestAnimationFrame(frame);}}
+  addEventListener('scroll',mark,{passive:true});
+  addEventListener('resize',mark);
+  frame();
+})();</script>`;
+
+/**
+ * Tap-to-open for the credential line, and Escape to close it.
+ *
+ * Everything else about the reveal is CSS (:hover / :focus-within), so this script
+ * exists ONLY for the two things CSS cannot do: a touch device has no hover, and a
+ * pointer user who opened the line by tapping needs a way out. aria-expanded is
+ * managed here rather than in the markup because it is only ever true in a session
+ * where this script is running — a static attribute would misreport the CSS-only
+ * hover state.
+ */
+const SHOT_CRED_SCRIPT = `<script>(function(){
+  var creds=document.querySelectorAll('.shot-cred');if(!creds.length)return;
+  function close(c){c.removeAttribute('data-open');var b=c.querySelector('.shot-cred-btn');if(b)b.setAttribute('aria-expanded','false');}
+  function closeAll(except){creds.forEach(function(c){if(c!==except)close(c);});}
+  creds.forEach(function(c){
+    var btn=c.querySelector('.shot-cred-btn');if(!btn)return;
+    btn.addEventListener('click',function(e){
+      e.preventDefault();
+      var open=!c.hasAttribute('data-open');
+      closeAll(c);
+      if(open){c.setAttribute('data-open','');btn.setAttribute('aria-expanded','true');}else close(c);
+    });
+  });
+  // Escape closes the open line and returns focus to its trigger, matching how the
+  // app's own overlays behave.
+  document.addEventListener('keydown',function(e){
+    if(e.key!=='Escape')return;
+    var open=document.querySelector('.shot-cred[data-open]');
+    if(!open)return;
+    close(open);
+    var b=open.querySelector('.shot-cred-btn');if(b)b.focus();
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest||!e.target.closest('.shot-cred'))closeAll(null);
+  });
+})();</script>`;
 
 const SCROLL_REVEAL_SCRIPT = `<script>(function(){var els=document.querySelectorAll('.reveal');if(!els.length)return;
   // Mobile is trigger-happy: a positive bottom rootMargin pre-reveals elements as
@@ -2591,7 +3317,7 @@ const VERIFY_POPOUT_SCRIPT = `<script>(function(){document.addEventListener('cli
 // than innerHTML: the records are plain text lifted out of rendered pages, and
 // code samples in them legitimately contain < and &.
 const DOCS_SEARCH_SCRIPT = `<script>(function(){
-var wrap=document.querySelector('.sidebar-search');if(!wrap)return;
+var wrap=document.querySelector('.docs-search');if(!wrap)return;
 var input=document.getElementById('docs-search');
 var out=document.getElementById('docs-search-results');
 var base=wrap.getAttribute('data-search-base')||'/info';
@@ -2629,17 +3355,29 @@ function score(r,terms){
 
 function close(){out.hidden=true;out.textContent='';active=-1;input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');}
 
+// The panel is position:fixed to escape the sidebar's scroll clipping, so it has
+// to be told where the input is — and told again whenever that moves. Clamped so
+// a narrow window can't push it off the inline edge.
+function place(){
+  if(out.hidden)return;
+  var r=input.getBoundingClientRect();
+  var w=out.offsetWidth||340;
+  var x=Math.max(8,Math.min(r.left,document.documentElement.clientWidth-w-8));
+  out.style.top=(r.bottom+6)+'px';
+  out.style.left=x+'px';
+}
+
 function render(list){
   out.textContent='';active=-1;input.removeAttribute('aria-activedescendant');
   if(!list.length){
     var e=document.createElement('div');
-    e.className='sidebar-search-empty';
+    e.className='docs-search-empty';
     e.textContent=out.getAttribute('data-empty')||'No matches';
     out.appendChild(e);
   }else{
     list.forEach(function(r,n){
       var a=document.createElement('a');
-      a.className='sidebar-search-hit';a.id='docs-hit-'+n;a.setAttribute('role','option');
+      a.className='docs-search-hit';a.id='docs-hit-'+n;a.setAttribute('role','option');
       a.href=base+'/'+r.p+'.html'+(r.a?'#'+r.a:'');
       var h=document.createElement('span');h.className='hit-h';h.textContent=r.h||r.t;a.appendChild(h);
       if(r.h){var c=document.createElement('span');c.className='hit-c';c.textContent=r.t;a.appendChild(c);}
@@ -2647,7 +3385,7 @@ function render(list){
       out.appendChild(a);
     });
   }
-  out.hidden=false;input.setAttribute('aria-expanded','true');
+  out.hidden=false;input.setAttribute('aria-expanded','true');place();
 }
 
 function run(){
@@ -2664,7 +3402,7 @@ function run(){
 }
 
 function move(d){
-  var links=out.querySelectorAll('.sidebar-search-hit');if(!links.length)return;
+  var links=out.querySelectorAll('.docs-search-hit');if(!links.length)return;
   active=(active+d+links.length)%links.length;
   for(var i=0;i<links.length;i++)links[i].classList.toggle('is-active',i===active);
   input.setAttribute('aria-activedescendant',links[active].id);
@@ -2676,10 +3414,12 @@ input.addEventListener('focus',load);
 input.addEventListener('keydown',function(e){
   if(e.key==='ArrowDown'){e.preventDefault();move(1);}
   else if(e.key==='ArrowUp'){e.preventDefault();move(-1);}
-  else if(e.key==='Enter'){var l=out.querySelector('.sidebar-search-hit.is-active');if(l){e.preventDefault();l.click();}}
+  else if(e.key==='Enter'){var l=out.querySelector('.docs-search-hit.is-active');if(l){e.preventDefault();l.click();}}
   else if(e.key==='Escape'){if(input.value){input.value='';close();}else{input.blur();}}
 });
-document.addEventListener('click',function(e){if(!wrap.contains(e.target))close();});
+document.addEventListener('click',function(e){if(!wrap.contains(e.target)&&!out.contains(e.target))close();});
+addEventListener('resize',place);
+addEventListener('scroll',place,true);   // capture: the rail scrolls, not the window
 })();</script>`;
 
 const HAMBURGER_SCRIPT = `<script>(function(){var ham=document.getElementById('navHamburger');var menu=document.getElementById('navMobileMenu');if(!ham||!menu)return;ham.addEventListener('click',function(){var open=menu.classList.toggle('open');ham.classList.toggle('open',open);ham.setAttribute('aria-expanded',open?'true':'false');});menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false');});});document.addEventListener('click',function(e){if(!menu.contains(e.target)&&!ham.contains(e.target)){menu.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false');}});})();</script>`;
@@ -2711,6 +3451,20 @@ let activeLang: Lang = 'en';
 function localizedShot(slug: string, ext: string): string | null {
   if (activeLang === 'en') return null;
   const name = `${slug}.${activeLang}.${ext}`;
+  return existsSync(resolve(__dirname, 'shots', name)) ? name : null;
+}
+
+/**
+ * The dark-theme twin of an already-resolved shot filename, if the pipeline
+ * captured one (`dark=1` on the recipe → `<slug>[.<lang>].dark.<ext>`).
+ *
+ * Derived from the file the locale resolver just chose, never from the slug: a
+ * translated page must pair its own translated light shot with its own translated
+ * dark shot. Falling back to the English dark file would make the reader's theme
+ * toggle change the LANGUAGE of the picture.
+ */
+function darkShot(file: string): string | null {
+  const name = file.replace(/\.(\w+)$/, '.dark.$1');
   return existsSync(resolve(__dirname, 'shots', name)) ? name : null;
 }
 
@@ -2874,7 +3628,10 @@ function buildNav(lang: Lang, slug: string, activeHref: string, isLanding: boole
   // not enter the translation corpora, because it is meant to come straight back
   // out again once the docs are no longer a draft.
   const draft = lang === 'en' ? '<span class="nav-draft">Draft only</span>' : '';
-  return `<nav${navClass}><a href="${localeHref(lang, 'index')}" class="brand">Lolly</a>${draft}${groups}<div class="gap"></div>${langPickerHtml(lang, slug)}${THEME_TOGGLE}${HAM_BTN}<a href="${launchHref}" class="nav-launch">${launch}</a></nav>
+  // Search joins the right-hand cluster of whole-site controls, ahead of the
+  // language picker. Docs pages only — there is no index behind the landing page,
+  // and a box that returns nothing is worse than no box.
+  return `<nav${navClass}><a href="${localeHref(lang, 'index')}" class="brand">Lolly</a>${draft}${groups}<div class="gap"></div>${isLanding ? '' : searchBox(lang)}${langPickerHtml(lang, slug)}${THEME_TOGGLE}${HAM_BTN}<a href="${launchHref}" class="nav-launch">${launch}</a></nav>
 <div class="nav-mobile-menu" id="navMobileMenu">${mobileLinks}<a href="${launchHref}" class="nav-launch">${launch}</a></div>`;
 }
 
@@ -2939,28 +3696,33 @@ function buildSidebar(lang: Lang, page: Page, activeHref: string) {
     }).join('\n    ');
     return `<div class="sidebar-label">${esc(t(g.label))}</div>\n    ${links}`;
   }).join('\n    ');
-  // Search sits above the pathway list because it answers a different question:
-  // the list is "what is there", the box is "where is the thing I already know I
-  // want". A combobox rather than a bare input so the arrow-key result walk is
-  // announced; `data-search-base` carries the locale prefix so the inline script
-  // stays locale-agnostic.
-  //
-  // Deliberately NO global "press / to search" shortcut, though every docs site
-  // has one: `/` is Firefox's own quick-find, and not fighting the browser's
-  // defaults outranks saving a click here. Tab and click both reach the field.
-  const search = `<div class="sidebar-search" data-search-base="${lang === 'en' ? '/info' : `/info/${lang}`}">
-      <input type="search" id="docs-search" class="sidebar-search-input" autocomplete="off" spellcheck="false"
-             role="combobox" aria-expanded="false" aria-controls="docs-search-results" aria-autocomplete="list"
-             placeholder="${esc(t('Search the docs…'))}" aria-label="${esc(t('Search the docs'))}">
-      <div id="docs-search-results" class="sidebar-search-results" role="listbox" hidden
-           data-empty="${esc(t('No matches'))}"></div>
-    </div>`;
   return `<aside class="docs-sidebar">
     <a href="${localeHref(lang, 'index')}" class="sidebar-home">${esc(t('← Home'))}</a>
-    ${search}
     <div class="sidebar-pathway">${esc(t(sb.title))}</div>
     ${groups}
   </aside>`;
+}
+
+/**
+ * The docs search field, for the topbar (docs pages only — the landing page has no
+ * search index behind it).
+ *
+ * A combobox rather than a bare input so the arrow-key walk through results is
+ * announced; `data-search-base` carries the locale prefix so the inline script stays
+ * locale-agnostic.
+ *
+ * Deliberately NO global "press / to search" shortcut, though every docs site has
+ * one: `/` is Firefox's own quick-find, and not fighting the browser's defaults
+ * outranks saving a click. Tab and click both reach the field.
+ */
+function searchBox(lang: Lang): string {
+  return `<div class="docs-search" data-search-base="${lang === 'en' ? '/info' : `/info/${lang}`}">
+      <input type="search" id="docs-search" class="docs-search-input" autocomplete="off" spellcheck="false"
+             role="combobox" aria-expanded="false" aria-controls="docs-search-results" aria-autocomplete="list"
+             placeholder="${esc(t('Search the docs…'))}" aria-label="${esc(t('Search the docs'))}">
+      <div id="docs-search-results" class="docs-search-results" role="listbox" hidden
+           data-empty="${esc(t('No matches'))}"></div>
+    </div>`;
 }
 
 function wrapPage(lang: Lang, page: Page, content: string, ogSlugs: Set<string>, md = '') {
@@ -3020,10 +3782,12 @@ ${alternates}
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
 <link rel="preload" as="font" type="font/woff2" crossorigin href="/catalog/fonts/webfonts/SUSE[wght].woff2">
 ${THEME_INIT_SCRIPT}
+${SHOT_MOTION_INIT}
 <style>${CSS}</style>
 </head>
 <body>
 ${buildNav(lang, page.slug, activeHref, isLanding, page.pathway)}
+${DRAFT_FILTER_DEF}
 ${body}
 ${FOOTER(lang)}
 ${THEME_INTERACT_SCRIPT}
@@ -3032,6 +3796,9 @@ ${isLanding ? '' : DOCS_SEARCH_SCRIPT}
 ${VERIFY_POPOUT_SCRIPT}
 ${LANG_PICKER_SCRIPT}
 ${SCROLL_REVEAL_SCRIPT}
+${SHOT_MOTION_SCRIPT}
+${SHOT_CRED_SCRIPT}
+${isLanding ? '' : SHOWCASE_SCRIPT}
 ${isLanding ? HERO_CANVAS_SCRIPT : ''}
 ${isLanding ? LIQUID_GLASS_SCRIPT : ''}
 </body>
@@ -3184,7 +3951,7 @@ function build() {
         continue;
       }
 
-      const content = page.isLanding ? buildLandingContent(md, lang) : mdToHtml(md);
+      const content = page.isLanding ? buildLandingContent(md, lang) : auditSweeps(mdToHtml(md), page.slug);
       const html    = wrapPage(lang, page, content, ogSlugs, md);
       const outFile = page.slug === 'index' ? 'index.html' : `${page.slug}.html`;
       writeFileSync(resolve(localeOutDir, outFile), html, 'utf-8');

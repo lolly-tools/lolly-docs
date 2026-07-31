@@ -10,7 +10,7 @@ Nuovo sulla piattaforma? La **[Guida rapida](/info/quickstart.html)** imposta un
 
 ## Comprendere l'architettura
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib&sweep=1)
 
 - **[Panoramica](/info/overview.html)** - perché Lolly esiste, la separazione motore/shell/strumenti, il ponte delle capacità, e gli impegni architetturali consolidati.
 - **[Design Token](/info/design-tokens.html)** - il modello di token DTCG in cui vengono espressi i brand, e come gli strumenti li consumano.

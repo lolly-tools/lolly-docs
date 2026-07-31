@@ -47,7 +47,7 @@ Lolly е изграден да пасне на начина, по който о�
 
 Всички те са трансформации на устройството: файлът или данните ти влизат, изчистени байтове излизат и **няма сървър, към който да се качва**. Те са преднамерената противоположност на типичния инструмент „качи файла си на чужд сайт, за да го изчистиш“, към който иначе посяга добронамереният служител.
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data)
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data&sweep=1)
 
 Text Helper е същата сделка, само че за текст, а не за файлове. Това е работната маса с раздели, която служителят иначе би търсил на чужд сайт, и не декларира никакви входове, защото нищо, до което се докосва, не напуска страницата.
 

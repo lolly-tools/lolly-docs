@@ -25,7 +25,7 @@ cómoda y un render fiel.
 
 ## Accesibilidad
 
-![The Accessibility card on the profile page: four plain switches - Reduce motion, Hide colourful previews, High contrast and Large text - each with a help tip](/t/url-shot?url=%2F%23%2Fprofile&width=430&height=900&dpi=192&waitMs=2000&scrollDepth=1300&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&cropSelector=.profile-card--a11y&filename=incl-a11y-card)
+![The Accessibility card on the profile page: four plain switches - Reduce motion, Hide colourful previews, High contrast and Large text - each with a help tip](/t/url-shot?url=%2F%23%2Fprofile&width=430&height=900&dpi=192&waitMs=2000&scrollDepth=1300&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&cropSelector=.profile-card--a11y&filename=incl-a11y-card&sweep=1)
 
 Además de seguir las señales de la propia plataforma (el modo oscuro del
 sistema, la preferencia de movimiento reducido del sistema operativo), Lolly

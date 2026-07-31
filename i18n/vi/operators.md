@@ -48,7 +48,7 @@ Thu nhỏ một tệp PDF quá khổ ngay trên thiết bị, để không ai ph
 
 Tất cả những công cụ này đều là các phép biến đổi trên thiết bị: tệp hoặc dữ liệu của bạn đi vào, các byte đã được làm sạch đi ra, và **không hề có máy chủ nào để tải lên**. Chúng là đối lập có chủ đích với kiểu công cụ điển hình "tải tệp của bạn lên trang web của một người lạ để làm sạch nó" mà một nhân viên có thiện chí thường tìm đến khi không có lựa chọn khác.
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data)
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data&sweep=1)
 
 Text Helper cũng là thỏa thuận đó, nhưng dành cho văn bản thay vì tệp. Nó chính là bàn làm việc dạng tab mà lẽ ra một nhân viên sẽ phải đi tìm trên trang web của người lạ, và nó không khai báo input nào cả, vì mọi thứ nó chạm đến đều không bao giờ rời khỏi trang.
 

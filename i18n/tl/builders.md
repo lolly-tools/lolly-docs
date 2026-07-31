@@ -10,7 +10,7 @@ Bago sa platform? Ang **[Quickstart](/info/quickstart.html)** ay naghahanda ng b
 
 ## Unawain ang architecture
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib&sweep=1)
 
 - **[Overview](/info/overview.html)** - kung bakit umiiral ang Lolly, ang paghihiwalay ng engine/shell/tools, ang capability bridge, at ang mga naisaayos nang architectural commitment.
 - **[Design Tokens](/info/design-tokens.html)** - ang DTCG token model kung saan ipinapahayag ang mga brand, at kung paano ito ginagamit (consume) ng mga tool.

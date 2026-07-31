@@ -18,7 +18,7 @@ Lolly প্রচুর পরিমাণে কনটেন্ট তৈর�
 
 ### ফিচার ফ্ল্যাগ কী?
 
-![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&filename=pd-feature-flags)
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&filename=pd-feature-flags&sweep=1)
 
 ফিচার ফ্ল্যাগ Lolly-র বিভিন্ন অংশ চালু বা বন্ধ করে। সাধারণত একজন অ্যাডমিনিস্ট্রেটর এগুলো নিয়ন্ত্রণ করেন — Lolly-তে, আপনিই নিয়ন্ত্রণে থাকেন।
 
@@ -73,7 +73,7 @@ Lolly সবকিছুকে উপরে তুলে ধরে।
 
 ## ইউটিলিটি টুল থেকে কীসে আলাদা?
 
-![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
+![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
 
 **সংক্ষিপ্ত উত্তর →** ইউটিলিটিগুলোকে সবসময় রেন্ডার করতে হয় না, তাই সেগুলো ভিন্ন একটি UX পেতে পারে।
 
@@ -95,7 +95,7 @@ Lolly সবকিছুকে উপরে তুলে ধরে।
 
 ## Lolly কি আমার Figma, Penpot, Illustrator বা InDesign ফাইল এডিট ও রেন্ডার করতে পারে?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio&sweep=1)
 
 হ্যাঁ। **Layout Studio** খুলুন এবং **একটি ডিজাইন ইমপোর্ট করুন**-এ ক্লিক করুন: এটি গ্রহণ করে নেটিভ Figma **.fig** (Save local copy), Penpot **.penpot** এক্সপোর্ট, Illustrator **.ai** বা **.pdf**, InDesign **.idml** (File → Export → InDesign Markup), অথবা **যেকোনো SVG** (প্রশস্ত দরজা — প্রায় যেকোনো ডিজাইন অ্যাপ এটি এক্সপোর্ট করে)। সবকিছু সম্পূর্ণরূপে আপনার ডিভাইসেই পার্স করা হয়, কোনো অ্যাকাউন্ট বা প্লাগইনের প্রয়োজন নেই।
 

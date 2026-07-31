@@ -1,6 +1,6 @@
 # Ghid de pornire rapidă
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
 
 Lolly îți transformă regulile - culori, tipografie, layout-uri, logică - în instrumente pe care oricine le poate folosi pentru a crea fișiere finite: imagini, PDF-uri, carduri pentru social media, video, doar completând câteva câmpuri. Nu ai nimic de învățat și nimic de încărcat: totul rulează pe dispozitivul tău, online sau offline.
 
@@ -68,7 +68,7 @@ Iată câștigul: un layout importat este o sesiune obișnuită de Layout Studio
 
 [Setul de instrumente al comunității](/info/builders.html) este open source și agnostic de brand - coduri QR, hărți stradale, filtre, utilitare de confidențialitate - și randează pe baza brandului *tău* în momentul în care îl activezi.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
 
 Alimentează instrumentele și cu propriile tale date deschise: lipește sau trage un tabel **CSV** sau **JSON**, iar câmpurile repetitive ale unui instrument se completează din el, câte o resursă finită per rând.
 

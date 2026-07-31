@@ -10,7 +10,7 @@ Lolly হলো একটি প্ল্যাটফর্ম-নিরপে�
 
 ## আর্কিটেকচার বুঝুন
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib&sweep=1)
 
 - **[Overview](/info/overview.html)** — কেন Lolly-র অস্তিত্ব, engine/shell/tools-এর পৃথকীকরণ, ক্যাপাবিলিটি ব্রিজ, এবং স্থির হয়ে যাওয়া আর্কিটেকচারাল প্রতিশ্রুতিগুলো।
 - **[Design Tokens](/info/design-tokens.html)** — যে DTCG টোকেন মডেলে ব্র্যান্ড প্রকাশ করা হয়, এবং টুল কীভাবে সেগুলো ব্যবহার করে।

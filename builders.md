@@ -15,7 +15,7 @@ New to the platform? The **[Quickstart](/info/quickstart.html)** gets a brand an
 - **[Overview](/info/overview.html)** - why Lolly exists, the engine/shell/tools separation, the capability bridge, and the settled architectural commitments.
 - **[Design Tokens](/info/design-tokens.html)** - the DTCG token model brands are expressed in, and how tools consume them.
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib&sweep=1)
 
 ## Author tools
 

@@ -10,7 +10,7 @@ Neu auf der Plattform? Der **[Schnelleinstieg](/info/quickstart.html)** richtet 
 
 ## Die Architektur verstehen
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib&sweep=1)
 
 - **[Übersicht](/info/overview.html)** - warum es Lolly gibt, die Trennung von Engine/Shell/Tools, die Capability Bridge und die festgelegten architektonischen Grundsatzentscheidungen.
 - **[Design Tokens](/info/design-tokens.html)** - das DTCG-Token-Modell, in dem Marken ausgedrückt werden, und wie Tools diese nutzen.

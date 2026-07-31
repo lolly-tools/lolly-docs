@@ -6,7 +6,7 @@
 
 ## 竞争格局
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&filename=aud-open-canvas)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&filename=aud-open-canvas&sweep=1)
 
 | 能力 | Canva（开放画布） | 品牌门户（DAM 模板化） | Illustrator（桌面专业软件） | Figma / Penpot（在线专业软件） | **Lolly（约束优先）** |
 |---|---|---|---|---|---|

@@ -10,7 +10,7 @@ Lolly es un **motor** agnóstico de plataforma que ejecuta la misma ruta de rend
 
 ## Comprende la arquitectura
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib&sweep=1)
 
 - **[Visión general](/info/overview.html)** - por qué existe Lolly, la separación entre motor, shell y herramientas, el puente de capacidades, y los compromisos arquitectónicos ya asentados.
 - **[Tokens de Diseño](/info/design-tokens.html)** - el modelo de tokens DTCG en el que se expresan las marcas, y cómo los consumen las herramientas.

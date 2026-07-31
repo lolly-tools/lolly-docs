@@ -20,7 +20,7 @@ Wszystko w profilu znajduje się **na urządzeniu**, w lokalnej bazie danych prz
 
 Nic z tego nie jest wymagane. Pusty profil to całkowicie dobry profil; wypełniasz tylko to, co oszczędza ci pisania.
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details&sweep=1)
 
 Preferencje to jedyna część, która zmienia to, jak aplikacja wygląda z twojej strony. Karty motywów są żywymi podglądami i stosują się w chwili, gdy którąś wybierzesz - tylko na tym urządzeniu.
 
@@ -64,7 +64,7 @@ Oba te warianty żyją w sekcji Pamięć: miernik rozlicza każdy bajt, który p
 
 ## Przenoszenie profilu na nowe urządzenie
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls&sweep=1)
 
 Ponieważ profil jest w całości lokalny, jedynym sposobem, by przenieść go na pustą instalację - nowy laptop, świeżo zresetowaną przeglądarkę, komputer współpracownika, maszynę offline - jest **przeniesienie pliku**. Żadne logowanie go za ciebie nie przywróci, i o to właśnie chodzi: nic nigdy nie opuściło twojego urządzenia.
 

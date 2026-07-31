@@ -10,7 +10,7 @@ Novo na plataforma? O **[Guia Rápido](/info/quickstart.html)** coloca uma marca
 
 ## Entenda a arquitetura
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib&sweep=1)
 
 - **[Visão Geral](/info/overview.html)** - por que o Lolly existe, a separação entre engine/shell/tools, a bridge de capacidades e os compromissos arquiteturais já definidos.
 - **[Design Tokens](/info/design-tokens.html)** - o modelo de tokens DTCG em que as marcas são expressas, e como as ferramentas os consomem.

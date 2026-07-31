@@ -20,7 +20,7 @@
 
 Нічого з цього не є обов'язковим. Порожній профіль — цілком нормальний профіль; ви заповнюєте лише те, що заощадить вам набір тексту.
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details&sweep=1)
 
 Налаштування — єдина частина, яка змінює те, як застосунок виглядає для вас. Картки тем — це живі попередні перегляди, і вони застосовуються в мить, коли ви обираєте одну з них, лише на цьому пристрої.
 
@@ -64,7 +64,7 @@
 
 ## Перенесення профілю на новий пристрій
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls&sweep=1)
 
 Оскільки профіль повністю локальний, єдиний спосіб перенести його на порожню інсталяцію — новий ноутбук, щойно скинутий браузер, машину колеги, офлайн-пристрій — це **перенести файл**. Жоден вхід не відновить його за вас, і в цьому вся суть: спочатку ніщо ніколи й не покидало ваш пристрій.
 
