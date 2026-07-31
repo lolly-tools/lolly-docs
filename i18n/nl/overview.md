@@ -68,9 +68,9 @@ Omdat de goedkeuring in de tool zit en niet in het bestand (zie [Hoe Lolly zich 
 
 Dezelfde deterministische tool haalt die schaal op drie manieren, die alle drie identieke, voorgekeurde output leveren:
 
-- **Een mens, in de app.** Het batchraster op `/pro`: plak of importeer de rijen, krijg één afgerond asset per rij, download de zip. Geen ontwerpvaardigheid, geen ticket, geen wachttijd.
-- **Een developer, vanaf de commandline.** De CLI draait *dezelfde* engine en *hetzelfde* renderpad headless, zodat de tool in een script of nachtelijke pipeline over alle 10.000 rijen kan worden afgelopen. Eén `lolly <tool> --field=…`-aanroep in een lus is de hele integratie.
-- **Een systeem of een AI-agent, via MCP.** Dezelfde tool programmatisch bediend, met dezelfde kwaliteit en op nog grotere schaal - want een machine verveelt zich niet terwijl duizenden bestanden binnenrollen.
+- <!--i:people--> **Een mens, in de app.** Het batchraster op `/pro`: plak of importeer de rijen, krijg één afgerond asset per rij, download de zip. Geen ontwerpvaardigheid, geen ticket, geen wachttijd.
+- <!--i:code--> **Een developer, vanaf de commandline.** De CLI draait *dezelfde* engine en *hetzelfde* renderpad headless, zodat de tool in een script of nachtelijke pipeline over alle 10.000 rijen kan worden afgelopen. Eén `lolly <tool> --field=…`-aanroep in een lus is de hele integratie.
+- <!--i:cpu--> **Een systeem of een AI-agent, via MCP.** Dezelfde tool programmatisch bediend, met dezelfde kwaliteit en op nog grotere schaal - want een machine verveelt zich niet terwijl duizenden bestanden binnenrollen.
 
 Één set merkbeperkingen, één keer vastgelegd door een ontwerper; drie routes naar identieke voorgekeurde output - en de machineroute schaalt het verst van allemaal, want die wordt nooit moe terwijl de bestanden binnenrollen.
 

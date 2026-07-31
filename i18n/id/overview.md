@@ -70,9 +70,9 @@ Karena persetujuan berada pada alatnya dan bukan pada berkasnya (lihat [Bagaiman
 
 Alat deterministik yang sama mencapai skala itu melalui tiga jalan, semuanya menghasilkan keluaran identik yang telah disetujui sebelumnya:
 
-- **Seorang manusia, di dalam aplikasi.** Grid batch `/pro`: tempel atau impor barisnya, dapatkan satu aset jadi per baris, unduh zipnya. Tanpa keterampilan desain, tanpa tiket, tanpa menunggu.
-- **Seorang developer, dari command line.** CLI menjalankan engine *yang sama* dan jalur render *yang sama* secara headless, sehingga alat itu dapat diurutkan melintasi seluruh 10.000 baris di dalam sebuah skrip atau pipeline malam. Satu panggilan `lolly <tool> --field=…` di dalam loop adalah seluruh integrasinya.
-- **Sebuah sistem atau agen AI, lewat MCP.** Alat yang sama dioperasikan secara programatis, pada fidelitas yang sama dan pada skala yang lebih besar lagi - karena mesin tidak akan bosan sementara ribuan berkas terus masuk.
+- <!--i:people--> **Seorang manusia, di dalam aplikasi.** Grid batch `/pro`: tempel atau impor barisnya, dapatkan satu aset jadi per baris, unduh zipnya. Tanpa keterampilan desain, tanpa tiket, tanpa menunggu.
+- <!--i:code--> **Seorang developer, dari command line.** CLI menjalankan engine *yang sama* dan jalur render *yang sama* secara headless, sehingga alat itu dapat diurutkan melintasi seluruh 10.000 baris di dalam sebuah skrip atau pipeline malam. Satu panggilan `lolly <tool> --field=…` di dalam loop adalah seluruh integrasinya.
+- <!--i:cpu--> **Sebuah sistem atau agen AI, lewat MCP.** Alat yang sama dioperasikan secara programatis, pada fidelitas yang sama dan pada skala yang lebih besar lagi - karena mesin tidak akan bosan sementara ribuan berkas terus masuk.
 
 Satu set batasan brand, ditetapkan sekali oleh desainer; tiga rute menuju keluaran identik yang telah disetujui - dan rute mesinlah yang menskala paling jauh, karena ia tidak pernah lelah sementara berkas-berkas terus berdatangan.
 

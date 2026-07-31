@@ -68,9 +68,9 @@ Como la aprobación vive en la herramienta y no en el archivo (consulta [Cómo s
 
 La misma herramienta determinista alcanza esa escala por tres vías, y las tres producen una salida idéntica y previamente aprobada:
 
-- **Una persona, en la app.** La cuadrícula de lotes de `/pro`: pega o importa las filas, obtén un asset terminado por fila, descarga el zip. Sin habilidades de diseño, sin tickets, sin esperas.
-- **Quien desarrolla, desde la línea de comandos.** La CLI ejecuta el *mismo* motor y la *misma* ruta de renderizado en modo headless, así que la herramienta puede recorrer las 10.000 filas en un script o en una canalización nocturna. Una llamada `lolly <tool> --field=…` dentro de un bucle es toda la integración.
-- **Un sistema o un agente de IA, mediante MCP.** La misma herramienta operada de forma programática, con la misma fidelidad y a una escala aún mayor, porque a una máquina no se le hace aburrido mientras entran miles de archivos.
+- <!--i:people--> **Una persona, en la app.** La cuadrícula de lotes de `/pro`: pega o importa las filas, obtén un asset terminado por fila, descarga el zip. Sin habilidades de diseño, sin tickets, sin esperas.
+- <!--i:code--> **Quien desarrolla, desde la línea de comandos.** La CLI ejecuta el *mismo* motor y la *misma* ruta de renderizado en modo headless, así que la herramienta puede recorrer las 10.000 filas en un script o en una canalización nocturna. Una llamada `lolly <tool> --field=…` dentro de un bucle es toda la integración.
+- <!--i:cpu--> **Un sistema o un agente de IA, mediante MCP.** La misma herramienta operada de forma programática, con la misma fidelidad y a una escala aún mayor, porque a una máquina no se le hace aburrido mientras entran miles de archivos.
 
 Un único conjunto de restricciones de marca, fijado una vez por un diseñador; tres rutas hacia la misma salida previamente aprobada, y la ruta de la máquina es la que escala más lejos, porque nunca se cansa mientras los archivos van llegando.
 

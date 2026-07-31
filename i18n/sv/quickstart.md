@@ -22,8 +22,8 @@ Första gången landar du på skärmen **Start** (`#/start`). Ge den ett namn oc
 
 Om ditt varumärke redan är fångat som design tokens - från **Penpot**, **Tokens Studio** (Figma) eller en vanlig **DTCG**-fil - ta in det i sin helhet i stället för att skriva om det. Två vägar:
 
-- **I appen:** Start-skärmen och redigeraren *Ditt varumärke* tar emot en tokenfil (eller ett `LollyBrand`-paket) direkt - släpp den där så tänds paletten upp.
-- **Från kommandoraden**, för att sätta upp ett återanvändbart varumärkespaket:
+- <!--i:palette--> **I appen:** Start-skärmen och redigeraren *Ditt varumärke* tar emot en tokenfil (eller ett `LollyBrand`-paket) direkt - släpp den där så tänds paletten upp.
+- <!--i:code--> **Från kommandoraden**, för att sätta upp ett återanvändbart varumärkespaket:
 
 ```bash
 # a monolithic tokens.json, a one-file-per-set directory, or a Penpot project archive
@@ -80,15 +80,15 @@ Mata verktygen med din egen öppna data också: klistra in eller släpp en **CSV
 
 Med ett aktivt varumärke och ditt material i handen skapar varje verktyg en färdig fil:
 
-- **Rendera** vilket verktyg som helst till **SVG, PDF, PNG, JPG, WebP, video** och mer - i verkliga tryckstorlekar och fysiska enheter när du behöver det. Se [Export och format](/info/exporting.html).
-- **Dela en länk.** Varje verktygstillstånd är en URL, så en färdig tillgång är reproducerbar och parameteradresserbar - spara länken, återskapa vid behov.
-- **Gör det i bulk.** Driv en mall från ett kalkylblad i [batch-rutnätet](/info/exporting.html): en färdig tillgång per rad.
-- **Automatisera det.** Samma rendering körs från [CLI](/info/cli.html) och från en [AI-agent](/info/ai-agents.html) - en URL är API:et.
+- <!--i:download--> **Rendera** vilket verktyg som helst till **SVG, PDF, PNG, JPG, WebP, video** och mer - i verkliga tryckstorlekar och fysiska enheter när du behöver det. Se [Export och format](/info/exporting.html).
+- <!--i:link--> **Dela en länk.** Varje verktygstillstånd är en URL, så en färdig tillgång är reproducerbar och parameteradresserbar - spara länken, återskapa vid behov.
+- <!--i:layers--> **Gör det i bulk.** Driv en mall från ett kalkylblad i [batch-rutnätet](/info/exporting.html): en färdig tillgång per rad.
+- <!--i:cpu--> **Automatisera det.** Samma rendering körs från [CLI](/info/cli.html) och från en [AI-agent](/info/ai-agents.html) - en URL är API:et.
 
 ## Vart du ska gå härnäst
 
 Tre spår, beroende på vad du är här för att göra:
 
-- **[Lolly för skapare](/info/creators.html)** - du skapar saker. Fördelarna, och hur du får ut det mesta av appen.
-- **[Lolly för utvecklare](/info/builders.html)** - du skapar verktyg, integrerar och driftsätter. Den tekniska dokumentationen.
-- **[Lolly för operatörer](/info/operators.html)** - du ansvarar för varumärke, säkerhet och utrullning inom en organisation.
+- <!--i:people--> **[Lolly för skapare](/info/creators.html)** - du skapar saker. Fördelarna, och hur du får ut det mesta av appen.
+- <!--i:code--> **[Lolly för utvecklare](/info/builders.html)** - du skapar verktyg, integrerar och driftsätter. Den tekniska dokumentationen.
+- <!--i:shieldcheck--> **[Lolly för operatörer](/info/operators.html)** - du ansvarar för varumärke, säkerhet och utrullning inom en organisation.

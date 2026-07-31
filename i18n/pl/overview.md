@@ -70,9 +70,9 @@ Ponieważ zatwierdzenie żyje w narzędziu, a nie w pliku (zobacz [Jak Lolly wyp
 
 To samo deterministyczne narzędzie osiąga tę skalę trzema drogami, a każda daje identyczny, wstępnie zatwierdzony wynik:
 
-- **Człowiek, w aplikacji.** Siatka wsadowa `/pro`: wklej albo zaimportuj wiersze, dostań jeden gotowy zasób na wiersz, pobierz zip. Zero umiejętności projektowych, zero zgłoszenia, zero czekania.
-- **Programista, z wiersza poleceń.** CLI uruchamia bezgłowo *ten sam* silnik i *tę samą* ścieżkę renderowania, więc narzędzie da się przepuścić przez wszystkie 10 000 wierszy w skrypcie albo nocnym potoku. Wywołanie `lolly <tool> --field=…` w pętli to cała integracja.
-- **System albo agent AI, przez MCP.** To samo narzędzie obsługiwane programowo, z tą samą wiernością i w jeszcze większej skali - bo maszyna się nie znudzi, kiedy sypią się tysiące plików.
+- <!--i:people--> **Człowiek, w aplikacji.** Siatka wsadowa `/pro`: wklej albo zaimportuj wiersze, dostań jeden gotowy zasób na wiersz, pobierz zip. Zero umiejętności projektowych, zero zgłoszenia, zero czekania.
+- <!--i:code--> **Programista, z wiersza poleceń.** CLI uruchamia bezgłowo *ten sam* silnik i *tę samą* ścieżkę renderowania, więc narzędzie da się przepuścić przez wszystkie 10 000 wierszy w skrypcie albo nocnym potoku. Wywołanie `lolly <tool> --field=…` w pętli to cała integracja.
+- <!--i:cpu--> **System albo agent AI, przez MCP.** To samo narzędzie obsługiwane programowo, z tą samą wiernością i w jeszcze większej skali - bo maszyna się nie znudzi, kiedy sypią się tysiące plików.
 
 Jeden zestaw ograniczeń marki, ustalony raz przez projektanta; trzy drogi do identycznego, wstępnie zatwierdzonego wyniku - a droga maszynowa skaluje się najdalej, bo nigdy się nie zmęczy, gdy pliki się sypią.
 

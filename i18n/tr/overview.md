@@ -70,9 +70,9 @@ Onay dosyada değil araçta yaşadığı için (bkz. [Lolly nasıl karşılaşt�
 
 Aynı deterministik araç bu ölçeğe üç yoldan ulaşır ve hepsi birebir aynı, önceden onaylanmış çıktıyı üretir:
 
-- **Bir insan, uygulama içinde.** `/pro` toplu ızgarası: satırları yapıştır veya içe aktar, her satır için bitmiş bir varlık al, zip'i indir. Tasarım becerisi yok, talep kaydı yok, bekleme yok.
-- **Bir geliştirici, komut satırından.** CLI *aynı* motoru ve *aynı* oluşturma yolunu başsız çalıştırır; böylece araç, bir betikte veya gecelik bir hatta 10.000 satırın tamamı üzerinde sırayla işletilebilir. Bir döngü içindeki `lolly <tool> --field=…` çağrısı, entegrasyonun tamamıdır.
-- **Bir sistem veya bir yapay zeka aracısı, MCP üzerinden.** Aynı araç programatik olarak işletilir; aynı doğrulukta ve daha da büyük ölçekte - çünkü dosyalar akıp gelirken bir makine sıkılmaz.
+- <!--i:people--> **Bir insan, uygulama içinde.** `/pro` toplu ızgarası: satırları yapıştır veya içe aktar, her satır için bitmiş bir varlık al, zip'i indir. Tasarım becerisi yok, talep kaydı yok, bekleme yok.
+- <!--i:code--> **Bir geliştirici, komut satırından.** CLI *aynı* motoru ve *aynı* oluşturma yolunu başsız çalıştırır; böylece araç, bir betikte veya gecelik bir hatta 10.000 satırın tamamı üzerinde sırayla işletilebilir. Bir döngü içindeki `lolly <tool> --field=…` çağrısı, entegrasyonun tamamıdır.
+- <!--i:cpu--> **Bir sistem veya bir yapay zeka aracısı, MCP üzerinden.** Aynı araç programatik olarak işletilir; aynı doğrulukta ve daha da büyük ölçekte - çünkü dosyalar akıp gelirken bir makine sıkılmaz.
 
 Bir tasarımcının bir kez sabitlediği tek bir marka kısıtları kümesi; birebir aynı, önceden onaylanmış çıktıya giden üç ayrı yol - ve makine yolu hepsinden uzağa ölçeklenir, çünkü dosyalar akıp gelirken hiç yorulmaz.
 

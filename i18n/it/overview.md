@@ -68,9 +68,9 @@ Poiché l'approvazione vive nello strumento e non nel file (vedi [Come si confro
 
 Lo stesso strumento deterministico raggiunge quella scala in tre modi, che producono tutti un output identico e pre-approvato:
 
-- **Una persona, nell'app.** La griglia batch `/pro`: incolla o importa le righe, ottieni un asset finito per riga, scarica lo zip. Nessuna competenza di design, nessun ticket, nessuna attesa.
-- **Uno sviluppatore, da riga di comando.** La CLI esegue lo *stesso* motore e lo *stesso* percorso di render in modalità headless, così lo strumento può essere eseguito in sequenza su tutte le 10.000 righe in uno script o in una pipeline notturna. Una chiamata `lolly <tool> --field=…` dentro un ciclo è tutta l'integrazione.
-- **Un sistema o un agente IA, via MCP.** Lo stesso strumento pilotato in modo programmatico, con la stessa fedeltà e a una scala ancora maggiore - perché una macchina non si annoia mentre arrivano migliaia di file.
+- <!--i:people--> **Una persona, nell'app.** La griglia batch `/pro`: incolla o importa le righe, ottieni un asset finito per riga, scarica lo zip. Nessuna competenza di design, nessun ticket, nessuna attesa.
+- <!--i:code--> **Uno sviluppatore, da riga di comando.** La CLI esegue lo *stesso* motore e lo *stesso* percorso di render in modalità headless, così lo strumento può essere eseguito in sequenza su tutte le 10.000 righe in uno script o in una pipeline notturna. Una chiamata `lolly <tool> --field=…` dentro un ciclo è tutta l'integrazione.
+- <!--i:cpu--> **Un sistema o un agente IA, via MCP.** Lo stesso strumento pilotato in modo programmatico, con la stessa fedeltà e a una scala ancora maggiore - perché una macchina non si annoia mentre arrivano migliaia di file.
 
 Un solo insieme di vincoli di brand, fissato una volta dal designer; tre strade verso lo stesso output pre-approvato - e la strada della macchina è quella che arriva più lontano, perché non si stanca mai mentre i file continuano ad arrivare.
 

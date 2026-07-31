@@ -68,9 +68,9 @@ Weil die Freigabe im Tool und nicht in der Datei liegt (siehe [Wie Lolly im Verg
 
 Dasselbe deterministische Tool erreicht diesen Maßstab auf drei Wegen, die alle identische, vorab freigegebene Ausgaben liefern:
 
-- **Ein Mensch, in der App.** Das Batch-Raster unter `/pro`: Zeilen einfügen oder importieren, pro Zeile ein fertiges Asset erhalten, das Zip herunterladen. Keine Design-Kenntnisse, kein Ticket, keine Wartezeit.
-- **Eine Entwicklerin, auf der Kommandozeile.** Die CLI führt *dieselbe* Engine und *denselben* Render-Pfad headless aus, sodass das Tool in einem Skript oder einer nächtlichen Pipeline über alle 10.000 Zeilen hinweg abgearbeitet werden kann. Ein `lolly <tool> --field=…`-Aufruf in einer Schleife ist die gesamte Integration.
-- **Ein System oder ein KI-Agent, über MCP.** Dasselbe Tool programmatisch bedient, in derselben Qualität und in noch größerem Maßstab - denn eine Maschine wird nicht müde, während tausende Dateien eintrudeln.
+- <!--i:people--> **Ein Mensch, in der App.** Das Batch-Raster unter `/pro`: Zeilen einfügen oder importieren, pro Zeile ein fertiges Asset erhalten, das Zip herunterladen. Keine Design-Kenntnisse, kein Ticket, keine Wartezeit.
+- <!--i:code--> **Eine Entwicklerin, auf der Kommandozeile.** Die CLI führt *dieselbe* Engine und *denselben* Render-Pfad headless aus, sodass das Tool in einem Skript oder einer nächtlichen Pipeline über alle 10.000 Zeilen hinweg abgearbeitet werden kann. Ein `lolly <tool> --field=…`-Aufruf in einer Schleife ist die gesamte Integration.
+- <!--i:cpu--> **Ein System oder ein KI-Agent, über MCP.** Dasselbe Tool programmatisch bedient, in derselben Qualität und in noch größerem Maßstab - denn eine Maschine wird nicht müde, während tausende Dateien eintrudeln.
 
 Ein Satz Markenvorgaben, einmal von einer Designerin festgelegt; drei Wege zu identischer, vorab freigegebener Ausgabe - und der Maschinenweg skaliert am weitesten, denn er ermüdet nie, während die Dateien eintrudeln.
 

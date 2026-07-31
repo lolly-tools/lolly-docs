@@ -155,6 +155,8 @@ Lolly는 누구에게나 편안하게 쓸 수 있는 걸 목표로 해요. 인�
 - **Clear cache** — 다운로드한 카탈로그 콘텐츠를 삭제해요(다음에 불러올 때 다시 동기화돼요).
 - **Clear all my data** — 프로필, 세션, 이미지를 모두 지워요. *되돌릴 수 없어요.*
 
+![The storage card on a phone-width screen: every category of on-device data named, with the Clear all my data button at the bottom](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%2C.store-manages%2C.storage-subsection%2C.store-selbar%2C.store-chip-val%2C%23store-hero-num%2C%23store-headroom%2C%23store-quota%2C%23store-reclaim%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23storage-section&filename=pv-storage-clear)
+
 그 무엇도 어디로도 전송되지 않아요. 원격 측정도, 클라우드 렌더링도 없어요.
 
 ## 다른 기기로 옮기기

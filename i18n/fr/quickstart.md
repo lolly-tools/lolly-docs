@@ -22,8 +22,8 @@ Au premier lancement, tu atterris sur l'écran **Démarrage** (`#/start`). Donne
 
 Si ta marque est déjà saisie sous forme de tokens de design - depuis **Penpot**, **Tokens Studio** (Figma), ou n'importe quel fichier **DTCG** simple - importe-la en bloc plutôt que de tout ressaisir. Deux façons de faire :
 
-- **Dans l'application :** l'écran Démarrage et l'éditeur *Ta marque* acceptent directement un fichier de tokens (ou un pack `LollyBrand`) - dépose-le et la palette s'anime.
-- **Depuis la ligne de commande**, pour mettre en place un pack de marque réutilisable :
+- <!--i:palette--> **Dans l'application :** l'écran Démarrage et l'éditeur *Ta marque* acceptent directement un fichier de tokens (ou un pack `LollyBrand`) - dépose-le et la palette s'anime.
+- <!--i:code--> **Depuis la ligne de commande**, pour mettre en place un pack de marque réutilisable :
 
 ```bash
 # a monolithic tokens.json, a one-file-per-set directory, or a Penpot project archive
@@ -80,15 +80,15 @@ Alimente aussi les outils avec tes propres données ouvertes : colle ou dépose 
 
 Avec une marque active et ton matériel en main, chaque outil produit un fichier fini :
 
-- **Produis le rendu** de n'importe quel outil en **SVG, PDF, PNG, JPG, WebP, vidéo**, et plus encore - aux véritables dimensions d'impression et en unités physiques quand tu en as besoin. Voir [Export et formats](/info/exporting.html).
-- **Partage un lien.** Chaque état d'outil est une URL, donc un fichier fini est reproductible et adressable par paramètres - archive le lien, régénère à la demande.
-- **Fais-le en masse.** Pilote un modèle depuis une feuille de calcul dans la [grille de traitement par lots](/info/exporting.html) : un fichier fini par ligne.
-- **Automatise-le.** Le même rendu s'exécute depuis la [CLI](/info/cli.html) et depuis un [agent IA](/info/ai-agents.html) - une URL est l'API.
+- <!--i:download--> **Produis le rendu** de n'importe quel outil en **SVG, PDF, PNG, JPG, WebP, vidéo**, et plus encore - aux véritables dimensions d'impression et en unités physiques quand tu en as besoin. Voir [Export et formats](/info/exporting.html).
+- <!--i:link--> **Partage un lien.** Chaque état d'outil est une URL, donc un fichier fini est reproductible et adressable par paramètres - archive le lien, régénère à la demande.
+- <!--i:layers--> **Fais-le en masse.** Pilote un modèle depuis une feuille de calcul dans la [grille de traitement par lots](/info/exporting.html) : un fichier fini par ligne.
+- <!--i:cpu--> **Automatise-le.** Le même rendu s'exécute depuis la [CLI](/info/cli.html) et depuis un [agent IA](/info/ai-agents.html) - une URL est l'API.
 
 ## Où aller ensuite
 
 Trois parcours, selon ce que tu es venu faire ici :
 
-- **[Lolly pour les créateurs](/info/creators.html)** - tu crées des choses. Les avantages, et comment tirer le meilleur parti de l'application.
-- **[Lolly pour les développeurs](/info/builders.html)** - tu conçois des outils, intègres, et déploies. La documentation technique.
-- **[Lolly pour les opérateurs](/info/operators.html)** - tu es responsable de la marque, de la sécurité, et du déploiement dans une organisation.
+- <!--i:people--> **[Lolly pour les créateurs](/info/creators.html)** - tu crées des choses. Les avantages, et comment tirer le meilleur parti de l'application.
+- <!--i:code--> **[Lolly pour les développeurs](/info/builders.html)** - tu conçois des outils, intègres, et déploies. La documentation technique.
+- <!--i:shieldcheck--> **[Lolly pour les opérateurs](/info/operators.html)** - tu es responsable de la marque, de la sécurité, et du déploiement dans une organisation.

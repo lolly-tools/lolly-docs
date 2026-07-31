@@ -22,8 +22,8 @@ Bij de eerste keer starten kom je op het **Start**-scherm (`#/start`) terecht. G
 
 Als je merk al is vastgelegd als design tokens - vanuit **Penpot**, **Tokens Studio** (Figma) of een gewoon **DTCG**-bestand - breng het dan in één keer binnen in plaats van alles over te typen. Twee manieren:
 
-- **In de app:** het Start-scherm en de *Your brand*-editor accepteren een tokenbestand (of een `LollyBrand`-pack) rechtstreeks - sleep het erin en het palet licht op.
-- **Vanaf de command line**, om een herbruikbaar merkpakket op te zetten:
+- <!--i:palette--> **In de app:** het Start-scherm en de *Your brand*-editor accepteren een tokenbestand (of een `LollyBrand`-pack) rechtstreeks - sleep het erin en het palet licht op.
+- <!--i:code--> **Vanaf de command line**, om een herbruikbaar merkpakket op te zetten:
 
 ```bash
 # a monolithic tokens.json, a one-file-per-set directory, or a Penpot project archive
@@ -80,15 +80,15 @@ Voer tools ook met je eigen open data: plak of sleep een **CSV**- of **JSON**-ta
 
 Met een actief merk en je materiaal bij de hand, levert elke tool een afgewerkt bestand op:
 
-- **Render** elke tool naar **SVG, PDF, PNG, JPG, WebP, video** en meer - op echte drukformaten en fysieke eenheden wanneer je dat nodig hebt. Zie [Exporteren & formaten](/info/exporting.html).
-- **Deel een link.** Elke tooltoestand is een URL, dus een afgewerkt bestand is reproduceerbaar en via parameters aan te spreken - commit de link, genereer opnieuw wanneer nodig.
-- **Doe het in bulk.** Stuur een template aan vanuit een spreadsheet in de [batch-grid](/info/exporting.html): één afgewerkt bestand per rij.
-- **Automatiseer het.** Dezelfde render draait vanaf de [CLI](/info/cli.html) en vanuit een [AI-agent](/info/ai-agents.html) - een URL is de API.
+- <!--i:download--> **Render** elke tool naar **SVG, PDF, PNG, JPG, WebP, video** en meer - op echte drukformaten en fysieke eenheden wanneer je dat nodig hebt. Zie [Exporteren & formaten](/info/exporting.html).
+- <!--i:link--> **Deel een link.** Elke tooltoestand is een URL, dus een afgewerkt bestand is reproduceerbaar en via parameters aan te spreken - commit de link, genereer opnieuw wanneer nodig.
+- <!--i:layers--> **Doe het in bulk.** Stuur een template aan vanuit een spreadsheet in de [batch-grid](/info/exporting.html): één afgewerkt bestand per rij.
+- <!--i:cpu--> **Automatiseer het.** Dezelfde render draait vanaf de [CLI](/info/cli.html) en vanuit een [AI-agent](/info/ai-agents.html) - een URL is de API.
 
 ## Waar je hierna heen kunt
 
 Drie paden, afhankelijk van waarvoor je hier bent:
 
-- **[Lolly voor makers](/info/creators.html)** - jij maakt dingen. De voordelen, en hoe je het meeste uit de app haalt.
-- **[Lolly voor bouwers](/info/builders.html)** - jij bouwt tools, integreert en implementeert. De technische documentatie.
-- **[Lolly voor beheerders](/info/operators.html)** - jij bent verantwoordelijk voor merk, beveiliging en uitrol binnen een organisatie.
+- <!--i:people--> **[Lolly voor makers](/info/creators.html)** - jij maakt dingen. De voordelen, en hoe je het meeste uit de app haalt.
+- <!--i:code--> **[Lolly voor bouwers](/info/builders.html)** - jij bouwt tools, integreert en implementeert. De technische documentatie.
+- <!--i:shieldcheck--> **[Lolly voor beheerders](/info/operators.html)** - jij bent verantwoordelijk voor merk, beveiliging en uitrol binnen een organisatie.

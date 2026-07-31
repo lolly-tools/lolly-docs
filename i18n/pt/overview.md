@@ -68,9 +68,9 @@ Como a aprovação vive na ferramenta e não no arquivo (veja [Como o Lolly se c
 
 A mesma ferramenta determinística chega a essa escala por três caminhos, e todos produzem a mesma saída pré-aprovada:
 
-- **Uma pessoa, no app.** A grade de lote `/pro`: cole ou importe as linhas, receba um ativo finalizado por linha, baixe o zip. Sem habilidade de design, sem ticket, sem espera.
-- **Quem desenvolve, na linha de comando.** A CLI roda a *mesma* engine e o *mesmo* caminho de renderização em modo headless, então a ferramenta pode ser sequenciada sobre todas as 10.000 linhas em um script ou em um pipeline noturno. Uma chamada `lolly <tool> --field=…` dentro de um laço é a integração inteira.
-- **Um sistema ou um agente de IA, via MCP.** A mesma ferramenta operada programaticamente, com a mesma fidelidade e em escala ainda maior - porque uma máquina não fica entediada enquanto milhares de arquivos chegam.
+- <!--i:people--> **Uma pessoa, no app.** A grade de lote `/pro`: cole ou importe as linhas, receba um ativo finalizado por linha, baixe o zip. Sem habilidade de design, sem ticket, sem espera.
+- <!--i:code--> **Quem desenvolve, na linha de comando.** A CLI roda a *mesma* engine e o *mesmo* caminho de renderização em modo headless, então a ferramenta pode ser sequenciada sobre todas as 10.000 linhas em um script ou em um pipeline noturno. Uma chamada `lolly <tool> --field=…` dentro de um laço é a integração inteira.
+- <!--i:cpu--> **Um sistema ou um agente de IA, via MCP.** A mesma ferramenta operada programaticamente, com a mesma fidelidade e em escala ainda maior - porque uma máquina não fica entediada enquanto milhares de arquivos chegam.
 
 Um único conjunto de restrições de marca, fixado uma vez por um designer; três rotas para a mesma saída pré-aprovada - e a rota da máquina é a que vai mais longe, porque ela nunca se cansa enquanto os arquivos chegam.
 

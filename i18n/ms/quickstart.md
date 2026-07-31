@@ -22,8 +22,8 @@ Kali pertama anda menjalankannya, anda akan dibawa ke skrin **Start** (`#/start`
 
 Jika jenama anda sudah dirakam sebagai token reka bentuk - daripada **Penpot**, **Tokens Studio** (Figma), atau mana-mana fail **DTCG** biasa - bawa masuk keseluruhannya dan bukan menaip semula. Terdapat dua cara:
 
-- **Dalam aplikasi:** skrin Start dan editor *Your brand* menerima fail token (atau pek `LollyBrand`) secara terus - jatuhkan fail itu dan palet akan hidup.
-- **Daripada baris arahan**, untuk membina pek jenama yang boleh digunakan semula:
+- <!--i:palette--> **Dalam aplikasi:** skrin Start dan editor *Your brand* menerima fail token (atau pek `LollyBrand`) secara terus - jatuhkan fail itu dan palet akan hidup.
+- <!--i:code--> **Daripada baris arahan**, untuk membina pek jenama yang boleh digunakan semula:
 
 ```bash
 # a monolithic tokens.json, a one-file-per-set directory, or a Penpot project archive
@@ -80,15 +80,15 @@ Suapkan juga data terbuka anda sendiri ke alat: tampal atau jatuhkan jadual **CS
 
 Dengan jenama yang aktif dan bahan anda di tangan, setiap alat menghasilkan satu fail siap:
 
-- **Render** mana-mana alat kepada **SVG, PDF, PNG, JPG, WebP, video**, dan banyak lagi - pada saiz cetakan sebenar dan unit fizikal apabila anda memerlukannya. Lihat [Eksport & format](/info/exporting.html).
-- **Kongsi pautan.** Setiap keadaan alat adalah satu URL, jadi aset siap boleh dihasilkan semula dan boleh dialamatkan melalui parameter - simpan pautan itu, jana semula bila-bila masa diperlukan.
-- **Buat secara pukal.** Jalankan templat daripada hamparan (spreadsheet) dalam [grid kelompok](/info/exporting.html): satu aset siap bagi setiap baris.
-- **Automasikannya.** Render yang sama boleh dijalankan daripada [CLI](/info/cli.html) dan daripada [ejen AI](/info/ai-agents.html) - satu URL ialah API tersebut.
+- <!--i:download--> **Render** mana-mana alat kepada **SVG, PDF, PNG, JPG, WebP, video**, dan banyak lagi - pada saiz cetakan sebenar dan unit fizikal apabila anda memerlukannya. Lihat [Eksport & format](/info/exporting.html).
+- <!--i:link--> **Kongsi pautan.** Setiap keadaan alat adalah satu URL, jadi aset siap boleh dihasilkan semula dan boleh dialamatkan melalui parameter - simpan pautan itu, jana semula bila-bila masa diperlukan.
+- <!--i:layers--> **Buat secara pukal.** Jalankan templat daripada hamparan (spreadsheet) dalam [grid kelompok](/info/exporting.html): satu aset siap bagi setiap baris.
+- <!--i:cpu--> **Automasikannya.** Render yang sama boleh dijalankan daripada [CLI](/info/cli.html) dan daripada [ejen AI](/info/ai-agents.html) - satu URL ialah API tersebut.
 
 ## Ke mana seterusnya
 
 Tiga laluan, bergantung pada tujuan anda di sini:
 
-- **[Lolly untuk Pencipta](/info/creators.html)** - anda menghasilkan sesuatu. Kelebihan-kelebihannya, dan cara mendapatkan manfaat maksimum daripada aplikasi ini.
-- **[Lolly untuk Pembina](/info/builders.html)** - anda mencipta alat, mengintegrasikan, dan menggunapakai (deploy). Dokumentasi teknikal.
-- **[Lolly untuk Operator](/info/operators.html)** - anda bertanggungjawab terhadap jenama, keselamatan, dan pelaksanaan di seluruh organisasi.
+- <!--i:people--> **[Lolly untuk Pencipta](/info/creators.html)** - anda menghasilkan sesuatu. Kelebihan-kelebihannya, dan cara mendapatkan manfaat maksimum daripada aplikasi ini.
+- <!--i:code--> **[Lolly untuk Pembina](/info/builders.html)** - anda mencipta alat, mengintegrasikan, dan menggunapakai (deploy). Dokumentasi teknikal.
+- <!--i:shieldcheck--> **[Lolly untuk Operator](/info/operators.html)** - anda bertanggungjawab terhadap jenama, keselamatan, dan pelaksanaan di seluruh organisasi.

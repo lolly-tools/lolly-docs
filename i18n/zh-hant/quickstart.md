@@ -22,8 +22,8 @@ Lolly 會把你的規則——色彩、字體、版面、邏輯——轉換成�
 
 如果你的品牌已經以設計權杖的形式存在——來自 **Penpot**、**Tokens Studio**（Figma），或任何純 **DTCG** 檔案——直接整批匯入，不必重新輸入一遍。有兩種途徑：
 
-- **在應用程式內：**起始畫面與*你的品牌*編輯器都可以直接接受權杖檔案（或 `LollyBrand` 包）——拖進去，調色盤就會亮起來。
-- **透過命令列**建立一個可重複使用的品牌包：
+- <!--i:palette--> **在應用程式內：**起始畫面與*你的品牌*編輯器都可以直接接受權杖檔案（或 `LollyBrand` 包）——拖進去，調色盤就會亮起來。
+- <!--i:code--> **透過命令列**建立一個可重複使用的品牌包：
 
 ```bash
 # a monolithic tokens.json, a one-file-per-set directory, or a Penpot project archive
@@ -80,15 +80,15 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 品牌啟用、素材備妥後，每個工具都能產出一個完成的檔案：
 
-- 把任何工具**渲染**成 **SVG、PDF、PNG、JPG、WebP、影片**等等格式——需要時可以輸出真實的印刷尺寸與實體單位。詳見[匯出與格式](/info/exporting.html)。
-- **分享一個連結。**每個工具的狀態都是一個網址，因此完成的資產可重現、可透過參數定址——把連結保存下來，需要時隨時重新產生。
-- **大量產出。**在[批次表格](/info/exporting.html)中用試算表驅動範本：每一列產生一個完成的檔案。
-- **自動化。**同一套渲染流程也能從 [CLI](/info/cli.html) 或 [AI 代理](/info/ai-agents.html)執行——網址就是 API。
+- <!--i:download--> 把任何工具**渲染**成 **SVG、PDF、PNG、JPG、WebP、影片**等等格式——需要時可以輸出真實的印刷尺寸與實體單位。詳見[匯出與格式](/info/exporting.html)。
+- <!--i:link--> **分享一個連結。**每個工具的狀態都是一個網址，因此完成的資產可重現、可透過參數定址——把連結保存下來，需要時隨時重新產生。
+- <!--i:layers--> **大量產出。**在[批次表格](/info/exporting.html)中用試算表驅動範本：每一列產生一個完成的檔案。
+- <!--i:cpu--> **自動化。**同一套渲染流程也能從 [CLI](/info/cli.html) 或 [AI 代理](/info/ai-agents.html)執行——網址就是 API。
 
 ## 接下來該去哪裡
 
 三條路徑，取決於你來這裡的目的：
 
-- **[Lolly 給創作者](/info/creators.html)**——你負責做東西。這裡介紹優勢，以及如何充分運用這個應用程式。
-- **[Lolly 給建構者](/info/builders.html)**——你負責製作工具、整合與部署。這裡是技術文件。
-- **[Lolly 給維運者](/info/operators.html)**——你負責整個組織的品牌、安全性與導入推行。
+- <!--i:people--> **[Lolly 給創作者](/info/creators.html)**——你負責做東西。這裡介紹優勢，以及如何充分運用這個應用程式。
+- <!--i:code--> **[Lolly 給建構者](/info/builders.html)**——你負責製作工具、整合與部署。這裡是技術文件。
+- <!--i:shieldcheck--> **[Lolly 給維運者](/info/operators.html)**——你負責整個組織的品牌、安全性與導入推行。

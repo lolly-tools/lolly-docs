@@ -155,6 +155,8 @@ Lolly 致力于让每个人都能舒适地使用。界面支持键盘导航，�
 - **清除缓存** —— 丢弃已下载的目录内容（下次加载时会重新同步）。
 - **清除我的所有数据** —— 清空个人资料、会话和图片。*此操作无法撤销。*
 
+![The storage card on a phone-width screen: every category of on-device data named, with the Clear all my data button at the bottom](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%2C.store-manages%2C.storage-subsection%2C.store-selbar%2C.store-chip-val%2C%23store-hero-num%2C%23store-headroom%2C%23store-quota%2C%23store-reclaim%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23storage-section&filename=pv-storage-clear)
+
 任何数据都不会被传输到任何地方。没有遥测，也没有云端渲染。
 
 ## 迁移到另一台设备

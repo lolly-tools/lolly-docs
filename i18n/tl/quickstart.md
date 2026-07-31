@@ -22,8 +22,8 @@ Sa unang pagbukas, dadalhin ka sa **Start** screen (`#/start`). Bigyan ito ng pa
 
 Kung nakuha na ang iyong brand bilang design tokens - mula sa **Penpot**, **Tokens Studio** (Figma), o kahit anong plain **DTCG** file - dalhin ito nang buo sa halip na i-type ulit. Dalawang paraan:
 
-- **Sa loob ng app:** tinatanggap ng Start screen at ng *Your brand* editor ang token file (o isang `LollyBrand` pack) nang direkta - i-drop lang ito at magli-light up ang palette.
-- **Mula sa command line**, para magtayo ng reusable na brand pack:
+- <!--i:palette--> **Sa loob ng app:** tinatanggap ng Start screen at ng *Your brand* editor ang token file (o isang `LollyBrand` pack) nang direkta - i-drop lang ito at magli-light up ang palette.
+- <!--i:code--> **Mula sa command line**, para magtayo ng reusable na brand pack:
 
 ```bash
 # a monolithic tokens.json, a one-file-per-set directory, or a Penpot project archive
@@ -80,15 +80,15 @@ Literal ang "ang URL mismo ang API". Walang taong gumuhit ng chart sa ibaba: ang
 
 Kapag aktibo na ang isang brand at nasa kamay mo na ang iyong materyal, gumagawa ang bawat tool ng isang natapos na file:
 
-- **I-render** ang kahit anong tool papuntang **SVG, PDF, PNG, JPG, WebP, video**, at marami pa - sa tunay na print sizes at physical units kapag kailangan mo ang mga ito. Tingnan ang [Exporting & formats](/info/exporting.html).
-- **Magbahagi ng link.** Ang bawat estado ng tool ay isang URL, kaya ang isang natapos na asset ay reproducible at parameter-addressable - i-commit ang link, i-regenerate on demand.
-- **Gawin ito nang bulk.** Patakbuhin ang isang template mula sa isang spreadsheet sa loob ng [batch grid](/info/exporting.html): isang natapos na asset kada row.
-- **I-automate ito.** Ang parehong render ay tumatakbo mula sa [CLI](/info/cli.html) at mula sa isang [AI agent](/info/ai-agents.html) - ang URL ang API.
+- <!--i:download--> **I-render** ang kahit anong tool papuntang **SVG, PDF, PNG, JPG, WebP, video**, at marami pa - sa tunay na print sizes at physical units kapag kailangan mo ang mga ito. Tingnan ang [Exporting & formats](/info/exporting.html).
+- <!--i:link--> **Magbahagi ng link.** Ang bawat estado ng tool ay isang URL, kaya ang isang natapos na asset ay reproducible at parameter-addressable - i-commit ang link, i-regenerate on demand.
+- <!--i:layers--> **Gawin ito nang bulk.** Patakbuhin ang isang template mula sa isang spreadsheet sa loob ng [batch grid](/info/exporting.html): isang natapos na asset kada row.
+- <!--i:cpu--> **I-automate ito.** Ang parehong render ay tumatakbo mula sa [CLI](/info/cli.html) at mula sa isang [AI agent](/info/ai-agents.html) - ang URL ang API.
 
 ## Saan susunod
 
 Tatlong pathway, depende sa kung ano ang dahilan mo rito:
 
-- **[Lolly for Creators](/info/creators.html)** - gumagawa ka ng mga bagay. Ang mga bentahe, at kung paano makuha ang pinakamahusay mula sa app.
-- **[Lolly for Builders](/info/builders.html)** - gumagawa ka ng mga tool, nag-i-integrate, at nagde-deploy. Ang teknikal na dokumentasyon.
-- **[Lolly for Operators](/info/operators.html)** - responsable ka para sa brand, seguridad, at rollout sa buong organisasyon.
+- <!--i:people--> **[Lolly for Creators](/info/creators.html)** - gumagawa ka ng mga bagay. Ang mga bentahe, at kung paano makuha ang pinakamahusay mula sa app.
+- <!--i:code--> **[Lolly for Builders](/info/builders.html)** - gumagawa ka ng mga tool, nag-i-integrate, at nagde-deploy. Ang teknikal na dokumentasyon.
+- <!--i:shieldcheck--> **[Lolly for Operators](/info/operators.html)** - responsable ka para sa brand, seguridad, at rollout sa buong organisasyon.

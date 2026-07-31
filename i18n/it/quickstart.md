@@ -22,8 +22,8 @@ Al primo avvio atterri sulla schermata **Start** (`#/start`) - il [**Brand Studi
 
 Se il tuo brand è già catturato come design token - da **Penpot**, **Tokens Studio** (Figma), o un qualsiasi file **DTCG** semplice - importalo in blocco invece di reinserirlo a mano. Due percorsi:
 
-- **Nell'app:** il [Brand Studio](/info/brand-studio.html) (`#/start`) accetta direttamente un file di token, un'esportazione di Penpot, o un pacchetto `LollyBrand` - trascinalo dentro e la palette si accende.
-- **Dalla riga di comando**, per creare un pacchetto di brand riutilizzabile:
+- <!--i:palette--> **Nell'app:** il [Brand Studio](/info/brand-studio.html) (`#/start`) accetta direttamente un file di token, un'esportazione di Penpot, o un pacchetto `LollyBrand` - trascinalo dentro e la palette si accende.
+- <!--i:code--> **Dalla riga di comando**, per creare un pacchetto di brand riutilizzabile:
 
 ```bash
 # a monolithic tokens.json, a one-file-per-set directory, or a Penpot project archive
@@ -80,15 +80,15 @@ Alimenta gli strumenti anche con i tuoi dati aperti: incolla o trascina una tabe
 
 Con un brand attivo e il tuo materiale a portata di mano, ogni strumento produce un file finito:
 
-- **Renderizza** qualsiasi strumento in **SVG, PDF, PNG, JPG, WebP, video**, e altro ancora - a dimensioni di stampa reali e in unità fisiche quando ti servono. Consulta [Esportazione e formati](/info/exporting.html).
-- **Condividi un link.** Ogni stato di uno strumento è un URL, quindi un asset finito è riproducibile e indirizzabile per parametri - salva il link, rigeneralo quando vuoi.
-- **Fallo in massa.** Guida un template da un foglio di calcolo nella [griglia batch](/info/exporting.html): un asset finito per riga.
-- **Automatizzalo.** Lo stesso rendering funziona dalla [CLI](/info/cli.html) e da un [agente IA](/info/ai-agents.html) - un URL è l'API.
+- <!--i:download--> **Renderizza** qualsiasi strumento in **SVG, PDF, PNG, JPG, WebP, video**, e altro ancora - a dimensioni di stampa reali e in unità fisiche quando ti servono. Consulta [Esportazione e formati](/info/exporting.html).
+- <!--i:link--> **Condividi un link.** Ogni stato di uno strumento è un URL, quindi un asset finito è riproducibile e indirizzabile per parametri - salva il link, rigeneralo quando vuoi.
+- <!--i:layers--> **Fallo in massa.** Guida un template da un foglio di calcolo nella [griglia batch](/info/exporting.html): un asset finito per riga.
+- <!--i:cpu--> **Automatizzalo.** Lo stesso rendering funziona dalla [CLI](/info/cli.html) e da un [agente IA](/info/ai-agents.html) - un URL è l'API.
 
 ## Dove andare adesso
 
 Tre percorsi, a seconda di cosa sei venuto a fare:
 
-- **[Lolly per i creatori](/info/creators.html)** - crei cose. I vantaggi, e come ottenere il massimo dall'app.
-- **[Lolly per gli sviluppatori](/info/builders.html)** - crei strumenti, integri e distribuisci. La documentazione tecnica.
-- **[Lolly per gli operatori](/info/operators.html)** - sei responsabile del brand, della sicurezza e della diffusione in un'organizzazione.
+- <!--i:people--> **[Lolly per i creatori](/info/creators.html)** - crei cose. I vantaggi, e come ottenere il massimo dall'app.
+- <!--i:code--> **[Lolly per gli sviluppatori](/info/builders.html)** - crei strumenti, integri e distribuisci. La documentazione tecnica.
+- <!--i:shieldcheck--> **[Lolly per gli operatori](/info/operators.html)** - sei responsabile del brand, della sicurezza e della diffusione in un'organizzazione.

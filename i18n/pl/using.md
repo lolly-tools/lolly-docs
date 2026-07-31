@@ -155,6 +155,8 @@ Wszystko jest przechowywane w lokalnej bazie danych twojej przeglądarki (Indexe
 - **Wyczyść pamięć podręczną** - usuń pobraną zawartość katalogu (ponownie synchronizuje się przy następnym wczytaniu).
 - **Wyczyść wszystkie moje dane** - wymaż profil, sesje i obrazy. *Nie można cofnąć.*
 
+![The storage card on a phone-width screen: every category of on-device data named, with the Clear all my data button at the bottom](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%2C.store-manages%2C.storage-subsection%2C.store-selbar%2C.store-chip-val%2C%23store-hero-num%2C%23store-headroom%2C%23store-quota%2C%23store-reclaim%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23storage-section&filename=pv-storage-clear)
+
 Nic nie jest nigdzie przesyłane. Bez telemetrii, bez renderowania w chmurze.
 
 ## Przenoszenie na inne urządzenie

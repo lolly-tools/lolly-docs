@@ -56,9 +56,9 @@ En cualquier momento, una instalación tiene **un perfil activo** - los datos qu
 
 Así que si de verdad manejas varios contextos a la vez (tú, tu equipo, el sombrero de gestor de eventos), conservas varios paquetes y cargas el que necesites:
 
-- **El cambio más limpio:** **Perfil → Almacenamiento → Borrar todos mis datos**, y luego **Importar** el paquete del contexto al que estás pasando. Ahora creas exclusivamente como ese perfil.
-- **Superposición:** importar *sin* borrar antes **combina** - el perfil, las sesiones y las imágenes importadas se añaden encima de lo que ya hay, sustituyendo lo que tenga el mismo nombre y dejando el resto igual. Útil para incorporar las sesiones guardadas de un equipo a tu propia configuración; no es lo que quieres si necesitas una separación limpia entre papeles.
-- **En paralelo:** como todo está limitado al dispositivo, un perfil de navegador distinto, una cuenta de usuario distinta o una segunda PWA instalada llevan cada uno su propio perfil de Lolly independiente. Ejecuta tu instalación personal y la instalación del quiosco del evento a la vez, sin tener que cambiar.
+- <!--i:trash--> **El cambio más limpio:** **Perfil → Almacenamiento → Borrar todos mis datos**, y luego **Importar** el paquete del contexto al que estás pasando. Ahora creas exclusivamente como ese perfil.
+- <!--i:layers--> **Superposición:** importar *sin* borrar antes **combina** - el perfil, las sesiones y las imágenes importadas se añaden encima de lo que ya hay, sustituyendo lo que tenga el mismo nombre y dejando el resto igual. Útil para incorporar las sesiones guardadas de un equipo a tu propia configuración; no es lo que quieres si necesitas una separación limpia entre papeles.
+- <!--i:monitor--> **En paralelo:** como todo está limitado al dispositivo, un perfil de navegador distinto, una cuenta de usuario distinta o una segunda PWA instalada llevan cada uno su propio perfil de Lolly independiente. Ejecuta tu instalación personal y la instalación del quiosco del evento a la vez, sin tener que cambiar.
 
 > Conserva un paquete por contexto y renombra los archivos según lo que son (`LollyTools-events-2026.zip`, `LollyTools-me.zip`). El archivo *es* el perfil.
 
@@ -70,8 +70,8 @@ Como un perfil es totalmente local, la única forma de llevarlo a una instalaci�
 
 En **Perfil → Almacenamiento → Mover a otro dispositivo**:
 
-- **Exportar mis datos** descarga un `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - con el nombre del perfil al que pertenece, con un número de secuencia diario para que las exportaciones repetidas no choquen entre sí (las partes del nombre se omiten cuando el perfil no las tiene). Contiene tu perfil, cada sesión guardada (con su miniatura), tus imágenes subidas y tus preferencias (tema, diseño, estadísticas de actividad local).
-- **Importar datos…** en la otra instalación lee ese archivo y retomas exactamente donde lo dejaste.
+- <!--i:download--> **Exportar mis datos** descarga un `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - con el nombre del perfil al que pertenece, con un número de secuencia diario para que las exportaciones repetidas no choquen entre sí (las partes del nombre se omiten cuando el perfil no las tiene). Contiene tu perfil, cada sesión guardada (con su miniatura), tus imágenes subidas y tus preferencias (tema, diseño, estadísticas de actividad local).
+- <!--i:upload--> **Importar datos…** en la otra instalación lee ese archivo y retomas exactamente donde lo dejaste.
 
 El paquete es un zip plano y autocontenido, así que viaja por **cualquier** medio - USB, AirDrop, un recurso compartido de red, un correo a ti mismo - y el destino puede estar totalmente sin conexión. Cada parte lleva su suma de comprobación, así que un archivo dañado durante el traslado se detecta al importar en lugar de restaurarse a medias. Importar **combina** (el perfil/sesión/imagen con el mismo nombre se sobrescribe; todo lo demás se conserva), así que nunca borra un destino que ya estuviera en uso.
 
@@ -93,18 +93,20 @@ Una herramienta solo *autocompleta* los campos del perfil para los que fue dise�
 
 Tres elementos están próximos entre sí en la interfaz y es fácil confundirlos:
 
-- **Perfil** - *tú* (o tu equipo, o el papel que desempeñas): nombre, contacto, foto de perfil, tu trabajo guardado. Personal, local al dispositivo, portátil como paquete.
-- **Plataforma** - la *marca*: colores, tipografías y ajustes globales sobre los que renderiza cada herramienta. Compartida y consistente, no personal.
-- **Capacidades** - *lo que la app puede hacer*: el conjunto completo de funciones y las herramientas disponibles para ti.
+- <!--i:people--> **Perfil** - *tú* (o tu equipo, o el papel que desempeñas): nombre, contacto, foto de perfil, tu trabajo guardado. Personal, local al dispositivo, portátil como paquete.
+- <!--i:palette--> **Plataforma** - la *marca*: colores, tipografías y ajustes globales sobre los que renderiza cada herramienta. Compartida y consistente, no personal.
+- <!--i:sliders--> **Capacidades** - *lo que la app puede hacer*: el conjunto completo de funciones y las herramientas disponibles para ti.
 
 Un perfil cambia de quién *proviene* un recurso; la plataforma cambia su *aspecto*; las capacidades son *lo que puedes crear*.
 
 ### "Perfil" significa otras dos cosas en otro sitio - no esta
 
+![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&filename=pv-identity-enrol)
+
 La palabra está sobrecargada en todo el proyecto. Ninguna de estas dos es el perfil personal del que trata esta página:
 
-- **Perfil de contenido** - una configuración en tiempo de compilación en `profiles.json` que vincula un conjunto de paquetes de herramientas a un catálogo de marca (por ejemplo, `suse`, `lolly-start`). Es lo que elige un operador al desplegar, y también es lo que selecciona el **parámetro de URL/CLI** `profile`, que además selecciona una variante de *color* en el momento de exportar (la condición de imprenta ICC/CMYK - consulta [Modo URL](/info/url-mode.html)). Ambos tienen que ver con la *compilación/salida*, no contigo. Consulta [Configuración](/info/configuration.html).
-- **Perfil de identidad** - la **identidad verificada de Content Credentials** opcional que puedes registrar (un certificado de corta duración que vincula tu correo electrónico a tus exportaciones firmadas). Es una identidad de firma, distinta de los campos de nombre/contacto del perfil personal, aunque **Usar mis datos** determina si se incrusta una u otra. Consulta [Identidad de Content Credentials](/info/content-credentials-identity.html).
+- <!--i:box--> **Perfil de contenido** - una configuración en tiempo de compilación en `profiles.json` que vincula un conjunto de paquetes de herramientas a un catálogo de marca (por ejemplo, `suse`, `lolly-start`). Es lo que elige un operador al desplegar, y también es lo que selecciona el **parámetro de URL/CLI** `profile`, que además selecciona una variante de *color* en el momento de exportar (la condición de imprenta ICC/CMYK - consulta [Modo URL](/info/url-mode.html)). Ambos tienen que ver con la *compilación/salida*, no contigo. Consulta [Configuración](/info/configuration.html).
+- <!--i:seal--> **Perfil de identidad** - la **identidad verificada de Content Credentials** opcional que puedes registrar (un certificado de corta duración que vincula tu correo electrónico a tus exportaciones firmadas). Es una identidad de firma, distinta de los campos de nombre/contacto del perfil personal, aunque **Usar mis datos** determina si se incrusta una u otra. Consulta [Identidad de Content Credentials](/info/content-credentials-identity.html).
 
 ## Privacidad
 

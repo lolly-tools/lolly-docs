@@ -155,6 +155,8 @@ Lolly का लक्ष्य है कि इसका उपयोग ह�
 - **Clear cache** — डाउनलोड की गई कैटलॉग सामग्री हटाएँ (अगले लोड पर फिर से सिंक हो जाती है)।
 - **Clear all my data** — प्रोफ़ाइल, सेशन और इमेज मिटा दें। *इसे पूर्ववत नहीं किया जा सकता।*
 
+![The storage card on a phone-width screen: every category of on-device data named, with the Clear all my data button at the bottom](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%2C.store-manages%2C.storage-subsection%2C.store-selbar%2C.store-chip-val%2C%23store-hero-num%2C%23store-headroom%2C%23store-quota%2C%23store-reclaim%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23storage-section&filename=pv-storage-clear)
+
 कहीं कुछ भी नहीं भेजा जाता। न टेलीमेट्री, न क्लाउड रेंडरिंग।
 
 ## दूसरे डिवाइस पर जाना

@@ -56,9 +56,9 @@ Sa anumang sandali, ang isang install ay may **isang aktibong profile** - ang mg
 
 Kaya kung talagang nagpapalit-palit ka ng maraming konteksto (ikaw, ang team mo, ang event-manager hat), magtago ka ng ilang bundle at i-load ang kailangan mo:
 
-- **Cleanest switch:** **Profile → Storage → Clear all my data**, pagkatapos **Import** ang bundle para sa konteksto na papasukan mo. Lilikha ka na ngayon nang purong bilang profile na iyon.
-- **Layering:** kapag nag-import ka *nang hindi muna* nag-clear, ito ay **nag-me-merge** - ang na-import na profile, sessions, at mga larawan ay ilalapat sa ibabaw ng nariyan na, pinapalitan ang anumang may parehong pangalan at iniiwan ang iba. Kapaki-pakinabang kapag gusto mong isama ang saved sessions ng isang team sa sarili mong setup; hindi ito ang gusto mo kung kailangan mo ng malinis na role boundary.
-- **Side by side:** dahil ang lahat ay device-scoped, ang hiwalay na browser profile, hiwalay na user account, o pangalawang naka-install na PWA ay bawat isa'y may sariling independent na Lolly profile. Patakbuhin nang sabay ang personal mong install at ang event kiosk install, walang pagpapalit.
+- <!--i:trash--> **Cleanest switch:** **Profile → Storage → Clear all my data**, pagkatapos **Import** ang bundle para sa konteksto na papasukan mo. Lilikha ka na ngayon nang purong bilang profile na iyon.
+- <!--i:layers--> **Layering:** kapag nag-import ka *nang hindi muna* nag-clear, ito ay **nag-me-merge** - ang na-import na profile, sessions, at mga larawan ay ilalapat sa ibabaw ng nariyan na, pinapalitan ang anumang may parehong pangalan at iniiwan ang iba. Kapaki-pakinabang kapag gusto mong isama ang saved sessions ng isang team sa sarili mong setup; hindi ito ang gusto mo kung kailangan mo ng malinis na role boundary.
+- <!--i:monitor--> **Side by side:** dahil ang lahat ay device-scoped, ang hiwalay na browser profile, hiwalay na user account, o pangalawang naka-install na PWA ay bawat isa'y may sariling independent na Lolly profile. Patakbuhin nang sabay ang personal mong install at ang event kiosk install, walang pagpapalit.
 
 > Magtago ng isang bundle bawat konteksto at palitan ang pangalan ng mga file ayon sa kung ano sila (`LollyTools-events-2026.zip`, `LollyTools-me.zip`). Ang file *ang* profile.
 
@@ -70,8 +70,8 @@ Dahil ganap na local ang profile, ang tanging paraan para mailagay ito sa isang 
 
 Sa ilalim ng **Profile → Storage → Move to another device**:
 
-- **Export my data** ay nagda-download ng isang `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - pinangalanan batay sa profile na kinabibilangan nito, may per-day sequence number para hindi magbanggaan ang paulit-ulit na exports (tinatanggal ang mga bahagi ng pangalan kapag wala nito ang profile). Naglalaman ito ng iyong profile, bawat saved session (kasama ang thumbnail nito), ang iyong mga na-upload na larawan, at ang iyong mga preference (theme, layout, local activity stats).
-- **Import data…** sa kabilang install ay babasahin ang file na iyon at magpapatuloy ka mula mismo sa huling tinigilan mo.
+- <!--i:download--> **Export my data** ay nagda-download ng isang `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - pinangalanan batay sa profile na kinabibilangan nito, may per-day sequence number para hindi magbanggaan ang paulit-ulit na exports (tinatanggal ang mga bahagi ng pangalan kapag wala nito ang profile). Naglalaman ito ng iyong profile, bawat saved session (kasama ang thumbnail nito), ang iyong mga na-upload na larawan, at ang iyong mga preference (theme, layout, local activity stats).
+- <!--i:upload--> **Import data…** sa kabilang install ay babasahin ang file na iyon at magpapatuloy ka mula mismo sa huling tinigilan mo.
 
 Ang bundle ay simple at self-contained na zip, kaya puwede itong dalhin sa **anumang** paraan - USB, AirDrop, network share, email-to-yourself - at maaaring ganap na offline ang target. Bawat bahagi ay may checksum, kaya ang file na nasira sa paglipat ay mahuhuli sa import sa halip na ma-restore nang kalahating-sira. Ang Import ay **nag-me-merge** (ang profile/session/image na may parehong pangalan ay ino-overwrite; pinapanatili ang lahat ng iba), kaya hindi nito kailanman bubura ang isang target na ginagamit na.
 
@@ -93,18 +93,20 @@ Ang isang tool ay *nagpu-pre-fill* lamang ng mga field ng profile na talagang di
 
 Tatlong bagay ang magkalapit sa UI at madaling malito:
 
-- **Profile** - *ikaw* (o ang team mo, o ang role na kinasusuutan mo): pangalan, contact, headshot, ang saved work mo. Personal, device-local, portable bilang bundle.
-- **Platform** - ang *brand*: mga kulay, font, at global settings na pinagbabatayan ng bawat tool sa pag-render. Shared at consistent, hindi personal.
-- **Capabilities** - *ano ang kaya ng app*: ang buong feature set at ang mga tool na available sa iyo.
+- <!--i:people--> **Profile** - *ikaw* (o ang team mo, o ang role na kinasusuutan mo): pangalan, contact, headshot, ang saved work mo. Personal, device-local, portable bilang bundle.
+- <!--i:palette--> **Platform** - ang *brand*: mga kulay, font, at global settings na pinagbabatayan ng bawat tool sa pag-render. Shared at consistent, hindi personal.
+- <!--i:sliders--> **Capabilities** - *ano ang kaya ng app*: ang buong feature set at ang mga tool na available sa iyo.
 
 Ang profile ang nagbabago kung *kanino galing* ang isang asset; ang platform ang nagbabago kung *ano ang itsura* nito; ang capabilities ang *magagawa mo*.
 
 ### May dalawa pang kahulugan ang "profile" sa ibang bahagi - hindi ito ang tinutukoy dito
 
+![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&filename=pv-identity-enrol)
+
 Masyadong marami ang kahulugan ng salitang ito sa buong proyekto. Wala sa mga sumusunod ang tumutukoy sa personal na profile na pinag-uusapan ng pahinang ito:
 
-- **Content profile** - isang build-time na configuration sa `profiles.json` na nagbubuklod ng isang set ng tool packs sa isang brand catalog (hal. `suse`, `lolly-start`). Ito ang pinipili ng operator kapag nag-de-deploy, at ito rin ang pinipili ng `profile` **URL/CLI parameter** bilang isang *colour* variant sa oras ng export (ang ICC/CMYK press condition - tingnan ang [URL Mode](/info/url-mode.html)). Parehong tungkol sa *build/output*, hindi tungkol sa *iyo*. Tingnan ang [Configuration](/info/configuration.html).
-- **Identity profile** - ang opsyonal na **verified Content Credentials identity** na puwede mong i-enrol (isang short-lived na certificate na nag-uugnay sa iyong email sa mga naka-sign na export mo). Ito ay isang signing identity, hiwalay sa name/contact fields ng personal na profile, bagama't kinokontrol ng **Use my details** kung isasama man ang alinman dito. Tingnan ang [Content Credentials Identity](/info/content-credentials-identity.html).
+- <!--i:box--> **Content profile** - isang build-time na configuration sa `profiles.json` na nagbubuklod ng isang set ng tool packs sa isang brand catalog (hal. `suse`, `lolly-start`). Ito ang pinipili ng operator kapag nag-de-deploy, at ito rin ang pinipili ng `profile` **URL/CLI parameter** bilang isang *colour* variant sa oras ng export (ang ICC/CMYK press condition - tingnan ang [URL Mode](/info/url-mode.html)). Parehong tungkol sa *build/output*, hindi tungkol sa *iyo*. Tingnan ang [Configuration](/info/configuration.html).
+- <!--i:seal--> **Identity profile** - ang opsyonal na **verified Content Credentials identity** na puwede mong i-enrol (isang short-lived na certificate na nag-uugnay sa iyong email sa mga naka-sign na export mo). Ito ay isang signing identity, hiwalay sa name/contact fields ng personal na profile, bagama't kinokontrol ng **Use my details** kung isasama man ang alinman dito. Tingnan ang [Content Credentials Identity](/info/content-credentials-identity.html).
 
 ## Privacy
 

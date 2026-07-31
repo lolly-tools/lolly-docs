@@ -22,8 +22,8 @@ Lần chạy đầu tiên sẽ đưa bạn tới màn hình **Start** (`#/start`
 
 Nếu thương hiệu của bạn đã được lưu dưới dạng token thiết kế - từ **Penpot**, **Tokens Studio** (Figma), hoặc bất kỳ tệp **DTCG** thuần nào - hãy mang toàn bộ vào thay vì phải nhập lại từ đầu. Có hai cách:
 
-- **Trong ứng dụng:** màn hình Start và trình chỉnh sửa *Your brand* chấp nhận trực tiếp một tệp token (hoặc một gói `LollyBrand`) - thả vào là bảng màu sẽ sáng lên ngay.
-- **Từ dòng lệnh**, để dựng một gói thương hiệu có thể tái sử dụng:
+- <!--i:palette--> **Trong ứng dụng:** màn hình Start và trình chỉnh sửa *Your brand* chấp nhận trực tiếp một tệp token (hoặc một gói `LollyBrand`) - thả vào là bảng màu sẽ sáng lên ngay.
+- <!--i:code--> **Từ dòng lệnh**, để dựng một gói thương hiệu có thể tái sử dụng:
 
 ```bash
 # a monolithic tokens.json, a one-file-per-set directory, or a Penpot project archive
@@ -80,15 +80,15 @@ Toàn bộ quá trình nhập diễn ra **ngay trên thiết bị của bạn** 
 
 Với một thương hiệu đang hoạt động và tư liệu trong tay, mọi công cụ đều tạo ra một tệp hoàn chỉnh:
 
-- **Render** bất kỳ công cụ nào ra **SVG, PDF, PNG, JPG, WebP, video**, và nhiều hơn nữa - theo đúng kích thước in và đơn vị vật lý khi bạn cần. Xem [Xuất & định dạng](/info/exporting.html).
-- **Chia sẻ một liên kết.** Mọi trạng thái của công cụ đều là một URL, nên một tệp hoàn chỉnh có thể tái tạo lại và định vị được qua tham số - lưu lại liên kết, tạo lại bất cứ khi nào cần.
-- **Thực hiện hàng loạt.** Chạy một mẫu từ một bảng tính trong [lưới xử lý hàng loạt](/info/exporting.html): mỗi hàng cho ra một tệp hoàn chỉnh.
-- **Tự động hoá nó.** Cùng một quy trình render đó chạy được từ [CLI](/info/cli.html) và từ một [tác nhân AI](/info/ai-agents.html) - một URL chính là API.
+- <!--i:download--> **Render** bất kỳ công cụ nào ra **SVG, PDF, PNG, JPG, WebP, video**, và nhiều hơn nữa - theo đúng kích thước in và đơn vị vật lý khi bạn cần. Xem [Xuất & định dạng](/info/exporting.html).
+- <!--i:link--> **Chia sẻ một liên kết.** Mọi trạng thái của công cụ đều là một URL, nên một tệp hoàn chỉnh có thể tái tạo lại và định vị được qua tham số - lưu lại liên kết, tạo lại bất cứ khi nào cần.
+- <!--i:layers--> **Thực hiện hàng loạt.** Chạy một mẫu từ một bảng tính trong [lưới xử lý hàng loạt](/info/exporting.html): mỗi hàng cho ra một tệp hoàn chỉnh.
+- <!--i:cpu--> **Tự động hoá nó.** Cùng một quy trình render đó chạy được từ [CLI](/info/cli.html) và từ một [tác nhân AI](/info/ai-agents.html) - một URL chính là API.
 
 ## Đi đâu tiếp theo
 
 Ba lối đi, tuỳ vào việc bạn ở đây để làm gì:
 
-- **[Lolly dành cho Người sáng tạo](/info/creators.html)** - bạn là người tạo ra mọi thứ. Những lợi thế, và cách khai thác tối đa ứng dụng.
-- **[Lolly dành cho Người xây dựng](/info/builders.html)** - bạn viết công cụ, tích hợp, và triển khai. Tài liệu kỹ thuật.
-- **[Lolly dành cho Người vận hành](/info/operators.html)** - bạn chịu trách nhiệm về thương hiệu, bảo mật, và triển khai trên toàn tổ chức.
+- <!--i:people--> **[Lolly dành cho Người sáng tạo](/info/creators.html)** - bạn là người tạo ra mọi thứ. Những lợi thế, và cách khai thác tối đa ứng dụng.
+- <!--i:code--> **[Lolly dành cho Người xây dựng](/info/builders.html)** - bạn viết công cụ, tích hợp, và triển khai. Tài liệu kỹ thuật.
+- <!--i:shieldcheck--> **[Lolly dành cho Người vận hành](/info/operators.html)** - bạn chịu trách nhiệm về thương hiệu, bảo mật, và triển khai trên toàn tổ chức.

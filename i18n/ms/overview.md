@@ -68,9 +68,9 @@ Kerana kelulusan terletak pada alat dan bukan pada fail (lihat [Bagaimana Lolly 
 
 Alat deterministik yang sama mencapai skala itu melalui tiga cara, semuanya menghasilkan output serupa yang telah diluluskan terlebih dahulu:
 
-- **Seorang manusia, di dalam aplikasi.** Grid kelompok `/pro`: tampal atau import baris, dapatkan satu aset siap bagi setiap baris, muat turun zipnya. Tiada kemahiran reka bentuk, tiada tiket, tiada penantian.
-- **Seorang pembangun, dari baris perintah.** CLI menjalankan enjin *yang sama* dan laluan render *yang sama* tanpa kepala, jadi alat itu boleh diurutkan merentasi kesemua 10,000 baris di dalam satu skrip atau saluran paip malam. Satu panggilan `lolly <tool> --field=…` dalam gelung ialah keseluruhan penyatuannya.
-- **Satu sistem atau ejen AI, melalui MCP.** Alat yang sama dikendalikan secara atur cara, pada kesetiaan yang sama dan pada skala yang lebih besar lagi - kerana mesin tidak akan jemu sementara beribu-ribu fail masuk.
+- <!--i:people--> **Seorang manusia, di dalam aplikasi.** Grid kelompok `/pro`: tampal atau import baris, dapatkan satu aset siap bagi setiap baris, muat turun zipnya. Tiada kemahiran reka bentuk, tiada tiket, tiada penantian.
+- <!--i:code--> **Seorang pembangun, dari baris perintah.** CLI menjalankan enjin *yang sama* dan laluan render *yang sama* tanpa kepala, jadi alat itu boleh diurutkan merentasi kesemua 10,000 baris di dalam satu skrip atau saluran paip malam. Satu panggilan `lolly <tool> --field=…` dalam gelung ialah keseluruhan penyatuannya.
+- <!--i:cpu--> **Satu sistem atau ejen AI, melalui MCP.** Alat yang sama dikendalikan secara atur cara, pada kesetiaan yang sama dan pada skala yang lebih besar lagi - kerana mesin tidak akan jemu sementara beribu-ribu fail masuk.
 
 Satu set kekangan jenama, ditetapkan sekali oleh pereka bentuk; tiga laluan ke output diluluskan yang serupa - dan laluan mesin menskala paling jauh, kerana ia tidak pernah letih sementara fail terus masuk.
 

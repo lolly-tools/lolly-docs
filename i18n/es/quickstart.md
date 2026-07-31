@@ -22,8 +22,8 @@ La primera vez que abres la app aterrizas en la pantalla **Start** (`#/start`). 
 
 Si tu marca ya está capturada como tokens de diseño -desde **Penpot**, **Tokens Studio** (Figma), o cualquier archivo **DTCG** plano- impórtala tal cual en lugar de volver a escribirla. Hay dos vías:
 
-- **Desde la app:** la pantalla Start y el editor *Tu marca* aceptan directamente un archivo de tokens (o un paquete `LollyBrand`) - suéltalo y la paleta se activa.
-- **Desde la línea de comandos**, para crear un paquete de marca reutilizable:
+- <!--i:palette--> **Desde la app:** la pantalla Start y el editor *Tu marca* aceptan directamente un archivo de tokens (o un paquete `LollyBrand`) - suéltalo y la paleta se activa.
+- <!--i:code--> **Desde la línea de comandos**, para crear un paquete de marca reutilizable:
 
 ```bash
 # un tokens.json monolítico, un directorio con un archivo por conjunto, o un archivo de proyecto de Penpot
@@ -80,15 +80,15 @@ Alimenta las herramientas también con tus propios datos abiertos: pega o suelta
 
 Con una marca activa y tu material a mano, cada herramienta produce un archivo terminado:
 
-- **Renderiza** cualquier herramienta a **SVG, PDF, PNG, JPG, WebP, vídeo**, y más - a tamaños de impresión reales y en unidades físicas cuando lo necesites. Consulta [Exportación y formatos](/info/exporting.html).
-- **Comparte un enlace.** Cada estado de una herramienta es una URL, así que un recurso terminado es reproducible y direccionable por parámetros - guarda el enlace, regenera cuando quieras.
-- **Hazlo en lote.** Alimenta una plantilla desde una hoja de cálculo en la [cuadrícula por lotes](/info/exporting.html): un recurso terminado por fila.
-- **Automatízalo.** El mismo renderizado se ejecuta desde la [CLI](/info/cli.html) y desde un [agente de IA](/info/ai-agents.html) - una URL es la API.
+- <!--i:download--> **Renderiza** cualquier herramienta a **SVG, PDF, PNG, JPG, WebP, vídeo**, y más - a tamaños de impresión reales y en unidades físicas cuando lo necesites. Consulta [Exportación y formatos](/info/exporting.html).
+- <!--i:link--> **Comparte un enlace.** Cada estado de una herramienta es una URL, así que un recurso terminado es reproducible y direccionable por parámetros - guarda el enlace, regenera cuando quieras.
+- <!--i:layers--> **Hazlo en lote.** Alimenta una plantilla desde una hoja de cálculo en la [cuadrícula por lotes](/info/exporting.html): un recurso terminado por fila.
+- <!--i:cpu--> **Automatízalo.** El mismo renderizado se ejecuta desde la [CLI](/info/cli.html) y desde un [agente de IA](/info/ai-agents.html) - una URL es la API.
 
 ## A dónde ir ahora
 
 Tres caminos, según lo que hayas venido a hacer:
 
-- **[Lolly para creadores](/info/creators.html)** - creas cosas. Las ventajas, y cómo sacarle el máximo partido a la app.
-- **[Lolly para desarrolladores](/info/builders.html)** - creas herramientas, integras y despliegas. La documentación técnica.
-- **[Lolly para operadores](/info/operators.html)** - eres responsable de la marca, la seguridad y el despliegue en una organización.
+- <!--i:people--> **[Lolly para creadores](/info/creators.html)** - creas cosas. Las ventajas, y cómo sacarle el máximo partido a la app.
+- <!--i:code--> **[Lolly para desarrolladores](/info/builders.html)** - creas herramientas, integras y despliegas. La documentación técnica.
+- <!--i:shieldcheck--> **[Lolly para operadores](/info/operators.html)** - eres responsable de la marca, la seguridad y el despliegue en una organización.
