@@ -15,7 +15,7 @@ Lolly は大量のコンテンツを生成します。リスクを防ぐため�
 
 ### フィーチャーフラグとは何ですか？
 
-![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&filename=pd-feature-flags)
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&filename=pd-feature-flags)
 
 フィーチャーフラグは Lolly の各機能のオン・オフを切り替えます。通常はこれらを管理者が制御しますが、Lolly ではあなた自身が制御します。
 

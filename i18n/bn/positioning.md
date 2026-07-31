@@ -63,7 +63,7 @@ Deck Studio এখানকার সিলিংয়ের একটা ভ�
 
 ## এটি অনন্যভাবে যা প্রদান করে
 
-![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=192&waitMs=3200&format=png&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
 
 - **প্রসঙ্গের মধ্যে নিরাপদে সরবরাহ করা অসাধারণ ডিজাইন সম্ভাবনা।** টুলগুলো হার্ড-কোডেড গার্ড-রেলের ভেতরে দুঃসাহসী ডিজাইন আইডিয়া প্রকাশ করতে পারে।
 - **সফটওয়্যার-ডিফাইনড কনটেন্ট অটোমেশন যা চূড়ান্ত অ্যাসেট ফিরিয়ে দেয়।** ইনপুট → চূড়ান্ত ফাইল। "এখন আপনার ডিজাইন টুল থেকে সেভ করে পোস্ট-প্রসেস করুন" বলে কিছু নেই।

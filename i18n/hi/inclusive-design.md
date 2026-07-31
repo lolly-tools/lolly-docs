@@ -75,7 +75,7 @@ Lolly एक क्रिएटिव टूल है: लोग यहाँ �
 
 ## भाषा और लोकलाइज़ेशन की प्राथमिकता
 
-![The appearance settings rendered in Arabic on a phone-width screen: a fully right-to-left layout, not a mirrored afterthought](/t/url-shot?url=%2F%23%2Fprofile%3Flang%3Dar&width=430&height=900&dpi=192&waitMs=2200&scrollDepth=950&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=png&cropSelector=.profile-card--appearance&filename=incl-profile-rtl)
+![The appearance settings rendered in Arabic on a phone-width screen: a fully right-to-left layout, not a mirrored afterthought](/t/url-shot?url=%2F%23%2Fprofile%3Flang%3Dar&width=430&height=900&dpi=192&waitMs=2200&scrollDepth=950&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.profile-card--appearance&filename=incl-profile-rtl)
 
 - <!--i:globe--> Lolly का इंटरफ़ेस और दस्तावेज़ 25 से ज़्यादा भाषाओं में अनुवादित हैं, और
   हम **भाषाओं को इस आधार पर प्राथमिकता देते हैं कि उन्हें कितने लोग बोलते हैं**, बाज़ार के

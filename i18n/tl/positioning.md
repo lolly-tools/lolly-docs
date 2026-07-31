@@ -63,7 +63,7 @@ Ito ang paradigm shift na talagang naihahatid ng deterministic na engine: hindi 
 
 ## Ang Natatanging Inaalok Nito
 
-![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=192&waitMs=3200&format=png&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
 
 - **Ligtas na inihahatid na malawak na potensyal ng disenyo, sa loob ng konteksto.** Kayang ipahayag ng mga tool ang mga matapang na ideya sa disenyo sa loob ng hard-coded na guard-rail.
 - **Software-defined na content automation na nagbabalik ng huling asset.** Input → huling file. Walang "i-save mo na lang mula sa iyong design tool at i-post-process."

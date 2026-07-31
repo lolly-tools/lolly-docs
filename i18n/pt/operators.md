@@ -38,7 +38,7 @@ Os modelos completos de implantação e o passo a passo de administração estã
 
 O Text Helper é o mesmo acordo, mas para texto em vez de arquivos. É a bancada com abas que uma pessoa do time iria procurar no site de um estranho, e ele não declara input nenhum, porque nada do que ele toca sai da página.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&filename=ov2-text-helper)
 
 O Compress PDF completa o conjunto: o anexo grande demais encolhe sob um ajuste de qualidade que você escolhe, na própria máquina que já o tem.
 
@@ -73,7 +73,7 @@ Cada entrada de ferramenta pode ser expressa como um parâmetro de URL, e as mes
 
 ## Proveniência e Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&filename=aud-verify-drop)
 
 As exportações podem carregar **Content Credentials** - um manifesto [C2PA](https://c2pa.org) assinado, vinculado a um hash dos bytes do arquivo. Qualquer alteração posterior no arquivo quebra o selo, então um verificador compatível com C2PA **detecta a alteração de forma criptográfica, offline**. A credencial é *evidência* de adulteração: ela sinaliza a adulteração em vez de impedi-la, que é justamente o que torna possível a verificação totalmente offline.
 

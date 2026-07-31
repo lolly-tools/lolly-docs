@@ -38,7 +38,7 @@ Den fullstendige gjennomgangen av driftsettingsmodeller og administrasjon finner
 
 Text Helper er den samme avtalen for tekst i stedet for filer. Det er arbeidsbenken med faner som en ansatt ellers ville lett etter på en fremmeds nettsted, og den deklarerer ingen inndata i det hele tatt, fordi ingenting den berører noen gang forlater siden.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&filename=ov2-text-helper)
 
 Compress PDF fullfører settet: det for store vedlegget krymper under en kvalitetsinnstilling du velger, på maskinen som allerede har det.
 
@@ -70,7 +70,7 @@ Hver verktøyinndata kan uttrykkes som en URL-parameter, og de samme inndataene 
 
 ## Opprinnelse og Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&filename=aud-verify-drop)
 
 Eksporter kan bære **Content Credentials** - et signert [C2PA](https://c2pa.org)-manifest bundet til en hash av filens bytes. Enhver senere endring av filen bryter forseglingen, så en C2PA-bevisst verifikator **oppdager endring kryptografisk, offline**. Legitimasjonen er manipulasjons-*synlig*: den flagger manipulasjon i stedet for å forhindre den, og det er nettopp det som gjør fullstendig offline-verifisering mulig.
 

@@ -32,7 +32,7 @@ Slovo „profil" navozuje dojem jedné pevně dané osoby, ale v Lolly je to sp�
 
 ### Jako jednotlivec
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&filename=pd-profile-headshot)
 
 Výchozí případ. Profil jsi ty: tvé jméno, tvůj e-mail, tvá profilovka. Nastavíš ho jednou a tvůj podpis, tvůj odznak, tvůj konferenční lockup se pak vyplní samy. Tohle bude stačit většině lidí.
 
@@ -81,7 +81,7 @@ Přesnou strukturu balíčku, politiku verzí a pravidla integrity najdeš v **[
 
 ## Jak nástroje používají tvůj profil
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&filename=pd-use-my-details)
 
 Nástroj vždy jen *předvyplní* ta pole profilu, pro která byl výslovně postavený:
 

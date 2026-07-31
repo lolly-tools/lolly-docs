@@ -72,7 +72,7 @@ Lolly أداة إبداعية: يأتي الناس إلى هنا ليصنعوا 
 
 ## أولوية اللغات والتوطين
 
-![The appearance settings rendered in Arabic on a phone-width screen: a fully right-to-left layout, not a mirrored afterthought](/t/url-shot?url=%2F%23%2Fprofile%3Flang%3Dar&width=430&height=900&dpi=192&waitMs=2200&scrollDepth=950&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=png&cropSelector=.profile-card--appearance&filename=incl-profile-rtl)
+![The appearance settings rendered in Arabic on a phone-width screen: a fully right-to-left layout, not a mirrored afterthought](/t/url-shot?url=%2F%23%2Fprofile%3Flang%3Dar&width=430&height=900&dpi=192&waitMs=2200&scrollDepth=950&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.profile-card--appearance&filename=incl-profile-rtl)
 
 - <!--i:globe--> واجهة Lolly ووثائقه مترجمة إلى أكثر من 25 لغة، ونحن **نرتب
   أولوية اللغات بعدد المتحدثين بها**، لا بإيرادات السوق: فقد وصلت الهندية

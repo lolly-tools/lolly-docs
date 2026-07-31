@@ -63,7 +63,7 @@ Deck Studio 很能说明这里的上限有多高：一整套幻灯片以数据�
 
 ## 独有价值
 
-![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=192&waitMs=3200&format=png&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
 
 - **在受控情境中安全释放大胆的设计潜力。** 工具可以在硬编码的护栏内表达大胆的设计理念。
 - **软件定义的内容自动化，直接产出最终素材。** 输入 → 成品文件。不再需要"从设计工具中导出后再做后期处理"。

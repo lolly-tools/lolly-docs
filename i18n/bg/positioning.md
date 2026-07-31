@@ -63,7 +63,7 @@ Deck Studio е добра мярка за тавана тук: цяла през
 
 ## Какво уникално предлага
 
-![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=192&waitMs=3200&format=png&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
 
 - **Смел дизайнерски потенциал, доставен безопасно в контекст.** Инструментите могат да изразяват дръзки дизайнерски идеи в рамките на твърдо кодирани предпазни релси.
 - **Софтуерно дефинирана автоматизация на съдържание, която връща крайния актив.** Вход → краен файл. Без „сега го запази от дизайнерския си инструмент и го обработи допълнително“.

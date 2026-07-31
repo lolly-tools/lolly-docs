@@ -32,7 +32,7 @@ La parola "profilo" suggerisce una persona fissa unica, ma in Lolly è in realt�
 
 ### Come individuo
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&filename=pd-profile-headshot)
 
 L'impostazione predefinita. Il profilo sei tu: il tuo nome, la tua email, la tua foto. Configuralo una volta e la tua firma, il tuo badge, il tuo lockup per conferenze si completano tutti da soli. Questo è tutto ciò di cui la maggior parte delle persone avrà mai bisogno.
 
@@ -81,7 +81,7 @@ Per la struttura esatta del pacchetto, la politica delle versioni, e le regole d
 
 ## Come gli strumenti usano il tuo profilo
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&filename=pd-use-my-details)
 
 Uno strumento *precompila* solo i campi del profilo per cui è stato esplicitamente costruito per associarsi:
 

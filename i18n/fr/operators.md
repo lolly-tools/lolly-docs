@@ -38,7 +38,7 @@ Le détail complet des modèles de déploiement et le guide d'administration se 
 
 Text Helper propose le même marché, pour du texte plutôt que des fichiers. C'est l'atelier à onglets qu'un employé irait sinon chercher sur le site d'un inconnu, et il ne déclare aucune entrée, parce que rien de ce qu'il touche ne quitte jamais la page.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&filename=ov2-text-helper)
 
 Compress PDF complète l'ensemble : la pièce jointe trop lourde est réduite selon un réglage de qualité que tu choisis, sur la machine qui la contient déjà.
 
@@ -73,7 +73,7 @@ Chaque entrée d'outil peut s'exprimer comme un paramètre d'URL, et les mêmes 
 
 ## Provenance et Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&filename=aud-verify-drop)
 
 Les exports peuvent porter des **Content Credentials** - un manifeste [C2PA](https://c2pa.org) signé, lié à un hash des octets du fichier. Tout changement ultérieur du fichier brise le sceau, si bien qu'un vérificateur compatible C2PA **détecte l'altération cryptographiquement, hors ligne**. Le credential est détectable en cas de *falsification* : il signale la falsification plutôt que de l'empêcher, ce qui est précisément ce qui rend possible une vérification entièrement hors ligne.
 

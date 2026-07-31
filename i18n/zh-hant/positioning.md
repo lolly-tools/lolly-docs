@@ -63,7 +63,7 @@ Deck Studio 很能說明這裡的天花板有多高：一整份投影片以資�
 
 ## 獨有的能力
 
-![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=192&waitMs=3200&format=png&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
 
 - **在情境中安全發揮天馬行空的設計潛力。** 工具可以在寫死的防護機制內,表達大膽的設計構想。
 - **軟體定義的內容自動化,直接產出最終資產。** 輸入 → 最終檔案。不需要「先從設計工具存檔,再進行後製處理」。

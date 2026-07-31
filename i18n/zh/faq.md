@@ -19,7 +19,7 @@ Lolly 会生成大量内容。我们采取严格的数据最小化方针来降�
 
 ### 什么是功能开关(feature flags)?
 
-![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&filename=pd-feature-flags)
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&filename=pd-feature-flags)
 
 功能开关用于开启或关闭 Lolly 的部分功能。通常这些开关由管理员掌控——而在 Lolly 中,由你自己掌控。
 

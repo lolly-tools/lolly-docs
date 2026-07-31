@@ -63,7 +63,7 @@ Deck Studio यहाँ की छत का अच्छा पैमाना
 
 ## यह विशिष्ट रूप से क्या प्रदान करता है
 
-![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=192&waitMs=3200&format=png&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
 
 - **संदर्भ के भीतर सुरक्षित ढंग से पहुँचाई गई बेलगाम डिज़ाइन संभावनाएँ।** टूल हार्ड-कोडेड गार्ड-रेल्स के भीतर साहसिक डिज़ाइन आइडिया व्यक्त कर सकते हैं।
 - **सॉफ़्टवेयर-डिफ़ाइंड कंटेंट ऑटोमेशन जो अंतिम एसेट लौटाता है।** इनपुट → अंतिम फ़ाइल। कोई "अब इसे अपने डिज़ाइन टूल से सेव करके पोस्ट-प्रोसेस करें" नहीं।

@@ -32,7 +32,7 @@
 
 ### एक व्यक्ति के रूप में
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&filename=pd-profile-headshot)
 
 डिफ़ॉल्ट। प्रोफ़ाइल यानी आप: आपका नाम, आपका ईमेल, आपका हेडशॉट। एक बार सेट करें और आपका सिग्नेचर, आपका बैज, आपका कॉन्फ़्रेंस लॉकअप सब अपने-आप भर जाते हैं। ज़्यादातर लोगों को इससे अधिक की ज़रूरत कभी नहीं पड़ेगी।
 
@@ -81,7 +81,7 @@ Lolly में वह भूमिका बस **एक और प्रोफ
 
 ## टूल आपकी प्रोफ़ाइल का उपयोग कैसे करते हैं
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&filename=pd-use-my-details)
 
 कोई भी टूल केवल वही प्रोफ़ाइल फ़ील्ड *प्री-फ़िल* करता है जिन्हें बाँधने के लिए वह स्पष्ट रूप से बनाया गया था:
 

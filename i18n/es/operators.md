@@ -38,7 +38,7 @@ Los modelos de despliegue completos y la guía de administración se encuentran 
 
 Text Helper es el mismo trato, pero con texto en lugar de archivos. Es el banco de trabajo con pestañas que, si no, una persona del equipo iría a buscar en la web de un desconocido, y no declara ninguna entrada porque nada de lo que toca sale nunca de la página.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&filename=ov2-text-helper)
 
 Compress PDF completa el conjunto: el adjunto demasiado grande se reduce con un ajuste de calidad que eliges tú, en la misma máquina que ya lo tiene.
 
@@ -73,7 +73,7 @@ Cada entrada de una herramienta puede expresarse como un parámetro de URL, y la
 
 ## Procedencia y Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&filename=aud-verify-drop)
 
 Las exportaciones pueden llevar **Content Credentials** - un manifiesto [C2PA](https://c2pa.org) firmado y vinculado a un hash de los bytes del archivo. Cualquier cambio posterior en el archivo rompe el sello, así que un verificador compatible con C2PA **detecta la alteración de forma criptográfica y sin conexión**. La credencial deja *evidencia* de manipulación: señala la manipulación en lugar de impedirla, que es precisamente lo que hace posible la verificación totalmente sin conexión.
 

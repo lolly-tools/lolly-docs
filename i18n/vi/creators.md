@@ -42,7 +42,7 @@ Lolly không cố gắng trở thành Canva hay Figma. Nó có chỗ đứng ở
 
 Street Map là ví dụ tiêu biểu cho sự đánh đổi này: bạn chọn một thành phố và vài màu sắc, còn cách vẽ bản đồ, độ dày của đường và mặt nước đã được quyết định sẵn cho bạn.
 
-![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=192&waitMs=3200&cropSelector=%23tool-canvas&format=png&filename=vt-street-map-poster)
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&filename=vt-street-map-poster)
 
 Điền vào vài trường, nhận về sản phẩm hoàn chỉnh - không cần chọn phông chữ, không cần băn khoăn về màu sắc, không còn câu hỏi "đây có phải logo đúng không?" Công cụ đã biết sẵn câu trả lời. Chữ ký email, đồng hồ đếm ngược sự kiện, thẻ trích dẫn, thẻ tên, bản đồ đường phố - mọi thứ đội của bạn cần vào lúc 4 giờ chiều một ngày thứ Ba, tự phục vụ. Và vì không có dữ liệu khách hàng nào rời khỏi thiết bị, việc cộng tác không hề có rủi ro về tuân thủ.
 
@@ -60,7 +60,7 @@ Một công cụ có thể nhúng đầu ra trực tiếp của một công cụ
 
 Bộ lọc nâng cao, ghép ảnh, hoạt hình, hiệu ứng camera trực tiếp, thiết kế sinh tạo - mọi công nghệ web đều sẵn có cho người tạo mẫu, vì vậy giới hạn trên là rất cao.
 
-![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=1440&height=900&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&format=png&filename=use-mesh-output)
+![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&filename=use-mesh-output)
 
 Hãy tạo ra *công cụ*, không phải tệp: xây dựng thứ tạo ra 10.000 tấm thiệp, thay vì tự tay làm 10.000 tấm thiệp. Khoá lại những gì không nên thay đổi; chỉ để lộ những gì được phép biến đổi.
 

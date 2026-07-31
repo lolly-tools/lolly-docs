@@ -32,7 +32,7 @@
 
 ### একজন ব্যক্তি হিসেবে
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&filename=pd-profile-headshot)
 
 ডিফল্ট। প্রোফাইলটি আপনি নিজেই: আপনার নাম, আপনার ইমেল, আপনার হেডশট। একবার সেট করুন, আর আপনার সিগনেচার, আপনার ব্যাজ, আপনার কনফারেন্স লকআপ সবই নিজে থেকে পূরণ হয়ে যায়। বেশিরভাগ মানুষের কখনো এর বেশি কিছু লাগবে না।
 
@@ -81,7 +81,7 @@ Lolly-তে, সেই ভূমিকা কেবল **হাতের কা
 
 ## আপনার প্রোফাইল টুল কীভাবে ব্যবহার করে
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&filename=pd-use-my-details)
 
 একটি টুল কেবল সেই প্রোফাইল ফিল্ডগুলোই *প্রি-ফিল* করে যেগুলো বাঁধার জন্য এটি স্পষ্টভাবে তৈরি করা হয়েছিল:
 

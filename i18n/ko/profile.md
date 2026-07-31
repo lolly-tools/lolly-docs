@@ -32,7 +32,7 @@
 
 ### 개인으로서
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&filename=pd-profile-headshot)
 
 기본값이에요. 프로필은 곧 나예요. 이름, 이메일, 프로필 사진이죠. 한 번 설정해두면 서명, 배지, 컨퍼런스 락업이 전부 저절로 채워져요. 대부분의 사람에게는 이것만으로 충분해요.
 
@@ -81,7 +81,7 @@ Lolly에서 그 역할은 그저 **손 닿는 곳에 두는 또 하나의 프로
 
 ## 도구가 프로필을 사용하는 방식
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&filename=pd-use-my-details)
 
 도구는 명시적으로 연결하도록 만들어진 프로필 필드만 *미리 채워요*.
 

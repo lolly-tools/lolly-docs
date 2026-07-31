@@ -42,7 +42,7 @@ O Lolly não está tentando ser o Canva ou o Figma. Ele ocupa o espaço onde *re
 
 O Street Map é um bom exemplo dessa troca: você escolhe uma cidade e duas cores, e a cartografia, a espessura das vias e a água já vêm decididas.
 
-![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=192&waitMs=3200&cropSelector=%23tool-canvas&format=png&filename=vt-street-map-poster)
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&filename=vt-street-map-poster)
 
 Preencha alguns campos, receba o material pronto - sem fontes para escolher, sem cores para ficar em dúvida, sem "esse é o logotipo certo?". A ferramenta já sabe. Assinaturas de e-mail, contagens regressivas de eventos, cartões de citação, crachás, mapas de ruas - tudo o que sua equipe precisa numa terça-feira às 16h, por conta própria. E como nenhum dado de cliente sai do dispositivo, não há risco de compliance na colaboração.
 
@@ -60,7 +60,7 @@ Uma ferramenta pode incorporar a saída ao vivo de outra ferramenta como um ativ
 
 Filtros avançados, composição, animação, efeitos de câmera ao vivo, design generativo - toda tecnologia web está disponível para quem cria um template, então o teto é alto.
 
-![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=1440&height=900&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&format=png&filename=use-mesh-output)
+![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&filename=use-mesh-output)
 
 Crie *ferramentas*, não arquivos: construa a coisa que gera 10.000 cartões, em vez de fazer 10.000 cartões. Trave o que não deve mudar; exponha apenas o que deve variar.
 

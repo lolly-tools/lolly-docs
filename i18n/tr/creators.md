@@ -42,7 +42,7 @@ Lolly, Canva veya Figma olmaya çalışmıyor. *Kuralların, tekrarlanabilirliğ
 
 Street Map bu alışverişin iyi bir örneği: sen bir şehir ve birkaç renk seçersin, kartografya, yol kalınlıkları ve su ise senin yerine kararlaştırılır.
 
-![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=192&waitMs=3200&cropSelector=%23tool-canvas&format=png&filename=vt-street-map-poster)
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&filename=vt-street-map-poster)
 
 Birkaç alanı doldur, bitmiş varlığı al - seçecek yazı tipi yok, sorgulanacak renk yok, "doğru logo bu mu?" diye düşünmene gerek yok. Araç bunu zaten biliyor. E-posta imzaları, etkinlik geri sayımları, alıntı kartları, rozetler, sokak haritaları - ekibinin salı günü saat 16:00'da ihtiyaç duyduğu her şey, self-servis şekilde. Ve hiçbir müşteri verisi cihazdan çıkmadığı için, iş birliğinde uyumluluk riski yok.
 
@@ -60,7 +60,7 @@ Bir araç, başka bir aracın canlı çıktısını varlık olarak gömebilir - 
 
 Gelişmiş filtreler, kompozisyon, animasyon, canlı kamera efektleri, üretken tasarım - her web teknolojisi bir şablon yazarının kullanımına açık, dolayısıyla tavan yüksek.
 
-![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=1440&height=900&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&format=png&filename=use-mesh-output)
+![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&filename=use-mesh-output)
 
 Dosya değil, *araç* yaz: 10.000 kart üreten şeyi inşa et, 10.000 kartı tek tek yapma. Değişmemesi gerekeni kilitle; sadece değişmesi gerekeni aç.
 

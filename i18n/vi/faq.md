@@ -18,7 +18,7 @@ Lolly tạo ra một khối lượng nội dung lớn. Chúng tôi áp dụng c�
 
 ### Cờ tính năng (feature flags) là gì?
 
-![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&filename=pd-feature-flags)
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&filename=pd-feature-flags)
 
 Cờ tính năng (feature flags) giúp bật hoặc tắt các phần của Lolly. Thông thường một quản trị viên sẽ kiểm soát những cờ này - nhưng với Lolly, chính bạn là người kiểm soát.
 

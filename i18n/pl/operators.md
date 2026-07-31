@@ -52,7 +52,7 @@ Wszystkie te operacje to przekształcenia na urządzeniu: twój plik lub dane wc
 
 Text Helper to ta sama umowa, tylko dla tekstu, a nie plików. To warsztat z zakładkami, którego pracownik szukałby w innym wypadku na obcej stronie, i nie deklaruje żadnych wejść, bo nic, czego dotyka, nigdy nie opuszcza strony.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&filename=ov2-text-helper)
 
 Compress PDF domyka zestaw: zbyt duży załącznik zmniejsza się według ustawienia jakości, które sam wybierasz, na maszynie, która już go przechowuje.
 
@@ -73,7 +73,7 @@ Prompt to Image to determinizm w najprostszej postaci: tekst jest całym wejści
 
 ## Proweniencja i Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&filename=aud-verify-drop)
 
 Eksporty mogą nieść **Content Credentials** - podpisany manifest [C2PA](https://c2pa.org) powiązany z hashem bajtów pliku. Każda późniejsza zmiana pliku łamie pieczęć, więc weryfikator obsługujący C2PA **wykrywa modyfikację kryptograficznie, offline**. Poświadczenie jest odporne na manipulację w sposób *widoczny*: sygnalizuje manipulację, a nie zapobiega jej, co jest dokładnie tym, co umożliwia w pełni offline'ową weryfikację.
 

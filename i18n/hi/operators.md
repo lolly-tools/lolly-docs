@@ -51,7 +51,7 @@ Lolly टूल्स की एक श्रेणी - प्राइवे�
 
 Text Helper फ़ाइलों की जगह टेक्स्ट के लिए वही सौदा है। यह वही टैब वाली वर्कबेंच है जिसे कोई कर्मचारी वरना किसी अजनबी की साइट पर ढूँढने जाता, और यह एक भी इनपुट घोषित नहीं करता, क्योंकि जिस चीज़ को यह छूता है वह कभी पेज से बाहर नहीं जाती।
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&filename=ov2-text-helper)
 
 Compress PDF इस सेट को पूरा करता है: बड़े आकार का अटैचमेंट आपकी चुनी हुई क्वालिटी सेटिंग के हिसाब से छोटा हो जाता है — उसी मशीन पर, जिसमें वह पहले से मौजूद है।
 
@@ -70,7 +70,7 @@ Prompt to Image डिटरमिनिज़्म का सबसे सा�
 
 ## प्रोवेनेंस और Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&filename=aud-verify-drop)
 
 एक्सपोर्ट **Content Credentials** साथ ले जा सकते हैं - फ़ाइल के बाइट के हैश से बँधा एक हस्ताक्षरित [C2PA](https://c2pa.org) मैनिफ़ेस्ट। फ़ाइल में बाद में किया गया कोई भी बदलाव सील तोड़ देता है, इसलिए C2PA-समझने वाला वेरिफ़ायर **छेड़छाड़ का पता क्रिप्टोग्राफ़िक ढंग से, ऑफ़लाइन लगाता है**। यह क्रेडेंशियल टैम्पर-*एविडेंट* है: यह छेड़छाड़ को रोकने के बजाय उसे उजागर करता है, और ठीक यही बात पूरी तरह ऑफ़लाइन सत्यापन को संभव बनाती है।
 

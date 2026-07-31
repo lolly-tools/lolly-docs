@@ -63,7 +63,7 @@ Essa é a mudança de paradigma que a engine determinística realmente entrega: 
 
 ## O que isto oferece de forma exclusiva
 
-![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=192&waitMs=3200&format=png&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
 
 - **Potencial de design ousado entregue com segurança em contexto.** As ferramentas podem expressar ideias de design aventureiras dentro de barreiras de proteção fixas no código.
 - **Automação de conteúdo definida por software que retorna o recurso final.** Entrada → arquivo final. Sem "agora salve da sua ferramenta de design e faça o pós-processamento".

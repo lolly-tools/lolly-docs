@@ -63,7 +63,7 @@ Aceasta e schimbarea de paradigmă pe care o aduce de fapt motorul determinist: 
 
 ## Ce oferă acest lucru în mod unic
 
-![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=192&waitMs=3200&format=png&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
 
 - **Potențial de design îndrăzneț, livrat în siguranță, în context.** Instrumentele pot exprima idei de design aventuroase în interiorul unor bariere de protecție codificate ferm.
 - **Automatizare de conținut definită prin software, care returnează resursa finală.** Input → fișier final. Fără „acum salvează-l din instrumentul tău de design și prelucrează-l ulterior”.

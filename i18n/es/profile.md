@@ -32,7 +32,7 @@ La palabra "perfil" sugiere una única persona fija, pero en Lolly es en realida
 
 ### Como individuo
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&filename=pd-profile-headshot)
 
 La opción por defecto. El perfil eres tú: tu nombre, tu correo, tu foto de perfil. Configúralo una vez y tu firma, tu credencial y tu lockup de conferencia se autocompletan solos. Esto es todo lo que la mayoría de la gente necesitará jamás.
 
@@ -81,7 +81,7 @@ Para conocer el diseño exacto del paquete, la política de versiones y las regl
 
 ## Cómo usan las herramientas tu perfil
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&filename=pd-use-my-details)
 
 Una herramienta solo *autocompleta* los campos del perfil para los que fue diseñada explícitamente:
 
