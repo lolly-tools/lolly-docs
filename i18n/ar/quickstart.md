@@ -1,6 +1,6 @@
 # البدء السريع
 
-![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&walker=1&format=svg&localize=1&filename=gallery)
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&localize=1&filename=gallery)
 
 يحول Lolly قواعدك — الألوان والخطوط والتخطيطات والمنطق — إلى أدوات يستطيع أي شخص استخدامها لصنع ملفات جاهزة: صور وملفات PDF وبطاقات اجتماعية وفيديو، بملء بضعة حقول فقط. لا شيء تتعلمه ولا شيء ترفعه: كل شيء يعمل على جهازك، متصلا كنت أو غير متصل.
 

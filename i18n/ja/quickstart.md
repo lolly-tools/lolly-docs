@@ -1,6 +1,6 @@
 # クイックスタート
 
-![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&walker=1&format=svg&localize=1&filename=gallery)
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&localize=1&filename=gallery)
 
 Lolly は、色・タイポグラフィ・レイアウト・ロジックといったあなたのルールを、誰でも使えるツールに変換します。いくつかの項目を入力するだけで、画像、PDF、ソーシャルカード、動画などの完成ファイルを作成できます。学ぶことは何もなく、アップロードも不要です。すべてお使いのデバイス上で、オンラインでもオフラインでも動作します。
 

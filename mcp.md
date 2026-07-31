@@ -52,9 +52,14 @@ Operators who don't want a public render surface switch the route off entirely w
 | `lolly_build_url` | Build a shareable, editable link + raw render URL - **without** rendering. |
 | `lolly_render` | Render a tool to a file - returns the bytes plus the editable link. |
 | `lolly_transform` | Run an on-device file utility (`strip-data`, `compress-pdf`) on a file you supply. |
+| `lolly_redact` | Destroy regions of an image, SVG or PDF you supply. Takes the same instruction string a share link carries (`bars=1,40,60,200,24~…`), so one string can be applied to every file of an identical layout. The tool rebuilds the file and re-checks its own output; a failed check returns an error with no file attached. |
 | `lolly_verify` | Verify a file's Content Credentials (C2PA): was it genuinely made with Lolly, who signed it, and has it changed since export. Returns the verdict, signer identity, edit history and embedded metadata (including any AI-generated declaration and appended-data flags) - the same C2PA verifier as the CLI's `lolly validate`. (The web verify page's pixel-level reads - the Lolly Imprint, SEAL, the opt-in deep scan - are interactive, web-only.) The file is checked in-process and never stored. |
 
 The intended flow is `lolly_list_tools` → `lolly_describe_tool` (read the exact input schema) → `lolly_render`; `lolly_verify` closes the loop when an agent needs to prove a file it holds is an untouched Lolly export.
+
+### Redaction needs the full endpoint
+
+`lolly_redact` rebuilds real pixels (a canvas for images, a page render for PDFs), which the browser-free tier cannot do. On the **full** endpoint it runs in the same browser path a person clicks in the app, including the tool's own export gate. On the **lightweight** endpoint it returns an error saying the browser tier is not available there rather than handing back a file that was never redacted. `lolly_transform` behaves the same way for any utility that rebuilds pixels; the metadata-only utilities (`strip-data`, `compress-pdf`) still run browser-free.
 
 ## Any format, transparently
 

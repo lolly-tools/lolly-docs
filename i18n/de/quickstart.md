@@ -1,6 +1,6 @@
 # Schnellstart
 
-![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&walker=1&format=svg&localize=1&filename=gallery)
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&localize=1&filename=gallery)
 
 Lolly verwandelt Ihre Regeln - Farben, Schrift, Layouts, Logik - in Werkzeuge, mit denen jeder fertige Dateien erstellen kann: Bilder, PDFs, Social-Media-Karten, Video, indem Sie einfach ein paar Felder ausfüllen. Es gibt nichts zu lernen und nichts hochzuladen: Alles läuft auf Ihrem Gerät, online wie offline.
 

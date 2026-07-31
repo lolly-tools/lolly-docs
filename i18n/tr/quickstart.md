@@ -1,6 +1,6 @@
 # Hızlı Başlangıç
 
-![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&walker=1&format=svg&localize=1&filename=gallery)
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&localize=1&filename=gallery)
 
 Lolly; kurallarını -renkler, yazı tipleri, düzenler, mantık- birkaç alanı doldurarak herkesin bitmiş dosyalar oluşturmak için kullanabileceği araçlara dönüştürür: görseller, PDF'ler, sosyal medya kartları, video. Öğrenilecek ya da yüklenecek hiçbir şey yok: her şey cihazında çalışır, çevrimiçi ya da çevrimdışı.
 
