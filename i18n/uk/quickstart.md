@@ -1,6 +1,6 @@
 # Швидкий старт
 
-![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&walker=1&format=svg&localize=1&filename=gallery)
 
 Lolly перетворює ваші правила — кольори, шрифти, макети, логіку — на інструменти, якими будь-хто може скористатися, щоб створювати готові файли: зображення, PDF, картки для соцмереж, відео — просто заповнивши кілька полів. Тут нема чого вивчати й нічого завантажувати: усе працює на вашому пристрої, онлайн чи офлайн.
 

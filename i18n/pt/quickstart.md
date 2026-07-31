@@ -1,6 +1,6 @@
 # Guia rápido
 
-![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&walker=1&format=svg&localize=1&filename=gallery)
 
 O Lolly transforma suas regras - cores, tipografia, layouts, lógica - em ferramentas que qualquer pessoa pode usar para criar arquivos finalizados: imagens, PDFs, cartões para redes sociais, vídeos, preenchendo apenas alguns campos. Não há nada para aprender nem para enviar: tudo roda no seu dispositivo, online ou offline.
 

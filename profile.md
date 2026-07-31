@@ -52,9 +52,9 @@ At any moment an install has **one active profile** - the details a tool sees ri
 
 So if you genuinely juggle several contexts (you, your team, the event-manager hat), you keep several bundles and load the one you need:
 
-- **Cleanest switch:** **Profile → Storage → Clear all my data**, then **Import** the bundle for the context you're stepping into. You're now creating purely as that profile.
-- **Layering:** importing *without* clearing first **merges** - the imported profile, sessions, and images land on top of what's already there, replacing anything with the same name and leaving the rest. Handy for pulling one team's saved sessions into your own setup; not what you want if you need a clean role boundary.
-- **Side by side:** because everything is device-scoped, a separate browser profile, a separate user account, or a second installed PWA each carries its own independent Lolly profile. Run your personal install and the event kiosk install at once, no switching.
+- <!--i:trash--> **Cleanest switch:** **Profile → Storage → Clear all my data**, then **Import** the bundle for the context you're stepping into. You're now creating purely as that profile.
+- <!--i:layers--> **Layering:** importing *without* clearing first **merges** - the imported profile, sessions, and images land on top of what's already there, replacing anything with the same name and leaving the rest. Handy for pulling one team's saved sessions into your own setup; not what you want if you need a clean role boundary.
+- <!--i:monitor--> **Side by side:** because everything is device-scoped, a separate browser profile, a separate user account, or a second installed PWA each carries its own independent Lolly profile. Run your personal install and the event kiosk install at once, no switching.
 
 Storage is where both halves of that live: the meter accounts for every byte this install is holding, category by category, and the buttons under it are how you clear or carry it.
 
@@ -68,8 +68,8 @@ Because a profile is entirely local, the only way to get it onto a blank install
 
 Under **Profile → Storage → Move to another device**:
 
-- **Export my data** downloads one `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - named for the profile it belongs to, with a per-day sequence number so repeat exports don't collide (name parts are dropped when the profile doesn't have them). It contains your profile, every saved session (with its thumbnail), your uploaded images - your brand tokens and installed fonts ride along as user assets - and your preferences (theme, layout, local activity stats).
-- **Import data…** on the other install reads that file back in and you pick up exactly where you left off.
+- <!--i:download--> **Export my data** downloads one `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - named for the profile it belongs to, with a per-day sequence number so repeat exports don't collide (name parts are dropped when the profile doesn't have them). It contains your profile, every saved session (with its thumbnail), your uploaded images - your brand tokens and installed fonts ride along as user assets - and your preferences (theme, layout, local activity stats).
+- <!--i:upload--> **Import data…** on the other install reads that file back in and you pick up exactly where you left off.
 
 ![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
 
@@ -93,9 +93,9 @@ A tool only ever *pre-fills* the profile fields it was explicitly built to bind:
 
 Three things sit near each other in the UI and are easy to confuse:
 
-- **Profile** - *you* (or your team, or the role you're in): name, contact, headshot, your saved work. Personal, device-local, portable as a bundle.
-- **Platform** - the *brand*: colours, fonts, and global settings every tool renders against. Shared and consistent, not personal.
-- **Capabilities** - *what the app can do*: the full feature set and the tools available to you.
+- <!--i:people--> **Profile** - *you* (or your team, or the role you're in): name, contact, headshot, your saved work. Personal, device-local, portable as a bundle.
+- <!--i:palette--> **Platform** - the *brand*: colours, fonts, and global settings every tool renders against. Shared and consistent, not personal.
+- <!--i:sliders--> **Capabilities** - *what the app can do*: the full feature set and the tools available to you.
 
 A profile changes who an asset is *from*; the platform changes what it *looks like*; capabilities are *what you can make*.
 
@@ -103,8 +103,10 @@ A profile changes who an asset is *from*; the platform changes what it *looks li
 
 The word is overloaded across the project. Neither of these is the personal profile this page is about:
 
-- **Content profile** - a build-time configuration in `profiles.json` that binds a set of tool packs to a brand catalog (e.g. `suse`, `lolly-start`). It's what an operator picks when deploying, and it's what the `profile` **URL/CLI parameter** also selects a *colour* variant of at export time (the ICC/CMYK press condition - see [URL Mode](/info/url-mode.html)). Both are about the *build/output*, not about *you*. See [Configuration](/info/configuration.html).
-- **Identity profile** - the optional **verified Content Credentials identity** you can enrol (a short-lived certificate that ties your email to your signed exports). That's a signing identity, separate from the personal profile's name/contact fields, though **Use my details** governs whether either is embedded. See [Content Credentials Identity](/info/content-credentials-identity.html).
+- <!--i:box--> **Content profile** - a build-time configuration in `profiles.json` that binds a set of tool packs to a brand catalog (e.g. `suse`, `lolly-start`). It's what an operator picks when deploying, and it's what the `profile` **URL/CLI parameter** also selects a *colour* variant of at export time (the ICC/CMYK press condition - see [URL Mode](/info/url-mode.html)). Both are about the *build/output*, not about *you*. See [Configuration](/info/configuration.html).
+- <!--i:seal--> **Identity profile** - the optional **verified Content Credentials identity** you can enrol (a short-lived certificate that ties your email to your signed exports). That's a signing identity, separate from the personal profile's name/contact fields, though **Use my details** governs whether either is embedded. See [Content Credentials Identity](/info/content-credentials-identity.html).
+
+![The Verified identity card, phone-width: the certificate lifetime picker and the four sign-in choices - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&filename=pv-identity-enrol)
 
 ## Privacy
 

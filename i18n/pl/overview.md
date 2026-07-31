@@ -20,7 +20,7 @@ Rezultatem jest **obfitość**: każde wydarzenie ma poprawne oznakowanie, każd
 
 ### Gdzie plasuje się na tle rynku
 
-![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&filename=aud-gallery-landscape)
+![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&walker=1&format=svg&filename=aud-gallery-landscape)
 
 | Funkcja | Canva | Portale brandowe | Illustrator | Figma / Penpot | **Lolly** |
 |---|---|---|---|---|---|

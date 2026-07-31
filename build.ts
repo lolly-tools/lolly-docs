@@ -661,8 +661,24 @@ const DOC_ICONS: Record<string, string> = {
   checklist:  `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><path d="M9 6h11M9 12h11M9 18h11"/><path d="m3 6 1.3 1.3L6.5 5"/><path d="m3 12 1.3 1.3 2.2-2.3"/><path d="m3 18 1.3 1.3 2.2-2.3"/></svg>`,
   palette:    `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>`,
   pentool:    `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"/><path d="m2.3 2.3 7.286 7.286"/><circle cx="11" cy="11" r="2"/></svg>`,
+  folder:     `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>`,
+  hash:       `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18"/></svg>`,
+  cpu:        `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></svg>`,
+  link:       `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><path d="M9 15 15 9"/><path d="M11 6l1-1a4 4 0 0 1 6 6l-1 1"/><path d="M13 18l-1 1a4 4 0 0 1-6-6l1-1"/></svg>`,
+  wrench:     `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+  usercheck:  `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><path d="M14 20v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="8" cy="8" r="4"/><path d="M15 11.5l2.2 2.2 4.3-4.3"/></svg>`,
+  photos:     `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><rect x="6" y="2" width="16" height="16" rx="2"/><path d="M18 22H4a2 2 0 0 1-2-2V6"/><circle cx="12" cy="8" r="2"/><path d="m22 13-1.3-1.3a2.4 2.4 0 0 0-3.4 0L11 18"/></svg>`,
+  document:   `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><path d="M14 3v5h5"/><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>`,
+  trash:      `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg>`,
+  mail:       `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>`,
+  seal:       `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><circle cx="12" cy="9" r="6"/><path d="M9 14.2 8 22l4-2.5 4 2.5-1-7.8"/></svg>`,
+  upload:     `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><path d="M12 3v12"/><path d="m17 8-5-5-5 5"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/></svg>`,
+  star:       `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
+  box:        `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M3.3 7 12 12l8.7-5"/><path d="M12 22V12"/></svg>`,
+  clock:      `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3.5 2"/></svg>`,
   eyeoff:     '', // aliased below
   sliders: '', lock: '', layers: '', globe: '', people: '', shieldcheck: '', check: '', code: '',
+  download: '', database: '', server: '', monitor: '',
 };
 DOC_ICONS.eyeoff = SITE_ICONS.assureEyeOff!;
 DOC_ICONS.sliders = BICONS.sliders;
@@ -673,6 +689,10 @@ DOC_ICONS.people = SITE_ICONS.toolFeaturePeople!;
 DOC_ICONS.shieldcheck = SITE_ICONS.importPointShield!;
 DOC_ICONS.check = SITE_ICONS.assureCheck!;
 DOC_ICONS.code = SITE_ICONS.toolFeatureCode!;
+DOC_ICONS.download = BICONS.download;
+DOC_ICONS.database = BICONS.database;
+DOC_ICONS.server = BICONS.server;
+DOC_ICONS.monitor = SITE_ICONS.toolFeatureMonitor!;
 function docIcon(key: string): string {
   const svg = DOC_ICONS[key];
   if (!svg) { console.warn(`⚠  unknown doc bullet icon "${key}"`); return ''; }

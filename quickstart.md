@@ -6,7 +6,7 @@ This is the one page to read first. Two things get you productive: **make Lolly 
 
 > New to Lolly and just want to make something? Open the app, pick any tool from the gallery, fill in the blanks, and hit **Render**. Come back here when you want it wearing *your* brand.
 
-![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=png&localize=1&filename=gallery)
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&walker=1&format=svg&localize=1&filename=gallery)
 
 ## 1. Make it yours - configure your Design System
 
@@ -22,8 +22,8 @@ First run drops you on the **Start** screen (`#/start`) - the [**Brand Studio**]
 
 If your brand is already captured as design tokens - from **Penpot**, **Tokens Studio** (Figma), or any plain **DTCG** file - bring it in wholesale rather than retyping it. Two routes:
 
-- **In the app:** the [design system builder: Brand Studio](/info/brand-studio.html) (`#/start`) accepts a token file, a Penpot export, or a `LollyBrand` pack directly - drop it in and the palette lights up.
-- **From the command line**, to stand up a reusable brand pack:
+- <!--i:palette--> **In the app:** the [design system builder: Brand Studio](/info/brand-studio.html) (`#/start`) accepts a token file, a Penpot export, or a `LollyBrand` pack directly - drop it in and the palette lights up.
+- <!--i:code--> **From the command line**, to stand up a reusable brand pack:
 
 ```bash
 # a monolithic tokens.json, a one-file-per-set directory, or a Penpot project archive
@@ -78,10 +78,10 @@ Feed tools your own open data too: paste or drop a **CSV** or **JSON** table and
 
 With a brand active and your material in hand, every tool produces a finished file:
 
-- **Render** any tool to **SVG, PDF, PNG, JPG, WebP, video**, and more - at true print sizes and physical units when you need them. See [Exporting & formats](/info/exporting.html).
-- **Share a link.** Every tool state is a URL, so a finished asset is reproducible and parameter-addressable - commit the link, regenerate on demand.
-- **Do it in bulk.** Drive a template from a spreadsheet in the [batch grid](/info/exporting.html): one finished asset per row.
-- **Automate it.** The same render runs from the [CLI](/info/cli.html) and from an [AI agent](/info/ai-agents.html) - a URL is the API.
+- <!--i:download--> **Render** any tool to **SVG, PDF, PNG, JPG, WebP, video**, and more - at true print sizes and physical units when you need them. See [Exporting & formats](/info/exporting.html).
+- <!--i:link--> **Share a link.** Every tool state is a URL, so a finished asset is reproducible and parameter-addressable - commit the link, regenerate on demand.
+- <!--i:layers--> **Do it in bulk.** Drive a template from a spreadsheet in the [batch grid](/info/exporting.html): one finished asset per row.
+- <!--i:cpu--> **Automate it.** The same render runs from the [CLI](/info/cli.html) and from an [AI agent](/info/ai-agents.html) - a URL is the API.
 
 "A URL is the API" is literal. The chart below was not drawn by anyone: its type, its heading and its whole data table were typed into the address bar, and the same link renders the same chart on any device.
 
@@ -91,6 +91,6 @@ With a brand active and your material in hand, every tool produces a finished fi
 
 Three pathways, depending on what you're here to do:
 
-- **[Lolly for Creators](/info/creators.html)** - you make things. The advantages, and how to get the most out of the app.
-- **[Lolly for Builders](/info/builders.html)** - you author tools, integrate, and deploy. The technical documentation.
-- **[Lolly for Operators](/info/operators.html)** - you're responsible for brand, security, and rollout across an organisation.
+- <!--i:people--> **[Lolly for Creators](/info/creators.html)** - you make things. The advantages, and how to get the most out of the app.
+- <!--i:code--> **[Lolly for Builders](/info/builders.html)** - you author tools, integrate, and deploy. The technical documentation.
+- <!--i:shieldcheck--> **[Lolly for Operators](/info/operators.html)** - you're responsible for brand, security, and rollout across an organisation.
