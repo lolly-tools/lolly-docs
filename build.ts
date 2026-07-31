@@ -10,6 +10,11 @@ import { fileURLToPath } from 'node:url';
 import { generateOgImages } from './og-image.ts';
 import { LANGS, LANG_META, sortedLangs } from '../engine/src/lang.ts';
 import { readShotProvenance } from './shot-provenance.ts';
+import { readShotAnatomy } from './shot-anatomy.ts';
+// The shots pipeline's own recipe parser, reused rather than re-implemented: the
+// capture params a credential wants to state are exactly the ones the capture read,
+// and a second parser is a second thing to disagree with the first.
+import { parseShotRecipes, type ShotDef } from '../scripts/lib/shot-compare.ts';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(__dirname, '..');
@@ -529,6 +534,50 @@ function inline(text: string) {
 }
 
 /**
+ * Every screenshot recipe on the site, keyed by the slug it captures.
+ *
+ * The recipe is the shot's other half of the record: the .md holds the url-shot link
+ * the pipeline captured from, so capture size, dpi and which renderer drew it are
+ * facts about the file that the file itself does not carry. inline() parses that
+ * query and throws it away 50 lines before the credential is emitted, and by then
+ * only the resolved filename survives — so the credential reads the recipes back off
+ * the pages, once, and looks its own slug up.
+ *
+ * Parsed by the SHOTS PIPELINE's parser (scripts/lib/shot-compare.ts), not a local
+ * one: a credential that described a capture in different terms from the capture
+ * would be a second opinion, and the first one is the one that ran. Recipe problems
+ * are that pipeline's to report — here a slug that does not resolve simply means the
+ * capture facts are left off the line.
+ */
+let shotRecipes: Map<string, ShotDef> | null = null;
+function shotRecipe(slug: string): ShotDef | null {
+  if (!shotRecipes) {
+    shotRecipes = new Map();
+    for (const f of readdirSync(__dirname).filter(n => n.endsWith('.md'))) {
+      try {
+        // Raw source, before inline()'s escaping: the parser's regex expects the
+        // query's literal `&`.
+        for (const r of parseShotRecipes(readFileSync(resolve(__dirname, f), 'utf-8')).recipes) {
+          if (!shotRecipes.has(r.slug)) shotRecipes.set(r.slug, r);
+        }
+      } catch { /* an unreadable page costs its shots their capture pill, nothing more */ }
+    }
+  }
+  return shotRecipes.get(slug) ?? null;
+}
+
+/**
+ * A number grouped the way the page's own locale groups it: 6,689 on /info, 6.689
+ * on /info/de. "6689 paths" is a number the eye has to count; "6,689 paths" is a
+ * quantity. Digits follow whatever CLDR says for the tag, which for every locale the
+ * site ships is the Latin set.
+ */
+function localeNum(v: number): string {
+  try { return v.toLocaleString(LANG_META[activeLang]?.htmlLang ?? activeLang); }
+  catch { return String(v); }
+}
+
+/**
  * The credential line a screenshot carries: a photo-credit in the corner, except
  * the credit is checkable.
  *
@@ -549,6 +598,13 @@ function inline(text: string) {
  *
  * A shot whose credential will not decode gets NO line, rather than a line that
  * implies more than the file can back up.
+ *
+ * The second row (paths, groups, KB, capture size) is the same idea pointed at the
+ * artwork rather than at its signature: it says what the file IS. Every one of these
+ * screenshots is a vector document, and the corpus lost 80-95% of its weight moving
+ * from the print path to the walker, so "134 paths, 484 KB" is the claim in numbers
+ * a reader can check against the bytes they were served. It exists ONLY in the
+ * expanded state, which is the whole line's state — see the CSS.
  */
 let credSeq = 0;
 function shotCredential(file: string, extraClass = ''): string {
@@ -560,12 +616,21 @@ function shotCredential(file: string, extraClass = ''): string {
   // "vector SVG" earns its adjective; a raster says only what it is.
   const kind = ext === 'SVG' ? `${t('vector')} SVG` : ext;
   const day = p.when?.slice(0, 10) ?? null;
+  const anat = readShotAnatomy(resolve(__dirname, 'shots', file));
+  // A slug never contains a dot (kebab-case, enforced by the recipe parser), so the
+  // first segment is the recipe's filename= whichever variant is being credited:
+  // <slug>.svg, <slug>.de.svg, <slug>.dark.svg, <slug>.de.dark.svg.
+  const def = shotRecipe(file.split('.')[0] ?? '');
 
   // ONE row, three facts, two actions. The shots are 236px wide in places, and a
-  // credit that wraps to four rows ends up taller than the artwork it credits.
-  // Everything omitted here (capture dimensions, engine version, the recipe) is on
-  // the other end of the verify link, which is the right place for the long form —
-  // and all of it stays in the trigger's accessible label below.
+  // credit that wraps to four rows ends up taller than the artwork it credits. That
+  // rule is about WRAPPING, and it still holds: nothing joins this row. The anatomy
+  // facts get a row of their own below, four short pills that cannot push these five
+  // items into a wrap, and the two rows together are still shorter than the stack
+  // this rule was written to prevent.
+  // Everything omitted from both (engine version, the rest of the recipe) is on the
+  // other end of the verify link, which is the right place for the long form — and
+  // the summary of it stays in the trigger's accessible label below.
   const bits: string[] = [];
   if (p.signer) {
     bits.push(`<span class="prov-pill prov-sig">${PROV_SEAL}${esc(t('signed by'))} `
@@ -577,15 +642,53 @@ function shotCredential(file: string, extraClass = ''): string {
   // it stays in the line AND in the trigger's label, and lights the glyph up.
   if (p.ai) bits.push(`<span class="prov-pill prov-entity">${esc(t(p.ai === 'generated' ? 'AI generated' : 'AI edited'))}</span>`);
 
+  // The second row: what the file is made of. Four short facts, no verbs, no actions
+  // — the same detail weight as the pills above, one step down the page. It renders
+  // only when there is something to say, so a shot whose file cannot be read keeps
+  // exactly the line it has today.
+  const detail = (s: string) => `<span class="prov-pill prov-detail">${esc(s)}</span>`;
+  const facts: string[] = [];
+  if (anat?.kind === 'vector') {
+    facts.push(detail(`${localeNum(anat.paths)} ${t(anat.paths === 1 ? 'path' : 'paths')}`));
+    facts.push(detail(`${localeNum(anat.groups)} ${t(anat.groups === 1 ? 'group' : 'groups')}`));
+  } else if (anat) {
+    // A raster has no shapes to count, and a blank where the paths go would read as
+    // "we did not check". Say the honest thing instead.
+    facts.push(detail(t('pixels, not shapes')));
+  }
+  // KB, no decimals: the point of the number is the order of magnitude (this corpus
+  // went from megabytes to tens of kilobytes when it left the print path), and ".4"
+  // of a kilobyte is precision nobody asked for.
+  if (anat) facts.push(detail(`${localeNum(Math.round(anat.bytes / 1024))} KB`));
+  // Capture geometry from the recipe. Written with the multiplication sign and a
+  // middle dot rather than joining words, so the pill needs no translation and reads
+  // the same in every locale the digits do.
+  if (def?.width && def.height) {
+    facts.push(detail(`${localeNum(def.width)} × ${localeNum(def.height)}`
+      + (def.dpi ? ` · ${localeNum(def.dpi)} dpi` : '')));
+  }
+
+  // The label is the COLLAPSED summary, so it carries the two facts the row has no
+  // width for: the full element count, and which renderer drew the file. Both are
+  // already in the a11y tree via the row/line itself (never display:none), so this is
+  // a summary rather than a second copy.
+  const structure = anat?.kind === 'vector'
+    ? `${localeNum(anat.elements)} ${t(anat.elements === 1 ? 'element' : 'elements')}` : '';
+  const how = anat?.kind === 'vector' && def
+    ? t(def.walker ? 'captured with the HTML walker' : 'captured with the print path') : '';
   const label = [p.ai ? t(p.ai === 'generated' ? 'AI generated' : 'AI edited') : '', t('Content Credentials'),
-    p.signer ? `${t('signed by')} ${p.signer}` : '', kind, p.dimensions, day, p.generator].filter(Boolean).join(' — ');
+    p.signer ? `${t('signed by')} ${p.signer}` : '', kind, p.dimensions, day, p.generator,
+    structure, how].filter(Boolean).join(' — ');
 
   return `<span class="shot-cred${p.ai ? ' shot-cred--ai' : ''}${extraClass ? ` ${extraClass}` : ''}">`
     + `<button type="button" class="shot-cred-btn" aria-expanded="false" aria-controls="${id}" aria-label="${esc(label)}">`
     + `${docIcon('imprint')}</button>`
-    + `<span class="shot-cred-line" id="${id}">${bits.join('')}`
+    + `<span class="shot-cred-line" id="${id}">`
+    + `<span class="shot-cred-row">${bits.join('')}`
     + `<a class="shot-cred-do" href="/#/verify?src=${encodeURIComponent(src)}">${esc(t('Check it yourself'))}</a>`
     + `<a class="shot-cred-do" href="${src}" download>${esc(t('Get the signed file'))}</a>`
+    + `</span>`
+    + (facts.length ? `<span class="shot-cred-row shot-cred-anat">${facts.join('')}</span>` : '')
     + `</span></span>`;
 }
 
@@ -2351,20 +2454,31 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .shot-cred{position:absolute;inset-block-end:.55rem;inset-inline-end:.7rem;z-index:2;
   display:flex;align-items:center;justify-content:flex-end;gap:.4rem;flex-direction:row-reverse;
   width:max-content;max-width:min(28rem,calc(100vw - 3rem));pointer-events:none}
+/* Quiet by COLOUR and size, never by transparency. This mark used to rest at
+   opacity:.34, which faded the glyph's strokes along with its puck — so the ripple
+   path dissolved into whatever the screenshot's own corner happened to be and, at
+   1.4rem, read as a smudge rather than a mark. A credential nobody can make out is
+   not discreet, it is decoration.
+
+   So: the puck stays opaque enough to GUARANTEE the glyph's contrast whatever sits
+   behind it (screenshot corners are unpredictable — a white card, a dark timeline, a
+   photo), and the glyph is muted against that puck instead of against the shot. Rest
+   is legible; hover only sharpens it. */
 .shot-cred-btn{display:grid;place-items:center;width:1.4rem;height:1.4rem;flex:none;padding:0;
-  border:0;border-radius:50%;cursor:pointer;color:var(--dark);background:#ffffffb8;
+  border:0;border-radius:50%;cursor:pointer;color:var(--muted);background:#ffffffe6;
+  box-shadow:0 1px 3px #00000024;
   -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);pointer-events:auto;
-  opacity:.34;transition:opacity .2s ease,background .2s ease}
-.shot-cred-btn svg{width:.85rem;height:.85rem;display:block}
-/* Approaching the shot at all lifts it to legible; it never shouts. */
-.shot:hover .shot-cred-btn,.showcase:hover .shot-cred-btn{opacity:.72}
-.shot-cred-btn:hover,.shot-cred-btn:focus-visible{opacity:1;background:#fff}
+  transition:color .2s ease,background .2s ease,box-shadow .2s ease}
+.shot-cred-btn svg{width:.9rem;height:.9rem;display:block}
+/* Approaching the shot at all sharpens it; it never shouts. */
+.shot:hover .shot-cred-btn,.showcase:hover .shot-cred-btn{color:var(--dark)}
+.shot-cred-btn:hover,.shot-cred-btn:focus-visible{color:var(--dark);background:#fff;box-shadow:0 2px 6px #0003}
 /* Sized against the VIEWPORT, never the shot. Some shots are a 236px-wide crop of
    one control, and a line clamped to that width wraps into a stack taller than the
    artwork. Because .shot-cred is anchored to the inline-end and nothing on the way
    up clips, a wider line simply extends back across the shot (and past its edge on
    a small one), which is how a caption behaves rather than how a box does. */
-.shot-cred-line{display:flex;align-items:center;gap:.3rem;flex-wrap:nowrap;justify-content:flex-end;
+.shot-cred-line{display:flex;flex-direction:column;align-items:flex-end;gap:.16rem;
   max-width:min(26rem,calc(100vw - 3rem));padding:.28rem .45rem;border-radius:.9rem;
   background:#ffffffdd;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
   box-shadow:0 2px 10px #0000001f, inset 0 0 0 1px #0000000f;
@@ -2376,19 +2490,36 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .shot-cred-btn:hover + .shot-cred-line,.shot-cred-btn:focus-visible + .shot-cred-line,
 .shot-cred-line:hover,.shot-cred:focus-within .shot-cred-line,
 .shot-cred[data-open] .shot-cred-line{opacity:1;pointer-events:auto;transform:none}
+/* The line is a stack of ROWS, and a shot with no readable file has exactly one of
+   them — so the column above is byte-identical to the single row it replaced. The
+   second row (what the file is made of) only ever appears inside the expanded line,
+   which is the only state the line has: at rest the whole thing is opacity 0 and the
+   glyph is all there is. Nothing about a resting shot changes.
+
+   nowrap on the ROW, not on the line: the row still refuses to break "signed by
+   Lolly" across lines, and a stack of two short rows is shorter than the four-row
+   wrap the one-row rule was written to prevent. */
+.shot-cred-row{display:flex;align-items:center;gap:.3rem;flex-wrap:nowrap;justify-content:flex-end}
 /* The line's pills are chips on a chip, so they sit a step quieter than the ones
    the prose uses — and they must not inherit the docs paragraph line-height, which
    would make the row twice as tall as the glyph beside it. */
-.shot-cred-line>*{flex:none}
+.shot-cred-row>*{flex:none}
 .shot-cred-line .prov-pill{font-size:.6875rem;line-height:1.3;padding:.1em .5em;margin:0;white-space:nowrap}
 .shot-cred-line .prov-seal{width:.8em;height:.8em}
 .shot-cred-do{font-size:.6875rem;font-weight:600;white-space:nowrap;padding:.1em .35em;border-radius:.6em}
 .shot-cred-do:hover{background:var(--pale);text-decoration:underline}
 /* An AI declaration is not a detail to be discovered — if a shot ever carries one,
-   its glyph is fully opaque from the start. */
-.shot-cred--ai .shot-cred-btn{opacity:1;background:#fff}
-.dark .shot-cred-btn{color:var(--pale);background:#0e1a17c4}
-.dark .shot-cred-btn:hover,.dark .shot-cred-btn:focus-visible{background:#0e1a17}
+   its mark arrives already at full contrast and wearing the brand ring, so it reads
+   as a statement rather than as the same quiet glyph every other shot has. */
+.shot-cred--ai .shot-cred-btn{color:#fff;background:var(--dark);box-shadow:0 0 0 2px var(--green)}
+/* Dark mode: same contract, inverted. The puck is near-opaque for the same reason —
+   a dark screenshot's corner is not reliably darker than the puck — and the glyph is
+   a muted PALE against it, not a full-white one, so it stays quiet without becoming
+   the invisible stroke this used to be. */
+.dark .shot-cred-btn{color:#93a8a0;background:#0b1512e6;box-shadow:0 1px 3px #0006}
+.dark .shot:hover .shot-cred-btn,.dark .showcase:hover .shot-cred-btn{color:var(--pale)}
+.dark .shot-cred-btn:hover,.dark .shot-cred-btn:focus-visible{color:var(--pale);background:#0b1512;box-shadow:0 2px 6px #0008}
+.dark .shot-cred--ai .shot-cred-btn{color:var(--dark);background:var(--light)}
 .dark .shot-cred-line{background:#0e1a17ee;box-shadow:0 2px 10px #0007, inset 0 0 0 1px #ffffff14}
 .dark .shot-cred-do:hover{background:#ffffff14}
 @media(prefers-reduced-motion:reduce){.shot-cred-line{transition:none;transform:none}}
@@ -2499,7 +2630,12 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
      <html>, so ".dark .shots-motion" asks for an element inside itself and never
      matches — the rule looks right, applies never, and the failure is a picture
      nobody notices. */
-  .dark.shots-motion .shot--sweep::after{background:var(--shot-src-dark,var(--shot-src)) center/100% 100% no-repeat}
+  /* And the ink itself flips with the theme. #lolly-draft ends on a NEGATIVE-slope
+     transfer, which is what turns the laplacian's flat black into white paper — so
+     on a dark page the sweep opened by flashing a white sheet. The dark filter runs
+     the same edge detection without that inversion: light lines, near-black sheet. */
+  .dark.shots-motion .shot--sweep::after{background:var(--shot-src-dark,var(--shot-src)) center/100% 100% no-repeat;
+    filter:url(#lolly-draft-dark)}
   .shots-motion .shot--sweep.shot--in::after{opacity:0}
   /* Teardown once the ink has lifted: a pseudo-element cannot transition filter
      away, so at opacity 0 it is still a live filtered composited surface. Harmless
@@ -2887,6 +3023,28 @@ const DRAFT_FILTER_DEF = `<svg width="0" height="0" aria-hidden="true" focusable
       <feFuncR type="linear" slope="-2.4" intercept="1"/>
       <feFuncG type="linear" slope="-2.4" intercept="1"/>
       <feFuncB type="linear" slope="-2.4" intercept="1"/>
+    </feComponentTransfer>
+  </filter>
+  <!-- The dark-mode ink. Same greyscale + laplacian, then the transfer does NOT
+       invert: slope is positive, so the edge signal is boosted where the convolve
+       left it — bright lines on a near-black sheet.
+
+       This exists because the negative slope above is what paints the paper. A
+       laplacian leaves flat areas at 0, and a slope of -2.4 with intercept 1 maps
+       that 0 to 1: WHITE. On a dark page that reads as the sweep flashing a white sheet
+       before dissolving, which is the whole effect landing back-to-front. Inverting
+       is therefore a light-mode decision, not part of the edge detection, and dark
+       mode simply declines it.
+
+       The small intercept lifts the sheet off dead black — #000 is darker than the
+       page itself, which would read as a black slab rather than as paper. -->
+  <filter id="lolly-draft-dark" color-interpolation-filters="sRGB">
+    <feColorMatrix type="saturate" values="0"/>
+    <feConvolveMatrix order="3" preserveAlpha="true" kernelMatrix="0 -1 0 -1 4 -1 0 -1 0"/>
+    <feComponentTransfer>
+      <feFuncR type="linear" slope="2.4" intercept="0.05"/>
+      <feFuncG type="linear" slope="2.4" intercept="0.05"/>
+      <feFuncB type="linear" slope="2.4" intercept="0.05"/>
     </feComponentTransfer>
   </filter>
 </svg>`;
@@ -4085,11 +4243,46 @@ build();
 // docs/ (the markdown, faq.md, and src/*.svg) plus the repo-root README.md (the
 // About page). Output goes to shells/web/public/ - outside docs/ - so a rebuild
 // never re-triggers the watcher.
-if (process.argv.includes('--watch')) {
+//
+// TWO KINDS OF CHANGE, and they cannot be rebuilt the same way. A markdown or SVG
+// edit is DATA: `build()` re-reads it from disk, so calling the function again is
+// both correct and cheap. An edit to a .ts file in here is CODE, and every
+// top-level binding this module owns - `CSS` above all, plus the page templates
+// and the nav - was evaluated once when the module was imported. Calling `build()`
+// after a CSS edit therefore re-emits the OLD stylesheet straight over the new
+// one, silently: the file's mtime updates, the "✓" prints, and the change is gone.
+// (That cost a real debugging session on 2026-07-31 - the built pages kept
+// reverting and the source was plainly correct.) So a code change re-imports the
+// module instead, with a cache-busting query, to get a fresh graph.
+//
+// The fresh copy runs its own top-level `build()` - that is the rebuild - but must
+// NOT arm a second watcher, hence the env guard below. The original process stays
+// the only watcher. Cost: Node keeps each imported version in its ESM cache, so a
+// very long session with many builder edits accumulates a few module instances.
+// That is the accepted price of never writing stale output.
+if (process.argv.includes('--watch') && process.env.LOLLY_DOCS_RELOAD !== '1') {
   let timer: ReturnType<typeof setTimeout> | null = null;
+  let reloading = false;
+  const reload = async (label: string): Promise<void> => {
+    if (reloading) return;                       // a burst of saves is one reload
+    reloading = true;
+    console.log(`\n↻  ${label} changed (builder code) - reimporting…`);
+    process.env.LOLLY_DOCS_RELOAD = '1';
+    try {
+      await import(`${import.meta.url}?reload=${Date.now()}`);
+    } catch (err) {
+      // A syntax error in a half-saved file is the common case: say so and keep
+      // watching, so the next save recovers rather than leaving a dead watcher.
+      console.error('✗  Reload failed:', (err as Error).message);
+    } finally {
+      process.env.LOLLY_DOCS_RELOAD = '';
+      reloading = false;
+    }
+  };
   const scheduleRebuild = (label: string) => {
     clearTimeout(timer!);
     timer = setTimeout(() => {
+      if (/\.ts$/.test(label)) { void reload(label); return; }
       console.log(`\n↻  ${label} changed - rebuilding /info…`);
       try { build(); } catch (err) { console.error('✗  Rebuild failed:', (err as Error).message); }
     }, 120);

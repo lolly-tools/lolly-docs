@@ -48,7 +48,7 @@ Isi beberapa kolom, dapatkan aset jadi - tidak perlu memilih font, tidak perlu m
 
 ### Dari data langsung ke visual jadi
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
 
 Hubungkan tabel **CSV** atau **JSON** ke template grafik, peta, atau tabel lalu perbarui angkanya - tata letaknya mengurus dirinya sendiri. Hasil pemilu, laba kuartalan, peristiwa cuaca: bangun formatnya sekali dan gunakan kembali setiap kali cerita itu tayang. Sesuaikan dengan gaya khas Anda *secara persis*, karena hal itu ditegakkan di tingkat template, bukan dibiarkan sebagai pedoman longgar.
 

@@ -48,7 +48,7 @@ Compila qualche campo, ottieni l'asset finito - niente font da scegliere, niente
 
 ### Dai dati in tempo reale al visual finito
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
 
 Collega una tabella **CSV** o **JSON** a un template di grafico, mappa o tabella e aggiorna i numeri - il layout si occupa del resto. Risultati elettorali, utili trimestrali, eventi meteo: crea il formato una volta e riusalo ogni volta che la notizia torna d'attualità. Rispetta il tuo stile aziendale *con esattezza*, perché è applicato a livello di template, non lasciato come una semplice linea guida.
 

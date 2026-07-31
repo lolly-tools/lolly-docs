@@ -61,7 +61,7 @@ The filename and the format picker sit at the top of the panel as one `name.form
 
 The first row is the common case. A wordmark set in your brand face exports as SVG, where every letter is an outlined path rather than a pixel, so it stays crisp at a business-card size and at a building-wrap size from the same file.
 
-![A hairline wide-tracked wordmark reading Aurora, the kind of pure vector artwork the SVG row of the table is about](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DAurora%26weight%3D200%26tracking%3D16%26size%3D200%26full&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=%23tool-canvas&format=svg&dark=1&filename=vt-wordmark-vector)
+![A hairline wide-tracked wordmark reading Aurora, the kind of pure vector artwork the SVG row of the table is about](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DAurora%26weight%3D200%26tracking%3D16%26size%3D200%26full&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-wordmark-vector)
 
 ## Size & print units
 
@@ -214,7 +214,7 @@ Where the format supports it, exports carry **provenance metadata** - software, 
 
 **Content protection.** In the export panel, *Password protect*, Content Credentials, the Lolly Imprint and print marks fold into one collapsed, format-aware **Content protection** group, so all of a file's provenance and protection options live in one place - the group shows only the cards that apply to the chosen format.
 
-![The Content protection group opened on a PNG export, showing only the cards that apply to it](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26imprint%3D1%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-protection&dark=1&filename=exp-content-protection)
+![The Content protection group opened on a PNG export, showing only the cards that apply to it](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26imprint%3D1%26options&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&cropSelector=.export-protection&dark=1&filename=exp-content-protection)
 
 **Composed renders.** When a tool embeds another tool's output (e.g. an *Event Name Badge* embedding a *QR Code*), the nested render is inlined into the parent's export - it stays a **true vector** in SVG and PDF and rasterises crisply in PNG/JPG/WebP. The embedded child is an intermediate: it gets *no* watermark and *no* provenance of its own; only the finished parent asset does. (Composition covers SVG and the raster formats; HTML/MD/TXT can't be composed.)
 
@@ -224,7 +224,7 @@ Two independent kinds of lock, both entirely on-device.
 
 **PDF open-password** - the export panel's *Password protect* card offers two tiers:
 
-![The Password protect card expanded on a PDF export, with the password field and the two lock tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-pdfpass&dark=1&filename=exp-pdf-password)
+![The Password protect card expanded on a PDF export, with the password field and the two lock tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&cropSelector=.export-pdfpass&dark=1&filename=exp-pdf-password)
 
 - **Standard** - a basic 40-bit lock (RC4). It opens in *any* PDF app, and - being a light deterrent, not real protection - it can travel in a share link (clear-text, by design). RGB `pdf` only.
 - **Strong** - AES-256 (PDF 2.0). Its password is typed at export and is **never** put in a link; it opens only in newer PDF apps (Acrobat / Preview ~2018 on), and older apps may report the file as damaged. Strong also applies to **Print / CMYK PDFs** and to **each PDF inside a batch zip** (the batch confirm dialog collects the password). Because PDF/X-4 forbids encryption, a Strong-locked Print PDF keeps its CMYK, marks and output-intent but drops the PDF/X-4 conformance claim.

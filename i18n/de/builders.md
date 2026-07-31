@@ -10,7 +10,7 @@ Neu auf der Plattform? Der **[Schnelleinstieg](/info/quickstart.html)** richtet 
 
 ## Die Architektur verstehen
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-components-lib&sweep=1)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-components-lib&sweep=1)
 
 - **[Übersicht](/info/overview.html)** - warum es Lolly gibt, die Trennung von Engine/Shell/Tools, die Capability Bridge und die festgelegten architektonischen Grundsatzentscheidungen.
 - **[Design Tokens](/info/design-tokens.html)** - das DTCG-Token-Modell, in dem Marken ausgedrückt werden, und wie Tools diese nutzen.
@@ -19,11 +19,11 @@ Neu auf der Plattform? Der **[Schnelleinstieg](/info/quickstart.html)** richtet 
 
 Jedes Steuerelement unten wurde aus einer deklarierten Eingabe in `tool.json` erzeugt. Sie schreiben die Manifest-Zeile, der Host zeichnet das Widget, und dasselbe Modell steuert die CLI und die URL.
 
-![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&format=svg&dark=1&filename=aud-manifest-controls)
+![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&walker=1&format=svg&dark=1&filename=aud-manifest-controls)
 
 Das skaliert weit über fünf Steuerelemente hinaus. Geben Sie einer Eingabe eine `section`, und der Host klappt sie ein - so öffnet sich ein Tool mit fünfzig Eingaben wie das D3 Chart Studio trotzdem als kurzer Stapel, während der Rest hinter benannten Gruppen einsortiert ist.
 
-![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-d3-sections)
+![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-d3-sections)
 
 - **[Tools erstellen](/info/authoring-tools.html)** - der vollständige Leitfaden: Manifest, Vorlage, Styles, Hooks, Komposition und Veröffentlichung.
 - **[Assets erstellen](/info/authoring-assets.html)** - Katalog-Assets, Stufen, Sprachversionen, Paletten, themenfähige Icons und Schriftarten.
@@ -48,7 +48,7 @@ Das skaliert weit über fünf Steuerelemente hinaus. Geben Sie einer Eingabe ein
 
 Rechte und Urheberschaft sind Eingaben wie alle anderen. Embed & Track Image deklariert Felder für Urheber, Copyright, Lizenz und Kontakt, und der Export schreibt sie in die Metadaten der Datei selbst und in ihr C2PA-Manifest.
 
-![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-rights-fields)
+![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-rights-fields)
 
 - **[Content Credentials Identity](/info/content-credentials-identity.html)** - CA-ausgestellte Signierung für On-Device-C2PA; Engine-Verträge und das Operator-Runbook.
 - **[Datenübertragung](/info/data-transfer.html)** - das `lolly-backup`-Bundle: Envelope, Integrität und Cross-Shell-Garantien.

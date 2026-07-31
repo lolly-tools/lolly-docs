@@ -8,7 +8,15 @@ The short version: **verification is entirely on-device, the crypto is standards
 
 Everything Lolly verifies, it verifies **locally, offline, without uploading the file**. Dropping a file on `/verify` (or `lolly validate <file>`) parses it, walks its Content Credential, re-checks the signature and the byte-hash binding, and renders a verdict — all in your browser or on your machine. There is no verification server.
 
-![The Verify screen with nothing but a drop target - no upload button, no account, because the check runs where the file already is](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1400&format=svg&cropSelector=.valid-layout&dark=1&filename=cc-verify-drop&sweep=1)
+![The Verify screen — nothing but a drop target, no upload button, no account, because the check runs where the file already is](/t/url-shot?url=%2F%23%2Fverify&width=460&height=900&dpi=192&waitMs=1400&walker=1&format=svg&cropSelector=.valid-layout&dark=1&filename=cc-verify-drop-sq&sweep=1)
+
+Here is a real check, start to finish. This is the [generated Queensland storm](/info/ai-stance.html) from our AI stance — a Gemini image Lolly opened, resized and exported to WebP. Drop it on `/verify` and the whole story comes back: a green **Made with Lolly** verdict, the two key validations (credential intact, bytes unchanged), the provenance scorecard, and — because a machine made the pixels — an honest **GEN AI** flag. None of it left your device to get there.
+
+![The full Verify verdict for the generated storm image — the image itself, a green Made with Lolly pill, the intact-credential and unchanged-bytes badges, and the provenance scorecard](/t/url-shot?url=%2F%23%2Fverify%3Fsrc%3D%2Finfo%2Fthe-flood.webp&width=1240&height=940&dpi=192&waitMs=6000&waitSelector=.valid-steps&format=jpg&cropSelector=.valid-top&dark=1&filename=cc-verify-masthead&sweep=1)
+
+AI declares itself in the same verdict, as a badge nobody has to go looking for. The file was generated, and its credential says so — Lolly reads that assertion back out and surfaces it plainly, alongside the note that a Google model very likely stamped an invisible SynthID watermark into the pixels too.
+
+![The GEN AI flag Verify raises for the storm image — a labelled badge reading that the image was AI-generated, with the SynthID note](/t/url-shot?url=%2F%23%2Fverify%3Fsrc%3D%2Finfo%2Fthe-flood.webp&width=820&height=900&dpi=192&waitMs=6000&waitSelector=.valid-ai-flag&walker=1&format=svg&cropSelector=.valid-ai-flag&dark=1&filename=cc-verify-genai&sweep=1)
 
 The engine's crypto core is **platform-agnostic and uses only `globalThis.crypto` / WebCrypto** — no bespoke crypto library, no Node-only APIs, and **no network calls anywhere in the engine**. In the web app, verification makes **no network request to any third party** — the only fetch it can ever make is the opt-in deep scan's one-time detector download, from the app's own origin. Even a **SEAL** record whose signing key lives in DNS is reported as "no key resolver" rather than routed through a third-party DNS-over-HTTPS service (the desktop and command-line shells resolve such keys through your own machine's DNS, with no third party involved).
 
@@ -36,7 +44,7 @@ The engine's crypto core is **platform-agnostic and uses only `globalThis.crypto
 - **Encryption**: **AES-256** for the *Strong* PDF lock (PDF 2.0 / R6) and *Strong* locked downloads (WinZip AE-2), with **PBKDF2** key derivation and **HMAC** authentication. *Standard* tiers (40-bit RC4 for PDF, ZipCrypto for zip) are deliberately labelled as quick, universal **deterrents** — reach for *Strong* for anything sensitive.
 - **Hashing**: **SHA-256** throughout (SHA-384/512 where a curve or algorithm requires it).
 
-![The export panel's lock card, where Standard and Strong name the actual ciphers rather than hiding them behind a padlock icon](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Fformat%3Dpdf%26options%26password%3Dlolly&width=1440&height=900&dpi=192&waitMs=2200&format=svg&css=%23tool-inputs%2C%23sidebar-utils%7Bdisplay%3Anone%7D&cropSelector=.export-pdfpass&dark=1&filename=cc-pdf-lock)
+![The export panel's lock card, where Standard and Strong name the actual ciphers rather than hiding them behind a padlock icon](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Fformat%3Dpdf%26options%26password%3Dlolly&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&css=%23tool-inputs%2C%23sidebar-utils%7Bdisplay%3Anone%7D&cropSelector=.export-pdfpass&dark=1&filename=cc-pdf-lock)
 
 All of the above run on the platform's audited WebCrypto implementation. The two symmetric ciphers use a small in-house block layer only because WebCrypto exposes no raw AES block — this is used **encrypt-only, over your own content**, never as a decryption oracle.
 
@@ -60,7 +68,7 @@ Beyond the C2PA credential, Verify surfaces several read-only signals — each a
 
 Lolly's provenance strategy is **read-broad, embed-narrow**: it *reads* many signals but only ever *writes* C2PA (plus its own Imprint), which keeps the write-side attack surface small. That narrow write side is visible in the export panel: three named switches, each a separate mechanism, rather than one blanket "protect this" claim.
 
-![The Content protection group on a PNG export, with the credential, the Imprint and the durable mark as three separate switches](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fformat%3Dpng%26c2pa%3D90%26imprint%3D1%26durable%3D1%26options&width=1440&height=900&dpi=192&waitMs=2400&format=svg&css=%23tool-inputs%2C%23sidebar-utils%7Bdisplay%3Anone%7D&cropSelector=.export-protection&dark=1&filename=ce-protection-stack)
+![The Content protection group on a PNG export, with the credential, the Imprint and the durable mark as three separate switches](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fformat%3Dpng%26c2pa%3D90%26imprint%3D1%26durable%3D1%26options&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-inputs%2C%23sidebar-utils%7Bdisplay%3Anone%7D&cropSelector=.export-protection&dark=1&filename=ce-protection-stack)
 
 ## How it's assured
 

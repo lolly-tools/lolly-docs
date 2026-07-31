@@ -48,7 +48,7 @@ Street Map は、このトレードオフのよい例です。都市と2つの�
 
 ### ライブデータから完成したビジュアルへ
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
 
 **CSV** や **JSON** のテーブルをチャート、地図、表テンプレートに接続し、数値を更新するだけです——レイアウトは自動で調整されます。選挙結果、四半期決算、気象イベントなど、フォーマットを一度作れば、記事が出るたびに何度でも再利用できます。ハウススタイルに*正確に*一致します。それはゆるいガイドラインとしてではなく、テンプレートレベルで強制されているからです。
 

@@ -48,7 +48,7 @@ Fyll ut noen få felt, få den ferdige ressursen - ingen skrifter å velge, inge
 
 ### Fra levende data til ferdig visuelt uttrykk
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
 
 Koble en **CSV**- eller **JSON**-tabell til en diagram-, kart- eller tabellmal og oppdater tallene - layouten tar seg av seg selv. Valgresultater, kvartalstall, værhendelser: bygg formatet én gang og gjenbruk det hver gang saken kjøres. Match husstilen din *nøyaktig*, fordi den håndheves på malnivå, ikke overlatt som en løs retningslinje.
 

@@ -10,7 +10,7 @@ Tout ce qui compose un profil vit **sur l'appareil**, dans la base de données l
 
 Les préférences sont la seule partie qui change l'allure que l'appli te renvoie. Les cartes de thème sont des aperçus en direct et s'appliquent dès que tu en choisis une, sur cet appareil uniquement.
 
-![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&walker=1&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
 
 | Partie | Ce que c'est |
 |---|---|
@@ -50,7 +50,7 @@ Dans Lolly, ce rôle n'est qu'**un autre profil que tu gardes sous la main** - u
 
 Stockage est l'endroit où vivent les deux moitiés de tout ça : la jauge rend compte de chaque octet que cette installation conserve, catégorie par catégorie, et les boutons en dessous servent à vider ou à emporter le tout.
 
-![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
 
 À tout moment, une installation a **un profil actif** - les détails qu'un outil voit à cet instant. Il n'y a pas de sélecteur de profil dans l'app ; à la place, chaque profil est un **bundle portable** (un simple `.zip`, voir [plus bas](#moving-a-profile-to-a-new-device)). C'est délibérément le même mécanisme que pour changer d'appareil - un profil est un fichier que tu peux enregistrer, copier et charger.
 
@@ -64,7 +64,7 @@ Donc si tu jongles vraiment entre plusieurs contextes (toi, ton équipe, la casq
 
 ## Déplacer un profil vers un nouvel appareil
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
 
 Comme un profil est entièrement local, la seule façon de le faire arriver sur une installation vierge - un nouvel ordinateur portable, un navigateur fraîchement réinitialisé, la machine d'un collègue, une machine hors ligne - est de **transporter le fichier**. Aucune connexion ne le restaure pour toi, et c'est précisément le but : rien n'a jamais quitté ton appareil au départ.
 

@@ -48,7 +48,7 @@ Birkaç alanı doldur, bitmiş varlığı al - seçecek yazı tipi yok, sorgulan
 
 ### Canlı veriden bitmiş görsele
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
 
 Bir **CSV** veya **JSON** tablosunu bir grafik, harita veya tablo şablonuna bağla ve sayıları güncelle - düzen kendi kendine hallolur. Seçim sonuçları, üç aylık kazançlar, hava olayları: formatı bir kere oluştur, haber her yayınlandığında yeniden kullan. Kurumsal stilini *tam olarak* tuttur, çünkü bu gevşek bir kılavuz olarak değil, şablon seviyesinde uygulanır.
 

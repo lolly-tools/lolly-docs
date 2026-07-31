@@ -48,7 +48,7 @@ Street Map je dobrý příklad té výměny: vybereš město a pár barev a kart
 
 ### Od živých dat k hotovému vizuálu
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
 
 Připoj tabulku **CSV** nebo **JSON** ke grafu, mapě nebo tabulkové šabloně a aktualizuj čísla - o rozvržení se postará šablona sama. Výsledky voleb, čtvrtletní výsledky hospodaření, povětrnostní jevy: formát postavíš jednou a pak ho použiješ pokaždé, když se příběh opakuje. Tvůj firemní styl budeš dodržovat *přesně*, protože je vynucený na úrovni šablony, ne ponechaný jako volné doporučení.
 

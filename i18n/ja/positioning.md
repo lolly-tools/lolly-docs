@@ -6,7 +6,7 @@
 
 ## ランドスケープ
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
 
 | 機能 | Canva（オープンキャンバス） | ブランドポータル（DAMテンプレート化） | Illustrator（デスクトップ・プロ） | Figma / Penpot（オンライン・プロ） | **Lolly（制約ファースト）** |
 |---|---|---|---|---|---|
@@ -26,7 +26,7 @@
 
 ## 向いている用途
 
-![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&dark=1&filename=ov2-deck-studio-output)
+![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&dark=1&filename=ov2-deck-studio-output)
 
 Deck Studio は、その天井の高さをよく示す例です。スライドデッキ全体をデータとして宣言し、キャンバス上でライブにレイアウトして、ネイティブに編集可能な PowerPoint として書き出せます。
 
@@ -45,7 +45,7 @@ Deck Studio は、その天井の高さをよく示す例です。スライド�
 
 ## 承認するのはファイルではなく、ツール
 
-![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-approve-the-tool)
+![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-approve-the-tool)
 
 このランドスケープにある他のツールはどれも*ファイル*を生み出し、そのファイルは後からチェックされなければなりません——Slackのスレッドでブランドマネージャーが確認し、法務が免責文を見て、修正が一巡し、また別のレビューが入ります。Lollyは承認を**一段上流へ**移します。ブランドのルール——正確なカラーコード、ライセンス済みのフォントファイル、塗り足しの余白、余白の取り方——はツールのHTMLとCSSにハードコードされているため、テンプレートはブランドから外れたアセットを*物理的に出力できません*。レイアウトそのものが構造を支えているのです。
 

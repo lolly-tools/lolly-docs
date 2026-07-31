@@ -48,7 +48,7 @@ Street Map مثال منصف على هذه المقايضة: تختار مدين
 
 ### من البيانات الحية إلى مرئي جاهز
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
 
 اربط جدول **CSV** أو **JSON** بقالب مخطط أو خريطة أو جدول وحدث الأرقام — والتخطيط يتدبر أمره بنفسه. نتائج الانتخابات، والأرباح الفصلية، والأحوال الجوية: ابن الصيغة مرة واحدة وأعد استخدامها في كل مرة تنشر فيها القصة. طابق أسلوب داركم *بدقة تامة*، لأنه مفروض على مستوى القالب، لا متروكا إرشادا فضفاضا.
 

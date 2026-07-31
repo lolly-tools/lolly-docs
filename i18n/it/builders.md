@@ -10,7 +10,7 @@ Nuovo sulla piattaforma? La **[Guida rapida](/info/quickstart.html)** imposta un
 
 ## Comprendere l'architettura
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-components-lib&sweep=1)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-components-lib&sweep=1)
 
 - **[Panoramica](/info/overview.html)** - perché Lolly esiste, la separazione motore/shell/strumenti, il ponte delle capacità, e gli impegni architetturali consolidati.
 - **[Design Token](/info/design-tokens.html)** - il modello di token DTCG in cui vengono espressi i brand, e come gli strumenti li consumano.
@@ -19,11 +19,11 @@ Nuovo sulla piattaforma? La **[Guida rapida](/info/quickstart.html)** imposta un
 
 Ogni controllo qui sotto è stato generato da un input dichiarato in `tool.json`. Tu scrivi la riga del manifest, l'host disegna il widget, e lo stesso modello alimenta la CLI e l'URL.
 
-![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&format=svg&dark=1&filename=aud-manifest-controls)
+![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&walker=1&format=svg&dark=1&filename=aud-manifest-controls)
 
 E la cosa scala molto oltre i cinque controlli. Assegna a un input una `section` e l'host la richiude, così uno strumento da cinquanta input come D3 Chart Studio si apre comunque con una pila breve, e tutto il resto resta archiviato dietro gruppi con un nome.
 
-![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-d3-sections)
+![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-d3-sections)
 
 - **[Creazione di strumenti](/info/authoring-tools.html)** - la guida completa: manifest, template, stili, hook, composizione e pubblicazione.
 - **[Creazione di asset](/info/authoring-assets.html)** - asset del catalogo, livelli, locale, palette, icone temabili e font.
@@ -48,7 +48,7 @@ E la cosa scala molto oltre i cinque controlli. Assegna a un input una `section`
 
 Diritti e paternità sono input come tutti gli altri. Embed & Track Image dichiara i campi autore, copyright, licenza e contatto, e l'esportazione li scrive nei metadati del file stesso e nel suo manifest C2PA.
 
-![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-rights-fields)
+![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-rights-fields)
 
 - **[Identità Content Credentials](/info/content-credentials-identity.html)** - firma emessa da una CA per il C2PA sul dispositivo; contratti del motore e il runbook dell'operatore.
 - **[Trasferimento dati](/info/data-transfer.html)** - il bundle `lolly-backup`: busta, integrità, e garanzie tra shell.

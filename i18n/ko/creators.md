@@ -48,7 +48,7 @@ Street Map이 그 거래를 잘 보여주는 예예요: 도시 하나와 색 두
 
 ### 라이브 데이터에서 완성된 비주얼로
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
 
 **CSV**나 **JSON** 테이블을 차트, 지도, 표 템플릿에 연결하고 숫자만 갱신하세요——레이아웃은 알아서 처리돼요. 선거 결과, 분기 실적, 기상 이벤트까지, 포맷을 한 번 만들어 두면 이야기가 나올 때마다 재사용할 수 있어요. 하우스 스타일과 *정확히* 일치하는데, 느슨한 가이드라인이 아니라 템플릿 단계에서 강제되기 때문이에요.
 

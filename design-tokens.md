@@ -70,7 +70,7 @@ When a user picks a token-backed colour, the stored value is **a reference plus 
 
 A token-backed swatch reads as its token in the sidebar: the trigger carries the swatch's *name*, not a frozen hex, which is the visible difference between a linked value and one typed in by hand.
 
-![A tool's colour row holding a token-backed value, the trigger showing the swatch circle and its name instead of a hex code](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DLinked%26color%3D%257Bcolor.spectrum.rose%257D&width=1440&height=900&dpi=192&waitMs=2000&css=%23tool-canvas%7Bdisplay%3Anone%7D&format=svg&cropSelector=.input-row%3Ahas%28%5Bdata-color-field%3D%22color%22%5D%29&dark=1&filename=at2-token-linked-swatch)
+![A tool's colour row holding a token-backed value, the trigger showing the swatch circle and its name instead of a hex code](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DLinked%26color%3D%257Bcolor.spectrum.rose%257D&width=1440&height=900&dpi=192&waitMs=2000&css=%23tool-canvas%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.input-row%3Ahas%28%5Bdata-color-field%3D%22color%22%5D%29&dark=1&filename=at2-token-linked-swatch)
 
 The `ref` keeps the value canonical - editing the token, or switching themes, re-resolves it everywhere. The cached `value` is the graceful fallback for a device where that token is absent. The path is fully backward-compatible: a plain colour string (a custom pick, or any existing tool) flows through untouched.
 
@@ -99,7 +99,7 @@ The brand colours moved into tokens without changing what anyone sees: `scripts/
 
 The corner radius is the plainest of the shipped dimension tokens: one slider writing one `shape.radius` value that the app chrome, the panels and every opted-in tool then follow.
 
-![The Rounded corners control in the Tokens tab - a live preview square, a slider and the value it writes, all standing for a single dimension token](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&format=svg&cropSelector=.be-radius-panel&dark=1&filename=at2-token-radius-dimension)
+![The Rounded corners control in the Tokens tab - a live preview square, a slider and the value it writes, all standing for a single dimension token](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.be-radius-panel&dark=1&filename=at2-token-radius-dimension)
 
 ## Reference
 

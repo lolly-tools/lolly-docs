@@ -10,7 +10,7 @@
 
 التفضيلات هي الجزء الوحيد الذي يغير شكل التطبيق أمامك. بطاقات السمات معاينات حية، وتطبق لحظة اختيارك إحداها، على هذا الجهاز وحده.
 
-![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&walker=1&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
 
 ![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&dark=1&filename=profile-details&sweep=1)
 
@@ -50,7 +50,7 @@
 
 التخزين هو المكان الذي يسكنه شطرا ذلك: العداد يحاسب على كل بايت يحتفظ به هذا التثبيت، فئة فئة، والأزرار تحته هي وسيلتك لمسحه أو حمله معك.
 
-![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
 
 في أي لحظة، للتثبيت **ملف شخصي نشط واحد** — التفاصيل التي تراها الأداة الآن. لا يوجد مبدل ملفات شخصية داخل التطبيق؛ بدلا من ذلك، كل ملف شخصي **حزمة قابلة للنقل** (ملف `.zip` واحد، انظر [أدناه](#moving-a-profile-to-a-new-device)). هذه عمدا الآلية نفسها المستخدمة للانتقال إلى جهاز جديد — الملف الشخصي ملف يمكنك حفظه ونسخه وتحميله.
 
@@ -64,7 +64,7 @@
 
 ## نقل ملف شخصي إلى جهاز جديد
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
 
 لأن الملف الشخصي محلي بالكامل، فالطريقة الوحيدة لوضعه على تثبيت فارغ — حاسوب محمول جديد، أو متصفح أعيد ضبطه للتو، أو جهاز زميل، أو جهاز دون اتصال — هي **حمل الملف**. لا يوجد تسجيل دخول يستعيده لك، وهذا هو المقصود: لم يغادر شيء جهازك أصلا.
 

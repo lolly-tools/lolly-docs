@@ -68,7 +68,7 @@ Lolly 會把一切都提升一個層次。
 
 ## Lolly 能編輯並算繪我的 Figma、Penpot、Illustrator 或 InDesign 檔案嗎？
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
 
 可以。開啟 **Layout Studio**，點選 **匯入設計稿**：它接受 Figma 原生格式 **.fig**（另存本機副本）、Penpot 匯出的 **.penpot**、Illustrator 的 **.ai** 或 **.pdf**、InDesign 的 **.idml**（檔案 → 匯出 → InDesign Markup），或**任何 SVG**（這是最寬廣的一扇門──幾乎所有設計軟體都能匯出 SVG）。所有解析都完全在你的裝置上進行，不需要帳號，也不需要外掛。
 

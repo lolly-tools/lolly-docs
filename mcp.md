@@ -15,7 +15,7 @@ The render path has two tiers, so there are two endpoints. **They share the same
 
 Use the **full** endpoint (`mcp.lolly.tools`) unless you have a reason not to - it is a superset. The lightweight endpoint runs browser-free on the same infrastructure as `lolly.tools`, and is handy for quick vector/data work.
 
-> A render on either endpoint is **byte-for-byte what a user's export produces** - the server honours the full parameter contract (width/height/unit/dpi/colour profile/PDF password), and never watermarks or embeds anything a user's own download wouldn't.
+> A render on either endpoint runs **the same render path a user's export runs** - the server honours the full parameter contract (width/height/unit/dpi/colour profile/PDF password), and never watermarks or embeds anything a user's own download wouldn't. Same path and same settings does not mean the same bytes for every format; see [Reproducibility](#reproducibility-what-is-and-is-not-byte-stable).
 
 ## Hot-linkable render URLs (no auth)
 
@@ -37,13 +37,13 @@ This is the same "raw render URL" `lolly_build_url` returns - drop it into a REA
 - **No auth, no accounts, no state.** It renders public tool + catalog data only; the inputs are whatever the URL says, and nothing is stored per request. Fetching one of these URLs sends the server nothing but what's written in the URL itself - your on-device documents, sessions and uploads can never appear in one. The inputs are public by construction, so don't put secrets in a shared link. (The [privacy policy](/info/privacy.html) covers this surface in its own words.)
 - **Official and community tools only** - anything else is a 404.
 - **Browser-free formats only**: the vector and data set - `svg`, `emf`, `eps`, `eps-cmyk`, `dxf`, `html`, `md`, `txt`, `json`, `csv`, `ics`, `vcf` - plus `png` for SVG-native tools such as `qr-code`. Formats that need the browser tier return an honest `400` - use `lolly_render` or the app for those.
-- **Content Credentials are off here** so identical URLs return identical bytes - that determinism is what makes responses cacheable (a day at the CDN, `ETag` revalidation after that). A credentialed render is one `lolly_render` call away.
+- **Content Credentials are off here**, because a credential is signed with a fresh timestamp and nothing signed is cacheable. With them off, the vector and PNG formats this route serves are byte-stable run to run, which is what makes responses cacheable (a day at the CDN, `ETag` revalidation after that). `ics` is the exception in the list below: RFC 5545 requires a `DTSTAMP`, so an `.ics` differs between any two requests a second apart. A credentialed render is one `lolly_render` call away.
 - Renders are **rate-limited per address**; heavy automation belongs on the MCP endpoints.
 - Responses are marked **`noindex`**, so search engines don't index your renders.
 
 Operators who don't want a public render surface switch the route off entirely with `LOLLY_DISABLE_RENDER_GET=1` - every `/tool/<id>.<ext>` URL then returns 404. That is what lolly.tools itself currently does.
 
-## The six tools
+## The seven tools
 
 | Tool | Does |
 |---|---|
@@ -56,6 +56,12 @@ Operators who don't want a public render surface switch the route off entirely w
 | `lolly_verify` | Verify a file's Content Credentials (C2PA): was it genuinely made with Lolly, who signed it, and has it changed since export. Returns the verdict, signer identity, edit history and embedded metadata (including any AI-generated declaration and appended-data flags) - the same C2PA verifier as the CLI's `lolly validate`. (The web verify page's pixel-level reads - the Lolly Imprint, SEAL, the opt-in deep scan - are interactive, web-only.) The file is checked in-process and never stored. |
 
 The intended flow is `lolly_list_tools` → `lolly_describe_tool` (read the exact input schema) → `lolly_render`; `lolly_verify` closes the loop when an agent needs to prove a file it holds is an untouched Lolly export.
+
+### One vocabulary across both machine surfaces
+
+`lolly_verify` and the CLI's `lolly validate --json` answer the same question, so they answer it in the same words. Both report a `verdict` slug from one shared table - `made-with-lolly`, `delivered-by-lolly`, `likely-made-with-lolly`, `credential-expired`, `credential-intact`, `credential-broken`, `no-credential` - alongside `resolved` (the engine's semantic verdict) and the full verifier `report`. The slugs are frozen: an existing one is never re-pointed, and a new engine state adds a new slug, so a consumer needs a default branch and nothing else.
+
+The same rule governs when a call escalates to the browser tier: one predicate, shared by the CLI, the TUI and this server, keyed on a typed `NEEDS_BROWSER` marker rather than on the wording of a tool's error. The lightweight endpoint's "that needs the browser tier" refusal and the CLI's exit `3` are therefore the same judgement, not two guesses that happen to agree.
 
 ### Redaction needs the full endpoint
 
@@ -124,7 +130,7 @@ The endpoint also accepts the raw token directly, so scripted clients skip the O
 }
 ```
 
-A quick check with `curl` (expect a JSON list of the six tools; no token returns `401`):
+A quick check with `curl` (expect a JSON list of the seven tools; no token returns `401`):
 
 ```bash
 curl -s -X POST https://mcp.lolly.tools/mcp \
@@ -141,6 +147,15 @@ During local development you can also run the server over **stdio** - no token n
 - **Stateless OAuth 2.1.** The client registration, authorization code, and access/refresh tokens are all short-lived **signed values** verified with a shared secret on each call - nothing is stored server-side. PKCE (S256) protects the flow, so a captured link can't be replayed.
 - **The token stays out of band.** It is the bearer for scripted clients and the passphrase on the consent page; it never appears in a render URL or a log line.
 
+## Reproducibility: what is and is not byte-stable
+
+Every render is reproducible in the sense that matters for design work: the inputs are the whole state, they travel as a link, and re-rendering them gives the same picture. Byte-for-byte equality is a narrower promise, and it is the same one the [CLI](/info/cli.html#how-far-the-same-goes-byte-for-byte) documents, because both surfaces drive the same engine:
+
+- **Byte-stable**: `svg`, `emf`, `eps`, `dxf`, the data formats `json`/`csv`/`vcf`/`md`/`txt`, and `png` from an SVG-native tool.
+- **Not byte-stable**: `ics` (a required `DTSTAMP`), `pdf` (`/CreationDate` and `/ModDate` in every file), and everything the headless-browser tier paints and encodes - `jpg`, `webp`, HTML-layout `png`, `gif`/`apng`/`webm`/`mp4`. Anything carrying Content Credentials is signed with a fresh timestamp by design.
+
+So do not build a cache key or a CI gate on the digest of a PDF or a browser-tier raster. Compare those by re-rendering and inspecting.
+
 ## Self-host it
 
 The full endpoint is the one part of Lolly that is a **server-side add-on**, not an on-device component - producing the full format range means driving a **headless browser against a built web shell**, which runs as a hosted service (a container or worker), not offline or at the edge. The on-device shells - [web PWA](/info/using.html), desktop, mobile and [CLI](/info/cli.html) - remain the offline / air-gapped path.
@@ -151,5 +166,5 @@ You can run the full server yourself - including fully air-gapped - as a contain
 
 - **Quality doesn't drift.** Layout, type, colour and spacing are structural - hard-coded by the tool author, not prompted. A lazy model can't degrade them.
 - **Cheap.** A tool call is a handful of tokens versus thousands for a brief + generation - and the result is production-grade.
-- **Deterministic & auditable.** Every output is reproducible from its inputs.
+- **Reproducible & auditable.** The same inputs give the same design every time, and the inputs travel with it as a link anyone can re-open and re-render. (Byte-for-byte is a narrower promise - see below.)
 - **One design, many outputs.** Change `format`/`unit`/`width` to emit the same design as SVG, print PDF, and a social MP4 from one set of inputs.

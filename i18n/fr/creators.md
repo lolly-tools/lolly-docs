@@ -48,7 +48,7 @@ Renseigne quelques champs, obtiens le visuel fini - aucune police à choisir, au
 
 ### Des données en direct au visuel fini
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
 
 Connecte un tableau **CSV** ou **JSON** à un gabarit de graphique, de carte ou de tableau, puis mets à jour les chiffres - la mise en page se charge du reste. Résultats électoraux, résultats trimestriels, événements météo : construis le format une fois et réutilise-le à chaque fois que l'histoire revient. Respecte ta charte graphique *exactement*, parce qu'elle est appliquée au niveau du gabarit, pas laissée comme une simple directive.
 

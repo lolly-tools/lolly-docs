@@ -6,7 +6,7 @@
 
 ## ল্যান্ডস্কেপ
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
 
 | ক্ষমতা | Canva (ওপেন ক্যানভাস) | ব্র্যান্ড পোর্টাল (DAM টেমপ্লেটিং) | Illustrator (ডেস্কটপ প্রো) | Figma / Penpot (অনলাইন প্রো) | **Lolly (কনস্ট্রেইন্টস-ফার্স্ট)** |
 |---|---|---|---|---|---|
@@ -26,7 +26,7 @@
 
 ## যে কাজে ব্যবহার করুন
 
-![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&dark=1&filename=ov2-deck-studio-output)
+![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&dark=1&filename=ov2-deck-studio-output)
 
 - অপারেশনালাইজড ক্রিয়েটিভ অ্যাসেটের দ্রুত জেনারেশন (ইভেন্ট টাইল, ব্যাজ, সিগনেচার, অ্যালার্ট)
 - ওপেন ক্যানভাসে (Layout Studio) ফ্রি-ফর্ম বিন্যাস, যখন উপাদানগুলো — রং, টাইপ, আইকন, ছবি — ব্র্যান্ড গ্লোবালের সাথে সামঞ্জস্যপূর্ণ থাকতেই হবে
@@ -45,7 +45,7 @@ Deck Studio এখানকার সিলিংয়ের একটা ভ�
 
 ## টুল অনুমোদন করুন, ফাইল নয়
 
-![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-approve-the-tool)
+![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-approve-the-tool)
 
 ল্যান্ডস্কেপের বাকি সব টুল একটা *ফাইল* বানায়, যা তারপর যাচাই করতে হয় — Slack থ্রেডে একজন ব্র্যান্ড ম্যানেজার, ডিসক্লেইমারে লিগ্যাল, এক দফা পরিবর্তন, আরেক দফা রিভিউ। Lolly অনুমোদনটাকে **এক ধাপ আগে** সরিয়ে দেয়। ব্র্যান্ডের নিয়ম — নির্দিষ্ট hex কোড, লাইসেন্সড ফন্ট ফাইল, ব্লিড মার্জিন, স্পেসিং — টুলের HTML ও CSS-এ হার্ড-কোড করা থাকে, তাই টেমপ্লেটটা *শারীরিকভাবেই* কোনো অফ-ব্র্যান্ড অ্যাসেট বের করতে পারে না। লেআউট নিজেই ভার বহন করে।
 

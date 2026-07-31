@@ -48,7 +48,7 @@ Punan ang ilang fields, makakuha ng tapos na asset - walang font na pipiliin, wa
 
 ### Mula sa live data hanggang sa tapos na visual
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
 
 Ikonekta ang isang **CSV** o **JSON** table sa isang chart, mapa, o table template at i-update ang mga numero - ang layout na ang bahalang mag-ayos ng sarili. Election results, quarterly earnings, weather events: buuin ang format nang isang beses at gamitin ulit ito tuwing tatakbo ang istorya. Eksaktong tumutugma sa house style mo, dahil ipinapatupad ito sa antas ng template, hindi lang naiwang parang malabong gabay.
 

@@ -10,7 +10,7 @@ Ny på plattformen? **[Hurtigstart](/info/quickstart.html)** får en merkevare o
 
 ## Forstå arkitekturen
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-components-lib&sweep=1)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-components-lib&sweep=1)
 
 - **[Oversikt](/info/overview.html)** - hvorfor Lolly finnes, skillet mellom motor/skall/verktøy, kapabilitetsbroen, og de fastsatte arkitektoniske forpliktelsene.
 - **[Design Tokens](/info/design-tokens.html)** - DTCG-tokenmodellen som merkevarer uttrykkes i, og hvordan verktøy bruker den.
@@ -19,11 +19,11 @@ Ny på plattformen? **[Hurtigstart](/info/quickstart.html)** får en merkevare o
 
 Hver kontroll nedenfor ble generert fra en deklarert inndata i `tool.json`. Du skriver manifestlinjen, verten tegner kontrollen, og samme modell driver CLI-en og URL-en.
 
-![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&format=svg&dark=1&filename=aud-manifest-controls)
+![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&walker=1&format=svg&dark=1&filename=aud-manifest-controls)
 
 Det skalerer lenger enn fem kontroller. Gi en inndata en `section`, og verten feller den sammen, slik at et verktøy med femti inndata som D3 Chart Studio likevel åpner som en kort stabel med resten sortert bak navngitte grupper.
 
-![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-d3-sections)
+![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-d3-sections)
 
 - **[Lag verktøy](/info/authoring-tools.html)** - den fullstendige guiden: manifest, mal, stiler, hooks, komposisjon og publisering.
 - **[Lag ressurser](/info/authoring-assets.html)** - katalogressurser, nivåer, språkversjoner, paletter, temabare ikoner og fonter.
@@ -48,7 +48,7 @@ Det skalerer lenger enn fem kontroller. Gi en inndata en `section`, og verten fe
 
 Rettigheter og opphav er inndata som alle andre. Embed & Track Image deklarerer felter for opphavsperson, copyright, lisens og kontakt, og eksporten skriver dem inn i filens egne metadata og i C2PA-manifestet dens.
 
-![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-rights-fields)
+![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-rights-fields)
 
 - **[Content Credentials-identitet](/info/content-credentials-identity.html)** - CA-utstedt signering for C2PA på enheten; motorkontrakter og driftshåndboken for operatører.
 - **[Dataoverføring](/info/data-transfer.html)** - `lolly-backup`-pakken: konvolutt, integritet og garantier på tvers av skall.

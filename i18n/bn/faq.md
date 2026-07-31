@@ -95,7 +95,7 @@ Lolly সবকিছুকে উপরে তুলে ধরে।
 
 ## Lolly কি আমার Figma, Penpot, Illustrator বা InDesign ফাইল এডিট ও রেন্ডার করতে পারে?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
 
 হ্যাঁ। **Layout Studio** খুলুন এবং **একটি ডিজাইন ইমপোর্ট করুন**-এ ক্লিক করুন: এটি গ্রহণ করে নেটিভ Figma **.fig** (Save local copy), Penpot **.penpot** এক্সপোর্ট, Illustrator **.ai** বা **.pdf**, InDesign **.idml** (File → Export → InDesign Markup), অথবা **যেকোনো SVG** (প্রশস্ত দরজা — প্রায় যেকোনো ডিজাইন অ্যাপ এটি এক্সপোর্ট করে)। সবকিছু সম্পূর্ণরূপে আপনার ডিভাইসেই পার্স করা হয়, কোনো অ্যাকাউন্ট বা প্লাগইনের প্রয়োজন নেই।
 

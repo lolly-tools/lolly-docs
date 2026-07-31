@@ -96,7 +96,7 @@ Lolly 会把一切都提升上去。
 
 ## Lolly 能编辑并渲染我的 Figma、Penpot、Illustrator 或 InDesign 文件吗?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
 
 可以。打开 **Layout Studio** 并点击 **导入设计**:它支持原生 Figma **.fig** 文件(通过 Save local copy 保存的本地副本)、Penpot 的 **.penpot** 导出文件、Illustrator 的 **.ai** 或 **.pdf**、InDesign 的 **.idml**(File → Export → InDesign Markup),或**任意 SVG**(这是最宽的入口——几乎所有设计软件都能导出 SVG)。一切解析都完全在你的设备本地完成,无需账号,也无需插件。
 

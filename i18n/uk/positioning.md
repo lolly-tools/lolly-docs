@@ -6,7 +6,7 @@
 
 ## Ландшафт
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
 
 | Можливість | Canva (Відкрите полотно) | Бренд-портали (шаблонізація DAM) | Illustrator (Настільний профі) | Figma / Penpot (Онлайн профі) | **Lolly (Спершу обмеження)** |
 |---|---|---|---|---|---|
@@ -26,7 +26,7 @@
 
 ## Використовуйте це для
 
-![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&dark=1&filename=ov2-deck-studio-output)
+![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&dark=1&filename=ov2-deck-studio-output)
 
 - Швидкої генерації операціоналізованих творчих ресурсів (плитки подій, бейджі, підписи, сповіщення)
 - Довільного компонування на відкритому полотні (Layout Studio), коли елементи — кольори, шрифти, іконки, зображення — мають залишатися узгодженими з глобальними параметрами бренду
@@ -45,7 +45,7 @@ Deck Studio — гарна міра того, де тут стеля: ціла �
 
 ## Схвалюйте інструмент, а не файл
 
-![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-approve-the-tool)
+![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-approve-the-tool)
 
 Кожен інший інструмент у ландшафті виробляє *файл*, який потім треба перевірити — бренд-менеджер у треді в Slack, юрист щодо дискляймера, коло правок, ще одне рецензування. Lolly переносить схвалення **на крок вище за течією**. Правила бренду — точні hex-коди, ліцензовані файли шрифтів, вильоти під обріз, відступи — жорстко закодовані в HTML і CSS інструмента, тож шаблон *фізично не може* видати ресурс поза брендом. Саме компонування є несучою конструкцією.
 

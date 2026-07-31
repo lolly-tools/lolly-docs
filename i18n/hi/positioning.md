@@ -6,7 +6,7 @@
 
 ## परिदृश्य
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
 
 | क्षमता | Canva (ओपन कैनवास) | ब्रांड पोर्टल (DAM टेम्पलेटिंग) | Illustrator (डेस्कटॉप प्रो) | Figma / Penpot (ऑनलाइन प्रो) | **Lolly (कंस्ट्रेंट्स-फ़र्स्ट)** |
 |---|---|---|---|---|---|
@@ -26,7 +26,7 @@
 
 ## इसका उपयोग इनके लिए करें
 
-![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&dark=1&filename=ov2-deck-studio-output)
+![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&dark=1&filename=ov2-deck-studio-output)
 
 - ऑपरेशनलाइज़्ड क्रिएटिव एसेट्स (इवेंट टाइल, बैज, सिग्नेचर, अलर्ट) का तेज़ जनरेशन
 - ओपन कैनवास (Layout Studio) पर फ़्री-फ़ॉर्म व्यवस्था, जब हिस्से — रंग, टाइप, आइकन, इमेज — ब्रांड ग्लोबल्स के अनुरूप रहने ज़रूरी हों
@@ -45,7 +45,7 @@ Deck Studio यहाँ की छत का अच्छा पैमाना
 
 ## टूल को अनुमोदित करें, फ़ाइल को नहीं
 
-![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-approve-the-tool)
+![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-approve-the-tool)
 
 परिदृश्य का हर दूसरा टूल एक *फ़ाइल* बनाता है, जिसे फिर जाँचना पड़ता है — किसी Slack थ्रेड में ब्रांड मैनेजर, डिस्क्लेमर पर लीगल, बदलावों का एक दौर, फिर एक और समीक्षा। Lolly अनुमोदन को **एक कदम पहले** ले जाता है। ब्रांड के नियम — सटीक hex कोड, लाइसेंस वाली फ़ॉन्ट फ़ाइलें, ब्लीड मार्जिन, स्पेसिंग — टूल के HTML और CSS में हार्ड-कोड होते हैं, इसलिए टेम्पलेट *भौतिक रूप से* कोई ऑफ़-ब्रांड एसेट निकाल ही नहीं सकता। लेआउट खुद भार उठाता है।
 
