@@ -84,7 +84,7 @@ How it moves through the engine:
 
 Nothing in the link below names a colour. Its three colour params are token paths (`{color.spectrum.violet}`, `{color.spectrum.teal}`, `{color.spectrum.amber}`), resolved at render time against whatever brand the device is carrying.
 
-![A mesh gradient whose violet, teal and amber all arrived as token references in the link rather than as hex values](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Fcount%3D3%26color1%3D%257Bcolor.spectrum.violet%257D%26color2%3D%257Bcolor.spectrum.teal%257D%26color3%3D%257Bcolor.spectrum.amber%257D%26full&width=880&height=560&dpi=96&waitMs=2400&format=png&filename=at2-token-refs-in-url)
+![A mesh gradient whose violet, teal and amber all arrived as token references in the link rather than as hex values](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Fcount%3D3%26color1%3D%257Bcolor.spectrum.violet%257D%26color2%3D%257Bcolor.spectrum.teal%257D%26color3%3D%257Bcolor.spectrum.amber%257D%26full&width=880&height=560&dpi=96&waitMs=2400&walker=1&format=svg&filename=at2-token-refs-in-url)
 
 ## Penpot interop
 
