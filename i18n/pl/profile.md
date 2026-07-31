@@ -52,9 +52,9 @@ W danej chwili instalacja ma **jeden aktywny profil** - dane, które narzędzie 
 
 Jeśli więc naprawdę żonglujesz kilkoma kontekstami (ty, twój zespół, kapelusz menedżera wydarzeń), trzymasz kilka pakietów i wczytujesz ten, którego potrzebujesz:
 
-- **Najczystsze przełączenie:** **Profil → Pamięć → Wyczyść wszystkie moje dane**, a następnie **Importuj** pakiet dla kontekstu, w który wchodzisz. Teraz tworzysz wyłącznie jako ten profil.
-- **Nakładanie:** import *bez* wcześniejszego czyszczenia **scala** dane - importowany profil, sesje i obrazy trafiają na to, co już jest, zastępując wszystko o tej samej nazwie i pozostawiając resztę. Przydatne do przeniesienia zapisanych sesji jednego zespołu do własnej konfiguracji; nie jest tym, czego chcesz, gdy potrzebujesz czystej granicy między rolami.
-- **Obok siebie:** ponieważ wszystko jest ograniczone do urządzenia, osobny profil przeglądarki, osobne konto użytkownika lub druga zainstalowana aplikacja PWA - każde z nich niesie własny, niezależny profil Lolly. Uruchamiaj swoją osobistą instalację i instalację kiosku wydarzenia jednocześnie, bez przełączania.
+- <!--i:trash--> **Najczystsze przełączenie:** **Profil → Pamięć → Wyczyść wszystkie moje dane**, a następnie **Importuj** pakiet dla kontekstu, w który wchodzisz. Teraz tworzysz wyłącznie jako ten profil.
+- <!--i:layers--> **Nakładanie:** import *bez* wcześniejszego czyszczenia **scala** dane - importowany profil, sesje i obrazy trafiają na to, co już jest, zastępując wszystko o tej samej nazwie i pozostawiając resztę. Przydatne do przeniesienia zapisanych sesji jednego zespołu do własnej konfiguracji; nie jest tym, czego chcesz, gdy potrzebujesz czystej granicy między rolami.
+- <!--i:monitor--> **Obok siebie:** ponieważ wszystko jest ograniczone do urządzenia, osobny profil przeglądarki, osobne konto użytkownika lub druga zainstalowana aplikacja PWA - każde z nich niesie własny, niezależny profil Lolly. Uruchamiaj swoją osobistą instalację i instalację kiosku wydarzenia jednocześnie, bez przełączania.
 
 Oba te warianty żyją w sekcji Pamięć: miernik rozlicza każdy bajt, który przechowuje ta instalacja, kategoria po kategorii, a przyciski pod nim służą do wyczyszczenia albo przeniesienia danych.
 
@@ -70,8 +70,8 @@ Ponieważ profil jest w całości lokalny, jedynym sposobem, by przenieść go n
 
 W sekcji **Profil → Pamięć → Przenieś na inne urządzenie**:
 
-- **Eksportuj moje dane** pobiera jeden plik `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - nazwany według profilu, do którego należy, z numerem sekwencyjnym na dzień, aby powtarzane eksporty nie kolidowały ze sobą (części nazwy są pomijane, gdy profil ich nie ma). Zawiera twój profil, każdą zapisaną sesję (wraz z jej miniaturą), twoje przesłane obrazy oraz twoje preferencje (motyw, układ, lokalne statystyki aktywności).
-- **Importuj dane…** na drugiej instalacji wczytuje ten plik z powrotem, a ty kontynuujesz dokładnie tam, gdzie skończyłeś.
+- <!--i:download--> **Eksportuj moje dane** pobiera jeden plik `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - nazwany według profilu, do którego należy, z numerem sekwencyjnym na dzień, aby powtarzane eksporty nie kolidowały ze sobą (części nazwy są pomijane, gdy profil ich nie ma). Zawiera twój profil, każdą zapisaną sesję (wraz z jej miniaturą), twoje przesłane obrazy oraz twoje preferencje (motyw, układ, lokalne statystyki aktywności).
+- <!--i:upload--> **Importuj dane…** na drugiej instalacji wczytuje ten plik z powrotem, a ty kontynuujesz dokładnie tam, gdzie skończyłeś.
 
 Pakiet to zwykły, samowystarczalny plik zip, więc podróżuje **dowolnym** sposobem - przez USB, AirDrop, udział sieciowy, e-mail do samego siebie - a urządzenie docelowe może być całkowicie offline. Każda część ma sumę kontrolną, dzięki czemu plik uszkodzony w trakcie przesyłania jest wykrywany podczas importu, a nie przywracany w połowie zepsuty. Import **scala** dane (profil/sesja/obraz o tej samej nazwie jest nadpisywany; cała reszta jest zachowywana), więc nigdy nie kasuje urządzenia docelowego, które było już w użyciu.
 
@@ -93,18 +93,20 @@ Narzędzie zawsze tylko *wstępnie wypełnia* te pola profilu, do których powi�
 
 Trzy rzeczy sąsiadują ze sobą w interfejsie i łatwo je pomylić:
 
-- **Profil** - *ty* (lub twój zespół, lub rola, w której jesteś): imię i nazwisko, kontakt, zdjęcie profilowe, twoja zapisana praca. Osobisty, lokalny na urządzeniu, przenośny jako pakiet.
-- **Platforma** - *marka*: kolory, czcionki i ustawienia globalne, względem których renderuje każde narzędzie. Wspólna i spójna, nie osobista.
-- **Możliwości** - *to, co potrafi aplikacja*: pełny zestaw funkcji i narzędzia dostępne dla ciebie.
+- <!--i:people--> **Profil** - *ty* (lub twój zespół, lub rola, w której jesteś): imię i nazwisko, kontakt, zdjęcie profilowe, twoja zapisana praca. Osobisty, lokalny na urządzeniu, przenośny jako pakiet.
+- <!--i:palette--> **Platforma** - *marka*: kolory, czcionki i ustawienia globalne, względem których renderuje każde narzędzie. Wspólna i spójna, nie osobista.
+- <!--i:sliders--> **Możliwości** - *to, co potrafi aplikacja*: pełny zestaw funkcji i narzędzia dostępne dla ciebie.
 
 Profil zmienia to, *od kogo* pochodzi zasób; platforma zmienia to, *jak wygląda*; możliwości to *to, co możesz stworzyć*.
 
 ### „Profil" ma gdzie indziej jeszcze dwa inne znaczenia - nie to opisane tutaj
 
+![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&filename=pv-identity-enrol)
+
 Słowo to jest przeciążone znaczeniowo w całym projekcie. Żadne z poniższych nie jest osobistym profilem, o którym mowa na tej stronie:
 
-- **Profil zawartości** - konfiguracja czasu kompilacji w pliku `profiles.json`, wiążąca zestaw pakietów narzędzi z katalogiem marki (np. `suse`, `lolly-start`). To coś, co wybiera operator podczas wdrażania, i to samo wybiera też **parametr URL/CLI** `profile` - wariant *kolorystyczny* w momencie eksportu (warunek druku ICC/CMYK - zobacz [Tryb URL](/info/url-mode.html)). Oba dotyczą *budowy/wyniku*, a nie *ciebie*. Zobacz [Konfigurację](/info/configuration.html).
-- **Profil tożsamości** - opcjonalna **zweryfikowana tożsamość Content Credentials**, którą możesz zarejestrować (krótkotrwały certyfikat wiążący twój e-mail z podpisanymi eksportami). To tożsamość podpisująca, odrębna od pól imienia/nazwiska i kontaktu w profilu osobistym, choć to opcja **Użyj moich danych** decyduje, czy którakolwiek z nich zostanie osadzona. Zobacz [Tożsamość Content Credentials](/info/content-credentials-identity.html).
+- <!--i:box--> **Profil zawartości** - konfiguracja czasu kompilacji w pliku `profiles.json`, wiążąca zestaw pakietów narzędzi z katalogiem marki (np. `suse`, `lolly-start`). To coś, co wybiera operator podczas wdrażania, i to samo wybiera też **parametr URL/CLI** `profile` - wariant *kolorystyczny* w momencie eksportu (warunek druku ICC/CMYK - zobacz [Tryb URL](/info/url-mode.html)). Oba dotyczą *budowy/wyniku*, a nie *ciebie*. Zobacz [Konfigurację](/info/configuration.html).
+- <!--i:seal--> **Profil tożsamości** - opcjonalna **zweryfikowana tożsamość Content Credentials**, którą możesz zarejestrować (krótkotrwały certyfikat wiążący twój e-mail z podpisanymi eksportami). To tożsamość podpisująca, odrębna od pól imienia/nazwiska i kontaktu w profilu osobistym, choć to opcja **Użyj moich danych** decyduje, czy którakolwiek z nich zostanie osadzona. Zobacz [Tożsamość Content Credentials](/info/content-credentials-identity.html).
 
 ## Prywatność
 

@@ -56,9 +56,9 @@ I varje given stund har en installation **en aktiv profil** - de uppgifter ett v
 
 Så om du verkligen jonglerar flera sammanhang (du, ditt team, eventansvarig-hatten), håller du flera paket och läser in det du behöver:
 
-- **Renaste bytet:** **Profil → Lagring → Rensa alla mina data**, och läs sedan in paketet för det sammanhang du går in i via **Importera**. Nu skapar du helt och hållet som den profilen.
-- **Skiktning:** att importera *utan* att först rensa **slår samman** - den importerade profilen, sessionerna och bilderna hamnar ovanpå det som redan finns, ersätter allt med samma namn och lämnar resten orört. Praktiskt för att dra in ett teams sparade sessioner i din egen uppsättning; inte vad du vill ha om du behöver en tydlig rollgräns.
-- **Sida vid sida:** eftersom allt är knutet till enheten bär en separat webbläsarprofil, ett separat användarkonto eller en andra installerad PWA var sin egen oberoende Lolly-profil. Kör din personliga installation och event-kioskinstallationen samtidigt, utan att behöva växla.
+- <!--i:trash--> **Renaste bytet:** **Profil → Lagring → Rensa alla mina data**, och läs sedan in paketet för det sammanhang du går in i via **Importera**. Nu skapar du helt och hållet som den profilen.
+- <!--i:layers--> **Skiktning:** att importera *utan* att först rensa **slår samman** - den importerade profilen, sessionerna och bilderna hamnar ovanpå det som redan finns, ersätter allt med samma namn och lämnar resten orört. Praktiskt för att dra in ett teams sparade sessioner i din egen uppsättning; inte vad du vill ha om du behöver en tydlig rollgräns.
+- <!--i:monitor--> **Sida vid sida:** eftersom allt är knutet till enheten bär en separat webbläsarprofil, ett separat användarkonto eller en andra installerad PWA var sin egen oberoende Lolly-profil. Kör din personliga installation och event-kioskinstallationen samtidigt, utan att behöva växla.
 
 > Håll ett paket per sammanhang och döp om filerna efter vad de är (`LollyTools-events-2026.zip`, `LollyTools-me.zip`). Filen *är* profilen.
 
@@ -70,8 +70,8 @@ Eftersom en profil är helt lokal är det enda sättet att få den till en tom i
 
 Under **Profil → Lagring → Flytta till en annan enhet**:
 
-- **Exportera mina data** laddar ner en `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - döpt efter den profil den tillhör, med ett dagligt sekvensnummer så att upprepade exporter inte krockar (namndelar utelämnas när profilen saknar dem). Den innehåller din profil, varje sparad session (med sin miniatyr), dina uppladdade bilder och dina inställningar (tema, layout, lokal aktivitetsstatistik).
-- **Importera data…** på den andra installationen läser in den filen igen och du fortsätter precis där du slutade.
+- <!--i:download--> **Exportera mina data** laddar ner en `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - döpt efter den profil den tillhör, med ett dagligt sekvensnummer så att upprepade exporter inte krockar (namndelar utelämnas när profilen saknar dem). Den innehåller din profil, varje sparad session (med sin miniatyr), dina uppladdade bilder och dina inställningar (tema, layout, lokal aktivitetsstatistik).
+- <!--i:upload--> **Importera data…** på den andra installationen läser in den filen igen och du fortsätter precis där du slutade.
 
 Paketet är en enkel, självständig zip-fil, så den kan färdas på **vilket** sätt som helst - USB, AirDrop, en nätverksdelning, e-post till dig själv - och målet kan vara helt offline. Varje del är checksummerad, så en fil som skadats under transporten fångas upp vid import istället för att återställas halvtrasig. Import **slår samman** (profil/session/bild med samma namn skrivs över; allt annat behålls), så den suddar aldrig ut ett mål som redan är i bruk.
 
@@ -93,18 +93,20 @@ Ett verktyg *förifyller* bara någonsin de profilfält det uttryckligen är byg
 
 Tre saker ligger nära varandra i gränssnittet och är lätta att blanda ihop:
 
-- **Profil** - *du* (eller ditt team, eller rollen du är i just nu): namn, kontakt, porträttfoto, ditt sparade arbete. Personlig, enhetslokal, portabel som ett paket.
-- **Plattform** - *varumärket*: färger, typsnitt och globala inställningar som varje verktyg renderas mot. Delad och konsekvent, inte personlig.
-- **Funktioner** - *vad appen kan göra*: hela funktionsutbudet och verktygen som är tillgängliga för dig.
+- <!--i:people--> **Profil** - *du* (eller ditt team, eller rollen du är i just nu): namn, kontakt, porträttfoto, ditt sparade arbete. Personlig, enhetslokal, portabel som ett paket.
+- <!--i:palette--> **Plattform** - *varumärket*: färger, typsnitt och globala inställningar som varje verktyg renderas mot. Delad och konsekvent, inte personlig.
+- <!--i:sliders--> **Funktioner** - *vad appen kan göra*: hela funktionsutbudet och verktygen som är tillgängliga för dig.
 
 En profil ändrar vem en tillgång är *från*; plattformen ändrar hur den *ser ut*; funktioner är *vad du kan skapa*.
 
 ### "Profil" betyder två andra saker på andra ställen - inte det här
 
+![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&filename=pv-identity-enrol)
+
 Ordet är överanvänt i projektet. Ingen av dessa är den personliga profil som den här sidan handlar om:
 
-- **Innehållsprofil** - en byggtidskonfiguration i `profiles.json` som binder en uppsättning verktygspaket till en varumärkeskatalog (t.ex. `suse`, `lolly-start`). Det är vad en operatör väljer vid driftsättning, och det är även vad `profile`-**URL/CLI-parametern** väljer en *färg*variant av vid exporttillfället (ICC/CMYK-tryckförhållandet - se [URL-läge](/info/url-mode.html)). Båda handlar om *bygget/utdatan*, inte om *dig*. Se [Konfiguration](/info/configuration.html).
-- **Identitetsprofil** - den valfria **verifierade Content Credentials-identiteten** du kan registrera (ett kortlivat certifikat som knyter din e-post till dina signerade exporter). Det är en signeringsidentitet, skild från den personliga profilens namn-/kontaktfält, även om **Använd mina uppgifter** styr om någon av dem bäddas in. Se [Content Credentials-identitet](/info/content-credentials-identity.html).
+- <!--i:box--> **Innehållsprofil** - en byggtidskonfiguration i `profiles.json` som binder en uppsättning verktygspaket till en varumärkeskatalog (t.ex. `suse`, `lolly-start`). Det är vad en operatör väljer vid driftsättning, och det är även vad `profile`-**URL/CLI-parametern** väljer en *färg*variant av vid exporttillfället (ICC/CMYK-tryckförhållandet - se [URL-läge](/info/url-mode.html)). Båda handlar om *bygget/utdatan*, inte om *dig*. Se [Konfiguration](/info/configuration.html).
+- <!--i:seal--> **Identitetsprofil** - den valfria **verifierade Content Credentials-identiteten** du kan registrera (ett kortlivat certifikat som knyter din e-post till dina signerade exporter). Det är en signeringsidentitet, skild från den personliga profilens namn-/kontaktfält, även om **Använd mina uppgifter** styr om någon av dem bäddas in. Se [Content Credentials-identitet](/info/content-credentials-identity.html).
 
 ## Integritet
 

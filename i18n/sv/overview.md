@@ -68,9 +68,9 @@ Eftersom godkännandet ligger i verktyget och inte i filen (se [Hur Lolly jämf�
 
 Samma deterministiska verktyg når den skalan på tre sätt, som alla ger identisk, förgodkänd utdata:
 
-- **En människa, i appen.** Batchrutnätet på `/pro`: klistra in eller importera raderna, få en färdig tillgång per rad, ladda ner zip-filen. Ingen designkompetens, inget ärende, ingen väntan.
-- **En utvecklare, från kommandoraden.** CLI:t kör *samma* motor och *samma* renderingsväg headless, så verktyget kan köras över alla 10 000 rader i ett skript eller en nattlig pipeline. Ett `lolly <tool> --field=…`-anrop i en loop är hela integrationen.
-- **Ett system eller en AI-agent, via MCP.** Samma verktyg styrt programmatiskt, med samma kvalitet och i än större skala - för en maskin tröttnar inte medan tusentals filer rullar in.
+- <!--i:people--> **En människa, i appen.** Batchrutnätet på `/pro`: klistra in eller importera raderna, få en färdig tillgång per rad, ladda ner zip-filen. Ingen designkompetens, inget ärende, ingen väntan.
+- <!--i:code--> **En utvecklare, från kommandoraden.** CLI:t kör *samma* motor och *samma* renderingsväg headless, så verktyget kan köras över alla 10 000 rader i ett skript eller en nattlig pipeline. Ett `lolly <tool> --field=…`-anrop i en loop är hela integrationen.
+- <!--i:cpu--> **Ett system eller en AI-agent, via MCP.** Samma verktyg styrt programmatiskt, med samma kvalitet och i än större skala - för en maskin tröttnar inte medan tusentals filer rullar in.
 
 En uppsättning varumärkesregler, fastlagd en gång av en designer; tre vägar till identisk förgodkänd utdata - och maskinvägen skalar längst av alla, för den blir aldrig trött medan filerna rullar in.
 

@@ -56,9 +56,9 @@ Stockage est l'endroit où vivent les deux moitiés de tout ça : la jauge rend 
 
 Donc si tu jongles vraiment entre plusieurs contextes (toi, ton équipe, la casquette de responsable événementiel), tu gardes plusieurs bundles et tu charges celui dont tu as besoin :
 
-- **Le changement le plus propre :** **Profil → Stockage → Effacer toutes mes données**, puis **Importer** le bundle du contexte dans lequel tu entres. Tu crées alors purement sous ce profil.
-- **Superposition :** importer *sans* effacer au préalable **fusionne** - le profil, les sessions et les images importés viennent s'ajouter à ce qui existe déjà, remplaçant tout ce qui porte le même nom et laissant le reste intact. Pratique pour récupérer les sessions enregistrées d'une équipe dans ta propre configuration ; pas ce qu'il te faut si tu as besoin d'une frontière nette entre les rôles.
-- **Côte à côte :** comme tout est limité à l'appareil, un profil de navigateur distinct, un compte utilisateur distinct, ou une seconde PWA installée porte chacun son propre profil Lolly indépendant. Fais tourner ton installation personnelle et l'installation de la borne événementielle en même temps, sans avoir à basculer.
+- <!--i:trash--> **Le changement le plus propre :** **Profil → Stockage → Effacer toutes mes données**, puis **Importer** le bundle du contexte dans lequel tu entres. Tu crées alors purement sous ce profil.
+- <!--i:layers--> **Superposition :** importer *sans* effacer au préalable **fusionne** - le profil, les sessions et les images importés viennent s'ajouter à ce qui existe déjà, remplaçant tout ce qui porte le même nom et laissant le reste intact. Pratique pour récupérer les sessions enregistrées d'une équipe dans ta propre configuration ; pas ce qu'il te faut si tu as besoin d'une frontière nette entre les rôles.
+- <!--i:monitor--> **Côte à côte :** comme tout est limité à l'appareil, un profil de navigateur distinct, un compte utilisateur distinct, ou une seconde PWA installée porte chacun son propre profil Lolly indépendant. Fais tourner ton installation personnelle et l'installation de la borne événementielle en même temps, sans avoir à basculer.
 
 > Garde un bundle par contexte et renomme les fichiers pour ce qu'ils sont (`LollyTools-events-2026.zip`, `LollyTools-me.zip`). Le fichier *est* le profil.
 
@@ -70,8 +70,8 @@ Comme un profil est entièrement local, la seule façon de le faire arriver sur 
 
 Sous **Profil → Stockage → Déplacer vers un autre appareil** :
 
-- **Exporter mes données** télécharge un fichier `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - nommé d'après le profil auquel il appartient, avec un numéro de séquence quotidien pour que des exports répétés n'entrent pas en collision (les parties du nom sont omises quand le profil ne les a pas). Il contient ton profil, chaque session enregistrée (avec sa vignette), tes images importées, et tes préférences (thème, mise en page, statistiques d'activité locale).
-- **Importer des données…** sur l'autre installation relit ce fichier et tu reprends exactement là où tu en étais.
+- <!--i:download--> **Exporter mes données** télécharge un fichier `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - nommé d'après le profil auquel il appartient, avec un numéro de séquence quotidien pour que des exports répétés n'entrent pas en collision (les parties du nom sont omises quand le profil ne les a pas). Il contient ton profil, chaque session enregistrée (avec sa vignette), tes images importées, et tes préférences (thème, mise en page, statistiques d'activité locale).
+- <!--i:upload--> **Importer des données…** sur l'autre installation relit ce fichier et tu reprends exactement là où tu en étais.
 
 Le bundle est un simple zip autonome, donc il voyage par **n'importe quel** moyen - clé USB, AirDrop, un partage réseau, un e-mail à toi-même - et la cible peut être totalement hors ligne. Chaque partie est vérifiée par somme de contrôle, donc un fichier endommagé en transit est détecté à l'import plutôt que restauré à moitié cassé. L'import **fusionne** (un profil/une session/une image du même nom est écrasé ; tout le reste est conservé), donc il n'efface jamais une cible déjà en usage.
 
@@ -93,18 +93,20 @@ Un outil ne fait jamais que *pré-remplir* les champs de profil qu'il a été ex
 
 Trois choses se côtoient dans l'interface et sont faciles à confondre :
 
-- **Profil** - *toi* (ou ton équipe, ou le rôle que tu occupes) : nom, contact, photo de profil, ton travail enregistré. Personnel, local à l'appareil, portable sous forme de bundle.
-- **Plateforme** - la *marque* : couleurs, polices et réglages globaux sur lesquels chaque outil s'appuie pour son rendu. Partagée et cohérente, pas personnelle.
-- **Capacités** - *ce que l'app peut faire* : l'ensemble des fonctionnalités et des outils qui te sont accessibles.
+- <!--i:people--> **Profil** - *toi* (ou ton équipe, ou le rôle que tu occupes) : nom, contact, photo de profil, ton travail enregistré. Personnel, local à l'appareil, portable sous forme de bundle.
+- <!--i:palette--> **Plateforme** - la *marque* : couleurs, polices et réglages globaux sur lesquels chaque outil s'appuie pour son rendu. Partagée et cohérente, pas personnelle.
+- <!--i:sliders--> **Capacités** - *ce que l'app peut faire* : l'ensemble des fonctionnalités et des outils qui te sont accessibles.
 
 Un profil change *de qui* vient un asset ; la plateforme change son *apparence* ; les capacités déterminent *ce que tu peux créer*.
 
 ### « Profil » a deux autres sens ailleurs - pas celui-ci
 
+![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&filename=pv-identity-enrol)
+
 Le mot est surchargé de sens dans l'ensemble du projet. Aucun des deux n'est le profil personnel dont parle cette page :
 
-- **Profil de contenu** - une configuration au moment du build dans `profiles.json` qui associe un ensemble de packs d'outils à un catalogue de marque (par exemple `suse`, `lolly-start`). C'est ce qu'un opérateur choisit au moment du déploiement, et c'est aussi ce que le **paramètre URL/CLI** `profile` sélectionne comme variante de *couleur* au moment de l'export (la condition de presse ICC/CMYK - voir [Mode URL](/info/url-mode.html)). Les deux concernent le *build/la sortie*, pas *toi*. Voir [Configuration](/info/configuration.html).
-- **Profil d'identité** - l'**identité Content Credentials vérifiée** facultative que tu peux enrôler (un certificat de courte durée qui relie ton e-mail à tes exports signés). C'est une identité de signature, distincte des champs nom/contact du profil personnel, même si **Utiliser mes coordonnées** détermine si l'une ou l'autre est intégrée. Voir [Identité Content Credentials](/info/content-credentials-identity.html).
+- <!--i:box--> **Profil de contenu** - une configuration au moment du build dans `profiles.json` qui associe un ensemble de packs d'outils à un catalogue de marque (par exemple `suse`, `lolly-start`). C'est ce qu'un opérateur choisit au moment du déploiement, et c'est aussi ce que le **paramètre URL/CLI** `profile` sélectionne comme variante de *couleur* au moment de l'export (la condition de presse ICC/CMYK - voir [Mode URL](/info/url-mode.html)). Les deux concernent le *build/la sortie*, pas *toi*. Voir [Configuration](/info/configuration.html).
+- <!--i:seal--> **Profil d'identité** - l'**identité Content Credentials vérifiée** facultative que tu peux enrôler (un certificat de courte durée qui relie ton e-mail à tes exports signés). C'est une identité de signature, distincte des champs nom/contact du profil personnel, même si **Utiliser mes coordonnées** détermine si l'une ou l'autre est intégrée. Voir [Identité Content Credentials](/info/content-credentials-identity.html).
 
 ## Confidentialité
 

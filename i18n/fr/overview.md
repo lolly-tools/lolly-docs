@@ -68,9 +68,9 @@ Comme l'approbation vit dans l'outil et non dans le fichier (voir [Comment Lolly
 
 Le même outil déterministe atteint cette échelle de trois façons, qui produisent toutes une sortie identique et pré-approuvée :
 
-- **Une personne, dans l'application.** La grille de lots `/pro` : colle ou importe les lignes, obtiens un asset fini par ligne, télécharge le zip. Aucune compétence en design, aucun ticket, aucune attente.
-- **Un développeur, en ligne de commande.** La CLI exécute le *même* moteur et le *même* chemin de rendu en mode headless, si bien que l'outil peut être enchaîné sur les 10 000 lignes dans un script ou un pipeline nocturne. Un appel `lolly <tool> --field=…` dans une boucle, c'est toute l'intégration.
-- **Un système ou un agent IA, via MCP.** Le même outil piloté par programme, à la même fidélité et à une échelle encore plus grande - parce qu'une machine ne s'ennuie pas pendant que des milliers de fichiers arrivent.
+- <!--i:people--> **Une personne, dans l'application.** La grille de lots `/pro` : colle ou importe les lignes, obtiens un asset fini par ligne, télécharge le zip. Aucune compétence en design, aucun ticket, aucune attente.
+- <!--i:code--> **Un développeur, en ligne de commande.** La CLI exécute le *même* moteur et le *même* chemin de rendu en mode headless, si bien que l'outil peut être enchaîné sur les 10 000 lignes dans un script ou un pipeline nocturne. Un appel `lolly <tool> --field=…` dans une boucle, c'est toute l'intégration.
+- <!--i:cpu--> **Un système ou un agent IA, via MCP.** Le même outil piloté par programme, à la même fidélité et à une échelle encore plus grande - parce qu'une machine ne s'ennuie pas pendant que des milliers de fichiers arrivent.
 
 Un seul jeu de contraintes de marque, fixé une fois par un designer ; trois chemins vers la même sortie pré-approuvée - et le chemin machine est celui qui va le plus loin, parce qu'il ne se fatigue jamais pendant que les fichiers défilent.
 

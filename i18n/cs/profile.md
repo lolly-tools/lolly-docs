@@ -52,9 +52,9 @@ V danou chvíli má instalace **jeden aktivní profil** - údaje, které nástro
 
 Pokud tedy opravdu žongluješ s víc kontexty (ty, tvůj tým, role manažera akce), stačí mít víc balíčků a načíst si ten, který zrovna potřebuješ:
 
-- **Nejčistší přepnutí:** **Profile → Storage → Clear all my data**, a pak **Import** balíčku pro kontext, do kterého vstupuješ. Teď tvoříš čistě jako daný profil.
-- **Vrstvení:** import *bez* předchozího smazání dat **sloučí** - importovaný profil, relace a obrázky se přidají k tomu, co už tam je, přičemž nahradí vše se stejným názvem a zbytek ponechá. Hodí se, když chceš do svého nastavení natáhnout uložené relace jednoho týmu; nehodí se, pokud potřebuješ čistou hranici mezi rolemi.
-- **Vedle sebe:** protože je všechno vázané na zařízení, samostatný profil prohlížeče, samostatný uživatelský účet nebo druhá nainstalovaná PWA má vždy svůj vlastní nezávislý profil Lolly. Můžeš mít spuštěnou svou osobní instalaci i instalaci pro kiosek na akci současně, bez přepínání.
+- <!--i:trash--> **Nejčistší přepnutí:** **Profile → Storage → Clear all my data**, a pak **Import** balíčku pro kontext, do kterého vstupuješ. Teď tvoříš čistě jako daný profil.
+- <!--i:layers--> **Vrstvení:** import *bez* předchozího smazání dat **sloučí** - importovaný profil, relace a obrázky se přidají k tomu, co už tam je, přičemž nahradí vše se stejným názvem a zbytek ponechá. Hodí se, když chceš do svého nastavení natáhnout uložené relace jednoho týmu; nehodí se, pokud potřebuješ čistou hranici mezi rolemi.
+- <!--i:monitor--> **Vedle sebe:** protože je všechno vázané na zařízení, samostatný profil prohlížeče, samostatný uživatelský účet nebo druhá nainstalovaná PWA má vždy svůj vlastní nezávislý profil Lolly. Můžeš mít spuštěnou svou osobní instalaci i instalaci pro kiosek na akci současně, bez přepínání.
 
 Obojí se odehrává v sekci Storage: ukazatel vyúčtuje každý bajt, který tahle instalace drží, kategorii po kategorii, a tlačítka pod ním jsou to, čím data smažeš nebo přeneseš.
 
@@ -70,8 +70,8 @@ Protože je profil čistě lokální, jediný způsob, jak ho dostat do čisté 
 
 V sekci **Profile → Storage → Move to another device**:
 
-- **Export my data** stáhne jeden soubor `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - pojmenovaný podle profilu, ke kterému patří, s denním pořadovým číslem, aby se opakované exporty nepřepisovaly (části názvu, které profil nemá, se vynechají). Obsahuje tvůj profil, každou uloženou relaci (s náhledem), tvé nahrané obrázky a tvé preference (motiv, rozvržení, místní statistiky aktivity).
-- **Import data…** na druhé instalaci soubor načte zpět a pokračuješ přesně tam, kde jsi skončil/a.
+- <!--i:download--> **Export my data** stáhne jeden soubor `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - pojmenovaný podle profilu, ke kterému patří, s denním pořadovým číslem, aby se opakované exporty nepřepisovaly (části názvu, které profil nemá, se vynechají). Obsahuje tvůj profil, každou uloženou relaci (s náhledem), tvé nahrané obrázky a tvé preference (motiv, rozvržení, místní statistiky aktivity).
+- <!--i:upload--> **Import data…** na druhé instalaci soubor načte zpět a pokračuješ přesně tam, kde jsi skončil/a.
 
 Balíček je obyčejný, samostatný zip, takže se dá přenést **jakýmkoliv** způsobem - přes USB, AirDrop, síťové úložiště, e-mail sám sobě - a cíl může být úplně offline. Každá část má kontrolní součet, takže soubor poškozený při přenosu se odhalí při importu, místo aby se obnovil napůl rozbitý. Import **slučuje** (profil/relace/obrázek se stejným názvem se přepíše, zbytek zůstane zachovaný), takže nikdy nesmaže cíl, který se už používal.
 
@@ -93,18 +93,20 @@ Nástroj vždy jen *předvyplní* ta pole profilu, pro která byl výslovně pos
 
 Tři věci, které v UI sedí blízko sebe a snadno se pletou:
 
-- **Profile** - *ty* (nebo tvůj tým, nebo role, ve které zrovna jsi): jméno, kontakt, profilovka, tvá uložená práce. Osobní, vázané na zařízení, přenosné jako balíček.
-- **Platform** - *značka*: barvy, fonty a globální nastavení, vůči kterým se vykresluje každý nástroj. Sdílené a konzistentní, ne osobní.
-- **Capabilities** - *co aplikace umí*: celá sada funkcí a nástroje, které máš k dispozici.
+- <!--i:people--> **Profile** - *ty* (nebo tvůj tým, nebo role, ve které zrovna jsi): jméno, kontakt, profilovka, tvá uložená práce. Osobní, vázané na zařízení, přenosné jako balíček.
+- <!--i:palette--> **Platform** - *značka*: barvy, fonty a globální nastavení, vůči kterým se vykresluje každý nástroj. Sdílené a konzistentní, ne osobní.
+- <!--i:sliders--> **Capabilities** - *co aplikace umí*: celá sada funkcí a nástroje, které máš k dispozici.
 
 Profil mění, *od koho* asset je; platforma mění, *jak vypadá*; možnosti určují, *co dokážeš vytvořit*.
 
 ### „Profil" znamená jinde ještě dvě jiné věci - ne tenhle
 
+![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&filename=pv-identity-enrol)
+
 Slovo je v projektu přetížené. Ani jedno z toho není osobní profil, o kterém je tahle stránka:
 
-- **Obsahový profil (content profile)** - konfigurace nastavovaná při buildu v `profiles.json`, která svazuje sadu balíčků nástrojů s katalogem značky (např. `suse`, `lolly-start`). Je to to, co si operátor vybírá při nasazení, a je to i to, co `profile` jako **URL/CLI parametr** vybírá jako *barevnou* variantu při exportu (tisková podmínka ICC/CMYK - viz [Režim URL](/info/url-mode.html)). Obojí se týká *buildu/výstupu*, ne *tebe*. Viz [Konfigurace](/info/configuration.html).
-- **Profil identity (identity profile)** - volitelná **ověřená identita Content Credentials**, kterou si můžeš zaregistrovat (krátkodobý certifikát, který svazuje tvůj e-mail s tvými podepsanými exporty). Jde o podpisovou identitu, oddělenou od polí jméno/kontakt osobního profilu, i když **Use my details** řídí, jestli se vloží jedno nebo druhé z nich. Viz [Identita Content Credentials](/info/content-credentials-identity.html).
+- <!--i:box--> **Obsahový profil (content profile)** - konfigurace nastavovaná při buildu v `profiles.json`, která svazuje sadu balíčků nástrojů s katalogem značky (např. `suse`, `lolly-start`). Je to to, co si operátor vybírá při nasazení, a je to i to, co `profile` jako **URL/CLI parametr** vybírá jako *barevnou* variantu při exportu (tisková podmínka ICC/CMYK - viz [Režim URL](/info/url-mode.html)). Obojí se týká *buildu/výstupu*, ne *tebe*. Viz [Konfigurace](/info/configuration.html).
+- <!--i:seal--> **Profil identity (identity profile)** - volitelná **ověřená identita Content Credentials**, kterou si můžeš zaregistrovat (krátkodobý certifikát, který svazuje tvůj e-mail s tvými podepsanými exporty). Jde o podpisovou identitu, oddělenou od polí jméno/kontakt osobního profilu, i když **Use my details** řídí, jestli se vloží jedno nebo druhé z nich. Viz [Identita Content Credentials](/info/content-credentials-identity.html).
 
 ## Soukromí
 

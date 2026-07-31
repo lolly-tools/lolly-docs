@@ -155,6 +155,8 @@ Lolly 致力於讓每個人都能舒適地使用。介面支援鍵盤操作，�
 - **清除快取**——捨棄已下載的目錄內容（下次載入時會重新同步）。
 - **清除我的所有資料**——清空個人資料、工作階段與圖片。*此操作無法復原。*
 
+![The storage card on a phone-width screen: every category of on-device data named, with the Clear all my data button at the bottom](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%2C.store-manages%2C.storage-subsection%2C.store-selbar%2C.store-chip-val%2C%23store-hero-num%2C%23store-headroom%2C%23store-quota%2C%23store-reclaim%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23storage-section&filename=pv-storage-clear)
+
 沒有任何資料會被傳送到任何地方。沒有遙測，也沒有雲端渲染。
 
 ## 移到另一台裝置

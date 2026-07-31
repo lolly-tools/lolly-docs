@@ -56,9 +56,9 @@ Pada bila-bila masa, sesuatu pemasangan mempunyai **satu profil aktif** - butira
 
 Jadi jika anda benar-benar mengendalikan beberapa konteks serentak (anda, pasukan anda, topi pengurus acara), anda simpan beberapa bungkusan dan muatkan yang mana satu anda perlukan:
 
-- **Peralihan paling bersih:** **Profil → Storan → Padam semua data saya**, kemudian **Import** bungkusan untuk konteks yang anda mahu masuki. Anda kini mencipta semata-mata sebagai profil itu.
-- **Berlapis:** mengimport *tanpa* memadam terlebih dahulu akan **menggabungkan** - profil, sesi, dan imej yang diimport akan diletakkan di atas apa yang sudah ada, menggantikan apa-apa yang mempunyai nama sama dan mengekalkan selebihnya. Berguna untuk menarik sesi tersimpan sesuatu pasukan ke dalam persediaan anda sendiri; bukan pilihan yang sesuai jika anda memerlukan sempadan peranan yang bersih.
-- **Bersebelahan:** oleh sebab segala-galanya bersifat khusus-peranti, profil pelayar berasingan, akaun pengguna berasingan, atau PWA kedua yang dipasang masing-masing membawa profil Lolly yang bebas tersendiri. Jalankan pemasangan peribadi anda dan pemasangan kiosk acara pada masa yang sama, tanpa perlu bertukar.
+- <!--i:trash--> **Peralihan paling bersih:** **Profil → Storan → Padam semua data saya**, kemudian **Import** bungkusan untuk konteks yang anda mahu masuki. Anda kini mencipta semata-mata sebagai profil itu.
+- <!--i:layers--> **Berlapis:** mengimport *tanpa* memadam terlebih dahulu akan **menggabungkan** - profil, sesi, dan imej yang diimport akan diletakkan di atas apa yang sudah ada, menggantikan apa-apa yang mempunyai nama sama dan mengekalkan selebihnya. Berguna untuk menarik sesi tersimpan sesuatu pasukan ke dalam persediaan anda sendiri; bukan pilihan yang sesuai jika anda memerlukan sempadan peranan yang bersih.
+- <!--i:monitor--> **Bersebelahan:** oleh sebab segala-galanya bersifat khusus-peranti, profil pelayar berasingan, akaun pengguna berasingan, atau PWA kedua yang dipasang masing-masing membawa profil Lolly yang bebas tersendiri. Jalankan pemasangan peribadi anda dan pemasangan kiosk acara pada masa yang sama, tanpa perlu bertukar.
 
 > Simpan satu bungkusan bagi setiap konteks dan namakan semula fail-fail tersebut mengikut apa yang diwakilinya (`LollyTools-events-2026.zip`, `LollyTools-me.zip`). Fail itu *ialah* profil tersebut.
 
@@ -70,8 +70,8 @@ Oleh sebab profil adalah sepenuhnya tempatan, satu-satunya cara untuk memasukkan
 
 Di bawah **Profil → Storan → Pindah ke peranti lain**:
 
-- **Eksport data saya** memuat turun satu fail `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - dinamakan sempena profil yang memilikinya, dengan nombor jujukan harian supaya eksport berulang tidak bertembung (bahagian nama digugurkan apabila profil tidak mempunyainya). Ia mengandungi profil anda, setiap sesi yang disimpan (berserta lakaran kecilnya), imej yang anda muat naik, dan keutamaan anda (tema, susun atur, statistik aktiviti tempatan).
-- **Import data…** pada pemasangan yang satu lagi akan membaca semula fail tersebut dan anda boleh menyambung tepat di tempat anda berhenti.
+- <!--i:download--> **Eksport data saya** memuat turun satu fail `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - dinamakan sempena profil yang memilikinya, dengan nombor jujukan harian supaya eksport berulang tidak bertembung (bahagian nama digugurkan apabila profil tidak mempunyainya). Ia mengandungi profil anda, setiap sesi yang disimpan (berserta lakaran kecilnya), imej yang anda muat naik, dan keutamaan anda (tema, susun atur, statistik aktiviti tempatan).
+- <!--i:upload--> **Import data…** pada pemasangan yang satu lagi akan membaca semula fail tersebut dan anda boleh menyambung tepat di tempat anda berhenti.
 
 Bungkusan itu ialah fail zip yang ringkas dan berdikari sepenuhnya, jadi ia boleh dipindahkan dengan **apa-apa sahaja** cara - USB, AirDrop, perkongsian rangkaian, e-mel kepada diri sendiri - dan sasarannya boleh sepenuhnya luar talian. Setiap bahagian mempunyai checksum, jadi fail yang rosak semasa pemindahan akan dikesan semasa import dan bukannya dipulihkan dalam keadaan separa rosak. Import akan **menggabungkan** (profil/sesi/imej yang mempunyai nama sama akan ditulis ganti; selebihnya dikekalkan), jadi ia tidak akan sekali-kali memadamkan sasaran yang sudah digunakan.
 
@@ -93,18 +93,20 @@ Sesuatu alat hanya sekali-kali *pra-isi* medan profil yang direka khusus untukny
 
 Tiga perkara ini terletak berdekatan antara satu sama lain dalam UI dan mudah dikelirukan:
 
-- **Profil** - *anda* (atau pasukan anda, atau peranan yang anda sedang jalankan): nama, hubungan, gambar potret, kerja tersimpan anda. Peribadi, khusus-peranti, mudah alih sebagai bungkusan.
-- **Platform** - *jenama*: warna, fon, dan tetapan global yang menjadi asas kepada setiap alat semasa menghasilkan output. Dikongsi dan konsisten, bukan peribadi.
-- **Keupayaan** - *apa yang boleh dilakukan oleh aplikasi ini*: keseluruhan set ciri dan alat yang tersedia untuk anda.
+- <!--i:people--> **Profil** - *anda* (atau pasukan anda, atau peranan yang anda sedang jalankan): nama, hubungan, gambar potret, kerja tersimpan anda. Peribadi, khusus-peranti, mudah alih sebagai bungkusan.
+- <!--i:palette--> **Platform** - *jenama*: warna, fon, dan tetapan global yang menjadi asas kepada setiap alat semasa menghasilkan output. Dikongsi dan konsisten, bukan peribadi.
+- <!--i:sliders--> **Keupayaan** - *apa yang boleh dilakukan oleh aplikasi ini*: keseluruhan set ciri dan alat yang tersedia untuk anda.
 
 Profil menentukan *daripada siapa* sesuatu aset itu; platform menentukan *rupa* sesuatu aset itu; keupayaan pula ialah *apa yang boleh anda hasilkan*.
 
 ### "Profil" membawa dua maksud lain di tempat lain - bukan profil ini
 
+![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&filename=pv-identity-enrol)
+
 Perkataan ini digunakan secara bertindih di seluruh projek. Tiada satu pun daripada kedua-dua ini ialah profil peribadi yang dibincangkan dalam halaman ini:
 
-- **Profil kandungan** - satu konfigurasi masa-bina dalam `profiles.json` yang mengikat satu set pek alat kepada satu katalog jenama (contohnya `suse`, `lolly-start`). Inilah yang dipilih oleh pengendali semasa deploy, dan inilah juga yang dipilih oleh **parameter URL/CLI** `profile` sebagai varian *warna* pada masa eksport (keadaan percetakan ICC/CMYK - lihat [Mod URL](/info/url-mode.html)). Kedua-duanya berkaitan dengan *pembinaan/output*, bukan tentang *anda*. Lihat [Konfigurasi](/info/configuration.html).
-- **Profil identiti** - **identiti Content Credentials yang disahkan** pilihan yang boleh anda daftarkan (satu sijil jangka pendek yang mengaitkan e-mel anda dengan eksport anda yang ditandatangani). Itu ialah identiti menandatangan, berasingan daripada medan nama/hubungan profil peribadi, walaupun **Guna butiran saya** mengawal sama ada salah satu daripadanya disertakan. Lihat [Identiti Content Credentials](/info/content-credentials-identity.html).
+- <!--i:box--> **Profil kandungan** - satu konfigurasi masa-bina dalam `profiles.json` yang mengikat satu set pek alat kepada satu katalog jenama (contohnya `suse`, `lolly-start`). Inilah yang dipilih oleh pengendali semasa deploy, dan inilah juga yang dipilih oleh **parameter URL/CLI** `profile` sebagai varian *warna* pada masa eksport (keadaan percetakan ICC/CMYK - lihat [Mod URL](/info/url-mode.html)). Kedua-duanya berkaitan dengan *pembinaan/output*, bukan tentang *anda*. Lihat [Konfigurasi](/info/configuration.html).
+- <!--i:seal--> **Profil identiti** - **identiti Content Credentials yang disahkan** pilihan yang boleh anda daftarkan (satu sijil jangka pendek yang mengaitkan e-mel anda dengan eksport anda yang ditandatangani). Itu ialah identiti menandatangan, berasingan daripada medan nama/hubungan profil peribadi, walaupun **Guna butiran saya** mengawal sama ada salah satu daripadanya disertakan. Lihat [Identiti Content Credentials](/info/content-credentials-identity.html).
 
 ## Privasi
 

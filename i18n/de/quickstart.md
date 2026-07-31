@@ -22,8 +22,8 @@ Beim ersten Start gelangen Sie auf den **Start**-Bildschirm (`#/start`). Geben S
 
 Wenn Ihre Marke bereits als Design-Tokens erfasst ist - aus **Penpot**, **Tokens Studio** (Figma) oder einer einfachen **DTCG**-Datei -, bringen Sie sie komplett mit, anstatt sie erneut einzutippen. Zwei Wege:
 
-- **In der App:** Der Start-Bildschirm und der Editor *Ihre Marke* akzeptieren eine Token-Datei (oder ein `LollyBrand`-Paket) direkt - legen Sie sie ab, und die Palette erwacht zum Leben.
-- **Über die Kommandozeile**, um ein wiederverwendbares Markenpaket aufzusetzen:
+- <!--i:palette--> **In der App:** Der Start-Bildschirm und der Editor *Ihre Marke* akzeptieren eine Token-Datei (oder ein `LollyBrand`-Paket) direkt - legen Sie sie ab, und die Palette erwacht zum Leben.
+- <!--i:code--> **Über die Kommandozeile**, um ein wiederverwendbares Markenpaket aufzusetzen:
 
 ```bash
 # a monolithic tokens.json, a one-file-per-set directory, or a Penpot project archive
@@ -80,15 +80,15 @@ Füttern Sie die Werkzeuge auch mit Ihren eigenen offenen Daten: Fügen Sie eine
 
 Mit einer aktiven Marke und Ihrem Material zur Hand erzeugt jedes Werkzeug eine fertige Datei:
 
-- **Rendern** Sie jedes Werkzeug als **SVG, PDF, PNG, JPG, WebP, Video** und mehr - bei Bedarf in echten Druckgrößen und physischen Einheiten. Siehe [Export und Formate](/info/exporting.html).
-- **Teilen Sie einen Link.** Jeder Werkzeugzustand ist eine URL, sodass ein fertiges Asset reproduzierbar und über Parameter adressierbar ist - committen Sie den Link, generieren Sie ihn bei Bedarf neu.
-- **Erledigen Sie es im großen Stil.** Steuern Sie eine Vorlage über eine Tabellenkalkulation im [Batch-Raster](/info/exporting.html): ein fertiges Asset pro Zeile.
-- **Automatisieren Sie es.** Derselbe Render-Vorgang läuft über die [CLI](/info/cli.html) und über einen [KI-Agenten](/info/ai-agents.html) - eine URL ist die API.
+- <!--i:download--> **Rendern** Sie jedes Werkzeug als **SVG, PDF, PNG, JPG, WebP, Video** und mehr - bei Bedarf in echten Druckgrößen und physischen Einheiten. Siehe [Export und Formate](/info/exporting.html).
+- <!--i:link--> **Teilen Sie einen Link.** Jeder Werkzeugzustand ist eine URL, sodass ein fertiges Asset reproduzierbar und über Parameter adressierbar ist - committen Sie den Link, generieren Sie ihn bei Bedarf neu.
+- <!--i:layers--> **Erledigen Sie es im großen Stil.** Steuern Sie eine Vorlage über eine Tabellenkalkulation im [Batch-Raster](/info/exporting.html): ein fertiges Asset pro Zeile.
+- <!--i:cpu--> **Automatisieren Sie es.** Derselbe Render-Vorgang läuft über die [CLI](/info/cli.html) und über einen [KI-Agenten](/info/ai-agents.html) - eine URL ist die API.
 
 ## Wie es weitergeht
 
 Drei Wege, je nachdem, was Sie hier vorhaben:
 
-- **[Lolly für Kreative](/info/creators.html)** - Sie erstellen Dinge. Die Vorteile, und wie Sie das Meiste aus der App herausholen.
-- **[Lolly für Entwickler](/info/builders.html)** - Sie verfassen Werkzeuge, integrieren und stellen bereit. Die technische Dokumentation.
-- **[Lolly für Betreiber](/info/operators.html)** - Sie sind verantwortlich für Marke, Sicherheit und Rollout in einer Organisation.
+- <!--i:people--> **[Lolly für Kreative](/info/creators.html)** - Sie erstellen Dinge. Die Vorteile, und wie Sie das Meiste aus der App herausholen.
+- <!--i:code--> **[Lolly für Entwickler](/info/builders.html)** - Sie verfassen Werkzeuge, integrieren und stellen bereit. Die technische Dokumentation.
+- <!--i:shieldcheck--> **[Lolly für Betreiber](/info/operators.html)** - Sie sind verantwortlich für Marke, Sicherheit und Rollout in einer Organisation.

@@ -22,8 +22,8 @@ Saat pertama dijalankan, Anda dibawa ke layar **Start** (`#/start`) - [**Brand S
 
 Jika brand Anda sudah tertangkap sebagai design tokens - dari **Penpot**, **Tokens Studio** (Figma), atau berkas **DTCG** biasa apa pun - bawa masuk seluruhnya alih-alih mengetik ulang. Dua jalur:
 
-- **Di dalam aplikasi:** [pembuat Design System: Brand Studio](/info/brand-studio.html) (`#/start`) menerima berkas token, ekspor Penpot, atau paket `LollyBrand` secara langsung - letakkan ke sana dan palet pun menyala.
-- **Dari command line**, untuk menyiapkan paket brand yang dapat dipakai ulang:
+- <!--i:palette--> **Di dalam aplikasi:** [pembuat Design System: Brand Studio](/info/brand-studio.html) (`#/start`) menerima berkas token, ekspor Penpot, atau paket `LollyBrand` secara langsung - letakkan ke sana dan palet pun menyala.
+- <!--i:code--> **Dari command line**, untuk menyiapkan paket brand yang dapat dipakai ulang:
 
 ```bash
 # a monolithic tokens.json, a one-file-per-set directory, or a Penpot project archive
@@ -80,15 +80,15 @@ Berikan pula data terbuka Anda sendiri kepada tool: tempel atau letakkan tabel *
 
 Dengan brand aktif dan materi Anda di tangan, setiap tool menghasilkan berkas jadi:
 
-- **Render** tool mana pun ke **SVG, PDF, PNG, JPG, WebP, video**, dan lainnya - pada ukuran cetak sebenarnya dan satuan fisik saat Anda memerlukannya. Lihat [Mengekspor & format](/info/exporting.html).
-- **Bagikan sebuah tautan.** Setiap keadaan tool adalah sebuah URL, jadi aset jadi dapat direproduksi dan dialamati lewat parameter - commit tautannya, buat ulang sesuai permintaan.
-- **Lakukan secara massal.** Jalankan sebuah template dari spreadsheet di [batch grid](/info/exporting.html): satu aset jadi per baris.
-- **Otomatiskan.** Render yang sama berjalan dari [CLI](/info/cli.html) dan dari [agen AI](/info/ai-agents.html) - sebuah URL adalah API-nya.
+- <!--i:download--> **Render** tool mana pun ke **SVG, PDF, PNG, JPG, WebP, video**, dan lainnya - pada ukuran cetak sebenarnya dan satuan fisik saat Anda memerlukannya. Lihat [Mengekspor & format](/info/exporting.html).
+- <!--i:link--> **Bagikan sebuah tautan.** Setiap keadaan tool adalah sebuah URL, jadi aset jadi dapat direproduksi dan dialamati lewat parameter - commit tautannya, buat ulang sesuai permintaan.
+- <!--i:layers--> **Lakukan secara massal.** Jalankan sebuah template dari spreadsheet di [batch grid](/info/exporting.html): satu aset jadi per baris.
+- <!--i:cpu--> **Otomatiskan.** Render yang sama berjalan dari [CLI](/info/cli.html) dan dari [agen AI](/info/ai-agents.html) - sebuah URL adalah API-nya.
 
 ## Ke mana selanjutnya
 
 Tiga jalur, tergantung pada apa yang ingin Anda lakukan di sini:
 
-- **[Lolly untuk Kreator](/info/creators.html)** - Anda membuat berbagai hal. Keunggulannya, dan cara memaksimalkan aplikasi.
-- **[Lolly untuk Builder](/info/builders.html)** - Anda membuat tool, mengintegrasikan, dan men-deploy. Dokumentasi teknisnya.
-- **[Lolly untuk Operator](/info/operators.html)** - Anda bertanggung jawab atas brand, keamanan, dan peluncuran di seluruh organisasi.
+- <!--i:people--> **[Lolly untuk Kreator](/info/creators.html)** - Anda membuat berbagai hal. Keunggulannya, dan cara memaksimalkan aplikasi.
+- <!--i:code--> **[Lolly untuk Builder](/info/builders.html)** - Anda membuat tool, mengintegrasikan, dan men-deploy. Dokumentasi teknisnya.
+- <!--i:shieldcheck--> **[Lolly untuk Operator](/info/operators.html)** - Anda bertanggung jawab atas brand, keamanan, dan peluncuran di seluruh organisasi.

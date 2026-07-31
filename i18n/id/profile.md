@@ -56,9 +56,9 @@ Pada satu waktu, sebuah instalasi memiliki **satu profil aktif** - detail yang d
 
 Jadi jika Anda benar-benar menjalankan beberapa konteks sekaligus (Anda, tim Anda, topi manajer acara), Anda menyimpan beberapa bundel dan memuat yang Anda butuhkan:
 
-- **Peralihan terbersih:** **Profil → Penyimpanan → Hapus semua data saya**, lalu **Impor** bundel untuk konteks yang akan Anda masuki. Kini Anda berkarya murni sebagai profil itu.
-- **Pelapisan:** mengimpor *tanpa* menghapus terlebih dahulu akan **menggabungkan** - profil, sesi, dan gambar yang diimpor menimpa apa yang sudah ada, mengganti apa pun dengan nama yang sama dan membiarkan sisanya. Berguna untuk menarik sesi tersimpan satu tim ke penyiapan Anda sendiri; bukan yang Anda inginkan jika Anda perlu batas peran yang bersih.
-- **Berdampingan:** karena semuanya terikat ke perangkat, profil browser terpisah, akun pengguna terpisah, atau PWA kedua yang terpasang masing-masing membawa profil Lolly independennya sendiri. Jalankan instalasi pribadi Anda dan instalasi kiosk acara sekaligus, tanpa peralihan.
+- <!--i:trash--> **Peralihan terbersih:** **Profil → Penyimpanan → Hapus semua data saya**, lalu **Impor** bundel untuk konteks yang akan Anda masuki. Kini Anda berkarya murni sebagai profil itu.
+- <!--i:layers--> **Pelapisan:** mengimpor *tanpa* menghapus terlebih dahulu akan **menggabungkan** - profil, sesi, dan gambar yang diimpor menimpa apa yang sudah ada, mengganti apa pun dengan nama yang sama dan membiarkan sisanya. Berguna untuk menarik sesi tersimpan satu tim ke penyiapan Anda sendiri; bukan yang Anda inginkan jika Anda perlu batas peran yang bersih.
+- <!--i:monitor--> **Berdampingan:** karena semuanya terikat ke perangkat, profil browser terpisah, akun pengguna terpisah, atau PWA kedua yang terpasang masing-masing membawa profil Lolly independennya sendiri. Jalankan instalasi pribadi Anda dan instalasi kiosk acara sekaligus, tanpa peralihan.
 
 > Simpan satu bundel per konteks dan ganti nama berkasnya sesuai isinya (`LollyTools-events-2026.zip`, `LollyTools-me.zip`). Berkas itu *adalah* profilnya.
 
@@ -70,8 +70,8 @@ Karena sebuah profil sepenuhnya lokal, satu-satunya cara memindahkannya ke insta
 
 Di **Profil → Penyimpanan → Pindah ke perangkat lain**:
 
-- **Ekspor data saya** mengunduh satu `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - dinamai sesuai profil pemiliknya, dengan nomor urut per hari agar ekspor berulang tidak bertabrakan (bagian nama dihilangkan bila profil tidak memilikinya). Berkas ini berisi profil Anda, setiap sesi tersimpan (dengan thumbnail-nya), gambar yang Anda unggah, dan preferensi Anda (tema, tata letak, statistik aktivitas lokal).
-- **Impor data…** pada instalasi lain membaca kembali berkas itu dan Anda melanjutkan tepat dari tempat Anda berhenti.
+- <!--i:download--> **Ekspor data saya** mengunduh satu `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - dinamai sesuai profil pemiliknya, dengan nomor urut per hari agar ekspor berulang tidak bertabrakan (bagian nama dihilangkan bila profil tidak memilikinya). Berkas ini berisi profil Anda, setiap sesi tersimpan (dengan thumbnail-nya), gambar yang Anda unggah, dan preferensi Anda (tema, tata letak, statistik aktivitas lokal).
+- <!--i:upload--> **Impor data…** pada instalasi lain membaca kembali berkas itu dan Anda melanjutkan tepat dari tempat Anda berhenti.
 
 Bundel ini adalah zip biasa yang mandiri, jadi ia bisa dipindahkan lewat cara **apa pun** - USB, AirDrop, berbagi jaringan, email-ke-diri-sendiri - dan targetnya bisa sepenuhnya offline. Setiap bagian diberi checksum, jadi berkas yang rusak dalam perjalanan tertangkap saat impor alih-alih dipulihkan dalam keadaan setengah rusak. Impor **menggabungkan** (profil/sesi/gambar dengan nama yang sama ditimpa; semua lainnya dipertahankan), jadi ia tidak pernah menghapus target yang sudah digunakan.
 
@@ -93,18 +93,20 @@ Sebuah tool hanya *mengisi otomatis* field profil yang memang secara eksplisit d
 
 Tiga hal berada berdekatan di antarmuka dan mudah tertukar:
 
-- **Profil** - *Anda* (atau tim Anda, atau peran yang sedang Anda jalankan): nama, kontak, foto diri, karya tersimpan Anda. Pribadi, lokal di perangkat, portabel sebagai bundel.
-- **Platform** - *brand*: warna, font, dan pengaturan global yang menjadi acuan render setiap tool. Dibagikan dan konsisten, bukan pribadi.
-- **Kapabilitas** - *apa yang bisa dilakukan aplikasi*: seluruh rangkaian fitur dan tool yang tersedia untuk Anda.
+- <!--i:people--> **Profil** - *Anda* (atau tim Anda, atau peran yang sedang Anda jalankan): nama, kontak, foto diri, karya tersimpan Anda. Pribadi, lokal di perangkat, portabel sebagai bundel.
+- <!--i:palette--> **Platform** - *brand*: warna, font, dan pengaturan global yang menjadi acuan render setiap tool. Dibagikan dan konsisten, bukan pribadi.
+- <!--i:sliders--> **Kapabilitas** - *apa yang bisa dilakukan aplikasi*: seluruh rangkaian fitur dan tool yang tersedia untuk Anda.
 
 Profil mengubah aset itu berasal *dari siapa*; platform mengubah *tampilannya*; kapabilitas adalah *apa yang bisa Anda buat*.
 
 ### "Profil" berarti dua hal lain di tempat lain - bukan ini
 
+![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&filename=pv-identity-enrol)
+
 Istilah ini dipakai berlebihan di seluruh proyek. Tidak satu pun dari keduanya adalah profil pribadi yang dibahas di halaman ini:
 
-- **Profil konten** - konfigurasi waktu-build di `profiles.json` yang mengikat sekumpulan paket tool ke sebuah katalog brand (misalnya `suse`, `lolly-start`). Ini yang dipilih operator saat men-deploy, dan ini juga yang dipilih oleh **parameter URL/CLI** `profile` untuk memilih varian *warna* saat ekspor (kondisi cetak ICC/CMYK - lihat [Mode URL](/info/url-mode.html)). Keduanya soal *build/output*, bukan soal *Anda*. Lihat [Konfigurasi](/info/configuration.html).
-- **Profil identitas** - identitas **Content Credentials** terverifikasi opsional yang bisa Anda daftarkan (sertifikat berumur pendek yang mengaitkan email Anda dengan ekspor yang Anda tanda tangani). Itu adalah identitas penanda tangan, terpisah dari field nama/kontak pada profil pribadi, meskipun **Gunakan detail saya** mengatur apakah salah satunya disematkan. Lihat [Identitas Content Credentials](/info/content-credentials-identity.html).
+- <!--i:box--> **Profil konten** - konfigurasi waktu-build di `profiles.json` yang mengikat sekumpulan paket tool ke sebuah katalog brand (misalnya `suse`, `lolly-start`). Ini yang dipilih operator saat men-deploy, dan ini juga yang dipilih oleh **parameter URL/CLI** `profile` untuk memilih varian *warna* saat ekspor (kondisi cetak ICC/CMYK - lihat [Mode URL](/info/url-mode.html)). Keduanya soal *build/output*, bukan soal *Anda*. Lihat [Konfigurasi](/info/configuration.html).
+- <!--i:seal--> **Profil identitas** - identitas **Content Credentials** terverifikasi opsional yang bisa Anda daftarkan (sertifikat berumur pendek yang mengaitkan email Anda dengan ekspor yang Anda tanda tangani). Itu adalah identitas penanda tangan, terpisah dari field nama/kontak pada profil pribadi, meskipun **Gunakan detail saya** mengatur apakah salah satunya disematkan. Lihat [Identitas Content Credentials](/info/content-credentials-identity.html).
 
 ## Privasi
 

@@ -56,9 +56,9 @@ In ogni momento un'installazione ha **un profilo attivo** - i dati che uno strum
 
 Quindi se gestisci davvero più contesti contemporaneamente (tu, il tuo team, il cappello da event manager), conservi più pacchetti e carichi quello che ti serve:
 
-- **Il passaggio più pulito:** **Profilo → Archiviazione → Cancella tutti i miei dati**, poi **Importa** il pacchetto per il contesto in cui stai entrando. Ora crei esclusivamente come quel profilo.
-- **Sovrapposizione:** importare *senza* cancellare prima **unisce** - il profilo, le sessioni e le immagini importate si aggiungono sopra a quello che c'è già, sostituendo tutto ciò che ha lo stesso nome e lasciando il resto. Utile per portare le sessioni salvate di un team nella tua configurazione; non è quello che vuoi se hai bisogno di un confine netto tra ruoli.
-- **Fianco a fianco:** poiché tutto è limitato al dispositivo, un profilo del browser separato, un account utente separato, o una seconda PWA installata portano ciascuno il proprio profilo Lolly indipendente. Esegui la tua installazione personale e l'installazione del chiosco dell'evento allo stesso tempo, senza dover cambiare.
+- <!--i:trash--> **Il passaggio più pulito:** **Profilo → Archiviazione → Cancella tutti i miei dati**, poi **Importa** il pacchetto per il contesto in cui stai entrando. Ora crei esclusivamente come quel profilo.
+- <!--i:layers--> **Sovrapposizione:** importare *senza* cancellare prima **unisce** - il profilo, le sessioni e le immagini importate si aggiungono sopra a quello che c'è già, sostituendo tutto ciò che ha lo stesso nome e lasciando il resto. Utile per portare le sessioni salvate di un team nella tua configurazione; non è quello che vuoi se hai bisogno di un confine netto tra ruoli.
+- <!--i:monitor--> **Fianco a fianco:** poiché tutto è limitato al dispositivo, un profilo del browser separato, un account utente separato, o una seconda PWA installata portano ciascuno il proprio profilo Lolly indipendente. Esegui la tua installazione personale e l'installazione del chiosco dell'evento allo stesso tempo, senza dover cambiare.
 
 > Conserva un pacchetto per ogni contesto e rinomina i file per quello che sono (`LollyTools-events-2026.zip`, `LollyTools-me.zip`). Il file *è* il profilo.
 
@@ -70,8 +70,8 @@ Poiché un profilo è interamente locale, l'unico modo per portarlo su un'instal
 
 Sotto **Profilo → Archiviazione → Passa a un altro dispositivo**:
 
-- **Esporta i miei dati** scarica un `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - nominato in base al profilo a cui appartiene, con un numero di sequenza giornaliero così le esportazioni ripetute non entrano in conflitto (le parti del nome vengono omesse quando il profilo non le ha). Contiene il tuo profilo, ogni sessione salvata (con la sua miniatura), le tue immagini caricate, e le tue preferenze (tema, layout, statistiche di attività locale).
-- **Importa dati…** sull'altra installazione rilegge quel file e riprendi esattamente da dove avevi lasciato.
+- <!--i:download--> **Esporta i miei dati** scarica un `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - nominato in base al profilo a cui appartiene, con un numero di sequenza giornaliero così le esportazioni ripetute non entrano in conflitto (le parti del nome vengono omesse quando il profilo non le ha). Contiene il tuo profilo, ogni sessione salvata (con la sua miniatura), le tue immagini caricate, e le tue preferenze (tema, layout, statistiche di attività locale).
+- <!--i:upload--> **Importa dati…** sull'altra installazione rilegge quel file e riprendi esattamente da dove avevi lasciato.
 
 Il pacchetto è uno zip semplice e autonomo, quindi viaggia con **qualsiasi** mezzo - USB, AirDrop, una condivisione di rete, un'email a te stesso - e la destinazione può essere completamente offline. Ogni parte ha un checksum, così un file danneggiato durante il trasferimento viene rilevato all'importazione invece di essere ripristinato a metà. L'importazione **unisce** (profilo/sessione/immagine con lo stesso nome vengono sovrascritti; tutto il resto viene mantenuto), quindi non cancella mai una destinazione già in uso.
 
@@ -93,18 +93,20 @@ Uno strumento *precompila* solo i campi del profilo per cui è stato esplicitame
 
 Tre elementi si trovano vicini nell'interfaccia e sono facili da confondere:
 
-- **Profilo** - *tu* (o il tuo team, o il ruolo che ricopri): nome, contatto, foto, il tuo lavoro salvato. Personale, locale al dispositivo, portatile come pacchetto.
-- **Piattaforma** - il *brand*: colori, font, e impostazioni globali su cui renderizza ogni strumento. Condivisa e coerente, non personale.
-- **Capacità** - *cosa può fare l'app*: l'insieme completo delle funzionalità e degli strumenti disponibili per te.
+- <!--i:people--> **Profilo** - *tu* (o il tuo team, o il ruolo che ricopri): nome, contatto, foto, il tuo lavoro salvato. Personale, locale al dispositivo, portatile come pacchetto.
+- <!--i:palette--> **Piattaforma** - il *brand*: colori, font, e impostazioni globali su cui renderizza ogni strumento. Condivisa e coerente, non personale.
+- <!--i:sliders--> **Capacità** - *cosa può fare l'app*: l'insieme completo delle funzionalità e degli strumenti disponibili per te.
 
 Un profilo cambia da chi *proviene* un asset; la piattaforma cambia il suo *aspetto*; le capacità sono *cosa puoi creare*.
 
 ### "Profilo" significa altre due cose altrove - non questa
 
+![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&filename=pv-identity-enrol)
+
 La parola è sovraccarica di significati in tutto il progetto. Nessuno dei due è il profilo personale di cui parla questa pagina:
 
-- **Profilo di contenuto** - una configurazione a tempo di build in `profiles.json` che associa un insieme di pacchetti di strumenti a un catalogo di brand (per esempio `suse`, `lolly-start`). È quello che un operatore sceglie al momento del deployment, ed è anche quello che il **parametro URL/CLI** `profile` seleziona come variante di *colore* al momento dell'esportazione (la condizione di stampa ICC/CMYK - consulta [Modalità URL](/info/url-mode.html)). Entrambi riguardano il *build/output*, non *te*. Consulta [Configurazione](/info/configuration.html).
-- **Profilo di identità** - l'opzionale **identità Content Credentials verificata** che puoi registrare (un certificato a breve durata che collega la tua email alle tue esportazioni firmate). Quella è un'identità di firma, distinta dai campi nome/contatto del profilo personale, sebbene **Usa i miei dati** governi se l'una o l'altra vengono incorporate. Consulta [Identità Content Credentials](/info/content-credentials-identity.html).
+- <!--i:box--> **Profilo di contenuto** - una configurazione a tempo di build in `profiles.json` che associa un insieme di pacchetti di strumenti a un catalogo di brand (per esempio `suse`, `lolly-start`). È quello che un operatore sceglie al momento del deployment, ed è anche quello che il **parametro URL/CLI** `profile` seleziona come variante di *colore* al momento dell'esportazione (la condizione di stampa ICC/CMYK - consulta [Modalità URL](/info/url-mode.html)). Entrambi riguardano il *build/output*, non *te*. Consulta [Configurazione](/info/configuration.html).
+- <!--i:seal--> **Profilo di identità** - l'opzionale **identità Content Credentials verificata** che puoi registrare (un certificato a breve durata che collega la tua email alle tue esportazioni firmate). Quella è un'identità di firma, distinta dai campi nome/contatto del profilo personale, sebbene **Usa i miei dati** governi se l'una o l'altra vengono incorporate. Consulta [Identità Content Credentials](/info/content-credentials-identity.html).
 
 ## Privacy
 

@@ -22,8 +22,8 @@ Lolly'deki markan; renkler, yazı tipleri ve birkaç kuraldan oluşan küçük b
 
 Markan zaten tasarım belirteçleri olarak yakalanmışsa - **Penpot**, **Tokens Studio** (Figma) ya da düz bir **DTCG** dosyasından - onu yeniden yazmak yerine olduğu gibi içeri al. İki yol var:
 
-- **Uygulama içinde:** [tasarım sistemi oluşturucu: Marka Stüdyosu](/info/brand-studio.html) (`#/start`) bir belirteç dosyasını, bir Penpot dışa aktarımını veya doğrudan bir `LollyBrand` paketini kabul eder - bırak, palet canlansın.
-- **Komut satırından**, yeniden kullanılabilir bir marka paketi oluşturmak için:
+- <!--i:palette--> **Uygulama içinde:** [tasarım sistemi oluşturucu: Marka Stüdyosu](/info/brand-studio.html) (`#/start`) bir belirteç dosyasını, bir Penpot dışa aktarımını veya doğrudan bir `LollyBrand` paketini kabul eder - bırak, palet canlansın.
+- <!--i:code--> **Komut satırından**, yeniden kullanılabilir bir marka paketi oluşturmak için:
 
 ```bash
 # a monolithic tokens.json, a one-file-per-set directory, or a Penpot project archive
@@ -80,15 +80,15 @@ Araçlara kendi açık verilerini de besle: bir **CSV** veya **JSON** tablosunu 
 
 Etkin bir marka ve elinde malzemenle her araç bitmiş bir dosya üretir:
 
-- **Oluştur** herhangi bir aracı **SVG, PDF, PNG, JPG, WebP, video** ve daha fazlasına - ihtiyaç duyduğunda gerçek baskı boyutları ve fiziksel birimlerle. Bkz. [Dışa aktarma ve formatlar](/info/exporting.html).
-- **Bir bağlantı paylaş.** Her araç durumu bir URL'dir; böylece bitmiş bir varlık yeniden üretilebilir ve parametreyle adreslenebilir - bağlantıyı commit'le, istendiğinde yeniden üret.
-- **Toplu yap.** [Toplu ızgarada](/info/exporting.html) bir şablonu bir elektronik tablodan sür: satır başına bir bitmiş varlık.
-- **Otomatikleştir.** Aynı render, [CLI](/info/cli.html)'dan ve bir [yapay zeka ajanından](/info/ai-agents.html) çalışır - bir URL, API'dir.
+- <!--i:download--> **Oluştur** herhangi bir aracı **SVG, PDF, PNG, JPG, WebP, video** ve daha fazlasına - ihtiyaç duyduğunda gerçek baskı boyutları ve fiziksel birimlerle. Bkz. [Dışa aktarma ve formatlar](/info/exporting.html).
+- <!--i:link--> **Bir bağlantı paylaş.** Her araç durumu bir URL'dir; böylece bitmiş bir varlık yeniden üretilebilir ve parametreyle adreslenebilir - bağlantıyı commit'le, istendiğinde yeniden üret.
+- <!--i:layers--> **Toplu yap.** [Toplu ızgarada](/info/exporting.html) bir şablonu bir elektronik tablodan sür: satır başına bir bitmiş varlık.
+- <!--i:cpu--> **Otomatikleştir.** Aynı render, [CLI](/info/cli.html)'dan ve bir [yapay zeka ajanından](/info/ai-agents.html) çalışır - bir URL, API'dir.
 
 ## Sırada nereye
 
 Burada ne yapmaya geldiğine bağlı olarak üç yol:
 
-- **[Yaratıcılar için Lolly](/info/creators.html)** - sen şeyler yaparsın. Avantajlar ve uygulamadan en iyi şekilde nasıl yararlanılır.
-- **[Geliştiriciler için Lolly](/info/builders.html)** - sen araçlar yazar, entegre eder ve dağıtırsın. Teknik dokümantasyon.
-- **[Operatörler için Lolly](/info/operators.html)** - marka, güvenlik ve bir kuruluş genelinde dağıtımdan sen sorumlusun.
+- <!--i:people--> **[Yaratıcılar için Lolly](/info/creators.html)** - sen şeyler yaparsın. Avantajlar ve uygulamadan en iyi şekilde nasıl yararlanılır.
+- <!--i:code--> **[Geliştiriciler için Lolly](/info/builders.html)** - sen araçlar yazar, entegre eder ve dağıtırsın. Teknik dokümantasyon.
+- <!--i:shieldcheck--> **[Operatörler için Lolly](/info/operators.html)** - marka, güvenlik ve bir kuruluş genelinde dağıtımdan sen sorumlusun.

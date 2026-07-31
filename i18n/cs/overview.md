@@ -68,9 +68,9 @@ Protože schválení žije v nástroji, a ne v souboru (viz [Jak si Lolly stojí
 
 Tentýž deterministický nástroj dosáhne téhle škály třemi cestami a všechny produkují identický, předem schválený výstup:
 
-- **Člověk, v aplikaci.** Dávková mřížka `/pro`: vlož nebo naimportuj řádky, dostaneš jeden hotový asset na řádek, stáhneš zip. Žádné designové dovednosti, žádný tiket, žádné čekání.
-- **Vývojář, z příkazové řádky.** CLI běží headless na *stejném* enginu a *stejné* vykreslovací cestě, takže nástroj lze ve skriptu nebo noční pipeline pustit přes všech 10 000 řádků. Volání `lolly <tool> --field=…` ve smyčce je celá integrace.
-- **Systém nebo AI agent, přes MCP.** Tentýž nástroj obsluhovaný programově, ve stejné kvalitě a v ještě větší škále - protože stroj se nezačne nudit, když se sypou tisíce souborů.
+- <!--i:people--> **Člověk, v aplikaci.** Dávková mřížka `/pro`: vlož nebo naimportuj řádky, dostaneš jeden hotový asset na řádek, stáhneš zip. Žádné designové dovednosti, žádný tiket, žádné čekání.
+- <!--i:code--> **Vývojář, z příkazové řádky.** CLI běží headless na *stejném* enginu a *stejné* vykreslovací cestě, takže nástroj lze ve skriptu nebo noční pipeline pustit přes všech 10 000 řádků. Volání `lolly <tool> --field=…` ve smyčce je celá integrace.
+- <!--i:cpu--> **Systém nebo AI agent, přes MCP.** Tentýž nástroj obsluhovaný programově, ve stejné kvalitě a v ještě větší škále - protože stroj se nezačne nudit, když se sypou tisíce souborů.
 
 Jedna sada omezení značky, nastavená designérem jednou; tři cesty k identickému, předem schválenému výstupu - a strojová cesta škáluje nejdál ze všech, protože se neunaví, zatímco se soubory sypou.
 

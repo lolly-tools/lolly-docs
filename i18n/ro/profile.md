@@ -56,9 +56,9 @@ Ambele jumătăți ale acestei povești stau în Storage: contorul ține socotea
 
 Deci dacă chiar jonglezi cu mai multe contexte (tu, echipa ta, pălăria de manager de eveniment), păstrezi mai multe pachete și încarci pe cel de care ai nevoie:
 
-- **Cel mai curat comutator:** **Profile → Storage → Clear all my data**, apoi **Import** pachetul pentru contextul în care intri. Acum creezi exclusiv ca acel profil.
-- **Stratificare:** importul *fără* a șterge întâi **fuzionează** - profilul, sesiunile și imaginile importate se așază peste ce e deja acolo, înlocuind tot ce are același nume și lăsând restul neatins. Util pentru a prelua sesiunile salvate ale unei echipe în propria ta configurație; nu ce vrei dacă ai nevoie de o graniță curată de rol.
-- **Unul lângă altul:** pentru că totul este limitat la dispozitiv, un profil de browser separat, un cont de utilizator separat sau un al doilea PWA instalat poartă fiecare propriul profil Lolly independent. Rulează instalarea ta personală și instalarea de chioșc de eveniment simultan, fără să comuți.
+- <!--i:trash--> **Cel mai curat comutator:** **Profile → Storage → Clear all my data**, apoi **Import** pachetul pentru contextul în care intri. Acum creezi exclusiv ca acel profil.
+- <!--i:layers--> **Stratificare:** importul *fără* a șterge întâi **fuzionează** - profilul, sesiunile și imaginile importate se așază peste ce e deja acolo, înlocuind tot ce are același nume și lăsând restul neatins. Util pentru a prelua sesiunile salvate ale unei echipe în propria ta configurație; nu ce vrei dacă ai nevoie de o graniță curată de rol.
+- <!--i:monitor--> **Unul lângă altul:** pentru că totul este limitat la dispozitiv, un profil de browser separat, un cont de utilizator separat sau un al doilea PWA instalat poartă fiecare propriul profil Lolly independent. Rulează instalarea ta personală și instalarea de chioșc de eveniment simultan, fără să comuți.
 
 > Păstrează un pachet per context și redenumește fișierele după ce reprezintă (`LollyTools-events-2026.zip`, `LollyTools-me.zip`). Fișierul *este* profilul.
 
@@ -70,8 +70,8 @@ Pentru că un profil este în întregime local, singura modalitate de a-l aduce 
 
 Sub **Profile → Storage → Move to another device**:
 
-- **Export my data** descarcă un `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - numit după profilul căruia îi aparține, cu un număr de secvență zilnic, astfel încât exporturile repetate să nu se ciocnească (părțile de nume sunt omise când profilul nu le are). Conține profilul tău, fiecare sesiune salvată (cu miniatura ei), imaginile tale încărcate și preferințele tale (temă, layout, statistici locale de activitate).
-- **Import data…** pe cealaltă instalare citește acel fișier înapoi și reiei exact de unde ai rămas.
+- <!--i:download--> **Export my data** descarcă un `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - numit după profilul căruia îi aparține, cu un număr de secvență zilnic, astfel încât exporturile repetate să nu se ciocnească (părțile de nume sunt omise când profilul nu le are). Conține profilul tău, fiecare sesiune salvată (cu miniatura ei), imaginile tale încărcate și preferințele tale (temă, layout, statistici locale de activitate).
+- <!--i:upload--> **Import data…** pe cealaltă instalare citește acel fișier înapoi și reiei exact de unde ai rămas.
 
 Pachetul este un zip simplu, autonom, deci călătorește prin **orice** mijloc - USB, AirDrop, un partaj de rețea, email către tine însuți - iar ținta poate fi complet offline. Fiecare parte are checksum, deci un fișier deteriorat în tranzit este detectat la import, în loc să fie restaurat pe jumătate stricat. Importul **fuzionează** (profilul/sesiunea/imaginea cu același nume este suprascrisă; tot restul este păstrat), deci nu șterge niciodată o țintă deja în uz.
 
@@ -93,18 +93,20 @@ Un instrument doar *precompletează* câmpurile de profil pentru care a fost con
 
 Trei lucruri stau aproape unul de altul în interfață și se confundă ușor:
 
-- **Profil** - *tu* (sau echipa ta, sau rolul în care ești): nume, contact, fotografie de profil, munca ta salvată. Personal, local pe dispozitiv, portabil ca pachet.
-- **Platformă** - *brandul*: culori, fonturi și setări globale pe baza cărora randează fiecare instrument. Comun și consistent, nu personal.
-- **Capabilități** - *ce poate face aplicația*: setul complet de funcționalități și instrumentele disponibile pentru tine.
+- <!--i:people--> **Profil** - *tu* (sau echipa ta, sau rolul în care ești): nume, contact, fotografie de profil, munca ta salvată. Personal, local pe dispozitiv, portabil ca pachet.
+- <!--i:palette--> **Platformă** - *brandul*: culori, fonturi și setări globale pe baza cărora randează fiecare instrument. Comun și consistent, nu personal.
+- <!--i:sliders--> **Capabilități** - *ce poate face aplicația*: setul complet de funcționalități și instrumentele disponibile pentru tine.
 
 Un profil schimbă de la *cine* provine o resursă; platforma schimbă *cum arată*; capabilitățile sunt *ce poți crea*.
 
 ### „Profil" mai înseamnă alte două lucruri în altă parte - nu pe acesta
 
+![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&filename=pv-identity-enrol)
+
 Cuvântul are mai multe sensuri diferite în tot proiectul. Niciunul dintre acestea nu este profilul personal despre care vorbește această pagină:
 
-- **Profil de conținut** - o configurație la momentul build-ului în `profiles.json` care leagă un set de pachete de instrumente de un catalog de brand (de ex. `suse`, `lolly-start`). Este ceea ce alege un operator la deploy, și tot el este ce selectează parametrul **URL/CLI** `profile` ca variantă de *culoare* la momentul exportului (condiția de tipar ICC/CMYK - vezi [URL Mode](/info/url-mode.html)). Amândouă țin de *build/output*, nu de *tine*. Vezi [Configurare](/info/configuration.html).
-- **Profil de identitate** - **identitatea Content Credentials verificată** opțională pe care o poți înregistra (un certificat de scurtă durată care leagă emailul tău de exporturile tale semnate). Aceasta este o identitate de semnare, separată de câmpurile nume/contact ale profilului personal, deși **Use my details** guvernează dacă vreuna dintre ele este încorporată. Vezi [Identitate Content Credentials](/info/content-credentials-identity.html).
+- <!--i:box--> **Profil de conținut** - o configurație la momentul build-ului în `profiles.json` care leagă un set de pachete de instrumente de un catalog de brand (de ex. `suse`, `lolly-start`). Este ceea ce alege un operator la deploy, și tot el este ce selectează parametrul **URL/CLI** `profile` ca variantă de *culoare* la momentul exportului (condiția de tipar ICC/CMYK - vezi [URL Mode](/info/url-mode.html)). Amândouă țin de *build/output*, nu de *tine*. Vezi [Configurare](/info/configuration.html).
+- <!--i:seal--> **Profil de identitate** - **identitatea Content Credentials verificată** opțională pe care o poți înregistra (un certificat de scurtă durată care leagă emailul tău de exporturile tale semnate). Aceasta este o identitate de semnare, separată de câmpurile nume/contact ale profilului personal, deși **Use my details** guvernează dacă vreuna dintre ele este încorporată. Vezi [Identitate Content Credentials](/info/content-credentials-identity.html).
 
 ## Confidențialitate
 

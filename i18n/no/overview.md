@@ -68,9 +68,9 @@ Fordi godkjenningen ligger i verktøyet og ikke i filen (se [Hvordan Lolly samme
 
 Det samme deterministiske verktøyet når den skalaen på tre måter, som alle gir identisk, forhåndsgodkjent utdata:
 
-- **Et menneske, i appen.** Batch-rutenettet på `/pro`: lim inn eller importer radene, få én ferdig ressurs per rad, last ned zip-filen. Ingen designkompetanse, ingen sak i køen, ingen venting.
-- **En utvikler, fra kommandolinjen.** CLI-en kjører *samme* motor og *samme* renderingsvei headless, så verktøyet kan kjøres over alle 10 000 radene i et skript eller en nattlig pipeline. Ett `lolly <tool> --field=…`-kall i en løkke er hele integrasjonen.
-- **Et system eller en KI-agent, via MCP.** Samme verktøy styrt programmatisk, med samme kvalitet og i enda større skala - for en maskin blir ikke lei mens tusenvis av filer ruller inn.
+- <!--i:people--> **Et menneske, i appen.** Batch-rutenettet på `/pro`: lim inn eller importer radene, få én ferdig ressurs per rad, last ned zip-filen. Ingen designkompetanse, ingen sak i køen, ingen venting.
+- <!--i:code--> **En utvikler, fra kommandolinjen.** CLI-en kjører *samme* motor og *samme* renderingsvei headless, så verktøyet kan kjøres over alle 10 000 radene i et skript eller en nattlig pipeline. Ett `lolly <tool> --field=…`-kall i en løkke er hele integrasjonen.
+- <!--i:cpu--> **Et system eller en KI-agent, via MCP.** Samme verktøy styrt programmatisk, med samme kvalitet og i enda større skala - for en maskin blir ikke lei mens tusenvis av filer ruller inn.
 
 Ett sett merkevareregler, fastsatt én gang av en designer; tre veier til identisk forhåndsgodkjent utdata - og maskinveien skalerer aller lengst, for den blir aldri trøtt mens filene ruller inn.
 

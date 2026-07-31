@@ -22,8 +22,8 @@ Při prvním spuštění se ocitneš na obrazovce **Start** (`#/start`). Zadej n
 
 Pokud je tvá značka už zachycená jako design tokeny - z **Penpot**, **Tokens Studio** (Figma), nebo jakéhokoli obyčejného souboru **DTCG** - přenes ji celou, místo ručního přepisování. Vedou k tomu dvě cesty:
 
-- **V aplikaci:** obrazovka Start a editor *Tvá značka* přijmou soubor s tokeny (nebo balíček `LollyBrand`) přímo - stačí ho přetáhnout dovnitř a paleta se rozsvítí.
-- **Z příkazové řádky** pro vytvoření znovupoužitelného balíčku značky:
+- <!--i:palette--> **V aplikaci:** obrazovka Start a editor *Tvá značka* přijmou soubor s tokeny (nebo balíček `LollyBrand`) přímo - stačí ho přetáhnout dovnitř a paleta se rozsvítí.
+- <!--i:code--> **Z příkazové řádky** pro vytvoření znovupoužitelného balíčku značky:
 
 ```bash
 # a monolithic tokens.json, a one-file-per-set directory, or a Penpot project archive
@@ -76,10 +76,10 @@ Nástrojům můžeš dodat i svá vlastní otevřená data: vlož nebo přetáhn
 
 S aktivní značkou a materiálem po ruce vytvoří každý nástroj hotový soubor:
 
-- **Vyrenderuj** libovolný nástroj do **SVG, PDF, PNG, JPG, WebP, videa** a dalších formátů - ve skutečných tiskových rozměrech a fyzických jednotkách, když je potřebuješ. Viz [Export a formáty](/info/exporting.html).
-- **Sdílej odkaz.** Stav každého nástroje je URL adresa, takže hotový výstup je reprodukovatelný a adresovatelný přes parametry - ulož si odkaz a znovu ho vygeneruj, kdykoli potřebuješ.
-- **Dělej to hromadně.** Řiď šablonu z tabulky v [hromadné mřížce](/info/exporting.html): jeden hotový výstup na řádek.
-- **Automatizuj to.** Stejné renderování běží z [CLI](/info/cli.html) i z [AI agenta](/info/ai-agents.html) - URL adresa je API.
+- <!--i:download--> **Vyrenderuj** libovolný nástroj do **SVG, PDF, PNG, JPG, WebP, videa** a dalších formátů - ve skutečných tiskových rozměrech a fyzických jednotkách, když je potřebuješ. Viz [Export a formáty](/info/exporting.html).
+- <!--i:link--> **Sdílej odkaz.** Stav každého nástroje je URL adresa, takže hotový výstup je reprodukovatelný a adresovatelný přes parametry - ulož si odkaz a znovu ho vygeneruj, kdykoli potřebuješ.
+- <!--i:layers--> **Dělej to hromadně.** Řiď šablonu z tabulky v [hromadné mřížce](/info/exporting.html): jeden hotový výstup na řádek.
+- <!--i:cpu--> **Automatizuj to.** Stejné renderování běží z [CLI](/info/cli.html) i z [AI agenta](/info/ai-agents.html) - URL adresa je API.
 
 „URL adresa je API“ je myšleno doslova. Graf níže nikdo nekreslil: jeho typ, jeho nadpis i celá jeho datová tabulka se naťukaly do adresního řádku a stejný odkaz vykreslí stejný graf na jakémkoli zařízení.
 
@@ -89,6 +89,6 @@ S aktivní značkou a materiálem po ruce vytvoří každý nástroj hotový sou
 
 Tři cesty, podle toho, proč jsi tady:
 
-- **[Lolly pro tvůrce](/info/creators.html)** - tvoříš věci. Výhody a jak z aplikace vytěžit maximum.
-- **[Lolly pro vývojáře](/info/builders.html)** - vytváříš nástroje, integruješ a nasazuješ. Technická dokumentace.
-- **[Lolly pro provozovatele](/info/operators.html)** - zodpovídáš za značku, bezpečnost a nasazení napříč organizací.
+- <!--i:people--> **[Lolly pro tvůrce](/info/creators.html)** - tvoříš věci. Výhody a jak z aplikace vytěžit maximum.
+- <!--i:code--> **[Lolly pro vývojáře](/info/builders.html)** - vytváříš nástroje, integruješ a nasazuješ. Technická dokumentace.
+- <!--i:shieldcheck--> **[Lolly pro provozovatele](/info/operators.html)** - zodpovídáš za značku, bezpečnost a nasazení napříč organizací.

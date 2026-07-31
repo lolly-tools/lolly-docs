@@ -22,8 +22,8 @@ Første gang du åpner appen, havner du på skjermen **Start** (`#/start`) - [**
 
 Hvis merkevaren din allerede er fanget som designtokener - fra **Penpot**, **Tokens Studio** (Figma), eller en vanlig **DTCG**-fil - kan du ta den inn i sin helhet i stedet for å skrive den inn på nytt. To veier:
 
-- **I appen:** [Brand Studio](/info/brand-studio.html) (`#/start`) tar imot en tokenfil, en Penpot-eksport, eller en `LollyBrand`-pakke direkte - slipp den inn, så tennes paletten.
-- **Fra kommandolinjen**, for å sette opp en gjenbrukbar merkevarepakke:
+- <!--i:palette--> **I appen:** [Brand Studio](/info/brand-studio.html) (`#/start`) tar imot en tokenfil, en Penpot-eksport, eller en `LollyBrand`-pakke direkte - slipp den inn, så tennes paletten.
+- <!--i:code--> **Fra kommandolinjen**, for å sette opp en gjenbrukbar merkevarepakke:
 
 ```bash
 # a monolithic tokens.json, a one-file-per-set directory, or a Penpot project archive
@@ -80,15 +80,15 @@ Mat verktøyene med din egen åpne data også: lim inn eller slipp en **CSV**- e
 
 Med en aktiv merkevare og materialet ditt klart, produserer hvert verktøy en ferdig fil:
 
-- **Render** et hvilket som helst verktøy til **SVG, PDF, PNG, JPG, WebP, video**, og mer - i ekte trykkstørrelser og fysiske enheter når du trenger det. Se [Eksport og formater](/info/exporting.html).
-- **Del en lenke.** Hver verktøytilstand er en URL, så en ferdig ressurs er reproduserbar og parameteradresserbar - commit lenken, regenerer ved behov.
-- **Gjør det i bulk.** Driv en mal fra et regneark i [batch-rutenettet](/info/exporting.html): én ferdig ressurs per rad.
-- **Automatiser det.** Den samme renderingen kjører fra [CLI](/info/cli.html) og fra en [AI-agent](/info/ai-agents.html) - en URL er API-et.
+- <!--i:download--> **Render** et hvilket som helst verktøy til **SVG, PDF, PNG, JPG, WebP, video**, og mer - i ekte trykkstørrelser og fysiske enheter når du trenger det. Se [Eksport og formater](/info/exporting.html).
+- <!--i:link--> **Del en lenke.** Hver verktøytilstand er en URL, så en ferdig ressurs er reproduserbar og parameteradresserbar - commit lenken, regenerer ved behov.
+- <!--i:layers--> **Gjør det i bulk.** Driv en mal fra et regneark i [batch-rutenettet](/info/exporting.html): én ferdig ressurs per rad.
+- <!--i:cpu--> **Automatiser det.** Den samme renderingen kjører fra [CLI](/info/cli.html) og fra en [AI-agent](/info/ai-agents.html) - en URL er API-et.
 
 ## Hvor du kan gå videre
 
 Tre veier videre, avhengig av hva du er her for å gjøre:
 
-- **[Lolly for skapere](/info/creators.html)** - du lager ting. Fordelene, og hvordan du får mest mulig ut av appen.
-- **[Lolly for utviklere](/info/builders.html)** - du lager verktøy, integrerer og distribuerer. Den tekniske dokumentasjonen.
-- **[Lolly for operatører](/info/operators.html)** - du er ansvarlig for merkevare, sikkerhet og utrulling i en organisasjon.
+- <!--i:people--> **[Lolly for skapere](/info/creators.html)** - du lager ting. Fordelene, og hvordan du får mest mulig ut av appen.
+- <!--i:code--> **[Lolly for utviklere](/info/builders.html)** - du lager verktøy, integrerer og distribuerer. Den tekniske dokumentasjonen.
+- <!--i:shieldcheck--> **[Lolly for operatører](/info/operators.html)** - du er ansvarlig for merkevare, sikkerhet og utrulling i en organisasjon.

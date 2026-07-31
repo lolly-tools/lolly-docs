@@ -22,8 +22,8 @@ Lolly에서 브랜드는 색상, 폰트, 몇 가지 규칙으로 이루어진 �
 
 브랜드가 이미 **Penpot**, **Tokens Studio**(Figma), 또는 일반 **DTCG** 파일 같은 디자인 토큰 형태로 있다면, 다시 입력하지 말고 통째로 가져오세요. 방법은 두 가지예요.
 
-- **앱 안에서:** [Brand Studio](/info/brand-studio.html)(`#/start`)가 토큰 파일, Penpot 내보내기 파일, `LollyBrand` 팩을 그대로 받아줘요 — 끌어다 놓으면 팔레트가 바로 반영돼요.
-- **명령줄에서**, 재사용 가능한 브랜드 팩을 만들려면:
+- <!--i:palette--> **앱 안에서:** [Brand Studio](/info/brand-studio.html)(`#/start`)가 토큰 파일, Penpot 내보내기 파일, `LollyBrand` 팩을 그대로 받아줘요 — 끌어다 놓으면 팔레트가 바로 반영돼요.
+- <!--i:code--> **명령줄에서**, 재사용 가능한 브랜드 팩을 만들려면:
 
 ```bash
 # a monolithic tokens.json, a one-file-per-set directory, or a Penpot project archive
@@ -80,15 +80,15 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 브랜드가 활성화되고 자료가 준비되면, 어떤 도구든 완성된 파일을 만들어내요.
 
-- 어떤 도구든 **SVG, PDF, PNG, JPG, WebP, 동영상** 등으로 **렌더링**하세요 — 필요하면 실제 인쇄 크기와 물리적 단위로도요. [내보내기와 포맷](/info/exporting.html)을 참고하세요.
-- **링크를 공유하세요.** 모든 도구 상태는 URL이라서, 완성된 에셋은 재현 가능하고 파라미터로 주소를 지정할 수 있어요 — 링크를 커밋해두고 필요할 때 다시 생성하면 돼요.
-- **대량으로 처리하세요.** [배치 그리드](/info/exporting.html)에서 스프레드시트로 템플릿을 구동하세요. 행마다 완성된 에셋이 하나씩 나와요.
-- **자동화하세요.** 같은 렌더링이 [CLI](/info/cli.html)와 [AI 에이전트](/info/ai-agents.html)에서도 그대로 실행돼요 — URL이 곧 API예요.
+- <!--i:download--> 어떤 도구든 **SVG, PDF, PNG, JPG, WebP, 동영상** 등으로 **렌더링**하세요 — 필요하면 실제 인쇄 크기와 물리적 단위로도요. [내보내기와 포맷](/info/exporting.html)을 참고하세요.
+- <!--i:link--> **링크를 공유하세요.** 모든 도구 상태는 URL이라서, 완성된 에셋은 재현 가능하고 파라미터로 주소를 지정할 수 있어요 — 링크를 커밋해두고 필요할 때 다시 생성하면 돼요.
+- <!--i:layers--> **대량으로 처리하세요.** [배치 그리드](/info/exporting.html)에서 스프레드시트로 템플릿을 구동하세요. 행마다 완성된 에셋이 하나씩 나와요.
+- <!--i:cpu--> **자동화하세요.** 같은 렌더링이 [CLI](/info/cli.html)와 [AI 에이전트](/info/ai-agents.html)에서도 그대로 실행돼요 — URL이 곧 API예요.
 
 ## 다음으로 갈 곳
 
 목적에 따라 세 가지 경로가 있어요.
 
-- **[Lolly 크리에이터용](/info/creators.html)** — 무언가를 만드는 분들을 위한 곳이에요. 얻을 수 있는 이점과 앱을 최대한 활용하는 방법을 담았어요.
-- **[Lolly 빌더용](/info/builders.html)** — 도구를 만들고 통합하고 배포하는 분들을 위한 곳이에요. 기술 문서예요.
-- **[Lolly 운영자용](/info/operators.html)** — 조직 전체의 브랜드, 보안, 배포를 책임지는 분들을 위한 곳이에요.
+- <!--i:people--> **[Lolly 크리에이터용](/info/creators.html)** — 무언가를 만드는 분들을 위한 곳이에요. 얻을 수 있는 이점과 앱을 최대한 활용하는 방법을 담았어요.
+- <!--i:code--> **[Lolly 빌더용](/info/builders.html)** — 도구를 만들고 통합하고 배포하는 분들을 위한 곳이에요. 기술 문서예요.
+- <!--i:shieldcheck--> **[Lolly 운영자용](/info/operators.html)** — 조직 전체의 브랜드, 보안, 배포를 책임지는 분들을 위한 곳이에요.

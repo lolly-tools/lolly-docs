@@ -227,7 +227,7 @@ Everything is stored in your browser's local database (IndexedDB): your profile,
 - <!--i:box--> **Clear cache** - drop downloaded catalog content (re-syncs next load).
 - <!--i:trash--> **Clear all my data** - wipe profile, sessions, and images. *Cannot be undone.*
 
-![The storage card on a phone-width screen: every category of on-device data measured, with the Clear all my data button at the bottom](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%2C.store-manages%2C.storage-subsection%2C.store-selbar%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23storage-section&filename=pv-storage-clear)
+![The storage card on a phone-width screen: every category of on-device data named, with the Clear all my data button at the bottom](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%2C.store-manages%2C.storage-subsection%2C.store-selbar%2C.store-chip-val%2C%23store-hero-num%2C%23store-headroom%2C%23store-quota%2C%23store-reclaim%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23storage-section&filename=pv-storage-clear)
 
 None of this local data is transmitted anywhere - no telemetry, no cloud rendering. The complete list of what the app ever fetches or sends is in the [Privacy Policy](/info/privacy.html), and [Server Surface](/info/server-surface.html) inventories the optional server components.
 

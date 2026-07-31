@@ -22,8 +22,8 @@ Na primeira execução, você cai na tela **Start** (`#/start`). Dê um nome e u
 
 Se sua marca já está capturada como tokens de design - do **Penpot**, do **Tokens Studio** (Figma), ou de qualquer arquivo **DTCG** simples - traga-a por completo em vez de digitar tudo de novo. Duas rotas:
 
-- **No aplicativo:** a tela Start e o editor *Your brand* aceitam um arquivo de tokens (ou um pacote `LollyBrand`) diretamente - solte o arquivo e a paleta ganha vida.
-- **Pela linha de comando**, para montar um pacote de marca reutilizável:
+- <!--i:palette--> **No aplicativo:** a tela Start e o editor *Your brand* aceitam um arquivo de tokens (ou um pacote `LollyBrand`) diretamente - solte o arquivo e a paleta ganha vida.
+- <!--i:code--> **Pela linha de comando**, para montar um pacote de marca reutilizável:
 
 ```bash
 # a monolithic tokens.json, a one-file-per-set directory, or a Penpot project archive
@@ -80,15 +80,15 @@ Alimente as ferramentas com seus próprios dados abertos também: cole ou solte 
 
 Com uma marca ativa e seu material em mãos, toda ferramenta produz um arquivo finalizado:
 
-- **Renderize** qualquer ferramenta em **SVG, PDF, PNG, JPG, WebP, vídeo**, e mais - em tamanhos de impressão reais e unidades físicas quando precisar. Veja [Exportação e formatos](/info/exporting.html).
-- **Compartilhe um link.** Todo estado de uma ferramenta é uma URL, então um ativo finalizado é reproduzível e endereçável por parâmetros - salve o link, regenere sob demanda.
-- **Faça em lote.** Conduza um template a partir de uma planilha na [grade em lote](/info/exporting.html): um ativo finalizado por linha.
-- **Automatize.** A mesma renderização roda a partir da [CLI](/info/cli.html) e de um [agente de IA](/info/ai-agents.html) - uma URL é a API.
+- <!--i:download--> **Renderize** qualquer ferramenta em **SVG, PDF, PNG, JPG, WebP, vídeo**, e mais - em tamanhos de impressão reais e unidades físicas quando precisar. Veja [Exportação e formatos](/info/exporting.html).
+- <!--i:link--> **Compartilhe um link.** Todo estado de uma ferramenta é uma URL, então um ativo finalizado é reproduzível e endereçável por parâmetros - salve o link, regenere sob demanda.
+- <!--i:layers--> **Faça em lote.** Conduza um template a partir de uma planilha na [grade em lote](/info/exporting.html): um ativo finalizado por linha.
+- <!--i:cpu--> **Automatize.** A mesma renderização roda a partir da [CLI](/info/cli.html) e de um [agente de IA](/info/ai-agents.html) - uma URL é a API.
 
 ## Para onde ir a seguir
 
 Três caminhos, dependendo do que você veio fazer:
 
-- **[Lolly para Criadores](/info/creators.html)** - você cria coisas. As vantagens, e como tirar o máximo proveito do aplicativo.
-- **[Lolly para Construtores](/info/builders.html)** - você desenvolve ferramentas, integra e implanta. A documentação técnica.
-- **[Lolly para Operadores](/info/operators.html)** - você é responsável pela marca, segurança e lançamento em toda a organização.
+- <!--i:people--> **[Lolly para Criadores](/info/creators.html)** - você cria coisas. As vantagens, e como tirar o máximo proveito do aplicativo.
+- <!--i:code--> **[Lolly para Construtores](/info/builders.html)** - você desenvolve ferramentas, integra e implanta. A documentação técnica.
+- <!--i:shieldcheck--> **[Lolly para Operadores](/info/operators.html)** - você é responsável pela marca, segurança e lançamento em toda a organização.

@@ -56,9 +56,9 @@ Tại bất kỳ thời điểm nào, một bản cài đặt chỉ có **một 
 
 Vì vậy nếu bạn thực sự phải xoay sở giữa nhiều bối cảnh (bạn, nhóm của bạn, chiếc mũ quản lý sự kiện), bạn giữ nhiều gói và nạp gói bạn cần:
 
-- **Cách chuyển sạch nhất:** **Hồ sơ → Lưu trữ → Xóa toàn bộ dữ liệu của tôi**, sau đó **Nhập** gói cho bối cảnh bạn đang bước vào. Giờ đây bạn đang tạo hoàn toàn với tư cách hồ sơ đó.
-- **Xếp chồng:** nhập vào *mà không* xóa trước sẽ **hợp nhất** - hồ sơ, phiên và hình ảnh được nhập sẽ chồng lên những gì đã có sẵn, thay thế bất kỳ mục nào trùng tên và giữ nguyên phần còn lại. Hữu ích khi bạn muốn kéo các phiên đã lưu của một nhóm vào thiết lập của riêng mình; không phải điều bạn muốn nếu cần một ranh giới vai trò rõ ràng.
-- **Song song:** vì mọi thứ đều giới hạn theo thiết bị, một hồ sơ trình duyệt riêng, một tài khoản người dùng riêng, hoặc một PWA cài đặt lần thứ hai đều mang hồ sơ Lolly độc lập của riêng nó. Chạy bản cài đặt cá nhân của bạn và bản cài đặt ki-ốt sự kiện cùng lúc, không cần chuyển đổi.
+- <!--i:trash--> **Cách chuyển sạch nhất:** **Hồ sơ → Lưu trữ → Xóa toàn bộ dữ liệu của tôi**, sau đó **Nhập** gói cho bối cảnh bạn đang bước vào. Giờ đây bạn đang tạo hoàn toàn với tư cách hồ sơ đó.
+- <!--i:layers--> **Xếp chồng:** nhập vào *mà không* xóa trước sẽ **hợp nhất** - hồ sơ, phiên và hình ảnh được nhập sẽ chồng lên những gì đã có sẵn, thay thế bất kỳ mục nào trùng tên và giữ nguyên phần còn lại. Hữu ích khi bạn muốn kéo các phiên đã lưu của một nhóm vào thiết lập của riêng mình; không phải điều bạn muốn nếu cần một ranh giới vai trò rõ ràng.
+- <!--i:monitor--> **Song song:** vì mọi thứ đều giới hạn theo thiết bị, một hồ sơ trình duyệt riêng, một tài khoản người dùng riêng, hoặc một PWA cài đặt lần thứ hai đều mang hồ sơ Lolly độc lập của riêng nó. Chạy bản cài đặt cá nhân của bạn và bản cài đặt ki-ốt sự kiện cùng lúc, không cần chuyển đổi.
 
 > Giữ một gói cho mỗi bối cảnh và đổi tên tệp theo đúng nội dung của chúng (`LollyTools-events-2026.zip`, `LollyTools-me.zip`). Tệp đó *chính là* hồ sơ.
 
@@ -70,8 +70,8 @@ Vì hồ sơ hoàn toàn cục bộ, cách duy nhất để đưa nó vào một
 
 Trong mục **Hồ sơ → Lưu trữ → Chuyển sang thiết bị khác**:
 
-- **Xuất dữ liệu của tôi** tải xuống một tệp `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - được đặt tên theo hồ sơ mà nó thuộc về, kèm số thứ tự theo ngày để các lần xuất lặp lại không bị trùng (các phần tên bị lược bỏ nếu hồ sơ không có chúng). Tệp này chứa hồ sơ của bạn, mọi phiên đã lưu (kèm ảnh thu nhỏ), hình ảnh đã tải lên của bạn, và các tùy chọn của bạn (chủ đề, bố cục, số liệu hoạt động cục bộ).
-- **Nhập dữ liệu…** trên bản cài đặt khác sẽ đọc lại tệp đó và bạn tiếp tục chính xác từ nơi bạn đã dừng lại.
+- <!--i:download--> **Xuất dữ liệu của tôi** tải xuống một tệp `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - được đặt tên theo hồ sơ mà nó thuộc về, kèm số thứ tự theo ngày để các lần xuất lặp lại không bị trùng (các phần tên bị lược bỏ nếu hồ sơ không có chúng). Tệp này chứa hồ sơ của bạn, mọi phiên đã lưu (kèm ảnh thu nhỏ), hình ảnh đã tải lên của bạn, và các tùy chọn của bạn (chủ đề, bố cục, số liệu hoạt động cục bộ).
+- <!--i:upload--> **Nhập dữ liệu…** trên bản cài đặt khác sẽ đọc lại tệp đó và bạn tiếp tục chính xác từ nơi bạn đã dừng lại.
 
 Gói này là một tệp zip đơn giản, tự chứa toàn bộ, nên nó có thể di chuyển bằng **bất kỳ** phương tiện nào - USB, AirDrop, một ổ mạng chia sẻ, tự gửi email cho chính mình - và đích đến có thể hoàn toàn ngoại tuyến. Mỗi phần đều được tính checksum, nên một tệp bị hỏng trong quá trình truyền sẽ bị phát hiện khi nhập vào thay vì được khôi phục ở trạng thái hỏng dở dang. Việc nhập sẽ **hợp nhất** (hồ sơ/phiên/hình ảnh trùng tên sẽ bị ghi đè; mọi thứ khác được giữ nguyên), nên nó không bao giờ xóa sạch một đích đến đang được sử dụng.
 
@@ -93,18 +93,20 @@ Một công cụ chỉ bao giờ *điền sẵn* những trường hồ sơ mà 
 
 Ba khái niệm này nằm gần nhau trong giao diện và rất dễ gây nhầm lẫn:
 
-- **Hồ sơ** - *bạn* (hoặc nhóm của bạn, hoặc vai trò bạn đang đảm nhận): tên, liên hệ, ảnh chân dung, công việc đã lưu của bạn. Mang tính cá nhân, cục bộ trên thiết bị, di động dưới dạng một gói.
-- **Nền tảng** - *thương hiệu*: màu sắc, phông chữ, và các cài đặt toàn cục mà mọi công cụ dựa vào để hiển thị. Dùng chung và nhất quán, không mang tính cá nhân.
-- **Năng lực** - *những gì ứng dụng có thể làm*: toàn bộ tập tính năng và các công cụ có sẵn cho bạn.
+- <!--i:people--> **Hồ sơ** - *bạn* (hoặc nhóm của bạn, hoặc vai trò bạn đang đảm nhận): tên, liên hệ, ảnh chân dung, công việc đã lưu của bạn. Mang tính cá nhân, cục bộ trên thiết bị, di động dưới dạng một gói.
+- <!--i:palette--> **Nền tảng** - *thương hiệu*: màu sắc, phông chữ, và các cài đặt toàn cục mà mọi công cụ dựa vào để hiển thị. Dùng chung và nhất quán, không mang tính cá nhân.
+- <!--i:sliders--> **Năng lực** - *những gì ứng dụng có thể làm*: toàn bộ tập tính năng và các công cụ có sẵn cho bạn.
 
 Hồ sơ thay đổi tài sản đó *đến từ* ai; nền tảng thay đổi nó *trông như thế nào*; năng lực là *những gì bạn có thể tạo ra*.
 
 ### "Hồ sơ" còn mang hai nghĩa khác trong dự án - không phải nghĩa này
 
+![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&filename=pv-identity-enrol)
+
 Từ này bị dùng chồng chéo trong toàn bộ dự án. Không nghĩa nào trong hai nghĩa dưới đây là hồ sơ cá nhân mà trang này đang nói tới:
 
-- **Hồ sơ nội dung** - một cấu hình tại thời điểm build trong `profiles.json` gắn một tập hợp các gói công cụ với một danh mục thương hiệu (ví dụ `suse`, `lolly-start`). Đây là thứ người vận hành chọn khi triển khai, và cũng là thứ mà **tham số URL/CLI** `profile` dùng để chọn một biến thể *màu sắc* tại thời điểm xuất (điều kiện in ICC/CMYK - xem [Chế độ URL](/info/url-mode.html)). Cả hai đều liên quan đến *bản build/đầu ra*, không liên quan đến *bạn*. Xem [Cấu hình](/info/configuration.html).
-- **Hồ sơ danh tính** - **danh tính Content Credentials đã xác minh** tùy chọn mà bạn có thể đăng ký (một chứng chỉ ngắn hạn gắn email của bạn với các bản xuất đã ký của bạn). Đó là một danh tính dùng để ký, tách biệt với các trường tên/liên hệ của hồ sơ cá nhân, dù **Sử dụng thông tin của tôi** vẫn quyết định liệu cái nào trong hai cái đó có được nhúng vào hay không. Xem [Danh tính Content Credentials](/info/content-credentials-identity.html).
+- <!--i:box--> **Hồ sơ nội dung** - một cấu hình tại thời điểm build trong `profiles.json` gắn một tập hợp các gói công cụ với một danh mục thương hiệu (ví dụ `suse`, `lolly-start`). Đây là thứ người vận hành chọn khi triển khai, và cũng là thứ mà **tham số URL/CLI** `profile` dùng để chọn một biến thể *màu sắc* tại thời điểm xuất (điều kiện in ICC/CMYK - xem [Chế độ URL](/info/url-mode.html)). Cả hai đều liên quan đến *bản build/đầu ra*, không liên quan đến *bạn*. Xem [Cấu hình](/info/configuration.html).
+- <!--i:seal--> **Hồ sơ danh tính** - **danh tính Content Credentials đã xác minh** tùy chọn mà bạn có thể đăng ký (một chứng chỉ ngắn hạn gắn email của bạn với các bản xuất đã ký của bạn). Đó là một danh tính dùng để ký, tách biệt với các trường tên/liên hệ của hồ sơ cá nhân, dù **Sử dụng thông tin của tôi** vẫn quyết định liệu cái nào trong hai cái đó có được nhúng vào hay không. Xem [Danh tính Content Credentials](/info/content-credentials-identity.html).
 
 ## Quyền riêng tư
 

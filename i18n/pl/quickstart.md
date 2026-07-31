@@ -22,8 +22,8 @@ Pierwsze uruchomienie przenosi cię na ekran **Start** (`#/start`) - [**Brand St
 
 Jeśli twoja marka jest już zapisana jako design tokens - z **Penpot**, **Tokens Studio** (Figma) lub dowolnego zwykłego pliku **DTCG** - wczytaj ją w całości, zamiast przepisywać od nowa. Dwie drogi:
 
-- **W aplikacji:** [kreator design systemu: Brand Studio](/info/brand-studio.html) (`#/start`) przyjmuje plik tokenów, eksport z Penpot lub paczkę `LollyBrand` bezpośrednio - upuść ją, a paleta się rozświetli.
-- **Z wiersza poleceń**, aby postawić reużywalną paczkę marki:
+- <!--i:palette--> **W aplikacji:** [kreator design systemu: Brand Studio](/info/brand-studio.html) (`#/start`) przyjmuje plik tokenów, eksport z Penpot lub paczkę `LollyBrand` bezpośrednio - upuść ją, a paleta się rozświetli.
+- <!--i:code--> **Z wiersza poleceń**, aby postawić reużywalną paczkę marki:
 
 ```bash
 # a monolithic tokens.json, a one-file-per-set directory, or a Penpot project archive
@@ -76,10 +76,10 @@ Nakarm narzędzia także własnymi otwartymi danymi: wklej lub upuść tabelę *
 
 Z aktywną marką i materiałem w ręku każde narzędzie tworzy gotowy plik:
 
-- **Renderuj** dowolne narzędzie do **SVG, PDF, PNG, JPG, WebP, wideo** i więcej - w prawdziwych rozmiarach druku i jednostkach fizycznych, gdy tego potrzebujesz. Zobacz [Eksport i formaty](/info/exporting.html).
-- **Udostępnij link.** Każdy stan narzędzia to URL, więc gotowy zasób jest odtwarzalny i adresowalny parametrami - zatwierdź link, generuj na żądanie.
-- **Rób to masowo.** Zasil szablon z arkusza kalkulacyjnego w [siatce wsadowej](/info/exporting.html): jeden gotowy zasób na wiersz.
-- **Zautomatyzuj to.** Ten sam render działa z [CLI](/info/cli.html) i z [agenta AI](/info/ai-agents.html) - URL jest API.
+- <!--i:download--> **Renderuj** dowolne narzędzie do **SVG, PDF, PNG, JPG, WebP, wideo** i więcej - w prawdziwych rozmiarach druku i jednostkach fizycznych, gdy tego potrzebujesz. Zobacz [Eksport i formaty](/info/exporting.html).
+- <!--i:link--> **Udostępnij link.** Każdy stan narzędzia to URL, więc gotowy zasób jest odtwarzalny i adresowalny parametrami - zatwierdź link, generuj na żądanie.
+- <!--i:layers--> **Rób to masowo.** Zasil szablon z arkusza kalkulacyjnego w [siatce wsadowej](/info/exporting.html): jeden gotowy zasób na wiersz.
+- <!--i:cpu--> **Zautomatyzuj to.** Ten sam render działa z [CLI](/info/cli.html) i z [agenta AI](/info/ai-agents.html) - URL jest API.
 
 „URL jest API” to stwierdzenie dosłowne. Wykresu poniżej nikt nie narysował: jego typ, tytuł i cała tabela danych zostały wpisane w pasek adresu, a ten sam link renderuje ten sam wykres na każdym urządzeniu.
 
@@ -89,6 +89,6 @@ Z aktywną marką i materiałem w ręku każde narzędzie tworzy gotowy plik:
 
 Trzy ścieżki, zależnie od tego, po co tu jesteś:
 
-- **[Lolly dla twórców](/info/creators.html)** - tworzysz rzeczy. Zalety i jak wycisnąć z aplikacji jak najwięcej.
-- **[Lolly dla budowniczych](/info/builders.html)** - tworzysz narzędzia, integrujesz i wdrażasz. Dokumentacja techniczna.
-- **[Lolly dla operatorów](/info/operators.html)** - odpowiadasz za markę, bezpieczeństwo i wdrożenie w organizacji.
+- <!--i:people--> **[Lolly dla twórców](/info/creators.html)** - tworzysz rzeczy. Zalety i jak wycisnąć z aplikacji jak najwięcej.
+- <!--i:code--> **[Lolly dla budowniczych](/info/builders.html)** - tworzysz narzędzia, integrujesz i wdrażasz. Dokumentacja techniczna.
+- <!--i:shieldcheck--> **[Lolly dla operatorów](/info/operators.html)** - odpowiadasz za markę, bezpieczeństwo i wdrożenie w organizacji.

@@ -56,9 +56,9 @@ Herhangi bir anda bir kurulumun **tek bir etkin profili** vardır - bir aracın 
 
 Yani gerçekten birkaç bağlamı bir arada yürütüyorsan (sen, ekibin, etkinlik yöneticisi şapkası) birkaç paket tutar ve ihtiyaç duyduğunu yüklersin:
 
-- **En temiz geçiş:** **Profil → Depolama → Tüm verilerimi temizle**, ardından geçtiğin bağlamın paketini **İçe aktar**. Artık tamamen o profil olarak üretim yapıyorsun.
-- **Katmanlama:** önce temizlemeden içe aktarmak **birleştirir** - içe aktarılan profil, oturumlar ve görseller zaten var olanın üzerine iner, aynı ada sahip olanı değiştirir ve gerisini olduğu gibi bırakır. Bir ekibin kayıtlı oturumlarını kendi kurulumuna çekmek için kullanışlı; temiz bir rol sınırına ihtiyacın varsa istediğin şey bu değil.
-- **Yan yana:** her şey cihaza özel olduğundan, ayrı bir tarayıcı profili, ayrı bir kullanıcı hesabı ya da ikinci bir kurulu PWA, her biri kendi bağımsız Lolly profilini taşır. Kişisel kurulumunu ve etkinlik kiosk kurulumunu aynı anda çalıştır, geçiş yapmadan.
+- <!--i:trash--> **En temiz geçiş:** **Profil → Depolama → Tüm verilerimi temizle**, ardından geçtiğin bağlamın paketini **İçe aktar**. Artık tamamen o profil olarak üretim yapıyorsun.
+- <!--i:layers--> **Katmanlama:** önce temizlemeden içe aktarmak **birleştirir** - içe aktarılan profil, oturumlar ve görseller zaten var olanın üzerine iner, aynı ada sahip olanı değiştirir ve gerisini olduğu gibi bırakır. Bir ekibin kayıtlı oturumlarını kendi kurulumuna çekmek için kullanışlı; temiz bir rol sınırına ihtiyacın varsa istediğin şey bu değil.
+- <!--i:monitor--> **Yan yana:** her şey cihaza özel olduğundan, ayrı bir tarayıcı profili, ayrı bir kullanıcı hesabı ya da ikinci bir kurulu PWA, her biri kendi bağımsız Lolly profilini taşır. Kişisel kurulumunu ve etkinlik kiosk kurulumunu aynı anda çalıştır, geçiş yapmadan.
 
 > Bağlam başına bir paket tut ve dosyaları ne olduklarına göre yeniden adlandır (`LollyTools-events-2026.zip`, `LollyTools-me.zip`). Dosya, profilin *ta kendisidir*.
 
@@ -70,8 +70,8 @@ Bir profil tamamen yerel olduğundan, onu boş bir kuruluma - yeni bir dizüstü
 
 **Profil → Depolama → Başka bir cihaza taşı** altında:
 
-- **Verilerimi dışa aktar**, tek bir `LollyTools-<Ad>-<Soyad>-<YYYY-AA-GG>-<n>.zip` indirir - ait olduğu profile göre adlandırılmış, tekrar dışa aktarımların çakışmaması için günlük bir sıra numarasıyla (profilde olmayan ad parçaları atlanır). İçinde profilin, her kayıtlı oturum (küçük resmiyle), yüklediğin görseller ve tercihlerin (tema, düzen, yerel etkinlik istatistikleri) bulunur.
-- Diğer kurulumdaki **Verileri içe aktar…**, o dosyayı geri okur ve tam olarak kaldığın yerden devam edersin.
+- <!--i:download--> **Verilerimi dışa aktar**, tek bir `LollyTools-<Ad>-<Soyad>-<YYYY-AA-GG>-<n>.zip` indirir - ait olduğu profile göre adlandırılmış, tekrar dışa aktarımların çakışmaması için günlük bir sıra numarasıyla (profilde olmayan ad parçaları atlanır). İçinde profilin, her kayıtlı oturum (küçük resmiyle), yüklediğin görseller ve tercihlerin (tema, düzen, yerel etkinlik istatistikleri) bulunur.
+- <!--i:upload--> Diğer kurulumdaki **Verileri içe aktar…**, o dosyayı geri okur ve tam olarak kaldığın yerden devam edersin.
 
 Paket düz, kendi kendine yeten bir zip'tir; bu yüzden **her** yolla seyahat eder - USB, AirDrop, bir ağ paylaşımı, kendine e-posta - ve hedef tamamen çevrimdışı olabilir. Her parça sağlama toplamına tabidir; böylece aktarım sırasında hasar gören bir dosya, yarı bozuk geri yüklenmek yerine içe aktarmada yakalanır. İçe aktarma **birleştirir** (aynı adlı profil/oturum/görsel üzerine yazılır; gerisi korunur); bu yüzden zaten kullanımda olan bir hedefi asla silmez.
 
@@ -93,18 +93,20 @@ Bir araç yalnızca bağlamak üzere açıkça yapıldığı profil alanlarını
 
 Arayüzde birbirine yakın duran ve karıştırılması kolay üç şey:
 
-- **Profil** - *sen* (ya da ekibin ya da içinde bulunduğun rol): ad, iletişim, vesikalık fotoğraf, kayıtlı çalışmaların. Kişisel, cihaza yerel, bir paket olarak taşınabilir.
-- **Platform** - *marka*: her aracın karşısında oluşturulduğu renkler, yazı tipleri ve genel ayarlar. Ortak ve tutarlı, kişisel değil.
-- **Yetenekler** - *uygulamanın neler yapabileceği*: tam özellik seti ve sana açık olan araçlar.
+- <!--i:people--> **Profil** - *sen* (ya da ekibin ya da içinde bulunduğun rol): ad, iletişim, vesikalık fotoğraf, kayıtlı çalışmaların. Kişisel, cihaza yerel, bir paket olarak taşınabilir.
+- <!--i:palette--> **Platform** - *marka*: her aracın karşısında oluşturulduğu renkler, yazı tipleri ve genel ayarlar. Ortak ve tutarlı, kişisel değil.
+- <!--i:sliders--> **Yetenekler** - *uygulamanın neler yapabileceği*: tam özellik seti ve sana açık olan araçlar.
 
 Bir profil, bir varlığın *kimden* geldiğini değiştirir; platform onun neye *benzediğini* değiştirir; yetenekler *neler yapabileceğindir*.
 
 ### "Profil" başka yerlerde iki şey daha anlamına gelir - bu değil
 
+![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&filename=pv-identity-enrol)
+
 Kelime, proje genelinde birden çok anlam taşır. Bunların hiçbiri, bu sayfanın konusu olan kişisel profil değildir:
 
-- **İçerik profili** - `profiles.json` içinde, bir araç paketi kümesini bir marka kataloğuna bağlayan derleme zamanı bir yapılandırma (örneğin `suse`, `lolly-start`). Bir operatörün dağıtırken seçtiği şeydir ve `profile` **URL/CLI parametresinin** dışa aktarımda bir *renk* varyantını da seçtiği şeydir (ICC/CMYK baskı koşulu - bkz. [URL Modu](/info/url-mode.html)). Her ikisi de *senin* hakkında değil, *derleme/çıktı* hakkındadır. Bkz. [Yapılandırma](/info/configuration.html).
-- **Kimlik profili** - kaydedebileceğin isteğe bağlı **doğrulanmış Content Credentials kimliği** (e-postanı imzalı dışa aktarımlarına bağlayan kısa ömürlü bir sertifika). Bu, kişisel profilin ad/iletişim alanlarından ayrı bir imzalama kimliğidir, ancak **Bilgilerimi kullan**, ikisinden herhangi birinin gömülüp gömülmeyeceğini yönetir. Bkz. [Content Credentials Kimliği](/info/content-credentials-identity.html).
+- <!--i:box--> **İçerik profili** - `profiles.json` içinde, bir araç paketi kümesini bir marka kataloğuna bağlayan derleme zamanı bir yapılandırma (örneğin `suse`, `lolly-start`). Bir operatörün dağıtırken seçtiği şeydir ve `profile` **URL/CLI parametresinin** dışa aktarımda bir *renk* varyantını da seçtiği şeydir (ICC/CMYK baskı koşulu - bkz. [URL Modu](/info/url-mode.html)). Her ikisi de *senin* hakkında değil, *derleme/çıktı* hakkındadır. Bkz. [Yapılandırma](/info/configuration.html).
+- <!--i:seal--> **Kimlik profili** - kaydedebileceğin isteğe bağlı **doğrulanmış Content Credentials kimliği** (e-postanı imzalı dışa aktarımlarına bağlayan kısa ömürlü bir sertifika). Bu, kişisel profilin ad/iletişim alanlarından ayrı bir imzalama kimliğidir, ancak **Bilgilerimi kullan**, ikisinden herhangi birinin gömülüp gömülmeyeceğini yönetir. Bkz. [Content Credentials Kimliği](/info/content-credentials-identity.html).
 
 ## Gizlilik
 

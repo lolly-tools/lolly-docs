@@ -68,9 +68,9 @@ Dahil nasa tool ang approval at hindi sa file (tingnan ang [Paano naihahambing a
 
 Ang parehong deterministic na tool ay umaabot sa scale na iyon sa tatlong paraan, at lahat ay gumagawa ng iisang, pre-approved na output:
 
-- **Isang tao, sa loob ng app.** Ang `/pro` batch grid: i-paste o i-import ang mga row, kumuha ng isang tapos na asset kada row, i-download ang zip. Walang design skill, walang ticket, walang hintayan.
-- **Isang developer, mula sa command line.** Pinapatakbo ng CLI ang *parehong* engine at ang *parehong* render path nang headless, kaya puwedeng i-sequence ang tool sa lahat ng 10,000 row sa loob ng isang script o isang nightly pipeline. Isang `lolly <tool> --field=…` na tawag sa loob ng loop ang buong integration.
-- **Isang sistema o isang AI agent, sa pamamagitan ng MCP.** Ang parehong tool na pinapatakbo nang programmatic, sa parehong fidelity at sa mas malaki pang scale - dahil hindi mababagot ang makina habang pumapasok ang libu-libong file.
+- <!--i:people--> **Isang tao, sa loob ng app.** Ang `/pro` batch grid: i-paste o i-import ang mga row, kumuha ng isang tapos na asset kada row, i-download ang zip. Walang design skill, walang ticket, walang hintayan.
+- <!--i:code--> **Isang developer, mula sa command line.** Pinapatakbo ng CLI ang *parehong* engine at ang *parehong* render path nang headless, kaya puwedeng i-sequence ang tool sa lahat ng 10,000 row sa loob ng isang script o isang nightly pipeline. Isang `lolly <tool> --field=…` na tawag sa loob ng loop ang buong integration.
+- <!--i:cpu--> **Isang sistema o isang AI agent, sa pamamagitan ng MCP.** Ang parehong tool na pinapatakbo nang programmatic, sa parehong fidelity at sa mas malaki pang scale - dahil hindi mababagot ang makina habang pumapasok ang libu-libong file.
 
 Isang set ng brand constraints, itinakda nang isang beses ng designer; tatlong ruta tungo sa iisang pre-approved na output - at ang ruta ng makina ang pinakamalayong umaabot, dahil hindi ito napapagod habang dumarating ang mga file.
 

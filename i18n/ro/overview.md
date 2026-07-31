@@ -68,9 +68,9 @@ Pentru că aprobarea stă în instrument, nu în fișier (vezi [Cum se compară 
 
 Același instrument determinist ajunge la această scară pe trei căi, toate producând rezultate identice, pre-aprobate:
 
-- **O persoană, în aplicație.** Grila batch `/pro`: lipești sau imporți rândurile, primești o resursă finită pentru fiecare rând, descarci arhiva zip. Fără abilități de design, fără tichet, fără așteptare.
-- **Un developer, din linia de comandă.** CLI-ul rulează *același* motor și *același* traseu de randare, headless, așa că instrumentul poate fi secvențiat peste toate cele 10.000 de rânduri într-un script sau într-un pipeline nocturn. Un apel `lolly <tool> --field=…` într-o buclă e toată integrarea.
-- **Un sistem sau un agent AI, prin MCP.** Același instrument, operat programatic, la aceeași fidelitate și la o scară și mai mare - pentru că o mașină nu se plictisește în timp ce mii de fișiere se adună.
+- <!--i:people--> **O persoană, în aplicație.** Grila batch `/pro`: lipești sau imporți rândurile, primești o resursă finită pentru fiecare rând, descarci arhiva zip. Fără abilități de design, fără tichet, fără așteptare.
+- <!--i:code--> **Un developer, din linia de comandă.** CLI-ul rulează *același* motor și *același* traseu de randare, headless, așa că instrumentul poate fi secvențiat peste toate cele 10.000 de rânduri într-un script sau într-un pipeline nocturn. Un apel `lolly <tool> --field=…` într-o buclă e toată integrarea.
+- <!--i:cpu--> **Un sistem sau un agent AI, prin MCP.** Același instrument, operat programatic, la aceeași fidelitate și la o scară și mai mare - pentru că o mașină nu se plictisește în timp ce mii de fișiere se adună.
 
 Un singur set de constrângeri de brand, fixat o dată de un designer; trei rute către exact același rezultat pre-aprobat - iar ruta mașinii scalează cel mai departe, pentru că nu obosește niciodată în timp ce fișierele se adună.
 

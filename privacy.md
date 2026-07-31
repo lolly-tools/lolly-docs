@@ -59,7 +59,7 @@ Directive Art. 5(3), storage that is strictly necessary for the service you aske
 for doesn't require consent - only transparency, which is what this document and
 the in-app notice both are.)
 
-![The storage section of the profile page on a phone-width screen: every category of on-device data named and measured, with the Clear all my data button right beside it](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%2C.store-manages%2C.storage-subsection%2C.store-selbar%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23storage-section&filename=pv-storage-clear)
+![The storage section of the profile page on a phone-width screen: every category of on-device data named, with the Clear all my data button right beside it](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%2C.store-manages%2C.storage-subsection%2C.store-selbar%2C.store-chip-val%2C%23store-hero-num%2C%23store-headroom%2C%23store-quota%2C%23store-reclaim%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23storage-section&filename=pv-storage-clear)
 
 Your own backup of this data - the `lolly-backup` bundle produced by **Export my
 data & render everything** - is a file you keep and control. It never touches our
@@ -177,7 +177,7 @@ enrolling a verified identity, so your exports say "Verified - signed by
 \<your email\>" instead of an anonymous key. **If you skip enrolment, nothing in
 this section applies to you, and no personal data ever leaves your device.**
 
-![The Verified identity card on the profile page, phone-width: the certificate lifetime picker and the four sign-in choices, dormant until you press one](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&filename=pv-identity-enrol)
+![The Verified identity card on the profile page, phone-width: the certificate lifetime picker and the enrolment step beneath it, dormant until you start it yourself](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&filename=pv-identity-enrol)
 
 If you do enrol, here is exactly what happens:
 

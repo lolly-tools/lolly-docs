@@ -22,8 +22,8 @@ Prima rulare te duce pe ecranul **Start** (`#/start`). Dă-i un nume și o culoa
 
 Dacă brandul tău este deja capturat ca design tokens - din **Penpot**, **Tokens Studio** (Figma) sau orice fișier **DTCG** simplu - adu-l integral, în loc să-l retastezi. Două căi:
 
-- **În aplicație:** ecranul Start și editorul *Brandul tău* acceptă direct un fișier de tokeni (sau un pachet `LollyBrand`) - trage-l acolo și paleta prinde viață.
-- **Din linia de comandă**, pentru a ridica un pachet de brand reutilizabil:
+- <!--i:palette--> **În aplicație:** ecranul Start și editorul *Brandul tău* acceptă direct un fișier de tokeni (sau un pachet `LollyBrand`) - trage-l acolo și paleta prinde viață.
+- <!--i:code--> **Din linia de comandă**, pentru a ridica un pachet de brand reutilizabil:
 
 ```bash
 # a monolithic tokens.json, a one-file-per-set directory, or a Penpot project archive
@@ -80,15 +80,15 @@ Alimentează instrumentele și cu propriile tale date deschise: lipește sau tra
 
 Cu un brand activ și materialul tău la îndemână, fiecare instrument produce un fișier finit:
 
-- **Randează** orice instrument în **SVG, PDF, PNG, JPG, WebP, video** și altele - la dimensiuni reale de print și unități fizice, atunci când ai nevoie. Vezi [Export și formate](/info/exporting.html).
-- **Distribuie un link.** Fiecare stare de instrument este o URL, deci o resursă finită este reproductibilă și adresabilă prin parametri - commite link-ul, regenerează-l la cerere.
-- **Fă-o în masă.** Alimentează un șablon dintr-o foaie de calcul în [grila batch](/info/exporting.html): o resursă finită per rând.
-- **Automatizează-l.** Aceeași randare rulează din [CLI](/info/cli.html) și dintr-un [agent AI](/info/ai-agents.html) - o URL este API-ul.
+- <!--i:download--> **Randează** orice instrument în **SVG, PDF, PNG, JPG, WebP, video** și altele - la dimensiuni reale de print și unități fizice, atunci când ai nevoie. Vezi [Export și formate](/info/exporting.html).
+- <!--i:link--> **Distribuie un link.** Fiecare stare de instrument este o URL, deci o resursă finită este reproductibilă și adresabilă prin parametri - commite link-ul, regenerează-l la cerere.
+- <!--i:layers--> **Fă-o în masă.** Alimentează un șablon dintr-o foaie de calcul în [grila batch](/info/exporting.html): o resursă finită per rând.
+- <!--i:cpu--> **Automatizează-l.** Aceeași randare rulează din [CLI](/info/cli.html) și dintr-un [agent AI](/info/ai-agents.html) - o URL este API-ul.
 
 ## Ce urmează
 
 Trei căi, în funcție de ce ai venit să faci:
 
-- **[Lolly pentru Creatori](/info/creators.html)** - creezi lucruri. Avantajele și cum să obții maximum din aplicație.
-- **[Lolly pentru Dezvoltatori](/info/builders.html)** - creezi instrumente, integrezi și implementezi. Documentația tehnică.
-- **[Lolly pentru Operatori](/info/operators.html)** - ești responsabil de brand, securitate și lansare la nivelul unei organizații.
+- <!--i:people--> **[Lolly pentru Creatori](/info/creators.html)** - creezi lucruri. Avantajele și cum să obții maximum din aplicație.
+- <!--i:code--> **[Lolly pentru Dezvoltatori](/info/builders.html)** - creezi instrumente, integrezi și implementezi. Documentația tehnică.
+- <!--i:shieldcheck--> **[Lolly pentru Operatori](/info/operators.html)** - ești responsabil de brand, securitate și lansare la nivelul unei organizații.

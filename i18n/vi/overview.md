@@ -68,9 +68,9 @@ Vì việc phê duyệt nằm ở công cụ chứ không ở tệp (xem [Lolly 
 
 Cùng một công cụ mang tính xác định đó đạt tới quy mô ấy theo ba đường, tất cả đều cho ra đầu ra giống hệt nhau và đã được phê duyệt trước:
 
-- **Một con người, trong ứng dụng.** Lưới batch `/pro`: dán hoặc nhập các hàng, nhận một asset hoàn chỉnh cho mỗi hàng, tải zip về. Không cần kỹ năng thiết kế, không cần ticket, không phải chờ.
-- **Một lập trình viên, từ dòng lệnh.** CLI chạy *cùng* engine và *cùng* đường render đó ở chế độ headless, nên công cụ có thể được lặp qua toàn bộ 10.000 hàng trong một script hay một pipeline hằng đêm. Một lệnh `lolly <tool> --field=…` trong vòng lặp là toàn bộ phần tích hợp.
-- **Một hệ thống hay một AI agent, qua MCP.** Cùng công cụ đó được vận hành theo cách lập trình, với cùng độ trung thực và ở quy mô còn lớn hơn - bởi máy không biết chán khi hàng nghìn tệp lần lượt hiện ra.
+- <!--i:people--> **Một con người, trong ứng dụng.** Lưới batch `/pro`: dán hoặc nhập các hàng, nhận một asset hoàn chỉnh cho mỗi hàng, tải zip về. Không cần kỹ năng thiết kế, không cần ticket, không phải chờ.
+- <!--i:code--> **Một lập trình viên, từ dòng lệnh.** CLI chạy *cùng* engine và *cùng* đường render đó ở chế độ headless, nên công cụ có thể được lặp qua toàn bộ 10.000 hàng trong một script hay một pipeline hằng đêm. Một lệnh `lolly <tool> --field=…` trong vòng lặp là toàn bộ phần tích hợp.
+- <!--i:cpu--> **Một hệ thống hay một AI agent, qua MCP.** Cùng công cụ đó được vận hành theo cách lập trình, với cùng độ trung thực và ở quy mô còn lớn hơn - bởi máy không biết chán khi hàng nghìn tệp lần lượt hiện ra.
 
 Một bộ ràng buộc thương hiệu, do nhà thiết kế cố định một lần; ba lối dẫn tới đúng một đầu ra đã được phê duyệt trước - và lối máy móc mở rộng xa nhất, vì nó không bao giờ mỏi khi các tệp lần lượt đổ về.
 

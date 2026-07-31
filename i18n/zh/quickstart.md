@@ -22,8 +22,8 @@ Lolly 将你的规则——颜色、字体、版式、逻辑——转化为任�
 
 如果你的品牌已经以设计令牌的形式存在——来自 **Penpot**、**Tokens Studio**（Figma）、或任何纯 **DTCG** 文件——直接整体导入，而不必重新输入。有两种途径：
 
-- **在应用内：** Start 屏幕和*你的品牌*编辑器可以直接接受一个令牌文件（或一个 `LollyBrand` 包）——拖进去，调色板就会亮起来。
-- **通过命令行**，建立一个可复用的品牌包：
+- <!--i:palette--> **在应用内：** Start 屏幕和*你的品牌*编辑器可以直接接受一个令牌文件（或一个 `LollyBrand` 包）——拖进去，调色板就会亮起来。
+- <!--i:code--> **通过命令行**，建立一个可复用的品牌包：
 
 ```bash
 # a monolithic tokens.json, a one-file-per-set directory, or a Penpot project archive
@@ -80,15 +80,15 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 品牌激活、素材在手之后，每个工具都能产出一个成品文件：
 
-- **渲染**任意工具为 **SVG、PDF、PNG、JPG、WebP、视频**等格式——需要时可使用真实印刷尺寸和物理单位。参见[导出与格式](/info/exporting.html)。
-- **分享一个链接。** 每个工具状态都是一个 URL，因此成品资源可复现、可按参数寻址——提交链接，按需重新生成。
-- **批量处理。** 在[批量网格](/info/exporting.html)中用电子表格驱动一个模板：每一行生成一个成品资源。
-- **实现自动化。** 同一个渲染既可以从 [CLI](/info/cli.html) 运行，也可以从 [AI 智能体](/info/ai-agents.html)运行——URL 本身就是 API。
+- <!--i:download--> **渲染**任意工具为 **SVG、PDF、PNG、JPG、WebP、视频**等格式——需要时可使用真实印刷尺寸和物理单位。参见[导出与格式](/info/exporting.html)。
+- <!--i:link--> **分享一个链接。** 每个工具状态都是一个 URL，因此成品资源可复现、可按参数寻址——提交链接，按需重新生成。
+- <!--i:layers--> **批量处理。** 在[批量网格](/info/exporting.html)中用电子表格驱动一个模板：每一行生成一个成品资源。
+- <!--i:cpu--> **实现自动化。** 同一个渲染既可以从 [CLI](/info/cli.html) 运行，也可以从 [AI 智能体](/info/ai-agents.html)运行——URL 本身就是 API。
 
 ## 接下来去哪里
 
 三条路径，取决于你来这里是要做什么：
 
-- **[Lolly：面向创作者](/info/creators.html)**——你负责制作内容。这里介绍其优势，以及如何充分发挥这个应用的作用。
-- **[Lolly：面向构建者](/info/builders.html)**——你负责编写工具、集成与部署。这里是技术文档。
-- **[Lolly：面向运营者](/info/operators.html)**——你负责组织内的品牌、安全与推广落地。
+- <!--i:people--> **[Lolly：面向创作者](/info/creators.html)**——你负责制作内容。这里介绍其优势，以及如何充分发挥这个应用的作用。
+- <!--i:code--> **[Lolly：面向构建者](/info/builders.html)**——你负责编写工具、集成与部署。这里是技术文档。
+- <!--i:shieldcheck--> **[Lolly：面向运营者](/info/operators.html)**——你负责组织内的品牌、安全与推广落地。

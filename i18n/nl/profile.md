@@ -56,9 +56,9 @@ Op elk moment heeft een installatie **één actief profiel** - de gegevens die e
 
 Dus als je echt met meerdere contexten jongleert (jij, je team, het eventmanager-hoedje), bewaar je meerdere bundels en laad je degene die je nodig hebt:
 
-- **Schoonste overstap:** **Profiel → Opslag → Al mijn gegevens wissen**, en **importeer** vervolgens de bundel voor de context waarin je stapt. Je creëert nu puur als dat profiel.
-- **Gelaagd:** importeren *zonder* eerst te wissen **voegt samen** - het geïmporteerde profiel, de sessies en de afbeeldingen komen boven op wat er al is, waarbij alles met dezelfde naam wordt vervangen en de rest blijft staan. Handig om de opgeslagen sessies van één team in je eigen opstelling te trekken; niet wat je wilt als je een strikte rolgrens nodig hebt.
-- **Naast elkaar:** omdat alles apparaatgebonden is, heeft een apart browserprofiel, een apart gebruikersaccount of een tweede geïnstalleerde PWA elk hun eigen onafhankelijke Lolly-profiel. Draai je persoonlijke installatie en de event-kiosk-installatie tegelijk, zonder te wisselen.
+- <!--i:trash--> **Schoonste overstap:** **Profiel → Opslag → Al mijn gegevens wissen**, en **importeer** vervolgens de bundel voor de context waarin je stapt. Je creëert nu puur als dat profiel.
+- <!--i:layers--> **Gelaagd:** importeren *zonder* eerst te wissen **voegt samen** - het geïmporteerde profiel, de sessies en de afbeeldingen komen boven op wat er al is, waarbij alles met dezelfde naam wordt vervangen en de rest blijft staan. Handig om de opgeslagen sessies van één team in je eigen opstelling te trekken; niet wat je wilt als je een strikte rolgrens nodig hebt.
+- <!--i:monitor--> **Naast elkaar:** omdat alles apparaatgebonden is, heeft een apart browserprofiel, een apart gebruikersaccount of een tweede geïnstalleerde PWA elk hun eigen onafhankelijke Lolly-profiel. Draai je persoonlijke installatie en de event-kiosk-installatie tegelijk, zonder te wisselen.
 
 > Bewaar per context een bundel en hernoem de bestanden naar wat ze zijn (`LollyTools-events-2026.zip`, `LollyTools-me.zip`). Het bestand *is* het profiel.
 
@@ -70,8 +70,8 @@ Omdat een profiel volledig lokaal is, is de enige manier om het op een lege inst
 
 Onder **Profiel → Opslag → Verplaatsen naar een ander apparaat**:
 
-- **Mijn gegevens exporteren** downloadt één `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - genoemd naar het profiel waartoe het behoort, met een dagelijks volgnummer zodat herhaalde exports niet botsen (naamdelen vervallen wanneer het profiel ze niet heeft). Het bevat je profiel, elke opgeslagen sessie (met bijbehorende miniatuur), je geüploade afbeeldingen en je voorkeuren (thema, lay-out, lokale activiteitsstatistieken).
-- **Gegevens importeren…** op de andere installatie leest dat bestand weer in, en je gaat precies verder waar je gebleven was.
+- <!--i:download--> **Mijn gegevens exporteren** downloadt één `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - genoemd naar het profiel waartoe het behoort, met een dagelijks volgnummer zodat herhaalde exports niet botsen (naamdelen vervallen wanneer het profiel ze niet heeft). Het bevat je profiel, elke opgeslagen sessie (met bijbehorende miniatuur), je geüploade afbeeldingen en je voorkeuren (thema, lay-out, lokale activiteitsstatistieken).
+- <!--i:upload--> **Gegevens importeren…** op de andere installatie leest dat bestand weer in, en je gaat precies verder waar je gebleven was.
 
 De bundel is een gewone, zelfstandige zip, dus hij reist met **elk** middel - USB, AirDrop, een netwerkshare, e-mail naar jezelf - en het doelapparaat kan volledig offline zijn. Elk onderdeel heeft een checksum, zodat een bestand dat onderweg beschadigd raakt bij het importeren wordt opgemerkt in plaats van half kapot te worden hersteld. Importeren **voegt samen** (profiel/sessie/afbeelding met dezelfde naam wordt overschreven; al de rest blijft behouden), zodat een doel dat al in gebruik was nooit wordt gewist.
 
@@ -93,18 +93,20 @@ Een tool *vult* alleen ooit de profielvelden *vooraf in* die het expliciet is ge
 
 Drie dingen staan dicht bij elkaar in de UI en zijn makkelijk te verwarren:
 
-- **Profiel** - *jij* (of je team, of de rol waarin je zit): naam, contact, pasfoto, je opgeslagen werk. Persoonlijk, apparaatgebonden, draagbaar als bundel.
-- **Platform** - het *merk*: kleuren, lettertypen en globale instellingen waartegen elke tool rendert. Gedeeld en consistent, niet persoonlijk.
-- **Mogelijkheden** - *wat de app kan doen*: de volledige functieset en de tools die voor je beschikbaar zijn.
+- <!--i:people--> **Profiel** - *jij* (of je team, of de rol waarin je zit): naam, contact, pasfoto, je opgeslagen werk. Persoonlijk, apparaatgebonden, draagbaar als bundel.
+- <!--i:palette--> **Platform** - het *merk*: kleuren, lettertypen en globale instellingen waartegen elke tool rendert. Gedeeld en consistent, niet persoonlijk.
+- <!--i:sliders--> **Mogelijkheden** - *wat de app kan doen*: de volledige functieset en de tools die voor je beschikbaar zijn.
 
 Een profiel verandert van wie een asset *afkomstig* is; het platform verandert hoe het *eruitziet*; mogelijkheden bepalen *wat je kunt maken*.
 
 ### "Profiel" betekent elders twee andere dingen - niet dit
 
+![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&filename=pv-identity-enrol)
+
 Het woord wordt in het hele project op meerdere manieren gebruikt. Geen van beide is het persoonlijke profiel waarover deze pagina gaat:
 
-- **Contentprofiel** - een build-time configuratie in `profiles.json` die een set toolpakketten koppelt aan een merkcatalogus (bijv. `suse`, `lolly-start`). Dit kiest een operator bij het deployen, en het is ook waarvan de `profile` **URL/CLI-parameter** bij export een *kleur*variant selecteert (de ICC/CMYK-persconditie - zie [URL Mode](/info/url-mode.html)). Beide gaan over de *build/output*, niet over *jou*. Zie [Configuratie](/info/configuration.html).
-- **Identiteitsprofiel** - de optionele **geverifieerde Content Credentials-identiteit** die je kunt registreren (een kortlevend certificaat dat je e-mailadres koppelt aan je ondertekende exports). Dat is een ondertekeningsidentiteit, los van de naam-/contactvelden van het persoonlijke profiel, al bepaalt **Mijn gegevens gebruiken** of een van beide wordt ingebed. Zie [Content Credentials Identity](/info/content-credentials-identity.html).
+- <!--i:box--> **Contentprofiel** - een build-time configuratie in `profiles.json` die een set toolpakketten koppelt aan een merkcatalogus (bijv. `suse`, `lolly-start`). Dit kiest een operator bij het deployen, en het is ook waarvan de `profile` **URL/CLI-parameter** bij export een *kleur*variant selecteert (de ICC/CMYK-persconditie - zie [URL Mode](/info/url-mode.html)). Beide gaan over de *build/output*, niet over *jou*. Zie [Configuratie](/info/configuration.html).
+- <!--i:seal--> **Identiteitsprofiel** - de optionele **geverifieerde Content Credentials-identiteit** die je kunt registreren (een kortlevend certificaat dat je e-mailadres koppelt aan je ondertekende exports). Dat is een ondertekeningsidentiteit, los van de naam-/contactvelden van het persoonlijke profiel, al bepaalt **Mijn gegevens gebruiken** of een van beide wordt ingebed. Zie [Content Credentials Identity](/info/content-credentials-identity.html).
 
 ## Privacy
 
