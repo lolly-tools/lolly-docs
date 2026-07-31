@@ -6,7 +6,7 @@ Bu platformun daha geniş yaratıcı araçlar ortamında nerede durduğu ve kas�
 
 ## Panorama
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
 
 | Özellik | Canva (Açık kanvas) | Marka portalları (DAM şablonlama) | Illustrator (Masaüstü profesyonel) | Figma / Penpot (Çevrimiçi profesyonel) | **Lolly (Kısıtlama öncelikli)** |
 |---|---|---|---|---|---|
@@ -26,7 +26,7 @@ Boşluğun şekli açık: mevcut ortamda hiçbir şey bize kısıtlama öncelikl
 
 ## Şunlar için kullan
 
-![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&dark=1&filename=ov2-deck-studio-output)
+![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&dark=1&filename=ov2-deck-studio-output)
 
 Deck Studio buradaki tavanın iyi bir ölçüsü: veri olarak bildirilmiş bütün bir slayt destesi, kanvasta canlı olarak yerleştirilir ve düzenlenebilir yerel bir PowerPoint dosyası olarak dışa aktarılır.
 
@@ -45,7 +45,7 @@ Deck Studio buradaki tavanın iyi bir ölçüsü: veri olarak bildirilmiş büt�
 
 ## Dosyayı değil, aracı onayla
 
-![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-approve-the-tool)
+![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-approve-the-tool)
 
 Ekosistemdeki diğer her araç, sonradan kontrol edilmesi gereken bir *dosya* üretir - bir Slack başlığında bir marka yöneticisi, feragat metninde hukuk, bir tur değişiklik, bir inceleme daha. Lolly onayı **bir adım yukarıya** taşır. Marka kuralları - kesin hex kodları, lisanslı font dosyaları, taşma payları, boşluklar - aracın HTML ve CSS'ine sabit kodlanmıştır, yani şablon marka dışı bir varlığı *fiziksel olarak* üretemez. Yerleşimin kendisi taşıyıcı bir öğedir.
 

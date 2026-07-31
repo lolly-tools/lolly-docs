@@ -48,7 +48,7 @@ Füllen Sie ein paar Felder aus und erhalten Sie das fertige Asset - keine Schri
 
 ### Von Live-Daten zum fertigen Visual
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
 
 Verbinden Sie eine **CSV**- oder **JSON**-Tabelle mit einer Diagramm-, Karten- oder Tabellenvorlage und aktualisieren Sie die Zahlen - das Layout kümmert sich von selbst darum. Wahlergebnisse, Quartalszahlen, Wetterereignisse: Erstellen Sie das Format einmal und nutzen Sie es jedes Mal wieder, wenn die Story läuft. Treffen Sie Ihren Corporate-Style *exakt*, denn er wird auf Vorlagenebene durchgesetzt, nicht als lose Richtlinie belassen.
 

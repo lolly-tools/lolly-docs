@@ -6,7 +6,7 @@ Kam tahle platforma zapadá do širšího prostředí kreativních nástrojů a 
 
 ## Přehled trhu
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
 
 | Funkce | Canva (otevřené plátno) | Brand portály (DAM šablonování) | Illustrator (Desktop pro) | Figma / Penpot (Online pro) | **Lolly (omezení na prvním místě)** |
 |---|---|---|---|---|---|
@@ -26,7 +26,7 @@ Tvar mezery na trhu je jasný: nic v současném prostředí nenabízí generati
 
 ## Použij to pro
 
-![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&dark=1&filename=ov2-deck-studio-output)
+![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&dark=1&filename=ov2-deck-studio-output)
 
 - Rychlou tvorbu provozně nasazených kreativních assetů (dlaždice na akce, odznaky, podpisy, upozornění)
 - Volné uspořádání na otevřeném plátně (Layout Studio), když prvky - barvy, typografie, ikony, obrázky - musí zůstat v souladu s globálními hodnotami značky
@@ -45,7 +45,7 @@ Deck Studio je dobrým měřítkem toho, kam strop sahá: celá prezentace dekla
 
 ## Schvaluj nástroj, ne soubor
 
-![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-approve-the-tool)
+![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-approve-the-tool)
 
 Každý jiný nástroj na trhu produkuje *soubor*, který se pak musí zkontrolovat - správce značky ve slackovém vlákně, právník kvůli disclaimeru, kolo změn, další revize. Lolly posouvá schvalování **o krok proti proudu**. Pravidla značky - přesné hex kódy, licencované soubory fontů, spadávky, rozestupy - jsou pevně zadrátovaná v HTML a CSS nástroje, takže šablona *fyzicky nemůže* vydat asset mimo značku. Samo rozvržení je nosné.
 

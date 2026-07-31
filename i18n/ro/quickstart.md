@@ -76,7 +76,7 @@ Alimentează instrumentele și cu propriile tale date deschise: lipește sau tra
 
 „O URL este API-ul” e literal. Graficul de mai jos nu a fost desenat de nimeni: tipul, titlul și întregul tabel de date au fost scrise în bara de adrese, iar același link randează același grafic pe orice dispozitiv.
 
-![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&dark=1&filename=vt-d3-url-chart)
+![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-d3-url-chart)
 
 Cu un brand activ și materialul tău la îndemână, fiecare instrument produce un fișier finit:
 

@@ -48,7 +48,7 @@ Vul een paar velden in en krijg de afgewerkte asset - geen lettertypes om te kie
 
 ### Van live data naar een afgewerkt visual
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
 
 Koppel een **CSV**- of **JSON**-tabel aan een grafiek-, kaart- of tabelsjabloon en werk de cijfers bij - de lay-out regelt zichzelf. Verkiezingsuitslagen, kwartaalcijfers, weersgebeurtenissen: bouw het format één keer en hergebruik het elke keer dat het verhaal opnieuw loopt. Je huisstijl wordt *exact* aangehouden, omdat die op sjabloonniveau wordt afgedwongen, niet losjes als richtlijn wordt meegegeven.
 

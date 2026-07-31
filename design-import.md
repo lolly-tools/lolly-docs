@@ -6,7 +6,7 @@ The good news for everything you've already made: none of it is stranded in the 
 
 Import lives in **[Layout Studio](/info/using.html)**, Lolly's free canvas: open it, click **Import a design** in the canvas toolbar, and choose a file. The artboard resizes to the file's frame and every layer becomes an editable box on the same open canvas - so an imported artboard is just an ordinary Layout Studio session from the first click.
 
-![Layout Studio's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
+![Layout Studio's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
 
 ## What you can import
 
@@ -76,7 +76,7 @@ For a *fully declarative* tool - sidebar inputs, hard-coded constraints, the wor
 
 Import travels one direction; the **brand primitives travel both ways**. Lolly's colours are [DTCG design tokens](/info/design-tokens.html) - the same format Penpot imports/exports natively and Tokens Studio brings to Figma - so the palette you design *with* in Figma/Penpot and the palette Lolly enforces are one document, not two hand-synced lists.
 
-![The Brand Studio's import card - a Penpot export, a DTCG or Tokens Studio file, or a plain SVG all come in through the same door](/t/url-shot?url=%2F%23%2Fstart%3Fimport&width=1440&height=900&dpi=192&waitMs=1600&css=.start-import-modal%20.modal-msg%2C.start-import-modal%20.modal-title%7Bdisplay%3Anone%7D&cropSelector=.start-import-drop&format=svg&dark=1&filename=bs-brand-import-formats)
+![The Brand Studio's import card - a Penpot export, a DTCG or Tokens Studio file, or a plain SVG all come in through the same door](/t/url-shot?url=%2F%23%2Fstart%3Fimport&width=1440&height=900&dpi=192&waitMs=1600&css=.start-import-modal%20.modal-msg%2C.start-import-modal%20.modal-title%7Bdisplay%3Anone%7D&cropSelector=.start-import-drop&walker=1&format=svg&dark=1&filename=bs-brand-import-formats)
 
 ## Limits & safety
 

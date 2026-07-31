@@ -42,7 +42,7 @@
 
 ![The filename field fused to the format picker, so the export reads as one name.format pair](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.filename-extension&walker=1&dark=1&filename=exp-format-picker)
 
-![A hairline wide-tracked wordmark reading Aurora, the kind of pure vector artwork the SVG row of the table is about](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DAurora%26weight%3D200%26tracking%3D16%26size%3D200%26full&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=%23tool-canvas&format=svg&dark=1&filename=vt-wordmark-vector)
+![A hairline wide-tracked wordmark reading Aurora, the kind of pure vector artwork the SVG row of the table is about](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DAurora%26weight%3D200%26tracking%3D16%26size%3D200%26full&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-wordmark-vector)
 
 | やりたいこと… | 使うフォーマット | 理由 |
 |---|---|---|
@@ -151,7 +151,7 @@ GIF はどこでも動作します（チャットやメールに最適ですが�
 
 ## パスワード保護
 
-![The Content protection group opened on a PNG export, showing only the cards that apply to it](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26imprint%3D1%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-protection&dark=1&filename=exp-content-protection)
+![The Content protection group opened on a PNG export, showing only the cards that apply to it](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26imprint%3D1%26options&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&cropSelector=.export-protection&dark=1&filename=exp-content-protection)
 
 互いに独立した2種類のロックがあり、どちらも完全にお使いのデバイス上で完結します。
 
@@ -175,7 +175,7 @@ GIF はどこでも動作します（チャットやメールに最適ですが�
 
 ![The HDR card in the export panel, switched on, with the White / Reach / Dark lift / Focus dials revealed under it](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26hdr%3D1%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-hdr&walker=1&dark=1&filename=exp-hdr-card)
 
-![The Password protect card expanded on a PDF export, with the password field and the two lock tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-pdfpass&dark=1&filename=exp-pdf-password)
+![The Password protect card expanded on a PDF export, with the password field and the two lock tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&cropSelector=.export-pdfpass&dark=1&filename=exp-pdf-password)
 
 書き出したファイルには **Content Credentials** を付与できます — ファイルに埋め込まれた署名済みの [C2PA](https://c2pa.org) マニフェストで、そのファイルが Lolly で作られ、それ以降改変されていないことを、改ざんを検知できる形で記録します。これは、上記の来歴メタデータの標準規格版にあたります — ファイルのバイト列のハッシュに紐づいた暗号学的な主張（何がいつ誰によってどこで作ったか）であり、その後の編集はすべて C2PA 対応のビューアーで検知可能です。この標準は [Content Authenticity Initiative](https://contentauthenticity.org)（Adobe、BBC、Microsoft、Nikon など）によって運営されており、Lolly が書き込むクレデンシャルは、カメラメーカーや報道機関、クリエイティブスイートが採用しているものと同じです。
 

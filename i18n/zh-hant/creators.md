@@ -48,7 +48,7 @@ Street Map 就是這種取捨的好例子：你挑一座城市和兩個顏色，
 
 ### 從即時資料到完成視覺
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
 
 把 **CSV** 或 **JSON** 表格連結到圖表、地圖或表格範本，更新數字就好——版面會自己處理。選舉結果、季度財報、天氣事件：格式做一次，往後每次報導都能重複使用。完全*精確*符合你的公司風格，因為規則是在範本層級強制執行，不是隨口交代的鬆散準則。
 

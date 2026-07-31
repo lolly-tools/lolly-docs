@@ -6,7 +6,7 @@ Nền tảng này phù hợp ở đâu trong bối cảnh công cụ sáng tạo
 
 ## Bối cảnh
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
 
 | Khả năng | Canva (Canvas mở) | Cổng thương hiệu (Tạo mẫu DAM) | Illustrator (Desktop chuyên nghiệp) | Figma / Penpot (Trực tuyến chuyên nghiệp) | **Lolly (Ưu tiên ràng buộc)** |
 |---|---|---|---|---|---|
@@ -26,7 +26,7 @@ Hình dạng của khoảng trống này rất rõ ràng: không có gì trong b
 
 ## Dùng để
 
-![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&dark=1&filename=ov2-deck-studio-output)
+![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&dark=1&filename=ov2-deck-studio-output)
 
 Deck Studio là thước đo tốt cho giới hạn trên ở đây: cả một bộ slide được khai báo dưới dạng dữ liệu, được dàn trực tiếp trên canvas, rồi xuất ra thành tệp PowerPoint gốc có thể chỉnh sửa.
 
@@ -45,7 +45,7 @@ Deck Studio là thước đo tốt cho giới hạn trên ở đây: cả một 
 
 ## Phê duyệt công cụ, không phải tệp
 
-![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-approve-the-tool)
+![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-approve-the-tool)
 
 Mọi công cụ khác trong bối cảnh này đều tạo ra một *tệp* mà rồi phải được kiểm tra - một quản lý thương hiệu trong một luồng Slack, bộ phận pháp lý xem phần miễn trừ trách nhiệm, một vòng sửa đổi, rồi một lượt rà soát nữa. Lolly đẩy việc phê duyệt **lên một bước ở phía trên**. Các quy tắc thương hiệu - mã hex chính xác, tệp phông có giấy phép, lề bleed, khoảng cách - được mã hoá cứng vào HTML và CSS của công cụ, nên template *về mặt vật lý không thể* xuất ra một tài nguyên lệch thương hiệu. Bản thân layout mới là phần chịu lực.
 

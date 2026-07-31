@@ -48,7 +48,7 @@ Street Map इस सौदे का अच्छा उदाहरण है:
 
 ### लाइव डेटा से तैयार विज़ुअल तक
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
 
 किसी चार्ट, नक़्शे या टेबल टेम्पलेट से **CSV** या **JSON** टेबल जोड़ें और आँकड़े अपडेट करें — लेआउट अपना ख़याल ख़ुद रखता है। चुनाव नतीजे, तिमाही आय, मौसम की घटनाएँ: फ़ॉर्मैट एक बार बनाएँ और जब भी वह ख़बर चले, उसे फिर इस्तेमाल करें। अपनी हाउस स्टाइल से *हूबहू* मेल खाएँ, क्योंकि वह टेम्पलेट के स्तर पर लागू होती है, ढीली गाइडलाइन बनकर नहीं छूटती।
 

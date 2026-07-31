@@ -10,7 +10,7 @@ Lolly 是一個與平台無關的引擎,能在多種殼層(web PWA、Tauri 桌�
 
 ## 了解架構
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-components-lib&sweep=1)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-components-lib&sweep=1)
 
 - **[總覽](/info/overview.html)** — Lolly 存在的原因、引擎/殼層/工具的分層方式、能力橋接層(capability bridge),以及已經拍板定案的架構決策。
 - **[設計權杖](/info/design-tokens.html)** — 品牌所使用的 DTCG token 模型,以及工具如何運用這些權杖。
@@ -19,11 +19,11 @@ Lolly 是一個與平台無關的引擎,能在多種殼層(web PWA、Tauri 桌�
 
 下面每一個控制項都是由 `tool.json` 中宣告的輸入項目產生的。你寫下 manifest 裡的那一行，主機負責畫出控制項，而同一套模型也驅動著 CLI 與網址。
 
-![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&format=svg&dark=1&filename=aud-manifest-controls)
+![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&walker=1&format=svg&dark=1&filename=aud-manifest-controls)
 
 這套做法能撐的遠遠不只五個控制項。替一個輸入項目加上 `section`，主機就會把它摺疊收起，所以像 D3 Chart Studio 這種有五十個輸入項目的工具，打開時依然只是一小疊控制項，其餘的都收在具名分組後面。
 
-![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-d3-sections)
+![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-d3-sections)
 
 - **[撰寫工具指南](/info/authoring-tools.html)** — 完整指南:manifest、template、styles、hooks、組合方式與發布。
 - **[撰寫素材指南](/info/authoring-assets.html)** — catalog 素材、分級、語系、色盤、可換色圖示,以及字型。
@@ -48,7 +48,7 @@ Lolly 是一個與平台無關的引擎,能在多種殼層(web PWA、Tauri 桌�
 
 權利與署名資訊也跟其他輸入項目一樣。Embed & Track Image 宣告了創作者、版權、授權與聯絡方式等欄位，匯出時會把它們寫入檔案本身的中介資料，以及它的 C2PA manifest。
 
-![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-rights-fields)
+![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-rights-fields)
 
 - **[Content Credentials 身分](/info/content-credentials-identity.html)** — 針對裝置端 C2PA 的 CA 簽發簽章;引擎合約與維運手冊。
 - **[資料傳輸](/info/data-transfer.html)** — `lolly-backup` 封裝包:envelope、完整性,以及跨殼層的保證。

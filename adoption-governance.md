@@ -41,7 +41,7 @@ The pilot's centre of gravity is the **producer**. If producers don't self-serve
 
 Step 3 is the one that carries the pilot. A tool opens with the brand already on it, so the only thing left to decide is the words.
 
-![Deck Studio's first slide opened cold, already carrying the brand's type, colour and title layout before a single field is filled in](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&css=%23tool-canvas%20.ds-slide~.ds-slide%7Bdisplay%3Anone%7D&cropSelector=%23tool-canvas%20.ds-slide&dark=1&filename=ce-deck-studio-cold&sweep=1)
+![Deck Studio's first slide opened cold, already carrying the brand's type, colour and title layout before a single field is filled in](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&css=%23tool-canvas%20.ds-slide~.ds-slide%7Bdisplay%3Anone%7D&cropSelector=%23tool-canvas%20.ds-slide&dark=1&filename=ce-deck-studio-cold&sweep=1)
 
 The measure of a good onboarding here is blunt: *did they leave with a finished, on-brand file, without asking anyone?*
 
@@ -54,7 +54,7 @@ Onboarding is about handing over control of the rules, not the output:
 3. Convert **one high-visibility output** and show the before/after side by side - this is the single most effective adoption lever.
 4. Set the **guard-rails**: lock what must never change, expose only what's meant to vary.
 
-![The Brand Studio's Catalogue step, where logos, images and fonts become permanent IDs a tool can call](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcatalogue&width=1440&height=900&dpi=192&waitMs=1800&format=svg&dark=1&filename=aud-brand-catalogue)
+![The Brand Studio's Catalogue step, where logos, images and fonts become permanent IDs a tool can call](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcatalogue&width=1440&height=900&dpi=192&waitMs=1800&walker=1&format=svg&dark=1&filename=aud-brand-catalogue)
 
 ### The developer / platform team
 
@@ -64,7 +64,7 @@ Onboarding is about handing over control of the rules, not the output:
 
 The Dashboard's capability map is the inventory to scope that decision against: every part of the platform as its own card, grouped by what it makes and where it runs.
 
-![The Dashboard's What Lolly can do panel, the whole feature set laid out as grouped cards rather than a prose feature list](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dcaps&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23dash-caps&format=svg&dark=1&filename=ce-capability-map)
+![The Dashboard's What Lolly can do panel, the whole feature set laid out as grouped cards rather than a prose feature list](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dcaps&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23dash-caps&walker=1&format=svg&dark=1&filename=ce-capability-map)
 
 ### IT & security
 

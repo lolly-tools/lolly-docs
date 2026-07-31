@@ -6,7 +6,7 @@
 
 ## 產業格局
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
 
 | 能力 | Canva(開放式畫布) | 品牌入口網站(DAM 範本化) | Illustrator(桌面專業版) | Figma / Penpot(線上專業版) | **Lolly(限制優先)** |
 |---|---|---|---|---|---|
@@ -26,7 +26,7 @@
 
 ## 適用情境
 
-![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&dark=1&filename=ov2-deck-studio-output)
+![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&dark=1&filename=ov2-deck-studio-output)
 
 Deck Studio 很能說明這裡的天花板有多高：一整份投影片以資料的形式宣告，在畫布上即時排版，最後匯出成原生可編輯的 PowerPoint。
 
@@ -45,7 +45,7 @@ Deck Studio 很能說明這裡的天花板有多高：一整份投影片以資�
 
 ## 核准工具，而不是檔案
 
-![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-approve-the-tool)
+![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-approve-the-tool)
 
 這個格局中的其他工具產出的都是*檔案*，而檔案事後都得被檢查——品牌負責人在 Slack 討論串裡看過，法務盯免責聲明，改一輪，再審一次。Lolly 把核准**往上游移了一步**。品牌規則——精確的十六進位色碼、有授權的字型檔、出血邊界、間距——都寫死在工具的 HTML 與 CSS 裡，因此範本*在物理上不可能*產出不符品牌的素材。版面本身就是承重結構。
 

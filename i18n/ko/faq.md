@@ -71,7 +71,7 @@ Lolly는 모든 것을 한 단계 끌어올려요.
 
 ## Lolly가 제 Figma, Penpot, Illustrator, InDesign 파일을 편집하고 렌더링할 수 있나요?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
 
 네. **Layout Studio**를 열고 **디자인 가져오기**를 클릭하세요. 네이티브 Figma **.fig**(Save local copy로 저장), Penpot의 **.penpot** 내보내기, Illustrator의 **.ai**나 **.pdf**, InDesign의 **.idml**(File → Export → InDesign Markup), 또는 **어떤 SVG**든(거의 모든 디자인 앱이 내보낼 수 있는 가장 폭넓은 통로예요) 받아들여요. 모든 처리는 전적으로 사용자의 기기에서 이뤄지고, 계정이나 플러그인이 전혀 필요 없어요.
 

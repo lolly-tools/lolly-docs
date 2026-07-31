@@ -102,7 +102,7 @@ Lolly издига всичко на по-високо ниво.
 
 ## Може ли Lolly да редактира и рендерира моите файлове от Figma, Penpot, Illustrator или InDesign?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
 
 Да. Отвори **Layout Studio** и кликни **Import a design**: приема нативен Figma **.fig** (Save local copy), Penpot **.penpot** експорт, Illustrator **.ai** или **.pdf**, InDesign **.idml** (File → Export → InDesign Markup) или **какъвто и да е SVG** (широката врата — почти всяко дизайн приложение го експортира). Всичко се обработва изцяло на твоето устройство, без нужда от акаунт или плъгин.
 

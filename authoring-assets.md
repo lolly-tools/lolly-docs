@@ -163,7 +163,7 @@ This git-reviewed flow is for a **shared, governed catalog** - the model where a
 
 Most people never touch it: in the open app you **ingest your own creative files straight into your catalogue** - drag them onto the [Catalogue](/info/using.html) view or the Brand Studio's Catalogue tab, and they're instantly available in every tool's asset picker, on your device.
 
-![The Brand Studio's Catalogue tab - a drop area and the assets already ingested, the no-git route into the same picker every tool reads](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcatalogue&width=1440&height=900&dpi=192&waitMs=2000&css=.start-head%7Bdisplay%3Anone%7D&format=svg&cropSelector=.be-cat&dark=1&filename=at2-brand-catalogue-tab)
+![The Brand Studio's Catalogue tab - a drop area and the assets already ingested, the no-git route into the same picker every tool reads](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcatalogue&width=1440&height=900&dpi=192&waitMs=2000&css=.start-head%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.be-cat&dark=1&filename=at2-brand-catalogue-tab)
 
 Those user assets live under the `user/` namespace and never enter a shared catalog. The git route matters only when you're curating a library many people depend on.
 

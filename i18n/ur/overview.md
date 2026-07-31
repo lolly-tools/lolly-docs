@@ -46,7 +46,7 @@
 
 ## ایک مہم کا لائف سائیکل
 
-![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 Lolly کیا ہے، یہ دیکھنے کا سب سے صاف طریقہ فیچرز کی فہرست نہیں — بلکہ ایک ہی اثاثے کا پیچھا کرنا ہے، جیسے وہ ایک ہاتھ سے دوسرے ہاتھ پہنچتا ہے۔ ایک لوکلائزڈ مہم کارڈ کو ادارے میں سے گزرتے ہوئے دیکھیں:
 
@@ -64,7 +64,7 @@ Lolly کیا ہے، یہ دیکھنے کا سب سے صاف طریقہ فیچر�
 
 ## ایک منظوری، دس ہزار اثاثے
 
-![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&format=svg&dark=1&filename=ov2-batch-grid)
+![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
 
 چونکہ منظوری فائل میں نہیں، ٹول میں رہتی ہے ([Lolly کا موازنہ کیسے ہوتا ہے](/info/positioning.html) دیکھیں)، اس لیے پیمانہ نظرثانی کا مسئلہ ہی نہیں رہتا۔ ایک لوکلائزڈ سوشل-کارڈ ٹول کو ایک بار منظور کریں، پھر ایک اسپریڈشیٹ سے **12 زبانوں میں 10,000 اثاثے** بنائیں — اور اُن میں سے کسی ایک کو بھی لیگل یا برانڈ سے نئی تعمیل جانچ کی ضرورت نہیں، کیونکہ جس ٹیمپلیٹ سے وہ سب آئے ہیں وہ پہلے ہی منظور شدہ تھا۔
 
@@ -229,7 +229,7 @@ lolly/
 
 ### Web (PWA) — بنیادی تقسیم
 
-![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&format=svg&dark=1&filename=aud-web-split)
+![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&dark=1&filename=aud-web-split)
 
 ![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&format=png&dark=1&filename=ov2-phone-audiogram)
 
@@ -297,7 +297,7 @@ CLI کا انٹرایکٹو ہم منصب: ایک فُل-اسکرین، کی ب�
 
 ### 1. اعلانیہ ٹولز، ایک امپیریٹو ایسکیپ ہیچ کے ساتھ
 
-![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-street-map-controls)
+![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-street-map-controls)
 
 ایک ٹول ایک مینی فیسٹ (`tool.json`) + ایک ٹیمپلیٹ (`template.html`) + اختیاری `hooks.js` ہوتا ہے۔
 
@@ -344,9 +344,9 @@ CDN زہرآلودگی کو روکنے کے لیے اثاثہ بائٹس کا SH
 
 ### 5. URL موڈ اولین درجے کا ہے
 
-![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-url-mode-qr)
+![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-url-mode-qr)
 
-![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-url-palette)
+![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-url-palette)
 
 ہر ان پٹ کو ایک URL پیرامیٹر کے طور پر ظاہر کیا جا سکنا چاہیے:
 
@@ -391,7 +391,7 @@ Handlebars کو جان بوجھ کر EJS پر ترجیح دی گئی:
 
 ### 10. ٹولز ٹولز کو ترتیب دیتے ہیں
 
-![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-slides-deck)
+![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-slides-deck)
 
 ایک ٹول کسی **دوسرے** ٹول کا رینڈر ایمبیڈ کر سکتا ہے، بغیر کسی ٹول-سے-ٹول امپورٹ کے — کمپوزیشن انجن حل کرتا ہے، کبھی ٹول کوڈ نہیں۔ دو سطحیں ہیں:
 
@@ -416,7 +416,7 @@ Slides ٹول اُسی دوسری سطح پر بنا ہے: کسی بھی سلا�
 
 ## لائف سائیکل، سرے سے سرے تک
 
-![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&format=svg&dark=1&filename=aud-export-popup)
+![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=aud-export-popup)
 
 ایک صارف `lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H` کھولتا ہے:
 

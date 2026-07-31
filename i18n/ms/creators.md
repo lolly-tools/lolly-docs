@@ -48,7 +48,7 @@ Isikan beberapa medan, dapatkan aset yang siap - tiada fon perlu dipilih, tiada 
 
 ### Daripada data langsung kepada visual siap
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
 
 Sambungkan jadual **CSV** atau **JSON** kepada templat carta, peta, atau jadual dan kemas kini angkanya - susun atur akan mengurus dirinya sendiri. Keputusan pilihan raya, pendapatan suku tahunan, peristiwa cuaca: bina format itu sekali dan guna semula setiap kali cerita itu disiarkan. Padankan gaya syarikat anda *dengan tepat*, kerana ia dikuatkuasakan pada peringkat templat, bukan sekadar garis panduan longgar.
 

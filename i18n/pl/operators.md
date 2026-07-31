@@ -48,15 +48,15 @@ Zmniejsz zbyt duży PDF na urządzeniu, żeby nikt nie sięgał po zewnętrzną 
 
 Wszystkie te operacje to przekształcenia na urządzeniu: twój plik lub dane wchodzą, wychodzą oczyszczone bajty i **nie ma serwera, na który cokolwiek jest wysyłane**. Są celowym przeciwieństwem typowego narzędzia typu „wgraj swój plik na stronę obcej osoby, żeby go wyczyścić”, po które w innym wypadku sięga pełen dobrych intencji pracownik.
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-strip-data&sweep=1)
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data&sweep=1)
 
 Text Helper to ta sama umowa, tylko dla tekstu, a nie plików. To warsztat z zakładkami, którego pracownik szukałby w innym wypadku na obcej stronie, i nie deklaruje żadnych wejść, bo nic, czego dotyka, nigdy nie opuszcza strony.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
 
 Compress PDF domyka zestaw: zbyt duży załącznik zmniejsza się według ustawienia jakości, które sam wybierasz, na maszynie, która już go przechowuje.
 
-![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=ov2-compress-pdf)
+![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=ov2-compress-pdf)
 
 
 
@@ -69,7 +69,7 @@ Każde wejście narzędzia da się wyrazić jako parametr URL, a te same dane we
 
 Prompt to Image to determinizm w najprostszej postaci: tekst jest całym wejściem, złożony obraz jest całym wyjściem, a ten sam tekst zawsze składa się tak samo.
 
-![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## Proweniencja i Content Credentials
 
@@ -88,7 +88,7 @@ Eksporty mogą nieść **Content Credentials** - podpisany manifest [C2PA](https
 
 ## Szyfrowanie i zabezpieczanie hasłem
 
-![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&format=svg&dark=1&filename=aud-pdf-lock)
+![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&walker=1&format=svg&dark=1&filename=aud-pdf-lock)
 
 W przypadku plików, które muszą podróżować zablokowane, wszystko dzieje się na urządzeniu:
 

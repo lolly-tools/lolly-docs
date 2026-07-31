@@ -6,7 +6,7 @@
 
 ## 竞争格局
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
 
 | 能力 | Canva（开放画布） | 品牌门户（DAM 模板化） | Illustrator（桌面专业软件） | Figma / Penpot（在线专业软件） | **Lolly（约束优先）** |
 |---|---|---|---|---|---|
@@ -26,7 +26,7 @@
 
 ## 适用场景
 
-![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&dark=1&filename=ov2-deck-studio-output)
+![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&dark=1&filename=ov2-deck-studio-output)
 
 Deck Studio 很能说明这里的上限有多高：一整套幻灯片以数据的形式声明，在画布上实时排布，最终导出为原生可编辑的 PowerPoint。
 
@@ -45,7 +45,7 @@ Deck Studio 很能说明这里的上限有多高：一整套幻灯片以数据�
 
 ## 批准工具，而不是文件
 
-![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-approve-the-tool)
+![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-approve-the-tool)
 
 这一格局中的其他工具产出的都是*文件*，而文件事后必须被审核——品牌负责人在 Slack 里过一遍，法务盯免责声明，改一轮，再审一次。Lolly 把批准**往上游挪了一步**。品牌规则——精确的十六进制色值、有授权的字体文件、出血边距、间距——都被写死在工具的 HTML 和 CSS 里，因此模板*在物理上不可能*产出不符合品牌的素材。版式本身就是承重结构。
 

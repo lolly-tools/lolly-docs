@@ -75,7 +75,7 @@ It is never uploaded, because there is no server in the path to upload it to.
 These utilities work offline, and their output carries no watermark or metadata of
 ours - the point of most of them is to remove & protect data, not add risk.
 
-![The badge these tools carry: Runs on your device - nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2400&format=svg&cropSelector=.on-device-badge&dark=1&filename=pv-ondevice-badge)
+![The badge these tools carry: Runs on your device - nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&cropSelector=.on-device-badge&dark=1&filename=pv-ondevice-badge)
 
 ## When the app talks to a network, in full
 
@@ -109,7 +109,7 @@ resolver" instead, and you can check those in the desktop or command-line app,
 which resolve DNS natively through your own machine with no third party
 involved.
 
-![The Verify screen: a drop target and nothing else - the file is checked where it already is, with no upload and no account](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1400&format=svg&cropSelector=.valid-layout&dark=1&filename=cc-verify-drop&sweep=1) You can confirm this yourself: greppable checks for this and every
+![The Verify screen: a drop target and nothing else - the file is checked where it already is, with no upload and no account](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1400&walker=1&format=svg&cropSelector=.valid-layout&dark=1&filename=cc-verify-drop&sweep=1) You can confirm this yourself: greppable checks for this and every
 other claim on this page, with the exact commands and expected output, live at
 [Verify It Yourself](/info/verify-yourself.html).
 

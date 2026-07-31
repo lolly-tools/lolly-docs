@@ -10,7 +10,7 @@ Bago sa platform? Ang **[Quickstart](/info/quickstart.html)** ay naghahanda ng b
 
 ## Unawain ang architecture
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-components-lib&sweep=1)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-components-lib&sweep=1)
 
 - **[Overview](/info/overview.html)** - kung bakit umiiral ang Lolly, ang paghihiwalay ng engine/shell/tools, ang capability bridge, at ang mga naisaayos nang architectural commitment.
 - **[Design Tokens](/info/design-tokens.html)** - ang DTCG token model kung saan ipinapahayag ang mga brand, at kung paano ito ginagamit (consume) ng mga tool.
@@ -19,11 +19,11 @@ Bago sa platform? Ang **[Quickstart](/info/quickstart.html)** ay naghahanda ng b
 
 Bawat kontrol sa ibaba ay ginawa mula sa isang declared input sa `tool.json`. Isusulat mo ang linya sa manifest, iginuguhit ng host ang widget, at ang parehong model ang nagpapatakbo sa CLI at sa URL.
 
-![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&format=svg&dark=1&filename=aud-manifest-controls)
+![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&walker=1&format=svg&dark=1&filename=aud-manifest-controls)
 
 Higit pa sa limang kontrol ang kayang i-scale nito. Bigyan ng `section` ang isang input at itutupi iyon ng host, kaya kahit isang tool na may limampung input gaya ng D3 Chart Studio ay bumubukas pa rin bilang maikling listahan, habang ang iba ay naka-file sa likod ng mga pinangalanang grupo.
 
-![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-d3-sections)
+![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-d3-sections)
 
 - **[Authoring Tools](/info/authoring-tools.html)** - ang kumpletong gabay: manifest, template, styles, hooks, composition, at publishing.
 - **[Authoring Assets](/info/authoring-assets.html)** - mga catalog asset, tiers, locales, palettes, themable icons, at fonts.
@@ -48,7 +48,7 @@ Higit pa sa limang kontrol ang kayang i-scale nito. Bigyan ng `section` ang isan
 
 Ang mga karapatan at pag-akda ay mga input din gaya ng iba. Nagde-declare ang Embed & Track Image ng creator, copyright, lisensya at contact fields, at isinusulat ng export ang mga ito sa sariling metadata ng file at sa C2PA manifest nito.
 
-![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-rights-fields)
+![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-rights-fields)
 
 - **[Content Credentials Identity](/info/content-credentials-identity.html)** - CA-issued signing para sa on-device C2PA; mga engine contract at ang operator runbook.
 - **[Data Transfer](/info/data-transfer.html)** - ang `lolly-backup` bundle: envelope, integrity, at cross-shell guarantees.

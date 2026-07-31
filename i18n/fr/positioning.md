@@ -6,7 +6,7 @@ Où cette plateforme se situe dans le paysage plus large des outils créatifs, e
 
 ## Paysage
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
 
 | Fonctionnalité | Canva (canevas ouvert) | Portails de marque (modèles DAM) | Illustrator (pro bureau) | Figma / Penpot (pro en ligne) | **Lolly (axé contraintes)** |
 |---|---|---|---|---|---|
@@ -26,7 +26,7 @@ La forme du manque est claire : rien dans le paysage existant ne propose une sor
 
 ## À utiliser pour
 
-![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&dark=1&filename=ov2-deck-studio-output)
+![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&dark=1&filename=ov2-deck-studio-output)
 
 Deck Studio donne une bonne mesure du plafond ici : une présentation entière déclarée sous forme de données, mise en page en direct sur le canevas, et exportée en PowerPoint natif et modifiable.
 
@@ -45,7 +45,7 @@ Deck Studio donne une bonne mesure du plafond ici : une présentation entière d
 
 ## Approuver l'outil, pas le fichier
 
-![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-approve-the-tool)
+![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-approve-the-tool)
 
 Tous les autres outils du paysage produisent un *fichier* qu'il faut ensuite contrôler : un responsable de marque dans un fil Slack, le juridique sur la mention légale, une série de modifications, une nouvelle relecture. Lolly déplace l'approbation **d'un cran en amont**. Les règles de marque - codes hexadécimaux exacts, fichiers de polices sous licence, marges de fond perdu, espacements - sont codées en dur dans le HTML et le CSS de l'outil : le modèle ne *peut physiquement pas* produire un actif hors marque. La mise en page elle-même est porteuse.
 

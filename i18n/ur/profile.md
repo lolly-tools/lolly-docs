@@ -24,7 +24,7 @@
 
 ترجیحات ہی وہ ایک حصہ ہیں جو یہ بدلتی ہیں کہ ایپ آپ کو کیسا دکھائی دیتا ہے۔ تھیم کارڈز لائیو پری ویو ہیں اور جس لمحے آپ کوئی چنتے ہیں وہ لاگو ہو جاتا ہے — صرف اِسی ڈیوائس پر۔
 
-![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&walker=1&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
 
 ## پروفائل ایک سیاق و سباق ہے، صرف ایک شخص نہیں
 
@@ -58,13 +58,13 @@ Lolly میں، وہ کردار بس **ایک اور پروفائل ہے جو آ�
 
 اسٹوریج ہی وہ جگہ ہے جہاں اِس کے دونوں حصے رہتے ہیں: میٹر زمرہ بہ زمرہ حساب دیتا ہے کہ یہ انسٹال کتنے بائٹ رکھے ہوئے ہے، اور اُس کے نیچے کے بٹن ہی وہ طریقہ ہیں جس سے آپ اسے صاف کرتے یا ساتھ لے جاتے ہیں۔
 
-![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
 
 > ہر سیاق کے لیے ایک بنڈل رکھیں اور فائلوں کا نام ان کی حیثیت کے مطابق رکھیں (`LollyTools-events-2026.zip`، `LollyTools-me.zip`)۔ فائل *ہی* پروفائل ہے۔
 
 ## پروفائل کو نئے ڈیوائس پر منتقل کرنا
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
 
 چونکہ پروفائل مکمل طور پر مقامی ہے، اسے کسی خالی انسٹال پر لانے کا واحد طریقہ — نیا لیپ ٹاپ، تازہ ری سیٹ کیا گیا براؤزر، کسی ساتھی کی مشین، ایک آف لائن باکس — یہ ہے کہ **فائل کو ساتھ لے جائیں**۔ کوئی لاگ ان اسے آپ کے لیے بحال نہیں کرتا، اور یہی نکتہ ہے: شروع سے ہی کچھ بھی آپ کے ڈیوائس سے باہر نہیں گیا۔
 

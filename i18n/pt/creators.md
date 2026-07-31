@@ -48,7 +48,7 @@ Preencha alguns campos, receba o material pronto - sem fontes para escolher, sem
 
 ### De dados ao vivo ao visual pronto
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
 
 Conecte uma tabela **CSV** ou **JSON** a um gráfico, mapa ou template de tabela e atualize os números - o layout se ajusta sozinho. Resultados eleitorais, resultados trimestrais, eventos climáticos: construa o formato uma vez e reutilize toda vez que a matéria for ao ar. Combine com o estilo da sua casa *exatamente*, porque isso é aplicado no nível do template, não deixado como uma diretriz solta.
 

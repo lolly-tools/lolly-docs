@@ -10,7 +10,7 @@ Tutto quello che c'è in un profilo vive **sul dispositivo**, nel database local
 
 Le preferenze sono l'unica parte che cambia l'aspetto con cui l'app ti si presenta. Le card dei temi sono anteprime dal vivo e si applicano nel momento in cui ne scegli una, solo su questo dispositivo.
 
-![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&walker=1&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
 
 | Parte | Cos'è |
 |---|---|
@@ -50,7 +50,7 @@ In Lolly, quel ruolo è semplicemente **un altro profilo che tieni a portata di 
 
 Archiviazione è il punto in cui vivono entrambe le metà della cosa: l'indicatore rende conto di ogni byte che questa installazione sta conservando, categoria per categoria, e i pulsanti sotto sono il modo per svuotarla o per portarla con te.
 
-![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
 
 In ogni momento un'installazione ha **un profilo attivo** - i dati che uno strumento vede in questo momento. Non c'è un selettore di profilo dentro l'app; invece, ogni profilo è un **pacchetto portatile** (un unico `.zip`, vedi [sotto](#moving-a-profile-to-a-new-device)). È deliberatamente lo stesso meccanismo del passaggio a un nuovo dispositivo - un profilo è un file che puoi salvare, copiare e caricare.
 
@@ -64,7 +64,7 @@ Quindi se gestisci davvero più contesti contemporaneamente (tu, il tuo team, il
 
 ## Spostare un profilo su un nuovo dispositivo
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
 
 Poiché un profilo è interamente locale, l'unico modo per portarlo su un'installazione vuota - un nuovo laptop, un browser appena resettato, il computer di un collega, una macchina offline - è **portare il file con te**. Nessun login lo ripristina al posto tuo, ed è proprio questo il punto: niente è mai uscito dal tuo dispositivo, per cominciare.
 

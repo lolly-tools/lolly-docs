@@ -24,7 +24,7 @@
 
 Налаштування — єдина частина, яка змінює те, як застосунок виглядає для вас. Картки тем — це живі попередні перегляди, і вони застосовуються в мить, коли ви обираєте одну з них, лише на цьому пристрої.
 
-![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&walker=1&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
 
 ## Профіль — це контекст, а не лише людина
 
@@ -58,13 +58,13 @@
 
 Обидві половини цього живуть у розділі Storage: індикатор обліковує кожен байт, який тримає ця інсталяція, категорія за категорією, а кнопки під ним — це те, чим ви очищаєте або переносите дані.
 
-![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
 
 > Тримайте по набору на кожен контекст і перейменовуйте файли відповідно до того, чим вони є (`LollyTools-events-2026.zip`, `LollyTools-me.zip`). Файл *і є* профілем.
 
 ## Перенесення профілю на новий пристрій
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
 
 Оскільки профіль повністю локальний, єдиний спосіб перенести його на порожню інсталяцію — новий ноутбук, щойно скинутий браузер, машину колеги, офлайн-пристрій — це **перенести файл**. Жоден вхід не відновить його за вас, і в цьому вся суть: спочатку ніщо ніколи й не покидало ваш пристрій.
 

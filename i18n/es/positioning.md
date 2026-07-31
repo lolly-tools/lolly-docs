@@ -6,7 +6,7 @@ Dónde encaja esta plataforma en el panorama más amplio de herramientas creativ
 
 ## Panorama
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
 
 | Capacidad | Canva (lienzo abierto) | Portales de marca (plantillas DAM) | Illustrator (profesional de escritorio) | Figma / Penpot (profesional en línea) | **Lolly (basado en restricciones)** |
 |---|---|---|---|---|---|
@@ -26,7 +26,7 @@ La forma de la brecha es clara: nada en el panorama existente nos ofrece una sal
 
 ## Úsalo para
 
-![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&dark=1&filename=ov2-deck-studio-output)
+![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&dark=1&filename=ov2-deck-studio-output)
 
 Deck Studio da una buena medida del techo que hay aquí: una presentación entera declarada como datos, maquetada en vivo en el lienzo y exportada como un PowerPoint nativo y editable.
 
@@ -45,7 +45,7 @@ Deck Studio da una buena medida del techo que hay aquí: una presentación enter
 
 ## Aprueba la herramienta, no el archivo
 
-![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-approve-the-tool)
+![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-approve-the-tool)
 
 Cualquier otra herramienta del panorama produce un *archivo* que después hay que revisar: un responsable de marca en un hilo de Slack, el equipo legal con el descargo de responsabilidad, una ronda de cambios, otra revisión. Lolly mueve la aprobación **un paso más arriba**. Las reglas de marca - códigos hex exactos, archivos de fuentes con licencia, márgenes de sangrado, espaciado - están codificadas en el HTML y el CSS de la herramienta, así que la plantilla *no puede físicamente* emitir un recurso fuera de marca. La propia maquetación es estructural.
 

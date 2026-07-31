@@ -34,15 +34,15 @@ Devreye alma modellerinin tamamı ve yönetim rehberi [Dağıtım](/info/deploym
 
 ## Sızıntı önleyici yardımcı araçlar
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-strip-data&sweep=1)
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data&sweep=1)
 
 Text Helper, dosyalar için değil metin için aynı anlaşmayı sunar. Bir çalışanın normalde yabancı bir sitede arayacağı sekmeli çalışma tezgâhıdır ve hiç girdi bildirmez, çünkü dokunduğu hiçbir şey sayfadan dışarı çıkmaz.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
 
 Compress PDF ise seti tamamlar: boyutu şişmiş ek, senin seçtiğin bir kalite ayarıyla, dosyayı zaten elinde tutan makinede küçülür.
 
-![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=ov2-compress-pdf)
+![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=ov2-compress-pdf)
 
 Lolly araçlarının bir kategorisi - gizlilik yardımcı araçları - dosyaları çevrenin içinde tutmak için *özel olarak* var.
 
@@ -61,7 +61,7 @@ Bunların hepsi cihaz üzerinde dönüşümlerdir: dosyan ya da verin girer, tem
 
 Prompt to Image, determinizmin en yalın hâli: girdinin tamamı metin, çıktının tamamı dizilmiş görsel ve aynı metin her zaman aynı şekilde dizilir.
 
-![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 Her araç girdisi bir URL parametresi olarak ifade edilebilir ve aynı girdiler aynı dosyayı üretir. Bunun operatör açısından iki sonucu vardır:
 
@@ -85,7 +85,7 @@ Dışa aktarımlar **Content Credentials** taşıyabilir - dosyanın baytların�
 
 ## Şifreleme ve parola koruması
 
-![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&format=svg&dark=1&filename=aud-pdf-lock)
+![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&walker=1&format=svg&dark=1&filename=aud-pdf-lock)
 
 Kilitli seyahat etmesi gereken dosyalar için her şey cihaz üzerinde gerçekleşir:
 

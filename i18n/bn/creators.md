@@ -48,7 +48,7 @@ Street Map এই বোঝাপড়ার একটা ভালো উদ�
 
 ### লাইভ ডেটা থেকে তৈরি ভিজ্যুয়াল
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
 
 একটা **CSV** বা **JSON** টেবিল কোনো চার্ট, ম্যাপ বা টেবিল টেমপ্লেটের সাথে যুক্ত করুন আর সংখ্যাগুলো আপডেট করুন — লেআউট নিজেই সামলে নেয়। নির্বাচনের ফলাফল, ত্রৈমাসিক আয়, আবহাওয়ার ঘটনা: ফরম্যাটটা একবার বানান আর যতবার গল্পটা আসে ততবার ব্যবহার করুন। আপনার হাউস স্টাইলের সাথে *হুবহু* মিলিয়ে নিন, কারণ এটা টেমপ্লেট স্তরে প্রয়োগ হয়, কোনো ঢিলেঢালা নির্দেশনা হিসেবে ছেড়ে দেওয়া হয় না।
 

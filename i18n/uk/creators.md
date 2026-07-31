@@ -48,7 +48,7 @@ Street Map — гарний приклад цього обміну: ви оби�
 
 ### Від живих даних до готового візуалу
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
 
 Під'єднайте таблицю **CSV** чи **JSON** до шаблону діаграми, мапи чи таблиці й оновіть числа — про макет подбає він сам. Результати виборів, квартальні звіти, погодні події: збудуйте формат один раз і повторно використовуйте його щоразу, коли виходить сюжет. Точно дотримуйтеся свого фірмового стилю, бо він забезпечується на рівні шаблону, а не залишений як розмита рекомендація.
 

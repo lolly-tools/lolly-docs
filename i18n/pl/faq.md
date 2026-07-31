@@ -101,7 +101,7 @@ Wojnę o ład wygrywamy dzięki znakomitej wygodzie i obsłudze.
 
 ## Czy Lolly może edytować i renderować moje pliki Figma, Penpot, Illustrator lub InDesign?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
 
 Tak. Otwórz **Layout Studio** i kliknij **Importuj projekt**: przyjmuje natywny plik Figma **.fig** (Save local copy), eksport Penpot **.penpot**, plik Illustratora **.ai** lub **.pdf**, plik InDesign **.idml** (File → Export → InDesign Markup) albo **dowolny SVG** (szerokie drzwi - eksportuje go niemal każda aplikacja projektowa). Wszystko jest przetwarzane w całości na Twoim urządzeniu, bez konta ani wtyczki.
 

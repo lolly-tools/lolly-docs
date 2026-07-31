@@ -24,7 +24,7 @@
 
 Предпочитанията са единствената част, която променя как приложението изглежда за теб. Картите с теми са живи прегледи и се прилагат в момента, в който избереш някоя — само на това устройство.
 
-![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&walker=1&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
 
 ## Профилът е контекст, а не просто човек
 
@@ -58,13 +58,13 @@
 
 И двете половини на това живеят в раздела Хранилище: измерителят отчита всеки байт, който тази инсталация държи, категория по категория, а бутоните под него са начинът да изчистиш или пренесеш данните.
 
-![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
 
 > Пази по един пакет за всеки контекст и преименувай файловете според това, което са (`LollyTools-events-2026.zip`, `LollyTools-me.zip`). Файлът *е* профилът.
 
 ## Преместване на профил на ново устройство
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
 
 Понеже профилът е изцяло локален, единственият начин да го качиш на празна инсталация — нов лаптоп, току-що нулиран браузър, машината на колега, офлайн компютър — е да **пренесеш файла**. Никакво влизане не го възстановява вместо теб и точно това е смисълът: нищо изобщо не е напускало устройството ти.
 

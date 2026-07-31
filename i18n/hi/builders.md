@@ -10,7 +10,7 @@ Lolly एक प्लैटफ़ॉर्म-अज्ञेय **इंजन
 
 ## आर्किटेक्चर समझें
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-components-lib&sweep=1)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-components-lib&sweep=1)
 
 - **[ओवरव्यू](/info/overview.html)** — Lolly क्यों मौजूद है, इंजन/शेल/टूल्स का अलगाव, कैपेबिलिटी ब्रिज, और तय हो चुकी आर्किटेक्चरल प्रतिबद्धताएँ।
 - **[डिज़ाइन टोकन](/info/design-tokens.html)** — DTCG टोकन मॉडल जिसमें ब्रांड व्यक्त किए जाते हैं, और टूल उन्हें कैसे उपयोग करते हैं।
@@ -19,11 +19,11 @@ Lolly एक प्लैटफ़ॉर्म-अज्ञेय **इंजन
 
 नीचे दिखने वाला हर कंट्रोल `tool.json` में घोषित किसी इनपुट से जनरेट हुआ है। आप मैनिफ़ेस्ट की पंक्ति लिखते हैं, होस्ट विजेट बनाता है, और वही मॉडल CLI और URL को भी चलाता है।
 
-![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&format=svg&dark=1&filename=aud-manifest-controls)
+![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&walker=1&format=svg&dark=1&filename=aud-manifest-controls)
 
 यह पाँच कंट्रोल से कहीं आगे तक बढ़ता है। किसी इनपुट को `section` दे दें और होस्ट उसे समेट देता है, इसलिए D3 Chart Studio जैसा पचास-इनपुट वाला टूल भी एक छोटी सूची के रूप में खुलता है और बाक़ी सब नामित समूहों के पीछे व्यवस्थित रहता है।
 
-![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-d3-sections)
+![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-d3-sections)
 
 - **[टूल ऑथरिंग](/info/authoring-tools.html)** — पूरी गाइड: मैनिफ़ेस्ट, टेम्पलेट, स्टाइल्स, हुक्स, कंपोज़िशन और प्रकाशन।
 - **[एसेट ऑथरिंग](/info/authoring-assets.html)** — कैटलॉग एसेट, टियर, लोकेल, पैलेट, थीम-योग्य आइकन और फ़ॉन्ट।
@@ -48,7 +48,7 @@ Lolly एक प्लैटफ़ॉर्म-अज्ञेय **इंजन
 
 अधिकार और लेखकत्व भी बाक़ी सबकी तरह इनपुट ही हैं। Embed & Track Image क्रिएटर, कॉपीराइट, लाइसेंस और संपर्क फ़ील्ड घोषित करता है, और एक्सपोर्ट उन्हें फ़ाइल के अपने मेटाडेटा और उसके C2PA मैनिफ़ेस्ट में लिख देता है।
 
-![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-rights-fields)
+![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-rights-fields)
 
 - **[Content Credentials पहचान](/info/content-credentials-identity.html)** — ऑन-डिवाइस C2PA के लिए CA-जारी साइनिंग; इंजन कॉन्ट्रैक्ट और ऑपरेटर रनबुक।
 - **[डेटा ट्रांसफ़र](/info/data-transfer.html)** — `lolly-backup` बंडल: एनवलप, इंटीग्रिटी और क्रॉस-शेल गारंटियाँ।

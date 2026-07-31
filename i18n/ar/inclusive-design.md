@@ -20,7 +20,7 @@ Lolly أداة إبداعية: يأتي الناس إلى هنا ليصنعوا 
 
 ## إمكانية الوصول
 
-![The Accessibility card on the profile page: four plain switches - Reduce motion, Hide colourful previews, High contrast and Large text - each with a help tip](/t/url-shot?url=%2F%23%2Fprofile&width=430&height=900&dpi=192&waitMs=2000&scrollDepth=1300&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&cropSelector=.profile-card--a11y&dark=1&filename=incl-a11y-card&sweep=1)
+![The Accessibility card on the profile page: four plain switches - Reduce motion, Hide colourful previews, High contrast and Large text - each with a help tip](/t/url-shot?url=%2F%23%2Fprofile&width=430&height=900&dpi=192&waitMs=2000&scrollDepth=1300&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.profile-card--a11y&dark=1&filename=incl-a11y-card&sweep=1)
 
 إلى جانب اتباع إشارات المنصة نفسها (الوضع الداكن للنظام، وتفضيل تقليل الحركة في
 نظام التشغيل)، يوفر Lolly تفضيلات إمكانية وصول صريحة تفعلها بنفسك في ملفك

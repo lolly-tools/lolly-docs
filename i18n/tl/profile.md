@@ -10,7 +10,7 @@ Ang lahat ng nasa profile ay nananatili **sa device**, sa local database ng brow
 
 Ang Preferences ang tanging bahaging nagbabago sa kung paano ka tinitingnan pabalik ng app. Live previews ang mga theme card at agad na naaaplay sa sandaling pumili ka, sa device na ito lamang.
 
-![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&walker=1&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
 
 | Bahagi | Ano ito |
 |---|---|
@@ -50,7 +50,7 @@ Sa Lolly, ang role na iyon ay isa lamang **ibang profile na nakalaan sa iyo** - 
 
 Sa Storage nakatira ang dalawang panig na iyon: isinasaad ng meter ang bawat byte na hawak ng install na ito, kategorya kada kategorya, at ang mga button sa ilalim nito ang paraan para burahin o dalhin ito.
 
-![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
 
 Sa anumang sandali, ang isang install ay may **isang aktibong profile** - ang mga detalye na nakikita ng tool sa ngayon. Walang in-app profile switcher; sa halip, ang bawat profile ay isang **portable bundle** (iisang `.zip`, tingnan sa [ibaba](#moving-a-profile-to-a-new-device)). Sinadya itong maging parehong mekanismo ng paglipat sa bagong device - ang profile ay isang file na puwede mong i-save, kopyahin, at i-load.
 
@@ -64,7 +64,7 @@ Kaya kung talagang nagpapalit-palit ka ng maraming konteksto (ikaw, ang team mo,
 
 ## Paglipat ng profile sa bagong device
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
 
 Dahil ganap na local ang profile, ang tanging paraan para mailagay ito sa isang blangkong install - bagong laptop, bagong-reset na browser, makina ng katrabaho, o offline na device - ay ang **dalhin ang file**. Walang login ang magre-restore nito para sa iyo, at iyon nga ang punto: wala talagang lumabas sa iyong device mula sa umpisa.
 

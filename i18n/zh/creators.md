@@ -48,7 +48,7 @@ Street Map 就是这种取舍的一个好例子:你挑一座城市和两个颜�
 
 ### 从实时数据到成品视觉
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
 
 把 **CSV** 或 **JSON** 表格连接到图表、地图或表格模板,更新数字即可——版式会自动处理好。选举结果、季度财报、天气事件:把格式做一次,之后每次报道都能复用。视觉风格能*精确*匹配你的规范,因为它是在模板层面强制执行的,而不是一条松散的指导原则。
 

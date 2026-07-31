@@ -24,7 +24,7 @@ While a selection is off-playhead the keyboard refuses every key that would chan
 
 **The fallbacks are never gated.** The timeline's own inspector (Length, Trim in, Speed, the two transitions, Mute) and the tool sidebar edit the selected clip whatever the playhead is doing. They are the precision route, and the accessible one.
 
-![A clip selected in the sequence row: the playhead has stepped inside it, the canvas shows that scene with its selection outline and handles, and the timeline inspector fills with the clip’s Length, Trim in, Speed and transitions](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1440&height=900&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A300px%21important%7D%23tool-stage%7Bbackground-image%3Anone%21important%7D&drive=click%3A.tool-canvas%7Cat%3D0.5%2C0.5%3Bclick%3A.tl-ruler%7Cat%3D0.92%2C0.5&format=svg&dark=1&sweep=1&filename=seq-rule-selection)
+![A clip selected in the sequence row: the playhead has stepped inside it, the canvas shows that scene with its selection outline and handles, and the timeline inspector fills with the clip’s Length, Trim in, Speed and transitions](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1440&height=900&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A300px%21important%7D%23tool-stage%7Bbackground-image%3Anone%21important%7D&drive=click%3A.tool-canvas%7Cat%3D0.5%2C0.5%3Bclick%3A.tl-ruler%7Cat%3D0.92%2C0.5&walker=1&format=svg&dark=1&sweep=1&filename=seq-rule-selection)
 
 ### What a click on the canvas hits
 
@@ -32,7 +32,7 @@ Clips that are not live at the playhead are not painted, and a click **falls thr
 
 The one state that does get words is the stuck one: a selection that is off-playhead, which is exactly the case you cannot reason your way out of by clicking somewhere else.
 
-![The canvas at one instant: only the clip live at the playhead is painted, so a click lands on it or falls through to whatever is underneath](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1440&height=900&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A300px%21important%7D%23tool-stage%7Bbackground-image%3Anone%21important%7D&drive=wait%3A600&cropBottom=0.35&format=svg&dark=1&filename=seq-click-live-scene)
+![The canvas at one instant: only the clip live at the playhead is painted, so a click lands on it or falls through to whatever is underneath](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1440&height=900&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A300px%21important%7D%23tool-stage%7Bbackground-image%3Anone%21important%7D&drive=wait%3A600&cropBottom=0.35&walker=1&format=svg&dark=1&filename=seq-click-live-scene)
 
 ## Onion skin
 

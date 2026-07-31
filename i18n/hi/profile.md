@@ -24,7 +24,7 @@
 
 प्राथमिकताएँ वही एक हिस्सा हैं जो बदलती हैं कि ऐप आपको कैसा दिखता है। थीम कार्ड लाइव प्रीव्यू हैं और जिस पल आप कोई चुनते हैं, वह लागू हो जाता है — सिर्फ़ इस डिवाइस पर।
 
-![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&walker=1&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
 
 ## प्रोफ़ाइल एक संदर्भ है, सिर्फ़ एक व्यक्ति नहीं
 
@@ -58,13 +58,13 @@ Lolly में वह भूमिका बस **एक और प्रोफ
 
 स्टोरेज वही जगह है जहाँ इसके दोनों हिस्से रहते हैं: मीटर श्रेणी-दर-श्रेणी हिसाब देता है कि यह इंस्टॉल कितने बाइट रखे हुए है, और उसके नीचे के बटन ही वह तरीक़ा हैं जिससे आप उसे साफ़ करते हैं या साथ ले जाते हैं।
 
-![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
 
 > हर संदर्भ के लिए एक बंडल रखें और फ़ाइलों के नाम उनके काम के हिसाब से रख दें (`LollyTools-events-2026.zip`, `LollyTools-me.zip`)। फ़ाइल *ही* प्रोफ़ाइल है।
 
 ## प्रोफ़ाइल को नई डिवाइस पर ले जाना
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
 
 चूँकि प्रोफ़ाइल पूरी तरह स्थानीय है, इसे किसी खाली इंस्टॉल तक — नया लैपटॉप, ताज़ा रीसेट किया गया ब्राउज़र, किसी सहकर्मी की मशीन, एक ऑफ़लाइन बॉक्स — पहुँचाने का एकमात्र तरीक़ा है **फ़ाइल साथ ले जाना**। कोई लॉगिन इसे आपके लिए बहाल नहीं करता, और यही तो बात है: कुछ भी आपकी डिवाइस से बाहर गया ही नहीं था।
 

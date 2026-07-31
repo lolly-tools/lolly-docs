@@ -48,22 +48,22 @@ Thu nhỏ một tệp PDF quá khổ ngay trên thiết bị, để không ai ph
 
 Tất cả những công cụ này đều là các phép biến đổi trên thiết bị: tệp hoặc dữ liệu của bạn đi vào, các byte đã được làm sạch đi ra, và **không hề có máy chủ nào để tải lên**. Chúng là đối lập có chủ đích với kiểu công cụ điển hình "tải tệp của bạn lên trang web của một người lạ để làm sạch nó" mà một nhân viên có thiện chí thường tìm đến khi không có lựa chọn khác.
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-strip-data&sweep=1)
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data&sweep=1)
 
 Text Helper cũng là thỏa thuận đó, nhưng dành cho văn bản thay vì tệp. Nó chính là bàn làm việc dạng tab mà lẽ ra một nhân viên sẽ phải đi tìm trên trang web của người lạ, và nó không khai báo input nào cả, vì mọi thứ nó chạm đến đều không bao giờ rời khỏi trang.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
 
 Compress PDF hoàn tất bộ này: tệp đính kèm quá khổ được thu nhỏ theo mức chất lượng bạn chọn, ngay trên chiếc máy đang giữ nó.
 
-![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=ov2-compress-pdf)
+![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=ov2-compress-pdf)
 
 
 ## Tính xác định & khả năng tái tạo
 
 Prompt to Image là tính xác định ở dạng đơn giản nhất: văn bản là toàn bộ đầu vào, hình ảnh đã dàn chữ là toàn bộ đầu ra, và cùng một văn bản luôn được dàn theo cùng một cách.
 
-![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 Mọi đầu vào của công cụ đều có thể biểu diễn dưới dạng tham số URL, và cùng một đầu vào sẽ luôn tạo ra cùng một tệp. Điều đó kéo theo hai hệ quả đối với nhà vận hành:
 
@@ -87,7 +87,7 @@ Các bản xuất có thể mang **Content Credentials** - một manifest [C2PA]
 
 ## Mã hóa & đặt mật khẩu
 
-![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&format=svg&dark=1&filename=aud-pdf-lock)
+![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&walker=1&format=svg&dark=1&filename=aud-pdf-lock)
 
 Đối với các tệp cần được khóa khi di chuyển, mọi thứ đều diễn ra trên thiết bị:
 

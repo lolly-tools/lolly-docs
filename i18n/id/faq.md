@@ -99,7 +99,7 @@ Kami memenangkan perang tata kelola dengan kenyamanan dan layanan yang unggul.
 
 ## Bisakah Lolly menyunting dan merender berkas Figma, Penpot, Illustrator, atau InDesign saya?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
 
 Ya. Buka **Layout Studio** dan klik **Impor desain**: ia menerima **.fig** asli Figma (Save local copy), ekspor **.penpot** Penpot, **.ai** atau **.pdf** Illustrator, **.idml** InDesign (File → Export → InDesign Markup), atau **SVG apa pun** (pintu lebar - hampir semua aplikasi desain mengekspornya). Semuanya diurai sepenuhnya di perangkat Anda, tanpa perlu akun atau plugin.
 

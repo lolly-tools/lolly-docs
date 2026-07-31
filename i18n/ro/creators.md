@@ -48,7 +48,7 @@ Completezi câteva câmpuri, primești resursa finită - fără fonturi de ales,
 
 ### De la date live la vizual finit
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
 
 Conectează un tabel **CSV** sau **JSON** la un template de grafic, hartă sau tabel și actualizează numerele - layout-ul se ocupă singur de el însuși. Rezultate electorale, câștiguri trimestriale, evenimente meteo: construiește formatul o dată și refolosește-l de fiecare dată când rulează povestea. Respectă stilul casei tale *exact*, pentru că e impus la nivel de template, nu lăsat ca o recomandare vagă.
 

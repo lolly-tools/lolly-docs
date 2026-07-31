@@ -10,7 +10,7 @@ Lolly はプラットフォームに依存しない**エンジン**であり、�
 
 ## アーキテクチャを理解する
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-components-lib&sweep=1)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-components-lib&sweep=1)
 
 - **[Overview](/info/overview.html)** — Lolly が存在する理由、エンジン/シェル/ツールの分離、ケイパビリティブリッジ、そして確定したアーキテクチャ上の方針について。
 - **[Design Tokens](/info/design-tokens.html)** — ブランドが表現される DTCG トークンモデルと、ツールがそれをどのように利用するかについて。
@@ -19,11 +19,11 @@ Lolly はプラットフォームに依存しない**エンジン**であり、�
 
 以下のコントロールはすべて、`tool.json` で宣言された入力から生成されたものです。マニフェストに1行書けば、ホストがウィジェットを描画し、同じモデルが CLI と URL も動かします。
 
-![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&format=svg&dark=1&filename=aud-manifest-controls)
+![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&walker=1&format=svg&dark=1&filename=aud-manifest-controls)
 
 これは5つのコントロールで終わる話ではありません。入力に `section` を指定するとホストがそれを折りたたむため、D3 Chart Studio のように入力が50個あるツールでも、開いた時点では短いコントロールの積み重ねにとどまり、残りは名前付きのグループの奥に収められます。
 
-![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-d3-sections)
+![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-d3-sections)
 
 - **[Authoring Tools](/info/authoring-tools.html)** — マニフェスト、テンプレート、スタイル、フック、コンポジション、公開までを網羅した完全ガイド。
 - **[Authoring Assets](/info/authoring-assets.html)** — カタログアセット、ティア、ロケール、パレット、テーマ対応アイコン、フォントについて。
@@ -48,7 +48,7 @@ Lolly はプラットフォームに依存しない**エンジン**であり、�
 
 権利と著作者表示も、他の入力と何ら変わりません。Embed & Track Image は作成者、著作権、ライセンス、連絡先の各フィールドを宣言し、書き出しの際にそれらをファイル自身のメタデータと C2PA マニフェストへ書き込みます。
 
-![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-rights-fields)
+![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-rights-fields)
 
 - **[Content Credentials Identity](/info/content-credentials-identity.html)** — オンデバイスの C2PA 向けに CA が発行する署名について。エンジンの契約とオペレーター向けランブック。
 - **[Data Transfer](/info/data-transfer.html)** — `lolly-backup` バンドルについて:エンベロープ、整合性、シェル間での保証。

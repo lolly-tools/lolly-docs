@@ -48,7 +48,7 @@ Street Map to dobry przykład tej wymiany: wybierasz miasto i parę kolorów, a 
 
 ### Od danych na żywo do gotowej grafiki
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
 
 Podłącz tabelę **CSV** lub **JSON** do szablonu wykresu, mapy albo tabeli i zaktualizuj liczby - układ zadba o siebie sam. Wyniki wyborów, kwartalne zyski, zjawiska pogodowe: zbuduj format raz i używaj go za każdym razem, gdy temat wraca. Trzymaj się swojego stylu firmowego *co do joty*, bo jest on egzekwowany na poziomie szablonu, a nie zostawiony jako luźna wytyczna.
 

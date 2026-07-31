@@ -6,7 +6,7 @@ Saan bagay ang platform na ito sa mas malawak na larangan ng creative tools, at 
 
 ## Larangan
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
 
 | Kakayahan | Canva (Bukas na Canvas) | Mga Brand Portal (DAM Templating) | Illustrator (Propesyonal na Desktop) | Figma / Penpot (Propesyonal na Online) | **Lolly (Constraints-first)** |
 |---|---|---|---|---|---|
@@ -26,7 +26,7 @@ Malinaw ang hugis ng puwang: wala sa kasalukuyang larangan ang nagbibigay sa ati
 
 ## Gamitin Ito Para Sa
 
-![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&dark=1&filename=ov2-deck-studio-output)
+![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&dark=1&filename=ov2-deck-studio-output)
 
 Magandang panukat ng ceiling dito ang Deck Studio: isang buong slide deck na idineklara bilang data, inilatag nang live sa canvas, at ini-export bilang native at ede-edit na PowerPoint.
 
@@ -45,7 +45,7 @@ Magandang panukat ng ceiling dito ang Deck Studio: isang buong slide deck na idi
 
 ## Aprubahan ang tool, hindi ang file
 
-![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-approve-the-tool)
+![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-approve-the-tool)
 
 Ang lahat ng iba pang tool sa larangan ay gumagawa ng isang *file* na kailangan pang tsekin - isang brand manager sa isang Slack thread, ang legal sa disclaimer, isang round ng pagbabago, isa pang review. Inilalayo ng Lolly ang approval **nang isang hakbang paitaas**. Ang mga patakaran ng brand - eksaktong hex code, mga lisensyadong font file, bleed margin, spacing - ay hard-coded sa HTML at CSS ng tool, kaya *pisikal na hindi kayang* maglabas ng off-brand na asset ang template. Ang layout mismo ang load-bearing.
 
