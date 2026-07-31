@@ -83,7 +83,7 @@ Click any swatch to open its editor:
 - **Stored as** - choose how the swatch is persisted: **LCH** (the default - perceptual, wide-gamut, the best choice for editing), Hex, RGB, or HSL. Override it when you need to pin an exact legacy hex or match an sRGB value.
 - **Print substitutes** (folded) - lock the colour's print behaviour:
   - **CMYK** - check it to override the automatic sRGB→CMYK conversion with exact ink values (C/M/Y/K, 0–100).
-  - **Spot** - check it to lock the swatch to a spot colour; give it a **Name** (e.g. `PANTONE 186 C`) and an optional **Book**.
+  - **Spot** - check it to lock the swatch to a spot colour; give it a **Name** (e.g. `PANTONE 186 C`), an optional **Book**, and an optional **Finish** (Ordinary ink by default) for when the ink is not an ink at all - a foil, an emboss or deboss, a spot varnish, or a cutting, creasing or perforating rule.
 
 These print locks are what a press uses when you export a CMYK PDF or TIFF - see [Exporting](/info/exporting.html#colour-profiles).
 

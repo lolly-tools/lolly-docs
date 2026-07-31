@@ -46,6 +46,7 @@ security posture).
 | [brand-studio.md](brand-studio.md) | end user | The Brand Studio at `#/start`: logos, colours, type, tokens and files, plus how a brand pack moves between devices. |
 | [profile.md](profile.md) | end user | Profiles as the on-device working identity a tool pre-fills from, and how they differ from the platform brand and from capabilities. |
 | [design-import.md](design-import.md) | end user | Bringing a Figma, Penpot, Illustrator or InDesign file into Layout Studio as an editable session, parsed entirely on device. |
+| [sequence-editor.md](sequence-editor.md) | end user | Editing in time: which clip a canvas click edits, onion-skin ghosts, split scope and Join, reversible detach audio, and trimming (pointer and keyboard). |
 | [exporting.md](exporting.md) | end user | Choosing a format, setting output size, and the three paths that produce a file (canvas render, generated text/data, on-device transform). |
 | [positioning.md](positioning.md) | end user | Where Lolly sits against Canva, brand portals, Illustrator and Figma/Penpot, and where it deliberately does not play. |
 

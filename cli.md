@@ -63,6 +63,7 @@ If `--output` is given, the file is written and a byte count is reported on stde
 | `--share`, `--link` | Print a shareable `lolly.tools` link for these inputs instead of rendering anything. |
 | `--z=<token>` | Expand a packed link token into the inputs it encodes. |
 | `--<blocksId>-data=<rows.csv>` | Import a CSV/JSON file into a `blocks` input (the ingest counterpart of CSV export). |
+| `--verify` | For an on-device utility, print one line per file saying its export checks ran and none failed. A failed check writes nothing and exits `1`. |
 | `--<inputId>=<value>` | Any tool input (see the tool's schema). |
 | `--<flag>` | A bare flag (no `=`) is truthy - handy for boolean inputs. |
 
@@ -87,6 +88,32 @@ npm run cli -- strip-data --source=./holiday.jpg --output=./holiday-clean.jpg
 ```
 
 These tools produce their output via the `exportFile` transform path (bytes in → bytes out), not a DOM render - so they **ignore `--export`** and there's no render format to choose. The transformed bytes are written to `--output`, or streamed to **stdout** if you omit it. Nothing is ever uploaded; the file is read locally and handed straight back.
+
+Most utilities run entirely in the headless DOM. A few **rebuild real pixels** - `redact` repaints an image on a canvas and rasterises PDF pages - which jsdom cannot do, so the CLI re-runs that same export in the scoped Chromium driving the built web shell (the Tier B path above). It says so on stderr when it switches. If the browser or the built shell is missing it stops and names what to install (`lolly install-browser`, `npm run build:web`); it never writes a file that was not actually redacted.
+
+### Redaction instructions: one string, many files
+
+A redaction is fully described by its bars plus its options, and that description is ordinary URL state - so the same string works as a share link, as CLI flags and as an [MCP](/info/mcp.html) call. Bar fields are `page,x,y,w,h`: PDF bars in points from the page's top-left, image bars in pixels.
+
+```bash
+# Compact rows (tilde-separated), the form a share link uses:
+npm run cli -- redact --source=./contract.pdf --bars='1,40,60,200,24~2,40,100,120,14' \
+  --grayscale --output=./contract-redacted.pdf --verify
+
+# The same instructions as JSON, or from a spreadsheet:
+npm run cli -- redact --source=./scan.png --bars='[{"page":1,"x":40,"y":60,"w":200,"h":24}]' --output=./scan-redacted.png
+npm run cli -- redact --source=./scan.png --bars-data=./bars.csv --output=./scan-redacted.png
+```
+
+Because the instructions are just a link, you can mark up one document in the app, hit **Share**, and run that link headlessly over every other copy - forms, certificates, invoices and anything else where the same fields sit in the same place on every page:
+
+```bash
+for f in ./inbox/*.pdf; do
+  npm run cli -- "$SHARE_LINK" --source="$f" --output="./clean/$(basename "$f")" --verify || echo "FAILED: $f"
+done
+```
+
+`--verify` prints a line per file once the tool's own gate has run: the redacted copy is re-opened and re-scanned (no metadata, one end-of-file marker, no recoverable covered text, bar regions re-sampled as solid fill) before any bytes are written. A failed check is a non-zero exit with the tool's own sentence and **no output file**, so a shell loop can treat failures as failures. What it cannot tell you is whether an invisible whole-image watermark was present: nothing here detects or removes one.
 
 ## Composed tools
 

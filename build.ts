@@ -37,7 +37,7 @@ const TOOL_COUNT = JSON.parse(
   readFileSync(resolve(repoRoot, 'catalog/tools/index.json'), 'utf8')
 ).tools.length;
 
-type Pathway = 'quickstart' | 'builders' | 'creators' | 'operators';
+type Pathway = 'quickstart' | 'builders' | 'creators' | 'operators' | 'trust';
 
 interface Page {
   slug: string;
@@ -49,6 +49,13 @@ interface Page {
   pathway?: Pathway;
   // True for the four pathway landing pages (quickstart + the three hubs).
   isHub?: boolean;
+  // Social/search description. Defaults to the page's first body sentence
+  // (mdDescription), which is right for most pages because it cannot drift from
+  // the docs. Set this where that sentence makes a poor preview on its own: a
+  // four-word opener ("A tool is a folder."), a 200-character one that platforms
+  // truncate mid-clause, or an opener that describes the DOCUMENT rather than the
+  // subject ("This document captures…").
+  description?: string;
 }
 
 // A retired slug that now redirects to its new home. Emitted as a tiny meta-refresh
@@ -57,6 +64,9 @@ interface Stub { slug: string; target: string; }
 const stubs: Stub[] = [
   // Old front-door entry; the friendly start is now the Quickstart primary article.
   { slug: 'getting-started', target: '/info/quickstart.html' },
+  // Retitled the same day it shipped: "labour" read as an invitation to the very
+  // work Lolly exists to remove, and an agent's real surface is the tool's inputs.
+  { slug: 'labour-not-impersonation', target: '/info/input-not-impersonation.html' },
 ];
 
 const pages: Page[] = [
@@ -68,47 +78,51 @@ const pages: Page[] = [
   // ── Pathway hubs ─────────────────────────────────────────────────────────
   { slug: 'creators',         title: 'Lolly for Creators',  src: 'creators.md',  pathway: 'creators',  isHub: true },
   { slug: 'builders',         title: 'Lolly for Builders',  src: 'builders.md',  pathway: 'builders',  isHub: true },
-  { slug: 'operators',        title: 'Lolly for Operators', src: 'operators.md', pathway: 'operators', isHub: true },
+  { slug: 'operators',        title: 'Lolly for Operators', src: 'operators.md', pathway: 'operators', isHub: true, description: "Roll Lolly out across an organisation: governance, deployment, configuration and the trust properties your security review will ask about." },
+  { slug: 'trust',            title: 'Trust',               src: 'trust.md',     pathway: 'trust',     isHub: true, description: "Where your content comes from, how to check it yourself, and what happens to your data. The claims on this site with the mechanism that enforces each one." },
+  { slug: 'status-quo',       title: 'The trade we never agreed to', src: 'status-quo.md', pathway: 'trust', description: "Uploading a logo to a stranger to resize it. Artwork locked behind a lapsed plan. The frictions we all learned to accept, and what replaces them." },
+  { slug: 'input-not-impersonation', title: 'Input, not impersonation', src: 'input-not-impersonation.md', pathway: 'trust', description: "An AI agent may fill in the inputs and may not claim to be you. Where the line sits, how it is enforced, and what a rogue agent still cannot do." },
 
   // ── Creators pathway ─────────────────────────────────────────────────────
   { slug: 'using',            title: 'Using Lolly',       src: 'using.md',        pathway: 'creators' },
   { slug: 'brand-studio',     title: 'The Brand Studio',  src: 'brand-studio.md', pathway: 'creators' },
-  { slug: 'profile',          title: 'Profiles',          src: 'profile.md',      pathway: 'creators' },
-  { slug: 'design-import',    title: 'Import a design (Figma, Penpot, Illustrator, InDesign)', src: 'design-import.md', pathway: 'creators' },
+  { slug: 'profile',          title: 'Profiles',          src: 'profile.md',      pathway: 'creators', description: "The working identity Lolly creates as - your name, role and contact details, filled into tools automatically and stored on your own device." },
+  { slug: 'design-import',    title: 'Import a design (Figma, Penpot, Illustrator, InDesign)', src: 'design-import.md', pathway: 'creators', description: "Bring a finished design out of Figma, Penpot, Illustrator or InDesign and into Lolly as an editable, re-renderable tool rather than a flat picture." },
+  { slug: 'sequence-editor',  title: 'The sequence editor', src: 'sequence-editor.md', pathway: 'creators' },
   { slug: 'exporting',        title: 'Exporting & Formats', src: 'exporting.md',  pathway: 'creators' },
   { slug: 'positioning',      title: 'How Lolly compares', src: 'positioning.md', pathway: 'creators' },
 
   // ── Builders pathway ─────────────────────────────────────────────────────
-  { slug: 'overview',         title: 'Overview',          src: 'overview.md',        pathway: 'builders' },
+  { slug: 'overview',         title: 'Overview',          src: 'overview.md',        pathway: 'builders', description: "How the Lolly platform is put together: the engine, the shells, the capability bridge, and why tools are data rather than bundled code." },
   { slug: 'design-tokens',    title: 'Design Tokens',     src: 'design-tokens.md',   pathway: 'builders' },
-  { slug: 'authoring-tools',  title: 'Authoring Tools',   src: 'authoring-tools.md', pathway: 'builders' },
+  { slug: 'authoring-tools',  title: 'Authoring Tools',   src: 'authoring-tools.md', pathway: 'builders', description: "Author a Lolly tool: the manifest, the template, the optional hooks, and the invariants that keep one tool running unchanged in the browser, on the desktop and in the terminal." },
   { slug: 'authoring-assets', title: 'Authoring Assets',  src: 'authoring-assets.md', pathway: 'builders' },
   { slug: 'host-api',         title: 'Host API',          src: 'host-api.md',        pathway: 'builders' },
-  { slug: 'url-mode',         title: 'URL Mode',          src: 'url-mode.md',        pathway: 'builders' },
+  { slug: 'url-mode',         title: 'URL Mode',          src: 'url-mode.md',        pathway: 'builders', description: "Every tool's state lives in the URL, so a link is a finished asset, a reproducible render, and the same input the CLI takes." },
   { slug: 'cli',              title: 'CLI',               src: 'cli.md',             pathway: 'builders' },
   { slug: 'tui',              title: 'TUI',               src: 'tui.md',             pathway: 'builders' },
   { slug: 'mcp',              title: 'MCP Server',        src: 'mcp.md',             pathway: 'builders' },
   { slug: 'ai-agents',        title: 'AI Agents',         src: 'ai-agents.md',       pathway: 'builders' },
   { slug: 'extension',        title: 'Browser Extension', src: 'extension.md',       pathway: 'builders' },
-  { slug: 'build-guide',      title: 'Build Guide',       src: 'build-guide.md',     pathway: 'builders' },
+  { slug: 'build-guide',      title: 'Build Guide',       src: 'build-guide.md',     pathway: 'builders', description: "Build Lolly for each target: the CLI binary, the desktop app, mobile, and the web PWA. Prerequisites, commands and what each build produces." },
   { slug: 'ios-build',        title: 'Building for iOS',  src: 'ios-build.md',       pathway: 'builders' },
   { slug: 'deployment',       title: 'Deployment',        src: 'deployment.md',      pathway: 'builders' },
-  { slug: 'configuration',    title: 'Configuration',     src: 'configuration.md',   pathway: 'builders' },
-  { slug: 'content-credentials-identity', title: 'Content Credentials Identity', src: 'content-credentials-identity.md', pathway: 'builders' },
-  { slug: 'content-credentials-engineering', title: 'Content Credentials - Engineering', src: 'content-credentials-engineering.md', pathway: 'builders' },
+  { slug: 'configuration',    title: 'Configuration',     src: 'configuration.md',   pathway: 'builders', description: "Everything that shapes a Lolly instance: which brand it wears, which tools it exposes, and what each tool may do on the device it runs on." },
+  { slug: 'content-credentials-identity', title: 'Content Credentials Identity', src: 'content-credentials-identity.md', pathway: 'trust' },
+  { slug: 'content-credentials-engineering', title: 'Content Credentials - Engineering', src: 'content-credentials-engineering.md', pathway: 'trust' },
   { slug: 'data-transfer',    title: 'Data Transfer',     src: 'data-transfer.md',   pathway: 'builders' },
-  { slug: 'about',            title: 'About',             src: '../README.md',       pathway: 'builders' },
+  { slug: 'about',            title: 'About',             src: '../README.md',       pathway: 'builders', description: "What Lolly is, who builds it, and how the pieces fit together. The project's own README." },
 
   // ── Operators pathway ────────────────────────────────────────────────────
-  { slug: 'adoption-governance', title: 'Adoption & Governance', src: 'adoption-governance.md', pathway: 'operators' },
-  { slug: 'security',         title: 'Security & Verification', src: 'security-verification.md', pathway: 'operators' },
-  { slug: 'threat-model',     title: 'Threat Model & Trust Boundaries', src: 'threat-model.md', pathway: 'operators' },
-  { slug: 'parser-inventory', title: 'Parser Inventory',  src: 'parser-inventory.md', pathway: 'operators' },
-  { slug: 'server-surface',   title: 'Server Surface',    src: 'server-surface.md',  pathway: 'operators' },
-  { slug: 'verify-yourself',  title: 'Verify It Yourself', src: 'verify-yourself.md', pathway: 'operators' },
-  { slug: 'privacy',          title: 'Privacy Policy',    src: 'privacy.md',         pathway: 'operators' },
-  { slug: 'inclusive-design', title: 'Inclusive Design',  src: 'inclusive-design.md', pathway: 'operators' },
-  { slug: 'ai-stance',        title: 'Our AI Stance',     src: 'ai-stance.md',       pathway: 'operators' },
+  { slug: 'adoption-governance', title: 'Adoption & Governance', src: 'adoption-governance.md', pathway: 'operators', description: "Adopting Lolly across a team: who approves tools, how brand rules become enforceable, and what changes in a creative workflow." },
+  { slug: 'security',         title: 'Security & Verification', src: 'security-verification.md', pathway: 'trust', description: "The cryptography behind Lolly's Content Credentials, verification and encryption, summarised for a security reviewer with the limits stated as clearly as the guarantees." },
+  { slug: 'threat-model',     title: 'Threat Model & Trust Boundaries', src: 'threat-model.md', pathway: 'trust', description: "What Lolly defends against, what it explicitly does not, and where each trust boundary sits. Written for reviewers who need the limits stated as plainly as the protections." },
+  { slug: 'parser-inventory', title: 'Parser Inventory',  src: 'parser-inventory.md', pathway: 'trust' },
+  { slug: 'server-surface',   title: 'Server Surface',    src: 'server-surface.md',  pathway: 'trust', description: "The complete inventory of what a Lolly server does and does not see, component by component, so you can audit the whole network surface in one sitting." },
+  { slug: 'verify-yourself',  title: 'Verify It Yourself', src: 'verify-yourself.md', pathway: 'trust', description: "Check this site's claims against a real export, step by step. No account, no trust required, and nothing you cannot run yourself." },
+  { slug: 'privacy',          title: 'Privacy Policy',    src: 'privacy.md',         pathway: 'trust' },
+  { slug: 'inclusive-design', title: 'Inclusive Design',  src: 'inclusive-design.md', pathway: 'trust', description: "Accessibility, language coverage and the ethical commitments Lolly holds itself to, with the tests that fail the build when one is broken." },
+  { slug: 'ai-stance',        title: 'Our AI Stance',     src: 'ai-stance.md',       pathway: 'trust', description: "AI is welcome as labour and refused as impersonation. Where Lolly stands on generated content, and the machinery that enforces each commitment." },
 ];
 
 // Top-nav links, grouped into clusters. Each inner array renders as one cluster
@@ -127,6 +141,12 @@ const NAV: NavLink[][] = [
   [ { label: 'For Creators',  href: '/info/creators.html' },
     { label: 'For Builders',  href: '/info/builders.html' },
     { label: 'For Operators', href: '/info/operators.html' } ],
+  // Trust is its own top-level destination, not a subsection of an audience. The
+  // provenance/privacy/security docs are the ones a sceptical reader comes looking
+  // for FIRST, and they answer the same questions whoever is asking — buried under
+  // "For Operators" they were only findable by someone who already self-identified
+  // as one.
+  [ { label: 'Trust', href: '/info/trust.html' } ],
 ];
 // href → pathway, so a child page (e.g. host-api) lights up its hub's nav link.
 const NAV_PATHWAY: Record<string, Pathway> = {
@@ -134,6 +154,7 @@ const NAV_PATHWAY: Record<string, Pathway> = {
   '/info/creators.html':   'creators',
   '/info/builders.html':   'builders',
   '/info/operators.html':  'operators',
+  '/info/trust.html':      'trust',
 };
 
 // The docs sidebar, per pathway. Each group is a labelled cluster of links; the
@@ -165,6 +186,7 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
         { slug: 'brand-studio',  label: 'The Brand Studio' },
         { slug: 'profile',       label: 'Your profile' },
         { slug: 'design-import', label: 'Import a design' },
+        { slug: 'sequence-editor', label: 'The sequence editor' },
         { slug: 'exporting',     label: 'Exporting & formats' } ] },
       { label: 'Compare', items: [
         { slug: 'positioning', label: 'How Lolly compares' } ] },
@@ -215,15 +237,32 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
         { slug: 'deployment',    label: 'Deployment' },
         { slug: 'configuration', label: 'Configuration' } ] },
       { label: 'Trust', items: [
-        { slug: 'content-credentials-identity', label: 'Content Credentials' },
+        { slug: 'trust',    label: 'Trust overview' },
         { slug: 'security', label: 'Security & Verification' },
-        { slug: 'threat-model', label: 'Threat Model' },
-        { slug: 'parser-inventory', label: 'Parser Inventory' },
-        { slug: 'server-surface', label: 'Server Surface' },
+        { slug: 'privacy',  label: 'Privacy Policy' } ] },
+    ],
+  },
+  trust: {
+    title: 'Trust',
+    groups: [
+      { label: 'Trust', items: [
+        { slug: 'trust',      label: 'Overview' },
+        { slug: 'status-quo', label: 'Why this differs' } ] },
+      { label: 'Where content comes from', items: [
+        { slug: 'input-not-impersonation',         label: 'Input, not impersonation' },
+        { slug: 'content-credentials-identity',    label: 'Content Credentials' },
+        { slug: 'content-credentials-engineering', label: 'Content Credentials - Engineering' },
+        { slug: 'ai-stance',                       label: 'Our AI Stance' } ] },
+      { label: 'Check it yourself', items: [
         { slug: 'verify-yourself', label: 'Verify It Yourself' },
-        { slug: 'privacy', label: 'Privacy Policy' },
-        { slug: 'inclusive-design', label: 'Inclusive Design' },
-        { slug: 'ai-stance', label: 'Our AI Stance' } ] },
+        { slug: 'security',        label: 'Security & Verification' },
+        { slug: 'threat-model',    label: 'Threat Model' },
+        { slug: 'parser-inventory', label: 'Parser Inventory' },
+        { slug: 'server-surface',  label: 'Server Surface' } ] },
+      { label: 'Your data, and who it is for', items: [
+        { slug: 'privacy',          label: 'Privacy Policy' },
+        { slug: 'data-transfer',    label: 'Data Transfer' },
+        { slug: 'inclusive-design', label: 'Inclusive Design' } ] },
     ],
   },
 };
@@ -366,6 +405,10 @@ function toSlug(h2: string) {
 
 // ── Markdown helpers ──────────────────────────────────────────────────────────
 
+// The seal glyph inside a `%sig{}` pill — a signature is a claim someone put
+// their name to, so it gets a mark of its own rather than only a colour.
+const PROV_SEAL = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="prov-seal"><path d="M12 2 4 5.5v6c0 4.5 3.2 8.6 8 10.5 4.8-1.9 8-6 8-10.5v-6L12 2Z"/><path d="m9 12 2 2 4-4"/></svg>`;
+
 function esc(s: string) {
   return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
@@ -393,6 +436,26 @@ function inline(text: string) {
     return `${pre}/info/shots/${file}${post}`;
   });
 
+  // Provenance pills: `%entity{…}` `%sig{…}` `%act{…}` `%file{…}` `%detail{…}`.
+  // A provenance line is a chain of claims, not a sentence — tagging each span by
+  // WHAT IT IS lets the eye land on the actors first (who made and who signed the
+  // file), then the signatures, then the mechanical detail, while it still reads
+  // left to right as one story. Nesting is one level (`%sig{signed by %entity{…}}`),
+  // resolved inner-first by re-running until the text stops changing; the emitted
+  // spans contain no braces, so an outer pill matches on the next pass.
+  for (let pass = 0; pass < 4; pass++) {
+    const next = s.replace(/%(entity|sig|act|file|detail)\{([^{}]*)\}/g,
+      (_m, kind: string, text: string) => `<span class="prov-pill prov-${kind}">${kind === 'sig' ? PROV_SEAL : ''}${text}</span>`);
+    if (next === s) break;
+    s = next;
+  }
+  // A marker that survives is a typo'd kind, an unclosed brace, or nesting deeper
+  // than the passes above — all of which SHIP AS LITERAL `%kind{…}` text in the
+  // reader's face rather than failing. Say so loudly, like docIcon does for an
+  // unknown glyph. tests/docs-provenance-pills.test.ts is the durable check.
+  const leftover = /%(entity|sig|act|file|detail)\{/.exec(s);
+  if (leftover) console.warn(`⚠  unrendered provenance marker "%${leftover[1]}{" — check for an unclosed brace or deeper nesting`);
+
   // Images before links, or the link regex eats `[alt](url)` and strands the `!`.
   s = s.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" loading="lazy">');
   // External links (absolute http/https) open in a new tab; internal/relative links
@@ -418,6 +481,38 @@ function mdToHtml(md: string) {
 
   while (i < lines.length) {
     const line = lines[i]!;
+
+    // `::: cols` … `:::` puts the sections inside side by side, splitting at each
+    // `## ` heading. Markdown cannot express a column band and the alternative was
+    // hand-written HTML in the page, which the escaping (deliberately) forbids.
+    // Falls back to normal stacked rendering on narrow screens via CSS alone.
+    if (line.trim().startsWith(':::')) {
+      const label = line.trim().slice(3).trim();
+      i++;
+      const inner: string[] = [];
+      // Depth-aware so a fence can hold another one (a timeline inside a column).
+      let depth = 1;
+      while (i < lines.length) {
+        const t = lines[i]!.trim();
+        if (t.startsWith(':::') && t.length > 3) depth++;
+        else if (t === ':::') { depth--; if (!depth) break; }
+        inner.push(lines[i]!); i++;
+      }
+      i++; // the closing fence
+      const body = inner.join('\n');
+      if (label === 'cols') {
+        const parts = body.split(/\n(?=## )/).filter(p => p.trim());
+        out.push(`<div class="md-cols">${parts.map(part => `<div class="md-col">${mdToHtml(part)}</div>`).join('')}</div>`);
+      } else if (label === 'timeline') {
+        // An icon list drawn as a sequence: a rail joining each step. Marked
+        // explicitly rather than inferred from position, so moving a list around
+        // the page cannot silently turn the timeline on or off.
+        out.push(`<div class="md-timeline">${mdToHtml(body)}</div>`);
+      } else {
+        out.push(mdToHtml(body));
+      }
+      continue;
+    }
 
     if (line.startsWith('```')) {
       const lang = line.slice(3).trim();
@@ -693,6 +788,9 @@ DOC_ICONS.download = BICONS.download;
 DOC_ICONS.database = BICONS.database;
 DOC_ICONS.server = BICONS.server;
 DOC_ICONS.monitor = SITE_ICONS.toolFeatureMonitor!;
+// The AI mark. Mirrors the spark the web shell's /verify view uses for
+// AI-generated content, so the same idea wears the same glyph in both places.
+DOC_ICONS.sparkle = `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3Z"/><path d="M18.5 15.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2Z"/></svg>`;
 function docIcon(key: string): string {
   const svg = DOC_ICONS[key];
   if (!svg) { console.warn(`⚠  unknown doc bullet icon "${key}"`); return ''; }
@@ -721,6 +819,37 @@ function englishAudienceH2s(): string[] {
   }
   return _enAudienceH2;
 }
+
+
+// The landing page states positions; the docs hold the reasoning, the caveats and
+// the mechanisms, and they are kept current in a way marketing copy never is. So
+// the trust section ends by handing the reader over to them rather than trying to
+// summarise a threat model in a card. Authored here rather than in assure.json
+// because every locale's JSON would otherwise need the key before it could render.
+const ASSURE_DOC_LINKS = (lang: Lang) => {
+  const links: { icon: string; label: string; desc: string; href: string }[] = [
+    { icon: 'shieldcheck', label: t('Trust'), href: '/info/trust.html',
+      desc: t('Where content comes from, how to check it, and what happens to your data.') },
+    { icon: 'sparkle', label: t('Our AI Stance'), href: '/info/ai-stance.html',
+      desc: t('AI as labour, never as impersonation - and the machinery that enforces it.') },
+    { icon: 'convert', label: t('Why this differs'), href: '/info/status-quo.html',
+      desc: t('The frictions you have been trained to accept, and what replaces them.') },
+    { icon: 'lock', label: t('Security'), href: '/info/security.html',
+      desc: t('The cryptography, the threat model, and the limits stated as plainly as the guarantees.') },
+    { icon: 'people', label: t('Inclusive Design'), href: '/info/inclusive-design.html',
+      desc: t('Accessibility, language coverage and the commitments we hold ourselves to.') },
+  ];
+  return `<div class="assure-docs reveal reveal-3">
+      <span class="assure-docs-label">${esc(t('Read the detail'))}</span>
+      <div class="assure-docs-grid">
+        ${links.map(l => `<a class="assure-doc" href="${esc(localizeHref(lang, l.href))}">
+          <span class="assure-doc-ic">${docIcon(l.icon)}</span>
+          <strong>${esc(l.label)}</strong>
+          <span class="assure-doc-desc">${esc(l.desc)}</span>
+        </a>`).join('\n        ')}
+      </div>
+    </div>`;
+};
 
 function buildLandingContent(md: string, lang: Lang = 'en') {
   const rawSections = md.split(/\n---\n/);
@@ -1025,6 +1154,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
       ${assure.cards.map(c => `<div class="assure-card"><span class="assure-card-ic">${siteIcon(c.icon)}</span><strong>${esc(c.title)}</strong><p>${inline(c.desc)}</p></div>`).join('\n      ')}
     </div>
     <div class="assure-cta reveal reveal-3"><a href="${esc(localizeHref(lang, assure.ctaHref))}">${esc(assure.cta)}</a></div>
+    ${ASSURE_DOC_LINKS(lang)}
   </div>
 </section>`;
 
@@ -1535,6 +1665,21 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .assure-card p{color:rgba(255,255,255,.55);font-size:.88rem;line-height:1.6;margin:0}
 .assure-cta a{color:var(--green);font-weight:700;text-decoration:none;font-size:1.02rem}
 .assure-cta a:hover{text-decoration:underline}
+/* Hand-off to the docs. The section above makes claims; these are where the
+   reasoning and the caveats actually live, so they read as a quiet index rather
+   than five more marketing cards - small caps label, hairline separators, no fill
+   until you hover. */
+.assure-docs{margin-top:2.75rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)}
+.assure-docs-label{display:block;font-size:.6875rem;text-transform:uppercase;letter-spacing:.12em;
+  font-weight:700;color:rgba(255,255,255,.45);margin-bottom:1.1rem}
+.assure-docs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.5rem}
+.assure-doc{display:block;padding:.9rem 1rem;border-radius:12px;border:1px solid transparent;
+  text-decoration:none;transition:background .15s,border-color .15s}
+.assure-doc:hover{background:rgba(255,255,255,.045);border-color:rgba(255,255,255,.12);text-decoration:none}
+.assure-doc-ic{display:block;width:1.15rem;height:1.15rem;color:var(--green);margin-bottom:.55rem}
+.assure-doc-ic svg{width:100%;height:100%}
+.assure-doc strong{display:block;color:#fff;font-size:.9375rem;margin-bottom:.3rem}
+.assure-doc-desc{display:block;color:rgba(255,255,255,.55);font-size:.8125rem;line-height:1.5}
 @media(max-width:768px){.assure-section{padding:4.5rem 1.25rem}.assure-section h2{font-size:1.95rem}.assure-grid{grid-template-columns:1fr}}
 .dark .qol-section{background:#061816}
 .dark .qol-panel{background:rgba(255,255,255,.035);border-color:rgba(255,255,255,.1);box-shadow:none}
@@ -1640,19 +1785,118 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .sidebar-home{display:block;font-size:.8125rem;color:var(--muted)!important;margin-bottom:1rem;padding:0!important}
 .sidebar-home:hover{color:var(--green)!important;background:none!important}
 .sidebar-pathway{font-size:.9375rem;font-weight:700;color:var(--dark);margin-bottom:.75rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
-.docs-sidebar a{display:block;padding:.3rem .5rem;font-size:.875rem;color:var(--text);border-radius:5px}
+.docs-sidebar a{display:flex;align-items:flex-start;gap:.5rem;padding:.3rem .5rem;font-size:.875rem;color:var(--text);border-radius:5px}
 .docs-sidebar a:hover{color:var(--green);background:var(--pale);text-decoration:none}
 .docs-sidebar a.active{color:var(--green);font-weight:600;background:var(--pale)}
+/* Sidebar glyphs. Quiet by default so the LABEL still leads and the icon is the
+   second cue rather than a competing one; they take the link's colour on hover and
+   when active, so the row reads as one object. Fixed 1.05em box + flex-start keeps
+   a two-line label aligned to the glyph's first line, not centred against it. */
+.docs-sidebar a .sidebar-ic{flex:none;width:1.05em;height:1.05em;margin-top:.12em;color:var(--muted);opacity:.75}
+.docs-sidebar a .sidebar-ic svg{width:100%;height:100%;display:block}
+.docs-sidebar a:hover .sidebar-ic,.docs-sidebar a.active .sidebar-ic{color:inherit;opacity:1}
+/* Two pages keep a hue of their own (see buildSidebar): AI and Inclusive Design.
+   It is carried by a SOFT TINTED ROW, not a bright glyph - a saturated purple or
+   pink sitting next to SUSE green read as two brands arguing rather than one
+   system with an accent. The tint does the signalling, the glyph just picks it up,
+   and both hues are desaturated toward the palette's own muted register so the
+   column still reads green-first. Same landmark, no fight. */
+.docs-sidebar a:has(.sidebar-ic.is-ai){background:#f5f2fd}
+.docs-sidebar a:has(.sidebar-ic.is-inclusive){background:#fdf1f7}
+.docs-sidebar a .sidebar-ic.is-ai{color:#6f5cc6;opacity:1}
+.docs-sidebar a .sidebar-ic.is-inclusive{color:#c14b83;opacity:1}
+/* Hover and active keep the row in its own hue instead of snapping to green -
+   a landmark that changes colour when you touch it stops being a landmark. */
+.docs-sidebar a:hover:has(.sidebar-ic.is-ai),.docs-sidebar a.active:has(.sidebar-ic.is-ai){background:#ece6fb;color:#5b4aab}
+.docs-sidebar a:hover:has(.sidebar-ic.is-inclusive),.docs-sidebar a.active:has(.sidebar-ic.is-inclusive){background:#fbe3ef;color:#a83c6f}
+.docs-sidebar a:hover .sidebar-ic.is-ai,.docs-sidebar a.active .sidebar-ic.is-ai{color:#5b4aab}
+.docs-sidebar a:hover .sidebar-ic.is-inclusive,.docs-sidebar a.active .sidebar-ic.is-inclusive{color:#a83c6f}
+/* Dark mode: a tint, not a fill - low-alpha over the near-black page so the row
+   glows rather than becoming a slab, and the glyph lifts to stay legible. */
+.dark .docs-sidebar a:has(.sidebar-ic.is-ai){background:rgba(139,124,246,.13)}
+.dark .docs-sidebar a:has(.sidebar-ic.is-inclusive){background:rgba(244,114,182,.12)}
+.dark .docs-sidebar a .sidebar-ic.is-ai{color:#b9a8f7}
+.dark .docs-sidebar a .sidebar-ic.is-inclusive{color:#f2a9c9}
+.dark .docs-sidebar a:hover:has(.sidebar-ic.is-ai),.dark .docs-sidebar a.active:has(.sidebar-ic.is-ai){background:rgba(139,124,246,.2);color:#cbbdff}
+.dark .docs-sidebar a:hover:has(.sidebar-ic.is-inclusive),.dark .docs-sidebar a.active:has(.sidebar-ic.is-inclusive){background:rgba(244,114,182,.19);color:#ffc2dd}
+.dark .docs-sidebar a:hover .sidebar-ic.is-ai,.dark .docs-sidebar a.active .sidebar-ic.is-ai{color:#cbbdff}
+.dark .docs-sidebar a:hover .sidebar-ic.is-inclusive,.dark .docs-sidebar a.active .sidebar-ic.is-inclusive{color:#ffc2dd}
 /* Icon bullet lists (the <!--i:key--> md marker — policy pages). Logical
    properties so the Arabic build mirrors correctly. */
 .docs-content ul.icon-list{list-style:none;padding-inline-start:0;display:flex;flex-direction:column;gap:.9rem}
 .docs-content ul.icon-list>li.ic{display:flex;align-items:flex-start;gap:.75rem}
+/* Two columns from a ::: cols fence. The pairing IS the argument on
+   /info/status-quo - what happened on the left, what it cost on the right - so the
+   two read together rather than one after the other. Below 900px they stack, which
+   keeps the reading order intact because the source order is already correct. */
+.md-cols{display:grid;grid-template-columns:1fr 1fr;gap:1.75rem 3rem;margin:2rem 0 2.5rem}
+.md-cols .md-col>h2:first-child{margin-top:0;font-size:1.25rem}
+.md-cols .md-col>ul{margin-bottom:0}
+.md-cols .md-col li{font-size:.9375rem}
+@media(max-width:900px){.md-cols{grid-template-columns:1fr;gap:2.25rem}}
+/* A ::: timeline fence draws its icon list as a sequence: a rail joining each step,
+   the way the change history in Verify draws a file's steps. Same visual grammar for
+   the same idea - things that happened, in order. Used for the frictions we all
+   accumulated, and for the rogue-agent scenario walked step by step. Sequences only:
+   a set of causes or commitments stays a plain icon list, because a rail between
+   unordered things says something untrue about them. */
+.md-timeline .icon-list{position:relative;gap:1.35rem}
+.md-timeline .icon-list>li.ic{position:relative;padding-bottom:.1rem}
+.md-timeline .icon-list>li.ic .li-icon{position:relative;z-index:1;
+  width:2rem;height:2rem;flex:none;display:grid;place-items:center;border-radius:999px;
+  background:var(--pale);border:1.5px solid var(--border);color:var(--muted)}
+.md-timeline .icon-list>li.ic .li-icon svg{width:1rem;height:1rem}
+/* The rail: drawn from each item down to the next, so it stops cleanly at the last
+   one instead of trailing into whitespace. */
+.md-timeline .icon-list>li.ic:not(:last-child)::before{content:'';position:absolute;
+  left:1rem;top:2rem;bottom:-1.35rem;width:1.5px;background:var(--border)}
+@media(max-width:640px){.md-timeline .icon-list>li.ic .li-icon{width:1.75rem;height:1.75rem}
+  .md-timeline .icon-list>li.ic:not(:last-child)::before{left:.875rem;top:1.75rem}}
 .li-icon{flex-shrink:0;width:1.35rem;height:1.35rem;margin-top:.2rem;color:var(--green)}
 .li-icon svg{width:100%;height:100%;display:block}
 .docs-content{padding:6rem 3.5rem;min-width:0}
 .docs-content img{height:auto;    max-width: min(100%, 40em);    height: auto;   margin: 0 auto; display: block;}
 /* App screenshots (docs/shots.json captures) read at full column width, framed like a window. */
 .docs-content img[src*="/info/shots/"]{max-width:100%;min-width:50%;border-radius:1.2em;box-shadow: inset 0 0 0 1px #0001, 0 3px 6px #0002, 0 6px 2em #0001}
+/* Provenance pills (the typed markers authors write in the markdown - see inline()).
+   A provenance line reads as
+   data tags in sentence order, so the hierarchy is carried by weight and fill, not
+   by size: ACTORS solid and darkest, SIGNATURES outlined with a seal, then the
+   mechanical detail (actions, filenames, sizes) quiet enough to skim past.
+   The paragraph stays ordinary inline text — a flex row would make every word
+   between the pills its own flex item and strand the connecting commas. */
+.prov-pill{display:inline-block;border-radius:999px;padding:.16em .62em;font-size:.8125rem;
+  line-height:1.4;margin:0 .08em;vertical-align:baseline}
+/* Every surface below is a THEME TOKEN, never a literal - the tokens flip with
+   .dark, a hex does not. A hardcoded light fill under light-on-dark text is how
+   these pills went unreadable in dark mode the first time. */
+.prov-entity{background:var(--dark);color:#fff;font-weight:700;letter-spacing:.01em}
+.dark .prov-entity{background:#12463a}  /* lifted off the near-black page so the chip still reads as a chip */
+.prov-sig{border:1.5px solid var(--green);color:var(--text);font-weight:600;background:var(--pale)}
+/* An actor inside a signature is WHITE ON GREEN in both themes - a signature is the
+   one claim that must look identical wherever it is read. The fill is a deepened
+   brand green rather than --green itself: white on #30ba78 is about 2.2:1, which
+   fails for 13px text, and a signature nobody can read is worse than an off-swatch
+   one. This keeps the hue and clears 4.5:1. */
+.prov-sig .prov-entity{background:#14784d;color:#fff;margin-inline:.18em 0}
+/* Inline, not a flex child: the pill's baseline must be its TEXT baseline so it
+   sits on the same line as the prose around it. The glyph is nudged optically. */
+.prov-seal{width:.95em;height:.95em;margin-inline-end:.34em;vertical-align:-.14em;color:var(--green)}
+.prov-act{background:var(--pale);color:var(--text);font-weight:550;border:1px solid transparent}
+.dark .prov-act{border-color:var(--border)}
+/* A filename wraps rather than truncating - it is evidence the caption is naming,
+   so hiding its tail hides the point. NOTE: never give this overflow:hidden -
+   on an inline-block that moves the baseline to the bottom margin edge (CSS 2.1
+   10.8.1) and the pill visibly drops below the line it sits in. */
+.prov-file{background:var(--pale);color:var(--muted);border:1px solid var(--border);
+  font-family:'SUSE Mono','SF Mono',monospace;font-size:.75rem;
+  white-space:normal;overflow-wrap:anywhere;max-width:100%}
+.prov-detail{color:var(--muted);font-variant-numeric:tabular-nums;font-size:.8125rem}
+/* The caption sits under the hero as a caption, not as body copy. The extra
+   leading is what keeps a wrapped chain of padded pills off the rows above and
+   below - with normal leading the pill boxes collide even though the text does not. */
+.docs-content p:has(.prov-pill){margin-top:.9rem;font-size:.9375rem;line-height:2.15;color:var(--muted)}
+
 /* The AI-stance hero photo carries a three-manifest C2PA chain (Google's two as
    ingredients, Lolly's own on top) that readers are invited to verify, so its
    bytes are exactly what Lolly exported — never re-encode it in a build step.
@@ -2452,13 +2696,60 @@ const FOOTER = (lang: Lang) => `<footer><p>Lolly - <a href="${REPO_URL}">${esc(t
 
 // Docs sidebar for a page, driven by its pathway. Falls back to the builders
 // sidebar for any non-landing page without an explicit pathway.
+
+// Sidebar glyphs, keyed by slug so a page wears the SAME icon in every sidebar
+// that lists it (several pages appear in two pathways). This is an accessibility
+// feature before it is a decorative one: a wall of same-length link text is hard
+// to scan, and a stable picture per destination gives a second, non-verbal way to
+// find a page — the recognition is instant where reading the label is not. That
+// makes it part of the inclusive-design commitment in docs/inclusive-design.md,
+// not styling; keep the mapping meaningful (what the page is ABOUT) rather than
+// picking whatever glyph is unused.
+const SIDEBAR_ICON: Record<string, string> = {
+  // Hubs & entry points
+  quickstart: 'star', creators: 'palette', builders: 'wrench', operators: 'checklist', trust: 'shieldcheck',
+  'status-quo': 'convert', 'input-not-impersonation': 'usercheck',
+  // Creators
+  using: 'pentool', 'brand-studio': 'palette', profile: 'usercheck', 'design-import': 'upload',
+  'sequence-editor': 'clock', exporting: 'download', positioning: 'sliders',
+  // Builders — architecture & authoring
+  overview: 'layers', 'design-tokens': 'hash', 'authoring-tools': 'wrench', 'authoring-assets': 'photos',
+  'host-api': 'code', 'url-mode': 'link',
+  // Builders — run & integrate
+  cli: 'code', tui: 'monitor', mcp: 'server', 'ai-agents': 'sparkle', extension: 'globe',
+  // Builders — ship & operate
+  'build-guide': 'box', 'ios-build': 'box', deployment: 'upload', configuration: 'sliders', about: 'document',
+  // Operators
+  'adoption-governance': 'people',
+  // Trust — where content comes from
+  'content-credentials-identity': 'seal', 'content-credentials-engineering': 'cpu', 'ai-stance': 'sparkle',
+  // Trust — check it yourself
+  'verify-yourself': 'check', security: 'shieldcheck', 'threat-model': 'lock',
+  'parser-inventory': 'code', 'server-surface': 'server',
+  // Trust — your data
+  privacy: 'eyeoff', 'data-transfer': 'convert', 'inclusive-design': 'people',
+};
+
 function buildSidebar(lang: Lang, page: Page, activeHref: string) {
   const pathway: Pathway = page.pathway ?? 'builders';
   const sb = SIDEBARS[pathway];
   const groups = sb.groups.map(g => {
     const links = g.items.map(it => {
       const href = `/info/${it.slug}.html`; // logical (English) href - identity only
-      return `<a href="${localeHref(lang, it.slug)}"${href === activeHref ? ' class="active"' : ''}>${esc(t(it.label))}</a>`;
+      // The AI pages are the ONE purple in an otherwise green sidebar. AI is the
+      // subject the docs treat as categorically different, so it is the one thing
+      // worth spending a second hue on; more colours would flatten that signal.
+      // Two pages keep their own hue in every state, so "which page is this?" is
+      // answerable from the corner of your eye without reading a word: AI (the
+      // subject the docs treat as categorically different) and Inclusive Design
+      // (the page whose whole subject is making things findable for everyone).
+      // Deliberately only two - a third colour would flatten the signal back into
+      // decoration. See docs/inclusive-design.md.
+      const hue = it.slug === 'ai-stance' || it.slug === 'ai-agents' ? ' is-ai'
+        : it.slug === 'inclusive-design' ? ' is-inclusive' : '';
+      const glyph = SIDEBAR_ICON[it.slug];
+      const ic = glyph ? `<span class="sidebar-ic${hue}" aria-hidden="true">${docIcon(glyph)}</span>` : '';
+      return `<a href="${localeHref(lang, it.slug)}"${href === activeHref ? ' class="active"' : ''}>${ic}<span>${esc(t(it.label))}</span></a>`;
     }).join('\n    ');
     return `<div class="sidebar-label">${esc(t(g.label))}</div>\n    ${links}`;
   }).join('\n    ');
@@ -2469,7 +2760,7 @@ function buildSidebar(lang: Lang, page: Page, activeHref: string) {
   </aside>`;
 }
 
-function wrapPage(lang: Lang, page: Page, content: string, ogSlugs: Set<string>) {
+function wrapPage(lang: Lang, page: Page, content: string, ogSlugs: Set<string>, md = '') {
   const activeHref = page.slug === 'index' ? '/info/index.html' : `/info/${page.slug}.html`; // logical (English) - identity only
   const isLanding  = page.isLanding;
 
@@ -2478,11 +2769,16 @@ function wrapPage(lang: Lang, page: Page, content: string, ogSlugs: Set<string>)
   // OG cards are generated once, in English, and shared across locales (see build()).
   const ogImage    = (!isLanding && ogSlugs?.has(page.slug)) ? `${SITE_URL}/info/og/${page.slug}.png` : OG_IMAGE;
   const ogImageAlt = isLanding ? 'Lolly - creative tools with the rules built in' : `Lolly - ${page.title}`;
+  // What a shared link says about itself. Every page had the same site-wide
+  // sentence, so forty links previewed identically and told a reader nothing
+  // about where they were going. Order: an explicit description, else the page's
+  // own first sentence, else the site line for the landing page.
+  const description = t(page.description || (isLanding ? SITE_DESCRIPTION : mdDescription(md) || SITE_DESCRIPTION));
 
   const body = isLanding ? content : `
 <div class="docs-wrap">
   ${buildSidebar(lang, page, activeHref)}
-  <main class="docs-content">
+  <main class="docs-content page-${page.slug}">
     ${content}
   </main>
 </div>`;
@@ -2499,13 +2795,13 @@ function wrapPage(lang: Lang, page: Page, content: string, ogSlugs: Set<string>)
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(pageTitle)}</title>
-<meta name="description" content="${esc(SITE_DESCRIPTION)}">
+<meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${esc(localeUrl)}">
 ${alternates}
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Lolly">
 <meta property="og:title" content="${esc(pageTitle)}">
-<meta property="og:description" content="${esc(SITE_DESCRIPTION)}">
+<meta property="og:description" content="${esc(description)}">
 <meta property="og:url" content="${esc(localeUrl)}">
 <meta property="og:image" content="${esc(ogImage)}">
 <meta property="og:image:width" content="1200">
@@ -2514,7 +2810,7 @@ ${alternates}
 <meta property="og:logo" content="${esc(OG_LOGO)}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${esc(pageTitle)}">
-<meta name="twitter:description" content="${esc(SITE_DESCRIPTION)}">
+<meta name="twitter:description" content="${esc(description)}">
 <meta name="twitter:image" content="${esc(ogImage)}">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
@@ -2549,6 +2845,20 @@ ${isLanding ? LIQUID_GLASS_SCRIPT : ''}
 function stripFrontMatter(md: string): string {
   const m = md.match(/^---\n[\s\S]*?\n---\n?/);
   return m ? md.slice(m[0].length) : md;
+}
+
+// The twin is markdown, so it carries no CSS to turn a provenance marker into a
+// pill — an agent reading it would get `%file{the-flood.webp}` as literal noise
+// around the very words that matter. Unwrap to the plain text; the sentence was
+// always written to read without them.
+function unwrapProvenanceMarkers(md: string): string {
+  let out = md;
+  for (let pass = 0; pass < 4; pass++) {
+    const next = out.replace(/%(?:entity|sig|act|file|detail)\{([^{}]*)\}/g, '$1');
+    if (next === out) break;
+    out = next;
+  }
+  return out;
 }
 
 // One-sentence description for a page's llms.txt line, derived from the first
@@ -2670,7 +2980,7 @@ function build() {
       }
 
       const content = page.isLanding ? buildLandingContent(md, lang) : mdToHtml(md);
-      const html    = wrapPage(lang, page, content, ogSlugs);
+      const html    = wrapPage(lang, page, content, ogSlugs, md);
       const outFile = page.slug === 'index' ? 'index.html' : `${page.slug}.html`;
       writeFileSync(resolve(localeOutDir, outFile), html, 'utf-8');
       console.log(`✓  ${localeHref(lang, page.slug)}`);
@@ -2678,7 +2988,7 @@ function build() {
         sitemapUrls.push({ slug: page.slug, isLanding: page.isLanding });
         // Markdown twin: the verbatim English source, published next to the HTML
         // so agents (and llms.txt below) can read the docs without a DOM.
-        const twin = stripFrontMatter(md);
+        const twin = unwrapProvenanceMarkers(stripFrontMatter(md));
         writeFileSync(resolve(outDir, `${page.slug}.md`), twin, 'utf-8');
         mdBySlug.set(page.slug, twin);
       }

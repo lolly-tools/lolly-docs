@@ -8,7 +8,7 @@ A practical guide to actually *using* the app - opening a tool, working the canv
 
 The home screen is the **gallery** - every tool, grouped by category. Click a card to open the tool; if you've worked on it before, a **Continue** button resumes your most recent session. Use the search box to filter by name.
 
-![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&walker=1&format=svg&localize=1&filename=gallery)
+![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&localize=1&filename=gallery)
 
 Each tool is a split view: **controls** on one side, a live **preview** (the canvas) on the other. Change any control and the preview updates instantly.
 
@@ -116,6 +116,8 @@ There are two kinds of row, and the difference is the whole idea:
 ![The whole editing surface: artboard, tool rail and timeline together](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1440&height=900&dpi=192&waitMs=7000&css=.fc-toolbar%7Bopacity%3A1!important%7D&cropSelector=%23tool-stage&format=svg&walker=1&tolerance=0.03&filename=seq-studio-stage)
 
 Opening the timeline gives it the keyboard, so Space and the arrow keys drive the playhead rather than the page - and because it opens by itself on a composition that already has timing, that's true the moment Sequence Studio loads.
+
+> **[The sequence editor](/info/sequence-editor.html)** goes deeper on the four things that decide whether editing in time feels predictable: which clip a canvas click edits, onion-skin ghosts of the neighbouring clips, split scope and the Join that undoes a cut, and trimming (including the keyboard set). Press `?` with the timeline focused for the shortcut sheet.
 
 **Editing.** Drag a clip's middle to move or reorder it, drag within a few pixels of either end to trim it, and press **Split at playhead** (or `S`) to cut one clip into two. Split needs a clip with a real **Length** and the playhead a little way inside it, so an open-ended clip (the music bed, for one) can't be split. **Snap to edges** is on by default and snaps to clip edges, the playhead and whole seconds, with Alt to override. Every drag is a single undo step, and the drag preview runs the same arithmetic as the commit, so what you see while dragging is what you get.
 

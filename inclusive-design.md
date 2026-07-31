@@ -102,6 +102,40 @@ opt-in:
   translators receive clean, bare strings rather than sentences with markup
   fragments baked in.
 
+## Why this produces better work, not just kinder software
+
+Accessibility gets filed under compliance, which quietly frames it as a cost. It
+is not one. The same properties that make a tool usable on a hard day make it
+faster on every other day, and they compound.
+
+- <!--i:neurobeat--> **Cognitive endurance is the real budget.** Attention is finite and it
+  drains unevenly. Every dialog you dismiss, every setting that resets, every
+  choice a template should have made for you spends a little of what you had
+  left for the work. Constraint-first tools spend almost none of it: the brand
+  decisions were made once, at the tool, so producing the twentieth asset costs
+  what the first did. People who need that most feel it first, and everyone
+  benefits from it.
+- <!--i:star--> **Creative confidence comes from a floor you cannot fall through.** When
+  any output could be wrong in a way you will only discover later, you check
+  everything twice and stay cautious. When off-brand output is not reachable,
+  the checking stops being your job and the caution goes back into the work.
+  Confidence is not a mood here, it is a property of the constraints.
+- <!--i:convert--> **Right compounds.** A decision encoded in a tool is correct every time
+  that tool runs, in every language, at every size, for everyone who uses it.
+  A decision written in a guidelines PDF is correct as often as it is read. The
+  difference is small on one asset and enormous across a year.
+- <!--i:lock--> **What protects the workflow protects the person.** On-device rendering,
+  plain-file exports and offline capability are usually filed under privacy, and
+  they are also what keeps you working on a bad connection, on a locked-down
+  machine, or the day a subscription lapses. Your workflow does not have
+  dependencies you did not choose.
+
+Two things follow that we treat as inseparable: operational superiority, because
+software that respects your attention and your data is simply faster to work in,
+and ethics that cannot be traded away, because they are architectural rather than
+promised. A policy can be revised under pressure. An engine that never receives
+your content has nothing to revise.
+
 ## Ethical commitments
 
 - <!--i:lock--> **Privacy by architecture.** Your work stays on your device. There are no
