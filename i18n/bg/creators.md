@@ -44,11 +44,11 @@ Lolly не се опитва да бъде Canva или Figma. Той стои �
 
 Street Map е добър пример за тази размяна: избираш град и няколко цвята, а картографията, дебелината на пътищата и водата са решени за теб.
 
-![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&filename=vt-street-map-poster&sweep=1)
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-street-map-poster&sweep=1)
 
 ### От живи данни до готова визия
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
 
 Свържи **CSV** или **JSON** таблица с шаблон за диаграма, карта или таблица и обновявай числата — оформлението се грижи само за себе си. Изборни резултати, тримесечни отчети, метеорологични събития: изгради формата веднъж и го използвай повторно всеки път, когато историята излиза. Съответствай на фирмения си стил *точно*, защото той се налага на ниво шаблон, а не е оставен като свободна насока.
 
@@ -60,7 +60,7 @@ Street Map е добър пример за тази размяна: избира
 
 Разширени филтри, композиране, анимация, ефекти с камера на живо, генеративен дизайн — всяка уеб технология е достъпна за автора на шаблон, така че таванът е висок.
 
-![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&filename=use-mesh-output)
+![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 Създавай *инструменти*, а не файлове: изгради нещото, което генерира 10 000 картички, вместо да правиш 10 000 картички. Заключи това, което не бива да се променя; изложи само това, което е предвидено да варира.
 

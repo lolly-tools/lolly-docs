@@ -42,13 +42,13 @@ Lolly 不打算成為 Canva 或 Figma。它的定位在於*規則、可重複性
 
 Street Map 就是這種取捨的好例子：你挑一座城市和兩個顏色，製圖方式、道路粗細與水域的處理都已經替你決定好了。
 
-![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&filename=vt-street-map-poster&sweep=1)
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-street-map-poster&sweep=1)
 
 填幾個欄位，就能得到完成的素材——不用挑字體，不用猜顏色，不用問「這是對的標誌嗎？」工具早就知道答案。電子郵件簽名檔、活動倒數計時、語錄卡片、識別證、街道地圖——星期二下午四點，團隊需要的一切都能自助完成。而且因為客戶資料完全不離開裝置，協作也沒有合規風險。
 
 ### 從即時資料到完成視覺
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
 
 把 **CSV** 或 **JSON** 表格連結到圖表、地圖或表格範本，更新數字就好——版面會自己處理。選舉結果、季度財報、天氣事件：格式做一次，往後每次報導都能重複使用。完全*精確*符合你的公司風格，因為規則是在範本層級強制執行，不是隨口交代的鬆散準則。
 
@@ -60,7 +60,7 @@ Street Map 就是這種取捨的好例子：你挑一座城市和兩個顏色，
 
 進階濾鏡、合成、動畫、即時攝影機特效、生成式設計——範本作者能使用所有網頁技術，天花板非常高。
 
-![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&filename=use-mesh-output)
+![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 製作*工具*，而不是製作檔案：打造能產生一萬張卡片的東西，而不是手動做一萬張卡片。鎖定不該變動的部分；只開放真正該變化的部分。
 

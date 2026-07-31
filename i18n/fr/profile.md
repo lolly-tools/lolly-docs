@@ -10,7 +10,7 @@ Tout ce qui compose un profil vit **sur l'appareil**, dans la base de données l
 
 Les préférences sont la seule partie qui change l'allure que l'appli te renvoie. Les cartes de thème sont des aperçus en direct et s'appliquent dès que tu en choisis une, sur cet appareil uniquement.
 
-![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
 
 | Partie | Ce que c'est |
 |---|---|
@@ -24,7 +24,7 @@ Les préférences sont la seule partie qui change l'allure que l'appli te renvoi
 
 Rien de tout cela n'est obligatoire. Un profil vide est un profil tout à fait valable ; tu ne remplis que ce qui t'évite de retaper.
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details&sweep=1)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&dark=1&filename=profile-details&sweep=1)
 
 ## Un profil est un contexte, pas seulement une personne
 
@@ -32,7 +32,7 @@ Le mot « profil » suggère une personne fixe et unique, mais dans Lolly c'est 
 
 ### En tant qu'individu
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
 
 Le cas par défaut. Le profil, c'est toi : ton nom, ton e-mail, ta photo de profil. Configure-le une fois et ta signature, ton badge, ton lockup de conférence se remplissent tout seuls. C'est ce dont la plupart des gens auront jamais besoin.
 
@@ -50,7 +50,7 @@ Dans Lolly, ce rôle n'est qu'**un autre profil que tu gardes sous la main** - u
 
 Stockage est l'endroit où vivent les deux moitiés de tout ça : la jauge rend compte de chaque octet que cette installation conserve, catégorie par catégorie, et les boutons en dessous servent à vider ou à emporter le tout.
 
-![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
 
 À tout moment, une installation a **un profil actif** - les détails qu'un outil voit à cet instant. Il n'y a pas de sélecteur de profil dans l'app ; à la place, chaque profil est un **bundle portable** (un simple `.zip`, voir [plus bas](#moving-a-profile-to-a-new-device)). C'est délibérément le même mécanisme que pour changer d'appareil - un profil est un fichier que tu peux enregistrer, copier et charger.
 
@@ -64,7 +64,7 @@ Donc si tu jongles vraiment entre plusieurs contextes (toi, ton équipe, la casq
 
 ## Déplacer un profil vers un nouvel appareil
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls&sweep=1)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
 
 Comme un profil est entièrement local, la seule façon de le faire arriver sur une installation vierge - un nouvel ordinateur portable, un navigateur fraîchement réinitialisé, la machine d'un collègue, une machine hors ligne - est de **transporter le fichier**. Aucune connexion ne le restaure pour toi, et c'est précisément le but : rien n'a jamais quitté ton appareil au départ.
 
@@ -81,7 +81,7 @@ Pour la disposition exacte du bundle, la politique de version et les règles d'i
 
 ## Comment les outils utilisent ton profil
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&dark=1&filename=pd-use-my-details)
 
 Un outil ne fait jamais que *pré-remplir* les champs de profil qu'il a été explicitement conçu pour lier :
 
@@ -101,7 +101,7 @@ Un profil change *de qui* vient un asset ; la plateforme change son *apparence* 
 
 ### « Profil » a deux autres sens ailleurs - pas celui-ci
 
-![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&filename=pv-identity-enrol)
+![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&dark=1&filename=pv-identity-enrol)
 
 Le mot est surchargé de sens dans l'ensemble du projet. Aucun des deux n'est le profil personnel dont parle cette page :
 

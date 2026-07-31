@@ -18,7 +18,7 @@ Ang resulta ay **kasaganaan**: may tamang signage ang bawat event, tumutugma sa 
 
 ### Saan ito bagay sa larangan
 
-![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&filename=aud-gallery-landscape&sweep=1)
+![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=aud-gallery-landscape&sweep=1)
 
 | Kakayahan | Canva | Mga Brand Portal | Illustrator | Figma / Penpot | **Lolly** |
 |---|---|---|---|---|---|
@@ -44,7 +44,7 @@ Malinaw ang puwang: walang kahit ano sa kasalukuyang larangan ang nagbibigay sa 
 
 ## Ang lifecycle ng isang kampanya
 
-![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-lifecycle-chart)
+![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 Ang pinakamalinaw na paraan para matanto kung ano ang Lolly ay hindi isang listahan ng feature - ito ay ang pagsubaybay sa isang asset habang dumadaan ito sa kamay-kamay. Panoorin ang isang localized na campaign card habang gumagalaw ito sa buong organisasyon:
 
@@ -62,7 +62,7 @@ Iyan ang force multiplier. Hindi ito drawer ng magkahiwalay na tool para sa magk
 
 ## Isang approval, sampung libong asset
 
-![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&format=svg&filename=ov2-batch-grid)
+![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&format=svg&dark=1&filename=ov2-batch-grid)
 
 Dahil nasa tool ang approval at hindi sa file (tingnan ang [Paano naihahambing ang Lolly](/info/positioning.html)), hindi na problema sa review ang scale. Aprubahan nang isang beses ang isang localized na social-card tool, tapos gumawa ng **10,000 asset sa 12 wika** mula sa isang spreadsheet - at wala ni isa sa kanila ang nangangailangan ng bagong compliance check mula sa legal o brand, dahil naaprubahan na ang template na pinanggalingan nilang lahat.
 
@@ -227,9 +227,9 @@ Tumatakbo ang platform sa ilang surface - web PWA, Tauri desktop/mobile, ang scr
 
 ### Web (PWA) - pangunahing distribution
 
-![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&format=svg&filename=aud-web-split)
+![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&format=svg&dark=1&filename=aud-web-split)
 
-![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&format=png&filename=ov2-phone-audiogram)
+![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&format=png&dark=1&filename=ov2-phone-audiogram)
 
 Naka-host sa isang SUSE-controlled na URL. Gumagana offline sa sandaling na-cache na ng service worker ang mga tool at asset. Dito gagamitin ng karamihan sa mga empleyado, vendor, at partner ang platform. Walang kailangang account - naka-store ang state sa IndexedDB kada device.
 
@@ -266,7 +266,7 @@ Nasaan mang surface ka, ang Capabilities tab sa dashboard ang buong mapa ng laha
 
 ## Mga kategorya ng tool
 
-![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=aud-utilities)
+![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=aud-utilities)
 
 Naka-tag ang mga tool ng isang `category` sa manifest nila para sa gallery grouping.
 
@@ -296,7 +296,7 @@ Naisaayos na ang mga desisyong ito. Ang pagbabago sa kahit alin sa mga ito ay is
 
 ### 1. Mga declarative na tool, na may imperative na escape hatch
 
-![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-street-map-controls)
+![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-street-map-controls)
 
 Ang isang tool ay isang manifest (`tool.json`) + isang template (`template.html`) + opsyonal na `hooks.js`.
 
@@ -343,9 +343,9 @@ Ginagawa nitong matibay sa paglipas ng mga taon ang mga naka-save na tool state 
 
 ### 5. First-class ang URL mode
 
-![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&format=svg&filename=aud-url-mode-qr)
+![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-url-mode-qr)
 
-![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=%23tool-canvas&filename=ov2-url-palette)
+![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-url-palette)
 
 Dapat maipahayag ang bawat input bilang isang URL parameter:
 
@@ -390,7 +390,7 @@ Nakatira ang logic sa `hooks.js` kung saan ito explicit at reviewable. Mga avail
 
 ### 10. Ang mga tool ay kino-compose ang mga tool
 
-![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-slides-deck)
+![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-slides-deck)
 
 Puwedeng i-embed ng isang tool ang render ng **ibang** tool nang walang tool-to-tool na imports - nire-resolve ang composition ng engine, hindi kailanman ng tool code. May dalawang surface:
 
@@ -413,7 +413,7 @@ I-compose ang render ng kahit anong tool: nananatiling totoong vector ang isang 
 
 ## Lifecycle, mula simula hanggang katapusan
 
-![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&format=svg&filename=aud-export-popup)
+![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&format=svg&dark=1&filename=aud-export-popup)
 
 Nakabuo sa pangalawang surface na iyon ang Slides tool: puwedeng maglaman ang kahit aling slot sa kahit aling slide ng ibang Lolly tool sa halip na isang imahe.
 

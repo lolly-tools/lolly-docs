@@ -1,6 +1,6 @@
 # দ্রুত শুরু
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
 
 Lolly আপনার নিয়ম — রং, টাইপ, লেআউট, লজিক — কে এমন টুলে পরিণত করে যা দিয়ে যে কেউ কয়েকটি ঘর পূরণ করে তৈরি ফাইল বানাতে পারে: ছবি, PDF, সোশ্যাল কার্ড, ভিডিও। শেখার কিছু নেই, আপলোড করারও কিছু নেই: সবটাই আপনার ডিভাইসে চলে, অনলাইনে বা অফলাইনে।
 
@@ -14,7 +14,7 @@ Lolly-তে আপনার ব্র্যান্ড হলো একটি 
 
 ### শূন্য থেকে শুরু করুন (ডিজাইন সিস্টেম বিল্ডার)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 প্রথমবার চালু করলে আপনি **Start** স্ক্রিনে (`#/start`) পৌঁছান — [**Brand Studio**](/info/brand-studio.html)। এটিকে একটি নাম আর একটি প্রাইমারি রং দিন, আর Lolly তা থেকে একটি সম্পূর্ণ, অ্যাক্সেসযোগ্য প্যালেট *তৈরি করে নেয়* — লাইট/ডার্ক সারফেস, টেক্সট, অ্যাকসেন্ট — ইঞ্জিন সর্বত্র যে একই রঙের গণিত ব্যবহার করে তা দিয়ে। একটি ফন্ট বেছে নিন, আর এক মিনিটেরও কম সময়ে আপনার কাছে একটি কার্যকর ব্র্যান্ড তৈরি। সেখান থেকে স্টুডিওর পাঁচটি ট্যাব (Logos, Colours, Type, Tokens, Catalogue) আপনাকে যতদূর ইচ্ছে এগিয়ে নিতে দেয় — পরে যেকোনো সময় ফিরে এসে যেকোনো কিছু আরও নিখুঁত করুন। ড্যাশবোর্ড থেকে আপনি সবসময় এখানে আবার আসতে পারেন (যদি আপনি Lolly-র কোনো ব্র্যান্ড-লকড সংস্করণ ব্যবহার না করে থাকেন)
 
@@ -34,7 +34,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### অ্যাপে এটিকে সূক্ষ্মভাবে সাজান
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=dashboard-brand)
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=dashboard-brand)
 
 একবার একটি ব্র্যান্ড সক্রিয় হলে, [**Brand Studio**](/info/brand-studio.html)-তে (`#/start`) এটিকে গড়ে তুলতে থাকুন — একটি রং বা একটি রোল বদলান আর আপনি টাইপ করার সঙ্গে সঙ্গে অ্যাপ জুড়ে প্রতিটি প্রিভিউ আপডেট হয়। (ড্যাশবোর্ডের **Design system** ট্যাব `#/d`-তে ব্র্যান্ডটিকে শুধু পড়ার জন্য *দেখায়*; স্টুডিও হলো যেখানে আপনি এটি এডিট করেন।) একই ব্র্যান্ড **Profile → Your brand** কার্ডে সংক্ষেপে দেখানো হয়। ফন্ট আসল: Google Fonts থেকে বেছে নিন আর Lolly ফাইলটিকে একটি ব্র্যান্ড অ্যাসেট হিসেবে **আপনার ডিভাইসে** সংরক্ষণ করে, ফলে আপনার টাইপোগ্রাফি অফলাইনেও সঙ্গে থাকে আর রেন্ডারের সময় কিছুই ফেচ করা হয় না।
 
@@ -68,7 +68,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 [কমিউনিটি টুল সেট](/info/builders.html) ওপেন সোর্স আর ব্র্যান্ড-নিরপেক্ষ — QR কোড, স্ট্রিট ম্যাপ, ফিল্টার, প্রাইভেসি ইউটিলিটি — আর আপনি সক্রিয় করার মুহূর্তেই এটি *আপনার* ব্র্যান্ডের সাপেক্ষে রেন্ডার করে।
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
 
 টুলগুলোতে আপনার নিজের ওপেন ডেটাও দিন: একটি **CSV** বা **JSON** টেবিল পেস্ট করুন বা ছেড়ে দিন আর একটি টুলের পুনরাবৃত্ত ঘরগুলো তা থেকে পূরণ হয়, প্রতি সারিতে একটি তৈরি অ্যাসেট।
 
@@ -83,7 +83,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 "URL-ই হলো API" কথাটা আক্ষরিক। নিচের চার্টটা কেউ আঁকেনি: এর ধরন, এর শিরোনাম আর এর গোটা ডেটা টেবিল অ্যাড্রেস বারে টাইপ করা হয়েছিল, আর একই লিঙ্ক যেকোনো ডিভাইসে একই চার্ট রেন্ডার করে।
 
-![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&filename=vt-d3-url-chart)
+![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&dark=1&filename=vt-d3-url-chart)
 
 ## এরপর কোথায় যাবেন
 

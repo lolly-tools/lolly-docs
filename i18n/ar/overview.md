@@ -18,7 +18,7 @@
 
 ### أين تقع في المشهد
 
-![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&filename=aud-gallery-landscape&sweep=1)
+![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=aud-gallery-landscape&sweep=1)
 
 | القدرة | Canva | بوابات العلامة التجارية | Illustrator | Figma / Penpot | **Lolly** |
 |---|---|---|---|---|---|
@@ -44,7 +44,7 @@
 
 ## دورة حياة الحملة
 
-![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-lifecycle-chart)
+![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 أوضح طريقة لرؤية ماهية Lolly ليست قائمة ميزات — بل تتبع أصل واحد وهو ينتقل من يد إلى يد. تابع بطاقة حملة واحدة مترجمة في مسيرها عبر المؤسسة:
 
@@ -62,7 +62,7 @@
 
 ## موافقة واحدة، عشرة آلاف أصل
 
-![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&format=svg&filename=ov2-batch-grid)
+![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&format=svg&dark=1&filename=ov2-batch-grid)
 
 لأن الموافقة تسكن في الأداة لا في الملف (راجع [كيف يقارن Lolly بغيره](/info/positioning.html))، يتوقف التوسع عن كونه مشكلة مراجعة. اعتمد أداة بطاقة اجتماعية مترجمة مرة واحدة، ثم ولد **10000 أصل بـ 12 لغة** من جدول بيانات — ولن يحتاج أي منها إلى فحص امتثال جديد من الشؤون القانونية أو من فريق العلامة التجارية، لأن القالب الذي جاءت كلها منه كان معتمدا سلفا.
 
@@ -227,9 +227,9 @@ lolly/
 
 ### الويب (PWA) — التوزيع الأساسي
 
-![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&format=svg&filename=aud-web-split)
+![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&format=svg&dark=1&filename=aud-web-split)
 
-![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&format=png&filename=ov2-phone-audiogram)
+![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&format=png&dark=1&filename=ov2-phone-audiogram)
 
 مستضاف على عنوان URL تتحكم فيه SUSE. يعمل دون اتصال متى ما خزن عامل الخدمة الأدوات والأصول مؤقتا. هنا سيستخدم المنصة معظم الموظفين والموردين والشركاء. لا حاجة إلى حساب — تخزن الحالة في IndexedDB لكل جهاز.
 
@@ -266,7 +266,7 @@ lolly qr-code                # lists inputs for that tool
 
 ## فئات الأدوات
 
-![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=aud-utilities)
+![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=aud-utilities)
 
 توسم الأدوات بحقل `category` في بيان كل منها لأغراض التجميع في المعرض.
 
@@ -296,7 +296,7 @@ lolly qr-code                # lists inputs for that tool
 
 ### 1. أدوات تصريحية، مع منفذ هروب أمري
 
-![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-street-map-controls)
+![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-street-map-controls)
 
 الأداة عبارة عن بيان (`tool.json`) + قالب (`template.html`) + ملف `hooks.js` اختياري.
 
@@ -343,9 +343,9 @@ lolly qr-code                # lists inputs for that tool
 
 ### 5. وضع URL مواطن من الدرجة الأولى
 
-![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&format=svg&filename=aud-url-mode-qr)
+![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-url-mode-qr)
 
-![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=%23tool-canvas&filename=ov2-url-palette)
+![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-url-palette)
 
 يجب أن يكون كل مدخل قابلا للتعبير عنه كمعامل URL:
 
@@ -390,7 +390,7 @@ lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H
 
 ### 10. الأدوات تركب أدوات
 
-![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-slides-deck)
+![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-slides-deck)
 
 تستطيع أداة تضمين تصيير أداة **أخرى** دون أي استيراد من أداة إلى أداة — التركيب يحله المحرك، لا كود الأدوات أبدا. هناك سطحان:
 
@@ -413,7 +413,7 @@ lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H
 
 ## دورة الحياة، من البداية إلى النهاية
 
-![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&format=svg&filename=aud-export-popup)
+![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&format=svg&dark=1&filename=aud-export-popup)
 
 أداة Slides مبنية على هذا السطح الثاني: أي خانة في أي شريحة يمكن أن تحتوي أداة Lolly أخرى بدلا من صورة.
 

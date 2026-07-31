@@ -6,7 +6,7 @@ Unde se încadrează această platformă în peisajul mai larg al instrumentelor
 
 ## Peisaj
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&filename=aud-open-canvas&sweep=1)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
 
 | Capacitate | Canva (canvas deschis) | Portaluri de brand (șabloane DAM) | Illustrator (profesionist desktop) | Figma / Penpot (profesionist online) | **Lolly (axat pe constrângeri)** |
 |---|---|---|---|---|---|
@@ -26,7 +26,7 @@ Forma golului este clară: nimic din peisajul existent nu ne oferă o ieșire ge
 
 ## Folosește-l pentru
 
-![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&filename=ov2-deck-studio-output)
+![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&dark=1&filename=ov2-deck-studio-output)
 
 Deck Studio e o bună măsură a plafonului de aici: un întreg set de slide-uri declarat ca date, aranjat live pe canvas și exportat ca un PowerPoint nativ, editabil.
 
@@ -45,7 +45,7 @@ Deck Studio e o bună măsură a plafonului de aici: un întreg set de slide-uri
 
 ## Aprobă instrumentul, nu fișierul
 
-![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-approve-the-tool)
+![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-approve-the-tool)
 
 Orice alt instrument din peisaj produce un *fișier* care apoi trebuie verificat - un brand manager într-un thread de Slack, juridicul pe disclaimer, o rundă de modificări, încă un review. Lolly mută aprobarea **cu un pas mai în amonte**. Regulile de brand - codurile hex exacte, fișierele de font licențiate, marginile de bleed, spațierea - sunt fixate în codul HTML și CSS al instrumentului, așa că template-ul *nu poate fizic* să emită o resursă în afara brandului. Layout-ul însuși e portant.
 
@@ -63,7 +63,7 @@ Aceasta e schimbarea de paradigmă pe care o aduce de fapt motorul determinist: 
 
 ## Ce oferă acest lucru în mod unic
 
-![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-street-map-poster)
 
 - **Potențial de design îndrăzneț, livrat în siguranță, în context.** Instrumentele pot exprima idei de design aventuroase în interiorul unor bariere de protecție codificate ferm.
 - **Automatizare de conținut definită prin software, care returnează resursa finală.** Input → fișier final. Fără „acum salvează-l din instrumentul tău de design și prelucrează-l ulterior”.

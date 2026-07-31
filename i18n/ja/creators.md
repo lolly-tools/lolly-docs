@@ -42,13 +42,13 @@ Lolly は Canva や Figma を目指しているわけではありません。Lol
 
 Street Map は、このトレードオフのよい例です。都市と2つのカラーを選ぶだけで、地図表現、道路の太さ、水域の扱いはすべて決められています。
 
-![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&filename=vt-street-map-poster&sweep=1)
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-street-map-poster&sweep=1)
 
 いくつかの項目を入力するだけで、完成したアセットが手に入ります——フォントを選ぶ必要も、カラーに迷う必要も、「このロゴで合っているだろうか」と考える必要もありません。ツールはすでにすべて把握しています。メール署名、イベントのカウントダウン、名言カード、バッジ、地図——チームが火曜の午後4時に必要とするものすべてを、セルフサービスで用意できます。しかも顧客データが端末の外に出ることはないため、コラボレーションにコンプライアンス上のリスクはありません。
 
 ### ライブデータから完成したビジュアルへ
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
 
 **CSV** や **JSON** のテーブルをチャート、地図、表テンプレートに接続し、数値を更新するだけです——レイアウトは自動で調整されます。選挙結果、四半期決算、気象イベントなど、フォーマットを一度作れば、記事が出るたびに何度でも再利用できます。ハウススタイルに*正確に*一致します。それはゆるいガイドラインとしてではなく、テンプレートレベルで強制されているからです。
 
@@ -60,7 +60,7 @@ Street Map は、このトレードオフのよい例です。都市と2つの�
 
 高度なフィルター、合成、アニメーション、ライブカメラエフェクト、生成的デザイン——あらゆる Web 技術をテンプレート作者が利用できるため、天井は非常に高く設定されています。
 
-![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&filename=use-mesh-output)
+![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 *ファイル*ではなく*ツール*を作りましょう。1万枚のカードを作るのではなく、1万枚のカードを生成する仕組みを作るのです。変わるべきでないものはロックし、変わるべきものだけを公開しましょう。
 

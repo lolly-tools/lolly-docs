@@ -6,7 +6,7 @@
 
 ## 지형
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&filename=aud-open-canvas&sweep=1)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
 
 | 기능 | Canva(열린 캔버스) | Brand portals(DAM 템플릿화) | Illustrator(데스크톱 프로) | Figma / Penpot(온라인 프로) | **Lolly(제약 우선)** |
 |---|---|---|---|---|---|
@@ -26,7 +26,7 @@
 
 ## 이런 용도로 사용하세요
 
-![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&filename=ov2-deck-studio-output)
+![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&dark=1&filename=ov2-deck-studio-output)
 
 Deck Studio는 여기서의 천장이 얼마나 높은지 잘 보여줘요: 슬라이드 덱 전체를 데이터로 선언하고, 캔버스에서 실시간으로 배치한 뒤, 편집 가능한 네이티브 PowerPoint로 내보내요.
 
@@ -45,7 +45,7 @@ Deck Studio는 여기서의 천장이 얼마나 높은지 잘 보여줘요: 슬�
 
 ## 파일이 아니라 도구를 승인하세요
 
-![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-approve-the-tool)
+![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-approve-the-tool)
 
 이 지형에 있는 다른 도구들은 모두 *파일*을 만들어내고, 그 파일은 그다음에 검사를 받아야 해요——Slack 스레드에서 브랜드 매니저가 보고, 법무가 면책 문구를 확인하고, 수정이 한 바퀴 돌고, 또 한 번 검토가 들어와요. Lolly는 승인을 **한 단계 위로** 옮겨요. 브랜드 규칙——정확한 hex 코드, 라이선스된 폰트 파일, 도련 여백, 간격——이 도구의 HTML과 CSS에 하드코딩돼 있어서, 템플릿은 브랜드에서 벗어난 에셋을 *물리적으로 만들어낼 수 없어요*. 레이아웃 자체가 하중을 지탱하는 구조예요.
 
@@ -63,7 +63,7 @@ Deck Studio는 여기서의 천장이 얼마나 높은지 잘 보여줘요: 슬�
 
 ## Lolly만이 제공하는 가치
 
-![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-street-map-poster)
 
 - **문맥 안에서 안전하게 발휘되는 대담한 디자인 잠재력.** 도구는 하드코딩된 가드레일 안에서 과감한 디자인 아이디어를 표현할 수 있어요.
 - **최종 에셋을 그대로 돌려주는 소프트웨어 정의 콘텐츠 자동화.** 입력 → 완성 파일. "디자인 도구에서 저장한 다음 후처리하기"가 필요 없어요.

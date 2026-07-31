@@ -20,11 +20,11 @@
 
 ان میں سے کوئی چیز لازمی نہیں۔ خالی پروفائل بھی بالکل ٹھیک پروفائل ہے؛ آپ صرف وہی بھرتے ہیں جو آپ کو ٹائپنگ سے بچائے۔
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details&sweep=1)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&dark=1&filename=profile-details&sweep=1)
 
 ترجیحات ہی وہ ایک حصہ ہیں جو یہ بدلتی ہیں کہ ایپ آپ کو کیسا دکھائی دیتا ہے۔ تھیم کارڈز لائیو پری ویو ہیں اور جس لمحے آپ کوئی چنتے ہیں وہ لاگو ہو جاتا ہے — صرف اِسی ڈیوائس پر۔
 
-![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
 
 ## پروفائل ایک سیاق و سباق ہے، صرف ایک شخص نہیں
 
@@ -32,7 +32,7 @@
 
 ### ایک فرد کے طور پر
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
 
 پہلے سے طے شدہ۔ پروفائل آپ ہیں: آپ کا نام، آپ کا ای میل، آپ کا ہیڈ شاٹ۔ اسے ایک بار سیٹ کریں اور آپ کا دستخط، آپ کا بیج، آپ کا کانفرنس لاک اپ سب خود بخود بھر جاتے ہیں۔ زیادہ تر لوگوں کو بس اتنی ہی ضرورت ہوگی۔
 
@@ -58,13 +58,13 @@ Lolly میں، وہ کردار بس **ایک اور پروفائل ہے جو آ�
 
 اسٹوریج ہی وہ جگہ ہے جہاں اِس کے دونوں حصے رہتے ہیں: میٹر زمرہ بہ زمرہ حساب دیتا ہے کہ یہ انسٹال کتنے بائٹ رکھے ہوئے ہے، اور اُس کے نیچے کے بٹن ہی وہ طریقہ ہیں جس سے آپ اسے صاف کرتے یا ساتھ لے جاتے ہیں۔
 
-![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
 
 > ہر سیاق کے لیے ایک بنڈل رکھیں اور فائلوں کا نام ان کی حیثیت کے مطابق رکھیں (`LollyTools-events-2026.zip`، `LollyTools-me.zip`)۔ فائل *ہی* پروفائل ہے۔
 
 ## پروفائل کو نئے ڈیوائس پر منتقل کرنا
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls&sweep=1)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
 
 چونکہ پروفائل مکمل طور پر مقامی ہے، اسے کسی خالی انسٹال پر لانے کا واحد طریقہ — نیا لیپ ٹاپ، تازہ ری سیٹ کیا گیا براؤزر، کسی ساتھی کی مشین، ایک آف لائن باکس — یہ ہے کہ **فائل کو ساتھ لے جائیں**۔ کوئی لاگ ان اسے آپ کے لیے بحال نہیں کرتا، اور یہی نکتہ ہے: شروع سے ہی کچھ بھی آپ کے ڈیوائس سے باہر نہیں گیا۔
 
@@ -81,7 +81,7 @@ Lolly میں، وہ کردار بس **ایک اور پروفائل ہے جو آ�
 
 ## ٹولز آپ کی پروفائل کو کیسے استعمال کرتے ہیں
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&dark=1&filename=pd-use-my-details)
 
 کوئی ٹول صرف انہی پروفائل فیلڈز کو *پہلے سے بھرتا* ہے جنہیں بائنڈ کرنے کے لیے اسے واضح طور پر بنایا گیا تھا:
 
@@ -101,7 +101,7 @@ Lolly میں، وہ کردار بس **ایک اور پروفائل ہے جو آ�
 
 ### "پروفائل" کہیں اور دو مختلف چیزوں کا مطلب رکھتا ہے — یہ نہیں
 
-![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&filename=pv-identity-enrol)
+![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&dark=1&filename=pv-identity-enrol)
 
 یہ لفظ پورے پراجیکٹ میں کئی معنوں میں استعمال ہوتا ہے۔ ان میں سے کوئی بھی وہ ذاتی پروفائل نہیں جس کے بارے میں یہ صفحہ ہے:
 

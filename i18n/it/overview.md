@@ -18,7 +18,7 @@ Il risultato è l'**abbondanza**: ogni evento ha la segnaletica corretta, ogni a
 
 ### Dove si colloca nel panorama
 
-![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&filename=aud-gallery-landscape&sweep=1)
+![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=aud-gallery-landscape&sweep=1)
 
 | Funzionalità | Canva | Portali di marca | Illustrator | Figma / Penpot | **Lolly** |
 |---|---|---|---|---|---|
@@ -44,7 +44,7 @@ La lacuna è chiara: niente nel panorama esistente ci offre un output basato su 
 
 ## Il ciclo di vita di una campagna
 
-![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-lifecycle-chart)
+![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 Il modo più chiaro per capire cos'è Lolly non è un elenco di funzioni: è seguire un singolo asset mentre passa di mano in mano. Guarda una sola card di campagna localizzata attraversare l'organizzazione:
 
@@ -62,7 +62,7 @@ Questo è il moltiplicatore di forza. Lolly non è un cassetto di strumenti sepa
 
 ## Un'approvazione, diecimila asset
 
-![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&format=svg&filename=ov2-batch-grid)
+![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&format=svg&dark=1&filename=ov2-batch-grid)
 
 Poiché l'approvazione vive nello strumento e non nel file (vedi [Come si confronta Lolly](/info/positioning.html)), la scala smette di essere un problema di revisione. Approva una volta uno strumento per card social localizzate, poi genera **10.000 asset in 12 lingue** da un foglio di calcolo - e nessuno di essi richiede un nuovo controllo di conformità da parte del legale o del brand, perché il template da cui provengono tutti era già approvato.
 
@@ -227,9 +227,9 @@ La piattaforma gira su diverse superfici - PWA web, Tauri desktop/mobile, la CLI
 
 ### Web (PWA) - distribuzione principale
 
-![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&format=svg&filename=aud-web-split)
+![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&format=svg&dark=1&filename=aud-web-split)
 
-![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&format=png&filename=ov2-phone-audiogram)
+![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&format=png&dark=1&filename=ov2-phone-audiogram)
 
 Ospitata a un URL controllato da SUSE. Funziona offline non appena il service worker ha messo in cache strumenti e asset. È qui che la maggior parte di dipendenti, fornitori e partner userà la piattaforma. Non serve un account - lo stato è memorizzato in IndexedDB per dispositivo.
 
@@ -266,7 +266,7 @@ Su qualsiasi superficie ti trovi, la scheda Capacità della dashboard è la mapp
 
 ## Categorie di strumenti
 
-![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=aud-utilities)
+![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=aud-utilities)
 
 Gli strumenti sono etichettati con una `category` nel loro manifest per il raggruppamento nella galleria.
 
@@ -296,7 +296,7 @@ Queste decisioni sono consolidate. Cambiarne anche solo una è un'impresa import
 
 ### 1. Strumenti dichiarativi, con una via di fuga imperativa
 
-![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-street-map-controls)
+![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-street-map-controls)
 
 Uno strumento è un manifest (`tool.json`) + un template (`template.html`) + `hooks.js` opzionale.
 
@@ -343,9 +343,9 @@ Questo rende gli stati degli strumenti salvati e i link condivisi via URL duratu
 
 ### 5. La modalità URL è di prima classe
 
-![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&format=svg&filename=aud-url-mode-qr)
+![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-url-mode-qr)
 
-![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=%23tool-canvas&filename=ov2-url-palette)
+![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-url-palette)
 
 Ogni input deve poter essere espresso come parametro URL:
 
@@ -390,7 +390,7 @@ La logica vive in `hooks.js`, dove è esplicita e revisionabile. Helper Handleba
 
 ### 10. Gli strumenti compongono strumenti
 
-![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&filename=ov2-slides-deck)
+![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-slides-deck)
 
 Uno strumento può incorporare il render di **un altro** strumento senza alcun import da strumento a strumento - la composizione viene risolta dal motore, mai dal codice dello strumento. Ci sono due superfici:
 
@@ -413,7 +413,7 @@ Puoi comporre il render di qualsiasi strumento: un figlio **SVG** resta un vero 
 
 ## Ciclo di vita, dall'inizio alla fine
 
-![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&format=svg&filename=aud-export-popup)
+![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&format=svg&dark=1&filename=aud-export-popup)
 
 Lo strumento Slides è costruito su quella seconda superficie, l'URL di embed portabile: qualsiasi slot di qualsiasi slide può contenere un altro strumento Lolly invece di un'immagine.
 

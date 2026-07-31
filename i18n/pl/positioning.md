@@ -6,7 +6,7 @@ Gdzie ta platforma wpisuje się w szerszy krajobraz narzędzi kreatywnych i gdzi
 
 ## Krajobraz
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&filename=aud-open-canvas&sweep=1)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
 
 | Funkcja | Canva (Otwarte płótno) | Portale marki (szablony DAM) | Illustrator (Pro, desktop) | Figma / Penpot (Pro, online) | **Lolly (Najpierw ograniczenia)** |
 |---|---|---|---|---|---|
@@ -26,7 +26,7 @@ Kształt luki jest jasny: nic w istniejącym krajobrazie nie daje nam wyników g
 
 ## Do czego używać
 
-![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&filename=ov2-deck-studio-output)
+![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&dark=1&filename=ov2-deck-studio-output)
 
 - Szybkie generowanie zoperacjonalizowanych zasobów kreatywnych (kafelki wydarzeń, plakietki, podpisy, alerty)
 - Swobodne rozmieszczanie na otwartym płótnie (Layout Studio), gdy elementy - kolory, typografia, ikony, obrazy - muszą pozostać zgodne z globalnymi ustawieniami marki
@@ -45,7 +45,7 @@ Deck Studio dobrze pokazuje, gdzie jest tu sufit: cała prezentacja zadeklarowan
 
 ## Zatwierdzaj narzędzie, nie plik
 
-![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-approve-the-tool)
+![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-approve-the-tool)
 
 Każde inne narzędzie w tym krajobrazie produkuje *plik*, który potem trzeba sprawdzić - menedżer marki w wątku na Slacku, dział prawny przy klauzuli, runda zmian, kolejny przegląd. Lolly przenosi zatwierdzenie **o krok w górę strumienia**. Zasady marki - dokładne kody hex, licencjonowane pliki fontów, spady, odstępy - są wpisane na stałe w HTML i CSS narzędzia, więc szablon *fizycznie nie może* wypuścić zasobu niezgodnego z marką. Sam układ jest elementem nośnym.
 
@@ -63,7 +63,7 @@ To właśnie ta zmiana paradygmatu, którą faktycznie przynosi deterministyczny
 
 ## Co zapewnia wyłącznie ta platforma
 
-![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-street-map-poster)
 
 - **Ogromny potencjał projektowy dostarczany bezpiecznie w kontekście.** Narzędzia mogą wyrażać odważne pomysły projektowe w ramach twardo zakodowanych barier ochronnych.
 - **Programowo definiowana automatyzacja treści, która zwraca gotowy zasób.** Dane wejściowe → gotowy plik. Żadnego „teraz zapisz to w swoim narzędziu projektowym i przetwórz dodatkowo".

@@ -34,15 +34,15 @@ Lolly는 여러분의 조직이 실제로 운영되는 방식에 맞도록 만�
 
 ## 유출 방지 유틸리티
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data&sweep=1)
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-strip-data&sweep=1)
 
 Text Helper는 파일이 아니라 텍스트에 대해 같은 거래를 제공해요. 직원이 원래라면 낯선 사이트에서 찾아 헤맬 탭 형태의 작업대이고, 다루는 내용이 페이지를 떠나는 일이 전혀 없기 때문에 입력을 하나도 선언하지 않아요.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
 
 Compress PDF가 이 묶음을 완성해요: 너무 큰 첨부 파일이 여러분이 고른 품질 설정에 따라, 이미 그 파일을 갖고 있는 기기 위에서 작아져요.
 
-![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=ov2-compress-pdf)
+![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=ov2-compress-pdf)
 
 Lolly 도구 중 한 범주는 *특별히* 파일을 경계 안에 머무르게 하려고 존재해요. 프라이버시 유틸리티예요.
 
@@ -61,7 +61,7 @@ Lolly 도구 중 한 범주는 *특별히* 파일을 경계 안에 머무르게 
 
 Prompt to Image는 결정성을 가장 소박하게 보여줘요: 텍스트가 입력의 전부이고, 조판된 이미지가 출력의 전부이며, 같은 텍스트는 언제나 같은 모습으로 조판돼요.
 
-![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-prompt-to-image)
+![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 모든 도구 입력은 URL 파라미터로 표현할 수 있고, 같은 입력은 언제나 같은 파일을 만들어요. 이는 오퍼레이터에게 두 가지 의미가 있어요:
 
@@ -70,7 +70,7 @@ Prompt to Image는 결정성을 가장 소박하게 보여줘요: 텍스트가 �
 
 ## 출처와 Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
 내보낸 파일은 **Content Credentials**를 지닐 수 있어요——파일 바이트의 해시에 묶인, 서명된 [C2PA](https://c2pa.org) 매니페스트예요. 이후 파일이 조금이라도 바뀌면 봉인이 깨지기 때문에, C2PA를 인식하는 검증기는 **변조를 암호학적으로, 오프라인에서 탐지**해요. 이 크리덴셜은 변조-*탐지형*이에요: 변조를 막기보다 알려 주는 쪽이며, 바로 그 특성 덕분에 완전한 오프라인 검증이 가능해져요.
 
@@ -85,7 +85,7 @@ Prompt to Image는 결정성을 가장 소박하게 보여줘요: 텍스트가 �
 
 ## 암호화와 비밀번호 설정
 
-![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&format=svg&filename=aud-pdf-lock)
+![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&format=svg&dark=1&filename=aud-pdf-lock)
 
 잠긴 채로 이동해야 하는 파일을 위해, 모든 처리는 온디바이스에서 이루어져요:
 

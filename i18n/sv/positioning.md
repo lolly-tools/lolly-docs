@@ -6,7 +6,7 @@ Var den här plattformen passar in i det bredare landskapet av kreativa verktyg,
 
 ## Landskap
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&filename=aud-open-canvas&sweep=1)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
 
 | Förmåga | Canva (Öppen canvas) | Varumärkesportaler (DAM-mallar) | Illustrator (professionellt skrivbordsprogram) | Figma / Penpot (professionellt, online) | **Lolly (Regelstyrd)** |
 |---|---|---|---|---|---|
@@ -26,7 +26,7 @@ Formen på luckan är tydlig: inget i det befintliga landskapet ger oss regelsty
 
 ## Använd det för
 
-![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&filename=ov2-deck-studio-output)
+![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&dark=1&filename=ov2-deck-studio-output)
 
 Deck Studio är ett bra mått på taket här: en hel presentation deklarerad som data, layoutad live på canvasen och exporterad som en inbyggt redigerbar PowerPoint.
 
@@ -45,7 +45,7 @@ Deck Studio är ett bra mått på taket här: en hel presentation deklarerad som
 
 ## Godkänn verktyget, inte filen
 
-![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-approve-the-tool)
+![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-approve-the-tool)
 
 Alla andra verktyg i landskapet producerar en *fil* som sedan måste kontrolleras - en varumärkesansvarig i en Slack-tråd, juridik på ansvarsfriskrivningen, en runda ändringar, ännu en granskning. Lolly flyttar godkännandet **ett steg uppströms**. Varumärkesreglerna - exakta hexkoder, licensierade fontfiler, utfallsmarginaler, avstånd - är hårdkodade i verktygets HTML och CSS, så mallen *kan fysiskt inte* skicka ut en tillgång som bryter mot varumärket. Layouten är själv bärande.
 
@@ -63,7 +63,7 @@ Det här är paradigmskiftet som den deterministiska motorn faktiskt levererar: 
 
 ## Vad detta erbjuder som är unikt
 
-![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-street-map-poster)
 
 - **Vild designpotential levererad säkert i sitt sammanhang.** Verktyg kan uttrycka djärva designidéer inom hårdkodade skyddsräcken.
 - **Mjukvarudefinierad innehållsautomation som returnerar den slutgiltiga tillgången.** Input → färdig fil. Inget "nu får du spara den från ditt designverktyg och efterbehandla den."

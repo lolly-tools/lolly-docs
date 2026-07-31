@@ -6,7 +6,7 @@ Nền tảng này phù hợp ở đâu trong bối cảnh công cụ sáng tạo
 
 ## Bối cảnh
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&filename=aud-open-canvas&sweep=1)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
 
 | Khả năng | Canva (Canvas mở) | Cổng thương hiệu (Tạo mẫu DAM) | Illustrator (Desktop chuyên nghiệp) | Figma / Penpot (Trực tuyến chuyên nghiệp) | **Lolly (Ưu tiên ràng buộc)** |
 |---|---|---|---|---|---|
@@ -26,7 +26,7 @@ Hình dạng của khoảng trống này rất rõ ràng: không có gì trong b
 
 ## Dùng để
 
-![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&filename=ov2-deck-studio-output)
+![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&dark=1&filename=ov2-deck-studio-output)
 
 Deck Studio là thước đo tốt cho giới hạn trên ở đây: cả một bộ slide được khai báo dưới dạng dữ liệu, được dàn trực tiếp trên canvas, rồi xuất ra thành tệp PowerPoint gốc có thể chỉnh sửa.
 
@@ -45,7 +45,7 @@ Deck Studio là thước đo tốt cho giới hạn trên ở đây: cả một 
 
 ## Phê duyệt công cụ, không phải tệp
 
-![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-approve-the-tool)
+![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-approve-the-tool)
 
 Mọi công cụ khác trong bối cảnh này đều tạo ra một *tệp* mà rồi phải được kiểm tra - một quản lý thương hiệu trong một luồng Slack, bộ phận pháp lý xem phần miễn trừ trách nhiệm, một vòng sửa đổi, rồi một lượt rà soát nữa. Lolly đẩy việc phê duyệt **lên một bước ở phía trên**. Các quy tắc thương hiệu - mã hex chính xác, tệp phông có giấy phép, lề bleed, khoảng cách - được mã hoá cứng vào HTML và CSS của công cụ, nên template *về mặt vật lý không thể* xuất ra một tài nguyên lệch thương hiệu. Bản thân layout mới là phần chịu lực.
 
@@ -63,7 +63,7 @@ Vì vậy bạn thôi phê duyệt đầu ra và bắt đầu phê duyệt **cô
 
 ## Điều mà Lolly cung cấp một cách độc nhất
 
-![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-street-map-poster)
 
 - **Tiềm năng thiết kế táo bạo được mang lại một cách an toàn, đúng bối cảnh.** Các công cụ có thể thể hiện những ý tưởng thiết kế mạo hiểm trong khuôn khổ các rào chắn được mã hóa cứng.
 - **Tự động hóa nội dung được định nghĩa bằng phần mềm, trả về tài nguyên cuối cùng.** Đầu vào → tệp cuối cùng. Không còn cảnh "giờ hãy lưu nó từ công cụ thiết kế của bạn rồi xử lý hậu kỳ."

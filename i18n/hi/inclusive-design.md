@@ -22,7 +22,7 @@ Lolly एक क्रिएटिव टूल है: लोग यहाँ �
 
 ## एक्सेसिबिलिटी
 
-![The Accessibility card on the profile page: four plain switches - Reduce motion, Hide colourful previews, High contrast and Large text - each with a help tip](/t/url-shot?url=%2F%23%2Fprofile&width=430&height=900&dpi=192&waitMs=2000&scrollDepth=1300&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&cropSelector=.profile-card--a11y&filename=incl-a11y-card&sweep=1)
+![The Accessibility card on the profile page: four plain switches - Reduce motion, Hide colourful previews, High contrast and Large text - each with a help tip](/t/url-shot?url=%2F%23%2Fprofile&width=430&height=900&dpi=192&waitMs=2000&scrollDepth=1300&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&cropSelector=.profile-card--a11y&dark=1&filename=incl-a11y-card&sweep=1)
 
 प्लेटफ़ॉर्म के अपने संकेतों (सिस्टम डार्क मोड, OS की रिड्यूस्ड-मोशन प्राथमिकता) का पालन
 करने के अलावा, Lolly आपकी प्रोफ़ाइल पर स्पष्ट, अपनी मर्ज़ी से चालू की जाने वाली
@@ -50,11 +50,11 @@ Lolly एक क्रिएटिव टूल है: लोग यहाँ �
 
 ## उत्तेजना घटाना और बढ़ाना
 
-![The Neurospicy player docked over the app: track title and transport, separate Music and Effects volumes, and the Atmosphere mixer with Wind, Birdsong and Crickets raised](/t/url-shot?url=%2F%23%2F%3Fneuro%3Dplayer&width=1440&height=1000&dpi=192&waitMs=3200&css=%5Bdata-dock-viz-slot%5D%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23neuro-dock&filename=incl-neuro-player)
+![The Neurospicy player docked over the app: track title and transport, separate Music and Effects volumes, and the Atmosphere mixer with Wind, Birdsong and Crickets raised](/t/url-shot?url=%2F%23%2F%3Fneuro%3Dplayer&width=1440&height=1000&dpi=192&waitMs=3200&css=%5Bdata-dock-viz-slot%5D%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23neuro-dock&dark=1&filename=incl-neuro-player)
 
-![The visualiser open over the app, painting the music as a full-motion field, with its own transport and volume controls](/t/url-shot?url=%2F%23%2F%3Fneuro%3Dviz&width=1440&height=900&dpi=96&waitMs=2000&waitSelector=.viz-panel%5Bdata-demo-settled%5D&walker=1&format=svg&cropSelector=.viz-surface&css=.viz-surface%20*%7Bbackdrop-filter%3Anone%21important%7D&filename=incl-neuro-viz)
+![The visualiser open over the app, painting the music as a full-motion field, with its own transport and volume controls](/t/url-shot?url=%2F%23%2F%3Fneuro%3Dviz&width=1440&height=900&dpi=96&waitMs=2000&waitSelector=.viz-panel%5Bdata-demo-settled%5D&walker=1&format=svg&cropSelector=.viz-surface&css=.viz-surface%20*%7Bbackdrop-filter%3Anone%21important%7D&dark=1&filename=incl-neuro-viz)
 
-![A utility card on a phone-width screen: a calm icon and text tile that keeps its favourite, pin and info actions](/t/url-shot?url=%2F%23%2Fu&width=430&height=900&dpi=192&waitMs=2400&scrollDepth=900&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D.gtile%7Bcontent-visibility%3Avisible%7D&format=svg&walker=1&cropSelector=.gtile--utility%5Bdata-tool-id%5D&filename=incl-utility-card)
+![A utility card on a phone-width screen: a calm icon and text tile that keeps its favourite, pin and info actions](/t/url-shot?url=%2F%23%2Fu&width=430&height=900&dpi=192&waitMs=2400&scrollDepth=900&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D.gtile%7Bcontent-visibility%3Avisible%7D&format=svg&walker=1&cropSelector=.gtile--utility%5Bdata-tool-id%5D&dark=1&filename=incl-utility-card)
 
 न्यूरोडाइवर्जेंट लोग एक ही ज़रूरत वाला एक ही समूह नहीं हैं। जो दिमाग़ किसी कठिन दिन रंगीन
 थंबनेल की दीवार से अभिभूत हो जाता है, वही किसी और दिन तेज़ संवेदी इनपुट की तलाश कर सकता
@@ -75,7 +75,7 @@ Lolly एक क्रिएटिव टूल है: लोग यहाँ �
 
 ## भाषा और लोकलाइज़ेशन की प्राथमिकता
 
-![The appearance settings rendered in Arabic on a phone-width screen: a fully right-to-left layout, not a mirrored afterthought](/t/url-shot?url=%2F%23%2Fprofile%3Flang%3Dar&width=430&height=900&dpi=192&waitMs=2200&scrollDepth=950&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.profile-card--appearance&filename=incl-profile-rtl)
+![The appearance settings rendered in Arabic on a phone-width screen: a fully right-to-left layout, not a mirrored afterthought](/t/url-shot?url=%2F%23%2Fprofile%3Flang%3Dar&width=430&height=900&dpi=192&waitMs=2200&scrollDepth=950&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=incl-profile-rtl)
 
 - <!--i:globe--> Lolly का इंटरफ़ेस और दस्तावेज़ 25 से ज़्यादा भाषाओं में अनुवादित हैं, और
   हम **भाषाओं को इस आधार पर प्राथमिकता देते हैं कि उन्हें कितने लोग बोलते हैं**, बाज़ार के

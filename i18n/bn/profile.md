@@ -20,11 +20,11 @@
 
 এর কোনোটিই বাধ্যতামূলক নয়। একটি ফাঁকা প্রোফাইলও পুরোপুরি ভালো প্রোফাইল; আপনি শুধু ততটুকুই পূরণ করেন যা আপনার টাইপ করার শ্রম বাঁচায়।
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details&sweep=1)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&dark=1&filename=profile-details&sweep=1)
 
 পছন্দসমূহই সেই একটা অংশ, যা বদলে দেয় অ্যাপটা আপনার দিকে কেমন দেখায়। থিম কার্ডগুলো লাইভ প্রিভিউ, আর আপনি একটা বাছার সঙ্গে সঙ্গেই সেটা প্রয়োগ হয় — শুধু এই ডিভাইসে।
 
-![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
 
 ## প্রোফাইল একটি প্রেক্ষাপট, কেবল একজন ব্যক্তি নয়
 
@@ -32,7 +32,7 @@
 
 ### একজন ব্যক্তি হিসেবে
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
 
 ডিফল্ট। প্রোফাইলটি আপনি নিজেই: আপনার নাম, আপনার ইমেল, আপনার হেডশট। একবার সেট করুন, আর আপনার সিগনেচার, আপনার ব্যাজ, আপনার কনফারেন্স লকআপ সবই নিজে থেকে পূরণ হয়ে যায়। বেশিরভাগ মানুষের কখনো এর বেশি কিছু লাগবে না।
 
@@ -58,13 +58,13 @@ Lolly-তে, সেই ভূমিকা কেবল **হাতের কা
 
 স্টোরেজেই এর দুটো দিকই থাকে: মিটার ক্যাটেগরি ধরে ধরে হিসাব দেয় এই ইনস্টলটা কত বাইট ধরে রেখেছে, আর তার নিচের বোতামগুলোই হলো সেটা মুছে ফেলার বা সঙ্গে নিয়ে যাওয়ার উপায়।
 
-![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
 
 > প্রতিটি প্রেক্ষাপটের জন্য একটি করে বান্ডল রাখুন এবং ফাইলগুলো যা, তা অনুযায়ী নাম বদলান (`LollyTools-events-2026.zip`, `LollyTools-me.zip`)। ফাইলটিই *হলো* প্রোফাইল।
 
 ## নতুন ডিভাইসে প্রোফাইল সরানো
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls&sweep=1)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
 
 যেহেতু একটি প্রোফাইল সম্পূর্ণ লোকাল, তাই এটি কোনো ফাঁকা ইনস্টলে নেওয়ার একমাত্র উপায় — একটি নতুন ল্যাপটপ, সদ্য রিসেট করা ব্রাউজার, সহকর্মীর মেশিন, একটি অফলাইন বক্স — হলো **ফাইলটি সঙ্গে নিয়ে যাওয়া**। কোনো লগইন এটি আপনার জন্য ফিরিয়ে আনে না, আর এটাই মূল কথা: প্রথম থেকেই কিছুই আপনার ডিভাইস ছেড়ে যায়নি।
 
@@ -81,7 +81,7 @@ Lolly-তে, সেই ভূমিকা কেবল **হাতের কা
 
 ## আপনার প্রোফাইল টুল কীভাবে ব্যবহার করে
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&dark=1&filename=pd-use-my-details)
 
 একটি টুল কেবল সেই প্রোফাইল ফিল্ডগুলোই *প্রি-ফিল* করে যেগুলো বাঁধার জন্য এটি স্পষ্টভাবে তৈরি করা হয়েছিল:
 
@@ -101,7 +101,7 @@ Lolly-তে, সেই ভূমিকা কেবল **হাতের কা
 
 ### "প্রোফাইল" শব্দটির আরও দুটি ভিন্ন অর্থ আছে অন্যত্র — এটি সেগুলোর কোনোটিই নয়
 
-![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&filename=pv-identity-enrol)
+![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&dark=1&filename=pv-identity-enrol)
 
 শব্দটি পুরো প্রজেক্ট জুড়ে বহু অর্থে ব্যবহৃত হয়। এই দুটির কোনোটিই এই পাতায় আলোচিত ব্যক্তিগত প্রোফাইল নয়:
 

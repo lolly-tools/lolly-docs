@@ -42,13 +42,13 @@ Lolly will nicht Canva oder Figma sein. Es positioniert sich dort, wo *Regeln, W
 
 Street Map ist ein gutes Beispiel für diesen Tauschhandel: Sie wählen eine Stadt und ein paar Farben, und die Kartografie, die Straßenstärken und das Wasser sind für Sie entschieden.
 
-![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&filename=vt-street-map-poster&sweep=1)
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-street-map-poster&sweep=1)
 
 Füllen Sie ein paar Felder aus und erhalten Sie das fertige Asset - keine Schriften auswählen, keine Farben infrage stellen, kein „Ist das das richtige Logo?" Das Tool weiß es bereits. E-Mail-Signaturen, Event-Countdowns, Zitatkarten, Badges, Straßenkarten - alles, was Ihr Team an einem Dienstag um 16 Uhr braucht, im Selbstbedienungsprinzip. Und weil keine Kundendaten das Gerät verlassen, entsteht bei der Zusammenarbeit kein Compliance-Risiko.
 
 ### Von Live-Daten zum fertigen Visual
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
 
 Verbinden Sie eine **CSV**- oder **JSON**-Tabelle mit einer Diagramm-, Karten- oder Tabellenvorlage und aktualisieren Sie die Zahlen - das Layout kümmert sich von selbst darum. Wahlergebnisse, Quartalszahlen, Wetterereignisse: Erstellen Sie das Format einmal und nutzen Sie es jedes Mal wieder, wenn die Story läuft. Treffen Sie Ihren Corporate-Style *exakt*, denn er wird auf Vorlagenebene durchgesetzt, nicht als lose Richtlinie belassen.
 
@@ -60,7 +60,7 @@ Ein Tool kann die Live-Ausgabe eines anderen Tools als Asset einbetten - ein Nam
 
 Fortgeschrittene Filter, Compositing, Animation, Live-Kameraeffekte, generatives Design - jede Webtechnologie steht einer Vorlagen-Autorin oder einem Vorlagen-Autor zur Verfügung, die Obergrenze liegt also hoch.
 
-![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&filename=use-mesh-output)
+![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 Erstellen Sie *Tools*, keine Dateien: Bauen Sie das, was 10.000 Karten generiert, statt 10.000 Karten von Hand zu erstellen. Sperren Sie, was sich nicht ändern soll; geben Sie nur frei, was variieren soll.
 

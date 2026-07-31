@@ -42,13 +42,13 @@ Hindi sinusubukan ng Lolly na maging Canva o Figma. Nasa lugar ito kung saan *ma
 
 Magandang halimbawa ng palitang iyon ang Street Map: pipiliin mo ang isang lungsod at ilang kulay, at napagpasyahan na para sa iyo ang cartography, ang bigat ng mga kalsada at ang tubig.
 
-![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&filename=vt-street-map-poster&sweep=1)
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-street-map-poster&sweep=1)
 
 Punan ang ilang fields, makakuha ng tapos na asset - walang font na pipiliin, walang kulay na aalanganinin, walang "ito na ba ang tamang logo?" Alam na ng tool. Email signature, event countdown, quote card, badge, street map - lahat ng kailangan ng team mo sa isang Martes ng 4pm, self-serve. At dahil walang customer data na umaalis sa device, walang compliance risk sa pagtutulungan.
 
 ### Mula sa live data hanggang sa tapos na visual
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
 
 Ikonekta ang isang **CSV** o **JSON** table sa isang chart, mapa, o table template at i-update ang mga numero - ang layout na ang bahalang mag-ayos ng sarili. Election results, quarterly earnings, weather events: buuin ang format nang isang beses at gamitin ulit ito tuwing tatakbo ang istorya. Eksaktong tumutugma sa house style mo, dahil ipinapatupad ito sa antas ng template, hindi lang naiwang parang malabong gabay.
 
@@ -60,7 +60,7 @@ Puwedeng i-embed ng isang tool ang live output ng ibang tool bilang asset - isan
 
 Advanced filters, compositing, animation, live camera effects, generative design - lahat ng web technology ay available sa isang template author, kaya mataas ang ceiling.
 
-![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&filename=use-mesh-output)
+![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 Gumawa ng *tools*, hindi files: buuin ang bagay na nag-ge-generate ng 10,000 cards sa halip na gumawa ng 10,000 cards nang isa-isa. I-lock ang hindi dapat magbago; ilantad lamang ang talagang dapat mag-iba.
 

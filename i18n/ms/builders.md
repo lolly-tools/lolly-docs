@@ -10,7 +10,7 @@ Baru dengan platform ini? **[Mula Pantas](/info/quickstart.html)** akan menyedia
 
 ## Fahami seni bina
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-components-lib&sweep=1)
+![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-components-lib&sweep=1)
 
 - **[Gambaran Keseluruhan](/info/overview.html)** - sebab Lolly wujud, pemisahan engine/shell/tools, jambatan keupayaan, dan komitmen seni bina yang telah ditetapkan.
 - **[Token Reka Bentuk](/info/design-tokens.html)** - model token DTCG yang menjadi asas cara jenama diungkapkan, dan cara alat menggunakannya.
@@ -19,11 +19,11 @@ Baru dengan platform ini? **[Mula Pantas](/info/quickstart.html)** akan menyedia
 
 Setiap kawalan di bawah dijana daripada input yang diisytiharkan dalam `tool.json`. Anda menulis baris manifest, hos melukis widget, dan model yang sama memacu CLI dan URL.
 
-![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&format=svg&filename=aud-manifest-controls)
+![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&format=svg&dark=1&filename=aud-manifest-controls)
 
 Ia berskala lebih jauh daripada lima kawalan. Berikan sesuatu input satu `section` dan hos akan melipatnya, jadi alat dengan lima puluh input seperti D3 Chart Studio masih terbuka sebagai senarai pendek, manakala yang lain difailkan di belakang kumpulan bernama.
 
-![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-d3-sections)
+![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-d3-sections)
 
 - **[Mencipta Alat](/info/authoring-tools.html)** - panduan lengkap: manifest, templat, gaya, hook, komposisi, dan penerbitan.
 - **[Mencipta Aset](/info/authoring-assets.html)** - aset katalog, tingkatan, lokel, palet, ikon boleh ditema, dan fon.
@@ -48,7 +48,7 @@ Ia berskala lebih jauh daripada lima kawalan. Berikan sesuatu input satu `sectio
 
 Hak dan pengarangan juga merupakan input seperti yang lain. Embed & Track Image mengisytiharkan medan pencipta, hak cipta, lesen dan hubungan, dan proses eksport menulisnya ke dalam metadata fail itu sendiri serta manifes C2PA-nya.
 
-![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&filename=ov2-rights-fields)
+![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-rights-fields)
 
 - **[Identiti Content Credentials](/info/content-credentials-identity.html)** - tandatangan yang dikeluarkan oleh CA untuk C2PA pada peranti; kontrak engine dan runbook operator.
 - **[Pemindahan Data](/info/data-transfer.html)** - bungkusan `lolly-backup`: sampul, integriti, dan jaminan merentasi shell.

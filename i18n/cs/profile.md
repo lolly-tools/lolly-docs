@@ -20,11 +20,11 @@ Všechno v profilu zůstává **na zařízení**, v místní databázi prohlíž
 
 Nic z toho není povinné. Prázdný profil je naprosto v pořádku - vyplníš si jen to, co ti ušetří psaní.
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details&sweep=1)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&dark=1&filename=profile-details&sweep=1)
 
 Preference jsou ta jediná část, která mění, jak se aplikace dívá zpátky na tebe. Karty motivů jsou živé náhledy a použijí se ve chvíli, kdy si jednu vybereš - jen na tomhle zařízení.
 
-![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
 
 ## Profil je kontext, ne jen osoba
 
@@ -32,7 +32,7 @@ Slovo „profil" navozuje dojem jedné pevně dané osoby, ale v Lolly je to sp�
 
 ### Jako jednotlivec
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
 
 Výchozí případ. Profil jsi ty: tvé jméno, tvůj e-mail, tvá profilovka. Nastavíš ho jednou a tvůj podpis, tvůj odznak, tvůj konferenční lockup se pak vyplní samy. Tohle bude stačit většině lidí.
 
@@ -58,13 +58,13 @@ Pokud tedy opravdu žongluješ s víc kontexty (ty, tvůj tým, role manažera a
 
 Obojí se odehrává v sekci Storage: ukazatel vyúčtuje každý bajt, který tahle instalace drží, kategorii po kategorii, a tlačítka pod ním jsou to, čím data smažeš nebo přeneseš.
 
-![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
 
 > Drž si jeden balíček na kontext a přejmenuj soubory tak, aby bylo jasné, co jsou (`LollyTools-events-2026.zip`, `LollyTools-me.zip`). Soubor *je* profil.
 
 ## Přesun profilu na nové zařízení
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls&sweep=1)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
 
 Protože je profil čistě lokální, jediný způsob, jak ho dostat do čisté instalace - na nový notebook, čerstvě resetovaný prohlížeč, kolegův počítač, offline stroj - je **přenést soubor**. Žádné přihlášení ti ho neobnoví, a to je právě smysl: nic z tvého zařízení nikdy neodešlo.
 
@@ -81,7 +81,7 @@ Přesnou strukturu balíčku, politiku verzí a pravidla integrity najdeš v **[
 
 ## Jak nástroje používají tvůj profil
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&dark=1&filename=pd-use-my-details)
 
 Nástroj vždy jen *předvyplní* ta pole profilu, pro která byl výslovně postavený:
 
@@ -101,7 +101,7 @@ Profil mění, *od koho* asset je; platforma mění, *jak vypadá*; možnosti ur
 
 ### „Profil" znamená jinde ještě dvě jiné věci - ne tenhle
 
-![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&filename=pv-identity-enrol)
+![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&dark=1&filename=pv-identity-enrol)
 
 Slovo je v projektu přetížené. Ani jedno z toho není osobní profil, o kterém je tahle stránka:
 

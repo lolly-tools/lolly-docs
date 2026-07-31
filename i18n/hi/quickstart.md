@@ -1,6 +1,6 @@
 # क्विकस्टार्ट
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
 
 Lolly आपके नियमों — रंगों, टाइपोग्राफ़ी, लेआउट, लॉजिक — को ऐसे टूल में बदल देता है जिनका उपयोग करके कोई भी बस कुछ फ़ील्ड भरकर तैयार फ़ाइलें बना सकता है: इमेज, PDF, सोशल कार्ड, वीडियो। यहाँ न कुछ सीखना है और न कुछ अपलोड करना: सब कुछ आपके डिवाइस पर चलता है, ऑनलाइन हों या ऑफ़लाइन।
 
@@ -14,7 +14,7 @@ Lolly में आपका ब्रांड एक छोटा-सा **ड
 
 ### शुरू से शुरुआत करें (डिज़ाइन सिस्टम बिल्डर)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 पहली बार चलाने पर आप **Start** स्क्रीन (`#/start`) पर पहुँचते हैं — यानी [**ब्रांड स्टूडियो**](/info/brand-studio.html)। इसे एक नाम और एक प्राइमरी रंग दें, और Lolly उसी से एक पूरा, एक्सेसिबल पैलेट *खुद तैयार* कर देता है — लाइट/डार्क सरफ़ेस, टेक्स्ट, एक्सेंट — उसी रंग-गणित से जिसे इंजन हर जगह इस्तेमाल करता है। एक फ़ॉन्ट चुनें, और एक मिनट से भी कम में आपके पास एक चालू ब्रांड होगा। वहाँ से स्टूडियो के पाँच टैब (Logos, Colours, Type, Tokens, Catalogue) आपको जितनी दूर चाहें ले जाते हैं — इनमें से कुछ भी बाद में, जब भी वापस आएँ, निखार सकते हैं। डैशबोर्ड से आप इसे हमेशा दोबारा खोल सकते हैं (बशर्ते आप Lolly का ब्रांड-लॉक्ड संस्करण इस्तेमाल न कर रहे हों)
 
@@ -34,7 +34,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### ऐप में इसे निखारें
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=dashboard-brand)
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=dashboard-brand)
 
 ब्रांड सक्रिय हो जाने के बाद उसे [**ब्रांड स्टूडियो**](/info/brand-studio.html) (`#/start`) में आकार देते रहें — कोई रंग या रोल बदलें और आपके टाइप करते-करते ऐप भर के सारे प्रीव्यू अपडेट हो जाते हैं। (`#/d` पर डैशबोर्ड का **Design system** टैब ब्रांड को सिर्फ़ पढ़ने लायक रूप में *दिखाता* है; एडिट करने की जगह स्टूडियो है।) वही ब्रांड **Profile → Your brand** कार्ड पर संक्षेप में दिखता है। फ़ॉन्ट असली हैं: Google Fonts में से चुनें और Lolly उस फ़ाइल को ब्रांड एसेट के रूप में **आपके डिवाइस पर** स्टोर करता है, इसलिए आपकी टाइपोग्राफ़ी ऑफ़लाइन भी साथ चलती है और रेंडर के समय कुछ भी फ़ेच नहीं होता।
 
@@ -68,7 +68,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 [कम्युनिटी टूल सेट](/info/builders.html) ओपन सोर्स और ब्रांड-निरपेक्ष है — QR कोड, स्ट्रीट मैप, फ़िल्टर, प्राइवेसी यूटिलिटी — और जिस पल आप इसे सक्रिय करते हैं, यह *आपके* ब्रांड के आधार पर रेंडर होने लगता है।
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
 
 टूल्स को अपना ओपन डेटा भी दें: कोई **CSV** या **JSON** टेबल पेस्ट करें या ड्रॉप करें और टूल के दोहराए जाने वाले फ़ील्ड उससे भर जाते हैं — हर पंक्ति के लिए एक तैयार एसेट।
 
@@ -83,7 +83,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 "URL ही API है" बात अक्षरशः सच है। नीचे का चार्ट किसी ने बनाया नहीं: उसका प्रकार, उसका शीर्षक और उसकी पूरी डेटा टेबल एड्रेस बार में टाइप की गई थी, और वही लिंक किसी भी डिवाइस पर वही चार्ट रेंडर करता है।
 
-![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&filename=vt-d3-url-chart)
+![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&dark=1&filename=vt-d3-url-chart)
 
 ## आगे कहाँ जाएँ
 

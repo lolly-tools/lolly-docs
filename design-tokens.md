@@ -6,7 +6,7 @@ This page is the spec. The engine model is [`engine/src/tokens.ts`](../engine/sr
 
 > **Status.** The **colour** slice is shipped: brand colours are canonical tokens, the picker's swatches come from them, and a chosen brand colour stays *linked* to its token. **Dimension tokens** (radius, spacing, sizing, stroke, opacity, rotation, shadows) and **typography** (brand fonts) are shipped too, editable in the [Brand Studio](/info/brand-studio.html)'s Tokens and Type tabs. **User import/export** is shipped - import W3C DTCG / Tokens Studio / Penpot in the Studio (or via [`ingest:brand`](/info/configuration.html#brand-packs)), and export a `LollyBrand` pack or a design-tokens palette. Token-aware tool *injection into templates* remains on the [roadmap](/info/overview.html#roadmap).
 
-![The Tokens panel - pick a kind, name it, and the token joins the document your brand travels in](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-tokens&format=svg&walker=1&filename=bs-token-editor&sweep=1)
+![The Tokens panel - pick a kind, name it, and the token joins the document your brand travels in](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-tokens&format=svg&walker=1&dark=1&filename=bs-token-editor&sweep=1)
 
 ## Why tokens
 
@@ -70,7 +70,7 @@ When a user picks a token-backed colour, the stored value is **a reference plus 
 
 A token-backed swatch reads as its token in the sidebar: the trigger carries the swatch's *name*, not a frozen hex, which is the visible difference between a linked value and one typed in by hand.
 
-![A tool's colour row holding a token-backed value, the trigger showing the swatch circle and its name instead of a hex code](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DLinked%26color%3D%257Bcolor.spectrum.rose%257D&width=1440&height=900&dpi=192&waitMs=2000&css=%23tool-canvas%7Bdisplay%3Anone%7D&format=svg&cropSelector=.input-row%3Ahas%28%5Bdata-color-field%3D%22color%22%5D%29&filename=at2-token-linked-swatch)
+![A tool's colour row holding a token-backed value, the trigger showing the swatch circle and its name instead of a hex code](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DLinked%26color%3D%257Bcolor.spectrum.rose%257D&width=1440&height=900&dpi=192&waitMs=2000&css=%23tool-canvas%7Bdisplay%3Anone%7D&format=svg&cropSelector=.input-row%3Ahas%28%5Bdata-color-field%3D%22color%22%5D%29&dark=1&filename=at2-token-linked-swatch)
 
 The `ref` keeps the value canonical - editing the token, or switching themes, re-resolves it everywhere. The cached `value` is the graceful fallback for a device where that token is absent. The path is fully backward-compatible: a plain colour string (a custom pick, or any existing tool) flows through untouched.
 
@@ -84,14 +84,14 @@ How it moves through the engine:
 
 Nothing in the link below names a colour. Its three colour params are token paths (`{color.spectrum.violet}`, `{color.spectrum.teal}`, `{color.spectrum.amber}`), resolved at render time against whatever brand the device is carrying.
 
-![A mesh gradient whose violet, teal and amber all arrived as token references in the link rather than as hex values](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Fcount%3D3%26color1%3D%257Bcolor.spectrum.violet%257D%26color2%3D%257Bcolor.spectrum.teal%257D%26color3%3D%257Bcolor.spectrum.amber%257D%26full&width=880&height=560&dpi=96&waitMs=2400&walker=1&format=svg&filename=at2-token-refs-in-url)
+![A mesh gradient whose violet, teal and amber all arrived as token references in the link rather than as hex values](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Fcount%3D3%26color1%3D%257Bcolor.spectrum.violet%257D%26color2%3D%257Bcolor.spectrum.teal%257D%26color3%3D%257Bcolor.spectrum.amber%257D%26full&width=880&height=560&dpi=96&waitMs=2400&walker=1&format=svg&dark=1&filename=at2-token-refs-in-url)
 
 ## Penpot interop
 
 - **Author/generate:** the brand tokens are a DTCG document - already the shape Penpot reads.
 - **Import/export (shipped):** import a Penpot single-file, ZIP, or multifile export (`$themes.json` + `$metadata.json` + one file per set) in the [Brand Studio](/info/brand-studio.html) or via [`ingest:brand`](/info/configuration.html#brand-packs), and export Lolly's tokens back as DTCG. CMYK survives Lolly→Lolly round-trips via `$extensions` and is ignored by Penpot, as the standard intends.
 
-![The download pill parked at the palette's bottom edge, with the format menu that carries the same colours back out as DTCG JSON](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-pal-dock&format=svg&walker=1&filename=bs-palette-download)
+![The download pill parked at the palette's bottom edge, with the format menu that carries the same colours back out as DTCG JSON](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-pal-dock&format=svg&walker=1&dark=1&filename=bs-palette-download)
 
 ## Migration & status
 
@@ -99,7 +99,7 @@ The brand colours moved into tokens without changing what anyone sees: `scripts/
 
 The corner radius is the plainest of the shipped dimension tokens: one slider writing one `shape.radius` value that the app chrome, the panels and every opted-in tool then follow.
 
-![The Rounded corners control in the Tokens tab - a live preview square, a slider and the value it writes, all standing for a single dimension token](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&format=svg&cropSelector=.be-radius-panel&filename=at2-token-radius-dimension)
+![The Rounded corners control in the Tokens tab - a live preview square, a slider and the value it writes, all standing for a single dimension token](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&format=svg&cropSelector=.be-radius-panel&dark=1&filename=at2-token-radius-dimension)
 
 ## Reference
 

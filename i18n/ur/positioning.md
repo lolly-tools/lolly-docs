@@ -6,7 +6,7 @@
 
 ## منظرنامہ
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&filename=aud-open-canvas&sweep=1)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
 
 | صلاحیت | Canva (اوپن کینوس) | برانڈ پورٹلز (DAM ٹیمپلیٹنگ) | Illustrator (ڈیسک ٹاپ پرو) | Figma / Penpot (آن لائن پرو) | **Lolly (کنسٹرینٹس-فرسٹ)** |
 |---|---|---|---|---|---|
@@ -26,7 +26,7 @@
 
 ## اسے اس کے لیے استعمال کریں
 
-![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&filename=ov2-deck-studio-output)
+![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&dark=1&filename=ov2-deck-studio-output)
 
 - آپریشنلائزڈ تخلیقی اثاثوں کی تیز رفتار تخلیق (ایونٹ ٹائلز، بیجز، دستخط، الرٹس)
 - اوپن کینوس (Layout Studio) پر آزادانہ ترتیب جب اجزاء — رنگ، ٹائپ، آئیکنز، تصاویر — کو برانڈ گلوبلز کے مطابق رہنا ضروری ہو
@@ -45,7 +45,7 @@ Deck Studio یہاں کی حد کا اچھا پیمانہ ہے: ایک پوری 
 
 ## ٹول کو منظور کریں، فائل کو نہیں
 
-![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-approve-the-tool)
+![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-approve-the-tool)
 
 منظرنامے کا ہر دوسرا ٹول ایک *فائل* بناتا ہے، جسے پھر جانچنا پڑتا ہے — کسی Slack تھریڈ میں ایک برانڈ مینیجر، ڈسکلیمر پر لیگل، تبدیلیوں کا ایک دور، پھر ایک اور نظرثانی۔ Lolly منظوری کو **ایک قدم پہلے** لے جاتا ہے۔ برانڈ کے قواعد — بالکل درست hex کوڈز، لائسنس شدہ فونٹ فائلیں، بلیڈ مارجن، اسپیسنگ — ٹول کے HTML اور CSS میں ہارڈ کوڈ ہوتے ہیں، اس لیے ٹیمپلیٹ *طبعی طور پر* کوئی آف-برانڈ اثاثہ نکال ہی نہیں سکتا۔ لے آؤٹ خود وزن اٹھاتا ہے۔
 
@@ -63,7 +63,7 @@ Deck Studio یہاں کی حد کا اچھا پیمانہ ہے: ایک پوری 
 
 ## یہ منفرد طور پر کیا فراہم کرتا ہے
 
-![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-street-map-poster)
 
 - **بے لگام ڈیزائن کی صلاحیت جو سیاق و سباق میں محفوظ طریقے سے فراہم کی جاتی ہے۔** ٹولز ہارڈ کوڈڈ گارڈ-ریلز کے اندر جرات مندانہ ڈیزائن آئیڈیاز کا اظہار کر سکتے ہیں۔
 - **سافٹ ویئر-ڈیفائنڈ مواد آٹومیشن جو حتمی اثاثہ واپس کرتی ہے۔** ان پٹ → حتمی فائل۔ کوئی "اب اسے اپنے ڈیزائن ٹول سے محفوظ کریں اور پوسٹ-پروسیس کریں" نہیں۔

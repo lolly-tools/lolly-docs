@@ -1,6 +1,6 @@
 # Démarrage rapide
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
 
 Lolly transforme tes règles - couleurs, typographie, mises en page, logique - en outils que n'importe qui peut utiliser pour créer des fichiers finis : images, PDF, cartes sociales, vidéo, en remplissant simplement quelques champs. Il n'y a rien à apprendre et rien à téléverser : tout fonctionne sur ton appareil, en ligne comme hors ligne.
 
@@ -14,7 +14,7 @@ Ta marque dans Lolly est un petit document de **tokens de design** - couleurs, p
 
 ### Partir de zéro (l'assistant)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 Au premier lancement, tu atterris sur l'écran **Démarrage** (`#/start`). Donne-lui un nom et une couleur principale, et Lolly *dérive* une palette complète et accessible à partir de celle-ci - surfaces claires/sombres, texte, accents - en utilisant les mêmes calculs de couleur que le moteur utilise partout ailleurs. Choisis une police, et tu as une marque fonctionnelle en moins d'une minute. Tu peux tout affiner plus tard.
 
@@ -34,7 +34,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### L'affiner dans l'application
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=dashboard-brand)
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=dashboard-brand)
 
 Une fois une marque active, l'éditeur **Ta marque** du tableau de bord (`#/d`) est un éditeur en direct - change une couleur ou un rôle, et chaque aperçu de la page se met à jour au fur et à mesure que tu tapes. La même marque est résumée sur la carte **Profil → Ta marque**. Les polices sont réelles : choisis-en une dans Google Fonts, et Lolly enregistre le fichier **sur ton appareil** comme ressource de marque, si bien que ta typographie voyage hors ligne et que rien n'est récupéré au moment du rendu.
 
@@ -68,7 +68,7 @@ Voici la récompense : une mise en page importée est une session Studio de mise
 
 L'[ensemble d'outils communautaires](/info/builders.html) est open source et indépendant de toute marque - codes QR, cartes routières, filtres, utilitaires de confidentialité - et il produit son rendu par rapport à *ta* marque dès que tu l'actives.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
 
 Alimente aussi les outils avec tes propres données ouvertes : colle ou dépose un tableau **CSV** ou **JSON**, et les champs répétitifs d'un outil s'en remplissent, un fichier fini par ligne.
 
@@ -76,7 +76,7 @@ Alimente aussi les outils avec tes propres données ouvertes : colle ou dépose 
 
 « Une URL, c'est l'API » est à prendre au pied de la lettre. Le graphique ci-dessous n'a été dessiné par personne : son type, son titre et tout son tableau de données ont été tapés dans la barre d'adresse, et le même lien produit le même graphique sur n'importe quel appareil.
 
-![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&filename=vt-d3-url-chart)
+![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&dark=1&filename=vt-d3-url-chart)
 
 Avec une marque active et ton matériel en main, chaque outil produit un fichier fini :
 

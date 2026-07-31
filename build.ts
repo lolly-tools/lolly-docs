@@ -473,7 +473,14 @@ function inline(text: string) {
   if (leftover) console.warn(`⚠  unrendered provenance marker "%${leftover[1]}{" — check for an unclosed brace or deeper nesting`);
 
   // Images before links, or the link regex eats `[alt](url)` and strands the `!`.
-  s = s.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" loading="lazy">');
+  // The alt is STRIPPED of markup first: inline code/emphasis ran above, so an alt
+  // written with backticks arrives here already carrying <code> tags, and a `>`
+  // inside an attribute value ends the tag — truncating the <img> and swallowing
+  // whatever the wrapper emits after it (this ate a shot's dark twin on
+  // /info/overview). Alt text is plain text by definition; markup in it was never
+  // going to render anyway.
+  s = s.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_m, alt: string, src: string) =>
+    `<img src="${src}" alt="${alt.replace(/<[^>]*>/g, '').replace(/"/g, '&quot;')}" loading="lazy">`);
   // A screenshot gets a wrapper, because the <img> alone cannot carry what a shot
   // needs: the settle-in motion has to animate a box that ISN'T also subject to
   // the `.docs-content img` centring rules, and a corner credential line needs a
@@ -2249,23 +2256,42 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
    a set of causes or commitments stays a plain icon list, because a rail between
    unordered things says something untrue about them. */
 .md-timeline .icon-list{position:relative;gap:1.35rem}
-.md-timeline .icon-list>li.ic{position:relative;padding-bottom:.1rem}
-.md-timeline .icon-list>li.ic .li-icon{position:relative;z-index:1;
-  width:2rem;height:2rem;flex:none;display:grid;place-items:center;border-radius:999px;
+.md-timeline .icon-list>li.ic{position:relative;padding-bottom:.1rem;--tl-d:2.5rem}
+/* The node sits at the item's VERTICAL CENTRE, not against its first line. On
+   /info/status-quo the timeline is the left half of a ::: cols pair, and each node
+   is what anchors a step to the cost beside it: a badge pinned to the top of a
+   four-line paragraph anchors the line, not the point. Centred - and larger, since it
+   is now a landmark rather than a bullet - it reads as the item's own marker. This has
+   to out-specify the flex-start of the plain icon list above, hence .docs-content. */
+.docs-content .md-timeline ul.icon-list>li.ic{align-items:center}
+.md-timeline .icon-list>li.ic .li-icon{position:relative;z-index:1;margin-top:0;
+  width:var(--tl-d);height:var(--tl-d);flex:none;display:grid;place-items:center;border-radius:999px;
   background:var(--pale);border:1.5px solid var(--border);color:var(--muted)}
-.md-timeline .icon-list>li.ic .li-icon svg{width:1rem;height:1rem}
-/* The rail: drawn from each item down to the next, so it stops cleanly at the last
-   one instead of trailing into whitespace. */
-.md-timeline .icon-list>li.ic:not(:last-child)::before{content:'';position:absolute;
-  left:1rem;top:2rem;bottom:-1.35rem;width:1.5px;background:var(--border)}
-@media(max-width:640px){.md-timeline .icon-list>li.ic .li-icon{width:1.75rem;height:1.75rem}
-  .md-timeline .icon-list>li.ic:not(:last-child)::before{left:.875rem;top:1.75rem}}
+.md-timeline .icon-list>li.ic .li-icon svg{width:calc(var(--tl-d) * .5);height:calc(var(--tl-d) * .5)}
+/* The rail, two halves per item now that the node no longer sits at the top: the
+   segment above runs from the item's top edge to the node, the one below from the node
+   into the gap, where it meets the next item's upper half. First and last are omitted,
+   so the rail starts and stops at a node instead of trailing into whitespace. */
+.md-timeline .icon-list>li.ic:not(:first-child)::before,
+.md-timeline .icon-list>li.ic:not(:last-child)::after{content:'';position:absolute;
+  left:calc(var(--tl-d) / 2 - .75px);width:1.5px;background:var(--border)}
+.md-timeline .icon-list>li.ic:not(:first-child)::before{top:0;bottom:calc(50% + var(--tl-d) / 2)}
+.md-timeline .icon-list>li.ic:not(:last-child)::after{top:calc(50% + var(--tl-d) / 2);bottom:-1.35rem}
+@media(max-width:640px){.md-timeline .icon-list>li.ic{--tl-d:2rem}}
 .li-icon{flex-shrink:0;width:1.35rem;height:1.35rem;margin-top:.2rem;color:var(--green)}
 .li-icon svg{width:100%;height:100%;display:block}
 .docs-content{padding:6rem 3.5rem;min-width:0}
 .docs-content img{height:auto;    max-width: min(100%, 40em);    height: auto;   margin: 0 auto; display: block;}
 /* App screenshots (docs/shots.json captures) read at full column width, framed like a window. */
-.docs-content img[src*="/info/shots/"]{max-width:100%;min-width:50%;border-radius:1.2em;box-shadow: inset 0 0 0 1px #0001, 0 3px 6px #0002, 0 6px 2em #0001}
+.docs-content img[src*="/info/shots/"]{max-width:100%;min-width:50%;border-radius:1.2em;
+  box-shadow: inset 0 0 0 1px #0000001f, 0 3px 6px #0002, 0 6px 2em #00000014}
+/* The frame ring is INK, so it has to invert: a black hairline is invisible on a
+   near-black page, which is why the shots read as unframed in dark mode. Light
+   ring, slightly stronger (a 1px white line at 6% disappears against a screenshot
+   whose own edges are light), plus a deeper drop so the card still sits ON the
+   page rather than in it. */
+.dark .docs-content img[src*="/info/shots/"]{
+  box-shadow: inset 0 0 0 1px #ffffff2e, 0 3px 8px #00000073, 0 6px 2em #0000004d}
 
 /* ── Screenshot settle ──────────────────────────────────────────────────────
    Every shot enters slightly oversized and lifted, with a wide diffuse shadow,
@@ -2298,7 +2324,8 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
      on the site invisible forever. */
   .shots-motion .shot--in{opacity:1;transform:none}
   .shots-motion .shot>img{transition:box-shadow .75s cubic-bezier(.16,.84,.3,1)}
-  .shots-motion .shot:not(.shot--in)>img{box-shadow:inset 0 0 0 1px #0001, 0 28px 60px #00000030}
+  .shots-motion .shot:not(.shot--in)>img{box-shadow:inset 0 0 0 1px #0000001f, 0 28px 60px #00000030}
+  .dark .shots-motion .shot:not(.shot--in)>img{box-shadow:inset 0 0 0 1px #ffffff2e, 0 28px 60px #00000073}
 }
 
 /* ── Screenshot credential line ─────────────────────────────────────────────
@@ -2392,7 +2419,9 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
    also holds the credential line, which is allowed to extend past the artwork's
    edge, and a clipping stage would cut it off. */
 .showcase-stage{position:relative;border-radius:1.2em;
-  box-shadow:inset 0 0 0 1px #0001, 0 3px 6px #0002, 0 6px 2em #0001}
+  box-shadow:inset 0 0 0 1px #0000001f, 0 3px 6px #0002, 0 6px 2em #00000014}
+.dark .showcase-stage{
+  box-shadow:inset 0 0 0 1px #ffffff2e, 0 3px 8px #00000073, 0 6px 2em #0000004d}
 /* The <img> the build emits, and the live SVG that replaces it, must occupy the
    same box — the swap happens under the reader's eyes and any size change would
    read as a jump rather than an upgrade. */
@@ -2427,9 +2456,12 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
    Ungated (no .shots-motion, no media query) so it holds with JS off, and scoped
    to .shot--dual so a shot with no twin is byte-identical to before. Each twin
    carries its OWN credential line — two separately signed files. */
-.shot-alt,.shot--dual .shot-cred--alt{display:none}
+/* Every img rule here is qualified with the ELEMENT as well as the class: the base
+   .docs-content img rule sets display:block at (0,1,1), so a bare .shot-alt (0,1,0)
+   loses and BOTH twins render, one under the other. */
+.shot--dual>img.shot-alt,.shot--dual .shot-cred--alt{display:none}
 .dark .shot--dual>img:not(.shot-alt),.dark .shot--dual .shot-cred:not(.shot-cred--alt){display:none}
-.dark .shot--dual>.shot-alt{display:block}
+.dark .shot--dual>img.shot-alt{display:block}
 .dark .shot--dual .shot-cred--alt{display:flex}
 
 /* ── Draft-to-render sweep ("sweep=1" on the recipe) ────────────────────────
@@ -2462,8 +2494,12 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
     filter:url(#lolly-draft);opacity:1;
     transition:opacity var(--sweep-dur) ease-in-out var(--sweep-delay)}
   /* In dark mode the ink must be drawn from the DARK file, or the sweep would
-     briefly paint the light screenshot over its own dark twin. */
-  .dark .shots-motion .shot--sweep::after{background:var(--shot-src-dark,var(--shot-src)) center/100% 100% no-repeat}
+     briefly paint the light screenshot over its own dark twin.
+     COMPOUND, not descendant: the theme class and .shots-motion both live on
+     <html>, so ".dark .shots-motion" asks for an element inside itself and never
+     matches — the rule looks right, applies never, and the failure is a picture
+     nobody notices. */
+  .dark.shots-motion .shot--sweep::after{background:var(--shot-src-dark,var(--shot-src)) center/100% 100% no-repeat}
   .shots-motion .shot--sweep.shot--in::after{opacity:0}
   /* Teardown once the ink has lifted: a pseudo-element cannot transition filter
      away, so at opacity 0 it is still a live filtered composited surface. Harmless
@@ -2494,7 +2530,13 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .prov-sig .prov-entity{background:#14784d;color:#fff;margin-inline:.18em 0}
 /* Inline, not a flex child: the pill's baseline must be its TEXT baseline so it
    sits on the same line as the prose around it. The glyph is nudged optically. */
-.prov-seal{width:.95em;height:.95em;margin-inline-end:.34em;vertical-align:-.14em;color:var(--green)}
+/* The seal is the one glyph in the pill that must read at a glance, and --green
+   on --pale is the weakest pairing in the set (a mid-green on a tinted background
+   in BOTH themes). It takes the theme's ink instead: near-black on the light pill,
+   white on the dark one. The literal #fff is safe here because it lives inside
+   .dark, so it flips with the theme rather than surviving it. */
+.prov-seal{width:.95em;height:.95em;margin-inline-end:.34em;vertical-align:-.14em;color:var(--dark)}
+.dark .prov-seal{color:#fff}
 .prov-act{background:var(--pale);color:var(--text);font-weight:550;border:1px solid transparent}
 .dark .prov-act{border-color:var(--border)}
 /* A filename wraps rather than truncating - it is evidence the caption is naming,

@@ -47,15 +47,15 @@ Lolly збудовано так, щоб він пасував до того, я�
 
 Усі вони — це перетворення на пристрої: ваш файл чи дані заходять, очищені байти виходять, і **немає сервера, куди їх завантажувати**. Це навмисна протилежність типовому інструменту «завантаж свій файл на сайт незнайомця, щоб його почистити», до якого інакше вдається співробітник із добрими намірами.
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data&sweep=1)
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-strip-data&sweep=1)
 
 Text Helper — та сама угода, тільки для тексту, а не для файлів. Це майстерня з вкладками, яку співробітник інакше шукав би на чужому сайті, і вона не оголошує жодних входів, бо ніщо з того, до чого вона торкається, не покидає сторінку.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
 
 Compress PDF доповнює цей набір: завеликий вкладений файл стискається за налаштуванням якості, яке ви обираєте, на тій самій машині, що вже його тримає.
 
-![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=ov2-compress-pdf)
+![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=ov2-compress-pdf)
 
 ## Детермінованість і відтворюваність
 
@@ -66,11 +66,11 @@ Compress PDF доповнює цей набір: завеликий вкладе
 
 Prompt to Image — це детермінованість у найпростішому вигляді: текст — це весь вхід, набране зображення — весь вихід, і той самий текст завжди набирається однаково.
 
-![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-prompt-to-image)
+![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## Походження та Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
 Експорти можуть нести **Content Credentials** — підписаний маніфест [C2PA](https://c2pa.org), прив'язаний до геша байтів файлу. Будь-яка подальша зміна файлу ламає печатку, тож верифікатор, обізнаний із C2PA, **виявляє зміну криптографічно, офлайн**. Посвідчення є *очевидним* до втручання: воно позначає підробку, а не запобігає їй, і саме це робить можливою повністю офлайнову верифікацію.
 
@@ -85,7 +85,7 @@ Prompt to Image — це детермінованість у найпрості�
 
 ## Шифрування та встановлення паролів
 
-![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&format=svg&filename=aud-pdf-lock)
+![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&format=svg&dark=1&filename=aud-pdf-lock)
 
 Для файлів, які мають подорожувати замкненими, усе відбувається на пристрої:
 

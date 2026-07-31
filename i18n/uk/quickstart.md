@@ -1,6 +1,6 @@
 # Швидкий старт
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
 
 Lolly перетворює ваші правила — кольори, шрифти, макети, логіку — на інструменти, якими будь-хто може скористатися, щоб створювати готові файли: зображення, PDF, картки для соцмереж, відео — просто заповнивши кілька полів. Тут нема чого вивчати й нічого завантажувати: усе працює на вашому пристрої, онлайн чи офлайн.
 
@@ -14,7 +14,7 @@ Lolly перетворює ваші правила — кольори, шриф�
 
 ### Почати з нуля (конструктор дизайн-системи)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 Під час першого запуску ви потрапляєте на екран **Start** (`#/start`) — це [**Brand Studio**](/info/brand-studio.html). Дайте йому назву та основний колір, і Lolly *виводить* із нього повну доступну палітру — світлі/темні поверхні, текст, акценти — застосовуючи ту саму колірну математику, яку рушій використовує всюди. Оберіть шрифт — і менш ніж за хвилину у вас є робочий бренд. Далі п'ять вкладок студії (Logos, Colours, Type, Tokens, Catalogue) дають змогу довести його до бажаного стану — уточнюйте будь-що згодом, щойно повернетеся. До цього завжди можна повернутися з дашборду (за умови, що ви не користуєтеся версією Lolly з заблокованим брендом).
 
@@ -34,7 +34,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 ### Налаштувати в застосунку
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&filename=dashboard-brand)
+![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=dashboard-brand)
 
 Щойно бренд стане активним, продовжуйте формувати його в [**Brand Studio**](/info/brand-studio.html) (`#/start`) — змініть колір чи роль, і кожен попередній перегляд у застосунку оновиться просто під час набору. (Вкладка **Design system** на дашборді за адресою `#/d` *показує* бренд лише для читання; редагувати його можна саме в Studio.) Той самий бренд коротко подано на картці **Profile → Your brand**. Шрифти справжні: оберіть із Google Fonts, і Lolly збереже файл **на вашому пристрої** як бренд-ресурс, тож ваша типографіка мандрує офлайн, і під час рендеру нічого не завантажується.
 
@@ -68,7 +68,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 [Набір інструментів спільноти](/info/builders.html) має відкритий код і не залежить від бренду — QR-коди, карти вулиць, фільтри, утиліти приватності — і рендериться щодо *вашого* бренду тієї миті, коли ви його активуєте.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
 
 Годуйте інструменти й власними відкритими даними: вставте або перетягніть таблицю **CSV** чи **JSON**, і повторювані поля інструмента заповняться з неї — один готовий ресурс на рядок.
 
@@ -83,7 +83,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 «URL і є API» — це буквально. Діаграму нижче ніхто не малював: її тип, її заголовок і вся її таблиця даних були набрані в адресному рядку, і те саме посилання рендерить ту саму діаграму на будь-якому пристрої.
 
-![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&filename=vt-d3-url-chart)
+![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&format=svg&dark=1&filename=vt-d3-url-chart)
 
 ## Куди рухатися далі
 

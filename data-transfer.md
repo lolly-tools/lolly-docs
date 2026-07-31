@@ -2,7 +2,7 @@
 
 Everything a Lolly user accumulates lives **on their device** - no account, no cloud. The data-transfer bundle is how that value moves: export it on one install, carry the file by any means (USB, AirDrop, email-to-self, a network share), and import it on another. The file *is* the transport. The target can be offline or online; it makes no difference, because nothing ever talks to a server.
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls&sweep=1)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
 
 This page is the format spec. For the end-user walkthrough see [Using Lolly → Moving to another device](/info/using.html); the implementation is [`shells/web/src/data-transfer.ts`](../shells/web/src/data-transfer.ts) with the round-trip contract pinned by [`tests/data-transfer.test.ts`](../tests/data-transfer.test.ts).
 
@@ -33,7 +33,7 @@ Being a plain zip is deliberate: it survives any transport intact and can be ins
 
 `profile.json` is the smallest part and the one a reader sees first in the app: the details a producer fills in once, plus the opt-in that lets tools use them.
 
-![The Profile details form that becomes profile.json - name, contact, headshot and the opt-in beside them](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1800&format=svg&cropSelector=.profile-details-grid&walker=1&filename=ce-profile-record)
+![The Profile details form that becomes profile.json - name, contact, headshot and the opt-in beside them](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1800&format=svg&cropSelector=.profile-details-grid&walker=1&dark=1&filename=ce-profile-record)
 
 ## `manifest.json`
 
@@ -105,7 +105,7 @@ The import summary reports `{ profile, sessions, userAssets, prefs, skipped, fai
 
 The storage meter itemises the same split. Saved sessions and My images ride in a bundle; the asset cache, tool previews and offline pins below them are all re-derivable, so they stay behind.
 
-![The storage meter breaking this device's data into named categories, with Saved sessions and My images tracked separately from the Asset cache, here on a fresh install where every category is still empty](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1600&dpi=192&waitMs=2600&format=svg&css=.store-manages%2C.storage-subsection%2C.store-selbar%7Bdisplay%3Anone%7D&cropSelector=.store-meter&walker=1&filename=ce-storage-categories)
+![The storage meter breaking this device's data into named categories, with Saved sessions and My images tracked separately from the Asset cache, here on a fresh install where every category is still empty](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1600&dpi=192&waitMs=2600&format=svg&css=.store-manages%2C.storage-subsection%2C.store-selbar%7Bdisplay%3Anone%7D&cropSelector=.store-meter&walker=1&dark=1&filename=ce-storage-categories)
 
 ## Cross-shell guarantee
 

@@ -47,15 +47,15 @@ Lolly टूल्स की एक श्रेणी - प्राइवे�
 
 ये सभी ऑन-डिवाइस ट्रांसफ़ॉर्म हैं: आपकी फ़ाइल या डेटा अंदर जाता है, साफ़ किए हुए बाइट बाहर आते हैं, और **अपलोड करने के लिए कोई सर्वर है ही नहीं**। ये उस आम "साफ़ करने के लिए अपनी फ़ाइल किसी अजनबी की वेबसाइट पर अपलोड करें" वाले टूल के जानबूझकर उलट हैं, जिसकी ओर एक नेकनीयत कर्मचारी वरना हाथ बढ़ाता है।
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data&sweep=1)
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-strip-data&sweep=1)
 
 Text Helper फ़ाइलों की जगह टेक्स्ट के लिए वही सौदा है। यह वही टैब वाली वर्कबेंच है जिसे कोई कर्मचारी वरना किसी अजनबी की साइट पर ढूँढने जाता, और यह एक भी इनपुट घोषित नहीं करता, क्योंकि जिस चीज़ को यह छूता है वह कभी पेज से बाहर नहीं जाती।
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
 
 Compress PDF इस सेट को पूरा करता है: बड़े आकार का अटैचमेंट आपकी चुनी हुई क्वालिटी सेटिंग के हिसाब से छोटा हो जाता है — उसी मशीन पर, जिसमें वह पहले से मौजूद है।
 
-![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=ov2-compress-pdf)
+![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=ov2-compress-pdf)
 
 ## डिटरमिनिज़्म और पुनरुत्पादनीयता
 
@@ -66,11 +66,11 @@ Compress PDF इस सेट को पूरा करता है: बड़
 
 Prompt to Image डिटरमिनिज़्म का सबसे सादा रूप है: टेक्स्ट ही पूरा इनपुट है, टाइपसेट की गई इमेज ही पूरा आउटपुट, और एक ही टेक्स्ट हमेशा एक ही तरह टाइपसेट होता है।
 
-![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-prompt-to-image)
+![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## प्रोवेनेंस और Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
 एक्सपोर्ट **Content Credentials** साथ ले जा सकते हैं - फ़ाइल के बाइट के हैश से बँधा एक हस्ताक्षरित [C2PA](https://c2pa.org) मैनिफ़ेस्ट। फ़ाइल में बाद में किया गया कोई भी बदलाव सील तोड़ देता है, इसलिए C2PA-समझने वाला वेरिफ़ायर **छेड़छाड़ का पता क्रिप्टोग्राफ़िक ढंग से, ऑफ़लाइन लगाता है**। यह क्रेडेंशियल टैम्पर-*एविडेंट* है: यह छेड़छाड़ को रोकने के बजाय उसे उजागर करता है, और ठीक यही बात पूरी तरह ऑफ़लाइन सत्यापन को संभव बनाती है।
 
@@ -85,7 +85,7 @@ Prompt to Image डिटरमिनिज़्म का सबसे सा�
 
 ## एन्क्रिप्शन और पासवर्डिंग
 
-![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&format=svg&filename=aud-pdf-lock)
+![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&format=svg&dark=1&filename=aud-pdf-lock)
 
 जिन फ़ाइलों को लॉक होकर सफ़र करना है, उनके लिए सब कुछ ऑन-डिवाइस होता है:
 

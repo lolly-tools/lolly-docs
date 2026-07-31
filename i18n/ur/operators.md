@@ -47,15 +47,15 @@ Lolly ٹولز کی ایک قسم - پرائیویسی یوٹیلیٹیز - *خ�
 
 یہ سب آن-ڈیوائس تبدیلیاں ہیں: آپ کی فائل یا ڈیٹا اندر جاتا ہے، صاف کیے گئے bytes باہر آتے ہیں، اور **اپ لوڈ کرنے کے لیے کوئی سرور نہیں ہے**۔ یہ اُس عام ٹول کے دانستہ برعکس ہیں جسے کوئی نیک نیت ملازم بصورتِ دیگر استعمال کرتا ہے یعنی "اپنی فائل کو صاف کرنے کے لیے کسی اجنبی کی ویب سائٹ پر اپ لوڈ کریں"۔
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-strip-data&sweep=1)
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-strip-data&sweep=1)
 
 Text Helper فائلوں کے بجائے متن کے لیے وہی سودا ہے۔ یہ وہی ٹیب والا ورک بینچ ہے جسے کوئی ملازم ورنہ کسی اجنبی کی سائٹ پر تلاش کرنے جاتا، اور یہ ایک بھی ان پٹ بیان نہیں کرتا، کیونکہ جس چیز کو یہ چھوتا ہے وہ کبھی صفحے سے باہر نہیں جاتی۔
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
 
 Compress PDF اس سیٹ کو مکمل کرتا ہے: بڑے حجم کی اٹیچمنٹ آپ کی چنی ہوئی کوالٹی سیٹنگ کے تحت چھوٹی ہو جاتی ہے — اُسی مشین پر جس میں وہ پہلے سے موجود ہے۔
 
-![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=ov2-compress-pdf)
+![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=ov2-compress-pdf)
 
 ## تعیّن پذیری اور دوبارہ پیدا کرنے کی صلاحیت
 
@@ -66,11 +66,11 @@ Compress PDF اس سیٹ کو مکمل کرتا ہے: بڑے حجم کی اٹی�
 
 Prompt to Image تعیّن پذیری کی سب سے سادہ شکل ہے: متن ہی پورا ان پٹ ہے، ٹائپ سیٹ شدہ تصویر ہی پورا آؤٹ پٹ، اور ایک ہی متن ہمیشہ ایک ہی طرح ترتیب پاتا ہے۔
 
-![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&filename=ov2-prompt-to-image)
+![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## ماخذ اور Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
 ایکسپورٹس **Content Credentials** اپنے ساتھ لے جا سکتے ہیں - ایک signed [C2PA](https://c2pa.org) manifest جو فائل کے bytes کے hash سے منسلک ہوتا ہے۔ فائل میں بعد کی کوئی بھی تبدیلی سِیل کو توڑ دیتی ہے، لہٰذا ایک C2PA-آگاہ verifier **تبدیلی کو cryptographic طور پر، آف لائن پہچان لیتا ہے**۔ یہ credential چھیڑ چھاڑ کو *ظاہر* کرنے والا ہے: یہ چھیڑ چھاڑ کو روکنے کے بجائے اُس کی نشاندہی کرتا ہے، اور یہی وہ چیز ہے جو مکمل طور پر آف لائن تصدیق کو ممکن بناتی ہے۔
 
@@ -85,7 +85,7 @@ Prompt to Image تعیّن پذیری کی سب سے سادہ شکل ہے: مت�
 
 ## Encryption اور پاس ورڈنگ
 
-![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&format=svg&filename=aud-pdf-lock)
+![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&format=svg&dark=1&filename=aud-pdf-lock)
 
 اُن فائلوں کے لیے جنہیں مقفل حالت میں سفر کرنا ہو، سب کچھ آن-ڈیوائس ہوتا ہے:
 

@@ -42,13 +42,13 @@ Lolly tidak cuba menjadi Canva atau Figma. Ia mengisi ruang di mana *peraturan, 
 
 Street Map ialah contoh yang baik bagi pertukaran ini: anda memilih sebuah bandar dan beberapa warna, manakala kartografi, berat jalan dan air sudah ditentukan untuk anda.
 
-![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&filename=vt-street-map-poster&sweep=1)
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-street-map-poster&sweep=1)
 
 Isikan beberapa medan, dapatkan aset yang siap - tiada fon perlu dipilih, tiada warna perlu diragui, tiada persoalan "adakah ini logo yang betul?" Alat itu sudah tahu. Tandatangan e-mel, kira detik acara, kad petikan, lencana, peta jalan - semua yang pasukan anda perlukan pada hari Selasa jam 4 petang, secara layan diri. Dan kerana tiada data pelanggan meninggalkan peranti, tiada risiko pematuhan dalam bekerjasama.
 
 ### Daripada data langsung kepada visual siap
 
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&filename=use-chart-output)
+![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&format=svg&dark=1&filename=use-chart-output)
 
 Sambungkan jadual **CSV** atau **JSON** kepada templat carta, peta, atau jadual dan kemas kini angkanya - susun atur akan mengurus dirinya sendiri. Keputusan pilihan raya, pendapatan suku tahunan, peristiwa cuaca: bina format itu sekali dan guna semula setiap kali cerita itu disiarkan. Padankan gaya syarikat anda *dengan tepat*, kerana ia dikuatkuasakan pada peringkat templat, bukan sekadar garis panduan longgar.
 
@@ -60,7 +60,7 @@ Satu alat boleh membenamkan hasil langsung alat lain sebagai aset - lencana nama
 
 Penapis termaju, penggubahan, animasi, kesan kamera langsung, reka bentuk generatif - setiap teknologi web tersedia untuk pencipta templat, jadi hadnya sangat tinggi.
 
-![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&filename=use-mesh-output)
+![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 Cipta *alat*, bukan fail: bina sesuatu yang menjana 10,000 kad, bukannya membuat 10,000 kad secara berasingan. Kunci apa yang tidak sepatutnya berubah; dedahkan hanya apa yang sepatutnya boleh berbeza.
 

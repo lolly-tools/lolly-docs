@@ -19,7 +19,7 @@ Lolly büyük hacimde içerik üretir. Riski önlemek için sıkı bir veri mini
 
 ### Özellik bayrakları nedir?
 
-![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&filename=pd-feature-flags&sweep=1)
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&dark=1&filename=pd-feature-flags&sweep=1)
 
 Özellik bayrakları, Lolly'nin bazı bölümlerini açıp kapatır. Genellikle bunları bir yönetici kontrol eder - Lolly'de kontrol sende.
 
@@ -78,7 +78,7 @@ Lolly her şeyi yukarı taşır.
 
 ## Yardımcı araçları araçlardan farklı kılan nedir?
 
-![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
+![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
 
 **Temel Cevap →** Yardımcı araçların her zaman render etmesi gerekmez, bu yüzden farklı bir UX alabilirler.
 
@@ -102,7 +102,7 @@ Yönetişim savaşını mükemmel kolaylık ve hizmetle kazanıyoruz.
 
 ## Lolly, Figma, Penpot, Illustrator veya InDesign dosyalarımı düzenleyip render edebilir mi?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio&sweep=1)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
 
 Evet. **Layout Studio**'yu aç ve **Bir tasarım içe aktar**'a tıkla: yerel bir Figma **.fig** dosyasını (Save local copy), bir Penpot **.penpot** dışa aktarımını, bir Illustrator **.ai** veya **.pdf** dosyasını, bir InDesign **.idml** dosyasını (File → Export → InDesign Markup) ya da **herhangi bir SVG**'yi (geniş kapı - hemen hemen her tasarım uygulaması bunu dışa aktarır) kabul eder. Her şey tamamen cihazında ayrıştırılır, hesap veya eklenti gerekmez.
 

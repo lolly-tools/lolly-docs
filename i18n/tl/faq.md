@@ -18,7 +18,7 @@ Gumagawa ang Lolly ng malaking dami ng content. Sumusunod kami sa mahigpit na da
 
 ### Ano ang mga feature flag?
 
-![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&filename=pd-feature-flags&sweep=1)
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&dark=1&filename=pd-feature-flags&sweep=1)
 
 Binubuksan o isinasara ng feature flags ang mga bahagi ng Lolly. Karaniwan, isang administrator ang kumokontrol dito - pero sa Lolly, ikaw ang may kontrol.
 
@@ -53,7 +53,7 @@ Itinataas ng Lolly ang lahat.
 
 ## Ano ang nagpapaiba sa utilities kumpara sa tools?
 
-![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&filename=use-utilities&sweep=1)
+![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
 
 **Basic na Sagot →** Hindi laging kailangang mag-render ng utilities kaya maaari itong magkaroon ng ibang UX.
 
@@ -73,7 +73,7 @@ Nananalo kami sa digmaan para sa governance sa pamamagitan ng napakahusay na con
 
 ## Kaya bang i-edit at i-render ng Lolly ang aking mga Figma, Penpot, Illustrator o InDesign files?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&filename=layout-studio&sweep=1)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
 
 Oo. Buksan ang **Layout Studio** at i-click ang **Mag-import ng Disenyo**: tinatanggap nito ang native Figma **.fig** (Save local copy), isang Penpot **.penpot** export, isang Illustrator **.ai** o **.pdf**, isang InDesign **.idml** (File → Export → InDesign Markup), o **anumang SVG** (ang malawak na pinto - halos lahat ng design app ay maaaring mag-export nito). Lahat ay pino-parse nang ganap sa iyong device, walang kailangang account o plugin.
 

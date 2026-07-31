@@ -6,7 +6,7 @@ Waar dit platform past in het bredere landschap van creatieve tools, en waar het
 
 ## Landschap
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&filename=aud-open-canvas&sweep=1)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
 
 | Mogelijkheid | Canva (open canvas) | Merkportals (DAM-templating) | Illustrator (desktop pro) | Figma / Penpot (online pro) | **Lolly (constraints-first)** |
 |---|---|---|---|---|---|
@@ -26,7 +26,7 @@ De vorm van het gat is duidelijk: niets in het bestaande landschap biedt ons con
 
 ## Gebruik het voor
 
-![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&filename=ov2-deck-studio-output)
+![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&format=svg&dark=1&filename=ov2-deck-studio-output)
 
 Deck Studio is een goede maatstaf voor het plafond hier: een hele slidedeck als data gedeclareerd, live op het canvas opgemaakt, en geëxporteerd als een native bewerkbare PowerPoint.
 
@@ -45,7 +45,7 @@ Deck Studio is een goede maatstaf voor het plafond hier: een hele slidedeck als 
 
 ## Keur de tool goed, niet het bestand
 
-![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&filename=aud-approve-the-tool)
+![The producer's whole job: type the words. Type, colour and spacing were settled when the tool was approved](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DApproved&width=1440&height=900&dpi=192&waitMs=2000&format=svg&dark=1&filename=aud-approve-the-tool)
 
 Elke andere tool in het landschap produceert een *bestand* dat daarna gecontroleerd moet worden - een brandmanager in een Slack-thread, legal over de disclaimer, een ronde wijzigingen, nog een review. Lolly verplaatst de goedkeuring **één stap stroomopwaarts**. De merkregels - exacte hexcodes, gelicentieerde fontbestanden, afloopmarges, spatiëring - zitten hardgecodeerd in de HTML en CSS van de tool, dus de template *kan fysiek niet* een asset buiten het merk opleveren. De layout zelf is dragend.
 
@@ -63,7 +63,7 @@ Dit is de paradigmaverschuiving die de deterministische engine echt levert: het 
 
 ## Wat dit uniek biedt
 
-![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&filename=ov2-street-map-poster)
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-street-map-poster)
 
 - **Wild ontwerppotentieel, veilig geleverd binnen context.** Tools kunnen avontuurlijke ontwerpideeën uiten binnen hardgecodeerde guard-rails.
 - **Softwaregedefinieerde contentautomatisering die het uiteindelijke asset oplevert.** Input → eindbestand. Geen "sla het nu op vanuit je ontwerptool en verwerk het achteraf".

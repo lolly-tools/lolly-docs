@@ -137,7 +137,7 @@ through the machine's own DNS.
 Each read has its own surface in the view, and the component library lists them
 against the module that defines them:
 
-![The Verify section of the component library, listing each verify surface - verdict states, change history, metadata reveal - beside the module and CSS classes that define it](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=2000&dpi=192&waitMs=2200&format=svg&css=.cl-head%2C.cl-recs%2C.cl-section%3Anot%28%23cl-verify-valid%29%7Bdisplay%3Anone%7D&cropSelector=%23cl-verify-valid&filename=ce-verify-components&sweep=1)
+![The Verify section of the component library, listing each verify surface - verdict states, change history, metadata reveal - beside the module and CSS classes that define it](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=2000&dpi=192&waitMs=2200&format=svg&css=.cl-head%2C.cl-recs%2C.cl-section%3Anot%28%23cl-verify-valid%29%7Bdisplay%3Anone%7D&cropSelector=%23cl-verify-valid&dark=1&filename=ce-verify-components&sweep=1)
 
 ### `engine/src/pixel-watermark.ts` - the Lolly Imprint
 
@@ -287,7 +287,7 @@ Everything below surfaces as one card in the export panel: the C2PA switch (plus
 its ephemeral lifetime picker), the pixel Imprint, and the opt-in durable mark,
 each gated per format by the predicates in `views/tool-actions.ts`.
 
-![The Content protection card as the shell assembles it, with one switch per provenance mechanism rather than a single blanket toggle](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26options%26c2pa%3D90%26imprint%3D1&width=1440&height=900&dpi=192&waitMs=2200&format=svg&css=%23tool-inputs%2C%23sidebar-utils%7Bdisplay%3Anone%7D&cropSelector=.export-protection&filename=cc-export-protection)
+![The Content protection card as the shell assembles it, with one switch per provenance mechanism rather than a single blanket toggle](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26options%26c2pa%3D90%26imprint%3D1&width=1440&height=900&dpi=192&waitMs=2200&format=svg&css=%23tool-inputs%2C%23sidebar-utils%7Bdisplay%3Anone%7D&cropSelector=.export-protection&dark=1&filename=cc-export-protection)
 
 - `shells/web/src/bridge/identity.ts` - the identity manager:
   `status()`, `enroll(provider)` (popup + postMessage + PoP + cert cache),
@@ -308,7 +308,7 @@ opens. The provider buttons are built from `/api/ca/health.configured`, so a
 deployment that has wired up no OIDC app says so instead of offering a button that
 would 501.
 
-![The Content Credentials section of Profile, expanded from the link, with the 7 / 30 / 90 / 365 day certificate lifetime picker above the provider row, which on a deployment with no OIDC app wired up says so instead of offering a button](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=1440&height=1400&dpi=192&waitMs=2600&format=svg&cropSelector=%23identity-section&walker=1&filename=ce-identity-enrolment)
+![The Content Credentials section of Profile, expanded from the link, with the 7 / 30 / 90 / 365 day certificate lifetime picker above the provider row, which on a deployment with no OIDC app wired up says so instead of offering a button](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=1440&height=1400&dpi=192&waitMs=2600&format=svg&cropSelector=%23identity-section&walker=1&dark=1&filename=ce-identity-enrolment)
 
 ## Operator runbook (one-time setup - the parts only you can do)
 

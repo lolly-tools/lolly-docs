@@ -4,17 +4,17 @@
 
 ## 書き出しの仕組み
 
-![The export panel - format, size and the Copy / Download / Save / Share actions](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&walker=1&filename=export-panel&sweep=1)
+![The export panel - format, size and the Copy / Download / Save / Share actions](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&walker=1&dark=1&filename=export-panel&sweep=1)
 
-![The export panel - format, size and the Copy / Download / Save / Share actions](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&walker=1&filename=export-panel&sweep=1)
+![The export panel - format, size and the Copy / Download / Save / Share actions](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&walker=1&dark=1&filename=export-panel&sweep=1)
 
-![The export panel - format, size and the Copy / Download / Save / Share actions](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&walker=1&filename=export-panel&sweep=1)
+![The export panel - format, size and the Copy / Download / Save / Share actions](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&walker=1&dark=1&filename=export-panel&sweep=1)
 
-![The export panel - format, size and the Copy / Download / Save / Share actions](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&walker=1&filename=export-panel&sweep=1)
+![The export panel - format, size and the Copy / Download / Save / Share actions](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&walker=1&dark=1&filename=export-panel&sweep=1)
 
-![The export panel - format, size and the Copy / Download / Save / Share actions](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&walker=1&filename=export-panel&sweep=1)
+![The export panel - format, size and the Copy / Download / Save / Share actions](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&walker=1&dark=1&filename=export-panel&sweep=1)
 
-![The export panel - format, size and the Copy / Download / Save / Share actions](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&walker=1&filename=export-panel&sweep=1)
+![The export panel - format, size and the Copy / Download / Save / Share actions](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&walker=1&dark=1&filename=export-panel&sweep=1)
 
 プレビューが*そのまま*ファイルになります。書き出すと、ホストがそのキャンバスを選んだフォーマットへレンダリングし、ダウンロードとして渡してくれます（またはクリップボードに置きます）。ツールが提供するのは、その作者が宣言したフォーマットだけであり、ピッカーは、お使いのブラウザが生成できないフォーマットを非表示にします（[動画](#video) を参照）。
 
@@ -40,9 +40,9 @@
 
 ## フォーマットを選ぶ
 
-![The filename field fused to the format picker, so the export reads as one name.format pair](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.filename-extension&walker=1&filename=exp-format-picker)
+![The filename field fused to the format picker, so the export reads as one name.format pair](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.filename-extension&walker=1&dark=1&filename=exp-format-picker)
 
-![A hairline wide-tracked wordmark reading Aurora, the kind of pure vector artwork the SVG row of the table is about](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DAurora%26weight%3D200%26tracking%3D16%26size%3D200%26full&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=%23tool-canvas&format=svg&filename=vt-wordmark-vector)
+![A hairline wide-tracked wordmark reading Aurora, the kind of pure vector artwork the SVG row of the table is about](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Ftext%3DAurora%26weight%3D200%26tracking%3D16%26size%3D200%26full&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=%23tool-canvas&format=svg&dark=1&filename=vt-wordmark-vector)
 
 | やりたいこと… | 使うフォーマット | 理由 |
 |---|---|---|
@@ -69,7 +69,7 @@
 
 ## サイズと印刷単位
 
-![The dimensions row set to 210 by 297 mm, with the DPI field revealed because the unit is physical](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26w%3D210%26h%3D297%26unit%3Dmm%26format%3Dpdf%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-dims&walker=1&filename=exp-export-dims)
+![The dimensions row set to 210 by 297 mm, with the DPI field revealed because the unit is physical](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26w%3D210%26h%3D297%26unit%3Dmm%26format%3Dpdf%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-dims&walker=1&dark=1&filename=exp-export-dims)
 
 既定では、書き出しはツールのネイティブなピクセルサイズを使用します。ツールが**寸法**を公開している場合は、幅×高さと**単位**を設定できます：
 
@@ -102,7 +102,7 @@ Multi-page PDF は RGB ドキュメントであり、トンボ／塗り足しは
 
 ## DXF（カットファイル）
 
-![A Street Map render of Paris in ink on cream - pure line art, so every stroke survives the trip to a cutter](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dparis%26roadColor%3D1a1a2e%26waterColor%3D93c5fd%26background%3Dfaf7f2%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&filename=vt-street-map-cut)
+![A Street Map render of Paris in ink on cream - pure line art, so every stroke survives the trip to a cutter](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dparis%26roadColor%3D1a1a2e%26waterColor%3D93c5fd%26background%3Dfaf7f2%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-street-map-cut)
 
 ベクター系のツール（Brand Lockup、QR Code、Street Map、Wayfinding Signage、Pose Geeko、各種ロゴロックアップ、Diagram Builder）は **DXF** を書き出せます — レーザーカッター、カッティングプロッター、CNC/CAD ソフトウェアが読み込む AutoCAD R12 の相互交換フォーマットです。ジオメトリは**ミリメートル単位のアウトラインパス**として書き出され（曲線は精細な許容誤差でフラット化）、テキストはパスにアウトライン化され、色は最も近い AutoCAD Color Index に変換されます（カッターの工具／操作を切り替えるために使われるのが一般的です）。DXF は線画専用であり、写真やフィルター処理された領域はカットパスの形を持たないため破棄されます（Lolly が警告します）。ラスターのコンテンツを残す必要がある場合は SVG/PDF を使ってください。
 
@@ -151,7 +151,7 @@ GIF はどこでも動作します（チャットやメールに最適ですが�
 
 ## パスワード保護
 
-![The Content protection group opened on a PNG export, showing only the cards that apply to it](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26imprint%3D1%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-protection&filename=exp-content-protection)
+![The Content protection group opened on a PNG export, showing only the cards that apply to it](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26imprint%3D1%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-protection&dark=1&filename=exp-content-protection)
 
 互いに独立した2種類のロックがあり、どちらも完全にお使いのデバイス上で完結します。
 
@@ -173,9 +173,9 @@ GIF はどこでも動作します（チャットやメールに最適ですが�
 
 ## Content Credentials（C2PA）
 
-![The HDR card in the export panel, switched on, with the White / Reach / Dark lift / Focus dials revealed under it](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26hdr%3D1%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-hdr&walker=1&filename=exp-hdr-card)
+![The HDR card in the export panel, switched on, with the White / Reach / Dark lift / Focus dials revealed under it](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26hdr%3D1%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-hdr&walker=1&dark=1&filename=exp-hdr-card)
 
-![The Password protect card expanded on a PDF export, with the password field and the two lock tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-pdfpass&filename=exp-pdf-password)
+![The Password protect card expanded on a PDF export, with the password field and the two lock tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-pdfpass&dark=1&filename=exp-pdf-password)
 
 書き出したファイルには **Content Credentials** を付与できます — ファイルに埋め込まれた署名済みの [C2PA](https://c2pa.org) マニフェストで、そのファイルが Lolly で作られ、それ以降改変されていないことを、改ざんを検知できる形で記録します。これは、上記の来歴メタデータの標準規格版にあたります — ファイルのバイト列のハッシュに紐づいた暗号学的な主張（何がいつ誰によってどこで作ったか）であり、その後の編集はすべて C2PA 対応のビューアーで検知可能です。この標準は [Content Authenticity Initiative](https://contentauthenticity.org)（Adobe、BBC、Microsoft、Nikon など）によって運営されており、Lolly が書き込むクレデンシャルは、カメラメーカーや報道機関、クリエイティブスイートが採用しているものと同じです。
 
@@ -189,7 +189,7 @@ GIF はどこでも動作します（チャットやメールに最適ですが�
 
 ## スマートフォンでの操作
 
-![The Content Credentials card, pre-ticked, with the credential lifetime beside it](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26c2pa%3D30%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-c2pa%5Bdata-c2pa-only%5D&walker=1&filename=exp-c2pa-card)
+![The Content Credentials card, pre-ticked, with the credential lifetime beside it](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26c2pa%3D30%26options&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=.export-c2pa%5Bdata-c2pa-only%5D&walker=1&dark=1&filename=exp-c2pa-card)
 
 書き出しのコントロールは、フローティングの **Render** ボタンの奥にあり、タップすると **Export** シートが開きます — フォーマット、サイズ、コピー、ダウンロード、共有まで、同じ内容がタッチ操作向けのサイズで用意されています。
 

@@ -10,7 +10,7 @@ Mọi thứ trong hồ sơ đều nằm **trên thiết bị**, trong cơ sở d
 
 Tùy chọn là phần duy nhất làm thay đổi cách ứng dụng hiện ra trước mắt bạn. Các thẻ chủ đề là bản xem trước trực tiếp và được áp dụng ngay khi bạn chọn một thẻ, chỉ trên thiết bị này.
 
-![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
 
 | Phần | Là gì |
 |---|---|
@@ -24,7 +24,7 @@ Tùy chọn là phần duy nhất làm thay đổi cách ứng dụng hiện ra 
 
 Không có mục nào là bắt buộc. Một hồ sơ trống vẫn là một hồ sơ hoàn toàn tốt; bạn chỉ cần điền những gì giúp bạn đỡ phải gõ lại.
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details&sweep=1)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&dark=1&filename=profile-details&sweep=1)
 
 ## Hồ sơ là một bối cảnh, không chỉ là một con người
 
@@ -32,7 +32,7 @@ Từ "hồ sơ" gợi ý một con người cố định duy nhất, nhưng tron
 
 ### Với tư cách cá nhân
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
 
 Mặc định. Hồ sơ chính là bạn: tên bạn, email của bạn, ảnh chân dung của bạn. Thiết lập một lần và chữ ký, huy hiệu, biểu trưng hội nghị của bạn sẽ tự động điền vào. Đây là tất cả những gì hầu hết mọi người sẽ cần.
 
@@ -50,7 +50,7 @@ Trong Lolly, vai trò đó chỉ đơn giản là **một hồ sơ khác mà b�
 
 Lưu trữ là nơi cả hai nửa đó cùng tồn tại: đồng hồ đo tính đến từng byte mà bản cài đặt này đang giữ, theo từng hạng mục, và các nút bên dưới nó là cách bạn xóa hoặc mang chúng đi.
 
-![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
 
 Tại bất kỳ thời điểm nào, một bản cài đặt chỉ có **một hồ sơ đang hoạt động** - những thông tin mà một công cụ nhìn thấy ngay lúc đó. Không có bộ chuyển hồ sơ trong ứng dụng; thay vào đó, mỗi hồ sơ là một **gói di động** (một tệp `.zip` duy nhất, xem [bên dưới](#moving-a-profile-to-a-new-device)). Đây là chủ đích dùng chung cơ chế với việc chuyển sang thiết bị mới - một hồ sơ là một tệp mà bạn có thể lưu, sao chép, và nạp vào.
 
@@ -64,7 +64,7 @@ Vì vậy nếu bạn thực sự phải xoay sở giữa nhiều bối cảnh (
 
 ## Chuyển hồ sơ sang thiết bị mới
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls&sweep=1)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
 
 Vì hồ sơ hoàn toàn cục bộ, cách duy nhất để đưa nó vào một bản cài đặt trống - một laptop mới, một trình duyệt vừa được đặt lại, máy của đồng nghiệp, một thiết bị ngoại tuyến - là **mang theo tệp**. Không có đăng nhập nào khôi phục nó giúp bạn, và đó chính là mấu chốt: ngay từ đầu chưa từng có gì rời khỏi thiết bị của bạn.
 
@@ -81,7 +81,7 @@ Những gì không được mang theo: bộ nhớ đệm danh mục (nó sẽ t�
 
 ## Cách các công cụ sử dụng hồ sơ của bạn
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&dark=1&filename=pd-use-my-details)
 
 Một công cụ chỉ bao giờ *điền sẵn* những trường hồ sơ mà nó được xây dựng rõ ràng để liên kết:
 
@@ -101,7 +101,7 @@ Hồ sơ thay đổi tài sản đó *đến từ* ai; nền tảng thay đổi 
 
 ### "Hồ sơ" còn mang hai nghĩa khác trong dự án - không phải nghĩa này
 
-![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&filename=pv-identity-enrol)
+![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&dark=1&filename=pv-identity-enrol)
 
 Từ này bị dùng chồng chéo trong toàn bộ dự án. Không nghĩa nào trong hai nghĩa dưới đây là hồ sơ cá nhân mà trang này đang nói tới:
 

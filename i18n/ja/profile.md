@@ -10,7 +10,7 @@
 
 環境設定は、アプリの見た目そのものを変える唯一の部分です。テーマカードはそれ自体がライブプレビューであり、選んだ瞬間に適用され、その効果はこのデバイスだけに留まります。
 
-![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
 
 | 項目 | 内容 |
 |---|---|
@@ -24,7 +24,7 @@
 
 これらはすべて任意です。空欄のプロフィールもそれはそれで問題なく機能します。入力の手間が省ける項目だけを埋めれば十分です。
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&filename=profile-details&sweep=1)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&dark=1&filename=profile-details&sweep=1)
 
 ## プロフィールは単なる「人」ではなく「文脈」
 
@@ -32,7 +32,7 @@
 
 ### 個人として
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
 
 これが既定の形です。プロフィールはあなた自身——氏名、メールアドレス、ヘッドショット——を表します。一度設定すれば、署名、バッジ、カンファレンス用ロックアップがすべて自動的に入力されます。ほとんどの人にとってはこれで十分でしょう。
 
@@ -50,7 +50,7 @@ Lollyでは、その役割は単に**手元に置いておく別のプロフィ�
 
 ストレージでは、その両方を扱います。メーターはこのインストールが保持しているすべてのバイトをカテゴリーごとに集計し、その下のボタンが、それを消去したり持ち出したりする手段になります。
 
-![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
 
 どの瞬間においても、インストールには**アクティブなプロフィールが1つ**だけ存在します——それが今ツールから見えている情報です。アプリ内にプロフィール切り替え機能はありません。その代わり、各プロフィールは**持ち運び可能なバンドル**（1つの`.zip`ファイル、[下記](#moving-a-profile-to-a-new-device)を参照）です。これは新しいデバイスへ移行する際の仕組みとまったく同じで、意図的にそうなっています——プロフィールとは、保存し、コピーし、読み込むことができる1つのファイルなのです。
 
@@ -64,7 +64,7 @@ Lollyでは、その役割は単に**手元に置いておく別のプロフィ�
 
 ## プロフィールを新しいデバイスへ移行する
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls&sweep=1)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
 
 プロフィールは完全にローカルなものであるため、まっさらなインストール——新しいノートPC、リセットしたばかりのブラウザ、同僚のマシン、オフラインの端末——にそれを持ち込む唯一の方法は、**ファイルを運ぶこと**です。ログインによって復元されることはありません。それこそが重要な点であり、そもそもあなたのデバイスから何かが外に出たことは一度もないのです。
 
@@ -81,7 +81,7 @@ Lollyでは、その役割は単に**手元に置いておく別のプロフィ�
 
 ## ツールがプロフィールをどう使うか
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&dark=1&filename=pd-use-my-details)
 
 ツールは、明示的に紐づけるよう作られたプロフィールのフィールドを*事前入力*するだけです。
 
@@ -101,7 +101,7 @@ Lollyでは、その役割は単に**手元に置いておく別のプロフィ�
 
 ### 「プロフィール」という言葉には他に2つの意味があります——このページのものとは別
 
-![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&filename=pv-identity-enrol)
+![The Verified identity card, phone-width: the certificate lifetime picker and the enrolment step beneath it - the identity profile, separate from your personal details](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Didentity-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23identity-section&dark=1&filename=pv-identity-enrol)
 
 このプロジェクト全体で、この言葉は意味が重なり合って使われています。以下のどちらも、このページで扱っている個人のプロフィールとは異なります。
 
