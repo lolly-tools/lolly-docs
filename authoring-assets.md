@@ -106,7 +106,7 @@ Palettes are a special asset type whose payload is JSON, not an image:
 
 A palette asset is what the Catalogue's Swatches section renders: every ramp step as a chip, click to copy its hex.
 
-![The Catalogue's Swatches section - the brand ramps laid out as labelled chips with download buttons above](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=96&waitMs=2000&format=png&cropSelector=.cat-group%5Bdata-group%3D%22swatches%22%5D&filename=auth-catalogue-swatches)
+![The Catalogue's Swatches section - the brand ramps laid out as labelled chips with download buttons above](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=96&waitMs=2000&walker=1&format=svg&cropSelector=.cat-group%5Bdata-group%3D%22swatches%22%5D&filename=auth-catalogue-swatches)
 
 Tools reference palette swatches through `host.assets.get(id)` → `ref.meta.swatches`. Note this is wired up in the **CLI shell** today (its bridge parses the palette JSON and spreads `swatches` into `meta`); the web shell's assets bridge does not yet populate `meta.swatches`, so don't rely on it cross-shell.
 
