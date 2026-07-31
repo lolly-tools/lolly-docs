@@ -6,7 +6,7 @@ Lolly was built in the middle of the biggest change in how media gets made since
 >
 > - Andy Fitzsimon, Architect of Lolly
 
-The image is from where Andy grew up, and it decodes like this: the scarcity posture toward AI - grab what you can, ship it fast, worry later - is drinking stale tank water while the sky fills with rain. Generated content is about to be effectively infinite. When something becomes infinite, its value moves to whatever remains scarce around it: trust, provenance, brand coherence and human judgment. Lolly is not a bigger bucket for the flood. It is irrigation - channels that direct the water, and soil where things actually grow.
+The image is from where Andy grew up, and it decodes like this: the scarcity posture toward AI - grab what you can, ship it fast, worry later - is drinking spoiled tank water while the rain sets in and floodwater races across the plains toward you. Generated content is about to be effectively infinite. When something becomes infinite, its value moves to whatever remains scarce around it: trust, provenance, brand coherence and human judgment. Lolly is not a bigger bucket for the flood. It is irrigation - channels that direct the water, and soil where things actually grow.
 
 ## The stance, in five commitments
 
