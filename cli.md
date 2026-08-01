@@ -102,9 +102,10 @@ Naming the format explicitly is how you opt out, because then you have said whic
 | `--width=`, `--height=` | Output size (numbers). |
 | `--unit=` | `px` (default), `mm`, `cm`, `in`, `pt`, `pc` - physical sizing. |
 | `--dpi=` | Raster DPI for physical units (default 300). |
-| `--c2pa[=7\|30\|90\|365]` | Stamp [Content Credentials](/info/exporting.html) into the output (`svg` on the bare CLI), signed with an ephemeral on-device certificate of that lifetime (default 30 days; `--c2pa=off` forces off for a `render.c2pa` tool). Verify with `lolly validate <file>`. |
-| `--imprint` | Embed the [Lolly Imprint](/info/exporting.html) pixel watermark (opt-in on the CLI, unlike the web shell where it is on by default). |
-| `--durable=1` | Embed the opt-in durable (TrustMark-format) credential. Needs the encoder model on-device. |
+| `--c2pa[=7\|30\|90\|365]` | Stamp [Content Credentials](/info/exporting.html) into the output, signed with an ephemeral on-device certificate of that lifetime (default 30 days). **On by default**, exactly as in the app: a tool opts out with `render.c2pa:false`, an on-device privacy utility never carries them at all, and `--c2pa=off` opts out per run. Verify with `lolly validate <file>`. Sign with a real identity instead of an anonymous key with `--sign-key`/`--sign-cert` - see [Signing from the terminal](/info/cli-signing.html). |
+| `--imprint` | Embed the [Lolly Imprint](/info/exporting.html) pixel watermark. **On by default** too, for the formats whose bytes can carry it (`png`, `jpg`, `webp`, `avif`, `tiff`, `pdf`, `pdf-cmyk`, `pptx`); `--imprint=0` opts out. On a browser-free PNG render the mark is embedded by the CLI itself - it never forces the browser tier. A render too small to carry a detectable mark says so and writes the file unmarked. |
+| `--no-provenance` | One word for a bare render: no credential, no imprint, no durable mark. **This is the byte-determinism switch** - both default marks embed a fresh timestamp, so two runs of the same defaulted command differ. `smoke` and `batch` apply it themselves. Combining it with an explicit `--c2pa`/`--imprint`/`--durable` is a usage error rather than a guess. |
+| `--durable=1` | Embed the opt-in durable (TrustMark-format) credential. **Off** by default (a neural encode plus a model download). Needs the encoder model on-device. |
 | `--password=<pw>` | Open password for a rendered PDF. Visible in `ps` - prefer `--password-stdin`. |
 | `--password-stdin` | Read that password from stdin instead of the argument list. Giving both is an error. |
 | `--cuts=<n>` | **Refused** on the CLI (exit 3): a contact sheet of `n` stills needs the web shell's sequence renderer, and one frame under that filename would be a different artefact. |
@@ -219,7 +220,9 @@ asset-export,pdf,,,suse/logo/hor-neg-green
 
 The header *is* the namespace here - a batch has no `--input.<id>=` escape - so an input whose id is one of those reserved names (`chart-creator` declares `width` and `height`) cannot be set per row, and `--template=` leaves it out rather than emitting a second column with the same name. It says which inputs it dropped. Render those with `lolly run … --input.width=…`.
 
-`--template=` writes the input columns plus those six output columns. It is not the whole set: **any reserved URL param works as a column**, because a row's cells are read exactly as a URL's query is. A `c2pa` column stamps Content Credentials per row (measured: `c2pa,30` produced a 19,946-byte SVG where the blank cell produced 16,063), and `bleed`/`marks`/`imprint`/`durable`/`press-profile` ride the same way. Add them to the header by hand.
+`--template=` writes the input columns plus those six output columns. It is not the whole set: **any reserved URL param works as a column**, because a row's cells are read exactly as a URL's query is. `bleed`/`marks`/`press-profile` ride that way; add them to the header by hand.
+
+**`batch` renders bare.** Unlike a single `lolly run`, a batch row carries no Content Credentials and no Imprint unless it asks - a batch is a build step, and a regenerated folder should not differ from its predecessor in every file. A `c2pa` column (or `imprint`, or `durable`) opts a row back in and is read exactly as `?c2pa=` is. `smoke` renders bare for the same reason.
 
 `--keep-going` renders past a failing row (otherwise the batch stops with a non-zero exit). Either way the batch's exit code is the **worst row's** code, not a flat 1, and `--json` gives one document with a per-row `exit` so a pipeline can retry just the exit-3 rows on a runner that has a browser. `--output` is refused: a batch has many outputs and one path cannot name them - use `--out-dir=`.
 
@@ -266,7 +269,7 @@ The finding to know about: if your brand declares a spot ink that is actually a 
 
 ## Scripting & CI
 
-The same inputs give the same **render** every time - that is what makes a tool a build artifact rather than a generation - so the CLI fits anywhere you generate other build outputs. ("The same render" is not "the same bytes": see the measurements below.)
+The same inputs give the same **render** every time - that is what makes a tool a build artifact rather than a generation - so the CLI fits anywhere you generate other build outputs. ("The same render" is not "the same bytes": see the measurements below, and note that a default render is *signed*, which alone is enough to move the bytes.)
 
 ```bash
 # Generate an OG image at build time instead of committing a binary:
@@ -275,7 +278,22 @@ npm run cli -- quotes --quote="Ship it." --export=svg --output=./public/og.svg  
 
 ### How far "the same" goes, byte for byte
 
-Reproducible *renders* and reproducible *bytes* are not the same promise, and only some formats keep the second one. Measured, not assumed - two consecutive runs of the same command, hashed:
+Reproducible *renders* and reproducible *bytes* are not the same promise, and only some formats keep the second one.
+
+**Start here: a default render is not byte-reproducible, and that is deliberate.** Content Credentials and the Lolly Imprint are on by default (as in the app), and a credential is signed with a fresh key and a fresh timestamp every time. Pass **`--no-provenance`** for a bare render, which is what the rows below are measured with. `smoke` and `batch` already do.
+
+```
+$ lolly qr-code --url=https://suse.com --export=svg --output=d1.svg   # twice, defaults
+$ lolly qr-code --url=https://suse.com --export=svg --output=d2.svg
+DIFFER
+$ lolly qr-code --url=https://suse.com --export=svg --no-provenance --output=n1.svg
+$ lolly qr-code --url=https://suse.com --export=svg --no-provenance --output=n2.svg
+IDENTICAL
+```
+
+Same result for `--export=png` (the browser-free resvg tier), measured the same way.
+
+Measured, not assumed - two consecutive runs of the same command, hashed, **with `--no-provenance`**:
 
 | Path | Byte-identical across runs? | Measured with |
 |---|---|---|
@@ -286,13 +304,13 @@ Reproducible *renders* and reproducible *bytes* are not the same promise, and on
 | **PDF** | **No.** Every PDF carries `/CreationDate` and `/ModDate`; two runs a second apart differ in those bytes (128 differing bytes in a measured 57 KB file with `--c2pa=off`, all of them in the trailer and metadata). | `qr-code --export=pdf --c2pa=off` |
 | **JPG, WebP, HTML-layout PNG** (the headless-Chromium tier) | **No.** The browser's paint and encode are not byte-reproducible run to run; the file length itself moves between runs. | `qr-code --export=jpg`, `qr-code --export=webp`, `color-block --export=png`† |
 | **Video** (`gif`/`apng`/`webm`/`mp4`) | **Assume no.** Same tier as the row above, plus a frame-timed capture. Not measured here. | not measured |
-| Anything with `--c2pa`, `--durable` or `--imprint` | **No.** A credential is signed with a fresh timestamp, by design. | `qr-code --export=svg --c2pa` |
+| Anything carrying `--c2pa`, `--durable` or `--imprint` - **which is the default** | **No.** A credential is signed with a fresh timestamp, by design; the Imprint moves the pixels. Drop them with `--no-provenance`. | `qr-code --export=svg` (defaults) |
 
 † These commands name tools from the **SUSE brand pack**, which is a private submodule. On a community-only clone the active profile is `lolly-start` and they print `Tool not found`. The measurements were taken on the SUSE profile; the format-level claim in each row is what travels, not the specific command.
 
 Two caveats the table cannot carry. **Format-level reproducibility is not tool-level reproducibility**: a tool that renders the current time, the weather or a live clock produces different bytes in any format, and that is the tool doing its job. And these are *this machine, back to back* - a different OS, a different font set or a different engine version will move the bytes of anything that shapes text.
 
-So: check a hash of an SVG into a lockfile if you like; do **not** build a CI gate on the hash of a PDF, an ICS, a JPEG, or a browser-tier PNG. Compare those by rendering and inspecting, not by digest.
+So: check a hash of an SVG into a lockfile if you like - **rendered with `--no-provenance`** - and do **not** build a CI gate on the hash of a PDF, an ICS, a JPEG, a browser-tier PNG, or anything signed. Compare those by rendering and inspecting, not by digest.
 
 ### Exit codes
 
@@ -380,13 +398,34 @@ npm run cli -- validate ./poster.pdf
 npm run cli -- validate ./poster.pdf --json
 npm run cli -- validate ./poster.png --deep
 npm run cli -- validate ./poster.pdf --trust-anchor=./corp-root.pem
+npm run cli -- validate ./poster.svg --no-default-anchors    # trust only what you pinned
 ```
+
+### Which anchors produced the verdict
+
+Trust is only meaningful next to "trusted by what", so every report says which anchor set it used. The default set is the **Lolly CA root** plus the **vendored C2PA known-certificate list** (camera makers, the big generators) plus anything you pinned - the same set the web `/valid` view uses, so one word means one thing on every surface:
+
+```
+$ lolly validate ./qr.svg
+./qr.svg  [svg]
+✦ Made with Lolly — credential intact, file unchanged since export
+  …
+  ℹ signingCredential.untrusted — signing certificate untrusted — an ephemeral on-device key, not a CA-issued identity
+  Trust anchors: C2PA known-certificate list (54) · pinned: none · Lolly CA root
+
+$ lolly validate ./qr.svg --no-default-anchors
+  …
+  Trust anchors: no built-in anchors · pinned: none · Lolly CA root NOT pinned
+```
+
+Both exit 0 here: this file is signed with an ephemeral on-device key that chains to nothing, which is the designed posture for a terminal render, not damage. `--no-default-anchors` is the bare-trust check - useful when the only trust you accept is a root you pinned yourself.
 
 | Flag | Meaning |
 |---|---|
-| `--json` | The shared envelope instead of the human summary. `result.files[]` carries one record per file - `verdict` (the stable slug), `resolved` (the engine's semantic verdict), `report` (the full verifier output) and `metadata` (the `--metadata` report, or `null` when it did not run). A file that could not be read is a record with its own `error`, not a silence, so a list of ten does not lose nine to one typo. |
+| `--json` | The shared envelope instead of the human summary. `result.files[]` carries one record per file - `verdict` (the stable slug), `resolved` (the engine's semantic verdict), `report` (the full verifier output), `metadata` (the `--metadata` report, or `null` when it did not run) and `anchors` (which trust anchors produced the verdict). A file that could not be read is a record with its own `error`, not a silence, so a list of ten does not lose nine to one typo. |
 | `--deep` | Additionally run the neural pixel-watermark scan (TrustMark / Content Seal / the Lolly durable mark). Needs the browser tier, and is **advisory** - it never changes the exit code. |
 | `--trust-anchor=<root.pem>` | Trust an additional root certificate. Repeatable, for an organisation's own CA. `$LOLLY_TRUST_ANCHOR` adds more as a `PATH`-style list (`:` on Unix, `;` on Windows); a leading `~` expands. Flag first, then environment. A pinned root that cannot be read stops the run (exit 2) rather than quietly downgrading the verdict. |
+| `--no-default-anchors` | Trust **only** what you pinned: drops the Lolly CA root and the vendored C2PA known-certificate list. With nothing pinned the anchor set is empty and every signer reads untrusted by construction - the bare-trust check. |
 | `--metadata` | Also report what else is in the file: embedded metadata, PDF structure, and text that is present in the file but not visible on the page. |
 
 The summary headlines whether the file was genuinely made with Lolly and is unchanged since. The exit code follows the table above: **0** the file matches what was signed (including an expired certificate - Lolly signs with short-lived on-device certificates, so any other rule would fail every gate on its own correct output within a month), **4** a credential is present and the bytes no longer match it, **5** no credential at all, **2** the path could not be read. `--strict` promotes expired to 4; `--require=none` turns off verdict-based exit codes entirely ("just tell me what is in this file"). Several files can be given at once - the exit code is the worst one's.
@@ -427,6 +466,7 @@ The override is **marker-validated**: the directory must hold a generated catalo
 
 ## Related
 
+- [Signing from the terminal](/info/cli-signing.html) - set up a real signing identity, so exports carry a verifiable name rather than an anonymous on-device key.
 - [TUI](/info/tui.html) - the interactive, full-screen terminal counterpart. Same engine, same output; keyboard-driven instead of one-shot.
 - [URL Mode](/info/url-mode.html) - the parameter model the CLI shares with the web shell (and the reserved params).
 - [Exporting & Formats](/info/exporting.html) - what each format is for.

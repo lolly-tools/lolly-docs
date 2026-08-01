@@ -57,6 +57,7 @@ Imprint, or is quietly hiding data in its bytes gets flagged too - see [Beyond t
 credential](#beyond-the-credential-what-else-verify-shows) below.
 
 ![The Change history panel, where every step names the software that made it and Lolly's own leg of the journey reads green](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&css=.cl-head%2C.cl-recs%2C.cl-section%3Anot%28%23cl-verify-valid%29%7Bdisplay%3Anone%7D&cropSelector=.valid-steps&dark=1&filename=cc-change-history)
+![The Change history panel, where every step names the software that made it and Lolly's own leg of the journey reads green](/t/url-shot?url=%2F%23%2Fverify%3Fsrc%3D%2Finfo%2Fthe-flood.webp&width=1440&height=1400&dpi=192&waitMs=6000&walker=1&format=svg&cropSelector=.valid-steps&dark=1&filename=ai-stance-change-history&sweep=1)
 
 The same credential check runs in the CLI (`lolly validate <file>`) and in any
 third-party C2PA validator pointed at the public Lolly root
@@ -227,10 +228,16 @@ the user's call, offered at the moment the certificate is actually minted:
   can't sign with validity your certificate doesn't have, and re-issuing at export
   time would break offline signing.
 - **URL / CLI:** `c2pa` is a reserved URL-mode param (see [URL Mode](/info/url-mode.html)):
-  `?c2pa=90` on a share/deep-link URL turns the credential on with a 90-day
-  ephemeral window (and pre-sets the export panel), `c2pa=off` forces it off,
-  and the CLI accepts the same as `--c2pa=90` - stamping its native `svg`
-  output with the ephemeral path (enrolment is a browser feature).
+  `?c2pa=90` on a share/deep-link URL sets a 90-day ephemeral window (and pre-sets the
+  export panel), `c2pa=off` forces it off, and the CLI accepts the same as `--c2pa=90`.
+  A CLI render is credentialed **by default**, exactly as an export from the app is
+  (plans/cli-ga-contract.md §12 O2). `--no-provenance` is the one-word opt-out, and the
+  way to get byte-identical output run to run. The default signer there is the ephemeral
+  on-device one - *browser* enrolment is a browser feature, because the device key is
+  generated non-extractable and cannot be handed to a terminal - but the CLI can sign
+  with an identity you already hold: `--sign-key=<key.pem> --sign-cert=<chain.pem>` puts
+  your own certificate chain in the manifest, and a verifier pinning its root reads the
+  file as **Verified**. See [Signing from the terminal](/info/cli-signing.html).
 
 ---
 

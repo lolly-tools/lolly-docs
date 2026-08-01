@@ -6,7 +6,7 @@ If any check on this page doesn't produce the result shown, that's either a bug 
 
 ## See it work, in ten seconds
 
-Before the procedures, the payoff. Open [`/verify`](https://lolly.tools/verify) and drop a file on it — no upload, no account, no wait for a server. Here it is checking the [generated Queensland storm](/info/ai-stance.html) from our AI stance page: a Gemini image Lolly opened, resized and exported. Every badge below was computed on the device, from the file's own bytes.
+Before the procedures, the payoff. Open [`/verify`](/#/verify) and drop a file on it — no upload, no account, no wait for a server. Here it is checking the [generated Queensland storm](/info/ai-stance.html) from our AI stance page: a Gemini image Lolly opened, resized and exported. Every badge below was computed on the device, from the file's own bytes.
 
 ![Verify on a phone-width screen — the storm image, a green Made with Lolly verdict, and the credential-intact and bytes-unchanged badges stacked beneath it](/t/url-shot?url=%2F%23%2Fverify%3Fsrc%3D%2Finfo%2Fthe-flood.webp&width=440&height=1500&dpi=192&waitMs=6000&waitSelector=.valid-steps&format=jpg&cropSelector=.valid-top&dark=1&filename=cc-verify-mobile&sweep=1)
 
@@ -25,7 +25,7 @@ None of that is the trust claim, though — it is the demo. The rest of this pag
 
 ## In your browser, no tools required
 
-**1. Watch the network.** Open [lolly.tools](https://lolly.tools), open your browser's DevTools (F12), switch to the **Network** tab, and use a tool — type a URL into [QR Code](https://lolly.tools/t/qr-code), change colours, export a PNG. Every request stays on `lolly.tools`: the app shell, the tool's own files, catalogue assets. No analytics host, no CDN beacon, no font service, no "error reporting" endpoint. What you type into a tool appears in **no request at all** — rendering is local.
+**1. Watch the network.** Open [lolly.tools](https://lolly.tools), open your browser's DevTools (F12), switch to the **Network** tab, and use a tool — type a URL into [QR Code](/t/qr-code), change colours, export a PNG. Every request stays on `lolly.tools`: the app shell, the tool's own files, catalogue assets. No analytics host, no CDN beacon, no font service, no "error reporting" endpoint. What you type into a tool appears in **no request at all** — rendering is local.
 
 The honest exceptions — every one opt-in, user-initiated, and visible in the same Network tab when it happens: adding a **Google Font** in the brand editor fetches that one family from Google, after a consent dialog that tells you exactly that, once, before the first fetch; clicking an **ICC press-profile preset** fetches that profile from the ICC's public registry at color.org; playing the optional built-in **radio** streams from the station; and **URL Screenshot** necessarily loads the URL you typed — that's its job, and you watch it happen. A tool whose manifest declares a network capability may fetch only from the hosts its manifest allowlists — the mechanism is fail-closed, and no tool currently shipped declares one. The [privacy policy](/info/privacy.html) keeps the canonical table of all of these; its standing rule is that a network touch not in that table doesn't happen.
 

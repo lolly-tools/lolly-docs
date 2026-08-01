@@ -4,9 +4,9 @@ Lolly turns your rules - colours, type, layouts, logic - into tools anyone can u
 
 This is the one page to read first. Two things get you productive: **make Lolly yours** and **bring in what you already have** (your design files and tokens). Everything else is a link away.
 
-> New to Lolly and just want to make something? Open the app, pick any tool from the gallery, fill in the blanks, and hit **Render**. Come back here when you want it wearing *your* brand.
+> New to Lolly and just want to make something? [Open the app](/#/), pick any tool from the gallery, fill in the blanks, and hit **Render**. Come back here when you want it wearing *your* brand.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1&sweep=1)
 
 ## 1. Make it yours - configure your Design System
 
