@@ -72,7 +72,7 @@ None of those fields stay private to the repo. The gallery's About card is the m
 
 Most of what `render` declares surfaces in one place the user sees: the export popup. Formats, page size and unit, the Convert paths outlining toggle and the Content Credentials card are all keys below.
 
-![The export popup - format and size fields, a Convert paths toggle and a pre-ticked Content Credentials card](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Foptions&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=.export-popup&dark=1&filename=auth-export-popup)
+![The export popup - format and size fields, a Convert paths toggle and a pre-ticked Content Credentials card](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Foptions&width=1440&height=900&dpi=192&waitMs=2200&css=.export-popup%7Bwidth%3A360px!important%7D&walker=1&format=svg&cropSelector=.export-popup&dark=1&filename=auth-export-popup)
 
 `render` carries `width`, `height`, `formats` (one or more of `svg`, `svg-anim`, `emf`, `eps`, `eps-cmyk`, `dxf`, `pdf`, `pdf-cmyk`, `cmyk-tiff`, `tiff`, `pptx`, `png`, `jpg`/`jpeg`, `webp`, `avif`, `webm`, `mp4`, `gif`, `apng`, `webp-anim`, `html`, `md`, `txt`, `json`, `csv`, `ics`, `vcf`, `ico`, `zip`), plus these optional keys:
 
@@ -474,7 +474,7 @@ Optional. Required only if you need computed values, async data, or anything the
 
 A layout no logic-less template could reach is the sign that you need one. The D3 tool parses its pasted table, runs the layout, and hands the template a finished shape list as extras; the template itself just prints it.
 
-![A treemap from the D3 tool - nested rectangles sized and placed by a hook, with the template only printing the shapes it was handed](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Dtreemap%26full&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=at2-hooks-d3-treemap)
+![A treemap from the D3 tool - nested rectangles sized and placed by a hook, with the template only printing the shapes it was handed](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Dtreemap%26full&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=at2-hooks-d3-treemap&try=1)
 
 ```js
 // Top-level functions are picked up by name. Declare any you need.

@@ -10,10 +10,10 @@ Most of this platform's documentation describes what Lolly *can do*. This page d
 
 - **It hasn't finished its pilot.** The pilot is in progress and has not completed. Features, defaults, claims and even the tool catalog can still change as we learn. There is more to share on **August 29**.
 - **Its security is hardening for enterprise scale.** Lolly's cryptography and file-parsing engines - including the C2PA provenance seals, the X.509 identity handling, and on-device PDF/ZIP/link encryption - are currently undergoing SUSE's strict infrastructure hardening, preparing for enterprise scale. We're really good at this. They are strong *by design*; while that hardening completes, don't rely on them where an independent assurance is contractually required.
-- **It is arithmetically robust and evidentially empty.** The engine is deterministic and the maths is sound, but the product was, in effect, born yesterday. **SUSE is customer number one.** There is very little real-world adoption data yet.
+- **It is arithmetically robust and evidentially empty.** The engine is deterministic and the maths is sound, but the product was, in effect, born yesterday. **SUSE is customer number one.** There is very little real-world adoption data. This too is by-design. We collect stories from the public voluntarily, never data invisibly. 
 - **If you're using it, we need your story.** The architecture is done; the evidence is not. What actually improves Lolly from here is real usage - what worked, what didn't, and what you managed to make. See [We need your story](#we-need-your-story).
 
-This framing is deliberate. Judged as a finished marvel, Lolly will disappoint. Judged as a pilot trying to prove a specific behavioural change - routine creative work, done safely, without a designer in the loop - it has a clear job and a clear way to measure whether it's doing it.
+This experimental framing is deliberate: Judged as a finished marvel, Lolly could disappoint you at the fringes. Judged as a pilot trying to prove a specific behavioural change - routine asset creation work, done safely and professionally, without a designer in the loop - it's job and success are clear.
 
 ## Who Lolly is for
 
@@ -22,7 +22,7 @@ Adoption succeeds or fails on the **producer** - the non-designer who has to mak
 | User | Who they are | The friction Lolly removes | What they adopt |
 |---|---|---|---|
 | **The producer** | Marketers, sales, events, ops, comms - non-designers who need finished, on-brand files | "I need this now, I don't want to break the brand, and I don't want to wait for design" | The app: pick a tool, fill in fields, get the asset |
-| **The brand owner / designer** | The people who own how the brand looks | Re-typing the same layout, policing off-brand output after the fact | Authoring tools & the asset catalog - encoding the rules once |
+| **The brand creative owner / designer** | The people who own how the bran | Re-typing the same layout, policing off-brand output after the fact | Authoring tools & the asset catalog - encoding the rules once |
 | **The developer / platform team** | Engineers who automate and deploy | Storing binaries in Git, custom renderers, cloud image bills | The CLI, URL mode, MCP endpoints, self-hosting |
 | **The AI agent** | Automated workflows that produce assets | Token-expensive, drifting, un-auditable image generation | The MCP tools - deterministic renders from parameters |
 | **IT & security** | The people accountable for data leaving the building | Colleagues uploading sensitive files to random web tools | On-device utilities, air-gapped deployment, governance-as-data |

@@ -120,8 +120,13 @@ Report verdict semantics (surfaced by the `/verify` view):
 
 ### CLI
 
-`lolly validate <file> [--json] [--trust-anchor <root.pem>]` - same
-verifier, same report; the flag loads PEM → DER and passes `trustAnchors`.
+`lolly validate <file> [--json] [--trust-anchor <root.pem>] [--no-default-anchors]` -
+same verifier, same report; `--trust-anchor` loads PEM → DER and appends to
+`trustAnchors`. The default anchor set is the **Lolly CA root plus the vendored C2PA
+known-certificate list**, identical to the web `/valid` view and to MCP's `lolly_verify`
+(plans/cli-ga-contract.md §12 O1) - so a Lolly-CA-signed export reads the same on every
+surface. `--no-default-anchors` drops both built-in sets for a bare-trust check, and
+every report prints which set produced the verdict.
 
 ## Beyond C2PA: pixel- and byte-level verify reads
 
@@ -134,11 +139,7 @@ resolver** - a DNS-published key reports "no key resolver" instead of being fetc
 through a third-party DoH service; the Node shells (CLI/TUI/desktop) resolve keys
 through the machine's own DNS.
 
-Each read has its own surface in the view, and the component library lists them
-against the module that defines them:
-
 ![The Verify section of the component library, listing each verify surface - verdict states, change history, metadata reveal - beside the module and CSS classes that define it](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=2000&dpi=192&waitMs=2200&walker=1&format=svg&css=.cl-head%2C.cl-recs%2C.cl-section%3Anot%28%23cl-verify-valid%29%7Bdisplay%3Anone%7D&cropSelector=%23cl-verify-valid&dark=1&filename=ce-verify-components&sweep=1)
-
 ### `engine/src/pixel-watermark.ts` - the Lolly Imprint
 
 Block-DCT spread-spectrum watermark (Cox/Kilian/Leighton/Shamoon) on the same 8×8

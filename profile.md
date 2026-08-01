@@ -62,6 +62,21 @@ Storage is where both halves of that live: the meter accounts for every byte thi
 
 > Keep a bundle per context and rename the files for what they are (`LollyTools-events-2026.zip`, `LollyTools-me.zip`). The file *is* the profile.
 
+## Available offline
+
+Lolly caches as you go, but caching-as-you-go only covers where you've already been. **Profile → Available offline** is for the trip you can see coming: an hour on airport wifi before a flight with none. Download the parts you'll need, watch one progress bar, and everything you took keeps working with the connection gone.
+
+Four parts, each with its size stated before you commit:
+
+- <!--i:layout--> **The app** - every view, editor and font, including the ones you haven't opened yet. Without this, a screen you never visited online can't load offline.
+- <!--i:image--> **Catalogue** - brand assets beyond the essentials. Take all of it, or open *Choose by tag* and take only the tags you use.
+- <!--i:book--> **Guides & docs** - this documentation site, in your language, screenshots included.
+- <!--i:shield--> **Verify deep scan** - the on-device watermark scanner. Large, so it never rides the one-button sweep; it downloads only when you ask for it by name.
+
+Below the parts sits the per-tool list: each tool downloads individually (the tick means ready offline), or **Download all** sweeps the lot. **Download everything** at the top takes the app, the catalogue scope you chose, the docs and all tools in one pass. Downloads are resumable - cancel or lose the connection and the next run picks up where it stopped, fetching only what's missing - and they refresh themselves when you're back online, pulling just what a new release changed.
+
+If the browser hasn't granted persistent storage, the section says so and offers **Protect downloads**, which asks for it - the difference between "downloaded" and "downloaded until the browser wants the space back".
+
 ## Moving a profile to a new device
 
 Because a profile is entirely local, the only way to get it onto a blank install - a new laptop, a freshly reset browser, a colleague's machine, an offline box - is to **carry the file**. No login restores it for you, and that's the point: nothing ever left your device to begin with.

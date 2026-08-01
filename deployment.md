@@ -28,7 +28,7 @@ npm run build:web      # ONNX runtime copy, /info, per-tool + per-view OG images
 
 ### Any static host - including air-gapped
 
-The web build is plain static files, so this is the simplest and most portable path. Serve `shells/web/dist/` from any static host, CDN, or an internal file server, with a single catch-all rewrite to `index.html` for client-side routing. Once loaded the PWA runs **fully offline** - which makes this the air-gapped path too: drop the static bundle behind your firewall (or into an MDM-delivered app) and nothing phones home. If you don't need the optional services below, this is all you need.
+The web build is plain static files, so this is the simplest and most portable path. Serve `shells/web/dist/` from any static host, CDN, or an internal file server, with a single catch-all rewrite to `index.html` for client-side routing. Once loaded the PWA keeps working offline, and **Profile → Available offline** turns that from best-effort caching into a guarantee: users download the whole app, their tools, the catalogue (whole or by tag) and the docs ahead of a disconnection, with a progress bar and per-part sizes. That makes this the air-gapped path too: drop the static bundle behind your firewall (or into an MDM-delivered app) and nothing phones home. The build emits `dist/precache.json` (the app's own file inventory) and `/info/manifest.json` (the docs site's) - the download manager reads both, so keep them in the deployed bundle. If you don't need the optional services below, this is all you need.
 
 ### With the optional services
 
