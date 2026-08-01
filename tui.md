@@ -24,6 +24,12 @@ The TUI is the **CLI bridge under an interactive transport**. Its host bridge re
 
 If you can express a job as a URL, prefer the CLI - it's reproducible and pipeable. Reach for the TUI when you want to **see and adjust** a tool the way you would in the web shell, but from a terminal.
 
+### Provenance defaults
+
+The **C2PA** row opens set to a 30-day credential, the same default as the app and the CLI, and the same tool declarations opt out of it: a tool that sets `render.c2pa:false`, and any on-device privacy utility, opens with the row off and stays off. All three surfaces read one policy in the engine, so they cannot drift apart. **Durable** stays off, since it is a neural encode and a model download.
+
+Cycle the C2PA row to `off` for a bare render. The [CLI page](/info/cli.html#what-provenance-costs) has the measured cost of that choice, in time and in bytes, and it applies here too: the credential is about 2 KB and no measurable time, while the Imprint on a raster costs time that scales with pixel count and grows the file, because the mark adds detail that lossless compression cannot squeeze away. What you get for it is a file that can prove where it came from, and a mark that survives a re-encode or a screenshot.
+
 ## Views
 
 The TUI mirrors the web shell's layout, distilled to the terminal. Switch top-level views with the number keys; every view is keyboard-navigable (`hjkl` / arrows, `Enter` to open, `Esc` to go back).
