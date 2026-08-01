@@ -56,7 +56,6 @@ the credential: a file that declares AI-generated content, carries Lolly's own p
 Imprint, or is quietly hiding data in its bytes gets flagged too - see [Beyond the
 credential](#beyond-the-credential-what-else-verify-shows) below.
 
-![The Change history panel, where every step names the software that made it and Lolly's own leg of the journey reads green](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&css=.cl-head%2C.cl-recs%2C.cl-section%3Anot%28%23cl-verify-valid%29%7Bdisplay%3Anone%7D&cropSelector=.valid-steps&dark=1&filename=cc-change-history)
 ![The Change history panel, where every step names the software that made it and Lolly's own leg of the journey reads green](/t/url-shot?url=%2F%23%2Fverify%3Fsrc%3D%2Finfo%2Fthe-flood.webp&width=1440&height=1400&dpi=192&waitMs=6000&walker=1&format=svg&cropSelector=.valid-steps&dark=1&filename=ai-stance-change-history&sweep=1)
 
 The same credential check runs in the CLI (`lolly validate <file>`) and in any

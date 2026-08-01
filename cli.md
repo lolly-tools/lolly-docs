@@ -276,6 +276,27 @@ The same inputs give the same **render** every time - that is what makes a tool 
 npm run cli -- quotes --quote="Ship it." --export=svg --output=./public/og.svg   # `quotes` is a SUSE-pack tool
 ```
 
+### What provenance costs
+
+Content Credentials and the Imprint are on by default here, exactly as in the app. Turning them off is a supported choice, so here is what it buys, measured on one machine (Apple silicon, Node tier, five runs per case, best-to-worst spread shown). Your numbers will differ; the shape of them will not.
+
+| Case | Time | Output |
+|---|---|---|
+| `qr-code --export=svg` bare | 0.38 - 0.39 s | 17,205 B |
+| same, defaults (credential; SVG carries no Imprint) | 0.39 - 0.44 s | 19,946 B (+2,741 B, +16%) |
+| `qr-code --export=png` 600 px, bare | 0.46 - 0.47 s | 14,786 B |
+| same, credential only (`--imprint=0`) | 0.46 - 0.48 s | 16,799 B (+14%) |
+| same, Imprint only (`--c2pa=off`) | 0.52 - 0.66 s | 36,572 B (+147%) |
+| same, defaults (both) | 0.52 - 0.70 s | 38,586 B (+161%) |
+| `qr-code --export=png` 2000 px, bare | 0.48 - 0.49 s | 62,357 B |
+| same, defaults | 0.83 - 0.93 s | 228,825 B (+267%) |
+
+The two marks cost different things. **A credential is a signature and a metadata block**: about 2 KB, and no measurable time. **The Imprint is a pixel watermark**, so on a raster it costs time that scales with pixel count (about 0.06 s at 600 px, about 0.35 s at 2000 px) and it grows the file, because the mark adds fine detail that lossless PNG compression cannot squeeze away. That size effect is much smaller in a lossy format, and absent in a vector one, which has no pixels to mark.
+
+Leaving them on means the file carries a verifiable statement of where it came from: a credential that any C2PA reader can check and that names your identity if you have [set one up](/info/cli-signing.html), plus a mark that survives a re-encode or a screenshot, which a metadata credential does not. Turning them off means byte-reproducible output, the times and sizes in the "bare" rows, and no embedded timestamp.
+
+`--no-provenance` is the switch, per run. `smoke` and `batch` already render bare, because a machine path wants reproducibility by default.
+
 ### How far "the same" goes, byte for byte
 
 Reproducible *renders* and reproducible *bytes* are not the same promise, and only some formats keep the second one.
