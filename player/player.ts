@@ -5,10 +5,12 @@
  * A fresh, small implementation styled after the app's neuro dock — deliberately
  * NOT an extraction of the web shell's music player (which is entangled with
  * tracks/atmosphere/radio state the docs never need). What IS shared with the
- * app: the butterchurn preset pack under /viz-presets/, and the driven-frame
- * idea proven by the audiogram export path — per-frame time-domain bytes are
- * injected into butterchurn's render call, so there is no AudioContext analyser
- * and no CORS plumbing anywhere in the static site.
+ * app: the butterchurn preset pack under /viz-presets/. The meter and the viz
+ * are fed by a live AnalyserNode tapped off the dock's own <audio> element
+ * (plan §4.4, decision 2026-08-02 — a precomputed reactivity file measured
+ * 27.5 MB per page, so the driven-frame path stayed with the audiogram's
+ * exported video, where determinism earns it). The audio is same-origin, so
+ * the MediaElementSource tap involves no CORS plumbing and no taint.
  *
  * Delivered as /info/docs-player.js, bundled by docs/build.ts and imported
  * lazily on the first press of a page's Listen button. The attention model
@@ -19,6 +21,9 @@
  * Reduced motion (the OS query) downgrades all of it to highlight-only.
  */
 import { extractSpokenText, type SpokenBlock } from '../../scripts/lib/docs-spoken-text.ts';
+// Type-only: the DSP itself arrives via a dynamic import (its own lazy chunk,
+// same pattern as butterchurn) the first time a layer is turned on.
+import type { AmbienceKind } from '../../shells/web/src/lib/ambience-dsp.ts';
 
 interface Cue { blockId: string; start: number; end: number }
 interface Track { slug: string; title: string; url: string; duration: number; bytes: number }
@@ -41,63 +46,50 @@ const STORE_KEY = 'lolly-docs-listen';
  *  sessionStorage — in memory alone, auto-advance would silently re-engage
  *  follow-along on every page a reader had opted out of. */
 const FOLLOW_KEY = 'lolly-docs-follow-off';
+/** The chosen MilkDrop preset, remembered like Follow so the vibe survives
+ *  auto-advance (plan §2). Holds the /viz-presets/ entry id. */
+const VIZ_KEY = 'lolly-docs-viz-preset';
+/** Atmosphere levels + master, session-scoped like everything else here (plan
+ *  §2: levels ride the hand-off; buffers re-bake on the next page). */
+const ATMO_KEY = 'lolly-docs-atmo';
 
 const SPEEDS = [1, 1.25, 1.5];
+/** Preset switch cross-fade — the app's BLEND_SECONDS (lib/butterchurn-viz.ts). */
+const PRESET_BLEND_S = 2.2;
+/** Default level for the ambience master and a freshly toggled layer — the
+ *  app's DEFAULT_LEVEL (lib/atmosphere.ts): modest, so narration always reads. */
+const ATMO_DEFAULT = 0.35;
+
+// The ambience layer rows, copied (NOT imported) from the app's
+// shells/web/src/lib/atmosphere.ts ATMOSPHERE_LAYERS — that module owns web
+// shell state (localStorage mirror, sfx mute, neurospicy context) the docs
+// pages must not drag in. Ids are AmbienceKind values the bundled DSP bakes;
+// labels and the Outside/Places/Noise grouping mirror the app so the panel
+// reads the same in both places. English literals like the rest of the dock —
+// flagged for the docs i18n pass.
+type AtmoGroup = 'Outside' | 'Places' | 'Noise';
+const ATMO_GROUPS: readonly AtmoGroup[] = ['Outside', 'Places', 'Noise'];
+const ATMO_LAYERS: ReadonlyArray<{ id: AmbienceKind; label: string; group: AtmoGroup }> = [
+  { id: 'rain', label: 'Rain', group: 'Outside' },
+  { id: 'thunder', label: 'Thunder', group: 'Outside' },
+  { id: 'waves', label: 'Ocean waves', group: 'Outside' },
+  { id: 'stream', label: 'Stream', group: 'Outside' },
+  { id: 'wind', label: 'Wind', group: 'Outside' },
+  { id: 'birds', label: 'Birdsong', group: 'Outside' },
+  { id: 'night', label: 'Crickets', group: 'Outside' },
+  { id: 'chimes', label: 'Windchimes', group: 'Outside' },
+  { id: 'city', label: 'Busy street', group: 'Places' },
+  { id: 'train', label: 'Train', group: 'Places' },
+  { id: 'keyboard', label: 'Keyboard', group: 'Places' },
+  { id: 'fire', label: 'Fireplace', group: 'Places' },
+  { id: 'white', label: 'White noise', group: 'Noise' },
+  { id: 'pink', label: 'Pink noise', group: 'Noise' },
+  { id: 'brown', label: 'Brown noise', group: 'Noise' },
+];
 /** Scroll-idle grace before follow-along re-engages after a user scroll. */
 const IDLE_MS = 4000;
-/** butterchurn's AudioProcessor copies injected windows into arrays of exactly
- *  this length (numSamps 512, fftSize 1024) with a bare .set() — longer throws,
- *  shorter leaves the previous frame's tail. Same constant as the app's wrapper. */
-const FFT_SIZE = 1024;
 
 const reduced = (): boolean => matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-// ── viz.bin — the precomputed reactivity track (plan §4.4) ────────────────────
-// Packed by scripts/build-docs-audio.ts in the audiogram's section order
-// (tools/audiogram/hooks.js build()): after a self-describing header come the
-// six per-frame scalar tracks, then the scope/wave rows butterchurn eats.
-//
-//   'LVIZ' (4 bytes) | u32le header length | JSON header | payload
-//   header: { count, samples, fps, bands?, buckets? }
-//   payload: rms, peak, bass, mid, treb, flux   (count bytes each, 0..255)
-//            magnitude                          (count × bands, if bands)
-//            peaks                              (buckets, if buckets)
-//            wave                               (count × samples, 128 = silence)
-//
-// The docs pipeline writes no spectrum rows or overview buckets (its header
-// carries neither field), so those sections read as zero bytes here and the
-// meter falls back to the bass/mid/treble split; a future file that does carry
-// them lights the spectrum path without a format bump.
-//
-// Speech has no beat grid — anything rhythmic here reads rms/flux, never a bpm.
-interface VizTrack {
-  count: number; samples: number; fps: number; bands: number;
-  rms: Uint8Array; bass: Uint8Array; mid: Uint8Array; treb: Uint8Array;
-  magnitude: Uint8Array; wave: Uint8Array;
-}
-
-function parseVizBin(buf: ArrayBuffer): VizTrack | null {
-  try {
-    const bytes = new Uint8Array(buf);
-    if (bytes.length < 8 || String.fromCharCode(...bytes.subarray(0, 4)) !== 'LVIZ') return null;
-    const headLen = new DataView(buf).getUint32(4, true);
-    const head = JSON.parse(new TextDecoder().decode(bytes.subarray(8, 8 + headLen))) as
-      { count: number; samples: number; fps: number; bands: number; buckets: number };
-    const { count, samples, fps, bands, buckets } = head;
-    if (!(count > 0) || !(fps > 0)) return null;
-    let at = 8 + headLen;
-    const take = (n: number): Uint8Array => { const s = bytes.subarray(at, at + n); at += n; return s; };
-    const rms = take(count); take(count); /* peak — unused here */
-    const bass = take(count); const mid = take(count); const treb = take(count); take(count); /* flux */
-    const magnitude = take(count * (bands || 0));
-    take(buckets || 0);
-    const wave = take(count * (samples || 0));
-    if (at > bytes.length) return null; // truncated file — treat as absent, not as garbage frames
-    return { count, samples: samples || 0, fps, bands: bands || 0, rms, bass, mid, treb, magnitude, wave };
-  } catch {
-    return null;
-  }
-}
 
 // ── Block map — narrated blockIds onto the live DOM ──────────────────────────
 // cues.json speaks in the blockIds the spoken-text extraction minted from the
@@ -164,6 +156,9 @@ const I = {
   follow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>',
   viz: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="14" x2="4" y2="20"/><line x1="9" y1="8" x2="9" y2="20"/><line x1="14" y1="4" x2="14" y2="20"/><line x1="19" y1="11" x2="19" y2="20"/></svg>',
   mini: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><polyline points="6 10 12 16 18 10"/></svg>',
+  fs: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3"/><path d="M16 3h3a2 2 0 0 1 2 2v3"/><path d="M8 21H5a2 2 0 0 1-2-2v-3"/><path d="M16 21h3a2 2 0 0 0 2-2v-3"/></svg>',
+  fsExit: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v3a2 2 0 0 1-2 2H3"/><path d="M16 3v3a2 2 0 0 0 2 2h3"/><path d="M8 21v-3a2 2 0 0 0-2-2H3"/><path d="M16 21v-3a2 2 0 0 1 2-2h3"/></svg>',
+  atmo: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8c2-2.5 4-2.5 6 0s4 2.5 6 0 4-2.5 6 0"/><path d="M3 16c2-2.5 4-2.5 6 0s4 2.5 6 0 4-2.5 6 0"/></svg>',
 };
 
 // ── The player ───────────────────────────────────────────────────────────────
@@ -195,7 +190,16 @@ class Player {
   private cueIdx = -1;
   private blockMap = new Map<string, HTMLElement>();
   private blockText = new Map<string, string>();
-  private viz: VizTrack | null = null;
+
+  // The live audio tap (plan §4.4, decision 2026-08-02): one AudioContext with
+  // a MediaElementSource fanned out to the destination (a tapped element mutes
+  // its own direct output — the reconnect keeps the narration audible) and an
+  // AnalyserNode both the meter bars and butterchurn read. Created lazily on
+  // the first play (a user gesture, so the context starts running); the audio
+  // file is same-origin, so the tap involves no CORS and no taint.
+  private actx: AudioContext | null = null;
+  private analyser: AnalyserNode | null = null;
+  private freq: Uint8Array<ArrayBuffer> | null = null;
 
   // Follow-along state (plan §6.2). `followOff` is the dock toggle — the
   // session opt-out, mirrored to sessionStorage (FOLLOW_KEY) so it survives
@@ -212,6 +216,24 @@ class Player {
   private meterRaf = 0;
   private closed = false;
 
+  // Ambience (plan §2): each sounding layer is a looped AudioBufferSourceNode
+  // → per-layer GainNode → the master ambience GainNode → ctx.destination
+  // DIRECTLY. Never through the analyser tap — the meter and the viz must keep
+  // reacting to the narration voice alone. Ambience deliberately outlives
+  // pause (the environment is its own anchor); only close() stops it.
+  private atmoMaster = ATMO_DEFAULT;
+  private atmoLevels = new Map<AmbienceKind, number>();
+  private atmoLast = new Map<AmbienceKind, number>();
+  private atmoPlaying = new Map<AmbienceKind, { src: AudioBufferSourceNode; gain: GainNode }>();
+  private atmoGain: GainNode | null = null;
+  private atmoRows = new Map<AmbienceKind, { toggle: HTMLButtonElement; slider: HTMLInputElement }>();
+
+  // The listener's MilkDrop preset (plan §2): the current /viz-presets/ id,
+  // session-remembered so the vibe survives auto-advance.
+  private vizPresetId: string | null = null;
+  private vizJumping = false;
+  private toastTimer: ReturnType<typeof setTimeout> | null = null;
+
   // Dock elements
   private dock!: HTMLElement;
   private captionEl!: HTMLElement;
@@ -223,11 +245,19 @@ class Player {
   private seekEl!: HTMLInputElement;
   private meterEl!: HTMLCanvasElement;
   private vizPanel!: HTMLElement;
+  private vizFsBtn!: HTMLButtonElement;
+  private vizCaption!: HTMLElement;
   private vizCanvas!: HTMLCanvasElement;
+  private vizToast!: HTMLElement;
+  private atmoBtn!: HTMLButtonElement;
+  private atmoPanel!: HTMLElement;
   private seeking = false;
 
   // MilkDrop — mounted only when the panel is opened, torn down with the dock.
-  private vizHandle: { renderFrame(t: number): void; resize(): void; destroy(): void } | null = null;
+  private vizHandle: {
+    renderFrame(): void; resize(): void; destroy(): void;
+    setPreset(preset: unknown, blendSeconds: number): void;
+  } | null = null;
   private vizLoading = false;
 
   private cleanups: Array<() => void> = [];
@@ -238,6 +268,26 @@ class Player {
     this.trigger = opts.trigger ?? null;
     this.autoplay = !!opts.autoplay;
     try { this.followOff = sessionStorage.getItem(FOLLOW_KEY) === '1'; } catch { /* storage may be disabled */ }
+    try { this.vizPresetId = sessionStorage.getItem(VIZ_KEY); } catch { /* storage may be disabled */ }
+    // A persisted blob is untrusted input: levels are whitelisted by iterating
+    // OUR layer list, never the stored object's keys (house rule — prototype
+    // junk arrives through Object.entries on parsed JSON).
+    try {
+      const raw = sessionStorage.getItem(ATMO_KEY);
+      if (raw) {
+        const o = JSON.parse(raw) as { master?: unknown; levels?: Record<string, unknown> };
+        const m = typeof o.master === 'number' && Number.isFinite(o.master) ? o.master : ATMO_DEFAULT;
+        this.atmoMaster = Math.min(1, Math.max(0, m));
+        for (const l of ATMO_LAYERS) {
+          const v = o.levels?.[l.id];
+          if (typeof v === 'number' && Number.isFinite(v) && v > 0) {
+            const lv = Math.min(1, v);
+            this.atmoLevels.set(l.id, lv);
+            this.atmoLast.set(l.id, lv);
+          }
+        }
+      }
+    } catch { /* storage may be disabled or the blob bad: defaults */ }
   }
 
   async init(): Promise<void> {
@@ -267,6 +317,20 @@ class Player {
     this.audio.src = track.url;
     this.audio.preload = 'auto';
 
+    // captions.vtt as a first-class <track> (plan §2, ruling 2026-08-02). Most
+    // UAs render native captions for <video> only, so the dock's cue line stays
+    // the visible caption surface — the track's value is programmatic: it puts
+    // the cues on the textTracks API for AT/extensions/UAs and keeps the VTT a
+    // reachable, downloadable artefact. Not `default`, so nothing double-renders
+    // where a UA does surface it; and no dock toggle, because a toggle for a
+    // track that renders nowhere would be a dead control.
+    const captionTrack = document.createElement('track');
+    captionTrack.kind = 'captions';
+    captionTrack.srclang = 'en';
+    captionTrack.label = 'English';
+    captionTrack.src = `${track.url.replace(/\/[^/]*$/, '')}/captions.vtt`;
+    this.audio.appendChild(captionTrack);
+
     this.buildDock(track);
     this.wireAudio();
     this.wireFollowAlong();
@@ -274,6 +338,11 @@ class Player {
     this.loadSidecars(track);
 
     document.documentElement.classList.add('ldp-open');
+    // The hand-off keeps the environment running: layers the previous page had
+    // sounding re-bake and restart here. On an auto-advance arrival the context
+    // may sit suspended until the browser blesses playback — the sources are
+    // scheduled anyway and sound the moment it resumes.
+    for (const [kind, level] of this.atmoLevels) void this.startAtmoLayer(kind, level);
     if (this.autoplay) void this.play();
     this.playBtn.focus();
   }
@@ -281,6 +350,7 @@ class Player {
   focus(): void { this.playBtn?.focus(); }
 
   async play(): Promise<void> {
+    this.ensureTap();
     // Autoplay after a cross-page auto-advance can be refused — the dock then
     // just sits paused with everything loaded, one press from resuming.
     try { await this.audio.play(); } catch { /* blocked: stay paused, visibly */ }
@@ -296,7 +366,36 @@ class Player {
     this.vizPanel = el('div', 'ldp-viz');
     this.vizPanel.hidden = true;
     this.vizCanvas = el('canvas', 'ldp-viz-canvas');
-    this.vizPanel.appendChild(this.vizCanvas);
+    // The canvas IS the preset control (Andy's simplification, 2026-08-02): no
+    // list, no prev/next row — tapping it jumps to a random preset, and a brief
+    // name toast teaches the names worth remembering.
+    this.vizCanvas.setAttribute('role', 'button');
+    this.vizCanvas.tabIndex = 0;
+    this.vizCanvas.setAttribute('aria-label', 'Change visual (random preset)');
+    this.vizCanvas.addEventListener('click', () => void this.vizJump());
+    this.vizCanvas.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); void this.vizJump(); }
+    });
+    this.vizToast = el('div', 'ldp-viz-toast');
+    // Fullscreen: the PANEL fullscreens (not the bare canvas) so the caption
+    // line below stays composited over the visual — captions must survive the
+    // full-page view (Andy, 2026-08-02). Tap-to-jump keeps working fullscreen.
+    this.vizFsBtn = el('button', 'ldp-viz-fs', I.fs);
+    this.vizFsBtn.title = 'Full screen';
+    this.vizFsBtn.setAttribute('aria-label', 'Full screen visual');
+    this.vizFsBtn.addEventListener('click', () => void this.toggleVizFullscreen());
+    this.vizCaption = el('div', 'ldp-viz-caption');
+    this.vizCaption.setAttribute('aria-hidden', 'true'); // mirrors ldp-caption, which owns the semantics
+    this.vizPanel.append(this.vizCanvas, this.vizFsBtn, this.vizCaption, this.vizToast);
+    const onFsChange = (): void => {
+      const fs = document.fullscreenElement === this.vizPanel;
+      this.vizFsBtn.innerHTML = fs ? I.fsExit : I.fs;
+      this.vizFsBtn.title = fs ? 'Exit full screen' : 'Full screen';
+      this.vizFsBtn.setAttribute('aria-label', fs ? 'Exit full screen visual' : 'Full screen visual');
+      this.vizHandle?.resize(); // the canvas box just changed size either way
+    };
+    document.addEventListener('fullscreenchange', onFsChange);
+    this.cleanups.push(() => document.removeEventListener('fullscreenchange', onFsChange));
 
     const top = el('div', 'ldp-top');
     const title = el('span', 'ldp-title');
@@ -309,12 +408,18 @@ class Player {
     this.vizBtn.title = 'Visualizer';
     this.vizBtn.setAttribute('aria-label', 'Show visualizer');
     this.vizBtn.setAttribute('aria-pressed', 'false');
+    this.atmoBtn = el('button', 'ldp-atmobtn', I.atmo);
+    this.atmoBtn.title = 'Atmosphere';
+    this.atmoBtn.setAttribute('aria-label', 'Show atmosphere sounds');
+    this.atmoBtn.setAttribute('aria-pressed', 'false');
     const miniBtn = el('button', 'ldp-minbtn', I.mini);
     miniBtn.title = 'Collapse';
     miniBtn.setAttribute('aria-label', 'Collapse player');
     const closeBtn = el('button', 'ldp-close', I.close);
     closeBtn.setAttribute('aria-label', 'Close player');
-    top.append(title, this.followBtn, this.vizBtn, miniBtn, closeBtn);
+    top.append(title, this.followBtn, this.vizBtn, this.atmoBtn, miniBtn, closeBtn);
+
+    this.atmoPanel = this.buildAtmoPanel();
 
     this.captionEl = el('div', 'ldp-caption');
     // Narration is the page read aloud — announcing every caption to a screen
@@ -350,7 +455,18 @@ class Player {
     this.seekEl.value = '0';
     this.seekEl.setAttribute('aria-label', 'Seek');
 
-    dock.append(this.vizPanel, top, this.captionEl, row, this.seekEl);
+    // The AI disclosure (plan §8, EU AI Act Article 50): one small human-readable
+    // line, always visible under the transport. English-only like every other
+    // dock string here — narration itself is English-only at launch — flagged
+    // for the docs i18n pass alongside the rest of the player chrome.
+    const disclosure = el('p', 'ldp-disclosure');
+    disclosure.id = 'ldp-disclosure';
+    disclosure.textContent = 'AI narration. The page text is the original.';
+    dock.setAttribute('aria-describedby', 'ldp-disclosure');
+
+    // The <audio> element lives in the dock (invisible — no controls attribute)
+    // so its captions <track> is part of the document for AT and the UA.
+    dock.append(this.vizPanel, top, this.atmoPanel, this.captionEl, row, this.seekEl, disclosure, this.audio);
     document.body.appendChild(dock);
     this.dock = dock;
 
@@ -368,14 +484,17 @@ class Player {
       const mini = dock.classList.toggle('ldp-mini');
       miniBtn.setAttribute('aria-label', mini ? 'Expand player' : 'Collapse player');
       miniBtn.style.transform = mini ? 'rotate(180deg)' : '';
-      // The collapsed pill hides the viz by CSS, but the rAF loop keys on the
-      // `hidden` attribute — set it too, or butterchurn keeps burning GPU
-      // frames nobody can see. Collapsing closes the panel (opt-in rule:
-      // expanding again means pressing the viz button again, never auto-open).
+      // The collapsed pill hides both panels by CSS, but the rAF loop keys on
+      // the `hidden` attribute — set it too, or butterchurn keeps burning GPU
+      // frames nobody can see. Collapsing closes the panels (opt-in rule:
+      // expanding again means pressing their buttons again, never auto-open).
+      // The ambience AUDIO keeps going — the pill hides chrome, not the room.
       if (mini && this.vizHandle && !this.vizPanel.hidden) this.toggleViz();
+      if (mini && !this.atmoPanel.hidden) this.toggleAtmo();
     });
     closeBtn.addEventListener('click', () => this.close());
     this.vizBtn.addEventListener('click', () => this.toggleViz());
+    this.atmoBtn.addEventListener('click', () => this.toggleAtmo());
 
     // Reduced motion: highlight-only, unconditionally — no scrolling, no viz.
     // Checked live so flipping the OS setting mid-session is honoured.
@@ -394,6 +513,11 @@ class Player {
     // hold focus; ignored while a text input elsewhere has it.
     const onKey = (e: KeyboardEvent): void => {
       if (e.key !== 'Escape') return;
+      // In fullscreen the browser owns Escape (it exits fullscreen); closing
+      // the whole dock on the same press would take two anchors down at once.
+      if (document.fullscreenElement) return;
+      // The viewport-fallback full page exits the same way, one layer at a time.
+      if (this.vizFullpage) { this.setVizFullpage(false); return; }
       const t = e.target as HTMLElement | null;
       if (t && /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName) && !this.dock.contains(t)) return;
       this.close();
@@ -449,7 +573,9 @@ class Player {
     if (i !== this.cueIdx) {
       this.cueIdx = i;
       const cue = this.cues[i]!;
-      this.captionEl.textContent = this.blockText.get(cue.blockId) ?? '';
+      const capText = this.blockText.get(cue.blockId) ?? '';
+      this.captionEl.textContent = capText;
+      this.vizCaption.textContent = capText; // the fullscreen twin (visible only :fullscreen)
       this.highlight(cue.blockId);
     } else if (!inCue && this.highlighted) {
       // Inter-block gap: keep the caption, the highlight stays where it was.
@@ -537,7 +663,7 @@ class Player {
     });
   }
 
-  // ── Sidecars: cues, block map, viz track ──────────────────────────────────
+  // ── Sidecars: cues + block map ────────────────────────────────────────────
 
   private loadSidecars(track: Track): void {
     const base = track.url.replace(/\/[^/]*$/, '');
@@ -546,25 +672,45 @@ class Player {
     }).catch(() => { /* no cues: playback without captions/highlight */ });
 
     // The page's markdown twin re-yields the narrated blocks — ids for the DOM
-    // map, text for the caption line.
+    // map, text for the caption line. pageTitle is the same string build.ts
+    // stamped on the Listen button, so the meta-title skip lands identically
+    // here and in the pipeline and the blockIds stay in lockstep with cues.json.
     void fetch(`/info/${this.slug}.md`).then((r) => (r.ok ? r.text() : null)).then((md) => {
       if (!md || this.closed) return;
-      const blocks = extractSpokenText(md);
+      const blocks = extractSpokenText(md, { pageTitle: this.title });
       for (const b of blocks) this.blockText.set(b.blockId, b.text);
       this.blockMap = buildBlockMap(blocks);
     }).catch(() => { /* unmapped: dock still plays, captions may be empty */ });
-
-    void fetch(`${base}/viz.bin`).then((r) => (r.ok ? r.arrayBuffer() : null)).then((buf) => {
-      if (buf && !this.closed) { this.viz = parseVizBin(buf); this.drawMeter(); }
-    }).catch(() => { /* no reactivity track: flat meter, viz declines politely */ });
   }
 
-  // ── Meter bars — drawn from the packed frames, no live analyser ───────────
+  // ── The live audio tap + meter bars ───────────────────────────────────────
 
-  private frameIndex(): number {
-    const v = this.viz;
-    if (!v) return 0;
-    return Math.min(v.count - 1, Math.max(0, Math.floor(this.audio.currentTime * v.fps)));
+  /** Create the AudioContext tap on first use. Called from play() (always a
+   *  user gesture or an autoplay the browser already blessed) and from the viz
+   *  mount. Idempotent; a failure leaves the element playing untapped — flat
+   *  meter, viz declines politely, narration unaffected. */
+  private ensureTap(): void {
+    if (this.actx) {
+      // A context created under an autoplay hand-off can arrive suspended;
+      // every play press is a chance to resume it.
+      if (this.actx.state === 'suspended') void this.actx.resume().catch(() => { /* keep trying on later gestures */ });
+      return;
+    }
+    try {
+      const ctx = new AudioContext();
+      const src = ctx.createMediaElementSource(this.audio);
+      // A tapped MediaElementSource mutes the element's direct output — route
+      // it back to the destination or the narration goes silent.
+      src.connect(ctx.destination);
+      const an = ctx.createAnalyser();
+      an.fftSize = 2048;
+      an.smoothingTimeConstant = 0.75;
+      src.connect(an);
+      this.actx = ctx;
+      this.analyser = an;
+      this.freq = new Uint8Array(an.frequencyBinCount);
+      if (ctx.state === 'suspended') void ctx.resume().catch(() => { /* resumed by the next gesture */ });
+    } catch { /* no Web Audio: playback continues without meter/viz */ }
   }
 
   private startMeter(): void {
@@ -573,7 +719,7 @@ class Player {
       this.meterRaf = 0;
       if (this.closed) return;
       this.drawMeter();
-      if (this.vizHandle && !this.vizPanel.hidden) this.vizHandle.renderFrame(1 / 60);
+      if (this.vizHandle && !this.vizPanel.hidden) this.vizHandle.renderFrame();
       if (!this.audio.paused || (this.vizHandle && !this.vizPanel.hidden)) {
         this.meterRaf = requestAnimationFrame(step);
       }
@@ -591,28 +737,24 @@ class Player {
     if (c.width !== w) c.width = w;
     if (c.height !== h) c.height = h;
     ctx.clearRect(0, 0, w, h);
-    const v = this.viz;
+    const an = this.analyser;
+    const freq = this.freq;
+    if (an && freq) an.getByteFrequencyData(freq);
     const BARS = 16;
+    // Speech lives low in the spectrum — sample only the lower half of the
+    // bins (≈ 0–12 kHz at a 48 kHz context) so the bars actually move.
+    const usable = freq ? freq.length >> 1 : 0;
     const gap = Math.max(1, Math.round(dpr));
     const bw = (w - gap * (BARS - 1)) / BARS;
     ctx.fillStyle = document.documentElement.classList.contains('dark') ? '#8db8ea' : '#2c5c96';
-    const f = this.frameIndex();
     for (let i = 0; i < BARS; i++) {
       let level = 0.08;
-      if (v) {
-        if (v.bands > 0) {
-          // Resample the frame's spectrum row down to the bar count.
-          const b0 = Math.floor((i / BARS) * v.bands);
-          const b1 = Math.max(b0 + 1, Math.floor(((i + 1) / BARS) * v.bands));
-          let sum = 0;
-          for (let b = b0; b < b1; b++) sum += v.magnitude[f * v.bands + b] ?? 0;
-          level = sum / (b1 - b0) / 255;
-        } else {
-          // No spectrum rows: a bass/mid/treble split across the bars.
-          const t = [v.bass, v.mid, v.treb][Math.floor((i / BARS) * 3)]!;
-          level = (t[f] ?? 0) / 255;
-        }
-        if (this.audio.paused) level *= 0.35;
+      if (freq && usable > 0) {
+        const b0 = Math.floor((i / BARS) * usable);
+        const b1 = Math.max(b0 + 1, Math.floor(((i + 1) / BARS) * usable));
+        let sum = 0;
+        for (let b = b0; b < b1; b++) sum += freq[b] ?? 0;
+        level = Math.max(level, sum / (b1 - b0) / 255);
       }
       const bh = Math.max(dpr, level * h);
       ctx.globalAlpha = 0.4 + 0.6 * level;
@@ -621,11 +763,13 @@ class Player {
     ctx.globalAlpha = 1;
   }
 
-  // ── MilkDrop panel — opt-in, driven-mode frames from viz.bin ──────────────
+  // ── MilkDrop panel — opt-in, fed by the live analyser tap ─────────────────
 
   private toggleViz(): void {
-    if (reduced()) return; // suppressed under reduced motion, unconditionally
+    if (reduced()) { this.vizBtn.hidden = true; return; } // suppressed under reduced motion, unconditionally — a button that no-ops is a dead control, so it goes too
     const opening = this.vizPanel.hidden;
+    if (!opening && document.fullscreenElement === this.vizPanel) void document.exitFullscreen().catch(() => { /* already gone */ });
+    if (!opening && this.vizFullpage) this.setVizFullpage(false);
     this.vizPanel.hidden = !opening;
     this.vizBtn.setAttribute('aria-pressed', opening ? 'true' : 'false');
     this.vizBtn.setAttribute('aria-label', opening ? 'Hide visualizer' : 'Show visualizer');
@@ -633,6 +777,39 @@ class Player {
       void this.mountViz();
       this.startMeter(); // the shared rAF loop drives both surfaces
     }
+  }
+
+  /** True while the non-native full-VIEWPORT fallback is active (iOS Safari has
+   *  no element fullscreen, so "full page" there means the whole tab viewport). */
+  private vizFullpage = false;
+
+  private vizIsFull(): boolean {
+    return this.vizFullpage || document.fullscreenElement === this.vizPanel;
+  }
+
+  private setVizFullpage(on: boolean): void {
+    this.vizFullpage = on;
+    this.vizPanel.classList.toggle('is-fullpage', on);
+    this.vizFsBtn.innerHTML = on ? I.fsExit : I.fs;
+    this.vizFsBtn.title = on ? 'Exit full page' : 'Full screen';
+    this.vizFsBtn.setAttribute('aria-label', on ? 'Exit full page visual' : 'Full screen visual');
+    this.vizHandle?.resize();
+  }
+
+  private async toggleVizFullscreen(): Promise<void> {
+    if (this.vizFullpage) { this.setVizFullpage(false); return; }
+    if (document.fullscreenElement === this.vizPanel) {
+      try { await document.exitFullscreen(); } catch { /* already gone */ }
+      return;
+    }
+    // Native first (the fullscreenchange listener owns button state on this
+    // path); where the API is missing or refuses (iOS Safari on any element,
+    // iframe policy), fall back to the fixed full-viewport overlay — the tab
+    // stays, the visual fills it.
+    if (this.vizPanel.requestFullscreen) {
+      try { await this.vizPanel.requestFullscreen(); return; } catch { /* fall through */ }
+    }
+    this.setVizFullpage(true);
   }
 
   private vizNote(msg: string): void {
@@ -650,12 +827,22 @@ class Player {
       const gl = this.vizCanvas.getContext('webgl2');
       if (!gl) { this.vizNote('This browser cannot run the visualizer (no WebGL2).'); return; }
 
+      // The viz reads the same analyser as the meter. Opening the panel is a
+      // user gesture, so the context can be created here even before first play.
+      this.ensureTap();
+      if (!this.actx || !this.analyser) { this.vizNote('This browser cannot run the visualizer (no Web Audio).'); return; }
+
       // The library arrives only now — its own chunk, fetched on the first
       // panel open, never with the player. Presets are the app's shared pack.
       const mod: unknown = await import('butterchurn');
       const bc = resolveButterchurn(mod);
-      const preset = await pickPreset();
-      if (!preset) { this.vizNote('Visualizer presets are not available on this site.'); return; }
+      // The session-remembered preset if there is one (it rides the hand-off
+      // like Follow), else a random draw from the popular pool — the listener's
+      // first open is already a jump, not a fixed house preset.
+      const entry = await pickPresetEntry(this.vizPresetId);
+      const preset = entry ? await fetchPresetBody(entry.id) : null;
+      if (!entry || !preset) { this.vizNote('Visualizer presets are not available on this site.'); return; }
+      this.rememberPreset(entry.id);
 
       const dpr = Math.min(devicePixelRatio || 1, 1.5);
       const box = (): { w: number; h: number } => {
@@ -665,40 +852,22 @@ class Player {
       const size = box();
       this.vizCanvas.width = size.w;
       this.vizCanvas.height = size.h;
-      // No AudioContext at all: frames are injected per render call, which is
-      // the audiogram-proven driven path — deterministic and CORS-free.
-      const viz = bc.createVisualizer(undefined as unknown as BaseAudioContext, this.vizCanvas, {
+      const viz = bc.createVisualizer(this.actx, this.vizCanvas, {
         width: size.w, height: size.h, pixelRatio: 1, meshWidth: 40, meshHeight: 30,
       });
+      // butterchurn's standard audio path: hand it the analyser node and it
+      // samples time/frequency data itself every render() call.
+      viz.connectAudio(this.analyser);
       // Never a 0-second blend: loadPreset always starts a cross-fade, and a
       // zero duration divides by zero into a renderer wedged on NaN.
       viz.loadPreset(preset, 0.05);
 
-      const buf = {
-        c: new Uint8Array(FFT_SIZE).fill(128),
-        l: new Uint8Array(FFT_SIZE).fill(128),
-        r: new Uint8Array(FFT_SIZE).fill(128),
-      };
-      const fill = (dst: Uint8Array, src: Uint8Array | null): void => {
-        if (!src || !src.length) { dst.fill(128); return; }
-        if (src.length >= FFT_SIZE) dst.set(src.subarray(0, FFT_SIZE));
-        else { dst.fill(128); dst.set(src); }
-      };
-      const render = viz.render.bind(viz) as (o?: {
-        audioLevels?: { timeByteArray: Uint8Array; timeByteArrayL: Uint8Array; timeByteArrayR: Uint8Array };
-        elapsedTime?: number;
-      }) => void;
       let dead = false;
       this.vizHandle = {
-        renderFrame: (elapsed: number): void => {
+        renderFrame: (): void => {
           if (dead) return;
-          const v = this.viz;
-          const wave = v && v.samples > 0
-            ? v.wave.subarray(this.frameIndex() * v.samples, this.frameIndex() * v.samples + v.samples)
-            : null;
-          fill(buf.c, wave); fill(buf.l, wave); fill(buf.r, wave);
           try {
-            render({ audioLevels: { timeByteArray: buf.c, timeByteArrayL: buf.l, timeByteArrayR: buf.r }, elapsedTime: elapsed });
+            viz.render();
           } catch {
             // One strike: a throwing preset throws every frame. Stand down and
             // say so, instead of a silent black panel.
@@ -714,16 +883,190 @@ class Player {
             .setRendererSize?.(w, h, { pixelRatio: 1 });
         },
         destroy: (): void => { dead = true; },
+        setPreset: (p: unknown, blendSeconds: number): void => {
+          if (dead) return;
+          // Same guard as the mount: never a 0-second blend (see above).
+          try { viz.loadPreset(p, Math.max(0.05, blendSeconds)); } catch { /* keep the current preset */ }
+        },
       };
       const onResize = (): void => this.vizHandle?.resize();
       addEventListener('resize', onResize);
       this.cleanups.push(() => removeEventListener('resize', onResize));
-      this.vizHandle.renderFrame(1 / 60); // first frame even while paused
+      this.vizHandle.renderFrame(); // first frame even while paused
     } catch {
       this.vizNote('The visualizer could not load.');
     } finally {
       this.vizLoading = false;
     }
+  }
+
+  /** Tap-the-canvas preset jump (plan §2): a random draw from the popular pool,
+   *  never the preset already showing, cross-faded at the app's blend time. */
+  private async vizJump(): Promise<void> {
+    if (!this.vizHandle || this.vizJumping) return;
+    this.vizJumping = true;
+    try {
+      const entry = await pickPresetEntry(null, this.vizPresetId);
+      if (!entry) return;
+      const body = await fetchPresetBody(entry.id);
+      if (!body || !this.vizHandle) return;
+      this.vizHandle.setPreset(body, PRESET_BLEND_S);
+      this.rememberPreset(entry.id);
+      this.toast(entry.name || entry.id);
+    } finally {
+      this.vizJumping = false;
+    }
+  }
+
+  private rememberPreset(id: string): void {
+    this.vizPresetId = id;
+    try { sessionStorage.setItem(VIZ_KEY, id); } catch { /* storage disabled: this page only */ }
+  }
+
+  /** The preset-name toast — visible ~2 s, so a listener can learn the names
+   *  they like without the panel growing a list. */
+  private toast(name: string): void {
+    this.vizToast.textContent = name;
+    this.vizToast.classList.add('show');
+    if (this.toastTimer) clearTimeout(this.toastTimer);
+    this.toastTimer = setTimeout(() => this.vizToast.classList.remove('show'), 2000);
+  }
+
+  // ── Atmosphere — procedural ambience under the narration (plan §2) ────────
+
+  private buildAtmoPanel(): HTMLElement {
+    const panel = el('div', 'ldp-atmo');
+    panel.hidden = true;
+
+    const master = el('div', 'ldp-atmo-master');
+    const mLabel = el('span', 'ldp-atmo-label');
+    mLabel.textContent = 'Atmosphere';
+    const mSlider = el('input', 'ldp-atmo-level');
+    mSlider.type = 'range';
+    mSlider.min = '0';
+    mSlider.max = '1';
+    mSlider.step = '0.01';
+    mSlider.value = String(this.atmoMaster);
+    mSlider.setAttribute('aria-label', 'Atmosphere master level');
+    mSlider.addEventListener('input', () => {
+      this.atmoMaster = Number(mSlider.value) || 0;
+      if (this.atmoGain && this.actx) this.atmoGain.gain.setTargetAtTime(this.atmoMaster, this.actx.currentTime, 0.1);
+      this.saveAtmo();
+    });
+    master.append(mLabel, mSlider);
+    panel.appendChild(master);
+
+    for (const group of ATMO_GROUPS) {
+      const h = el('div', 'ldp-atmo-group');
+      h.textContent = group;
+      panel.appendChild(h);
+      for (const layer of ATMO_LAYERS) {
+        if (layer.group !== group) continue;
+        const row = el('div', 'ldp-atmo-row');
+        const level = this.atmoLevels.get(layer.id) ?? 0;
+        const toggle = el('button', 'ldp-atmo-toggle');
+        toggle.textContent = layer.label;
+        toggle.setAttribute('aria-pressed', level > 0 ? 'true' : 'false');
+        const slider = el('input', 'ldp-atmo-level');
+        slider.type = 'range';
+        slider.min = '0';
+        slider.max = '1';
+        slider.step = '0.01';
+        slider.value = String(level);
+        slider.setAttribute('aria-label', `${layer.label} level`);
+        toggle.addEventListener('click', () => {
+          const on = (this.atmoLevels.get(layer.id) ?? 0) > 0;
+          // Toggling back on restores the level the listener had, not a default
+          // they never chose (same memory rule as the app's Atmosphere panel).
+          const next = on ? 0 : (this.atmoLast.get(layer.id) ?? ATMO_DEFAULT);
+          slider.value = String(next);
+          this.setAtmoLevel(layer.id, next);
+        });
+        slider.addEventListener('input', () => this.setAtmoLevel(layer.id, Number(slider.value) || 0));
+        this.atmoRows.set(layer.id, { toggle, slider });
+        row.append(toggle, slider);
+        panel.appendChild(row);
+      }
+    }
+    return panel;
+  }
+
+  private toggleAtmo(): void {
+    const opening = this.atmoPanel.hidden;
+    this.atmoPanel.hidden = !opening;
+    this.atmoBtn.setAttribute('aria-pressed', opening ? 'true' : 'false');
+    this.atmoBtn.setAttribute('aria-label', opening ? 'Hide atmosphere sounds' : 'Show atmosphere sounds');
+  }
+
+  private setAtmoLevel(kind: AmbienceKind, level: number): void {
+    if (level > 0) {
+      this.atmoLevels.set(kind, level);
+      this.atmoLast.set(kind, level);
+      const live = this.atmoPlaying.get(kind);
+      if (live && this.actx) live.gain.gain.setTargetAtTime(level, this.actx.currentTime, 0.1);
+      else void this.startAtmoLayer(kind, level);
+    } else {
+      this.atmoLevels.delete(kind);
+      this.stopAtmoLayer(kind);
+    }
+    this.atmoRows.get(kind)?.toggle.setAttribute('aria-pressed', level > 0 ? 'true' : 'false');
+    this.saveAtmo();
+  }
+
+  /** Start a layer: bake (or reuse) its loop, then loop it through its own gain
+   *  into the ambience master — a graph that NEVER touches the analyser tap, so
+   *  the meter and the viz keep hearing the narration voice alone. */
+  private async startAtmoLayer(kind: AmbienceKind, level: number): Promise<void> {
+    this.ensureTap();
+    const ctx = this.actx;
+    if (!ctx || this.atmoPlaying.has(kind)) return;
+    if (!this.atmoGain) {
+      this.atmoGain = ctx.createGain();
+      this.atmoGain.gain.value = this.atmoMaster;
+      this.atmoGain.connect(ctx.destination);
+    }
+    // Claim the slot before the await: a slider dragged across zero twice must
+    // not race into two sources.
+    const gain = ctx.createGain();
+    gain.gain.value = 0;
+    const src = ctx.createBufferSource();
+    src.loop = true;
+    this.atmoPlaying.set(kind, { src, gain });
+    const buf = await bakeAtmoBuffer(ctx, kind);
+    // The layer may have been switched off (or the dock closed) mid-bake.
+    if (this.closed || !buf || this.atmoPlaying.get(kind)?.src !== src || !(this.atmoLevels.get(kind)! > 0)) {
+      if (this.atmoPlaying.get(kind)?.src === src) this.atmoPlaying.delete(kind);
+      return;
+    }
+    src.buffer = buf;
+    src.connect(gain);
+    gain.connect(this.atmoGain);
+    src.start();
+    // Fade in so nothing clicks; the target is the CURRENT level, which a
+    // slider may have moved while the bake ran.
+    gain.gain.setTargetAtTime(this.atmoLevels.get(kind) ?? level, ctx.currentTime, 0.15);
+  }
+
+  private stopAtmoLayer(kind: AmbienceKind): void {
+    const live = this.atmoPlaying.get(kind);
+    if (!live) return;
+    this.atmoPlaying.delete(kind);
+    const ctx = this.actx;
+    if (ctx) {
+      // Fade out, then stop — a hard stop mid-waveform clicks.
+      live.gain.gain.setTargetAtTime(0, ctx.currentTime, 0.1);
+      try { live.src.stop(ctx.currentTime + 0.5); } catch { /* already stopped */ }
+    } else {
+      try { live.src.stop(); } catch { /* already stopped */ }
+    }
+  }
+
+  private saveAtmo(): void {
+    try {
+      const levels: Record<string, number> = {};
+      for (const [k, v] of this.atmoLevels) if (v > 0) levels[k] = v;
+      sessionStorage.setItem(ATMO_KEY, JSON.stringify({ master: this.atmoMaster, levels }));
+    } catch { /* storage disabled: the environment lasts this page only */ }
   }
 
   // ── Playlist: prev/next + auto-advance over audio-index.json ─────────────
@@ -772,10 +1115,20 @@ class Player {
   close(): void {
     if (this.closed) return;
     this.closed = true;
+    if (document.fullscreenElement === this.vizPanel) void document.exitFullscreen().catch(() => { /* already gone */ });
+    if (this.vizFullpage) this.setVizFullpage(false);
     this.audio.pause();
     this.audio.src = '';
     if (this.meterRaf) cancelAnimationFrame(this.meterRaf);
+    if (this.toastTimer) clearTimeout(this.toastTimer);
     this.vizHandle?.destroy();
+    // Ambience dies with the dock (plan §2: pause keeps the room, close ends
+    // it). The context close below would silence it anyway; stopping the
+    // sources first just avoids a burst if the close is slow.
+    for (const kind of [...this.atmoPlaying.keys()]) this.stopAtmoLayer(kind);
+    // The tap dies with the dock — a closed context releases the element, so a
+    // future player instance can tap a fresh <audio> without a stale graph.
+    if (this.actx) { void this.actx.close().catch(() => { /* already closed */ }); this.actx = null; this.analyser = null; }
     for (const fn of this.cleanups.splice(0)) fn();
     this.highlighted?.classList.remove('ldp-here');
     document.documentElement.classList.remove('ldp-open');
@@ -796,6 +1149,7 @@ interface Butterchurn {
   createVisualizer(ctx: BaseAudioContext, canvas: HTMLCanvasElement, opts: {
     width: number; height: number; pixelRatio: number; meshWidth: number; meshHeight: number;
   }): {
+    connectAudio(node: AudioNode): void;
     loadPreset(preset: unknown, blendSeconds: number): void;
     render(opts?: unknown): void;
   };
@@ -812,16 +1166,88 @@ function resolveButterchurn(mod: unknown): Butterchurn {
   throw new Error('butterchurn loaded but exposes no createVisualizer');
 }
 
-/** A preset from the app's shared pack (/viz-presets/): first popular tier-1
- *  entry that the app's own curation marked ok, else the first entry at all. */
-async function pickPreset(): Promise<unknown | null> {
+// ── Preset selection over the app's shared pack (/viz-presets/) ──────────────
+// The index lists {id,name,author,popular,tier,ok,luma}; each preset BODY is its
+// own /viz-presets/<id>.json, fetched by id — the same shape the app reads.
+
+interface PresetEntry { id: string; name: string; author?: string; popular?: boolean; tier?: number; ok?: boolean }
+
+/** One fetch per page: mount and every tap read the same cached index. */
+let presetIndexP: Promise<PresetEntry[] | null> | null = null;
+function presetIndex(): Promise<PresetEntry[] | null> {
+  presetIndexP ??= fetch('/viz-presets/index.json')
+    .then((r) => (r.ok ? r.json() : null))
+    .then((j: unknown) => (Array.isArray(j) && j.length ? j as PresetEntry[] : null))
+    .catch(() => null);
+  return presetIndexP;
+}
+
+/** The jump pool: popular tier-1 entries the app's own curation marked ok. The
+ *  whole index is the fallback so a pack without curation still draws something. */
+function presetPool(index: PresetEntry[]): PresetEntry[] {
+  const pool = index.filter((e) => e.ok !== false && e.tier === 1 && e.popular);
+  return pool.length ? pool : index;
+}
+
+/**
+ * Choose a preset entry. `wantId` (the session-remembered choice) wins when the
+ * index still carries it; otherwise a random draw from the popular pool,
+ * excluding `notId` (the preset already showing) so a tap always jumps.
+ */
+async function pickPresetEntry(wantId: string | null, notId: string | null = null): Promise<PresetEntry | null> {
+  const index = await presetIndex();
+  if (!index) return null;
+  if (wantId) {
+    const kept = index.find((e) => e.id === wantId && e.ok !== false);
+    if (kept) return kept;
+  }
+  let pool = presetPool(index);
+  if (notId && pool.length > 1) pool = pool.filter((e) => e.id !== notId);
+  return pool[Math.floor(Math.random() * pool.length)] ?? null;
+}
+
+async function fetchPresetBody(id: string): Promise<unknown | null> {
   try {
-    const index = await fetch('/viz-presets/index.json').then((r) => (r.ok ? r.json() : null)) as
-      Array<{ id: string; popular?: boolean; tier?: number; ok?: boolean }> | null;
-    if (!index?.length) return null;
-    const entry = index.find((e) => e.ok !== false && e.tier === 1 && e.popular) ?? index[0]!;
-    return await fetch(`/viz-presets/${entry.id}.json`).then((r) => (r.ok ? r.json() : null));
+    return await fetch(`/viz-presets/${encodeURIComponent(id)}.json`).then((r) => (r.ok ? r.json() : null));
   } catch {
     return null;
   }
+}
+
+// ── Ambience buffer bake — lazy DSP chunk + module-scope cache ───────────────
+// bakeAmbience (shells/web/src/lib/ambience-dsp.ts, bundled at build time like
+// docs-spoken-text — pure DSP, zero imports, zero DOM) runs 50–500 ms per bed on
+// the main thread. That is a one-off per layer per page, on the click that turns
+// the layer on — acceptable — and the cache below makes every later toggle free.
+// AudioBuffers outlive the context that made them, so the cache survives the
+// dock closing and reopening within a page; a navigation re-bakes (seeded, so
+// the next page's rain is the same rain).
+
+const atmoBuffers = new Map<string, AudioBuffer>();
+const atmoBaking = new Map<string, Promise<AudioBuffer | null>>();
+
+async function bakeAtmoBuffer(ctx: AudioContext, kind: AmbienceKind): Promise<AudioBuffer | null> {
+  const key = `${kind}@${ctx.sampleRate}`;
+  const have = atmoBuffers.get(key);
+  if (have) return have;
+  const inflight = atmoBaking.get(key);
+  if (inflight) return inflight;
+  const job = (async (): Promise<AudioBuffer | null> => {
+    try {
+      // The DSP is its own lazy chunk (like butterchurn): pages that never open
+      // the atmosphere panel never fetch it.
+      const { bakeAmbience } = await import('../../shells/web/src/lib/ambience-dsp.ts');
+      const chans = bakeAmbience(kind, ctx.sampleRate);
+      const buf = ctx.createBuffer(chans.length, chans[0]!.length, ctx.sampleRate);
+      // The cast is the TS 5.7 typed-array generic, not a shape claim (same note
+      // as the app's atmosphere.ts): bakeAmbience allocates plain
+      // ArrayBuffer-backed views, but a bare Float32Array is
+      // Float32Array<ArrayBufferLike>, which copyToChannel won't take.
+      for (let c = 0; c < chans.length; c++) buf.copyToChannel(chans[c]! as Float32Array<ArrayBuffer>, c);
+      atmoBuffers.set(key, buf);
+      return buf;
+    } catch { return null; } finally { atmoBaking.delete(key); }
+  })();
+  atmoBaking.set(key, job);
+  return job;
 }
