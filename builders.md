@@ -15,6 +15,8 @@ New to the platform? The **[Quickstart](/info/quickstart.html)** gets a brand an
 - **[Overview](/info/overview.html)** - why Lolly exists, the engine/shell/tools separation, the capability bridge, and the settled architectural commitments.
 - **[Design Tokens](/info/design-tokens.html)** - the DTCG token model brands are expressed in, and how tools consume them.
 
+![One shared primitive from the shell's component library, rendered live from its own specimen - the button base and its fills, beside the file that defines them](/t/url-shot?url=%2F%23%2Fcomponents&width=1200&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23cl-primitives%20.cl-card&dark=1&filename=aud-primitive-card&sweep=1)
+
 ## Author tools
 
 Every control below was generated from a declared input in `tool.json`. You write the manifest line, the host draws the widget, and the same model drives the CLI and the URL.
