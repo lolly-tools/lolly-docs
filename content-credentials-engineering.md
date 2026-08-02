@@ -139,6 +139,12 @@ resolver** - a DNS-published key reports "no key resolver" instead of being fetc
 through a third-party DoH service; the Node shells (CLI/TUI/desktop) resolve keys
 through the machine's own DNS.
 
+Each read has its own surface in the view, catalogued in the component library
+beside the module that defines it - here, the verdict-hero entry: the verdict
+states it covers and the `valid.ts` source behind them:
+
+![The component-library entry for the verify hero - the verdict states it covers (Made with Lolly, Verified, broken) beside the valid.ts source that defines them](/t/url-shot?url=%2F%23%2Fcomponents&width=1200&height=1400&dpi=192&waitMs=2400&walker=1&format=svg&cropSelector=%23cl-verify-valid%20.cl-card&dark=1&filename=ce-verify-card&sweep=1)
+
 ### `engine/src/pixel-watermark.ts` - the Lolly Imprint
 
 Block-DCT spread-spectrum watermark (Cox/Kilian/Leighton/Shamoon) on the same 8×8

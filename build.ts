@@ -4,7 +4,7 @@
 // Run: node docs/build.ts            build the /info pages once
 //      node docs/build.ts --watch    rebuild on every change under docs/ (used by dev:web)
 // Output: shells/web/public/info/
-import { readFileSync, writeFileSync, mkdirSync, copyFileSync, existsSync, readdirSync, rmSync, statSync, watch } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, copyFileSync, cpSync, existsSync, readdirSync, rmSync, statSync, watch } from 'node:fs';
 import { resolve, dirname, relative, sep } from 'node:path';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
@@ -16,6 +16,9 @@ import { readShotAnatomy } from './shot-anatomy.ts';
 // capture params a credential wants to state are exactly the ones the capture read,
 // and a second parser is a second thing to disagree with the first.
 import { parseShotRecipes, type ShotDef } from '../scripts/lib/shot-compare.ts';
+// esbuild bundles the docs player (docs/player/) into /info/docs-player.js — it
+// is already in the tree as vite's bundler, so this adds no dependency.
+import { buildSync } from 'esbuild';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(__dirname, '..');
@@ -4080,6 +4083,111 @@ function searchBox(lang: Lang): string {
     </div>`;
 }
 
+// ── Docs narration — "Listen to this page" (plans/docs-audio-listen.md) ───────
+// Narration artefacts are rendered manually (never in CI) by
+// scripts/build-docs-audio.ts and committed under docs/audio/<lang>/<slug>/;
+// the build only LINKS what exists. A page without committed audio gets no
+// button — no dead controls — and with no audio anywhere the player bundle is
+// neither built nor referenced, so /info carries zero extra bytes.
+interface AudioEntry { slug: string; title: string; url: string; duration: number; bytes: number }
+
+// slug → playlist entry for the CURRENT build() pass. Module-level like
+// activeCatalog (wrapPage has no channel for per-build state), reset at the top
+// of every build() so a --watch reimport can never serve a previous pass's set.
+let audioBySlug = new Map<string, AudioEntry>();
+
+/** The committed English narration set, in pages[] (sidebar) order — that order
+ *  IS the playlist auto-advance walks. */
+function collectDocsAudio(): Map<string, AudioEntry> {
+  const map = new Map<string, AudioEntry>();
+  const base = resolve(repoRoot, 'docs', 'audio', 'en');
+  if (!existsSync(base)) return map;
+  for (const page of pages) {
+    const dir = resolve(base, page.slug);
+    if (!existsSync(resolve(dir, 'audio.opus')) || !existsSync(resolve(dir, 'meta.json'))) continue;
+    try {
+      const meta = JSON.parse(readFileSync(resolve(dir, 'meta.json'), 'utf-8')) as { duration?: number; bytes?: number };
+      map.set(page.slug, {
+        slug: page.slug,
+        title: page.title,
+        url: `/info/audio/en/${page.slug}/audio.opus`,
+        duration: Number(meta.duration) || 0,
+        bytes: Number(meta.bytes) || statSync(resolve(dir, 'audio.opus')).size,
+      });
+    } catch {
+      console.warn(`⚠  docs audio: ${page.slug}/meta.json unreadable - page not linked`);
+    }
+  }
+  return map;
+}
+
+/** Bundle the docs player (docs/player/player.ts) to /info/docs-player.js.
+ *  Static docs pages cannot import shells/web/src modules at runtime, so the
+ *  player is its own tiny esm bundle; the butterchurn dynamic import splits
+ *  into a docs-player-<hash>.js chunk fetched only when the viz panel opens. */
+function bundleDocsPlayer(): void {
+  buildSync({
+    entryPoints: [resolve(__dirname, 'player', 'player.ts')],
+    bundle: true,
+    format: 'esm',
+    splitting: true,
+    minify: true,
+    platform: 'browser',
+    outdir: outDir,
+    entryNames: 'docs-player',
+    chunkNames: 'docs-player-[hash]',
+    // The player bundles scripts/lib/docs-spoken-text.ts for extractSpokenText;
+    // that module's node:crypto import (spokenTextHash, unused here) is aliased
+    // to a throwing stub so the browser bundle resolves.
+    alias: { 'node:crypto': resolve(__dirname, 'player', 'crypto-stub.ts') },
+    logLevel: 'silent',
+  });
+  buildSync({
+    entryPoints: [resolve(__dirname, 'player', 'player.css')],
+    bundle: true,
+    minify: true,
+    outfile: resolve(outDir, 'docs-player.css'),
+    logLevel: 'silent',
+  });
+}
+
+const LISTEN_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>`;
+
+// Styles for the button only — everything past the first press lives in
+// /info/docs-player.css, fetched with the bundle. Shipped inline beside the
+// button (not in CSS above) so pages without audio carry none of it.
+const LISTEN_STYLE = `<style>
+.listen-bar{display:flex;justify-content:flex-end;margin:0 0 -8px}
+.listen-bar-float{position:fixed;right:16px;bottom:16px;z-index:89;margin:0}
+.docs-listen{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border-radius:999px;border:1px solid rgba(28,39,51,.18);background:rgba(255,255,255,.85);color:inherit;font:600 13px/1 inherit;font-family:inherit;cursor:pointer;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.docs-listen:hover{border-color:rgba(44,92,150,.5)}
+.docs-listen svg{width:15px;height:15px}
+.docs-listen .listen-mins{font-weight:400;opacity:.65}
+.docs-listen.is-loading{opacity:.6;pointer-events:none}
+html.dark .docs-listen{background:rgba(24,30,38,.85);border-color:rgba(230,237,243,.2)}
+html.dark .docs-listen:hover{border-color:rgba(141,184,234,.6)}
+</style>`;
+
+// The lazy loader — the ONLY player code a page carries. The bundle is fetched
+// on the first press (plan §6.1), or on arrival when the previous page's
+// auto-advance/prev/next left a hand-off in sessionStorage.
+const LISTEN_SCRIPT = `<script>(function(){
+var btn=document.querySelector('.docs-listen');if(!btn)return;
+var busy=false;
+function open(auto){if(busy)return;busy=true;btn.classList.add('is-loading');
+import('/info/docs-player.js').then(function(m){
+  m.openDocsPlayer({slug:btn.getAttribute('data-listen-slug'),title:btn.getAttribute('data-listen-title'),autoplay:!!auto,trigger:btn});
+}).catch(function(e){console.warn('docs player failed to load',e);}).finally(function(){busy=false;btn.classList.remove('is-loading');});}
+btn.addEventListener('click',function(){open(true);});
+try{var s=sessionStorage.getItem('lolly-docs-listen');
+if(s&&JSON.parse(s).slug===btn.getAttribute('data-listen-slug'))open(JSON.parse(s).auto);}catch(e){}
+})();</script>`;
+
+function listenButtonHtml(page: Page, a: AudioEntry): string {
+  const mins = a.duration > 0 ? `${Math.max(1, Math.round(a.duration / 60))} min` : '';
+  return `${LISTEN_STYLE}<div class="listen-bar${page.isLanding ? ' listen-bar-float' : ''}"><button type="button" class="docs-listen" data-listen-slug="${esc(page.slug)}" data-listen-title="${esc(page.title)}" aria-label="${esc(`Listen to ${page.title}`)}">${LISTEN_ICON}<span>Listen</span>${mins ? `<span class="listen-mins">${esc(mins)}</span>` : ''}</button></div>`;
+}
+
 function wrapPage(lang: Lang, page: Page, content: string, ogSlugs: Set<string>, md = '') {
   const activeHref = page.slug === 'index' ? '/info/index.html' : `/info/${page.slug}.html`; // logical (English) - identity only
   const isLanding  = page.isLanding;
@@ -4095,10 +4203,17 @@ function wrapPage(lang: Lang, page: Page, content: string, ogSlugs: Set<string>,
   // own first sentence, else the site line for the landing page.
   const description = t(page.description || (isLanding ? SITE_DESCRIPTION : mdDescription(md) || SITE_DESCRIPTION));
 
-  const body = isLanding ? content : `
+  // Narration is English-only at launch (plan §2): the locale pages would pair
+  // an English voice with a translated body, which §9 rules out — so the button
+  // (and its loader) ship on English pages only, and only where audio exists.
+  const audio = lang === 'en' ? audioBySlug.get(page.slug) : undefined;
+  const listen = audio ? listenButtonHtml(page, audio) : '';
+
+  const body = isLanding ? `${listen}${content}` : `
 <div class="docs-wrap">
   ${buildSidebar(lang, page, activeHref)}
   <main class="docs-content page-${page.slug}">
+    ${listen}
     ${content}
   </main>
 </div>`;
@@ -4156,6 +4271,7 @@ ${SHOT_CRED_SCRIPT}
 ${isLanding ? '' : SHOWCASE_SCRIPT}
 ${isLanding ? HERO_CANVAS_SCRIPT : ''}
 ${isLanding ? LIQUID_GLASS_SCRIPT : ''}
+${audio ? LISTEN_SCRIPT : ''}
 </body>
 </html>`;
 }
@@ -4269,6 +4385,33 @@ function build() {
     mkdirSync(resolve(outDir, 'shots'), { recursive: true });
     for (const f of readdirSync(shotsSrc)) {
       if (/\.(png|svg|jpg)$/.test(f)) copyFileSync(resolve(shotsSrc, f), resolve(outDir, 'shots', f));
+    }
+  }
+
+  // Docs narration — mirror the committed artefacts and link them (plan §4.5).
+  // Same mirror-don't-accumulate rule as shots: a withdrawn narration must not
+  // stay behind in the gitignored output dir to be served stale. The player
+  // bundle and audio-index.json exist only while at least one page has audio,
+  // so a no-audio checkout builds a byte-identical /info with none of this.
+  audioBySlug = collectDocsAudio();
+  rmSync(resolve(outDir, 'audio'), { recursive: true, force: true });
+  rmSync(resolve(outDir, 'audio-index.json'), { force: true });
+  for (const f of readdirSync(outDir)) {
+    if (/^docs-player.*\.(js|css)$/.test(f)) rmSync(resolve(outDir, f), { force: true });
+  }
+  if (audioBySlug.size) {
+    cpSync(resolve(repoRoot, 'docs', 'audio'), resolve(outDir, 'audio'), { recursive: true });
+    // The ordered playlist prev/next + auto-advance walk — pages[] order, which
+    // is the same order the sidebar reads in.
+    writeFileSync(resolve(outDir, 'audio-index.json'), JSON.stringify([...audioBySlug.values()]), 'utf-8');
+    try {
+      bundleDocsPlayer();
+      console.log(`✓  /info/docs-player.js (${audioBySlug.size} narrated pages)`);
+    } catch (err) {
+      // No bundle means every Listen press would 404 — withhold the buttons
+      // rather than render dead controls.
+      audioBySlug = new Map();
+      console.warn('⚠  docs player bundle failed - Listen buttons withheld:', (err as Error).message);
     }
   }
 
@@ -4406,19 +4549,27 @@ function writeInfoManifest(): void {
   const localeDirs = new Set(LANGS.filter((l) => l !== 'en').map(String));
   const en: ManifestFile[] = [];
   const shots: ManifestFile[] = [];
+  const audio: ManifestFile[] = [];
   const locales: Record<string, ManifestFile[]> = {};
   for (const f of walk(outDir).sort((a, b) => a.url.localeCompare(b.url))) {
     const seg = f.url.split('/')[2] ?? '';
     if (seg === 'og' || f.url === '/info/manifest.json') continue;
     if (seg === 'shots') shots.push(f);
+    // Narration + its player travel as their own group, which docsFileList()
+    // deliberately EXCLUDES from the default docs part (plan §7): audio grows
+    // linearly with pages × locales and must never silently fatten "Available
+    // offline: Docs". Online playback still caches incidentally via the SW's
+    // lolly-info bucket. The player chunks live here too — the biggest one is
+    // butterchurn, useless without the audio it visualises.
+    else if (seg === 'audio' || /^\/info\/(docs-player[^/]*|audio-index\.json)$/.test(f.url)) audio.push(f);
     else if (localeDirs.has(seg)) (locales[seg] ??= []).push(f);
     else en.push(f);
   }
-  const all = [...en, ...shots, ...Object.values(locales).flat()];
+  const all = [...en, ...shots, ...audio, ...Object.values(locales).flat()];
   const version = createHash('sha256')
     .update(all.map((f) => `${f.url}:${f.size}:${f.hash}`).join('\n'))
     .digest('base64url').slice(0, 16);
-  writeFileSync(resolve(outDir, 'manifest.json'), JSON.stringify({ version, groups: { en, shots, locales } }), 'utf-8');
+  writeFileSync(resolve(outDir, 'manifest.json'), JSON.stringify({ version, groups: { en, shots, audio, locales } }), 'utf-8');
   console.log(`✓  /info/manifest.json (${all.length} files, ${Object.keys(locales).length} locales)`);
 }
 
