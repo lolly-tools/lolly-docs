@@ -16,6 +16,10 @@ import { readShotAnatomy } from './shot-anatomy.ts';
 // capture params a credential wants to state are exactly the ones the capture read,
 // and a second parser is a second thing to disagree with the first.
 import { parseShotRecipes, type ShotDef } from '../scripts/lib/shot-compare.ts';
+// The narration pipeline's own extraction, reused for the cue→anchor assertion
+// below — the blockIds a committed cues.json speaks must be judged by the same
+// rules that minted them, and the player already bundles this exact module.
+import { extractSpokenText } from '../scripts/lib/docs-spoken-text.ts';
 // esbuild bundles the docs player (docs/player/) into /info/docs-player.js — it
 // is already in the tree as vite's bundler, so this adds no dependency.
 import { buildSync } from 'esbuild';
@@ -4173,6 +4177,10 @@ html.dark .docs-listen:hover{border-color:rgba(141,184,234,.6)}
 // auto-advance/prev/next left a hand-off in sessionStorage.
 const LISTEN_SCRIPT = `<script>(function(){
 var btn=document.querySelector('.docs-listen');if(!btn)return;
+// Opus-only shipping decision (plan §4.2): browsers that cannot play Ogg/Opus
+// (iOS Safari before 18.4) get no button at all - no dead controls.
+try{if(!document.createElement('audio').canPlayType('audio/ogg; codecs=opus')){
+var bar=btn.closest('.listen-bar');if(bar)bar.remove();return;}}catch(e){}
 var busy=false;
 function open(auto){if(busy)return;busy=true;btn.classList.add('is-loading');
 import('/info/docs-player.js').then(function(m){
@@ -4182,6 +4190,61 @@ btn.addEventListener('click',function(){open(true);});
 try{var s=sessionStorage.getItem('lolly-docs-listen');
 if(s&&JSON.parse(s).slug===btn.getAttribute('data-listen-slug'))open(JSON.parse(s).auto);}catch(e){}
 })();</script>`;
+
+/**
+ * Build-time cue→anchor assertion (plans/docs-audio-listen.md §10): every
+ * blockId in a narrated page's committed cues.json must still resolve against
+ * the BUILT page, judged the way the player maps blocks (buildBlockMap in
+ * docs/player/player.ts) — a blockId that survives in the CURRENT extraction,
+ * whose spoken text is present in the built markup (paragraphs and list items
+ * are matched by text there, so text presence IS the derivable position), a
+ * heading's element id being the stronger signal where the markup carries it.
+ * A plain id check would be wrong on the landing page: buildLandingContent
+ * mints its own section ids ("Journalists" → #press), so its headings map by
+ * being present at all, not by anchor. Synthetic omission lines ("Code example
+ * omitted.") have no DOM twin by design and are exempt. One console.warn per
+ * miss; the build only throws when more than 20% of a page's blocks miss —
+ * drift tolerance while copy moves, since tests/docs-audio-stale.test.ts
+ * already names every stale page.
+ */
+function assertAudioCues(page: Page, content: string, md: string): void {
+  const cuesPath = resolve(repoRoot, 'docs', 'audio', 'en', page.slug, 'cues.json');
+  if (!existsSync(cuesPath)) return;
+  let blocks: Array<{ blockId: string }>;
+  try {
+    blocks = (JSON.parse(readFileSync(cuesPath, 'utf-8')) as { blocks?: Array<{ blockId: string }> }).blocks ?? [];
+  } catch {
+    console.warn(`⚠  docs audio: ${page.slug}/cues.json unreadable - cue assertion skipped`);
+    return;
+  }
+  if (!blocks.length) return;
+  const norm = (s: string): string => s
+    .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+    .replace(/&#39;/g, "'").replace(/&quot;/g, '"')
+    .toLowerCase().replace(/\s+/g, ' ').trim();
+  const domIds = new Set([...content.matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]!));
+  const pageText = norm(content.replace(/<(script|style)[\s\S]*?<\/\1>/gi, ' ').replace(/<[^>]+>/g, ' '));
+  const spoken = new Map(extractSpokenText(md, { pageTitle: page.title }).map((b) => [b.blockId, b.text]));
+  let missed = 0;
+  for (const b of blocks) {
+    const text = spoken.get(b.blockId);
+    const resolves = text !== undefined && (
+      /^(Code example|Table) omitted\.$/.test(text)
+      || domIds.has(b.blockId)
+      || pageText.includes(norm(text).slice(0, 40))
+    );
+    if (resolves) continue;
+    missed++;
+    console.warn(`⚠  docs audio: ${page.slug} cue "${b.blockId}" does not resolve in the built page`);
+  }
+  if (missed > blocks.length * 0.2) {
+    throw new Error(
+      `docs audio: ${page.slug} - ${missed}/${blocks.length} cues.json blocks fail to anchor; `
+      + 'the narration no longer matches the page (re-render: node scripts/build-docs-audio.ts)',
+    );
+  }
+  console.log(`✓  docs audio cues: ${page.slug} - ${blocks.length - missed}/${blocks.length} blocks anchored${missed ? ' (drift within tolerance)' : ''}`);
+}
 
 function listenButtonHtml(page: Page, a: AudioEntry): string {
   const mins = a.duration > 0 ? `${Math.max(1, Math.round(a.duration / 60))} min` : '';
@@ -4208,6 +4271,7 @@ function wrapPage(lang: Lang, page: Page, content: string, ogSlugs: Set<string>,
   // (and its loader) ship on English pages only, and only where audio exists.
   const audio = lang === 'en' ? audioBySlug.get(page.slug) : undefined;
   const listen = audio ? listenButtonHtml(page, audio) : '';
+  if (audio) assertAudioCues(page, content, md);
 
   const body = isLanding ? `${listen}${content}` : `
 <div class="docs-wrap">
