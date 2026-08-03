@@ -138,6 +138,7 @@ const pages: Page[] = [
   { slug: 'privacy',          title: 'Privacy Policy',    src: 'privacy.md',         pathway: 'trust' },
   { slug: 'inclusive-design', title: 'Inclusive Design',  src: 'inclusive-design.md', pathway: 'trust', description: "Accessibility, language coverage and the ethical commitments Lolly holds itself to, with the tests that fail the build when one is broken." },
   { slug: 'ai-stance',        title: 'Our AI Stance',     src: 'ai-stance.md',       pathway: 'trust', description: "AI is welcome as labour and refused as impersonation. Where Lolly stands on generated content, and the machinery that enforces each commitment." },
+  { slug: 'beatrice-warde',   title: 'Beatrice Warde',    src: 'beatrice-warde.md',  pathway: 'trust', description: "The typographer whose 1932 lines this project adapted, who proved that the types the whole trade called Garamond had been cut by somebody else entirely." },
 ];
 
 // Top-nav links, grouped into clusters. Each inner array renders as one cluster
@@ -269,7 +270,8 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
         { slug: 'input-not-impersonation',         label: 'Input, not impersonation' },
         { slug: 'content-credentials-identity',    label: 'Content Credentials' },
         { slug: 'content-credentials-engineering', label: 'Content Credentials - Engineering' },
-        { slug: 'ai-stance',                       label: 'Our AI Stance' } ] },
+        { slug: 'ai-stance',                       label: 'Our AI Stance' },
+        { slug: 'beatrice-warde',                  label: 'Beatrice Warde' } ] },
       { label: 'Check it yourself', items: [
         { slug: 'verify-yourself', label: 'Verify It Yourself' },
         { slug: 'security',        label: 'Security & Verification' },
@@ -4028,6 +4030,7 @@ const SIDEBAR_ICON: Record<string, string> = {
   'adoption-governance': 'people',
   // Trust — where content comes from
   'content-credentials-identity': 'seal', 'content-credentials-engineering': 'cpu', 'ai-stance': 'sparkle',
+  'beatrice-warde': 'font',
   // Trust — check it yourself
   'verify-yourself': 'check', security: 'shieldcheck', 'threat-model': 'lock',
   'parser-inventory': 'code', 'server-surface': 'server',
