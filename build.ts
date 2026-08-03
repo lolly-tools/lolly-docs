@@ -1209,7 +1209,7 @@ function mdToHtml(md: string) {
           : '';
         const poster = attrs['poster'] ? ` poster="${esc(rooted(attrs['poster']))}"` : '';
         const dims = (['width', 'height'] as const)
-          .filter(k => attrs[k] != null).map(k => ` ${k}="${esc(attrs[k]!)}"`).join('');
+          .filter(k => /^\d+$/.test(attrs[k] ?? '')).map(k => ` ${k}="${esc(attrs[k]!)}"`).join('');
         out.push(
           `<figure class="doc-audio doc-video"><video controls playsinline preload="none"${poster}${dims} src="${esc(rooted(rawSrc))}">${track}</video></figure>`,
         );
@@ -3172,9 +3172,10 @@ footer .founded-badge{margin-top:.5rem}
 .doc-audio{margin:0 0 .5rem;padding:0}
 .doc-audio audio{width:100%;height:40px;display:block}
 /* An audiogram MP4 is square (1080²) and would swamp the column at full width —
-   cap it and centre it, letting its own aspect ratio set the height. */
+   cap it and centre it, letting its own aspect ratio set the height. The dark
+   fill matches the audiogram's own background so the poster-load gap isn't black. */
 .doc-video{margin:0 auto 1rem;max-width:min(420px,100%)}
-.doc-video video{width:100%;height:auto;display:block;border-radius:10px;background:#000}
+.doc-video video{width:100%;height:auto;display:block;border-radius:10px;background:#0d1f17}
 .dark .docs-content pre code{background:none;color:inherit}
 /* ── Pilot / prototype disclaimer badge (in the dark hero) ─────────────────── */
 .hero-pilot{display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1.1rem;padding:.32rem .34rem .32rem .5rem;border:1px solid rgba(254,124,63,.5);background:rgba(254,124,63,.12);border-radius:999px;text-decoration:none;font-size:.8125rem;color:#ffd9c4;transition:background .15s,border-color .15s}
