@@ -29,6 +29,12 @@ This is a Printing Office
 
 %file{printing-office-plaque.jpg} %entity{U.S. Government Printing Office} historic photo gallery %detail{public domain, a work of the United States federal government under 17 U.S.C. 105} %entity{Lolly} %act{published} it unaltered
 
+### Hear it
+
+<audio src="media/warde-printing-office.opus" captions="media/warde-printing-office.vtt" label="English — the original"></audio>
+
+%file{warde-printing-office.opus} %entity{Google AI Studio} %act{generated} a reading of Warde's original %detail{Gemini speech model, voice Sulafat, transatlantic accent, empathetic read — generated audio, not a human reader} %entity{Lolly} %act{directed and published} it %sig{signed by %entity{Lolly}}
+
 ## What we made of it
 
 ```
@@ -52,9 +58,15 @@ Lolly is a Production Studio
 
 <audio src="media/warde-production-studio.opus" captions="media/warde-production-studio.vtt" label="English"></audio>
 
-%file{warde-production-studio.opus} %entity{Lolly} %act{synthesised} the narration on this device %detail{Kokoro bf_emma, 1.25x, generated audio and not a human reader} %sig{signed by %entity{Lolly}}
+%file{warde-production-studio.opus} %entity{Google AI Studio} %act{generated} the narration %detail{Gemini speech model, voice Sulafat, Australian accent, empathetic read — generated audio, not a human reader} %entity{Lolly} %act{directed and published} it %sig{signed by %entity{Lolly}}
 
 The words are Warde's, adapted. The voice is a model. It is obviously a machine today, and that is not why we labelled it - voices get better, and a safeguard that only works while the technology is poor is not a safeguard, it is a delay. We attribute now, while it is easy and slightly unnecessary, so the habit is already there by the time it matters.
+
+An audio file cannot carry Content Credentials - the C2PA formats are all images and video. So the same narration, drawn as a waveform, is also a signed video: the credential travels in the file, and you can [verify it yourself](/info/verify-yourself.html) without asking us. Fixed in time, having been verified in proof.
+
+<video src="media/warde-production-studio.mp4" captions="media/warde-production-studio.vtt" poster="media/warde-production-studio.poster.jpg" label="English" width="1080" height="1080"></video>
+
+%file{warde-production-studio.mp4} %entity{Lolly} %act{produced and signed} the audiogram %detail{Content Credentials embedded in the file — a waveform drawn from the audio} %entity{Google AI Studio} %act{generated} the voice within %detail{Gemini, voice Sulafat} %sig{signed by %entity{Lolly}}
 
 Four changes, and we would rather list them than let you find them:
 

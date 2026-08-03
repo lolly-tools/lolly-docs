@@ -1189,6 +1189,34 @@ function mdToHtml(md: string) {
       }
     }
 
+    // A standalone <video> line — the same closed-whitelist treatment as <audio>
+    // above. This is how a credentialed audiogram MP4 lands on a page: audio
+    // containers can't carry Content Credentials (Opus/WAV aren't C2PA formats),
+    // but an MP4 can, so a "verify this" narration ships as video. Same `captions`
+    // rule (a deaf reader must reach the words); `poster` is the still shown before
+    // play (the audiogram's loudest-frame poster). Attributes beyond the whitelist
+    // are dropped, so allowing a player is not a general raw-HTML hole.
+    const vid = line.trim().match(/^<video\s+([^<>]*?)\s*(?:\/>|><\/video>)$/i);
+    if (vid) {
+      const attrs: Record<string, string> = {};
+      for (const m of vid[1]!.matchAll(/([a-zA-Z-]+)\s*=\s*"([^"]*)"/g)) attrs[m[1]!.toLowerCase()] = m[2]!;
+      const rawSrc = attrs['src'] ?? '';
+      const rooted = (s: string) => (!/^[a-z][a-z+.-]*:/i.test(s) && !s.startsWith('/') ? `/info/${s}` : s);
+      if (rawSrc && !/^(?!https?:)[a-z][a-z+.-]*:/i.test(rawSrc)) {
+        const cap = attrs['captions'] ? rooted(attrs['captions']) : '';
+        const track = cap
+          ? `<track kind="captions" src="${esc(cap)}" srclang="en" label="${esc(attrs['label'] ?? 'Captions')}" default>`
+          : '';
+        const poster = attrs['poster'] ? ` poster="${esc(rooted(attrs['poster']))}"` : '';
+        const dims = (['width', 'height'] as const)
+          .filter(k => attrs[k] != null).map(k => ` ${k}="${esc(attrs[k]!)}"`).join('');
+        out.push(
+          `<figure class="doc-audio doc-video"><video controls playsinline preload="none"${poster}${dims} src="${esc(rooted(rawSrc))}">${track}</video></figure>`,
+        );
+        i++; continue;
+      }
+    }
+
     if (line.includes('|') && i + 1 < lines.length && /^\|?[-|: ]+\|/.test(lines[i + 1]!)) {
       const headers = parseCells(line);
       i += 2;
@@ -3143,6 +3171,10 @@ footer .founded-badge{margin-top:.5rem}
 .dark .page-beatrice-warde .docs-content pre{background:linear-gradient(#12271d,#0d2016);color:#e8f0ea;box-shadow:inset 0 0 0 1px #ffffff14}
 .doc-audio{margin:0 0 .5rem;padding:0}
 .doc-audio audio{width:100%;height:40px;display:block}
+/* An audiogram MP4 is square (1080²) and would swamp the column at full width —
+   cap it and centre it, letting its own aspect ratio set the height. */
+.doc-video{margin:0 auto 1rem;max-width:min(420px,100%)}
+.doc-video video{width:100%;height:auto;display:block;border-radius:10px;background:#000}
 .dark .docs-content pre code{background:none;color:inherit}
 /* ── Pilot / prototype disclaimer badge (in the dark hero) ─────────────────── */
 .hero-pilot{display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1.1rem;padding:.32rem .34rem .32rem .5rem;border:1px solid rgba(254,124,63,.5);background:rgba(254,124,63,.12);border-radius:999px;text-decoration:none;font-size:.8125rem;color:#ffd9c4;transition:background .15s,border-color .15s}
