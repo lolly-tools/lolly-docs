@@ -1166,6 +1166,29 @@ function mdToHtml(md: string) {
       }
     }
 
+    // A standalone <audio> line, honoured on the same terms as the <img> above:
+    // a closed attribute whitelist, re-emitted re-escaped, so allowing a player
+    // does not become a general raw-HTML hole. `captions` becomes a <track>, which
+    // is not optional here in practice — spoken words a deaf reader cannot reach
+    // are not published words (see inclusive-design.md).
+    const au = line.trim().match(/^<audio\s+([^<>]*?)\s*(?:\/>|><\/audio>)$/i);
+    if (au) {
+      const attrs: Record<string, string> = {};
+      for (const m of au[1]!.matchAll(/([a-zA-Z-]+)\s*=\s*"([^"]*)"/g)) attrs[m[1]!.toLowerCase()] = m[2]!;
+      const rawSrc = attrs['src'] ?? '';
+      const rooted = (s: string) => (!/^[a-z][a-z+.-]*:/i.test(s) && !s.startsWith('/') ? `/info/${s}` : s);
+      if (rawSrc && !/^(?!https?:)[a-z][a-z+.-]*:/i.test(rawSrc)) {
+        const cap = attrs['captions'] ? rooted(attrs['captions']) : '';
+        const track = cap
+          ? `<track kind="captions" src="${esc(cap)}" srclang="en" label="${esc(attrs['label'] ?? 'Captions')}" default>`
+          : '';
+        out.push(
+          `<figure class="doc-audio"><audio controls preload="none" src="${esc(rooted(rawSrc))}">${track}</audio></figure>`,
+        );
+        i++; continue;
+      }
+    }
+
     if (line.includes('|') && i + 1 < lines.length && /^\|?[-|: ]+\|/.test(lines[i + 1]!)) {
       const headers = parseCells(line);
       i += 2;
@@ -3118,6 +3141,8 @@ footer .founded-badge{margin-top:.5rem}
 .page-beatrice-warde .docs-content pre{font-family:'Cinzel',Georgia,serif;font-size:1.0625rem;line-height:2.05;letter-spacing:.055em;text-align:center;background:linear-gradient(#fbfaf7,#f4f2ec);color:#25313a;padding:2.5rem 1.5rem;border-radius:10px;box-shadow:inset 0 0 0 1px #0000000f,0 1px 2px #0000000a;white-space:pre-wrap;text-wrap:balance}
 .page-beatrice-warde .docs-content pre code{font-family:inherit;font-size:inherit;background:none;padding:0}
 .dark .page-beatrice-warde .docs-content pre{background:linear-gradient(#12271d,#0d2016);color:#e8f0ea;box-shadow:inset 0 0 0 1px #ffffff14}
+.doc-audio{margin:0 0 .5rem;padding:0}
+.doc-audio audio{width:100%;height:40px;display:block}
 .dark .docs-content pre code{background:none;color:inherit}
 /* ── Pilot / prototype disclaimer badge (in the dark hero) ─────────────────── */
 .hero-pilot{display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1.1rem;padding:.32rem .34rem .32rem .5rem;border:1px solid rgba(254,124,63,.5);background:rgba(254,124,63,.12);border-radius:999px;text-decoration:none;font-size:.8125rem;color:#ffd9c4;transition:background .15s,border-color .15s}

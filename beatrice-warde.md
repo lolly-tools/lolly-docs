@@ -48,6 +48,14 @@ Friend you behold a legacy honoured:
 Lolly is a Production Studio
 ```
 
+### Hear it
+
+<audio src="media/warde-production-studio.opus" captions="media/warde-production-studio.vtt" label="English"></audio>
+
+%file{warde-production-studio.opus} %entity{Lolly} %act{synthesised} the narration on this device %detail{Kokoro bf_emma, 0.85x, generated audio and not a human reader} %sig{signed by %entity{Lolly}}
+
+The words are Warde's, adapted. The voice is a model. It is obviously a machine today, and that is not why we labelled it - voices get better, and a safeguard that only works while the technology is poor is not a safeguard, it is a delay. We attribute now, while it is easy and slightly unnecessary, so the habit is already there by the time it matters.
+
 Four changes, and we would rather list them than let you find them:
 
 - <!--i:pentool--> **"This is a Printing Office" becomes "Lolly is a Production Studio"**, in the first line and the last. Her subject was a room with presses in it. Ours is a room that emits PNG, SVG, PDF, video and audio. The claim is the same claim.
