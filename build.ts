@@ -2017,6 +2017,11 @@ const CSS = `
 @font-face{font-family:'SUSE';src:url('/catalog/fonts/webfonts/SUSE-Italic[wght].woff2') format('woff2-variations');font-weight:100 900;font-style:italic;font-display:swap}
 @font-face{font-family:'SUSE Mono';src:url('/catalog/fonts/webfonts/SUSEMono[wght].woff2') format('woff2-variations');font-weight:100 900;font-style:normal;font-display:swap}
 @font-face{font-family:'SUSE Mono';src:url('/catalog/fonts/webfonts/SUSEMono-Italic[wght].woff2') format('woff2-variations');font-weight:100 900;font-style:italic;font-display:swap}
+/* Cinzel (SIL OFL 1.1, see /info/fonts/Cinzel-OFL.txt) — Roman inscriptional capitals,
+   the same source Gill drew Perpetua Titling from. Self-hosted, not fetched from
+   fonts.gstatic.com: a third-party request on every docs page would contradict what
+   server-surface.md tells the reader. Latin subset only, 26 KB, loaded on one page. */
+@font-face{font-family:'Cinzel';src:url('/info/fonts/cinzel-latin.woff2') format('woff2-variations');font-weight:400 900;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+2122,U+2212}
 :root{--green:#30ba78;--dark:#0c322c;--orange:#fe7c3f;--navy:#192072;--blue:#2453ff;--light:#90ebcd;--pale:#f0fbf5;--text:#1d2726;--muted:#5a7067;--border:#d8ede4;--red:#c8102e;--col-cap:38rem}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'SUSE',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--text);background:#fff;line-height:1.65}
@@ -3106,6 +3111,13 @@ footer .founded-badge{margin-top:.5rem}
    out-specify the base "pre code background none" reset. */
 .dark .docs-content code{background:#112a1e;color:var(--text)}
 .dark .docs-content pre{background:#0d2419;color:var(--text);border:1px solid var(--border)}
+/* The Warde page sets its two verse blocks as an inscription rather than as code.
+   Scoped to the page so no other fenced block is touched. Centred and letterspaced
+   because that is what the 1932 broadside and the 1940 bronze both do — the poem was
+   cut in capitals for a titling face, and reading it as a listing loses the shape. */
+.page-beatrice-warde .docs-content pre{font-family:'Cinzel',Georgia,serif;font-size:1.0625rem;line-height:2.05;letter-spacing:.055em;text-align:center;background:linear-gradient(#fbfaf7,#f4f2ec);color:#25313a;padding:2.5rem 1.5rem;border-radius:10px;box-shadow:inset 0 0 0 1px #0000000f,0 1px 2px #0000000a;white-space:pre-wrap;text-wrap:balance}
+.page-beatrice-warde .docs-content pre code{font-family:inherit;font-size:inherit;background:none;padding:0}
+.dark .page-beatrice-warde .docs-content pre{background:linear-gradient(#12271d,#0d2016);color:#e8f0ea;box-shadow:inset 0 0 0 1px #ffffff14}
 .dark .docs-content pre code{background:none;color:inherit}
 /* ── Pilot / prototype disclaimer badge (in the dark hero) ─────────────────── */
 .hero-pilot{display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1.1rem;padding:.32rem .34rem .32rem .5rem;border:1px solid rgba(254,124,63,.5);background:rgba(254,124,63,.12);border-radius:999px;text-decoration:none;font-size:.8125rem;color:#ffd9c4;transition:background .15s,border-color .15s}
@@ -4322,7 +4334,7 @@ ${THEME_INIT_SCRIPT}
 ${SHOT_MOTION_INIT}
 <style>${CSS}</style>
 </head>
-<body>
+<body class="page-${page.slug}">
 ${buildNav(lang, page.slug, activeHref, isLanding, page.pathway)}
 ${DRAFT_FILTER_DEF}
 ${body}
