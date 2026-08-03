@@ -54,6 +54,11 @@ const VIZ_KEY = 'lolly-docs-viz-preset';
 const ATMO_KEY = 'lolly-docs-atmo';
 
 const SPEEDS = [1, 1.25, 1.5];
+/** Default 1.25× (Andy, 2026-08-03): the narration is synthesized at a slow,
+ *  careful 0.8 pace so 1× stays available for listeners who want it — but most
+ *  will want 1.25×, which lands near natural reading speed. */
+const SPEED_DEFAULT_IDX = 1;
+const SPEED_KEY = 'lolly-docs-speed';
 /** Preset switch cross-fade — the app's BLEND_SECONDS (lib/butterchurn-viz.ts). */
 const PRESET_BLEND_S = 2.2;
 /** Default level for the ambience master and a freshly toggled layer — the
@@ -211,7 +216,7 @@ class Player {
   /** Scroll events before this timestamp are our own drift, not the user's. */
   private autoUntil = 0;
 
-  private speedIdx = 0;
+  private speedIdx = SPEED_DEFAULT_IDX;
   private highlighted: HTMLElement | null = null;
   private meterRaf = 0;
   private closed = false;
@@ -443,7 +448,7 @@ class Player {
     this.timeEl = el('span', 'ldp-time');
     this.timeEl.textContent = `0:00 / ${fmtTime(track.duration || 0)}`;
     this.speedBtn = el('button', 'ldp-speed');
-    this.speedBtn.textContent = '1×';
+    this.speedBtn.textContent = `${SPEEDS[this.speedIdx]}×`;
     this.speedBtn.setAttribute('aria-label', 'Playback speed');
     row.append(prevBtn, this.playBtn, nextBtn, this.meterEl, this.timeEl, this.speedBtn);
 
@@ -474,10 +479,19 @@ class Player {
     this.playBtn.addEventListener('click', () => { if (this.audio.paused) void this.play(); else this.audio.pause(); });
     prevBtn.addEventListener('click', () => this.go(-1));
     nextBtn.addEventListener('click', () => this.go(1));
+    // Speed: session-remembered like Follow, so auto-advance never resets a
+    // listener's choice mid-journey; the stored index wins over the default.
+    try {
+      const saved = Number(sessionStorage.getItem(SPEED_KEY));
+      if (Number.isInteger(saved) && saved >= 0 && saved < SPEEDS.length) this.speedIdx = saved;
+    } catch { /* storage may be disabled */ }
+    this.audio.playbackRate = SPEEDS[this.speedIdx]!;
+    this.speedBtn.textContent = `${SPEEDS[this.speedIdx]}×`;
     this.speedBtn.addEventListener('click', () => {
       this.speedIdx = (this.speedIdx + 1) % SPEEDS.length;
       this.audio.playbackRate = SPEEDS[this.speedIdx]!;
       this.speedBtn.textContent = `${SPEEDS[this.speedIdx]}×`;
+      try { sessionStorage.setItem(SPEED_KEY, String(this.speedIdx)); } catch { /* best effort */ }
     });
     this.followBtn.addEventListener('click', () => this.setFollow(this.followOff));
     miniBtn.addEventListener('click', () => {
