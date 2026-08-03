@@ -1,5 +1,7 @@
 # Beatrice Warde
 
+*20 September 1900 – 16 September 1969*
+
 In 1932 a typographer wrote fourteen lines about what a printing office is for. They were set in Eric Gill's Perpetua Titling for a Monotype type specimen, and they got away: reprinted more than possibly any other broadside in the trade, translated into seventeen languages, cast in bronze in Washington. Ninety-four years later they describe this project better than anything we have written about ourselves.
 
 So we adapted them. This page shows you what she wrote, what we changed, and who she was.
@@ -24,6 +26,10 @@ Having been verified in proof
 Friend, you stand on sacred ground
 This is a Printing Office
 ```
+
+![A side-profile studio portrait of Beatrice Warde as a young woman, about 1925, facing left against a dark ground](/info/warde-1925.jpg)
+
+%file{warde-1925.jpg} %entity{an unknown photographer} made this side-profile portrait of %entity{Beatrice Warde} %detail{about 1925, soon after she reached London} %detail{public domain — a century on, an anonymous 1925 photograph has outlived copyright everywhere it was ever protected: in the United States, where anything published before 1930 is now free; and in the United Kingdom and Europe, where an anonymous work passes into the public domain seventy years after publication} %entity{Lolly} %act{published} it in good faith, and will honour any rights-holder who comes forward
 
 ![The bronze plaque in the lobby of the US Government Printing Office, the text cast in capitals and signed Beatrice L. Warde, presented by the graduates of the apprentice class of 1940](/info/printing-office-plaque.jpg)
 
@@ -62,11 +68,11 @@ Lolly is a Production Studio
 
 The words are Warde's, adapted. The voice is a model. It is obviously a machine today, and that is not why we labelled it - voices get better, and a safeguard that only works while the technology is poor is not a safeguard, it is a delay. We attribute now, while it is easy and slightly unnecessary, so the habit is already there by the time it matters.
 
-An audio file cannot carry Content Credentials - the C2PA formats are all images and video. So the same narration, drawn as a waveform, is also a signed video: the credential travels in the file, and you can [verify it yourself](/info/verify-yourself.html) without asking us. Fixed in time, having been verified in proof.
+So the same narration, drawn as a waveform, is also a signed video: its history travels in the file, and you can [verify it yourself](/info/verify-yourself.html). Fixed in time, having been verified in proof.
 
 <video src="media/warde-production-studio.mp4" captions="media/warde-production-studio.vtt" poster="media/warde-production-studio.poster.jpg" label="English" width="1080" height="1080"></video>
 
-%file{warde-production-studio.mp4} %entity{Lolly} %act{produced and signed} the audiogram %detail{Content Credentials embedded in the file — a waveform drawn from the audio} %entity{Google AI Studio} %act{generated} the voice within %detail{Gemini, voice Sulafat} %sig{signed by %entity{Lolly}}
+%file{warde-production-studio.mp4} %entity{Lolly} %act{produced and signed} the audiogram %detail{a waveform drawn from the audio, its full history sealed inside the file} %entity{Google AI Studio} %act{generated} the voice within %detail{Gemini, voice Sulafat} %sig{signed by %entity{Lolly}}
 
 Four changes, and we would rather list them than let you find them:
 
@@ -81,7 +87,7 @@ Everything else is hers, including the line this whole page is about.
 
 Warde meant a proof pull: the sheet you take off the press and check before committing to the run. The word survived into our trade almost unchanged, then quietly acquired a second meaning she could not have intended.
 
-A Lolly export carries [Content Credentials](/info/content-credentials-identity.html) - a signed, machine-readable record of what a file is, what it was made from, and what was done to it. Proof in her sense is the check before the run. Proof in ours is the check anyone can run afterwards, on the finished file, without asking us. Same word, same job, ninety-four years apart. You can [verify it yourself](/info/verify-yourself.html).
+Every Lolly export [carries its own record](/info/content-credentials-identity.html) - a signed, machine-readable account of what a file is, what it was made from, and what was done to it. Proof in her sense is the check before the run. Proof in ours is the check anyone can run afterwards, on the finished file, without asking us. Same word, same job, ninety-four years apart. You can [verify it yourself](/info/verify-yourself.html).
 
 ## Who she was
 
