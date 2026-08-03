@@ -71,13 +71,13 @@ In 1926 *The Fleuron* published "The Garamond Types, Sixteenth and Seventeenth C
 
 The author was named as Paul Beaujon, a man who did not exist, with an invented biography to go with him. She was twenty-five. When Monotype offered Beaujon the editorship of *The Monotype Recorder* in 1927, the executives were expecting him to be a man. She took the job, became head of publicity in 1929, and stayed until 1960.
 
-She kept writing as him. The most quoted phrase in typography first appears in 1933, in an essay called "On the Choice of Type Faces", published under the Beaujon name but written by Warde:
+She kept writing as him. The phrase every designer knows first appears under the Beaujon name in 1933, in an essay called "On the Choice of Type Faces", and it is usually quoted with its first half cut off:
 
-> "the clothes that words wear"
+> "People who love ideas must have a love of words. They will take a vivid interest in the clothes that words wear."
 >
-> - Beatrice Warde, writing as Paul Beaujon, The Monotype Recorder, 1933
+> - Beatrice Warde, collected in *The Crystal Goblet*, 1955
 
-Nine decades of designers have repeated that line, most of them believing it describes something small. It describes the whole discipline: meaning is not changed by its setting, but its reception entirely is. The same sentence in the wrong face is a different sentence to the person reading it. That is the case for rigour at scale, made in six words by a woman writing as a man because the trade would not print her.
+The half that gets dropped is the half that makes it an argument. Loving ideas obliges you to care about words, and caring about words obliges you to care how they are dressed. Meaning is not changed by its setting, but its reception entirely is: the same sentence in the wrong face is a different sentence to the person reading it. That is the case for rigour at scale, made in two lines by a woman writing under a man's name because the trade would not print her own.
 
 So the woman who wrote "fixed in time having been verified in proof" is the same person who went to the archive, found a three-hundred-year misattribution, published the correction under a false name because that was the price of being read, and then had to claim it back as her own.
 
