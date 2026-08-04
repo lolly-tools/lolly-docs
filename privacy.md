@@ -151,10 +151,11 @@ one of these URLs returns 404.
 Lolly can also be reached by an AI agent over the Model Context Protocol - an
 operator-run endpoint (lolly.tools runs one; anyone can self-host their own,
 including fully air-gapped). It shares the render path's no-accounts posture,
-plus two tools that necessarily handle file bytes:
+plus three tools that necessarily handle file bytes:
 
 - <!--i:cpu--> **`lolly_transform`** (run an on-device utility server-side, on the calling
-  agent's behalf) and **`lolly_verify`** (check Content Credentials) both accept
+  agent's behalf), **`lolly_verify`** (check Content Credentials) and **`lolly_redact`**
+  (black out regions of an image or PDF) all accept
   a file's bytes from the caller. They are processed **in-process, in memory**,
   and the result is returned in that same call - the file is never written to
   disk and never stored once the request completes.
@@ -258,7 +259,7 @@ them at all: IP address, requested path, timestamp, user agent. That's baseline
 hosting behaviour, not something Lolly adds on top, and it never contains the
 contents of your documents, because those never reach a server to begin with. The
 one deliberate exception is a file you explicitly hand to an MCP
-`lolly_transform` or `lolly_verify` call, which is processed in memory and never
+`lolly_transform`, `lolly_verify` or `lolly_redact` call, which is processed in memory and never
 written to disk or a log, as described above.
 
 **Lolly's own code writes nothing to those logs.** The MCP server contains no

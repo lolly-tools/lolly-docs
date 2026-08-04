@@ -4440,6 +4440,26 @@ function unwrapProvenanceMarkers(md: string): string {
   return out;
 }
 
+// A standalone provenance credential line (`%file{…} %entity{…} …`) is page
+// furniture: on the page it renders as a row of pills. In the agent-readable
+// twin we keep the credit but move it into an HTML comment, markers unwrapped —
+// so an agent still sees the provenance, the twin ships no raw `%kind{` noise
+// (tests/docs-provenance-pills.test.ts), AND the narration excludes it: a
+// comment-only line extracts to empty spoken text, exactly as the SOURCE
+// pipeline (scripts/lib/docs-spoken-text.ts) skips the same `%file{…}` line — so
+// the audio and the player's twin-derived follow-along block map exclude the
+// identical set and the highlight never drifts off a spoken block. Comment
+// FIRST (the detection keys on the raw markers), then a whole-doc unwrap mops up
+// any inline markers on ordinary prose lines.
+function commentStandaloneProvenanceLines(md: string): string {
+  return md
+    .split('\n')
+    .map((l) => /^\s*%(?:file|entity|act|detail|sig)\{/.test(l)
+      ? `<!-- ${unwrapProvenanceMarkers(l).trim()} -->`
+      : l)
+    .join('\n');
+}
+
 // One-sentence description for a page's llms.txt line, derived from the first
 // body sentence of its English markdown so the listing can never drift from the
 // docs themselves. Skips headings, blockquotes, lists/tables, raw HTML (the
@@ -4599,7 +4619,7 @@ function build() {
         sitemapUrls.push({ slug: page.slug, isLanding: page.isLanding });
         // Markdown twin: the verbatim English source, published next to the HTML
         // so agents (and llms.txt below) can read the docs without a DOM.
-        const twin = unwrapProvenanceMarkers(stripFrontMatter(md));
+        const twin = unwrapProvenanceMarkers(commentStandaloneProvenanceLines(stripFrontMatter(md)));
         writeFileSync(resolve(outDir, `${page.slug}.md`), twin, 'utf-8');
         mdBySlug.set(page.slug, twin);
       }
