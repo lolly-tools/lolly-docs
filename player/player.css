@@ -1,6 +1,6 @@
 /* SPDX-License-Identifier: MPL-2.0 */
 /*
- * The docs "Listen" player dock (plans/docs-audio-listen.md §6.2).
+ * The docs "Listen" player dock (plans/40-docs-audio-listen.md §6.2).
  * Built to /info/docs-player.css by docs/build.ts and linked by the player
  * bundle on first open — pages that never press Listen never fetch it.
  *
@@ -278,6 +278,67 @@ html.dark .ldp-caption { color: rgba(230, 237, 243, 0.72); }
   min-width: 38px;
   padding: 4px 6px;
 }
+
+/* ── Speed: a vertical fader, opened from the rate button ──────────────────── */
+/* The row is the containing block so the popover can sit directly above the
+   button it belongs to. Positioned, not fixed: it must travel with the dock. */
+.ldp-row { position: relative; }
+.ldp-speed.is-open { background: rgba(44, 92, 150, 0.14); }
+html.dark .ldp-speed.is-open { background: rgba(141, 184, 234, 0.2); }
+.ldp-speed-pop {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  right: 4px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 8px;
+  border-radius: 10px;
+  background: rgba(252, 253, 254, 0.97);
+  border: 1px solid rgba(28, 39, 51, 0.14);
+  box-shadow: 0 10px 28px rgba(16, 24, 34, 0.18);
+  backdrop-filter: blur(8px);
+}
+html.dark .ldp-speed-pop {
+  background: rgba(22, 30, 40, 0.97);
+  border-color: rgba(230, 237, 243, 0.16);
+}
+.ldp-speed-pop[hidden] { display: none; }
+.ldp-speed-ticks {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 104px;
+}
+.ldp-speed-tick {
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  padding: 1px 3px;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+  color: inherit;
+  opacity: 0.6;
+  cursor: pointer;
+}
+.ldp-speed-tick:hover { opacity: 1; }
+.ldp-speed-tick.is-active { opacity: 1; font-weight: 700; }
+.ldp-speed-range {
+  /* The modern vertical range; `orient="vertical"` in the markup covers older
+     Firefox, and where neither lands this degrades to a horizontal slider that
+     still sets the rate. */
+  writing-mode: vertical-lr;
+  direction: rtl;
+  width: 18px;
+  height: 104px;
+  margin: 0;
+  accent-color: #2c5c96;
+  cursor: pointer;
+}
+html.dark .ldp-speed-range { accent-color: #8db8ea; }
 
 /* ── AI disclosure — one honest line under the transport (plan §8) ────────── */
 .ldp-disclosure {

@@ -124,7 +124,7 @@ Report verdict semantics (surfaced by the `/verify` view):
 same verifier, same report; `--trust-anchor` loads PEM → DER and appends to
 `trustAnchors`. The default anchor set is the **Lolly CA root plus the vendored C2PA
 known-certificate list**, identical to the web `/valid` view and to MCP's `lolly_verify`
-(plans/cli-ga-contract.md §12 O1) - so a Lolly-CA-signed export reads the same on every
+(plans/73-cli-ga-contract.md §12 O1) - so a Lolly-CA-signed export reads the same on every
 surface. `--no-default-anchors` drops both built-in sets for a bare-trust check, and
 every report prints which set produced the verdict.
 
@@ -156,7 +156,7 @@ adds a fixed ±1 chip to mid-band luma coefficients scaled by a perceptual mask;
 not a hardened defence** - the chip key ships in this public source, so a motivated
 adversary who reads it can subtract the mark. It's honest cover against casual
 re-encoding/stripping, framed exactly like the self-signed on-device C2PA key
-(`plans/lollys-own-synth.md`). The shell embeds it two ways: the standalone raster
+(`plans/30-lollys-own-synth.md`). The shell embeds it two ways: the standalone raster
 encoders' `opts.imprint` branch, and `imprintEmbedCanvas` baking the mark into each
 Lolly-rendered raster as it's composited into a PDF page / PPTX slide - so a
 pure-vector page marks nothing, and the C2PA claim is gated on whether a mark was
@@ -409,11 +409,11 @@ would 501.
 
 id.suse.com (Keycloak) shows up in **two** places that must not be conflated.
 Both reuse the same OIDC client, but they answer different questions. Detailed
-implementation plans (local, under `plans/`): **`plans/sso-signing.md`** and
-**`plans/sso-tool-access.md`** - the summaries below are the roadmap view.
+implementation plans (local, under `plans/`): **`plans/32-sso-signing.md`** and
+**`plans/33-sso-tool-access.md`** - the summaries below are the roadmap view.
 
 5. **Complete SUSE SSO for *signing*** (deepens the identity in this doc -
-   "who signed"; full plan → `plans/sso-signing.md`). Today SUSE is one
+   "who signed"; full plan → `plans/32-sso-signing.md`). Today SUSE is one
    enrolment provider among several and each enrolment is a fresh popup. Bring
    it to true SSO:
    - **Session reuse / silent renewal.** While the id.suse.com session is
@@ -430,7 +430,7 @@ implementation plans (local, under `plans/`): **`plans/sso-signing.md`** and
      releasing those claims. Feeds the CreativeWork author assertion.
 
 6. **SSO for *tool access*** (a NEW authorization axis - "who may use the
-   app," separate from signing; full plan → `plans/sso-tool-access.md`). Gate
+   app," separate from signing; full plan → `plans/33-sso-tool-access.md`). Gate
    who can open the app, specific tools, or gated features behind SUSE SSO:
    - **Shell-level auth guard, never the engine.** The engine stays
      platform-agnostic; access control is a host/shell concern. The web shell
