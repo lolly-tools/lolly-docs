@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MPL-2.0
 /**
- * The docs "Listen to this page" player (plans/docs-audio-listen.md §6).
+ * The docs "Listen to this page" player (plans/40-docs-audio-listen.md §6).
  *
  * A fresh, small implementation styled after the app's neuro dock — deliberately
  * NOT an extraction of the web shell's music player (which is entangled with
@@ -54,14 +54,16 @@ const VIZ_KEY = 'lolly-docs-viz-preset';
 const ATMO_KEY = 'lolly-docs-atmo';
 
 const SPEEDS = [1, 1.25, 1.5, 2, 2.5];
-/** Default 1.5× (Andy, 2026-08-04): the narration is synthesized at a slow,
- *  careful 0.8 pace, so the base render is already gentle. 1.5× lands near a
- *  natural-brisk reading speed and suits most listeners; 1× and 1.25× stay for
- *  a gentler pace and the range now reaches 2.5× for fast listeners. Pitch is
- *  preserved at every rate (this.audio.preservesPitch, set on init), so slowing
- *  down for a different learning pace stays smooth — never a downgrade in
- *  quality, just a change of speed. */
-const SPEED_DEFAULT_IDX = 2;
+/** Default 1.25× (Andy, 2026-08-04, revised down from 1.5× the same day): the
+ *  narration is synthesized at a slow, careful 0.8 pace, so the base render is
+ *  already gentle and needs a nudge rather than a shove. 1.25× is the default a
+ *  first-time listener meets; the range still reaches 2.5× for fast listeners and
+ *  drops to 1× for a slower pace. A first-time listener should not have to reach
+ *  for the control at all, which is the whole argument for moving the default —
+ *  1.5× is a preference, not a starting point. Pitch is preserved at every rate
+ *  (this.audio.preservesPitch, set on init), so a different pace stays smooth —
+ *  never a downgrade in quality, just a change of speed. */
+const SPEED_DEFAULT_IDX = 1;
 const SPEED_KEY = 'lolly-docs-speed';
 /** Preset switch cross-fade — the app's BLEND_SECONDS (lib/butterchurn-viz.ts). */
 const PRESET_BLEND_S = 2.2;
@@ -254,6 +256,9 @@ class Player {
   private followBtn!: HTMLButtonElement;
   private vizBtn!: HTMLButtonElement;
   private speedBtn!: HTMLButtonElement;
+  /** The vertical speed slider popover, and the closer Escape reaches for. */
+  private speedPop: HTMLDivElement | null = null;
+  private closeSpeedPop: (() => void) | null = null;
   private timeEl!: HTMLElement;
   private seekEl!: HTMLInputElement;
   private meterEl!: HTMLCanvasElement;
@@ -493,14 +498,92 @@ class Player {
       const saved = Number(sessionStorage.getItem(SPEED_KEY));
       if (Number.isInteger(saved) && saved >= 0 && saved < SPEEDS.length) this.speedIdx = saved;
     } catch { /* storage may be disabled */ }
-    this.audio.playbackRate = SPEEDS[this.speedIdx]!;
-    this.speedBtn.textContent = `${SPEEDS[this.speedIdx]}×`;
-    this.speedBtn.addEventListener('click', () => {
-      this.speedIdx = (this.speedIdx + 1) % SPEEDS.length;
-      this.audio.playbackRate = SPEEDS[this.speedIdx]!;
-      this.speedBtn.textContent = `${SPEEDS[this.speedIdx]}×`;
-      try { sessionStorage.setItem(SPEED_KEY, String(this.speedIdx)); } catch { /* best effort */ }
+    this.applySpeed(this.speedIdx, { persist: false });
+    // Clicking the rate opens a VERTICAL slider rather than cycling (Andy,
+    // 2026-08-04). A cycle makes the listener step through every rate to reach
+    // the one they want, and going back means going all the way round; a slider
+    // is one gesture to any rate, and the tick labels show the whole range at
+    // once. The button stays a button — it toggles the popover, so keyboard and
+    // screen-reader users get the same control, and the slider itself is a real
+    // <input type="range"> (arrow keys, Home/End) rather than a div with
+    // handlers. It indexes SPEEDS so every stop is a curated rate, not an
+    // arbitrary float.
+    this.speedBtn.setAttribute('aria-expanded', 'false');
+    this.speedBtn.setAttribute('aria-controls', 'ldp-speed-pop');
+    this.speedPop = el('div', 'ldp-speed-pop');
+    this.speedPop.id = 'ldp-speed-pop';
+    this.speedPop.hidden = true;
+    const speedRange = el('input', 'ldp-speed-range');
+    speedRange.type = 'range';
+    speedRange.min = '0';
+    speedRange.max = String(SPEEDS.length - 1);
+    speedRange.step = '1';
+    speedRange.value = String(this.speedIdx);
+    // Vertical orientation: `writing-mode: vertical-*` in CSS is the modern way,
+    // and `orient` covers the Firefox versions that ignore it. Both are inert
+    // where unsupported, and the fallback is a horizontal slider that still works.
+    speedRange.setAttribute('orient', 'vertical');
+    speedRange.setAttribute('aria-label', 'Playback speed');
+    speedRange.setAttribute('aria-orientation', 'vertical');
+    // A percentage would be meaningless here ("40%" of what?) — the rate is the
+    // value the listener cares about, so speak it.
+    const speakRate = (i: number): void => {
+      speedRange.setAttribute('aria-valuetext', `${SPEEDS[i]}× speed`);
+    };
+    speakRate(this.speedIdx);
+    // Ticks read fastest-at-top, which is how a vertical fader reads.
+    const ticks = el('div', 'ldp-speed-ticks');
+    for (let i = SPEEDS.length - 1; i >= 0; i--) {
+      const tick = el('button', 'ldp-speed-tick');
+      tick.type = 'button';
+      tick.textContent = `${SPEEDS[i]}×`;
+      tick.dataset.speedIdx = String(i);
+      tick.setAttribute('aria-label', `${SPEEDS[i]}× speed`);
+      ticks.append(tick);
+    }
+    this.speedPop.append(ticks, speedRange);
+    this.speedBtn.parentElement?.append(this.speedPop) ?? row.append(this.speedPop);
+
+    const syncSpeedUi = (): void => {
+      speedRange.value = String(this.speedIdx);
+      speakRate(this.speedIdx);
+      for (const tick of ticks.querySelectorAll<HTMLElement>('.ldp-speed-tick')) {
+        tick.classList.toggle('is-active', Number(tick.dataset.speedIdx) === this.speedIdx);
+      }
+    };
+    syncSpeedUi();
+
+    const openSpeed = (open: boolean): void => {
+      this.speedPop!.hidden = !open;
+      this.speedBtn.setAttribute('aria-expanded', String(open));
+      this.speedBtn.classList.toggle('is-open', open);
+      if (open) { syncSpeedUi(); speedRange.focus(); }
+    };
+    this.speedBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openSpeed(this.speedPop!.hidden);
     });
+    speedRange.addEventListener('input', () => {
+      this.applySpeed(Number(speedRange.value));
+      syncSpeedUi();
+    });
+    ticks.addEventListener('click', (e) => {
+      const tick = (e.target as HTMLElement | null)?.closest<HTMLElement>('.ldp-speed-tick');
+      if (!tick) return;
+      this.applySpeed(Number(tick.dataset.speedIdx));
+      syncSpeedUi();
+    });
+    // A click anywhere else closes it — but NOT a click inside, or dragging the
+    // slider would dismiss the thing being dragged.
+    const onSpeedAway = (e: MouseEvent): void => {
+      if (this.speedPop!.hidden) return;
+      const t = e.target as Node | null;
+      if (t && (this.speedPop!.contains(t) || this.speedBtn.contains(t))) return;
+      openSpeed(false);
+    };
+    document.addEventListener('click', onSpeedAway);
+    this.cleanups.push(() => document.removeEventListener('click', onSpeedAway));
+    this.closeSpeedPop = () => { if (!this.speedPop!.hidden) { openSpeed(false); this.speedBtn.focus(); } };
     this.followBtn.addEventListener('click', () => this.setFollow(this.followOff));
     miniBtn.addEventListener('click', () => {
       const mini = dock.classList.toggle('ldp-mini');
@@ -540,6 +623,9 @@ class Player {
       if (document.fullscreenElement) return;
       // The viewport-fallback full page exits the same way, one layer at a time.
       if (this.vizFullpage) { this.setVizFullpage(false); return; }
+      // One layer per press: an open speed slider is the innermost thing, so it
+      // closes first and the dock survives (and focus returns to its button).
+      if (this.speedPop && !this.speedPop.hidden) { this.closeSpeedPop?.(); return; }
       const t = e.target as HTMLElement | null;
       if (t && /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName) && !this.dock.contains(t)) return;
       this.close();
@@ -619,6 +705,24 @@ class Player {
    *  never under reduced motion (highlight-only there, unconditionally). */
   private following(): boolean {
     return !this.followOff && !this.suspended && !reduced();
+  }
+
+  /**
+   * Set the playback rate from a SPEEDS index — the single place the rate, the
+   * button label and the stored preference move together, so the slider, the
+   * tick buttons and the initial restore cannot disagree.
+   *
+   * Session-scoped like Follow (never localStorage): a listener's choice rides
+   * the auto-advance hand-off from page to page, but a fresh visit meets the
+   * default. `persist: false` is the restore path, which must not write back.
+   */
+  private applySpeed(idx: number, opts: { persist?: boolean } = {}): void {
+    const i = Math.max(0, Math.min(SPEEDS.length - 1, Math.round(idx)));
+    this.speedIdx = i;
+    this.audio.playbackRate = SPEEDS[i]!;
+    this.speedBtn.textContent = `${SPEEDS[i]}×`;
+    if (opts.persist === false) return;
+    try { sessionStorage.setItem(SPEED_KEY, String(i)); } catch { /* best effort */ }
   }
 
   private setFollow(on: boolean): void {

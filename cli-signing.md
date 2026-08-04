@@ -240,7 +240,7 @@ Precedence is the CLI's uniform rule: **flag, then environment**. Configuring a 
 
 ## 5. Trust anchors
 
-**Pinned by default:** the **Lolly CA root** and the **vendored C2PA known-certificate list** (54 roots - Adobe, the camera makers, the big generators). That default is [contract §12 O1](https://github.com/lolly-tools/lolly/blob/main/plans/cli-ga-contract.md), decided so that "Verified" means the same thing in a browser and in a terminal.
+**Pinned by default:** the **Lolly CA root** and the **vendored C2PA known-certificate list** (54 roots - Adobe, the camera makers, the big generators). That default is [contract §12 O1](https://github.com/lolly-tools/lolly/blob/main/plans/73-cli-ga-contract.md), decided so that "Verified" means the same thing in a browser and in a terminal.
 
 **Pin your own root**, repeatably, or through the environment:
 
@@ -265,7 +265,7 @@ Note what the default does **not** do: a stranger's CA is not trusted because it
 
 ## 6. Provenance defaults
 
-Content Credentials and the Lolly Imprint are **on by default** for `lolly run`, matching the app exactly ([contract §12 O2](https://github.com/lolly-tools/lolly/blob/main/plans/cli-ga-contract.md)). A tool opts out for everyone through its manifest (`render.c2pa: false`, or `privacy: 'on-device'`); a run opts out with `--c2pa=off`, `--imprint=0`, or `--no-provenance` for all of them at once.
+Content Credentials and the Lolly Imprint are **on by default** for `lolly run`, matching the app exactly ([contract §12 O2](https://github.com/lolly-tools/lolly/blob/main/plans/73-cli-ga-contract.md)). A tool opts out for everyone through its manifest (`render.c2pa: false`, or `privacy: 'on-device'`); a run opts out with `--c2pa=off`, `--imprint=0`, or `--no-provenance` for all of them at once.
 
 What a credential embeds: the tool and its input digest, the output format and dimensions, the surface (`cli`), the Node version and OS, a timestamp, the action history, your author details when `useDetails` is on, and - with an identity - your certificate chain.
 

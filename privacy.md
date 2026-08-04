@@ -85,13 +85,21 @@ network. If it isn't here, the app doesn't do it.
 | What | What actually leaves your device | When |
 |---|---|---|
 | Tool catalogue sync | Nothing personal - a request for Lolly's own public tool and asset index | On startup, then cached offline |
-| A tool's declared network capability | Whatever that specific tool requests (e.g. map tiles) to the specific host(s) it allowlists in its manifest | Only while using that tool |
-| Google Fonts | The chosen font family name and your IP address, to Google's font servers | Only if you add a Google Font in the brand editor, **and only after you agree to it in a dialog that says exactly this** - a one-time fetch per family, then it lives on your device and is used offline |
-| ICC press profiles | Nothing personal - a request for a standard printing-condition profile, to the ICC's public registry (color.org) | Only if you click an ICC preset in the print-profile manager - a one-time fetch per profile, then it lives on your device |
-| Internet radio | Nothing personal - a playlist request and an audio stream, to the station (SomaFM) | Only while you play the optional built-in radio in the sound player |
+| A tool that needs live data | Whatever that specific tool requests, to the host named in its own description. Today that is only the weather lookup in the Daily Card and Meeting Planner tools, which asks `geocoding-api.open-meteo.com` for a place name's coordinates and `api.open-meteo.com` for its forecast - no account, no key, and no identifier beyond the request itself | Only while using that tool, and only once you enter a location |
+| Google Fonts | The chosen font family name and your IP address, to Google's font servers (`fonts.googleapis.com` for the stylesheet, `fonts.gstatic.com` for the font file) | Only if you add a Google Font in the brand editor, **and only after you agree to it in a dialog that says exactly this** - a one-time fetch per family, then it lives on your device and is used offline |
+| ICC press profiles | Nothing personal - a request for a standard printing-condition profile, to the ICC's public registry (`registry.color.org`, `www.color.org`) | Only if you click an ICC preset in the print-profile manager - a one-time fetch per profile, then it lives on your device |
+| Internet radio | Nothing personal - a playlist request and an audio stream, to the station (`api.somafm.com` and the icecast server it names, `*.somafm.com`) | Only while you play the optional built-in radio in the sound player |
 | SEAL signature check | **Nothing.** The web app has no DNS resolver at all - see below | Never |
 | Deep-scan detector models | Nothing personal - a one-time same-origin model download (not a third party) | Only if you opt into Verify's deep scan |
 | Remote instance | Whatever the instance you name serves back, over the same catalogue sync described above | Only if you explicitly point the shell at another Lolly deployment |
+
+Every host in that table is also the complete allowlist in the app's
+Content-Security-Policy, which the browser enforces. So the list is not only a
+description of what the code does today, it is the boundary the browser holds the
+app to: a future change that tried to contact some other host would be blocked,
+not silently permitted. A deployment that wants none of the optional ones (an
+enterprise instance with its own fonts, say) removes those hosts from its policy
+and the features fail closed rather than reaching out.
 
 None of these send your documents, projects, sessions or uploaded files anywhere.
 They exist to bring things *to* your device (tools, fonts, models), never to send
