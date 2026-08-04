@@ -1,8 +1,8 @@
 # Verify It Yourself
 
-Lolly's privacy and security pages make claims — no analytics, no tracking, files never leave the device, one cookie in the whole system. This page is different: it doesn't ask you to believe any of that. It's a list of procedures, each with the exact command or click-path and the output you should see. Every claim here is falsifiable in minutes, most without installing anything.
+Lolly's privacy and security pages make claims: no analytics, no tracking, files never leave the device, one cookie in the whole system. This page is different: it doesn't ask you to believe any of that. It's a list of procedures, each with the exact command or click-path and the output you will see. Every claim here is falsifiable in minutes, most without installing anything.
 
-If any check on this page doesn't produce the result shown, that's either a bug or a broken promise — [report it](#if-a-check-fails) either way and we'll treat it with the severity a broken promise deserves.
+If any check on this page doesn't produce the result shown, that's either a bug or a broken promise. [Report it](#if-a-check-fails) either way, and we'll treat it with the severity a broken promise deserves.
 
 ## See it work, in ten seconds
 

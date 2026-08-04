@@ -37,7 +37,7 @@ None of it was carelessness. Each step was the reasonable one available at the t
 
 Each row is a claim you can test rather than a slogan, which is what the rest of this section is for.
 
-## What is structurally different here
+## Trust what you can verify 
 
 Every one of those has a fix that is architectural, not a promise in a policy document. The difference matters: a promise is a thing a company can change on a Tuesday, and an architecture is a thing you can check.
 

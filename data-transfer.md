@@ -1,23 +1,23 @@
 # Data Transfer - the `lolly-backup` bundle
 
-Everything a Lolly user accumulates lives **on their device** - no account, no cloud. The data-transfer bundle is how that value moves: export it on one install, carry the file by any means (USB, AirDrop, email-to-self, a network share), and import it on another. The file *is* the transport. The target can be offline or online; it makes no difference, because nothing ever talks to a server.
+Everything a Lolly user accumulates lives **on their device** - no account, no cloud. The data-transfer bundle is how that value moves: export it on one install, carry the file by any means (USB, AirDrop, email-to-self, a network share), and import it on another. The file *is* the transport. The target can be offline or online. It makes no difference, because nothing ever talks to a server.
 
 ![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
 
-This page is the format spec. For the end-user walkthrough see [Using Lolly → Moving to another device](/info/using.html); the implementation is [`shells/web/src/data-transfer.ts`](../shells/web/src/data-transfer.ts) with the round-trip contract pinned by [`tests/data-transfer.test.ts`](../tests/data-transfer.test.ts).
+This page is the format spec. For the end-user walkthrough see [Using Lolly → Moving to another device](/info/using.html). The implementation is [`shells/web/src/data-transfer.ts`](../shells/web/src/data-transfer.ts), and [`tests/data-transfer.test.ts`](../tests/data-transfer.test.ts) pins the round-trip contract.
 
 > **Scope.** A bundle carries *user data*, not tools. Tools and catalog assets are synced separately and are assumed to already be present on the target (worst case at a higher version). Importing never installs or upgrades a tool.
 
 ## Goals
 
-- <!--i:box--> **One format, every shell.** The same bytes are produced and consumed by the web PWA, the Tauri desktop/mobile apps, and any future shell. The bundle is the contract; each shell's capability bridge is the per-platform adapter behind it.
+- <!--i:box--> **One format, every shell.** The same bytes are produced and consumed by the web PWA, the Tauri desktop/mobile apps, and any future shell. The bundle is the contract. Each shell's capability bridge is the per-platform adapter behind it.
 - <!--i:shieldcheck--> **Survives the trip.** A bundle mangled or truncated in transit fails loudly on import, never half-restores.
-- <!--i:clock--> **Outlives this version.** An older app can still import a newer bundle's recognised parts; a genuinely breaking format is refused cleanly.
-- <!--i:check--> **Safe to merge.** Importing onto an install that's already in use never wipes anything that wasn't in the bundle.
+- <!--i:clock--> **Outlives this version.** An older app can still import a newer bundle's recognised parts. A genuinely breaking format is refused cleanly.
+- <!--i:check--> **Safe to merge.** Importing onto an install that is already in use never wipes anything that was not in the bundle.
 
 ## The envelope
 
-A bundle is a plain `.zip`. The download is named for the person it belongs to - `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` (e.g. `LollyTools-Ada-Lovelace-2026-06-26-1.zip`) - so a Downloads folder of backups stays legible. The first/last parts come from the profile and are omitted when unset (no profile → `LollyTools-2026-06-26-1.zip`; first name only → `LollyTools-Ada-2026-06-26-1.zip`); each is sanitised to a filename-safe token (Unicode letters/digits kept, spaces/punctuation stripped, capped at 32 chars). `<n>` is a per-day, per-device sequence so repeat exports on the same day don't collide and stay in order. The name is built by `backupFilename()` in [`shells/web/src/data-transfer.ts`](../shells/web/src/data-transfer.ts); the zip's contents are identical regardless of name. Inside:
+A bundle is a plain `.zip`. The download is named for the person it belongs to - `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` (for example `LollyTools-Ada-Lovelace-2026-06-26-1.zip`) - so a Downloads folder of backups stays legible. The first and last parts come from the profile and are omitted when unset. No profile gives `LollyTools-2026-06-26-1.zip`, and a first name alone gives `LollyTools-Ada-2026-06-26-1.zip`. Each part is sanitised to a filename-safe token (Unicode letters/digits kept, spaces/punctuation stripped, capped at 32 chars). `<n>` is a per-day, per-device sequence, so repeat exports on the same day do not collide and stay in order. `backupFilename()` in [`shells/web/src/data-transfer.ts`](../shells/web/src/data-transfer.ts) builds the name. The zip's contents are identical regardless of name. Inside:
 
 | Path | Required | Contents |
 |---|---|---|
@@ -25,11 +25,11 @@ A bundle is a plain `.zip`. The download is named for the person it belongs to -
 | `profile.json` | when set | The user's `me` record (name, contact, headshot ref, flags). Read via `host.profile`. |
 | `sessions.json` | yes | Every saved session: slot, tool id/version, label, thumbnail (data-URL), and full input data. Read via `host.state`. |
 | `assets.json` | yes | Metadata for each uploaded asset (images, fonts, brand tokens), each pointing at its bytes under `assets/blobs/`. |
-| `assets/blobs/<n>.<ext>` | per asset | The raw asset bytes (image and font files). Stored uncompressed (already-compressed formats). The extension is cosmetic; the MIME in `assets.json` is authoritative. |
+| `assets/blobs/<n>.<ext>` | per asset | The raw asset bytes (image and font files). Stored uncompressed (already-compressed formats). The extension is cosmetic. The MIME in `assets.json` is authoritative. |
 | `prefs.json` | yes | User-owned local preferences: `theme`, `sidebarWidth`, and the `ct-metrics` activity tally. |
-| `lolly.txt` | yes | A human-readable summary of the bundle (counts, profile, filename) for anyone who opens the zip without Lolly. Regenerated on every export and recognised on import, so it never counts as a skipped part - and written *after* the integrity map, so it is deliberately outside it. |
+| `lolly.txt` | yes | A human-readable summary of the bundle (counts, profile, filename) for anyone who opens the zip without Lolly. Regenerated on every export and recognised on import, so it never counts as a skipped part. It is written *after* the integrity map, so it stays outside it. |
 
-Being a plain zip is deliberate: it survives any transport intact and can be inspected with any unzip tool.
+The bundle is a plain zip on purpose: it survives any transport intact, and any unzip tool can inspect it.
 
 `profile.json` is the smallest part and the one a reader sees first in the app: the details a producer fills in once, plus the opt-in that lets tools use them.
 
@@ -70,19 +70,19 @@ Being a plain zip is deliberate: it survives any transport intact and can be ins
 The split between `formatVersion` and `minReader` is what lets the format grow without orphaning older installs:
 
 - A reader imports a bundle when `manifest.minReader ≤` its own reader version. It refuses (with "needs a newer version of the app") only when the bundle explicitly demands a newer reader.
-- An **additive** change - a new *optional* part, or a new optional manifest field - bumps `formatVersion` but leaves `minReader` unchanged. Older apps still import every part they recognise; parts they don't are skipped (see below), not dropped silently.
-- A **breaking** change - one where importing a part wrong would corrupt data, or where a previously optional part becomes mandatory - raises `minReader`. Older apps then refuse cleanly instead of importing something they'd mishandle.
+- An **additive** change - a new *optional* part, or a new optional manifest field - bumps `formatVersion` but leaves `minReader` unchanged. Older apps still import every part they recognise. Parts they do not recognise are skipped (see below), not dropped silently.
+- A **breaking** change - one where a wrong import of a part corrupts data, or where a previously optional part becomes mandatory - raises `minReader`. Older apps then refuse cleanly instead of importing something they cannot handle.
 - If a future bundle sets `formatVersion` but omits `minReader`, readers conservatively fall back to gating on `formatVersion` (treat the change as breaking).
 
-> **Rule of thumb for authors:** if every existing reader would still do the right thing by ignoring your addition, it's additive - bump `formatVersion`, leave `minReader`. Otherwise raise `minReader`.
+> **Rule of thumb for authors:** if every existing reader would still do the right thing by ignoring your addition, it is additive - bump `formatVersion`, leave `minReader`. Otherwise raise `minReader`.
 
 ## Integrity
 
 When `manifest.integrity` is present, a reader verifies each listed part's SHA-256 **before writing anything**. A mismatch ("failed its integrity check") or a missing part ("incomplete") aborts the whole import - there is no partial restore. This catches the corruption a file transport can introduce (a truncated AirDrop, an email gateway that re-encoded the attachment, a bad USB sector).
 
-Integrity is best-effort by design: it's written only where Web Crypto is available (every secure browser context and modern Node), and verified only when both the map and Web Crypto are present. A bundle without the map - e.g. one from before integrity existed - imports unchanged. "Can't verify" is never treated as "corrupt".
+Integrity is best-effort by design: it is written only where Web Crypto is available (every secure browser context and modern Node), and verified only when both the map and Web Crypto are present. A bundle without the map - for example one from before integrity existed - imports unchanged. "Cannot verify" is never treated as "corrupt".
 
-The manifest lists neither itself nor the regenerated `lolly.txt` README; the digests cover the parts the manifest vouches for.
+The manifest lists neither itself nor the regenerated `lolly.txt` README. The digests cover the parts the manifest vouches for.
 
 ## Import semantics
 
@@ -90,26 +90,26 @@ Import is **merge-overwrite**, never replace-all:
 
 - Existing data on the target is left in place.
 - Any key that collides - the profile, a session slot, an uploaded image id - is replaced by the imported copy.
-- Nothing that wasn't in the bundle is touched. A session the target had but the bundle didn't survives the import.
+- Nothing that was not in the bundle is touched. A session the target had but the bundle did not survives the import.
 
-Saved sessions re-link to their images automatically: asset references are kept by id, and the bridge re-resolves them after the uploaded images are restored (it must anyway, since `blob:` URLs don't survive a reload).
+Saved sessions re-link to their images automatically: asset references are kept by id, and the bridge re-resolves them after the uploaded images are restored (it must anyway, because `blob:` URLs do not survive a reload).
 
-The import summary reports `{ profile, sessions, userAssets, prefs, skipped, failedAssets }`. `failedAssets` counts uploaded assets that couldn't be restored (device storage full, say) - distinct from `skipped`, which is the count of parts from a forward-compatible newer writer that this build didn't recognise - surfaced in the UI ("… · N newer items skipped") so the restore is honest about what it left behind.
+The import summary reports `{ profile, sessions, userAssets, prefs, skipped, failedAssets }`. `failedAssets` counts uploaded assets that could not be restored (device storage full, say). It is distinct from `skipped`, which counts parts from a forward-compatible newer writer that this build did not recognise. The UI surfaces `skipped` ("… · N newer items skipped"), so the restore is honest about what it left behind.
 
 ## What does not travel
 
 - **Catalog caches** (downloaded asset metadata and blobs, the tool index) - re-synced for free on the target.
-- **Tools and brand assets** - out of scope; assumed already present on the target.
+- **Tools and brand assets** - out of scope, and assumed already present on the target.
 - **`blob:` / object URLs** - regenerated by the bridge on load.
-- **The export sequence counter** - the per-day download-naming counter (`localStorage` key `lolly-export-seq`) is a local naming convenience, deliberately kept out of `PREF_KEYS` so it never rides in a bundle.
+- **The export sequence counter** - the per-day download-naming counter (`localStorage` key `lolly-export-seq`) is a local naming convenience. It is kept out of `PREF_KEYS`, so it never rides in a bundle.
 
-The storage meter itemises the same split. Saved sessions and My images ride in a bundle; the asset cache, tool previews and offline pins below them are all re-derivable, so they stay behind.
+The storage meter itemises the same split. Saved sessions and My images ride in a bundle. The asset cache, tool previews and offline pins below them are all re-derivable, so they stay behind.
 
 ![The storage meter breaking this device's data into named categories, with Saved sessions and My images tracked separately from the Asset cache, here on a fresh install where every category is still empty](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1600&dpi=192&waitMs=2600&format=svg&css=.store-manages%2C.storage-subsection%2C.store-selbar%7Bdisplay%3Anone%7D&cropSelector=.store-meter&walker=1&dark=1&filename=ce-storage-categories)
 
 ## Cross-shell guarantee
 
-`data-transfer.ts` reads and writes exclusively through the capability bridge (`host.profile`, `host.state`, `host.assets`) and the shared `localStorage` prefs. Because the bridge is the only seam, the *same* module produces a byte-identical bundle on every shell even though the storage beneath differs - IndexedDB on web, the filesystem on Tauri. The Tauri shells reuse this module unchanged; only their `host.state` implementation differs. The headless test exercises the full round-trip against an in-memory bridge, which is why it stands in for all of them.
+`data-transfer.ts` reads and writes exclusively through the capability bridge (`host.profile`, `host.state`, `host.assets`) and the shared `localStorage` prefs. Because the bridge is the only seam, the *same* module produces a byte-identical bundle on every shell even though the storage beneath differs - IndexedDB on web, the filesystem on Tauri. The Tauri shells reuse this module unchanged. Only their `host.state` implementation differs. The headless test exercises the full round-trip against an in-memory bridge, which is why it stands in for all of them.
 
 Two shells sit outside that guarantee, for different reasons:
 
@@ -118,15 +118,15 @@ Two shells sit outside that guarantee, for different reasons:
 
 ## Reserved extension points
 
-The envelope is deliberately a manifest plus a set of named parts so that new kinds of portable data can ride it later **without a breaking change** - they slot in as additive parts (new `formatVersion`, same `minReader`), and today's reader skips what it doesn't recognise. These are on the [roadmap](/info/overview.html#roadmap), not yet implemented; the names are reserved here so the format stays coherent when they land.
+The envelope is a manifest plus a set of named parts by design, so new kinds of portable data can ride it later **without a breaking change**. They slot in as additive parts (new `formatVersion`, same `minReader`), and today's reader skips what it does not recognise. These are on the [roadmap](/info/overview.html#roadmap), not yet implemented. The names are reserved here so the format stays coherent when they land.
 
-- **`tokens.json` - design tokens.** A [W3C DTCG](https://tr.designtokens.org/format/) design-tokens document (the format [Penpot imports and exports](https://help.penpot.app/user-guide/design-systems/design-tokens/) - tokens with `$value`/`$type`/`$description`, organised into groups, sets, and themes). Carrying a token set in the bundle lets a user move their brand primitives between installs alongside their sessions. Longer term, an ingested token set becomes a first-class source that tools and palette assets resolve against.
-- **`penpot/` - ingested Penpot files.** A reserved directory for a Penpot file (or its extracted, Lolly-relevant subset) imported and surfaced *as a tool*. The bundle would carry the ingested definition so it travels with the rest of the user's data.
+- **`tokens.json` - design tokens.** A [W3C DTCG](https://tr.designtokens.org/format/) design-tokens document (the format [Penpot imports and exports](https://help.penpot.app/user-guide/design-systems/design-tokens/) - tokens with `$value`/`$type`/`$description`, organised into groups, sets, and themes). A token set in the bundle lets a user move their brand primitives between installs alongside their sessions. Longer term, an ingested token set becomes a first-class source that tools and palette assets resolve against.
+- **`penpot/` - ingested Penpot files.** A reserved directory for a Penpot file (or its extracted, Lolly-relevant subset) imported and surfaced *as a tool*. The bundle will carry the ingested definition, so it travels with the rest of the user's data.
 
 Anything outside these reserved names and the parts above is, to a reader, an unknown part: left untouched and counted in `skipped`.
 
 ## Reference
 
-- Module: [`shells/web/src/data-transfer.ts`](../shells/web/src/data-transfer.ts) (`exportBackup`, `importBackup`, `BACKUP_FORMAT`, `BACKUP_FORMAT_VERSION`, `BACKUP_READER_VERSION`; the `backupFilename()` namer is internal).
+- Module: [`shells/web/src/data-transfer.ts`](../shells/web/src/data-transfer.ts) (`exportBackup`, `importBackup`, `BACKUP_FORMAT`, `BACKUP_FORMAT_VERSION`, `BACKUP_READER_VERSION` - the `backupFilename()` namer is internal).
 - Contract test: [`tests/data-transfer.test.ts`](../tests/data-transfer.test.ts) - round-trip, merge, integrity, forward-compat, and reader-gate cases.
 - Bridge surface used: `host.profile`, `host.state`, `host.assets` - see [Host API](/info/host-api.html).

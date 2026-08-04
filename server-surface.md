@@ -21,7 +21,7 @@ deployment that omits both is a fully working Lolly.
 |---|---|---|---|
 | Web shell | `/` (static files) | The app itself, served once, runs on-device | The app *is* this |
 | MCP endpoint | `/api/mcp` (and the hosted `mcp.lolly.tools`) | Lets AI agents discover and render tools over [MCP](https://modelcontextprotocol.io) | Yes — remove it and the app is unaffected |
-| Hot-link render | `GET /tool/<id>.<ext>` (part of the MCP function) | Renders a public catalogue tool from a plain URL — **public, unauthenticated by design** (public tool + catalogue data only; no Content Credentials) | Yes — **currently disabled on lolly.tools** (`LOLLY_DISABLE_RENDER_GET=1`, returns 404); live on the lolly.art demo instance |
+| Hot-link render | `GET /tool/<id>.<ext>` (part of the MCP function) | Renders a public catalogue tool from a plain URL — **public, unauthenticated by design** (public tool + catalogue data only, no Content Credentials) | Yes — **currently disabled on lolly.tools** (`LOLLY_DISABLE_RENDER_GET=1`, returns 404). Live on the lolly.art demo instance |
 | MCP OAuth discovery | `/.well-known/oauth-authorization-server`, `/.well-known/oauth-protected-resource` (part of the MCP function) | Standard OAuth 2.1 metadata for MCP connector registration | Removed with the MCP endpoint |
 | CA service | `/api/ca` | Issues short-lived signing certificates so exports can carry a **verified identity** in their Content Credentials | Yes — without it, exports still sign, anonymously |
 
@@ -30,7 +30,7 @@ deployment that omits both is a fully working Lolly.
 **What it does.** Exposes the catalogue and render path as MCP tools
 (`lolly_list_tools`, `lolly_describe_tool`, `lolly_build_url`, `lolly_render`,
 `lolly_transform`, `lolly_verify`) so an AI agent can produce finished,
-rule-bound assets. The serverless tier renders browser-free formats; the full
+rule-bound assets. The serverless tier renders browser-free formats. The full
 endpoint at `mcp.lolly.tools` drives a headless browser for
 raster/PDF/animation/video.
 
@@ -42,35 +42,35 @@ disabled with `LOLLY_DISABLE_RENDER_GET=1`), and an operator can opt the whole
 endpoint into anonymous mode with `LOLLY_MCP_ALLOW_ANONYMOUS=1` (off by
 default).
 
-**What it stores.** Nothing persistent. Requests are processed and the
-rendered bytes returned; there is no user database and no stored render
+**What it stores.** Nothing persistent. The endpoint processes each request and
+returns the rendered bytes. There is no user database and no stored render
 history. Operational logging is the platform's function logging, covered by
 the [Privacy Policy](/info/privacy.html).
 
 **`lolly_transform`** operates on a file supplied in the call, in memory, for
-that call only — nothing is written server-side.
+that call only. Nothing is written server-side.
 
 Full reference: [MCP Server](/info/mcp.html).
 
 ## CA service (`services/ca`, `api/ca`)
 
-**What it does.** Content Credentials **identity enrolment**: you verify an
-identity — OpenID Connect (Google, SUSE IdP), GitHub OAuth with a verified
-address, or an emailed magic link (inbox control) — your browser generates a
-**non-extractable** keypair on-device, and the service issues a time-limited
-X.509 certificate binding that public key to your verified identity. Your
+**What it does.** Content Credentials **identity enrolment**. You verify an
+identity: OpenID Connect (Google, SUSE IdP), GitHub OAuth with a verified
+address, or an emailed magic link (inbox control). Your browser then generates a
+**non-extractable** keypair on-device. The service issues a time-limited
+X.509 certificate that binds that public key to your verified identity. Your
 private key never leaves your device and never transits the service.
 
 **What it stores.** No account database, and deliberately **no issuance log**
 (a privacy decision, documented in the [Privacy Policy](/info/privacy.html)).
-Certificate lifetime is user-selectable — 7, 30, 90 or 365 days, defaulting to
-30 and capped by the deployment (`CA_CERT_MAX_DAYS`). Expiry is the recall
+Certificate lifetime is user-selectable: 7, 30, 90 or 365 days. The default is
+30, and the deployment caps it (`CA_CERT_MAX_DAYS`). Expiry is the recall
 mechanism: there is no revocation infrastructure, so the lifetime you pick
-bounds misuse of a lost device. The service
-holds its own signing material and OIDC client secrets as deployment secrets.
+bounds misuse of a lost device. The service holds its own signing material and
+OIDC client secrets as deployment secrets.
 
-**If it's off**, exports still carry a full, verifiable Content Credential —
-signed anonymously, which is the default anyway.
+**If it is off**, exports still carry a full, verifiable Content Credential,
+signed anonymously. That is the default anyway.
 
 Full reference: [Content Credentials Identity](/info/content-credentials-identity.html)
 and the [engineering deep-dive](/info/content-credentials-engineering.html).
@@ -80,9 +80,9 @@ and the [engineering deep-dive](/info/content-credentials-engineering.html).
 - **No render server for the app.** The app never uploads your inputs or
   assets to produce an export.
 - **No verification server.** Dropping a file on Verify parses and checks it
-  locally; the file is never uploaded.
-- **No telemetry or analytics backend.** There is no endpoint receiving usage
-  data; an automated test (`tests/no-trackers.test.ts`) enforces that no
+  locally. The file is never uploaded.
+- **No telemetry or analytics backend.** No endpoint receives usage
+  data. An automated test (`tests/no-trackers.test.ts`) enforces that no
   analytics or tracking SDK appears anywhere in the shipped source.
 - **No user accounts** in the app. Identity enrolment (above) is the only
   sign-in anywhere, it is opt-in, and it produces a certificate on your
@@ -94,9 +94,9 @@ catalog sync, the optional endpoints above) is maintained in the
 
 ## For self-hosters
 
-Both components are ordinary processes you can run, omit, or replace — see
+Both components are ordinary processes you can run, omit, or replace. See
 [Deployment](/info/deployment.html). If you operate them, you are the operator
-of record for their logging and data handling; the
+of record for their logging and data handling. The
 [Privacy Policy](/info/privacy.html) explains the split between what the
 software does (true everywhere) and what an operator chooses.
 

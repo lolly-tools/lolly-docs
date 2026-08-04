@@ -1,6 +1,6 @@
 # Host API (HostV1)
 
-The **capability bridge** is the versioned contract between a tool and whatever shell it runs in (web PWA, Tauri desktop/mobile, CLI, and the interactive TUI). Tools call `host.*`; each shell implements the same surface its own way. This is what lets one tool run unchanged everywhere. (The TUI reuses the CLI's bridge implementation, so anything true of the CLI here applies to it too.)
+The **capability bridge** is the versioned contract between a tool and whatever shell it runs in (web PWA, Tauri desktop/mobile, CLI, and the interactive TUI). Tools call `host.*`. Each shell implements the same surface its own way. This is what lets one tool run unchanged everywhere. (The TUI reuses the CLI's bridge implementation, so anything true of the CLI here applies to it too.)
 
 Tools receive `host` inside their **hooks** (`hooks.js`). They never touch the DOM outside their template, never `fetch` directly, never read storage directly - they go through `host`. See [Authoring Tools](/info/authoring-tools.html) for the tool anatomy and [Overview](/info/overview.html) for the bigger picture. The canonical definition lives in `packages/core/src/host-v1.ts` - the tool-author SDK `@lolly-tools/core`, so a third party can build against the contract without depending on the engine. `engine/src/bridge/host-v1.ts` is a type re-export of it.
 
@@ -15,7 +15,7 @@ function onInit({ model, host }) {
 
 - **Additive only.** Methods may be added in a minor version; never removed or signature-changed without a major bump. When v2 ships, v1 keeps working.
 - **No platform-specific methods.** If only one shell can do something, it sits behind a `capabilities` flag in `tool.json` and shells that can't fulfil it expose a stub/error.
-- **Capabilities gate access.** `net` (`network`), `capture` (`capture`), `compose` (`compose`) and `recorder` (`microphone` / `camera` / `screen`) require a matching flag in the manifest's `capabilities`. `tokens`, `text`, `pdf`, `pptx`, `media`, `audio`, `viz`, `color`, `images` and `geom` are optional and present only when the shell provides them (feature-detect, don't flag). Declare what you need.
+- **Capabilities gate access.** `net` (`network`), `capture` (`capture`), `compose` (`compose`) and `recorder` (`microphone` / `camera` / `screen`) require a matching flag in the manifest's `capabilities`. `tokens`, `text`, `pdf`, `pptx`, `media`, `audio`, `codec`, `speech`, `upscale`, `matte`, `viz`, `color`, `images` and `geom` are optional and present only when the shell provides them (feature-detect, don't flag). Declare what you need.
 - `host.version` is `'1'`; `host.shell` is one of `web` · `tauri-desktop` · `tauri-mobile` · `cli`.
 
 ## `host.profile`
@@ -74,7 +74,7 @@ The host owns the renderer - tools don't bundle their own.
 | `download(blob, filename)` | `Promise<void>` | Trigger a download (throws on CLI - pipe via `--output` instead) |
 | `file(blob, opts?)` | `Promise<void>` | Deliver a blob the **tool** produced (the transform path: file in → transformed file out), with `opts.filename`. Carries no watermark and no provenance - for on-device utilities whose `exportFile` hook returns the bytes |
 
-`format` is an `ExportFormat` - the render formats are `png · jpg/jpeg · webp · avif · svg · svg-anim · emf · eps · eps-cmyk · dxf · pdf · pdf-cmyk · cmyk-tiff · tiff · pptx · html · ico · zip · webm · mp4 · gif · apng · webp-anim` (availability is per-tool via the manifest, and per-browser for the recorded video formats `webm`/`mp4` - Safari records mp4, Firefox webm; `gif`/`apng`/`webp-anim` are encoded in-engine, `svg-anim` is a self-contained vector flipbook, `dxf` is an AutoCAD cut file, `pptx` decomposes each page into native PowerPoint shapes, `tiff` is a plain RGB raster and `cmyk-tiff` its print sibling, and `ico`/`zip` are icon/bundle outputs). Separately, tools produce the **text/data formats** `md · txt · json · csv · ics · vcf` from the input model (not a DOM render - see [Exporting & Formats](/info/exporting.html)). This is the same 30-value enum the catalog validator enforces in `schemas/tool.schema.json`. *(The `ExportFormat` union in `engine/src/bridge/host-v1.ts` is itself stale - it omits most of the raster/bundle formats - and is being reconciled with the schema; track the schema, not the type.)*
+`format` is an `ExportFormat` - the render formats are `png · jpg/jpeg · webp · avif · svg · svg-anim · emf · eps · eps-cmyk · dxf · pdf · pdf-cmyk · cmyk-tiff · tiff · pptx · html · ico · zip · webm · mp4 · gif · apng · webp-anim` (availability is per-tool via the manifest, and per-browser for the recorded video formats `webm`/`mp4` - Safari records mp4, Firefox webm; `gif`/`apng`/`webp-anim` are encoded in-engine, `svg-anim` is a self-contained vector flipbook, `dxf` is an AutoCAD cut file, `pptx` decomposes each page into native PowerPoint shapes, `tiff` is a plain RGB raster and `cmyk-tiff` its print sibling, and `ico`/`zip` are icon/bundle outputs). Separately, tools produce the **text/data formats** `md · txt · json · csv · ics · vcf` from the input model (not a DOM render - see [Exporting & Formats](/info/exporting.html)). This is the same 30-value enum the catalog validator enforces in `schemas/tool.schema.json`. *(The `ExportFormat` union in `engine/src/bridge/host-v1.ts` is itself stale - it omits most of the raster/bundle formats - and is being reconciled with the schema. Track the schema, not the type.)*
 
 `ExportOpts`:
 
@@ -96,7 +96,7 @@ See [Exporting & Formats](/info/exporting.html) for the user-facing view, and `e
 
 ## `host` - file inputs
 
-A `file`-typed input (the user's own file, picked into memory) arrives as an **`InputFile`**: `{ __file: true, name, mime, size, bytes (Uint8Array), url }`. The hook reads `bytes` directly - there's no `host.*` call, because the bytes ride in the input value (by design: the portable `host.*` surface deliberately has no file-read API, so the same hook runs on every shell). A `file` value never serialises to a URL and is never persisted. The `exportFile` hook transforms those bytes and returns `{ bytes, mime, filename }`, which the shell delivers via `host.export.file`. See [Authoring Tools](/info/authoring-tools.html) for the full pattern; `strip-data` is the reference.
+A `file`-typed input (the user's own file, picked into memory) arrives as an **`InputFile`**: `{ __file: true, name, mime, size, bytes (Uint8Array), url }`. The hook reads `bytes` directly - there's no `host.*` call, because the bytes ride in the input value (by design: the portable `host.*` surface has no file-read API, so the same hook runs on every shell). A `file` value never serialises to a URL and is never persisted. The `exportFile` hook transforms those bytes and returns `{ bytes, mime, filename }`, which the shell delivers via `host.export.file`. See [Authoring Tools](/info/authoring-tools.html) for the full pattern; `strip-data` is the reference.
 
 ## `host.net` *(capability: `network`)*
 
@@ -215,7 +215,7 @@ Record the microphone (and optionally the camera) to a finished media Blob, plus
 | `record(opts?)` | `Promise<RecordSession>` | Open a capture session (prompts the first time); resolves once recording |
 | `still(opts?)` *(v1.54)* | `Promise<Blob>` | One frame as an encoded image - `'screen'` (default) prompts the display picker, `'camera'` takes a camera frame. DOM-free: the shell owns the stream and the grab |
 
-`MeterAPI`: `start()` (begin the mic + level loop, prompting once; reference-counted + idempotent like `media`), `stop()` (release one `start()`; the mic stops at the last release), `subscribe(cb) → () => void` (receive `AudioLevel` frames; throttled, paused while the document is hidden). The web shell opens the meter **raw** - noise-suppression / AGC / echo-cancellation off - so the level and the noise cues reflect the true room; `record()` keeps suppression on for a clean file, so the two use separate streams (the grant is per-origin, so a sound-check then a record still prompts only once).
+`MeterAPI`: `start()` (begin the mic + level loop, prompting once; reference-counted + idempotent like `media`), `stop()` (release one `start()`; the mic stops at the last release), `subscribe(cb) → () => void` (receive `AudioLevel` frames; throttled, paused while the document is hidden). The web shell opens the meter **raw** - noise-suppression / AGC / echo-cancellation off - so the level and the noise cues reflect the true room. `record()` keeps suppression on for a clean file, so the two use separate streams (the grant is per-origin, so a sound-check then a record still prompts only once).
 
 `RecordOpts`: `audio` (default `true`), `video` (default `false` - an audio+video clip when `true`), `source` (`'device'` default, or `'screen'` to record the display - gated by the `screen` capability), `systemAudio`, `format` (`'webm' | 'mp4'` - a hint; the shell falls back across containers, so read the returned Blob's `type`), `maxEdge` (video downscale, longest edge in px), `maxMs` (hard length ceiling; the session auto-stops), `meta` (provenance stamped into the Blob).
 
@@ -248,7 +248,89 @@ Three behaviours worth designing around:
 - `bass` / `mid` / `treb` share **one** scale, so they read as a balance. Normalised separately, a bass-only clip would report treble pinned at 1.0.
 - **`bpm` is `null` when there is no rhythm to find**, and that is the common answer for speech, ambience and pads. Never treat null as 120 - a visual built on a wrong beat grid looks far worse than one built on none.
 
-The shell owns the decoder; the maths is the engine's `analysePcm`, attached rather than reimplemented, so the browser and the terminal read identical numbers off the same clip. What differs is *coverage*: the web shell gets everything `decodeAudioData` supports, while the Node shells (CLI/TUI) decode **WAV** plus our own **ZzFXM** songs and reject anything needing a platform codec by name - deliberately, rather than shelling out to whatever ffmpeg happens to be on `PATH`.
+The shell owns the decoder; the maths is the engine's `analysePcm`, attached rather than reimplemented, so the browser and the terminal read identical numbers off the same clip. What differs is *coverage*: the web shell gets everything `decodeAudioData` supports, while the Node shells (CLI/TUI) decode **WAV** plus our own **ZzFXM** songs and reject anything needing a platform codec by name, rather than shelling out to whatever ffmpeg happens to be on `PATH`.
+
+## `host.codec` *(deep image codecs - optional, v1.100)*
+
+Encode a float pixel frame into finished image bytes at real bit depth. This is the dual of `host.export.render`, which rasterises the DOM to 8-bit. A tool that computes its own high-precision pixels - a float grading pipeline, or a renderer with real headroom - hands over a linear Float32 RGBA frame. It gets back a 16-bit PNG, an OpenEXR or Radiance HDR master, or an error-diffused 8-bit PNG. These are depths the browser's 8-bit canvas cannot originate. Not a gated capability. Feature-detect `host.codec` and fall back to the ordinary 8-bit export where it is absent. The pixels never leave the device.
+
+A **`CodecFrame`** is `{ width, height, data: Float32Array, space? }`. `data` is RGBA interleaved, linear light, un-premultiplied and unbounded. `space` carries the working primaries with the buffer - `'srgb-linear'` (the default), `'display-p3-linear'` or `'rec2020-linear'`. The maths is the engine's own writers, so the shell only forwards. Web and CLI produce byte-identical output from the same frame.
+
+| Method | Returns | Notes |
+|---|---|---|
+| `png16(frame, opts?)` | `Promise<Uint8Array>` | 16-bit sRGB PNG - real per-channel precision, no HDR. `opts.dpi`, `opts.channels` (`3`/`4`) |
+| `exr(frame, opts?)` | `Promise<Uint8Array>` | OpenEXR master. `opts.pixelType` (`'half'` default / `'float'`), `opts.channels` (`'rgba'`/`'rgb'`) |
+| `radiance(frame, opts?)` | `Promise<Uint8Array>` | Radiance RGBE (`.hdr`) master. `opts.exposure` |
+| `dither8(frame, opts?)` | `Promise<Uint8Array>` | Error-diffused (Floyd-Steinberg) 8-bit sRGB PNG from a deep source. `opts.dpi`, `opts.channels` |
+
+The SDR encoders (`png16` and `dither8`) gamma-encode and clamp at their display boundary. `exr` and `radiance` keep the unbounded linear values. Every method is async, so a shell can offload the encode to a Worker.
+
+This pairs with a tool's **`exportStill`** hook. A tool declares `exportStill` in its manifest `hooks`, and the runtime calls it before `host.export.render` with `{ node, format, opts, host }`. Returning `{ bytes, mime }` short-circuits the export to those bytes (computed in float via `host.codec`). Returning `null` declines and falls through to the normal DOM raster path for that format, so a tool owns only the formats it has real depth for. Like the `exportFile` transform path, tool-supplied bytes carry no watermark and no engine provenance. Bitmap Studio is the reference consumer.
+
+## `host.upscale` *(on-device AI upscaling - optional, v1.101)*
+
+Enlarge a low-resolution raster on the device, with no upload. For the person whose headshot is 400px beside colleagues' 2000px photos, this enlarges it offline. The added pixels are model-inferred, so the output carries a C2PA credential that names the model. The runtime discloses it as the IPTC `compositeWithTrainedAlgorithmicMedia` source type - a real photo, AI-enhanced, never claimed as fully generated. Not a gated capability. Feature-detect `host.upscale` and hide the affordance where it is absent. The headless CLI provides none for now.
+
+The shell owns the model runtime (onnxruntime-web, with WebGPU where present and a WASM fallback), the backend choice, the one-time consented weight download and the memory-bounded tiling. The tool only ever sees pixels. An **`UpscaleFrame`** is `{ width, height, data: Uint8ClampedArray }` - RGBA, 8-bit, straight alpha, the shape a canvas `getImageData` gives and `putImageData` takes. The run can take many seconds on a weak device, so it is never driven from a time-boxed hook. A shell offers it as an explicit, cancellable, progress-bearing action whose result becomes an asset.
+
+| Method | Returns | Notes |
+|---|---|---|
+| `isAvailable()` | `boolean` | A backend and a Worker exist here. Sync |
+| `backend()` | `'webgpu' \| 'wasm' \| null` | The resolved execution backend, or `null` before one is probed |
+| `models()` | `UpscaleModelInfo[]` | The model catalogue - ids, sizes, licences, warnings. Sync and static |
+| `modelBytes(id)` | `number` | Approximate one-time download for a model, for a consent UI |
+| `cached(id)` | `Promise<boolean>` | Are a model's bytes already on-device? Never downloads |
+| `canRun(src, opts?)` | `Promise<UpscaleFeasibility>` | Honest feasibility on this device, before any bytes move |
+| `run(frame, opts?)` | `Promise<UpscaleFrame>` | Upscale a frame. Rejects (`AbortError`) on `opts.signal`; never half-produces |
+
+An **`UpscaleModelInfo`** carries `id`, `name`, `scale` (`2`/`4`), `approxBytes`, `license`, `attribution`, `version` and an optional `warning`. The models ship under permissive licences (BSD-3-Clause, Apache-2.0), so the shell carries their attribution in its credits. `version` lands verbatim in the C2PA disclosure. The model ids are `realesr-general-x4v3`, `realesrgan-x4plus` and `gfpgan-v1.4`. GFPGAN is a face restorer, so it can invent facial detail that was never in the source. Its `warning` reads exactly `warning can invent face details` and its `facesOnly` is `true`.
+
+`UpscaleOpts` takes `model`, `scale` (`2`/`4`), `denoise` (`0..1`, the general model only), `targetMaxEdge` (a hard cap on the output's longest edge), `signal` (an `AbortSignal`) and `onProgress`. When `canRun` answers `ok: false` the shell reads `reason` (`memory` / `no-backend` / `too-large`), `message`, `suggestedMaxEdge` and `suggestedModel`, then offers the lever rather than attempting the run.
+
+## `host.matte` *(on-device background removal - optional, v1.103)*
+
+Remove the background from a raster on the device, with no upload. A plain RGBA frame goes in and the same frame comes out with a model-computed alpha matte. It works like `host.upscale`: the shell owns the ONNX runtime, the WebGPU-to-WASM backend, the one-time consented model download and the memory bound. The tool only ever sees pixels. Not a gated capability. Feature-detect `host.matte` and hide the Remove-Background affordance where it is absent. Like `upscale`, it is never driven from a time-boxed hook - a shell surfaces it as an explicit, cancellable, progress-bearing action whose result is an asset.
+
+The provenance differs from `upscale` on purpose. Upscale invents pixels, so it discloses a trained-algorithm composite and flags the asset AI-generated. A matte invents nothing. Every RGB pixel is the original, and only the alpha channel is computed - a selection, not image content. So the honest disclosure is an edit step, `Background removed with <model> <version>`, with the original kept as a C2PA ingredient. It is not a generated or composite claim, and the asset is not flagged AI-generated. That distinction is the point of hosting this: a same-format cutout that keeps its metadata, colour and credential intact, where other removers strip all three.
+
+A **`MatteFrame`** is `{ width, height, data: Uint8ClampedArray }` - RGBA, 8-bit, straight alpha. On the way in the model reads only RGB and ignores alpha. On the way out the RGB is byte-for-byte the input's and the alpha is the computed matte, so the result composites directly.
+
+| Method | Returns | Notes |
+|---|---|---|
+| `isAvailable()` | `boolean` | A backend and a Worker exist here. Sync |
+| `backend()` | `'webgpu' \| 'wasm' \| null` | The resolved execution backend, or `null` before one is probed |
+| `models()` | `MatteModelInfo[]` | The model catalogue - ids, tiers, sizes, licences. Sync and static |
+| `modelBytes(id)` | `number` | Approximate one-time download for a model, for a consent UI |
+| `cached(id)` | `Promise<boolean>` | Are a model's bytes already on-device? Never downloads |
+| `canRun(src, opts?)` | `Promise<MatteFeasibility>` | Honest feasibility on this device, before any bytes move |
+| `run(frame, opts?)` | `Promise<MatteFrame>` | Cut out the subject. Rejects (`AbortError`) on `opts.signal`; never half-produces |
+
+The three models tier the picker: `u2netp` (fast preview), `isnet-general` (the default) and `birefnet-lite` (near-SOTA pro edges). All ship under permissive licences (Apache-2.0, MIT). The roster leaves out the popular non-commercial models such as BRIA RMBG. `MatteOpts` takes `model`, `maxEdge` (a cap on the output's longest edge), `signal` and `onProgress`. `MatteFeasibility` mirrors `UpscaleFeasibility` - `ok`, `reason`, `message`, `suggestedMaxEdge` and `suggestedModel`.
+
+## `host.speech` *(speech synthesis + transcription - optional, v1.96)*
+
+Turn a tool's own text into spoken audio on the device, with no upload. On-device Kokoro TTS returns mono PCM plus word timings. This is the dual of `host.audio`: where `analyse` turns a finished clip into numbers a tool can draw, `synthesize` turns text into a clip. A shell can play that clip, mix it under a video export, or hand it straight back to `audio.analyse`. The word timings are what a caption or karaoke-highlight tool keys off, so they ride in the same result. Not a gated capability. Feature-detect `host.speech` and hide the voiceover affordance where it is absent. The headless CLI provides none for now.
+
+| Method | Returns | Notes |
+|---|---|---|
+| `isAvailable()` | `boolean` | This shell can synthesise, possibly after a model download. Sync |
+| `cached()` | `Promise<boolean>` | Are the model bytes already on-device? Never downloads |
+| `modelBytes()` | `number` | Approximate one-time download size, for a consent UI |
+| `voices()` | `Promise<SpeechVoiceInfo[]>` | The voices the model can speak in |
+| `synthesize(text, opts?)` | `Promise<SpeechResult>` | Text in, spoken PCM plus word timings out |
+
+A **`SpeechResult`** is `{ pcm: Float32Array, sampleRate, duration, words, granularity }`. `sampleRate` is `24000` for Kokoro. `words` is an array of `{ text, start, end }` spans in seconds. `granularity` is `'word'`, `'sentence'` or `'none'` - check it rather than inferring alignment from span lengths. `SpeechSynthesizeOpts` takes `voice` (a `SpeechVoiceInfo.id`), `speed` (a rate multiplier, `1` is the natural pace), `signal` (an `AbortSignal`) and `onProgress`. An abort rejects the promise promptly with `AbortError`. An abort during the first-use download still lets the download finish in the background and cache, so the next request starts warm.
+
+Transcription (v1.99) is the reverse - audio in, text plus word timings out, via on-device Whisper. It is feature-detected like synthesis, not capability-gated, and the audio never leaves the device. The STT model is a separate download from the TTS model, gated by its own consent.
+
+| Method | Returns | Notes |
+|---|---|---|
+| `transcribeAvailable()` | `boolean` | This shell can transcribe. The CLI omits it for now |
+| `transcribeCached()` | `Promise<boolean>` | Are the STT model bytes already on-device? |
+| `transcribeModelBytes()` | `number` | Approximate one-time STT download size |
+| `transcribe(src, opts?)` | `Promise<SpeechTranscript>` | Audio in, text plus word timings out |
+
+`src` is an `AudioSource` - the same URL / `AssetRef` / raw-bytes union `host.audio.analyse` takes. A **`SpeechTranscript`** is `{ text, words, lang, granularity }`. `lang` is the BCP 47 tag the model detected or was told, and `granularity` is `'word'` or `'segment'`. The timed spans match the shape synthesis emits, so caption plumbing reads either source unchanged.
 
 ## `host.color` *(perceptual colour tools - optional, v1.40)*
 
@@ -268,7 +350,7 @@ Extrapolate from **brand primitives** without shipping colour science in every t
 | `gamut(color, space?)` · `maxChroma(l, h, space?)` · `slice(…)` · `gamutRegion(…)` · `oklch(color)` · `fromOklch(…)` | varies | **v1.69.** Gamut interrogation and OKLCH conversion - is a colour inside `srgb`/`display-p3`/`rec2020`, the most chroma available at a lightness/hue, and 2-D slices of the solid for plotting. Feature-detect each |
 | `iccProfile(bytes)` · `inProfileGamut(color, profile)` · `profileMaxChroma(…)` · `inkCoverage(color, profile)` | varies | **v1.70.** Treat a real ICC profile as the gamut - parse a press profile, ask whether a colour is printable in it, and read total ink coverage. Feature-detect each |
 
-**Which colour strings are accepted** differs by vintage, deliberately. The metrics and generators (`deltaE`, `contrast`, `apca`, `ramp`, `breaks`, `distinct`, `schemes`) take hex (`#rgb`…`#rrggbbaa`) or `oklch()`/`lch()` - the forms token values take; resolve anything else first. The metrics (`deltaE`, `contrast`, `apca`) return `NaN` on unparseable input; `ramp` throws; `schemes` falls back to a neutral mid-blue seed; and `distinct` ignores an unparseable anchor and still returns colours. `mix` goes through the engine's full **CSS Color 4** parser, so it also accepts `rgb()`, `hsl()`, `hwb()`, `lab()`, `oklab()`, the CSS named colours, and `color(display-p3 …)` / `color(rec2020 …)` / `color(prophoto-rgb …)` / `color(a98-rgb …)` / `color(srgb-linear …)` / `color(xyz-d50|xyz-d65 …)` - including `none` components; it returns `null` rather than guessing when either side won't parse.
+**Which colour strings are accepted** differs by vintage, and that is on purpose. The metrics and generators (`deltaE`, `contrast`, `apca`, `ramp`, `breaks`, `distinct`, `schemes`) take hex (`#rgb`…`#rrggbbaa`) or `oklch()`/`lch()` - the forms token values take; resolve anything else first. The metrics (`deltaE`, `contrast`, `apca`) return `NaN` on unparseable input; `ramp` throws; `schemes` falls back to a neutral mid-blue seed; and `distinct` ignores an unparseable anchor and still returns colours. `mix` goes through the engine's full **CSS Color 4** parser, so it also accepts `rgb()`, `hsl()`, `hwb()`, `lab()`, `oklab()`, the CSS named colours, and `color(display-p3 …)` / `color(rec2020 …)` / `color(prophoto-rgb …)` / `color(a98-rgb …)` / `color(srgb-linear …)` / `color(xyz-d50|xyz-d65 …)` - including `none` components; it returns `null` rather than guessing when either side won't parse.
 
 ### Gradient specs
 
@@ -324,4 +406,4 @@ The currency both ways is an **SVG path-data string** - what already lives in yo
 
 Hooks are loaded via `new Function('host', …)` with the capability bridge injected as closure scope. That is a **portability contract, not a security boundary**: hooks still run in the page realm, so in a browser shell they *can* reach `window`, `document`, and `fetch` - `host.*` is simply the only surface guaranteed to exist on every shell (browser, Tauri, CLI). Module imports don't work (hooks ship as a single source string), and third-party/untrusted tool code is **not** safe to run until Worker isolation ships - today the catalog origin is the trust boundary.
 
-Async hook results are **time-boxed**: `onInit` 5s, `onInput` 2s, `beforeExport`/`afterExport` 5s, `exportFile` 10s. On overrun the runtime stops waiting and **discards the late result** - it never patches inputs or extras after the race is lost - but the hook itself keeps executing (there is no in-realm preemption; a *synchronous* runaway hook can't be interrupted at all, so its overrun is just measured and logged as a warning). `onInit`/`onInput` overruns and errors are logged, never fatal. Export-path hooks differ: a `beforeExport` or `exportFile` error (including a timeout) fails that export visibly, while `afterExport` - the cleanup guarantee - is always awaited and its errors only logged. `onFrame` (live camera) and `onLevel` (audio meter) run once per frame / level sample and are **not** time-boxed - keep them cheap; the runtime simply drops a sample if the previous one is still rendering.
+Async hook results are **time-boxed**: `onInit` 5s, `onInput` 2s, `beforeExport`/`afterExport` 5s, `exportFile`/`exportStill` 10s. On overrun the runtime stops waiting and **discards the late result** - it never patches inputs or extras after the race is lost - but the hook itself keeps executing (there is no in-realm preemption; a *synchronous* runaway hook can't be interrupted at all, so its overrun is just measured and logged as a warning). `onInit`/`onInput` overruns and errors are logged, never fatal. Export-path hooks differ: a `beforeExport`, `exportFile` or `exportStill` error (including a timeout) fails that export visibly, while `afterExport` - the cleanup guarantee - is always awaited and its errors only logged. `onFrame` (live camera) and `onLevel` (audio meter) run once per frame / level sample and are **not** time-boxed - keep them cheap; the runtime simply drops a sample if the previous one is still rendering.

@@ -53,7 +53,7 @@ const VIZ_KEY = 'lolly-docs-viz-preset';
  *  §2: levels ride the hand-off; buffers re-bake on the next page). */
 const ATMO_KEY = 'lolly-docs-atmo';
 
-const SPEEDS = [0.5, 0.75, 1, 1.25];
+const SPEEDS = [0.5, 0.75, 1, 1.25, 1.5, 2];
 /** Default 1.25× (Andy, 2026-08-04): the narration is synthesized at a slow,
  *  careful 0.8 pace, so the base render is already gentle — 1.25× is the pace a
  *  first-time listener should meet without ever reaching for the control, which
@@ -63,11 +63,11 @@ const SPEEDS = [0.5, 0.75, 1, 1.25];
  *  "slower, let me follow", not "faster, get on with it". Pitch is preserved at
  *  every rate (this.audio.preservesPitch, set on init), so a slower pace stays
  *  smooth — never a downgrade in quality, just a change of speed. */
-const SPEED_DEFAULT_IDX = SPEEDS.length - 1; // 1.25×, the top stop
+const SPEED_DEFAULT_IDX = SPEEDS.indexOf(1.25); // 1.25×, a mid stop (range 0.5×–2×)
 /* v2: the 2026-08-04 range change (was [1,1.25,1.5,2,2.5]) remapped what each
  *  stored index means, so bump the key — a returning listener's old pick would
  *  otherwise point at a different speed. Everyone re-meets the 1.25× default. */
-const SPEED_KEY = 'lolly-docs-speed-v2';
+const SPEED_KEY = 'lolly-docs-speed-v3';
 /** Preset switch cross-fade — the app's BLEND_SECONDS (lib/butterchurn-viz.ts). */
 const PRESET_BLEND_S = 2.2;
 /** Default level for the ambience master and a freshly toggled layer — the
@@ -500,10 +500,16 @@ class Player {
     prevBtn.addEventListener('click', () => this.go(-1));
     nextBtn.addEventListener('click', () => this.go(1));
     // Speed: session-remembered like Follow, so auto-advance never resets a
-    // listener's choice mid-journey; the stored index wins over the default.
+    // listener's choice mid-journey; the stored RATE (not an index) wins over
+    // the default. Storing the rate, not the array position, is deliberate — an
+    // index silently re-maps to a different speed whenever SPEEDS changes (the
+    // 0.5× default bug, Andy 2026-08-04); a rate that is no longer a stop just
+    // falls through to the default. Hence the -v3 key: any older index-based
+    // entry is ignored, so a fresh visit reliably meets 1.25×.
     try {
-      const saved = Number(sessionStorage.getItem(SPEED_KEY));
-      if (Number.isInteger(saved) && saved >= 0 && saved < SPEEDS.length) this.speedIdx = saved;
+      const savedRate = Number(sessionStorage.getItem(SPEED_KEY));
+      const savedIdx = SPEEDS.indexOf(savedRate);
+      if (savedIdx >= 0) this.speedIdx = savedIdx;
     } catch { /* storage may be disabled */ }
     this.applySpeed(this.speedIdx, { persist: false });
     // Clicking the rate opens a VERTICAL slider rather than cycling (Andy,
@@ -538,25 +544,16 @@ class Player {
       speedRange.setAttribute('aria-valuetext', `${SPEEDS[i]}× speed`);
     };
     speakRate(this.speedIdx);
-    // Ticks read fastest-at-top, which is how a vertical fader reads.
-    const ticks = el('div', 'ldp-speed-ticks');
-    for (let i = SPEEDS.length - 1; i >= 0; i--) {
-      const tick = el('button', 'ldp-speed-tick');
-      tick.type = 'button';
-      tick.textContent = `${SPEEDS[i]}×`;
-      tick.dataset.speedIdx = String(i);
-      tick.setAttribute('aria-label', `${SPEEDS[i]}× speed`);
-      ticks.append(tick);
-    }
-    this.speedPop.append(ticks, speedRange);
+    // No tick labels: the fader plus the live rate readout below the transport
+    // (this.speedBtn) is the whole story, and per-stop numbers only mislead —
+    // they read as fixed presets when the slider already moves to any rate
+    // (Andy, 2026-08-04).
+    this.speedPop.append(speedRange);
     this.speedBtn.parentElement?.append(this.speedPop) ?? row.append(this.speedPop);
 
     const syncSpeedUi = (): void => {
       speedRange.value = String(this.speedIdx);
       speakRate(this.speedIdx);
-      for (const tick of ticks.querySelectorAll<HTMLElement>('.ldp-speed-tick')) {
-        tick.classList.toggle('is-active', Number(tick.dataset.speedIdx) === this.speedIdx);
-      }
     };
     syncSpeedUi();
 
@@ -572,12 +569,6 @@ class Player {
     });
     speedRange.addEventListener('input', () => {
       this.applySpeed(Number(speedRange.value));
-      syncSpeedUi();
-    });
-    ticks.addEventListener('click', (e) => {
-      const tick = (e.target as HTMLElement | null)?.closest<HTMLElement>('.ldp-speed-tick');
-      if (!tick) return;
-      this.applySpeed(Number(tick.dataset.speedIdx));
       syncSpeedUi();
     });
     // A click anywhere else closes it — but NOT a click inside, or dragging the
@@ -729,7 +720,7 @@ class Player {
     this.audio.playbackRate = SPEEDS[i]!;
     this.speedBtn.textContent = `${SPEEDS[i]}×`;
     if (opts.persist === false) return;
-    try { sessionStorage.setItem(SPEED_KEY, String(i)); } catch { /* best effort */ }
+    try { sessionStorage.setItem(SPEED_KEY, String(SPEEDS[i])); } catch { /* best effort */ }
   }
 
   private setFollow(on: boolean): void {
