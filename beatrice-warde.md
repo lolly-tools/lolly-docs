@@ -10,7 +10,7 @@ So we adapted them. This page shows you what she wrote, what we changed, and who
 
 The 1932 setting was capitals only, because the broadside existed to show off a titling face. Every mixed-case version you have ever seen is already somebody's adaptation. This is the reading best supported across the sources, in the British spellings of the Surrey company that first printed it:
 
-```
+```narrate-skip
 This is a Printing Office
 Crossroads of civilization
 Refuge of all the arts
@@ -43,7 +43,7 @@ This is a Printing Office
 
 ## What we made of it
 
-```
+```narrate-skip
 Lolly is a Production Studio
 Crossroads of civilization
 Refuge of all the arts
