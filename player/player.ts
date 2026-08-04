@@ -154,6 +154,10 @@ function el<K extends keyof HTMLElementTagNameMap>(tag: K, cls: string, html = '
 }
 
 function fmtTime(s: number): string {
+  // A streamed audio element reports duration Infinity until the metadata
+  // lands; without this guard Math.floor(Infinity % 60) is NaN and the readout
+  // shows the literal "Infinity:NaN" (Andy, 2026-08-04).
+  if (!Number.isFinite(s) || s < 0) s = 0;
   const m = Math.floor(s / 60);
   return `${m}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
 }
