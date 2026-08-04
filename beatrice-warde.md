@@ -63,17 +63,11 @@ Lolly is a Production Studio
 
 ### Hear it
 
-<audio src="media/warde-production-studio.opus" captions="media/warde-production-studio.vtt" label="English"></audio>
+<video src="media/warde-production-studio.mp4" captions="media/warde-production-studio.vtt" poster="media/warde-production-studio.poster.jpg" label="English" width="1920" height="1080"></video>
 
-%file{warde-production-studio.opus} %entity{Google AI Studio} %act{generated} the narration %detail{Gemini speech model, voice Sulafat, Australian accent, empathetic read — generated audio, not a human reader} %entity{Lolly} %act{directed and published} it %sig{signed by %entity{Lolly}}
+%file{warde-production-studio.mp4} %entity{Lolly} %act{produced and signed} the audiogram %detail{a waveform drawn from the audio, its full history sealed inside the file, the voice within declared as AI-generated} %entity{Google AI Studio} %act{generated} the voice %detail{Gemini text-to-speech, voice Sulafat, Australian accent, energetic read - generated audio, not a human reader} %sig{signed by %entity{Lolly}}
 
-The words are Warde's, adapted. The voice is a model. It is obviously a machine today, and that is not why we labelled it - voices get better, and a safeguard that only works while the technology is poor is not a safeguard, it is a delay. We attribute now, while it is easy and slightly unnecessary, so the habit is already there by the time it matters.
-
-So the same narration, drawn as a waveform, is also a signed video: its history travels in the file, and you can [verify it yourself](/info/verify-yourself.html). Fixed in time, having been verified in proof.
-
-<video src="media/warde-production-studio.mp4" captions="media/warde-production-studio.vtt" poster="media/warde-production-studio.poster.jpg" label="English" width="1080" height="1080"></video>
-
-%file{warde-production-studio.mp4} %entity{Lolly} %act{produced and signed} the audiogram %detail{a waveform drawn from the audio, its full history sealed inside the file} %entity{Google AI Studio} %act{generated} the voice within %detail{Gemini, voice Sulafat} %sig{signed by %entity{Lolly}}
+The words are Warde's; the reading is a 2026 Australian one, and the voice is a model. Lawrence Lessig said creativity always builds on the past. It does - but the debt runs both ways: the future owes the present the plain truth of what it borrowed and how it was made. So we label the voice as generated now, while a machine still sounds like one, because a safeguard that only holds while the technology is crude is a postponement, not a safeguard. The proof rides inside the file - the AI origin declared in its credential - and you can [verify it yourself](/info/verify-yourself.html). Fixed in time, having been verified in proof.
 
 Three changes and one addition, and we would rather list them than let you find them:
 

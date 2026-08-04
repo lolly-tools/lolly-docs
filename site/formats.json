@@ -1,13 +1,14 @@
 {
   "heading": "Every format, in and out",
-  "lead": "Lolly reads 29 source formats and renders 31 - here's the full set, grouped by what each one is. Fifteen {roundtrip}: read *and* written, so they appear in both columns.",
+  "lead": "Lolly reads 37 source formats and renders 40 - here's the full set, grouped by what each one is. Twenty-one {roundtrip}: read *and* written, so they sit once in the middle.",
   "ingestsLabel": "Ingests",
-  "ingestsCount": "29 in",
+  "ingestsCount": "37 in",
   "exportsLabel": "Exports",
-  "exportsCount": "31 out",
+  "exportsCount": "40 out",
   "ingests": [
     { "category": "Vector", "list": "SVG · PDF · Illustrator · InDesign · Figma · Penpot" },
     { "category": "Raster", "list": "PNG · JPG · WEBP · GIF · HEIC · TIFF · AVIF" },
+    { "category": "Layered", "list": "PSD · PSB · XCF" },
     { "category": "Motion", "list": "MP4 · WEBM · MOV · Lottie" },
     { "category": "Audio", "list": "MP3 · WAV · OGG · M4A · FLAC · MIDI · MOD" },
     { "category": "Document", "list": "PPTX" },
@@ -17,6 +18,7 @@
   "exports": [
     { "category": "Vector", "list": "SVG · PDF · CMYK PDF · EPS · CMYK EPS · EMF · DXF" },
     { "category": "Raster", "list": "PNG · JPG · WEBP · AVIF · TIFF · CMYK TIFF · ICO" },
+    { "category": "Layered", "list": "PSD" },
     { "category": "Motion", "list": "MP4 · WEBM · GIF · APNG · Animated WebP · Animated SVG" },
     { "category": "Audio", "list": "MP3 · M4A" },
     { "category": "Document", "list": "PPTX · HTML · MD · TXT" },
