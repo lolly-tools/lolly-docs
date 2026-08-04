@@ -28,7 +28,7 @@ If you're using a self-hosted or enterprise Lolly instance, the software behavio
 below still applies, but the *operator* of that instance - not SUSE - is
 responsible for anything server-side: their render endpoint, their MCP server,
 their Content Credentials certificate authority, if they run one. Ask them for
-their own policy; see [Adoption & Governance](/info/adoption-governance.html) for
+their own policy. See [Adoption & Governance](/info/adoption-governance.html) for
 what operating Lolly involves.
 
 ## The app: what stays on your device
@@ -146,7 +146,7 @@ written into the URL.
   off here rather than on.
 - <!--i:globe--> **The inputs are public by construction** anyway - they are whatever the link's
   author typed into the URL, readable by anyone the link reaches. Don't put
-  secrets in a shared link; Lolly offers link encryption for sensitive content.
+  secrets in a shared link. Lolly offers link encryption for sensitive content.
 - <!--i:eyeoff--> Responses are **cached and rate-limited** like any public image, and marked
   `noindex` so search engines don't index your renders.
 
@@ -192,7 +192,7 @@ If you do enrol, here is exactly what happens:
 
 1. **You choose a sign-in method** - GitHub, Google, SUSE (Okta), or an emailed
    link. For the three OIDC providers, you're redirected to that provider's own
-   login page, governed by their privacy policy, not ours; Lolly's certificate
+   login page, governed by their privacy policy, not ours. Lolly's certificate
    service receives back only a verified email address and the provider's name.
    For the email link, the address you type is passed to **Resend**, a
    transactional email API, solely to deliver that one link.
@@ -254,7 +254,7 @@ the tab. Everything happens locally, on your own device and network.
 - <!--i:monitor--> **`tabs`** - to open and close the temporary tab the page loads in.
 - <!--i:globe--> **Host access (`<all_urls>`)** - because the page you choose to capture can be
   on any site. Chrome surfaces this at install time as a broad permission
-  warning; the extension only ever visits the URL you give it.
+  warning. The extension only ever visits the URL you give it.
 
 None of these are used to read, monitor, or transmit your browsing beyond that
 one requested capture.
@@ -278,7 +278,7 @@ carry an enrolment token). Everything else in the log is the hosting platform's,
 not ours.
 
 For lolly.tools, hosting is Vercel and access-log retention follows Vercel's own
-platform defaults for our plan; we configure no log drain, no long-term log
+platform defaults for our plan. We configure no log drain, no long-term log
 export, and no analytics or monitoring product on top. We keep no copy of these
 logs ourselves, which also means we have no way to search them for you - see
 [Your rights](#your-rights).
@@ -293,12 +293,12 @@ completeness, the entire list:
 | Everything on your device (documents, prefs, cache, counters) | **Not our processing at all** - it never reaches us. Storage on your device is strictly necessary for the service you requested (ePrivacy Art. 5(3)), so it needs no consent | Until you delete it |
 | Your email address during Content Credentials enrolment | **Art. 6(1)(b)**, performance of a service you explicitly requested | Not retained. Present in memory for the duration of the request only |
 | Your IP address on the sign-in endpoints, for rate limiting | **Art. 6(1)(f)**, our legitimate interest in preventing abuse of a free service and of a third party's email quota. We consider this to pass a balancing test because it is in memory only, never written down, and discarded within about a minute | ~1 minute, in server memory, never persisted |
-| Hosting access logs (IP, path, timestamp, user agent) | **Art. 6(1)(f)**, our legitimate interest in service security, abuse prevention and diagnosing faults | Vercel's platform default for our plan; we add no drain or export |
+| Hosting access logs (IP, path, timestamp, user agent) | **Art. 6(1)(f)**, our legitimate interest in service security, abuse prevention and diagnosing faults | Vercel's platform default for our plan. We add no drain or export |
 
 **Recipients.** The categories of recipient are: our hosting provider (Vercel
 Inc.), and - only if you use the email sign-in option - a transactional email
 provider (Resend). If you sign in with GitHub, Google or SUSE Okta, you interact
-with that provider directly under their own privacy policy; they tell us a
+with that provider directly under their own privacy policy. They tell us a
 verified email address and nothing else. We share personal data with no one else,
 and we do not sell data, run advertising, or profile users.
 
@@ -343,7 +343,7 @@ keep an issuance log, **we hold no personal data about you that we can look up,
 correct, export or delete.** If you write and ask what we have on you, the
 truthful answer is nothing, and we will say so. The one category that exists at
 all is hosting access logs keyed to an IP address, held by our hosting provider
-under their retention defaults; we have no facility to search or selectively
+under their retention defaults. We have no facility to search or selectively
 delete those, and we will tell you that rather than pretend otherwise. Everything
 that is actually *yours* is on your device, where you can already read, export
 and destroy it without asking anyone's permission.

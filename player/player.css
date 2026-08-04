@@ -314,27 +314,6 @@ html.dark .ldp-speed-pop {
   border-color: rgba(230, 237, 243, 0.16);
 }
 .ldp-speed-pop[hidden] { display: none; }
-.ldp-speed-ticks {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-  height: 104px;
-}
-.ldp-speed-tick {
-  font-size: 10px;
-  font-variant-numeric: tabular-nums;
-  line-height: 1;
-  padding: 1px 3px;
-  border: 0;
-  border-radius: 3px;
-  background: transparent;
-  color: inherit;
-  opacity: 0.6;
-  cursor: pointer;
-}
-.ldp-speed-tick:hover { opacity: 1; }
-.ldp-speed-tick.is-active { opacity: 1; font-weight: 700; }
 .ldp-speed-range {
   /* The modern vertical range; `orient="vertical"` in the markup covers older
      Firefox, and where neither lands this degrades to a horizontal slider that
