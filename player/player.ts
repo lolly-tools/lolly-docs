@@ -53,11 +53,15 @@ const VIZ_KEY = 'lolly-docs-viz-preset';
  *  §2: levels ride the hand-off; buffers re-bake on the next page). */
 const ATMO_KEY = 'lolly-docs-atmo';
 
-const SPEEDS = [1, 1.25, 1.5];
-/** Default 1.25× (Andy, 2026-08-03): the narration is synthesized at a slow,
- *  careful 0.8 pace so 1× stays available for listeners who want it — but most
- *  will want 1.25×, which lands near natural reading speed. */
-const SPEED_DEFAULT_IDX = 1;
+const SPEEDS = [1, 1.25, 1.5, 2, 2.5];
+/** Default 1.5× (Andy, 2026-08-04): the narration is synthesized at a slow,
+ *  careful 0.8 pace, so the base render is already gentle. 1.5× lands near a
+ *  natural-brisk reading speed and suits most listeners; 1× and 1.25× stay for
+ *  a gentler pace and the range now reaches 2.5× for fast listeners. Pitch is
+ *  preserved at every rate (this.audio.preservesPitch, set on init), so slowing
+ *  down for a different learning pace stays smooth — never a downgrade in
+ *  quality, just a change of speed. */
+const SPEED_DEFAULT_IDX = 2;
 const SPEED_KEY = 'lolly-docs-speed';
 /** Preset switch cross-fade — the app's BLEND_SECONDS (lib/butterchurn-viz.ts). */
 const PRESET_BLEND_S = 2.2;
@@ -189,7 +193,11 @@ class Player {
   private readonly trigger: HTMLElement | null;
   private readonly autoplay: boolean;
 
-  private audio = new Audio();
+  // preservesPitch keeps the voice natural at every playback rate: slowing down
+  // for a gentler learning pace (or speeding up) changes speed, never pitch, so
+  // it is a pace choice and not a quality downgrade. Browsers default this true,
+  // but we set it explicitly so the promise holds regardless of engine defaults.
+  private audio = Object.assign(new Audio(), { preservesPitch: true });
   private playlist: Track[] = [];
   private cues: Cue[] = [];
   private cueIdx = -1;

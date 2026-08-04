@@ -73,7 +73,7 @@ Prompt to Image is determinism at its plainest: the text is the whole input, the
 
 ## Provenance & Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
 Exports can carry **Content Credentials** - a signed [C2PA](https://c2pa.org) manifest bound to a hash of the file's bytes. Any later change to the file breaks the seal, so a C2PA-aware verifier **detects alteration cryptographically, offline**. The credential is tamper-*evident*: it flags tampering rather than preventing it, which is precisely what makes fully offline verification possible.
 
