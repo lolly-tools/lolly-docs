@@ -2100,7 +2100,12 @@ strong{font-weight:600}
 /* Nav */
 nav{display:flex;align-items:center;gap:.25rem;padding:0 1.5rem;height:3.75rem;background:transparent;position:fixed;width:100%;top:0;z-index:100;overflow-x:auto;transition:background .25s}
 nav.nav-solid{background:#0c322c}
-.brand{display:inline-flex;align-items:center;gap:.5rem;font-weight:800;color:var(--pale);font-size:1.05rem;white-space:nowrap;margin-right:.75rem;letter-spacing:-.01em;text-transform:uppercase}
+/* The nav sits on #0c322c in BOTH themes (nav.nav-solid, and the dark hero on the
+   landing page), so its text needs a fixed light colour. It used var(--pale),
+   which the dark theme redefines to #0d2419 — near-identical to that background,
+   about 1.1:1, so the wordmark disappeared in dark mode. Every other nav control
+   already uses a literal white for this reason. */
+.brand{display:inline-flex;align-items:center;gap:.5rem;font-weight:800;color:#f0fbf5;font-size:1.05rem;white-space:nowrap;margin-right:.75rem;letter-spacing:-.01em;text-transform:uppercase}
 .brand:hover{color:var(--light);text-decoration:none}
 .brand-icon{width:1.5rem;height:1.5rem;border-radius:5px;flex-shrink:0;object-fit:contain}
 /* Draft marker in the nav. English pages only (see buildNav) — the translated
@@ -3048,7 +3053,10 @@ footer .founded-badge{margin-top:.5rem}
    navigation are described in one place. */
 .nav-mobile-page{display:none;margin-top:.75rem;padding-top:.75rem;border-top:1px solid rgba(255,255,255,.14)}
 .nav-mobile-title{color:var(--green);font-size:.8125rem;font-weight:700;letter-spacing:.02em;padding:0 .625rem .25rem}
-.nav-mobile-label{font-size:.6875rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.42);font-weight:700;margin:.75rem 0 .125rem;padding:0 .625rem}
+/* .55 not .42 — at 42% over the panel's #0c322c this computes to 3.7:1, under AA
+   for 11px text. .55 clears 5.3:1 and still reads as a quieter tier than the
+   links at .7. */
+.nav-mobile-label{font-size:.6875rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.55);font-weight:700;margin:.75rem 0 .125rem;padding:0 .625rem}
 
 /* Mobile */
 @media(max-width:900px){
@@ -4127,7 +4135,11 @@ function footerSitemap(lang: Lang): string {
     const links = items.map(it => `<a href="${localeHref(lang, it.slug)}">${esc(t(it.label))}</a>`).join('');
     return `<div class="sitemap-col"><div class="sitemap-title">${esc(t(SIDEBARS[pw].title))}</div>${links}</div>`;
   }).join('');
-  return `<nav class="footer-sitemap" aria-label="${esc(t('Sitemap'))}">${cols}</nav>`;
+  // A <div role="navigation">, NOT a <nav>: the stylesheet styles the bare `nav`
+  // element as the fixed top bar (position:fixed; top:0; height:3.75rem; flex),
+  // so a second <nav> anywhere on the page is pinned over the real one with its
+  // column titles laid out as a nav row. Same landmark semantics, no inheritance.
+  return `<div role="navigation" class="footer-sitemap" aria-label="${esc(t('Sitemap'))}">${cols}</div>`;
 }
 
 const FOOTER = (lang: Lang) => `<footer>${footerSitemap(lang)}<p>Lolly - <a href="${REPO_URL}">${esc(t('Open Source'))}</a> · <a href="${localeHref(lang, 'privacy')}">${esc(t('Privacy Policy'))}</a> · <a href="${localeHref(lang, 'inclusive-design')}">${esc(t('Inclusive Design'))}</a></p><p>${esc(t('Questions? Contact Andy Fitzsimon -'))} <a href="mailto:fitzy@suse.com">fitzy@suse.com</a></p>${FOUNDED_BY}</footer>`;
@@ -4223,7 +4235,15 @@ function mobilePageNavHtml(lang: Lang, pathway: Pathway, activeHref: string) {
     `<div class="nav-mobile-label">${esc(t(g.label))}</div>${
       g.items.map(it => sidebarLinkHtml(lang, it, activeHref, false)).join('')}`,
   ).join('');
-  return `<div class="nav-mobile-page"><div class="nav-mobile-title">${esc(t(sb.title))}</div>${groups}</div>`;
+  // Drop the pathway title when the first group repeats it — the Trust pathway
+  // opens with a group also called "Trust", which rendered as "Trust" then
+  // "TRUST" and read as a stutter. The active link in the site nav directly above
+  // already names the pathway, so losing the heading costs nothing.
+  const first = sb.groups[0]?.label;
+  const title = first && t(first) === t(sb.title)
+    ? ''
+    : `<div class="nav-mobile-title">${esc(t(sb.title))}</div>`;
+  return `<div class="nav-mobile-page">${title}${groups}</div>`;
 }
 
 /**
