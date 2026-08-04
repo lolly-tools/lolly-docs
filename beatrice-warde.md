@@ -51,12 +51,13 @@ Against the ravages of time
 Armoury of fearless truth
 Against whispering rumour
 Incessant trumpet of trade
+that no impostor can sound
 From this place ideas may fly abroad
 Not to perish on shores of change
 Not to vary with the writer's hand
 But fixed in time
 Having been verified in proof
-Friend you behold a legacy honoured:
+Friend, you stand on sacred ground
 Lolly is a Production Studio
 ```
 
@@ -74,14 +75,14 @@ So the same narration, drawn as a waveform, is also a signed video: its history 
 
 %file{warde-production-studio.mp4} %entity{Lolly} %act{produced and signed} the audiogram %detail{a waveform drawn from the audio, its full history sealed inside the file} %entity{Google AI Studio} %act{generated} the voice within %detail{Gemini, voice Sulafat} %sig{signed by %entity{Lolly}}
 
-Four changes, and we would rather list them than let you find them:
+Three changes and one addition, and we would rather list them than let you find them:
 
 - <!--i:pentool--> **"This is a Printing Office" becomes "Lolly is a Production Studio"**, in the first line and the last. Her subject was a room with presses in it. Ours is a room that emits PNG, SVG, PDF, video and audio. The claim is the same claim.
 - <!--i:sparkle--> **"words may fly abroad" becomes "ideas may fly abroad."** Lolly is not a text tool.
 - <!--i:clock--> **"Not to perish on waves of sound" becomes "Not to perish on shores of change."** Her contrast was writing against speech, the permanent against the spoken. Ours is the permanent against version drift, dead links and lapsed subscriptions.
-- <!--i:seal--> **"Friend, you stand on sacred ground" becomes "Friend you behold a legacy honoured."** The line where the adaptation stops borrowing and answers.
+- <!--i:seal--> **We added one line. After "Incessant trumpet of trade": "that no impostor can sound."** Her boast was that the press heralds the trade. Ours is that the herald cannot be faked. It is the only line here that is not hers, and the place the adaptation stops borrowing and answers - because she beat an impostor problem by becoming an impostor, and a Lolly file is a trumpet no impostor can sound.
 
-Everything else is hers, including the line this whole page is about.
+Everything else is hers, including the line this whole page is about - and including the one that now reads like prophecy. "Not to vary with the writer's hand" meant a copyist corrupting a text as he wrote it out again, adding what he liked and dropping what he didn't until it had taken on a life of its own. The writer's hand today wears many gloves: a model retraining on its own output until the copy forgets the original, a file that only opens in software no one sells any more, a link that rots, a re-upload that silently strips the credit, a subscription that lapses and takes your work hostage. Different hands, faster or slower, the same corruption. She met hers with a press. We meet ours with a file that stays fixed and carries the proof of what it is.
 
 ## Fixed in time having been verified in proof
 
@@ -113,7 +114,7 @@ She died in Epsom on 16 September 1969.
 
 - <!--i:star--> **Quality.** Her argument in the crystal goblet essay is that the craft succeeds by disappearing: you should see the wine, not the glass. Constraint-first tooling is the same bet. The template holds the brand so the person using it can think about the message instead of the margins.
 - <!--i:check--> **Correctness.** She checked. The whole trade had been calling a typeface by the wrong name for three centuries because nobody had. Every claim on this site is paired with the mechanism that enforces it, and none of them ask for your trust.
-- <!--i:people--> **Fairness.** She had to invent a man in order to be read. That is not a charming anecdote, it is what the field cost her, and it is why [who gets to make things](/info/inclusive-design.html) is a design question rather than a footnote.
+- <!--i:people--> **Fairness.** She had to invent a man in order to be read - a false name and a false biography, the whole apparatus of a person who did not exist, because that was the price of being printed. That is not a charming anecdote, it is what the field cost her. Her story is familiar to anyone who has had to mask who they are, or reinvent themselves, to be taken seriously in a room that was not built for them - which is why [who gets to make things](/info/inclusive-design.html) is a design decision here rather than a footnote.
 - <!--i:shieldcheck--> **Attribution.** This is the one she is owed. Provenance is on by default here, and the chain covers ingredients as well as edits, so a work's history travels with it instead of being reconstructed by a stranger later. We adapted her in public and listed our changes.
 
 ---
