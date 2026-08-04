@@ -1813,46 +1813,99 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   </div>
 </section>`;
 
-  // Dedicated Formats section - the full in/out breakdown, chips grouped by what
-  // each format is (vector / raster / motion / …). The engine box only states the
-  // counts; this section is the detail.
-  // These formats round-trip - Lolly both READS and WRITES them - so they appear in BOTH
-  // columns. Mark those chips (⇄ + filled style) so the overlap reads as intentional
-  // rather than accidental duplication. Matched on the exact chip token, so the export-only
-  // "CMYK PDF" variant is NOT marked - only plain "PDF" round-trips.
-  const ROUNDTRIP = new Set(['PDF', 'SVG', 'TIFF', 'AVIF', 'PNG', 'JPG', 'WEBP', 'GIF', 'CSV', 'JSON', 'MP3', 'M4A', 'MP4', 'WEBM', 'PPTX']);
-  const fmtChips = (list: string) =>
-    `<div class="format-chips">${list.split(/\s·\s|·/).map(fmt => {
-      const f = fmt.trim();
-      const rt = ROUNDTRIP.has(f.toUpperCase());
-      return `<span class="format-chip${rt ? ' format-chip--rt' : ''}"${rt ? ' title="Round-trips - Lolly reads and writes this format"' : ''}>${rt ? '<span class="rt-mark" aria-hidden="true">⇄</span>' : ''}${esc(f)}</span>`;
-    }).join('')}</div>`;
-  const fmtGroup = (cat: string, list: string) =>
-    `<div class="formats-group"><span class="formats-cat">${esc(cat)}</span>${fmtChips(list)}</div>`;
+  // Dedicated Formats section — a single three-zone table, NOT two columns. Each
+  // category is a row; import-only formats sit at the LEFT edge, export-only at the
+  // RIGHT edge, and the round-trip formats (read AND written) sit centred between
+  // them — so a format Lolly both reads and writes is shown ONCE, in the middle,
+  // never duplicated. Every chip is a button: clicking it opens a dialog that names
+  // the format in full, describes it in plain language, and lists the properties
+  // Lolly supports (alpha, HDR, CMYK, layers, encryption …) — inclusive design, so
+  // someone who does not know formats can learn what each one is for. The structural
+  // data (tokens, direction, features, descriptions) lives in the English-only
+  // docs/site/formats-catalog.json (format names are not translated); the heading,
+  // lead and zone labels come from the translatable formats.json.
   const formats = loadSiteJson('formats.json', lang) as {
     heading: string; lead: string;
     ingestsLabel: string; ingestsCount: string; exportsLabel: string; exportsCount: string;
     ingests: { category: string; list: string }[];
     exports: { category: string; list: string }[];
   };
+  interface FmtEntry { token: string; name: string; full: string; category: string; dir: 'in' | 'out' | 'both'; features: string[]; desc: string; }
+  const catalog = loadSiteJson('formats-catalog.json') as { features: Record<string, string>; specifics?: Record<string, string[]>; formats: FmtEntry[] };
+  const CAT_ORDER = ['Vector', 'Raster', 'Layered', 'Motion', 'Audio', 'Document', 'Data', 'Tokens', '3D', 'Bundle'];
+  // A large icon sits above each category label. Inline SVGs (stroke = currentColor)
+  // so they inherit the section's green and need no asset fetch.
+  const IST = 'fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"';
+  const FMT_CAT_ICON: Record<string, string> = {
+    Vector: `<svg viewBox="0 0 24 24" ${IST}><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18z"/><path d="M2 2l7.6 7.6"/><circle cx="11" cy="11" r="2"/></svg>`,
+    Raster: `<svg viewBox="0 0 24 24" ${IST}><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>`,
+    Layered: `<svg viewBox="0 0 24 24" ${IST}><path d="M12 2l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg>`,
+    Motion: `<svg viewBox="0 0 24 24" ${IST}><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 4v16M17 4v16M2 9h5M2 15h5M17 9h5M17 15h5"/></svg>`,
+    Audio: `<svg viewBox="0 0 24 24" ${IST}><path d="M4 10v4M8 6v12M12 3v18M16 7v10M20 10v4"/></svg>`,
+    Document: `<svg viewBox="0 0 24 24" ${IST}><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h6"/></svg>`,
+    Data: `<svg viewBox="0 0 24 24" ${IST}><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>`,
+    Tokens: `<svg viewBox="0 0 24 24" ${IST}><circle cx="13.5" cy="6.5" r="1.3"/><circle cx="17" cy="10.5" r="1.3"/><circle cx="8.5" cy="7" r="1.3"/><circle cx="6.5" cy="12" r="1.3"/><path d="M12 2a10 10 0 1 0 0 20 2.5 2.5 0 0 0 2.5-2.5c0-.7-.3-1.3-.3-2a2 2 0 0 1 2-2H18a4 4 0 0 0 4-4c0-5.5-4.5-9.5-10-9.5z"/></svg>`,
+    '3D': `<svg viewBox="0 0 24 24" ${IST}><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 2v20M21 7l-9 5-9-5"/></svg>`,
+    Bundle: `<svg viewBox="0 0 24 24" ${IST}><rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"/><path d="M10 12h4"/></svg>`,
+  };
+  const inCount = catalog.formats.filter(f => f.dir !== 'out').length;
+  const outCount = catalog.formats.filter(f => f.dir !== 'in').length;
+  const bothCount = catalog.formats.filter(f => f.dir === 'both').length;
+  const inOnly = catalog.formats.filter(f => f.dir === 'in').length;
+  const outOnly = catalog.formats.filter(f => f.dir === 'out').length;
+  const fmtChip = (f: FmtEntry) =>
+    `<button type="button" class="fmt-chip fmt-chip--${f.dir}" data-fmt="${esc(f.token)}" aria-haspopup="dialog"${f.dir === 'both' ? ' title="Round-trip — Lolly reads and writes this"' : ''}>${f.dir === 'both' ? '<span class="rt-mark" aria-hidden="true">⇄</span>' : ''}${esc(f.name)}</button>`;
+  const zone = (cls: string, list: FmtEntry[]) => `<div class="fmt-zone fmt-zone--${cls}">${list.map(fmtChip).join('')}</div>`;
+  const catRows = CAT_ORDER
+    .map(cat => ({ cat, all: catalog.formats.filter(f => f.category === cat) }))
+    .filter(r => r.all.length)
+    .map(({ cat, all }) => `<div class="fmt-row">
+        <span class="fmt-cat">${FMT_CAT_ICON[cat] || ''}<span class="fmt-cat-label">${esc(cat)}</span></span>
+        ${zone('in', all.filter(f => f.dir === 'in'))}
+        ${zone('both', all.filter(f => f.dir === 'both'))}
+        ${zone('out', all.filter(f => f.dir === 'out'))}
+      </div>`).join('\n      <div class="fmt-rowsep"></div>\n      ');
+  const zoneHead = `<div class="fmt-row fmt-row--head" aria-hidden="true">
+        <span class="fmt-cat"></span>
+        <div class="fmt-zone fmt-zone--in"><span class="fmt-zonelabel">Import only<b>${inOnly}</b></span></div>
+        <div class="fmt-zone fmt-zone--both"><span class="fmt-zonelabel"><span class="rt-mark">⇄</span> Both ways<b>${bothCount}</b></span></div>
+        <div class="fmt-zone fmt-zone--out"><span class="fmt-zonelabel">Export only<b>${outOnly}</b></span></div>
+      </div>`;
   const RT_INLINE_HTML = `<span class="rt-inline"><span class="rt-mark" aria-hidden="true">⇄</span>&nbsp;round-trip</span>`;
+  // Catalog data for the dialog: names, full names, feature labels and descriptions,
+  // serialised into the page so the click handler has everything without a fetch.
+  const catalogJson = JSON.stringify({
+    features: catalog.features,
+    specifics: catalog.specifics || {},
+    formats: Object.fromEntries(catalog.formats.map(f => [f.token, { name: f.name, full: f.full, category: f.category, dir: f.dir, features: f.features, desc: f.desc }])),
+  }).replace(/</g, '\\u003c');
   const FORMATS_HTML = `<section class="formats-section">
   <div class="formats-inner">
     <div class="formats-head reveal">
       <h2>${esc(formats.heading)}</h2>
       <p>${inline(formats.lead).replace('{roundtrip}', RT_INLINE_HTML)}</p>
+      <p class="formats-hint">${esc(`${inCount} in · ${outCount} out — tap any format to learn what it is and what Lolly supports.`)}</p>
     </div>
-    <div class="formats-cols">
-      <div class="formats-col reveal reveal-1">
-        <div class="formats-col-top"><span class="formats-dir">${esc(formats.ingestsLabel)}</span><span class="formats-num">${esc(formats.ingestsCount)}</span></div>
-        ${formats.ingests.map((g: { category: string; list: string }) => fmtGroup(g.category, g.list)).join('\n        ')}
-      </div>
-      <div class="formats-col reveal reveal-2">
-        <div class="formats-col-top"><span class="formats-dir">${esc(formats.exportsLabel)}</span><span class="formats-num">${esc(formats.exportsCount)}</span></div>
-        ${formats.exports.map((g: { category: string; list: string }) => fmtGroup(g.category, g.list)).join('\n        ')}
+    <div class="fmt-scroll reveal reveal-1">
+      <div class="fmt-table">
+      ${zoneHead}
+      <div class="fmt-divider"></div>
+      ${catRows}
       </div>
     </div>
   </div>
+  <dialog class="fmt-dialog" id="fmt-dialog" aria-labelledby="fmt-dlg-name">
+    <form method="dialog" class="fmt-dialog-inner">
+      <button class="fmt-dialog-x" value="close" aria-label="Close">✕</button>
+      <span class="fmt-dialog-dir" id="fmt-dlg-dir"></span>
+      <h3 id="fmt-dlg-name"></h3>
+      <p class="fmt-dialog-full" id="fmt-dlg-full"></p>
+      <p class="fmt-dialog-desc" id="fmt-dlg-desc"></p>
+      <ul class="fmt-dialog-specs" id="fmt-dlg-specs"></ul>
+      <ul class="fmt-dialog-feats" id="fmt-dlg-feats"></ul>
+    </form>
+  </dialog>
+  <script type="application/json" id="fmt-catalog-data">${catalogJson}</script>
 </section>`;
 
   // ── "Why we built Lolly" + old-way vs Lolly-way matrix ──────────────────────
@@ -2273,28 +2326,79 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .platform-feature strong{font-size:.9375rem;font-weight:700;line-height:1.3}
 .platform-feature p{color:rgba(255,255,255,.45);font-size:.85rem;margin:0;line-height:1.6}
 .platform-feature:last-child:nth-child(odd){grid-column:1 / -1}
-.format-chips{display:flex;flex-wrap:wrap;gap:.375rem;margin-top:.125rem}
-.format-chip{display:inline-flex;align-items:center;background:rgba(48,186,120,.12);color:var(--green);font-size:.72rem;font-family:'SUSE Mono','SF Mono',monospace;font-weight:600;padding:.2em .55em;border-radius:1em;letter-spacing:.04em;border:0}
-/* Round-trip formats (read AND written): filled so the in/out overlap reads as intentional. */
-.format-chip--rt{background:var(--green);color:#fff}
 .rt-mark{font-family:'SUSE',sans-serif;font-weight:700;letter-spacing:0;margin-right:.32em;line-height:1}
 .rt-inline{color:var(--green);font-weight:600;white-space:nowrap}
 .rt-inline .rt-mark{margin-right:.1em}
-/* Dedicated Formats section - categorised in/out chips */
+/* Formats — ONE three-zone table: import-only (left) · round-trip (centre) · export-only (right) */
 .formats-section{background:#fff;padding:5.5rem 2rem;border-top:1px solid var(--border)}
-.formats-inner{max-width:1080px;margin:0 auto}
-.formats-head{margin-bottom:2.75rem}
+html.dark .formats-section{background:#0b1712;border-top-color:#12291d}
+.formats-inner{max-width:1340px;margin:0 auto}
+.formats-head{margin-bottom:2rem}
 .formats-head h2{color:var(--dark);font-size:2rem;margin:0 0 .6rem}
-.formats-head p{color:var(--muted);font-size:1.05rem;line-height:1.65;margin:0;max-width:42rem}
-.formats-cols{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
-.formats-col-top{display:flex;align-items:baseline;gap:.7rem;padding-bottom:.85rem;margin-bottom:1.5rem;border-bottom:2px solid var(--border)}
-.formats-dir{font-size:1.1rem;font-weight:800;color:var(--dark)}
-.formats-num{font-size:.72rem;font-weight:700;color:var(--green);background:rgba(48,186,120,.12);padding:.2em .65em;border-radius:1em;font-family:'SUSE Mono','SF Mono',monospace;letter-spacing:.02em}
-.formats-group{display:flex;gap:1rem;align-items:baseline;margin-bottom:1.1rem}
-.formats-group:last-child{margin-bottom:0}
-.formats-cat{flex:0 0 5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding-top:.25rem}
-.formats-group .format-chips{flex:1;min-width:0}
-@media(max-width:768px){.formats-cols{grid-template-columns:1fr;gap:2.25rem}.formats-group{flex-direction:column;gap:.45rem}.formats-cat{flex:none}.formats-section{padding:4rem 1.25rem}}
+html.dark .formats-head h2{color:#eafff4}
+.formats-head p{color:var(--muted);font-size:1.05rem;line-height:1.65;margin:0;max-width:44rem}
+.formats-hint{font-size:.9rem;margin-top:.7rem !important;color:var(--green) !important;font-weight:600}
+.fmt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+/* Grid with a FIXED centre and flexible sides: 'both' is an auto track (never wraps,
+   sits at the true row centre); import / export are 1fr and wrap only when full. Given
+   the wide .formats-inner below, that keeps most rows on one line while guaranteeing the
+   round-trip set is never broken across lines. Hard start / centre / end aligned. */
+.fmt-table{display:grid;grid-template-columns:[cat]minmax(3.5rem,auto)[in]1fr[both]auto[out]1fr;align-items:center;column-gap:1.25rem;row-gap:.55rem;min-width:660px;padding-bottom:.5rem}
+.fmt-row{display:contents}
+.fmt-cat{grid-column:cat;display:flex;flex-direction:column;align-items:flex-start;gap:.35rem}
+.fmt-cat svg{width:27px;height:27px;color:var(--green);opacity:.9}
+.fmt-cat-label{font-size:.64rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);white-space:nowrap}
+.fmt-zone{display:flex;flex-wrap:wrap;gap:.4rem;align-content:center;min-width:0}
+.fmt-zone--in{grid-column:in;justify-content:flex-start}
+.fmt-zone--both{grid-column:both;justify-content:center}
+.fmt-zone--out{grid-column:out;justify-content:flex-end}
+.fmt-zonelabel{font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);display:inline-flex;align-items:center;gap:.45em;white-space:nowrap}
+.fmt-zonelabel .rt-mark{margin:0;color:var(--green)}
+.fmt-zonelabel b{color:var(--green);background:rgba(48,186,120,.12);padding:.15em .5em;border-radius:1em;font-family:'SUSE Mono','SF Mono',monospace;font-size:.92em;font-weight:700}
+.fmt-divider{grid-column:1/-1;height:0;border-bottom:2px solid var(--border);margin:.15rem 0 .35rem}
+.fmt-rowsep{grid-column:1/-1;height:0;border-top:1px solid var(--border);margin:.15rem 0}
+.fmt-chip{display:inline-flex;align-items:center;background:rgba(48,186,120,.1);color:#127a45;font-size:.74rem;font-family:'SUSE Mono','SF Mono',monospace;font-weight:700;padding:.3em .64em;border-radius:1em;letter-spacing:.03em;border:1px solid transparent;cursor:pointer;transition:transform .1s,box-shadow .12s,background .12s,color .12s;white-space:nowrap;-webkit-appearance:none;appearance:none}
+.fmt-chip:hover{transform:translateY(-1px);box-shadow:0 3px 10px rgba(12,50,44,.16)}
+.fmt-chip:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.fmt-chip--both{background:var(--green);color:#fff}
+.fmt-chip .rt-mark{margin-right:.3em}
+html.dark .fmt-chip{background:rgba(48,186,120,.16);color:#7fe7b4}
+html.dark .fmt-chip--both{background:var(--green);color:#04140c}
+/* Educational dialog */
+.fmt-dialog{border:0;border-radius:18px;padding:0;width:min(94vw,38rem);max-height:88vh;overflow:auto;margin:auto;color:var(--dark);background:#fff;box-shadow:0 30px 80px rgba(12,50,44,.34)}
+.fmt-dialog::backdrop{background:rgba(8,20,15,.5);backdrop-filter:blur(3px)}
+html.dark .fmt-dialog{background:#122a1e;color:#eafff4}
+.fmt-dialog-inner{padding:1.75rem 1.75rem 1.6rem;position:relative}
+.fmt-dialog-x{position:absolute;top:.7rem;right:.7rem;border:0;background:var(--pale);width:1.9rem;height:1.9rem;border-radius:50%;cursor:pointer;color:var(--muted);font-size:.82rem;line-height:1}
+.fmt-dialog-x:hover{background:var(--border)}
+.fmt-dialog-dir{display:inline-block;font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--green);background:rgba(48,186,120,.14);padding:.3em .7em;border-radius:1em;margin-bottom:.7rem}
+.fmt-dialog h3{margin:0;color:inherit;font-size:1.55rem;line-height:1.1}
+.fmt-dialog-full{margin:.15rem 0 0;color:var(--muted);font-size:.9rem;font-weight:600}
+.fmt-dialog-desc{margin:.9rem 0 0;color:inherit;font-size:.95rem;line-height:1.65;opacity:.92}
+.fmt-dialog-specs{list-style:none;margin:1.1rem 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.45rem .9rem}
+.fmt-dialog-specs:empty{margin:0}
+.fmt-dialog-specs li{font-size:.82rem;line-height:1.3;color:inherit;display:flex;align-items:flex-start;gap:.45em;opacity:.95}
+.fmt-dialog-specs li::before{content:'✓';color:var(--green);font-weight:800;flex:none;margin-top:.02em}
+@media(max-width:520px){.fmt-dialog-specs{grid-template-columns:1fr}}
+.fmt-dialog-feats{list-style:none;margin:1.15rem 0 0;padding:0;display:flex;flex-wrap:wrap;gap:.4rem}
+.fmt-dialog-feats:empty{margin:0}
+.fmt-dialog-feats li{font-size:.72rem;font-weight:700;color:inherit;background:var(--pale);border:1px solid var(--border);padding:.32em .68em;border-radius:1em;display:inline-flex;align-items:center;gap:.4em}
+.fmt-dialog-feats li::before{content:'';width:.5em;height:.5em;border-radius:50%;background:var(--green);flex:none}
+@media(max-width:760px){
+.formats-section{padding:4rem 1.25rem}
+.fmt-table{min-width:0;display:block}
+.fmt-row{display:block;padding:.6rem 0;border-bottom:1px solid var(--border)}
+.fmt-row--head{display:none}
+.fmt-divider,.fmt-rowsep{display:none}
+.fmt-cat{flex-direction:row;align-items:center;gap:.5rem;margin-bottom:.5rem}
+.fmt-cat svg{width:20px;height:20px}
+.fmt-zone{justify-content:flex-start!important;margin:.2rem 0}
+.fmt-zone:empty{display:none}
+.fmt-zone:not(:empty)::before{flex-basis:100%;font-size:.56rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:.15rem}
+.fmt-zone--in:not(:empty)::before{content:'Import only'}
+.fmt-zone--both:not(:empty)::before{content:'⇄ Both ways'}
+.fmt-zone--out:not(:empty)::before{content:'Export only'}
+}
 
 /* QoL pair - sound + bulk, side by side */
 .qol-section{background:var(--pale);padding:5.5rem 2rem}
@@ -3269,6 +3373,31 @@ const THEME_INIT_SCRIPT = `<script>(function(){var c=localStorage.getItem('theme
 // absent, and the shots are plain visible images.
 const SHOT_MOTION_INIT = `<script>document.documentElement.classList.add('shots-motion');</script>`;
 
+// The formats table's educational dialog: click a chip → open a <dialog> naming the
+// format in full, describing it, and listing the properties Lolly supports. The whole
+// catalog is embedded as JSON so there's no fetch; text goes in via textContent (safe).
+const FORMATS_DIALOG_SCRIPT = `<script>(function(){
+  var el=document.getElementById('fmt-catalog-data'),dlg=document.getElementById('fmt-dialog');
+  if(!el||!dlg)return;var data;try{data=JSON.parse(el.textContent);}catch(e){return;}
+  var DIR={in:'Reads · import only',out:'Writes · export only',both:'Reads & writes · round-trip'};
+  var q=function(id){return dlg.querySelector(id);};
+  function open(tok){var f=data.formats[tok];if(!f)return;
+    q('#fmt-dlg-dir').textContent=DIR[f.dir]||'';
+    q('#fmt-dlg-name').textContent=f.name;
+    q('#fmt-dlg-full').textContent=f.full+' · '+f.category;
+    q('#fmt-dlg-desc').textContent=f.desc;
+    var us=q('#fmt-dlg-specs');us.textContent='';
+    ((data.specifics&&data.specifics[tok])||[]).forEach(function(s){var li=document.createElement('li');li.textContent=s;us.appendChild(li);});
+    var ul=q('#fmt-dlg-feats');ul.textContent='';
+    (f.features||[]).forEach(function(k){var li=document.createElement('li');li.textContent=(data.features&&data.features[k])||k;ul.appendChild(li);});
+    if(typeof dlg.showModal==='function')dlg.showModal();else dlg.setAttribute('open','');
+  }
+  document.addEventListener('click',function(e){
+    var chip=e.target.closest&&e.target.closest('.fmt-chip');
+    if(chip){e.preventDefault();open(chip.getAttribute('data-fmt'));return;}
+    if(e.target===dlg)dlg.close();
+  });
+})();</script>`;
 const THEME_INTERACT_SCRIPT = `<script>(function(){var btn=document.querySelector('.nav-theme-toggle');if(!btn)return;btn.addEventListener('click',function(){var d=document.documentElement.classList.toggle('dark');localStorage.setItem('theme',d?'dark':'light');});window.matchMedia('(prefers-color-scheme:dark)').addEventListener('change',function(e){if(!localStorage.getItem('theme'))document.documentElement.classList.toggle('dark',e.matches);});})();</script>`;
 
 const HAM_BTN = `<button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation" aria-expanded="false"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>`;
@@ -4516,6 +4645,7 @@ ${SHOT_CRED_SCRIPT}
 ${isLanding ? '' : SHOWCASE_SCRIPT}
 ${isLanding ? HERO_CANVAS_SCRIPT : ''}
 ${isLanding ? LIQUID_GLASS_SCRIPT : ''}
+${isLanding ? FORMATS_DIALOG_SCRIPT : ''}
 ${audio ? LISTEN_SCRIPT : ''}
 </body>
 </html>`;

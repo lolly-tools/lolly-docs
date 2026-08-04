@@ -53,18 +53,21 @@ const VIZ_KEY = 'lolly-docs-viz-preset';
  *  §2: levels ride the hand-off; buffers re-bake on the next page). */
 const ATMO_KEY = 'lolly-docs-atmo';
 
-const SPEEDS = [1, 1.25, 1.5, 2, 2.5];
-/** Default 1.25× (Andy, 2026-08-04, revised down from 1.5× the same day): the
- *  narration is synthesized at a slow, careful 0.8 pace, so the base render is
- *  already gentle and needs a nudge rather than a shove. 1.25× is the default a
- *  first-time listener meets; the range still reaches 2.5× for fast listeners and
- *  drops to 1× for a slower pace. A first-time listener should not have to reach
- *  for the control at all, which is the whole argument for moving the default —
- *  1.5× is a preference, not a starting point. Pitch is preserved at every rate
- *  (this.audio.preservesPitch, set on init), so a different pace stays smooth —
- *  never a downgrade in quality, just a change of speed. */
-const SPEED_DEFAULT_IDX = 1;
-const SPEED_KEY = 'lolly-docs-speed';
+const SPEEDS = [0.5, 0.75, 1, 1.25];
+/** Default 1.25× (Andy, 2026-08-04): the narration is synthesized at a slow,
+ *  careful 0.8 pace, so the base render is already gentle — 1.25× is the pace a
+ *  first-time listener should meet without ever reaching for the control, which
+ *  is why it is both the default AND the top of the range. The range runs the
+ *  other way from most players — down to 0.5×, not up to 2× — because this is
+ *  narration to learn from: the reason to touch the control is almost always
+ *  "slower, let me follow", not "faster, get on with it". Pitch is preserved at
+ *  every rate (this.audio.preservesPitch, set on init), so a slower pace stays
+ *  smooth — never a downgrade in quality, just a change of speed. */
+const SPEED_DEFAULT_IDX = SPEEDS.length - 1; // 1.25×, the top stop
+/* v2: the 2026-08-04 range change (was [1,1.25,1.5,2,2.5]) remapped what each
+ *  stored index means, so bump the key — a returning listener's old pick would
+ *  otherwise point at a different speed. Everyone re-meets the 1.25× default. */
+const SPEED_KEY = 'lolly-docs-speed-v2';
 /** Preset switch cross-fade — the app's BLEND_SECONDS (lib/butterchurn-viz.ts). */
 const PRESET_BLEND_S = 2.2;
 /** Default level for the ambience master and a freshly toggled layer — the
