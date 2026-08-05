@@ -12,7 +12,7 @@ Everything Lolly verifies, it verifies **locally, offline, without uploading the
 
 Here is a real check, start to finish. This is the [generated Queensland storm](/info/ai-stance.html) from our AI stance. It is a Gemini image Lolly opened, resized and exported to WebP. Drop it on `/verify` and the whole story comes back: a green **Made with Lolly** verdict, the two key validations (credential intact, bytes unchanged), the provenance scorecard, and an honest **GEN AI** flag because a machine made the pixels. None of it left your device to get there.
 
-![The full Verify verdict for the generated storm image — the image itself, a green Made with Lolly pill, the intact-credential and unchanged-bytes badges, and the provenance scorecard](/t/url-shot?url=%2F%23%2Fverify%3Fsrc%3D%2Finfo%2Fthe-flood.webp&width=1240&height=940&dpi=192&waitMs=6000&waitSelector=.valid-steps&format=jpg&cropSelector=.valid-top&dark=1&filename=cc-verify-masthead&sweep=1)
+![The full Verify verdict for the generated storm image — the image itself, a green Made with Lolly pill, the intact-credential and unchanged-bytes badges, and the provenance scorecard](/t/url-shot?url=%2F%23%2Fverify%3Fsrc%3D%2Finfo%2Fthe-flood.webp&width=1240&height=940&dpi=192&waitMs=6000&waitSelector=.valid-steps&walker=1&format=svg&rasterDpi=96&cropSelector=.valid-top&dark=1&filename=cc-verify-masthead&sweep=1)
 
 AI declares itself in the same verdict, as a badge nobody has to go looking for. The file was generated, and its credential says so. Lolly reads that assertion back out and surfaces it plainly, alongside the note that a Google model very likely stamped an invisible SynthID watermark into the pixels too.
 

@@ -1,6 +1,6 @@
 # क्विकस्टार्ट
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1&sweep=1)
 
 Lolly आपके नियमों — रंगों, टाइपोग्राफ़ी, लेआउट, लॉजिक — को ऐसे टूल में बदल देता है जिनका उपयोग करके कोई भी बस कुछ फ़ील्ड भरकर तैयार फ़ाइलें बना सकता है: इमेज, PDF, सोशल कार्ड, वीडियो। यहाँ न कुछ सीखना है और न कुछ अपलोड करना: सब कुछ आपके डिवाइस पर चलता है, ऑनलाइन हों या ऑफ़लाइन।
 
@@ -68,7 +68,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 [कम्युनिटी टूल सेट](/info/builders.html) ओपन सोर्स और ब्रांड-निरपेक्ष है — QR कोड, स्ट्रीट मैप, फ़िल्टर, प्राइवेसी यूटिलिटी — और जिस पल आप इसे सक्रिय करते हैं, यह *आपके* ब्रांड के आधार पर रेंडर होने लगता है।
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1&sweep=1)
 
 टूल्स को अपना ओपन डेटा भी दें: कोई **CSV** या **JSON** टेबल पेस्ट करें या ड्रॉप करें और टूल के दोहराए जाने वाले फ़ील्ड उससे भर जाते हैं — हर पंक्ति के लिए एक तैयार एसेट।
 

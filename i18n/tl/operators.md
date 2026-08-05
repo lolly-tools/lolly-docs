@@ -72,7 +72,7 @@ Bawat tool input ay maipapahayag bilang isang URL parameter, at ang parehong mga
 
 ## Provenance at Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
 Ang mga export ay maaaring magdala ng **Content Credentials** - isang naka-sign na [C2PA](https://c2pa.org) manifest na nakatali sa hash ng bytes ng file. Sisira sa seal ang anumang susunod na pagbabago sa file, kaya **nade-detect ng isang C2PA-aware verifier ang pag-alter nang cryptographically, offline**. Ang credential ay tamper-*evident*: ini-flag nito ang pakikialam sa halip na pigilan ito, na siya mismong nagpapaposible sa ganap na offline na verification.
 

@@ -5052,7 +5052,17 @@ function writeInfoManifest(): void {
 // (including incremental --watch rebuilds). `ogSlugs` names the slugs that got their
 // own card; the rest fall back to og.png. Best-effort - a missing render browser
 // (or any rasterise error) just yields an empty set, leaving every page on og.png.
-const ogGenerated = await generateOgImages(pages, outDir, repoRoot, (m) => console.log(m));
+// Caption each /info card with the SAME description its <meta> tag uses — explicit
+// where set, otherwise the page's first body sentence — so every docs card carries its
+// own copy instead of one shared tagline. The md is read once here (cheap, English only;
+// the cards are language-neutral). A page whose source can't be read keeps whatever
+// explicit description it had, and generateOgImages falls back to the site tagline.
+const ogPages = pages.map((p) => {
+  if (p.description || p.isLanding) return p;
+  try { return { ...p, description: mdDescription(readFileSync(resolve(__dirname, p.src), 'utf-8')) || undefined }; }
+  catch { return p; }
+});
+const ogGenerated = await generateOgImages(ogPages, outDir, repoRoot, (m) => console.log(m));
 const ogExpected = pages.filter((p) => !p.isLanding && p.slug && p.title).length;
 if (ogExpected > 0 && ogGenerated.size < ogExpected) {
   const onDisk = pages.filter(

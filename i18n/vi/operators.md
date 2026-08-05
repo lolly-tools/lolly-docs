@@ -72,7 +72,7 @@ Mọi đầu vào của công cụ đều có thể biểu diễn dưới dạng
 
 ## Nguồn gốc dữ liệu & Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
 Các bản xuất có thể mang **Content Credentials** - một manifest [C2PA](https://c2pa.org) đã được ký, gắn với một hash của các byte trong tệp. Bất kỳ thay đổi nào về sau đối với tệp đều phá vỡ con dấu, nên một trình xác minh hiểu C2PA sẽ **phát hiện sự thay đổi bằng mật mã học, khi ngoại tuyến**. Thông tin xác thực này *có thể phát hiện* giả mạo: nó báo hiệu việc giả mạo chứ không ngăn chặn nó, và đó chính xác là điều khiến việc xác minh hoàn toàn ngoại tuyến trở nên khả thi.
 

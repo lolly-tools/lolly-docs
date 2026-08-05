@@ -73,7 +73,7 @@ Cada entrada de una herramienta puede expresarse como un parámetro de URL, y la
 
 ## Procedencia y Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
 Las exportaciones pueden llevar **Content Credentials** - un manifiesto [C2PA](https://c2pa.org) firmado y vinculado a un hash de los bytes del archivo. Cualquier cambio posterior en el archivo rompe el sello, así que un verificador compatible con C2PA **detecta la alteración de forma criptográfica y sin conexión**. La credencial deja *evidencia* de manipulación: señala la manipulación en lugar de impedirla, que es precisamente lo que hace posible la verificación totalmente sin conexión.
 

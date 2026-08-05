@@ -70,7 +70,7 @@ Prompt to Image নির্ধারকতার সবচেয়ে সর�
 
 ## প্রোভেন্যান্স ও Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
 এক্সপোর্টগুলো **Content Credentials** বহন করতে পারে - একটি স্বাক্ষরিত [C2PA](https://c2pa.org) ম্যানিফেস্ট যা ফাইলের বাইটের একটি হ্যাশের সাথে আবদ্ধ। ফাইলে পরবর্তী যেকোনো পরিবর্তন সিলটি ভেঙে দেয়, তাই একটি C2PA-সচেতন যাচাইকারী **পরিবর্তন ক্রিপ্টোগ্রাফিকভাবে, অফলাইনে শনাক্ত করে**। ক্রেডেনশিয়ালটি টেম্পার-*এভিডেন্ট*: এটি টেম্পারিং প্রতিরোধ না করে বরং তা চিহ্নিত করে, যা ঠিক এই কারণেই সম্পূর্ণ অফলাইন যাচাই সম্ভব করে তোলে।
 

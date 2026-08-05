@@ -73,7 +73,7 @@ Jede Tool-Eingabe lässt sich als URL-Parameter ausdrücken, und dieselben Einga
 
 ## Herkunft & Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
 Exporte können **Content Credentials** tragen - ein signiertes [C2PA](https://c2pa.org)-Manifest, das an einen Hash der Datei-Bytes gebunden ist. Jede spätere Änderung an der Datei bricht das Siegel, sodass ein C2PA-fähiges Prüfprogramm **Veränderungen kryptografisch und offline erkennt**. Das Credential ist manipulations*sichtbar*: Es meldet Manipulationen, statt sie zu verhindern - und genau das macht eine vollständig offline durchführbare Prüfung möglich.
 

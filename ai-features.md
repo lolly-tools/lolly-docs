@@ -4,6 +4,8 @@ Lolly uses AI in a few specific places: it can speak a script aloud, enlarge a s
 
 That split is what makes a generated element safe to build on. The moment a voice clip or an enlarged photo exists, it stops being a model's shifting output and becomes a fixed artifact - a specific set of bytes. From then on every tool that uses it works from those same bytes, so the same input produces the same asset in the browser, in the terminal and on the desktop, today and next year. The unpredictable step is contained. It does not leak into the render.
 
+![A generated storm image opened in Verify, its GEN AI badge beside the green Made with Lolly verdict and the credential-intact and bytes-unchanged checks](/t/url-shot?url=%2F%23%2Fverify%3Fsrc%3D%2Finfo%2Fthe-flood.webp&width=560&height=1400&dpi=192&waitMs=6000&waitSelector=.valid-steps&walker=1&format=svg&rasterDpi=96&cropSelector=.valid-top&dark=1&filename=aif-verify-genai&sweep=1)
+
 ## Two steps, and only one of them guesses
 
 **Generation is the probabilistic step.** Asking a model to invent a voice or infer detail that was never in the pixels is, by nature, a guess. Lolly boxes that guess in: it runs on your own device with no upload, it happens as one explicit, cancellable action rather than inside a render loop, and its output is disclosed for what it is. Then it is over. The result is saved as an ordinary asset - a clip, an image - and the model is not consulted again.
@@ -12,12 +14,16 @@ That split is what makes a generated element safe to build on. The moment a voic
 
 This is why a generated ingredient is not a moving target. Re-open a project next year, render it in CI, paste the link to a colleague on another platform - the speech, the upscaled photo, the cutout all compose exactly the same way, because none of them is re-generated. It is also what provenance rests on. A Content Credential that attests to *these bytes* is only meaningful when those bytes are stable, and here they are stable by construction.
 
+![A spoken clip turned into an audiogram, its waveform the actual shape of the audio - the kind of card a synthesised voice lands in before it chains into a video's credentials](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DA%2520read%2520aloud%26subtitle%3DSynthesised%2520on%2520device%26style%3Dwave&width=1440&height=900&dpi=192&waitMs=3600&walker=1&format=svg&rasterDpi=110&cropSelector=%23tool-canvas&dark=1&filename=aif-audiogram)
+
 ## The features, and how each is marked
 
 - <!--i:neurobeat--> **Text to speech.** A tool's own script becomes a spoken clip on the device, offline, with no upload - a test pins that boundary (no remote models, same-origin runtime). The clip is generated once and saved as an AI-generated asset, so the [GEN AI badge](/info/content-credentials-identity.html) surfaces wherever it appears; drop it into a video or an audiogram and that AI origin chains into the export's Content Credentials as an ingredient, so the composition declares it contains AI-generated audio. A visible line says so too, not only the manifest. We mark it even though today's synthetic voices are audibly robotic, because that tell is a property of this year's model, not a safeguard - the practice has to be in place before the tell disappears, and machine-readable disclosure of synthetic audio is what transparency rules like the EU AI Act ask for anyway. A voice is a style, not a person: it is credited as a model synthesised on device, never as a performer.
 - <!--i:sparkle--> **An AI-enhanced image, from anywhere.** Whether Lolly enlarged it or you generated it in Gemini, Claude or OpenAI and brought it in, the moment the file enters Lolly its declared AI origin is read from its own credential and copied onto Lolly's manifest. Stripping the original's credential afterwards does not remove the flag, because it was carried forward at the instant of ingest. And from that instant it is a fixed asset, rendered identically by every tool.
 - <!--i:cpu--> **Upscaling.** Enlarging a small raster invents high-frequency detail the original never held - it *adds* pixels. So an upscaled copy is disclosed as generative: a C2PA edit typed as `compositeWithTrainedAlgorithmicMedia` (a real photo with model-inferred pixels, never claimed as fully generated), flagged AI-generated, and shown with the GEN AI badge on [Verify](/#/verify). It runs on-device, the weights download once, and the image is never uploaded. The intent picker ("what are you upscaling?") routes to the right engine - and the pixel-art option is telling: it scales by nearest-neighbour, an algorithm rather than a model, so it copies existing pixels and is marked as a plain edit, *not* as AI. What earns the label is the operation, not the dialog it lives in.
 - <!--i:seal--> **Background removal.** This is the counterpart, and the reason it shares a page with upscaling. Removing a background computes an alpha mask and keeps every original RGB pixel byte-for-byte; it *removes* data and adds none. So it does not get a GEN AI badge. It is disclosed honestly as an edit - a credential that names the operation (`Background removed with <model> <version>`) and keeps the original as an ingredient - but never as a generated composite, because nothing was generated. Where other removers strip your metadata, colour profile and credential to hand back a bare cutout, here all three survive the cut.
+
+![The Catalogue, where an image generated in Gemini, Claude or OpenAI and brought in sits beside the brand's own assets, each tile a permanent id every tool can call](/t/url-shot?url=%2F%23%2Fc&width=1440&height=1080&dpi=96&waitMs=2600&walker=1&format=svg&dark=1&filename=aif-catalogue&sweep=1)
 
 ## Add, or remove?
 
@@ -28,6 +34,8 @@ The line between "marked AI" and "an honest edit" is not a judgement call, it is
 - <!--i:hash--> **Pixel-art scaling only copies** existing pixels to a larger grid. Also an edit.
 
 Keeping the test this strict is what keeps the badge worth reading. It means "a model made up part of what you are looking at," not "a model was involved somewhere nearby." A badge that fired on every AI-adjacent operation - including ones that add nothing - would tell a viewer nothing, and over-claiming provenance is as dishonest as hiding it.
+
+![The export panel's Content Credentials card, pre-ticked, so an AI-origin ingredient rides into whatever file the render becomes rather than being left behind](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26options%26c2pa%3D90%26imprint%3D1&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-inputs%2C%23sidebar-utils%7Bdisplay%3Anone%7D&cropSelector=.export-c2pa&dark=1&filename=aif-export-cc)
 
 ## How to hold us to it
 

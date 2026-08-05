@@ -70,7 +70,7 @@ Prompt to Image 是确定性最朴素的样子：文字就是全部的输入，�
 
 ## 溯源与 Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
 导出的文件可以携带 **Content Credentials**——一份签过名的 [C2PA](https://c2pa.org) 清单，与文件字节的哈希值绑定。之后对文件的任何改动都会破坏这枚封印，因此支持 C2PA 的验证工具能够**在离线状态下、以密码学手段检出篡改**。这份凭证是可*察觉*篡改的：它标示出篡改，而不是阻止篡改——而这恰恰正是完全离线验证得以实现的原因。
 

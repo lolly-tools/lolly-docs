@@ -70,7 +70,7 @@ Prompt to Image は、決定性を最も素朴な形で示します。テキス�
 
 ## 来歴とContent Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
 書き出したファイルには**Content Credentials**を付与できます——これはファイルのバイト列のハッシュに紐づいた、署名済みの[C2PA](https://c2pa.org)マニフェストです。ファイルにあとから加えられた変更はすべて封印を破るため、C2PA対応の検証ツールは**改ざんを暗号学的に、オフラインで検知します**。このクレデンシャルは改ざん*検知*可能です。改ざんを防ぐのではなく、その痕跡を示すものであり、まさにこの性質こそが完全にオフラインでの検証を可能にしています。
 

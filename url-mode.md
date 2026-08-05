@@ -116,7 +116,7 @@ Pass the asset's library ID - the runtime resolves it to the full asset object a
 
 To discover asset IDs, open the asset picker in the tool UI and inspect the value shown when an asset is selected. An audio ID works the same way as an image: Audiogram decodes whichever track the link names and draws its real waveform.
 
-![An audiogram card whose waveform is the actual shape of the catalogue track named in the link, with the title and the wide 16:9 size set alongside it](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Frain-on-the-boulevard%26title%3DRain%2520on%2520the%2520Boulevard%26subtitle%3DStraight%2520from%2520the%2520catalogue%26style%3Dwave%26size%3Dwide&width=1440&height=900&dpi=192&waitMs=4200&format=png&cropSelector=%23tool-canvas&dark=1&filename=um-asset-audiogram)
+![An audiogram card whose waveform is the actual shape of the catalogue track named in the link, with the title and the wide 16:9 size set alongside it](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Frain-on-the-boulevard%26title%3DRain%2520on%2520the%2520Boulevard%26subtitle%3DStraight%2520from%2520the%2520catalogue%26style%3Dwave%26size%3Dwide&width=1440&height=900&dpi=192&waitMs=4200&walker=1&format=svg&rasterDpi=110&cropSelector=%23tool-canvas&dark=1&filename=um-asset-audiogram)
 
 **An asset value can also be another tool's render.** When a user pastes a Lolly tool link into the asset picker (a share link or an embed URL), the chosen value's "id" is the **canonical embed URL** of that render, so it round-trips through the URL exactly like a library id - just longer:
 

@@ -73,7 +73,7 @@ Prompt to Image 是確定性最樸素的樣子：文字就是全部的輸入，�
 
 ## 來源追溯與 Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
 匯出的檔案可以附帶 **Content Credentials**——這是一份已簽署的 [C2PA](https://c2pa.org) 資訊清單（manifest），與檔案位元組的雜湊值（hash）綁定在一起。之後對檔案的任何更動都會破壞這個封印，因此支援 C2PA 的驗證工具能**在離線狀態下，以加密方式偵測出竄改**。這份憑證是*可偵測竄改（tamper-evident）*的：它會標示出竄改，而非阻止竄改——這正是讓完全離線驗證得以成立的關鍵。
 

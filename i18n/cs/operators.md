@@ -70,7 +70,7 @@ Prompt to Image je determinismus v té nejprostší podobě: text je celý vstup
 
 ## Ověřování původu a Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
 Exporty mohou nést **Content Credentials** - podepsaný manifest [C2PA](https://c2pa.org) svázaný s hashem bajtů souboru. Jakákoli pozdější změna souboru poruší pečeť, takže ověřovatel podporující C2PA **odhalí úpravu kryptograficky, offline**. Pověření je tamper-*evident* (prokazatelně narušitelné): manipulaci spíš označí, než aby jí zabránilo, což je přesně to, co umožňuje plně offline ověření.
 

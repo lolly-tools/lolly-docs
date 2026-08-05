@@ -70,7 +70,7 @@ Prompt to Image هي الحتمية في أبسط صورها: النص هو كل
 
 ## المنشأ وContent Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
 يمكن أن تحمل التصديرات **Content Credentials** - بيان [C2PA](https://c2pa.org) موقّع ومربوط بتجزئة بايتات الملف. أي تغيير لاحق على الملف يكسر الختم، لذا **يكشف المتحقق الواعي بـC2PA العبث تشفيريا ودون اتصال بالشبكة**. الاعتماد *يكشف* العبث ولا يمنعه: فهو يُبلّغ عن التلاعب بدلا من منعه، وهذا بالتحديد ما يجعل التحقق الكامل دون اتصال بالشبكة ممكنا.
 

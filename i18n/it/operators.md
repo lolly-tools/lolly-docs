@@ -70,7 +70,7 @@ Ogni input di uno strumento è esprimibile come parametro URL, e gli stessi inpu
 
 ## Provenienza e Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
 Le esportazioni possono portare **Content Credentials** - un manifest [C2PA](https://c2pa.org) firmato e vincolato a un hash dei byte del file. Qualsiasi modifica successiva al file rompe il sigillo, quindi un verificatore compatibile con C2PA **rileva l'alterazione in modo crittografico, offline**. La credenziale è a prova di manomissione in senso *rilevabile*: segnala la manomissione invece di impedirla, ed è esattamente questo che rende possibile una verifica interamente offline.
 

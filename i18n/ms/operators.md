@@ -72,7 +72,7 @@ Setiap input alat boleh dinyatakan sebagai parameter URL, dan input yang sama me
 
 ## Asal-usul & Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
 Eksport boleh membawa **Content Credentials** - manifes [C2PA](https://c2pa.org) yang ditandatangani, terikat kepada cincangan (hash) bait fail tersebut. Sebarang perubahan kemudian pada fail itu akan memecahkan meterai tersebut, jadi pengesah yang mesra-C2PA **mengesan pengubahan secara kriptografi, luar talian**. Kelayakan itu bersifat boleh-*dikesan*-gangguan (tamper-evident): ia menandakan gangguan dan bukannya menghalangnya, dan itulah justru yang membolehkan pengesahan luar talian sepenuhnya.
 

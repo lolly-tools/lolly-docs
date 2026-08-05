@@ -7,11 +7,11 @@
 // app paints, can't drift (resvg mis-rendered some brand illustrations / panicked on
 // others), and a missing browser degrades to the committed / static og.png:
 //
-//   • createOgRenderer  — the /info pages. Reproduces the standard Lolly OG image
-//     (pine field, 3D lollipop, "Lolly" wordmark) and swaps the subtitle for the
-//     page title. So /info/authoring-tools.html previews as the brand card captioned
-//     "Authoring Tools". The original og.png is embedded as the background and only
-//     its subtitle band is repainted, so the lollipop + wordmark stay byte-faithful.
+//   • createLandingCardRenderer — the default share card, shells/web/public/og.png
+//     (scripts/build-og-base.ts). The Lolly lollipop beside the wordmark + tagline on
+//     the brand field. Generated from icon.avif (via the derived mark), so the default
+//     card can't drift from the app icon — it used to be a hand-made PNG carrying an
+//     older lollipop while everything else had moved on.
 //
 //   • createToolCardRenderer — per-tool share cards (scripts/build-tool-og.ts). The
 //     tool's icon, name and description light-on-dark on the brand's own field, under a
@@ -19,14 +19,17 @@
 //     preview of the tool's own output on the right. So a link to /t/qr-code previews as
 //     that tool's card.
 //
-//   • createViewCardRenderer — per-view share cards (scripts/build-view-og.ts). The same
-//     light-on-dark language for the app's own sections (Tools, Projects, Catalogue,
-//     Dashboard, …): an app-icon tile, the section title, and the lollipop cropped by
-//     the bottom-right corner.
+//   • createViewCardRenderer — per-view AND per-/info-page share cards
+//     (scripts/build-view-og.ts and docs/build.ts → generateOgImages). The same
+//     light-on-dark language for the app's own sections (Tools, Projects, Catalogue, …)
+//     and the docs pages (Authoring Tools, URL Mode, …): a rounded app-icon tile, the
+//     title (wrapping to two lines for long docs titles), a one-line description, a
+//     faint icon watermark, and the lollipop cropped by the bottom-right corner.
 //
-// Both card renderers take the `BrandChrome` from loadBrandChrome() — field, accent, ink
-// and marks resolved from the ACTIVE profile's catalog — so nothing below hardcodes one
-// brand's palette, and every mounted profile's cards come out in its own colours.
+// All three renderers take the `BrandChrome` from loadBrandChrome() — field, accent, ink
+// and marks resolved from the ACTIVE profile's catalog, with the Lolly mark derived from
+// icon.avif — so nothing below hardcodes one brand's palette, and every mounted profile's
+// cards come out in its own colours.
 //
 // Why generate rather than reuse one static og.png: social crawlers (Slack, X,
 // Facebook, LinkedIn, iMessage) cache one image per URL and only reliably render
@@ -44,7 +47,8 @@ import { stampBitmap } from '../scripts/lib/stamp-media.ts';
 type SvgToPng = (svg: string, opts: { width: number; height: number; background?: string }) => Promise<Buffer>;
 
 // A page from the build's page list; only `slug` + `title` (non-landing) get a card.
-interface OgPage { slug?: string; title?: string; isLanding?: boolean; }
+// `description` captions the card (falls back to the site tagline when absent).
+interface OgPage { slug?: string; title?: string; description?: string; isLanding?: boolean; }
 
 // The per-tool card inputs.
 interface ToolCard {
@@ -56,58 +60,8 @@ interface ToolCard {
 
 const OG_W = 1200, OG_H = 630;
 
-// Sampled from the original og.png so the repaint is seamless.
-const FIELD   = '#1c4a2e';   // the flat pine background
-const SUBTLE  = '#e4e9e6';   // the subtitle's soft off-white
-const MUTED   = '#a7bcb0';   // dimmer green-grey for the tool card's description / footer
-
-// The subtitle sits in a left-aligned column under the wordmark. The band below is
-// repainted with the field colour to clear the original two-line tagline; the new
-// title is drawn centred within it. Bounds measured from og.png's pixel content.
-const COL_X     = 606;                       // shared left edge of wordmark + subtitle
-const BAND      = { x: 598, y: 330, w: OG_W - 598, h: 162 };
-const TITLE_MAXW = OG_W - COL_X - 64;         // keep a right margin
-const TITLE_SIZE = 54;                        // matches the original tagline weighting
-const TITLE_MIN  = 34;                        // floor for very long titles
-
 const xmlEsc = (s: unknown): string => String(s)
   .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-
-// Rough text width (no shaping at build time) → shrink only when a long title would
-// overrun the right margin. SUSE Medium averages ~0.54em advance across mixed text.
-function fitTitle(title: string): number {
-  const est = title.length * 0.54 * TITLE_SIZE;
-  return est <= TITLE_MAXW ? TITLE_SIZE : Math.max(TITLE_MIN, Math.floor(TITLE_SIZE * TITLE_MAXW / est));
-}
-
-/**
- * Build a renderer bound to the repo's base card (og.png), reused for every page.
- * `rasterize` is injected so the card renders through the browser path (SUSE fonts are
- * supplied there); a missing browser degrades to "keep og.png" rather than crashing the
- * site build. Throws if the base card asset is missing.
- */
-function createOgRenderer(rasterize: SvgToPng, repoRoot: string) {
-  const ogBase = readFileSync(resolve(repoRoot, 'shells/web/public/og.png')).toString('base64');
-
-  const svgFor = (title: string): string => {
-    const size = fitTitle(title);
-    // Centre the single line in the repainted band (cap height ≈ 0.7em).
-    const baseline = Math.round(BAND.y + BAND.h / 2 + size * 0.35);
-    return `<svg xmlns="http://www.w3.org/2000/svg" width="${OG_W}" height="${OG_H}" viewBox="0 0 ${OG_W} ${OG_H}">`
-      + `<image x="0" y="0" width="${OG_W}" height="${OG_H}" href="data:image/png;base64,${ogBase}"/>`
-      + `<rect x="${BAND.x}" y="${BAND.y}" width="${BAND.w}" height="${BAND.h}" fill="${FIELD}"/>`
-      + `<text x="${COL_X}" y="${baseline}" font-family="SUSE" font-weight="500" font-size="${size}"`
-      + ` fill="${SUBTLE}">${xmlEsc(title)}</text>`
-      + `</svg>`;
-  };
-
-  return {
-    /** Render one page's card to PNG bytes (via the injected browser rasteriser). */
-    render(title: string): Promise<Buffer> {
-      return rasterize(svgFor(title), { width: OG_W, height: OG_H, background: FIELD });
-    },
-  };
-}
 
 // ── Brand chrome, resolved from the ACTIVE PROFILE ───────────────────────────
 //
@@ -150,9 +104,9 @@ export interface BrandChrome {
   mark: string | null;
 }
 
-// Fallbacks when a brand ships no readable tokens: the SUSE-sampled pine family
-// the /info card (FIELD/SUBTLE above) has always used, so a tokenless profile
-// still renders a card in the house style rather than failing.
+// Fallbacks when a brand ships no readable tokens: the SUSE-sampled pine family the
+// cards have always used, so a tokenless profile (lolly-start) still renders a card in
+// the house style rather than failing.
 const CHROME_FALLBACK = { field: '#0c322c', accent: '#30ba78', ink: '#ffffff' };
 
 /** Blend two #rrggbb colours in sRGB. Chrome only — never a palette value. */
@@ -229,6 +183,9 @@ function brandLogo(repoRoot: string, assets: IndexAsset[]): BrandLogo | null {
 export function loadBrandChrome(repoRoot: string): BrandChrome {
   const assets = (readAssetIndex(repoRoot)?.assets ?? []) as IndexAsset[];
   const { field, accent, ink } = brandColors(repoRoot, assets);
+  // The Lolly mark: repo-root icon.webp, which scripts/build-app-icons.ts DERIVES from
+  // the single source of truth icon.avif — so the card mark, the app icons and og.png
+  // are all the same lollipop and can't drift apart again.
   const markFile = resolve(repoRoot, 'icon.webp');
   return {
     field, accent, ink,
@@ -255,6 +212,47 @@ function lockup(chrome: BrandChrome, x: number, baseline: number, size = 54): st
 function brandMark(chrome: BrandChrome, x: number, y: number, w: number): string {
   if (!chrome.logo) return '';
   return `<image x="${x}" y="${y}" width="${w}" height="${w / chrome.logo.ratio}" href="${chrome.logo.href}"/>`;
+}
+
+// ── Landing / default share card (og.png) ───────────────────────────────────
+//
+// The one card that isn't about a specific tool, view or page: shells/web/public/og.png,
+// the default share image for the site and the fallback whenever a per-page card is
+// missing. The Lolly lollipop beside the wordmark + tagline on the brand field —
+// generated from icon.avif (chrome.mark), so it can never fall behind the app icon.
+
+const LANDING_TAGLINE = ['fast, free, reproducible', 'assets & tools'];
+
+/**
+ * Build the landing-card renderer. `render()` returns og.png's bytes: the lollipop on
+ * the left, the "Lolly" wordmark + tagline on the right, on the brand field. `rasterize`
+ * is injected (browser path) so a missing browser degrades to "keep the committed og.png"
+ * rather than crashing; `chrome` comes from loadBrandChrome().
+ */
+export function createLandingCardRenderer(rasterize: SvgToPng, chrome: BrandChrome) {
+  const svgFor = (): string => {
+    const markSize = 430;
+    const markX = 92, markY = Math.round((OG_H - markSize) / 2);
+    const textX = markX + markSize + 76;
+    const out: string[] = [];
+    out.push(`<svg xmlns="http://www.w3.org/2000/svg" width="${OG_W}" height="${OG_H}" viewBox="0 0 ${OG_W} ${OG_H}">`);
+    out.push(`<rect width="${OG_W}" height="${OG_H}" fill="${chrome.field}"/>`);
+    if (chrome.mark) out.push(`<image x="${markX}" y="${markY}" width="${markSize}" height="${markSize}" href="${chrome.mark}"/>`);
+    out.push(`<text x="${textX}" y="298" font-family="SUSE" font-weight="700" font-size="150" fill="${chrome.ink}">Lolly</text>`);
+    let ty = 388;
+    for (const line of LANDING_TAGLINE) {
+      out.push(`<text x="${textX}" y="${ty}" font-family="SUSE" font-weight="400" font-size="46" fill="${chrome.muted}">${xmlEsc(line)}</text>`);
+      ty += 62;
+    }
+    out.push(`</svg>`);
+    return out.join('');
+  };
+  return {
+    /** Render the landing card to PNG bytes (via the injected browser rasteriser). */
+    render(): Promise<Buffer> {
+      return rasterize(svgFor(), { width: OG_W, height: OG_H, background: chrome.field });
+    },
+  };
 }
 
 // ── Per-tool share card (gallery-tile style) ─────────────────────────────────
@@ -436,7 +434,7 @@ function fitViewTitle(title: string, boxWidth: number): number {
  * Build a per-view card renderer. `render({ title, description, iconSvg })` returns
  * PNG bytes: a green app-icon tile, the view title and a one-line description on the
  * pine field, with a large translucent icon watermark bleeding off the right. `rasterize`
- * is injected (browser path) so a missing browser degrades like createOgRenderer.
+ * is injected (browser path) so a missing browser degrades to the committed cards.
  */
 export function createViewCardRenderer(rasterize: SvgToPng, chrome: BrandChrome) {
   const svgFor = ({ title, description, iconSvg }: ViewCard): string => {
@@ -470,7 +468,16 @@ export function createViewCardRenderer(rasterize: SvgToPng, chrome: BrandChrome)
     out.push(placeIcon(iconSvg, T.x + VIEW_ICON_INSET, T.y + VIEW_ICON_INSET, T.size - 2 * VIEW_ICON_INSET, chrome.field, 2));
 
     // Title, then a one-line (≤2) description beneath it.
-    out.push(`<text x="${M}" y="${VIEW_TITLE_Y}" font-family="SUSE" font-weight="700" font-size="${titleSize}" fill="${chrome.ink}">${xmlEsc(title)}</text>`);
+    // Title wraps to ≤2 lines (short view names stay one line; long docs titles like
+    // "Import a design (Figma, Penpot, …)" take two). The LAST line sits on the base
+    // baseline so a one- vs two-line title keeps the same optical anchor.
+    const titleLines = wrapLines(title, titleSize, textW, 2);
+    const titleStep = Math.round(titleSize * 0.94);
+    let ty = VIEW_TITLE_Y - (titleLines.length - 1) * titleStep;
+    for (const line of titleLines) {
+      out.push(`<text x="${M}" y="${ty}" font-family="SUSE" font-weight="700" font-size="${titleSize}" fill="${chrome.ink}">${xmlEsc(line)}</text>`);
+      ty += titleStep;
+    }
     let y = VIEW_TITLE_Y + 56;
     for (const line of wrapLines(description, 30, textW, 2)) {
       out.push(`<text x="${M}" y="${y}" font-family="SUSE" font-weight="400" font-size="30" fill="${chrome.muted}">${xmlEsc(line)}</text>`);
@@ -492,12 +499,28 @@ export function createViewCardRenderer(rasterize: SvgToPng, chrome: BrandChrome)
   };
 }
 
+// The mark every /info card carries in its app-icon tile + watermark: a book, in the
+// same lucide 24×24 stroke style as the view icons — so a docs card reads as part of
+// the same family as the Tools / Utilities / Dashboard cards, just captioned by its
+// page title. (One mark for all docs pages; the title is what distinguishes them.)
+const DOCS_ICON =
+  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">'
+  + '<path d="M12 7v14"/>'
+  + '<path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/>'
+  + '</svg>';
+
+// Pages without their own description fall back to the site tagline rather than a bare
+// title card. Matches docs/build.ts's SITE_DESCRIPTION intent (kept in sync by eye).
+const DOCS_DESC_FALLBACK = 'Fast, free, reproducible assets and tools — on your own device.';
+
 /**
- * Generate one PNG per page into <outDir>/og/<slug>.png. `pages` is the build's
- * page list; only pages with a `slug` and `title` get a card (the landing page is
- * skipped — it keeps the canonical untitled og.png). Best-effort: returns the set
- * of slugs successfully written, or an empty set if the renderer can't start, so
- * the caller can point only those pages at their generated image.
+ * Generate one PNG per /info page into <outDir>/og/<slug>.png, in the same view-card
+ * family as the app's own sections: a docs-icon tile, the page title (wrapping to two
+ * lines), the page description, a faint watermark and the corner lollipop. `pages` is
+ * the build's page list; only pages with a `slug` and `title` get a card (the landing
+ * page keeps the canonical og.png). Best-effort: returns the set of slugs successfully
+ * written, or an empty set if the renderer can't start, so the caller can point only
+ * those pages at their generated image.
  */
 export async function generateOgImages(
   pages: OgPage[],
@@ -505,13 +528,13 @@ export async function generateOgImages(
   repoRoot: string,
   log: (msg: string) => void = () => {},
 ): Promise<Set<string>> {
-  let renderer: ReturnType<typeof createOgRenderer>;
+  let renderer: ReturnType<typeof createViewCardRenderer>;
   let rasterizer: Awaited<ReturnType<typeof createSvgRasterizer>>;
   try {
     // Our own render path (Chromium). A missing browser / fonts throws → pages fall
     // back to og.png, same degrade contract as the old dynamic-resvg import.
     rasterizer = await createSvgRasterizer(repoRoot);
-    renderer = createOgRenderer(rasterizer.rasterize, repoRoot);
+    renderer = createViewCardRenderer(rasterizer.rasterize, loadBrandChrome(repoRoot));
   } catch (e) {
     log(`og: image generation skipped (${(e as Error).message}); pages fall back to og.png`);
     return new Set();
@@ -523,7 +546,11 @@ export async function generateOgImages(
     try {
       // Stamp our own brand card with the Lolly Imprint + "made with Lolly" C2PA
       // before writing (see scripts/lib/stamp-media.ts).
-      const png = await renderer.render(page.title);
+      const png = await renderer.render({
+        title: page.title,
+        description: page.description || DOCS_DESC_FALLBACK,
+        iconSvg: DOCS_ICON,
+      });
       const stamped = await stampBitmap(new Uint8Array(png), 'png', { id: page.slug, name: page.title });
       writeFileSync(resolve(outDir, 'og', `${page.slug}.png`), Buffer.from(stamped));
       done.add(page.slug);

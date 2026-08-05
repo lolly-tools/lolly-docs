@@ -70,7 +70,7 @@ Prompt to Image는 결정성을 가장 소박하게 보여줘요: 텍스트가 �
 
 ## 출처와 Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
 내보낸 파일은 **Content Credentials**를 지닐 수 있어요——파일 바이트의 해시에 묶인, 서명된 [C2PA](https://c2pa.org) 매니페스트예요. 이후 파일이 조금이라도 바뀌면 봉인이 깨지기 때문에, C2PA를 인식하는 검증기는 **변조를 암호학적으로, 오프라인에서 탐지**해요. 이 크리덴셜은 변조-*탐지형*이에요: 변조를 막기보다 알려 주는 쪽이며, 바로 그 특성 덕분에 완전한 오프라인 검증이 가능해져요.
 

@@ -1,6 +1,6 @@
 # Szybki start
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1&sweep=1)
 
 Lolly zamienia twoje reguły - kolory, typografię, układy, logikę - w narzędzia, których każdy może użyć do tworzenia gotowych plików: obrazów, PDF-ów, kart do mediów społecznościowych, wideo, wypełniając kilka pól. Nie ma się czego uczyć i nie trzeba niczego przesyłać: wszystko działa na twoim urządzeniu, online lub offline.
 
@@ -68,7 +68,7 @@ Oto korzyść: zaimportowany układ to zwykła sesja Layout Studio, więc gdy go
 
 [Zestaw narzędzi społecznościowych](/info/builders.html) jest open source i niezależny od marki - kody QR, mapy ulic, filtry, narzędzia do prywatności - i renderuje się względem *twojej* marki w chwili, gdy ją aktywujesz.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1&sweep=1)
 
 Nakarm narzędzia także własnymi otwartymi danymi: wklej lub upuść tabelę **CSV** albo **JSON**, a powtarzalne pola narzędzia wypełnią się z niej, dając jeden gotowy zasób na wiersz.
 

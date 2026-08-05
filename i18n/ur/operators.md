@@ -70,7 +70,7 @@ Prompt to Image تعیّن پذیری کی سب سے سادہ شکل ہے: مت�
 
 ## ماخذ اور Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
 ایکسپورٹس **Content Credentials** اپنے ساتھ لے جا سکتے ہیں - ایک signed [C2PA](https://c2pa.org) manifest جو فائل کے bytes کے hash سے منسلک ہوتا ہے۔ فائل میں بعد کی کوئی بھی تبدیلی سِیل کو توڑ دیتی ہے، لہٰذا ایک C2PA-آگاہ verifier **تبدیلی کو cryptographic طور پر، آف لائن پہچان لیتا ہے**۔ یہ credential چھیڑ چھاڑ کو *ظاہر* کرنے والا ہے: یہ چھیڑ چھاڑ کو روکنے کے بجائے اُس کی نشاندہی کرتا ہے، اور یہی وہ چیز ہے جو مکمل طور پر آف لائن تصدیق کو ممکن بناتی ہے۔
 
