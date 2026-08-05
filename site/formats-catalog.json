@@ -1,5 +1,5 @@
 {
-  "_note": "English-only structural data for the /info formats table + educational dialog. Format names are not translated; the heading/lead/zone labels live in formats.json. dir: in|out|both. features keys map into the features label table. Keep in sync with docs/site/formats.json (37 in / 40 out / 21 round-trip).",
+  "_note": "English-only structural data for the /info formats table + educational dialog. Format names are not translated; the heading/lead/zone labels live in formats.json. dir: in|out|both. features keys map into the features label table. The in/out/round-trip counts are COMPUTED live in docs/build.ts from the dir fields — do not hand-maintain a count here or in formats.json.",
   "features": {
     "vector": "Resolution-independent vector",
     "raster": "Pixel raster image",
@@ -391,7 +391,7 @@
       "ZipCrypto (Windows-openable) lock",
       "Or strong WinZip AES-256 (AE-2)",
       "Each inner PDF individually locked",
-      "Export-only"
+      "Reads a dropped .zip back to its members"
     ],
     "SVGZ": [
       "gzip(SVG): identical markup, ~60-70% smaller",
@@ -431,7 +431,7 @@
     ],
     "TAR": [
       "USTAR headers; readable by system tar and libarchive",
-      "Gzip it for .tar.gz; export-only bundle",
+      "Gzip it for .tar.gz; reads members back on drop",
       "Over-long names / >8 GiB files are refused, never truncated"
     ]
   },
@@ -466,9 +466,6 @@
     ],
     "EPUB": [
       "Export-only (no EPUB import yet)"
-    ],
-    "TAR": [
-      "Write-only (no tar unpack yet)"
     ]
   },
   "formats": [
@@ -1193,12 +1190,12 @@
       "name": "ZIP",
       "full": "ZIP Archive",
       "category": "Bundle",
-      "dir": "out",
+      "dir": "both",
       "features": [
         "multi-file-bundle",
         "encryption"
       ],
-      "desc": "A single archive that bundles many files together, how Lolly delivers a multi-format export, a whole folder of saved sessions, or a batch run. You can lock the whole zip with one password: a Standard lock (traditional ZipCrypto, opens in any unzip tool including Windows) or Strong AES-256 (needs 7-Zip, Keka or WinZip). Any PDF inside is also individually locked with the same password. Export-only."
+      "desc": "A single archive that bundles many files together, how Lolly delivers a multi-format export, a whole folder of saved sessions, or a batch run. You can lock the whole zip with one password: a Standard lock (traditional ZipCrypto, opens in any unzip tool including Windows) or Strong AES-256 (needs 7-Zip, Keka or WinZip). Any PDF inside is also individually locked with the same password. Drop a plain .zip in and Lolly explodes it, adding each member as its own asset (an office file inside — .xlsx/.pptx/.docx — is routed to its own reader, not shredded)."
     },
     {
       "token": "SVGZ",
@@ -1275,6 +1272,28 @@
       "desc": "A reflowable EPUB 3 e-book: one XHTML file per chapter, a spine in reading order and a navigation table of contents, packed as a valid OCF zip. Opens in Apple Books, Kobo, Calibre and every e-reader, and the text reflows to any screen. Export-only."
     },
     {
+      "token": "DOCX",
+      "name": "DOCX",
+      "full": "Word Open XML Document",
+      "category": "Document",
+      "dir": "out",
+      "features": [
+        "editable-text"
+      ],
+      "desc": "Microsoft Word's document format. Lolly doesn't flatten your writing to a picture: it hands over a real .docx whose headings and paragraphs stay fully editable text, opening cleanly in Word, LibreOffice Writer and Google Docs. Export-only."
+    },
+    {
+      "token": "ODT",
+      "name": "ODT",
+      "full": "OpenDocument Text",
+      "category": "Document",
+      "dir": "out",
+      "features": [
+        "editable-text"
+      ],
+      "desc": "The OpenDocument text format used by LibreOffice Writer. Lolly writes a valid OpenDocument package with your headings and paragraphs as real editable text, not a rasterised page, opening in LibreOffice, Word and Google Docs. Export-only."
+    },
+    {
       "token": "GZ",
       "name": "gzip",
       "full": "GNU zip",
@@ -1291,11 +1310,11 @@
       "name": "tar",
       "full": "USTAR archive",
       "category": "Bundle",
-      "dir": "out",
+      "dir": "both",
       "features": [
         "multi-file-bundle"
       ],
-      "desc": "The classic uncompressed multi-file archive (POSIX USTAR): one header per file, readable by system tar, libarchive and every standard library. Gzip it for a .tar.gz bundle. Export-only, for packing several assets into one download."
+      "desc": "The classic uncompressed multi-file archive (POSIX USTAR): one header per file, readable by system tar, libarchive and every standard library. Pack several assets into one download, or drop a .tar (or a gzipped .tar.gz) back in and Lolly explodes it, adding each member as its own asset."
     }
   ]
 }
