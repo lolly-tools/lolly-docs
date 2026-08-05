@@ -72,7 +72,7 @@ Setiap masukan perkakas dapat dinyatakan sebagai parameter URL, dan masukan yang
 
 ## Provenans & Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
 Ekspor dapat membawa **Content Credentials** - manifest [C2PA](https://c2pa.org) bertanda tangan yang terikat pada hash dari byte berkas. Perubahan apa pun pada berkas setelahnya merusak segelnya, sehingga verifikator yang mengenali C2PA **mendeteksi perubahan secara kriptografis, luring**. Kredensial ini *menunjukkan* gangguan: ia menandai upaya perusakan alih-alih mencegahnya, dan justru itulah yang memungkinkan verifikasi sepenuhnya luring.
 

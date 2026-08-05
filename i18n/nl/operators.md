@@ -70,7 +70,7 @@ Elke tool-invoer is uit te drukken als URL-parameter, en dezelfde invoer produce
 
 ## Herkomst & Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
 Exports kunnen **Content Credentials** dragen - een ondertekend [C2PA](https://c2pa.org)-manifest gebonden aan een hash van de bytes van het bestand. Elke latere wijziging aan het bestand verbreekt het zegel, dus een C2PA-bewuste verifier **detecteert wijzigingen cryptografisch, offline**. Het credential is manipulatie-*zichtbaar*: het signaleert manipulatie in plaats van het te voorkomen, en juist dat maakt volledig offline verificatie mogelijk.
 

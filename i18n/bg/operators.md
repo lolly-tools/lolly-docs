@@ -70,7 +70,7 @@ Prompt to Image е детерминизъм в най-чист вид: текс�
 
 ## Произход и Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
 Експортите могат да носят **Content Credentials** — подписан [C2PA](https://c2pa.org) манифест, обвързан с хеш на байтовете на файла. Всяка последваща промяна на файла чупи печата, така че C2PA-съвместим верификатор **открива промяната криптографски, офлайн**. Удостоверението прави подправянето *очевидно*: то сигнализира за намеса, вместо да я предотвратява — точно това прави възможна напълно офлайн проверката.
 

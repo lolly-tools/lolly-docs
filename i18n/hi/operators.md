@@ -70,7 +70,7 @@ Prompt to Image डिटरमिनिज़्म का सबसे सा�
 
 ## प्रोवेनेंस और Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
 एक्सपोर्ट **Content Credentials** साथ ले जा सकते हैं - फ़ाइल के बाइट के हैश से बँधा एक हस्ताक्षरित [C2PA](https://c2pa.org) मैनिफ़ेस्ट। फ़ाइल में बाद में किया गया कोई भी बदलाव सील तोड़ देता है, इसलिए C2PA-समझने वाला वेरिफ़ायर **छेड़छाड़ का पता क्रिप्टोग्राफ़िक ढंग से, ऑफ़लाइन लगाता है**। यह क्रेडेंशियल टैम्पर-*एविडेंट* है: यह छेड़छाड़ को रोकने के बजाय उसे उजागर करता है, और ठीक यही बात पूरी तरह ऑफ़लाइन सत्यापन को संभव बनाती है।
 

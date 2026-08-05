@@ -1,6 +1,6 @@
 # Швидкий старт
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1&sweep=1)
 
 Lolly перетворює ваші правила — кольори, шрифти, макети, логіку — на інструменти, якими будь-хто може скористатися, щоб створювати готові файли: зображення, PDF, картки для соцмереж, відео — просто заповнивши кілька полів. Тут нема чого вивчати й нічого завантажувати: усе працює на вашому пристрої, онлайн чи офлайн.
 
@@ -68,7 +68,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 [Набір інструментів спільноти](/info/builders.html) має відкритий код і не залежить від бренду — QR-коди, карти вулиць, фільтри, утиліти приватності — і рендериться щодо *вашого* бренду тієї миті, коли ви його активуєте.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1&sweep=1)
 
 Годуйте інструменти й власними відкритими даними: вставте або перетягніть таблицю **CSV** чи **JSON**, і повторювані поля інструмента заповняться з неї — один готовий ресурс на рядок.
 

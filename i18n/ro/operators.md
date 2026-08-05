@@ -73,7 +73,7 @@ Fiecare input al unui instrument poate fi exprimat ca parametru URL, iar acelea�
 
 ## Proveniență și Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
 Exporturile pot purta **Content Credentials** - un manifest [C2PA](https://c2pa.org) semnat, legat de un hash al octeților fișierului. Orice schimbare ulterioară a fișierului rupe sigiliul, așa că un verificator compatibil C2PA **detectează modificarea criptografic, offline**. Credențialul este sesizabil la *falsificare*: semnalează manipularea în loc să o împiedice, ceea ce este exact ceea ce face posibilă verificarea complet offline.
 

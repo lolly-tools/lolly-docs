@@ -1033,7 +1033,7 @@
       "name": "Animated PNG",
       "full": "Animated Portable Network Graphics",
       "category": "Motion",
-      "dir": "out",
+      "dir": "both",
       "features": [
         "raster",
         "alpha",
@@ -1041,14 +1041,14 @@
         "lossless",
         "provenance"
       ],
-      "desc": "An animated PNG: like a GIF, but with full colour and real transparency instead of GIF's 256-colour, on/off limits. Great for a short, high-quality looping animation that plays in any modern browser. Lolly can embed a Content Credential in it. It has no soundtrack. Export-only."
+      "desc": "An animated PNG: like a GIF, but with full colour and real transparency instead of GIF's 256-colour, on/off limits. Great for a short, high-quality looping animation that plays in any modern browser. Lolly can embed a Content Credential in it. It has no soundtrack. Lolly reads an animated PNG back in too, kept verbatim so every frame survives."
     },
     {
       "token": "Animated WebP",
       "name": "Animated WebP",
       "full": "Animated WebP",
       "category": "Motion",
-      "dir": "out",
+      "dir": "both",
       "features": [
         "raster",
         "alpha",
@@ -1056,7 +1056,7 @@
         "lossy",
         "provenance"
       ],
-      "desc": "An animated WebP: full colour and transparency like APNG, but better-compressed, so it's the smallest of the animated-image options. Ideal for a lightweight web loop. Lolly can embed a Content Credential; it's silent by nature. Export-only."
+      "desc": "An animated WebP: full colour and transparency like APNG, but better-compressed, so it's the smallest of the animated-image options. Ideal for a lightweight web loop. Lolly can embed a Content Credential; it's silent by nature. Lolly reads an animated WebP back in too, kept verbatim so every frame survives."
     },
     {
       "token": "Animated SVG",

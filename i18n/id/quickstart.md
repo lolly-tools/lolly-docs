@@ -1,6 +1,6 @@
 # Mulai Cepat
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1&sweep=1)
 
 Lolly mengubah aturan Anda - warna, tipografi, tata letak, logika - menjadi tool yang bisa dipakai siapa saja untuk membuat berkas jadi: gambar, PDF, kartu sosial, video, cukup dengan mengisi beberapa kolom. Tidak ada yang perlu dipelajari dan tidak ada yang perlu diunggah: semuanya berjalan di perangkat Anda, online maupun offline.
 
@@ -68,7 +68,7 @@ Inilah hasilnya: tata letak yang diimpor adalah sesi Layout Studio biasa, jadi b
 
 [Kumpulan tool komunitas](/info/builders.html) bersifat sumber terbuka dan tidak terikat brand - kode QR, peta jalan, filter, utilitas privasi - dan semuanya di-render sesuai brand *Anda* begitu Anda mengaktifkannya.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1&sweep=1)
 
 Berikan pula data terbuka Anda sendiri kepada tool: tempel atau letakkan tabel **CSV** atau **JSON** dan kolom berulang sebuah tool akan terisi darinya, satu aset jadi per baris.
 

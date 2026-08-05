@@ -1,6 +1,6 @@
 # Mula Pantas
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1&sweep=1)
 
 Lolly menukar peraturan anda - warna, jenis taip, susun atur, logik - menjadi alat yang boleh digunakan oleh sesiapa sahaja untuk menghasilkan fail siap: imej, PDF, kad sosial, video, hanya dengan mengisi beberapa medan. Tiada apa-apa untuk dipelajari dan tiada apa-apa untuk dimuat naik: semuanya berjalan pada peranti anda, dalam talian atau luar talian.
 
@@ -68,7 +68,7 @@ Inilah ganjarannya: susun atur yang diimport adalah sesi Layout Studio biasa, ja
 
 [Set alat komuniti](/info/builders.html) adalah sumber terbuka dan tidak terikat kepada mana-mana jenama - kod QR, peta jalan, penapis, utiliti privasi - dan ia merender mengikut jenama *anda* sebaik sahaja anda mengaktifkannya.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1&sweep=1)
 
 Suapkan juga data terbuka anda sendiri ke alat: tampal atau jatuhkan jadual **CSV** atau **JSON** dan medan berulang sesuatu alat akan diisi daripadanya, satu aset siap bagi setiap baris.
 

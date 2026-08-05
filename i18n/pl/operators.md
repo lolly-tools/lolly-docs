@@ -73,7 +73,7 @@ Prompt to Image to determinizm w najprostszej postaci: tekst jest całym wejści
 
 ## Proweniencja i Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
 Eksporty mogą nieść **Content Credentials** - podpisany manifest [C2PA](https://c2pa.org) powiązany z hashem bajtów pliku. Każda późniejsza zmiana pliku łamie pieczęć, więc weryfikator obsługujący C2PA **wykrywa modyfikację kryptograficznie, offline**. Poświadczenie jest odporne na manipulację w sposób *widoczny*: sygnalizuje manipulację, a nie zapobiega jej, co jest dokładnie tym, co umożliwia w pełni offline'ową weryfikację.
 

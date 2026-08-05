@@ -70,7 +70,7 @@ Hver verktøyinndata kan uttrykkes som en URL-parameter, og de samme inndataene 
 
 ## Opprinnelse og Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
 Eksporter kan bære **Content Credentials** - et signert [C2PA](https://c2pa.org)-manifest bundet til en hash av filens bytes. Enhver senere endring av filen bryter forseglingen, så en C2PA-bevisst verifikator **oppdager endring kryptografisk, offline**. Legitimasjonen er manipulasjons-*synlig*: den flagger manipulasjon i stedet for å forhindre den, og det er nettopp det som gjør fullstendig offline-verifisering mulig.
 

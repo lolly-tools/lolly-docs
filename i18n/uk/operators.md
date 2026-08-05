@@ -70,7 +70,7 @@ Prompt to Image — це детермінованість у найпрості�
 
 ## Походження та Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
+![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
 Експорти можуть нести **Content Credentials** — підписаний маніфест [C2PA](https://c2pa.org), прив'язаний до геша байтів файлу. Будь-яка подальша зміна файлу ламає печатку, тож верифікатор, обізнаний із C2PA, **виявляє зміну криптографічно, офлайн**. Посвідчення є *очевидним* до втручання: воно позначає підробку, а не запобігає їй, і саме це робить можливою повністю офлайнову верифікацію.
 

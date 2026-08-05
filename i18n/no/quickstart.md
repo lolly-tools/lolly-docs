@@ -1,6 +1,6 @@
 # Hurtigstart
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1&sweep=1)
 
 Lolly omgjør reglene dine - farger, typografi, layouter, logikk - til verktøy som hvem som helst kan bruke for å lage ferdige filer: bilder, PDF-er, sosiale kort, video, ved å fylle inn noen få felt. Det finnes ingenting å lære og ingenting å laste opp: alt kjører på enheten din, på nett eller offline.
 
@@ -68,7 +68,7 @@ Her er gevinsten: en importert layout er en vanlig Layout Studio-økt, så så s
 
 [Community-verktøysettet](/info/builders.html) er åpen kildekode og merkevareuavhengig - QR-koder, bykart, filtre, personvernverktøy - og det rendres mot *din* merkevare i det øyeblikket du aktiverer det.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1&sweep=1)
 
 Mat verktøyene med din egen åpne data også: lim inn eller slipp en **CSV**- eller **JSON**-tabell, så fylles et verktøys gjentakende felter fra den, én ferdig ressurs per rad.
 

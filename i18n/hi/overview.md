@@ -231,7 +231,7 @@ lolly/
 
 ![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&dark=1&filename=aud-web-split)
 
-![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&format=png&dark=1&filename=ov2-phone-audiogram)
+![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 SUSE-नियंत्रित URL पर होस्टेड। सर्विस वर्कर द्वारा टूल और ऐसेट कैश कर लिए जाने के बाद ऑफ़लाइन काम करता है। अधिकांश कर्मचारी, वेंडर और पार्टनर प्लेटफ़ॉर्म का उपयोग यहीं करेंगे। किसी खाते की ज़रूरत नहीं — स्थिति (state) हर डिवाइस पर IndexedDB में संग्रहीत होती है।
 

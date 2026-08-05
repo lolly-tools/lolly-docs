@@ -1,6 +1,6 @@
 # 빠른 시작
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1&sweep=1)
 
 Lolly는 색상, 타이포그래피, 레이아웃, 로직 같은 규칙을 누구나 쓸 수 있는 도구로 바꿔줘요. 몇 가지 항목만 채우면 이미지, PDF, 소셜 카드, 동영상 같은 완성된 파일을 만들 수 있어요. 배울 것도 없고 업로드할 것도 없어요. 온라인이든 오프라인이든 모든 작업이 기기 안에서 실행돼요.
 
@@ -68,7 +68,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 [커뮤니티 도구 세트](/info/builders.html)는 오픈소스이고 브랜드에 종속되지 않아요 — QR 코드, 시가지 지도, 필터, 프라이버시 유틸리티 등이 있어요 — 그리고 브랜드를 활성화하는 순간 그 브랜드에 맞춰 렌더링돼요.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1&sweep=1)
 
 직접 가진 열린 데이터도 도구에 먹일 수 있어요. **CSV**나 **JSON** 표를 붙여넣거나 끌어다 놓으면 도구의 반복 필드가 거기서 채워지고, 행마다 완성된 에셋이 하나씩 나와요.
 

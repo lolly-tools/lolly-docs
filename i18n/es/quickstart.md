@@ -1,6 +1,6 @@
 # Guía rápida
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1&sweep=1)
 
 Lolly convierte tus reglas -colores, tipografía, diseños, lógica- en herramientas que cualquiera puede usar para crear archivos terminados: imágenes, PDF, tarjetas para redes sociales, vídeo, simplemente rellenando algunos campos. No hay nada que aprender ni nada que subir: todo funciona en tu dispositivo, con o sin conexión.
 
@@ -68,7 +68,7 @@ Aquí está la recompensa: un diseño importado es una sesión normal de Layout 
 
 El [conjunto de herramientas de la comunidad](/info/builders.html) es de código abierto y agnóstico de marca -códigos QR, mapas de calles, filtros, utilidades de privacidad- y se renderiza contra *tu* marca en cuanto la activas.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1&sweep=1)
 
 Alimenta las herramientas también con tus propios datos abiertos: pega o suelta una tabla **CSV** o **JSON** y los campos repetibles de una herramienta se rellenan a partir de ella, un recurso terminado por fila.
 

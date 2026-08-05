@@ -1,6 +1,6 @@
 # Démarrage rapide
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1&sweep=1)
 
 Lolly transforme tes règles - couleurs, typographie, mises en page, logique - en outils que n'importe qui peut utiliser pour créer des fichiers finis : images, PDF, cartes sociales, vidéo, en remplissant simplement quelques champs. Il n'y a rien à apprendre et rien à téléverser : tout fonctionne sur ton appareil, en ligne comme hors ligne.
 
@@ -68,7 +68,7 @@ Voici la récompense : une mise en page importée est une session Studio de mise
 
 L'[ensemble d'outils communautaires](/info/builders.html) est open source et indépendant de toute marque - codes QR, cartes routières, filtres, utilitaires de confidentialité - et il produit son rendu par rapport à *ta* marque dès que tu l'actives.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1&sweep=1)
 
 Alimente aussi les outils avec tes propres données ouvertes : colle ou dépose un tableau **CSV** ou **JSON**, et les champs répétitifs d'un outil s'en remplissent, un fichier fini par ligne.
 

@@ -1,6 +1,6 @@
 # Schnellstart
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1&sweep=1)
 
 Lolly verwandelt Ihre Regeln - Farben, Schrift, Layouts, Logik - in Werkzeuge, mit denen jeder fertige Dateien erstellen kann: Bilder, PDFs, Social-Media-Karten, Video, indem Sie einfach ein paar Felder ausfüllen. Es gibt nichts zu lernen und nichts hochzuladen: Alles läuft auf Ihrem Gerät, online wie offline.
 
@@ -68,7 +68,7 @@ Und hier liegt der Gewinn: Ein importiertes Layout ist eine ganz normale Layout-
 
 Die [Community-Werkzeugsammlung](/info/builders.html) ist Open Source und markenunabhängig - QR-Codes, Stadtpläne, Filter, Datenschutz-Werkzeuge - und rendert gegen *Ihre* Marke, sobald Sie sie aktivieren.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1&sweep=1)
 
 Füttern Sie die Werkzeuge auch mit Ihren eigenen offenen Daten: Fügen Sie eine **CSV**- oder **JSON**-Tabelle ein oder legen Sie sie ab, und die sich wiederholenden Felder eines Werkzeugs werden daraus befüllt - ein fertiges Asset pro Zeile.
 
