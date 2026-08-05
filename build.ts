@@ -1728,6 +1728,18 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
 })();
 </script>`;
 
+  const QUICKNAV_JS = `<script>(function(){
+  var nav=document.querySelector('.quicknav');if(!nav)return;
+  var links=[].slice.call(nav.querySelectorAll('a'));
+  var targets=links.map(function(a){return {a:a,el:document.getElementById(a.getAttribute('href').slice(1))};}).filter(function(x){return x.el;});
+  if(!targets.length)return;var raf=0;
+  function update(){raf=0;var line=window.innerHeight*0.35,cur=targets[0];
+    for(var i=0;i<targets.length;i++){if(targets[i].el.getBoundingClientRect().top<=line)cur=targets[i];}
+    links.forEach(function(a){a.classList.toggle('is-current',a===cur.a);});}
+  function onScroll(){if(!raf)raf=requestAnimationFrame(update);}
+  addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll,{passive:true});update();
+})();</script>`;
+
   // ── "Bring your existing design files" segment ──────────────────────────────
   // The good-news import story: finished Figma / Penpot / Illustrator / InDesign
   // files land as editable, on-brand layouts that anyone can reuse and mix with
@@ -1793,7 +1805,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
     cards: { icon: string; title: string; desc: string }[];
     cta: string; ctaHref: string;
   };
-  const ASSURE_HTML = `<section class="assure-section">
+  const ASSURE_HTML = `<section class="assure-section" id="trust">
   <div class="assure-inner">
     <div class="assure-lede reveal">
       <span class="assure-eyebrow">${esc(assure.eyebrow)}</span>
@@ -1831,8 +1843,8 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
     exports: { category: string; list: string }[];
   };
   interface FmtEntry { token: string; name: string; full: string; category: string; dir: 'in' | 'out' | 'both'; features: string[]; desc: string; }
-  const catalog = loadSiteJson('formats-catalog.json') as { features: Record<string, string>; specifics?: Record<string, string[]>; formats: FmtEntry[] };
-  const CAT_ORDER = ['Vector', 'Raster', 'Layered', 'Motion', 'Audio', 'Document', 'Data', 'Tokens', '3D', 'Bundle'];
+  const catalog = loadSiteJson('formats-catalog.json') as { features: Record<string, string>; specifics?: Record<string, string[]>; unsupported?: Record<string, string[]>; formats: FmtEntry[] };
+  const CAT_ORDER = ['Vector', 'Raster', 'Layered', 'Motion', 'Audio', 'Document', 'Data', 'Font', 'Tokens', '3D', 'Bundle'];
   // A large icon sits above each category label. Inline SVGs (stroke = currentColor)
   // so they inherit the section's green and need no asset fetch.
   const IST = 'fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"';
@@ -1847,6 +1859,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
     Tokens: `<svg viewBox="0 0 24 24" ${IST}><circle cx="13.5" cy="6.5" r="1.3"/><circle cx="17" cy="10.5" r="1.3"/><circle cx="8.5" cy="7" r="1.3"/><circle cx="6.5" cy="12" r="1.3"/><path d="M12 2a10 10 0 1 0 0 20 2.5 2.5 0 0 0 2.5-2.5c0-.7-.3-1.3-.3-2a2 2 0 0 1 2-2H18a4 4 0 0 0 4-4c0-5.5-4.5-9.5-10-9.5z"/></svg>`,
     '3D': `<svg viewBox="0 0 24 24" ${IST}><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 2v20M21 7l-9 5-9-5"/></svg>`,
     Bundle: `<svg viewBox="0 0 24 24" ${IST}><rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"/><path d="M10 12h4"/></svg>`,
+    Font: `<svg viewBox="0 0 24 24" ${IST}><path d="M6 4h12M12 4v16M9 20h6"/></svg>`,
   };
   const inCount = catalog.formats.filter(f => f.dir !== 'out').length;
   const outCount = catalog.formats.filter(f => f.dir !== 'in').length;
@@ -1877,13 +1890,14 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   const catalogJson = JSON.stringify({
     features: catalog.features,
     specifics: catalog.specifics || {},
+    unsupported: catalog.unsupported || {},
+    catIcons: FMT_CAT_ICON,
     formats: Object.fromEntries(catalog.formats.map(f => [f.token, { name: f.name, full: f.full, category: f.category, dir: f.dir, features: f.features, desc: f.desc }])),
   }).replace(/</g, '\\u003c');
-  const FORMATS_HTML = `<section class="formats-section">
+  const FORMATS_HTML = `<section class="formats-section" id="formats">
   <div class="formats-inner">
     <div class="formats-head reveal">
       <h2>${esc(formats.heading)}</h2>
-      <p>${inline(formats.lead).replace('{roundtrip}', RT_INLINE_HTML)}</p>
       <p class="formats-hint">${esc(`${inCount} in · ${outCount} out — tap any format to learn what it is and what Lolly supports.`)}</p>
     </div>
     <div class="fmt-scroll reveal reveal-1">
@@ -1893,16 +1907,26 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
       ${catRows}
       </div>
     </div>
+    <div class="section-more-row"><a class="section-more" href="${esc(localeHref(lang, 'exporting'))}">${esc(t('Every format in detail'))} <span aria-hidden="true">→</span></a></div>
   </div>
   <dialog class="fmt-dialog" id="fmt-dialog" aria-labelledby="fmt-dlg-name">
     <form method="dialog" class="fmt-dialog-inner">
       <button class="fmt-dialog-x" value="close" aria-label="Close">✕</button>
-      <span class="fmt-dialog-dir" id="fmt-dlg-dir"></span>
-      <h3 id="fmt-dlg-name"></h3>
-      <p class="fmt-dialog-full" id="fmt-dlg-full"></p>
+      <div class="fmt-dialog-head">
+        <span class="fmt-dialog-icon" id="fmt-dlg-icon" aria-hidden="true"></span>
+        <div class="fmt-dialog-headtext">
+          <span class="fmt-dialog-dir" id="fmt-dlg-dir"></span>
+          <h3 id="fmt-dlg-name"></h3>
+          <p class="fmt-dialog-full" id="fmt-dlg-full"></p>
+        </div>
+      </div>
       <p class="fmt-dialog-desc" id="fmt-dlg-desc"></p>
       <ul class="fmt-dialog-specs" id="fmt-dlg-specs"></ul>
       <ul class="fmt-dialog-feats" id="fmt-dlg-feats"></ul>
+      <div class="fmt-dialog-unsup" id="fmt-dlg-unsup-wrap" hidden>
+        <span class="fmt-dialog-unsup-label">Not yet supported</span>
+        <ul class="fmt-dialog-unsup-list" id="fmt-dlg-unsup"></ul>
+      </div>
     </form>
   </dialog>
   <script type="application/json" id="fmt-catalog-data">${catalogJson}</script>
@@ -1917,7 +1941,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
     frustrations: { icon: string; title: string; desc: string }[];
     matrix: { pain: string; relief: string }[];
   };
-  const WHY_MATRIX_HTML = `<section class="why-section">
+  const WHY_MATRIX_HTML = `<section class="why-section" id="why">
   <div class="why-inner">
     <div class="why-lede reveal">
       <span class="why-eyebrow">${esc(why.eyebrow)}</span>
@@ -1933,6 +1957,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
       ${why.matrix.map(r => `<div class="matrix-cell matrix-cell--old" role="cell"><span class="matrix-mark" aria-hidden="true">✕</span><span>${esc(r.pain)}</span></div>
       <div class="matrix-cell matrix-cell--new" role="cell"><span class="matrix-mark" aria-hidden="true">✓</span><span>${esc(r.relief)}</span></div>`).join('\n      ')}
     </div>
+    <div class="section-more-row"><a class="section-more" href="${esc(localeHref(lang, 'status-quo'))}">${esc(t('Why this differs'))} <span aria-hidden="true">→</span></a></div>
   </div>
 </section>`;
 
@@ -1986,7 +2011,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   </div>
 
 </section>
-<section class="pathways-section reveal">
+<section class="pathways-section reveal" id="start">
   <div class="pathways-inner">
     <h2 class="pathways-title">${esc(pathways.title)}</h2>
     <p class="pathways-lead">${inline(pathways.lead)}</p>
@@ -2001,7 +2026,18 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
     </div>
   </div>
 </section>
-</div>${WHY_MATRIX_HTML}
+</div>
+<nav class="quicknav" aria-label="${esc(t('On this page'))}">
+  <div class="quicknav-inner">
+    <a href="#start">${esc(t('Start here'))}</a>
+    <a href="#why">${esc(t('Why Lolly'))}</a>
+    <a href="#tools">${esc(t('Tools'))}</a>
+    <a href="#formats">${esc(t('Formats'))}</a>
+    <a href="#trust">${esc(t('Trust'))}</a>
+    <a href="#everywhere">${esc(t('Everywhere'))}</a>
+    <a href="#faq">${esc(t('FAQ'))}</a>
+  </div>
+</nav>${WHY_MATRIX_HTML}
 <section class="audience-section">
   ${tabsHtml}
   <div class="audience-panels">
@@ -2021,7 +2057,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
     </div>
   </div>
 </section>
-${whatsLines.length ? `<section class="whats-a-tool">
+${whatsLines.length ? `<section class="whats-a-tool" id="tools">
   <div class="whats-inner">
   <h2 class="reveal">${esc(whatsATool.heading)}</h2>
   <p class="tool-lead reveal reveal-1">${br(whatsATool.lead)}</p>
@@ -2047,7 +2083,7 @@ ${FORMATS_HTML}
 ${QOL_HTML}
 ${ASSURE_HTML}
 ${IMPORT_HTML}
-<section class="everywhere-section">
+<section class="everywhere-section" id="everywhere">
   <div class="everywhere-inner reveal">
     <div class="everywhere-copy-col">
       <h2>${br(everywhere.heading)}</h2>
@@ -2071,6 +2107,7 @@ ${IMPORT_HTML}
         <p>${esc(m.desc)}</p>
       </div>`).join('')}
     </div>
+    <div class="section-more-row"><a class="section-more" href="${esc(localeHref(lang, 'deployment'))}">${esc(t('Run it yourself'))} <span aria-hidden="true">→</span></a></div>
   </div>
 </section>
 <section class="social-proof">
@@ -2110,7 +2147,8 @@ ${IMPORT_HTML}
 </section>
 ${faqHtml}
 ${TAB_JS}
-${FAQ_JS}`;
+${FAQ_JS}
+${QUICKNAV_JS}`;
 }
 
 // ── HTML template ─────────────────────────────────────────────────────────────
@@ -2153,6 +2191,22 @@ strong{font-weight:600}
 /* Nav */
 nav{display:flex;align-items:center;gap:.25rem;padding:0 1.5rem;height:3.75rem;background:transparent;position:fixed;width:100%;top:0;z-index:100;overflow-x:auto;transition:background .25s}
 nav.nav-solid{background:#0c322c}
+/* On-page quick nav — a sticky jump bar under the top nav, on the landing only. */
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+section[id]{scroll-margin-top:6.4rem}
+.quicknav{position:sticky;top:3.75rem;z-index:90;background:rgba(240,251,245,.9);border-bottom:1px solid var(--border);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+html.dark .quicknav{background:rgba(9,26,21,.9)}
+.quicknav-inner{max-width:1180px;margin:0 auto;display:flex;gap:.15rem;padding:0 1.5rem;overflow-x:auto;scrollbar-width:none}
+.quicknav-inner::-webkit-scrollbar{display:none}
+.quicknav a{flex:none;padding:.72rem .8rem;font-size:.82rem;font-weight:600;color:var(--muted);text-decoration:none;border-bottom:2px solid transparent;white-space:nowrap;transition:color .12s}
+.quicknav a:hover{color:var(--green)}
+.quicknav a.is-current{color:var(--green);border-bottom-color:var(--green)}
+.section-more-row{text-align:center;margin-top:2rem}
+.section-more{display:inline-flex;align-items:center;gap:.4em;font-size:.92rem;font-weight:700;color:var(--green);text-decoration:none}
+.section-more:hover{text-decoration:underline}
+.section-more span{transition:transform .15s}
+.section-more:hover span{transform:translateX(3px)}
 /* The nav sits on #0c322c in BOTH themes (nav.nav-solid, and the dark hero on the
    landing page), so its text needs a fixed light colour. It used var(--pale),
    which the dark theme redefines to #0d2419 — near-identical to that background,
@@ -2178,9 +2232,9 @@ nav .gap{flex:1}
 .nav-lang-picker-wrap .lang-switch-icon{width:16px;height:16px;flex-shrink:0;pointer-events:none}
 .nav-lang-picker{background:transparent;color:inherit;border:none;font-size:.8125rem;cursor:pointer;padding:0}
 .nav-lang-picker option{color:#000}
-nav a:not(.brand):not(.nav-launch){color:rgba(255,255,255,.55);font-size:.8125rem;padding:.25rem .5rem;white-space:nowrap;border-radius:2em;transition:color .12s}
-nav a:not(.brand):not(.nav-launch):hover{color:#fff;text-decoration:none}
-nav a.active:not(.nav-launch){color:#fff}
+nav:not(.quicknav) a:not(.brand):not(.nav-launch){color:rgba(255,255,255,.55);font-size:.8125rem;padding:.25rem .5rem;white-space:nowrap;border-radius:2em;transition:color .12s}
+nav:not(.quicknav) a:not(.brand):not(.nav-launch):hover{color:#fff;text-decoration:none}
+nav:not(.quicknav) a.active:not(.nav-launch){color:#fff}
 /* Top-nav clusters: tight within a group, a thin divider between groups. */
 nav .nav-group{display:inline-flex;align-items:center;gap:.0625rem}
 nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1px solid rgba(255,255,255,.18)}
@@ -2373,6 +2427,11 @@ html.dark .fmt-dialog{background:#122a1e;color:#eafff4}
 .fmt-dialog-x:hover{background:var(--border)}
 .fmt-dialog-dir{display:inline-block;font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--green);background:rgba(48,186,120,.14);padding:.3em .7em;border-radius:1em;margin-bottom:.7rem}
 .fmt-dialog h3{margin:0;color:inherit;font-size:1.55rem;line-height:1.1}
+.fmt-dialog-head{display:flex;align-items:flex-start;gap:.9rem;padding-right:1.8rem}
+.fmt-dialog-icon{flex:none;place-self:end;width:2.9rem;height:2.9rem;color:var(--green);margin-top:.1rem}
+.fmt-dialog-icon svg{stroke-width:.5px;width:100%;height:100%;display:block}
+.fmt-dialog-icon:empty{display:none}
+.fmt-dialog-headtext{min-width:0}
 .fmt-dialog-full{margin:.15rem 0 0;color:var(--muted);font-size:.9rem;font-weight:600}
 .fmt-dialog-desc{margin:.9rem 0 0;color:inherit;font-size:.95rem;line-height:1.65;opacity:.92}
 .fmt-dialog-specs{list-style:none;margin:1.1rem 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.45rem .9rem}
@@ -2384,6 +2443,14 @@ html.dark .fmt-dialog{background:#122a1e;color:#eafff4}
 .fmt-dialog-feats:empty{margin:0}
 .fmt-dialog-feats li{font-size:.72rem;font-weight:700;color:inherit;background:var(--pale);border:1px solid var(--border);padding:.32em .68em;border-radius:1em;display:inline-flex;align-items:center;gap:.4em}
 .fmt-dialog-feats li::before{content:'';width:.5em;height:.5em;border-radius:50%;background:var(--green);flex:none}
+.fmt-dialog-unsup{margin:1.2rem 0 0;padding:.85rem 1rem;border-radius:12px;background:rgba(254,124,63,.1)}
+.fmt-dialog-unsup[hidden]{display:none}
+.fmt-dialog-unsup-label{display:block;font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--orange);margin-bottom:.5rem}
+.fmt-dialog-unsup-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:.4rem .9rem}
+.fmt-dialog-unsup-list li{font-size:.82rem;line-height:1.3;display:flex;align-items:flex-start;gap:.45em;opacity:.9}
+.fmt-dialog-unsup-list li::before{content:'—';color:var(--orange);font-weight:800;flex:none}
+@media(max-width:520px){.fmt-dialog-unsup-list{grid-template-columns:1fr}}
+html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
 @media(max-width:760px){
 .formats-section{padding:4rem 1.25rem}
 .fmt-table{min-width:0;display:block}
@@ -2986,7 +3053,7 @@ html.dark .fmt-dialog{background:#122a1e;color:#eafff4}
    these pills went unreadable in dark mode the first time. */
 .prov-entity{background:var(--dark);color:#fff;font-weight:700;letter-spacing:.01em}
 .dark .prov-entity{background:#12463a}  /* lifted off the near-black page so the chip still reads as a chip */
-.prov-sig{border:1.5px solid var(--green);color:var(--text);font-weight:600;background:var(--pale)}
+.prov-sig{color:var(--text);font-weight:600;background:rgba(48,186,120,.14)}
 /* An actor inside a signature is WHITE ON GREEN in both themes - a signature is the
    one claim that must look identical wherever it is read. The fill is a deepened
    brand green rather than --green itself: white on #30ba78 is about 2.2:1, which
@@ -3093,7 +3160,7 @@ tr:nth-child(even) td{background:#fafffe}
 .faq-lead{text-align:center;color:var(--muted);font-size:1.0625rem;margin-bottom:2.5rem}
 .faq-list{display:flex;flex-direction:column;gap:.75rem}
 .faq-item{border:1px solid var(--border);border-radius:12px;background:var(--pale);overflow:hidden;transition:box-shadow .15s,border-color .15s}
-.faq-item[open]{border-color:var(--green);box-shadow:0 4px 16px rgba(12,50,44,.08)}
+.faq-item[open]{box-shadow:0 6px 20px rgba(12,50,44,.12)}
 .faq-q{display:flex;align-items:center;justify-content:space-between;gap:1.25rem;padding:1.25rem 1.5rem;font-weight:700;color:var(--dark);font-size:1.0625rem;line-height:1.4;cursor:pointer;list-style:none}
 .faq-q::-webkit-details-marker{display:none}
 .faq-q:hover{color:var(--green)}
@@ -3178,7 +3245,7 @@ footer .founded-badge{margin-top:.5rem}
    font-fallback margin. (The docs grid + content keep reflowing at 768px below.) */
 @media(max-width:1100px){
   nav{overflow-x:visible}
-  nav a:not(.brand){display:none}
+  nav:not(.quicknav) a:not(.brand){display:none}
   nav .nav-group{display:none}
   .nav-hamburger{display:flex}
 }
@@ -3315,8 +3382,8 @@ footer .founded-badge{margin-top:.5rem}
 .doc-video video{width:100%;height:auto;display:block;border-radius:10px;background:#0d1f17}
 .dark .docs-content pre code{background:none;color:inherit}
 /* ── Pilot / prototype disclaimer badge (in the dark hero) ─────────────────── */
-.hero-pilot{display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1.1rem;padding:.32rem .34rem .32rem .5rem;border:1px solid rgba(254,124,63,.5);background:rgba(254,124,63,.12);border-radius:999px;text-decoration:none;font-size:.8125rem;color:#ffd9c4;transition:background .15s,border-color .15s}
-.hero-pilot:hover{background:rgba(254,124,63,.22);border-color:rgba(254,124,63,.8)}
+.hero-pilot{display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1.1rem;padding:.34rem .36rem .34rem .55rem;background:rgba(254,124,63,.17);border-radius:999px;text-decoration:none;font-size:.8125rem;color:#ffd9c4;transition:background .15s}
+.hero-pilot:hover{background:rgba(254,124,63,.26)}
 .hero-pilot-tag{background:var(--orange);color:#2a0f04;font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:.66rem;padding:.22em .62em;border-radius:999px}
 .hero-pilot-text{padding-right:.35rem}
 @media(max-width:600px){.hero-pilot-text{font-size:.74rem}}
@@ -3339,7 +3406,7 @@ footer .founded-badge{margin-top:.5rem}
 .matrix-head--new{background:var(--green);color:#04231a}
 .matrix-cell{display:flex;gap:.7rem;align-items:flex-start;padding:1rem 1.15rem;border-radius:12px;font-size:.95rem;line-height:1.5}
 .matrix-cell--old{background:#fff;border:0;color:var(--muted)}
-.matrix-cell--new{background:#fff;border:1px solid rgba(48,186,120,.4);color:var(--text);box-shadow:0 2px 10px rgba(48,186,120,.08)}
+.matrix-cell--new{background:rgba(48,186,120,.08);color:var(--text);box-shadow:0 2px 12px rgba(48,186,120,.12)}
 .matrix-mark{flex-shrink:0;width:1.35rem;height:1.35rem;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;font-size:.78rem;font-weight:800;margin-top:.05rem}
 .matrix-cell--old .matrix-mark{background:rgba(90,112,103,.16);color:var(--muted)}
 .matrix-cell--new .matrix-mark{background:var(--green);color:#04231a}
@@ -3382,6 +3449,7 @@ const FORMATS_DIALOG_SCRIPT = `<script>(function(){
   var DIR={in:'Reads · import only',out:'Writes · export only',both:'Reads & writes · round-trip'};
   var q=function(id){return dlg.querySelector(id);};
   function open(tok){var f=data.formats[tok];if(!f)return;
+    q('#fmt-dlg-icon').innerHTML=(data.catIcons&&data.catIcons[f.category])||'';
     q('#fmt-dlg-dir').textContent=DIR[f.dir]||'';
     q('#fmt-dlg-name').textContent=f.name;
     q('#fmt-dlg-full').textContent=f.full+' · '+f.category;
@@ -3390,6 +3458,10 @@ const FORMATS_DIALOG_SCRIPT = `<script>(function(){
     ((data.specifics&&data.specifics[tok])||[]).forEach(function(s){var li=document.createElement('li');li.textContent=s;us.appendChild(li);});
     var ul=q('#fmt-dlg-feats');ul.textContent='';
     (f.features||[]).forEach(function(k){var li=document.createElement('li');li.textContent=(data.features&&data.features[k])||k;ul.appendChild(li);});
+    var un=q('#fmt-dlg-unsup'),unWrap=q('#fmt-dlg-unsup-wrap');un.textContent='';
+    var gaps=(data.unsupported&&data.unsupported[tok])||[];
+    gaps.forEach(function(s){var li=document.createElement('li');li.textContent=s;un.appendChild(li);});
+    unWrap.hidden=gaps.length===0;
     if(typeof dlg.showModal==='function')dlg.showModal();else dlg.setAttribute('open','');
   }
   document.addEventListener('click',function(e){

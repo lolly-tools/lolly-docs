@@ -25,7 +25,9 @@
     "contacts": "Contact cards",
     "3d": "3D model",
     "design-tokens": "Design tokens",
-    "palette": "Colour palette"
+    "palette": "Colour palette",
+    "compression": "Single-file compression",
+    "font": "Font container"
   },
   "specifics": {
     "SVG": [
@@ -390,6 +392,83 @@
       "Or strong WinZip AES-256 (AE-2)",
       "Each inner PDF individually locked",
       "Export-only"
+    ],
+    "SVGZ": [
+      "gzip(SVG): identical markup, ~60-70% smaller",
+      "Round-trips to byte-identical SVG on import",
+      "Keeps outlined text and the Content Credential"
+    ],
+    "BMP": [
+      "24-bit by default; 32-bit BGRA when a pixel is translucent",
+      "Reads top-down and bottom-up; refuses RLE/paletted/BITFIELDS",
+      "Carries the Lolly pixel imprint (no metadata box for C2PA)"
+    ],
+    "WMF": [
+      "Placeable WMF: pastes into older Office as an editable picture",
+      "Curves flattened to fine polylines (no bezier record)",
+      "Text outlined to paths; device-RGB colour; line-art only"
+    ],
+    "WOFF": [
+      "Lossless TTF/OTF to WOFF1 container swap, both ways",
+      "Table directory + offsets rebuilt; head checksum recomputed",
+      "TrueType (glyf) and CFF (OTTO) outlines pass through untouched",
+      "WOFF2 (Brotli) is read-detected but not written"
+    ],
+    "XLSX": [
+      "Reads the first worksheet, resolved through workbook.xml order",
+      "Shared strings, inline text, numbers, booleans and formula results resolve",
+      "Up to 1,000 rows; macro-enabled .xlsm is refused; import-only"
+    ],
+    "EPUB": [
+      "One XHTML file per chapter; OPF spine in reading order",
+      "EPUB 3 navigation TOC; packed as a valid OCF zip",
+      "Reflowable text; opens in Books/Kobo/Calibre; export-only"
+    ],
+    "GZ": [
+      "RFC 1952 gzip: CRC-32 + ISIZE trailer, deterministic output",
+      "In-tree inflate (no platform DecompressionStream dependency)",
+      "Powers .svgz and generic single-file compression"
+    ],
+    "TAR": [
+      "USTAR headers; readable by system tar and libarchive",
+      "Gzip it for .tar.gz; export-only bundle",
+      "Over-long names / >8 GiB files are refused, never truncated"
+    ]
+  },
+  "_unsupported_note": "Known gaps per format token, shown in the dialog under 'Not yet supported'. Editorial and accurate, not exhaustive: seed only what is genuinely true today. A format with no entry shows no gap list. Expand this during the format-support roadmap review.",
+  "unsupported": {
+    "JPG": [
+      "No transparency (alpha is flattened onto white)"
+    ],
+    "WEBP": [
+      "No HDR (8-bit only)"
+    ],
+    "GIF": [
+      "Export limited to a 256-colour palette",
+      "No soft alpha (1-bit on/off transparency only)",
+      "Export frame rate fixed at 15 fps"
+    ],
+    "WMF": [
+      "Curves flattened to polylines (no bezier record)",
+      "Line-art only (photographic/filtered regions are dropped)",
+      "Export-only (no WMF import)"
+    ],
+    "BMP": [
+      "Uncompressed only (no RLE)",
+      "No embedded colour profile or metadata box"
+    ],
+    "WOFF": [
+      "WOFF2 (Brotli) is read-detected but not written"
+    ],
+    "XLSX": [
+      "First worksheet only",
+      "Import-only (round-trip out via CSV/JSON)"
+    ],
+    "EPUB": [
+      "Export-only (no EPUB import yet)"
+    ],
+    "TAR": [
+      "Write-only (no tar unpack yet)"
     ]
   },
   "formats": [
@@ -941,13 +1020,13 @@
       "name": "ICO",
       "full": "Windows Icon",
       "category": "Raster",
-      "dir": "out",
+      "dir": "both",
       "features": [
         "raster",
         "alpha",
         "lossless"
       ],
-      "desc": "The favicon format, the little icon in a browser tab. One .ico bundles the same image at several small sizes so a site can serve whichever fits. Lolly writes it with transparency preserved (and a ZIP export can pack it alongside other icon formats for a full site set). Export-only."
+      "desc": "The favicon format, the little icon in a browser tab. One .ico bundles the same image at several small sizes so a site serves whichever fits. Lolly writes it with transparency preserved, and now reads one back too: it picks the largest image in the bundle and decodes it, whether that size was stored as a PNG or a classic BMP icon (honouring the 1-bit transparency mask)."
     },
     {
       "token": "APNG",
@@ -1120,6 +1199,103 @@
         "encryption"
       ],
       "desc": "A single archive that bundles many files together, how Lolly delivers a multi-format export, a whole folder of saved sessions, or a batch run. You can lock the whole zip with one password: a Standard lock (traditional ZipCrypto, opens in any unzip tool including Windows) or Strong AES-256 (needs 7-Zip, Keka or WinZip). Any PDF inside is also individually locked with the same password. Export-only."
+    },
+    {
+      "token": "SVGZ",
+      "name": "SVGZ",
+      "full": "Compressed SVG",
+      "category": "Vector",
+      "dir": "both",
+      "features": [
+        "vector",
+        "lossless",
+        "text-as-paths",
+        "provenance"
+      ],
+      "desc": "A gzip-compressed SVG: byte-for-byte the same vector picture as an .svg, just 60 to 70% smaller on the wire. Every vector editor and browser reads it, and Lolly unzips one straight back to SVG on import, so the outlined text and Content Credential survive the round trip."
+    },
+    {
+      "token": "BMP",
+      "name": "BMP",
+      "full": "Windows Bitmap",
+      "category": "Raster",
+      "dir": "both",
+      "features": [
+        "raster",
+        "alpha",
+        "lossless"
+      ],
+      "desc": "The uncompressed Windows bitmap, the lowest-common-denominator raster a legacy Windows, embedded, or clipboard consumer will take when it cannot read a PNG. Lolly writes 24-bit, or 32-bit the moment a pixel is see-through, and reads both back. It carries the Lolly pixel imprint; PNG stays the display master."
+    },
+    {
+      "token": "WMF",
+      "name": "WMF",
+      "full": "Windows Metafile",
+      "category": "Vector",
+      "dir": "out",
+      "features": [
+        "vector",
+        "text-as-paths"
+      ],
+      "desc": "The 16-bit ancestor of EMF, and still the safest vector paste for older Office builds and legacy clip-art pipelines: a placeable WMF drops into PowerPoint or Word as an editable vector picture. Lolly writes device-RGB WMF with curves flattened to fine polylines and text outlined to paths. Line-art only, so photographic regions are dropped. Export-only."
+    },
+    {
+      "token": "WOFF",
+      "name": "WOFF",
+      "full": "Web Open Font Format",
+      "category": "Font",
+      "dir": "both",
+      "features": [
+        "font",
+        "lossless"
+      ],
+      "desc": "A web font is an OpenType font (TTF or OTF) wrapped in a compressed container so it downloads smaller. Lolly converts between them losslessly on-device: unwrap a WOFF to a plain TTF or OTF, or wrap one up, rebuilding the table directory and checksums each way. TrueType and CFF outlines both pass through untouched. WOFF2 (Brotli) is read-detected but not yet written."
+    },
+    {
+      "token": "XLSX",
+      "name": "XLSX",
+      "full": "Excel Spreadsheet",
+      "category": "Data",
+      "dir": "in",
+      "features": [
+        "data-table"
+      ],
+      "desc": "Excel's spreadsheet workbook. Drop one and a tool's repeating fields fill from its first sheet, up to 1,000 rows, exactly like a pasted CSV with the first row becoming the column headers. Lolly reads the cells directly (shared strings, inline text, numbers, dates and formula results). Macro-enabled .xlsm workbooks are refused. Import-only."
+    },
+    {
+      "token": "EPUB",
+      "name": "EPUB",
+      "full": "EPUB 3 e-book",
+      "category": "Document",
+      "dir": "out",
+      "features": [
+        "multi-file-bundle",
+        "editable-text"
+      ],
+      "desc": "A reflowable EPUB 3 e-book: one XHTML file per chapter, a spine in reading order and a navigation table of contents, packed as a valid OCF zip. Opens in Apple Books, Kobo, Calibre and every e-reader, and the text reflows to any screen. Export-only."
+    },
+    {
+      "token": "GZ",
+      "name": "gzip",
+      "full": "GNU zip",
+      "category": "Bundle",
+      "dir": "both",
+      "features": [
+        "compression",
+        "lossless"
+      ],
+      "desc": "Single-file gzip compression (RFC 1952), the ubiquitous .gz. Wraps raw DEFLATE with a CRC-checked header and trailer. Lolly compresses and decompresses on-device; it is what powers .svgz and a generic 'compress this download'."
+    },
+    {
+      "token": "TAR",
+      "name": "tar",
+      "full": "USTAR archive",
+      "category": "Bundle",
+      "dir": "out",
+      "features": [
+        "multi-file-bundle"
+      ],
+      "desc": "The classic uncompressed multi-file archive (POSIX USTAR): one header per file, readable by system tar, libarchive and every standard library. Gzip it for a .tar.gz bundle. Export-only, for packing several assets into one download."
     }
   ]
 }
