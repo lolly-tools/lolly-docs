@@ -138,6 +138,7 @@ const pages: Page[] = [
   { slug: 'privacy',          title: 'Privacy Policy',    src: 'privacy.md',         pathway: 'trust' },
   { slug: 'inclusive-design', title: 'Inclusive Design',  src: 'inclusive-design.md', pathway: 'trust', description: "Accessibility, language coverage and the ethical commitments Lolly holds itself to, with the tests that fail the build when one is broken." },
   { slug: 'ai-stance',        title: 'Our AI Stance',     src: 'ai-stance.md',       pathway: 'trust', description: "AI is welcome as labour and refused as impersonation. Where Lolly stands on generated content, and the machinery that enforces each commitment." },
+  { slug: 'ai-features',      title: 'Generated once, rendered the same', src: 'ai-features.md', pathway: 'trust', description: "Text-to-speech, upscaling and background removal: generated once under guard-rails, then rendered identically everywhere. Why inventing pixels is marked AI and removing them is not." },
   { slug: 'beatrice-warde',   title: 'Beatrice Warde',    src: 'beatrice-warde.md',  pathway: 'trust', description: "The typographer whose 1932 lines this project adapted, who proved that the types the whole trade called Garamond had been cut by somebody else entirely." },
 ];
 
@@ -271,6 +272,7 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
         { slug: 'content-credentials-identity',    label: 'Content Credentials' },
         { slug: 'content-credentials-engineering', label: 'Content Credentials - Engineering' },
         { slug: 'ai-stance',                       label: 'Our AI Stance' },
+        { slug: 'ai-features',                     label: 'AI features' },
         { slug: 'beatrice-warde',                  label: 'Beatrice Warde' } ] },
       { label: 'Check it yourself', items: [
         { slug: 'verify-yourself', label: 'Verify It Yourself' },
@@ -2183,7 +2185,7 @@ h2{font-size:2rem;letter-spacing:0;font-weight:900;text-transform:uppercase}
 p{margin-bottom:2rem}
 ul{padding-left:1.25rem;margin-bottom:1rem}
 li{margin-bottom:.35rem}
-blockquote{border-left:0; box-shadow:0 0 0 1px #30ba7825, inset 0 1px #fff3, inset 0 -1px #0001, 0 .1rem 2.4rem #30ba7855;  border-radius: 2em; padding: 1.5rem 2.25rem;background:var(--pale);margin-bottom:2rem}
+blockquote{border-left:0; box-shadow:0 0 0 1px #30ba7825, inset 0 1px #fff3, inset 0 -1px #0001, 0 .1rem 2.4rem #30ba7855;  border-radius: 2em; padding: 1.5rem 2.25rem;background:var(--pale);margin:4rem 0;transform:scale(1.1)}
 blockquote p{margin:0}
 hr{border:none;border-top:1px solid var(--border);margin:2rem 0}
 strong{font-weight:600}
@@ -3245,7 +3247,11 @@ footer .founded-badge{margin-top:.5rem}
    font-fallback margin. (The docs grid + content keep reflowing at 768px below.) */
 @media(max-width:1100px){
   nav{overflow-x:visible}
-  nav:not(.quicknav) a:not(.brand){display:none}
+  /* Collapse the desktop nav links into the hamburger — but NOT the search-result
+     anchors, which are also <a> inside <nav> (the results panel lives in .docs-search).
+     Without the exemption this rule hid every hit, collapsing the results panel to an
+     empty strip on any viewport ≤1100px. */
+  nav:not(.quicknav) a:not(.brand):not(.docs-search-hit){display:none}
   nav .nav-group{display:none}
   .nav-hamburger{display:flex}
 }
@@ -4374,6 +4380,7 @@ const SIDEBAR_ICON: Record<string, string> = {
   'adoption-governance': 'people',
   // Trust — where content comes from
   'content-credentials-identity': 'seal', 'content-credentials-engineering': 'cpu', 'ai-stance': 'sparkle',
+  'ai-features': 'sparkle',
   'beatrice-warde': 'font',
   // Trust — check it yourself
   'verify-yourself': 'check', security: 'shieldcheck', 'threat-model': 'lock',
