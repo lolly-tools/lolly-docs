@@ -4,7 +4,7 @@ Lolly uses AI in a few specific places: it can speak a script aloud, enlarge a s
 
 That split is what makes a generated element safe to build on. The moment a voice clip or an enlarged photo exists, it stops being a model's shifting output and becomes a fixed artifact - a specific set of bytes. From then on every tool that uses it works from those same bytes, so the same input produces the same asset in the browser, in the terminal and on the desktop, today and next year. The unpredictable step is contained. It does not leak into the render.
 
-![A generated storm image opened in Verify, its GEN AI badge beside the green Made with Lolly verdict and the credential-intact and bytes-unchanged checks](/t/url-shot?url=%2F%23%2Fverify%3Fsrc%3D%2Finfo%2Fthe-flood.webp&width=560&height=1400&dpi=192&waitMs=6000&waitSelector=.valid-steps&walker=1&format=svg&rasterDpi=96&cropSelector=.valid-top&dark=1&filename=aif-verify-genai&sweep=1)
+![A generated storm image opened in Verify, its GEN AI badge beside the green Made with Lolly verdict and the credential-intact and bytes-unchanged checks](/t/url-shot?url=%2F%23%2Fverify%3Fsrc%3D%2Finfo%2Fthe-flood.webp&width=560&height=1400&dpi=192&waitMs=6000&waitSelector=.valid-steps&walker=1&format=svg&rasterDpi=96&cropSelector=.valid-result&css=.valid-panels%2C.valid-wm%2C.valid-note%7Bdisplay%3Anone%7D&dark=1&filename=aif-verify-genai&sweep=1)
 
 ## Two steps, and only one of them guesses
 
