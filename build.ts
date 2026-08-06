@@ -2538,7 +2538,7 @@ html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
 /* The magpie fills the gutter right of the lede. The section is literally about Content
    Credentials, so a signed genAI animal here is the argument in the flesh — curiosity by
    design. Contained (in flow, not absolute), stacks under the copy on narrow screens. */
-.assure-mascot{width:clamp(120px,14vw,200px);flex-shrink:0;filter:drop-shadow(0 14px 34px rgba(0,0,0,.45))}
+.assure-mascot{width:clamp(120px,25vw,300px);flex-shrink:0;filter:drop-shadow(0 14px 34px rgba(0,0,0,.45))}
 @media(max-width:820px){.assure-lede-row{flex-direction:column}.assure-mascot{width:min(42vw,180px);align-self:flex-start}}
 .assure-eyebrow{display:inline-block;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--light);margin-bottom:1rem}
 .assure-section h2{font-size:2.5rem;line-height:1.08;color:#fff;margin:0 0 1.25rem}
