@@ -739,6 +739,11 @@ function shotCredential(file: string, extraClass = '', from?: { path: string; sr
     bits.push(`<span class="prov-pill prov-sig">${PROV_SEAL}${esc(t('signed by'))} `
       + `<span class="prov-pill prov-entity">${esc(p.signer)}</span></span>`);
   }
+  // A page ASSET (an animal mascot, the AI stance hero) names the served FILE in its
+  // line, so the reader can see exactly which bytes carry this credential. A screenshot
+  // omits it: its slug is already its identity and the width-limited row has no room to
+  // spare. Basename only — the full path is in the download link.
+  if (from) bits.push(`<span class="prov-pill prov-detail prov-file">${esc(file.split('/').pop() ?? file)}</span>`);
   if (kind) bits.push(`<span class="prov-pill prov-detail">${esc(kind)}</span>`);
   if (day) bits.push(`<time class="prov-pill prov-detail" datetime="${esc(day)}">${esc(day)}</time>`);
   // An AI declaration is the one fact that must never be tucked behind a hover, so
@@ -817,6 +822,36 @@ function shotCredential(file: string, extraClass = '', from?: { path: string; sr
     + `</span>`
     + (facts.length ? `<span class="shot-cred-row shot-cred-anat">${facts.join('')}</span>` : '')
     + `</span></span>`;
+}
+
+/**
+ * A landing-page mascot wrapped with its own Content Credential — the same imprint glyph
+ * + verify/download the docs screenshots carry, read from the served file. The inline()
+ * asset-cred rewrite only sees markdown; the landing template emits raw HTML, so this is
+ * its equivalent. `cls` is the mascot's sizing class (width / flex / drop-shadow); it moves
+ * onto the WRAPPER so the img can fill it 100% and the credential can position against it.
+ * Every image on the /info site becoming a live demonstration of the provenance chain is
+ * the point (see plans + the mascot-provenance note): a site that argues AI should declare
+ * itself should not ship undeclared stock art. A file with no readable credential still
+ * renders — just as a plain img, without a line.
+ */
+function credentialedMascot(src: string, cls: string, alt = ''): string {
+  const file = src.replace(/^\/info\//, '');
+  const path = resolve(outDir, file);
+  const size = shotSize(file, path);
+  const dims = size ? ` width="${size.w}" height="${size.h}"` : '';
+  // Rests CLOSED like a screenshot's credit (glyph only, expands on hover / focus / tap),
+  // NOT open like the AI-stance hero: a mascot sits in a narrow flex slot, so an
+  // always-open line would overflow the artwork. This is the "same imprint as the
+  // screenshots" the brief asked for. shot-cred--mascot is a positioning hook only —
+  // it does NOT contain 'shot-cred--asset', so shotCredential leaves restsOpen false.
+  const cred = shotCredential(file, 'shot-cred--mascot', { path, src });
+  // No readable credential → the plain mascot it was before, sizing class on the img.
+  if (!cred) return `<img src="${src}"${dims} alt="${esc(alt)}" class="${esc(cls)}" loading="lazy"${alt ? '' : ' aria-hidden="true"'}>`;
+  // Wrapper carries the sizing class; the img fills it (mascot-cred>img is width:100%).
+  return `<span class="mascot-cred ${esc(cls)}" data-shot="${src}">`
+    + `<img src="${src}"${dims} alt="${esc(alt)}" loading="lazy"${alt ? '' : ' aria-hidden="true"'}>`
+    + `${cred}</span>`;
 }
 
 /**
@@ -1555,7 +1590,7 @@ function buildLandingContent(md: string, lang: Lang = 'en') {
   // Tab strip with header
   const audienceChrome = loadSiteJson('audience-chrome.json', lang) as { title: string; subtitle: string };
   const tabsHtml = `<div class="audience-header reveal">
-  <img src="/info/mascots/quoll.png" alt="" class="audience-mascot" aria-hidden="true">
+  ${credentialedMascot('/info/mascots/quoll.webp', 'audience-mascot')}
   <div class="audience-header-text">
     <h2 class="audience-title">${esc(audienceChrome.title)}</h2>
     <p class="audience-sub">${esc(audienceChrome.subtitle)}</p>
@@ -1758,9 +1793,12 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   const IMPORT_HTML = `<section class="import-section">
   <div class="import-inner">
     <div class="import-lede reveal">
-      <span class="import-eyebrow">${esc(importData.eyebrow)}</span>
-      <h2>${esc(importData.heading)}</h2>
-      <p class="import-lead">${inline(importData.lead)}</p>
+      ${credentialedMascot('/info/mascots/kookaburra.png', 'import-mascot')}
+      <div class="import-lede-text">
+        <span class="import-eyebrow">${esc(importData.eyebrow)}</span>
+        <h2>${esc(importData.heading)}</h2>
+        <p class="import-lead">${inline(importData.lead)}</p>
+      </div>
     </div>
     <div class="import-sources reveal reveal-1">
       ${importData.sources.map(s => `<div class="import-source">
@@ -1809,10 +1847,13 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   };
   const ASSURE_HTML = `<section class="assure-section" id="trust">
   <div class="assure-inner">
-    <div class="assure-lede reveal">
-      <span class="assure-eyebrow">${esc(assure.eyebrow)}</span>
-      <h2>${br(assure.heading)}</h2>
-      <p class="assure-lead">${inline(assure.lead)}</p>
+    <div class="assure-lede-row reveal">
+      <div class="assure-lede">
+        <span class="assure-eyebrow">${esc(assure.eyebrow)}</span>
+        <h2>${br(assure.heading)}</h2>
+        <p class="assure-lead">${inline(assure.lead)}</p>
+      </div>
+      ${credentialedMascot('/info/mascots/magpie.webp', 'assure-mascot')}
     </div>
     <div class="assure-main reveal reveal-1">
       <ul class="assure-checks">
@@ -1946,9 +1987,12 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   const WHY_MATRIX_HTML = `<section class="why-section" id="why">
   <div class="why-inner">
     <div class="why-lede reveal">
-      <span class="why-eyebrow">${esc(why.eyebrow)}</span>
-      <h2>${br(why.heading)}</h2>
-      <p class="why-lead">${inline(why.lead)}</p>
+      <div class="why-lede-text">
+        <span class="why-eyebrow">${esc(why.eyebrow)}</span>
+        <h2>${br(why.heading)}</h2>
+        <p class="why-lead">${inline(why.lead)}</p>
+      </div>
+      ${credentialedMascot('/info/mascots/ringtail-possum.webp', 'why-mascot')}
     </div>
     <div class="why-frustrations reveal reveal-1">
       ${why.frustrations.map(f => `<div class="why-frustration"><span class="why-frustration-ic">${siteIcon(f.icon)}</span><strong>${esc(f.title)}</strong><p>${inline(f.desc)}</p></div>`).join('\n      ')}
@@ -2015,8 +2059,13 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
 </section>
 <section class="pathways-section reveal" id="start">
   <div class="pathways-inner">
-    <h2 class="pathways-title">${esc(pathways.title)}</h2>
-    <p class="pathways-lead">${inline(pathways.lead)}</p>
+    <div class="pathways-head">
+      ${credentialedMascot('/info/mascots/echidna.webp', 'pathways-mascot')}
+      <div class="pathways-headtext">
+        <h2 class="pathways-title">${esc(pathways.title)}</h2>
+        <p class="pathways-lead">${inline(pathways.lead)}</p>
+      </div>
+    </div>
     <div class="pathways-grid">
       ${pathways.cards.map(c => `<a class="pathway-card" href="${esc(c.href)}">
         <span class="pathway-ic" aria-hidden="true">${(ICONS as Record<string, string>)[c.icon] ?? ''}</span>
@@ -2087,14 +2136,14 @@ ${ASSURE_HTML}
 ${IMPORT_HTML}
 <section class="everywhere-section" id="everywhere">
   <div class="everywhere-inner reveal">
-    <div class="everywhere-copy-col">
+    <div class="everywhere-head">
+      ${credentialedMascot('/info/mascots/wedge-tailed-eagle.webp', 'everywhere-mascot')}
       <h2>${br(everywhere.heading)}</h2>
-      <p class="everywhere-copy">${br(everywhere.copy)}</p>
-      <div class="everywhere-chips">
-        ${everywhere.surfaces.map(s => `<span class="everywhere-chip">${siteIcon(s.icon)}<span>${esc(s.label)}</span></span>`).join('')}
-      </div>
     </div>
-    <img src="/info/mascots/quokka.png" class="quokka" alt="" class="everywhere-mascot">
+    <p class="everywhere-copy">${br(everywhere.copy)}</p>
+    <div class="everywhere-chips">
+      ${everywhere.surfaces.map(s => `<span class="everywhere-chip">${siteIcon(s.icon)}<span>${esc(s.label)}</span></span>`).join('')}
+    </div>
   </div>
   <div class="everywhere-models reveal">
     <p class="everywhere-models-intro">${esc(everywhere.modelsIntro)}</p>
@@ -2125,7 +2174,7 @@ ${IMPORT_HTML}
 <section class="about-section">
   <div class="about-inner reveal">
     <div class="about-header">
-      <img src="/info/mascots/koala.png" alt="" class="about-mascot" aria-hidden="true">
+      ${credentialedMascot('/info/mascots/koala.webp', 'about-mascot')}
       <div class="about-header-text">
         <h2>${esc(aboutMd.heading)}</h2>
         <p class="about-lead">${inline(aboutMd.lead)}</p>
@@ -2307,8 +2356,11 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 /* Three-door pathways band - sits directly under the hero on the landing page. */
 .pathways-section{background:transparent;position:relative;z-index:1;padding:4rem 1.5rem}
 .pathways-inner{max-width:1080px;margin:0 auto;text-align:center}
+.pathways-head{display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap;margin:0 0 2.5rem;text-align:start}
+.pathways-headtext{max-width:38rem}
 .pathways-title{color:#fff;font-size:2rem;margin:0 0 .5rem}
-.pathways-lead{color:rgba(255,255,255,.7);font-size:1.0625rem;max-width:40rem;margin:0 auto 2.5rem}
+.pathways-mascot{width:clamp(160px,20vw,300px);flex-shrink:0}
+.pathways-lead{color:rgba(255,255,255,.7);font-size:1.0625rem;margin:0}
 .pathways-lead a{color:var(--light);font-weight:600}
 .pathways-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;text-align:start}
 .pathway-card{    backdrop-filter: blur(5px);display:flex;flex-direction:column;gap:.5rem;padding:1.75rem;border-radius:14px;background:rgba(255,255,255,.05);border:0;    box-shadow: inset 0 1px #fff1, 0 .2em .5em #0002;transition:transform .18s ease,border-color .18s ease,background .18s ease}
@@ -2481,7 +2533,13 @@ html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
 /* Assurance / provenance - the trust band */
 .assure-section{background:linear-gradient(155deg,#061816 0%,#0c322c 55%,#0a3b30 100%);color:#fff;padding:6.5rem 2rem}
 .assure-inner{max-width:1080px;margin:0 auto}
-.assure-lede{max-width:46rem;margin-bottom:3.5rem}
+.assure-lede-row{display:flex;align-items:flex-start;justify-content:space-between;gap:2.5rem;margin-bottom:3.5rem}
+.assure-lede{max-width:46rem}
+/* The magpie fills the gutter right of the lede. The section is literally about Content
+   Credentials, so a signed genAI animal here is the argument in the flesh — curiosity by
+   design. Contained (in flow, not absolute), stacks under the copy on narrow screens. */
+.assure-mascot{width:clamp(120px,14vw,200px);flex-shrink:0;filter:drop-shadow(0 14px 34px rgba(0,0,0,.45))}
+@media(max-width:820px){.assure-lede-row{flex-direction:column}.assure-mascot{width:min(42vw,180px);align-self:flex-start}}
 .assure-eyebrow{display:inline-block;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--light);margin-bottom:1rem}
 .assure-section h2{font-size:2.5rem;line-height:1.08;color:#fff;margin:0 0 1.25rem}
 .assure-lead{font-size:1.12rem;line-height:1.75;color:rgba(255,255,255,.72);margin:0}
@@ -2526,13 +2584,16 @@ html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
 
 /* Everywhere section */
 .everywhere-section{padding:5rem 2rem;background:var(--dark);color:#fff}
-.everywhere-inner{display:flex;align-items:center;gap:4rem;max-width:1400px;margin:0 auto}
-.everywhere-copy-col{flex:1;text-align:start}
-.everywhere-mascot{width:20vw;max-width:420px;flex-shrink:0}
-.everywhere-section h2{color:#fff;margin-bottom:1rem}
-.everywhere-copy{font-size:1.125rem;line-height:1.75;color:rgba(255,255,255,.65);margin-bottom:3rem}
+.everywhere-inner{display:flex;flex-direction:column;gap:1.5rem;max-width:1400px;margin:0 auto;text-align:start}
+/* Mascot beside the TITLE only (per the brief), bigger than before; copy + chips run full
+   width on their own lines below. */
+.everywhere-head{display:flex;align-items:center;justify-content:space-between;gap:2.5rem}
+.everywhere-head h2{margin:0;flex:1 1 auto}
+.everywhere-mascot{width:clamp(300px,34vw,600px);flex-shrink:0}
+.everywhere-section h2{color:#fff}
+.everywhere-copy{font-size:1.125rem;line-height:1.75;color:rgba(255,255,255,.65);margin:0 0 1rem}
 .everywhere-chips{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:1rem}
-@media(max-width:768px){.everywhere-inner{flex-direction:column}.everywhere-mascot{width:60vw;max-width:280px}.everywhere-copy-col{text-align:center}.everywhere-chips{justify-content:center}}
+@media(max-width:768px){.everywhere-head{flex-direction:column;align-items:flex-start;gap:1.25rem}.everywhere-mascot{width:min(82vw,440px)}}
 .everywhere-chip{display:inline-flex;flex-direction:column;align-items:center;gap:.625rem;padding:1.25rem 1.75rem;background:rgba(255,255,255,.05);border-radius:14px;color:#fff;font-size:.95rem;font-weight:700;min-width:7rem;transition:background .2s}
 .everywhere-chip:hover{background:rgba(255,255,255,.09)}
 .everywhere-chip svg{width:2rem;height:2rem;color:var(--green);flex-shrink:0}
@@ -2578,7 +2639,10 @@ html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
 /* Design import segment ("bring your existing files") */
 .import-section{background:linear-gradient(180deg,#fff 0%,var(--pale) 100%);padding:7rem 2rem 5rem}
 .import-inner{max-width:1080px;margin:0 auto}
-.import-lede{text-align:center;max-width:46rem;margin:0 auto 3rem}
+.import-lede{display:flex;align-items:center;justify-content:center;gap:2.5rem;max-width:64rem;margin:0 auto 3rem;text-align:start}
+.import-lede-text{max-width:46rem}
+.import-mascot{width:clamp(180px,22vw,340px);flex-shrink:0}
+@media(max-width:820px){.import-lede{flex-direction:column;text-align:center}}
 .import-eyebrow{display:inline-block;font-size:.6875rem;text-transform:uppercase;letter-spacing:.14em;font-weight:700;color:var(--green);background:rgba(48,186,120,.1);padding:.4em .9em;border-radius:2em;margin-bottom:1.25rem}
 .import-section h2{color:var(--dark);margin-bottom:1.25rem}
 .import-lead{font-size:1.0625rem;line-height:1.8;color:var(--muted);margin:0}
@@ -2887,6 +2951,20 @@ html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
    zero, which is the other reason this is not a .shot. */
 .asset-cred{display:block;position:relative;width:100%}
 .asset-cred>img{display:block;width:100%;height:auto;margin:0}
+/* A landing mascot wrapped with its Content Credential. The mascot's sizing class
+   (.about-mascot / .audience-mascot / .everywhere-mascot: width, flex-shrink, drop-shadow)
+   rides on THIS span, so it stays the flex child it was; the img just fills it, and the
+   corner credential positions against it. NOT .asset-cred (that is width:100%, for the
+   full-column docs hero). */
+.mascot-cred{position:relative;display:block;flex-shrink:0}
+.mascot-cred>img{display:block;width:100%;height:auto;margin:0}
+/* Keep a landing mascot's credit INSIDE its box (the brief), unlike a screenshot's
+   caption which deliberately overhangs the artwork edge. Clamp the line to the mascot's
+   own width and let the pills WRAP into a compact stack rather than run off the side. The
+   glyph stays bottom-anchored; the expanded line grows upward within the box. */
+.mascot-cred .shot-cred{max-width:calc(100% - 1rem)}
+.mascot-cred .shot-cred-line{max-width:100%}
+.mascot-cred .shot-cred-row{flex-wrap:wrap}
 /* The line is a stack of ROWS, and a shot with no readable file has exactly one of
    them — so the column above is byte-identical to the single row it replaced. The
    second row (what the file is made of) only ever appears inside the expanded line,
@@ -3141,6 +3219,9 @@ tr:nth-child(even) td{background:#fafffe}
 .about-header{display:flex;align-items:center;gap:3rem;margin-bottom:3.5rem}
 .about-header-text{flex:1;min-width:0}
 .about-mascot{width:clamp(200px,26vw,360px);flex-shrink:0;filter:drop-shadow(0 16px 40px rgba(0,0,0,.5))}
+/* A second, smaller animal opposite the koala — the About section IS the "adorable
+   Australian animals" section, so a companion here is on-theme, not clutter. */
+.about-mascot-2{width:clamp(120px,15vw,190px);flex-shrink:0;filter:drop-shadow(0 12px 30px rgba(0,0,0,.45))}
 .about-section h2{color:#fff;margin-bottom:1rem}
 .about-section h3{font-size:.75rem;font-weight:800;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.16em;margin:3rem 0 1.25rem;text-align:center}
 .about-lead{font-size:1.0625rem;color:rgba(255,255,255,.7);line-height:1.85;margin:0}
@@ -3396,7 +3477,10 @@ footer .founded-badge{margin-top:.5rem}
 /* ── Why we built Lolly + old-way vs Lolly-way matrix ─────────────────────── */
 .why-section{padding:5rem 1.5rem;background:var(--pale)}
 .why-inner{max-width:1080px;margin:0 auto}
-.why-lede{text-align:center;max-width:44rem;margin:0 auto 2.5rem}
+.why-lede{display:flex;align-items:center;justify-content:center;gap:2.5rem;max-width:62rem;margin:0 auto 2.5rem;text-align:start}
+.why-lede-text{max-width:44rem}
+.why-mascot{width:clamp(180px,22vw,340px);flex-shrink:0}
+@media(max-width:820px){.why-lede{flex-direction:column;text-align:center}}
 .why-eyebrow{display:inline-block;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.14em;color:var(--green);margin-bottom:.75rem}
 .why-section h2{font-size:clamp(1.8rem,4vw,2.5rem);color:var(--dark);line-height:1.12;margin-bottom:1rem}
 .why-lead{color:var(--muted);font-size:1.0625rem;line-height:1.7}
