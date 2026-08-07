@@ -66,7 +66,7 @@ Optional:
 
 None of those fields stay private to the repo. The gallery's About card is the manifest read back to whoever is deciding whether to open the tool: name, category and status from identity, the export chips and canvas size from `render`, the version, and a `capabilities` line whenever the tool declared any.
 
-![The About card for the Halftone filter, listing its exports grouped as vector, raster and video chips, its 1000 by 1000 canvas and its version, all read straight from the manifest](/t/url-shot?url=%2F%23%2F%3Ftool%3Dfilter-halftone&width=1440&height=1200&dpi=192&waitMs=2200&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&format=svg&walker=1&cropSelector=.meta-dialog-body&dark=1&filename=at2-manifest-about-card&sweep=1)
+![The About card for the Filter tool, listing its exports grouped as vector, raster and video chips, its 1080 by 1080 canvas and its version, all read straight from the manifest](/t/url-shot?url=%2F%23%2F%3Ftool%3Dfilter&width=1440&height=1200&dpi=192&waitMs=2200&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&format=svg&walker=1&cropSelector=.meta-dialog-body&dark=1&filename=at2-manifest-about-card&sweep=1)
 
 ### The `render` block
 
@@ -84,7 +84,7 @@ Most of what `render` declares surfaces in one place the user sees: the export p
 - `transparentBg` - defaults `false`. Adds a **"No BG"** (transparent background) toggle to the export bar; the engine injects it into the input model so hooks can react via `onInit`/`onInput` (`chart-creator`).
 - `preview` - `{ format?, auto? }`. Marks a tool whose live canvas is a placeholder until an explicit, expensive render runs (e.g. a capture tool that screenshots a page in `beforeExport`); the shell wires a `[data-preview]` control. `auto: true` renders one frame on load. Used by `url-shot`.
 - `video` - `{ wait?, duration? }` (seconds; defaults `1` / `5`). Capture timing used when `webm`/`mp4`/`gif`/`apng` is in `formats` (`bag-video`).
-- `liveMaxEdge` - integer px. For `onFrame` (live camera) tools only: the requested longest edge of the working camera frame handed to the hook. The shell downscales the source camera to a small default that suits a vector trace, so a raster-output tool (`filter-pixel-stretch`) raises this for sharper output. The shell clamps it to the native camera frame - it never upscales - and to its own ceiling, and ignores it for tools without `onFrame`.
+- `liveMaxEdge` - integer px. For `onFrame` (live camera) tools only: the requested longest edge of the working camera frame handed to the hook. The shell downscales the source camera to a small default that suits a vector trace, so a raster-output effect (the `filter` tool's pixel-stretch) raises this for sharper output. The shell clamps it to the native camera frame - it never upscales - and to its own ceiling, and ignores it for tools without `onFrame`. A companion `liveMaxEdgeInput` names a number input whose value overrides it, so the resolution can be a user-facing slider (re-applied to the live stream on change).
 - `c2pa` - defaults **`true`** (Content Credentials are **opt-out**). The **Content Credentials** card in the export popup is pre-checked for every stampable format (`pdf`, `png`/`apng`, `jpg`, `gif`, `svg`, `tiff`/`cmyk-tiff`, `webp`, `mp4`/`webm`, zip members), so the finished file gets a signed C2PA manifest (on-device key, so viewers report it as an unverified credential). Set `false` to opt a tool out. Forced **off** for `privacy: "on-device"` tools, which must never embed provenance into a user's own file. A `?c2pa=` link/save value overrides this per export.
 - `dims` - set `false` to hide the export dimension inputs in the download bar.
 - `aspectWarning` - `{ min?, max?, message }`. An **editor-only** amber caution shown in the Export popup when the chosen page aspect (`width ÷ height`) falls outside `[min, max]` (either bound optional). It's purely a guard against picking a size that breaks the layout - it never appears in the exported output. `multi-page-pdf` declares `{ "max": 1, "message": "…" }` (portrait-only).
@@ -291,7 +291,7 @@ Use `vector` when a few related numbers belong together - zoom + pan, an x/y off
 
 The value is an object keyed by field id, so the template reads each part with dot access: `{{imageFraming.zoom}}`, `{{imageFraming.x}}`, `{{imageFraming.y}}`. Each field clamps to its own `min`/`max` and falls back to its `default`.
 
-In URL mode (and `/pro` CSV) each field is its **own flat param/column**, namespaced `"<inputId>.<fieldId>"` - e.g. `?imageFraming.zoom=200&imageFraming.x=30&imageFraming.y=70`, or CSV columns `imageFraming.zoom`, `imageFraming.x`, `imageFraming.y`. There is no `urlKey` on a vector. `filter-duotone` and `quotes` (both `imageFraming`) are the reference implementations.
+In URL mode (and `/pro` CSV) each field is its **own flat param/column**, namespaced `"<inputId>.<fieldId>"` - e.g. `?imageFraming.zoom=200&imageFraming.x=30&imageFraming.y=70`, or CSV columns `imageFraming.zoom`, `imageFraming.x`, `imageFraming.y`. There is no `urlKey` on a vector. `quotes` (`imageFraming`) is the reference implementation; the `filter` tool carries the same control per raster effect (namespaced, e.g. `du_imageFraming`).
 
 `imageFraming` is a **canonical input** (see below) - reuse that id and field set verbatim for any zoom/pan-an-image control rather than inventing a synonym.
 
@@ -311,7 +311,7 @@ An `asset` input opens the host's asset picker and stores the chosen `AssetRef` 
 
 `assetType` constrains what the picker offers: `raster` (bitmaps only), `vector` (SVG only - for inline-recolourable logos), `image` (**any still image - raster _or_ vector**, the right choice for a generic picture slot), `video`, `audio` (`audiogram` uses this), `lottie`, or `any` (everything, including non-image assets). Prefer `image` over `raster` for photo/illustration slots so users can also pick or upload SVGs.
 
-![The Image row in the Halftone filter - a thumbnail slot and a Choose asset button that opens the host's picker, with nothing about pickers in the manifest](/t/url-shot?url=%2F%23%2Ftool%2Ffilter-halftone&width=1440&height=900&dpi=192&waitMs=2000&css=%23tool-canvas%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.input-row%3Ahas%28.asset-picker-trigger%5Bdata-input-id%3D%22image%22%5D%29&dark=1&filename=at2-input-asset-picker)
+![The Image row in the Filter tool - a thumbnail slot and a Choose asset button that opens the host's picker, with nothing about pickers in the manifest](/t/url-shot?url=%2F%23%2Ftool%2Ffilter&width=1440&height=900&dpi=192&waitMs=2000&css=%23tool-canvas%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.input-row%3Ahas%28.asset-picker-trigger%5Bdata-input-id%3D%22image%22%5D%29&dark=1&filename=at2-input-asset-picker)
 
 When `allowUpload` is `true`, the picker offers the user's **personal image library** alongside the catalog. Users add images from their device; the host stores the bytes **verbatim** (a silent re-encode would break a Content Credential's hard binding) and only offers to downscale when a file is genuinely huge. Metadata stripping is a separate, opt-in user preference (*Strip metadata from uploads*, default off). The library is **not capped by count** - the only limit is the device's own storage, checked before each write - and it is reusable across tools and managed in **Profile → Storage → My images**. SVG uploads are sanitised on ingest (script/handler stripping) and pass through without rasterising.
 
@@ -539,7 +539,7 @@ function onFrame({ frame, model }) {
 }
 ```
 
-Keep it cheap - `onFrame` isn't time-boxed, but the runtime drops a frame if the previous one is still rendering, so an expensive per-frame render just lowers the frame rate. The four `filter-*` tools are the reference (halftone/scanline/posterise/duotone); pixel-tracers wrap the frame as above, while the SVG-filter duotone hands the frame back as a data-URL image instead.
+Keep it cheap - `onFrame` isn't time-boxed, but the runtime drops a frame if the previous one is still rendering, so an expensive per-frame render just lowers the frame rate. The `filter` tool's effects are the reference (halftone/scanline/posterise/duotone); pixel-tracers wrap the frame as above, while the SVG-filter duotone hands the frame back as a data-URL image instead.
 
 ### Recording tools (`render.capture` + `onLevel`)
 
