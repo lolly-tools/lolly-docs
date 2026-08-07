@@ -217,9 +217,7 @@ lolly/
 │   ├── brand-lockup/      # "Brand Lockup" - SUSE logo lockups; HarfBuzz text-to-path (wasm)
 │   ├── bag-video/
 │   ├── chart-creator/     # SVG charts from structured data
-│   ├── filter-duotone/    # two-color photo treatment
-│   ├── filter-halftone/   # photo → vector halftone dot grid
-│   ├── filter-scanline/   # photo → retro posterised scanline grid (SVG / transparent raster)
+│   ├── filter/            # photo effects in one tool - halftone/scanline/posterize/voronoi (vector), duotone/pixel-stretch/imperfections (raster)
 │   ├── meeting-planner/   # global timezone meeting scheduler
 │   ├── calendar-ics/      # event → .ics calendar file plus a card
 │   ├── digi-ad/           # "Animated Ad" - looping banner from scenes
@@ -232,8 +230,6 @@ lolly/
 │   ├── logo-wall/         # many logos → auto-packed grid
 │   ├── logo-lockup-partner/ # SUSE + partner co-brand lockup
 │   ├── web-icon/          # favicon .ico / png / svg from text + colours
-│   ├── filter-posterize/  # photo → flat posterised vector separations
-│   ├── filter-pixel-stretch/ # photo → pixel-smear effect
 │   ├── lottie-digi-ad/    # animated Lottie ad banners
 │   └── pose-geeko/        # pose the SUSE Geeko mascot - print-ready stills
 │
