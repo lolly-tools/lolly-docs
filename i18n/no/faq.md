@@ -99,15 +99,11 @@ Vi vinner kampen om styring med utmerket bekvemmelighet og service.
 
 ## Kan Lolly redigere og rendre mine Figma-, Penpot-, Illustrator- eller InDesign-filer?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
 
 Ja. Åpne **Layout Studio** og klikk på **Importer en design**: det godtar en nativ Figma **.fig** (Save local copy), en Penpot **.penpot**-eksport, en Illustrator **.ai** eller **.pdf**, en InDesign **.idml** (File → Export → InDesign Markup), eller **hvilken som helst SVG** (den brede døren - nesten alle designprogrammer kan eksportere det). Alt tolkes fullstendig på din egen enhet, ingen konto eller plugin nødvendig.
 
 Lag kommer inn som redigerbare bokser på den åpne canvasen: tekst forblir omskrivbar, former forblir former, bilder blir med i biblioteket ditt på enheten, og typografi og farger følger merkevarens globale verdier. Lagre den, så blir layouten en gjenbrukbar, URL-adresserbar mal som hvem som helst med Lolly kan fylle på nytt - og du kan blande inn levende verktøy (en QR-kode, et diagram) som rendres på nytt ved innlasting. Derfra rendres den som alt annet i Lolly - SVG, PDF, PNG og resten, reproduserbar fra URL-en sin. Se [Importer en design](/info/design-import.html).
-
-## Kan Lolly rebrande en eksisterende PowerPoint-presentasjon?
-
-Ja - på to måter, begge på din egen enhet. Verktøyet **Rebrand a Deck** tar en `.pptx` og bytter ut tema, hardkodede farger og skrifter til merkevaren din, mens diagrammer, SmartArt og animasjoner går gjennom uendret - du får en `.pptx` tilbake. Eller åpne presentasjonen i **Deck Builder** (Last inn → slipp filen) for å redigere den lysbilde for lysbilde som frittstående objekter, allerede tilpasset merkevaren, og eksporter PPTX, PDF eller video. Slipper du i stedet en `.pptx` på et opplastingsområde, arkiveres lysbildene du velger som SVG-ressurser i biblioteket ditt. Se [Importer en design → Presentasjoner og dokumenter](/info/design-import.html#decks-and-documents).
 
 ## Hva skjer 29. august?
 

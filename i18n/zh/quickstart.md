@@ -14,7 +14,7 @@ Lolly 将你的规则——颜色、字体、版式、逻辑——转化为任�
 
 ### 从零开始（向导）
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 首次运行会将你带到 **Start** 屏幕（`#/start`）。给它一个名称和一个主色，Lolly 就会用引擎在其他地方使用的同一套色彩数学，从中*推导*出一整套无障碍的调色板——明暗表面、文本、强调色。选一种字体，不到一分钟你就拥有了一个可用的品牌。之后你可以随时进一步调整。
 

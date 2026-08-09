@@ -14,7 +14,7 @@ Je merk in Lolly is een klein **design-tokens**-document - kleuren, lettertypen 
 
 ### Begin vanaf nul (de wizard)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 Bij de eerste keer starten kom je op het **Start**-scherm (`#/start`) terecht. Geef het een naam en een primaire kleur, en Lolly *leidt* daar een compleet, toegankelijk kleurenpalet van af - light/dark-oppervlakken, tekst, accenten - met dezelfde kleurwiskunde die de engine overal elders gebruikt. Kies een lettertype en je hebt binnen een minuut een werkend merk. Je kunt alles later nog verfijnen.
 

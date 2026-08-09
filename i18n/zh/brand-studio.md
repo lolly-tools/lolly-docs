@@ -8,17 +8,17 @@
 
 ## 五个步骤
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1&sweep=1)
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.ds-rail&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1&sweep=1)
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1&sweep=1)
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.ds-rail&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1&sweep=1)
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1&sweep=1)
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.ds-rail&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1&sweep=1)
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1&sweep=1)
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.ds-rail&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1&sweep=1)
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1&sweep=1)
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.ds-rail&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1&sweep=1)
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1&sweep=1)
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.ds-rail&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1&sweep=1)
 
 工作室是一个五个标签页的编辑器。可以从左到右依次操作——也可以直接跳到任意一个标签页：
 
@@ -49,23 +49,23 @@
 
 ## 颜色
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 内容最丰富的一步。左侧面板负责**推导与生成**；右侧面板是你的**实时调色板**。拖动分隔线即可调整大小。
 
 ### 一个颜色，一整套调色板
 
-![The four ramps stacked above light and dark specimen cards, each card carrying its own WCAG contrast ratio](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+![The four ramps stacked above light and dark specimen cards, each card carrying its own WCAG contrast ratio](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
 选择一个**主色**，Lolly 就会推导出完整的调色板——明暗表面、文字、强调色，以及完整的深浅色阶——使用的是引擎在各处统一采用的同一套感知色彩数学（OKLCH）。可以调整推导方式：
 
@@ -84,13 +84,13 @@
 
 ### 搭建你的调色板（配色生成器）
 
-![Generated accents, each with a swatch, an auto-generated name, its hex and an Add button](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
+![Generated accents, each with a swatch, an auto-generated name, its hex and an Add button](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
 
 在**搭建你的调色板**下，可以从主色生成与之搭配的强调色。选择一种配色关系——**互补色**、**邻近色**、**三角配色**或**四角配色**——每个候选颜色都会自动生成一个易读的名称，并配有一个**+ 添加**按钮。添加的颜色会立即进入你的调色板。“你的调色板，实际应用”会在真实图稿上预览这些颜色。
 
 ### 调色板、色轮与每一个色板
 
-![The palette pane, every group foldable, with the download pill parked at its bottom edge](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
+![The palette pane, every group foldable, with the download pill parked at its bottom edge](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
 
 ![The OKLCH wheel - angle is hue, distance out is chroma, and the greys ride a lightness rail down the side](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
 

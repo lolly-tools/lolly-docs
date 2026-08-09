@@ -8,17 +8,17 @@
 
 ## 5つのステップ
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1&sweep=1)
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.ds-rail&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1&sweep=1)
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1&sweep=1)
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.ds-rail&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1&sweep=1)
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1&sweep=1)
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.ds-rail&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1&sweep=1)
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1&sweep=1)
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.ds-rail&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1&sweep=1)
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1&sweep=1)
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.ds-rail&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1&sweep=1)
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.start-tabs&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1&sweep=1)
+![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.ds-rail&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1&sweep=1)
 
 スタジオは5つのタブからなるエディタです。左から右へ進んでもよいですし、任意のタブへ直接ジャンプしても構いません：
 
@@ -49,23 +49,23 @@
 
 ## Colours
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 最も奥が深いステップです。左ペインは**導き出し、生成する**場所で、右ペインはあなたの**ライブパレット**です。分割線をドラッグしてリサイズできます。
 
 ### 1つの色から、パレット全体を
 
-![The four ramps stacked above light and dark specimen cards, each card carrying its own WCAG contrast ratio](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+![The four ramps stacked above light and dark specimen cards, each card carrying its own WCAG contrast ratio](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
 **プライマリカラー**を選ぶと、Lolly はエンジンがどこでも使っているのと同じ知覚的な色彩計算（OKLCH）を用いて、ライト／ダークのサーフェス、テキスト、アクセント、そして完全なティント／シェードのランプを含む、完全なパレットを導出します。導出のチューニング：
 
@@ -84,13 +84,13 @@
 
 ### Build your palette（配色ジェネレーター）
 
-![Generated accents, each with a swatch, an auto-generated name, its hex and an Add button](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
+![Generated accents, each with a swatch, an auto-generated name, its hex and an Add button](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
 
 **Build your palette** では、プライマリカラーから調和するアクセントカラーを生成します。配色パターン — **Complementary**、**Adjacent**、**Triad**、**Tetrad** — を選ぶと、それぞれの候補に自動生成された人が読める名前と **+ Add** ボタンが付いてきます。追加した色はすぐにパレットに反映されます。*"Your palette, applied"* が、実際のグラフィック上でそれらをプレビューします。
 
 ### パレット、ホイール、そして各スウォッチ
 
-![The palette pane, every group foldable, with the download pill parked at its bottom edge](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
+![The palette pane, every group foldable, with the download pill parked at its bottom edge](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
 
 ![The OKLCH wheel - angle is hue, distance out is chroma, and the greys ride a lightness rail down the side](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
 

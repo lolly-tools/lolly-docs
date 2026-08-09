@@ -99,15 +99,11 @@ Lolly ہر چیز کو اوپر اٹھاتا ہے۔
 
 ## کیا Lolly میری Figma، Penpot، Illustrator یا InDesign فائلیں ایڈٹ اور رینڈر کر سکتا ہے؟
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
 
 جی ہاں۔ **Layout Studio** کھولیں اور **ایک ڈیزائن امپورٹ کریں** پر کلک کریں: یہ ایک native Figma **.fig** (Save local copy)، Penpot **.penpot** ایکسپورٹ، Illustrator **.ai** یا **.pdf**، InDesign **.idml** (File → Export → InDesign Markup)، یا **کوئی بھی SVG** (کھلا دروازہ — تقریباً ہر ڈیزائن ایپ اسے ایکسپورٹ کرتی ہے) قبول کرتا ہے۔ ہر چیز مکمل طور پر آپ کے ڈیوائس پر پارس ہوتی ہے، کسی اکاؤنٹ یا پلگ ان کی ضرورت نہیں۔
 
 لیئرز کھلے canvas پر قابلِ ترمیم باکسز کے طور پر آتی ہیں: ٹیکسٹ دوبارہ ٹائپ کیا جا سکتا ہے، شکلیں شکلیں ہی رہتی ہیں، تصاویر آپ کی ڈیوائس پر موجود لائبریری میں شامل ہو جاتی ہیں، اور ٹائپ اور رنگ برانڈ globals کے مطابق ہوتے ہیں۔ اسے محفوظ کریں اور layout ایک دوبارہ قابلِ استعمال، URL سے قابلِ رسائی ٹیمپلیٹ بن جاتا ہے جسے Lolly رکھنے والا کوئی بھی دوبارہ بھر سکتا ہے — اور آپ اس میں لائیو ٹولز (ایک QR کوڈ، ایک چارٹ) شامل کر سکتے ہیں جو لوڈ ہونے پر دوبارہ رینڈر ہوتے ہیں۔ وہاں سے یہ Lolly کی ہر دوسری چیز کی طرح رینڈر ہوتا ہے — SVG، PDF، PNG اور باقی سب، اپنے URL سے دوبارہ قابلِ تخلیق۔ دیکھیں [ایک ڈیزائن امپورٹ کریں](/info/design-import.html)۔
-
-## کیا Lolly کسی موجودہ PowerPoint ڈیک کا برانڈ تبدیل کر سکتا ہے؟
-
-جی ہاں — دو طریقوں سے، دونوں آپ کے ڈیوائس پر۔ **Rebrand a Deck** یوٹیلیٹی ایک `.pptx` لیتی ہے اور اس کا تھیم، ہارڈ کوڈ کیے گئے رنگ اور فونٹس آپ کے برانڈ کے مطابق بدل دیتی ہے جبکہ چارٹس، SmartArt اور اینیمیشنز بغیر چھیڑے گزر جاتے ہیں — آپ کو واپس ایک `.pptx` ملتا ہے۔ یا ڈیک کو **Deck Builder** میں کھولیں (Load → فائل ڈراپ کریں) تاکہ اسے سلائیڈ بہ سلائیڈ freeform objects کے طور پر ایڈٹ کیا جا سکے، جو پہلے سے برانڈ کے مطابق سیٹ ہیں، اور PPTX، PDF یا ویڈیو کے طور پر ایکسپورٹ کریں۔ اس کے بجائے کسی اپ لوڈ ایریا پر `.pptx` ڈراپ کرنے سے آپ کی منتخب کردہ سلائیڈز آپ کی لائبریری میں SVG اثاثوں کے طور پر فائل ہو جاتی ہیں۔ دیکھیں [ایک ڈیزائن امپورٹ کریں → ڈیکس اور دستاویزات](/info/design-import.html#decks-and-documents)۔
 
 ## 29 اگست کو کیا ہوتا ہے؟
 

@@ -102,15 +102,11 @@ Kami memenangi perjuangan tadbir urus ini dengan kemudahan dan perkhidmatan yang
 
 ## Bolehkah Lolly mengedit dan memaparkan fail Figma, Penpot, Illustrator atau InDesign saya?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
 
 Ya. Buka **Layout Studio** dan klik **Import reka bentuk**: ia menerima fail Figma asli **.fig** (Simpan salinan tempatan), eksport Penpot **.penpot**, fail Illustrator **.ai** atau **.pdf**, fail InDesign **.idml** (Fail → Eksport → InDesign Markup), atau **sebarang SVG** (pintu paling luas - hampir semua aplikasi reka bentuk boleh mengeksportnya). Semuanya dihurai sepenuhnya pada peranti anda sendiri, tiada akaun atau plugin diperlukan.
 
 Lapisan (layers) tiba sebagai kotak boleh edit pada kanvas terbuka: teks kekal boleh ditaip semula, bentuk kekal sebagai bentuk, imej menyertai pustaka pada peranti anda, dan jenis huruf serta warna akur kepada global jenama. Simpan dan susun atur itu menjadi templat boleh guna semula yang boleh dicapai melalui URL, yang boleh diisi semula oleh sesiapa yang mempunyai Lolly - dan anda boleh mencampurkan alat langsung (kod QR, carta) yang dipaparkan semula apabila dimuatkan. Dari situ, ia dipaparkan seperti apa-apa lain dalam Lolly - SVG, PDF, PNG dan selebihnya, boleh dihasilkan semula daripada URL-nya. Lihat [Import reka bentuk](/info/design-import.html).
-
-## Bolehkah Lolly menjenamakan semula dek PowerPoint sedia ada?
-
-Ya - dua cara, kedua-duanya pada peranti anda sendiri. Utiliti **Rebrand a Deck** mengambil fail `.pptx` dan menukar tema, warna serta fon yang dikodkan keras kepada jenama anda, manakala carta, SmartArt dan animasi terus melepasi tanpa diubah - anda akan mendapat semula fail `.pptx`. Atau buka dek tersebut dalam **Deck Builder** (Load → lepaskan fail) untuk mengeditnya slaid demi slaid sebagai objek bebas bentuk, yang sudah pun akur kepada jenama, dan eksport sebagai PPTX, PDF atau video. Melepaskan fail `.pptx` pada kawasan muat naik pula akan menyimpan slaid yang anda pilih sebagai aset SVG dalam pustaka anda. Lihat [Import reka bentuk → Dek dan dokumen](/info/design-import.html#decks-and-documents).
 
 ## Apa yang berlaku pada 29 Ogos?
 

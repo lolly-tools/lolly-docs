@@ -14,7 +14,7 @@
 
 ### ابدأ من الصفر (المعالج)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 التشغيل الأول ينزلك على شاشة **Start‏** (`#/start`). أعطها اسما ولونا أساسيا فإن Lolly *يشتق* منه لوحة ألوان كاملة ومراعية لسهولة الوصول — أسطح فاتحة/داكنة ونصوص ولمسات لونية — بالرياضيات اللونية نفسها التي يستخدمها المحرك في كل مكان آخر. اختر خطا، فيصبح لديك علامة تجارية عاملة في أقل من دقيقة. ويمكنك تحسين أي جزء منها لاحقا.
 

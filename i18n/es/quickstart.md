@@ -14,7 +14,7 @@ Tu marca en Lolly es un pequeño documento de **tokens de diseño** -colores, ti
 
 ### Empezar desde cero (el asistente)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 La primera vez que abres la app aterrizas en la pantalla **Start** (`#/start`). Dale un nombre y un color primario, y Lolly *deriva* una paleta completa y accesible a partir de él -superficies claras/oscuras, texto, acentos- usando las mismas matemáticas de color que usa el motor en todas partes. Elige una tipografía y tendrás una marca funcional en menos de un minuto. Podrás afinar cualquier detalle más adelante.
 

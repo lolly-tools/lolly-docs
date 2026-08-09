@@ -6,7 +6,7 @@
 
 ## 產業格局
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
 
 | 能力 | Canva(開放式畫布) | 品牌入口網站(DAM 範本化) | Illustrator(桌面專業版) | Figma / Penpot(線上專業版) | **Lolly(限制優先)** |
 |---|---|---|---|---|---|

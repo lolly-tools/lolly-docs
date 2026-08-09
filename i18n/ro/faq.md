@@ -102,15 +102,11 @@ Câștigăm războiul pentru guvernanță prin comoditate și servicii excelente
 
 ## Poate Lolly să editeze și să randeze fișierele mele Figma, Penpot, Illustrator sau InDesign?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
 
 Da. Deschide **Layout Studio** și dă click pe **Importă un design**: acceptă un fișier Figma nativ **.fig** (Salvează o copie locală), un export Penpot **.penpot**, un fișier Illustrator **.ai** sau **.pdf**, un fișier InDesign **.idml** (Fișier → Export → InDesign Markup), sau **orice SVG** (ușa largă - aproape orice aplicație de design îl poate exporta). Totul este analizat integral pe dispozitivul tău, fără a fi nevoie de cont sau plugin.
 
 Straturile ajung ca niște casete editabile pe canvas-ul deschis: textul rămâne re-editabil, formele rămân forme, imaginile se alătură bibliotecii tale de pe dispozitiv, iar tipografia și culorile respectă valorile globale de brand. Salvează-l și layout-ul devine un template reutilizabil, adresabil prin URL, pe care oricine cu Lolly îl poate reumple - și poți combina instrumente live (un cod QR, un grafic) care se re-randează la încărcare. De acolo, se randează ca orice altceva în Lolly - SVG, PDF, PNG și restul, reproductibil din URL-ul său. Vezi [Importă un design](/info/design-import.html).
-
-## Poate Lolly să rebranduiască o prezentare PowerPoint existentă?
-
-Da - în două moduri, ambele pe dispozitivul tău. Utilitarul **Rebrand a Deck** ia un fișier `.pptx` și îi înlocuiește tema, culorile fixate în cod și fonturile cu cele ale brandului tău, în timp ce graficele, SmartArt și animațiile trec neatinse - primești înapoi un `.pptx`. Sau deschide prezentarea în **Deck Builder** (Încarcă → trage fișierul) pentru a o edita slide cu slide, ca obiecte libere, deja aliniate la brand, și exportă PPTX, PDF sau video. Dacă tragi un `.pptx` peste o zonă de încărcare, în schimb, slide-urile pe care le alegi sunt salvate ca resurse SVG în biblioteca ta. Vezi [Importă un design → Prezentări și documente](/info/design-import.html#decks-and-documents).
 
 ## Ce se întâmplă pe 29 august?
 

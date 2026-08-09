@@ -74,15 +74,11 @@ Chúng tôi thắng cuộc chiến quản trị (governance) bằng sự tiện 
 
 ## Lolly có thể chỉnh sửa và render các file Figma, Penpot, Illustrator hoặc InDesign của tôi không?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
 
 Có. Mở **Layout Studio** và nhấp vào **Import a design**: nó chấp nhận file Figma gốc **.fig** (Save local copy), file xuất ra từ Penpot **.penpot**, file Illustrator **.ai** hoặc **.pdf**, file InDesign **.idml** (File → Export → InDesign Markup), hoặc **bất kỳ file SVG** nào (cánh cửa rộng - hầu như ứng dụng thiết kế nào cũng xuất được SVG). Mọi thứ được phân tích (parse) hoàn toàn trên thiết bị của bạn, không cần tài khoản hay plugin nào.
 
 Các layer sẽ xuất hiện dưới dạng các khối (box) có thể chỉnh sửa trên canvas mở: văn bản vẫn có thể gõ lại được, hình khối vẫn là hình khối, hình ảnh sẽ gia nhập thư viện trên thiết bị của bạn, còn kiểu chữ và màu sắc thì tuân theo các thiết lập thương hiệu toàn cục. Lưu lại và layout sẽ trở thành một template có thể tái sử dụng, có thể truy cập qua URL, mà bất kỳ ai dùng Lolly cũng có thể điền lại - và bạn có thể kết hợp thêm các tool sống động (live tools) (mã QR, biểu đồ) tự render lại mỗi khi tải trang. Từ đó, nó render giống như mọi thứ khác trong Lolly - SVG, PDF, PNG và các định dạng còn lại, có thể tái tạo lại từ URL của nó. Xem [Nhập một thiết kế](/info/design-import.html).
-
-## Lolly có thể đổi thương hiệu (rebrand) cho một bản trình chiếu PowerPoint có sẵn không?
-
-Có - có hai cách, cả hai đều thực hiện trên thiết bị của bạn. Utility **Rebrand a Deck** nhận vào một file `.pptx` và đổi theme, các màu sắc và font chữ được gán cứng (hardcoded) sang thương hiệu của bạn, trong khi biểu đồ, SmartArt và hiệu ứng animation vẫn được giữ nguyên không đổi - bạn sẽ nhận lại một file `.pptx`. Hoặc mở bản trình chiếu trong **Deck Builder** (Load → thả file vào) để chỉnh sửa từng slide một dưới dạng các đối tượng tự do (freeform), vốn đã được đồng bộ theo thương hiệu, rồi xuất ra PPTX, PDF hoặc video. Việc thả một file `.pptx` vào khu vực tải lên thay vào đó sẽ lưu các slide bạn chọn dưới dạng asset SVG trong thư viện của bạn. Xem [Nhập một thiết kế → Bản trình chiếu và tài liệu](/info/design-import.html#decks-and-documents).
 
 ## Điều gì sẽ xảy ra vào ngày 29 tháng 8?
 

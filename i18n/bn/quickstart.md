@@ -14,7 +14,7 @@ Lolly-তে আপনার ব্র্যান্ড হলো একটি 
 
 ### শূন্য থেকে শুরু করুন (ডিজাইন সিস্টেম বিল্ডার)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 প্রথমবার চালু করলে আপনি **Start** স্ক্রিনে (`#/start`) পৌঁছান — [**Brand Studio**](/info/brand-studio.html)। এটিকে একটি নাম আর একটি প্রাইমারি রং দিন, আর Lolly তা থেকে একটি সম্পূর্ণ, অ্যাক্সেসযোগ্য প্যালেট *তৈরি করে নেয়* — লাইট/ডার্ক সারফেস, টেক্সট, অ্যাকসেন্ট — ইঞ্জিন সর্বত্র যে একই রঙের গণিত ব্যবহার করে তা দিয়ে। একটি ফন্ট বেছে নিন, আর এক মিনিটেরও কম সময়ে আপনার কাছে একটি কার্যকর ব্র্যান্ড তৈরি। সেখান থেকে স্টুডিওর পাঁচটি ট্যাব (Logos, Colours, Type, Tokens, Catalogue) আপনাকে যতদূর ইচ্ছে এগিয়ে নিতে দেয় — পরে যেকোনো সময় ফিরে এসে যেকোনো কিছু আরও নিখুঁত করুন। ড্যাশবোর্ড থেকে আপনি সবসময় এখানে আবার আসতে পারেন (যদি আপনি Lolly-র কোনো ব্র্যান্ড-লকড সংস্করণ ব্যবহার না করে থাকেন)
 

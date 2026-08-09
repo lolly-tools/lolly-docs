@@ -102,7 +102,7 @@ The half that gets dropped is the half that makes it an argument. Loving ideas o
 
 So the woman who wrote "fixed in time having been verified in proof" is the same person who went to the archive, found a three-hundred-year misattribution, published the correction under a false name because that was the price of being read, and then had to claim it back as her own.
 
-She died in Epsom on 16 September 1969.
+She died in Epsom, Surrey, England on 16 September 1969.
 
 ## What we take from her
 

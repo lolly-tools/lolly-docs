@@ -14,7 +14,7 @@ Brand Anda di Lolly adalah sebuah dokumen **design-tokens** kecil - warna, font,
 
 ### Mulai dari nol (pembuat Design System)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 Saat pertama dijalankan, Anda dibawa ke layar **Start** (`#/start`) - [**Brand Studio**](/info/brand-studio.html). Beri nama dan sebuah warna utama, lalu Lolly *menurunkan* palet yang lengkap dan aksesibel darinya - permukaan terang/gelap, teks, aksen - memakai matematika warna yang sama yang dipakai engine di mana pun. Pilih sebuah font, dan Anda punya brand yang berfungsi dalam waktu kurang dari satu menit. Dari sana, lima tab studio (Logo, Warna, Tipografi, Token, Katalog) memungkinkan Anda mengembangkannya sejauh yang Anda mau - perhalus bagian mana pun nanti, kapan pun Anda kembali. Anda selalu bisa membuka ini lagi dari dasbor (asalkan Anda tidak memakai versi Lolly dengan brand terkunci)
 

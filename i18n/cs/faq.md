@@ -100,15 +100,11 @@ Válku o governance vyhráváme skvělým pohodlím a službou.
 
 ## Umí Lolly upravit a vyrenderovat moje soubory z Figmy, Penpotu, Illustratoru nebo InDesignu?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
 
 Ano. Otevři **Layout Studio** a klikni na **Importuj návrh**: přijímá nativní Figma soubor **.fig** (Save local copy), export z Penpotu **.penpot**, Illustrator **.ai** nebo **.pdf**, InDesign **.idml** (File → Export → InDesign Markup), nebo **jakékoli SVG** (široká brána - skoro každá návrhářská aplikace ho umí exportovat). Všechno se zpracovává výhradně na tvém zařízení, není potřeba účet ani plugin.
 
 Vrstvy se objeví jako editovatelné boxy na otevřeném plátně: text zůstává přepsatelný, tvary zůstávají tvary, obrázky se přidají do tvé knihovny na zařízení a typografie a barvy se řídí globálními hodnotami značky. Ulož to a layout se stane znovupoužitelnou šablonou adresovatelnou přes URL, kterou může kdokoli s Lolly znovu naplnit - a můžeš do ní zamíchat živé nástroje (QR kód, graf), které se při načtení znovu vyrenderují. Odtud se renderuje stejně jako cokoli jiného v Lolly - SVG, PDF, PNG a další, reprodukovatelné z jeho URL. Viz [Importuj návrh](/info/design-import.html).
-
-## Umí Lolly rebrandovat existující prezentaci v PowerPointu?
-
-Ano - dvěma způsoby, oba přímo na tvém zařízení. Utilita **Rebrand a Deck** vezme soubor `.pptx` a přepne motiv, natvrdo zadané barvy a fonty na tvou značku, zatímco grafy, SmartArt a animace projdou beze změny - zpátky dostaneš `.pptx`. Nebo otevři prezentaci v **Deck Builderu** (Load → přetáhni soubor) a uprav ji snímek po snímku jako volně umístěné objekty, už napasované na značku, a exportuj PPTX, PDF nebo video. Když místo toho přetáhneš `.pptx` na nahrávací plochu, uloží se vybrané snímky jako SVG assety do tvé knihovny. Viz [Importuj návrh → Prezentace a dokumenty](/info/design-import.html#decks-and-documents).
 
 ## Co se stane 29. srpna?
 

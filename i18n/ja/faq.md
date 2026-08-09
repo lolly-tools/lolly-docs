@@ -70,15 +70,11 @@ Lolly はすべてを底上げします。
 
 ## Lolly は Figma、Penpot、Illustrator、InDesign のファイルを編集・レンダリングできますか？
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
 
 はい。**Layout Studio** を開き、**Import a design（デザインをインポート）** をクリックしてください。ネイティブの Figma **.fig**（Save local copy で保存したもの）、Penpot の **.penpot** エクスポート、Illustrator の **.ai** または **.pdf**、InDesign の **.idml**（File → Export → InDesign Markup）、あるいは**あらゆる SVG**（多くのデザインアプリがエクスポートできる、間口の広い形式）を受け付けます。すべてお使いのデバイス上だけで解析され、アカウントもプラグインも不要です。
 
 レイヤーは、オープンキャンバス上で編集可能なボックスとして読み込まれます。テキストは再入力可能なまま、シェイプはシェイプのまま、画像はデバイス上のライブラリに加わり、タイポグラフィと色はブランドのグローバル設定に従います。保存すると、そのレイアウトは再利用可能で URL からアクセスできるテンプレートとなり、Lolly を持つ誰もが内容を入れ替えられます — さらに、読み込み時に再レンダリングされるライブツール（QR コードやチャートなど）を組み込むこともできます。そこから先は、Lolly の他のあらゆるものと同様にレンダリングされます — SVG、PDF、PNG など、その URL から再現可能です。詳しくは[デザインをインポート](/info/design-import.html)をご覧ください。
-
-## Lolly は既存の PowerPoint デッキをリブランドできますか？
-
-はい — どちらもお使いのデバイス上で完結する、2つの方法があります。**Rebrand a Deck** ユーティリティは `.pptx` を受け取り、テーマ、ハードコードされた色やフォントをあなたのブランドに置き換えます。一方、チャート、SmartArt、アニメーションはそのまま手つかずで残り、`.pptx` として書き出されます。あるいは、**Deck Builder** でデッキを開き（Load → ファイルをドロップ）、すでにブランドにスナップされたフリーフォームオブジェクトとしてスライドごとに編集し、PPTX、PDF、動画として書き出すこともできます。代わりにアップロードエリアに `.pptx` をドロップすると、選択したスライドが SVG アセットとしてライブラリに保存されます。詳しくは[デザインをインポート → デッキとドキュメント](/info/design-import.html#decks-and-documents)をご覧ください。
 
 ## 8月29日には何が起こりますか？
 

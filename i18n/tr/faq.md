@@ -102,15 +102,11 @@ Yönetişim savaşını mükemmel kolaylık ve hizmetle kazanıyoruz.
 
 ## Lolly, Figma, Penpot, Illustrator veya InDesign dosyalarımı düzenleyip render edebilir mi?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
 
 Evet. **Layout Studio**'yu aç ve **Bir tasarım içe aktar**'a tıkla: yerel bir Figma **.fig** dosyasını (Save local copy), bir Penpot **.penpot** dışa aktarımını, bir Illustrator **.ai** veya **.pdf** dosyasını, bir InDesign **.idml** dosyasını (File → Export → InDesign Markup) ya da **herhangi bir SVG**'yi (geniş kapı - hemen hemen her tasarım uygulaması bunu dışa aktarır) kabul eder. Her şey tamamen cihazında ayrıştırılır, hesap veya eklenti gerekmez.
 
 Katmanlar, açık kanvasta düzenlenebilir kutular olarak gelir: metin yeniden yazılabilir kalır, şekiller şekil olarak kalır, görseller cihaz-içi kitaplığına katılır, tipografi ve renkler ise marka globalleriyle uyumlu hale gelir. Kaydet ve düzen, Lolly'si olan herkesin yeniden doldurabileceği, yeniden kullanılabilir, URL ile adreslenebilir bir şablona dönüşür - ayrıca sayfa yüklendiğinde yeniden render edilen canlı araçları (bir QR kodu, bir grafik) da karıştırabilirsin. Buradan itibaren, Lolly'deki her şey gibi render edilir - SVG, PDF, PNG ve gerisi, kendi URL'sinden yeniden üretilebilir. Bkz. [Bir tasarım içe aktar](/info/design-import.html).
-
-## Lolly, mevcut bir PowerPoint sunumunu yeniden markalayabilir mi?
-
-Evet - ikisi de cihazında olmak üzere iki yolla. **Rebrand a Deck** yardımcı aracı bir `.pptx` dosyası alır, temasını, sabit kodlanmış renklerini ve yazı tiplerini markana göre değiştirir; grafikler, SmartArt ve animasyonlar ise dokunulmadan geçer - karşılığında bir `.pptx` alırsın. Ya da sunumu **Deck Builder**'da aç (Load → dosyayı bırak) ve zaten markaya oturmuş, serbest biçimli nesneler olarak slayt slayt düzenle, ardından PPTX, PDF veya video olarak dışa aktar. Bunun yerine bir `.pptx` dosyasını yükleme alanına bırakmak, seçtiğin slaytları kitaplığına SVG varlıkları olarak dosyalar. Bkz. [Bir tasarım içe aktar → Sunumlar ve belgeler](/info/design-import.html#decks-and-documents).
 
 ## 29 Ağustos'ta ne olacak?
 

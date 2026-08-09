@@ -73,15 +73,11 @@ Nananalo kami sa digmaan para sa governance sa pamamagitan ng napakahusay na con
 
 ## Kaya bang i-edit at i-render ng Lolly ang aking mga Figma, Penpot, Illustrator o InDesign files?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
 
 Oo. Buksan ang **Layout Studio** at i-click ang **Mag-import ng Disenyo**: tinatanggap nito ang native Figma **.fig** (Save local copy), isang Penpot **.penpot** export, isang Illustrator **.ai** o **.pdf**, isang InDesign **.idml** (File → Export → InDesign Markup), o **anumang SVG** (ang malawak na pinto - halos lahat ng design app ay maaaring mag-export nito). Lahat ay pino-parse nang ganap sa iyong device, walang kailangang account o plugin.
 
 Dumarating ang mga layer bilang mga editable box sa bukas na canvas: mananatiling made-edit muli ang text, mananatiling shapes ang mga hugis, sumasali ang mga larawan sa iyong on-device library, at sumusunod ang type at mga kulay sa brand globals. I-save ito at magiging isang reusable, URL-addressable na template ang layout na maaaring punan ulit ng kahit sinong may Lolly - at maaari kang maghalo ng mga live tool (isang QR code, isang chart) na nag-re-render kapag na-load. Mula doon, nire-render ito tulad ng iba pang bagay sa Lolly - SVG, PDF, PNG at iba pa, reproducible mula sa URL nito. Tingnan ang [Mag-import ng Disenyo](/info/design-import.html).
-
-## Kaya bang i-rebrand ng Lolly ang isang umiiral na PowerPoint deck?
-
-Oo - dalawang paraan, pareho sa iyong device. Kinukuha ng **Rebrand a Deck** na utility ang isang `.pptx` at pinapalitan ang tema nito, hardcoded na mga kulay at fonts papunta sa iyong brand habang dumadaan nang hindi nagbabago ang mga chart, SmartArt at animation - makakakuha ka ng `.pptx` pabalik. O buksan ang deck sa **Deck Builder** (Load → i-drop ang file) para i-edit ito slide by slide bilang freeform objects, na naka-snap na sa brand, at i-export bilang PPTX, PDF o video. Sa halip, ang pag-drop ng `.pptx` sa isang upload area ay naglalagay sa mga slide na pinili mo bilang SVG assets sa iyong library. Tingnan ang [Mag-import ng Disenyo → Mga Deck at Dokumento](/info/design-import.html#decks-and-documents).
 
 ## Ano ang mangyayari sa Agosto 29?
 

@@ -100,15 +100,11 @@ Vinciamo la guerra della governance con un'eccellente comodità e un servizio ec
 
 ## Lolly può modificare e renderizzare i miei file Figma, Penpot, Illustrator o InDesign?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
 
 Sì. Apri **Layout Studio** e clicca su **Importa un design**: accetta un file Figma nativo **.fig** (Save local copy), un'esportazione Penpot **.penpot**, un file Illustrator **.ai** o **.pdf**, un file InDesign **.idml** (File → Export → InDesign Markup), oppure **qualsiasi SVG** (la porta larga - quasi ogni app di design lo esporta). Tutto viene analizzato interamente sul tuo dispositivo, senza bisogno di account o plugin.
 
 I livelli arrivano come riquadri modificabili sul canvas aperto: il testo resta modificabile, le forme restano forme, le immagini si uniscono alla tua libreria sul dispositivo, e la tipografia e i colori si conformano alle variabili globali di marca. Salvalo e il layout diventa un template riutilizzabile e indirizzabile via URL che chiunque abbia Lolly può compilare di nuovo - e puoi mescolarci strumenti dal vivo (un codice QR, un grafico) che vengono renderizzati di nuovo al caricamento. Da lì si renderizza come qualsiasi altra cosa in Lolly - SVG, PDF, PNG e il resto, riproducibile dal suo URL. Vedi [Importa un design](/info/design-import.html).
-
-## Lolly può rimarchiare una presentazione PowerPoint esistente?
-
-Sì - in due modi, entrambi sul tuo dispositivo. L'utilità **Rebrand a Deck** prende un `.pptx` e ne sostituisce il tema, i colori e i font hardcoded con quelli del tuo brand, mentre grafici, SmartArt e animazioni restano invariati - ottieni di nuovo un `.pptx`. Oppure apri la presentazione in **Deck Builder** (Load → trascina il file) per modificarla slide per slide come oggetti liberi, già allineati al brand, ed esportarla in PPTX, PDF o video. Trascinare invece un `.pptx` su un'area di upload archivia le slide che scegli come asset SVG nella tua libreria. Vedi [Importa un design → Presentazioni e documenti](/info/design-import.html#decks-and-documents).
 
 ## Cosa succede il 29 agosto?
 

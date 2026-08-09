@@ -14,7 +14,7 @@ Thương hiệu của bạn trong Lolly là một tài liệu **token thiết k�
 
 ### Bắt đầu từ đầu (trình hướng dẫn)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 Lần chạy đầu tiên sẽ đưa bạn tới màn hình **Start** (`#/start`). Đặt cho nó một cái tên và một màu chủ đạo, Lolly sẽ *suy ra* một bảng màu hoàn chỉnh, dễ tiếp cận từ đó - các bề mặt sáng/tối, văn bản, điểm nhấn - bằng chính phép toán màu mà engine dùng ở mọi nơi khác. Chọn một phông chữ, và bạn đã có một thương hiệu hoạt động được trong chưa đầy một phút. Bạn có thể tinh chỉnh bất kỳ phần nào sau đó.
 

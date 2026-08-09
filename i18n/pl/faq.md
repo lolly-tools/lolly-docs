@@ -101,15 +101,11 @@ Wojnę o ład wygrywamy dzięki znakomitej wygodzie i obsłudze.
 
 ## Czy Lolly może edytować i renderować moje pliki Figma, Penpot, Illustrator lub InDesign?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
 
 Tak. Otwórz **Layout Studio** i kliknij **Importuj projekt**: przyjmuje natywny plik Figma **.fig** (Save local copy), eksport Penpot **.penpot**, plik Illustratora **.ai** lub **.pdf**, plik InDesign **.idml** (File → Export → InDesign Markup) albo **dowolny SVG** (szerokie drzwi - eksportuje go niemal każda aplikacja projektowa). Wszystko jest przetwarzane w całości na Twoim urządzeniu, bez konta ani wtyczki.
 
 Warstwy pojawiają się jako edytowalne pola na otwartym płótnie: tekst pozostaje do przepisania, kształty pozostają kształtami, obrazy dołączają do Twojej biblioteki na urządzeniu, a typografia i kolory podporządkowują się globalnym ustawieniom marki. Zapisz je, a układ staje się szablonem wielokrotnego użytku, adresowalnym przez URL, który każdy z Lolly może ponownie wypełnić - i możesz wpleść żywe narzędzia (kod QR, wykres), które renderują się na nowo przy wczytaniu. Stamtąd renderuje się jak wszystko inne w Lolly - SVG, PDF, PNG i reszta, odtwarzalne z jego URL-a. Zobacz [Importuj projekt](/info/design-import.html).
-
-## Czy Lolly może zmienić markę istniejącej prezentacji PowerPoint?
-
-Tak - na dwa sposoby, oba na Twoim urządzeniu. Narzędzie **Rebrand a Deck** pobiera plik `.pptx` i zamienia jego motyw, zakodowane na sztywno kolory oraz czcionki na Twoją markę, podczas gdy wykresy, SmartArt i animacje pozostają nietknięte - w efekcie otrzymujesz z powrotem plik `.pptx`. Możesz też otworzyć prezentację w **Deck Builder** (Wczytaj → upuść plik), aby edytować ją slajd po slajdzie jako swobodne obiekty, już dopasowane do marki, i wyeksportować jako PPTX, PDF lub wideo. Upuszczenie pliku `.pptx` w obszarze przesyłania zamiast tego zapisuje wybrane przez Ciebie slajdy jako zasoby SVG w Twojej bibliotece. Zobacz [Importuj projekt → Decki i dokumenty](/info/design-import.html#decks-and-documents).
 
 ## Co się stanie 29 sierpnia?
 

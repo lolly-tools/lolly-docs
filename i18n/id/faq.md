@@ -99,15 +99,11 @@ Kami memenangkan perang tata kelola dengan kenyamanan dan layanan yang unggul.
 
 ## Bisakah Lolly menyunting dan merender berkas Figma, Penpot, Illustrator, atau InDesign saya?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
 
 Ya. Buka **Layout Studio** dan klik **Impor desain**: ia menerima **.fig** asli Figma (Save local copy), ekspor **.penpot** Penpot, **.ai** atau **.pdf** Illustrator, **.idml** InDesign (File → Export → InDesign Markup), atau **SVG apa pun** (pintu lebar - hampir semua aplikasi desain mengekspornya). Semuanya diurai sepenuhnya di perangkat Anda, tanpa perlu akun atau plugin.
 
 Lapisan tiba sebagai kotak yang dapat disunting di kanvas terbuka: teks tetap dapat diketik ulang, bentuk tetap menjadi bentuk, gambar bergabung ke pustaka di perangkat Anda, dan tipografi serta warna menyesuaikan dengan global merek. Simpan dan tata letak itu menjadi template yang dapat digunakan ulang dan dapat dialamatkan lewat URL yang bisa diisi ulang oleh siapa pun yang memiliki Lolly - dan Anda dapat menyertakan alat langsung (kode QR, sebuah bagan) yang dirender ulang saat dimuat. Dari sana ia dirender seperti hal lain di Lolly - SVG, PDF, PNG, dan sisanya, dapat direproduksi dari URL-nya. Lihat [Impor desain](/info/design-import.html).
-
-## Bisakah Lolly mengganti merek dek PowerPoint yang sudah ada?
-
-Ya - ada dua cara, keduanya di perangkat Anda. Utilitas **Rebrand a Deck** mengambil sebuah `.pptx` dan mengganti tema, warna dan font yang di-hardcode dengan milik merek Anda, sementara bagan, SmartArt, dan animasi tetap tidak tersentuh - Anda mendapatkan kembali sebuah `.pptx`. Atau buka dek tersebut di **Deck Builder** (Muat → jatuhkan berkasnya) untuk menyuntingnya slide demi slide sebagai objek bebas bentuk yang sudah disesuaikan dengan merek, lalu ekspor sebagai PPTX, PDF, atau video. Menjatuhkan sebuah `.pptx` pada area unggah malah akan menyimpan slide yang Anda pilih sebagai aset SVG di pustaka Anda. Lihat [Impor desain → Dek dan dokumen](/info/design-import.html#decks-and-documents).
 
 ## Apa yang terjadi pada 29 Agustus?
 

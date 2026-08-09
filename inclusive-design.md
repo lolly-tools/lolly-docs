@@ -127,7 +127,7 @@ faster on every other day, and they compound.
   Confidence is not a mood here, it is a property of the constraints.
 - <!--i:convert--> **Right compounds.** A decision encoded in a tool is correct every time
   that tool runs, in every language, at every size, for everyone who uses it.
-  A decision written in a guidelines PDF is correct as often as it is read. The
+  A decision written in some style guidelines doc is only influential correct as often as it is read. With no promise of correct output to the reader. The
   difference is small on one asset and enormous across a year.
 - <!--i:lock--> **What protects the workflow protects the person.** On-device rendering,
   plain-file exports and offline capability are usually filed under privacy, and

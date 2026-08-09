@@ -95,15 +95,11 @@ Lolly সবকিছুকে উপরে তুলে ধরে।
 
 ## Lolly কি আমার Figma, Penpot, Illustrator বা InDesign ফাইল এডিট ও রেন্ডার করতে পারে?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
 
 হ্যাঁ। **Layout Studio** খুলুন এবং **একটি ডিজাইন ইমপোর্ট করুন**-এ ক্লিক করুন: এটি গ্রহণ করে নেটিভ Figma **.fig** (Save local copy), Penpot **.penpot** এক্সপোর্ট, Illustrator **.ai** বা **.pdf**, InDesign **.idml** (File → Export → InDesign Markup), অথবা **যেকোনো SVG** (প্রশস্ত দরজা — প্রায় যেকোনো ডিজাইন অ্যাপ এটি এক্সপোর্ট করে)। সবকিছু সম্পূর্ণরূপে আপনার ডিভাইসেই পার্স করা হয়, কোনো অ্যাকাউন্ট বা প্লাগইনের প্রয়োজন নেই।
 
 খোলা ক্যানভাসে লেয়ারগুলো এডিটযোগ্য বক্স হিসেবে আসে: টেক্সট পুনরায় টাইপযোগ্য থাকে, আকৃতিগুলো আকৃতিই থাকে, ছবি আপনার ডিভাইস-স্থিত লাইব্রেরিতে যুক্ত হয়, এবং টাইপ ও রঙ ব্র্যান্ড গ্লোবালের সাথে সঙ্গতিপূর্ণ থাকে। এটি সেভ করুন, আর লেআউটটি একটি পুনর্ব্যবহারযোগ্য, URL-ঠিকানাযুক্ত টেমপ্লেটে পরিণত হয় যা Lolly আছে এমন যে কেউ আবার পূরণ করতে পারেন — এবং আপনি এতে লাইভ টুল (একটি QR কোড, একটি চার্ট) মেশাতে পারেন যেগুলো লোড হওয়ার সময় পুনরায় রেন্ডার হয়। সেখান থেকে এটি Lolly-র অন্য সবকিছুর মতোই রেন্ডার হয় — SVG, PDF, PNG এবং বাকিগুলো, এর URL থেকে পুনরুৎপাদনযোগ্য। দেখুন [একটি ডিজাইন ইমপোর্ট করুন](/info/design-import.html)।
-
-## Lolly কি একটি বিদ্যমান PowerPoint ডেক রিব্র্যান্ড করতে পারে?
-
-হ্যাঁ — দুটি উপায়ে, দুটোই আপনার ডিভাইসেই। **Rebrand a Deck** ইউটিলিটি একটি `.pptx` নেয় এবং এর থিম, হার্ডকোড করা রঙ ও ফন্ট আপনার ব্র্যান্ডে পরিবর্তন করে দেয়, যেখানে চার্ট, SmartArt ও অ্যানিমেশন অপরিবর্তিত থেকে যায় — আপনি ফেরত পান একটি `.pptx`। অথবা **Deck Builder**-এ ডেকটি খুলুন (Load → ফাইলটি ড্রপ করুন) এবং একে স্লাইড ধরে ধরে freeform অবজেক্ট হিসেবে এডিট করুন, যা আগে থেকেই ব্র্যান্ডের সাথে সংগতিপূর্ণ, তারপর PPTX, PDF বা ভিডিও হিসেবে এক্সপোর্ট করুন। এর বদলে একটি আপলোড এলাকায় `.pptx` ড্রপ করলে আপনার বেছে নেওয়া স্লাইডগুলো SVG অ্যাসেট হিসেবে আপনার লাইব্রেরিতে ফাইল হয়ে যায়। দেখুন [একটি ডিজাইন ইমপোর্ট করুন → ডেক এবং ডকুমেন্ট](/info/design-import.html#decks-and-documents)।
 
 ## 29 আগস্টে কী ঘটে?
 

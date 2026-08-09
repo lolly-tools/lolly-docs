@@ -1,8 +1,10 @@
 
 # Lolly - Landing page copy
 
-Production-ready files in seconds - design rules, layout logic, and export quality built in. No waiting, no guesswork.
-Runs on your own device. Nothing to upload, nothing to learn, works offline.
+Production-ready files in seconds - Runs on your device, offline, & fast to learn.
+Design rules, layout logic, and export quality built in. 
+No waiting, no guesswork, free to use forever. 
+
 
 ---
 

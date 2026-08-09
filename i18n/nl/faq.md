@@ -98,15 +98,11 @@ We winnen de strijd om governance met uitstekend gemak en uitstekende service.
 
 ## Kan Lolly mijn Figma-, Penpot-, Illustrator- of InDesign-bestanden bewerken en renderen?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
 
 Ja. Open **Layout Studio** en klik op **Een ontwerp importeren**: het accepteert een natieve Figma **.fig** (Save local copy), een Penpot **.penpot**-export, een Illustrator **.ai** of **.pdf**, een InDesign **.idml** (File → Export → InDesign Markup), of **elke SVG** (de brede deur - bijna elke ontwerptoepassing kan dit exporteren). Alles wordt volledig op je eigen apparaat verwerkt, geen account of plug-in nodig.
 
 Lagen komen binnen als bewerkbare vakken op het open canvas: tekst blijft herschrijfbaar, vormen blijven vormen, afbeeldingen worden toegevoegd aan je lokale bibliotheek, en typografie en kleuren volgen de merk-globals. Sla het op en de lay-out wordt een herbruikbare, via URL benaderbare template die iedereen met Lolly kan invullen - en je kunt er live tools doorheen mengen (een QR-code, een grafiek) die bij het laden opnieuw renderen. Van daaruit rendert het zoals al het andere in Lolly - SVG, PDF, PNG en de rest, reproduceerbaar vanaf de URL. Zie [Een ontwerp importeren](/info/design-import.html).
-
-## Kan Lolly een bestaande PowerPoint-presentatie rebranden?
-
-Ja - op twee manieren, allebei op je eigen apparaat. De utility **Rebrand a Deck** neemt een `.pptx` en vervangt het thema, de hardgecodeerde kleuren en lettertypen door je merk, terwijl grafieken, SmartArt en animaties ongewijzigd blijven - je krijgt een `.pptx` terug. Of open de deck in **Deck Builder** (Laden → sleep het bestand erin) om hem dia voor dia te bewerken als vrij plaatsbare objecten, al aangepast aan je merk, en exporteer als PPTX, PDF of video. Sleep je in plaats daarvan een `.pptx` op een upload-gebied, dan worden de dia's die je kiest als SVG-assets in je bibliotheek opgeslagen. Zie [Een ontwerp importeren → Decks en documenten](/info/design-import.html#decks-and-documents).
 
 ## Wat gebeurt er op 29 augustus?
 

@@ -14,7 +14,7 @@ Lolly에서 브랜드는 색상, 폰트, 몇 가지 규칙으로 이루어진 �
 
 ### 처음부터 시작하기(디자인 시스템 빌더)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 처음 실행하면 **Start** 화면(`#/start`) — [**Brand Studio**](/info/brand-studio.html) — 이 나와요. 이름과 기본 색상을 입력하면 Lolly가 엔진이 다른 곳에서도 쓰는 것과 똑같은 색상 수학으로 라이트/다크 표면, 텍스트, 강조색까지 갖춘 완전하고 접근성 있는 팔레트를 *도출*해줘요. 폰트를 고르면 1분도 안 돼 바로 쓸 수 있는 브랜드가 완성돼요. 여기서부터는 스튜디오의 다섯 개 탭(Logos, Colours, Type, Tokens, Catalogue)으로 원하는 만큼 더 다듬을 수 있고, 언제든 다시 돌아와서 손볼 수 있어요. 브랜드가 잠긴 버전의 Lolly를 쓰고 있지 않다면, 대시보드에서 언제든 이 화면으로 다시 돌아올 수 있어요.
 

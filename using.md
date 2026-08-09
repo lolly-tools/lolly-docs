@@ -46,13 +46,13 @@ Free-canvas tools add a working surface *around* the artboard, like a designer's
 - **Zoom out past Fit** (down to 20%) to see the whole pasteboard when you've staged things far outside the frame.
 - **Resizable artboard.** Changing the export dimensions resizes the frame in place; boxes keep their positions, so you can reframe a layout around existing content.
 
-![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
+![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
 
 ### Drawing your own shapes (the pen)
 
 Boxes, circles and rounded frames cover most layouts. When you need a shape that isn't in that list, draw it: the rail's **Pen** button (or the `P` key) puts you in drawing mode.
 
-![The free-canvas tool rail: a drag grip, the Lolly menu, then Pointer, Add a box, Pen and Timeline](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2600&css=.fc-toolbar%7Bopacity%3A1!important%7D&cropSelector=.fc-toolbar&walker=1&format=svg&dark=1&filename=pen-editor-rail)
+![The free-canvas tool rail: a drag grip, the Lolly menu, then Pointer, Add a box, Pen and Timeline](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2600&css=.fc-toolbar%7Bopacity%3A1!important%7D&cropSelector=.fc-toolbar&walker=1&format=svg&dark=1&filename=pen-editor-rail)
 
 - **Click** to place a point. On the default curve type, **click and drag** pulls that point's handles out, which is how you draw a curve rather than a corner - hold **Alt** as you click for a hard corner instead. (On the other curve types every placed point is a corner and the drag does nothing; see **Spline type** below.)
 - Points snap to the artboard and to your other boxes as you place them, drawing the same guides a normal drag does. Alt suppresses the grid while you draw, and both the grid and the edges while you drag a point afterwards.

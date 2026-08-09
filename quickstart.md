@@ -1,6 +1,6 @@
 # Quickstart
 
-Lolly turns your rules - colours, type, layouts, logic - into tools anyone can use to make finished files: images, PDFs, social cards, video, by filling in a few fields. There's nothing to learn and nothing to upload: making and exporting runs on your device, online or off.
+Lolly turns your rules - colours, type, layouts, logic - into tools anyone can use to make finished files: images, PDFs, social cards, video, by filling in a few fields. There's little to learn and nothing to upload: making and exporting runs on your device, online or off.
 
 This is the one page to read first. Two things get you productive: **make Lolly yours** and **bring in what you already have** (your design files and tokens). Everything else is a link away.
 
@@ -16,7 +16,7 @@ Your brand in Lolly is a small **design-tokens** document - colours, fonts, and 
 
 First run drops you on the **Start** screen (`#/start`) - the [**Brand Studio**](/info/brand-studio.html). Give it a name and a primary colour and Lolly *derives* a complete, accessible palette from it - light/dark surfaces, text, accents - using the same colour maths the engine uses everywhere else.
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours) Pick a font, and you have a working brand in under a minute. From there the studio's five tabs (Logos, Colours, Type, Tokens, Catalogue) let you take it as far as you like - refine any of it later, whenever you come back. You can always revisit this from the dashboard (provided you arent using a brand-locked version of lolly)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours) Pick a font, and you have a working brand in under a minute. From there the studio's five tabs (Logos, Colours, Type, Tokens, Catalogue) let you take it as far as you like - refine any of it later, whenever you come back. You can always revisit this from the dashboard (provided you arent using a brand-locked version of lolly)
 
 ### Import a brand you already have
 

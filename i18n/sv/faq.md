@@ -101,15 +101,11 @@ Vi vinner kampen om styrning genom utmärkt bekvämlighet och service.
 
 ## Kan Lolly redigera och rendera mina Figma-, Penpot-, Illustrator- eller InDesign-filer?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
 
 Ja. Öppna **Layout Studio** och klicka på **Importera en design**: den tar emot en inbyggd Figma **.fig** (Save local copy), en Penpot **.penpot**-export, en Illustrator **.ai** eller **.pdf**, en InDesign **.idml** (File → Export → InDesign Markup), eller **valfri SVG** (den breda dörren - nästan alla designprogram kan exportera det). Allt tolkas helt på din egen enhet, inget konto eller plugin behövs.
 
 Lager kommer in som redigerbara rutor på den öppna kanvasen: text går att skriva om, former förblir former, bilder ansluter till ditt bibliotek på enheten, och typsnitt och färger följer de globala varumärkesinställningarna. Spara den så blir layouten en återanvändningsbar, URL-adresserbar mall som vem som helst med Lolly kan fylla i på nytt - och du kan blanda in levande verktyg (en QR-kod, ett diagram) som renderas om vid inläsning. Därifrån renderas den precis som allt annat i Lolly - SVG, PDF, PNG och resten, reproducerbar från sin URL. Se [Importera en design](/info/design-import.html).
-
-## Kan Lolly byta varumärke på en befintlig PowerPoint-presentation?
-
-Ja - på två sätt, båda på din egen enhet. Verktyget **Rebrand a Deck** tar en `.pptx`-fil och byter ut dess tema, hårdkodade färger och typsnitt mot ditt varumärke, medan diagram, SmartArt och animationer passerar igenom orörda - du får tillbaka en `.pptx`-fil. Eller öppna presentationen i **Deck Builder** (Load → släpp filen) för att redigera den bild för bild som fritt placerade objekt, redan anpassade efter varumärket, och exportera som PPTX, PDF eller video. Om du i stället släpper en `.pptx`-fil på ett uppladdningsområde arkiveras de bilder du väljer som SVG-tillgångar i ditt bibliotek. Se [Importera en design → Presentationer och dokument](/info/design-import.html#decks-and-documents).
 
 ## Vad händer den 29 augusti?
 

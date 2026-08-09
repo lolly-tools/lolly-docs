@@ -241,7 +241,7 @@ The value **stored** is the target row's *derived id* - `slug(value field)`, els
 
 A `blocks` input carrying a `canvas` object is the free-form WYSIWYG artboard behind `render.layout: "editor"` (see [The `render` block](#the-render-block)): its `*Field` keys map each row's geometry (`xField`/`yField`/`wField`/`hField`/`rotationField`, plus fill/text/image sub-fields) so the shell can mount its select / drag / resize / rotate overlay while the data stays a flat, URL-expressible array. The shell mounts the whole editor rail for you - add, arrange, undo and the primary export actions - so the manifest declares geometry fields and nothing else.
 
-![The free-canvas editor rail the shell mounts for an editor layout - add, arrange, undo and export, none of it declared by the manifest](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2400&css=.fc-toolbar%7Bopacity%3A1!important%7D&walker=1&format=svg&cropSelector=.fc-toolbar&dark=1&filename=auth-editor-rail)
+![The free-canvas editor rail the shell mounts for an editor layout - add, arrange, undo and export, none of it declared by the manifest](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&css=.fc-toolbar%7Bopacity%3A1!important%7D&walker=1&format=svg&cropSelector=.fc-toolbar&dark=1&filename=auth-editor-rail)
 
 Three of the `canvas` keys turn a plain box canvas into a **diagram editor**:
 

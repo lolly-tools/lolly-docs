@@ -14,7 +14,7 @@ Lolly 會把你的規則——色彩、字體、版面、邏輯——轉換成�
 
 ### 從零開始（精靈工具）
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 第一次執行時，你會進入**起始**畫面（`#/start`）。輸入名稱和主色，Lolly 就會*推導*出一套完整、無障礙的調色盤——涵蓋亮／暗背景色、文字色、強調色——所用的正是引擎在其他地方使用的同一套色彩運算。選一款字體，不到一分鐘就有一個可運作的品牌。之後你隨時可以再調整任何細節。
 

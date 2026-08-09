@@ -14,7 +14,7 @@ Lolly におけるあなたのブランドとは、色・フォント・いく�
 
 ### ゼロから始める(ウィザード)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
 初回起動時には **Start** 画面(`#/start`)が表示されます。名前とプライマリカラーを指定すると、Lolly はエンジンが他の箇所でも使用しているのと同じ色彩計算を用いて、ライト/ダークのサーフェス・テキスト・アクセントを含む、完全でアクセシブルなパレットを*導出*します。フォントを選べば、1分足らずで動作するブランドが完成します。どの項目も後から調整できます。
 

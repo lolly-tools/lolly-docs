@@ -98,15 +98,11 @@ Lolly يرفع كل شيء.
 
 ## هل يستطيع Lolly تحرير ملفات Figma أو Penpot أو Illustrator أو InDesign الخاصة بي وتصييرها؟
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
 
 نعم. افتح **Layout Studio** وانقر على **استيراد تصميم**: يقبل ملف Figma أصليا بصيغة **.fig** ‏(Save local copy)، أو تصدير Penpot بصيغة **.penpot**، أو ملف Illustrator بصيغة **.ai** أو **.pdf**، أو ملف InDesign بصيغة **.idml** ‏(File → Export → InDesign Markup)، أو **أي SVG** (الباب الواسع — يصدره تقريبا كل تطبيق تصميم). كل شيء يحلل بالكامل على جهازك، دون حاجة إلى حساب أو ملحق.
 
 تصل الطبقات كمربعات قابلة للتحرير على اللوحة المفتوحة: يبقى النص قابلا لإعادة الكتابة، وتبقى الأشكال أشكالا، وتنضم الصور إلى مكتبتك على الجهاز، وتلتزم الخطوط والألوان بالإعدادات العامة للعلامة التجارية. احفظه فيصبح التخطيط قالبا قابلا لإعادة الاستخدام وقابلا للعنونة عبر URL يستطيع أي شخص لديه Lolly إعادة ملئه — ويمكنك مزج أدوات حية فيه (رمز QR، أو مخطط بياني) يعاد تصييرها عند التحميل. ومن هناك يصير مثل أي شيء آخر في Lolly — SVG و PDF و PNG وبقية التنسيقات، قابلا للاستنساخ من عنوانه URL. راجع [استيراد تصميم](/info/design-import.html).
-
-## هل يستطيع Lolly إعادة تمييز عرض تقديمي PowerPoint موجود بعلامة تجارية؟
-
-نعم — بطريقتين، كلتاهما على جهازك. تأخذ أداة **Rebrand a Deck** ملف `.pptx` وتستبدل سمته وألوانه المضمنة مباشرة وخطوطه بهوية علامتك التجارية، بينما تمر المخططات البيانية و SmartArt والحركات دون تغيير — فتحصل على ملف `.pptx` في المقابل. أو افتح العرض التقديمي في **Deck Builder** (تحميل ← أفلت الملف) لتحريره شريحة بشريحة ككائنات حرة الشكل، مضبوطة بالفعل على العلامة التجارية، وصدره بصيغة PPTX أو PDF أو فيديو. وبدلا من ذلك، يؤدي إفلات ملف `.pptx` في منطقة رفع إلى إيداع الشرائح التي تختارها كأصول SVG في مكتبتك. راجع [استيراد تصميم ← العروض التقديمية والمستندات](/info/design-import.html#decks-and-documents).
 
 ## ماذا يحدث في 29 أغسطس؟
 

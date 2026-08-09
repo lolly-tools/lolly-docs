@@ -96,15 +96,11 @@ Lolly 会把一切都提升上去。
 
 ## Lolly 能编辑并渲染我的 Figma、Penpot、Illustrator 或 InDesign 文件吗?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
 
 可以。打开 **Layout Studio** 并点击 **导入设计**:它支持原生 Figma **.fig** 文件(通过 Save local copy 保存的本地副本)、Penpot 的 **.penpot** 导出文件、Illustrator 的 **.ai** 或 **.pdf**、InDesign 的 **.idml**(File → Export → InDesign Markup),或**任意 SVG**(这是最宽的入口——几乎所有设计软件都能导出 SVG)。一切解析都完全在你的设备本地完成,无需账号,也无需插件。
 
 图层会以可编辑方框的形式出现在开放画布上:文字保持可重新输入、形状保持为形状、图片会加入你的本地资源库,字体和颜色则遵循品牌全局设置。保存后,该版式就会成为一个可复用、可通过 URL 访问的模板,任何使用 Lolly 的人都能重新填充内容——你还可以混入实时工具(比如二维码、图表),它们会在加载时重新渲染。此后,它就会像 Lolly 中的其他任何内容一样渲染——SVG、PDF、PNG 等等,并且可以通过其 URL 复现。参见[导入设计](/info/design-import.html)。
-
-## Lolly 能否为已有的 PowerPoint 演示文稿更换品牌?
-
-可以——有两种方式,且都在你的设备本地完成。**Rebrand a Deck** 实用工具接受一个 `.pptx` 文件,把其中的主题、硬编码的颜色和字体替换为你的品牌样式,而图表、SmartArt 和动画则原样保留——你得到的仍是一个 `.pptx` 文件。或者,在 **Deck Builder** 中打开该演示文稿(Load → 拖入文件),把每一页幻灯片当作自由对象逐页编辑,内容已自动贴合品牌规范,并可导出为 PPTX、PDF 或视频。若改为把 `.pptx` 拖放到上传区域,则会把你选中的幻灯片以 SVG 资源的形式归入你的资源库。参见[导入设计 → 演示文稿与文档](/info/design-import.html#decks-and-documents)。
 
 ## 8 月 29 日会发生什么?
 
