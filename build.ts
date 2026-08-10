@@ -2443,7 +2443,7 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .hero-logo-link:hover,.hero-logo-link:focus-visible{transform:translateY(-3px) scale(1.02);outline:none}
 .hero-logo-link:hover .hero-logo,.hero-logo-link:focus-visible .hero-logo{box-shadow:0 0.9em 1.6em #0006,0 .15em .3em #0004}
 .hero-logo-link:active{transform:translateY(-1px) scale(1.0)}
-.hero-logo{display:block;width:100%;height:auto;position:relative;border-radius:50%;    filter: hue-rotate(-15deg);box-shadow:0 0.5em 1em #0004,0 .1em .2em #0003;transition:box-shadow .2s ease}
+.hero-logo{display:block;width:100%;height:auto;position:relative;border-radius:50%;    filter: hue-rotate(-15deg);transition:box-shadow .2s ease}
 .hero-logo:hover{filter: hue-rotate(-25deg) saturate(1.5) brightness(1.01)}
 /* The verify badge. Sits ON the circle's lower-right diagonal (a circle inscribed in
    the slot meets that diagonal at 50%+35.4%), small enough that the mark is still the
