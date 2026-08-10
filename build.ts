@@ -130,6 +130,7 @@ const pages: Page[] = [
   { slug: 'mcp',              title: 'MCP Server',        src: 'mcp.md',             pathway: 'builders' },
   { slug: 'ai-agents',        title: 'AI Agents',         src: 'ai-agents.md',       pathway: 'builders' },
   { slug: 'extension',        title: 'Browser Extension', src: 'extension.md',       pathway: 'builders' },
+  { slug: 'contributing-setup', title: 'Contributing Setup', src: 'contributing-setup.md', pathway: 'builders', description: "Get a development checkout sized to what you're here to do: slim clone personas for tool authors and engine developers, and how to upgrade to the full thing later." },
   { slug: 'build-guide',      title: 'Build Guide',       src: 'build-guide.md',     pathway: 'builders', description: "Build Lolly for each target: the CLI binary, the desktop app, mobile, and the web PWA. Prerequisites, commands and what each build produces." },
   { slug: 'ios-build',        title: 'Building for iOS',  src: 'ios-build.md',       pathway: 'builders' },
   { slug: 'deployment',       title: 'Deployment',        src: 'deployment.md',      pathway: 'builders' },
@@ -255,6 +256,7 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
         { slug: 'ai-agents', label: 'AI Agents' },
         { slug: 'extension', label: 'Chrome Extension' } ] },
       { label: 'Ship & operate', items: [
+        { slug: 'contributing-setup', label: 'Contributing setup' },
         { slug: 'build-guide',   label: 'Build Guide' },
         { slug: 'ios-build',     label: 'Building for iOS' },
         { slug: 'deployment',    label: 'Deployment' },
@@ -3500,7 +3502,9 @@ footer .founded-badge{margin-top:.5rem}
      on by the same breakpoint. */
   .docs-sidebar{display:none}
   .nav-mobile-page{display:block}
-  .docs-content{padding:1.5rem 1rem}
+  /* Top padding must still clear the 3.75rem FIXED nav — collapsing it with the
+     side padding slid every page's h1 underneath the bar on phones. */
+  .docs-content{padding:5.25rem 1rem 1.5rem}
   .audience-card.tab-active{
     display:flex;flex-direction:column;
     gap:2rem;padding:2.5rem 1.25rem;
@@ -4630,7 +4634,7 @@ const FOOTER_SECTIONS: SitemapSection[] = [
   { hub: 'builders', label: 'Run & integrate', slugs: [
     'cli', 'tui', 'mcp', 'ai-agents', 'extension', 'data-transfer'] },
   { hub: 'builders', label: 'Ship & operate', slugs: [
-    'build-guide', 'ios-build', 'deployment', 'configuration', 'about'] },
+    'contributing-setup', 'build-guide', 'ios-build', 'deployment', 'configuration', 'about'] },
   { hub: 'operators', label: 'For Operators', slugs: ['adoption-governance', 'cli-signing'] },
   { hub: 'trust', label: 'Trust', slugs: [
     'status-quo', 'input-not-impersonation', 'content-credentials-identity',
@@ -4740,7 +4744,7 @@ const SIDEBAR_ICON: Record<string, string> = {
   // Builders — run & integrate
   cli: 'code', 'cli-signing': 'seal', tui: 'monitor', mcp: 'server', 'ai-agents': 'sparkle', extension: 'globe',
   // Builders — ship & operate
-  'build-guide': 'box', 'ios-build': 'box', deployment: 'upload', configuration: 'sliders', about: 'document',
+  'contributing-setup': 'download', 'build-guide': 'box', 'ios-build': 'box', deployment: 'upload', configuration: 'sliders', about: 'document',
   // Operators
   'adoption-governance': 'people',
   // Trust — where content comes from
