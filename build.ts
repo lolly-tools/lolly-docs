@@ -1088,7 +1088,7 @@ function headingId(text: string, ordinal: number): string {
 //
 // Keys are short because this file ships 27 times (once per locale) and is fetched
 // by the reader: p=page slug, t=page title, h=heading, a=anchor, x=text.
-interface SearchRecord { p: string; t: string; h: string; a: string; x: string }
+interface SearchRecord { p: string; t: string; h: string; a: string; x: string; i: string }
 
 /** Longest section body kept per record. The lead of a section carries almost all
  *  of its search signal, and an uncapped index is ~4x the size for the tail. */
@@ -1111,12 +1111,17 @@ function htmlToText(html: string): string {
 /** Split one rendered page into per-heading search records. */
 function indexSections(html: string, slug: string, title: string): SearchRecord[] {
   const records: SearchRecord[] = [];
+  // The page's sidebar glyph (SIDEBAR_ICON), carried on every record so a
+  // consumer can distinguish sections by which page they came from — the app's
+  // spotlight Docs group renders it instead of one generic help icon (plans/103).
+  // '' where a page has no sidebar icon; the consumer falls back.
+  const i = SIDEBAR_ICON[slug] ?? '';
   const heading = /<h([2-4])\s+id="([^"]*)"[^>]*>([\s\S]*?)<\/h\1>/g;
   const push = (h: string, a: string, body: string) => {
     const x = htmlToText(body).slice(0, SEARCH_SNIPPET_MAX);
     // A heading with no prose under it is still worth finding — it is a place in
     // the document. One with neither heading nor body is not.
-    if (h || x) records.push({ p: slug, t: title, h, a, x });
+    if (h || x) records.push({ p: slug, t: title, h, a, x, i });
   };
 
   const marks: Array<{ h: string; a: string; start: number; end: number }> = [];
@@ -3079,7 +3084,27 @@ html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
    mark can hang off. An image that wants 100% of a fit-content parent resolves to
    zero, which is the other reason this is not a .shot. */
 .asset-cred{display:block;position:relative;width:100%}
-.asset-cred>img{display:block;width:100%;height:auto;margin:0}
+.asset-cred>img{display:block;width:100%;height:auto;margin:1em auto}
+/* A page-asset credential rests OPEN on a full-width hero, so — unlike a screenshot's
+   caption, which deliberately overhangs a narrow crop (see the .shot-cred notes above) —
+   it must stay INSIDE the frame: there is a whole column of room, so a spill past the
+   edge like the one on /input-not-impersonation is just a bug. Same fix the mascot credit
+   uses a few rules down: clamp the line to the artwork, and let the rows WRAP into a
+   compact stack rather than run off the side. The glyph stays anchored; the line grows
+   within the box. */
+.asset-cred .shot-cred{max-width:calc(100% - 1.4rem)}
+.asset-cred .shot-cred-line{max-width:18em}
+.asset-cred .shot-cred-row{flex-wrap:wrap}
+/* not-a-pipe keeps the DEFAULT centred, 40em-capped image (see .docs-content img above),
+   so its .asset-cred wrapper is the full column — wider than the picture — and a mark
+   anchored to the wrapper's edge hangs off into the margin. Hug the wrapper to the same cap
+   so the credential aligns to the artwork's real edge. (the-flood escapes this only because
+   it overrides its image to width:100% further down, filling the wrapper.) */
+.asset-cred[data-shot="/info/not-a-pipe.webp"]{max-width:min(100%,40em);margin-inline:auto}
+/* Its caption "Ceci n'est pas une pipe" runs along the bottom edge, and that writing is the
+   whole point of the picture — so this hero's mark sits mid-height rather than in the bottom
+   corner where it would cover the words it is arguing about. */
+.asset-cred[data-shot="/info/not-a-pipe.webp"] .shot-cred{inset-block-end:50%}
 /* A landing mascot wrapped with its Content Credential. The mascot's sizing class
    (.about-mascot / .audience-mascot / .everywhere-mascot: width, flex-shrink, drop-shadow)
    rides on THIS span, so it stays the flex child it was; the img just fills it, and the

@@ -2,6 +2,22 @@
 
 An AI agent is welcome to fill in the inputs. It is not welcome to claim it is you. That sounds like a slogan until you try to draw the line, so this page draws it, then shows what happens when something crosses it.
 
+## This is not a pipe
+
+![A woodcut-style pipe on cream paper, its smoke billowing up into a great cloud, captioned in cursive: Ceci n'est pas une pipe](/info/not-a-pipe.webp)
+
+%file{iykyk.png} %entity{Gemini} generated the source %entity{Lolly} %act{opened}, %act{cropped} and %act{rendered to WebP} as %file{not-a-pipe.webp} %detail{2474×1728, cropped to 1901×1728} %sig{signed by %entity{Lolly}} [Verify this now](/#/verify?src=%2Finfo%2Fnot-a-pipe.webp)
+
+In 1929 René Magritte painted a pipe and lettered underneath it, in careful cursive, *Ceci n'est pas une pipe*, this is not a pipe. People reproached him for it, and his answer was flat: "could you stuff my pipe? No, it's just a representation. So if I had written 'This is a pipe', I'd have been lying." The painting is honest about being a painting. The lie on offer was the caption that would have claimed otherwise.
+
+The picture above is not that painting. It is a synthetic pastiche made in 2026, in Magritte's spirit and nothing more: a model generated the source from a prompt, and Lolly cropped it and rendered it to WebP. So it is not a pipe, and it is not a Magritte, and it is not the woodcut its gouged lines imitate, and no hand cut it. Each of those is a claim someone could make falsely. Each is instead written into the file, in plain sight, for anyone to read. Tap the mark in its corner, or [check it yourself](/#/verify?src=%2Finfo%2Fnot-a-pipe.webp): the credential says AI generated, signed by Lolly on-device. It does not say Magritte. It does not say woodcut. It does not say photograph. That restraint is the point. A file that told you it was a pipe would be lying, so it tells you only what it is.
+
+Magritte's other lesson is about accountability. You cannot stuff the painted pipe, and you cannot hold the picture to account as though it had been smoked. Neither can you hold a model to account as though it were a person. An agent can carry a decision a long way and render it beautifully, but it did not originate the decision and it cannot answer for one. Accountability, like the pipe you can actually smoke, lives elsewhere: with the person the record leads back to. Provenance is how the record gets there.
+
+This is the difference between input and impersonation, drawn in one image. Pixels can imitate anything: a brand, a style, a dead painter's joke. What has to travel honestly beside them is the account of what made them. Magritte refused to write the lie. Lolly writes the truth by default, and hands you the means to check it.
+
+> We strive for honesty amongst the infinite. - Andy Fitzsimon, Architect of Lolly
+
 ## The line
 
 **Input is everything an agent can legitimately supply.** The words, the source image, the colour, the four hundred rows of a batch, the twenty-six locales to render into. Inputs are the whole surface an agent gets, and a tool renders them the same way no matter who typed them. A person filling those fields at 2am and an agent filling them at 2am produce the same asset, and the asset is no less legitimate for having been made quickly.
