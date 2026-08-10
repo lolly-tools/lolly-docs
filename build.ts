@@ -1132,8 +1132,45 @@ function indexSections(html: string, slug: string, title: string): SearchRecord[
   return records;
 }
 
-function mdToHtml(md: string) {
+/** Authoring comments (shot notes, capture instructions) are working metadata,
+ *  never page content — the escaper renders an unstripped one as VISIBLE text,
+ *  which shipped once (collaborate.html + three more, 2026-08-10). Stripped in a
+ *  pre-pass because the figure builder consumes comment lines that trail an image
+ *  before the line loop can skip them. Fence-aware (a ``` example may SHOW a
+ *  comment), and the `<!--i:name-->` icon tokens survive — the list renderer
+ *  consumes those on purpose. */
+function stripAuthoringComments(md: string): string {
   const lines = md.split('\n');
+  const out: string[] = [];
+  let inFence = false;
+  let inComment = false;
+  for (const line of lines) {
+    if (!inComment && line.startsWith('```')) { inFence = !inFence; out.push(line); continue; }
+    if (inFence) { out.push(line); continue; }
+    if (inComment) {
+      const close = line.indexOf('-->');
+      if (close === -1) continue;
+      inComment = false;
+      const rest = line.slice(close + 3);
+      if (rest.trim()) out.push(rest);
+      continue;
+    }
+    // Inline complete comments: drop all except icon tokens.
+    let kept = line.replace(/<!--(?!i:[a-z-]+-->)[\s\S]*?-->/g, '');
+    // An unclosed opener (not an icon token) starts a multi-line comment.
+    const open = kept.search(/<!--(?!i:[a-z-]+-->)/);
+    if (open !== -1) {
+      inComment = true;
+      kept = kept.slice(0, open);
+    }
+    if (kept !== line && !kept.trim()) continue; // a line that was ONLY comment
+    out.push(kept);
+  }
+  return out.join('\n');
+}
+
+function mdToHtml(md: string) {
+  const lines = stripAuthoringComments(md).split('\n');
   const out: string[] = [];
   let headingOrdinal = 0;
   let i = 0;
