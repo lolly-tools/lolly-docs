@@ -6,6 +6,8 @@
 
 ## একটি টুল খোলা
 
+![The grey Show hidden tools tile at the end of the grid, and one dimmed hidden tool card revealed beneath it with Unhide in its menu](/t/url-shot?url=%2F%23%2F&width=1440&height=680&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-bulk%3D%22hide%22%5D%3Bwait%3A300%3Bclick%3A.gtile--hiddenbox%3Bpress%3AEnd%3Bwait%3A800&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&rasterDpi=96&dark=1&filename=misc-hidden-tools)
+
 ![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
 
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&localize=1&dark=1&filename=gallery&try=1&sweep=1)
@@ -113,6 +115,10 @@
 ছবির **Filters** — Halftone, Scanline, Posterize, Duotone — যেখানে একটি ক্যামেরা পাওয়া যায় সেখানে একটি **Go live** বোতাম দেখায়। এটি চালু করুন আর ইফেক্টটি ফ্রেম ধরে ধরে আপনার ওয়েবক্যাম অনুসরণ করে, তাই এটি নড়াচড়ায় সাড়া দেয়; আপনি ফলাফলটি GIF, WebM বা MP4-এ রেকর্ড করতে পারেন। ফ্রেমগুলো **আপনার ডিভাইসে** পড়া ও প্রসেস করা হয় এবং কখনও এটি ছেড়ে যায় না, আর আপনি টুলটি থামানো বা ছেড়ে যাওয়া মাত্রই ক্যামেরা রিলিজ হয়ে যায়। (যেকোনো ইমেজ পিকারেও একটি অন-ডিভাইস ছবি হিসেবে একটি একক ফ্রেম নিতে **Take a photo** থাকে।)
 
 ## My images
+
+![The View and sort popover in Projects open, with a theme row, a View choice of Preview or List, and Name, Date added and Last modified under Sort](/t/url-shot?url=%2F%23%2Fp&width=900&height=700&dpi=192&waitMs=1400&drive=click%3A.projects-viewopts&cropSelector=.projects-viewmenu&walker=1&format=svg&dark=1&filename=misc-projects-sort)
+
+![Two tool cards ticked in the Tools gallery, with the floating selection bar offering Available offline, View sessions, Favourite, Hide and Copy link](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22mesh-gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
 
 যখন একটি টুল আপনাকে আপনার ডিভাইস থেকে একটি ছবি যোগ করতে দেয়, সেটি ডাউনস্কেল করা হয়, EXIF/GPS ছেঁটে ফেলা হয়, এবং আপনার ব্যক্তিগত **My images** লাইব্রেরিতে (**Profile → Storage**-এর অধীনে) সেভ করা হয়। যেকোনো টুল জুড়ে এটি আবার ব্যবহার করুন। লাইব্রেরিটি সীমিত এবং সম্পূর্ণ লোকাল — সেখানে ছবি ম্যানেজ বা ডিলিট করুন।
 

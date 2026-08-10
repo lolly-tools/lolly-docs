@@ -12,7 +12,6 @@ Novo na plataforma? O **[Guia Rápido](/info/quickstart.html)** coloca uma marca
 
 ![One shared primitive from the shell's component library, rendered live from its own specimen - the button base and its fills, beside the file that defines them](/t/url-shot?url=%2F%23%2Fcomponents&width=1200&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23cl-primitives%20.cl-card&dark=1&filename=aud-primitive-card&sweep=1)
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-components-lib&sweep=1)
 
 - **[Visão Geral](/info/overview.html)** - por que o Lolly existe, a separação entre engine/shell/tools, a bridge de capacidades e os compromissos arquiteturais já definidos.
 - **[Design Tokens](/info/design-tokens.html)** - o modelo de tokens DTCG em que as marcas são expressas, e como as ferramentas os consomem.

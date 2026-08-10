@@ -167,7 +167,7 @@
 
 ## ブランドを別のデバイスへ移す
 
-![The import card - the accepted formats lead as icon tiles, and the whole card is one drop target](/t/url-shot?url=%2F%23%2Fstart%3Fimport&width=1440&height=900&dpi=192&waitMs=1600&css=.start-import-modal%20.modal-msg%2C.start-import-modal%20.modal-title%7Bdisplay%3Anone%7D&cropSelector=.start-import-drop&walker=1&format=svg&dark=1&filename=bs-brand-import-formats)
+![The import card - the accepted formats lead as icon tiles, and the whole card is one drop target](/t/url-shot?url=%2F%23%2Fstart%3Fsource%3Dfile&width=1440&height=900&dpi=192&waitMs=1600&css=.start-import-modal%20.modal-msg%2C.start-import-modal%20.modal-title%7Bdisplay%3Anone%7D&cropSelector=.start-import-drop&walker=1&format=svg&dark=1&filename=bs-brand-import-formats)
 
 上部のアクション行にある **Export** ボタンは、トークン、フォント、ロゴ、テーマ設定と整合性マニフェストをまとめた、単一の **`LollyBrand-…zip`** を書き出します。**Import…** ボタン（またはスタジオへのドラッグ＆ドロップ）は、次のものを受け付けます：
 

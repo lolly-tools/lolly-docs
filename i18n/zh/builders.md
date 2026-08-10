@@ -12,7 +12,6 @@ Lolly 是一个与平台无关的**引擎**，在多个**壳层**（web PWA、Ta
 
 ![One shared primitive from the shell's component library, rendered live from its own specimen - the button base and its fills, beside the file that defines them](/t/url-shot?url=%2F%23%2Fcomponents&width=1200&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23cl-primitives%20.cl-card&dark=1&filename=aud-primitive-card&sweep=1)
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-components-lib&sweep=1)
 
 - **[概览](/info/overview.html)** — Lolly 存在的原因、引擎/壳层/工具的分离方式、能力桥接（capability bridge），以及已经确定下来的架构承诺。
 - **[设计令牌](/info/design-tokens.html)** — 品牌所使用的 DTCG 令牌模型，以及工具如何使用这些令牌。

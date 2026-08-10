@@ -6,6 +6,8 @@ Um guia prático para realmente *usar* o app - abrir uma ferramenta, trabalhar n
 
 ## Abrindo uma ferramenta
 
+![The grey Show hidden tools tile at the end of the grid, and one dimmed hidden tool card revealed beneath it with Unhide in its menu](/t/url-shot?url=%2F%23%2F&width=1440&height=680&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-bulk%3D%22hide%22%5D%3Bwait%3A300%3Bclick%3A.gtile--hiddenbox%3Bpress%3AEnd%3Bwait%3A800&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&rasterDpi=96&dark=1&filename=misc-hidden-tools)
+
 ![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
 
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&localize=1&dark=1&filename=gallery&try=1&sweep=1)
@@ -113,6 +115,10 @@ Um design grande geraria uma URL longa, então o diálogo também oferece um **L
 Os **Filtros** de foto - Halftone, Scanline, Posterize, Duotone - mostram um botão **Ativar ao vivo** onde há uma câmera disponível. Ative e o efeito acompanha sua webcam quadro a quadro, reagindo ao movimento; você pode gravar o resultado em GIF, WebM ou MP4. Os quadros são lidos e processados **no seu dispositivo** e nunca saem dele, e a câmera é liberada assim que você para ou sai da ferramenta. (Qualquer seletor de imagem também tem **Tirar uma foto**, para capturar um único quadro como imagem no dispositivo.)
 
 ## Minhas imagens
+
+![The View and sort popover in Projects open, with a theme row, a View choice of Preview or List, and Name, Date added and Last modified under Sort](/t/url-shot?url=%2F%23%2Fp&width=900&height=700&dpi=192&waitMs=1400&drive=click%3A.projects-viewopts&cropSelector=.projects-viewmenu&walker=1&format=svg&dark=1&filename=misc-projects-sort)
+
+![Two tool cards ticked in the Tools gallery, with the floating selection bar offering Available offline, View sessions, Favourite, Hide and Copy link](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22mesh-gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
 
 Quando uma ferramenta permite adicionar uma imagem do seu dispositivo, ela é reduzida de tamanho, tem os dados EXIF/GPS removidos e é salva na sua biblioteca pessoal **Minhas imagens** (em **Perfil → Armazenamento**). Reutilize-a em qualquer ferramenta. A biblioteca tem um limite e é totalmente local - gerencie ou exclua imagens por lá.
 

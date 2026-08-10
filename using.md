@@ -6,7 +6,7 @@ A practical guide to actually *using* the app - opening a tool, working the canv
 
 ## Opening a tool
 
-The home screen is the **gallery** - every tool, grouped by category. Click a card to open the tool; if you've worked on it before, a **Continue** button resumes your most recent session. Use the search box to filter by name.
+The home screen is the **gallery** - every tool, grouped by category. Click a card to open the tool; if you've worked on it before, a **Continue** button resumes your most recent session. Use the search box to filter by name - or [Search](/info/search.html) from the bar at the bottom of any screen, which reaches your saved work, the catalogue and your settings as well as the tools.
 
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&localize=1&dark=1&filename=gallery&try=1&sweep=1)
 
@@ -15,6 +15,34 @@ Each tool is a split view: **controls** on one side, a live **preview** (the can
 ![A tool's split view - the control stack on the left, and the live grouped bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
 
 > A few tools (like **Layout Studio**) instead open as a **free canvas** - a chromeless, direct-manipulation surface where you drag, resize, rotate and snap boxes of text, shapes and images, and double-click to edit text in place. It exports through the same render path as every other tool, so the canvas *is* the file. See [The free canvas](#the-free-canvas-layout-studio) below.
+
+Two ways to shape the grid itself into the one you want:
+
+- <!--i:star--> **Star what you use.** ★ a card and it gets a big tile of its own in a strip above the grid - see [Your favourites](/info/favourites.html).
+- <!--i:eyeoff--> **Hide a tool you never use.** Right-click a card (or select several and use the selection bar) → **Hide tool**. It drops out of the grid, and out of what typing in the grid finds; a grey **Show hidden tools (N)** tile at the very end reveals them again, dimmed, each with **Unhide tool** in its own menu. Hiding is only about your grid - the tool still opens from a saved link or a bookmark, and it stays exactly where it was for everyone else.
+
+![The end of the Tools grid with hidden tools revealed: the dimmed QR Code Generator card, and beside it the grey tile that toggled it back into view, now reading Hide hidden tools](/t/url-shot?url=%2F%23%2F&width=1440&height=680&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-bulk%3D%22hide%22%5D%3Bwait%3A300%3Bclick%3A.gtile--hiddenbox%3Bpress%3AEnd%3Bwait%3A800&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&rasterDpi=96&dark=1&filename=misc-hidden-tools)
+<!--
+SHOT NOTE (misc-hidden-tools): the trailing `press:End` is load-bearing. The
+hidden box and the revealed cards live at the very END of the grid, and
+clicking the box runs applyView(), which re-lays the masonry out and drops the
+scroll back to the top - so without it the frame published the TOP of the
+gallery under a caption about its bottom. `press:` with no `on=` goes to the
+keyboard, and the End key with focus on the just-clicked box scrolls the
+document; the walker then anchors the body walk to that band.
+The tile reads "HIDE hidden tools" in the shot, not "Show" - it is a toggle and
+the recipe has just pressed it. The alt says so rather than quoting the resting
+label the prose above already gives.
+There is no standalone per-card "hide" button
+(unlike the always-visible fav/pin corner icons) - Hide only exists inside a
+tile's right-click menu or the bulk bar, both confirmed in views/gallery.ts.
+The recipe goes the bulk-bar route since it needs no `|right` context-menu
+step: tick the card (`[data-select="qr-code"]`, the same checkbox hook the
+selection bullet under Projects uses), click the bar's Hide button
+(`[data-bulk="hide"]` - the literal `data-bulk` value bulkBarHtml() writes,
+confirmed in lib/bulk-bar.ts), then click the grey reveal tile
+(`.gtile--hiddenbox`, confirmed in gallery.ts).
+-->
 
 ## The canvas (preview)
 
@@ -169,10 +197,59 @@ Click **Save** to store the current inputs as a session for that tool. You can k
 ![Projects - saved sessions organised into nestable folders](/t/url-shot?url=%2F%23%2Fp&width=1440&height=900&dpi=192&waitMs=1200&walker=1&format=svg&localize=1&dark=1&filename=projects)
 
 - <!--i:folder--> **Folders that nest.** Group saved sessions into folders, and folders inside folders, as deep as you like. Create a folder, rename it, or drag a tile onto another folder to move it; a breadcrumb walks you back up. An always-present **Uncategorised** folder holds anything not yet filed.
+- <!--i:clock--> **Sort your own way.** **View & sort** offers **Name**, **Date added**, **Last modified** (the default) and, inside a folder, **By tool**. Folders always come first regardless of which sort is active - the sort only orders the sessions and folders within their own group.
 - <!--i:document--> **File new work straight in.** Inside a folder, **+ New tool** opens a tool and files its first save into that folder automatically.
-- <!--i:checklist--> **Multi-select (desktop).** Tick a tile's checkbox, drag a selection box across empty canvas, or **Shift/Cmd-click**; **right-click** a tile for its context menu. Then act on the whole selection at once.
+- <!--i:checklist--> **Multi-select (desktop).** Tick a tile's checkbox, drag a selection box across empty space, or **Shift/Cmd-click**; **right-click** a tile for its context menu. Then act on the whole selection at once - the same gesture and the same floating action bar work on the Tools gallery, Utilities, the Catalogue and Projects, not just here.
 - <!--i:download--> **Render a whole folder or selection.** **Render folder** exports every saved session in a folder - including its sub-folders - as one nested `.zip`. **Render selection** does the same for any multi-selection, and a single session renders straight to its own file. No Batch/Pro needed.
+- <!--i:link--> **Jump straight to a tool's saved work.** Tick one or more tools on the Tools gallery and choose **View sessions** from the selection bar - Projects opens showing only the sessions made with those tools, with a **Clear** to get back to the full view.
 - <!--i:link--> **Share a saved session.** Right-click a session → **Share link** to copy a link that reopens it with the exact same inputs (the full Share dialog - see below).
+
+![The View and sort popover in Projects open, with a theme row, a View choice of Preview or List, and Name, Date added and Last modified under Sort](/t/url-shot?url=%2F%23%2Fp&width=900&height=700&dpi=192&waitMs=1400&drive=click%3A.projects-viewopts&cropSelector=.projects-viewmenu&walker=1&format=svg&dark=1&filename=misc-projects-sort)
+<!--
+SHOT NOTE (misc-projects-sort): trigger button confirmed as
+`.filter-fab.projects-viewopts` in views/projects.ts (openViewOpts() is bound
+to `.projects-viewopts` specifically) - `.projects-viewopts` alone is the
+more specific hook, so that's what drives the click. The popover it opens
+(`.projects-viewmenu`, also confirmed directly in openViewOpts()) is body-
+appended, not nested under the Projects root, so cropSelector finds it
+regardless. "By tool" only appears inside a folder - this recipe captures at
+the Projects ROOT (`url=/#/p`), so if the capture pass wants "By tool"
+visible too, point url= at a real folder instead: the route is a path
+segment, `/#/p/<folderId>` (confirmed in main.ts's hash router - `parts[0]
+=== 'p'` reads `folderId` from `parts[1]`), not a query param. Caveat: a
+folder has to already EXIST in the capture profile, which a per-shot fresh
+context has none of.
+Also: the popover is not sort-only. openViewOpts() writes a theme segment, a
+"View" pair (Preview / List) and a sound segment around the Sort rows, so the
+alt text names them - do not re-caption this as "the sort menu".
+-->
+
+**What the selection bar offers** differs a little by view, since not every action makes sense everywhere:
+
+- **Tools / Utilities:** Favourite (or Unfavourite), Hide (or Unhide), Available offline (or Remove from offline), **View sessions** (the jump described above), and Copy link when exactly one card is selected.
+- **Catalogue:** Favourite and Hide apply to any selection; Duplicate, Download and Delete only appear once every selected item is one of your own uploads - a shared design-system asset is a permanent contract, so those three stay off it even in bulk.
+- **Projects:** **Render selection**, **Move to…**, **New folder**, **Delete**, and **Edit together** when the selection is between two and eight single-tool sessions (it opens them side by side under one combined sidebar).
+
+> One label trap: **View sessions** only exists once something is *selected*. Right-clicking a single unselected card instead offers **N saved sessions**, which opens that tool's own history dialog rather than navigating to Projects.
+
+![Two tool cards ticked in the Tools gallery, with the floating selection bar reading 2 selected and offering Available offline, View sessions, Favourite and Hide](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22mesh-gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
+<!--
+SHOT NOTE (misc-bulkbar-gallery): drive targets `[data-select="qr-code"]` /
+`[data-select="d3"]` - the `.tile-check[data-select="<ref>"]` checkbox button
+confirmed directly in views/gallery.ts's card markup (the same attribute
+cardMarkup gives every tile), so these two clicks tick both cards without
+opening either tool.
+
+SHOT NOTE (misc-sessions-by-tool, NOT PUBLISHED): the "View sessions" result
+had a recipe of its own (`/#/p?tools=qr-code,d3`, views/projects.ts's
+toolsBodyHtml()), dropped here because it has no `drive=` that can
+manufacture its own content - a saved session isn't a click away, it has to
+already exist, and build-docs-shots.ts gives every shot a fresh
+`browser.newContext()`. It would publish an empty list. Same dependency the
+`projects` shot above already carries; revisit if the pipeline gains a
+storage-seeding hook.
+-->
+
 
 ## Sharing a link
 
@@ -181,6 +258,8 @@ Every input is captured in the page URL, so a link *is* the design. Use **Share*
 A big design would make a long URL, so the dialog also offers a **Shortest link** that packs the whole state into a compact token - the readable form is always there too. Paste it to a colleague, bookmark it, or commit it. (Full details: [URL Mode](/info/url-mode.html).)
 
 > Images you uploaded from your device are **not** included in a shared link - they only exist on your machine.
+
+A link hands over a snapshot. To work on the same session *at the same time* as someone else - two devices, no server, no internet needed if you're on one network - see [Working together](/info/collaborate.html).
 
 ## Live camera (motion-reactive tools)
 
@@ -198,7 +277,7 @@ The **Catalogue** (`#/c`, or the **Catalogue** link in the menu) gathers everyth
 
 - <!--i:upload--> **Bring your files in.** Drag any image, SVG, audio clip, video, Lottie, PDF or PowerPoint deck onto the upload area - or click to choose - and it lands in your catalogue instantly, ready in every tool's asset picker. A multi-page PDF or a `.pptx` asks which pages or slides to keep - each becomes an SVG asset. Ingest as much as you like; it never leaves your device.
 - <!--i:star--> **Favourite what you reach for.** ★ an asset (or a brand swatch) and it pins to the top of every picker, so your go-to logo or colour is one click away.
-- <!--i:folder--> **Tidy up.** Recategorise an asset into a different group, hide a shared brand asset you don't use (with **Show hidden** to bring it back), or delete your own uploads outright.
+- <!--i:folder--> **Tidy up.** Recategorise an asset into a different group, hide a shared brand asset you don't use (with **Show hidden** to bring it back), or delete your own uploads outright. The same multi-select gesture and floating action bar as Projects work here too, so any of that can be done to a whole selection at once.
 
 ### Take your palette and fonts anywhere
 

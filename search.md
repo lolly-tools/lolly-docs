@@ -1,23 +1,12 @@
 <!--
-DRAFT - not wired into docs/build.ts's `pages` array and not linked from any
-published page. Lives under docs/drafts/ on purpose: build.ts's `pages` list
-(around line 89) is a hardcoded array of explicit `src:` filenames pointing at
-top-level docs/*.md files, nothing globbed or recursive, and the one directory
-scan in the file (shotRecipe()'s `readdirSync(__dirname).filter(n =>
-n.endsWith('.md'))`, ~line 610) is a plain, non-recursive readdirSync, so it
-cannot see into a subdirectory either. scripts/build-docs-shots.ts's own scan
-(readdirSync(DOCS_DIR)) is the same shape. This page and its two recipes are
-therefore inert to both the site build and the screenshot pipeline until
-someone moves it up a level and adds it to `pages`.
-
 Every fact below was checked against the shipped code (not memory), mostly in
 shells/web/src/components/search-bar.ts, shells/web/src/components/spotlight.ts,
 shells/web/src/lib/search/{match,registry}.ts and the six provider modules
 under shells/web/src/lib/search/providers/, and against `ROUTES` in
 shells/web/src/main.ts for exactly which routes show the bar. The feature is
 fully shipped (main branch, commit ade7d3a), not a work-in-progress - unlike
-the collab feature elsewhere in this drafts pass, nothing here needs a "drill"
-annotation. Neither screenshot below has been captured; both are recipes only.
+the collab page, nothing here needs a "drill" annotation. Neither screenshot
+below has been captured as of this page landing; both are recipes only.
 -->
 
 # Search
@@ -141,3 +130,7 @@ then a second press clears what you typed, then a third leaves the field.
   search already uses, so page and heading titles are searchable too. What you
   type is never part of that fetch, only matched locally once the file is
   in; offline, that one group just doesn't appear, without complaint.
+
+---
+
+**Related:** [Your favourites](/info/favourites.html) for keeping the handful you use where you can see them. [Using Lolly](/info/using.html) for the gallery, Projects and the Catalogue that search reaches into. [Privacy](/info/privacy.html) for what stays on your device.

@@ -1,57 +1,41 @@
 <!--
-DRAFT - not wired into docs/build.ts's `pages` array (~line 89, a hardcoded
-list of explicit src: filenames - nothing globbed) and not reachable by
-shotRecipe()'s directory scan either (readdirSync(__dirname) at ~line 610 is
-plain and non-recursive, so it never looks inside docs/drafts/). Inert to both
-the site build and the screenshot pipeline until someone moves this content
-up into a real page. Nothing in this pass has been captured - every image
-below is a recipe only.
-
-SUGGESTED HOME: docs/using.md, as a new subsection under "## Opening a tool"
-(right after the existing gallery screenshot at using.md line ~11, before
-"Each tool is a split view..."). Working title below, "## Your favourites
-strip", assumes that placement - rename the heading level if it lands
-elsewhere. Neither recipe below asks for `sweep=1`, deliberately: using.md
-already carries exactly 4 (gallery, layout-studio, seq-studio-timeline,
-pv-storage-clear), which IS docs/build.ts's MAX_SWEEPS_PER_PAGE, so anything
-here that wanted one would have to take it off an existing shot first.
-
 Every fact below was checked against shells/web/src/components/featured-row.ts,
 shells/web/src/views/gallery.ts (the mount/star/hide/view-mode wiring),
 shells/web/src/lib/favourites.ts, shells/web/src/bridge/profile.ts and
 shells/web/src/data-transfer.ts (PREF_KEYS, the portable-backup part list) -
 not from memory. Two separate storage facts are load-bearing here and must
-not get merged into one sentence when this lands: the favourites LIST lives
-on the user profile (IndexedDB, part of a profile export); the Gallery/Cover
-Flow DISPLAY MODE lives in a bare localStorage key that isn't even in
-PREF_KEYS, so it never rides along in a profile export either.
+not get merged into one sentence: the favourites LIST lives on the user
+profile (IndexedDB, part of a profile export); the Gallery/Cover Flow DISPLAY
+MODE lives in a bare localStorage key that isn't even in PREF_KEYS, so it
+never rides along in a profile export either.
 
-Also worth flagging for whoever merges this in: using.md line 200 already has
-a DIFFERENT "favourite" - "★ Favourite what you reach for" under the
-Catalogue section, which stars a CATALOGUE ASSET (profile.favouriteAssets,
-pins it to the top of every asset picker). This page's star is a different
-list entirely (profile.favourites, tools and utility views, promotes into
-this strip). Same verb, same glyph, two unrelated lists - the doc should say
-so once, wherever the two sections end up sitting relative to each other.
+No `sweep=1` on either recipe, deliberately - the drawing-in budget is
+MAX_SWEEPS_PER_PAGE = 4 per page (docs/build.ts) and neither shot here is the
+kind that earns one.
 -->
 
-## Your favourites strip
+# Your favourites
 
 Star a tool (or, on Utilities, a utility card) and a big, cinematic tile for it appears in a strip above the grid. It's the fastest way back to the handful of things you actually use - built by you, one star at a time, not pre-loaded with anyone's idea of what you'll want.
 
 A fresh install shows none of this. There's no starter set: the strip simply doesn't exist until you star your first thing, and it collapses away again if you ever get back down to zero.
 
-![The Tools gallery with two favourited tools drifting past in the strip above the grid](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-fav%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-fav%3D%22d3%22%5D%3Bwait%3A800&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=fav-strip-gallery)
+![The Tools gallery with two favourited tools drifting past in the strip above the grid](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-fav%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-fav%3D%22battlecards%22%5D%3Bwait%3A800&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=fav-strip-gallery)
 <!--
-SHOT NOTE (fav-strip-gallery): the two drive clicks star `qr-code` and `d3` -
-both already used elsewhere in using.md - so the strip has real, deterministic
-content regardless of whatever the capture profile happened to have starred
-before. `captureNeutralPinned()` (lib/capture-neutral.ts) already forces the
-strip into Gallery/filmstrip mode for any automated capture and freezes the
-cross-fade, so no extra flag is needed to avoid Cover Flow here.
+SHOT NOTE (fav-strip-gallery): the two drive clicks star `qr-code` and
+`battlecards`, and the pairing is not arbitrary - BOTH MUST BE IN THE FIRST
+GRID ROW. Playwright scrolls each click target into view, so the last click
+sets the final scroll position, and the walker anchors a body walk to the
+visible band. The recipe originally starred `qr-code` and `d3`; `d3` is in row
+three, so the frame came out anchored 562px down and the strip this shot is
+ABOUT was off the top of it. Measured row 1 at 1440px: audiogram, battlecards,
+mesh-gradient, qr-code.
+`captureNeutralPinned()` (lib/capture-neutral.ts) already forces the strip into
+Gallery/filmstrip mode for any automated capture and freezes the cross-fade, so
+no extra flag is needed to avoid Cover Flow here.
 -->
 
-### Starring and unstarring
+## Starring and unstarring
 
 The star lives in three places, and all three write to the same list:
 
@@ -59,13 +43,31 @@ The star lives in three places, and all three write to the same list:
 - **In its right-click menu** - **Add to favourites** / **Remove from favourites**.
 - **In the selection bar** - tick a card's checkbox (or several: ⌘/Ctrl-click, Shift-click a range, or drag a box across empty space) and an action bar appears along the bottom with a **Favourite** button that stars, or unstars, the whole selection in one go. Right-clicking inside a selection offers the same **Favourite** / **Unfavourite** row.
 
-![A single tool card's ★ in the corner, filled to show it's already favourited](/t/url-shot?url=%2F%23%2F&width=700&height=420&dpi=192&waitMs=1600&drive=click%3A%5Bdata-fav%3D%22qr-code%22%5D&cropSelector=%5Bdata-tool-id%3D%22qr-code%22%5D&walker=1&format=svg&dark=1&filename=fav-star-toggle)
+![A single tool card, with the ★ that stars it sitting in the top corner beside the download and info buttons](/t/url-shot?url=%2F%23%2F&width=700&height=420&dpi=192&waitMs=1600&drive=click%3A%5Bdata-fav%3D%22qr-code%22%5D&cropSelector=%5Bdata-tool-id%3D%22qr-code%22%5D&walker=1&format=svg&dark=1&filename=fav-star-toggle)
+
+<!--
+SHOT NOTE (fav-star-toggle): the alt says WHERE the star is, not that it is
+filled, and that is a walker limitation rather than an editorial choice. The
+drive click really does star the tool - measured after the click:
+`aria-pressed="true"`, `class="… gtile-fav is-fav"` - but the FILL is applied by
+CSS (`.gtile-fav.is-fav svg { fill: … }`, gallery.css), and the walker's
+svg-rooted passthrough clones an inline icon with its AUTHORED attributes, so
+the icon keeps `fill="none"` and comes out as an outline. Computed `color` does
+carry across; computed `fill`/`stroke` on a passthrough <svg> root do not.
+Worth fixing in shells/web/src/bridge/export.ts (apply the computed
+fill/stroke to the cloned root when it differs from the attribute) - every
+CSS-filled icon in every walker shot has the same hole. Until then, do NOT
+"solve" this with a raster: the shot is honest about the control's position,
+and a bitmap would trade a whole page of vector for one filled glyph.
+-->
 
 The same star works on a **utility** card in the Utilities view - Verify & Inspect, Colour Lab, Take a PDF apart, Spreadsheet and the rest. They aren't tools (no saved sessions, nothing to keep offline), but the strip treats a starred one exactly the same way: a tile of its own, icon-led since there's no preview to show.
 
 > Not the strip you're after? The **★ Favourites** pill in **Sort & filter** shows the same starred set as an ordinary filtered list in the grid below, instead of the drifting strip up top - useful if you'd rather scan a plain list.
 
-### Gallery or Cover Flow
+**One star, two lists.** The ★ on a **catalogue asset** ([Using Lolly → The Catalogue](/info/using.html#the-catalogue-your-asset-library)) is a different list entirely: it pins that logo, image or colour to the top of every asset picker. Same verb, same glyph, unrelated sets - starring a tool never touches your pinned assets, and vice versa.
+
+## Gallery or Cover Flow
 
 Open **Sort & filter → Featured view** to choose how the strip itself looks:
 
@@ -106,7 +108,7 @@ either. Same documented blocker as the gallery's own Cover Flow shots
 (CLAUDE.md, "Docs screenshots are vector"). Prose only for that mode.
 -->
 
-### This is local, not part of the design system
+## This is local, not part of the design system
 
 Your starred tools are saved onto your **profile** - the same on-device record that holds your name, your headshot and your other preferences (see [Profiles](/info/profile.html)). In plain terms:
 
@@ -115,3 +117,7 @@ Your starred tools are saved onto your **profile** - the same on-device record t
 - It **doesn't follow you** anywhere on its own. The one way it travels is the same way your whole profile does - export a portable backup and import it on another device - and that's a deliberate, occasional action you take, never an ambient sync running in the background.
 
 Even the choice between **Gallery** and **Cover Flow** is more local still: it lives in a small preference kept only in this one browser's own storage, and it isn't part of that profile export at all. A new device always starts back on the plain default, no matter how many profiles you've moved around.
+
+---
+
+**Related:** [Search](/info/search.html) for the other way back to something quickly. [Using Lolly](/info/using.html) for the gallery, hiding tools you never use, and the rest of the app. [Profiles](/info/profile.html) for what else rides on that on-device record.

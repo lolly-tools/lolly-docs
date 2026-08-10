@@ -12,7 +12,6 @@ Nuovo sulla piattaforma? La **[Guida rapida](/info/quickstart.html)** imposta un
 
 ![One shared primitive from the shell's component library, rendered live from its own specimen - the button base and its fills, beside the file that defines them](/t/url-shot?url=%2F%23%2Fcomponents&width=1200&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23cl-primitives%20.cl-card&dark=1&filename=aud-primitive-card&sweep=1)
 
-![The shell's component library, where every shared primitive is rendered live from its own specimen](/t/url-shot?url=%2F%23%2Fcomponents&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-components-lib&sweep=1)
 
 - **[Panoramica](/info/overview.html)** - perché Lolly esiste, la separazione motore/shell/strumenti, il ponte delle capacità, e gli impegni architetturali consolidati.
 - **[Design Token](/info/design-tokens.html)** - il modello di token DTCG in cui vengono espressi i brand, e come gli strumenti li consumano.

@@ -105,6 +105,15 @@ const pages: Page[] = [
   { slug: 'profile',          title: 'Profiles',          src: 'profile.md',      pathway: 'creators', description: "The working identity Lolly creates as - your name, role and contact details, filled into tools automatically and stored on your own device." },
   { slug: 'design-import',    title: 'Import a design (Figma, Penpot, Illustrator, InDesign)', src: 'design-import.md', pathway: 'creators', description: "Bring a finished design out of Figma, Penpot, Illustrator or InDesign and into Lolly as an editable, re-renderable tool rather than a flat picture." },
   { slug: 'sequence-editor',  title: 'The sequence editor', src: 'sequence-editor.md', pathway: 'creators' },
+  // Collab is a CREATORS page, not a Builders or Trust one: it is a thing two people
+  // do with a tool session, and the reader arrives at it from "I want to work on this
+  // with someone", not from an interest in WebRTC. The security property it turns on
+  // (the matching plates) is explained where the reader meets it, and Trust links here.
+  { slug: 'collaborate',      title: 'Working together',  src: 'collaborate.md',  pathway: 'creators', description: "Two people, two devices, one tool session, edited live - no account, no server in the middle, and no internet needed when both devices are on the same network." },
+  // The first sentence of each of these reads well as a preview on its own, so both
+  // fall through to mdDescription rather than repeating themselves here.
+  { slug: 'search',           title: 'Search',            src: 'search.md',       pathway: 'creators' },
+  { slug: 'favourites',       title: 'Your favourites',   src: 'favourites.md',   pathway: 'creators' },
   { slug: 'exporting',        title: 'Exporting & Formats', src: 'exporting.md',  pathway: 'creators' },
   { slug: 'positioning',      title: 'How Lolly compares', src: 'positioning.md', pathway: 'creators' },
 
@@ -194,6 +203,11 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
         { slug: 'operators', label: 'For Operators' } ] },
     ],
   },
+  // The creators rail used to be one six-item "Make things" group with everything in
+  // it, and adding collab/search/favourites would have taken it to nine — a flat list
+  // long enough that its shape stopped telling a reader anything. Split by what the
+  // reader is trying to DO, kindred pages together: the surfaces you make in, the ways
+  // back to your own things, and getting work out of the app to other people.
   creators: {
     title: 'For Creators',
     groups: [
@@ -201,12 +215,20 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
         { slug: 'creators',   label: 'Why Lolly' },
         { slug: 'quickstart', label: 'Quickstart' } ] },
       { label: 'Make things', items: [
-        { slug: 'using',         label: 'Using Lolly' },
-        { slug: 'brand-studio',  label: 'The Brand Studio' },
-        { slug: 'profile',       label: 'Your profile' },
-        { slug: 'design-import', label: 'Import a design' },
-        { slug: 'sequence-editor', label: 'The sequence editor' },
-        { slug: 'exporting',     label: 'Exporting & formats' } ] },
+        { slug: 'using',           label: 'Using Lolly' },
+        { slug: 'brand-studio',    label: 'The Brand Studio' },
+        { slug: 'design-import',   label: 'Import a design' },
+        { slug: 'sequence-editor', label: 'The sequence editor' } ] },
+      // Search, favourites and the profile are the three pages about getting back to
+      // your own things — finding them, keeping them to hand, and the on-device record
+      // both of the other two are written onto.
+      { label: 'Find your way', items: [
+        { slug: 'search',      label: 'Search' },
+        { slug: 'favourites',  label: 'Your favourites' },
+        { slug: 'profile',     label: 'Your profile' } ] },
+      { label: 'Share & collaborate', items: [
+        { slug: 'collaborate', label: 'Working together' },
+        { slug: 'exporting',   label: 'Exporting & formats' } ] },
       { label: 'Compare', items: [
         { slug: 'positioning', label: 'How Lolly compares' } ] },
     ],
@@ -1465,6 +1487,9 @@ const DOC_ICONS: Record<string, string> = {
   star:       `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`,
   box:        `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M3.3 7 12 12l8.7-5"/><path d="M12 22V12"/></svg>`,
   clock:      `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3.5 2"/></svg>`,
+  // The same magnifier the app's own search field wears (shells/web/src/lib/icons.ts,
+  // MAGNIFIER) — one glyph for the feature in the product and on the page about it.
+  search:     `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>`,
   eyeoff:     '', // aliased below
   sliders: '', lock: '', layers: '', globe: '', people: '', shieldcheck: '', check: '', code: '',
   download: '', database: '', server: '', monitor: '',
@@ -1490,6 +1515,35 @@ function docIcon(key: string): string {
   if (!svg) { console.warn(`⚠  unknown doc bullet icon "${key}"`); return ''; }
   return svg;
 }
+
+/**
+ * The verify badge on the hero lollipop.
+ *
+ * The mark at the top of the landing page is a signed file — /info/icon.svg carries
+ * its own Content Credential — and the page's whole argument is that you should not
+ * have to take that on trust. So the logo wears the app's own verify glyph (the
+ * shield + tick the web shell's Verify button and profile use, SITE_ICONS
+ * .importPointShield here), and it opens the real /verify view with THIS file already
+ * loaded: `#/verify?src=…` fetches a same-origin path and runs it through the normal
+ * on-device check (shells/web/src/views/valid.ts). Nothing is re-signed and nothing is
+ * swapped to make the demonstration work — it is the same bytes the page is serving.
+ *
+ * A corner overlay, sized in the same clamp() family as the logo so it stays a badge
+ * at every width, and positioned at 82%/82% of the slot: the mark is a circle, so its
+ * bottom-right diagonal edge (50% + 35.4%) is the one place a badge sits ON the
+ * artwork rather than in the empty corner of its box. It is a real <a> with its own
+ * accessible name — NOT nested inside the logo's link, which would be invalid and
+ * would leave the badge unreachable by keyboard, and not inside the <h1> either: a
+ * heading's name is the text it contains, so a badge in there would make the page's
+ * h1 read as "Open Lolly - browse all tools Verify this logo's credentials". It is a
+ * sibling of the h1 inside .hero-logo-slot, which is the positioned box for both.
+ */
+const HERO_VERIFY = (lang: Lang) => {
+  const href = `${localizeHref(lang, '/')}#/verify?src=${encodeURIComponent('/info/icon.svg')}`;
+  const label = t("Verify this logo's credentials");
+  return `<a class="hero-verify" href="${esc(href)}" aria-label="${esc(label)}" title="${esc(label)}">`
+    + `<span aria-hidden="true">${SITE_ICONS.importPointShield}</span></a>`;
+};
 
 // ── Landing page special renderer ─────────────────────────────────────────────
 
@@ -2039,7 +2093,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
 <section class="hero">
   <div class="hero-inner">
   <div class="hero-heading">
-    <h1 class="hero-logo-h1"><a href="${esc(localizeHref(lang, '/'))}" class="hero-logo-link" aria-label="Open Lolly - browse all tools"><img src="/info/icon.svg" alt="Lolly" class="hero-logo"></a></h1>
+    <div class="hero-logo-slot"><h1 class="hero-logo-h1"><a href="${esc(localizeHref(lang, '/'))}" class="hero-logo-link" aria-label="Open Lolly - browse all tools"><img src="/info/icon.svg" alt="Lolly" class="hero-logo"></a></h1>${HERO_VERIFY(lang)}</div>
   </div>
   <div class="hero-details">
     <span class="hero-pilot" aria-label="${esc(heroChrome.pilotAriaLabel)}"><span class="hero-pilot-tag">${esc(heroChrome.pilotTag)}</span><span class="hero-pilot-text">${esc(heroChrome.pilotText)}</span></span>
@@ -2207,11 +2261,14 @@ ${QUICKNAV_JS}`;
 // ── HTML template ─────────────────────────────────────────────────────────────
 
 const CSS = `
-/* Self-hosted SUSE variable fonts - same-origin /catalog/fonts/ (no CDN egress; mirrors shells/web/src/styles/fonts.css). */
-@font-face{font-family:'SUSE';src:url('/catalog/fonts/webfonts/SUSE[wght].woff2') format('woff2-variations');font-weight:100 900;font-style:normal;font-display:swap}
-@font-face{font-family:'SUSE';src:url('/catalog/fonts/webfonts/SUSE-Italic[wght].woff2') format('woff2-variations');font-weight:100 900;font-style:italic;font-display:swap}
-@font-face{font-family:'SUSE Mono';src:url('/catalog/fonts/webfonts/SUSEMono[wght].woff2') format('woff2-variations');font-weight:100 900;font-style:normal;font-display:swap}
-@font-face{font-family:'SUSE Mono';src:url('/catalog/fonts/webfonts/SUSEMono-Italic[wght].woff2') format('woff2-variations');font-weight:100 900;font-style:italic;font-display:swap}
+/* Self-hosted SUSE variable fonts - same-origin, no CDN egress; mirrors shells/web/src/styles/fonts.css,
+   including its source ORDER: the shell copy under /fonts/ ships on every profile, the brand catalog
+   under /catalog/fonts/ only under a pack that has one. Listing the catalog alone (as this did before
+   2026-08-10) meant the whole docs site fell back to a system font on the neutral profile. */
+@font-face{font-family:'SUSE';src:url('/fonts/SUSE[wght].woff2') format('woff2-variations'),url('/catalog/fonts/webfonts/SUSE[wght].woff2') format('woff2-variations');font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:'SUSE';src:url('/fonts/SUSE-Italic[wght].woff2') format('woff2-variations'),url('/catalog/fonts/webfonts/SUSE-Italic[wght].woff2') format('woff2-variations');font-weight:100 900;font-style:italic;font-display:swap}
+@font-face{font-family:'SUSE Mono';src:url('/fonts/SUSEMono[wght].woff2') format('woff2-variations'),url('/catalog/fonts/webfonts/SUSEMono[wght].woff2') format('woff2-variations');font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:'SUSE Mono';src:url('/fonts/SUSEMono-Italic[wght].woff2') format('woff2-variations'),url('/catalog/fonts/webfonts/SUSEMono-Italic[wght].woff2') format('woff2-variations');font-weight:100 900;font-style:italic;font-display:swap}
 /* Cinzel (SIL OFL 1.1, see /info/fonts/Cinzel-OFL.txt) — Roman inscriptional capitals,
    the same source Gill drew Perpetua Titling from. Self-hosted, not fetched from
    fonts.gstatic.com: a third-party request on every docs page would contradict what
@@ -2331,15 +2388,43 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 90% 55% at 50% -5%,rgba(48,186,120,.13) 0%,transparent 65%);pointer-events:none}
 #heroCanvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;mix-blend-mode:color-dodge;opacity:.6}
 .hero h1{font-size:clamp(2.75rem,6vw,5rem);letter-spacing:-.04em;line-height:1.05;margin-bottom:1.5rem;color:#fff;position:relative;padding-left:.3em;font-weight:200}
-.hero-logo-h1{margin:0 0 1.5rem;padding:0;line-height:0;position:relative}
 /* Radius + shadow live on the img itself - on the link they trace its layout box,
    which sits a hair off the rendered image edge and shows as a seam. */
-.hero-logo-link{display:block;width:clamp(180px,32vw,340px);margin:0 auto;border-radius:50%;cursor:pointer;transition:transform .2s ease}
+/* The slot exists so the verify badge can position against the LOGO rather than
+   against the full-width heading - without it a percentage offset resolves against
+   the whole line and the badge lands out at the viewport edge. It carries the width
+   the link used to own (the link now fills it) and the heading's bottom margin,
+   since it is the outer box now: the badge is a SIBLING of the <h1>, not a child, so
+   that "Verify this logo's credentials" is not read out as part of the page's h1.
+   The reset below is qualified with .hero (0,2,0) deliberately - the display-heading
+   rule .hero h1 is (0,1,1) and out-specifies a bare class, so an
+   unqualified reset loses and the logo inherits padding-left:.3em, riding visibly
+   off-centre inside its own slot. */
+.hero-logo-slot{position:relative;width:clamp(180px,32vw,340px);margin:0 auto 1.5rem}
+.hero .hero-logo-h1{margin:0;padding:0;line-height:0;position:relative}
+.hero-logo-link{display:block;width:100%;border-radius:50%;cursor:pointer;transition:transform .2s ease}
 .hero-logo-link:hover,.hero-logo-link:focus-visible{transform:translateY(-3px) scale(1.02);outline:none}
 .hero-logo-link:hover .hero-logo,.hero-logo-link:focus-visible .hero-logo{box-shadow:0 0.9em 1.6em #0006,0 .15em .3em #0004}
 .hero-logo-link:active{transform:translateY(-1px) scale(1.0)}
 .hero-logo{display:block;width:100%;height:auto;position:relative;border-radius:50%;    filter: hue-rotate(-15deg);box-shadow:0 0.5em 1em #0004,0 .1em .2em #0003;transition:box-shadow .2s ease}
 .hero-logo:hover{filter: hue-rotate(-25deg) saturate(1.5) brightness(1.01)}
+/* The verify badge. Sits ON the circle's lower-right diagonal (a circle inscribed in
+   the slot meets that diagonal at 50%+35.4%), small enough that the mark is still the
+   thing you see - the badge is an offer, not a second logo. Its own hit area is 44px
+   at the smallest hero size, and it never grows past the point where it would read as
+   part of the artwork. line-height on .hero-logo-h1 is 0, hence the explicit box. */
+.hero-verify{position:absolute;left:82%;top:82%;transform:translate(-50%,-50%);
+  display:flex;align-items:center;justify-content:center;
+  width:clamp(2.75rem,6vw,3.25rem);height:clamp(2.75rem,6vw,3.25rem);
+  border-radius:50%;background:var(--green,#30ba78);color:#fff;
+  box-shadow:0 .25em .6em #0005,0 0 0 .18em rgba(12,50,44,.55);
+  transition:transform .2s ease,box-shadow .2s ease}
+.hero-verify>span{display:flex;width:52%;height:52%}
+.hero-verify svg{width:100%;height:100%;display:block}
+.hero-verify:hover,.hero-verify:focus-visible{transform:translate(-50%,-50%) scale(1.08);
+  box-shadow:0 .35em .8em #0006,0 0 0 .22em rgba(255,255,255,.75);outline:none}
+@media(prefers-reduced-motion:reduce){.hero-verify{transition:none}
+  .hero-verify:hover,.hero-verify:focus-visible{transform:translate(-50%,-50%)}}
 .hero .subtitle{font-size:clamp(.9375rem,1.8vw,1.125rem);max-width:560px;margin:0 auto 2.75rem;color:rgba(255,255,255,.8);line-height:1.85;position:relative}
 .hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;margin-bottom:2.5rem}
 .hero-trust{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.5rem;position:relative}
@@ -3275,15 +3360,34 @@ footer{border-top:1px solid var(--border);padding:2rem 1.5rem;text-align:center;
 footer a{color:var(--muted);text-decoration:underline}
 footer a:hover{color:var(--dark)}
 footer .founded-badge{margin-top:.5rem}
-/* Footer sitemap. auto-fit + minmax means the column count follows the width, so
-   five pathways reflow to two on a phone without a breakpoint per count. Columns
-   read left-aligned inside a centred footer, which is what makes them scannable as
-   lists rather than as prose. Titles take var(--text), not var(--dark), because
-   --dark keeps its value in the dark theme and would go invisible there. */
-.footer-sitemap{display:grid;grid-template-columns:repeat(auto-fit,minmax(9.5rem,1fr));gap:1.25rem 1.5rem;max-width:1180px;margin:0 auto 1.75rem;padding-bottom:1.75rem;border-bottom:1px solid var(--border);text-align:start}
-.sitemap-title{font-size:.6875rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text);font-weight:700;margin-bottom:.5rem}
+/* Footer sitemap - the whole docs set, ten columns (see FOOTER_SECTIONS).
+   auto-fit is right for a handful of columns and wrong for ten: it maximises the
+   count, so 1180px yields seven and the last three sit alone on a second row under
+   four empty tracks. Explicit counts instead - 2 on a phone, 3 on a tablet, then 5.
+   Ten divides by both 2 and 5, so the phone and the desktop layouts are exactly
+   full (5 rows of two; 2 rows of five). The tablet band is the one that cannot be:
+   ten in threes leaves a single column on a fourth row, and the alternative (four
+   columns, 4+4+2) trades that for a half-empty row at a narrower column width.
+   align-items:start keeps a short column's links at the top of its row
+   rather than stretched down it. Columns read left-aligned inside a centred footer,
+   which is what makes them scannable as lists rather than as prose. Titles take
+   var(--text), not var(--dark), because --dark keeps its value in the dark theme
+   and would go invisible there. */
+.footer-sitemap{display:grid;grid-template-columns:repeat(2,1fr);align-items:start;gap:1.25rem 1.5rem;max-width:1180px;margin:0 auto 1.75rem;padding-bottom:1.75rem;border-bottom:1px solid var(--border);text-align:start}
+@media(min-width:34rem){.footer-sitemap{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:64rem){.footer-sitemap{grid-template-columns:repeat(5,1fr)}}
 .footer-sitemap a{display:block;color:var(--muted);text-decoration:none;padding:.15rem 0;line-height:1.45}
 .footer-sitemap a:hover{color:var(--green);text-decoration:underline}
+/* The column heading is a LINK to its pathway's main page. That is what pays for
+   the full enumeration: the overview never costs a row of its own, and the two or
+   three columns a long pathway is split across all point their heading at the same
+   hub. It keeps the heading's own weight and colour rather than the muted link
+   treatment two rules above — declared AFTER them so it wins without a specificity
+   fight — and takes the underline only on hover, so it reads as a heading first and
+   a destination second. footer a{text-decoration:underline} is the rule overridden. */
+.sitemap-title{font-size:.6875rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text);font-weight:700;margin-bottom:.5rem;text-decoration:none}
+.footer-sitemap a.sitemap-title{color:var(--text)}
+.footer-sitemap a.sitemap-title:hover{color:var(--green);text-decoration:underline}
 
 /* Hamburger */
 .nav-hamburger{display:none;background:none;border:none;cursor:pointer;color:rgba(255,255,255,.65);width:2.25rem;height:2.25rem;align-items:center;justify-content:center;border-radius:5px;padding:.3rem;flex-shrink:0}
@@ -4399,34 +4503,146 @@ function buildNav(lang: Lang, slug: string, activeHref: string, isLanding: boole
 }
 
 /**
- * The whole page set in the footer, one column per pathway, so a reader who has
- * finished an article can reach any other page without scrolling back up.
- *
- * Built from SIDEBARS plus `pages`, never a hand-written list: adding a page to a
- * pathway's rail puts it here with no second edit, and a page that belongs to a
- * pathway but sits in no rail group still gets a link instead of being reachable
- * only from search.
+ * The pathway hub each footer column's HEADING points at. Every pathway has one —
+ * the `isHub` page of the same name — so the heading is always a real destination
+ * and never decoration a reader tries to click.
  */
+const PATHWAY_HUB: Record<Pathway, string> = {
+  quickstart: 'quickstart', creators: 'creators', builders: 'builders',
+  operators: 'operators', trust: 'trust',
+};
+
+/**
+ * The footer sitemap: the WHOLE docs set, one column per section.
+ *
+ * This is a full site map, not a selection. Every page the build emits is either a
+ * column HEADING (the five pathway hubs) or a link inside a column - asserted below,
+ * so the footer cannot silently stop listing a page. There is no "everything else"
+ * row: a catch-all is the shape a sitemap takes when it has given up being one, and
+ * it hides exactly the pages nothing else links to.
+ *
+ * What makes that affordable is the heading. Each column's heading IS the link to
+ * its pathway's main page, so the overview never costs a row of its own, and a
+ * pathway too long for one readable column is split into two or three columns that
+ * all point their heading at the same hub. That is where the balance comes from -
+ * Builders' seventeen children are three columns of five or six rather than one
+ * unreadable stack, and the same split gives Creators' ten (the "Using Lolly" set,
+ * which grew by three pages when collab/search/favourites landed) a making column,
+ * a finding column and a sharing column.
+ *
+ * The creators split IS its rail: the three columns below are exactly the rail's
+ * "Make things", "Find your way" and "Share & collaborate" groups - same members,
+ * same order - with only its "Creators" (hub + quickstart, both already elsewhere
+ * in the footer) and "Compare" groups placed differently, as noted below. The two
+ * columns that borrow a rail label ("Find your way", "Share & collaborate") hold
+ * exactly the pages that label holds in the sidebar.
+ *
+ * Reusing a rail label over a DIFFERENT
+ * set is worse than not reusing it - a reader who learned upstairs that "Find your
+ * way" means search / favourites / profile then meets a fourth page under it down
+ * here and has to work out which grouping is the real one.
+ *
+ * Builders and Trust cannot be held to that, and the reason is structural rather
+ * than sloppy: a sidebar deliberately REPEATS a page across pathways (Security sits
+ * in three rails; Data Transfer in two), while the footer lists every page exactly
+ * once. So their columns are the rail clusters with the borrowed pages settled onto
+ * one owner - cli-signing to Operators, data-transfer and about to Builders, privacy
+ * and inclusive-design to Trust's second column.
+ *
+ * Two placements are worth stating out loud because they are footer-only groupings
+ * and do NOT move the pages themselves - each page keeps its own `pathway`, its own
+ * sidebar rail and its own URL:
+ *   - Home sits under Quickstart. The Quickstart pathway has exactly one page, which
+ *     is the heading, and a heading over an empty column reads as a bug.
+ *   - "How Lolly compares" sits there too, next to Home: it is the page a reader
+ *     wants BEFORE they pick a pathway, and it is the one Creators page that is not
+ *     about operating the app.
+ *
+ * Order is the order shown. Labels reuse the SIDEBARS group labels wherever one
+ * fits, so the footer and the rail name the same cluster the same way (and so the
+ * string is already in every locale's site.json).
+ */
+interface SitemapSection { hub: Pathway; label: string; slugs: string[] }
+const FOOTER_SECTIONS: SitemapSection[] = [
+  { hub: 'quickstart', label: 'Quickstart', slugs: ['index', 'positioning'] },
+  // Keeps the pathway's own name rather than the rail's "Make things", because the
+  // FIRST column of a split pathway is where a reader looks for the pathway - the
+  // same position "For Builders" and "Trust" hold below. Its membership is still the
+  // rail's "Make things" group exactly.
+  { hub: 'creators', label: 'For Creators', slugs: [
+    'using', 'brand-studio', 'design-import', 'sequence-editor'] },
+  { hub: 'creators', label: 'Find your way', slugs: [
+    'search', 'favourites', 'profile'] },
+  { hub: 'creators', label: 'Share & collaborate', slugs: [
+    'collaborate', 'exporting'] },
+  { hub: 'builders', label: 'For Builders', slugs: [
+    'overview', 'design-tokens', 'authoring-tools', 'authoring-assets', 'host-api', 'url-mode'] },
+  { hub: 'builders', label: 'Run & integrate', slugs: [
+    'cli', 'tui', 'mcp', 'ai-agents', 'extension', 'data-transfer'] },
+  { hub: 'builders', label: 'Ship & operate', slugs: [
+    'build-guide', 'ios-build', 'deployment', 'configuration', 'about'] },
+  { hub: 'operators', label: 'For Operators', slugs: ['adoption-governance', 'cli-signing'] },
+  { hub: 'trust', label: 'Trust', slugs: [
+    'status-quo', 'input-not-impersonation', 'content-credentials-identity',
+    'content-credentials-engineering', 'ai-stance', 'ai-features', 'beatrice-warde'] },
+  { hub: 'trust', label: 'Check it yourself', slugs: [
+    'verify-yourself', 'security', 'threat-model', 'parser-inventory', 'server-surface',
+    'privacy', 'inclusive-design'] },
+];
+
+// The guard that makes "full site map" a property of the build rather than a claim in
+// a comment: every page is listed exactly once, every listed slug is a real page, and
+// every pathway hub heads at least one column. Adding a page to `pages` without giving
+// it a home here fails the build - which is the point, since the failure mode being
+// prevented is a page nobody can find.
+{
+  const listed = new Map<string, number>();
+  for (const sec of FOOTER_SECTIONS) {
+    for (const s of sec.slugs) {
+      if (!pages.some(p => p.slug === s)) throw new Error(`FOOTER_SECTIONS "${sec.label}" names "${s}", which is not a page`);
+      listed.set(s, (listed.get(s) ?? 0) + 1);
+    }
+  }
+  const dupes = [...listed].filter(([, n]) => n > 1).map(([s]) => s);
+  if (dupes.length) throw new Error(`FOOTER_SECTIONS lists these twice: ${dupes.join(', ')}`);
+  // Hubs are headings, never rows - that is the space the full enumeration spends.
+  const hubs = new Set(Object.values(PATHWAY_HUB));
+  for (const s of hubs) {
+    if (listed.has(s)) throw new Error(`FOOTER_SECTIONS lists "${s}" as a row, but it is a pathway hub and already heads a column`);
+  }
+  const missing = pages.filter(p => !hubs.has(p.slug) && !listed.has(p.slug)).map(p => p.slug);
+  if (missing.length) throw new Error(`FOOTER_SECTIONS omits ${missing.length} page(s): ${missing.join(', ')}. The footer is a full site map - give each one a column.`);
+  const headed = new Set(FOOTER_SECTIONS.map(s => s.hub));
+  for (const pw of Object.keys(SIDEBARS) as Pathway[]) {
+    if (!headed.has(pw)) throw new Error(`No footer column heads the "${pw}" pathway`);
+  }
+}
+
+/**
+ * The link text for one sitemap row.
+ *
+ * Prefers the label its own rail already gives it, so the footer and the sidebar
+ * never call the same page two different things; falls back to the page title.
+ * `index` is the exception - its title is the wordmark ("Lolly"), which is not a
+ * useful thing to read in a list of destinations.
+ */
+function sitemapLabel(slug: string, hub: Pathway): string {
+  if (slug === 'index') return 'Home';
+  for (const g of SIDEBARS[hub].groups) for (const it of g.items) if (it.slug === slug) return it.label;
+  for (const pw of Object.keys(SIDEBARS) as Pathway[]) {
+    for (const g of SIDEBARS[pw].groups) for (const it of g.items) if (it.slug === slug) return it.label;
+  }
+  return pages.find(p => p.slug === slug)?.title ?? slug;
+}
+
 function footerSitemap(lang: Lang): string {
-  const cols = (Object.keys(SIDEBARS) as Pathway[]).map(pw => {
-    const seen = new Set<string>();
-    const items: SideItem[] = [];
-    for (const g of SIDEBARS[pw].groups) {
-      for (const it of g.items) {
-        // A slug can be listed in two groups of one rail (e.g. a hub linking itself);
-        // the footer shows a destination once per column.
-        if (seen.has(it.slug)) continue;
-        seen.add(it.slug);
-        items.push(it);
-      }
-    }
-    for (const pg of pages) {
-      if (pg.pathway !== pw || pg.isLanding || seen.has(pg.slug)) continue;
-      seen.add(pg.slug);
-      items.push({ slug: pg.slug, label: pg.title });
-    }
-    const links = items.map(it => `<a href="${localeHref(lang, it.slug)}">${esc(t(it.label))}</a>`).join('');
-    return `<div class="sitemap-col"><div class="sitemap-title">${esc(t(SIDEBARS[pw].title))}</div>${links}</div>`;
+  const cols = FOOTER_SECTIONS.map(sec => {
+    const links = sec.slugs
+      .map(s => `<a href="${localeHref(lang, s)}">${esc(t(sitemapLabel(s, sec.hub)))}</a>`)
+      .join('');
+    return `<div class="sitemap-col">`
+      + `<a class="sitemap-title" href="${localeHref(lang, PATHWAY_HUB[sec.hub])}">${esc(t(sec.label))}</a>`
+      + `${links}</div>`;
   }).join('');
   // A <div role="navigation">, NOT a <nav>: the stylesheet styles the bare `nav`
   // element as the fixed top bar (position:fixed; top:0; height:3.75rem; flex),
@@ -4455,6 +4671,7 @@ const SIDEBAR_ICON: Record<string, string> = {
   // Creators
   using: 'pentool', 'brand-studio': 'palette', profile: 'usercheck', 'design-import': 'upload',
   'sequence-editor': 'clock', exporting: 'download', positioning: 'sliders',
+  collaborate: 'people', search: 'search', favourites: 'star',
   // Builders — architecture & authoring
   overview: 'layers', 'design-tokens': 'hash', 'authoring-tools': 'wrench', 'authoring-assets': 'photos',
   'host-api': 'code', 'url-mode': 'link',
@@ -4789,7 +5006,7 @@ ${alternates}
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="192x192" href="/icons/icon-192.png">
 <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="/catalog/fonts/webfonts/SUSE[wght].woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/SUSE[wght].woff2">
 ${THEME_INIT_SCRIPT}
 ${SHOT_MOTION_INIT}
 <style>${CSS}</style>
@@ -4868,8 +5085,23 @@ function commentStandaloneProvenanceLines(md: string): string {
 // docs themselves. Skips headings, blockquotes, lists/tables, raw HTML (the
 // README hero <img>), and emphasis-only metadata lines (privacy's "*Last
 // updated*"), then flattens inline markdown to plain text.
+//
+// HTML COMMENTS ARE REMOVED WHOLE, before the split into blocks, and that order is
+// the fix rather than a tidy-up. The per-block skip below can only test whether a
+// block STARTS with "<", so it catches a one-paragraph comment and misses a comment
+// containing a blank line: the second paragraph reads as ordinary prose and becomes
+// the page's public description. That is not hypothetical - favourites.md opens with
+// a two-paragraph authoring note, and this page's <meta name="description"> and OG
+// card were shipping "No sweep=1 on either recipe, deliberately - the drawing-in
+// budget is MAX_SWEEPS_PER_PAGE = 4 per page…". Our docs pages carry these notes by
+// convention (the SHOT NOTE blocks are everywhere), so the extractor has to treat a
+// comment as invisible the way a markdown renderer does, not as a block shaped a
+// particular way.
 function mdDescription(md: string): string {
-  const blocks = md.replace(/```[\s\S]*?```/g, '').split(/\n\s*\n/);
+  const blocks = md
+    .replace(/```[\s\S]*?```/g, '')
+    .replace(/<!--[\s\S]*?-->/g, '')
+    .split(/\n\s*\n/);
   for (const block of blocks) {
     const line = block.trim().split('\n').map(l => l.trim()).join(' ');
     if (!line || /^#{1,6} /.test(line) || line.startsWith('>') || line.startsWith('<')) continue;

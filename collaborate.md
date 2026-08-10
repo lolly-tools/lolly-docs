@@ -42,25 +42,31 @@ Open the tool and get the session to the state you want to share. Then:
 2. Scroll to **Private collab** and press **Start a collab**.
 3. Give yourself a name for this collab and press **Create the invite**.
 
-![The Share dialog's Private collab section - one line saying what it does, then Start a collab and Join with a code](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1100&height=900&dpi=192&waitMs=2600&drive=click%3A%5Bdata-action%3D%22copy-url%22%5D&cropSelector=.share-private-collab&walker=1&format=svg&dark=1&filename=collab-share-section)
+![The Share dialog's Private collab section - one line saying what it does, then Start a collab and Join with a code](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1100&height=900&dpi=192&waitMs=2600&drive=click%3A%23render-fab%3Bclick%3A%5Bdata-action%3D%22copy-url%22%5D&cropSelector=.share-private-collab&walker=1&format=svg&dark=1&filename=collab-share-section)
 
 <!--
-SHOT NOTE (collab-share-section): `[data-action="copy-url"]` is the actions-bar Share
-button (views/tool-actions.ts), and its handler is showShareDialog (views/tool.ts's
-wireUpCopyUrl), so one click is the whole way in. The section renders whenever the
-`private-collab` flag resolves ON, which a fresh capture context does by default
-(feature-flags.ts, `default: true`).
-CAPTURE-PASS RISK: `.share-private-collab` is APPENDED LAST in the dialog (the prose
-above says "scroll to" for the same reason). If the dialog scrolls internally, the
-section's box can measure off-frame and the crop comes back empty. Check the first
-capture; if it does, scroll it into view with a drive step before the shot rather than
-widening the frame.
+SHOT NOTE (collab-share-section): TWO clicks, not one, and the first is the fix for a
+failure this recipe shipped with. `[data-action="copy-url"]` (the Share button, wired to
+showShareDialog in views/tool.ts) does not live in the sidebar - it lives in the EXPORT
+PANEL, which is a `position: fixed` host holding a child pushed off the bottom by
+`transform: translateY(100%)` until `.tool-layout.export-open`. Measured at 1100x900:
+the button sits at y=1517 in a 900px viewport that does not scroll, so Playwright
+correctly refused it as "outside of the viewport" through every actionability retry.
+`click:#render-fab` opens the panel first, which is also what the prose above tells the
+reader to do ("Press Share in the export controls").
+Width is NOT the cause and 1440 behaves identically - there is no mobile-layout switch
+at 1100 here, and the vector path builds its context at the recipe's CSS width with no
+dpi halving (dpi is raster-only). Do not "fix" this class by widening the frame.
+The section renders whenever the `private-collab` flag resolves ON, which a fresh
+capture context does by default (feature-flags.ts, `default: true`), and
+`.share-private-collab` measured comfortably inside the frame - the internal-scroll risk
+this note used to warn about did not materialise.
 -->
 
 
 The name is chosen here, per collab, and it is the only thing about you that crosses the link. It is not read from your profile, and nothing else from your profile goes anywhere. Leave it empty and you appear as **Host** to the other person, or **Invitee** if you are the one joining.
 
-![Step 1 of 3 - naming yourself for this collab, with the note that the other person sees this name while you work together](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1100&height=900&dpi=192&waitMs=3000&drive=click%3A%5Bdata-action%3D%22copy-url%22%5D%3Bclick%3A%5Bdata-act%3D%22start-private-collab%22%5D&cropSelector=.collab-ceremony&walker=1&format=svg&dark=1&filename=collab-invite-name)
+![Step 1 of 3 - naming yourself for this collab, with the note that the other person sees this name while you work together](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1100&height=900&dpi=192&waitMs=3000&drive=click%3A%23render-fab%3Bclick%3A%5Bdata-action%3D%22copy-url%22%5D%3Bclick%3A%5Bdata-act%3D%22start-private-collab%22%5D&cropSelector=.collab-ceremony&walker=1&format=svg&dark=1&filename=collab-invite-name)
 
 The whole ceremony is numbered **1 of 3**, **2 of 3**, **3 of 3** on every screen, on both sides. That is deliberate: the hand-over has two legs, both people are looking at different screens, and the numbers are how you tell each other where you are.
 
@@ -68,20 +74,28 @@ The whole ceremony is numbered **1 of 3**, **2 of 3**, **3 of 3** on every scree
 
 Once the invite is minted you get the same invite in three forms at once. They are the same thing wearing different clothes, so pick whichever suits the two of you and wherever you happen to be.
 
-![Step 1 of 3 - the minted invite as a link, as a code and as a QR, with the note that anyone holding it can join and edit](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1100&height=980&dpi=192&waitMs=9000&drive=click%3A%5Bdata-action%3D%22copy-url%22%5D%3Bclick%3A%5Bdata-act%3D%22start-private-collab%22%5D%3Bclick%3A%5Bdata-act%3D%22create-invite%22%5D%3Bwait%3A6000&cropSelector=.collab-ceremony&walker=1&format=svg&dark=1&filename=collab-invite-minted)
-
 <!--
-SHOT NOTE (collab-invite-minted): minting runs a real RTCPeerConnection and waits for
-non-trickle ICE gathering to finish, capped at GATHER_TIMEOUT_MS = 5s
-(shells/web/src/collab/rtc-transport.ts), and no config is ever passed to the
-constructor, so there is no STUN to answer and the cap is what actually elapses.
-The `wait:6000` step is the ONLY thing covering that cap: build-docs-shots.ts spends
-waitMs BEFORE the drive steps (waitMs at ~line 718, runDriveSteps at ~line 740), so
-waitMs=9000 buys nothing here beyond a settled first paint. If the capture lands on the
-"Step 1 of 3: Making the invite" screen, raise `wait:` (runDriveSteps caps one wait at
-15s), not waitMs, and never switch to a raster.
-The QR itself is drawn by collab/qr-skin.ts into `.collab-cer-qr` and is vector, so the
-walker keeps it as geometry.
+SHOT DROPPED (collab-invite-minted). It captured cleanly on 2026-08-10 and was then
+withdrawn, because what it captures cannot be published:
+
+1. THE LINK IS THE CAPTURE SERVER'S. The screen shows the invite as a real URL, and
+   the base is whatever origin the capture ran against, so the committed baseline read
+   `http://127.0.0.1:50133/#/join?inv=...`. `linkBase` is a ceremony option with no
+   URL seam (components/collab-ceremony.ts, defaultLinkBase), so no recipe can pin it,
+   and a reader shown a localhost link is being shown the wrong thing.
+2. IT CAN NEVER COMPARE EQUAL. All three forms are functions of one freshly minted,
+   single-use payload: a DTLS fingerprint and an ICE ufrag that are new every run. A
+   vector baseline compares EXACTLY, so this recipe would report ▲ CHANGED on every
+   run for the rest of its life, and `tolerance=` is inert on a vector.
+3. THE ALT TEXT PROMISED A QR THAT IS NOT THERE. `qrSlot` returns null unless the
+   caller passes `renderQr` (collab-ceremony.ts ~1221); on this path it does not, so
+   the screen is link + code, not link + code + QR.
+
+A drill capture does not rescue it: the drill's own base is a dev server, so leg 1
+stands. Freezing the payload with `css=` would be staging a fake. The three forms are
+described in the prose below instead, which is the honest version of what a one-time
+secret looks like. Re-open only if the ceremony grows a way to render a specimen
+invite against a real origin.
 -->
 
 ### A link
@@ -113,18 +127,22 @@ The invite as a block of text. Copy it, send it however you like, and the other 
 This is the leg pairs give up on, so it is worth being explicit: **an invite on its own does not connect anything.** The joining device makes a reply, and that reply has to get back to the waiting device before either of you is connected. Same three forms, same choice.
 
 <!--
-DRILL-ASSISTED SHOT (collab-answer-minted).
-Alt text when it lands: "Step 3 of 3 on the joining device - the reply as a link, a code
-and a QR, with the line saying the host pastes this code or opens this link in their
-waiting window".
-NO url-shot recipe here ON PURPOSE. The reply screen only exists downstream of a REAL
-invite token, so any recipe that could be written today would silently capture the bare
-code door and publish it under this caption. It is milestone `07-answer-minted` in
-tests/collab-private.browser.test.ts (LOLLY_BROWSER_DRILLS=1).
-CAPTURE PASS: run the drill to that milestone, then run the walker IN PAGE
-(renderSvgFromHtml over the dialog) for a real vector shot - do not publish the drill's
-own PNG. Raster plus a tests/docs-shots-vector.test.ts allowlist entry only if the walker
-physically cannot recover it, with the reason written down.
+SHOT DROPPED (collab-answer-minted) — the same call as collab-invite-minted above, and
+for the same first reason. It WAS captured: the drill reaches the reply screen, and the
+walker serialises it cleanly (126 KB of vector). What it serialises is the problem.
+The reply link carries the origin the capture ran against, so the file read
+`http://localhost:5213/#/join-reply?ans=...`, and the code and the QR beside it are two
+further renderings of the same single-use payload.
+
+So the rule both drops share, stated once: LOLLY'S DOCS DO NOT PHOTOGRAPH A ONE-TIME
+SECRET. There is no framing of these two screens that is both honest and publishable —
+the token IS the screen, and the only "fix" available is to invent a token and an origin,
+which would make the picture a drawing of the product rather than a picture of it. The
+three forms are described in the prose instead.
+
+Everything downstream of the handover still has its picture, because none of those
+screens carries a secret: the plate, the pill and roster, the focus ring and the beam
+consent card are all captured by the drill below.
 -->
 
 - **As a link.** The reply is a `#/join-reply?ans=...` URL. Opening it on the same device that made the invite hands the reply straight to the window that is waiting, and that window moves on by itself. The tab that did the handing says so and can be closed. If no window on that device is waiting, it says that too and leaves the code on screen to copy.
@@ -143,17 +161,23 @@ The moment the two devices connect, both screens show the same six characters, g
 
 Read the plate out loud and check it against the other screen. If they match, the two devices are talking to each other and to nobody in between.
 
+![The Connected screen with the six-character plate across it, and the line saying both screens show the same plate when the connection is private](/info/shots/collab-plate.svg)
+
 <!--
-DRILL-ASSISTED SHOT (collab-plate). The connection plate only exists once a real pairing
-is live, and it is derived from the two DTLS certificate fingerprints the handshake
-actually validated (shells/web/src/collab/plate.ts) - there is no way to fake this state
-from a URL. Milestones `09-A-connected` / `10-B-connected` in
-tests/collab-private.browser.test.ts.
-CAPTURE PASS: drill to the connected screen, then walker-in-page (renderSvgFromHtml over
-`.collab-ceremony`, framing `[data-cer-plate]` and the sentence under it). The plate is
-plain text at a large size, so it vectorises cleanly. Ideally capture BOTH screens for a
-side-by-side, which is the only version of this picture that shows what "matching" means.
-Raster plus allowlist only if that proves impossible.
+DRILL-ASSISTED SHOT (collab-plate) - captured, not recipe-driven. The plate only exists
+once a real pairing is live and is derived from the two DTLS fingerprints the handshake
+validated (shells/web/src/collab/plate.ts), so no URL can reach this state. Written by
+tests/collab-private.browser.test.ts under LOLLY_BROWSER_DRILLS=1 LOLLY_DRILL_DOCS=1, at
+the connected step, through the shell's own walker.
+ONE SCREEN, NOT TWO, and that is a finding rather than a shortcut. The side-by-side this
+note used to ask for cannot be taken: the ACCEPTOR's Connected screen is torn down by its
+own live mount inside the task that painted it (the drill reads its plate from a mutation
+record for exactly this reason), so there is no instant when both screens are live to
+photograph. The drill tries the pair first and falls back to the inviter alone; if the
+handoff ever pauses on the Connected screen, the pair lands automatically.
+Worth Andy's eye separately: if the acceptor's screen really does not survive a frame,
+then on that side no human ever sees the plate to compare - which is the one security
+property of this feature that needs a person.
 -->
 
 Here is what the check is actually doing, because it is the one security property of this feature that needs a person rather than code. The invite carries a fingerprint of the inviting device, and the reply carries one back. The plate is derived from **both** fingerprints together, ordered so that each device computes the same answer without either of them having to be told who is who. Anyone who wanted to sit in the middle would have to terminate the connection on both sides with certificates of their own, which is two fingerprints neither of your devices ever saw, and there is no substitution they can make in the invite or the reply that produces two matching plates on your two screens.
@@ -172,22 +196,33 @@ Once you are connected, the tool opens on both devices with the session in it an
 
 **What you see.** A **collab pill** sits over the canvas: the people in the collab as a stack of initials, and a dot for the state of the link - Connecting, Live, Reconnecting, Away, Disconnected. Open it for the roster, which names everyone and tags who is you, who is away and who is observing.
 
+![The collab pill: a status dot and two stacked initials over the canvas](/info/shots/collab-pill.svg)
+
+![The roster open under the pill - Ada tagged You and Host, and Grace below her](/info/shots/collab-pill-roster.svg)
+
 <!--
-DRILL-ASSISTED SHOT (collab-pill-roster). Needs two live participants. Milestone
-`15-A-pill` in tests/collab-private.browser.test.ts, which waits for
-`.collab-pill .collab-av` to reach 2 before shooting.
-CAPTURE PASS: walker-in-page over `.collab-pill` with the roster popover open. Small,
-type-and-shape only, so vector is comfortable here.
+DRILL-ASSISTED SHOTS (collab-pill, collab-pill-roster) - two live participants, so no
+recipe can reach them. Milestone `15-A-pill` in tests/collab-private.browser.test.ts,
+which waits for `.collab-pill .collab-av` to reach 2 first.
+The roster is opened with an IN-PAGE `stack.click()`, not a Playwright click: the pill is
+a fixed floating control over the canvas and Playwright refuses the real press as
+"outside of the viewport" - the same class of refusal the docs pipeline now has a
+documented fallback for (DriveOpts.clickFallback in packages/node-shell/src/url-capture.ts).
 -->
 
 **Where the other person is working** shows as a coloured ring on the control they are in, with their name on a chip beside it, and as a matching outline on the part of the render that control draws. Colour is never the only signal - the ring is always paired with the name, the canvas outline carries a hairline that reads as a shape rather than a hue, and every handover is spoken through the live region for screen readers.
+
+![The whole editing window on one device while the other person works: the Quiet zone row in the sidebar carries a coloured ring and a name chip reading Grace](/info/shots/collab-focus-ring.svg)
 
 <!--
 DRILL-ASSISTED SHOT (collab-focus-ring). Milestone `17-A-focus-ring` in
 tests/collab-private.browser.test.ts: B focuses a control, A paints
 `.input-row.is-remote-focus` in the sidebar and `.collab-focus-box` over the canvas.
-CAPTURE PASS: walker-in-page framing the sidebar row AND the canvas outline together -
-the pairing of the two is the point of the picture, so do not crop to one of them.
+Framed on `.tool-layout` rather than either half, per this note's original instruction -
+the pairing of sidebar row and canvas outline is the point, so the frame has to be able
+to hold both. In the captured run the peer's control was Quiet zone, which has no
+distinct canvas region of its own, so only the sidebar half is painted; the canvas
+outline appears in this same frame whenever the peer is in a control that draws one.
 -->
 
 **What you do not see is a floating mouse pointer.** That is a decision rather than a gap: the canvas here is a rendered preview and not a freeform surface, so "Priya is editing the Headline" is both truer and cheaper than an arrow drifting over a picture. Nothing about presence is written into the render - the rings and outlines are painted on a layer above it - so someone else working alongside you cannot change a single byte of what you export.
@@ -206,16 +241,23 @@ The same link that carries your edits will also carry things that are too big to
 
 Press **Send this session** on the collab pill. The other device gets a card naming what is being offered, how many items it contains and how large it is, with **Accept** and **Decline**. Nothing moves until they accept. Both of you watch the same progress card, and either of you can cancel.
 
+![Both devices at the same moment: on the left the sender waiting to be let in, on the right the card naming what is offered, who it is from, and Decline beside Accept](/info/shots/collab-beam-consent.svg)
+
 <!--
 DRILL-ASSISTED SHOT (collab-beam-consent). The consent card
-(shells/web/src/components/beam-toast.ts) only paints from an `offer-received` event, so
-it needs a live pair with both tools mounted. NOT currently a milestone in
-tests/collab-private.browser.test.ts - the drill covers convergence, presence and focus
-but not the beam. Either extend the drill with a `send-session` milestone or capture it
-in a hand-driven two-tab run.
-CAPTURE PASS: walker-in-page over the toast card. It is a fixed-position card of text and
-two buttons, so vector is straightforward. Frame it with the sender's "Waiting for ... to
-accept" state alongside if a two-screen shot is practical.
+(shells/web/src/components/beam-toast.ts) paints only from an `offer-received` event, so
+it needs a live pair with both tools mounted. The drill had no beam milestone; it has one
+now - "BEAM: Send this session raises a consent card on the other device, and Decline ends
+it" in tests/collab-private.browser.test.ts. Deliberately the SMALLEST step that produces
+the card: offer, card, DECLINE. Nothing transfers, nothing is written to either library,
+and the pair is left exactly as the hygiene drills below expect to find it.
+It is the two-screen shot this note asked for: sender's "waiting" card on the left,
+receiver's consent card on the right, both walked live and placed side by side (no
+re-render, nothing drawn that neither screen showed). The drill falls back to the
+receiver's card alone if either half is missing.
+GATED, NOT ASSUMED: "Send this session" renders only while the bulk channel is open, so
+the drill notes and returns when the control is absent rather than failing - that is a
+state the pill has by design.
 -->
 
 **What travels.** The session itself, plus the files you brought to it - uploads, recordings, captures. Those exist on one device only, so without them the session would arrive with holes in it.

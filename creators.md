@@ -86,4 +86,7 @@ Author *tools*, not files: build the thing that generates 10,000 cards rather th
 - **[Using Lolly](/info/using.html)** - the canvas, controls, saving, projects, and phone use.
 - **[Your profile](/info/profile.html)** - the details tools pre-fill from, and how to carry them between devices.
 - **[Import a design](/info/design-import.html)** - bring in your Figma / Penpot / Illustrator / InDesign work, and your PowerPoint decks - edited or rebranded on-device.
+- **[Working together](/info/collaborate.html)** - two people editing one session live, device to device, with no account and no server in the middle.
+- **[Search](/info/search.html)** - one field at the bottom of every screen that reaches your tools, your saved work, the catalogue and your settings.
+- **[Your favourites](/info/favourites.html)** - star what you use and it gets a tile of its own above the grid.
 - **[Exporting & formats](/info/exporting.html)** - every format, print units, video, and batch.
