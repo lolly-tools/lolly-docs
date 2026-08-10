@@ -38,8 +38,10 @@ const REPO_URL = 'https://github.com/lolly-tools/lolly';
 // block, and the footer. Always links to suse.com in a new window.
 const FOUNDED_BY = `<a class="founded-badge" href="https://www.suse.com" target="_blank" rel="noopener" aria-label="Founded by SUSE"><img src="/info/founded-by.svg" alt="Founded by SUSE"></a>`;
 const OG_IMAGE = `${SITE_URL}/og.png`;
-// webp, not avif: og:logo consumers (and GitHub-style scrapers) don't decode avif.
-const OG_LOGO = `${SITE_URL}/info/icon.webp`;
+// og:logo is machine-read metadata, and its consumers (GitHub-style scrapers) don't all
+// decode SVG — so point it at the derived PNG of the mark, not the signed source icon.svg.
+// It's still the one mark: icon-512.png is rasterised from icon.svg by `npm run icons`.
+const OG_LOGO = `${SITE_URL}/icons/icon-512.png`;
 const SITE_DESCRIPTION = 'Lolly: constraint-first, template-driven platform for generating production-ready creative and content assets at scale.';
 // Landing-page <title>/share title - the brand tagline (matches the web shell's
 // index.html). Other pages use "<page title> - Lolly", so this is landing-only.
@@ -2037,7 +2039,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
 <section class="hero">
   <div class="hero-inner">
   <div class="hero-heading">
-    <h1 class="hero-logo-h1"><a href="${esc(localizeHref(lang, '/'))}" class="hero-logo-link" aria-label="Open Lolly - browse all tools"><img src="/info/icon.avif" alt="Lolly" class="hero-logo"></a></h1>
+    <h1 class="hero-logo-h1"><a href="${esc(localizeHref(lang, '/'))}" class="hero-logo-link" aria-label="Open Lolly - browse all tools"><img src="/info/icon.svg" alt="Lolly" class="hero-logo"></a></h1>
   </div>
   <div class="hero-details">
     <span class="hero-pilot" aria-label="${esc(heroChrome.pilotAriaLabel)}"><span class="hero-pilot-tag">${esc(heroChrome.pilotTag)}</span><span class="hero-pilot-text">${esc(heroChrome.pilotText)}</span></span>
@@ -4920,14 +4922,11 @@ ${sections.join('\n\n')}
 function build() {
   // Ensure output dirs exist and copy static assets (icons).
   mkdirSync(outDir, { recursive: true });
-  // icon.avif is the site icon (hero logo; the README + overview doc use it too -
-  // GitHub decodes avif since 2023). icon.webp survives ONLY as the og:image
-  // compatibility copy (OG_LOGO above) - social crawlers still don't take avif.
-  // A missing source is a broken landing page, so warn loudly instead of swallowing it.
-  for (const f of ['icon.avif', 'icon.webp']) {
-    try { copyFileSync(resolve(repoRoot, f), resolve(outDir, f)); }
-    catch { console.warn(`⚠  docs/site: ${f} missing at repo root - /info/${f} will 404`); }
-  }
+  // icon.svg is THE site mark (hero logo; the README + overview doc use it too) — the
+  // single source of truth, a hand-drawn C2PA- + RDF-signed vector, served verbatim so its
+  // provenance travels. A missing source is a broken landing page, so warn loudly.
+  try { copyFileSync(resolve(repoRoot, 'icon.svg'), resolve(outDir, 'icon.svg')); }
+  catch { console.warn('⚠  docs/site: icon.svg missing at repo root - /info/icon.svg will 404'); }
   try { copyFileSync(resolve(repoRoot, 'founded-by.svg'), resolve(outDir, 'founded-by.svg')); } catch {}
 
   // Docs screenshots - committed baselines captured by `npm run docs:shots` from

@@ -9,7 +9,7 @@
 //
 //   • createLandingCardRenderer — the default share card, shells/web/public/og.png
 //     (scripts/build-og-base.ts). The Lolly lollipop beside the wordmark + tagline on
-//     the brand field. Generated from icon.avif (via the derived mark), so the default
+//     the brand field. Generated from icon.svg (via the mark), so the default
 //     card can't drift from the app icon — it used to be a hand-made PNG carrying an
 //     older lollipop while everything else had moved on.
 //
@@ -27,8 +27,8 @@
 //     faint icon watermark, and the lollipop cropped by the bottom-right corner.
 //
 // All three renderers take the `BrandChrome` from loadBrandChrome() — field, accent, ink
-// and marks resolved from the ACTIVE profile's catalog, with the Lolly mark derived from
-// icon.avif — so nothing below hardcodes one brand's palette, and every mounted profile's
+// and marks resolved from the ACTIVE profile's catalog, with the Lolly mark taken from
+// icon.svg — so nothing below hardcodes one brand's palette, and every mounted profile's
 // cards come out in its own colours.
 //
 // Why generate rather than reuse one static og.png: social crawlers (Slack, X,
@@ -73,7 +73,7 @@ const xmlEsc = (s: unknown): string => String(s)
 // for every profile, and `catalog/` is only ever the ACTIVE one (see
 // scripts/build-og-all.ts, which rebuilds each mounted profile in turn).
 //
-// The marks are the co-brand: Lolly's own lollipop (repo-root icon.webp, parent-
+// The marks are the co-brand: Lolly's own lollipop (repo-root icon.svg, parent-
 // owned and brand-agnostic) top-left as a lockup with the wordmark, and the
 // brand's REVERSE (on-dark) horizontal logo top-right, resolved from the catalog
 // by asset TAGS rather than by id — `suse/logo/hor-neg-white` is a SUSE-only id,
@@ -183,17 +183,19 @@ function brandLogo(repoRoot: string, assets: IndexAsset[]): BrandLogo | null {
 export function loadBrandChrome(repoRoot: string): BrandChrome {
   const assets = (readAssetIndex(repoRoot)?.assets ?? []) as IndexAsset[];
   const { field, accent, ink } = brandColors(repoRoot, assets);
-  // The Lolly mark: repo-root icon.webp, which scripts/build-app-icons.ts DERIVES from
-  // the single source of truth icon.avif — so the card mark, the app icons and og.png
-  // are all the same lollipop and can't drift apart again.
-  const markFile = resolve(repoRoot, 'icon.webp');
+  // The Lolly mark: the single source of truth, repo-root icon.svg (the hand-drawn,
+  // C2PA- + RDF-signed vector) — the SAME file the app icons + og.png derive from, so the
+  // card mark can't drift from the app icon. Embedded as an SVG data-URI and rasterised
+  // through the Chromium card path (which paints its mix-blend-mode + filters correctly,
+  // unlike resvg/librsvg), exactly like brandLogo() above.
+  const markFile = resolve(repoRoot, 'icon.svg');
   return {
     field, accent, ink,
     muted:  mixHex(ink, field, 0.38),
     footer: mixHex(ink, field, 0.58),
     logo: brandLogo(repoRoot, assets),
     mark: existsSync(markFile)
-      ? `data:image/webp;base64,${readFileSync(markFile).toString('base64')}`
+      ? `data:image/svg+xml,${encodeURIComponent(readFileSync(markFile, 'utf8'))}`
       : null,
   };
 }
@@ -219,7 +221,7 @@ function brandMark(chrome: BrandChrome, x: number, y: number, w: number): string
 // The one card that isn't about a specific tool, view or page: shells/web/public/og.png,
 // the default share image for the site and the fallback whenever a per-page card is
 // missing. The Lolly lollipop beside the wordmark + tagline on the brand field —
-// generated from icon.avif (chrome.mark), so it can never fall behind the app icon.
+// generated from icon.svg (chrome.mark), so it can never fall behind the app icon.
 
 const LANDING_TAGLINE = ['fast, free, reproducible', 'assets & tools'];
 

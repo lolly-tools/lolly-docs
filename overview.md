@@ -1,6 +1,6 @@
 # Overview
 
-![Lolly Icon - Large green and white lollipop candy](/info/icon.avif)
+![Lolly Icon - Large green and white lollipop candy](/info/icon.svg)
 
 This document captures the purpose, structure, and architectural decisions for the Lolly platform. It reflects both the product vision and the current state of the codebase.
 

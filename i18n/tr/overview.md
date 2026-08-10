@@ -1,6 +1,6 @@
 # Genel Bakış
 
-![Lolly Simgesi - Büyük yeşil ve beyaz lolipop şeker](/info/icon.avif)
+![Lolly Simgesi - Büyük yeşil ve beyaz lolipop şeker](/info/icon.svg)
 
 Bu belge, Lolly platformunun amacını, yapısını ve mimari kararlarını ele alır. Hem ürün vizyonunu hem de kod tabanının mevcut durumunu yansıtır.
 

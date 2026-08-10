@@ -1,0 +1,284 @@
+# Working on something together
+
+Two people, two devices, one tool session, edited live. No account, no sign-in, no server in the middle, and no internet needed if both devices are on the same network. This page is the whole feature: how to start one, the three ways to hand the invite over, the reply leg that trips most pairs up, the six characters that tell you the connection is private, what you see while you work, how to send files and sessions down the same link, and what to do when a network refuses to let two devices talk.
+
+> This is the individual path. It pairs exactly two devices, directly, and it is yours to start whenever you want one. Nothing about it asks permission from anything.
+
+## What a private collab is
+
+A **private collab** is a live editing link between two devices. One person invites, the other joins, and from that moment both are typing into the same tool session: change a field on one device and it appears on the other. The link is made by the two browsers talking to each other directly. Your work does not travel through a service on the way, because there is no service - the invite and the reply are the whole of the setup, and you are the one who carries them across.
+
+Two things follow from that, and they are worth knowing before you invite anyone.
+
+- **The person who invites owns the session.** The saved session lives on the inviting device. The joining device gets a working copy that is deliberately never written into its own Projects. That copy is real, editable and exportable on the joining device, but it is not filed there and it does not survive the collab.
+- **Anyone holding the invite can join and edit.** The invite is the key. Send it through a channel you would send the work itself through, and treat a re-sent invite as a re-shared document.
+
+The feature is on by default. It carries a **beta** pill in the profile settings, which is where you can also turn it off. Turning it off means an invite link opened on that device offers to turn it back on rather than dead-ending.
+
+![The Feature flags section of the profile, with Private collab and its beta pill at the end of the list](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2400&cropSelector=%23feature-flags-section&walker=1&format=svg&dark=1&filename=collab-flag-setting)
+
+<!--
+SHOT NOTE (collab-flag-setting): geometry copied from the PROVEN recipe for the same
+element (docs/adoption-governance.md's `aud-feature-switches`, 1440x1800). Do not shrink
+it: `PRIVATE_COLLAB_FLAG` is the LAST row `flagRow()` writes into #feature-flags-section
+(views/profile.ts), and a walker crop is windowed to min(element box, recipe frame), so a
+900px frame culls the very row this shot is for.
+The flag's `info` sentence is NOT inline copy - it is a help-tip popover (`.help-tip-pop`,
+`hidden` until hover/tap) behind the (i) button on the row, which is why the alt text
+above claims only the label, the beta pill and the switch. If the capture pass wants the
+explanation visible, drive the (i) open (`click:` the row's `.help-tip-btn`) and say so
+in the alt text; never drive the switch itself, which would turn the feature off.
+ALSO: `aud-feature-switches` already publishes this element. Consider pointing this
+section at that baseline instead of minting a second near-identical shot.
+-->
+
+**What both devices need.** The same tool, present locally on each. A collab sends values, never code, so the template and the logic always come from the catalogue on each device. If the joining device does not have the tool, the join is refused at the moment the invite is read, by name, rather than opening something that renders nothing.
+
+## Start a collab
+
+Open the tool and get the session to the state you want to share. Then:
+
+1. Press **Share** in the export controls, the same button that copies a share link.
+2. Scroll to **Private collab** and press **Start a collab**.
+3. Give yourself a name for this collab and press **Create the invite**.
+
+![The Share dialog's Private collab section - one line saying what it does, then Start a collab and Join with a code](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1100&height=900&dpi=192&waitMs=2600&drive=click%3A%5Bdata-action%3D%22copy-url%22%5D&cropSelector=.share-private-collab&walker=1&format=svg&dark=1&filename=collab-share-section)
+
+<!--
+SHOT NOTE (collab-share-section): `[data-action="copy-url"]` is the actions-bar Share
+button (views/tool-actions.ts), and its handler is showShareDialog (views/tool.ts's
+wireUpCopyUrl), so one click is the whole way in. The section renders whenever the
+`private-collab` flag resolves ON, which a fresh capture context does by default
+(feature-flags.ts, `default: true`).
+CAPTURE-PASS RISK: `.share-private-collab` is APPENDED LAST in the dialog (the prose
+above says "scroll to" for the same reason). If the dialog scrolls internally, the
+section's box can measure off-frame and the crop comes back empty. Check the first
+capture; if it does, scroll it into view with a drive step before the shot rather than
+widening the frame.
+-->
+
+
+The name is chosen here, per collab, and it is the only thing about you that crosses the link. It is not read from your profile, and nothing else from your profile goes anywhere. Leave it empty and you appear as **Host** to the other person, or **Invitee** if you are the one joining.
+
+![Step 1 of 3 - naming yourself for this collab, with the note that the other person sees this name while you work together](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1100&height=900&dpi=192&waitMs=3000&drive=click%3A%5Bdata-action%3D%22copy-url%22%5D%3Bclick%3A%5Bdata-act%3D%22start-private-collab%22%5D&cropSelector=.collab-ceremony&walker=1&format=svg&dark=1&filename=collab-invite-name)
+
+The whole ceremony is numbered **1 of 3**, **2 of 3**, **3 of 3** on every screen, on both sides. That is deliberate: the hand-over has two legs, both people are looking at different screens, and the numbers are how you tell each other where you are.
+
+## Handing over the invite
+
+Once the invite is minted you get the same invite in three forms at once. They are the same thing wearing different clothes, so pick whichever suits the two of you and wherever you happen to be.
+
+![Step 1 of 3 - the minted invite as a link, as a code and as a QR, with the note that anyone holding it can join and edit](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1100&height=980&dpi=192&waitMs=9000&drive=click%3A%5Bdata-action%3D%22copy-url%22%5D%3Bclick%3A%5Bdata-act%3D%22start-private-collab%22%5D%3Bclick%3A%5Bdata-act%3D%22create-invite%22%5D%3Bwait%3A6000&cropSelector=.collab-ceremony&walker=1&format=svg&dark=1&filename=collab-invite-minted)
+
+<!--
+SHOT NOTE (collab-invite-minted): minting runs a real RTCPeerConnection and waits for
+non-trickle ICE gathering to finish, capped at GATHER_TIMEOUT_MS = 5s
+(shells/web/src/collab/rtc-transport.ts), and no config is ever passed to the
+constructor, so there is no STUN to answer and the cap is what actually elapses.
+The `wait:6000` step is the ONLY thing covering that cap: build-docs-shots.ts spends
+waitMs BEFORE the drive steps (waitMs at ~line 718, runDriveSteps at ~line 740), so
+waitMs=9000 buys nothing here beyond a settled first paint. If the capture lands on the
+"Step 1 of 3: Making the invite" screen, raise `wait:` (runDriveSteps caps one wait at
+15s), not waitMs, and never switch to a raster.
+The QR itself is drawn by collab/qr-skin.ts into `.collab-cer-qr` and is vector, so the
+walker keeps it as geometry.
+-->
+
+### A link
+
+The invite as a `#/join?inv=...` URL. Send it through any channel the two of you already use. The other person clicks it, their device opens Lolly at the join screen with the invite already read, and they go straight to naming themselves. Nothing to paste.
+
+**When it fits:** you have any messaging channel at all between the two devices, and the joining device can reach the same address you are using.
+
+### A QR code
+
+The invite as a QR on screen. The other device points its camera at it and scans.
+
+**When it fits:** the two devices are in the same room and there is no channel between them at all. It is also the leg that works when one device is a phone and the other is a laptop across a desk.
+
+Two things to know. The reply comes back the same way, so this is genuinely two scans and not one: your device shows the invite, theirs scans it, then theirs shows the reply and yours scans that. Numbering the steps 1-2-3 is what keeps that survivable. And scanning is only offered where the browser can actually decode a QR, which today means Chromium-family browsers. Where it cannot, there is no **Scan a code** button at all rather than a button that opens a camera and never finds anything - the code beside the QR is the same payload, so pasting is always available.
+
+### A code
+
+The invite as a block of text. Copy it, send it however you like, and the other person opens `#/join` on their device with nothing in the URL and pastes it into the field there. The Share dialog has a **Join with a code** button that opens exactly that screen, so both entrances are one place.
+
+**When it fits:** the invite came through a channel that mangles links, or the other person is typing an address in by hand, or you are reading it out.
+
+![The bare join screen - one field, one button, and the note that a code or a link both work here](/t/url-shot?url=%2F%23%2Fjoin&width=1100&height=760&dpi=192&waitMs=2400&cropSelector=%5Bdata-collab-join%5D&walker=1&format=svg&dark=1&filename=collab-join-code-door)
+
+> **The invite does not last forever.** While you are waiting, the screen counts down how long the current invite still works. After ten minutes a fresh one is minted automatically and the screen says so, so send the new one rather than the one you already sent. That happens twice; after that the wait gives up and tells you nothing came back in time. **Make a new invite** sits on the waiting screen throughout, if you want to start the clock again yourself.
+
+## Sending the reply back
+
+This is the leg pairs give up on, so it is worth being explicit: **an invite on its own does not connect anything.** The joining device makes a reply, and that reply has to get back to the waiting device before either of you is connected. Same three forms, same choice.
+
+<!--
+DRILL-ASSISTED SHOT (collab-answer-minted).
+Alt text when it lands: "Step 3 of 3 on the joining device - the reply as a link, a code
+and a QR, with the line saying the host pastes this code or opens this link in their
+waiting window".
+NO url-shot recipe here ON PURPOSE. The reply screen only exists downstream of a REAL
+invite token, so any recipe that could be written today would silently capture the bare
+code door and publish it under this caption. It is milestone `07-answer-minted` in
+tests/collab-private.browser.test.ts (LOLLY_BROWSER_DRILLS=1).
+CAPTURE PASS: run the drill to that milestone, then run the walker IN PAGE
+(renderSvgFromHtml over the dialog) for a real vector shot - do not publish the drill's
+own PNG. Raster plus a tests/docs-shots-vector.test.ts allowlist entry only if the walker
+physically cannot recover it, with the reason written down.
+-->
+
+- **As a link.** The reply is a `#/join-reply?ans=...` URL. Opening it on the same device that made the invite hands the reply straight to the window that is waiting, and that window moves on by itself. The tab that did the handing says so and can be closed. If no window on that device is waiting, it says that too and leaves the code on screen to copy.
+- **As a code.** Paste it into the **Paste the reply here** field on the waiting screen and press **Connect**.
+- **As a QR.** The waiting screen has its own **Scan a code** button, so the reply can be scanned back exactly like the invite was scanned across.
+
+**Testing it with two tabs on one device works.** If you open your own invite in another tab, the join screen notices and says so in one dismissible line. It is information and never a refusal - the pairing is real, it just happens to be between two windows of one browser.
+
+If the reply arrives in a window that was not expecting it, nothing silently goes wrong: a reply pasted into the invite door is named as a reply and you are told which window it belongs in, and a device with more than one invite waiting says so and leaves the code for you to paste into the right one rather than guessing.
+
+## The matching plates
+
+The moment the two devices connect, both screens show the same six characters, grouped as three and three. Under them, one sentence:
+
+> Both screens show the same plate when the connection is private.
+
+Read the plate out loud and check it against the other screen. If they match, the two devices are talking to each other and to nobody in between.
+
+<!--
+DRILL-ASSISTED SHOT (collab-plate). The connection plate only exists once a real pairing
+is live, and it is derived from the two DTLS certificate fingerprints the handshake
+actually validated (shells/web/src/collab/plate.ts) - there is no way to fake this state
+from a URL. Milestones `09-A-connected` / `10-B-connected` in
+tests/collab-private.browser.test.ts.
+CAPTURE PASS: drill to the connected screen, then walker-in-page (renderSvgFromHtml over
+`.collab-ceremony`, framing `[data-cer-plate]` and the sentence under it). The plate is
+plain text at a large size, so it vectorises cleanly. Ideally capture BOTH screens for a
+side-by-side, which is the only version of this picture that shows what "matching" means.
+Raster plus allowlist only if that proves impossible.
+-->
+
+Here is what the check is actually doing, because it is the one security property of this feature that needs a person rather than code. The invite carries a fingerprint of the inviting device, and the reply carries one back. The plate is derived from **both** fingerprints together, ordered so that each device computes the same answer without either of them having to be told who is who. Anyone who wanted to sit in the middle would have to terminate the connection on both sides with certificates of their own, which is two fingerprints neither of your devices ever saw, and there is no substitution they can make in the invite or the reply that produces two matching plates on your two screens.
+
+This is the same idea as the short authentication string in ZRTP (RFC 6189 section 7): the humans are the part of the channel that cannot be forged. It is not a formality. Comparing the plates is what turns "the invite reached them" into "the invite reached them and nothing changed it on the way".
+
+A few details that follow from how it is built:
+
+- **The alphabet has no ambiguous characters.** No 0 or O, no 1 or I or L, no B against 8. The plate exists to be compared out loud, and "oh" against "zero" is exactly the confusion the comparison must not absorb.
+- **A screen reader says it character by character**, spaced, with a pause at the group break. Read as a word it would sound like a match when it is not.
+- **A new pairing has a new plate.** If the connection drops and you pair again, compare again. The old plate belongs to a connection that no longer exists.
+
+## Editing together
+
+Once you are connected, the tool opens on both devices with the session in it and you both just work.
+
+**What you see.** A **collab pill** sits over the canvas: the people in the collab as a stack of initials, and a dot for the state of the link - Connecting, Live, Reconnecting, Away, Disconnected. Open it for the roster, which names everyone and tags who is you, who is away and who is observing.
+
+<!--
+DRILL-ASSISTED SHOT (collab-pill-roster). Needs two live participants. Milestone
+`15-A-pill` in tests/collab-private.browser.test.ts, which waits for
+`.collab-pill .collab-av` to reach 2 before shooting.
+CAPTURE PASS: walker-in-page over `.collab-pill` with the roster popover open. Small,
+type-and-shape only, so vector is comfortable here.
+-->
+
+**Where the other person is working** shows as a coloured ring on the control they are in, with their name on a chip beside it, and as a matching outline on the part of the render that control draws. Colour is never the only signal - the ring is always paired with the name, the canvas outline carries a hairline that reads as a shape rather than a hue, and every handover is spoken through the live region for screen readers.
+
+<!--
+DRILL-ASSISTED SHOT (collab-focus-ring). Milestone `17-A-focus-ring` in
+tests/collab-private.browser.test.ts: B focuses a control, A paints
+`.input-row.is-remote-focus` in the sidebar and `.collab-focus-box` over the canvas.
+CAPTURE PASS: walker-in-page framing the sidebar row AND the canvas outline together -
+the pairing of the two is the point of the picture, so do not crop to one of them.
+-->
+
+**What you do not see is a floating mouse pointer.** That is a decision rather than a gap: the canvas here is a rendered preview and not a freeform surface, so "Priya is editing the Headline" is both truer and cheaper than an arrow drifting over a picture. Nothing about presence is written into the render - the rings and outlines are painted on a layer above it - so someone else working alongside you cannot change a single byte of what you export.
+
+**Undo stays yours.** Your undo history is a record of your own edits and nothing else. A change arriving from the other device never lands on your undo stack, so you can never undo something you did not do. When you do undo, the value goes back the way you meant and that change travels to the other device like any other edit.
+
+**Two people in the same field.** The last write wins, per field. There is no locking and no queue, and both of you will see the same final value. Two people typing into the same text field at the same moment is the one case that behaves poorly, for the same reason it does in every design tool: you get one of the two versions, not a merge of both. In practice this is what the focus rings are for - you can see where the other person is.
+
+**If the connection wobbles**, the dot says Reconnecting and nothing is torn down. A brief drop heals on its own. A real drop needs a fresh invite, because a private collab has no server to resume from: the state lives on the two devices and nowhere else.
+
+**If the two devices are running different versions**, you are told rather than left to wonder. A minor difference in the tool says some fields may not match. A larger difference in the collab format puts the older device into **Observing**: it keeps seeing everything, and its own edits are not sent.
+
+## Sending files and sessions
+
+The same link that carries your edits will also carry things that are too big to be edits. This is a **beam**, and it works like handing someone a file across the table.
+
+Press **Send this session** on the collab pill. The other device gets a card naming what is being offered, how many items it contains and how large it is, with **Accept** and **Decline**. Nothing moves until they accept. Both of you watch the same progress card, and either of you can cancel.
+
+<!--
+DRILL-ASSISTED SHOT (collab-beam-consent). The consent card
+(shells/web/src/components/beam-toast.ts) only paints from an `offer-received` event, so
+it needs a live pair with both tools mounted. NOT currently a milestone in
+tests/collab-private.browser.test.ts - the drill covers convergence, presence and focus
+but not the beam. Either extend the drill with a `send-session` milestone or capture it
+in a hand-driven two-tab run.
+CAPTURE PASS: walker-in-page over the toast card. It is a fixed-position card of text and
+two buttons, so vector is straightforward. Frame it with the sender's "Waiting for ... to
+accept" state alongside if a two-screen shot is practical.
+-->
+
+**What travels.** The session itself, plus the files you brought to it - uploads, recordings, captures. Those exist on one device only, so without them the session would arrive with holes in it.
+
+**What does not travel.** Anything already in the catalogue on both devices. Those are listed by reference and resolved locally, which keeps the transfer to the size of your own work rather than the size of a design system. If the two devices are set up differently and a reference cannot be resolved on the other side, the manifest says plainly which ones those were rather than pretending the render is faithful.
+
+**What happens on arrival.** A received session is filed as a **new** session, always, labelled with who it came from. It never overwrites anything. Received files are stored byte for byte as they arrived, with no re-encode and no downscale, and the transfer is checked against its declared size and digest before and after the write - which is also what keeps content credentials intact across the hop. A file the other device already has is recognised by its checksum and not stored twice.
+
+The transfer runs on its own channel, so a large beam never queues your edits behind it. Editing stays responsive for the whole transfer.
+
+> Today the one control wired up is **Send this session**, and it appears only while the bulk channel is actually open. The wider shapes the format already supports - a hand-picked set of files, a whole project, everything under a tag - are not reachable from the interface yet.
+
+## When there is no internet at all
+
+This is the case the feature was built for.
+
+**Same network is the first-class path.** Two laptops on the same Wi-Fi, a laptop and a phone on the same router, two machines on a wired switch: the two devices find each other on the local network and the pairing completes without anything leaving it. No internet is involved at any point in the editing.
+
+**The hotspot trick.** If there is no network to share, make one. Turn on the personal hotspot on a phone and connect the other device to it. That is a network with exactly two devices on it, no route to anywhere, and it is enough - a plane, a basement, a site with no coverage. This is also the standing answer when a venue's Wi-Fi will not let two of its own clients talk to each other, which happens more often than you would like.
+
+**What needs what**, honestly:
+
+| The part | What it needs |
+|---|---|
+| Editing together | Both devices reachable from each other on the same network. Nothing else. |
+| Opening an invite link | The joining device has to be able to load Lolly at the address in the link. Already installed as an app, or already open on that device, and it loads offline. A first-ever visit needs to be able to reach the address. |
+| A code or a QR | Nothing beyond the app being open on both devices. This is the fully cold path. |
+| Scanning a QR | A camera, and a browser that can decode barcodes - Chromium-family today. |
+| A beam | Both people in the tool. There is no queue for a transfer offered before the other side has the tool open. |
+
+**Across the open internet**, be realistic. The pairing uses the addresses each device can see on the network it is on, and this build configures no external address-discovery server. Two devices on different networks, in different buildings, is not something to plan around. Get onto one network, or onto a hotspot.
+
+## When it will not work
+
+The failures are named rather than shrugged at, and each screen offers the one thing worth doing next.
+
+**This network blocks direct connections.** Both devices gathered addresses and no route between them ever formed. This is client isolation - a guest network, a corporate Wi-Fi, a hotel, a conference floor - where the network deliberately stops its own clients from talking to each other. The screen says so and offers **Try again**.
+
+> **What to try:** a personal hotspot from a phone, with both devices on it. Or a wired network. Or any network you control. Nothing about the app can talk its way past a network that has been configured to prevent exactly this, and pretending otherwise would waste your time.
+
+<!--
+DRILL-ASSISTED SHOT (collab-isolation-fail). The isolation screen is reached through the
+`ice-failed-isolation-suspected` end cause, which the drill does not currently produce
+(the loopback pair connects). Reaching it for real needs a network that isolates clients,
+or the connect watchdog (CONNECT_WATCHDOG_MS = 45s) firing.
+CAPTURE PASS: cheapest honest route is a hand-driven run with one peer's candidates
+blocked, then walker-in-page over `.collab-ceremony`. It is a heading, a paragraph and one
+button, so if it turns out to be impractical to reach, DROP the shot rather than staging a
+fake one - the copy is quoted in the text above and carries the same information.
+-->
+
+**Nothing came back in time.** The reply never arrived. Make a new invite and send it again. Nine times in ten this is the reply leg: the invite was sent, the other person opened it, and the reply is still sitting on their screen waiting to be sent back.
+
+**The connection dropped.** The other device stopped answering. A new invite is needed to carry on - there is no server holding the session, so there is nothing to resume from. Your work is untouched on your own device.
+
+**This device does not have that tool.** The collab needs a tool the joining device does not have. Add it there, then ask for a fresh invite.
+
+**The two versions of that tool do not match.** One device has a version of the tool the other cannot read. Update both.
+
+**This device could not open the connection.** The browser refused to make a direct connection at all. Reload and try again.
+
+**This link carries no invite**, or **this invite could not be read.** The link arrived incomplete or something changed it on the way. Ask for a fresh one. If the code came through a channel that wraps lines, the code form pastes more reliably than the link form.
+
+---
+
+**Related:** [Using Lolly](/info/using.html) for the tool, the canvas and saving sessions. [Trust](/info/trust.html) for how the rest of the app treats your work and your data. [Privacy](/info/privacy.html) for what is stored and where.

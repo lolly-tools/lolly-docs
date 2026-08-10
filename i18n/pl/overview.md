@@ -1,6 +1,6 @@
 # Przegląd
 
-![Ikona Lolly - duży zielono-biały cukierek lizak](/info/icon.avif)
+![Ikona Lolly - duży zielono-biały cukierek lizak](/info/icon.svg)
 
 Ten dokument opisuje cel, strukturę i decyzje architektoniczne platformy Lolly. Odzwierciedla zarówno wizję produktu, jak i aktualny stan bazy kodu.
 
