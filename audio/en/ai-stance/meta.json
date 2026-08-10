@@ -1,0 +1,11 @@
+{
+  "slug": "ai-stance",
+  "lang": "en",
+  "voice": "bf_lily",
+  "speed": 0.8,
+  "modelVersion": "onnx-community/Kokoro-82M-v1.0-ONNX",
+  "textHash": "02051089976ecacf8a6e763963f9d14d600fd70d2359870c63a46c761d568bf6",
+  "duration": 531.55,
+  "bytes": 1597587,
+  "generated": "2026-08-09T12:14:08.616Z"
+}
