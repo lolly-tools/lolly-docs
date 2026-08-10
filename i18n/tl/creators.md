@@ -42,7 +42,7 @@ Hindi sinusubukan ng Lolly na maging Canva o Figma. Nasa lugar ito kung saan *ma
 
 Magandang halimbawa ng palitang iyon ang Street Map: pipiliin mo ang isang lungsod at ilang kulay, at napagpasyahan na para sa iyo ang cartography, ang bigat ng mga kalsada at ang tubig.
 
-![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-street-map-poster&sweep=1)
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-street-map-poster)
 
 Punan ang ilang fields, makakuha ng tapos na asset - walang font na pipiliin, walang kulay na aalanganinin, walang "ito na ba ang tamang logo?" Alam na ng tool. Email signature, event countdown, quote card, badge, street map - lahat ng kailangan ng team mo sa isang Martes ng 4pm, self-serve. At dahil walang customer data na umaalis sa device, walang compliance risk sa pagtutulungan.
 

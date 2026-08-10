@@ -24,7 +24,7 @@ Ang Preferences ang tanging bahaging nagbabago sa kung paano ka tinitingnan paba
 
 Wala sa mga ito ang required. Ang blangkong profile ay perpektong profile pa rin; punan mo lang ang mga bagay na makakatipid sa iyo ng pag-type.
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&dark=1&filename=profile-details&sweep=1)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&dark=1&filename=profile-details)
 
 ## Ang profile ay isang konteksto, hindi lang isang tao
 
@@ -64,7 +64,7 @@ Kaya kung talagang nagpapalit-palit ka ng maraming konteksto (ikaw, ang team mo,
 
 ## Paglipat ng profile sa bagong device
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls)
 
 Dahil ganap na local ang profile, ang tanging paraan para mailagay ito sa isang blangkong install - bagong laptop, bagong-reset na browser, makina ng katrabaho, o offline na device - ay ang **dalhin ang file**. Walang login ang magre-restore nito para sa iyo, at iyon nga ang punto: wala talagang lumabas sa iyong device mula sa umpisa.
 

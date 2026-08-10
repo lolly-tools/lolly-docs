@@ -8,7 +8,7 @@ If any check on this page doesn't produce the result shown, that's either a bug 
 
 Before the procedures, the payoff. Open [`/verify`](/#/verify) and drop a file on it — no upload, no account, no wait for a server. Here it is checking the [generated Queensland storm](/info/ai-stance.html) from our AI stance page: a Gemini image Lolly opened, resized and exported. Every badge below was computed on the device, from the file's own bytes.
 
-![Verify on a phone-width screen — the storm image, a green Made with Lolly verdict, and the credential-intact and bytes-unchanged badges stacked beneath it](/t/url-shot?url=%2F%23%2Fverify%3Fsrc%3D%2Finfo%2Fthe-flood.webp&width=440&height=1500&dpi=192&waitMs=6000&waitSelector=.valid-steps&walker=1&format=svg&rasterDpi=96&cropSelector=.valid-top&dark=1&filename=cc-verify-mobile&sweep=1)
+![Verify on a phone-width screen — the storm image, a green Made with Lolly verdict, and the credential-intact and bytes-unchanged badges stacked beneath it](/t/url-shot?url=%2F%23%2Fverify%3Fsrc%3D%2Finfo%2Fthe-flood.webp&width=440&height=1500&dpi=192&waitMs=6000&waitSelector=.valid-steps&walker=1&format=svg&rasterDpi=96&cropSelector=.valid-top&dark=1&filename=cc-verify-mobile)
 
 The verdict is not one badge but a small pile of them, each an independent fact:
 
@@ -19,7 +19,7 @@ The verdict is not one badge but a small pile of them, each an independent fact:
 
 And the whole history travels with the file. Nine steps survive here — five Google recorded as it generated and watermarked the image, then four Lolly recorded as it opened, marked and converted the copy on this page — read straight back out of the bytes, on your device, and rendered as a timeline. This is the same image, verified the same way, as the C2PA timeline on the [AI stance page](/info/ai-stance.html).
 
-![The change history Verify reads back out of the storm image — five steps recorded by Google, then four by Lolly, ending in the WebP on this page](/t/url-shot?url=%2F%23%2Fverify%3Fsrc%3D%2Finfo%2Fthe-flood.webp&width=1440&height=1400&dpi=192&waitMs=6000&walker=1&format=svg&cropSelector=.valid-steps&dark=1&filename=ai-stance-change-history&sweep=1)
+![The change history Verify reads back out of the storm image — five steps recorded by Google, then four by Lolly, ending in the WebP on this page](/t/url-shot?url=%2F%23%2Fverify%3Fsrc%3D%2Finfo%2Fthe-flood.webp&width=1440&height=1400&dpi=192&waitMs=6000&walker=1&format=svg&cropSelector=.valid-steps&dark=1&filename=ai-stance-change-history)
 
 None of that is the trust claim, though — it is the demo. The rest of this page is the trust claim: every badge above is reproducible, and here is how you reproduce the guarantees underneath them.
 

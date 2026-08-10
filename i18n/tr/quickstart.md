@@ -1,6 +1,6 @@
 # Hızlı Başlangıç
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1)
 
 Lolly; kurallarını -renkler, yazı tipleri, düzenler, mantık- birkaç alanı doldurarak herkesin bitmiş dosyalar oluşturmak için kullanabileceği araçlara dönüştürür: görseller, PDF'ler, sosyal medya kartları, video. Öğrenilecek ya da yüklenecek hiçbir şey yok: her şey cihazında çalışır, çevrimiçi ya da çevrimdışı.
 
@@ -68,7 +68,7 @@ Tüm içe aktarma **cihazında** gerçekleşir - dosya tarayıcında ayrıştır
 
 [Topluluk araç seti](/info/builders.html) açık kaynaklı ve markadan bağımsızdır - QR kodları, sokak haritaları, filtreler, gizlilik yardımcı araçları - ve onu etkinleştirdiğin an *senin* markana göre oluşturulur.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1)
 
 Araçlara kendi açık verilerini de besle: bir **CSV** veya **JSON** tablosunu yapıştır ya da bırak, bir aracın tekrarlayan alanları ondan dolsun, satır başına bir bitmiş varlık.
 

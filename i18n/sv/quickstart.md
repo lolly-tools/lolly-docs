@@ -1,6 +1,6 @@
 # Snabbstart
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1)
 
 Lolly omvandlar dina regler - färger, typografi, layouter, logik - till verktyg som vem som helst kan använda för att skapa färdiga filer: bilder, PDF:er, sociala kort, video, genom att fylla i några fält. Det finns inget att lära sig och inget att ladda upp: allt körs på din enhet, online eller offline.
 
@@ -68,7 +68,7 @@ Här är vinsten: en importerad layout är en vanlig Layout Studio-session, så 
 
 [Community-verktygssamlingen](/info/builders.html) är öppen källkod och varumärkesoberoende - QR-koder, stadskartor, filter, integritetsverktyg - och den renderar mot *ditt* varumärke i samma stund du aktiverar den.
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1&sweep=1)
+![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1)
 
 Mata verktygen med din egen öppna data också: klistra in eller släpp en **CSV**- eller **JSON**-tabell så fylls ett verktygs repeterande fält från den, en färdig tillgång per rad.
 

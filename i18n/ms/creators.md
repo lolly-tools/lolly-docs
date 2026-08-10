@@ -42,7 +42,7 @@ Lolly tidak cuba menjadi Canva atau Figma. Ia mengisi ruang di mana *peraturan, 
 
 Street Map ialah contoh yang baik bagi pertukaran ini: anda memilih sebuah bandar dan beberapa warna, manakala kartografi, berat jalan dan air sudah ditentukan untuk anda.
 
-![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-street-map-poster&sweep=1)
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-street-map-poster)
 
 Isikan beberapa medan, dapatkan aset yang siap - tiada fon perlu dipilih, tiada warna perlu diragui, tiada persoalan "adakah ini logo yang betul?" Alat itu sudah tahu. Tandatangan e-mel, kira detik acara, kad petikan, lencana, peta jalan - semua yang pasukan anda perlukan pada hari Selasa jam 4 petang, secara layan diri. Dan kerana tiada data pelanggan meninggalkan peranti, tiada risiko pematuhan dalam bekerjasama.
 

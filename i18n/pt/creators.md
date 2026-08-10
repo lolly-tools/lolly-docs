@@ -42,7 +42,7 @@ O Lolly não está tentando ser o Canva ou o Figma. Ele ocupa o espaço onde *re
 
 O Street Map é um bom exemplo dessa troca: você escolhe uma cidade e duas cores, e a cartografia, a espessura das vias e a água já vêm decididas.
 
-![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-street-map-poster&sweep=1)
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-street-map-poster)
 
 Preencha alguns campos, receba o material pronto - sem fontes para escolher, sem cores para ficar em dúvida, sem "esse é o logotipo certo?". A ferramenta já sabe. Assinaturas de e-mail, contagens regressivas de eventos, cartões de citação, crachás, mapas de ruas - tudo o que sua equipe precisa numa terça-feira às 16h, por conta própria. E como nenhum dado de cliente sai do dispositivo, não há risco de compliance na colaboração.
 

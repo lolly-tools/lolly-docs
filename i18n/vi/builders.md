@@ -10,7 +10,7 @@ Mới làm quen với nền tảng? **[Quickstart](/info/quickstart.html)** sẽ
 
 ## Tìm hiểu kiến trúc
 
-![One shared primitive from the shell's component library, rendered live from its own specimen - the button base and its fills, beside the file that defines them](/t/url-shot?url=%2F%23%2Fcomponents&width=1200&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23cl-primitives%20.cl-card&dark=1&filename=aud-primitive-card&sweep=1)
+![One shared primitive from the shell's component library, rendered live from its own specimen - the button base and its fills, beside the file that defines them](/t/url-shot?url=%2F%23%2Fcomponents&width=1200&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23cl-primitives%20.cl-card&dark=1&filename=aud-primitive-card)
 
 
 - **[Tổng quan](/info/overview.html)** - vì sao Lolly tồn tại, sự tách biệt engine/shell/tools, capability bridge, và các cam kết kiến trúc đã chốt.

@@ -6,7 +6,7 @@ Wo diese Plattform in der breiteren Landschaft der Kreativ-Tools steht - und wo 
 
 ## Landscape
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas&sweep=1)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
 
 | Funktion | Canva (Offene Leinwand) | Marken-Portale (DAM-Vorlagen) | Illustrator (Desktop-Profi) | Figma / Penpot (Online-Profi) | **Lolly (regelbasiert)** |
 |---|---|---|---|---|---|

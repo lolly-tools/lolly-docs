@@ -22,7 +22,7 @@ Lolly एक क्रिएटिव टूल है: लोग यहाँ �
 
 ## एक्सेसिबिलिटी
 
-![The Accessibility card on the profile page: four plain switches - Reduce motion, Hide colourful previews, High contrast and Large text - each with a help tip](/t/url-shot?url=%2F%23%2Fprofile&width=430&height=900&dpi=192&waitMs=2000&scrollDepth=1300&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.profile-card--a11y&dark=1&filename=incl-a11y-card&sweep=1)
+![The Accessibility card on the profile page: four plain switches - Reduce motion, Hide colourful previews, High contrast and Large text - each with a help tip](/t/url-shot?url=%2F%23%2Fprofile&width=430&height=900&dpi=192&waitMs=2000&scrollDepth=1300&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.profile-card--a11y&dark=1&filename=incl-a11y-card)
 
 प्लेटफ़ॉर्म के अपने संकेतों (सिस्टम डार्क मोड, OS की रिड्यूस्ड-मोशन प्राथमिकता) का पालन
 करने के अलावा, Lolly आपकी प्रोफ़ाइल पर स्पष्ट, अपनी मर्ज़ी से चालू की जाने वाली

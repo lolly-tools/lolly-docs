@@ -59,7 +59,7 @@ Directive Art. 5(3), storage that is strictly necessary for the service you aske
 for doesn't require consent - only transparency, which is what this document and
 the in-app notice both are.)
 
-![The storage section of the profile page on a phone-width screen: every category of on-device data named, with the Clear all my data button right beside it](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%2C.store-manages%2C.storage-subsection%2C.store-selbar%2C.store-chip-val%2C%23store-hero-num%2C%23store-headroom%2C%23store-quota%2C%23store-reclaim%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23storage-section&dark=1&filename=pv-storage-clear&sweep=1)
+![The storage section of the profile page on a phone-width screen: every category of on-device data named, with the Clear all my data button right beside it](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%2C.store-manages%2C.storage-subsection%2C.store-selbar%2C.store-chip-val%2C%23store-hero-num%2C%23store-headroom%2C%23store-quota%2C%23store-reclaim%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23storage-section&dark=1&filename=pv-storage-clear)
 
 Your own backup of this data - the `lolly-backup` bundle produced by **Export my
 data & render everything** - is a file you keep and control. It never touches our
@@ -117,7 +117,7 @@ resolver" instead, and you can check those in the desktop or command-line app,
 which resolve DNS natively through your own machine with no third party
 involved.
 
-![The Verify screen: a drop target and nothing else - the file is checked where it already is, with no upload and no account](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1400&walker=1&format=svg&cropSelector=.valid-layout&dark=1&filename=cc-verify-drop&sweep=1) You can confirm this yourself: greppable checks for this and every
+![The Verify screen: a drop target and nothing else - the file is checked where it already is, with no upload and no account](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1400&walker=1&format=svg&cropSelector=.valid-layout&dark=1&filename=cc-verify-drop) You can confirm this yourself: greppable checks for this and every
 other claim on this page, with the exact commands and expected output, live at
 [Verify It Yourself](/info/verify-yourself.html).
 

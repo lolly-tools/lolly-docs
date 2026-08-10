@@ -47,7 +47,7 @@ Lolly ٹولز کی ایک قسم - پرائیویسی یوٹیلیٹیز - *خ�
 
 یہ سب آن-ڈیوائس تبدیلیاں ہیں: آپ کی فائل یا ڈیٹا اندر جاتا ہے، صاف کیے گئے bytes باہر آتے ہیں، اور **اپ لوڈ کرنے کے لیے کوئی سرور نہیں ہے**۔ یہ اُس عام ٹول کے دانستہ برعکس ہیں جسے کوئی نیک نیت ملازم بصورتِ دیگر استعمال کرتا ہے یعنی "اپنی فائل کو صاف کرنے کے لیے کسی اجنبی کی ویب سائٹ پر اپ لوڈ کریں"۔
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data&sweep=1)
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
 
 Text Helper فائلوں کے بجائے متن کے لیے وہی سودا ہے۔ یہ وہی ٹیب والا ورک بینچ ہے جسے کوئی ملازم ورنہ کسی اجنبی کی سائٹ پر تلاش کرنے جاتا، اور یہ ایک بھی ان پٹ بیان نہیں کرتا، کیونکہ جس چیز کو یہ چھوتا ہے وہ کبھی صفحے سے باہر نہیں جاتی۔
 

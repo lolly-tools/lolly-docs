@@ -15,7 +15,7 @@ Lolly は大量のコンテンツを生成します。リスクを防ぐため�
 
 ### フィーチャーフラグとは何ですか？
 
-![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&dark=1&filename=pd-feature-flags&sweep=1)
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&dark=1&filename=pd-feature-flags)
 
 フィーチャーフラグは Lolly の各機能のオン・オフを切り替えます。通常はこれらを管理者が制御しますが、Lolly ではあなた自身が制御します。
 
@@ -50,7 +50,7 @@ Lolly はすべてを底上げします。
 
 ## ユーティリティはツールと何が違うのですか？
 
-![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1&sweep=1)
+![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1)
 
 **基本的な回答 →** ユーティリティは必ずしもレンダリングを必要としないため、異なる UX を持つことができます。
 
@@ -70,7 +70,7 @@ Lolly はすべてを底上げします。
 
 ## Lolly は Figma、Penpot、Illustrator、InDesign のファイルを編集・レンダリングできますか？
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio)
 
 はい。**Layout Studio** を開き、**Import a design（デザインをインポート）** をクリックしてください。ネイティブの Figma **.fig**（Save local copy で保存したもの）、Penpot の **.penpot** エクスポート、Illustrator の **.ai** または **.pdf**、InDesign の **.idml**（File → Export → InDesign Markup）、あるいは**あらゆる SVG**（多くのデザインアプリがエクスポートできる、間口の広い形式）を受け付けます。すべてお使いのデバイス上だけで解析され、アカウントもプラグインも不要です。
 

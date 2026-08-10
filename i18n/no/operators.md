@@ -34,7 +34,7 @@ Den fullstendige gjennomgangen av driftsettingsmodeller og administrasjon finner
 
 ## Verktøy mot eksfiltrering
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data&sweep=1)
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
 
 Text Helper er den samme avtalen for tekst i stedet for filer. Det er arbeidsbenken med faner som en ansatt ellers ville lett etter på en fremmeds nettsted, og den deklarerer ingen inndata i det hele tatt, fordi ingenting den berører noen gang forlater siden.
 

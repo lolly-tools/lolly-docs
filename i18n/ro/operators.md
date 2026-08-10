@@ -34,7 +34,7 @@ Modelele complete de implementare și ghidul de administrare se află în [Deplo
 
 ## Utilitare anti-exfiltrare
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data&sweep=1)
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
 
 Text Helper e același târg, dar pentru text în loc de fișiere. E bancul de lucru cu taburi pe care un angajat s-ar duce altfel să îl caute pe site-ul unui necunoscut, și nu declară niciun input, pentru că nimic din ce atinge nu părăsește vreodată pagina.
 

@@ -4,7 +4,7 @@
 
 Everything here happens on your device, and none of it changes what a render produces. The chrome described below - ghosts, badges, banners, outlines - lives outside the exported node, so a file exported with onion skin on is byte-identical to the same file exported with it off.
 
-![The timeline, tool bar first: add, record, the split blade with its resolved label, snap, onion skin, zoom, fit and the keyboard shortcuts sheet, over the ruler, the overlay lane, the magnetic sequence row and the Always on strip](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1440&height=900&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A252px!important%7D&cropSelector=.tl-panel&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-timeline&sweep=1)
+![The timeline, tool bar first: add, record, the split blade with its resolved label, snap, onion skin, zoom, fit and the keyboard shortcuts sheet, over the ruler, the overlay lane, the magnetic sequence row and the Always on strip](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1440&height=900&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A252px!important%7D&cropSelector=.tl-panel&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-timeline)
 
 ## The one rule
 
@@ -24,7 +24,7 @@ While a selection is off-playhead the keyboard refuses every key that would chan
 
 **The fallbacks are never gated.** The timeline's own inspector (Length, Trim in, Speed, the two transitions, Mute) and the tool sidebar edit the selected clip whatever the playhead is doing. They are the precision route, and the accessible one.
 
-![A clip selected in the sequence row: the playhead has stepped inside it, the canvas shows that scene with its selection outline and handles, and the timeline inspector fills with the clip’s Length, Trim in, Speed and transitions](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1440&height=900&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A300px%21important%7D%23tool-stage%7Bbackground-image%3Anone%21important%7D&drive=click%3A.tool-canvas%7Cat%3D0.5%2C0.5%3Bclick%3A.tl-ruler%7Cat%3D0.92%2C0.5&walker=1&format=svg&dark=1&sweep=1&filename=seq-rule-selection)
+![A clip selected in the sequence row: the playhead has stepped inside it, the canvas shows that scene with its selection outline and handles, and the timeline inspector fills with the clip’s Length, Trim in, Speed and transitions](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1440&height=900&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A300px%21important%7D%23tool-stage%7Bbackground-image%3Anone%21important%7D&drive=click%3A.tool-canvas%7Cat%3D0.5%2C0.5%3Bclick%3A.tl-ruler%7Cat%3D0.92%2C0.5&walker=1&format=svg&dark=1&filename=seq-rule-selection)
 
 ### What a click on the canvas hits
 
@@ -47,7 +47,7 @@ It is **off by default and stays off until you turn it on**, and the preference 
 - **Outlines** is the default mode - each neighbour as a plain rectangle where its boxes sit. It stays readable *over* an opaque scene, which a filled ghost cannot. **Filled** adds each ghost's own colour and picture, for the animation-style work that wants it.
 - Past clips are drawn warm, future clips cool blue. Colour is never the only signal: each ghost carries a small `-1` / `+2` chip in its corner saying how far away in the sequence it is, so the direction survives any kind of colour vision. With **Hide colourful previews** on (see [Inclusive Design](/info/inclusive-design.html)) filled mode falls back to outlines.
 
-![Onion skin on: the neighbouring scenes drawn as ghosts over the live one, each carrying a small -1 or +1 chip saying how far away in the sequence it is](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1440&height=900&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A300px%21important%7D%23tool-stage%7Bbackground-image%3Anone%21important%7D&drive=click%3A.tl-onion%3Bhover%3A.tl-ruler%7Cat%3D0.01%2C0.5&cropBottom=0.35&format=png&dark=1&sweep=1&filename=seq-onion-ghosts)
+![Onion skin on: the neighbouring scenes drawn as ghosts over the live one, each carrying a small -1 or +1 chip saying how far away in the sequence it is](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1440&height=900&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A300px%21important%7D%23tool-stage%7Bbackground-image%3Anone%21important%7D&drive=click%3A.tl-onion%3Bhover%3A.tl-ruler%7Cat%3D0.01%2C0.5&cropBottom=0.35&format=png&dark=1&filename=seq-onion-ghosts)
 
 **Onion skin cannot reach a file.** The ghosts are drawn in the editor's overlay layer, which is a sibling of the exported canvas rather than a part of it, and they are additionally tagged so the export path strips them before any format is written. They never set a class or a style on a real box. An export taken with ghosts on screen is the same bytes as one taken without.
 
@@ -110,7 +110,7 @@ While you drag:
 
 Nothing is written until you let go: one drag is one undo step.
 
-![A trim in flight: the dragged edge lit, a readout showing the clip’s new length and the signed change, and a ghost extent showing how much source is still reachable past the edge](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1100&height=760&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A300px!important%7D&drive=drag%3A.tl-clip-seq%7Cdx%3D90%7Cat%3D0.99%2C0.15%7Chold&cropSelector=.tl-panel&format=svg&walker=1&dark=1&sweep=1&filename=seq-trim-drag)
+![A trim in flight: the dragged edge lit, a readout showing the clip’s new length and the signed change, and a ghost extent showing how much source is still reachable past the edge](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1100&height=760&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A300px!important%7D&drive=drag%3A.tl-clip-seq%7Cdx%3D90%7Cat%3D0.99%2C0.15%7Chold&cropSelector=.tl-panel&format=svg&walker=1&dark=1&filename=seq-trim-drag)
 
 ### Trimming from the keyboard
 

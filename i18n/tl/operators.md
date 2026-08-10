@@ -48,7 +48,7 @@ Paliitin ang isang sobrang-laking PDF on-device, para walang aabot sa isang thir
 
 Lahat ng mga ito ay on-device transforms: pumapasok ang iyong file o data, lumalabas ang malinis na bytes, at **walang server na maaaring i-uploadan**. Sila ang sinadyang kabaligtaran ng karaniwang tool na "i-upload ang iyong file sa website ng isang estranghero para linisin ito" na siyang ginagamit ng isang mabuting-loob na empleyado kung wala nito.
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data&sweep=1)
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
 
 Ganoon din ang bargain ng Text Helper, para sa teksto at hindi sa mga file. Ito ang tabbed workbench na hahanapin pa sana ng isang empleyado sa site ng ibang tao, at wala man lang itong idineklarang input dahil walang anumang hinahawakan nito ang umaalis sa page.
 

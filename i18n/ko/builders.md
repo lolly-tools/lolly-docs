@@ -10,7 +10,7 @@ Lolly는 여러 **셸**(web PWA, Tauri 데스크톱/모바일, CLI, TUI)에서 �
 
 ## 아키텍처 이해하기
 
-![One shared primitive from the shell's component library, rendered live from its own specimen - the button base and its fills, beside the file that defines them](/t/url-shot?url=%2F%23%2Fcomponents&width=1200&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23cl-primitives%20.cl-card&dark=1&filename=aud-primitive-card&sweep=1)
+![One shared primitive from the shell's component library, rendered live from its own specimen - the button base and its fills, beside the file that defines them](/t/url-shot?url=%2F%23%2Fcomponents&width=1200&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23cl-primitives%20.cl-card&dark=1&filename=aud-primitive-card)
 
 
 - **[개요](/info/overview.html)** — Lolly가 존재하는 이유, 엔진/셸/도구의 분리, 기능 브리지, 그리고 확정된 아키텍처상의 결정 사항.

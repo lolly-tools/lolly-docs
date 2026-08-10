@@ -54,7 +54,7 @@ A shell that can't provide a capability **disables** the tool rather than lettin
 
 Notice the badge: URL Screenshot declares `capture`, the browser cannot provide it alone, so the tile offers the add-on instead of vanishing.
 
-![The URL Screenshot tile in the Utilities gallery, carrying an Add-on badge because its capture capability is unmet in a plain browser](/t/url-shot?url=%2F%23%2Fu&width=1440&height=2400&dpi=192&waitMs=2000&format=svg&walker=1&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&cropSelector=.gtile%5Bdata-tool-id%3D%22url-shot%22%5D&tolerance=0.03&dark=1&filename=fq-capability-addon-badge&sweep=1)
+![The URL Screenshot tile in the Utilities gallery, carrying an Add-on badge because its capture capability is unmet in a plain browser](/t/url-shot?url=%2F%23%2Fu&width=1440&height=2400&dpi=192&waitMs=2000&format=svg&walker=1&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&cropSelector=.gtile%5Bdata-tool-id%3D%22url-shot%22%5D&tolerance=0.03&dark=1&filename=fq-capability-addon-badge)
 
 ## Curating what users see
 
@@ -63,7 +63,7 @@ Two mechanisms narrow the catalog without forking it:
 - **Per-instance tool set** - point each instance at a different profile (or a brand pack with a curated `tools/` root) so marketing, sales, and IT can each see a different library from one codebase.
 - **Per-user feature flags** - surfaced in each person's Profile view, stored on their profile (so they sync). The gallery-category and Batch flags default to **on** (they show/hide whole gallery categories and the Batch entry), as do **Neurospicy Mode** (the focus-music player) and the **Jelly effects** UI switch; one privacy flag, **Strip metadata from uploads**, defaults to **off** (opt-in - see below). The category and Batch flags are purely personal preferences. Three of them - Neurospicy, Jelly effects and Strip metadata from uploads - can additionally be **governed** by an optional deployment control plane, which sets the default applied when the user hasn't chosen and can hide the switch entirely; a hidden flag's governed default wins over a stored user value. None of them ever gate output formats or any API surface. See [Getting Started → Administration](/info/operators.html) for the governance model around this.
 
-  ![Every feature flag as its own switch, with the gallery categories on and Strip metadata off](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&dark=1&filename=pd-feature-flags&sweep=1)
+  ![Every feature flag as its own switch, with the gallery categories on and Strip metadata off](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&dark=1&filename=pd-feature-flags)
 
   **Strip metadata from uploads** is the one opt-in (default-off) flag: turn it on and images uploaded to your catalogue are scrubbed of EXIF, location (GPS), and other embedded metadata on import. Content Credentials (C2PA provenance) are *always* preserved either way - a signed or AI-generated image keeps its credential whether the flag is on or off.
 

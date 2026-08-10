@@ -20,7 +20,7 @@ A **Save & continue** button appears the moment you change something and moves y
 
 **Deep-link a tab** with `#/start?tab=<key>`, where the keys are `logos`, `color` *(note the US spelling in the URL)*, `type`, `tokens`, and `catalogue`.
 
-![The studio room rail - Overview, Colours, Type, Logos, Tokens and Files](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.ds-rail&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1&sweep=1)
+![The studio room rail - Overview, Colours, Type, Logos, Tokens and Files](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.ds-rail&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1)
 
 ## Logos
 

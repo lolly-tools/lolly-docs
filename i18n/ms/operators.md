@@ -48,7 +48,7 @@ Kecilkan saiz PDF yang terlalu besar terus pada peranti (on-device), supaya tiad
 
 Semua ini adalah transformasi pada peranti (on-device): fail atau data anda masuk, bait yang telah dibersihkan keluar, dan **tiada pelayan untuk dimuat naik**. Ia adalah lawan yang disengajakan bagi alat "muat naik fail anda ke laman web orang asing untuk membersihkannya" yang biasa dicapai oleh pekerja yang berniat baik sebaliknya.
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data&sweep=1)
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
 
 Text Helper menawarkan tawaran yang sama tetapi untuk teks, bukan fail. Ia ialah meja kerja bertab yang jika tidak, seorang pekerja akan mencarinya di laman web orang asing, dan ia tidak mengisytiharkan sebarang input kerana apa-apa yang disentuhnya tidak sekali-kali meninggalkan halaman ini.
 

@@ -34,7 +34,7 @@
 
 ## Verifying a file
 
-![The Verify screen with nothing but a drop target - no upload button, no account, because the check runs where the file already is](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1400&walker=1&format=svg&cropSelector=.valid-layout&dark=1&filename=cc-verify-drop&sweep=1)
+![The Verify screen with nothing but a drop target - no upload button, no account, because the check runs where the file already is](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1400&walker=1&format=svg&cropSelector=.valid-layout&dark=1&filename=cc-verify-drop)
 
 The **Verify** tab (canonical `/verify`; the aliases `/valid` and `/v` redirect to
 it) checks any file's credential entirely on-device. It reads the whole C2PA
@@ -60,7 +60,7 @@ the credential: a file that declares AI-generated content, carries Lolly's own p
 Imprint, or is quietly hiding data in its bytes gets flagged too - see [Beyond the
 credential](#beyond-the-credential-what-else-verify-shows) below.
 
-![The Change history panel, where every step names the software that made it and Lolly's own leg of the journey reads green](/t/url-shot?url=%2F%23%2Fverify%3Fsrc%3D%2Finfo%2Fthe-flood.webp&width=1440&height=1400&dpi=192&waitMs=6000&walker=1&format=svg&cropSelector=.valid-steps&dark=1&filename=ai-stance-change-history&sweep=1)
+![The Change history panel, where every step names the software that made it and Lolly's own leg of the journey reads green](/t/url-shot?url=%2F%23%2Fverify%3Fsrc%3D%2Finfo%2Fthe-flood.webp&width=1440&height=1400&dpi=192&waitMs=6000&walker=1&format=svg&cropSelector=.valid-steps&dark=1&filename=ai-stance-change-history)
 
 The same credential check runs in the CLI (`lolly validate <file>`) and in any
 third-party C2PA validator pointed at the public Lolly root

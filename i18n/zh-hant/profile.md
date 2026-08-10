@@ -24,7 +24,7 @@
 
 這些都不是必填的。空白的個人資料本身就相當合用；你只需要填寫能省下打字功夫的部分。
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&dark=1&filename=profile-details&sweep=1)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&dark=1&filename=profile-details)
 
 ## 個人資料是一種情境，而不只是一個人
 
@@ -64,7 +64,7 @@
 
 ## 把個人資料搬到新裝置
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls)
 
 由於個人資料完全存放在本機，要把它帶到一個全新的安裝環境——新筆電、剛重設的瀏覽器、同事的電腦、離線的機器——唯一的方法就是**帶著檔案走**。沒有任何登入程序能幫你還原它，而這正是重點所在：一開始就沒有任何東西離開過你的裝置。
 

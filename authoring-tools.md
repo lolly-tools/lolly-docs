@@ -66,7 +66,7 @@ Optional:
 
 None of those fields stay private to the repo. The gallery's About card is the manifest read back to whoever is deciding whether to open the tool: name, category and status from identity, the export chips and canvas size from `render`, the version, and a `capabilities` line whenever the tool declared any.
 
-![The About card for the Filter tool, listing its exports grouped as vector, raster and video chips, its 1080 by 1080 canvas and its version, all read straight from the manifest](/t/url-shot?url=%2F%23%2F%3Ftool%3Dfilter&width=1440&height=1200&dpi=192&waitMs=2200&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&format=svg&walker=1&cropSelector=.meta-dialog-body&dark=1&filename=at2-manifest-about-card&sweep=1)
+![The About card for the Filter tool, listing its exports grouped as vector, raster and video chips, its 1080 by 1080 canvas and its version, all read straight from the manifest](/t/url-shot?url=%2F%23%2F%3Ftool%3Dfilter&width=1440&height=1200&dpi=192&waitMs=2200&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&format=svg&walker=1&cropSelector=.meta-dialog-body&dark=1&filename=at2-manifest-about-card)
 
 ### The `render` block
 

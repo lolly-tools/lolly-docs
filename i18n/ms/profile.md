@@ -24,7 +24,7 @@ Keutamaan ialah satu-satunya bahagian yang mengubah rupa aplikasi ini kepada and
 
 Tiada satu pun daripada ini diwajibkan. Profil kosong adalah profil yang baik sepenuhnya; anda hanya mengisi apa yang menjimatkan masa menaip anda.
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&dark=1&filename=profile-details&sweep=1)
+![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&dark=1&filename=profile-details)
 
 ## Profil adalah konteks, bukan sekadar seorang individu
 
@@ -64,7 +64,7 @@ Jadi jika anda benar-benar mengendalikan beberapa konteks serentak (anda, pasuka
 
 ## Memindahkan profil ke peranti baharu
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls&sweep=1)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls)
 
 Oleh sebab profil adalah sepenuhnya tempatan, satu-satunya cara untuk memasukkannya ke dalam pemasangan kosong - komputer riba baharu, pelayar yang baru sahaja ditetapkan semula, komputer rakan sekerja, atau kotak luar talian - adalah dengan **membawa fail itu sendiri**. Tiada log masuk yang memulihkannya untuk anda, dan itulah intinya: tiada apa-apa pun yang pernah meninggalkan peranti anda pada mulanya.
 

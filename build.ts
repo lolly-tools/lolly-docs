@@ -462,12 +462,10 @@ function esc(s: string) {
 
 function inline(text: string) {
   let s = esc(text);
-  // Two facts the recipe carries that the rewritten `src` cannot: the dark twin to
-  // pair with, and whether this shot was authored to draw itself in. Collected in
-  // the recipe pass below and read a few lines later by the wrapper pass — same
-  // call, so a plain local map is the whole mechanism.
+  // One fact the recipe carries that the rewritten `src` cannot: the dark twin to
+  // pair with. Collected in the recipe pass below and read a few lines later by the
+  // wrapper pass — same call, so a plain local map is the whole mechanism.
   const darkFor = new Map<string, string>();
-  const sweepSrcs = new Set<string>();
   // An inline code span that IS an app route becomes a link to it. The docs are served
   // by the app, so `#/start` in the prose is a place the reader can actually go — and
   // naming a route in monospace and leaving it inert was the docs describing a door.
@@ -489,9 +487,9 @@ function inline(text: string) {
   // The recipe stays in the source .md as the reproducible record; when a GET
   // renderer ships, this rewrite can simply be removed.
   // The parameter is `recipe`, not `src`: the body below declares `src` for the
-  // REWRITTEN /info/shots/ path (which is what darkFor and sweepSrcs are keyed on),
-  // and a callback parameter of the same name shadows it — a SyntaxError that takes
-  // the whole build with it.
+  // REWRITTEN /info/shots/ path (which is what darkFor is keyed on), and a callback
+  // parameter of the same name shadows it — a SyntaxError that takes the whole
+  // build with it.
   s = s.replace(/(!\[[^\]]*\]\()(\/t\/url-shot\?[^)\s]+)(\))/g, (_m, pre: string, recipe: string, post: string) => {
     // By this point the body has been HTML-escaped, so the query's separators
     // read `&amp;` - restore them or every param key parses as `amp;<key>`.
@@ -506,7 +504,6 @@ function inline(text: string) {
     const shotSrc = `/info/shots/${file}`;
     const dark = darkShot(file);
     if (dark) darkFor.set(shotSrc, `/info/shots/${dark}`);
-    if (q.get('sweep') === '1') sweepSrcs.add(shotSrc);
     return `${pre}${shotSrc}${post}`;
   });
 
@@ -566,15 +563,8 @@ function inline(text: string) {
       // describing both would be a claim neither file backs.
       twin = `<img class="shot-alt" src="${darkSrc}"${ddims}${rest}>${shotCredential(dfile, 'shot-cred--alt')}`;
     }
-    // A swept shot needs its source as a custom property (CSS cannot read an
-    // <img>'s src) and, when it has a twin, the dark file too — otherwise the ink
-    // layer would draw the light picture over the dark one.
-    const sweep = sweepSrcs.has(src);
-    const styleBits = sweep
-      ? ` style="--shot-src:url(${src})${darkSrc ? `;--shot-src-dark:url(${darkSrc})` : ''}"`
-      : '';
-    const cls = `shot${darkSrc ? ' shot--dual' : ''}${sweep ? ' shot--sweep' : ''}`;
-    return `<span class="${cls}" data-shot="${src}"${darkSrc ? ` data-shot-dark="${darkSrc}"` : ''}${styleBits}>`
+    const cls = `shot${darkSrc ? ' shot--dual' : ''}`;
+    return `<span class="${cls}" data-shot="${src}"${darkSrc ? ` data-shot-dark="${darkSrc}"` : ''}>`
       + `<img src="${src}"${dims}${rest}>${shotCredential(file)}${twin}</span>${shotTryLink(file)}`;
   });
   // A page ASSET that is not a screenshot — the AI stance hero, say — gets the same
@@ -952,42 +942,14 @@ function shotSize(file: string, from?: string): { w: number; h: number } | null 
 }
 
 /**
- * How many draft-to-render sweeps one page may carry before the build says so.
- *
- * The sweep is a laplacian over a column-width element, and the browser keeps a
- * filtered composited surface alive for each one. It used to be structurally
- * impossible to have more than one (the build promoted the first shot and no
- * other); now that authors opt in per recipe, the ceiling has to be a thing the
- * build can see and complain about, or "one per page, deliberately" quietly
- * becomes "however many someone typed".
- */
-const MAX_SWEEPS_PER_PAGE = 4;
-
-/**
- * Count the sweeps an authored page asked for and warn past the budget.
- *
- * A pass-through, not a fixer: which shots draw themselves in is an editorial
- * decision that belongs in the markdown next to the words it illustrates. This
- * only keeps the cost visible in the build log, where the old "first shot only"
- * rule used to keep it visible in the code.
- */
-function auditSweeps(html: string, slug: string): string {
-  const n = (html.match(/class="shot[^"]*shot--sweep/g) ?? []).length;
-  if (n > MAX_SWEEPS_PER_PAGE) {
-    console.warn(`⚠  ${slug}.md declares ${n} drawing sweeps (budget ${MAX_SWEEPS_PER_PAGE})`
-      + ' — each one keeps a filtered layer alive; drop `sweep=1` from the least important.');
-  }
-  return html;
-}
-
-/**
  * `::: showcase` — the one screenshot on the site that is INLINED as live SVG
  * rather than served through an <img>, so scroll can drive its real `viewBox`.
  *
- * Why this exists: the settle motion above transform-scales an <img>, and Blink
- * rasterises an SVG image at the composited scale — so the one thing the docs most
- * want to demonstrate (that these screenshots are geometry, not pixels) is exactly
- * the thing a transform cannot show. Animating a viewBox is a true camera move
+ * Why this exists: Blink rasterises an SVG <img> at whatever scale it is
+ * composited, so the moment you zoom or pan one it goes soft — the one thing the
+ * docs most want to demonstrate (that these screenshots are geometry, not pixels)
+ * is exactly the thing an <img> cannot show under motion. Animating a viewBox on
+ * inlined SVG is a true camera move
  * over the geometry: nothing re-rasterises, and because the captured strokes carry
  * `vector-effect="non-scaling-stroke"`, they stay hairline at every zoom the way a
  * CAD viewer does. A bitmap cannot fake either property.
@@ -2964,19 +2926,21 @@ html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
   box-shadow: inset 0 0 0 1px #ffffff2e, 0 3px 8px #00000073, 0 6px 2em #0000004d}
 
 /* ── Screenshot settle ──────────────────────────────────────────────────────
-   Every shot enters slightly oversized and lifted, with a wide diffuse shadow,
-   then lands: the shadow tightens under it as the scale returns to 1. Read as a
-   sheet being set down on the page.
+   Every shot enters lifted, with a wide diffuse shadow, then lands: the shadow
+   tightens under it as it rises the last 30px into place. Read as a sheet being
+   set down on the page.
 
    fit-content, not 100%: the wrapper must hug the IMAGE, because the credential
    line is positioned against this box. A portrait shot in a wide column would
    otherwise strand its credential in the empty margin.
 
-   Honest note on the scale: an <img> of an SVG is rasterised by Blink at the
-   composited scale, so a transform-zoomed shot is soft DURING the motion and
-   snaps crisp at rest. 1.045 is chosen to keep that imperceptible — this
-   animation is a settle, and is deliberately NOT the argument that the shots are
-   vector. The showcase block below is (it animates real geometry). */
+   NO scale, on purpose: an <img> of an SVG is rasterised by Blink at the
+   composited scale, so a transform-SCALED shot goes soft DURING the motion and
+   snaps crisp only at rest. Since the whole point of these shots is that they are
+   vector — razor-sharp at any size — the settle only translates and fades; it
+   never scales, so the artwork stays crisp through the entire motion. The
+   showcase block below makes the vector argument outright (it animates real
+   geometry). */
 .shot{display:block;position:relative;width:fit-content;max-width:100%;margin:0 auto}
 .shot>img{margin:0}
 /* The hidden start state is gated on .shots-motion, which the pre-paint script in
@@ -2986,7 +2950,7 @@ html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
    paint rather than by the observer at end-of-body, or a long page would paint
    the shots once and then blink them out to animate them back in. */
 @media(prefers-reduced-motion:no-preference){
-  .shots-motion .shot{opacity:0;transform:translateY(30px) scale(1.045);
+  .shots-motion .shot{opacity:0;transform:translateY(30px);
     transition:opacity .5s ease,transform .75s cubic-bezier(.16,.84,.3,1)}
   /* Every rule that undoes the start state carries the SAME .shots-motion
      qualifier, so it matches the (0,2,0) above. A bare .shot--in here is
@@ -3225,54 +3189,6 @@ html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
 .dark .shot--dual>img.shot-alt{display:block}
 .dark .shot--dual .shot-cred--alt{display:flex}
 
-/* ── Draft-to-render sweep ("sweep=1" on the recipe) ────────────────────────
-   A luminance-edge pass (feConvolveMatrix laplacian, see DRAFT_FILTER_DEF)
-   turns the shot into a line drawing that dissolves into the full-colour render.
-   The outlines are DERIVED from the artwork rather than drawn by hand, so the
-   effect cannot drift out of sync with the shot it sits on.
-
-   It is an overlay, not a filter on the <img>, because the filter property cannot
-   transition from url(#…) to none — so the filtered copy is a background layer
-   that fades out instead.
-   Same URL as the <img>, so it costs a cache hit and one extra decode, no fetch.
-
-   WHICH shots draw themselves in is now authored ("sweep=1"), not "whichever came
-   first in the document" — see auditSweeps for the per-page budget. Cost is still
-   bounded: desktop only (a laplacian over a full-width element is the wrong thing
-   to hand a phone GPU), and never under reduced-motion.
-
-   TIMING. 1.4s of dissolve after a 0.25s beat, against the settle's own .75s — the
-   sheet lands, then the ink lifts off it, and the two read as one gesture rather
-   than a race. Slower than the 0.9s this started at, because at 0.9s the drawing
-   was gone before a reader who had just scrolled to it had focused on it; much past
-   1.5s and the shot reads as finished while ink is still sitting on top of it.
-   ease-in-out, not ease: the lift starts gently, so the line drawing is legible
-   as a drawing for a moment before it goes. */
-@media(prefers-reduced-motion:no-preference) and (min-width:900px){
-  .shots-motion{--sweep-dur:1.4s;--sweep-delay:.25s}
-  .shots-motion .shot--sweep::after{content:'';position:absolute;inset:0;border-radius:1.2em;pointer-events:none;
-    background:var(--shot-src) center/100% 100% no-repeat;
-    filter:url(#lolly-draft);opacity:1;
-    transition:opacity var(--sweep-dur) ease-in-out var(--sweep-delay)}
-  /* In dark mode the ink must be drawn from the DARK file, or the sweep would
-     briefly paint the light screenshot over its own dark twin.
-     COMPOUND, not descendant: the theme class and .shots-motion both live on
-     <html>, so ".dark .shots-motion" asks for an element inside itself and never
-     matches — the rule looks right, applies never, and the failure is a picture
-     nobody notices. */
-  /* And the ink itself flips with the theme. #lolly-draft ends on a NEGATIVE-slope
-     transfer, which is what turns the laplacian's flat black into white paper — so
-     on a dark page the sweep opened by flashing a white sheet. The dark filter runs
-     the same edge detection without that inversion: light lines, near-black sheet. */
-  .dark.shots-motion .shot--sweep::after{background:var(--shot-src-dark,var(--shot-src)) center/100% 100% no-repeat;
-    filter:url(#lolly-draft-dark)}
-  .shots-motion .shot--sweep.shot--in::after{opacity:0}
-  /* Teardown once the ink has lifted: a pseudo-element cannot transition filter
-     away, so at opacity 0 it is still a live filtered composited surface. Harmless
-     at one per page, not at four — the script adds this class when the transition
-     is over. */
-  .shots-motion .shot--swept::after{content:none}
-}
 /* Provenance pills (the typed markers authors write in the markdown - see inline()).
    A provenance line reads as
    data tags in sentence order, so the hierarchy is carried by weight and fill, not
@@ -3750,49 +3666,6 @@ const THEME_INTERACT_SCRIPT = `<script>(function(){var btn=document.querySelecto
 const HAM_BTN = `<button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation" aria-expanded="false"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>`;
 
 /**
- * The edge-detect pass behind the hero shot's draft-to-render sweep. A 3×3
- * laplacian over the DESATURATED artwork (so a colour edge and a tonal edge both
- * register), then inverted and boosted so the result is ink on paper rather than
- * bright lines on black.
- *
- * sRGB interpolation is explicit: the filter default is linearRGB, which crushes
- * the mid-tone edges this depends on into near-nothing.
- */
-const DRAFT_FILTER_DEF = `<svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
-  <filter id="lolly-draft" color-interpolation-filters="sRGB">
-    <feColorMatrix type="saturate" values="0"/>
-    <feConvolveMatrix order="3" preserveAlpha="true" kernelMatrix="0 -1 0 -1 4 -1 0 -1 0"/>
-    <feComponentTransfer>
-      <feFuncR type="linear" slope="-2.4" intercept="1"/>
-      <feFuncG type="linear" slope="-2.4" intercept="1"/>
-      <feFuncB type="linear" slope="-2.4" intercept="1"/>
-    </feComponentTransfer>
-  </filter>
-  <!-- The dark-mode ink. Same greyscale + laplacian, then the transfer does NOT
-       invert: slope is positive, so the edge signal is boosted where the convolve
-       left it — bright lines on a near-black sheet.
-
-       This exists because the negative slope above is what paints the paper. A
-       laplacian leaves flat areas at 0, and a slope of -2.4 with intercept 1 maps
-       that 0 to 1: WHITE. On a dark page that reads as the sweep flashing a white sheet
-       before dissolving, which is the whole effect landing back-to-front. Inverting
-       is therefore a light-mode decision, not part of the edge detection, and dark
-       mode simply declines it.
-
-       The small intercept lifts the sheet off dead black — #000 is darker than the
-       page itself, which would read as a black slab rather than as paper. -->
-  <filter id="lolly-draft-dark" color-interpolation-filters="sRGB">
-    <feColorMatrix type="saturate" values="0"/>
-    <feConvolveMatrix order="3" preserveAlpha="true" kernelMatrix="0 -1 0 -1 4 -1 0 -1 0"/>
-    <feComponentTransfer>
-      <feFuncR type="linear" slope="2.4" intercept="0.05"/>
-      <feFuncG type="linear" slope="2.4" intercept="0.05"/>
-      <feFuncB type="linear" slope="2.4" intercept="0.05"/>
-    </feComponentTransfer>
-  </filter>
-</svg>`;
-
-/**
  * Screenshot settle. Its own observer rather than a `.reveal` class on each shot,
  * because a shot has a second condition the text blocks don't: it waits for the
  * image to actually decode. Shots are `loading="lazy"`, so reusing `.reveal`
@@ -3810,14 +3683,8 @@ const SHOT_MOTION_SCRIPT = `<script>(function(){
     // Decoded already (cache) → settle now. Otherwise settle on load, so the
     // motion always carries real pixels. A failed image still lands, or the shot
     // would be stuck invisible at opacity 0.
-    var swept=function(){
-      // Plain timeout, not transitionend: below 900px or under reduced motion the
-      // ::after never exists and no transition ever fires, so there would be
-      // nothing to listen for.
-      if(el.classList.contains('shot--sweep'))setTimeout(function(){el.classList.add('shot--swept');},2000);
-    };
-    if(!img||img.complete){el.classList.add('shot--in');swept();return;}
-    var go=function(){el.classList.add('shot--in');swept();};
+    if(!img||img.complete){el.classList.add('shot--in');return;}
+    var go=function(){el.classList.add('shot--in');};
     img.addEventListener('load',go,{once:true});
     img.addEventListener('error',go,{once:true});
   }
@@ -5116,7 +4983,6 @@ ${SHOT_MOTION_INIT}
 </head>
 <body class="page-${page.slug}">
 ${buildNav(lang, page.slug, activeHref, isLanding, page.pathway)}
-${DRAFT_FILTER_DEF}
 ${body}
 ${FOOTER(lang)}
 ${THEME_INTERACT_SCRIPT}
@@ -5194,9 +5060,9 @@ function commentStandaloneProvenanceLines(md: string): string {
 // block STARTS with "<", so it catches a one-paragraph comment and misses a comment
 // containing a blank line: the second paragraph reads as ordinary prose and becomes
 // the page's public description. That is not hypothetical - favourites.md opens with
-// a two-paragraph authoring note, and this page's <meta name="description"> and OG
-// card were shipping "No sweep=1 on either recipe, deliberately - the drawing-in
-// budget is MAX_SWEEPS_PER_PAGE = 4 per page…". Our docs pages carry these notes by
+// a multi-paragraph authoring note, and this page's <meta name="description"> and OG
+// card were shipping its second paragraph ("Two separate storage facts are
+// load-bearing here…") as the page summary. Our docs pages carry these notes by
 // convention (the SHOT NOTE blocks are everywhere), so the extractor has to treat a
 // comment as invisible the way a markdown renderer does, not as a block shaped a
 // particular way.
@@ -5341,7 +5207,7 @@ function build() {
         continue;
       }
 
-      const content = page.isLanding ? buildLandingContent(md, lang) : auditSweeps(mdToHtml(md), page.slug);
+      const content = page.isLanding ? buildLandingContent(md, lang) : mdToHtml(md);
       const html    = wrapPage(lang, page, content, ogSlugs, md);
       const outFile = page.slug === 'index' ? 'index.html' : `${page.slug}.html`;
       writeFileSync(resolve(localeOutDir, outFile), html, 'utf-8');

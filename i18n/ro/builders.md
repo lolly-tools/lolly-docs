@@ -10,7 +10,7 @@ Ești nou pe platformă? **[Pornire rapidă](/info/quickstart.html)** pune la pu
 
 ## Înțelege arhitectura
 
-![One shared primitive from the shell's component library, rendered live from its own specimen - the button base and its fills, beside the file that defines them](/t/url-shot?url=%2F%23%2Fcomponents&width=1200&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23cl-primitives%20.cl-card&dark=1&filename=aud-primitive-card&sweep=1)
+![One shared primitive from the shell's component library, rendered live from its own specimen - the button base and its fills, beside the file that defines them](/t/url-shot?url=%2F%23%2Fcomponents&width=1200&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23cl-primitives%20.cl-card&dark=1&filename=aud-primitive-card)
 
 
 - **[Prezentare generală](/info/overview.html)** - de ce există Lolly, separarea motor/shell/instrumente, podul de capabilități și angajamentele arhitecturale stabilite definitiv.

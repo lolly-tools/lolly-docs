@@ -18,7 +18,7 @@ Lolly произвежда голям обем съдържание. Подхо�
 
 ### Какво са функционалните флагове?
 
-![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&dark=1&filename=pd-feature-flags&sweep=1)
+![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&dark=1&filename=pd-feature-flags)
 
 Функционалните флагове включват или изключват части от Lolly. Обикновено те се управляват от администратор — при Lolly контролът е в твои ръце.
 
@@ -78,7 +78,7 @@ Lolly издига всичко на по-високо ниво.
 
 ## С какво помощните програми (utilities) се различават от инструментите?
 
-![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1&sweep=1)
+![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1)
 
 **Кратък отговор →** Помощните програми невинаги имат нужда от рендериране и затова могат да получат различен UX.
 
@@ -102,7 +102,7 @@ Lolly издига всичко на по-високо ниво.
 
 ## Може ли Lolly да редактира и рендерира моите файлове от Figma, Penpot, Illustrator или InDesign?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio&sweep=1)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio)
 
 Да. Отвори **Layout Studio** и кликни **Import a design**: приема нативен Figma **.fig** (Save local copy), Penpot **.penpot** експорт, Illustrator **.ai** или **.pdf**, InDesign **.idml** (File → Export → InDesign Markup) или **какъвто и да е SVG** (широката врата — почти всяко дизайн приложение го експортира). Всичко се обработва изцяло на твоето устройство, без нужда от акаунт или плъгин.
 

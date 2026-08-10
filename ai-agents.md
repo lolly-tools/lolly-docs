@@ -12,7 +12,7 @@ https://<host>/#/tool/<tool-id>?<input>=<value>&<input>=<value>
 
 Open it and the tool renders with those inputs applied. Add reserved params to control output and trigger a download. Same inputs → same output, always - so results are reproducible, auditable, and version-controllable.
 
-![What /#/tool/qr-code?url=https://suse.com renders - the bare canvas, no chrome, straight from the parameters in the link](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26full&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&walker=1&filename=auth-url-render&try=1&sweep=1)
+![What /#/tool/qr-code?url=https://suse.com renders - the bare canvas, no chrome, straight from the parameters in the link](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26full&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&walker=1&filename=auth-url-render&try=1)
 
 ```
 Use Lolly to generate the conference badge:

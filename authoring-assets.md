@@ -4,7 +4,7 @@ Assets are global, versioned, brand-controlled resources tools draw from. Logos 
 
 Those types are what the Catalogue's filter row is built from, and it only offers the buckets the library actually holds, so a catalogue of audio and tokens shows fewer pills than a catalogue of logos and photos.
 
-![The Catalogue toolbar - type filter pills on the left and a live asset count beside them, the file-type enum surfaced as a control](/t/url-shot?url=%2F%23%2Fc&width=1440&height=900&dpi=192&waitMs=2000&format=svg&walker=1&cropSelector=.cat-toolbar&dark=1&filename=at2-catalogue-typefilters&sweep=1)
+![The Catalogue toolbar - type filter pills on the left and a live asset count beside them, the file-type enum surfaced as a control](/t/url-shot?url=%2F%23%2Fc&width=1440&height=900&dpi=192&waitMs=2000&format=svg&walker=1&cropSelector=.cat-toolbar&dark=1&filename=at2-catalogue-typefilters)
 
 ## Anatomy
 

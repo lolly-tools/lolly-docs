@@ -8,10 +8,6 @@ not get merged into one sentence: the favourites LIST lives on the user
 profile (IndexedDB, part of a profile export); the Gallery/Cover Flow DISPLAY
 MODE lives in a bare localStorage key that isn't even in PREF_KEYS, so it
 never rides along in a profile export either.
-
-No `sweep=1` on either recipe, deliberately - the drawing-in budget is
-MAX_SWEEPS_PER_PAGE = 4 per page (docs/build.ts) and neither shot here is the
-kind that earns one.
 -->
 
 # Your favourites

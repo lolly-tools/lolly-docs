@@ -10,7 +10,7 @@ Lolly 是一个与平台无关的**引擎**，在多个**壳层**（web PWA、Ta
 
 ## 理解架构
 
-![One shared primitive from the shell's component library, rendered live from its own specimen - the button base and its fills, beside the file that defines them](/t/url-shot?url=%2F%23%2Fcomponents&width=1200&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23cl-primitives%20.cl-card&dark=1&filename=aud-primitive-card&sweep=1)
+![One shared primitive from the shell's component library, rendered live from its own specimen - the button base and its fills, beside the file that defines them](/t/url-shot?url=%2F%23%2Fcomponents&width=1200&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23cl-primitives%20.cl-card&dark=1&filename=aud-primitive-card)
 
 
 - **[概览](/info/overview.html)** — Lolly 存在的原因、引擎/壳层/工具的分离方式、能力桥接（capability bridge），以及已经确定下来的架构承诺。

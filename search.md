@@ -34,7 +34,7 @@ whole app rather than a different box on every screen, and it follows you: it
 shows on the Tools gallery, Utilities, the Catalogue, Projects, the Dashboard
 and Profile.
 
-![the persistent search bar at rest: Pro and Dashboard on the left, the search field with its magnifier icon and a Ctrl-Space hint chip, Verify and What? on the right](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&cropSelector=.gallery-footer&dark=1&filename=srch-footer-closed&sweep=1)
+![the persistent search bar at rest: Pro and Dashboard on the left, the search field with its magnifier icon and a Ctrl-Space hint chip, Verify and What? on the right](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&cropSelector=.gallery-footer&dark=1&filename=srch-footer-closed)
 
 It doesn't show everywhere. Once you're inside a tool's own canvas, Batch
 mode, Verify, Convert, the spreadsheet, the Colour Lab, the PDF tool,
@@ -97,7 +97,7 @@ The panel itself floats centred over the whole window, not tucked under the
 field, so it reads as one thing with the bar beneath it rather than a
 dropdown off one corner.
 
-![the search panel open above the bar, with results grouped by kind for a typed query, the tools grid behind it already filtered to match](/t/url-shot?url=%2F%23%2F&width=1440&height=820&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&drive=press%3Ac%7Con%3D.gallery-search%3Bpress%3Ah%3Bpress%3Aa%3Bpress%3Ar%3Bpress%3At%3Bwait%3A900&walker=1&format=svg&dark=1&filename=srch-spotlight-results&sweep=1)
+![the search panel open above the bar, with results grouped by kind for a typed query, the tools grid behind it already filtered to match](/t/url-shot?url=%2F%23%2F&width=1440&height=820&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&drive=press%3Ac%7Con%3D.gallery-search%3Bpress%3Ah%3Bpress%3Aa%3Bpress%3Ar%3Bpress%3At%3Bwait%3A900&walker=1&format=svg&dark=1&filename=srch-spotlight-results)
 
 ## Keyboard
 

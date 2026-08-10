@@ -42,7 +42,7 @@ Lolly nu încearcă să fie Canva sau Figma. Se poziționează acolo unde *regul
 
 Street Map e un exemplu bun pentru acest schimb: tu alegi un oraș și câteva culori, iar cartografia, grosimile străzilor și apa sunt decise pentru tine.
 
-![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-street-map-poster&sweep=1)
+![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-street-map-poster)
 
 Completezi câteva câmpuri, primești resursa finită - fără fonturi de ales, fără culori puse la îndoială, fără „e ăsta logo-ul corect?” Instrumentul știe deja. Semnături de email, numărători inverse pentru evenimente, carduri cu citate, ecusoane, hărți stradale - tot ce are nevoie echipa ta într-o marți la ora 16:00, în regim self-service. Și pentru că datele clienților nu părăsesc niciodată dispozitivul, colaborarea nu implică niciun risc de conformitate.
 
