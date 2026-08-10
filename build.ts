@@ -1527,6 +1527,9 @@ const DOC_ICONS: Record<string, string> = {
   // The same magnifier the app's own search field wears (shells/web/src/lib/icons.ts,
   // MAGNIFIER) — one glyph for the feature in the product and on the page about it.
   search:     `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>`,
+  // Home — the footer sitemap's `index` row. The one destination no sidebar lists
+  // (the landing page has no rail), so it exists for the footer alone.
+  home:       `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5"/><path d="M10 21v-6h4v6"/></svg>`,
   eyeoff:     '', // aliased below
   sliders: '', lock: '', layers: '', globe: '', people: '', shieldcheck: '', check: '', code: '',
   download: '', database: '', server: '', monitor: '',
@@ -3413,8 +3416,17 @@ footer .founded-badge{margin-top:.5rem}
 .footer-sitemap{display:grid;grid-template-columns:repeat(2,1fr);align-items:start;gap:1.25rem 1.5rem;max-width:1180px;margin:0 auto 1.75rem;padding-bottom:1.75rem;border-bottom:1px solid var(--border);text-align:start}
 @media(min-width:34rem){.footer-sitemap{grid-template-columns:repeat(3,1fr)}}
 @media(min-width:64rem){.footer-sitemap{grid-template-columns:repeat(5,1fr)}}
-.footer-sitemap a{display:block;color:var(--muted);text-decoration:none;padding:.15rem 0;line-height:1.45}
+.footer-sitemap a{display:flex;align-items:flex-start;gap:.45em;color:var(--muted);text-decoration:none;padding:.15rem 0 .15rem;line-height:2}
 .footer-sitemap a:hover{color:var(--green);text-decoration:underline}
+/* Every sitemap link opens with the SAME glyph the docs sidebar gives that page
+   (SIDEBAR_ICON — one page→icon mapping, both navs), so the landmark a reader
+   learned on the rail keeps working down here. Decorative: aria-hidden spans,
+   sized in em to the footer's own text so rows and the smaller uppercase headings
+   each get a matching icon from one rule. margin-top holds the 1.5em glyph on the
+   FIRST line of the 2-line-height row when a label wraps. */
+.footer-sitemap .sitemap-ic{flex:none;width:1.5em;height:1.5em;margin-top:.22em;opacity:.6;color:var(--green)}
+.footer-sitemap .sitemap-ic svg{width:100%;height:100%;display:block}
+.footer-sitemap a:hover .sitemap-ic{opacity:1}
 /* The column heading is a LINK to its pathway's main page. That is what pays for
    the full enumeration: the overview never costs a row of its own, and the two or
    three columns a long pathway is split across all point their heading at the same
@@ -3425,6 +3437,7 @@ footer .founded-badge{margin-top:.5rem}
 .sitemap-title{font-size:.6875rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text);font-weight:700;margin-bottom:.5rem;text-decoration:none}
 .footer-sitemap a.sitemap-title{color:var(--text)}
 .footer-sitemap a.sitemap-title:hover{color:var(--green);text-decoration:underline}
+.sitemap-title .sitemap-ic{ width:2em; height:2em; color:var(--text);}
 
 /* Hamburger */
 .nav-hamburger{display:none;background:none;border:none;cursor:pointer;color:rgba(255,255,255,.65);width:2.25rem;height:2.25rem;align-items:center;justify-content:center;border-radius:5px;padding:.3rem;flex-shrink:0}
@@ -4673,12 +4686,20 @@ function sitemapLabel(slug: string, hub: Pathway): string {
 }
 
 function footerSitemap(lang: Lang): string {
+  // Each link opens with the SAME glyph the docs sidebar gives that page —
+  // SIDEBAR_ICON is the one page→icon mapping, shared, so the footer and the rail
+  // can never disagree about what a destination looks like (headings included:
+  // they link to the pathway hubs, which are sidebar pages too). Decorative here —
+  // the label is the link — so aria-hidden, sized by the stylesheet's .sitemap-ic
+  // rule to the footer's own text scale. A missing entry throws at build (the
+  // guard beside SIDEBAR_ICON), never renders blank.
+  const ic = (slug: string) => `<span class="sitemap-ic" aria-hidden="true">${docIcon(SIDEBAR_ICON[slug]!)}</span>`;
   const cols = FOOTER_SECTIONS.map(sec => {
     const links = sec.slugs
-      .map(s => `<a href="${localeHref(lang, s)}">${esc(t(sitemapLabel(s, sec.hub)))}</a>`)
+      .map(s => `<a href="${localeHref(lang, s)}">${ic(s)}<span>${esc(t(sitemapLabel(s, sec.hub)))}</span></a>`)
       .join('');
     return `<div class="sitemap-col">`
-      + `<a class="sitemap-title" href="${localeHref(lang, PATHWAY_HUB[sec.hub])}">${esc(t(sec.label))}</a>`
+      + `<a class="sitemap-title" href="${localeHref(lang, PATHWAY_HUB[sec.hub])}">${ic(PATHWAY_HUB[sec.hub])}<span>${esc(t(sec.label))}</span></a>`
       + `${links}</div>`;
   }).join('');
   // A <div role="navigation">, NOT a <nav>: the stylesheet styles the bare `nav`
@@ -4700,9 +4721,13 @@ const FOOTER = (lang: Lang) => `<footer>${footerSitemap(lang)}<p>Lolly - <a href
 // find a page — the recognition is instant where reading the label is not. That
 // makes it part of the inclusive-design commitment in docs/inclusive-design.md,
 // not styling; keep the mapping meaningful (what the page is ABOUT) rather than
-// picking whatever glyph is unused.
+// picking whatever glyph is unused. The footer sitemap renders this SAME mapping
+// (footerSitemap above), so a destination wears one landmark everywhere it is
+// listed — which is why `index` lives here despite no sidebar listing it: it is
+// the footer's Home row.
 const SIDEBAR_ICON: Record<string, string> = {
-  // Hubs & entry points
+  // Hubs & entry points (`index` is footer-only — the landing page has no rail)
+  index: 'home',
   quickstart: 'star', creators: 'palette', builders: 'wrench', operators: 'checklist', trust: 'shieldcheck',
   'status-quo': 'convert', 'input-not-impersonation': 'usercheck',
   // Creators
@@ -4728,6 +4753,18 @@ const SIDEBAR_ICON: Record<string, string> = {
   // Trust — your data
   privacy: 'eyeoff', 'data-transfer': 'convert', 'inclusive-design': 'people',
 };
+
+// The footer sitemap reuses the mapping above, so its completeness is enforced the
+// same way FOOTER_SECTIONS' own enumeration is — at build, loudly. Without this,
+// a footer slug with no entry degrades to docIcon()'s console.warn and an empty
+// string: a blank where a landmark should be, invisible in a log nobody reads.
+// (Lives here rather than in the FOOTER_SECTIONS guard because SIDEBAR_ICON is
+// declared after that block runs.)
+{
+  const bare = [...new Set([...Object.values(PATHWAY_HUB), ...FOOTER_SECTIONS.flatMap(s => s.slugs)])]
+    .filter(s => !SIDEBAR_ICON[s]);
+  if (bare.length) throw new Error(`SIDEBAR_ICON is missing footer sitemap entries for ${bare.join(', ')} - every footer link carries the page's sidebar glyph`);
+}
 
 /**
  * One rail link. Shared by the desktop sidebar and the hamburger panel's page-nav

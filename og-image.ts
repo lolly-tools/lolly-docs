@@ -187,7 +187,10 @@ export function loadBrandChrome(repoRoot: string): BrandChrome {
   // C2PA- + RDF-signed vector) — the SAME file the app icons + og.png derive from, so the
   // card mark can't drift from the app icon. Embedded as an SVG data-URI and rasterised
   // through the Chromium card path (which paints its mix-blend-mode + filters correctly,
-  // unlike resvg/librsvg), exactly like brandLogo() above.
+  // unlike resvg/librsvg), exactly like brandLogo() above. The source's `<style>` block
+  // (shutter-blade spin + hue drift) is stripped from the EMBEDDED STRING only — derived
+  // cards are static by decision (2026-08-10), and a screenshot of the animated mark
+  // would capture a nondeterministic, hue-shifted frame. The signed file is untouched.
   const markFile = resolve(repoRoot, 'icon.svg');
   return {
     field, accent, ink,
@@ -195,9 +198,24 @@ export function loadBrandChrome(repoRoot: string): BrandChrome {
     footer: mixHex(ink, field, 0.58),
     logo: brandLogo(repoRoot, assets),
     mark: existsSync(markFile)
-      ? `data:image/svg+xml,${encodeURIComponent(readFileSync(markFile, 'utf8'))}`
+      ? `data:image/svg+xml,${encodeURIComponent(stripSvgAnimation(readFileSync(markFile, 'utf8')))}`
       : null,
   };
+}
+
+/**
+ * Remove CSS `<style>` animation blocks (and any SMIL animation elements) from an SVG
+ * string. Nested <style> blocks drain via the loop; the orphan close tag a nested block
+ * leaves behind is dropped too, so the result stays valid standalone SVG/XML for a
+ * data-URI `<image>` href (an XML parser would reject a stray `</style>`).
+ */
+function stripSvgAnimation(svg: string): string {
+  let out = svg;
+  while (/<style\b/.test(out)) out = out.replace(/<style\b[^>]*>[\s\S]*?<\/style>/, '');
+  return out
+    .replace(/<\/style>/g, '')
+    .replace(/<(animate|animateTransform|animateMotion|set)\b[^>]*\/>/g, '')
+    .replace(/<(animate|animateTransform|animateMotion|set)\b[\s\S]*?<\/\1>/g, '');
 }
 
 /** The Lolly lollipop + wordmark lockup, top-left of every card. */
