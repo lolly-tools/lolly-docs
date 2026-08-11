@@ -4,7 +4,7 @@ Lolly was built in the middle of the biggest change in how media gets made since
 
 > "We're drinking like the tap will run dry any moment. It won't - today's AI is the worst it will ever be. If we survive the flood, it won't be by hoarding what's in the rusty water tank down the hill, full of sediment. It will be by irrigating and reclaiming ***our*** land for a prosperous future."
 >
-> - Andy Fitzsimon, Architect of Lolly
+> - Andy Fitzsimon, Lolly Contributor
 
 ![A supercell storm breaking over an outback homestead - the tank and sheds below, floodwater already cutting channels through the dry paddock](/info/the-flood.webp)
 

@@ -2357,7 +2357,7 @@ nav:not(.quicknav) a.active:not(.nav-launch){color:#fff}
 /* Top-nav clusters: tight within a group, a thin divider between groups. */
 nav .nav-group{display:inline-flex;align-items:center;gap:.0625rem}
 nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1px solid rgba(255,255,255,.18)}
-.nav-launch{background:var(--green);color:var(--dark)!important;padding:.375rem 1rem;border-radius:6px;font-weight:700;font-size:.875rem;white-space:nowrap;margin-left:.5rem;transition:background .15s}
+.nav-launch{background:var(--green);color:var(--dark)!important;padding:.375rem 1rem;border-radius:1.5em;font-weight:700;font-size:.875rem;white-space:nowrap;margin-left:.5rem;transition:background .15s}
 .nav-launch:hover{background:var(--light);text-decoration:none!important}
 
 /* Language FAB menu - popup language selector matching the app UX */
