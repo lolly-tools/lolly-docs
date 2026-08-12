@@ -1,4 +1,5 @@
 {
+  "statement": "Content Sovereignty",
   "pilotTag": "Prototype",
   "pilotText": "Closed pilot in progress · hardening for enterprise scale",
   "pilotAriaLabel": "Lolly is an internal prototype in a closed pilot, hardening for enterprise scale",
@@ -18,7 +19,6 @@
     "100% Free",
     "No Cookies",
     "No Sign-up",
-    "Works offline",
     "Open Source",
     "Privacy First"
   ],

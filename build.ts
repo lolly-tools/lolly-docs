@@ -329,8 +329,9 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
     title: 'Trust',
     groups: [
       { label: 'Trust', items: [
-        { slug: 'trust',      label: 'Overview' },
-        { slug: 'status-quo', label: 'Why this differs' } ] },
+        { slug: 'trust',            label: 'Overview' },
+        { slug: 'status-quo',       label: 'Why this differs' },
+        { slug: 'inclusive-design', label: 'Inclusive Design' } ] },
       { label: 'Where content comes from', items: [
         { slug: 'input-not-impersonation',         label: 'Input, not impersonation' },
         { slug: 'content-credentials-identity',    label: 'Content Credentials' },
@@ -344,10 +345,9 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
         { slug: 'threat-model',    label: 'Threat Model' },
         { slug: 'parser-inventory', label: 'Parser Inventory' },
         { slug: 'server-surface',  label: 'Server Surface' } ] },
-      { label: 'Your data, and who it is for', items: [
+      { label: 'Your data', items: [
         { slug: 'privacy',          label: 'Privacy Policy' },
-        { slug: 'data-transfer',    label: 'Data Transfer' },
-        { slug: 'inclusive-design', label: 'Inclusive Design' } ] },
+        { slug: 'data-transfer',    label: 'Data Transfer' } ] },
     ],
   },
 };
@@ -1692,10 +1692,10 @@ function docLogoBlock(keys: string[]): string {
  * bottom-right diagonal edge (50% + 35.4%) is the one place a badge sits ON the
  * artwork rather than in the empty corner of its box. It is a real <a> with its own
  * accessible name — NOT nested inside the logo's link, which would be invalid and
- * would leave the badge unreachable by keyboard, and not inside the <h1> either: a
- * heading's name is the text it contains, so a badge in there would make the page's
- * h1 read as "Open Lolly - browse all tools Verify this logo's credentials". It is a
- * sibling of the h1 inside .hero-logo-slot, which is the positioned box for both.
+ * would leave the badge unreachable by keyboard: a link's name is the text it
+ * contains, so a badge in there would make the logo link read as "Open Lolly -
+ * browse all tools Verify this logo's credentials". It is a sibling of the logo mark
+ * inside .hero-logo-slot, which is the positioned box for both.
  */
 const HERO_VERIFY = (lang: Lang) => {
   const href = `${localizeHref(lang, '/')}#/verify?src=${encodeURIComponent('/info/icon.svg')}`;
@@ -2223,6 +2223,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
 </section>`;
 
   const heroChrome = loadSiteJson('hero-chrome.json', lang) as {
+    statement: string;
     pilotTag: string; pilotText: string; pilotAriaLabel: string;
     ctas: { href: string; label: string; class: string }[];
     trustChips: string[]; toolCountSuffix: string;
@@ -2252,9 +2253,10 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
 <section class="hero">
   <div class="hero-inner">
   <div class="hero-heading">
-    <div class="hero-logo-slot"><h1 class="hero-logo-h1"><a href="${esc(localizeHref(lang, '/'))}" class="hero-logo-link" aria-label="Open Lolly - browse all tools"><img src="/info/icon.svg" alt="Lolly" class="hero-logo"></a></h1>${HERO_VERIFY(lang)}</div>
+    <div class="hero-logo-slot"><div class="hero-logo-mark"><a href="${esc(localizeHref(lang, '/'))}" class="hero-logo-link" aria-label="Open Lolly - browse all tools"><img src="/info/icon.svg" alt="Lolly" class="hero-logo"></a></div>${HERO_VERIFY(lang)}</div>
   </div>
   <div class="hero-details">
+    <h1 class="hero-statement">${esc(heroChrome.statement)}</h1>
     <span class="hero-pilot" aria-label="${esc(heroChrome.pilotAriaLabel)}"><span class="hero-pilot-tag">${esc(heroChrome.pilotTag)}</span><span class="hero-pilot-text">${esc(heroChrome.pilotText)}</span></span>
     <p class="subtitle">${heroSubtitle}</p>
     <div class="hero-cta">
@@ -2547,20 +2549,28 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 90% 55% at 50% -5%,rgba(48,186,120,.13) 0%,transparent 65%);pointer-events:none}
 #heroCanvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;mix-blend-mode:color-dodge;opacity:.6}
 .hero h1{font-size:clamp(2.75rem,6vw,5rem);letter-spacing:-.04em;line-height:1.05;margin-bottom:1.5rem;color:#fff;position:relative;padding-left:.3em;font-weight:200}
+/* The hero's headline statement - the page's single h1, above the pilot pill in the
+   details column. Displayed in SUSE Mono, uppercased in CSS ONLY: the DOM text stays
+   title case, so screen readers read it naturally and the non-Latin locales (whose
+   scripts neither SUSE Mono nor text-transform:uppercase touch) fall back cleanly to a
+   system face in normal case. The generic .hero h1 rule above still supplies its
+   responsive text-align (start on desktop, centre on mobile), so this qualified rule
+   (0,2,0) only sets the display treatment (and clears that rule's padding-left, written
+   for the old logo h1). break-word + hyphens keep a long single-word translation (e.g.
+   German Inhaltssouveränität) inside its column. */
+.hero .hero-statement{font-family:'SUSE Mono','SF Mono','Fira Code',monospace;text-transform:uppercase;font-size:clamp(2.5rem,7vw,5.25rem);font-weight:300;letter-spacing:-.025em;line-height:1.03;padding-left:0;margin:0 0 1.5rem;color:#fff;text-wrap:balance;overflow-wrap:break-word;hyphens:auto}
 /* Radius + shadow live on the img itself - on the link they trace its layout box,
    which sits a hair off the rendered image edge and shows as a seam. */
 /* The slot exists so the verify badge can position against the LOGO rather than
    against the full-width heading - without it a percentage offset resolves against
    the whole line and the badge lands out at the viewport edge. It carries the width
-   the link used to own (the link now fills it) and the heading's bottom margin,
-   since it is the outer box now: the badge is a SIBLING of the <h1>, not a child, so
-   that "Verify this logo's credentials" is not read out as part of the page's h1.
-   The reset below is qualified with .hero (0,2,0) deliberately - the display-heading
-   rule .hero h1 is (0,1,1) and out-specifies a bare class, so an
-   unqualified reset loses and the logo inherits padding-left:.3em, riding visibly
-   off-centre inside its own slot. */
+   the link used to own (the link now fills it). The logo is no longer the page's h1
+   (that is the hero statement above now), so it is a plain mark; the badge stays a
+   SIBLING of the logo link, not inside it, so "Verify this logo's credentials" is not
+   folded into the logo link's accessible name. The reset just clears default box
+   metrics on the mark. */
 .hero-logo-slot{position:relative;width:clamp(180px,32vw,340px);margin:0 auto 1.5rem}
-.hero .hero-logo-h1{margin:0;padding:0;line-height:0;position:relative}
+.hero .hero-logo-mark{margin:0;padding:0;line-height:0;position:relative}
 .hero-logo-link{display:block;width:100%;border-radius:50%;cursor:pointer;transition:transform .2s ease}
 .hero-logo-link:hover,.hero-logo-link:focus-visible{transform:translateY(-3px) scale(1.02);outline:none}
 .hero-logo-link:hover .hero-logo,.hero-logo-link:focus-visible .hero-logo{box-shadow:0 0.9em 1.6em #0006,0 .15em .3em #0004}
@@ -2571,7 +2581,7 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
    the slot meets that diagonal at 50%+35.4%), small enough that the mark is still the
    thing you see - the badge is an offer, not a second logo. Its own hit area is 44px
    at the smallest hero size, and it never grows past the point where it would read as
-   part of the artwork. line-height on .hero-logo-h1 is 0, hence the explicit box. */
+   part of the artwork. line-height on .hero-logo-mark is 0, hence the explicit box. */
 .hero-verify{position:absolute;left:82%;top:82%;transform:translate(-50%,-50%);
   display:flex;align-items:center;justify-content:center;
   width:clamp(2.75rem,6vw,3.25rem);height:clamp(2.75rem,6vw,3.25rem);
@@ -2584,7 +2594,7 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
   box-shadow:0 .35em .8em #0006,0 0 0 .22em rgba(255,255,255,.75);outline:none}
 @media(prefers-reduced-motion:reduce){.hero-verify{transition:none}
   .hero-verify:hover,.hero-verify:focus-visible{transform:translate(-50%,-50%)}}
-.hero .subtitle{font-size:clamp(.9375rem,1.8vw,1.125rem);max-width:560px;margin:0 auto 2.75rem;color:rgba(255,255,255,.8);line-height:1.85;position:relative}
+.hero .subtitle{font-size:clamp(.9375rem,1.8vw,1.125rem);max-width:560px;margin:0 auto 2.75rem;color:rgba(255,255,255,.5);font-weight:200;line-height:1.85;position:relative}
 .hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;margin-bottom:2.5rem}
 .hero-trust{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.5rem;position:relative}
 .hero-trust span{font-size:.8rem;line-height:1;color:rgba(255,255,255,.5);letter-spacing:.02em}
@@ -3156,6 +3166,13 @@ html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
    (z-index 3) or the melt gradient would fade the one line on the band that must stay
    legible; pointer-events are restored by .shot-cred-btn/.shot-cred-line themselves. */
 .docs-masthead--art .shot-cred--mast{inset-block-end:.8rem;inset-inline-end:1.2rem;z-index:3}
+/* A banked masthead carries a full claim — signer, file, kind, date, an AI pill and its
+   model, plus all three actions — which is far more than the one short row .shot-cred-row's
+   nowrap was written for, so on the mast the line overflows its padded card and the facts
+   row lands adrift. Same fix the asset/mascot/figure marks use: give the card room and let
+   the row WRAP into a compact stack inside it, right-aligned to the anchored corner. */
+.docs-masthead--art .shot-cred--mast .shot-cred-line{max-width:min(30rem,calc(100vw - 3rem))}
+.docs-masthead--art .shot-cred--mast .shot-cred-row{flex-wrap:wrap}
 /* ── Figures (::: figure — a banked artifact in the text flow) ────────────────
    Content, not decoration: it sits in the column with the prose that argues with it,
    and its caption is a real caption (the showcase's, which this deliberately matches —
@@ -3882,7 +3899,7 @@ footer .founded-badge{margin-top:.5rem}
 .doc-video video{width:100%;height:auto;display:block;border-radius:10px;background:#0d1f17}
 .dark .docs-content pre code{background:none;color:inherit}
 /* ── Pilot / prototype disclaimer badge (in the dark hero) ─────────────────── */
-.hero-pilot{display:inline-flex;align-items:center;gap:.5rem;margin-bottom:1.1rem;padding:.34rem .36rem .34rem .55rem;background:rgba(254,124,63,.17);border-radius:999px;text-decoration:none;font-size:.8125rem;color:#ffd9c4;transition:background .15s}
+.hero-pilot{display:inline-flex;align-items:center;gap:.5rem;margin-bottom:3rem;padding:.34rem .36rem .34rem .55rem;background:rgba(254,124,63,.17);border-radius:999px;text-decoration:none;font-size:.8125rem;color:#ffd9c4;transition:background .15s}
 .hero-pilot:hover{background:rgba(254,124,63,.26)}
 .hero-pilot-tag{background:var(--orange);color:#2a0f04;font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:.66rem;padding:.22em .62em;border-radius:999px}
 .hero-pilot-text{padding-right:.35rem}

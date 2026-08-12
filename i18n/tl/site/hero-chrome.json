@@ -1,4 +1,5 @@
 {
+  "statement": "Soberanya ng nilalaman",
   "pilotTag": "Prototype",
   "pilotText": "Isinasagawa ang closed pilot · pinapatatag para sa enterprise scale",
   "pilotAriaLabel": "Si Lolly ay isang internal prototype sa closed pilot, pinapatatag para sa enterprise scale",
@@ -18,7 +19,6 @@
     "100% Libre",
     "Walang Cookies",
     "Walang Sign-up",
-    "Gumagana Offline",
     "Open Source",
     "Privacy Muna"
   ],

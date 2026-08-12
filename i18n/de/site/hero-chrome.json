@@ -1,4 +1,5 @@
 {
+  "statement": "Inhaltssouveränität",
   "pilotTag": "Prototyp",
   "pilotText": "Pilotbetrieb mit ausgewählten Kunden. Optimierung und Skalierung.",
   "pilotAriaLabel": "Lolly ist ein interner Prototyp im Pilotbetrieb mit ausgewählten Kunden und wird laufend optimiert und skaliert",
@@ -18,7 +19,6 @@
     "100 % kostenlos",
     "Keine Cookies",
     "Keine Registrierung",
-    "Funktioniert offline",
     "Open Source",
     "Datenschutz zuerst"
   ],

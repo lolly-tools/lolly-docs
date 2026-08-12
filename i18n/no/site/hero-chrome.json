@@ -1,4 +1,5 @@
 {
+  "statement": "Innholdssuverenitet",
   "pilotTag": "Prototype",
   "pilotText": "Lukket pilot pågår · herdes for virksomhetsskala",
   "pilotAriaLabel": "Lolly er en intern prototype i en lukket pilot, som herdes for virksomhetsskala",
@@ -18,7 +19,6 @@
     "100 % gratis",
     "Ingen infokapsler",
     "Ingen registrering",
-    "Fungerer offline",
     "Åpen kildekode",
     "Personvern først"
   ],
