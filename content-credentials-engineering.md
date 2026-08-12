@@ -27,15 +27,32 @@ threat model, and the roadmap.
 └────────────────────────────────────────────────┘   └────────────────────────┘
 ```
 
-**Deliberately NOT a bridge capability.** Tools never touch identity -
-enrollment is app-level (profile UI) and the signer is consumed inside the
-shell's own export implementation. `HostV1` is unchanged; no tool can observe
-or depend on enrollment. The engine additions are ordinary options
-(`opts.signer`, `opts.trustAnchors`) on existing pure functions.
+**Enrollment is app-level. Signing reached the bridge later, deliberately.**
+No tool can start, observe or inspect enrolment: there is no `host.identity`,
+the profile UI owns the flow, and the ordinary export path consumes the signer
+inside the shell's own export implementation. What *is* on the bridge is
+`host.c2pa.sign` (v1.85, widened v1.104) - optional, additive, and **not** gated
+by a `capabilities` flag, so a tool feature-detects `host.c2pa?.sign`. It exists
+for the case where the tool, not the export pipeline, authors the output file: a
+redaction that must ship as a new work rather than carry the un-redacted
+original as an ingredient, or an authorship claim stamped onto a file the user
+brought in. It routes to the shell's `signFreshC2pa`, which asks
+`host.identity.signer()` first - so **it signs with the enrolled identity when a
+valid certificate is cached**, and falls back to the ephemeral key otherwise.
+Everything stays on-device; nothing is uploaded.
+
+The consequence is worth stating rather than discovering: a hook that calls it
+can put the user's CA-verified identity onto bytes of its own choosing. That is
+the point of the API (the tool *is* the author here), so **tool review is the
+control** - the same control that covers a `{{{x}}}` in a template. Two shipping
+tools use it: `community/redact` and `community/embed-track-image`. The engine
+additions remain ordinary options (`opts.signer`, `opts.trustAnchors`) on
+existing pure functions.
 
 ## Engine contracts
 
-`HostV1` is untouched; nothing here is a bridge capability. The relevant modules:
+`HostV1` grows only by addition, and `host.c2pa` (above) is its one
+identity-adjacent surface. The relevant modules:
 
 ### `engine/src/x509.ts` (DER/X.509 authority)
 
@@ -120,9 +137,9 @@ Report verdict semantics (surfaced by the `/verify` view):
 
 ### CLI
 
-`lolly validate <file> [--json] [--trust-anchor <root.pem>] [--no-default-anchors]` -
+`lolly validate <file> [--json] [--deep] [--trust-anchor <root.pem>] [--no-default-anchors]` -
 same verifier, same report; `--trust-anchor` loads PEM → DER and appends to
-`trustAnchors`. The default anchor set is the **Lolly CA root plus the vendored C2PA
+`trustAnchors`, and `--deep` adds the neural pixel-watermark scan (browser tier). The default anchor set is the **Lolly CA root plus the vendored C2PA
 known-certificate list**, identical to the web `/valid` view and to MCP's `lolly_verify`
 (plans/73-cli-ga-contract.md §12 O1) - so a Lolly-CA-signed export reads the same on every
 surface. `--no-default-anchors` drops both built-in sets for a bare-trust check, and
@@ -246,6 +263,7 @@ A workspace package. Runs three ways from one `handler.mjs`:
 
 | Route | Purpose |
 |---|---|
+| `GET /api/ca/health` | Liveness plus `configured` - which OIDC providers this deployment actually has credentials for. The profile view builds its provider buttons from it, so a deployment with no OIDC app says so instead of offering a button that would 501 |
 | `GET /api/ca/root.pem` | The public Lolly root - for `c2patool --trust_anchors` and humans |
 | `GET /api/ca/auth/:provider?origin=` | Start OIDC (`suse` \| `github` \| `google`); sets HMAC state cookie, redirects to provider |
 | `GET /api/ca/callback/:provider` | Code exchange → verified email → mints a 10-min **enrollment token**; returns a tiny page that `postMessage`s the token to `origin` and closes |
@@ -401,9 +419,14 @@ would 501.
 1. RFC 3161 timestamp countersignature in the same enroll/export round trip
    → the *expired* verdict becomes provable-time trusted.
 2. Public append-only issuance transparency log (Rekor-shaped).
-3. CLI signer support (`--c2pa-cert`/`--c2pa-key`) for CI pipelines.
-4. C2PA conformance program: audited KMS custody → the official trust list →
+3. C2PA conformance program: audited KMS custody → the official trust list →
    green in Adobe Verify et al.
+
+CLI signer support has **shipped**: `--sign-key=<key.pem> --sign-cert=<chain.pem>`,
+with `$LOLLY_SIGN_KEY`/`$LOLLY_SIGN_CERT` (paths),
+`$LOLLY_SIGN_KEY_PEM`/`$LOLLY_SIGN_CERT_PEM` (the PEM text itself, for CI secret
+stores) and `$LOLLY_SIGN_KEY_PASSWORD` for an encrypted key. No flag ever takes
+key material. See [Signing from the terminal](/info/cli-signing.html).
 
 ### SSO - two distinct jobs, one identity provider
 
@@ -412,7 +435,7 @@ Both reuse the same OIDC client, but they answer different questions. Detailed
 implementation plans (local, under `plans/`): **`plans/32-sso-signing.md`** and
 **`plans/33-sso-tool-access.md`** - the summaries below are the roadmap view.
 
-5. **Complete SUSE SSO for *signing*** (deepens the identity in this doc -
+4. **Complete SUSE SSO for *signing*** (deepens the identity in this doc -
    "who signed"; full plan → `plans/32-sso-signing.md`). Today SUSE is one
    enrolment provider among several and each enrolment is a fresh popup. Bring
    it to true SSO:
@@ -429,7 +452,7 @@ implementation plans (local, under `plans/`): **`plans/32-sso-signing.md`** and
      "signed by a SUSE employee," not just an email - gated on the realm
      releasing those claims. Feeds the CreativeWork author assertion.
 
-6. **SSO for *tool access*** (a NEW authorization axis - "who may use the
+5. **SSO for *tool access*** (a NEW authorization axis - "who may use the
    app," separate from signing; full plan → `plans/33-sso-tool-access.md`). Gate
    who can open the app, specific tools, or gated features behind SUSE SSO:
    - **Shell-level auth guard, never the engine.** The engine stays

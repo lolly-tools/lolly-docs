@@ -116,7 +116,7 @@ Naming the format explicitly is how you opt out, because then you have said whic
 | `--share`, `--link` | Print a shareable `lolly.tools` link for these inputs instead of rendering anything. |
 | `--z=<token>` | Expand a packed link token into the inputs it encodes. |
 | `--zx=<token>`, `--link-password=<pw>` | A password-protected share link's state, and its password. A missing or wrong password is an error (exit 6), never a silent render of the tool's defaults. |
-| `--<blocksId>-data=<rows.csv>` | Import a CSV/JSON file into a `blocks` input (the ingest counterpart of CSV export). |
+| `--<inputId>-data=<file>` | Fill an input from a file: CSV/TSV/JSON/Markdown or `.xlsx`. Works on `blocks` (rows into the repeating group), `table` (first row = headings), and `text`/`longtext` (the file's content lands in the field). The ingest counterpart of CSV export. Add `--<inputId>-sheet=<name\|index>` to pick a sheet from a multi-sheet workbook; without it the first is read, and the CLI says so. |
 | `--verify` | For an on-device utility, print one line per file saying its export checks ran and none failed. A failed check writes nothing and exits `1` (`FAILED`) - the gate lives in the tool's own hook, which throws like any other failure, so this shell does not claim to tell it apart from one. |
 | `--<inputId>=<value>` | Any tool input (see the tool's schema). |
 | `--<flag>` | A bare flag (no `=`) is truthy - handy for boolean inputs. |
@@ -131,7 +131,7 @@ npm run cli -- quotes --quote="Ship it." --width=210 --height=297 --unit=mm --ex
 
 ## What the CLI can render
 
-The CLI renders in a headless DOM (jsdom), so **vector and structured** formats - **SVG, EMF, EPS (and EPS-CMYK), DXF, HTML, plus the data formats JSON, CSV, ICS, VCF, MD** (the engine hydrates those payloads) - work natively and reproducibly, no browser needed. EMF, EPS and DXF are emitted straight from the template's vector primitives (no rasteriser), and the CLI carries the **same HarfBuzz text-shaping as the web shell** (`host.text`), so live `<text>` runs are outlined to true vector paths at export - those formats ship real text with no fonts needed on the receiving end, and font-driven tools (a wordmark lockup built on `host.text`, say) render headlessly too. Shaping resolves sfnt fonts (ttf/otf) under the repo root - catalog and tool-local faces; a browser-only woff2 face is rejected with a clear error rather than silently shaping blanks. **PNG** from an `<svg>`-based tool is also browser-free - resvg rasterises the engine's own SVG (Tier A). The remaining raster formats - **JPG, WebP, PDF, and video (GIF/WebM/MP4)**, plus HTML-layout PNG - need a real paint engine, so the CLI drives its **own scoped headless Chromium** (Tier B): install it once with `lolly install-browser` (or `npm run install:browser`) and they export straight from the CLI. **ZIP** is the one format the lean CLI leaves out - no zip dependency - so its batch writes a folder instead. `ico` (favicons) and `txt` are browser-tier formats like the raster set: `txt` is not a data format the engine hydrates, it is the *rendered* page serialised to plain text, which is why it needs the paint tier and not just jsdom. `jpg` and `jpeg` are one format with two spellings and either flag works on either kind of tool - manifests are split between the two, and `--export=` resolves to whichever the tool declared. (Requesting a format a tool doesn't declare prints a clear error listing what it supports - and so does asking for one via the `--output` extension.)
+The CLI renders in a headless DOM (jsdom), so **vector and structured** formats - **SVG (and SVGZ), EMF, WMF, EPS (and EPS-CMYK), DXF, BMP, HTML, plus the data formats JSON, CSV, ICS, VCF, MD** (the engine hydrates those payloads) - work natively and reproducibly, no browser needed. The float formats **EXR** and **HDR** join them, over a resvg-rasterised frame, when a render asks for the headroom (`--hdr=1`). EMF, EPS and DXF are emitted straight from the template's vector primitives (no rasteriser), and the CLI carries the **same HarfBuzz text-shaping as the web shell** (`host.text`), so live `<text>` runs are outlined to true vector paths at export - those formats ship real text with no fonts needed on the receiving end, and font-driven tools (a wordmark lockup built on `host.text`, say) render headlessly too. Shaping resolves sfnt fonts (ttf/otf) under the repo root - catalog and tool-local faces; a browser-only woff2 face is rejected with a clear error rather than silently shaping blanks. **PNG** from an `<svg>`-based tool is also browser-free - resvg rasterises the engine's own SVG (Tier A). The remaining raster formats - **JPG, WebP, PDF, and video (GIF/WebM/MP4)**, plus HTML-layout PNG - need a real paint engine, so the CLI drives its **own scoped headless Chromium** (Tier B): install it once with `lolly install-browser` (or `npm run install:browser`) and they export straight from the CLI. **ZIP** is the one format the lean CLI leaves out - no zip dependency - so its batch writes a folder instead. `ico` (favicons) and `txt` are browser-tier formats like the raster set: `txt` is not a data format the engine hydrates, it is the *rendered* page serialised to plain text, which is why it needs the paint tier and not just jsdom. `jpg` and `jpeg` are one format with two spellings and either flag works on either kind of tool - manifests are split between the two, and `--export=` resolves to whichever the tool declared. (Requesting a format a tool doesn't declare prints a clear error listing what it supports - and so does asking for one via the `--output` extension.)
 
 Which tier is available here is not a guess: `lolly list --json` reports it per tier, with a reason for each one that is missing. See [Discovery, for an agent](#discovery-for-an-agent).
 
@@ -250,12 +250,15 @@ npm run --silent cli -- preflight 'https://lolly.tools/#/tool/qr-code?url=…&fo
 
 That includes `--input.<id>=<value>`: a tool whose own input is called `width` is preflighted exactly as it would render, and a reserved flag that shadows one of the tool's inputs prints the same warning here as it does on `lolly run` (and carries it into the report as `collect.reserved-flag-shadows-input`).
 
-It has two flags of its own:
+It has five flags of its own:
 
 | Flag | Effect |
 |---|---|
 | `--json` | one JSON document on stdout and nothing else |
 | `--strict` | warnings fail the run too (opt-in CI gate) |
+| `--rate-card <file>` | price the job from a local rate-card file, adding the cost block to the report. A path only - rates are never read off a pasted link's query, so a shared URL can never bring money with it |
+| `--run-length <n>` | the quantity the cost is worked out for (a run of n) |
+| `--use-expired-rates` | opt in past a card's `validUntil` - expired rates otherwise suppress the money figures while the counts still show |
 
 There is no `--out`. The report always goes to stdout, so redirect it: `lolly preflight qr-code --json > report.json`.
 
@@ -361,13 +364,15 @@ Every command answers in the same envelope:
   "schemaVersion": 1,
   "command": "validate",
   "ok": true,
-  "engine": "1.92.0",
+  "engine": "1.115.0",
   "cli": "0.1.0",
   "result": { },
   "warnings": [{ "code": "UNKNOWN_FLAG", "message": "…", "kind": "usage" }],
   "error": null
 }
 ```
+
+The two version strings are whatever *this* installation runs, not a fixed pair - read them from the envelope rather than from this page.
 
 The envelope covers the **failure** path too: a missing file, an unknown tool, a crash - stdout still carries a complete document, so `lolly … --json > r.json` never leaves an unparseable file behind. On that path `result` is `null` and `error` is filled in:
 

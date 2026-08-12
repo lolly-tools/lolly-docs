@@ -15,7 +15,7 @@ function onInit({ model, host }) {
 
 - **Additive only.** Methods may be added in a minor version; never removed or signature-changed without a major bump. When v2 ships, v1 keeps working.
 - **No platform-specific methods.** If only one shell can do something, it sits behind a `capabilities` flag in `tool.json` and shells that can't fulfil it expose a stub/error.
-- **Capabilities gate access.** `net` (`network`), `capture` (`capture`), `compose` (`compose`) and `recorder` (`microphone` / `camera` / `screen`) require a matching flag in the manifest's `capabilities`. `tokens`, `text`, `pdf`, `pptx`, `media`, `audio`, `codec`, `speech`, `upscale`, `matte`, `viz`, `color`, `images` and `geom` are optional and present only when the shell provides them (feature-detect, don't flag). Declare what you need.
+- **Capabilities gate access.** `net` (`network`), `capture` (`capture`), `compose` (`compose`) and `recorder` (`microphone` / `camera` / `screen`) require a matching flag in the manifest's `capabilities`. `tokens`, `text`, `pdf`, `pptx`, `media`, `audio`, `codec`, `layers`, `speech`, `upscale`, `matte`, `viz`, `color`, `images`, `raster`, `geom`, `connectors` and `c2pa` are optional and present only when the shell provides them (feature-detect, don't flag). Declare what you need.
 - `host.version` is `'1'`; `host.shell` is one of `web` · `tauri-desktop` · `tauri-mobile` · `cli`.
 
 ## `host.profile`
@@ -74,7 +74,7 @@ The host owns the renderer - tools don't bundle their own.
 | `download(blob, filename)` | `Promise<void>` | Trigger a download (throws on CLI - pipe via `--output` instead) |
 | `file(blob, opts?)` | `Promise<void>` | Deliver a blob the **tool** produced (the transform path: file in → transformed file out), with `opts.filename`. Carries no watermark and no provenance - for on-device utilities whose `exportFile` hook returns the bytes |
 
-`format` is an `ExportFormat` - the render formats are `png · jpg/jpeg · webp · avif · svg · svg-anim · emf · eps · eps-cmyk · dxf · pdf · pdf-cmyk · cmyk-tiff · tiff · pptx · html · ico · zip · webm · mp4 · gif · apng · webp-anim` (availability is per-tool via the manifest, and per-browser for the recorded video formats `webm`/`mp4` - Safari records mp4, Firefox webm; `gif`/`apng`/`webp-anim` are encoded in-engine, `svg-anim` is a self-contained vector flipbook, `dxf` is an AutoCAD cut file, `pptx` decomposes each page into native PowerPoint shapes, `tiff` is a plain RGB raster and `cmyk-tiff` its print sibling, and `ico`/`zip` are icon/bundle outputs). Separately, tools produce the **text/data formats** `md · txt · json · csv · ics · vcf` from the input model (not a DOM render - see [Exporting & Formats](/info/exporting.html)). This is the same 30-value enum the catalog validator enforces in `schemas/tool.schema.json`. *(The `ExportFormat` union in `engine/src/bridge/host-v1.ts` is itself stale - it omits most of the raster/bundle formats - and is being reconciled with the schema. Track the schema, not the type.)*
+`format` is an `ExportFormat` - the render formats are `png · jpg/jpeg · webp · avif · svg · svg-anim · emf · eps · eps-cmyk · dxf · pdf · pdf-cmyk · cmyk-tiff · tiff · pptx · html · ico · zip · webm · mp4 · gif · apng · webp-anim` (availability is per-tool via the manifest, and per-browser for the recorded video formats `webm`/`mp4` - Safari records mp4, Firefox webm; `gif`/`apng`/`webp-anim` are encoded in-engine, `svg-anim` is a self-contained vector flipbook, `dxf` is an AutoCAD cut file, `pptx` decomposes each page into native PowerPoint shapes, `tiff` is a plain RGB raster and `cmyk-tiff` its print sibling, and `ico`/`zip` are icon/bundle outputs). Separately, tools produce the **text/data formats** `md · txt · json · csv · css · scss · gpl · ics · vcf` from the input model (not a DOM render - see [Exporting & Formats](/info/exporting.html)), plus the document (`docx` · `odt`), audio (`wav` · `mp3` · `m4a` · `opus`), float (`exr` · `hdr`) and font (`ttf` · `otf` · `woff`) outputs. The `render.formats` enum in `schemas/tool.schema.json` is the authority on the whole set - the catalog validator enforces it, and [URL Mode](/info/url-mode.html) says what each id produces. *(The `ExportFormat` union in `engine/src/bridge/host-v1.ts` is itself stale - it omits most of the raster/bundle formats - and is being reconciled with the schema. Track the schema, not the type.)*
 
 `ExportOpts`:
 
@@ -90,7 +90,13 @@ The host owns the renderer - tools don't bundle their own.
 | `colorProfile` | ICC handling: `'srgb'` (default raster), `'none'` to skip embedding, or a CMYK press condition for `pdf-cmyk` |
 | `filename` | Suggested output filename |
 | `thumbnail` | Hint that this is a low-fidelity preview, not the deliverable (skips provenance) |
-| `audio` | `{ id?, url }` - optional music bed for `webm`/`mp4`: decoded via Web Audio, muxed into the recording, plays for the clip duration and loops when the clip outlasts the track (web shell; degrades to silent + log warning where unsupported) |
+| `depth` | Requested bits per channel: `8`, `16`, `'float'`, or `'auto'` (the default). A **request, not a promise** - depth follows provenance, so a deep container is never padded over an 8-bit render; an unsupported request degrades to what the source honestly carries |
+| `audio` | `{ id?, url, fadeIn?, fadeOut?, volume?, duck?, start? }` - optional music bed for `webm`/`mp4`: decoded via Web Audio, muxed into the recording, plays for the clip duration and loops when the clip outlasts the track. `fadeIn`/`fadeOut` are seconds of linear gain ramp, `volume` is `0..1`, `duck` is the level the bed drops to while foreground audio plays, and `start` is the bed's in-point in seconds (clamped into the source). Web shell; degrades to silent + log warning where unsupported |
+| `ingredients` | Content Credentials to carry forward from placed source assets, so the export's provenance chain names what it was built from. Opaque to the shell; ignored when the export isn't C2PA-stamped |
+| `c2paInputs` | A compact digest of the tool's scalar inputs (id → short string) that produced this render, recorded under `inputs` in the `tools.lolly.export` assertion |
+| `c2paCapture` | `{ camera?, microphone? }` - set by the runtime when the essence came from a device sensor (a live camera frame, a recorder take), so the created step declares a real-world origin |
+| `c2paTextAdded` | `{ sample? }` - set only when rendered text sits over an *opened* credentialed asset, which is a genuine "Added text" edit step. From-scratch text is content, not an edit, and rides in `c2paInputs` instead |
+| `c2paAiUpscale` | `{ model, version }` - set when the essence is an on-device AI-upscaled asset, so the credential names the model that enlarged it |
 
 See [Exporting & Formats](/info/exporting.html) for the user-facing view, and `engine/src/units.ts` for the unit math.
 
@@ -160,6 +166,31 @@ On-device PowerPoint inspection and surgical rebranding (engine `1.58`; the shel
 
 Feature-detect (`host.pptx?.rebrand`) - an older shell may lack it entirely.
 
+## `host.images` *(image convert - optional, v1.60)*
+
+On-device decode / resize / re-encode: the "HEIC to JPEG, compress to WebP, downscale" shape as a first-class API rather than upload-pipeline plumbing. DOM-free - encoded bytes (or a Blob) in, encoded bytes plus dimensions out - so the shell owns the codec and the engine never sees a canvas or an `<img>`. Not a gated capability; feature-detect `host.images` and degrade where it's absent. Everything runs locally; the bytes are never uploaded.
+
+| Method | Returns | Notes |
+|---|---|---|
+| `decode(input)` | `Promise<ImageInfo>` | Pixel dimensions (EXIF-**oriented**) and a MIME type sniffed from the bytes, never from a filename. Rejects on bytes this shell can't decode |
+| `resize(input, opts)` | `Promise<ImageResult>` | Downscale, aspect preserved - it **never upscales**. `maxEdge` caps the longest edge; explicit `width`/`height` fit within that box |
+| `encode(input, opts)` | `Promise<ImageResult>` | Re-encode at full oriented size. `format` is `webp` · `jpeg` · `png` - deliberately narrower than what it can *read* |
+
+An animated source flattens to its first frame. Read the *result's* `mime`/`width`/`height` rather than assuming the request was honoured - a shell may fall back (PNG where WebP encoding is unsupported).
+
+## `host.raster` *(pixel work in a hook - optional, v1.105)*
+
+The sibling of `host.images` for tools that composite, sample or mutate pixels *themselves* (Bitmap Studio, the `filter-*` family, the logo composers, Redact). Where `images` is the convert path - encoded bytes in, encoded bytes out, no pixel access - this hands back drawable pixels. Not a gated capability; feature-detect `host.raster` (undefined on the headless CLI/jsdom shell, which has no canvas) and degrade to the existing placeholder.
+
+| Method | Returns | Notes |
+|---|---|---|
+| `canRaster()` | `boolean` | Realm-correct, **synchronous** capability probe. The honest replacement for a hand-rolled `typeof document === 'undefined'`, which reports false inside a Worker where rastering works fine |
+| `measure(src)` | `Promise<ImageInfo>` | Oriented dimensions + sniffed MIME, the same shape `images.decode` returns |
+| `decode(src)` | `Promise<ImageBitmap>` | A drawable bitmap - EXIF baked in, HEIC/AVIF via the shell's fallback, SVG via its reliable path, all behind a decode-bomb guard. Valid on a main-thread `<canvas>` **and** a Worker `OffscreenCanvas`, unlike an `<img>`. Call `.close()` when done |
+| `encode(source, opts)` | `Promise<ImageResult>` | Finished pixels to bytes. Takes an `ImageBitmap` (the cheap path - you only composited) or a `RasterFrame` of raw RGBA (you pulled pixels to do your own maths; a live `MediaFrame` passes straight through) |
+
+`src` is a URL (including `blob:`/`data:`), an `AssetRef`, or raw bytes / a Blob. Building and drawing *into* a canvas is deliberately not here - `new OffscreenCanvas(w, h)` is a realm global a hook constructs directly, so an RPC round trip would buy nothing.
+
 ## `host.capture` *(capability: `capture`)*
 
 Rasterise a live URL to an image using a real browser engine. Only shells with an authoritative engine fulfil it (Tauri's webview, a headless-Chromium CLI, or the browser extension) - the plain web PWA cannot read cross-origin pixels, so it exposes a stub that throws.
@@ -185,7 +216,7 @@ Render another tool's output to an embeddable asset - **tool composition** ("nes
 | `render(spec)` | `Promise<AssetRef>` |
 | `renderUrl(url, opts?)` | `Promise<AssetRef \| null>` |
 
-`ComposeSpec`: `{ toolId, inputs, format?, width?, height?, unit?, dpi? }` (`width`/`height` are in `unit` - `px` default, or `mm`/`cm`/`in`/`pt`). Returns an `AssetRef` whose `url` is a `blob:`/`data:` URL, so the embedded render behaves like any other asset: an **SVG** child stays a true vector through the parent's SVG and PDF exports (and rasterises crisply for PNG), while **raster** children (`png`/`jpg`/`webp`) embed as images. SVG is the only format used declaratively today - `event-name-badge` composes `qr-code` as `svg`. The child render is depth- and cycle-guarded and is never watermarked or provenance-stamped (it's an intermediate). Optional: a shell that can't render a child to bytes (e.g. the no-raster CLI for a raster child) just doesn't provide it, and composition degrades gracefully. See [Authoring Tools](/info/authoring-tools.html) for the `composes` manifest shape.
+`ComposeSpec`: `{ toolId, inputs, format?, width?, height?, unit?, dpi?, transient?, settleMs? }` (`width`/`height` are in `unit` - `px` default, or `mm`/`cm`/`in`/`pt`). The last two arrived in **v1.5**: `transient: true` skips the host's render cache entirely for a one-shot bake (a design import turning 30-odd scenes into stored assets), which means the *caller* owns the returned `url` and must release it once the bytes are copied; `settleMs` shortens the post-mount wait before the child is captured, for a child you know carries no images, Lottie or video to decode (advisory - a host may clamp or ignore it). Returns an `AssetRef` whose `url` is a `blob:`/`data:` URL, so the embedded render behaves like any other asset: an **SVG** child stays a true vector through the parent's SVG and PDF exports (and rasterises crisply for PNG), while **raster** children (`png`/`jpg`/`webp`) embed as images. SVG is the only format used declaratively today - `event-name-badge` composes `qr-code` as `svg`. The child render is depth- and cycle-guarded and is never watermarked or provenance-stamped (it's an intermediate). Optional: a shell that can't render a child to bytes (e.g. the no-raster CLI for a raster child) just doesn't provide it, and composition degrades gracefully. See [Authoring Tools](/info/authoring-tools.html) for the `composes` manifest shape.
 
 `renderUrl(url, opts?)` is the **end-user** counterpart to `render` - added in **engine v1.3**, so feature-detect `host.compose?.renderUrl`. When a user pastes a Lolly tool *link* (embed URL, hash share route, or pretty path) into an asset picker, the host parses it manifest-aware - typed inputs coerce exactly as [URL mode](/info/url-mode.html) would - renders that tool, and returns an `AssetRef` whose `id` is the **canonical embed URL** (`https://lolly.tools/tool/<id>.<ext>?…`). That id *is* the asset's persistent identity: it round-trips through URL mode and saved sessions, and the runtime feeds it back here to re-render on load - so a tool-sourced image survives reload and travels inside a shared link, like a library asset id. `ComposeUrlOpts` (`format` · `width` · `height` · `unit` · `dpi`) overrides take precedence over anything parsed from the URL and are folded into the returned id. Like `render`, the child is never watermarked or provenance-stamped. Returns `null` when the URL isn't a recognised tool URL or the tool can't render (the caller leaves the slot empty) - a pasted link can only render a tool that already ships in this build.
 
@@ -267,6 +298,18 @@ The SDR encoders (`png16` and `dither8`) gamma-encode and clamp at their display
 
 This pairs with a tool's **`exportStill`** hook. A tool declares `exportStill` in its manifest `hooks`, and the runtime calls it before `host.export.render` with `{ node, format, opts, host }`. Returning `{ bytes, mime }` short-circuits the export to those bytes (computed in float via `host.codec`). Returning `null` declines and falls through to the normal DOM raster path for that format, so a tool owns only the formats it has real depth for. Like the `exportFile` transform path, tool-supplied bytes carry no watermark and no engine provenance. Bitmap Studio is the reference consumer.
 
+## `host.layers` *(layered bitmap write-back - optional, v1.102)*
+
+Serialise a set of positioned RGBA layers as a layered Photoshop **PSD** - the engine's own writer, so the file opens in Photoshop, GIMP and Krita. One method today. Feature-detect `host.layers?.writePsd`; it runs locally and, like every `export.file` path, the result is never watermarked or provenance-stamped, because it is the user's own file.
+
+| Method | Returns | Notes |
+|---|---|---|
+| `writePsd(doc)` | `Promise<Uint8Array>` | 8-bit RGB PSD. `doc` is `{ width, height, layers }`, layers **bottom to top** |
+
+A `LayerWrite` is `{ name, x, y, width, height, pixels, opacity?, blend?, visible? }` - `pixels` is RGBA8, un-premultiplied sRGB (what a canvas `getImageData` gives), and `width`/`height` must match the buffer. `blend` takes a CSS `mix-blend-mode` value. Async, so a shell may offload the encode; the maths is the engine's, so web and CLI emit identical bytes for identical documents.
+
+The read side is deliberately **not** here: PSD/XCF *import* is a shell ingest flow (drop router → per-layer library assets), not something a running tool does.
+
 ## `host.upscale` *(on-device AI upscaling - optional, v1.101)*
 
 Enlarge a low-resolution raster on the device, with no upload. For the person whose headshot is 400px beside colleagues' 2000px photos, this enlarges it offline. The added pixels are model-inferred, so the output carries a C2PA credential that names the model. The runtime discloses it as the IPTC `compositeWithTrainedAlgorithmicMedia` source type - a real photo, AI-enhanced, never claimed as fully generated. Not a gated capability. Feature-detect `host.upscale` and hide the affordance where it is absent. The headless CLI provides none for now.
@@ -331,6 +374,17 @@ Transcription (v1.99) is the reverse - audio in, text plus word timings out, via
 | `transcribe(src, opts?)` | `Promise<SpeechTranscript>` | Audio in, text plus word timings out |
 
 `src` is an `AudioSource` - the same URL / `AssetRef` / raw-bytes union `host.audio.analyse` takes. A **`SpeechTranscript`** is `{ text, words, lang, granularity }`. `lang` is the BCP 47 tag the model detected or was told, and `granularity` is `'word'` or `'segment'`. The timed spans match the shape synthesis emits, so caption plumbing reads either source unchanged.
+
+## `host.viz` *(MilkDrop visualisation - optional, v1.72)*
+
+Availability and attribution, and deliberately nothing else. A tool is data: it has no element to hand over and no business holding a GL context, so it renders a `[data-lolly-viz]` placeholder carrying its parameters and the **shell** owns the canvas behind it - the same contract `[data-lottie-src]` uses, which is what lets the context and its loaded preset survive the `innerHTML` rebuild every keystroke causes. Not a gated capability: a shell without this, or without WebGL2, means the tool draws its ordinary canvas style, never that it refuses to render.
+
+| Method | Returns | Notes |
+|---|---|---|
+| `isAvailable()` | `boolean` | Synchronous, so a hook can branch on it before deciding what to analyse |
+| `presets()` | `Promise<VizPresetInfo[]>` | Ours first, then the artist pack - empty when that pack isn't staged in this build |
+
+A `VizPresetInfo` is `{ id, name, author, calm }`. `author` is not decoration: twenty years of MilkDrop craft ships alongside our own presets, so credit only a preset the shell **confirms** it has - naming an artist whose work is not on screen is worse than crediting nobody. `calm` marks a preset safe to offer under reduced-motion.
 
 ## `host.color` *(perceptual colour tools - optional, v1.40)*
 
@@ -397,6 +451,30 @@ The currency both ways is an **SVG path-data string** - what already lives in yo
 | `decodeAuthored(value)` | authored paths | Always a list. `invalid-argument` on garbage or a newer format version; `too-large` past `limits().maxNodes` |
 
 `code` on a failure tells you what to do, and the distinctions are deliberate: `'invalid-path'` (malformed `d` - reject it, don't retry), `'too-large'` (well-formed but past the ceilings above), `'limit'` (the answer exists and this engine declines to guess at it past its bounded-work ceiling - retry with simpler operands or a coarser `tolerance`), `'invalid-argument'`, `'unsupported'` (a spline kind this engine knows the name of but cannot lower yet), `'internal'` (a bug - report it). **`ok: true` with `d: ''` is an answer**, not a failure: a non-overlapping intersection and an offset shrunk past its inradius are both legitimately empty. There is no degraded fallback anywhere in the API - you are never handed a plausible-looking wrong path. Path data is parsed defensively (bounded size, command count, curve count and coordinate magnitude, with a grammar that rejects rather than guesses), so a `d` from a paste or a URL param is safe to hand straight in.
+
+## `host.connectors` *(committed connector geometry - optional, v1.106)*
+
+Export-safe connector / line / arrow geometry: the engine's connector module behind a tool-facing surface, attached verbatim by every shell, so web, Tauri and CLI emit identical arrows - a canvas tool's `hooks.js` renders its connectors in one line and a headless `--export` keeps them. Pure and synchronous, like `color` and `geom`. Not a gated capability; feature-detect `host.connectors`.
+
+| Member | Returns | Notes |
+|---|---|---|
+| `build(edges, rectById, opts)` | `string` | The committed connector layer as an export-safe SVG string - every edge routed and decorated, wrapped in a canvas-sized `<svg>`. `rectById` maps a box id to its native rect; a free-point endpoint (`@x,y`) resolves without one |
+| `pathHeadSvg(opts)` *(v1.110)* | `string` | An arrowhead/decoration fragment for **one** path tip, addressed by tip + outward tangent, so a spline, a line and a connector decorate identically. Baked coordinates, no transform, no `<marker>` - it drops into any `<svg>` and survives the vector walkers |
+| `pathHeadInset(head, width)` *(v1.110)* | `number` | How far to pull the shaft back off the head at stroke `width`, so a filled head isn't stabbed through by its own line |
+| `dashFit` *(v1.110)* | `DashFitAPI` | Manual dash entry plus corner-fit dash geometry |
+| `routeStyleForKind(kind, override?, nodeCount?)` *(v1.111)* | `string` | The route a **bound** path is drawn with, from its own spline kind - `line` → straight (an authored polyline of 3+ nodes → elbow), `spiro` → arc, everything else → the smooth curved S. The box's explicit `route` field wins whenever it names one of `routeStyles` |
+| `routeStyles` *(v1.111)* | `string[]` | The thirteen route styles `build` understands, in menu order, so a pack control and the editor offer one list rather than each spelling it out |
+
+Everything below `build` is optional/additive - feature-detect each member, not just the surface.
+
+## `host.c2pa` *(sign finished bytes - optional, v1.85)*
+
+Embed a **freshly signed** C2PA manifest into finished bytes. This is not a general provenance surface: ordinary exports keep going through `host.export`, which owns ingredients, action history and the opt-in gates. This exists for the redacted-derivative path, where carrying the source's manifest forward would re-embed a pixel-accurate thumbnail of the un-redacted original - so the output is signed as a **new work** instead, and the caller says so in the UI. Not a gated capability; feature-detect `host.c2pa?.sign`. Signing runs locally with the enrolled device identity when one is valid, else an ephemeral on-device key; the bytes are never uploaded.
+
+| Method | Returns | Notes |
+|---|---|---|
+| `sign(bytes, format, opts?)` | `Promise<Uint8Array>` | The stamped bytes. `format` is the output format key (`pdf`, `png`, `jpg`, `mp4`, `m4a`, …). Two modes: the default derivative path (no ingredients), and the v1.104 any-media authorship path, which stamps an existing file with the artist's author / copyright / licence and carries manifests already inside it forward as ingredients. **Throws** when the format can't carry a manifest or signing fails - the caller decides whether unsigned bytes may still ship |
+| `readIngredients(bytes)` *(v1.104)* | `Promise<IngredientCredential[]>` | Every manifest a file already carries, packaged ready to pass to `sign({ ingredients })` - the file's own container credential plus element-level credentials nested inside it (today: signed rasters an SVG embeds via `<image href="data:…">`). Read-only and **never throws**: a file with nothing signed resolves to `[]` |
 
 ## `host.log`
 

@@ -10,7 +10,7 @@ A **profile** binds a set of tool packs to a brand catalog. `profiles.json` at t
 {
   "default": "suse",
   "profiles": {
-    "suse":        { "label": "SUSE",  "tools": ["community", "brands/suse/tools"], "catalog": "brands/suse/catalog" },
+    "suse":        { "label": "SUSE",  "tools": ["community", "brands/suse/tools"], "exclude": ["rebrand-deck", "street-map"], "catalog": "brands/suse/catalog" },
     "lolly-start": { "label": "Lolly Start (blank brand)", "tools": ["community", "brands/lolly-start/tools"], "catalog": "brands/lolly-start/catalog" }
   }
 }
@@ -24,7 +24,7 @@ npm run profile:suse       # community + SUSE tools, SUSE catalog
 npm run profile:start      # blank brand: community tools + one neutral tokens asset
 ```
 
-`scripts/use-profile.ts` builds the views: `catalog` becomes a symlink to the brand's catalog, and `tools/` becomes a directory of per-tool symlinks merged from the profile's tool roots - **later roots win on id collisions**, so a brand pack can override a community tool of the same id. In a hosted or serverless build, pass `--copy` to materialise the views as real copies instead of symlinks (symlinks don't survive a function bundle). Writes through the views land in the real pack checkouts, so the normal edit → commit workflow is unchanged.
+`scripts/use-profile.ts` builds the views: `catalog` becomes a symlink to the brand's catalog, and `tools/` becomes a directory of per-tool symlinks merged from the profile's tool roots - **later roots win on id collisions**, so a brand pack can override a community tool of the same id. The optional `exclude` list drops tool ids from *this* profile's view after that merge - a community tool one brand would rather not ship stays available to every other profile, and an id that isn't there is warned about, not fatal. In a hosted or serverless build, pass `--copy` to materialise the views as real copies instead of symlinks (symlinks don't survive a function bundle). Writes through the views land in the real pack checkouts, so the normal edit → commit workflow is unchanged.
 
 ## Brand packs
 
@@ -61,11 +61,11 @@ Notice the badge: URL Screenshot declares `capture`, the browser cannot provide 
 Two mechanisms narrow the catalog without forking it:
 
 - **Per-instance tool set** - point each instance at a different profile (or a brand pack with a curated `tools/` root) so marketing, sales, and IT can each see a different library from one codebase.
-- **Per-user feature flags** - surfaced in each person's Profile view, stored on their profile (so they sync). The gallery-category and Batch flags default to **on** (they show/hide whole gallery categories and the Batch entry), as do **Neurospicy Mode** (the focus-music player) and the **Jelly effects** UI switch; one privacy flag, **Strip metadata from uploads**, defaults to **off** (opt-in - see below). The category and Batch flags are purely personal preferences. Three of them - Neurospicy, Jelly effects and Strip metadata from uploads - can additionally be **governed** by an optional deployment control plane, which sets the default applied when the user hasn't chosen and can hide the switch entirely; a hidden flag's governed default wins over a stored user value. None of them ever gate output formats or any API surface. See [Getting Started → Administration](/info/operators.html) for the governance model around this.
+- **Per-user feature flags** - surfaced in each person's Profile view, stored on their profile (so they sync). The gallery-category and Batch flags default to **on** (they show/hide whole gallery categories and the Batch entry), as do **Neurospicy Mode** (the focus-music player), the **Jelly effects** UI switch, and **Private collab** (`private-collab`, the peer-to-peer working-together feature, wearing a beta pill). Two are opt-in and default to **off**: **Strip metadata from uploads**, the privacy flag described below, and **Print preflight** (`export-preflight`), which puts the *Before you export* prepress card - bleed, resolution, ink coverage, plate counts - above the Download button. Preflight stays off by default on purpose: someone exporting a PNG for a chat message should never be ambushed by prepress findings, and the card never blocks an export either way. The category and Batch flags are purely personal preferences. Five of them - Neurospicy, Jelly effects, Private collab, Strip metadata from uploads and Print preflight - can additionally be **governed** by an optional deployment control plane, which sets the default applied when the user hasn't chosen and can hide the switch entirely; a hidden flag's governed default wins over a stored user value. Print preflight also honours the older `export.preflight` instance capability, which reads as governance defaulting the flag on, so an instance that granted it keeps the card for members who haven't chosen. None of them ever gate output formats or any API surface. See [Getting Started → Administration](/info/operators.html) for the governance model around this.
 
   ![Every feature flag as its own switch, with the gallery categories on and Strip metadata off](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&dark=1&filename=pd-feature-flags)
 
-  **Strip metadata from uploads** is the one opt-in (default-off) flag: turn it on and images uploaded to your catalogue are scrubbed of EXIF, location (GPS), and other embedded metadata on import. Content Credentials (C2PA provenance) are *always* preserved either way - a signed or AI-generated image keeps its credential whether the flag is on or off.
+  **Strip metadata from uploads** is the privacy one of those two opt-ins: turn it on and images uploaded to your catalogue are scrubbed of EXIF, location (GPS), and other embedded metadata on import. Content Credentials (C2PA provenance) are *always* preserved either way - a signed or AI-generated image keeps its credential whether the flag is on or off.
 
 ## Maturity & watermarking
 

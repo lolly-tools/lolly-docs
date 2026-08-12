@@ -16,7 +16,7 @@ You need a quote card, an event tile, a localized signature - today, not next sp
 
 - **Fill in a few fields, get the finished asset.** No fonts to pick, no colours to second-guess, no "is this the right logo?" The tool already knows. You bring the words.
 - **Infinite permutations, one source of truth.** Localize a quote card into 12 languages, swap a brand lockup across 40 campaigns, or generate every size variant for every placement - without touching the design. Drive it all from a spreadsheet in the batch grid: paste or import a CSV, get one finished asset per row.
-- **No creative-agency bottleneck for routine assets.** Email signatures, event countdowns, quote cards, street maps - everything your team needs on a Tuesday at 4pm, self-serve.
+- **No creative-agency bottleneck for routine assets.** Email signatures, event countdowns, quote cards, QR codes - everything your team needs on a Tuesday at 4pm, self-serve.
 - **Collaborate without compliance risk.** No customer data uploaded to third-party cloud services. No SaaS licensing to audit. Runs entirely on local device compute.
 
 ---
@@ -28,7 +28,7 @@ You need a quote card, an event tile, a localized signature - today, not next sp
 You're on the road, the deck is wrong, the customer asked for something specific. Lolly turns any device into an asset studio - no designer, no wait, no excuses.
 
 - **Wait on nothing.** If you're on the road, there are no days left before your meeting, you need assets now. Generate them.
-- **Fix the deck you already have.** Drop the PowerPoint on Lolly: rebrand it to the house style on your device and send the `.pptx` back, or open it as editable slides and fix it on the spot.
+- **Fix the deck you already have.** Drop the PowerPoint on Lolly and its slides are read on your device, so you can pick the ones worth keeping and reuse them as vector assets - then rebuild the deck from a few lines of Markdown and send back a native, editable `.pptx`.
 - **One person army.** The power of a coordinated global campaign in the palm of your hand. Every rep, every region, the same polish.
 - **World class experience.** Nothing looks rushed even though it was rendered instantly. Nothing is a one-off - so every interaction gets a little more polished than the last.
 - **Wow your team is fast!** They're asleep. This was solved the first time I needed it.
@@ -89,7 +89,7 @@ Images are build artifacts. Treat them that way. Lolly runs from the CLI so you 
 
 ```bash
 lolly qr-code --url=https://suse.com --output=og-qr.svg
-lolly quotes --quote="Ship it." --output=quote.png
+lolly wordmark --text="Ship it." --output=wordmark.png
 ```
 
 ---
@@ -144,7 +144,7 @@ Every time someone uploads a file to a third-party service to "just make it look
 
 **Works offline.** Local compute, local storage. No internet required after first sync.
 
-**Formats, in and out.** Renders **31** export formats and ingests **29** source formats - see the [full breakdown](/info/exporting.html).
+**Formats, in and out.** Dozens in, dozens out, and many of them both ways - the live breakdown is in the formats table on this page, and every format in detail on the [Exporting page](/info/exporting.html).
 
 **Production quality.** Outlined type, Spot color support, 60FPS · Media fit for the studio.
 

@@ -15,12 +15,12 @@ owns the setup steps, the profile workflow and the submodule ownership table.
 The sections below mirror the **pathways** declared in `docs/build.ts`, so the index cannot drift
 from the site. `build.ts` is the source of the grouping, in two structures:
 
-- `pages` (`docs/build.ts:61-108`) maps each markdown source to a slug, a title and a `pathway`
-  (`quickstart`, `creators`, `builders` or `operators`). A doc with no entry here gets no `/info`
-  page at all.
-- `SIDEBARS` (`docs/build.ts:142-222`) is the per-pathway sidebar. A page may appear in more than
-  one pathway's sidebar; its own `pathway` only decides which sidebar renders while you are
-  reading it.
+- The `pages` array in `docs/build.ts` maps each markdown source to a slug, a title and a `pathway`
+  (`quickstart`, `creators`, `builders`, `operators` or `trust`). A doc with no entry here gets no
+  `/info` page at all.
+- `SIDEBARS` in the same file is the per-pathway sidebar. A page may appear in more than one
+  pathway's sidebar; its own `pathway` only decides which sidebar renders while you are reading it.
+  (Cited by symbol rather than line number on purpose - the line numbers went stale within weeks.)
 
 If you add a markdown file to this directory, register it in both structures or add it to the
 "Not in the site nav" table below with the reason.
@@ -46,6 +46,9 @@ security posture).
 | [brand-studio.md](brand-studio.md) | end user | The Brand Studio at `#/start`: logos, colours, type, tokens and files, plus how a brand pack moves between devices. |
 | [profile.md](profile.md) | end user | Profiles as the on-device working identity a tool pre-fills from, and how they differ from the platform brand and from capabilities. |
 | [search.md](search.md) | end user | The one field at the bottom of every screen: which routes carry it, what each provider reaches (tools, saved sessions, the catalogue, settings, docs), the spotlight chord, and what it deliberately does not index. |
+| [ask.md](ask.md) | end user | Ask Lolly (`#/ask`): typed questions answered verbatim from this documentation with a citation and an Open-in-docs link - retrieved, never generated - plus navigate-only matches from the app. |
+| [dashboard.md](dashboard.md) | end user | The Dashboard (`#/d`) and its four tabs - This device, Design system (read-only here), Capabilities and Activity & stats - with the `?tab=` deep links. |
+| [utilities.md](utilities.md) | end user | The five routed workbenches - Spreadsheet, Convert, Colour Lab, Take a PDF apart, Script audio - what each does on-device, and where each one stops. |
 | [favourites.md](favourites.md) | end user | Starring a tool and the strip it earns above the grid, the Gallery/Cover Flow view choice, and why the list travels with a profile export while the view mode stays on the device. |
 | [design-import.md](design-import.md) | end user | Bringing a Figma, Penpot, Illustrator or InDesign file into Layout Studio as an editable session, parsed entirely on device. |
 | [sequence-editor.md](sequence-editor.md) | end user | Editing in time: which clip a canvas click edits, onion-skin ghosts, split scope and Join, reversible detach audio, and trimming (pointer and keyboard). |
@@ -69,13 +72,12 @@ security posture).
 | [mcp.md](mcp.md) | tool author | The native MCP server, its two hosted tiers, and the callable tools it exposes. |
 | [ai-agents.md](ai-agents.md) | tool author | Driving Lolly from an agent by building a URL or CLI command instead of generating pixels. |
 | [extension.md](extension.md) | end user | The Lolly URL Screenshot browser extension, which gives the web app page capture that a browser tab cannot do alone. |
+| [contributing-setup.md](contributing-setup.md) | contributor | Getting a development checkout sized to what you're here to do: slim clone personas for tool authors and engine developers, and how to upgrade to the full thing later. |
 | [build-guide.md](build-guide.md) | operator | Per-target build steps: CLI binary, desktop app, mobile apps, and the web shell as a container image. |
 | [ios-build.md](ios-build.md) | contributor | The full iOS walkthrough for `shells/tauri-mobile`: prerequisites, one-time init, the simulator dev loop, code signing, camera permissions. Sits next to the Build Guide under Builders, which links to it. |
 | [deployment.md](deployment.md) | operator | Where each piece runs, and the delivery postures (distribute to devices, host the PWA, run the services). |
 | [configuration.md](configuration.md) | operator | Profiles, brand packs, tool sets and per-tool capabilities as files rather than in-app settings. |
-| [content-credentials-identity.md](content-credentials-identity.md) | end user | What a Content Credential is, what enrolling an identity adds, and how anyone checks a file. |
-| [content-credentials-engineering.md](content-credentials-engineering.md) | security | The engineering companion: device/CA architecture, engine contracts, the CA service, web-shell wiring, one-time operator setup. |
-| [data-transfer.md](data-transfer.md) | contributor | The `lolly-backup` bundle format spec: what a bundle carries, what it deliberately does not, and the round-trip contract. |
+| [data-transfer.md](data-transfer.md) | contributor | The `lolly-backup` bundle format spec: what a bundle carries, what it deliberately does not, and the round-trip contract. Its own pathway is Builders; the Trust sidebar carries it too. |
 
 The Builders sidebar also carries an **About** entry, which renders the repo-root
 [`../README.md`](../README.md) rather than a file in this directory.
@@ -86,12 +88,29 @@ The Builders sidebar also carries an **About** entry, which renders the repo-roo
 |---|---|---|
 | [operators.md](operators.md) | operator | Pathway hub. The security and governance case for handing a creative tool to everyone. |
 | [adoption-governance.md](adoption-governance.md) | operator | The honest pilot account: current status, who it is for, how adoption is measured, who governs the output. |
+| [cli-signing.md](cli-signing.md) | operator | Setting up a real signing identity for the CLI, so files made from the terminal carry a verifiable name rather than an anonymous on-device key. Its own pathway is Operators; the Builders sidebar carries it too. |
+
+## For Trust
+
+The fifth pathway, and the one the other four link into whenever a claim needs its mechanism.
+
+| Doc | Audience | What it covers |
+|---|---|---|
+| [trust.md](trust.md) | end user | Pathway hub. Where your content comes from, how to check it yourself, and what happens to your data - each claim paired with the mechanism that enforces it. |
+| [status-quo.md](status-quo.md) | end user | The frictions we all learned to accept - uploading a logo to a stranger to resize it, artwork locked behind a lapsed plan - and what replaces them. |
+| [input-not-impersonation.md](input-not-impersonation.md) | end user | An AI agent may fill in the inputs and may not claim to be you: where the line sits, how it is enforced, and what a rogue agent still cannot do. |
+| [content-credentials-identity.md](content-credentials-identity.md) | end user | What a Content Credential is, what enrolling an identity adds, and how anyone checks a file. |
+| [content-credentials-engineering.md](content-credentials-engineering.md) | security | The engineering companion: device/CA architecture, engine contracts, the CA service, web-shell wiring, one-time operator setup. |
+| [ai-stance.md](ai-stance.md) | end user | AI welcomed as labour and refused as impersonation: where Lolly stands on generated content, and the machinery behind each commitment. |
+| [ai-features.md](ai-features.md) | end user | Text-to-speech, upscaling and background removal - generated once under guard-rails, then rendered identically everywhere, and why inventing pixels is marked AI while removing them is not. |
+| [beatrice-warde.md](beatrice-warde.md) | end user | The typographer whose 1932 lines this project adapted, what we changed, and who she was. |
+| [verify-yourself.md](verify-yourself.md) | security | Falsifiable procedures with exact commands and expected output for the privacy and security claims. |
 | [security-verification.md](security-verification.md) | security | A reviewer's summary of the cryptography behind Content Credentials, verification and encryption, and the tests behind each claim. |
 | [threat-model.md](threat-model.md) | security | Trust boundaries, the residual-risk register, what is explicitly *not* a boundary, and the commands to verify each claim. An index into module headers, with file and line for every row. |
 | [parser-inventory.md](parser-inventory.md) | security | Every engine module that turns attacker-controlled bytes into structure, with its declared bounds, its test, and its fuzz status. |
 | [server-surface.md](server-surface.md) | operator | The complete inventory of server-side components, so the "runs on your device" claim can be stated precisely. |
-| [verify-yourself.md](verify-yourself.md) | security | Falsifiable procedures with exact commands and expected output for the privacy and security claims. |
 | [privacy.md](privacy.md) | end user | The privacy policy: on-device data, no accounts for ordinary use, no analytics. |
+| [inclusive-design.md](inclusive-design.md) | end user | Accessibility, language coverage and the ethical commitments Lolly holds itself to, with the tests that fail the build when one is broken. |
 
 ## Not in the site nav
 
@@ -100,18 +119,19 @@ The Builders sidebar also carries an **About** entry, which renders the repo-roo
 | [faq.md](faq.md) | end user | Intentionally not a page. `loadFaqs` in `build.ts` parses each `##` heading as a question and compiles the lot into the landing page's FAQ accordion, with per-question `#faq-…` anchors other surfaces deep-link to. |
 | README.md | contributor | This index. |
 
-[content-credentials-engineering.md](content-credentials-engineering.md) is a half-case: it has a
-`pages` entry so `/info/content-credentials-engineering.html` is built, but no `SIDEBARS` item, so
-it is reachable only through the cross-links in
-[content-credentials-identity.md](content-credentials-identity.md).
+Every page above now has both a `pages` entry and a `SIDEBARS` item, so nothing in the index is
+reachable by cross-link alone. `index` is the single declared exception, because the brand wordmark
+links to it from every page and it renders the hub cards rather than sitting inside a sidebar.
 
-Both kinds of gap are now mechanically enforced rather than described here. `npm run check:docs-nav`
+Both kinds of gap are mechanically enforced rather than described here. `npm run check:docs-nav`
 (`scripts/check-docs-nav.ts`, a CI step in the typecheck job) fails when a `docs/*.md` has no `pages`
-entry, when a `pages` entry has no `SIDEBARS` item, or when a `src` no longer exists — and both
-tables above are its **declared exceptions**, `NOT_PAGES` and `NOT_IN_SIDEBAR`, each carrying the
-reason it is exempt. Add a doc without registering it and CI says so; exempt one and you have to
-write down why. That guard is what closed the `ios-build.md` orphan (2026-07-30), which sat
-unreachable from `/info` for as long as it existed.
+entry, when a `pages` entry has no `SIDEBARS` item, when a `src` no longer exists - and when a
+registered page is named nowhere in this index, so the promise at the top of this file is checked
+rather than merely made. The two **declared exceptions** live in that script: `NOT_PAGES` (the "Not
+in the site nav" table above) and `NOT_IN_SIDEBAR` (`index` alone), each carrying the reason it is
+exempt. Add a doc without registering it and CI says so; exempt one and you have to write down why.
+That guard is what closed the `ios-build.md` orphan (2026-07-30), which sat unreachable from `/info`
+for as long as it existed.
 
 ## Everything else in this directory
 

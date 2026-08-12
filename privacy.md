@@ -1,6 +1,6 @@
 # Privacy Policy
 
-*Last updated: 29 July 2026*
+*Last updated: 11 August 2026*
 
 > **In plain terms.** The documents, images, videos and files you make in Lolly stay
 > on your device. There are no accounts for ordinary use, no cookies from the app
@@ -179,9 +179,12 @@ plus three tools that necessarily handle file bytes:
 
 Lolly can seal a cryptographic **Content Credential** into your exports so anyone
 can verify, offline, that a file is unaltered since it left Lolly. That much is
-**on by default and fully local** - the signing key is generated on your device,
-is **non-extractable** (not even Lolly's own code can read it), and signing itself
-happens offline. This section covers the one *optional* step on top of that:
+**on by default and fully local** - the signing key is generated on your device
+and signing itself happens offline. Without enrolment that key is a throwaway:
+a fresh keypair minted for each export and dropped with it. Once you enrol, the
+key becomes a lasting one and is generated **non-extractable** - not even Lolly's
+own code can read it, only ask it to sign. Either way it never leaves your
+device. This section covers the one *optional* step on top of that:
 enrolling a verified identity, so your exports say "Verified - signed by
 \<your email\>" instead of an anonymous key. **If you skip enrolment, nothing in
 this section applies to you, and no personal data ever leaves your device.**
@@ -190,12 +193,12 @@ this section applies to you, and no personal data ever leaves your device.**
 
 If you do enrol, here is exactly what happens:
 
-1. **You choose a sign-in method** - GitHub, Google, SUSE (Okta), or an emailed
-   link. For the three OIDC providers, you're redirected to that provider's own
-   login page, governed by their privacy policy, not ours. Lolly's certificate
-   service receives back only a verified email address and the provider's name.
-   For the email link, the address you type is passed to **Resend**, a
-   transactional email API, solely to deliver that one link.
+1. **You choose a sign-in method** - GitHub, Google, SUSE (id.suse.com), or an
+   emailed link. For the three OIDC providers, you're redirected to that
+   provider's own login page, governed by their privacy policy, not ours.
+   Lolly's certificate service receives back only a verified email address and
+   the provider's name. For the email link, the address you type is passed to
+   **Resend**, a transactional email API, solely to deliver that one link.
 2. **A short-lived cookie protects the redirect.** This is the one cookie the
    entire Lolly system sets: `lolly_ca_state`, `HttpOnly`, scoped to `/api/ca`,
    expiring within ten minutes. It carries a random value, not a tracking
@@ -297,10 +300,10 @@ completeness, the entire list:
 
 **Recipients.** The categories of recipient are: our hosting provider (Vercel
 Inc.), and - only if you use the email sign-in option - a transactional email
-provider (Resend). If you sign in with GitHub, Google or SUSE Okta, you interact
-with that provider directly under their own privacy policy. They tell us a
-verified email address and nothing else. We share personal data with no one else,
-and we do not sell data, run advertising, or profile users.
+provider (Resend). If you sign in with GitHub, Google or SUSE (id.suse.com), you
+interact with that provider directly under their own privacy policy. They tell
+us a verified email address and nothing else. We share personal data with no one
+else, and we do not sell data, run advertising, or profile users.
 
 **Transfers outside the EEA.** Vercel and Resend are US companies. Function
 compute for lolly.tools is pinned to Vercel's Frankfurt (`fra1`) region so

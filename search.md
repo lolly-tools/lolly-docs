@@ -1,7 +1,7 @@
 <!--
 Every fact below was checked against the shipped code (not memory), mostly in
 shells/web/src/components/search-bar.ts, shells/web/src/components/spotlight.ts,
-shells/web/src/lib/search/{match,registry}.ts and the six provider modules
+shells/web/src/lib/search/{match,registry}.ts and the seven provider modules
 under shells/web/src/lib/search/providers/, and against `ROUTES` in
 shells/web/src/main.ts for exactly which routes show the bar. The feature is
 fully shipped (main branch, commit ade7d3a), not a work-in-progress - unlike
@@ -38,12 +38,13 @@ and Profile.
 
 It doesn't show everywhere. Once you're inside a tool's own canvas, Batch
 mode, Verify, Convert, the spreadsheet, the Colour Lab, the PDF tool,
-Multi-edit, the Design System studio, the component library or Script audio,
-the bar is gone and the shortcut below does nothing - those surfaces keep
-their own chrome for now. That's a narrower gap than the list makes it sound:
-every one of those except Multi-edit is still a destination you can search
-your way *to*, from any screen that does show the bar (they're in the Places
-group below). Multi-edit is the one place search doesn't know about yet.
+Multi-edit, the Design System studio, the component library, Script audio or
+Ask Lolly, the bar is gone and the shortcut below does nothing - those
+surfaces keep their own chrome for now (Ask Lolly has its own composer). That's
+a narrower gap than the list makes it sound: every one of those except
+Multi-edit is still a destination you can search your way *to*, from any screen
+that does show the bar - they're in the Places group below, and Ask Lolly gets
+a group of its own. Multi-edit is the one place search doesn't know about yet.
 
 ## What it finds
 
@@ -81,6 +82,10 @@ of which" rather than the flat claim.
 -->
 
 - **Docs** - this site: every published page and heading.
+- **Ask** - always last, under whatever the other groups found: a single **Ask
+  Lolly** row carrying what you typed into the in-app help view, where the
+  answer is a documentation section quoted verbatim with its citation. It's the
+  "didn't see it above?" row, not a result of its own.
 
 What happens with a match depends on where you're standing. On the Tools
 gallery, Utilities and the Catalogue, the grid you're already looking at
@@ -91,13 +96,22 @@ including your own projects and your own settings, shows in the panel
 instead, so nothing you own can look like it quietly disappeared. Inside the
 Tools, Utilities, Projects and Catalogue groups, a "See all in ..." row hands
 off to a proper results view when a handful of matches isn't enough; Settings,
-Places and Docs just end.
+Places, Docs and Ask just end.
 
 The panel itself floats centred over the whole window, not tucked under the
 field, so it reads as one thing with the bar beneath it rather than a
 dropdown off one corner.
 
 ![the search panel open above the bar, with results grouped by kind for a typed query, the tools grid behind it already filtered to match](/t/url-shot?url=%2F%23%2F&width=1440&height=820&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&drive=press%3Ac%7Con%3D.gallery-search%3Bpress%3Ah%3Bpress%3Aa%3Bpress%3Ar%3Bpress%3At%3Bwait%3A900&walker=1&format=svg&dark=1&filename=srch-spotlight-results)
+
+Every hit is an ordinary link. A **Places** result goes to a plain hash route -
+`#/verify`, `#/lab`, `#/start` - so you can bookmark it, paste it into a doc or
+send it to a colleague, and several take you further in than the front door:
+`#/lab?c=<any css colour>` opens the Colour Lab already reporting on that
+colour, `#/ask?q=<question>` opens Ask Lolly with the question already asked,
+and `#/d?tab=<device|brand|caps|activity>` opens the Dashboard on that tab. A
+hit in **Projects** is a link too, but it names a saved slot on this device
+(`#/tool/<tool>?slot=…`), so that one travels no further than the device does.
 
 ## Keyboard
 

@@ -10,7 +10,6 @@ Nuovo sulla piattaforma? La **[Guida rapida](/info/quickstart.html)** imposta un
 
 ## Comprendere l'architettura
 
-![One shared primitive from the shell's component library, rendered live from its own specimen - the button base and its fills, beside the file that defines them](/t/url-shot?url=%2F%23%2Fcomponents&width=1200&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23cl-primitives%20.cl-card&dark=1&filename=aud-primitive-card)
 
 
 - **[Panoramica](/info/overview.html)** - perché Lolly esiste, la separazione motore/shell/strumenti, il ponte delle capacità, e gli impegni architetturali consolidati.

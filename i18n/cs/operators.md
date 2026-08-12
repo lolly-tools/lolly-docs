@@ -47,15 +47,15 @@ Zmenši předimenzované PDF přímo na zařízení, takže nikdo nesáhne po we
 
 Všechny tyto nástroje jsou transformace přímo na zařízení: vstoupí tvůj soubor nebo data, vystoupí vyčištěné bajty a **není žádný server, kam by se něco nahrávalo**. Jsou záměrným opakem typického nástroje typu „nahraj svůj soubor na cizí web a necháme ho vyčistit", po kterém by jinak sáhl dobře míněný zaměstnanec.
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
 
 Text Helper je stejná dohoda, jen pro text místo souborů. Je to ta záložkami rozdělená dílna, kterou by zaměstnanec jinak hledal na cizím webu, a nedeklaruje vůbec žádné vstupy, protože nic, čeho se dotkne, nikdy neopustí stránku.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1200&height=750&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
 
 Compress PDF tu sadu doplňuje: předimenzovaná příloha se zmenší podle nastavení kvality, které si zvolíš, a to na stroji, který ji už drží.
 
-![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=ov2-compress-pdf)
+![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=ov2-compress-pdf)
 
 ## Determinismus a reprodukovatelnost
 

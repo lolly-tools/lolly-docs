@@ -39,7 +39,7 @@ This is a Printing Office
 
 <audio src="media/warde-printing-office.opus" captions="media/warde-printing-office.vtt" label="English — the original"></audio>
 
-%file{warde-printing-office.opus} %entity{Google AI Studio} %act{generated} a reading of Warde's original %detail{Gemini speech model, voice Sulafat, transatlantic accent, empathetic read — generated audio, not a human reader} %entity{Lolly} %act{directed and published} it %sig{signed by %entity{Lolly}}
+%file{warde-printing-office.opus} %entity{Google AI Studio} %act{generated} a reading of Warde's original %detail{Gemini speech model, voice Sulafat, transatlantic accent, empathetic read — generated audio, not a human reader} %entity{Lolly} %act{directed and published} it %sig{signed by %entity{Lolly}} %detail{Ogg/Opus has no standardised C2PA mapping yet, so this credential rides in the file's OpusTags header and Lolly's verifier is the one that reads it}
 
 ## What we made of it
 

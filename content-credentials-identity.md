@@ -27,10 +27,12 @@
   downgraded. If a certificate has expired, you get a distinct *expired* state
   ("the bytes still match, but the short-lived signing certificate has lapsed"),
   never a false green and never a misleading red. See the verdicts below.
-- **Private and offline.** The signing key is generated on your device and is
-  **non-extractable** - even Lolly's own code can't read it. Signing happens
-  locally; only certificate *issuance* ever touches the network, and only when you
-  choose to enrol.
+- **Private and offline.** The signing key is generated on your device, and
+  signing happens locally. Before you enrol it is a throwaway: a fresh keypair
+  minted for each export and discarded with it. Enrolling replaces that with a
+  lasting device key generated **non-extractable** - even Lolly's own code can
+  only ask it to sign, never read it. Neither key is ever transmitted; only
+  certificate *issuance* touches the network, and only when you choose to enrol.
 
 ## Verifying a file
 
@@ -100,8 +102,11 @@ only part of it was). The declaration comes from one of two places, and Verify s
 which: a signed **C2PA assertion**, or a bare **IPTC "digital source type"** tag
 written into the file's metadata - the sidecar flag Gemini/Imagen, Midjourney and
 Meta AI write next to their output. The metadata tag is genuine when present but
-trivially stripped, so its *absence* never proves a file isn't AI-made. The flag
-fires across JPEG, PNG and SVG stills and MP4/QuickTime video.
+trivially stripped, so its *absence* never proves a file isn't AI-made. The bare
+tag rides in an XMP packet, so the flag fires wherever Lolly reads one: JPEG,
+PNG, WebP and SVG stills, and MP4/QuickTime video. GIF and TIFF carry no XMP
+packet Lolly reads, so a bare declaration in one of those is not picked up - a
+signed C2PA assertion in the same file still is.
 
 ### "Likely carries" a maker's own watermark
 

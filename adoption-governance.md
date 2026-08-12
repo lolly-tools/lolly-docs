@@ -8,7 +8,7 @@ Most of this platform's documentation describes what Lolly *can do*. This page d
 
 **Lolly is a closed-pilot prototype. Treat it as one.**
 
-- **It hasn't finished its pilot.** The pilot is in progress and has not completed. Features, defaults, claims and even the tool catalog can still change as we learn. There is more to share on **August 29**.
+- **It hasn't finished its pilot.** The pilot is in progress and has not completed. Features, defaults, claims and even the tool catalog can still change as we learn. There is more to share on **29 August 2026**.
 - **Its security is hardening for enterprise scale.** Lolly's cryptography and file-parsing engines - including the C2PA provenance seals, the X.509 identity handling, and on-device PDF/ZIP/link encryption - are currently undergoing SUSE's strict infrastructure hardening, preparing for enterprise scale. We're really good at this. They are strong *by design*; while that hardening completes, don't rely on them where an independent assurance is contractually required.
 - **It is arithmetically robust and evidentially empty.** The engine is deterministic and the maths is sound, but the product was, in effect, born yesterday. **SUSE is customer number one.** There is very little real-world adoption data. This too is by-design. We collect stories from the public voluntarily, never data invisibly. 
 - **If you're using it, we need your story.** The architecture is done; the evidence is not. What actually improves Lolly from here is real usage - what worked, what didn't, and what you managed to make. See [We need your story](#we-need-your-story).
@@ -22,7 +22,7 @@ Adoption succeeds or fails on the **producer** - the non-designer who has to mak
 | User | Who they are | The friction Lolly removes | What they adopt |
 |---|---|---|---|
 | **The producer** | Marketers, sales, events, ops, comms - non-designers who need finished, on-brand files | "I need this now, I don't want to break the brand, and I don't want to wait for design" | The app: pick a tool, fill in fields, get the asset |
-| **The brand creative owner / designer** | The people who own how the bran | Re-typing the same layout, policing off-brand output after the fact | Authoring tools & the asset catalog - encoding the rules once |
+| **The brand creative owner / designer** | The people who own how the brand is expressed | Re-typing the same layout, policing off-brand output after the fact | Authoring tools & the asset catalog - encoding the rules once |
 | **The developer / platform team** | Engineers who automate and deploy | Storing binaries in Git, custom renderers, cloud image bills | The CLI, URL mode, MCP endpoints, self-hosting |
 | **The AI agent** | Automated workflows that produce assets | Token-expensive, drifting, un-auditable image generation | The MCP tools - deterministic renders from parameters |
 | **IT & security** | The people accountable for data leaving the building | Colleagues uploading sensitive files to random web tools | On-device utilities, air-gapped deployment, governance-as-data |
@@ -54,7 +54,7 @@ Onboarding is about handing over control of the rules, not the output:
 3. Convert **one high-visibility output** and show the before/after side by side - this is the single most effective adoption lever.
 4. Set the **guard-rails**: lock what must never change, expose only what's meant to vary.
 
-![The Brand Studio's Catalogue step, where logos, images and fonts become permanent IDs a tool can call](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcatalogue&width=1440&height=900&dpi=192&waitMs=1800&walker=1&format=svg&dark=1&filename=aud-brand-catalogue)
+![The Brand Studio's Files room, where logos, images and fonts become permanent IDs a tool can call](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcatalogue&width=1440&height=900&dpi=192&waitMs=1800&walker=1&format=svg&dark=1&filename=aud-brand-catalogue)
 
 ### The developer / platform team
 
@@ -69,7 +69,7 @@ The Dashboard's capability map is the inventory to scope that decision against: 
 ### IT & security
 
 1. Confirm the **data posture**: no telemetry, nothing uploaded by default, and no backend in the core render/verify path - the two optional server components are inventoried on [Server Surface](/info/server-surface.html).
-2. Scope the **pilot** to a low-risk context while the security audit is still outstanding (see [Status](#status)).
+2. Scope the **pilot** to a low-risk context while the hardening described in [Status](#status) completes.
 3. Decide who owns **governance** - see [Governance](#governance) below.
 
 ## Measuring adoption
@@ -115,7 +115,7 @@ The goal the cycle serves is deflection, and it should ramp. The pilot targets *
 
 ## Governance (when you want it)
 
-Most people just make things - author their own tools in Layout Studio and ingest their own files into the catalogue, entirely in-app, with no git and no approval step. Governance is what you reach for when an organisation wants a **shared, controlled** catalog: an option that runs the rules the way engineering runs code - **the rules are data, and changing them is a reviewable change.**
+Most people just make things - work in the app, save what they make as a **session**, and pass it on as a share link, a backup or a live collaboration, with no git and no approval step. When a session is good enough to become a permanent starting point for everyone else, whoever runs the deployment opens the link, records its values as a **template** on that tool in the brand pack, and commits it - after which it appears in the tool's "New from template" chooser and is deep-linkable as `?template=<id>`. That commit is the locking step, and it belongs to the deployment owner, not the creator. Governance is what you reach for when an organisation wants a **shared, controlled** catalog: an option that runs the rules the way engineering runs code - **the rules are data, and changing them is a reviewable change.**
 
 - **A shared catalog can be the source of truth.** Tools and assets are git-tracked content - a manifest, a template, optional hooks. What ships is exactly what was approved to ship.
 - **Review can be the moderation.** With that model, a change to a tool or asset is a pull request. It's elegant for engineers and unfamiliar to most brand and marketing teams - plan for that gap. If the people who own brand decisions don't live in git, you'll want a workflow that bridges them, or IT quietly becomes the strategic design gatekeeper (which some long-running production environments actually prefer). Teams that don't need this simply skip it.

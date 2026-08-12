@@ -1186,6 +1186,15 @@
       "desc": "Your brand palette as ready-to-paste CSS — custom properties (--brand-…) or utility classes — so a developer wires the exact brand colours into a website with no guesswork or eyedropper. Export-only."
     },
     {
+      "token": "SCSS",
+      "name": "SCSS",
+      "full": "Sass variables",
+      "category": "Tokens",
+      "dir": "out",
+      "features": ["palette", "editable-text"],
+      "desc": "Your brand palette as Sass variables - the pre-processor twin of the CSS variables export, ready to paste into a Sass codebase with the exact brand values. Export-only."
+    },
+    {
       "token": "ZIP",
       "name": "ZIP",
       "full": "ZIP Archive",
@@ -1247,6 +1256,24 @@
         "lossless"
       ],
       "desc": "A web font is an OpenType font (TTF or OTF) wrapped in a compressed container so it downloads smaller. Lolly converts between them losslessly on-device: unwrap a WOFF to a plain TTF or OTF, or wrap one up, rebuilding the table directory and checksums each way. TrueType and CFF outlines both pass through untouched. WOFF2 (Brotli) is read-detected but not yet written."
+    },
+    {
+      "token": "TTF",
+      "name": "TTF",
+      "full": "TrueType Font",
+      "category": "Font",
+      "dir": "both",
+      "features": ["font", "lossless"],
+      "desc": "The classic font container with TrueType glyph outlines. Lolly reads one anywhere a font can be added - the brand's Type room, the font picker - and writes one back out on-device by unwrapping a WOFF, rebuilding the table directory and checksums losslessly."
+    },
+    {
+      "token": "OTF",
+      "name": "OTF",
+      "full": "OpenType Font (CFF)",
+      "category": "Font",
+      "dir": "both",
+      "features": ["font", "lossless"],
+      "desc": "The OpenType container with CFF (PostScript-flavour) outlines. Read wherever a font can be added, and written back out on-device by unwrapping a WOFF - the outlines pass through untouched either way."
     },
     {
       "token": "XLSX",

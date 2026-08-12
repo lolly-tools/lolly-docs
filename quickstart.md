@@ -14,15 +14,15 @@ Your brand in Lolly is a small **design-tokens** document - colours, fonts, and 
 
 ### Start from scratch (the design system builder)
 
-First run drops you on the **Start** screen (`#/start`) - the [**Brand Studio**](/info/brand-studio.html). Give it a name and a primary colour and Lolly *derives* a complete, accessible palette from it - light/dark surfaces, text, accents - using the same colour maths the engine uses everywhere else.
+First run drops you on the **gallery**, with a short welcome dialog over it offering three ways in - **Make it yours** (the Brand Studio at `#/start`), **Bring your design** (drop a Figma, Penpot, InDesign or PDF file and it opens as an editable layout - the fastest route to §2 below), and **Explore the community tools** - plus a row of languages if English isn't yours. Take the first card and you land in the [**Brand Studio**](/info/brand-studio.html). Give it a name and a primary colour and Lolly *derives* a complete, accessible palette from it - light/dark surfaces, text, accents - using the same colour maths the engine uses everywhere else.
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours) Pick a font, and you have a working brand in under a minute. From there the studio's five tabs (Logos, Colours, Type, Tokens, Catalogue) let you take it as far as you like - refine any of it later, whenever you come back. You can always revisit this from the dashboard (provided you arent using a brand-locked version of lolly)
+![The Brand Studio's Colours room - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours) Pick a font, and you have a working brand in under a minute. From there the studio's six rooms - Overview, Colours, Type, Logos, Tokens, Files - let you take it as far as you like, in any order, refining any of it whenever you come back. The dashboard's **Design system** tab (`#/d`) shows the result read-only and points back at `#/start`, which is where the editing happens (unless you're on a brand-locked build of Lolly, where the brand is fixed and there's nothing to change).
 
 ### Import a brand you already have
 
 If your brand is already captured as design tokens - from **Penpot**, **Tokens Studio** (Figma), or any plain **DTCG** file - bring it in wholesale rather than retyping it. Two routes:
 
-- <!--i:palette--> **In the app:** the [design system builder: Brand Studio](/info/brand-studio.html) (`#/start`) accepts a token file, a Penpot export, or a `LollyBrand` pack directly - drop it in and the palette lights up.
+- <!--i:palette--> **In the app:** the [design system builder: Brand Studio](/info/brand-studio.html) (`#/start`) takes it through **Add from…** at the foot of its room rail - a token file, a Penpot export, an SVG or a `LollyBrand` pack. Drop it in and the palette lights up.
 - <!--i:code--> **From the command line**, to stand up a reusable brand pack:
 
 ```bash

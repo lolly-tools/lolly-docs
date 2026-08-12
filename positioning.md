@@ -21,7 +21,7 @@ Where this platform fits in the wider creative-tools landscape, and where it del
 | Command Line & TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
 
-The shape of the gap is clear: nothing in the existing landscape gives us constraints-first, offline-capable, low-skill, internally accessible, generative output. Lolly now ships an open canvas of its own - **Layout Studio**, a direct-manipulation free canvas - but with a decisive difference from the Canva column: colours, type and assets placed on it conform to the brand globals, so even free arrangement stays constraints-first. What Lolly still is **not** is an unconstrained design suite; designers will continue to use Illustrator and Figma for bespoke work - and when that work needs to become a governed, reproducible asset, Layout Studio's [Import a design](/info/design-import.html) brings the finished Figma/Illustrator/Penpot file onto the canvas as editable, brand-conformed boxes.
+The shape of the gap is clear: nothing in the existing landscape gives us constraints-first, offline-capable, low-skill, internally accessible, generative output. Lolly now ships an open canvas of its own - **Layout Studio**, a direct-manipulation free canvas - but with a decisive difference from the Canva column: colours, type and assets placed on it conform to the brand globals, so even free arrangement stays constraints-first. What Lolly still is **not** is an unconstrained design suite; designers will continue to use Illustrator and Figma for bespoke work - and when that work needs to become a governed, reproducible asset, Layout Studio's [Import a design](/info/design-import.html) brings the finished Figma, Penpot, Illustrator, InDesign or PDF file onto the canvas as editable, brand-conformed boxes.
 
 ![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
 
@@ -29,7 +29,7 @@ The shape of the gap is clear: nothing in the existing landscape gives us constr
 
 - Rapid generation of operationalised creative assets (event tiles, badges, signatures, alerts)
 - Free-form arrangement on the open canvas (Layout Studio) when the pieces - colours, type, icons, images - must stay conformed to the brand globals
-- Landing a finished Figma, Illustrator, InDesign or Penpot design (Layout Studio's Import a design) so it can be edited, governed and re-rendered deterministically in every Lolly format
+- Landing a finished Figma, Penpot, Illustrator, InDesign or PDF design (Layout Studio's Import a design) so it can be edited, governed and re-rendered deterministically in every Lolly format
 - One-to-many "fill in three fields, get the finished asset" flows - including bulk runs from a spreadsheet/CSV in the `/pro` batch grid (paste or import rows, one finished asset per row, download as a zip)
 - Always-on, recurring branded outputs
 - Things where central control of brand expression matters more than expressive flexibility
@@ -78,6 +78,10 @@ This is the paradigm shift the deterministic engine actually delivers: it isn't 
 - **Tools compose tools.** One tool can embed another tool's render and return it as part of a single finished asset, with no tool-to-tool code coupling - a primitive no open-canvas or DAM-templating product in the landscape offers.
 - **Vendor neutrality.** Full feature and cost control. Open-source engine. Tools and assets are git-tracked content, not locked in a SaaS database.
 
+The first of those is the one people underestimate. A poster-grade city map, drawn as true vector road and water paths, from a dropdown and two colour fields that cannot be pointed outside the brand:
+
+![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-street-map-poster)
+
 ## Content sovereignty
 
 There is a name for what the previous section adds up to: sovereignty. Your media pipeline runs on hardware you own. Your brand - the tokens, the fonts, the logos, the tools that enforce them - lives in files you hold, in version control you control, not in a vendor's database with an export button. Rendering happens on the device in front of you, so an asset never transits a third party to exist, and the whole path from input to finished file is open source and inspectable. If every SaaS design vendor disappeared tomorrow, a Lolly deployment would not notice.
@@ -85,7 +89,3 @@ There is a name for what the previous section adds up to: sovereignty. Your medi
 This matters most to organisations for whom "where does our content live and who can turn it off" is a governance question, not a preference - public bodies, regulated industries and anyone whose brand is a strategic asset rather than a decoration. Sovereignty here is the shape of the architecture rather than a hosting feature added for compliance, and the [Privacy Policy](/info/privacy.html) and [Verify It Yourself](/info/verify-yourself.html) pages exist so you can check that claim rather than take it.
 
 One promise anchors it, and it deserves stating as a commitment rather than a feature: **if it renders on your device, it is free forever.** The engine, the shells, the tools, the formats - the entire on-device creative path is open source and stays that way. That is the boundary the project is built around.
-
-The first of those is the one people underestimate. A poster-grade city map, drawn as true vector road and water paths, from a dropdown and two colour fields that cannot be pointed outside the brand:
-
-![Amsterdam's canal rings and road network drawn edge to edge in the brand's own ink, every stroke placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam%26theme%3Dlight%26full&width=1440&height=900&dpi=96&waitMs=3200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-street-map-poster)

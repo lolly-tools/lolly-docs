@@ -34,15 +34,15 @@ Die vollständigen Bereitstellungsmodelle und die Administrationsanleitung finde
 
 ## Werkzeuge gegen Datenabfluss
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
 
 Text Helper ist dieselbe Abmachung, nur für Text statt für Dateien. Es ist die Werkbank mit Tabs, nach der Mitarbeitende sonst auf der Website eines Fremden suchen würden, und es deklariert überhaupt keine Eingaben, weil nichts, was es anfasst, jemals die Seite verlässt.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1200&height=750&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
 
 Compress PDF vervollständigt die Reihe: Der zu große Anhang schrumpft mit einer Qualitätsstufe, die Sie wählen - auf dem Rechner, auf dem er ohnehin schon liegt.
 
-![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=ov2-compress-pdf)
+![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=ov2-compress-pdf)
 
 Eine Kategorie von Lolly-Tools - die Datenschutz-Werkzeuge - ist *gezielt* dafür da, Dateien innerhalb des Perimeters zu halten.
 

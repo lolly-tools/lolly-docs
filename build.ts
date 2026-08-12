@@ -11,6 +11,16 @@ import { fileURLToPath } from 'node:url';
 import { generateOgImages } from './og-image.ts';
 import { LANGS, LANG_META, sortedLangs } from '../engine/src/lang.ts';
 import { readShotProvenance } from './shot-provenance.ts';
+// Banked docs art (plans/105 §6). The strip/namespace + composition live in their
+// own module because this one runs build() on import: a test can exercise them
+// there without building the site (see tests/docs-figures.test.ts).
+import { resolveDocsArt, inlineDocsArt, parseFigureFence, mastheadArtBand, figureBlock } from './docs-art.ts';
+// Page seals (plans/105 §7): the <link rel="c2pa-manifest"> each English page
+// carries, and the signing pass that runs after every page is on disk. Same
+// reason as docs-art.ts for living outside this file — sealing is exercised by
+// tests/docs-page-seal.test.ts, and importing build.ts would build the site.
+import { pageSealLink, sealPages, type SealTarget } from './page-seal.ts';
+import { DOC_LOGOS } from './logos.ts';
 import { readShotAnatomy } from './shot-anatomy.ts';
 // The shots pipeline's own recipe parser, reused rather than re-implemented: the
 // capture params a credential wants to state are exactly the ones the capture read,
@@ -113,6 +123,9 @@ const pages: Page[] = [
   // The first sentence of each of these reads well as a preview on its own, so both
   // fall through to mdDescription rather than repeating themselves here.
   { slug: 'search',           title: 'Search',            src: 'search.md',       pathway: 'creators' },
+  { slug: 'ask',              title: 'Ask Lolly',         src: 'ask.md',          pathway: 'creators' },
+  { slug: 'dashboard',        title: 'The Dashboard',     src: 'dashboard.md',    pathway: 'creators' },
+  { slug: 'utilities',        title: 'Utility views',     src: 'utilities.md',    pathway: 'creators', description: "The five workbenches built into the app - spreadsheet, converter, Colour Lab, PDF extractor and Script audio - what each one does, and where it stops." },
   { slug: 'favourites',       title: 'Your favourites',   src: 'favourites.md',   pathway: 'creators' },
   { slug: 'exporting',        title: 'Exporting & Formats', src: 'exporting.md',  pathway: 'creators' },
   { slug: 'positioning',      title: 'How Lolly compares', src: 'positioning.md', pathway: 'creators' },
@@ -153,6 +166,28 @@ const pages: Page[] = [
   { slug: 'ai-features',      title: 'Generated once, rendered the same', src: 'ai-features.md', pathway: 'trust', description: "Text-to-speech, upscaling and background removal: generated once under guard-rails, then rendered identically everywhere. Why inventing pixels is marked AI and removing them is not." },
   { slug: 'beatrice-warde',   title: 'Beatrice Warde',    src: 'beatrice-warde.md',  pathway: 'trust', description: "The typographer whose 1932 lines this project adapted, who proved that the types the whole trade called Garamond had been cut by somebody else entirely." },
 ];
+
+/**
+ * Which page opens on which BANKED masthead — `slug → docs/mastheads/<id>` (plans/105 §6).
+ *
+ * Empty, and that is the shipped state: the default band (the chip field behind the
+ * h1, `docsMasthead` below) is every page's masthead until a real artifact is banked
+ * and signed, which is Andy's hand and not a build step's. An id here overrides the
+ * default for that page in ALL 27 locales at once — the table is chrome, so no .md
+ * changes, no front matter, and nothing for `propagate-shot-recipes` to keep in step.
+ *
+ * The id is PERMANENT once banked, exactly like an asset id: the bank is a reusable
+ * library, several pages may point at one artifact, and versioning lives in the
+ * manifest, never in the filename.
+ *
+ * A mapped id with nothing behind it warns and falls back to the default band, so a
+ * checkout without the bank (or a typo) never ships a page with no top.
+ */
+const MASTHEADS: Record<string, string> = {
+  // The first banked masthead: the Sensory Mixer (Gemini artwork, Andy-directed,
+  // adapted to the band contract) — the inclusive-design page's stimulation dial.
+  'inclusive-design': 'inclusive-sensory',
+};
 
 // Top-nav links, grouped into clusters. Each inner array renders as one cluster
 // (tight spacing); clusters are separated by a divider (see .nav-group CSS). Home
@@ -219,12 +254,15 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
         { slug: 'using',           label: 'Using Lolly' },
         { slug: 'brand-studio',    label: 'The Brand Studio' },
         { slug: 'design-import',   label: 'Import a design' },
-        { slug: 'sequence-editor', label: 'The sequence editor' } ] },
+        { slug: 'sequence-editor', label: 'The sequence editor' },
+        { slug: 'utilities',       label: 'Utility views' } ] },
       // Search, favourites and the profile are the three pages about getting back to
       // your own things — finding them, keeping them to hand, and the on-device record
       // both of the other two are written onto.
       { label: 'Find your way', items: [
         { slug: 'search',      label: 'Search' },
+        { slug: 'ask',         label: 'Ask Lolly' },
+        { slug: 'dashboard',   label: 'The Dashboard' },
         { slug: 'favourites',  label: 'Your favourites' },
         { slug: 'profile',     label: 'Your profile' } ] },
       { label: 'Share & collaborate', items: [
@@ -598,6 +636,17 @@ function inline(text: string) {
     /^https?:\/\//i.test(url)
       ? `<a href="${url}" target="_blank" rel="noopener">${label}</a>`
       : `<a href="${url}">${label}</a>`);
+  // Technology marks: `<!--l:helm-->` in the prose becomes the Helm mark, inline.
+  // An HTML comment for the same reason the `<!--i:key-->` bullet marker is one — it
+  // is invisible wherever the .md is read as markdown (GitHub, the /info twin), so a
+  // page carries its marks without carrying noise for readers who never see the CSS.
+  //
+  // Matched POST-esc (`&lt;!--l:key--&gt;`), like the provenance pills above: esc()
+  // runs on line 1 of this function, so by here every `<` in the source is already an
+  // entity, and a pre-esc pattern would never fire. LAST of the passes on purpose —
+  // the emitted <svg> then meets no further regex, so nothing in a path's `d` can be
+  // mistaken for markdown.
+  s = s.replace(/&lt;!--l:([a-z0-9-]+)--&gt;/g, (_m, key: string) => docLogo(key));
   return s;
 }
 
@@ -720,7 +769,7 @@ function shotTryLink(file: string): string {
 }
 
 let credSeq = 0;
-function shotCredential(file: string, extraClass = '', from?: { path: string; src: string }): string {
+function shotCredential(file: string, extraClass = '', from?: { path: string; src: string; art?: boolean }): string {
   // `from` is how a PAGE ASSET (the AI stance hero, say) gets the same line: the
   // facts still come from the served bytes, they just live somewhere other than
   // docs/shots. Everything below reads the file it was handed, so a non-shot needs
@@ -739,7 +788,12 @@ function shotCredential(file: string, extraClass = '', from?: { path: string; sr
   // A slug never contains a dot (kebab-case, enforced by the recipe parser), so the
   // first segment is the recipe's filename= whichever variant is being credited:
   // <slug>.svg, <slug>.de.svg, <slug>.dark.svg, <slug>.de.dark.svg.
-  const def = shotRecipe(file.split('.')[0] ?? '');
+  //
+  // BANKED ART HAS NO RECIPE, and must not borrow one: ids in the two banks are
+  // slugs like a shot's, so `trust-hero.svg` in docs/mastheads/ would otherwise
+  // inherit the capture facts of a `trust-hero` SCREENSHOT — a viewport and a
+  // renderer that describe a different file entirely.
+  const def = from?.art ? null : shotRecipe(file.split('.')[0] ?? '');
 
   // ONE row, three facts, two actions. The shots are 236px wide in places, and a
   // credit that wraps to four rows ends up taller than the artwork it credits. That
@@ -765,6 +819,17 @@ function shotCredential(file: string, extraClass = '', from?: { path: string; sr
   // An AI declaration is the one fact that must never be tucked behind a hover, so
   // it stays in the line AND in the trigger's label, and lights the glyph up.
   if (p.ai) bits.push(`<span class="prov-pill prov-entity">${esc(t(p.ai === 'generated' ? 'AI generated' : 'AI edited'))}</span>`);
+  // …and WHICH model, when the file's §18.28 ai-disclosure names one. "AI generated"
+  // on its own is the fact a reader is owed; the model name is the fact that makes it
+  // checkable, and it is the one thing the 2.4 shortcut (a bare digitalSourceType on
+  // a manifest-less ingredient) would have cost us — see plan §7. Shaped like the
+  // "signed by <entity>" pill because it answers the same kind of question about the
+  // same file. The oversight level rides in the label below, not here: this row is
+  // width-bound to one line, and "prompt_guided" needs a sentence, not a chip.
+  if (p.model) {
+    bits.push(`<span class="prov-pill prov-act prov-model">${esc(t('generated by'))} `
+      + `<span class="prov-pill prov-entity">${esc(p.model)}</span></span>`);
+  }
 
   // The second row: what the file is made of. Short facts, no verbs, no actions — the
   // same detail weight as the pills above, one step down the page. It renders only when
@@ -818,6 +883,11 @@ function shotCredential(file: string, extraClass = '', from?: { path: string; sr
     ? t(def.walker ? 'captured with the HTML walker' : 'captured with the print path') : '';
   const label = [p.ai ? t(p.ai === 'generated' ? 'AI generated' : 'AI edited') : '', t('Content Credentials'),
     p.signer ? `${t('signed by')} ${p.signer}` : '', kind, p.dimensions, day, p.generator,
+    // The model, and the human-oversight level §18.28.3 pairs it with. The level is
+    // the file's own vocabulary (fully_autonomous / prompt_guided / human_validated),
+    // so it is read out verbatim rather than translated into a phrase the manifest
+    // does not contain — /verify is where it gets explained.
+    p.model ? `${t('generated by')} ${p.model}` : '', p.oversight ?? '',
     structure, shotAt, how].filter(Boolean).join(' — ');
 
   // A page asset's line rests OPEN (see the CSS): on a screenshot the mark is a way
@@ -827,7 +897,23 @@ function shotCredential(file: string, extraClass = '', from?: { path: string; sr
   // in the markup — the reason the hover-only ones cannot say so is that their state
   // is CSS the script does not know about — and `data-static` keeps the tap/Escape
   // script off it, so nothing can close a line that has no closed state.
-  const restsOpen = extraClass.includes('shot-cred--asset');
+  // A figure's line rests open for the same reason: it sits in a <figcaption>, where
+  // a mark that only appears on hover would be a caption that hides half of itself.
+  const restsOpen = extraClass.includes('shot-cred--asset') || extraClass.includes('shot-cred--figure');
+  // "Copy signed source" — offered ONLY where the served file is source text somebody
+  // can paste (the banked SVG/HTML art), never on a screenshot: a PNG's bytes are not
+  // something a clipboard can usefully hold, and an action that fails on 150 of 155
+  // lines is not an action. Both feedback words travel as DATA on the button rather
+  // than as literals in the shared script, so a locale page speaks its own language
+  // while every page runs the same bytes of JavaScript.
+  const copy = from?.art
+    ? `<button type="button" class="shot-cred-do shot-cred-copy" data-copy-src="${esc(src)}"`
+      + ` data-copied="${esc(t('Copied'))}" data-copy-failed="${esc(t('Copy failed'))}">`
+      // aria-live on the label, not on the button: the word swaps in place, and a
+      // sighted reader gets the confirmation from the same pixels a screen-reader
+      // user gets it from — one message, not a second hidden one to keep in step.
+      + `<span class="shot-cred-copy-label" aria-live="polite">${esc(t('Copy signed source'))}</span></button>`
+    : '';
   return `<span class="shot-cred${p.ai ? ' shot-cred--ai' : ''}${extraClass ? ` ${extraClass}` : ''}"${restsOpen ? ' data-static' : ''}>`
     + `<button type="button" class="shot-cred-btn" aria-expanded="${restsOpen}" aria-controls="${id}" aria-label="${esc(label)}">`
     + `${docIcon('imprint')}</button>`
@@ -835,6 +921,7 @@ function shotCredential(file: string, extraClass = '', from?: { path: string; sr
     + `<span class="shot-cred-row">${bits.join('')}`
     + `<a class="shot-cred-do" href="/#/verify?src=${encodeURIComponent(src)}">${esc(t('Check it yourself'))}</a>`
     + `<a class="shot-cred-do" href="${src}" download>${esc(t('Get the signed file'))}</a>`
+    + copy
     + `</span>`
     + (facts.length ? `<span class="shot-cred-row shot-cred-anat">${facts.join('')}</span>` : '')
     + `</span></span>`;
@@ -1036,7 +1123,12 @@ function parseCells(line: string) {
  * positional rather than transliterated so it stays stable and script-agnostic.
  */
 function headingId(text: string, ordinal: number): string {
-  const slug = text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  // A `<!--l:key-->` mark in the heading is decoration, not part of its name — the
+  // id must be the one the heading had before the mark was added, or every existing
+  // deep link and every sidebar/search anchor into that section dies the day a
+  // decorative glyph lands on it.
+  const named = text.replace(/<!--l:[a-z0-9-]+-->/g, ' ');
+  const slug = named.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   return slug || `section-${ordinal}`;
 }
 
@@ -1106,8 +1198,12 @@ function indexSections(html: string, slug: string, title: string): SearchRecord[
  *  which shipped once (collaborate.html + three more, 2026-08-10). Stripped in a
  *  pre-pass because the figure builder consumes comment lines that trail an image
  *  before the line loop can skip them. Fence-aware (a ``` example may SHOW a
- *  comment), and the `<!--i:name-->` icon tokens survive — the list renderer
- *  consumes those on purpose. */
+ *  comment), and the CONTENT tokens survive — `<!--i:name-->` (the list renderer
+ *  consumes those on purpose), `<!--l:name-->` (inline() turns those into an inline
+ *  technology mark) and `<!--lb:a b-->` (a whole-line block of them). All three are
+ *  matched by one lookahead, so a token that renders is never a token this pass
+ *  eats. */
+const CONTENT_TOKEN = 'i:[a-z-]+-->|l:[a-z0-9-]+-->|lb:[a-z0-9 -]+-->';
 function stripAuthoringComments(md: string): string {
   const lines = md.split('\n');
   const out: string[] = [];
@@ -1124,10 +1220,10 @@ function stripAuthoringComments(md: string): string {
       if (rest.trim()) out.push(rest);
       continue;
     }
-    // Inline complete comments: drop all except icon tokens.
-    let kept = line.replace(/<!--(?!i:[a-z-]+-->)[\s\S]*?-->/g, '');
-    // An unclosed opener (not an icon token) starts a multi-line comment.
-    const open = kept.search(/<!--(?!i:[a-z-]+-->)/);
+    // Inline complete comments: drop all except the content tokens.
+    let kept = line.replace(new RegExp(`<!--(?!${CONTENT_TOKEN})[\\s\\S]*?-->`, 'g'), '');
+    // An unclosed opener (not a content token) starts a multi-line comment.
+    const open = kept.search(new RegExp(`<!--(?!${CONTENT_TOKEN})`));
     if (open !== -1) {
       inComment = true;
       kept = kept.slice(0, open);
@@ -1175,10 +1271,26 @@ function mdToHtml(md: string) {
         out.push(`<div class="md-timeline">${mdToHtml(body)}</div>`);
       } else if (label === 'showcase') {
         out.push(buildShowcase(body));
+      } else if (parseFigureFence(label)) {
+        // `::: figure <id>` — the id line is canonical (the same token in every
+        // locale copy of this page), the lines inside are the caption and translate
+        // like any other prose.
+        out.push(buildFigure(parseFigureFence(label)!, body));
       } else {
         out.push(mdToHtml(body));
       }
       continue;
+    }
+
+    // A whole-line `<!--lb:kubernetes helm-->` is a block of its own, handled here
+    // rather than in inline(): it is not part of a sentence, and going through the
+    // paragraph branch would wrap the row in a <p> whose margins fight the band of
+    // space this is for. Anything else on the line means it was meant as prose, so
+    // it falls through to the ordinary passes and the inline `<!--l:…-->` form.
+    const lb = /^<!--lb:([a-z0-9 -]+)-->$/.exec(line.trim());
+    if (lb) {
+      out.push(docLogoBlock(lb[1]!.trim().split(/\s+/)));
+      i++; continue;
     }
 
     if (line.startsWith('```')) {
@@ -1523,6 +1635,44 @@ function docIcon(key: string): string {
   const svg = DOC_ICONS[key];
   if (!svg) { console.warn(`⚠  unknown doc bullet icon "${key}"`); return ''; }
   return svg;
+}
+
+// ── Technology marks (the `<!--l:key-->` inline marker) ──────────────────────
+// A second, separate register from DOC_ICONS: those are OUR glyphs, drawn in the
+// site's own hand and free to be recoloured; these are other people's marks, shipped
+// verbatim from docs/logos.ts and never restyled beyond taking the text colour. The
+// two never mix in one map, so "is this ours to change?" is answered by which
+// registry a key lives in. An unknown key behaves exactly as docIcon's does — warn
+// at build, render nothing, never a broken glyph in the reader's face.
+function docLogo(key: string): string {
+  const svg = DOC_LOGOS[key];
+  if (!svg) { console.warn(`⚠  unknown technology mark "${key}"`); return ''; }
+  return `<span class="doc-logo" data-logo="${key}">${svg}</span>`;
+}
+
+/**
+ * The whole-line form: `<!--lb:kubernetes helm-->` on its own line, before a `## `
+ * heading, becomes a centred row of big marks — a moment in the scroll that says
+ * "this next part is about these" before a word of it is read.
+ *
+ * Why a block instead of marks IN the heading: a heading is a name, and a glyph
+ * wedged in front of one competes with the words for the same line. Reserved for
+ * MAJOR sections whose subject really is the technology — one per page at most in
+ * practice. A whole row of marks that only decorates would spend the device on
+ * nothing (and the section headings are what a reader scans to navigate).
+ *
+ * aria-hidden on the WRAPPER, not per mark: the heading underneath already names
+ * every one of them, so to a screen reader this row is silence by design.
+ */
+function docLogoBlock(keys: string[]): string {
+  const marks = keys.map(k => {
+    const svg = DOC_LOGOS[k];
+    if (!svg) { console.warn(`⚠  unknown technology mark "${k}" in a <!--lb:…--> block`); return ''; }
+    return `<span class="doc-logo-mark" data-logo="${k}">${svg}</span>`;
+  }).filter(Boolean);
+  // Every key unknown → no empty box left behind, exactly as docIcon/docLogo do.
+  if (!marks.length) return '';
+  return `<div class="doc-logo-block" aria-hidden="true">${marks.join('')}</div>`;
 }
 
 /**
@@ -2283,9 +2433,9 @@ const CSS = `
    fonts.gstatic.com: a third-party request on every docs page would contradict what
    server-surface.md tells the reader. Latin subset only, 26 KB, loaded on one page. */
 @font-face{font-family:'Cinzel';src:url('/info/fonts/cinzel-latin.woff2') format('woff2-variations');font-weight:400 900;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+2122,U+2212}
-:root{--green:#30ba78;--dark:#0c322c;--orange:#fe7c3f;--navy:#192072;--blue:#2453ff;--light:#90ebcd;--pale:#f0fbf5;--text:#1d2726;--muted:#5a7067;--border:#d8ede4;--red:#c8102e;--col-cap:38rem}
+:root{--green:#30ba78;--dark:#0c322c;--orange:#fe7c3f;--navy:#192072;--blue:#2453ff;--light:#90ebcd;--pale:#f0fbf5;--text:#1d2726;--muted:#5a7067;--border:#d8ede4;--red:#c8102e;--col-cap:38rem;--page:#fff}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'SUSE',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--text);background:#fff;line-height:1.65}
+body{font-family:'SUSE',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--text);background:var(--page);line-height:1.65}
 a{color:var(--green);text-decoration:none}
 a:hover{text-decoration:underline}
 /* Safety net for inline icon SVGs: every one carries only a viewBox (no width/height),
@@ -2351,9 +2501,9 @@ nav .gap{flex:1}
 .nav-lang-picker-wrap .lang-switch-icon{width:16px;height:16px;flex-shrink:0;pointer-events:none}
 .nav-lang-picker{background:transparent;color:inherit;border:none;font-size:.8125rem;cursor:pointer;padding:0}
 .nav-lang-picker option{color:#000}
-nav:not(.quicknav) a:not(.brand):not(.nav-launch){color:rgba(255,255,255,.55);font-size:.8125rem;padding:.25rem .5rem;white-space:nowrap;border-radius:2em;transition:color .12s}
-nav:not(.quicknav) a:not(.brand):not(.nav-launch):hover{color:#fff;text-decoration:none}
-nav:not(.quicknav) a.active:not(.nav-launch){color:#fff}
+nav:not(.quicknav):not(.doc-jump-nav) a:not(.brand):not(.nav-launch){color:rgba(255,255,255,.55);font-size:.8125rem;padding:.25rem .5rem;white-space:nowrap;border-radius:2em;transition:color .12s}
+nav:not(.quicknav):not(.doc-jump-nav) a:not(.brand):not(.nav-launch):hover{color:#fff;text-decoration:none}
+nav:not(.quicknav):not(.doc-jump-nav) a.active:not(.nav-launch){color:#fff}
 /* Top-nav clusters: tight within a group, a thin divider between groups. */
 nav .nav-group{display:inline-flex;align-items:center;gap:.0625rem}
 nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1px solid rgba(255,255,255,.18)}
@@ -2877,6 +3027,37 @@ html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
    properties so the Arabic build mirrors correctly. */
 .docs-content ul.icon-list{list-style:none;padding-inline-start:0;display:flex;flex-direction:column;gap:.9rem}
 .docs-content ul.icon-list>li.ic{display:flex;align-items:flex-start;gap:.75rem}
+/* Technology marks (the <!--l:key--> md marker — docs/logos.ts). Sized in em so a
+   mark tracks whatever text it sits in, capped so it cannot become an illustration,
+   and nudged onto the baseline the way an inline image needs to be. Muted by default
+   at the same weight the sidebar glyphs use: these are landmarks for the eye, not a
+   second reading of the sentence. Slightly OVER 1em (1.1) on purpose — these marks
+   are dense little pictures, and at exactly the type size they read as smudges.
+
+   HEADINGS CARRY NO MARKS. A heading is the page's own name for a section and the
+   thing a reader scans to navigate by; a glyph in front of it competes for that job.
+   Where a section really is about a technology, the marks go ABOVE it as a block
+   (.doc-logo-block) instead, and the heading keeps its line to itself.
+
+   Colour is deliberately just currentColor at reduced opacity — no per-brand fills.
+   The site colours exactly two glyph families on purpose (the AI and inclusive-design
+   sidebar rows); twenty brand palettes down a build page would be a carnival, and
+   every mark here is someone else's trademark, which is not ours to restyle. If one
+   ever earns its colour, it is one rule against [data-logo="key"]. */
+.doc-logo{display:inline-block;width:1.1em;height:1.1em;max-width:1.35em;max-height:1.35em;vertical-align:-.18em;margin-inline-end:.3em;opacity:.75}
+.doc-logo svg{width:100%;height:100%;display:block}
+/* A mark inside a table cell carries the row, so it keeps full presence. */
+.docs-content td .doc-logo{opacity:.85}
+/* The block form (<!--lb:a b--> on its own line, before a major heading): the same
+   marks given air and scale, so scrolling past one reads as arriving somewhere.
+   Centred, generous margin above and below, and still monochrome — the size is what
+   makes it an event, not colour. Sized in px rather than em: this row belongs to the
+   PAGE's rhythm, not to the type around it, and every block should be the same size
+   on every page. */
+.doc-logo-block{display:flex;justify-content:center;align-items:center;gap:1.5rem;margin:4.5rem 0 2rem;color:var(--muted);opacity:.55}
+.doc-logo-mark{display:block;width:44px;height:44px}
+.doc-logo-mark svg{width:100%;height:100%;display:block}
+@media(max-width:600px){.doc-logo-block{gap:1.1rem;margin:3rem 0 1.5rem}.doc-logo-mark{width:36px;height:36px}}
 /* Two columns from a ::: cols fence. The pairing IS the argument on
    /info/status-quo - what happened on the left, what it cost on the right - so the
    two read together rather than one after the other. Below 900px they stack, which
@@ -2906,7 +3087,108 @@ html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
   .md-timeline .icon-list>li.ic:not(:last-child)::before{left:.875rem;top:1.75rem}}
 .li-icon{flex-shrink:0;width:1.35rem;height:1.35rem;margin-top:.2rem;color:var(--green)}
 .li-icon svg{width:100%;height:100%;display:block}
-.docs-content{padding:6rem 3.5rem;min-width:0}
+.docs-content{padding:2.75rem 3.5rem 6rem;min-width:0}
+/* No band (a page with no h1 at all): the column is back to clearing the fixed nav
+   by itself, which is what the 6rem was always for. */
+.docs-content.no-mast{padding-top:6rem}
+/* ── Article masthead (docsMasthead + DOCS_MASTHEAD_SCRIPT) ───────────────────
+   The page's own h1 over the chip field, FULL VIEWPORT WIDTH: the band is a sibling
+   of .docs-wrap, so the sidebar rail and the article both begin underneath it. That
+   is the landing page's own grammar (its hero spans the window and the content
+   starts below), and a band inset to one column would have read as an illustration
+   inside the article rather than as the top of the page.
+
+   The heading is left-aligned ON THE CONTENT GRID rather than centred: the landing
+   hero sets its h1 to text-align:start inside a centred max-width box, and lining
+   this one up with the column the article is about to start in makes the band feel
+   structural instead of pasted on. Logical padding, so an RTL locale mirrors it.
+
+   isolation:isolate keeps the canvas's blend mode inside the band — without it the
+   dark theme's color-dodge would reach the page behind. */
+.docs-masthead{position:relative;isolation:isolate;overflow:hidden;padding:calc(3.75rem + 3.25rem) 0 3rem;min-height:clamp(14rem,30vh,20rem);display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(180deg,var(--pale) 0%,var(--page) 100%)}
+/* The dark plate stays a PLATE — a green a couple of steps up from the page — because
+   color-dodge divides by the backdrop: over near-black (#061816) the chips resolve to
+   near-black too and the field disappears. The gradient's last stop still reaches the
+   page colour, so the band ends where the article begins. */
+.dark .docs-masthead{background:linear-gradient(180deg,#16482f 0%,#0b2b21 58%,var(--page) 100%)}
+/* Same box as .docs-wrap, then indented past the rail: the h1 starts exactly where
+   the article's text will. Below 768px the rail is gone and so is the indent. */
+.docs-mast-inner{position:relative;z-index:2;max-width:1180px;width:100%;margin:0 auto;padding-inline:calc(220px + 3.5rem) 3.5rem}
+.docs-mast-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.55}
+/* Dark reuses the landing's own recipe (color-dodge over a dark plate); light gets
+   a normal blend, because dodging on a near-white band blows the chips out to
+   invisible white. Blend and opacity live here rather than in the JS: they are how
+   the field MEETS the page, and the page's own theme rules already know that. */
+.dark .docs-mast-canvas{mix-blend-mode:color-dodge;opacity:.6}
+/* Two scrims, both above the canvas and below the h1 (::before/::after are z-index 1,
+   the heading is 2). The first is legibility insurance — the heading is currentColor,
+   so decoration must never be allowed to eat its contrast; the second melts the band
+   into the page it sits on, which at full bleed is the whole difference between a
+   masthead and a banner. */
+.docs-masthead::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 70% 60% at 30% 88%,var(--mast-scrim) 0%,transparent 72%)}
+.docs-masthead::after{content:'';position:absolute;left:0;right:0;bottom:0;height:50%;z-index:1;pointer-events:none;background:linear-gradient(180deg,transparent 0%,var(--page) 94%)}
+:root{--mast-scrim:rgba(255,255,255,.82)}
+.dark{--mast-scrim:rgba(6,24,22,.72)}
+/* Qualified with .docs-content (0,2,1) on purpose: the article rule .docs-content h1
+   is (0,1,1) and gives every page heading a bottom rule and 2rem of padding. Inside a
+   band that rule is a second horizontal line under a heading that already sits on
+   one, so it has to be out-specified rather than tied with. */
+.docs-masthead h1{margin:0;padding:0;border-bottom:0;color:var(--dark)}
+.dark .docs-masthead h1{color:var(--text)}
+@media(max-width:768px){.docs-masthead{padding:calc(3.75rem + 1.75rem) 0 1.75rem;min-height:9rem}.docs-mast-inner{padding-inline:1rem}}
+/* ── Banked masthead art (MASTHEADS + docs-art.ts) ────────────────────────────
+   A signed artifact inlined in place of the chip canvas. SAME BAND: same padding,
+   min-height, scrims and hoisted h1 — the only thing that changes is what is painted
+   behind the heading, so a page that gains banked art does not also silently gain a
+   different top. The art takes the canvas's z-index (0), under both scrims, so the
+   heading's contrast is protected by the same two layers whatever the artwork does.
+
+   width/height 100% on an SVG artifact's root rather than its own attributes: the
+   band's height is the band's decision (it is furniture on a page, not a picture), and
+   an SVG that keeps its own preserveAspectRatio then fills it the way it was drawn to.
+   A fragment (markup + script) sizes ITSELF inside this box — it brought its own CSS,
+   and a blanket rule here would fight it. */
+.docs-mast-art{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.docs-mast-art>svg{display:block;width:100%;height:100%}
+/* The credential is a mark on the ARTWORK, so it hangs off the band's own corner like a
+   screenshot's does — but the band is full-bleed, so it is inset to the same gutter the
+   footer and nav use rather than sitting against the window edge. Above both scrims
+   (z-index 3) or the melt gradient would fade the one line on the band that must stay
+   legible; pointer-events are restored by .shot-cred-btn/.shot-cred-line themselves. */
+.docs-masthead--art .shot-cred--mast{inset-block-end:.8rem;inset-inline-end:1.2rem;z-index:3}
+/* ── Figures (::: figure — a banked artifact in the text flow) ────────────────
+   Content, not decoration: it sits in the column with the prose that argues with it,
+   and its caption is a real caption (the showcase's, which this deliberately matches —
+   two inlined-vector blocks that read differently would be two grammars for one idea).
+   The credential rides INSIDE the figcaption rather than on the artwork's corner: a
+   figure's provenance is part of what the caption says. */
+.docs-figure{position:relative;margin:2.5rem auto;max-width:min(100%,44em)}
+.docs-figure-art{position:relative;border-radius:1.2em;overflow:hidden}
+.docs-figure-art>svg{display:block;width:100%;height:auto}
+.docs-figure figcaption{margin-top:.9rem;font-size:.8125rem;color:var(--muted);text-align:center;
+  display:flex;flex-direction:column;align-items:center;gap:.5rem}
+.docs-figure figcaption p{margin:0}
+/* In the flow, not anchored: .shot-cred is absolutely positioned for the corner-mark
+   case, and inside a caption that would drop it onto the artwork above. Static, centred,
+   and the glyph BEFORE the line (row, not row-reverse) so it reads left-to-right as a
+   caption does. */
+.docs-figure figcaption .shot-cred{position:static;flex-direction:row;align-items:center;
+  justify-content:center;width:auto;max-width:100%}
+/* Open at rest, like the AI-stance hero's and for the same reason: in a caption a mark
+   that only appears on hover is a caption hiding half of itself, and a figure's own
+   origin is frequently the point the surrounding page is making. */
+.shot-cred--figure .shot-cred-line{opacity:1;pointer-events:auto;transform:none}
+.docs-figure figcaption .shot-cred-line{align-items:center;max-width:100%}
+.docs-figure figcaption .shot-cred-row{flex-wrap:wrap;justify-content:center}
+/* "Copy signed source" is a BUTTON among two links (it does something to the reader's
+   machine rather than going somewhere), so it is stripped back to look like them —
+   the alternative, a link with a click handler, would lie to the keyboard and to the
+   status bar about where it goes. */
+button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;font-size:.6875rem;
+  font-weight:600;color:inherit;cursor:pointer}
+.shot-cred-copy-label{pointer-events:none}
+/* The model pill's entity chip sits tight against its label, like the signer's. */
+.prov-model .prov-entity{margin-inline:.18em 0}
 .docs-content img{height:auto;    max-width: min(100%, 40em);    height: auto;   margin: 0 auto; display: block;}
 /* App screenshots (docs/shots.json captures) read at full column width, framed like a window. */
 .docs-content img[src*="/info/shots/"]{max-width:100%;min-width:50%;border-radius:1.2em;
@@ -3243,7 +3525,35 @@ html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
 .docs-content h2:first-of-type{border-top:none;padding-top:0;margin-top:0}
 .docs-content h3{font-size:1.15rem;margin-top:1.75rem;margin-bottom:.5rem;color:var(--dark)}
 .docs-content h4{font-size:1rem;margin-top:1.25rem;margin-bottom:.35rem;color:var(--muted)}
+/* The top nav is fixed at 3.75rem, so a heading landed on by an #anchor (the jump
+   nav below, a search result, a shared deep link) would otherwise sit UNDER it. Same
+   idea as section[id] on the landing page, with room for the heading's rule. */
+.docs-content h2[id],.docs-content h3[id],.docs-content h4[id]{scroll-margin-top:5.5rem}
 .docs-content ul,.docs-content ol{margin-bottom:1rem}
+/* ── "On this page" jump nav (long docs pages only — pageJumpNav) ─────────────
+   Bottom-right, deliberately quiet: a 2.25rem disc that reads as page furniture
+   until you want it. Logical inset so the Arabic build puts it in the corner an RTL
+   reader reaches for. Tokens only (--text/--muted/--border/--pale, all redefined by
+   .dark) so dark mode needs no second palette here. */
+.doc-jump{position:fixed;bottom:1rem;inset-inline-end:1rem;z-index:88}
+.doc-jump-btn{display:flex;align-items:center;justify-content:center;width:2.25rem;height:2.25rem;border-radius:999px;border:1px solid var(--border);background:var(--pale);color:var(--muted);cursor:pointer;box-shadow:0 2px 10px #0c322c1f;transition:color .12s,border-color .12s}
+.doc-jump-btn svg{width:1.1rem;height:1.1rem}
+.doc-jump-btn:hover,.doc-jump-btn[aria-expanded="true"]{color:var(--green);border-color:var(--green)}
+/* The first six declarations are RESETS, not choices: the bare nav element selector at
+   the top of this sheet IS the site's top bar (fixed, full-width, 3.75rem, flex), and
+   it lands on any <nav> on the page. The landing page's quicknav opts out the same
+   way. Losing them lays this panel out as a strip across the bottom of the window. */
+.doc-jump-nav{position:absolute;display:block;top:auto;width:auto;height:auto;overflow-x:hidden;transition:none;bottom:calc(100% + .5rem);inset-inline-end:0;min-width:14rem;max-width:min(20rem,calc(100vw - 2rem));max-height:min(60vh,26rem);overflow-y:auto;padding:.4rem;background:var(--pale);border:1px solid var(--border);border-radius:10px;box-shadow:0 10px 34px #0c322c26}
+.doc-jump-nav[hidden]{display:none}
+.doc-jump-title{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:.15rem .5rem .35rem}
+.doc-jump-nav a{display:block;padding:.32rem .5rem;border-radius:6px;font-size:.875rem;line-height:1.35;color:var(--text);text-decoration:none}
+.doc-jump-nav a:hover{background:#30ba7818;color:var(--green);text-decoration:none}
+.doc-jump-top{margin-top:.25rem;border-top:1px solid var(--border);padding-top:.45rem;color:var(--muted)}
+/* The docs player dock owns this corner while it is open (html.ldp-open, fixed at
+   the same 16px). One control per corner - the reader is listening, not scanning. */
+html.ldp-open .doc-jump{display:none}
+@media(prefers-reduced-motion:reduce){.doc-jump-btn{transition:none}}
+@media print{.doc-jump{display:none}}
 .docs-content h1{font-size:3rem;color:var(--dark);line-height:1.15;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border); font-weight:300;}
 
 /* Table */
@@ -3430,8 +3740,9 @@ footer .founded-badge{margin-top:.5rem}
   /* Collapse the desktop nav links into the hamburger — but NOT the search-result
      anchors, which are also <a> inside <nav> (the results panel lives in .docs-search).
      Without the exemption this rule hid every hit, collapsing the results panel to an
-     empty strip on any viewport ≤1100px. */
-  nav:not(.quicknav) a:not(.brand):not(.docs-search-hit){display:none}
+     empty strip on any viewport ≤1100px, and neither the jump nav's section links
+     (.doc-jump-nav), for the same reason. */
+  nav:not(.quicknav):not(.doc-jump-nav) a:not(.brand):not(.docs-search-hit){display:none}
   nav .nav-group{display:none}
   .nav-hamburger{display:flex}
 }
@@ -3445,7 +3756,8 @@ footer .founded-badge{margin-top:.5rem}
   .nav-mobile-page{display:block}
   /* Top padding must still clear the 3.75rem FIXED nav — collapsing it with the
      side padding slid every page's h1 underneath the bar on phones. */
-  .docs-content{padding:5.25rem 1rem 1.5rem}
+  .docs-content{padding:1.75rem 1rem 1.5rem}
+  .docs-content.no-mast{padding-top:5.25rem}
   .audience-card.tab-active{
     display:flex;flex-direction:column;
     gap:2rem;padding:2.5rem 1.25rem;
@@ -3513,8 +3825,8 @@ footer .founded-badge{margin-top:.5rem}
 /* Dark mode */
 /* Content links use --green, which reads on both the light and dark pine
    surfaces, so the dark theme needs no separate link colour. */
-.dark{--text:#cce8da;--muted:#7aaa90;--border:#1b3d2c;--pale:#0d2419}
-.dark body{background:#061816}
+.dark{--text:#cce8da;--muted:#7aaa90;--border:#1b3d2c;--pale:#0d2419;--page:#061816}
+.dark body{background:var(--page)}
 .dark .audience-section{border-bottom-color:var(--border)}
 .dark .audience-header{background:linear-gradient(180deg,#0a1f16 0%,#061816 100%)}
 .dark .audience-title{color:var(--text)}
@@ -3809,6 +4121,40 @@ const SHOWCASE_SCRIPT = `<script>(function(){
  * hover state.
  */
 const SHOT_CRED_SCRIPT = `<script>(function(){
+  // "Copy signed source" — the banked art's third action (plans/105 §6). Fetches the
+  // SAME file the other two actions point at and puts its text on the clipboard, so a
+  // reader can paste it straight into /verify's box and check the credential without
+  // downloading anything. Wired FIRST, and independently of the reveal below: an
+  // always-open line (a figure's, a page asset's) carries data-static and is
+  // deliberately absent from that list.
+  var copies=document.querySelectorAll('.shot-cred-copy');
+  for(var ci=0;ci<copies.length;ci++)(function(btn){
+    var label=btn.querySelector('.shot-cred-copy-label')||btn;
+    var rest=label.textContent,timer=null;
+    function say(word){
+      clearTimeout(timer);
+      label.textContent=word;
+      // Long enough to read, short enough that the button is honest about its label
+      // again before anyone tries a second copy.
+      timer=setTimeout(function(){label.textContent=rest;},2400);
+    }
+    btn.addEventListener('click',function(){
+      var src=btn.getAttribute('data-copy-src');if(!src)return;
+      fetch(src,{credentials:'same-origin'}).then(function(r){
+        if(!r.ok)throw new Error(r.status);return r.text();
+      }).then(function(text){
+        // No clipboard (an insecure origin, an old browser, a denied permission) is
+        // a refusal to pretend: the button says so rather than reporting a copy that
+        // never happened. The file is still one link away.
+        if(!navigator.clipboard||!navigator.clipboard.writeText)throw new Error('no clipboard');
+        return navigator.clipboard.writeText(text);
+      }).then(function(){
+        say(btn.getAttribute('data-copied')||'Copied');
+      }).catch(function(){
+        say(btn.getAttribute('data-copy-failed')||'Copy failed');
+      });
+    });
+  })(copies[ci]);
   var creds=document.querySelectorAll('.shot-cred:not([data-static])');if(!creds.length)return;
   function close(c){c.removeAttribute('data-open');var b=c.querySelector('.shot-cred-btn');if(b)b.setAttribute('aria-expanded','false');}
   function closeAll(except){creds.forEach(function(c){if(c!==except)close(c);});}
@@ -3941,17 +4287,71 @@ const LIQUID_GLASS_SCRIPT = `<script>(function(){
   window.addEventListener('load', paint);
 })();</script>`;
 
-const HERO_CANVAS_SCRIPT = `<script>(function(){
-  var canvas=document.getElementById('heroCanvas');
-  if(!canvas)return;
+/**
+ * The chip labels: every format the platform can WRITE, read from the same catalog
+ * the /info formats table is built from (docs/site/formats-catalog.json, whose own
+ * header says the counts are computed here rather than hand-maintained).
+ *
+ * `dir` is in|out|both — anything but "in" is exportable, so that is the whole test.
+ * A token with a space in it ("CMYK PDF", "Animated WebP", "CSS variables") is a
+ * LABEL, not an extension: those are skipped rather than mangled into one, and every
+ * one of them but Radiance HDR already shares its extension with an entry that stays.
+ * Skipping is the rule because the alternative — a lookup table of "what file
+ * extension does this really use" — is exactly the hand-maintained list this replaces.
+ */
+function chipExtensions(): string[] {
+  const catalog = loadSiteJson('formats-catalog.json') as { formats: Array<{ token?: string; dir?: string }> };
+  const exts: string[] = [];
+  for (const f of catalog.formats ?? []) {
+    if (f.dir === 'in') continue;
+    const token = String(f.token ?? '').trim();
+    if (!token || /\s/.test(token)) continue;
+    const ext = `.${token.toUpperCase()}`;
+    if (!exts.includes(ext)) exts.push(ext);
+  }
+  return exts;
+}
+
+/**
+ * The floating-format chip field — the landing hero's ambient effect, and (since
+ * plans/105) the default masthead behind every article page's h1.
+ *
+ * ONE engine, two instances, because they are the same idea seen twice: Lolly's
+ * output formats drifting up past whatever the page is about. What differs is not
+ * the motion but the manners — the landing is a front door and may play (chips burst
+ * where you tap, the loop never stops); a docs masthead is furniture on a page
+ * someone came to READ, so it holds still when asked, stops when scrolled past, and
+ * never reacts to a click.
+ *
+ * The engine takes those as options rather than branching on which page it is on:
+ *
+ *   palette()      → {fill,label} read at BAKE time, so a theme flip can re-bake the
+ *                    existing chips in place (docs) instead of resetting the field.
+ *   burst          → click/tap scatters a ring of chips (landing only).
+ *   pause          → run only while the band is on screen and the tab is visible.
+ *   reduceMotion   → honour prefers-reduced-motion by painting ONE frame, no loop.
+ *
+ * Defaults reproduce the landing exactly (landing palette, no pausing, no
+ * reduced-motion branch, and the loop started immediately) — this refactor moved the
+ * code, not the hero.
+ */
+const CHIP_FIELD_JS = `
+window.__lollyChipField=function(canvas,opt){
+  opt=opt||{};
   var ctx=canvas.getContext('2d');
-  // Every distinct file extension Lolly can export - vector, print, raster, video,
-  // audio, markup, structured data and bundles (kept in step with docs/exporting.md).
-  var exts=['.SVG','.EMF','.EPS','.DXF','.PDF','.TIFF','.PPTX','.PNG','.JPG','.WEBP','.AVIF','.GIF','.APNG','.WEBM','.MP4','.MP3','.M4A','.OGG','.HTML','.MD','.TXT','.CSV','.JSON','.ICS','.VCF','.ICO','.ZIP'];
+  // GENERATED at build time from docs/site/formats-catalog.json (chipExtensions()) —
+  // every format the catalog says Lolly can WRITE. Not a hand list: the last one was
+  // written when Lolly exported 27 formats and was still claiming 27 long after the
+  // real answer had passed 40, because nothing failed when it fell behind.
+  var exts=${JSON.stringify(chipExtensions())};
   // Headline formats appear ~2x as often as the rest: listing them again weights
   // them double in the pick pool (each favored ext is in the pool twice).
   var extPool=exts.concat(['.PDF','.SVG','.PNG','.MP4','.PPTX']);
   var floaters=[], fragments=[];
+  // The chip colours, resolved at bake time. Two fields only: the box and its label.
+  var defaultPal=function(){return{fill:'#1c4a2e',label:'#30ba78'};};
+  var palette=opt.palette||defaultPal;
+  var pal=palette();
   // Ambient chip population scales with canvas width so wide heroes aren't sparse
   // and narrow/mobile ones aren't crowded.
   function targetFloaters(){ return Math.max(5, Math.min(14, Math.round(cw/100))); }
@@ -3968,6 +4368,7 @@ const HERO_CANVAS_SCRIPT = `<script>(function(){
     canvas.width=Math.round(cw*dpr);
     canvas.height=Math.round(ch*dpr);
     ctx.setTransform(dpr,0,0,dpr,0,0);
+    if(still) paintOnce();
   }
   function rand(a,b){return a+Math.random()*(b-a);}
 
@@ -3975,9 +4376,11 @@ const HERO_CANVAS_SCRIPT = `<script>(function(){
   // floaters and the click-burst fragments reuse this, so the chip look lives in
   // one place; callers add their own motion fields. Pre-compositing also lets a
   // chip fade as a single group instead of each layer fading over the bg.
-  function makeChip(){
-    var ext=extPool[Math.floor(Math.random()*extPool.length)];
-    var fs=rand(10,22);
+  // ext/fs are passed back out so a palette change can re-bake the SAME chip
+  // rather than replacing it with a different word at a different size.
+  function makeChip(ext,fs){
+    ext=ext||extPool[Math.floor(Math.random()*extPool.length)];
+    fs=fs||rand(10,22);
     var weight='700';
     ctx.font=weight+' '+fs+'px SUSE,sans-serif';
     var tw=ctx.measureText(ext).width;
@@ -3992,8 +4395,8 @@ const HERO_CANVAS_SCRIPT = `<script>(function(){
     // Borderless: a solid fill (hero background) so overlapping chips occlude each
     // other cleanly instead of letting labels behind them bleed through. The chips
     // read apart via the soft drop shadow cast at blit time (see drawChip).
-    sx.fillStyle='#1c4a2e'; sx.fill();
-    sx.fillStyle='#30ba78';
+    sx.fillStyle=pal.fill; sx.fill();
+    sx.fillStyle=pal.label;
     sx.font=weight+' '+fs+'px SUSE,sans-serif';
     // Centre on the actual glyph box, not the em box: these labels are all-caps
     // with no descenders, so a 'middle' baseline leaves them riding high with a
@@ -4002,7 +4405,7 @@ const HERO_CANVAS_SCRIPT = `<script>(function(){
     var m=sx.measureText(ext);
     var asc=m.actualBoundingBoxAscent||fs*0.7, desc=m.actualBoundingBoxDescent||0;
     sx.fillText(ext,w/2,h/2+(asc-desc)/2);
-    return{spr:spr,w:w,h:h};
+    return{spr:spr,w:w,h:h,ext:ext,fs:fs};
   }
 
   // Ambient chip: drifts up from below the canvas, anti-gravity, with a gentle
@@ -4014,7 +4417,7 @@ const HERO_CANVAS_SCRIPT = `<script>(function(){
     var x=rand(c.w*0.6, cw-c.w*0.6);
     var y=initial ? rand(-c.h, ch) : ch+c.h+rand(0,ch*0.35);
     return{
-      spr:c.spr, w:c.w, h:c.h,
+      spr:c.spr, w:c.w, h:c.h, ext:c.ext, fs:c.fs,
       baseX:x, x:x, y:y, vy:rand(-0.95,-0.45),
       swayPhase:rand(0,Math.PI*2), swayFreq:rand(0.006,0.016), swayAmp:rand(6,20),
       rot:0, tilt:rand(0.18,0.79)
@@ -4096,23 +4499,132 @@ const HERO_CANVAS_SCRIPT = `<script>(function(){
     // Replenish to the responsive target (also restocks after a resize grows it).
     while(floaters.length<targetFloaters()) floaters.push(makeFloater(false));
 
-    requestAnimationFrame(tick);
+    if(running) requestAnimationFrame(tick);
+  }
+
+  // One frame, no loop — the reduced-motion rendering. The field still SAYS what it
+  // says (formats, drifting); it just doesn't move while saying it.
+  function paintOnce(){
+    fill(true);
+    ctx.clearRect(0,0,cw,ch);
+    for(var i=0;i<floaters.length;i++) drawChip(floaters[i],1);
+  }
+  function fill(initial){
+    while(floaters.length<targetFloaters()) floaters.push(makeFloater(initial));
+  }
+
+  var still=!!opt.reduceMotion && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var running=false;
+  function start(){
+    if(running||still)return;
+    running=true; requestAnimationFrame(tick);
+  }
+  function stop(){ running=false; }
+  // Re-bake every chip in the current palette, in place: same word, same size, same
+  // position, new colours. A theme flip should recolour the field, not restart it.
+  function rebake(){
+    pal=palette();
+    for(var i=0;i<floaters.length;i++){
+      var fl=floaters[i], c=makeChip(fl.ext,fl.fs);
+      fl.spr=c.spr; fl.w=c.w; fl.h=c.h;
+    }
+    if(still) paintOnce();
   }
 
   new ResizeObserver(resize).observe(canvas.parentElement);
   resize();
-  // Click/tap anywhere over the shared hero+pathways backdrop bursts a ring of
-  // chips from the point. The canvas is pointer-events:none, so we listen on the
-  // document and gate on its parent (the .hero-wrap that spans both bands); coords
-  // are mapped into the canvas box, which now covers the whole wrap.
-  var hero=canvas.parentElement;
-  document.addEventListener('pointerdown',function(e){
-    if(!hero.contains(e.target))return;
-    var rect=canvas.getBoundingClientRect();
-    explodeAt(e.clientX-rect.left,e.clientY-rect.top);
-  });
-  while(floaters.length<targetFloaters()) floaters.push(makeFloater(true));
-  tick();
+  if(opt.burst){
+    // Click/tap over the band bursts a ring of chips from the point. The canvas is
+    // pointer-events:none, so we listen on the document and gate on its parent (the
+    // .hero-wrap on the landing, the masthead band on an article); coords are mapped
+    // into the canvas box, which covers the whole parent.
+    var band=canvas.parentElement;
+    var burstAt=function(e){
+      if(!band.contains(e.target))return;
+      if(still)return;               // a band that holds still holds still when clicked
+      var rect=canvas.getBoundingClientRect();
+      explodeAt(e.clientX-rect.left,e.clientY-rect.top);
+    };
+    if(opt.burstGuard){
+      // On a page of prose the band contains real text and may later contain real
+      // controls, so the effect yields to both: no burst from a link/button, and none
+      // when the pointer was dragged (a text selection) rather than clicked. Fires on
+      // pointerUP for exactly that reason - at pointerdown a drag is indistinguishable
+      // from a tap.
+      var dx=0,dy=0,downT=0;
+      band.addEventListener('pointerdown',function(e){ dx=e.clientX; dy=e.clientY; downT=Date.now(); });
+      band.addEventListener('pointerup',function(e){
+        if(e.button!==0)return;
+        if(e.target.closest('a,button,input,select,textarea,label,summary,[role="button"],[contenteditable]'))return;
+        if(Math.abs(e.clientX-dx)>6||Math.abs(e.clientY-dy)>6)return;   // dragged: a selection
+        if(Date.now()-downT>600)return;                                 // held: not a tap
+        var sel=window.getSelection&&window.getSelection();
+        if(sel&&!sel.isCollapsed)return;                                // text is selected
+        burstAt(e);
+      });
+    }else{
+      document.addEventListener('pointerdown',burstAt);
+    }
+  }
+  fill(true);
+  if(still){
+    paintOnce();
+  }else if(opt.pause){
+    // Two gates, both cheap and both about not animating for nobody: off screen
+    // (the reader has scrolled into the article) and hidden tab.
+    var onScreen=true;
+    var sync=function(){ if(onScreen && !document.hidden) start(); else stop(); };
+    if(window.IntersectionObserver){
+      new IntersectionObserver(function(es){ onScreen=es[0].isIntersecting; sync(); }).observe(canvas.parentElement);
+    }
+    document.addEventListener('visibilitychange',sync);
+    sync();
+  }else{
+    start();
+  }
+  return {rebake:rebake,start:start,stop:stop};
+};
+`;
+
+const HERO_CANVAS_SCRIPT = `<script>${CHIP_FIELD_JS}(function(){
+  var canvas=document.getElementById('heroCanvas');
+  if(!canvas)return;
+  // The landing hero: default palette, always running, and it bursts when tapped.
+  window.__lollyChipField(canvas,{burst:true});
+})();</script>`;
+
+/**
+ * The article masthead's instance of the same field.
+ *
+ * The effect was built for one dark plate and hardcoded to it (#1c4a2e chips,
+ * #30ba78 labels, color-dodge). Docs pages are read in both themes, so here the
+ * palette comes from the page's own tokens and the chips are RE-BAKED when the
+ * theme changes — the toggle stamps .dark on <html>, and a reader on "system" gets
+ * the same flip from the OS. Blend + opacity are CSS's job (.docs-mast-canvas), so
+ * the JS only ever decides two colours.
+ */
+const DOCS_MASTHEAD_SCRIPT = `<script>${CHIP_FIELD_JS}(function(){
+  var canvas=document.querySelector('.docs-mast-canvas');
+  if(!canvas)return;
+  function tok(name,fallback){
+    var v=getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+    return v||fallback;
+  }
+  function palette(){
+    var dark=document.documentElement.classList.contains('dark');
+    // Dark: the landing's own chip fill over the dark band, under color-dodge —
+    // the same glow the front door has. Light: a mint chip on a near-white band,
+    // normal blend, so the field reads as watermark rather than decoration.
+    return dark
+      ? {fill:'#1c4a2e', label:tok('--green','#30ba78')}
+      : {fill:tok('--border','#d8ede4'), label:tok('--green','#30ba78')};
+  }
+  var field=window.__lollyChipField(canvas,{palette:palette,pause:true,reduceMotion:true,burst:true,burstGuard:true});
+  // The class flip (docs theme toggle) and the OS preference both change the answer.
+  new MutationObserver(function(){ field.rebake(); })
+    .observe(document.documentElement,{attributes:true,attributeFilter:['class']});
+  var mq=window.matchMedia('(prefers-color-scheme:dark)');
+  if(mq.addEventListener) mq.addEventListener('change',function(){ field.rebake(); });
 })();</script>`;
 
 // Links into the app's /verify view open as a POPOUT WINDOW, not a tab — the
@@ -4233,6 +4745,22 @@ addEventListener('scroll',place,true);   // capture: the rail scrolls, not the w
 })();</script>`;
 
 const HAMBURGER_SCRIPT = `<script>(function(){var ham=document.getElementById('navHamburger');var menu=document.getElementById('navMobileMenu');if(!ham||!menu)return;ham.addEventListener('click',function(){var open=menu.classList.toggle('open');ham.classList.toggle('open',open);ham.setAttribute('aria-expanded',open?'true':'false');});menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false');});});document.addEventListener('click',function(e){if(!menu.contains(e.target)&&!ham.contains(e.target)){menu.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false');}});})();</script>`;
+
+// The "On this page" jump nav (pageJumpNav, near wrapPage). Deliberately does NOT
+// touch scrolling: the links are ordinary anchors, so the browser's own jump — and
+// the site's own `scroll-behavior` (already reduced-motion-aware in CSS) — does the
+// move. Closing on link click is the only thing the click handler does; the default
+// navigation runs after it. Esc closes and RETURNS FOCUS to the button, so keyboard
+// reading resumes where it left off rather than at the top of the document.
+const DOC_JUMP_SCRIPT = `<script>(function(){
+  var btn=document.getElementById('docJumpBtn'),nav=document.getElementById('docJumpNav');
+  if(!btn||!nav)return;
+  function setOpen(open){nav.hidden=!open;btn.setAttribute('aria-expanded',open?'true':'false');}
+  btn.addEventListener('click',function(e){e.stopPropagation();setOpen(nav.hidden);});
+  nav.addEventListener('click',function(e){if(e.target.closest('a'))setOpen(false);});
+  document.addEventListener('click',function(e){if(!nav.hidden&&!nav.contains(e.target)&&!btn.contains(e.target))setOpen(false);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!nav.hidden){setOpen(false);btn.focus();}});
+})();</script>`;
 
 // ── i18n: site chrome (nav/sidebar/footer labels) + per-locale page sources ──
 //
@@ -4516,9 +5044,9 @@ const FOOTER_SECTIONS: SitemapSection[] = [
   // same position "For Builders" and "Trust" hold below. Its membership is still the
   // rail's "Make things" group exactly.
   { hub: 'creators', label: 'For Creators', slugs: [
-    'using', 'brand-studio', 'design-import', 'sequence-editor'] },
+    'using', 'brand-studio', 'design-import', 'sequence-editor', 'utilities'] },
   { hub: 'creators', label: 'Find your way', slugs: [
-    'search', 'favourites', 'profile'] },
+    'search', 'ask', 'dashboard', 'favourites', 'profile'] },
   { hub: 'creators', label: 'Share & collaborate', slugs: [
     'collaborate', 'exporting'] },
   { hub: 'builders', label: 'For Builders', slugs: [
@@ -4629,6 +5157,7 @@ const SIDEBAR_ICON: Record<string, string> = {
   // Creators
   using: 'pentool', 'brand-studio': 'palette', profile: 'usercheck', 'design-import': 'upload',
   'sequence-editor': 'clock', exporting: 'download', positioning: 'sliders',
+  ask: 'sparkle', dashboard: 'monitor', utilities: 'wrench',
   collaborate: 'people', search: 'search', favourites: 'star',
   // Builders — architecture & authoring
   overview: 'layers', 'design-tokens': 'hash', 'authoring-tools': 'wrench', 'authoring-assets': 'photos',
@@ -4913,6 +5442,137 @@ function listenButtonHtml(page: Page, a: AudioEntry): string {
   return `${LISTEN_STYLE}<div class="listen-bar${page.isLanding ? ' listen-bar-float' : ''}"><button type="button" class="docs-listen" data-listen-slug="${esc(page.slug)}" data-listen-title="${esc(page.title)}" aria-label="${esc(`Listen to ${page.title}`)}">${LISTEN_ICON}<span>Listen</span>${mins ? `<span class="listen-mins">${esc(mins)}</span>` : ''}</button></div>`;
 }
 
+// ── "On this page" jump nav ──────────────────────────────────────────────────
+// A long reference page (build-guide runs to nine sections and 60 KB of rendered
+// HTML) gives a reader arriving from search no way back out of the middle of it: the
+// left rail lists PAGES, and the section they want is a scroll away with nothing
+// naming it. So on long pages only, a small fixed control opens the page's own h2
+// list — the ids mdToHtml already stamped, as plain anchors.
+//
+// LONG is measured, not declared per page, so nobody has to remember to turn it on:
+// six sections is where a rail stops being scannable in one glance, and 25 KB of
+// rendered HTML is roughly the same page from the other direction (a page with few
+// but enormous sections still buries its landmarks). Either qualifies.
+const JUMP_MIN_H2 = 6;
+const JUMP_MIN_BYTES = 25_000;
+// A contents mark: three rules, ragged like a list of headings. Not `checklist` from
+// DOC_ICONS — its ticks say "done", and nothing here is done.
+const JUMP_ICON = `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><path d="M4 7h16M4 12h11M4 17h13"/></svg>`;
+
+function pageJumpNav(content: string): string {
+  const items: Array<{ id: string; text: string }> = [];
+  for (const m of content.matchAll(/<h2\s+id="([^"]*)"[^>]*>([\s\S]*?)<\/h2>/g)) {
+    const id = m[1]!;
+    const text = htmlToText(m[2]!);
+    if (id && text) items.push({ id, text });
+  }
+  // The two thresholds are OR'd; `content` is the rendered body this page will ship,
+  // so the measurement is of the real thing rather than of its source.
+  if (items.length < JUMP_MIN_H2 && content.length < JUMP_MIN_BYTES) return '';
+  const label = t('On this page');
+  const links = items
+    .map(it => `<a href="#${esc(it.id)}">${esc(it.text)}</a>`)
+    .join('');
+  // "#top" is the HTML spec's own name for the top of the document when nothing
+  // carries that id — a browser default, so no script is involved in the scroll.
+  const top = `<a class="doc-jump-top" href="#top">${esc(t('Back to top'))}</a>`;
+  return `<div class="doc-jump">`
+    + `<button type="button" class="doc-jump-btn" id="docJumpBtn" aria-expanded="false" aria-controls="docJumpNav" aria-label="${esc(label)}" title="${esc(label)}">${JUMP_ICON}</button>`
+    + `<nav class="doc-jump-nav" id="docJumpNav" aria-label="${esc(label)}" hidden>`
+    + `<p class="doc-jump-title">${esc(label)}</p>${links}${top}</nav></div>`;
+}
+
+/**
+ * Hoist a page's own h1 into a masthead band with the chip field behind it.
+ *
+ * Every article page opened with a bare h1 on white — correct, and completely
+ * silent about what site you had landed on. The landing page's hero already says it
+ * (formats drifting past the name), so the docs get the same greeting rather than a
+ * second invented one. plans/105 records why this is the DEFAULT rather than a
+ * per-page choice, and why it carries no credential line: it is shell decoration
+ * drawn at read time, nothing signed and nothing claimed.
+ *
+ * THE H1 MOVES BUT ITS IDENTITY DOES NOT. The element is re-emitted verbatim, id
+ * and all, because that id is a published anchor — deep links, the search index's
+ * page record, and anything a reader has bookmarked. Rebuilding the heading from
+ * page.title instead would have quietly renamed every one of them.
+ */
+function docsMasthead(content: string, slug: string): { band: string; rest: string; canvas: boolean } | null {
+  const m = /<h1(\s[^>]*)?>([\s\S]*?)<\/h1>/.exec(content);
+  if (!m) return null; // a page with no h1 keeps its plain top
+  const rest = content.slice(0, m.index) + content.slice(m.index + m[0].length);
+  const art = mastheadArt(slug, m[0]);
+  if (art) return { band: art, rest, canvas: false };
+  const band = `<div class="docs-masthead">`
+    + `<canvas class="docs-mast-canvas" aria-hidden="true"></canvas>`
+    + `<div class="docs-mast-inner">${m[0]}</div></div>`;
+  return { band, rest, canvas: true };
+}
+
+/**
+ * A page's BANKED masthead, when `MASTHEADS` maps its slug to one — the artifact
+ * replacing the default chip canvas, in the same band, behind the same h1.
+ *
+ * Returns '' for a page with no mapping (the common case, and today every case),
+ * and warns + falls back to the default band when a mapped id cannot be resolved
+ * or inlined. A missing artifact is a bank problem, not a reason to ship a page
+ * with no top.
+ */
+function mastheadArt(slug: string, heading: string): string {
+  const id = MASTHEADS[slug];
+  if (!id) return '';
+  const art = resolveDocsArt('mastheads', id, { dir: __dirname, lang: activeLang });
+  if (!art) {
+    console.warn(`⚠  masthead: /${slug} maps to '${id}', which is not in docs/mastheads/ — the page keeps the default band`);
+    return '';
+  }
+  const inlined = inlineDocsArt(art);
+  if ('error' in inlined) {
+    console.warn(`⚠  masthead ${id}: ${inlined.error} — the page keeps the default band`);
+    return '';
+  }
+  // Read from the SAME file that was just inlined (art.path), pointed at the same
+  // file's served URL (art.src). The presentation copy on the page and the record
+  // the line describes are two views of one artifact — never the id resolved twice.
+  const cred = shotCredential(art.file, 'shot-cred--mast', { path: art.path, src: art.src, art: true });
+  // Renders anyway (art with no line is still art), but never silently: an unsigned
+  // artifact in a bank whose whole premise is "banked art is credentialed art" is a
+  // sign step that did not run, and the page gives the reader no way to notice.
+  if (!cred) console.warn(`⚠  masthead ${art.file}: no readable Content Credential — run 'node scripts/sign-docs-art.ts'`);
+  return mastheadArtBand({ art: inlined.html, heading, credential: cred });
+}
+
+/**
+ * `::: figure <id>` — a banked figure inlined into the prose that argues with it.
+ *
+ * Unknown id → a loud warning and NOTHING rendered. A figure is referenced from the
+ * body because the surrounding text is making a point with it; silently leaving an
+ * empty box (or worse, the id) in the middle of that argument helps nobody, and the
+ * prose still carries the point on its own (plan §6: that constraint IS the a11y
+ * answer).
+ */
+function buildFigure(id: string, body: string): string {
+  const art = resolveDocsArt('figures', id, { dir: __dirname, lang: activeLang });
+  if (!art) {
+    console.warn(`⚠  ::: figure ${id} — no docs/figures/${id}.svg or .html; nothing rendered`);
+    return '';
+  }
+  const inlined = inlineDocsArt(art);
+  if ('error' in inlined) {
+    console.warn(`⚠  ::: figure ${id} — ${inlined.error}; nothing rendered`);
+    return '';
+  }
+  const caption = body.trim();
+  const cred = shotCredential(art.file, 'shot-cred--figure', { path: art.path, src: art.src, art: true });
+  if (!cred) console.warn(`⚠  ::: figure ${id} — ${art.file} carries no readable Content Credential; run 'node scripts/sign-docs-art.ts'`);
+  return figureBlock({
+    art: inlined.html,
+    caption: caption ? mdToHtml(caption) : '',
+    credential: cred,
+    src: art.src,
+  });
+}
+
 function wrapPage(lang: Lang, page: Page, content: string, ogSlugs: Set<string>, md = '') {
   const activeHref = page.slug === 'index' ? '/info/index.html' : `/info/${page.slug}.html`; // logical (English) - identity only
   const isLanding  = page.isLanding;
@@ -4935,12 +5595,25 @@ function wrapPage(lang: Lang, page: Page, content: string, ogSlugs: Set<string>,
   const listen = audio ? listenButtonHtml(page, audio) : '';
   if (audio) assertAudioCues(page, content, md);
 
+  // Docs pages only: the landing page already carries its own sticky quicknav, and
+  // a second on-page nav in the corner would be two answers to one question.
+  const jump = isLanding ? '' : pageJumpNav(content);
+
+  // The masthead band, and the article body with its h1 lifted out of it. The Listen
+  // button keeps its place ABOVE the h1 (it was always the first thing in <main>),
+  // so it now floats over the band's top edge rather than over bare page.
+  const mast = isLanding ? null : docsMasthead(content, page.slug);
+  const article = mast ? mast.rest : content;
+
+  // The band is a SIBLING of .docs-wrap, not something inside the content column:
+  // full viewport width, with the rail and the article both starting underneath it.
   const body = isLanding ? `${listen}${content}` : `
+${mast ? mast.band : ''}
 <div class="docs-wrap">
   ${buildSidebar(lang, page, activeHref)}
-  <main class="docs-content page-${page.slug}">
+  <main class="docs-content${mast ? '' : ' no-mast'} page-${page.slug}">
     ${listen}
-    ${content}
+    ${article}
   </main>
 </div>`;
 
@@ -4949,6 +5622,15 @@ function wrapPage(lang: Lang, page: Page, content: string, ogSlugs: Set<string>,
   const alternates = LANGS.map(l =>
     `<link rel="alternate" hreflang="${LANG_META[l].htmlLang}" href="${esc(`${SITE_URL}${localeHref(l, page.slug)}`)}">`,
   ).join('\n') + `\n<link rel="alternate" hreflang="x-default" href="${esc(`${SITE_URL}${localeHref('en', page.slug)}`)}">`;
+  // The page's OWN Content Credential, C2PA 2.4 §A.7.1.2's external form: one
+  // stable link, the store beside it at /info/<slug>.c2pa, signed after this
+  // string has been written to disk (docs/page-seal.ts explains the ordering).
+  //
+  // ENGLISH ONLY this wave. A locale page linking a sidecar that does not exist
+  // reads as a failed check, and pointing 26 locales at the English store would
+  // read as "this document was modified" — so a locale page's bytes stay exactly
+  // what they were before seals existed.
+  const seal = lang === 'en' ? `\n${pageSealLink(page.slug)}` : '';
 
   return `<!doctype html>
 <html lang="${LANG_META[lang].htmlLang}"${LANG_META[lang].dir ? ` dir="${LANG_META[lang].dir}"` : ''}>
@@ -4958,7 +5640,7 @@ function wrapPage(lang: Lang, page: Page, content: string, ogSlugs: Set<string>,
 <title>${esc(pageTitle)}</title>
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${esc(localeUrl)}">
-${alternates}
+${alternates}${seal}
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Lolly">
 <meta property="og:title" content="${esc(pageTitle)}">
@@ -4985,6 +5667,7 @@ ${SHOT_MOTION_INIT}
 ${buildNav(lang, page.slug, activeHref, isLanding, page.pathway)}
 ${body}
 ${FOOTER(lang)}
+${jump}
 ${THEME_INTERACT_SCRIPT}
 ${HAMBURGER_SCRIPT}
 ${isLanding ? '' : DOCS_SEARCH_SCRIPT}
@@ -4993,8 +5676,10 @@ ${LANG_PICKER_SCRIPT}
 ${SCROLL_REVEAL_SCRIPT}
 ${SHOT_MOTION_SCRIPT}
 ${SHOT_CRED_SCRIPT}
+${jump ? DOC_JUMP_SCRIPT : ''}
 ${isLanding ? '' : SHOWCASE_SCRIPT}
 ${isLanding ? HERO_CANVAS_SCRIPT : ''}
+${mast?.canvas ? DOCS_MASTHEAD_SCRIPT : ''}
 ${isLanding ? LIQUID_GLASS_SCRIPT : ''}
 ${isLanding ? FORMATS_DIALOG_SCRIPT : ''}
 ${audio ? LISTEN_SCRIPT : ''}
@@ -5019,6 +5704,21 @@ function stripFrontMatter(md: string): string {
 // pill — an agent reading it would get `%file{the-flood.webp}` as literal noise
 // around the very words that matter. Unwrap to the plain text; the sentence was
 // always written to read without them.
+/**
+ * The markdown twin has no build step to inline art into, so a `::: figure <id>`
+ * fence there is a reference to something the reader cannot see, wrapped around the
+ * only part of it they can — the caption. Unwrap to the caption prose, which was
+ * always written to read as a sentence about the point being made (the provenance
+ * pill unwrap above, applied to a block).
+ *
+ * The id is not carried into the twin as text: it names a file the twin does not
+ * publish, and an agent reading `::: figure trust-chain` would be reading build
+ * plumbing, not documentation.
+ */
+function unwrapFigureFences(md: string): string {
+  return md.replace(/^::: figure\s+\S+[ \t]*\r?\n([\s\S]*?)^:::[ \t]*\r?\n?/gm, (_m, caption: string) => caption);
+}
+
 function unwrapProvenanceMarkers(md: string): string {
   let out = md;
   for (let pass = 0; pass < 4; pass++) {
@@ -5027,6 +5727,18 @@ function unwrapProvenanceMarkers(md: string): string {
     out = next;
   }
   return out;
+}
+
+// The twin is markdown, and a technology mark is pure decoration — the word it sits
+// beside already says which thing is meant. An agent reading /info/build-guide.md
+// gains nothing from `<!--l:helm-->` and loses nothing without it, so the marker is
+// removed outright rather than unwrapped (there is no text inside it to keep). The
+// marker is invisible in any markdown renderer anyway; this is about the twin being
+// clean at the source level too. Both forms go: the inline `<!--l:key-->` and the
+// whole-line `<!--lb:key key-->` block, which is pure page rhythm and says even less
+// to a reader with no eyes on it. tests/docs-logos.test.ts holds the line.
+function stripLogoMarkers(md: string): string {
+  return md.replace(/<!--lb:[a-z0-9 -]+-->\n?/g, '').replace(/<!--l:[a-z0-9-]+-->/g, '');
 }
 
 // A standalone provenance credential line (`%file{…} %entity{…} …`) is page
@@ -5120,7 +5832,7 @@ ${sections.join('\n\n')}
 
 // ── Build all pages ───────────────────────────────────────────────────────────
 
-function build() {
+async function build() {
   // Ensure output dirs exist and copy static assets (icons).
   mkdirSync(outDir, { recursive: true });
   // icon.svg is THE site mark (hero logo; the README + overview doc use it too) — the
@@ -5144,6 +5856,28 @@ function build() {
     for (const f of readdirSync(shotsSrc)) {
       if (/\.(png|svg|jpg)$/.test(f)) copyFileSync(resolve(shotsSrc, f), resolve(outDir, 'shots', f));
     }
+  }
+
+  // Banked art — the signed mastheads and figures, served verbatim at
+  // /info/mastheads/ and /info/figures/ (the shots precedent). The page inlines a
+  // STRIPPED copy of these bytes; this is the copy the credential line describes and
+  // that "Check it yourself" / "Get the signed file" / "Copy signed source" act on,
+  // so it must arrive byte-identical to what was signed — copied, never rewritten.
+  // The sibling <id>.meta.json is bank input (generator, model, oversight — read by
+  // scripts/sign-docs-art.ts) and is deliberately NOT published.
+  for (const bank of ['mastheads', 'figures']) {
+    // Mirror, don't accumulate: a withdrawn artifact must not stay behind in the
+    // (gitignored) output dir to be served stale beside a page that no longer
+    // references it. Cleared BEFORE the existence check, so emptying the bank
+    // empties the site too.
+    rmSync(resolve(outDir, bank), { recursive: true, force: true });
+    const src = resolve(repoRoot, 'docs', bank);
+    if (!existsSync(src)) continue;
+    const art = readdirSync(src).filter(f => /\.(svg|html)$/.test(f));
+    if (!art.length) continue;   // a bank holding only its README serves nothing
+    mkdirSync(resolve(outDir, bank), { recursive: true });
+    for (const f of art) copyFileSync(resolve(src, f), resolve(outDir, bank, f));
+    console.log(`✓  /info/${bank}/ (${art.length} signed ${art.length === 1 ? 'artifact' : 'artifacts'})`);
   }
 
   // Docs narration — mirror the committed artefacts and link them (plan §4.5).
@@ -5190,6 +5924,10 @@ function build() {
   // localized chrome rather than 404ing. See plans/38-localize.md §8.
   const sitemapUrls: Array<{ slug: string; isLanding?: boolean }> = [];
   const mdBySlug = new Map<string, string>();
+  // The English pages to seal, collected as they are written (plans/105 §7). The
+  // list is built here rather than from `pages` so a page whose source could not
+  // be read — and which therefore has no file on disk — is never sealed.
+  const sealTargets: SealTarget[] = [];
   for (const lang of LANGS) {
     activeCatalog = loadSiteCatalog(lang);
     activeLang = lang;
@@ -5218,9 +5956,17 @@ function build() {
       console.log(`✓  ${localeHref(lang, page.slug)}`);
       if (lang === 'en') {
         sitemapUrls.push({ slug: page.slug, isLanding: page.isLanding });
+        sealTargets.push({
+          slug: page.slug,
+          path: resolve(localeOutDir, outFile),
+          title: t(page.title),
+          // The file that was actually read, repo-relative — not `page.src`
+          // re-derived, so the claim names the source this page really came from.
+          source: relative(repoRoot, srcPath).split(sep).join('/'),
+        });
         // Markdown twin: the verbatim English source, published next to the HTML
         // so agents (and llms.txt below) can read the docs without a DOM.
-        const twin = unwrapProvenanceMarkers(commentStandaloneProvenanceLines(stripFrontMatter(md)));
+        const twin = stripLogoMarkers(unwrapFigureFences(unwrapProvenanceMarkers(commentStandaloneProvenanceLines(stripFrontMatter(md)))));
         writeFileSync(resolve(outDir, `${page.slug}.md`), twin, 'utf-8');
         mdBySlug.set(page.slug, twin);
       }
@@ -5269,6 +6015,16 @@ function build() {
   writeFileSync(resolve(outDir, 'llms.txt'), buildLlmsTxt(mdBySlug), 'utf-8');
   console.log(`✓  /info/llms.txt (+${mdBySlug.size} markdown twins)`);
 
+  // ── Page seals (plans/105 §7) ──────────────────────────────────────────────
+  // LAST, and after every page is on disk: C2PA 2.4 §A.7.1.3 hashes the whole
+  // document, so anything that rewrote a page after this point would silently
+  // invalidate its own credential. Only pages whose bytes (or whose signed
+  // components) actually changed are re-signed — see docs/page-seal.ts for why
+  // an unconditional re-sign is not an option on a committed site.
+  await sealPages({ outDir, targets: sealTargets });
+
+  // After the seals, so the offline docs bundle carries each page's sidecar
+  // alongside the page it belongs to (and hashes its real bytes).
   writeInfoManifest();
   console.log(`\nSite built → shells/web/public/info/`);
 }
@@ -5360,7 +6116,10 @@ if (ogExpected > 0 && ogGenerated.size < ogExpected) {
   );
 }
 
-build();
+// Awaited: build() signs each changed page as its last step (plans/105 §7), and a
+// process that exits before those writes land would publish pages pointing at
+// sidecars that were never written.
+await build();
 
 // ── Watch mode ────────────────────────────────────────────────────────────────
 // `node docs/build.ts --watch` rebuilds whenever a docs source changes, so the
@@ -5404,12 +6163,35 @@ if (process.argv.includes('--watch') && process.env.LOLLY_DOCS_RELOAD !== '1') {
       reloading = false;
     }
   };
+  // build() is ASYNC now (the page seals are its last step, and signing is), which
+  // changes one thing about this watcher: a synchronous build could not be
+  // re-entered — the debounce timer simply could not fire while it ran — whereas an
+  // awaited one yields, so a save landing during the seal pass would start a second
+  // build over the first one's output. Two builds writing the same pages while one
+  // of them hashes them is how a seal ends up over half-written bytes. So: one build
+  // at a time, and a save that arrives mid-build queues exactly one more.
+  let building = false;
+  let queued: string | null = null;
+  const runBuild = async (label: string): Promise<void> => {
+    if (building) { queued = label; return; }
+    building = true;
+    console.log(`\n↻  ${label} changed - rebuilding /info…`);
+    try {
+      await build();
+    } catch (err) {
+      console.error('✗  Rebuild failed:', (err as Error).message);
+    } finally {
+      building = false;
+      const next = queued;
+      queued = null;
+      if (next) void runBuild(next);
+    }
+  };
   const scheduleRebuild = (label: string) => {
     clearTimeout(timer!);
     timer = setTimeout(() => {
       if (/\.ts$/.test(label)) { void reload(label); return; }
-      console.log(`\n↻  ${label} changed - rebuilding /info…`);
-      try { build(); } catch (err) { console.error('✗  Rebuild failed:', (err as Error).message); }
+      void runBuild(label);
     }, 120);
   };
   // fs.watch types the filename as string | Buffer | null; it's a string here.

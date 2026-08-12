@@ -68,8 +68,8 @@ Preview is **opt-in** (`p`) and secondary - seeing inputs, files, projects, and 
 
 Two tiers, picked automatically per format:
 
-- **DOM-free (always available):** **SVG, EMF, EPS (and EPS-CMYK), DXF, HTML, plus the data formats** (JSON, CSV, ICS, VCF, MD, TXT) render through the same headless engine path as the CLI - instant, no browser.
-- **Browser tier (opt-in, on demand):** everything that needs a real layout/paint engine - **raster (PNG/JPG), PDF, video** and **live-URL capture** - is produced by a scoped headless **Chromium**. For an ordinary tool the TUI drives a built copy of the web shell so the bytes are *identical* to a web/desktop Download; there is no second render path to drift. The browser launches only when you first export one of these formats, never at startup.
+- **DOM-free (always available):** **SVG (and SVGZ), EMF, WMF, EPS (and EPS-CMYK), DXF, BMP, HTML, plus the data formats** (JSON, CSV, ICS, VCF, MD) render through the same headless engine path as the CLI - instant, no browser.
+- **Browser tier (opt-in, on demand):** everything that needs a real layout/paint engine - **raster (PNG/JPG), PDF, video**, **live-URL capture**, and **TXT** - is produced by a scoped headless **Chromium**. TXT belongs here because it is the *rendered* page serialised to plain text, so something has to lay the page out first. For an ordinary tool the TUI drives a built copy of the web shell so the bytes are *identical* to a web/desktop Download; there is no second render path to drift. The browser launches only when you first export one of these formats, never at startup.
 
 Set the browser tier up once:
 

@@ -12,7 +12,7 @@ Every example here that shows output is a command that was run, with its real ou
 
 ## 1. Install and prerequisites
 
-You need **Node 20.19+ or 22.12+** (this page was produced on v24.18.1) and a checkout of the repo. From the repo, the CLI runs as an npm script; the `--` passes arguments through:
+You need **Node 22.18+ or 24+** (the repo runs TypeScript directly via Node's type-stripping; this page was produced on v24.18.1) and a checkout of the repo. From the repo, the CLI runs as an npm script; the `--` passes arguments through:
 
 ```bash
 git clone --recurse-submodules https://github.com/lolly-tools/lolly
@@ -24,6 +24,10 @@ npm run --silent cli -- --version
 ```
 lolly 0.1.0 (engine 1.95.0)
 ```
+
+Every captured output block on this page reports the engine version it was
+produced against; yours will read higher, and that is the only difference you
+should see. `engine/src/version.ts` holds the live number.
 
 Use `npm run --silent cli` (not plain `npm run cli`) whenever you redirect or pipe: npm prints a two-line banner on stdout that would land inside your PNG. An installed `lolly` binary has no such wrapper.
 
@@ -324,7 +328,7 @@ Every message below is the exact text the CLI prints, keyed to what to do about 
 | `The passphrase for the signing key at … is wrong (the key did not decrypt).` (exit 6) | Wrong passphrase. | Check the secret. Note the message never echoes what you supplied. |
 | `--no-provenance turns every provenance mark off, but --sign-key/--sign-cert asks for a signed credential.` | Two contradictory instructions. | Drop one. |
 | `A signing identity is configured, but Content Credentials are off for this run…` | The identity loaded but the tool or the run has credentials off, so nothing was signed with it. | Drop `--c2pa=off`, or accept that this tool never signs (`privacy: 'on-device'` tools do not). |
-| `Warning: format "dxf" has no C2PA container — Content Credentials skipped.` | The format cannot carry a credential at all. It is a warning here, because you asked. | Export a format that can: `pdf`, `pdf-cmyk`, `png`, `apng`, `jpg`, `jpeg`, `gif`, `svg`, `tiff`, `cmyk-tiff`, `webp`, `mp4`, `webm`. |
+| `Warning: format "dxf" has no C2PA container — Content Credentials skipped.` | The format cannot carry a credential at all. It is a warning here, because you asked. | Export a format that can: `pdf`, `pdf-cmyk`, `png`, `apng`, `jpg`, `jpeg`, `gif`, `svg`, `tiff`, `cmyk-tiff`, `webp`, `avif`, `mp4`, `m4a`, `webm`, `mp3`, `wav`, `ogg`, `opus`. Two of those are Lolly's own home for the manifest rather than a spec-defined one - `webm` (a Matroska part) and `ogg`/`opus` (a `C2PA=` comment field) - so only Lolly's verifier reads them back; the rest verify in third-party tools. |
 
 ---
 
@@ -351,5 +355,5 @@ Every message below is the exact text the CLI prints, keyed to what to do about 
 - [CLI](/info/cli.html) - the full command surface
 - [Content Credentials identity](/info/content-credentials-identity.html) - the identity model and the trust tiers
 - [Content Credentials - engineering](/info/content-credentials-engineering.html) - the CA service, the manifest internals
-- [Security & Verification](/info/security-verification.html) - the cryptography, summarised for a reviewer
+- [Security & Verification](/info/security.html) - the cryptography, summarised for a reviewer
 - [Trust](/info/trust.html) - what Lolly claims and what enforces each claim

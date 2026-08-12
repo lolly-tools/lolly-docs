@@ -77,7 +77,8 @@ Author *tools*, not files: build the thing that generates 10,000 cards rather th
 - **Draw, don't settle.** Layout Studio has a real **pen**: click to place points, drag to curve, and pick the kind of curve that runs through them. Combine shapes with **union, subtract, intersect and exclude**, outline a stroke, offset a silhouette, simplify a path - the geometry is exact Bezier maths, so a shape you draw stays crisp at any size and renders identically from a link or the CLI. See [Using Lolly → Drawing your own shapes](/info/using.html#drawing-your-own-shapes-the-pen).
 - **Editable vectors.** SVG, EPS, EMF, and DXF export. Text becomes outlined paths in vector output, so a print shop or a cutter gets crisp geometry that opens anywhere. (Outlined text is no longer *re-typable* in Illustrator - that's the trade for perfect fidelity without the font.)
 - **Convenience that adds up.** Batch a spreadsheet into a folder of assets; save sessions and organise them into Projects; share any state as a URL; render a whole folder as one zip.
-- **A UI that's actually pleasant.** Undo/redo everywhere, a sound layer you can turn off, a theme cycle, live-camera filters, a masonry gallery - and **Neurospicy Mode** for a calmer, lower-stimulation interface.
+- **A UI that's actually pleasant.** Undo/redo everywhere, a sound layer you can turn off, a theme cycle, live-camera filters, a masonry gallery - and **Neurospicy Mode**, a background focus-music player that follows you across the app in its own dock.
+- **A calmer interface when you want one.** Four switches under **Profile → Accessibility** - *Reduce motion*, *Hide colourful previews*, *High contrast* and *Large text* - settle the app around your work. Each is off until you turn it on, and none of them touch your canvas or move a pixel of what you export. See [Your profile → Accessibility](/info/profile.html#accessibility).
 
 ## Get the most out of it
 
@@ -87,6 +88,8 @@ Author *tools*, not files: build the thing that generates 10,000 cards rather th
 - **[Your profile](/info/profile.html)** - the details tools pre-fill from, and how to carry them between devices.
 - **[Import a design](/info/design-import.html)** - bring in your Figma / Penpot / Illustrator / InDesign work, and your PowerPoint decks - edited or rebranded on-device.
 - **[Working together](/info/collaborate.html)** - two people editing one session live, device to device, with no account and no server in the middle.
-- **[Search](/info/search.html)** - one field at the bottom of every screen that reaches your tools, your saved work, the catalogue and your settings.
+- **[Search](/info/search.html)** - one field at the foot of the gallery, Utilities, Projects, the Catalogue, the Dashboard and Profile that reaches your tools, your saved work, the catalogue and your settings.
+- **[Ask Lolly](/info/using.html#ask-lolly)** (`#/ask`) - type a question and get the matching section of these guides back verbatim, with a link straight to it.
+- **The Dashboard** (`#/d`) - the instrument panel: your design system shown read-only, the full capability map, what this device can do, and a glance at your activity and storage.
 - **[Your favourites](/info/favourites.html)** - star what you use and it gets a tile of its own above the grid.
 - **[Exporting & formats](/info/exporting.html)** - every format, print units, video, and batch.

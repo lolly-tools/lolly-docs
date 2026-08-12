@@ -47,15 +47,15 @@ Lolly टूल्स की एक श्रेणी - प्राइवे�
 
 ये सभी ऑन-डिवाइस ट्रांसफ़ॉर्म हैं: आपकी फ़ाइल या डेटा अंदर जाता है, साफ़ किए हुए बाइट बाहर आते हैं, और **अपलोड करने के लिए कोई सर्वर है ही नहीं**। ये उस आम "साफ़ करने के लिए अपनी फ़ाइल किसी अजनबी की वेबसाइट पर अपलोड करें" वाले टूल के जानबूझकर उलट हैं, जिसकी ओर एक नेकनीयत कर्मचारी वरना हाथ बढ़ाता है।
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
 
 Text Helper फ़ाइलों की जगह टेक्स्ट के लिए वही सौदा है। यह वही टैब वाली वर्कबेंच है जिसे कोई कर्मचारी वरना किसी अजनबी की साइट पर ढूँढने जाता, और यह एक भी इनपुट घोषित नहीं करता, क्योंकि जिस चीज़ को यह छूता है वह कभी पेज से बाहर नहीं जाती।
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1200&height=750&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
 
 Compress PDF इस सेट को पूरा करता है: बड़े आकार का अटैचमेंट आपकी चुनी हुई क्वालिटी सेटिंग के हिसाब से छोटा हो जाता है — उसी मशीन पर, जिसमें वह पहले से मौजूद है।
 
-![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=ov2-compress-pdf)
+![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=ov2-compress-pdf)
 
 ## डिटरमिनिज़्म और पुनरुत्पादनीयता
 

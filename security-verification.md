@@ -34,12 +34,12 @@ The engine's crypto core is **platform-agnostic and uses only `globalThis.crypto
 | PDF encryption | **ISO 32000-2 §7.6.4** (PDF 2.0 AES-256, R6) |
 | Zip encryption | **PKWARE APPNOTE** + **WinZip AE-2** |
 | Byte-level signatures | **SEAL** (verification) |
-| Durable soft binding | **Adobe TrustMark** (read) |
+| Durable soft binding | **Adobe TrustMark** (read + write; write off by default) |
 | Supply chain | **CycloneDX 1.5** (SBOM) |
 
 ## Cryptographic primitives
 
-- **Signing** (Content Credentials, catalog integrity, issued certificates): **ECDSA P-256 / ES256** with **SHA-256**. The on-device signing key is generated per session and is non-extractable. Even Lolly can't read it.
+- **Signing** (Content Credentials, catalog integrity, issued certificates): **ECDSA P-256 / ES256** with **SHA-256**. There are two signer paths and the difference is worth stating precisely. An **enrolled** identity's device key is generated **non-extractable** and kept in IndexedDB: even Lolly's own code can only ask it to sign, never read it. The **default anonymous** signer is a throwaway keypair minted per export inside the page, used once and dropped with the export. Neither key is ever transmitted.
 - **Verifying** (to accept the whole C2PA ecosystem): **ECDSA** P-256/384/521, **RSA** PKCS#1 v1.5, **RSA-PSS**, and **Ed25519**.
 - **Encryption**: **AES-256** for the *Strong* PDF lock (PDF 2.0 / R6) and *Strong* locked downloads (WinZip AE-2), with **PBKDF2** key derivation and **HMAC** authentication. The *Standard* tiers (40-bit RC4 for PDF, ZipCrypto for zip) are labelled as quick, universal **deterrents**. Reach for *Strong* for anything sensitive.
 - **Hashing**: **SHA-256** throughout (SHA-384/512 where a curve or algorithm requires it).
@@ -66,7 +66,7 @@ Beyond the C2PA credential, Verify surfaces several read-only signals. Each is a
 - **The Lolly Imprint** — an invisible pixel watermark, on by default, that survives a screenshot or re-save (where the credential dies to any container change). Presence-only, no personal data. It is **security-through-obscurity**: casual-stripping cover, not a hardened defence. It complements the credential rather than replacing it.
 - **SEAL** byte-level signatures, **AI-generated-content** declarations, third-party **pixel-watermark** deep scans (opt-in, one-time on-device model download), and **hidden-data** detection. All of these run locally.
 
-Lolly's provenance strategy is **read-broad, embed-narrow**: it *reads* many signals but only ever *writes* C2PA (plus its own Imprint), which keeps the write-side attack surface small. That narrow write side is visible in the export panel: three named switches, each a separate mechanism, rather than one blanket "protect this" claim.
+Lolly's provenance strategy is **read-broad, embed-narrow**: it *reads* many signals but *writes* only three — C2PA, its own Imprint, and an opt-in **durable mark** in Adobe's TrustMark format (a neural pass plus a one-time model download, so it is off by default). That keeps the write-side attack surface small, and it is exactly what the export panel shows: three named switches, each a separate mechanism, rather than one blanket "protect this" claim.
 
 ![The Content protection group on a PNG export, with the credential, the Imprint and the durable mark as three separate switches](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fformat%3Dpng%26c2pa%3D90%26imprint%3D1%26durable%3D1%26options&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-inputs%2C%23sidebar-utils%7Bdisplay%3Anone%7D&cropSelector=.export-protection&dark=1&filename=ce-protection-stack)
 
@@ -79,6 +79,7 @@ An automated test in the repository (`npm test`) backs every cryptographic claim
 - **Fuzzing.** Hostile, truncated, and deeply-nested inputs run through the C2PA, CBOR, and X.509 parsers with a regression corpus. The tests assert the parsers **fail closed**: no crash, no runaway recursion or allocation.
 - **Independent conformance.** The reference tools Lolly interoperates with validate its output: **c2patool** (C2PA), **qpdf** (PDF), and Adobe's own reference implementation for TrustMark. Lolly's verifier is also proven against a manifest signed by an entirely independent producer, not just its own round-trip.
 - **Supply chain.** A full **CycloneDX SBOM** is generated deterministically and **drift-checked in CI**, and `npm audit` **blocks** any high- or critical-severity dependency advisory from landing.
+- **Static analysis.** An **Opengrep** SAST job runs on every push and pull request. Lolly's own rules (`.github/opengrep/`) scan the whole tree — submodules included, which is what makes the scan real rather than nominal — and **block** on a finding. The upstream community rule packs run alongside them, diff-only against the merge base, and are advisory: they resolve over a third-party registry, so a gate there would go red on someone else's outage.
 
 The cryptography and parsers are additionally undergoing **SUSE's enterprise-scale security hardening**. They are strong by design today. Where a contract calls for certified assurance, deploy Lolly as one layer of defence-in-depth.
 
@@ -86,8 +87,8 @@ The cryptography and parsers are additionally undergoing **SUSE's enterprise-sca
 
 - **Content Credentials are tamper-*evident*, not tamper-*proof*.** They detect alteration cryptographically and offline. They don't prevent it. That is exactly what makes fully offline verification possible.
 - **The on-device signer is anonymous by design** unless you enrol a verified identity. No real credential ever leaves the device.
-- **Tool hooks are not a security sandbox.** A tool's optional `hooks.js` runs with the host bridge injected but, in a browser shell, executes in the page's realm. Run only tools you've reviewed until Worker isolation ships. An org running a shared catalog can gate it through Git review.
-- **Interoperability:** WebM has no standardised C2PA mapping yet, so Lolly attaches the manifest as a Matroska part. Lolly's own verifier reads that part. MP4 verifies in third-party tools by default.
+- **Tool hooks are not a security sandbox by default.** A tool's optional `hooks.js` runs with the host bridge injected but, in a browser shell, executes in the page's realm. Worker isolation ships as a per-tool opt-in — a manifest declaring `isolate: true` runs its hooks off-thread in a Worker, with the in-realm path as the fallback where no Worker executor exists — so the default remains in-realm. Run only tools you've reviewed. An org running a shared catalog can gate it through Git review.
+- **Interoperability:** two containers have no standardised C2PA mapping yet, so Lolly gives each a home of its own — WebM (the manifest as a Matroska part) and Ogg/Opus (the store as a `C2PA=` comment field, its byte range excluded from the binding so the audio still hashes identically). Lolly's own verifier reads both; a third-party tool will not. Every other format Lolly stamps uses its spec-defined place — MP4, M4A, AVIF, MP3 and WAV among them — and verifies in third-party tools by default.
 
 ## Reporting a vulnerability
 

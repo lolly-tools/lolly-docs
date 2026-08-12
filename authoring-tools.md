@@ -60,7 +60,7 @@ Optional:
 - `listed` - boolean, defaults `true`. Whether the tool appears in the gallery listing: the grid, search, favourites and the featured/utility strips. Set `false` to **unlist** a tool that is a *mechanism* invoked from context rather than a destination someone browses to - `asset-export`, reached from the catalog's per-asset **Download**, is the only unlisted tool in the SUSE pack. An unlisted tool still loads normally via `#/tool/<id>`, URL mode and the CLI; unlisting only removes it from the listing.
 - `new` - boolean. Forces the gallery's **New** badge on this tool regardless of catalog position. Newness is otherwise inferred from catalog order - the most-recently-appended tools wear the badge and it self-expires as later tools ship - so set this to keep a tool flagged after it drops out of that trailing window.
 - `privacy` - `"on-device"`. Marks a content-transform utility that processes the user's own file entirely on the device. Shows the "Runs on your device - nothing is uploaded" badge; enforces (validated) that the tool is never `experimental` and (at runtime) that exports carry no provenance metadata and no watermark. See the `file` input + `exportFile` hook below.
-- `hooks` - `{ onInit?, onInput?, onFrame?, onLevel?, beforeExport?, afterExport?, exportFile? }` boolean flags. If any are true, you must ship `hooks.js` with the matching functions. (`exportFile` is the transform path - file bytes in → transformed bytes out; `onFrame` makes the tool react to a live camera; `onLevel` makes it react to live audio levels while recording - all covered below.) The list is exhaustive and the schema sets `additionalProperties: false`, so a hook name that is not here is rejected at validation rather than accepted and silently ignored.
+- `hooks` - `{ onInit?, onInput?, onFrame?, onLevel?, beforeExport?, afterExport?, exportFile?, exportStill? }` boolean flags. If any are true, you must ship `hooks.js` with the matching functions. (`exportFile` is the transform path - file bytes in → transformed bytes out; `exportStill` lets a tool own a raster still at a bit depth the 8-bit DOM raster cannot originate (16-bit/HDR PNG, OpenEXR, Radiance); `onFrame` makes the tool react to a live camera; `onLevel` makes it react to live audio levels while recording - all covered below.) The list is exhaustive and the schema sets `additionalProperties: false`, so a hook name that is not here is rejected at validation rather than accepted and silently ignored.
 - `composes` - embed another tool's render as an image (tool composition; see below). Requires the `"compose"` capability.
 - `a11yLabel` - accessible description of the rendered output. The preview canvas is exposed to screen readers as a single `role="img"`; this is its label. It's a Handlebars string hydrated with the current input values (same context as the template), so it stays accurate as the user edits - e.g. `"QR code linking to {{url}}"` or `"Meeting plan for {{default count \"a\"}} people"`. Use `{{default x \"fallback\"}}` for empty inputs. Omit it and the label falls back to `"<name> preview"`. Keep it short and factual - it replaces, not supplements, the canvas contents for SR users.
 
@@ -74,7 +74,7 @@ Most of what `render` declares surfaces in one place the user sees: the export p
 
 ![The export popup - format and size fields, a Convert paths toggle and a pre-ticked Content Credentials card](/t/url-shot?url=%2F%23%2Ftool%2Fwordmark%3Foptions&width=1440&height=900&dpi=192&waitMs=2200&css=.export-popup%7Bwidth%3A360px!important%7D&walker=1&format=svg&cropSelector=.export-popup&dark=1&filename=auth-export-popup)
 
-`render` carries `width`, `height`, `formats` (one or more of `svg`, `svg-anim`, `emf`, `eps`, `eps-cmyk`, `dxf`, `pdf`, `pdf-cmyk`, `cmyk-tiff`, `tiff`, `pptx`, `png`, `jpg`/`jpeg`, `webp`, `avif`, `webm`, `mp4`, `gif`, `apng`, `webp-anim`, `html`, `md`, `txt`, `json`, `csv`, `ics`, `vcf`, `ico`, `zip`), plus these optional keys:
+`render` carries `width`, `height`, `formats` (`svg`, `png`, `pdf` and the rest of the ids in the `render.formats` enum in `schemas/tool.schema.json` - vector, raster, print, document, motion, audio, data and font outputs. The enum is the authority on the whole set; [URL Mode](/info/url-mode.html) says what each id produces), plus these optional keys:
 
 - `actions` - which action buttons to show. One or more of `copy`, `download`, `save`, `share`. **Defaults to `['copy','download','save']`** if omitted.
 - `export` - set `false` for utility/interactive tools with no export (hides the download/copy/format/dimension bar; shows **Save** only when the tool has inputs).
@@ -211,7 +211,7 @@ In the template, iterate with `{{#each people}}…{{/each}}`. The value round-tr
 
 `color-block` is the reference for typed/heterogeneous blocks (`addMenu` keyed on a `kind` select, `showFor`, `multilineFor`, and the full sub-field type set).
 
-**Drop files to add rows.** A `blocks` input may declare `dropToAdd: { field, accept }` - dropping one or more files onto the blocks list appends one row per file, uploading each into the named `asset` sub-`field` (the row's other fields start at their defaults). `accept` is a MIME filter (default `image/*`). `logo-wall` is the reference: drop many logos → one block each.
+**Drop files to add rows.** A `blocks` input may declare `dropToAdd: { field, accept }` - dropping one or more files onto the blocks list appends one row per file, uploading each into the named `asset` sub-`field` (the row's other fields start at their defaults). `accept` is a MIME filter (default `image/*`). `logo-wall` is the reference: drop many logos → one block each. (It ships with the **SUSE brand pack**, so it is only on disk on a profile that mounts that pack.)
 
 **Paste a Markdown document (`mdPaste`).** A `blocks` input may set `mdPaste: true` to add a **Paste Markdown** button to the blocks toolbar: it reads the clipboard, splits the Markdown into one block per heading (heading line → the block's `heading` field, the section beneath → its `body` field, kept as Markdown for a `{{markdown}}` render), and appends the blocks - so a whole document lands as editable, page-flowing blocks. Used by the paged/document tools.
 
@@ -268,7 +268,15 @@ Three of the `canvas` keys turn a plain box canvas into a **diagram editor**:
   - `layerClass` - the CSS class on the tool's rendered connector `<svg>`, which the shell hides mid-drag while it paints its own live preview.
   - `default*` (`defaultStyle` / `defaultArrow` / `defaultHead` / `defaultColor` / `defaultWidth`) - the values a newly-drawn edge starts at.
 
-`org-chart` is the reference implementation: an `editor`-layout box canvas with `grid`, `fixedCanvas: true`, and a `connect` writing to a `connectors` blocks input whose rows its hook turns into one artboard `<svg>` of arrows.
+`org-chart` is the reference implementation: an `editor`-layout box canvas with `grid`, `fixedCanvas: true`, and a `connect` writing to a `connectors` blocks input whose rows its hook turns into one artboard `<svg>` of arrows. It ships with the **SUSE brand pack**, so it is only on disk on a profile that mounts that pack.
+
+A canvas that maps the **ten time sub-fields** (`startField`, `durField`, `clipInField`, `speedField`, `enterField`, `exitField`, `enterMsField`, `exitMsField`, `muteField`, `laneField`) becomes a timeline editor: the shell mounts the timeline panel, the clock and the sequence export path. All ten or none - a partial mapping gives the panel somewhere to read from and nowhere to write, so it is treated as absent. Three further keys are **optional** on top of that, each additive on its own:
+
+- **`zField`** - names the `number` sub-field holding a box's depth (px above the surface). Consumed by the projection and depth-ordering math; the depth shadow (below) reads the same field.
+- **`kfField`** - names the `text` sub-field holding a box's keyframe track (see `docs/url-mode.md`'s Keyframe tracks section for the wire grammar). Hooks must treat this field as **strict emission only**: parse it and re-serialise the result, never pass the raw stored value through to a rendered attribute - a hand-edited share URL can put anything in a text field, so the re-serialise step is what keeps only charset-clean tokens on the page.
+- **`linkField`** - names the `text` sub-field holding the **A/V detach back-reference**: the id of the box this one was detached from (or onto), written on **both** sides when a clip's audio is split onto its own lane, so re-attaching works from either end. Machine-written by the timeline panel and never typed, so it wants `showFor: []`. It is not an instancing or geometry-sharing mechanism; a tool that omits it is still fully time-capable, it just never offers "Detach audio".
+
+Two more depth affordances are values inside existing declarations rather than `canvas` keys. A box `kind` of **`camera`** is a non-visual marker that aims and dollies the view: it has **no canvas footprint** - excluded from hit-testing, marquee, align/distribute and z-order, selected from its timeline bar or chip, and contributing no pixels to the export. And the `shadow` select can gain a **`depth`** option alongside the existing choices - a drop-shadow derived from the box's `zField` value (falling off with depth) rather than a manually authored offset/blur/colour.
 
 #### `vector` - a group of numbers as one control
 
@@ -452,6 +460,7 @@ Some tools export *data* alongside the rendered image - a calendar invite, a con
   - `{{icsStamp meetingTime}}` - a `date`/`datetime-local` value → iCalendar basic form (`20260915T143000`).
   - `{{rfcText x}}` - escape an iCalendar (RFC 5545) **or** vCard (RFC 6350) text field (`\` `;` `,` newline).
   - `{{csvCell x}}` - quote a CSV field per RFC 4180 only when needed.
+- **`css` / `scss` / `gpl`** - the same sibling-template mechanism, for palette output: ship `template.css`, `template.scss` or `template.gpl`. `color-palette` is the reference (its `ase` sibling is binary, so that one comes from an `exportStill` hook instead of a template).
 
 Example `template.ics` (see `tools/meeting-planner/`):
 
@@ -466,7 +475,7 @@ END:VEVENT
 END:VCALENDAR
 ```
 
-Reference wirings: `meeting-planner`→ICS, `email-signature`→vCard, `chart-creator`→CSV. Raster, `pdf`, video, `zip` and `ico` come from a browser engine - the web shell, the Tauri-bundled CLI, or the node CLI's raster tiers (resvg renders `png` from SVG-native tools browser-free; a scoped Chromium via `lolly install-browser` covers the rest) - while the node CLI writes `svg`/`emf`/`eps`/`eps-cmyk`/`dxf` and the text/data formats DOM-free. The CMYK formats pair with the `convertPaths` outlining toggle (see [The `render` block](#the-render-block)) for fonts-not-installed print fidelity; `pdf-cmyk` ships on more tools than `cmyk-tiff` does (a subset) - e.g. `qr-code` offers both, while `wayfinding-signage` and `event-name-badge` ship `pdf-cmyk`.
+Reference wirings: `meeting-planner`→ICS, `email-signature`→vCard, `chart-creator`→CSV. Raster, `pdf`, video, `zip` and `ico` come from a browser engine - the web shell, the Tauri-bundled CLI, or the node CLI's raster tiers (resvg renders `png` from SVG-native tools browser-free; a scoped Chromium via `lolly install-browser` covers the rest) - while the node CLI writes `svg`/`svgz`/`emf`/`wmf`/`eps`/`eps-cmyk`/`dxf`/`bmp` and the text/data formats DOM-free. The CMYK formats pair with the `convertPaths` outlining toggle (see [The `render` block](#the-render-block)) for fonts-not-installed print fidelity; `pdf-cmyk` ships on more tools than `cmyk-tiff` does (a subset) - e.g. `qr-code` offers both, while `wayfinding-signage` and `event-name-badge` ship `pdf-cmyk`.
 
 ## Hooks (`hooks.js`)
 
@@ -500,6 +509,15 @@ function exportFile({ model }) {
   // The transform path - for on-device utilities with a `file` input. Read the
   // picked file's bytes and return the transformed file: { bytes, mime, filename }.
   // Bypasses the DOM render/export pipeline entirely. See the `file` input above.
+}
+
+function exportStill({ node, format, opts, host }) {
+  // Own a raster still the 8-bit DOM raster cannot originate - 16-bit or HDR PNG,
+  // OpenEXR, Radiance. Called before host.export.render; `opts` carries depth/hdr/
+  // width/height/dpi. Return { bytes, mime } to short-circuit the export to those
+  // bytes (computed in float, via host.codec), or null to decline and fall through
+  // to the normal path for that format.
+  return null;
 }
 
 function onFrame({ frame, model, host }) {
@@ -588,8 +606,9 @@ The bridge grows by **addition**: new `host.*` APIs arrive in minor engine versi
 - **`host.geom`** (v1.64) - exact vector geometry: path booleans (`union` / `intersect` / `difference` / `xor` over an array of paths, plus `selfUnion` for the canonical form of one), `offset`, `stroke` (a stroked path in, a filled outline out), `simplify`, `fromNodes` + `continuity` (pen-tool node lists with handles and a continuity constraint), and measurement (`bounds`, `area`, `contains`, `winding`, `nearest`, which reports the contour / curve / `t` to split at). The currency both ways is an **SVG path-data string** - the thing already in your template, your state and your URL - with `parse` / `toPathData` exposing whole cubics for callers that want to walk the curves. Nothing flattens or samples: results stay real Béziers. **Failures are returned, not thrown** - every method answers `{ ok: true, … }` or `{ ok: false, code, message }`, so `if (!r.ok) …` and render something sensible; a throw out of a hook would only be logged and discarded, leaving your tool silently unresponsive. The `code` tells you what to do: `'invalid-path'` (malformed `d` - reject it), `'too-large'` (past the parse ceilings, which `limits()` reports), `'limit'` (the answer exists but this engine won't guess at it past its bounded-work ceiling - retry with simpler operands or a coarser `tolerance`), `'invalid-argument'`, `'unsupported'`. `ok: true` with `d: ''` is an **answer** - a legitimately empty region (a non-overlapping intersection, an over-shrunk offset) - not a failure. Path data is parsed defensively, so a pasted or URL-supplied `d` is safe to hand straight in. Feature-detect `host.geom`.
 
   ```js
-  function onInput({ values, host }) {
+  function onInput({ model, host }) {
     if (!host.geom) return {};                      // older shell: leave the path alone
+    const values = Object.fromEntries(model.map(i => [i.id, i.value]));
     const cut = host.geom.difference([values.shape, values.hole]);
     if (!cut.ok) return { pathError: cut.code };     // never silently wrong
     const outline = host.geom.stroke(cut.d, 4, { cap: 'round', join: 'round' });

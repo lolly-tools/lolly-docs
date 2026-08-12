@@ -1,10 +1,11 @@
 {
   "heading": "Every format, in and out",
-  "lead": "Lolly reads 37 source formats and renders 40 - here's the full set, grouped by what each one is. Twenty-one {roundtrip}: read *and* written, so they sit once in the middle.",
+  "_lead_note": "Deliberately count-free: the in/out/round-trip numbers are computed live in docs/build.ts from formats-catalog.json's dir fields, so no string in this file may hard-code one.",
+  "lead": "Lolly reads dozens of source formats and renders dozens more - here's the full set, grouped by what each one is. The {roundtrip} ones are read *and* written, so they sit once in the middle.",
   "ingestsLabel": "Ingests",
-  "ingestsCount": "37 in",
+  "ingestsCount": "in",
   "exportsLabel": "Exports",
-  "exportsCount": "40 out",
+  "exportsCount": "out",
   "ingests": [
     { "category": "Vector", "list": "SVG · PDF · Illustrator · InDesign · Figma · Penpot" },
     { "category": "Raster", "list": "PNG · JPG · WEBP · GIF · HEIC · TIFF · AVIF" },

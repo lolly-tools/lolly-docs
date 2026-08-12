@@ -48,15 +48,15 @@ Kecilkan saiz PDF yang terlalu besar terus pada peranti (on-device), supaya tiad
 
 Semua ini adalah transformasi pada peranti (on-device): fail atau data anda masuk, bait yang telah dibersihkan keluar, dan **tiada pelayan untuk dimuat naik**. Ia adalah lawan yang disengajakan bagi alat "muat naik fail anda ke laman web orang asing untuk membersihkannya" yang biasa dicapai oleh pekerja yang berniat baik sebaliknya.
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
+![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
 
 Text Helper menawarkan tawaran yang sama tetapi untuk teks, bukan fail. Ia ialah meja kerja bertab yang jika tidak, seorang pekerja akan mencarinya di laman web orang asing, dan ia tidak mengisytiharkan sebarang input kerana apa-apa yang disentuhnya tidak sekali-kali meninggalkan halaman ini.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
+![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1200&height=750&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
 
 Compress PDF melengkapkan set ini: lampiran yang terlalu besar dikecilkan mengikut tahap kualiti yang anda pilih, pada mesin yang sudah pun memegang fail itu.
 
-![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=ov2-compress-pdf)
+![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=ov2-compress-pdf)
 
 
 ## Determinisme & kebolehulangan

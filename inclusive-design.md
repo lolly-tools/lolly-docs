@@ -41,16 +41,22 @@ preferences on your profile:
 
 ![The Accessibility card on the profile page: four plain switches - Reduce motion, Hide colourful previews, High contrast and Large text - each with a help tip](/t/url-shot?url=%2F%23%2Fprofile&width=430&height=900&dpi=192&waitMs=2000&scrollDepth=1300&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.profile-card--a11y&dark=1&filename=incl-a11y-card)
 
-Alongside the preferences: controls carry accessible names and pressed states,
-changes are announced to screen readers, overlays close on Escape, keyboard
-focus is visible and strengthened further under high contrast, and every one of
-these switches is a plain, always-visible card on the profile page - findable by
-someone who can barely read the page as it is, which is the moment it matters.
+You can set these for yourself right now: [open your Accessibility settings](/#/profile?focus=a11y-section) -
+the four switches above, on one plain card, no digging.
 
-**Listen.** Every page of this documentation can be read aloud - play, pause, and
-follow the words as they are spoken, at a pace you set. Slowing down costs nothing
-in quality: it is a different speed, not a lesser one, for anyone who learns at
-their own pace.
+Alongside the preferences: controls carry accessible names and pressed states,
+changes are announced to screen readers, overlays close on Escape, the drawing
+tools answer single keypresses and the arrow keys nudge whatever you have
+selected, keyboard focus is visible and strengthened further under high
+contrast, and every one of these switches is a plain, always-visible card on
+the profile page - findable by someone who can barely read the page as it is,
+which is the moment it matters.
+
+**Listen.** Eleven core pages of this documentation can be read aloud - play,
+pause, and follow the words as they are spoken, at a pace you set. Narration is
+English-only for now, and more pages are being recorded. Slowing down costs
+nothing in quality: it is a different speed, not a lesser one, for anyone who
+learns at their own pace.
 
 ## Reduced and enhanced stimulation
 

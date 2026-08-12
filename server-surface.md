@@ -22,16 +22,16 @@ deployment that omits both is a fully working Lolly.
 | Web shell | `/` (static files) | The app itself, served once, runs on-device | The app *is* this |
 | MCP endpoint | `/api/mcp` (and the hosted `mcp.lolly.tools`) | Lets AI agents discover and render tools over [MCP](https://modelcontextprotocol.io) | Yes — remove it and the app is unaffected |
 | Hot-link render | `GET /tool/<id>.<ext>` (part of the MCP function) | Renders a public catalogue tool from a plain URL — **public, unauthenticated by design** (public tool + catalogue data only, no Content Credentials) | Yes — **currently disabled on lolly.tools** (`LOLLY_DISABLE_RENDER_GET=1`, returns 404). Live on the lolly.art demo instance |
-| MCP OAuth discovery | `/.well-known/oauth-authorization-server`, `/.well-known/oauth-protected-resource` (part of the MCP function) | Standard OAuth 2.1 metadata for MCP connector registration | Removed with the MCP endpoint |
-| CA service | `/api/ca` | Issues short-lived signing certificates so exports can carry a **verified identity** in their Content Credentials | Yes — without it, exports still sign, anonymously |
+| MCP OAuth | Discovery at `/.well-known/oauth-authorization-server` and `/.well-known/oauth-protected-resource`, plus the flow itself: `POST …/register`, `…/authorize`, `…/token` and a `GET …/authorize` consent page (all part of the MCP function) | Standard OAuth 2.1 registration, authorization and token exchange for MCP connectors | Removed with the MCP endpoint |
+| CA service | `/api/ca` — `GET /health`, `GET /root.pem`, `GET /auth/:provider`, `GET /callback/:provider`, `POST /email/start`, `POST /enroll` | Issues short-lived signing certificates so exports can carry a **verified identity** in their Content Credentials. `health` reports which OIDC providers a deployment has actually configured, so the app offers only buttons that work; `root.pem` serves the public root anyone can pin | Yes — without it, exports still sign, anonymously |
 
 ## MCP endpoint (`services/mcp`, `api/mcp`)
 
 **What it does.** Exposes the catalogue and render path as MCP tools
 (`lolly_list_tools`, `lolly_describe_tool`, `lolly_build_url`, `lolly_render`,
-`lolly_transform`, `lolly_verify`) so an AI agent can produce finished,
-rule-bound assets. The serverless tier renders browser-free formats. The full
-endpoint at `mcp.lolly.tools` drives a headless browser for
+`lolly_transform`, `lolly_redact`, `lolly_verify`) so an AI agent can produce
+finished, rule-bound assets. The serverless tier renders browser-free formats.
+The full endpoint at `mcp.lolly.tools` drives a headless browser for
 raster/PDF/animation/video.
 
 **Authentication.** MCP tool calls require OAuth 2.1 (as an MCP connector) or
@@ -47,8 +47,11 @@ returns the rendered bytes. There is no user database and no stored render
 history. Operational logging is the platform's function logging, covered by
 the [Privacy Policy](/info/privacy.html).
 
-**`lolly_transform`** operates on a file supplied in the call, in memory, for
-that call only. Nothing is written server-side.
+**Three tools take a file.** `lolly_transform` (run an on-device utility on the
+caller's behalf), `lolly_redact` (destroy regions of an image, SVG or PDF) and
+`lolly_verify` (check a file's Content Credentials) each operate on bytes
+supplied in the call, in memory, for that call only. Nothing is written
+server-side. Every other tool works from parameters alone.
 
 Full reference: [MCP Server](/info/mcp.html).
 

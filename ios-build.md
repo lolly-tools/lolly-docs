@@ -1,9 +1,9 @@
 # iOS Build
 
 How to build and run the Lolly mobile shell (`shells/tauri-mobile`, identifier
-`tools.lolly.app.mobile`) on iOS. iOS is a Tauri 2 mobile target: the same
+`tools.lolly.mobile`) on iOS. iOS is a Tauri 2 mobile target: the same
 web-shell source and the same `bridge-overrides/` (filesystem `state.ts`, mobile
-`capabilities-provided.js`) as the desktop shell, wrapped in a generated Xcode
+`capabilities-provided.ts`) as the desktop shell, wrapped in a generated Xcode
 project.
 
 For the cross-platform overview (CLI, desktop, Android), see
@@ -100,7 +100,7 @@ Notes:
   set); init wires them into the project's `Assets.xcassets`. To regenerate the
   whole set from a source PNG: `npx @tauri-apps/cli icon path/to/icon-1024.png`.
 - Init reads `src-tauri/tauri.conf.json` (`productName: "Lolly"`,
-  `identifier: "tools.lolly.app.mobile"`, `bundle.iOS.minimumSystemVersion: "14.3"`).
+  `identifier: "tools.lolly.mobile"`, `bundle.iOS.minimumSystemVersion: "14.3"`).
 - `tauri.conf.json` deliberately does **not** hardcode
   `bundle.iOS.developmentTeam`; pass the team via the `APPLE_DEVELOPMENT_TEAM`
   env var so no credential is committed.
@@ -149,13 +149,25 @@ reload works the same as the web and desktop shells.
 ### Feature subset on iOS
 
 The mobile shell provides the capabilities `network`, `clipboard`, `wasm`,
-`compose`, and `filesystem` (the last via `tauri-plugin-fs`; see
-`bridge-overrides/capabilities-provided.ts`). Tools that require `ffmpeg`
-(sidecar transcoding) or `capture` (native headless-Chrome page capture,
-desktop-only) are filtered out of the gallery - there is no `tauri-plugin-shell`
-and no capture path on mobile. Camera input works through the WebView's
-`getUserMedia` (an OS-permission-gated API, independent of Lolly's capability
-gating). This matches Android.
+`compose`, `camera`, `microphone`, and `filesystem`. It is defined as the web
+shell's set *spread* plus `filesystem` (via `tauri-plugin-fs`) and minus
+`screen`, so a capability added on the web side reaches mobile by default - see
+`bridge-overrides/capabilities-provided.ts`.
+
+Three capabilities are absent, and tools declaring them are greyed out in the
+gallery rather than failing at the tap:
+
+- `screen` - deliberately subtracted. Display capture is `getDisplayMedia`,
+  which no mobile WebView implements (absent on iOS entirely; Android's WebView
+  carries no picker).
+- `capture` - page capture on desktop is native headless Chrome; mobile ships no
+  such implementation, so it inherits the web stub, which throws.
+- `ffmpeg` - sidecar transcoding needs `tauri-plugin-shell`, which the mobile
+  shell does not bundle.
+
+Camera and microphone are Lolly-gated *and* OS-gated: the capability flag lets
+the tool load, and the WebView's `getUserMedia` still prompts for the OS
+permission (hence the Info.plist usage strings above). This matches Android.
 
 ---
 
@@ -167,7 +179,7 @@ npm run build:ios          # -> vite build, then tauri ios build
 ```
 
 Output is an `.ipa` under `src-tauri/gen/apple/build/`. The `vite build` step
-bundles `tools/` and `catalog/` into `dist/` first (see `vite.config.ts`);
+bundles `tools/` and `catalog/` into `dist/` first (see `vite.config.js`);
 `frontendDist` (`../dist`) points at it.
 
 ### Code signing via environment variables
@@ -194,7 +206,7 @@ project (`npm run dev:ios -- --open`) and set the team under **Signing &
 Capabilities**; the env-var path is what CI uses.
 
 Device builds, IPA export, TestFlight, and App Store distribution additionally
-require a provisioning profile whose App ID matches `tools.lolly.app.mobile`. A
+require a provisioning profile whose App ID matches `tools.lolly.mobile`. A
 free Apple ID gives 7-day on-device provisioning; the paid Apple Developer
 Program is needed for TestFlight / App Store.
 

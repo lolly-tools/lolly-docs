@@ -136,7 +136,7 @@ Audio lands in the asset picker - ready as a **music bed** under a video export,
 
 ### Content Credentials (verify)
 
-Lolly reads and cryptographically verifies a signed [C2PA](https://c2pa.org) manifest embedded in **PDF, PNG/APNG, JPG, GIF, SVG, TIFF, WebP, MP4 and WebM/MKV** - entirely on-device, against the signing certificate. The [/verify](/verify) view goes further: it flags AI-generated content, detects Lolly's own pixel **Imprint**, verifies **SEAL** signatures, optionally deep-scans for third-party pixel watermarks, and surfaces hidden data - none of it uploaded. See [Content Credentials](/info/exporting.html#content-credentials-c2pa) and [Content Credentials Identity](/info/content-credentials-identity.html#beyond-the-credential-what-else-verify-shows). (HEIC and AVIF are read as images but carry no credential.)
+Lolly reads and cryptographically verifies a signed [C2PA](https://c2pa.org) manifest embedded in **PDF, PNG/APNG, JPG, GIF, SVG, TIFF, WebP, AVIF, MP4, WebM/MKV** and the audio containers **MP3, WAV, M4A and OGG/Opus** - entirely on-device, against the signing certificate. The [/verify](/verify) view goes further: it flags AI-generated content, detects Lolly's own pixel **Imprint**, verifies **SEAL** signatures, optionally deep-scans for third-party pixel watermarks, and surfaces hidden data - none of it uploaded. See [Content Credentials](/info/exporting.html#content-credentials-c2pa) and [Content Credentials Identity](/info/content-credentials-identity.html#beyond-the-credential-what-else-verify-shows). (HEIC/HEIF is read as an image but carries no credential.)
 
 ### Metadata (to strip it)
 

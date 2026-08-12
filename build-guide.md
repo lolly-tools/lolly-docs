@@ -8,7 +8,7 @@ How to build Lolly for each distribution target: standalone CLI binary, desktop 
 
 ## Prerequisites (all targets)
 
-- **Node.js** `^20.19` or `>=22.12`, and **npm 10+**
+- <!--l:node-->**Node.js ≥ 22.18** (the 22 LTS line) **or ≥ 24**, and **npm 10+**. The repo's scripts run TypeScript sources directly (`node scripts/foo.ts`), which relies on Node's unflagged type-stripping - added in Node 22.18 and 24. Node 20 and early 22.x fail at `npm install`. `.nvmrc` pins `22`, so nvm users can just run `nvm install` in the repo.
 - The repo and its submodules checked out, dependencies installed - see below
 
 ---
@@ -31,9 +31,29 @@ Lolly is a parent repo plus a set of git submodules. The parent owns `engine/`, 
 | `services/ca` | `lolly-ca` | the Content Credentials CA |
 | `brands/suse` | `suse-lolly` | **private** - the SUSE tool pack and catalog |
 
-All of those except `brands/suse` are public, so a read-only contributor gets a complete, buildable checkout with the single command below. Write access is enforced by the host at push time, not by the checkout, so the setup is identical whether you're a maintainer of a given repo or just reading it.
+All of those except `brands/suse` are public, so a read-only contributor gets a complete, buildable checkout with the script (or single command) below. Write access is enforced by the host at push time, not by the checkout, so the setup is identical whether you're a maintainer of a given repo or just reading it.
 
-### One command
+### The setup script
+
+On macOS and openSUSE, one script takes a fresh clone to a running state - it detects your package manager (<!--l:homebrew-->Homebrew or zypper), installs git and Node if they are missing or too old, initialises every public submodule, runs `npm install`, and selects a content profile:
+
+```bash
+git clone https://github.com/lolly-tools/lolly.git
+cd lolly
+./setup.sh                # public setup: community tools + the blank "lolly-start" brand
+npm run dev:web           # web shell at http://localhost:5173
+```
+
+`./setup.sh` is idempotent - safe to re-run any time: after a `git pull`, or to repair a half-finished checkout. Flags:
+
+- `--suse` also mounts the private SUSE brand pack and selects the SUSE profile (needs repo access)
+- `--profile <suse|lolly-start>` forces a content profile after install
+- `--skip-node` leaves Node entirely to you - the nvm path: `nvm install` in the repo (it reads `.nvmrc`), then `./setup.sh --skip-node`
+- `--help` lists everything
+
+### By hand
+
+If you'd rather run the steps yourself, prefer SSH remotes with each submodule on a branch from the start, or are on a distro the script doesn't cover:
 
 ```bash
 git -c url."git@github.com:".insteadOf=https://github.com/ \
@@ -62,7 +82,14 @@ git submodule update --init --checkout brands/suse
 npm run profile:suse
 ```
 
-Without it, `npm run profile` reports `lolly-start` as active - the blank brand, which is the correct default for anyone not doing SUSE-specific work, and the profile the public site and CI build against.
+(`./setup.sh --suse` does both in one go.) Without it, `npm run profile` reports `lolly-start` as active - the blank brand, which is the correct default for anyone not doing SUSE-specific work, and the profile the public site and CI build against.
+
+### If something fails
+
+- **`npm install` dies with a syntax error in a `.ts` file** - your Node is too old for type-stripping; you need ≥ 22.18 or ≥ 24 (`node -v`). With Homebrew, note `node@22` is keg-only: add `export PATH="$(brew --prefix node@22)/bin:$PATH"` to your shell profile.
+- **`Cannot find module '@lolly-tools/…'` or a workspace `package.json` is missing** - the submodules weren't checked out before `npm install`. Run `git submodule update --init --recursive`, then `npm install` again.
+- **`brands/suse` won't clone** - it's private. Drop `--suse`; you land on `lolly-start` and everything still builds and runs.
+- **A tool edit doesn't show up, or lands in the wrong repo** - `tools/` and `catalog/` at the repo root are gitignored symlink views into the packs, so edits flow through to the pack checkout and commits belong *inside* the owning submodule - see the next section.
 
 ### Working across submodules
 
@@ -167,14 +194,14 @@ With those present, raster (PNG/JPG), PDF, video, and the `url-shot` live-URL ca
 
 ### Prerequisites
 
-**Rust toolchain:**
+<!--l:rust-->**Rust toolchain:**
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustup update
 ```
 
-**Tauri CLI (Node package - installed per-shell):**
+<!--l:tauri-->**Tauri CLI (Node package - installed per-shell):**
 
 ```bash
 cd shells/tauri-desktop
@@ -246,7 +273,7 @@ Tauri does not support cross-compilation out of the box. Build each platform on 
 
 #### Android
 
-1. Install [Android Studio](https://developer.android.com/studio)
+1. <!--l:android-->Install [Android Studio](https://developer.android.com/studio)
 2. In SDK Manager, install:
    - Android SDK Platform (API 33 or higher)
    - NDK (Side by side) - version 26+
@@ -270,7 +297,7 @@ rustup target add \
 
 #### iOS (macOS only)
 
-1. Install Xcode from the App Store (the full app, not just the Command Line Tools)
+1. <!--l:apple-->Install Xcode from the App Store (the full app, not just the Command Line Tools)
 2. Accept the license: `sudo xcodebuild -license accept`
 3. Install CocoaPods - `tauri ios init` generates a Podfile and runs `pod install`: `brew install cocoapods`
 4. Add iOS Rust targets:
@@ -368,12 +395,12 @@ Set the team in the project's Signing & Capabilities tab, then build from CLI or
 
 | Format | Distributions | Lolly artifact packaged |
 |---|---|---|
-| RPM | openSUSE Leap / Tumbleweed, SLE / SLES, Fedora, RHEL / CentOS / Alma / Rocky, Mageia, openEuler | CLI binary and/or Tauri desktop app |
-| DEB | Debian, Ubuntu, Raspbian | CLI binary and/or Tauri desktop app |
-| Arch | Arch Linux (`PKGBUILD`) | CLI binary / desktop app |
-| Flatpak | distro-agnostic sandboxed desktop app | Tauri desktop app |
+| RPM | <!--l:opensuse-->openSUSE Leap / Tumbleweed, SLE / SLES, <!--l:fedora-->Fedora, RHEL / CentOS / Alma / Rocky, Mageia, openEuler | CLI binary and/or Tauri desktop app |
+| DEB | <!--l:debian-->Debian, <!--l:ubuntu-->Ubuntu, Raspbian | CLI binary and/or Tauri desktop app |
+| Arch | <!--l:arch-->Arch Linux (`PKGBUILD`) | CLI binary / desktop app |
+| <!--l:flatpak-->Flatpak | distro-agnostic sandboxed desktop app | Tauri desktop app |
 | AppImage | distro-agnostic portable app | reuses Tauri's `.AppImage` output |
-| Container images | OCI / Docker (built via Kiwi or a `Dockerfile`) | CLI as a container image |
+| Container images | OCI / <!--l:docker-->Docker (built via Kiwi or a `Dockerfile`) | CLI as a container image |
 | Appliance / disk images | ISO, VM, and cloud images (built via Kiwi) | full preloaded image |
 
 The local Tauri build already emits a `.deb` and an `.AppImage` (see the Desktop table above). OBS does not replace that - its value is **fan-out across the rest of the matrix** (every RPM- and deb-based distro, Arch, Flatpak, containers, appliances) plus **signed, hosted repositories** that users can add and update from like any other system package.
@@ -469,15 +496,19 @@ For readers wiring this up for real, see the [OBS documentation](https://openbui
 
 ---
 
+<!--lb:kubernetes helm-->
+
 ## Web shell on Kubernetes (Helm)
 
-The web shell is a **static site** - `npm run build:web` produces a `dist/` folder of HTML, CSS, JS, the service worker, the HarfBuzz WASM, fonts, the bundled tool catalog, and the `/info` site. Anything that can serve static files can host it (which is why the production site runs behind a CDN). To run it **inside your own Kubernetes cluster** - air-gapped, on-prem, or alongside the rest of your platform - bake `dist/` into a container image built on a SUSE-maintained nginx base and deploy it with Helm.
+The web shell is a **static site** - `npm run build:web` produces a `dist/` folder of HTML, CSS, JS, the service worker, the HarfBuzz WASM, fonts, the bundled tool catalog, and the `/info` site. Anything that can serve static files can host it (which is why the production site runs behind a CDN). To run it **inside your own Kubernetes cluster** - air-gapped, on-prem, or alongside the rest of your platform - the artefacts ship in this repo: `deploy/docker/` bakes `dist/` into an <!--l:nginx-->nginx image, and `deploy/helm/` deploys it. This section is what those files do and how to adapt them; [Deployment](/info/deployment.html) is where each piece runs.
 
-> **These are example charts, not a published product.** Lolly does not ship an official Helm chart, and the SUSE Application Collection does not contain one for it. The Dockerfile, `nginx.conf`, and chart below are a complete, self-contained example that *should actually deploy* - but treat them as a starting point to adapt, and pin the image tags and chart versions you verify yourself. Where a curated image or chart exists in the [SUSE Application Collection](https://apps.rancher.io), this section prefers it.
+Nothing in the chart is specific to one cluster: it is plain Kubernetes, so it deploys on any conformant distribution - including SUSE's own RKE2 and <!--l:k3s-->k3s - and on any managed service.
+
+> **The chart is shipped, the images are yours to build.** `deploy/helm/` is a real chart with three components - `web` (the PWA, on by default), `mcp` and `ca` (both opt-in) - one `values.yaml` you edit, and secure defaults on every pod. What it cannot do is invent an image: build and push the three `deploy/docker/` images to a registry your cluster can reach, then pin the tags you verified. There is no hosted Lolly chart repository, so you install from a checkout of this repo, and the SUSE Application Collection carries no Lolly chart of its own. Where a curated image or chart *does* exist there - the nginx runtime base, cert-manager - this section prefers it.
 
 ### Why the SUSE Application Collection
 
-[The SUSE Application Collection](https://apps.rancher.io) is a curated, signed, continuously-rebuilt catalog of open-source container images and Helm charts, all based on SUSE Linux Enterprise Base Container Images (BCI). Pulling the nginx runtime from it - rather than an arbitrary upstream tag - gets you a hardened, attested base with a known CVE posture.
+<!--l:suse-->[The SUSE Application Collection](https://apps.rancher.io) is a curated, signed, continuously-rebuilt catalog of open-source container images and Helm charts, all based on SUSE Linux Enterprise Base Container Images (BCI). Pulling the nginx runtime from it - rather than an arbitrary upstream tag - gets you a hardened, attested base with a known CVE posture.
 
 | Host | Role |
 |---|---|
@@ -496,204 +527,133 @@ helm registry login dp.apps.rancher.io -u <username-or-sa-username> -p <access-t
 docker login        dp.apps.rancher.io -u <username-or-sa-username> -p <access-token-or-sa-secret>
 ```
 
-### 1. Build the static site
+### 1. Build the image
+
+`deploy/docker/web.Dockerfile` does the static build *and* the packaging in one multi-stage build, so there is no separate "run npm, then copy `dist/`" step to perform by hand. Two things it needs from you: the **build context must be the repo root**, and the content submodules must be checked out in it - a bare clone builds a shell with an empty catalog.
 
 ```bash
-npm install
-npm run build:web      # → shells/web/dist/
+git submodule update --init --recursive
+
+docker build -f deploy/docker/web.Dockerfile \
+  --build-arg LOLLY_PROFILE=suse \
+  -t <your-registry>/lolly-web:0.1.0 .
+docker push <your-registry>/lolly-web:0.1.0
 ```
 
-### 2. Containerise it on a SUSE nginx base
+What the two stages do:
 
-A multi-stage build compiles `dist/` in a Node stage, then copies it into an nginx runtime pulled from the Application Collection.
+- **build** - `node:26-bookworm`, pinned by digest, runs `npm ci` then the real `npm run build:web`. Deliberately not the slim variant: the optional native dependencies (sharp, onnxruntime, resvg, playwright) need build tooling slim doesn't carry.
+- **runtime** - `nginxinc/nginx-unprivileged`, also digest-pinned, running as uid 101 on port **8080**. `dist/` is copied to `/usr/share/nginx/html`, `deploy/docker/nginx.conf` becomes `conf.d/default.conf`, and `deploy/docker/security-headers.conf` lands beside it.
 
-`Dockerfile`:
+`--build-arg LOLLY_PROFILE=suse|lolly-start` bakes one brand into the static output - theme colour, PWA chrome, and the resolved `tools/` + `catalog/` content. Nothing is read at serve time, which is why the chart needs no pack, config or volume mounted for the web app; changing brand means rebuilding the image and rolling the deployment.
+
+`mcp.Dockerfile` and `ca.Dockerfile` follow the same pattern (repo-root context, digest-pinned `node:26-bookworm-slim`, non-root `node` user) and run their entry point on Node directly. Build them only if you enable those components.
+
+### 2. Swapping in a SUSE nginx base (optional)
+
+The shipped runtime stage uses the upstream unprivileged nginx image so a plain `docker build` works with no registry credentials. To take the Application Collection's curated build instead, replace that one `FROM` line and keep the `COPY` lines untouched:
 
 ```dockerfile
-# ---- build stage ----
-FROM node:22-alpine AS build
-WORKDIR /app
-COPY . .
-RUN npm ci && npm run build:web          # → /app/shells/web/dist
-
 # ---- runtime stage: SUSE Application Collection nginx ----
 # Pin the current tag from https://apps.rancher.io/applications/nginx
 FROM dp.apps.rancher.io/containers/nginx:1.29.4
-COPY --from=build /app/shells/web/dist /usr/share/nginx/html
-COPY deploy/nginx.conf /etc/nginx/conf.d/default.conf
-EXPOSE 8080
 ```
 
-> **Fallback without an Application Collection subscription:** swap the runtime line for the free SUSE BCI image `FROM registry.suse.com/suse/nginx:1.27` (no login required). Its default document root is `/srv/www/htdocs/` - copy there instead, or just keep your own `root` directive in `nginx.conf`, which wins regardless of the base image's default.
+Two things to check against whichever base you pick. The shipped `nginx.conf` sets `root` explicitly, so the base image's default document root doesn't matter - but `dist/` has to be copied where that `root` points (or change the directive). And it listens on 8080 because non-root nginx cannot bind below 1024; if your base runs as root and you switch to 80, change `web.service.targetPort` in the chart to match.
 
-### 3. Serve it like a PWA
+> **Fallback without an Application Collection subscription:** use the free SUSE BCI image `FROM registry.suse.com/suse/nginx:1.27` (no login required). Its default document root is `/srv/www/htdocs/` - copy there instead, or just keep the `root` directive from the shipped `nginx.conf`, which wins regardless of the base image's default.
 
-Lolly is a single-page PWA: client-side URL-mode deep links (`/?tool=qr-code`) must fall back to `index.html`, the service worker (`/sw.js`) must never be cached, and the HarfBuzz `.wasm` and `.webmanifest` need correct MIME types. SUSE/BCI nginx images run **rootless on port 8080**, so the config listens there.
+### 3. What the nginx config already handles
 
-`deploy/nginx.conf`:
+Lolly is a single-page PWA, so the server has real work to do: URL-mode deep links (`/?tool=qr-code`) must fall back to `index.html`, the service worker must never be cached, hashed assets should be immutable, the HarfBuzz `.wasm` and the `.webmanifest` need correct MIME types, and the security headers have to be on every response. `deploy/docker/nginx.conf` does all of it - `tests/security-headers.test.ts` pins its CSP against the other two copies in the repo, so edit it rather than writing a fresh one. The parts worth knowing, quoted from the shipped file:
 
 ```nginx
 server {
-  listen 8080;                       # rootless SUSE/BCI nginx; use 80 if your base runs as root
-  server_name _;
-  root /usr/share/nginx/html;        # set explicitly - the default doc root varies by base image
-  index index.html;
+    # nginx-unprivileged cannot bind <1024; 8080 is the image default.
+    listen       8080;
+    root   /usr/share/nginx/html;
+    index  index.html;
 
-  # nginx 1.21+ already maps these; harmless to restate for older bases
-  types { application/wasm wasm; application/manifest+json webmanifest; }
+    # Security headers on every response (see the $lolly_csp map above).
+    include /etc/nginx/security-headers.conf;
 
-  # content-hashed, immutable build assets (includes harfbuzz-<hash>.wasm)
-  location /assets/ {
-    add_header Cache-Control "public, max-age=31536000, immutable";
-    try_files $uri =404;
-  }
+    # ── Service worker: MUST never be cached, and may control the whole scope.
+    location = /sw.js {
+        add_header Cache-Control "no-cache, no-store, must-revalidate";
+        add_header Service-Worker-Allowed "/";
+        include /etc/nginx/security-headers.conf;
+    }
 
-  # the service worker must revalidate so redeploys roll out
-  location = /sw.js       { add_header Cache-Control "no-cache, no-store, must-revalidate"; expires off; }
-  location = /index.html  { add_header Cache-Control "no-cache"; }
+    # ── Content-hashed build output: safe to cache forever (immutable).
+    location /assets/ {
+        add_header Cache-Control "public, max-age=31536000, immutable";
+        include /etc/nginx/security-headers.conf;
+        try_files $uri =404;
+    }
 
-  # SPA fallback - unknown paths serve the app shell
-  location / { try_files $uri $uri/ /index.html; }
+    # ── Everything else: serve the file, then its .html twin, then a directory
+    # index, then fall back to the SPA shell. Covers /t/<id> → /t/<id>.html and
+    # /info/* real pages while keeping client-routed paths on index.html.
+    location / {
+        try_files $uri $uri.html $uri/index.html /index.html;
+    }
 }
 ```
 
-Build and push to a registry your cluster can reach:
+That repeated `include` is not redundancy: nginx drops **every** inherited `add_header` inside a location that declares one of its own, so any location setting `Cache-Control` would otherwise ship with no security headers at all. Keep the include when you add a location. The file also carries a cheap unauthenticated `/healthz` for the chart's probes, explicit `types` for `.wasm`/`.avif`/`.webmanifest`, long-cache rules for `/ort/`, `/models/` and `/fonts/`, and the short URL aliases (`/d`, `/v`, `/c`, `/p`, `/profile`) that mirror the hosted deployment's rewrites.
 
-```bash
-docker build -t <your-registry>/lolly-web:1.0.0 .
-docker push     <your-registry>/lolly-web:1.0.0
-```
+### 4. The chart
 
-### 4. An example Helm chart
-
-The Application Collection ships charts for stateful services (redis, postgresql, prometheus, cert-manager, …) but **not** a generic static-web-server chart - nginx lives there as a *container image only*. So the chart below is a small, self-contained one of your own; it's deliberately minimal and should deploy as-is.
+The Application Collection ships charts for stateful services (redis, postgresql, prometheus, cert-manager, …) but **not** a generic static-web-server chart - nginx lives there as a *container image only*. Lolly's own chart is `deploy/helm/`:
 
 ```
-deploy/lolly-chart/
+deploy/helm/
 ├── Chart.yaml
-├── values.yaml
+├── values.yaml               ← the one file you edit
 └── templates/
-    ├── deployment.yaml
-    ├── service.yaml
-    └── ingress.yaml
+    ├── _helpers.tpl          names, labels, image references
+    ├── web-deployment.yaml   the PWA (on by default)
+    ├── web-service.yaml
+    ├── mcp-deployment.yaml   MCP server (opt-in)
+    ├── mcp-service.yaml
+    ├── ca-deployment.yaml    credential authority (opt-in)
+    ├── ca-service.yaml
+    ├── ca-secret.yaml        chart-managed mode only
+    ├── ingress.yaml          one Ingress per enabled component
+    ├── networkpolicy.yaml    off by default
+    ├── serviceaccount.yaml
+    └── NOTES.txt
 ```
 
-`Chart.yaml`:
+`web` is enabled by default at 2 replicas - the PWA holds no server-side state (everything lives in the browser's IndexedDB), so replicas are interchangeable and you can raise the count freely. `mcp` and `ca` are `enabled: false` until you turn them on. The security posture is shared and applied to every component: `runAsNonRoot`, `RuntimeDefault` seccomp, all capabilities dropped, no privilege escalation, a read-only root filesystem with `emptyDir`s mounted exactly where nginx needs to write, no ServiceAccount token mounted (none of the components talk to the Kubernetes API), soft pod anti-affinity so replicas spread across nodes without blocking a single-node cluster, and an off-by-default NetworkPolicy that restricts ingress to each component's port.
+
+The values you are most likely to touch:
 
 ```yaml
-apiVersion: v2
-name: lolly-web
-description: Lolly web shell (static PWA) served by SUSE nginx
-type: application
-version: 0.1.0
-appVersion: "1.0.0"
-```
-
-`values.yaml`:
-
-```yaml
-image:
-  repository: <your-registry>/lolly-web
-  tag: "1.0.0"
-  pullPolicy: IfNotPresent
-
-replicaCount: 2
-
-# Only needed if your image (or its base layer) is pulled from an authenticated
-# registry such as dp.apps.rancher.io. Create the secret first (see step 5); the
-# SUSE Application Collection convention names it "application-collection".
-imagePullSecrets:
-  - name: application-collection
-
-service:
-  type: ClusterIP
-  port: 80
-  targetPort: 8080          # matches the nginx `listen` above
-
-ingress:
+web:
   enabled: true
-  className: ""             # e.g. "nginx", or your cluster's ingress class
-  host: lolly.example.com
-  tls: false               # flip to true + a secretName once cert-manager issues a cert
-  tlsSecretName: lolly-tls
+  replicaCount: 2
+  image:
+    repository: ghcr.io/lolly-tools/lolly-web   # ← your registry
+    tag: ""                                     # empty ⇒ the chart's appVersion
+  service:
+    port: 80
+    targetPort: 8080        # what nginx-unprivileged listens on
+  ingress:
+    enabled: false
+    hosts:
+      - host: lolly.example.com
+        paths: [{ path: /, pathType: Prefix }]
+
+# Private registry (see step 5). e.g. [{ name: application-collection }]
+imagePullSecrets: []
 ```
 
-`templates/deployment.yaml`:
-
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: {{ .Release.Name }}
-spec:
-  replicas: {{ .Values.replicaCount }}
-  selector:
-    matchLabels: { app: {{ .Release.Name }} }
-  template:
-    metadata:
-      labels: { app: {{ .Release.Name }} }
-    spec:
-      {{- with .Values.imagePullSecrets }}
-      imagePullSecrets: {{ toYaml . | nindent 8 }}
-      {{- end }}
-      containers:
-        - name: web
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
-          ports:
-            - containerPort: {{ .Values.service.targetPort }}
-          readinessProbe:
-            httpGet: { path: /index.html, port: {{ .Values.service.targetPort }} }
-```
-
-`templates/service.yaml`:
-
-```yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: {{ .Release.Name }}
-spec:
-  type: {{ .Values.service.type }}
-  selector: { app: {{ .Release.Name }} }
-  ports:
-    - port: {{ .Values.service.port }}
-      targetPort: {{ .Values.service.targetPort }}
-```
-
-`templates/ingress.yaml`:
-
-```yaml
-{{- if .Values.ingress.enabled }}
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: {{ .Release.Name }}
-spec:
-  {{- with .Values.ingress.className }}
-  ingressClassName: {{ . }}
-  {{- end }}
-  {{- if .Values.ingress.tls }}
-  tls:
-    - hosts: [ {{ .Values.ingress.host | quote }} ]
-      secretName: {{ .Values.ingress.tlsSecretName }}
-  {{- end }}
-  rules:
-    - host: {{ .Values.ingress.host | quote }}
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: {{ .Release.Name }}
-                port: { number: {{ .Values.service.port }} }
-{{- end }}
-```
+Read `values.yaml` top to bottom before a production install - it is written to be read, and the `mcp` and `ca` sections document what each service needs.
 
 ### 5. Install
 
-If the image (or its base) is pulled from `dp.apps.rancher.io`, create the pull secret the chart references, then install:
+If the image (or its base) is pulled from `dp.apps.rancher.io`, create the pull secret first and name it in `imagePullSecrets`:
 
 ```bash
 kubectl create namespace lolly
@@ -704,12 +664,40 @@ kubectl create secret docker-registry application-collection \
   --docker-username=<username-or-sa-username> \
   --docker-password=<access-token-or-sa-secret> \
   -n lolly
-
-helm upgrade --install lolly ./deploy/lolly-chart -n lolly \
-  --set image.repository=<your-registry>/lolly-web \
-  --set image.tag=1.0.0 \
-  --set ingress.host=lolly.example.com
 ```
+
+The minimum viable install is one flag - the image you built in step 1. Port-forward to try it before you publish a hostname:
+
+```bash
+helm upgrade --install lolly ./deploy/helm -n lolly \
+  --set web.image.repository=<your-registry>/lolly-web \
+  --set web.image.tag=0.1.0
+
+kubectl port-forward -n lolly svc/lolly-web 8080:80   # → http://localhost:8080/
+```
+
+To publish it on your own hostname with TLS from cert-manager (drop the `imagePullSecrets` line if your registry is public):
+
+```bash
+helm upgrade --install lolly ./deploy/helm -n lolly \
+  --set web.image.repository=<your-registry>/lolly-web \
+  --set web.image.tag=0.1.0 \
+  --set imagePullSecrets[0].name=application-collection \
+  --set web.ingress.enabled=true \
+  --set web.ingress.hosts[0].host=lolly.example.com \
+  --set web.ingress.tls[0].secretName=lolly-web-tls \
+  --set web.ingress.tls[0].hosts[0]=lolly.example.com
+```
+
+`NOTES.txt` prints the resulting URLs, which components came up, and any secret still missing.
+
+### 6. The optional services
+
+Both stay off until you ask for them, and both are stateless.
+
+**MCP** (`--set mcp.enabled=true`) exposes the tool catalog to AI agents over Streamable-HTTP on port 8790. Its brand content is baked in at build time exactly like the web image. Browser-tier render formats are disabled unless you point it at a renderer - `--set mcp.webBase=https://lolly.example.com` - and SVG/data plus resvg-PNG work without one, which is why the image ships no Chromium. Probes are TCP socket checks: there is no unauthenticated health route to poll.
+
+**CA** (`--set ca.enabled=true`) issues short-lived certificates for on-device C2PA signing on port 8787, under `/api/ca`. It needs a root key and certificate, generated once with `node services/ca/scripts/gen-root.mjs`, plus a service secret (`openssl rand -hex 32`). Two ways to supply them: fill in `ca.secrets` and let the chart create the Secret, or - the production choice - set `ca.existingSecret` to one your platform's secret store manages and leave `ca.secrets` empty. The chart refuses to render rather than deploy a CA with a missing root. Set `ca.config.allowedOrigins` to your web host, or enrollment tokens are rejected.
 
 ### TLS, the SUSE-curated way (optional)
 
@@ -722,7 +710,7 @@ helm install cert-manager oci://dp.apps.rancher.io/charts/cert-manager \
   --set 'global.imagePullSecrets={application-collection}'
 ```
 
-Then add a `ClusterIssuer` (e.g. Let's Encrypt), set `ingress.tls=true` with a `tlsSecretName`, and annotate the Ingress for cert-manager. Every Application Collection chart accepts the same `--set 'global.imagePullSecrets={application-collection}'`, so the pattern carries across redis, postgresql, prometheus, and the rest if Lolly ever grows backing services.
+Then add a `ClusterIssuer` (e.g. Let's Encrypt), point the chart's `web.ingress.tls[0]` at a secret name, and annotate the Ingress for cert-manager through `web.ingress.annotations` (`cert-manager.io/cluster-issuer: letsencrypt-prod`); `mcp` and `ca` take the same three keys under their own sections. Every Application Collection chart accepts the same `--set 'global.imagePullSecrets={application-collection}'`, so the pattern carries across redis, postgresql, prometheus, and the rest if Lolly ever grows backing services.
 
 > For the authoritative, current registry paths, tags, chart versions, and value keys, see the [SUSE Application Collection docs](https://docs.apps.rancher.io) and run `helm show values oci://dp.apps.rancher.io/charts/<chart>` before relying on any default.
 

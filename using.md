@@ -6,7 +6,7 @@ A practical guide to actually *using* the app - opening a tool, working the canv
 
 ## Opening a tool
 
-The home screen is the **gallery** - every tool, grouped by category. Click a card to open the tool; if you've worked on it before, a **Continue** button resumes your most recent session. Use the search box to filter by name - or [Search](/info/search.html) from the bar at the bottom of any screen, which reaches your saved work, the catalogue and your settings as well as the tools.
+The home screen is the **gallery** - every tool, grouped by category. Click a card to open the tool; if you've worked on it before, a **Continue** button resumes your most recent session. Use the search box to filter by name - or [Search](/info/search.html) from the bar at the foot of the six listing screens (the gallery, Utilities, Projects, the Catalogue, the Dashboard and Profile), which reaches your saved work, the catalogue and your settings as well as the tools. Inside a tool the bar steps aside for the tool's own chrome.
 
 ![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&localize=1&dark=1&filename=gallery&try=1)
 
@@ -44,6 +44,12 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 (`.gtile--hiddenbox`, confirmed in gallery.ts).
 -->
 
+### Ask Lolly
+
+When you'd rather ask than hunt, **Ask Lolly** (`#/ask`) takes a typed question and hands back the matching section of this documentation **verbatim** - the guides' own words, not a summary and not a generation - with the page it came from cited and an **Open in docs** link beside it. Under the answer sit the places in the app the same question matches: a tool, a setting, a saved project, each as a button that simply navigates there.
+
+The transcript is session memory: ask a follow-up and the thread builds up as you go, then reload and it starts fresh. Search results carry an **Ask Lolly: *your query*** row at the bottom - under whatever concrete hits the other groups found - which hands the question straight over, so you can start in the bar and finish here.
+
 ## The canvas (preview)
 
 The preview always shows exactly what will export.
@@ -78,9 +84,9 @@ Free-canvas tools add a working surface *around* the artboard, like a designer's
 
 ### Drawing your own shapes (the pen)
 
-Boxes, circles and rounded frames cover most layouts. When you need a shape that isn't in that list, draw it: the rail's **Pen** button (or the `P` key) puts you in drawing mode.
+Boxes, circles and rounded frames cover most layouts. When you need a shape that isn't in that list, draw it: the rail's **Pen** button (or the `P` key) puts you in drawing mode. Three single keys move between the modes - **`V`** back to the Pointer, **`P`** for the Pen, **`N`** for the node tool (**Edit points**) - and the Pointer is always the way out of whatever you're in.
 
-![The free-canvas tool rail: a drag grip, the Lolly menu, then Pointer, Add a box, Pen and Timeline](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2600&css=.fc-toolbar%7Bopacity%3A1!important%7D&cropSelector=.fc-toolbar&walker=1&format=svg&dark=1&filename=pen-editor-rail)
+![The free-canvas tool rail: a drag grip, the Lolly menu, then Pointer, Add a box, Pen, Edit points, Line, Timeline, Artboards and Auto-arrange](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2600&css=.fc-toolbar%7Bopacity%3A1!important%7D&cropSelector=.fc-toolbar&walker=1&format=svg&dark=1&filename=pen-editor-rail)
 
 - **Click** to place a point. On the default curve type, **click and drag** pulls that point's handles out, which is how you draw a curve rather than a corner - hold **Alt** as you click for a hard corner instead. (On the other curve types every placed point is a corner and the drag does nothing; see **Spline type** below.)
 - Points snap to the artboard and to your other boxes as you place them, drawing the same guides a normal drag does. Alt suppresses the grid while you draw, and both the grid and the edges while you drag a point afterwards.
@@ -157,7 +163,7 @@ Select a clip and the inspector gives you the same edits as numbers: **Length**,
 
 **Rendering it.** A motion export is a **deterministic composite**, not a screen recording - each frame is decoded, drawn and encoded at an exact time, so the file doesn't depend on your machine keeping up, and there's no practical frame ceiling on MP4 or WebM. The timeline's own length sets the duration unless you type one. Content Credentials are stamped as on any other export. A still export gives you the frame at the playhead, or a whole contact sheet from the **Frames** field beside the output size - see [Exporting](/info/exporting.html#stills-from-a-timed-composition).
 
-A few limits worth knowing: a sequence is capped at ten minutes, GIF and animated PNG buffer their frames so they stay short, audio is silent on a clip whose speed isn't ×1 (there's no time-stretching yet), and **Record live** is hidden here because the compositor is the better path.
+A few limits worth knowing: a sequence is capped at one hour, GIF and animated PNG buffer their frames so they stay short, audio is silent on a clip whose speed isn't ×1 (there's no time-stretching yet), and **Record live** is hidden here because the compositor is the better path.
 
 Layout Studio has the same timeline, so you can time a layout without moving to another tool - it just can't export motion, so a timed layout comes out as a still or a contact sheet.
 
@@ -180,7 +186,7 @@ Tools expose only the inputs that are meant to vary - everything else (colours, 
 
 ## Your details & headshot
 
-**Profile** (top-right of the gallery) holds your name, contact details, and an optional **headshot**. Tools that ask for those fields pre-fill them automatically - set them once and your email signature, lockups, and badges fill themselves in. You can still override any field per session. Opt in with **Use my details** so a tool may read them.
+**Profile** (top-right of the gallery) holds your name, contact details, and an optional **headshot**. Tools that ask for those fields pre-fill them automatically - set them once and your email signature, lockups, and badges fill themselves in. You can still override any field per session. Opt in with **Use my details to create** so your details ride along as the author on what you export.
 
 Your headshot and details live **only on this device**. A profile can be more than just you - a team or a role you step into now and then. See **[Profiles](/info/profile.html)** for the full picture, including keeping more than one.
 
@@ -198,7 +204,7 @@ Click **Save** to store the current inputs as a session for that tool. You can k
 
 - <!--i:folder--> **Folders that nest.** Group saved sessions into folders, and folders inside folders, as deep as you like. Create a folder, rename it, or drag a tile onto another folder to move it; a breadcrumb walks you back up. An always-present **Uncategorised** folder holds anything not yet filed.
 - <!--i:clock--> **Sort your own way.** **View & sort** offers **Name**, **Date added**, **Last modified** (the default) and, inside a folder, **By tool**. Folders always come first regardless of which sort is active - the sort only orders the sessions and folders within their own group.
-- <!--i:document--> **File new work straight in.** Inside a folder, **+ New tool** opens a tool and files its first save into that folder automatically.
+- <!--i:document--> **File new work straight in.** **New asset** ("Start a fresh creation" at the root, "Add to *folder*" inside one) opens a tool and files its first save into that folder automatically.
 - <!--i:checklist--> **Multi-select (desktop).** Tick a tile's checkbox, drag a selection box across empty space, or **Shift/Cmd-click**; **right-click** a tile for its context menu. Then act on the whole selection at once - the same gesture and the same floating action bar work on the Tools gallery, Utilities, the Catalogue and Projects, not just here.
 - <!--i:download--> **Render a whole folder or selection.** **Render folder** exports every saved session in a folder - including its sub-folders - as one nested `.zip`. **Render selection** does the same for any multi-selection, and a single session renders straight to its own file. No Batch/Pro needed.
 - <!--i:link--> **Jump straight to a tool's saved work.** Tick one or more tools on the Tools gallery and choose **View sessions** from the selection bar - Projects opens showing only the sessions made with those tools, with a **Clear** to get back to the full view.
@@ -228,7 +234,7 @@ alt text names them - do not re-caption this as "the sort menu".
 
 - **Tools / Utilities:** Favourite (or Unfavourite), Hide (or Unhide), Available offline (or Remove from offline), **View sessions** (the jump described above), and Copy link when exactly one card is selected.
 - **Catalogue:** Favourite and Hide apply to any selection; Duplicate, Download and Delete only appear once every selected item is one of your own uploads - a shared design-system asset is a permanent contract, so those three stay off it even in bulk.
-- **Projects:** **Render selection**, **Move to…**, **New folder**, **Delete**, and **Edit together** when the selection is between two and eight single-tool sessions (it opens them side by side under one combined sidebar).
+- **Projects:** **Render selection**, **Move to…**, **New folder**, **Delete**, **Edit together** when the selection is between two and eight single-tool sessions (it opens them side by side under one combined sidebar), and **Edit as sheet**, which opens the whole selection as rows in the batch grid instead. That one has **no size limit** and doesn't care whether the sessions came from the same tool, so it's the escape hatch when a selection is bigger or more mixed than Edit together's two-to-eight.
 
 > One label trap: **View sessions** only exists once something is *selected*. Right-clicking a single unselected card instead offers **N saved sessions**, which opens that tool's own history dialog rather than navigating to Projects.
 
@@ -253,9 +259,12 @@ storage-seeding hook.
 
 ## Sharing a link
 
-Every input is captured in the page URL, so a link *is* the design. Use **Share** in the export controls - or **Share link** on any saved session in Projects - to open the **Share dialog**: a ready-to-copy link plus toggles for encrypting the link and what happens when it's opened (fullscreen, the export panel expanded, download-on-open with `&export`, or copy-to-clipboard with `&copy`). 
+Every input is captured in the page URL, so a link *is* the design. Use **Share** in the export controls - or **Share link** on any saved session in Projects - to open the **Share dialog**: a ready-to-copy link with two collapsed sections under it.
 
-A big design would make a long URL, so the dialog also offers a **Shortest link** that packs the whole state into a compact token - the readable form is always there too. Paste it to a colleague, bookmark it, or commit it. (Full details: [URL Mode](/info/url-mode.html).)
+- **Link options** holds **Shortest link** (a big design makes a long URL, so this packs the whole state into a compact token; the readable form is always there too), **Password-protect this link** (AES-256 over the whole link, the password never in it), and **Pin this tool version** - the `_v` flag, which nails the link to the tool version you're looking at so a later update can't change what it renders.
+- **Link behaviour** is what happens when the recipient opens it: fullscreen, the export panel already expanded, download-on-open with `&export`, or copy-to-clipboard with `&copy`.
+
+Paste the link to a colleague, bookmark it, or commit it. (Full details: [URL Mode](/info/url-mode.html).)
 
 > Images you uploaded from your device are **not** included in a shared link - they only exist on your machine.
 
@@ -263,7 +272,7 @@ A link hands over a snapshot. To work on the same session *at the same time* as 
 
 ## Live camera (motion-reactive tools)
 
-Every photo **Filter** - Halftone, Scanline, Posterize, Duotone, Pixel Stretch and Voronoi Cells - shows a **Go live** button where a camera is available. Turn it on and the effect tracks your webcam frame by frame, so it reacts to movement; you can record the result to GIF, WebM or MP4. Frames are read and processed **on your device** and never leave it, and the camera is released the moment you stop or leave the tool. (Any image picker also has **Take a photo** to grab a single frame as an on-device image.)
+Every photo **Filter** - Halftone, Scanline, Posterize, Voronoi cells, Colour treatment, Pixel stretch and Imperfections - shows a **Go live** button where a camera is available. Turn it on and the effect tracks your webcam frame by frame, so it reacts to movement; you can record the result to GIF, WebM or MP4. Frames are read and processed **on your device** and never leave it, and the camera is released the moment you stop or leave the tool. (Any image picker also has **Take a photo** to grab a single frame as an on-device image.)
 
 ## My images
 
@@ -271,7 +280,7 @@ When a tool lets you add an image from your device, it's kept exactly as it arri
 
 ## The Catalogue - your asset library
 
-The **Catalogue** (`#/c`, or the **Catalogue** link in the menu) gathers everything your tools can draw on - brand logos, images, audio, and motion, grouped by kind - and it's where your **own creative files** live too. No server, no admin console, no pull request: it's all on your device.
+The **Catalogue** (`#/c`, or the **Catalog** segment of the Projects · Tools · Utilities · Catalog switch at the top of every listing view) gathers everything your tools can draw on - brand logos, images, audio, and motion, grouped by kind - and it's where your **own creative files** live too. No server, no admin console, no pull request: it's all on your device.
 
 ![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=2400&css=.plat-swatch-grid~%2A%7Bdisplay%3Anone%7D&walker=1&format=svg&localize=1&dark=1&filename=catalogue)
 
@@ -289,7 +298,7 @@ The Catalogue's **Swatches** panel isn't just for reference - click a colour to 
 
 ![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=96&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&walker=1&format=svg&dark=1&filename=use-swatch-downloads)
 
-The **Fonts** panel lists your brand faces with a **download** beside each, to install locally or hand to a print shop. (The [Brand Studio](/info/brand-studio.html)'s Colours tab offers the same palette download.)
+The **Fonts** panel lists your brand faces with a **download** beside each, to install locally or hand to a print shop. (The [Brand Studio](/info/brand-studio.html)'s Colours room offers the same palette download.)
 
 Assets are one half of the open, do-it-yourself path; the other is **making your own tools** - the free canvas (Layout Studio, described above) lets you build one visually, no code required.
 
@@ -299,7 +308,9 @@ Lolly aims to be comfortable to use for everyone. The interface is keyboard-navi
 
 A gentle layer of **assistive sounds** confirms what you do - arriving in the gallery, a valid vs. invalid Content Credentials check, closing a panel, switching a filter. It's **off by default**: turn **Sound** on anywhere the switch appears (each view's options popover, or **Profile**), and the choice is remembered.
 
-Beside that switch is **Neurospicy Mode** - an optional, calming background focus track that plays quietly while you work. Turning it on opens a small **player dock** in the bottom corner that follows you across the app; from it you can search and pick a track, skip forward and back, set the volume, and minimise or close it. The track list spans a few categories - procedural *Lolly Sings* tunes, ambient loops and beats, your own uploaded audio, and a handful of live internet **radio** stations (these need a connection; everything else plays offline). It's **off by default** and, like Sound, is remembered across sessions and devices. Turning Sound off mutes the focus track too.
+Four opt-in comfort settings live under **Profile → Accessibility**: **Reduce motion** (drops the app's transitions and flourishes), **Hide colourful previews** (calm icon-and-text gallery cards, and quieter project thumbnails), **High contrast** (stronger borders, text and focus rings) and **Large text** (bigger app type - labels, menus, button text). All four settle the app *around* your work: they never reach inside a tool canvas or change a pixel of what you export, and each is off until you turn it on. Full detail in [Your profile → Accessibility](/info/profile.html#accessibility).
+
+Beside the Sound switch is **Neurospicy Mode** - an optional, calming background focus track that plays quietly while you work. Turning it on opens a small **player dock** in the bottom corner that follows you across the app; from it you can search and pick a track, skip forward and back, set the volume, and minimise or close it. The track list spans a few categories - procedural *Lolly Sings* tunes, ambient loops and beats, your own uploaded audio, and a handful of live internet **radio** stations (these need a connection; everything else plays offline). It's **off by default** and, like Sound, is remembered across sessions and devices. Turning Sound off mutes the focus track too.
 
 ## Storage & privacy
 
@@ -336,6 +347,22 @@ For power users, **Batch** (linked from the gallery, gated behind the Pro featur
 ![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
 
 Batch is for generating **many variants of one template** at once. To re-render sessions you've **already saved**, use **Projects → Render folder / Render selection** (above) - no Pro needed.
+
+## Editing side by side (Multi-edit)
+
+Batch is many variants of *one* design. **Multi-edit** is the other half of the job: several **different** saved designs open at once, so one change lands on all of them. Tick between **two and eight** saved sessions in **Projects** and pick **Edit together** from the selection bar; they open as live cards side by side at `#/multi?s=<slot>,<slot>…`. Each card is a real render of that session, not a stored thumbnail, so what you see is what it will export.
+
+One sidebar drives the lot:
+
+- <!--i:sliders--> **Shared** leads it - every input that two or more of the selected sessions declare the *same way* (same id, same type, same constraints - the same merge rule the batch grid uses on its columns). Edit a shared control once and the value fans out to every session that declares it, live on every card. Two sessions of the same tool share everything; two different tools share whatever they happen to have in common, and nothing else.
+- <!--i:document--> Under it, **one collapsed card per session** with all of that session's own inputs, at the same fidelity as the tool's own sidebar - asset pickers, repeating row groups, colour fields - plus a compact export block: **Format**, **W** / **H**, **Unit**, **DPI** and its own **Download**. That Download saves the session first and then renders it through the ordinary session-export path, so the file carries the same filename, format and Content Credentials it would straight from the tool.
+- <!--i:search--> **Filter inputs…** at the top narrows the controls across *every* card at once - which is how you get to "the headline" in eight sessions without scrolling for it.
+
+Click any canvas (or press Enter on it) and that session's sidebar card opens and scrolls into view. **Save all** writes every session back to its own slot. **Download all** saves first, then renders the whole set through the same pipeline as Projects' **Render selection** - one zip, with the optional password lock offered on the way.
+
+Two honest limits. The two-to-eight cap is real: every card mounts its own live runtime, and that's the number that stays responsive - a link asking for more (or for a session that no longer exists) says so rather than half-loading. And the link names *your* saved slots, so it reopens that set on this device; it is not a share link.
+
+When the selection is bigger than eight, mixes tools, or includes images as well as sessions, the escape hatch is **Edit as sheet** in the same selection bar: it opens the whole selection as **rows in the batch grid** (`#/pro?s=…`), with no size limit and no same-tool rule. Folders stay out of both - they have their own open-in-grid path. ([Search](/info/search.html) is the one thing that doesn't reach in here yet: Multi-edit is the single view the search bar doesn't know about.)
 
 ## Offline & install
 

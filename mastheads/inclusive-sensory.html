@@ -1,0 +1,204 @@
+<!-- Sensory Mixer masthead — the inclusive-design page's thesis as artwork: a
+     stimulation dial. Pointer position runs calm (left) to spicy (right); the
+     left edge is an absolute stop, and stillness is the resting default. Adapted
+     from a Gemini-generated draft sketch directed by Andy (confirmed 2026-08-12; the source arrived carrying no C2PA, so the signature on this file is its first provenance record) to the docs masthead contract: fills
+     its host band, palette read live from the docs tokens (re-read on the .dark
+     toggle and on prefers-color-scheme), reduced-motion renders one static calm
+     frame with no loop, and the rAF idles whenever the field is fully calm. -->
+<div class="ism" aria-hidden="true">
+  <canvas class="ism-canvas"></canvas>
+  <div class="ism-overlay">
+    <div class="ism-icons">
+      <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+      <svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" fill="currentColor" stroke="none"/></svg>
+    </div>
+    <div class="ism-icons">
+      <svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="currentColor" stroke="none"/></svg>
+      <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+    </div>
+  </div>
+</div>
+<style>
+  .ism { position: absolute; inset: 0; overflow: hidden; cursor: crosshair; }
+  .ism-canvas { display: block; width: 100%; height: 100%; }
+  .ism-overlay {
+    position: absolute; inset: 0 0 auto 0; padding: 18px 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    pointer-events: none; color: var(--muted, rgba(128,128,128,.8)); opacity: .55;
+  }
+  .ism-icons { display: flex; align-items: center; gap: 8px; }
+  .ism-icons svg {
+    width: 18px; height: 18px; stroke: currentColor; stroke-width: 2;
+    fill: none; stroke-linecap: round; stroke-linejoin: round;
+  }
+  @media (prefers-reduced-motion: reduce) { .ism { cursor: default; } }
+</style>
+<script>
+(function () {
+  var root = document.currentScript.previousElementSibling.previousElementSibling;
+  if (!root || !root.classList || !root.classList.contains('ism')) {
+    root = document.querySelector('.ism');
+  }
+  if (!root) return;
+  var canvas = root.querySelector('.ism-canvas');
+  var ctx = canvas.getContext('2d');
+  var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var width, height, particles = [], NUM = 1500;
+  var targetStim = 0, currentStim = 0, time = 0;
+  var rafId = 0, visible = true;
+
+  // Palette: read the DOCS tokens live so the band always matches the page.
+  // --page is the docs page ground; --muted paints the icons via CSS above.
+  // Calm sits in the site's green family (hue 152, quiet); spicy is the full
+  // wheel — that contrast IS the artwork. Fallbacks keep a standalone preview
+  // honest when the tokens are absent.
+  var theme = {};
+  function hexToRgb(hex) {
+    hex = (hex || '').trim().replace('#', '');
+    if (hex.length === 3) hex = hex.replace(/./g, function (c) { return c + c; });
+    if (!/^[0-9a-fA-F]{6}$/.test(hex)) return null;
+    var n = parseInt(hex, 16);
+    return ((n >> 16) & 255) + ', ' + ((n >> 8) & 255) + ', ' + (n & 255);
+  }
+  function darkNow() {
+    var el = document.documentElement;
+    if (el.classList.contains('dark')) return true;
+    if (el.classList.contains('light')) return false;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+  function updateThemeVars() {
+    var rootStyles = getComputedStyle(document.documentElement);
+    var page = hexToRgb(rootStyles.getPropertyValue('--page'));
+    var dark = darkNow();
+    theme = {
+      bgRgb: page || (dark ? '6, 24, 22' : '255, 255, 255'),
+      calmHue: 152,
+      calmSat: dark ? 20 : 25,
+      calmLit: dark ? 38 : 65,
+      spicySat: dark ? 100 : 85,
+      spicyLit: dark ? 65 : 50
+    };
+  }
+  updateThemeVars();
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () {
+    updateThemeVars(); if (still) drawStaticFrame();
+  });
+  new MutationObserver(function () {
+    updateThemeVars(); if (still) drawStaticFrame();
+  }).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+  function resize() {
+    width = root.clientWidth || 800;
+    height = root.clientHeight || 240;
+    canvas.width = width;
+    canvas.height = height;
+    initParticles();
+    if (still) drawStaticFrame();
+  }
+  function initParticles() {
+    particles = [];
+    var cols = Math.max(1, Math.floor(Math.sqrt(NUM * (width / Math.max(1, height)))));
+    var spacingX = width / cols, spacingY = height / Math.max(1, Math.floor(NUM / cols));
+    for (var i = 0; i < NUM; i++) {
+      var tx = (i % cols) * spacingX + spacingX / 2;
+      var ty = Math.floor(i / cols) * spacingY + spacingY / 2;
+      particles.push({
+        x: tx, y: ty, originX: tx, originY: ty,
+        vx: (Math.random() - 0.5) * 2, vy: (Math.random() - 0.5) * 2,
+        hueOffset: Math.random() * 360
+      });
+    }
+  }
+  window.addEventListener('resize', resize);
+
+  function paintField(stim) {
+    ctx.fillStyle = 'rgb(' + theme.bgRgb + ')';
+    ctx.fillRect(0, 0, width, height);
+    for (var i = 0; i < particles.length; i++) {
+      var p = particles[i];
+      var x = p.originX + Math.sin(time + p.originY * 0.01) * 10;
+      var y = p.originY + Math.cos(time + p.originX * 0.01) * 10;
+      ctx.fillStyle = 'hsl(' + theme.calmHue + ', ' + theme.calmSat + '%, ' + theme.calmLit + '%)';
+      ctx.beginPath();
+      ctx.arc(x, y, 1.5 + stim * 1.5, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+  // Reduced motion: ONE static calm frame, no loop, no pointer response — the
+  // stopped state the artwork itself treats as first-class.
+  function drawStaticFrame() { time = 0; paintField(0); }
+
+  if (still) { resize(); return; }
+
+  root.addEventListener('pointermove', function (e) {
+    var rect = root.getBoundingClientRect();
+    var ratio = (e.clientX - rect.left) / Math.max(1, rect.width);
+    targetStim = ratio <= 0.05 ? 0 : Math.min(1, (ratio - 0.05) / 0.95);
+    wake();
+  });
+  root.addEventListener('pointerleave', function () { targetStim = 0; wake(); });
+
+  function render() {
+    rafId = 0;
+    currentStim += (targetStim - currentStim) * 0.05;
+    if (currentStim < 0.001) currentStim = 0;
+    var timeIncrement = currentStim === 0 ? 0 : 0.005 + currentStim * 0.035;
+    time += timeIncrement;
+
+    ctx.fillStyle = 'rgba(' + theme.bgRgb + ', 0.2)';
+    ctx.fillRect(0, 0, width, height);
+
+    for (var i = 0; i < particles.length; i++) {
+      var p = particles[i];
+      var calmX = p.originX + Math.sin(time + p.originY * 0.01) * 10;
+      var calmY = p.originY + Math.cos(time + p.originX * 0.01) * 10;
+      if (currentStim > 0) {
+        p.vx += Math.sin(p.y * 0.01 + time) * 0.5;
+        p.vy += Math.cos(p.x * 0.01 + time) * 0.5;
+        p.vx *= 0.95; p.vy *= 0.95;
+      }
+      var spicyX = p.x + p.vx, spicyY = p.y + p.vy;
+      if (p.x < 0) p.x = width; if (p.x > width) p.x = 0;
+      if (p.y < 0) p.y = height; if (p.y > height) p.y = 0;
+      p.x = calmX * (1 - currentStim) + spicyX * currentStim;
+      p.y = calmY * (1 - currentStim) + spicyY * currentStim;
+
+      var sat = theme.calmSat * (1 - currentStim) + theme.spicySat * currentStim;
+      var lit = theme.calmLit * (1 - currentStim) + theme.spicyLit * currentStim;
+      var dynamicHue = (p.hueOffset + time * 50) % 360;
+      var hue = theme.calmHue * (1 - currentStim) + dynamicHue * currentStim;
+      ctx.fillStyle = 'hsl(' + hue + ', ' + sat + '%, ' + lit + '%)';
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 1.5 + currentStim * 1.5, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // Idle when fully calm AND settled: the field breathes only while stimulated
+    // or easing back; at rest the loop stops entirely (wake() restarts it).
+    var settled = currentStim === 0 && targetStim === 0;
+    if (!settled && visible && !document.hidden
+        && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      rafId = requestAnimationFrame(render);
+    }
+  }
+  function wake() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!rafId && visible && !document.hidden) rafId = requestAnimationFrame(render);
+  }
+
+  new IntersectionObserver(function (entries) {
+    visible = !!(entries[0] && entries[0].isIntersecting);
+    if (visible) wake(); else if (rafId) { cancelAnimationFrame(rafId); rafId = 0; }
+  }).observe(root);
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden && rafId) { cancelAnimationFrame(rafId); rafId = 0; }
+    else wake();
+  });
+
+  resize();
+  paintField(0);
+  wake();
+})();
+</script>
+<!-- -----BEGIN C2PA MANIFEST----- data:application/c2pa;base64,AAAI7mp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAAAjIanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46dXVpZDphYTVkNzQ0Yi1mOTczLTQxYTQtYjQxOC02Zjc5YTVjNzk5YmMAAAADn2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAATlqdW1iAAAAKWp1bWRjYm9yABEAEIAAAKoAOJtxA2MycGEuYWN0aW9ucy52MgAAAAEIY2JvcqFnYWN0aW9uc4GlZmFjdGlvbmxjMnBhLmNyZWF0ZWRxZGlnaXRhbFNvdXJjZVR5cGV4Rmh0dHA6Ly9jdi5pcHRjLm9yZy9uZXdzY29kZXMvZGlnaXRhbHNvdXJjZXR5cGUvdHJhaW5lZEFsZ29yaXRobWljTWVkaWFrZGVzY3JpcHRpb254NUF1dGhvcmVkIHdpdGggR2VtaW5pIGZvciB0aGUgTG9sbHkgZG9jcyBtYXN0aGVhZCBiYW5rbXNvZnR3YXJlQWdlbnSiZG5hbWVlTG9sbHlndmVyc2lvbmcxLjExNy4wZHdoZW50MjAyNi0wOC0xMlQwMDo1NzoxMFoAAACsanVtYgAAAChqdW1kY2JvcgARABCAAACqADibcQNjMnBhLmhhc2guZGF0YQAAAAB8Y2JvcqVqZXhjbHVzaW9uc4GiZXN0YXJ0GSHPZmxlbmd0aBkMSmRuYW1lbmp1bWJmIG1hbmlmZXN0Y2FsZ2ZzaGEyNTZkaGFzaFggOvDs8ck6PDNjK+QiJ1fEir/MfH/xA6+f/RZXxBBAk6ljcGFkSAAAAAAAAAAAAAAA7mp1bWIAAAAsanVtZGNib3IAEQAQgAAAqgA4m3EDdG9vbHMubG9sbHkuZXhwb3J0AAAAALpjYm9yqWdzdXJmYWNlZGRvY3NmZW5naW5lbW5vZGUgdjI0LjE5LjBib3NmZGFyd2luZmZvcm1hdG1odG1sLWZyYWdtZW50ZHRvb2xxaW5jbHVzaXZlLXNlbnNvcnlkZGF0ZXgYMjAyNi0wOC0xMlQwMDo1NzoxMC40MThaamRpbWVuc2lvbnNrMjQgw5cgMjQgcHhoYXJ0aWZhY3RobWFzdGhlYWRpZ2VuZXJhdG9yZkdlbWluaQAAAJtqdW1iAAAALGp1bWRjYm9yABEAEIAAAKoAOJtxA2MycGEuYWktZGlzY2xvc3VyZQAAAABnY2JvcqNpbW9kZWxUeXBlcGMycGEudHlwZXMubW9kZWxpbW9kZWxOYW1lZkdlbWluaW5jb250ZW50UHJvZmlsZaFzaHVtYW5PdmVyc2lnaHRMZXZlbG1wcm9tcHRfZ3VpZGVkAAACeWp1bWIAAAAnanVtZGMyY2wAEQAQgAAAqgA4m3EDYzJwYS5jbGFpbS52MgAAAAJKY2JvcqZoZGM6dGl0bGVxaW5jbHVzaXZlLXNlbnNvcnlqaW5zdGFuY2VJRHgtdXJuOnV1aWQ6N2Y5NjgzYTQtOTliYi00NDNjLWEyMTYtOTEzY2I5ZDNiZmYzdGNsYWltX2dlbmVyYXRvcl9pbmZvo2RuYW1lZUxvbGx5Z3ZlcnNpb25nMS4xMTcuMGtzcGVjVmVyc2lvbmUyLjQuMHJjcmVhdGVkX2Fzc2VydGlvbnOEomN1cmx4KnNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuYWN0aW9ucy52MmRoYXNoWCDIDUlR64yddzTPpWSN6xsyWUUudP8UxEtR08icEr9OdKJjdXJseClzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmhhc2guZGF0YWRoYXNoWCDpJXbcIdytkxIFLMQDGs6O2CfxzuhQFFIcc4p+6N1NuKJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy90b29scy5sb2xseS5leHBvcnRkaGFzaFggiTmdQqLLyxk6krRGXJpokQN0i2McV93SobWGlbQhzOmiY3VybHgtc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5haS1kaXNjbG9zdXJlZGhhc2hYIHYi+FvfPUclKEeK9njS8FVMeXQDxM9QZ6YP+ZvFK4Z0aXNpZ25hdHVyZXgZc2VsZiNqdW1iZj1jMnBhLnNpZ25hdHVyZWNhbGdmc2hhMjU2AAACYWp1bWIAAAAoanVtZGMyY3MAEQAQgAAAqgA4m3EDYzJwYS5zaWduYXR1cmUAAAACMWNib3LShFkB4KIBJhghgVkB1zCCAdMwggF5oAMCAQICCUzBs59bnT8I5DAKBggqhkjOPQQDAjA1MQ4wDAYDVQQKDAVMb2xseTEjMCEGA1UEAwwaTG9sbHkgT24tRGV2aWNlIENyZWRlbnRpYWwwHhcNMjYwODEyMDA1NjEwWhcNMzYwODA5MDA1NzEwWjA1MQ4wDAYDVQQKDAVMb2xseTEjMCEGA1UEAwwaTG9sbHkgT24tRGV2aWNlIENyZWRlbnRpYWwwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAQgR5u6WSnoWYSvQuW5/GQwnRdD3ZzFucfogcdYpvJhPQHHTyYJxebC6fBLzlomJy0kcG+8VtGdolwUbgYAsRHso3IwcDAJBgNVHRMEAjAAMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEFBQcDBDAdBgNVHQ4EFgQUtU2QI+Zw8+BSur8XFonldeA3xNwwHwYDVR0jBBgwFoAUtU2QI+Zw8+BSur8XFonldeA3xNwwCgYIKoZIzj0EAwIDSAAwRQIhAPaStbZEJwcAzYIO7c5ojKugZo3kxlWEbSMEmxPKR2Y5AiB1IaS4PkLuYdgalZAFSNYfr1fKX3PCYTFh/bY/YtFKwaD2WECtHoD/zpn1X/CY6ZqwiXfw+mwt65RhNDtgf2DECPM1p3UGYjMXe+BzIw+rxQDCGv0AFEfCf0M2JkYJczNa5s6D -----END C2PA MANIFEST----- -->

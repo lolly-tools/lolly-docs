@@ -50,7 +50,7 @@ These are the common ones; anything outside the full reserved set is a tool inpu
 | `_v` | Pin the tool version for stable output |
 | `slot` | Open a saved session |
 
-The complete reserved set also includes `full`, `options`, `c2pa`, `imprint`, `durable`, `hdr`, `cuts`, `lang`, `nostage`, `z` and `zx`; everything else is forwarded to the tool as an input. (The engine's `RESERVED` set in `engine/src/url-mode.ts` is the source of truth - see [URL Mode](/info/url-mode.html).)
+The complete reserved set also includes `full`, `options`, `c2pa`, `imprint`, `durable`, `meta`, `hdr`, `depth`, `cuts`, `lang`, `designv`, `template`, `nostage`, `z` and `zx`; everything else is forwarded to the tool as an input. (The engine's `RESERVED` set in `engine/src/url-mode.ts` is the source of truth - see [URL Mode](/info/url-mode.html).)
 
 So a one-shot, ready-to-download link is just:
 
@@ -74,7 +74,7 @@ So a one-shot, ready-to-download link is just:
 
 A few tools won't hand back a file this way:
 
-- **Non-exporting utilities** (`color-palette`, `countdown-timer`, `strip-data`, `text-helper`, `compress-pdf`) set `render.export: false` - `&export`/`&copy` are no-ops.
+- **Non-exporting utilities** (`countdown-timer`, `strip-data`, `text-helper`, `compress-pdf`) set `render.export: false` - `&export`/`&copy` are no-ops. (`color-palette` is *not* one of them: the community Palette Lab declares `svg`, `png`, `jpg`, `webp`, `csv`, `json`, `css`, `scss`, `gpl` and `ase`. A brand pack can narrow any community tool's declared formats, so read the manifest - or `lolly_describe_tool` - rather than assuming.)
 - **Experimental tools** (those with `status: "experimental"` in their manifest) watermark every export until they're promoted, so their output isn't press-clean yet.
 - **File-input tools** like `strip-data` transform the user's own bytes in memory; they need a file the agent can't supply through a URL (see the device-local note below).
 

@@ -25,15 +25,15 @@ Two things a fresh clone never downloads, whatever path you take: `brands/suse` 
 
 ## The full clone
 
-The always-works path, unchanged:
+The always-works path. On macOS and openSUSE, `./setup.sh` does everything after the clone - initialises every public submodule, installs git and Node if missing or too old, runs `npm install`, selects a content profile - and it is idempotent, so re-run it freely after a `git pull` or to repair a half-finished checkout:
 
 ```bash
-git clone --recurse-submodules https://github.com/lolly-tools/lolly.git
+git clone https://github.com/lolly-tools/lolly.git
 cd lolly
-npm install
+./setup.sh
 ```
 
-See the Build Guide's "Getting the source" for the SSH variant and for putting each submodule on a branch. Budget about 1.2 GB of download and 2.6 GB on disk once `node_modules` lands.
+The classic form (`git clone --recurse-submodules … && npm install`) works identically if you'd rather manage the toolchain yourself. See the Build Guide's "Getting the source" for the script's flags (`--suse`, `--profile`, `--skip-node`), the SSH variant, and putting each submodule on a branch. Budget about 1.2 GB of download and 2.6 GB on disk once `node_modules` lands.
 
 ---
 

@@ -16,7 +16,7 @@ With the opt-in selected, we embed some of your profile information as provenanc
 
 Lolly produces a large volume of content. We take a strict data minimization approach to prevent risk.
 
-### What are the feature flags?
+## What are the feature flags?
 
 Feature flags turn parts of Lolly on or off. Usually an administrator controls these - with Lolly, you are in control.
 
@@ -67,7 +67,7 @@ generation - nothing competes. The wrong framing is the most common set-back.
 
 **Change management on the producing side.** Existing processes work today, even if
 the output is off-brand. Re-pointing them at the engine means re-testing re-learning,
-and "we can already makes files" becomes the excuse not to migrate. Start by converting
+and "we can already make files" becomes the excuse not to migrate. Start by converting
 one high-visibility production quality output and showing the before/after side by side.
 
 Lolly lifts everything up.
@@ -75,7 +75,7 @@ Lolly lifts everything up.
 
 ## What makes utilities different from tools?
 
-**Basic Answer →** Utilities dont alawys need to render and therefore can get a different UX. 
+**Basic Answer →** Utilities don't always need to render and therefore can get a different UX. 
 
 **Real Answer →** The reason utilities are hostable inside Lolly Tools is to add yet-another 'convenience layer' of defence to disincentivise data-exfiltration. 
 
@@ -93,7 +93,7 @@ unknown retention, unknown jurisdictions, unknown subprocessors, and an ad/affil
 business model that has every incentive to keep what you give them. The operation is
 trivial; the **content is the cost.** 
 
-We win the war for governance with excellent conveinece and service. 
+We win the war for governance with excellent convenience and service. 
 
 ![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1)
 

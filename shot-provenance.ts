@@ -36,6 +36,25 @@ export interface ShotProvenance {
   dimensions: string | null;
   /** Set when the credential declares AI-generated or AI-composited content. */
   ai: 'generated' | 'composite' | undefined;
+  /**
+   * §18.28 `c2pa.ai-disclosure` — the model the SIGNER named, e.g. "Claude Fable 5".
+   * `modelName` when the disclosure carries one, else `modelIdentifier` (a PURL or
+   * URI: uglier, and still the honest answer when it is all the file says).
+   *
+   * Self-asserted, like every other claim fact: it records what the writer declared,
+   * not what a model actually did. Absent on every screenshot — a docs capture is
+   * `digitalCreation` — and present on the banked mastheads/figures, which is what
+   * it was added for (plan §6: a model-name pill on the art's credential line).
+   */
+  model: string | null;
+  /**
+   * `contentProfile.humanOversightLevel` — fully_autonomous / prompt_guided /
+   * human_validated (§18.28.4). §18.28.3 pairs it with digitalSourceType precisely
+   * because the two answer different questions: "was a model involved" and "how
+   * much of a human was". It stays out of the visible row (that row is width-bound
+   * to one line) and rides in the credential trigger's accessible label.
+   */
+  oversight: string | null;
 }
 
 // A 27-locale build asks for the same ~155 files once per locale; the decode is
@@ -45,6 +64,14 @@ const cache = new Map<string, ShotProvenance | null>();
 
 const str = (v: unknown): string | null => (typeof v === 'string' && v.trim() ? v.trim() : null);
 const get = (m: unknown, k: string): unknown => (m instanceof Map ? m.get(k) : undefined);
+
+/**
+ * §18.28's label, versions and repeats included — `c2pa.ai-disclosure`,
+ * `c2pa.ai-disclosure.v2`, `c2pa.ai-disclosure__2`. Matched rather than compared
+ * for the reason the engine's verifier matches it: a disclosure the spec renamed
+ * by one version suffix would otherwise read as no disclosure at all.
+ */
+const AI_DISCLOSURE_LABEL = /^c2pa\.ai-disclosure(\.v\d+)?(__\d+)?$/;
 
 export function readShotProvenance(path: string): ShotProvenance | null {
   let key: string;
@@ -81,6 +108,8 @@ function decode(path: string): ShotProvenance | null {
     let tool: string | null = null;
     let surface: string | null = null;
     let dimensions: string | null = null;
+    let model: string | null = null;
+    let oversight: string | null = null;
 
     for (const a of parts.assertions) {
       if (a.label.startsWith('c2pa.actions')) {
@@ -98,6 +127,18 @@ function decode(path: string): ShotProvenance | null {
         surface = str(get(m, 'surface'));
         dimensions = str(get(m, 'dimensions'));
         when ??= str(get(m, 'date'));
+      } else if (AI_DISCLOSURE_LABEL.test(a.label)) {
+        // §18.28. Read LIBERALLY and never as a failure — the same posture the
+        // engine's verifier takes (engine/src/c2pa-verify.ts): the CDDL requires
+        // modelType, but a writer that omits it must not turn a good file into a
+        // silent one. FIRST disclosure wins: §1558 labels repeats `__1`, `__2` for
+        // a multi-model pipeline, and one pill cannot honestly stand for two
+        // models — /verify is where the full list belongs (report.aiDisclosures).
+        if (model || oversight) continue;
+        const m = decodeCbor(a.content);
+        model = str(get(m, 'modelName')) ?? str(get(m, 'modelIdentifier'));
+        const profile = get(m, 'contentProfile');
+        oversight = str(get(profile, 'humanOversightLevel'));
       }
     }
 
@@ -119,7 +160,7 @@ function decode(path: string): ShotProvenance | null {
     } catch { /* an unreadable signature leaves signer null; the rest of the line stands */ }
 
     if (!signer && !generator && !when) return null;   // nothing worth a line
-    return { signer, generator, when, tool, surface, dimensions, ai };
+    return { signer, generator, when, tool, surface, dimensions, ai, model, oversight };
   } catch {
     return null;
   }

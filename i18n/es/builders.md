@@ -10,7 +10,6 @@ Lolly es un **motor** agnóstico de plataforma que ejecuta la misma ruta de rend
 
 ## Comprende la arquitectura
 
-![One shared primitive from the shell's component library, rendered live from its own specimen - the button base and its fills, beside the file that defines them](/t/url-shot?url=%2F%23%2Fcomponents&width=1200&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23cl-primitives%20.cl-card&dark=1&filename=aud-primitive-card)
 
 
 - **[Visión general](/info/overview.html)** - por qué existe Lolly, la separación entre motor, shell y herramientas, el puente de capacidades, y los compromisos arquitectónicos ya asentados.

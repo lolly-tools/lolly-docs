@@ -183,6 +183,22 @@ A JSON form (`{"columns":[…],"rows":[…]}`) also parses. Long tables ride the
 lolly battlecards --data-data=./cards.csv --output=deck.pdf
 ```
 
+### Keyframe tracks
+
+`kf` is not an input type - it is a **sub-field of a `blocks` input** (one per box), and like every other sub-field it rides the block's own encoding described under [Compact encoding](#compact-encoding-opt-in) below.
+
+A box's `kf` field packs a whole animation track (position, scale, rotation, opacity, blur, depth) into one compact string, charset `A-Za-z0-9._*()-` only. Keyframes are separated by `*`; inside a keyframe, tokens are separated by `_`. The first token is always `t<ms>` (the keyframe's local box time, unscaled). The remaining tokens are channel values and an optional ease token:
+
+- **Channels:** `x12.5`, `y-40`, `s1.2`, `r15`, `z140`, `o0.8`, `b2.5`, the tilt pair `rx-8` / `ry20`, plus camera-only `f`/`a`/`p`. Tilt is parsed from day one and **ignored by every consumer until the tilt export tier ships** - a track that carries it renders today exactly as if it did not.
+- **Ease:** one of the eight presets `el`/`ei`/`eo`/`eio`/`ev`/`ea`/`es`/`ek`, the hold `eh`, or a paren-delimited bezier `eb(0.32)(0)(0.67)(1)`. **Absent means `eio`** (ease-in-out), so an uneased segment is smoothed, never linear.
+- **Longest name wins.** A token is read as the **longest channel name whose remainder parses as a number**: `rx-8` is channel `rx` at -8, never channel `r` followed by junk. A token that matches no channel or ease form that way is skipped rather than rejected, so a hand-edited link degrades gracefully instead of failing the render.
+
+```
+t0_z0_b4*t1500_eo_z140_b0*t4000_eh_z140_x-60
+```
+
+`kf` is written by the app, never hand-typed in practice, and hooks always re-parse and re-serialise it rather than passing the raw field through - so an unparseable or malicious value simply emits no track.
+
 ---
 
 ## Compact encoding (opt-in)
@@ -230,12 +246,14 @@ These keys are never treated as tool inputs. They control shell-level behaviour.
 | `meta` | web + CLI (default-on) | **Generator-metadata toggle.** A generated export normally names its source in the format's own generator field - EPS `%%Creator`, DXF `999` comment, EXR/Radiance `software`/`SOFTWARE=`, PDF `Producer` - plain ASCII `Lolly lolly.tools`, no scheme or punctuation a vintage reader could choke on. **On by default**, like `imprint`/`c2pa`; pass `meta=off` (or `meta=0`) to strip that source field for a metadata-free export. This is a generated artifact's generator field only - a *user's own* file goes through the on-device transform path (Strip Hidden Data), which never adds metadata. Distinct from `c2pa` (the signed credential) and `imprint` (the pixel watermark): `meta=off` drops only the plain generator text, not the credential. |
 | `hdr` | web + CLI/MCP | **HDR raster export** (`png` / `jpg`/`jpeg` / `avif` / `tiff`): re-encode the pixels to **Rec.2100 PQ** - BT.2020 primaries, SMPTE ST 2084 transfer - so brand colours and white text reach peak brightness on an HDR display, and tag the container so a colour-managed viewer reads them that way (an ICC v4 profile carrying a `cicp` tag for `jpg`/`tiff`, a `cICP` chunk for `png`, a rewritten `colr` box for `avif`). **Off by default** - it changes the pixels rather than labelling them - so pass `hdr=1` (or `hdr=on`/`hdr=pq`) to turn it on. A **tuned** form carries the export panel's four author dials in the same value: `hdr=<peakNits>-<reach>-<lift>-<focus>`, e.g. `hdr=1600-60-0-50` (White 1600 nits, Reach 60, Dark lift 0, Focus 50); `hdr=1` means the defaults (`1000-45-0-40`). The boost is gated on OKLab lightness and hue-preserving, so darks stay dark and a brand green doesn't drift minty. **`webp` is deliberately excluded** (8-bit, no working HDR decode path - a PQ WebP just looks dark), as are the vector formats and PDF. Note that many platforms re-encode uploads and **strip** the HDR signal, which can leave the image looking dark - see [Exporting → HDR](/info/exporting.html#hdr-bright-colours). On the CLI and MCP it is also what makes the float formats possible: `--export=exr` and `--export=hdr` REQUIRE `--hdr=1`, because the terminal render path rasterises to 8-bit sRGB and the view transform is the only thing that generates genuine above-1.0 range (without it, and when a render has nothing to lift, the export refuses rather than padding 8 bits into float). |
 | `depth` | web, CLI | **Requested bit depth** for the export: `8`, `16`, `float` or `auto` (the default). Bits per channel for `8`/`16`; `float` means floating-point samples, the depth the film and VFX formats speak. It is a **request, not a promise**: depth follows provenance, so a consumer writes deep bits only where the pipeline actually produced them - a 16-bit file made from an 8-bit canvas render is padding, and Lolly would rather hand you the honest 8-bit file than a bigger one that carries no more picture. `auto` asks for the deepest the chain supports, which is how deep output becomes the default as more of the pipeline earns it (the same rule gamut follows - see [Colour spaces](/info/color-spaces.html)). Formats that are inherently deep (OpenEXR, Radiance `.hdr`) ignore the param except for one choice - on the CLI, `depth=float` writes an EXR with 32-bit float samples instead of the default 16-bit half - and an HDR PNG is written at 16 bits regardless because 8-bit PQ bands (`depth=8` there falls back to the legacy encode). What the CLI does **not** do is honour `depth=16` on png/tiff: the terminal render path rasterises to 8-bit sRGB, so those bits would be padding, and the request is ignored silently rather than obeyed. Junk (`depth=32`, `depth=deep`, an empty value) reads as `auto` rather than failing the export. See `plans/61-deeprichpixels.md` §10. |
-| `cuts` | web only | **Contact sheet** for a still export (`png` / `jpg` / `webp` / `svg` / `pdf`) of a **timed composition** - a Sequence Studio stage, or any tool whose stage carries `data-sequence`. An integer, default `1`. `cuts=1` renders the frame at the **playhead** (what you see is what you get) and is identical to leaving the param off. `cuts=N` for `N > 1` samples `N` stills at equal intervals across the sequence and hands them back together: raster and SVG as `N` **zipped** files (`<filename>-01.png`, `-02.png`, …), `pdf` as **one document of `N` pages**. Sampling is **midpoint**, not endpoint - `t_i = duration x (i + 0.5) / N` - because at `t = 0` an `enter` transition is still at alpha 0 (a blank card) and at `t = duration` every clip has ended, so endpoint sampling would waste the first and last frame of a sheet on blanks. Clamped to `1`-`64`; junk (non-numeric, `0`, negative, `Infinity`) falls back to `1` rather than failing the export. Ignored for non-still formats (video/animation already have every frame) and for stages with no sequence. See `plans/51-fable-timeline-editing.md` §4.6. |
+| `cuts` | web export panel; CLI refuses `cuts>1` | **Contact sheet** for a still export (`png` / `jpg` / `webp` / `svg` / `pdf`) of a **timed composition** - a Sequence Studio stage, or any tool whose stage carries `data-sequence`. An integer, default `1`. `cuts=1` renders the frame at the **playhead** (what you see is what you get) and is identical to leaving the param off. The web shell takes the count from the export panel's **Frames** field, not from the link; the CLI reads the param and exits 3 on `cuts>1`, writing nothing, rather than quietly handing back one frame. `cuts=N` for `N > 1` samples `N` stills at equal intervals across the sequence and hands them back together: raster and SVG as `N` **zipped** files (`<filename>-01.png`, `-02.png`, …), `pdf` as **one document of `N` pages**. Sampling is **midpoint**, not endpoint - `t_i = duration x (i + 0.5) / N` - because at `t = 0` an `enter` transition is still at alpha 0 (a blank card) and at `t = duration` every clip has ended, so endpoint sampling would waste the first and last frame of a sheet on blanks. Clamped to `1`-`64`; junk (non-numeric, `0`, negative, `Infinity`) falls back to `1` rather than failing the export. Ignored for non-still formats (video/animation already have every frame) and for stages with no sequence. See `plans/51-fable-timeline-editing.md` §4.6. |
 | `lang` | web + CLI | UI/content language as a canonical short code: `en` (default), `es`, `de`, `fr`, `zh` (Simplified), `zh-hant` (Traditional), `ja`, `ko`, `vi`, `pt`, `it`, `nl`, `sv`, `no`, `pl`, `cs`, `ro`, `tr`, `uk`, `bg`, `ms`, `id`, `tl`, `hi`, `bn`, `ur`, and `ar` (the `LANGS` set in `engine/src/lang.ts` is the source of truth). Arabic and Urdu render right-to-left (the whole UI mirrors). Informal aliases (`cn`, `jp`, and `in` for `id`) are accepted and normalized on parse. Applies for that session only - it does **not** overwrite the recipient's saved language preference. Unset/unrecognized falls back to the profile, then `localStorage`, then the browser's language, then English. |
 | `designv` | web + CLI | The **design-system version** this render resolves against: a published version's slug, or `latest` for the edit head. Highest rung of the resolution ladder - it beats a tool's `designVersion` manifest pin and the active version, and it falls through to the next rung when it names nothing this device has, so a link never fails to draw. A testing lever for authors ("check against `latest`, fix, then publish"); it is never written into a generated share link, because a version belongs to the design system it was published in, not to whoever opens the link. On a device that has never published a version, every value resolves to the edit head - the behaviour before versions existed. One difference between the two shells today: the CLI reads the pin out of the tool's manifest as the rung below this param, while the web shell resolves this param and the active version only, so a manifest pin does not change what a browser draws yet. |
 | `nostage` | web only | Presence flag - for the `html` export only, drop the fixed-size canvas frame ("stage") so the saved page fills the whole window: the tool's content becomes the document body, with no centred card or grey backdrop. Mirrors the **Full page** toggle in the export panel. |
 | `z` | web + CLI | A **packed** whole-state token - the entire readable query, compressed (raw DEFLATE) and base64url-encoded, for complex tools whose readable link would blow past practical URL limits. See [Packed links](#packed-links-z) below. |
 | `zx` | web only | An **encrypted** whole-state token - the packed state AES-256-GCM-encrypted under a password-derived key (PBKDF2). Opening the link prompts for the password **in the browser** (no server); the password itself is never in the link. See [Encrypted links](#encrypted-links-zx) below. |
+
+The reserved `z` (and `zx`) above is a **top-level** param only - the whole-state packed/encrypted token. A box's own `z` depth field and a keyframe track's `z` channel token live inside the `boxes` block's per-box sub-fields, a separate namespace decoded positionally, so there is no collision between the two.
 
 `export`, `copy`, `full`, `options`, and `nostage` are **presence flags** - the parameter value is ignored; what matters is whether the key appears in the URL.
 
@@ -324,9 +342,13 @@ storyboard, a thumbnail sheet, or a social carousel.
 > **Set this in the export panel, not the link.** The **Frames** field in the export panel
 > is what produces a contact sheet today - see
 > [Exporting](/info/exporting.html#stills-from-a-timed-composition). `cuts` is reserved,
-> parsed and clamped by the engine, but **no shell reads it from a URL yet**, so a link
-> carrying `?cuts=6` renders the single playhead frame and a Share link never carries the
-> value. The rest of this section describes the behaviour the Frames field drives.
+> parsed and clamped by the engine, but the web shell takes the count from that field
+> rather than from the URL, so a link carrying `?cuts=6` renders the single playhead frame
+> and a Share link never carries the value. The **CLI** does read it, and answers plainly:
+> `--cuts=6` (or a pasted link carrying it) exits 3 and writes nothing, because the
+> sequence renderer lives in the web shell and a single frame under the filename you asked
+> for would be a different artefact. The rest of this section describes the behaviour the
+> Frames field drives.
 
 With `N > 1` and **PDF** chosen you get **one N-page PDF**, one page per sample, in time
 order; with `png`/`jpg`/`webp`/`svg` you get a **zip of N files** (`-01` … `-0N`) instead,
@@ -363,23 +385,29 @@ Supported values:
 | `webp` | Lossy/lossless raster |
 | `avif` | AVIF raster |
 | `tiff` | Uncompressed sRGB raster (RGB TIFF) |
+| `exr` / `hdr` | Float raster interchange - OpenEXR and Radiance RGBE, written over a render carrying genuine headroom (`hdr=1`) |
 | `pdf` | PDF document |
 | `pdf-cmyk` | Print PDF - CMYK with output intent (see print marks & bleed) |
 | `cmyk-tiff` | Print TIFF - flattened CMYK raster |
 | `pptx` | PowerPoint deck - native editable text/shapes + extractable images/vectors |
+| `docx` / `odt` | Word / OpenDocument text - headings and paragraphs read off the render, editable, not a picture of the page |
 | `ico` | Icon bundle (e.g. `tool-logo`) |
 | `zip` | Multi-file bundle (optionally password-locked - see Exporting → Locked downloads) |
 | `html` | Static HTML document |
 | `md` / `txt` | Markdown / plain text |
 | `json` / `csv` | Structured data |
+| `css` / `scss` | Colour tokens as CSS custom properties or Sass variables |
+| `gpl` / `ase` | Swatches for other design apps - GIMP palette, Adobe Swatch Exchange |
 | `ics` / `vcf` | Calendar event / contact card |
+| `ttf` / `otf` / `woff` | Font files (Convert Font) |
 | `gif` | Animated GIF (animated tools only) |
 | `apng` | Animated PNG - full colour + real alpha (animated tools only) |
 | `webp-anim` | Animated WebP - full colour + alpha, smallest file (animated tools only) |
 | `webm` | WebM video (animated tools only; Chrome/Firefox/Android) |
 | `mp4` | MP4 video (animated tools only; Safari/iOS and recent Chrome) |
+| `wav` / `mp3` / `m4a` / `opus` | Audio only - the sound with no picture |
 
-Not all tools support all formats - only the formats listed in the tool's manifest `render.formats` are valid (the full set is the 30-value enum in `schemas/tool.schema.json`). Requesting an unsupported format falls back gracefully.
+Not all tools support all formats - only the formats listed in the tool's manifest `render.formats` are valid. The authority on the whole set is the `render.formats` enum in `schemas/tool.schema.json`; this table names what each value produces. Requesting an unsupported format falls back gracefully.
 
 ---
 
