@@ -2558,7 +2558,7 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
    (0,2,0) only sets the display treatment (and clears that rule's padding-left, written
    for the old logo h1). break-word + hyphens keep a long single-word translation (e.g.
    German Inhaltssouveränität) inside its column. */
-.hero .hero-statement{font-family:'SUSE Mono','SF Mono','Fira Code',monospace;text-transform:uppercase;font-size:clamp(2.5rem,7vw,5.25rem);font-weight:300;letter-spacing:-.025em;line-height:1.03;padding-left:0;margin:0 0 1.5rem;color:#fff;text-wrap:balance;overflow-wrap:break-word;hyphens:auto}
+.hero .hero-statement{font-family:'SUSE Mono','SF Mono','Fira Code',monospace;text-transform:uppercase;font-size:clamp(2.5rem,7vw,5.25rem);font-weight:100;letter-spacing:-.025em;line-height:1.03;padding-left:0;margin:0 0 1.5rem;color:#fff;text-wrap:balance;overflow-wrap:break-word;hyphens:auto}
 /* Radius + shadow live on the img itself - on the link they trace its layout box,
    which sits a hair off the rendered image edge and shows as a seam. */
 /* The slot exists so the verify badge can position against the LOGO rather than
