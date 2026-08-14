@@ -6,7 +6,7 @@ Hvor denne plattformen passer inn i det bredere landskapet av kreative verktøy,
 
 ## Landskap
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
 
 | Funksjon | Canva (Åpen canvas) | Merkevareportaler (DAM-maler) | Illustrator (profesjonelt skrivebordsprogram) | Figma / Penpot (profesjonelt, nettbasert) | **Lolly (Begrensningsstyrt)** |
 |---|---|---|---|---|---|

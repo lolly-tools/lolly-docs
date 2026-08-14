@@ -16,7 +16,7 @@ Magritte's other lesson is about accountability. You cannot stuff the painted pi
 
 This is the difference between input and impersonation, drawn in one image. Pixels can imitate anything: a brand, a style, a dead painter's joke. What has to travel honestly beside them is the account of what made them. Magritte refused to write the lie. Lolly writes the truth by default, and hands you the means to check it.
 
-> We strive for honesty amongst the infinite. - Andy Fitzsimon, Architect of Lolly
+> We strive for honesty amongst the infinite. - Andy,  Lolly Contributor
 
 ## The line
 

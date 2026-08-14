@@ -196,7 +196,7 @@ lolly/
 │   ├── event-name-badge/  # konferansebrikker - komponerer qr-code som en SVG
 │   ├── wayfinding-signage/ # arrangementsskilting; retningsblokker autotilpasser etikettekst
 │   ├── text-helper/       # tekstverksted på enheten (formater/dekod/hash/anonymiser)
-│   ├── layout-studio/     # "Layout Studio" - fri WYSIWYG-redigeringscanvas (render.layout: editor)
+│   ├── design/     # "Layout Studio" - fri WYSIWYG-redigeringscanvas (render.layout: editor)
 │   ├── multi-page-pdf/    # PDF-dokument med flere sider - forside, flytende innholdsblokker, bakside
 │   ├── diagram-builder/   # org / layercake / prosess / syklus / pyramidediagrammer
 │   ├── logo-wall/         # mange logoer → automatisk pakket rutenett

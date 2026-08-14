@@ -6,7 +6,7 @@
 
 ## परिदृश्य
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
+![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
 
 | क्षमता | Canva (ओपन कैनवास) | ब्रांड पोर्टल (DAM टेम्पलेटिंग) | Illustrator (डेस्कटॉप प्रो) | Figma / Penpot (ऑनलाइन प्रो) | **Lolly (कंस्ट्रेंट्स-फ़र्स्ट)** |
 |---|---|---|---|---|---|

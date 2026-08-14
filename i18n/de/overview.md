@@ -196,7 +196,7 @@ lolly/
 │   ├── event-name-badge/  # Konferenz-Badges - komponiert qr-code als SVG
 │   ├── wayfinding-signage/ # Event-Beschilderung; Richtungs-Blocks passen Beschriftungstext automatisch an
 │   ├── text-helper/       # On-Device-Text-Werkbank (Formatieren/Dekodieren/Hashen/Anonymisieren)
-│   ├── layout-studio/     # „Layout Studio" - freie WYSIWYG-Editor-Leinwand (render.layout: editor)
+│   ├── design/     # „Layout Studio" - freie WYSIWYG-Editor-Leinwand (render.layout: editor)
 │   ├── multi-page-pdf/    # mehrseitiges PDF-Dokument - Deckblatt, fließende Inhaltsblöcke, Rückseite
 │   ├── diagram-builder/   # Org-/Layercake-/Prozess-/Kreislauf-/Pyramiden-Diagramme
 │   ├── logo-wall/         # viele Logos → automatisch gepacktes Raster

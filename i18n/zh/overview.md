@@ -196,7 +196,7 @@ lolly/
 │   ├── event-name-badge/  # 会议姓名牌——将 qr-code 作为 SVG 组合进来
 │   ├── wayfinding-signage/ # 活动指示牌；方向区块自动适配标签文字
 │   ├── text-helper/       # 设备端文本工作台（格式化/解码/哈希/去标识化）
-│   ├── layout-studio/     # “Layout Studio”——自由式所见即所得编辑画布（render.layout: editor）
+│   ├── design/     # “Layout Studio”——自由式所见即所得编辑画布（render.layout: editor）
 │   ├── multi-page-pdf/    # 多页 PDF 文档——封面、可流动的内容区块、封底
 │   ├── diagram-builder/   # 组织架构 / 分层蛋糕图 / 流程图 / 循环图 / 金字塔图
 │   ├── logo-wall/         # 多个标志 → 自动排布网格

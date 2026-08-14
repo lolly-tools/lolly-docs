@@ -102,7 +102,7 @@ Kami memenangi perjuangan tadbir urus ini dengan kemudahan dan perkhidmatan yang
 
 ## Bolehkah Lolly mengedit dan memaparkan fail Figma, Penpot, Illustrator atau InDesign saya?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Ya. Buka **Layout Studio** dan klik **Import reka bentuk**: ia menerima fail Figma asli **.fig** (Simpan salinan tempatan), eksport Penpot **.penpot**, fail Illustrator **.ai** atau **.pdf**, fail InDesign **.idml** (Fail → Eksport → InDesign Markup), atau **sebarang SVG** (pintu paling luas - hampir semua aplikasi reka bentuk boleh mengeksportnya). Semuanya dihurai sepenuhnya pada peranti anda sendiri, tiada akaun atau plugin diperlukan.
 

@@ -99,7 +99,7 @@ Vi vinner kampen om styring med utmerket bekvemmelighet og service.
 
 ## Kan Lolly redigere og rendre mine Figma-, Penpot-, Illustrator- eller InDesign-filer?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Ja. Åpne **Layout Studio** og klikk på **Importer en design**: det godtar en nativ Figma **.fig** (Save local copy), en Penpot **.penpot**-eksport, en Illustrator **.ai** eller **.pdf**, en InDesign **.idml** (File → Export → InDesign Markup), eller **hvilken som helst SVG** (den brede døren - nesten alle designprogrammer kan eksportere det). Alt tolkes fullstendig på din egen enhet, ingen konto eller plugin nødvendig.
 

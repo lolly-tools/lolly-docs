@@ -196,7 +196,7 @@ lolly/
 │   ├── event-name-badge/  # 컨퍼런스 배지 — qr-code를 SVG로 조합
 │   ├── wayfinding-signage/ # 이벤트 사이니지; 방향 블록이 라벨 텍스트를 자동으로 맞춤
 │   ├── text-helper/       # 온디바이스 텍스트 작업대(포맷/디코드/해시/비식별화)
-│   ├── layout-studio/     # "Layout Studio" — 자유형 WYSIWYG 편집기 캔버스(render.layout: editor)
+│   ├── design/     # "Layout Studio" — 자유형 WYSIWYG 편집기 캔버스(render.layout: editor)
 │   ├── multi-page-pdf/    # 여러 페이지 PDF 문서 — 표지, 흘러가는 콘텐츠 블록, 뒤표지
 │   ├── diagram-builder/   # 조직도 / 레이어케이크 / 프로세스 / 사이클 / 피라미드 다이어그램
 │   ├── logo-wall/         # 여러 로고 → 자동 배치 그리드

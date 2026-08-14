@@ -196,7 +196,7 @@ lolly/
 │   ├── event-name-badge/  # カンファレンスバッジ — qr-code を SVG として組み合わせる
 │   ├── wayfinding-signage/ # イベントサイネージ;方向ブロックがラベルテキストを自動調整
 │   ├── text-helper/       # オンデバイスのテキスト作業台(整形/デコード/ハッシュ/匿名化)
-│   ├── layout-studio/     # "Layout Studio" — 自由形式の WYSIWYG エディタキャンバス(render.layout: editor)
+│   ├── design/     # "Layout Studio" — 自由形式の WYSIWYG エディタキャンバス(render.layout: editor)
 │   ├── multi-page-pdf/    # 複数ページの PDF ドキュメント — 表紙、流し込み式のコンテンツブロック、裏表紙
 │   ├── diagram-builder/   # 組織図 / レイヤーケーキ / プロセス / サイクル / ピラミッド図
 │   ├── logo-wall/         # 多数のロゴ → 自動配置のグリッド

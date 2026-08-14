@@ -102,7 +102,7 @@ Yönetişim savaşını mükemmel kolaylık ve hizmetle kazanıyoruz.
 
 ## Lolly, Figma, Penpot, Illustrator veya InDesign dosyalarımı düzenleyip render edebilir mi?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Evet. **Layout Studio**'yu aç ve **Bir tasarım içe aktar**'a tıkla: yerel bir Figma **.fig** dosyasını (Save local copy), bir Penpot **.penpot** dışa aktarımını, bir Illustrator **.ai** veya **.pdf** dosyasını, bir InDesign **.idml** dosyasını (File → Export → InDesign Markup) ya da **herhangi bir SVG**'yi (geniş kapı - hemen hemen her tasarım uygulaması bunu dışa aktarır) kabul eder. Her şey tamamen cihazında ayrıştırılır, hesap veya eklenti gerekmez.
 

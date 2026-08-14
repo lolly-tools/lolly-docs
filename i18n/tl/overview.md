@@ -196,7 +196,7 @@ lolly/
 │   ├── event-name-badge/  # conference badge - kino-compose ang qr-code bilang SVG
 │   ├── wayfinding-signage/ # event signage; ang directions blocks ay auto-fit ang label text
 │   ├── text-helper/       # on-device na text workbench (format/decode/hash/de-identify)
-│   ├── layout-studio/     # "Layout Studio" - freeform WYSIWYG na editor canvas (render.layout: editor)
+│   ├── design/     # "Layout Studio" - freeform WYSIWYG na editor canvas (render.layout: editor)
 │   ├── multi-page-pdf/    # multi-page na PDF document - cover, flowing content blocks, back page
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid na diagram
 │   ├── logo-wall/         # maraming logo → auto-packed grid

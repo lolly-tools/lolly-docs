@@ -196,7 +196,7 @@ lolly/
 │   ├── event-name-badge/  # 研討會識別證——以 SVG 形式組合 qr-code
 │   ├── wayfinding-signage/ # 活動指標標示；方向區塊會自動調整標籤文字
 │   ├── text-helper/       # 裝置端文字工作台（格式化／解碼／雜湊／去識別化）
-│   ├── layout-studio/     # "Layout Studio"——自由格式的 WYSIWYG 編輯器畫布（render.layout: editor）
+│   ├── design/     # "Layout Studio"——自由格式的 WYSIWYG 編輯器畫布（render.layout: editor）
 │   ├── multi-page-pdf/    # 多頁 PDF 文件——封面、可流動的內容區塊、封底
 │   ├── diagram-builder/   # 組織圖／分層圖／流程圖／循環圖／金字塔圖
 │   ├── logo-wall/         # 多個標誌 → 自動排列成網格

@@ -196,7 +196,7 @@ lolly/
 │   ├── event-name-badge/  # lencana persidangan - menggabungkan qr-code sebagai SVG
 │   ├── wayfinding-signage/ # papan tanda acara; blok arah menyesuaikan teks label secara automatik
 │   ├── text-helper/       # ruang kerja teks pada peranti (format/nyahkod/hash/nyah-kenal pasti)
-│   ├── layout-studio/     # "Layout Studio" - kanvas editor WYSIWYG bebas bentuk (render.layout: editor)
+│   ├── design/     # "Layout Studio" - kanvas editor WYSIWYG bebas bentuk (render.layout: editor)
 │   ├── multi-page-pdf/    # dokumen PDF berbilang halaman - kulit depan, blok kandungan mengalir, halaman belakang
 │   ├── diagram-builder/   # rajah org / layercake / process / cycle / pyramid
 │   ├── logo-wall/         # banyak logo → grid disusun automatik

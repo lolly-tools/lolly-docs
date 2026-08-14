@@ -98,7 +98,7 @@ Lolly يرفع كل شيء.
 
 ## هل يستطيع Lolly تحرير ملفات Figma أو Penpot أو Illustrator أو InDesign الخاصة بي وتصييرها؟
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 نعم. افتح **Layout Studio** وانقر على **استيراد تصميم**: يقبل ملف Figma أصليا بصيغة **.fig** ‏(Save local copy)، أو تصدير Penpot بصيغة **.penpot**، أو ملف Illustrator بصيغة **.ai** أو **.pdf**، أو ملف InDesign بصيغة **.idml** ‏(File → Export → InDesign Markup)، أو **أي SVG** (الباب الواسع — يصدره تقريبا كل تطبيق تصميم). كل شيء يحلل بالكامل على جهازك، دون حاجة إلى حساب أو ملحق.
 

@@ -196,7 +196,7 @@ lolly/
 │   ├── event-name-badge/  # crachás de conferência - compõe qr-code como um SVG
 │   ├── wayfinding-signage/ # sinalização de eventos; blocks de direção ajustam o texto do rótulo automaticamente
 │   ├── text-helper/       # workbench de texto no dispositivo (formatar/decodificar/hash/desidentificar)
-│   ├── layout-studio/     # "Layout Studio" - canvas de editor WYSIWYG livre (render.layout: editor)
+│   ├── design/     # "Layout Studio" - canvas de editor WYSIWYG livre (render.layout: editor)
 │   ├── multi-page-pdf/    # documento PDF multipágina - capa, blocks de conteúdo fluido, contracapa
 │   ├── diagram-builder/   # diagramas de organograma / layercake / processo / ciclo / pirâmide
 │   ├── logo-wall/         # muitos logos → grade com empacotamento automático

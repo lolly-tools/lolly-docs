@@ -100,7 +100,7 @@ Válku o governance vyhráváme skvělým pohodlím a službou.
 
 ## Umí Lolly upravit a vyrenderovat moje soubory z Figmy, Penpotu, Illustratoru nebo InDesignu?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Flayout-studio%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=layout-studio)
+![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Ano. Otevři **Layout Studio** a klikni na **Importuj návrh**: přijímá nativní Figma soubor **.fig** (Save local copy), export z Penpotu **.penpot**, Illustrator **.ai** nebo **.pdf**, InDesign **.idml** (File → Export → InDesign Markup), nebo **jakékoli SVG** (široká brána - skoro každá návrhářská aplikace ho umí exportovat). Všechno se zpracovává výhradně na tvém zařízení, není potřeba účet ani plugin.
 

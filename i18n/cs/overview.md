@@ -196,7 +196,7 @@ lolly/
 │   ├── event-name-badge/  # konferenční jmenovky - skládá qr-code jako SVG
 │   ├── wayfinding-signage/ # značení na akce; bloky směrů si samy přizpůsobí text popisku
 │   ├── text-helper/       # textová dílna přímo na zařízení (formátování/dekódování/hash/anonymizace)
-│   ├── layout-studio/     # "Layout Studio" - volné WYSIWYG editorové plátno (render.layout: editor)
+│   ├── design/     # "Layout Studio" - volné WYSIWYG editorové plátno (render.layout: editor)
 │   ├── multi-page-pdf/    # vícestránkový PDF dokument - obálka, plynoucí obsahové bloky, zadní strana
 │   ├── diagram-builder/   # organizační / vrstvené / procesní / cyklické / pyramidové diagramy
 │   ├── logo-wall/         # mnoho log → automaticky uspořádaná mřížka

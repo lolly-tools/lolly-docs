@@ -196,7 +196,7 @@ lolly/
 │   ├── event-name-badge/  # ecusoane de conferință - compune qr-code ca SVG
 │   ├── wayfinding-signage/ # semnalistică de eveniment; blocurile de direcții auto-ajustează textul etichetei
 │   ├── text-helper/       # atelier de text pe dispozitiv (formatare/decodare/hash/de-identificare)
-│   ├── layout-studio/     # „Layout Studio” - canvas de editor WYSIWYG liber (render.layout: editor)
+│   ├── design/     # „Layout Studio” - canvas de editor WYSIWYG liber (render.layout: editor)
 │   ├── multi-page-pdf/    # document PDF multi-pagină - copertă, blocuri de conținut curgător, pagină finală
 │   ├── diagram-builder/   # diagrame org / layercake / proces / ciclu / piramidă
 │   ├── logo-wall/         # multe logo-uri → grilă auto-aranjată

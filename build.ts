@@ -30,6 +30,21 @@ import { parseShotRecipes, type ShotDef } from '../scripts/lib/shot-compare.ts';
 // below — the blockIds a committed cues.json speaks must be judged by the same
 // rules that minted them, and the player already bundles this exact module.
 import { extractSpokenText } from '../scripts/lib/docs-spoken-text.ts';
+// The shared, DOM-free docs render layer (@lolly-tools/docs-render). Imported by
+// RELATIVE path because docs/ is a submodule, not an npm-workspace member (same as
+// engine/src and scripts/lib above); the web shell imports the same code via the
+// bare specifier through the workspace symlink. The renderer lives here so the
+// static site and the in-app live docs view can never drift. `esc` here is the
+// 3-char escaper the whole site relies on — never the web shell's 5-char one.
+import {
+  esc,
+  stripFrontMatter,
+  unwrapFigureFences,
+  unwrapProvenanceMarkers,
+  stripLogoMarkers,
+  commentStandaloneProvenanceLines,
+  mdDescription,
+} from '../packages/docs-render/src/index.ts';
 // esbuild bundles the docs player (docs/player/) into /info/docs-player.js — it
 // is already in the tree as vite's bundler, so this adds no dependency.
 import { buildSync } from 'esbuild';
@@ -115,6 +130,7 @@ const pages: Page[] = [
   { slug: 'profile',          title: 'Profiles',          src: 'profile.md',      pathway: 'creators', description: "The working identity Lolly creates as - your name, role and contact details, filled into tools automatically and stored on your own device." },
   { slug: 'design-import',    title: 'Import a design (Figma, Penpot, Illustrator, InDesign)', src: 'design-import.md', pathway: 'creators', description: "Bring a finished design out of Figma, Penpot, Illustrator or InDesign and into Lolly as an editable, re-renderable tool rather than a flat picture." },
   { slug: 'sequence-editor',  title: 'The sequence editor', src: 'sequence-editor.md', pathway: 'creators' },
+  { slug: 'animating',        title: 'Animating: keyframes, depth and a camera', src: 'animating.md', pathway: 'creators', description: "Pose a box at one moment, lift it off the page, and fly a camera over the result - keyframes, depth, the scene camera and Lift layers, all on your device." },
   // Collab is a CREATORS page, not a Builders or Trust one: it is a thing two people
   // do with a tool session, and the reader arrives at it from "I want to work on this
   // with someone", not from an interest in WebRTC. The security property it turns on
@@ -187,6 +203,42 @@ const MASTHEADS: Record<string, string> = {
   // The first banked masthead: the Sensory Mixer (Gemini artwork, Andy-directed,
   // adapted to the band contract) — the inclusive-design page's stimulation dial.
   'inclusive-design': 'inclusive-sensory',
+  // Input, not impersonation: a fluid input wave forced to part around a rigid,
+  // unforgeable identity seal (Gemini artwork, Andy-directed).
+  'input-not-impersonation': 'input-not-impersonation',
+  // Status quo ("the trade we never agreed to"): rigid tectonic slabs grinding
+  // along a friction fault line (Gemini artwork, Andy-directed).
+  'status-quo': 'status-quo',
+  // Our AI stance ("channels, not buckets"): a flood turned to irrigation — water
+  // running the channels into growth (Gemini artwork, Andy-directed).
+  'ai-stance': 'ai-stance',
+  // For Creators ("one seed, many lanes"): one input fanning into guard-railed
+  // lanes of aligned on-brand outputs. Artwork by Claude Fable 5, directed by
+  // Claude Opus 4.8 — an AI directing an AI, both disclosed in the credential.
+  'creators': 'creators',
+  // Verify It Yourself: opaque unverified rings vs a hard-edged green cryptographic
+  // lens revealing the verified state (Gemini artwork, Andy-directed).
+  'verify-yourself': 'verify-yourself',
+  // Working together ("confluence"): four colour streams merging into one flow.
+  // Artwork by GLM-5.2 (z.ai), Andy-directed.
+  'collaborate': 'collaborate',
+  // The five below: AI-directed (Claude Opus 4.8) art by Claude Fable 5 / Sonnet 5.
+  'quickstart': 'quickstart',   // facet on-ramp — sparse inputs clicking into a whole (Fable 5)
+  'builders': 'builders',       // one module stamping into an aligned grid of copies (Sonnet 5)
+  'operators': 'operators',     // governed deploy-wave across a framed grid (Sonnet 5)
+  'url-mode': 'url-mode',        // one encoded line resolving to an exact render (Fable 5)
+  'overview': 'overview',        // one core pulsing through many distinct shells (Sonnet 5)
+  // Trust pathway + MCP — AI-directed (Claude Opus 4.8) art by Claude Sonnet 5 / Fable 5.
+  'privacy': 'privacy',                     // protected interior, nothing leaves (Sonnet 5)
+  'ai-features': 'ai-features',             // flux crystallising to a fixed artifact (Fable 5)
+  'security': 'security',                   // guilloché security engraving (Sonnet 5)
+  'threat-model': 'threat-model',           // defended boundary, probes deflect (Fable 5)
+  'content-credentials-identity': 'content-credentials-identity',       // anonymous mark rising through trust tiers (Sonnet 5)
+  'content-credentials-engineering': 'content-credentials-engineering', // nested manifest container tree (Fable 5)
+  'server-surface': 'server-surface',       // negative space, one minimal footprint (Sonnet 5)
+  'parser-inventory': 'parser-inventory',   // chaotic bytes tamed into ordered rows (Fable 5)
+  'beatrice-warde': 'beatrice-warde',       // the Crystal Goblet — clarity through glass (Sonnet 5)
+  'mcp': 'mcp',                             // one port, bidirectional call-and-return (Fable 5)
 };
 
 // Top-nav links, grouped into clusters. Each inner array renders as one cluster
@@ -255,6 +307,7 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
         { slug: 'brand-studio',    label: 'The Brand Studio' },
         { slug: 'design-import',   label: 'Import a design' },
         { slug: 'sequence-editor', label: 'The sequence editor' },
+        { slug: 'animating',       label: 'Animating' },
         { slug: 'utilities',       label: 'Utility views' } ] },
       // Search, favourites and the profile are the three pages about getting back to
       // your own things — finding them, keeping them to hand, and the on-device record
@@ -493,10 +546,6 @@ function toSlug(h2: string) {
 // The seal glyph inside a `%sig{}` pill — a signature is a claim someone put
 // their name to, so it gets a mark of its own rather than only a colour.
 const PROV_SEAL = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="prov-seal"><path d="M12 2 4 5.5v6c0 4.5 3.2 8.6 8 10.5 4.8-1.9 8-6 8-10.5v-6L12 2Z"/><path d="m9 12 2 2 4-4"/></svg>`;
-
-function esc(s: string) {
-  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-}
 
 function inline(text: string) {
   let s = esc(text);
@@ -5061,7 +5110,7 @@ const FOOTER_SECTIONS: SitemapSection[] = [
   // same position "For Builders" and "Trust" hold below. Its membership is still the
   // rail's "Make things" group exactly.
   { hub: 'creators', label: 'For Creators', slugs: [
-    'using', 'brand-studio', 'design-import', 'sequence-editor', 'utilities'] },
+    'using', 'brand-studio', 'design-import', 'sequence-editor', 'animating', 'utilities'] },
   { hub: 'creators', label: 'Find your way', slugs: [
     'search', 'ask', 'dashboard', 'favourites', 'profile'] },
   { hub: 'creators', label: 'Share & collaborate', slugs: [
@@ -5173,7 +5222,7 @@ const SIDEBAR_ICON: Record<string, string> = {
   'status-quo': 'convert', 'input-not-impersonation': 'usercheck',
   // Creators
   using: 'pentool', 'brand-studio': 'palette', profile: 'usercheck', 'design-import': 'upload',
-  'sequence-editor': 'clock', exporting: 'download', positioning: 'sliders',
+  'sequence-editor': 'clock', animating: 'layers', exporting: 'download', positioning: 'sliders',
   ask: 'sparkle', dashboard: 'monitor', utilities: 'wrench',
   collaborate: 'people', search: 'search', favourites: 'star',
   // Builders — architecture & authoring
@@ -5710,112 +5759,10 @@ ${audio ? LISTEN_SCRIPT : ''}
 // agent-readable face of the docs. English only by design; locale sidecars stay
 // HTML-only.
 
-// No docs source carries front-matter today; strip a leading YAML block anyway so
-// a build-time-only header added later never leaks into the published twin.
-function stripFrontMatter(md: string): string {
-  const m = md.match(/^---\n[\s\S]*?\n---\n?/);
-  return m ? md.slice(m[0].length) : md;
-}
-
-// The twin is markdown, so it carries no CSS to turn a provenance marker into a
-// pill — an agent reading it would get `%file{the-flood.webp}` as literal noise
-// around the very words that matter. Unwrap to the plain text; the sentence was
-// always written to read without them.
-/**
- * The markdown twin has no build step to inline art into, so a `::: figure <id>`
- * fence there is a reference to something the reader cannot see, wrapped around the
- * only part of it they can — the caption. Unwrap to the caption prose, which was
- * always written to read as a sentence about the point being made (the provenance
- * pill unwrap above, applied to a block).
- *
- * The id is not carried into the twin as text: it names a file the twin does not
- * publish, and an agent reading `::: figure trust-chain` would be reading build
- * plumbing, not documentation.
- */
-function unwrapFigureFences(md: string): string {
-  return md.replace(/^::: figure\s+\S+[ \t]*\r?\n([\s\S]*?)^:::[ \t]*\r?\n?/gm, (_m, caption: string) => caption);
-}
-
-function unwrapProvenanceMarkers(md: string): string {
-  let out = md;
-  for (let pass = 0; pass < 4; pass++) {
-    const next = out.replace(/%(?:entity|sig|act|file|detail)\{([^{}]*)\}/g, '$1');
-    if (next === out) break;
-    out = next;
-  }
-  return out;
-}
-
-// The twin is markdown, and a technology mark is pure decoration — the word it sits
-// beside already says which thing is meant. An agent reading /info/build-guide.md
-// gains nothing from `<!--l:helm-->` and loses nothing without it, so the marker is
-// removed outright rather than unwrapped (there is no text inside it to keep). The
-// marker is invisible in any markdown renderer anyway; this is about the twin being
-// clean at the source level too. Both forms go: the inline `<!--l:key-->` and the
-// whole-line `<!--lb:key key-->` block, which is pure page rhythm and says even less
-// to a reader with no eyes on it. tests/docs-logos.test.ts holds the line.
-function stripLogoMarkers(md: string): string {
-  return md.replace(/<!--lb:[a-z0-9 -]+-->\n?/g, '').replace(/<!--l:[a-z0-9-]+-->/g, '');
-}
-
-// A standalone provenance credential line (`%file{…} %entity{…} …`) is page
-// furniture: on the page it renders as a row of pills. In the agent-readable
-// twin we keep the credit but move it into an HTML comment, markers unwrapped —
-// so an agent still sees the provenance, the twin ships no raw `%kind{` noise
-// (tests/docs-provenance-pills.test.ts), AND the narration excludes it: a
-// comment-only line extracts to empty spoken text, exactly as the SOURCE
-// pipeline (scripts/lib/docs-spoken-text.ts) skips the same `%file{…}` line — so
-// the audio and the player's twin-derived follow-along block map exclude the
-// identical set and the highlight never drifts off a spoken block. Comment
-// FIRST (the detection keys on the raw markers), then a whole-doc unwrap mops up
-// any inline markers on ordinary prose lines.
-function commentStandaloneProvenanceLines(md: string): string {
-  return md
-    .split('\n')
-    .map((l) => /^\s*%(?:file|entity|act|detail|sig)\{/.test(l)
-      ? `<!-- ${unwrapProvenanceMarkers(l).trim()} -->`
-      : l)
-    .join('\n');
-}
-
-// One-sentence description for a page's llms.txt line, derived from the first
-// body sentence of its English markdown so the listing can never drift from the
-// docs themselves. Skips headings, blockquotes, lists/tables, raw HTML (the
-// README hero <img>), and emphasis-only metadata lines (privacy's "*Last
-// updated*"), then flattens inline markdown to plain text.
-//
-// HTML COMMENTS ARE REMOVED WHOLE, before the split into blocks, and that order is
-// the fix rather than a tidy-up. The per-block skip below can only test whether a
-// block STARTS with "<", so it catches a one-paragraph comment and misses a comment
-// containing a blank line: the second paragraph reads as ordinary prose and becomes
-// the page's public description. That is not hypothetical - favourites.md opens with
-// a multi-paragraph authoring note, and this page's <meta name="description"> and OG
-// card were shipping its second paragraph ("Two separate storage facts are
-// load-bearing here…") as the page summary. Our docs pages carry these notes by
-// convention (the SHOT NOTE blocks are everywhere), so the extractor has to treat a
-// comment as invisible the way a markdown renderer does, not as a block shaped a
-// particular way.
-function mdDescription(md: string): string {
-  const blocks = md
-    .replace(/```[\s\S]*?```/g, '')
-    .replace(/<!--[\s\S]*?-->/g, '')
-    .split(/\n\s*\n/);
-  for (const block of blocks) {
-    const line = block.trim().split('\n').map(l => l.trim()).join(' ');
-    if (!line || /^#{1,6} /.test(line) || line.startsWith('>') || line.startsWith('<')) continue;
-    if (/^-{3,}$/.test(line) || /^\s*[-*] /.test(line) || line.startsWith('|')) continue;
-    if (/^\*[^*]+\*$/.test(line) || /^!\[[^\]]*\]\([^)]+\)$/.test(line)) continue;
-    const plain = line
-      .replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1')
-      .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
-      .replace(/\*\*([^*]+)\*\*/g, '$1')
-      .replace(/\*([^*]+)\*/g, '$1')
-      .replace(/`([^`]+)`/g, '$1');
-    const sentence = plain.match(/^.*?[.!?](?=\s|$)/);
-    return (sentence ? sentence[0] : plain).trim();
-  }
-  return '';
-}
+// The twin transforms (stripFrontMatter, unwrapFigureFences,
+// unwrapProvenanceMarkers, stripLogoMarkers, commentStandaloneProvenanceLines,
+// mdDescription) now live in @lolly-tools/docs-render — pure string ops the
+// in-app docs view needs too. Imported at the top of this file.
 
 // Section order + labels for llms.txt - mirrors the top nav (NAV/NAV_PATHWAY).
 const LLMS_SECTIONS: Array<{ pathway: Pathway; label: string }> = [
