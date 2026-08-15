@@ -6,7 +6,7 @@ Nền tảng này phù hợp ở đâu trong bối cảnh công cụ sáng tạo
 
 ## Bối cảnh
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
+![Design's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
 
 | Khả năng | Canva (Canvas mở) | Cổng thương hiệu (Tạo mẫu DAM) | Illustrator (Desktop chuyên nghiệp) | Figma / Penpot (Trực tuyến chuyên nghiệp) | **Lolly (Ưu tiên ràng buộc)** |
 |---|---|---|---|---|---|
@@ -22,7 +22,7 @@ Nền tảng này phù hợp ở đâu trong bối cảnh công cụ sáng tạo
 | Ứng dụng Di động và Desktop | ✓ | ✗ | ✗ | một phần | **✓** |
 | Dòng lệnh & TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-Hình dạng của khoảng trống này rất rõ ràng: không có gì trong bối cảnh hiện tại mang lại đầu ra ưu tiên ràng buộc, có khả năng ngoại tuyến, yêu cầu kỹ năng thấp, dễ tiếp cận nội bộ, mang tính tạo sinh. Lolly giờ đây có canvas mở của riêng mình - **Layout Studio**, một canvas tự do thao tác trực tiếp - nhưng có một khác biệt quyết định so với cột Canva: màu sắc, kiểu chữ và tài nguyên đặt trên đó tuân theo các biến toàn cục của thương hiệu, vì vậy ngay cả sự sắp xếp tự do vẫn giữ tính ưu tiên ràng buộc. Điều mà Lolly vẫn **không** phải là một bộ công cụ thiết kế không ràng buộc; các nhà thiết kế sẽ tiếp tục sử dụng Illustrator và Figma cho công việc riêng biệt - và khi công việc đó cần trở thành một tài nguyên được quản trị, có thể tái tạo, tính năng [Nhập thiết kế](/info/design-import.html) của Layout Studio sẽ đưa tệp Figma/Illustrator/Penpot hoàn chỉnh lên canvas dưới dạng các khối có thể chỉnh sửa, tuân theo thương hiệu.
+Hình dạng của khoảng trống này rất rõ ràng: không có gì trong bối cảnh hiện tại mang lại đầu ra ưu tiên ràng buộc, có khả năng ngoại tuyến, yêu cầu kỹ năng thấp, dễ tiếp cận nội bộ, mang tính tạo sinh. Lolly giờ đây có canvas mở của riêng mình - **Design**, một canvas tự do thao tác trực tiếp - nhưng có một khác biệt quyết định so với cột Canva: màu sắc, kiểu chữ và tài nguyên đặt trên đó tuân theo các biến toàn cục của thương hiệu, vì vậy ngay cả sự sắp xếp tự do vẫn giữ tính ưu tiên ràng buộc. Điều mà Lolly vẫn **không** phải là một bộ công cụ thiết kế không ràng buộc; các nhà thiết kế sẽ tiếp tục sử dụng Illustrator và Figma cho công việc riêng biệt - và khi công việc đó cần trở thành một tài nguyên được quản trị, có thể tái tạo, tính năng [Nhập thiết kế](/info/design-import.html) của Design sẽ đưa tệp Figma/Illustrator/Penpot hoàn chỉnh lên canvas dưới dạng các khối có thể chỉnh sửa, tuân theo thương hiệu.
 
 ## Dùng để
 
@@ -31,8 +31,8 @@ Hình dạng của khoảng trống này rất rõ ràng: không có gì trong b
 Deck Studio là thước đo tốt cho giới hạn trên ở đây: cả một bộ slide được khai báo dưới dạng dữ liệu, được dàn trực tiếp trên canvas, rồi xuất ra thành tệp PowerPoint gốc có thể chỉnh sửa.
 
 - Tạo nhanh các tài nguyên sáng tạo được vận hành hóa (thẻ sự kiện, huy hiệu, chữ ký, cảnh báo)
-- Sắp xếp tự do trên canvas mở (Layout Studio) khi các thành phần - màu sắc, kiểu chữ, biểu tượng, hình ảnh - phải luôn tuân theo các biến toàn cục của thương hiệu
-- Đưa một thiết kế Figma, Illustrator, InDesign hoặc Penpot hoàn chỉnh vào (tính năng Nhập thiết kế của Layout Studio) để nó có thể được chỉnh sửa, quản trị và render lại một cách xác định ở mọi định dạng của Lolly
+- Sắp xếp tự do trên canvas mở (Design) khi các thành phần - màu sắc, kiểu chữ, biểu tượng, hình ảnh - phải luôn tuân theo các biến toàn cục của thương hiệu
+- Đưa một thiết kế Figma, Illustrator, InDesign hoặc Penpot hoàn chỉnh vào (tính năng Nhập thiết kế của Design) để nó có thể được chỉnh sửa, quản trị và render lại một cách xác định ở mọi định dạng của Lolly
 - Luồng "điền ba trường, nhận tài nguyên hoàn chỉnh" theo kiểu một-đến-nhiều - bao gồm cả các lượt chạy hàng loạt từ bảng tính/CSV trong lưới hàng loạt `/pro` (dán hoặc nhập các hàng, mỗi hàng cho ra một tài nguyên hoàn chỉnh, tải xuống dưới dạng zip)
 - Đầu ra mang thương hiệu, luôn bật và lặp lại định kỳ
 - Những trường hợp mà việc kiểm soát tập trung cách thể hiện thương hiệu quan trọng hơn tính linh hoạt biểu đạt

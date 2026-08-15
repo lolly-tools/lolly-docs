@@ -6,7 +6,7 @@ Hvor denne plattformen passer inn i det bredere landskapet av kreative verktøy,
 
 ## Landskap
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
+![Design's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
 
 | Funksjon | Canva (Åpen canvas) | Merkevareportaler (DAM-maler) | Illustrator (profesjonelt skrivebordsprogram) | Figma / Penpot (profesjonelt, nettbasert) | **Lolly (Begrensningsstyrt)** |
 |---|---|---|---|---|---|
@@ -22,7 +22,7 @@ Hvor denne plattformen passer inn i det bredere landskapet av kreative verktøy,
 | Mobil- og skrivebordsapper | ✓ | ✗ | ✗ | delvis | **✓** |
 | Kommandolinje og TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-Gapet er tydelig: ingenting i det eksisterende landskapet gir oss begrensningsstyrt, offlinekapabel, lavterskel, internt tilgjengelig, generativt resultat. Lolly leverer nå en egen åpen canvas - **Layout Studio**, en fri canvas for direkte manipulasjon - men med en avgjørende forskjell fra Canva-kolonnen: farger, typografi og ressurser som plasseres på den, følger merkevarens globale verdier, slik at selv fri utforming forblir begrensningsstyrt. Det Lolly fortsatt **ikke** er, er en ubegrenset designsuite; designere vil fortsette å bruke Illustrator og Figma til skreddersydd arbeid - og når det arbeidet må bli en styrt, reproduserbar ressurs, bringer Layout Studios [Importer en design](/info/design-import.html) den ferdige Figma-/Illustrator-/Penpot-filen inn på canvaset som redigerbare, merkevaretilpassede bokser.
+Gapet er tydelig: ingenting i det eksisterende landskapet gir oss begrensningsstyrt, offlinekapabel, lavterskel, internt tilgjengelig, generativt resultat. Lolly leverer nå en egen åpen canvas - **Design**, en fri canvas for direkte manipulasjon - men med en avgjørende forskjell fra Canva-kolonnen: farger, typografi og ressurser som plasseres på den, følger merkevarens globale verdier, slik at selv fri utforming forblir begrensningsstyrt. Det Lolly fortsatt **ikke** er, er en ubegrenset designsuite; designere vil fortsette å bruke Illustrator og Figma til skreddersydd arbeid - og når det arbeidet må bli en styrt, reproduserbar ressurs, bringer Designs [Importer en design](/info/design-import.html) den ferdige Figma-/Illustrator-/Penpot-filen inn på canvaset som redigerbare, merkevaretilpassede bokser.
 
 ## Bruk det til
 
@@ -31,8 +31,8 @@ Gapet er tydelig: ingenting i det eksisterende landskapet gir oss begrensningsst
 Deck Studio er et godt mål på taket her: en hel presentasjon deklarert som data, lagt ut live på canvasen og eksportert som en innebygd redigerbar PowerPoint.
 
 - Rask generering av operasjonaliserte kreative ressurser (arrangementsfliser, brikker, signaturer, varsler)
-- Fri utforming på den åpne canvasen (Layout Studio) når elementene - farger, typografi, ikoner, bilder - må holde seg til merkevarens globale verdier
-- Å lande en ferdig Figma-, Illustrator-, InDesign- eller Penpot-design (Layout Studios Importer en design) slik at den kan redigeres, styres og rendres på nytt deterministisk i alle Lolly-formater
+- Fri utforming på den åpne canvasen (Design) når elementene - farger, typografi, ikoner, bilder - må holde seg til merkevarens globale verdier
+- Å lande en ferdig Figma-, Illustrator-, InDesign- eller Penpot-design (Designs Importer en design) slik at den kan redigeres, styres og rendres på nytt deterministisk i alle Lolly-formater
 - En-til-mange-flyter av typen «fyll ut tre felt, få den ferdige ressursen» - inkludert masseoppgaver fra et regneark/CSV i `/pro`-batch-rutenettet (lim inn eller importer rader, én ferdig ressurs per rad, last ned som en zip)
 - Alltid på, tilbakevendende merkevaretilpassede resultater
 - Ting der sentral kontroll over merkevareuttrykket betyr mer enn uttrykksfull fleksibilitet

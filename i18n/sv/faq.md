@@ -47,7 +47,7 @@ färdigt paket med dina mallar. För en *styrd utrullning* definierar någon den
 tillgångskatalogen (loggor, paletter, typsnitt som permanenta ID:n) och skriver
 manifest + mall för varje utdatatyp. Individer behöver dock inte vänta på det - i
 den öppna appen kan vem som helst importera sina egna filer till katalogen och
-bygga verktyg i Layout Studio från dag ett.
+bygga verktyg i Design från dag ett.
 
 **Styrning genom git är valfritt - och obekant för icke-utvecklare.** Om du kör en
 *delad, kontrollerad* katalog är "PR-granskningen *är* modereringen" elegant för
@@ -60,7 +60,7 @@ produktionsmiljöer). Team som inte vill ha detta hoppar helt enkelt över det.
 **Det är medvetet smalt - beskriv det så.** Lolly är inte till för skräddarsytt
 eller hjälte-innehåll. Det *är* din personliga DAM - hydrerad och superladdad av ditt
 designsystem, dina verktyg och din katalog - och det *har* faktiskt en öppen kanvas
-(Layout Studio), men även där följer färger, typsnitt och tillgångar de aktiva
+(Design), men även där följer färger, typsnitt och tillgångar de aktiva
 designglobalerna, så fri placering håller sig ändå inom systemet. Jämfört med Figma
 eller Canva kommer det att verka begränsat. Bedömt för vad det faktiskt är -
 operationaliserad, återkommande tillgångsgenerering i massiv skala - finns inget som
@@ -101,9 +101,9 @@ Vi vinner kampen om styrning genom utmärkt bekvämlighet och service.
 
 ## Kan Lolly redigera och rendera mina Figma-, Penpot-, Illustrator- eller InDesign-filer?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
-Ja. Öppna **Layout Studio** och klicka på **Importera en design**: den tar emot en inbyggd Figma **.fig** (Save local copy), en Penpot **.penpot**-export, en Illustrator **.ai** eller **.pdf**, en InDesign **.idml** (File → Export → InDesign Markup), eller **valfri SVG** (den breda dörren - nästan alla designprogram kan exportera det). Allt tolkas helt på din egen enhet, inget konto eller plugin behövs.
+Ja. Öppna **Design** och klicka på **Importera en design**: den tar emot en inbyggd Figma **.fig** (Save local copy), en Penpot **.penpot**-export, en Illustrator **.ai** eller **.pdf**, en InDesign **.idml** (File → Export → InDesign Markup), eller **valfri SVG** (den breda dörren - nästan alla designprogram kan exportera det). Allt tolkas helt på din egen enhet, inget konto eller plugin behövs.
 
 Lager kommer in som redigerbara rutor på den öppna kanvasen: text går att skriva om, former förblir former, bilder ansluter till ditt bibliotek på enheten, och typsnitt och färger följer de globala varumärkesinställningarna. Spara den så blir layouten en återanvändningsbar, URL-adresserbar mall som vem som helst med Lolly kan fylla i på nytt - och du kan blanda in levande verktyg (en QR-kod, ett diagram) som renderas om vid inläsning. Därifrån renderas den precis som allt annat i Lolly - SVG, PDF, PNG och resten, reproducerbar från sin URL. Se [Importera en design](/info/design-import.html).
 

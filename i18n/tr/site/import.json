@@ -1,7 +1,7 @@
 {
   "eyebrow": "Zaten yaptığını getir",
   "heading": "Tasarım dosyaların artık mahsur kalmıyor",
-  "lead": "**Figma, Penpot, Illustrator, InDesign ya da herhangi bir SVG uygulamasında** tamamlanmış çalışmaların tek bir uygulamaya kilitlenmiş kalması gerekmez. **Layout Studio**'yu aç, **Import a design**'a tıkla, dosya düzleştirilmiş bir resim değil, canlı bir düzen olarak açılır. Her katman; üzerinde çalışmaya devam edebileceğin, araçlarla karıştırabileceğin ve aynı kurallarla oluşturabileceğin, düzenlenebilir bir kutuya dönüşür.",
+  "lead": "**Figma, Penpot, Illustrator, InDesign ya da herhangi bir SVG uygulamasında** tamamlanmış çalışmaların tek bir uygulamaya kilitlenmiş kalması gerekmez. **Design**'yu aç, **Import a design**'a tıkla, dosya düzleştirilmiş bir resim değil, canlı bir düzen olarak açılır. Her katman; üzerinde çalışmaya devam edebileceğin, araçlarla karıştırabileceğin ve aynı kurallarla oluşturabileceğin, düzenlenebilir bir kutuya dönüşür.",
   "sources": [
     { "mono": "Fig", "name": "Figma", "fmt": ".fig · SVG", "color": "#a259ff" },
     { "mono": "Pen", "name": "Penpot", "fmt": ".penpot", "color": "#12b886" },

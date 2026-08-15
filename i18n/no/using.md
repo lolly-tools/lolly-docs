@@ -17,7 +17,7 @@ Hjemskjermen er **galleriet** - alle verktøy, gruppert etter kategori. Klikk p�
 
 Hvert verktøy er en delt visning: **kontroller** på den ene siden, en direkte **forhåndsvisning** (canvaset) på den andre. Endre en kontroll, så oppdateres forhåndsvisningen umiddelbart.
 
-> Noen få verktøy (som **Layout Studio**) åpnes i stedet som et **fritt canvas** - en kromfri flate for direkte manipulasjon der du drar, endrer størrelse på, roterer og fester bokser med tekst, former og bilder, og dobbeltklikker for å redigere tekst direkte på stedet. Det eksporteres via samme renderingsvei som alle andre verktøy, så canvaset *er* filen. Se [Det frie canvaset](#the-free-canvas-design) nedenfor.
+> Noen få verktøy (som **Design**) åpnes i stedet som et **fritt canvas** - en kromfri flate for direkte manipulasjon der du drar, endrer størrelse på, roterer og fester bokser med tekst, former og bilder, og dobbeltklikker for å redigere tekst direkte på stedet. Det eksporteres via samme renderingsvei som alle andre verktøy, så canvaset *er* filen. Se [Det frie canvaset](#the-free-canvas-design) nedenfor.
 
 ## Canvaset (forhåndsvisning)
 
@@ -40,9 +40,9 @@ Forhåndsvisningen viser alltid nøyaktig det som vil bli eksportert.
 
 En endring av dimensjonene fører alltid visningen tilbake til en ren tilpasning.
 
-### Det frie canvaset (Layout Studio)
+### Det frie canvaset (Design)
 
-![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Verktøy med fritt canvas legger til en arbeidsflate *rundt* tegnebrettet, som en designers oppslagstavle:
 
@@ -144,7 +144,7 @@ Katalogens **Fargeprøver**-panel er ikke bare til referanse - klikk på en farg
 
 **Skrifttyper**-panelet lister opp merkevarens skrifttyper med en **nedlasting** ved siden av hver, for lokal installasjon eller til et trykkeri. (Fanen Colours i [Brand Studio](/info/brand-studio.html) tilbyr den samme palettnedlastingen.)
 
-Ressurser er den ene halvdelen av den åpne gjør-det-selv-veien; den andre er **å lage dine egne verktøy** - det frie canvaset (Layout Studio, beskrevet ovenfor) lar deg bygge ett visuelt, uten behov for kode.
+Ressurser er den ene halvdelen av den åpne gjør-det-selv-veien; den andre er **å lage dine egne verktøy** - det frie canvaset (Design, beskrevet ovenfor) lar deg bygge ett visuelt, uten behov for kode.
 
 ## Lyd og tilgjengelighet
 
@@ -176,7 +176,7 @@ Katalog­mellomlageret er ikke inkludert - det lastes ned på nytt av seg selv p
 
 ## Importere en design (Figma, Penpot, Illustrator, InDesign)
 
-Du kan ta med en eksisterende design inn i Lolly og fortsette å jobbe med den: åpne **Layout Studio**, klikk **Importer en design** i canvas-verktøylinjen, og velg en Figma **.fig** eller SVG, en Penpot **.penpot**, en Illustrator **.ai** / **.pdf**, eller en InDesign **.idml**. Lag blir redigerbare bokser på det frie canvaset - tekst forblir omskrivbar, bilder havner i **Mine bilder**, og skrift og farger tilpasser seg merkevarens globale verdier - deretter lagres, deles og rendres resultatet som en hvilken som helst annen økt. Tolkningen skjer helt og holdent på enheten din. Fullstendige detaljer: **[Importer en design](/info/design-import.html)**.
+Du kan ta med en eksisterende design inn i Lolly og fortsette å jobbe med den: åpne **Design**, klikk **Importer en design** i canvas-verktøylinjen, og velg en Figma **.fig** eller SVG, en Penpot **.penpot**, en Illustrator **.ai** / **.pdf**, eller en InDesign **.idml**. Lag blir redigerbare bokser på det frie canvaset - tekst forblir omskrivbar, bilder havner i **Mine bilder**, og skrift og farger tilpasser seg merkevarens globale verdier - deretter lagres, deles og rendres resultatet som en hvilken som helst annen økt. Tolkningen skjer helt og holdent på enheten din. Fullstendige detaljer: **[Importer en design](/info/design-import.html)**.
 
 ## Eksportere
 

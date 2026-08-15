@@ -34,7 +34,7 @@ Kết quả là **sự dồi dào**: mọi sự kiện đều có biển chỉ d
 | Ứng dụng Di động và Desktop | ✓ | ✗ | ✗ | một phần | **✓** |
 | Dòng lệnh & TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-Khoảng trống này rất rõ ràng: không có gì trong bối cảnh hiện tại mang lại đầu ra ưu tiên ràng buộc, có khả năng ngoại tuyến, yêu cầu kỹ năng thấp, và dễ tiếp cận nội bộ. Lolly thậm chí còn có một canvas mở - **Layout Studio** - nơi màu sắc, kiểu chữ và asset đều tuân theo các biến toàn cục của thương hiệu, nên việc sắp xếp tự do vẫn giữ tính ưu tiên ràng buộc. Điều nó **không** phải là một bộ công cụ thiết kế không ràng buộc: các nhà thiết kế vẫn tiếp tục dùng Illustrator và Figma cho công việc chủ lực đặt riêng theo yêu cầu. Các biến thể có thể được lắp ráp bằng công cụ này.
+Khoảng trống này rất rõ ràng: không có gì trong bối cảnh hiện tại mang lại đầu ra ưu tiên ràng buộc, có khả năng ngoại tuyến, yêu cầu kỹ năng thấp, và dễ tiếp cận nội bộ. Lolly thậm chí còn có một canvas mở - **Design** - nơi màu sắc, kiểu chữ và asset đều tuân theo các biến toàn cục của thương hiệu, nên việc sắp xếp tự do vẫn giữ tính ưu tiên ràng buộc. Điều nó **không** phải là một bộ công cụ thiết kế không ràng buộc: các nhà thiết kế vẫn tiếp tục dùng Illustrator và Figma cho công việc chủ lực đặt riêng theo yêu cầu. Các biến thể có thể được lắp ráp bằng công cụ này.
 
 **Dùng để:** Tạo nhanh các asset sáng tạo mang tính vận hành - ô sự kiện, thẻ tên, chữ ký, cảnh báo CVE, mã QR, thẻ mạng xã hội, nhãn lô hàng, báo cáo có cấu trúc.
 
@@ -48,7 +48,7 @@ Khoảng trống này rất rõ ràng: không có gì trong bối cảnh hiện 
 
 Cách rõ nhất để thấy Lolly là gì không phải một danh sách tính năng - mà là dõi theo một asset duy nhất khi nó được chuyền từ tay này sang tay khác. Hãy xem một thẻ chiến dịch đã bản địa hoá đi qua tổ chức:
 
-1. **Người sáng tạo đặt ra luật.** Một nhà thiết kế soạn template gốc trong Layout Studio, mã hoá cứng kiểu chữ và các biến màu của thương hiệu. Họ không làm ra một thẻ - họ làm phần việc nền tảng *một lần* để không bao giờ phải bản địa hoá thủ công lại nữa.
+1. **Người sáng tạo đặt ra luật.** Một nhà thiết kế soạn template gốc trong Design, mã hoá cứng kiểu chữ và các biến màu của thương hiệu. Họ không làm ra một thẻ - họ làm phần việc nền tảng *một lần* để không bao giờ phải bản địa hoá thủ công lại nữa.
 2. **Lập trình viên nhân rộng nó.** Cũng chính template đó được nối vào một pipeline chạy hằng đêm qua CLI, nên một biểu đồ mới hay một biến thể ngôn ngữ mới được tạo ra tự động - không nhà thiết kế nào phải mở lại tệp.
 3. **Người sản xuất chỉ việc dùng.** Một nhân viên bán hàng, đang ngoại tuyến trên máy bay, mở đúng công cụ đó và tạo ra một bộ slide đúng chuẩn thương hiệu cho buổi gặp khách hàng. Không cần kỹ năng thiết kế, không cần mạng, không phải chờ.
 
@@ -173,7 +173,6 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── daily-card/        # "Day Brief" - weather/time/map (fetched by an inline template script)
 │   ├── code-canvas/
 │   ├── countdown-timer/
 │   ├── color-palette/
@@ -185,7 +184,6 @@ lolly/
 │   ├── strip-data/        # on-device metadata strip - JPEG/PNG/SVG/PDF (file in → clean file out)
 │   ├── compress-pdf/      # on-device PDF compressor - recompresses images (file in → smaller file out)
 │   ├── brand-lockup/      # "Brand Lockup" - SUSE logo lockups; HarfBuzz text-to-path (wasm)
-│   ├── bag-video/
 │   ├── chart-creator/     # SVG charts from structured data
 │   ├── filter-duotone/    # two-color photo treatment
 │   ├── filter-halftone/   # photo → vector halftone dot grid
@@ -196,7 +194,7 @@ lolly/
 │   ├── event-name-badge/  # conference badges - composes qr-code as an SVG
 │   ├── wayfinding-signage/ # event signage; directions blocks auto-fit label text
 │   ├── text-helper/       # on-device text workbench (format/decode/hash/de-identify)
-│   ├── design/     # "Layout Studio" - freeform WYSIWYG editor canvas (render.layout: editor)
+│   ├── design/     # "Design" - freeform WYSIWYG editor canvas (render.layout: editor)
 │   ├── multi-page-pdf/    # multi-page PDF document - cover, flowing content blocks, back page
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
 │   ├── logo-wall/         # many logos → auto-packed grid
@@ -274,15 +272,15 @@ Các hàng được liệt kê theo đúng thứ tự các mục trong gallery. 
 
 | Danh mục | Công cụ đã phát hành | Dự kiến |
 |---|---|---|
-| `everyone` | QR Code Generator, Quote Card, Email Signature, Day Brief, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
-| `designer` | Brand Lockup, Bag Video, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
+| `everyone` | QR Code Generator, Quote Card, Email Signature, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
+| `designer` | Brand Lockup, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Layout Studio | Bộ chuyển đổi đơn vị/định dạng, thêm các tiện ích quyền riêng tư trên thiết bị khác |
+| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Design | Bộ chuyển đổi đơn vị/định dạng, thêm các tiện ích quyền riêng tư trên thiết bị khác |
 
-Các công cụ cũng được phân loại theo `status`: `official` (được thương hiệu phê duyệt, không có watermark), `community` (đóng góp từ bên ngoài), `experimental` (bản xuất có gắn watermark). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap và Diagram Builder hiện mang trạng thái `experimental`; Web Icon Maker và Layout Studio được phát hành như các công cụ `community`.
+Các công cụ cũng được phân loại theo `status`: `official` (được thương hiệu phê duyệt, không có watermark), `community` (đóng góp từ bên ngoài), `experimental` (bản xuất có gắn watermark). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap và Diagram Builder hiện mang trạng thái `experimental`; Web Icon Maker và Design được phát hành như các công cụ `community`.
 
-**Layout Studio** là công cụ đầu tiên được xây trên chế độ canvas tự do `render.layout: "editor"` - một bề mặt thao tác trực tiếp, không khung giao diện, nơi bạn kéo, đổi kích thước, xoay và gắn (snap) các khối văn bản, hình khối và hình ảnh, rồi export qua cùng render path như mọi công cụ khác.
+**Design** là công cụ đầu tiên được xây trên chế độ canvas tự do `render.layout: "editor"` - một bề mặt thao tác trực tiếp, không khung giao diện, nơi bạn kéo, đổi kích thước, xoay và gắn (snap) các khối văn bản, hình khối và hình ảnh, rồi export qua cùng render path như mọi công cụ khác.
 
 **Strip Hidden Data** là **tiện ích chạy trên thiết bị (on-device)** đầu tiên (`privacy: "on-device"`): một công cụ biến đổi nội dung nhận vào một tệp do *bạn* cung cấp, xử lý hoàn toàn trong trình duyệt, và trả lại một bản sao sạch - không bao giờ tải lên, không bao giờ gắn watermark, không đóng dấu nguồn gốc (provenance). **Text Helper** là tiện ích thứ hai - một bàn làm việc trên thiết bị cho các tác vụ dán-vào-một-trang-web thường ngày (định dạng JSON, giải mã JWT, Base64, mã hoá/giải mã URL, băm SHA). **Compress PDF** là tiện ích thứ ba - nó thu nhỏ một PDF bằng cách nén lại hình ảnh bên trong, cũng hoàn toàn trên thiết bị. Cả ba đều mang dòng chữ huy hiệu "Runs on your device - nothing is uploaded". Đây là khởi đầu của một danh mục tiện ích quyền riêng tư nhằm thay thế việc giao tệp bí mật cho các trang web đơn chức năng.
 
@@ -444,7 +442,7 @@ Sự chia tách này được cưỡng chế - không có import chéo từ `eng
 
 | Cột mốc | Thời hạn | Nội dung |
 |---|---|---|
-| **Các công cụ ban đầu** | ✅ Đã hoàn thành | QR Code, Quote Card, Email Signature, Day Brief, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Bag Video, Chart Creator, Filter: Duotone, Meeting Planner - web shell đã hoạt động |
+| **Các công cụ ban đầu** | ✅ Đã hoàn thành | QR Code, Quote Card, Email Signature, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Chart Creator, Filter: Duotone, Meeting Planner - web shell đã hoạt động |
 | **Nâng cấp bộ công cụ hiện tại** | Giữa 2026 ✅ Đã hoàn thành  | Ứng dụng ngoại tuyến có thể tải về (Tauri); thêm công cụ cho nhân viên và sự kiện; pipeline export phong phú hơn (độ ổn định text-to-path, metadata, thêm định dạng - xem `plans.md`) |
 | **Mở mã nguồn cho engine** | Cuối 2026 ✅ Đã hoàn thành  | Engine, shells, schemas, docs được công khai - không bao gồm tools/assets mang thương hiệu |
 | **Chuyển giữa các thiết bị** | ✅ Đã hoàn thành | Gói `lolly-backup` có thể mang đi được, mang theo profile, các phiên đã lưu, hình ảnh đã tải lên và tùy chọn (prefs) giữa bất kỳ hai bản cài đặt nào - ngoại tuyến hoặc trực tuyến, không cần tài khoản. Envelope tương thích ngược, có kiểm tra tính toàn vẹn (đặc tả: `docs/data-transfer.md`) |

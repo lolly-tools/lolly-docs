@@ -48,7 +48,7 @@ Nu pornești de la o pagină goală. Lolly se deschide pentru munca de design ș
 
 ### Fișiere de design open-source
 
-Lucrările finite din **Figma, Penpot, Illustrator, InDesign sau orice aplicație SVG** nu trebuie să rămână blocate în aplicația în care le-ai desenat. Deschide **Layout Studio**, dă click pe **Import a design**, iar fișierul se deschide ca un *layout viu* - nu o imagine aplatizată. Fiecare strat devine o casetă editabilă: textul rămâne re-tastabil, formele rămân forme, imaginile ajung în biblioteca ta, iar arta vectorială complexă este păstrată fidel. Sosește deja conformă cu fețele de brand și regulile de culoare ale tale.
+Lucrările finite din **Figma, Penpot, Illustrator, InDesign sau orice aplicație SVG** nu trebuie să rămână blocate în aplicația în care le-ai desenat. Deschide **Design**, dă click pe **Import a design**, iar fișierul se deschide ca un *layout viu* - nu o imagine aplatizată. Fiecare strat devine o casetă editabilă: textul rămâne re-tastabil, formele rămân forme, imaginile ajung în biblioteca ta, iar arta vectorială complexă este păstrată fidel. Sosește deja conformă cu fețele de brand și regulile de culoare ale tale.
 
 | Ai | Adu-l ca |
 |---|---|
@@ -62,7 +62,7 @@ Tot importul se întâmplă **pe dispozitivul tău** - fișierul este parsat în
 
 ### De la o creație unică la un șablon
 
-Iată câștigul: un layout importat este o sesiune obișnuită de Layout Studio, deci odată ce îl **salvezi**, trăiește la o URL. Oricine are Lolly poate deschide acea URL, poate schimba cuvintele, poate înlocui o imagine și poate randa propria versiune - fără aplicație de design, iar părțile blocate rămân blocate. Un design de unică folosință devine un instrument reutilizabil. Asta e toată ideea, atinsă fără să scrii o linie de configurare.
+Iată câștigul: un layout importat este o sesiune obișnuită de Design, deci odată ce îl **salvezi**, trăiește la o URL. Oricine are Lolly poate deschide acea URL, poate schimba cuvintele, poate înlocui o imagine și poate randa propria versiune - fără aplicație de design, iar părțile blocate rămân blocate. Un design de unică folosință devine un instrument reutilizabil. Asta e toată ideea, atinsă fără să scrii o linie de configurare.
 
 ### Date deschise și instrumente deschise
 

@@ -1,7 +1,7 @@
 {
   "eyebrow": "帶入你已經做好的作品",
   "heading": "你的設計檔案不會被困住",
-  "lead": "在 **Figma、Penpot、Illustrator、InDesign 或任何 SVG 應用程式**中完成的作品,不必被鎖在單一應用程式裡。開啟 **Layout Studio**,按一下**匯入設計**,檔案就會以動態版面呈現——而不是一張攤平的圖片。每個圖層都會變成可編輯的方框,讓你能繼續編輯、與工具混搭,並依照相同規則渲染。",
+  "lead": "在 **Figma、Penpot、Illustrator、InDesign 或任何 SVG 應用程式**中完成的作品,不必被鎖在單一應用程式裡。開啟 **Design**,按一下**匯入設計**,檔案就會以動態版面呈現——而不是一張攤平的圖片。每個圖層都會變成可編輯的方框,讓你能繼續編輯、與工具混搭,並依照相同規則渲染。",
   "sources": [
     { "mono": "Fig", "name": "Figma", "fmt": ".fig · SVG", "color": "#a259ff" },
     { "mono": "Pen", "name": "Penpot", "fmt": ".penpot", "color": "#12b886" },

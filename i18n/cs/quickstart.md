@@ -48,7 +48,7 @@ Nezačínáš od nuly. Lolly otevírá návrhářskou práci a otevřené formá
 
 ### Otevřené návrhové soubory
 
-Hotová práce z **Figma, Penpot, Illustrator, InDesign nebo jakékoli aplikace pro SVG** nemusí zůstat uzamčená v aplikaci, ve které vznikla. Otevři **Layout Studio**, klikni na **Importovat návrh** a soubor se otevře jako *živé rozvržení* - ne jako zploštělý obrázek. Z každé vrstvy se stane editovatelný box: text zůstává přepisovatelný, tvary zůstávají tvary, obrázky se uloží do tvé knihovny a složitá vektorová grafika se zachová věrně. Vše dorazí už přizpůsobené písmům a barevným pravidlům tvé značky.
+Hotová práce z **Figma, Penpot, Illustrator, InDesign nebo jakékoli aplikace pro SVG** nemusí zůstat uzamčená v aplikaci, ve které vznikla. Otevři **Design**, klikni na **Importovat návrh** a soubor se otevře jako *živé rozvržení* - ne jako zploštělý obrázek. Z každé vrstvy se stane editovatelný box: text zůstává přepisovatelný, tvary zůstávají tvary, obrázky se uloží do tvé knihovny a složitá vektorová grafika se zachová věrně. Vše dorazí už přizpůsobené písmům a barevným pravidlům tvé značky.
 
 | Co máš | Jak to přinést |
 |---|---|

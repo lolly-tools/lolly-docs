@@ -4,9 +4,9 @@ Bring a finished design **out of Figma, Penpot, Illustrator or InDesign and into
 
 The good news for everything you've already made: none of it is stranded in the app you drew it in. A design you spent hours on in another tool arrives as an editable session, already conformed to your design globals - and once you save it, it's a reusable template anyone with Lolly can open and refill.
 
-Import lives in **[Layout Studio](/info/using.html)**, Lolly's free canvas: open it, click **Import a design** in the canvas toolbar, and choose a file. The artboard resizes to the file's frame and every layer becomes an editable box on the same open canvas - so an imported artboard is just an ordinary Layout Studio session from the first click.
+Import lives in **[Design](/info/using.html)**, Lolly's free canvas: open it, click **Import a design** in the canvas toolbar, and choose a file. The artboard resizes to the file's frame and every layer becomes an editable box on the same open canvas - so an imported artboard is just an ordinary Design session from the first click.
 
-![Layout Studio's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 ## What you can import
 
@@ -60,11 +60,11 @@ Two ways in:
 - In **Sequence Studio**, open **Import a design** in the canvas toolbar and choose the file.
 - Drop the file anywhere on the gallery or dashboard and pick **Make a video from its frames**.
 
-Each frame is baked through Layout Studio's own renderer into a crisp vector still (text as outlines, images embedded), so scenes stay sharp at any export size and need no fonts at playback. A storyboard drawn in Penpot or Figma becomes a finished cut - titles, soundtrack, provenance and all - without a video editor in sight.
+Each frame is baked through the Design tool's own renderer into a crisp vector still (text as outlines, images embedded), so scenes stay sharp at any export size and need no fonts at playback. A storyboard drawn in Penpot or Figma becomes a finished cut - titles, soundtrack, provenance and all - without a video editor in sight.
 
 ## From a one-off design to a reusable template
 
-This is where import stops being a conversion and starts being *authoring*. An imported layout is an ordinary [Layout Studio](/info/using.html) session, so it inherits everything a native session can do:
+This is where import stops being a conversion and starts being *authoring*. An imported layout is an ordinary [Design](/info/using.html) session, so it inherits everything a native session can do:
 
 - **It's a template anyone can reuse.** Save it and the layout lives at a URL. Anyone with Lolly can open that URL, change the words, swap an image, and render their own version - no design app, no design skill, and the parts the author locked stay locked. The person who imported the artboard becomes its author; everyone else just fills in the blanks.
 - **It mixes with tools.** Any box can hold another Lolly tool as a live asset - a badge that renders its own QR code, a card with a live chart, another render dropped in through the asset picker. Those stay live and re-render on load; they're never flattened pictures. So an imported poster can carry generated, always-current content the original file never could.
@@ -105,7 +105,7 @@ Drop a photo or graphic into any image picker or your **My images** library.
 | Format | Notes |
 |---|---|
 | **`pptx`** (PowerPoint) | Three ways in, all on-device. **Deck Builder**'s Load panel opens a deck as *editable slides* - text, shapes, images, tables and speaker notes become freeform objects, with colours snapped to your brand - ready to re-export as PPTX, PDF or video. The **Rebrand a Deck** utility re-themes a deck *without* re-authoring it: the theme palette, hardcoded colours and fonts swap to your brand while charts, SmartArt and animations pass through untouched, and you get a `.pptx` back. And dropping a `.pptx` on any upload area asks which slides to keep - each is stored as an SVG asset in your library. |
-| **`pdf` / `.ai`** | Besides the Layout Studio import above, dropping a PDF on an upload area asks which pages to keep - each page becomes a self-contained SVG asset (vector paint, text and images preserved). |
+| **`pdf` / `.ai`** | Besides the Design import above, dropping a PDF on an upload area asks which pages to keep - each page becomes a self-contained SVG asset (vector paint, text and images preserved). |
 
 ### Data
 

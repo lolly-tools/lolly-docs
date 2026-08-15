@@ -14,7 +14,7 @@ Each tool is a split view: **controls** on one side, a live **preview** (the can
 
 ![A tool's split view - the control stack on the left, and the live grouped bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
 
-> A few tools (like **Layout Studio**) instead open as a **free canvas** - a chromeless, direct-manipulation surface where you drag, resize, rotate and snap boxes of text, shapes and images, and double-click to edit text in place. It exports through the same render path as every other tool, so the canvas *is* the file. See [The free canvas](#the-free-canvas-design) below.
+> A few tools (like **Design**) instead open as a **free canvas** - a chromeless, direct-manipulation surface where you drag, resize, rotate and snap boxes of text, shapes and images, and double-click to edit text in place. It exports through the same render path as every other tool, so the canvas *is* the file. See [The free canvas](#the-free-canvas-design) below.
 
 Two ways to shape the grid itself into the one you want:
 
@@ -71,7 +71,7 @@ The preview always shows exactly what will export.
 
 A dimension change always snaps the view back to a clean fit.
 
-### The free canvas (Layout Studio)
+### The free canvas (Design)
 
 Free-canvas tools add a working surface *around* the artboard, like a designer's pasteboard:
 
@@ -80,7 +80,7 @@ Free-canvas tools add a working surface *around* the artboard, like a designer's
 - **Zoom out past Fit** (down to 20%) to see the whole pasteboard when you've staged things far outside the frame.
 - **Resizable artboard.** Changing the export dimensions resizes the frame in place; boxes keep their positions, so you can reframe a layout around existing content.
 
-![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 ### Drawing your own shapes (the pen)
 
@@ -167,7 +167,7 @@ A few limits worth knowing: a sequence is capped at one hour, GIF and animated P
 
 **Beyond presets: keyframes, depth and a camera.** A transition animates a clip as it arrives and leaves. To pose a box *within* a clip - drift it, fade it, blur it, lift it off the page and settle it back - add keyframes: select the clip, press **+Keyframe** (the diamond in the timeline's tool cluster, the diamond on the canvas object bar, or `K`), and the playhead's position decides which pose your next edit writes. The same machinery gives every timed composition a **camera** that pushes in, pans across and pulls focus, and turns one flat SVG into a stack of layers you can fly between. **[Animating](/info/animating.html)** is the full guide.
 
-Layout Studio has the same timeline, so you can time a layout without moving to another tool, and it exports motion too.
+The Design tool has the same timeline, so you can time a layout without moving to another tool, and it exports motion too.
 
 ## On a phone
 
@@ -302,7 +302,7 @@ The Catalogue's **Swatches** panel isn't just for reference - click a colour to 
 
 The **Fonts** panel lists your brand faces with a **download** beside each, to install locally or hand to a print shop. (The [Brand Studio](/info/brand-studio.html)'s Colours room offers the same palette download.)
 
-Assets are one half of the open, do-it-yourself path; the other is **making your own tools** - the free canvas (Layout Studio, described above) lets you build one visually, no code required.
+Assets are one half of the open, do-it-yourself path; the other is **making your own tools** - the free canvas (Design, described above) lets you build one visually, no code required.
 
 ## Sound & accessibility
 
@@ -336,7 +336,7 @@ The catalog cache isn't included - it re-downloads itself on the new device. The
 
 ## Importing a design (Figma, Penpot, Illustrator, InDesign)
 
-You can bring an existing design into Lolly and keep working on it: open **Layout Studio**, click **Import a design** in the canvas toolbar, and choose a Figma **.fig** or SVG, a Penpot **.penpot**, an Illustrator **.ai** / **.pdf**, or an InDesign **.idml**. Layers become editable boxes on the free canvas - text stays retypable, images land in **My images**, and type and colours conform to the brand globals - then the result saves, shares and renders like any other session. The parse happens entirely on your device. Full detail: **[Import a design](/info/design-import.html)**.
+You can bring an existing design into Lolly and keep working on it: open **Design**, click **Import a design** in the canvas toolbar, and choose a Figma **.fig** or SVG, a Penpot **.penpot**, an Illustrator **.ai** / **.pdf**, or an InDesign **.idml**. Layers become editable boxes on the free canvas - text stays retypable, images land in **My images**, and type and colours conform to the brand globals - then the result saves, shares and renders like any other session. The parse happens entirely on your device. Full detail: **[Import a design](/info/design-import.html)**.
 
 ## Exporting
 

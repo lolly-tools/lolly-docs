@@ -1,7 +1,7 @@
 {
   "eyebrow": "Apporte ce que tu as déjà créé",
   "heading": "Tes fichiers de design ne sont pas coincés",
-  "lead": "Un travail terminé dans **Figma, Penpot, Illustrator, InDesign ou n'importe quelle appli SVG** n'a pas à rester enfermé dans une seule appli. Ouvre **Layout Studio**, clique sur **Importer un design**, et le fichier s'ouvre comme une mise en page vivante - pas une image aplatie. Chaque calque devient une boîte modifiable, prête à être retravaillée, mélangée avec des outils, et rendue selon les mêmes règles.",
+  "lead": "Un travail terminé dans **Figma, Penpot, Illustrator, InDesign ou n'importe quelle appli SVG** n'a pas à rester enfermé dans une seule appli. Ouvre **Design**, clique sur **Importer un design**, et le fichier s'ouvre comme une mise en page vivante - pas une image aplatie. Chaque calque devient une boîte modifiable, prête à être retravaillée, mélangée avec des outils, et rendue selon les mêmes règles.",
   "sources": [
     { "mono": "Fig", "name": "Figma", "fmt": ".fig · SVG", "color": "#a259ff" },
     { "mono": "Pen", "name": "Penpot", "fmt": ".penpot", "color": "#12b886" },

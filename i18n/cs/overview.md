@@ -34,7 +34,7 @@ Výsledkem je **hojnost**: každá akce má správné značení, každé upozorn
 | Mobilní a desktopové aplikace | ✓ | ✗ | ✗ | částečně | **✓** |
 | Příkazová řádka a TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-Mezera na trhu je jasná: nic v současném prostředí nenabízí výstup založený na omezeních, funkční offline, nenáročný na dovednosti a interně přístupný. Lolly má dokonce vlastní otevřené plátno - **Layout Studio** - kde se barvy, typografie a assety řídí globálními hodnotami značky, takže i volné uspořádání zůstává založené na omezeních. Co to **není**, je neomezená sada nástrojů pro design: designéři nadále používají Illustrator a Figma pro zakázkovou vlajkovou práci. Permutace lze skládat pomocí tohoto nástroje.
+Mezera na trhu je jasná: nic v současném prostředí nenabízí výstup založený na omezeních, funkční offline, nenáročný na dovednosti a interně přístupný. Lolly má dokonce vlastní otevřené plátno - **Design** - kde se barvy, typografie a assety řídí globálními hodnotami značky, takže i volné uspořádání zůstává založené na omezeních. Co to **není**, je neomezená sada nástrojů pro design: designéři nadále používají Illustrator a Figma pro zakázkovou vlajkovou práci. Permutace lze skládat pomocí tohoto nástroje.
 
 **Použij to pro:** Rychlou tvorbu provozně nasazených kreativních assetů - dlaždice na akce, jmenovky, podpisy, upozornění na CVE, QR kódy, karty na sociální sítě, přepravní štítky, strukturované reporty.
 
@@ -48,7 +48,7 @@ Mezera na trhu je jasná: nic v současném prostředí nenabízí výstup zalo�
 
 Nejjasněji se dá vidět, co Lolly je, ne ze seznamu funkcí - ale když budeš sledovat jediný asset, jak putuje z ruky do ruky. Podívej se, jak jedna lokalizovaná kampaňová kartička prochází organizací:
 
-1. **Kreativec nastaví pravidla.** Designér vytvoří základní šablonu v Layout Studio a pevně do ní zadrátuje typografii a barevné proměnné značky. Nevyrábí jednu kartičku - odvádí tu základní práci *jednou*, aby ji už nikdy nemusel lokalizovat ručně.
+1. **Kreativec nastaví pravidla.** Designér vytvoří základní šablonu v Design a pevně do ní zadrátuje typografii a barevné proměnné značky. Nevyrábí jednu kartičku - odvádí tu základní práci *jednou*, aby ji už nikdy nemusel lokalizovat ručně.
 2. **Vývojář to naškáluje.** Tatáž šablona se přes CLI zapojí do noční pipeline, takže nový graf nebo nová jazyková varianta vznikne automaticky - žádný designér ten soubor znovu neotevírá.
 3. **Producent to jen použije.** Obchodník offline v letadle otevře tentýž nástroj a vygeneruje perfektně značkově konzistentní deck na schůzku s klientem. Žádné designové dovednosti, žádná síť, žádné čekání.
 
@@ -173,7 +173,6 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── daily-card/        # "Day Brief" - počasí/čas/mapa (načtené inline skriptem v šabloně)
 │   ├── code-canvas/
 │   ├── countdown-timer/
 │   ├── color-palette/
@@ -185,7 +184,6 @@ lolly/
 │   ├── strip-data/        # čištění metadat přímo na zařízení - JPEG/PNG/SVG/PDF (soubor dovnitř → čistý soubor ven)
 │   ├── compress-pdf/      # komprese PDF přímo na zařízení - přeenkóduje obrázky (soubor dovnitř → menší soubor ven)
 │   ├── brand-lockup/      # "Brand Lockup" - logo lockupy SUSE; HarfBuzz text-to-path (wasm)
-│   ├── bag-video/
 │   ├── chart-creator/     # SVG grafy ze strukturovaných dat
 │   ├── filter-duotone/    # dvoubarevná úprava fotografie
 │   ├── filter-halftone/   # fotografie → vektorová rastrová mřížka bodů (halftone)
@@ -196,7 +194,7 @@ lolly/
 │   ├── event-name-badge/  # konferenční jmenovky - skládá qr-code jako SVG
 │   ├── wayfinding-signage/ # značení na akce; bloky směrů si samy přizpůsobí text popisku
 │   ├── text-helper/       # textová dílna přímo na zařízení (formátování/dekódování/hash/anonymizace)
-│   ├── design/     # "Layout Studio" - volné WYSIWYG editorové plátno (render.layout: editor)
+│   ├── design/     # "Design" - volné WYSIWYG editorové plátno (render.layout: editor)
 │   ├── multi-page-pdf/    # vícestránkový PDF dokument - obálka, plynoucí obsahové bloky, zadní strana
 │   ├── diagram-builder/   # organizační / vrstvené / procesní / cyklické / pyramidové diagramy
 │   ├── logo-wall/         # mnoho log → automaticky uspořádaná mřížka
@@ -273,15 +271,15 @@ Nástroje mají ve svém manifestu `category` pro seskupování v galerii.
 
 | Kategorie | Vydané nástroje | Plánované |
 |---|---|---|
-| `everyone` | QR Code Generator, Quote Card, Email Signature, Day Brief, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
-| `designer` | Brand Lockup, Bag Video, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
+| `everyone` | QR Code Generator, Quote Card, Email Signature, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
+| `designer` | Brand Lockup, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Layout Studio | Převodníky jednotek/formátů, další utility pro soukromí přímo na zařízení |
+| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Design | Převodníky jednotek/formátů, další utility pro soukromí přímo na zařízení |
 
-Nástroje se dál třídí podle stavu: `official` (schválené značkou, bez vodoznaku), `community` (externí příspěvek), `experimental` (exporty s vodoznakem). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap a Diagram Builder mají momentálně stav `experimental`; Web Icon Maker a Layout Studio jsou nástroje se stavem `community`.
+Nástroje se dál třídí podle stavu: `official` (schválené značkou, bez vodoznaku), `community` (externí příspěvek), `experimental` (exporty s vodoznakem). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap a Diagram Builder mají momentálně stav `experimental`; Web Icon Maker a Design jsou nástroje se stavem `community`.
 
-**Layout Studio** je první nástroj postavený na režimu volného plátna `render.layout: "editor"` - plocha bez rozhraní s přímou manipulací, kde přetahuješ, měníš velikost, otáčíš a přichytáváš boxy s textem, tvary a obrázky, a pak exportuješ stejnou vykreslovací cestou jako u každého jiného nástroje.
+**Design** je první nástroj postavený na režimu volného plátna `render.layout: "editor"` - plocha bez rozhraní s přímou manipulací, kde přetahuješ, měníš velikost, otáčíš a přichytáváš boxy s textem, tvary a obrázky, a pak exportuješ stejnou vykreslovací cestou jako u každého jiného nástroje.
 
 **Strip Hidden Data** je první **utilita přímo na zařízení** (`privacy: "on-device"`): nástroj pro transformaci obsahu, který vezme soubor, jenž mu *ty* dodáš, celý ho zpracuje v prohlížeči a vrátí čistou kopii - nikdy se nenahrává, nikdy se neopatří vodoznakem, nikdy se do něj nerazí provenience. **Text Helper** je druhá - dílna přímo na zařízení pro každodenní úkoly typu vlož-do-webu (formátování JSON, dekódování JWT, Base64, kódování/dekódování URL, hashování SHA). **Compress PDF** je třetí - zmenší PDF přeenkódováním jeho obrázků, opět celé přímo na zařízení. Všechny tři nesou odznak s textem „Běží na tvém zařízení - nic se nenahrává". Tohle je začátek kategorie utilit pro soukromí, která nahrazuje předávání důvěrných souborů jednoúčelovým webovým nástrojům.
 
@@ -443,7 +441,7 @@ Rozdělení je vynucené - z `engine/` do `tools/` nebo `assets/` nevedou žádn
 
 | Milník | Termín | Co |
 |---|---|---|
-| **Počáteční nástroje** | ✅ Hotovo | QR Code, Quote Card, Email Signature, Day Brief, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Bag Video, Chart Creator, Filter: Duotone, Meeting Planner - webový shell živě |
+| **Počáteční nástroje** | ✅ Hotovo | QR Code, Quote Card, Email Signature, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Chart Creator, Filter: Duotone, Meeting Planner - webový shell živě |
 | **Vylepšit současné nástroje** | Polovina 2026 ✅ Hotovo  | Stažitelná offline aplikace (Tauri); další nástroje pro zaměstnance a akce; bohatší exportní pipeline (stabilita text-to-path, metadata, další formáty - viz `plans.md`) |
 | **Uvolnit engine jako open source** | Konec 2026 ✅ Hotovo  | Engine, shelly, schemas, docs jdou na veřejnost - brandované tools/assets ne |
 | **Přenos mezi zařízeními** | ✅ Hotovo | Přenositelný balíček `lolly-backup` nese profil, uložené relace, nahrané obrázky a předvolby mezi libovolnými dvěma instalacemi - offline i online, bez účtu. Zpětně kompatibilní obálka s kontrolou integrity (specifikace: `docs/data-transfer.md`) |

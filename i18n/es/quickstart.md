@@ -48,7 +48,7 @@ No partes de una página en blanco. Lolly abre el trabajo de diseño y los forma
 
 ### Archivos de diseño de código abierto
 
-El trabajo terminado en **Figma, Penpot, Illustrator, InDesign, o cualquier app de SVG** no tiene por qué quedarse encerrado en la app donde lo dibujaste. Abre **Layout Studio**, haz clic en **Importar un diseño**, y el archivo se abre como un *diseño vivo* - no una imagen aplanada. Cada capa se convierte en una caja editable: el texto sigue siendo editable, las formas siguen siendo formas, las imágenes llegan a tu biblioteca, y el arte vectorial complejo se conserva fielmente. Llega ya adaptado a tus tipografías y reglas de color de marca.
+El trabajo terminado en **Figma, Penpot, Illustrator, InDesign, o cualquier app de SVG** no tiene por qué quedarse encerrado en la app donde lo dibujaste. Abre **Design**, haz clic en **Importar un diseño**, y el archivo se abre como un *diseño vivo* - no una imagen aplanada. Cada capa se convierte en una caja editable: el texto sigue siendo editable, las formas siguen siendo formas, las imágenes llegan a tu biblioteca, y el arte vectorial complejo se conserva fielmente. Llega ya adaptado a tus tipografías y reglas de color de marca.
 
 | Si tienes | Impórtalo como |
 |---|---|
@@ -62,7 +62,7 @@ Toda la importación ocurre **en tu dispositivo** - el archivo se analiza en tu 
 
 ### De algo puntual a una plantilla
 
-Aquí está la recompensa: un diseño importado es una sesión normal de Layout Studio, así que en cuanto lo **guardas**, vive en una URL. Cualquiera con Lolly puede abrir esa URL, cambiar el texto, sustituir una imagen y renderizar su propia versión - sin ninguna app de diseño, y las partes bloqueadas siguen bloqueadas. Un diseño puntual se convierte en una herramienta reutilizable. Esa es toda la idea, y se consigue sin escribir ni una línea de configuración.
+Aquí está la recompensa: un diseño importado es una sesión normal de Design, así que en cuanto lo **guardas**, vive en una URL. Cualquiera con Lolly puede abrir esa URL, cambiar el texto, sustituir una imagen y renderizar su propia versión - sin ninguna app de diseño, y las partes bloqueadas siguen bloqueadas. Un diseño puntual se convierte en una herramienta reutilizable. Esa es toda la idea, y se consigue sin escribir ni una línea de configuración.
 
 ### Datos abiertos y herramientas abiertas
 

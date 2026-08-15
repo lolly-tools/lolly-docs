@@ -48,7 +48,7 @@ pack de templates prêts à l'emploi. Pour un *déploiement gouverné*, quelqu'u
 catalogue d'assets partagé (logos, palettes, polices en tant qu'IDs permanents) et écrire le
 manifest + template pour chaque type de sortie. Les particuliers n'ont pas besoin d'attendre
 cela, cela dit - dans l'app ouverte, n'importe qui peut ingérer ses propres fichiers dans le
-catalogue et créer des outils dans Layout Studio dès le premier jour.
+catalogue et créer des outils dans Design dès le premier jour.
 
 **La gouvernance via Git est optionnelle - et peu familière aux non-ingénieurs.** Si tu gères
 un catalogue *partagé et contrôlé*, « la revue de PR *est* la modération » : c'est élégant pour
@@ -61,7 +61,7 @@ peuvent simplement s'en passer.
 
 **C'est volontairement restreint - présente-le comme tel.** Lolly n'est pas fait pour du contenu
 sur-mesure ou du contenu hero. C'*est* ton DAM personnel - hydraté et boosté par ton design
-system, tes outils et ton catalogue - et il *a* bel et bien un canevas ouvert (Layout Studio),
+system, tes outils et ton catalogue - et il *a* bel et bien un canevas ouvert (Design),
 mais même là, les couleurs, la typographie et les assets respectent les paramètres globaux du
 design actif, donc l'agencement libre reste à l'intérieur du système. Comparé à Figma ou Canva,
 il paraîtra limité. Jugé pour ce qu'il est - une génération d'assets opérationnalisée, récurrente,
@@ -102,9 +102,9 @@ On gagne la guerre de la gouvernance grâce à une excellente commodité et un e
 
 ## Lolly peut-il éditer et générer le rendu de mes fichiers Figma, Penpot, Illustrator ou InDesign ?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
-Oui. Ouvre **Layout Studio** et clique sur **Importer un design** : il accepte un fichier Figma natif **.fig** (Enregistrer une copie locale), un export Penpot **.penpot**, un fichier Illustrator **.ai** ou **.pdf**, un fichier InDesign **.idml** (Fichier → Exporter → InDesign Markup), ou **n'importe quel SVG** (la porte grande ouverte - presque toutes les applications de design l'exportent). Tout est analysé entièrement sur ton appareil, sans compte ni plugin requis.
+Oui. Ouvre **Design** et clique sur **Importer un design** : il accepte un fichier Figma natif **.fig** (Enregistrer une copie locale), un export Penpot **.penpot**, un fichier Illustrator **.ai** ou **.pdf**, un fichier InDesign **.idml** (Fichier → Exporter → InDesign Markup), ou **n'importe quel SVG** (la porte grande ouverte - presque toutes les applications de design l'exportent). Tout est analysé entièrement sur ton appareil, sans compte ni plugin requis.
 
 Les calques arrivent sous forme de boîtes modifiables sur le canevas ouvert : le texte reste re-modifiable, les formes restent des formes, les images rejoignent ta bibliothèque locale, et la typographie et les couleurs se conforment aux paramètres globaux de la marque. Enregistre-le et la mise en page devient un template réutilisable, adressable par URL, que n'importe qui avec Lolly peut remplir à nouveau - et tu peux y mélanger des tools en direct (un QR code, un graphique) qui se re-rendent au chargement. À partir de là, ça se rend comme tout le reste dans Lolly - SVG, PDF, PNG et le reste, reproductible depuis son URL. Voir [Importer un design](/info/design-import.html).
 

@@ -34,7 +34,7 @@ Het resultaat is **overvloed**: elk event heeft correcte bewegwijzering, elke CV
 | Mobiele en desktop-apps | ✓ | ✗ | ✗ | gedeeltelijk | **✓** |
 | Command line & TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-De vorm van het gat is duidelijk: niets in het bestaande landschap biedt ons constraints-first, offline-geschikte, laagdrempelige, intern toegankelijke output. Lolly heeft zelfs een eigen open canvas - **Layout Studio** - waar kleuren, typografie en assets conformeren aan de brand-globals, zodat ook vrije opmaak constraints-first blijft. Wat het **niet** is, is een onbeperkte ontwerpsuite: ontwerpers blijven Illustrator en Figma gebruiken voor maatwerk vlaggenschipwerk. Permutaties kunnen met deze tool worden samengesteld.
+De vorm van het gat is duidelijk: niets in het bestaande landschap biedt ons constraints-first, offline-geschikte, laagdrempelige, intern toegankelijke output. Lolly heeft zelfs een eigen open canvas - **Design** - waar kleuren, typografie en assets conformeren aan de brand-globals, zodat ook vrije opmaak constraints-first blijft. Wat het **niet** is, is een onbeperkte ontwerpsuite: ontwerpers blijven Illustrator en Figma gebruiken voor maatwerk vlaggenschipwerk. Permutaties kunnen met deze tool worden samengesteld.
 
 **Gebruik het voor:** Snelle generatie van geoperationaliseerd creatief werk - eventtegels, naambadges, handtekeningen, CVE-meldingen, QR-codes, social cards, verzendlabels, gestructureerde rapporten.
 
@@ -48,7 +48,7 @@ De vorm van het gat is duidelijk: niets in het bestaande landschap biedt ons con
 
 De helderste manier om te zien wat Lolly is, is geen functielijst - het is één asset volgen terwijl het van hand tot hand gaat. Kijk hoe één gelokaliseerde campagnekaart door de organisatie beweegt:
 
-1. **De creative stelt de regels vast.** Een ontwerper maakt de basistemplate in Layout Studio en codeert de typografie- en kleurvariabelen van het merk hard. Hij maakt niet één kaart - hij doet het fundamentele werk *één keer*, zodat hij het nooit meer met de hand hoeft te lokaliseren.
+1. **De creative stelt de regels vast.** Een ontwerper maakt de basistemplate in Design en codeert de typografie- en kleurvariabelen van het merk hard. Hij maakt niet één kaart - hij doet het fundamentele werk *één keer*, zodat hij het nooit meer met de hand hoeft te lokaliseren.
 2. **De developer schaalt het op.** Precies diezelfde template wordt via de CLI in een nachtelijke pipeline gehangen, zodat een frisse grafiek of een nieuwe taalvariant automatisch wordt gegenereerd - geen ontwerper opent het bestand opnieuw.
 3. **De producer gebruikt het gewoon.** Een salesmedewerker opent offline in het vliegtuig dezelfde tool en genereert een perfect merkvaste deck voor een klantgesprek. Geen ontwerpvaardigheid, geen netwerk, geen wachttijd.
 
@@ -173,7 +173,6 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── daily-card/        # "Day Brief" - weather/time/map (fetched by an inline template script)
 │   ├── code-canvas/
 │   ├── countdown-timer/
 │   ├── color-palette/
@@ -185,7 +184,6 @@ lolly/
 │   ├── strip-data/        # on-device metadata strip - JPEG/PNG/SVG/PDF (file in → clean file out)
 │   ├── compress-pdf/      # on-device PDF compressor - recompresses images (file in → smaller file out)
 │   ├── brand-lockup/      # "Brand Lockup" - SUSE logo lockups; HarfBuzz text-to-path (wasm)
-│   ├── bag-video/
 │   ├── chart-creator/     # SVG charts from structured data
 │   ├── filter-duotone/    # two-color photo treatment
 │   ├── filter-halftone/   # photo → vector halftone dot grid
@@ -196,7 +194,7 @@ lolly/
 │   ├── event-name-badge/  # conference badges - composes qr-code as an SVG
 │   ├── wayfinding-signage/ # event signage; directions blocks auto-fit label text
 │   ├── text-helper/       # on-device text workbench (format/decode/hash/de-identify)
-│   ├── design/     # "Layout Studio" - freeform WYSIWYG editor canvas (render.layout: editor)
+│   ├── design/     # "Design" - freeform WYSIWYG editor canvas (render.layout: editor)
 │   ├── multi-page-pdf/    # multi-page PDF document - cover, flowing content blocks, back page
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
 │   ├── logo-wall/         # many logos → auto-packed grid
@@ -274,15 +272,15 @@ Rijen staan in de volgorde van de gallery-secties. De sectie `utility` rendert a
 
 | Categorie | Uitgeleverde tools | Gepland |
 |---|---|---|
-| `everyone` | QR Code Generator, Quote Card, Email Signature, Day Brief, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
-| `designer` | Brand Lockup, Bag Video, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
+| `everyone` | QR Code Generator, Quote Card, Email Signature, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
+| `designer` | Brand Lockup, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Layout Studio | Eenheden-/formaatconverters, meer on-device privacytools |
+| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Design | Eenheden-/formaatconverters, meer on-device privacytools |
 
-Tools worden ook ingedeeld naar status: `official` (merkgoedgekeurd, geen watermerk), `community` (externe bijdrage), `experimental` (exports met watermerk). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap en Diagram Builder dragen momenteel de status `experimental`; Web Icon Maker en Layout Studio worden uitgeleverd als `community`-tools.
+Tools worden ook ingedeeld naar status: `official` (merkgoedgekeurd, geen watermerk), `community` (externe bijdrage), `experimental` (exports met watermerk). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap en Diagram Builder dragen momenteel de status `experimental`; Web Icon Maker en Design worden uitgeleverd als `community`-tools.
 
-**Layout Studio** is de eerste tool gebouwd op de vrije-canvasmodus `render.layout: "editor"` - een chromeloos oppervlak voor directe manipulatie waarop je vakken met tekst, vormen en afbeeldingen sleept, van grootte verandert, roteert en laat vastklikken, en dat vervolgens exporteert via hetzelfde renderpad als elke andere tool.
+**Design** is de eerste tool gebouwd op de vrije-canvasmodus `render.layout: "editor"` - een chromeloos oppervlak voor directe manipulatie waarop je vakken met tekst, vormen en afbeeldingen sleept, van grootte verandert, roteert en laat vastklikken, en dat vervolgens exporteert via hetzelfde renderpad als elke andere tool.
 
 **Strip Hidden Data** is de eerste **on-device utility** (`privacy: "on-device"`): een content-transformatietool die een bestand neemt dat *jij* aanlevert, dit volledig in de browser verwerkt, en een schone kopie teruggeeft - nooit geüpload, nooit van een watermerk voorzien, nooit van een herkomststempel voorzien. **Text Helper** is de tweede - een on-device werkbank voor alledaagse plak-in-een-website-klusjes (JSON-formattering, JWT-decoderen, Base64, URL-encoderen/decoderen, SHA-hashing). **Compress PDF** is de derde - hij verkleint een PDF door de afbeeldingen erin opnieuw te comprimeren, ook weer volledig on-device. Alle drie dragen de badgetekst "Runs on your device - nothing is uploaded". Dit is het begin van een privacytool-categorie die het overhandigen van vertrouwelijke bestanden aan singlepurpose-websites vervangt.
 
@@ -444,7 +442,7 @@ De splitsing wordt afgedwongen - er zijn geen cross-imports vanuit `engine/` naa
 
 | Mijlpaal | Streefdatum | Wat |
 |---|---|---|
-| **Initiële tools** | ✅ Klaar | QR Code, Quote Card, Email Signature, Day Brief, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Bag Video, Chart Creator, Filter: Duotone, Meeting Planner - webshell live |
+| **Initiële tools** | ✅ Klaar | QR Code, Quote Card, Email Signature, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Chart Creator, Filter: Duotone, Meeting Planner - webshell live |
 | **Bestaande tooling uitbreiden** | Medio 2026 ✅ Klaar  | Downloadbare offline app (Tauri); extra tools voor medewerkers en events; rijkere exportpipeline (stabiliteit van tekst-naar-pad, metadata, extra formaten - zie `plans.md`) |
 | **De engine open source maken** | Eind 2026 ✅ Klaar  | Engine, shells, schemas, docs worden publiek - niet de merkgebonden tools/assets |
 | **Overdracht tussen apparaten** | ✅ Klaar | Draagbare `lolly-backup`-bundel draagt profiel, opgeslagen sessies, geüploade afbeeldingen en voorkeuren over tussen twee installaties - offline of online, zonder account. Forward-compatible, integriteitsgecontroleerde envelop (spec: `docs/data-transfer.md`) |

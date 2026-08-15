@@ -47,7 +47,7 @@ Lolly 可以嵌入到任何你已经在生成文件的场景中——CLI 与 App
 对于*受管理的部署*而言,需要有人来定义共享资源目录(logo、调色板、字体,均以
 永久 ID 的形式),并为每种输出类型编写清单(manifest)和模板(template)。不过,
 个人用户不必等待这一步——在开放版 App 中,任何人从第一天起就可以把自己的文件
-导入目录,并在 Layout Studio 中构建工具。
+导入目录,并在 Design 中构建工具。
 
 **依托 git 的治理方式是可选的——而且对非工程师来说很陌生。** 如果你运行的是
 一个*共享的、受控的*目录,"PR 审查*就是*审核把关"这一点,对工程师来说很优雅,
@@ -58,7 +58,7 @@ Lolly 可以嵌入到任何你已经在生成文件的场景中——CLI 与 App
 
 **它的定位刻意收窄——请这样理解它。** Lolly 不适用于定制化或"英雄级"内容。
 它*确实*是你的个人 DAM——由你的设计系统、工具与目录驱动并增强——它也*确实*
-拥有一个开放画布(Layout Studio),但即便在那里,颜色、字体和资源仍然遵循当前
+拥有一个开放画布(Design),但即便在那里,颜色、字体和资源仍然遵循当前
 生效的设计全局变量,因此自由排布始终被限定在系统之内。若拿去和 Figma 或 Canva
 相比,它会显得受限。但若按其本来的定位来评判——可运营化、可重复、大规模的
 资源生成——则无出其右。错误的定位认知是最常见的挫折来源。
@@ -96,9 +96,9 @@ Lolly 会把一切都提升上去。
 
 ## Lolly 能编辑并渲染我的 Figma、Penpot、Illustrator 或 InDesign 文件吗?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
-可以。打开 **Layout Studio** 并点击 **导入设计**:它支持原生 Figma **.fig** 文件(通过 Save local copy 保存的本地副本)、Penpot 的 **.penpot** 导出文件、Illustrator 的 **.ai** 或 **.pdf**、InDesign 的 **.idml**(File → Export → InDesign Markup),或**任意 SVG**(这是最宽的入口——几乎所有设计软件都能导出 SVG)。一切解析都完全在你的设备本地完成,无需账号,也无需插件。
+可以。打开 **Design** 并点击 **导入设计**:它支持原生 Figma **.fig** 文件(通过 Save local copy 保存的本地副本)、Penpot 的 **.penpot** 导出文件、Illustrator 的 **.ai** 或 **.pdf**、InDesign 的 **.idml**(File → Export → InDesign Markup),或**任意 SVG**(这是最宽的入口——几乎所有设计软件都能导出 SVG)。一切解析都完全在你的设备本地完成,无需账号,也无需插件。
 
 图层会以可编辑方框的形式出现在开放画布上:文字保持可重新输入、形状保持为形状、图片会加入你的本地资源库,字体和颜色则遵循品牌全局设置。保存后,该版式就会成为一个可复用、可通过 URL 访问的模板,任何使用 Lolly 的人都能重新填充内容——你还可以混入实时工具(比如二维码、图表),它们会在加载时重新渲染。此后,它就会像 Lolly 中的其他任何内容一样渲染——SVG、PDF、PNG 等等,并且可以通过其 URL 复现。参见[导入设计](/info/design-import.html)。
 

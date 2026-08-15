@@ -34,7 +34,7 @@
 | 모바일 및 데스크톱 앱 | ✓ | ✗ | ✗ | 부분 지원 | **✓** |
 | 커맨드라인과 TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-그 공백은 명확해요. 기존 시장 지형 어디에도 제약 우선·오프라인 가능·낮은 숙련도·사내 접근 가능이라는 조건을 모두 충족하는 결과물은 없어요. Lolly에는 열린 캔버스인 **Layout Studio**도 포함되어 있는데, 여기서도 색상·타이포그래피·에셋이 브랜드 전역 설정을 따르기 때문에 자유로운 배치도 제약 우선을 유지해요. 이 도구가 **아닌** 것은 제약 없는 디자인 스위트예요——맞춤형 대표작에는 디자이너가 여전히 Illustrator와 Figma를 사용해요. 순열 조합은 이 도구로 만들 수 있어요.
+그 공백은 명확해요. 기존 시장 지형 어디에도 제약 우선·오프라인 가능·낮은 숙련도·사내 접근 가능이라는 조건을 모두 충족하는 결과물은 없어요. Lolly에는 열린 캔버스인 **Design**도 포함되어 있는데, 여기서도 색상·타이포그래피·에셋이 브랜드 전역 설정을 따르기 때문에 자유로운 배치도 제약 우선을 유지해요. 이 도구가 **아닌** 것은 제약 없는 디자인 스위트예요——맞춤형 대표작에는 디자이너가 여전히 Illustrator와 Figma를 사용해요. 순열 조합은 이 도구로 만들 수 있어요.
 
 **이런 용도로 사용하세요:** 운영화된 크리에이티브 에셋의 빠른 생성——이벤트 타일, 네임 배지, 서명, CVE 경고, QR 코드, 소셜 카드, 탁송 라벨, 구조화된 보고서 등이에요.
 
@@ -48,7 +48,7 @@
 
 Lolly가 무엇인지 가장 분명하게 보여주는 건 기능 목록이 아니라, 에셋 하나가 사람의 손에서 손으로 넘어가는 과정을 따라가 보는 거예요. 현지화된 캠페인 카드 한 장이 조직 안을 어떻게 지나가는지 보세요.
 
-1. **크리에이티브가 규칙을 정해요.** 디자이너가 Layout Studio에서 기본 템플릿을 만들면서 브랜드의 타이포그래피와 색상 변수를 하드코딩해요. 카드 한 장을 만드는 게 아니에요——이 기초 작업을 *한 번만* 해두면, 다시는 손으로 현지화할 필요가 없어요.
+1. **크리에이티브가 규칙을 정해요.** 디자이너가 Design에서 기본 템플릿을 만들면서 브랜드의 타이포그래피와 색상 변수를 하드코딩해요. 카드 한 장을 만드는 게 아니에요——이 기초 작업을 *한 번만* 해두면, 다시는 손으로 현지화할 필요가 없어요.
 2. **개발자가 그것을 확장해요.** 같은 템플릿을 CLI로 야간 파이프라인에 연결하면, 새 차트나 새 언어 버전이 자동으로 생성돼요——디자이너가 파일을 다시 열 일은 없어요.
 3. **제작 담당자는 그냥 쓰기만 해요.** 영업 담당자가 비행기 안에서 오프라인으로 같은 도구를 열고, 고객 미팅용으로 브랜드에 완벽히 맞는 덱을 만들어요. 디자인 역량도, 네트워크도, 기다림도 필요 없어요.
 
@@ -173,7 +173,6 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── daily-card/        # "Day Brief" — 날씨/시간/지도(인라인 템플릿 스크립트가 가져옴)
 │   ├── code-canvas/
 │   ├── countdown-timer/
 │   ├── color-palette/
@@ -185,7 +184,6 @@ lolly/
 │   ├── strip-data/        # 온디바이스 메타데이터 제거 — JPEG/PNG/SVG/PDF(파일 입력 → 클린 파일 출력)
 │   ├── compress-pdf/      # 온디바이스 PDF 압축기 — 이미지를 재압축(파일 입력 → 더 작은 파일 출력)
 │   ├── brand-lockup/      # "Brand Lockup" — SUSE 로고 락업; HarfBuzz 텍스트-투-패스(wasm)
-│   ├── bag-video/
 │   ├── chart-creator/     # 구조화된 데이터로 만드는 SVG 차트
 │   ├── filter-duotone/    # 2색 사진 보정
 │   ├── filter-halftone/   # 사진 → 벡터 하프톤 도트 그리드
@@ -196,7 +194,7 @@ lolly/
 │   ├── event-name-badge/  # 컨퍼런스 배지 — qr-code를 SVG로 조합
 │   ├── wayfinding-signage/ # 이벤트 사이니지; 방향 블록이 라벨 텍스트를 자동으로 맞춤
 │   ├── text-helper/       # 온디바이스 텍스트 작업대(포맷/디코드/해시/비식별화)
-│   ├── design/     # "Layout Studio" — 자유형 WYSIWYG 편집기 캔버스(render.layout: editor)
+│   ├── design/     # "Design" — 자유형 WYSIWYG 편집기 캔버스(render.layout: editor)
 │   ├── multi-page-pdf/    # 여러 페이지 PDF 문서 — 표지, 흘러가는 콘텐츠 블록, 뒤표지
 │   ├── diagram-builder/   # 조직도 / 레이어케이크 / 프로세스 / 사이클 / 피라미드 다이어그램
 │   ├── logo-wall/         # 여러 로고 → 자동 배치 그리드
@@ -274,15 +272,15 @@ CLI에 대응하는 대화형 버전이에요. 도구를 탐색하고, 입력을
 
 | 카테고리 | 제공 중인 도구 | 계획 중 |
 |---|---|---|
-| `everyone` | QR Code Generator, Quote Card, Email Signature, Day Brief, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
-| `designer` | Brand Lockup, Bag Video, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
+| `everyone` | QR Code Generator, Quote Card, Email Signature, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
+| `designer` | Brand Lockup, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | — | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Layout Studio | 단위/포맷 변환기, 그 밖의 온디바이스 프라이버시 유틸리티 |
+| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Design | 단위/포맷 변환기, 그 밖의 온디바이스 프라이버시 유틸리티 |
 
-도구는 `status`로도 분류돼요: `official`(브랜드 승인, 워터마크 없음), `community`(외부 기여), `experimental`(내보내기에 워터마크 적용). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap, Diagram Builder는 현재 `experimental` 상태이고, Web Icon Maker와 Layout Studio는 `community` 도구로 제공돼요.
+도구는 `status`로도 분류돼요: `official`(브랜드 승인, 워터마크 없음), `community`(외부 기여), `experimental`(내보내기에 워터마크 적용). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap, Diagram Builder는 현재 `experimental` 상태이고, Web Icon Maker와 Design는 `community` 도구로 제공돼요.
 
-**Layout Studio**는 `render.layout: "editor"` 프리 캔버스 모드로 만들어진 첫 번째 도구예요——텍스트, 도형, 이미지 상자를 드래그, 크기 조절, 회전, 스냅할 수 있는 크롬 없는 직접 조작 영역이며, 다른 모든 도구와 동일한 렌더링 경로로 내보내요.
+**Design**는 `render.layout: "editor"` 프리 캔버스 모드로 만들어진 첫 번째 도구예요——텍스트, 도형, 이미지 상자를 드래그, 크기 조절, 회전, 스냅할 수 있는 크롬 없는 직접 조작 영역이며, 다른 모든 도구와 동일한 렌더링 경로로 내보내요.
 
 **Strip Hidden Data**는 첫 번째 **온디바이스 유틸리티**(`privacy: "on-device"`)예요. *사용자 본인*이 제공한 파일을 받아 브라우저 안에서만 완전히 처리한 뒤 깨끗한 사본을 돌려주는 콘텐츠 변환 도구로——업로드도, 워터마크도, 출처 기록도 전혀 없어요. **Text Helper**는 두 번째로, 일상적으로 "웹사이트에 붙여넣는" 작업(JSON 포맷, JWT 디코딩, Base64, URL 인코딩/디코딩, SHA 해싱)을 위한 온디바이스 작업대예요. **Compress PDF**는 세 번째로, 이미지를 재압축해 PDF 용량을 줄이며 이 역시 완전히 온디바이스에서 이뤄져요. 이 세 도구 모두 "내 기기에서 실행——아무것도 업로드되지 않음"이라는 배지 문구를 달고 있어요. 이는 기밀 파일을 단일 목적 웹사이트에 넘기는 방식을 대체하는 프라이버시 유틸리티 카테고리의 시작이에요.
 
@@ -444,7 +442,7 @@ Tauri에서도 동일한 라이프사이클이에요. CLI에서도 동일한 라
 
 | 마일스톤 | 목표 시기 | 내용 |
 |---|---|---|
-| **Initial tools** | ✅ 완료 | QR Code, Quote Card, Email Signature, Day Brief, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Bag Video, Chart Creator, Filter: Duotone, Meeting Planner — web 셸 라이브 |
+| **Initial tools** | ✅ 완료 | QR Code, Quote Card, Email Signature, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Chart Creator, Filter: Duotone, Meeting Planner — web 셸 라이브 |
 | **Enhance current tooling** | 2026년 중반 ✅ 완료  | 다운로드 가능한 오프라인 앱(Tauri); 추가 직원/이벤트 도구; 더 풍부해진 내보내기 파이프라인(텍스트-투-패스 안정성, 메타데이터, 추가 포맷 — `plans.md` 참고) |
 | **Open source the engine** | 2026년 후반 ✅ 완료  | 엔진, 셸, 스키마, 문서가 공개됨 — 브랜드가 적용된 도구/에셋은 제외 |
 | **Device-to-device transfer** | ✅ 완료 | 이식 가능한 `lolly-backup` 번들이 임의의 두 설치본 사이에 프로필, 저장된 세션, 업로드된 이미지, 설정을 옮겨요 — 오프라인이든 온라인이든, 계정 없이. 상위 호환성을 가지며 무결성이 검증되는 봉투 형식이에요(사양: `docs/data-transfer.md`) |

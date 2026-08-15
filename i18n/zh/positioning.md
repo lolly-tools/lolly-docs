@@ -6,7 +6,7 @@
 
 ## 竞争格局
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
+![Design's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
 
 | 能力 | Canva（开放画布） | 品牌门户（DAM 模板化） | Illustrator（桌面专业软件） | Figma / Penpot（在线专业软件） | **Lolly（约束优先）** |
 |---|---|---|---|---|---|
@@ -22,7 +22,7 @@
 | 移动端与桌面端应用 | ✓ | ✗ | ✗ | 部分支持 | **✓** |
 | 命令行与 TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-这一空白的轮廓很清晰：现有的产品格局中，没有一个能同时提供约束优先、可离线使用、低技能门槛、可内部访问的生成式输出。Lolly 现在也拥有了自己的开放画布——**Layout Studio**，一个直接操作的自由画布——但与 Canva 那一列有一个决定性的区别：放置在画布上的颜色、字体和素材都遵循品牌全局设定，因此即便是自由排布也依然保持约束优先。Lolly 仍然**不是**一个无约束的设计套件；设计师仍会使用 Illustrator 和 Figma 完成定制化工作——而当这些工作需要变成一项受治理、可复现的资产时，Layout Studio 的[导入设计](/info/design-import.html)功能可以将完成的 Figma/Illustrator/Penpot 文件导入画布，成为可编辑、遵循品牌规范的元素框。
+这一空白的轮廓很清晰：现有的产品格局中，没有一个能同时提供约束优先、可离线使用、低技能门槛、可内部访问的生成式输出。Lolly 现在也拥有了自己的开放画布——**Design**，一个直接操作的自由画布——但与 Canva 那一列有一个决定性的区别：放置在画布上的颜色、字体和素材都遵循品牌全局设定，因此即便是自由排布也依然保持约束优先。Lolly 仍然**不是**一个无约束的设计套件；设计师仍会使用 Illustrator 和 Figma 完成定制化工作——而当这些工作需要变成一项受治理、可复现的资产时，Design 的[导入设计](/info/design-import.html)功能可以将完成的 Figma/Illustrator/Penpot 文件导入画布，成为可编辑、遵循品牌规范的元素框。
 
 ## 适用场景
 
@@ -31,8 +31,8 @@
 Deck Studio 很能说明这里的上限有多高：一整套幻灯片以数据的形式声明，在画布上实时排布，最终导出为原生可编辑的 PowerPoint。
 
 - 快速生成可运营化的创意素材（活动图块、徽章、签名、提醒）
-- 在开放画布（Layout Studio）上自由排布——前提是颜色、字体、图标、图片等元素必须始终遵循品牌全局设定
-- 将完成的 Figma、Illustrator、InDesign 或 Penpot 设计导入（通过 Layout Studio 的"导入设计"功能），使其可以被编辑、治理，并以确定性方式重新渲染为 Lolly 支持的各种格式
+- 在开放画布（Design）上自由排布——前提是颜色、字体、图标、图片等元素必须始终遵循品牌全局设定
+- 将完成的 Figma、Illustrator、InDesign 或 Penpot 设计导入（通过 Design 的"导入设计"功能），使其可以被编辑、治理，并以确定性方式重新渲染为 Lolly 支持的各种格式
 - 一对多的"填三个字段，得到成品"流程——包括在 `/pro` 批量网格中从电子表格/CSV 批量运行（粘贴或导入行数据，每行生成一个成品，打包为 zip 下载）
 - 持续运行、周期性产出的品牌化内容
 - 品牌表达的集中管控比表达自由度更重要的场景

@@ -1,7 +1,7 @@
 {
   "eyebrow": "Wykorzystaj to, co już masz",
   "heading": "Twoje pliki projektowe nie są uwięzione",
-  "lead": "Gotowy projekt w **Figmie, Penpocie, Illustratorze, InDesignie lub jakiejkolwiek aplikacji SVG** nie musi zostać zablokowany w jednej aplikacji. Otwórz **Layout Studio**, kliknij **Zaimportuj projekt**, a plik otworzy się jako żywy układ - nie spłaszczony obrazek. Każda warstwa staje się edytowalnym polem, gotowym do dalszej pracy, łączenia z narzędziami i renderowania według tych samych reguł.",
+  "lead": "Gotowy projekt w **Figmie, Penpocie, Illustratorze, InDesignie lub jakiejkolwiek aplikacji SVG** nie musi zostać zablokowany w jednej aplikacji. Otwórz **Design**, kliknij **Zaimportuj projekt**, a plik otworzy się jako żywy układ - nie spłaszczony obrazek. Każda warstwa staje się edytowalnym polem, gotowym do dalszej pracy, łączenia z narzędziami i renderowania według tych samych reguł.",
   "sources": [
     {
       "mono": "Fig",

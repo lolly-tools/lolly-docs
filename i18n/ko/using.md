@@ -17,7 +17,7 @@
 
 각 도구는 분할 화면이에요. 한쪽에는 **컨트롤**, 다른 쪽에는 실시간 **미리보기**(캔버스)가 있어요. 컨트롤을 바꾸면 미리보기가 즉시 업데이트돼요.
 
-> 일부 도구(**Layout Studio** 등)는 대신 **프리 캔버스**로 열려요 — 크롬 없이 직접 조작하는 화면으로, 텍스트·도형·이미지 박스를 드래그, 크기 조절, 회전, 스냅할 수 있고, 더블클릭으로 텍스트를 그 자리에서 바로 편집할 수 있어요. 다른 모든 도구와 같은 렌더 경로로 내보내지므로 캔버스 *자체*가 파일이 돼요. 아래 [프리 캔버스](#the-free-canvas-design) 항목을 참고하세요.
+> 일부 도구(**Design** 등)는 대신 **프리 캔버스**로 열려요 — 크롬 없이 직접 조작하는 화면으로, 텍스트·도형·이미지 박스를 드래그, 크기 조절, 회전, 스냅할 수 있고, 더블클릭으로 텍스트를 그 자리에서 바로 편집할 수 있어요. 다른 모든 도구와 같은 렌더 경로로 내보내지므로 캔버스 *자체*가 파일이 돼요. 아래 [프리 캔버스](#the-free-canvas-design) 항목을 참고하세요.
 
 ## 캔버스(미리보기)
 
@@ -40,9 +40,9 @@
 
 크기를 바꾸면 화면은 항상 깔끔한 Fit 상태로 돌아가요.
 
-### 프리 캔버스(Layout Studio)
+### 프리 캔버스(Design)
 
-![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 프리 캔버스 도구는 아트보드 *주위*에 작업 공간을 더해줘요. 디자이너의 페이스트보드 같은 느낌이에요.
 
@@ -144,7 +144,7 @@ Catalogue의 **Swatches** 패널은 단순히 참고용이 아니에요 — 색�
 
 **Fonts** 패널에는 브랜드 서체가 나열되고 각 서체 옆에 **download**가 있어서, 로컬에 설치하거나 인쇄소에 전달할 수 있어요. ([Brand Studio](/info/brand-studio.html)의 Colours 탭에서도 같은 팔레트 다운로드를 제공해요.)
 
-에셋은 열려 있고 스스로 해내는 방식의 절반이고, 나머지 절반은 **직접 도구를 만드는 것**이에요 — 프리 캔버스(위에서 설명한 Layout Studio)를 쓰면 코드 없이도 시각적으로 도구를 만들 수 있어요.
+에셋은 열려 있고 스스로 해내는 방식의 절반이고, 나머지 절반은 **직접 도구를 만드는 것**이에요 — 프리 캔버스(위에서 설명한 Design)를 쓰면 코드 없이도 시각적으로 도구를 만들 수 있어요.
 
 ## 사운드와 접근성
 
@@ -176,7 +176,7 @@ Lolly는 누구에게나 편안하게 쓸 수 있는 걸 목표로 해요. 인�
 
 ## 디자인 가져오기(Figma, Penpot, Illustrator, InDesign)
 
-기존 디자인을 Lolly로 가져와 계속 작업할 수 있어요. **Layout Studio**를 열고 캔버스 툴바에서 **Import a design**을 클릭한 다음, Figma **.fig** 또는 SVG, Penpot **.penpot**, Illustrator **.ai** / **.pdf**, 또는 InDesign **.idml**을 선택하세요. 레이어는 프리 캔버스 위의 편집 가능한 박스가 돼요 — 텍스트는 다시 입력할 수 있는 상태 그대로, 이미지는 **My images**로 들어가고, 서체와 색상은 브랜드 전역 설정을 따라요 — 이후 결과물은 다른 세션과 똑같이 저장, 공유, 렌더링할 수 있어요. 파싱은 전부 기기 안에서 이뤄져요. 자세한 내용: **[Import a design](/info/design-import.html)**.
+기존 디자인을 Lolly로 가져와 계속 작업할 수 있어요. **Design**를 열고 캔버스 툴바에서 **Import a design**을 클릭한 다음, Figma **.fig** 또는 SVG, Penpot **.penpot**, Illustrator **.ai** / **.pdf**, 또는 InDesign **.idml**을 선택하세요. 레이어는 프리 캔버스 위의 편집 가능한 박스가 돼요 — 텍스트는 다시 입력할 수 있는 상태 그대로, 이미지는 **My images**로 들어가고, 서체와 색상은 브랜드 전역 설정을 따라요 — 이후 결과물은 다른 세션과 똑같이 저장, 공유, 렌더링할 수 있어요. 파싱은 전부 기기 안에서 이뤄져요. 자세한 내용: **[Import a design](/info/design-import.html)**.
 
 ## 내보내기
 

@@ -48,12 +48,13 @@ security posture).
 | [search.md](search.md) | end user | The one field at the bottom of every screen: which routes carry it, what each provider reaches (tools, saved sessions, the catalogue, settings, docs), the spotlight chord, and what it deliberately does not index. |
 | [ask.md](ask.md) | end user | Ask Lolly (`#/ask`): typed questions answered verbatim from this documentation with a citation and an Open-in-docs link - retrieved, never generated - plus navigate-only matches from the app. |
 | [dashboard.md](dashboard.md) | end user | The Dashboard (`#/d`) and its four tabs - This device, Design system (read-only here), Capabilities and Activity & stats - with the `?tab=` deep links. |
-| [utilities.md](utilities.md) | end user | The five routed workbenches - Spreadsheet, Convert, Colour Lab, Take a PDF apart, Script audio - what each does on-device, and where each one stops. |
+| [utilities.md](utilities.md) | end user | The five routed workbenches - Spreadsheet, Convert, Colour Lab, Unpack, Script audio - what each does on-device, and where each one stops. |
 | [favourites.md](favourites.md) | end user | Starring a tool and the strip it earns above the grid, the Gallery/Cover Flow view choice, and why the list travels with a profile export while the view mode stays on the device. |
-| [design-import.md](design-import.md) | end user | Bringing a Figma, Penpot, Illustrator or InDesign file into Layout Studio as an editable session, parsed entirely on device. |
+| [design-import.md](design-import.md) | end user | Bringing a Figma, Penpot, Illustrator or InDesign file into Design as an editable session, parsed entirely on device. |
 | [sequence-editor.md](sequence-editor.md) | end user | Editing in time: which clip a canvas click edits, onion-skin ghosts, split scope and Join, reversible detach audio, and trimming (pointer and keyboard). |
 | [animating.md](animating.md) | end user | Keyframes and depth: +Keyframe's two homes, the playhead-as-arm latch, the Keyframes popup and its curves, the Depth slider and Depth shadow, the scene camera and its five moves, Lift layers, and what a posed frame exports as. |
 | [collaborate.md](collaborate.md) | end user | Two devices editing one tool session live: the invite ceremony (link, QR, code door), the matching plates that confirm the peer, presence and focus rings, beaming files across, and why it still works with no internet. |
+| [formats.md](formats.md) | end user | The whole format register as one three-zone table - read-only at the left, written-only at the right, both-ways in the middle - with a plain-language card behind every chip. |
 | [exporting.md](exporting.md) | end user | Choosing a format, setting output size, and the three paths that produce a file (canvas render, generated text/data, on-device transform). |
 | [positioning.md](positioning.md) | end user | Where Lolly sits against Canva, brand portals, Illustrator and Figma/Penpot, and where it deliberately does not play. |
 

@@ -36,7 +36,7 @@ Rezultatem jest **obfitość**: każde wydarzenie ma poprawne oznakowanie, każd
 | Aplikacje mobilne i desktopowe | ✓ | ✗ | ✗ | częściowo | **✓** |
 | Wiersz poleceń i TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-Luka jest oczywista: nic w istniejącym krajobrazie nie daje nam efektu, który stawia ograniczenia na pierwszym miejscu, działa offline, nie wymaga wysokich umiejętności i jest dostępny wewnętrznie. Lolly zawiera nawet otwarte płótno - **Layout Studio** - gdzie kolory, typografia i zasoby są zgodne z globalnymi ustawieniami marki, więc swobodna aranżacja pozostaje wierna zasadzie ograniczeń w pierwszej kolejności. Czym Lolly **nie** jest, to nieograniczonym pakietem projektowym: projektanci nadal używają Illustratora i Figmy do dedykowanych, flagowych prac. Za pomocą tego narzędzia można składać permutacje.
+Luka jest oczywista: nic w istniejącym krajobrazie nie daje nam efektu, który stawia ograniczenia na pierwszym miejscu, działa offline, nie wymaga wysokich umiejętności i jest dostępny wewnętrznie. Lolly zawiera nawet otwarte płótno - **Design** - gdzie kolory, typografia i zasoby są zgodne z globalnymi ustawieniami marki, więc swobodna aranżacja pozostaje wierna zasadzie ograniczeń w pierwszej kolejności. Czym Lolly **nie** jest, to nieograniczonym pakietem projektowym: projektanci nadal używają Illustratora i Figmy do dedykowanych, flagowych prac. Za pomocą tego narzędzia można składać permutacje.
 
 **Używaj do:** Szybkiego generowania zoperacjonalizowanych zasobów kreatywnych - kafelków wydarzeń, identyfikatorów, stopek, alertów CVE, kodów QR, kart do mediów społecznościowych, etykiet wysyłkowych, ustrukturyzowanych raportów.
 
@@ -50,7 +50,7 @@ Luka jest oczywista: nic w istniejącym krajobrazie nie daje nam efektu, który 
 
 Najlepiej widać, czym jest Lolly, nie po liście funkcji - a wtedy, gdy prześledzisz jeden zasób przechodzący z rąk do rąk. Zobacz, jak jedna zlokalizowana karta kampanii wędruje przez organizację:
 
-1. **Osoba kreatywna ustala zasady.** Projektant tworzy bazowy szablon w Layout Studio, wpisując na stałe typografię i zmienne kolorystyczne marki. Nie robi jednej karty - wykonuje pracę fundamentalną *raz*, żeby już nigdy nie lokalizować jej ręcznie.
+1. **Osoba kreatywna ustala zasady.** Projektant tworzy bazowy szablon w Design, wpisując na stałe typografię i zmienne kolorystyczne marki. Nie robi jednej karty - wykonuje pracę fundamentalną *raz*, żeby już nigdy nie lokalizować jej ręcznie.
 2. **Programista to skaluje.** Ten sam szablon zostaje podłączony do nocnego potoku przez CLI, więc świeży wykres albo nowy wariant językowy powstaje automatycznie - żaden projektant nie otwiera pliku ponownie.
 3. **Producent po prostu tego używa.** Handlowiec offline w samolocie otwiera to samo narzędzie i generuje idealnie zgodną z marką prezentację na spotkanie z klientem. Zero umiejętności projektowych, zero sieci, zero czekania.
 
@@ -175,7 +175,6 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── daily-card/        # "Day Brief" - weather/time/map (fetched by an inline template script)
 │   ├── code-canvas/
 │   ├── countdown-timer/
 │   ├── color-palette/
@@ -187,7 +186,6 @@ lolly/
 │   ├── strip-data/        # on-device metadata strip - JPEG/PNG/SVG/PDF (file in → clean file out)
 │   ├── compress-pdf/      # on-device PDF compressor - recompresses images (file in → smaller file out)
 │   ├── brand-lockup/      # "Brand Lockup" - SUSE logo lockups; HarfBuzz text-to-path (wasm)
-│   ├── bag-video/
 │   ├── chart-creator/     # SVG charts from structured data
 │   ├── filter-duotone/    # two-color photo treatment
 │   ├── filter-halftone/   # photo → vector halftone dot grid
@@ -198,7 +196,7 @@ lolly/
 │   ├── event-name-badge/  # conference badges - composes qr-code as an SVG
 │   ├── wayfinding-signage/ # event signage; directions blocks auto-fit label text
 │   ├── text-helper/       # on-device text workbench (format/decode/hash/de-identify)
-│   ├── design/     # "Layout Studio" - freeform WYSIWYG editor canvas (render.layout: editor)
+│   ├── design/     # "Design" - freeform WYSIWYG editor canvas (render.layout: editor)
 │   ├── multi-page-pdf/    # multi-page PDF document - cover, flowing content blocks, back page
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
 │   ├── logo-wall/         # many logos → auto-packed grid
@@ -275,15 +273,15 @@ Wiersze są wymienione w kolejności sekcji galerii. Sekcja `utility` renderuje 
 
 | Kategoria | Dostarczone narzędzia | Planowane |
 |---|---|---|
-| `everyone` | QR Code Generator, Quote Card, Email Signature, Day Brief, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
-| `designer` | Brand Lockup, Bag Video, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
+| `everyone` | QR Code Generator, Quote Card, Email Signature, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
+| `designer` | Brand Lockup, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Layout Studio | Unit/format converters, more on-device privacy utilities |
+| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Design | Unit/format converters, more on-device privacy utilities |
 
-Narzędzia są też klasyfikowane według statusu: `official` (zatwierdzone przez markę, bez znaku wodnego), `community` (wkład zewnętrzny), `experimental` (eksporty ze znakiem wodnym). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap oraz Diagram Builder mają obecnie status `experimental`; Web Icon Maker i Layout Studio są dostarczane jako narzędzia `community`.
+Narzędzia są też klasyfikowane według statusu: `official` (zatwierdzone przez markę, bez znaku wodnego), `community` (wkład zewnętrzny), `experimental` (eksporty ze znakiem wodnym). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap oraz Diagram Builder mają obecnie status `experimental`; Web Icon Maker i Design są dostarczane jako narzędzia `community`.
 
-**Layout Studio** to pierwsze narzędzie zbudowane w trybie swobodnej kanwy `render.layout: "editor"` - pozbawiona chrome powierzchnia bezpośredniej manipulacji, na której przeciągasz, zmieniasz rozmiar, obracasz i przyciągasz do siatki ramki z tekstem, kształtami i obrazami, a następnie eksportujesz przez tę samą ścieżkę renderowania co każde inne narzędzie.
+**Design** to pierwsze narzędzie zbudowane w trybie swobodnej kanwy `render.layout: "editor"` - pozbawiona chrome powierzchnia bezpośredniej manipulacji, na której przeciągasz, zmieniasz rozmiar, obracasz i przyciągasz do siatki ramki z tekstem, kształtami i obrazami, a następnie eksportujesz przez tę samą ścieżkę renderowania co każde inne narzędzie.
 
 **Strip Hidden Data** to pierwsze **narzędzie działające na urządzeniu** (`privacy: "on-device"`): narzędzie transformujące treść, które przyjmuje plik dostarczony przez *Ciebie*, przetwarza go w całości w przeglądarce i zwraca czystą kopię - nigdy nieprzesłaną na serwer, nigdy nieoznaczoną znakiem wodnym, bez wtłoczonych danych o pochodzeniu. **Text Helper** to drugie - działający na urządzeniu warsztat do codziennych zadań typu wklej-na-stronę (formatowanie JSON, dekodowanie JWT, Base64, kodowanie/dekodowanie URL, haszowanie SHA). **Compress PDF** to trzecie - zmniejsza plik PDF przez ponowną kompresję jego obrazów, ponownie w całości na urządzeniu. Wszystkie trzy noszą tekst plakietki „Działa na Twoim urządzeniu - nic nie jest przesyłane”. To początek kategorii narzędzi prywatności, która zastępuje przekazywanie poufnych plików stronom o jednym przeznaczeniu.
 
@@ -407,7 +405,7 @@ Komponuj render dowolnego narzędzia: dziecko **SVG** pozostaje prawdziwym wekto
 ## Czego świadomie postanowiliśmy nie robić
 
 - **Bez EJS / bez dowolnego JS w szablonach.** Powierzchnia XSS wynosi zero. Logika mieszka w `hooks.js`.
-- **Bez obowiązkowego CMS zasobów.** Osoby indywidualne wczytują własne pliki twórcze prosto do swojego katalogu w aplikacji (widok [Catalogue](/info/using.html) oraz Brand Studio) i tworzą własne narzędzia, zapisując sesje [Layout Studio](/info/using.html) - bez serwera, bez konsoli administracyjnej. Dla *współdzielonego, zarządzanego* katalogu organizacja **może** utrzymywać katalog zasobów jako git i bramkować aktualizacje przez przegląd PR - to dostępny model zarządzania, a nie wymóg aplikacji.
+- **Bez obowiązkowego CMS zasobów.** Osoby indywidualne wczytują własne pliki twórcze prosto do swojego katalogu w aplikacji (widok [Catalogue](/info/using.html) oraz Brand Studio) i tworzą własne narzędzia, zapisując sesje [Design](/info/using.html) - bez serwera, bez konsoli administracyjnej. Dla *współdzielonego, zarządzanego* katalogu organizacja **może** utrzymywać katalog zasobów jako git i bramkować aktualizacje przez przegląd PR - to dostępny model zarządzania, a nie wymóg aplikacji.
 - **Bez wymuszonego RBAC.** Otwarta aplikacja domyślnie ma dostęp publiczny; ryzyko marki jest zarządzane przez etykiety dojrzałości + znaki wodne. Organizacja, która chce ściślejszej kontroli, nakłada własne uwierzytelnianie i opisany wyżej katalog recenzowany w git.
 - **Bez centralnej bazy danych.** Cały stan użytkownika jest przypisany do urządzenia. Integracja z SUSE ID jest w planach, ale nie blokuje premiery.
 - **Brak wspólnej ścieżki kodu narzędzi/silnika.** Silnik jest open source; `tools/` i `assets/` pozostają zastrzeżoną treścią SUSE we własnych repozytoriach. Rozdział jest egzekwowany (brak importów między nimi), więc podział pozostaje czysty.
@@ -445,7 +443,7 @@ Rozdział jest egzekwowany - nie ma żadnych importów krzyżowych z `engine/` d
 
 | Kamień milowy | Cel | Co |
 |---|---|---|
-| **Początkowe narzędzia** | ✅ Gotowe | QR Code, Quote Card, Email Signature, Day Brief, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Bag Video, Chart Creator, Filter: Duotone, Meeting Planner - powłoka webowa działa na żywo |
+| **Początkowe narzędzia** | ✅ Gotowe | QR Code, Quote Card, Email Signature, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Chart Creator, Filter: Duotone, Meeting Planner - powłoka webowa działa na żywo |
 | **Rozbudowa obecnego oprzyrządowania** | Połowa 2026 ✅ Gotowe  | Pobieralna aplikacja offline (Tauri); dodatkowe narzędzia dla pracowników i wydarzeń; bogatszy potok eksportu (stabilność text-to-path, metadane, dodatkowe formaty - zobacz `plans.md`) |
 | **Otwarcie kodu silnika** | Koniec 2026 ✅ Gotowe  | Silnik, powłoki, schematy, dokumentacja stają się publiczne - nie brandowane narzędzia/zasoby |
 | **Przenoszenie między urządzeniami** | ✅ Gotowe | Przenośny pakiet `lolly-backup` przenosi profil, zapisane sesje, wgrane obrazy i preferencje między dowolnymi dwiema instalacjami - offline lub online, bez konta. Kompatybilna w przód, sprawdzana pod kątem integralności koperta (specyfikacja: `docs/data-transfer.md`) |

@@ -197,10 +197,8 @@ export function inlineDocsArt(art: DocsArt): { html: string } | { error: string 
  * strands 26 sidecars (the shot-recipe rule). Everything inside the fence is
  * ordinary prose — the caption — and localizes like any paragraph.
  */
-export function parseFigureFence(label: string): string | null {
-  const m = /^figure\s+(\S+)$/.exec(label.trim());
-  return m ? m[1]! : null;
-}
+// parseFigureFence + figureBlock now live in @lolly-tools/docs-render (packages/docs-render/
+// src/art.ts) so the shared renderer can compose figures without importing this module.
 
 /**
  * The masthead band with banked art in place of the default chip canvas.
@@ -219,22 +217,4 @@ export function mastheadArtBand(parts: { art: string; heading: string; credentia
     + `</div>`;
 }
 
-/**
- * A figure: the artwork, then a caption carrying the prose AND the credential
- * line for the file that artwork came from.
- *
- * A figure is CONTENT, not decoration (plan §6): the surrounding prose carries
- * the point, the caption names it, and the artwork is left to declare its own
- * semantics — this build step adds no `aria-hidden` and invents no label it
- * would have to guess at.
- */
-export function figureBlock(parts: { art: string; caption: string; credential: string; src: string }): string {
-  const caption = `${parts.caption}${parts.credential}`;
-  return `<figure class="docs-figure" data-art="${parts.src}">`
-    + `<div class="docs-figure-art">${parts.art}</div>`
-    // An empty <figcaption> is markup that promises a caption and delivers none:
-    // a figure whose artifact carries no readable credential and whose fence held
-    // no prose gets the artwork alone.
-    + (caption ? `<figcaption>${caption}</figcaption>` : '')
-    + `</figure>`;
-}
+// figureBlock moved to @lolly-tools/docs-render (packages/docs-render/src/art.ts).

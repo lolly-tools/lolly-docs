@@ -1,6 +1,6 @@
 # Animating: keyframes, depth and a camera
 
-**Layout Studio** puts a timeline under the free canvas, and **Sequence Studio** is the same timeline with a video composition already in it. [Using Lolly](/info/using.html#timeline-sequence-studio) describes the timeline itself - the magnetic sequence row, the overlay lanes, the Always on strip, transitions and rendering - and [The sequence editor](/info/sequence-editor.html) covers editing in time. This page is about the layer above that: posing a box at one instant, lifting it off the page, and flying a camera over the result.
+**Design** puts a timeline under the free canvas, and **Sequence Studio** is the same timeline with a video composition already in it. [Using Lolly](/info/using.html#timeline-sequence-studio) describes the timeline itself - the magnetic sequence row, the overlay lanes, the Always on strip, transitions and rendering - and [The sequence editor](/info/sequence-editor.html) covers editing in time. This page is about the layer above that: posing a box at one instant, lifting it off the page, and flying a camera over the result.
 
 Everything here runs on your device. Nothing plays on its own: the preview moves when you press play or drag the playhead, and what you see at any instant is exactly what an export of that instant contains.
 

@@ -1,7 +1,7 @@
 {
   "eyebrow": "Breng wat je al hebt gemaakt",
   "heading": "Je ontwerpbestanden zitten niet vast",
-  "lead": "Afgewerkt werk in **Figma, Penpot, Illustrator, InDesign of een willekeurige SVG-app** hoeft niet in één app opgesloten te blijven. Open **Layout Studio**, klik op **Een ontwerp importeren**, en het bestand wordt geopend als een levende lay-out - geen platgeslagen plaatje. Elke laag wordt een bewerkbaar vak, klaar om mee verder te werken, te combineren met tools, en te renderen volgens dezelfde regels.",
+  "lead": "Afgewerkt werk in **Figma, Penpot, Illustrator, InDesign of een willekeurige SVG-app** hoeft niet in één app opgesloten te blijven. Open **Design**, klik op **Een ontwerp importeren**, en het bestand wordt geopend als een levende lay-out - geen platgeslagen plaatje. Elke laag wordt een bewerkbaar vak, klaar om mee verder te werken, te combineren met tools, en te renderen volgens dezelfde regels.",
   "sources": [
     { "mono": "Fig", "name": "Figma", "fmt": ".fig · SVG", "color": "#a259ff" },
     { "mono": "Pen", "name": "Penpot", "fmt": ".penpot", "color": "#12b886" },

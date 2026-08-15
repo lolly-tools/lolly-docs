@@ -17,7 +17,7 @@ Ana ekran **galeri**dir - kategoriye göre gruplanmış tüm araçlar. Aracı a�
 
 Her araç bölünmüş bir görünümdür: bir tarafta **kontroller**, diğer tarafta canlı bir **önizleme** (kanvas). Herhangi bir kontrolü değiştir, önizleme anında güncellenir.
 
-> Birkaç araç (**Layout Studio** gibi) bunun yerine bir **serbest kanvas** olarak açılır - sürükleyip yeniden boyutlandırdığın, döndürdüğün ve hizaladığın metin, şekil ve görsel kutularının bulunduğu, çerçevesiz, doğrudan-manipülasyon yüzeyi; metni yerinde düzenlemek için çift tıklarsın. Diğer her araçla aynı oluşturma yolundan dışa aktarılır, yani kanvas, dosyanın *ta kendisidir*. Aşağıda [Serbest kanvas](#the-free-canvas-design) bölümüne bak.
+> Birkaç araç (**Design** gibi) bunun yerine bir **serbest kanvas** olarak açılır - sürükleyip yeniden boyutlandırdığın, döndürdüğün ve hizaladığın metin, şekil ve görsel kutularının bulunduğu, çerçevesiz, doğrudan-manipülasyon yüzeyi; metni yerinde düzenlemek için çift tıklarsın. Diğer her araçla aynı oluşturma yolundan dışa aktarılır, yani kanvas, dosyanın *ta kendisidir*. Aşağıda [Serbest kanvas](#the-free-canvas-design) bölümüne bak.
 
 ## Kanvas (önizleme)
 
@@ -40,9 +40,9 @@ Her araç bölünmüş bir görünümdür: bir tarafta **kontroller**, diğer ta
 
 Bir boyut değişikliği görünümü her zaman temiz bir sığdırmaya geri döndürür.
 
-### Serbest kanvas (Layout Studio)
+### Serbest kanvas (Design)
 
-![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Serbest kanvas araçları, bir tasarımcının yapıştırma tahtası gibi, çalışma alanının *etrafına* bir çalışma yüzeyi ekler:
 
@@ -144,7 +144,7 @@ Kataloğun **Renk Örnekleri** paneli yalnızca referans için değil - bir reng
 
 **Yazı Tipleri** paneli, yerel olarak kurmak ya da bir matbaaya vermek için her marka fontunun yanında bir **indir** ile birlikte listeler. ([Brand Studio](/info/brand-studio.html)'nun Renkler sekmesi aynı palet indirmesini sunar.)
 
-Varlıklar açık, kendin-yap yolunun bir yarısıdır; diğeri **kendi araçlarını yapmaktır** - serbest kanvas (yukarıda anlatılan Layout Studio) kod yazmadan görsel olarak bir tane inşa etmeni sağlar.
+Varlıklar açık, kendin-yap yolunun bir yarısıdır; diğeri **kendi araçlarını yapmaktır** - serbest kanvas (yukarıda anlatılan Design) kod yazmadan görsel olarak bir tane inşa etmeni sağlar.
 
 ## Ses ve erişilebilirlik
 
@@ -176,7 +176,7 @@ Katalog önbelleği dahil değildir - yeni cihazda kendini yeniden indirir. Pake
 
 ## Bir tasarım içe aktarma (Figma, Penpot, Illustrator, InDesign)
 
-Var olan bir tasarımı Lolly'ye getirip üzerinde çalışmaya devam edebilirsin: **Layout Studio**'yu aç, kanvas araç çubuğunda **Tasarım İçe Aktar**'a tıkla ve bir Figma **.fig** ya da SVG, bir Penpot **.penpot**, bir Illustrator **.ai** / **.pdf**, ya da bir InDesign **.idml** seç. Katmanlar serbest kanvasta düzenlenebilir kutulara dönüşür - metin yeniden yazılabilir kalır, görseller **Görsellerim**'e yerleşir, ve tipografi ile renkler marka geneline uyar - sonra sonuç, her diğer oturum gibi kaydedilir, paylaşılır ve oluşturulur. Ayrıştırma tamamen cihazında gerçekleşir. Tam ayrıntı: **[Bir tasarım içe aktar](/info/design-import.html)**.
+Var olan bir tasarımı Lolly'ye getirip üzerinde çalışmaya devam edebilirsin: **Design**'yu aç, kanvas araç çubuğunda **Tasarım İçe Aktar**'a tıkla ve bir Figma **.fig** ya da SVG, bir Penpot **.penpot**, bir Illustrator **.ai** / **.pdf**, ya da bir InDesign **.idml** seç. Katmanlar serbest kanvasta düzenlenebilir kutulara dönüşür - metin yeniden yazılabilir kalır, görseller **Görsellerim**'e yerleşir, ve tipografi ile renkler marka geneline uyar - sonra sonuç, her diğer oturum gibi kaydedilir, paylaşılır ve oluşturulur. Ayrıştırma tamamen cihazında gerçekleşir. Tam ayrıntı: **[Bir tasarım içe aktar](/info/design-import.html)**.
 
 ## Dışa aktarma
 

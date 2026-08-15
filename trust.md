@@ -30,6 +30,10 @@ Lolly renders on your device. That is not a privacy posture bolted on afterwards
 - <!--i:convert--> [**Data Transfer**](/info/data-transfer.html) - moving your work in and out, with nothing held hostage.
 - <!--i:people--> [**Inclusive Design**](/info/inclusive-design.html) - who the software is built to work for.
 
+## Why this is free
+
+**We built Lolly for ourselves.** SUSE needed thousands of on-brand files, each with its name sealed inside, made without handing anything to outside services. So we built a tool that does all of it on the device, and released it as open source, like everything else we make. We keep maintaining it because we use it every day. **There is no obligation:** everything here works with or without us.
+
 ---
 
 If you find a place where these pages and the code disagree, the code is the bug - and the [repository is public](https://github.com/lolly-tools/lolly) so you can prove it either way.

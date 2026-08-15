@@ -12,7 +12,7 @@ Everything above the first `##` (this title and these notes) is ignored by the b
 
 When you first use Lolly, everything you type anywhere is fully private until you deliberately want that information out there via media or a share link (if online).
 
-With the opt-in selected, we embed some of your profile information as provenance into assets and bundles to identify you as the source.
+With the opt-in selected, the profile details you choose are sealed into what you make, naming you as the source. Nothing is included without you picking it.
 
 Lolly produces a large volume of content. We take a strict data minimization approach to prevent risk.
 
@@ -47,19 +47,15 @@ finished pack of your templates. For a *governed rollout*, someone defines the s
 asset catalog (logos, palettes, fonts as permanent IDs) and writes the manifest +
 template for each output type. Individuals don't have to wait for that, though - in
 the open app anyone can ingest their own files into the catalogue and build tools in
-Layout Studio from day one.
+Design from day one.
 
-**Governance-by-git is optional - and unfamiliar to non-engineers.** If you run a
-*shared, controlled* catalog, "the PR review *is* the moderation" is elegant for
-engineers and unfamiliar to most brand and marketing teams. If the people who own
-brand decisions don't live in git, you'll want a workflow that bridges them - or IT
-quietly becomes the strategic design partner and wider institutional gatekeeper
-(preferred by many in long-running production environments). Teams that don't want
-this simply skip it.
+**No git required to contribute.** Designers make their own tools and templates
+in the app, then share them with peers or submit them to whoever owns the
+deployment for default inclusion.
 
 **It's deliberately narrow - frame it that way.** Lolly is not for bespoke or hero
 content. It *is* your personal DAM - hydrated and supercharged by your design
-system, tools and catalog - and it *does* have an open canvas (Layout Studio), but
+system, tools and catalog - and it *does* have an open canvas (Design), but
 even there colours, type and assets conform to the active design globals, so free
 arrangement stays inside the system. Judged against Figma or Canva it will
 look limited. Judged as what it is - operationalised, recurring, massive-scale asset
@@ -95,19 +91,25 @@ trivial; the **content is the cost.**
 
 We win the war for governance with excellent convenience and service. 
 
-![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1)
+![The Utilities view collects the mechanical jobs people usually hand to a random website, all running inside Lolly instead](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1)
 
 ## Can Lolly edit and render my Figma, Penpot, Illustrator or InDesign files?
 
-Yes. Open **Layout Studio** and click **Import a design**: it accepts a native Figma **.fig** (Save local copy), a Penpot **.penpot** export, an Illustrator **.ai** or **.pdf**, an InDesign **.idml** (File → Export → InDesign Markup), or **any SVG** (the wide door - almost any design app exports it). Everything is parsed entirely on your device, no account or plugin needed.
+Yes. Open **Design** and click **Import a design**: it accepts a native Figma **.fig** (Save local copy), a Penpot **.penpot** export, an Illustrator **.ai** or **.pdf**, an InDesign **.idml** (File → Export → InDesign Markup), or **any SVG** (the wide door - almost any design app exports it). No account, no plugin and no design app licence needed.
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
-Layers arrive as editable boxes on the open canvas: text stays retypable, shapes stay shapes, images join your on-device library, and type and colours conform to the brand globals. Save it and the layout becomes a reusable, URL-addressable template anyone with Lolly can refill - and you can mix in live tools (a QR code, a chart) that re-render on load. From there it renders like anything else in Lolly - SVG, PDF, PNG and the rest, reproducible from its URL. See [Import a design](/info/design-import.html).
+Layers arrive as editable boxes on the open canvas: text stays retypable, shapes stay shapes, images join your own image library, and type and colours conform to the brand globals. Save it and the layout becomes a reusable, URL-addressable template anyone with Lolly can refill - and you can mix in live tools (a QR code, a chart) that re-render on load. From there it renders like anything else in Lolly - SVG, PDF, PNG and the rest, reproducible from its URL. See [Import a design](/info/design-import.html).
 
 ## Where did the SUSE-branded tools go?
 
 They already live in a separate, private repository. A public clone doesn't fetch the SUSE brand pack at all, so a public build runs the neutral `lolly-start` profile - the brand-agnostic community tools plus a blank brand you fill in with your own. SUSE operates its own instance to protect its trademarks.
+
+## Why is it free? What's the catch?
+
+**We built Lolly for ourselves.** SUSE needed thousands of on-brand files, each with its name sealed inside, made without handing anything to outside services. So we built a tool that does all of it on the device, and released it as open source, like everything else we make. We keep maintaining it because we use it every day. **There is no obligation:** everything here works with or without us.
+
+That line is drawn in the licence, not in a promise: anything that runs locally is free, forever. See [positioning](/info/positioning.html) for the full statement.
 
 ## How much is SUSE keeping private? (aka when is the rug-pull)
 

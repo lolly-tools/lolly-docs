@@ -17,7 +17,7 @@ Skrin utama ialah **galeri** - setiap alat, dikumpulkan mengikut kategori. Klik 
 
 Setiap alat ialah paparan berpisah: **kawalan** di satu sisi, **pratonton** langsung (kanvas) di sisi lain. Ubah mana-mana kawalan dan pratonton akan dikemas kini serta-merta.
 
-> Beberapa alat (seperti **Layout Studio**) pula dibuka sebagai **kanvas bebas** - permukaan manipulasi-langsung tanpa bingkai antara muka (chromeless), tempat anda menyeret, menyaiz semula, memutar dan melekatkan kotak teks, bentuk dan imej, serta dwiklik untuk menyunting teks di situ juga. Ia dieksport melalui laluan pemaparan yang sama seperti alat lain, jadi kanvas itu *adalah* fail itu sendiri. Lihat [Kanvas bebas](#the-free-canvas-design) di bawah.
+> Beberapa alat (seperti **Design**) pula dibuka sebagai **kanvas bebas** - permukaan manipulasi-langsung tanpa bingkai antara muka (chromeless), tempat anda menyeret, menyaiz semula, memutar dan melekatkan kotak teks, bentuk dan imej, serta dwiklik untuk menyunting teks di situ juga. Ia dieksport melalui laluan pemaparan yang sama seperti alat lain, jadi kanvas itu *adalah* fail itu sendiri. Lihat [Kanvas bebas](#the-free-canvas-design) di bawah.
 
 ## Kanvas (pratonton)
 
@@ -40,9 +40,9 @@ Pratonton sentiasa menunjukkan dengan tepat apa yang akan dieksport.
 
 Perubahan dimensi sentiasa akan menetapkan semula pandangan kepada muat yang kemas.
 
-### Kanvas bebas (Layout Studio)
+### Kanvas bebas (Design)
 
-![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Alat kanvas bebas menambah permukaan kerja *di sekeliling* artboard, seperti pasteboard seorang pereka grafik:
 
@@ -144,7 +144,7 @@ Panel **Swatches** Katalog bukan sekadar untuk rujukan - klik warna untuk menyal
 
 Panel **Fonts** menyenaraikan muka taip jenama anda dengan **muat turun** di sebelah setiap satu, untuk dipasang secara tempatan atau diserahkan kepada kedai cetak. (Tab Warna [Brand Studio](/info/brand-studio.html) turut menawarkan muat turun palet yang sama.)
 
-Aset ialah separuh daripada laluan terbuka, buat-sendiri (do-it-yourself); separuh lagi ialah **membuat alat anda sendiri** - kanvas bebas (Layout Studio, diterangkan di atas) membolehkan anda membina satu secara visual, tanpa perlu kod.
+Aset ialah separuh daripada laluan terbuka, buat-sendiri (do-it-yourself); separuh lagi ialah **membuat alat anda sendiri** - kanvas bebas (Design, diterangkan di atas) membolehkan anda membina satu secara visual, tanpa perlu kod.
 
 ## Bunyi & kebolehcapaian
 
@@ -176,7 +176,7 @@ Cache katalog tidak disertakan - ia akan memuat turun semula sendiri pada perant
 
 ## Mengimport reka bentuk (Figma, Penpot, Illustrator, InDesign)
 
-Anda boleh membawa reka bentuk sedia ada ke dalam Lolly dan terus mengerjakannya: buka **Layout Studio**, klik **Import reka bentuk** pada bar alat kanvas, dan pilih fail Figma **.fig** atau SVG, fail Penpot **.penpot**, fail Illustrator **.ai** / **.pdf**, atau fail InDesign **.idml**. Lapisan menjadi kotak yang boleh disunting pada kanvas bebas - teks kekal boleh ditaip semula, imej mendarat dalam **Imej saya**, dan jenis huruf serta warna akan mematuhi tetapan global jenama - kemudian hasilnya disimpan, dikongsi dan dirender seperti mana-mana sesi lain. Penghuraian berlaku sepenuhnya pada peranti anda. Butiran penuh: **[Import reka bentuk](/info/design-import.html)**.
+Anda boleh membawa reka bentuk sedia ada ke dalam Lolly dan terus mengerjakannya: buka **Design**, klik **Import reka bentuk** pada bar alat kanvas, dan pilih fail Figma **.fig** atau SVG, fail Penpot **.penpot**, fail Illustrator **.ai** / **.pdf**, atau fail InDesign **.idml**. Lapisan menjadi kotak yang boleh disunting pada kanvas bebas - teks kekal boleh ditaip semula, imej mendarat dalam **Imej saya**, dan jenis huruf serta warna akan mematuhi tetapan global jenama - kemudian hasilnya disimpan, dikongsi dan dirender seperti mana-mana sesi lain. Penghuraian berlaku sepenuhnya pada peranti anda. Butiran penuh: **[Import reka bentuk](/info/design-import.html)**.
 
 ## Mengeksport
 

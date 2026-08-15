@@ -14,7 +14,9 @@ import { readShotProvenance } from './shot-provenance.ts';
 // Banked docs art (plans/105 §6). The strip/namespace + composition live in their
 // own module because this one runs build() on import: a test can exercise them
 // there without building the site (see tests/docs-figures.test.ts).
-import { resolveDocsArt, inlineDocsArt, parseFigureFence, mastheadArtBand, figureBlock } from './docs-art.ts';
+// parseFigureFence + figureBlock moved to @lolly-tools/docs-render (the renderer composes
+// figures there); the filesystem art resolvers + the masthead band stay here.
+import { resolveDocsArt, inlineDocsArt, mastheadArtBand } from './docs-art.ts';
 // Page seals (plans/105 §7): the <link rel="c2pa-manifest"> each English page
 // carries, and the signing pass that runs after every page is on disk. Same
 // reason as docs-art.ts for living outside this file — sealing is exercised by
@@ -44,6 +46,11 @@ import {
   stripLogoMarkers,
   commentStandaloneProvenanceLines,
   mdDescription,
+  renderCredential,
+  inline as pkgInline,
+  mdToHtml as pkgMdToHtml,
+  type DocsRenderContext,
+  type CredentialFacts,
 } from '../packages/docs-render/src/index.ts';
 // esbuild bundles the docs player (docs/player/) into /info/docs-player.js — it
 // is already in the tree as vite's bundler, so this adds no dependency.
@@ -97,7 +104,18 @@ interface Page {
   // truncate mid-clause, or an opener that describes the DOCUMENT rather than the
   // subject ("This document captures…").
   description?: string;
+  // A page whose body is not markdown alone. The landing has always been special-
+  // cased; `render` is the general form of the same thing, for a page that hosts a
+  // COMPOSED band (the formats table, the design-import band) which markdown cannot
+  // express - the band ships from one function, so the page and the landing teaser
+  // can never show two different versions of it (plan 117 block 9).
+  render?: (md: string, lang: Lang) => string;
 }
+
+// Where docs/formats.md wants the composed three-zone table dropped in. An HTML
+// comment, so the markdown twin at /info/formats.md still reads as a document (the
+// line is invisible) and an author can move the table by moving one line.
+const FORMATS_TABLE_MARK = '<!-- the three-zone formats table renders here -->';
 
 // A retired slug that now redirects to its new home. Emitted as a tiny meta-refresh
 // stub so inbound links + bookmarks keep resolving after the IA rebuild.
@@ -128,7 +146,15 @@ const pages: Page[] = [
   { slug: 'using',            title: 'Using Lolly',       src: 'using.md',        pathway: 'creators' },
   { slug: 'brand-studio',     title: 'The Brand Studio',  src: 'brand-studio.md', pathway: 'creators' },
   { slug: 'profile',          title: 'Profiles',          src: 'profile.md',      pathway: 'creators', description: "The working identity Lolly creates as - your name, role and contact details, filled into tools automatically and stored on your own device." },
-  { slug: 'design-import',    title: 'Import a design (Figma, Penpot, Illustrator, InDesign)', src: 'design-import.md', pathway: 'creators', description: "Bring a finished design out of Figma, Penpot, Illustrator or InDesign and into Lolly as an editable, re-renderable tool rather than a flat picture." },
+  // Both of these pages HOST a band that used to sit on the landing (plan 117 block
+  // 9). The band is the same function the landing called, so the layout that made
+  // the content readable moved with the content instead of being flattened to prose.
+  // Both renderers are NAMED functions rather than inline arrows on purpose:
+  // scripts/check-docs-nav.ts recovers each entry with a brace-free match, and an
+  // inline arrow body (or a template literal) puts braces inside the entry, which
+  // drops it from that guard's count.
+  { slug: 'design-import',    title: 'Import a design (Figma, Penpot, Illustrator, InDesign)', src: 'design-import.md', pathway: 'creators', description: "Bring a finished design out of Figma, Penpot, Illustrator or InDesign and into Lolly as an editable, re-renderable tool rather than a flat picture.", render: renderDesignImportPage },
+  { slug: 'formats',          title: 'Every format Lolly can open and make', src: 'formats.md', pathway: 'creators', description: "Every file format Lolly reads, every format it writes, and the ones it does both ways - grouped by what each one is, with a plain-language card behind every chip.", render: renderFormatsPage },
   { slug: 'sequence-editor',  title: 'The sequence editor', src: 'sequence-editor.md', pathway: 'creators' },
   { slug: 'animating',        title: 'Animating: keyframes, depth and a camera', src: 'animating.md', pathway: 'creators', description: "Pose a box at one moment, lift it off the page, and fly a camera over the result - keyframes, depth, the scene camera and Lift layers, all on your device." },
   // Collab is a CREATORS page, not a Builders or Trust one: it is a thing two people
@@ -320,6 +346,7 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
         { slug: 'profile',     label: 'Your profile' } ] },
       { label: 'Share & collaborate', items: [
         { slug: 'collaborate', label: 'Working together' },
+        { slug: 'formats',     label: 'Formats, in and out' },
         { slug: 'exporting',   label: 'Exporting & formats' } ] },
       { label: 'Compare', items: [
         { slug: 'positioning', label: 'How Lolly compares' } ] },
@@ -543,160 +570,14 @@ function toSlug(h2: string) {
 
 // ── Markdown helpers ──────────────────────────────────────────────────────────
 
-// The seal glyph inside a `%sig{}` pill — a signature is a claim someone put
-// their name to, so it gets a mark of its own rather than only a colour.
-const PROV_SEAL = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" class="prov-seal"><path d="M12 2 4 5.5v6c0 4.5 3.2 8.6 8 10.5 4.8-1.9 8-6 8-10.5v-6L12 2Z"/><path d="m9 12 2 2 4-4"/></svg>`;
+// PROV_SEAL, parseCells, headingId, CONTENT_TOKEN + stripAuthoringComments now live
+// in @lolly-tools/docs-render (imported above) — pure helpers the in-app renderer needs too.
 
-function inline(text: string) {
-  let s = esc(text);
-  // One fact the recipe carries that the rewritten `src` cannot: the dark twin to
-  // pair with. Collected in the recipe pass below and read a few lines later by the
-  // wrapper pass — same call, so a plain local map is the whole mechanism.
-  const darkFor = new Map<string, string>();
-  // An inline code span that IS an app route becomes a link to it. The docs are served
-  // by the app, so `#/start` in the prose is a place the reader can actually go — and
-  // naming a route in monospace and leaving it inert was the docs describing a door.
-  // Deliberately narrow: the span must be a WHOLE route and nothing else, so the
-  // placeholder forms the reference pages are full of (`#/tool/<id>`, `/t/:id`,
-  // `#/tool/{toolId}?…`) stay plain text, as does anything inside a fenced code block
-  // (this runs on inline spans only).
-  s = s.replace(/`([^`]+)`/g, (_m: string, code: string) => {
-    const route = /^(#\/[\w/?=&%.,+-]*|\/t\/[\w/?=&%.,+-]+)$/.test(code)
-      ? (code.startsWith('#') ? `/${code}` : code)
-      : null;
-    return route ? `<a href="${route}"><code>${code}</code></a>` : `<code>${code}</code>`;
-  });
-  s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-  s = s.replace(/\*([^*]+)\*/g, '<em>$1</em>');
-  // Screenshot recipes: an image whose URL is a url-shot tool link IS the shot's
-  // recipe (see scripts/build-docs-shots.ts) — the page serves the committed
-  // baseline the pipeline captured from it, at /info/shots/<filename>.<format>.
-  // The recipe stays in the source .md as the reproducible record; when a GET
-  // renderer ships, this rewrite can simply be removed.
-  // The parameter is `recipe`, not `src`: the body below declares `src` for the
-  // REWRITTEN /info/shots/ path (which is what darkFor is keyed on), and a callback
-  // parameter of the same name shadows it — a SyntaxError that takes the whole
-  // build with it.
-  s = s.replace(/(!\[[^\]]*\]\()(\/t\/url-shot\?[^)\s]+)(\))/g, (_m, pre: string, recipe: string, post: string) => {
-    // By this point the body has been HTML-escaped, so the query's separators
-    // read `&amp;` - restore them or every param key parses as `amp;<key>`.
-    const q = new URLSearchParams(recipe.slice(recipe.indexOf('?') + 1).replace(/&amp;/g, '&'));
-    const slug = q.get('filename');
-    const ext = (q.get('format') || 'svg').toLowerCase();
-    // No filename to resolve — leave the recipe link exactly as authored.
-    if (!slug) return `${pre}${recipe}${post}`;
-    // Prefer a localized shot (<slug>.<lang>.<ext>) on a translated page; fall back
-    // to the English baseline when this recipe wasn't captured for this locale.
-    const file = localizedShot(slug, ext) ?? `${slug}.${ext}`;
-    const shotSrc = `/info/shots/${file}`;
-    const dark = darkShot(file);
-    if (dark) darkFor.set(shotSrc, `/info/shots/${dark}`);
-    return `${pre}${shotSrc}${post}`;
-  });
-
-  // Provenance pills: `%entity{…}` `%sig{…}` `%act{…}` `%file{…}` `%detail{…}`.
-  // A provenance line is a chain of claims, not a sentence — tagging each span by
-  // WHAT IT IS lets the eye land on the actors first (who made and who signed the
-  // file), then the signatures, then the mechanical detail, while it still reads
-  // left to right as one story. Nesting is one level (`%sig{signed by %entity{…}}`),
-  // resolved inner-first by re-running until the text stops changing; the emitted
-  // spans contain no braces, so an outer pill matches on the next pass.
-  for (let pass = 0; pass < 4; pass++) {
-    const next = s.replace(/%(entity|sig|act|file|detail)\{([^{}]*)\}/g,
-      (_m, kind: string, text: string) => `<span class="prov-pill prov-${kind}">${kind === 'sig' ? PROV_SEAL : ''}${text}</span>`);
-    if (next === s) break;
-    s = next;
-  }
-  // A marker that survives is a typo'd kind, an unclosed brace, or nesting deeper
-  // than the passes above — all of which SHIP AS LITERAL `%kind{…}` text in the
-  // reader's face rather than failing. Say so loudly, like docIcon does for an
-  // unknown glyph. tests/docs-provenance-pills.test.ts is the durable check.
-  const leftover = /%(entity|sig|act|file|detail)\{/.exec(s);
-  if (leftover) console.warn(`⚠  unrendered provenance marker "%${leftover[1]}{" — check for an unclosed brace or deeper nesting`);
-
-  // Images before links, or the link regex eats `[alt](url)` and strands the `!`.
-  // The alt is STRIPPED of markup first: inline code/emphasis ran above, so an alt
-  // written with backticks arrives here already carrying <code> tags, and a `>`
-  // inside an attribute value ends the tag — truncating the <img> and swallowing
-  // whatever the wrapper emits after it (this ate a shot's dark twin on
-  // /info/overview). Alt text is plain text by definition; markup in it was never
-  // going to render anyway.
-  s = s.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_m, alt: string, src: string) =>
-    `<img src="${src}" alt="${alt.replace(/<[^>]*>/g, '').replace(/"/g, '&quot;')}" loading="lazy">`);
-  // A screenshot gets a wrapper, because the <img> alone cannot carry what a shot
-  // needs: the settle-in motion has to animate a box that ISN'T also subject to
-  // the `.docs-content img` centring rules, and a corner credential line needs a
-  // positioned parent. `width:fit-content` (see the CSS) keeps the wrapper on the
-  // image's real box rather than the full column, so the credential lands on the
-  // artwork's corner instead of out in the margin beside a portrait-shaped shot.
-  s = s.replace(/<img src="(\/info\/shots\/[^"]+)"([^>]*)>/g, (_m, src: string, rest: string) => {
-    const file = src.slice('/info/shots/'.length);
-    const size = shotSize(file);
-    const dims = size ? ` width="${size.w}" height="${size.h}"` : '';
-    // The dark twin ships as a SECOND <img> rather than a <picture> source: the
-    // site's dark mode is a class the reader toggles, and a `prefers-color-scheme`
-    // source would follow the OS and ignore that toggle. Two images, one shown —
-    // the same mechanism the nav's own sun/moon pair uses.
-    const darkSrc = darkFor.get(src);
-    let twin = '';
-    if (darkSrc) {
-      const dfile = darkSrc.slice('/info/shots/'.length);
-      const dsize = shotSize(dfile);
-      // Measured from the DARK file, never reused from the light one: a missing
-      // width/height on a lazy image inside a fit-content wrapper is the 0x0
-      // deadlock documented on shotSize.
-      const ddims = dsize ? ` width="${dsize.w}" height="${dsize.h}"` : '';
-      // Its OWN credential: the two files are separately signed, and one line
-      // describing both would be a claim neither file backs.
-      twin = `<img class="shot-alt" src="${darkSrc}"${ddims}${rest}>${shotCredential(dfile, 'shot-cred--alt')}`;
-    }
-    const cls = `shot${darkSrc ? ' shot--dual' : ''}`;
-    return `<span class="${cls}" data-shot="${src}"${darkSrc ? ` data-shot-dark="${darkSrc}"` : ''}>`
-      + `<img src="${src}"${dims}${rest}>${shotCredential(file)}${twin}</span>${shotTryLink(file)}`;
-  });
-  // A page ASSET that is not a screenshot — the AI stance hero, say — gets the same
-  // wrapper and the same credential glyph, read from the same bytes the reader is
-  // served. A file that carries a credential should say so wherever it appears: the
-  // one image on the site whose provenance is actually the argument (generated by
-  // Gemini, edited and re-exported by Lolly) was the only one with no way to open it.
-  // The prose journey underneath it is not a substitute — that is the page telling
-  // you, and this is the file telling you. Assets with no readable credential fall
-  // through unchanged, so nothing else on the site gains a wrapper it has no use for.
-  s = s.replace(/<img src="(\/info\/(?!shots\/)[^"]+\.(?:webp|png|jpe?g|avif))"([^>]*)>/g, (_m, src: string, rest: string) => {
-    const file = src.slice('/info/'.length);
-    const path = resolve(outDir, file);
-    const cred = shotCredential(file, 'shot-cred--asset', { path, src });
-    // Untouched, not re-emitted: an asset with no credential keeps the exact tag the
-    // image pass produced, so this rewrite can only ever ADD a wrapper — and a measured
-    // size is never silently dropped from an image on its way through.
-    if (!cred) return _m;
-    const size = shotSize(file, path);
-    const dims = size ? ` width="${size.w}" height="${size.h}"` : '';
-    // NOT `.shot`: that class carries the screenshot settle (opacity 0 until the
-    // observer lands it on decode), and page artwork is not a screenshot — the hero
-    // sizes itself, is not lazy-revealed, and inside the settle wrapper it never
-    // loaded at all, so the picture the page is arguing about rendered as blank
-    // space. All the credential actually needs from a wrapper is a positioned box.
-    return `<span class="asset-cred" data-shot="${src}"><img src="${src}"${dims}${rest}>${cred}</span>`;
-  });
-  // External links (absolute http/https) open in a new tab; internal/relative links
-  // (other /info pages, #anchors) stay in place.
-  s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_m, label, url) =>
-    /^https?:\/\//i.test(url)
-      ? `<a href="${url}" target="_blank" rel="noopener">${label}</a>`
-      : `<a href="${url}">${label}</a>`);
-  // Technology marks: `<!--l:helm-->` in the prose becomes the Helm mark, inline.
-  // An HTML comment for the same reason the `<!--i:key-->` bullet marker is one — it
-  // is invisible wherever the .md is read as markdown (GitHub, the /info twin), so a
-  // page carries its marks without carrying noise for readers who never see the CSS.
-  //
-  // Matched POST-esc (`&lt;!--l:key--&gt;`), like the provenance pills above: esc()
-  // runs on line 1 of this function, so by here every `<` in the source is already an
-  // entity, and a pre-esc pattern would never fire. LAST of the passes on purpose —
-  // the emitted <svg> then meets no further regex, so nothing in a path's `d` can be
-  // mistaken for markdown.
-  s = s.replace(/&lt;!--l:([a-z0-9-]+)--&gt;/g, (_m, key: string) => docLogo(key));
-  return s;
+// inline() binds the build-time docCtx to the shared renderer (@lolly-tools/docs-render).
+// The pass order, the darkFor channel and every impure-fact source now live in the package;
+// this wrapper keeps build.ts's ~17 inline() call sites (buildLandingContent) unchanged.
+function inline(text: string): string {
+  return pkgInline(text, docCtx);
 }
 
 /**
@@ -732,33 +613,8 @@ function shotRecipe(slug: string): ShotDef | null {
   return shotRecipes.get(slug) ?? null;
 }
 
-/**
- * A number grouped the way the page's own locale groups it: 6,689 on /info, 6.689
- * on /info/de. "6689 paths" is a number the eye has to count; "6,689 paths" is a
- * quantity. Digits follow whatever CLDR says for the tag, which for every locale the
- * site ships is the Latin set.
- */
-function localeNum(v: number): string {
-  try { return v.toLocaleString(LANG_META[activeLang]?.htmlLang ?? activeLang); }
-  catch { return String(v); }
-}
-
-// A big count as an easy-to-read magnitude: exact below 1,000, then ~1.5k, ~15k,
-// ~999k, and ~1.0m from there up. The node count on a text-heavy shot runs to tens
-// of thousands, where an exact "14,108" is a number the eye stops to read; "~14k" is
-// the same fact at a glance. Small shots stay exact, so the number is still checkable
-// against the file for the shots where checking it by hand is even plausible.
-function approxCount(n: number): string {
-  if (n < 1000) return localeNum(n);
-  if (n < 999_500) {
-    const k = n / 1000;
-    // One decimal below 10k (~1.5k, ~9.9k), whole thousands above (~15k, ~999k).
-    // Decide the branch on the ROUNDED value so 9,999 reads "~10k", not "~10.0k".
-    const oneDec = Math.round(k * 10) / 10;
-    return `~${oneDec < 10 ? oneDec.toFixed(1) : String(Math.round(k))}k`;
-  }
-  return `~${(n / 1_000_000).toFixed(1)}m`;
-}
+// localeNum + approxCount now live in @lolly-tools/docs-render (they take htmlLang as a
+// param there); the credential assembly is the only thing that used them and it moved too.
 
 /**
  * The credential line a screenshot carries: a photo-credit in the corner, except
@@ -793,187 +649,17 @@ function approxCount(n: number): string {
  * which is the whole line's state — see the CSS — and the line is bottom-anchored so
  * its second row never moves the resting glyph.
  */
-/**
- * "Try it in the app", under a shot, pointing at the exact route the shot was taken
- * from — which the recipe already carries, so the link cannot drift from the picture.
- *
- * Opt-in per recipe (`try=1`), for the same reason the credential is a hover: an offer
- * repeated under all 150 shots stops being an offer. Reach for it where the reader
- * could plausibly want to do the thing being shown — a tool, a view, a live editor —
- * and leave it off cropped controls and anatomy diagrams.
- *
- * It is deliberately NOT part of the credential line. That line is about the FILE (who
- * signed these bytes, what they are made of); this is about the PRODUCT, and folding a
- * "go and play" link into a provenance record muddies both. Same reason it renders in
- * the flow under the picture rather than in the overlay on top of it.
- *
- * Domain-relative, because the docs are served by the app: the link works on
- * lolly.tools, on a preview deployment, on localhost and on a self-host, and it opens
- * in place like every other internal link on the site.
- */
-function shotTryLink(file: string): string {
-  const def = shotRecipe(file.split('.')[0] ?? '');
-  if (!def?.tryIt || !def.route.startsWith('/')) return '';
-  return `<a class="shot-try" href="${esc(def.route)}">${esc(t('Try it in the app'))}</a>`;
-}
+// shotTryLink now lives in @lolly-tools/docs-render's render.ts (as `shotTry`, driven by
+// docCtx.tryLink) — inline() moved with it, and nothing else in build.ts used it.
 
 let credSeq = 0;
+// The credential's HTML assembly now lives in @lolly-tools/docs-render's renderCredential
+// (shared with the in-app docs view); the FACTS come from docCtx.credential, read off the
+// served bytes. `from` names a page ASSET (mascot, hero) or banked ART; a bare shot passes
+// none. This thin wrapper keeps every call site unchanged.
 function shotCredential(file: string, extraClass = '', from?: { path: string; src: string; art?: boolean }): string {
-  // `from` is how a PAGE ASSET (the AI stance hero, say) gets the same line: the
-  // facts still come from the served bytes, they just live somewhere other than
-  // docs/shots. Everything below reads the file it was handed, so a non-shot needs
-  // no second implementation — and no recipe, which is why shotRecipe is allowed to
-  // come back empty here.
-  const path = from?.path ?? resolve(__dirname, 'shots', file);
-  const p = readShotProvenance(path);
-  if (!p) return '';
-  const src = from?.src ?? `/info/shots/${file}`;
-  const id = `shot-cred-${++credSeq}`;
-  const ext = (file.split('.').pop() ?? '').toUpperCase();
-  // "vector SVG" earns its adjective; a raster says only what it is.
-  const kind = ext === 'SVG' ? `${t('vector')} SVG` : ext;
-  const day = p.when?.slice(0, 10) ?? null;
-  const anat = readShotAnatomy(path);
-  // A slug never contains a dot (kebab-case, enforced by the recipe parser), so the
-  // first segment is the recipe's filename= whichever variant is being credited:
-  // <slug>.svg, <slug>.de.svg, <slug>.dark.svg, <slug>.de.dark.svg.
-  //
-  // BANKED ART HAS NO RECIPE, and must not borrow one: ids in the two banks are
-  // slugs like a shot's, so `trust-hero.svg` in docs/mastheads/ would otherwise
-  // inherit the capture facts of a `trust-hero` SCREENSHOT — a viewport and a
-  // renderer that describe a different file entirely.
-  const def = from?.art ? null : shotRecipe(file.split('.')[0] ?? '');
-
-  // ONE row, three facts, two actions. The shots are 236px wide in places, and a
-  // credit that wraps to four rows ends up taller than the artwork it credits. That
-  // rule is about WRAPPING, and it still holds: nothing joins this row. The anatomy
-  // facts get a row of their own below, four short pills that cannot push these five
-  // items into a wrap, and the two rows together are still shorter than the stack
-  // this rule was written to prevent.
-  // Everything omitted from both (engine version, the rest of the recipe) is on the
-  // other end of the verify link, which is the right place for the long form — and
-  // the summary of it stays in the trigger's accessible label below.
-  const bits: string[] = [];
-  if (p.signer) {
-    bits.push(`<span class="prov-pill prov-sig">${PROV_SEAL}${esc(t('signed by'))} `
-      + `<span class="prov-pill prov-entity">${esc(p.signer)}</span></span>`);
-  }
-  // A page ASSET (an animal mascot, the AI stance hero) names the served FILE in its
-  // line, so the reader can see exactly which bytes carry this credential. A screenshot
-  // omits it: its slug is already its identity and the width-limited row has no room to
-  // spare. Basename only — the full path is in the download link.
-  if (from) bits.push(`<span class="prov-pill prov-detail prov-file">${esc(file.split('/').pop() ?? file)}</span>`);
-  if (kind) bits.push(`<span class="prov-pill prov-detail">${esc(kind)}</span>`);
-  if (day) bits.push(`<time class="prov-pill prov-detail" datetime="${esc(day)}">${esc(day)}</time>`);
-  // An AI declaration is the one fact that must never be tucked behind a hover, so
-  // it stays in the line AND in the trigger's label, and lights the glyph up.
-  if (p.ai) bits.push(`<span class="prov-pill prov-entity">${esc(t(p.ai === 'generated' ? 'AI generated' : 'AI edited'))}</span>`);
-  // …and WHICH model, when the file's §18.28 ai-disclosure names one. "AI generated"
-  // on its own is the fact a reader is owed; the model name is the fact that makes it
-  // checkable, and it is the one thing the 2.4 shortcut (a bare digitalSourceType on
-  // a manifest-less ingredient) would have cost us — see plan §7. Shaped like the
-  // "signed by <entity>" pill because it answers the same kind of question about the
-  // same file. The oversight level rides in the label below, not here: this row is
-  // width-bound to one line, and "prompt_guided" needs a sentence, not a chip.
-  if (p.model) {
-    bits.push(`<span class="prov-pill prov-act prov-model">${esc(t('generated by'))} `
-      + `<span class="prov-pill prov-entity">${esc(p.model)}</span></span>`);
-  }
-
-  // The second row: what the file is made of. Short facts, no verbs, no actions — the
-  // same detail weight as the pills above, one step down the page. It renders only when
-  // there is something to say, so a shot whose file cannot be read keeps exactly the
-  // line it has today.
-  //
-  // Every pill here is a fact about the SERVED BYTES, checkable against the file the
-  // reader was just handed. That is deliberate and it is why the recipe's capture
-  // viewport is NOT among them: it describes the request, not the artwork, disagrees
-  // with the shipped file on most shots, and cannot be verified against them — a
-  // measured-looking number that isn't. It stays in the accessible label, where it is
-  // clearly context, not a property of the image.
-  const detail = (s: string) => `<span class="prov-pill prov-detail">${esc(s)}</span>`;
-  const facts: string[] = [];
-  if (anat?.kind === 'vector') {
-    // Never "0 paths" — the pill exists to make the vector claim, and a zero would
-    // unmake it. A shot with real geometry leads with its shapes; the dozen that draw
-    // only <rect>/<text> (no <path>) carry the claim on their group and element counts
-    // instead. An SVG that embeds bitmaps says so, so "134 paths · 2 images" is the
-    // whole truth rather than a flattering half of it.
-    if (anat.paths > 0) facts.push(detail(`${localeNum(anat.paths)} ${t(anat.paths === 1 ? 'path' : 'paths')}`));
-    // Nodes elaborate paths: the anchor vertices those paths are built from. A dozen
-    // outlined-text paths hide thousands of them, which is the vector claim made vivid.
-    if (anat.nodes > 0) facts.push(detail(`${approxCount(anat.nodes)} ${t(anat.nodes === 1 ? 'node' : 'nodes')}`));
-    if (anat.groups > 0) facts.push(detail(`${localeNum(anat.groups)} ${t(anat.groups === 1 ? 'group' : 'groups')}`));
-    if (anat.paths === 0 && anat.groups === 0) {
-      facts.push(detail(`${localeNum(anat.elements)} ${t(anat.elements === 1 ? 'element' : 'elements')}`));
-    }
-    if (anat.images > 0) facts.push(detail(`${localeNum(anat.images)} ${t(anat.images === 1 ? 'image' : 'images')}`));
-  } else if (anat) {
-    // A raster — a PNG baseline, or an .svg that is only a wrapper around embedded
-    // bitmaps — has no shapes to count, and a blank where the paths go would read as
-    // "we did not check". Say the honest thing instead.
-    facts.push(detail(t('pixels, not shapes')));
-  }
-  // KB, no decimals: the point of the number is the order of magnitude (this corpus
-  // went from megabytes to tens of kilobytes when it left the print path), and ".4"
-  // of a kilobyte is precision nobody asked for.
-  if (anat) facts.push(detail(`${localeNum(Math.round(anat.bytes / 1024))} KB`));
-
-  // The label is the button's own accessible name, and it is where the facts the
-  // visible row has no width for live: the full element count, which renderer drew the
-  // file, and the recipe's capture viewport (context about the request, not a property
-  // of the bytes, which is why it is here and not in the row). These are read only from
-  // the collapsed button; the expanded row carries the shorter, checkable form.
-  const shotAt = def?.width && def.height
-    ? `${localeNum(def.width)} × ${localeNum(def.height)}${def.dpi ? ` @ ${localeNum(def.dpi)} dpi` : ''}` : '';
-  const structure = anat?.kind === 'vector'
-    ? `${localeNum(anat.elements)} ${t(anat.elements === 1 ? 'element' : 'elements')}` : '';
-  const how = anat?.kind === 'vector' && def
-    ? t(def.walker ? 'captured with the HTML walker' : 'captured with the print path') : '';
-  const label = [p.ai ? t(p.ai === 'generated' ? 'AI generated' : 'AI edited') : '', t('Content Credentials'),
-    p.signer ? `${t('signed by')} ${p.signer}` : '', kind, p.dimensions, day, p.generator,
-    // The model, and the human-oversight level §18.28.3 pairs it with. The level is
-    // the file's own vocabulary (fully_autonomous / prompt_guided / human_validated),
-    // so it is read out verbatim rather than translated into a phrase the manifest
-    // does not contain — /verify is where it gets explained.
-    p.model ? `${t('generated by')} ${p.model}` : '', p.oversight ?? '',
-    structure, shotAt, how].filter(Boolean).join(' — ');
-
-  // A page asset's line rests OPEN (see the CSS): on a screenshot the mark is a way
-  // in for the reader who goes looking, but on the AI stance hero the provenance IS
-  // the point of the picture, so hiding it behind a hover would be the page arguing
-  // one thing and behaving as another. Open at rest means aria-expanded can be true
-  // in the markup — the reason the hover-only ones cannot say so is that their state
-  // is CSS the script does not know about — and `data-static` keeps the tap/Escape
-  // script off it, so nothing can close a line that has no closed state.
-  // A figure's line rests open for the same reason: it sits in a <figcaption>, where
-  // a mark that only appears on hover would be a caption that hides half of itself.
-  const restsOpen = extraClass.includes('shot-cred--asset') || extraClass.includes('shot-cred--figure');
-  // "Copy signed source" — offered ONLY where the served file is source text somebody
-  // can paste (the banked SVG/HTML art), never on a screenshot: a PNG's bytes are not
-  // something a clipboard can usefully hold, and an action that fails on 150 of 155
-  // lines is not an action. Both feedback words travel as DATA on the button rather
-  // than as literals in the shared script, so a locale page speaks its own language
-  // while every page runs the same bytes of JavaScript.
-  const copy = from?.art
-    ? `<button type="button" class="shot-cred-do shot-cred-copy" data-copy-src="${esc(src)}"`
-      + ` data-copied="${esc(t('Copied'))}" data-copy-failed="${esc(t('Copy failed'))}">`
-      // aria-live on the label, not on the button: the word swaps in place, and a
-      // sighted reader gets the confirmation from the same pixels a screen-reader
-      // user gets it from — one message, not a second hidden one to keep in step.
-      + `<span class="shot-cred-copy-label" aria-live="polite">${esc(t('Copy signed source'))}</span></button>`
-    : '';
-  return `<span class="shot-cred${p.ai ? ' shot-cred--ai' : ''}${extraClass ? ` ${extraClass}` : ''}"${restsOpen ? ' data-static' : ''}>`
-    + `<button type="button" class="shot-cred-btn" aria-expanded="${restsOpen}" aria-controls="${id}" aria-label="${esc(label)}">`
-    + `${docIcon('imprint')}</button>`
-    + `<span class="shot-cred-line" id="${id}">`
-    + `<span class="shot-cred-row">${bits.join('')}`
-    + `<a class="shot-cred-do" href="/#/verify?src=${encodeURIComponent(src)}">${esc(t('Check it yourself'))}</a>`
-    + `<a class="shot-cred-do" href="${src}" download>${esc(t('Get the signed file'))}</a>`
-    + copy
-    + `</span>`
-    + (facts.length ? `<span class="shot-cred-row shot-cred-anat">${facts.join('')}</span>` : '')
-    + `</span></span>`;
+  const facts = docCtx.credential(file, from ? { assetSrc: from.src, art: from.art } : undefined);
+  return renderCredential(facts, { file, extraClass, fromPresent: !!from }, docCtx);
 }
 
 /**
@@ -1116,70 +802,10 @@ function shotSize(file: string, from?: string): { w: number; h: number } | null 
  * (scripts/build-docs-shots.ts, which regex-scans every docs page) still captures,
  * compares and credentials it exactly like the other 154.
  */
-function buildShowcase(body: string): string {
-  const recipe = /!\[([^\]]*)\]\((\/t\/url-shot\?[^)\s]+)\)/.exec(body);
-  const caption = body.replace(recipe?.[0] ?? '', '').trim();
-  const bail = (why: string) => {
-    // Loud, and still renders: a showcase that cannot be inlined falls back to the
-    // ordinary <img> path rather than dropping the screenshot off the page.
-    console.warn(`⚠  ::: showcase — ${why}; falling back to a plain screenshot`);
-    return mdToHtml(body);
-  };
-  if (!recipe) return bail('no url-shot recipe line inside the fence');
+// buildShowcase (::: showcase) now lives in @lolly-tools/docs-render's render.ts, driven by
+// docCtx.showcase; mdToHtml moved with it.
 
-  const q = new URLSearchParams(recipe[2]!.slice(recipe[2]!.indexOf('?') + 1));
-  const slug = q.get('filename');
-  const fmt  = (q.get('format') || 'svg').toLowerCase();
-  if (!slug) return bail('the recipe has no filename= param');
-  if (fmt !== 'svg') return bail(`${slug} is captured as ${fmt} — only a vector shot can be inlined`);
-
-  const file = `${slug}.svg`;
-  const path = resolve(__dirname, 'shots', file);
-  if (!existsSync(path)) return bail(`docs/shots/${file} has not been captured yet`);
-
-  // The viewBox is read HERE, at build time, even though the SVG itself is fetched
-  // in the browser: it is the camera's start and end frame, so a shot that could
-  // never animate (no viewBox) has to fail during the build, loudly, rather than
-  // silently render a still image in production.
-  const vb = /viewBox="([\d.\-\s]+)"/.exec(readFileSync(path, 'utf-8'))?.[1]?.trim().split(/\s+/).map(Number);
-  if (!vb || vb.length !== 4 || vb.some(n => !Number.isFinite(n))) return bail(`${file} has no usable viewBox`);
-
-  const alt  = esc(recipe[1] ?? '');
-  const size = shotSize(file);
-  const dims = size ? ` width="${size.w}" height="${size.h}"` : '';
-  return `<figure class="showcase" data-viewbox="${vb.join(' ')}" data-shot="/info/shots/${file}">
-  <div class="showcase-stage"><img src="/info/shots/${file}" alt="${alt}"${dims} class="showcase-fallback">${shotCredential(file)}</div>
-  ${caption ? `<figcaption>${mdToHtml(caption)}</figcaption>` : ''}
-</figure>`;
-}
-
-function parseCells(line: string) {
-  let s = line.trim();
-  if (s.startsWith('|')) s = s.slice(1);
-  if (s.endsWith('|'))   s = s.slice(0, -1);
-  return s.split('|').map(c => c.trim());
-}
-
-/**
- * The id a heading gets in the rendered HTML — and therefore the anchor the
- * search index links to.
- *
- * Latin headings keep the historical derivation byte for byte. A heading that
- * strips to nothing falls back to its position on the page: the character class
- * is `[a-z0-9]`, so EVERY heading in a non-Latin locale (zh, ja, ko, ar, hi, bn,
- * ur, uk, bg, …) used to render `id=""` — the same empty id on all of them, which
- * is invalid and makes every deep link into those pages dead. The fallback is
- * positional rather than transliterated so it stays stable and script-agnostic.
- */
-function headingId(text: string, ordinal: number): string {
-  // A `<!--l:key-->` mark in the heading is decoration, not part of its name — the
-  // id must be the one the heading had before the mark was added, or every existing
-  // deep link and every sidebar/search anchor into that section dies the day a
-  // decorative glyph lands on it.
-  const named = text.replace(/<!--l:[a-z0-9-]+-->/g, ' ');
-  const slug = named.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-  return slug || `section-${ordinal}`;
-}
+// parseCells + headingId now live in @lolly-tools/docs-render (imported above).
 
 // ── Search index ─────────────────────────────────────────────────────────────
 // One record per SECTION, not per page: 41 pages is a list you can read, but the
@@ -1242,276 +868,14 @@ function indexSections(html: string, slug: string, title: string): SearchRecord[
   return records;
 }
 
-/** Authoring comments (shot notes, capture instructions) are working metadata,
- *  never page content — the escaper renders an unstripped one as VISIBLE text,
- *  which shipped once (collaborate.html + three more, 2026-08-10). Stripped in a
- *  pre-pass because the figure builder consumes comment lines that trail an image
- *  before the line loop can skip them. Fence-aware (a ``` example may SHOW a
- *  comment), and the CONTENT tokens survive — `<!--i:name-->` (the list renderer
- *  consumes those on purpose), `<!--l:name-->` (inline() turns those into an inline
- *  technology mark) and `<!--lb:a b-->` (a whole-line block of them). All three are
- *  matched by one lookahead, so a token that renders is never a token this pass
- *  eats. */
-const CONTENT_TOKEN = 'i:[a-z-]+-->|l:[a-z0-9-]+-->|lb:[a-z0-9 -]+-->';
-function stripAuthoringComments(md: string): string {
-  const lines = md.split('\n');
-  const out: string[] = [];
-  let inFence = false;
-  let inComment = false;
-  for (const line of lines) {
-    if (!inComment && line.startsWith('```')) { inFence = !inFence; out.push(line); continue; }
-    if (inFence) { out.push(line); continue; }
-    if (inComment) {
-      const close = line.indexOf('-->');
-      if (close === -1) continue;
-      inComment = false;
-      const rest = line.slice(close + 3);
-      if (rest.trim()) out.push(rest);
-      continue;
-    }
-    // Inline complete comments: drop all except the content tokens.
-    let kept = line.replace(new RegExp(`<!--(?!${CONTENT_TOKEN})[\\s\\S]*?-->`, 'g'), '');
-    // An unclosed opener (not a content token) starts a multi-line comment.
-    const open = kept.search(new RegExp(`<!--(?!${CONTENT_TOKEN})`));
-    if (open !== -1) {
-      inComment = true;
-      kept = kept.slice(0, open);
-    }
-    if (kept !== line && !kept.trim()) continue; // a line that was ONLY comment
-    out.push(kept);
-  }
-  return out.join('\n');
-}
+// CONTENT_TOKEN + stripAuthoringComments now live in @lolly-tools/docs-render (imported above).
 
-function mdToHtml(md: string) {
-  const lines = stripAuthoringComments(md).split('\n');
-  const out: string[] = [];
-  let headingOrdinal = 0;
-  let i = 0;
-
-  while (i < lines.length) {
-    const line = lines[i]!;
-
-    // `::: cols` … `:::` puts the sections inside side by side, splitting at each
-    // `## ` heading. Markdown cannot express a column band and the alternative was
-    // hand-written HTML in the page, which the escaping (deliberately) forbids.
-    // Falls back to normal stacked rendering on narrow screens via CSS alone.
-    if (line.trim().startsWith(':::')) {
-      const label = line.trim().slice(3).trim();
-      i++;
-      const inner: string[] = [];
-      // Depth-aware so a fence can hold another one (a timeline inside a column).
-      let depth = 1;
-      while (i < lines.length) {
-        const t = lines[i]!.trim();
-        if (t.startsWith(':::') && t.length > 3) depth++;
-        else if (t === ':::') { depth--; if (!depth) break; }
-        inner.push(lines[i]!); i++;
-      }
-      i++; // the closing fence
-      const body = inner.join('\n');
-      if (label === 'cols') {
-        const parts = body.split(/\n(?=## )/).filter(p => p.trim());
-        out.push(`<div class="md-cols">${parts.map(part => `<div class="md-col">${mdToHtml(part)}</div>`).join('')}</div>`);
-      } else if (label === 'timeline') {
-        // An icon list drawn as a sequence: a rail joining each step. Marked
-        // explicitly rather than inferred from position, so moving a list around
-        // the page cannot silently turn the timeline on or off.
-        out.push(`<div class="md-timeline">${mdToHtml(body)}</div>`);
-      } else if (label === 'showcase') {
-        out.push(buildShowcase(body));
-      } else if (parseFigureFence(label)) {
-        // `::: figure <id>` — the id line is canonical (the same token in every
-        // locale copy of this page), the lines inside are the caption and translate
-        // like any other prose.
-        out.push(buildFigure(parseFigureFence(label)!, body));
-      } else {
-        out.push(mdToHtml(body));
-      }
-      continue;
-    }
-
-    // A whole-line `<!--lb:kubernetes helm-->` is a block of its own, handled here
-    // rather than in inline(): it is not part of a sentence, and going through the
-    // paragraph branch would wrap the row in a <p> whose margins fight the band of
-    // space this is for. Anything else on the line means it was meant as prose, so
-    // it falls through to the ordinary passes and the inline `<!--l:…-->` form.
-    const lb = /^<!--lb:([a-z0-9 -]+)-->$/.exec(line.trim());
-    if (lb) {
-      out.push(docLogoBlock(lb[1]!.trim().split(/\s+/)));
-      i++; continue;
-    }
-
-    if (line.startsWith('```')) {
-      const lang = line.slice(3).trim();
-      const code: string[] = [];
-      i++;
-      while (i < lines.length && !lines[i]!.startsWith('```')) { code.push(lines[i]!); i++; }
-      i++;
-      out.push(`<pre><code${lang ? ` class="language-${esc(lang)}"` : ''}>${esc(code.join('\n'))}</code></pre>`);
-      continue;
-    }
-
-    const hm = line.match(/^(#{1,4}) (.+)/);
-    if (hm) {
-      const lvl = hm[1]!.length, text = hm[2]!;
-      const id = headingId(text, ++headingOrdinal);
-      out.push(`<h${lvl} id="${id}">${inline(text)}</h${lvl}>`);
-      i++; continue;
-    }
-
-    if (line.startsWith('> ')) {
-      // Join hard-wrapped quote lines into real paragraphs (a bare `>` line is
-      // the separator) — one <p> per SOURCE LINE broke the reading flow at the
-      // author's wrap points.
-      const ql: string[] = [];
-      while (i < lines.length && lines[i]!.startsWith('>')) { ql.push(lines[i]!.replace(/^>\s?/, '')); i++; }
-      const paras = ql.join('\n').split(/\n\s*\n/).map(p => p.replace(/\s*\n\s*/g, ' ').trim()).filter(Boolean);
-      out.push(`<blockquote>${paras.map(p => `<p>${inline(p)}</p>`).join('')}</blockquote>`);
-      continue;
-    }
-
-    if (/^-{3,}$/.test(line.trim())) { out.push('<hr>'); i++; continue; }
-
-    // A standalone self-closing <img …/> line (the README hero icon). All other
-    // raw HTML stays escaped by design (that's what keeps pages audit-free); an
-    // image is safe to honour because only this whitelisted attribute set is
-    // re-emitted, re-escaped. Relative srcs are rooted at /info/ so the same tag
-    // resolves from GitHub (repo root), /info/x.html AND /info/<lang>/x.html.
-    const im = line.trim().match(/^<img\s+([^<>]*?)\/?>$/i);
-    if (im) {
-      const attrs: Record<string, string> = {};
-      for (const m of im[1]!.matchAll(/([a-zA-Z-]+)\s*=\s*"([^"]*)"/g)) attrs[m[1]!.toLowerCase()] = m[2]!;
-      const rawSrc = attrs['src'] ?? '';
-      const isHttp = /^https?:\/\//i.test(rawSrc);
-      const isSchemeless = !/^[a-z][a-z+.-]*:/i.test(rawSrc); // no javascript:/data:/etc.
-      if (rawSrc && (isHttp || isSchemeless)) {
-        const src = isSchemeless && !rawSrc.startsWith('/') ? `/info/${rawSrc}` : rawSrc;
-        const extra = (['alt', 'width', 'height'] as const)
-          .filter(k => attrs[k] != null).map(k => ` ${k}="${esc(attrs[k]!)}"`).join('');
-        out.push(`<p class="md-img"><img src="${esc(src)}"${extra} loading="lazy" decoding="async"></p>`);
-        i++; continue;
-      }
-    }
-
-    // A standalone <audio> line, honoured on the same terms as the <img> above:
-    // a closed attribute whitelist, re-emitted re-escaped, so allowing a player
-    // does not become a general raw-HTML hole. `captions` becomes a <track>, which
-    // is not optional here in practice — spoken words a deaf reader cannot reach
-    // are not published words (see inclusive-design.md).
-    const au = line.trim().match(/^<audio\s+([^<>]*?)\s*(?:\/>|><\/audio>)$/i);
-    if (au) {
-      const attrs: Record<string, string> = {};
-      for (const m of au[1]!.matchAll(/([a-zA-Z-]+)\s*=\s*"([^"]*)"/g)) attrs[m[1]!.toLowerCase()] = m[2]!;
-      const rawSrc = attrs['src'] ?? '';
-      const rooted = (s: string) => (!/^[a-z][a-z+.-]*:/i.test(s) && !s.startsWith('/') ? `/info/${s}` : s);
-      if (rawSrc && !/^(?!https?:)[a-z][a-z+.-]*:/i.test(rawSrc)) {
-        const cap = attrs['captions'] ? rooted(attrs['captions']) : '';
-        const track = cap
-          ? `<track kind="captions" src="${esc(cap)}" srclang="en" label="${esc(attrs['label'] ?? 'Captions')}" default>`
-          : '';
-        out.push(
-          `<figure class="doc-audio"><audio controls preload="none" src="${esc(rooted(rawSrc))}">${track}</audio></figure>`,
-        );
-        i++; continue;
-      }
-    }
-
-    // A standalone <video> line — the same closed-whitelist treatment as <audio>
-    // above. This is how a credentialed audiogram MP4 lands on a page: audio
-    // containers can't carry Content Credentials (Opus/WAV aren't C2PA formats),
-    // but an MP4 can, so a "verify this" narration ships as video. Same `captions`
-    // rule (a deaf reader must reach the words); `poster` is the still shown before
-    // play (the audiogram's loudest-frame poster). Attributes beyond the whitelist
-    // are dropped, so allowing a player is not a general raw-HTML hole.
-    const vid = line.trim().match(/^<video\s+([^<>]*?)\s*(?:\/>|><\/video>)$/i);
-    if (vid) {
-      const attrs: Record<string, string> = {};
-      for (const m of vid[1]!.matchAll(/([a-zA-Z-]+)\s*=\s*"([^"]*)"/g)) attrs[m[1]!.toLowerCase()] = m[2]!;
-      const rawSrc = attrs['src'] ?? '';
-      const rooted = (s: string) => (!/^[a-z][a-z+.-]*:/i.test(s) && !s.startsWith('/') ? `/info/${s}` : s);
-      if (rawSrc && !/^(?!https?:)[a-z][a-z+.-]*:/i.test(rawSrc)) {
-        const cap = attrs['captions'] ? rooted(attrs['captions']) : '';
-        const track = cap
-          ? `<track kind="captions" src="${esc(cap)}" srclang="en" label="${esc(attrs['label'] ?? 'Captions')}" default>`
-          : '';
-        const poster = attrs['poster'] ? ` poster="${esc(rooted(attrs['poster']))}"` : '';
-        const dims = (['width', 'height'] as const)
-          .filter(k => /^\d+$/.test(attrs[k] ?? '')).map(k => ` ${k}="${esc(attrs[k]!)}"`).join('');
-        out.push(
-          `<figure class="doc-audio doc-video"><video controls playsinline preload="none"${poster}${dims} src="${esc(rooted(rawSrc))}">${track}</video></figure>`,
-        );
-        i++; continue;
-      }
-    }
-
-    if (line.includes('|') && i + 1 < lines.length && /^\|?[-|: ]+\|/.test(lines[i + 1]!)) {
-      const headers = parseCells(line);
-      i += 2;
-      const rows: string[][] = [];
-      while (i < lines.length && lines[i]!.trim().startsWith('|')) { rows.push(parseCells(lines[i]!)); i++; }
-      out.push('<div class="table-wrap"><table>');
-      out.push('<thead><tr>' + headers.map(c => `<th>${inline(c)}</th>`).join('') + '</tr></thead>');
-      out.push('<tbody>' + rows.map(r => '<tr>' + r.map(c => `<td>${inline(c)}</td>`).join('') + '</tr>').join('') + '</tbody>');
-      out.push('</table></div>');
-      continue;
-    }
-
-    // A hard-wrapped list item continues on indented follow-up lines (standard
-    // markdown lazy continuation). Without absorbing them the tail of every
-    // wrapped bullet fell through to the paragraph branch and rendered as its
-    // own <p> OUTSIDE the list — mid-sentence. Indented code fences inside a
-    // list item are NOT absorbed (they keep their existing rendering).
-    const itemContinues = () =>
-      i < lines.length && /^\s+\S/.test(lines[i]!) &&
-      !/^\s*[-*] /.test(lines[i]!) && !/^\s*\d+\. /.test(lines[i]!) &&
-      !lines[i]!.trim().startsWith('```');
-
-    if (/^\s*[-*] /.test(line)) {
-      // Buffered so the <ul> can learn whether any item carried an icon marker.
-      const items: string[] = [];
-      let anyIcon = false;
-      while (i < lines.length && /^\s*[-*] /.test(lines[i]!)) {
-        const item = [lines[i]!.replace(/^\s*[-*] /, '')]; i++;
-        while (itemContinues()) { item.push(lines[i]!.trim()); i++; }
-        let text = item.join(' ');
-        // `<!--i:key-->` opens the bullet with a doc icon (invisible on GitHub).
-        const im2 = /^<!--i:([a-z-]+)-->\s*/.exec(text);
-        const iconSvg = im2 ? docIcon(im2[1]!) : '';
-        if (im2) text = text.slice(im2[0].length);
-        if (iconSvg) {
-          anyIcon = true;
-          items.push(`<li class="ic"><span class="li-icon">${iconSvg}</span><span>${inline(text)}</span></li>`);
-        } else items.push(`<li>${inline(text)}</li>`);
-      }
-      out.push(`<ul${anyIcon ? ' class="icon-list"' : ''}>`, ...items, '</ul>'); continue;
-    }
-
-    if (/^\d+\. /.test(line)) {
-      out.push('<ol>');
-      while (i < lines.length && /^\d+\. /.test(lines[i]!)) {
-        const item = [lines[i]!.replace(/^\d+\. /, '')]; i++;
-        while (itemContinues()) { item.push(lines[i]!.trim()); i++; }
-        out.push(`<li>${inline(item.join(' '))}</li>`);
-      }
-      out.push('</ol>'); continue;
-    }
-
-    if (line.trim() === '') { i++; continue; }
-
-    const para: string[] = [];
-    while (
-      i < lines.length && lines[i]!.trim() !== '' &&
-      !lines[i]!.startsWith('#') && !lines[i]!.startsWith('```') &&
-      !lines[i]!.startsWith('> ') && !/^\s*[-*] /.test(lines[i]!) &&
-      !/^\d+\. /.test(lines[i]!) && !/^-{3,}$/.test(lines[i]!.trim()) &&
-      !(lines[i]!.includes('|') && i + 1 < lines.length && /^\|?[-|: ]+\|/.test(lines[i + 1]!))
-    ) { para.push(lines[i]!); i++; }
-    if (para.length) out.push(`<p>${inline(para.join(' '))}</p>`);
-    else i++;
-  }
-
-  return out.join('\n');
+// mdToHtml() binds the build-time docCtx to the shared block renderer
+// (@lolly-tools/docs-render). The block loop, the ::: fence dispatch (cols/timeline/
+// showcase/figure) and headingOrdinal locality now live in the package; this wrapper keeps
+// build.ts's mdToHtml(md) call sites (page render, FAQ, opensource, landing) unchanged.
+function mdToHtml(md: string): string {
+  return pkgMdToHtml(md, docCtx);
 }
 
 // ── FAQ source ────────────────────────────────────────────────────────────────
@@ -1573,6 +937,11 @@ const SITE_ICONS: Record<string, string> = {
   anxiety: `<svg viewBox="0 0 24 24" ${SITE_ICON_S18}><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>`,
   bottleneck: `<svg viewBox="0 0 24 24" ${SITE_ICON_S18}><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>`,
   cloudDependence: `<svg viewBox="0 0 24 24" ${SITE_ICON_S18}><path d="M17.5 19a4.5 4.5 0 0 0 .5-8.97A6 6 0 0 0 6.3 8.4"/><path d="M13 16H7a4 4 0 0 1-.9-7.9"/><line x1="2" y1="2" x2="22" y2="22"/></svg>`,
+  // The third frustration became the toll gate (an account wall, a subscription that
+  // outlives the job, a charge at the download) when the offline pain moved into the
+  // sovereignty statement - plan 117 blocks 3 + 4. `cloudDependence` above stays: the
+  // 26 locale why.json twins still name it, and an unresolved key renders nothing.
+  tollGate: `<svg viewBox="0 0 24 24" ${SITE_ICON_S18}><rect x="2" y="5.5" width="20" height="13" rx="2.5"/><path d="M2 10.5h20"/><path d="M6 15h4"/></svg>`,
   // assure section
   assureCheck: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>`,
   assureEyeOff: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.9 4.24A9.1 9.1 0 0 1 12 4c7 0 10 8 10 8a13.2 13.2 0 0 1-1.67 2.68"/><path d="M6.6 6.6A13.5 13.5 0 0 0 2 12s3 8 10 8a9.7 9.7 0 0 0 5.4-1.6"/><line x1="2" y1="2" x2="22" y2="22"/></svg>`,
@@ -1777,6 +1146,15 @@ function englishAudienceH2s(): string[] {
 }
 
 
+// ═══ LANDING COPY REGION START ═══════════════════════════════════════════════
+// Everything between this marker and LANDING COPY REGION END composes the landing
+// page (plus the two bands the landing shares with their own pages), and
+// tests/docs-claims.test.ts reads it as SOURCE: the say-offline-once purge, the
+// competitor-name rule and the banned-word list are enforced against these bytes
+// (plans/117 §6, plans/116 §3). Sub-regions that are allowed to break one of those
+// rules are marked CLAIMS-ALLOW, each with the reason on the line - and the test
+// excuses exactly those, so an unmarked exception fails the build's test run.
+
 // The landing page states positions; the docs hold the reasoning, the caveats and
 // the mechanisms, and they are kept current in a way marketing copy never is. So
 // the trust section ends by handing the reader over to them rather than trying to
@@ -1785,13 +1163,13 @@ function englishAudienceH2s(): string[] {
 const ASSURE_DOC_LINKS = (lang: Lang) => {
   const links: { icon: string; label: string; desc: string; href: string }[] = [
     { icon: 'shieldcheck', label: t('Trust'), href: '/info/trust.html',
-      desc: t('Where content comes from, how to check it, and what happens to your data.') },
+      desc: t('Where content comes from, how to check it and what happens to your data.') },
     { icon: 'sparkle', label: t('Our AI Stance'), href: '/info/ai-stance.html',
       desc: t('AI as labour, never as impersonation - and the machinery that enforces it.') },
     { icon: 'convert', label: t('Why this differs'), href: '/info/status-quo.html',
       desc: t('The frictions you have been trained to accept, and what replaces them.') },
     { icon: 'lock', label: t('Security'), href: '/info/security.html',
-      desc: t('The cryptography, the threat model, and the limits stated as plainly as the guarantees.') },
+      desc: t('The cryptography, the threat model and the limits stated as plainly as the guarantees.') },
     { icon: 'people', label: t('Inclusive Design'), href: '/info/inclusive-design.html',
       desc: t('Accessibility, language coverage and the commitments we hold ourselves to.') },
   ];
@@ -1806,6 +1184,357 @@ const ASSURE_DOC_LINKS = (lang: Lang) => {
       </div>
     </div>`;
 };
+
+// ── Shared bands: composed here, rendered on MORE THAN ONE page ───────────────
+// Plan 117 block 9: heavy reference content leaves the landing for its own page,
+// and the page KEEPS the layout that made it readable. So the two bands that
+// moved are functions rather than in-line template literals - one layout, two
+// call sites, no second copy to drift.
+
+/**
+ * "Your design files aren't stranded" - the import band.
+ *
+ * Was the landing's `IMPORT_HTML`. It now opens `/info/design-import.html`, the
+ * page it always linked to, in the same visual treatment (plan 117 block 9); the
+ * landing keeps a one-line teaser. `cta: false` drops the "See how importing a
+ * design works" row on the page that row would only point back at.
+ */
+function importBand(lang: Lang, opts: { cta?: boolean } = {}): string {
+  const showCta = opts.cta !== false;
+  const importData = loadSiteJson('import.json', lang) as {
+    eyebrow: string; heading: string; lead: string;
+    sources: { mono: string; name: string; fmt: string; color: string }[];
+    flow: { icon: string; title: string; desc: string }[];
+    points: { icon: string; title: string; desc: string }[];
+    cta: string; ctaHref: string;
+  };
+  return `<section class="import-section">
+  <div class="import-inner">
+    <div class="import-lede reveal">
+      ${credentialedMascot('/info/mascots/kookaburra.png', 'import-mascot')}
+      <div class="import-lede-text">
+        <span class="import-eyebrow">${esc(importData.eyebrow)}</span>
+        <h2>${esc(importData.heading)}</h2>
+        <p class="import-lead">${inline(importData.lead)}</p>
+      </div>
+    </div>
+    <div class="import-sources reveal reveal-1">
+      ${importData.sources.map(s => `<div class="import-source">
+        <span class="import-badge" style="--b:${s.color}">${esc(s.mono)}</span>
+        <strong>${esc(s.name)}</strong>
+        <span class="import-fmt">${esc(s.fmt)}</span>
+      </div>`).join('\n      ')}
+    </div>
+    <div class="import-flow reveal reveal-2">
+      ${importData.flow.map((f, i) => `<div class="import-step">
+        <div class="import-step-icon">${siteIcon(f.icon)}</div>
+        <strong>${esc(f.title)}</strong>
+        <p>${esc(f.desc)}</p>
+      </div>${i < importData.flow.length - 1 ? '<span class="import-arrow" aria-hidden="true">→</span>' : ''}`).join('\n      ')}
+    </div>
+    <div class="import-points reveal reveal-3">
+      ${importData.points.map(p => `<div class="import-point">
+        <div class="import-point-icon">${siteIcon(p.icon)}</div>
+        <strong>${esc(p.title)}</strong>
+        <p>${esc(p.desc)}</p>
+      </div>`).join('\n      ')}
+    </div>
+    ${showCta ? `<div class="import-cta-row reveal reveal-4">
+      <a href="${esc(localizeHref(lang, importData.ctaHref))}" class="import-more">${esc(importData.cta)}</a>
+    </div>` : ''}
+  </div>
+</section>`;
+}
+
+// ── The formats register ─────────────────────────────────────────────────────
+// The structural data (tokens, direction, features, descriptions) lives in the
+// English-only docs/site/formats-catalog.json - format names are not translated.
+interface FmtEntry { token: string; name: string; full: string; category: string; dir: 'in' | 'out' | 'both'; features: string[]; desc: string; }
+interface FmtCatalog { features: Record<string, string>; specifics?: Record<string, string[]>; unsupported?: Record<string, string[]>; formats: FmtEntry[] }
+let _fmtCatalog: FmtCatalog | null = null;
+function formatCatalog(): FmtCatalog {
+  if (!_fmtCatalog) _fmtCatalog = loadSiteJson('formats-catalog.json') as FmtCatalog;
+  return _fmtCatalog;
+}
+/** in / out / round-trip counts, computed from the register's `dir` fields - never hard-coded. */
+function formatCounts() {
+  const f = formatCatalog().formats;
+  return {
+    in: f.filter(x => x.dir !== 'out').length,
+    out: f.filter(x => x.dir !== 'in').length,
+    both: f.filter(x => x.dir === 'both').length,
+    inOnly: f.filter(x => x.dir === 'in').length,
+    outOnly: f.filter(x => x.dir === 'out').length,
+  };
+}
+
+const FMT_IST = 'fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"';
+// A large icon sits above each category label. Inline SVGs (stroke = currentColor)
+// so they inherit the section's green and need no asset fetch.
+const FMT_CAT_ICON: Record<string, string> = {
+  Vector: `<svg viewBox="0 0 24 24" ${FMT_IST}><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18z"/><path d="M2 2l7.6 7.6"/><circle cx="11" cy="11" r="2"/></svg>`,
+  Raster: `<svg viewBox="0 0 24 24" ${FMT_IST}><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>`,
+  Layered: `<svg viewBox="0 0 24 24" ${FMT_IST}><path d="M12 2l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg>`,
+  Motion: `<svg viewBox="0 0 24 24" ${FMT_IST}><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 4v16M17 4v16M2 9h5M2 15h5M17 9h5M17 15h5"/></svg>`,
+  Audio: `<svg viewBox="0 0 24 24" ${FMT_IST}><path d="M4 10v4M8 6v12M12 3v18M16 7v10M20 10v4"/></svg>`,
+  Document: `<svg viewBox="0 0 24 24" ${FMT_IST}><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h6"/></svg>`,
+  Data: `<svg viewBox="0 0 24 24" ${FMT_IST}><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>`,
+  Tokens: `<svg viewBox="0 0 24 24" ${FMT_IST}><circle cx="13.5" cy="6.5" r="1.3"/><circle cx="17" cy="10.5" r="1.3"/><circle cx="8.5" cy="7" r="1.3"/><circle cx="6.5" cy="12" r="1.3"/><path d="M12 2a10 10 0 1 0 0 20 2.5 2.5 0 0 0 2.5-2.5c0-.7-.3-1.3-.3-2a2 2 0 0 1 2-2H18a4 4 0 0 0 4-4c0-5.5-4.5-9.5-10-9.5z"/></svg>`,
+  '3D': `<svg viewBox="0 0 24 24" ${FMT_IST}><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 2v20M21 7l-9 5-9-5"/></svg>`,
+  Bundle: `<svg viewBox="0 0 24 24" ${FMT_IST}><rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"/><path d="M10 12h4"/></svg>`,
+  Font: `<svg viewBox="0 0 24 24" ${FMT_IST}><path d="M6 4h12M12 4v16M9 20h6"/></svg>`,
+};
+
+/**
+ * The three-zone formats table - a single table, NOT two columns.
+ *
+ * Each category is a row; import-only formats sit at the LEFT edge, export-only
+ * at the RIGHT edge, and the round-trip formats (read AND written) sit centred
+ * between them - so a format Lolly both reads and writes is shown ONCE, in the
+ * middle, never duplicated. Every chip is a button: clicking it opens a dialog
+ * that names the format in full, describes it in plain language, and lists the
+ * properties Lolly supports (alpha, HDR, CMYK, layers, encryption …) - inclusive
+ * design, so someone who does not know formats can learn what each one is for.
+ *
+ * Plan 117 block 9 moved this off the landing onto /info/formats.html, layout
+ * intact. `head: false` drops the section's own h2 on the page whose h1 already
+ * says it. Wherever this renders, wrapPage must also ship FORMATS_DIALOG_SCRIPT.
+ */
+function formatsSection(lang: Lang, opts: { head?: boolean } = {}): string {
+  const formats = loadSiteJson('formats.json', lang) as { heading: string; lead: string };
+  const catalog = formatCatalog();
+  const n = formatCounts();
+  const CAT_ORDER = ['Vector', 'Raster', 'Layered', 'Motion', 'Audio', 'Document', 'Data', 'Font', 'Tokens', '3D', 'Bundle'];
+  const fmtChip = (f: FmtEntry) =>
+    `<button type="button" class="fmt-chip fmt-chip--${f.dir}" data-fmt="${esc(f.token)}" aria-haspopup="dialog"${f.dir === 'both' ? ' title="Round-trip — Lolly reads and writes this"' : ''}>${f.dir === 'both' ? '<span class="rt-mark" aria-hidden="true">⇄</span>' : ''}${esc(f.name)}</button>`;
+  const zone = (cls: string, list: FmtEntry[]) => `<div class="fmt-zone fmt-zone--${cls}">${list.map(fmtChip).join('')}</div>`;
+  const catRows = CAT_ORDER
+    .map(cat => ({ cat, all: catalog.formats.filter(f => f.category === cat) }))
+    .filter(r => r.all.length)
+    .map(({ cat, all }) => `<div class="fmt-row">
+        <span class="fmt-cat">${FMT_CAT_ICON[cat] || ''}<span class="fmt-cat-label">${esc(cat)}</span></span>
+        ${zone('in', all.filter(f => f.dir === 'in'))}
+        ${zone('both', all.filter(f => f.dir === 'both'))}
+        ${zone('out', all.filter(f => f.dir === 'out'))}
+      </div>`).join('\n      <div class="fmt-rowsep"></div>\n      ');
+  const zoneHead = `<div class="fmt-row fmt-row--head" aria-hidden="true">
+        <span class="fmt-cat"></span>
+        <div class="fmt-zone fmt-zone--in"><span class="fmt-zonelabel">Import only<b>${n.inOnly}</b></span></div>
+        <div class="fmt-zone fmt-zone--both"><span class="fmt-zonelabel"><span class="rt-mark">⇄</span> Both ways<b>${n.both}</b></span></div>
+        <div class="fmt-zone fmt-zone--out"><span class="fmt-zonelabel">Export only<b>${n.outOnly}</b></span></div>
+      </div>`;
+  // Catalog data for the dialog: names, full names, feature labels and descriptions,
+  // serialised into the page so the click handler has everything without a fetch.
+  const catalogJson = JSON.stringify({
+    features: catalog.features,
+    specifics: catalog.specifics || {},
+    unsupported: catalog.unsupported || {},
+    catIcons: FMT_CAT_ICON,
+    formats: Object.fromEntries(catalog.formats.map(f => [f.token, { name: f.name, full: f.full, category: f.category, dir: f.dir, features: f.features, desc: f.desc }])),
+  }).replace(/</g, '\\u003c');
+  return `<section class="formats-section" id="formats">
+  <div class="formats-inner">
+    <div class="formats-head reveal">
+      ${opts.head === false ? '' : `<h2>${esc(formats.heading)}</h2>`}
+      <p class="formats-hint">${esc(`${n.in} in · ${n.out} out — tap any format to learn what it is and what Lolly supports.`)}</p>
+    </div>
+    <div class="fmt-scroll reveal reveal-1">
+      <div class="fmt-table">
+      ${zoneHead}
+      <div class="fmt-divider"></div>
+      ${catRows}
+      </div>
+    </div>
+    <div class="section-more-row"><a class="section-more" href="${esc(localeHref(lang, 'exporting'))}">${esc(t('Every format in detail'))} <span aria-hidden="true">→</span></a></div>
+  </div>
+  <dialog class="fmt-dialog" id="fmt-dialog" aria-labelledby="fmt-dlg-name">
+    <form method="dialog" class="fmt-dialog-inner">
+      <button class="fmt-dialog-x" value="close" aria-label="Close">✕</button>
+      <div class="fmt-dialog-head">
+        <span class="fmt-dialog-icon" id="fmt-dlg-icon" aria-hidden="true"></span>
+        <div class="fmt-dialog-headtext">
+          <span class="fmt-dialog-dir" id="fmt-dlg-dir"></span>
+          <h3 id="fmt-dlg-name"></h3>
+          <p class="fmt-dialog-full" id="fmt-dlg-full"></p>
+        </div>
+      </div>
+      <p class="fmt-dialog-desc" id="fmt-dlg-desc"></p>
+      <ul class="fmt-dialog-specs" id="fmt-dlg-specs"></ul>
+      <ul class="fmt-dialog-feats" id="fmt-dlg-feats"></ul>
+      <div class="fmt-dialog-unsup" id="fmt-dlg-unsup-wrap" hidden>
+        <span class="fmt-dialog-unsup-label">Not yet supported</span>
+        <ul class="fmt-dialog-unsup-list" id="fmt-dlg-unsup"></ul>
+      </div>
+    </form>
+  </dialog>
+  <script type="application/json" id="fmt-catalog-data">${catalogJson}</script>
+</section>`;
+}
+
+/** /info/design-import.html: the import band opens the page it always linked to. */
+function renderDesignImportPage(md: string, lang: Lang): string {
+  return `${importBand(lang, { cta: false })}\n${mdToHtml(md)}`;
+}
+
+/** /info/formats.html: the three-zone table, dropped where the source asks for it. */
+function renderFormatsPage(md: string, lang: Lang): string {
+  const [before, after] = md.split(FORMATS_TABLE_MARK);
+  return `${mdToHtml(before ?? md)}\n${formatsSection(lang, { head: false })}\n${after ? mdToHtml(after) : ''}`;
+}
+
+/** A deep link INTO THE APP (not the docs): `/#/tool/…`, carrying the reader's locale. */
+function appHref(lang: Lang, hash: string): string {
+  return lang === 'en' ? `/${hash}` : `/?lang=${lang}${hash}`;
+}
+
+/**
+ * Block 2 - "Make something, right now". Three worked examples from the reader's
+ * own life; the caption names the SCENE, never the tool ("A code for the party",
+ * not "QR Code Generator").
+ *
+ * Each card is a plain link into the app carrying the example's own inputs, so a
+ * click opens the tool already filled in - the same "you get the config you saw"
+ * contract the gallery's example carousel has, expressed as a URL because a
+ * static page has no gallery to click.
+ *
+ * The three tools are pinned in tests/docs-claims.test.ts. All three are
+ * community tools (present on every profile), declare no capabilities, and make
+ * no network request of any kind - so this block keeps working with the Wi-Fi
+ * off, which is the claim block 3 makes one screen further down.
+ *
+ * The picture is the tool's OWN preview of that exact look, copied out of the
+ * active brand's catalog at build time (build(): /info/examples/). Faithful by
+ * construction: what the card shows is what the click gives you. A profile whose
+ * catalog has no preview for a look renders the card without its picture rather
+ * than a broken image.
+ */
+interface Scene { tool: string; look: string; query: string; scene: string; line: string; alt: string }
+const LANDING_SCENES: Scene[] = [
+  { tool: 'qr-code', look: 'qr-code.look0.svg',
+    query: 'url=https%3A%2F%2Flolly.tools&color=%231a1a2e&background=%23faf7f2',
+    scene: 'A code for the invitation',
+    line: 'Print it on the invite or pin it to the noticeboard, and everyone lands in the right place.',
+    alt: 'A square QR code in dark ink on warm paper' },
+  { tool: 'wordmark', look: 'wordmark.look0.svg',
+    query: 'text=Aurora&weight=600&size=160&color=%230c322c',
+    scene: 'A name, set properly',
+    line: 'The club, the band, the bake sale. Type the name and it comes out looking like someone was paid to do it.',
+    alt: 'The word Aurora set in a clean green typeface' },
+  { tool: 'filter', look: 'filter.look1.svg',
+    query: 'effect=duotone',
+    scene: 'A photo, ready for the poster',
+    line: 'Drop in a picture and it takes on your two colours, so the poster looks like it was planned.',
+    alt: 'A photograph recoloured in two flat brand colours' },
+];
+function makeSomethingBlock(lang: Lang): string {
+  const cards = LANDING_SCENES.map((s, i) => {
+    const shot = existsSync(resolve(outDir, 'examples', s.look))
+      ? `<span class="make-shot"><img src="/info/examples/${esc(s.look)}" alt="${esc(t(s.alt))}" loading="lazy"></span>`
+      : '';
+    return `<a class="make-card reveal reveal-${i + 1}" href="${esc(appHref(lang, `#/tool/${s.tool}?${s.query}`))}">
+        ${shot}
+        <strong class="make-scene">${esc(t(s.scene))}</strong>
+        <span class="make-line">${esc(t(s.line))}</span>
+        <span class="make-go">${esc(t('Open this one'))} <span aria-hidden="true">→</span></span>
+      </a>`;
+  }).join('\n      ');
+  return `<section class="make-section" id="make">
+  <div class="make-inner">
+    <div class="make-head reveal">
+      <h2>${esc(t('Make something, right now'))}</h2>
+      <p class="make-lead">${esc(t('Three ordinary jobs. Pick one: it opens already filled in, and the words are yours to change.'))}</p>
+    </div>
+    <div class="make-grid">
+      ${cards}
+    </div>
+  </div>
+</section>`;
+}
+
+/**
+ * Block 3 - the sovereignty statement. The ONE place on this page the offline /
+ * nothing-leaves claim is made in full (the hero's "on your own device" decode is
+ * the only other mention, and §6's test holds that line). Andy's maxim, 2026-08-15.
+ */
+function sovereigntyBlock(lang: Lang): string {
+  // CLAIMS-ALLOW: offline-statement — block 3 IS the home of the claim (plan 117 §1).
+  const statement = t('**The internet is optional here: use it when it helps, never surrender control.** A font you pick, a place you look up, a link you share - things happen online only because you asked. Nothing you make ever leaves your device, and no one is listening in. Turn the Wi-Fi off and everything still works. **Freedom is sweet.**');
+  // CLAIMS-ALLOW END
+  return `<section class="sovereign-section" id="sovereign">
+  <div class="sovereign-inner reveal">
+    <p class="sovereign-statement">${inline(statement)}</p>
+    <div class="sovereign-receipts">
+      <a href="${esc(localeHref(lang, 'privacy'))}">${esc(t('The privacy policy'))}</a>
+      <span class="sovereign-dot" aria-hidden="true">·</span>
+      <a href="${esc(localeHref(lang, 'verify-yourself'))}">${esc(t('Verify it yourself'))}</a>
+    </div>
+  </div>
+</section>`;
+}
+
+/**
+ * Block 5 - AI, on your terms. Three short answers to the three things the
+ * front-door reader does NOT know: who is in control, what it keeps costing, and
+ * how it stays honest (plans/116 §9). No tool-authoring claim here - that one is
+ * gated on save-to-tool.
+ */
+function aiBlock(lang: Lang): string {
+  const points: { title: string; desc: string }[] = [
+    { title: t('You are in control'), desc: t('AI helps only when you ask, and only with the piece you point it at. Nothing is decided for you.') },
+    { title: t('It stops costing'), desc: t('If AI helps make something once, the result is yours. Using it again is free, however many times you need it.') },
+    { title: t('It stays honest'), desc: t('A piece made by AI says so, and what you make carries your name instead of pretending to be someone else.') },
+  ];
+  return `<section class="ai-section" id="ai">
+  <div class="ai-inner">
+    <div class="ai-head reveal">
+      <h2>${esc(t('AI, on your terms'))}</h2>
+      <p class="ai-lead">${esc(t('You never need AI here. If you want it, three things are worth knowing.'))}</p>
+    </div>
+    <div class="ai-points">
+      ${points.map((p, i) => `<div class="ai-point reveal reveal-${i + 1}"><strong>${esc(p.title)}</strong><p>${esc(p.desc)}</p></div>`).join('\n      ')}
+    </div>
+    <div class="section-more-row"><a class="section-more" href="${esc(localeHref(lang, 'ai-stance'))}">${esc(t('Where we stand on AI'))} <span aria-hidden="true">→</span></a></div>
+  </div>
+</section>`;
+}
+
+/**
+ * Block 7 - who is behind this, and why. The progressive-disclosure turn, and the
+ * only block on the page where "we" is the subject. Origin and stewardship only:
+ * no roadmap, no commitments, no product copy.
+ *
+ * The paragraph has three homes (here, docs/faq.md, docs/trust.md) and one
+ * wording; tests/docs-claims.test.ts pins the three byte-identical.
+ */
+function whoIsBehindBlock(lang: Lang): string {
+  // CLAIMS-ALLOW: sceptic-paragraph — FINAL copy, pinned identical in three homes (plan 117 blocks 7 + §6).
+  const scepticParagraph = '**We built Lolly for ourselves.** SUSE needed thousands of on-brand files, each with its name sealed inside, made without handing anything to outside services. So we built a tool that does all of it on the device, and released it as open source, like everything else we make. We keep maintaining it because we use it every day. **There is no obligation:** everything here works with or without us.';
+  // CLAIMS-ALLOW END
+  return `<section class="behind-section" id="behind">
+  <div class="behind-inner reveal">
+    <span class="behind-eyebrow">${esc(t('Who is behind this'))}</span>
+    <p class="behind-para">${inline(t(scepticParagraph))}</p>
+    <div class="behind-links">
+      <a href="${esc(localeHref(lang, 'trust'))}">${esc(t('Trust'))}</a>
+      <span class="behind-dot" aria-hidden="true">·</span>
+      <a href="${esc(localeHref(lang, 'about'))}">${esc(t('About'))}</a>
+    </div>
+  </div>
+</section>`;
+}
+
+/**
+ * Block 9 - the teasers left behind by the two bands that moved to their own
+ * pages. One plain line, one link, the reference content one click away.
+ */
+function teaserSection(o: { id?: string; text: string; cta: string; href: string }): string {
+  return `<section class="teaser-section"${o.id ? ` id="${o.id}"` : ''}>
+  <div class="teaser-inner reveal">
+    <p class="teaser-line">${esc(o.text)}</p>
+    <a class="section-more" href="${esc(o.href)}">${esc(o.cta)} <span aria-hidden="true">→</span></a>
+  </div>
+</section>`;
+}
 
 function buildLandingContent(md: string, lang: Lang = 'en') {
   const rawSections = md.split(/\n---\n/);
@@ -2041,56 +1770,6 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll,{passive:true});update();
 })();</script>`;
 
-  // ── "Bring your existing design files" segment ──────────────────────────────
-  // The good-news import story: finished Figma / Penpot / Illustrator / InDesign
-  // files land as editable, on-brand layouts that anyone can reuse and mix with
-  // tools. They all arrive through Layout Studio's "Import a design" button -
-  // natively (.fig / .penpot / .ai / .pdf / .idml) or as an SVG export (the wide
-  // door: almost any design app exports SVG).
-  const importData = loadSiteJson('import.json', lang) as {
-    eyebrow: string; heading: string; lead: string;
-    sources: { mono: string; name: string; fmt: string; color: string }[];
-    flow: { icon: string; title: string; desc: string }[];
-    points: { icon: string; title: string; desc: string }[];
-    cta: string; ctaHref: string;
-  };
-  const IMPORT_HTML = `<section class="import-section">
-  <div class="import-inner">
-    <div class="import-lede reveal">
-      ${credentialedMascot('/info/mascots/kookaburra.png', 'import-mascot')}
-      <div class="import-lede-text">
-        <span class="import-eyebrow">${esc(importData.eyebrow)}</span>
-        <h2>${esc(importData.heading)}</h2>
-        <p class="import-lead">${inline(importData.lead)}</p>
-      </div>
-    </div>
-    <div class="import-sources reveal reveal-1">
-      ${importData.sources.map(s => `<div class="import-source">
-        <span class="import-badge" style="--b:${s.color}">${esc(s.mono)}</span>
-        <strong>${esc(s.name)}</strong>
-        <span class="import-fmt">${esc(s.fmt)}</span>
-      </div>`).join('\n      ')}
-    </div>
-    <div class="import-flow reveal reveal-2">
-      ${importData.flow.map((f, i) => `<div class="import-step">
-        <div class="import-step-icon">${siteIcon(f.icon)}</div>
-        <strong>${esc(f.title)}</strong>
-        <p>${esc(f.desc)}</p>
-      </div>${i < importData.flow.length - 1 ? '<span class="import-arrow" aria-hidden="true">→</span>' : ''}`).join('\n      ')}
-    </div>
-    <div class="import-points reveal reveal-3">
-      ${importData.points.map(p => `<div class="import-point">
-        <div class="import-point-icon">${siteIcon(p.icon)}</div>
-        <strong>${esc(p.title)}</strong>
-        <p>${esc(p.desc)}</p>
-      </div>`).join('\n      ')}
-    </div>
-    <div class="import-cta-row reveal reveal-4">
-      <a href="${esc(localizeHref(lang, importData.ctaHref))}" class="import-more">${esc(importData.cta)}</a>
-    </div>
-  </div>
-</section>`;
-
   const qol = loadSiteJson('qol.json', lang) as { panels: { heading: string; desc: string }[] };
   const QOL_HTML = `<section class="qol-section">
   <div class="qol-inner">
@@ -2130,113 +1809,6 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
     <div class="assure-cta reveal reveal-3"><a href="${esc(localizeHref(lang, assure.ctaHref))}">${esc(assure.cta)}</a></div>
     ${ASSURE_DOC_LINKS(lang)}
   </div>
-</section>`;
-
-  // Dedicated Formats section — a single three-zone table, NOT two columns. Each
-  // category is a row; import-only formats sit at the LEFT edge, export-only at the
-  // RIGHT edge, and the round-trip formats (read AND written) sit centred between
-  // them — so a format Lolly both reads and writes is shown ONCE, in the middle,
-  // never duplicated. Every chip is a button: clicking it opens a dialog that names
-  // the format in full, describes it in plain language, and lists the properties
-  // Lolly supports (alpha, HDR, CMYK, layers, encryption …) — inclusive design, so
-  // someone who does not know formats can learn what each one is for. The structural
-  // data (tokens, direction, features, descriptions) lives in the English-only
-  // docs/site/formats-catalog.json (format names are not translated); the heading,
-  // lead and zone labels come from the translatable formats.json.
-  const formats = loadSiteJson('formats.json', lang) as {
-    heading: string; lead: string;
-    ingestsLabel: string; ingestsCount: string; exportsLabel: string; exportsCount: string;
-    ingests: { category: string; list: string }[];
-    exports: { category: string; list: string }[];
-  };
-  interface FmtEntry { token: string; name: string; full: string; category: string; dir: 'in' | 'out' | 'both'; features: string[]; desc: string; }
-  const catalog = loadSiteJson('formats-catalog.json') as { features: Record<string, string>; specifics?: Record<string, string[]>; unsupported?: Record<string, string[]>; formats: FmtEntry[] };
-  const CAT_ORDER = ['Vector', 'Raster', 'Layered', 'Motion', 'Audio', 'Document', 'Data', 'Font', 'Tokens', '3D', 'Bundle'];
-  // A large icon sits above each category label. Inline SVGs (stroke = currentColor)
-  // so they inherit the section's green and need no asset fetch.
-  const IST = 'fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"';
-  const FMT_CAT_ICON: Record<string, string> = {
-    Vector: `<svg viewBox="0 0 24 24" ${IST}><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18z"/><path d="M2 2l7.6 7.6"/><circle cx="11" cy="11" r="2"/></svg>`,
-    Raster: `<svg viewBox="0 0 24 24" ${IST}><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>`,
-    Layered: `<svg viewBox="0 0 24 24" ${IST}><path d="M12 2l9 5-9 5-9-5 9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg>`,
-    Motion: `<svg viewBox="0 0 24 24" ${IST}><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 4v16M17 4v16M2 9h5M2 15h5M17 9h5M17 15h5"/></svg>`,
-    Audio: `<svg viewBox="0 0 24 24" ${IST}><path d="M4 10v4M8 6v12M12 3v18M16 7v10M20 10v4"/></svg>`,
-    Document: `<svg viewBox="0 0 24 24" ${IST}><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h6"/></svg>`,
-    Data: `<svg viewBox="0 0 24 24" ${IST}><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>`,
-    Tokens: `<svg viewBox="0 0 24 24" ${IST}><circle cx="13.5" cy="6.5" r="1.3"/><circle cx="17" cy="10.5" r="1.3"/><circle cx="8.5" cy="7" r="1.3"/><circle cx="6.5" cy="12" r="1.3"/><path d="M12 2a10 10 0 1 0 0 20 2.5 2.5 0 0 0 2.5-2.5c0-.7-.3-1.3-.3-2a2 2 0 0 1 2-2H18a4 4 0 0 0 4-4c0-5.5-4.5-9.5-10-9.5z"/></svg>`,
-    '3D': `<svg viewBox="0 0 24 24" ${IST}><path d="M12 2l9 5v10l-9 5-9-5V7z"/><path d="M12 2v20M21 7l-9 5-9-5"/></svg>`,
-    Bundle: `<svg viewBox="0 0 24 24" ${IST}><rect x="3" y="4" width="18" height="4" rx="1"/><path d="M5 8v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8"/><path d="M10 12h4"/></svg>`,
-    Font: `<svg viewBox="0 0 24 24" ${IST}><path d="M6 4h12M12 4v16M9 20h6"/></svg>`,
-  };
-  const inCount = catalog.formats.filter(f => f.dir !== 'out').length;
-  const outCount = catalog.formats.filter(f => f.dir !== 'in').length;
-  const bothCount = catalog.formats.filter(f => f.dir === 'both').length;
-  const inOnly = catalog.formats.filter(f => f.dir === 'in').length;
-  const outOnly = catalog.formats.filter(f => f.dir === 'out').length;
-  const fmtChip = (f: FmtEntry) =>
-    `<button type="button" class="fmt-chip fmt-chip--${f.dir}" data-fmt="${esc(f.token)}" aria-haspopup="dialog"${f.dir === 'both' ? ' title="Round-trip — Lolly reads and writes this"' : ''}>${f.dir === 'both' ? '<span class="rt-mark" aria-hidden="true">⇄</span>' : ''}${esc(f.name)}</button>`;
-  const zone = (cls: string, list: FmtEntry[]) => `<div class="fmt-zone fmt-zone--${cls}">${list.map(fmtChip).join('')}</div>`;
-  const catRows = CAT_ORDER
-    .map(cat => ({ cat, all: catalog.formats.filter(f => f.category === cat) }))
-    .filter(r => r.all.length)
-    .map(({ cat, all }) => `<div class="fmt-row">
-        <span class="fmt-cat">${FMT_CAT_ICON[cat] || ''}<span class="fmt-cat-label">${esc(cat)}</span></span>
-        ${zone('in', all.filter(f => f.dir === 'in'))}
-        ${zone('both', all.filter(f => f.dir === 'both'))}
-        ${zone('out', all.filter(f => f.dir === 'out'))}
-      </div>`).join('\n      <div class="fmt-rowsep"></div>\n      ');
-  const zoneHead = `<div class="fmt-row fmt-row--head" aria-hidden="true">
-        <span class="fmt-cat"></span>
-        <div class="fmt-zone fmt-zone--in"><span class="fmt-zonelabel">Import only<b>${inOnly}</b></span></div>
-        <div class="fmt-zone fmt-zone--both"><span class="fmt-zonelabel"><span class="rt-mark">⇄</span> Both ways<b>${bothCount}</b></span></div>
-        <div class="fmt-zone fmt-zone--out"><span class="fmt-zonelabel">Export only<b>${outOnly}</b></span></div>
-      </div>`;
-  const RT_INLINE_HTML = `<span class="rt-inline"><span class="rt-mark" aria-hidden="true">⇄</span>&nbsp;round-trip</span>`;
-  // Catalog data for the dialog: names, full names, feature labels and descriptions,
-  // serialised into the page so the click handler has everything without a fetch.
-  const catalogJson = JSON.stringify({
-    features: catalog.features,
-    specifics: catalog.specifics || {},
-    unsupported: catalog.unsupported || {},
-    catIcons: FMT_CAT_ICON,
-    formats: Object.fromEntries(catalog.formats.map(f => [f.token, { name: f.name, full: f.full, category: f.category, dir: f.dir, features: f.features, desc: f.desc }])),
-  }).replace(/</g, '\\u003c');
-  const FORMATS_HTML = `<section class="formats-section" id="formats">
-  <div class="formats-inner">
-    <div class="formats-head reveal">
-      <h2>${esc(formats.heading)}</h2>
-      <p class="formats-hint">${esc(`${inCount} in · ${outCount} out — tap any format to learn what it is and what Lolly supports.`)}</p>
-    </div>
-    <div class="fmt-scroll reveal reveal-1">
-      <div class="fmt-table">
-      ${zoneHead}
-      <div class="fmt-divider"></div>
-      ${catRows}
-      </div>
-    </div>
-    <div class="section-more-row"><a class="section-more" href="${esc(localeHref(lang, 'exporting'))}">${esc(t('Every format in detail'))} <span aria-hidden="true">→</span></a></div>
-  </div>
-  <dialog class="fmt-dialog" id="fmt-dialog" aria-labelledby="fmt-dlg-name">
-    <form method="dialog" class="fmt-dialog-inner">
-      <button class="fmt-dialog-x" value="close" aria-label="Close">✕</button>
-      <div class="fmt-dialog-head">
-        <span class="fmt-dialog-icon" id="fmt-dlg-icon" aria-hidden="true"></span>
-        <div class="fmt-dialog-headtext">
-          <span class="fmt-dialog-dir" id="fmt-dlg-dir"></span>
-          <h3 id="fmt-dlg-name"></h3>
-          <p class="fmt-dialog-full" id="fmt-dlg-full"></p>
-        </div>
-      </div>
-      <p class="fmt-dialog-desc" id="fmt-dlg-desc"></p>
-      <ul class="fmt-dialog-specs" id="fmt-dlg-specs"></ul>
-      <ul class="fmt-dialog-feats" id="fmt-dlg-feats"></ul>
-      <div class="fmt-dialog-unsup" id="fmt-dlg-unsup-wrap" hidden>
-        <span class="fmt-dialog-unsup-label">Not yet supported</span>
-        <ul class="fmt-dialog-unsup-list" id="fmt-dlg-unsup"></ul>
-      </div>
-    </form>
-  </dialog>
-  <script type="application/json" id="fmt-catalog-data">${catalogJson}</script>
 </section>`;
 
   // ── "Why we built Lolly" + old-way vs Lolly-way matrix ──────────────────────
@@ -2347,6 +1919,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
 <nav class="quicknav" aria-label="${esc(t('On this page'))}">
   <div class="quicknav-inner">
     <a href="#start">${esc(t('Start here'))}</a>
+    <a href="#make">${esc(t('Make something'))}</a>
     <a href="#why">${esc(t('Why Lolly'))}</a>
     <a href="#tools">${esc(t('Tools'))}</a>
     <a href="#formats">${esc(t('Formats'))}</a>
@@ -2354,7 +1927,10 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
     <a href="#everywhere">${esc(t('Everywhere'))}</a>
     <a href="#faq">${esc(t('FAQ'))}</a>
   </div>
-</nav>${WHY_MATRIX_HTML}
+</nav>${makeSomethingBlock(lang)}
+${sovereigntyBlock(lang)}
+${WHY_MATRIX_HTML}
+${aiBlock(lang)}
 <section class="audience-section">
   ${tabsHtml}
   <div class="audience-panels">
@@ -2396,10 +1972,26 @@ ${whatsLines.length ? `<section class="whats-a-tool" id="tools">
   </div>
 </section>` : ''}
 </div>
-${FORMATS_HTML}
+${teaserSection({
+  id: 'formats',
+  text: t('Lolly opens {in} kinds of file and makes {out}, and {both} of them go both ways.')
+    .replace('{in}', String(formatCounts().in))
+    .replace('{out}', String(formatCounts().out))
+    .replace('{both}', String(formatCounts().both)),
+  cta: t('See everything Lolly can open and make'),
+  href: localeHref(lang, 'formats'),
+})}
 ${QOL_HTML}
+${whoIsBehindBlock(lang)}
 ${ASSURE_HTML}
-${IMPORT_HTML}
+${teaserSection({
+  // CLAIMS-ALLOW: app-names — Figma/Penpot/Illustrator/InDesign here are the names of
+  // FILES a reader already owns, which is interop vocabulary, not a competitive claim.
+  text: t("Already have designs? They aren't stranded - bring Figma, Penpot, Illustrator, InDesign or any SVG."),
+  // CLAIMS-ALLOW END
+  cta: t('How importing a design works'),
+  href: localeHref(lang, 'design-import'),
+})}
 <section class="everywhere-section" id="everywhere">
   <div class="everywhere-inner reveal">
     <div class="everywhere-head">
@@ -2467,8 +2059,22 @@ ${TAB_JS}
 ${FAQ_JS}
 ${QUICKNAV_JS}`;
 }
+// ═══ LANDING COPY REGION END ═════════════════════════════════════════════════
 
 // ── HTML template ─────────────────────────────────────────────────────────────
+
+// The app's design tokens, inlined verbatim (comments/blank lines stripped) so the docs
+// share ONE source of truth with the web shell — the same [data-theme] light/dark/brand
+// system, the same shadcn HSL-triple slots (--background/--foreground/--primary/--muted/
+// --border/--radius/--font-brand/…), and the same a11y-contrast overrides. In the app shell
+// (the in-app docs view, M2) brand-vars.ts overrides these per active brand, so the docs go
+// brand-reactive for free; the static site ships the neutral values below. The DOCS_BRIDGE
+// after it expresses this file's legacy token names (--text/--page/--green/…) in these slots,
+// so the ~300 var() call sites across the docs stylesheet follow the app theme unchanged.
+const APP_TOKENS = readFileSync(resolve(repoRoot, 'shells/web/src/styles/tokens.css'), 'utf-8')
+  .replace(/\/\*[\s\S]*?\*\//g, '')
+  .replace(/\n\s*\n/g, '\n')
+  .trim();
 
 const CSS = `
 /* Self-hosted SUSE variable fonts - same-origin, no CDN egress; mirrors shells/web/src/styles/fonts.css,
@@ -2484,7 +2090,42 @@ const CSS = `
    fonts.gstatic.com: a third-party request on every docs page would contradict what
    server-surface.md tells the reader. Latin subset only, 26 KB, loaded on one page. */
 @font-face{font-family:'Cinzel';src:url('/info/fonts/cinzel-latin.woff2') format('woff2-variations');font-weight:400 900;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+2122,U+2212}
-:root{--green:#30ba78;--dark:#0c322c;--orange:#fe7c3f;--navy:#192072;--blue:#2453ff;--light:#90ebcd;--pale:#f0fbf5;--text:#1d2726;--muted:#5a7067;--border:#d8ede4;--red:#c8102e;--col-cap:38rem;--page:#fff}
+${APP_TOKENS}
+/* Bridge: the docs' legacy token names, expressed in the app's design tokens above, so the
+   whole docs stylesheet follows the app's [data-theme] light/dark/brand system and — inside
+   the app shell — the active brand. Neutrals/surfaces map cleanly; the ACCENT (--green ->
+   --primary) is the one design choice to review: the app's primary is deep teal in light,
+   pine green in dark/brand, so light-mode links become teal rather than green. */
+:root{
+  --page:hsl(var(--background));
+  --text:hsl(var(--foreground));
+  --muted:hsl(var(--muted-foreground));
+  --border:hsl(var(--border));
+  --pale:hsl(var(--muted));
+  --green:hsl(var(--primary));
+  --dark:hsl(var(--foreground));
+  --light:hsl(var(--primary)/0.4);
+  --red:hsl(var(--destructive));
+  /* The deep, ALWAYS-DARK marketing-band / chrome surface (nav, hero, platform, assure,
+     about, everywhere, pathways). It must stay dark in EVERY theme — unlike --background/
+     --card which flip light in the light theme, and unlike --primary which goes pine-green
+     in dark/brand. Default is the SUSE deep teal (= the old #0c322c); brand-vars.ts will
+     override it per active brand in the app shell (M2) so a self-hosted org's dark bands
+     carry their brand. Fixes the M1 bug where these bands used var(--dark) (=--foreground),
+     which inverted to near-white text-on-band in dark mode. */
+  --band-dark:171 62% 12%;
+  /* The always-LIGHT ink that rides on --band-dark (headings, nav wordmark, nav/hero/
+     platform/assure/everywhere/about/pathways copy). Paired with --band-dark so the
+     always-dark chrome is fully brand-reactive: a self-hosted brand overrides BOTH the
+     band surface and its on-dark ink. Defaults to white, so the neutral build renders
+     byte-identical to the old hardcoded #fff. Crucially it is a dedicated token, NOT
+     --primary-foreground: that one flips to BLACK under [data-a11y-contrast=high] in
+     dark/brand, which would turn every band's white text black-on-dark. --on-band-dark
+     stays light in every theme + contrast mode, so the a11y contract holds. */
+  --on-band-dark:0 0% 100%;
+  --orange:#fe7c3f;--navy:#192072;--blue:#2453ff;
+  --col-cap:38rem;
+}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'SUSE',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:var(--text);background:var(--page);line-height:1.65}
 a{color:var(--green);text-decoration:none}
@@ -2495,8 +2136,8 @@ a:hover{text-decoration:underline}
    text-sized square; sized contexts (.icon-*, .assure-card-ic, illustrations, …) override
    this with a more specific selector. Keeps a missing/renamed rule from ever ballooning. */
 svg{width:1em;height:1em;flex:none}
-code{font-family:'SUSE Mono','SF Mono','Fira Code',monospace;font-size:.875em;background:#eef5f0;padding:.15em .35em;border-radius:3px}
-pre{background:#f6f6f6;color:#0d1f17;padding:1.25rem 1.5rem;border-radius:8px;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.875rem;line-height:1.5;margin-bottom:1.25rem; box-shadow: inset 0 .2rem .4rem #0002, 0 1px #fff2}
+code{font-family:'SUSE Mono','SF Mono','Fira Code',monospace;font-size:.875em;background:hsl(var(--muted));padding:.15em .35em;border-radius:3px}
+pre{background:hsl(var(--muted));color:#0d1f17;padding:1.25rem 1.5rem;border-radius:8px;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.875rem;line-height:1.5;margin-bottom:1.25rem; box-shadow: inset 0 .2rem .4rem #0002, 0 1px #fff2}
 pre code{background:none;padding:0;color:inherit;font-size:1em}
 h1,h2,h3,h4{line-height:1.25;font-weight:700}
 h2{font-size:2rem;letter-spacing:0;font-weight:900;text-transform:uppercase}
@@ -2510,13 +2151,13 @@ strong{font-weight:600}
 
 /* Nav */
 nav{display:flex;align-items:center;gap:.25rem;padding:0 1.5rem;height:3.75rem;background:transparent;position:fixed;width:100%;top:0;z-index:100;overflow-x:auto;transition:background .25s}
-nav.nav-solid{background:#0c322c}
+nav.nav-solid{background:hsl(var(--band-dark))}
 /* On-page quick nav — a sticky jump bar under the top nav, on the landing only. */
 html{scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 section[id]{scroll-margin-top:6.4rem}
-.quicknav{position:sticky;top:3.75rem;z-index:90;background:rgba(240,251,245,.9);border-bottom:1px solid var(--border);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
-html.dark .quicknav{background:rgba(9,26,21,.9)}
+.quicknav{position:sticky;top:3.75rem;z-index:90;background:hsl(var(--background) / 0.9);border-bottom:1px solid var(--border);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+html[data-theme="dark"] .quicknav{background:rgba(9,26,21,.9)}
 .quicknav-inner{max-width:1180px;margin:0 auto;display:flex;gap:.15rem;padding:0 1.5rem;overflow-x:auto;scrollbar-width:none}
 .quicknav-inner::-webkit-scrollbar{display:none}
 .quicknav a{flex:none;padding:.72rem .8rem;font-size:.82rem;font-weight:600;color:var(--muted);text-decoration:none;border-bottom:2px solid transparent;white-space:nowrap;transition:color .12s}
@@ -2532,14 +2173,14 @@ html.dark .quicknav{background:rgba(9,26,21,.9)}
    which the dark theme redefines to #0d2419 — near-identical to that background,
    about 1.1:1, so the wordmark disappeared in dark mode. Every other nav control
    already uses a literal white for this reason. */
-.brand{display:inline-flex;align-items:center;gap:.5rem;font-weight:800;color:#f0fbf5;font-size:1.05rem;white-space:nowrap;margin-right:.75rem;letter-spacing:-.01em;text-transform:uppercase}
+.brand{display:inline-flex;align-items:center;gap:.5rem;font-weight:800;color:hsl(var(--on-band-dark));font-size:1.05rem;white-space:nowrap;margin-right:.75rem;letter-spacing:-.01em;text-transform:uppercase}
 .brand:hover{color:var(--light);text-decoration:none}
 .brand-icon{width:1.5rem;height:1.5rem;border-radius:5px;flex-shrink:0;object-fit:contain}
 /* Draft marker in the nav. English pages only (see buildNav) — the translated
    pages are a fallback to English source anyway, and a red pill nobody can read
    in their own language is a worse signal than none. flex:none so the scrolling
    nav can never squeeze it to unreadable. */
-.nav-draft{display:inline-flex;align-items:center;flex:none;font-family:'SUSE Mono','SF Mono','Fira Code',monospace;font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#fff;background:var(--red);padding:.15em .6em;border-radius:999px;margin-right:.75rem;white-space:nowrap}
+.nav-draft{display:inline-flex;align-items:center;flex:none;font-family:'SUSE Mono','SF Mono','Fira Code',monospace;font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:hsl(var(--on-band-dark));background:var(--red);padding:.15em .6em;border-radius:999px;margin-right:.75rem;white-space:nowrap}
 nav .gap{flex:1}
 /* The <label> wrapping the icon + <select> is the WHOLE hit area - a generous
    pill, matching .nav-theme-toggle's footprint - not just the select's own tight
@@ -2547,14 +2188,14 @@ nav .gap{flex:1}
    the text does (native label→control delegation), and since hover/focus is
    styled on the label, the icon (fill="currentColor") and the select text pick up
    the SAME colour change together via inheritance - no separate icon hover rule. */
-.nav-lang-picker-wrap{display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .75rem .45rem .6rem;border-radius:2em;color:rgba(255,255,255,.55);cursor:pointer;transition:color .12s,background .12s}
-.nav-lang-picker-wrap:hover,.nav-lang-picker-wrap:focus-within{color:#fff;background:rgba(255,255,255,.1)}
+.nav-lang-picker-wrap{display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .75rem .45rem .6rem;border-radius:2em;color:hsl(var(--on-band-dark) / .55);cursor:pointer;transition:color .12s,background .12s}
+.nav-lang-picker-wrap:hover,.nav-lang-picker-wrap:focus-within{color:hsl(var(--on-band-dark));background:rgba(255,255,255,.1)}
 .nav-lang-picker-wrap .lang-switch-icon{width:16px;height:16px;flex-shrink:0;pointer-events:none}
 .nav-lang-picker{background:transparent;color:inherit;border:none;font-size:.8125rem;cursor:pointer;padding:0}
 .nav-lang-picker option{color:#000}
-nav:not(.quicknav):not(.doc-jump-nav) a:not(.brand):not(.nav-launch){color:rgba(255,255,255,.55);font-size:.8125rem;padding:.25rem .5rem;white-space:nowrap;border-radius:2em;transition:color .12s}
-nav:not(.quicknav):not(.doc-jump-nav) a:not(.brand):not(.nav-launch):hover{color:#fff;text-decoration:none}
-nav:not(.quicknav):not(.doc-jump-nav) a.active:not(.nav-launch){color:#fff}
+nav:not(.quicknav):not(.doc-jump-nav) a:not(.brand):not(.nav-launch){color:hsl(var(--on-band-dark) / .55);font-size:.8125rem;padding:.25rem .5rem;white-space:nowrap;border-radius:2em;transition:color .12s}
+nav:not(.quicknav):not(.doc-jump-nav) a:not(.brand):not(.nav-launch):hover{color:hsl(var(--on-band-dark));text-decoration:none}
+nav:not(.quicknav):not(.doc-jump-nav) a.active:not(.nav-launch){color:hsl(var(--on-band-dark))}
 /* Top-nav clusters: tight within a group, a thin divider between groups. */
 nav .nav-group{display:inline-flex;align-items:center;gap:.0625rem}
 nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1px solid rgba(255,255,255,.18)}
@@ -2563,20 +2204,20 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 
 /* Language FAB menu - popup language selector matching the app UX */
 .lang-fab-wrap{display:inline-flex}
-.lang-fab{background:none;border:none;padding:.45rem .6rem;border-radius:2em;color:rgba(255,255,255,.55);cursor:pointer;transition:color .12s,background .12s;width:32px;height:32px;display:flex;align-items:center;justify-content:center}
-.lang-fab:hover{color:#fff;background:rgba(255,255,255,.1)}
+.lang-fab{background:none;border:none;padding:.45rem .6rem;border-radius:2em;color:hsl(var(--on-band-dark) / .55);cursor:pointer;transition:color .12s,background .12s;width:32px;height:32px;display:flex;align-items:center;justify-content:center}
+.lang-fab:hover{color:hsl(var(--on-band-dark));background:rgba(255,255,255,.1)}
 .lang-fab svg{width:24px;height:24px}
-.lang-menu{position:fixed;top:auto;right:1.5rem;margin-top:0;background:rgba(12,50,44,.98);border:1px solid rgba(255,255,255,.15);border-radius:8px;min-width:200px;box-shadow:0 8px 32px rgba(0,0,0,.24);z-index:101;backdrop-filter:blur(8px)}
+.lang-menu{position:fixed;top:auto;right:1.5rem;margin-top:0;background:hsl(var(--band-dark) / .98);border:1px solid rgba(255,255,255,.15);border-radius:8px;min-width:200px;box-shadow:0 8px 32px rgba(0,0,0,.24);z-index:101;backdrop-filter:blur(8px)}
 .lang-menu[hidden]{display:none}
 .lang-sort-tabs{display:flex;gap:2px;margin:6px 6px 2px;padding:3px;background:rgba(255,255,255,.08);border-radius:999px}
-.lang-sort-tab{flex:1 1 auto;white-space:nowrap;padding:4px 8px;border:0;cursor:pointer;background:transparent;color:rgba(255,255,255,.55);font-family:'SUSE Mono','SF Mono','Fira Code',monospace;font-size:10.5px;letter-spacing:.04em;border-radius:999px;transition:background .12s,color .12s}
-.lang-sort-tab:hover{color:#fff}
-.lang-sort-tab[aria-selected=true]{background:rgba(255,255,255,.16);color:#fff;font-weight:700;box-shadow:0 1px 2px rgba(0,0,0,.24)}
+.lang-sort-tab{flex:1 1 auto;white-space:nowrap;padding:4px 8px;border:0;cursor:pointer;background:transparent;color:hsl(var(--on-band-dark) / .55);font-family:'SUSE Mono','SF Mono','Fira Code',monospace;font-size:10.5px;letter-spacing:.04em;border-radius:999px;transition:background .12s,color .12s}
+.lang-sort-tab:hover{color:hsl(var(--on-band-dark))}
+.lang-sort-tab[aria-selected=true]{background:rgba(255,255,255,.16);color:hsl(var(--on-band-dark));font-weight:700;box-shadow:0 1px 2px rgba(0,0,0,.24)}
 .lang-sort-tab:focus-visible{outline:2px solid var(--green);outline-offset:1px}
 .lang-menu-list{display:flex;flex-direction:column;max-height:calc(100vh - 7.5rem);overflow-y:auto}
-.lang-menu-item{background:none;border:none;display:flex;align-items:center;gap:.5rem;width:100%;padding:.625rem 1rem;color:rgba(255,255,255,.7);text-align:left;cursor:pointer;transition:background .12s,color .12s;font-size:.8125rem;font-family:inherit}
-.lang-menu-item:hover{background:rgba(255,255,255,.08);color:#fff}
-.lang-menu-item[aria-pressed=true]{background:rgba(48,186,120,.15);color:#fff}
+.lang-menu-item{background:none;border:none;display:flex;align-items:center;gap:.5rem;width:100%;padding:.625rem 1rem;color:hsl(var(--on-band-dark) / .7);text-align:left;cursor:pointer;transition:background .12s,color .12s;font-size:.8125rem;font-family:inherit}
+.lang-menu-item:hover{background:rgba(255,255,255,.08);color:hsl(var(--on-band-dark))}
+.lang-menu-item[aria-pressed=true]{background:rgba(48,186,120,.15);color:hsl(var(--on-band-dark))}
 .lang-menu-flags{display:inline-flex;gap:.2em;min-width:4em;     place-content: flex-end;}
 .lang-menu-name{flex:1}
 .lang-sort-tab:focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 1px; }
@@ -2591,13 +2232,13 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 /* Hero + pathways share one canvas backdrop: the animated chips drift up through
    both, and a single vertical gradient blends the hero green (#1c4a2e) into the
    pathways dark (--dark) so the two bands read as one continuous surface. */
-.hero-wrap{position:relative;overflow:hidden;background:linear-gradient(180deg,#1c4a2e 0%,var(--dark) 100%)}
-.hero{background:transparent;color:#fff;padding:7rem 1.5rem 6rem;text-align:center;position:relative;z-index:1;min-height:50vh;user-select:none;-webkit-user-select:none}
+.hero-wrap{position:relative;overflow:hidden;background:linear-gradient(180deg,#1c4a2e 0%,hsl(var(--band-dark)) 100%)}
+.hero{background:transparent;color:hsl(var(--on-band-dark));padding:7rem 1.5rem 6rem;text-align:center;position:relative;z-index:1;min-height:50vh;user-select:none;-webkit-user-select:none}
 /* Double-clicking the hero backdrop shouldn't highlight the heading/subtitle/trust copy; buttons keep normal selection. */
 .hero .btn{user-select:auto;-webkit-user-select:auto}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 90% 55% at 50% -5%,rgba(48,186,120,.13) 0%,transparent 65%);pointer-events:none}
 #heroCanvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;mix-blend-mode:color-dodge;opacity:.6}
-.hero h1{font-size:clamp(2.75rem,6vw,5rem);letter-spacing:-.04em;line-height:1.05;margin-bottom:1.5rem;color:#fff;position:relative;padding-left:.3em;font-weight:200}
+.hero h1{font-size:clamp(2.75rem,6vw,5rem);letter-spacing:-.04em;line-height:1.05;margin-bottom:1.5rem;color:hsl(var(--on-band-dark));position:relative;padding-left:.3em;font-weight:200}
 /* The hero's headline statement - the page's single h1, above the pilot pill in the
    details column. Displayed in SUSE Mono, uppercased in CSS ONLY: the DOM text stays
    title case, so screen readers read it naturally and the non-Latin locales (whose
@@ -2607,7 +2248,7 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
    (0,2,0) only sets the display treatment (and clears that rule's padding-left, written
    for the old logo h1). break-word + hyphens keep a long single-word translation (e.g.
    German Inhaltssouveränität) inside its column. */
-.hero .hero-statement{font-family:'SUSE Mono','SF Mono','Fira Code',monospace;text-transform:uppercase;font-size:clamp(2.5rem,7vw,5.25rem);font-weight:100;letter-spacing:-.025em;line-height:1.03;padding-left:0;margin:0 0 1.5rem;color:#fff;text-wrap:balance;overflow-wrap:break-word;hyphens:auto}
+.hero .hero-statement{font-family:'SUSE Mono','SF Mono','Fira Code',monospace;text-transform:uppercase;font-size:clamp(2.5rem,7vw,5.25rem);font-weight:100;letter-spacing:-.025em;line-height:1.03;padding-left:0;margin:0 0 1.5rem;color:hsl(var(--on-band-dark));text-wrap:balance;overflow-wrap:break-word;hyphens:auto}
 /* Radius + shadow live on the img itself - on the link they trace its layout box,
    which sits a hair off the rendered image edge and shows as a seam. */
 /* The slot exists so the verify badge can position against the LOGO rather than
@@ -2634,7 +2275,7 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .hero-verify{position:absolute;left:82%;top:82%;transform:translate(-50%,-50%);
   display:flex;align-items:center;justify-content:center;
   width:clamp(2.75rem,6vw,3.25rem);height:clamp(2.75rem,6vw,3.25rem);
-  border-radius:50%;background:var(--green,#30ba78);color:#fff;
+  border-radius:50%;background:var(--green,#30ba78);color:hsl(var(--on-band-dark));
   box-shadow:0 .25em .6em #0005,0 0 0 .18em rgba(12,50,44,.55);
   transition:transform .2s ease,box-shadow .2s ease}
 .hero-verify>span{display:flex;width:52%;height:52%}
@@ -2643,15 +2284,15 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
   box-shadow:0 .35em .8em #0006,0 0 0 .22em rgba(255,255,255,.75);outline:none}
 @media(prefers-reduced-motion:reduce){.hero-verify{transition:none}
   .hero-verify:hover,.hero-verify:focus-visible{transform:translate(-50%,-50%)}}
-.hero .subtitle{font-size:clamp(.9375rem,1.8vw,1.125rem);max-width:560px;margin:0 auto 2.75rem;color:rgba(255,255,255,.5);font-weight:200;line-height:1.85;position:relative}
+.hero .subtitle{font-size:clamp(.9375rem,1.8vw,1.125rem);max-width:560px;margin:0 auto 2.75rem;color:hsl(var(--on-band-dark) / .5);font-weight:200;line-height:1.85;position:relative}
 .hero-cta{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;margin-bottom:2.5rem}
 .hero-trust{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.5rem;position:relative}
-.hero-trust span{font-size:.8rem;line-height:1;color:rgba(255,255,255,.5);letter-spacing:.02em}
-.trust-dot{color:rgba(255,255,255,.18)!important}
+.hero-trust span{font-size:.8rem;line-height:1;color:hsl(var(--on-band-dark) / .5);letter-spacing:.02em}
+.trust-dot{color:hsl(var(--on-band-dark) / .18)!important}
 .btn{display:inline-flex;align-items:center;padding:2rem 3rem;border-radius:1rem;font-weight:700;font-size:1rem;transition:all .18s ease;box-shadow:0 .2em 1em #0002}
 .btn-primary{background:rgba(48,186,120,.72);color:#000;mix-blend-mode:plus-lighter}
 .btn-primary:hover{background:var(--light);text-decoration:none;transform:translateY(-2px);box-shadow:0 8px 28px rgba(48,186,120,.35)}
-.btn-secondary{background:rgba(255,255,255,.05);color:#fff;border:1px solid rgba(255,255,255,.22);position:relative}
+.btn-secondary{background:rgba(255,255,255,.05);color:hsl(var(--on-band-dark));border:1px solid rgba(255,255,255,.22);position:relative}
 .btn-secondary:hover{background:rgba(255,255,255,.1);text-decoration:none;transform:translateY(-1px)}
 /* Glass baseline - frosted blur so the buttons read as glass even where the JS
    liquid-displacement filter can't render. The buildGlass script overrides this
@@ -2663,19 +2304,19 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .pathways-inner{max-width:1080px;margin:0 auto;text-align:center}
 .pathways-head{display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap;margin:0 0 2.5rem;text-align:start}
 .pathways-headtext{max-width:38rem}
-.pathways-title{color:#fff;font-size:2rem;margin:0 0 .5rem}
+.pathways-title{color:hsl(var(--on-band-dark));font-size:2rem;margin:0 0 .5rem}
 .pathways-mascot{width:clamp(160px,20vw,300px);flex-shrink:0}
-.pathways-lead{color:rgba(255,255,255,.7);font-size:1.0625rem;margin:0}
+.pathways-lead{color:hsl(var(--on-band-dark) / .7);font-size:1.0625rem;margin:0}
 .pathways-lead a{color:var(--light);font-weight:600}
 .pathways-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;text-align:start}
 .pathway-card{    backdrop-filter: blur(5px);display:flex;flex-direction:column;gap:.5rem;padding:1.75rem;border-radius:14px;background:rgba(255,255,255,.05);border:0;    box-shadow: inset 0 1px #fff1, 0 .2em .5em #0002;transition:transform .18s ease,border-color .18s ease,background .18s ease}
 .pathway-card:hover{text-decoration:none;transform:translateY(-3px);border-color:var(--green);background:rgba(255,255,255,.08)}
-.pathway-ic{align-self:flex-start;display:inline-flex;align-items:center;justify-content:center;width:2.75rem;height:2.75rem;margin-bottom:.35rem;border-radius:12px;color:#fff;background:linear-gradient(163deg,hsl(150 66% 51%),hsl(154 58% 33%));border:1px solid hsl(0 0% 100% / .3);box-shadow:inset 0 1px 0 hsl(0 0% 100% / .45),0 6px 16px -6px hsl(151 57% 40% / .75);transition:box-shadow .18s ease,transform .18s ease}
+.pathway-ic{align-self:flex-start;display:inline-flex;align-items:center;justify-content:center;width:2.75rem;height:2.75rem;margin-bottom:.35rem;border-radius:12px;color:hsl(var(--on-band-dark));background:linear-gradient(163deg,hsl(150 66% 51%),hsl(154 58% 33%));border:1px solid hsl(0 0% 100% / .3);box-shadow:inset 0 1px 0 hsl(0 0% 100% / .45),0 6px 16px -6px hsl(151 57% 40% / .75);transition:box-shadow .18s ease,transform .18s ease}
 .pathway-ic svg{width:1.45rem;height:1.45rem}
 .pathway-card:hover .pathway-ic{transform:translateY(-1px);box-shadow:inset 0 1px 0 hsl(0 0% 100% / .5),0 9px 22px -6px hsl(151 57% 40% / .9)}
-.pathway-eyebrow{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:white;}
+.pathway-eyebrow{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:hsl(var(--on-band-dark));}
 .pathway-name{font-size:1.375rem;font-weight:200;color:var(--green)}
-.pathway-desc{font-size:.9375rem;line-height:1.55;color:rgba(255,255,255,.68);flex:1}
+.pathway-desc{font-size:.9375rem;line-height:1.55;color:hsl(var(--on-band-dark) / .68);flex:1}
 .pathway-go{font-size:.9375rem;font-weight:600;color:var(--light);margin-top:.5rem}
 @media(max-width:820px){.pathways-grid{grid-template-columns:1fr}}
 
@@ -2684,13 +2325,13 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .audience-header{background:linear-gradient(180deg,var(--pale) 0%,#fff 100%)}
 .audience-title{font-size:2.5rem;color:var(--dark);margin:0}
 .audience-sub{color:var(--muted);font-size:.9375rem;margin-top:.5rem;margin-bottom:0}
-.audience-tabs{display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:.625rem;padding:1rem 1.5rem 1.5rem;background:#fff;border-bottom:2px solid var(--border);max-width:1400px;margin:0 auto}
+.audience-tabs{display:flex;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:.625rem;padding:1rem 1.5rem 1.5rem;background:hsl(var(--background));border-bottom:2px solid var(--border);max-width:1400px;margin:0 auto}
 .audience-tabs::-webkit-scrollbar{display:none}
-.audience-tab{display:inline-flex;flex:1;flex-direction:column;align-items:center;gap:.4rem;padding:1.75rem 1.125rem;border:2px solid var(--border);background:#fff;cursor:pointer;border-radius:12px;min-width:5.5rem;color:var(--muted);transition:all .15s;font-family:'SUSE',inherit}
+.audience-tab{display:inline-flex;flex:1;flex-direction:column;align-items:center;gap:.4rem;padding:1.75rem 1.125rem;border:2px solid var(--border);background:hsl(var(--card));cursor:pointer;border-radius:12px;min-width:5.5rem;color:var(--muted);transition:all .15s;font-family:'SUSE',inherit}
 .audience-tab .tab-icon{width:1.5rem;height:1.5rem}
 .audience-tab .tab-icon svg{width:100%;height:100%}
 .audience-tab .tab-label{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;white-space:nowrap}
-.audience-tab[aria-selected=true]{background:var(--dark);color:var(--green);border-color:var(--dark);box-shadow:0 3px 12px rgba(12,50,44,.2)}
+.audience-tab[aria-selected=true]{background:hsl(var(--band-dark));color:var(--green);border-color:hsl(var(--band-dark));box-shadow:0 3px 12px rgba(12,50,44,.2)}
 .audience-tab:hover:not([aria-selected=true]){border-color:var(--green);color:var(--dark);background:var(--pale)}
 
 /* Audience panels - full-width, two-column on desktop */
@@ -2726,29 +2367,112 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .whats-label{position:absolute;top:0;left:50%;transform:translate(-50%,-50%);z-index:10;border-radius:3rem;padding:.85rem 2rem;font-weight:700;font-size:1.0625rem;white-space:nowrap;box-shadow:0 6px 20px rgba(0,0,0,.18);     background: var(--muted);    color: var(--pale);}
 
 /* Platform */
-.platform-section{background:linear-gradient(20deg,#0c322c 0%,#008657 100%);color:#fff;padding:4.5rem 3.5rem}
+.platform-section{background:linear-gradient(20deg,#0c322c 0%,#008657 100%);color:hsl(var(--on-band-dark));padding:4.5rem 3.5rem}
 .platform-inner{max-width:var(--col-cap);margin-left:auto;margin-right:0}
 .platform-header{text-align:center;margin-bottom:2.75rem}
 .platform-section h2{margin-bottom:.5rem}
-.platform-tagline{color:rgba(255,255,255,.8);font-size:1.0625rem;margin:0;letter-spacing:.01em}
+.platform-tagline{color:hsl(var(--on-band-dark) / .8);font-size:1.0625rem;margin:0;letter-spacing:.01em}
 .platform-features{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;margin-bottom:1.75rem}
 .platform-feature{background:rgba(255,255,255,.025);padding:1.625rem 1.5rem;display:flex;flex-direction:column;gap:.5rem;transition:background .15s}
 .platform-feature:hover{background:#00000033}
 .platform-feature-icon{width:1.75rem;height:1.75rem;color:var(--green);margin-bottom:.375rem}
 .platform-feature-icon svg{width:100%;height:100%}
 .platform-feature strong{font-size:.9375rem;font-weight:700;line-height:1.3}
-.platform-feature p{color:rgba(255,255,255,.45);font-size:.85rem;margin:0;line-height:1.6}
+.platform-feature p{color:hsl(var(--on-band-dark) / .45);font-size:.85rem;margin:0;line-height:1.6}
 .platform-feature:last-child:nth-child(odd){grid-column:1 / -1}
 .rt-mark{font-family:'SUSE',sans-serif;font-weight:700;letter-spacing:0;margin-right:.32em;line-height:1}
 .rt-inline{color:var(--green);font-weight:600;white-space:nowrap}
 .rt-inline .rt-mark{margin-right:.1em}
+/* ── Block 2: make something, right now (plan 117) ──────────────────────────
+   Three worked examples, each a plain link into the app carrying the example's
+   own inputs. The picture is the tool's own preview of that exact look, so the
+   card cannot promise a look the click does not deliver. Cards are <a>, so the
+   whole tile is the hit area and keyboard focus lands on it once. */
+.make-section{background:hsl(var(--background));padding:5rem 1.5rem}
+.make-inner{max-width:1180px;margin:0 auto}
+.make-head{max-width:44rem;margin:0 auto 2.5rem;text-align:center}
+.make-head h2{color:var(--dark);margin:0 0 .75rem}
+html[data-theme="dark"] .make-head h2{color:hsl(var(--foreground))}
+.make-lead{color:var(--muted);font-size:1.05rem;line-height:1.7;margin:0}
+.make-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+@media(max-width:900px){.make-grid{grid-template-columns:1fr;max-width:26rem;margin:0 auto}}
+.make-card{display:flex;flex-direction:column;background:hsl(var(--card));border:1px solid var(--border);border-radius:16px;padding:1rem 1rem 1.15rem;color:inherit;text-decoration:none;transition:transform .15s,box-shadow .15s,border-color .15s}
+.make-card:hover,.make-card:focus-visible{transform:translateY(-3px);box-shadow:0 .8rem 2rem rgba(12,50,44,.13);border-color:var(--green);text-decoration:none}
+.make-card:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+.make-shot{display:block;background:var(--pale);border-radius:11px;overflow:hidden;aspect-ratio:4/3;margin-bottom:.95rem}
+.make-shot img{width:100%;height:100%;object-fit:contain;display:block}
+.make-scene{font-size:1.0625rem;font-weight:700;color:var(--dark);line-height:1.3}
+html[data-theme="dark"] .make-scene{color:hsl(var(--foreground))}
+.make-line{color:var(--muted);font-size:.9rem;line-height:1.6;margin-top:.35rem;flex:1}
+.make-go{margin-top:.9rem;font-size:.875rem;font-weight:700;color:var(--green);display:inline-flex;align-items:center;gap:.4em}
+.make-card:hover .make-go span{transform:translateX(3px)}
+.make-go span{transition:transform .15s}
+
+/* ── Block 3: the sovereignty statement ─────────────────────────────────────
+   The one full statement of internet-optionality on the page, and deliberately
+   the quietest band on it: no cards, no icons, no illustration - one paragraph
+   on the always-dark chrome surface, with two receipt links under it. */
+.sovereign-section{background:hsl(var(--band-dark));color:hsl(var(--on-band-dark));padding:5.5rem 1.5rem}
+.sovereign-inner{max-width:46rem;margin:0 auto;text-align:center}
+.sovereign-statement{font-size:clamp(1.15rem,2.2vw,1.4rem);line-height:1.75;margin:0;color:hsl(var(--on-band-dark) / .78);text-wrap:pretty}
+.sovereign-statement strong{color:hsl(var(--on-band-dark));font-weight:700}
+.sovereign-receipts{margin-top:2rem;display:flex;align-items:center;justify-content:center;gap:.75rem;font-size:.875rem}
+.sovereign-receipts a{color:hsl(var(--on-band-dark) / .62);text-decoration:underline;text-underline-offset:.25em}
+.sovereign-receipts a:hover{color:hsl(var(--on-band-dark))}
+.sovereign-dot{color:hsl(var(--on-band-dark) / .35)}
+
+/* ── Block 5: AI, on your terms ─────────────────────────────────────────────
+   Three short answers, no illustration: this block exists to remove worry, and
+   a decorated one would read as a pitch. */
+.ai-section{background:hsl(var(--background));padding:5rem 1.5rem;border-top:1px solid var(--border)}
+.ai-inner{max-width:1000px;margin:0 auto}
+.ai-head{max-width:42rem;margin:0 auto 2.5rem;text-align:center}
+.ai-head h2{color:var(--dark);margin:0 0 .75rem}
+html[data-theme="dark"] .ai-head h2{color:hsl(var(--foreground))}
+.ai-lead{color:var(--muted);font-size:1.05rem;line-height:1.7;margin:0}
+.ai-points{display:grid;grid-template-columns:repeat(3,1fr);gap:1.75rem}
+@media(max-width:820px){.ai-points{grid-template-columns:1fr;max-width:30rem;margin:0 auto}}
+.ai-point strong{display:block;font-size:1rem;color:var(--dark);margin-bottom:.4rem}
+html[data-theme="dark"] .ai-point strong{color:hsl(var(--foreground))}
+.ai-point p{color:var(--muted);font-size:.9375rem;line-height:1.7;margin:0}
+
+/* ── Block 7: who is behind this, and why ───────────────────────────────────
+   The progressive-disclosure turn, low on the page and once. One paragraph in a
+   narrow measure - the only place on the landing where "we" is the subject. */
+.behind-section{background:var(--pale);padding:4.5rem 1.5rem}
+.behind-inner{max-width:44rem;margin:0 auto;text-align:center}
+.behind-eyebrow{display:inline-block;font-size:.6875rem;text-transform:uppercase;letter-spacing:.14em;font-weight:700;color:var(--green);margin-bottom:1.1rem}
+.behind-para{font-size:1.0625rem;line-height:1.85;color:var(--muted);margin:0}
+.behind-para strong{color:var(--dark);font-weight:700}
+html[data-theme="dark"] .behind-para strong{color:hsl(var(--foreground))}
+.behind-links{margin-top:1.6rem;display:flex;align-items:center;justify-content:center;gap:.75rem;font-size:.875rem;font-weight:600}
+.behind-dot{color:var(--muted);opacity:.5}
+
+/* ── Block 9: the teaser a moved band leaves behind ─────────────────────────
+   One line and one link. The reference content itself lives on its own page,
+   with the layout that made it readable (formatsSection / importBand). */
+.teaser-section{background:hsl(var(--background));padding:3rem 1.5rem;border-top:1px solid var(--border)}
+.teaser-inner{max-width:46rem;margin:0 auto;text-align:center}
+.teaser-line{font-size:1.05rem;line-height:1.7;color:var(--muted);margin:0 0 .6rem}
+
+/* The two moved bands, rendering inside a docs article column rather than
+   full-bleed on the landing: drop the band padding the column already supplies,
+   and let the import band sit flush under the masthead as the page's opener. */
+.docs-content .import-section{background:none;padding:0 0 2.5rem;margin-bottom:2.5rem;border-bottom:1px solid var(--border)}
+.docs-content .import-section h2{border-top:none;padding-top:0;margin-top:0}
+.docs-content .import-inner{max-width:none}
+.docs-content .import-lede{margin-bottom:2rem}
+.page-formats .formats-section{padding:2.5rem 0 0;border-top:none;background:none}
+.page-formats .formats-inner{max-width:none}
+.page-formats .formats-head{margin-bottom:1.25rem}
+
 /* Formats — ONE three-zone table: import-only (left) · round-trip (centre) · export-only (right) */
-.formats-section{background:#fff;padding:5.5rem 2rem;border-top:1px solid var(--border)}
-html.dark .formats-section{background:#0b1712;border-top-color:#12291d}
+.formats-section{background:hsl(var(--background));padding:5.5rem 2rem;border-top:1px solid var(--border)}
+html[data-theme="dark"] .formats-section{background:hsl(var(--background));border-top-color:hsl(var(--border))}
 .formats-inner{max-width:1340px;margin:0 auto}
 .formats-head{margin-bottom:2rem}
 .formats-head h2{color:var(--dark);font-size:2rem;margin:0 0 .6rem}
-html.dark .formats-head h2{color:#eafff4}
+html[data-theme="dark"] .formats-head h2{color:hsl(var(--foreground))}
 .formats-head p{color:var(--muted);font-size:1.05rem;line-height:1.65;margin:0;max-width:44rem}
 .formats-hint{font-size:.9rem;margin-top:.7rem !important;color:var(--green) !important;font-weight:600}
 .fmt-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
@@ -2773,14 +2497,14 @@ html.dark .formats-head h2{color:#eafff4}
 .fmt-chip{display:inline-flex;align-items:center;background:rgba(48,186,120,.1);color:#127a45;font-size:.74rem;font-family:'SUSE Mono','SF Mono',monospace;font-weight:700;padding:.3em .64em;border-radius:1em;letter-spacing:.03em;border:1px solid transparent;cursor:pointer;transition:transform .1s,box-shadow .12s,background .12s,color .12s;white-space:nowrap;-webkit-appearance:none;appearance:none}
 .fmt-chip:hover{transform:translateY(-1px);box-shadow:0 3px 10px rgba(12,50,44,.16)}
 .fmt-chip:focus-visible{outline:2px solid var(--green);outline-offset:2px}
-.fmt-chip--both{background:var(--green);color:#fff}
+.fmt-chip--both{background:var(--green);color:hsl(var(--on-band-dark))}
 .fmt-chip .rt-mark{margin-right:.3em}
-html.dark .fmt-chip{background:rgba(48,186,120,.16);color:#7fe7b4}
-html.dark .fmt-chip--both{background:var(--green);color:#04140c}
+html[data-theme="dark"] .fmt-chip{background:rgba(48,186,120,.16);color:#7fe7b4}
+html[data-theme="dark"] .fmt-chip--both{background:var(--green);color:#04140c}
 /* Educational dialog */
-.fmt-dialog{border:0;border-radius:18px;padding:0;width:min(94vw,38rem);max-height:88vh;overflow:auto;margin:auto;color:var(--dark);background:#fff;box-shadow:0 30px 80px rgba(12,50,44,.34)}
+.fmt-dialog{border:0;border-radius:18px;padding:0;width:min(94vw,38rem);max-height:88vh;overflow:auto;margin:auto;color:var(--dark);background:hsl(var(--popover));box-shadow:0 30px 80px rgba(12,50,44,.34)}
 .fmt-dialog::backdrop{background:rgba(8,20,15,.5);backdrop-filter:blur(3px)}
-html.dark .fmt-dialog{background:#122a1e;color:#eafff4}
+html[data-theme="dark"] .fmt-dialog{background:hsl(var(--popover));color:hsl(var(--foreground))}
 .fmt-dialog-inner{padding:1.75rem 1.75rem 1.6rem;position:relative}
 .fmt-dialog-x{position:absolute;top:.7rem;right:.7rem;border:0;background:var(--pale);width:1.9rem;height:1.9rem;border-radius:50%;cursor:pointer;color:var(--muted);font-size:.82rem;line-height:1}
 .fmt-dialog-x:hover{background:var(--border)}
@@ -2809,7 +2533,7 @@ html.dark .fmt-dialog{background:#122a1e;color:#eafff4}
 .fmt-dialog-unsup-list li{font-size:.82rem;line-height:1.3;display:flex;align-items:flex-start;gap:.45em;opacity:.9}
 .fmt-dialog-unsup-list li::before{content:'—';color:var(--orange);font-weight:800;flex:none}
 @media(max-width:520px){.fmt-dialog-unsup-list{grid-template-columns:1fr}}
-html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
+html[data-theme="dark"] .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
 @media(max-width:760px){
 .formats-section{padding:4rem 1.25rem}
 .fmt-table{min-width:0;display:block}
@@ -2829,14 +2553,14 @@ html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
 /* QoL pair - sound + bulk, side by side */
 .qol-section{background:var(--pale);padding:5.5rem 2rem}
 .qol-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:1.75rem}
-.qol-panel{background:#fff;border:1px solid var(--border);border-radius:20px;padding:2.5rem 2.25rem;box-shadow:0 4px 20px rgba(12,50,44,.06);display:flex;flex-direction:column;gap:1.5rem}
+.qol-panel{background:hsl(var(--card));border:1px solid var(--border);border-radius:20px;padding:2.5rem 2.25rem;box-shadow:0 4px 20px rgba(12,50,44,.06);display:flex;flex-direction:column;gap:1.5rem}
 .qol-panel h3{color:var(--dark);font-size:1.4rem;margin:0}
 .qol-panel p{color:var(--muted);font-size:1rem;line-height:1.7;margin:0}
 .qol-panel p strong{color:var(--dark);font-weight:700}
 @media(max-width:768px){.qol-inner{grid-template-columns:1fr;gap:1.25rem}.qol-section{padding:3.5rem 1.25rem}}
 
 /* Assurance / provenance - the trust band */
-.assure-section{background:linear-gradient(155deg,#061816 0%,#0c322c 55%,#0a3b30 100%);color:#fff;padding:6.5rem 2rem}
+.assure-section{background:linear-gradient(155deg,#061816 0%,#0c322c 55%,#0a3b30 100%);color:hsl(var(--on-band-dark));padding:6.5rem 2rem}
 .assure-inner{max-width:1080px;margin:0 auto}
 .assure-lede-row{display:flex;align-items:flex-start;justify-content:space-between;gap:2.5rem;margin-bottom:3.5rem}
 .assure-lede{max-width:46rem}
@@ -2846,24 +2570,27 @@ html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
 .assure-mascot{width:clamp(120px,25vw,300px);flex-shrink:0;filter:drop-shadow(0 14px 34px rgba(0,0,0,.45))}
 @media(max-width:820px){.assure-lede-row{flex-direction:column}.assure-mascot{width:min(42vw,180px);align-self:flex-start}}
 .assure-eyebrow{display:inline-block;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--light);margin-bottom:1rem}
-.assure-section h2{font-size:2.5rem;line-height:1.08;color:#fff;margin:0 0 1.25rem}
-.assure-lead{font-size:1.12rem;line-height:1.75;color:rgba(255,255,255,.72);margin:0}
-.assure-lead strong{color:#fff;font-weight:700}
+.assure-section h2{font-size:2.5rem;line-height:1.08;color:hsl(var(--on-band-dark));margin:0 0 1.25rem}
+.assure-lead{font-size:1.12rem;line-height:1.75;color:hsl(var(--on-band-dark) / .72);margin:0}
+.assure-lead strong{color:hsl(var(--on-band-dark));font-weight:700}
 .assure-lead a{color:var(--light);text-decoration:underline;text-underline-offset:2px}
 .assure-main{max-width:46rem;margin-bottom:3.5rem}
 .assure-checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1.5rem}
 .assure-checks li{display:flex;gap:1rem;align-items:flex-start}
 .assure-check-ic{width:1.7rem;height:1.7rem;flex-shrink:0;color:var(--green);margin-top:.05rem}
 .assure-check-ic svg{width:100%;height:100%}
-.assure-checks strong{display:block;color:#fff;font-size:1.05rem;font-weight:700;margin-bottom:.25rem}
-.assure-checks li>div>span{color:rgba(255,255,255,.6);font-size:.92rem;line-height:1.55;display:block}
-.assure-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;margin-bottom:2.25rem}
+.assure-checks strong{display:block;color:hsl(var(--on-band-dark));font-size:1.05rem;font-weight:700;margin-bottom:.25rem}
+.assure-checks li>div>span{color:hsl(var(--on-band-dark) / .6);font-size:.92rem;line-height:1.55;display:block}
+/* auto-fit rather than a fixed 3: the "Made on your device" card retired into the
+   sovereignty statement (plan 117 block 3), so this grid now carries two cards in
+   English and three in the locales that still ship the old JSON. */
+.assure-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1px;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;margin-bottom:2.25rem}
 .assure-card{background:rgba(255,255,255,.03);padding:1.9rem 1.6rem;transition:background .15s}
 .assure-card:hover{background:rgba(255,255,255,.06)}
 .assure-card-ic{display:block;width:1.7rem;height:1.7rem;color:var(--light);margin-bottom:.85rem}
 .assure-card-ic svg{width:100%;height:100%}
-.assure-card strong{display:block;color:#fff;font-size:1rem;margin-bottom:.45rem}
-.assure-card p{color:rgba(255,255,255,.55);font-size:.88rem;line-height:1.6;margin:0}
+.assure-card strong{display:block;color:hsl(var(--on-band-dark));font-size:1rem;margin-bottom:.45rem}
+.assure-card p{color:hsl(var(--on-band-dark) / .55);font-size:.88rem;line-height:1.6;margin:0}
 .assure-cta a{color:var(--green);font-weight:700;text-decoration:none;font-size:1.02rem}
 .assure-cta a:hover{text-decoration:underline}
 /* Hand-off to the docs. The section above makes claims; these are where the
@@ -2872,48 +2599,48 @@ html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
    until you hover. */
 .assure-docs{margin-top:2.75rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)}
 .assure-docs-label{display:block;font-size:.6875rem;text-transform:uppercase;letter-spacing:.12em;
-  font-weight:700;color:rgba(255,255,255,.45);margin-bottom:1.1rem}
+  font-weight:700;color:hsl(var(--on-band-dark) / .45);margin-bottom:1.1rem}
 .assure-docs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.5rem}
 .assure-doc{display:block;padding:.9rem 1rem;border-radius:12px;border:1px solid transparent;
   text-decoration:none;transition:background .15s,border-color .15s}
-.assure-doc:hover{background:rgba(255,255,255,.045);border-color:rgba(255,255,255,.12);text-decoration:none}
+.assure-doc:hover{background:rgba(255,255,255,.045);border-color:hsl(var(--on-band-dark) / .12);text-decoration:none}
 .assure-doc-ic{display:block;width:1.15rem;height:1.15rem;color:var(--green);margin-bottom:.55rem}
 .assure-doc-ic svg{width:100%;height:100%}
-.assure-doc strong{display:block;color:#fff;font-size:.9375rem;margin-bottom:.3rem}
-.assure-doc-desc{display:block;color:rgba(255,255,255,.55);font-size:.8125rem;line-height:1.5}
+.assure-doc strong{display:block;color:hsl(var(--on-band-dark));font-size:.9375rem;margin-bottom:.3rem}
+.assure-doc-desc{display:block;color:hsl(var(--on-band-dark) / .55);font-size:.8125rem;line-height:1.5}
 @media(max-width:768px){.assure-section{padding:4.5rem 1.25rem}.assure-section h2{font-size:1.95rem}.assure-grid{grid-template-columns:1fr}}
-.dark .qol-section{background:#061816}
-.dark .qol-panel{background:rgba(255,255,255,.035);border-color:rgba(255,255,255,.1);box-shadow:none}
-.dark .qol-panel h3,.dark .qol-panel p strong{color:#fff}
-.dark .qol-panel p{color:rgba(255,255,255,.6)}
+[data-theme="dark"] .qol-section{background:hsl(var(--background))}
+[data-theme="dark"] .qol-panel{background:rgba(255,255,255,.035);border-color:hsl(var(--on-band-dark) / .1);box-shadow:none}
+[data-theme="dark"] .qol-panel h3,[data-theme="dark"] .qol-panel p strong{color:hsl(var(--on-band-dark))}
+[data-theme="dark"] .qol-panel p{color:hsl(var(--on-band-dark) / .6)}
 
 /* Everywhere section */
-.everywhere-section{padding:5rem 2rem;background:var(--dark);color:#fff}
+.everywhere-section{padding:5rem 2rem;background:hsl(var(--band-dark));color:hsl(var(--on-band-dark))}
 .everywhere-inner{display:flex;flex-direction:column;gap:1.5rem;max-width:1400px;margin:0 auto;text-align:start}
 /* Mascot beside the TITLE only (per the brief), bigger than before; copy + chips run full
    width on their own lines below. */
 .everywhere-head{display:flex;align-items:center;justify-content:space-between;gap:2.5rem}
 .everywhere-head h2{margin:0;flex:1 1 auto}
 .everywhere-mascot{width:clamp(300px,34vw,600px);flex-shrink:0}
-.everywhere-section h2{color:#fff}
-.everywhere-copy{font-size:1.125rem;line-height:1.75;color:rgba(255,255,255,.65);margin:0 0 1rem}
+.everywhere-section h2{color:hsl(var(--on-band-dark))}
+.everywhere-copy{font-size:1.125rem;line-height:1.75;color:hsl(var(--on-band-dark) / .65);margin:0 0 1rem}
 .everywhere-chips{display:flex;flex-wrap:wrap;justify-content:flex-start;gap:1rem}
 @media(max-width:768px){.everywhere-head{flex-direction:column;align-items:flex-start;gap:1.25rem}.everywhere-mascot{width:min(82vw,440px)}}
-.everywhere-chip{display:inline-flex;flex-direction:column;align-items:center;gap:.625rem;padding:1.25rem 1.75rem;background:rgba(255,255,255,.05);border-radius:14px;color:#fff;font-size:.95rem;font-weight:700;min-width:7rem;transition:background .2s}
+.everywhere-chip{display:inline-flex;flex-direction:column;align-items:center;gap:.625rem;padding:1.25rem 1.75rem;background:rgba(255,255,255,.05);border-radius:14px;color:hsl(var(--on-band-dark));font-size:.95rem;font-weight:700;min-width:7rem;transition:background .2s}
 .everywhere-chip:hover{background:rgba(255,255,255,.09)}
 .everywhere-chip svg{width:2rem;height:2rem;color:var(--green);flex-shrink:0}
 .everywhere-chip span{letter-spacing:.02em}
 .everywhere-models{max-width:1400px;margin:4rem auto 0}
-.everywhere-models-intro{text-align:center;color:#fff;font-size:1rem;margin:0 0 2rem}
+.everywhere-models-intro{text-align:center;color:hsl(var(--on-band-dark));font-size:1rem;margin:0 0 2rem}
 .everywhere-models-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 .everywhere-model{position:relative;display:flex;align-items:stretch;gap:1.5rem;padding:3.5rem 1.75rem 2rem;background:rgba(255,255,255,.05);border-radius:18px;transition:background .2s,border-color .2s}
-.everywhere-model:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16)}
+.everywhere-model:hover{background:rgba(255,255,255,.08);border-color:hsl(var(--on-band-dark) / .16)}
 .everywhere-model-main{flex:0 0 2em;min-width:0}
 .everywhere-model-num{position:absolute;top:-1rem;left:50%;transform:translateX(-50%);ox-shadow: inset 0 0 0 .25px #0002, inset 0 1px 1.5px #fff9, 0 .2rem .4rem #0002;
     text-shadow: 0 1px .5px #fff2;width:fit-content;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--dark);background:rgba(48,186,120,1.14);padding:.32rem .7rem;border-radius:999px;margin:0}
 .everywhere-model-icon{width:2.25rem;height:2.25rem;color:var(--green);display:block;margin-bottom:.9rem}
 .everywhere-model h3{color:var(--green);font-size:1.2rem;margin:0;}
-.everywhere-model p{flex:1;min-width:0;font-size:.95rem;line-height:1.65;color:rgba(255,255,255,.6);margin:0;padding-left:1.5rem}
+.everywhere-model p{flex:1;min-width:0;font-size:.95rem;line-height:1.65;color:hsl(var(--on-band-dark) / .6);margin:0;padding-left:1.5rem}
 @media(max-width:768px){.everywhere-models-grid{grid-template-columns:1fr;gap:2rem}.everywhere-models{margin-top:2.5rem}}
 
 /* What's a tool */
@@ -2922,14 +2649,14 @@ html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
 .whats-a-tool .whats-inner>h2{color:var(--dark);font-size:2rem;margin-bottom:.625rem;text-align:center}
 .tool-lead{max-width:100%;margin:0 0 2rem;font-size:1.0625rem;line-height:1.8;color:var(--muted);text-align:center}
 .tool-anatomy{display:flex;flex-wrap:wrap;gap:.75rem;max-width:100%;margin:0 0 2rem;justify-content:center;align-items:center}
-.tool-part{background:#fff;border:1px solid var(--border);border-radius:12px;padding:1rem 1.25rem;text-align:center;flex:1;min-width:110px;box-shadow:0 2px 8px rgba(12,50,44,.07);transition:box-shadow .15s}
+.tool-part{background:hsl(var(--card));border:1px solid var(--border);border-radius:12px;padding:1rem 1.25rem;text-align:center;flex:1;min-width:110px;box-shadow:0 2px 8px rgba(12,50,44,.07);transition:box-shadow .15s}
 .tool-part:hover{box-shadow:0 4px 16px rgba(12,50,44,.12)}
-.tool-part-file{font-family:'SUSE Mono','SF Mono',monospace;font-size:.75rem;background:#eef5f0;color:var(--dark);padding:.2em .55em;border-radius:4px;display:inline-block;margin-bottom:.5rem;font-weight:600}
+.tool-part-file{font-family:'SUSE Mono','SF Mono',monospace;font-size:.75rem;background:hsl(var(--muted));color:var(--dark);padding:.2em .55em;border-radius:4px;display:inline-block;margin-bottom:.5rem;font-weight:600}
 .tool-part-name{font-weight:700;color:var(--dark);font-size:.8125rem;margin-bottom:.2rem}
 .tool-part-desc{font-size:.73rem;color:var(--muted);line-height:1.45}
 .tool-plus{font-size:1.5rem;color:var(--border);font-weight:300;flex-shrink:0;align-self:center}
 .tool-features{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin-bottom:1.75rem}
-.tool-feature{background-color:#fff6;border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.375rem;display:flex;flex-direction:column;gap:.35rem;transition:box-shadow .15s}
+.tool-feature{background-color:hsl(var(--on-band-dark) / .4);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.375rem;display:flex;flex-direction:column;gap:.35rem;transition:box-shadow .15s}
 .tool-feature:hover{box-shadow:0 4px 16px rgba(12,50,44,.1)}
 .tool-feature-icon{width:1.375rem;height:1.375rem;color:var(--green);margin-bottom:.25rem;flex-shrink:0}
 .tool-feature-icon svg{width:100%;height:100%}
@@ -2939,7 +2666,7 @@ html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
 .try-now-callout{position:absolute;left:50%;bottom:0;transform:translate(-50%,50%);z-index:10;width:min(92%,640px);background:#01564a;border-radius:14px;padding:1.5rem 1.75rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;box-shadow: 0 10px 30px rgba(0,0,0,.2), inset 0 .06rem .1rem #fff2}
 .try-now-text{flex:1;min-width:0}
 .try-now-text strong{color:var(--green);font-size:.9375rem;display:block;margin-bottom:.35rem;font-weight:700}
-.try-now-text p{color:#fff;font-size:.85rem;line-height:1.6;margin:0}
+.try-now-text p{color:hsl(var(--on-band-dark));font-size:.85rem;line-height:1.6;margin:0}
 
 /* Design import segment ("bring your existing files") */
 .import-section{background:linear-gradient(180deg,#fff 0%,var(--pale) 100%);padding:7rem 2rem 5rem}
@@ -2953,9 +2680,9 @@ html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
 .import-lead{font-size:1.0625rem;line-height:1.8;color:var(--muted);margin:0}
 .import-lead strong{color:var(--dark);font-weight:700}
 .import-sources{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem;margin-bottom:1.75rem}
-.import-source{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.5rem;background:#fff;border:0;    box-shadow: 0 .3rem 1rem #00000016;border-radius:14px;padding:1.5rem 1rem;transition:box-shadow .15s,transform .15s}
+.import-source{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.5rem;background:hsl(var(--card));border:0;    box-shadow: 0 .3rem 1rem #00000016;border-radius:14px;padding:1.5rem 1rem;transition:box-shadow .15s,transform .15s}
 .import-source:hover{box-shadow:0 8px 24px rgba(12,50,44,.1);transform:translateY(-2px)}
-.import-badge{display:inline-flex;align-items:center;box-shadow:inset 0 0 0 1px #0002, inset 0 1.25px 2px #fff9,  0 .2rem .4rem #0002;justify-content:center;width:2.75rem;height:2.75rem;border-radius:12px;background:var(--b,#30ba78);color:#fff;font-weight:800;font-size:.9rem;letter-spacing:-.01em}
+.import-badge{display:inline-flex;align-items:center;box-shadow:inset 0 0 0 1px #0002, inset 0 1.25px 2px #fff9,  0 .2rem .4rem #0002;justify-content:center;width:2.75rem;height:2.75rem;border-radius:12px;background:var(--b,#30ba78);color:hsl(var(--on-band-dark));font-weight:800;font-size:.9rem;letter-spacing:-.01em}
 .import-source strong{color:var(--dark);font-size:.95rem;font-weight:700}
 .import-fmt{font-family:'SUSE Mono','SF Mono',monospace;font-size:.72rem;color:var(--muted);letter-spacing:.02em}
 .import-flow{display:flex;align-items:stretch;gap:.5rem;margin-bottom:2.75rem}
@@ -2966,7 +2693,7 @@ html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
 .import-step p{font-size:.8rem;color:var(--muted);line-height:1.55;margin:0}
 .import-arrow{align-self:center;color:var(--green);flex-shrink:0;font-size:1.4rem;font-weight:300;line-height:1}
 .import-points{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-bottom:2.5rem}
-.import-point{background:rgba(255,255,255,.6);border:1px solid var(--border);border-radius:14px;padding:1.75rem 1.5rem}
+.import-point{background:hsl(var(--card));border:1px solid var(--border);border-radius:14px;padding:1.75rem 1.5rem}
 .import-point-icon{width:2rem;height:2rem;color:var(--green);margin-bottom:.9rem}
 .import-point-icon svg{width:100%;height:100%}
 .import-point strong{display:block;color:var(--dark);font-size:1rem;margin-bottom:.5rem}
@@ -3002,9 +2729,9 @@ html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
    pins its sticky top and height to that number, so this must not change it. */
 .docs-search{position:relative;flex:none;margin-inline-start:.25rem}
 .docs-search-input{inline-size:11rem;box-sizing:border-box;padding:.4rem .7rem;font:inherit;font-size:.8125rem;
-  color:#fff;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);border-radius:2em;
+  color:hsl(var(--on-band-dark));background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);border-radius:2em;
   transition:inline-size .18s ease,background .15s ease,border-color .15s ease}
-.docs-search-input::placeholder{color:rgba(255,255,255,.5)}
+.docs-search-input::placeholder{color:hsl(var(--on-band-dark) / .5)}
 .docs-search-input:hover{background:rgba(255,255,255,.14)}
 .docs-search-input:focus{outline:none;inline-size:15rem;background:rgba(255,255,255,.18);border-color:var(--green)}
 /* Only on genuinely small screens does the field collapse to a puck that opens on
@@ -3027,7 +2754,7 @@ html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
    Width: wide enough for a result to read as three lines of prose rather than a
    column of single words. It is a floating overlay anchored to the field, so it is
    free to be wider than whatever it hangs from. */
-.docs-search-results{position:fixed;z-index:110;inline-size:min(30rem,calc(100vw - 2rem));max-height:min(60vh,28rem);overflow-y:auto;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 10px 34px #00000026;padding:.25rem}
+.docs-search-results{position:fixed;z-index:110;inline-size:min(30rem,calc(100vw - 2rem));max-height:min(60vh,28rem);overflow-y:auto;background:hsl(var(--popover));border:1px solid var(--border);border-radius:10px;box-shadow:0 10px 34px #00000026;padding:.25rem}
 /* A hit is explicitly a flex COLUMN rather than a block. It used to be a block that
    had to out-specify the rail's .docs-sidebar a{display:flex} — and when that
    fight was lost the three spans became flex items in a ROW, so every result was
@@ -3040,11 +2767,11 @@ html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
 .docs-search-hit .hit-x{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:.8125rem;color:var(--muted);margin-top:.25rem;line-height:1.45}
 .docs-search-hit:hover,.docs-search-hit.is-active{background:var(--pale);text-decoration:none}
 .docs-search-empty{padding:.6rem .55rem;font-size:.8125rem;color:var(--muted)}
-.dark .docs-search-results{background:#0e1a17;box-shadow:0 10px 34px #0000008c}
-/* --dark is NOT remapped by the .dark theme (it overrides --text/--muted/--border
+[data-theme="dark"] .docs-search-results{background:hsl(var(--popover));box-shadow:0 10px 34px #0000008c}
+/* --dark is NOT remapped by the [data-theme="dark"] theme (it overrides --text/--muted/--border
    /--pale only), so every var(--dark) foreground is near-black on the dark panel.
    The docs headings solve it the same way one block up: repoint to --text. */
-.dark .docs-search-hit .hit-h{color:var(--text)}
+[data-theme="dark"] .docs-search-hit .hit-h{color:var(--text)}
 .sidebar-pathway{font-size:.9375rem;font-weight:700;color:var(--dark);margin-bottom:.75rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
 .docs-sidebar a{display:flex;align-items:flex-start;gap:.5rem;padding:.3rem .5rem;font-size:.875rem;color:var(--text);border-radius:5px}
 .docs-sidebar a:hover{color:var(--green);background:var(--pale);text-decoration:none}
@@ -3074,14 +2801,14 @@ html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
 .docs-sidebar a:hover .sidebar-ic.is-inclusive,.docs-sidebar a.active .sidebar-ic.is-inclusive{color:#a83c6f}
 /* Dark mode: a tint, not a fill - low-alpha over the near-black page so the row
    glows rather than becoming a slab, and the glyph lifts to stay legible. */
-.dark .docs-sidebar a:has(.sidebar-ic.is-ai){background:rgba(139,124,246,.13)}
-.dark .docs-sidebar a:has(.sidebar-ic.is-inclusive){background:rgba(244,114,182,.12)}
-.dark .docs-sidebar a .sidebar-ic.is-ai{color:#b9a8f7}
-.dark .docs-sidebar a .sidebar-ic.is-inclusive{color:#f2a9c9}
-.dark .docs-sidebar a:hover:has(.sidebar-ic.is-ai),.dark .docs-sidebar a.active:has(.sidebar-ic.is-ai){background:rgba(139,124,246,.2);color:#cbbdff}
-.dark .docs-sidebar a:hover:has(.sidebar-ic.is-inclusive),.dark .docs-sidebar a.active:has(.sidebar-ic.is-inclusive){background:rgba(244,114,182,.19);color:#ffc2dd}
-.dark .docs-sidebar a:hover .sidebar-ic.is-ai,.dark .docs-sidebar a.active .sidebar-ic.is-ai{color:#cbbdff}
-.dark .docs-sidebar a:hover .sidebar-ic.is-inclusive,.dark .docs-sidebar a.active .sidebar-ic.is-inclusive{color:#ffc2dd}
+[data-theme="dark"] .docs-sidebar a:has(.sidebar-ic.is-ai){background:rgba(139,124,246,.13)}
+[data-theme="dark"] .docs-sidebar a:has(.sidebar-ic.is-inclusive){background:rgba(244,114,182,.12)}
+[data-theme="dark"] .docs-sidebar a .sidebar-ic.is-ai{color:#b9a8f7}
+[data-theme="dark"] .docs-sidebar a .sidebar-ic.is-inclusive{color:#f2a9c9}
+[data-theme="dark"] .docs-sidebar a:hover:has(.sidebar-ic.is-ai),[data-theme="dark"] .docs-sidebar a.active:has(.sidebar-ic.is-ai){background:rgba(139,124,246,.2);color:#cbbdff}
+[data-theme="dark"] .docs-sidebar a:hover:has(.sidebar-ic.is-inclusive),[data-theme="dark"] .docs-sidebar a.active:has(.sidebar-ic.is-inclusive){background:rgba(244,114,182,.19);color:#ffc2dd}
+[data-theme="dark"] .docs-sidebar a:hover .sidebar-ic.is-ai,[data-theme="dark"] .docs-sidebar a.active .sidebar-ic.is-ai{color:#cbbdff}
+[data-theme="dark"] .docs-sidebar a:hover .sidebar-ic.is-inclusive,[data-theme="dark"] .docs-sidebar a.active .sidebar-ic.is-inclusive{color:#ffc2dd}
 /* Icon bullet lists (the <!--i:key--> md marker — policy pages). Logical
    properties so the Arabic build mirrors correctly. */
 .docs-content ul.icon-list{list-style:none;padding-inline-start:0;display:flex;flex-direction:column;gap:.9rem}
@@ -3169,7 +2896,7 @@ html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
    color-dodge divides by the backdrop: over near-black (#061816) the chips resolve to
    near-black too and the field disappears. The gradient's last stop still reaches the
    page colour, so the band ends where the article begins. */
-.dark .docs-masthead{background:linear-gradient(180deg,#16482f 0%,#0b2b21 58%,var(--page) 100%)}
+[data-theme="dark"] .docs-masthead{background:linear-gradient(180deg,#16482f 0%,#0b2b21 58%,var(--page) 100%)}
 /* Same box as .docs-wrap, then indented past the rail: the h1 starts exactly where
    the article's text will. Below 768px the rail is gone and so is the indent. */
 .docs-mast-inner{position:relative;z-index:2;max-width:1180px;width:100%;margin:0 auto;padding-inline:calc(220px + 3.5rem) 3.5rem}
@@ -3178,7 +2905,7 @@ html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
    a normal blend, because dodging on a near-white band blows the chips out to
    invisible white. Blend and opacity live here rather than in the JS: they are how
    the field MEETS the page, and the page's own theme rules already know that. */
-.dark .docs-mast-canvas{mix-blend-mode:color-dodge;opacity:.6}
+[data-theme="dark"] .docs-mast-canvas{mix-blend-mode:color-dodge;opacity:.6}
 /* Two scrims, both above the canvas and below the h1 (::before/::after are z-index 1,
    the heading is 2). The first is legibility insurance — the heading is currentColor,
    so decoration must never be allowed to eat its contrast; the second melts the band
@@ -3187,13 +2914,13 @@ html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
 .docs-masthead::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 70% 60% at 30% 88%,var(--mast-scrim) 0%,transparent 72%)}
 .docs-masthead::after{content:'';position:absolute;left:0;right:0;bottom:0;height:50%;z-index:1;pointer-events:none;background:linear-gradient(180deg,transparent 0%,var(--page) 94%)}
 :root{--mast-scrim:rgba(255,255,255,.82)}
-.dark{--mast-scrim:rgba(6,24,22,.72)}
+[data-theme="dark"]{--mast-scrim:rgba(6,24,22,.72)}
 /* Qualified with .docs-content (0,2,1) on purpose: the article rule .docs-content h1
    is (0,1,1) and gives every page heading a bottom rule and 2rem of padding. Inside a
    band that rule is a second horizontal line under a heading that already sits on
    one, so it has to be out-specified rather than tied with. */
 .docs-masthead h1{margin:0;padding:0;border-bottom:0;color:var(--dark)}
-.dark .docs-masthead h1{color:var(--text)}
+[data-theme="dark"] .docs-masthead h1{color:var(--text)}
 @media(max-width:768px){.docs-masthead{padding:calc(3.75rem + 1.75rem) 0 1.75rem;min-height:9rem}.docs-mast-inner{padding-inline:1rem}}
 /* ── Banked masthead art (MASTHEADS + docs-art.ts) ────────────────────────────
    A signed artifact inlined in place of the chip canvas. SAME BAND: same padding,
@@ -3228,7 +2955,7 @@ html.dark .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
    two inlined-vector blocks that read differently would be two grammars for one idea).
    The credential rides INSIDE the figcaption rather than on the artwork's corner: a
    figure's provenance is part of what the caption says. */
-.docs-figure{position:relative;margin:2.5rem auto;max-width:min(100%,44em)}
+.docs-figure{position:relative;margin:2.5rem auto;max-width:100%)}
 .docs-figure-art{position:relative;border-radius:1.2em;overflow:hidden}
 .docs-figure-art>svg{display:block;width:100%;height:auto}
 .docs-figure figcaption{margin-top:.9rem;font-size:.8125rem;color:var(--muted);text-align:center;
@@ -3264,14 +2991,14 @@ button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;f
      than filling the column and running metres down the page. object-fit keeps the
      aspect ratio while width/height are auto. */
   object-fit:contain;width:auto;height:auto;max-height:50em;
-  box-shadow: inset 0 0 0 1px #0000001f, 0 3px 6px #0002, 0 6px 2em #00000014}
+  box-shadow: inset 0 0 0 1px hsl(var(--border)), 0 3px 6px #0002, 0 6px 2em #00000014}
 /* The frame ring is INK, so it has to invert: a black hairline is invisible on a
    near-black page, which is why the shots read as unframed in dark mode. Light
    ring, slightly stronger (a 1px white line at 6% disappears against a screenshot
    whose own edges are light), plus a deeper drop so the card still sits ON the
    page rather than in it. */
-.dark .docs-content img[src*="/info/shots/"]{
-  box-shadow: inset 0 0 0 1px #ffffff2e, 0 3px 8px #00000073, 0 6px 2em #0000004d}
+[data-theme="dark"] .docs-content img[src*="/info/shots/"]{
+  box-shadow: inset 0 0 0 1px hsl(var(--border)), 0 3px 8px #00000073, 0 6px 2em #0000004d}
 
 /* ── Screenshot settle ──────────────────────────────────────────────────────
    Every shot enters lifted, with a wide diffuse shadow, then lands: the shadow
@@ -3306,8 +3033,8 @@ button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;f
      on the site invisible forever. */
   .shots-motion .shot--in{opacity:1;transform:none}
   .shots-motion .shot>img{transition:box-shadow .75s cubic-bezier(.16,.84,.3,1)}
-  .shots-motion .shot:not(.shot--in)>img{box-shadow:inset 0 0 0 1px #0000001f, 0 28px 60px #00000030}
-  .dark .shots-motion .shot:not(.shot--in)>img{box-shadow:inset 0 0 0 1px #ffffff2e, 0 28px 60px #00000073}
+  .shots-motion .shot:not(.shot--in)>img{box-shadow:inset 0 0 0 1px hsl(var(--border)), 0 28px 60px #00000030}
+  [data-theme="dark"] .shots-motion .shot:not(.shot--in)>img{box-shadow:inset 0 0 0 1px hsl(var(--border)), 0 28px 60px #00000073}
 }
 
 /* ── Screenshot credential line ─────────────────────────────────────────────
@@ -3351,14 +3078,14 @@ button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;f
    photo), and the glyph is muted against that puck instead of against the shot. Rest
    is legible; hover only sharpens it. */
 .shot-cred-btn{display:grid;place-items:center;width:1.4rem;height:1.4rem;flex:none;padding:0;
-  border:0;border-radius:50%;cursor:pointer;color:var(--muted);background:#ffffffe6;
+  border:0;border-radius:50%;cursor:pointer;color:var(--muted);background:hsl(var(--popover) / 0.9);
   box-shadow:0 1px 3px #00000024;
   -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);pointer-events:auto;
   transition:color .2s ease,background .2s ease,box-shadow .2s ease}
 .shot-cred-btn svg{width:.9rem;height:.9rem;display:block}
 /* Approaching the shot at all sharpens it; it never shouts. */
 .shot:hover .shot-cred-btn,.showcase:hover .shot-cred-btn{color:var(--dark)}
-.shot-cred-btn:hover,.shot-cred-btn:focus-visible{color:var(--dark);background:#fff;box-shadow:0 2px 6px #0003}
+.shot-cred-btn:hover,.shot-cred-btn:focus-visible{color:var(--dark);background:hsl(var(--popover));box-shadow:0 2px 6px #0003}
 /* Sized against the VIEWPORT, never the shot. Some shots are a 236px-wide crop of
    one control, and a line clamped to that width wraps into a stack taller than the
    artwork. Because .shot-cred is anchored to the inline-end and nothing on the way
@@ -3366,8 +3093,8 @@ button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;f
    a small one), which is how a caption behaves rather than how a box does. */
 .shot-cred-line{display:flex;flex-direction:column;align-items:flex-end;gap:.16rem;
   max-width:min(26rem,calc(100vw - 3rem));padding:.28rem .45rem;border-radius:.9rem;
-  background:#ffffffdd;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
-  box-shadow:0 2px 10px #0000001f, inset 0 0 0 1px #0000000f;
+  background:hsl(var(--popover) / 0.87);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  box-shadow:0 2px 10px #0000001f, inset 0 0 0 1px hsl(var(--border));
   opacity:0;pointer-events:none;transform:translateX(.4rem);
   transition:opacity .22s ease,transform .22s ease}
 /* Hover is keyed off the GLYPH (and then the line itself, so the pointer can travel
@@ -3453,17 +3180,17 @@ button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;f
 /* An AI declaration is not a detail to be discovered — if a shot ever carries one,
    its mark arrives already at full contrast and wearing the brand ring, so it reads
    as a statement rather than as the same quiet glyph every other shot has. */
-.shot-cred--ai .shot-cred-btn{color:#fff;background:var(--dark);box-shadow:0 0 0 2px var(--green)}
+.shot-cred--ai .shot-cred-btn{color:hsl(var(--on-band-dark));background:hsl(var(--band-dark));box-shadow:0 0 0 2px var(--green)}
 /* Dark mode: same contract, inverted. The puck is near-opaque for the same reason —
    a dark screenshot's corner is not reliably darker than the puck — and the glyph is
    a muted PALE against it, not a full-white one, so it stays quiet without becoming
    the invisible stroke this used to be. */
-.dark .shot-cred-btn{color:#93a8a0;background:#0b1512e6;box-shadow:0 1px 3px #0006}
-.dark .shot:hover .shot-cred-btn,.dark .showcase:hover .shot-cred-btn{color:var(--pale)}
-.dark .shot-cred-btn:hover,.dark .shot-cred-btn:focus-visible{color:var(--pale);background:#0b1512;box-shadow:0 2px 6px #0008}
-.dark .shot-cred--ai .shot-cred-btn{color:var(--dark);background:var(--light)}
-.dark .shot-cred-line{background:#0e1a17ee;box-shadow:0 2px 10px #0007, inset 0 0 0 1px #ffffff14}
-.dark .shot-cred-do:hover{background:#ffffff14}
+[data-theme="dark"] .shot-cred-btn{color:#93a8a0;background:hsl(var(--popover) / 0.9);box-shadow:0 1px 3px #0006}
+[data-theme="dark"] .shot:hover .shot-cred-btn,[data-theme="dark"] .showcase:hover .shot-cred-btn{color:var(--pale)}
+[data-theme="dark"] .shot-cred-btn:hover,[data-theme="dark"] .shot-cred-btn:focus-visible{color:var(--pale);background:hsl(var(--popover));box-shadow:0 2px 6px #0008}
+[data-theme="dark"] .shot-cred--ai .shot-cred-btn{color:var(--dark);background:var(--light)}
+[data-theme="dark"] .shot-cred-line{background:hsl(var(--popover) / 0.93);box-shadow:0 2px 10px #0007, inset 0 0 0 1px hsl(var(--border))}
+[data-theme="dark"] .shot-cred-do:hover{background:hsl(var(--foreground) / 0.08)}
 @media(prefers-reduced-motion:reduce){.shot-cred-line{transition:none;transform:none}}
 /* Narrow columns: the line would be wider than the shot, so it stacks above the
    glyph instead of beside it and takes the shot's full width. */
@@ -3492,9 +3219,9 @@ button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;f
    also holds the credential line, which is allowed to extend past the artwork's
    edge, and a clipping stage would cut it off. */
 .showcase-stage{position:relative;border-radius:1.2em;
-  box-shadow:inset 0 0 0 1px #0000001f, 0 3px 6px #0002, 0 6px 2em #00000014}
-.dark .showcase-stage{
-  box-shadow:inset 0 0 0 1px #ffffff2e, 0 3px 8px #00000073, 0 6px 2em #0000004d}
+  box-shadow:inset 0 0 0 1px hsl(var(--border)), 0 3px 6px #0002, 0 6px 2em #00000014}
+[data-theme="dark"] .showcase-stage{
+  box-shadow:inset 0 0 0 1px hsl(var(--border)), 0 3px 8px #00000073, 0 6px 2em #0000004d}
 /* The <img> the build emits, and the live SVG that replaces it, must occupy the
    same box — the swap happens under the reader's eyes and any size change would
    read as a jump rather than an upgrade. */
@@ -3533,9 +3260,9 @@ button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;f
    .docs-content img rule sets display:block at (0,1,1), so a bare .shot-alt (0,1,0)
    loses and BOTH twins render, one under the other. */
 .shot--dual>img.shot-alt,.shot--dual .shot-cred--alt{display:none}
-.dark .shot--dual>img:not(.shot-alt),.dark .shot--dual .shot-cred:not(.shot-cred--alt){display:none}
-.dark .shot--dual>img.shot-alt{display:block}
-.dark .shot--dual .shot-cred--alt{display:flex}
+[data-theme="dark"] .shot--dual>img:not(.shot-alt),[data-theme="dark"] .shot--dual .shot-cred:not(.shot-cred--alt){display:none}
+[data-theme="dark"] .shot--dual>img.shot-alt{display:block}
+[data-theme="dark"] .shot--dual .shot-cred--alt{display:flex}
 
 /* Provenance pills (the typed markers authors write in the markdown - see inline()).
    A provenance line reads as
@@ -3547,28 +3274,28 @@ button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;f
 .prov-pill{display:inline-block;border-radius:999px;padding:.16em .62em;font-size:.8125rem;
   line-height:1.4;margin:0 .08em;vertical-align:baseline}
 /* Every surface below is a THEME TOKEN, never a literal - the tokens flip with
-   .dark, a hex does not. A hardcoded light fill under light-on-dark text is how
+   [data-theme="dark"], a hex does not. A hardcoded light fill under light-on-dark text is how
    these pills went unreadable in dark mode the first time. */
-.prov-entity{background:var(--dark);color:#fff;font-weight:700;letter-spacing:.01em}
-.dark .prov-entity{background:#12463a}  /* lifted off the near-black page so the chip still reads as a chip */
+.prov-entity{background:hsl(var(--band-dark));color:hsl(var(--on-band-dark));font-weight:700;letter-spacing:.01em}
+[data-theme="dark"] .prov-entity{background:#12463a}  /* lifted off the near-black page so the chip still reads as a chip */
 .prov-sig{color:var(--text);font-weight:600;background:rgba(48,186,120,.14)}
 /* An actor inside a signature is WHITE ON GREEN in both themes - a signature is the
    one claim that must look identical wherever it is read. The fill is a deepened
    brand green rather than --green itself: white on #30ba78 is about 2.2:1, which
    fails for 13px text, and a signature nobody can read is worse than an off-swatch
    one. This keeps the hue and clears 4.5:1. */
-.prov-sig .prov-entity{background:#14784d;color:#fff;margin-inline:.18em 0}
+.prov-sig .prov-entity{background:#14784d;color:hsl(var(--on-band-dark));margin-inline:.18em 0}
 /* Inline, not a flex child: the pill's baseline must be its TEXT baseline so it
    sits on the same line as the prose around it. The glyph is nudged optically. */
 /* The seal is the one glyph in the pill that must read at a glance, and --green
    on --pale is the weakest pairing in the set (a mid-green on a tinted background
    in BOTH themes). It takes the theme's ink instead: near-black on the light pill,
    white on the dark one. The literal #fff is safe here because it lives inside
-   .dark, so it flips with the theme rather than surviving it. */
+   [data-theme="dark"], so it flips with the theme rather than surviving it. */
 .prov-seal{width:.95em;height:.95em;margin-inline-end:.34em;vertical-align:-.14em;color:var(--dark)}
-.dark .prov-seal{color:#fff}
+[data-theme="dark"] .prov-seal{color:hsl(var(--on-band-dark))}
 .prov-act{background:var(--pale);color:var(--text);font-weight:550;border:1px solid transparent}
-.dark .prov-act{border-color:var(--border)}
+[data-theme="dark"] .prov-act{border-color:var(--border)}
 /* A filename wraps rather than truncating - it is evidence the caption is naming,
    so hiding its tail hides the point. NOTE: never give this overflow:hidden -
    on an inline-block that moves the baseline to the bottom margin edge (CSS 2.1
@@ -3623,13 +3350,13 @@ html.ldp-open .doc-jump{display:none}
 .docs-content h1{font-size:3rem;color:var(--dark);line-height:1.15;margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border); font-weight:300;}
 
 /* Table */
-.table-wrap{overflow-x:auto;margin-bottom:2rem;box-shadow: 0 0 0 1px #00000009, 0 .2rem .4rem #00000018; border-radius: 1.5em;}
+.table-wrap{overflow-x:auto;margin-bottom:2rem;box-shadow: 0 0 0 1px hsl(var(--border)), 0 .2rem .4rem #00000018; border-radius: 1.5em;}
 table{border-collapse:collapse;width:100%;font-size:.875rem}
 thead tr th:first-child{border-radius: 1em 0 0 0}
 thead tr th:last-child{border-radius: 0 1em 0 0}
 th,td{padding:.55rem .9rem;text-align:start;border:1px solid var(--border)}
 th{background:var(--pale);font-weight:600;color:var(--dark)}
-tr:nth-child(even) td{background:#fafffe}
+tr:nth-child(even) td{background:hsl(var(--muted) / 0.4)}
 
 /* Mascots */
 .audience-header{display:flex;align-items:center;justify-content:center;gap:2rem;padding:4rem 3rem 1.75rem}
@@ -3645,14 +3372,14 @@ tr:nth-child(even) td{background:#fafffe}
 }
 
 /* Social proof */
-.social-proof{padding:4rem 0 3rem;background:#fff;overflow:hidden;position:relative}
+.social-proof{padding:4rem 0 3rem;background:hsl(var(--background));overflow:hidden;position:relative}
 .social-proof-inner{text-align:center;padding:0 1.5rem 2.5rem;max-width:50rem;margin:0 auto}
 .social-proof h2{font-size:2rem;color:var(--dark);margin-bottom:.375rem}
 .social-proof-date{font-size:.8125rem;color:var(--green);font-weight:600;margin-bottom:.625rem;letter-spacing:.02em;text-transform:uppercase}
 .social-proof-desc{color:var(--muted);font-size:.9375rem;line-height:1.6}
 /* "Founded by SUSE" badge - same size everywhere it appears (hero, social proof, footer) */
 .founded-badge{display:inline-block;line-height:0}
-.founded-badge img{display:block;width:10em;max-width:100%;height:auto}
+.founded-badge img{display:block;width:15em;max-width:100%;height:auto}
 .social-proof-founded{margin:1.5rem 0 0;text-align:center}
 .hero-founded{margin-top:2rem}
 .social-proof-credit{text-align:center;color:var(--muted);font-size:.875rem;margin-top:1.75rem;padding:0 1.5rem}
@@ -3660,7 +3387,7 @@ tr:nth-child(even) td{background:#fafffe}
 .social-proof-credit a:hover{text-decoration:underline}
 
 /* About section */
-.about-section{padding:5rem 1.5rem;background:var(--dark);color:#fff}
+.about-section{padding:5rem 1.5rem;background:hsl(var(--band-dark));color:hsl(var(--on-band-dark))}
 .about-inner{max-width:960px;margin:0 auto}
 .about-header{display:flex;align-items:center;gap:3rem;margin-bottom:3.5rem}
 .about-header-text{flex:1;min-width:0}
@@ -3668,22 +3395,22 @@ tr:nth-child(even) td{background:#fafffe}
 /* A second, smaller animal opposite the koala — the About section IS the "adorable
    Australian animals" section, so a companion here is on-theme, not clutter. */
 .about-mascot-2{width:clamp(120px,15vw,190px);flex-shrink:0;filter:drop-shadow(0 12px 30px rgba(0,0,0,.45))}
-.about-section h2{color:#fff;margin-bottom:1rem}
-.about-section h3{font-size:.75rem;font-weight:800;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.16em;margin:3rem 0 1.25rem;text-align:center}
-.about-lead{font-size:1.0625rem;color:rgba(255,255,255,.7);line-height:1.85;margin:0}
+.about-section h2{color:hsl(var(--on-band-dark));margin-bottom:1rem}
+.about-section h3{font-size:.75rem;font-weight:800;color:hsl(var(--on-band-dark) / .5);text-transform:uppercase;letter-spacing:.16em;margin:3rem 0 1.25rem;text-align:center}
+.about-lead{font-size:1.0625rem;color:hsl(var(--on-band-dark) / .7);line-height:1.85;margin:0}
 .about-items{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
 .about-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:2rem 1.75rem;display:flex;flex-direction:row;align-items:flex-start;gap:1.125rem}
 .about-item-icon{width:3.25rem;height:3.25rem;flex-shrink:0;color:var(--green)}
 .about-item-icon svg{width:100%;height:100%}
-.about-item p{color:rgba(255,255,255,.6);line-height:1.8;font-size:.9375rem;margin:0}
-.about-item strong{color:#fff;font-weight:700}
+.about-item p{color:hsl(var(--on-band-dark) / .6);line-height:1.8;font-size:.9375rem;margin:0}
+.about-item strong{color:hsl(var(--on-band-dark));font-weight:700}
 .opensource-section{padding:5rem 2rem;background:var(--pale);text-align:center}
 .opensource-inner{max-width:720px;margin:0 auto}
 .opensource-section h2{margin-bottom:1.25rem}
 .opensource-section p{color:var(--muted);font-size:1.0625rem;line-height:1.8}
 
 /* FAQ */
-.faq-section{padding:5rem 2rem;background:#fff}
+.faq-section{padding:5rem 2rem;background:hsl(var(--background))}
 .faq-inner{margin:0 auto; max-width: calc(var(--col-cap) * 1.4);}
 .faq-section h2{text-align:center;margin-bottom:.5rem}
 .faq-lead{text-align:center;color:var(--muted);font-size:1.0625rem;margin-bottom:2.5rem}
@@ -3706,7 +3433,7 @@ tr:nth-child(even) td{background:#fafffe}
    landing page sideways. Same framing as the docs-page treatment, capped to the
    answer column. */
 .faq-a img{max-width:100%;height:auto;display:block;margin:.9rem 0 0;border-radius:10px}
-.faq-a img[src*="/info/shots/"]{border:1px solid #8882;box-shadow:0 6px 24px #0002}
+.faq-a img[src*="/info/shots/"]{border:1px solid hsl(var(--border));box-shadow:0 6px 24px #0002}
 @media(max-width:800px){
   .about-header{flex-direction:column;text-align:center;gap:1.75rem}
   .about-mascot{width:clamp(160px,44vw,260px)}
@@ -3759,8 +3486,8 @@ footer .founded-badge{margin-top:.5rem}
 .sitemap-title .sitemap-ic{ width:2em; height:2em; color:var(--text);}
 
 /* Hamburger */
-.nav-hamburger{display:none;background:none;border:none;cursor:pointer;color:rgba(255,255,255,.65);width:2.25rem;height:2.25rem;align-items:center;justify-content:center;border-radius:5px;padding:.3rem;flex-shrink:0}
-.nav-hamburger:hover{color:#fff;background:rgba(255,255,255,.1)}
+.nav-hamburger{display:none;background:none;border:none;cursor:pointer;color:hsl(var(--on-band-dark) / .65);width:2.25rem;height:2.25rem;align-items:center;justify-content:center;border-radius:5px;padding:.3rem;flex-shrink:0}
+.nav-hamburger:hover{color:hsl(var(--on-band-dark));background:rgba(255,255,255,.1)}
 .nav-hamburger svg{width:1.25rem;height:1.25rem;pointer-events:none}
 .nav-hamburger .icon-close{display:none}
 .nav-hamburger.open .icon-menu{display:none}
@@ -3768,10 +3495,10 @@ footer .founded-badge{margin-top:.5rem}
 /* The panel scrolls on its own: below 768px it also carries the page nav (see
    .nav-mobile-page), which on a builders page is longer than a phone screen.
    overscroll-behavior keeps that scroll from continuing into the article behind it. */
-.nav-mobile-menu{display:none;position:fixed;top:3.75rem;left:0;right:0;background:var(--dark);border-bottom:1px solid rgba(255,255,255,.1);padding:1rem 1.5rem 1.5rem;z-index:99;flex-direction:column;gap:.125rem;max-height:calc(100vh - 3.75rem);overflow-y:auto;overscroll-behavior:contain}
+.nav-mobile-menu{display:none;position:fixed;top:3.75rem;left:0;right:0;background:hsl(var(--band-dark));border-bottom:1px solid rgba(255,255,255,.1);padding:1rem 1.5rem 1.5rem;z-index:99;flex-direction:column;gap:.125rem;max-height:calc(100vh - 3.75rem);overflow-y:auto;overscroll-behavior:contain}
 .nav-mobile-menu.open{display:flex}
-.nav-mobile-menu a{color:rgba(255,255,255,.7);font-size:.9375rem;padding:.625rem .625rem;border-radius:6px;display:block;text-decoration:none}
-.nav-mobile-menu a:hover{color:#fff;background:rgba(255,255,255,.07)}
+.nav-mobile-menu a{color:hsl(var(--on-band-dark) / .7);font-size:.9375rem;padding:.625rem .625rem;border-radius:6px;display:block;text-decoration:none}
+.nav-mobile-menu a:hover{color:hsl(var(--on-band-dark));background:rgba(255,255,255,.07)}
 .nav-mobile-menu a.active{color:var(--green);font-weight:600}
 .nav-mobile-menu .nav-launch{background:var(--green);color:var(--dark)!important;font-weight:700;text-align:center;margin-top:.75rem;padding:.75rem;border-radius:8px}
 .nav-mobile-menu .nav-launch:hover{background:var(--light)}
@@ -3785,7 +3512,7 @@ footer .founded-badge{margin-top:.5rem}
 /* .55 not .42 — at 42% over the panel's #0c322c this computes to 3.7:1, under AA
    for 11px text. .55 clears 5.3:1 and still reads as a quieter tier than the
    links at .7. */
-.nav-mobile-label{font-size:.6875rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.55);font-weight:700;margin:.75rem 0 .125rem;padding:0 .625rem}
+.nav-mobile-label{font-size:.6875rem;text-transform:uppercase;letter-spacing:.1em;color:hsl(var(--on-band-dark) / .55);font-weight:700;margin:.75rem 0 .125rem;padding:0 .625rem}
 
 /* Mobile */
 @media(max-width:900px){
@@ -3881,64 +3608,64 @@ footer .founded-badge{margin-top:.5rem}
 }
 
 /* Theme toggle */
-.nav-theme-toggle{background:none;border:none;cursor:pointer;color:rgba(255,255,255,.65);width:2rem;height:2rem;display:flex;align-items:center;justify-content:center;border-radius:5px;padding:.25rem;flex-shrink:0;margin-left:.25rem}
-.nav-theme-toggle:hover{color:#fff;background:rgba(255,255,255,.1)}
+.nav-theme-toggle{background:none;border:none;cursor:pointer;color:hsl(var(--on-band-dark) / .65);width:2rem;height:2rem;display:flex;align-items:center;justify-content:center;border-radius:5px;padding:.25rem;flex-shrink:0;margin-left:.25rem}
+.nav-theme-toggle:hover{color:hsl(var(--on-band-dark));background:rgba(255,255,255,.1)}
 .nav-theme-toggle svg{width:1.1rem;height:1.1rem;pointer-events:none}
 .nav-theme-toggle .icon-sun{display:none}
-.dark .nav-theme-toggle .icon-moon{display:none}
-.dark .nav-theme-toggle .icon-sun{display:block}
+[data-theme="dark"] .nav-theme-toggle .icon-moon{display:none}
+[data-theme="dark"] .nav-theme-toggle .icon-sun{display:block}
 
-/* Dark mode */
-/* Content links use --green, which reads on both the light and dark pine
-   surfaces, so the dark theme needs no separate link colour. */
-.dark{--text:#cce8da;--muted:#7aaa90;--border:#1b3d2c;--pale:#0d2419;--page:#061816}
-.dark body{background:var(--page)}
-.dark .audience-section{border-bottom-color:var(--border)}
-.dark .audience-header{background:linear-gradient(180deg,#0a1f16 0%,#061816 100%)}
-.dark .audience-title{color:var(--text)}
-.dark .audience-tabs{background:#061816;border-bottom-color:var(--border)}
-.dark .audience-tab{background:#112a1e}
-.dark .audience-tab[aria-selected=true]{background:var(--dark);color:var(--green);border-color:rgba(48,186,120,.4);box-shadow:0 3px 12px rgba(0,0,0,.4)}
-.dark .audience-tab:hover:not([aria-selected=true]){color:var(--green);background:#0d2419}
-.dark .card-tagline{color:var(--text)}
-.dark .card-intro{color:var(--muted)}
-.dark .social-proof{background:#061816}
-.dark .social-proof h2{color:var(--text)}
-.dark .social-proof-desc{color:var(--muted)}
-.dark .faq-section{background:#061816}
-.dark .faq-section h2{color:var(--text)}
-.dark .faq-item{background:#0d2419}
-.dark .faq-q{color:var(--text)}
-.dark .card-benefits strong{color:var(--text)}
-.dark .tool-part{background:#112a1e}
-.dark .tool-part-file{background:#0d2419}
-.dark .tool-part-name{color:var(--text)}
-.dark .whats-a-tool .whats-inner>h2{color:var(--text)}
-.dark .tool-feature{background:#112a1e}
-.dark .tool-feature strong{color:var(--text)}
-.dark .import-section{background:linear-gradient(180deg,#061816 0%,var(--pale) 100%)}
-.dark .import-section h2{color:var(--text)}
-.dark .import-source,.dark .import-step{background:#112a1e}
-.dark .import-point{background:#0d2419}
-.dark .import-source strong,.dark .import-step strong,.dark .import-point strong{color:var(--text)}
-.dark tr:nth-child(even) td{background:#0d2419}
-.dark footer{border-top-color:var(--border)}
-.dark .docs-content h1,.dark .docs-content h2,.dark .docs-content h3{color:var(--text)}
-.dark th{color:var(--text)}
+/* Dark mode. The token redefinitions that used to live here are gone: the DOCS_BRIDGE
+   above maps --text/--muted/--border/--pale/--page onto the app's [data-theme]-driven
+   slots, so dark mode falls out of tokens.css. The component rules below only restyle
+   the few places that carry a hardcoded colour of their own. */
+[data-theme="dark"] body{background:var(--page)}
+[data-theme="dark"] .audience-section{border-bottom-color:var(--border)}
+[data-theme="dark"] .audience-header{background:linear-gradient(180deg,#0a1f16 0%,#061816 100%)}
+[data-theme="dark"] .audience-title{color:var(--text)}
+[data-theme="dark"] .audience-tabs{background:hsl(var(--background));border-bottom-color:var(--border)}
+[data-theme="dark"] .audience-tab{background:hsl(var(--card))}
+[data-theme="dark"] .audience-tab[aria-selected=true]{background:hsl(var(--band-dark));color:var(--green);border-color:rgba(48,186,120,.4);box-shadow:0 3px 12px rgba(0,0,0,.4)}
+[data-theme="dark"] .audience-tab:hover:not([aria-selected=true]){color:var(--green);background:hsl(var(--card))}
+[data-theme="dark"] .card-tagline{color:var(--text)}
+[data-theme="dark"] .card-intro{color:var(--muted)}
+[data-theme="dark"] .social-proof{background:hsl(var(--background))}
+[data-theme="dark"] .social-proof h2{color:var(--text)}
+[data-theme="dark"] .social-proof-desc{color:var(--muted)}
+[data-theme="dark"] .faq-section{background:hsl(var(--background))}
+[data-theme="dark"] .faq-section h2{color:var(--text)}
+[data-theme="dark"] .faq-item{background:hsl(var(--muted))}
+[data-theme="dark"] .faq-q{color:var(--text)}
+[data-theme="dark"] .card-benefits strong{color:var(--text)}
+[data-theme="dark"] .tool-part{background:hsl(var(--card))}
+[data-theme="dark"] .tool-part-file{background:hsl(var(--muted))}
+[data-theme="dark"] .tool-part-name{color:var(--text)}
+[data-theme="dark"] .whats-a-tool .whats-inner>h2{color:var(--text)}
+[data-theme="dark"] .tool-feature{background:hsl(var(--card))}
+[data-theme="dark"] .tool-feature strong{color:var(--text)}
+[data-theme="dark"] .import-section{background:linear-gradient(180deg,#061816 0%,var(--pale) 100%)}
+[data-theme="dark"] .import-section h2{color:var(--text)}
+[data-theme="dark"] .import-source,[data-theme="dark"] .import-step{background:hsl(var(--card))}
+[data-theme="dark"] .import-point{background:hsl(var(--card))}
+[data-theme="dark"] .import-source strong,[data-theme="dark"] .import-step strong,[data-theme="dark"] .import-point strong{color:var(--text)}
+[data-theme="dark"] tr:nth-child(even) td{background:hsl(var(--muted) / 0.4)}
+[data-theme="dark"] footer{border-top-color:var(--border)}
+[data-theme="dark"] .docs-content h1,[data-theme="dark"] .docs-content h2,[data-theme="dark"] .docs-content h3{color:var(--text)}
+[data-theme="dark"] th{color:var(--text)}
 /* Code in dark mode: the base code/pre rules hardcode light backgrounds, so in
    dark mode inline code became light-text-on-light-bg (invisible). Give chips a
    dark surface + light text, and the pre block a dark box. The third rule keeps
-   code inside pre background-free - .dark .docs-content code would otherwise
+   code inside pre background-free - [data-theme="dark"] .docs-content code would otherwise
    out-specify the base "pre code background none" reset. */
-.dark .docs-content code{background:#112a1e;color:var(--text)}
-.dark .docs-content pre{background:#0d2419;color:var(--text);border:1px solid var(--border)}
+[data-theme="dark"] .docs-content code{background:hsl(var(--muted));color:var(--text)}
+[data-theme="dark"] .docs-content pre{background:hsl(var(--muted));color:var(--text);border:1px solid var(--border)}
 /* The Warde page sets its two verse blocks as an inscription rather than as code.
    Scoped to the page so no other fenced block is touched. Centred and letterspaced
    because that is what the 1932 broadside and the 1940 bronze both do — the poem was
    cut in capitals for a titling face, and reading it as a listing loses the shape. */
 .page-beatrice-warde .docs-content pre{font-family:'Cinzel',Georgia,serif;font-size:1.0625rem;line-height:2.05;letter-spacing:.055em;text-align:center;background:linear-gradient(#fbfaf7,#f4f2ec);color:#25313a;padding:2.5rem 1.5rem;border-radius:10px;box-shadow:inset 0 0 0 1px #0000000f,0 1px 2px #0000000a;white-space:pre-wrap;text-wrap:balance}
 .page-beatrice-warde .docs-content pre code{font-family:inherit;font-size:inherit;background:none;padding:0}
-.dark .page-beatrice-warde .docs-content pre{background:linear-gradient(#12271d,#0d2016);color:#e8f0ea;box-shadow:inset 0 0 0 1px #ffffff14}
+[data-theme="dark"] .page-beatrice-warde .docs-content pre{background:linear-gradient(#12271d,#0d2016);color:#e8f0ea;box-shadow:inset 0 0 0 1px #ffffff14}
 .doc-audio{margin:0 0 .5rem;padding:0}
 .doc-audio audio{width:100%;height:40px;display:block}
 /* An audiogram MP4 is square (1080²) and would swamp the column at full width —
@@ -3946,7 +3673,7 @@ footer .founded-badge{margin-top:.5rem}
    fill matches the audiogram's own background so the poster-load gap isn't black. */
 .doc-video{margin:0 auto 1rem;max-width:min(420px,100%)}
 .doc-video video{width:100%;height:auto;display:block;border-radius:10px;background:#0d1f17}
-.dark .docs-content pre code{background:none;color:inherit}
+[data-theme="dark"] .docs-content pre code{background:none;color:inherit}
 /* ── Pilot / prototype disclaimer badge (in the dark hero) ─────────────────── */
 .hero-pilot{display:inline-flex;align-items:center;gap:.5rem;margin-bottom:3rem;padding:.34rem .36rem .34rem .55rem;background:rgba(254,124,63,.17);border-radius:999px;text-decoration:none;font-size:.8125rem;color:#ffd9c4;transition:background .15s}
 .hero-pilot:hover{background:rgba(254,124,63,.26)}
@@ -3964,7 +3691,7 @@ footer .founded-badge{margin-top:.5rem}
 .why-section h2{font-size:clamp(1.8rem,4vw,2.5rem);color:var(--dark);line-height:1.12;margin-bottom:1rem}
 .why-lead{color:var(--muted);font-size:1.0625rem;line-height:1.7}
 .why-frustrations{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2.5rem}
-.why-frustration{background:#fff;border:0; box-shadow: inset 0 1px #fff1, 0 .2em .5em #0002;border-radius:14px;padding:1.5rem 1.375rem;text-align:center}
+.why-frustration{background:hsl(var(--card));border:0; box-shadow: inset 0 1px #fff1, 0 .2em .5em #0002;border-radius:14px;padding:1.5rem 1.375rem;text-align:center}
 .why-frustration-ic{display:inline-flex;width:2.75rem;height:2.75rem;align-items:center;justify-content:center;border-radius:50%;background:rgba(254,124,63,.12);color:var(--orange);margin-bottom:.75rem}
 .why-frustration-ic svg{width:1.4rem;height:1.4rem}
 .why-frustration strong{display:block;color:var(--dark);margin-bottom:.35rem;font-size:1.0625rem}
@@ -3974,19 +3701,19 @@ footer .founded-badge{margin-top:.5rem}
 .matrix-head--old{background:rgba(90,112,103,.14);color:var(--muted)}
 .matrix-head--new{background:var(--green);color:#04231a}
 .matrix-cell{display:flex;gap:.7rem;align-items:flex-start;padding:1rem 1.15rem;border-radius:12px;font-size:.95rem;line-height:1.5}
-.matrix-cell--old{background:#fff;border:0;color:var(--muted)}
+.matrix-cell--old{background:hsl(var(--card));border:0;color:var(--muted)}
 .matrix-cell--new{background:rgba(48,186,120,.08);color:var(--text);box-shadow:0 2px 12px rgba(48,186,120,.12)}
 .matrix-mark{flex-shrink:0;width:1.35rem;height:1.35rem;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;font-size:.78rem;font-weight:800;margin-top:.05rem}
 .matrix-cell--old .matrix-mark{background:rgba(90,112,103,.16);color:var(--muted)}
 .matrix-cell--new .matrix-mark{background:var(--green);color:#04231a}
 @media(max-width:720px){.why-frustrations{grid-template-columns:1fr}.matrix{grid-template-columns:1fr;gap:.5rem}.matrix-head{display:none}.matrix-cell--old{margin-top:.5rem}}
 /* Dark-theme surfaces for the pale Why section. */
-.dark .why-section{background:#061816}
-.dark .why-section h2{color:var(--text)}
-.dark .why-frustration{background:#112a1e}
-.dark .why-frustration strong{color:var(--text)}
-.dark .matrix-cell--old{background:#0d2419}
-.dark .matrix-cell--new{background:#112a1e}
+[data-theme="dark"] .why-section{background:hsl(var(--background))}
+[data-theme="dark"] .why-section h2{color:var(--text)}
+[data-theme="dark"] .why-frustration{background:hsl(var(--card))}
+[data-theme="dark"] .why-frustration strong{color:var(--text)}
+[data-theme="dark"] .matrix-cell--old{background:hsl(var(--card))}
+[data-theme="dark"] .matrix-cell--new{background:hsl(var(--card))}
 
 /* RTL correctness (Arabic pages get dir="rtl" on <html>): code is Latin and
    always reads LTR - isolate it so surrounding RTL prose doesn't scramble
@@ -4001,7 +3728,13 @@ const THEME_SVG_MOON = `<svg class="icon-moon" viewBox="0 0 24 24" fill="none" s
 const THEME_SVG_SUN  = `<svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`;
 const THEME_TOGGLE   = `<button class="nav-theme-toggle" aria-label="Toggle dark mode" title="Toggle dark/light mode">${THEME_SVG_MOON}${THEME_SVG_SUN}</button>`;
 
-const THEME_INIT_SCRIPT = `<script>(function(){var c=localStorage.getItem('theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches;if(c==='dark'||(c!=='light'&&s))document.documentElement.classList.add('dark');})();</script>`;
+// The theme lives on [data-theme] (the app's mechanism, so the inlined tokens.css themes),
+// and the legacy `.dark` CLASS is kept in lock-step with it — purely so the banked masthead
+// canvases (docs/mastheads/*.html), which detect dark via classList.contains('dark') + a
+// MutationObserver on the class attribute, keep theme-switching without being re-signed. New
+// mastheads read [data-theme] per dev-docs/docs-masthead-gemini-prompt.md; once the bank is
+// re-baked on that prompt this class shim can go.
+const THEME_INIT_SCRIPT = `<script>(function(){var c=localStorage.getItem('theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches;if(c==='dark'||(c!=='light'&&s)){var r=document.documentElement;r.dataset.theme='dark';r.classList.add('dark');}})();</script>`;
 
 // Pre-paint, beside the theme flag and for the same reason: it decides how the
 // first frame is painted. It only ARMS the screenshot motion — SHOT_MOTION_SCRIPT
@@ -4039,7 +3772,7 @@ const FORMATS_DIALOG_SCRIPT = `<script>(function(){
     if(e.target===dlg)dlg.close();
   });
 })();</script>`;
-const THEME_INTERACT_SCRIPT = `<script>(function(){var btn=document.querySelector('.nav-theme-toggle');if(!btn)return;btn.addEventListener('click',function(){var d=document.documentElement.classList.toggle('dark');localStorage.setItem('theme',d?'dark':'light');});window.matchMedia('(prefers-color-scheme:dark)').addEventListener('change',function(e){if(!localStorage.getItem('theme'))document.documentElement.classList.toggle('dark',e.matches);});})();</script>`;
+const THEME_INTERACT_SCRIPT = `<script>(function(){var btn=document.querySelector('.nav-theme-toggle');if(!btn)return;btn.addEventListener('click',function(){var d=document.documentElement.dataset.theme!=='dark';var r=document.documentElement;r.dataset.theme=d?'dark':'light';r.classList.toggle('dark',d);localStorage.setItem('theme',d?'dark':'light');});window.matchMedia('(prefers-color-scheme:dark)').addEventListener('change',function(e){if(!localStorage.getItem('theme')){var r=document.documentElement;r.dataset.theme=e.matches?'dark':'light';r.classList.toggle('dark',e.matches);}});})();</script>`;
 
 const HAM_BTN = `<button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation" aria-expanded="false"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>`;
 
@@ -4665,7 +4398,7 @@ const HERO_CANVAS_SCRIPT = `<script>${CHIP_FIELD_JS}(function(){
  * The effect was built for one dark plate and hardcoded to it (#1c4a2e chips,
  * #30ba78 labels, color-dodge). Docs pages are read in both themes, so here the
  * palette comes from the page's own tokens and the chips are RE-BAKED when the
- * theme changes — the toggle stamps .dark on <html>, and a reader on "system" gets
+ * theme changes — the toggle stamps [data-theme="dark"] on <html>, and a reader on "system" gets
  * the same flip from the OS. Blend + opacity are CSS's job (.docs-mast-canvas), so
  * the JS only ever decides two colours.
  */
@@ -4677,7 +4410,7 @@ const DOCS_MASTHEAD_SCRIPT = `<script>${CHIP_FIELD_JS}(function(){
     return v||fallback;
   }
   function palette(){
-    var dark=document.documentElement.classList.contains('dark');
+    var dark=document.documentElement.dataset.theme==='dark';
     // Dark: the landing's own chip fill over the dark band, under color-dodge —
     // the same glow the front door has. Light: a mint chip on a near-white band,
     // normal blend, so the field reads as watermark rather than decoration.
@@ -4686,9 +4419,9 @@ const DOCS_MASTHEAD_SCRIPT = `<script>${CHIP_FIELD_JS}(function(){
       : {fill:tok('--border','#d8ede4'), label:tok('--green','#30ba78')};
   }
   var field=window.__lollyChipField(canvas,{palette:palette,pause:true,reduceMotion:true,burst:true,burstGuard:true});
-  // The class flip (docs theme toggle) and the OS preference both change the answer.
+  // The [data-theme] flip (docs theme toggle) and the OS preference both change the answer.
   new MutationObserver(function(){ field.rebake(); })
-    .observe(document.documentElement,{attributes:true,attributeFilter:['class']});
+    .observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
   var mq=window.matchMedia('(prefers-color-scheme:dark)');
   if(mq.addEventListener) mq.addEventListener('change',function(){ field.rebake(); });
 })();</script>`;
@@ -4871,6 +4604,84 @@ function darkShot(file: string): string | null {
   const name = file.replace(/\.(\w+)$/, '.dark.$1');
   return existsSync(resolve(__dirname, 'shots', name)) ? name : null;
 }
+
+// The build-time DocsRenderContext: the adapter the shared renderer
+// (@lolly-tools/docs-render) calls into. It reads facts from the filesystem + C2PA
+// manifests here; the in-app docs view (M2) will implement the same surface over a
+// shipped docs-manifest.json. lang/htmlLang/t are GETTERS so this single const reflects
+// the live per-locale module state (activeLang/activeCatalog); nextCredId shares the one
+// process-global credSeq counter across every page and locale, so ids stay byte-identical.
+const docCtx: DocsRenderContext = {
+  get lang() { return activeLang; },
+  get htmlLang() { return LANG_META[activeLang]?.htmlLang ?? activeLang; },
+  t: (s) => t(s),
+  docIcon: (k) => docIcon(k),
+  docLogo: (k) => docLogo(k),
+  docLogoBlock: (ks) => docLogoBlock(ks),
+  nextCredId: () => `shot-cred-${++credSeq}`,
+  localizedShot: (slug, ext) => localizedShot(slug, ext),
+  darkShot: (f) => darkShot(f),
+  // The contract's second arg is a served /info/ URL (a page asset), which this impl
+  // resolves to its built path; a bare shot (no assetSrc) reads from docs/shots/<file>.
+  shotSize: (f, assetSrc) => shotSize(f, assetSrc ? resolve(outDir, assetSrc.replace(/^\/info\//, '')) : undefined),
+  tryLink: (file) => {
+    const def = shotRecipe(file.split('.')[0] ?? '');
+    return def?.tryIt && def.route.startsWith('/') ? { route: def.route } : null;
+  },
+  // The credential FACTS, read off the served bytes. Path reconstruction reproduces
+  // exactly what each shotCredential call site used to pass as `from.path`: a bare shot
+  // reads docs/shots/<file>; a page asset/mascot reads outDir/<rel>; banked art (art:true)
+  // reads docs/<bank>/<file>. `file` (the ext/basename/recipe-slug) and `rel` (the read
+  // path) can differ for banked art, and each is used where the original used it.
+  credential: (file, opts): CredentialFacts | null => {
+    const art = !!opts?.art;
+    let path: string;
+    let src: string;
+    if (!opts) {
+      path = resolve(__dirname, 'shots', file);
+      src = `/info/shots/${file}`;
+    } else {
+      src = opts.assetSrc ?? `/info/shots/${file}`;
+      const rel = src.replace(/^\/info\//, '');
+      path = art ? resolve(__dirname, rel) : resolve(outDir, rel);
+    }
+    const p = readShotProvenance(path);
+    if (!p) return null;
+    const anat = readShotAnatomy(path);
+    const def = art ? null : shotRecipe(file.split('.')[0] ?? '');
+    return {
+      signer: p.signer,
+      generator: p.generator,
+      when: p.when,
+      dimensions: p.dimensions,
+      ai: p.ai,
+      model: p.model,
+      oversight: p.oversight,
+      anat: anat
+        ? { kind: anat.kind, paths: anat.paths, nodes: anat.nodes, groups: anat.groups, images: anat.images, elements: anat.elements, bytes: anat.bytes }
+        : null,
+      recipe: def ? { width: def.width, height: def.height, dpi: def.dpi, walker: def.walker } : null,
+      src,
+      canCopySource: art,
+    };
+  },
+  showcase: (slug) => {
+    const file = `${slug}.svg`;
+    const path = resolve(__dirname, 'shots', file);
+    if (!existsSync(path)) return null;
+    const vb = /viewBox="([\d.\-\s]+)"/.exec(readFileSync(path, 'utf-8'))?.[1]?.trim().split(/\s+/).map(Number);
+    if (!vb || vb.length !== 4 || vb.some((n) => !Number.isFinite(n))) return null;
+    const size = shotSize(file);
+    return { viewBox: vb.join(' '), file, src: `/info/shots/${file}`, width: size?.w, height: size?.h };
+  },
+  art: (bank, id) => {
+    const resolved = resolveDocsArt(bank, id, { dir: __dirname, lang: activeLang });
+    if (!resolved) return null;
+    const inlined = inlineDocsArt(resolved);
+    if ('error' in inlined) return null;
+    return { html: inlined.html, file: resolved.file, src: resolved.src };
+  },
+};
 
 function resolvePageSrc(page: Page, lang: Lang): string {
   if (lang !== 'en') {
@@ -5114,7 +4925,7 @@ const FOOTER_SECTIONS: SitemapSection[] = [
   { hub: 'creators', label: 'Find your way', slugs: [
     'search', 'ask', 'dashboard', 'favourites', 'profile'] },
   { hub: 'creators', label: 'Share & collaborate', slugs: [
-    'collaborate', 'exporting'] },
+    'collaborate', 'formats', 'exporting'] },
   { hub: 'builders', label: 'For Builders', slugs: [
     'overview', 'design-tokens', 'authoring-tools', 'authoring-assets', 'host-api', 'url-mode'] },
   { hub: 'builders', label: 'Run & integrate', slugs: [
@@ -5222,7 +5033,7 @@ const SIDEBAR_ICON: Record<string, string> = {
   'status-quo': 'convert', 'input-not-impersonation': 'usercheck',
   // Creators
   using: 'pentool', 'brand-studio': 'palette', profile: 'usercheck', 'design-import': 'upload',
-  'sequence-editor': 'clock', animating: 'layers', exporting: 'download', positioning: 'sliders',
+  'sequence-editor': 'clock', animating: 'layers', exporting: 'download', formats: 'convert', positioning: 'sliders',
   ask: 'sparkle', dashboard: 'monitor', utilities: 'wrench',
   collaborate: 'people', search: 'search', favourites: 'star',
   // Builders — architecture & authoring
@@ -5425,8 +5236,8 @@ const LISTEN_STYLE = `<style>
 .docs-listen svg{width:15px;height:15px}
 .docs-listen .listen-mins{font-weight:400;opacity:.65}
 .docs-listen.is-loading{opacity:.6;pointer-events:none}
-html.dark .docs-listen{background:rgba(24,30,38,.85);border-color:rgba(230,237,243,.2)}
-html.dark .docs-listen:hover{border-color:rgba(141,184,234,.6)}
+html[data-theme="dark"] .docs-listen{background:rgba(24,30,38,.85);border-color:rgba(230,237,243,.2)}
+html[data-theme="dark"] .docs-listen:hover{border-color:rgba(141,184,234,.6)}
 </style>`;
 
 // The lazy loader — the ONLY player code a page carries. The bundle is fetched
@@ -5608,36 +5419,8 @@ function mastheadArt(slug: string, heading: string): string {
   return mastheadArtBand({ art: inlined.html, heading, credential: cred });
 }
 
-/**
- * `::: figure <id>` — a banked figure inlined into the prose that argues with it.
- *
- * Unknown id → a loud warning and NOTHING rendered. A figure is referenced from the
- * body because the surrounding text is making a point with it; silently leaving an
- * empty box (or worse, the id) in the middle of that argument helps nobody, and the
- * prose still carries the point on its own (plan §6: that constraint IS the a11y
- * answer).
- */
-function buildFigure(id: string, body: string): string {
-  const art = resolveDocsArt('figures', id, { dir: __dirname, lang: activeLang });
-  if (!art) {
-    console.warn(`⚠  ::: figure ${id} — no docs/figures/${id}.svg or .html; nothing rendered`);
-    return '';
-  }
-  const inlined = inlineDocsArt(art);
-  if ('error' in inlined) {
-    console.warn(`⚠  ::: figure ${id} — ${inlined.error}; nothing rendered`);
-    return '';
-  }
-  const caption = body.trim();
-  const cred = shotCredential(art.file, 'shot-cred--figure', { path: art.path, src: art.src, art: true });
-  if (!cred) console.warn(`⚠  ::: figure ${id} — ${art.file} carries no readable Content Credential; run 'node scripts/sign-docs-art.ts'`);
-  return figureBlock({
-    art: inlined.html,
-    caption: caption ? mdToHtml(caption) : '',
-    credential: cred,
-    src: art.src,
-  });
-}
+// buildFigure (::: figure <id>) now lives in @lolly-tools/docs-render's render.ts, driven by
+// docCtx.art + the package's figureBlock; mdToHtml moved with it.
 
 function wrapPage(lang: Lang, page: Page, content: string, ogSlugs: Set<string>, md = '') {
   const activeHref = page.slug === 'index' ? '/info/index.html' : `/info/${page.slug}.html`; // logical (English) - identity only
@@ -5699,7 +5482,7 @@ ${mast ? mast.band : ''}
   const seal = lang === 'en' ? `\n${pageSealLink(page.slug)}` : '';
 
   return `<!doctype html>
-<html lang="${LANG_META[lang].htmlLang}"${LANG_META[lang].dir ? ` dir="${LANG_META[lang].dir}"` : ''}>
+<html lang="${LANG_META[lang].htmlLang}" data-theme="light"${LANG_META[lang].dir ? ` dir="${LANG_META[lang].dir}"` : ''}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -5747,7 +5530,7 @@ ${isLanding ? '' : SHOWCASE_SCRIPT}
 ${isLanding ? HERO_CANVAS_SCRIPT : ''}
 ${mast?.canvas ? DOCS_MASTHEAD_SCRIPT : ''}
 ${isLanding ? LIQUID_GLASS_SCRIPT : ''}
-${isLanding ? FORMATS_DIALOG_SCRIPT : ''}
+${content.includes('id="fmt-catalog-data"') ? FORMATS_DIALOG_SCRIPT : ''}
 ${audio ? LISTEN_SCRIPT : ''}
 </body>
 </html>`;
@@ -5819,6 +5602,26 @@ async function build() {
     mkdirSync(resolve(outDir, 'shots'), { recursive: true });
     for (const f of readdirSync(shotsSrc)) {
       if (/\.(png|svg|jpg)$/.test(f)) copyFileSync(resolve(shotsSrc, f), resolve(outDir, 'shots', f));
+    }
+  }
+
+  // Block 2's worked examples (plan 117): each card shows the tool's OWN preview of
+  // the exact look its link seeds, so what the reader sees is what the click gives
+  // them. Copied verbatim out of the ACTIVE brand's catalog — these are signed
+  // artifacts, so they are copied, never rewritten — and mirrored, not accumulated.
+  // A brand whose catalog has no preview for a look ships that card without a
+  // picture (makeSomethingBlock checks), which is why this is a warning, not a fail.
+  rmSync(resolve(outDir, 'examples'), { recursive: true, force: true });
+  const previewDir = resolve(repoRoot, 'catalog', 'previews');
+  const havePreviews = LANDING_SCENES.filter(s => existsSync(resolve(previewDir, s.look)));
+  if (havePreviews.length) {
+    mkdirSync(resolve(outDir, 'examples'), { recursive: true });
+    for (const s of havePreviews) copyFileSync(resolve(previewDir, s.look), resolve(outDir, 'examples', s.look));
+    console.log(`✓  /info/examples/ (${havePreviews.length} worked-example previews)`);
+  }
+  for (const s of LANDING_SCENES) {
+    if (!existsSync(resolve(previewDir, s.look))) {
+      console.warn(`⚠  landing example: this brand's catalog has no ${s.look} - the "${s.scene}" card ships without its picture`);
     }
   }
 
@@ -5909,7 +5712,9 @@ async function build() {
         continue;
       }
 
-      const content = page.isLanding ? buildLandingContent(md, lang) : mdToHtml(md);
+      const content = page.isLanding ? buildLandingContent(md, lang)
+        : page.render ? page.render(md, lang)
+        : mdToHtml(md);
       const html    = wrapPage(lang, page, content, ogSlugs, md);
       const outFile = page.slug === 'index' ? 'index.html' : `${page.slug}.html`;
       writeFileSync(resolve(localeOutDir, outFile), html, 'utf-8');
@@ -5990,6 +5795,9 @@ async function build() {
   // After the seals, so the offline docs bundle carries each page's sidecar
   // alongside the page it belongs to (and hashes its real bytes).
   writeInfoManifest();
+  // AFTER writeInfoManifest (which walks outDir), so the render manifest is not itself
+  // swept into the offline bundle — that keeps manifest.json byte-identical.
+  writeDocsManifest();
   console.log(`\nSite built → shells/web/public/info/`);
 }
 
@@ -6049,6 +5857,79 @@ function writeInfoManifest(): void {
     .digest('base64url').slice(0, 16);
   writeFileSync(resolve(outDir, 'manifest.json'), JSON.stringify({ version, groups: { en, shots, audio, locales } }), 'utf-8');
   console.log(`✓  /info/manifest.json (${all.length} files, ${Object.keys(locales).length} locales)`);
+}
+
+// ── /info/docs-render-manifest.json — facts for a RUNTIME DocsRenderContext ───
+// The in-app docs view and the interactive figures/embeds (plan M2/M3) implement
+// DocsRenderContext over THIS instead of the filesystem: shot dimensions, Content-Credential
+// facts, capture-recipe try-links, showcase frames and banked-art resolutions — precomputed
+// here, where the C2PA/anatomy reads already happen. Locale-INDEPENDENT: every fact is about
+// file BYTES, and localizedShot is resolved by the runtime from `shots` (the full committed
+// file list). Keyed by served src so the runtime can compute a key from (file, opts) the same
+// way build.ts's docCtx does. Deterministic (sorted iteration) so the file itself is stable.
+function writeDocsManifest(): void {
+  const shotsDir = resolve(__dirname, 'shots');
+  const sizes: Record<string, { w: number; h: number }> = {};
+  const credentials: Record<string, CredentialFacts> = {};
+  const recipes: Record<string, { route: string }> = {};
+  const showcases: Record<string, unknown> = {};
+  const art: Record<string, unknown> = {};
+  const shots: string[] = [];
+
+  // Every committed shot: its dimensions, credential facts and (opt-in) try-link route.
+  for (const file of readdirSync(shotsDir).filter((f) => /\.(svg|png|jpe?g)$/.test(f)).sort()) {
+    shots.push(file);
+    const src = `/info/shots/${file}`;
+    const size = docCtx.shotSize(file);
+    if (size) sizes[src] = size;
+    const cred = docCtx.credential(file);
+    if (cred) credentials[src] = cred;
+    const slug = file.split('.')[0] ?? '';
+    if (!(slug in recipes)) {
+      const link = docCtx.tryLink(file);
+      if (link) recipes[slug] = link;
+    }
+  }
+
+  // Page assets referenced in the prose (the AI-stance hero, the-flood, …).
+  const assetRefs = new Set<string>();
+  const pages = readdirSync(__dirname).filter((f) => f.endsWith('.md')).sort();
+  for (const page of pages) {
+    const md = readFileSync(resolve(__dirname, page), 'utf-8');
+    for (const m of md.matchAll(/\/info\/(?!shots\/)[\w./-]+\.(?:webp|png|jpe?g|avif)/g)) assetRefs.add(m[0]);
+  }
+  for (const src of [...assetRefs].sort()) {
+    const file = src.slice('/info/'.length);
+    const cred = docCtx.credential(file, { assetSrc: src });
+    if (!cred) continue;
+    credentials[src] = cred;
+    const size = docCtx.shotSize(file, src);
+    if (size) sizes[src] = size;
+  }
+
+  // Showcase frames (::: showcase) — resolved from the same viewBox the build reads.
+  for (const page of pages) {
+    const md = readFileSync(resolve(__dirname, page), 'utf-8');
+    for (const m of md.matchAll(/^::: showcase\b[\s\S]*?filename=([\w-]+)/gm)) {
+      const show = docCtx.showcase(m[1]!);
+      if (show) showcases[m[1]!] = show;
+    }
+  }
+  // Banked art (figures/mastheads) — English resolution (the manifest is locale-neutral;
+  // localized art variants are a follow-up, like the localized-shot capture axis).
+  for (const bank of ['figures', 'mastheads'] as const) {
+    const dir = resolve(__dirname, bank);
+    if (!existsSync(dir)) continue;
+    for (const f of readdirSync(dir).filter((n) => /\.(svg|html)$/.test(n) && !/\.\w{2,5}\.(svg|html)$/.test(n)).sort()) {
+      const id = f.replace(/\.[^.]+$/, '');
+      const resolved = docCtx.art(bank, id);
+      if (resolved) art[`${bank}/${id}`] = resolved;
+    }
+  }
+
+  writeFileSync(resolve(outDir, 'docs-render-manifest.json'),
+    JSON.stringify({ shots, sizes, credentials, recipes, showcases, art }), 'utf-8');
+  console.log(`✓  /info/docs-render-manifest.json (${shots.length} shots, ${Object.keys(credentials).length} credentials)`);
 }
 
 // Per-page OG share images depend only on the page titles + brand assets (never the

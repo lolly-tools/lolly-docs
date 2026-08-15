@@ -48,7 +48,7 @@ Anda tidak bermula daripada halaman kosong. Lolly membuka kerja reka bentuk dan 
 
 ### Fail reka bentuk sumber terbuka
 
-Kerja siap dalam **Figma, Penpot, Illustrator, InDesign, atau mana-mana aplikasi SVG** tidak perlu kekal terkunci dalam aplikasi tempat ia dilukis. Buka **Layout Studio**, klik **Import a design**, dan fail itu akan dibuka sebagai *susun atur hidup* - bukan gambar rata. Setiap lapisan menjadi kotak yang boleh disunting: teks kekal boleh ditaip semula, bentuk kekal sebagai bentuk, imej mendarat dalam pustaka anda, dan karya vektor yang kompleks dikekalkan dengan tepat. Ia tiba dalam keadaan sudah selaras dengan fon jenama dan peraturan warna anda.
+Kerja siap dalam **Figma, Penpot, Illustrator, InDesign, atau mana-mana aplikasi SVG** tidak perlu kekal terkunci dalam aplikasi tempat ia dilukis. Buka **Design**, klik **Import a design**, dan fail itu akan dibuka sebagai *susun atur hidup* - bukan gambar rata. Setiap lapisan menjadi kotak yang boleh disunting: teks kekal boleh ditaip semula, bentuk kekal sebagai bentuk, imej mendarat dalam pustaka anda, dan karya vektor yang kompleks dikekalkan dengan tepat. Ia tiba dalam keadaan sudah selaras dengan fon jenama dan peraturan warna anda.
 
 | Apa yang anda ada | Cara membawanya masuk |
 |---|---|
@@ -62,7 +62,7 @@ Keseluruhan proses import berlaku **pada peranti anda** - fail itu dihurai dalam
 
 ### Daripada sekali sahaja kepada templat
 
-Inilah ganjarannya: susun atur yang diimport adalah sesi Layout Studio biasa, jadi sebaik sahaja anda **simpan**-nya, ia akan tinggal di satu URL. Sesiapa sahaja yang mempunyai Lolly boleh membuka URL tersebut, menukar perkataan, menggantikan imej, dan merender versi mereka sendiri - tanpa aplikasi reka bentuk, dan bahagian yang dikunci kekal terkunci. Reka bentuk sekali sahaja bertukar menjadi alat yang boleh digunakan berulang kali. Itulah keseluruhan ideanya, dicapai tanpa menulis walau satu baris konfigurasi pun.
+Inilah ganjarannya: susun atur yang diimport adalah sesi Design biasa, jadi sebaik sahaja anda **simpan**-nya, ia akan tinggal di satu URL. Sesiapa sahaja yang mempunyai Lolly boleh membuka URL tersebut, menukar perkataan, menggantikan imej, dan merender versi mereka sendiri - tanpa aplikasi reka bentuk, dan bahagian yang dikunci kekal terkunci. Reka bentuk sekali sahaja bertukar menjadi alat yang boleh digunakan berulang kali. Itulah keseluruhan ideanya, dicapai tanpa menulis walau satu baris konfigurasi pun.
 
 ### Data terbuka dan alat terbuka
 

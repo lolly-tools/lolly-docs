@@ -34,7 +34,7 @@ Rezultatul este **abundența**: fiecare eveniment are semnalistica corectă, fie
 | Aplicații Mobile și Desktop | ✓ | ✗ | ✗ | parțial | **✓** |
 | Linie de comandă și TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-Diferența e clară: nimic din peisajul existent nu ne oferă rezultate axate pe constrângeri, capabile offline, cu prag scăzut de competențe, accesibile intern. Lolly include chiar și un canvas deschis - **Layout Studio** - unde culorile, tipografia și resursele respectă valorile globale de brand, astfel încât aranjarea liberă rămâne axată pe constrângeri. Ceea ce **nu** este e un pachet de design nerestricționat: designerii continuă să folosească Illustrator și Figma pentru lucrări emblematice personalizate. Permutările pot fi asamblate cu acest instrument.
+Diferența e clară: nimic din peisajul existent nu ne oferă rezultate axate pe constrângeri, capabile offline, cu prag scăzut de competențe, accesibile intern. Lolly include chiar și un canvas deschis - **Design** - unde culorile, tipografia și resursele respectă valorile globale de brand, astfel încât aranjarea liberă rămâne axată pe constrângeri. Ceea ce **nu** este e un pachet de design nerestricționat: designerii continuă să folosească Illustrator și Figma pentru lucrări emblematice personalizate. Permutările pot fi asamblate cu acest instrument.
 
 **Folosește-l pentru:** Generare rapidă de resurse creative operaționalizate - tile-uri de evenimente, ecusoane nominale, semnături, alerte CVE, coduri QR, carduri pentru social media, etichete de expediere, rapoarte structurate.
 
@@ -48,7 +48,7 @@ Diferența e clară: nimic din peisajul existent nu ne oferă rezultate axate pe
 
 Cel mai clar mod de a vedea ce este Lolly nu e o listă de funcționalități - e să urmărești o singură resursă cum trece din mână în mână. Uită-te la un singur card de campanie localizat cum se plimbă prin organizație:
 
-1. **Creativul stabilește regulile.** Un designer creează template-ul de bază în Layout Studio, fixând în cod tipografia brandului și variabilele de culoare. Nu face un singur card - face munca de fundație *o singură dată*, ca să nu mai fie nevoit niciodată să o localizeze manual.
+1. **Creativul stabilește regulile.** Un designer creează template-ul de bază în Design, fixând în cod tipografia brandului și variabilele de culoare. Nu face un singur card - face munca de fundație *o singură dată*, ca să nu mai fie nevoit niciodată să o localizeze manual.
 2. **Developerul o scalează.** Același template e conectat la un pipeline nocturn prin CLI, așa că un grafic proaspăt sau o variantă într-o limbă nouă se generează automat - fără ca vreun designer să redeschidă fișierul.
 3. **Producătorul pur și simplu o folosește.** Un reprezentant de vânzări, offline în avion, deschide același instrument și generează o prezentare perfect conformă cu brandul pentru o întâlnire cu un client. Fără abilități de design, fără rețea, fără așteptare.
 
@@ -173,7 +173,6 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── daily-card/        # „Day Brief” - vreme/oră/hartă (preluate printr-un script inline din template)
 │   ├── code-canvas/
 │   ├── countdown-timer/
 │   ├── color-palette/
@@ -185,7 +184,6 @@ lolly/
 │   ├── strip-data/        # eliminare metadate pe dispozitiv - JPEG/PNG/SVG/PDF (fișier intrare → fișier curat ieșire)
 │   ├── compress-pdf/      # compresor de PDF pe dispozitiv - recomprimă imaginile (fișier intrare → fișier mai mic ieșire)
 │   ├── brand-lockup/      # „Brand Lockup” - asocieri de logo SUSE; text-to-path cu HarfBuzz (wasm)
-│   ├── bag-video/
 │   ├── chart-creator/     # grafice SVG din date structurate
 │   ├── filter-duotone/    # tratament foto în două culori
 │   ├── filter-halftone/   # foto → grilă vectorială de puncte halftone
@@ -196,7 +194,7 @@ lolly/
 │   ├── event-name-badge/  # ecusoane de conferință - compune qr-code ca SVG
 │   ├── wayfinding-signage/ # semnalistică de eveniment; blocurile de direcții auto-ajustează textul etichetei
 │   ├── text-helper/       # atelier de text pe dispozitiv (formatare/decodare/hash/de-identificare)
-│   ├── design/     # „Layout Studio” - canvas de editor WYSIWYG liber (render.layout: editor)
+│   ├── design/     # „Design” - canvas de editor WYSIWYG liber (render.layout: editor)
 │   ├── multi-page-pdf/    # document PDF multi-pagină - copertă, blocuri de conținut curgător, pagină finală
 │   ├── diagram-builder/   # diagrame org / layercake / proces / ciclu / piramidă
 │   ├── logo-wall/         # multe logo-uri → grilă auto-aranjată
@@ -274,15 +272,15 @@ Rândurile sunt listate în ordinea secțiunilor din galerie. Secțiunea `utilit
 
 | Categorie | Instrumente livrate | Planificate |
 |---|---|---|
-| `everyone` | QR Code Generator, Quote Card, Email Signature, Day Brief, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
-| `designer` | Brand Lockup, Bag Video, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
+| `everyone` | QR Code Generator, Quote Card, Email Signature, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
+| `designer` | Brand Lockup, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Layout Studio | convertoare de unități/format, alte utilitare de confidențialitate pe dispozitiv |
+| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Design | convertoare de unități/format, alte utilitare de confidențialitate pe dispozitiv |
 
-Instrumentele mai sunt clasificate și după status: `official` (aprobat de brand, fără watermark), `community` (contribuție externă), `experimental` (exporturi cu watermark). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap și Diagram Builder au în prezent statusul `experimental`; Web Icon Maker și Layout Studio sunt livrate ca instrumente `community`.
+Instrumentele mai sunt clasificate și după status: `official` (aprobat de brand, fără watermark), `community` (contribuție externă), `experimental` (exporturi cu watermark). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap și Diagram Builder au în prezent statusul `experimental`; Web Icon Maker și Design sunt livrate ca instrumente `community`.
 
-**Layout Studio** este primul instrument construit pe modul free-canvas `render.layout: "editor"` - o suprafață fără chrome, cu manipulare directă, în care tragi, redimensionezi, rotești și aliniezi (snap) casete de text, forme și imagini, apoi exporți prin același traseu de randare ca orice alt instrument.
+**Design** este primul instrument construit pe modul free-canvas `render.layout: "editor"` - o suprafață fără chrome, cu manipulare directă, în care tragi, redimensionezi, rotești și aliniezi (snap) casete de text, forme și imagini, apoi exporți prin același traseu de randare ca orice alt instrument.
 
 **Strip Hidden Data** este primul **utilitar pe dispozitiv** (`privacy: "on-device"`): un instrument de transformare a conținutului care preia un fișier furnizat *de tine*, îl procesează integral în browser și returnează o copie curată - niciodată încărcat pe server, niciodată marcat cu watermark, fără ștampilă de proveniență. **Text Helper** este al doilea - un atelier pe dispozitiv pentru sarcinile zilnice de tipul „lipește pe un site web” (formatare JSON, decodare JWT, Base64, encode/decode URL, hashing SHA). **Compress PDF** este al treilea - micșorează un PDF recomprimându-i imaginile, tot integral pe dispozitiv. Toate trei poartă insigna „Rulează pe dispozitivul tău - nimic nu este încărcat”. Acesta este începutul unei categorii de utilitare de confidențialitate care înlocuiește predarea fișierelor confidențiale unor site-uri cu scop unic.
 
@@ -444,7 +442,7 @@ Separarea este impusă - nu există importuri încrucișate de la `engine/` căt
 
 | Jalon | Termen | Ce |
 |---|---|---|
-| **Instrumente inițiale** | ✅ Finalizat | QR Code, Quote Card, Email Signature, Day Brief, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Bag Video, Chart Creator, Filter: Duotone, Meeting Planner - shell web live |
+| **Instrumente inițiale** | ✅ Finalizat | QR Code, Quote Card, Email Signature, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Chart Creator, Filter: Duotone, Meeting Planner - shell web live |
 | **Îmbunătățirea tooling-ului actual** | Mijlocul 2026 ✅ Finalizat  | Aplicație offline descărcabilă (Tauri); instrumente suplimentare pentru angajați și evenimente; pipeline de export mai bogat (stabilitate text-to-path, metadate, formate suplimentare - vezi `plans.md`) |
 | **Deschiderea motorului ca open source** | Sfârșitul 2026 ✅ Finalizat  | Motorul, shell-urile, schemele, documentația devin publice - nu și instrumentele/resursele de brand |
 | **Transfer de la un dispozitiv la altul** | ✅ Finalizat | Arhiva portabilă `lolly-backup` transportă profilul, sesiunile salvate, imaginile încărcate și preferințele între oricare două instalări - offline sau online, fără cont. Plic forward-compatible, cu verificare de integritate (specificație: `docs/data-transfer.md`) |

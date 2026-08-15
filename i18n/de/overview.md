@@ -34,7 +34,7 @@ Das Ergebnis ist **Fülle**: Jede Veranstaltung hat die korrekte Beschilderung, 
 | Mobile- und Desktop-Apps | ✓ | ✗ | ✗ | teilweise | **✓** |
 | Kommandozeile & TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-Die Lücke ist eindeutig: Nichts in der bestehenden Landschaft bietet uns eine regelbasierte, offline-fähige, ohne Vorkenntnisse nutzbare, unternehmensintern zugängliche Ausgabe. Lolly enthält sogar eine offene Leinwand - **Layout Studio** -, auf der sich Farben, Schrift und Assets nach den globalen Markenvorgaben richten, sodass freie Anordnung regelbasiert bleibt. Was es **nicht** ist, ist eine uneingeschränkte Design-Suite: Designerinnen und Designer nutzen weiterhin Illustrator und Figma für maßgeschneiderte Vorzeigearbeiten. Mit diesem Tool lassen sich Permutationen zusammenstellen.
+Die Lücke ist eindeutig: Nichts in der bestehenden Landschaft bietet uns eine regelbasierte, offline-fähige, ohne Vorkenntnisse nutzbare, unternehmensintern zugängliche Ausgabe. Lolly enthält sogar eine offene Leinwand - **Design** -, auf der sich Farben, Schrift und Assets nach den globalen Markenvorgaben richten, sodass freie Anordnung regelbasiert bleibt. Was es **nicht** ist, ist eine uneingeschränkte Design-Suite: Designerinnen und Designer nutzen weiterhin Illustrator und Figma für maßgeschneiderte Vorzeigearbeiten. Mit diesem Tool lassen sich Permutationen zusammenstellen.
 
 **Nutzen Sie es für:** Die schnelle Erstellung operationalisierter Kreativ-Assets - Event-Kacheln, Namensschilder, Signaturen, CVE-Warnungen, QR-Codes, Social Cards, Versandetiketten, strukturierte Berichte.
 
@@ -48,7 +48,7 @@ Die Lücke ist eindeutig: Nichts in der bestehenden Landschaft bietet uns eine r
 
 Am deutlichsten zeigt sich, was Lolly ist, nicht anhand einer Funktionsliste - sondern indem man ein einzelnes Asset verfolgt, während es von Hand zu Hand geht. Sehen wir uns an, wie eine lokalisierte Kampagnenkarte durch die Organisation wandert:
 
-1. **Die Kreativen setzen die Regeln.** Eine Designerin erstellt die Basisvorlage in Layout Studio und codiert die Typografie- und Farbvariablen der Marke fest ein. Sie gestaltet nicht eine einzelne Karte - sie erledigt die grundlegende Arbeit *einmal*, damit sie sie nie wieder von Hand lokalisieren muss.
+1. **Die Kreativen setzen die Regeln.** Eine Designerin erstellt die Basisvorlage in Design und codiert die Typografie- und Farbvariablen der Marke fest ein. Sie gestaltet nicht eine einzelne Karte - sie erledigt die grundlegende Arbeit *einmal*, damit sie sie nie wieder von Hand lokalisieren muss.
 2. **Die Entwicklung skaliert sie.** Genau dieselbe Vorlage wird über die CLI in eine nächtliche Pipeline eingebunden, sodass ein frisches Diagramm oder eine neue Sprachvariante automatisch entsteht - kein Designer öffnet die Datei erneut.
 3. **Die Produktion nutzt sie einfach.** Ein Vertriebsmitarbeiter öffnet offline im Flugzeug dasselbe Tool und erzeugt ein perfekt markengerechtes Deck für ein Kundengespräch. Keine Design-Kenntnisse, kein Netz, keine Wartezeit.
 
@@ -173,7 +173,6 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── daily-card/        # „Day Brief" - Wetter/Zeit/Karte (von einem Inline-Template-Skript abgerufen)
 │   ├── code-canvas/
 │   ├── countdown-timer/
 │   ├── color-palette/
@@ -185,7 +184,6 @@ lolly/
 │   ├── strip-data/        # On-Device-Metadaten-Entfernung - JPEG/PNG/SVG/PDF (Datei rein → saubere Datei raus)
 │   ├── compress-pdf/      # On-Device-PDF-Kompressor - komprimiert Bilder neu (Datei rein → kleinere Datei raus)
 │   ├── brand-lockup/      # „Brand Lockup" - SUSE-Logo-Lockups; HarfBuzz Text-zu-Pfad (wasm)
-│   ├── bag-video/
 │   ├── chart-creator/     # SVG-Diagramme aus strukturierten Daten
 │   ├── filter-duotone/    # Zweifarben-Fotobehandlung
 │   ├── filter-halftone/   # Foto → Vektor-Rasterpunkt-Muster (Halftone)
@@ -196,7 +194,7 @@ lolly/
 │   ├── event-name-badge/  # Konferenz-Badges - komponiert qr-code als SVG
 │   ├── wayfinding-signage/ # Event-Beschilderung; Richtungs-Blocks passen Beschriftungstext automatisch an
 │   ├── text-helper/       # On-Device-Text-Werkbank (Formatieren/Dekodieren/Hashen/Anonymisieren)
-│   ├── design/     # „Layout Studio" - freie WYSIWYG-Editor-Leinwand (render.layout: editor)
+│   ├── design/     # „Design" - freie WYSIWYG-Editor-Leinwand (render.layout: editor)
 │   ├── multi-page-pdf/    # mehrseitiges PDF-Dokument - Deckblatt, fließende Inhaltsblöcke, Rückseite
 │   ├── diagram-builder/   # Org-/Layercake-/Prozess-/Kreislauf-/Pyramiden-Diagramme
 │   ├── logo-wall/         # viele Logos → automatisch gepacktes Raster
@@ -274,15 +272,15 @@ Die Zeilen sind in der Reihenfolge der Galerie-Abschnitte aufgeführt. Der Absch
 
 | Kategorie | Ausgelieferte Tools | Geplant |
 |---|---|---|
-| `everyone` | QR Code Generator, Quote Card, Email Signature, Day Brief, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
-| `designer` | Brand Lockup, Bag Video, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
+| `everyone` | QR Code Generator, Quote Card, Email Signature, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
+| `designer` | Brand Lockup, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Layout Studio | Einheiten-/Format-Konverter, weitere On-Device-Datenschutz-Utilities |
+| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Design | Einheiten-/Format-Konverter, weitere On-Device-Datenschutz-Utilities |
 
-Tools werden außerdem nach Status klassifiziert: `official` (markenfreigegeben, kein Wasserzeichen), `community` (externer Beitrag), `experimental` (Exporte mit Wasserzeichen). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap und Diagram Builder tragen derzeit den Status `experimental`; Web Icon Maker und Layout Studio werden als `community`-Tools ausgeliefert.
+Tools werden außerdem nach Status klassifiziert: `official` (markenfreigegeben, kein Wasserzeichen), `community` (externer Beitrag), `experimental` (Exporte mit Wasserzeichen). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap und Diagram Builder tragen derzeit den Status `experimental`; Web Icon Maker und Design werden als `community`-Tools ausgeliefert.
 
-**Layout Studio** ist das erste Tool, das auf dem freien Leinwandmodus `render.layout: "editor"` aufbaut - einer chromfreien Oberfläche zur direkten Manipulation, auf der Sie Boxen aus Text, Formen und Bildern ziehen, in der Größe ändern, drehen und einrasten lassen, um sie anschließend über denselben Render-Pfad wie jedes andere Tool zu exportieren.
+**Design** ist das erste Tool, das auf dem freien Leinwandmodus `render.layout: "editor"` aufbaut - einer chromfreien Oberfläche zur direkten Manipulation, auf der Sie Boxen aus Text, Formen und Bildern ziehen, in der Größe ändern, drehen und einrasten lassen, um sie anschließend über denselben Render-Pfad wie jedes andere Tool zu exportieren.
 
 **Strip Hidden Data** ist das erste **On-Device-Utility** (`privacy: "on-device"`): ein Content-Transform-Tool, das eine von *Ihnen* bereitgestellte Datei entgegennimmt, sie vollständig im Browser verarbeitet und eine bereinigte Kopie zurückgibt - nie hochgeladen, nie mit Wasserzeichen versehen, keine Provenienz aufgestempelt. **Text Helper** ist das zweite - eine On-Device-Werkbank für alltägliche „in eine Website einfügen"-Aufgaben (JSON-Formatierung, JWT-Dekodierung, Base64, URL-Kodierung/-Dekodierung, SHA-Hashing). **Compress PDF** ist das dritte - es verkleinert ein PDF, indem es dessen Bilder neu komprimiert, ebenfalls vollständig on-device. Alle drei tragen den Badge-Text „Läuft auf Ihrem Gerät - nichts wird hochgeladen". Das ist der Anfang einer Datenschutz-Utility-Kategorie, die das Weitergeben vertraulicher Dateien an Einzelzweck-Websites ersetzt.
 
@@ -444,7 +442,7 @@ Die Aufteilung wird erzwungen - es gibt keine Cross-Imports von `engine/` zu `to
 
 | Meilenstein | Ziel | Was |
 |---|---|---|
-| **Erste Tools** | ✅ Erledigt | QR Code, Quote Card, Email Signature, Day Brief, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Bag Video, Chart Creator, Filter: Duotone, Meeting Planner - Web-Shell live |
+| **Erste Tools** | ✅ Erledigt | QR Code, Quote Card, Email Signature, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Chart Creator, Filter: Duotone, Meeting Planner - Web-Shell live |
 | **Bestehendes Tooling ausbauen** | Mitte 2026 ✅ Erledigt  | Herunterladbare Offline-App (Tauri); zusätzliche Mitarbeiter- und Event-Tools; erweiterte Export-Pipeline (Stabilität von Text-zu-Pfad, Metadaten, zusätzliche Formate - siehe `plans.md`) |
 | **Engine als Open Source veröffentlichen** | Ende 2026 ✅ Erledigt  | Engine, Shells, Schemas, Docs werden öffentlich - nicht die markenspezifischen Tools/Assets |
 | **Geräteübergreifende Übertragung** | ✅ Erledigt | Portables `lolly-backup`-Bundle transportiert Profil, gespeicherte Sitzungen, hochgeladene Bilder und Einstellungen zwischen zwei beliebigen Installationen - offline oder online, ohne Konto. Abwärtskompatible, integritätsgeprüfte Envelope (Spezifikation: `docs/data-transfer.md`) |

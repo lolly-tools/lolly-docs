@@ -17,7 +17,7 @@ A tela inicial é a **galeria** - todas as ferramentas, agrupadas por categoria.
 
 Cada ferramenta é uma visualização dividida: **controles** de um lado, uma **pré-visualização** ao vivo (a tela) do outro. Altere qualquer controle e a pré-visualização é atualizada instantaneamente.
 
-> Algumas ferramentas (como o **Layout Studio**) abrem, em vez disso, como uma **tela livre** - uma superfície sem interface, de manipulação direta, onde você arrasta, redimensiona, gira e encaixa caixas de texto, formas e imagens, e clica duas vezes para editar o texto no local. Ela é exportada pelo mesmo caminho de renderização de qualquer outra ferramenta, então a tela *é* o arquivo. Veja [A tela livre](#the-free-canvas-design) abaixo.
+> Algumas ferramentas (como o **Design**) abrem, em vez disso, como uma **tela livre** - uma superfície sem interface, de manipulação direta, onde você arrasta, redimensiona, gira e encaixa caixas de texto, formas e imagens, e clica duas vezes para editar o texto no local. Ela é exportada pelo mesmo caminho de renderização de qualquer outra ferramenta, então a tela *é* o arquivo. Veja [A tela livre](#the-free-canvas-design) abaixo.
 
 ## A tela (pré-visualização)
 
@@ -40,9 +40,9 @@ A pré-visualização sempre mostra exatamente o que será exportado.
 
 Uma mudança de dimensão sempre encaixa a visualização de volta a um ajuste limpo.
 
-### A tela livre (Layout Studio)
+### A tela livre (Design)
 
-![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Ferramentas de tela livre adicionam uma superfície de trabalho *ao redor* da prancheta, como a mesa de composição de um designer:
 
@@ -144,7 +144,7 @@ O painel de **Amostras** do Catálogo não é só para referência - clique em u
 
 O painel de **Fontes** lista as fontes da sua marca com um botão de **download** ao lado de cada uma, para instalar localmente ou entregar a uma gráfica. (A aba Cores do [Brand Studio](/info/brand-studio.html) oferece o mesmo download de paleta.)
 
-Os ativos são metade do caminho aberto e faça-você-mesmo; a outra metade é **criar suas próprias ferramentas** - a tela livre (Layout Studio, descrita acima) permite construir uma visualmente, sem precisar de código.
+Os ativos são metade do caminho aberto e faça-você-mesmo; a outra metade é **criar suas próprias ferramentas** - a tela livre (Design, descrita acima) permite construir uma visualmente, sem precisar de código.
 
 ## Som e acessibilidade
 
@@ -176,7 +176,7 @@ O cache do catálogo não está incluído - ele se baixa novamente sozinho no no
 
 ## Importando um design (Figma, Penpot, Illustrator, InDesign)
 
-Você pode trazer um design existente para o Lolly e continuar trabalhando nele: abra o **Layout Studio**, clique em **Importar um design** na barra de ferramentas da tela, e escolha um **.fig** ou SVG do Figma, um **.penpot** do Penpot, um **.ai** / **.pdf** do Illustrator, ou um **.idml** do InDesign. As camadas viram caixas editáveis na tela livre - o texto continua reeditável, as imagens vão para **Minhas imagens**, e a tipografia e as cores seguem os padrões globais da marca - depois o resultado é salvo, compartilhado e renderizado como qualquer outra sessão. O parse acontece inteiramente no seu dispositivo. Detalhes completos: **[Importar um design](/info/design-import.html)**.
+Você pode trazer um design existente para o Lolly e continuar trabalhando nele: abra o **Design**, clique em **Importar um design** na barra de ferramentas da tela, e escolha um **.fig** ou SVG do Figma, um **.penpot** do Penpot, um **.ai** / **.pdf** do Illustrator, ou um **.idml** do InDesign. As camadas viram caixas editáveis na tela livre - o texto continua reeditável, as imagens vão para **Minhas imagens**, e a tipografia e as cores seguem os padrões globais da marca - depois o resultado é salvo, compartilhado e renderizado como qualquer outra sessão. O parse acontece inteiramente no seu dispositivo. Detalhes completos: **[Importar um design](/info/design-import.html)**.
 
 ## Exportando
 

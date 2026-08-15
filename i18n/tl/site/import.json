@@ -1,7 +1,7 @@
 {
   "eyebrow": "Dalhin ang ginawa mo na",
   "heading": "Hindi nakakulong ang mga design file mo",
-  "lead": "Ang tapos mong ginawa sa **Figma, Penpot, Illustrator, InDesign, o kahit anong SVG app** ay hindi na kailangang manatiling naka-lock sa iisang app. Buksan ang **Layout Studio**, i-click ang **Mag-import ng disenyo**, at magbubukas ang file bilang buhay na layout - hindi flattened na larawan. Bawat layer ay nagiging editable box na handa mong patuloy na gawan, i-mix sa mga tool, at i-render gamit ang parehong mga panuntunan.",
+  "lead": "Ang tapos mong ginawa sa **Figma, Penpot, Illustrator, InDesign, o kahit anong SVG app** ay hindi na kailangang manatiling naka-lock sa iisang app. Buksan ang **Design**, i-click ang **Mag-import ng disenyo**, at magbubukas ang file bilang buhay na layout - hindi flattened na larawan. Bawat layer ay nagiging editable box na handa mong patuloy na gawan, i-mix sa mga tool, at i-render gamit ang parehong mga panuntunan.",
   "sources": [
     { "mono": "Fig", "name": "Figma", "fmt": ".fig · SVG", "color": "#a259ff" },
     { "mono": "Pen", "name": "Penpot", "fmt": ".penpot", "color": "#12b886" },

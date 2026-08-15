@@ -48,7 +48,7 @@ Você não começa do zero. O Lolly abre o trabalho de design e os formatos aber
 
 ### Arquivos de design abertos
 
-Um trabalho finalizado no **Figma, Penpot, Illustrator, InDesign ou qualquer aplicativo de SVG** não precisa ficar preso no aplicativo em que foi desenhado. Abra o **Layout Studio**, clique em **Importar um design**, e o arquivo abre como um *layout vivo* - não uma imagem achatada. Cada camada vira uma caixa editável: o texto continua editável, as formas continuam formas, as imagens vão para a sua biblioteca, e a arte vetorial complexa é preservada fielmente. Ele chega já ajustado às fontes e regras de cor da sua marca.
+Um trabalho finalizado no **Figma, Penpot, Illustrator, InDesign ou qualquer aplicativo de SVG** não precisa ficar preso no aplicativo em que foi desenhado. Abra o **Design**, clique em **Importar um design**, e o arquivo abre como um *layout vivo* - não uma imagem achatada. Cada camada vira uma caixa editável: o texto continua editável, as formas continuam formas, as imagens vão para a sua biblioteca, e a arte vetorial complexa é preservada fielmente. Ele chega já ajustado às fontes e regras de cor da sua marca.
 
 | Você tem | Traga como |
 |---|---|
@@ -62,7 +62,7 @@ Toda a importação acontece **no seu dispositivo** - o arquivo é interpretado 
 
 ### De algo único a um template
 
-Aqui está o ganho: um layout importado é uma sessão comum do Layout Studio, então assim que você **salva**, ele passa a viver em uma URL. Qualquer pessoa com o Lolly pode abrir essa URL, mudar as palavras, trocar uma imagem e renderizar a própria versão - sem aplicativo de design, e as partes travadas continuam travadas. Um design pontual vira uma ferramenta reutilizável. É essa a ideia toda, alcançada sem escrever uma linha sequer de configuração.
+Aqui está o ganho: um layout importado é uma sessão comum do Design, então assim que você **salva**, ele passa a viver em uma URL. Qualquer pessoa com o Lolly pode abrir essa URL, mudar as palavras, trocar uma imagem e renderizar a própria versão - sem aplicativo de design, e as partes travadas continuam travadas. Um design pontual vira uma ferramenta reutilizável. É essa a ideia toda, alcançada sem escrever uma linha sequer de configuração.
 
 ### Dados abertos e ferramentas abertas
 

@@ -47,7 +47,7 @@ asla sapmaz. Benimsemenin önündeki sürtünme nadiren tekniktir; kurumsaldır.
 hazır bir paketi değildir. *Yönetilen bir dağıtım* için biri, paylaşılan varlık kataloğunu
 (logolar, paletler, kalıcı ID'ler olarak yazı tipleri) tanımlar ve her çıktı türü için
 manifest + şablon yazar. Ancak bireylerin bunu beklemesine gerek yoktur - açık uygulamada
-herkes kendi dosyalarını kataloğa içe aktarabilir ve daha ilk günden Layout Studio'da
+herkes kendi dosyalarını kataloğa içe aktarabilir ve daha ilk günden Design'da
 araçlar oluşturabilir.
 
 **Git üzerinden yönetişim isteğe bağlıdır - ve mühendis olmayanlar için tanıdık değildir.**
@@ -60,7 +60,7 @@ gibi). Bunu istemeyen ekipler bunu basitçe atlar.
 
 **Bilerek dar tutulmuştur - bu şekilde çerçevele.** Lolly, özel yapım ya da hero içerik
 için değildir. O, tasarım sistemin, araçların ve kataloğunla beslenip güçlendirilmiş
-*gerçek* kişisel DAM'ındır - ve açık bir kanvası (Layout Studio) *gerçekten de* vardır,
+*gerçek* kişisel DAM'ındır - ve açık bir kanvası (Design) *gerçekten de* vardır,
 ama orada bile renkler, tipografi ve varlıklar etkin tasarım globalleriyle uyumlu kalır,
 böylece serbest düzenleme sistemin içinde kalır. Figma ya da Canva'yla karşılaştırıldığında
 sınırlı görünür. Ne olduğu haliyle değerlendirildiğinde - kurumsallaşmış, tekrarlı, devasa
@@ -102,9 +102,9 @@ Yönetişim savaşını mükemmel kolaylık ve hizmetle kazanıyoruz.
 
 ## Lolly, Figma, Penpot, Illustrator veya InDesign dosyalarımı düzenleyip render edebilir mi?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
-Evet. **Layout Studio**'yu aç ve **Bir tasarım içe aktar**'a tıkla: yerel bir Figma **.fig** dosyasını (Save local copy), bir Penpot **.penpot** dışa aktarımını, bir Illustrator **.ai** veya **.pdf** dosyasını, bir InDesign **.idml** dosyasını (File → Export → InDesign Markup) ya da **herhangi bir SVG**'yi (geniş kapı - hemen hemen her tasarım uygulaması bunu dışa aktarır) kabul eder. Her şey tamamen cihazında ayrıştırılır, hesap veya eklenti gerekmez.
+Evet. **Design**'yu aç ve **Bir tasarım içe aktar**'a tıkla: yerel bir Figma **.fig** dosyasını (Save local copy), bir Penpot **.penpot** dışa aktarımını, bir Illustrator **.ai** veya **.pdf** dosyasını, bir InDesign **.idml** dosyasını (File → Export → InDesign Markup) ya da **herhangi bir SVG**'yi (geniş kapı - hemen hemen her tasarım uygulaması bunu dışa aktarır) kabul eder. Her şey tamamen cihazında ayrıştırılır, hesap veya eklenti gerekmez.
 
 Katmanlar, açık kanvasta düzenlenebilir kutular olarak gelir: metin yeniden yazılabilir kalır, şekiller şekil olarak kalır, görseller cihaz-içi kitaplığına katılır, tipografi ve renkler ise marka globalleriyle uyumlu hale gelir. Kaydet ve düzen, Lolly'si olan herkesin yeniden doldurabileceği, yeniden kullanılabilir, URL ile adreslenebilir bir şablona dönüşür - ayrıca sayfa yüklendiğinde yeniden render edilen canlı araçları (bir QR kodu, bir grafik) da karıştırabilirsin. Buradan itibaren, Lolly'deki her şey gibi render edilir - SVG, PDF, PNG ve gerisi, kendi URL'sinden yeniden üretilebilir. Bkz. [Bir tasarım içe aktar](/info/design-import.html).
 

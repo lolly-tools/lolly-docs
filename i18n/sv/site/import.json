@@ -1,7 +1,7 @@
 {
   "eyebrow": "Ta med det du redan har skapat",
   "heading": "Dina designfiler är inte strandsatta",
-  "lead": "Färdigt arbete i **Figma, Penpot, Illustrator, InDesign eller vilken SVG-app som helst** behöver inte förbli inlåst i en enda app. Öppna **Layout Studio**, klicka på **Importera en design**, så öppnas filen som en levande layout - inte en platt bild. Varje lager blir en redigerbar box, redo att jobba vidare på, blanda med verktyg och rendera genom samma regler.",
+  "lead": "Färdigt arbete i **Figma, Penpot, Illustrator, InDesign eller vilken SVG-app som helst** behöver inte förbli inlåst i en enda app. Öppna **Design**, klicka på **Importera en design**, så öppnas filen som en levande layout - inte en platt bild. Varje lager blir en redigerbar box, redo att jobba vidare på, blanda med verktyg och rendera genom samma regler.",
   "sources": [
     { "mono": "Fig", "name": "Figma", "fmt": ".fig · SVG", "color": "#a259ff" },
     { "mono": "Pen", "name": "Penpot", "fmt": ".penpot", "color": "#12b886" },

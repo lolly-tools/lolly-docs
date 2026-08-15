@@ -17,7 +17,7 @@ Màn hình chính là **gallery** - nơi liệt kê mọi công cụ, được n
 
 Mỗi công cụ có giao diện chia đôi: **các điều khiển** ở một bên, **bản xem trước** (canvas) trực tiếp ở bên còn lại. Thay đổi bất kỳ điều khiển nào, bản xem trước sẽ cập nhật ngay lập tức.
 
-> Một vài công cụ (như **Layout Studio**) lại mở dưới dạng **canvas tự do** - một bề mặt thao tác trực tiếp, không khung giao diện, nơi bạn kéo, đổi kích thước, xoay và gắn (snap) các khối văn bản, hình khối và hình ảnh, đồng thời nhấp đúp để chỉnh sửa văn bản ngay tại chỗ. Nó xuất file qua cùng một quy trình render như mọi công cụ khác, vì vậy canvas *chính là* file. Xem [Canvas tự do](#the-free-canvas-design) bên dưới.
+> Một vài công cụ (như **Design**) lại mở dưới dạng **canvas tự do** - một bề mặt thao tác trực tiếp, không khung giao diện, nơi bạn kéo, đổi kích thước, xoay và gắn (snap) các khối văn bản, hình khối và hình ảnh, đồng thời nhấp đúp để chỉnh sửa văn bản ngay tại chỗ. Nó xuất file qua cùng một quy trình render như mọi công cụ khác, vì vậy canvas *chính là* file. Xem [Canvas tự do](#the-free-canvas-design) bên dưới.
 
 ## Canvas (bản xem trước)
 
@@ -40,9 +40,9 @@ Bản xem trước luôn hiển thị chính xác những gì sẽ được xu�
 
 Mỗi khi thay đổi kích thước, khung nhìn sẽ luôn tự động trở về trạng thái vừa khung gọn gàng.
 
-### Canvas tự do (Layout Studio)
+### Canvas tự do (Design)
 
-![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Các công cụ canvas tự do bổ sung thêm một bề mặt làm việc *bao quanh* khung tranh, giống như bảng dán của nhà thiết kế:
 
@@ -144,7 +144,7 @@ Bảng **Swatches** của Catalogue không chỉ để tham khảo - nhấp vào
 
 Bảng **Fonts** liệt kê các bộ chữ thương hiệu của bạn kèm một nút **download** bên cạnh mỗi bộ, để cài đặt cục bộ hoặc trao cho một xưởng in. (Tab Colours của [Brand Studio](/info/brand-studio.html) cũng cung cấp cùng tính năng tải bảng màu này.)
 
-Tài sản là một nửa của con đường mở, tự-làm-lấy; nửa còn lại là **tự tạo công cụ của riêng bạn** - canvas tự do (Layout Studio, đã mô tả ở trên) cho phép bạn dựng một công cụ một cách trực quan, không cần viết mã.
+Tài sản là một nửa của con đường mở, tự-làm-lấy; nửa còn lại là **tự tạo công cụ của riêng bạn** - canvas tự do (Design, đã mô tả ở trên) cho phép bạn dựng một công cụ một cách trực quan, không cần viết mã.
 
 ## Âm thanh & khả năng tiếp cận
 
@@ -176,7 +176,7 @@ Bộ nhớ đệm catalog không được bao gồm trong gói - nó sẽ tự t
 
 ## Nhập một thiết kế (Figma, Penpot, Illustrator, InDesign)
 
-Bạn có thể đưa một thiết kế có sẵn vào Lolly và tiếp tục làm việc trên đó: mở **Layout Studio**, nhấp **Import a design** trên thanh công cụ của canvas, rồi chọn một file Figma **.fig** hoặc SVG, một file Penpot **.penpot**, một file Illustrator **.ai** / **.pdf**, hoặc một file InDesign **.idml**. Các lớp sẽ trở thành các khối có thể chỉnh sửa trên canvas tự do - văn bản vẫn có thể gõ lại được, hình ảnh sẽ nằm trong **My images**, còn kiểu chữ và màu sắc sẽ tuân theo các biến thương hiệu toàn cục - sau đó kết quả được lưu, chia sẻ và xuất file như bất kỳ phiên làm việc nào khác. Việc phân tích diễn ra hoàn toàn trên thiết bị của bạn. Chi tiết đầy đủ: **[Nhập một thiết kế](/info/design-import.html)**.
+Bạn có thể đưa một thiết kế có sẵn vào Lolly và tiếp tục làm việc trên đó: mở **Design**, nhấp **Import a design** trên thanh công cụ của canvas, rồi chọn một file Figma **.fig** hoặc SVG, một file Penpot **.penpot**, một file Illustrator **.ai** / **.pdf**, hoặc một file InDesign **.idml**. Các lớp sẽ trở thành các khối có thể chỉnh sửa trên canvas tự do - văn bản vẫn có thể gõ lại được, hình ảnh sẽ nằm trong **My images**, còn kiểu chữ và màu sắc sẽ tuân theo các biến thương hiệu toàn cục - sau đó kết quả được lưu, chia sẻ và xuất file như bất kỳ phiên làm việc nào khác. Việc phân tích diễn ra hoàn toàn trên thiết bị của bạn. Chi tiết đầy đủ: **[Nhập một thiết kế](/info/design-import.html)**.
 
 ## Xuất file
 

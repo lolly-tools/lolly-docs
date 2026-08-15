@@ -1,610 +1,661 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:05.500
+00:00:00.000 --> 00:00:05.375
 You want to make something good, quickly, and have it come out right.
 
-00:00:05.850 --> 00:00:22.100
+00:00:05.725 --> 00:00:22.050
 Lolly is built for exactly that: fill in a few fields, get a finished file - the layout, the type, the rules are enforced by the tool, not by your eye «unless you want to - then you have a media powerhouse at your fingertips».
 
-00:00:22.450 --> 00:00:26.125
+00:00:22.400 --> 00:00:26.075
 No design software, no waiting.
 
-00:00:26.475 --> 00:00:31.050
+00:00:26.425 --> 00:00:31.000
 It runs on your own device and works offline.
 
-00:00:31.792 --> 00:00:34.512
+00:00:31.746 --> 00:00:34.504
 What's in it for you: you ship in minutes
 
-00:00:34.572 --> 00:00:37.394
+00:00:34.562 --> 00:00:37.369
 and it looks like you spent hours.
 
-00:00:38.183 --> 00:00:41.194
+00:00:38.160 --> 00:00:41.181
 You're never stuck waiting on a designer,
 
-00:00:41.267 --> 00:00:44.223
+00:00:41.253 --> 00:00:44.166
 and because the brand rules are baked in,
 
-00:00:44.282 --> 00:00:46.609
+00:00:44.225 --> 00:00:46.560
 it's never your name on the off-brand
 
-00:00:46.671 --> 00:00:47.794
+00:00:46.622 --> 00:00:47.744
 asset.
 
-00:00:48.590 --> 00:00:51.008
+00:00:48.536 --> 00:00:50.949
 You just look fast, polished, and
 
-00:00:51.059 --> 00:00:52.393
+00:00:50.998 --> 00:00:52.319
 reliable.
 
-00:00:53.165 --> 00:00:56.039
+00:00:53.083 --> 00:00:55.920
 This page tells you everything you need to
 
-00:00:56.102 --> 00:00:59.394
+00:00:55.981 --> 00:00:59.169
 know about getting the most out of Lolly.
 
-00:00:59.775 --> 00:01:03.275
+00:00:59.550 --> 00:01:03.050
 You're one hand in a relay.
 
-00:01:03.625 --> 00:01:21.100
+00:01:03.400 --> 00:01:20.850
 The tools you author don't stop with you - a developer can wire them into an automated pipeline «Lolly for Builders» and a non-designer colleague can run them self-serve to get a finished, on-brand file without you in the loop.
 
-00:01:21.450 --> 00:01:27.750
+00:01:21.200 --> 00:01:27.450
 See how the whole lifecycle compounds in The lifecycle of a campaign.
 
-00:01:28.864 --> 00:01:31.817
+00:01:28.558 --> 00:01:31.444
 Why Lolly - your advantages
 
-00:01:32.778 --> 00:01:34.893
+00:01:32.402 --> 00:01:34.518
 Finished, not fiddly.
 
-00:01:35.659 --> 00:01:38.169
+00:01:35.283 --> 00:01:37.793
 The tool already knows the fonts, the
 
-00:01:38.243 --> 00:01:41.019
+00:01:37.870 --> 00:01:40.644
 colours, the logo, the spacing.
 
-00:01:41.803 --> 00:01:44.504
+00:01:41.423 --> 00:01:44.069
 You bring the words; it hands back the
 
-00:01:44.565 --> 00:01:45.669
+00:01:44.130 --> 00:01:45.220
 asset.
 
-00:01:46.480 --> 00:01:49.118
+00:01:46.034 --> 00:01:48.718
 Nothing to second-guess.
 
-00:01:49.900 --> 00:01:52.492
+00:01:49.491 --> 00:01:52.018
 Correct by construction.
 
-00:01:53.268 --> 00:01:56.678
+00:01:52.792 --> 00:01:56.214
 Design rules, layout constraints, and
 
-00:01:56.741 --> 00:01:59.059
+00:01:56.276 --> 00:01:58.581
 running logic live in the template -
 
-00:01:59.131 --> 00:02:02.184
+00:01:58.654 --> 00:02:01.769
 output can't drift from spec unless the
 
-00:02:02.274 --> 00:02:04.225
+00:02:01.858 --> 00:02:03.791
 tool's author deliberately leaves
 
-00:02:04.286 --> 00:02:05.894
+00:02:03.853 --> 00:02:05.469
 something open.
 
-00:02:06.684 --> 00:02:10.004
+00:02:06.258 --> 00:02:09.626
 Wild creative range, inside guard-rails
 
-00:02:10.065 --> 00:02:11.394
+00:02:09.685 --> 00:02:10.994
 that hold.
 
-00:02:12.181 --> 00:02:14.919
+00:02:11.782 --> 00:02:14.544
 One source, every format.
 
-00:02:15.690 --> 00:02:18.789
+00:02:15.316 --> 00:02:18.471
 The same design exports as SVG,
 
-00:02:18.851 --> 00:02:23.334
+00:02:18.534 --> 00:02:23.010
 print-ready PDF, high-res PNG, or 60fps
 
-00:02:23.396 --> 00:02:24.494
+00:02:23.072 --> 00:02:24.169
 video.
 
-00:02:25.277 --> 00:02:28.269
+00:02:24.955 --> 00:02:27.944
 Make it once; ship it everywhere.
 
-00:02:29.049 --> 00:02:31.768
+00:02:28.728 --> 00:02:31.493
 Infinite permutations.
 
-00:02:32.563 --> 00:02:35.949
+00:02:32.286 --> 00:02:35.640
 Localise a card into a dozen languages,
 
-00:02:36.017 --> 00:02:39.419
+00:02:35.707 --> 00:02:39.128
 generate every size for every placement,
 
-00:02:39.510 --> 00:02:42.649
+00:02:39.218 --> 00:02:42.356
 swap a lockup across forty campaigns - all
 
-00:02:42.737 --> 00:02:46.619
+00:02:42.441 --> 00:02:46.294
 from one design, driven by a spreadsheet.
 
-00:02:47.000 --> 00:02:50.425
+00:02:46.675 --> 00:02:50.100
 It's yours, offline, private.
 
-00:02:50.775 --> 00:03:00.775
+00:02:50.450 --> 00:03:00.350
 Your work stays on your device - no account needed, nothing uploaded to make or export an asset, no licence to audit.
 
-00:03:01.125 --> 00:03:05.675
+00:03:00.700 --> 00:03:05.300
 Close the laptop lid on a plane and keep working.
 
-00:03:06.025 --> 00:03:12.975
+00:03:05.650 --> 00:03:12.575
 «Two optional server add-ons exist and can be ignored entirely - see Server Surface.»
 
-00:03:13.721 --> 00:03:16.143
+00:03:13.315 --> 00:03:15.694
 Open, not locked in.
 
-00:03:16.928 --> 00:03:20.010
+00:03:16.473 --> 00:03:19.530
 The engine is open source and your work
 
-00:03:20.074 --> 00:03:23.140
+00:03:19.592 --> 00:03:22.638
 lives at plain URL'S, not inside a
 
-00:03:23.203 --> 00:03:25.068
+00:03:22.700 --> 00:03:24.544
 vendor's database.
 
-00:03:25.862 --> 00:03:28.669
+00:03:25.338 --> 00:03:28.169
 Superpowers when you want them.
 
-00:03:29.431 --> 00:03:32.004
+00:03:28.932 --> 00:03:31.540
 You never have to design - but the moment
 
-00:03:32.077 --> 00:03:35.270
+00:03:31.610 --> 00:03:34.795
 you decide to, the ceiling is high.
 
-00:03:36.060 --> 00:03:40.119
-Lay out pages freehand in Layout Studio.
+00:03:35.579 --> 00:03:38.461
+Lay out pages freehand on the Design
 
-00:03:40.877 --> 00:03:43.790
+00:03:38.522 --> 00:03:39.744
+canvas.
+
+00:03:40.506 --> 00:03:43.464
 Cut clips, cards and music on a timeline
 
-00:03:43.825 --> 00:03:45.844
+00:03:43.499 --> 00:03:45.544
 in Sequence Studio.
 
-00:03:46.623 --> 00:03:49.668
+00:03:46.329 --> 00:03:49.343
 Record clean voice and camera takes with
 
-00:03:49.732 --> 00:03:51.344
+00:03:49.407 --> 00:03:51.044
 live coaching.
 
-00:03:52.122 --> 00:03:55.595
+00:03:51.824 --> 00:03:55.313
 Stand up an entire brand yourself, guided
 
-00:03:55.656 --> 00:03:58.137
+00:03:55.374 --> 00:03:57.848
 by a colour picker that tells you more
 
-00:03:58.195 --> 00:04:00.812
+00:03:57.905 --> 00:04:00.576
 about a colour than most design suites
 
-00:04:00.900 --> 00:04:02.194
+00:04:00.665 --> 00:04:01.969
 ever will.
 
-00:04:02.962 --> 00:04:05.373
+00:04:02.736 --> 00:04:05.147
 The constraints don't cage you - they
 
-00:04:05.444 --> 00:04:06.819
+00:04:05.220 --> 00:04:06.594
 catch you.
 
-00:04:07.592 --> 00:04:10.681
+00:04:07.370 --> 00:04:10.471
 Think of the guard-rails as bumper lanes:
 
-00:04:10.742 --> 00:04:13.323
+00:04:10.533 --> 00:04:13.165
 you still throw the ball - the words, the
 
-00:04:13.393 --> 00:04:16.584
+00:04:13.241 --> 00:04:16.471
 image, the idea - and the code just keeps
 
-00:04:16.634 --> 00:04:19.208
+00:04:16.526 --> 00:04:19.076
 it out of the gutter so it can never break
 
-00:04:19.263 --> 00:04:20.570
+00:04:19.133 --> 00:04:20.444
 the brand.
 
-00:04:21.358 --> 00:04:23.892
+00:04:21.235 --> 00:04:23.736
 You're not being automated away; the
 
-00:04:23.985 --> 00:04:27.103
+00:04:23.828 --> 00:04:26.925
 tedious part is: the brand-checking, the
 
-00:04:27.175 --> 00:04:29.425
+00:04:27.004 --> 00:04:29.282
 re-exporting at every size, the
 
-00:04:29.486 --> 00:04:32.870
+00:04:29.343 --> 00:04:32.745
 hand-localizing into a dozen languages.
 
-00:04:33.655 --> 00:04:37.318
+00:04:33.533 --> 00:04:37.218
 What's left is the call that needed you.
 
-00:04:38.088 --> 00:04:40.961
+00:04:37.990 --> 00:04:40.897
 And the tool you author is what lets the
 
-00:04:41.031 --> 00:04:43.752
+00:04:40.966 --> 00:04:43.658
 rest of the company make good work without
 
-00:04:43.814 --> 00:04:46.428
+00:04:43.721 --> 00:04:46.342
 pulling you into every asset: your
 
-00:04:46.489 --> 00:04:48.369
+00:04:46.403 --> 00:04:48.294
 judgment, scaled.
 
-00:04:49.514 --> 00:04:51.516
+00:04:49.446 --> 00:04:51.472
 How it compares
 
-00:04:52.550 --> 00:04:56.518
+00:04:52.502 --> 00:04:56.468
 Lolly isn't trying to be Canva or Figma.
 
-00:04:57.271 --> 00:05:00.814
+00:04:57.222 --> 00:05:00.778
 It sits where rules, repeatability, and
 
-00:05:00.875 --> 00:05:03.517
+00:05:00.840 --> 00:05:03.526
 hard constraints matter more than freehand
 
-00:05:03.579 --> 00:05:06.546
+00:05:03.597 --> 00:05:06.499
 flexibility - turning design decisions
 
-00:05:06.605 --> 00:05:09.801
+00:05:06.559 --> 00:05:09.688
 into tools your whole team can use without
 
-00:05:09.891 --> 00:05:12.845
+00:05:09.777 --> 00:05:12.794
 you in the loop for every asset.
 
-00:05:13.620 --> 00:05:16.062
+00:05:13.570 --> 00:05:16.001
 Reach for Lolly for the assets you make
 
-00:05:16.102 --> 00:05:19.074
+00:05:16.042 --> 00:05:19.018
 again and again - event signage, quote
 
-00:05:19.137 --> 00:05:21.649
+00:05:19.081 --> 00:05:21.601
 cards, localized banners, email
 
-00:05:21.726 --> 00:05:24.081
+00:05:21.682 --> 00:05:24.009
 signatures, shipping labels, social
 
-00:05:24.142 --> 00:05:27.344
+00:05:24.070 --> 00:05:27.269
 variants, data-driven charts and maps.
 
-00:05:28.125 --> 00:05:31.100
+00:05:28.052 --> 00:05:31.031
 Reach for a design tool for the bespoke
 
-00:05:31.161 --> 00:05:34.725
+00:05:31.093 --> 00:05:34.675
 hero piece, the one-off campaign concept,
 
-00:05:34.787 --> 00:05:37.431
+00:05:34.737 --> 00:05:37.372
 the ideation that's meant to escape the
 
-00:05:37.502 --> 00:05:38.669
+00:05:37.445 --> 00:05:38.619
 system.
 
-00:05:39.465 --> 00:05:42.394
+00:05:39.415 --> 00:05:42.334
 Lolly executes the system; it doesn't
 
-00:05:42.436 --> 00:05:44.569
+00:05:42.378 --> 00:05:44.519
 replace the studio.
 
-00:05:45.709 --> 00:05:47.649
+00:05:45.663 --> 00:05:47.625
 What you can make
 
-00:05:48.981 --> 00:05:51.843
+00:05:48.962 --> 00:05:51.864
 Everything correct, without the wait
 
-00:05:52.816 --> 00:05:55.307
+00:05:52.838 --> 00:05:55.366
 Fill in a few fields, get the finished
 
-00:05:55.392 --> 00:05:58.407
+00:05:55.450 --> 00:05:58.478
 asset - no fonts to pick, no colours to
 
-00:05:58.478 --> 00:06:01.695
+00:05:58.549 --> 00:06:01.745
 second-guess, no "is this the right logo?"
 
-00:06:02.475 --> 00:06:05.118
+00:06:02.525 --> 00:06:05.168
 The tool already knows.
 
-00:06:05.884 --> 00:06:09.121
+00:06:05.938 --> 00:06:09.225
 Email signatures, event countdowns, quote
 
-00:06:09.182 --> 00:06:12.181
+00:06:09.287 --> 00:06:12.280
 cards, badges, street maps - everything
 
-00:06:12.242 --> 00:06:15.213
+00:06:12.341 --> 00:06:15.326
 your team needs on a Tuesday at 4pm,
 
-00:06:15.278 --> 00:06:16.744
+00:06:15.392 --> 00:06:16.869
 self-serve.
 
-00:06:17.511 --> 00:06:20.137
+00:06:17.638 --> 00:06:20.283
 And because no customer data leaves the
 
-00:06:20.197 --> 00:06:23.262
+00:06:20.343 --> 00:06:23.422
 device, there's no compliance risk to
 
-00:06:23.321 --> 00:06:24.845
+00:06:23.482 --> 00:06:25.020
 collaborating.
 
-00:06:25.625 --> 00:06:29.074
+00:06:25.800 --> 00:06:29.212
 Street Map is a fair example of the trade:
 
-00:06:29.141 --> 00:06:32.243
+00:06:29.279 --> 00:06:32.360
 you pick a city and a couple of colours,
 
-00:06:32.303 --> 00:06:34.889
+00:06:32.421 --> 00:06:35.007
 and the cartography, the road weights and
 
-00:06:34.924 --> 00:06:37.770
+00:06:35.045 --> 00:06:37.869
 the water are decided for you.
 
-00:06:38.896 --> 00:06:42.118
+00:06:38.999 --> 00:06:42.246
 From live data to finished visual
 
-00:06:42.994 --> 00:06:47.303
+00:06:43.125 --> 00:06:47.514
 Connect a CSV or JSON table to a chart,
 
-00:06:47.373 --> 00:06:50.145
+00:06:47.587 --> 00:06:50.407
 map, or table template and update the
 
-00:06:50.207 --> 00:06:53.495
+00:06:50.469 --> 00:06:53.820
 numbers - the layout takes care of itself.
 
-00:06:54.268 --> 00:06:56.619
+00:06:54.594 --> 00:06:56.935
 Election results, quarterly earnings,
 
-00:06:56.679 --> 00:06:59.647
+00:06:56.994 --> 00:06:59.951
 weather events: build the format once and
 
-00:06:59.711 --> 00:07:02.969
+00:07:00.015 --> 00:07:03.294
 reuse it every time the story runs.
 
-00:07:03.752 --> 00:07:06.508
+00:07:04.077 --> 00:07:06.878
 Match your house style exactly, because
 
-00:07:06.602 --> 00:07:09.216
+00:07:06.969 --> 00:07:09.576
 it's enforced at the template level, not
 
-00:07:09.277 --> 00:07:11.744
+00:07:09.638 --> 00:07:12.069
 left as a loose guideline.
 
-00:07:12.869 --> 00:07:15.520
+00:07:13.196 --> 00:07:15.844
 Tools that compose tools
 
-00:07:16.469 --> 00:07:18.899
+00:07:16.796 --> 00:07:19.228
 One tool can embed another tool's live
 
-00:07:18.961 --> 00:07:22.555
+00:07:19.290 --> 00:07:22.860
 output as an asset - a name badge that
 
-00:07:22.616 --> 00:07:26.544
+00:07:22.924 --> 00:07:26.874
 renders its own QR code, a card that drops
 
-00:07:26.575 --> 00:07:29.413
+00:07:26.906 --> 00:07:29.800
 in a live chart - with no design tool and
 
-00:07:29.473 --> 00:07:31.645
+00:07:29.860 --> 00:07:32.045
 no manual compositing.
 
-00:07:32.417 --> 00:07:34.779
+00:07:32.809 --> 00:07:35.062
 The embedded render stays live and
 
-00:07:34.840 --> 00:07:38.033
+00:07:35.122 --> 00:07:38.221
 re-renders on load; it's never a flattened
 
-00:07:38.094 --> 00:07:39.244
+00:07:38.281 --> 00:07:39.420
 picture.
 
-00:07:40.381 --> 00:07:43.104
+00:07:40.552 --> 00:07:43.258
 The frontier, when you need it
 
-00:07:44.054 --> 00:07:47.437
+00:07:44.208 --> 00:07:47.668
 Advanced filters, compositing, animation,
 
-00:07:47.497 --> 00:07:50.584
+00:07:47.730 --> 00:07:50.825
 live camera effects, generative design -
 
-00:07:50.655 --> 00:07:53.515
+00:07:50.898 --> 00:07:53.716
 every web technology is available to a
 
-00:07:53.576 --> 00:07:57.345
+00:07:53.777 --> 00:07:57.570
 template author, so the ceiling is high.
 
-00:07:58.122 --> 00:08:01.428
+00:07:58.348 --> 00:08:01.681
 Author tools, not files: build the thing
 
-00:08:01.488 --> 00:08:04.377
+00:08:01.740 --> 00:08:04.638
 that generates 10000 cards rather than
 
-00:08:04.430 --> 00:08:06.994
+00:08:04.690 --> 00:08:07.268
 making 10000 cards.
 
-00:08:07.780 --> 00:08:10.698
+00:08:08.049 --> 00:08:10.956
 Lock what shouldn't change; expose only
 
-00:08:10.762 --> 00:08:12.869
+00:08:11.019 --> 00:08:13.119
 what's meant to vary.
 
-00:08:13.995 --> 00:08:16.374
+00:08:14.242 --> 00:08:16.620
 Touches you'll notice
 
-00:08:16.950 --> 00:08:19.350
+00:08:17.200 --> 00:08:19.650
 Print, done right.
 
-00:08:19.700 --> 00:08:35.200
+00:08:20.000 --> 00:08:35.350
 Real physical units «mm/cm/in/pt» and DPI, bleed and crop marks, CMYK and PDF/X-4 output-intent - a print shop gets exactly what it needs.
 
-00:08:35.550 --> 00:08:37.875
+00:08:35.700 --> 00:08:38.025
 See Exporting.
 
-00:08:38.225 --> 00:08:41.000
+00:08:38.375 --> 00:08:41.150
 Video and motion.
 
-00:08:41.350 --> 00:08:54.325
+00:08:41.500 --> 00:08:54.625
 Export WebM/MP4 «with audio tracks», animated PNG/WebP and animated SVG - from the same template that makes your stills.
 
-00:08:54.675 --> 00:09:17.125
+00:08:54.975 --> 00:09:17.350
 Sequence Studio goes further: a real timeline under the canvas, with a magnetic row of clips, free overlay lanes, trim and split, transition presets, voiceover recording and a music mix - rendered out as MP4, WebM, GIF or APNG by a deterministic compositor rather than a screen recording.
 
-00:09:17.475 --> 00:09:24.050
+00:09:17.700 --> 00:09:24.275
 Lottie files come in as animated assets and render out to any of those.
 
-00:09:24.400 --> 00:09:28.425
-See Using Lolly → Timeline.
+00:09:24.625 --> 00:09:35.425
+Above the clips sit keyframes: pose a box at one instant, lift it off the page with real depth, and fly a camera over the result.
 
-00:09:28.775 --> 00:09:30.600
+00:09:35.775 --> 00:09:40.800
+See Using Lolly → Timeline and Animating.
+
+00:09:41.150 --> 00:09:42.975
 Audio.
 
-00:09:30.950 --> 00:09:49.475
+00:09:43.325 --> 00:10:01.750
 Record a voice note and save it as MP3 «or its native M4A/OGG/WebM», all on-device - and bring in MP3, WAV, OGG, M4A, FLAC, MIDI, or tracker modules «MOD/XM/IT/…»
 
-00:09:49.825 --> 00:09:56.325
+00:10:02.100 --> 00:10:08.675
 as a music bed under a video or an ambient track in Neurospicy Mode.
 
-00:09:57.063 --> 00:09:59.119
+00:10:09.415 --> 00:10:11.469
 Draw, don't settle.
 
-00:09:59.915 --> 00:10:03.151
-Layout Studio has a real pen: click to
+00:10:12.239 --> 00:10:15.466
+The Design tool has a real pen: click to
 
-00:10:03.213 --> 00:10:06.130
+00:10:15.527 --> 00:10:18.474
 place points, drag to curve, and pick the
 
-00:10:06.192 --> 00:10:08.894
+00:10:18.535 --> 00:10:21.194
 kind of curve that runs through them.
 
-00:10:09.664 --> 00:10:12.273
+00:10:21.960 --> 00:10:24.588
 Combine shapes with union, subtract,
 
-00:10:12.316 --> 00:10:15.759
+00:10:24.632 --> 00:10:28.016
 intersect and exclude, outline a stroke,
 
-00:10:15.823 --> 00:10:18.984
+00:10:28.079 --> 00:10:31.315
 offset a silhouette, simplify a path - the
 
-00:10:19.046 --> 00:10:22.976
+00:10:31.376 --> 00:10:35.265
 geometry is exact Bezier maths, so a shape
 
-00:10:23.034 --> 00:10:25.567
+00:10:35.322 --> 00:10:37.826
 you draw stays crisp at any size and
 
-00:10:25.630 --> 00:10:28.199
+00:10:37.887 --> 00:10:40.473
 renders identically from a link or the
 
-00:10:28.265 --> 00:10:29.419
+00:10:40.541 --> 00:10:41.694
 CLI.
 
-00:10:30.212 --> 00:10:34.294
+00:10:42.485 --> 00:10:46.569
 See Using Lolly → Drawing your own shapes.
 
-00:10:34.675 --> 00:10:37.375
+00:10:46.950 --> 00:10:49.625
 Editable vectors.
 
-00:10:37.725 --> 00:10:42.500
+00:10:49.975 --> 00:10:54.675
 SVG, EPS, EMF, and DXF export.
 
-00:10:42.850 --> 00:10:52.700
+00:10:55.025 --> 00:11:04.850
 Text becomes outlined paths in vector output, so a print shop or a cutter gets crisp geometry that opens anywhere.
 
-00:10:53.050 --> 00:11:02.400
+00:11:05.200 --> 00:11:14.525
 «Outlined text is no longer re-typable in Illustrator - that's the trade for perfect fidelity without the font.»
 
-00:11:03.141 --> 00:11:05.893
+00:11:15.264 --> 00:11:18.018
 Convenience that adds up.
 
-00:11:06.664 --> 00:11:09.100
+00:11:18.788 --> 00:11:21.216
 Batch a spreadsheet into a folder of
 
-00:11:09.180 --> 00:11:12.509
+00:11:21.292 --> 00:11:24.617
 assets; save sessions and organise them
 
-00:11:12.545 --> 00:11:16.511
+00:11:24.652 --> 00:11:28.621
 into Projects; share any state as a URL;
 
-00:11:16.581 --> 00:11:19.619
+00:11:28.692 --> 00:11:31.744
 render a whole folder as one zip.
 
-00:11:20.408 --> 00:11:23.718
+00:11:32.530 --> 00:11:35.793
 A UI that's actually pleasant.
 
-00:11:24.506 --> 00:11:27.708
+00:11:36.584 --> 00:11:39.860
 Undo/redo everywhere, a sound layer you
 
-00:11:27.769 --> 00:11:30.876
+00:11:39.920 --> 00:11:43.335
 can turn off, a theme cycle, live-camera
 
-00:11:30.960 --> 00:11:33.653
+00:11:43.425 --> 00:11:45.967
 filters, a masonry gallery - and
 
-00:11:33.714 --> 00:11:36.032
-Neurospicy Mode for a calmer,
+00:11:46.027 --> 00:11:49.373
+Neurospicy Mode, a background focus-music
 
-00:11:36.113 --> 00:11:38.569
-lower-stimulation interface.
+00:11:49.434 --> 00:11:51.920
+player that follows you across the app in
 
-00:11:39.711 --> 00:11:42.204
+00:11:51.962 --> 00:11:53.544
+its own dock.
+
+00:11:54.306 --> 00:11:57.719
+A calmer interface when you want one.
+
+00:11:58.505 --> 00:12:01.178
+Four switches under Profile →
+
+00:12:01.258 --> 00:12:04.130
+Accessibility - Reduce motion, Hide
+
+00:12:04.217 --> 00:12:07.096
+colourful previews, High contrast and
+
+00:12:07.157 --> 00:12:09.627
+Large text - settle the app around your
+
+00:12:09.688 --> 00:12:10.694
+work.
+
+00:12:11.462 --> 00:12:14.567
+Each is off until you turn it on, and none
+
+00:12:14.609 --> 00:12:17.844
+of them touch your canvas or move a pixel
+
+00:12:17.911 --> 00:12:19.919
+of what you export.
+
+00:12:20.725 --> 00:12:24.718
+See Your profile → Accessibility.
+
+00:12:25.854 --> 00:12:28.315
 Get the most out of it
 
-00:11:43.176 --> 00:11:46.543
+00:12:29.275 --> 00:12:32.618
 Quickstart - brand in, first file out.
 
-00:11:46.925 --> 00:11:53.600
+00:12:33.000 --> 00:12:39.725
 The Brand Studio - shape your logos, colours, type, and tokens «#/start».
 
-00:11:54.347 --> 00:11:57.046
+00:12:40.478 --> 00:12:43.204
 Using Lolly - the canvas, controls,
 
-00:11:57.133 --> 00:11:59.944
+00:12:43.294 --> 00:12:46.169
 saving, projects, and phone use.
 
-00:12:00.725 --> 00:12:03.595
+00:12:46.947 --> 00:12:49.825
 Your profile - the details tools pre-fill
 
-00:12:03.702 --> 00:12:06.377
+00:12:49.931 --> 00:12:52.577
 from, and how to carry them between
 
-00:12:06.423 --> 00:12:07.819
+00:12:52.623 --> 00:12:54.019
 devices.
 
-00:12:08.594 --> 00:12:11.658
+00:12:54.793 --> 00:12:57.826
 Import a design - bring in your Figma /
 
-00:12:11.719 --> 00:12:15.812
+00:12:57.887 --> 00:13:02.005
 Penpot / Illustrator / InDesign work, and
 
-00:12:15.873 --> 00:12:18.506
+00:13:02.066 --> 00:13:04.688
 your PowerPoint decks - edited or
 
-00:12:18.568 --> 00:12:20.719
+00:13:04.750 --> 00:13:06.895
 rebranded on-device.
 
-00:12:21.486 --> 00:12:23.964
+00:13:07.661 --> 00:13:10.140
 Working together - two people editing one
 
-00:12:24.052 --> 00:12:27.485
+00:13:10.228 --> 00:13:13.671
 session live, device to device, with no
 
-00:12:27.545 --> 00:12:30.420
+00:13:13.731 --> 00:13:16.595
 account and no server in the middle.
 
-00:12:31.214 --> 00:12:33.737
-Search - one field at the bottom of every
+00:13:17.392 --> 00:13:19.552
+Search - one field at the foot of the
 
-00:12:33.807 --> 00:12:36.938
-screen that reaches your tools, your saved
+00:13:19.629 --> 00:13:22.413
+gallery, Utilities, Projects, the
 
-00:12:36.999 --> 00:12:40.344
-work, the catalogue and your settings.
+00:13:22.477 --> 00:13:25.412
+Catalogue, the Dashboard and Profile that
 
-00:12:41.115 --> 00:12:44.012
+00:13:25.473 --> 00:13:28.309
+reaches your tools, your saved work, the
+
+00:13:28.372 --> 00:13:30.819
+catalogue and your settings.
+
+00:13:31.200 --> 00:13:41.525
+Ask Lolly «#/ask» - type a question and get the matching section of these guides back verbatim, with a link straight to it.
+
+00:13:41.875 --> 00:13:56.600
+The Dashboard «#/d» - the instrument panel: your design system shown read-only, the full capability map, what this device can do, and a glance at your activity and storage.
+
+00:13:57.336 --> 00:14:00.198
 Your favourites - star what you use and it
 
-00:12:44.090 --> 00:12:47.195
+00:14:00.269 --> 00:14:03.370
 gets a tile of its own above the grid.
 
-00:12:47.965 --> 00:12:51.120
+00:14:04.140 --> 00:14:07.293
 Exporting & formats - every format, print
 
-00:12:51.161 --> 00:12:53.444
+00:14:07.336 --> 00:14:09.594
 units, video, and batch.

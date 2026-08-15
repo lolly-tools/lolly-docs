@@ -34,7 +34,7 @@
 | 移动端与桌面端应用 | ✓ | ✗ | ✗ | 部分支持 | **✓** |
 | 命令行与 TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-空白之处很清楚：现有格局中，没有一样产品能同时提供约束优先、可离线、低技能门槛、可内部访问的输出。Lolly 甚至内置了一个开放画布——**Layout Studio**——其中的颜色、字体与素材都遵循品牌全局设定，因此即便是自由排布也依然保持约束优先。它**不是**一个无约束的设计套件：设计师仍然使用 Illustrator 和 Figma 完成定制化的旗舰作品。各种排列组合都可以用这个工具拼装出来。
+空白之处很清楚：现有格局中，没有一样产品能同时提供约束优先、可离线、低技能门槛、可内部访问的输出。Lolly 甚至内置了一个开放画布——**Design**——其中的颜色、字体与素材都遵循品牌全局设定，因此即便是自由排布也依然保持约束优先。它**不是**一个无约束的设计套件：设计师仍然使用 Illustrator 和 Figma 完成定制化的旗舰作品。各种排列组合都可以用这个工具拼装出来。
 
 **适用场景：** 快速生成已操作化的创意素材——活动图块、姓名牌、签名、CVE 警报、二维码、社交卡片、托运标签、结构化报告。
 
@@ -48,7 +48,7 @@
 
 要看清 Lolly 究竟是什么，最清晰的方式不是列一串功能，而是跟着一份素材，看它如何在不同人手中传递。下面就跟着一张本地化的营销活动卡片，看它如何穿过整个组织：
 
-1. **创意人员定下规则。** 设计师在 Layout Studio 里编写基础模板，把品牌的字体和颜色变量写死在里面。他们做的不是一张卡片——他们只把这份底层工作做*一次*，从此再也不必手工本地化。
+1. **创意人员定下规则。** 设计师在 Design 里编写基础模板，把品牌的字体和颜色变量写死在里面。他们做的不是一张卡片——他们只把这份底层工作做*一次*，从此再也不必手工本地化。
 2. **开发者把它放大。** 同一个模板通过 CLI 接入每晚运行的流水线，于是一张新图表或一个新语言版本都会自动生成——不需要任何设计师再打开文件。
 3. **产出方直接用起来。** 一位销售代表在飞机上离线打开同一个工具，为客户会议生成一份完全符合品牌的演示文稿。不需要设计技能，不需要网络，也不用等待。
 
@@ -173,7 +173,6 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── daily-card/        # “Day Brief”——天气/时间/地图（由内联模板脚本获取）
 │   ├── code-canvas/
 │   ├── countdown-timer/
 │   ├── color-palette/
@@ -185,7 +184,6 @@ lolly/
 │   ├── strip-data/        # 设备端元数据清除——JPEG/PNG/SVG/PDF（输入文件 → 输出干净文件）
 │   ├── compress-pdf/      # 设备端 PDF 压缩器——重新压缩图片（输入文件 → 输出更小的文件）
 │   ├── brand-lockup/      # “Brand Lockup”——SUSE 标志组合；HarfBuzz 文字转路径（wasm）
-│   ├── bag-video/
 │   ├── chart-creator/     # 由结构化数据生成的 SVG 图表
 │   ├── filter-duotone/    # 双色调照片处理
 │   ├── filter-halftone/   # 照片 → 矢量半调网点
@@ -196,7 +194,7 @@ lolly/
 │   ├── event-name-badge/  # 会议姓名牌——将 qr-code 作为 SVG 组合进来
 │   ├── wayfinding-signage/ # 活动指示牌；方向区块自动适配标签文字
 │   ├── text-helper/       # 设备端文本工作台（格式化/解码/哈希/去标识化）
-│   ├── design/     # “Layout Studio”——自由式所见即所得编辑画布（render.layout: editor）
+│   ├── design/     # “Design”——自由式所见即所得编辑画布（render.layout: editor）
 │   ├── multi-page-pdf/    # 多页 PDF 文档——封面、可流动的内容区块、封底
 │   ├── diagram-builder/   # 组织架构 / 分层蛋糕图 / 流程图 / 循环图 / 金字塔图
 │   ├── logo-wall/         # 多个标志 → 自动排布网格
@@ -274,15 +272,15 @@ lolly qr-code                # 列出该工具的输入项
 
 | 分类 | 已上线工具 | 计划中 |
 |---|---|---|
-| `everyone` | QR Code Generator、Quote Card、Email Signature、Day Brief、Code Canvas、Color Block、Dynamic Layout、Logo、Web Icon Maker | Employee Image Stationery |
-| `designer` | Brand Lockup、Bag Video、Chart Creator、Street Map、Animated Ad、Multi-Page PDF、Diagram Builder、Logo Lockup: Grid (NASCAR)、Logo Lockup: Partner、Filter: Duotone、Filter: Halftone、Filter: Scanline、Filter: Posterize Bitmap、Filter: Pixel Stretch | Font Outliner |
+| `everyone` | QR Code Generator、Quote Card、Email Signature、Code Canvas、Color Block、Dynamic Layout、Logo、Web Icon Maker | Employee Image Stationery |
+| `designer` | Brand Lockup、Chart Creator、Street Map、Animated Ad、Multi-Page PDF、Diagram Builder、Logo Lockup: Grid (NASCAR)、Logo Lockup: Partner、Filter: Duotone、Filter: Halftone、Filter: Scanline、Filter: Posterize Bitmap、Filter: Pixel Stretch | Font Outliner |
 | `event` | Meeting Planner、Event Name Badge、Wayfinding Signage、Calendar ICS | Event Stationery、Bulk Name Badges、Room Agenda Cards |
 | `product` | — | CVE Alert、Product Release Announcement、Blog OG Image |
-| `utility` | Countdown Timer、Color Palette、URL Screenshot、Strip Hidden Data、Text Helper、Compress PDF、Layout Studio | 单位/格式转换器，更多设备端隐私工具 |
+| `utility` | Countdown Timer、Color Palette、URL Screenshot、Strip Hidden Data、Text Helper、Compress PDF、Design | 单位/格式转换器，更多设备端隐私工具 |
 
-工具还会按状态分类：`official`（品牌已批准，无水印）、`community`（外部贡献）、`experimental`（导出带水印）。目前 Dynamic Layout、URL Screenshot、Logo Lockup: Grid (NASCAR)、Filter: Posterize Bitmap 和 Diagram Builder 处于 `experimental` 状态；Web Icon Maker 和 Layout Studio 则作为 `community` 工具发布。
+工具还会按状态分类：`official`（品牌已批准，无水印）、`community`（外部贡献）、`experimental`（导出带水印）。目前 Dynamic Layout、URL Screenshot、Logo Lockup: Grid (NASCAR)、Filter: Posterize Bitmap 和 Diagram Builder 处于 `experimental` 状态；Web Icon Maker 和 Design 则作为 `community` 工具发布。
 
-**Layout Studio** 是第一个建立在 `render.layout: "editor"` 自由画布模式之上的工具——一个无外层界面、直接操作的界面，你可以在其中拖动、缩放、旋转并吸附文字、形状和图片的方框，然后通过与其他所有工具相同的渲染路径导出。
+**Design** 是第一个建立在 `render.layout: "editor"` 自由画布模式之上的工具——一个无外层界面、直接操作的界面，你可以在其中拖动、缩放、旋转并吸附文字、形状和图片的方框，然后通过与其他所有工具相同的渲染路径导出。
 
 **Strip Hidden Data** 是第一个**设备端工具**（`privacy: "on-device"`）：一个内容转换工具，接收*你*提供的文件，完全在浏览器内处理，然后交还一份干净的副本——不会上传，不加水印，也不打上来源标记。**Text Helper** 是第二个——一个面向日常“粘贴进网站”类工作（JSON 格式化、JWT 解码、Base64、URL 编解码、SHA 哈希）的设备端工作台。**Compress PDF** 是第三个——它通过重新压缩 PDF 中的图片来缩小体积，同样完全在设备端完成。这三者都带有“在你的设备上运行——不会上传任何内容”的徽章文字。这是一个隐私工具分类的开端，用来取代把机密文件交给单一用途网站处理的做法。
 
@@ -444,7 +442,7 @@ Tauri 中的生命周期完全相同。CLI 中的生命周期也完全相同—�
 
 | 里程碑 | 目标时间 | 内容 |
 |---|---|---|
-| **首批工具** | ✅ 已完成 | QR Code、Quote Card、Email Signature、Day Brief、Code Canvas、Countdown Timer、Color Palette、Brand Lockup、Bag Video、Chart Creator、Filter: Duotone、Meeting Planner——web 壳层已上线 |
+| **首批工具** | ✅ 已完成 | QR Code、Quote Card、Email Signature、Code Canvas、Countdown Timer、Color Palette、Brand Lockup、Chart Creator、Filter: Duotone、Meeting Planner——web 壳层已上线 |
 | **增强现有工具** | 2026 年年中 ✅ 已完成 | 可下载的离线应用（Tauri）；更多员工与活动类工具；更丰富的导出流水线（文字转路径的稳定性、元数据、更多格式——见 `plans.md`） |
 | **引擎开源** | 2026 年末 ✅ 已完成 | 引擎、壳层、schemas、文档公开——品牌相关的工具/资源除外 |
 | **设备间迁移** | ✅ 已完成 | 可移植的 `lolly-backup` 包在任意两个安装实例之间搬运个人资料、已保存会话、已上传图片和偏好设置——无论在线离线，均无需账号。前向兼容、经完整性校验的信封结构（规范见 `docs/data-transfer.md`） |

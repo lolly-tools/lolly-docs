@@ -48,7 +48,7 @@ Je begint niet bij een leeg blad. Lolly opent het ontwerpwerk en de open formate
 
 ### Open-source ontwerpbestanden
 
-Afgewerkt werk in **Figma, Penpot, Illustrator, InDesign, of een willekeurige SVG-app** hoeft niet opgesloten te blijven in de app waarin je het hebt getekend. Open **Layout Studio**, klik op **Import a design**, en het bestand opent als een *levende lay-out* - geen platgeslagen plaatje. Elke laag wordt een bewerkbaar vak: tekst blijft herschrijfbaar, vormen blijven vormen, afbeeldingen komen in je bibliotheek terecht, en complexe vectorkunst blijft getrouw bewaard. Het is bij aankomst al afgestemd op je merklettertypen en kleurregels.
+Afgewerkt werk in **Figma, Penpot, Illustrator, InDesign, of een willekeurige SVG-app** hoeft niet opgesloten te blijven in de app waarin je het hebt getekend. Open **Design**, klik op **Import a design**, en het bestand opent als een *levende lay-out* - geen platgeslagen plaatje. Elke laag wordt een bewerkbaar vak: tekst blijft herschrijfbaar, vormen blijven vormen, afbeeldingen komen in je bibliotheek terecht, en complexe vectorkunst blijft getrouw bewaard. Het is bij aankomst al afgestemd op je merklettertypen en kleurregels.
 
 | Je hebt | Breng het binnen als |
 |---|---|
@@ -62,7 +62,7 @@ De hele import gebeurt **op je apparaat** - het bestand wordt in je browser gepa
 
 ### Van eenmalig ontwerp naar template
 
-Dit is de beloning: een geïmporteerde lay-out is een gewone Layout Studio-sessie, dus zodra je die **opslaat**, staat hij op een URL. Iedereen met Lolly kan die URL openen, de tekst aanpassen, een afbeelding vervangen en zijn eigen versie renderen - zonder ontwerpapp, en de vergrendelde onderdelen blijven vergrendeld. Een eenmalig ontwerp wordt een herbruikbare tool. Dat is het hele idee, bereikt zonder ook maar een regel configuratie te schrijven.
+Dit is de beloning: een geïmporteerde lay-out is een gewone Design-sessie, dus zodra je die **opslaat**, staat hij op een URL. Iedereen met Lolly kan die URL openen, de tekst aanpassen, een afbeelding vervangen en zijn eigen versie renderen - zonder ontwerpapp, en de vergrendelde onderdelen blijven vergrendeld. Een eenmalig ontwerp wordt een herbruikbare tool. Dat is het hele idee, bereikt zonder ook maar een regel configuratie te schrijven.
 
 ### Open data en open tools
 

@@ -15,7 +15,7 @@ Even if you rely mostly on this method, it's good to understand how tools operat
 
 ## Start from a design you already have
 
-You don't always start from a blank manifest. If the layout already exists in **Figma, Penpot, Illustrator or InDesign**, bring it in with Layout Studio's **[Import a design](/info/design-import.html)** button and skip straight to a working artboard.
+You don't always start from a blank manifest. If the layout already exists in **Figma, Penpot, Illustrator or InDesign**, bring it in with the **Design** tool's **[Import a design](/info/design-import.html)** button and skip straight to a working artboard.
 
 A finished file - a native Figma `.fig`, a Penpot export, or *any SVG* (InDesign and Illustrator export it, and nearly every design app can) - is parsed on your device and lands on the free canvas as editable boxes: text stays retypable, shapes stay shapes, images join your library, and type and colours conform to the brand globals. From there it's an ordinary session, so it already behaves like a tool:
 
@@ -83,7 +83,7 @@ Most of what `render` declares surfaces in one place the user sees: the export p
 - `convertPaths` - defaults `true`. When the tool exports a vector format, the engine **auto-injects a "Convert paths" toggle** that outlines text to vector paths (in SVG/PDF/PDF-CMYK) so the output renders identically without the fonts installed. Set `false` to suppress it and never outline - e.g. a capture tool whose output is raster (`url-shot`), or a tool that draws its text as raster/canvas before export (`event-name-badge`, `wayfinding-signage`).
 - `transparentBg` - defaults `false`. Adds a **"No BG"** (transparent background) toggle to the export bar; the engine injects it into the input model so hooks can react via `onInit`/`onInput` (`chart-creator`).
 - `preview` - `{ format?, auto? }`. Marks a tool whose live canvas is a placeholder until an explicit, expensive render runs (e.g. a capture tool that screenshots a page in `beforeExport`); the shell wires a `[data-preview]` control. `auto: true` renders one frame on load. Used by `url-shot`.
-- `video` - `{ wait?, duration? }` (seconds; defaults `1` / `5`). Capture timing used when `webm`/`mp4`/`gif`/`apng` is in `formats` (`bag-video`).
+- `video` - `{ wait?, duration? }` (seconds; defaults `1` / `5`). Capture timing used when `webm`/`mp4`/`gif`/`apng` is in `formats` (`digi-ad`).
 - `liveMaxEdge` - integer px. For `onFrame` (live camera) tools only: the requested longest edge of the working camera frame handed to the hook. The shell downscales the source camera to a small default that suits a vector trace, so a raster-output effect (the `filter` tool's pixel-stretch) raises this for sharper output. The shell clamps it to the native camera frame - it never upscales - and to its own ceiling, and ignores it for tools without `onFrame`. A companion `liveMaxEdgeInput` names a number input whose value overrides it, so the resolution can be a user-facing slider (re-applied to the live stream on change).
 - `c2pa` - defaults **`true`** (Content Credentials are **opt-out**). The **Content Credentials** card in the export popup is pre-checked for every stampable format (`pdf`, `png`/`apng`, `jpg`, `gif`, `svg`, `tiff`/`cmyk-tiff`, `webp`, `mp4`/`webm`, zip members), so the finished file gets a signed C2PA manifest (on-device key, so viewers report it as an unverified credential). Set `false` to opt a tool out. Forced **off** for `privacy: "on-device"` tools, which must never embed provenance into a user's own file. A `?c2pa=` link/save value overrides this per export.
 - `dims` - set `false` to hide the export dimension inputs in the download bar.
@@ -737,9 +737,9 @@ and keep **only the files that differ** in the overlay dir. When `scripts/use-pr
 
 ## Publishing
 
-There are two ways a tool ships - pick per context:
+There are two ways a reusable starting point ships - pick per context:
 
-- **In the app, no build step.** In the open Lolly app, save a [Layout Studio](/info/using.html) editing session and it becomes your own tool on your device - no `tool.json`, no catalog build, no git. Anyone using the open version can do this; it's the fastest path for a personal or team tool.
+- **In the app, no build step.** In the open Lolly app, **Save** a [Design](/info/using.html) doc as your own **template** or **variation** and it joins that tool's "New from template" chooser on your device - no `tool.json`, no catalog build, no git. Share it as a `.lolly` file for anyone to import, or submit it for catalog inclusion. Anyone using the open version can do this; it's the fastest path to a personal or team starting point. (A saved template is a values seed under an existing tool; authoring a wholly new *tool* - its own manifest, icon and formats - is the catalog route below.)
 - **Into a catalog, for a shared library.** To publish a hand-authored tool into a catalog that many people sync - the model an organisation *can* manage as a Git repo so every change gets review and an audit trail (an option, not a requirement) - add the folder and rebuild the index:
 
 1. Place your folder under `tools/`.
@@ -789,4 +789,4 @@ When a tool loads with a language set (the reserved `lang` URL/CLI param, or the
 - `tools/color-block/` - advanced `blocks`: typed `addMenu` discriminator + `showFor` / `multilineFor` heterogeneous rows
 - `tools/wayfinding-signage/` - `blocks` rows that auto-shrink label text to fit (or show a sponsor image), and a `size` select that drives the print page size; CMYK export
 - `tools/tool-logo/` - auto-switching brand logo: a hook picks the right `suse/logo/` SVG by background/orientation; true vector SVG export
-- `tools/bag-video/` - video/gif output with `render.video` timing config
+- `tools/digi-ad/` - video/gif output with `render.video` timing config

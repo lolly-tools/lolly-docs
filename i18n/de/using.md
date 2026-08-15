@@ -17,7 +17,7 @@ Der Startbildschirm ist die **Galerie** - jedes Tool, nach Kategorie gruppiert. 
 
 Jedes Tool ist eine geteilte Ansicht: **Steuerelemente** auf der einen Seite, eine Live-**Vorschau** (die Zeichenfläche) auf der anderen. Ändern Sie ein beliebiges Steuerelement, und die Vorschau aktualisiert sich sofort.
 
-> Einige Tools (wie **Layout Studio**) öffnen stattdessen als **freie Zeichenfläche** - eine chromfreie Oberfläche zur direkten Bearbeitung, auf der Sie Boxen mit Text, Formen und Bildern ziehen, in der Größe ändern, drehen und einrasten lassen und per Doppelklick Text direkt bearbeiten. Sie exportiert über denselben Renderpfad wie jedes andere Tool, sodass die Zeichenfläche *die* Datei *ist*. Siehe [Die freie Zeichenfläche](#the-free-canvas-design) weiter unten.
+> Einige Tools (wie **Design**) öffnen stattdessen als **freie Zeichenfläche** - eine chromfreie Oberfläche zur direkten Bearbeitung, auf der Sie Boxen mit Text, Formen und Bildern ziehen, in der Größe ändern, drehen und einrasten lassen und per Doppelklick Text direkt bearbeiten. Sie exportiert über denselben Renderpfad wie jedes andere Tool, sodass die Zeichenfläche *die* Datei *ist*. Siehe [Die freie Zeichenfläche](#the-free-canvas-design) weiter unten.
 
 ## Die Zeichenfläche (Vorschau)
 
@@ -40,9 +40,9 @@ Die Vorschau zeigt immer genau das, was exportiert wird.
 
 Eine Änderung der Abmessungen setzt die Ansicht immer auf eine saubere Einpassung zurück.
 
-### Die freie Zeichenfläche (Layout Studio)
+### Die freie Zeichenfläche (Design)
 
-![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Tools mit freier Zeichenfläche fügen eine Arbeitsfläche *um* das Artboard herum hinzu, wie ein Montagebrett bei Designern:
 
@@ -144,7 +144,7 @@ Das **Farbfelder**-Panel des Katalogs dient nicht nur als Referenz - klicken Sie
 
 Das **Schriften**-Panel listet Ihre Markenschriften mit einem **Download** neben jeder auf, um sie lokal zu installieren oder einer Druckerei zu übergeben. (Der Tab „Farben“ des [Brand Studio](/info/brand-studio.html) bietet denselben Palettendownload.)
 
-Assets sind die eine Hälfte des offenen Do-it-yourself-Pfads; die andere ist das **Erstellen eigener Tools** - die freie Zeichenfläche (Layout Studio, oben beschrieben) lässt Sie eines visuell erstellen, ganz ohne Code.
+Assets sind die eine Hälfte des offenen Do-it-yourself-Pfads; die andere ist das **Erstellen eigener Tools** - die freie Zeichenfläche (Design, oben beschrieben) lässt Sie eines visuell erstellen, ganz ohne Code.
 
 ## Sound & Barrierefreiheit
 
@@ -176,7 +176,7 @@ Der Katalog-Cache ist nicht enthalten - er lädt sich auf dem neuen Gerät selbs
 
 ## Ein Design importieren (Figma, Penpot, Illustrator, InDesign)
 
-Sie können ein bestehendes Design in Lolly übernehmen und daran weiterarbeiten: Öffnen Sie **Layout Studio**, klicken Sie in der Werkzeugleiste der Zeichenfläche auf **Design importieren**, und wählen Sie eine Figma-**.fig**- oder SVG-Datei, eine Penpot-**.penpot**-Datei, eine Illustrator-**.ai**-/**.pdf**-Datei oder eine InDesign-**.idml**-Datei. Ebenen werden zu bearbeitbaren Boxen auf der freien Zeichenfläche - Text bleibt neu eintippbar, Bilder landen in **Meine Bilder**, und Schrift und Farben richten sich nach den globalen Markenvorgaben - anschließend wird das Ergebnis wie jede andere Sitzung gespeichert, geteilt und gerendert. Das Parsen erfolgt vollständig auf Ihrem Gerät. Vollständige Details: **[Ein Design importieren](/info/design-import.html)**.
+Sie können ein bestehendes Design in Lolly übernehmen und daran weiterarbeiten: Öffnen Sie **Design**, klicken Sie in der Werkzeugleiste der Zeichenfläche auf **Design importieren**, und wählen Sie eine Figma-**.fig**- oder SVG-Datei, eine Penpot-**.penpot**-Datei, eine Illustrator-**.ai**-/**.pdf**-Datei oder eine InDesign-**.idml**-Datei. Ebenen werden zu bearbeitbaren Boxen auf der freien Zeichenfläche - Text bleibt neu eintippbar, Bilder landen in **Meine Bilder**, und Schrift und Farben richten sich nach den globalen Markenvorgaben - anschließend wird das Ergebnis wie jede andere Sitzung gespeichert, geteilt und gerendert. Das Parsen erfolgt vollständig auf Ihrem Gerät. Vollständige Details: **[Ein Design importieren](/info/design-import.html)**.
 
 ## Exportieren
 

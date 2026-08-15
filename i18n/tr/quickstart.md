@@ -48,7 +48,7 @@ Boş bir sayfadan başlamıyorsun. Lolly, zaten sahip olduğun tasarım çalış
 
 ### Açık kaynak tasarım dosyaları
 
-**Figma, Penpot, Illustrator, InDesign veya herhangi bir SVG uygulamasındaki** bitmiş çalışmaların, onları çizdiğin uygulamada kilitli kalmak zorunda değil. **Layout Studio**'yu aç, **Bir tasarım içe aktar**'a tıkla; dosya düzleştirilmiş bir resim olarak değil, *yaşayan bir düzen* olarak açılsın. Her katman düzenlenebilir bir kutuya dönüşür: metin yeniden yazılabilir kalır, şekiller şekil kalır, görseller kitaplığına iner ve karmaşık vektör grafikleri sadık biçimde korunur. Markanın yazı tiplerine ve renk kurallarına önceden uyarlanmış olarak gelir.
+**Figma, Penpot, Illustrator, InDesign veya herhangi bir SVG uygulamasındaki** bitmiş çalışmaların, onları çizdiğin uygulamada kilitli kalmak zorunda değil. **Design**'yu aç, **Bir tasarım içe aktar**'a tıkla; dosya düzleştirilmiş bir resim olarak değil, *yaşayan bir düzen* olarak açılsın. Her katman düzenlenebilir bir kutuya dönüşür: metin yeniden yazılabilir kalır, şekiller şekil kalır, görseller kitaplığına iner ve karmaşık vektör grafikleri sadık biçimde korunur. Markanın yazı tiplerine ve renk kurallarına önceden uyarlanmış olarak gelir.
 
 | Elinde olan | Şu şekilde içeri al |
 |---|---|
@@ -62,7 +62,7 @@ Tüm içe aktarma **cihazında** gerçekleşir - dosya tarayıcında ayrıştır
 
 ### Tek seferlik bir işten bir şablona
 
-İşte kazanç: içe aktarılan bir düzen sıradan bir Layout Studio oturumudur; bu yüzden onu **kaydettiğin** anda bir URL'de yaşar. Lolly'si olan herkes o URL'yi açabilir, kelimeleri değiştirebilir, bir görseli değiştirebilir ve kendi sürümünü oluşturabilir - tasarım uygulaması olmadan ve kilitli kısımlar kilitli kalır. Tek seferlik bir tasarım, yeniden kullanılabilir bir araca dönüşür. Tek bir satır yapılandırma yazmadan ulaşılan bütün fikir bu.
+İşte kazanç: içe aktarılan bir düzen sıradan bir Design oturumudur; bu yüzden onu **kaydettiğin** anda bir URL'de yaşar. Lolly'si olan herkes o URL'yi açabilir, kelimeleri değiştirebilir, bir görseli değiştirebilir ve kendi sürümünü oluşturabilir - tasarım uygulaması olmadan ve kilitli kısımlar kilitli kalır. Tek seferlik bir tasarım, yeniden kullanılabilir bir araca dönüşür. Tek bir satır yapılandırma yazmadan ulaşılan bütün fikir bu.
 
 ### Açık veriler ve açık araçlar
 

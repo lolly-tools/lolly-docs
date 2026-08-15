@@ -138,7 +138,7 @@ Scroll, and the camera pulls back through the actual geometry: seven paths, no p
 
 ## Animated SVG
 
-Motion tools (Animated Ad, Lottie Ad, Bag Video) can export **Animated SVG** - a self-contained, *vector* animation. Unlike GIF/APNG/WebP (which sample each frame to pixels), an animated SVG stacks vector snapshots with embedded CSS keyframes, so it **scales to any size with no codec and no external runtime** - it loops in a browser tab or an `<img>`. Text stays outlined so it renders anywhere. It shares the animated formats' **Duration** / frame-rate controls, and (being heavier per frame than a bitmap) uses a lower default frame rate.
+Motion tools (Animated Ad, Lottie Ad) can export **Animated SVG** - a self-contained, *vector* animation. Unlike GIF/APNG/WebP (which sample each frame to pixels), an animated SVG stacks vector snapshots with embedded CSS keyframes, so it **scales to any size with no codec and no external runtime** - it loops in a browser tab or an `<img>`. Text stays outlined so it renders anywhere. It shares the animated formats' **Duration** / frame-rate controls, and (being heavier per frame than a bitmap) uses a lower default frame rate.
 
 ## Transparency
 

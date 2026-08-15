@@ -1,9 +1,10 @@
 
 # Lolly - Landing page copy
 
-Production-ready files in seconds - Runs on your device, offline, & fast to learn.
-Design rules, layout logic, and export quality built in. 
-No waiting, no guesswork, free to use forever. 
+Yours to make, yours to keep: finished files in seconds, on your own device.
+Pick a tool, add your words, it comes out right: colours, fonts and layout are already sorted.
+Identical where you want it, different how you want it.
+Free, and it stays free: no account, no card, no catch.
 
 
 ---
@@ -15,9 +16,9 @@ No waiting, no guesswork, free to use forever.
 You need a quote card, an event tile, a localized signature - today, not next sprint. Lolly hands it back finished and on-brand, even if you've never opened a design tool. The rules live in the template, so the output comes out right.
 
 - **Fill in a few fields, get the finished asset.** No fonts to pick, no colours to second-guess, no "is this the right logo?" The tool already knows. You bring the words.
-- **Infinite permutations, one source of truth.** Localize a quote card into 12 languages, swap a brand lockup across 40 campaigns, or generate every size variant for every placement - without touching the design. Drive it all from a spreadsheet in the batch grid: paste or import a CSV, get one finished asset per row.
+- **Endless variations, one source of truth.** Localize a quote card into 12 languages, swap a brand lockup across 40 campaigns, or make every size variant for every placement - without touching the design. Drive it all from a spreadsheet in the batch grid: paste or import a CSV, get one finished file per row.
 - **No creative-agency bottleneck for routine assets.** Email signatures, event countdowns, quote cards, QR codes - everything your team needs on a Tuesday at 4pm, self-serve.
-- **Collaborate without compliance risk.** No customer data uploaded to third-party cloud services. No SaaS licensing to audit. Runs entirely on local device compute.
+- **No procurement round for a picture.** No new subscription to approve, no licence to audit, no seat to buy for the person who needed one tile on a Tuesday.
 
 ---
 
@@ -28,7 +29,7 @@ You need a quote card, an event tile, a localized signature - today, not next sp
 You're on the road, the deck is wrong, the customer asked for something specific. Lolly turns any device into an asset studio - no designer, no wait, no excuses.
 
 - **Wait on nothing.** If you're on the road, there are no days left before your meeting, you need assets now. Generate them.
-- **Fix the deck you already have.** Drop the PowerPoint on Lolly and its slides are read on your device, so you can pick the ones worth keeping and reuse them as vector assets - then rebuild the deck from a few lines of Markdown and send back a native, editable `.pptx`.
+- **Fix the deck you already have.** Drop the PowerPoint on Lolly and its slides open straight away, so you can pick the ones worth keeping and reuse them as sharp vector art - then rebuild the deck from a few lines of Markdown and send back a native, editable `.pptx`.
 - **One person army.** The power of a coordinated global campaign in the palm of your hand. Every rep, every region, the same polish.
 - **World class experience.** Nothing looks rushed even though it was rendered instantly. Nothing is a one-off - so every interaction gets a little more polished than the last.
 - **Wow your team is fast!** They're asleep. This was solved the first time I needed it.
@@ -123,14 +124,14 @@ Output the file URL.
 
 ### Creative files shouldn't be a security risk.
 
-Every time someone uploads a file to a third-party service to "just make it look right," that's a data exfiltration event waiting to happen. Lolly eliminates the problem at the source - creative production stays on-device, on-premise, and under your control.
+Every time someone uploads a file to a third-party service to "just make it look right," that's a data exfiltration event waiting to happen. Lolly eliminates the problem at the source - creative production stays on-premise and under your control.
 
-- **Data stays on the device by default.** Nothing is transmitted to any third party - no cloud rendering, no analytics, no telemetry. What colleagues create stays on their machine. On-device utilities like Strip Hidden Data scrub EXIF and metadata from images, SVG, and PDF entirely in the browser - nothing is uploaded. Even locking a PDF, a whole download, or a share link with a password happens on-device; the password never leaves it.
-- **Self-host for full air-gap control.** Deploy on your own infrastructure. The core app is a static deployment with no server-side processing and no database; the two optional server components (the AI-agent endpoint and identity enrolment - see [Server Surface](/info/server-surface.html)) can be omitted entirely. Operate entirely offline, behind your firewall, with your own access policies.
+- **Data stays on the device.** No cloud rendering, no analytics, no telemetry - and no network request at all beyond the handful a user explicitly triggers, each one named in the [privacy policy](/info/privacy.html). What colleagues create stays on their machine. On-device utilities like Strip Hidden Data scrub EXIF and metadata from images, SVG, and PDF entirely in the browser - nothing is uploaded. Even locking a PDF, a whole download, or a share link with a password happens on-device; the password never leaves it.
+- **Self-host for full air-gap control.** Deploy on your own infrastructure. The core app is a static deployment with no server-side processing and no database; the two optional server components (the AI-agent endpoint and identity enrolment - see [Server Surface](/info/server-surface.html)) can be omitted entirely. Run it behind your own firewall, with your own access policies.
 - **Reduce vendor surface area.** One open-source platform replaces a sprawl of SaaS subscriptions for creative production. Fewer vendors means fewer contracts, fewer audits, and fewer breach vectors.
 - **Enforce brand governance at the infrastructure level.** Tools are authored once and distributed as data - not files, not manual processes. What goes out the door is exactly what was approved to go out the door.
 - **Get critical information into human-readable formats instantly.** Incident communications, compliance reports, executive briefings - structured data becomes publication-quality output in seconds, no design bottleneck.
-- **Hardening for enterprise scale.** Lolly is a closed-pilot prototype: its cryptography and file-parsing engines are currently undergoing SUSE's strict infrastructure hardening, preparing for enterprise scale - we're really good at this. Provenance and on-device encryption are strong by design; pilot them in a scoped context while that hardening completes. See [Adoption & governance](/info/adoption-governance.html#status).
+- **Hardening for enterprise scale.** Lolly is a closed-pilot prototype: its cryptography and file-parsing engines are currently undergoing SUSE's strict infrastructure hardening, preparing for enterprise scale - we're really good at this. Content Credentials and local encryption are strong by design; pilot them in a scoped context while that hardening completes. See [Adoption & governance](/info/adoption-governance.html#status).
 
 ---
 
@@ -142,9 +143,7 @@ Every time someone uploads a file to a third-party service to "just make it look
 
 **Works everywhere.** Web PWA, Mac, Windows, Linux, iOS, Android, CLI, terminal TUI - same engine, same output.
 
-**Works offline.** Local compute, local storage. No internet required after first sync.
-
-**Formats, in and out.** Dozens in, dozens out, and many of them both ways - the live breakdown is in the formats table on this page, and every format in detail on the [Exporting page](/info/exporting.html).
+**Formats, in and out.** Dozens in, dozens out, and many of them both ways - the full breakdown is on the [Formats page](/info/formats.html), and every format in detail on the [Exporting page](/info/exporting.html).
 
 **Production quality.** Outlined type, Spot color support, 60FPS · Media fit for the studio.
 

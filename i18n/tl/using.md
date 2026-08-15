@@ -17,7 +17,7 @@ Ang home screen ay ang **gallery** - lahat ng tool, naka-grupo ayon sa kategorya
 
 Ang bawat tool ay isang split view: **controls** sa isang side, at live na **preview** (ang canvas) sa kabila. Baguhin ang anumang control at agad na nag-a-update ang preview.
 
-> Ilang tool (tulad ng **Layout Studio**) ang sa halip ay bubukas bilang isang **free canvas** - isang chromeless, direct-manipulation na surface kung saan mo dina-drag, rine-resize, ire-rotate, at sina-snap ang mga box ng text, shapes, at images, at dini-double-click para i-edit ang text nang mismo doon. Nag-e-export ito sa parehong render path tulad ng bawat ibang tool, kaya ang canvas *ay* mismo ang file. Tingnan ang [The free canvas](#the-free-canvas-design) sa ibaba.
+> Ilang tool (tulad ng **Design**) ang sa halip ay bubukas bilang isang **free canvas** - isang chromeless, direct-manipulation na surface kung saan mo dina-drag, rine-resize, ire-rotate, at sina-snap ang mga box ng text, shapes, at images, at dini-double-click para i-edit ang text nang mismo doon. Nag-e-export ito sa parehong render path tulad ng bawat ibang tool, kaya ang canvas *ay* mismo ang file. Tingnan ang [The free canvas](#the-free-canvas-design) sa ibaba.
 
 ## Ang canvas (preview)
 
@@ -40,9 +40,9 @@ Palaging ipinapakita ng preview kung ano mismo ang mae-export.
 
 Ang pagbabago sa dimension ay laging nagbabalik sa view sa isang malinis na fit.
 
-### Ang free canvas (Layout Studio)
+### Ang free canvas (Design)
 
-![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Nagdaragdag ang mga free-canvas na tool ng working surface *sa paligid* ng artboard, tulad ng pasteboard ng isang designer:
 
@@ -144,7 +144,7 @@ Ang **Swatches** panel ng Catalogue ay hindi lang para sa reference - i-click an
 
 Nililista ng **Fonts** panel ang iyong mga brand face na may **download** sa tabi ng bawat isa, para i-install nang lokal o ibigay sa isang print shop. (Ang Colours tab ng [Brand Studio](/info/brand-studio.html) ay nag-aalok ng parehong palette download.)
 
-Ang mga asset ay isang kalahati ng bukas, do-it-yourself na landas; ang kabila ay ang **paggawa ng sarili mong mga tool** - hinahayaan ka ng free canvas (Layout Studio, inilarawan sa itaas) na bumuo ng isa nang biswal, walang kailangang code.
+Ang mga asset ay isang kalahati ng bukas, do-it-yourself na landas; ang kabila ay ang **paggawa ng sarili mong mga tool** - hinahayaan ka ng free canvas (Design, inilarawan sa itaas) na bumuo ng isa nang biswal, walang kailangang code.
 
 ## Sound at accessibility
 
@@ -176,7 +176,7 @@ Hindi kasama ang catalog cache - nagda-download ulit ito mismo sa bagong device.
 
 ## Pag-import ng isang design (Figma, Penpot, Illustrator, InDesign)
 
-Puwede mong dalhin ang isang existing design papasok sa Lolly at ipagpatuloy ang pagtatrabaho dito: buksan ang **Layout Studio**, i-click ang **Import a design** sa canvas toolbar, at pumili ng Figma **.fig** o SVG, isang Penpot **.penpot**, isang Illustrator **.ai** / **.pdf**, o isang InDesign **.idml**. Nagiging editable na mga box ang mga layer sa free canvas - nananatiling retypable ang text, napupunta ang mga imahe sa **My images**, at sumusunod ang type at colours sa brand globals - pagkatapos ay nagse-save, nagshe-share, at nagre-render ang resulta tulad ng anumang ibang session. Nangyayari ang parse nang buo sa device mo. Buong detalye: **[Import a design](/info/design-import.html)**.
+Puwede mong dalhin ang isang existing design papasok sa Lolly at ipagpatuloy ang pagtatrabaho dito: buksan ang **Design**, i-click ang **Import a design** sa canvas toolbar, at pumili ng Figma **.fig** o SVG, isang Penpot **.penpot**, isang Illustrator **.ai** / **.pdf**, o isang InDesign **.idml**. Nagiging editable na mga box ang mga layer sa free canvas - nananatiling retypable ang text, napupunta ang mga imahe sa **My images**, at sumusunod ang type at colours sa brand globals - pagkatapos ay nagse-save, nagshe-share, at nagre-render ang resulta tulad ng anumang ibang session. Nangyayari ang parse nang buo sa device mo. Buong detalye: **[Import a design](/info/design-import.html)**.
 
 ## Pag-export
 

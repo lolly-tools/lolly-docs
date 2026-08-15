@@ -47,7 +47,7 @@ paket template Anda yang sudah jadi. Untuk *penerapan yang tata kelolanya terjag
 aset bersama (logo, palet, font sebagai ID permanen) dan menulis manifest +
 template untuk setiap jenis keluaran. Namun, individu tidak harus menunggu itu - di
 aplikasi terbuka siapa pun dapat mengimpor berkasnya sendiri ke dalam katalog dan membangun alat di
-Layout Studio sejak hari pertama.
+Design sejak hari pertama.
 
 **Tata kelola lewat git bersifat opsional - dan asing bagi non-teknis.** Jika Anda menjalankan
 katalog yang *dibagikan dan terkontrol*, "peninjauan PR *adalah* moderasinya" itu elegan bagi para
@@ -59,7 +59,7 @@ ini cukup melewatkannya.
 
 **Ia sengaja dibuat sempit - bingkailah seperti itu.** Lolly bukan untuk konten khusus atau
 hero. Ia *adalah* DAM pribadi Anda - dihidupkan dan diperkuat oleh sistem desain
-Anda, alat, dan katalog - dan ia *memang* memiliki kanvas terbuka (Layout Studio), tetapi
+Anda, alat, dan katalog - dan ia *memang* memiliki kanvas terbuka (Design), tetapi
 bahkan di sana warna, tipografi, dan aset menyesuaikan dengan global desain yang aktif, sehingga
 penataan bebas tetap berada di dalam sistem. Dinilai terhadap Figma atau Canva, ia akan
 tampak terbatas. Dinilai sebagai apa adanya - pembuatan aset yang dioperasionalkan, berulang, dan
@@ -99,9 +99,9 @@ Kami memenangkan perang tata kelola dengan kenyamanan dan layanan yang unggul.
 
 ## Bisakah Lolly menyunting dan merender berkas Figma, Penpot, Illustrator, atau InDesign saya?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
-Ya. Buka **Layout Studio** dan klik **Impor desain**: ia menerima **.fig** asli Figma (Save local copy), ekspor **.penpot** Penpot, **.ai** atau **.pdf** Illustrator, **.idml** InDesign (File → Export → InDesign Markup), atau **SVG apa pun** (pintu lebar - hampir semua aplikasi desain mengekspornya). Semuanya diurai sepenuhnya di perangkat Anda, tanpa perlu akun atau plugin.
+Ya. Buka **Design** dan klik **Impor desain**: ia menerima **.fig** asli Figma (Save local copy), ekspor **.penpot** Penpot, **.ai** atau **.pdf** Illustrator, **.idml** InDesign (File → Export → InDesign Markup), atau **SVG apa pun** (pintu lebar - hampir semua aplikasi desain mengekspornya). Semuanya diurai sepenuhnya di perangkat Anda, tanpa perlu akun atau plugin.
 
 Lapisan tiba sebagai kotak yang dapat disunting di kanvas terbuka: teks tetap dapat diketik ulang, bentuk tetap menjadi bentuk, gambar bergabung ke pustaka di perangkat Anda, dan tipografi serta warna menyesuaikan dengan global merek. Simpan dan tata letak itu menjadi template yang dapat digunakan ulang dan dapat dialamatkan lewat URL yang bisa diisi ulang oleh siapa pun yang memiliki Lolly - dan Anda dapat menyertakan alat langsung (kode QR, sebuah bagan) yang dirender ulang saat dimuat. Dari sana ia dirender seperti hal lain di Lolly - SVG, PDF, PNG, dan sisanya, dapat direproduksi dari URL-nya. Lihat [Impor desain](/info/design-import.html).
 

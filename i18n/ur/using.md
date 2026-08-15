@@ -42,7 +42,7 @@
 
 ### آزاد کینوس (لے آؤٹ اسٹوڈیو)
 
-![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 آزاد کینوس والے ٹولز آرٹ بورڈ کے *اردگرد* ایک کام کرنے والی سطح شامل کرتے ہیں، جیسے کسی ڈیزائنر کا پیسٹ بورڈ:
 

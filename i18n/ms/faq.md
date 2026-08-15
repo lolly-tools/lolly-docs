@@ -48,7 +48,7 @@ pek templat yang sudah siap untuk anda. Untuk *pelancaran yang ditadbir*, seseor
 katalog aset yang dikongsi (logo, palet, fon sebagai ID kekal) dan menulis manifest + templat
 untuk setiap jenis output. Individu tidak perlu menunggu itu, walaupun begitu - dalam
 aplikasi terbuka, sesiapa sahaja boleh memasukkan fail mereka sendiri ke dalam katalog dan membina alat
-dalam Layout Studio sejak hari pertama.
+dalam Design sejak hari pertama.
 
 **Tadbir urus melalui git adalah pilihan - dan asing bagi bukan jurutera.** Jika anda menjalankan katalog
 *yang dikongsi dan terkawal*, "semakan PR *itulah* moderasinya" adalah elegan bagi
@@ -61,7 +61,7 @@ ini boleh terus melangkauinya.
 **Ia sengaja dibuat sempit - fahamilah ia sedemikian.** Lolly bukan untuk kandungan
 tersuai atau kandungan 'hero'. Ia *memang* DAM peribadi anda - dihidupkan dan
 dipertingkatkan oleh sistem reka bentuk, alat dan katalog anda - dan ia *memang*
-mempunyai kanvas terbuka (Layout Studio), tetapi walaupun di situ, warna, jenis
+mempunyai kanvas terbuka (Design), tetapi walaupun di situ, warna, jenis
 huruf dan aset akur kepada global reka bentuk yang aktif, jadi susunan bebas kekal
 di dalam sistem. Jika dinilai berbanding Figma atau Canva, ia akan kelihatan terhad.
 Jika dinilai sebagai apa yang ia sebenarnya - penjanaan aset berskala besar,
@@ -102,9 +102,9 @@ Kami memenangi perjuangan tadbir urus ini dengan kemudahan dan perkhidmatan yang
 
 ## Bolehkah Lolly mengedit dan memaparkan fail Figma, Penpot, Illustrator atau InDesign saya?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
-Ya. Buka **Layout Studio** dan klik **Import reka bentuk**: ia menerima fail Figma asli **.fig** (Simpan salinan tempatan), eksport Penpot **.penpot**, fail Illustrator **.ai** atau **.pdf**, fail InDesign **.idml** (Fail → Eksport → InDesign Markup), atau **sebarang SVG** (pintu paling luas - hampir semua aplikasi reka bentuk boleh mengeksportnya). Semuanya dihurai sepenuhnya pada peranti anda sendiri, tiada akaun atau plugin diperlukan.
+Ya. Buka **Design** dan klik **Import reka bentuk**: ia menerima fail Figma asli **.fig** (Simpan salinan tempatan), eksport Penpot **.penpot**, fail Illustrator **.ai** atau **.pdf**, fail InDesign **.idml** (Fail → Eksport → InDesign Markup), atau **sebarang SVG** (pintu paling luas - hampir semua aplikasi reka bentuk boleh mengeksportnya). Semuanya dihurai sepenuhnya pada peranti anda sendiri, tiada akaun atau plugin diperlukan.
 
 Lapisan (layers) tiba sebagai kotak boleh edit pada kanvas terbuka: teks kekal boleh ditaip semula, bentuk kekal sebagai bentuk, imej menyertai pustaka pada peranti anda, dan jenis huruf serta warna akur kepada global jenama. Simpan dan susun atur itu menjadi templat boleh guna semula yang boleh dicapai melalui URL, yang boleh diisi semula oleh sesiapa yang mempunyai Lolly - dan anda boleh mencampurkan alat langsung (kod QR, carta) yang dipaparkan semula apabila dimuatkan. Dari situ, ia dipaparkan seperti apa-apa lain dalam Lolly - SVG, PDF, PNG dan selebihnya, boleh dihasilkan semula daripada URL-nya. Lihat [Import reka bentuk](/info/design-import.html).
 

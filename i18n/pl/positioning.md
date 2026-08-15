@@ -6,7 +6,7 @@ Gdzie ta platforma wpisuje się w szerszy krajobraz narzędzi kreatywnych i gdzi
 
 ## Krajobraz
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
+![Design's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
 
 | Funkcja | Canva (Otwarte płótno) | Portale marki (szablony DAM) | Illustrator (Pro, desktop) | Figma / Penpot (Pro, online) | **Lolly (Najpierw ograniczenia)** |
 |---|---|---|---|---|---|
@@ -22,15 +22,15 @@ Gdzie ta platforma wpisuje się w szerszy krajobraz narzędzi kreatywnych i gdzi
 | Aplikacje mobilne i desktopowe | ✓ | ✗ | ✗ | częściowo | **✓** |
 | Wiersz poleceń i TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-Kształt luki jest jasny: nic w istniejącym krajobrazie nie daje nam wyników generatywnych, które byłyby najpierw oparte na ograniczeniach, zdolne do pracy offline, niewymagające umiejętności, dostępne wewnętrznie. Lolly ma teraz własne otwarte płótno - **Layout Studio**, swobodne płótno z bezpośrednią manipulacją - ale z decydującą różnicą względem kolumny Canva: kolory, typografia i zasoby na nim umieszczane są zgodne z globalnymi ustawieniami marki, więc nawet swobodne rozmieszczanie pozostaje najpierw oparte na ograniczeniach. Czym Lolly wciąż **nie** jest, to nieograniczony pakiet projektowy; projektanci nadal będą używać Illustratora i Figmy do prac szytych na miarę - a gdy taka praca musi stać się zarządzanym, odtwarzalnym zasobem, funkcja [Import projektu](/info/design-import.html) w Layout Studio przenosi gotowy plik Figma/Illustrator/Penpot na płótno jako edytowalne, zgodne z marką bloki.
+Kształt luki jest jasny: nic w istniejącym krajobrazie nie daje nam wyników generatywnych, które byłyby najpierw oparte na ograniczeniach, zdolne do pracy offline, niewymagające umiejętności, dostępne wewnętrznie. Lolly ma teraz własne otwarte płótno - **Design**, swobodne płótno z bezpośrednią manipulacją - ale z decydującą różnicą względem kolumny Canva: kolory, typografia i zasoby na nim umieszczane są zgodne z globalnymi ustawieniami marki, więc nawet swobodne rozmieszczanie pozostaje najpierw oparte na ograniczeniach. Czym Lolly wciąż **nie** jest, to nieograniczony pakiet projektowy; projektanci nadal będą używać Illustratora i Figmy do prac szytych na miarę - a gdy taka praca musi stać się zarządzanym, odtwarzalnym zasobem, funkcja [Import projektu](/info/design-import.html) w Design przenosi gotowy plik Figma/Illustrator/Penpot na płótno jako edytowalne, zgodne z marką bloki.
 
 ## Do czego używać
 
 ![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&dark=1&filename=ov2-deck-studio-output)
 
 - Szybkie generowanie zoperacjonalizowanych zasobów kreatywnych (kafelki wydarzeń, plakietki, podpisy, alerty)
-- Swobodne rozmieszczanie na otwartym płótnie (Layout Studio), gdy elementy - kolory, typografia, ikony, obrazy - muszą pozostać zgodne z globalnymi ustawieniami marki
-- Osadzanie gotowego projektu z Figmy, Illustratora, InDesign lub Penpot (Import projektu w Layout Studio), aby można go było edytować, zarządzać nim i deterministycznie renderować ponownie w każdym formacie Lolly
+- Swobodne rozmieszczanie na otwartym płótnie (Design), gdy elementy - kolory, typografia, ikony, obrazy - muszą pozostać zgodne z globalnymi ustawieniami marki
+- Osadzanie gotowego projektu z Figmy, Illustratora, InDesign lub Penpot (Import projektu w Design), aby można go było edytować, zarządzać nim i deterministycznie renderować ponownie w każdym formacie Lolly
 - Przepływy typu jeden-do-wielu „wypełnij trzy pola, otrzymaj gotowy zasób" - w tym masowe przebiegi z arkusza kalkulacyjnego/pliku CSV w siatce wsadowej `/pro` (wklej lub zaimportuj wiersze, jeden gotowy zasób na wiersz, pobierz jako plik zip)
 - Zawsze aktywne, cykliczne materiały brandowane
 - Zadania, w których centralna kontrola nad wyrazem marki liczy się bardziej niż swoboda ekspresji

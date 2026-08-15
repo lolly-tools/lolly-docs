@@ -46,7 +46,7 @@ browser ziet. De wrijving bij adoptie is zelden technisch; het is organisatorisc
 kant-en-klaar pakket met jouw templates. Voor een *beheerde uitrol* definieert iemand de gedeelde
 assetcatalogus (logo's, paletten, lettertypen als permanente ID's) en schrijft voor elk outputtype
 het manifest + de template. Individuen hoeven daar niet op te wachten - in de open app kan iedereen
-zijn eigen bestanden in de catalogus opnemen en vanaf dag één tools bouwen in Layout Studio.
+zijn eigen bestanden in de catalogus opnemen en vanaf dag één tools bouwen in Design.
 
 **Governance-by-git is optioneel - en onbekend terrein voor niet-engineers.** Als je een
 *gedeelde, beheerde* catalogus draait, is "de PR-review *is* de moderatie" elegant voor
@@ -58,7 +58,7 @@ slaan het gewoon over.
 
 **Het is bewust beperkt - presenteer het ook zo.** Lolly is niet bedoeld voor maatwerk of hero-
 content. Het *is* je persoonlijke DAM - gevoed en versterkt door je designsysteem,
-tools en catalogus - en het *heeft* wel degelijk een open canvas (Layout Studio), maar
+tools en catalogus - en het *heeft* wel degelijk een open canvas (Design), maar
 zelfs daar volgen kleuren, typografie en assets de actieve designglobals, zodat vrije
 opmaak binnen het systeem blijft. Afgezet tegen Figma of Canva zal het beperkt
 ogen. Beoordeeld als wat het is - geoperationaliseerde, terugkerende assetgeneratie op
@@ -98,9 +98,9 @@ We winnen de strijd om governance met uitstekend gemak en uitstekende service.
 
 ## Kan Lolly mijn Figma-, Penpot-, Illustrator- of InDesign-bestanden bewerken en renderen?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
-Ja. Open **Layout Studio** en klik op **Een ontwerp importeren**: het accepteert een natieve Figma **.fig** (Save local copy), een Penpot **.penpot**-export, een Illustrator **.ai** of **.pdf**, een InDesign **.idml** (File → Export → InDesign Markup), of **elke SVG** (de brede deur - bijna elke ontwerptoepassing kan dit exporteren). Alles wordt volledig op je eigen apparaat verwerkt, geen account of plug-in nodig.
+Ja. Open **Design** en klik op **Een ontwerp importeren**: het accepteert een natieve Figma **.fig** (Save local copy), een Penpot **.penpot**-export, een Illustrator **.ai** of **.pdf**, een InDesign **.idml** (File → Export → InDesign Markup), of **elke SVG** (de brede deur - bijna elke ontwerptoepassing kan dit exporteren). Alles wordt volledig op je eigen apparaat verwerkt, geen account of plug-in nodig.
 
 Lagen komen binnen als bewerkbare vakken op het open canvas: tekst blijft herschrijfbaar, vormen blijven vormen, afbeeldingen worden toegevoegd aan je lokale bibliotheek, en typografie en kleuren volgen de merk-globals. Sla het op en de lay-out wordt een herbruikbare, via URL benaderbare template die iedereen met Lolly kan invullen - en je kunt er live tools doorheen mengen (een QR-code, een grafiek) die bij het laden opnieuw renderen. Van daaruit rendert het zoals al het andere in Lolly - SVG, PDF, PNG en de rest, reproduceerbaar vanaf de URL. Zie [Een ontwerp importeren](/info/design-import.html).
 

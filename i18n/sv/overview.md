@@ -34,7 +34,7 @@ Resultatet är **överflöd**: varje evenemang har korrekt skyltning, varje CVE-
 | Mobil- och skrivbordsappar | ✓ | ✗ | ✗ | delvis | **✓** |
 | Kommandorad och TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-Luckan är tydlig: inget i det befintliga landskapet ger oss regelstyrd, offlinekapabel, lågtröskel, internt tillgänglig output. Lolly innehåller till och med en öppen canvas - **Layout Studio** - där färger, typografi och tillgångar följer varumärkets globala inställningar, så att fri arrangering förblir regelstyrd. Vad den **inte** är är en obegränsad designsvit: designers fortsätter att använda Illustrator och Figma för skräddarsytt flaggskeppsarbete. Permutationer kan sättas samman med det här verktyget.
+Luckan är tydlig: inget i det befintliga landskapet ger oss regelstyrd, offlinekapabel, lågtröskel, internt tillgänglig output. Lolly innehåller till och med en öppen canvas - **Design** - där färger, typografi och tillgångar följer varumärkets globala inställningar, så att fri arrangering förblir regelstyrd. Vad den **inte** är är en obegränsad designsvit: designers fortsätter att använda Illustrator och Figma för skräddarsytt flaggskeppsarbete. Permutationer kan sättas samman med det här verktyget.
 
 **Använd det för:** Snabb generering av operationaliserade kreativa tillgångar - evenemangsrutor, namnbrickor, signaturer, CVE-aviseringar, QR-koder, sociala kort, fraktetiketter, strukturerade rapporter.
 
@@ -48,7 +48,7 @@ Luckan är tydlig: inget i det befintliga landskapet ger oss regelstyrd, offline
 
 Det tydligaste sättet att se vad Lolly är är ingen funktionslista - det är att följa en enda tillgång när den går från hand till hand. Se hur ett lokaliserat kampanjkort rör sig genom organisationen:
 
-1. **Kreatören sätter reglerna.** En designer bygger grundmallen i Layout Studio och hårdkodar varumärkets typografi- och färgvariabler. Hon gör inte ett kort - hon gör grundarbetet *en gång* så att hon aldrig behöver lokalisera det för hand igen.
+1. **Kreatören sätter reglerna.** En designer bygger grundmallen i Design och hårdkodar varumärkets typografi- och färgvariabler. Hon gör inte ett kort - hon gör grundarbetet *en gång* så att hon aldrig behöver lokalisera det för hand igen.
 2. **Utvecklaren skalar upp det.** Exakt samma mall kopplas in i en nattlig pipeline via CLI, så att ett färskt diagram eller en ny språkvariant genereras automatiskt - ingen designer öppnar filen igen.
 3. **Producenten bara använder det.** En säljare öppnar samma verktyg offline på ett flygplan och genererar ett helt varumärkesenligt deck till ett kundmöte. Ingen designkompetens, inget nätverk, ingen väntan.
 
@@ -173,7 +173,6 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── daily-card/        # "Day Brief" - väder/tid/karta (hämtas via ett inline-mallskript)
 │   ├── code-canvas/
 │   ├── countdown-timer/
 │   ├── color-palette/
@@ -185,7 +184,6 @@ lolly/
 │   ├── strip-data/        # metadataborttagning på enheten - JPEG/PNG/SVG/PDF (fil in → ren fil ut)
 │   ├── compress-pdf/      # PDF-komprimerare på enheten - komprimerar om bilder (fil in → mindre fil ut)
 │   ├── brand-lockup/      # "Brand Lockup" - SUSE-logotypkombinationer; HarfBuzz text-till-bana (wasm)
-│   ├── bag-video/
 │   ├── chart-creator/     # SVG-diagram från strukturerad data
 │   ├── filter-duotone/    # tvåfärgad fotobehandling
 │   ├── filter-halftone/   # foto → vektorbaserat halvtonsrutnät
@@ -196,7 +194,7 @@ lolly/
 │   ├── event-name-badge/  # konferensmärken - komponerar qr-code som en SVG
 │   ├── wayfinding-signage/ # evenemangsskyltning; riktningsblock som autoanpassar etikettext
 │   ├── text-helper/       # textverkstad på enheten (formatera/avkoda/hasha/avidentifiera)
-│   ├── design/     # "Layout Studio" - fri WYSIWYG-redigeringsyta (render.layout: editor)
+│   ├── design/     # "Design" - fri WYSIWYG-redigeringsyta (render.layout: editor)
 │   ├── multi-page-pdf/    # PDF-dokument med flera sidor - omslag, flytande innehållsblock, baksida
 │   ├── diagram-builder/   # organisationsschema / layercake / process / cykel / pyramiddiagram
 │   ├── logo-wall/         # många logotyper → automatiskt packat rutnät
@@ -274,15 +272,15 @@ Raderna listas i galleriets sektionsordning. Sektionen `utility` renderas alltid
 
 | Kategori | Levererade verktyg | Planerat |
 |---|---|---|
-| `everyone` | QR Code Generator, Quote Card, Email Signature, Day Brief, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
-| `designer` | Brand Lockup, Bag Video, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
+| `everyone` | QR Code Generator, Quote Card, Email Signature, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
+| `designer` | Brand Lockup, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Layout Studio | Enhets-/formatomvandlare, fler integritetsverktyg på enheten |
+| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Design | Enhets-/formatomvandlare, fler integritetsverktyg på enheten |
 
-Verktyg klassificeras också efter status: `official` (varumärkesgodkänt, ingen vattenstämpel), `community` (externt bidrag), `experimental` (vattenstämplade exporter). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap och Diagram Builder har för närvarande status `experimental`; Web Icon Maker och Layout Studio levereras som `community`-verktyg.
+Verktyg klassificeras också efter status: `official` (varumärkesgodkänt, ingen vattenstämpel), `community` (externt bidrag), `experimental` (vattenstämplade exporter). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap och Diagram Builder har för närvarande status `experimental`; Web Icon Maker och Design levereras som `community`-verktyg.
 
-**Layout Studio** är det första verktyget byggt på det fria arbetsyteläget `render.layout: "editor"` - en kromfri, direktmanipulerande yta där du drar, ändrar storlek på, roterar och snäpper fast rutor med text, former och bilder, och sedan exporterar via samma renderingsväg som alla andra verktyg.
+**Design** är det första verktyget byggt på det fria arbetsyteläget `render.layout: "editor"` - en kromfri, direktmanipulerande yta där du drar, ändrar storlek på, roterar och snäpper fast rutor med text, former och bilder, och sedan exporterar via samma renderingsväg som alla andra verktyg.
 
 **Strip Hidden Data** är det första **verktyget på enheten** (`privacy: "on-device"`): ett innehållstransformerande verktyg som tar en fil *du* tillhandahåller, bearbetar den helt i webbläsaren och lämnar tillbaka en ren kopia - aldrig uppladdad, aldrig vattenstämplad, ingen proveniens stämplad. **Text Helper** är det andra - en verkstad på enheten för vardagliga klistra-in-i-en-webbplats-uppgifter (JSON-formatering, JWT-avkodning, Base64, URL-kodning/avkodning, SHA-hashning). **Compress PDF** är det tredje - det krymper en PDF genom att koda om dess bilder, återigen helt på enheten. Alla tre bär märkningstexten "Runs on your device - nothing is uploaded". Det här är starten på en integritetsverktygskategori som ersätter att lämna ifrån sig konfidentiella filer till enfunktionswebbplatser.
 
@@ -444,7 +442,7 @@ Uppdelningen upprätthålls - det finns inga korsimporter från `engine/` till `
 
 | Milstolpe | Tidsram | Vad |
 |---|---|---|
-| **Initiala verktyg** | ✅ Klart | QR Code, Quote Card, Email Signature, Day Brief, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Bag Video, Chart Creator, Filter: Duotone, Meeting Planner - webbskalet live |
+| **Initiala verktyg** | ✅ Klart | QR Code, Quote Card, Email Signature, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Chart Creator, Filter: Duotone, Meeting Planner - webbskalet live |
 | **Förbättra befintliga verktyg** | Mitten av 2026 ✅ Klart  | Nedladdningsbar offline-app (Tauri); fler verktyg för medarbetare och evenemang; rikare exportpipeline (stabilitet för text-till-bana, metadata, extra format - se `plans.md`) |
 | **Öppna källkoden för motorn** | Slutet av 2026 ✅ Klart  | Engine, shells, schemas, docs blir publika - inte de varumärkta verktygen/tillgångarna |
 | **Överföring mellan enheter** | ✅ Klart | Portabelt `lolly-backup`-paket för profil, sparade sessioner, uppladdade bilder och inställningar mellan valfria två installationer - offline eller online, inget konto. Framåtkompatibelt, integritetskontrollerat kuvert (spec: `docs/data-transfer.md`) |

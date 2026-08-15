@@ -6,7 +6,7 @@
 
 ## 產業格局
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
+![Design's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
 
 | 能力 | Canva(開放式畫布) | 品牌入口網站(DAM 範本化) | Illustrator(桌面專業版) | Figma / Penpot(線上專業版) | **Lolly(限制優先)** |
 |---|---|---|---|---|---|
@@ -22,7 +22,7 @@
 | 行動裝置與桌面應用程式 | ✓ | ✗ | ✗ | 部分 | **✓** |
 | 命令列與 TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-這個落差的輪廓很清楚:現有格局中沒有任何產品能同時提供限制優先、可離線運作、低技能門檻、內部可存取的生成式輸出。Lolly 現在也推出了自己的開放式畫布——**Layout Studio**,一個直接操作的自由畫布——但與 Canva 那一欄有個關鍵差異:放置在畫布上的色彩、字體與素材都會遵循品牌全域設定,因此即使是自由排列也仍維持限制優先。Lolly 依然**不是**一套無限制的設計套件;設計師仍會使用 Illustrator 與 Figma 進行客製化工作——而當那些成果需要變成受治理、可重現的資產時,Layout Studio 的[匯入設計](/info/design-import.html)功能可將完成的 Figma/Illustrator/Penpot 檔案帶入畫布,轉換成可編輯、符合品牌規範的區塊。
+這個落差的輪廓很清楚:現有格局中沒有任何產品能同時提供限制優先、可離線運作、低技能門檻、內部可存取的生成式輸出。Lolly 現在也推出了自己的開放式畫布——**Design**,一個直接操作的自由畫布——但與 Canva 那一欄有個關鍵差異:放置在畫布上的色彩、字體與素材都會遵循品牌全域設定,因此即使是自由排列也仍維持限制優先。Lolly 依然**不是**一套無限制的設計套件;設計師仍會使用 Illustrator 與 Figma 進行客製化工作——而當那些成果需要變成受治理、可重現的資產時,Design 的[匯入設計](/info/design-import.html)功能可將完成的 Figma/Illustrator/Penpot 檔案帶入畫布,轉換成可編輯、符合品牌規範的區塊。
 
 ## 適用情境
 
@@ -31,8 +31,8 @@
 Deck Studio 很能說明這裡的天花板有多高：一整份投影片以資料的形式宣告，在畫布上即時排版，最後匯出成原生可編輯的 PowerPoint。
 
 - 快速生成可作業化的創意資產(活動卡片、識別徽章、簽名檔、警示訊息)
-- 在開放式畫布(Layout Studio)上自由排列,同時色彩、字體、圖示、影像等元素仍須遵循品牌全域設定
-- 將完成的 Figma、Illustrator、InDesign 或 Penpot 設計匯入(透過 Layout Studio 的「匯入設計」功能),使其能以 Lolly 的每種格式進行編輯、治理與確定性地重新渲染
+- 在開放式畫布(Design)上自由排列,同時色彩、字體、圖示、影像等元素仍須遵循品牌全域設定
+- 將完成的 Figma、Illustrator、InDesign 或 Penpot 設計匯入(透過 Design 的「匯入設計」功能),使其能以 Lolly 的每種格式進行編輯、治理與確定性地重新渲染
 - 一對多的「填三個欄位,取得完成資產」流程——包括在 `/pro` 批次網格中以試算表/CSV 進行批次執行(貼上或匯入資料列,每列產出一項完成資產,並以 zip 檔下載)
 - 全天候、週期性的品牌化輸出
 - 品牌表現的集中控管比表現彈性更重要的情境

@@ -34,7 +34,7 @@
 | تطبيقات جوال وسطح مكتب | ✓ | ✗ | ✗ | جزئي | **✓** |
 | سطر أوامر و TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-الفجوة واضحة: لا شيء في المشهد الحالي يمنحنا مخرجات تعتمد القيود أولا، وقادرة على العمل دون اتصال، ولا تتطلب مهارة عالية، ومتاحة داخليا. حتى إن Lolly يتضمن لوحة رسم مفتوحة — **Layout Studio** — تلتزم فيها الألوان والخطوط والأصول بالإعدادات العامة للعلامة التجارية، فيبقى الترتيب الحر خاضعا لمبدأ القيود أولا. أما ما **ليس** إياه فهو حزمة تصميم غير مقيدة: يواصل المصممون استخدام Illustrator و Figma للأعمال الرائدة المخصصة. ويمكن تجميع التباديل بهذه الأداة.
+الفجوة واضحة: لا شيء في المشهد الحالي يمنحنا مخرجات تعتمد القيود أولا، وقادرة على العمل دون اتصال، ولا تتطلب مهارة عالية، ومتاحة داخليا. حتى إن Lolly يتضمن لوحة رسم مفتوحة — **Design** — تلتزم فيها الألوان والخطوط والأصول بالإعدادات العامة للعلامة التجارية، فيبقى الترتيب الحر خاضعا لمبدأ القيود أولا. أما ما **ليس** إياه فهو حزمة تصميم غير مقيدة: يواصل المصممون استخدام Illustrator و Figma للأعمال الرائدة المخصصة. ويمكن تجميع التباديل بهذه الأداة.
 
 **استخدمه من أجل:** التوليد السريع للأصول الإبداعية المشغلة — بطاقات الفعاليات، وشارات الأسماء، والتواقيع، وتنبيهات CVE، ورموز QR، وبطاقات التواصل الاجتماعي، وملصقات الشحنات، والتقارير المنظمة.
 
@@ -48,7 +48,7 @@
 
 أوضح طريقة لرؤية ماهية Lolly ليست قائمة ميزات — بل تتبع أصل واحد وهو ينتقل من يد إلى يد. تابع بطاقة حملة واحدة مترجمة في مسيرها عبر المؤسسة:
 
-1. **المبدع يضع القواعد.** يؤلف مصمم القالب الأساسي في Layout Studio، مثبتا في الكود طبوغرافيا العلامة التجارية ومتغيرات ألوانها. هو لا يصنع بطاقة واحدة — بل ينجز العمل التأسيسي *مرة واحدة* حتى لا يعود مضطرا أبدا إلى ترجمة كل نسخة يدويا.
+1. **المبدع يضع القواعد.** يؤلف مصمم القالب الأساسي في Design، مثبتا في الكود طبوغرافيا العلامة التجارية ومتغيرات ألوانها. هو لا يصنع بطاقة واحدة — بل ينجز العمل التأسيسي *مرة واحدة* حتى لا يعود مضطرا أبدا إلى ترجمة كل نسخة يدويا.
 2. **المطور يوسع نطاقها.** يوصل القالب نفسه بخط أنابيب ليلي عبر CLI، فيتولد مخطط جديد أو نسخة بلغة جديدة تلقائيا — دون أن يعيد أي مصمم فتح الملف.
 3. **المنتج يستخدمها فحسب.** يفتح مندوب مبيعات، دون اتصال على متن طائرة، الأداة نفسها فيولد عرضا متسقا تماما مع العلامة التجارية لاجتماع مع عميل. لا مهارة تصميم، ولا شبكة، ولا انتظار.
 
@@ -173,7 +173,6 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── daily-card/        # "Day Brief" — weather/time/map (fetched by an inline template script)
 │   ├── code-canvas/
 │   ├── countdown-timer/
 │   ├── color-palette/
@@ -185,7 +184,6 @@ lolly/
 │   ├── strip-data/        # on-device metadata strip — JPEG/PNG/SVG/PDF (file in → clean file out)
 │   ├── compress-pdf/      # on-device PDF compressor — recompresses images (file in → smaller file out)
 │   ├── brand-lockup/      # "Brand Lockup" — SUSE logo lockups; HarfBuzz text-to-path (wasm)
-│   ├── bag-video/
 │   ├── chart-creator/     # SVG charts from structured data
 │   ├── filter-duotone/    # two-color photo treatment
 │   ├── filter-halftone/   # photo → vector halftone dot grid
@@ -196,7 +194,7 @@ lolly/
 │   ├── event-name-badge/  # conference badges — composes qr-code as an SVG
 │   ├── wayfinding-signage/ # event signage; directions blocks auto-fit label text
 │   ├── text-helper/       # on-device text workbench (format/decode/hash/de-identify)
-│   ├── design/     # "Layout Studio" — freeform WYSIWYG editor canvas (render.layout: editor)
+│   ├── design/     # "Design" — freeform WYSIWYG editor canvas (render.layout: editor)
 │   ├── multi-page-pdf/    # multi-page PDF document — cover, flowing content blocks, back page
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
 │   ├── logo-wall/         # many logos → auto-packed grid
@@ -274,15 +272,15 @@ lolly qr-code                # lists inputs for that tool
 
 | الفئة | الأدوات المتوفرة | المخطط لها |
 |---|---|---|
-| `everyone` | QR Code Generator، Quote Card، Email Signature، Day Brief، Code Canvas، Color Block، Dynamic Layout، Logo، Web Icon Maker | Employee Image Stationery |
-| `designer` | Brand Lockup، Bag Video، Chart Creator، Street Map، Animated Ad، Multi-Page PDF، Diagram Builder، Logo Lockup: Grid (NASCAR)، Logo Lockup: Partner، Filter: Duotone، Filter: Halftone، Filter: Scanline، Filter: Posterize Bitmap، Filter: Pixel Stretch | Font Outliner |
+| `everyone` | QR Code Generator، Quote Card، Email Signature، Code Canvas، Color Block، Dynamic Layout، Logo، Web Icon Maker | Employee Image Stationery |
+| `designer` | Brand Lockup، Chart Creator، Street Map، Animated Ad، Multi-Page PDF، Diagram Builder، Logo Lockup: Grid (NASCAR)، Logo Lockup: Partner، Filter: Duotone، Filter: Halftone، Filter: Scanline، Filter: Posterize Bitmap، Filter: Pixel Stretch | Font Outliner |
 | `event` | Meeting Planner، Event Name Badge، Wayfinding Signage، Calendar ICS | Event Stationery، Bulk Name Badges، Room Agenda Cards |
 | `product` | — | CVE Alert، Product Release Announcement، Blog OG Image |
-| `utility` | Countdown Timer، Color Palette، URL Screenshot، Strip Hidden Data، Text Helper، Compress PDF، Layout Studio | محولات وحدات/تنسيقات، ومزيد من أدوات الخصوصية على الجهاز |
+| `utility` | Countdown Timer، Color Palette، URL Screenshot، Strip Hidden Data، Text Helper، Compress PDF، Design | محولات وحدات/تنسيقات، ومزيد من أدوات الخصوصية على الجهاز |
 
-تصنف الأدوات أيضا حسب الحالة: `official` (معتمدة من العلامة التجارية، دون علامة مائية)، و `community` (مساهمة خارجية)، و `experimental` (تصديرات موسومة بعلامة مائية). تحمل Dynamic Layout و URL Screenshot و Logo Lockup: Grid (NASCAR) و Filter: Posterize Bitmap و Diagram Builder حاليا الحالة `experimental`؛ بينما تشحن Web Icon Maker و Layout Studio كأدوات `community`.
+تصنف الأدوات أيضا حسب الحالة: `official` (معتمدة من العلامة التجارية، دون علامة مائية)، و `community` (مساهمة خارجية)، و `experimental` (تصديرات موسومة بعلامة مائية). تحمل Dynamic Layout و URL Screenshot و Logo Lockup: Grid (NASCAR) و Filter: Posterize Bitmap و Diagram Builder حاليا الحالة `experimental`؛ بينما تشحن Web Icon Maker و Design كأدوات `community`.
 
-**Layout Studio** هي أول أداة مبنية على وضع لوحة الرسم الحرة `render.layout: "editor"` — سطح مباشر التعامل دون إطار تسحب فيه مربعات النص والأشكال والصور وتغير حجمها وتديرها وتثبتها، ثم تصدر عبر مسار التصيير نفسه ككل أداة أخرى.
+**Design** هي أول أداة مبنية على وضع لوحة الرسم الحرة `render.layout: "editor"` — سطح مباشر التعامل دون إطار تسحب فيه مربعات النص والأشكال والصور وتغير حجمها وتديرها وتثبتها، ثم تصدر عبر مسار التصيير نفسه ككل أداة أخرى.
 
 **Strip Hidden Data** هي أول **أداة مساعدة على الجهاز** (`privacy: "on-device"`): أداة تحويل محتوى تأخذ ملفا *أنت* من يوفره، وتعالجه بالكامل في المتصفح، وتعيد نسخة نظيفة — لا ترفع أبدا، ولا توسم بعلامة مائية، ولا يختم فيها إثبات منشأ. **Text Helper** هي الثانية — ورشة عمل على الجهاز لمهام "اللصق في موقع ويب" اليومية (تنسيق JSON، وفك ترميز JWT، و Base64، وترميز/فك ترميز URL، وتجزئة SHA). **Compress PDF** هي الثالثة — تقلص ملف PDF بإعادة ضغط صوره، على الجهاز بالكامل أيضا. تحمل الثلاث جميعا نص الشارة "Runs on your device — nothing is uploaded". هذه بداية فئة أدوات خصوصية تحل محل تسليم الملفات السرية إلى مواقع ذات غرض واحد.
 
@@ -444,7 +442,7 @@ lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H
 
 | المعلم | الموعد المستهدف | ماذا |
 |---|---|---|
-| **الأدوات الأولية** | ✅ منجز | QR Code، Quote Card، Email Signature، Day Brief، Code Canvas، Countdown Timer، Color Palette، Brand Lockup، Bag Video، Chart Creator، Filter: Duotone، Meeting Planner — غلاف الويب يعمل مباشرة |
+| **الأدوات الأولية** | ✅ منجز | QR Code، Quote Card، Email Signature، Code Canvas، Countdown Timer، Color Palette، Brand Lockup، Chart Creator، Filter: Duotone، Meeting Planner — غلاف الويب يعمل مباشرة |
 | **تحسين الأدوات الحالية** | منتصف 2026 ✅ منجز  | تطبيق قابل للتنزيل يعمل دون اتصال (Tauri)؛ وأدوات إضافية للموظفين والفعاليات؛ وخط أنابيب تصدير أغنى (استقرار تحويل النص إلى مسارات، والبيانات الوصفية، وتنسيقات إضافية — راجع `plans.md`) |
 | **فتح مصدر المحرك** | أواخر 2026 ✅ منجز  | يصبح المحرك والأغلفة والمخططات والوثائق عامة — لا الأدوات/الأصول الموسومة بالعلامة التجارية |
 | **النقل من جهاز إلى جهاز** | ✅ منجز | حزمة `lolly-backup` قابلة للنقل تحمل الملف الشخصي والجلسات المحفوظة والصور المرفوعة والتفضيلات بين أي تثبيتين — دون اتصال أو معه، دون حساب. مغلف متوافق مع المستقبل ومدقق السلامة (المواصفة: `docs/data-transfer.md`) |

@@ -48,7 +48,7 @@ Hindi ka nagsisimula sa blangkong pahina. Binubuksan ng Lolly ang design work at
 
 ### Mga open-source na design file
 
-Ang natapos na trabaho sa **Figma, Penpot, Illustrator, InDesign, o kahit anong SVG app** ay hindi na kailangang manatiling naka-lock sa app na ginamit mo sa pagguhit nito. Buksan ang **Layout Studio**, i-click ang **Import a design**, at magbubukas ang file bilang isang *living layout* - hindi isang flattened na larawan. Ang bawat layer ay nagiging isang editable na box: nananatiling maaaring i-retype ang text, nananatiling shapes ang mga shape, napupunta sa library mo ang mga larawan, at napapanatili nang tapat ang mga kumplikadong vector art. Dumarating na ito naka-conform na sa iyong mga brand face at alituntunin sa kulay.
+Ang natapos na trabaho sa **Figma, Penpot, Illustrator, InDesign, o kahit anong SVG app** ay hindi na kailangang manatiling naka-lock sa app na ginamit mo sa pagguhit nito. Buksan ang **Design**, i-click ang **Import a design**, at magbubukas ang file bilang isang *living layout* - hindi isang flattened na larawan. Ang bawat layer ay nagiging isang editable na box: nananatiling maaaring i-retype ang text, nananatiling shapes ang mga shape, napupunta sa library mo ang mga larawan, at napapanatili nang tapat ang mga kumplikadong vector art. Dumarating na ito naka-conform na sa iyong mga brand face at alituntunin sa kulay.
 
 | Meron ka | Dalhin ito bilang |
 |---|---|
@@ -62,7 +62,7 @@ Ang buong import ay nangyayari **sa device mo** - pino-parse ang file sa browser
 
 ### Mula sa isang beses lang papuntang template
 
-Ito ang bunga: ang na-import na layout ay isa lamang ordinaryong Layout Studio session, kaya kapag **na-save** mo na ito, mananatili itong nasa isang URL. Kahit sino na may Lolly ay puwedeng buksan ang URL na iyon, palitan ang mga salita, palitan ang isang larawan, at i-render ang sarili nilang bersyon - walang kailangang design app, at nananatiling naka-lock ang mga naka-lock na bahagi. Ang isang beses-lang na design ay nagiging isang reusable na tool. Iyon ang buong ideya, nakakamit nang hindi na kailangang magsulat ng kahit isang linya ng configuration.
+Ito ang bunga: ang na-import na layout ay isa lamang ordinaryong Design session, kaya kapag **na-save** mo na ito, mananatili itong nasa isang URL. Kahit sino na may Lolly ay puwedeng buksan ang URL na iyon, palitan ang mga salita, palitan ang isang larawan, at i-render ang sarili nilang bersyon - walang kailangang design app, at nananatiling naka-lock ang mga naka-lock na bahagi. Ang isang beses-lang na design ay nagiging isang reusable na tool. Iyon ang buong ideya, nakakamit nang hindi na kailangang magsulat ng kahit isang linya ng configuration.
 
 ### Open data at open tools
 

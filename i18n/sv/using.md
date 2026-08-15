@@ -17,7 +17,7 @@ Startskärmen är **galleriet** - alla verktyg, grupperade efter kategori. Klick
 
 Varje verktyg är en delad vy: **kontroller** på ena sidan, en live **förhandsvisning** (arbetsytan) på den andra. Ändra en kontroll så uppdateras förhandsvisningen omedelbart.
 
-> Några verktyg (som **Layout Studio**) öppnas istället som en **fri arbetsyta** - en kromfri yta för direktmanipulation där du drar, ändrar storlek på, roterar och snäpper fast rutor med text, former och bilder, och dubbelklickar för att redigera text direkt på plats. Den exporteras via samma renderingsväg som alla andra verktyg, så arbetsytan *är* filen. Se [Den fria arbetsytan](#the-free-canvas-design) nedan.
+> Några verktyg (som **Design**) öppnas istället som en **fri arbetsyta** - en kromfri yta för direktmanipulation där du drar, ändrar storlek på, roterar och snäpper fast rutor med text, former och bilder, och dubbelklickar för att redigera text direkt på plats. Den exporteras via samma renderingsväg som alla andra verktyg, så arbetsytan *är* filen. Se [Den fria arbetsytan](#the-free-canvas-design) nedan.
 
 ## Arbetsytan (förhandsvisning)
 
@@ -40,9 +40,9 @@ Förhandsvisningen visar alltid exakt det som kommer att exporteras.
 
 En ändring av måtten återställer alltid vyn till en ren anpassning.
 
-### Den fria arbetsytan (Layout Studio)
+### Den fria arbetsytan (Design)
 
-![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Verktyg med fri arbetsyta lägger till en arbetsyta *runt* ritytan, som en formgivares arbetsbord:
 
@@ -144,7 +144,7 @@ Katalogens panel **Färgprover** är inte bara till för referens - klicka på e
 
 Panelen **Typsnitt** listar dina varumärkessnitt med en **nedladdning** bredvid varje, för att installera lokalt eller lämna till ett tryckeri. ([Brand Studio](/info/brand-studio.html)s flik Färger erbjuder samma palettnedladdning.)
 
-Tillgångar är den ena halvan av den öppna gör-det-själv-vägen; den andra är att **skapa dina egna verktyg** - den fria arbetsytan (Layout Studio, beskriven ovan) låter dig bygga ett visuellt, utan kod.
+Tillgångar är den ena halvan av den öppna gör-det-själv-vägen; den andra är att **skapa dina egna verktyg** - den fria arbetsytan (Design, beskriven ovan) låter dig bygga ett visuellt, utan kod.
 
 ## Ljud och tillgänglighet
 
@@ -176,7 +176,7 @@ Katalog­cachen ingår inte - den laddas ner igen av sig själv på den nya enhe
 
 ## Importera en design (Figma, Penpot, Illustrator, InDesign)
 
-Du kan ta in en befintlig design i Lolly och fortsätta arbeta med den: öppna **Layout Studio**, klicka på **Importera en design** i arbetsytans verktygsfält, och välj en Figma **.fig** eller SVG, en Penpot **.penpot**, en Illustrator **.ai** / **.pdf**, eller en InDesign **.idml**. Lager blir redigerbara rutor på den fria arbetsytan - text förblir omskrivningsbar, bilder hamnar i **Mina bilder**, och typsnitt och färger anpassar sig till varumärkets globala inställningar - sedan sparas, delas och renderas resultatet som vilken annan session som helst. Tolkningen sker helt och hållet på din enhet. Fullständiga detaljer: **[Importera en design](/info/design-import.html)**.
+Du kan ta in en befintlig design i Lolly och fortsätta arbeta med den: öppna **Design**, klicka på **Importera en design** i arbetsytans verktygsfält, och välj en Figma **.fig** eller SVG, en Penpot **.penpot**, en Illustrator **.ai** / **.pdf**, eller en InDesign **.idml**. Lager blir redigerbara rutor på den fria arbetsytan - text förblir omskrivningsbar, bilder hamnar i **Mina bilder**, och typsnitt och färger anpassar sig till varumärkets globala inställningar - sedan sparas, delas och renderas resultatet som vilken annan session som helst. Tolkningen sker helt och hållet på din enhet. Fullständiga detaljer: **[Importera en design](/info/design-import.html)**.
 
 ## Exportera
 

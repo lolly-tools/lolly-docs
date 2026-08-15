@@ -34,7 +34,7 @@ Ang resulta ay **kasaganaan**: may tamang signage ang bawat event, tumutugma sa 
 | Mobile at Desktop na App | ✓ | ✗ | ✗ | bahagya | **✓** |
 | Command Line at TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-Malinaw ang puwang: walang kahit ano sa kasalukuyang larangan ang nagbibigay sa atin ng constraints-first, offline-capable, mababang kasanayan, at internally accessible na output. May sarili pa ngang open canvas ang Lolly - ang **Layout Studio** - kung saan sumusunod ang mga kulay, type, at asset sa brand globals, kaya nananatiling constraints-first kahit ang malayang pag-aayos. Ang **hindi** nito ay isang unconstrained na design suite: patuloy na gagamitin ng mga designer ang Illustrator at Figma para sa bespoke na flagship work. Puwedeng buuin ang mga permutation gamit ang tool na ito.
+Malinaw ang puwang: walang kahit ano sa kasalukuyang larangan ang nagbibigay sa atin ng constraints-first, offline-capable, mababang kasanayan, at internally accessible na output. May sarili pa ngang open canvas ang Lolly - ang **Design** - kung saan sumusunod ang mga kulay, type, at asset sa brand globals, kaya nananatiling constraints-first kahit ang malayang pag-aayos. Ang **hindi** nito ay isang unconstrained na design suite: patuloy na gagamitin ng mga designer ang Illustrator at Figma para sa bespoke na flagship work. Puwedeng buuin ang mga permutation gamit ang tool na ito.
 
 **Gamitin ito para sa:** Mabilis na paggawa ng operationalised creative assets - event tile, name badge, lagda, CVE alert, QR code, social card, consignment label, structured report.
 
@@ -48,7 +48,7 @@ Malinaw ang puwang: walang kahit ano sa kasalukuyang larangan ang nagbibigay sa 
 
 Ang pinakamalinaw na paraan para matanto kung ano ang Lolly ay hindi isang listahan ng feature - ito ay ang pagsubaybay sa isang asset habang dumadaan ito sa kamay-kamay. Panoorin ang isang localized na campaign card habang gumagalaw ito sa buong organisasyon:
 
-1. **Ang creative ang nagtatakda ng mga patakaran.** Isang designer ang gumagawa ng base template sa Layout Studio, na hard-coded na ang typography at mga color variable ng brand. Hindi siya gumagawa ng isang card - ginagawa niya ang pundasyon nang *isang beses* para hindi na ito kailanganin pang i-localize nang manu-mano.
+1. **Ang creative ang nagtatakda ng mga patakaran.** Isang designer ang gumagawa ng base template sa Design, na hard-coded na ang typography at mga color variable ng brand. Hindi siya gumagawa ng isang card - ginagawa niya ang pundasyon nang *isang beses* para hindi na ito kailanganin pang i-localize nang manu-mano.
 2. **Ang developer ang nagpapalaki nito.** Ang parehong template ay naka-wire sa isang nightly pipeline sa pamamagitan ng CLI, kaya awtomatikong nabubuo ang bagong chart o bagong language variant - walang designer na magbubukas muli ng file.
 3. **Ginagamit lang ito ng producer.** Isang sales rep, offline sa eroplano, ang nagbubukas ng parehong tool at gumagawa ng perpektong on-brand na deck para sa isang client meeting. Walang kailangang design skill, walang network, walang hintayan.
 
@@ -173,7 +173,6 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── daily-card/        # "Day Brief" - panahon/oras/mapa (kinukuha ng isang inline template script)
 │   ├── code-canvas/
 │   ├── countdown-timer/
 │   ├── color-palette/
@@ -185,7 +184,6 @@ lolly/
 │   ├── strip-data/        # on-device na metadata strip - JPEG/PNG/SVG/PDF (file papasok → malinis na file palabas)
 │   ├── compress-pdf/      # on-device na PDF compressor - nire-recompress ang mga imahe (file papasok → mas maliit na file palabas)
 │   ├── brand-lockup/      # "Brand Lockup" - mga SUSE logo lockup; HarfBuzz text-to-path (wasm)
-│   ├── bag-video/
 │   ├── chart-creator/     # mga SVG chart mula sa structured data
 │   ├── filter-duotone/    # two-color na photo treatment
 │   ├── filter-halftone/   # photo → vector halftone dot grid
@@ -196,7 +194,7 @@ lolly/
 │   ├── event-name-badge/  # conference badge - kino-compose ang qr-code bilang SVG
 │   ├── wayfinding-signage/ # event signage; ang directions blocks ay auto-fit ang label text
 │   ├── text-helper/       # on-device na text workbench (format/decode/hash/de-identify)
-│   ├── design/     # "Layout Studio" - freeform WYSIWYG na editor canvas (render.layout: editor)
+│   ├── design/     # "Design" - freeform WYSIWYG na editor canvas (render.layout: editor)
 │   ├── multi-page-pdf/    # multi-page na PDF document - cover, flowing content blocks, back page
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid na diagram
 │   ├── logo-wall/         # maraming logo → auto-packed grid
@@ -274,15 +272,15 @@ Nakalista ang mga row ayon sa order ng gallery section. Ang `utility` section ay
 
 | Category | Mga naka-ship na tool | Nakaplano |
 |---|---|---|
-| `everyone` | QR Code Generator, Quote Card, Email Signature, Day Brief, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
-| `designer` | Brand Lockup, Bag Video, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
+| `everyone` | QR Code Generator, Quote Card, Email Signature, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
+| `designer` | Brand Lockup, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Layout Studio | Unit/format converters, higit pang on-device na privacy utilities |
+| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Design | Unit/format converters, higit pang on-device na privacy utilities |
 
-Naka-classify rin ang mga tool ayon sa status: `official` (brand approved, walang watermark), `community` (external contribution), `experimental` (watermarked na mga export). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap, at Diagram Builder ang kasalukuyang may `experimental` status; naka-ship ang Web Icon Maker at Layout Studio bilang mga `community` na tool.
+Naka-classify rin ang mga tool ayon sa status: `official` (brand approved, walang watermark), `community` (external contribution), `experimental` (watermarked na mga export). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap, at Diagram Builder ang kasalukuyang may `experimental` status; naka-ship ang Web Icon Maker at Design bilang mga `community` na tool.
 
-Ang **Layout Studio** ang unang tool na ginawa gamit ang `render.layout: "editor"` na free-canvas mode - isang chromeless, direct-manipulation na surface kung saan mo puwedeng i-drag, i-resize, i-rotate, at i-snap ang mga kahon ng text, shapes, at imahe, tapos i-export sa pamamagitan ng parehong render path tulad ng bawat ibang tool.
+Ang **Design** ang unang tool na ginawa gamit ang `render.layout: "editor"` na free-canvas mode - isang chromeless, direct-manipulation na surface kung saan mo puwedeng i-drag, i-resize, i-rotate, at i-snap ang mga kahon ng text, shapes, at imahe, tapos i-export sa pamamagitan ng parehong render path tulad ng bawat ibang tool.
 
 Ang **Strip Hidden Data** ang unang **on-device utility** (`privacy: "on-device"`): isang content-transform na tool na kumukuha ng file na *ibinigay mo mismo*, pinoproseso ito nang buo sa browser, at ibinabalik ang isang malinis na kopya - hindi kailanman ina-upload, hindi kailanman winawatermark, walang isinasapat na provenance. Ang **Text Helper** ang pangalawa - isang on-device na workbench para sa pang-araw-araw na paste-into-a-website na gawain (JSON format, JWT decode, Base64, URL encode/decode, SHA hashing). Ang **Compress PDF** ang pangatlo - pinapaliit nito ang isang PDF sa pamamagitan ng pag-recompress ng mga imahe nito, muli, nang buo on-device. Ang tatlo ay may badge text na "Runs on your device - nothing is uploaded". Ito ang simula ng isang privacy-utility category na pumapalit sa pagbibigay ng mga kumpidensyal na file sa mga single-purpose na website.
 
@@ -444,7 +442,7 @@ Ipinapatupad ang split - walang cross-imports mula sa `engine/` papunta sa `tool
 
 | Milestone | Target | Ano |
 |---|---|---|
-| **Initial tools** | ✅ Tapos na | QR Code, Quote Card, Email Signature, Day Brief, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Bag Video, Chart Creator, Filter: Duotone, Meeting Planner - live na ang web shell |
+| **Initial tools** | ✅ Tapos na | QR Code, Quote Card, Email Signature, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Chart Creator, Filter: Duotone, Meeting Planner - live na ang web shell |
 | **Enhance current tooling** | Mid 2026 ✅ Tapos na  | Downloadable at offline na app (Tauri); mga karagdagang tool para sa empleyado at event; mas mayamang export pipeline (text-to-path stability, metadata, extra formats - tingnan ang `plans.md`) |
 | **I-open-source ang engine** | Late 2026 ✅ Tapos na  | Nagiging public ang Engine, shells, schemas, docs - hindi ang branded na tools/assets |
 | **Paglilipat mula device papunta sa device** | ✅ Tapos na | Dinadala ng portable na `lolly-backup` bundle ang profile, mga naka-save na session, na-upload na mga imahe, at mga preference sa pagitan ng kahit anong dalawang install - offline man o online, walang account. Forward-compatible, integrity-checked na envelope (spec: `docs/data-transfer.md`) |

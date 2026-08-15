@@ -1,7 +1,7 @@
 {
   "eyebrow": "Přines to, co už máš hotové",
   "heading": "Tvoje návrhové soubory nejsou uvězněné",
-  "lead": "Hotová práce v **Figmě, Penpotu, Illustratoru, InDesignu nebo jakékoli SVG appce** nemusí zůstat uvězněná v jedné aplikaci. Otevři **Layout Studio**, klikni na **Importuj návrh** a soubor se otevře jako živý layout - ne jako zploštělý obrázek. Každá vrstva se stane editovatelným boxem, se kterým můžeš dál pracovat, kombinovat ho s nástroji a renderovat podle stejných pravidel.",
+  "lead": "Hotová práce v **Figmě, Penpotu, Illustratoru, InDesignu nebo jakékoli SVG appce** nemusí zůstat uvězněná v jedné aplikaci. Otevři **Design**, klikni na **Importuj návrh** a soubor se otevře jako živý layout - ne jako zploštělý obrázek. Každá vrstva se stane editovatelným boxem, se kterým můžeš dál pracovat, kombinovat ho s nástroji a renderovat podle stejných pravidel.",
   "sources": [
     { "mono": "Fig", "name": "Figma", "fmt": ".fig · SVG", "color": "#a259ff" },
     { "mono": "Pen", "name": "Penpot", "fmt": ".penpot", "color": "#12b886" },

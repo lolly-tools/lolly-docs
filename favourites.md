@@ -57,7 +57,7 @@ CSS-filled icon in every walker shot has the same hole. Until then, do NOT
 and a bitmap would trade a whole page of vector for one filled glyph.
 -->
 
-The same star works on a **utility** card in the Utilities view - Verify & Inspect, Colour Lab, Take a PDF apart, Spreadsheet and the rest. They aren't tools (no saved sessions, nothing to keep offline), but the strip treats a starred one exactly the same way: a tile of its own, icon-led since there's no preview to show.
+The same star works on a **utility** card in the Utilities view - Verify & Inspect, Colour Lab, Unpack, Spreadsheet and the rest. They aren't tools (no saved sessions, nothing to keep offline), but the strip treats a starred one exactly the same way: a tile of its own, icon-led since there's no preview to show.
 
 > Not the strip you're after? The **★ Favourites** pill in **Sort & filter** shows the same starred set as an ordinary filtered list in the grid below, instead of the drifting strip up top - useful if you'd rather scan a plain list.
 

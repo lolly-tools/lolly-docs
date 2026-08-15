@@ -48,7 +48,7 @@ Anda tidak memulai dari halaman kosong. Lolly membuka hasil kerja desain dan for
 
 ### Berkas desain sumber terbuka
 
-Karya jadi di **Figma, Penpot, Illustrator, InDesign, atau aplikasi SVG apa pun** tidak harus terkurung di aplikasi tempat Anda menggambarnya. Buka **Layout Studio**, klik **Impor sebuah desain**, dan berkas terbuka sebagai *tata letak hidup* - bukan gambar yang sudah diratakan. Setiap lapisan menjadi kotak yang bisa disunting: teks tetap bisa diketik ulang, bentuk tetap menjadi bentuk, gambar mendarat di pustaka Anda, dan karya vektor rumit dipertahankan dengan setia. Ia tiba sudah selaras dengan rupa huruf brand dan aturan warna Anda.
+Karya jadi di **Figma, Penpot, Illustrator, InDesign, atau aplikasi SVG apa pun** tidak harus terkurung di aplikasi tempat Anda menggambarnya. Buka **Design**, klik **Impor sebuah desain**, dan berkas terbuka sebagai *tata letak hidup* - bukan gambar yang sudah diratakan. Setiap lapisan menjadi kotak yang bisa disunting: teks tetap bisa diketik ulang, bentuk tetap menjadi bentuk, gambar mendarat di pustaka Anda, dan karya vektor rumit dipertahankan dengan setia. Ia tiba sudah selaras dengan rupa huruf brand dan aturan warna Anda.
 
 | Yang Anda punya | Bawa masuk sebagai |
 |---|---|
@@ -62,7 +62,7 @@ Seluruh proses impor terjadi **di perangkat Anda** - berkas diurai di browser An
 
 ### Dari sekali pakai menjadi template
 
-Inilah hasilnya: tata letak yang diimpor adalah sesi Layout Studio biasa, jadi begitu Anda **menyimpannya**, ia tinggal di sebuah URL. Siapa pun yang punya Lolly bisa membuka URL itu, mengubah kata-katanya, menukar sebuah gambar, dan me-render versinya sendiri - tanpa aplikasi desain, dan bagian yang terkunci tetap terkunci. Desain sekali pakai menjadi tool yang dapat dipakai ulang. Itulah keseluruhan idenya, dicapai tanpa menulis satu baris konfigurasi pun.
+Inilah hasilnya: tata letak yang diimpor adalah sesi Design biasa, jadi begitu Anda **menyimpannya**, ia tinggal di sebuah URL. Siapa pun yang punya Lolly bisa membuka URL itu, mengubah kata-katanya, menukar sebuah gambar, dan me-render versinya sendiri - tanpa aplikasi desain, dan bagian yang terkunci tetap terkunci. Desain sekali pakai menjadi tool yang dapat dipakai ulang. Itulah keseluruhan idenya, dicapai tanpa menulis satu baris konfigurasi pun.
 
 ### Data terbuka dan tool terbuka
 

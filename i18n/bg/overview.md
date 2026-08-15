@@ -36,7 +36,7 @@
 | Мобилни и десктоп приложения | ✓ | ✗ | ✗ | частично | **✓** |
 | Команден ред и TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-Празнината е ясна: нищо в съществуващия пейзаж не ни дава резултат, който е едновременно с ограничения на първо място, работещ офлайн, без изискване за умения и вътрешно достъпен. Lolly дори включва отворено платно — **Layout Studio** — където цветовете, типографията и активите се подчиняват на глобалните правила на бранда, така че свободното подреждане остава подчинено на ограниченията. Това, което Lolly **не** е, е дизайн пакет без ограничения: дизайнерите продължават да използват Illustrator и Figma за авторска флагманска работа. С този инструмент могат да се сглобяват пермутации.
+Празнината е ясна: нищо в съществуващия пейзаж не ни дава резултат, който е едновременно с ограничения на първо място, работещ офлайн, без изискване за умения и вътрешно достъпен. Lolly дори включва отворено платно — **Design** — където цветовете, типографията и активите се подчиняват на глобалните правила на бранда, така че свободното подреждане остава подчинено на ограниченията. Това, което Lolly **не** е, е дизайн пакет без ограничения: дизайнерите продължават да използват Illustrator и Figma за авторска флагманска работа. С този инструмент могат да се сглобяват пермутации.
 
 **Използвай го за:** Бързо генериране на операционализирани креативни активи — плочки за събития, баджове с имена, подписи, CVE известия, QR кодове, карти за социални мрежи, товарителни етикети, структурирани отчети.
 
@@ -50,7 +50,7 @@
 
 Най-ясният начин да видиш какво е Lolly не е списък с функции — а да проследиш един актив, докато минава от ръка на ръка. Гледай как една локализирана кампанийна карта се движи през организацията:
 
-1. **Креативният задава правилата.** Дизайнер създава базовия шаблон в Layout Studio и заковава в него типографията и цветовите променливи на бранда. Той не прави една карта — свършва основната работа *веднъж*, за да не му се налага никога повече да я локализира на ръка.
+1. **Креативният задава правилата.** Дизайнер създава базовия шаблон в Design и заковава в него типографията и цветовите променливи на бранда. Той не прави една карта — свършва основната работа *веднъж*, за да не му се налага никога повече да я локализира на ръка.
 2. **Разработчикът я мащабира.** Същият шаблон се включва в нощен конвейер през CLI, така че нова диаграма или нов езиков вариант се генерира автоматично — никой дизайнер не отваря файла отново.
 3. **Продуцентът просто я използва.** Търговски представител, офлайн в самолета, отваря същия инструмент и генерира перфектно съобразена с бранда презентация за среща с клиент. Без дизайнерски умения, без мрежа, без чакане.
 
@@ -175,7 +175,6 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── daily-card/        # "Day Brief" — weather/time/map (fetched by an inline template script)
 │   ├── code-canvas/
 │   ├── countdown-timer/
 │   ├── color-palette/
@@ -187,7 +186,6 @@ lolly/
 │   ├── strip-data/        # on-device metadata strip — JPEG/PNG/SVG/PDF (file in → clean file out)
 │   ├── compress-pdf/      # on-device PDF compressor — recompresses images (file in → smaller file out)
 │   ├── brand-lockup/      # "Brand Lockup" — SUSE logo lockups; HarfBuzz text-to-path (wasm)
-│   ├── bag-video/
 │   ├── chart-creator/     # SVG charts from structured data
 │   ├── filter-duotone/    # two-color photo treatment
 │   ├── filter-halftone/   # photo → vector halftone dot grid
@@ -198,7 +196,7 @@ lolly/
 │   ├── event-name-badge/  # conference badges — composes qr-code as an SVG
 │   ├── wayfinding-signage/ # event signage; directions blocks auto-fit label text
 │   ├── text-helper/       # on-device text workbench (format/decode/hash/de-identify)
-│   ├── design/     # "Layout Studio" — freeform WYSIWYG editor canvas (render.layout: editor)
+│   ├── design/     # "Design" — freeform WYSIWYG editor canvas (render.layout: editor)
 │   ├── multi-page-pdf/    # multi-page PDF document — cover, flowing content blocks, back page
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
 │   ├── logo-wall/         # many logos → auto-packed grid
@@ -275,15 +273,15 @@ lolly qr-code                # lists inputs for that tool
 
 | Категория | Пуснати инструменти | Планирани |
 |---|---|---|
-| `everyone` | QR Code Generator, Quote Card, Email Signature, Day Brief, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
-| `designer` | Brand Lockup, Bag Video, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
+| `everyone` | QR Code Generator, Quote Card, Email Signature, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
+| `designer` | Brand Lockup, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | — | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Layout Studio | Конвертори на единици/формати, още помощни инструменти за поверителност на устройството |
+| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Design | Конвертори на единици/формати, още помощни инструменти за поверителност на устройството |
 
-Инструментите се класифицират и по статус: `official` (одобрени от бранда, без воден знак), `community` (външен принос), `experimental` (експорти с воден знак). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap и Diagram Builder в момента носят статус `experimental`; Web Icon Maker и Layout Studio се доставят като `community` инструменти.
+Инструментите се класифицират и по статус: `official` (одобрени от бранда, без воден знак), `community` (външен принос), `experimental` (експорти с воден знак). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap и Diagram Builder в момента носят статус `experimental`; Web Icon Maker и Design се доставят като `community` инструменти.
 
-**Layout Studio** е първият инструмент, изграден върху режима на свободно платно `render.layout: "editor"` — повърхност без интерфейсен хром, с директна манипулация, където влачиш, преоразмеряваш, завърташ и прилепваш кутии с текст, форми и изображения, а после експортираш през същия път на рендиране като всеки друг инструмент.
+**Design** е първият инструмент, изграден върху режима на свободно платно `render.layout: "editor"` — повърхност без интерфейсен хром, с директна манипулация, където влачиш, преоразмеряваш, завърташ и прилепваш кутии с текст, форми и изображения, а после експортираш през същия път на рендиране като всеки друг инструмент.
 
 **Strip Hidden Data** е първият **помощен инструмент на устройството** (`privacy: "on-device"`): инструмент за трансформация на съдържание, който взема файл, предоставен от *теб*, обработва го изцяло в браузъра и връща чисто копие — никога не се качва, никога не получава воден знак, не се вгражда произход. **Text Helper** е вторият — работна маса на устройството за ежедневните задачи от типа „постави в някой сайт“ (JSON форматиране, JWT декодиране, Base64, URL кодиране/декодиране, SHA хеширане). **Compress PDF** е третият — свива PDF, като рекомпресира изображенията му, отново изцяло на устройството. И трите носят значката с текст „Работи на твоето устройство — нищо не се качва“. Това е началото на категория помощни инструменти за поверителност, която заменя предаването на поверителни файлове на еднофункционални уебсайтове.
 
@@ -407,7 +405,7 @@ Handlebars беше избран пред EJS съзнателно:
 ## Какво изрично избрахме да не правим
 
 - **Без EJS / без произволен JS в шаблоните.** XSS повърхността е нула. Логиката живее в `hooks.js`.
-- **Без задължителна CMS за активи.** Отделните потребители вкарват собствените си креативни файлове направо в каталога си в приложението (изгледът [Каталог](/info/using.html) и Brand Studio) и създават собствени инструменти, като запазват сесии в [Layout Studio](/info/using.html) — без сървър, без административна конзола. За *споделен, управляван* каталог организацията **може** да поддържа директорията с активи като git и да пропуска обновленията през преглед на PR — това е наличен модел на управление, а не изискване на приложението.
+- **Без задължителна CMS за активи.** Отделните потребители вкарват собствените си креативни файлове направо в каталога си в приложението (изгледът [Каталог](/info/using.html) и Brand Studio) и създават собствени инструменти, като запазват сесии в [Design](/info/using.html) — без сървър, без административна конзола. За *споделен, управляван* каталог организацията **може** да поддържа директорията с активи като git и да пропуска обновленията през преглед на PR — това е наличен модел на управление, а не изискване на приложението.
 - **Без принудителен RBAC.** Отвореното приложение е с публичен достъп по подразбиране; брандовият риск се управлява чрез тагове за зрялост + водни знаци. Организация, която иска по-строг контрол, наслагва собствена автентикация и описания по-горе преглеждан през git каталог.
 - **Без централна база данни.** Цялото потребителско състояние е на устройство. Интеграцията със SUSE ID е в пътната карта, но не е блокер за пускането.
 - **Без общ кодов път между инструменти и двигател.** Двигателят е с отворен код; `tools/` и `assets/` остават собственическо съдържание на SUSE в отделни хранилища. Разделението е наложено (без кръстосани импорти), за да остане границата чиста.
@@ -445,7 +443,7 @@ Handlebars беше избран пред EJS съзнателно:
 
 | Етап | Срок | Какво |
 |---|---|---|
-| **Първоначални инструменти** | ✅ Готово | QR Code, Quote Card, Email Signature, Day Brief, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Bag Video, Chart Creator, Filter: Duotone, Meeting Planner — уеб обвивката е на живо |
+| **Първоначални инструменти** | ✅ Готово | QR Code, Quote Card, Email Signature, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Chart Creator, Filter: Duotone, Meeting Planner — уеб обвивката е на живо |
 | **Подобряване на текущия инструментариум** | Средата на 2026 ✅ Готово  | Изтегляемо офлайн приложение (Tauri); допълнителни инструменти за служители и събития; по-богат конвейер за експорт (стабилност на текст-към-пътища, метаданни, допълнителни формати — виж `plans.md`) |
 | **Отваряне на кода на двигателя** | Края на 2026 ✅ Готово  | Двигателят, обвивките, схемите и документацията стават публични — не и брандираните инструменти/активи |
 | **Прехвърляне от устройство на устройство** | ✅ Готово | Преносим пакет `lolly-backup` пренася профил, запазени сесии, качени изображения и предпочитания между всеки две инсталации — офлайн или онлайн, без акаунт. Съвместим занапред, проверяван за цялост плик (спецификация: `docs/data-transfer.md`) |

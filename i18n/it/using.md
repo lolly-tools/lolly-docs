@@ -17,7 +17,7 @@ La schermata iniziale è la **galleria** - tutti gli strumenti, raggruppati per 
 
 Ogni strumento è una vista divisa: **controlli** da un lato, un'**anteprima** dal vivo (il canvas) dall'altro. Cambia un controllo qualsiasi e l'anteprima si aggiorna all'istante.
 
-> Alcuni strumenti (come **Layout Studio**) si aprono invece come **canvas libero** - una superficie priva di cornice, a manipolazione diretta, dove trascini, ridimensioni, ruoti e agganci riquadri di testo, forme e immagini, e fai doppio clic per modificare il testo sul posto. Esporta attraverso lo stesso percorso di rendering di ogni altro strumento, quindi il canvas *è* il file. Consulta [Il canvas libero](#the-free-canvas-design) più sotto.
+> Alcuni strumenti (come **Design**) si aprono invece come **canvas libero** - una superficie priva di cornice, a manipolazione diretta, dove trascini, ridimensioni, ruoti e agganci riquadri di testo, forme e immagini, e fai doppio clic per modificare il testo sul posto. Esporta attraverso lo stesso percorso di rendering di ogni altro strumento, quindi il canvas *è* il file. Consulta [Il canvas libero](#the-free-canvas-design) più sotto.
 
 ## Il canvas (anteprima)
 
@@ -40,9 +40,9 @@ L'anteprima mostra sempre esattamente ciò che verrà esportato.
 
 Un cambio di dimensione riporta sempre la vista a un adattamento pulito.
 
-### Il canvas libero (Layout Studio)
+### Il canvas libero (Design)
 
-![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Gli strumenti a canvas libero aggiungono una superficie di lavoro *intorno* all'area di disegno, come il tavolo di montaggio di un designer:
 
@@ -144,7 +144,7 @@ Il pannello **Campioni** del Catalogo non serve solo come riferimento - fai clic
 
 Il pannello **Font** elenca i caratteri del tuo brand con un **download** accanto a ciascuno, per installarli localmente o consegnarli a una tipografia. (La scheda Colori del [Brand Studio](/info/brand-studio.html) offre lo stesso download della palette.)
 
-Gli asset sono una metà del percorso aperto e fai-da-te; l'altra è **creare i tuoi strumenti** - il canvas libero (Layout Studio, descritto sopra) ti permette di costruirne uno visivamente, senza bisogno di scrivere codice.
+Gli asset sono una metà del percorso aperto e fai-da-te; l'altra è **creare i tuoi strumenti** - il canvas libero (Design, descritto sopra) ti permette di costruirne uno visivamente, senza bisogno di scrivere codice.
 
 ## Suoni e accessibilità
 
@@ -176,7 +176,7 @@ La cache del catalogo non è inclusa - si riscarica da sola sul nuovo dispositiv
 
 ## Importare un design (Figma, Penpot, Illustrator, InDesign)
 
-Puoi portare un design esistente in Lolly e continuare a lavorarci: apri **Layout Studio**, fai clic su **Importa un design** nella barra degli strumenti del canvas, e scegli un **.fig** o SVG di Figma, un **.penpot** di Penpot, un **.ai** / **.pdf** di Illustrator, o un **.idml** di InDesign. I livelli diventano riquadri modificabili sul canvas libero - il testo resta modificabile, le immagini finiscono in **Le mie immagini**, e la tipografia e i colori si conformano alle variabili globali di brand - poi il risultato si salva, si condivide e si renderizza come qualsiasi altra sessione. L'analisi avviene interamente sul tuo dispositivo. Dettagli completi: **[Importare un design](/info/design-import.html)**.
+Puoi portare un design esistente in Lolly e continuare a lavorarci: apri **Design**, fai clic su **Importa un design** nella barra degli strumenti del canvas, e scegli un **.fig** o SVG di Figma, un **.penpot** di Penpot, un **.ai** / **.pdf** di Illustrator, o un **.idml** di InDesign. I livelli diventano riquadri modificabili sul canvas libero - il testo resta modificabile, le immagini finiscono in **Le mie immagini**, e la tipografia e i colori si conformano alle variabili globali di brand - poi il risultato si salva, si condivide e si renderizza come qualsiasi altra sessione. L'analisi avviene interamente sul tuo dispositivo. Dettagli completi: **[Importare un design](/info/design-import.html)**.
 
 ## Esportare
 

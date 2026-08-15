@@ -17,7 +17,7 @@ Layar utama adalah **galeri** - setiap tool, dikelompokkan berdasarkan kategori.
 
 Setiap tool berupa tampilan terbagi: **kontrol** di satu sisi, **pratinjau** langsung (kanvas) di sisi lain. Ubah kontrol apa pun dan pratinjau diperbarui secara instan.
 
-> Beberapa tool (seperti **Layout Studio**) justru terbuka sebagai **kanvas bebas** - permukaan tanpa chrome dengan manipulasi langsung tempat Anda menyeret, mengubah ukuran, memutar, dan menjepret kotak teks, bentuk, dan gambar, serta klik ganda untuk menyunting teks di tempat. Ia mengekspor melalui jalur render yang sama dengan tool lainnya, jadi kanvas itu *adalah* berkasnya. Lihat [Kanvas bebas](#the-free-canvas-design) di bawah.
+> Beberapa tool (seperti **Design**) justru terbuka sebagai **kanvas bebas** - permukaan tanpa chrome dengan manipulasi langsung tempat Anda menyeret, mengubah ukuran, memutar, dan menjepret kotak teks, bentuk, dan gambar, serta klik ganda untuk menyunting teks di tempat. Ia mengekspor melalui jalur render yang sama dengan tool lainnya, jadi kanvas itu *adalah* berkasnya. Lihat [Kanvas bebas](#the-free-canvas-design) di bawah.
 
 ## Kanvas (pratinjau)
 
@@ -40,9 +40,9 @@ Pratinjau selalu menampilkan persis apa yang akan diekspor.
 
 Perubahan dimensi selalu menjepretkan tampilan kembali ke paskan yang rapi.
 
-### Kanvas bebas (Layout Studio)
+### Kanvas bebas (Design)
 
-![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Tool kanvas-bebas menambahkan permukaan kerja *di sekitar* artboard, seperti pasteboard seorang desainer:
 
@@ -144,7 +144,7 @@ Panel **Swatch** pada Katalog bukan sekadar untuk referensi - klik sebuah warna 
 
 Panel **Font** mencantumkan tipografi brand Anda dengan **unduh** di samping masing-masing, untuk dipasang secara lokal atau diserahkan ke percetakan. (Tab Warna pada [Brand Studio](/info/brand-studio.html) menawarkan unduhan palet yang sama.)
 
-Aset adalah separuh dari jalur terbuka, lakukan-sendiri; separuh lainnya adalah **membuat tool Anda sendiri** - kanvas bebas (Layout Studio, dijelaskan di atas) memungkinkan Anda membangunnya secara visual, tanpa perlu kode.
+Aset adalah separuh dari jalur terbuka, lakukan-sendiri; separuh lainnya adalah **membuat tool Anda sendiri** - kanvas bebas (Design, dijelaskan di atas) memungkinkan Anda membangunnya secara visual, tanpa perlu kode.
 
 ## Suara & aksesibilitas
 
@@ -176,7 +176,7 @@ Cache katalog tidak disertakan - ia mengunduh dirinya sendiri lagi di perangkat 
 
 ## Mengimpor desain (Figma, Penpot, Illustrator, InDesign)
 
-Anda dapat membawa desain yang sudah ada ke dalam Lolly dan terus mengerjakannya: buka **Layout Studio**, klik **Impor desain** di bilah alat kanvas, dan pilih Figma **.fig** atau SVG, Penpot **.penpot**, Illustrator **.ai** / **.pdf**, atau InDesign **.idml**. Lapisan menjadi kotak yang dapat disunting di kanvas bebas - teks tetap dapat diketik ulang, gambar mendarat di **Gambar saya**, dan tipografi serta warna menyesuaikan dengan global brand - lalu hasilnya disimpan, dibagikan, dan di-render seperti sesi lainnya. Penguraiannya terjadi sepenuhnya di perangkat Anda. Detail lengkap: **[Impor desain](/info/design-import.html)**.
+Anda dapat membawa desain yang sudah ada ke dalam Lolly dan terus mengerjakannya: buka **Design**, klik **Impor desain** di bilah alat kanvas, dan pilih Figma **.fig** atau SVG, Penpot **.penpot**, Illustrator **.ai** / **.pdf**, atau InDesign **.idml**. Lapisan menjadi kotak yang dapat disunting di kanvas bebas - teks tetap dapat diketik ulang, gambar mendarat di **Gambar saya**, dan tipografi serta warna menyesuaikan dengan global brand - lalu hasilnya disimpan, dibagikan, dan di-render seperti sesi lainnya. Penguraiannya terjadi sepenuhnya di perangkat Anda. Detail lengkap: **[Impor desain](/info/design-import.html)**.
 
 ## Mengekspor
 

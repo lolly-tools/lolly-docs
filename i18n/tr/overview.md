@@ -36,7 +36,7 @@ Sonuç **bolluk**tur: her etkinliğin doğru tabelası olur, her CVE uyarısı m
 | Mobil ve Masaüstü Uygulamaları | ✓ | ✗ | ✗ | kısmi | **✓** |
 | Komut Satırı ve TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-Boşluk açık: mevcut ortamda hiçbir şey bize kısıtlar-öncelikli, çevrimdışı çalışabilen, düşük beceri gerektiren, kurum içinde herkesin erişebildiği bir çıktı sunmuyor. Lolly, renklerin, tipografinin ve varlıkların marka geneliyle uyumlu kaldığı, böylece serbest düzenlemenin kısıtlar-öncelikli kalmasını sağlayan açık bir kanvas bile içeriyor - **Layout Studio**. Bunun **olmadığı** şey ise kısıtsız bir tasarım paketi: tasarımcılar özel amiral gemisi işler için Illustrator ve Figma kullanmaya devam ediyor. Bu araçla permütasyonlar bir araya getirilebilir.
+Boşluk açık: mevcut ortamda hiçbir şey bize kısıtlar-öncelikli, çevrimdışı çalışabilen, düşük beceri gerektiren, kurum içinde herkesin erişebildiği bir çıktı sunmuyor. Lolly, renklerin, tipografinin ve varlıkların marka geneliyle uyumlu kaldığı, böylece serbest düzenlemenin kısıtlar-öncelikli kalmasını sağlayan açık bir kanvas bile içeriyor - **Design**. Bunun **olmadığı** şey ise kısıtsız bir tasarım paketi: tasarımcılar özel amiral gemisi işler için Illustrator ve Figma kullanmaya devam ediyor. Bu araçla permütasyonlar bir araya getirilebilir.
 
 **Şunun için kullan:** Operasyonelleştirilmiş yaratıcı varlıkların hızlı üretimi - etkinlik kartları, yaka kartları, imzalar, CVE uyarıları, QR kodları, sosyal medya kartları, sevkiyat etiketleri, yapılandırılmış raporlar.
 
@@ -50,7 +50,7 @@ Boşluk açık: mevcut ortamda hiçbir şey bize kısıtlar-öncelikli, çevrimd
 
 Lolly'nin ne olduğunu görmenin en net yolu bir özellik listesi değil - tek bir varlığı elden ele geçerken izlemek. Yerelleştirilmiş tek bir kampanya kartının kurum içinde nasıl yol aldığına bak:
 
-1. **Yaratıcı kuralları koyar.** Bir tasarımcı temel şablonu Layout Studio'da yazar ve markanın tipografisini ve renk değişkenlerini sabit kodlar. Tek bir kart yapmıyor - temel işi *bir kez* yapıyor, böylece bir daha asla elle yerelleştirmek zorunda kalmıyor.
+1. **Yaratıcı kuralları koyar.** Bir tasarımcı temel şablonu Design'da yazar ve markanın tipografisini ve renk değişkenlerini sabit kodlar. Tek bir kart yapmıyor - temel işi *bir kez* yapıyor, böylece bir daha asla elle yerelleştirmek zorunda kalmıyor.
 2. **Geliştirici bunu ölçekler.** Aynı şablon, CLI üzerinden gecelik bir hatta bağlanır; böylece yeni bir grafik ya da yeni bir dil varyantı otomatik olarak üretilir - hiçbir tasarımcı dosyayı yeniden açmaz.
 3. **Üretici sadece kullanır.** Uçakta çevrimdışı olan bir satış temsilcisi aynı aracı açar ve müşteri görüşmesi için tamamen markaya uygun bir sunum üretir. Tasarım becerisi yok, ağ yok, bekleme yok.
 
@@ -175,7 +175,6 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── daily-card/        # "Day Brief" - weather/time/map (fetched by an inline template script)
 │   ├── code-canvas/
 │   ├── countdown-timer/
 │   ├── color-palette/
@@ -187,7 +186,6 @@ lolly/
 │   ├── strip-data/        # on-device metadata strip - JPEG/PNG/SVG/PDF (file in → clean file out)
 │   ├── compress-pdf/      # on-device PDF compressor - recompresses images (file in → smaller file out)
 │   ├── brand-lockup/      # "Brand Lockup" - SUSE logo lockups; HarfBuzz text-to-path (wasm)
-│   ├── bag-video/
 │   ├── chart-creator/     # SVG charts from structured data
 │   ├── filter-duotone/    # two-color photo treatment
 │   ├── filter-halftone/   # photo → vector halftone dot grid
@@ -198,7 +196,7 @@ lolly/
 │   ├── event-name-badge/  # conference badges - composes qr-code as an SVG
 │   ├── wayfinding-signage/ # event signage; directions blocks auto-fit label text
 │   ├── text-helper/       # on-device text workbench (format/decode/hash/de-identify)
-│   ├── design/     # "Layout Studio" - freeform WYSIWYG editor canvas (render.layout: editor)
+│   ├── design/     # "Design" - freeform WYSIWYG editor canvas (render.layout: editor)
 │   ├── multi-page-pdf/    # multi-page PDF document - cover, flowing content blocks, back page
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
 │   ├── logo-wall/         # many logos → auto-packed grid
@@ -406,7 +404,7 @@ Herhangi bir aracın oluşturduğunu birleştirin: bir **SVG** alt öğesi, ebev
 ## Kasıtlı olarak yapmamayı seçtiklerimiz
 
 - **Şablonlarda EJS yok / keyfi JS yok.** XSS yüzeyi sıfırdır. Mantık `hooks.js` içinde yaşar.
-- **Zorunlu bir varlık CMS'i yok.** Bireyler kendi kreatif dosyalarını uygulama içinden doğrudan kataloglarına aktarır ([Katalog](/info/using.html) görünümü ve Brand Studio) ve [Layout Studio](/info/using.html) oturumlarını kaydederek kendi araçlarını oluşturur - sunucu yok, yönetim konsolu yok. *Paylaşılan, denetimli* bir katalog isteyen bir kuruluş, varlık dizinini git olarak **yönetebilir** ve güncellemeleri PR incelemesinden geçirerek denetleyebilir - bu, uygulamanın bir gerekliliği değil, kullanılabilir bir yönetişim modelidir.
+- **Zorunlu bir varlık CMS'i yok.** Bireyler kendi kreatif dosyalarını uygulama içinden doğrudan kataloglarına aktarır ([Katalog](/info/using.html) görünümü ve Brand Studio) ve [Design](/info/using.html) oturumlarını kaydederek kendi araçlarını oluşturur - sunucu yok, yönetim konsolu yok. *Paylaşılan, denetimli* bir katalog isteyen bir kuruluş, varlık dizinini git olarak **yönetebilir** ve güncellemeleri PR incelemesinden geçirerek denetleyebilir - bu, uygulamanın bir gerekliliği değil, kullanılabilir bir yönetişim modelidir.
 - **Zorunlu RBAC yok.** Açık uygulama varsayılan olarak herkese açık erişimlidir; marka riski olgunluk etiketleri ve filigranlarla yönetilir. Daha sıkı kontrol isteyen bir kuruluş, kendi kimlik doğrulamasını ve yukarıdaki git ile incelenen katalogu üzerine katman olarak ekler.
 - **Merkezi bir veritabanı yok.** Tüm kullanıcı durumu cihaz başınadır. SUSE ID entegrasyonu yol haritasında yer alır ancak lansmanı engelleyen bir unsur değildir.
 - **Paylaşılan araç/motor kod yolu yok.** Motor açık kaynaktır; `tools/` ve `assets/` kendi depolarında SUSE'ye özel içerik olarak kalır. Bu ayrım zorunlu kılınmıştır (çapraz içe aktarma yoktur), böylece bölünme temiz kalır.
@@ -446,7 +444,7 @@ Bu ayrım zorunlu kılınmıştır - `engine/` içinden `tools/` veya `assets/`'
 
 | Kilometre Taşı | Hedef | Ne |
 |---|---|---|
-| **İlk araçlar** | ✅ Tamamlandı | QR Code, Quote Card, Email Signature, Day Brief, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Bag Video, Chart Creator, Filter: Duotone, Meeting Planner - web kabuğu canlı |
+| **İlk araçlar** | ✅ Tamamlandı | QR Code, Quote Card, Email Signature, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Chart Creator, Filter: Duotone, Meeting Planner - web kabuğu canlı |
 | **Mevcut araçları geliştir** | 2026 ortası ✅ Tamamlandı  | İndirilebilir çevrimdışı uygulama (Tauri); ek çalışan ve etkinlik araçları; daha zengin dışa aktarma hattı (metinden-yola kararlılığı, meta veri, ek formatlar - bkz. `plans.md`) |
 | **Motoru açık kaynak yap** | 2026 sonu ✅ Tamamlandı  | Motor, kabuklar, şemalar, dokümanlar herkese açık hale gelir - markalı araçlar/varlıklar değil |
 | **Cihazdan cihaza aktarım** | ✅ Tamamlandı | Taşınabilir `lolly-backup` paketi, profili, kaydedilmiş oturumları, yüklenen görselleri ve tercihleri herhangi iki kurulum arasında taşır - çevrimdışı veya çevrimiçi, hesap gerekmez. İleriye dönük uyumlu, bütünlüğü doğrulanan zarf (belirtim: `docs/data-transfer.md`) |

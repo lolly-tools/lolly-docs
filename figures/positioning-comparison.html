@@ -1,0 +1,245 @@
+<!--
+  Concept: the completeness-ring matrix. Each ring scores how completely a product
+  class ships a capability today (0/25/50/75/100), Lolly measured with the same
+  knife as everyone else - it wears the only red ring on the board, for maturity.
+  Band Contract: self-contained static panel, scoped under .cmp-fig, no script, no
+  motion, no network; every row's evidence opens with a native <details> so the
+  figure is complete with JS disabled. Words inside are content: a localized
+  variant is its own banked artifact.
+  Provenance: Authored with Claude (Anthropic), prompt-directed by Andy Fitzsimon
+  on 2026-08-15 from the shared research artifact "lolly-comparison"; scores
+  reflect an August 2026 review of shipped capabilities. The C2PA signature added
+  at bank time is this file's first provenance record.
+-->
+<div class="cmp-fig">
+  <p class="cmp-legend" aria-hidden="true">
+    <span class="cmp-key"><span class="cmp-mini" style="background:conic-gradient(#73BA25 0 100%,#2A4A41 0)"></span>Full 100</span>
+    <span class="cmp-key"><span class="cmp-mini" style="background:conic-gradient(#73BA25 0 75%,#2A4A41 0)"></span>Strong 75</span>
+    <span class="cmp-key"><span class="cmp-mini" style="background:conic-gradient(#D9A441 0 50%,#2A4A41 0)"></span>Partial 50</span>
+    <span class="cmp-key"><span class="cmp-mini" style="background:conic-gradient(#D96459 0 25%,#2A4A41 0)"></span>Weak 25</span>
+    <span class="cmp-key"><span class="cmp-mini" style="background:#2A4A41"></span>Absent 0</span>
+  </p>
+  <div class="cmp-scroller" role="region" aria-label="Capability comparison table" tabindex="0">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Capability</th>
+          <th scope="col" class="cmp-lolly">Lolly<span class="cmp-cls">constraint-first</span></th>
+          <th scope="col">Canva<span class="cmp-cls">open canvas</span></th>
+          <th scope="col">Adobe<span class="cmp-cls">desktop pro</span></th>
+          <th scope="col">Figma<span class="cmp-cls">online pro</span></th>
+          <th scope="col">Penpot<span class="cmp-cls">open design</span></th>
+          <th scope="col">Render APIs<span class="cmp-cls">Bannerbear<br>Placid<br>Creatomate</span></th>
+          <th scope="col">Brand DAM<span class="cmp-cls">Frontify<br>Bynder</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"><details><summary>Mass generation from data (CSV / API)</summary><span class="cmp-why">Lolly: batch grid + CLI, one file per row. Canva: Bulk Create + Autofill API - real, but Enterprise-gated, async, text/image fields only. Adobe: InDesign data merge and scripting. Figma: plugins only. Penpot: open API/MCP, not purpose-built. Render APIs: this is their entire product. DAM: Studio-style batch create and resize.</span></details></th>
+          <td class="cmp-lolly"><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 100%,#2A4A41 0)" role="img" aria-label="100 percent"><span>100</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#D9A441 0 50%,#2A4A41 0)" role="img" aria-label="50 percent"><span>50</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#D9A441 0 50%,#2A4A41 0)" role="img" aria-label="50 percent"><span>50</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#D96459 0 25%,#2A4A41 0)" role="img" aria-label="25 percent"><span>25</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#D9A441 0 50%,#2A4A41 0)" role="img" aria-label="50 percent"><span>50</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 100%,#2A4A41 0)" role="img" aria-label="100 percent"><span>100</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 75%,#2A4A41 0)" role="img" aria-label="75 percent"><span>75</span></span></td>
+        </tr>
+        <tr>
+          <th scope="row"><details><summary>Offline &amp; air-gap operation</summary><span class="cmp-why">Lolly: static deploy, no server in the render path, MDM/air-gap. Canva Offline (2026): existing designs only, per-device, limited window. Adobe: desktop apps run offline; licensing phones home. Figma: cached-file viewing and limited editing. Penpot: self-host on your infra behind a firewall (server required). Cloud APIs and DAM: none.</span></details></th>
+          <td class="cmp-lolly"><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 100%,#2A4A41 0)" role="img" aria-label="100 percent"><span>100</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#D96459 0 25%,#2A4A41 0)" role="img" aria-label="25 percent"><span>25</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 75%,#2A4A41 0)" role="img" aria-label="75 percent"><span>75</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#D96459 0 25%,#2A4A41 0)" role="img" aria-label="25 percent"><span>25</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 75%,#2A4A41 0)" role="img" aria-label="75 percent"><span>75</span></span></td>
+          <td><span class="cmp-ring cmp-zero" role="img" aria-label="0 percent"><span>0</span></span></td>
+          <td><span class="cmp-ring cmp-zero" role="img" aria-label="0 percent"><span>0</span></span></td>
+        </tr>
+        <tr>
+          <th scope="row"><details><summary>On-device rendering - data never leaves</summary><span class="cmp-why">Lolly: renders and converts in-browser or CLI, locally; zero upload. Adobe: local desktop rendering, but cloud services and telemetry in the suite. Figma: canvas renders locally, files live in Figma's cloud. Penpot: your server, not the user's device. Canva, render APIs, DAM: server-side by design.</span></details></th>
+          <td class="cmp-lolly"><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 100%,#2A4A41 0)" role="img" aria-label="100 percent"><span>100</span></span></td>
+          <td><span class="cmp-ring cmp-zero" role="img" aria-label="0 percent"><span>0</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 75%,#2A4A41 0)" role="img" aria-label="75 percent"><span>75</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#D96459 0 25%,#2A4A41 0)" role="img" aria-label="25 percent"><span>25</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 75%,#2A4A41 0)" role="img" aria-label="75 percent"><span>75</span></span></td>
+          <td><span class="cmp-ring cmp-zero" role="img" aria-label="0 percent"><span>0</span></span></td>
+          <td><span class="cmp-ring cmp-zero" role="img" aria-label="0 percent"><span>0</span></span></td>
+        </tr>
+        <tr>
+          <th scope="row"><details><summary>Hard brand constraints (structural)</summary><span class="cmp-why">Lolly: rules compiled into template code - off-brand output is impossible, not just discouraged. Canva: element locks - permission-based, admin-set; Canva AI does not yet respect Brand Controls. Render APIs: templates are structurally fixed (only declared fields vary) but no governance layer. DAM: locked templates with restrictions. Figma/Penpot: tokens and systems enforced by review, not runtime. Adobe: libraries, little enforcement.</span></details></th>
+          <td class="cmp-lolly"><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 100%,#2A4A41 0)" role="img" aria-label="100 percent"><span>100</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 75%,#2A4A41 0)" role="img" aria-label="75 percent"><span>75</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#D96459 0 25%,#2A4A41 0)" role="img" aria-label="25 percent"><span>25</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#D9A441 0 50%,#2A4A41 0)" role="img" aria-label="50 percent"><span>50</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#D9A441 0 50%,#2A4A41 0)" role="img" aria-label="50 percent"><span>50</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 75%,#2A4A41 0)" role="img" aria-label="75 percent"><span>75</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 75%,#2A4A41 0)" role="img" aria-label="75 percent"><span>75</span></span></td>
+        </tr>
+        <tr>
+          <th scope="row"><details><summary>C2PA provenance, signed at creation</summary><span class="cmp-why">Adobe: the broadest shipped implementation (Photoshop, Lightroom, Premiere, Firefly) - cloud/account-anchored signing. Lolly: on-device key generation, offline signing, plus pixel imprint - architecturally stronger, but pilot-stage and unaudited, so 75 not 100. No evidence of C2PA writing in Canva, Figma, Penpot, render APIs or DAM as of Aug 2026.</span></details></th>
+          <td class="cmp-lolly"><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 75%,#2A4A41 0)" role="img" aria-label="75 percent"><span>75</span></span></td>
+          <td><span class="cmp-ring cmp-zero" role="img" aria-label="0 percent"><span>0</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 100%,#2A4A41 0)" role="img" aria-label="100 percent"><span>100</span></span></td>
+          <td><span class="cmp-ring cmp-zero" role="img" aria-label="0 percent"><span>0</span></span></td>
+          <td><span class="cmp-ring cmp-zero" role="img" aria-label="0 percent"><span>0</span></span></td>
+          <td><span class="cmp-ring cmp-zero" role="img" aria-label="0 percent"><span>0</span></span></td>
+          <td><span class="cmp-ring cmp-zero" role="img" aria-label="0 percent"><span>0</span></span></td>
+        </tr>
+        <tr>
+          <th scope="row"><details><summary>CLI, pipeline &amp; AI-agent automation</summary><span class="cmp-why">Lolly: CLI, TUI, MCP server, URL mode - one engine everywhere. Render APIs: API-first, webhooks, integrations. Penpot: open API, plugins, official MCP server. Canva: Connect API - Enterprise-gated, async, rate-limited. Adobe: UXP/ExtendScript plus Firefly APIs. Figma: strong REST/plugin API, no render pipeline. DAM: asset-management APIs.</span></details></th>
+          <td class="cmp-lolly"><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 100%,#2A4A41 0)" role="img" aria-label="100 percent"><span>100</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#D9A441 0 50%,#2A4A41 0)" role="img" aria-label="50 percent"><span>50</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#D9A441 0 50%,#2A4A41 0)" role="img" aria-label="50 percent"><span>50</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#D9A441 0 50%,#2A4A41 0)" role="img" aria-label="50 percent"><span>50</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 75%,#2A4A41 0)" role="img" aria-label="75 percent"><span>75</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 100%,#2A4A41 0)" role="img" aria-label="100 percent"><span>100</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#D9A441 0 50%,#2A4A41 0)" role="img" aria-label="50 percent"><span>50</span></span></td>
+        </tr>
+        <tr>
+          <th scope="row"><details><summary>No design skill required</summary><span class="cmp-why">Canva: the category benchmark for ease. DAM: fill a locked template. Lolly: fill in fields - but someone technical must author tools first (the cold-start cost sits with builders, not producers). Render APIs: swaps design skill for developer skill. Adobe, Figma, Penpot: professional tools.</span></details></th>
+          <td class="cmp-lolly"><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 100%,#2A4A41 0)" role="img" aria-label="100 percent"><span>100</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 100%,#2A4A41 0)" role="img" aria-label="100 percent"><span>100</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#D96459 0 25%,#2A4A41 0)" role="img" aria-label="25 percent"><span>25</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#D96459 0 25%,#2A4A41 0)" role="img" aria-label="25 percent"><span>25</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#D96459 0 25%,#2A4A41 0)" role="img" aria-label="25 percent"><span>25</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#D9A441 0 50%,#2A4A41 0)" role="img" aria-label="50 percent"><span>50</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 100%,#2A4A41 0)" role="img" aria-label="100 percent"><span>100</span></span></td>
+        </tr>
+        <tr>
+          <th scope="row"><details><summary>Open source, self-hosted, no lock-in</summary><span class="cmp-why">Penpot: MPL-licensed, 51k+ stars, self-host via Docker/K8s - fully verifiable today. Lolly: open licence and OBS builds claimed, but the repo was not publicly indexed at review - 75 until it is checkable. Everything else is proprietary SaaS or proprietary desktop.</span></details></th>
+          <td class="cmp-lolly"><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 75%,#2A4A41 0)" role="img" aria-label="75 percent"><span>75</span></span></td>
+          <td><span class="cmp-ring cmp-zero" role="img" aria-label="0 percent"><span>0</span></span></td>
+          <td><span class="cmp-ring cmp-zero" role="img" aria-label="0 percent"><span>0</span></span></td>
+          <td><span class="cmp-ring cmp-zero" role="img" aria-label="0 percent"><span>0</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 100%,#2A4A41 0)" role="img" aria-label="100 percent"><span>100</span></span></td>
+          <td><span class="cmp-ring cmp-zero" role="img" aria-label="0 percent"><span>0</span></span></td>
+          <td><span class="cmp-ring cmp-zero" role="img" aria-label="0 percent"><span>0</span></span></td>
+        </tr>
+        <tr>
+          <th scope="row"><details><summary>Cost at production scale</summary><span class="cmp-why">Lolly and Penpot: zero marginal cost on your own hardware. Render APIs: metered - roughly $0.005&#8211;0.049 per image, credits often expiring monthly. Canva/Figma: per-seat; Canva's automation needs Enterprise. Adobe: premium per-seat suite. DAM: sales-led enterprise quotes, MAU or seat models.</span></details></th>
+          <td class="cmp-lolly"><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 100%,#2A4A41 0)" role="img" aria-label="100 percent"><span>100</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#D9A441 0 50%,#2A4A41 0)" role="img" aria-label="50 percent"><span>50</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#D96459 0 25%,#2A4A41 0)" role="img" aria-label="25 percent"><span>25</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#D9A441 0 50%,#2A4A41 0)" role="img" aria-label="50 percent"><span>50</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 100%,#2A4A41 0)" role="img" aria-label="100 percent"><span>100</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#D96459 0 25%,#2A4A41 0)" role="img" aria-label="25 percent"><span>25</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#D96459 0 25%,#2A4A41 0)" role="img" aria-label="25 percent"><span>25</span></span></td>
+        </tr>
+        <tr>
+          <th scope="row"><details><summary>Production maturity &amp; track record</summary><span class="cmp-why">Canva, Adobe, Figma, Bynder/Frontify: a decade-plus at massive scale. Render APIs: years in production pipelines. Penpot: shipping, large community, younger at enterprise scale. Lolly: closed pilot, security hardening underway, no public case studies - every green ring above is a promise until this one turns green.</span></details></th>
+          <td class="cmp-lolly"><span class="cmp-ring" style="background:conic-gradient(#D96459 0 25%,#2A4A41 0)" role="img" aria-label="25 percent"><span>25</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 100%,#2A4A41 0)" role="img" aria-label="100 percent"><span>100</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 100%,#2A4A41 0)" role="img" aria-label="100 percent"><span>100</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 100%,#2A4A41 0)" role="img" aria-label="100 percent"><span>100</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 75%,#2A4A41 0)" role="img" aria-label="75 percent"><span>75</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 75%,#2A4A41 0)" role="img" aria-label="75 percent"><span>75</span></span></td>
+          <td><span class="cmp-ring" style="background:conic-gradient(#73BA25 0 100%,#2A4A41 0)" role="img" aria-label="100 percent"><span>100</span></span></td>
+        </tr>
+        <tr class="cmp-total">
+          <th scope="row">Overall completeness<span class="cmp-cls">unweighted mean - weight rows for your own context</span></th>
+          <td class="cmp-lolly"><span class="cmp-ring cmp-ring-lg" style="background:conic-gradient(#73BA25 0 88%,#2A4A41 0)" role="img" aria-label="88 percent"><span>88</span></span></td>
+          <td><span class="cmp-ring cmp-ring-lg" style="background:conic-gradient(#D9A441 0 45%,#2A4A41 0)" role="img" aria-label="45 percent"><span>45</span></span></td>
+          <td><span class="cmp-ring cmp-ring-lg" style="background:conic-gradient(#D9A441 0 53%,#2A4A41 0)" role="img" aria-label="53 percent"><span>53</span></span></td>
+          <td><span class="cmp-ring cmp-ring-lg" style="background:conic-gradient(#D96459 0 35%,#2A4A41 0)" role="img" aria-label="35 percent"><span>35</span></span></td>
+          <td><span class="cmp-ring cmp-ring-lg" style="background:conic-gradient(#D9A441 0 63%,#2A4A41 0)" role="img" aria-label="63 percent"><span>63</span></span></td>
+          <td><span class="cmp-ring cmp-ring-lg" style="background:conic-gradient(#D9A441 0 43%,#2A4A41 0)" role="img" aria-label="43 percent"><span>43</span></span></td>
+          <td><span class="cmp-ring cmp-ring-lg" style="background:conic-gradient(#D9A441 0 43%,#2A4A41 0)" role="img" aria-label="43 percent"><span>43</span></span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<style>
+  .cmp-fig {
+    background: #0E3630;
+    border: 1px solid #17453B;
+    border-radius: 14px;
+    padding: 14px;
+    color: #DCEBDF;
+  }
+  .cmp-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    align-items: center;
+    margin: 2px 2px 12px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.72rem;
+    color: #8FAA98;
+  }
+  .cmp-key { display: inline-flex; align-items: center; gap: 7px; }
+  .cmp-mini { width: 16px; height: 16px; border-radius: 50%; position: relative; flex: none; }
+  .cmp-mini::after { content: ""; position: absolute; inset: 4px; border-radius: 50%; background: #0E3630; }
+  .cmp-scroller { overflow-x: auto; }
+  .cmp-fig table { border-collapse: collapse; min-width: 880px; width: 100%; }
+  .cmp-fig thead th {
+    padding: 10px 8px;
+    border-bottom: 1px solid #17453B;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: #fff;
+    text-align: center;
+    vertical-align: bottom;
+    line-height: 1.2;
+  }
+  .cmp-fig thead th:first-child { text-align: left; min-width: 220px; }
+  .cmp-fig thead th.cmp-lolly { color: #73BA25; }
+  .cmp-cls {
+    display: block;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-weight: 400;
+    font-size: 0.6rem;
+    letter-spacing: 0.06em;
+    color: #8FAA98;
+    margin-top: 4px;
+    text-transform: uppercase;
+  }
+  .cmp-fig tbody th {
+    text-align: left;
+    padding: 10px 12px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: #DCEBDF;
+    border-bottom: 1px solid #17453B;
+  }
+  .cmp-fig tbody th details summary {
+    cursor: pointer;
+    list-style-position: outside;
+    color: #DCEBDF;
+  }
+  .cmp-why {
+    display: block;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.68rem;
+    font-weight: 400;
+    color: #8FAA98;
+    margin-top: 6px;
+    line-height: 1.6;
+    max-width: 30em;
+  }
+  .cmp-fig tbody td {
+    border-bottom: 1px solid #17453B;
+    padding: 8px 6px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .cmp-fig td.cmp-lolly, .cmp-fig thead th.cmp-lolly { background: rgba(115, 186, 37, 0.06); }
+  .cmp-total th, .cmp-total td { border-bottom: none; background: rgba(255, 255, 255, 0.02); }
+  .cmp-total th { font-weight: 600; font-size: 0.88rem; color: #fff; }
+  .cmp-ring { width: 38px; height: 38px; border-radius: 50%; position: relative; margin: 0 auto; display: block; background: #2A4A41; }
+  .cmp-ring::after { content: ""; position: absolute; inset: 9px; border-radius: 50%; background: #0E3630; }
+  .cmp-ring > span {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.56rem;
+    color: #DCEBDF;
+  }
+  .cmp-ring-lg { width: 48px; height: 48px; }
+  .cmp-ring-lg::after { inset: 11px; }
+  .cmp-ring-lg > span { font-size: 0.62rem; }
+</style>
+<!-- -----BEGIN C2PA MANIFEST----- data:application/c2pa;base64,AAAJ9Gp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAAAnOanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46dXVpZDoyYmI5ODYyZC00Zjc0LTQzZGQtOTczYi01N2FmYTAzNjQ1YTgAAAAES2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAATdqdW1iAAAAKWp1bWRjYm9yABEAEIAAAKoAOJtxA2MycGEuYWN0aW9ucy52MgAAAAEGY2JvcqFnYWN0aW9uc4GlZmFjdGlvbmxjMnBhLmNyZWF0ZWRxZGlnaXRhbFNvdXJjZVR5cGV4Rmh0dHA6Ly9jdi5pcHRjLm9yZy9uZXdzY29kZXMvZGlnaXRhbHNvdXJjZXR5cGUvdHJhaW5lZEFsZ29yaXRobWljTWVkaWFrZGVzY3JpcHRpb254M0F1dGhvcmVkIHdpdGggQ2xhdWRlIGZvciB0aGUgTG9sbHkgZG9jcyBmaWd1cmUgYmFua21zb2Z0d2FyZUFnZW50omRuYW1lZUxvbGx5Z3ZlcnNpb25nMS4xMjYuMGR3aGVudDIwMjYtMDgtMTVUMTc6NDA6NDZaAAAArGp1bWIAAAAoanVtZGNib3IAEQAQgAAAqgA4m3EDYzJwYS5oYXNoLmRhdGEAAAAAfGNib3KlamV4Y2x1c2lvbnOBomVzdGFydBlWjGZsZW5ndGgZDapkbmFtZW5qdW1iZiBtYW5pZmVzdGNhbGdmc2hhMjU2ZGhhc2hYINY4JCPAp1FNq/PLhYA1e3fWo8DKIXRmTPUriddd7XCYY3BhZEgAAAAAAAAAAAAAAPBqdW1iAAAALGp1bWRjYm9yABEAEIAAAKoAOJtxA3Rvb2xzLmxvbGx5LmV4cG9ydAAAAAC8Y2Jvcqlnc3VyZmFjZWRkb2NzZmVuZ2luZW1ub2RlIHYyNC4xOS4wYm9zZmRhcndpbmZmb3JtYXRtaHRtbC1mcmFnbWVudGR0b29sdnBvc2l0aW9uaW5nLWNvbXBhcmlzb25kZGF0ZXgYMjAyNi0wOC0xNVQxNzo0MDo0Ni41MzFaaGFydGlmYWN0ZmZpZ3VyZWlnZW5lcmF0b3JmQ2xhdWRla21vZGVsVmVuZG9yaUFudGhyb3BpYwAAAI1qdW1iAAAAJ2p1bWRqc29uABEAEIAAAKoAOJtxA2Nhd2cubWV0YWRhdGEAAAAAXmpzb257IkBjb250ZXh0Ijp7ImRjIjoiaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8ifSwiZGM6Y3JlYXRvciI6WyJBbmR5IEZpdHpzaW1vbiJdfQAAALpqdW1iAAAALGp1bWRjYm9yABEAEIAAAKoAOJtxA2MycGEuYWktZGlzY2xvc3VyZQAAAACGY2JvcqRpbW9kZWxUeXBlcGMycGEudHlwZXMubW9kZWxpbW9kZWxOYW1lZkNsYXVkZW9tb2RlbElkZW50aWZpZXJuY2xhdWRlLWZhYmxlLTVuY29udGVudFByb2ZpbGWhc2h1bWFuT3ZlcnNpZ2h0TGV2ZWxtcHJvbXB0X2d1aWRlZAAAAtRqdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACpWNib3KmaGRjOnRpdGxldnBvc2l0aW9uaW5nLWNvbXBhcmlzb25qaW5zdGFuY2VJRHgtdXJuOnV1aWQ6MmNkZGRmZjEtZWE3MC00NjQyLWIzM2ItNzNiNWY1NzRmMzkwdGNsYWltX2dlbmVyYXRvcl9pbmZvo2RuYW1lZUxvbGx5Z3ZlcnNpb25nMS4xMjYuMGtzcGVjVmVyc2lvbmUyLjQuMHJjcmVhdGVkX2Fzc2VydGlvbnOFomN1cmx4KnNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuYWN0aW9ucy52MmRoYXNoWCBr1Z3fPQ6j2bJ6B4YsuAdYhuUDRKN4dVLJG9emM15YWKJjdXJseClzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmhhc2guZGF0YWRoYXNoWCBjk9kcFEydQyyzeVUKPmJZKqSekBQNBLbvZF28dtPhbqJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy90b29scy5sb2xseS5leHBvcnRkaGFzaFggACUMeAGnyRV8J5AlVpRKVanPyLss4yADySy+90fhhl6iY3VybHgoc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvY2F3Zy5tZXRhZGF0YWRoYXNoWCDuJiUol/9ndNv6gbMRLa4CPvJcm24MrBQ3oMM0RtpuhKJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFpLWRpc2Nsb3N1cmVkaGFzaFgg3GH4kYTLQb477dNvw7YhgqL40ES7fzbuRT6x4wXJpnZpc2lnbmF0dXJleBlzZWxmI2p1bWJmPWMycGEuc2lnbmF0dXJlY2FsZ2ZzaGEyNTYAAAJganVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAAAIwY2JvctKEWQHfogEmGCGBWQHWMIIB0jCCAXmgAwIBAgIJcMsjrSU+wwwXMAoGCCqGSM49BAMCMDUxDjAMBgNVBAoMBUxvbGx5MSMwIQYDVQQDDBpMb2xseSBPbi1EZXZpY2UgQ3JlZGVudGlhbDAeFw0yNjA4MTUxNzM5NDZaFw0zNjA4MTIxNzQwNDZaMDUxDjAMBgNVBAoMBUxvbGx5MSMwIQYDVQQDDBpMb2xseSBPbi1EZXZpY2UgQ3JlZGVudGlhbDBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABPbz2NAfJjd3BmDV22wXZ0QQyW4xB8isrLuZIFQZVYcDhVcjW+O13s2JI6uKZ9WgVGPLZFkqGhPsOyb+7PQ+e96jcjBwMAkGA1UdEwQCMAAwDgYDVR0PAQH/BAQDAgeAMBMGA1UdJQQMMAoGCCsGAQUFBwMEMB0GA1UdDgQWBBSdv6p0a7qMUovJLve5352bmeSR5zAfBgNVHSMEGDAWgBSdv6p0a7qMUovJLve5352bmeSR5zAKBggqhkjOPQQDAgNHADBEAiAfjh1yowUc08J2EOLIXEbbFdkM8OwMM1jPcP7FEEiy3AIgVtoSefM4til+O6yzK74PMZ8QBKWZ0oD61k+F0By14Oug9lhAHktV4QS/jTQucKJvDr2mBHtsFHNAglgmB5+F9qiRKI4I70uNeznOUNsP9BoapYrAnGaKtrtX9mQ6erZiNpzRgg== -----END C2PA MANIFEST----- -->

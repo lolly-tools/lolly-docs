@@ -17,7 +17,7 @@ Ecranul de start este **galeria** - fiecare instrument, grupat pe categorii. Dă
 
 Fiecare instrument este o vedere împărțită: **controale** pe o parte, o **previzualizare** live (canvas-ul) pe cealaltă. Schimbă orice control și previzualizarea se actualizează instant.
 
-> Câteva instrumente (precum **Layout Studio**) se deschid în schimb ca un **canvas liber** - o suprafață fără chrome, cu manipulare directă, în care tragi, redimensionezi, rotești și aliniezi (snap) casete de text, forme și imagini, iar dublu-click editează textul pe loc. Exportă prin același traseu de randare ca orice alt instrument, deci canvas-ul *este* fișierul. Vezi [Canvas-ul liber](#the-free-canvas-design) mai jos.
+> Câteva instrumente (precum **Design**) se deschid în schimb ca un **canvas liber** - o suprafață fără chrome, cu manipulare directă, în care tragi, redimensionezi, rotești și aliniezi (snap) casete de text, forme și imagini, iar dublu-click editează textul pe loc. Exportă prin același traseu de randare ca orice alt instrument, deci canvas-ul *este* fișierul. Vezi [Canvas-ul liber](#the-free-canvas-design) mai jos.
 
 ## Canvas-ul (previzualizarea)
 
@@ -40,9 +40,9 @@ Previzualizarea arată întotdeauna exact ce se va exporta.
 
 O schimbare de dimensiune readuce întotdeauna vederea la o încadrare curată.
 
-### Canvas-ul liber (Layout Studio)
+### Canvas-ul liber (Design)
 
-![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Instrumentele cu canvas liber adaugă o suprafață de lucru *în jurul* planșei, ca o masă de lucru de designer:
 
@@ -144,7 +144,7 @@ Panoul **Swatches** al Catalogului nu e doar pentru referință - dă click pe o
 
 Panoul **Fonts** listează fonturile tale de brand cu un buton de **download** lângă fiecare, pentru a le instala local sau a le da unei tipografii. (Tab-ul Culori din [Brand Studio](/info/brand-studio.html) oferă aceeași descărcare de paletă.)
 
-Resursele sunt jumătate din calea deschisă, de tip do-it-yourself; cealaltă este **crearea propriilor instrumente** - canvas-ul liber (Layout Studio, descris mai sus) îți permite să construiești unul vizual, fără cod.
+Resursele sunt jumătate din calea deschisă, de tip do-it-yourself; cealaltă este **crearea propriilor instrumente** - canvas-ul liber (Design, descris mai sus) îți permite să construiești unul vizual, fără cod.
 
 ## Sunet și accesibilitate
 
@@ -176,7 +176,7 @@ Cache-ul de catalog nu este inclus - se re-descarcă singur pe noul dispozitiv. 
 
 ## Importarea unui design (Figma, Penpot, Illustrator, InDesign)
 
-Poți aduce un design existent în Lolly și poți continua să lucrezi la el: deschide **Layout Studio**, dă click pe **Import a design** în bara de instrumente a canvas-ului, și alege un Figma **.fig** sau SVG, un Penpot **.penpot**, un Illustrator **.ai** / **.pdf**, sau un InDesign **.idml**. Straturile devin casete editabile pe canvas-ul liber - textul rămâne re-tastabil, imaginile ajung în **My images**, iar tipografia și culorile se conformează cu valorile globale de brand - apoi rezultatul se salvează, se distribuie și se randează ca orice altă sesiune. Parsarea se întâmplă în întregime pe dispozitivul tău. Detalii complete: **[Import a design](/info/design-import.html)**.
+Poți aduce un design existent în Lolly și poți continua să lucrezi la el: deschide **Design**, dă click pe **Import a design** în bara de instrumente a canvas-ului, și alege un Figma **.fig** sau SVG, un Penpot **.penpot**, un Illustrator **.ai** / **.pdf**, sau un InDesign **.idml**. Straturile devin casete editabile pe canvas-ul liber - textul rămâne re-tastabil, imaginile ajung în **My images**, iar tipografia și culorile se conformează cu valorile globale de brand - apoi rezultatul se salvează, se distribuie și se randează ca orice altă sesiune. Parsarea se întâmplă în întregime pe dispozitivul tău. Detalii complete: **[Import a design](/info/design-import.html)**.
 
 ## Exportul
 

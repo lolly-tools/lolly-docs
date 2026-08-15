@@ -56,7 +56,7 @@ Lolly draws the same line. Explore probabilistically: a model, a designer, a rou
 | Mobile and Desktop Apps | ✓ | ✗ | ✗ | partial | **✓** |
 | Command Line & TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-The gap is clear: nothing in the existing landscape gives us constraints-first, offline-capable, low-skill, internally accessible output. Lolly even includes an open canvas - **Layout Studio** - where colours, type and assets conform to the brand globals, so free arrangement stays constraints-first. What it is **not** is an unconstrained design suite: designers continue to use Illustrator and Figma for bespoke flagship work. Permutations can be assembled with this tool.
+The gap is clear: nothing in the existing landscape gives us constraints-first, offline-capable, low-skill, internally accessible output. Lolly even includes an open canvas - **Design** - where colours, type and assets conform to the brand globals, so free arrangement stays constraints-first. What it is **not** is an unconstrained design suite: designers continue to use Illustrator and Figma for bespoke flagship work. Permutations can be assembled with this tool.
 
 ![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=aud-gallery-landscape)
 
@@ -70,7 +70,7 @@ The gap is clear: nothing in the existing landscape gives us constraints-first, 
 
 The clearest way to see what Lolly is isn't a feature list - it's to follow a single asset as it passes from hand to hand. Watch one localized campaign card move through the organisation:
 
-1. **The creative sets the rules.** A designer authors the base template in Layout Studio, hard-coding the brand's typography and colour variables. They're not making one card - they're doing the foundational work *once* so they never have to hand-localize it again.
+1. **The creative sets the rules.** A designer authors the base template in the Design tool, hard-coding the brand's typography and colour variables. They're not making one card - they're doing the foundational work *once* so they never have to hand-localize it again.
 2. **The developer scales it.** That same template is wired into a nightly pipeline through the CLI, so a fresh chart or a new language variant is generated automatically - no designer re-opens the file.
 3. **The producer just uses it.** A sales rep, offline on a plane, opens the same tool and generates a perfectly on-brand deck for a client meeting. No design skill, no network, no wait.
 
@@ -204,7 +204,6 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── daily-card/        # "Day Brief" - weather/time/map (fetched by an inline template script)
 │   ├── code-canvas/
 │   ├── countdown-timer/
 │   ├── color-palette/
@@ -216,7 +215,6 @@ lolly/
 │   ├── strip-data/        # on-device metadata strip - JPEG/PNG/SVG/PDF (file in → clean file out)
 │   ├── compress-pdf/      # on-device PDF compressor - recompresses images (file in → smaller file out)
 │   ├── brand-lockup/      # "Brand Lockup" - SUSE logo lockups; HarfBuzz text-to-path (wasm)
-│   ├── bag-video/
 │   ├── chart-creator/     # SVG charts from structured data
 │   ├── filter/            # photo effects in one tool - halftone/scanline/posterize/voronoi (vector), duotone/pixel-stretch/imperfections (raster)
 │   ├── meeting-planner/   # global timezone meeting scheduler
@@ -225,7 +223,7 @@ lolly/
 │   ├── event-name-badge/  # conference badges - composes qr-code as an SVG
 │   ├── wayfinding-signage/ # event signage; directions blocks auto-fit label text
 │   ├── text-helper/       # on-device text workbench (format/decode/hash/de-identify)
-│   ├── design/     # "Layout Studio" - freeform WYSIWYG editor canvas (render.layout: editor)
+│   ├── design/     # "Design" - freeform WYSIWYG editor canvas (render.layout: editor)
 │   ├── multi-page-pdf/    # multi-page PDF document - cover, flowing content blocks, back page
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
 │   ├── logo-wall/         # many logos → auto-packed grid
@@ -297,8 +295,8 @@ Rows are listed in gallery section order. The `utility` section always renders *
 
 | Category | Examples | Planned |
 |---|---|---|
-| `everyone` | QR Code Generator, Quote Card, Email Signature, Day Brief, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
-| `designer` | Brand Lockup, Layout Studio, Chart Creator, D3 Chart Studio, Slides, Bitmap Studio, Layers, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
+| `designer` | Brand Lockup, Design, Chart Creator, D3 Chart Studio, Slides, Bitmap Studio, Layers, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
 | `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Unit/format converters, more on-device privacy utilities |
@@ -307,7 +305,7 @@ Those cells are **examples, not inventories**. Which tools exist is a property o
 
 Tools are also classified by status: `official` (brand approved, no watermark), `community` (external contribution), `experimental` (watermarked exports). Most of the library is `official`; the newer studios and the capture tools tend to sit at `community` or `experimental` while they settle. Every surface shows the badge, so a reader knows what they are picking up before they open it - and, like the category cells above, the per-status membership moves too fast to enumerate here. Read it off the gallery or the generated index.
 
-**Layout Studio** is the first tool built on the `render.layout: "editor"` free-canvas mode - a chromeless, direct-manipulation surface where you drag, resize, rotate and snap boxes of text, shapes and images, then export through the same render path as every other tool.
+**Design** is the first tool built on the `render.layout: "editor"` free-canvas mode - a chromeless, direct-manipulation surface where you drag, resize, rotate and snap boxes of text, shapes and images, then export through the same render path as every other tool.
 
 **Strip Hidden Data** is the first **on-device utility** (`privacy: "on-device"`): a content-transform tool that takes a file *you* supply, processes it entirely in the browser, and hands back a clean copy - never uploaded, never watermarked, no provenance stamped. **Text Helper** is the second - an on-device workbench for everyday paste-into-a-website jobs (JSON format, JWT decode, Base64, URL encode/decode, SHA hashing). **Compress PDF** is the third - it shrinks a PDF by recompressing its images, again entirely on-device. The marker and its badge text "Runs on your device - nothing is uploaded" now cover the whole transform set: Strip Hidden Data, Text Helper, Compress PDF, **Convert Image** (HEIC/TIFF/AVIF → WebP/JPG/PNG), **Convert Font**, **Redact** (destroy regions of an image, SVG or PDF), **Prompt to Image**, and **Rebrand a Deck** (re-theme a `.pptx` in place) where the profile mounts it. This is a privacy-utility category that replaces handing confidential files to single-purpose websites.
 
@@ -486,7 +484,7 @@ The split is enforced - there are no cross-imports from `engine/` to `tools/` or
 
 | Milestone | Target | What |
 |---|---|---|
-| **Initial tools** | ✅ Done | QR Code, Quote Card, Email Signature, Day Brief, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Bag Video, Chart Creator, Filter: Duotone, Meeting Planner - web shell live |
+| **Initial tools** | ✅ Done | QR Code, Quote Card, Email Signature, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Chart Creator, Filter: Duotone, Meeting Planner - web shell live |
 | **Enhance current tooling** | Mid 2026 ✅ Done  | Downloadable offline app (Tauri); additional employee and event tools; richer export pipeline (text-to-path stability, metadata, extra formats - see `plans.md`) |
 | **Open source the engine** | Late 2026 ✅ Done  | Engine, shells, schemas, docs go public - not the branded tools/assets |
 | **Device-to-device transfer** | ✅ Done | Portable `lolly-backup` bundle carries profile, saved sessions, uploaded images and prefs between any two installs - offline or online, no account. Forward-compatible, integrity-checked envelope (spec: `docs/data-transfer.md`) |

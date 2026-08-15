@@ -6,7 +6,7 @@ Onde esta plataforma se encaixa no panorama mais amplo de ferramentas criativas,
 
 ## Panorama
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
+![Design's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
 
 | Capacidade | Canva (Canvas aberto) | Portais de marca (Templating de DAM) | Illustrator (Pro desktop) | Figma / Penpot (Pro online) | **Lolly (Baseado em restrições)** |
 |---|---|---|---|---|---|
@@ -22,7 +22,7 @@ Onde esta plataforma se encaixa no panorama mais amplo de ferramentas criativas,
 | Aplicativos móveis e para desktop | ✓ | ✗ | ✗ | parcial | **✓** |
 | Linha de comando e TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-A forma da lacuna é clara: nada no panorama existente nos oferece um resultado generativo baseado em restrições, capaz de funcionar offline, de baixa exigência de habilidade e acessível internamente. O Lolly agora oferece seu próprio canvas aberto - o **Layout Studio**, um canvas livre de manipulação direta - mas com uma diferença decisiva em relação à coluna do Canva: as cores, a tipografia e os recursos colocados nele seguem os globais de marca, então mesmo o arranjo livre permanece baseado em restrições. O que o Lolly ainda **não** é é uma suíte de design irrestrita; os designers continuarão a usar o Illustrator e o Figma para trabalhos sob medida - e quando esse trabalho precisar se tornar um recurso governado e reproduzível, o [Importar um design](/info/design-import.html) do Layout Studio traz o arquivo finalizado do Figma/Illustrator/Penpot para o canvas como caixas editáveis e conformadas à marca.
+A forma da lacuna é clara: nada no panorama existente nos oferece um resultado generativo baseado em restrições, capaz de funcionar offline, de baixa exigência de habilidade e acessível internamente. O Lolly agora oferece seu próprio canvas aberto - o **Design**, um canvas livre de manipulação direta - mas com uma diferença decisiva em relação à coluna do Canva: as cores, a tipografia e os recursos colocados nele seguem os globais de marca, então mesmo o arranjo livre permanece baseado em restrições. O que o Lolly ainda **não** é é uma suíte de design irrestrita; os designers continuarão a usar o Illustrator e o Figma para trabalhos sob medida - e quando esse trabalho precisar se tornar um recurso governado e reproduzível, o [Importar um design](/info/design-import.html) do Design traz o arquivo finalizado do Figma/Illustrator/Penpot para o canvas como caixas editáveis e conformadas à marca.
 
 ## Use para
 
@@ -31,8 +31,8 @@ A forma da lacuna é clara: nada no panorama existente nos oferece um resultado 
 O Deck Studio é uma boa medida do teto aqui: uma apresentação inteira declarada como dados, montada ao vivo no canvas e exportada como um PowerPoint nativo e editável.
 
 - Geração rápida de recursos criativos operacionalizados (banners de eventos, crachás, assinaturas, alertas)
-- Arranjo livre no canvas aberto (Layout Studio) quando as peças - cores, tipografia, ícones, imagens - precisam permanecer conformadas aos globais de marca
-- Trazer um design finalizado do Figma, Illustrator, InDesign ou Penpot (o recurso Importar um design do Layout Studio) para que possa ser editado, governado e renderizado novamente de forma determinística em todos os formatos do Lolly
+- Arranjo livre no canvas aberto (Design) quando as peças - cores, tipografia, ícones, imagens - precisam permanecer conformadas aos globais de marca
+- Trazer um design finalizado do Figma, Illustrator, InDesign ou Penpot (o recurso Importar um design do Design) para que possa ser editado, governado e renderizado novamente de forma determinística em todos os formatos do Lolly
 - Fluxos um-para-muitos do tipo "preencha três campos, receba o recurso finalizado" - incluindo execuções em lote a partir de uma planilha/CSV na grade de lote `/pro` (cole ou importe linhas, um recurso finalizado por linha, baixe como zip)
 - Resultados de marca recorrentes e sempre ativos
 - Situações em que o controle central da expressão de marca importa mais do que a flexibilidade expressiva

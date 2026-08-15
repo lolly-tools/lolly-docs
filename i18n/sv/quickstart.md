@@ -48,7 +48,7 @@ Du börjar inte på ett tomt blad. Lolly öppnar designarbetet och de öppna for
 
 ### Designfiler med öppen källkod
 
-Färdigt arbete i **Figma, Penpot, Illustrator, InDesign eller vilken SVG-app som helst** behöver inte förbli inlåst i appen du ritade det i. Öppna **Layout Studio**, klicka på **Importera en design**, och filen öppnas som en *levande layout* - inte en plattgjord bild. Varje lager blir en redigerbar ruta: text förblir omskrivningsbar, former förblir former, bilder hamnar i ditt bibliotek och komplex vektorgrafik bevaras troget. Den anländer redan anpassad till dina varumärkestypsnitt och färgregler.
+Färdigt arbete i **Figma, Penpot, Illustrator, InDesign eller vilken SVG-app som helst** behöver inte förbli inlåst i appen du ritade det i. Öppna **Design**, klicka på **Importera en design**, och filen öppnas som en *levande layout* - inte en plattgjord bild. Varje lager blir en redigerbar ruta: text förblir omskrivningsbar, former förblir former, bilder hamnar i ditt bibliotek och komplex vektorgrafik bevaras troget. Den anländer redan anpassad till dina varumärkestypsnitt och färgregler.
 
 | Du har | Ta in det som |
 |---|---|
@@ -62,7 +62,7 @@ Hela importen sker **på din enhet** - filen tolkas i din webbläsare och inget 
 
 ### Från engångsjobb till mall
 
-Här är vinsten: en importerad layout är en vanlig Layout Studio-session, så när du **sparar** den lever den på en URL. Vem som helst med Lolly kan öppna den URL:en, ändra texten, byta ut en bild och rendera sin egen version - ingen designapp behövs, och de låsta delarna förblir låsta. En engångsdesign blir ett återanvändbart verktyg. Det är hela idén, uppnådd utan att skriva en enda rad konfiguration.
+Här är vinsten: en importerad layout är en vanlig Design-session, så när du **sparar** den lever den på en URL. Vem som helst med Lolly kan öppna den URL:en, ändra texten, byta ut en bild och rendera sin egen version - ingen designapp behövs, och de låsta delarna förblir låsta. En engångsdesign blir ett återanvändbart verktyg. Det är hela idén, uppnådd utan att skriva en enda rad konfiguration.
 
 ### Öppen data och öppna verktyg
 

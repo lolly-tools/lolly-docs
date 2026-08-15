@@ -48,7 +48,7 @@ Du starter ikke på et blankt ark. Lolly åpner designarbeidet og de åpne forma
 
 ### Designfiler med åpen kildekode
 
-Ferdig arbeid i **Figma, Penpot, Illustrator, InDesign, eller en hvilken som helst SVG-app** trenger ikke forbli låst inne i appen du tegnet det i. Åpne **Layout Studio**, klikk **Importer en design**, og filen åpnes som en *levende layout* - ikke et flatt bilde. Hvert lag blir en redigerbar boks: tekst forblir omskrivbar, former forblir former, bilder havner i biblioteket ditt, og kompleks vektorgrafikk bevares trofast. Den ankommer allerede tilpasset merkevarens skrifttyper og fargeregler.
+Ferdig arbeid i **Figma, Penpot, Illustrator, InDesign, eller en hvilken som helst SVG-app** trenger ikke forbli låst inne i appen du tegnet det i. Åpne **Design**, klikk **Importer en design**, og filen åpnes som en *levende layout* - ikke et flatt bilde. Hvert lag blir en redigerbar boks: tekst forblir omskrivbar, former forblir former, bilder havner i biblioteket ditt, og kompleks vektorgrafikk bevares trofast. Den ankommer allerede tilpasset merkevarens skrifttyper og fargeregler.
 
 | Du har | Ta det inn som |
 |---|---|
@@ -62,7 +62,7 @@ Hele importen skjer **på enheten din** - filen tolkes i nettleseren din, og ing
 
 ### Fra engangsjobb til mal
 
-Her er gevinsten: en importert layout er en vanlig Layout Studio-økt, så så snart du **lagrer** den, lever den på en URL. Alle med Lolly kan åpne den URL-en, endre teksten, bytte ut et bilde, og rendere sin egen versjon - ingen designapp nødvendig, og de låste delene forblir låst. En engangsdesign blir et gjenbrukbart verktøy. Det er hele ideen, oppnådd uten å skrive en eneste linje konfigurasjon.
+Her er gevinsten: en importert layout er en vanlig Design-økt, så så snart du **lagrer** den, lever den på en URL. Alle med Lolly kan åpne den URL-en, endre teksten, bytte ut et bilde, og rendere sin egen versjon - ingen designapp nødvendig, og de låste delene forblir låst. En engangsdesign blir et gjenbrukbart verktøy. Det er hele ideen, oppnådd uten å skrive en eneste linje konfigurasjon.
 
 ### Åpen data og åpne verktøy
 

@@ -48,7 +48,7 @@ Nie zaczynasz od pustej strony. Lolly otwiera pracę projektową i otwarte forma
 
 ### Pliki projektowe open source
 
-Gotowa praca w **Figmie, Penpot, Illustratorze, InDesignie lub dowolnej aplikacji SVG** nie musi pozostać zamknięta w programie, w którym ją narysowano. Otwórz **Layout Studio**, kliknij **Import a design**, a plik otworzy się jako *żywy układ* - a nie spłaszczony obrazek. Każda warstwa staje się edytowalnym boksem: tekst pozostaje możliwy do przepisania, kształty pozostają kształtami, obrazy trafiają do twojej biblioteki, a złożona grafika wektorowa jest wiernie zachowana. Dociera już dopasowana do krojów i reguł kolorów twojej marki.
+Gotowa praca w **Figmie, Penpot, Illustratorze, InDesignie lub dowolnej aplikacji SVG** nie musi pozostać zamknięta w programie, w którym ją narysowano. Otwórz **Design**, kliknij **Import a design**, a plik otworzy się jako *żywy układ* - a nie spłaszczony obrazek. Każda warstwa staje się edytowalnym boksem: tekst pozostaje możliwy do przepisania, kształty pozostają kształtami, obrazy trafiają do twojej biblioteki, a złożona grafika wektorowa jest wiernie zachowana. Dociera już dopasowana do krojów i reguł kolorów twojej marki.
 
 | Masz | Wczytaj jako |
 |---|---|
@@ -62,7 +62,7 @@ Cały import odbywa się **na twoim urządzeniu** - plik jest parsowany w twojej
 
 ### Od jednorazowego projektu do szablonu
 
-Oto korzyść: zaimportowany układ to zwykła sesja Layout Studio, więc gdy go **zapiszesz**, żyje pod adresem URL. Każdy, kto ma Lolly, może otworzyć ten URL, zmienić słowa, podmienić obraz i wyrenderować własną wersję - bez aplikacji projektowej, a zablokowane części pozostają zablokowane. Jednorazowy projekt staje się reużywalnym narzędziem. To cała idea, osiągnięta bez pisania choćby jednej linijki konfiguracji.
+Oto korzyść: zaimportowany układ to zwykła sesja Design, więc gdy go **zapiszesz**, żyje pod adresem URL. Każdy, kto ma Lolly, może otworzyć ten URL, zmienić słowa, podmienić obraz i wyrenderować własną wersję - bez aplikacji projektowej, a zablokowane części pozostają zablokowane. Jednorazowy projekt staje się reużywalnym narzędziem. To cała idea, osiągnięta bez pisania choćby jednej linijki konfiguracji.
 
 ### Otwarte dane i otwarte narzędzia
 

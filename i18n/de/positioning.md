@@ -6,7 +6,7 @@ Wo diese Plattform in der breiteren Landschaft der Kreativ-Tools steht - und wo 
 
 ## Landscape
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
+![Design's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
 
 | Funktion | Canva (Offene Leinwand) | Marken-Portale (DAM-Vorlagen) | Illustrator (Desktop-Profi) | Figma / Penpot (Online-Profi) | **Lolly (regelbasiert)** |
 |---|---|---|---|---|---|
@@ -22,7 +22,7 @@ Wo diese Plattform in der breiteren Landschaft der Kreativ-Tools steht - und wo 
 | Mobile- und Desktop-Apps | ✓ | ✗ | ✗ | teilweise | **✓** |
 | Kommandozeile & TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-Die Form der Lücke ist eindeutig: Nichts in der bestehenden Landschaft bietet uns eine regelbasierte, offline-fähige, ohne Vorkenntnisse nutzbare, unternehmensintern zugängliche, generative Ausgabe. Lolly bringt jetzt eine eigene offene Leinwand mit - **Layout Studio**, eine freie Leinwand zur direkten Manipulation -, unterscheidet sich dabei aber entscheidend von der Canva-Spalte: Farben, Schriften und Assets, die darauf platziert werden, richten sich nach den globalen Markenvorgaben, sodass selbst freie Anordnung regelbasiert bleibt. Was Lolly weiterhin **nicht** ist, ist eine uneingeschränkte Design-Suite; Designerinnen und Designer werden für maßgeschneiderte Arbeiten weiterhin Illustrator und Figma nutzen - und wenn diese Arbeit zu einem kontrollierten, reproduzierbaren Asset werden muss, bringt [Import a design](/info/design-import.html) von Layout Studio die fertige Figma-/Illustrator-/Penpot-Datei als bearbeitbare, markenkonforme Boxen auf die Leinwand.
+Die Form der Lücke ist eindeutig: Nichts in der bestehenden Landschaft bietet uns eine regelbasierte, offline-fähige, ohne Vorkenntnisse nutzbare, unternehmensintern zugängliche, generative Ausgabe. Lolly bringt jetzt eine eigene offene Leinwand mit - **Design**, eine freie Leinwand zur direkten Manipulation -, unterscheidet sich dabei aber entscheidend von der Canva-Spalte: Farben, Schriften und Assets, die darauf platziert werden, richten sich nach den globalen Markenvorgaben, sodass selbst freie Anordnung regelbasiert bleibt. Was Lolly weiterhin **nicht** ist, ist eine uneingeschränkte Design-Suite; Designerinnen und Designer werden für maßgeschneiderte Arbeiten weiterhin Illustrator und Figma nutzen - und wenn diese Arbeit zu einem kontrollierten, reproduzierbaren Asset werden muss, bringt [Import a design](/info/design-import.html) von Design die fertige Figma-/Illustrator-/Penpot-Datei als bearbeitbare, markenkonforme Boxen auf die Leinwand.
 
 ## Wofür es sich eignet
 
@@ -31,8 +31,8 @@ Die Form der Lücke ist eindeutig: Nichts in der bestehenden Landschaft bietet u
 Deck Studio zeigt gut, wo hier die Obergrenze liegt: ein ganzes Foliendeck als Daten deklariert, live auf der Leinwand angeordnet und als natives, bearbeitbares PowerPoint exportiert.
 
 - Schnelle Erstellung operationalisierter Kreativ-Assets (Event-Kacheln, Badges, Signaturen, Warnhinweise)
-- Freie Anordnung auf der offenen Leinwand (Layout Studio), wenn die Bausteine - Farben, Schriften, Icons, Bilder - den globalen Markenvorgaben entsprechen müssen
-- Ein fertiges Figma-, Illustrator-, InDesign- oder Penpot-Design landen (über Layout Studios „Design importieren“), damit es bearbeitet, kontrolliert und deterministisch in jedem Lolly-Format neu gerendert werden kann
+- Freie Anordnung auf der offenen Leinwand (Design), wenn die Bausteine - Farben, Schriften, Icons, Bilder - den globalen Markenvorgaben entsprechen müssen
+- Ein fertiges Figma-, Illustrator-, InDesign- oder Penpot-Design landen (über Designs „Design importieren“), damit es bearbeitet, kontrolliert und deterministisch in jedem Lolly-Format neu gerendert werden kann
 - One-to-many-Abläufe nach dem Prinzip „drei Felder ausfüllen, fertiges Asset erhalten“ - einschließlich Massenausführungen aus einer Tabelle/CSV im `/pro`-Batch-Grid (Zeilen einfügen oder importieren, ein fertiges Asset pro Zeile, Download als ZIP)
 - Dauerhaft aktive, wiederkehrende, markengerechte Ausgaben
 - Fälle, in denen die zentrale Kontrolle über den Markenauftritt wichtiger ist als gestalterische Flexibilität

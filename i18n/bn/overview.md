@@ -36,7 +36,7 @@
 | মোবাইল ও ডেস্কটপ অ্যাপ | ✓ | ✗ | ✗ | আংশিক | **✓** |
 | কমান্ড লাইন ও TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-ফাঁকটি স্পষ্ট: বিদ্যমান পরিমণ্ডলে এমন কিছু নেই যা আমাদের কনস্ট্রেইন্ট-ফার্স্ট, অফলাইন-সক্ষম, কম-দক্ষতার, অভ্যন্তরীণভাবে অ্যাক্সেসযোগ্য আউটপুট দেয়। Lolly-তে এমনকি একটি ওপেন ক্যানভাসও আছে—**Layout Studio**—যেখানে রঙ, টাইপ এবং অ্যাসেট ব্র্যান্ড গ্লোবালের সঙ্গে সামঞ্জস্যপূর্ণ থাকে, ফলে অবাধ বিন্যাসও কনস্ট্রেইন্ট-ফার্স্ট থাকে। এটি যা **নয়** তা হলো একটি সীমাবদ্ধতাহীন ডিজাইন স্যুট: ডিজাইনাররা বেসপোক ফ্ল্যাগশিপ কাজের জন্য Illustrator ও Figma ব্যবহার করা অব্যাহত রাখেন। এই টুল দিয়ে নানা পারমুটেশন সাজানো যায়।
+ফাঁকটি স্পষ্ট: বিদ্যমান পরিমণ্ডলে এমন কিছু নেই যা আমাদের কনস্ট্রেইন্ট-ফার্স্ট, অফলাইন-সক্ষম, কম-দক্ষতার, অভ্যন্তরীণভাবে অ্যাক্সেসযোগ্য আউটপুট দেয়। Lolly-তে এমনকি একটি ওপেন ক্যানভাসও আছে—**Design**—যেখানে রঙ, টাইপ এবং অ্যাসেট ব্র্যান্ড গ্লোবালের সঙ্গে সামঞ্জস্যপূর্ণ থাকে, ফলে অবাধ বিন্যাসও কনস্ট্রেইন্ট-ফার্স্ট থাকে। এটি যা **নয়** তা হলো একটি সীমাবদ্ধতাহীন ডিজাইন স্যুট: ডিজাইনাররা বেসপোক ফ্ল্যাগশিপ কাজের জন্য Illustrator ও Figma ব্যবহার করা অব্যাহত রাখেন। এই টুল দিয়ে নানা পারমুটেশন সাজানো যায়।
 
 **যে কাজে ব্যবহার করবেন:** অপারেশনালাইজড ক্রিয়েটিভ অ্যাসেটের দ্রুত জেনারেশন—ইভেন্ট টাইল, নেম ব্যাজ, সিগনেচার, CVE অ্যালার্ট, QR কোড, সোশ্যাল কার্ড, কনসাইনমেন্ট লেবেল, স্ট্রাকচার্ড রিপোর্ট।
 
@@ -50,7 +50,7 @@
 
 Lolly আসলে কী, তা দেখার সবচেয়ে পরিষ্কার উপায় ফিচারের তালিকা নয় — বরং একটাই অ্যাসেট এক হাত থেকে আরেক হাতে যাওয়ার পথটা অনুসরণ করা। একটা লোকালাইজড ক্যাম্পেইন কার্ড প্রতিষ্ঠানের ভেতর দিয়ে কীভাবে চলে, দেখুন:
 
-1. **ক্রিয়েটিভ নিয়ম ঠিক করে দেয়।** একজন ডিজাইনার Layout Studio-তে বেস টেমপ্লেট লেখেন, ব্র্যান্ডের টাইপোগ্রাফি আর রঙের ভেরিয়েবল তার ভেতরে হার্ড-কোড করে দেন। তিনি একটা কার্ড বানাচ্ছেন না — ভিত্তির কাজটা *একবার* করছেন, যাতে আর কখনও হাতে লোকালাইজ করতে না হয়।
+1. **ক্রিয়েটিভ নিয়ম ঠিক করে দেয়।** একজন ডিজাইনার Design-তে বেস টেমপ্লেট লেখেন, ব্র্যান্ডের টাইপোগ্রাফি আর রঙের ভেরিয়েবল তার ভেতরে হার্ড-কোড করে দেন। তিনি একটা কার্ড বানাচ্ছেন না — ভিত্তির কাজটা *একবার* করছেন, যাতে আর কখনও হাতে লোকালাইজ করতে না হয়।
 2. **ডেভেলপার সেটাকে স্কেল করে।** সেই একই টেমপ্লেট CLI-র মাধ্যমে একটা নাইটলি পাইপলাইনে জুড়ে যায়, ফলে নতুন চার্ট বা নতুন ভাষার ভ্যারিয়েন্ট নিজে থেকেই তৈরি হয় — কোনো ডিজাইনার আর ফাইল খোলেন না।
 3. **নির্মাতা শুধু সেটা ব্যবহার করে।** প্লেনে অফলাইনে বসা একজন সেলস প্রতিনিধি একই টুল খুলে ক্লায়েন্ট মিটিংয়ের জন্য নিখুঁত অন-ব্র্যান্ড ডেক বানিয়ে ফেলেন। কোনো ডিজাইন দক্ষতা নয়, কোনো নেটওয়ার্ক নয়, কোনো অপেক্ষা নয়।
 
@@ -175,7 +175,6 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── daily-card/        # "Day Brief" — weather/time/map (fetched by an inline template script)
 │   ├── code-canvas/
 │   ├── countdown-timer/
 │   ├── color-palette/
@@ -187,7 +186,6 @@ lolly/
 │   ├── strip-data/        # on-device metadata strip — JPEG/PNG/SVG/PDF (file in → clean file out)
 │   ├── compress-pdf/      # on-device PDF compressor — recompresses images (file in → smaller file out)
 │   ├── brand-lockup/      # "Brand Lockup" — SUSE logo lockups; HarfBuzz text-to-path (wasm)
-│   ├── bag-video/
 │   ├── chart-creator/     # SVG charts from structured data
 │   ├── filter-duotone/    # two-color photo treatment
 │   ├── filter-halftone/   # photo → vector halftone dot grid
@@ -198,7 +196,7 @@ lolly/
 │   ├── event-name-badge/  # conference badges — composes qr-code as an SVG
 │   ├── wayfinding-signage/ # event signage; directions blocks auto-fit label text
 │   ├── text-helper/       # on-device text workbench (format/decode/hash/de-identify)
-│   ├── design/     # "Layout Studio" — freeform WYSIWYG editor canvas (render.layout: editor)
+│   ├── design/     # "Design" — freeform WYSIWYG editor canvas (render.layout: editor)
 │   ├── multi-page-pdf/    # multi-page PDF document — cover, flowing content blocks, back page
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
 │   ├── logo-wall/         # many logos → auto-packed grid
@@ -275,15 +273,15 @@ CLI-এর ইন্টারঅ্যাক্টিভ প্রতিরূ�
 
 | ক্যাটাগরি | শিপ করা টুল | পরিকল্পিত |
 |---|---|---|
-| `everyone` | QR Code Generator, Quote Card, Email Signature, Day Brief, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
-| `designer` | Brand Lockup, Bag Video, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
+| `everyone` | QR Code Generator, Quote Card, Email Signature, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
+| `designer` | Brand Lockup, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | — | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Layout Studio | Unit/format converters, more on-device privacy utilities |
+| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Design | Unit/format converters, more on-device privacy utilities |
 
-টুলগুলোকে স্ট্যাটাস অনুসারেও শ্রেণিবদ্ধ করা হয়: `official` (ব্র্যান্ড অনুমোদিত, কোনো ওয়াটারমার্ক নেই), `community` (বাহ্যিক অবদান), `experimental` (ওয়াটারমার্ক করা এক্সপোর্ট)। Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap এবং Diagram Builder বর্তমানে `experimental` স্ট্যাটাস বহন করে; Web Icon Maker এবং Layout Studio `community` টুল হিসেবে শিপ করা হয়।
+টুলগুলোকে স্ট্যাটাস অনুসারেও শ্রেণিবদ্ধ করা হয়: `official` (ব্র্যান্ড অনুমোদিত, কোনো ওয়াটারমার্ক নেই), `community` (বাহ্যিক অবদান), `experimental` (ওয়াটারমার্ক করা এক্সপোর্ট)। Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap এবং Diagram Builder বর্তমানে `experimental` স্ট্যাটাস বহন করে; Web Icon Maker এবং Design `community` টুল হিসেবে শিপ করা হয়।
 
-**Layout Studio** হলো `render.layout: "editor"` ফ্রি-ক্যানভাস মোডের উপর নির্মিত প্রথম টুল—একটি ক্রোমহীন, ডাইরেক্ট-ম্যানিপুলেশন সারফেস যেখানে আপনি টেক্সট, শেপ ও ছবির বক্স ড্র্যাগ, রিসাইজ, রোটেট ও স্ন্যাপ করেন, তারপর অন্য প্রতিটি টুলের মতো একই রেন্ডার পাথের মধ্য দিয়ে এক্সপোর্ট করেন।
+**Design** হলো `render.layout: "editor"` ফ্রি-ক্যানভাস মোডের উপর নির্মিত প্রথম টুল—একটি ক্রোমহীন, ডাইরেক্ট-ম্যানিপুলেশন সারফেস যেখানে আপনি টেক্সট, শেপ ও ছবির বক্স ড্র্যাগ, রিসাইজ, রোটেট ও স্ন্যাপ করেন, তারপর অন্য প্রতিটি টুলের মতো একই রেন্ডার পাথের মধ্য দিয়ে এক্সপোর্ট করেন।
 
 **Strip Hidden Data** হলো প্রথম **অন-ডিভাইস ইউটিলিটি** (`privacy: "on-device"`): একটি কনটেন্ট-ট্রান্সফর্ম টুল যা *আপনার* সরবরাহ করা একটি ফাইল নেয়, পুরোপুরি ব্রাউজারে প্রসেস করে এবং একটি পরিচ্ছন্ন কপি ফিরিয়ে দেয়—কখনো আপলোড হয় না, কখনো ওয়াটারমার্ক করা হয় না, কোনো প্রোভেন্যান্স স্ট্যাম্প করা হয় না। **Text Helper** হলো দ্বিতীয়টি—প্রতিদিনের পেস্ট-ইনটু-আ-ওয়েবসাইট কাজের জন্য একটি অন-ডিভাইস ওয়ার্কবেঞ্চ (JSON ফরম্যাট, JWT ডিকোড, Base64, URL এনকোড/ডিকোড, SHA হ্যাশিং)। **Compress PDF** হলো তৃতীয়টি—এটি একটি PDF-এর ছবিগুলো পুনরায় কম্প্রেস করে সেটিকে ছোট করে, আবারও পুরোপুরি অন-ডিভাইসে। তিনটিতেই ব্যাজ টেক্সট "Runs on your device — nothing is uploaded" থাকে। এটি একটি প্রাইভেসি-ইউটিলিটি ক্যাটাগরির সূচনা যা গোপনীয় ফাইলগুলোকে একক-উদ্দেশ্যের ওয়েবসাইটে হস্তান্তরের বিকল্প হিসেবে কাজ করে।
 
@@ -407,7 +405,7 @@ Slides টুলটা ওই দ্বিতীয় সারফেসের 
 ## আমরা সুস্পষ্টভাবে যা না করা বেছে নিয়েছি
 
 - **কোনো EJS নয় / টেমপ্লেটে কোনো ইচ্ছামতো JS নয়।** XSS সারফেস শূন্য। লজিক থাকে `hooks.js`-এ।
-- **কোনো বাধ্যতামূলক অ্যাসেট CMS নয়।** ব্যক্তিরা তাদের নিজের ক্রিয়েটিভ ফাইল অ্যাপের মধ্যেই সরাসরি তাদের ক্যাটালগে ইনজেস্ট করেন ([ক্যাটালগ](/info/using.html) ভিউ এবং Brand Studio) এবং [Layout Studio](/info/using.html) সেশন সেভ করে নিজের টুল তৈরি করেন—কোনো সার্ভার নেই, কোনো অ্যাডমিন কনসোল নেই। একটি *শেয়ার্ড, গভর্নড* ক্যাটালগের জন্য, একটি প্রতিষ্ঠান অ্যাসেট ডিরেক্টরিকে git হিসেবে ম্যানেজ করতে এবং PR রিভিউয়ের মাধ্যমে আপডেট গেট করতে **পারে**—এটি একটি উপলব্ধ গভর্ন্যান্স মডেল, অ্যাপের কোনো প্রয়োজনীয়তা নয়।
+- **কোনো বাধ্যতামূলক অ্যাসেট CMS নয়।** ব্যক্তিরা তাদের নিজের ক্রিয়েটিভ ফাইল অ্যাপের মধ্যেই সরাসরি তাদের ক্যাটালগে ইনজেস্ট করেন ([ক্যাটালগ](/info/using.html) ভিউ এবং Brand Studio) এবং [Design](/info/using.html) সেশন সেভ করে নিজের টুল তৈরি করেন—কোনো সার্ভার নেই, কোনো অ্যাডমিন কনসোল নেই। একটি *শেয়ার্ড, গভর্নড* ক্যাটালগের জন্য, একটি প্রতিষ্ঠান অ্যাসেট ডিরেক্টরিকে git হিসেবে ম্যানেজ করতে এবং PR রিভিউয়ের মাধ্যমে আপডেট গেট করতে **পারে**—এটি একটি উপলব্ধ গভর্ন্যান্স মডেল, অ্যাপের কোনো প্রয়োজনীয়তা নয়।
 - **কোনো বাধ্যতামূলক RBAC নয়।** ওপেন অ্যাপটি ডিফল্টভাবে পাবলিক-অ্যাক্সেস; ব্র্যান্ড ঝুঁকি ম্যাচিউরিটি ট্যাগ + ওয়াটারমার্ক দিয়ে সামলানো হয়। যে প্রতিষ্ঠান আরও কঠোর নিয়ন্ত্রণ চায় সে তার নিজের auth এবং উপরের git-রিভিউড ক্যাটালগ যুক্ত করে।
 - **কোনো কেন্দ্রীয় ডেটাবেস নয়।** সমস্ত ব্যবহারকারীর স্টেট প্রতি-ডিভাইস। SUSE ID ইন্টিগ্রেশন রোডম্যাপে আছে কিন্তু লঞ্চ ব্লকার নয়।
 - **কোনো শেয়ার্ড টুল/ইঞ্জিন কোড পাথ নয়।** ইঞ্জিন ওপেন সোর্স; `tools/` এবং `assets/` তাদের নিজস্ব রিপোজিটরিতে প্রোপ্রাইটারি SUSE কনটেন্ট হিসেবে থাকে। বিভাজন বলবৎ করা হয় (কোনো ক্রস-ইমপোর্ট নেই) যাতে বিভাজনটি পরিষ্কার থাকে।
@@ -445,7 +443,7 @@ Tauri-তে একই লাইফসাইকেল। CLI-তে একই �
 
 | মাইলস্টোন | টার্গেট | কী |
 |---|---|---|
-| **প্রাথমিক টুল** | ✅ সম্পন্ন | QR Code, Quote Card, Email Signature, Day Brief, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Bag Video, Chart Creator, Filter: Duotone, Meeting Planner — web শেল লাইভ |
+| **প্রাথমিক টুল** | ✅ সম্পন্ন | QR Code, Quote Card, Email Signature, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Chart Creator, Filter: Duotone, Meeting Planner — web শেল লাইভ |
 | **বর্তমান টুলিং উন্নত করা** | 2026-এর মাঝামাঝি ✅ সম্পন্ন | ডাউনলোডযোগ্য অফলাইন অ্যাপ (Tauri); অতিরিক্ত কর্মচারী ও ইভেন্ট টুল; সমৃদ্ধতর এক্সপোর্ট পাইপলাইন (টেক্সট-টু-পাথ স্থিতিশীলতা, মেটাডেটা, অতিরিক্ত ফরম্যাট—`plans.md` দেখুন) |
 | **ইঞ্জিন ওপেন সোর্স করা** | 2026-এর শেষ ✅ সম্পন্ন | ইঞ্জিন, শেল, স্কিমা, ডকস পাবলিক হয়—ব্র্যান্ডেড টুল/অ্যাসেট নয় |
 | **ডিভাইস-থেকে-ডিভাইস ট্রান্সফার** | ✅ সম্পন্ন | পোর্টেবল `lolly-backup` বান্ডেল যেকোনো দুটি ইনস্টলের মধ্যে প্রোফাইল, সংরক্ষিত সেশন, আপলোড করা ছবি ও প্রেফারেন্স বহন করে—অফলাইন বা অনলাইন, কোনো অ্যাকাউন্ট ছাড়াই। ফরওয়ার্ড-কম্প্যাটিবল, ইন্টিগ্রিটি-চেকড এনভেলপ (স্পেক: `docs/data-transfer.md`) |

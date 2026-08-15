@@ -17,7 +17,7 @@ Ekran główny to **galeria** - wszystkie narzędzia pogrupowane według kategor
 
 Każde narzędzie to widok podzielony: **elementy sterujące** po jednej stronie, żywy **podgląd** (kanwa) po drugiej. Zmień dowolny element sterujący, a podgląd zaktualizuje się natychmiast.
 
-> Kilka narzędzi (jak **Layout Studio**) otwiera się zamiast tego jako **wolna kanwa** - powierzchnia bez ramek, z bezpośrednią manipulacją, na której przeciągasz, zmieniasz rozmiar, obracasz i przyciągasz bloki tekstu, kształtów i obrazów, a podwójne kliknięcie edytuje tekst w miejscu. Eksportuje przez tę samą ścieżkę renderowania co każde inne narzędzie, więc kanwa *jest* plikiem. Zobacz [Wolna kanwa](#the-free-canvas-design) poniżej.
+> Kilka narzędzi (jak **Design**) otwiera się zamiast tego jako **wolna kanwa** - powierzchnia bez ramek, z bezpośrednią manipulacją, na której przeciągasz, zmieniasz rozmiar, obracasz i przyciągasz bloki tekstu, kształtów i obrazów, a podwójne kliknięcie edytuje tekst w miejscu. Eksportuje przez tę samą ścieżkę renderowania co każde inne narzędzie, więc kanwa *jest* plikiem. Zobacz [Wolna kanwa](#the-free-canvas-design) poniżej.
 
 ## Kanwa (podgląd)
 
@@ -40,9 +40,9 @@ Podgląd zawsze pokazuje dokładnie to, co zostanie wyeksportowane.
 
 Zmiana wymiaru zawsze przywraca widok do czystego dopasowania.
 
-### Wolna kanwa (Layout Studio)
+### Wolna kanwa (Design)
 
-![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Narzędzia z wolną kanwą dodają powierzchnię roboczą *wokół* obszaru roboczego, jak deska montażowa projektanta:
 
@@ -144,7 +144,7 @@ Panel **Próbki** w Katalogu nie służy tylko do odniesienia - kliknij kolor, a
 
 Panel **Czcionki** wymienia kroje twojej marki z **pobieraniem** obok każdego, aby zainstalować lokalnie lub przekazać drukarni. (Zakładka Kolory w [Brand Studio](/info/brand-studio.html) oferuje to samo pobieranie palety.)
 
-Zasoby to jedna połowa otwartej ścieżki „zrób to sam"; drugą jest **tworzenie własnych narzędzi** - wolna kanwa (Layout Studio, opisana powyżej) pozwala zbudować je wizualnie, bez potrzeby pisania kodu.
+Zasoby to jedna połowa otwartej ścieżki „zrób to sam"; drugą jest **tworzenie własnych narzędzi** - wolna kanwa (Design, opisana powyżej) pozwala zbudować je wizualnie, bez potrzeby pisania kodu.
 
 ## Dźwięk i dostępność
 
@@ -175,7 +175,7 @@ Ponieważ wszystko żyje na twoim urządzeniu, **Profil → Pamięć → Przenie
 Pamięć podręczna katalogu nie jest zawarta - sama pobiera się ponownie na nowym urządzeniu. Pakiet to zwykły zip (`manifest.json` + `profile.json` + `sessions.json` + `assets.json` + `assets/blobs/…` + `prefs.json`, identyfikator formatu `lolly-backup`), więc przetrwa e-mail, USB lub AirDrop nienaruszony i jest tym samym formatem, który odczytuje każda powłoka. Każda część ma sumę kontrolną, więc plik uszkodzony w transporcie jest wychwytywany przy imporcie, a nie odtwarzany połowicznie zepsuty. (Pełna specyfikacja formatu: [Transfer danych](/info/data-transfer.html).)
 ## Importowanie projektu (Figma, Penpot, Illustrator, InDesign)
 
-Możesz wczytać istniejący projekt do Lolly i pracować nad nim dalej: otwórz **Layout Studio**, kliknij **Importuj projekt** na pasku narzędzi kanwy i wybierz plik Figma **.fig** lub SVG, Penpot **.penpot**, Illustrator **.ai** / **.pdf** albo InDesign **.idml**. Warstwy stają się edytowalnymi ramkami na swobodnej kanwie - tekst pozostaje edytowalny, obrazy trafiają do **Moich obrazów**, a typografia i kolory dopasowują się do globalnych ustawień marki - a następnie wynik zapisuje się, udostępnia i renderuje jak każda inna sesja. Parsowanie odbywa się w całości na Twoim urządzeniu. Pełne szczegóły: **[Importowanie projektu](/info/design-import.html)**.
+Możesz wczytać istniejący projekt do Lolly i pracować nad nim dalej: otwórz **Design**, kliknij **Importuj projekt** na pasku narzędzi kanwy i wybierz plik Figma **.fig** lub SVG, Penpot **.penpot**, Illustrator **.ai** / **.pdf** albo InDesign **.idml**. Warstwy stają się edytowalnymi ramkami na swobodnej kanwie - tekst pozostaje edytowalny, obrazy trafiają do **Moich obrazów**, a typografia i kolory dopasowują się do globalnych ustawień marki - a następnie wynik zapisuje się, udostępnia i renderuje jak każda inna sesja. Parsowanie odbywa się w całości na Twoim urządzeniu. Pełne szczegóły: **[Importowanie projektu](/info/design-import.html)**.
 
 ## Eksportowanie
 

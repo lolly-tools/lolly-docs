@@ -48,7 +48,7 @@ gotowy pakiet Twoich szablonów. Przy *zarządzanym wdrożeniu* ktoś definiuje 
 katalog zasobów (logo, palety, czcionki jako stałe identyfikatory) i pisze manifest +
 szablon dla każdego typu wyjścia. Pojedyncze osoby nie muszą jednak na to czekać - w
 otwartej aplikacji każdy może wgrać własne pliki do katalogu i budować narzędzia w
-Layout Studio od pierwszego dnia.
+Design od pierwszego dnia.
 
 **Zarządzanie przez git jest opcjonalne - i nieznane osobom spoza inżynierii.** Jeśli prowadzisz
 *wspólny, kontrolowany* katalog, zasada „recenzja PR-a *jest* moderacją" jest elegancka dla
@@ -60,7 +60,7 @@ po prostu to pomijają.
 
 **Jest celowo wąskie - tak to przedstawiaj.** Lolly nie służy do treści szytych na miarę
 ani flagowych. *Jest* Twoim osobistym DAM-em - nasyconym i wzmocnionym przez Twój system
-projektowy, narzędzia i katalog - i *ma* otwarte płótno (Layout Studio), ale nawet tam
+projektowy, narzędzia i katalog - i *ma* otwarte płótno (Design), ale nawet tam
 kolory, typografia i zasoby podporządkowują się aktywnym globalnym ustawieniom projektu, więc
 swobodne układanie pozostaje w obrębie systemu. Oceniane względem Figmy czy Canvy będzie
 wyglądać na ograniczone. Oceniane jako to, czym jest - zoperacjonalizowane, powtarzalne
@@ -101,9 +101,9 @@ Wojnę o ład wygrywamy dzięki znakomitej wygodzie i obsłudze.
 
 ## Czy Lolly może edytować i renderować moje pliki Figma, Penpot, Illustrator lub InDesign?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
-Tak. Otwórz **Layout Studio** i kliknij **Importuj projekt**: przyjmuje natywny plik Figma **.fig** (Save local copy), eksport Penpot **.penpot**, plik Illustratora **.ai** lub **.pdf**, plik InDesign **.idml** (File → Export → InDesign Markup) albo **dowolny SVG** (szerokie drzwi - eksportuje go niemal każda aplikacja projektowa). Wszystko jest przetwarzane w całości na Twoim urządzeniu, bez konta ani wtyczki.
+Tak. Otwórz **Design** i kliknij **Importuj projekt**: przyjmuje natywny plik Figma **.fig** (Save local copy), eksport Penpot **.penpot**, plik Illustratora **.ai** lub **.pdf**, plik InDesign **.idml** (File → Export → InDesign Markup) albo **dowolny SVG** (szerokie drzwi - eksportuje go niemal każda aplikacja projektowa). Wszystko jest przetwarzane w całości na Twoim urządzeniu, bez konta ani wtyczki.
 
 Warstwy pojawiają się jako edytowalne pola na otwartym płótnie: tekst pozostaje do przepisania, kształty pozostają kształtami, obrazy dołączają do Twojej biblioteki na urządzeniu, a typografia i kolory podporządkowują się globalnym ustawieniom marki. Zapisz je, a układ staje się szablonem wielokrotnego użytku, adresowalnym przez URL, który każdy z Lolly może ponownie wypełnić - i możesz wpleść żywe narzędzia (kod QR, wykres), które renderują się na nowo przy wczytaniu. Stamtąd renderuje się jak wszystko inne w Lolly - SVG, PDF, PNG i reszta, odtwarzalne z jego URL-a. Zobacz [Importuj projekt](/info/design-import.html).
 

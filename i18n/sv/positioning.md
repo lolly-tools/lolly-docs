@@ -6,7 +6,7 @@ Var den här plattformen passar in i det bredare landskapet av kreativa verktyg,
 
 ## Landskap
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
+![Design's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
 
 | Förmåga | Canva (Öppen canvas) | Varumärkesportaler (DAM-mallar) | Illustrator (professionellt skrivbordsprogram) | Figma / Penpot (professionellt, online) | **Lolly (Regelstyrd)** |
 |---|---|---|---|---|---|
@@ -22,7 +22,7 @@ Var den här plattformen passar in i det bredare landskapet av kreativa verktyg,
 | Mobil- och skrivbordsappar | ✓ | ✗ | ✗ | delvis | **✓** |
 | Kommandorad och TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-Formen på luckan är tydlig: inget i det befintliga landskapet ger oss regelstyrd, offlinekapabel, lågtröskel, internt tillgänglig, generativ output. Lolly levererar nu en egen öppen canvas - **Layout Studio**, en direktmanipulerbar fri canvas - men med en avgörande skillnad mot Canva-kolumnen: färger, typografi och tillgångar som placeras på den följer varumärkets globala inställningar, så även fri placering förblir regelstyrd. Vad Lolly fortfarande **inte** är är en obegränsad designsvit; designers kommer att fortsätta använda Illustrator och Figma för skräddarsytt arbete - och när det arbetet behöver bli en styrd, reproducerbar tillgång, för Layout Studios [Importera en design](/info/design-import.html) in den färdiga Figma-, Illustrator- eller Penpot-filen på canvasen som redigerbara, varumärkesanpassade boxar.
+Formen på luckan är tydlig: inget i det befintliga landskapet ger oss regelstyrd, offlinekapabel, lågtröskel, internt tillgänglig, generativ output. Lolly levererar nu en egen öppen canvas - **Design**, en direktmanipulerbar fri canvas - men med en avgörande skillnad mot Canva-kolumnen: färger, typografi och tillgångar som placeras på den följer varumärkets globala inställningar, så även fri placering förblir regelstyrd. Vad Lolly fortfarande **inte** är är en obegränsad designsvit; designers kommer att fortsätta använda Illustrator och Figma för skräddarsytt arbete - och när det arbetet behöver bli en styrd, reproducerbar tillgång, för Designs [Importera en design](/info/design-import.html) in den färdiga Figma-, Illustrator- eller Penpot-filen på canvasen som redigerbara, varumärkesanpassade boxar.
 
 ## Använd det för
 
@@ -31,8 +31,8 @@ Formen på luckan är tydlig: inget i det befintliga landskapet ger oss regelsty
 Deck Studio är ett bra mått på taket här: en hel presentation deklarerad som data, layoutad live på canvasen och exporterad som en inbyggt redigerbar PowerPoint.
 
 - Snabb generering av operativa kreativa tillgångar (evenemangsrutor, märken, signaturer, aviseringar)
-- Fri arrangering på den öppna canvasen (Layout Studio) när delarna - färger, typografi, ikoner, bilder - måste förbli anpassade till varumärkets globala inställningar
-- Att landa en färdig Figma-, Illustrator-, InDesign- eller Penpot-design (Layout Studios Importera en design) så att den kan redigeras, styras och renderas om deterministiskt i alla Lolly-format
+- Fri arrangering på den öppna canvasen (Design) när delarna - färger, typografi, ikoner, bilder - måste förbli anpassade till varumärkets globala inställningar
+- Att landa en färdig Figma-, Illustrator-, InDesign- eller Penpot-design (Designs Importera en design) så att den kan redigeras, styras och renderas om deterministiskt i alla Lolly-format
 - En-till-många-flöden av typen "fyll i tre fält, få den färdiga tillgången" - inklusive masskörningar från ett kalkylblad/CSV i `/pro`-batchrutnätet (klistra in eller importera rader, en färdig tillgång per rad, ladda ner som en zip)
 - Ständigt aktiva, återkommande varumärkesanpassade utdata
 - Saker där central kontroll över varumärkesuttrycket är viktigare än uttrycksfull flexibilitet

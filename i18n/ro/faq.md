@@ -48,7 +48,7 @@ pachet finit al șabloanelor tale. Pentru o *implementare guvernată*, cineva de
 catalogul comun de resurse (logo-uri, palete, fonturi ca ID-uri permanente) și scrie
 manifestul + template-ul pentru fiecare tip de rezultat. Totuși, persoanele individuale
 nu trebuie să aștepte asta - în aplicația deschisă, oricine își poate include propriile
-fișiere în catalog și poate construi instrumente în Layout Studio chiar din prima zi.
+fișiere în catalog și poate construi instrumente în Design chiar din prima zi.
 
 **Guvernanța prin git este opțională - și neobișnuită pentru cei care nu sunt ingineri.**
 Dacă rulezi un catalog *comun, controlat*, „review-ul de PR *este* moderarea” este elegant
@@ -60,8 +60,7 @@ mult timp). Echipele care nu își doresc acest lucru pur și simplu îl omit.
 
 **Este îngust în mod deliberat - prezintă-l așa.** Lolly nu este pentru conținut
 personalizat sau hero. *Este* DAM-ul tău personal - hidratat și super-alimentat de sistemul
-tău de design, instrumentele și catalogul tău - și *chiar are* un canvas deschis (Layout
-Studio), dar chiar și acolo culorile, tipografia și resursele respectă valorile globale de
+tău de design, instrumentele și catalogul tău - și *chiar are* un canvas deschis (Design), dar chiar și acolo culorile, tipografia și resursele respectă valorile globale de
 design active, astfel încât aranjarea liberă rămâne în interiorul sistemului. Judecat față
 de Figma sau Canva, va părea limitat. Judecat pentru ceea ce este - generare de resurse
 operaționalizată, recurentă, la scară masivă - nimic nu se compară. Încadrarea greșită este
@@ -102,9 +101,9 @@ Câștigăm războiul pentru guvernanță prin comoditate și servicii excelente
 
 ## Poate Lolly să editeze și să randeze fișierele mele Figma, Penpot, Illustrator sau InDesign?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
-Da. Deschide **Layout Studio** și dă click pe **Importă un design**: acceptă un fișier Figma nativ **.fig** (Salvează o copie locală), un export Penpot **.penpot**, un fișier Illustrator **.ai** sau **.pdf**, un fișier InDesign **.idml** (Fișier → Export → InDesign Markup), sau **orice SVG** (ușa largă - aproape orice aplicație de design îl poate exporta). Totul este analizat integral pe dispozitivul tău, fără a fi nevoie de cont sau plugin.
+Da. Deschide **Design** și dă click pe **Importă un design**: acceptă un fișier Figma nativ **.fig** (Salvează o copie locală), un export Penpot **.penpot**, un fișier Illustrator **.ai** sau **.pdf**, un fișier InDesign **.idml** (Fișier → Export → InDesign Markup), sau **orice SVG** (ușa largă - aproape orice aplicație de design îl poate exporta). Totul este analizat integral pe dispozitivul tău, fără a fi nevoie de cont sau plugin.
 
 Straturile ajung ca niște casete editabile pe canvas-ul deschis: textul rămâne re-editabil, formele rămân forme, imaginile se alătură bibliotecii tale de pe dispozitiv, iar tipografia și culorile respectă valorile globale de brand. Salvează-l și layout-ul devine un template reutilizabil, adresabil prin URL, pe care oricine cu Lolly îl poate reumple - și poți combina instrumente live (un cod QR, un grafic) care se re-randează la încărcare. De acolo, se randează ca orice altceva în Lolly - SVG, PDF, PNG și restul, reproductibil din URL-ul său. Vezi [Importă un design](/info/design-import.html).
 

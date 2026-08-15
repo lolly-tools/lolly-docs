@@ -37,7 +37,7 @@ The pilot's centre of gravity is the **producer**. If producers don't self-serve
 2. **Pick a tool** that matches what you need (an event tile, a quote card, a signature).
 3. **Fill in the fields.** No fonts, colours or spacing to decide - the tool already holds the brand rules.
 4. **Get the file.** Download it, copy a share link, or export a batch. Done.
-5. **Save the session** so you (or a teammate) can reopen and re-render it later.
+5. **Save your work** - reopen it later as a session, file it into a project, or turn it into your own template to start from next time. No git, no ticket.
 
 Step 3 is the one that carries the pilot. A tool opens with the brand already on it, so the only thing left to decide is the words.
 
@@ -115,11 +115,17 @@ The goal the cycle serves is deflection, and it should ramp. The pilot targets *
 
 ## Governance (when you want it)
 
-Most people just make things - work in the app, save what they make as a **session**, and pass it on as a share link, a backup or a live collaboration, with no git and no approval step. When a session is good enough to become a permanent starting point for everyone else, whoever runs the deployment opens the link, records its values as a **template** on that tool in the brand pack, and commits it - after which it appears in the tool's "New from template" chooser and is deep-linkable as `?template=<id>`. That commit is the locking step, and it belongs to the deployment owner, not the creator. Governance is what you reach for when an organisation wants a **shared, controlled** catalog: an option that runs the rules the way engineering runs code - **the rules are data, and changing them is a reviewable change.**
+Most people just make things - work in the app, save what they make as a **session**, and pass it on as a share link, a backup or a live collaboration, with no git and no approval step.
+
+They can go further without touching git at all. From any tool, **Save** offers *save as a template* and *save as a variation*: the current doc becomes a named starting point that appears in that tool's "New from template" chooser the next time it opens, kept with your profile. No deployment owner, no commit, no pull request. To hand one to a colleague, share it as a **`.lolly` file** - a self-contained bundle anyone can import - or submit it for catalog inclusion. A marketing team can build, name and circulate its own variations of a tool entirely inside the app.
+
+This is the answer to a claim you will hear often: that *governance by git* is an impossible roadblock for creative and marketing teams. Here it never was the only path, and it is no longer the default one. Brand governance lives **inside the tool itself** - the rules are part of the instrument, not a review gate laid over it (see the guard-rails bullet below), so staying on-brand costs a producer nothing to learn and nothing to wait for.
+
+Git enters only when an organisation wants a single **canonical** catalog everyone shares - the reviewable source of truth. Then whoever runs the deployment records a template's values into the brand pack and commits it - after which it appears in the tool's "New from template" chooser and is deep-linkable as `?template=<id>`. That commit is the locking step, and it belongs to the deployment owner, not the creator. It runs the rules the way engineering runs code - **the rules are data, and changing them is a reviewable change** - and it is entirely optional. Teams that don't want a shared canonical catalog never meet git.
 
 - **A shared catalog can be the source of truth.** Tools and assets are git-tracked content - a manifest, a template, optional hooks. What ships is exactly what was approved to ship.
-- **Review can be the moderation.** With that model, a change to a tool or asset is a pull request. It's elegant for engineers and unfamiliar to most brand and marketing teams - plan for that gap. If the people who own brand decisions don't live in git, you'll want a workflow that bridges them, or IT quietly becomes the strategic design gatekeeper (which some long-running production environments actually prefer). Teams that don't need this simply skip it.
-- **Guard-rails are structural, not advisory.** Brand constraints are hard-coded in the tool; even the open canvas (Layout Studio) conforms colours, type and assets to the brand globals. Off-brand output isn't policed after the fact - it's prevented at authoring time.
+- **Review can be the moderation - for the canonical catalog only.** Promoting a template into the shared source of truth is a change to git-tracked content, so it can be a pull request: elegant for engineers, unfamiliar to most brand and marketing teams. The gap is now narrow, because this is the *only* place git appears - creators make and share templates without it, and reach the canonical catalog by **submitting** a `.lolly`, not by opening a PR. Where brand owners want the final say without living in git, bridge that step with a light review, or let IT own the merge (which some long-running production environments actually prefer). Teams that don't want a canonical catalog skip all of it.
+- **Guard-rails are structural, not advisory.** Brand constraints are hard-coded in the tool; even the open canvas (the **Design** tool) conforms colours, type and assets to the brand globals. Off-brand output isn't policed after the fact - it's prevented at authoring time.
 - **Feature flags put control local.** Parts of Lolly can be turned on or off per deployment. Usually an administrator owns those; with Lolly, whoever runs the deployment does.
 - **Configuration is yours.** A deployment can overlay its own authentication, telemetry, or Certificate Authority to meet corporate compliance - none of it is on by default.
 

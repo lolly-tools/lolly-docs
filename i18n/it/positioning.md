@@ -6,7 +6,7 @@ Dove si colloca questa piattaforma nel panorama più ampio degli strumenti creat
 
 ## Panorama
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
+![Design's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
 
 | Funzionalità | Canva (canvas aperto) | Portali di marca (template DAM) | Illustrator (professionale desktop) | Figma / Penpot (professionale online) | **Lolly (basato su vincoli)** |
 |---|---|---|---|---|---|
@@ -22,7 +22,7 @@ Dove si colloca questa piattaforma nel panorama più ampio degli strumenti creat
 | App mobili e desktop | ✓ | ✗ | ✗ | parziale | **✓** |
 | Riga di comando e TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-La portata del divario è chiara: niente nel panorama esistente ci offre un output generativo basato su vincoli, capace di funzionare offline, con basse competenze richieste e accessibile internamente. Lolly include ora un proprio canvas aperto - **Layout Studio**, un canvas libero a manipolazione diretta - ma con una differenza decisiva rispetto alla colonna di Canva: i colori, la tipografia e gli asset collocati su di esso si conformano alle variabili globali di marca, così che anche la disposizione libera resti basata su vincoli. Ciò che Lolly ancora **non** è: una suite di design senza vincoli; i designer continueranno a usare Illustrator e Figma per il lavoro su misura - e quando quel lavoro ha bisogno di diventare un asset governato e riproducibile, [Importa un design](/info/design-import.html) di Layout Studio porta il file Figma/Illustrator/Penpot finito sul canvas come riquadri modificabili e conformati al brand.
+La portata del divario è chiara: niente nel panorama esistente ci offre un output generativo basato su vincoli, capace di funzionare offline, con basse competenze richieste e accessibile internamente. Lolly include ora un proprio canvas aperto - **Design**, un canvas libero a manipolazione diretta - ma con una differenza decisiva rispetto alla colonna di Canva: i colori, la tipografia e gli asset collocati su di esso si conformano alle variabili globali di marca, così che anche la disposizione libera resti basata su vincoli. Ciò che Lolly ancora **non** è: una suite di design senza vincoli; i designer continueranno a usare Illustrator e Figma per il lavoro su misura - e quando quel lavoro ha bisogno di diventare un asset governato e riproducibile, [Importa un design](/info/design-import.html) di Design porta il file Figma/Illustrator/Penpot finito sul canvas come riquadri modificabili e conformati al brand.
 
 ## Usalo per
 
@@ -31,8 +31,8 @@ La portata del divario è chiara: niente nel panorama esistente ci offre un outp
 Deck Studio è una buona misura del limite raggiungibile qui: un'intera presentazione dichiarata come dati, impaginata dal vivo sul canvas ed esportata come un PowerPoint nativo e modificabile.
 
 - Generazione rapida di asset creativi operazionalizzati (tessere per eventi, badge, firme, allerte)
-- Disposizione libera sul canvas aperto (Layout Studio) quando gli elementi - colori, tipografia, icone, immagini - devono restare conformi alle variabili globali di marca
-- Portare un design finito da Figma, Illustrator, InDesign o Penpot (la funzione Importa un design di Layout Studio), così che possa essere modificato, governato e renderizzato di nuovo in modo deterministico in ogni formato di Lolly
+- Disposizione libera sul canvas aperto (Design) quando gli elementi - colori, tipografia, icone, immagini - devono restare conformi alle variabili globali di marca
+- Portare un design finito da Figma, Illustrator, InDesign o Penpot (la funzione Importa un design di Design), così che possa essere modificato, governato e renderizzato di nuovo in modo deterministico in ogni formato di Lolly
 - Flussi uno-a-molti del tipo "compila tre campi, ottieni l'asset finito" - comprese esecuzioni in massa da un foglio di calcolo/CSV nella griglia batch `/pro` (incolla o importa righe, un asset finito per riga, scarica come zip)
 - Output di marca sempre attivi e ricorrenti
 - Casi in cui il controllo centralizzato dell'espressione di marca conta più della flessibilità espressiva

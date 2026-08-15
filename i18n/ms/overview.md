@@ -34,7 +34,7 @@ Hasilnya ialah **kelimpahan**: setiap acara mempunyai papan tanda yang betul, se
 | Aplikasi Mudah Alih dan Desktop | ✓ | ✗ | ✗ | sebahagian | **✓** |
 | Baris Perintah & TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-Jurangnya jelas: tiada apa dalam landskap sedia ada yang memberikan kita output yang kekangan-dahulu, mampu luar talian, kemahiran rendah, dan boleh diakses secara dalaman. Lolly malah menyertakan kanvas terbuka - **Layout Studio** - di mana warna, jenis taip dan aset patuh kepada tetapan global jenama, jadi susunan bebas kekal kekangan-dahulu. Apa yang ia **bukan** ialah sut reka bentuk tanpa kekangan: pereka bentuk terus menggunakan Illustrator dan Figma untuk kerja unggulan tersuai. Pelbagai kombinasi boleh disusun menggunakan alat ini.
+Jurangnya jelas: tiada apa dalam landskap sedia ada yang memberikan kita output yang kekangan-dahulu, mampu luar talian, kemahiran rendah, dan boleh diakses secara dalaman. Lolly malah menyertakan kanvas terbuka - **Design** - di mana warna, jenis taip dan aset patuh kepada tetapan global jenama, jadi susunan bebas kekal kekangan-dahulu. Apa yang ia **bukan** ialah sut reka bentuk tanpa kekangan: pereka bentuk terus menggunakan Illustrator dan Figma untuk kerja unggulan tersuai. Pelbagai kombinasi boleh disusun menggunakan alat ini.
 
 **Gunakan untuk:** Penjanaan pantas aset kreatif yang dioperasikan - jubin acara, lencana nama, tandatangan, makluman CVE, kod QR, kad sosial, label konsainan, laporan berstruktur.
 
@@ -48,7 +48,7 @@ Jurangnya jelas: tiada apa dalam landskap sedia ada yang memberikan kita output 
 
 Cara paling jelas untuk melihat apa itu Lolly bukanlah senarai ciri - tetapi mengikuti satu aset tunggal sewaktu ia berpindah dari tangan ke tangan. Perhatikan satu kad kempen yang dilokalkan bergerak merentasi organisasi:
 
-1. **Pihak kreatif menetapkan peraturannya.** Seorang pereka bentuk mengarang templat asas dalam Layout Studio, mengekod-tegar tipografi dan pemboleh ubah warna jenama. Mereka bukan membuat satu kad - mereka melakukan kerja asas itu *sekali* supaya mereka tidak perlu melokalkannya secara manual lagi.
+1. **Pihak kreatif menetapkan peraturannya.** Seorang pereka bentuk mengarang templat asas dalam Design, mengekod-tegar tipografi dan pemboleh ubah warna jenama. Mereka bukan membuat satu kad - mereka melakukan kerja asas itu *sekali* supaya mereka tidak perlu melokalkannya secara manual lagi.
 2. **Pembangun menskalakannya.** Templat yang sama itu disambungkan ke saluran paip malam melalui CLI, jadi carta baharu atau varian bahasa baharu dihasilkan secara automatik - tiada pereka bentuk perlu membuka semula fail itu.
 3. **Penerbit hanya menggunakannya.** Seorang wakil jualan, luar talian di dalam pesawat, membuka alat yang sama dan menghasilkan dek yang tepat mengikut jenama untuk mesyuarat pelanggan. Tiada kemahiran reka bentuk, tiada rangkaian, tiada penantian.
 
@@ -173,7 +173,6 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── daily-card/        # "Day Brief" - cuaca/waktu/peta (diambil oleh skrip templat sebaris)
 │   ├── code-canvas/
 │   ├── countdown-timer/
 │   ├── color-palette/
@@ -185,7 +184,6 @@ lolly/
 │   ├── strip-data/        # pembersihan metadata pada peranti - JPEG/PNG/SVG/PDF (fail masuk → fail bersih keluar)
 │   ├── compress-pdf/      # pemampat PDF pada peranti - memampatkan semula imej (fail masuk → fail lebih kecil keluar)
 │   ├── brand-lockup/      # "Brand Lockup" - lockup logo SUSE; teks-ke-laluan HarfBuzz (wasm)
-│   ├── bag-video/
 │   ├── chart-creator/     # carta SVG daripada data berstruktur
 │   ├── filter-duotone/    # rawatan foto dwiwarna
 │   ├── filter-halftone/   # foto → grid titik halftone vektor
@@ -196,7 +194,7 @@ lolly/
 │   ├── event-name-badge/  # lencana persidangan - menggabungkan qr-code sebagai SVG
 │   ├── wayfinding-signage/ # papan tanda acara; blok arah menyesuaikan teks label secara automatik
 │   ├── text-helper/       # ruang kerja teks pada peranti (format/nyahkod/hash/nyah-kenal pasti)
-│   ├── design/     # "Layout Studio" - kanvas editor WYSIWYG bebas bentuk (render.layout: editor)
+│   ├── design/     # "Design" - kanvas editor WYSIWYG bebas bentuk (render.layout: editor)
 │   ├── multi-page-pdf/    # dokumen PDF berbilang halaman - kulit depan, blok kandungan mengalir, halaman belakang
 │   ├── diagram-builder/   # rajah org / layercake / process / cycle / pyramid
 │   ├── logo-wall/         # banyak logo → grid disusun automatik
@@ -274,15 +272,15 @@ Baris disenaraikan mengikut susunan seksyen galeri. Seksyen `utility` sentiasa d
 
 | Kategori | Alat yang dilancarkan | Dirancang |
 |---|---|---|
-| `everyone` | QR Code Generator, Quote Card, Email Signature, Day Brief, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
-| `designer` | Brand Lockup, Bag Video, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
+| `everyone` | QR Code Generator, Quote Card, Email Signature, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
+| `designer` | Brand Lockup, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Layout Studio | Unit/format converters, more on-device privacy utilities |
+| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Design | Unit/format converters, more on-device privacy utilities |
 
-Alat juga diklasifikasikan mengikut status: `official` (diluluskan jenama, tiada tera air), `community` (sumbangan luaran), `experimental` (eksport bertera air). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap dan Diagram Builder kini membawa status `experimental`; Web Icon Maker dan Layout Studio dihantar sebagai alat `community`.
+Alat juga diklasifikasikan mengikut status: `official` (diluluskan jenama, tiada tera air), `community` (sumbangan luaran), `experimental` (eksport bertera air). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap dan Diagram Builder kini membawa status `experimental`; Web Icon Maker dan Design dihantar sebagai alat `community`.
 
-**Layout Studio** ialah alat pertama yang dibina atas mod kanvas-bebas `render.layout: "editor"` - permukaan manipulasi-langsung tanpa chrome di mana anda seret, saiz semula, putar dan lekat kotak teks, bentuk dan imej, kemudian eksport melalui laluan render yang sama seperti setiap alat lain.
+**Design** ialah alat pertama yang dibina atas mod kanvas-bebas `render.layout: "editor"` - permukaan manipulasi-langsung tanpa chrome di mana anda seret, saiz semula, putar dan lekat kotak teks, bentuk dan imej, kemudian eksport melalui laluan render yang sama seperti setiap alat lain.
 
 **Strip Hidden Data** ialah **utiliti pada peranti** yang pertama (`privacy: "on-device"`): alat transformasi-kandungan yang mengambil fail yang *anda* bekalkan, memprosesnya sepenuhnya dalam pelayar, dan mengembalikan salinan bersih - tidak pernah dimuat naik, tidak pernah bertera air, tiada asal usul dicap. **Text Helper** ialah yang kedua - ruang kerja pada peranti untuk kerja tampal-ke-laman-web harian (format JSON, nyahkod JWT, Base64, kod/nyahkod URL, hashing SHA). **Compress PDF** ialah yang ketiga - ia mengecilkan PDF dengan memampatkan semula imejnya, sekali lagi sepenuhnya pada peranti. Ketiga-tiganya membawa teks lencana "Runs on your device - nothing is uploaded". Ini adalah permulaan kategori utiliti-privasi yang menggantikan penyerahan fail sulit kepada laman web bertujuan tunggal.
 
@@ -444,7 +442,7 @@ Pembahagian ini dikuatkuasakan - tiada import silang daripada `engine/` ke `tool
 
 | Pencapaian | Sasaran | Apa |
 |---|---|---|
-| **Alat permulaan** | ✅ Selesai | QR Code, Quote Card, Email Signature, Day Brief, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Bag Video, Chart Creator, Filter: Duotone, Meeting Planner - web shell aktif |
+| **Alat permulaan** | ✅ Selesai | QR Code, Quote Card, Email Signature, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Chart Creator, Filter: Duotone, Meeting Planner - web shell aktif |
 | **Tingkatkan perkakasan semasa** | Pertengahan 2026 ✅ Selesai  | Aplikasi luar talian boleh muat turun (Tauri); alat pekerja dan acara tambahan; saluran paip eksport yang lebih kaya (kestabilan teks-ke-laluan, metadata, format tambahan - lihat `plans.md`) |
 | **Jadikan enjin sumber terbuka** | Akhir 2026 ✅ Selesai  | Enjin, shell, schema, dokumentasi menjadi awam - bukan alat/aset berjenama |
 | **Pemindahan peranti-ke-peranti** | ✅ Selesai | Bungkusan `lolly-backup` mudah alih membawa profil, sesi tersimpan, imej dimuat naik dan keutamaan antara mana-mana dua pemasangan - luar talian atau dalam talian, tiada akaun. Sampul serasi-hadapan yang disemak integriti (spesifikasi: `docs/data-transfer.md`) |

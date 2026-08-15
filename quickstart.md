@@ -48,7 +48,7 @@ You don't start from a blank page. Lolly opens the design work and the open form
 
 ### Open-source design files
 
-Finished work in **Figma, Penpot, Illustrator, InDesign, or any SVG app** doesn't have to stay locked in the app you drew it in. Open **Layout Studio**, click **Import a design**, and the file opens as a *living layout* - not a flattened picture. Every layer becomes an editable box: text stays retypable, shapes stay shapes, images land in your library, and complex vector art is preserved faithfully. It arrives already conformed to your brand faces and colour rules.
+Finished work in **Figma, Penpot, Illustrator, InDesign, or any SVG app** doesn't have to stay locked in the app you drew it in. Open **Design**, click **Import a design**, and the file opens as a *living layout* - not a flattened picture. Every layer becomes an editable box: text stays retypable, shapes stay shapes, images land in your library, and complex vector art is preserved faithfully. It arrives already conformed to your brand faces and colour rules.
 
 | You have | Bring it in as |
 |---|---|
@@ -64,7 +64,7 @@ Got a **PowerPoint deck** instead? Drop the `.pptx` on **Deck Builder** to edit 
 
 ### From a one-off to a template
 
-Here's the payoff: an imported layout is an ordinary Layout Studio session, so once you **save** it, it lives at a URL. Anyone with Lolly can open that URL, change the words, swap an image, and render their own version - no design app, and the locked parts stay locked. A once-off design becomes a reusable tool. That's the whole idea, reached without writing a line of configuration.
+Here's the payoff: an imported layout is an ordinary Design session, so once you **save** it, it lives at a URL. Anyone with Lolly can open that URL, change the words, swap an image, and render their own version - no design app, and the locked parts stay locked. A once-off design becomes a reusable tool. That's the whole idea, reached without writing a line of configuration.
 
 ### Open data and open tools
 

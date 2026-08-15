@@ -1,22 +1,22 @@
 # 导入设计（Figma、Penpot、Illustrator、InDesign）
 
-![Layout Studio's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
-![Layout Studio's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
-![Layout Studio's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
-![Layout Studio's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
-![Layout Studio's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
-![Layout Studio's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 把一份完成的设计**从 Figma、Penpot、Illustrator 或 InDesign 中带出来，带进 Lolly**——不是作为一张定格图片，而是作为一个鲜活、可编辑的版面，你可以继续在其中工作、与工具混合使用，并通过 Lolly 确定性的导出路径渲染它。和其他一切一样，整个导入过程都发生在**你的设备上**：文件在你的浏览器中解析，不会上传任何内容。
 
 对你已经做过的一切来说，这是个好消息：没有什么会被困在你绘制它时所用的那个应用里。你在别的工具里花了几个小时做的设计，抵达时就是一个可编辑的会话，并且已经符合你的设计全局设置——一旦你保存它，它就成为一个可复用的模板，任何使用 Lolly 的人都能打开并重新填充。
 
-导入功能位于 **[Layout Studio](/info/using.html)**——Lolly 的自由画布：打开它，在画布工具栏中点击**导入设计**，然后选择一个文件。画板会调整为文件的画框尺寸，每个图层都会在同一个开放画布上变成一个可编辑的方框——因此从点击的那一刻起，一个导入的画板就只是一个普通的 Layout Studio 会话。
+导入功能位于 **[Design](/info/using.html)**——Lolly 的自由画布：打开它，在画布工具栏中点击**导入设计**，然后选择一个文件。画板会调整为文件的画框尺寸，每个图层都会在同一个开放画布上变成一个可编辑的方框——因此从点击的那一刻起，一个导入的画板就只是一个普通的 Design 会话。
 
 ## 你可以导入什么
 
@@ -61,7 +61,7 @@
 
 ## 从一次性设计到可复用的模板
 
-这正是“导入”不再只是格式转换，而开始成为“创作”的地方。导入的版面就是一个普通的 [Layout Studio](/info/using.html) 会话，因此原生会话能做的一切，它都能做：
+这正是“导入”不再只是格式转换，而开始成为“创作”的地方。导入的版面就是一个普通的 [Design](/info/using.html) 会话，因此原生会话能做的一切，它都能做：
 
 - **它是任何人都能复用的模板。** 保存它，这个版面就会拥有自己的 URL。任何使用 Lolly 的人都可以打开这个 URL，修改文字、替换图片，渲染出属于自己的版本——不需要设计软件，也不需要设计技能，而作者锁定的部分依然保持锁定。导入这块画板的人，就成为它的作者；其他所有人只需要填空。
 - **它可以与工具混合使用。** 任何方框都可以承载另一个 Lolly 工具，作为一个实时素材——一个能渲染自己二维码的徽章、一张带实时图表的卡片、或是通过素材选择器放入的另一个渲染结果。这些内容始终保持实时，并在加载时重新渲染；它们绝不会变成压平的图片。因此，一张导入的海报可以承载生成式的、始终保持最新的内容——而这是原始文件永远做不到的。

@@ -17,7 +17,7 @@ Het startscherm is de **galerij** - elke tool, gegroepeerd per categorie. Klik o
 
 Elke tool is een gesplitste weergave: **bedieningselementen** aan de ene kant, een live **voorvertoning** (het canvas) aan de andere. Verander een instelling en de voorvertoning wordt direct bijgewerkt.
 
-> Een paar tools (zoals **Layout Studio**) openen in plaats daarvan als een **vrij canvas** - een chromeloos oppervlak voor directe manipulatie waarop je vakken met tekst, vormen en afbeeldingen sleept, van grootte verandert, roteert en laat vastklikken, en waar je dubbelklikt om tekst ter plekke te bewerken. Het exporteert via hetzelfde renderpad als elke andere tool, dus het canvas *is* het bestand. Zie [Het vrije canvas](#the-free-canvas-design) hieronder.
+> Een paar tools (zoals **Design**) openen in plaats daarvan als een **vrij canvas** - een chromeloos oppervlak voor directe manipulatie waarop je vakken met tekst, vormen en afbeeldingen sleept, van grootte verandert, roteert en laat vastklikken, en waar je dubbelklikt om tekst ter plekke te bewerken. Het exporteert via hetzelfde renderpad als elke andere tool, dus het canvas *is* het bestand. Zie [Het vrije canvas](#the-free-canvas-design) hieronder.
 
 ## Het canvas (voorvertoning)
 
@@ -40,9 +40,9 @@ De voorvertoning toont altijd precies wat er geëxporteerd wordt.
 
 Een wijziging van de afmetingen zet de weergave altijd terug naar een nette passende weergave.
 
-### Het vrije canvas (Layout Studio)
+### Het vrije canvas (Design)
 
-![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Tools met een vrij canvas voegen een werkoppervlak toe *rondom* het tekenvlak, zoals het plakbord van een ontwerper:
 
@@ -144,7 +144,7 @@ Het **Stalen**-paneel van de Catalogus is niet alleen ter referentie - klik op e
 
 Het **Lettertypen**-paneel toont je merklettertypen met een **download** naast elk, om lokaal te installeren of aan een drukkerij te geven. (Het tabblad Kleuren van de [Brand Studio](/info/brand-studio.html) biedt dezelfde paletdownload.)
 
-Assets zijn de ene helft van het open, doe-het-zelf-pad; de andere is **je eigen tools maken** - het vrije canvas (Layout Studio, hierboven beschreven) laat je er visueel een bouwen, zonder code.
+Assets zijn de ene helft van het open, doe-het-zelf-pad; de andere is **je eigen tools maken** - het vrije canvas (Design, hierboven beschreven) laat je er visueel een bouwen, zonder code.
 
 ## Geluid & toegankelijkheid
 
@@ -176,7 +176,7 @@ De catalogus-cache is niet inbegrepen - die wordt op het nieuwe apparaat opnieuw
 
 ## Een ontwerp importeren (Figma, Penpot, Illustrator, InDesign)
 
-Je kunt een bestaand ontwerp in Lolly binnenhalen en ermee verder werken: open **Layout Studio**, klik op **Een ontwerp importeren** in de werkbalk van het canvas, en kies een Figma **.fig** of SVG, een Penpot **.penpot**, een Illustrator **.ai** / **.pdf**, of een InDesign **.idml**. Lagen worden bewerkbare vakken op het vrije canvas - tekst blijft herschrijfbaar, afbeeldingen komen terecht in **Mijn afbeeldingen**, en lettertype en kleuren volgen de merkinstellingen - waarna het resultaat wordt opgeslagen, gedeeld en gerenderd als elke andere sessie. Het parsen gebeurt volledig op je apparaat. Volledige details: **[Een ontwerp importeren](/info/design-import.html)**.
+Je kunt een bestaand ontwerp in Lolly binnenhalen en ermee verder werken: open **Design**, klik op **Een ontwerp importeren** in de werkbalk van het canvas, en kies een Figma **.fig** of SVG, een Penpot **.penpot**, een Illustrator **.ai** / **.pdf**, of een InDesign **.idml**. Lagen worden bewerkbare vakken op het vrije canvas - tekst blijft herschrijfbaar, afbeeldingen komen terecht in **Mijn afbeeldingen**, en lettertype en kleuren volgen de merkinstellingen - waarna het resultaat wordt opgeslagen, gedeeld en gerenderd als elke andere sessie. Het parsen gebeurt volledig op je apparaat. Volledige details: **[Een ontwerp importeren](/info/design-import.html)**.
 
 ## Exporteren
 

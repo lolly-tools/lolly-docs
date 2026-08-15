@@ -34,7 +34,7 @@ El resultado es **abundancia**: cada evento tiene la señalética correcta, cada
 | Apps móviles y de escritorio | ✓ | ✗ | ✗ | parcial | **✓** |
 | Línea de comandos y TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-La brecha es clara: nada en el panorama existente nos ofrece una salida basada en restricciones, capaz de funcionar sin conexión, con baja exigencia de habilidad y accesible internamente. Lolly incluso incluye un lienzo abierto - **Layout Studio** - donde los colores, la tipografía y los assets se ajustan a las variables globales de marca, de modo que la disposición libre se mantiene basada en restricciones. Lo que **no** es: una suite de diseño sin restricciones. Los diseñadores siguen usando Illustrator y Figma para el trabajo insignia a medida. Las permutaciones pueden ensamblarse con esta herramienta.
+La brecha es clara: nada en el panorama existente nos ofrece una salida basada en restricciones, capaz de funcionar sin conexión, con baja exigencia de habilidad y accesible internamente. Lolly incluso incluye un lienzo abierto - **Design** - donde los colores, la tipografía y los assets se ajustan a las variables globales de marca, de modo que la disposición libre se mantiene basada en restricciones. Lo que **no** es: una suite de diseño sin restricciones. Los diseñadores siguen usando Illustrator y Figma para el trabajo insignia a medida. Las permutaciones pueden ensamblarse con esta herramienta.
 
 **Úsala para:** Generación rápida de assets creativos operacionalizados - tarjetas de eventos, insignias con nombre, firmas, alertas CVE, códigos QR, tarjetas sociales, etiquetas de envío, informes estructurados.
 
@@ -48,7 +48,7 @@ La brecha es clara: nada en el panorama existente nos ofrece una salida basada e
 
 La forma más clara de ver qué es Lolly no es una lista de funciones: es seguir un único asset mientras pasa de mano en mano. Observa cómo se mueve por la organización una sola tarjeta de campaña localizada:
 
-1. **La persona creativa fija las reglas.** Un diseñador crea la plantilla base en Layout Studio, codificando la tipografía y las variables de color de la marca. No está haciendo una tarjeta: está haciendo el trabajo de base *una vez* para no tener que volver a localizarla a mano nunca más.
+1. **La persona creativa fija las reglas.** Un diseñador crea la plantilla base en Design, codificando la tipografía y las variables de color de la marca. No está haciendo una tarjeta: está haciendo el trabajo de base *una vez* para no tener que volver a localizarla a mano nunca más.
 2. **Quien desarrolla la escala.** Esa misma plantilla se conecta a una canalización nocturna a través de la CLI, así que un gráfico nuevo o una variante en otro idioma se generan automáticamente, sin que ningún diseñador vuelva a abrir el archivo.
 3. **Quien produce simplemente la usa.** Un comercial, sin conexión en un avión, abre la misma herramienta y genera una presentación perfectamente alineada con la marca para una reunión con un cliente. Sin habilidades de diseño, sin red, sin esperas.
 
@@ -173,7 +173,6 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── daily-card/        # "Day Brief" - clima/hora/mapa (obtenido mediante un script de plantilla en línea)
 │   ├── code-canvas/
 │   ├── countdown-timer/
 │   ├── color-palette/
@@ -185,7 +184,6 @@ lolly/
 │   ├── strip-data/        # eliminación de metadatos en el dispositivo - JPEG/PNG/SVG/PDF (archivo de entrada → archivo limpio de salida)
 │   ├── compress-pdf/      # compresor de PDF en el dispositivo - recomprime imágenes (archivo de entrada → archivo más pequeño de salida)
 │   ├── brand-lockup/      # "Brand Lockup" - lockups del logo de SUSE; texto a trazado con HarfBuzz (wasm)
-│   ├── bag-video/
 │   ├── chart-creator/     # gráficos SVG a partir de datos estructurados
 │   ├── filter-duotone/    # tratamiento fotográfico a dos colores
 │   ├── filter-halftone/   # foto → trama vectorial de semitonos
@@ -196,7 +194,7 @@ lolly/
 │   ├── event-name-badge/  # insignias de conferencia - compone qr-code como SVG
 │   ├── wayfinding-signage/ # señalética de eventos; los bloques de direcciones ajustan automáticamente el texto de la etiqueta
 │   ├── text-helper/       # banco de trabajo de texto en el dispositivo (formatear/decodificar/hash/desidentificar)
-│   ├── design/     # "Layout Studio" - lienzo editor WYSIWYG de forma libre (render.layout: editor)
+│   ├── design/     # "Design" - lienzo editor WYSIWYG de forma libre (render.layout: editor)
 │   ├── multi-page-pdf/    # documento PDF multipágina - portada, bloques de contenido fluido, contraportada
 │   ├── diagram-builder/   # diagramas de organigrama / capas / proceso / ciclo / pirámide
 │   ├── logo-wall/         # muchos logos → rejilla autoempaquetada
@@ -274,15 +272,15 @@ Las filas aparecen en el orden de las secciones de la galería. La sección `uti
 
 | Categoría | Herramientas publicadas | Planificadas |
 |---|---|---|
-| `everyone` | QR Code Generator, Quote Card, Email Signature, Day Brief, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
-| `designer` | Brand Lockup, Bag Video, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
+| `everyone` | QR Code Generator, Quote Card, Email Signature, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
+| `designer` | Brand Lockup, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Layout Studio | Conversores de unidades/formato, más utilidades de privacidad en el dispositivo |
+| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Design | Conversores de unidades/formato, más utilidades de privacidad en el dispositivo |
 
-Las herramientas también se clasifican por estado: `official` (aprobada por la marca, sin marca de agua), `community` (contribución externa), `experimental` (exportaciones con marca de agua). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap y Diagram Builder llevan actualmente el estado `experimental`; Web Icon Maker y Layout Studio se publican como herramientas `community`.
+Las herramientas también se clasifican por estado: `official` (aprobada por la marca, sin marca de agua), `community` (contribución externa), `experimental` (exportaciones con marca de agua). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap y Diagram Builder llevan actualmente el estado `experimental`; Web Icon Maker y Design se publican como herramientas `community`.
 
-**Layout Studio** es la primera herramienta construida sobre el modo de lienzo libre `render.layout: "editor"` - una superficie sin interfaz de aplicación, de manipulación directa, donde arrastras, redimensionas, rotas y ajustas cajas de texto, formas e imágenes, y luego exportas a través de la misma ruta de renderizado que cualquier otra herramienta.
+**Design** es la primera herramienta construida sobre el modo de lienzo libre `render.layout: "editor"` - una superficie sin interfaz de aplicación, de manipulación directa, donde arrastras, redimensionas, rotas y ajustas cajas de texto, formas e imágenes, y luego exportas a través de la misma ruta de renderizado que cualquier otra herramienta.
 
 **Strip Hidden Data** es la primera **utilidad en el dispositivo** (`privacy: "on-device"`): una herramienta de transformación de contenido que toma un archivo que *tú* aportas, lo procesa por completo en el navegador, y te devuelve una copia limpia - nunca se sube, nunca lleva marca de agua, no se estampa procedencia. **Text Helper** es la segunda - un banco de trabajo en el dispositivo para las tareas cotidianas de "pegar en una web" (formatear JSON, decodificar JWT, Base64, codificar/decodificar URL, hash SHA). **Compress PDF** es la tercera - reduce un PDF recomprimiendo sus imágenes, también por completo en el dispositivo. Las tres llevan el texto de insignia "Se ejecuta en tu dispositivo - nada se sube". Este es el comienzo de una categoría de utilidades de privacidad que sustituye la entrega de archivos confidenciales a sitios web de propósito único.
 
@@ -444,7 +442,7 @@ La división se impone - no hay importaciones cruzadas de `engine/` hacia `tools
 
 | Hito | Fecha objetivo | Qué |
 |---|---|---|
-| **Herramientas iniciales** | ✅ Hecho | QR Code, Quote Card, Email Signature, Day Brief, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Bag Video, Chart Creator, Filter: Duotone, Meeting Planner - shell web en producción |
+| **Herramientas iniciales** | ✅ Hecho | QR Code, Quote Card, Email Signature, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Chart Creator, Filter: Duotone, Meeting Planner - shell web en producción |
 | **Mejorar las herramientas actuales** | Mediados de 2026 ✅ Hecho  | App descargable sin conexión (Tauri); herramientas adicionales para empleados y eventos; pipeline de exportación más completo (estabilidad de texto a trazado, metadatos, formatos adicionales - ver `plans.md`) |
 | **Abrir el motor como código abierto** | Finales de 2026 ✅ Hecho  | El motor, los shells, los schemas y la documentación se hacen públicos - no las herramientas/assets de marca |
 | **Transferencia de dispositivo a dispositivo** | ✅ Hecho | El paquete portable `lolly-backup` lleva el perfil, las sesiones guardadas, las imágenes subidas y las preferencias entre dos instalaciones cualesquiera - sin conexión o en línea, sin cuenta. Envolvente compatible hacia adelante, con verificación de integridad (especificación: `docs/data-transfer.md`) |

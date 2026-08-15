@@ -4,8 +4,8 @@
   "voice": "bf_lily",
   "speed": 0.8,
   "modelVersion": "onnx-community/Kokoro-82M-v1.0-ONNX",
-  "textHash": "c1f14e87a166c8142c146851c250480112bd844687fd11cc730c7e7d34f2729c",
-  "duration": 773.475,
-  "bytes": 2322562,
-  "generated": "2026-08-10T03:35:36.655Z"
+  "textHash": "929e34bc6c618c81c87b4d69094ba93b98c9f1214c4ae4585761f4dff88b1f81",
+  "duration": 849.625,
+  "bytes": 2555644,
+  "generated": "2026-08-15T14:10:06.535Z"
 }

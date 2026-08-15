@@ -415,7 +415,7 @@ An authored gradient is **one URL-safe string** - `lin_90_30ba78-0_efefef-100` i
 - **Angle** in degrees, CSS convention - `0` is to the top, `90` to the right. It's the gradient line for `linear`, the `from` angle for `conic`, and unused for `radial`.
 - **Stops** - up to 12, each a bare hex (`30ba78`, no `#`), a CSS colour name, or `transparent`, then `-<pos>` in percent. Parsing is lenient (a leading `#`, an `@` separator, a missing angle, unpositioned stops, upper case all read fine) and writing is strict, so the round trip is byte-stable. Fewer than two usable stops answers `null` - a caller should fall back to a flat fill rather than paint something half-specified.
 
-Read and written by `parseGradientSpec` / `formatGradientSpec` in the engine, baked to CSS by `gradientCss` above. Layout Studio's per-box gradient fill is the reference consumer.
+Read and written by `parseGradientSpec` / `formatGradientSpec` in the engine, baked to CSS by `gradientCss` above. The Design tool's per-box gradient fill is the reference consumer.
 
 The idiomatic chart pattern - series colours that follow the **active brand** (see `chart-creator` / `d3`, the reference implementations): prefer the brand's own `color.spectrum.*` tokens from `host.tokens.colors()` (they carry measured print inks), top up with `distinct()` anchored on `{color.semantic.primary}`, and keep your shipped palette as the fallback for shells without `host.color`.
 

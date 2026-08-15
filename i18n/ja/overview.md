@@ -34,7 +34,7 @@
 | モバイルおよびデスクトップアプリ | ✓ | ✗ | ✗ | 一部対応 | **✓** |
 | コマンドラインと TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-ギャップは明白です。既存のランドスケープの中には、制約ファースト・オフライン対応・低スキル・社内で誰でもアクセスできる出力を提供するものが一つもありません。Lolly にはオープンキャンバス——**Layout Studio**——も含まれており、そこでも色・タイポグラフィ・アセットはブランドのグローバル設定に準拠するため、自由な配置であっても制約ファーストであり続けます。このツールが**そうではない**のは、制約のないデザインスイートだということです。旗艦となるオーダーメイド作品には、デザイナーが引き続き Illustrator や Figma を使用します。バリエーションの組み合わせは、このツールで組み立てられます。
+ギャップは明白です。既存のランドスケープの中には、制約ファースト・オフライン対応・低スキル・社内で誰でもアクセスできる出力を提供するものが一つもありません。Lolly にはオープンキャンバス——**Design**——も含まれており、そこでも色・タイポグラフィ・アセットはブランドのグローバル設定に準拠するため、自由な配置であっても制約ファーストであり続けます。このツールが**そうではない**のは、制約のないデザインスイートだということです。旗艦となるオーダーメイド作品には、デザイナーが引き続き Illustrator や Figma を使用します。バリエーションの組み合わせは、このツールで組み立てられます。
 
 **こんな用途に:** 運用化されたクリエイティブアセットの迅速な生成——イベントタイル、ネームバッジ、署名、CVE アラート、QR コード、ソーシャルカード、出荷ラベル、構造化されたレポートなど。
 
@@ -48,7 +48,7 @@
 
 Lolly が何であるかを最もはっきり示してくれるのは機能一覧ではなく、1 つのアセットが人の手から手へ渡っていく様子を追うことです。ローカライズされたキャンペーンカードが 1 枚、組織の中をどう進んでいくかを見てみましょう。
 
-1. **クリエイターがルールを決めます。** デザイナーが Layout Studio でベーステンプレートを作り、ブランドのタイポグラフィとカラー変数をハードコードします。作っているのは 1 枚のカードではありません——この土台となる作業を*一度だけ*行い、以後は手作業でローカライズしなくて済むようにしているのです。
+1. **クリエイターがルールを決めます。** デザイナーが Design でベーステンプレートを作り、ブランドのタイポグラフィとカラー変数をハードコードします。作っているのは 1 枚のカードではありません——この土台となる作業を*一度だけ*行い、以後は手作業でローカライズしなくて済むようにしているのです。
 2. **開発者がそれをスケールさせます。** その同じテンプレートを CLI 経由で毎晩のパイプラインに組み込めば、新しいチャートや新しい言語バリアントが自動的に生成されます——デザイナーがファイルを開き直すことはありません。
 3. **制作担当者はただ使うだけです。** 営業担当者が飛行機の中でオフラインのまま同じツールを開き、顧客との商談用に完全にブランドに沿ったデッキを生成します。デザインスキルも、ネットワークも、待ち時間も必要ありません。
 
@@ -173,7 +173,6 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── daily-card/        # "Day Brief" — 天気/時刻/地図(インラインのテンプレートスクリプトが取得)
 │   ├── code-canvas/
 │   ├── countdown-timer/
 │   ├── color-palette/
@@ -185,7 +184,6 @@ lolly/
 │   ├── strip-data/        # オンデバイスのメタデータ除去 — JPEG/PNG/SVG/PDF(ファイル入力 → クリーンなファイル出力)
 │   ├── compress-pdf/      # オンデバイスの PDF 圧縮 — 画像を再圧縮する(ファイル入力 → 小さいファイル出力)
 │   ├── brand-lockup/      # "Brand Lockup" — SUSE ロゴロックアップ;HarfBuzz によるテキストのパス化(wasm)
-│   ├── bag-video/
 │   ├── chart-creator/     # 構造化データから SVG チャートを生成
 │   ├── filter-duotone/    # 2 色の写真加工
 │   ├── filter-halftone/   # 写真 → ベクターのハーフトーン・ドットグリッド
@@ -196,7 +194,7 @@ lolly/
 │   ├── event-name-badge/  # カンファレンスバッジ — qr-code を SVG として組み合わせる
 │   ├── wayfinding-signage/ # イベントサイネージ;方向ブロックがラベルテキストを自動調整
 │   ├── text-helper/       # オンデバイスのテキスト作業台(整形/デコード/ハッシュ/匿名化)
-│   ├── design/     # "Layout Studio" — 自由形式の WYSIWYG エディタキャンバス(render.layout: editor)
+│   ├── design/     # "Design" — 自由形式の WYSIWYG エディタキャンバス(render.layout: editor)
 │   ├── multi-page-pdf/    # 複数ページの PDF ドキュメント — 表紙、流し込み式のコンテンツブロック、裏表紙
 │   ├── diagram-builder/   # 組織図 / レイヤーケーキ / プロセス / サイクル / ピラミッド図
 │   ├── logo-wall/         # 多数のロゴ → 自動配置のグリッド
@@ -274,15 +272,15 @@ CLI に対応する対話型版です。ツールの閲覧、入力の記入、�
 
 | カテゴリ | 提供済みツール | 計画中 |
 |---|---|---|
-| `everyone` | QR Code Generator、Quote Card、Email Signature、Day Brief、Code Canvas、Color Block、Dynamic Layout、Logo、Web Icon Maker | Employee Image Stationery |
-| `designer` | Brand Lockup、Bag Video、Chart Creator、Street Map、Animated Ad、Multi-Page PDF、Diagram Builder、Logo Lockup: Grid (NASCAR)、Logo Lockup: Partner、Filter: Duotone、Filter: Halftone、Filter: Scanline、Filter: Posterize Bitmap、Filter: Pixel Stretch | Font Outliner |
+| `everyone` | QR Code Generator、Quote Card、Email Signature、Code Canvas、Color Block、Dynamic Layout、Logo、Web Icon Maker | Employee Image Stationery |
+| `designer` | Brand Lockup、Chart Creator、Street Map、Animated Ad、Multi-Page PDF、Diagram Builder、Logo Lockup: Grid (NASCAR)、Logo Lockup: Partner、Filter: Duotone、Filter: Halftone、Filter: Scanline、Filter: Posterize Bitmap、Filter: Pixel Stretch | Font Outliner |
 | `event` | Meeting Planner、Event Name Badge、Wayfinding Signage、Calendar ICS | Event Stationery、Bulk Name Badges、Room Agenda Cards |
 | `product` | — | CVE Alert、Product Release Announcement、Blog OG Image |
-| `utility` | Countdown Timer、Color Palette、URL Screenshot、Strip Hidden Data、Text Helper、Compress PDF、Layout Studio | 単位/フォーマット変換ツール、その他のオンデバイス・プライバシーユーティリティ |
+| `utility` | Countdown Timer、Color Palette、URL Screenshot、Strip Hidden Data、Text Helper、Compress PDF、Design | 単位/フォーマット変換ツール、その他のオンデバイス・プライバシーユーティリティ |
 
-ツールは `status` によっても分類されます:`official`(ブランド承認済み、透かしなし)、`community`(外部からの貢献)、`experimental`(書き出しに透かしが入る)。Dynamic Layout、URL Screenshot、Logo Lockup: Grid (NASCAR)、Filter: Posterize Bitmap、Diagram Builder は現在 `experimental` ステータスであり、Web Icon Maker と Layout Studio は `community` ツールとして提供されています。
+ツールは `status` によっても分類されます:`official`(ブランド承認済み、透かしなし)、`community`(外部からの貢献)、`experimental`(書き出しに透かしが入る)。Dynamic Layout、URL Screenshot、Logo Lockup: Grid (NASCAR)、Filter: Posterize Bitmap、Diagram Builder は現在 `experimental` ステータスであり、Web Icon Maker と Design は `community` ツールとして提供されています。
 
-**Layout Studio** は、`render.layout: "editor"` のフリーキャンバスモード上に構築された最初のツールです——テキスト・図形・画像のボックスをドラッグ、リサイズ、回転、スナップできる、chrome のない直接操作型のサーフェスであり、他のあらゆるツールと同じレンダリング経路を通じて書き出されます。
+**Design** は、`render.layout: "editor"` のフリーキャンバスモード上に構築された最初のツールです——テキスト・図形・画像のボックスをドラッグ、リサイズ、回転、スナップできる、chrome のない直接操作型のサーフェスであり、他のあらゆるツールと同じレンダリング経路を通じて書き出されます。
 
 **Strip Hidden Data** は最初の**オンデバイスユーティリティ**(`privacy: "on-device"`)です。*あなた自身*が指定したファイルを受け取り、ブラウザ内だけで完全に処理して、きれいなコピーを返すコンテンツ変換ツールです——アップロードされることも、透かしが入ることも、来歴が刻まれることもありません。**Text Helper** は2番目のオンデバイスユーティリティで、日常的な「ウェブサイトに貼り付けるだけ」の作業(JSON 整形、JWT デコード、Base64、URL エンコード/デコード、SHA ハッシュ化)のための作業台です。**Compress PDF** は3番目で、画像を再圧縮することで PDF を軽量化します——これも完全にオンデバイスで行われます。この3つはいずれも「お使いのデバイス上で実行——アップロードは一切ありません」というバッジ文言を掲げています。これは、機密ファイルを単機能のウェブサイトに渡す代わりとなる、プライバシーユーティリティというカテゴリの始まりです。
 
@@ -444,7 +442,7 @@ Tauri でも同じライフサイクルです。CLI でも同じライフサイ�
 
 | マイルストーン | 目標時期 | 内容 |
 |---|---|---|
-| **Initial tools** | ✅ 完了 | QR Code、Quote Card、Email Signature、Day Brief、Code Canvas、Countdown Timer、Color Palette、Brand Lockup、Bag Video、Chart Creator、Filter: Duotone、Meeting Planner — web シェルが稼働中 |
+| **Initial tools** | ✅ 完了 | QR Code、Quote Card、Email Signature、Code Canvas、Countdown Timer、Color Palette、Brand Lockup、Chart Creator、Filter: Duotone、Meeting Planner — web シェルが稼働中 |
 | **Enhance current tooling** | 2026年半ば ✅ 完了 | ダウンロード可能なオフラインアプリ(Tauri);従業員・イベント向けツールの追加;より充実した書き出しパイプライン(テキストのパス化の安定性、メタデータ、追加フォーマット — `plans.md` を参照) |
 | **Open source the engine** | 2026年後半 ✅ 完了 | エンジン、シェル、スキーマ、ドキュメントを公開 — ブランド付きのツール/アセットは非公開のまま |
 | **Device-to-device transfer** | ✅ 完了 | ポータブルな `lolly-backup` バンドルが、任意の2つのインストール先の間でプロフィール、保存済みセッション、アップロードした画像、設定を運びます — オフラインでもオンラインでも、アカウントなしで。前方互換性があり、整合性が検証されるエンベロープです(仕様:`docs/data-transfer.md`) |

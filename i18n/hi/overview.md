@@ -36,7 +36,7 @@
 | मोबाइल और डेस्कटॉप ऐप | ✓ | ✗ | ✗ | आंशिक | **✓** |
 | कमांड लाइन और TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-कमी साफ़ है: मौजूदा परिदृश्य में कुछ भी हमें कंस्ट्रेंट-फ़र्स्ट, ऑफ़लाइन-सक्षम, कम-कौशल, आंतरिक रूप से सुलभ आउटपुट नहीं देता। Lolly में एक खुला कैनवास भी शामिल है — **Layout Studio** — जहाँ रंग, टाइप और ऐसेट ब्रांड ग्लोबल्स के अनुरूप रहते हैं, ताकि मुक्त संयोजन भी कंस्ट्रेंट-फ़र्स्ट बना रहे। जो यह **नहीं** है, वह है एक अनियंत्रित डिज़ाइन सुइट: बीस्पोक फ़्लैगशिप काम के लिए डिज़ाइनर Illustrator और Figma का ही उपयोग करते रहते हैं। इस टूल से परम्यूटेशन असेंबल किए जा सकते हैं।
+कमी साफ़ है: मौजूदा परिदृश्य में कुछ भी हमें कंस्ट्रेंट-फ़र्स्ट, ऑफ़लाइन-सक्षम, कम-कौशल, आंतरिक रूप से सुलभ आउटपुट नहीं देता। Lolly में एक खुला कैनवास भी शामिल है — **Design** — जहाँ रंग, टाइप और ऐसेट ब्रांड ग्लोबल्स के अनुरूप रहते हैं, ताकि मुक्त संयोजन भी कंस्ट्रेंट-फ़र्स्ट बना रहे। जो यह **नहीं** है, वह है एक अनियंत्रित डिज़ाइन सुइट: बीस्पोक फ़्लैगशिप काम के लिए डिज़ाइनर Illustrator और Figma का ही उपयोग करते रहते हैं। इस टूल से परम्यूटेशन असेंबल किए जा सकते हैं।
 
 **इसके लिए इस्तेमाल करें:** ऑपरेशनल बनाए गए क्रिएटिव ऐसेट का तेज़ निर्माण — इवेंट टाइलें, नाम बैज, सिग्नेचर, CVE अलर्ट, QR कोड, सोशल कार्ड, कंसाइनमेंट लेबल, संरचित रिपोर्टें।
 
@@ -50,7 +50,7 @@
 
 Lolly क्या है, यह देखने का सबसे साफ़ तरीक़ा फ़ीचर की सूची नहीं है — बल्कि एक ही ऐसेट का पीछा करना है, जैसे वह एक हाथ से दूसरे हाथ पहुँचता है। एक लोकलाइज़्ड कैंपेन कार्ड को संगठन से गुज़रते हुए देखें:
 
-1. **क्रिएटिव नियम तय करता है।** एक डिज़ाइनर Layout Studio में बेस टेम्पलेट लिखता है और उसमें ब्रांड की टाइपोग्राफ़ी तथा रंग वेरिएबल हार्ड-कोड कर देता है। वह एक कार्ड नहीं बना रहा — वह बुनियादी काम *एक बार* कर रहा है, ताकि उसे फिर कभी हाथ से लोकलाइज़ न करना पड़े।
+1. **क्रिएटिव नियम तय करता है।** एक डिज़ाइनर Design में बेस टेम्पलेट लिखता है और उसमें ब्रांड की टाइपोग्राफ़ी तथा रंग वेरिएबल हार्ड-कोड कर देता है। वह एक कार्ड नहीं बना रहा — वह बुनियादी काम *एक बार* कर रहा है, ताकि उसे फिर कभी हाथ से लोकलाइज़ न करना पड़े।
 2. **डेवलपर उसे स्केल करता है।** वही टेम्पलेट CLI के ज़रिए एक नाइटली पाइपलाइन में जुड़ जाता है, इसलिए ताज़ा चार्ट या किसी नई भाषा का वेरिएंट अपने-आप बन जाता है — कोई डिज़ाइनर फ़ाइल दोबारा नहीं खोलता।
 3. **निर्माता बस उसका इस्तेमाल करता है।** हवाई जहाज़ में ऑफ़लाइन बैठा एक सेल्स प्रतिनिधि वही टूल खोलता है और क्लाइंट मीटिंग के लिए बिलकुल ऑन-ब्रांड डेक बना लेता है। कोई डिज़ाइन कौशल नहीं, कोई नेटवर्क नहीं, कोई इंतज़ार नहीं।
 
@@ -175,7 +175,6 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── daily-card/        # "Day Brief" — weather/time/map (fetched by an inline template script)
 │   ├── code-canvas/
 │   ├── countdown-timer/
 │   ├── color-palette/
@@ -187,7 +186,6 @@ lolly/
 │   ├── strip-data/        # on-device metadata strip — JPEG/PNG/SVG/PDF (file in → clean file out)
 │   ├── compress-pdf/      # on-device PDF compressor — recompresses images (file in → smaller file out)
 │   ├── brand-lockup/      # "Brand Lockup" — SUSE logo lockups; HarfBuzz text-to-path (wasm)
-│   ├── bag-video/
 │   ├── chart-creator/     # SVG charts from structured data
 │   ├── filter-duotone/    # two-color photo treatment
 │   ├── filter-halftone/   # photo → vector halftone dot grid
@@ -198,7 +196,7 @@ lolly/
 │   ├── event-name-badge/  # conference badges — composes qr-code as an SVG
 │   ├── wayfinding-signage/ # event signage; directions blocks auto-fit label text
 │   ├── text-helper/       # on-device text workbench (format/decode/hash/de-identify)
-│   ├── design/     # "Layout Studio" — freeform WYSIWYG editor canvas (render.layout: editor)
+│   ├── design/     # "Design" — freeform WYSIWYG editor canvas (render.layout: editor)
 │   ├── multi-page-pdf/    # multi-page PDF document — cover, flowing content blocks, back page
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
 │   ├── logo-wall/         # many logos → auto-packed grid
@@ -275,15 +273,15 @@ CLI का इंटरैक्टिव समकक्ष: टूल ब्�
 
 | श्रेणी | शिप किए गए टूल | नियोजित |
 |---|---|---|
-| `everyone` | QR Code Generator, Quote Card, Email Signature, Day Brief, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
-| `designer` | Brand Lockup, Bag Video, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
+| `everyone` | QR Code Generator, Quote Card, Email Signature, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
+| `designer` | Brand Lockup, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | — | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Layout Studio | इकाई/फ़ॉर्मैट कन्वर्टर, और ऑन-डिवाइस प्राइवेसी यूटिलिटी |
+| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Design | इकाई/फ़ॉर्मैट कन्वर्टर, और ऑन-डिवाइस प्राइवेसी यूटिलिटी |
 
-टूलों को स्थिति के आधार पर भी वर्गीकृत किया जाता है: `official` (ब्रांड-अनुमोदित, कोई वॉटरमार्क नहीं), `community` (बाहरी योगदान), `experimental` (एक्सपोर्ट पर वॉटरमार्क)। Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap और Diagram Builder फ़िलहाल `experimental` स्थिति में हैं; Web Icon Maker और Layout Studio `community` टूल के रूप में शिप होते हैं।
+टूलों को स्थिति के आधार पर भी वर्गीकृत किया जाता है: `official` (ब्रांड-अनुमोदित, कोई वॉटरमार्क नहीं), `community` (बाहरी योगदान), `experimental` (एक्सपोर्ट पर वॉटरमार्क)। Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap और Diagram Builder फ़िलहाल `experimental` स्थिति में हैं; Web Icon Maker और Design `community` टूल के रूप में शिप होते हैं।
 
-**Layout Studio** `render.layout: "editor"` फ़्री-कैनवास मोड पर बना पहला टूल है — एक क्रोम-रहित, प्रत्यक्ष-हेरफेर सतह, जहाँ आप टेक्स्ट, आकृतियों और छवियों के बॉक्स खींचते, आकार बदलते, घुमाते और स्नैप करते हैं, फिर हर दूसरे टूल की तरह उसी रेंडर पथ से एक्सपोर्ट करते हैं।
+**Design** `render.layout: "editor"` फ़्री-कैनवास मोड पर बना पहला टूल है — एक क्रोम-रहित, प्रत्यक्ष-हेरफेर सतह, जहाँ आप टेक्स्ट, आकृतियों और छवियों के बॉक्स खींचते, आकार बदलते, घुमाते और स्नैप करते हैं, फिर हर दूसरे टूल की तरह उसी रेंडर पथ से एक्सपोर्ट करते हैं।
 
 **Strip Hidden Data** पहली **ऑन-डिवाइस यूटिलिटी** है (`privacy: "on-device"`): एक कंटेंट-ट्रांसफ़ॉर्म टूल, जो *आपकी* दी हुई फ़ाइल लेता है, उसे पूरी तरह ब्राउज़र में प्रोसेस करता है और एक साफ़ प्रति लौटा देता है — कभी अपलोड नहीं, कभी वॉटरमार्क नहीं, कोई प्रोवेनेंस स्टैम्प नहीं। **Text Helper** दूसरी है — रोज़मर्रा के 'किसी वेबसाइट में पेस्ट करने' वाले कामों के लिए ऑन-डिवाइस वर्कबेंच (JSON फ़ॉर्मैट, JWT डिकोड, Base64, URL एनकोड/डिकोड, SHA हैशिंग)। **Compress PDF** तीसरी है — यह PDF की छवियों को फिर से संपीड़ित करके उसे छोटा करती है, यह भी पूरी तरह ऑन-डिवाइस। तीनों पर बैज टेक्स्ट है "आपके डिवाइस पर चलता है — कुछ भी अपलोड नहीं होता"। यह उस प्राइवेसी-यूटिलिटी श्रेणी की शुरुआत है, जो गोपनीय फ़ाइलों को एकल-उद्देश्य वेबसाइटों को सौंपने की जगह लेती है।
 
@@ -407,7 +405,7 @@ Slides टूल उसी दूसरी सतह पर बना है: �
 ## जो हमने स्पष्ट रूप से नहीं करना चुना
 
 - **कोई EJS नहीं / टेम्पलेट में कोई मनमाना JS नहीं।** XSS सतह शून्य है। लॉजिक `hooks.js` में रहता है।
-- **कोई अनिवार्य ऐसेट CMS नहीं।** व्यक्ति अपनी क्रिएटिव फ़ाइलें सीधे ऐप के भीतर अपने कैटलॉग में लाते हैं ([कैटलॉग](/info/using.html) व्यू और Brand Studio) और [Layout Studio](/info/using.html) सत्र सहेजकर अपने टूल स्वयं बनाते हैं — न कोई सर्वर, न कोई एडमिन कंसोल। *साझा, शासित* कैटलॉग के लिए कोई संगठन ऐसेट डायरेक्टरी को git के रूप में प्रबंधित **कर सकता है** और अपडेट को PR समीक्षा से गुज़ार सकता है — यह एक उपलब्ध गवर्नेंस मॉडल है, ऐप की कोई अनिवार्यता नहीं।
+- **कोई अनिवार्य ऐसेट CMS नहीं।** व्यक्ति अपनी क्रिएटिव फ़ाइलें सीधे ऐप के भीतर अपने कैटलॉग में लाते हैं ([कैटलॉग](/info/using.html) व्यू और Brand Studio) और [Design](/info/using.html) सत्र सहेजकर अपने टूल स्वयं बनाते हैं — न कोई सर्वर, न कोई एडमिन कंसोल। *साझा, शासित* कैटलॉग के लिए कोई संगठन ऐसेट डायरेक्टरी को git के रूप में प्रबंधित **कर सकता है** और अपडेट को PR समीक्षा से गुज़ार सकता है — यह एक उपलब्ध गवर्नेंस मॉडल है, ऐप की कोई अनिवार्यता नहीं।
 - **कोई ज़बरदस्ती का RBAC नहीं।** खुला ऐप डिफ़ॉल्ट रूप से सार्वजनिक-पहुँच वाला है; ब्रांड जोखिम मैच्योरिटी टैग + वॉटरमार्क से प्रबंधित होता है। जिस संगठन को कड़ा नियंत्रण चाहिए, वह अपनी ऑथ और ऊपर बताए git-समीक्षित कैटलॉग की परतें जोड़ता है।
 - **कोई केंद्रीय डेटाबेस नहीं।** सारी उपयोगकर्ता स्थिति प्रति-डिवाइस है। SUSE ID एकीकरण रोडमैप पर है, लेकिन लॉन्च के लिए बाधक नहीं।
 - **टूल/इंजन का कोई साझा कोड पथ नहीं।** इंजन ओपन सोर्स है; `tools/` और `assets/` अपनी-अपनी रिपॉज़िटरियों में SUSE की स्वामित्व-सामग्री बने रहते हैं। यह अलगाव लागू किया जाता है (कोई क्रॉस-इम्पोर्ट नहीं), ताकि विभाजन साफ़ बना रहे।
@@ -445,7 +443,7 @@ Tauri में वही जीवनचक्र। CLI में वही �
 
 | माइलस्टोन | लक्ष्य | क्या |
 |---|---|---|
-| **आरंभिक टूल** | ✅ पूर्ण | QR Code, Quote Card, Email Signature, Day Brief, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Bag Video, Chart Creator, Filter: Duotone, Meeting Planner — वेब शेल लाइव |
+| **आरंभिक टूल** | ✅ पूर्ण | QR Code, Quote Card, Email Signature, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Chart Creator, Filter: Duotone, Meeting Planner — वेब शेल लाइव |
 | **मौजूदा टूलिंग का संवर्धन** | मध्य 2026 ✅ पूर्ण  | डाउनलोड-योग्य ऑफ़लाइन ऐप (Tauri); अतिरिक्त कर्मचारी और इवेंट टूल; समृद्ध एक्सपोर्ट पाइपलाइन (टेक्स्ट-टू-पाथ स्थिरता, मेटाडेटा, अतिरिक्त फ़ॉर्मैट — `plans.md` देखें) |
 | **इंजन को ओपन सोर्स करना** | 2026 के अंत में ✅ पूर्ण  | इंजन, शेल, स्कीमा, दस्तावेज़ सार्वजनिक होते हैं — ब्रांडेड टूल/ऐसेट नहीं |
 | **डिवाइस-से-डिवाइस स्थानांतरण** | ✅ पूर्ण | पोर्टेबल `lolly-backup` बंडल प्रोफ़ाइल, सहेजे गए सत्र, अपलोड की गई छवियाँ और प्राथमिकताएँ किन्हीं दो इंस्टॉल के बीच ले जाता है — ऑफ़लाइन या ऑनलाइन, बिना खाते के। फ़ॉरवर्ड-कम्पैटिबल, अखंडता-जाँचा हुआ एनवेलप (विनिर्देश: `docs/data-transfer.md`) |

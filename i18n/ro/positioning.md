@@ -6,7 +6,7 @@ Unde se încadrează această platformă în peisajul mai larg al instrumentelor
 
 ## Peisaj
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
+![Design's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
 
 | Capacitate | Canva (canvas deschis) | Portaluri de brand (șabloane DAM) | Illustrator (profesionist desktop) | Figma / Penpot (profesionist online) | **Lolly (axat pe constrângeri)** |
 |---|---|---|---|---|---|
@@ -22,7 +22,7 @@ Unde se încadrează această platformă în peisajul mai larg al instrumentelor
 | Aplicații Mobile și Desktop | ✓ | ✗ | ✗ | parțial | **✓** |
 | Linie de comandă și TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-Forma golului este clară: nimic din peisajul existent nu ne oferă o ieșire generativă axată pe constrângeri, capabilă offline, cu prag scăzut de competențe și accesibilă intern. Lolly include acum propriul canvas deschis - **Layout Studio**, un canvas liber cu manipulare directă - dar cu o diferență decisivă față de coloana Canva: culorile, tipografia și resursele plasate pe el respectă valorile globale de brand, astfel încât chiar și aranjarea liberă rămâne axată pe constrângeri. Ceea ce Lolly tot **nu** este e un pachet de design nerestricționat; designerii vor continua să folosească Illustrator și Figma pentru lucrări personalizate - iar atunci când acea lucrare trebuie să devină o resursă guvernată, reproductibilă, funcția [Importă un design](/info/design-import.html) din Layout Studio aduce fișierul Figma/Illustrator/Penpot finalizat pe canvas, sub formă de casete editabile, conforme brandului.
+Forma golului este clară: nimic din peisajul existent nu ne oferă o ieșire generativă axată pe constrângeri, capabilă offline, cu prag scăzut de competențe și accesibilă intern. Lolly include acum propriul canvas deschis - **Design**, un canvas liber cu manipulare directă - dar cu o diferență decisivă față de coloana Canva: culorile, tipografia și resursele plasate pe el respectă valorile globale de brand, astfel încât chiar și aranjarea liberă rămâne axată pe constrângeri. Ceea ce Lolly tot **nu** este e un pachet de design nerestricționat; designerii vor continua să folosească Illustrator și Figma pentru lucrări personalizate - iar atunci când acea lucrare trebuie să devină o resursă guvernată, reproductibilă, funcția [Importă un design](/info/design-import.html) din Design aduce fișierul Figma/Illustrator/Penpot finalizat pe canvas, sub formă de casete editabile, conforme brandului.
 
 ## Folosește-l pentru
 
@@ -31,8 +31,8 @@ Forma golului este clară: nimic din peisajul existent nu ne oferă o ieșire ge
 Deck Studio e o bună măsură a plafonului de aici: un întreg set de slide-uri declarat ca date, aranjat live pe canvas și exportat ca un PowerPoint nativ, editabil.
 
 - Generare rapidă de resurse creative operaționalizate (tile-uri de evenimente, ecusoane, semnături, alerte)
-- Aranjare liberă pe canvas-ul deschis (Layout Studio) atunci când elementele - culori, tipografie, iconițe, imagini - trebuie să rămână conforme cu valorile globale de brand
-- Aducerea unui design finalizat din Figma, Illustrator, InDesign sau Penpot (funcția Importă un design din Layout Studio), pentru a putea fi editat, guvernat și re-randat determinist în fiecare format Lolly
+- Aranjare liberă pe canvas-ul deschis (Design) atunci când elementele - culori, tipografie, iconițe, imagini - trebuie să rămână conforme cu valorile globale de brand
+- Aducerea unui design finalizat din Figma, Illustrator, InDesign sau Penpot (funcția Importă un design din Design), pentru a putea fi editat, guvernat și re-randat determinist în fiecare format Lolly
 - Fluxuri „completează trei câmpuri, primești resursa finită” de tip one-to-many - inclusiv rulări în masă dintr-o foaie de calcul/CSV în grila batch `/pro` (lipești sau imporți rânduri, câte o resursă finită per rând, descărcare ca zip)
 - Ieșiri de brand recurente, mereu active
 - Situații în care controlul central al exprimării brandului contează mai mult decât flexibilitatea expresivă

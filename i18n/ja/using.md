@@ -17,7 +17,7 @@
 
 各ツールは分割ビューになっており、片側に**コントロール**、もう片側にライブの**プレビュー**（キャンバス）が表示されます。コントロールを変更すると、プレビューは即座に更新されます。
 
-> 一部のツール（**Layout Studio** など）は代わりに**フリーキャンバス**として開きます — クロームのない直接操作サーフェスで、テキスト・図形・画像のボックスをドラッグ、リサイズ、回転、スナップさせたり、ダブルクリックでテキストをその場で編集したりできます。他のすべてのツールと同じレンダーパスで書き出されるため、キャンバス*そのもの*がファイルになります。詳しくは下記の [フリーキャンバス](#the-free-canvas-design) を参照してください。
+> 一部のツール（**Design** など）は代わりに**フリーキャンバス**として開きます — クロームのない直接操作サーフェスで、テキスト・図形・画像のボックスをドラッグ、リサイズ、回転、スナップさせたり、ダブルクリックでテキストをその場で編集したりできます。他のすべてのツールと同じレンダーパスで書き出されるため、キャンバス*そのもの*がファイルになります。詳しくは下記の [フリーキャンバス](#the-free-canvas-design) を参照してください。
 
 ## キャンバス（プレビュー）
 
@@ -40,9 +40,9 @@
 
 サイズを変更すると、ビューは常にきれいなフィット表示に戻ります。
 
-### フリーキャンバス（Layout Studio）
+### フリーキャンバス（Design）
 
-![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 フリーキャンバスのツールは、アートボードの*周囲*に作業スペースを追加します。デザイナーの貼り込み台のようなイメージです。
 
@@ -144,7 +144,7 @@ Catalogue の **Swatches** パネルは、単なる参照用ではありませ�
 
 **Fonts** パネルには、ブランドの書体がそれぞれ **download** ボタン付きで一覧表示され、ローカルにインストールしたり印刷会社に渡したりできます。（[Brand Studio](/info/brand-studio.html) の Colours タブでも同じパレットのダウンロードが可能です。）
 
-アセットは、オープンでDIY的な道の半分にすぎません。もう半分は**自分だけのツールを作ること**です——フリーキャンバス（前述の Layout Studio）を使えば、コード不要で視覚的に構築できます。
+アセットは、オープンでDIY的な道の半分にすぎません。もう半分は**自分だけのツールを作ること**です——フリーキャンバス（前述の Design）を使えば、コード不要で視覚的に構築できます。
 
 ## サウンドとアクセシビリティ
 
@@ -176,7 +176,7 @@ Lolly は、誰にとっても快適に使えることを目指しています�
 
 ## デザインのインポート（Figma、Penpot、Illustrator、InDesign）
 
-既存のデザインを Lolly に取り込んで、そのまま作業を続けることができます。**Layout Studio** を開き、キャンバスツールバーの **Import a design** をクリックして、Figma の **.fig** または SVG、Penpot の **.penpot**、Illustrator の **.ai** / **.pdf**、あるいは InDesign の **.idml** を選択してください。レイヤーはフリーキャンバス上の編集可能なボックスになります — テキストは再入力可能なままで、画像は **My images** に格納され、書体と色はブランドのグローバル設定に従います — その後、結果は他のセッションと同じように保存・共有・レンダリングできます。解析はすべてお使いのデバイス上で行われます。詳細: **[Import a design](/info/design-import.html)**。
+既存のデザインを Lolly に取り込んで、そのまま作業を続けることができます。**Design** を開き、キャンバスツールバーの **Import a design** をクリックして、Figma の **.fig** または SVG、Penpot の **.penpot**、Illustrator の **.ai** / **.pdf**、あるいは InDesign の **.idml** を選択してください。レイヤーはフリーキャンバス上の編集可能なボックスになります — テキストは再入力可能なままで、画像は **My images** に格納され、書体と色はブランドのグローバル設定に従います — その後、結果は他のセッションと同じように保存・共有・レンダリングできます。解析はすべてお使いのデバイス上で行われます。詳細: **[Import a design](/info/design-import.html)**。
 
 ## 書き出し
 

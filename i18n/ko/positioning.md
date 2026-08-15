@@ -6,7 +6,7 @@
 
 ## 지형
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
+![Design's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
 
 | 기능 | Canva(열린 캔버스) | Brand portals(DAM 템플릿화) | Illustrator(데스크톱 프로) | Figma / Penpot(온라인 프로) | **Lolly(제약 우선)** |
 |---|---|---|---|---|---|
@@ -22,7 +22,7 @@
 | 모바일 및 데스크톱 앱 | ✓ | ✗ | ✗ | 부분 지원 | **✓** |
 | 커맨드라인과 TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-격차의 모양은 명확해요. 기존 지형 어디에도 제약 우선·오프라인 가능·낮은 숙련도·사내 접근 가능한 생성형 결과물을 제공하는 것은 없어요. Lolly는 이제 직접 조작 방식의 프리 캔버스인 **Layout Studio**라는 자체 열린 캔버스도 제공하지만, Canva 열과는 결정적으로 달라요. 그 위에 배치되는 색상, 타이포그래피, 에셋이 브랜드 전역 설정을 따르기 때문에, 자유로운 배치조차 제약 우선을 유지해요. Lolly가 여전히 **아닌** 것은 제약 없는 디자인 스위트예요——맞춤형 작업에는 디자이너가 계속 Illustrator와 Figma를 사용할 거예요——그리고 그 작업이 거버넌스가 적용된 재현 가능한 에셋이 되어야 할 때는, Layout Studio의 [디자인 가져오기](/info/design-import.html)가 완성된 Figma/Illustrator/Penpot 파일을 편집 가능하고 브랜드에 맞춰진 상자로 캔버스에 옮겨줘요.
+격차의 모양은 명확해요. 기존 지형 어디에도 제약 우선·오프라인 가능·낮은 숙련도·사내 접근 가능한 생성형 결과물을 제공하는 것은 없어요. Lolly는 이제 직접 조작 방식의 프리 캔버스인 **Design**라는 자체 열린 캔버스도 제공하지만, Canva 열과는 결정적으로 달라요. 그 위에 배치되는 색상, 타이포그래피, 에셋이 브랜드 전역 설정을 따르기 때문에, 자유로운 배치조차 제약 우선을 유지해요. Lolly가 여전히 **아닌** 것은 제약 없는 디자인 스위트예요——맞춤형 작업에는 디자이너가 계속 Illustrator와 Figma를 사용할 거예요——그리고 그 작업이 거버넌스가 적용된 재현 가능한 에셋이 되어야 할 때는, Design의 [디자인 가져오기](/info/design-import.html)가 완성된 Figma/Illustrator/Penpot 파일을 편집 가능하고 브랜드에 맞춰진 상자로 캔버스에 옮겨줘요.
 
 ## 이런 용도로 사용하세요
 
@@ -31,8 +31,8 @@
 Deck Studio는 여기서의 천장이 얼마나 높은지 잘 보여줘요: 슬라이드 덱 전체를 데이터로 선언하고, 캔버스에서 실시간으로 배치한 뒤, 편집 가능한 네이티브 PowerPoint로 내보내요.
 
 - 운영화된 크리에이티브 에셋의 빠른 생성(이벤트 타일, 배지, 서명, 경고 등)
-- 열린 캔버스(Layout Studio)에서의 자유로운 배치——색상, 타이포그래피, 아이콘, 이미지 같은 요소들이 브랜드 전역 설정에 계속 맞춰져야 할 때
-- 완성된 Figma, Illustrator, InDesign, Penpot 디자인을 들여오기(Layout Studio의 디자인 가져오기)——편집하고 거버넌스를 적용하고 모든 Lolly 포맷으로 결정론적으로 다시 렌더링할 수 있도록
+- 열린 캔버스(Design)에서의 자유로운 배치——색상, 타이포그래피, 아이콘, 이미지 같은 요소들이 브랜드 전역 설정에 계속 맞춰져야 할 때
+- 완성된 Figma, Illustrator, InDesign, Penpot 디자인을 들여오기(Design의 디자인 가져오기)——편집하고 거버넌스를 적용하고 모든 Lolly 포맷으로 결정론적으로 다시 렌더링할 수 있도록
 - "세 개 항목만 채우면 완성된 에셋이 나오는" 일대다 흐름——`/pro` 배치 그리드에서 스프레드시트/CSV로 대량 실행하는 것도 포함(행을 붙여넣거나 가져와서, 행마다 완성된 에셋 하나씩, zip으로 다운로드)
 - 상시 가동되는, 반복적인 브랜드 출력물
 - 표현의 자유보다 브랜드 표현의 중앙 통제가 더 중요한 경우

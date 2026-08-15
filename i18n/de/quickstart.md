@@ -48,7 +48,7 @@ Sie beginnen nicht bei null. Lolly öffnet sich für die Designarbeit und die of
 
 ### Open-Source-Designdateien
 
-Fertige Arbeiten aus **Figma, Penpot, Illustrator, InDesign oder einer beliebigen SVG-App** müssen nicht in der App eingeschlossen bleiben, in der Sie sie erstellt haben. Öffnen Sie **Layout Studio**, klicken Sie auf **Design importieren**, und die Datei öffnet sich als *lebendiges Layout* - kein flaches Bild. Jede Ebene wird zu einer bearbeitbaren Box: Text bleibt neu eintippbar, Formen bleiben Formen, Bilder landen in Ihrer Bibliothek, und komplexe Vektorgrafiken werden originalgetreu erhalten. Sie kommt bereits an Ihre Markenschriften und Farbregeln angepasst an.
+Fertige Arbeiten aus **Figma, Penpot, Illustrator, InDesign oder einer beliebigen SVG-App** müssen nicht in der App eingeschlossen bleiben, in der Sie sie erstellt haben. Öffnen Sie **Design**, klicken Sie auf **Design importieren**, und die Datei öffnet sich als *lebendiges Layout* - kein flaches Bild. Jede Ebene wird zu einer bearbeitbaren Box: Text bleibt neu eintippbar, Formen bleiben Formen, Bilder landen in Ihrer Bibliothek, und komplexe Vektorgrafiken werden originalgetreu erhalten. Sie kommt bereits an Ihre Markenschriften und Farbregeln angepasst an.
 
 | Sie haben | Bringen Sie es ein als |
 |---|---|
@@ -62,7 +62,7 @@ Der gesamte Import erfolgt **auf Ihrem Gerät** - die Datei wird in Ihrem Browse
 
 ### Vom Einzelstück zur Vorlage
 
-Und hier liegt der Gewinn: Ein importiertes Layout ist eine ganz normale Layout-Studio-Sitzung. Sobald Sie es **speichern**, lebt es unter einer URL. Jeder mit Lolly kann diese URL öffnen, die Wörter ändern, ein Bild austauschen und seine eigene Version rendern - ohne Design-App, wobei die gesperrten Teile gesperrt bleiben. Aus einem einmaligen Design wird ein wiederverwendbares Werkzeug. Das ist die ganze Idee, erreicht ohne eine einzige Zeile Konfiguration zu schreiben.
+Und hier liegt der Gewinn: Ein importiertes Layout ist eine ganz normale Design-Sitzung. Sobald Sie es **speichern**, lebt es unter einer URL. Jeder mit Lolly kann diese URL öffnen, die Wörter ändern, ein Bild austauschen und seine eigene Version rendern - ohne Design-App, wobei die gesperrten Teile gesperrt bleiben. Aus einem einmaligen Design wird ein wiederverwendbares Werkzeug. Das ist die ganze Idee, erreicht ohne eine einzige Zeile Konfiguration zu schreiben.
 
 ### Offene Daten und offene Werkzeuge
 

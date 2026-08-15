@@ -48,7 +48,7 @@ Bạn không cần bắt đầu từ một trang trắng. Lolly mở được c�
 
 ### Tệp thiết kế mã nguồn mở
 
-Sản phẩm hoàn thiện trong **Figma, Penpot, Illustrator, InDesign, hay bất kỳ ứng dụng SVG nào** không cần phải bị khoá mãi trong ứng dụng bạn đã vẽ ra nó. Mở **Layout Studio**, nhấn **Import a design**, và tệp đó sẽ mở ra như một *bố cục sống* - chứ không phải một bức ảnh phẳng. Mỗi lớp trở thành một khối có thể chỉnh sửa: văn bản vẫn gõ lại được, hình khối vẫn là hình khối, hình ảnh được đưa vào thư viện của bạn, và các hoạ tiết vector phức tạp được giữ nguyên trung thực. Nó xuất hiện đã sẵn tuân theo mặt chữ và quy tắc màu sắc thương hiệu của bạn.
+Sản phẩm hoàn thiện trong **Figma, Penpot, Illustrator, InDesign, hay bất kỳ ứng dụng SVG nào** không cần phải bị khoá mãi trong ứng dụng bạn đã vẽ ra nó. Mở **Design**, nhấn **Import a design**, và tệp đó sẽ mở ra như một *bố cục sống* - chứ không phải một bức ảnh phẳng. Mỗi lớp trở thành một khối có thể chỉnh sửa: văn bản vẫn gõ lại được, hình khối vẫn là hình khối, hình ảnh được đưa vào thư viện của bạn, và các hoạ tiết vector phức tạp được giữ nguyên trung thực. Nó xuất hiện đã sẵn tuân theo mặt chữ và quy tắc màu sắc thương hiệu của bạn.
 
 | Bạn có | Mang vào dưới dạng |
 |---|---|
@@ -62,7 +62,7 @@ Toàn bộ quá trình nhập diễn ra **ngay trên thiết bị của bạn** 
 
 ### Từ một lần dùng riêng lẻ thành một mẫu
 
-Đây là phần thưởng: một bố cục đã nhập là một phiên Layout Studio bình thường, vậy nên một khi bạn **lưu** nó, nó sẽ tồn tại tại một URL. Bất kỳ ai có Lolly đều có thể mở URL đó, đổi chữ, thay ảnh, và render ra phiên bản của riêng họ - không cần ứng dụng thiết kế nào, và các phần bị khoá vẫn được khoá. Một thiết kế chỉ dùng một lần trở thành một công cụ có thể tái sử dụng. Đó là toàn bộ ý tưởng, đạt được mà không cần viết một dòng cấu hình nào.
+Đây là phần thưởng: một bố cục đã nhập là một phiên Design bình thường, vậy nên một khi bạn **lưu** nó, nó sẽ tồn tại tại một URL. Bất kỳ ai có Lolly đều có thể mở URL đó, đổi chữ, thay ảnh, và render ra phiên bản của riêng họ - không cần ứng dụng thiết kế nào, và các phần bị khoá vẫn được khoá. Một thiết kế chỉ dùng một lần trở thành một công cụ có thể tái sử dụng. Đó là toàn bộ ý tưởng, đạt được mà không cần viết một dòng cấu hình nào.
 
 ### Dữ liệu mở và công cụ mở
 

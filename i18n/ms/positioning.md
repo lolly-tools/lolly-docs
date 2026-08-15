@@ -6,7 +6,7 @@ Di mana platform ini sesuai dalam landskap alat kreatif yang lebih luas, dan di 
 
 ## Landskap
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
+![Design's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
 
 | Keupayaan | Canva (Kanvas terbuka) | Portal jenama (Templat DAM) | Illustrator (Profesional desktop) | Figma / Penpot (Profesional dalam talian) | **Lolly (Kekangan Dahulu)** |
 |---|---|---|---|---|---|
@@ -22,7 +22,7 @@ Di mana platform ini sesuai dalam landskap alat kreatif yang lebih luas, dan di 
 | Aplikasi Mudah Alih dan Desktop | ✓ | ✗ | ✗ | sebahagian | **✓** |
 | Baris Perintah & TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-Bentuk jurang ini jelas: tiada apa dalam landskap sedia ada yang memberikan kita output yang kekangan-dahulu, mampu luar talian, kemahiran rendah, boleh diakses secara dalaman, dan generatif. Lolly kini menghadirkan kanvas terbukanya sendiri - **Layout Studio**, sebuah kanvas bebas manipulasi langsung - tetapi dengan perbezaan ketara daripada lajur Canva: warna, jenis taip dan aset yang diletakkan di atasnya patuh kepada tetapan global jenama, jadi walaupun susunan bebas kekal kekangan-dahulu. Apa yang Lolly masih **bukan** ialah sut reka bentuk tanpa kekangan; pereka bentuk akan terus menggunakan Illustrator dan Figma untuk kerja tersuai - dan apabila kerja itu perlu menjadi aset yang boleh ditadbir dan boleh dihasilkan semula, ciri [Import reka bentuk](/info/design-import.html) dalam Layout Studio membawa fail Figma/Illustrator/Penpot yang siap ke atas kanvas sebagai kotak yang boleh disunting dan patuh kepada jenama.
+Bentuk jurang ini jelas: tiada apa dalam landskap sedia ada yang memberikan kita output yang kekangan-dahulu, mampu luar talian, kemahiran rendah, boleh diakses secara dalaman, dan generatif. Lolly kini menghadirkan kanvas terbukanya sendiri - **Design**, sebuah kanvas bebas manipulasi langsung - tetapi dengan perbezaan ketara daripada lajur Canva: warna, jenis taip dan aset yang diletakkan di atasnya patuh kepada tetapan global jenama, jadi walaupun susunan bebas kekal kekangan-dahulu. Apa yang Lolly masih **bukan** ialah sut reka bentuk tanpa kekangan; pereka bentuk akan terus menggunakan Illustrator dan Figma untuk kerja tersuai - dan apabila kerja itu perlu menjadi aset yang boleh ditadbir dan boleh dihasilkan semula, ciri [Import reka bentuk](/info/design-import.html) dalam Design membawa fail Figma/Illustrator/Penpot yang siap ke atas kanvas sebagai kotak yang boleh disunting dan patuh kepada jenama.
 
 ## Gunakan untuk
 
@@ -31,8 +31,8 @@ Bentuk jurang ini jelas: tiada apa dalam landskap sedia ada yang memberikan kita
 Deck Studio ialah ukuran yang baik bagi had di sini: satu dek slaid penuh diisytiharkan sebagai data, disusun secara langsung pada kanvas, dan dieksport sebagai PowerPoint asli yang boleh disunting.
 
 - Penjanaan pantas aset kreatif yang dioperasikan (jubin acara, lencana, tandatangan, makluman)
-- Susunan bebas bentuk pada kanvas terbuka (Layout Studio) apabila kepingan - warna, jenis taip, ikon, imej - perlu kekal patuh kepada tetapan global jenama
-- Membawa masuk reka bentuk Figma, Illustrator, InDesign atau Penpot yang siap (ciri Import reka bentuk dalam Layout Studio) supaya ia boleh disunting, ditadbir dan dipapar semula secara deterministik dalam setiap format Lolly
+- Susunan bebas bentuk pada kanvas terbuka (Design) apabila kepingan - warna, jenis taip, ikon, imej - perlu kekal patuh kepada tetapan global jenama
+- Membawa masuk reka bentuk Figma, Illustrator, InDesign atau Penpot yang siap (ciri Import reka bentuk dalam Design) supaya ia boleh disunting, ditadbir dan dipapar semula secara deterministik dalam setiap format Lolly
 - Aliran kerja satu-ke-banyak "isi tiga medan, dapatkan aset siap" - termasuk larian pukal daripada hamparan/CSV dalam grid kelompok `/pro` (tampal atau import baris, satu aset siap bagi setiap baris, muat turun sebagai zip)
 - Output berjenama yang sentiasa aktif dan berulang
 - Perkara di mana kawalan berpusat terhadap ekspresi jenama lebih penting daripada fleksibiliti ekspresif

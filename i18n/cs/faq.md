@@ -46,7 +46,7 @@ prohlíží v prohlížeči. Tření při zavádění bývá málokdy technické
 balíček tvých šablon. Pro *řízené zavedení* někdo definuje sdílený katalog assetů
 (loga, palety, fonty jako trvalá ID) a napíše manifest a šablonu pro každý typ
 výstupu. Jednotlivci na to ale nemusí čekat - v otevřené aplikaci si každý může
-vložit vlastní soubory do katalogu a stavět nástroje v Layout Studio už od
+vložit vlastní soubory do katalogu a stavět nástroje v Design už od
 prvního dne.
 
 **Governance přes git je volitelná - a lidem mimo vývojáře cizí.** Pokud provozuješ
@@ -59,7 +59,7 @@ Týmy, které o to nestojí, to prostě přeskočí.
 
 **Je záměrně úzce zaměřené - tak to i prezentuj.** Lolly není pro zakázkový nebo
 hero obsah. *Je* to tvůj osobní DAM - nasycený a poháněný tvým design systémem,
-nástroji a katalogem - a *má* otevřené plátno (Layout Studio), ale i tam se barvy,
+nástroji a katalogem - a *má* otevřené plátno (Design), ale i tam se barvy,
 typografie a assety řídí aktivními globálními hodnotami designu, takže volné
 uspořádání zůstává uvnitř systému. Ve srovnání s Figmou nebo Canvou bude působit
 omezeně. Posuzováno jako to, čím skutečně je - operacionalizovaná, opakovaná,
@@ -100,9 +100,9 @@ Válku o governance vyhráváme skvělým pohodlím a službou.
 
 ## Umí Lolly upravit a vyrenderovat moje soubory z Figmy, Penpotu, Illustratoru nebo InDesignu?
 
-![Layout Studio's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
-Ano. Otevři **Layout Studio** a klikni na **Importuj návrh**: přijímá nativní Figma soubor **.fig** (Save local copy), export z Penpotu **.penpot**, Illustrator **.ai** nebo **.pdf**, InDesign **.idml** (File → Export → InDesign Markup), nebo **jakékoli SVG** (široká brána - skoro každá návrhářská aplikace ho umí exportovat). Všechno se zpracovává výhradně na tvém zařízení, není potřeba účet ani plugin.
+Ano. Otevři **Design** a klikni na **Importuj návrh**: přijímá nativní Figma soubor **.fig** (Save local copy), export z Penpotu **.penpot**, Illustrator **.ai** nebo **.pdf**, InDesign **.idml** (File → Export → InDesign Markup), nebo **jakékoli SVG** (široká brána - skoro každá návrhářská aplikace ho umí exportovat). Všechno se zpracovává výhradně na tvém zařízení, není potřeba účet ani plugin.
 
 Vrstvy se objeví jako editovatelné boxy na otevřeném plátně: text zůstává přepsatelný, tvary zůstávají tvary, obrázky se přidají do tvé knihovny na zařízení a typografie a barvy se řídí globálními hodnotami značky. Ulož to a layout se stane znovupoužitelnou šablonou adresovatelnou přes URL, kterou může kdokoli s Lolly znovu naplnit - a můžeš do ní zamíchat živé nástroje (QR kód, graf), které se při načtení znovu vyrenderují. Odtud se renderuje stejně jako cokoli jiného v Lolly - SVG, PDF, PNG a další, reprodukovatelné z jeho URL. Viz [Importuj návrh](/info/design-import.html).
 

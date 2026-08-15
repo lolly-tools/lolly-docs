@@ -17,7 +17,7 @@ L'écran d'accueil est la **galerie** - tous les outils, regroupés par catégor
 
 Chaque outil se présente en vue divisée : les **contrôles** d'un côté, un **aperçu** en direct (le canevas) de l'autre. Modifie n'importe quel contrôle et l'aperçu se met à jour instantanément.
 
-> Quelques outils (comme **Layout Studio**) s'ouvrent plutôt en **canevas libre** - une surface de manipulation directe, sans habillage, où tu fais glisser, redimensionnes, fais pivoter et alignes des boîtes de texte, de formes et d'images, et où tu double-cliques pour modifier le texte sur place. Il s'exporte via le même chemin de rendu que tout autre outil, donc le canevas *est* le fichier. Voir [Le canevas libre](#the-free-canvas-design) ci-dessous.
+> Quelques outils (comme **Design**) s'ouvrent plutôt en **canevas libre** - une surface de manipulation directe, sans habillage, où tu fais glisser, redimensionnes, fais pivoter et alignes des boîtes de texte, de formes et d'images, et où tu double-cliques pour modifier le texte sur place. Il s'exporte via le même chemin de rendu que tout autre outil, donc le canevas *est* le fichier. Voir [Le canevas libre](#the-free-canvas-design) ci-dessous.
 
 ## Le canevas (aperçu)
 
@@ -40,9 +40,9 @@ L'aperçu montre toujours exactement ce qui sera exporté.
 
 Un changement de dimension ramène toujours la vue à un ajustement net.
 
-### Le canevas libre (Layout Studio)
+### Le canevas libre (Design)
 
-![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Les outils en canevas libre ajoutent une surface de travail *autour* du plan de travail, comme le plan de collage d'un designer :
 
@@ -144,7 +144,7 @@ Le panneau **Nuancier** du Catalogue ne sert pas qu'à la référence - clique s
 
 Le panneau **Polices** liste tes fontes de marque avec un **téléchargement** à côté de chacune, pour les installer localement ou les remettre à un imprimeur. (L'onglet Couleurs du [Brand Studio](/info/brand-studio.html) propose le même téléchargement de palette.)
 
-Les ressources sont une moitié du chemin ouvert et « fais-le toi-même » ; l'autre, c'est **créer tes propres outils** - le canevas libre (Layout Studio, décrit ci-dessus) te permet d'en construire un visuellement, sans aucun code.
+Les ressources sont une moitié du chemin ouvert et « fais-le toi-même » ; l'autre, c'est **créer tes propres outils** - le canevas libre (Design, décrit ci-dessus) te permet d'en construire un visuellement, sans aucun code.
 
 ## Son et accessibilité
 
@@ -176,7 +176,7 @@ Le cache de catalogue n'est pas inclus - il se retélécharge automatiquement su
 
 ## Importer un design (Figma, Penpot, Illustrator, InDesign)
 
-Tu peux importer un design existant dans Lolly et continuer à y travailler : ouvre **Layout Studio**, clique sur **Importer un design** dans la barre d'outils du canevas, et choisis un fichier Figma **.fig** ou SVG, un Penpot **.penpot**, un Illustrator **.ai** / **.pdf**, ou un InDesign **.idml**. Les calques deviennent des boîtes modifiables sur le canevas libre - le texte reste re-saisissable, les images atterrissent dans **Mes images**, et la typographie et les couleurs se conforment aux globales de marque - puis le résultat s'enregistre, se partage et se rend comme n'importe quelle autre session. L'analyse se fait entièrement sur ton appareil. Détails complets : **[Importer un design](/info/design-import.html)**.
+Tu peux importer un design existant dans Lolly et continuer à y travailler : ouvre **Design**, clique sur **Importer un design** dans la barre d'outils du canevas, et choisis un fichier Figma **.fig** ou SVG, un Penpot **.penpot**, un Illustrator **.ai** / **.pdf**, ou un InDesign **.idml**. Les calques deviennent des boîtes modifiables sur le canevas libre - le texte reste re-saisissable, les images atterrissent dans **Mes images**, et la typographie et les couleurs se conforment aux globales de marque - puis le résultat s'enregistre, se partage et se rend comme n'importe quelle autre session. L'analyse se fait entièrement sur ton appareil. Détails complets : **[Importer un design](/info/design-import.html)**.
 
 ## Exporter
 

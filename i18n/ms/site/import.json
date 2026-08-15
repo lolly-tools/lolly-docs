@@ -1,7 +1,7 @@
 {
   "eyebrow": "Bawa apa yang anda sudah hasilkan",
   "heading": "Fail reka bentuk anda tidak terkandas",
-  "lead": "Kerja siap dalam **Figma, Penpot, Illustrator, InDesign atau mana-mana aplikasi SVG** tidak perlu kekal terkunci dalam satu aplikasi sahaja. Buka **Layout Studio**, klik **Import reka bentuk**, dan fail itu terbuka sebagai reka letak yang hidup - bukan gambar rata. Setiap lapisan menjadi kotak yang boleh disunting, sedia untuk diteruskan kerjanya, digabungkan dengan alat, dan dirender melalui peraturan yang sama.",
+  "lead": "Kerja siap dalam **Figma, Penpot, Illustrator, InDesign atau mana-mana aplikasi SVG** tidak perlu kekal terkunci dalam satu aplikasi sahaja. Buka **Design**, klik **Import reka bentuk**, dan fail itu terbuka sebagai reka letak yang hidup - bukan gambar rata. Setiap lapisan menjadi kotak yang boleh disunting, sedia untuk diteruskan kerjanya, digabungkan dengan alat, dan dirender melalui peraturan yang sama.",
   "sources": [
     { "mono": "Fig", "name": "Figma", "fmt": ".fig · SVG", "color": "#a259ff" },
     { "mono": "Pen", "name": "Penpot", "fmt": ".penpot", "color": "#12b886" },

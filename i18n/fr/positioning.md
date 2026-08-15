@@ -6,7 +6,7 @@ Où cette plateforme se situe dans le paysage plus large des outils créatifs, e
 
 ## Paysage
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
+![Design's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
 
 | Fonctionnalité | Canva (canevas ouvert) | Portails de marque (modèles DAM) | Illustrator (pro bureau) | Figma / Penpot (pro en ligne) | **Lolly (axé contraintes)** |
 |---|---|---|---|---|---|
@@ -22,7 +22,7 @@ Où cette plateforme se situe dans le paysage plus large des outils créatifs, e
 | Applications mobiles et bureau | ✓ | ✗ | ✗ | partiel | **✓** |
 | Ligne de commande et TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-La forme du manque est claire : rien dans le paysage existant ne propose une sortie générative à la fois axée contraintes, capable de fonctionner hors ligne, accessible sans compétence particulière et utilisable en interne. Lolly propose désormais son propre canevas ouvert - **Layout Studio**, un canevas libre à manipulation directe - mais avec une différence décisive par rapport à la colonne Canva : les couleurs, la typographie et les éléments placés dessus se conforment aux globales de la marque, si bien que même un agencement libre reste axé contraintes. Ce que Lolly n'est toujours **pas**, c'est une suite de design sans contraintes ; les designers continueront d'utiliser Illustrator et Figma pour le travail sur mesure - et quand ce travail doit devenir un actif gouverné et reproductible, la fonction [Import a design](/info/design-import.html) de Layout Studio fait entrer le fichier Figma/Illustrator/Penpot terminé sur le canevas sous forme de blocs éditables et conformés à la marque.
+La forme du manque est claire : rien dans le paysage existant ne propose une sortie générative à la fois axée contraintes, capable de fonctionner hors ligne, accessible sans compétence particulière et utilisable en interne. Lolly propose désormais son propre canevas ouvert - **Design**, un canevas libre à manipulation directe - mais avec une différence décisive par rapport à la colonne Canva : les couleurs, la typographie et les éléments placés dessus se conforment aux globales de la marque, si bien que même un agencement libre reste axé contraintes. Ce que Lolly n'est toujours **pas**, c'est une suite de design sans contraintes ; les designers continueront d'utiliser Illustrator et Figma pour le travail sur mesure - et quand ce travail doit devenir un actif gouverné et reproductible, la fonction [Import a design](/info/design-import.html) de Design fait entrer le fichier Figma/Illustrator/Penpot terminé sur le canevas sous forme de blocs éditables et conformés à la marque.
 
 ## À utiliser pour
 
@@ -31,8 +31,8 @@ La forme du manque est claire : rien dans le paysage existant ne propose une sor
 Deck Studio donne une bonne mesure du plafond ici : une présentation entière déclarée sous forme de données, mise en page en direct sur le canevas, et exportée en PowerPoint natif et modifiable.
 
 - Génération rapide d'actifs créatifs opérationnalisés (visuels d'événements, badges, signatures, alertes)
-- Agencement libre sur le canevas ouvert (Layout Studio) quand les éléments - couleurs, typographie, icônes, images - doivent rester conformes aux globales de la marque
-- Faire atterrir un design Figma, Illustrator, InDesign ou Penpot terminé (la fonction Import a design de Layout Studio) pour qu'il puisse être édité, gouverné et re-rendu de façon déterministe dans tous les formats Lolly
+- Agencement libre sur le canevas ouvert (Design) quand les éléments - couleurs, typographie, icônes, images - doivent rester conformes aux globales de la marque
+- Faire atterrir un design Figma, Illustrator, InDesign ou Penpot terminé (la fonction Import a design de Design) pour qu'il puisse être édité, gouverné et re-rendu de façon déterministe dans tous les formats Lolly
 - Des flux « un-vers-plusieurs » du type « renseigne trois champs, obtiens l'actif final » - y compris les exécutions en masse depuis une feuille de calcul/CSV dans la grille de traitement par lots `/pro` (colle ou importe des lignes, un actif final par ligne, téléchargement en zip)
 - Des livrables de marque récurrents, toujours actifs
 - Les cas où le contrôle centralisé de l'expression de marque compte plus que la flexibilité expressive

@@ -48,7 +48,7 @@
 
 要看清 Lolly 究竟是什麼，最清楚的方式不是列一長串功能，而是跟著一份素材，看它如何在不同人手中傳遞。下面就跟著一張本地化的行銷活動卡片，看它如何走過整個組織：
 
-1. **創意人員訂下規則。** 設計師在 Layout Studio 裡撰寫基礎範本，把品牌的字體與色彩變數寫死在裡面。他們做的不是一張卡片——他們只把這份底層工作做*一次*，從此再也不必手工做本地化。
+1. **創意人員訂下規則。** 設計師在 Design 裡撰寫基礎範本，把品牌的字體與色彩變數寫死在裡面。他們做的不是一張卡片——他們只把這份底層工作做*一次*，從此再也不必手工做本地化。
 2. **開發者把它放大。** 同一個範本透過 CLI 接進每晚執行的流水線，於是一張新圖表或一個新語言版本都會自動產生——不需要任何設計師再打開檔案。
 3. **產出者直接拿來用。** 一位銷售代表在飛機上離線打開同一個工具，為客戶會議產出一份完全符合品牌的簡報。不需要設計技能，不需要網路，也不用等。
 
@@ -173,7 +173,6 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── daily-card/        # "Day Brief"——天氣／時間／地圖（由內嵌的 template script 擷取資料）
 │   ├── code-canvas/
 │   ├── countdown-timer/
 │   ├── color-palette/
@@ -185,7 +184,6 @@ lolly/
 │   ├── strip-data/        # 裝置端中繼資料清除——JPEG/PNG/SVG/PDF（檔案輸入 → 乾淨檔案輸出）
 │   ├── compress-pdf/      # 裝置端 PDF 壓縮器——重新壓縮圖片（檔案輸入 → 較小檔案輸出）
 │   ├── brand-lockup/      # "Brand Lockup"——SUSE 標誌組合；HarfBuzz 文字轉路徑（wasm）
-│   ├── bag-video/
 │   ├── chart-creator/     # 由結構化資料產生 SVG 圖表
 │   ├── filter-duotone/    # 雙色相片效果
 │   ├── filter-halftone/   # 相片 → 向量網點網格
@@ -196,7 +194,7 @@ lolly/
 │   ├── event-name-badge/  # 研討會識別證——以 SVG 形式組合 qr-code
 │   ├── wayfinding-signage/ # 活動指標標示；方向區塊會自動調整標籤文字
 │   ├── text-helper/       # 裝置端文字工作台（格式化／解碼／雜湊／去識別化）
-│   ├── design/     # "Layout Studio"——自由格式的 WYSIWYG 編輯器畫布（render.layout: editor）
+│   ├── design/     # "Design"——自由格式的 WYSIWYG 編輯器畫布（render.layout: editor）
 │   ├── multi-page-pdf/    # 多頁 PDF 文件——封面、可流動的內容區塊、封底
 │   ├── diagram-builder/   # 組織圖／分層圖／流程圖／循環圖／金字塔圖
 │   ├── logo-wall/         # 多個標誌 → 自動排列成網格
@@ -276,13 +274,13 @@ CLI 的互動式對應版本：一個全螢幕、以鍵盤為主要操作方式�
 
 | 分類 | 已上線工具 | 規劃中 |
 |---|---|---|
-| `everyone` | QR Code Generator, Quote Card, Email Signature, Day Brief, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
-| `designer` | Brand Lockup, Bag Video, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
+| `everyone` | QR Code Generator, Quote Card, Email Signature, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
+| `designer` | Brand Lockup, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | — | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Layout Studio | 單位／格式轉換器、更多裝置端隱私公用程式 |
+| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Design | 單位／格式轉換器、更多裝置端隱私公用程式 |
 
-工具也會依狀態分類：`official`（品牌核准、無浮水印）、`community`（外部貢獻）、`experimental`（匯出檔案帶浮水印）。Dynamic Layout、URL Screenshot、Logo Lockup: Grid (NASCAR)、Filter: Posterize Bitmap 與 Diagram Builder 目前為 `experimental` 狀態；Web Icon Maker 與 Layout Studio 則以 `community` 工具的形式上線。
+工具也會依狀態分類：`official`（品牌核准、無浮水印）、`community`（外部貢獻）、`experimental`（匯出檔案帶浮水印）。Dynamic Layout、URL Screenshot、Logo Lockup: Grid (NASCAR)、Filter: Posterize Bitmap 與 Diagram Builder 目前為 `experimental` 狀態；Web Icon Maker 與 Design 則以 `community` 工具的形式上線。
 
 **版面工作室**是第一個建立在 `render.layout: "editor"` 自由畫布模式上的工具——一個沒有多餘介面裝飾、可直接操作的畫面，你可以在其中拖曳、調整大小、旋轉並吸附文字、形狀與圖片方塊，接著透過與其他所有工具相同的渲染路徑匯出。
 
@@ -446,7 +444,7 @@ Slides 工具就建立在第二種介面之上：任何一張投影片上的任�
 
 | 里程碑 | 目標時間 | 內容 |
 |---|---|---|
-| **初始工具** | ✅ 已完成 | QR Code, Quote Card, Email Signature, Day Brief, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Bag Video, Chart Creator, Filter: Duotone, Meeting Planner——網頁殼層上線 |
+| **初始工具** | ✅ 已完成 | QR Code, Quote Card, Email Signature, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Chart Creator, Filter: Duotone, Meeting Planner——網頁殼層上線 |
 | **強化現有工具** | 2026 年年中 ✅ 已完成  | 可下載的離線應用程式（Tauri）；更多員工與活動用工具；更豐富的匯出流程（文字轉路徑穩定性、中繼資料、額外格式——見 `plans.md`） |
 | **開放引擎原始碼** | 2026 年底 ✅ 已完成  | 引擎、殼層、schemas、docs 公開——品牌工具／素材則不公開 |
 | **裝置間傳輸** | ✅ 已完成 | 可攜式的 `lolly-backup` 封裝包，能在任兩個安裝之間攜帶個人資料、已儲存的工作階段、已上傳的圖片與偏好設定——不論離線或連線，都不需要帳號。是一個向前相容、具完整性檢查的封套（規格：`docs/data-transfer.md`） |

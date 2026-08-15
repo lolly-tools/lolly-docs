@@ -1,7 +1,7 @@
 {
   "eyebrow": "Adu ce ai creat deja",
   "heading": "Fișierele tale de design nu sunt blocate",
-  "lead": "Lucrările finalizate în **Figma, Penpot, Illustrator, InDesign sau orice aplicație SVG** nu trebuie să rămână blocate într-o singură aplicație. Deschide **Layout Studio**, apasă pe **Importă un design**, iar fișierul se deschide ca un layout viu - nu o imagine aplatizată. Fiecare strat devine o casetă editabilă, gata să fie lucrată în continuare, combinată cu instrumente și randată după aceleași reguli.",
+  "lead": "Lucrările finalizate în **Figma, Penpot, Illustrator, InDesign sau orice aplicație SVG** nu trebuie să rămână blocate într-o singură aplicație. Deschide **Design**, apasă pe **Importă un design**, iar fișierul se deschide ca un layout viu - nu o imagine aplatizată. Fiecare strat devine o casetă editabilă, gata să fie lucrată în continuare, combinată cu instrumente și randată după aceleași reguli.",
   "sources": [
     { "mono": "Fig", "name": "Figma", "fmt": ".fig · SVG", "color": "#a259ff" },
     { "mono": "Pen", "name": "Penpot", "fmt": ".penpot", "color": "#12b886" },

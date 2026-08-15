@@ -1,7 +1,7 @@
 {
   "eyebrow": "Traga o que você já criou",
   "heading": "Seus arquivos de design não estão presos",
-  "lead": "Um trabalho finalizado no **Figma, Penpot, Illustrator, InDesign ou qualquer aplicativo de SVG** não precisa ficar preso em um único app. Abra o **Layout Studio**, clique em **Importar um design**, e o arquivo abre como um layout vivo - não uma imagem achatada. Cada camada se torna uma caixa editável, pronta para você continuar trabalhando, combinar com ferramentas e renderizar seguindo as mesmas regras.",
+  "lead": "Um trabalho finalizado no **Figma, Penpot, Illustrator, InDesign ou qualquer aplicativo de SVG** não precisa ficar preso em um único app. Abra o **Design**, clique em **Importar um design**, e o arquivo abre como um layout vivo - não uma imagem achatada. Cada camada se torna uma caixa editável, pronta para você continuar trabalhando, combinar com ferramentas e renderizar seguindo as mesmas regras.",
   "sources": [
     { "mono": "Fig", "name": "Figma", "fmt": ".fig · SVG", "color": "#a259ff" },
     { "mono": "Pen", "name": "Penpot", "fmt": ".penpot", "color": "#12b886" },

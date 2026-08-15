@@ -17,7 +17,7 @@ La pantalla de inicio es la **galería** - todas las herramientas, agrupadas por
 
 Cada herramienta es una vista dividida: **controles** a un lado, una **vista previa** en vivo (el lienzo) al otro. Cambia cualquier control y la vista previa se actualiza al instante.
 
-> Algunas herramientas (como **Layout Studio**) se abren en cambio como un **lienzo libre** - una superficie sin interfaz, de manipulación directa, donde arrastras, redimensionas, rotas y ajustas cajas de texto, formas e imágenes, y haces doble clic para editar el texto en el lugar. Se exporta a través de la misma ruta de renderizado que cualquier otra herramienta, así que el lienzo *es* el archivo. Consulta [El lienzo libre](#the-free-canvas-design) más abajo.
+> Algunas herramientas (como **Design**) se abren en cambio como un **lienzo libre** - una superficie sin interfaz, de manipulación directa, donde arrastras, redimensionas, rotas y ajustas cajas de texto, formas e imágenes, y haces doble clic para editar el texto en el lugar. Se exporta a través de la misma ruta de renderizado que cualquier otra herramienta, así que el lienzo *es* el archivo. Consulta [El lienzo libre](#the-free-canvas-design) más abajo.
 
 ## El lienzo (vista previa)
 
@@ -40,9 +40,9 @@ La vista previa siempre muestra exactamente lo que se exportará.
 
 Un cambio de dimensión siempre hace que la vista vuelva a un ajuste limpio.
 
-### El lienzo libre (Layout Studio)
+### El lienzo libre (Design)
 
-![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Las herramientas de lienzo libre añaden una superficie de trabajo *alrededor* del área de diseño, como la mesa de montaje de un diseñador:
 
@@ -144,7 +144,7 @@ El panel de **Muestras** del Catálogo no es solo para consultar - haz clic en u
 
 El panel de **Fuentes** lista las tipografías de tu marca con una **descarga** junto a cada una, para instalarlas localmente o entregarlas a una imprenta. (La pestaña Colores del [Brand Studio](/info/brand-studio.html) ofrece la misma descarga de paleta.)
 
-Los recursos son una mitad del camino abierto y de hazlo-tú-mismo; la otra es **crear tus propias herramientas** - el lienzo libre (Layout Studio, descrito arriba) te permite construir una visualmente, sin necesidad de código.
+Los recursos son una mitad del camino abierto y de hazlo-tú-mismo; la otra es **crear tus propias herramientas** - el lienzo libre (Design, descrito arriba) te permite construir una visualmente, sin necesidad de código.
 
 ## Sonido y accesibilidad
 
@@ -176,7 +176,7 @@ La caché del catálogo no se incluye - se vuelve a descargar sola en el nuevo d
 
 ## Importar un diseño (Figma, Penpot, Illustrator, InDesign)
 
-Puedes traer un diseño existente a Lolly y seguir trabajando en él: abre **Layout Studio**, haz clic en **Importar un diseño** en la barra de herramientas del lienzo, y elige un **.fig** o SVG de Figma, un **.penpot** de Penpot, un **.ai** / **.pdf** de Illustrator, o un **.idml** de InDesign. Las capas se convierten en cajas editables en el lienzo libre - el texto se puede volver a escribir, las imágenes van a **Mis imágenes**, y la tipografía y los colores se ajustan a las variables globales de marca - y luego el resultado se guarda, se comparte y se renderiza como cualquier otra sesión. El análisis ocurre por completo en tu dispositivo. Detalle completo: **[Importar un diseño](/info/design-import.html)**.
+Puedes traer un diseño existente a Lolly y seguir trabajando en él: abre **Design**, haz clic en **Importar un diseño** en la barra de herramientas del lienzo, y elige un **.fig** o SVG de Figma, un **.penpot** de Penpot, un **.ai** / **.pdf** de Illustrator, o un **.idml** de InDesign. Las capas se convierten en cajas editables en el lienzo libre - el texto se puede volver a escribir, las imágenes van a **Mis imágenes**, y la tipografía y los colores se ajustan a las variables globales de marca - y luego el resultado se guarda, se comparte y se renderiza como cualquier otra sesión. El análisis ocurre por completo en tu dispositivo. Detalle completo: **[Importar un diseño](/info/design-import.html)**.
 
 ## Exportar
 

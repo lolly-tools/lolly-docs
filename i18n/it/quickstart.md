@@ -48,7 +48,7 @@ Non parti da una pagina vuota. Lolly apre il lavoro di design e i formati aperti
 
 ### File di design open source
 
-Il lavoro finito in **Figma, Penpot, Illustrator, InDesign, o qualsiasi app SVG** non deve per forza restare chiuso nell'app in cui l'hai disegnato. Apri **Layout Studio**, fai clic su **Importa un design**, e il file si apre come un *layout vivo* - non un'immagine appiattita. Ogni livello diventa un riquadro modificabile: il testo resta modificabile, le forme restano forme, le immagini finiscono nella tua libreria, e la grafica vettoriale complessa viene preservata fedelmente. Arriva già conforme ai tuoi font e alle tue regole di colore di brand.
+Il lavoro finito in **Figma, Penpot, Illustrator, InDesign, o qualsiasi app SVG** non deve per forza restare chiuso nell'app in cui l'hai disegnato. Apri **Design**, fai clic su **Importa un design**, e il file si apre come un *layout vivo* - non un'immagine appiattita. Ogni livello diventa un riquadro modificabile: il testo resta modificabile, le forme restano forme, le immagini finiscono nella tua libreria, e la grafica vettoriale complessa viene preservata fedelmente. Arriva già conforme ai tuoi font e alle tue regole di colore di brand.
 
 | Se hai | Importalo come |
 |---|---|
@@ -62,7 +62,7 @@ L'intera importazione avviene **sul tuo dispositivo** - il file viene analizzato
 
 ### Da un progetto singolo a un template
 
-Ecco il vantaggio: un layout importato è una normale sessione di Layout Studio, quindi non appena lo **salvi**, vive a un URL. Chiunque abbia Lolly può aprire quell'URL, cambiare le parole, sostituire un'immagine, e renderizzare la propria versione - senza nessuna app di design, e le parti bloccate restano bloccate. Un design creato una volta diventa uno strumento riutilizzabile. Questa è tutta l'idea, raggiunta senza scrivere una riga di configurazione.
+Ecco il vantaggio: un layout importato è una normale sessione di Design, quindi non appena lo **salvi**, vive a un URL. Chiunque abbia Lolly può aprire quell'URL, cambiare le parole, sostituire un'immagine, e renderizzare la propria versione - senza nessuna app di design, e le parti bloccate restano bloccate. Un design creato una volta diventa uno strumento riutilizzabile. Questa è tutta l'idea, raggiunta senza scrivere una riga di configurazione.
 
 ### Dati aperti e strumenti aperti
 

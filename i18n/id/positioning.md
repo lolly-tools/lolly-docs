@@ -6,7 +6,7 @@ Di mana platform ini berada dalam lanskap alat kreatif yang lebih luas, dan di m
 
 ## Lanskap
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
+![Design's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
 
 | Kemampuan | Canva (Kanvas terbuka) | Portal brand (Templating DAM) | Illustrator (Desktop pro) | Figma / Penpot (Online pro) | **Lolly (Mengutamakan batasan)** |
 |---|---|---|---|---|---|
@@ -22,7 +22,7 @@ Di mana platform ini berada dalam lanskap alat kreatif yang lebih luas, dan di m
 | Aplikasi Mobile dan Desktop | ✓ | ✗ | ✗ | sebagian | **✓** |
 | Command Line & TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-Bentuk kesenjangannya jelas: tidak ada satu pun dalam lanskap yang ada memberi kita output generatif yang mengutamakan batasan, mampu bekerja offline, minim keterampilan, dan dapat diakses secara internal. Lolly kini menghadirkan kanvas terbukanya sendiri - **Layout Studio**, kanvas bebas dengan manipulasi langsung - tetapi dengan perbedaan mendasar dari kolom Canva: warna, tipografi, dan aset yang ditempatkan di atasnya menyesuaikan diri dengan brand global, sehingga penataan bebas pun tetap mengutamakan batasan. Yang Lolly **bukan** adalah suite desain tanpa batasan; para desainer akan terus menggunakan Illustrator dan Figma untuk pekerjaan khusus - dan ketika pekerjaan itu perlu menjadi aset yang terkelola dan dapat direproduksi, [Impor desain](/info/design-import.html) di Layout Studio membawa berkas Figma/Illustrator/Penpot yang sudah jadi ke kanvas sebagai kotak yang dapat diedit dan menyesuaikan brand.
+Bentuk kesenjangannya jelas: tidak ada satu pun dalam lanskap yang ada memberi kita output generatif yang mengutamakan batasan, mampu bekerja offline, minim keterampilan, dan dapat diakses secara internal. Lolly kini menghadirkan kanvas terbukanya sendiri - **Design**, kanvas bebas dengan manipulasi langsung - tetapi dengan perbedaan mendasar dari kolom Canva: warna, tipografi, dan aset yang ditempatkan di atasnya menyesuaikan diri dengan brand global, sehingga penataan bebas pun tetap mengutamakan batasan. Yang Lolly **bukan** adalah suite desain tanpa batasan; para desainer akan terus menggunakan Illustrator dan Figma untuk pekerjaan khusus - dan ketika pekerjaan itu perlu menjadi aset yang terkelola dan dapat direproduksi, [Impor desain](/info/design-import.html) di Design membawa berkas Figma/Illustrator/Penpot yang sudah jadi ke kanvas sebagai kotak yang dapat diedit dan menyesuaikan brand.
 
 ## Gunakan untuk
 
@@ -31,8 +31,8 @@ Bentuk kesenjangannya jelas: tidak ada satu pun dalam lanskap yang ada memberi k
 Deck Studio adalah tolok ukur yang baik untuk batas atas di sini: satu dek slide utuh dideklarasikan sebagai data, ditata langsung di kanvas, lalu diekspor sebagai PowerPoint native yang bisa disunting.
 
 - Pembuatan cepat aset kreatif operasional (tile acara, badge, tanda tangan, peringatan)
-- Penataan bebas di kanvas terbuka (Layout Studio) ketika elemen-elemennya - warna, tipografi, ikon, gambar - harus tetap sesuai dengan brand global
-- Mendaratkan desain Figma, Illustrator, InDesign, atau Penpot yang sudah jadi (Impor desain di Layout Studio) sehingga dapat diedit, dikelola, dan dirender ulang secara deterministik dalam setiap format Lolly
+- Penataan bebas di kanvas terbuka (Design) ketika elemen-elemennya - warna, tipografi, ikon, gambar - harus tetap sesuai dengan brand global
+- Mendaratkan desain Figma, Illustrator, InDesign, atau Penpot yang sudah jadi (Impor desain di Design) sehingga dapat diedit, dikelola, dan dirender ulang secara deterministik dalam setiap format Lolly
 - Alur satu-ke-banyak "isi tiga kolom, dapatkan aset jadi" - termasuk proses massal dari spreadsheet/CSV di grid batch `/pro` (tempel atau impor baris, satu aset jadi per baris, unduh sebagai zip)
 - Output ber-brand yang selalu aktif dan berulang
 - Hal-hal di mana kontrol terpusat atas ekspresi brand lebih penting daripada fleksibilitas ekspresif

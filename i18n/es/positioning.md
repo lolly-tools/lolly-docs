@@ -6,7 +6,7 @@ Dónde encaja esta plataforma en el panorama más amplio de herramientas creativ
 
 ## Panorama
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
+![Design's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
 
 | Capacidad | Canva (lienzo abierto) | Portales de marca (plantillas DAM) | Illustrator (profesional de escritorio) | Figma / Penpot (profesional en línea) | **Lolly (basado en restricciones)** |
 |---|---|---|---|---|---|
@@ -22,7 +22,7 @@ Dónde encaja esta plataforma en el panorama más amplio de herramientas creativ
 | Apps móviles y de escritorio | ✓ | ✗ | ✗ | parcial | **✓** |
 | Línea de comandos y TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-La forma de la brecha es clara: nada en el panorama existente nos ofrece una salida generativa basada en restricciones, capaz de funcionar sin conexión, con baja exigencia de habilidad y accesible internamente. Lolly ahora incluye su propio lienzo abierto - **Layout Studio**, un lienzo libre de manipulación directa - pero con una diferencia decisiva respecto a la columna de Canva: los colores, la tipografía y los recursos colocados en él se ajustan a las variables globales de marca, de modo que incluso la disposición libre se mantiene basada en restricciones. Lo que Lolly sigue **sin** ser es una suite de diseño sin restricciones; los diseñadores seguirán usando Illustrator y Figma para trabajos a medida - y cuando ese trabajo necesite convertirse en un activo gobernado y reproducible, la función [Importar un diseño](/info/design-import.html) de Layout Studio trae el archivo terminado de Figma/Illustrator/Penpot al lienzo como cajas editables y ajustadas a la marca.
+La forma de la brecha es clara: nada en el panorama existente nos ofrece una salida generativa basada en restricciones, capaz de funcionar sin conexión, con baja exigencia de habilidad y accesible internamente. Lolly ahora incluye su propio lienzo abierto - **Design**, un lienzo libre de manipulación directa - pero con una diferencia decisiva respecto a la columna de Canva: los colores, la tipografía y los recursos colocados en él se ajustan a las variables globales de marca, de modo que incluso la disposición libre se mantiene basada en restricciones. Lo que Lolly sigue **sin** ser es una suite de diseño sin restricciones; los diseñadores seguirán usando Illustrator y Figma para trabajos a medida - y cuando ese trabajo necesite convertirse en un activo gobernado y reproducible, la función [Importar un diseño](/info/design-import.html) de Design trae el archivo terminado de Figma/Illustrator/Penpot al lienzo como cajas editables y ajustadas a la marca.
 
 ## Úsalo para
 
@@ -31,8 +31,8 @@ La forma de la brecha es clara: nada en el panorama existente nos ofrece una sal
 Deck Studio da una buena medida del techo que hay aquí: una presentación entera declarada como datos, maquetada en vivo en el lienzo y exportada como un PowerPoint nativo y editable.
 
 - Generación rápida de recursos creativos operacionalizados (tarjetas de eventos, insignias, firmas, alertas)
-- Disposición libre en el lienzo abierto (Layout Studio) cuando las piezas - colores, tipografía, iconos, imágenes - deben mantenerse ajustadas a las variables globales de marca
-- Llevar un diseño terminado de Figma, Illustrator, InDesign o Penpot (la función Importar un diseño de Layout Studio) para que pueda editarse, gobernarse y volver a renderizarse de forma determinista en cualquier formato de Lolly
+- Disposición libre en el lienzo abierto (Design) cuando las piezas - colores, tipografía, iconos, imágenes - deben mantenerse ajustadas a las variables globales de marca
+- Llevar un diseño terminado de Figma, Illustrator, InDesign o Penpot (la función Importar un diseño de Design) para que pueda editarse, gobernarse y volver a renderizarse de forma determinista en cualquier formato de Lolly
 - Flujos de "uno a muchos" del tipo "rellena tres campos y obtén el recurso terminado" - incluyendo ejecuciones masivas desde una hoja de cálculo/CSV en la cuadrícula por lotes de `/pro` (pega o importa filas, un recurso terminado por fila, descarga como zip)
 - Resultados de marca recurrentes y siempre activos
 - Casos donde el control centralizado de la expresión de marca importa más que la flexibilidad expresiva

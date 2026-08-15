@@ -1,22 +1,22 @@
 # デザインのインポート（Figma、Penpot、Illustrator、InDesign）
 
-![Layout Studio's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
-![Layout Studio's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
-![Layout Studio's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
-![Layout Studio's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
-![Layout Studio's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
-![Layout Studio's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 完成したデザインを **Figma、Penpot、Illustrator、InDesign から取り出し、Lolly に持ち込みます** — 静止画として固定するのではなく、そのまま作業を続けられ、ツールと組み合わせられ、Lolly の決定論的な書き出し経路でレンダリングできる、生きた編集可能なレイアウトとしてです。他のすべてと同様に、インポートの全工程は**お使いのデバイス上**で行われます — ファイルはブラウザ内で解析され、アップロードは一切行われません。
 
 すでに作ったものすべてにとって朗報があります — どれも、描いたアプリの中に取り残されたままにはなりません。別のツールで何時間もかけたデザインは、あなたのデザインのグローバル設定にすでに沿った、編集可能なセッションとして届きます — 保存すれば、それは Lolly を持つ誰もが開いて中身を埋め直せる、再利用可能なテンプレートになります。
 
-インポートは、Lolly のフリーキャンバスである **[Layout Studio](/info/using.html)** にあります。開いて、キャンバスツールバーの **Import a design** をクリックし、ファイルを選んでください。アートボードはファイルのフレームに合わせてリサイズされ、すべてのレイヤーが同じ開いたキャンバス上の編集可能なボックスになります — つまり、インポートされたアートボードは、最初のクリックの時点からごく普通の Layout Studio セッションなのです。
+インポートは、Lolly のフリーキャンバスである **[Design](/info/using.html)** にあります。開いて、キャンバスツールバーの **Import a design** をクリックし、ファイルを選んでください。アートボードはファイルのフレームに合わせてリサイズされ、すべてのレイヤーが同じ開いたキャンバス上の編集可能なボックスになります — つまり、インポートされたアートボードは、最初のクリックの時点からごく普通の Design セッションなのです。
 
 ## インポートできるもの
 
@@ -61,7 +61,7 @@
 
 ## 一度限りのデザインをテンプレートへ
 
-ここから、インポートは単なる変換ではなく*オーサリング*になります。インポートされたレイアウトは通常の [Layout Studio](/info/using.html) セッションであるため、ネイティブなセッションにできることをすべて引き継ぎます：
+ここから、インポートは単なる変換ではなく*オーサリング*になります。インポートされたレイアウトは通常の [Design](/info/using.html) セッションであるため、ネイティブなセッションにできることをすべて引き継ぎます：
 
 - **誰でも再利用できるテンプレートになります。** 保存すれば、そのレイアウトは1つの URL として存在するようになります。Lolly を使える人なら誰でもその URL を開き、文言を変更し、画像を差し替えて、自分自身のバージョンをレンダリングできます — デザインアプリもデザインスキルも不要で、作者がロックした部分はロックされたままです。アートボードをインポートした人がその作者となり、それ以外の人は空欄を埋めるだけです。
 - **ツールと組み合わせられます。** どのボックスも、別の Lolly ツールをライブなアセットとして保持できます — 自身の QR コードを描画するバッジ、ライブチャートを載せたカード、アセットピッカー経由で差し込まれた別のレンダリングなど。これらはライブのままで、読み込みのたびに再描画されます。平坦化された画像になることは決してありません。そのため、インポートされたポスターは、元のファイルには決してできなかった、生成された常に最新のコンテンツを載せられます。

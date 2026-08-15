@@ -6,7 +6,7 @@ Bu platformun daha geniş yaratıcı araçlar ortamında nerede durduğu ve kas�
 
 ## Panorama
 
-![Layout Studio's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
+![Design's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
 
 | Özellik | Canva (Açık kanvas) | Marka portalları (DAM şablonlama) | Illustrator (Masaüstü profesyonel) | Figma / Penpot (Çevrimiçi profesyonel) | **Lolly (Kısıtlama öncelikli)** |
 |---|---|---|---|---|---|
@@ -22,7 +22,7 @@ Bu platformun daha geniş yaratıcı araçlar ortamında nerede durduğu ve kas�
 | Mobil ve Masaüstü Uygulamaları | ✓ | ✗ | ✗ | kısmen | **✓** |
 | Komut Satırı ve TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-Boşluğun şekli açık: mevcut ortamda hiçbir şey bize kısıtlama öncelikli, çevrimdışı çalışabilen, düşük beceri gerektiren, kurum içi erişilebilir, üretken bir çıktı sunmuyor. Lolly artık kendi açık kanvasını sunuyor - doğrudan manipülasyona dayalı serbest bir kanvas olan **Layout Studio** - ama Canva sütunundan belirleyici bir farkla: üzerine yerleştirilen renkler, tipografi ve varlıklar marka global ayarlarına uyar, böylece serbest yerleşim bile kısıtlama öncelikli kalır. Lolly'nin hâlâ **olmadığı** şey, kısıtlamasız bir tasarım paketidir; tasarımcılar özel işler için Illustrator ve Figma kullanmaya devam edecek - ve bu iş yönetilen, yeniden üretilebilir bir varlığa dönüşmesi gerektiğinde, Layout Studio'nun [Bir tasarım içe aktar](/info/design-import.html) özelliği tamamlanmış Figma/Illustrator/Penpot dosyasını kanvasa düzenlenebilir, markaya uygun kutular olarak getirir.
+Boşluğun şekli açık: mevcut ortamda hiçbir şey bize kısıtlama öncelikli, çevrimdışı çalışabilen, düşük beceri gerektiren, kurum içi erişilebilir, üretken bir çıktı sunmuyor. Lolly artık kendi açık kanvasını sunuyor - doğrudan manipülasyona dayalı serbest bir kanvas olan **Design** - ama Canva sütunundan belirleyici bir farkla: üzerine yerleştirilen renkler, tipografi ve varlıklar marka global ayarlarına uyar, böylece serbest yerleşim bile kısıtlama öncelikli kalır. Lolly'nin hâlâ **olmadığı** şey, kısıtlamasız bir tasarım paketidir; tasarımcılar özel işler için Illustrator ve Figma kullanmaya devam edecek - ve bu iş yönetilen, yeniden üretilebilir bir varlığa dönüşmesi gerektiğinde, Design'nun [Bir tasarım içe aktar](/info/design-import.html) özelliği tamamlanmış Figma/Illustrator/Penpot dosyasını kanvasa düzenlenebilir, markaya uygun kutular olarak getirir.
 
 ## Şunlar için kullan
 
@@ -31,8 +31,8 @@ Boşluğun şekli açık: mevcut ortamda hiçbir şey bize kısıtlama öncelikl
 Deck Studio buradaki tavanın iyi bir ölçüsü: veri olarak bildirilmiş bütün bir slayt destesi, kanvasta canlı olarak yerleştirilir ve düzenlenebilir yerel bir PowerPoint dosyası olarak dışa aktarılır.
 
 - Operasyonel hale getirilmiş yaratıcı varlıkların hızlı üretimi (etkinlik kartları, rozetler, imzalar, uyarılar)
-- Parçaların - renkler, tipografi, simgeler, görseller - marka global ayarlarına uygun kalması gerektiğinde açık kanvasta (Layout Studio) serbest biçimli yerleşim
-- Tamamlanmış bir Figma, Illustrator, InDesign veya Penpot tasarımını (Layout Studio'nun Bir tasarım içe aktar özelliğiyle) kanvasa taşıyarak düzenlenebilir, yönetilebilir ve her Lolly biçiminde deterministik şekilde yeniden oluşturulabilir hale getirmek
+- Parçaların - renkler, tipografi, simgeler, görseller - marka global ayarlarına uygun kalması gerektiğinde açık kanvasta (Design) serbest biçimli yerleşim
+- Tamamlanmış bir Figma, Illustrator, InDesign veya Penpot tasarımını (Design'nun Bir tasarım içe aktar özelliğiyle) kanvasa taşıyarak düzenlenebilir, yönetilebilir ve her Lolly biçiminde deterministik şekilde yeniden oluşturulabilir hale getirmek
 - "Üç alanı doldur, bitmiş varlığı al" tarzında bir-çoğa akışlar - `/pro` toplu iş ızgarasında bir e-tablo/CSV'den toplu çalıştırmalar dahil (satırları yapıştır veya içe aktar, her satır için bir bitmiş varlık, zip olarak indir)
 - Her zaman açık, tekrarlayan markalı çıktılar
 - Marka ifadesinin merkezi kontrolünün ifade özgürlüğünden daha önemli olduğu durumlar

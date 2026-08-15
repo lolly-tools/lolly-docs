@@ -17,7 +17,7 @@ Domovská obrazovka je **galerie** - všechny nástroje, seskupené podle katego
 
 Každý nástroj je rozdělené zobrazení: na jedné straně **ovládací prvky**, na druhé straně živý **náhled** (plátno). Změň libovolný ovládací prvek a náhled se okamžitě aktualizuje.
 
-> Několik nástrojů (jako **Layout Studio**) se místo toho otevře jako **volné plátno** - plocha bez rozhraní pro přímou manipulaci, kde přetahuješ, měníš velikost, otáčíš a přichytáváš boxy s textem, tvary a obrázky, a dvojklikem upravuješ text přímo na místě. Exportuje se stejnou vykreslovací cestou jako u každého jiného nástroje, takže plátno *je* soubor. Viz [Volné plátno](#the-free-canvas-design) níže.
+> Několik nástrojů (jako **Design**) se místo toho otevře jako **volné plátno** - plocha bez rozhraní pro přímou manipulaci, kde přetahuješ, měníš velikost, otáčíš a přichytáváš boxy s textem, tvary a obrázky, a dvojklikem upravuješ text přímo na místě. Exportuje se stejnou vykreslovací cestou jako u každého jiného nástroje, takže plátno *je* soubor. Viz [Volné plátno](#the-free-canvas-design) níže.
 
 ## Plátno (náhled)
 
@@ -40,9 +40,9 @@ Náhled vždy zobrazuje přesně to, co se exportuje.
 
 Změna rozměrů vždy vrátí zobrazení zpět na čisté přizpůsobení.
 
-### Volné plátno (Layout Studio)
+### Volné plátno (Design)
 
-![Layout Studio's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Nástroje s volným plátnem přidávají pracovní plochu *kolem* kresebné plochy, podobně jako grafikova podložka (pasteboard):
 
@@ -144,7 +144,7 @@ Panel **Vzorky** v Katalogu není jen pro referenci - klikni na barvu a zkopíru
 
 Panel **Písma** vypisuje tvé brandové řezy s **tlačítkem stažení** u každého, abys je nainstaloval/a lokálně nebo předal/a do tiskárny. (Záložka Barvy v [Brand Studiu](/info/brand-studio.html) nabízí stejné stažení palety.)
 
-Assety jsou jedna polovina otevřené cesty „udělej si sám"; ta druhá je **tvorba vlastních nástrojů** - volné plátno (Layout Studio, popsané výše) ti umožní jeden postavit vizuálně, bez psaní kódu.
+Assety jsou jedna polovina otevřené cesty „udělej si sám"; ta druhá je **tvorba vlastních nástrojů** - volné plátno (Design, popsané výše) ti umožní jeden postavit vizuálně, bez psaní kódu.
 
 ## Zvuk a přístupnost
 
@@ -176,7 +176,7 @@ Mezipaměť katalogu není součástí - na novém zařízení se stáhne znovu.
 
 ## Import návrhu (Figma, Penpot, Illustrator, InDesign)
 
-Existující návrh můžeš přenést do Lolly a pokračovat v práci na něm: otevři **Layout Studio**, klikni na **Importovat návrh** na panelu nástrojů plátna a vyber Figma **.fig** nebo SVG, Penpot **.penpot**, Illustrator **.ai** / **.pdf**, nebo InDesign **.idml**. Vrstvy se stanou editovatelnými boxy na volném plátně - text zůstává přepisovatelný, obrázky se uloží do **Moje obrázky**, a písmo a barvy se přizpůsobí globálním hodnotám značky - pak se výsledek ukládá, sdílí a vykresluje jako každá jiná relace. Parsování probíhá celé na tvém zařízení. Plné detaily: **[Import návrhu](/info/design-import.html)**.
+Existující návrh můžeš přenést do Lolly a pokračovat v práci na něm: otevři **Design**, klikni na **Importovat návrh** na panelu nástrojů plátna a vyber Figma **.fig** nebo SVG, Penpot **.penpot**, Illustrator **.ai** / **.pdf**, nebo InDesign **.idml**. Vrstvy se stanou editovatelnými boxy na volném plátně - text zůstává přepisovatelný, obrázky se uloží do **Moje obrázky**, a písmo a barvy se přizpůsobí globálním hodnotám značky - pak se výsledek ukládá, sdílí a vykresluje jako každá jiná relace. Parsování probíhá celé na tvém zařízení. Plné detaily: **[Import návrhu](/info/design-import.html)**.
 
 ## Export
 

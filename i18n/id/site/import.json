@@ -1,7 +1,7 @@
 {
   "eyebrow": "Bawa apa yang sudah Anda buat",
   "heading": "File desain Anda tidak terjebak",
-  "lead": "Karya yang sudah selesai di **Figma, Penpot, Illustrator, InDesign, atau aplikasi SVG apa pun** tidak harus tetap terkunci di satu aplikasi saja. Buka **Layout Studio**, klik **Impor desain**, dan file tersebut terbuka sebagai layout yang hidup - bukan gambar yang sudah diratakan. Setiap layer menjadi kotak yang dapat diedit, siap untuk terus dikerjakan, digabungkan dengan alat, dan dirender melalui aturan yang sama.",
+  "lead": "Karya yang sudah selesai di **Figma, Penpot, Illustrator, InDesign, atau aplikasi SVG apa pun** tidak harus tetap terkunci di satu aplikasi saja. Buka **Design**, klik **Impor desain**, dan file tersebut terbuka sebagai layout yang hidup - bukan gambar yang sudah diratakan. Setiap layer menjadi kotak yang dapat diedit, siap untuk terus dikerjakan, digabungkan dengan alat, dan dirender melalui aturan yang sama.",
   "sources": [
     { "mono": "Fig", "name": "Figma", "fmt": ".fig · SVG", "color": "#a259ff" },
     { "mono": "Pen", "name": "Penpot", "fmt": ".penpot", "color": "#12b886" },
