@@ -38,13 +38,13 @@ What no agent gets is a way to pass its output off as something it is not. Neith
 
 ## Example scenario: a rogue agent tries to be SUSE
 
-Take the adversarial case. An autonomous agent decides to publish a security advisory that appears to come from SUSE. It is capable, unsupervised, and it has everything a public user has: the open source engine, the public app, the brand's real colours and typefaces from published material.
+Take the adversarial case. An autonomous agent decides to publish a security advisory that appears to come from SUSE. It is capable, unsupervised and it has everything a public user has: the open source engine, the public app, the brand's real colours and typefaces from published material.
 
 Here is where it gets, step by step.
 
 ::: timeline
-- <!--i:palette--> **It renders a convincing asset.** Yes. It can. This is the part no software prevents, and pretending otherwise would be the dishonest version of this page. The engine is open, the fonts are public, and a determined forger with any design tool reaches the same place.
-- <!--i:seal--> **It exports the file, and the file describes itself.** Every export carries [Content Credentials](/info/content-credentials-identity.html) by default. The agent does not get to skip this quietly. The manifest records what produced the file, when, and from which ingredients.
+- <!--i:palette--> **It renders a convincing asset.** Yes. It can. This is the part no software prevents, and pretending otherwise would be the dishonest version of this page. The engine is open, the fonts are public and a determined forger with any design tool reaches the same place.
+- <!--i:seal--> **It exports the file, and the file describes itself.** Every export carries [Content Credentials](/info/content-credentials-identity.html) by default. The agent does not get to skip this quietly. The manifest records what produced the file, when and from which ingredients.
 - <!--i:lock--> **It tries to sign as SUSE, and cannot.** This is the wall. Signing with an organisation's identity requires that organisation's key, obtained through an enrolment that a human starts and controls. An agent working from the public app gets an on-device credential that identifies itself, in plain words, as `Lolly (self-signed, on-device)`. Verification of that file reports a signer who is anonymous. Not "verified as SUSE". Not silence that a reader might mistake for endorsement. It says what it is.
 - <!--i:hash--> **It tries to edit the credential to say SUSE.** The manifest is signed, and the signature covers a hash of the bytes. Changing the issuer breaks the signature. A verifier reports a broken credential, which is a louder signal than no credential at all.
 - <!--i:trash--> **It strips the credential instead.** Now the file has no provenance, which is exactly the state of a file from nowhere. It cannot claim SUSE authorship, and it fails the check any recipient can run in seconds. Lolly-rendered rasters also carry a [pixel imprint](/info/url-mode.html) that survives a metadata strip, so "made with Lolly, credential removed" often remains detectable. That imprint is an integrity hint rather than a hardened guarantee, and the [Threat Model](/info/threat-model.html) says so.

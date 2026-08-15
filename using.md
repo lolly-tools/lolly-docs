@@ -1,6 +1,6 @@
 # Using Lolly
 
-A practical guide to actually *using* the app - opening a tool, working the canvas, exporting, saving, and sharing. Everything here runs **on your device**: no account, no upload, no internet required after the first load.
+A practical guide to actually *using* the app - opening a tool, working the canvas, exporting, saving and sharing. Everything here runs **on your device**: no account, no upload, no internet required after the first load.
 
 > New here? The [Quickstart](/info/quickstart.html) gets you making things in minutes, and [Lolly for Operators](/info/operators.html) covers installing/deploying the app; this page is about driving it once it's open.
 
@@ -14,7 +14,7 @@ Each tool is a split view: **controls** on one side, a live **preview** (the can
 
 ![A tool's split view - the control stack on the left, and the live grouped bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
 
-> A few tools (like **Design**) instead open as a **free canvas** - a chromeless, direct-manipulation surface where you drag, resize, rotate and snap boxes of text, shapes and images, and double-click to edit text in place. It exports through the same render path as every other tool, so the canvas *is* the file. See [The free canvas](#the-free-canvas-design) below.
+> A few tools (like **Design**) instead open as a **free canvas** - a chromeless, direct-manipulation surface where you drag, resize, rotate and snap boxes of text, shapes and images and double-click to edit text in place. It exports through the same render path as every other tool, so the canvas *is* the file. See [The free canvas](#the-free-canvas-design) below.
 
 Two ways to shape the grid itself into the one you want:
 
@@ -23,7 +23,7 @@ Two ways to shape the grid itself into the one you want:
 
 ![The end of the Tools grid with hidden tools revealed: the dimmed QR Code Generator card, and beside it the grey tile that toggled it back into view, now reading Hide hidden tools](/t/url-shot?url=%2F%23%2F&width=1440&height=680&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-bulk%3D%22hide%22%5D%3Bwait%3A300%3Bclick%3A.gtile--hiddenbox%3Bpress%3AEnd%3Bwait%3A800&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&rasterDpi=96&dark=1&filename=misc-hidden-tools)
 <!--
-SHOT NOTE (misc-hidden-tools): the trailing `press:End` is load-bearing. The
+SHOT NOTE (misc-hidden-tools): the trailing `press:End` is required. The
 hidden box and the revealed cards live at the very END of the grid, and
 clicking the box runs applyView(), which re-lays the masonry out and drops the
 scroll back to the top - so without it the frame published the TOP of the
@@ -90,7 +90,7 @@ Boxes, circles and rounded frames cover most layouts. When you need a shape that
 
 - **Click** to place a point. On the default curve type, **click and drag** pulls that point's handles out, which is how you draw a curve rather than a corner - hold **Alt** as you click for a hard corner instead. (On the other curve types every placed point is a corner and the drag does nothing; see **Spline type** below.)
 - Points snap to the artboard and to your other boxes as you place them, drawing the same guides a normal drag does. Alt suppresses the grid while you draw, and both the grid and the edges while you drag a point afterwards.
-- **Click your first point** to close the loop and finish in one move. Otherwise press **Enter**, double-click, or just switch tools - the drawing is kept, not thrown away.
+- **Click your first point** to close the loop and finish in one move. Otherwise press **Enter**, double-click or just switch tools - the drawing is kept, not thrown away.
 - **Escape** works one rung at a time: the first press abandons the drawing and writes nothing, and a second leaves the pen.
 - **Delete** while drawing drops the last point you placed.
 
@@ -98,7 +98,7 @@ The result is an ordinary box on the canvas. Move it, resize it, rotate it, grou
 
 It arrives painted, too. The first path you draw takes the fill and stroke your brand gives a path, and after that each new path takes **whatever you last used** - set a fill once and keep drawing, rather than recolouring every shape. (In a tool whose brand says nothing about paths, a drawn path is stroked in the colour you watched it being drawn in, so it's never invisible.)
 
-**Editing the points again.** Double-click the shape (or use **Edit points** on the object bar) and the points come back. Drag a point to move it, drag a handle to re-aim it, click anywhere on the curve to insert a point, rubber-band a group of points, and press Delete to remove the selected ones. A path always keeps at least two points, so you can't accidentally delete it out of existence.
+**Editing the points again.** Double-click the shape (or use **Edit points** on the object bar) and the points come back. Drag a point to move it, drag a handle to re-aim it, click anywhere on the curve to insert a point, rubber-band a group of points and press Delete to remove the selected ones. A path always keeps at least two points, so you can't accidentally delete it out of existence.
 
 **Spline type** decides what kind of curve runs through your points, and it's the choice worth understanding:
 
@@ -127,7 +127,7 @@ Select two or more shapes, **right-click** the canvas (two-finger tap on touch) 
 - **Intersect** keeps only the overlap.
 - **Exclude** keeps everything except the overlap.
 
-Three more work on a single shape: **Outline stroke…** turns a stroke into a filled shape of the same outline (useful when you want to keep a weight exactly as drawn), **Offset path…** grows the silhouette outwards or, with a negative number, shrinks it inwards, and **Simplify** rebuilds a path with fewer segments at the same shape.
+Three more work on a single shape: **Outline stroke…** turns a stroke into a filled shape of the same outline (useful when you want to keep a weight exactly as drawn), **Offset path…** grows the silhouette outwards or, with a negative number, shrinks it inwards and **Simplify** rebuilds a path with fewer segments at the same shape.
 
 ![A crescent and a ring with a real hole, both produced by Subtract](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fboxes%3D%5B%7B%22id%22%3A%22paper%22%2C%22kind%22%3A%22box%22%2C%22x%22%3A0%2C%22y%22%3A0%2C%22w%22%3A1080%2C%22h%22%3A1080%2C%22shape%22%3A%22rect%22%2C%22bg%22%3A%22%23ffffff%22%7D%2C%7B%22id%22%3A%22crescent%22%2C%22kind%22%3A%22path%22%2C%22x%22%3A120%2C%22y%22%3A330%2C%22w%22%3A374%2C%22h%22%3A400%2C%22shape%22%3A%22rect%22%2C%22bg%22%3A%22%234f84ba%22%2C%22path%22%3A%221!cubic!1_.750491!.957645!-.128211!-.062578!-.065985!.027232!c_.534759!1!.076762!!-.295339!!c_0!.5!!.276142!!-.276142!c_.534759!0!-.295339!!.200102!!c_1.000984!.254923!-.09169!-.152161!-.021205!-.003239!c_.935829!.25!.022185!!-.221505!!c_.534759!.625!!-.207107!!.14459!c%22%7D%2C%7B%22id%22%3A%22ring%22%2C%22kind%22%3A%22path%22%2C%22x%22%3A580%2C%22y%22%3A330%2C%22w%22%3A400%2C%22h%22%3A400%2C%22shape%22%3A%22rect%22%2C%22bg%22%3A%22%234f84ba%22%2C%22fillRule%22%3A%22nonzero%22%2C%22path%22%3A%221!cubic!1_1!.5!!-.276142!!.276142!c_.5!1!.276142!!-.276142!!c_0!.5!!.276142!!-.276142!c_.5!0!-.276142!!.276142!!c*1!cubic!1_.5!.7!-.110457!!.110457!!c_.7!.5!!.110457!!-.110457!c_.5!.3!.110457!!-.110457!!c_.3!.5!!-.110457!!.110457!c%22%7D%5D&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=path-ops-boolean-result)
 
@@ -137,9 +137,9 @@ Two things these operations deliberately don't do. They **refuse rather than des
 
 ## Timeline (Sequence Studio)
 
-**Sequence Studio** adds *time* to the free canvas. Every box can start at a moment, run for a length, and animate in and out, and a timeline docked under the artboard is where you arrange them. Open it and there's already a sequence playing - a title card, a clip, an end card, a lower-third and a music bed - so the model is visible before you change anything.
+**Sequence Studio** adds *time* to the free canvas. Every box can start at a moment, run for a length and animate in and out, and a timeline docked under the artboard is where you arrange them. Open it and there's already a sequence playing - a title card, a clip, an end card, a lower-third and a music bed - so the model is visible before you change anything.
 
-![Sequence Studio's timeline: the transport, the ruler, an overlay lane, the magnetic sequence row with its clips and seam chips, and the Always on strip](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1440&height=900&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A252px!important%7D&cropSelector=.tl-panel&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-timeline)
+![Sequence Studio's timeline: the transport, the ruler, an overlay lane, the magnetic sequence row with its clips and seam chips and the Always on strip](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1440&height=900&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A252px!important%7D&cropSelector=.tl-panel&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-timeline)
 
 There are two kinds of row, and the difference is the whole idea:
 
@@ -151,21 +151,21 @@ There are two kinds of row, and the difference is the whole idea:
 
 Opening the timeline gives it the keyboard, so Space and the arrow keys drive the playhead rather than the page - and because it opens by itself on a composition that already has timing, that's true the moment Sequence Studio loads.
 
-> **[The sequence editor](/info/sequence-editor.html)** goes deeper on the four things that decide whether editing in time feels predictable: which clip a canvas click edits, onion-skin ghosts of the neighbouring clips, split scope and the Join that undoes a cut, and trimming (including the keyboard set). Press `?` with the timeline focused for the shortcut sheet.
+> **[The sequence editor](/info/sequence-editor.html)** goes deeper on the four things that decide whether editing in time feels predictable: which clip a canvas click edits, onion-skin ghosts of the neighbouring clips, split scope and the Join that undoes a cut and trimming (including the keyboard set). Press `?` with the timeline focused for the shortcut sheet.
 
-**Editing.** Drag a clip's middle to move or reorder it, drag within a few pixels of either end to trim it, and press **Split at playhead** (or `S`) to cut one clip into two. Split needs a clip with a real **Length** and the playhead a little way inside it, so an open-ended clip (the music bed, for one) can't be split. **Snap to edges** is on by default and snaps to clip edges, the playhead and whole seconds, with Alt to override. Every drag is a single undo step, and the drag preview runs the same arithmetic as the commit, so what you see while dragging is what you get.
+**Editing.** Drag a clip's middle to move or reorder it, drag within a few pixels of either end to trim it and press **Split at playhead** (or `S`) to cut one clip into two. Split needs a clip with a real **Length** and the playhead a little way inside it, so an open-ended clip (the music bed, for one) can't be split. **Snap to edges** is on by default and snaps to clip edges, the playhead and whole seconds, with Alt to override. Every drag is a single undo step, and the drag preview runs the same arithmetic as the commit, so what you see while dragging is what you get.
 
-Select a clip and the inspector gives you the same edits as numbers: **Length**, **Trim in** (how far into the source it starts), **Speed** as a set of fixed multipliers from ×0.25 to ×4, **Animate in** / **Animate out** with their lengths, and **Mute clip**. A clip on the magnetic row has no **Start** field on purpose - the row owns the order, so you drag to move it.
+Select a clip and the inspector gives you the same edits as numbers: **Length**, **Trim in** (how far into the source it starts), **Speed** as a set of fixed multipliers from ×0.25 to ×4, **Animate in** / **Animate out** with their lengths and **Mute clip**. A clip on the magnetic row has no **Start** field on purpose - the row owns the order, so you drag to move it.
 
-**Transitions** are presets, not keyframes: Fade, Pop, Grow, Rise, Drop, the four Slides, Zoom in and out, Tilt, Swoop, Spin, Drift, or **Cut (no animation)**. Distances scale with the object, so the same preset reads correctly on a full-frame card and a small badge. Between two adjacent clips on the sequence row there's a **seam chip**: click it and choose **Cut** or **Crossfade**, which applies at once and closes. Open the same chip again to change the **Length (ms)** and press **Done**. A crossfade is stored as a fade out of one and a fade into the next, and the export derives the actual dissolve from that pair - which is why a crossfade looks like two fades in the preview and a true handover in the file.
+**Transitions** are presets, not keyframes: Fade, Pop, Grow, Rise, Drop, the four Slides, Zoom in and out, Tilt, Swoop, Spin, Drift or **Cut (no animation)**. Distances scale with the object, so the same preset reads correctly on a full-frame card and a small badge. Between two adjacent clips on the sequence row there's a **seam chip**: click it and choose **Cut** or **Crossfade**, which applies at once and closes. Open the same chip again to change the **Length (ms)** and press **Done**. A crossfade is stored as a fade out of one and a fade into the next, and the export derives the actual dissolve from that pair - which is why a crossfade looks like two fades in the preview and a true handover in the file.
 
 **Sound.** Add an **Audio** clip and it lives on the timeline like any other clip: waveform, trim, mute. (The generated bed the default session ships with is the one exception - it's synthesised at export time, so its bar stays plain and silent until you render.) Press the mic to **record a voiceover** straight onto the timeline, with a count-in and a level meter, and the take is saved as your own asset at the point you started. Music, dialogue and a clip's own soundtrack all reach the exported mix. (The export panel's **Audio track** is a different thing: one bed laid under the whole clip, with fade and ducking. The two coexist.)
 
 **Rendering it.** A motion export is a **deterministic composite**, not a screen recording - each frame is decoded, drawn and encoded at an exact time, so the file doesn't depend on your machine keeping up, and there's no practical frame ceiling on MP4 or WebM. The timeline's own length sets the duration unless you type one. Content Credentials are stamped as on any other export. A still export gives you the frame at the playhead, or a whole contact sheet from the **Frames** field beside the output size - see [Exporting](/info/exporting.html#stills-from-a-timed-composition).
 
-A few limits worth knowing: a sequence is capped at one hour, GIF and animated PNG buffer their frames so they stay short, audio is silent on a clip whose speed isn't ×1 (there's no time-stretching yet), and **Record live** is hidden here because the compositor is the better path.
+A few limits worth knowing: a sequence is capped at one hour, GIF and animated PNG buffer their frames so they stay short, audio is silent on a clip whose speed isn't ×1 (there's no time-stretching yet) and **Record live** is hidden here because the compositor is the better path.
 
-**Beyond presets: keyframes, depth and a camera.** A transition animates a clip as it arrives and leaves. To pose a box *within* a clip - drift it, fade it, blur it, lift it off the page and settle it back - add keyframes: select the clip, press **+Keyframe** (the diamond in the timeline's tool cluster, the diamond on the canvas object bar, or `K`), and the playhead's position decides which pose your next edit writes. The same machinery gives every timed composition a **camera** that pushes in, pans across and pulls focus, and turns one flat SVG into a stack of layers you can fly between. **[Animating](/info/animating.html)** is the full guide.
+**Beyond presets: keyframes, depth and a camera.** A transition animates a clip as it arrives and leaves. To pose a box *within* a clip - drift it, fade it, blur it, lift it off the page and settle it back - add keyframes: select the clip, press **+Keyframe** (the diamond in the timeline's tool cluster, the diamond on the canvas object bar or `K`) and the playhead's position decides which pose your next edit writes. The same machinery gives every timed composition a **camera** that pushes in, pans across and pulls focus and turns one flat SVG into a stack of layers you can fly between. **[Animating](/info/animating.html)** is the full guide.
 
 The Design tool has the same timeline, so you can time a layout without moving to another tool, and it exports motion too.
 
@@ -174,21 +174,21 @@ The Design tool has the same timeline, so you can time a layout without moving t
 On narrow screens the layout reflows to one column:
 
 - The **controls become a sheet** at the top with a **drag grip** on its lower edge. Drag the grip to resize it - it snaps to **peek / half / full** - or **tap** the grip to toggle collapsed ↔ expanded. The preview fills the space below and stays visible while you edit.
-- A floating **Render** button opens the **Export** sheet - all the format, size, copy, save, and download controls in one place. Dismiss it by tapping the backdrop.
+- A floating **Render** button opens the **Export** sheet - all the format, size, copy, save and download controls in one place. Dismiss it by tapping the backdrop.
 
-![A tool on a phone-width screen - controls as a sheet up top, the generated palette filling the preview below, and the render pill floating bottom-centre](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3Df97316%26harmony%3Dadjacent-3%26steps%3D9&width=430&height=900&dpi=192&waitMs=2200&walker=1&format=svg&dark=1&filename=vt-phone-palette)
+![A tool on a phone-width screen - controls as a sheet up top, the generated palette filling the preview below and the render pill floating bottom-centre](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3Df97316%26harmony%3Dadjacent-3%26steps%3D9&width=430&height=900&dpi=192&waitMs=2200&walker=1&format=svg&dark=1&filename=vt-phone-palette)
 
 ## Controls (inputs)
 
-Tools expose only the inputs that are meant to vary - everything else (colours, layout, typography, logic) is locked in by the tool author, so whatever you make meets the rules the author set. Inputs include text, sliders, colour pickers, dropdowns, dates, image pickers, and repeating row groups. Some are grouped under collapsible sections.
+Tools expose only the inputs that are meant to vary - everything else (colours, layout, typography, logic) is locked in by the tool author, so whatever you make meets the rules the author set. Inputs include text, sliders, colour pickers, dropdowns, dates, image pickers and repeating row groups. Some are grouped under collapsible sections.
 
-![A tool's control stack - a text field, colour triggers and a slider, and nothing else the author chose to lock down](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-inputs&walker=1&format=svg&dark=1&filename=use-tool-inputs)
+![A tool's control stack - a text field, colour triggers and a slider and nothing else the author chose to lock down](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-inputs&walker=1&format=svg&dark=1&filename=use-tool-inputs)
 
 **Reset:** *Clear changes* returns every input to its defaults.
 
 ## Your details & headshot
 
-**Profile** (top-right of the gallery) holds your name, contact details, and an optional **headshot**. Tools that ask for those fields pre-fill them automatically - set them once and your email signature, lockups, and badges fill themselves in. You can still override any field per session. Opt in with **Use my details to create** so your details ride along as the author on what you export.
+**Profile** (top-right of the gallery) holds your name, contact details and an optional **headshot**. Tools that ask for those fields pre-fill them automatically - set them once and your email signature, lockups and badges fill themselves in. You can still override any field per session. Opt in with **Use my details to create** so your details ride along as the author on what you export.
 
 Your headshot and details live **only on this device**. A profile can be more than just you - a team or a role you step into now and then. See **[Profiles](/info/profile.html)** for the full picture, including keeping more than one.
 
@@ -204,15 +204,15 @@ Click **Save** to store the current inputs as a session for that tool. You can k
 
 ![Projects - saved sessions organised into nestable folders](/t/url-shot?url=%2F%23%2Fp&width=1440&height=900&dpi=192&waitMs=1200&walker=1&format=svg&localize=1&dark=1&filename=projects)
 
-- <!--i:folder--> **Folders that nest.** Group saved sessions into folders, and folders inside folders, as deep as you like. Create a folder, rename it, or drag a tile onto another folder to move it; a breadcrumb walks you back up. An always-present **Uncategorised** folder holds anything not yet filed.
+- <!--i:folder--> **Folders that nest.** Group saved sessions into folders, and folders inside folders, as deep as you like. Create a folder, rename it or drag a tile onto another folder to move it; a breadcrumb walks you back up. An always-present **Uncategorised** folder holds anything not yet filed.
 - <!--i:clock--> **Sort your own way.** **View & sort** offers **Name**, **Date added**, **Last modified** (the default) and, inside a folder, **By tool**. Folders always come first regardless of which sort is active - the sort only orders the sessions and folders within their own group.
 - <!--i:document--> **File new work straight in.** **New asset** ("Start a fresh creation" at the root, "Add to *folder*" inside one) opens a tool and files its first save into that folder automatically.
-- <!--i:checklist--> **Multi-select (desktop).** Tick a tile's checkbox, drag a selection box across empty space, or **Shift/Cmd-click**; **right-click** a tile for its context menu. Then act on the whole selection at once - the same gesture and the same floating action bar work on the Tools gallery, Utilities, the Catalogue and Projects, not just here.
+- <!--i:checklist--> **Multi-select (desktop).** Tick a tile's checkbox, drag a selection box across empty space or **Shift/Cmd-click**; **right-click** a tile for its context menu. Then act on the whole selection at once - the same gesture and the same floating action bar work on the Tools gallery, Utilities, the Catalogue and Projects, not just here.
 - <!--i:download--> **Render a whole folder or selection.** **Render folder** exports every saved session in a folder - including its sub-folders - as one nested `.zip`. **Render selection** does the same for any multi-selection, and a single session renders straight to its own file. No Batch/Pro needed.
 - <!--i:link--> **Jump straight to a tool's saved work.** Tick one or more tools on the Tools gallery and choose **View sessions** from the selection bar - Projects opens showing only the sessions made with those tools, with a **Clear** to get back to the full view.
 - <!--i:link--> **Share a saved session.** Right-click a session → **Share link** to copy a link that reopens it with the exact same inputs (the full Share dialog - see below).
 
-![The View and sort popover in Projects open, with a theme row, a View choice of Preview or List, and Name, Date added and Last modified under Sort](/t/url-shot?url=%2F%23%2Fp&width=900&height=700&dpi=192&waitMs=1400&drive=click%3A.projects-viewopts&cropSelector=.projects-viewmenu&walker=1&format=svg&dark=1&filename=misc-projects-sort)
+![The View and sort popover in Projects open, with a theme row, a View choice of Preview or List and Name, Date added and Last modified under Sort](/t/url-shot?url=%2F%23%2Fp&width=900&height=700&dpi=192&waitMs=1400&drive=click%3A.projects-viewopts&cropSelector=.projects-viewmenu&walker=1&format=svg&dark=1&filename=misc-projects-sort)
 <!--
 SHOT NOTE (misc-projects-sort): trigger button confirmed as
 `.filter-fab.projects-viewopts` in views/projects.ts (openViewOpts() is bound
@@ -234,9 +234,9 @@ alt text names them - do not re-caption this as "the sort menu".
 
 **What the selection bar offers** differs a little by view, since not every action makes sense everywhere:
 
-- **Tools / Utilities:** Favourite (or Unfavourite), Hide (or Unhide), Available offline (or Remove from offline), **View sessions** (the jump described above), and Copy link when exactly one card is selected.
+- **Tools / Utilities:** Favourite (or Unfavourite), Hide (or Unhide), Available offline (or Remove from offline), **View sessions** (the jump described above) and Copy link when exactly one card is selected.
 - **Catalogue:** Favourite and Hide apply to any selection; Duplicate, Download and Delete only appear once every selected item is one of your own uploads - a shared design-system asset is a permanent contract, so those three stay off it even in bulk.
-- **Projects:** **Render selection**, **Move to…**, **New folder**, **Delete**, **Edit together** when the selection is between two and eight single-tool sessions (it opens them side by side under one combined sidebar), and **Edit as sheet**, which opens the whole selection as rows in the batch grid instead. That one has **no size limit** and doesn't care whether the sessions came from the same tool, so it's the escape hatch when a selection is bigger or more mixed than Edit together's two-to-eight.
+- **Projects:** **Render selection**, **Move to…**, **New folder**, **Delete**, **Edit together** when the selection is between two and eight single-tool sessions (it opens them side by side under one combined sidebar) and **Edit as sheet**, which opens the whole selection as rows in the batch grid instead. That one has **no size limit** and doesn't care whether the sessions came from the same tool, so it's the escape hatch when a selection is bigger or more mixed than Edit together's two-to-eight.
 
 > One label trap: **View sessions** only exists once something is *selected*. Right-clicking a single unselected card instead offers **N saved sessions**, which opens that tool's own history dialog rather than navigating to Projects.
 
@@ -263,10 +263,10 @@ storage-seeding hook.
 
 Every input is captured in the page URL, so a link *is* the design. Use **Share** in the export controls - or **Share link** on any saved session in Projects - to open the **Share dialog**: a ready-to-copy link with two collapsed sections under it.
 
-- **Link options** holds **Shortest link** (a big design makes a long URL, so this packs the whole state into a compact token; the readable form is always there too), **Password-protect this link** (AES-256 over the whole link, the password never in it), and **Pin this tool version** - the `_v` flag, which nails the link to the tool version you're looking at so a later update can't change what it renders.
-- **Link behaviour** is what happens when the recipient opens it: fullscreen, the export panel already expanded, download-on-open with `&export`, or copy-to-clipboard with `&copy`.
+- **Link options** holds **Shortest link** (a big design makes a long URL, so this packs the whole state into a compact token; the readable form is always there too), **Password-protect this link** (AES-256 over the whole link, the password never in it) and **Pin this tool version** - the `_v` flag, which nails the link to the tool version you're looking at so a later update can't change what it renders.
+- **Link behaviour** is what happens when the recipient opens it: fullscreen, the export panel already expanded, download-on-open with `&export` or copy-to-clipboard with `&copy`.
 
-Paste the link to a colleague, bookmark it, or commit it. (Full details: [URL Mode](/info/url-mode.html).)
+Paste the link to a colleague, bookmark it or commit it. (Full details: [URL Mode](/info/url-mode.html).)
 
 > Images you uploaded from your device are **not** included in a shared link - they only exist on your machine.
 
@@ -282,19 +282,19 @@ When a tool lets you add an image from your device, it's kept exactly as it arri
 
 ## The Catalogue - your asset library
 
-The **Catalogue** (`#/c`, or the **Catalog** segment of the Projects · Tools · Utilities · Catalog switch at the top of every listing view) gathers everything your tools can draw on - brand logos, images, audio, and motion, grouped by kind - and it's where your **own creative files** live too. No server, no admin console, no pull request: it's all on your device.
+The **Catalogue** (`#/c`, or the **Catalog** segment of the Projects · Tools · Utilities · Catalog switch at the top of every listing view) gathers everything your tools can draw on - brand logos, images, audio and motion, grouped by kind - and it's where your **own creative files** live too. No server, no admin console, no pull request: it's all on your device.
 
 ![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=2400&css=.plat-swatch-grid~%2A%7Bdisplay%3Anone%7D&walker=1&format=svg&localize=1&dark=1&filename=catalogue)
 
 - <!--i:upload--> **Bring your files in.** Drag any image, SVG, audio clip, video, Lottie, PDF or PowerPoint deck onto the upload area - or click to choose - and it lands in your catalogue instantly, ready in every tool's asset picker. A multi-page PDF or a `.pptx` asks which pages or slides to keep - each becomes an SVG asset. Ingest as much as you like; it never leaves your device.
 - <!--i:star--> **Favourite what you reach for.** ★ an asset (or a brand swatch) and it pins to the top of every picker, so your go-to logo or colour is one click away.
-- <!--i:folder--> **Tidy up.** Recategorise an asset into a different group, hide a shared brand asset you don't use (with **Show hidden** to bring it back), or delete your own uploads outright. The same multi-select gesture and floating action bar as Projects work here too, so any of that can be done to a whole selection at once.
+- <!--i:folder--> **Tidy up.** Recategorise an asset into a different group, hide a shared brand asset you don't use (with **Show hidden** to bring it back) or delete your own uploads outright. The same multi-select gesture and floating action bar as Projects work here too, so any of that can be done to a whole selection at once.
 
 ### Take your palette and fonts anywhere
 
-The Catalogue's **Swatches** panel isn't just for reference - click a colour to copy it, or **download the whole brand palette** in the format your other tool speaks:
+The Catalogue's **Swatches** panel does more than display - click a colour to copy it, or **download the whole brand palette** in the format your other tool speaks:
 
-- <!--i:code--> **Design tokens (JSON)**, **CSS variables**, or **CSS classes** - drop the brand straight into a stylesheet or a build;
+- <!--i:code--> **Design tokens (JSON)**, **CSS variables** or **CSS classes** - drop the brand straight into a stylesheet or a build;
 - <!--i:palette--> **Adobe Swatch Exchange (.ase)** - load it into Illustrator or Photoshop;
 - <!--i:pentool--> **GIMP palette (.gpl)** - for GIMP or Inkscape.
 
@@ -306,20 +306,20 @@ Assets are one half of the open, do-it-yourself path; the other is **making your
 
 ## Sound & accessibility
 
-Lolly aims to be comfortable to use for everyone. The interface is keyboard-navigable, custom controls carry proper labels for screen readers, and every tool's live preview is exposed as a single labelled image describing what it's making.
+Lolly aims to be comfortable to use for everyone. The interface is keyboard-navigable, custom controls carry proper labels for screen readers and every tool's live preview is exposed as a single labelled image describing what it's making.
 
 A gentle layer of **assistive sounds** confirms what you do - arriving in the gallery, a valid vs. invalid Content Credentials check, closing a panel, switching a filter. It's **off by default**: turn **Sound** on anywhere the switch appears (each view's options popover, or **Profile**), and the choice is remembered.
 
 Four opt-in comfort settings live under **Profile → Accessibility**: **Reduce motion** (drops the app's transitions and flourishes), **Hide colourful previews** (calm icon-and-text gallery cards, and quieter project thumbnails), **High contrast** (stronger borders, text and focus rings) and **Large text** (bigger app type - labels, menus, button text). All four settle the app *around* your work: they never reach inside a tool canvas or change a pixel of what you export, and each is off until you turn it on. Full detail in [Your profile → Accessibility](/info/profile.html#accessibility).
 
-Beside the Sound switch is **Neurospicy Mode** - an optional, calming background focus track that plays quietly while you work. Turning it on opens a small **player dock** in the bottom corner that follows you across the app; from it you can search and pick a track, skip forward and back, set the volume, and minimise or close it. The track list spans a few categories - procedural *Lolly Sings* tunes, ambient loops and beats, your own uploaded audio, and a handful of live internet **radio** stations (these need a connection; everything else plays offline). It's **off by default** and, like Sound, is remembered across sessions and devices. Turning Sound off mutes the focus track too.
+Beside the Sound switch is **Neurospicy Mode** - an optional, calming background focus track that plays quietly while you work. Turning it on opens a small **player dock** in the bottom corner that follows you across the app; from it you can search and pick a track, skip forward and back, set the volume and minimise or close it. The track list spans a few categories - procedural *Lolly Sings* tunes, ambient loops and beats, your own uploaded audio and a handful of live internet **radio** stations (these need a connection; everything else plays offline). It's **off by default** and, like Sound, is remembered across sessions and devices. Turning Sound off mutes the focus track too.
 
 ## Storage & privacy
 
-Everything is stored in your browser's local database (IndexedDB): your profile, saved sessions, uploaded images, and a cache of downloaded catalog content. **Profile → Storage** shows usage and lets you:
+Everything is stored in your browser's local database (IndexedDB): your profile, saved sessions, uploaded images and a cache of downloaded catalog content. **Profile → Storage** shows usage and lets you:
 
 - <!--i:box--> **Clear cache** - drop downloaded catalog content (re-syncs next load).
-- <!--i:trash--> **Clear all my data** - wipe profile, sessions, and images. *Cannot be undone.*
+- <!--i:trash--> **Clear all my data** - wipe profile, sessions and images. *Cannot be undone.*
 
 ![The storage card on a phone-width screen: every category of on-device data named, with the Clear all my data button at the bottom](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%2C.store-manages%2C.storage-subsection%2C.store-selbar%2C.store-chip-val%2C%23store-hero-num%2C%23store-headroom%2C%23store-quota%2C%23store-reclaim%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23storage-section&dark=1&filename=pv-storage-clear)
 
@@ -329,22 +329,22 @@ None of this local data is transmitted anywhere - no telemetry, no cloud renderi
 
 Because everything lives on your device, **Profile → Storage → Move to another device** lets you carry it all to a second install - no account, no cloud:
 
-- <!--i:download--> **Export my data** downloads a single `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` (the name parts come from your profile and are dropped if unset; `<n>` is a per-day counter so same-day exports don't collide) containing your profile, every saved session (with its thumbnail), your uploaded images, and your preferences (theme, sidebar width, local activity stats).
+- <!--i:download--> **Export my data** downloads a single `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` (the name parts come from your profile and are dropped if unset; `<n>` is a per-day counter so same-day exports don't collide) containing your profile, every saved session (with its thumbnail), your uploaded images and your preferences (theme, sidebar width, local activity stats).
 - <!--i:upload--> **Import data…** on the other install reads that file back in. It **merges**: anything with the same name (your profile, a session slot, an image) is replaced by the imported copy; everything else on that device is kept. Saved sessions re-link to your imported images automatically.
 
-The catalog cache isn't included - it re-downloads itself on the new device. The bundle is a plain zip (`manifest.json` + `profile.json` + `sessions.json` + `assets.json` + `assets/blobs/…` + `prefs.json`, format id `lolly-backup`), so it survives email, USB, or AirDrop intact and is the same format every shell reads. Each part is checksummed, so a file damaged in transit is caught on import rather than restored half-broken. (Full format spec: [Data Transfer](/info/data-transfer.html).)
+The catalog cache isn't included - it re-downloads itself on the new device. The bundle is a plain zip (`manifest.json` + `profile.json` + `sessions.json` + `assets.json` + `assets/blobs/…` + `prefs.json`, format id `lolly-backup`), so it survives email, USB or AirDrop intact and is the same format every shell reads. Each part is checksummed, so a file damaged in transit is caught on import rather than restored half-broken. (Full format spec: [Data Transfer](/info/data-transfer.html).)
 
 ## Importing a design (Figma, Penpot, Illustrator, InDesign)
 
-You can bring an existing design into Lolly and keep working on it: open **Design**, click **Import a design** in the canvas toolbar, and choose a Figma **.fig** or SVG, a Penpot **.penpot**, an Illustrator **.ai** / **.pdf**, or an InDesign **.idml**. Layers become editable boxes on the free canvas - text stays retypable, images land in **My images**, and type and colours conform to the brand globals - then the result saves, shares and renders like any other session. The parse happens entirely on your device. Full detail: **[Import a design](/info/design-import.html)**.
+You can bring an existing design into Lolly and keep working on it: open **Design**, click **Import a design** in the canvas toolbar, and choose a Figma **.fig** or SVG, a Penpot **.penpot**, an Illustrator **.ai** / **.pdf** or an InDesign **.idml**. Layers become editable boxes on the free canvas - text stays retypable, images land in **My images** and type and colours conform to the brand globals - then the result saves, shares and renders like any other session. The parse happens entirely on your device. Full detail: **[Import a design](/info/design-import.html)**.
 
 ## Exporting
 
-See **[Exporting & Formats](/info/exporting.html)** for the full story - choosing a format, output size and print units, transparency, video, and copy/share. In short: pick a format, set the size if you need to, and **Download** (or **Copy** to the clipboard).
+See **[Exporting & Formats](/info/exporting.html)** for the full story - choosing a format, output size and print units, transparency, video and copy/share. In short: pick a format, set the size if you need to and **Download** (or **Copy** to the clipboard).
 
 ## Batch (Pro) mode
 
-For power users, **Batch** (linked from the gallery, gated behind the Pro feature flag, which defaults on) renders many variations at once - a grid where each row is a set of inputs, exported together. Ideal for localising a card into a dozen languages or generating every size variant in one pass. Fill rows by typing, pasting straight from a spreadsheet, or importing a CSV (you can export one back too), and set per-row format, size, and output filename. Save a whole grid as a named **batch session** that reopens from the gallery, and download every row as a single `.zip`.
+For power users, **Batch** (linked from the gallery, gated behind the Pro feature flag, which defaults on) renders many variations at once - a grid where each row is a set of inputs, exported together. Ideal for localising a card into a dozen languages or generating every size variant in one pass. Fill rows by typing, pasting straight from a spreadsheet or importing a CSV (you can export one back too), and set per-row format, size and output filename. Save a whole grid as a named **batch session** that reopens from the gallery, and download every row as a single `.zip`.
 
 ![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
 
@@ -364,7 +364,7 @@ Click any canvas (or press Enter on it) and that session's sidebar card opens an
 
 Two honest limits. The two-to-eight cap is real: every card mounts its own live runtime, and that's the number that stays responsive - a link asking for more (or for a session that no longer exists) says so rather than half-loading. And the link names *your* saved slots, so it reopens that set on this device; it is not a share link.
 
-When the selection is bigger than eight, mixes tools, or includes images as well as sessions, the escape hatch is **Edit as sheet** in the same selection bar: it opens the whole selection as **rows in the batch grid** (`#/pro?s=…`), with no size limit and no same-tool rule. Folders stay out of both - they have their own open-in-grid path. ([Search](/info/search.html) is the one thing that doesn't reach in here yet: Multi-edit is the single view the search bar doesn't know about.)
+When the selection is bigger than eight, mixes tools or includes images as well as sessions, the escape hatch is **Edit as sheet** in the same selection bar: it opens the whole selection as **rows in the batch grid** (`#/pro?s=…`), with no size limit and no same-tool rule. Folders stay out of both - they have their own open-in-grid path. ([Search](/info/search.html) is the one thing that doesn't reach in here yet: Multi-edit is the single view the search bar doesn't know about.)
 
 ## Offline & install
 

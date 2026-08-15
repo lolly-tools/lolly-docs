@@ -31,7 +31,7 @@ Personal preferences live elsewhere too: theme and sound are on your [Profile](/
 
 ## Capabilities
 
-Every part of the platform written up as a card, in eleven groups: Experiences, Platforms & runtimes, Export formats, Import formats, Print production, Automation & AI, Determinism & reproducibility, Brand & design system, Privacy & data ownership, Security & access control and Architecture. Each group folds, carries its own card count, and opens a card into a dialog with that capability's feature list and - for about half of them - the same vector screenshot this documentation site uses.
+Every part of the platform written up as a card, in eleven groups: Experiences, Platforms & runtimes, Export formats, Import formats, Print production, Automation & AI, Determinism & reproducibility, Brand & design system, Privacy & data ownership, Security & access control and Architecture. Each group folds, carries its own card count and opens a card into a dialog with that capability's feature list and - for about half of them - the same vector screenshot this documentation site uses.
 
 A search field above the groups filters the cards as you type and force-opens whichever groups still hold a match, so a query turns the accordion into a flat result list. It says how many capabilities it is searching, and a query that matches nothing says that in words rather than leaving you with a column of empty sections.
 

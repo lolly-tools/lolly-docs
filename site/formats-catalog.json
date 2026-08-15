@@ -1,5 +1,5 @@
 {
-  "_note": "English-only structural data for the /info formats table + educational dialog. Format names are not translated; the heading/lead/zone labels live in formats.json. dir: in|out|both. features keys map into the features label table. The in/out/round-trip counts are COMPUTED live in docs/build.ts from the dir fields — do not hand-maintain a count here or in formats.json.",
+  "_note": "English-only structural data for the /info formats table + educational dialog. Format names are not translated; the heading/lead/zone labels live in formats.json. dir: in|out|both. features keys map into the features label table. The in/out/round-trip counts are COMPUTED live in docs/build.ts from the dir fields - do not hand-maintain a count here or in formats.json.",
   "features": {
     "vector": "Resolution-independent vector",
     "raster": "Pixel raster image",
@@ -585,7 +585,7 @@
         "hdr",
         "provenance"
       ],
-      "desc": "The newest of the small-file image formats, built on the AV1 video codec: excellent compression, transparency, and real HDR support. Lolly can write an HDR AVIF for bright displays. It reads and writes wherever your browser supports it natively, and now carries a Content Credential over its native ISO-BMFF structure — so an AI-made or upscaled AVIF keeps its provenance instead of losing it on export."
+      "desc": "The newest of the small-file image formats, built on the AV1 video codec: excellent compression, transparency, and real HDR support. Lolly can write an HDR AVIF for bright displays. It reads and writes wherever your browser supports it natively, and now carries a Content Credential over its native ISO-BMFF structure - so an AI-made or upscaled AVIF keeps its provenance instead of losing it on export."
     },
     {
       "token": "PSD",
@@ -652,7 +652,7 @@
         "lossy",
         "provenance"
       ],
-      "desc": "An audio-only MP4 file, usually holding AAC-encoded sound, the format Apple devices and many browsers record natively. It sounds a little better than MP3 at the same size. Lolly's Voice Recorder can save your take as M4A, and imported M4A audio can drive a video's music bed. As an MP4-family file it carries a Content Credential over the same binding as MP4 — so a synthetic or AI-voiced clip stays attributable."
+      "desc": "An audio-only MP4 file, usually holding AAC-encoded sound, the format Apple devices and many browsers record natively. It sounds a little better than MP3 at the same size. Lolly's Voice Recorder can save your take as M4A, and imported M4A audio can drive a video's music bed. As an MP4-family file it carries a Content Credential over the same binding as MP4 - so a synthetic or AI-voiced clip stays attributable."
     },
     {
       "token": "PPTX",
@@ -816,7 +816,7 @@
         "audio",
         "lossless"
       ],
-      "desc": "Uncompressed, lossless audio: the raw, full-quality sound format, which means large files. Lolly reads a WAV and decodes it on your device, and it exports one too — full-quality PCM audio straight from a tool like the Audiogram or Sequence Studio. It reads standard PCM WAVs and declines exotic encodings rather than misreading them as noise."
+      "desc": "Uncompressed, lossless audio: the raw, full-quality sound format, which means large files. Lolly reads a WAV and decodes it on your device, and it exports one too - full-quality PCM audio straight from a tool like the Audiogram or Sequence Studio. It reads standard PCM WAVs and declines exotic encodings rather than misreading them as noise."
     },
     {
       "token": "Opus",
@@ -1080,7 +1080,7 @@
         "editable-text",
         "embeds-bitmaps"
       ],
-      "desc": "Rich, formatted text as a web fragment. Lolly reads HTML in — a pasted rich-text selection, or an HTML table that fills a tool's rows — and writes it out, most usefully as an email signature you can paste straight into a mail client with its styling and inline logo intact. Generated from content, never a rasterised picture."
+      "desc": "Rich, formatted text as a web fragment. Lolly reads HTML in - a pasted rich-text selection, or an HTML table that fills a tool's rows - and writes it out, most usefully as an email signature you can paste straight into a mail client with its styling and inline logo intact. Generated from content, never a rasterised picture."
     },
     {
       "token": "MD",
@@ -1102,7 +1102,7 @@
       "features": [
         "editable-text"
       ],
-      "desc": "Just the words, no formatting, no styling — the most universal file there is. Lolly reads plain text into a tool's fields and writes a tool's content back out as plain text that opens in anything."
+      "desc": "Just the words, no formatting, no styling - the most universal file there is. Lolly reads plain text into a tool's fields and writes a tool's content back out as plain text that opens in anything."
     },
     {
       "token": "ICS",
@@ -1136,7 +1136,7 @@
         "design-tokens",
         "palette"
       ],
-      "desc": "The emerging W3C standard for design tokens — colours, type, spacing and gradients as structured JSON that design tools share. Lolly imports a DTCG document to hydrate a whole brand (palette, ramps, type) and exports its palette back out as DTCG tokens, so a brand round-trips with any tool that speaks the standard, Penpot included."
+      "desc": "The emerging W3C standard for design tokens - colours, type, spacing and gradients as structured JSON that design tools share. Lolly imports a DTCG document to hydrate a whole brand (palette, ramps, type) and exports its palette back out as DTCG tokens, so a brand round-trips with any tool that speaks the standard, Penpot included."
     },
     {
       "token": "Tokens Studio",
@@ -1148,7 +1148,7 @@
         "design-tokens",
         "palette"
       ],
-      "desc": "The token format from the popular Tokens Studio Figma plugin — one monolithic JSON, or a one-file-per-set export. Lolly reads it to build a brand pack, so palette, ramps and themes come in ready to use. Import-only."
+      "desc": "The token format from the popular Tokens Studio Figma plugin - one monolithic JSON, or a one-file-per-set export. Lolly reads it to build a brand pack, so palette, ramps and themes come in ready to use. Import-only."
     },
     {
       "token": "ASE",
@@ -1183,7 +1183,7 @@
         "design-tokens",
         "editable-text"
       ],
-      "desc": "Your brand palette as ready-to-paste CSS — custom properties (--brand-…) or utility classes — so a developer wires the exact brand colours into a website with no guesswork or eyedropper. Export-only."
+      "desc": "Your brand palette as ready-to-paste CSS - custom properties (--brand-…) or utility classes - so a developer wires the exact brand colours into a website with no guesswork or eyedropper. Export-only."
     },
     {
       "token": "SCSS",
@@ -1204,7 +1204,7 @@
         "multi-file-bundle",
         "encryption"
       ],
-      "desc": "A single archive that bundles many files together, how Lolly delivers a multi-format export, a whole folder of saved sessions, or a batch run. You can lock the whole zip with one password: a Standard lock (traditional ZipCrypto, opens in any unzip tool including Windows) or Strong AES-256 (needs 7-Zip, Keka or WinZip). Any PDF inside is also individually locked with the same password. Drop a plain .zip in and Lolly explodes it, adding each member as its own asset (an office file inside — .xlsx/.pptx/.docx — is routed to its own reader, not shredded)."
+      "desc": "A single archive that bundles many files together, how Lolly delivers a multi-format export, a whole folder of saved sessions, or a batch run. You can lock the whole zip with one password: a Standard lock (traditional ZipCrypto, opens in any unzip tool including Windows) or Strong AES-256 (needs 7-Zip, Keka or WinZip). Any PDF inside is also individually locked with the same password. Drop a plain .zip in and Lolly explodes it, adding each member as its own asset (an office file inside - .xlsx/.pptx/.docx - is routed to its own reader, not shredded)."
     },
     {
       "token": "SVGZ",

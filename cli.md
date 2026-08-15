@@ -1,6 +1,6 @@
 # CLI
 
-`lolly` runs any tool from the terminal - same engine, same render path, same output as the web shell. It's **URL mode under a different transport**: `--foo=bar` argv pairs become the exact values the web shell parses from `?foo=bar`, so the CLI can never drift from the GUI. Great for build pipelines, CI, scripting, and batch generation.
+`lolly` runs any tool from the terminal - same engine, same render path, same output as the web shell. It's **URL mode under a different transport**: `--foo=bar` argv pairs become the exact values the web shell parses from `?foo=bar`, so the CLI can never drift from the GUI. Great for build pipelines, CI, scripting and batch generation.
 
 > Want an **interactive** terminal experience instead of one-shot commands - browse tools, tweak inputs, save projects, all from the keyboard? See the [TUI](/info/tui.html). It shares this same engine and render path.
 
@@ -102,7 +102,7 @@ Naming the format explicitly is how you opt out, because then you have said whic
 | `--width=`, `--height=` | Output size (numbers). |
 | `--unit=` | `px` (default), `mm`, `cm`, `in`, `pt`, `pc` - physical sizing. |
 | `--dpi=` | Raster DPI for physical units (default 300). |
-| `--c2pa[=7\|30\|90\|365]` | Stamp [Content Credentials](/info/exporting.html) into the output, signed with an ephemeral on-device certificate of that lifetime (default 30 days). **On by default**, exactly as in the app: a tool opts out with `render.c2pa:false`, an on-device privacy utility never carries them at all, and `--c2pa=off` opts out per run. Verify with `lolly validate <file>`. Sign with a real identity instead of an anonymous key with `--sign-key`/`--sign-cert` - see [Signing from the terminal](/info/cli-signing.html). |
+| `--c2pa[=7\|30\|90\|365]` | Stamp [Content Credentials](/info/exporting.html) into the output, signed with an ephemeral on-device certificate of that lifetime (default 30 days). **On by default**, exactly as in the app: a tool opts out with `render.c2pa:false`, an on-device privacy utility never carries them at all and `--c2pa=off` opts out per run. Verify with `lolly validate <file>`. Sign with a real identity instead of an anonymous key with `--sign-key`/`--sign-cert` - see [Signing from the terminal](/info/cli-signing.html). |
 | `--imprint` | Embed the [Lolly Imprint](/info/exporting.html) pixel watermark. **On by default** too, for the formats whose bytes can carry it (`png`, `jpg`, `webp`, `avif`, `tiff`, `pdf`, `pdf-cmyk`, `pptx`); `--imprint=0` opts out. On a browser-free PNG render the mark is embedded by the CLI itself - it never forces the browser tier. A render too small to carry a detectable mark says so and writes the file unmarked. |
 | `--no-provenance` | One word for a bare render: no credential, no imprint, no durable mark. **This is the byte-determinism switch** - both default marks embed a fresh timestamp, so two runs of the same defaulted command differ. `smoke` and `batch` apply it themselves. Combining it with an explicit `--c2pa`/`--imprint`/`--durable` is a usage error rather than a guess. |
 | `--durable=1` | Embed the opt-in durable (TrustMark-format) credential. **Off** by default (a neural encode plus a model download). Needs the encoder model on-device. |
@@ -116,7 +116,7 @@ Naming the format explicitly is how you opt out, because then you have said whic
 | `--share`, `--link` | Print a shareable `lolly.tools` link for these inputs instead of rendering anything. |
 | `--z=<token>` | Expand a packed link token into the inputs it encodes. |
 | `--zx=<token>`, `--link-password=<pw>` | A password-protected share link's state, and its password. A missing or wrong password is an error (exit 6), never a silent render of the tool's defaults. |
-| `--<inputId>-data=<file>` | Fill an input from a file: CSV/TSV/JSON/Markdown or `.xlsx`. Works on `blocks` (rows into the repeating group), `table` (first row = headings), and `text`/`longtext` (the file's content lands in the field). The ingest counterpart of CSV export. Add `--<inputId>-sheet=<name\|index>` to pick a sheet from a multi-sheet workbook; without it the first is read, and the CLI says so. |
+| `--<inputId>-data=<file>` | Fill an input from a file: CSV/TSV/JSON/Markdown or `.xlsx`. Works on `blocks` (rows into the repeating group), `table` (first row = headings) and `text`/`longtext` (the file's content lands in the field). The ingest counterpart of CSV export. Add `--<inputId>-sheet=<name\|index>` to pick a sheet from a multi-sheet workbook; without it the first is read, and the CLI says so. |
 | `--verify` | For an on-device utility, print one line per file saying its export checks ran and none failed. A failed check writes nothing and exits `1` (`FAILED`) - the gate lives in the tool's own hook, which throws like any other failure, so this shell does not claim to tell it apart from one. |
 | `--<inputId>=<value>` | Any tool input (see the tool's schema). |
 | `--<flag>` | A bare flag (no `=`) is truthy - handy for boolean inputs. |
@@ -131,7 +131,7 @@ npm run cli -- quotes --quote="Ship it." --width=210 --height=297 --unit=mm --ex
 
 ## What the CLI can render
 
-The CLI renders in a headless DOM (jsdom), so **vector and structured** formats - **SVG (and SVGZ), EMF, WMF, EPS (and EPS-CMYK), DXF, BMP, HTML, plus the data formats JSON, CSV, ICS, VCF, MD** (the engine hydrates those payloads) - work natively and reproducibly, no browser needed. The float formats **EXR** and **HDR** join them, over a resvg-rasterised frame, when a render asks for the headroom (`--hdr=1`). EMF, EPS and DXF are emitted straight from the template's vector primitives (no rasteriser), and the CLI carries the **same HarfBuzz text-shaping as the web shell** (`host.text`), so live `<text>` runs are outlined to true vector paths at export - those formats ship real text with no fonts needed on the receiving end, and font-driven tools (a wordmark lockup built on `host.text`, say) render headlessly too. Shaping resolves sfnt fonts (ttf/otf) under the repo root - catalog and tool-local faces; a browser-only woff2 face is rejected with a clear error rather than silently shaping blanks. **PNG** from an `<svg>`-based tool is also browser-free - resvg rasterises the engine's own SVG (Tier A). The remaining raster formats - **JPG, WebP, PDF, and video (GIF/WebM/MP4)**, plus HTML-layout PNG - need a real paint engine, so the CLI drives its **own scoped headless Chromium** (Tier B): install it once with `lolly install-browser` (or `npm run install:browser`) and they export straight from the CLI. **ZIP** is the one format the lean CLI leaves out - no zip dependency - so its batch writes a folder instead. `ico` (favicons) and `txt` are browser-tier formats like the raster set: `txt` is not a data format the engine hydrates, it is the *rendered* page serialised to plain text, which is why it needs the paint tier and not just jsdom. `jpg` and `jpeg` are one format with two spellings and either flag works on either kind of tool - manifests are split between the two, and `--export=` resolves to whichever the tool declared. (Requesting a format a tool doesn't declare prints a clear error listing what it supports - and so does asking for one via the `--output` extension.)
+The CLI renders in a headless DOM (jsdom), so **vector and structured** formats - **SVG (and SVGZ), EMF, WMF, EPS (and EPS-CMYK), DXF, BMP, HTML, plus the data formats JSON, CSV, ICS, VCF, MD** (the engine hydrates those payloads) - work natively and reproducibly, no browser needed. The float formats **EXR** and **HDR** join them, over a resvg-rasterised frame, when a render asks for the headroom (`--hdr=1`). EMF, EPS and DXF are emitted straight from the template's vector primitives (no rasteriser), and the CLI carries the **same HarfBuzz text-shaping as the web shell** (`host.text`), so live `<text>` runs are outlined to true vector paths at export - those formats ship real text with no fonts needed on the receiving end, and font-driven tools (a wordmark lockup built on `host.text`, say) render headlessly too. Shaping resolves sfnt fonts (ttf/otf) under the repo root - catalog and tool-local faces; a browser-only woff2 face is rejected with a clear error rather than silently shaping blanks. **PNG** from an `<svg>`-based tool is also browser-free - resvg rasterises the engine's own SVG (Tier A). The remaining raster formats - **JPG, WebP, PDF and video (GIF/WebM/MP4)**, plus HTML-layout PNG - need a real paint engine, so the CLI drives its **own scoped headless Chromium** (Tier B): install it once with `lolly install-browser` (or `npm run install:browser`) and they export straight from the CLI. **ZIP** is the one format the lean CLI leaves out - no zip dependency - so its batch writes a folder instead. `ico` (favicons) and `txt` are browser-tier formats like the raster set: `txt` is not a data format the engine hydrates, it is the *rendered* page serialised to plain text, which is why it needs the paint tier and not just jsdom. `jpg` and `jpeg` are one format with two spellings and either flag works on either kind of tool - manifests are split between the two, and `--export=` resolves to whichever the tool declared. (Requesting a format a tool doesn't declare prints a clear error listing what it supports - and so does asking for one via the `--output` extension.)
 
 Which tier is available here is not a guess: `lolly list --json` reports it per tier, with a reason for each one that is missing. See [Discovery, for an agent](#discovery-for-an-agent).
 
@@ -179,7 +179,7 @@ npm run cli -- redact --source=./scan.png --bars='[{"page":1,"x":40,"y":60,"w":2
 npm run cli -- redact --source=./scan.png --bars-data=./bars.csv --output=./scan-redacted.png
 ```
 
-Because the instructions are just a link, you can mark up one document in the app, hit **Share**, and run that link headlessly over every other copy - forms, certificates, invoices and anything else where the same fields sit in the same place on every page:
+Because the instructions are just a link, you can mark up one document in the app, hit **Share** and run that link headlessly over every other copy - forms, certificates, invoices and anything else where the same fields sit in the same place on every page:
 
 ```bash
 for f in ./inbox/*.pdf; do
@@ -234,7 +234,7 @@ npm run cli -- smoke --only=qr-code,chart-creator # just these ids
 npm run cli -- smoke --format=svg                 # force one Node-native format
 ```
 
-`lolly smoke` is the catalog-wide render gate: every tool in the active profile renders at its manifest defaults to its first Node-native format - browser-free; a tool whose declared formats are all browser-only falls back to an `html` render, which still exercises load → hydrate → hooks. Every output is checked for blank or empty results, each tool prints a ✓/✗ row, and the exit code is non-zero if anything fails - so wired into CI, a `hooks.js` regression can never ship a tool that renders blank. Tools that legitimately can't render headlessly are skipped with a reason, never failed: transform tools (file in → bytes out; nothing to render at defaults) and tools gated on a live capture capability (camera / microphone / screen / capture).
+`lolly smoke` is the catalog-wide render gate: every tool in the active profile renders at its manifest defaults to its first Node-native format - browser-free; a tool whose declared formats are all browser-only falls back to an `html` render, which still exercises load → hydrate → hooks. Every output is checked for blank or empty results, each tool prints a ✓/✗ row and the exit code is non-zero if anything fails - so wired into CI, a `hooks.js` regression can never ship a tool that renders blank. Tools that legitimately can't render headlessly are skipped with a reason, never failed: transform tools (file in → bytes out; nothing to render at defaults) and tools gated on a live capture capability (camera / microphone / screen / capture).
 
 ## Preflight an export (`lolly preflight`)
 
@@ -246,7 +246,7 @@ npm run --silent cli -- preflight qr-code --export=svg --json | jq   # the machi
 npm run --silent cli -- preflight 'https://lolly.tools/#/tool/qr-code?url=…&format=pdf-cmyk'
 ```
 
-`lolly preflight` answers "what am I about to export, and is anything wrong with it" without rendering anything. It takes the SAME render flags a real run takes - `--export`, `--width`/`--height`/`--unit`/`--dpi`, `--bleed`, `--marks`, `--press-profile`, `--cuts`, `--hdr`, `--durable`, `--z`/`--zx`, and a pasted share link - because preflighting settings other than the ones a render would use is worthless. The rules live in the engine (`engine/src/preflight.ts`), so the web export panel and this subcommand report the same findings for the same job.
+`lolly preflight` answers "what am I about to export, and is anything wrong with it" without rendering anything. It takes the SAME render flags a real run takes - `--export`, `--width`/`--height`/`--unit`/`--dpi`, `--bleed`, `--marks`, `--press-profile`, `--cuts`, `--hdr`, `--durable`, `--z`/`--zx` and a pasted share link - because preflighting settings other than the ones a render would use is worthless. The rules live in the engine (`engine/src/preflight.ts`), so the web export panel and this subcommand report the same findings for the same job.
 
 That includes `--input.<id>=<value>`: a tool whose own input is called `width` is preflighted exactly as it would render, and a reserved flag that shadows one of the tool's inputs prints the same warning here as it does on `lolly run` (and carries it into the report as `collect.reserved-flag-shadows-input`).
 
@@ -264,11 +264,11 @@ There is no `--out`. The report always goes to stdout, so redirect it: `lolly pr
 
 Exit codes: **0** it ran and there is nothing to fix, **4** (`REFUSED`) it ran and a check said no - at least one error finding, or a warning under `--strict`, **2** (`USAGE`) it could not run at all: unknown tool, unreadable manifest, a `zx=` link with no password, a refused flag. It never returns `1`: a preflight that ran is not a failed run, and `4` is the code `lolly validate` already uses for the same event, so one CI branch handles both. A count that cannot be TAKEN is never a failure: "needs the artwork on screen", "no brand palette resolved", "no physical page size was set" are stated gaps in the report, and they exit 0 permanently. With `--json`, stdout carries exactly one JSON document on **every** path, including exit 2 - the shared envelope, with the report as `result` and, on the failure path, `ok:false` plus an `error` - so `lolly preflight X --json > r.json` never leaves an unparseable file behind. Read the findings at `.result.findings`.
 
-The report's `job` member carries the collection context as well as the tool and format - `source`, `modelPhase`, `stageMounted`, `paletteResolved`, and an echo of the settings the findings were taken against. A clean report taken headlessly with an unresolved palette and an un-run `onInit` must not look identical to one taken with all three in hand, because the artifact is the copy that travels.
+The report's `job` member carries the collection context as well as the tool and format - `source`, `modelPhase`, `stageMounted`, `paletteResolved` and an echo of the settings the findings were taken against. A clean report taken headlessly with an unresolved palette and an un-run `onInit` must not look identical to one taken with all three in hand, because the artifact is the copy that travels.
 
 Three things it deliberately refuses rather than silently ignoring: `--rate-card` (preflight counts, it does not cost - there are no rates and no money anywhere in it), `--batch` (not implemented yet; a silently-ignored `--batch=rows.csv` would print a confident single-job report that reads like a 50-row answer) and `--out` (removed before GA, with the redirect named in the message).
 
-The finding to know about: if your brand declares a spot ink that is actually a FINISH (a foil, an emboss, a spot varnish, a cutting rule), Lolly writes it as its own named plate whose process fallback is a 100% black mask, in every CMYK sink - the CMYK PDF, the CMYK TIFF, and `eps-cmyk` in both the browser and this CLI. It is never given the swatch's own colour build, so a RIP that flattens spots paints an unmistakable mask rather than a plausible metallic. What is still wrong, and what the error actually says: **overprint is implemented nowhere in the platform, so the finish plate knocks out the artwork beneath it**. Agree with your printer how they want the finish supplied before sending the file.
+The finding to know about: if your brand declares a spot ink that is actually a FINISH (a foil, an emboss, a spot varnish, a cutting rule), Lolly writes it as its own named plate whose process fallback is a 100% black mask, in every CMYK sink - the CMYK PDF, the CMYK TIFF and `eps-cmyk` in both the browser and this CLI. It is never given the swatch's own colour build, so a RIP that flattens spots paints an unmistakable mask rather than a plausible metallic. What is still wrong, and what the error actually says: **overprint is implemented nowhere in the platform, so the finish plate knocks out the artwork beneath it**. Agree with your printer how they want the finish supplied before sending the file.
 
 ## Scripting & CI
 
@@ -281,7 +281,7 @@ npm run cli -- quotes --quote="Ship it." --export=svg --output=./public/og.svg  
 
 ### What provenance costs
 
-Content Credentials and the Imprint are on by default here, exactly as in the app. Turning them off is a supported choice, so here is what it buys, measured on one machine (Apple silicon, Node tier, five runs per case, best-to-worst spread shown). Your numbers will differ; the shape of them will not.
+Content Credentials and the Imprint are on by default here, exactly as in the app. Turning them off is a supported choice, so here is what it buys, measured on one machine (Apple silicon, Node tier, five runs per case, best-to-worst spread shown). Your numbers will differ; the pattern will not.
 
 | Case | Time | Output |
 |---|---|---|
@@ -296,7 +296,7 @@ Content Credentials and the Imprint are on by default here, exactly as in the ap
 
 The two marks cost different things. **A credential is a signature and a metadata block**: about 2 KB, and no measurable time. **The Imprint is a pixel watermark**, so on a raster it costs time that scales with pixel count (about 0.06 s at 600 px, about 0.35 s at 2000 px) and it grows the file, because the mark adds fine detail that lossless PNG compression cannot squeeze away. That size effect is much smaller in a lossy format, and absent in a vector one, which has no pixels to mark.
 
-Leaving them on means the file carries a verifiable statement of where it came from: a credential that any C2PA reader can check and that names your identity if you have [set one up](/info/cli-signing.html), plus a mark that survives a re-encode or a screenshot, which a metadata credential does not. Turning them off means byte-reproducible output, the times and sizes in the "bare" rows, and no embedded timestamp.
+Leaving them on means the file carries a verifiable statement of where it came from: a credential that any C2PA reader can check and that names your identity if you have [set one up](/info/cli-signing.html), plus a mark that survives a re-encode or a screenshot, which a metadata credential does not. Turning them off means byte-reproducible output, the times and sizes in the "bare" rows and no embedded timestamp.
 
 `--no-provenance` is the switch, per run. `smoke` and `batch` already render bare, because a machine path wants reproducibility by default.
 
@@ -391,7 +391,7 @@ lolly list --json          # every tool + what THIS installation can do
 lolly describe qr-code --json    # one tool's full input schema
 ```
 
-`list --json` carries a `result.environment` block: the engine and CLI versions, the resolved content root, the host capabilities this shell provides, the browser-free formats, and a per-tier availability report (`domFree`, `raster`, `browser`, `images`) with the reason each unavailable tier is unavailable. Each tool in the list carries `capabilities`, `unmetCapabilities`, `nativeFormats` and `runnableHere` - so an agent can tell that `screencap` will exit 3 here **before** it tries, rather than after.
+`list --json` carries a `result.environment` block: the engine and CLI versions, the resolved content root, the host capabilities this shell provides, the browser-free formats and a per-tier availability report (`domFree`, `raster`, `browser`, `images`) with the reason each unavailable tier is unavailable. Each tool in the list carries `capabilities`, `unmetCapabilities`, `nativeFormats` and `runnableHere` - so an agent can tell that `screencap` will exit 3 here **before** it tries, rather than after.
 
 `describe --json` returns each input's declared spec plus three things the manifest cannot know: `flag` (the actual command-line spelling), `urlParam` (the compact alias, when the tool declares one) and `syntax` (how a non-scalar type is expressed). For the handful of inputs whose id collides with a reserved export flag - `width`, `height`, `format` - `flag` is `--input.<id>=` and `shadowedByReservedParam` is `true`, which is exactly the case where reading the bare id off the manifest would set the export size instead of the input.
 
@@ -399,7 +399,7 @@ lolly describe qr-code --json    # one tool's full input schema
 
 A pasted `lolly.tools` tool URL can be the **first argument**: the CLI splits it into a tool id plus its query and renders that, with any following flag overriding what the link carried.
 
-Three link shapes are recognised - the Share dialog's hash route, the pretty path, and the canonical embed URL:
+Three link shapes are recognised - the Share dialog's hash route, the pretty path and the canonical embed URL:
 
 ```bash
 npm run cli -- 'https://lolly.tools/#/tool/qr-code?url=https://suse.com&color=%230c322c' --export=svg --output=qr.svg
@@ -452,7 +452,7 @@ Both exit 0 here: this file is signed with an ephemeral on-device key that chain
 | `--deep` | Additionally run the neural pixel-watermark scan (TrustMark / Content Seal / the Lolly durable mark). Needs the browser tier, and is **advisory** - it never changes the exit code. |
 | `--trust-anchor=<root.pem>` | Trust an additional root certificate. Repeatable, for an organisation's own CA. `$LOLLY_TRUST_ANCHOR` adds more as a `PATH`-style list (`:` on Unix, `;` on Windows); a leading `~` expands. Flag first, then environment. A pinned root that cannot be read stops the run (exit 2) rather than quietly downgrading the verdict. |
 | `--no-default-anchors` | Trust **only** what you pinned: drops the Lolly CA root and the vendored C2PA known-certificate list. With nothing pinned the anchor set is empty and every signer reads untrusted by construction - the bare-trust check. |
-| `--metadata` | Also report what else is in the file: embedded metadata, PDF structure, and text that is present in the file but not visible on the page. |
+| `--metadata` | Also report what else is in the file: embedded metadata, PDF structure and text that is present in the file but not visible on the page. |
 
 The summary headlines whether the file was genuinely made with Lolly and is unchanged since. The exit code follows the table above: **0** the file matches what was signed (including an expired certificate - Lolly signs with short-lived on-device certificates, so any other rule would fail every gate on its own correct output within a month), **4** a credential is present and the bytes no longer match it, **5** no credential at all, **2** the path could not be read. `--strict` promotes expired to 4; `--require=none` turns off verdict-based exit codes entirely ("just tell me what is in this file"). Several files can be given at once - the exit code is the worst one's.
 
@@ -460,8 +460,8 @@ The summary headlines whether the file was genuinely made with Lolly and is unch
 
 `--metadata` answers the question people actually have before sending a file on. It adds, on top of the credential verdict:
 
-- **Embedded metadata** - EXIF, XMP and IPTC fields, a GPS fix if the file records one, an AI source-type *declaration* if the generator wrote one, and any bytes riding after the container's end (the appended-payload pattern). Fields the engine considers personally identifying are marked.
-- **PDF structure** - pages, page sizes, fonts, images, annotations, the Info dictionary, whether an XMP packet is present, and how much text is extractable. Pages carrying no text layer are called out as scans needing OCR.
+- **Embedded metadata** - EXIF, XMP and IPTC fields, a GPS fix if the file records one, an AI source-type *declaration* if the generator wrote one and any bytes riding after the container's end (the appended-payload pattern). Fields the engine considers personally identifying are marked.
+- **PDF structure** - pages, page sizes, fonts, images, annotations, the Info dictionary, whether an XMP packet is present and how much text is extractable. Pages carrying no text layer are called out as scans needing OCR.
 - **Text present in the file but not visible on the page** - the classic failed redaction, where a black bar is drawn over words that are still in the content stream. The report says where those words are and quotes them back. It does not say why they are there: a botched redaction and a layering mistake look identical from outside.
 
 ```bash
@@ -497,4 +497,4 @@ The override is **marker-validated**: the directory must hold a generated catalo
 - [URL Mode](/info/url-mode.html) - the parameter model the CLI shares with the web shell (and the reserved params).
 - [Exporting & Formats](/info/exporting.html) - what each format is for.
 - [AI Agents](/info/ai-agents.html) - driving the same surface from an LLM.
-- **/pro batch** - the web shell's interactive counterpart to the scripted fan-out loop above: a spreadsheet-style grid with CSV round-trip, spreadsheet paste, and per-row output across one or many tools.
+- **/pro batch** - the web shell's interactive counterpart to the scripted fan-out loop above: a spreadsheet-style grid with CSV round-trip, spreadsheet paste and per-row output across one or many tools.

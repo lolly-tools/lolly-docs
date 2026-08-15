@@ -1,28 +1,28 @@
 # Import a design (Figma, Penpot, Illustrator, InDesign)
 
-Bring a finished design **out of Figma, Penpot, Illustrator or InDesign and into Lolly** - not as a frozen picture, but as a live, editable layout you can keep working on, mix with tools, and render through Lolly's deterministic export path. Like everything else, the whole import happens **on your device**: the file is parsed in your browser and nothing is uploaded.
+Bring a finished design **out of Figma, Penpot, Illustrator or InDesign and into Lolly** - not as a frozen picture, but as a live, editable layout you can keep working on, mix with tools and render through Lolly's deterministic export path. Like everything else, the whole import happens **on your device**: the file is parsed in your browser and nothing is uploaded.
 
 The good news for everything you've already made: none of it is stranded in the app you drew it in. A design you spent hours on in another tool arrives as an editable session, already conformed to your design globals - and once you save it, it's a reusable template anyone with Lolly can open and refill.
 
-Import lives in **[Design](/info/using.html)**, Lolly's free canvas: open it, click **Import a design** in the canvas toolbar, and choose a file. The artboard resizes to the file's frame and every layer becomes an editable box on the same open canvas - so an imported artboard is just an ordinary Design session from the first click.
+Import lives in **[Design](/info/using.html)**, Lolly's free canvas: open it, click **Import a design** in the canvas toolbar and choose a file. The artboard resizes to the file's frame and every layer becomes an editable box on the same open canvas - so an imported artboard is just an ordinary Design session from the first click.
 
 ![Design's free canvas, where Import a design lives in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 ## What you can import
 
-Several file kinds go in - a native Figma binary, a Penpot export, an Illustrator or PDF file, an InDesign markup file, or **any SVG**. That last one is the wide door: SVG is a universal export (or native save) format, so almost any design app can reach Lolly through it.
+Several file kinds go in - a native Figma binary, a Penpot export, an Illustrator or PDF file, an InDesign markup file or **any SVG**. That last one is the wide door: SVG is a universal export (or native save) format, so almost any design app can reach Lolly through it.
 
 | File | What it is |
 |---|---|
-| **`.fig`** | A native Figma file (File → Save local copy). Decoded entirely in the browser - no Figma account, plugin, or API key involved. |
+| **`.fig`** | A native Figma file (File → Save local copy). Decoded entirely in the browser - no Figma account, plugin or API key involved. |
 | **`.penpot` / `.zip`** | A Penpot export (its standard export bundle). |
 | **`.ai` / `.pdf`** | An Illustrator file (saved with the default *PDF-compatible* option) or any PDF. Vector paint, text and images are read straight out of the page. |
 | **`.idml`** | An InDesign layout (*File → Export → InDesign Markup*). A raw `.indd` can't be read directly - export IDML first. |
 | **`.svg`** | Any SVG - Figma and Penpot SVG exports, or hand-written markup. *Tip: for editable text from a Figma SVG, untick "Outline text" on Figma's export dialog.* |
 
-Bringing a **PowerPoint deck** instead? Decks have their own doors - edit in Deck Builder, rebrand in place, or file slides as assets. See [Decks and documents](#decks-and-documents) below.
+Bringing a **PowerPoint deck** instead? Decks have their own doors - edit in Deck Builder, rebrand in place or file slides as assets. See [Decks and documents](#decks-and-documents) below.
 
-### Where each app fits
+### What each app is for
 
 - **Figma** - *File → Save local copy* for a native `.fig`, or export a frame as SVG. (Untick *Outline text* on the SVG export to keep headlines retypable.)
 - **Penpot** - its standard `.penpot` export, or any SVG export. Penpot is also where the **brand tokens** round-trip both ways - see below.
@@ -33,7 +33,7 @@ Bringing a **PowerPoint deck** instead? Decks have their own doors - edit in Dec
 
 The importer maps design layers onto the free canvas's box model, keeping as much editable as it can:
 
-- **Text stays text.** Frames of type become real text boxes - content, size, alignment, weight, line-height, and per-run colours carry over - so you can retype a headline, not repaint it.
+- **Text stays text.** Frames of type become real text boxes - content, size, alignment, weight, line-height and per-run colours carry over - so you can retype a headline, not repaint it.
 - **Shapes stay shapes.** Rectangles, rounded rects, ellipses and pills become native shape boxes with their fills, opacity, rotation and corner radii.
 - **Images are extracted.** Bitmaps land in **My images** (your on-device library) and are placed as image boxes.
 - **Complex vector art is flattened faithfully.** Paths, gradients and other paint Lolly's box model can't express are baked into crisp standalone SVG image boxes, so the visual result survives even where editability can't.
@@ -53,7 +53,7 @@ An imported design exports exactly like a native one: **SVG, PDF, print CMYK PDF
 
 ## Frames become a video
 
-The same files open in **Sequence Studio** - and there the import means something different: **every frame becomes a scene on the timeline**. A Figma file's top-level frames, a Penpot file's boards, a PDF's pages - each arrives as its own timed clip, already playing through in order. From that first play-through you're in an ordinary sequence session: drag clips to reorder, trim and retime them, add a music bed, record a voiceover, drop text overlays on top, and export **MP4, WebM, GIF or APNG** through the same deterministic pipeline.
+The same files open in **Sequence Studio** - and there the import means something different: **every frame becomes a scene on the timeline**. A Figma file's top-level frames, a Penpot file's boards, a PDF's pages - each arrives as its own timed clip, already playing through in order. From that first play-through you're in an ordinary sequence session: drag clips to reorder, trim and retime them, add a music bed, record a voiceover, drop text overlays on top and export **MP4, WebM, GIF or APNG** through the same deterministic pipeline.
 
 Two ways in:
 
@@ -66,9 +66,9 @@ Each frame is baked through the Design tool's own renderer into a crisp vector s
 
 This is where import stops being a conversion and starts being *authoring*. An imported layout is an ordinary [Design](/info/using.html) session, so it inherits everything a native session can do:
 
-- **It's a template anyone can reuse.** Save it and the layout lives at a URL. Anyone with Lolly can open that URL, change the words, swap an image, and render their own version - no design app, no design skill, and the parts the author locked stay locked. The person who imported the artboard becomes its author; everyone else just fills in the blanks.
+- **It's a template anyone can reuse.** Save it and the layout lives at a URL. Anyone with Lolly can open that URL, change the words, swap an image and render their own version - no design app, no design skill and the parts the author locked stay locked. The person who imported the artboard becomes its author; everyone else just fills in the blanks.
 - **It mixes with tools.** Any box can hold another Lolly tool as a live asset - a badge that renders its own QR code, a card with a live chart, another render dropped in through the asset picker. Those stay live and re-render on load; they're never flattened pictures. So an imported poster can carry generated, always-current content the original file never could.
-- **It scales like any session.** Drive it from the [batch grid](/info/exporting.html) (one finished asset per spreadsheet row), keep it in a [Projects folder](/info/using.html), or render a whole folder as one zip. A single imported design turns into a whole run of consistent variants.
+- **It scales like any session.** Drive it from the [batch grid](/info/exporting.html) (one finished asset per spreadsheet row), keep it in a [Projects folder](/info/using.html) or render a whole folder as one zip. A single imported design turns into a whole run of consistent variants.
 
 For a *fully declarative* tool - sidebar inputs, hard-coded constraints, the works - you'd still author a `tool.json` by hand (see [Authoring Tools](/info/authoring-tools.html)). Import gets you the fast, visual 90%: a governed, shareable, tool-embedding layout without writing a manifest.
 
@@ -76,7 +76,7 @@ For a *fully declarative* tool - sidebar inputs, hard-coded constraints, the wor
 
 Import travels one direction; the **brand primitives travel both ways**. Lolly's colours are [DTCG design tokens](/info/design-tokens.html) - the same format Penpot imports/exports natively and Tokens Studio brings to Figma - so the palette you design *with* in Figma/Penpot and the palette Lolly enforces are one document, not two hand-synced lists.
 
-![The Brand Studio's import card - a Penpot export, a DTCG or Tokens Studio file, or a plain SVG all come in through the same door](/t/url-shot?url=%2F%23%2Fstart%3Fsource%3Dfile&width=1440&height=900&dpi=192&waitMs=1600&css=.start-import-modal%20.modal-msg%2C.start-import-modal%20.modal-title%7Bdisplay%3Anone%7D&cropSelector=.start-import-drop&walker=1&format=svg&dark=1&filename=bs-brand-import-formats)
+![The Brand Studio's import card - a Penpot export, a DTCG or Tokens Studio file or a plain SVG all come in through the same door](/t/url-shot?url=%2F%23%2Fstart%3Fsource%3Dfile&width=1440&height=900&dpi=192&waitMs=1600&css=.start-import-modal%20.modal-msg%2C.start-import-modal%20.modal-title%7Bdisplay%3Anone%7D&cropSelector=.start-import-drop&walker=1&format=svg&dark=1&filename=bs-brand-import-formats)
 
 ## Limits & safety
 
@@ -114,7 +114,7 @@ Paste or drop a table and a tool's repeating blocks fill from it (up to 1,000 ro
 | Format | Notes |
 |---|---|
 | **`csv`** | RFC 4180 - quoted fields, `""` escaping, embedded commas/newlines, CRLF/LF, BOM. |
-| **`json`** | An array of row objects, headerless positional arrays, or a `{ "data": [...] }` / `{ "rows": [...] }` wrapper. |
+| **`json`** | An array of row objects, headerless positional arrays or a `{ "data": [...] }` / `{ "rows": [...] }` wrapper. |
 | **Lottie** (`.json`, `.lottie`) | Bodymovin JSON and dotLottie animations validate and place as live vector animations. |
 
 ### Video
@@ -136,8 +136,8 @@ Audio lands in the asset picker - ready as a **music bed** under a video export,
 
 ### Content Credentials (verify)
 
-Lolly reads and cryptographically verifies a signed [C2PA](https://c2pa.org) manifest embedded in **PDF, PNG/APNG, JPG, GIF, SVG, TIFF, WebP, AVIF, MP4, WebM/MKV** and the audio containers **MP3, WAV, M4A and OGG/Opus** - entirely on-device, against the signing certificate. The [/verify](/verify) view goes further: it flags AI-generated content, detects Lolly's own pixel **Imprint**, verifies **SEAL** signatures, optionally deep-scans for third-party pixel watermarks, and surfaces hidden data - none of it uploaded. See [Content Credentials](/info/exporting.html#content-credentials-c2pa) and [Content Credentials Identity](/info/content-credentials-identity.html#beyond-the-credential-what-else-verify-shows). (HEIC/HEIF is read as an image but carries no credential.)
+Lolly reads and cryptographically verifies a signed [C2PA](https://c2pa.org) manifest embedded in **PDF, PNG/APNG, JPG, GIF, SVG, TIFF, WebP, AVIF, MP4, WebM/MKV** and the audio containers **MP3, WAV, M4A and OGG/Opus** - entirely on-device, against the signing certificate. The [/verify](/verify) view goes further: it flags AI-generated content, detects Lolly's own pixel **Imprint**, verifies **SEAL** signatures, optionally deep-scans for third-party pixel watermarks and surfaces hidden data - none of it uploaded. See [Content Credentials](/info/exporting.html#content-credentials-c2pa) and [Content Credentials Identity](/info/content-credentials-identity.html#beyond-the-credential-what-else-verify-shows). (HEIC/HEIF is read as an image but carries no credential.)
 
 ### Metadata (to strip it)
 
-The **Strip Hidden Data** utility *reads* embedded metadata so it can remove it - EXIF/GPS/IPTC/XMP from **JPEG**, text and time chunks from **PNG**, comments and editor namespaces from **SVG**, and document info from **PDF**. The cleaned file never leaves your device.
+The **Strip Hidden Data** utility *reads* embedded metadata so it can remove it - EXIF/GPS/IPTC/XMP from **JPEG**, text and time chunks from **PNG**, comments and editor namespaces from **SVG** and document info from **PDF**. The cleaned file never leaves your device.

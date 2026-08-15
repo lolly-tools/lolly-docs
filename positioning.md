@@ -1,20 +1,20 @@
 # How Lolly compares
 
-Where this platform fits in the wider creative-tools landscape, and where it deliberately does **not** play.
+What Lolly does that today's creative tools do not, and what it deliberately leaves to them.
 
 > **Pilot status:** Lolly is a closed-pilot prototype, not a finished product, and its security is currently undergoing SUSE's strict infrastructure hardening, preparing for enterprise scale. The [Adoption & Governance](/info/adoption-governance.html#status) page covers the current state.
 
-## Landscape
+## Today's tools
 
-Each ring below scores how completely a product class delivers a capability **as shipped today** - not as marketed - with every class scored on its best representative. Lolly is scored with the same knife: it takes the only red ring on the board, for maturity. Open a row name for the reasoning behind its scores.
+Each ring below scores how completely a product class delivers a capability **as shipped today** - not as marketed - with every class scored on its best representative. Lolly is scored with the same knife: it takes the only red ring on the board, for maturity. Open a row name for the reasoning behind its scores. Columns are sorted by the Overall completeness row at the top - the mean of the scored rows, with the spend row excluded.
 
 ::: figure positioning-comparison
-Capability completeness across the creative-tools landscape, researched August 2026. Scoring: 0 absent, 25 workaround-grade, 50 real but gated or partial, 75 strong with caveats, 100 core competency.
+Capability completeness across today's creative tools, researched August 2026. Scoring: 0 absent, 25 workaround-grade, 50 real but gated or partial, 75 strong with caveats, 100 core competency.
 :::
 
-**Honesty notes, kept next to the numbers.** Lolly's scores assume its published claims are accurate - which is exactly why its maturity ring is red: closed pilot, security hardening in progress, and a claim is not a capability until it is verifiable. Several cells moved after research rather than before it. Canva's 2026 Offline mode scores 25, not 0, because it only edits pre-synced designs on one device for a limited window; its Autofill API scores 50 because it is real but Enterprise-gated, asynchronous and limited to text and image fields. Adobe takes 100 on provenance breadth - Photoshop, Lightroom, Premiere and Firefly all write C2PA - while its signing stays cloud-anchored; Lolly's 75 reflects on-device, offline signing that is architecturally stronger but unaudited. Render APIs take 75 on constraints: their templates are structurally locked, they just lack a brand-governance layer.
+**Honesty notes, kept next to the numbers.** Lolly's scores assume its published claims are accurate - which is exactly why its maturity ring is red: closed pilot, security hardening in progress and a claim is not a capability until it is verifiable. Several cells moved after research rather than before it. Canva's 2026 Offline mode scores 25, not 0, because it only edits pre-synced designs on one device for a limited window; its Autofill API scores 50 because it is real but Enterprise-gated, asynchronous and limited to text and image fields. One method rule governs the board: Full (100) is reserved, on any row that operates on your content or identity, for a capability you can exercise without an account or cloud precondition; rows that describe the product itself (maturity, ease of use) are exempt. The rule costs Adobe on provenance - the broadest shipped C2PA implementation (Photoshop, Lightroom, Premiere and Firefly), signing locally in the desktop apps, but never without a Creative Cloud account and an Adobe-provisioned identity, so 75 - and it costs the render APIs their otherwise-Full scores on mass generation and automation for the same reason. Lolly's provenance 75 reflects on-device, offline signing that is architecturally stronger but unaudited. Penpot's 50 arrives through the official Lolly Export plugin - the same engine signing, opt-in rather than default, and disclosed plainly as Lolly's own plugin. Penpot also takes the board's one off-scale capability ring: 90 on on-device rendering - the canvas renders in the browser, the save target can be your own sovereign cloud (even a laptop) and export is private; only the server hop separates it from Lolly. Cloudinary has its own column: a media pipeline (DAM plus transformation API plus CDN) is neither a render API nor a brand portal, and it is the only cloud column that ships C2PA - 50, because fl_c2pa signs on delivery, attesting delivered-by-Cloudinary rather than made-by-you. On live collaboration the concession runs the other way: Figma is the scale benchmark (200 simultaneous editors) and Lolly's pairwise, air-gapped P2P scores Partial. The price row is the one guess on the board and is labelled as such: list-price arithmetic on realistic seat mixes, wide on purpose - it is there for scale, not procurement. Render APIs take 75 on constraints: their templates are structurally locked, they just lack a brand-governance layer.
 
-The shape of the gap is clear: nothing in the existing landscape gives us constraints-first, offline-capable, low-skill, internally accessible, generative output. Lolly now ships an open canvas of its own - **Design**, a direct-manipulation free canvas - but with a decisive difference from the Canva column: colours, type and assets placed on it conform to the brand globals, so even free arrangement stays constraints-first. What Lolly still is **not** is an unconstrained design suite; designers will continue to use Illustrator and Figma for bespoke work - and when that work needs to become a governed, reproducible asset, the Design tool's [Import a design](/info/design-import.html) brings the finished Figma, Penpot, Illustrator, InDesign or PDF file onto the canvas as editable, brand-conformed boxes.
+The gap is plain: nothing shipping today gives us constraints-first, offline-capable, low-skill, internally accessible, generative output. Lolly now ships an open canvas of its own - **Design**, a direct-manipulation free canvas - but with a decisive difference from the Canva column: colours, type and assets placed on it conform to the brand globals, so even free arrangement stays constraints-first. What Lolly still is **not** is an unconstrained design suite; designers will continue to use Illustrator and Figma for bespoke work - and when that work needs to become a governed, reproducible asset, the Design tool's [Import a design](/info/design-import.html) brings the finished Figma, Penpot, Illustrator, InDesign or PDF file onto the canvas as editable, brand-conformed boxes.
 
 ![Design's free canvas, where the colours, faces and assets on offer are the brand's own](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=aud-open-canvas)
 
@@ -27,7 +27,7 @@ The shape of the gap is clear: nothing in the existing landscape gives us constr
 - Always-on, recurring branded outputs
 - Things where central control of brand expression matters more than expressive flexibility
 
-Deck Studio is a good measure of the ceiling here: a whole slide deck declared as data, laid out live on the canvas, and exported as a native editable PowerPoint.
+Deck Studio is a good measure of the ceiling here: a whole slide deck declared as data, laid out live on the canvas and exported as a native editable PowerPoint.
 
 ![Deck Studio in the split view - the deck's slides listed as blocks on the left, the laid-out deck rendering on the right](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&dark=1&filename=ov2-deck-studio-output)
 
@@ -47,7 +47,7 @@ Lolly is the press, not the sketch. Bring whatever you like to the ideation - a 
 
 ## Approve the tool, not the file
 
-Every other tool in the landscape produces a *file* that then has to be checked - a brand manager in a Slack thread, legal on the disclaimer, a round of changes, another review. Lolly moves the approval **one step upstream**. The brand rules - exact hex codes, licensed font files, bleed margins, spacing - are hard-coded into the tool's HTML and CSS, so the template *cannot* emit an off-brand asset. The layout itself does the enforcing.
+Every other tool on the board produces a *file* that then has to be checked - a brand manager in a Slack thread, legal on the disclaimer, a round of changes, another review. Lolly moves the approval **one step upstream**. The brand rules - exact hex codes, licensed font files, bleed margins, spacing - are hard-coded into the tool's HTML and CSS, so the template *cannot* emit an off-brand asset. The layout itself does the enforcing.
 
 So you stop approving outputs and start approving the **tool** that makes them. Approve it once, and every asset it ever produces is pre-approved by construction - no human in the loop, no review cycle, at any volume.
 
@@ -68,7 +68,7 @@ This is the paradigm shift the deterministic engine actually delivers: it isn't 
 - **Wild design potential delivered safely in context.** Tools can express adventurous design ideas inside hard coded guard-rails.
 
 - **Software-defined content automation that returns the final asset.** Input → final file. No "now save it from your design tool and post-process it."
-- **Tools compose tools.** One tool can embed another tool's render and return it as part of a single finished asset, with no tool-to-tool code coupling - a primitive no open-canvas or DAM-templating product in the landscape offers.
+- **Tools compose tools.** One tool can embed another tool's render and return it as part of a single finished asset, with no tool-to-tool code coupling - a primitive no open-canvas or DAM-templating product on the board offers.
 - **Vendor neutrality.** Full feature and cost control. Open-source engine. Tools and assets are git-tracked content, not locked in a SaaS database.
 
 The first of those is the one people underestimate. A poster-grade city map, drawn as true vector road and water paths, from a dropdown and two colour fields that cannot be pointed outside the brand:
@@ -79,6 +79,6 @@ The first of those is the one people underestimate. A poster-grade city map, dra
 
 There is a name for what the previous section adds up to: sovereignty. Your media pipeline runs on hardware you own. Your brand - the tokens, the fonts, the logos, the tools that enforce them - lives in files you hold, in version control you control, not in a vendor's database with an export button. Rendering happens on the device in front of you, so an asset never transits a third party to exist, and the whole path from input to finished file is open source and inspectable. If every SaaS design vendor disappeared tomorrow, a Lolly deployment would not notice.
 
-This matters most to organisations for whom "where does our content live and who can turn it off" is a governance question, not a preference - public bodies, regulated industries and anyone whose brand is a strategic asset rather than a decoration. Sovereignty here is the shape of the architecture rather than a hosting feature added for compliance, and the [Privacy Policy](/info/privacy.html) and [Verify It Yourself](/info/verify-yourself.html) pages exist so you can check that claim rather than take it.
+This matters most to organisations for whom "where does our content live and who can turn it off" is a governance question, not a preference - public bodies, regulated industries and anyone whose brand is a strategic asset rather than a decoration. Sovereignty here is a property of the architecture rather than a hosting feature added for compliance, and the [Privacy Policy](/info/privacy.html) and [Verify It Yourself](/info/verify-yourself.html) pages exist so you can check that claim rather than take it.
 
 Underneath it all is one promise, stated as a commitment rather than a feature: **if it renders on your device, it is free forever.** The engine, the shells, the tools, the formats - the entire on-device creative path is open source and stays that way. That is the boundary the project is built around.

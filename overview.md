@@ -2,15 +2,15 @@
 
 ![Lolly Icon - Large green and white lollipop candy](/info/icon.svg)
 
-This document captures the purpose, structure, and architectural decisions for the Lolly platform. It reflects both the product vision and the current state of the codebase.
+This document captures the purpose, structure and architectural decisions for the Lolly platform. It reflects both the product vision and the current state of the codebase.
 
 > **Status:** Lolly is an internal prototype in a **closed pilot that hasn't completed**. The engine is deterministic and internally consistent, but the product is early - SUSE is customer number one - and its cryptography and file-parsing engines are currently undergoing SUSE's strict infrastructure hardening, preparing for enterprise scale (we're really good at this). Read the architecture below as design intent under test, not a finished, certified product. See [Adoption & Governance](/info/adoption-governance.html#status) for how the pilot is run and measured.
 
 > **How to read this page.** It carries two kinds of material, in order. The first half is
-> **why this exists**: the problem, the positioning, and the lifecycle a single asset travels
+> **why this exists**: the problem, the positioning and the lifecycle a single asset travels
 > through. From [The big picture](#the-big-picture-how-the-layers-fit) onward it is
 > **how the layers fit**: the architecture document for contributors, covering the engine/shell/pack
-> separation, the repository layout, the delivery targets, and the commitments that constrain every
+> separation, the repository layout, the delivery targets and the commitments that constrain every
 > change to the platform. If you are here to change the codebase rather than to understand the
 > product, start at the big picture.
 >
@@ -24,11 +24,11 @@ This document captures the purpose, structure, and architectural decisions for t
 
 ## Why this exists
 
-Teams face a recurring problem: repeatable creative and content work that is too predictable to justify skilled hands every time, but too quality-sensitive to hand off without guardrails. The result is either slow throughput (specialist bottleneck), inconsistency (people using whatever tool they have), or vendor lock-in (a SaaS DAM that controls your templates).
+Teams face a recurring problem: repeatable creative and content work that is too predictable to justify skilled hands every time, but too quality-sensitive to hand off without guardrails. The result is either slow throughput (specialist bottleneck), inconsistency (people using whatever tool they have) or vendor lock-in (a SaaS DAM that controls your templates).
 
-This platform is the structural answer:
+This platform is the direct answer:
 
-> **Programmatic creative and content at scale** - zero-labor asset generation, with the rules under central control, for employees, vendors, and partners.
+> **Programmatic creative and content at scale** - zero-labor asset generation, with the rules under central control, for employees, vendors and partners.
 
 The outcome is **abundance**: every event has correct signage, every CVE alert matches the house style, every label prints clean, every email signature is current - all without a design ticket. The platform handles recurring operationalised creative. It is deliberately not a bespoke creative tool - designers still own flagship work.
 
@@ -40,7 +40,7 @@ Lolly draws the same line. Explore probabilistically: a model, a designer, a rou
 
 > Trust the creative process, scale with rigour.
 
-### Where it fits in the landscape
+### Against the alternatives
 
 | Capability | Canva | Brand portals | Illustrator | Figma / Penpot | **Lolly** |
 |---|---|---|---|---|---|
@@ -56,7 +56,7 @@ Lolly draws the same line. Explore probabilistically: a model, a designer, a rou
 | Mobile and Desktop Apps | ✓ | ✗ | ✗ | partial | **✓** |
 | Command Line & TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
 
-The gap is clear: nothing in the existing landscape gives us constraints-first, offline-capable, low-skill, internally accessible output. Lolly even includes an open canvas - **Design** - where colours, type and assets conform to the brand globals, so free arrangement stays constraints-first. What it is **not** is an unconstrained design suite: designers continue to use Illustrator and Figma for bespoke flagship work. Permutations can be assembled with this tool.
+The gap is plain: nothing shipping today gives us constraints-first, offline-capable, low-skill, internally accessible output. Lolly even includes an open canvas - **Design** - where colours, type and assets conform to the brand globals, so free arrangement stays constraints-first. What it is **not** is an unconstrained design suite: designers continue to use Illustrator and Figma for bespoke flagship work. Permutations can be assembled with this tool.
 
 ![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=aud-gallery-landscape)
 
@@ -140,7 +140,7 @@ implement one contract, and the catalogs supply the content.
 
 ### Repository layout
 
-Content is mounted as packs: `community/`, `docs/`, every `shells/*`, both `services/*`, and `brands/suse` are each their own repository, checked out as git submodules of this one. The parent owns `engine/`, `schemas/`, `scripts/`, `tests/`, `api/`, `brands/lolly-start/`, and `profiles.json`. See [Build Guide » Getting the source](/info/build-guide.html) for the checkout command and the cross-repo workflow.
+Content is mounted as packs: `community/`, `docs/`, every `shells/*`, both `services/*` and `brands/suse` are each their own repository, checked out as git submodules of this one. The parent owns `engine/`, `schemas/`, `scripts/`, `tests/`, `api/`, `brands/lolly-start/` and `profiles.json`. See [Build Guide » Getting the source](/info/build-guide.html) for the checkout command and the cross-repo workflow.
 
 ```
 lolly/
@@ -248,28 +248,28 @@ lolly/
 
 ## Platform delivery model
 
-The platform runs across several surfaces - web PWA, Tauri desktop/mobile, the scriptable CLI, and the interactive TUI. All of them use the same engine and the same tool files.
+The platform runs across several surfaces - web PWA, Tauri desktop/mobile, the scriptable CLI and the interactive TUI. All of them use the same engine and the same tool files.
 
 ### Web (PWA) - primary distribution
-Hosted at a SUSE-controlled URL. Works offline once the service worker has cached tools and assets. This is where most employees, vendors, and partners will use the platform. No account required - state is stored in IndexedDB per device.
+Hosted at a SUSE-controlled URL. Works offline once the service worker has cached tools and assets. This is where most employees, vendors and partners will use the platform. No account required - state is stored in IndexedDB per device.
 
-The web shell is responsive from one layout. On desktop a tool is a resizable controls sidebar beside a preview stage with trackpad-native canvas navigation (Cmd/Ctrl-wheel or pinch to zoom about the cursor, Space- or middle-drag to pan, `0`/`1`/`+`/`−` keys, and a Fit/% HUD). On mobile (≤640px) the controls become a top-anchored sheet with a drag grip that snaps peek/half/full (tap toggles) over a static full-screen preview, and a floating **Render** button opens the **Export** controls in a bottom-sheet popup. Touch gets pinch-zoom and drag-pan on the preview. The render path and the export controls are identical across both - only the chrome reflows.
+The web shell is responsive from one layout. On desktop a tool is a resizable controls sidebar beside a preview stage with trackpad-native canvas navigation (Cmd/Ctrl-wheel or pinch to zoom about the cursor, Space- or middle-drag to pan, `0`/`1`/`+`/`−` keys and a Fit/% HUD). On mobile (≤640px) the controls become a top-anchored sheet with a drag grip that snaps peek/half/full (tap toggles) over a static full-screen preview, and a floating **Render** button opens the **Export** controls in a bottom-sheet popup. Touch gets pinch-zoom and drag-pan on the preview. The render path and the export controls are identical across both - only the chrome reflows.
 
 ![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&dark=1&filename=aud-web-split)
 
-The same tool at phone width, with no second layout to maintain: the controls become a sheet at the top, the preview holds the whole screen, and the render pill floats over it.
+The same tool at phone width, with no second layout to maintain: the controls become a sheet at the top, the preview holds the whole screen and the render pill floats over it.
 
-![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
-**Batch mode (`/pro`).** The web shell also ships a spreadsheet-style batch grid (`shells/web/src/pro/`) that renders many rows at once across one or many tools. It does CSV/TSV round-trip plus spreadsheet paste, per-row template/format/size/unit/dpi, a blocks-editor side panel with a live preview, collapsible export columns, a per-row "relevance" tag bar, left drag-handle row reorder, two-step delete confirm, saved batch sessions, and a `.zip` download. This is the one-to-many surface behind the "mass content generation" positioning.
+**Batch mode (`/pro`).** The web shell also ships a spreadsheet-style batch grid (`shells/web/src/pro/`) that renders many rows at once across one or many tools. It does CSV/TSV round-trip plus spreadsheet paste, per-row template/format/size/unit/dpi, a blocks-editor side panel with a live preview, collapsible export columns, a per-row "relevance" tag bar, left drag-handle row reorder, two-step delete confirm, saved batch sessions and a `.zip` download. This is the one-to-many surface behind the "mass content generation" positioning.
 
 ### Tauri desktop / mobile
-Packaged native app (small footprint via Tauri). Provides full offline availability, filesystem access for CLI-dependent tools (PDF Smasher, Font Outliner), and camera access. Scheduled for mid-2026 tooling enhancement.
+Packaged native app (small footprint via Tauri). Provides full offline availability, filesystem access for CLI-dependent tools (PDF Smasher, Font Outliner) and camera access. Scheduled for mid-2026 tooling enhancement.
 
 ### CLI
 `lolly <tool-id> [--input=value ...] --output=file.png`
 
-Desktop users can invoke many tools from the terminal. The CLI shell loads the same engine, creates a jsdom DOM, runs the same render path, and writes the file. URL mode is the transport - CLI is not a separate implementation. This guarantees CLI and GUI outputs are identical.
+Desktop users can invoke many tools from the terminal. The CLI shell loads the same engine, creates a jsdom DOM, runs the same render path and writes the file. URL mode is the transport - CLI is not a separate implementation. This guarantees CLI and GUI outputs are identical.
 
 ```bash
 lolly qr-code --url=https://suse.com --output=qr.svg
@@ -281,7 +281,7 @@ lolly qr-code                # lists inputs for that tool
 ### TUI
 `npm run tui`
 
-The interactive counterpart to the CLI: a full-screen, keyboard-first terminal app (built on Ink) for browsing tools, filling in inputs, saving projects, and exporting - all without a GUI. Its host bridge **reuses the CLI's implementation** for the DOM-free formats (SVG/EMF/EPS/HTML + text/data), and adds on-disk state under `~/.lolly` plus an opt-in inline preview. Beyond that it has a **browser render tier**: a scoped headless Chromium (the same one the MCP server installs) that produces raster/PDF/video and live-URL capture on demand - driving a built copy of the web shell so output is identical, and launching only when you first export such a format. So `url-shot` (with crop + recolor + vector PDF/SVG) and every raster/pdf tool run in the terminal too. See the [TUI guide](/info/tui.html).
+The interactive counterpart to the CLI: a full-screen, keyboard-first terminal app (built on Ink) for browsing tools, filling in inputs, saving projects and exporting - all without a GUI. Its host bridge **reuses the CLI's implementation** for the DOM-free formats (SVG/EMF/EPS/HTML + text/data), and adds on-disk state under `~/.lolly` plus an opt-in inline preview. Beyond that it has a **browser render tier**: a scoped headless Chromium (the same one the MCP server installs) that produces raster/PDF/video and live-URL capture on demand - driving a built copy of the web shell so output is identical, and launching only when you first export such a format. So `url-shot` (with crop + recolor + vector PDF/SVG) and every raster/pdf tool run in the terminal too. See the [TUI guide](/info/tui.html).
 
 Whichever surface you are on, the dashboard's Capabilities tab is the full map of what the platform declares it can do, grouped and readable without opening a single tool.
 
@@ -307,7 +307,7 @@ Tools are also classified by status: `official` (brand approved, no watermark), 
 
 **Design** is the first tool built on the `render.layout: "editor"` free-canvas mode - a chromeless, direct-manipulation surface where you drag, resize, rotate and snap boxes of text, shapes and images, then export through the same render path as every other tool.
 
-**Strip Hidden Data** is the first **on-device utility** (`privacy: "on-device"`): a content-transform tool that takes a file *you* supply, processes it entirely in the browser, and hands back a clean copy - never uploaded, never watermarked, no provenance stamped. **Text Helper** is the second - an on-device workbench for everyday paste-into-a-website jobs (JSON format, JWT decode, Base64, URL encode/decode, SHA hashing). **Compress PDF** is the third - it shrinks a PDF by recompressing its images, again entirely on-device. The marker and its badge text "Runs on your device - nothing is uploaded" now cover the whole transform set: Strip Hidden Data, Text Helper, Compress PDF, **Convert Image** (HEIC/TIFF/AVIF → WebP/JPG/PNG), **Convert Font**, **Redact** (destroy regions of an image, SVG or PDF), **Prompt to Image**, and **Rebrand a Deck** (re-theme a `.pptx` in place) where the profile mounts it. This is a privacy-utility category that replaces handing confidential files to single-purpose websites.
+**Strip Hidden Data** is the first **on-device utility** (`privacy: "on-device"`): a content-transform tool that takes a file *you* supply, processes it entirely in the browser and hands back a clean copy - never uploaded, never watermarked, no provenance stamped. **Text Helper** is the second - an on-device workbench for everyday paste-into-a-website jobs (JSON format, JWT decode, Base64, URL encode/decode, SHA hashing). **Compress PDF** is the third - it shrinks a PDF by recompressing its images, again entirely on-device. The marker and its badge text "Runs on your device - nothing is uploaded" now cover the whole transform set: Strip Hidden Data, Text Helper, Compress PDF, **Convert Image** (HEIC/TIFF/AVIF → WebP/JPG/PNG), **Convert Font**, **Redact** (destroy regions of an image, SVG or PDF), **Prompt to Image** and **Rebrand a Deck** (re-theme a `.pptx` in place) where the profile mounts it. This is a privacy-utility category that replaces handing confidential files to single-purpose websites.
 
 ![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=aud-utilities)
 
@@ -333,7 +333,7 @@ This matters because: declarative tools can be authored by non-developers. If ev
 
 ### 2. Tools and assets are data, not bundled code
 
-The web and Tauri apps fetch tool and asset catalogs from a known URL at boot, cache them locally, and operate on whatever is there. **Adding a new event tile or seasonal asset does not require an app release.**
+The web and Tauri apps fetch tool and asset catalogs from a known URL at boot, cache them locally and operate on whatever is there. **Adding a new event tile or seasonal asset does not require an app release.**
 
 Asset bytes are SHA-256 checksummed to prevent CDN poisoning. Asset `id` + `version` drives cache invalidation.
 
@@ -350,9 +350,9 @@ Tools never touch the DOM outside their template area, never call `fetch` direct
 | `host.export` | Rasterise or serialise the render target. Applies watermark for experimental tools. |
 | `host.net` | Allowlisted fetch - only available if the tool declared `"network"` capability. (No shipping tool currently uses it.) |
 
-Optional, additive surfaces appear only when a shell provides them. Some are **capability-gated** - exposed only when the tool declares the matching flag: `host.compose` (embed another tool's render - `compose`), `host.capture` (page capture for URL Screenshot - `capture`), and `host.recorder` (mic/camera/display capture for the recording tools - `microphone` / `camera` / `screen`). The rest are **feature-detected** - present whenever the shell can provide them, with the tool keeping a fallback for shells that can't.
+Optional, additive surfaces appear only when a shell provides them. Some are **capability-gated** - exposed only when the tool declares the matching flag: `host.compose` (embed another tool's render - `compose`), `host.capture` (page capture for URL Screenshot - `capture`) and `host.recorder` (mic/camera/display capture for the recording tools - `microphone` / `camera` / `screen`). The rest are **feature-detected** - present whenever the shell can provide them, with the tool keeping a fallback for shells that can't.
 
-A handful of headline surfaces, to show the shape of the thing - [Host API](/info/host-api.html) documents every one, and `packages/core/src/host-v1.ts` is the contract itself:
+A handful of headline surfaces, to show what it covers - [Host API](/info/host-api.html) documents every one, and `packages/core/src/host-v1.ts` is the contract itself:
 
 | Surface | Since | What it adds |
 |---|---|---|
@@ -363,11 +363,11 @@ A handful of headline surfaces, to show the shape of the thing - [Host API](/inf
 | `host.images` | 1.60 | Decode / resize / re-encode bytes on device - the convert path (HEIC → JPEG, compress to WebP, downscale). Shipped in the web shell as a lazy facade, so the HEIC decoder never lands in the boot chunk |
 | `host.geom` | 1.64 | Exact vector geometry: path booleans, offsetting, stroke-to-fill, spline lowering, simplification, hit testing. Also pure, synchronous and attached from the engine (`makeGeomApi()`); failures are *returned*, never thrown |
 
-The rest follow the same rules and are documented alongside them: `pdf` (1.8) and `pptx` (1.58) for on-device document surgery, `audio` (1.71) and `speech` (1.96) for clip analysis and on-device TTS/transcription, `viz` (1.72) for the MilkDrop placeholder contract, `codec` (1.100) and `layers` (1.102) for deep-bit and layered-bitmap output, `upscale` (1.101) and `matte` (1.103) for the on-device models, `raster` (1.105) for hooks doing their own pixel work, `connectors` (1.106) for export-safe arrows, and `c2pa` (1.85) for signing finished bytes. The count grows; the rules don't.
+The rest follow the same rules and are documented alongside them: `pdf` (1.8) and `pptx` (1.58) for on-device document surgery, `audio` (1.71) and `speech` (1.96) for clip analysis and on-device TTS/transcription, `viz` (1.72) for the MilkDrop placeholder contract, `codec` (1.100) and `layers` (1.102) for deep-bit and layered-bitmap output, `upscale` (1.101) and `matte` (1.103) for the on-device models, `raster` (1.105) for hooks doing their own pixel work, `connectors` (1.106) for export-safe arrows and `c2pa` (1.85) for signing finished bytes. The count grows; the rules don't.
 
 The declarable capabilities are: `network`, `filesystem`, `clipboard`, `camera`, `microphone`, `screen`, `ffmpeg`, `wasm`, `capture`, `compose`. (`screen`, added in 1.54, is display capture via `host.recorder` - the user picks a screen/window/tab in browser-native UI; distinct from `capture`, which rasterises a URL the tool itself names.)
 
-The same tool runs in browser, Tauri, and headless CLI because each shell implements this interface - the tool never knows which it's in.
+The same tool runs in browser, Tauri and headless CLI because each shell implements this interface - the tool never knows which it's in.
 
 The bridge is versioned. Adding methods is a minor version. Removing or changing signatures is a major version bump. When v2 ships, v1 must continue to work.
 
@@ -393,7 +393,7 @@ lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H
 
 CLI mode is URL mode under a different transport - the CLI shell builds a URL-state object from argv and runs the **same** engine pipeline. There is one render path. CLI cannot drift from GUI because it isn't a separate implementation.
 
-`url-mode.ts` handles the round-trip (parse and serialize). A set of **reserved params** is never forwarded to the tool as inputs: the output controls (`format`, `export`, `copy`, `filename`, `width`/`w`, `height`/`h`, `unit`, `dpi`), the print and provenance dials (`bleed`, `marks`, `profile`, `password`, `c2pa`, `imprint`, `durable`, `meta`, `hdr`, `depth`, `cuts`), and the state carriers (`template`, `z` - the "Shortest link" packed token - and `zx`, the same encrypted under a password). The `RESERVED` set in `engine/src/url-mode.ts` is the authority and is pinned by a test; [URL Mode](/info/url-mode.html) documents every one of them, including the handful not listed here. Asset inputs in URL mode are serialised by their `id`; the runtime resolves them via `host.assets.get()` before hydration. `width`/`height` are values in `unit` (default `px`, also `mm`/`cm`/`in`/`pt`/`pc`); with a physical unit `dpi` sets raster resolution. They set the canvas document size and pre-fill the export dimensions panel.
+`url-mode.ts` handles the round-trip (parse and serialize). A set of **reserved params** is never forwarded to the tool as inputs: the output controls (`format`, `export`, `copy`, `filename`, `width`/`w`, `height`/`h`, `unit`, `dpi`), the print and provenance dials (`bleed`, `marks`, `profile`, `password`, `c2pa`, `imprint`, `durable`, `meta`, `hdr`, `depth`, `cuts`) and the state carriers (`template`, `z` - the "Shortest link" packed token - and `zx`, the same encrypted under a password). The `RESERVED` set in `engine/src/url-mode.ts` is the authority and is pinned by a test; [URL Mode](/info/url-mode.html) documents every one of them, including the handful not listed here. Asset inputs in URL mode are serialised by their `id`; the runtime resolves them via `host.assets.get()` before hydration. `width`/`height` are values in `unit` (default `px`, also `mm`/`cm`/`in`/`pt`/`pc`); with a physical unit `dpi` sets raster resolution. They set the canvas document size and pre-fill the export dimensions panel.
 
 Because every input travels in the link, a parameter change is a different finished asset. This whole palette is one seed colour, a harmony and a step count:
 
@@ -413,10 +413,10 @@ This is a structural answer to the perception risk that using any tool implies b
 
 ### 8. Tool inputs are typed via the manifest, including assets
 
-Inputs declare a `type`: `text`, `longtext`, `number`, `boolean`, `color`, `select`, `asset`, `date`, `time`, `datetime-local`, `url`, `blocks`, `vector`, `table`, and `file`. The host renders a generic control per type from the manifest - tools write zero control code. (Pre-filling from the user's profile is not a type - any input can carry `bindToProfile`.) Three carry more weight than the rest:
+Inputs declare a `type`: `text`, `longtext`, `number`, `boolean`, `color`, `select`, `asset`, `date`, `time`, `datetime-local`, `url`, `blocks`, `vector`, `table` and `file`. The host renders a generic control per type from the manifest - tools write zero control code. (Pre-filling from the user's profile is not a type - any input can carry `bindToProfile`.) Three carry more weight than the rest:
 
 - **`asset`** (with `filter` and `allowUpload`) is the bridge to the global asset system; `allowUpload: false` is the brand-enforceability lever for things like sponsorship-tile logos where only library assets are permitted. User uploads use the same `AssetRef` shape as library assets, so tools handle them identically.
-- **`blocks`** is a repeating field-group - a mini-table inside one input, edited in a side panel, with a typed/discriminated add menu and per-block asset fields. Clicking a rendered block on the canvas focuses that block's row. Used by `meeting-planner`, `chart-creator`, `event-name-badge`, `wayfinding-signage`, `color-block`, and `digi-ad`.
+- **`blocks`** is a repeating field-group - a mini-table inside one input, edited in a side panel, with a typed/discriminated add menu and per-block asset fields. Clicking a rendered block on the canvas focuses that block's row. Used by `meeting-planner`, `chart-creator`, `event-name-badge`, `wayfinding-signage`, `color-block` and `digi-ad`.
 - **`vector`** groups a fixed set of numbers (e.g. a transform) into one compound control; **`file`** holds the user's own file as bytes in memory for on-device transform utilities (e.g. `strip-data` and `compress-pdf`).
 
 ### 9. Templates are logic-less (Handlebars, not EJS)
@@ -446,7 +446,7 @@ Compose any tool's render: an **SVG** child stays a true vector when the parent 
 ## What we explicitly chose not to do
 
 - **No EJS / no arbitrary JS in templates.** XSS surface is zero. Logic lives in `hooks.js`.
-- **No mandatory asset CMS.** Individuals ingest their own creative files straight into their catalogue in-app (the [Catalogue](/info/using.html) view and the Brand Studio) - no server, no admin console. Work is handed on as a **session**: a share link carries the whole state, and the same session travels in a backup or over a collab session. Whoever controls the deployment can then lock a shared session in as a **template** - open the link, record its values as a template entry in that tool's directory in the brand pack, and commit - after which it appears in the tool's "New from template" chooser and is deep-linkable as `?template=<id>`. Git is the deployment owner's locking step, never the creator's. For a *shared, governed* catalog, an organisation **can** manage the asset directory the same way and gate updates through PR review - an available governance model, not a requirement of the app.
+- **No mandatory asset CMS.** Individuals ingest their own creative files straight into their catalogue in-app (the [Catalogue](/info/using.html) view and the Brand Studio) - no server, no admin console. Work is handed on as a **session**: a share link carries the whole state, and the same session travels in a backup or over a collab session. Whoever controls the deployment can then lock a shared session in as a **template** - open the link, record its values as a template entry in that tool's directory in the brand pack and commit - after which it appears in the tool's "New from template" chooser and is deep-linkable as `?template=<id>`. Git is the deployment owner's locking step, never the creator's. For a *shared, governed* catalog, an organisation **can** manage the asset directory the same way and gate updates through PR review - an available governance model, not a requirement of the app.
 - **No forced RBAC.** The open app is public-access by default; brand risk is managed by maturity tags + watermarks. An org that wants tighter control layers on its own auth and the git-reviewed catalog above.
 - **No central database.** All user state is per-device. SUSE ID integration is on the roadmap but not a launch blocker.
 - **No shared tools/engine code path.** The engine is open source; `tools/` and `assets/` remain proprietary SUSE content in their own repositories. The separation is enforced (no cross-imports) so the split stays clean.
@@ -459,14 +459,14 @@ A user opens `lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H`:
 
 1. **Boot.** Web shell opens IndexedDB, constructs the capability bridge, syncs the tool and asset catalogs (or loads from cache when offline).
 2. **Route.** URL hash → `tool` view, with `qr-code` and URL params extracted.
-3. **Load.** `loadTool('qr-code', fetchFile)` fetches `tool.json`, validates against the JSON Schema, fetches `template.html`, `styles.css`, and `hooks.js` source.
+3. **Load.** `loadTool('qr-code', fetchFile)` fetches `tool.json`, validates against the JSON Schema, fetches `template.html`, `styles.css` and `hooks.js` source.
 4. **Parse URL state.** `parseUrlState` translates URL params into initial input values. Asset refs (`?logo=suse/logo/primary`) are parsed as lightweight `{ id, _unresolved: true }` objects.
-5. **Runtime.** `createRuntime(tool, host, initialValues)` builds the input model (merging profile data, defaults, and initial values), resolves asset refs via `host.assets.get()`, loads hooks (closure-scoped `host`, not sandboxed), calls `hooks.onInit`.
+5. **Runtime.** `createRuntime(tool, host, initialValues)` builds the input model (merging profile data, defaults and initial values), resolves asset refs via `host.assets.get()`, loads hooks (closure-scoped `host`, not sandboxed), calls `hooks.onInit`.
 6. **Render.** Shell subscribes to runtime; on every state change it receives `{ model, hydrated }`. It renders input controls from the model and writes the hydrated template HTML into `#tool-canvas`.
 7. **Interact.** User types in an input → `runtime.setInput(id, value)` → constraints applied → `hooks.onInput` called → re-hydrate → re-render. The canvas updates live.
-8. **Export.** User clicks Download(PNG) → `runtime.export(canvasNode, 'png')` → `host.export.render` (rasterises via dom-to-image-more; SVG/PDF go through dedicated DOM-walking vectorisers) → blob → `host.export.download`. The format range a tool can opt into is broad, and the `render.formats` enum in `schemas/tool.schema.json` is the authority on it - rasters and float rasters, vectors and cut files, print/CMYK, motion, editable documents (`pptx`, `docx`, `odt`), palette and data/text outputs, audio, and font files. [URL Mode](/info/url-mode.html) names every id and what it produces. Audio is in that enum like anything else (`wav`, `mp3`, `m4a`, `opus`, declared by the audiogram and the recording tools); separately, a recording tool's `render.capture` mode drives `host.recorder`, whose take arrives as a finished Blob in whatever container the browser recorded. (Tools that set `render.export: false` - e.g. Color Palette, Countdown Timer, Strip Hidden Data, Text Helper, Compress PDF - hide the download/format/dimension controls.) Physical units are converted per format here (PDF → true page points, raster → pixels at DPI with a `pHYs` chunk). Authorship/provenance metadata (author, tool, source - built by `engine/src/metadata.ts`) is embedded per format: PNG iTXt, JPEG EXIF, PDF info dict, SVG `<metadata>`, GIF comment. Experimental tools get a watermark inserted by the host, not the tool.
+8. **Export.** User clicks Download(PNG) → `runtime.export(canvasNode, 'png')` → `host.export.render` (rasterises via dom-to-image-more; SVG/PDF go through dedicated DOM-walking vectorisers) → blob → `host.export.download`. The format range a tool can opt into is broad, and the `render.formats` enum in `schemas/tool.schema.json` is the authority on it - rasters and float rasters, vectors and cut files, print/CMYK, motion, editable documents (`pptx`, `docx`, `odt`), palette and data/text outputs, audio and font files. [URL Mode](/info/url-mode.html) names every id and what it produces. Audio is in that enum like anything else (`wav`, `mp3`, `m4a`, `opus`, declared by the audiogram and the recording tools); separately, a recording tool's `render.capture` mode drives `host.recorder`, whose take arrives as a finished Blob in whatever container the browser recorded. (Tools that set `render.export: false` - e.g. Color Palette, Countdown Timer, Strip Hidden Data, Text Helper, Compress PDF - hide the download/format/dimension controls.) Physical units are converted per format here (PDF → true page points, raster → pixels at DPI with a `pHYs` chunk). Authorship/provenance metadata (author, tool, source - built by `engine/src/metadata.ts`) is embedded per format: PNG iTXt, JPEG EXIF, PDF info dict, SVG `<metadata>`, GIF comment. Experimental tools get a watermark inserted by the host, not the tool.
 
-![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=aud-export-popup)
+![The export panel that `?options` opens: the filename and format pair, the output size and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=aud-export-popup)
 
 Same lifecycle in Tauri. Same lifecycle in CLI - jsdom provides the headless DOM; output goes to a file or stdout.
 
@@ -474,7 +474,7 @@ Same lifecycle in Tauri. Same lifecycle in CLI - jsdom provides the headless DOM
 
 ## Open-source status
 
-The `engine/`, `shells/`, `schemas/`, and `docs/` directories are open source under **MPL-2.0** - a vendor-neutral scaffolding platform for brand tooling, with each shippable unit split into its own repository under [github.com/lolly-tools](https://github.com/lolly-tools). `tools/` and `catalog/assets/` are SUSE-specific content and remain **proprietary to SUSE** (all rights reserved - see each repo's `NOTICE.md`); they are not covered by the MPL.
+The `engine/`, `shells/`, `schemas/` and `docs/` directories are open source under **MPL-2.0** - a vendor-neutral scaffolding platform for brand tooling, with each shippable unit split into its own repository under [github.com/lolly-tools](https://github.com/lolly-tools). `tools/` and `catalog/assets/` are SUSE-specific content and remain **proprietary to SUSE** (all rights reserved - see each repo's `NOTICE.md`); they are not covered by the MPL.
 
 The split is enforced - there are no cross-imports from `engine/` to `tools/` or `assets/` - so the platform/content boundary stays clean.
 
@@ -490,7 +490,7 @@ The split is enforced - there are no cross-imports from `engine/` to `tools/` or
 | **Device-to-device transfer** | ✅ Done | Portable `lolly-backup` bundle carries profile, saved sessions, uploaded images and prefs between any two installs - offline or online, no account. Forward-compatible, integrity-checked envelope (spec: `docs/data-transfer.md`) |
 | **Establish formal tool roadmap** | Late 2026 | Customer reference kits, AI design ingest, GET/URL request mode |
 | **On-device privacy utilities** | 🚧 In progress | Content-transform tools that process *your own* file locally (file in → clean file out), replacing exfiltration to single-purpose SaaS. **Done:** `file` input type + `exportFile` transform path + `privacy:"on-device"` conventions (no watermark/provenance) + **Strip Hidden Data** (JPEG/PNG/SVG/PDF metadata, PDF via the `host.pdf` bridge) and **Text Helper** (the on-device workbench for the everyday paste-into-a-website jobs - JSON format, JWT decode, Base64, URL encode/decode, SHA hashing, plus a Novelty group). Since then: **Compress PDF**, **Convert Image**, **Convert Font**, **Redact** and **Prompt to Image**, over the shipped `host.images` convert bridge (spec: `plans/34-exfiltration-app-content.md`). **Next:** more of the everyday jobs people currently hand to single-purpose websites |
-| **Design tokens (DTCG)** | 🚧 Nearly done | Brand primitives as canonical [W3C Design Tokens (DTCG)](https://www.designtokens.org/TR/drafts/format/) - the format [Penpot imports/exports](https://help.penpot.app/user-guide/design-systems/design-tokens/). **Done:** colour, dimension and typography tokens, the `host.tokens` bridge, picker swatches + reference-linked values, Penpot/DTCG import and export, and user tokens travelling as `tokens.json` in a brand pack and the transfer bundle (spec: `docs/design-tokens.md`). **Next:** template-level token *injection* - handing a token-aware tool the resolved tree in its template context |
+| **Design tokens (DTCG)** | 🚧 Nearly done | Brand primitives as canonical [W3C Design Tokens (DTCG)](https://www.designtokens.org/TR/drafts/format/) - the format [Penpot imports/exports](https://help.penpot.app/user-guide/design-systems/design-tokens/). **Done:** colour, dimension and typography tokens, the `host.tokens` bridge, picker swatches + reference-linked values, Penpot/DTCG import and export and user tokens travelling as `tokens.json` in a brand pack and the transfer bundle (spec: `docs/design-tokens.md`). **Next:** template-level token *injection* - handing a token-aware tool the resolved tree in its template context |
 | **MCP agent endpoint (render)** | ✅ Done | An [MCP](https://modelcontextprotocol.io) server exposes the catalogue + render path as callable tools (`lolly_list_tools` / `lolly_describe_tool` / `lolly_build_url` / `lolly_render` / `lolly_transform` / `lolly_redact` / `lolly_verify`) so any agent can produce finished, rule-bound assets - add it to any MCP client as a custom connector (OAuth 2.1) or point a CLI/HTTP client at it with a bearer token. Live at `mcp.lolly.tools` (full endpoint: raster/PDF/animation/video via a hosted headless browser) and `lolly.tools/api/mcp` (serverless browser-free tier). Distinct from the Penpot *authoring* MCP below, which is about tool **creation** (spec: `plans/77-mcp-server.md`; guide: `docs/mcp.md` + `docs/ai-agents.md`) |
 | **Penpot file ingest as tools** | 2027+ | Import a Penpot file and surface it *as a Lolly tool* (declarative, constraint-first), turning designs authored in Penpot into deterministic generators |
 | **MCP + Penpot extension (online-only authoring)** | 2027+ | A Penpot MCP server articulates new tools with AI - the most visual way to create deterministic templates: a brand-informed first round, perfected with a human in the loop, targeting one-shot new contexts over time. Tool *creation* is online-only; the tools it produces run anywhere |
@@ -501,8 +501,8 @@ The split is enforced - there are no cross-imports from `engine/` to `tools/` or
 ## Where the engine ends and the host begins
 
 If you can describe it in pure data + Handlebars → **engine**.
-If it touches the DOM, filesystem, network, or any browser/OS API → **host**.
+If it touches the DOM, filesystem, network or any browser/OS API → **host**.
 
-The line is sharp on purpose. The engine is the open-source part. Everything that knows about SUSE, specific platforms, or runtime environments stays out of it.
+The line is sharp on purpose. The engine is the open-source part. Everything that knows about SUSE, specific platforms or runtime environments stays out of it.
 
 For the next level of detail, [`engine/README.md`](../engine/README.md) enumerates every engine module and what it is responsible for, and [Threat Model & Trust Boundaries](/info/threat-model.html) records where that same line doubles as a trust boundary.

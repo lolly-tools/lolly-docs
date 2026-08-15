@@ -4,17 +4,17 @@
 
 > **In plain terms.** The documents, images, videos and files you make in Lolly stay
 > on your device. There are no accounts for ordinary use, no cookies from the app
-> itself, and no analytics or trackers anywhere in the codebase - not "we don't use
+> itself and no analytics or trackers anywhere in the codebase - not "we don't use
 > the data," genuinely not present in the source. A short, complete list of
 > exceptions exists where the software talks to a network at all, and every one of
-> them is described below in specifics: what leaves, to whom, and when. The only
+> them is described below in specifics: what leaves, to whom and when. The only
 > exception that involves anything personal is a sign-in you have to explicitly
 > start. If it isn't in this document, it doesn't happen.
 
 ## What this policy covers
 
 Lolly is open-source software - an engine, several app shells (web, desktop,
-mobile, CLI), and a browser extension - that anyone can run. This policy has two
+mobile, CLI) and a browser extension - that anyone can run. This policy has two
 parts:
 
 - <!--i:code--> **The software itself**: what it does and doesn't do with your data, wherever it
@@ -51,7 +51,7 @@ your device only**, never transmitted:
 - <!--i:folder--> **Your own documents, saved sessions, uploaded assets and fonts** - stored in
   IndexedDB on your device, never uploaded, never read by anyone but you.
 
-None of this is shared, sold, or used to identify or track you. There is nothing
+None of this is shared, sold or used to identify or track you. There is nothing
 to consent to, because there is no collection happening - only this notice, so you
 know what's kept and where. Wipe all of it at any time with **Profile → Clear all
 my data**, or by clearing the site's storage in your browser. (Under the ePrivacy
@@ -68,9 +68,9 @@ Transfer](/info/data-transfer.html).
 
 ## On-device utilities
 
-Some tools - **Strip Hidden Data**, **Compress PDF**, and others carrying the
+Some tools - **Strip Hidden Data**, **Compress PDF** and others carrying the
 **"Runs on your device"** badge - operate on a file you provide. The file is read
-into memory in your browser, transformed locally, and offered back as a download.
+into memory in your browser, transformed locally and offered back as a download.
 It is never uploaded, because there is no server in the path to upload it to.
 These utilities work offline, and their output carries no watermark or metadata of
 ours - the point of most of them is to remove & protect data, not add risk.
@@ -85,7 +85,7 @@ network. If it isn't here, the app doesn't do it.
 | What | What actually leaves your device | When |
 |---|---|---|
 | Tool catalogue sync | Nothing personal - a request for Lolly's own public tool and asset index | On startup, then cached offline |
-| A tool that needs live data | Whatever that specific tool requests, to the host named in its own description. Today that is only the city lookup in the Meeting Planner tool, which asks `geocoding-api.open-meteo.com` to turn a city name into coordinates and a time zone - no account, no key, and no identifier beyond the request itself. The input says so right where you type, and each answer is saved on your device so a city is looked up once | Only while using that tool, and only once you enter a location |
+| A tool that needs live data | Whatever that specific tool requests, to the host named in its own description. Today that is only the city lookup in the Meeting Planner tool, which asks `geocoding-api.open-meteo.com` to turn a city name into coordinates and a time zone - no account, no key and no identifier beyond the request itself. The input says so right where you type, and each answer is saved on your device so a city is looked up once | Only while using that tool, and only once you enter a location |
 | Google Fonts | The chosen font family name and your IP address, to Google's font servers (`fonts.googleapis.com` for the stylesheet, `fonts.gstatic.com` for the font file) | Only if you add a Google Font in the brand editor, **and only after you agree to it in a dialog that says exactly this** - a one-time fetch per family, then it lives on your device and is used offline |
 | ICC press profiles | Nothing personal - a request for a standard printing-condition profile, to the ICC's public registry (`registry.color.org`, `www.color.org`) | Only if you click an ICC preset in the print-profile manager - a one-time fetch per profile, then it lives on your device |
 | Internet radio | Nothing personal - a playlist request and an audio stream, to the station (`api.somafm.com` and the icecast server it names, `*.somafm.com`) | Only while you play the optional built-in radio in the sound player |
@@ -172,7 +172,7 @@ plus three tools that necessarily handle file bytes:
   URLs, catalogue asset ids), the same inputs a hot-link render URL takes.
 - <!--i:lock--> Access is either a shared token the operator issues to clients they trust, or
   stateless OAuth 2.1: short-lived signed tokens verified against a shared
-  secret, nothing stored server-side, and the token itself is never written to a
+  secret, nothing stored server-side and the token itself is never written to a
   log or a render URL.
 
 ## Content Credentials identity (a sign-in you have to start yourself)
@@ -193,7 +193,7 @@ this section applies to you, and no personal data ever leaves your device.**
 
 If you do enrol, here is exactly what happens:
 
-1. **You choose a sign-in method** - GitHub, Google, SUSE (id.suse.com), or an
+1. **You choose a sign-in method** - GitHub, Google, SUSE (id.suse.com) or an
    emailed link. For the three OIDC providers, you're redirected to that
    provider's own login page, governed by their privacy policy, not ours.
    Lolly's certificate service receives back only a verified email address and
@@ -233,12 +233,12 @@ data by doing so.
 
 ## The browser extension
 
-The **Lolly URL Screenshot** browser extension does not collect, store, or
+The **Lolly URL Screenshot** browser extension does not collect, store or
 transmit any personal data. No analytics, no tracking, no remote server.
 
 **What it does.** When you ask the Lolly web app to screenshot a URL, the
 extension opens that page in a temporary background tab, captures it in your
-browser using the DevTools Protocol, hands the image back to the app, and closes
+browser using the DevTools Protocol, hands the image back to the app and closes
 the tab. Everything happens locally, on your own device and network.
 
 **Data.**
@@ -259,7 +259,7 @@ the tab. Everything happens locally, on your own device and network.
   on any site. Chrome surfaces this at install time as a broad permission
   warning. The extension only ever visits the URL you give it.
 
-None of these are used to read, monitor, or transmit your browsing beyond that
+None of these are used to read, monitor or transmit your browsing beyond that
 one requested capture.
 
 ## Infrastructure logs
@@ -282,7 +282,7 @@ not ours.
 
 For lolly.tools, hosting is Vercel and access-log retention follows Vercel's own
 platform defaults for our plan. We configure no log drain, no long-term log
-export, and no analytics or monitoring product on top. We keep no copy of these
+export and no analytics or monitoring product on top. We keep no copy of these
 logs ourselves, which also means we have no way to search them for you - see
 [Your rights](#your-rights).
 
@@ -295,7 +295,7 @@ completeness, the entire list:
 |---|---|---|
 | Everything on your device (documents, prefs, cache, counters) | **Not our processing at all** - it never reaches us. Storage on your device is strictly necessary for the service you requested (ePrivacy Art. 5(3)), so it needs no consent | Until you delete it |
 | Your email address during Content Credentials enrolment | **Art. 6(1)(b)**, performance of a service you explicitly requested | Not retained. Present in memory for the duration of the request only |
-| Your IP address on the sign-in endpoints, for rate limiting | **Art. 6(1)(f)**, our legitimate interest in preventing abuse of a free service and of a third party's email quota. We consider this to pass a balancing test because it is in memory only, never written down, and discarded within about a minute | ~1 minute, in server memory, never persisted |
+| Your IP address on the sign-in endpoints, for rate limiting | **Art. 6(1)(f)**, our legitimate interest in preventing abuse of a free service and of a third party's email quota. We consider this to pass a balancing test because it is in memory only, never written down and discarded within about a minute | ~1 minute, in server memory, never persisted |
 | Hosting access logs (IP, path, timestamp, user agent) | **Art. 6(1)(f)**, our legitimate interest in service security, abuse prevention and diagnosing faults | Vercel's platform default for our plan. We add no drain or export |
 
 **Recipients.** The categories of recipient are: our hosting provider (Vercel
@@ -303,7 +303,7 @@ Inc.), and - only if you use the email sign-in option - a transactional email
 provider (Resend). If you sign in with GitHub, Google or SUSE (id.suse.com), you
 interact with that provider directly under their own privacy policy. They tell
 us a verified email address and nothing else. We share personal data with no one
-else, and we do not sell data, run advertising, or profile users.
+else, and we do not sell data, run advertising or profile users.
 
 **Transfers outside the EEA.** Vercel and Resend are US companies. Function
 compute for lolly.tools is pinned to Vercel's Frankfurt (`fra1`) region so
@@ -331,13 +331,13 @@ Because almost everything Lolly touches is stored only on your own device, most 
 what data-protection law calls "your rights" - access, correction, deletion,
 portability - are things you can already do yourself, instantly, without asking
 anyone: your data lives in your browser's storage, in a form you can inspect,
-export (**Export my data & render everything**, above), or delete (**Profile → Clear all
+export (**Export my data & render everything**, above) or delete (**Profile → Clear all
 my data**).
 
 Formally, under GDPR Articles 15-22 you have the right to **access** your
 personal data, to **rectify** it, to **erase** it, to **restrict** or **object
 to** its processing (including objecting to anything we base on legitimate
-interests), to **data portability**, and - where processing rests on consent - to
+interests), to **data portability** and - where processing rests on consent - to
 **withdraw that consent at any time**, without affecting the lawfulness of what
 happened before you withdrew it.
 
@@ -353,7 +353,7 @@ and destroy it without asking anyone's permission.
 
 **You have the right to complain.** If you think we have handled your data
 improperly, you can lodge a complaint with a data protection supervisory
-authority - in the EU, the authority in your country of residence, place of work,
+authority - in the EU, the authority in your country of residence, place of work
 or where you believe the infringement occurred (Art. 77). Our lead supervisory
 authority is the *Bayerisches Landesamt für Datenschutzaufsicht* (BayLDA) in
 Ansbach, Germany. You do not need to contact us first, though we would like the
@@ -381,7 +381,7 @@ SUSE has appointed a **Data Protection Officer**, reachable at
 [privacy@suse.com](mailto:privacy@suse.com). Use that address for any formal
 request under "Your rights" above.
 
-For anything about Lolly itself - how it works, why a thing is the way it is, or
+For anything about Lolly itself - how it works, why a thing is the way it is or
 a correction to this document - contact **Andy Fitzsimon**,
 [fitzy@suse.com](mailto:fitzy@suse.com).
 

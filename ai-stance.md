@@ -16,7 +16,7 @@ Here is what that looks like when you check it. Nine steps survive in the file: 
 
 ![The change history Lolly reads back out of the finished file - five steps recorded by Google, then four by Lolly, ending in the WebP on this page](/t/url-shot?url=%2F%23%2Fverify%3Fsrc%3D%2Finfo%2Fthe-flood.webp&width=1440&height=1400&dpi=192&waitMs=6000&walker=1&format=svg&cropSelector=.valid-steps&dark=1&filename=ai-stance-change-history)
 
-Andy's metaphor for a flood is this: the scarcity posture toward AI - invest everything in the few, diminish yourself today, and worry later - is drinking spoiled tank water while the rain sets in and floodwater races across the plains toward you. Generated content is about to be effectively infinite. When something becomes infinite, its value moves to whatever remains scarce around it: trust, provenance, brand coherence and human judgment. Lolly is not a bigger bucket for the flood. It is irrigation - channels that direct the water, and soil where things actually grow.
+Andy's metaphor for a flood is this: the scarcity posture toward AI - invest everything in the few, diminish yourself today and worry later - is drinking spoiled tank water while the rain sets in and floodwater races across the plains toward you. Generated content is about to be effectively infinite. When something becomes infinite, its value moves to whatever remains scarce around it: trust, provenance, brand coherence and human judgment. Lolly is not a bigger bucket for the flood. It is irrigation - channels that direct the water, and soil where things actually grow.
 
 ## The stance, in five commitments
 
@@ -36,7 +36,7 @@ So we empower human decision and we do not compromise it. The right to choose. A
 
 Tools here scale what a person decided. They do not decide instead of them, and they never quietly stand in for them. Where a decision is carried by automation, the record still leads back to the person who triggered it, however many systems and left turns it passed through on the way.
 
-We honour that end to end, and we record it: for history, for accountability, for trust, and for tomorrow.
+We honour that end to end, and we record it: for history, for accountability, for trust and for tomorrow.
 
 ## What this is not
 

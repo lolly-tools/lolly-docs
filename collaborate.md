@@ -1,12 +1,12 @@
 # Working on something together
 
-Two people, two devices, one tool session, edited live. No account, no sign-in, no server in the middle, and no internet needed if both devices are on the same network. This page is the whole feature: how to start one, the three ways to hand the invite over, the reply leg that trips most pairs up, the six characters that tell you the connection is private, what you see while you work, how to send files and sessions down the same link, and what to do when a network refuses to let two devices talk.
+Two people, two devices, one tool session, edited live. No account, no sign-in, no server in the middle and no internet needed if both devices are on the same network. This page is the whole feature: how to start one, the three ways to hand the invite over, the reply leg that trips most pairs up, the six characters that tell you the connection is private, what you see while you work, how to send files and sessions down the same link and what to do when a network refuses to let two devices talk.
 
 > This is the individual path. It pairs exactly two devices, directly, and it is yours to start whenever you want one. Nothing about it asks permission from anything.
 
 ## What a private collab is
 
-A **private collab** is a live editing link between two devices. One person invites, the other joins, and from that moment both are typing into the same tool session: change a field on one device and it appears on the other. The link is made by the two browsers talking to each other directly. Your work does not travel through a service on the way, because there is no service - the invite and the reply are the whole of the setup, and you are the one who carries them across.
+A **private collab** is a live editing link between two devices. One person invites, the other joins and from that moment both are typing into the same tool session: change a field on one device and it appears on the other. The link is made by the two browsers talking to each other directly. Your work does not travel through a service on the way, because there is no service - the invite and the reply are the whole of the setup, and you are the one who carries them across.
 
 Two things follow from that, and they are worth knowing before you invite anyone.
 
@@ -68,7 +68,7 @@ The name is chosen here, per collab, and it is the only thing about you that cro
 
 ![Step 1 of 3 - naming yourself for this collab, with the note that the other person sees this name while you work together](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1100&height=900&dpi=192&waitMs=3000&drive=click%3A%23render-fab%3Bclick%3A%5Bdata-action%3D%22copy-url%22%5D%3Bclick%3A%5Bdata-act%3D%22start-private-collab%22%5D&cropSelector=.collab-ceremony&walker=1&format=svg&dark=1&filename=collab-invite-name)
 
-The whole ceremony is numbered **1 of 3**, **2 of 3**, **3 of 3** on every screen, on both sides. That is deliberate: the hand-over has two legs, both people are looking at different screens, and the numbers are how you tell each other where you are.
+The whole ceremony is numbered **1 of 3**, **2 of 3**, **3 of 3** on every screen, on both sides. That is deliberate: the hand-over has two legs, both people are looking at different screens and the numbers are how you tell each other where you are.
 
 ## Handing over the invite
 
@@ -100,7 +100,7 @@ invite against a real origin.
 
 ### A link
 
-The invite as a `#/join?inv=...` URL. Send it through any channel the two of you already use. The other person clicks it, their device opens Lolly at the join screen with the invite already read, and they go straight to naming themselves. Nothing to paste.
+The invite as a `#/join?inv=...` URL. Send it through any channel the two of you already use. The other person clicks it, their device opens Lolly at the join screen with the invite already read and they go straight to naming themselves. Nothing to paste.
 
 **When it fits:** you have any messaging channel at all between the two devices, and the joining device can reach the same address you are using.
 
@@ -114,11 +114,11 @@ Two things to know. The reply comes back the same way, so this is genuinely two 
 
 ### A code
 
-The invite as a block of text. Copy it, send it however you like, and the other person opens `#/join` on their device with nothing in the URL and pastes it into the field there. The Share dialog has a **Join with a code** button that opens exactly that screen, so both entrances are one place.
+The invite as a block of text. Copy it, send it however you like and the other person opens `#/join` on their device with nothing in the URL and pastes it into the field there. The Share dialog has a **Join with a code** button that opens exactly that screen, so both entrances are one place.
 
 **When it fits:** the invite came through a channel that mangles links, or the other person is typing an address in by hand, or you are reading it out.
 
-![The bare join screen - one field, one button, and the note that a code or a link both work here](/t/url-shot?url=%2F%23%2Fjoin&width=1100&height=760&dpi=192&waitMs=2400&cropSelector=%5Bdata-collab-join%5D&walker=1&format=svg&dark=1&filename=collab-join-code-door)
+![The bare join screen - one field, one button and the note that a code or a link both work here](/t/url-shot?url=%2F%23%2Fjoin&width=1100&height=760&dpi=192&waitMs=2400&cropSelector=%5Bdata-collab-join%5D&walker=1&format=svg&dark=1&filename=collab-join-code-door)
 
 > **The invite does not last forever.** While you are waiting, the screen counts down how long the current invite still works. After ten minutes a fresh one is minted automatically and the screen says so, so send the new one rather than the one you already sent. That happens twice; after that the wait gives up and tells you nothing came back in time. **Make a new invite** sits on the waiting screen throughout, if you want to start the clock again yourself.
 
@@ -127,7 +127,7 @@ The invite as a block of text. Copy it, send it however you like, and the other 
 This is the leg pairs give up on, so it is worth being explicit: **an invite on its own does not connect anything.** The joining device makes a reply, and that reply has to get back to the waiting device before either of you is connected. Same three forms, same choice.
 
 <!--
-SHOT DROPPED (collab-answer-minted) — the same call as collab-invite-minted above, and
+SHOT DROPPED (collab-answer-minted): the same call as collab-invite-minted above, and
 for the same first reason. It WAS captured: the drill reaches the reply screen, and the
 walker serialises it cleanly (126 KB of vector). What it serialises is the problem.
 The reply link carries the origin the capture ran against, so the file read
@@ -135,7 +135,7 @@ The reply link carries the origin the capture ran against, so the file read
 further renderings of the same single-use payload.
 
 So the rule both drops share, stated once: LOLLY'S DOCS DO NOT PHOTOGRAPH A ONE-TIME
-SECRET. There is no framing of these two screens that is both honest and publishable —
+SECRET. There is no framing of these two screens that is both honest and publishable:
 the token IS the screen, and the only "fix" available is to invent a token and an origin,
 which would make the picture a drawing of the product rather than a picture of it. The
 three forms are described in the prose instead.
@@ -210,7 +210,7 @@ a fixed floating control over the canvas and Playwright refuses the real press a
 documented fallback for (DriveOpts.clickFallback in packages/node-shell/src/url-capture.ts).
 -->
 
-**Where the other person is working** shows as a coloured ring on the control they are in, with their name on a chip beside it, and as a matching outline on the part of the render that control draws. Colour is never the only signal - the ring is always paired with the name, the canvas outline carries a hairline that reads as a shape rather than a hue, and every handover is spoken through the live region for screen readers.
+**Where the other person is working** shows as a coloured ring on the control they are in, with their name on a chip beside it, and as a matching outline on the part of the render that control draws. Colour is never the only signal - the ring is always paired with the name, the canvas outline carries a hairline that reads as a shape rather than a hue and every handover is spoken through the live region for screen readers.
 
 ![The whole editing window on one device while the other person works: the Quiet zone row in the sidebar carries a coloured ring and a name chip reading Grace](/info/shots/collab-focus-ring.svg)
 
@@ -241,7 +241,7 @@ The same link that carries your edits will also carry things that are too big to
 
 Press **Send this session** on the collab pill. The other device gets a card naming what is being offered, how many items it contains and how large it is, with **Accept** and **Decline**. Nothing moves until they accept. Both of you watch the same progress card, and either of you can cancel.
 
-![Both devices at the same moment: on the left the sender waiting to be let in, on the right the card naming what is offered, who it is from, and Decline beside Accept](/info/shots/collab-beam-consent.svg)
+![Both devices at the same moment: on the left the sender waiting to be let in, on the right the card naming what is offered, who it is from and Decline beside Accept](/info/shots/collab-beam-consent.svg)
 
 <!--
 DRILL-ASSISTED SHOT (collab-beam-consent). The consent card
@@ -309,7 +309,7 @@ button, so if it turns out to be impractical to reach, DROP the shot rather than
 fake one - the copy is quoted in the text above and carries the same information.
 -->
 
-**Nothing came back in time.** The reply never arrived. Make a new invite and send it again. Nine times in ten this is the reply leg: the invite was sent, the other person opened it, and the reply is still sitting on their screen waiting to be sent back.
+**Nothing came back in time.** The reply never arrived. Make a new invite and send it again. Nine times in ten this is the reply leg: the invite was sent, the other person opened it and the reply is still sitting on their screen waiting to be sent back.
 
 **The connection dropped.** The other device stopped answering. A new invite is needed to carry on - there is no server holding the session, so there is nothing to resume from. Your work is untouched on your own device.
 

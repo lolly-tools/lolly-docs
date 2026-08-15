@@ -15,7 +15,7 @@
       "icon": "developers",
       "eyebrow": "For Builders",
       "name": "Author & integrate",
-      "desc": "Author tools, drive them from the CLI, MCP, or an agent, and deploy the platform. The technical documentation.",
+      "desc": "Author tools, drive them from the CLI, MCP or an agent, and deploy the platform. The technical documentation.",
       "cta": "Read the docs →"
     },
     {
@@ -23,7 +23,7 @@
       "icon": "security",
       "eyebrow": "For Operators",
       "name": "Roll it out safely",
-      "desc": "A defence-in-depth data-loss-prevention strategy masquerading as a creative platform. Strategy, security, and adoption.",
+      "desc": "A defence-in-depth data-loss-prevention strategy masquerading as a creative platform. Strategy, security and adoption.",
       "cta": "See the strategy →"
     }
   ]

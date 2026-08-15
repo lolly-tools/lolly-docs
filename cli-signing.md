@@ -31,9 +31,9 @@ should see. `engine/src/version.ts` holds the live number.
 
 Use `npm run --silent cli` (not plain `npm run cli`) whenever you redirect or pipe: npm prints a two-line banner on stdout that would land inside your PNG. An installed `lolly` binary has no such wrapper.
 
-**What works with no browser.** Everything on this page. SVG, PDF, EMF, EPS, DXF and the data formats render browser-free, PNG renders browser-free for SVG-native tools, and signing, verification and trust anchors are pure Node.
+**What works with no browser.** Everything on this page. SVG, PDF, EMF, EPS, DXF and the data formats render browser-free, PNG renders browser-free for SVG-native tools and signing, verification and trust anchors are pure Node.
 
-**What needs the browser tier.** Raster and video output from HTML-layout tools, print bleed and crop marks, and `validate --deep`. One-time setup:
+**What needs the browser tier.** Raster and video output from HTML-layout tools, print bleed and crop marks and `validate --deep`. One-time setup:
 
 ```bash
 npm run build:web            # the web shell the browser tier drives
@@ -94,7 +94,7 @@ You need two things: a **P-256 (prime256v1) private key**, and the **certificate
 
 Three ways to get them, in the order most operators will:
 
-1. **Your organisation's CA.** Ask for an S/MIME-style certificate: EC P-256, `keyUsage: digitalSignature`, `extendedKeyUsage: emailProtection`, and your address in the subjectAltName. That is the C2PA certificate profile, and it is a shape every enterprise CA already issues.
+1. **Your organisation's CA.** Ask for an S/MIME-style certificate: EC P-256, `keyUsage: digitalSignature`, `extendedKeyUsage: emailProtection` and your address in the subjectAltName. That is the C2PA certificate profile, and it is a shape every enterprise CA already issues.
 2. **Lolly's own CA.** Enrolment (`services/ca`) issues short-lived certificates bound to an OIDC-verified email, and it is a **browser flow** - the device key is generated non-extractable in the browser and never leaves it, which is exactly what makes the private key safe there and unavailable here. **There is no CLI enrolment**, and a browser-enrolled key cannot be exported to a file for the CLI to use. See [Content Credentials identity](/info/content-credentials-identity.html).
 3. **Self-signed**, for testing the plumbing and for closed loops where you distribute your own root. Runnable right now:
 
@@ -118,7 +118,7 @@ cat leaf.pem issuers.pem > signing-chain.pem
 chmod 600 signing-key.pem
 ```
 
-Accepted key formats: PKCS#8 PEM (`-----BEGIN PRIVATE KEY-----`), encrypted PKCS#8 PEM (`-----BEGIN ENCRYPTED PRIVATE KEY-----`), legacy SEC1 EC PEM (`-----BEGIN EC PRIVATE KEY-----`, what `openssl ecparam` writes), and raw PKCS#8 DER. Accepted chain formats: one or more concatenated `CERTIFICATE` PEM blocks **leaf first**, or a single DER certificate.
+Accepted key formats: PKCS#8 PEM (`-----BEGIN PRIVATE KEY-----`), encrypted PKCS#8 PEM (`-----BEGIN ENCRYPTED PRIVATE KEY-----`), legacy SEC1 EC PEM (`-----BEGIN EC PRIVATE KEY-----`, what `openssl ecparam` writes) and raw PKCS#8 DER. Accepted chain formats: one or more concatenated `CERTIFICATE` PEM blocks **leaf first**, or a single DER certificate.
 
 ### 4.2 Where to put the key
 
@@ -130,7 +130,7 @@ chmod 600 ~/.config/lolly/signing-key.pem
 
 `600` means only you can read it. `700` on the directory stops anyone else listing what is in there. The certificate chain is public - it is embedded in every file you sign - so it needs no protection at all.
 
-**Never pass a key on the command line.** There is deliberately no flag that takes key material or a passphrase, only paths. Arguments are visible in `ps` output to **every user on the machine**, they are written to your shell history file, and CI systems log the command line of every step. A path is not a secret; the file it points at is.
+**Never pass a key on the command line.** There is deliberately no flag that takes key material or a passphrase, only paths. Arguments are visible in `ps` output to **every user on the machine**, they are written to your shell history file and CI systems log the command line of every step. A path is not a secret; the file it points at is.
 
 ### 4.3 Sign
 
@@ -174,7 +174,7 @@ env:
   LOLLY_SIGN_CERT_PEM: ${{ secrets.LOLLY_SIGN_CERT_PEM }}
 ```
 
-**A secret store is the right home for a signing key in CI**, and it is the only reason these variables exist. Be honest about what they cost you: an environment variable is inherited by every child process the job spawns, so every dependency's install script, every test, and every tool you shell out to can read it. A key file with `600` permissions is inherited by nothing. Where the runner has a filesystem, write the secret to a file, `chmod 600` it, use `--sign-key=`, and delete it in a cleanup step.
+**A secret store is the right home for a signing key in CI**, and it is the only reason these variables exist. Be honest about what they cost you: an environment variable is inherited by every child process the job spawns, so every dependency's install script, every test and every tool you shell out to can read it. A key file with `600` permissions is inherited by nothing. Where the runner has a filesystem, write the secret to a file, `chmod 600` it, use `--sign-key=` and delete it in a cleanup step.
 
 Never echo them. `set -x` in a shell step will print the whole key.
 
@@ -271,7 +271,7 @@ Note what the default does **not** do: a stranger's CA is not trusted because it
 
 Content Credentials and the Lolly Imprint are **on by default** for `lolly run`, matching the app exactly ([contract §12 O2](https://github.com/lolly-tools/lolly/blob/main/plans/73-cli-ga-contract.md)). A tool opts out for everyone through its manifest (`render.c2pa: false`, or `privacy: 'on-device'`); a run opts out with `--c2pa=off`, `--imprint=0`, or `--no-provenance` for all of them at once.
 
-What a credential embeds: the tool and its input digest, the output format and dimensions, the surface (`cli`), the Node version and OS, a timestamp, the action history, your author details when `useDetails` is on, and - with an identity - your certificate chain.
+What a credential embeds: the tool and its input digest, the output format and dimensions, the surface (`cli`), the Node version and OS, a timestamp, the action history, your author details when `useDetails` is on and - with an identity - your certificate chain.
 
 **Byte-reproducibility.** Both marks embed a fresh timestamp, so two identical runs no longer produce identical bytes. `--no-provenance` is the one word that buys determinism back, and `smoke` and `batch` apply it themselves. `--no-provenance` together with `--sign-key` is a refusal rather than a guess:
 
@@ -303,7 +303,7 @@ npm run --silent cli -- validate ./out.png --trust-anchor=./signing-cert.pem --j
 ```
 
 **Deterministic:** the render itself, the input digest, the exit codes, the JSON envelope shape.
-**Not deterministic:** anything with a credential or an Imprint in it (fresh timestamps, a fresh manifest UUID, and on the ephemeral path a fresh certificate). Signing with a fixed identity removes the fresh certificate but not the timestamps, so a signed export is still not byte-reproducible. If a pipeline needs identical bytes, render with `--no-provenance` and sign a separate copy.
+**Not deterministic:** anything with a credential or an Imprint in it (fresh timestamps, a fresh manifest UUID and on the ephemeral path a fresh certificate). Signing with a fixed identity removes the fresh certificate but not the timestamps, so a signed export is still not byte-reproducible. If a pipeline needs identical bytes, render with `--no-provenance` and sign a separate copy.
 
 ---
 
@@ -342,11 +342,11 @@ Every message below is the exact text the CLI prints, keyed to what to do about 
 
 **If a key is compromised, assume everything it signed is suspect** - not just what was signed after the theft, because there is no trusted timestamp yet and therefore no way to prove *when* anything was signed.
 
-**Revocation, honestly: there is none.** The Lolly CA writes no issuance log and publishes no CRL or OCSP responder - a deliberate privacy choice, recorded in `services/ca/lib/enroll.mjs`, that leaves nothing personal at rest on a server. **Expiry is the only revocation**, which is why certificates are short-lived (7/30/90/365 days). If yours is compromised: stop using it, get a new one, and if you run your own root, rotate the root and re-issue - because the only lever you have is un-pinning something. Prefer the shortest lifetime your workflow tolerates; a 7-day certificate is a 7-day incident, a 365-day one is a year-long one.
+**Revocation, honestly: there is none.** The Lolly CA writes no issuance log and publishes no CRL or OCSP responder - a deliberate privacy choice, recorded in `services/ca/lib/enroll.mjs`, that leaves nothing personal at rest on a server. **Expiry is the only revocation**, which is why certificates are short-lived (7/30/90/365 days). If yours is compromised: stop using it, get a new one and if you run your own root, rotate the root and re-issue - because the only lever you have is un-pinning something. Prefer the shortest lifetime your workflow tolerates; a 7-day certificate is a 7-day incident, a 365-day one is a year-long one.
 
 **A signature asserts identity, so a shared key is shared accountability.** A key on a CI runner signs as whoever the certificate names, and every file it produces is attributable to that person. Give a build pipeline its own identity with its own address (`release-bot@…`), not a human's. If several people can trigger that pipeline, the credential proves the pipeline signed it and nothing about which of them pressed the button - the credential is not an audit log, and treating it as one is how the wrong person ends up accountable.
 
-**What a credential does not prove.** It proves these bytes have not changed since this certificate signed them. It does not prove *when* (no timestamp authority yet - which is also why an expired certificate reads "expired" rather than "verified"), it does not prove the content is accurate, and "Made with Lolly" remains a self-asserted claim any fork can make. [Content Credentials identity](/info/content-credentials-identity.html) sets out the trust tiers in full; [Threat Model](/info/threat-model.html) sets out the limits.
+**What a credential does not prove.** It proves these bytes have not changed since this certificate signed them. It does not prove *when* (no timestamp authority yet - which is also why an expired certificate reads "expired" rather than "verified"), it does not prove the content is accurate and "Made with Lolly" remains a self-asserted claim any fork can make. [Content Credentials identity](/info/content-credentials-identity.html) sets out the trust tiers in full; [Threat Model](/info/threat-model.html) sets out the limits.
 
 ---
 

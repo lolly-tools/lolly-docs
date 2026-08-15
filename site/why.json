@@ -4,7 +4,7 @@
   "lead": "Most people don’t want a design studio. They want one correct file, now - without breaking the brand, without waiting on someone and without being asked to sign up and pay before they can start. Lolly exists to take those three frustrations away.",
   "frustrations": [
     { "icon": "anxiety", "title": "Off-brand anxiety", "desc": "The quiet dread of picking the wrong colour or font and getting it wrong in public." },
-    { "icon": "bottleneck", "title": "The bottleneck", "desc": "Every small asset stuck in a queue behind a busy designer, a slow tool, or one more approval." },
+    { "icon": "bottleneck", "title": "The bottleneck", "desc": "Every small asset stuck in a queue behind a busy designer, a slow tool or one more approval." },
     { "icon": "tollGate", "title": "The toll gate", "desc": "An account before you can start, a subscription that outlives the job and one more charge at the moment you try to download." }
   ],
   "matrix": [

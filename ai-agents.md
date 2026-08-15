@@ -10,7 +10,7 @@ Every tool is fully described by its URL. The agent's job is to build that URL (
 https://<host>/#/tool/<tool-id>?<input>=<value>&<input>=<value>
 ```
 
-Open it and the tool renders with those inputs applied. Add reserved params to control output and trigger a download. Same inputs → same output, always - so results are reproducible, auditable, and version-controllable.
+Open it and the tool renders with those inputs applied. Add reserved params to control output and trigger a download. Same inputs → same output, always - so results are reproducible, auditable and version-controllable.
 
 ![What /#/tool/qr-code?url=https://suse.com renders - the bare canvas, no chrome, straight from the parameters in the link](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26full&width=1440&height=900&dpi=192&waitMs=2200&format=svg&cropSelector=%23tool-canvas&walker=1&filename=auth-url-render&try=1)
 
@@ -23,7 +23,7 @@ Return the file URL.
 
 ## Discover a tool's inputs
 
-Don't guess parameters - read them. The tool's manifest (`tools/<id>/tool.json`) lists every input id, type, and default, or use the CLI:
+Don't guess parameters - read them. The tool's manifest (`tools/<id>/tool.json`) lists every input id, type and default, or use the CLI:
 
 ```bash
 npm run cli -- event-name-badge  # prints inputs, defaults, and supported formats
@@ -80,7 +80,7 @@ A few tools won't hand back a file this way:
 
 ## The MCP server (native endpoint)
 
-Beyond building URLs by hand, Lolly ships an optional **[Model Context Protocol](https://modelcontextprotocol.io) server** - a native endpoint any MCP client (an agent runtime, an IDE, a CLI, a hosted assistant) connects to directly. It exposes the catalogue and the render path as callable tools, so an agent can discover a tool, fill its declared inputs, and get back a finished file plus an editable `lolly.tools` link - with no app update, because tools sync to the server as data.
+Beyond building URLs by hand, Lolly ships an optional **[Model Context Protocol](https://modelcontextprotocol.io) server** - a native endpoint any MCP client (an agent runtime, an IDE, a CLI, a hosted assistant) connects to directly. It exposes the catalogue and the render path as callable tools, so an agent can discover a tool, fill its declared inputs and get back a finished file plus an editable `lolly.tools` link - with no app update, because tools sync to the server as data.
 
 Six verbs:
 
@@ -102,7 +102,7 @@ Six verbs:
 - **Animation** - `gif`, `apng`, `webp-anim`, `svg-anim` (vector), `webm`, `mp4`
 - **Documents & data** - `pptx` (PowerPoint), `html`, `md`, `txt`, `json`, `csv`, `ics`, `vcf`, `zip`
 
-Formats are **per-tool** - you can only request one a tool declares (`lolly_describe_tool` lists them). Ask a QR tool for `svg` and you get vector; ask an animated-ad tool for `mp4` and you get video - the call shape is identical either way.
+Formats are **per-tool** - you can only request one a tool declares (`lolly_describe_tool` lists them). Ask a QR tool for `svg` and you get vector; ask an animated-ad tool for `mp4` and you get video - the call is identical either way.
 
 ### Connect a client
 
@@ -114,7 +114,7 @@ The recommended endpoint is the **full** one - **`https://mcp.lolly.tools/mcp`**
 2. Leave the OAuth Client ID / Secret blank - the server registers your client automatically (dynamic client registration).
 3. The client auto-discovers the OAuth server and opens a consent page. Paste the access token and approve - done.
 
-Nothing is stored server-side: the client registration, the authorization code, and the tokens are all short-lived signed values verified with a shared secret on each call (PKCE-protected, so a leaked link can't be replayed).
+Nothing is stored server-side: the client registration, the authorization code and the tokens are all short-lived signed values verified with a shared secret on each call (PKCE-protected, so a leaked link can't be replayed).
 
 **A bearer token (CLI / any HTTP client).** The endpoint also accepts the raw token directly, so scripted clients skip the OAuth dance. Most MCP clients take a config entry like:
 
@@ -134,11 +134,11 @@ Nothing is stored server-side: the client registration, the authorization code, 
 
 ### A hosted add-on - not offline or edge
 
-The MCP server is the one part of Lolly that is a **server-side add-on**, not an on-device component. Producing the full format range - animations, print PDF, HTML-layout raster - means driving a **headless browser against a built web shell**, so the full endpoint runs as a hosted service and is **not suitable for offline or edge deployments**. That full endpoint is live at **`https://mcp.lolly.tools/mcp`**; the lightweight serverless endpoint at `lolly.tools/api/mcp` runs the browser-free tier only (vector, data, and PNG for SVG-native tools). The on-device shells - web PWA, desktop, mobile and CLI - remain the offline / air-gapped path. See the **[MCP Server](/info/mcp.html)** page for the full reference.
+The MCP server is the one part of Lolly that is a **server-side add-on**, not an on-device component. Producing the full format range - animations, print PDF, HTML-layout raster - means driving a **headless browser against a built web shell**, so the full endpoint runs as a hosted service and is **not suitable for offline or edge deployments**. That full endpoint is live at **`https://mcp.lolly.tools/mcp`**; the lightweight serverless endpoint at `lolly.tools/api/mcp` runs the browser-free tier only (vector, data and PNG for SVG-native tools). The on-device shells - web PWA, desktop, mobile and CLI - remain the offline / air-gapped path. See the **[MCP Server](/info/mcp.html)** page for the full reference.
 
 ## Why this beats prompting an image model
 
-- **Quality doesn't drift.** Layout, type, colour, and spacing are structural - hard-coded by the tool author, not prompted. A lazy model can't degrade them.
+- **Quality doesn't drift.** Layout, type, colour and spacing are structural - hard-coded by the tool author, not prompted. A lazy model can't degrade them.
 - **Cheap.** A parameterised URL is a handful of tokens versus thousands for a brief + generation - and the result is production-grade.
 - **Deterministic & auditable.** Every output is reproducible from its inputs; pin `_v` for byte-stable results across tool updates.
 - **Private by default.** It runs on the device - no customer data sent to a third-party model or service.
@@ -149,5 +149,5 @@ The MCP server is the one part of Lolly that is a **server-side add-on**, not an
 - **Compact encodings:** some tools define short `urlKey` aliases and tilde-delimited arrays to keep links short - see [URL Mode](/info/url-mode.html).
 - **Validate against the schema** before emitting a URL; unknown params are ignored and bad input values fall back to defaults, so a malformed call fails quietly rather than loudly.
 - **Device-local images** (user uploads) can't travel in a URL - agents should reference catalog assets by id, not local uploads.
-- **One tool, many outputs:** change `format`/`unit`/`width` to emit the same design as SVG, print PDF, and social MP4 from one set of inputs.
+- **One tool, many outputs:** change `format`/`unit`/`width` to emit the same design as SVG, print PDF and social MP4 from one set of inputs.
 - **Portable embed URL:** an agent can emit `https://lolly.tools/tool/<id>.<ext>?<inputs>` (image extensions `png`, `jpg`, `jpeg`, `webp`, `svg`, plus animated `gif` and `apng`) and drop it straight into HTML as an `<img src=…>`. Inside the live web view it renders locally - nothing fetched. On the open web the same URL is served for real by deployments that leave hot-link renders enabled - live on `lolly.art`, switched off on `lolly.tools` - for the browser-free formats (`svg` for every tool, `png` for SVG-native ones), so those links work as plain hot-linked images in READMEs and wikis - see [MCP Server](/info/mcp.html) for that endpoint's scope and current state.

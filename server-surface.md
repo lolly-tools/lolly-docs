@@ -1,29 +1,29 @@
 # Server Surface
 
 The complete inventory of Lolly's server-side components. This page exists so
-that one statement can be made precisely: **the core product — rendering,
-exporting, and verifying — runs entirely on your device**, and everything that
+that one statement can be made precisely: **the core product - rendering,
+exporting and verifying - runs entirely on your device**, and everything that
 does *not* run on your device is listed below, with what it does, what it
-holds, and what happens if you turn it off.
+holds and what happens if you turn it off.
 
 If a Lolly deployment exposes a network endpoint that is not on this page, it
 is not part of Lolly.
 
-## The shape of a deployment
+## What a deployment looks like
 
 A Lolly deployment is a **static web application** (the PWA the browser loads
 and then runs locally, offline-capable) plus **two optional server components**.
 Neither is in the path of normal use: opening a tool, editing, previewing,
-exporting, and verifying a file all complete with no request to either. A
+exporting and verifying a file all complete with no request to either. A
 deployment that omits both is a fully working Lolly.
 
 | Component | Route | Purpose | Optional? |
 |---|---|---|---|
 | Web shell | `/` (static files) | The app itself, served once, runs on-device | The app *is* this |
-| MCP endpoint | `/api/mcp` (and the hosted `mcp.lolly.tools`) | Lets AI agents discover and render tools over [MCP](https://modelcontextprotocol.io) | Yes — remove it and the app is unaffected |
-| Hot-link render | `GET /tool/<id>.<ext>` (part of the MCP function) | Renders a public catalogue tool from a plain URL — **public, unauthenticated by design** (public tool + catalogue data only, no Content Credentials) | Yes — **currently disabled on lolly.tools** (`LOLLY_DISABLE_RENDER_GET=1`, returns 404). Live on the lolly.art demo instance |
+| MCP endpoint | `/api/mcp` (and the hosted `mcp.lolly.tools`) | Lets AI agents discover and render tools over [MCP](https://modelcontextprotocol.io) | Yes - remove it and the app is unaffected |
+| Hot-link render | `GET /tool/<id>.<ext>` (part of the MCP function) | Renders a public catalogue tool from a plain URL - **public, unauthenticated by design** (public tool + catalogue data only, no Content Credentials) | Yes - **currently disabled on lolly.tools** (`LOLLY_DISABLE_RENDER_GET=1`, returns 404). Live on the lolly.art demo instance |
 | MCP OAuth | Discovery at `/.well-known/oauth-authorization-server` and `/.well-known/oauth-protected-resource`, plus the flow itself: `POST …/register`, `…/authorize`, `…/token` and a `GET …/authorize` consent page (all part of the MCP function) | Standard OAuth 2.1 registration, authorization and token exchange for MCP connectors | Removed with the MCP endpoint |
-| CA service | `/api/ca` — `GET /health`, `GET /root.pem`, `GET /auth/:provider`, `GET /callback/:provider`, `POST /email/start`, `POST /enroll` | Issues short-lived signing certificates so exports can carry a **verified identity** in their Content Credentials. `health` reports which OIDC providers a deployment has actually configured, so the app offers only buttons that work; `root.pem` serves the public root anyone can pin | Yes — without it, exports still sign, anonymously |
+| CA service | `/api/ca` - `GET /health`, `GET /root.pem`, `GET /auth/:provider`, `GET /callback/:provider`, `POST /email/start`, `POST /enroll` | Issues short-lived signing certificates so exports can carry a **verified identity** in their Content Credentials. `health` reports which OIDC providers a deployment has actually configured, so the app offers only buttons that work; `root.pem` serves the public root anyone can pin | Yes - without it, exports still sign, anonymously |
 
 ## MCP endpoint (`services/mcp`, `api/mcp`)
 
@@ -37,7 +37,7 @@ raster/PDF/animation/video.
 **Authentication.** MCP tool calls require OAuth 2.1 (as an MCP connector) or
 a bearer access token held by the operator. Two deliberate exceptions: the
 hot-link render route `GET /tool/<id>.<ext>` is public and unauthenticated
-(it serves only public tool + catalogue data, never signs output, and can be
+(it serves only public tool + catalogue data, never signs output and can be
 disabled with `LOLLY_DISABLE_RENDER_GET=1`), and an operator can opt the whole
 endpoint into anonymous mode with `LOLLY_MCP_ALLOW_ANONYMOUS=1` (off by
 default).
@@ -59,7 +59,7 @@ Full reference: [MCP Server](/info/mcp.html).
 
 **What it does.** Content Credentials **identity enrolment**. You verify an
 identity: OpenID Connect (Google, SUSE IdP), GitHub OAuth with a verified
-address, or an emailed magic link (inbox control). Your browser then generates a
+address or an emailed magic link (inbox control). Your browser then generates a
 **non-extractable** keypair on-device. The service issues a time-limited
 X.509 certificate that binds that public key to your verified identity. Your
 private key never leaves your device and never transits the service.
@@ -76,7 +76,7 @@ OIDC client secrets as deployment secrets.
 signed anonymously. That is the default anyway.
 
 Full reference: [Content Credentials Identity](/info/content-credentials-identity.html)
-and the [engineering deep-dive](/info/content-credentials-engineering.html).
+and the [engineering detail](/info/content-credentials-engineering.html).
 
 ## What is deliberately *not* here
 
@@ -88,7 +88,7 @@ and the [engineering deep-dive](/info/content-credentials-engineering.html).
   data. An automated test (`tests/no-trackers.test.ts`) enforces that no
   analytics or tracking SDK appears anywhere in the shipped source.
 - **No user accounts** in the app. Identity enrolment (above) is the only
-  sign-in anywhere, it is opt-in, and it produces a certificate on your
+  sign-in anywhere, it is opt-in and it produces a certificate on your
   device, not an account on a server.
 
 The complete list of every network request the *app* itself can make (fonts,
@@ -97,7 +97,7 @@ catalog sync, the optional endpoints above) is maintained in the
 
 ## For self-hosters
 
-Both components are ordinary processes you can run, omit, or replace. See
+Both components are ordinary processes you can run, omit or replace. See
 [Deployment](/info/deployment.html). If you operate them, you are the operator
 of record for their logging and data handling. The
 [Privacy Policy](/info/privacy.html) explains the split between what the

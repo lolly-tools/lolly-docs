@@ -3,12 +3,12 @@
 The engineering companion to [Content Credentials identity](/info/content-credentials-identity.html)
 (the user-facing page). This covers the device/CA architecture, the engine
 contracts, the CA service, the web-shell wiring, the one-time operator setup, the
-threat model, and the roadmap.
+threat model and the roadmap.
 
 > **Versioning.** CA-issued signing first landed at engine 1.11. The capability
 > bridge is additive-only, so everything here still holds, but the verifier has
 > grown since: it now reads **both C2PA 1.x and 2.x** claims (so credentials from
-> Gemini, Adobe, and other generators verify), Lolly **writes** 2.x by default, and
+> Gemini, Adobe and other generators verify), Lolly **writes** 2.x by default and
 > the trust list bundles the public C2PA/CAI anchors alongside the Lolly root. Read
 > the live `ENGINE_VERSION` in `engine/src/version.ts` and its changelog in `engine/CHANGELOG.md` rather
 > than trusting a pinned number here. Source line numbers are deliberately omitted
@@ -29,9 +29,9 @@ threat model, and the roadmap.
 
 **Enrollment is app-level. Signing reached the bridge later, deliberately.**
 No tool can start, observe or inspect enrolment: there is no `host.identity`,
-the profile UI owns the flow, and the ordinary export path consumes the signer
+the profile UI owns the flow and the ordinary export path consumes the signer
 inside the shell's own export implementation. What *is* on the bridge is
-`host.c2pa.sign` (v1.85, widened v1.104) - optional, additive, and **not** gated
+`host.c2pa.sign` (v1.85, widened v1.104) - optional, additive and **not** gated
 by a `capabilities` flag, so a tool feature-detects `host.c2pa?.sign`. It exists
 for the case where the tool, not the export pipeline, authors the output file: a
 redaction that must ship as a new work rather than carry the un-redacted
@@ -56,7 +56,7 @@ identity-adjacent surface. The relevant modules:
 
 ### `engine/src/x509.ts` (DER/X.509 authority)
 
-Pure module shared by the ephemeral path, the CA service, and tests. No DOM,
+Pure module shared by the ephemeral path, the CA service and tests. No DOM,
 `globalThis.crypto` only. It owns the DER writer helpers (`der`, `derSeq`,
 `derSet`, `derOctet`, `derUint`, `derOid`, `derTime`, `ecdsaRawToDer`) and
 `generateSigner` (c2pa.ts re-imports them - **byte-identical output**, so the
@@ -308,7 +308,7 @@ Notes:
 ## Web shell
 
 Everything below surfaces as one card in the export panel: the C2PA switch (plus
-its ephemeral lifetime picker), the pixel Imprint, and the opt-in durable mark,
+its ephemeral lifetime picker), the pixel Imprint and the opt-in durable mark,
 each gated per format by the predicates in `views/tool-actions.ts`.
 
 ![The Content protection card as the shell assembles it, with one switch per provenance mechanism rather than a single blanket toggle](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpng%26options%26c2pa%3D90%26imprint%3D1&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&css=%23tool-inputs%2C%23sidebar-utils%7Bdisplay%3Anone%7D&cropSelector=.export-protection&dark=1&filename=cc-export-protection)
@@ -403,7 +403,7 @@ would 501.
   it while the page is open, bounded by the cert lifetime. Expiry is the only
   recall mechanism - there is no revocation infrastructure, by design.
 - **CA key theft** → catastrophic for trust, as with any CA; mitigations:
-  env-only storage now, KMS/HSM at Tier 4, and short leaf lifetimes bound how
+  env-only storage now, KMS/HSM at Tier 4 and short leaf lifetimes bound how
   long any misissued certificate stays usable (there is no revocation to miss).
 - **Fork abuse** → forks can request certs only through our OIDC-gated,
   origin-allowlisted, rate-limitable endpoint, and only for identities they

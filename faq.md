@@ -4,7 +4,7 @@ Frequently asked questions shown in the accordion on the `/info` landing page.
 
 **How to maintain:** each `##` heading below is a question; everything beneath it
 (up to the next `##`) is the answer. Answers use the same lightweight markdown as
-the rest of the site - separate paragraphs with a blank line. Add, remove, or
+the rest of the site - separate paragraphs with a blank line. Add, remove or
 reorder questions here and re-run `npm run build:info` (or `npm run dev:web`).
 Everything above the first `##` (this title and these notes) is ignored by the build.
 
@@ -30,7 +30,7 @@ Anybody can distribute their own apps, the tools and configuration of those apps
 
 **Lolly** Because freedom is sweet.
 **Tools** are inactive when not being used. Not spying on you, running secret programs, 
-Put it to work, your orders, actions, and terms.
+Put it to work, your orders, actions and terms.
 
 **Lolly** is an Australian, New Zealand, British term for 'sweets' or 'candy'. Just like lollies, tools are very tasty for people needing them.
 
@@ -85,7 +85,7 @@ random website to perform one small mechanical operation:
 - "**merge these PDFs**" → uploads **two documents that should never share a server**
 
 These sites and their massive clone long-tail are **not trustworthy by default** with
-unknown retention, unknown jurisdictions, unknown subprocessors, and an ad/affiliate
+unknown retention, unknown jurisdictions, unknown subprocessors and an ad/affiliate
 business model that has every incentive to keep what you give them. The operation is
 trivial; the **content is the cost.** 
 
@@ -95,11 +95,11 @@ We win the war for governance with excellent convenience and service.
 
 ## Can Lolly edit and render my Figma, Penpot, Illustrator or InDesign files?
 
-Yes. Open **Design** and click **Import a design**: it accepts a native Figma **.fig** (Save local copy), a Penpot **.penpot** export, an Illustrator **.ai** or **.pdf**, an InDesign **.idml** (File → Export → InDesign Markup), or **any SVG** (the wide door - almost any design app exports it). No account, no plugin and no design app licence needed.
+Yes. Open **Design** and click **Import a design**: it accepts a native Figma **.fig** (Save local copy), a Penpot **.penpot** export, an Illustrator **.ai** or **.pdf**, an InDesign **.idml** (File → Export → InDesign Markup) or **any SVG** (the wide door - almost any design app exports it). No account, no plugin and no design app licence needed.
 
 ![Design's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
-Layers arrive as editable boxes on the open canvas: text stays retypable, shapes stay shapes, images join your own image library, and type and colours conform to the brand globals. Save it and the layout becomes a reusable, URL-addressable template anyone with Lolly can refill - and you can mix in live tools (a QR code, a chart) that re-render on load. From there it renders like anything else in Lolly - SVG, PDF, PNG and the rest, reproducible from its URL. See [Import a design](/info/design-import.html).
+Layers arrive as editable boxes on the open canvas: text stays retypable, shapes stay shapes, images join your own image library and type and colours conform to the brand globals. Save it and the layout becomes a reusable, URL-addressable template anyone with Lolly can refill - and you can mix in live tools (a QR code, a chart) that re-render on load. From there it renders like anything else in Lolly - SVG, PDF, PNG and the rest, reproducible from its URL. See [Import a design](/info/design-import.html).
 
 ## Where did the SUSE-branded tools go?
 
@@ -115,7 +115,7 @@ That line is drawn in the licence, not in a promise: anything that runs locally 
 
 The engine, the shells, the schemas and the brand-agnostic tools are open source; SUSE's trademarks and branded tools are the part that stays private, and they are already separated out. You can find an unbranded instance of Lolly at [lolly.ART](https://lolly.art).
 
-SUSE is an enterprise open source infrastructure company with more than three decades of platform leadership. Its products include enterprise-tier Linux, Cloud Native, Edge, and AI infrastructure solutions.
+SUSE is an enterprise open source infrastructure company with more than three decades of platform leadership. Its products include enterprise-tier Linux, Cloud Native, Edge and AI infrastructure solutions.
 
 From SUSE's perspective, this is about walking the talk on sovereignty and security. As of today, the likelihood SUSE productizes Lolly is near absolute zero.
 

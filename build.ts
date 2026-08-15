@@ -11,6 +11,22 @@ import { fileURLToPath } from 'node:url';
 import { generateOgImages } from './og-image.ts';
 import { LANGS, LANG_META, sortedLangs } from '../engine/src/lang.ts';
 import { readShotProvenance } from './shot-provenance.ts';
+import { scan as scanVernacular, staleAllows as staleVernacularAllows } from '../scripts/check-docs-vernacular.ts';
+
+// Deterministic vernacular + fingerprint-unicode gate (owner-mandated, no model
+// in the loop): the build refuses to produce /info from sources that carry a
+// banned phrase or character. Same scanner as tests/docs-vernacular.test.ts and
+// the standalone CLI - fix the copy, never this gate.
+{
+  const vernacularHits = scanVernacular();
+  const staleAllowEntries = staleVernacularAllows();
+  if (vernacularHits.length || staleAllowEntries.length) {
+    for (const v of vernacularHits) console.error(`✗ ${v.file}:${v.line} [${v.what}] ${v.excerpt}`);
+    for (const st of staleAllowEntries) console.error(`✗ stale allow entry: ${st}`);
+    console.error(`build:info refused: ${vernacularHits.length} vernacular/unicode violation(s), ${staleAllowEntries.length} stale allow(s) - see scripts/check-docs-vernacular.ts`);
+    process.exit(1);
+  }
+}
 // Banked docs art (plans/105 §6). The strip/namespace + composition live in their
 // own module because this one runs build() on import: a test can exercise them
 // there without building the site (see tests/docs-figures.test.ts).
@@ -2137,7 +2153,7 @@ a:hover{text-decoration:underline}
    this with a more specific selector. Keeps a missing/renamed rule from ever ballooning. */
 svg{width:1em;height:1em;flex:none}
 code{font-family:'SUSE Mono','SF Mono','Fira Code',monospace;font-size:.875em;background:hsl(var(--muted));padding:.15em .35em;border-radius:3px}
-pre{background:hsl(var(--muted));color:#0d1f17;padding:1.25rem 1.5rem;border-radius:8px;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.875rem;line-height:1.5;margin-bottom:1.25rem; box-shadow: inset 0 .2rem .4rem #0002, 0 1px #fff2}
+pre{background:hsl(var(--muted));color:hsl(var(--foreground));padding:1.25rem 1.5rem;border-radius:8px;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere;font-size:.875rem;line-height:1.5;margin-bottom:1.25rem; box-shadow: inset 0 .2rem .4rem #0002, 0 1px #fff2}
 pre code{background:none;padding:0;color:inherit;font-size:1em}
 h1,h2,h3,h4{line-height:1.25;font-weight:700}
 h2{font-size:2rem;letter-spacing:0;font-weight:900;text-transform:uppercase}
@@ -2499,8 +2515,8 @@ html[data-theme="dark"] .formats-head h2{color:hsl(var(--foreground))}
 .fmt-chip:focus-visible{outline:2px solid var(--green);outline-offset:2px}
 .fmt-chip--both{background:var(--green);color:hsl(var(--on-band-dark))}
 .fmt-chip .rt-mark{margin-right:.3em}
-html[data-theme="dark"] .fmt-chip{background:rgba(48,186,120,.16);color:#7fe7b4}
-html[data-theme="dark"] .fmt-chip--both{background:var(--green);color:#04140c}
+html[data-theme="dark"] .fmt-chip,html[data-theme="brand"] .fmt-chip{background:rgba(48,186,120,.16);color:#7fe7b4}
+html[data-theme="dark"] .fmt-chip--both,html[data-theme="brand"] .fmt-chip--both{background:var(--green);color:#04140c}
 /* Educational dialog */
 .fmt-dialog{border:0;border-radius:18px;padding:0;width:min(94vw,38rem);max-height:88vh;overflow:auto;margin:auto;color:var(--dark);background:hsl(var(--popover));box-shadow:0 30px 80px rgba(12,50,44,.34)}
 .fmt-dialog::backdrop{background:rgba(8,20,15,.5);backdrop-filter:blur(3px)}
@@ -2801,14 +2817,18 @@ html[data-theme="dark"] .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
 .docs-sidebar a:hover .sidebar-ic.is-inclusive,.docs-sidebar a.active .sidebar-ic.is-inclusive{color:#a83c6f}
 /* Dark mode: a tint, not a fill - low-alpha over the near-black page so the row
    glows rather than becoming a slab, and the glyph lifts to stay legible. */
-[data-theme="dark"] .docs-sidebar a:has(.sidebar-ic.is-ai){background:rgba(139,124,246,.13)}
-[data-theme="dark"] .docs-sidebar a:has(.sidebar-ic.is-inclusive){background:rgba(244,114,182,.12)}
-[data-theme="dark"] .docs-sidebar a .sidebar-ic.is-ai{color:#b9a8f7}
-[data-theme="dark"] .docs-sidebar a .sidebar-ic.is-inclusive{color:#f2a9c9}
-[data-theme="dark"] .docs-sidebar a:hover:has(.sidebar-ic.is-ai),[data-theme="dark"] .docs-sidebar a.active:has(.sidebar-ic.is-ai){background:rgba(139,124,246,.2);color:#cbbdff}
-[data-theme="dark"] .docs-sidebar a:hover:has(.sidebar-ic.is-inclusive),[data-theme="dark"] .docs-sidebar a.active:has(.sidebar-ic.is-inclusive){background:rgba(244,114,182,.19);color:#ffc2dd}
-[data-theme="dark"] .docs-sidebar a:hover .sidebar-ic.is-ai,[data-theme="dark"] .docs-sidebar a.active .sidebar-ic.is-ai{color:#cbbdff}
-[data-theme="dark"] .docs-sidebar a:hover .sidebar-ic.is-inclusive,[data-theme="dark"] .docs-sidebar a.active .sidebar-ic.is-inclusive{color:#ffc2dd}
+/* AI/inclusive sidebar chips: the base rules paint a light lilac/pink chip with
+   dark ink, which on a dark ground (dark AND brand) would be light-link-text on
+   a light chip. Brand has no overrides of its own, so it takes the dark chip
+   treatment too. */
+[data-theme="dark"] .docs-sidebar a:has(.sidebar-ic.is-ai),[data-theme="brand"] .docs-sidebar a:has(.sidebar-ic.is-ai){background:rgba(139,124,246,.13)}
+[data-theme="dark"] .docs-sidebar a:has(.sidebar-ic.is-inclusive),[data-theme="brand"] .docs-sidebar a:has(.sidebar-ic.is-inclusive){background:rgba(244,114,182,.12)}
+[data-theme="dark"] .docs-sidebar a .sidebar-ic.is-ai,[data-theme="brand"] .docs-sidebar a .sidebar-ic.is-ai{color:#b9a8f7}
+[data-theme="dark"] .docs-sidebar a .sidebar-ic.is-inclusive,[data-theme="brand"] .docs-sidebar a .sidebar-ic.is-inclusive{color:#f2a9c9}
+[data-theme="dark"] .docs-sidebar a:hover:has(.sidebar-ic.is-ai),[data-theme="dark"] .docs-sidebar a.active:has(.sidebar-ic.is-ai),[data-theme="brand"] .docs-sidebar a:hover:has(.sidebar-ic.is-ai),[data-theme="brand"] .docs-sidebar a.active:has(.sidebar-ic.is-ai){background:rgba(139,124,246,.2);color:#cbbdff}
+[data-theme="dark"] .docs-sidebar a:hover:has(.sidebar-ic.is-inclusive),[data-theme="dark"] .docs-sidebar a.active:has(.sidebar-ic.is-inclusive),[data-theme="brand"] .docs-sidebar a:hover:has(.sidebar-ic.is-inclusive),[data-theme="brand"] .docs-sidebar a.active:has(.sidebar-ic.is-inclusive){background:rgba(244,114,182,.19);color:#ffc2dd}
+[data-theme="dark"] .docs-sidebar a:hover .sidebar-ic.is-ai,[data-theme="dark"] .docs-sidebar a.active .sidebar-ic.is-ai,[data-theme="brand"] .docs-sidebar a:hover .sidebar-ic.is-ai,[data-theme="brand"] .docs-sidebar a.active .sidebar-ic.is-ai{color:#cbbdff}
+[data-theme="dark"] .docs-sidebar a:hover .sidebar-ic.is-inclusive,[data-theme="dark"] .docs-sidebar a.active .sidebar-ic.is-inclusive,[data-theme="brand"] .docs-sidebar a:hover .sidebar-ic.is-inclusive,[data-theme="brand"] .docs-sidebar a.active .sidebar-ic.is-inclusive{color:#ffc2dd}
 /* Icon bullet lists (the <!--i:key--> md marker — policy pages). Logical
    properties so the Arabic build mirrors correctly. */
 .docs-content ul.icon-list{list-style:none;padding-inline-start:0;display:flex;flex-direction:column;gap:.9rem}
@@ -2955,7 +2975,7 @@ html[data-theme="dark"] .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
    two inlined-vector blocks that read differently would be two grammars for one idea).
    The credential rides INSIDE the figcaption rather than on the artwork's corner: a
    figure's provenance is part of what the caption says. */
-.docs-figure{position:relative;margin:2.5rem auto;max-width:100%)}
+.docs-figure{position:relative;margin:2.5rem auto;max-width:100%;min-width:0}
 .docs-figure-art{position:relative;border-radius:1.2em;overflow:hidden}
 .docs-figure-art>svg{display:block;width:100%;height:auto}
 .docs-figure figcaption{margin-top:.9rem;font-size:.8125rem;color:var(--muted);text-align:center;
@@ -3611,9 +3631,14 @@ footer .founded-badge{margin-top:.5rem}
 .nav-theme-toggle{background:none;border:none;cursor:pointer;color:hsl(var(--on-band-dark) / .65);width:2rem;height:2rem;display:flex;align-items:center;justify-content:center;border-radius:5px;padding:.25rem;flex-shrink:0;margin-left:.25rem}
 .nav-theme-toggle:hover{color:hsl(var(--on-band-dark));background:rgba(255,255,255,.1)}
 .nav-theme-toggle svg{width:1.1rem;height:1.1rem;pointer-events:none}
-.nav-theme-toggle .icon-sun{display:none}
-[data-theme="dark"] .nav-theme-toggle .icon-moon{display:none}
-[data-theme="dark"] .nav-theme-toggle .icon-sun{display:block}
+/* Show the ACTIVE theme's glyph. Default (light, incl. no [data-theme]) = sun;
+   dark = moon; brand = palette. Each theme hides the other two. */
+.nav-theme-toggle .icon-moon,.nav-theme-toggle .icon-brand{display:none}
+.nav-theme-toggle .icon-sun{display:block}
+[data-theme="dark"] .nav-theme-toggle .icon-sun{display:none}
+[data-theme="dark"] .nav-theme-toggle .icon-moon{display:block}
+[data-theme="brand"] .nav-theme-toggle .icon-sun{display:none}
+[data-theme="brand"] .nav-theme-toggle .icon-brand{display:block}
 
 /* Dark mode. The token redefinitions that used to live here are gone: the DOCS_BRIDGE
    above maps --text/--muted/--border/--pale/--page onto the app's [data-theme]-driven
@@ -3652,20 +3677,22 @@ footer .founded-badge{margin-top:.5rem}
 [data-theme="dark"] footer{border-top-color:var(--border)}
 [data-theme="dark"] .docs-content h1,[data-theme="dark"] .docs-content h2,[data-theme="dark"] .docs-content h3{color:var(--text)}
 [data-theme="dark"] th{color:var(--text)}
-/* Code in dark mode: the base code/pre rules hardcode light backgrounds, so in
-   dark mode inline code became light-text-on-light-bg (invisible). Give chips a
-   dark surface + light text, and the pre block a dark box. The third rule keeps
-   code inside pre background-free - [data-theme="dark"] .docs-content code would otherwise
+/* Code on a dark ground (dark AND brand — brand is a dark-teal theme with no
+   [data-theme="brand"] overrides of its own, so it inherits the base rules; the
+   base pre now uses hsl(var(--foreground)) so it is already legible, and these
+   add the dark box + border for parity). Give inline code a dark surface + light
+   text, and the pre block a dark box. The last rule keeps code inside pre
+   background-free - [data-theme="dark"] .docs-content code would otherwise
    out-specify the base "pre code background none" reset. */
-[data-theme="dark"] .docs-content code{background:hsl(var(--muted));color:var(--text)}
-[data-theme="dark"] .docs-content pre{background:hsl(var(--muted));color:var(--text);border:1px solid var(--border)}
+[data-theme="dark"] .docs-content code,[data-theme="brand"] .docs-content code{background:hsl(var(--muted));color:var(--text)}
+[data-theme="dark"] .docs-content pre,[data-theme="brand"] .docs-content pre{background:hsl(var(--muted));color:var(--text);border:1px solid var(--border)}
 /* The Warde page sets its two verse blocks as an inscription rather than as code.
    Scoped to the page so no other fenced block is touched. Centred and letterspaced
    because that is what the 1932 broadside and the 1940 bronze both do — the poem was
    cut in capitals for a titling face, and reading it as a listing loses the shape. */
 .page-beatrice-warde .docs-content pre{font-family:'Cinzel',Georgia,serif;font-size:1.0625rem;line-height:2.05;letter-spacing:.055em;text-align:center;background:linear-gradient(#fbfaf7,#f4f2ec);color:#25313a;padding:2.5rem 1.5rem;border-radius:10px;box-shadow:inset 0 0 0 1px #0000000f,0 1px 2px #0000000a;white-space:pre-wrap;text-wrap:balance}
 .page-beatrice-warde .docs-content pre code{font-family:inherit;font-size:inherit;background:none;padding:0}
-[data-theme="dark"] .page-beatrice-warde .docs-content pre{background:linear-gradient(#12271d,#0d2016);color:#e8f0ea;box-shadow:inset 0 0 0 1px #ffffff14}
+[data-theme="dark"] .page-beatrice-warde .docs-content pre,[data-theme="brand"] .page-beatrice-warde .docs-content pre{background:linear-gradient(#12271d,#0d2016);color:#e8f0ea;box-shadow:inset 0 0 0 1px #ffffff14}
 .doc-audio{margin:0 0 .5rem;padding:0}
 .doc-audio audio{width:100%;height:40px;display:block}
 /* An audiogram MP4 is square (1080²) and would swamp the column at full width —
@@ -3726,15 +3753,23 @@ footer .founded-badge{margin-top:.5rem}
 
 const THEME_SVG_MOON = `<svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
 const THEME_SVG_SUN  = `<svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`;
-const THEME_TOGGLE   = `<button class="nav-theme-toggle" aria-label="Toggle dark mode" title="Toggle dark/light mode">${THEME_SVG_MOON}${THEME_SVG_SUN}</button>`;
+// The third theme: the app's mid-toned, palette-driven 'brand' chrome (theme.ts
+// THEME_ICONS.brand). A painter's palette so the three glyphs read at a glance.
+const THEME_SVG_BRAND = `<svg class="icon-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a10 10 0 1 1 10-10c0 2.5-2 3-3.5 3H16a2 2 0 0 0-1 3.75A1.3 1.3 0 0 1 12 22z"/><circle cx="13.5" cy="6.5" r=".8"/><circle cx="17.5" cy="10.5" r=".8"/><circle cx="8.5" cy="7.5" r=".8"/><circle cx="6.5" cy="12.5" r=".8"/></svg>`;
+// Icon-only cycle button showing the ACTIVE theme's glyph (CSS below picks which,
+// off [data-theme]) — matching the app's createThemeToggle. Clicking steps
+// light → dark → brand → light (THEME_INTERACT_SCRIPT).
+const THEME_TOGGLE   = `<button class="nav-theme-toggle" aria-label="Switch theme (light, dark, brand)" title="Switch theme — light / dark / brand">${THEME_SVG_SUN}${THEME_SVG_MOON}${THEME_SVG_BRAND}</button>`;
 
 // The theme lives on [data-theme] (the app's mechanism, so the inlined tokens.css themes),
 // and the legacy `.dark` CLASS is kept in lock-step with it — purely so the banked masthead
 // canvases (docs/mastheads/*.html), which detect dark via classList.contains('dark') + a
-// MutationObserver on the class attribute, keep theme-switching without being re-signed. New
+// MutationObserver on the class attribute, keep theme-switching without being re-signed. The
+// 'brand' theme is a DARK ground (tokens.css [data-theme="brand"] declares color-scheme:dark),
+// so it carries the `.dark` class too — the mastheads render their dark palette under it. New
 // mastheads read [data-theme] per dev-docs/docs-masthead-gemini-prompt.md; once the bank is
 // re-baked on that prompt this class shim can go.
-const THEME_INIT_SCRIPT = `<script>(function(){var c=localStorage.getItem('theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches;if(c==='dark'||(c!=='light'&&s)){var r=document.documentElement;r.dataset.theme='dark';r.classList.add('dark');}})();</script>`;
+const THEME_INIT_SCRIPT = `<script>(function(){var c=localStorage.getItem('theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches;var t=(c==='light'||c==='dark'||c==='brand')?c:(s?'dark':'light');var r=document.documentElement;r.dataset.theme=t;r.classList.toggle('dark',t==='dark'||t==='brand');})();</script>`;
 
 // Pre-paint, beside the theme flag and for the same reason: it decides how the
 // first frame is painted. It only ARMS the screenshot motion — SHOT_MOTION_SCRIPT
@@ -3772,7 +3807,7 @@ const FORMATS_DIALOG_SCRIPT = `<script>(function(){
     if(e.target===dlg)dlg.close();
   });
 })();</script>`;
-const THEME_INTERACT_SCRIPT = `<script>(function(){var btn=document.querySelector('.nav-theme-toggle');if(!btn)return;btn.addEventListener('click',function(){var d=document.documentElement.dataset.theme!=='dark';var r=document.documentElement;r.dataset.theme=d?'dark':'light';r.classList.toggle('dark',d);localStorage.setItem('theme',d?'dark':'light');});window.matchMedia('(prefers-color-scheme:dark)').addEventListener('change',function(e){if(!localStorage.getItem('theme')){var r=document.documentElement;r.dataset.theme=e.matches?'dark':'light';r.classList.toggle('dark',e.matches);}});})();</script>`;
+const THEME_INTERACT_SCRIPT = `<script>(function(){var order=['light','dark','brand'];var btn=document.querySelector('.nav-theme-toggle');if(!btn)return;function apply(t){var r=document.documentElement;r.dataset.theme=t;r.classList.toggle('dark',t==='dark'||t==='brand');localStorage.setItem('theme',t);}btn.addEventListener('click',function(){var cur=document.documentElement.dataset.theme||'light';var i=order.indexOf(cur);apply(order[i<0?0:(i+1)%order.length]);});window.matchMedia('(prefers-color-scheme:dark)').addEventListener('change',function(e){if(!localStorage.getItem('theme')){var r=document.documentElement;r.dataset.theme=e.matches?'dark':'light';r.classList.toggle('dark',e.matches);}});})();</script>`;
 
 const HAM_BTN = `<button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation" aria-expanded="false"><svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg><svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>`;
 
@@ -4396,10 +4431,11 @@ const HERO_CANVAS_SCRIPT = `<script>${CHIP_FIELD_JS}(function(){
  * The article masthead's instance of the same field.
  *
  * The effect was built for one dark plate and hardcoded to it (#1c4a2e chips,
- * #30ba78 labels, color-dodge). Docs pages are read in both themes, so here the
+ * #30ba78 labels, color-dodge). Docs pages are read in every theme, so here the
  * palette comes from the page's own tokens and the chips are RE-BAKED when the
- * theme changes — the toggle stamps [data-theme="dark"] on <html>, and a reader on "system" gets
- * the same flip from the OS. Blend + opacity are CSS's job (.docs-mast-canvas), so
+ * theme changes — the toggle stamps [data-theme] (light/dark/brand) on <html>, and a
+ * reader on "system" gets the same flip from the OS; palette() treats brand as a dark
+ * ground. Blend + opacity are CSS's job (.docs-mast-canvas), so
  * the JS only ever decides two colours.
  */
 const DOCS_MASTHEAD_SCRIPT = `<script>${CHIP_FIELD_JS}(function(){
@@ -4410,7 +4446,8 @@ const DOCS_MASTHEAD_SCRIPT = `<script>${CHIP_FIELD_JS}(function(){
     return v||fallback;
   }
   function palette(){
-    var dark=document.documentElement.dataset.theme==='dark';
+    var th=document.documentElement.dataset.theme;
+    var dark=th==='dark'||th==='brand';  // brand is a dark ground too
     // Dark: the landing's own chip fill over the dark band, under color-dodge —
     // the same glow the front door has. Light: a mint chip on a near-white band,
     // normal blend, so the field reads as watermark rather than decoration.

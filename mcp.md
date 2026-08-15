@@ -1,6 +1,6 @@
 # The Lolly MCP server
 
-Lolly ships a native **[Model Context Protocol](https://modelcontextprotocol.io) server** - a single endpoint any MCP client (an agent runtime, an IDE, a CLI, a hosted assistant) connects to directly. It exposes the tool catalogue and the render path as callable tools, so an agent can discover a tool, fill its declared inputs, and get back a finished file plus an editable `lolly.tools` link. Because tools sync to the server as **data**, new tools appear with no server update.
+Lolly ships a native **[Model Context Protocol](https://modelcontextprotocol.io) server** - a single endpoint any MCP client (an agent runtime, an IDE, a CLI, a hosted assistant) connects to directly. It exposes the tool catalogue and the render path as callable tools, so an agent can discover a tool, fill its declared inputs and get back a finished file plus an editable `lolly.tools` link. Because tools sync to the server as **data**, new tools appear with no server update.
 
 It is the programmatic sibling of [driving Lolly from a URL](/info/ai-agents.html): same render path, same reproducible output - just reached over MCP instead of a hand-built link.
 
@@ -10,8 +10,8 @@ The render path has two tiers, so there are two endpoints. **They share the same
 
 | Endpoint | Tier | Produces |
 |---|---|---|
-| `https://mcp.lolly.tools/mcp` | **Full** (headless browser) | **Everything** - vector, all raster (`png`/`jpg`/`webp`/…), print PDF (incl. CMYK + crop marks), and animation/video (`gif`/`apng`/`webm`/`mp4`). |
-| `https://lolly.tools/api/mcp` | **Lightweight** (serverless, no browser) | Vector (`svg`/`emf`/`eps`/`eps-cmyk`/`dxf`), data/text formats (`html`/`md`/`txt`/`json`/`csv`/`ics`/`vcf`), and `png` for SVG-native tools. (Print PDF needs the full endpoint's browser.) |
+| `https://mcp.lolly.tools/mcp` | **Full** (headless browser) | **Everything** - vector, all raster (`png`/`jpg`/`webp`/…), print PDF (incl. CMYK + crop marks) and animation/video (`gif`/`apng`/`webm`/`mp4`). |
+| `https://lolly.tools/api/mcp` | **Lightweight** (serverless, no browser) | Vector (`svg`/`emf`/`eps`/`eps-cmyk`/`dxf`), data/text formats (`html`/`md`/`txt`/`json`/`csv`/`ics`/`vcf`) and `png` for SVG-native tools. (Print PDF needs the full endpoint's browser.) |
 
 Use the **full** endpoint (`mcp.lolly.tools`) unless you have a reason not to - it is a superset. The lightweight endpoint runs browser-free on the same infrastructure as `lolly.tools`, and is handy for quick vector/data work.
 
@@ -48,12 +48,12 @@ Operators who don't want a public render surface switch the route off entirely w
 | Tool | Does |
 |---|---|
 | `lolly_list_tools` | List / search the catalogue (by text, status, category, format, capability). |
-| `lolly_describe_tool` | One tool's full input JSON Schema, supported formats, canvas size, and examples. |
+| `lolly_describe_tool` | One tool's full input JSON Schema, supported formats, canvas size and examples. |
 | `lolly_build_url` | Build a shareable, editable link + raw render URL - **without** rendering. |
 | `lolly_render` | Render a tool to a file - returns the bytes plus the editable link. |
 | `lolly_transform` | Run an on-device file utility (`strip-data`, `compress-pdf`) on a file you supply. |
 | `lolly_redact` | Destroy regions of an image, SVG or PDF you supply. Takes the same instruction string a share link carries (`bars=1,40,60,200,24~…`), so one string can be applied to every file of an identical layout. The tool rebuilds the file and re-checks its own output; a failed check returns an error with no file attached. |
-| `lolly_verify` | Verify a file's Content Credentials (C2PA): was it genuinely made with Lolly, who signed it, and has it changed since export. Returns the verdict, signer identity, edit history and embedded metadata (including any AI-generated declaration and appended-data flags) - the same C2PA verifier as the CLI's `lolly validate`. (The web verify page's pixel-level reads - the Lolly Imprint, SEAL, the opt-in deep scan - are interactive, web-only.) The file is checked in-process and never stored. |
+| `lolly_verify` | Verify a file's Content Credentials (C2PA): was it genuinely made with Lolly, who signed it and has it changed since export. Returns the verdict, signer identity, edit history and embedded metadata (including any AI-generated declaration and appended-data flags) - the same C2PA verifier as the CLI's `lolly validate`. (The web verify page's pixel-level reads - the Lolly Imprint, SEAL, the opt-in deep scan - are interactive, web-only.) The file is checked in-process and never stored. |
 
 The intended flow is `lolly_list_tools` → `lolly_describe_tool` (read the exact input schema) → `lolly_render`; `lolly_verify` closes the loop when an agent needs to prove a file it holds is an untouched Lolly export.
 
@@ -98,7 +98,7 @@ The intended pairing: read `lolly://assets` once, then pass a real id to any `as
 The server also publishes **MCP prompts**, for clients that surface them as slash-commands or quick actions:
 
 - **`create-branded-asset`** - the generic guided workflow: give it a plain-language `brief` (and optionally a `format`) and it walks the agent through pick a tool → read its schema → render → share the editable link.
-- **One prompt per featured tool**, named by tool id and derived from the live catalog at request time: its arguments are the tool's inputs (required ones first), its description the tool's blurb, and its message includes the tool's example looks. Nothing is hardcoded, so a newly featured tool gets a prompt for free - and a pinned prompt keeps resolving even if the tool later leaves the featured set (only the *listing* is curated).
+- **One prompt per featured tool**, named by tool id and derived from the live catalog at request time: its arguments are the tool's inputs (required ones first), its description the tool's blurb and its message includes the tool's example looks. Nothing is hardcoded, so a newly featured tool gets a prompt for free - and a pinned prompt keeps resolving even if the tool later leaves the featured set (only the *listing* is curated).
 
 ## Connect a client
 
@@ -144,15 +144,15 @@ During local development you can also run the server over **stdio** - no token n
 ## Authentication & security
 
 - **Fail-closed.** With no token configured the endpoint returns `401` - it never silently becomes an open server.
-- **Stateless OAuth 2.1.** The client registration, authorization code, and access/refresh tokens are all short-lived **signed values** verified with a shared secret on each call - nothing is stored server-side. PKCE (S256) protects the flow, so a captured link can't be replayed.
+- **Stateless OAuth 2.1.** The client registration, authorization code and access/refresh tokens are all short-lived **signed values** verified with a shared secret on each call - nothing is stored server-side. PKCE (S256) protects the flow, so a captured link can't be replayed.
 - **The token stays out of band.** It is the bearer for scripted clients and the passphrase on the consent page; it never appears in a render URL or a log line.
 
 ## Reproducibility: what is and is not byte-stable
 
-Every render is reproducible in the sense that matters for design work: the inputs are the whole state, they travel as a link, and re-rendering them gives the same picture. Byte-for-byte equality is a narrower promise, and it is the same one the [CLI](/info/cli.html#how-far-the-same-goes-byte-for-byte) documents, because both surfaces drive the same engine:
+Every render is reproducible in the sense that matters for design work: the inputs are the whole state, they travel as a link and re-rendering them gives the same picture. Byte-for-byte equality is a narrower promise, and it is the same one the [CLI](/info/cli.html#how-far-the-same-goes-byte-for-byte) documents, because both surfaces drive the same engine:
 
-- **Byte-stable**: `svg`, `emf`, `eps`, `dxf`, the data formats `json`/`csv`/`vcf`/`md`/`txt`, and `png` from an SVG-native tool.
-- **Not byte-stable**: `ics` (a required `DTSTAMP`), `pdf` (`/CreationDate` and `/ModDate` in every file), and everything the headless-browser tier paints and encodes - `jpg`, `webp`, HTML-layout `png`, `gif`/`apng`/`webm`/`mp4`. Anything carrying Content Credentials is signed with a fresh timestamp by design.
+- **Byte-stable**: `svg`, `emf`, `eps`, `dxf`, the data formats `json`/`csv`/`vcf`/`md`/`txt` and `png` from an SVG-native tool.
+- **Not byte-stable**: `ics` (a required `DTSTAMP`), `pdf` (`/CreationDate` and `/ModDate` in every file) and everything the headless-browser tier paints and encodes - `jpg`, `webp`, HTML-layout `png`, `gif`/`apng`/`webm`/`mp4`. Anything carrying Content Credentials is signed with a fresh timestamp by design.
 
 So do not build a cache key or a CI gate on the digest of a PDF or a browser-tier raster. Compare those by re-rendering and inspecting.
 
@@ -167,4 +167,4 @@ You can run the full server yourself - including fully air-gapped - as a contain
 - **Quality doesn't drift.** Layout, type, colour and spacing are structural - hard-coded by the tool author, not prompted. A lazy model can't degrade them.
 - **Cheap.** A tool call is a handful of tokens versus thousands for a brief + generation - and the result is production-grade.
 - **Reproducible & auditable.** The same inputs give the same design every time, and the inputs travel with it as a link anyone can re-open and re-render. (Byte-for-byte is a narrower promise - see below.)
-- **One design, many outputs.** Change `format`/`unit`/`width` to emit the same design as SVG, print PDF, and a social MP4 from one set of inputs.
+- **One design, many outputs.** Change `format`/`unit`/`width` to emit the same design as SVG, print PDF and a social MP4 from one set of inputs.

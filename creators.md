@@ -1,8 +1,8 @@
 # Lolly for Creators
 
-You want to make something good, quickly, and have it come out right. Lolly is built for exactly that: fill in a few fields, get a finished file - the layout, the type, the rules are enforced by the tool, not by your eye (unless you want to - then you have a media powerhouse at your fingertips). No design software, no waiting. It runs on your own device and works offline.
+You want to make something good, quickly and have it come out right. Lolly is built for exactly that: fill in a few fields, get a finished file - the layout, the type, the rules are enforced by the tool, not by your eye (unless you want to - then you have a media powerhouse at your fingertips). No design software, no waiting. It runs on your own device and works offline.
 
-**What's in it for you:** you ship in minutes and it looks like you spent hours. You're never stuck waiting on a designer, and because the brand rules are baked in, it's never your name on the off-brand asset. You just look fast, polished, and reliable.
+**What's in it for you:** you ship in minutes and it looks like you spent hours. You're never stuck waiting on a designer, and because the brand rules are baked in, it's never your name on the off-brand asset. You just look fast, polished and reliable.
 
 This page tells you everything you need to know about getting the most out of Lolly.
 
@@ -11,7 +11,7 @@ This page tells you everything you need to know about getting the most out of Lo
 ## Why Lolly - your advantages
 
 - **Finished, not fiddly.** The tool already knows the fonts, the colours, the logo, the spacing. You bring the words; it hands back the asset. Nothing to second-guess.
-- **Correct by construction.** Design rules, layout constraints, and running logic live in the template - output can't drift from spec unless the tool's author deliberately leaves something open. Wild creative range, inside guard-rails that hold.
+- **Correct by construction.** Design rules, layout constraints and running logic live in the template - output can't drift from spec unless the tool's author deliberately leaves something open. Wild creative range, inside guard-rails that hold.
 - **One source, every format.** The same design exports as SVG, print-ready PDF, high-res PNG, or 60fps video. Make it once; ship it everywhere.
 - **Infinite permutations.** Localise a card into a dozen languages, generate every size for every placement, swap a lockup across forty campaigns - all from one design, driven by a spreadsheet.
 - **It's yours, offline, private.** Your work stays on your device - no account needed, nothing uploaded to make or export an asset, no licence to audit. Close the laptop lid on a plane and keep working. (Two optional server add-ons exist and can be ignored entirely - see [Server Surface](/info/server-surface.html).)
@@ -22,7 +22,7 @@ This page tells you everything you need to know about getting the most out of Lo
 
 ## How it compares
 
-Lolly isn't trying to be Canva or Figma. It sits where *rules, repeatability, and hard constraints matter more than freehand flexibility* - turning design decisions into tools your whole team can use without you in the loop for every asset.
+Lolly isn't trying to be Canva or Figma. It sits where *rules, repeatability and hard constraints matter more than freehand flexibility* - turning design decisions into tools your whole team can use without you in the loop for every asset.
 
 | | Canva | Brand portals | Illustrator | Figma / Penpot | **Lolly** |
 |---|---|---|---|---|---|
@@ -72,10 +72,10 @@ Author *tools*, not files: build the thing that generates 10,000 cards rather th
 ## Touches you'll notice
 
 - **Print, done right.** Real physical units (mm/cm/in/pt) and DPI, bleed and crop marks, CMYK and PDF/X-4 output-intent - a print shop gets exactly what it needs. See [Exporting](/info/exporting.html#size-print-units).
-- **Video and motion.** Export WebM/MP4 (with audio tracks), animated PNG/WebP and animated SVG - from the same template that makes your stills. **Sequence Studio** goes further: a real timeline under the canvas, with a magnetic row of clips, free overlay lanes, trim and split, transition presets, voiceover recording and a music mix - rendered out as MP4, WebM, GIF or APNG by a deterministic compositor rather than a screen recording. Lottie files come *in* as animated assets and render out to any of those. Above the clips sit **keyframes**: pose a box at one instant, lift it off the page with real depth, and fly a camera over the result. See [Using Lolly → Timeline](/info/using.html#timeline-sequence-studio) and [Animating](/info/animating.html).
-- **Audio.** Record a voice note and save it as MP3 (or its native M4A/OGG/WebM), all on-device - and bring in MP3, WAV, OGG, M4A, FLAC, MIDI, or tracker modules (MOD/XM/IT/…) as a music bed under a video or an ambient track in Neurospicy Mode.
-- **Draw, don't settle.** The Design tool has a real **pen**: click to place points, drag to curve, and pick the kind of curve that runs through them. Combine shapes with **union, subtract, intersect and exclude**, outline a stroke, offset a silhouette, simplify a path - the geometry is exact Bezier maths, so a shape you draw stays crisp at any size and renders identically from a link or the CLI. See [Using Lolly → Drawing your own shapes](/info/using.html#drawing-your-own-shapes-the-pen).
-- **Editable vectors.** SVG, EPS, EMF, and DXF export. Text becomes outlined paths in vector output, so a print shop or a cutter gets crisp geometry that opens anywhere. (Outlined text is no longer *re-typable* in Illustrator - that's the trade for perfect fidelity without the font.)
+- **Video and motion.** Export WebM/MP4 (with audio tracks), animated PNG/WebP and animated SVG - from the same template that makes your stills. **Sequence Studio** goes further: a real timeline under the canvas, with a magnetic row of clips, free overlay lanes, trim and split, transition presets, voiceover recording and a music mix - rendered out as MP4, WebM, GIF or APNG by a deterministic compositor rather than a screen recording. Lottie files come *in* as animated assets and render out to any of those. Above the clips sit **keyframes**: pose a box at one instant, lift it off the page with real depth and fly a camera over the result. See [Using Lolly → Timeline](/info/using.html#timeline-sequence-studio) and [Animating](/info/animating.html).
+- **Audio.** Record a voice note and save it as MP3 (or its native M4A/OGG/WebM), all on-device - and bring in MP3, WAV, OGG, M4A, FLAC, MIDI or tracker modules (MOD/XM/IT/…) as a music bed under a video or an ambient track in Neurospicy Mode.
+- **Draw, don't settle.** The Design tool has a real **pen**: click to place points, drag to curve and pick the kind of curve that runs through them. Combine shapes with **union, subtract, intersect and exclude**, outline a stroke, offset a silhouette, simplify a path - the geometry is exact Bezier maths, so a shape you draw stays crisp at any size and renders identically from a link or the CLI. See [Using Lolly → Drawing your own shapes](/info/using.html#drawing-your-own-shapes-the-pen).
+- **Editable vectors.** SVG, EPS, EMF and DXF export. Text becomes outlined paths in vector output, so a print shop or a cutter gets crisp geometry that opens anywhere. (Outlined text is no longer *re-typable* in Illustrator - that's the trade for perfect fidelity without the font.)
 - **Convenience that adds up.** Batch a spreadsheet into a folder of assets; save sessions and organise them into Projects; share any state as a URL; render a whole folder as one zip.
 - **A UI that's actually pleasant.** Undo/redo everywhere, a sound layer you can turn off, a theme cycle, live-camera filters, a masonry gallery - and **Neurospicy Mode**, a background focus-music player that follows you across the app in its own dock.
 - **A calmer interface when you want one.** Four switches under **Profile → Accessibility** - *Reduce motion*, *Hide colourful previews*, *High contrast* and *Large text* - settle the app around your work. Each is off until you turn it on, and none of them touch your canvas or move a pixel of what you export. See [Your profile → Accessibility](/info/profile.html#accessibility).
@@ -83,13 +83,13 @@ Author *tools*, not files: build the thing that generates 10,000 cards rather th
 ## Get the most out of it
 
 - **[Quickstart](/info/quickstart.html)** - brand in, first file out.
-- **[The Brand Studio](/info/brand-studio.html)** - shape your logos, colours, type, and tokens (`#/start`).
-- **[Using Lolly](/info/using.html)** - the canvas, controls, saving, projects, and phone use.
+- **[The Brand Studio](/info/brand-studio.html)** - shape your logos, colours, type and tokens (`#/start`).
+- **[Using Lolly](/info/using.html)** - the canvas, controls, saving, projects and phone use.
 - **[Your profile](/info/profile.html)** - the details tools pre-fill from, and how to carry them between devices.
 - **[Import a design](/info/design-import.html)** - bring in your Figma / Penpot / Illustrator / InDesign work, and your PowerPoint decks - edited or rebranded on-device.
 - **[Working together](/info/collaborate.html)** - two people editing one session live, device to device, with no account and no server in the middle.
 - **[Search](/info/search.html)** - one field at the foot of the gallery, Utilities, Projects, the Catalogue, the Dashboard and Profile that reaches your tools, your saved work, the catalogue and your settings.
 - **[Ask Lolly](/info/using.html#ask-lolly)** (`#/ask`) - type a question and get the matching section of these guides back verbatim, with a link straight to it.
-- **The Dashboard** (`#/d`) - the instrument panel: your design system shown read-only, the full capability map, what this device can do, and a glance at your activity and storage.
+- **The Dashboard** (`#/d`) - the instrument panel: your design system shown read-only, the full capability map, what this device can do and a glance at your activity and storage.
 - **[Your favourites](/info/favourites.html)** - star what you use and it gets a tile of its own above the grid.
-- **[Exporting & formats](/info/exporting.html)** - every format, print units, video, and batch.
+- **[Exporting & formats](/info/exporting.html)** - every format, print units, video and batch.

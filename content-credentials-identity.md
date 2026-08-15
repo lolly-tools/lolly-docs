@@ -5,7 +5,7 @@
 > entirely on your device - that proves the file hasn't been altered since it left
 > Lolly, and (once you enrol an identity) records *who* signed it. Anyone can check
 > it offline: hit **Verify** in the app (the shield in the bottom bar), drop in a
-> file, and Lolly reports the result on-device. **Nothing is uploaded** - not the
+> file and Lolly reports the result on-device. **Nothing is uploaded** - not the
 > file, not the check. This page is the user-facing story; the [engineering &
 > operator guide](/info/content-credentials-engineering.html) covers how it's built
 > and how to run the CA service.
@@ -42,7 +42,7 @@ The **Verify** tab (canonical `/verify`; the aliases `/valid` and `/v` redirect 
 it) checks any file's credential entirely on-device. It reads the whole C2PA
 manifest store - Lolly's own credentials **and** credentials written by other C2PA
 tools (it reads both C2PA 1.x and 2.x claims, so files from cameras, Adobe apps,
-Google's Gemini, and other generators verify too) - and headlines the result with
+Google's Gemini and other generators verify too) - and headlines the result with
 one honest verdict:
 
 | Verdict | What it means |
@@ -56,13 +56,13 @@ one honest verdict:
 | **Credential broken** | The file carries Content Credentials, but they no longer match its bytes - modified after signing, or the manifest is damaged. |
 | **No Content Credentials** | Nothing to verify - the file carries no C2PA manifest. |
 
-The page also shows the recorded edit history, the "made from" ingredients, and -
+The page also shows the recorded edit history, the "made from" ingredients and -
 when present - the CA-verified signer's email and issuer. And it reads far more than
 the credential: a file that declares AI-generated content, carries Lolly's own pixel
 Imprint, or is quietly hiding data in its bytes gets flagged too - see [Beyond the
 credential](#beyond-the-credential-what-else-verify-shows) below.
 
-![The Change history panel, where every step names the software that made it and Lolly's own leg of the journey reads green](/t/url-shot?url=%2F%23%2Fverify%3Fsrc%3D%2Finfo%2Fthe-flood.webp&width=1440&height=1400&dpi=192&waitMs=6000&walker=1&format=svg&cropSelector=.valid-steps&dark=1&filename=ai-stance-change-history)
+![The Change history panel, where every step names the software that made it and Lolly's own leg of the history reads green](/t/url-shot?url=%2F%23%2Fverify%3Fsrc%3D%2Finfo%2Fthe-flood.webp&width=1440&height=1400&dpi=192&waitMs=6000&walker=1&format=svg&cropSelector=.valid-steps&dark=1&filename=ai-stance-change-history)
 
 The same credential check runs in the CLI (`lolly validate <file>`) and in any
 third-party C2PA validator pointed at the public Lolly root
@@ -174,7 +174,7 @@ tool to strip it.
 
 The C2PA verdict runs in the CLI too (`lolly validate <file>`). The embedded-metadata
 read (EXIF/XMP, the AI declaration, appended-data) runs over MCP (`lolly_verify`) and in
-the web **Verify** view. The pixel-level reads - the Lolly Imprint, the opt-in deep scan,
+the web **Verify** view. The pixel-level reads - the Lolly Imprint, the opt-in deep scan
 and LSB steganalysis - and SEAL verification are features of the web **Verify** view.
 Wherever they run, they run on your machine.
 
@@ -237,7 +237,7 @@ the user's call, offered at the moment the certificate is actually minted:
   time would break offline signing.
 - **URL / CLI:** `c2pa` is a reserved URL-mode param (see [URL Mode](/info/url-mode.html)):
   `?c2pa=90` on a share/deep-link URL sets a 90-day ephemeral window (and pre-sets the
-  export panel), `c2pa=off` forces it off, and the CLI accepts the same as `--c2pa=90`.
+  export panel), `c2pa=off` forces it off and the CLI accepts the same as `--c2pa=90`.
   A CLI render is credentialed **by default**, exactly as an export from the app is
   (plans/73-cli-ga-contract.md §12 O2). `--no-provenance` is the one-word opt-out, and the
   way to get byte-identical output run to run. The default signer there is the ephemeral
@@ -250,6 +250,6 @@ the user's call, offered at the moment the certificate is actually minted:
 ---
 
 For the device/CA architecture, the engine contracts, the CA service protocol and
-environment, the web-shell wiring, the one-time operator setup, the threat model,
+environment, the web-shell wiring, the one-time operator setup, the threat model
 and the roadmap (RFC 3161 timestamps, transparency log, SUSE SSO), see the
 [Content Credentials - engineering & operator guide](/info/content-credentials-engineering.html).

@@ -1,6 +1,6 @@
 # Authoring Assets
 
-Assets are global, versioned, brand-controlled resources tools draw from. Logos and mascots, palettes, design tokens, event tiles, fonts, music beds, and video b-roll. The authoritative list of asset types is the `type` enum in `schemas/asset.schema.json`: `vector | raster | video | audio | lottie | palette | tokens | font`.
+Assets are global, versioned, brand-controlled resources tools draw from. Logos and mascots, palettes, design tokens, event tiles, fonts, music beds and video b-roll. The authoritative list of asset types is the `type` enum in `schemas/asset.schema.json`: `vector | raster | video | audio | lottie | palette | tokens | font`.
 
 Those types are what the Catalogue's filter row is built from, and it only offers the buckets the library actually holds, so a catalogue of audio and tokens shows fewer pills than a catalogue of logos and photos.
 

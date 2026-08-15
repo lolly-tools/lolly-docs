@@ -1,8 +1,8 @@
 # Build Guide
 
-> **Scope.** This page is *how each artefact is produced*: getting the source, toolchain prerequisites, and the per-platform build, signing and packaging steps. The [Deployment guide](/info/deployment.html) is *where each artefact runs* - delivery models, hosting and routing for the web shell, and what the optional MCP and CA services need. Compilers, SDKs and store submission here; hosts, rewrites and rollout there.
+> **Scope.** This page is *how each artefact is produced*: getting the source, toolchain prerequisites and the per-platform build, signing and packaging steps. The [Deployment guide](/info/deployment.html) is *where each artefact runs* - delivery models, hosting and routing for the web shell and what the optional MCP and CA services need. Compilers, SDKs and store submission here; hosts, rewrites and rollout there.
 
-How to build Lolly for each distribution target: standalone CLI binary, desktop app (macOS / Windows / Linux), mobile apps (iOS / Android), and the web shell as a container image for Kubernetes.
+How to build Lolly for each distribution target: standalone CLI binary, desktop app (macOS / Windows / Linux), mobile apps (iOS / Android) and the web shell as a container image for Kubernetes.
 
 ---
 
@@ -15,7 +15,7 @@ How to build Lolly for each distribution target: standalone CLI binary, desktop 
 
 ## Getting the source
 
-Lolly is a parent repo plus a set of git submodules. The parent owns `engine/`, `schemas/`, `scripts/`, `tests/`, `api/`, `brands/lolly-start/`, and `profiles.json`; everything else is mounted from its own repository under [github.com/lolly-tools](https://github.com/lolly-tools):
+Lolly is a parent repo plus a set of git submodules. The parent owns `engine/`, `schemas/`, `scripts/`, `tests/`, `api/`, `brands/lolly-start/` and `profiles.json`; everything else is mounted from its own repository under [github.com/lolly-tools](https://github.com/lolly-tools):
 
 | Path | Repository | Contains |
 |---|---|---|
@@ -35,7 +35,7 @@ All of those except `brands/suse` are public, so a read-only contributor gets a 
 
 ### The setup script
 
-On macOS and openSUSE, one script takes a fresh clone to a running state - it detects your package manager (<!--l:homebrew-->Homebrew or zypper), installs git and Node if they are missing or too old, initialises every public submodule, runs `npm install`, and selects a content profile:
+On macOS and openSUSE, one script takes a fresh clone to a running state - it detects your package manager (<!--l:homebrew-->Homebrew or zypper), installs git and Node if they are missing or too old, initialises every public submodule, runs `npm install` and selects a content profile:
 
 ```bash
 git clone https://github.com/lolly-tools/lolly.git
@@ -53,7 +53,7 @@ npm run dev:web           # web shell at http://localhost:5173
 
 ### By hand
 
-If you'd rather run the steps yourself, prefer SSH remotes with each submodule on a branch from the start, or are on a distro the script doesn't cover:
+If you'd rather run the steps yourself, prefer SSH remotes with each submodule on a branch from the start or are on a distro the script doesn't cover:
 
 ```bash
 git -c url."git@github.com:".insteadOf=https://github.com/ \
@@ -126,7 +126,7 @@ npm run cli -- qr-code --url=https://suse.com --color=#0c322c --output=./qr.svg
 npm run cli -- quotes --quote="Open source wins." --name="Andy" --export=png --output=./quote.png
 ```
 
-The CLI supports **SVG, EMF, EPS, HTML, and the text/data formats** (JSON, CSV, ICS, VCF, MD, TXT) natively - hydrated by the engine with no browser engine needed (SVG/EMF only for tools with an `<svg>`-based template, since the lean CLI has no layout engine). **PNG** from an `<svg>`-based tool is also browser-free: resvg rasterises the engine's own SVG (Tier A). The remaining raster formats - **JPG, WebP, PDF, and video (GIF, WebM, MP4)**, plus HTML-layout PNG - render through the CLI's own scoped headless Chromium (Tier B): install it once with `lolly install-browser`, then they export straight from the CLI. (ZIP is the one format the lean CLI leaves out - no zip dependency - so its batch writes a folder instead.)
+The CLI supports **SVG, EMF, EPS, HTML and the text/data formats** (JSON, CSV, ICS, VCF, MD, TXT) natively - hydrated by the engine with no browser engine needed (SVG/EMF only for tools with an `<svg>`-based template, since the lean CLI has no layout engine). **PNG** from an `<svg>`-based tool is also browser-free: resvg rasterises the engine's own SVG (Tier A). The remaining raster formats - **JPG, WebP, PDF and video (GIF, WebM, MP4)**, plus HTML-layout PNG - render through the CLI's own scoped headless Chromium (Tier B): install it once with `lolly install-browser`, then they export straight from the CLI. (ZIP is the one format the lean CLI leaves out - no zip dependency - so its batch writes a folder instead.)
 
 ### Standalone binary
 
@@ -173,7 +173,7 @@ The interactive terminal shell runs straight from the repo - it needs a real TTY
 npm run tui
 ```
 
-It's the CLI's engine and render path under an interactive, keyboard-first UI (built on Ink, run through `tsx`). The DOM-free formats - **SVG, EMF, EPS, HTML, and the text/data formats** - render with nothing extra. State (saved sessions, project folders, profile) persists on disk under `~/.lolly` (override with `$LOLLY_TUI_DIR`); exports default to `~/Desktop`. See the [TUI guide](/info/tui.html) for the full key map and views.
+It's the CLI's engine and render path under an interactive, keyboard-first UI (built on Ink, run through `tsx`). The DOM-free formats - **SVG, EMF, EPS, HTML and the text/data formats** - render with nothing extra. State (saved sessions, project folders, profile) persists on disk under `~/.lolly` (override with `$LOLLY_TUI_DIR`); exports default to `~/Desktop`. See the [TUI guide](/info/tui.html) for the full key map and views.
 
 ### Browser render tier (raster / PDF / video / URL capture)
 
@@ -184,7 +184,7 @@ npm run install:browser   # Chromium → services/mcp/.browsers (shared with ser
 npm run build:web         # a built web shell the TUI drives for pixel-identical raster/pdf/video
 ```
 
-With those present, raster (PNG/JPG), PDF, video, and the `url-shot` live-URL capture all export from the terminal; without them, those formats fail with a clear setup message and the TUI writes HTML instead. The browser is lazy - it launches only on the first such export, never at startup. Override the browser with `LOLLY_BROWSER_CHANNEL` / `LOLLY_BROWSER_PATH`, or point at a running/prebuilt web shell with `LOLLY_WEB_BASE` / `LOLLY_WEB_DIST`.
+With those present, raster (PNG/JPG), PDF, video and the `url-shot` live-URL capture all export from the terminal; without them, those formats fail with a clear setup message and the TUI writes HTML instead. The browser is lazy - it launches only on the first such export, never at startup. Override the browser with `LOLLY_BROWSER_CHANNEL` / `LOLLY_BROWSER_PATH`, or point at a running/prebuilt web shell with `LOLLY_WEB_BASE` / `LOLLY_WEB_DIST`.
 
 > No standalone-binary recipe yet - the TUI ships as a repo/dev surface today. Package it like the CLI (esbuild + `@yao-pkg/pkg`) once a target calls for it.
 
@@ -309,7 +309,7 @@ rustup target add \
   x86_64-apple-ios
 ```
 
-See [Building for iOS](/info/ios-build.html) for the full iOS walkthrough - prerequisites, one-time init, the simulator dev loop, code signing, and camera permissions.
+See [Building for iOS](/info/ios-build.html) for the full iOS walkthrough - prerequisites, one-time init, the simulator dev loop, code signing and camera permissions.
 
 ### First-time platform init
 
@@ -401,7 +401,7 @@ Set the team in the project's Signing & Capabilities tab, then build from CLI or
 | <!--l:flatpak-->Flatpak | distro-agnostic sandboxed desktop app | Tauri desktop app |
 | AppImage | distro-agnostic portable app | reuses Tauri's `.AppImage` output |
 | Container images | OCI / <!--l:docker-->Docker (built via Kiwi or a `Dockerfile`) | CLI as a container image |
-| Appliance / disk images | ISO, VM, and cloud images (built via Kiwi) | full preloaded image |
+| Appliance / disk images | ISO, VM and cloud images (built via Kiwi) | full preloaded image |
 
 The local Tauri build already emits a `.deb` and an `.AppImage` (see the Desktop table above). OBS does not replace that - its value is **fan-out across the rest of the matrix** (every RPM- and deb-based distro, Arch, Flatpak, containers, appliances) plus **signed, hosted repositories** that users can add and update from like any other system package.
 
@@ -418,7 +418,7 @@ OBS packages one of the two Linux artifacts this guide already produces:
 
 ### Illustrative project layout
 
-The snippets below are **illustrative starting points, not a production-tested recipe** - they show the shape of an OBS package for Lolly.
+The snippets below are **illustrative starting points, not a production-tested recipe** - they show what an OBS package for Lolly looks like.
 
 A `_service` file fetches and versions the source from git at build time:
 
@@ -435,7 +435,7 @@ A `_service` file fetches and versions the source from git at build time:
 </services>
 ```
 
-A trimmed RPM `.spec` declares the toolchain, builds the artifact, and installs it with the required `tools/` + `catalog/` layout:
+A trimmed RPM `.spec` declares the toolchain, builds the artifact and installs it with the required `tools/` + `catalog/` layout:
 
 ```spec
 Name:           lolly
@@ -500,11 +500,11 @@ For readers wiring this up for real, see the [OBS documentation](https://openbui
 
 ## Web shell on Kubernetes (Helm)
 
-The web shell is a **static site** - `npm run build:web` produces a `dist/` folder of HTML, CSS, JS, the service worker, the HarfBuzz WASM, fonts, the bundled tool catalog, and the `/info` site. Anything that can serve static files can host it (which is why the production site runs behind a CDN). To run it **inside your own Kubernetes cluster** - air-gapped, on-prem, or alongside the rest of your platform - the artefacts ship in this repo: `deploy/docker/` bakes `dist/` into an <!--l:nginx-->nginx image, and `deploy/helm/` deploys it. This section is what those files do and how to adapt them; [Deployment](/info/deployment.html) is where each piece runs.
+The web shell is a **static site** - `npm run build:web` produces a `dist/` folder of HTML, CSS, JS, the service worker, the HarfBuzz WASM, fonts, the bundled tool catalog and the `/info` site. Anything that can serve static files can host it (which is why the production site runs behind a CDN). To run it **inside your own Kubernetes cluster** - air-gapped, on-prem or alongside the rest of your platform - the artefacts ship in this repo: `deploy/docker/` bakes `dist/` into an <!--l:nginx-->nginx image, and `deploy/helm/` deploys it. This section is what those files do and how to adapt them; [Deployment](/info/deployment.html) is where each piece runs.
 
 Nothing in the chart is specific to one cluster: it is plain Kubernetes, so it deploys on any conformant distribution - including SUSE's own RKE2 and <!--l:k3s-->k3s - and on any managed service.
 
-> **The chart is shipped, the images are yours to build.** `deploy/helm/` is a real chart with three components - `web` (the PWA, on by default), `mcp` and `ca` (both opt-in) - one `values.yaml` you edit, and secure defaults on every pod. What it cannot do is invent an image: build and push the three `deploy/docker/` images to a registry your cluster can reach, then pin the tags you verified. There is no hosted Lolly chart repository, so you install from a checkout of this repo, and the SUSE Application Collection carries no Lolly chart of its own. Where a curated image or chart *does* exist there - the nginx runtime base, cert-manager - this section prefers it.
+> **The chart is shipped, the images are yours to build.** `deploy/helm/` is a real chart with three components - `web` (the PWA, on by default), `mcp` and `ca` (both opt-in) - one `values.yaml` you edit and secure defaults on every pod. What it cannot do is invent an image: build and push the three `deploy/docker/` images to a registry your cluster can reach, then pin the tags you verified. There is no hosted Lolly chart repository, so you install from a checkout of this repo, and the SUSE Application Collection carries no Lolly chart of its own. Where a curated image or chart *does* exist there - the nginx runtime base, cert-manager - this section prefers it.
 
 ### Why the SUSE Application Collection
 
@@ -543,9 +543,9 @@ docker push <your-registry>/lolly-web:0.1.0
 What the two stages do:
 
 - **build** - `node:26-bookworm`, pinned by digest, runs `npm ci` then the real `npm run build:web`. Deliberately not the slim variant: the optional native dependencies (sharp, onnxruntime, resvg, playwright) need build tooling slim doesn't carry.
-- **runtime** - `nginxinc/nginx-unprivileged`, also digest-pinned, running as uid 101 on port **8080**. `dist/` is copied to `/usr/share/nginx/html`, `deploy/docker/nginx.conf` becomes `conf.d/default.conf`, and `deploy/docker/security-headers.conf` lands beside it.
+- **runtime** - `nginxinc/nginx-unprivileged`, also digest-pinned, running as uid 101 on port **8080**. `dist/` is copied to `/usr/share/nginx/html`, `deploy/docker/nginx.conf` becomes `conf.d/default.conf` and `deploy/docker/security-headers.conf` lands beside it.
 
-`--build-arg LOLLY_PROFILE=suse|lolly-start` bakes one brand into the static output - theme colour, PWA chrome, and the resolved `tools/` + `catalog/` content. Nothing is read at serve time, which is why the chart needs no pack, config or volume mounted for the web app; changing brand means rebuilding the image and rolling the deployment.
+`--build-arg LOLLY_PROFILE=suse|lolly-start` bakes one brand into the static output - theme colour, PWA chrome and the resolved `tools/` + `catalog/` content. Nothing is read at serve time, which is why the chart needs no pack, config or volume mounted for the web app; changing brand means rebuilding the image and rolling the deployment.
 
 `mcp.Dockerfile` and `ca.Dockerfile` follow the same pattern (repo-root context, digest-pinned `node:26-bookworm-slim`, non-root `node` user) and run their entry point on Node directly. Build them only if you enable those components.
 
@@ -565,7 +565,7 @@ Two things to check against whichever base you pick. The shipped `nginx.conf` se
 
 ### 3. What the nginx config already handles
 
-Lolly is a single-page PWA, so the server has real work to do: URL-mode deep links (`/?tool=qr-code`) must fall back to `index.html`, the service worker must never be cached, hashed assets should be immutable, the HarfBuzz `.wasm` and the `.webmanifest` need correct MIME types, and the security headers have to be on every response. `deploy/docker/nginx.conf` does all of it - `tests/security-headers.test.ts` pins its CSP against the other two copies in the repo, so edit it rather than writing a fresh one. The parts worth knowing, quoted from the shipped file:
+Lolly is a single-page PWA, so the server has real work to do: URL-mode deep links (`/?tool=qr-code`) must fall back to `index.html`, the service worker must never be cached, hashed assets should be immutable, the HarfBuzz `.wasm` and the `.webmanifest` need correct MIME types and the security headers have to be on every response. `deploy/docker/nginx.conf` does all of it - `tests/security-headers.test.ts` pins its CSP against the other two copies in the repo, so edit it rather than writing a fresh one. The parts worth knowing, quoted from the shipped file:
 
 ```nginx
 server {
@@ -600,7 +600,7 @@ server {
 }
 ```
 
-That repeated `include` is not redundancy: nginx drops **every** inherited `add_header` inside a location that declares one of its own, so any location setting `Cache-Control` would otherwise ship with no security headers at all. Keep the include when you add a location. The file also carries a cheap unauthenticated `/healthz` for the chart's probes, explicit `types` for `.wasm`/`.avif`/`.webmanifest`, long-cache rules for `/ort/`, `/models/` and `/fonts/`, and the short URL aliases (`/d`, `/v`, `/c`, `/p`, `/profile`) that mirror the hosted deployment's rewrites.
+That repeated `include` is not redundancy: nginx drops **every** inherited `add_header` inside a location that declares one of its own, so any location setting `Cache-Control` would otherwise ship with no security headers at all. Keep the include when you add a location. The file also carries a cheap unauthenticated `/healthz` for the chart's probes, explicit `types` for `.wasm`/`.avif`/`.webmanifest`, long-cache rules for `/ort/`, `/models/` and `/fonts/` and the short URL aliases (`/d`, `/v`, `/c`, `/p`, `/profile`) that mirror the hosted deployment's rewrites.
 
 ### 4. The chart
 
@@ -625,7 +625,7 @@ deploy/helm/
     └── NOTES.txt
 ```
 
-`web` is enabled by default at 2 replicas - the PWA holds no server-side state (everything lives in the browser's IndexedDB), so replicas are interchangeable and you can raise the count freely. `mcp` and `ca` are `enabled: false` until you turn them on. The security posture is shared and applied to every component: `runAsNonRoot`, `RuntimeDefault` seccomp, all capabilities dropped, no privilege escalation, a read-only root filesystem with `emptyDir`s mounted exactly where nginx needs to write, no ServiceAccount token mounted (none of the components talk to the Kubernetes API), soft pod anti-affinity so replicas spread across nodes without blocking a single-node cluster, and an off-by-default NetworkPolicy that restricts ingress to each component's port.
+`web` is enabled by default at 2 replicas - the PWA holds no server-side state (everything lives in the browser's IndexedDB), so replicas are interchangeable and you can raise the count freely. `mcp` and `ca` are `enabled: false` until you turn them on. The security posture is shared and applied to every component: `runAsNonRoot`, `RuntimeDefault` seccomp, all capabilities dropped, no privilege escalation, a read-only root filesystem with `emptyDir`s mounted exactly where nginx needs to write, no ServiceAccount token mounted (none of the components talk to the Kubernetes API), soft pod anti-affinity so replicas spread across nodes without blocking a single-node cluster and an off-by-default NetworkPolicy that restricts ingress to each component's port.
 
 The values you are most likely to touch:
 
@@ -689,7 +689,7 @@ helm upgrade --install lolly ./deploy/helm -n lolly \
   --set web.ingress.tls[0].hosts[0]=lolly.example.com
 ```
 
-`NOTES.txt` prints the resulting URLs, which components came up, and any secret still missing.
+`NOTES.txt` prints the resulting URLs, which components came up and any secret still missing.
 
 ### 6. The optional services
 
@@ -710,9 +710,9 @@ helm install cert-manager oci://dp.apps.rancher.io/charts/cert-manager \
   --set 'global.imagePullSecrets={application-collection}'
 ```
 
-Then add a `ClusterIssuer` (e.g. Let's Encrypt), point the chart's `web.ingress.tls[0]` at a secret name, and annotate the Ingress for cert-manager through `web.ingress.annotations` (`cert-manager.io/cluster-issuer: letsencrypt-prod`); `mcp` and `ca` take the same three keys under their own sections. Every Application Collection chart accepts the same `--set 'global.imagePullSecrets={application-collection}'`, so the pattern carries across redis, postgresql, prometheus, and the rest if Lolly ever grows backing services.
+Then add a `ClusterIssuer` (e.g. Let's Encrypt), point the chart's `web.ingress.tls[0]` at a secret name and annotate the Ingress for cert-manager through `web.ingress.annotations` (`cert-manager.io/cluster-issuer: letsencrypt-prod`); `mcp` and `ca` take the same three keys under their own sections. Every Application Collection chart accepts the same `--set 'global.imagePullSecrets={application-collection}'`, so the pattern carries across redis, postgresql, prometheus and the rest if Lolly ever grows backing services.
 
-> For the authoritative, current registry paths, tags, chart versions, and value keys, see the [SUSE Application Collection docs](https://docs.apps.rancher.io) and run `helm show values oci://dp.apps.rancher.io/charts/<chart>` before relying on any default.
+> For the authoritative, current registry paths, tags, chart versions and value keys, see the [SUSE Application Collection docs](https://docs.apps.rancher.io) and run `helm show values oci://dp.apps.rancher.io/charts/<chart>` before relying on any default.
 
 ---
 

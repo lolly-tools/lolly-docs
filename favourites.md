@@ -3,7 +3,7 @@ Every fact below was checked against shells/web/src/components/featured-row.ts,
 shells/web/src/views/gallery.ts (the mount/star/hide/view-mode wiring),
 shells/web/src/lib/favourites.ts, shells/web/src/bridge/profile.ts and
 shells/web/src/data-transfer.ts (PREF_KEYS, the portable-backup part list) -
-not from memory. Two separate storage facts are load-bearing here and must
+not from memory. Two separate storage facts matter here and must
 not get merged into one sentence: the favourites LIST lives on the user
 profile (IndexedDB, part of a profile export); the Gallery/Cover Flow DISPLAY
 MODE lives in a bare localStorage key that isn't even in PREF_KEYS, so it
@@ -37,7 +37,7 @@ The star lives in three places, and all three write to the same list:
 
 - **On the card itself** - the ★ in its corner. Click it once to add, again to remove.
 - **In its right-click menu** - **Add to favourites** / **Remove from favourites**.
-- **In the selection bar** - tick a card's checkbox (or several: ⌘/Ctrl-click, Shift-click a range, or drag a box across empty space) and an action bar appears along the bottom with a **Favourite** button that stars, or unstars, the whole selection in one go. Right-clicking inside a selection offers the same **Favourite** / **Unfavourite** row.
+- **In the selection bar** - tick a card's checkbox (or several: ⌘/Ctrl-click, Shift-click a range or drag a box across empty space) and an action bar appears along the bottom with a **Favourite** button that stars, or unstars, the whole selection in one go. Right-clicking inside a selection offers the same **Favourite** / **Unfavourite** row.
 
 ![A single tool card, with the ★ that stars it sitting in the top corner beside the download and info buttons](/t/url-shot?url=%2F%23%2F&width=700&height=420&dpi=192&waitMs=1600&drive=click%3A%5Bdata-fav%3D%22qr-code%22%5D&cropSelector=%5Bdata-tool-id%3D%22qr-code%22%5D&walker=1&format=svg&dark=1&filename=fav-star-toggle)
 
@@ -116,4 +116,4 @@ Even the choice between **Gallery** and **Cover Flow** is more local still: it l
 
 ---
 
-**Related:** [Search](/info/search.html) for the other way back to something quickly. [Using Lolly](/info/using.html) for the gallery, hiding tools you never use, and the rest of the app. [Profiles](/info/profile.html) for what else rides on that on-device record.
+**Related:** [Search](/info/search.html) for the other way back to something quickly. [Using Lolly](/info/using.html) for the gallery, hiding tools you never use and the rest of the app. [Profiles](/info/profile.html) for what else rides on that on-device record.

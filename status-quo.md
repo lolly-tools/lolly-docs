@@ -8,7 +8,7 @@ This page is about that accumulation. Not about villains, because most of it was
 ## We did this easily
 
 ::: timeline
-- <!--i:upload--> We uploaded a logo to a free converter, waited through an ad, and downloaded a file we hoped was the same picture.
+- <!--i:upload--> We uploaded a logo to a free converter, waited through an ad and downloaded a file we hoped was the same picture.
 - <!--i:lock--> We went back for artwork from eighteen months ago and found it behind a login for a plan the team had stopped paying for. The artwork was ours. The file was not reachable.
 - <!--i:eyeoff--> We accepted cookies we did not read, on a site we visited once, to do something that took eleven seconds.
 - <!--i:hash--> We sent a near-final campaign to a colleague, who sent it onward, and the version everyone uses now is one nobody can point back to.
@@ -42,7 +42,7 @@ Each row is a claim you can test rather than a slogan, which is what the rest of
 Every one of those has a fix that is architectural, not a promise in a policy document. The difference matters: a promise is a thing a company can change on a Tuesday, and an architecture is a thing you can check.
 
 - <!--i:cpu--> **The work happens on your device.** Rendering, exporting, converting, stripping metadata: all of it runs in your browser, on your machine. Not as a privacy feature bolted on afterwards, but because that is where the engine lives. It follows that your content cannot be collected, sold or trained on by us, because it never arrives. See [Privacy](/info/privacy.html), and the complete list of what a server ever sees in [Server Surface](/info/server-surface.html).
-- <!--i:download--> **Exports are ordinary files.** PNG, SVG, PDF, WebP, TIFF, and the rest. They open in software that has nothing to do with us, they keep working if this project disappears, and there is no export tier. Your last day using Lolly leaves you with everything you made. See [Exporting and Formats](/info/exporting.html) and [Data Transfer](/info/data-transfer.html).
+- <!--i:download--> **Exports are ordinary files.** PNG, SVG, PDF, WebP, TIFF and the rest. They open in software that has nothing to do with us, they keep working if this project disappears and there is no export tier. Your last day using Lolly leaves you with everything you made. See [Exporting and Formats](/info/exporting.html) and [Data Transfer](/info/data-transfer.html).
 - <!--i:seal--> **Provenance travels with the work.** Exports carry [Content Credentials](/info/content-credentials-identity.html) by default, recording what made a file and from what. Anyone can check it, including you, including on files we did not make. That turns "trust me" into a question with an answer. Try it on something you made: [Verify It Yourself](/info/verify-yourself.html).
 - <!--i:globe--> **There is nothing to consent to.** No trackers, no analytics, no profile, no account required to use the tools. The engine is open source, works offline and needs no sign-in, so the usual consent surface has nothing to ask you about. [Security and Verification](/info/security.html) covers how to confirm that rather than take our word.
 - <!--i:people--> **Accessibility is not a later release.** Motion, contrast, text size and preview intensity are preferences in the product, not accommodations you request. See [Inclusive Design](/info/inclusive-design.html).
@@ -53,4 +53,4 @@ It is not a claim that everyone doing it the other way acts in bad faith. Server
 
 It is not a claim that Lolly does everything those tools do. It does a narrower set of things without the trade.
 
-And it is not a request for your trust. Trust is the thing we are trying to make unnecessary. Everything above is checkable, the code is public, and the [Threat Model](/info/threat-model.html) is honest about the limits. If the page and the code ever disagree, the code is the bug.
+And it is not a request for your trust. Trust is the thing we are trying to make unnecessary. Everything above is checkable, the code is public and the [Threat Model](/info/threat-model.html) is honest about the limits. If the page and the code ever disagree, the code is the bug.

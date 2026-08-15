@@ -2,7 +2,7 @@
 
 The technical documentation - for anyone who authors tools, integrates Lolly into a pipeline, self-hosts it, or extends the platform.
 
-**What's in it for you.** Build a tool once and the request stops coming back to you. The repetitive "can you just make me a…" that eats your afternoons becomes a template other people fill in themselves - correctly, without you in the loop. Your work is plain HTML/CSS/JS: version-controlled, diffable, reviewable, and running on an open engine with no vendor lock-in, so it stays yours. Automate the production run and your time goes to the interesting problem, not the ten-thousandth export.
+**What's in it for you.** Build a tool once and the request stops coming back to you. The repetitive "can you just make me a…" that eats your afternoons becomes a template other people fill in themselves - correctly, without you in the loop. Your work is plain HTML/CSS/JS: version-controlled, diffable, reviewable and running on an open engine with no vendor lock-in, so it stays yours. Automate the production run and your time goes to the interesting problem, not the ten-thousandth export.
 
 Lolly is a platform-agnostic **engine** that runs the same render path across several **shells** (web PWA, Tauri desktop/mobile, CLI, TUI). Tools are **data, not bundled code** - a manifest plus a template plus optional hooks - so new tools ship without an app update. Start with the [Overview](/info/overview.html) for the architecture, then follow the track that fits what you're building.
 
@@ -12,12 +12,12 @@ New to the platform? The **[Quickstart](/info/quickstart.html)** gets a brand an
 
 ## Understand the architecture
 
-- **[Overview](/info/overview.html)** - why Lolly exists, the engine/shell/tools separation, the capability bridge, and the settled architectural commitments.
+- **[Overview](/info/overview.html)** - why Lolly exists, the engine/shell/tools separation, the capability bridge and the settled architectural commitments.
 - **[Design Tokens](/info/design-tokens.html)** - the DTCG token model brands are expressed in, and how tools consume them.
 
 ## Author tools
 
-Every control below was generated from a declared input in `tool.json`. You write the manifest line, the host draws the widget, and the same model drives the CLI and the URL.
+Every control below was generated from a declared input in `tool.json`. You write the manifest line, the host draws the widget and the same model drives the CLI and the URL.
 
 ![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&walker=1&format=svg&dark=1&filename=aud-manifest-controls)
 
@@ -25,8 +25,8 @@ That scales further than five controls. Give an input a `section` and the host f
 
 ![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-d3-sections)
 
-- **[Authoring Tools](/info/authoring-tools.html)** - the full guide: manifest, template, styles, hooks, composition, and publishing.
-- **[Authoring Assets](/info/authoring-assets.html)** - catalog assets, tiers, locales, palettes, themable icons, and fonts.
+- **[Authoring Tools](/info/authoring-tools.html)** - the full guide: manifest, template, styles, hooks, composition and publishing.
+- **[Authoring Assets](/info/authoring-assets.html)** - catalog assets, tiers, locales, palettes, themable icons and fonts.
 - **[Host API](/info/host-api.html)** - the `HostV1` capability bridge every tool is written against (the portable API tools are written against - note hooks are not sandboxed, see [Authoring Tools](/info/authoring-tools.html)).
 - **[URL Mode](/info/url-mode.html)** - every input as a URL parameter; reserved params, compact encoding, packed links.
 
@@ -41,8 +41,8 @@ That scales further than five controls. Give an input a `section` and the host f
 ## Ship & operate it
 
 - **[Build Guide](/info/build-guide.html)** - build every target: CLI, TUI, desktop, mobile.
-- **[Deployment](/info/deployment.html)** - the web app, the apps, and the backend services; where each piece runs.
-- **[Configuration](/info/configuration.html)** - profiles, brand packs, capability gating, feature flags, and catalog validation.
+- **[Deployment](/info/deployment.html)** - the web app, the apps and the backend services; where each piece runs.
+- **[Configuration](/info/configuration.html)** - profiles, brand packs, capability gating, feature flags and catalog validation.
 
 ## Trust & data
 
@@ -51,5 +51,5 @@ Rights and authorship are inputs like any other. Embed & Track Image declares cr
 ![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-rights-fields)
 
 - **[Content Credentials Identity](/info/content-credentials-identity.html)** - CA-issued signing for on-device C2PA; engine contracts and the operator runbook.
-- **[Data Transfer](/info/data-transfer.html)** - the `lolly-backup` bundle: envelope, integrity, and cross-shell guarantees.
-- **[About](/info/about.html)** - the project, its licence boundary, and the repository.
+- **[Data Transfer](/info/data-transfer.html)** - the `lolly-backup` bundle: envelope, integrity and cross-shell guarantees.
+- **[About](/info/about.html)** - the project, its licence boundary and the repository.

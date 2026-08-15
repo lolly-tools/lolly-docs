@@ -7,7 +7,7 @@ web-shell source and the same `bridge-overrides/` (filesystem `state.ts`, mobile
 project.
 
 For the cross-platform overview (CLI, desktop, Android), see
-`docs/build-guide.md`. This doc is the iOS-specific deep dive.
+`docs/build-guide.md`. This doc is the iOS-specific detail.
 
 ---
 
@@ -34,9 +34,9 @@ Verified state (2026-06):
 | Mobile `node_modules` + Tauri CLI | yes | Yes - installed (`@tauri-apps/cli`, `plugin-fs`, `plugin-http`) |
 | `src-tauri/gen/apple/` (init output) | yes | No - iOS project not initialized |
 
-`tauri ios init`, `npm run dev:ios`, and `npm run build:ios` all require full
+`tauri ios init`, `npm run dev:ios` and `npm run build:ios` all require full
 Xcode (plus CocoaPods), so each fails here until the prerequisites below are met.
-The Rust targets, JS dependencies, and CocoaPods are already in place; the
+The Rust targets, JS dependencies and CocoaPods are already in place; the
 remaining blockers are full Xcode and the one-time project init.
 
 ---
@@ -149,7 +149,7 @@ reload works the same as the web and desktop shells.
 ### Feature subset on iOS
 
 The mobile shell provides the capabilities `network`, `clipboard`, `wasm`,
-`compose`, `camera`, `microphone`, and `filesystem`. It is defined as the web
+`compose`, `camera`, `microphone` and `filesystem`. It is defined as the web
 shell's set *spread* plus `filesystem` (via `tauri-plugin-fs`) and minus
 `screen`, so a capability added on the web side reaches mobile by default - see
 `bridge-overrides/capabilities-provided.ts`.
@@ -201,11 +201,11 @@ npm run build:ios -- --export-method app-store-connect
 ```
 
 `--export-method` selects how the `.ipa` is packaged: `app-store-connect`,
-`ad-hoc`, `enterprise`, or `debugging`. Interactively you can instead open the
+`ad-hoc`, `enterprise` or `debugging`. Interactively you can instead open the
 project (`npm run dev:ios -- --open`) and set the team under **Signing &
 Capabilities**; the env-var path is what CI uses.
 
-Device builds, IPA export, TestFlight, and App Store distribution additionally
+Device builds, IPA export, TestFlight and App Store distribution additionally
 require a provisioning profile whose App ID matches `tools.lolly.mobile`. A
 free Apple ID gives 7-day on-device provisioning; the paid Apple Developer
 Program is needed for TestFlight / App Store.
@@ -214,7 +214,7 @@ Program is needed for TestFlight / App Store.
 
 ## Where this differs from Android
 
-iOS and Android share the mobile shell, the bridge overrides, and the feature
+iOS and Android share the mobile shell, the bridge overrides and the feature
 subset. The differences are toolchain-only: iOS requires macOS + full Xcode +
 CocoaPods and signs with an Apple Team ID / App Store Connect key; Android
 requires the Android SDK + NDK and signs with a Java keystore

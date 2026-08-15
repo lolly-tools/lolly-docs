@@ -1,6 +1,6 @@
 # TUI
 
-The **TUI** (text user interface) is Lolly's interactive **terminal shell** - the whole app driven by the keyboard, inside your terminal. Where the [CLI](/info/cli.html) is a one-shot command for scripts and pipelines, the TUI is a full-screen, keyboard-first surface for **browsing tools, filling in inputs, saving projects, editing your profile, and exporting** - without leaving the terminal or opening a browser.
+The **TUI** (text user interface) is Lolly's interactive **terminal shell** - the whole app driven by the keyboard, inside your terminal. Where the [CLI](/info/cli.html) is a one-shot command for scripts and pipelines, the TUI is a full-screen, keyboard-first surface for **browsing tools, filling in inputs, saving projects, editing your profile and exporting** - without leaving the terminal or opening a browser.
 
 It runs the **same engine and the same render path** as the web shell and the CLI, so its output can never drift from the GUI.
 
@@ -35,20 +35,20 @@ Cycle either row to `off` for a barer render, or set both off for byte-reproduci
 The TUI mirrors the web shell's layout, distilled to the terminal. Switch top-level views with the number keys; every view is keyboard-navigable (`hjkl` / arrows, `Enter` to open, `Esc` to go back).
 
 - **Gallery** - a responsive card grid of every tool. `/` searches, `Enter` opens a tool, `u` opens a pasted `lolly.tools` link already configured, `i` **imports a PDF or `.ai`** from disk (it becomes a saved, fully editable Design session - IDML and Penpot stay web-only), `f`/`F` favourite and filter to favourites, `o` cycles sort and `c` cycles the category filter. Only tools needing a live device the headless browser can't open (mic/camera recording) are hidden.
-- **Projects** - your saved sessions, organised into nested folders. Create folders (`n`), move sessions into them (`m`), open, delete, and **batch** them: export a whole folder (`e`), tick an ad-hoc set with `Space` and batch the selection (`b`), or run a **CSV batch** (`c`) - all into one `.zip` on the Desktop.
-- **Catalog** - browse every catalog asset; favourite (`f`), hide (`d`), and **export an asset** (`e`) to any format (opens the `asset-export` tool seeded with it - that tool ships with the SUSE brand pack, so the action needs a profile that mounts it).
-- **Profile** - edit the details tools pre-fill from (`bindToProfile`): name, email, phone, company, and the "credit me" preference. Changes persist. Two actions live here too: `b` **backs up and renders everything** - a portable data-backup zip plus a second zip of every saved project rendered out, with a live progress panel - and `v` runs an on-device **Content Credentials report** on a file. Both zips land in your Desktop folder, or your home directory if there isn't one.
-- **Tool view** - a two-pane (desktop) / stacked (mobile) layout: an **Inputs** panel beside an **Export** settings panel and a preview. `Tab` switches panels; `j`/`k` move between inputs; `Enter`/`e` edits; `Space` toggles booleans; `←`/`→` cycle selects (and step number sliders). `x` **exports**, `s` saves the session, `y` prints/copies a share link, and `u`/`r` undo and redo. Every input type is editable, including repeating **blocks** (drill in to add/reorder/nest rows) and **`asset`** inputs (a catalog picker on `Enter`, or type an id / `lolly.tools` URL with `e`). Export settings expose **Format · Width · Height · Unit · DPI · Filename · Folder · C2PA · Imprint · Durable · Password** with a derived output path - so the terminal carries the same provenance and lock controls as the web export panel: cycle **C2PA** for a [Content Credential](/info/exporting.html) and its certificate lifetime, **Imprint** for the pixel watermark (on by default, off per export), **Durable** for the opt-in neural credential on the raster formats, and set a **Password** to lock a rendered PDF or zip.
+- **Projects** - your saved sessions, organised into nested folders. Create folders (`n`), move sessions into them (`m`), open, delete and **batch** them: export a whole folder (`e`), tick an ad-hoc set with `Space` and batch the selection (`b`) or run a **CSV batch** (`c`) - all into one `.zip` on the Desktop.
+- **Catalog** - browse every catalog asset; favourite (`f`), hide (`d`) and **export an asset** (`e`) to any format (opens the `asset-export` tool seeded with it - that tool ships with the SUSE brand pack, so the action needs a profile that mounts it).
+- **Profile** - edit the details tools pre-fill from (`bindToProfile`): name, email, phone, company and the "credit me" preference. Changes persist. Two actions live here too: `b` **backs up and renders everything** - a portable data-backup zip plus a second zip of every saved project rendered out, with a live progress panel - and `v` runs an on-device **Content Credentials report** on a file. Both zips land in your Desktop folder, or your home directory if there isn't one.
+- **Tool view** - a two-pane (desktop) / stacked (mobile) layout: an **Inputs** panel beside an **Export** settings panel and a preview. `Tab` switches panels; `j`/`k` move between inputs; `Enter`/`e` edits; `Space` toggles booleans; `←`/`→` cycle selects (and step number sliders). `x` **exports**, `s` saves the session, `y` prints/copies a share link and `u`/`r` undo and redo. Every input type is editable, including repeating **blocks** (drill in to add/reorder/nest rows) and **`asset`** inputs (a catalog picker on `Enter`, or type an id / `lolly.tools` URL with `e`). Export settings expose **Format · Width · Height · Unit · DPI · Filename · Folder · C2PA · Imprint · Durable · Password** with a derived output path - so the terminal carries the same provenance and lock controls as the web export panel: cycle **C2PA** for a [Content Credential](/info/exporting.html) and its certificate lifetime, **Imprint** for the pixel watermark (on by default, off per export), **Durable** for the opt-in neural credential on the raster formats and set a **Password** to lock a rendered PDF or zip.
 
 ### Batch (the "TUI way", no `/pro` grid)
 
-Three sources, one zip: a **Projects folder** subtree (`e`), a **ticked multiselection** of saved sessions across folders (`Space` to tick, `b` to run), or a **CSV/TSV file** (`c`) - the same row format the CLI `batch` subcommand reads (a `toolId` column, optional per-row `format`/`width`/`height`/`unit`/`dpi`, and a column per input). The result is one `.zip` on your Desktop, optionally password-locked.
+Three sources, one zip: a **Projects folder** subtree (`e`), a **ticked multiselection** of saved sessions across folders (`Space` to tick, `b` to run) or a **CSV/TSV file** (`c`) - the same row format the CLI `batch` subcommand reads (a `toolId` column, optional per-row `format`/`width`/`height`/`unit`/`dpi` and a column per input). The result is one `.zip` on your Desktop, optionally password-locked.
 
 ### Preview priority
 
 For a **designer tool** the preview is low-priority and opt-in (`p`). For a **utility** - where the output *is* the whole point - it's the primary pane, shown automatically (even on a narrow terminal):
 
-- a **text-based / interactive** utility (`color-palette`, `text-helper`, …) has its rendered **HTML content displayed as terminal text** - the TUI walks the hydrated DOM into structured, coloured lines (headings, tabs/buttons, and colour swatches shown as blocks *in their actual colour*, resolved from the tool's own CSS). The content is the point, so it's shown, not an "export me" placeholder.
+- a **text-based / interactive** utility (`color-palette`, `text-helper`, …) has its rendered **HTML content displayed as terminal text** - the TUI walks the hydrated DOM into structured, coloured lines (headings, tabs/buttons and colour swatches shown as blocks *in their actual colour*, resolved from the tool's own CSS). The content is the point, so it's shown, not an "export me" placeholder.
 - a **file-transform** (`strip-data`, `compress-pdf`) shows a **result summary** with the before→after size delta.
 - **`url-shot`** shows the **capture settings** (URL, size, crop, recolor).
 
@@ -58,18 +58,18 @@ The layout is responsive: narrow terminals collapse the two-pane tool view into 
 
 ## Inputs it can edit
 
-Every input type the engine models is editable from the keyboard - text, numbers, booleans, selects, and repeating **`blocks`** (drill into a block → its rows → its fields; add, delete, reorder, and nest). It also edits **`file`** inputs (give it a path - the bytes are read locally and handed to on-device utilities like `strip-data`) and **`asset`** inputs (a catalog id like `suse/logo/hor-pos-green`, or a pasted `lolly.tools` tool link, resolved to an embedded render).
+Every input type the engine models is editable from the keyboard - text, numbers, booleans, selects and repeating **`blocks`** (drill into a block → its rows → its fields; add, delete, reorder and nest). It also edits **`file`** inputs (give it a path - the bytes are read locally and handed to on-device utilities like `strip-data`) and **`asset`** inputs (a catalog id like `suse/logo/hor-pos-green`, or a pasted `lolly.tools` tool link, resolved to an embedded render).
 
 ## Inline preview
 
-Preview is **opt-in** (`p`) and secondary - seeing inputs, files, projects, and export settings matters more than pixels in a terminal. When enabled, the TUI rasterises the tool's SVG and renders it as a truecolor half-block image directly in the terminal cells (no external image protocol required).
+Preview is **opt-in** (`p`) and secondary - seeing inputs, files, projects and export settings matters more than pixels in a terminal. When enabled, the TUI rasterises the tool's SVG and renders it as a truecolor half-block image directly in the terminal cells (no external image protocol required).
 
 ## What it can render
 
 Two tiers, picked automatically per format:
 
 - **DOM-free (always available):** **SVG (and SVGZ), EMF, WMF, EPS (and EPS-CMYK), DXF, BMP, HTML, plus the data formats** (JSON, CSV, ICS, VCF, MD) render through the same headless engine path as the CLI - instant, no browser.
-- **Browser tier (opt-in, on demand):** everything that needs a real layout/paint engine - **raster (PNG/JPG), PDF, video**, **live-URL capture**, and **TXT** - is produced by a scoped headless **Chromium**. TXT belongs here because it is the *rendered* page serialised to plain text, so something has to lay the page out first. For an ordinary tool the TUI drives a built copy of the web shell so the bytes are *identical* to a web/desktop Download; there is no second render path to drift. The browser launches only when you first export one of these formats, never at startup.
+- **Browser tier (opt-in, on demand):** everything that needs a real layout/paint engine - **raster (PNG/JPG), PDF, video**, **live-URL capture** and **TXT** - is produced by a scoped headless **Chromium**. TXT belongs here because it is the *rendered* page serialised to plain text, so something has to lay the page out first. For an ordinary tool the TUI drives a built copy of the web shell so the bytes are *identical* to a web/desktop Download; there is no second render path to drift. The browser launches only when you first export one of these formats, never at startup.
 
 Set the browser tier up once:
 
@@ -88,16 +88,16 @@ Exports are written to your desktop (`~/Desktop`) by default, with the folder ed
 
 `url-shot` - capture any live web page - runs fully in the TUI on the browser tier. It drives Chromium straight at the URL, so you get more than a plain shot:
 
-- **Formats:** **PNG / JPG** (a real screenshot), **PDF** (a true *vector* print - selectable text, crisp at any zoom), and **SVG** (the high-DPI shot in a scalable container).
+- **Formats:** **PNG / JPG** (a real screenshot), **PDF** (a true *vector* print - selectable text, crisp at any zoom) and **SVG** (the high-DPI shot in a scalable container).
 - **Crop:** trim in from each edge (top / right / bottom / left) as a 0–0.9 fraction.
-- **Recolor:** recolour the whole page before capture - invert, grayscale, sepia, a hue shift, or a **tint** that washes it in a colour of your choice.
-- Plus the existing scroll-depth, settle delay, and custom-CSS controls.
+- **Recolor:** recolour the whole page before capture - invert, grayscale, sepia, a hue shift or a **tint** that washes it in a colour of your choice.
+- Plus the existing scroll-depth, settle delay and custom-CSS controls.
 
 The crop and recolor controls are ordinary tool inputs, so they're editable from the keyboard like any other. (Recolor also applies in the web/desktop shells; crop and vector PDF/SVG are the terminal capture's own.)
 
 ## Persistence
 
-Unlike the ephemeral CLI, the TUI keeps state on disk under `~/.lolly` (override with `$LOLLY_TUI_DIR`): saved sessions, project folders, and your profile. A saved session stores the tool's serialised URL-state, so reopening it round-trips through the same parser the web shell and CLI use - not a lossy snapshot of raw values.
+Unlike the ephemeral CLI, the TUI keeps state on disk under `~/.lolly` (override with `$LOLLY_TUI_DIR`): saved sessions, project folders and your profile. A saved session stores the tool's serialised URL-state, so reopening it round-trips through the same parser the web shell and CLI use - not a lossy snapshot of raw values.
 
 ## Related
 

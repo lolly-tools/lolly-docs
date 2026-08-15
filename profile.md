@@ -1,10 +1,10 @@
 # Profiles - who you are when you create
 
-A **profile** is the working identity Lolly creates *as*. It's the small set of details a tool can pull from so you don't retype them every time - your name, contact details, an optional headshot, a few preferences - plus everything you accumulate while you work: saved sessions, uploaded images, and the local activity tally.
+A **profile** is the working identity Lolly creates *as*. It's the small set of details a tool can pull from so you don't retype them every time - your name, contact details, an optional headshot, a few preferences - plus everything you accumulate while you work: saved sessions, uploaded images and the local activity tally.
 
 Everything in a profile lives **on the device**, in the browser's local database (IndexedDB on the web PWA, the filesystem on the Tauri apps). There's no account and nothing is uploaded. You manage it under **Profile** (top-right of the gallery); tools only ever *read* it, and only the specific fields they were built to pre-fill.
 
-> A profile is about *you* (or whoever's creating here). It's distinct from the **Platform** - the brand's colours, fonts, and global settings - and from **Capabilities**, the catalogue of what the app can do. See [Profile vs Platform vs Capabilities](#profile-vs-platform-vs-capabilities) at the end.
+> A profile is about *you* (or whoever's creating here). It's distinct from the **Platform** - the brand's colours, fonts and global settings - and from **Capabilities**, the catalogue of what the app can do. See [Profile vs Platform vs Capabilities](#profile-vs-platform-vs-capabilities) at the end.
 
 ## What's in a profile
 
@@ -13,15 +13,15 @@ Everything in a profile lives **on the device**, in the browser's local database
 | **Name** | First and last name. |
 | **Contact** | Email and phone. |
 | **Location** | City and country. |
-| **Headshot** | An optional photo, cropped to a square and kept as a local image. Used by tools like email signatures, quote cards, org charts, and dynamic layouts. |
+| **Headshot** | An optional photo, cropped to a square and kept as a local image. Used by tools like email signatures, quote cards, org charts and dynamic layouts. |
 | **Use my details to create** | A single opt-in switch (it reads **Using my details** once it's on). It controls whether your personal details ride along as **provenance** - the author/credit line embedded in exported files - and as the author on **/pro** batch runs. (It doesn't gate pre-fill: see [How tools use your profile](#how-tools-use-your-profile).) |
-| **Preferences** | Your theme (Light, Dark, or Brand - the brand theme paints the app in your own palette) and which parts of the app you've enabled via **Feature flags**. |
+| **Preferences** | Your theme (Light, Dark or Brand - the brand theme paints the app in your own palette) and which parts of the app you've enabled via **Feature flags**. |
 | **Accessibility** | Four comfort switches - *Reduce motion*, *Hide colourful previews*, *High contrast*, *Large text* - kept on the profile record, so they ride along in a profile export. See [Accessibility](#accessibility). |
-| **Your work** | Saved sessions (with thumbnails) - organised into nested folders in **[Projects](/info/using.html)** - your **My images** library, and the local activity stats, all keyed to this profile. |
+| **Your work** | Saved sessions (with thumbnails) - organised into nested folders in **[Projects](/info/using.html)** - your **My images** library and the local activity stats, all keyed to this profile. |
 
 None of this is required. A blank profile is a perfectly good profile; you fill in only what saves you typing.
 
-![The Profile screen - name, contact, an optional headshot, and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&dark=1&filename=profile-details)
+![The Profile screen - name, contact, an optional headshot and your preferences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&dark=1&filename=profile-details)
 
 Preferences are the one part that changes how the app looks back at you. The theme cards are live previews and apply the moment you pick one, on this device only.
 
@@ -41,7 +41,7 @@ The default. The profile is you: your name, your email, your headshot. Set it on
 
 ### As a team
 
-A profile doesn't have to be a single human. It can stand in for a **team or function within an org**: the team's shared name, a group inbox address (`events@…`), a department, the team's headshot or unit mark. One person sets it up, exports it (see below), and the rest of the team loads the same profile - so everything the team produces carries consistent details without anyone re-entering them. A shared kiosk or a checked-out demo laptop can run a single team profile that everyone behind it creates as.
+A profile doesn't have to be a single human. It can stand in for a **team or function within an org**: the team's shared name, a group inbox address (`events@…`), a department, the team's headshot or unit mark. One person sets it up, exports it (see below) and the rest of the team loads the same profile - so everything the team produces carries consistent details without anyone re-entering them. A shared kiosk or a checked-out demo laptop can run a single team profile that everyone behind it creates as.
 
 ### As a function - a role you wear sometimes
 
@@ -51,13 +51,13 @@ In Lolly, that role is just **another profile you keep on hand** - a saved bundl
 
 ## One install, one active profile - many you can keep
 
-At any moment an install has **one active profile** - the details a tool sees right now. There's no in-app profile switcher; instead, each profile is a **portable bundle** (a single `.zip`, see [below](#moving-a-profile-to-a-new-device)). That's deliberately the same mechanism as moving to a new device - a profile is a file you can save, copy, and load.
+At any moment an install has **one active profile** - the details a tool sees right now. There's no in-app profile switcher; instead, each profile is a **portable bundle** (a single `.zip`, see [below](#moving-a-profile-to-a-new-device)). That's deliberately the same mechanism as moving to a new device - a profile is a file you can save, copy and load.
 
 So if you genuinely juggle several contexts (you, your team, the event-manager hat), you keep several bundles and load the one you need:
 
 - <!--i:trash--> **Cleanest switch:** **Profile → Storage → Clear all my data**, then **Import** the bundle for the context you're stepping into. You're now creating purely as that profile.
-- <!--i:layers--> **Layering:** importing *without* clearing first **merges** - the imported profile, sessions, and images land on top of what's already there, replacing anything with the same name and leaving the rest. Handy for pulling one team's saved sessions into your own setup; not what you want if you need a clean role boundary.
-- <!--i:monitor--> **Side by side:** because everything is device-scoped, a separate browser profile, a separate user account, or a second installed PWA each carries its own independent Lolly profile. Run your personal install and the event kiosk install at once, no switching.
+- <!--i:layers--> **Layering:** importing *without* clearing first **merges** - the imported profile, sessions and images land on top of what's already there, replacing anything with the same name and leaving the rest. Handy for pulling one team's saved sessions into your own setup; not what you want if you need a clean role boundary.
+- <!--i:monitor--> **Side by side:** because everything is device-scoped, a separate browser profile, a separate user account or a second installed PWA each carries its own independent Lolly profile. Run your personal install and the event kiosk install at once, no switching.
 
 Storage is where both halves of that live: the meter accounts for every byte this install is holding, category by category, and the buttons under it are how you clear or carry it.
 
@@ -96,7 +96,7 @@ Seven parts, each with its size stated before you commit:
 - <!--i:layers--> **Background removal** - the on-device cut-out models behind *Remove background*.
 - <!--i:shield--> **Verify deep scan** - the on-device watermark scanner, for checking Content Credentials away from a connection.
 
-The last four are marked **large download**, and they are deliberately individual opt-ins: **Download everything** at the top takes the app, the catalogue scope you chose, the docs and all tools in one pass, and nothing else. Speech voices, the upscalers, background removal and the deep scan each download only when you ask for that row by name - a few hundred megabytes hiding inside one button would be dishonest.
+The last four are marked **large download**, and they are deliberately individual opt-ins: **Download everything** at the top takes the app, the catalogue scope you chose, the docs and all tools in one pass and nothing else. Speech voices, the upscalers, background removal and the deep scan each download only when you ask for that row by name - a few hundred megabytes hiding inside one button would be dishonest.
 
 Below the parts sits the per-tool list: each tool downloads individually (the tick means ready offline), or **Download all** sweeps the lot. Downloads are resumable - cancel or lose the connection and the next run picks up where it stopped, fetching only what's missing - and they refresh themselves when you're back online, pulling just what a new release changed.
 
@@ -118,7 +118,7 @@ The bundle is a plain, self-contained zip, so it travels by **any** means - USB,
 
 What doesn't travel: the catalogue cache (it re-downloads itself on the new device) and the tools themselves (assumed already present). 
 
-For the exact bundle layout, version policy, and integrity rules, see **[Data Transfer](/info/data-transfer.html)**; for the end-to-end walkthrough, **[Using Lolly → Moving to another device](/info/using.html#moving-to-another-device)**.
+For the exact bundle layout, version policy and integrity rules, see **[Data Transfer](/info/data-transfer.html)**; for the end-to-end walkthrough, **[Using Lolly → Moving to another device](/info/using.html#moving-to-another-device)**.
 
 ## How tools use your profile
 
@@ -135,7 +135,7 @@ A tool only ever *pre-fills* the profile fields it was explicitly built to bind:
 Three things sit near each other in the UI and are easy to confuse:
 
 - <!--i:people--> **Profile** - *you* (or your team, or the role you're in): name, contact, headshot, your saved work. Personal, device-local, portable as a bundle.
-- <!--i:palette--> **Platform** - the *brand*: colours, fonts, and global settings every tool renders against. Shared and consistent, not personal.
+- <!--i:palette--> **Platform** - the *brand*: colours, fonts and global settings every tool renders against. Shared and consistent, not personal.
 - <!--i:sliders--> **Capabilities** - *what the app can do*: the full feature set and the tools available to you.
 
 A profile changes who an asset is *from*; the platform changes what it *looks like*; capabilities are *what you can make*.
@@ -151,4 +151,4 @@ The word is overloaded across the project. Neither of these is the personal prof
 
 ## Privacy
 
-Outside the optional identity enrolment above (which sends the email you enrol to the certificate service - see [Server Surface](/info/server-surface.html)), a profile is never transmitted, uploaded, or used to identify or track you - there's nothing to consent to, only this notice so you know what's kept. Wipe all of it at any time with **Profile → Clear all my data**. See the [Privacy Policy](/info/privacy.html).
+Outside the optional identity enrolment above (which sends the email you enrol to the certificate service - see [Server Surface](/info/server-surface.html)), a profile is never transmitted, uploaded or used to identify or track you - there's nothing to consent to, only this notice so you know what's kept. Wipe all of it at any time with **Profile → Clear all my data**. See the [Privacy Policy](/info/privacy.html).

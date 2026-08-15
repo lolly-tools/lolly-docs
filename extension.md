@@ -39,7 +39,7 @@ While a capture runs you may briefly see a *"…started debugging this browser"*
 
 ## Reading a site for Brand Studio
 
-The **Website** source in Brand Studio starts a brand from a site you already have. On Chromium the extension is what reads it; on the desktop app a native fetch does the same job, and on a plain browser with no extension the tile isn't offered at all.
+The **Website** source in Brand Studio starts a brand from a site you already have. On Chromium the extension is what reads it; on the desktop app a native fetch does the same job and on a plain browser with no extension the tile isn't offered at all.
 
 What happens when you press it:
 

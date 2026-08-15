@@ -108,7 +108,7 @@ Every hit is an ordinary link. A **Places** result goes to a plain hash route -
 `#/verify`, `#/lab`, `#/start` - so you can bookmark it, paste it into a doc or
 send it to a colleague, and several take you further in than the front door:
 `#/lab?c=<any css colour>` opens the Colour Lab already reporting on that
-colour, `#/ask?q=<question>` opens Ask Lolly with the question already asked,
+colour, `#/ask?q=<question>` opens Ask Lolly with the question already asked
 and `#/d?tab=<device|brand|caps|activity>` opens the Dashboard on that tab. A
 hit in **Projects** is a link too, but it names a saved slot on this device
 (`#/tool/<tool>?slot=…`), so that one travels no further than the device does.
@@ -125,7 +125,7 @@ screen with a mouse or trackpad.
 
 Once the panel is open: the arrow keys walk every row across every group,
 Enter opens whichever is highlighted (Cmd/Ctrl-Enter opens it in a new tab
-instead), and Escape backs out one step at a time - first the panel closes,
+instead) and Escape backs out one step at a time - first the panel closes,
 then a second press clears what you typed, then a third leaves the field.
 
 ## What it doesn't do

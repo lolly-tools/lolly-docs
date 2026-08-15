@@ -1,17 +1,17 @@
 # Adoption & Governance
 
-> Lolly is an internal prototype in a closed pilot - a fast-moving behavioural experiment inside the enterprise, not a finished product. This page is the honest account of who it's for, how people are meant to adopt it, how we'll know if it's working, and who governs what it produces.
+> Lolly is an internal prototype in a closed pilot - a fast-moving behavioural experiment inside the enterprise, not a finished product. This page is the honest account of who it's for, how people are meant to adopt it, how we'll know if it's working and who governs what it produces.
 
-Most of this platform's documentation describes what Lolly *can do*. This page describes what Lolly is *doing right now*: running a pilot, gathering evidence, and trying to change a behaviour - how ordinary, non-designer colleagues get an on-brand file made.
+Most of this platform's documentation describes what Lolly *can do*. This page describes what Lolly is *doing right now*: running a pilot, gathering evidence and trying to change a behaviour - how ordinary, non-designer colleagues get an on-brand file made.
 
 ## Status
 
 **Lolly is a closed-pilot prototype. Treat it as one.**
 
 - **It hasn't finished its pilot.** The pilot is in progress and has not completed. Features, defaults, claims and even the tool catalog can still change as we learn. There is more to share on **29 August 2026**.
-- **Its security is hardening for enterprise scale.** Lolly's cryptography and file-parsing engines - including the C2PA provenance seals, the X.509 identity handling, and on-device PDF/ZIP/link encryption - are currently undergoing SUSE's strict infrastructure hardening, preparing for enterprise scale. We're really good at this. They are strong *by design*; while that hardening completes, don't rely on them where an independent assurance is contractually required.
-- **It is arithmetically robust and evidentially empty.** The engine is deterministic and the maths is sound, but the product was, in effect, born yesterday. **SUSE is customer number one.** There is very little real-world adoption data. This too is by-design. We collect stories from the public voluntarily, never data invisibly. 
-- **If you're using it, we need your story.** The architecture is done; the evidence is not. What actually improves Lolly from here is real usage - what worked, what didn't, and what you managed to make. See [We need your story](#we-need-your-story).
+- **Its security is hardening for enterprise scale.** Lolly's cryptography and file-parsing engines - including the C2PA provenance seals, the X.509 identity handling and on-device PDF/ZIP/link encryption - are currently undergoing SUSE's strict infrastructure hardening, preparing for enterprise scale. We're really good at this. They are strong *by design*; while that hardening completes, don't rely on them where an independent assurance is contractually required.
+- **It is arithmetically sound and evidentially empty.** The engine is deterministic and the maths is sound, but the product was, in effect, born yesterday. **SUSE is customer number one.** There is very little real-world adoption data. This too is by-design. We collect stories from the public voluntarily, never data invisibly. 
+- **If you're using it, we need your story.** The architecture is done; the evidence is not. What actually improves Lolly from here is real usage - what worked, what didn't and what you managed to make. See [We need your story](#we-need-your-story).
 
 This experimental framing is deliberate: Judged as a finished marvel, Lolly could disappoint you at the fringes. Judged as a pilot trying to prove a specific behavioural change - routine asset creation work, done safely and professionally, without a designer in the loop - it's job and success are clear.
 
@@ -21,7 +21,7 @@ Adoption succeeds or fails on the **producer** - the non-designer who has to mak
 
 | User | Who they are | The friction Lolly removes | What they adopt |
 |---|---|---|---|
-| **The producer** | Marketers, sales, events, ops, comms - non-designers who need finished, on-brand files | "I need this now, I don't want to break the brand, and I don't want to wait for design" | The app: pick a tool, fill in fields, get the asset |
+| **The producer** | Marketers, sales, events, ops, comms - non-designers who need finished, on-brand files | "I need this now, I don't want to break the brand and I don't want to wait for design" | The app: pick a tool, fill in fields, get the asset |
 | **The brand creative owner / designer** | The people who own how the brand is expressed | Re-typing the same layout, policing off-brand output after the fact | Authoring tools & the asset catalog - encoding the rules once |
 | **The developer / platform team** | Engineers who automate and deploy | Storing binaries in Git, custom renderers, cloud image bills | The CLI, URL mode, MCP endpoints, self-hosting |
 | **The AI agent** | Automated workflows that produce assets | Token-expensive, drifting, un-auditable image generation | The MCP tools - deterministic renders from parameters |
@@ -36,8 +36,8 @@ The pilot's centre of gravity is the **producer**. If producers don't self-serve
 1. **Open Lolly** - the web app needs no install, no account, no sign-up. Nothing you type into a tool is sent to Lolly - there is no server collecting it.
 2. **Pick a tool** that matches what you need (an event tile, a quote card, a signature).
 3. **Fill in the fields.** No fonts, colours or spacing to decide - the tool already holds the brand rules.
-4. **Get the file.** Download it, copy a share link, or export a batch. Done.
-5. **Save your work** - reopen it later as a session, file it into a project, or turn it into your own template to start from next time. No git, no ticket.
+4. **Get the file.** Download it, copy a share link or export a batch. Done.
+5. **Save your work** - reopen it later as a session, file it into a project or turn it into your own template to start from next time. No git, no ticket.
 
 Step 3 is the one that carries the pilot. A tool opens with the brand already on it, so the only thing left to decide is the words.
 
@@ -60,7 +60,7 @@ Onboarding is about handing over control of the rules, not the output:
 
 1. Run a tool from the **CLI** to see the same engine the app uses (`lolly qr-code --url=… --output=…`).
 2. Wire a render into a **build step** or an **MCP endpoint**.
-3. Decide the **deployment shape**: hosted PWA, self-hosted, or air-gapped runner pods.
+3. Decide the **deployment model**: hosted PWA, self-hosted or air-gapped runner pods.
 
 The Dashboard's capability map is the inventory to scope that decision against: every part of the platform as its own card, grouped by what it makes and where it runs.
 
@@ -68,7 +68,7 @@ The Dashboard's capability map is the inventory to scope that decision against: 
 
 ### IT & security
 
-1. Confirm the **data posture**: no telemetry, nothing uploaded by default, and no backend in the core render/verify path - the two optional server components are inventoried on [Server Surface](/info/server-surface.html).
+1. Confirm the **data posture**: no telemetry, nothing uploaded by default and no backend in the core render/verify path - the two optional server components are inventoried on [Server Surface](/info/server-surface.html).
 2. Scope the **pilot** to a low-risk context while the hardening described in [Status](#status) completes.
 3. Decide who owns **governance** - see [Governance](#governance) below.
 
@@ -115,7 +115,7 @@ The goal the cycle serves is deflection, and it should ramp. The pilot targets *
 
 ## Governance (when you want it)
 
-Most people just make things - work in the app, save what they make as a **session**, and pass it on as a share link, a backup or a live collaboration, with no git and no approval step.
+Most people just make things - work in the app, save what they make as a **session** and pass it on as a share link, a backup or a live collaboration, with no git and no approval step.
 
 They can go further without touching git at all. From any tool, **Save** offers *save as a template* and *save as a variation*: the current doc becomes a named starting point that appears in that tool's "New from template" chooser the next time it opens, kept with your profile. No deployment owner, no commit, no pull request. To hand one to a colleague, share it as a **`.lolly` file** - a self-contained bundle anyone can import - or submit it for catalog inclusion. A marketing team can build, name and circulate its own variations of a tool entirely inside the app.
 
@@ -127,7 +127,7 @@ Git enters only when an organisation wants a single **canonical** catalog everyo
 - **Review can be the moderation - for the canonical catalog only.** Promoting a template into the shared source of truth is a change to git-tracked content, so it can be a pull request: elegant for engineers, unfamiliar to most brand and marketing teams. The gap is now narrow, because this is the *only* place git appears - creators make and share templates without it, and reach the canonical catalog by **submitting** a `.lolly`, not by opening a PR. Where brand owners want the final say without living in git, bridge that step with a light review, or let IT own the merge (which some long-running production environments actually prefer). Teams that don't want a canonical catalog skip all of it.
 - **Guard-rails are structural, not advisory.** Brand constraints are hard-coded in the tool; even the open canvas (the **Design** tool) conforms colours, type and assets to the brand globals. Off-brand output isn't policed after the fact - it's prevented at authoring time.
 - **Feature flags put control local.** Parts of Lolly can be turned on or off per deployment. Usually an administrator owns those; with Lolly, whoever runs the deployment does.
-- **Configuration is yours.** A deployment can overlay its own authentication, telemetry, or Certificate Authority to meet corporate compliance - none of it is on by default.
+- **Configuration is yours.** A deployment can overlay its own authentication, telemetry or Certificate Authority to meet corporate compliance - none of it is on by default.
 
 ![Every part of Lolly as its own switch, so turning a whole category of tools off is one click, not a support ticket](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&cropSelector=%23feature-flags-section&format=svg&walker=1&dark=1&filename=aud-feature-switches)
 
@@ -137,7 +137,7 @@ The most common adoption set-back is not technical; it's **framing and change ma
 
 Because Lolly collects no telemetry and no component reports usage back to us (see [Server Surface](/info/server-surface.html) for the two optional server components and what they keep), **we genuinely do not know who runs it or how well it's working** - and that's by design. The flip side is that the pilot depends on you telling us.
 
-If you are piloting Lolly, the most valuable thing you can contribute is a concrete before/after: what you used to do, what you did with Lolly, how long it took, and where it fell short. That evidence - not more architecture - is what moves this from a promising prototype to something proven.
+If you are piloting Lolly, the most valuable thing you can contribute is a concrete before/after: what you used to do, what you did with Lolly, how long it took and where it fell short. That evidence - not more architecture - is what moves this from a promising prototype to something proven.
 
 ## Honest limitations
 
@@ -147,4 +147,4 @@ To keep the framing straight, the things Lolly is *not* yet:
 - **Not a finished product.** It's a pilot; expect rough edges and change.
 - **Not a turnkey pack of your templates.** Lolly is a platform - someone has to author the catalog and the tools before producers can self-serve.
 - **Not for hero content.** It's for operationalised, recurring, massive-scale asset generation. Judged against Figma or Canva it will look narrow - that narrowness is the point.
-- **Not yet backed by evidence.** The maths is robust; the track record is a day old. Help us change that.
+- **Not yet backed by evidence.** The maths is sound; the track record is a day old. Help us change that.

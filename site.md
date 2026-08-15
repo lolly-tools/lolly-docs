@@ -16,7 +16,7 @@ Free, and it stays free: no account, no card, no catch.
 You need a quote card, an event tile, a localized signature - today, not next sprint. Lolly hands it back finished and on-brand, even if you've never opened a design tool. The rules live in the template, so the output comes out right.
 
 - **Fill in a few fields, get the finished asset.** No fonts to pick, no colours to second-guess, no "is this the right logo?" The tool already knows. You bring the words.
-- **Endless variations, one source of truth.** Localize a quote card into 12 languages, swap a brand lockup across 40 campaigns, or make every size variant for every placement - without touching the design. Drive it all from a spreadsheet in the batch grid: paste or import a CSV, get one finished file per row.
+- **Endless variations, one source of truth.** Localize a quote card into 12 languages, swap a brand lockup across 40 campaigns or make every size variant for every placement - without touching the design. Drive it all from a spreadsheet in the batch grid: paste or import a CSV, get one finished file per row.
 - **No creative-agency bottleneck for routine assets.** Email signatures, event countdowns, quote cards, QR codes - everything your team needs on a Tuesday at 4pm, self-serve.
 - **No procurement round for a picture.** No new subscription to approve, no licence to audit, no seat to buy for the person who needed one tile on a Tuesday.
 
@@ -42,9 +42,9 @@ You're on the road, the deck is wrong, the customer asked for something specific
 
 Build your info-editorial style once, then generate publication-quality assets from live data as it happens.
 
-- **Bring data directly into visuals.** Connect structured data to chart, map, and table templates. Update the numbers; the layout takes care of itself.
+- **Bring data directly into visuals.** Connect structured data to chart, map and table templates. Update the numbers; the layout takes care of itself.
 - **Match your publication's style, exactly.** Tools are authored with hard-coded typographic and color constraints - your house style enforced at the template level, not as a loose guideline.
-- **Print-ready or screen-ready.** Export SVG, CMYK PDF, high-res PNG, or 60fps video from the same template. One source, every format your production desk needs.
+- **Print-ready or screen-ready.** Export SVG, CMYK PDF, high-res PNG or 60fps video from the same template. One source, every format your production desk needs.
 - **Reusable formats for recurring stories.** Election results, quarterly earnings, weather events - build the template once and reuse it every time the story runs.
 
 ---
@@ -80,11 +80,11 @@ You design systems and solve problems, not one-offs. Lolly is the execution laye
 
 ### Your build pipeline should include your visuals.
 
-Images are build artifacts. Treat them that way. Lolly runs from the CLI so you can generate assets the same way you generate everything else - repeatably, automatically, and as part of your workflow.
+Images are build artifacts. Treat them that way. Lolly runs from the CLI so you can generate assets the same way you generate everything else - repeatably, automatically and as part of your workflow.
 
 - **Skip the genAI media lottery.** You tried genAI media - expensive, and not close enough. Lolly is free, faster, local content automation that removes their slop and your slog.
 - **Reproducible outputs.** Same inputs produce the same file, every time. Commit a URL, regenerate on demand - no more checking in images or chasing the latest version from Slack.
-- **Get media out of your codebase.** Generate OG images, QR codes, social cards, and data visuals at build time instead of storing binaries in Git.
+- **Get media out of your codebase.** Generate OG images, QR codes, social cards and data visuals at build time instead of storing binaries in Git.
 - **Execute logic inside assets.** Tools like Code Canvas and Chart Creator let you place real content - code snippets, structured data, live values - inside production-quality templates without building a custom renderer.
 - **Zero lock-in.** Open source engine, local compute, no API keys, no rate limits.
 
@@ -126,9 +126,9 @@ Output the file URL.
 
 Every time someone uploads a file to a third-party service to "just make it look right," that's a data exfiltration event waiting to happen. Lolly eliminates the problem at the source - creative production stays on-premise and under your control.
 
-- **Data stays on the device.** No cloud rendering, no analytics, no telemetry - and no network request at all beyond the handful a user explicitly triggers, each one named in the [privacy policy](/info/privacy.html). What colleagues create stays on their machine. On-device utilities like Strip Hidden Data scrub EXIF and metadata from images, SVG, and PDF entirely in the browser - nothing is uploaded. Even locking a PDF, a whole download, or a share link with a password happens on-device; the password never leaves it.
+- **Data stays on the device.** No cloud rendering, no analytics, no telemetry - and no network request at all beyond the handful a user explicitly triggers, each one named in the [privacy policy](/info/privacy.html). What colleagues create stays on their machine. On-device utilities like Strip Hidden Data scrub EXIF and metadata from images, SVG and PDF entirely in the browser - nothing is uploaded. Even locking a PDF, a whole download or a share link with a password happens on-device; the password never leaves it.
 - **Self-host for full air-gap control.** Deploy on your own infrastructure. The core app is a static deployment with no server-side processing and no database; the two optional server components (the AI-agent endpoint and identity enrolment - see [Server Surface](/info/server-surface.html)) can be omitted entirely. Run it behind your own firewall, with your own access policies.
-- **Reduce vendor surface area.** One open-source platform replaces a sprawl of SaaS subscriptions for creative production. Fewer vendors means fewer contracts, fewer audits, and fewer breach vectors.
+- **Reduce vendor surface area.** One open-source platform replaces a sprawl of SaaS subscriptions for creative production. Fewer vendors means fewer contracts, fewer audits and fewer breach vectors.
 - **Enforce brand governance at the infrastructure level.** Tools are authored once and distributed as data - not files, not manual processes. What goes out the door is exactly what was approved to go out the door.
 - **Get critical information into human-readable formats instantly.** Incident communications, compliance reports, executive briefings - structured data becomes publication-quality output in seconds, no design bottleneck.
 - **Hardening for enterprise scale.** Lolly is a closed-pilot prototype: its cryptography and file-parsing engines are currently undergoing SUSE's strict infrastructure hardening, preparing for enterprise scale - we're really good at this. Content Credentials and local encryption are strong by design; pilot them in a scoped context while that hardening completes. See [Adoption & governance](/info/adoption-governance.html#status).
@@ -143,7 +143,7 @@ Every time someone uploads a file to a third-party service to "just make it look
 
 **Works everywhere.** Web PWA, Mac, Windows, Linux, iOS, Android, CLI, terminal TUI - same engine, same output.
 
-**Formats, in and out.** Dozens in, dozens out, and many of them both ways - the full breakdown is on the [Formats page](/info/formats.html), and every format in detail on the [Exporting page](/info/exporting.html).
+**Formats, in and out.** Dozens in, dozens out and many of them both ways - the full breakdown is on the [Formats page](/info/formats.html), and every format in detail on the [Exporting page](/info/exporting.html).
 
 **Production quality.** Outlined type, Spot color support, 60FPS · Media fit for the studio.
 
@@ -155,6 +155,6 @@ Think of it like a vending machine for design. Make a selection, get a result. E
 
 A tool is a ready-to-use creative template that knows exactly what it's making and how. Give it a headline, a date, a number - and it produces a finished asset, to spec.
 
-No design experience needed. No decisions about fonts, colors, or spacing - the tool already knows best. Whether you're a designer, a marketer, a developer, or an AI agent, the output is the same.
+No design experience needed. No decisions about fonts, colors or spacing - the tool already knows best. Whether you're a designer, a marketer, a developer or an AI agent, the output is the same.
 
-Tools are authored once by the people who know the brand, and then used by everyone else - from a web browser, a phone, the command line, or an automated pipeline. The design decisions are locked in at the template level. The only thing left to do is fill in the content.
+Tools are authored once by the people who know the brand, and then used by everyone else - from a web browser, a phone, the command line or an automated pipeline. The design decisions are locked in at the template level. The only thing left to do is fill in the content.

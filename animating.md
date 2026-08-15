@@ -1,12 +1,12 @@
 # Animating: keyframes, depth and a camera
 
-**Design** puts a timeline under the free canvas, and **Sequence Studio** is the same timeline with a video composition already in it. [Using Lolly](/info/using.html#timeline-sequence-studio) describes the timeline itself - the magnetic sequence row, the overlay lanes, the Always on strip, transitions and rendering - and [The sequence editor](/info/sequence-editor.html) covers editing in time. This page is about the layer above that: posing a box at one instant, lifting it off the page, and flying a camera over the result.
+**Design** puts a timeline under the free canvas, and **Sequence Studio** is the same timeline with a video composition already in it. [Using Lolly](/info/using.html#timeline-sequence-studio) describes the timeline itself - the magnetic sequence row, the overlay lanes, the Always on strip, transitions and rendering - and [The sequence editor](/info/sequence-editor.html) covers editing in time. This page is about the layer above that: posing a box at one instant, lifting it off the page and flying a camera over the result.
 
 Everything here runs on your device. Nothing plays on its own: the preview moves when you press play or drag the playhead, and what you see at any instant is exactly what an export of that instant contains.
 
 ## A keyframe is a pose at a moment
 
-A keyframe records where a box sits, how large it is, how see-through, how blurred, and how far it stands off the page - all at one instant. Two keyframes make a move, and Lolly fills in everything between them.
+A keyframe records where a box sits, how large it is, how see-through, how blurred and how far it stands off the page - all at one instant. Two keyframes make a move, and Lolly fills in everything between them.
 
 **+Keyframe** has two homes and one behaviour:
 
@@ -27,7 +27,7 @@ A box that has never been animated shows one control instead - **Animate**, in i
 
 There is no record button and no stopwatch. Where the playhead sits decides what an edit writes.
 
-- **Parked on a diamond**, the canvas and the pose fields edit *that keyframe*. Drag the box, rotate it, resize it, or type a number, and only that pose changes. A box resized on a diamond tweens its size between keyframes, and text inside it reflows as it goes.
+- **Parked on a diamond**, the canvas and the pose fields edit *that keyframe*. Drag the box, rotate it, resize it or type a number, and only that pose changes. A box resized on a diamond tweens its size between keyframes, and text inside it reflows as it goes.
 - **Parked off every diamond**, the same edits change the box itself, which moves the whole animation with it. This is how you reposition a finished move without re-keying it.
 
 The Keyframes group says which one you are in: its first line reads **Scene pose** off a diamond and **Keyframe @ 0:01.8** on one. Off a diamond the pose fields show the values the box is passing through at that instant, and all but Depth are inactive, because there is no keyframe to write to.
@@ -38,7 +38,7 @@ Closing the timeline turns all of this off. The playhead is the arm, so the arm 
 
 ## The Keyframes popup
 
-The clip inspector is a row of grouped segments - **Time**, **Animate**, **Keyframes**, a speaker toggle for mute, and the timed or always-on switch. Each segment shows one glance-value summary; press it and its controls open as a panel above the transport, wide enough to read.
+The clip inspector is a row of grouped segments - **Time**, **Animate**, **Keyframes**, a speaker toggle for mute and the timed or always-on switch. Each segment shows one glance-value summary; press it and its controls open as a panel above the transport, wide enough to read.
 
 The **Keyframes** panel holds everything one track can be edited with:
 
@@ -56,7 +56,7 @@ The keyframe rows are the keyboard and screen-reader route to the diamonds. Ever
 
 ## Depth lifts a box off the page
 
-**Depth** is the first pose field, and it is the one that stays live even when you are parked between keyframes. It says how far the box stands above the surface: `0` is flat on the page, the slider scrubs the useful band of 0 to 300, and the number beside it takes anything from `-300` (sunken) to `900`.
+**Depth** is the first pose field, and it is the one that stays live even when you are parked between keyframes. It says how far the box stands above the surface: `0` is flat on the page, the slider scrubs the useful band of 0 to 300 and the number beside it takes anything from `-300` (sunken) to `900`.
 
 - Off a diamond, Depth writes the box's own depth, so the box is simply lifted for as long as it runs.
 - On a diamond, Depth poses that keyframe, so a box can rise and settle again.
@@ -77,7 +77,7 @@ Five moves write a complete track in one press, each one an ordinary set of keyf
 | **Pull back** | Starts close and settles at the resting frame. |
 | **Pan across** | Slides sideways, so lifted layers part at different speeds. |
 | **Rise** | Climbs over the composition, easing a little closer as it goes. |
-| **Reveal** | Starts close and soft, then settles sharp at the resting frame. The depth-of-field showcase. |
+| **Reveal** | Starts close and soft, then settles sharp at the resting frame. The depth-of-field demo. |
 
 **Orbit** sits beside them, dimmed, and says why: it needs the angled camera that is still being built.
 
@@ -86,7 +86,7 @@ Under the moves are the camera's own channels - **Pan X** and **Pan Y**, **Dolly
 Two things worth knowing about the model:
 
 - A camera holding a **single pose** is the scene default. Pan it, dolly it or change its focus and the whole shot changes, with no keyframes involved.
-- **Cuts come from a second camera.** Park the playhead where you want the cut, choose **Camera** from the timeline's `+` menu, and click the canvas to drop it (the same two steps every kind added from the timeline takes). It lands as a clip starting at that instant, and from there the shot looks through it.
+- **Cuts come from a second camera.** Park the playhead where you want the cut, choose **Camera** from the timeline's `+` menu and click the canvas to drop it (the same two steps every kind added from the timeline takes). It lands as a clip starting at that instant, and from there the shot looks through it.
 
 **Focus** is a distance and **Aperture** is how shallow the focus is; at `0` everything is sharp, and raising it softens whatever sits away from the focus distance. **FOV strength** changes the perspective, not the magnification - it is a dolly (the camera's own Depth) that makes things bigger.
 

@@ -4,7 +4,7 @@
 
 In 1932 a typographer wrote fourteen lines about what a printing office is for. They were set in Eric Gill's Perpetua Titling for a Monotype type specimen, and they got away: reprinted more than possibly any other broadside in the trade, translated into seventeen languages, cast in bronze in Washington. Ninety-four years later they describe this project better than anything we have written about ourselves.
 
-So we adapted them. This page shows you what she wrote, what we changed, and who she was.
+So we adapted them. This page shows you what she wrote, what we changed and who she was.
 
 ## What she wrote
 
@@ -29,7 +29,7 @@ This is a Printing Office
 
 ![A side-profile studio portrait of Beatrice Warde as a young woman, about 1925, facing left against a dark ground](/info/warde-1925.jpg)
 
-%file{warde-1925.jpg} %entity{an unknown photographer} made this side-profile portrait of %entity{Beatrice Warde} %detail{about 1925, soon after she reached London} %detail{public domain — a century on, an anonymous 1925 photograph has outlived copyright everywhere it was ever protected: in the United States, where anything published before 1930 is now free; and in the United Kingdom and Europe, where an anonymous work passes into the public domain seventy years after publication} %entity{Lolly} %act{published} it in good faith, and will honour any rights-holder who comes forward
+%file{warde-1925.jpg} %entity{an unknown photographer} made this side-profile portrait of %entity{Beatrice Warde} %detail{about 1925, soon after she reached London} %detail{public domain - a century on, an anonymous 1925 photograph has outlived copyright everywhere it was ever protected: in the United States, where anything published before 1930 is now free; and in the United Kingdom and Europe, where an anonymous work passes into the public domain seventy years after publication} %entity{Lolly} %act{published} it in good faith, and will honour any rights-holder who comes forward
 
 ![The bronze plaque in the lobby of the US Government Printing Office, the text cast in capitals and signed Beatrice L. Warde, presented by the graduates of the apprentice class of 1940](/info/printing-office-plaque.jpg)
 
@@ -37,9 +37,9 @@ This is a Printing Office
 
 ### Hear it
 
-<audio src="media/warde-printing-office.opus" captions="media/warde-printing-office.vtt" label="English — the original"></audio>
+<audio src="media/warde-printing-office.opus" captions="media/warde-printing-office.vtt" label="English: the original"></audio>
 
-%file{warde-printing-office.opus} %entity{Google AI Studio} %act{generated} a reading of Warde's original %detail{Gemini speech model, voice Sulafat, transatlantic accent, empathetic read — generated audio, not a human reader} %entity{Lolly} %act{directed and published} it %sig{signed by %entity{Lolly}} %detail{Ogg/Opus has no standardised C2PA mapping yet, so this credential rides in the file's OpusTags header and Lolly's verifier is the one that reads it}
+%file{warde-printing-office.opus} %entity{Google AI Studio} %act{generated} a reading of Warde's original %detail{Gemini speech model, voice Sulafat, transatlantic accent, empathetic read - generated audio, not a human reader} %entity{Lolly} %act{directed and published} it %sig{signed by %entity{Lolly}} %detail{Ogg/Opus has no standardised C2PA mapping yet, so this credential rides in the file's OpusTags header and Lolly's verifier is the one that reads it}
 
 ## What we made of it
 
@@ -82,15 +82,15 @@ Everything else is hers, including the line this whole page is about - and inclu
 
 Warde meant a proof pull: the sheet you take off the press and check before committing to the run. The word survived into our trade almost unchanged, then quietly acquired a second meaning she could not have intended.
 
-Every Lolly export [carries its own record](/info/content-credentials-identity.html) - a signed, machine-readable account of what a file is, what it was made from, and what was done to it. Proof in her sense is the check before the run. Proof in ours is the check anyone can run afterwards, on the finished file, without asking us. Same word, same job, ninety-four years apart. You can [verify it yourself](/info/verify-yourself.html).
+Every Lolly export [carries its own record](/info/content-credentials-identity.html) - a signed, machine-readable account of what a file is, what it was made from and what was done to it. Proof in her sense is the check before the run. Proof in ours is the check anyone can run afterwards, on the finished file, without asking us. Same word, same job, ninety-four years apart. You can [verify it yourself](/info/verify-yourself.html).
 
 ## Who she was
 
-Beatrice Lamberton Warde, born Becker in New York on 20 September 1900, daughter of the *Herald Tribune* book critic May Lamberton Becker and the composer Gustave Becker. She was shown calligraphy at thirteen, took her degree at Barnard in 1921, and went to work as assistant librarian at the Typographical Library and Museum of the American Type Founders Company in Jersey City, under Henry Lewis Bullen. She left for Europe in 1925.
+Beatrice Lamberton Warde, born Becker in New York on 20 September 1900, daughter of the *Herald Tribune* book critic May Lamberton Becker and the composer Gustave Becker. She was shown calligraphy at thirteen, took her degree at Barnard in 1921 and went to work as assistant librarian at the Typographical Library and Museum of the American Type Founders Company in Jersey City, under Henry Lewis Bullen. She left for Europe in 1925.
 
 In 1926 *The Fleuron* published "The Garamond Types, Sixteenth and Seventeenth Century Sources Considered." The argument: the types held at the French royal printing office and sold across the trade as Garamond's were not cut by Claude Garamond at all. They traced to Jean Jannon of Sedan, on the evidence of his 1621 specimen sitting in the Bibliothèque Mazarine. The misattribution had entered print in 1845 and nobody had gone back to check.
 
-The author was named as Paul Beaujon, a man who did not exist, with an invented biography to go with him. She was twenty-five. When Monotype offered Beaujon the editorship of *The Monotype Recorder* in 1927, the executives were expecting him to be a man. She took the job, became head of publicity in 1929, and stayed until 1960.
+The author was named as Paul Beaujon, a man who did not exist, with an invented biography to go with him. She was twenty-five. When Monotype offered Beaujon the editorship of *The Monotype Recorder* in 1927, the executives were expecting him to be a man. She took the job, became head of publicity in 1929 and stayed until 1960.
 
 She kept writing as him. The phrase every designer knows first appears under the Beaujon name in 1933, in an essay called "On the Choice of Type Faces", and it is usually quoted with its first half cut off:
 
@@ -100,7 +100,7 @@ She kept writing as him. The phrase every designer knows first appears under the
 
 The half that gets dropped is the half that makes it an argument. Loving ideas obliges you to care about words, and caring about words obliges you to care how they are dressed. Meaning is not changed by its setting, but its reception entirely is: the same sentence in the wrong face is a different sentence to the person reading it. That is the case for rigour at scale, made in two lines by a woman writing under a man's name because the trade would not print her own.
 
-So the woman who wrote "fixed in time having been verified in proof" is the same person who went to the archive, found a three-hundred-year misattribution, published the correction under a false name because that was the price of being read, and then had to claim it back as her own.
+So the woman who wrote "fixed in time having been verified in proof" is the same person who went to the archive, found a three-hundred-year misattribution, published the correction under a false name because that was the price of being read and then had to claim it back as her own.
 
 She died in Epsom, Surrey, England on 16 September 1969.
 

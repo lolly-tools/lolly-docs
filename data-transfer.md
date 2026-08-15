@@ -1,6 +1,6 @@
 # Data Transfer - the `lolly-backup` bundle
 
-Everything a Lolly user accumulates lives **on their device** - no account, no cloud. The data-transfer bundle is how that value moves: export it on one install, carry the file by any means (USB, AirDrop, email-to-self, a network share), and import it on another. The file *is* the transport. The target can be offline or online. It makes no difference, because nothing ever talks to a server.
+Everything a Lolly user accumulates lives **on their device** - no account, no cloud. The data-transfer bundle is how that value moves: export it on one install, carry the file by any means (USB, AirDrop, email-to-self, a network share) and import it on another. The file *is* the transport. The target can be offline or online. It makes no difference, because nothing ever talks to a server.
 
 ![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls)
 
@@ -10,7 +10,7 @@ This page is the format spec. For the end-user walkthrough see [Using Lolly → 
 
 ## Goals
 
-- <!--i:box--> **One format, every shell.** The same bytes are produced and consumed by the web PWA, the Tauri desktop/mobile apps, and any future shell. The bundle is the contract. Each shell's capability bridge is the per-platform adapter behind it.
+- <!--i:box--> **One format, every shell.** The same bytes are produced and consumed by the web PWA, the Tauri desktop/mobile apps and any future shell. The bundle is the contract. Each shell's capability bridge is the per-platform adapter behind it.
 - <!--i:shieldcheck--> **Survives the trip.** A bundle mangled or truncated in transit fails loudly on import, never half-restores.
 - <!--i:clock--> **Outlives this version.** An older app can still import a newer bundle's recognised parts. A genuinely breaking format is refused cleanly.
 - <!--i:check--> **Safe to merge.** Importing onto an install that is already in use never wipes anything that was not in the bundle.
@@ -21,12 +21,12 @@ A bundle is a plain `.zip`. The download is named for the person it belongs to -
 
 | Path | Required | Contents |
 |---|---|---|
-| `manifest.json` | yes | Format id, versions, counts, and per-part integrity. The first thing a reader looks at. |
+| `manifest.json` | yes | Format id, versions, counts and per-part integrity. The first thing a reader looks at. |
 | `profile.json` | when set | The user's `me` record (name, contact, headshot ref, flags). Read via `host.profile`. |
-| `sessions.json` | yes | Every saved session: slot, tool id/version, label, thumbnail (data-URL), and full input data. Read via `host.state`. |
+| `sessions.json` | yes | Every saved session: slot, tool id/version, label, thumbnail (data-URL) and full input data. Read via `host.state`. |
 | `assets.json` | yes | Metadata for each uploaded asset (images, fonts, brand tokens), each pointing at its bytes under `assets/blobs/`. |
 | `assets/blobs/<n>.<ext>` | per asset | The raw asset bytes (image and font files). Stored uncompressed (already-compressed formats). The extension is cosmetic. The MIME in `assets.json` is authoritative. |
-| `prefs.json` | yes | User-owned local preferences: `theme`, `sidebarWidth`, and the `ct-metrics` activity tally. |
+| `prefs.json` | yes | User-owned local preferences: `theme`, `sidebarWidth` and the `ct-metrics` activity tally. |
 | `lolly.txt` | yes | A human-readable summary of the bundle (counts, profile, filename) for anyone who opens the zip without Lolly. Regenerated on every export and recognised on import, so it never counts as a skipped part. It is written *after* the integrity map, so it stays outside it. |
 
 The bundle is a plain zip on purpose: it survives any transport intact, and any unzip tool can inspect it.
@@ -120,7 +120,7 @@ Two shells sit outside that guarantee, for different reasons:
 
 The envelope is a manifest plus a set of named parts by design, so new kinds of portable data can ride it later **without a breaking change**. They slot in as additive parts (new `formatVersion`, same `minReader`), and today's reader skips what it does not recognise. These are on the [roadmap](/info/overview.html#roadmap), not yet implemented. The names are reserved here so the format stays coherent when they land.
 
-- **`tokens.json` - design tokens.** A [W3C DTCG](https://tr.designtokens.org/format/) design-tokens document (the format [Penpot imports and exports](https://help.penpot.app/user-guide/design-systems/design-tokens/) - tokens with `$value`/`$type`/`$description`, organised into groups, sets, and themes). A token set in the bundle lets a user move their brand primitives between installs alongside their sessions. Longer term, an ingested token set becomes a first-class source that tools and palette assets resolve against.
+- **`tokens.json` - design tokens.** A [W3C DTCG](https://tr.designtokens.org/format/) design-tokens document (the format [Penpot imports and exports](https://help.penpot.app/user-guide/design-systems/design-tokens/) - tokens with `$value`/`$type`/`$description`, organised into groups, sets and themes). A token set in the bundle lets a user move their brand primitives between installs alongside their sessions. Longer term, an ingested token set becomes a first-class source that tools and palette assets resolve against.
 - **`penpot/` - ingested Penpot files.** A reserved directory for a Penpot file (or its extracted, Lolly-relevant subset) imported and surfaced *as a tool*. The bundle will carry the ingested definition, so it travels with the rest of the user's data.
 
 Anything outside these reserved names and the parts above is, to a reader, an unknown part: left untouched and counted in `skipped`.
@@ -128,5 +128,5 @@ Anything outside these reserved names and the parts above is, to a reader, an un
 ## Reference
 
 - Module: [`shells/web/src/data-transfer.ts`](../shells/web/src/data-transfer.ts) (`exportBackup`, `importBackup`, `BACKUP_FORMAT`, `BACKUP_FORMAT_VERSION`, `BACKUP_READER_VERSION` - the `backupFilename()` namer is internal).
-- Contract test: [`tests/data-transfer.test.ts`](../tests/data-transfer.test.ts) - round-trip, merge, integrity, forward-compat, and reader-gate cases.
+- Contract test: [`tests/data-transfer.test.ts`](../tests/data-transfer.test.ts) - round-trip, merge, integrity, forward-compat and reader-gate cases.
 - Bridge surface used: `host.profile`, `host.state`, `host.assets` - see [Host API](/info/host-api.html).

@@ -48,12 +48,12 @@ Alongside the preferences: controls carry accessible names and pressed states,
 changes are announced to screen readers, overlays close on Escape, the drawing
 tools answer single keypresses and the arrow keys nudge whatever you have
 selected, keyboard focus is visible and strengthened further under high
-contrast, and every one of these switches is a plain, always-visible card on
+contrast and every one of these switches is a plain, always-visible card on
 the profile page - findable by someone who can barely read the page as it is,
 which is the moment it matters.
 
 **Listen.** Eleven core pages of this documentation can be read aloud - play,
-pause, and follow the words as they are spoken, at a pace you set. Narration is
+pause and follow the words as they are spoken, at a pace you set. Narration is
 English-only for now, and more pages are being recorded. Slowing down costs
 nothing in quality: it is a different speed, not a lesser one, for anyone who
 learns at their own pace.
@@ -80,7 +80,7 @@ opt-in:
 
 ![A utility card on a phone-width screen: a calm icon and text tile that keeps its favourite, pin and info actions](/t/url-shot?url=%2F%23%2Fu&width=430&height=900&dpi=192&waitMs=2400&scrollDepth=900&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone%7D.gtile%7Bcontent-visibility%3Avisible%7D&format=svg&walker=1&cropSelector=.gtile--utility%5Bdata-tool-id%5D&dark=1&filename=incl-utility-card)
 
-![The Neurospicy player docked over the app: track title and transport, separate Music and Effects volumes, and the Atmosphere mixer with Wind, Birdsong and Crickets raised](/t/url-shot?url=%2F%23%2F%3Fneuro%3Dplayer&width=1440&height=1000&dpi=192&waitMs=3200&css=%5Bdata-dock-viz-slot%5D%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23neuro-dock&dark=1&filename=incl-neuro-player)
+![The Neurospicy player docked over the app: track title and transport, separate Music and Effects volumes and the Atmosphere mixer with Wind, Birdsong and Crickets raised](/t/url-shot?url=%2F%23%2F%3Fneuro%3Dplayer&width=1440&height=1000&dpi=192&waitMs=3200&css=%5Bdata-dock-viz-slot%5D%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23neuro-dock&dark=1&filename=incl-neuro-player)
 
 ![The visualiser open over the app, painting the music as a full-motion field, with its own transport and volume controls](/t/url-shot?url=%2F%23%2F%3Fneuro%3Dviz&width=1440&height=900&dpi=96&waitMs=2000&waitSelector=.viz-panel%5Bdata-demo-settled%5D&walker=1&format=svg&cropSelector=.viz-surface&css=.viz-surface%20*%7Bbackdrop-filter%3Anone%21important%7D&dark=1&filename=incl-neuro-viz)
 
@@ -93,7 +93,7 @@ opt-in:
 - <!--i:convert--> Right-to-left scripts are first-class: Arabic ships with full RTL layout, not
   a mirrored afterthought.
 - <!--i:layers--> Languages are distinct, not interchangeable: Indonesian and Malay are separate
-  catalogs, Traditional and Simplified Chinese are separate catalogs, and the
+  catalogs, Traditional and Simplified Chinese are separate catalogs and the
   language attribute is set before first paint so Han characters and script
   fallbacks render correctly for your language, not a lookalike.
 - <!--i:checklist--> The language menu lists every language in its own name and script, and can be
@@ -138,7 +138,7 @@ faster on every other day, and they compound.
 - <!--i:lock--> **What protects the workflow protects the person.** On-device rendering,
   plain-file exports and offline capability are usually filed under privacy, and
   they are also what keeps you working on a bad connection, on a locked-down
-  machine, or the day a subscription lapses. Your workflow does not have
+  machine or the day a subscription lapses. Your workflow does not have
   dependencies you did not choose.
 
 Two things follow that we treat as inseparable: operational superiority, because
@@ -161,13 +161,13 @@ your content has nothing to revise.
   how media was made, and creators deserve tools that can prove their work is
   theirs.
 - <!--i:check--> **No dark patterns.** Preferences are plain switches that do what they say,
-  defaults are dormant until you choose them, and platform conventions (native
+  defaults are dormant until you choose them and platform conventions (native
   scrolling, browser shortcuts, standard dialogs) are respected rather than
   hijacked.
 - <!--i:code--> **Open source.** The engine, shells and community tools are public. Every
   claim in this document is checkable in the source, and several are enforced by
   tests that fail the build when broken - the additive-by-default rule for
-  accessibility attributes, the ban on preferences reaching exports, and the
+  accessibility attributes, the ban on preferences reaching exports and the
   keeping-in-step of the app's two copies of each preference.
 
 ## Holding ourselves to it
