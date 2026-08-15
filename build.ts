@@ -1352,7 +1352,7 @@ function formatsSection(lang: Lang, opts: { head?: boolean } = {}): string {
   <div class="formats-inner">
     <div class="formats-head reveal">
       ${opts.head === false ? '' : `<h2>${esc(formats.heading)}</h2>`}
-      <p class="formats-hint">${esc(`${n.in} in · ${n.out} out — tap any format to learn what it is and what Lolly supports.`)}</p>
+      <p class="formats-hint">${esc(`${n.in} in · ${n.out} out - tap any format to learn what it is and what Lolly supports.`)}</p>
     </div>
     <div class="fmt-scroll reveal reveal-1">
       <div class="fmt-table">
@@ -3759,7 +3759,7 @@ const THEME_SVG_BRAND = `<svg class="icon-brand" viewBox="0 0 24 24" fill="none"
 // Icon-only cycle button showing the ACTIVE theme's glyph (CSS below picks which,
 // off [data-theme]) — matching the app's createThemeToggle. Clicking steps
 // light → dark → brand → light (THEME_INTERACT_SCRIPT).
-const THEME_TOGGLE   = `<button class="nav-theme-toggle" aria-label="Switch theme (light, dark, brand)" title="Switch theme — light / dark / brand">${THEME_SVG_SUN}${THEME_SVG_MOON}${THEME_SVG_BRAND}</button>`;
+const THEME_TOGGLE   = `<button class="nav-theme-toggle" aria-label="Switch theme (light, dark, brand)" title="Switch theme - light / dark / brand">${THEME_SVG_SUN}${THEME_SVG_MOON}${THEME_SVG_BRAND}</button>`;
 
 // The theme lives on [data-theme] (the app's mechanism, so the inlined tokens.css themes),
 // and the legacy `.dark` CLASS is kept in lock-step with it — purely so the banked masthead
