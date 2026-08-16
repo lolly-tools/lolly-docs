@@ -42,19 +42,9 @@ Lolly draws the same line. Explore probabilistically: a model, a designer, a rou
 
 ### Against the alternatives
 
-| Capability | Canva | Brand portals | Illustrator | Figma / Penpot | **Lolly** |
-|---|---|---|---|---|---|
-| Mass content generation | partial | ✗ | ✗ | ✗ | **✓** |
-| Works fully offline | ✗ | ✗ | ✓ | partial | **✓** |
-| Template logic & hard constraints | ✗ | partial | ✗ | partial | **✓** |
-| No design skill required | partial | ✓ | ✗ | ✗ | **✓** |
-| Automatic Content Credentials | ✗ | ✗ | partial | ✗ | **✓** |
-| Tools compose other tools | ✗ | ✗ | ✗ | ✗ | **✓** |
-| Open engine, not SaaS-locked | ✗ | ✗ | ✗ | partial | **✓** |
-| C2PA content credentials | ✗ | ✗ | ✗ | ✗ | **✓** |
-| Opt-in forensic-level provenance | ✗ | ✗ | ✗ | ✗ | **✓** |
-| Mobile and Desktop Apps | ✓ | ✗ | ✗ | partial | **✓** |
-| Command Line & TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
+::: figure positioning-comparison
+Capability completeness across today's creative tools, researched August 2026. Scoring: 0 absent, 25 workaround-grade, 50 real but gated or partial, 75 strong with caveats, 100 core competency.
+:::
 
 The gap is plain: nothing shipping today gives us constraints-first, offline-capable, low-skill, internally accessible output. Lolly even includes an open canvas - **Design** - where colours, type and assets conform to the brand globals, so free arrangement stays constraints-first. What it is **not** is an unconstrained design suite: designers continue to use Illustrator and Figma for bespoke flagship work. Permutations can be assembled with this tool.
 
@@ -477,24 +467,6 @@ Same lifecycle in Tauri. Same lifecycle in CLI - jsdom provides the headless DOM
 The `engine/`, `shells/`, `schemas/` and `docs/` directories are open source under **MPL-2.0** - a vendor-neutral scaffolding platform for brand tooling, with each shippable unit split into its own repository under [github.com/lolly-tools](https://github.com/lolly-tools). `tools/` and `catalog/assets/` are SUSE-specific content and remain **proprietary to SUSE** (all rights reserved - see each repo's `NOTICE.md`); they are not covered by the MPL.
 
 The split is enforced - there are no cross-imports from `engine/` to `tools/` or `assets/` - so the platform/content boundary stays clean.
-
----
-
-## Roadmap
-
-| Milestone | Target | What |
-|---|---|---|
-| **Initial tools** | ✅ Done | QR Code, Quote Card, Email Signature, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Chart Creator, Filter: Duotone, Meeting Planner - web shell live |
-| **Enhance current tooling** | Mid 2026 ✅ Done  | Downloadable offline app (Tauri); additional employee and event tools; richer export pipeline (text-to-path stability, metadata, extra formats - see `plans.md`) |
-| **Open source the engine** | Late 2026 ✅ Done  | Engine, shells, schemas, docs go public - not the branded tools/assets |
-| **Device-to-device transfer** | ✅ Done | Portable `lolly-backup` bundle carries profile, saved sessions, uploaded images and prefs between any two installs - offline or online, no account. Forward-compatible, integrity-checked envelope (spec: `docs/data-transfer.md`) |
-| **Establish formal tool roadmap** | Late 2026 | Customer reference kits, AI design ingest, GET/URL request mode |
-| **On-device privacy utilities** | 🚧 In progress | Content-transform tools that process *your own* file locally (file in → clean file out), replacing exfiltration to single-purpose SaaS. **Done:** `file` input type + `exportFile` transform path + `privacy:"on-device"` conventions (no watermark/provenance) + **Strip Hidden Data** (JPEG/PNG/SVG/PDF metadata, PDF via the `host.pdf` bridge) and **Text Helper** (the on-device workbench for the everyday paste-into-a-website jobs - JSON format, JWT decode, Base64, URL encode/decode, SHA hashing, plus a Novelty group). Since then: **Compress PDF**, **Convert Image**, **Convert Font**, **Redact** and **Prompt to Image**, over the shipped `host.images` convert bridge (spec: `plans/34-exfiltration-app-content.md`). **Next:** more of the everyday jobs people currently hand to single-purpose websites |
-| **Design tokens (DTCG)** | 🚧 Nearly done | Brand primitives as canonical [W3C Design Tokens (DTCG)](https://www.designtokens.org/TR/drafts/format/) - the format [Penpot imports/exports](https://help.penpot.app/user-guide/design-systems/design-tokens/). **Done:** colour, dimension and typography tokens, the `host.tokens` bridge, picker swatches + reference-linked values, Penpot/DTCG import and export and user tokens travelling as `tokens.json` in a brand pack and the transfer bundle (spec: `docs/design-tokens.md`). **Next:** template-level token *injection* - handing a token-aware tool the resolved tree in its template context |
-| **MCP agent endpoint (render)** | ✅ Done | An [MCP](https://modelcontextprotocol.io) server exposes the catalogue + render path as callable tools (`lolly_list_tools` / `lolly_describe_tool` / `lolly_build_url` / `lolly_render` / `lolly_transform` / `lolly_redact` / `lolly_verify`) so any agent can produce finished, rule-bound assets - add it to any MCP client as a custom connector (OAuth 2.1) or point a CLI/HTTP client at it with a bearer token. Live at `mcp.lolly.tools` (full endpoint: raster/PDF/animation/video via a hosted headless browser) and `lolly.tools/api/mcp` (serverless browser-free tier). Distinct from the Penpot *authoring* MCP below, which is about tool **creation** (spec: `plans/77-mcp-server.md`; guide: `docs/mcp.md` + `docs/ai-agents.md`) |
-| **Penpot file ingest as tools** | 2027+ | Import a Penpot file and surface it *as a Lolly tool* (declarative, constraint-first), turning designs authored in Penpot into deterministic generators |
-| **MCP + Penpot extension (online-only authoring)** | 2027+ | A Penpot MCP server articulates new tools with AI - the most visual way to create deterministic templates: a brand-informed first round, perfected with a human in the loop, targeting one-shot new contexts over time. Tool *creation* is online-only; the tools it produces run anywhere |
-| **RBAC + SUSE ID** | 2027+ | Gate specific tools behind SUSE ID; multi-device saved state; Google Drive ingest/export |
 
 ---
 

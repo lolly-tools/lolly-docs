@@ -1322,7 +1322,7 @@ function formatsSection(lang: Lang, opts: { head?: boolean } = {}): string {
   const n = formatCounts();
   const CAT_ORDER = ['Vector', 'Raster', 'Layered', 'Motion', 'Audio', 'Document', 'Data', 'Font', 'Tokens', '3D', 'Bundle'];
   const fmtChip = (f: FmtEntry) =>
-    `<button type="button" class="fmt-chip fmt-chip--${f.dir}" data-fmt="${esc(f.token)}" aria-haspopup="dialog"${f.dir === 'both' ? ' title="Round-trip — Lolly reads and writes this"' : ''}>${f.dir === 'both' ? '<span class="rt-mark" aria-hidden="true">⇄</span>' : ''}${esc(f.name)}</button>`;
+    `<button type="button" class="fmt-chip fmt-chip--${f.dir}" data-fmt="${esc(f.token)}" aria-haspopup="dialog"${f.dir === 'both' ? ' title="Round-trip - Lolly reads and writes this"' : ''}>${f.dir === 'both' ? '<span class="rt-mark" aria-hidden="true">⇄</span>' : ''}${esc(f.name)}</button>`;
   const zone = (cls: string, list: FmtEntry[]) => `<div class="fmt-zone fmt-zone--${cls}">${list.map(fmtChip).join('')}</div>`;
   const catRows = CAT_ORDER
     .map(cat => ({ cat, all: catalog.formats.filter(f => f.category === cat) }))
@@ -2679,7 +2679,7 @@ html[data-theme="dark"] .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
 .tool-feature strong{font-size:.9rem;color:var(--dark);font-weight:700;line-height:1.25}
 .tool-feature p{font-size:.8rem;color:var(--muted);line-height:1.55;margin:0}
 /* Floats at the bottom seam where the two columns meet (relative to .platform-whats-wrap). */
-.try-now-callout{position:absolute;left:50%;bottom:0;transform:translate(-50%,50%);z-index:10;width:min(92%,640px);background:#01564a;border-radius:14px;padding:1.5rem 1.75rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;box-shadow: 0 10px 30px rgba(0,0,0,.2), inset 0 .06rem .1rem #fff2}
+.try-now-callout{left:50%;bottom:0;transform:translate(-50%,50%);z-index:10;width:min(92%,640px);background:#01564a;border-radius:14px;padding:1.5rem 1.75rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;box-shadow: 0 10px 30px rgba(0,0,0,.2), inset 0 .06rem .1rem #fff2}
 .try-now-text{flex:1;min-width:0}
 .try-now-text strong{color:var(--green);font-size:.9375rem;display:block;margin-bottom:.35rem;font-weight:700}
 .try-now-text p{color:hsl(var(--on-band-dark));font-size:.85rem;line-height:1.6;margin:0}
@@ -2935,6 +2935,10 @@ html[data-theme="dark"] .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
 .docs-masthead::after{content:'';position:absolute;left:0;right:0;bottom:0;height:50%;z-index:1;pointer-events:none;background:linear-gradient(180deg,transparent 0%,var(--page) 94%)}
 :root{--mast-scrim:rgba(255,255,255,.82)}
 [data-theme="dark"]{--mast-scrim:rgba(6,24,22,.72)}
+/* Brand theme is a dark-teal ground: without an override it fell back to the white
+   :root scrim, washing the glow white. Ride the brand primary so the halo is the
+   active brand's own colour (pine green for SUSE, the mounted brand's primary else). */
+[data-theme="brand"]{--mast-scrim:hsl(var(--primary) / .4)}
 /* Qualified with .docs-content (0,2,1) on purpose: the article rule .docs-content h1
    is (0,1,1) and gives every page heading a bottom rule and 2rem of padding. Inside a
    band that rule is a second horizontal line under a heading that already sits on
