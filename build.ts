@@ -2139,6 +2139,14 @@ ${APP_TOKENS}
      dark/brand, which would turn every band's white text black-on-dark. --on-band-dark
      stays light in every theme + contrast mode, so the a11y contract holds. */
   --on-band-dark:0 0% 100%;
+  /* The always-BRIGHT accent that rides on --band-dark for CTAs on the dark chrome (the
+     nav "Launch App" pill). Band-invariant like the pair above: the nav is dark in every
+     theme, so its CTA must POP in every theme — it can't borrow --primary, which goes deep
+     teal in the LIGHT theme and would sink the button into the dark band. Default is the
+     pine green (= dark/brand --primary, the old bright SUSE green); brand-vars.ts overrides
+     it per active brand in the app shell. Paired with --band-dark as its ink (dark-on-green,
+     the original CTA look). */
+  --band-accent:151 57% 46%;
   --orange:#fe7c3f;--navy:#192072;--blue:#2453ff;
   --col-cap:38rem;
 }
@@ -2215,8 +2223,8 @@ nav:not(.quicknav):not(.doc-jump-nav) a.active:not(.nav-launch){color:hsl(var(--
 /* Top-nav clusters: tight within a group, a thin divider between groups. */
 nav .nav-group{display:inline-flex;align-items:center;gap:.0625rem}
 nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1px solid rgba(255,255,255,.18)}
-.nav-launch{background:var(--green);color:var(--dark)!important;padding:.375rem 1rem;border-radius:1.5em;font-weight:700;font-size:.875rem;white-space:nowrap;margin-left:.5rem;transition:background .15s}
-.nav-launch:hover{background:var(--light);text-decoration:none!important}
+.nav-launch{background:hsl(var(--band-accent));color:hsl(var(--band-dark))!important;padding:.375rem 1rem;border-radius:1.5em;font-weight:700;font-size:.875rem;white-space:nowrap;margin-left:.5rem;transition:background .15s}
+.nav-launch:hover{background:hsl(var(--band-accent) / .82);text-decoration:none!important}
 
 /* Language FAB menu - popup language selector matching the app UX */
 .lang-fab-wrap{display:inline-flex}
@@ -3524,8 +3532,8 @@ footer .founded-badge{margin-top:.5rem}
 .nav-mobile-menu a{color:hsl(var(--on-band-dark) / .7);font-size:.9375rem;padding:.625rem .625rem;border-radius:6px;display:block;text-decoration:none}
 .nav-mobile-menu a:hover{color:hsl(var(--on-band-dark));background:rgba(255,255,255,.07)}
 .nav-mobile-menu a.active{color:var(--green);font-weight:600}
-.nav-mobile-menu .nav-launch{background:var(--green);color:var(--dark)!important;font-weight:700;text-align:center;margin-top:.75rem;padding:.75rem;border-radius:8px}
-.nav-mobile-menu .nav-launch:hover{background:var(--light)}
+.nav-mobile-menu .nav-launch{background:hsl(var(--band-accent));color:hsl(var(--band-dark))!important;font-weight:700;text-align:center;margin-top:.75rem;padding:.75rem;border-radius:8px}
+.nav-mobile-menu .nav-launch:hover{background:hsl(var(--band-accent) / .82)}
 /* Page nav inside the hamburger panel. Hidden by default and switched on at 768px
    only: from 768 to 1100px the hamburger is open for business while the rail is
    still on screen, and listing the same links twice would be noise. The rule sits
@@ -5272,13 +5280,11 @@ const LISTEN_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" 
 const LISTEN_STYLE = `<style>
 .listen-bar{display:flex;justify-content:flex-end;margin:0 0 -8px}
 .listen-bar-float{position:fixed;right:16px;bottom:16px;z-index:89;margin:0}
-.docs-listen{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border-radius:999px;border:1px solid rgba(28,39,51,.18);background:rgba(255,255,255,.85);color:inherit;font:600 13px/1 inherit;font-family:inherit;cursor:pointer;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-.docs-listen:hover{border-color:rgba(44,92,150,.5)}
+.docs-listen{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border-radius:999px;border:1px solid hsl(var(--muted-foreground) / .25);background:hsl(var(--popover) / .9);color:hsl(var(--popover-foreground));font:600 13px/1 inherit;font-family:inherit;cursor:pointer;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.docs-listen:hover{border-color:hsl(var(--primary) / .5)}
 .docs-listen svg{width:15px;height:15px}
 .docs-listen .listen-mins{font-weight:400;opacity:.65}
 .docs-listen.is-loading{opacity:.6;pointer-events:none}
-html[data-theme="dark"] .docs-listen{background:rgba(24,30,38,.85);border-color:rgba(230,237,243,.2)}
-html[data-theme="dark"] .docs-listen:hover{border-color:rgba(141,184,234,.6)}
 </style>`;
 
 // The lazy loader — the ONLY player code a page carries. The bundle is fetched

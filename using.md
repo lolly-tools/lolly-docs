@@ -25,7 +25,7 @@ Two ways to shape the grid itself into the one you want:
 <!--
 SHOT NOTE (misc-hidden-tools): the trailing `press:End` is required. The
 hidden box and the revealed cards live at the very END of the grid, and
-clicking the box runs applyView(), which re-lays the masonry out and drops the
+clicking the box runs applyView(), which re-lays the grid out and drops the
 scroll back to the top - so without it the frame published the TOP of the
 gallery under a caption about its bottom. `press:` with no `on=` goes to the
 keyboard, and the End key with focus on the just-clicked box scrolls the
