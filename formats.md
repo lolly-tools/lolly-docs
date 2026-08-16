@@ -6,7 +6,7 @@ Lolly reads dozens of source formats and writes dozens more. This is the whole s
 
 <!-- the three-zone formats table renders here -->
 
-## What "both ways" is worth
+## Why "both ways" matters
 
 A format in the middle column is one you can bring a file in as, work on and send back out in the same shape. That is what stops a file becoming a dead end: a deck arrives as a deck and leaves as a deck, a design file arrives as editable layers, a spreadsheet goes back out as one. Nothing in Lolly needs a proprietary container to keep working.
 

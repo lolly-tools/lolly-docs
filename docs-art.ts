@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MPL-2.0
 /**
- * Banked docs art — the masthead bank and the figure bank (plans/105 §6).
+ * Banked docs art - the masthead bank and the figure bank (plans/105 §6).
  *
  * Two directories, one pipeline. `docs/mastheads/<id>.svg|.html` is a stable
  * library a page maps into by slug; `docs/figures/<page-slug>-<name>.svg|.html`
@@ -8,8 +8,8 @@
  * `::: figure <id>` fence. Both are signed at bank time
  * (scripts/sign-docs-art.ts) and both are INLINED into the page here.
  *
- * WHY THIS MODULE EXISTS SEPARATELY FROM build.ts. Everything here is pure —
- * it reads a file and returns a string — and docs/build.ts runs its own
+ * WHY THIS MODULE EXISTS SEPARATELY FROM build.ts. Everything here is pure - 
+ * it reads a file and returns a string - and docs/build.ts runs its own
  * `build()` on import, so nothing in that file can be exercised by a test
  * without building the whole site. The parts a test must be able to prove (the
  * manifest really leaves the inlined copy; the ids really get namespaced; the
@@ -20,7 +20,7 @@
  * A C2PA hash binding covers FILE BYTES, not DOM. Inlining an artifact takes the
  * file off the page, so the inlined copy MUST NOT carry the manifest: a reader
  * who saved that markup out of devtools would hold a file whose credential fails
- * to validate — a false negative on a genuine Lolly asset, which is worse than
+ * to validate - a false negative on a genuine Lolly asset, which is worse than
  * no credential at all. The signed file stays served at /info/<bank>/<file> and
  * the credential line points there, so "Check it yourself", "Get the signed
  * file" and "Copy signed source" all act on the real bytes.
@@ -40,8 +40,8 @@
  * ── The same-file rule ───────────────────────────────────────────────────────
  *
  * A localized variant (`<id>.<lang>.svg`) is its OWN banked, signed artifact.
- * Everything downstream — the bytes inlined, the path the credential is read
- * from, the URL its actions point at — is derived from the ONE filename this
+ * Everything downstream - the bytes inlined, the path the credential is read
+ * from, the URL its actions point at - is derived from the ONE filename this
  * module resolved, never re-derived from the id. What the reader sees is what
  * the credential describes.
  */
@@ -55,7 +55,7 @@ export type ArtBank = 'mastheads' | 'figures';
 
 export interface DocsArt {
   bank: ArtBank;
-  /** The canonical id — the map value / the fence's id line. */
+  /** The canonical id - the map value / the fence's id line. */
   id: string;
   /** The file actually resolved, e.g. `hero.svg` or `hero.de.svg`. */
   file: string;
@@ -76,7 +76,7 @@ const EXTS = ['svg', 'html'] as const;
 const ID_RE = /^[a-z0-9][a-z0-9-]*$/;
 
 /**
- * Resolve a banked artifact to ONE file — the locale variant when the bank has
+ * Resolve a banked artifact to ONE file - the locale variant when the bank has
  * one for this pass, else the base artifact (the `localizedShot` pattern).
  *
  * Returns null for an unknown id, an id that is not a plain slug (a bank lookup
@@ -117,7 +117,7 @@ export function resolveDocsArt(
  * The carriers a presentation copy must not keep.
  *
  * `<metadata>` is where placeSvg puts `<c2pa:manifest>` (engine/src/c2pa-containers.ts).
- * §A.9's armour line is removed by the ENGINE's own {@link stripPlacedArmorLine} —
+ * §A.9's armour line is removed by the ENGINE's own {@link stripPlacedArmorLine} - 
  * the placer's inverse, imported rather than re-written. This file used to carry a
  * third hand-made copy of that rule, and like the second one it was lazy across
  * lines (`[\s\S]*?` to the first `-----END`), so any content between a quoted
@@ -136,7 +136,7 @@ const STRIP: ReadonlyArray<RegExp> = [
   /\s+xmlns:c2pa="http:\/\/c2pa\.org\/manifest"/g,
 ];
 
-/** Anything matching this after the strip means a CARRIER survived — the C2PA
+/** Anything matching this after the strip means a CARRIER survived - the C2PA
  *  manifest element, its namespace declaration, an armour delimiter, or §A.7's
  *  script element. A plain `<metadata>` is no longer on this list because it is no
  *  longer stripped: it is the artifact's own (RDF licensing, editor provenance),
@@ -149,11 +149,11 @@ const RESIDUAL = /-----(?:BEGIN|END) C2PA MANIFEST-----|<c2pa:manifest\b|xmlns:c
  *
  * The namespacing is not cosmetic. An inlined SVG joins the PAGE's id space, so
  * an artifact's `clipPath`/`filter`/`gradient` id can collide with another
- * artifact's — and the loser silently renders wrong (a clip from someone else's
+ * artifact's - and the loser silently renders wrong (a clip from someone else's
  * drawing). Same three references the showcase rewrites: the definition, `url(#…)`
  * paint references, and `href="#…"` (which also covers `xlink:href`).
  *
- * Throws when a carrier survives — see the module comment. The caller warns and
+ * Throws when a carrier survives - see the module comment. The caller warns and
  * skips the art rather than shipping a copy that would fail its own credential.
  */
 export function stripArtForInline(source: string, prefix: string): string {
@@ -190,12 +190,12 @@ export function inlineDocsArt(art: DocsArt): { html: string } | { error: string 
 }
 
 /**
- * `::: figure <id>` — the fence label, parsed.
+ * `::: figure <id>` - the fence label, parsed.
  *
  * The id line is CANONICAL: it is the same token in all 27 locale copies of the
  * page, so a translator never has to know what it means and an edit to it never
  * strands 26 sidecars (the shot-recipe rule). Everything inside the fence is
- * ordinary prose — the caption — and localizes like any paragraph.
+ * ordinary prose - the caption - and localizes like any paragraph.
  */
 // parseFigureFence + figureBlock now live in @lolly-tools/docs-render (packages/docs-render/
 // src/art.ts) so the shared renderer can compose figures without importing this module.
@@ -203,7 +203,7 @@ export function inlineDocsArt(art: DocsArt): { html: string } | { error: string 
 /**
  * The masthead band with banked art in place of the default chip canvas.
  *
- * Same geometry, same scrims, same hoisted h1 — the only difference is what is
+ * Same geometry, same scrims, same hoisted h1 - the only difference is what is
  * painted behind it, which is why this composes the same wrapper the default
  * band uses rather than a second one. The art is `aria-hidden`: it is
  * decorative even when it carries words, because the h1 IS the page's name

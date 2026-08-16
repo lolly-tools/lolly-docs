@@ -4,6 +4,8 @@ Lolly ships a native **[Model Context Protocol](https://modelcontextprotocol.io)
 
 It is the programmatic sibling of [driving Lolly from a URL](/info/ai-agents.html): same render path, same reproducible output - just reached over MCP instead of a hand-built link.
 
+**Asking what Lolly converts.** An agent that wants to know whether Lolly reads or writes a given format does not have to scrape a page. Call `lolly_list_tools` (it filters by format and capability), or fetch the static [`/info/capabilities.json`](/info/capabilities.json) - a machine-readable list of every format, whether Lolly opens it, makes it, or both, and the features each one carries. There is also a plain-language page for every format at `/info/formats/<token>/` and one for each common conversion at `/info/convert/<in>-to-<out>/`.
+
 ## Two hosted endpoints
 
 The render path has two tiers, so there are two endpoints. **They share the same access token** and the same tools - the only difference is which output formats each can produce.

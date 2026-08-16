@@ -2,38 +2,38 @@
 // Build-time generators for Open Graph (share preview) images.
 //
 // All three cards are light-on-dark in the brand's own field + type, and are rasterised through OUR
-// OWN render path (Chromium via Playwright — scripts/lib/rasterize-svg-browser.ts), NOT a
+// OWN render path (Chromium via Playwright - scripts/lib/rasterize-svg-browser.ts), NOT a
 // second SVG interpreter like resvg. One render path means a card is shaped the way the
 // app paints, can't drift (resvg mis-rendered some brand illustrations / panicked on
 // others), and a missing browser degrades to the committed / static og.png:
 //
-//   • createLandingCardRenderer — the default share card, shells/web/public/og.png
+//   • createLandingCardRenderer - the default share card, shells/web/public/og.png
 //     (scripts/build-og-base.ts). The Lolly lollipop beside the wordmark + tagline on
 //     the brand field. Generated from icon.svg (via the mark), so the default
-//     card can't drift from the app icon — it used to be a hand-made PNG carrying an
+//     card can't drift from the app icon - it used to be a hand-made PNG carrying an
 //     older lollipop while everything else had moved on.
 //
-//   • createToolCardRenderer — per-tool share cards (scripts/build-tool-og.ts). The
+//   • createToolCardRenderer - per-tool share cards (scripts/build-tool-og.ts). The
 //     tool's icon, name and description light-on-dark on the brand's own field, under a
 //     co-brand row (the Lolly lollipop lockup + the brand's reverse logo), with a framed
 //     preview of the tool's own output on the right. So a link to /t/qr-code previews as
 //     that tool's card.
 //
-//   • createViewCardRenderer — per-view AND per-/info-page share cards
+//   • createViewCardRenderer - per-view AND per-/info-page share cards
 //     (scripts/build-view-og.ts and docs/build.ts → generateOgImages). The same
 //     light-on-dark language for the app's own sections (Tools, Projects, Catalogue, …)
 //     and the docs pages (Authoring Tools, URL Mode, …): a rounded app-icon tile, the
 //     title (wrapping to two lines for long docs titles), a one-line description, a
 //     faint icon watermark, and the lollipop cropped by the bottom-right corner.
 //
-// All three renderers take the `BrandChrome` from loadBrandChrome() — field, accent, ink
+// All three renderers take the `BrandChrome` from loadBrandChrome() - field, accent, ink
 // and marks resolved from the ACTIVE profile's catalog, with the Lolly mark taken from
-// icon.svg — so nothing below hardcodes one brand's palette, and every mounted profile's
+// icon.svg - so nothing below hardcodes one brand's palette, and every mounted profile's
 // cards come out in its own colours.
 //
 // Why generate rather than reuse one static og.png: social crawlers (Slack, X,
 // Facebook, LinkedIn, iMessage) cache one image per URL and only reliably render
-// raster (PNG/JPEG), never SVG — so each page/tool needs its own pre-rendered PNG.
+// raster (PNG/JPEG), never SVG - so each page/tool needs its own pre-rendered PNG.
 
 import { existsSync, readFileSync, mkdirSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
@@ -42,7 +42,7 @@ import { createSvgRasterizer } from '../scripts/lib/rasterize-svg-browser.ts';
 import { stampBitmap } from '../scripts/lib/stamp-media.ts';
 
 // A self-contained SVG string → PNG bytes, at the given size. Injected into each card
-// renderer so they rasterise through the browser path (createSvgRasterizer) — a missing
+// renderer so they rasterise through the browser path (createSvgRasterizer) - a missing
 // browser then degrades ("keep committed / og.png") rather than crashing the build.
 type SvgToPng = (svg: string, opts: { width: number; height: number; background?: string }) => Promise<Buffer>;
 
@@ -69,30 +69,30 @@ const xmlEsc = (s: unknown): string => String(s)
 // colours: the dark theme's `surface` is the field, its `primary` the accent and
 // its `text` the ink. Those three semantic tokens exist in every brand pack
 // (SUSE's resolve to pine/jungle/white; an ingested brand's to its own ramps), so
-// nothing here hardcodes SUSE — which matters because this module renders cards
+// nothing here hardcodes SUSE - which matters because this module renders cards
 // for every profile, and `catalog/` is only ever the ACTIVE one (see
 // scripts/build-og-all.ts, which rebuilds each mounted profile in turn).
 //
 // The marks are the co-brand: Lolly's own lollipop (repo-root icon.svg, parent-
 // owned and brand-agnostic) top-left as a lockup with the wordmark, and the
 // brand's REVERSE (on-dark) horizontal logo top-right, resolved from the catalog
-// by asset TAGS rather than by id — `suse/logo/hor-neg-white` is a SUSE-only id,
+// by asset TAGS rather than by id - `suse/logo/hor-neg-white` is a SUSE-only id,
 // but `['logo','horizontal','on-dark']` is how any brand pack describes the same
 // thing. A brand with no logo asset (lolly-start) simply gets no second mark.
 
 export interface BrandLogo {
   /** The logo SVG as a data-URI, ready for an <image href>. */
   href: string;
-  /** width / height, from its viewBox — the caller sets width and derives height. */
+  /** width / height, from its viewBox - the caller sets width and derives height. */
   ratio: number;
 }
 
 export interface BrandChrome {
-  /** Card field — the brand's dark-theme surface. */
+  /** Card field - the brand's dark-theme surface. */
   field: string;
-  /** Accent for the tool icon / app-icon tile — the dark-theme primary. */
+  /** Accent for the tool icon / app-icon tile - the dark-theme primary. */
   accent: string;
-  /** Primary type — the dark-theme text colour. */
+  /** Primary type - the dark-theme text colour. */
   ink: string;
   /** Descriptions: ink mixed back toward the field. */
   muted: string;
@@ -109,7 +109,7 @@ export interface BrandChrome {
 // the house style rather than failing.
 const CHROME_FALLBACK = { field: '#0c322c', accent: '#30ba78', ink: '#ffffff' };
 
-/** Blend two #rrggbb colours in sRGB. Chrome only — never a palette value. */
+/** Blend two #rrggbb colours in sRGB. Chrome only - never a palette value. */
 function mixHex(a: string, b: string, t: number): string {
   const parse = (h: string) => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
   const [ar, ag, ab] = parse(a), [br, bg, bb] = parse(b);
@@ -146,7 +146,7 @@ function brandColors(repoRoot: string, assets: IndexAsset[]): typeof CHROME_FALL
   const file = tokens ? assetFile(repoRoot, tokens, 'json') : null;
   if (!file) return CHROME_FALLBACK;
   try {
-    // The dark theme is the one the cards paint in — light-on-dark by design.
+    // The dark theme is the one the cards paint in - light-on-dark by design.
     const set = createTokenSet(JSON.parse(readFileSync(file, 'utf8')), { theme: 'dark' });
     const hex = (path: string, fallback: string) =>
       colorToHex(set.resolve(path)) || fallback;
@@ -158,7 +158,7 @@ function brandColors(repoRoot: string, assets: IndexAsset[]): typeof CHROME_FALL
   } catch { return CHROME_FALLBACK; }
 }
 
-/** The brand's reverse (on-dark) horizontal logo, by tags — never by brand-specific id. */
+/** The brand's reverse (on-dark) horizontal logo, by tags - never by brand-specific id. */
 function brandLogo(repoRoot: string, assets: IndexAsset[]): BrandLogo | null {
   const onDark = assets.filter(a => a.tags?.includes('logo') && a.tags.includes('on-dark'));
   // Prefer a horizontal mono/white lockup (it sits beside white type without
@@ -175,7 +175,7 @@ function brandLogo(repoRoot: string, assets: IndexAsset[]): BrandLogo | null {
 }
 
 /**
- * Resolve the card chrome for whatever profile is currently mounted. Pure reads —
+ * Resolve the card chrome for whatever profile is currently mounted. Pure reads - 
  * a missing/unreadable catalog degrades to the pine fallback rather than throwing,
  * because a card is worth more than a build failure (same contract as the missing
  * browser). Call once per run and pass the result to both card renderers.
@@ -184,11 +184,11 @@ export function loadBrandChrome(repoRoot: string): BrandChrome {
   const assets = (readAssetIndex(repoRoot)?.assets ?? []) as IndexAsset[];
   const { field, accent, ink } = brandColors(repoRoot, assets);
   // The Lolly mark: the single source of truth, repo-root icon.svg (the hand-drawn,
-  // C2PA- + RDF-signed vector) — the SAME file the app icons + og.png derive from, so the
+  // C2PA- + RDF-signed vector) - the SAME file the app icons + og.png derive from, so the
   // card mark can't drift from the app icon. Embedded as an SVG data-URI and rasterised
   // through the Chromium card path (which paints its mix-blend-mode + filters correctly,
   // unlike resvg/librsvg), exactly like brandLogo() above. The source's `<style>` block
-  // (shutter-blade spin + hue drift) is stripped from the EMBEDDED STRING only — derived
+  // (shutter-blade spin + hue drift) is stripped from the EMBEDDED STRING only - derived
   // cards are static by decision (2026-08-10), and a screenshot of the animated mark
   // would capture a nondeterministic, hue-shifted frame. The signed file is untouched.
   const markFile = resolve(repoRoot, 'icon.svg');
@@ -238,7 +238,7 @@ function brandMark(chrome: BrandChrome, x: number, y: number, w: number): string
 //
 // The one card that isn't about a specific tool, view or page: shells/web/public/og.png,
 // the default share image for the site and the fallback whenever a per-page card is
-// missing. The Lolly lollipop beside the wordmark + tagline on the brand field —
+// missing. The Lolly lollipop beside the wordmark + tagline on the brand field - 
 // generated from icon.svg (chrome.mark), so it can never fall behind the app icon.
 
 const LANDING_TAGLINE = ['fast, free, reproducible', 'assets & tools'];
@@ -302,7 +302,7 @@ const CARD_STROKE_W    = 1.2;   // icon stroke-width (lucide viewBox units)
 // currentColor, so bind it to an explicit colour first. Some icons also set
 // width/height (and their own stroke-width) on the root <svg>; strip those on the
 // opening tag only (inner <rect width=…> stays) so they don't collide with the ones
-// we inject — a duplicate attribute is invalid SVG and resvg rejects the whole card.
+// we inject - a duplicate attribute is invalid SVG and resvg rejects the whole card.
 // stroke-width is injected on the root and inherited by the (unstyled) child paths.
 function placeIcon(iconSvg: string, x: number, y: number, size: number, color: string, strokeWidth: number = CARD_STROKE_W): string {
   return iconSvg
@@ -348,7 +348,7 @@ function fitName(name: string, boxWidth: number): number {
  * returns PNG bytes: the co-brand row (Lolly lockup + the brand's reverse logo), then the
  * tool's icon + name + description on the brand's dark field, with the preview framed in a
  * white panel on the right (the preview rides in as an SVG data-URI and is painted by the
- * same browser that rasterises the card — no second interpreter). With no preview, a large
+ * same browser that rasterises the card - no second interpreter). With no preview, a large
  * tinted icon stands in. `rasterize` is injected so a missing browser degrades ("keep
  * committed card") instead of crashing, like the old resvg path; `chrome` comes from
  * loadBrandChrome() so the card is painted in the ACTIVE profile's colours and marks.
@@ -383,7 +383,7 @@ export function createToolCardRenderer(rasterize: SvgToPng, chrome: BrandChrome)
       out.push(placeIcon(iconSvg, P.x + (P.w - s) / 2, P.y + (P.h - s) / 2, s, CARD_PLACEHOLDER));
     }
 
-    // Tool icon (left column) — thin-stroked in the brand accent, above the name.
+    // Tool icon (left column) - thin-stroked in the brand accent, above the name.
     if (iconSvg) out.push(placeIcon(iconSvg, M, CARD_ICON_Y, CARD_ICON_SIZE, chrome.accent));
 
     // Tool name (1–2 lines), then description (≤3 lines).
@@ -417,14 +417,14 @@ export function createToolCardRenderer(rasterize: SvgToPng, chrome: BrandChrome)
 //
 // The app's own sections (Tools, Utilities, Projects, Catalogue, Dashboard, Verify,
 // Brand setup, Colour Lab, Batch mode, PDF, Profile) shared as clean deep links
-// (/tools, /u, /p, /c, /d, /v, …). Same field, marks and type as the tool card — what
+// (/tools, /u, /p, /c, /d, /v, …). Same field, marks and type as the tool card - what
 // differs is the composition: no preview panel, but an app-icon tile in the accent, a
 // much bigger title, a low-opacity watermark of the same icon bleeding off the right
 // edge, and the lollipop cropped by the corner. Cohesive as a family; distinguished by
 // icon + title.
 
 const VIEW_MARGIN = 72;
-// Colours come from the active brand (loadBrandChrome) — the view card is the same
+// Colours come from the active brand (loadBrandChrome) - the view card is the same
 // light-on-dark family as the tool card, so only its composition differs.
 const VIEW_LOGO_W = 150;             // brand reverse logo width, top-right
 // The accent app-icon tile (top-left) and the title beneath it.
@@ -433,7 +433,7 @@ const VIEW_ICON_INSET = 28;          // icon padding inside the tile
 const VIEW_TITLE_Y   = 418;          // title baseline
 const VIEW_TITLE_SIZE = 82;
 const VIEW_TITLE_MIN  = 52;
-// The lollipop, big and cropped by the bottom-right corner — brand texture that
+// The lollipop, big and cropped by the bottom-right corner - brand texture that
 // says "Lolly" without competing with the type column on the left.
 const VIEW_MARK_SIZE = 300;
 
@@ -459,14 +459,14 @@ function fitViewTitle(title: string, boxWidth: number): number {
 export function createViewCardRenderer(rasterize: SvgToPng, chrome: BrandChrome) {
   const svgFor = ({ title, description, iconSvg }: ViewCard): string => {
     const M = VIEW_MARGIN;
-    const textW = OG_W - M - 480;                // type column — clear of the lollipop
+    const textW = OG_W - M - 480;                // type column - clear of the lollipop
     const titleSize = fitViewTitle(title, textW);
 
     const out: string[] = [];
     out.push(`<svg xmlns="http://www.w3.org/2000/svg" width="${OG_W}" height="${OG_H}" viewBox="0 0 ${OG_W} ${OG_H}">`);
     out.push(`<rect width="${OG_W}" height="${OG_H}" fill="${chrome.field}"/>`);
 
-    // Watermark: the view's own icon, huge and faint, bleeding off the right edge —
+    // Watermark: the view's own icon, huge and faint, bleeding off the right edge - 
     // brand texture that names the section without competing with the type.
     const wm = 600;
     out.push(`<g opacity="0.10">${placeIcon(iconSvg, OG_W - wm + 176, (OG_H - wm) / 2, wm, chrome.accent, 1.1)}</g>`);
@@ -481,7 +481,7 @@ export function createViewCardRenderer(rasterize: SvgToPng, chrome: BrandChrome)
     out.push(lockup(chrome, M, 96));
     out.push(brandMark(chrome, OG_W - M - VIEW_LOGO_W, 62, VIEW_LOGO_W));
 
-    // App-icon tile: a rounded accent square with the view icon in the field colour —
+    // App-icon tile: a rounded accent square with the view icon in the field colour - 
     // reads like a real app icon, so each section has a recognisable mark.
     const T = VIEW_TILE;
     out.push(`<rect x="${T.x}" y="${T.y}" width="${T.size}" height="${T.size}" rx="${T.r}" fill="${chrome.accent}"/>`);
@@ -520,7 +520,7 @@ export function createViewCardRenderer(rasterize: SvgToPng, chrome: BrandChrome)
 }
 
 // The mark every /info card carries in its app-icon tile + watermark: a book, in the
-// same lucide 24×24 stroke style as the view icons — so a docs card reads as part of
+// same lucide 24×24 stroke style as the view icons - so a docs card reads as part of
 // the same family as the Tools / Utilities / Dashboard cards, just captioned by its
 // page title. (One mark for all docs pages; the title is what distinguishes them.)
 const DOCS_ICON =

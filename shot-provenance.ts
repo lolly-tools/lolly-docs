@@ -10,7 +10,7 @@
  * and returns the handful of facts worth showing in one line.
  *
  * It deliberately does NOT verify signatures. Verification belongs in the browser,
- * on the reader's own machine, against the file they actually received — that is
+ * on the reader's own machine, against the file they actually received - that is
  * what the line's "verify" link is for (#/verify?src=…). A build-time green tick
  * would be the site vouching for itself, which is precisely the claim a content
  * credential exists to replace. So: read the claims here, let the reader check them
@@ -37,18 +37,18 @@ export interface ShotProvenance {
   /** Set when the credential declares AI-generated or AI-composited content. */
   ai: 'generated' | 'composite' | undefined;
   /**
-   * §18.28 `c2pa.ai-disclosure` — the model the SIGNER named, e.g. "Claude Fable 5".
+   * §18.28 `c2pa.ai-disclosure` - the model the SIGNER named, e.g. "Claude Fable 5".
    * `modelName` when the disclosure carries one, else `modelIdentifier` (a PURL or
    * URI: uglier, and still the honest answer when it is all the file says).
    *
    * Self-asserted, like every other claim fact: it records what the writer declared,
-   * not what a model actually did. Absent on every screenshot — a docs capture is
-   * `digitalCreation` — and present on the banked mastheads/figures, which is what
+   * not what a model actually did. Absent on every screenshot - a docs capture is
+   * `digitalCreation` - and present on the banked mastheads/figures, which is what
    * it was added for (plan §6: a model-name pill on the art's credential line).
    */
   model: string | null;
   /**
-   * `contentProfile.humanOversightLevel` — fully_autonomous / prompt_guided /
+   * `contentProfile.humanOversightLevel` - fully_autonomous / prompt_guided /
    * human_validated (§18.28.4). §18.28.3 pairs it with digitalSourceType precisely
    * because the two answer different questions: "was a model involved" and "how
    * much of a human was". It stays out of the visible row (that row is width-bound
@@ -66,7 +66,7 @@ const str = (v: unknown): string | null => (typeof v === 'string' && v.trim() ? 
 const get = (m: unknown, k: string): unknown => (m instanceof Map ? m.get(k) : undefined);
 
 /**
- * §18.28's label, versions and repeats included — `c2pa.ai-disclosure`,
+ * §18.28's label, versions and repeats included - `c2pa.ai-disclosure`,
  * `c2pa.ai-disclosure.v2`, `c2pa.ai-disclosure__2`. Matched rather than compared
  * for the reason the engine's verifier matches it: a disclosure the spec renamed
  * by one version suffix would otherwise read as no disclosure at all.
@@ -117,7 +117,7 @@ function decode(path: string): ShotProvenance | null {
         const first = Array.isArray(actions) ? actions[0] : undefined;
         when ??= str(get(first, 'when'));
         // aiKind reads the IPTC digitalSourceType vocabulary: a docs screenshot is
-        // digitalCreation, so this is normally undefined. It is read anyway — if a
+        // digitalCreation, so this is normally undefined. It is read anyway - if a
         // shot ever captures AI-generated artwork, the line must say so rather than
         // the site deciding the distinction does not matter here.
         ai ??= aiKind(get(first, 'digitalSourceType'));
@@ -128,12 +128,12 @@ function decode(path: string): ShotProvenance | null {
         dimensions = str(get(m, 'dimensions'));
         when ??= str(get(m, 'date'));
       } else if (AI_DISCLOSURE_LABEL.test(a.label)) {
-        // §18.28. Read LIBERALLY and never as a failure — the same posture the
+        // §18.28. Read LIBERALLY and never as a failure - the same posture the
         // engine's verifier takes (engine/src/c2pa-verify.ts): the CDDL requires
         // modelType, but a writer that omits it must not turn a good file into a
         // silent one. FIRST disclosure wins: §1558 labels repeats `__1`, `__2` for
         // a multi-model pipeline, and one pill cannot honestly stand for two
-        // models — /verify is where the full list belongs (report.aiDisclosures).
+        // models - /verify is where the full list belongs (report.aiDisclosures).
         if (model || oversight) continue;
         const m = decodeCbor(a.content);
         model = str(get(m, 'modelName')) ?? str(get(m, 'modelIdentifier'));

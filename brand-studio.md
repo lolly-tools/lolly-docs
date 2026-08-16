@@ -213,7 +213,7 @@ Bringing one back is **Add from… → Design tokens or a design file** (above),
 
 **Versions** at the foot of the rail is where a design system stops being a moving target. Publish one and you get a **permanent, named copy** kept on this device: it never changes afterwards, so a tool that pins it keeps drawing the same thing. The panel stays hidden until there's something of your own to publish, so a studio that never publishes is never shown the machinery.
 
-Three things are worth knowing before you press anything, and the panel says all three before the press rather than after:
+Three things to know before you press anything, and the panel says all three before the press rather than after:
 
 - **A version is permanent.** There's no delete yet, so the panel states what has been kept and that it stays kept rather than offering a button that lies.
 - **Removals lead the compatibility card.** Added and changed tokens are news; a *removed* one is the thing that breaks a tool, so it's named first and called what it is.

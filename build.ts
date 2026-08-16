@@ -35,7 +35,7 @@ import { scan as scanVernacular, staleAllows as staleVernacularAllows } from '..
 import { resolveDocsArt, inlineDocsArt, mastheadArtBand } from './docs-art.ts';
 // Page seals (plans/105 §7): the <link rel="c2pa-manifest"> each English page
 // carries, and the signing pass that runs after every page is on disk. Same
-// reason as docs-art.ts for living outside this file — sealing is exercised by
+// reason as docs-art.ts for living outside this file - sealing is exercised by
 // tests/docs-page-seal.test.ts, and importing build.ts would build the site.
 import { pageSealLink, sealPages, type SealTarget } from './page-seal.ts';
 import { DOC_LOGOS } from './logos.ts';
@@ -45,7 +45,7 @@ import { readShotAnatomy } from './shot-anatomy.ts';
 // and a second parser is a second thing to disagree with the first.
 import { parseShotRecipes, type ShotDef } from '../scripts/lib/shot-compare.ts';
 // The narration pipeline's own extraction, reused for the cue→anchor assertion
-// below — the blockIds a committed cues.json speaks must be judged by the same
+// below - the blockIds a committed cues.json speaks must be judged by the same
 // rules that minted them, and the player already bundles this exact module.
 import { extractSpokenText } from '../scripts/lib/docs-spoken-text.ts';
 // The shared, DOM-free docs render layer (@lolly-tools/docs-render). Imported by
@@ -53,7 +53,7 @@ import { extractSpokenText } from '../scripts/lib/docs-spoken-text.ts';
 // engine/src and scripts/lib above); the web shell imports the same code via the
 // bare specifier through the workspace symlink. The renderer lives here so the
 // static site and the in-app live docs view can never drift. `esc` here is the
-// 3-char escaper the whole site relies on — never the web shell's 5-char one.
+// 3-char escaper the whole site relies on - never the web shell's 5-char one.
 import {
   esc,
   stripFrontMatter,
@@ -68,9 +68,22 @@ import {
   type DocsRenderContext,
   type CredentialFacts,
 } from '../packages/docs-render/src/index.ts';
-// esbuild bundles the docs player (docs/player/) into /info/docs-player.js — it
+// esbuild bundles the docs player (docs/player/) into /info/docs-player.js - it
 // is already in the tree as vite's bundler, so this adds no dependency.
 import { buildSync } from 'esbuild';
+// The format side-door page models (plan 116 workstream A). Pure transforms over
+// the register, factored into their own module so a unit test can import them
+// without importing build.ts (which reads the catalog + builds the site at import).
+import {
+  buildCapabilities,
+  convertPageList,
+  buildFormatPageModel,
+  buildConvertPageModel,
+  llmsFormatsSection,
+  type FmtCatalog as SideDoorCatalog,
+  type FormatPageModel,
+  type ConvertPageModel,
+} from './formats-pages.ts';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(__dirname, '..');
@@ -87,7 +100,7 @@ const REPO_URL = 'https://github.com/lolly-tools/lolly';
 const FOUNDED_BY = `<a class="founded-badge" href="https://www.suse.com" target="_blank" rel="noopener" aria-label="Founded by SUSE"><img src="/info/founded-by.svg" alt="Founded by SUSE"></a>`;
 const OG_IMAGE = `${SITE_URL}/og.png`;
 // og:logo is machine-read metadata, and its consumers (GitHub-style scrapers) don't all
-// decode SVG — so point it at the derived PNG of the mark, not the signed source icon.svg.
+// decode SVG - so point it at the derived PNG of the mark, not the signed source icon.svg.
 // It's still the one mark: icon-512.png is rasterised from icon.svg by `npm run icons`.
 const OG_LOGO = `${SITE_URL}/icons/icon-512.png`;
 const SITE_DESCRIPTION = 'Lolly: constraint-first, template-driven platform for generating production-ready creative and content assets at scale.';
@@ -126,6 +139,12 @@ interface Page {
   // express - the band ships from one function, so the page and the landing teaser
   // can never show two different versions of it (plan 117 block 9).
   render?: (md: string, lang: Lang) => string;
+  // A generated side-door page (per-format, per-conversion): no markdown source,
+  // no docs-sidebar rail, and not page-sealed. It is a standalone content column
+  // under the site nav, so a reader arriving from a search engine meets the same
+  // header, nav, footer and theme every other page wears, without the pathway rail
+  // it does not belong to. Built in build()'s per-locale loop, never in pages[].
+  generated?: boolean;
 }
 
 // Where docs/formats.md wants the composed three-zone table dropped in. An HTML
@@ -187,6 +206,12 @@ const pages: Page[] = [
   { slug: 'favourites',       title: 'Your favourites',   src: 'favourites.md',   pathway: 'creators' },
   { slug: 'exporting',        title: 'Exporting & Formats', src: 'exporting.md',  pathway: 'creators' },
   { slug: 'positioning',      title: 'How Lolly compares', src: 'positioning.md', pathway: 'creators' },
+  { slug: 'compare',            title: 'Lolly compared, tool by tool', src: 'compare.md', pathway: 'creators', description: "Where Lolly overlaps with Canva, Adobe, Figma, rendering APIs and online converters, and what each of those does better. Dated, concession first, no superlatives." },
+  { slug: 'compare-canva',      title: 'Lolly and Canva',   src: 'compare-canva.md',   pathway: 'creators', description: "Making an on-brand graphic without a subscription: where Lolly and Canva overlap, and what Canva does better today." },
+  { slug: 'compare-adobe',      title: 'Lolly and Adobe',   src: 'compare-adobe.md',   pathway: 'creators', description: "Converting, exporting and signing files without a Creative Cloud account: where Lolly and Adobe overlap." },
+  { slug: 'compare-figma',      title: 'Lolly and Figma',   src: 'compare-figma.md',   pathway: 'creators', description: "Laying out a design and turning it into a reusable output: where Lolly and Figma overlap, and what Figma does better." },
+  { slug: 'compare-render-apis', title: 'Lolly and rendering APIs', src: 'compare-render-apis.md', pathway: 'creators', description: "Generating many on-brand images from data: where Lolly and a hosted rendering API like Bannerbear or Placid overlap." },
+  { slug: 'compare-converters', title: 'Lolly and online file converters', src: 'compare-converters.md', pathway: 'creators', description: "Turning one file format into another on your own device, without uploading it to a stranger's server." },
 
   // ── Builders pathway ─────────────────────────────────────────────────────
   { slug: 'overview',         title: 'Overview',          src: 'overview.md',        pathway: 'builders', description: "How the Lolly platform is put together: the engine, the shells, the capability bridge, and why tools are data rather than bundled code." },
@@ -226,12 +251,12 @@ const pages: Page[] = [
 ];
 
 /**
- * Which page opens on which BANKED masthead — `slug → docs/mastheads/<id>` (plans/105 §6).
+ * Which page opens on which BANKED masthead - `slug → docs/mastheads/<id>` (plans/105 §6).
  *
  * Empty, and that is the shipped state: the default band (the chip field behind the
  * h1, `docsMasthead` below) is every page's masthead until a real artifact is banked
  * and signed, which is Andy's hand and not a build step's. An id here overrides the
- * default for that page in ALL 27 locales at once — the table is chrome, so no .md
+ * default for that page in ALL 27 locales at once - the table is chrome, so no .md
  * changes, no front matter, and nothing for `propagate-shot-recipes` to keep in step.
  *
  * The id is PERMANENT once banked, exactly like an asset id: the bank is a reusable
@@ -243,7 +268,7 @@ const pages: Page[] = [
  */
 const MASTHEADS: Record<string, string> = {
   // The first banked masthead: the Sensory Mixer (Gemini artwork, Andy-directed,
-  // adapted to the band contract) — the inclusive-design page's stimulation dial.
+  // adapted to the band contract) - the inclusive-design page's stimulation dial.
   'inclusive-design': 'inclusive-sensory',
   // Input, not impersonation: a fluid input wave forced to part around a rigid,
   // unforgeable identity seal (Gemini artwork, Andy-directed).
@@ -251,12 +276,12 @@ const MASTHEADS: Record<string, string> = {
   // Status quo ("the trade we never agreed to"): rigid tectonic slabs grinding
   // along a friction fault line (Gemini artwork, Andy-directed).
   'status-quo': 'status-quo',
-  // Our AI stance ("channels, not buckets"): a flood turned to irrigation — water
+  // Our AI stance ("channels, not buckets"): a flood turned to irrigation - water
   // running the channels into growth (Gemini artwork, Andy-directed).
   'ai-stance': 'ai-stance',
   // For Creators ("one seed, many lanes"): one input fanning into guard-railed
   // lanes of aligned on-brand outputs. Artwork by Claude Fable 5, directed by
-  // Claude Opus 4.8 — an AI directing an AI, both disclosed in the credential.
+  // Claude Opus 4.8 - an AI directing an AI, both disclosed in the credential.
   'creators': 'creators',
   // Verify It Yourself: opaque unverified rings vs a hard-edged green cryptographic
   // lens revealing the verified state (Gemini artwork, Andy-directed).
@@ -270,7 +295,7 @@ const MASTHEADS: Record<string, string> = {
   'operators': 'operators',     // governed deploy-wave across a framed grid (Sonnet 5)
   'url-mode': 'url-mode',        // one encoded line resolving to an exact render (Fable 5)
   'overview': 'overview',        // one core pulsing through many distinct shells (Sonnet 5)
-  // Trust pathway + MCP — AI-directed (Claude Opus 4.8) art by Claude Sonnet 5 / Fable 5.
+  // Trust pathway + MCP - AI-directed (Claude Opus 4.8) art by Claude Sonnet 5 / Fable 5.
   'privacy': 'privacy',                     // protected interior, nothing leaves (Sonnet 5)
   'ai-features': 'ai-features',             // flux crystallising to a fixed artifact (Fable 5)
   'security': 'security',                   // guilloché security engraving (Sonnet 5)
@@ -301,7 +326,7 @@ const NAV: NavLink[][] = [
     { label: 'For Operators', href: '/info/operators.html' } ],
   // Trust is its own top-level destination, not a subsection of an audience. The
   // provenance/privacy/security docs are the ones a sceptical reader comes looking
-  // for FIRST, and they answer the same questions whoever is asking — buried under
+  // for FIRST, and they answer the same questions whoever is asking - buried under
   // "For Operators" they were only findable by someone who already self-identified
   // as one.
   [ { label: 'Trust', href: '/info/trust.html' } ],
@@ -334,7 +359,7 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
     ],
   },
   // The creators rail used to be one six-item "Make things" group with everything in
-  // it, and adding collab/search/favourites would have taken it to nine — a flat list
+  // it, and adding collab/search/favourites would have taken it to nine - a flat list
   // long enough that its shape stopped telling a reader anything. Split by what the
   // reader is trying to DO, kindred pages together: the surfaces you make in, the ways
   // back to your own things, and getting work out of the app to other people.
@@ -352,7 +377,7 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
         { slug: 'animating',       label: 'Animating' },
         { slug: 'utilities',       label: 'Utility views' } ] },
       // Search, favourites and the profile are the three pages about getting back to
-      // your own things — finding them, keeping them to hand, and the on-device record
+      // your own things - finding them, keeping them to hand, and the on-device record
       // both of the other two are written onto.
       { label: 'Find your way', items: [
         { slug: 'search',      label: 'Search' },
@@ -365,7 +390,8 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
         { slug: 'formats',     label: 'Formats, in and out' },
         { slug: 'exporting',   label: 'Exporting & formats' } ] },
       { label: 'Compare', items: [
-        { slug: 'positioning', label: 'How Lolly compares' } ] },
+        { slug: 'positioning', label: 'How Lolly compares' },
+        { slug: 'compare',     label: 'Tool by tool' } ] },
     ],
   },
   builders: {
@@ -587,7 +613,7 @@ function toSlug(h2: string) {
 // ── Markdown helpers ──────────────────────────────────────────────────────────
 
 // PROV_SEAL, parseCells, headingId, CONTENT_TOKEN + stripAuthoringComments now live
-// in @lolly-tools/docs-render (imported above) — pure helpers the in-app renderer needs too.
+// in @lolly-tools/docs-render (imported above) - pure helpers the in-app renderer needs too.
 
 // inline() binds the build-time docCtx to the shared renderer (@lolly-tools/docs-render).
 // The pass order, the darkFor channel and every impure-fact source now live in the package;
@@ -603,13 +629,13 @@ function inline(text: string): string {
  * the pipeline captured from, so capture size, dpi and which renderer drew it are
  * facts about the file that the file itself does not carry. inline() parses that
  * query and throws it away 50 lines before the credential is emitted, and by then
- * only the resolved filename survives — so the credential reads the recipes back off
+ * only the resolved filename survives - so the credential reads the recipes back off
  * the pages, once, and looks its own slug up.
  *
  * Parsed by the SHOTS PIPELINE's parser (scripts/lib/shot-compare.ts), not a local
  * one: a credential that described a capture in different terms from the capture
  * would be a second opinion, and the first one is the one that ran. Recipe problems
- * are that pipeline's to report — here a slug that does not resolve simply means the
+ * are that pipeline's to report - here a slug that does not resolve simply means the
  * capture facts are left off the line.
  */
 let shotRecipes: Map<string, ShotDef> | null = null;
@@ -637,7 +663,7 @@ function shotRecipe(slug: string): ShotDef | null {
  * the credit is checkable.
  *
  * Deliberately almost invisible. At rest it is one small imprint glyph at low
- * opacity — the same weight a photographer's byline carries in a magazine, which
+ * opacity - the same weight a photographer's byline carries in a magazine, which
  * readers are practised at skimming past. It only becomes words on hover, focus or
  * tap. Every shot on the site was made the same way, so a permanently visible line
  * on all 155 would be noise repeated 155 times; the people who go looking are the
@@ -659,14 +685,14 @@ function shotRecipe(slug: string): ShotDef | null {
  * screenshots is a vector document, and the corpus lost 50% of its weight moving from
  * the print path to the walker, so "134 paths, 484 KB" is the claim in numbers a reader
  * can check against the bytes they were served. Every pill is a property of those bytes
- * — the recipe's capture viewport is NOT here, because it describes the request rather
+ * - the recipe's capture viewport is NOT here, because it describes the request rather
  * than the file and disagrees with the shipped artwork on most shots; it lives in the
  * accessible label as context instead. The row appears only in the expanded state,
- * which is the whole line's state — see the CSS — and the line is bottom-anchored so
+ * which is the whole line's state - see the CSS - and the line is bottom-anchored so
  * its second row never moves the resting glyph.
  */
 // shotTryLink now lives in @lolly-tools/docs-render's render.ts (as `shotTry`, driven by
-// docCtx.tryLink) — inline() moved with it, and nothing else in build.ts used it.
+// docCtx.tryLink) - inline() moved with it, and nothing else in build.ts used it.
 
 let credSeq = 0;
 // The credential's HTML assembly now lives in @lolly-tools/docs-render's renderCredential
@@ -679,7 +705,7 @@ function shotCredential(file: string, extraClass = '', from?: { path: string; sr
 }
 
 /**
- * A landing-page mascot wrapped with its own Content Credential — the same imprint glyph
+ * A landing-page mascot wrapped with its own Content Credential - the same imprint glyph
  * + verify/download the docs screenshots carry, read from the served file. The inline()
  * asset-cred rewrite only sees markdown; the landing template emits raw HTML, so this is
  * its equivalent. `cls` is the mascot's sizing class (width / flex / drop-shadow); it moves
@@ -687,7 +713,7 @@ function shotCredential(file: string, extraClass = '', from?: { path: string; sr
  * Every image on the /info site becoming a live demonstration of the provenance chain is
  * the point (see plans + the mascot-provenance note): a site that argues AI should declare
  * itself should not ship undeclared stock art. A file with no readable credential still
- * renders — just as a plain img, without a line.
+ * renders - just as a plain img, without a line.
  */
 function credentialedMascot(src: string, cls: string, alt = ''): string {
   const file = src.replace(/^\/info\//, '');
@@ -697,7 +723,7 @@ function credentialedMascot(src: string, cls: string, alt = ''): string {
   // Rests CLOSED like a screenshot's credit (glyph only, expands on hover / focus / tap),
   // NOT open like the AI-stance hero: a mascot sits in a narrow flex slot, so an
   // always-open line would overflow the artwork. This is the "same imprint as the
-  // screenshots" the brief asked for. shot-cred--mascot is a positioning hook only —
+  // screenshots" the brief asked for. shot-cred--mascot is a positioning hook only - 
   // it does NOT contain 'shot-cred--asset', so shotCredential leaves restsOpen false.
   const cred = shotCredential(file, 'shot-cred--mascot', { path, src });
   // No readable credential → the plain mascot it was before, sizing class on the img.
@@ -711,8 +737,8 @@ function credentialedMascot(src: string, cls: string, alt = ''): string {
 /**
  * A screenshot's intrinsic pixel size, read straight out of the committed file.
  *
- * This is load-bearing, not a nicety. `.shot` is `width:fit-content`, so with a
- * `loading="lazy"` image that has no declared size the wrapper lays out 0×0 — and
+ * This is required, not a nicety. `.shot` is `width:fit-content`, so with a
+ * `loading="lazy"` image that has no declared size the wrapper lays out 0×0 - and
  * a zero-area box never comes near the viewport, so the image never loads, so the
  * box never gains size. A deadlock that silently leaves every screenshot on the
  * site invisible (it did, before these attributes existed). Declaring width/height
@@ -780,11 +806,11 @@ function shotSize(file: string, from?: string): { w: number; h: number } | null 
 }
 
 /**
- * `::: showcase` — the one screenshot on the site that is INLINED as live SVG
+ * `::: showcase` - the one screenshot on the site that is INLINED as live SVG
  * rather than served through an <img>, so scroll can drive its real `viewBox`.
  *
  * Why this exists: Blink rasterises an SVG <img> at whatever scale it is
- * composited, so the moment you zoom or pan one it goes soft — the one thing the
+ * composited, so the moment you zoom or pan one it goes soft - the one thing the
  * docs most want to demonstrate (that these screenshots are geometry, not pixels)
  * is exactly the thing an <img> cannot show under motion. Animating a viewBox on
  * inlined SVG is a true camera move
@@ -792,24 +818,24 @@ function shotSize(file: string, from?: string): { w: number; h: number } | null 
  * `vector-effect="non-scaling-stroke"`, they stay hairline at every zoom the way a
  * CAD viewer does. A bitmap cannot fake either property.
  *
- * PROVENANCE — the important part. Inlining takes the FILE off the page, and a
+ * PROVENANCE - the important part. Inlining takes the FILE off the page, and a
  * C2PA hash binding covers file bytes, not DOM. Two consequences, both handled:
  *
  *  1. The manifest is STRIPPED from the inlined copy. Left in, a reader who saved
  *     the inline markup out of devtools would hold a file whose credential fails to
- *     validate — a false negative on a genuine Lolly asset, which is worse than no
+ *     validate - a false negative on a genuine Lolly asset, which is worse than no
  *     credential at all.
  *  2. The signed file is still served at /info/shots/<slug>.svg and the credential
  *     line points at it, so "verify" and "download" both act on the real bytes.
  *     The inline copy is presentation; the file remains the record.
  *
  * WHY THE INLINING HAPPENS AT RUNTIME, not here. Emitting the SVG into the page
- * took exporting.html from 35 KB to 285 KB gzipped — a quarter-megabyte of
+ * took exporting.html from 35 KB to 285 KB gzipped - a quarter-megabyte of
  * BLOCKING markup charged to every reader, scroll that far or not, neither lazily
  * loaded nor cacheable apart from the page. So the build emits the ordinary <img>
  * and SHOWCASE_SCRIPT swaps in live SVG when the block first approaches the
  * viewport. The file was going to be fetched anyway, so the motion costs no extra
- * bytes — and the geometry being animated is then literally the signed file's own,
+ * bytes - and the geometry being animated is then literally the signed file's own,
  * parsed from the exact bytes the credential covers.
  *
  * With no JS the <img> simply stays: the finished artwork, no motion, no penalty.
@@ -827,7 +853,7 @@ function shotSize(file: string, from?: string): { w: number; h: number } | null 
 // One record per SECTION, not per page: 41 pages is a list you can read, but the
 // thing a reader actually wants is the paragraph, and a page like authoring-tools
 // is 773 lines across 16 sections. Built from the RENDERED HTML rather than the
-// markdown so the anchors are the ids that exist on the page by construction —
+// markdown so the anchors are the ids that exist on the page by construction - 
 // re-deriving them from the source would be a second implementation of
 // headingId() free to drift from the first.
 //
@@ -857,14 +883,14 @@ function htmlToText(html: string): string {
 function indexSections(html: string, slug: string, title: string): SearchRecord[] {
   const records: SearchRecord[] = [];
   // The page's sidebar glyph (SIDEBAR_ICON), carried on every record so a
-  // consumer can distinguish sections by which page they came from — the app's
+  // consumer can distinguish sections by which page they came from - the app's
   // spotlight Docs group renders it instead of one generic help icon (plans/103).
   // '' where a page has no sidebar icon; the consumer falls back.
   const i = SIDEBAR_ICON[slug] ?? '';
   const heading = /<h([2-4])\s+id="([^"]*)"[^>]*>([\s\S]*?)<\/h\1>/g;
   const push = (h: string, a: string, body: string) => {
     const x = htmlToText(body).slice(0, SEARCH_SNIPPET_MAX);
-    // A heading with no prose under it is still worth finding — it is a place in
+    // A heading with no prose under it is still worth finding - it is a place in
     // the document. One with neither heading nor body is not.
     if (h || x) records.push({ p: slug, t: title, h, a, x, i });
   };
@@ -874,7 +900,7 @@ function indexSections(html: string, slug: string, title: string): SearchRecord[
     marks.push({ h: htmlToText(m[3]!), a: m[2]!, start: m.index, end: heading.lastIndex });
   }
 
-  // Everything above the first heading belongs to the page itself — on most pages
+  // Everything above the first heading belongs to the page itself - on most pages
   // that intro is the best one-line answer to "what is this page".
   push('', '', html.slice(0, marks.length ? marks[0]!.start : html.length));
   marks.forEach((mark, n) => {
@@ -985,7 +1011,7 @@ const SITE_ICONS: Record<string, string> = {
   surfaceWeb: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`,
   surfaceMacos: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>`,
   surfaceLinux: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`,
-  // Four panes — the one glyph that reads as Windows without using the logo.
+  // Four panes - the one glyph that reads as Windows without using the logo.
   surfaceWindows: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg>`,
   surfaceIos: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>`,
   surfaceAndroid: `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><polyline points="9 2 9 7 15 7 15 2"/></svg>`,
@@ -1004,14 +1030,14 @@ function siteIcon(key: string): string {
 }
 
 // ── Per-bullet icons for policy/doc pages (the `<!--i:key-->` list marker) ────
-// A bullet may open with an HTML-comment marker `<!--i:lock-->` — invisible on
-// GitHub and in the .md twins — which mdToHtml maps to an inline SVG here and a
+// A bullet may open with an HTML-comment marker `<!--i:lock-->` - invisible on
+// GitHub and in the .md twins - which mdToHtml maps to an inline SVG here and a
 // `.icon-list` layout. Aliases reuse the maps above; the rest are path strings
 // lifted from shells/web/src/lib/icons.ts (the app's own glyphs, so the doc and
 // the product agree on iconography). All stroke currentColor → theme-safe.
 const DOC_ICON_S = `fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"`;
 const DOC_ICONS: Record<string, string> = {
-  // A framed ripple — the app's "in-pixel imprint" glyph (shells/web/src/lib/icons.ts),
+  // A framed ripple - the app's "in-pixel imprint" glyph (shells/web/src/lib/icons.ts),
   // reused as the mark on every screenshot's credential line so the same symbol means
   // the same thing in the product and in the docs.
   imprint:    `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><rect x="3" y="3" width="18" height="18" rx="2.5"/><path d="M6.5 13.5c1.8-3 3.6-3 5.5 0s3.7 3 5.5 0"/><path d="M6.5 9.5c1.8-2.4 3.6-2.4 5.5 0s3.7 2.4 5.5 0"/></svg>`,
@@ -1040,9 +1066,9 @@ const DOC_ICONS: Record<string, string> = {
   box:        `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M3.3 7 12 12l8.7-5"/><path d="M12 22V12"/></svg>`,
   clock:      `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><circle cx="12" cy="12" r="9"/><path d="M12 7.5V12l3.5 2"/></svg>`,
   // The same magnifier the app's own search field wears (shells/web/src/lib/icons.ts,
-  // MAGNIFIER) — one glyph for the feature in the product and on the page about it.
+  // MAGNIFIER) - one glyph for the feature in the product and on the page about it.
   search:     `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>`,
-  // Home — the footer sitemap's `index` row. The one destination no sidebar lists
+  // Home - the footer sitemap's `index` row. The one destination no sidebar lists
   // (the landing page has no rail), so it exists for the footer alone.
   home:       `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5"/><path d="M10 21v-6h4v6"/></svg>`,
   eyeoff:     '', // aliased below
@@ -1076,7 +1102,7 @@ function docIcon(key: string): string {
 // site's own hand and free to be recoloured; these are other people's marks, shipped
 // verbatim from docs/logos.ts and never restyled beyond taking the text colour. The
 // two never mix in one map, so "is this ours to change?" is answered by which
-// registry a key lives in. An unknown key behaves exactly as docIcon's does — warn
+// registry a key lives in. An unknown key behaves exactly as docIcon's does - warn
 // at build, render nothing, never a broken glyph in the reader's face.
 function docLogo(key: string): string {
   const svg = DOC_LOGOS[key];
@@ -1086,12 +1112,12 @@ function docLogo(key: string): string {
 
 /**
  * The whole-line form: `<!--lb:kubernetes helm-->` on its own line, before a `## `
- * heading, becomes a centred row of big marks — a moment in the scroll that says
+ * heading, becomes a centred row of big marks - a moment in the scroll that says
  * "this next part is about these" before a word of it is read.
  *
  * Why a block instead of marks IN the heading: a heading is a name, and a glyph
  * wedged in front of one competes with the words for the same line. Reserved for
- * MAJOR sections whose subject really is the technology — one per page at most in
+ * MAJOR sections whose subject really is the technology - one per page at most in
  * practice. A whole row of marks that only decorates would spend the device on
  * nothing (and the section headings are what a reader scans to navigate).
  *
@@ -1112,20 +1138,20 @@ function docLogoBlock(keys: string[]): string {
 /**
  * The verify badge on the hero lollipop.
  *
- * The mark at the top of the landing page is a signed file — /info/icon.svg carries
- * its own Content Credential — and the page's whole argument is that you should not
+ * The mark at the top of the landing page is a signed file - /info/icon.svg carries
+ * its own Content Credential - and the page's whole argument is that you should not
  * have to take that on trust. So the logo wears the app's own verify glyph (the
  * shield + tick the web shell's Verify button and profile use, SITE_ICONS
  * .importPointShield here), and it opens the real /verify view with THIS file already
  * loaded: `#/verify?src=…` fetches a same-origin path and runs it through the normal
  * on-device check (shells/web/src/views/valid.ts). Nothing is re-signed and nothing is
- * swapped to make the demonstration work — it is the same bytes the page is serving.
+ * swapped to make the demonstration work - it is the same bytes the page is serving.
  *
  * A corner overlay, sized in the same clamp() family as the logo so it stays a badge
  * at every width, and positioned at 82%/82% of the slot: the mark is a circle, so its
  * bottom-right diagonal edge (50% + 35.4%) is the one place a badge sits ON the
  * artwork rather than in the empty corner of its box. It is a real <a> with its own
- * accessible name — NOT nested inside the logo's link, which would be invalid and
+ * accessible name - NOT nested inside the logo's link, which would be invalid and
  * would leave the badge unreachable by keyboard: a link's name is the text it
  * contains, so a badge in there would make the logo link read as "Open Lolly -
  * browse all tools Verify this logo's credentials". It is a sibling of the logo mark
@@ -1473,7 +1499,7 @@ function makeSomethingBlock(lang: Lang): string {
  * the only other mention, and §6's test holds that line). Andy's maxim, 2026-08-15.
  */
 function sovereigntyBlock(lang: Lang): string {
-  // CLAIMS-ALLOW: offline-statement — block 3 IS the home of the claim (plan 117 §1).
+  // CLAIMS-ALLOW: offline-statement - block 3 IS the home of the claim (plan 117 §1).
   const statement = t('**The internet is optional here: use it when it helps, never surrender control.** A font you pick, a place you look up, a link you share - things happen online only because you asked. Nothing you make ever leaves your device, and no one is listening in. Turn the Wi-Fi off and everything still works. **Freedom is sweet.**');
   // CLAIMS-ALLOW END
   return `<section class="sovereign-section" id="sovereign">
@@ -1523,7 +1549,7 @@ function aiBlock(lang: Lang): string {
  * wording; tests/docs-claims.test.ts pins the three byte-identical.
  */
 function whoIsBehindBlock(lang: Lang): string {
-  // CLAIMS-ALLOW: sceptic-paragraph — FINAL copy, pinned identical in three homes (plan 117 blocks 7 + §6).
+  // CLAIMS-ALLOW: sceptic-paragraph - FINAL copy, pinned identical in three homes (plan 117 blocks 7 + §6).
   const scepticParagraph = '**We built Lolly for ourselves.** SUSE needed thousands of on-brand files, each with its name sealed inside, made without handing anything to outside services. So we built a tool that does all of it on the device, and released it as open source, like everything else we make. We keep maintaining it because we use it every day. **There is no obligation:** everything here works with or without us.';
   // CLAIMS-ALLOW END
   return `<section class="behind-section" id="behind">
@@ -2001,7 +2027,7 @@ ${QOL_HTML}
 ${whoIsBehindBlock(lang)}
 ${ASSURE_HTML}
 ${teaserSection({
-  // CLAIMS-ALLOW: app-names — Figma/Penpot/Illustrator/InDesign here are the names of
+  // CLAIMS-ALLOW: app-names - Figma/Penpot/Illustrator/InDesign here are the names of
   // FILES a reader already owns, which is interop vocabulary, not a competitive claim.
   text: t("Already have designs? They aren't stranded - bring Figma, Penpot, Illustrator, InDesign or any SVG."),
   // CLAIMS-ALLOW END
@@ -2077,10 +2103,129 @@ ${QUICKNAV_JS}`;
 }
 // ═══ LANDING COPY REGION END ═════════════════════════════════════════════════
 
+// ── Format side-door pages (plan 116 workstream A) ───────────────────────────
+// One generated page per register format (/info/formats/<token>/) and one per
+// curated conversion (/info/convert/<in>-to-<out>/). Structurally identical
+// across formats on purpose: the content is derived from the register, so a page
+// can never promise more than the register lists. The page-model logic is pure
+// and lives in ./formats-pages.ts; the HTML chrome below reads it and reuses the
+// same wrapPage the rest of the site uses.
+//
+// The fixed labels below all pass through t(), so translating this small skeleton
+// once localises every generated page in every locale. The format NAMES and the
+// register descriptions stay English (the register says so, and the formats
+// dialog already renders them English-only).
+
+/** A JSON-LD SoftwareApplication block for a generated page (offers price 0, MPL-2.0). */
+function sideDoorJsonLd(opts: { name: string; description: string; url: string; featureList: string[] }): string {
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Lolly',
+    applicationCategory: 'DesignApplication',
+    operatingSystem: 'Web, Windows, macOS, Linux, iOS, Android',
+    description: opts.description,
+    url: opts.url,
+    featureList: opts.featureList,
+    offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD' },
+    license: 'https://www.mozilla.org/en-US/MPL/2.0/',
+    isAccessibleForFree: true,
+  };
+  // Escape the closing-tag opener so the JSON can never break out of the script.
+  return `<script type="application/ld+json">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>`;
+}
+
+/** The shared in-content footer both side-door page kinds carry (why-free + compare). */
+function sideDoorFoot(lang: Lang): string {
+  return `<footer class="sidedoor-foot">
+    <p class="sidedoor-foot-why"><strong>${esc(t('Why is this free?'))}</strong> ${esc(t('Lolly is open source and made by SUSE, who use it every day.'))}</p>
+    <a class="sidedoor-foot-link" href="${esc(localeHref(lang, 'compare'))}">${esc(t('See how Lolly compares'))} <span aria-hidden="true">→</span></a>
+  </footer>`;
+}
+
+/** The reads/writes/round-trip line, chosen by direction (fixed labels via t()). */
+function sideDoorDirLine(dir: 'in' | 'out' | 'both'): string {
+  const key = dir === 'both' ? 'Lolly opens and makes this format'
+    : dir === 'in' ? 'Lolly opens this format'
+    : 'Lolly makes this format';
+  return esc(t(key));
+}
+
+/** /info/formats/<token>/ - one page per register format. */
+function renderFormatSideDoor(model: FormatPageModel, lang: Lang): string {
+  const url = `${SITE_URL}${localeHref(lang, `formats/${model.slug}`)}`;
+  const provLine = model.provenance
+    ? t('Content Credentials survive this format')
+    : t('This format carries no Content Credential');
+  const feats = model.featureLabels
+    .map((label) => `<li>${esc(label)}</li>`).join('');
+  const cat = FMT_CAT_ICON[model.category] || '';
+  return `<article class="sidedoor page-format">
+    <div class="sidedoor-eyebrow">${cat}<span>${esc(t('Format'))} · ${esc(model.category)}</span></div>
+    <h1>${esc(model.name)}</h1>
+    <p class="sidedoor-full">${esc(model.full)}</p>
+    <p class="sidedoor-dir">${sideDoorDirLine(model.dir)}</p>
+    <p class="sidedoor-lead">${esc(model.desc)}</p>
+    <ul class="sidedoor-promise">
+      <li>${esc(t('Runs on your device'))}</li>
+      <li>${esc(t('Free, no account'))}</li>
+    </ul>
+    <a class="sidedoor-cta" href="${esc(appHref(lang, model.appHash))}">${esc(t('Do it now'))} <span aria-hidden="true">→</span></a>
+    <section class="sidedoor-detail">
+      <h2>${esc(t('What Lolly supports'))}</h2>
+      ${feats ? `<ul class="sidedoor-feats">${feats}</ul>` : ''}
+      <p class="sidedoor-prov">${esc(provLine)}</p>
+      <p class="sidedoor-offline">${esc(t('Everything happens on your device, so it works with the Wi-Fi off.'))}</p>
+    </section>
+    ${sideDoorJsonLd({ name: model.name, description: model.description, url, featureList: model.featureLabels })}
+    ${sideDoorFoot(lang)}
+  </article>`;
+}
+
+/** /info/convert/<in>-to-<out>/ - one page per curated conversion pair. */
+function renderConvertSideDoor(model: ConvertPageModel, lang: Lang): string {
+  const url = `${SITE_URL}${localeHref(lang, `convert/${model.slug}`)}`;
+  const provLine = model.provenance
+    ? t('Content Credentials survive this format')
+    : t('This format carries no Content Credential');
+  const outFeats = model.outFeatureLabels.map((label) => `<li>${esc(label)}</li>`).join('');
+  return `<article class="sidedoor page-convert">
+    <div class="sidedoor-eyebrow">${DOC_ICONS.convert}<span>${esc(t('Convert'))}</span></div>
+    <h1>${esc(model.title)}</h1>
+    <div class="sidedoor-convert-cols">
+      <div class="sidedoor-col">
+        <span class="sidedoor-col-label">${esc(t('What goes in'))}</span>
+        <strong>${esc(model.inName)}</strong>
+        <p>${esc(model.inDesc)}</p>
+      </div>
+      <span class="sidedoor-convert-arrow" aria-hidden="true">→</span>
+      <div class="sidedoor-col">
+        <span class="sidedoor-col-label">${esc(t('What comes out'))}</span>
+        <strong>${esc(model.outName)}</strong>
+        <p>${esc(model.outDesc)}</p>
+      </div>
+    </div>
+    <ul class="sidedoor-promise">
+      <li>${esc(t('Runs on your device'))}</li>
+      <li>${esc(t('Free, no account'))}</li>
+      <li>${esc(t('Nothing is uploaded'))}</li>
+    </ul>
+    <a class="sidedoor-cta" href="${esc(appHref(lang, model.appHash))}">${esc(t('Do it now'))} <span aria-hidden="true">→</span></a>
+    <section class="sidedoor-detail">
+      <h2>${esc(t('What Lolly supports'))}</h2>
+      ${outFeats ? `<ul class="sidedoor-feats">${outFeats}</ul>` : ''}
+      <p class="sidedoor-prov">${esc(provLine)}</p>
+      <p class="sidedoor-offline">${esc(t('Everything happens on your device, so it works with the Wi-Fi off.'))}</p>
+    </section>
+    ${sideDoorJsonLd({ name: model.title, description: model.description, url, featureList: model.outFeatureLabels })}
+    ${sideDoorFoot(lang)}
+  </article>`;
+}
+
 // ── HTML template ─────────────────────────────────────────────────────────────
 
 // The app's design tokens, inlined verbatim (comments/blank lines stripped) so the docs
-// share ONE source of truth with the web shell — the same [data-theme] light/dark/brand
+// share ONE source of truth with the web shell - the same [data-theme] light/dark/brand
 // system, the same shadcn HSL-triple slots (--background/--foreground/--primary/--muted/
 // --border/--radius/--font-brand/…), and the same a11y-contrast overrides. In the app shell
 // (the in-app docs view, M2) brand-vars.ts overrides these per active brand, so the docs go
@@ -2737,7 +2882,35 @@ html[data-theme="dark"] .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
 
 /* Docs layout */
 .docs-wrap{display:grid;grid-template-columns:220px 1fr;max-width:1180px;margin:0 auto;min-height:calc(100vh - 3.5rem - 60px)}
+/* A generated side-door page has no rail, so it is a single centred column. */
+.docs-wrap--standalone{grid-template-columns:1fr;max-width:900px}
 .docs-sidebar{padding:2rem 1.25rem;border-right:1px solid var(--border);position:sticky;top:3.75rem;height:calc(100vh - 3.75rem);overflow-y:auto}
+/* Format / convert side-door pages (plan 116 workstream A). */
+.sidedoor-eyebrow{display:flex;align-items:center;gap:.5rem;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:var(--green);margin-bottom:.75rem}
+.sidedoor-eyebrow svg{width:1.25rem;height:1.25rem}
+.sidedoor .sidedoor-full{color:var(--muted);font-size:1.0625rem;margin:-1rem 0 1.25rem}
+.sidedoor-dir{font-weight:600;margin:0 0 1rem}
+.sidedoor-lead{font-size:1.0625rem;line-height:1.7;margin-bottom:1.5rem}
+.sidedoor-promise{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.5rem .75rem;margin:0 0 1.5rem}
+.sidedoor-promise li{display:inline-flex;align-items:center;gap:.4em;background:hsl(var(--card));border:1px solid var(--border);border-radius:999px;padding:.3rem .85rem;font-size:.875rem;font-weight:600}
+.sidedoor-promise li::before{content:"✓";color:var(--green);font-weight:700}
+.sidedoor-cta{display:inline-flex;align-items:center;gap:.4em;background:var(--green);color:#fff;text-decoration:none;font-weight:700;padding:.7rem 1.4rem;border-radius:.6rem;margin-bottom:.5rem}
+.sidedoor-cta:hover{filter:brightness(1.05)}
+.sidedoor-convert-cols{display:flex;flex-wrap:wrap;align-items:stretch;gap:1rem;margin:0 0 1.5rem}
+.sidedoor-col{flex:1 1 15rem;background:hsl(var(--card));border:1px solid var(--border);border-radius:.75rem;padding:1rem 1.15rem}
+.sidedoor-col-label{display:block;font-size:.6875rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700;margin-bottom:.35rem}
+.sidedoor-col strong{display:block;font-size:1.35rem;margin-bottom:.5rem}
+.sidedoor-col p{margin:0;font-size:.9375rem;color:var(--muted);line-height:1.6}
+.sidedoor-convert-arrow{align-self:center;color:var(--green);font-size:1.6rem;font-weight:700}
+.sidedoor-detail{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border)}
+.sidedoor-feats{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1rem}
+.sidedoor-feats li{background:hsl(var(--card));border:1px solid var(--border);border-radius:.5rem;padding:.3rem .75rem;font-size:.8125rem}
+.sidedoor-prov{font-weight:600;margin:.5rem 0}
+.sidedoor-offline{color:var(--muted);margin:.25rem 0 0}
+.sidedoor-foot{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--border)}
+.sidedoor-foot-why{margin:0 0 .5rem}
+.sidedoor-foot-link{font-weight:700;text-decoration:none;color:var(--green)}
+.sidedoor-foot-link:hover{text-decoration:underline}
 .sidebar-label{font-size:.6875rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700;margin:1.5rem 0 .5rem}
 .sidebar-label:first-child{margin-top:0}
 .sidebar-home{display:block;font-size:.8125rem;color:var(--muted)!important;margin-bottom:1rem;padding:0!important}
@@ -3769,22 +3942,22 @@ const THEME_SVG_SUN  = `<svg class="icon-sun" viewBox="0 0 24 24" fill="none" st
 // THEME_ICONS.brand). A painter's palette so the three glyphs read at a glance.
 const THEME_SVG_BRAND = `<svg class="icon-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a10 10 0 1 1 10-10c0 2.5-2 3-3.5 3H16a2 2 0 0 0-1 3.75A1.3 1.3 0 0 1 12 22z"/><circle cx="13.5" cy="6.5" r=".8"/><circle cx="17.5" cy="10.5" r=".8"/><circle cx="8.5" cy="7.5" r=".8"/><circle cx="6.5" cy="12.5" r=".8"/></svg>`;
 // Icon-only cycle button showing the ACTIVE theme's glyph (CSS below picks which,
-// off [data-theme]) — matching the app's createThemeToggle. Clicking steps
+// off [data-theme]) - matching the app's createThemeToggle. Clicking steps
 // light → dark → brand → light (THEME_INTERACT_SCRIPT).
 const THEME_TOGGLE   = `<button class="nav-theme-toggle" aria-label="Switch theme (light, dark, brand)" title="Switch theme - light / dark / brand">${THEME_SVG_SUN}${THEME_SVG_MOON}${THEME_SVG_BRAND}</button>`;
 
 // The theme lives on [data-theme] (the app's mechanism, so the inlined tokens.css themes),
-// and the legacy `.dark` CLASS is kept in lock-step with it — purely so the banked masthead
+// and the legacy `.dark` CLASS is kept in lock-step with it - purely so the banked masthead
 // canvases (docs/mastheads/*.html), which detect dark via classList.contains('dark') + a
 // MutationObserver on the class attribute, keep theme-switching without being re-signed. The
 // 'brand' theme is a DARK ground (tokens.css [data-theme="brand"] declares color-scheme:dark),
-// so it carries the `.dark` class too — the mastheads render their dark palette under it. New
+// so it carries the `.dark` class too - the mastheads render their dark palette under it. New
 // mastheads read [data-theme] per dev-docs/docs-masthead-gemini-prompt.md; once the bank is
 // re-baked on that prompt this class shim can go.
 const THEME_INIT_SCRIPT = `<script>(function(){var c=localStorage.getItem('theme'),s=window.matchMedia('(prefers-color-scheme:dark)').matches;var t=(c==='light'||c==='dark'||c==='brand')?c:(s?'dark':'light');var r=document.documentElement;r.dataset.theme=t;r.classList.toggle('dark',t==='dark'||t==='brand');})();</script>`;
 
 // Pre-paint, beside the theme flag and for the same reason: it decides how the
-// first frame is painted. It only ARMS the screenshot motion — SHOT_MOTION_SCRIPT
+// first frame is painted. It only ARMS the screenshot motion - SHOT_MOTION_SCRIPT
 // at end-of-body is what lands each shot. Without JS neither runs, the class is
 // absent, and the shots are plain visible images.
 const SHOT_MOTION_INIT = `<script>document.documentElement.classList.add('shots-motion');</script>`;
@@ -3963,7 +4136,7 @@ const SHOWCASE_SCRIPT = `<script>(function(){
  * exists ONLY for the two things CSS cannot do: a touch device has no hover, and a
  * pointer user who opened the line by tapping needs a way out. aria-expanded is
  * managed here rather than in the markup because it is only ever true in a session
- * where this script is running — a static attribute would misreport the CSS-only
+ * where this script is running - a static attribute would misreport the CSS-only
  * hover state.
  */
 const SHOT_CRED_SCRIPT = `<script>(function(){
@@ -4138,12 +4311,12 @@ const LIQUID_GLASS_SCRIPT = `<script>(function(){
  * the /info formats table is built from (docs/site/formats-catalog.json, whose own
  * header says the counts are computed here rather than hand-maintained).
  *
- * `dir` is in|out|both — anything but "in" is exportable, so that is the whole test.
+ * `dir` is in|out|both - anything but "in" is exportable, so that is the whole test.
  * A token with a space in it ("CMYK PDF", "Animated WebP", "CSS variables") is a
  * LABEL, not an extension: those are skipped rather than mangled into one, and every
  * one of them but Radiance HDR already shares its extension with an entry that stays.
- * Skipping is the rule because the alternative — a lookup table of "what file
- * extension does this really use" — is exactly the hand-maintained list this replaces.
+ * Skipping is the rule because the alternative - a lookup table of "what file
+ * extension does this really use" - is exactly the hand-maintained list this replaces.
  */
 function chipExtensions(): string[] {
   const catalog = loadSiteJson('formats-catalog.json') as { formats: Array<{ token?: string; dir?: string }> };
@@ -4159,12 +4332,12 @@ function chipExtensions(): string[] {
 }
 
 /**
- * The floating-format chip field — the landing hero's ambient effect, and (since
+ * The floating-format chip field - the landing hero's ambient effect, and (since
  * plans/105) the default masthead behind every article page's h1.
  *
  * ONE engine, two instances, because they are the same idea seen twice: Lolly's
  * output formats drifting up past whatever the page is about. What differs is not
- * the motion but the manners — the landing is a front door and may play (chips burst
+ * the motion but the manners - the landing is a front door and may play (chips burst
  * where you tap, the loop never stops); a docs masthead is furniture on a page
  * someone came to READ, so it holds still when asked, stops when scrolled past, and
  * never reacts to a click.
@@ -4178,7 +4351,7 @@ function chipExtensions(): string[] {
  *   reduceMotion   → honour prefers-reduced-motion by painting ONE frame, no loop.
  *
  * Defaults reproduce the landing exactly (landing palette, no pausing, no
- * reduced-motion branch, and the loop started immediately) — this refactor moved the
+ * reduced-motion branch, and the loop started immediately) - this refactor moved the
  * code, not the hero.
  */
 const CHIP_FIELD_JS = `
@@ -4445,7 +4618,7 @@ const HERO_CANVAS_SCRIPT = `<script>${CHIP_FIELD_JS}(function(){
  * The effect was built for one dark plate and hardcoded to it (#1c4a2e chips,
  * #30ba78 labels, color-dodge). Docs pages are read in every theme, so here the
  * palette comes from the page's own tokens and the chips are RE-BAKED when the
- * theme changes — the toggle stamps [data-theme] (light/dark/brand) on <html>, and a
+ * theme changes - the toggle stamps [data-theme] (light/dark/brand) on <html>, and a
  * reader on "system" gets the same flip from the OS; palette() treats brand as a dark
  * ground. Blend + opacity are CSS's job (.docs-mast-canvas), so
  * the JS only ever decides two colours.
@@ -4475,7 +4648,7 @@ const DOCS_MASTHEAD_SCRIPT = `<script>${CHIP_FIELD_JS}(function(){
   if(mq.addEventListener) mq.addEventListener('change',function(){ field.rebake(); });
 })();</script>`;
 
-// Links into the app's /verify view open as a POPOUT WINDOW, not a tab — the
+// Links into the app's /verify view open as a POPOUT WINDOW, not a tab - the
 // whole point of the link is dragging an image from THIS page into that drop
 // zone, which needs both windows visible side by side. Plain target=_blank
 // backgrounds the docs page and the reader loses the image they meant to drag.
@@ -4595,8 +4768,8 @@ addEventListener('scroll',place,true);   // capture: the rail scrolls, not the w
 const HAMBURGER_SCRIPT = `<script>(function(){var ham=document.getElementById('navHamburger');var menu=document.getElementById('navMobileMenu');if(!ham||!menu)return;ham.addEventListener('click',function(){var open=menu.classList.toggle('open');ham.classList.toggle('open',open);ham.setAttribute('aria-expanded',open?'true':'false');});menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false');});});document.addEventListener('click',function(e){if(!menu.contains(e.target)&&!ham.contains(e.target)){menu.classList.remove('open');ham.classList.remove('open');ham.setAttribute('aria-expanded','false');}});})();</script>`;
 
 // The "On this page" jump nav (pageJumpNav, near wrapPage). Deliberately does NOT
-// touch scrolling: the links are ordinary anchors, so the browser's own jump — and
-// the site's own `scroll-behavior` (already reduced-motion-aware in CSS) — does the
+// touch scrolling: the links are ordinary anchors, so the browser's own jump - and
+// the site's own `scroll-behavior` (already reduced-motion-aware in CSS) - does the
 // move. Closing on link click is the only thing the click handler does; the default
 // navigation runs after it. Esc closes and RETURNS FOCUS to the button, so keyboard
 // reading resumes where it left off rather than at the top of the document.
@@ -4743,6 +4916,11 @@ function resolvePageSrc(page: Page, lang: Lang): string {
 // English lives at /info/<slug>.html (unprefixed, unchanged URLs); every other
 // locale lives under /info/<lang>/<slug>.html.
 function localeHref(lang: Lang, slug: string): string {
+  // A generated side-door page carries a directory-style slug (formats/svg,
+  // convert/heic-to-jpg) and is served from its own folder as .../index.html,
+  // so its URL is the directory, not a .html file. No hand-authored page slug
+  // has a slash, so this branch only ever fires for the generated pages.
+  if (slug.includes('/')) return lang === 'en' ? `/info/${slug}/` : `/info/${lang}/${slug}/`;
   const file = slug === 'index' ? 'index.html' : `${slug}.html`;
   return lang === 'en' ? `/info/${file}` : `/info/${lang}/${file}`;
 }
@@ -4888,7 +5066,7 @@ function buildNav(lang: Lang, slug: string, activeHref: string, isLanding: boole
   const navClass = isLanding ? '' : ' class="nav-solid"';
   const launch = esc(t('Launch App ↗'));
   const launchHref = esc(localizeHref(lang, '/'));
-  // Draft marker: English only, and deliberately not run through t() — it must
+  // Draft marker: English only, and deliberately not run through t() - it must
   // not enter the translation corpora, because it is meant to come straight back
   // out again once the docs are no longer a draft.
   const draft = lang === 'en' ? '<span class="nav-draft">Draft only</span>' : '';
@@ -4896,15 +5074,15 @@ function buildNav(lang: Lang, slug: string, activeHref: string, isLanding: boole
   // and a separator with nothing under it would be worse than the omission.
   const pageNav = isLanding ? '' : mobilePageNavHtml(lang, activePathway ?? 'builders', activeHref);
   // Search joins the right-hand cluster of whole-site controls, ahead of the
-  // language picker. Docs pages only — there is no index behind the landing page,
+  // language picker. Docs pages only - there is no index behind the landing page,
   // and a box that returns nothing is worse than no box.
   return `<nav${navClass}><a href="${localeHref(lang, 'index')}" class="brand">Lolly</a>${draft}${groups}<div class="gap"></div>${isLanding ? '' : searchBox(lang)}${langPickerHtml(lang, slug)}${THEME_TOGGLE}${HAM_BTN}<a href="${launchHref}" class="nav-launch">${launch}</a></nav>
 <div class="nav-mobile-menu" id="navMobileMenu">${mobileLinks}${pageNav}<a href="${launchHref}" class="nav-launch">${launch}</a></div>`;
 }
 
 /**
- * The pathway hub each footer column's HEADING points at. Every pathway has one —
- * the `isHub` page of the same name — so the heading is always a real destination
+ * The pathway hub each footer column's HEADING points at. Every pathway has one - 
+ * the `isHub` page of the same name - so the heading is always a real destination
  * and never decoration a reader tries to click.
  */
 const PATHWAY_HUB: Record<Pathway, string> = {
@@ -5036,11 +5214,11 @@ function sitemapLabel(slug: string, hub: Pathway): string {
 }
 
 function footerSitemap(lang: Lang): string {
-  // Each link opens with the SAME glyph the docs sidebar gives that page —
+  // Each link opens with the SAME glyph the docs sidebar gives that page - 
   // SIDEBAR_ICON is the one page→icon mapping, shared, so the footer and the rail
   // can never disagree about what a destination looks like (headings included:
-  // they link to the pathway hubs, which are sidebar pages too). Decorative here —
-  // the label is the link — so aria-hidden, sized by the stylesheet's .sitemap-ic
+  // they link to the pathway hubs, which are sidebar pages too). Decorative here - 
+  // the label is the link - so aria-hidden, sized by the stylesheet's .sitemap-ic
   // rule to the footer's own text scale. A missing entry throws at build (the
   // guard beside SIDEBAR_ICON), never renders blank.
   const ic = (slug: string) => `<span class="sitemap-ic" aria-hidden="true">${docIcon(SIDEBAR_ICON[slug]!)}</span>`;
@@ -5068,45 +5246,45 @@ const FOOTER = (lang: Lang) => `<footer>${footerSitemap(lang)}<p>Lolly - <a href
 // that lists it (several pages appear in two pathways). This is an accessibility
 // feature before it is a decorative one: a wall of same-length link text is hard
 // to scan, and a stable picture per destination gives a second, non-verbal way to
-// find a page — the recognition is instant where reading the label is not. That
+// find a page - the recognition is instant where reading the label is not. That
 // makes it part of the inclusive-design commitment in docs/inclusive-design.md,
 // not styling; keep the mapping meaningful (what the page is ABOUT) rather than
 // picking whatever glyph is unused. The footer sitemap renders this SAME mapping
 // (footerSitemap above), so a destination wears one landmark everywhere it is
-// listed — which is why `index` lives here despite no sidebar listing it: it is
+// listed - which is why `index` lives here despite no sidebar listing it: it is
 // the footer's Home row.
 const SIDEBAR_ICON: Record<string, string> = {
-  // Hubs & entry points (`index` is footer-only — the landing page has no rail)
+  // Hubs & entry points (`index` is footer-only - the landing page has no rail)
   index: 'home',
   quickstart: 'star', creators: 'palette', builders: 'wrench', operators: 'checklist', trust: 'shieldcheck',
   'status-quo': 'convert', 'input-not-impersonation': 'usercheck',
   // Creators
   using: 'pentool', 'brand-studio': 'palette', profile: 'usercheck', 'design-import': 'upload',
-  'sequence-editor': 'clock', animating: 'layers', exporting: 'download', formats: 'convert', positioning: 'sliders',
+  'sequence-editor': 'clock', animating: 'layers', exporting: 'download', formats: 'convert', positioning: 'sliders', compare: 'checklist',
   ask: 'sparkle', dashboard: 'monitor', utilities: 'wrench',
   collaborate: 'people', search: 'search', favourites: 'star',
-  // Builders — architecture & authoring
+  // Builders - architecture & authoring
   overview: 'layers', 'design-tokens': 'hash', 'authoring-tools': 'wrench', 'authoring-assets': 'photos',
   'host-api': 'code', 'url-mode': 'link',
-  // Builders — run & integrate
+  // Builders - run & integrate
   cli: 'code', 'cli-signing': 'seal', tui: 'monitor', mcp: 'server', 'ai-agents': 'sparkle', extension: 'globe',
-  // Builders — ship & operate
+  // Builders - ship & operate
   'contributing-setup': 'download', 'build-guide': 'box', 'ios-build': 'box', deployment: 'upload', configuration: 'sliders', about: 'document',
   // Operators
   'adoption-governance': 'people',
-  // Trust — where content comes from
+  // Trust - where content comes from
   'content-credentials-identity': 'seal', 'content-credentials-engineering': 'cpu', 'ai-stance': 'sparkle',
   'ai-features': 'sparkle',
   'beatrice-warde': 'font',
-  // Trust — check it yourself
+  // Trust - check it yourself
   'verify-yourself': 'check', security: 'shieldcheck', 'threat-model': 'lock',
   'parser-inventory': 'code', 'server-surface': 'server',
-  // Trust — your data
+  // Trust - your data
   privacy: 'eyeoff', 'data-transfer': 'convert', 'inclusive-design': 'people',
 };
 
 // The footer sitemap reuses the mapping above, so its completeness is enforced the
-// same way FOOTER_SECTIONS' own enumeration is — at build, loudly. Without this,
+// same way FOOTER_SECTIONS' own enumeration is - at build, loudly. Without this,
 // a footer slug with no entry degrades to docIcon()'s console.warn and an empty
 // string: a blank where a landmark should be, invisible in a log nobody reads.
 // (Lives here rather than in the FOOTER_SECTIONS guard because SIDEBAR_ICON is
@@ -5171,7 +5349,7 @@ function mobilePageNavHtml(lang: Lang, pathway: Pathway, activeHref: string) {
     `<div class="nav-mobile-label">${esc(t(g.label))}</div>${
       g.items.map(it => sidebarLinkHtml(lang, it, activeHref, false)).join('')}`,
   ).join('');
-  // Drop the pathway title when the first group repeats it — the Trust pathway
+  // Drop the pathway title when the first group repeats it - the Trust pathway
   // opens with a group also called "Trust", which rendered as "Trust" then
   // "TRUST" and read as a stutter. The active link in the site nav directly above
   // already names the pathway, so losing the heading costs nothing.
@@ -5183,7 +5361,7 @@ function mobilePageNavHtml(lang: Lang, pathway: Pathway, activeHref: string) {
 }
 
 /**
- * The docs search field, for the topbar (docs pages only — the landing page has no
+ * The docs search field, for the topbar (docs pages only - the landing page has no
  * search index behind it).
  *
  * A combobox rather than a bare input so the arrow-key walk through results is
@@ -5204,11 +5382,11 @@ function searchBox(lang: Lang): string {
     </div>`;
 }
 
-// ── Docs narration — "Listen to this page" (plans/40-docs-audio-listen.md) ───────
+// ── Docs narration - "Listen to this page" (plans/40-docs-audio-listen.md) ───────
 // Narration artefacts are rendered manually (never in CI) by
 // scripts/build-docs-audio.ts and committed under docs/audio/<lang>/<slug>/;
 // the build only LINKS what exists. A page without committed audio gets no
-// button — no dead controls — and with no audio anywhere the player bundle is
+// button - no dead controls - and with no audio anywhere the player bundle is
 // neither built nor referenced, so /info carries zero extra bytes.
 interface AudioEntry { slug: string; title: string; url: string; duration: number; bytes: number }
 
@@ -5217,7 +5395,7 @@ interface AudioEntry { slug: string; title: string; url: string; duration: numbe
 // of every build() so a --watch reimport can never serve a previous pass's set.
 let audioBySlug = new Map<string, AudioEntry>();
 
-/** The committed English narration set, in pages[] (sidebar) order — that order
+/** The committed English narration set, in pages[] (sidebar) order - that order
  *  IS the playlist auto-advance walks. */
 function collectDocsAudio(): Map<string, AudioEntry> {
   const map = new Map<string, AudioEntry>();
@@ -5274,7 +5452,7 @@ function bundleDocsPlayer(): void {
 
 const LISTEN_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>`;
 
-// Styles for the button only — everything past the first press lives in
+// Styles for the button only - everything past the first press lives in
 // /info/docs-player.css, fetched with the bundle. Shipped inline beside the
 // button (not in CSS above) so pages without audio carry none of it.
 const LISTEN_STYLE = `<style>
@@ -5287,7 +5465,7 @@ const LISTEN_STYLE = `<style>
 .docs-listen.is-loading{opacity:.6;pointer-events:none}
 </style>`;
 
-// The lazy loader — the ONLY player code a page carries. The bundle is fetched
+// The lazy loader - the ONLY player code a page carries. The bundle is fetched
 // on the first press (plan §6.1), or on arrival when the previous page's
 // auto-advance/prev/next left a hand-off in sessionStorage.
 const LISTEN_SCRIPT = `<script>(function(){
@@ -5310,7 +5488,7 @@ if(s&&JSON.parse(s).slug===btn.getAttribute('data-listen-slug'))open(JSON.parse(
  * Build-time cue→anchor assertion (plans/40-docs-audio-listen.md §10): every
  * blockId in a narrated page's committed cues.json must still resolve against
  * the BUILT page, judged the way the player maps blocks (buildBlockMap in
- * docs/player/player.ts) — a blockId that survives in the CURRENT extraction,
+ * docs/player/player.ts) - a blockId that survives in the CURRENT extraction,
  * whose spoken text is present in the built markup (paragraphs and list items
  * are matched by text there, so text presence IS the derivable position), a
  * heading's element id being the stronger signal where the markup carries it.
@@ -5318,7 +5496,7 @@ if(s&&JSON.parse(s).slug===btn.getAttribute('data-listen-slug'))open(JSON.parse(
  * mints its own section ids ("Journalists" → #press), so its headings map by
  * being present at all, not by anchor. Synthetic omission lines ("Code example
  * omitted.") have no DOM twin by design and are exempt. One console.warn per
- * miss; the build only throws when more than 20% of a page's blocks miss —
+ * miss; the build only throws when more than 20% of a page's blocks miss - 
  * drift tolerance while copy moves, since tests/docs-audio-stale.test.ts
  * already names every stale page.
  */
@@ -5371,7 +5549,7 @@ function listenButtonHtml(page: Page, a: AudioEntry): string {
 // HTML) gives a reader arriving from search no way back out of the middle of it: the
 // left rail lists PAGES, and the section they want is a scroll away with nothing
 // naming it. So on long pages only, a small fixed control opens the page's own h2
-// list — the ids mdToHtml already stamped, as plain anchors.
+// list - the ids mdToHtml already stamped, as plain anchors.
 //
 // LONG is measured, not declared per page, so nobody has to remember to turn it on:
 // six sections is where a rail stops being scannable in one glance, and 25 KB of
@@ -5380,7 +5558,7 @@ function listenButtonHtml(page: Page, a: AudioEntry): string {
 const JUMP_MIN_H2 = 6;
 const JUMP_MIN_BYTES = 25_000;
 // A contents mark: three rules, ragged like a list of headings. Not `checklist` from
-// DOC_ICONS — its ticks say "done", and nothing here is done.
+// DOC_ICONS - its ticks say "done", and nothing here is done.
 const JUMP_ICON = `<svg viewBox="0 0 24 24" ${DOC_ICON_S}><path d="M4 7h16M4 12h11M4 17h13"/></svg>`;
 
 function pageJumpNav(content: string): string {
@@ -5398,7 +5576,7 @@ function pageJumpNav(content: string): string {
     .map(it => `<a href="#${esc(it.id)}">${esc(it.text)}</a>`)
     .join('');
   // "#top" is the HTML spec's own name for the top of the document when nothing
-  // carries that id — a browser default, so no script is involved in the scroll.
+  // carries that id - a browser default, so no script is involved in the scroll.
   const top = `<a class="doc-jump-top" href="#top">${esc(t('Back to top'))}</a>`;
   return `<div class="doc-jump">`
     + `<button type="button" class="doc-jump-btn" id="docJumpBtn" aria-expanded="false" aria-controls="docJumpNav" aria-label="${esc(label)}" title="${esc(label)}">${JUMP_ICON}</button>`
@@ -5409,7 +5587,7 @@ function pageJumpNav(content: string): string {
 /**
  * Hoist a page's own h1 into a masthead band with the chip field behind it.
  *
- * Every article page opened with a bare h1 on white — correct, and completely
+ * Every article page opened with a bare h1 on white - correct, and completely
  * silent about what site you had landed on. The landing page's hero already says it
  * (formats drifting past the name), so the docs get the same greeting rather than a
  * second invented one. plans/105 records why this is the DEFAULT rather than a
@@ -5417,7 +5595,7 @@ function pageJumpNav(content: string): string {
  * drawn at read time, nothing signed and nothing claimed.
  *
  * THE H1 MOVES BUT ITS IDENTITY DOES NOT. The element is re-emitted verbatim, id
- * and all, because that id is a published anchor — deep links, the search index's
+ * and all, because that id is a published anchor - deep links, the search index's
  * page record, and anything a reader has bookmarked. Rebuilding the heading from
  * page.title instead would have quietly renamed every one of them.
  */
@@ -5434,7 +5612,7 @@ function docsMasthead(content: string, slug: string): { band: string; rest: stri
 }
 
 /**
- * A page's BANKED masthead, when `MASTHEADS` maps its slug to one — the artifact
+ * A page's BANKED masthead, when `MASTHEADS` maps its slug to one - the artifact
  * replacing the default chip canvas, in the same band, behind the same h1.
  *
  * Returns '' for a page with no mapping (the common case, and today every case),
@@ -5457,7 +5635,7 @@ function mastheadArt(slug: string, heading: string): string {
   }
   // Read from the SAME file that was just inlined (art.path), pointed at the same
   // file's served URL (art.src). The presentation copy on the page and the record
-  // the line describes are two views of one artifact — never the id resolved twice.
+  // the line describes are two views of one artifact - never the id resolved twice.
   const cred = shotCredential(art.file, 'shot-cred--mast', { path: art.path, src: art.src, art: true });
   // Renders anyway (art with no line is still art), but never silently: an unsigned
   // artifact in a bank whose whole premise is "banked art is credentialed art" is a
@@ -5472,6 +5650,10 @@ function mastheadArt(slug: string, heading: string): string {
 function wrapPage(lang: Lang, page: Page, content: string, ogSlugs: Set<string>, md = '') {
   const activeHref = page.slug === 'index' ? '/info/index.html' : `/info/${page.slug}.html`; // logical (English) - identity only
   const isLanding  = page.isLanding;
+  // A generated page's slug carries a slash (formats/svg); a class name cannot, so
+  // the body/main class uses a slash-free form. A normal slug has no slash, so this
+  // is a no-op there and the existing page-<slug> classes stay byte-identical.
+  const slugClass  = page.slug.replace(/\//g, '-');
 
   // A page with its own generated card (subtitle = its title) points share tags at
   // it; the landing page and any page that failed generation keep the canonical og.png.
@@ -5485,29 +5667,39 @@ function wrapPage(lang: Lang, page: Page, content: string, ogSlugs: Set<string>,
   const description = t(page.description || (isLanding ? SITE_DESCRIPTION : mdDescription(md) || SITE_DESCRIPTION));
 
   // Narration is English-only at launch (plan §2): the locale pages would pair
-  // an English voice with a translated body, which §9 rules out — so the button
+  // an English voice with a translated body, which §9 rules out - so the button
   // (and its loader) ship on English pages only, and only where audio exists.
   const audio = lang === 'en' ? audioBySlug.get(page.slug) : undefined;
   const listen = audio ? listenButtonHtml(page, audio) : '';
   if (audio) assertAudioCues(page, content, md);
 
   // Docs pages only: the landing page already carries its own sticky quicknav, and
-  // a second on-page nav in the corner would be two answers to one question.
-  const jump = isLanding ? '' : pageJumpNav(content);
+  // a second on-page nav in the corner would be two answers to one question. A
+  // generated side-door page has no sidebar to mirror, so it skips the jump nav too.
+  const jump = (isLanding || page.generated) ? '' : pageJumpNav(content);
 
   // The masthead band, and the article body with its h1 lifted out of it. The Listen
   // button keeps its place ABOVE the h1 (it was always the first thing in <main>),
-  // so it now floats over the band's top edge rather than over bare page.
-  const mast = isLanding ? null : docsMasthead(content, page.slug);
+  // so it now floats over the band's top edge rather than over bare page. A generated
+  // page has no banked masthead, so it gets none.
+  const mast = (isLanding || page.generated) ? null : docsMasthead(content, page.slug);
   const article = mast ? mast.rest : content;
 
   // The band is a SIBLING of .docs-wrap, not something inside the content column:
   // full viewport width, with the rail and the article both starting underneath it.
-  const body = isLanding ? `${listen}${content}` : `
+  // A generated page renders as a single column (no rail) under the same nav.
+  const body = isLanding ? `${listen}${content}`
+    : page.generated ? `
+<div class="docs-wrap docs-wrap--standalone">
+  <main class="docs-content no-mast page-${slugClass}">
+    ${article}
+  </main>
+</div>`
+    : `
 ${mast ? mast.band : ''}
 <div class="docs-wrap">
   ${buildSidebar(lang, page, activeHref)}
-  <main class="docs-content${mast ? '' : ' no-mast'} page-${page.slug}">
+  <main class="docs-content${mast ? '' : ' no-mast'} page-${slugClass}">
     ${listen}
     ${article}
   </main>
@@ -5524,9 +5716,10 @@ ${mast ? mast.band : ''}
   //
   // ENGLISH ONLY this wave. A locale page linking a sidecar that does not exist
   // reads as a failed check, and pointing 26 locales at the English store would
-  // read as "this document was modified" — so a locale page's bytes stay exactly
-  // what they were before seals existed.
-  const seal = lang === 'en' ? `\n${pageSealLink(page.slug)}` : '';
+  // read as "this document was modified" - so a locale page's bytes stay exactly
+  // what they were before seals existed. Generated side-door pages are not sealed
+  // (no .c2pa store is minted for them), so they carry no seal link either.
+  const seal = (lang === 'en' && !page.generated) ? `\n${pageSealLink(page.slug)}` : '';
 
   return `<!doctype html>
 <html lang="${LANG_META[lang].htmlLang}" data-theme="light"${LANG_META[lang].dir ? ` dir="${LANG_META[lang].dir}"` : ''}>
@@ -5559,7 +5752,7 @@ ${THEME_INIT_SCRIPT}
 ${SHOT_MOTION_INIT}
 <style>${CSS}</style>
 </head>
-<body class="page-${page.slug}">
+<body class="page-${slugClass}">
 ${buildNav(lang, page.slug, activeHref, isLanding, page.pathway)}
 ${body}
 ${FOOTER(lang)}
@@ -5591,7 +5784,7 @@ ${audio ? LISTEN_SCRIPT : ''}
 
 // The twin transforms (stripFrontMatter, unwrapFigureFences,
 // unwrapProvenanceMarkers, stripLogoMarkers, commentStandaloneProvenanceLines,
-// mdDescription) now live in @lolly-tools/docs-render — pure string ops the
+// mdDescription) now live in @lolly-tools/docs-render - pure string ops the
 // in-app docs view needs too. Imported at the top of this file.
 
 // Section order + labels for llms.txt - mirrors the top nav (NAV/NAV_PATHWAY).
@@ -5621,7 +5814,17 @@ the same slug under ${SITE_URL}/info/ - so fetch the .md URL directly. English
 only. Product landing copy: ${SITE_URL}/info/index.md
 
 ${sections.join('\n\n')}
+
+${buildLlmsFormatsSection()}
 `;
+}
+
+// The Formats section for llms.txt: every per-format side-door page, plus the
+// machine-readable claims file. An agent that wants "does Lolly do X format"
+// fetches capabilities.json; a reader-facing page sits at each formats/<token>/.
+// The section body is built by the pure module so the llms test can pin it.
+function buildLlmsFormatsSection(): string {
+  return llmsFormatsSection(formatCatalog() as unknown as SideDoorCatalog, { url: SITE_URL });
 }
 
 // ── Build all pages ───────────────────────────────────────────────────────────
@@ -5629,7 +5832,7 @@ ${sections.join('\n\n')}
 async function build() {
   // Ensure output dirs exist and copy static assets (icons).
   mkdirSync(outDir, { recursive: true });
-  // icon.svg is THE site mark (hero logo; the README + overview doc use it too) — the
+  // icon.svg is THE site mark (hero logo; the README + overview doc use it too) - the
   // single source of truth, a hand-drawn C2PA- + RDF-signed vector, served verbatim so its
   // provenance travels. A missing source is a broken landing page, so warn loudly.
   try { copyFileSync(resolve(repoRoot, 'icon.svg'), resolve(outDir, 'icon.svg')); }
@@ -5654,8 +5857,8 @@ async function build() {
 
   // Block 2's worked examples (plan 117): each card shows the tool's OWN preview of
   // the exact look its link seeds, so what the reader sees is what the click gives
-  // them. Copied verbatim out of the ACTIVE brand's catalog — these are signed
-  // artifacts, so they are copied, never rewritten — and mirrored, not accumulated.
+  // them. Copied verbatim out of the ACTIVE brand's catalog - these are signed
+  // artifacts, so they are copied, never rewritten - and mirrored, not accumulated.
   // A brand whose catalog has no preview for a look ships that card without a
   // picture (makeSomethingBlock checks), which is why this is a warning, not a fail.
   rmSync(resolve(outDir, 'examples'), { recursive: true, force: true });
@@ -5672,12 +5875,12 @@ async function build() {
     }
   }
 
-  // Banked art — the signed mastheads and figures, served verbatim at
+  // Banked art - the signed mastheads and figures, served verbatim at
   // /info/mastheads/ and /info/figures/ (the shots precedent). The page inlines a
   // STRIPPED copy of these bytes; this is the copy the credential line describes and
   // that "Check it yourself" / "Get the signed file" / "Copy signed source" act on,
-  // so it must arrive byte-identical to what was signed — copied, never rewritten.
-  // The sibling <id>.meta.json is bank input (generator, model, oversight — read by
+  // so it must arrive byte-identical to what was signed - copied, never rewritten.
+  // The sibling <id>.meta.json is bank input (generator, model, oversight - read by
   // scripts/sign-docs-art.ts) and is deliberately NOT published.
   for (const bank of ['mastheads', 'figures']) {
     // Mirror, don't accumulate: a withdrawn artifact must not stay behind in the
@@ -5694,7 +5897,7 @@ async function build() {
     console.log(`✓  /info/${bank}/ (${art.length} signed ${art.length === 1 ? 'artifact' : 'artifacts'})`);
   }
 
-  // Docs narration — mirror the committed artefacts and link them (plan §4.5).
+  // Docs narration - mirror the committed artefacts and link them (plan §4.5).
   // Same mirror-don't-accumulate rule as shots: a withdrawn narration must not
   // stay behind in the gitignored output dir to be served stale. The player
   // bundle and audio-index.json exist only while at least one page has audio,
@@ -5707,14 +5910,14 @@ async function build() {
   }
   if (audioBySlug.size) {
     cpSync(resolve(repoRoot, 'docs', 'audio'), resolve(outDir, 'audio'), { recursive: true });
-    // The ordered playlist prev/next + auto-advance walk — pages[] order, which
+    // The ordered playlist prev/next + auto-advance walk - pages[] order, which
     // is the same order the sidebar reads in.
     writeFileSync(resolve(outDir, 'audio-index.json'), JSON.stringify([...audioBySlug.values()]), 'utf-8');
     try {
       bundleDocsPlayer();
       console.log(`✓  /info/docs-player.js (${audioBySlug.size} narrated pages)`);
     } catch (err) {
-      // No bundle means every Listen press would 404 — withhold the buttons
+      // No bundle means every Listen press would 404 - withhold the buttons
       // rather than render dead controls.
       audioBySlug = new Map();
       console.warn('⚠  docs player bundle failed - Listen buttons withheld:', (err as Error).message);
@@ -5740,8 +5943,24 @@ async function build() {
   const mdBySlug = new Map<string, string>();
   // The English pages to seal, collected as they are written (plans/105 §7). The
   // list is built here rather than from `pages` so a page whose source could not
-  // be read — and which therefore has no file on disk — is never sealed.
+  // be read - and which therefore has no file on disk - is never sealed.
   const sealTargets: SealTarget[] = [];
+
+  // The format register drives three things (plan 116 workstream A): the machine-
+  // readable capabilities.json below, one side-door page per format, and the
+  // curated convert pages. The register is English-only (format names are not
+  // translated), so it and the derived convert-pair list are resolved once here.
+  const sideDoorCatalog = formatCatalog() as unknown as SideDoorCatalog;
+  const sideDoorConvertPairs = convertPageList(sideDoorCatalog);
+  // /info/capabilities.json - the static, server-free claims file an agent can
+  // fetch instead of scraping a page. Built straight from the register.
+  writeFileSync(
+    resolve(outDir, 'capabilities.json'),
+    JSON.stringify(buildCapabilities(sideDoorCatalog, { url: SITE_URL }), null, 2),
+    'utf-8',
+  );
+  console.log(`✓  /info/capabilities.json (${sideDoorCatalog.formats.length} formats)`);
+
   for (const lang of LANGS) {
     activeCatalog = loadSiteCatalog(lang);
     activeLang = lang;
@@ -5765,7 +5984,7 @@ async function build() {
       const html    = wrapPage(lang, page, content, ogSlugs, md);
       const outFile = page.slug === 'index' ? 'index.html' : `${page.slug}.html`;
       writeFileSync(resolve(localeOutDir, outFile), html, 'utf-8');
-      // Indexed from `content`, this locale's actual rendered body — so a locale
+      // Indexed from `content`, this locale's actual rendered body - so a locale
       // with no sidecar (English body inside translated chrome) indexes the English
       // it really shows, rather than claiming a translation it doesn't have.
       searchRecords.push(...indexSections(content, page.slug, t(page.title)));
@@ -5776,7 +5995,7 @@ async function build() {
           slug: page.slug,
           path: resolve(localeOutDir, outFile),
           title: t(page.title),
-          // The file that was actually read, repo-relative — not `page.src`
+          // The file that was actually read, repo-relative - not `page.src`
           // re-derived, so the claim names the source this page really came from.
           source: relative(repoRoot, srcPath).split(sep).join('/'),
         });
@@ -5787,7 +6006,38 @@ async function build() {
         mdBySlug.set(page.slug, twin);
       }
     }
-    // One index per locale, fetched lazily by the sidebar search on first use —
+
+    // The format side-door pages (plan 116 workstream A): one per register format
+    // at /info/formats/<token>/, one per curated conversion at
+    // /info/convert/<in>-to-<out>/. Generated, not in pages[], and reusing the
+    // same wrapPage chrome. Written per locale (English body + register prose,
+    // localized chrome via activeCatalog), the English URLs feeding the sitemap.
+    let sideDoorCount = 0;
+    for (const entry of sideDoorCatalog.formats) {
+      const model = buildFormatPageModel(entry, sideDoorCatalog);
+      const slug = `formats/${model.slug}`;
+      const gp: Page = { slug, title: model.title, src: '', description: model.description, pathway: 'creators', generated: true };
+      const html = wrapPage(lang, gp, renderFormatSideDoor(model, lang), ogSlugs, '');
+      const dir = resolve(localeOutDir, 'formats', model.slug);
+      mkdirSync(dir, { recursive: true });
+      writeFileSync(resolve(dir, 'index.html'), html, 'utf-8');
+      if (lang === 'en') sitemapUrls.push({ slug });
+      sideDoorCount++;
+    }
+    for (const pair of sideDoorConvertPairs) {
+      const model = buildConvertPageModel(pair, sideDoorCatalog);
+      const slug = `convert/${model.slug}`;
+      const gp: Page = { slug, title: model.title, src: '', description: model.description, pathway: 'creators', generated: true };
+      const html = wrapPage(lang, gp, renderConvertSideDoor(model, lang), ogSlugs, '');
+      const dir = resolve(localeOutDir, 'convert', model.slug);
+      mkdirSync(dir, { recursive: true });
+      writeFileSync(resolve(dir, 'index.html'), html, 'utf-8');
+      if (lang === 'en') sitemapUrls.push({ slug });
+      sideDoorCount++;
+    }
+    console.log(`✓  ${lang === 'en' ? '' : `/${lang}`}/info format side-door pages (${sideDoorCount})`);
+
+    // One index per locale, fetched lazily by the sidebar search on first use - 
     // never on page load, so a reader who doesn't search pays nothing for it.
     writeFileSync(resolve(localeOutDir, 'search-index.json'), JSON.stringify(searchRecords), 'utf-8');
     console.log(`✓  ${lang === 'en' ? '' : `/${lang}`}/info/search-index.json (${searchRecords.length} sections)`);
@@ -5835,7 +6085,7 @@ async function build() {
   // LAST, and after every page is on disk: C2PA 2.4 §A.7.1.3 hashes the whole
   // document, so anything that rewrote a page after this point would silently
   // invalidate its own credential. Only pages whose bytes (or whose signed
-  // components) actually changed are re-signed — see docs/page-seal.ts for why
+  // components) actually changed are re-signed - see docs/page-seal.ts for why
   // an unconditional re-sign is not an option on a committed site.
   await sealPages({ outDir, targets: sealTargets });
 
@@ -5843,21 +6093,21 @@ async function build() {
   // alongside the page it belongs to (and hashes its real bytes).
   writeInfoManifest();
   // AFTER writeInfoManifest (which walks outDir), so the render manifest is not itself
-  // swept into the offline bundle — that keeps manifest.json byte-identical.
+  // swept into the offline bundle - that keeps manifest.json byte-identical.
   writeDocsManifest();
   console.log(`\nSite built → shells/web/public/info/`);
 }
 
-// ── /info/manifest.json — the offline-docs download manifest ─────────────────
+// ── /info/manifest.json - the offline-docs download manifest ─────────────────
 // The web shell's "Available offline" manager (shells/web/src/lib/
 // offline-manager.ts) reads this to download the docs site into the service
 // worker's per-URL lolly-info bucket. Grouped so the manager can fetch just
 // what a device needs: `en` (the root pages + css + inline art + search index),
-// `shots` (the shared screenshots — every locale references these), and one
+// `shots` (the shared screenshots - every locale references these), and one
 // entry per translated locale. og/ is deliberately absent: those are social
 // share cards read by scrapers, never by a person browsing offline (and they're
 // rasterised AFTER build(), so listing them here would race their generation).
-// `version` hashes the listing — the manager's re-download watermark.
+// `version` hashes the listing - the manager's re-download watermark.
 function writeInfoManifest(): void {
   interface ManifestFile { url: string; size: number; hash: string }
   const walk = (dir: string): ManifestFile[] => {
@@ -5871,7 +6121,7 @@ function writeInfoManifest(): void {
           url: `/info/${relative(outDir, full).split(sep).join('/')}`,
           size: statSync(full).size,
           // Content hash: docs URLs are stable slugs, so a same-size page edit
-          // is invisible to a size compare — the offline download manager's
+          // is invisible to a size compare - the offline download manager's
           // resume (cachedMatches) needs the bytes' identity, not their count.
           hash: createHash('sha256').update(readFileSync(full)).digest('base64url').slice(0, 16),
         });
@@ -5906,10 +6156,10 @@ function writeInfoManifest(): void {
   console.log(`✓  /info/manifest.json (${all.length} files, ${Object.keys(locales).length} locales)`);
 }
 
-// ── /info/docs-render-manifest.json — facts for a RUNTIME DocsRenderContext ───
+// ── /info/docs-render-manifest.json - facts for a RUNTIME DocsRenderContext ───
 // The in-app docs view and the interactive figures/embeds (plan M2/M3) implement
 // DocsRenderContext over THIS instead of the filesystem: shot dimensions, Content-Credential
-// facts, capture-recipe try-links, showcase frames and banked-art resolutions — precomputed
+// facts, capture-recipe try-links, showcase frames and banked-art resolutions - precomputed
 // here, where the C2PA/anatomy reads already happen. Locale-INDEPENDENT: every fact is about
 // file BYTES, and localizedShot is resolved by the runtime from `shots` (the full committed
 // file list). Keyed by served src so the runtime can compute a key from (file, opts) the same
@@ -5954,7 +6204,7 @@ function writeDocsManifest(): void {
     if (size) sizes[src] = size;
   }
 
-  // Showcase frames (::: showcase) — resolved from the same viewBox the build reads.
+  // Showcase frames (::: showcase) - resolved from the same viewBox the build reads.
   for (const page of pages) {
     const md = readFileSync(resolve(__dirname, page), 'utf-8');
     for (const m of md.matchAll(/^::: showcase\b[\s\S]*?filename=([\w-]+)/gm)) {
@@ -5962,7 +6212,7 @@ function writeDocsManifest(): void {
       if (show) showcases[m[1]!] = show;
     }
   }
-  // Banked art (figures/mastheads) — English resolution (the manifest is locale-neutral;
+  // Banked art (figures/mastheads) - English resolution (the manifest is locale-neutral;
   // localized art variants are a follow-up, like the localized-shot capture axis).
   for (const bank of ['figures', 'mastheads'] as const) {
     const dir = resolve(__dirname, bank);
@@ -5984,8 +6234,8 @@ function writeDocsManifest(): void {
 // (including incremental --watch rebuilds). `ogSlugs` names the slugs that got their
 // own card; the rest fall back to og.png. Best-effort - a missing render browser
 // (or any rasterise error) just yields an empty set, leaving every page on og.png.
-// Caption each /info card with the SAME description its <meta> tag uses — explicit
-// where set, otherwise the page's first body sentence — so every docs card carries its
+// Caption each /info card with the SAME description its <meta> tag uses - explicit
+// where set, otherwise the page's first body sentence - so every docs card carries its
 // own copy instead of one shared tagline. The md is read once here (cheap, English only;
 // the cards are language-neutral). A page whose source can't be read keeps whatever
 // explicit description it had, and generateOgImages falls back to the site tagline.
@@ -6057,7 +6307,7 @@ if (process.argv.includes('--watch') && process.env.LOLLY_DOCS_RELOAD !== '1') {
   };
   // build() is ASYNC now (the page seals are its last step, and signing is), which
   // changes one thing about this watcher: a synchronous build could not be
-  // re-entered — the debounce timer simply could not fire while it ran — whereas an
+  // re-entered - the debounce timer simply could not fire while it ran - whereas an
   // awaited one yields, so a save landing during the seal pass would start a second
   // build over the first one's output. Two builds writing the same pages while one
   // of them hashes them is how a seal ends up over half-written bytes. So: one build

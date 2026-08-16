@@ -82,24 +82,28 @@ ours - the point of most of them is to remove & protect data, not add risk.
 The table below is the complete list of everything the app fetches or sends over a
 network. If it isn't here, the app doesn't do it.
 
-| What | What actually leaves your device | When |
-|---|---|---|
-| Tool catalogue sync | Nothing personal - a request for Lolly's own public tool and asset index | On startup, then cached offline |
-| A tool that needs live data | Whatever that specific tool requests, to the host named in its own description. Today that is only the city lookup in the Meeting Planner tool, which asks `geocoding-api.open-meteo.com` to turn a city name into coordinates and a time zone - no account, no key and no identifier beyond the request itself. The input says so right where you type, and each answer is saved on your device so a city is looked up once | Only while using that tool, and only once you enter a location |
-| Google Fonts | The chosen font family name and your IP address, to Google's font servers (`fonts.googleapis.com` for the stylesheet, `fonts.gstatic.com` for the font file) | Only if you add a Google Font in the brand editor, **and only after you agree to it in a dialog that says exactly this** - a one-time fetch per family, then it lives on your device and is used offline |
-| ICC press profiles | Nothing personal - a request for a standard printing-condition profile, to the ICC's public registry (`registry.color.org`, `www.color.org`) | Only if you click an ICC preset in the print-profile manager - a one-time fetch per profile, then it lives on your device |
-| Internet radio | Nothing personal - a playlist request and an audio stream, to the station (`api.somafm.com` and the icecast server it names, `*.somafm.com`) | Only while you play the optional built-in radio in the sound player |
-| SEAL signature check | **Nothing.** The web app has no DNS resolver at all - see below | Never |
-| Deep-scan detector models | Nothing personal - a one-time same-origin model download (not a third party) | Only if you opt into Verify's deep scan |
-| Remote instance | Whatever the instance you name serves back, over the same catalogue sync described above | Only if you explicitly point the shell at another Lolly deployment |
+| What | What actually leaves your device | When (the act that triggers it) | If an operator blocks it |
+|---|---|---|---|
+| Tool catalogue sync | Nothing personal - a request for Lolly's own public tool and asset index, to the app's own origin | On startup, then cached offline | The app runs on its cached tool set. It only stops discovering new tools |
+| A tool that needs live data | Whatever that specific tool requests, to the host named in its own description. Today that is only the city lookup in the Meeting Planner tool, which asks `geocoding-api.open-meteo.com` to turn a city name into coordinates and a time zone - no account, no key and no identifier beyond the request itself. The input says so right where you type, and each answer is saved on your device so a city is looked up once | Only while using that tool, and only once you enter a location | That one lookup fails. You can still type coordinates by hand, and nothing else is affected |
+| Google Fonts | The chosen font family name and your IP address, to Google's font servers (`fonts.googleapis.com` for the stylesheet, `fonts.gstatic.com` for the font file) | Only if you add a Google Font in the brand editor, **and only after you agree to it in a dialog that says exactly this** - a one-time fetch per family, then it lives on your device and is used offline | The Google Fonts picker fails closed. Upload a font file instead |
+| ICC press profiles | Nothing personal - a request for a standard printing-condition profile, to the ICC's public registry (`registry.color.org`, `www.color.org`) | Only if you click an ICC preset in the print-profile manager - a one-time fetch per profile, then it lives on your device | ICC presets fail. Supply your own `.icc` profile instead |
+| Internet radio | Nothing personal - a playlist request and an audio stream, to the station (`api.somafm.com` and the icecast server it names, `*.somafm.com`) | Only while you play the optional built-in radio in the sound player | The radio fails. Every other sound feature still works |
+| A URL you ask a tool to capture | A request to the exact web address you type, from the URL screenshot tool. Whatever that address is. This host is not in the policy below, because you choose it at the moment of use | Only when you enter a URL in that tool and start the capture | An operator cannot allowlist this by host. To remove it, remove the tool |
+| SEAL signature check | **Nothing.** The web app has no DNS resolver at all - see below | Never | Nothing to block |
+| Deep-scan detector models | Nothing personal - a one-time same-origin model download (not a third party) | Only if you opt into Verify's deep scan | Deep scan is unavailable. Standard verification still works |
+| Remote instance | Whatever the instance you name serves back, over the same catalogue sync described above. You choose the host at the moment of use, so it is not in the policy below | Only if you explicitly point the shell at another Lolly deployment | Instance switching fails. Your local instance is unaffected |
 
-Every host in that table is also the complete allowlist in the app's
+Every fixed host in that table is also the complete allowlist in the app's
 Content-Security-Policy, which the browser enforces. So the list is not only a
 description of what the code does today, it is the boundary the browser holds the
 app to: a future change that tried to contact some other host would be blocked,
-not silently permitted. A deployment that wants none of the optional ones (an
-enterprise instance with its own fonts, say) removes those hosts from its policy
-and the features fail closed rather than reaching out.
+not silently permitted. Two rows have no fixed host, because you choose the
+address at the moment of use: a URL you ask a tool to capture, and a remote
+instance you point the shell at. Neither is in the policy, and each happens only
+when you type an address and act on it. A deployment that wants none of the
+optional ones (an enterprise instance with its own fonts, say) removes those
+hosts from its policy and the features fail closed rather than reaching out.
 
 None of these send your documents, projects, sessions or uploaded files anywhere.
 They exist to bring things *to* your device (tools, fonts, models), never to send

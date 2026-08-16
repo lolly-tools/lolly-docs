@@ -83,7 +83,7 @@ Five moves write a complete track in one press, each one an ordinary set of keyf
 
 Under the moves are the camera's own channels - **Pan X** and **Pan Y**, **Dolly**, **Focus**, **Aperture** and **FOV strength** - each with the gesture that drives it. With the camera selected and the playhead inside its window, dragging empty canvas pans the shot and a plain scroll dollies it. Cmd/Ctrl-scroll still zooms *your view*, and Space-drag still pans your view: moving the shot and moving your own window onto it stay separate gestures. Clicking any box hands both back.
 
-Two things worth knowing about the model:
+Two things to know about the model:
 
 - A camera holding a **single pose** is the scene default. Pan it, dolly it or change its focus and the whole shot changes, with no keyframes involved.
 - **Cuts come from a second camera.** Park the playhead where you want the cut, choose **Camera** from the timeline's `+` menu and click the canvas to drop it (the same two steps every kind added from the timeline takes). It lands as a clip starting at that instant, and from there the shot looks through it.

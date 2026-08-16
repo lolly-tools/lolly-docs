@@ -8,7 +8,7 @@ Two people, two devices, one tool session, edited live. No account, no sign-in, 
 
 A **private collab** is a live editing link between two devices. One person invites, the other joins and from that moment both are typing into the same tool session: change a field on one device and it appears on the other. The link is made by the two browsers talking to each other directly. Your work does not travel through a service on the way, because there is no service - the invite and the reply are the whole of the setup, and you are the one who carries them across.
 
-Two things follow from that, and they are worth knowing before you invite anyone.
+Two things follow from that, and it helps to have them straight before you invite anyone.
 
 - **The person who invites owns the session.** The saved session lives on the inviting device. The joining device gets a working copy that is deliberately never written into its own Projects. That copy is real, editable and exportable on the joining device, but it is not filed there and it does not survive the collab.
 - **Anyone holding the invite can join and edit.** The invite is the key. Send it through a channel you would send the work itself through, and treat a re-sent invite as a re-shared document.

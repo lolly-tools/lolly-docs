@@ -93,7 +93,7 @@ npm run validate:catalog  # schema + invariants: checksums, file existence,
 
 ## Engine & runtime knobs
 
-Most runtime behaviour is fixed contract rather than deploy-time config, but two things are worth knowing:
+Most runtime behaviour is fixed contract rather than deploy-time config, but two things stand out:
 
 - **Engine version** - `ENGINE_VERSION` in `engine/src/version.ts` (read the live value there; `engine/CHANGELOG.md` tracks every minor). The capability bridge is additive-only within a major, so shells and tools built against an older minor keep working. See [Host API](/info/host-api.html).
 - **Hook budgets** - `HOOK_BUDGET_MS` in `engine/src/runtime.ts` time-boxes async tool hooks (`onInit` 5s, `onInput` 2s, export hooks 5–10s). It's exported for tests; async overruns are abandoned, sync overruns only logged (hooks are not a sandbox - see [Operators](/info/operators.html#good-to-know)).

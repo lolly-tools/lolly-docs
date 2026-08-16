@@ -1,29 +1,29 @@
 // SPDX-License-Identifier: MPL-2.0
 /**
- * The docs "Listen to this page" player — Phase 2c: migrated onto the shared
+ * The docs "Listen to this page" player - Phase 2c: migrated onto the shared
  * @lolly-tools/audio-dock shell, so the published /info docs use the SAME dock
  * component as the app (one component everywhere).
  *
  * This file is now a thin ENTRY POINT: it owns the singleton lifecycle (a second
  * Listen press focuses the open dock, never stacks a twin) and hands the shell a
  * dependency-free narration `DockHost` (docs/player/narration-host.ts) that ports
- * the old player's logic — audio-index.json resolution, cues/markdown-twin
+ * the old player's logic - audio-index.json resolution, cues/markdown-twin
  * follow-along, speed, cross-page playlist, Media Session. The shell renders the
  * whole dock (transport, scrub, caption, Follow-along, Speed, the AI disclosure)
- * and draws its OWN built-in 2D frequency backdrop from the host's analyser tap —
+ * and draws its OWN built-in 2D frequency backdrop from the host's analyser tap - 
  * so the /info bundle never pulls in butterchurn.
  *
  * ISOLATION (hard constraint): /info is a SEPARATE document that must NOT import
  * the SPA module graph. audio-dock is the only shared dependency, imported by a
- * RELATIVE path (`../../packages/audio-dock/src/index.ts`) — the same way
- * docs/build.ts imports `../packages/docs-render` — and esbuild-bundled into
+ * RELATIVE path (`../../packages/audio-dock/src/index.ts`) - the same way
+ * docs/build.ts imports `../packages/docs-render` - and esbuild-bundled into
  * /info/docs-player.js by docs/build.ts's bundleDocsPlayer. The shell is
  * dependency-free by design, so it bundles cleanly; nothing here reaches into
  * shells/web.
  *
  * Delivered as /info/docs-player.js, imported lazily on the first press of a
  * page's Listen button (or on arrival, when the previous page's auto-advance left
- * a hand-off in sessionStorage — see docs/build.ts's LISTEN_SCRIPT).
+ * a hand-off in sessionStorage - see docs/build.ts's LISTEN_SCRIPT).
  */
 import { createAudioDock, type DockController } from '../../packages/audio-dock/src/index.ts';
 import { createDocsNarrationHost, type DocsNarrationHost } from './narration-host.ts';
@@ -60,7 +60,7 @@ export async function openDocsPlayer(opts: OpenOpts): Promise<void> {
   } finally {
     opening = false;
   }
-  if (!host) return; // no committed audio for this slug — mount nothing
+  if (!host) return; // no committed audio for this slug - mount nothing
   // A concurrent open won the slot while we awaited: stand this one down.
   if (active) { host.destroy(); return; }
 

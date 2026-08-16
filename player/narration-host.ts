@@ -4,7 +4,7 @@
  *
  * Phase 2c of the unified audio-dock effort: the published /info narration
  * player is migrated OFF its bespoke `.ldp` dock and ONTO the shared
- * @lolly-tools/audio-dock shell — so the docs use the SAME dock component as the
+ * @lolly-tools/audio-dock shell - so the docs use the SAME dock component as the
  * app (one component everywhere). This file is the /info counterpart to the
  * app's shells/web/src/lib/docs-narration-host.ts: same audio-index.json
  * resolution, same per-block cues.json for caption + follow-along highlight, same
@@ -18,7 +18,7 @@
  * same esbuild step (see docs/build.ts's bundleDocsPlayer + crypto-stub.ts).
  *
  * WHAT MOVED VS. THE OLD PLAYER: the butterchurn visualiser and the procedural
- * atmosphere mixer are dropped — both required code from shells/web (ambience-dsp
+ * atmosphere mixer are dropped - both required code from shells/web (ambience-dsp
  * lived there) and both are absent from the app's own narration host, which is
  * the reference shape. In their place the dock draws its OWN built-in 2D
  * frequency backdrop from the `<audio>` analyser tap this host exposes via
@@ -30,7 +30,7 @@
  * ENGLISH-ONLY: all committed audio is English (urls under /info/audio/en/…), and
  * the follow-along block map is re-derived from the ENGLISH markdown twin, so a
  * slug with no entry in audio-index.json resolves to null and the caller (the
- * Listen pill) mounts NOTHING — the content gate stays exactly as it was.
+ * Listen pill) mounts NOTHING - the content gate stays exactly as it was.
  */
 import { extractSpokenText, type SpokenBlock } from '../../scripts/lib/docs-spoken-text.ts';
 import type { DockHost, DockNarration, DockNowPlaying, DockViz } from '../../packages/audio-dock/src/index.ts';
@@ -52,13 +52,13 @@ const OPEN_CLASS = 'docs-narr-open';
 const IDLE_MS = 4000;
 const DISCLOSURE = 'AI narration. The page text is the original.';
 
-/** Playlist hand-off between pages — the ONLY thing this player persists.
+/** Playlist hand-off between pages - the ONLY thing this player persists.
  *  Session-scoped by design: the docs site has no host.state, and this is
  *  chrome-transient, not tool state. */
 const STORE_KEY = 'lolly-docs-listen';
 /** The Follow toggle's opt-out, remembered for the session. Every docs
  *  navigation is a fresh document, so "for the session" has to mean
- *  sessionStorage — in memory alone, auto-advance would silently re-engage
+ *  sessionStorage - in memory alone, auto-advance would silently re-engage
  *  follow-along on every page a reader had opted out of. */
 const FOLLOW_KEY = 'lolly-docs-follow-off';
 /** The chosen speed (as a RATE, not an index), remembered like Follow so a
@@ -68,7 +68,7 @@ const SPEED_KEY = 'lolly-docs-speed-v3';
 
 const reduced = (): boolean => matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// ── Block map — narrated blockIds onto the live DOM (ported verbatim from the
+// ── Block map - narrated blockIds onto the live DOM (ported verbatim from the
 // old docs/player/player.ts) ─────────────────────────────────────────────────
 // cues.json speaks in the blockIds the spoken-text extraction minted from the
 // markdown SOURCE. Headings carry the same ids in the built page by construction
@@ -77,7 +77,7 @@ const reduced = (): boolean => matchMedia('(prefers-reduced-motion: reduce)').ma
 // (/info/<slug>.md) and walking the section's p/li elements in order, matched
 // loosely by text. Whole-document scope (`.docs-content` or <body>) so it also
 // works on the landing page, which mints its own section ids. Synthetic blocks
-// ("Code example omitted.") have no DOM twin and stay unmapped — the highlight
+// ("Code example omitted.") have no DOM twin and stay unmapped - the highlight
 // skips them.
 function buildBlockMap(blocks: SpokenBlock[]): Map<string, HTMLElement> {
   const root = document.querySelector<HTMLElement>('.docs-content') ?? document.body;
@@ -98,7 +98,7 @@ function buildBlockMap(blocks: SpokenBlock[]): Map<string, HTMLElement> {
     const want = norm(b.text).slice(0, 40);
     if (!want) continue;
     // Look a bounded distance ahead so one unmatched block can't derail the
-    // whole rest of the section; stop at the next heading — that's a new section.
+    // whole rest of the section; stop at the next heading - that's a new section.
     for (let j = cursor; j < Math.min(cursor + 14, flow.length); j++) {
       const el = flow[j]!;
       if (/^H[1-4]$/.test(el.tagName)) break;
@@ -121,7 +121,7 @@ export interface CreateDocsNarrationOpts {
 /**
  * Resolve the narration track for a docs slug over /info/audio-index.json and, if
  * one exists, build the `DockHost` for it. Returns null when the slug has no
- * committed audio — the caller then mounts no dock (content gate). English-only:
+ * committed audio - the caller then mounts no dock (content gate). English-only:
  * the index and the block map are English.
  */
 export async function createDocsNarrationHost(opts: CreateDocsNarrationOpts): Promise<DocsNarrationHost | null> {
@@ -131,7 +131,7 @@ export async function createDocsNarrationHost(opts: CreateDocsNarrationOpts): Pr
   const playlist = Array.isArray(index) ? index : [];
   const track = playlist.find((t) => t.slug === opts.slug);
   if (!track) {
-    // The button only renders when audio exists — but never trust that from
+    // The button only renders when audio exists - but never trust that from
     // here, and never fail silently when the index disagrees with the page.
     console.warn(`docs player: no narration for "${opts.slug}" in /info/audio-index.json`);
     return null;
@@ -210,10 +210,10 @@ export class DocsNarrationHost implements DockHost {
       caption: () => this.captionText,
       disclosure: () => DISCLOSURE,
     };
-    // The dock draws its OWN 2D frequency backdrop — supported() gates that loop,
+    // The dock draws its OWN 2D frequency backdrop - supported() gates that loop,
     // which a Canvas 2D context always satisfies. getAnalyser() is null until the
     // tap is created (first play); the dock then shows the static ground and
-    // starts reacting the moment the node appears. No mount() — so the shell never
+    // starts reacting the moment the node appears. No mount() - so the shell never
     // pulls butterchurn into the /info bundle.
     this.viz = {
       supported: () => true,
@@ -249,7 +249,7 @@ export class DocsNarrationHost implements DockHost {
       a.removeEventListener('seeked', onSeeked);
     });
 
-    // captions.vtt as a first-class <track> — programmatic value (textTracks API
+    // captions.vtt as a first-class <track> - programmatic value (textTracks API
     // for AT/extensions/UAs); the dock's caption line is the visible surface. Not
     // `default`, so nothing double-renders where a UA does surface it.
     const captionTrack = document.createElement('track');
@@ -284,7 +284,7 @@ export class DocsNarrationHost implements DockHost {
   /** Explicit play (the Listen press, an auto-advance arrival, MediaSession). */
   async play(): Promise<void> {
     this.ensureTap();
-    // Autoplay after a cross-page auto-advance can be refused — the dock then
+    // Autoplay after a cross-page auto-advance can be refused - the dock then
     // just sits paused with everything loaded, one press from resuming.
     try { await this.audio.play(); } catch { /* blocked: stay paused, visibly */ }
   }
@@ -324,7 +324,7 @@ export class DocsNarrationHost implements DockHost {
 
   /** Session-scoped like Follow (never localStorage): a listener's choice rides the
    *  auto-advance hand-off, but a fresh visit meets the 1.25× default. Stores the
-   *  RATE, not the index — an index silently re-maps whenever SPEEDS changes. */
+   *  RATE, not the index - an index silently re-maps whenever SPEEDS changes. */
   private setSpeed(rate: number): void {
     const idx = SPEEDS.indexOf(rate);
     if (idx < 0) return; // only curated stops
@@ -391,7 +391,7 @@ export class DocsNarrationHost implements DockHost {
       if (reduced() || this.followOff) return;
       this.suspended = true;
       // Halt an in-flight smooth drift so the viewport is never fought over
-      // mid-gesture — but ONLY inside our own drift window; outside it, an
+      // mid-gesture - but ONLY inside our own drift window; outside it, an
       // unconditional scrollTo would kill native momentum scrolling every tick.
       if (performance.now() <= this.autoUntil) {
         this.autoUntil = 0;
@@ -445,7 +445,7 @@ export class DocsNarrationHost implements DockHost {
   }
 
   /** cues.json (caption + highlight timings) and the English markdown twin (block
-   *  ids + text). Both non-blocking — transport works before either lands. */
+   *  ids + text). Both non-blocking - transport works before either lands. */
   private loadSidecars(): void {
     const base = this.track.url.replace(/\/[^/]*$/, '');
     void fetch(`${base}/cues.json`)
@@ -456,7 +456,7 @@ export class DocsNarrationHost implements DockHost {
       })
       .catch(() => { /* no cues: playback without captions/highlight */ });
 
-    // The page's markdown twin re-yields the narrated blocks — ids for the DOM
+    // The page's markdown twin re-yields the narrated blocks - ids for the DOM
     // map, text for the caption line. The title is the same string build.ts
     // stamped on the Listen button, so the meta-title skip lands identically here
     // and the blockIds stay in lockstep with cues.json.
@@ -477,7 +477,7 @@ export class DocsNarrationHost implements DockHost {
   // ── the viz analyser tap ──────────────────────────────────────────────────────
 
   /** Create the AudioContext tap on first use. A tapped MediaElementSource mutes
-   *  the element's direct output, so it is reconnected to the destination FIRST —
+   *  the element's direct output, so it is reconnected to the destination FIRST - 
    *  the narration stays audible whatever happens after. Idempotent; a failure
    *  leaves the element playing untapped (no viz, narration unaffected). */
   private ensureTap(): void {
@@ -519,7 +519,7 @@ export class DocsNarrationHost implements DockHost {
     location.href = next.slug === 'index' ? '/info/index.html' : `/info/${next.slug}.html`;
   }
 
-  // ── Media Session — OS media keys + lock-screen transport ──────────────────────
+  // ── Media Session - OS media keys + lock-screen transport ──────────────────────
 
   private wireMediaSession(): void {
     if (!('mediaSession' in navigator)) return;
@@ -529,7 +529,7 @@ export class DocsNarrationHost implements DockHost {
         title: this.title,
         artist: 'Lolly docs',
         album: 'lolly.tools/info',
-        // index (the landing narration) has no per-page OG card — fall back to
+        // index (the landing narration) has no per-page OG card - fall back to
         // the site card rather than a silently-404ing lock-screen artwork.
         artwork: [{ src: this.slug === 'index' ? '/info/og.png' : `/info/og/${this.slug}.png`, sizes: '1200x630', type: 'image/png' }],
       });
@@ -559,7 +559,7 @@ export class DocsNarrationHost implements DockHost {
     this.listeners.clear();
     try { this.audio.removeAttribute('src'); this.audio.load(); } catch { /* ignore */ }
     this.audio.remove();
-    // The tap dies with the dock — a closed context releases the element, so a
+    // The tap dies with the dock - a closed context releases the element, so a
     // future player instance can tap a fresh <audio> without a stale graph.
     if (this.actx) { void this.actx.close().catch(() => { /* already closed */ }); this.actx = null; this.analyser = null; }
   }
