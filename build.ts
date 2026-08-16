@@ -5142,7 +5142,8 @@ const PATHWAY_HUB: Record<Pathway, string> = {
  */
 interface SitemapSection { hub: Pathway; label: string; slugs: string[] }
 const FOOTER_SECTIONS: SitemapSection[] = [
-  { hub: 'quickstart', label: 'Quickstart', slugs: ['index', 'positioning'] },
+  { hub: 'quickstart', label: 'Quickstart', slugs: ['index', 'positioning', 'compare',
+    'compare-canva', 'compare-adobe', 'compare-figma', 'compare-render-apis', 'compare-converters'] },
   // Keeps the pathway's own name rather than the rail's "Make things", because the
   // FIRST column of a split pathway is where a reader looks for the pathway - the
   // same position "For Builders" and "Trust" hold below. Its membership is still the
@@ -5261,6 +5262,7 @@ const SIDEBAR_ICON: Record<string, string> = {
   // Creators
   using: 'pentool', 'brand-studio': 'palette', profile: 'usercheck', 'design-import': 'upload',
   'sequence-editor': 'clock', animating: 'layers', exporting: 'download', formats: 'convert', positioning: 'sliders', compare: 'checklist',
+  'compare-canva': 'checklist', 'compare-adobe': 'checklist', 'compare-figma': 'checklist', 'compare-render-apis': 'checklist', 'compare-converters': 'checklist',
   ask: 'sparkle', dashboard: 'monitor', utilities: 'wrench',
   collaborate: 'people', search: 'search', favourites: 'star',
   // Builders - architecture & authoring
