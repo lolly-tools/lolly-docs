@@ -1,14 +1,24 @@
 {
   "panels": [
     {
-      "illustration": "illusSound",
-      "heading": "Dễ tiếp cận, có âm thanh",
-      "desc": "Một giao diện hoạt động theo cách của bạn - thân thiện với trình đọc màn hình và có thể điều hướng hoàn toàn bằng bàn phím. Bật âm thanh giao diện nhẹ nhàng, hoặc chuyển sang **Chế độ Neurospicy**: một nhịp tập trung êm dịu, phát lặp nhẹ nhàng trong lúc bạn làm việc."
+      "heading": "Chia sẻ trọn gói",
+      "desc": "Khi một đường liên kết không mang nổi mọi thứ, Lolly nói rõ những gì sẽ bị thiếu và đề nghị gói tất cả thành một tệp **.lolly** duy nhất: hình ảnh của bạn, bản thiết kế, cả chính công cụ. Bạn chọn những gì được mang theo - thông tin của bạn, tác phẩm có bản quyền và công cụ chỉ được kèm vào khi bạn đồng ý, và người mở tệp sẽ được hỏi trước khi một công cụ đi kèm được phép chạy."
     },
     {
-      "illustration": "illusBulk",
+      "heading": "Làm cùng nhau, không cần internet",
+      "desc": "Hai người, hai thiết bị, một bản thiết kế, chỉnh sửa trực tiếp. Quét một mã ngang bàn là hai màn hình cùng giữ một phiên làm việc - trên máy bay, dưới tầng hầm, qua điểm phát sóng di động. Không có máy chủ nào ở giữa để phải tin tưởng hay để hỏng hóc."
+    },
+    {
+      "heading": "Trình chiếu toàn màn hình",
+      "desc": "Các khung hình của một bản thiết kế trở thành slide: bấm qua từng slide trên màn hình lớn, mở chế độ người trình bày kèm ghi chú và đồng hồ, hoặc để nó chạy lặp trên màn hình ở quầy lễ tân. Không cần ứng dụng trình chiếu riêng."
+    },
+    {
       "heading": "Sắp xếp, rồi xuất hàng loạt",
-      "desc": "Lưu công việc đã lưu vào các thư mục **Dự án** lồng nhau. Khi đến lúc bàn giao, hãy xuất cả một thư mục - hoặc bất kỳ nhóm nào bạn chọn - thành một file zip duy nhất. Không cần bảng tính, không cần lưới xử lý hàng loạt."
+      "desc": "Giữ công việc đã lưu trong các thư mục **Dự án** lồng nhau. Đến lúc bàn giao, hãy kết xuất cả một thư mục - hoặc bất kỳ nhóm nào bạn chọn - thành một tệp zip duy nhất. Hoặc dán một bảng tính vào và nhận một tệp hoàn chỉnh cho mỗi dòng."
+    },
+    {
+      "heading": "Dễ tiếp cận, có âm thanh",
+      "desc": "Một giao diện hoạt động theo cách của bạn - thân thiện với trình đọc màn hình và có thể điều hướng hoàn toàn bằng bàn phím. Bật âm thanh giao diện nhẹ nhàng, hoặc chuyển sang **Chế độ Neurospicy**: một nhịp tập trung êm dịu, phát lặp nhẹ nhàng trong lúc bạn làm việc."
     }
   ]
 }

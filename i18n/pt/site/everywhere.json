@@ -1,9 +1,10 @@
 {
   "heading": "Tudo isso,\ndo jeito que você é,\nem qualquer dispositivo",
-  "copy": "Rode offline no seu dispositivo, esteja sempre disponível hospedado online, você decide.\nAs Lolly Tools podem funcionar lá.",
+  "copy": "Instale, ou abra um endereço hospedado, ou os dois ao mesmo tempo - você decide.\nAs Lolly Tools podem funcionar lá.",
   "surfaces": [
     { "icon": "surfaceWeb", "label": "Web" },
     { "icon": "surfaceMacos", "label": "macOS" },
+    { "icon": "surfaceWindows", "label": "Windows" },
     { "icon": "surfaceLinux", "label": "Linux" },
     { "icon": "surfaceIos", "label": "iOS" },
     { "icon": "surfaceAndroid", "label": "Android" },
@@ -12,8 +13,8 @@
   ],
   "modelsIntro": "Três modos de entrega:",
   "models": [
-    { "n": "1", "icon": "modelDeploy", "label": "Implantar", "desc": "Distribua para os dispositivos através do seu MDM já existente. Funciona totalmente offline, atrás de qualquer firewall ou rede isolada (air-gap) - nada sai do dispositivo." },
+    { "n": "1", "icon": "modelDeploy", "label": "Implantar", "desc": "Distribua para as máquinas pelo seu MDM já existente. Roda atrás de qualquer firewall, e dentro de uma rede isolada (air-gap) sem nenhuma saída." },
     { "n": "2", "icon": "modelServe", "label": "Servir", "desc": "Uma única instância hospedada, usada em qualquer navegador. Nada para instalar - atualizações aprovadas chegam a todo mundo no instante em que são lançadas." },
-    { "n": "3", "icon": "modelHybrid", "label": "Híbrido", "desc": "Aplicativos locais offline mais uma versão web sempre atualizada, compartilhando uma única biblioteca de ferramentas - em todos os sistemas operacionais ao mesmo tempo." }
+    { "n": "3", "icon": "modelHybrid", "label": "Híbrido", "desc": "Aplicativos locais instalados mais uma versão web sempre atualizada, compartilhando uma única biblioteca de ferramentas - em todos os sistemas operacionais ao mesmo tempo." }
   ]
 }

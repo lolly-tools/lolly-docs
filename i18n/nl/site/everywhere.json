@@ -1,9 +1,10 @@
 {
   "heading": "Helemaal,\nzoals je bent,\nop alles",
-  "copy": "Werk offline op je eigen apparaat, of wees altijd beschikbaar via een hosted online versie - jij bepaalt.\nLolly Tools werkt daar net zo goed.",
+  "copy": "Installeer het, of open een gehost adres, of allebei tegelijk - jij bepaalt.\nLolly Tools kan daar draaien.",
   "surfaces": [
     { "icon": "surfaceWeb", "label": "Web" },
     { "icon": "surfaceMacos", "label": "macOS" },
+    { "icon": "surfaceWindows", "label": "Windows" },
     { "icon": "surfaceLinux", "label": "Linux" },
     { "icon": "surfaceIos", "label": "iOS" },
     { "icon": "surfaceAndroid", "label": "Android" },
@@ -12,8 +13,8 @@
   ],
   "modelsIntro": "Drie manieren van levering:",
   "models": [
-    { "n": "1", "icon": "modelDeploy", "label": "Implementeren", "desc": "Lever uit aan apparaten via je bestaande MDM. Draait volledig offline, achter elke firewall of air-gap - er verlaat niets het apparaat." },
+    { "n": "1", "icon": "modelDeploy", "label": "Implementeren", "desc": "Lever uit aan apparaten via je bestaande MDM. Draait achter elke firewall, en binnen een air-gapped netwerk zonder enige uitweg." },
     { "n": "2", "icon": "modelServe", "label": "Hosten", "desc": "Eén hosted instance, te gebruiken in elke browser. Niets te installeren - goedgekeurde updates bereiken iedereen zodra ze verschijnen." },
-    { "n": "3", "icon": "modelHybrid", "label": "Hybride", "desc": "Offline lokale apps plus een altijd actuele webversie, met één gedeelde toolbibliotheek - op elk besturingssysteem tegelijk." }
+    { "n": "3", "icon": "modelHybrid", "label": "Hybride", "desc": "Geïnstalleerde lokale apps plus een altijd actuele webversie, met één gedeelde toolbibliotheek - op elk besturingssysteem tegelijk." }
   ]
 }

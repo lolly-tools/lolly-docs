@@ -24,20 +24,7 @@ This page tells you everything you need to know about getting the most out of Lo
 
 Lolly isn't trying to be Canva or Figma. It sits where *rules, repeatability and hard constraints matter more than freehand flexibility* - turning design decisions into tools your whole team can use without you in the loop for every asset.
 
-| | Canva | Brand portals | Illustrator | Figma / Penpot | **Lolly** |
-|---|---|---|---|---|---|
-| Mass content generation | partial | ✗ | ✗ | ✗ | **✓** |
-| Works fully offline | ✗ | ✗ | ✓ | partial | **✓** |
-| Template logic & hard constraints | ✗ | partial | ✗ | partial | **✓** |
-| No design skill required | partial | ✓ | ✗ | ✗ | **✓** |
-| Automatic Content Credentials | ✗ | ✗ | partial | ✗ | **✓** |
-| Tools compose other tools | ✗ | ✗ | ✗ | ✗ | **✓** |
-| Open engine, not SaaS-locked | ✗ | ✗ | ✗ | partial | **✓** |
-| C2PA content credentials  | ✗ | ✗ | ✗ | ✗ | **✓** |
-| Opt-in forensic-level provenance  | ✗ | ✗ | ✗ | ✗ | **✓** |
-| Mobile and Desktop Apps  | ✓ | ✗ | ✗ | partial | **✓** |
-| Command Line & TUI  | ✗ | ✗ | ✗ | ✗ | **✓** |
-
+The product-by-product detail lives on the dated [comparison pages](/info/compare.html) - Canva, Adobe, Figma, Penpot, brand portals, render APIs and file converters - with the concessions written first and a [capability board](/info/positioning.html) behind them.
 
 **Reach for Lolly** for the assets you make again and again - event signage, quote cards, localized banners, email signatures, shipping labels, social variants, data-driven charts and maps. **Reach for a design tool** for the bespoke hero piece, the one-off campaign concept, the ideation that's *meant* to escape the system. Lolly executes the system; it doesn't replace the studio.
 

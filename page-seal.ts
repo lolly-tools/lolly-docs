@@ -1,32 +1,32 @@
 // SPDX-License-Identifier: MPL-2.0
 /**
- * Page seals - every English /info page as a signed C2PA asset (plans/105 §7, M5).
+ * Page seals - every English /info page as a signed C2PA asset (plans/105 section 7, M5).
  *
- * C2PA 2.4 §A.7 makes an HTML document a first-class signable asset, and gives it
- * two carriers. This module implements the one the spec itself prefers (§A.7.1:
+ * C2PA 2.4 section A.7 makes an HTML document a first-class signable asset, and gives it
+ * two carriers. This module implements the one the spec itself prefers (section A.7.1:
  * "the use of an external manifest via the link element is preferred"): the page
  * carries ONE stable element,
  *
  *     <link rel="c2pa-manifest" href="/info/<slug>.c2pa" type="application/c2pa">
  *
- * and the Manifest Store lives beside it as `/info/<slug>.c2pa` - §11.4's external
+ * and the Manifest Store lives beside it as `/info/<slug>.c2pa` - section 11.4's external
  * manifest, "an acceptable model for providing provenance", served with the JUMBF
  * media type `application/c2pa` (see the repo-root vercel.json header rule).
  *
  * ── Three rules the spec fixes, and this module obeys rather than re-decides ──
  *
- * 1. WHOLE-DOCUMENT HASH, NO EXCLUSION. §A.7.1.3: "For an external link element…
+ * 1. WHOLE-DOCUMENT HASH, NO EXCLUSION. section A.7.1.3: "For an external link element…
  *    the data hash assertion shall have no exclusion range; the hash shall be
  *    computed over the entire document." That is what `buildExternalC2paStore`
  *    (engine/src/c2pa.ts) builds, so there is no two-pass offset dance here - the
  *    manifest never enters the bytes it binds.
- * 2. SIGN LAST. §A.7.1.3's note: any process that re-serializes the HTML
+ * 2. SIGN LAST. section A.7.1.3's note: any process that re-serializes the HTML
  *    invalidates the binding, "by design". So sealing runs AFTER every page has
  *    been written, over the bytes read back off disk - never over a string the
  *    build still intends to touch. {@link sealPages} refuses to sign a page whose
  *    final bytes do not already reference the sidecar it is about to write, which
  *    turns that ordering rule into a check instead of a comment.
- * 3. AT MOST ONE ASSOCIATION. §A.7.1: a document must not carry both a `<link>`
+ * 3. AT MOST ONE ASSOCIATION. section A.7.1: a document must not carry both a `<link>`
  *    and a `<script type="application/c2pa">`. Banked art is inlined STRIPPED
  *    (docs/docs-art.ts), so the page's own `<link>` is its only carrier and stays
  *    the only one.
@@ -40,7 +40,7 @@
  * different: its bytes changed, or its component set did (see below). Otherwise
  * the existing sidecar is left byte-identical and is not written at all.
  *
- * (Plan §7 reasoned from "/info is committed". It is not: shells/web/.gitignore
+ * (Plan section 7 reasoned from "/info is committed". It is not: shells/web/.gitignore
  * has ignored the built pages, shots and indexes for a long time, and the sidecars
  * are ignored beside them - a credential for bytes the repo does not hold would be
  * a record nobody can check. The rule stands on its own merits either way, and it
@@ -48,7 +48,7 @@
  *
  * ── Ingredients: the page's credential CONTAINS its components' ──────────────
  *
- * Plan §7's ratified shape is "one seal for the page, ingredients disclose the
+ * Plan section 7's ratified shape is "one seal for the page, ingredients disclose the
  * parts": each screenshot and each banked masthead/figure the page references is
  * already signed on its own, and its manifest travels into the page's store as a
  * `c2pa.ingredient.v3` entry. The verifier's existing chain walk then derives a
@@ -73,7 +73,7 @@
  *
  * And no verdict is claimed anywhere on the page: nothing in /info says a third
  * party can read these bindings today, because no third-party implementation
- * does yet (plan §10). This module ships machinery.
+ * does yet (plan section 10). This module ships machinery.
  */
 import { existsSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
@@ -84,7 +84,7 @@ import { C2PA_CHECK } from '../engine/src/c2pa-verdict.ts';
 import { buildExportC2paOpts, type ExportC2paOpts } from '../packages/node-shell/src/c2pa-opts.ts';
 
 /** The sidecar's extension. `.c2pa` is the conventional external-manifest suffix
- *  and matches the `application/c2pa` media type §11.4 requires. */
+ *  and matches the `application/c2pa` media type section 11.4 requires. */
 export const SEAL_EXT = '.c2pa';
 
 /**
@@ -104,7 +104,7 @@ export function pageSealHref(slug: string): string {
 }
 
 /**
- * The one element a sealed page carries, §A.7.1.2 verbatim: `rel="c2pa-manifest"`
+ * The one element a sealed page carries, section A.7.1.2 verbatim: `rel="c2pa-manifest"`
  * in the head, `href` to the store. `type` "should be included but is not
  * required for discovery; the validator shall match on the rel attribute alone" - 
  * included, because a served file with a media type and a link element that
@@ -295,9 +295,9 @@ export async function sealHolds(
  * viewport - so /verify can say what this document was rendered from.
  *
  * No `aiDisclosure`. The pages are written by people; the default `c2pa.created`
- * action's `digitalCreation` source type is the true statement, and §18.28.3 is
+ * action's `digitalCreation` source type is the true statement, and section 18.28.3 is
  * explicit that no disclosure is attached to it. A banked masthead's model
- * reaches the reader through the INGREDIENT chain (plan §7), which is a claim its
+ * reaches the reader through the INGREDIENT chain (plan section 7), which is a claim its
  * own signer made - not one this build restates on its behalf.
  */
 function pageC2paOpts(target: SealTarget, ingredients: PageIngredient[]): ExportC2paOpts {
@@ -322,7 +322,7 @@ function pageC2paOpts(target: SealTarget, ingredients: PageIngredient[]): Export
     environment: {
       ...(opts.environment as Record<string, unknown>),
       // Lolly's own namespace - the only place "what kind of thing is this" is
-      // recorded as a plain fact (§10.2.3.2 reserves claim_generator_info for the
+      // recorded as a plain fact (section 10.2.3.2 reserves claim_generator_info for the
       // claim's generator, which is Lolly, not the document).
       artifact: 'docs-page',
       page: `/info/${target.slug}.html`,
@@ -356,7 +356,7 @@ async function sealOne(
   } catch (err) {
     return { outcome: 'failed', reason: `could not read the built page (${(err as Error).message})` };
   }
-  // §A.7.1.3's ordering rule, enforced. A sidecar beside a page that does not
+  // section A.7.1.3's ordering rule, enforced. A sidecar beside a page that does not
   // point at it is a file nobody can find from the asset - and a page whose link
   // was emitted after the hash would be a binding over bytes that no longer
   // exist. Both are caught by asking the page itself, once, before signing.
@@ -384,7 +384,7 @@ async function sealOne(
 /**
  * Seal every page in `targets`, and delete the sidecars that no page claims.
  *
- * Runs as the LAST build step over the written site (§A.7.1.3), and never throws:
+ * Runs as the LAST build step over the written site (section A.7.1.3), and never throws:
  * a page that cannot be sealed is reported, loudly, and the build finishes. A
  * missing sidecar is self-healing - the next build signs it - whereas a build that
  * died two thirds of the way through a locale sweep because one page moved is a

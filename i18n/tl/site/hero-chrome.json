@@ -1,8 +1,5 @@
 {
-  "statement": "Soberanya ng nilalaman",
-  "pilotTag": "Prototype",
-  "pilotText": "Isinasagawa ang closed pilot · pinapatatag para sa enterprise scale",
-  "pilotAriaLabel": "Si Lolly ay isang internal prototype sa closed pilot, pinapatatag para sa enterprise scale",
+  "statement": "Soberanya sa nilalaman",
   "ctas": [
     {
       "href": "/",
@@ -16,11 +13,11 @@
     }
   ],
   "trustChips": [
-    "100% Libre",
-    "Walang Cookies",
-    "Walang Sign-up",
+    "Libre Habambuhay",
     "Open Source",
-    "Privacy Muna"
+    "Walang Account",
+    "Walang Cookies",
+    "Walang Ipinapadalang Data"
   ],
-  "toolCountSuffix": "Mga Halimbawang Tool na Na-load"
+  "toolCountSuffix": "Tool na Handa"
 }

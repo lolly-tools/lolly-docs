@@ -1,8 +1,5 @@
 {
   "statement": "Innholdssuverenitet",
-  "pilotTag": "Prototype",
-  "pilotText": "Lukket pilot pågår · herdes for virksomhetsskala",
-  "pilotAriaLabel": "Lolly er en intern prototype i en lukket pilot, som herdes for virksomhetsskala",
   "ctas": [
     {
       "href": "/",
@@ -16,11 +13,11 @@
     }
   ],
   "trustChips": [
-    "100 % gratis",
-    "Ingen infokapsler",
-    "Ingen registrering",
+    "Gratis for alltid",
     "Åpen kildekode",
-    "Personvern først"
+    "Ingen konto",
+    "Ingen infokapsler",
+    "Rapporterer ingenting tilbake"
   ],
-  "toolCountSuffix": "eksempelverktøy lastet inn"
+  "toolCountSuffix": "verktøy klare"
 }

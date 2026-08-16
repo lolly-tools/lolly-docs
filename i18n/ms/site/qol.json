@@ -1,14 +1,24 @@
 {
   "panels": [
     {
-      "illustration": "illusSound",
-      "heading": "Boleh diakses, dengan bunyi",
-      "desc": "Antara muka yang berfungsi mengikut cara anda - mesra pembaca skrin dan boleh dinavigasi sepenuhnya menggunakan papan kekunci. Hidupkan bunyi antara muka yang lembut, atau tukar ke **Mod Neurospicy**: rentak fokus yang tenang dan berulang secara senyap semasa anda bekerja."
+      "heading": "Kongsi seluruhnya",
+      "desc": "Apabila satu pautan tidak mampu membawa semuanya, Lolly memberitahu dengan tepat apa yang akan hilang dan menawarkan keseluruhannya sebagai satu fail **.lolly**: imej anda, reka bentuknya, malah alat itu sendiri. Anda pilih berapa banyak yang ikut serta - butiran anda, karya berlesen dan alat itu hanya disertakan apabila anda benarkan, dan orang yang membukanya akan ditanya dahulu sebelum alat yang dibawa itu boleh berjalan."
     },
     {
-      "illustration": "illusBulk",
+      "heading": "Bekerjasama, tanpa perlukan internet",
+      "desc": "Dua orang, dua peranti, satu reka bentuk, disunting secara langsung. Imbas satu kod di seberang meja dan kedua-dua skrin memegang sesi yang sama - dalam pesawat, di ruang bawah tanah, atas hotspot. Tiada pelayan di tengah untuk dipercayai atau untuk gagal."
+    },
+    {
+      "heading": "Bentangkan, skrin penuh",
+      "desc": "Bingkai sesuatu reka bentuk menjadi slaid: klik satu per satu pada skrin besar, buka paparan penceramah dengan nota dan pemasa, atau biarkan ia berulang pada skrin di kaunter penerimaan tetamu. Tiada aplikasi pembentangan berasingan."
+    },
+    {
       "heading": "Susun, kemudian render secara pukal",
-      "desc": "Simpan hasil kerja anda dalam folder **Projek** bersarang. Apabila tiba masanya untuk menghantar, render keseluruhan folder - atau mana-mana kumpulan kecil yang anda pilih - menjadi satu fail zip tunggal. Tiada hamparan, tiada grid kelompok diperlukan."
+      "desc": "Simpan hasil kerja anda dalam folder **Projek** bersarang. Apabila tiba masanya untuk menghantar, render keseluruhan folder - atau mana-mana kumpulan kecil yang anda pilih - menjadi satu fail zip tunggal. Atau tampal satu hamparan data dan dapatkan satu fail siap bagi setiap baris."
+    },
+    {
+      "heading": "Boleh diakses, dengan bunyi",
+      "desc": "Antara muka yang berfungsi mengikut cara anda - mesra pembaca skrin dan boleh dinavigasi sepenuhnya menggunakan papan kekunci. Hidupkan bunyi antara muka yang lembut, atau tukar ke **Mod Neurospicy**: rentak fokus yang tenang dan berulang secara senyap semasa anda bekerja."
     }
   ]
 }

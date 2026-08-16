@@ -1,17 +1,15 @@
 {
-  "eyebrow": "Herkunft & Datenschutz",
+  "eyebrow": "Nachweis & Datenschutz",
   "heading": "Beweisen Sie, was Sie erstellt haben.\nBehalten Sie, was Ihnen gehört.",
-  "lead": "Jedes Bild, PDF oder Video, das Sie exportieren, kann ein **Content Credential** tragen - ein manipulationssicheres [C2PA](https://c2pa.org)-Siegel, das vollständig auf Ihrem Gerät erstellt wird. Es beweist, dass die Datei sich seit dem Verlassen von Lolly nicht verändert hat, und erfasst, sobald Sie eine Identität registrieren, wer sie signiert hat.",
-  "illustration": "illusCheck",
+  "lead": "Fast jedes Bild, PDF oder Video, das Sie exportieren - PNG, JPG, APNG, GIF, SVG, TIFF, WebP, PDF, MP4 und WebM - kann ein **Content Credential** tragen - ein manipulationssicheres [C2PA](https://c2pa.org)-Siegel, das genau dort erstellt und signiert wird, wo Sie arbeiten. Das Siegel umfasst jedes exportierte Byte: Ändern Sie etwas, sagt ein C2PA-Validator es Ihnen, und sobald Sie eine Identität hinterlegen, hält es auch fest, wer signiert hat. Raster tragen zusätzlich den unsichtbaren **Lolly Imprint** in den Pixeln selbst, standardmäßig aktiv, damit eine Kopie auch dann noch erkannt wird, wenn das Credential entfernt wurde.",
   "checks": [
     { "title": "Standardmäßig manipulationssicher", "desc": "Das Siegel umfasst jedes exportierte Byte. Ändern Sie ein einziges Pixel, und jeder C2PA-Validator meldet es." },
-    { "title": "Signiert auf Ihrem Gerät", "desc": "Ihr Signaturschlüssel wird lokal erzeugt und verlässt das Gerät nie - nicht einmal Lolly kann ihn lesen." },
-    { "title": "Von jedem offline überprüfbar", "desc": "Die Datei trägt ihren eigenen Nachweis. Prüfen Sie sie im Verify-Tab, in der CLI oder mit jedem C2PA-Validator - es wird nichts hochgeladen." }
+    { "title": "Signiert mit einem Schlüssel, den nur Ihr Browser hat", "desc": "Der Schlüssel wird nicht auslesbar erzeugt, sodass kein Code - auch keiner von Lolly - ihn wieder herauslesen kann." },
+    { "title": "Alles selbst überprüfen", "desc": "Der Verify-Tab prüft das Credential einer Datei, markiert KI-generierte Inhalte, liest den Lolly Imprint und legt versteckte Daten offen." }
   ],
   "cards": [
-    { "icon": "assureEyeOff", "title": "Nichts verlässt Ihr Gerät", "desc": "Kein Cloud-Rendering, keine Telemetrie, keine Analysen. Was Sie erstellen, bleibt auf Ihrem Rechner." },
-    { "icon": "assureScan", "title": "Bereinigen und sperren, auf dem Gerät", "desc": "Strip Hidden Data entfernt EXIF- und Metadaten lokal. Sperren Sie ein PDF, einen Download oder einen Freigabelink mit einem Passwort, das Ihr Gerät nie verlässt." },
-    { "icon": "assureServer", "title": "Self-Hosting oder Air-Gap-Betrieb", "desc": "Kein Server, keine Datenbank, kein Backend. Läuft vollständig hinter Ihrer Firewall, komplett offline." }
+    { "icon": "assureScan", "title": "Bereinigen und sperren", "desc": "Strip Hidden Data entfernt EXIF- und Metadaten lokal. Sperren Sie ein PDF, einen Download oder einen Freigabelink mit einem Passwort, das nur Sie haben." },
+    { "icon": "assureServer", "title": "Self-Hosting oder Air-Gap", "desc": "Kein Backend im zentralen Render-Pfad - keine Datenbank, keine serverseitige Verarbeitung, die betrieben werden muss. Betreiben Sie alles komplett hinter Ihrer eigenen Firewall; die optionalen Server-Erweiterungen können Sie weglassen." }
   ],
   "cta": "Wie Content Credentials funktionieren →",
   "ctaHref": "/info/content-credentials-identity.html"

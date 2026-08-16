@@ -1,8 +1,11 @@
 
 # Lolly - Naskah halaman landing
 
-Berkas siap produksi dalam hitungan detik - aturan desain, logika tata letak, dan kualitas ekspor sudah terpasang. Tanpa menunggu, tanpa menebak-nebak.
-Berjalan di perangkat Anda sendiri. Tidak ada yang perlu diunggah, tidak ada yang perlu dipelajari, berfungsi offline.
+Anda yang membuat, Anda yang menyimpan: berkas jadi dalam hitungan detik, di perangkat Anda sendiri.
+Pilih sebuah alat, tambahkan kata-kata Anda, hasilnya langsung pas: warna, huruf dan tata letak sudah diatur.
+Seragam di bagian yang Anda ingin sama, berbeda sesuai keinginan Anda.
+Gratis, dan tetap gratis: tanpa akun, tanpa kartu, tanpa jebakan.
+
 
 ---
 
@@ -10,25 +13,26 @@ Berjalan di perangkat Anda sendiri. Tidak ada yang perlu diunggah, tidak ada yan
 
 ### Semuanya selesai, tanpa menunggu.
 
-Anda butuh kartu kutipan, ubin acara, tanda tangan yang dilokalkan - hari ini, bukan sprint berikutnya. Lolly menyerahkannya kembali dalam keadaan selesai dan sesuai brand, bahkan jika Anda belum pernah membuka alat desain. Aturan tersimpan di dalam template, jadi hasilnya keluar dengan benar.
+Anda butuh kartu kutipan, tile acara, tanda tangan yang dilokalkan - hari ini, bukan sprint berikutnya. Lolly mengembalikannya dalam keadaan jadi dan sesuai merek, bahkan jika Anda belum pernah membuka aplikasi desain. Aturannya ada di dalam templat, jadi keluarannya sudah pasti benar.
 
-- **Isi beberapa kolom, dapatkan aset yang sudah jadi.** Tidak perlu memilih font, tidak perlu ragu soal warna, tidak perlu bertanya "apakah ini logo yang tepat?" Alat sudah tahu. Anda cukup membawa kata-katanya.
-- **Permutasi tak terbatas, satu sumber kebenaran.** Lokalkan kartu kutipan ke dalam 12 bahasa, tukar lockup brand di 40 kampanye, atau hasilkan setiap varian ukuran untuk setiap penempatan - tanpa menyentuh desainnya. Kendalikan semuanya dari spreadsheet di grid batch: tempel atau impor CSV, dapatkan satu aset jadi per baris.
-- **Tanpa hambatan agensi kreatif untuk aset rutin.** Tanda tangan email, hitung mundur acara, kartu kutipan, peta jalan - semua yang tim Anda butuhkan pada Selasa pukul 4 sore, layani sendiri.
-- **Berkolaborasi tanpa risiko kepatuhan.** Tidak ada data pelanggan yang diunggah ke layanan cloud pihak ketiga. Tidak ada lisensi SaaS yang perlu diaudit. Berjalan sepenuhnya dengan komputasi perangkat lokal.
+- **Isi beberapa kolom, dapatkan aset jadi.** Tidak ada huruf yang perlu dipilih, tidak ada warna yang perlu diragukan, tidak ada "apakah ini logo yang benar?" Alatnya sudah tahu. Anda cukup membawa kata-katanya.
+- **Variasi tanpa batas, satu sumber kebenaran.** Lokalkan kartu kutipan ke dalam 12 bahasa, ganti lockup merek di 40 kampanye atau buat setiap varian ukuran untuk setiap penempatan - tanpa menyentuh desainnya. Kendalikan semuanya dari spreadsheet di batch grid: tempel atau impor CSV, dapatkan satu berkas jadi per baris.
+- **Tidak ada antrean agensi kreatif untuk aset rutin.** Tanda tangan email, hitung mundur acara, kartu kutipan, kode QR - semua yang tim Anda butuhkan pada Selasa pukul 16.00, layani sendiri.
+- **Tidak perlu proses pengadaan hanya untuk sebuah gambar.** Tidak ada langganan baru yang harus disetujui, tidak ada lisensi yang harus diaudit, tidak ada kursi lisensi yang harus dibeli untuk orang yang cuma butuh satu tile pada hari Selasa.
 
 ---
 
 ## Penjualan
 
-### Datangi setiap rapat dengan persis apa yang Anda butuhkan.
+### Masuki setiap pertemuan dengan tepat apa yang Anda butuhkan.
 
-Anda sedang di perjalanan, decknya salah, pelanggan meminta sesuatu yang spesifik. Lolly mengubah perangkat apa pun menjadi studio aset - tanpa desainer, tanpa menunggu, tanpa alasan.
+Anda sedang di perjalanan, deknya salah, pelanggan meminta sesuatu yang spesifik. Lolly mengubah perangkat apa pun menjadi studio aset - tanpa desainer, tanpa menunggu, tanpa alasan.
 
-- **Tidak menunggu apa pun.** Jika Anda sedang di perjalanan, tak ada sisa hari sebelum rapat Anda, Anda butuh aset sekarang. Hasilkan saja.
-- **Pasukan satu orang.** Kekuatan kampanye global yang terkoordinasi dalam genggaman tangan Anda. Setiap perwakilan, setiap wilayah, dengan kualitas yang sama.
-- **Pengalaman kelas dunia.** Tak ada yang terlihat terburu-buru meski dirender secara instan. Tak ada yang sekali pakai - jadi setiap interaksi jadi sedikit lebih rapi dari sebelumnya.
-- **Wah, tim Anda cepat sekali!** Mereka sedang tidur. Ini sudah beres sejak pertama kali saya membutuhkannya.
+- **Tidak menunggu apa pun.** Kalau Anda sedang di perjalanan, tidak ada sisa hari sebelum pertemuan, Anda butuh aset sekarang. Buat saja.
+- **Perbaiki dek yang sudah Anda punya.** Jatuhkan berkas PowerPoint ke Lolly dan slide-nya langsung terbuka, sehingga Anda bisa memilih mana yang layak disimpan dan memakainya lagi sebagai vektor yang tajam - lalu susun ulang deknya dari beberapa baris Markdown dan kirim balik `.pptx` asli yang bisa diedit.
+- **Satu orang, satu kampanye penuh.** Setiap perwakilan, di setiap wilayah, bekerja dengan aturan yang sama dan hasil akhir yang sama.
+- **Pengalaman kelas dunia.** Tidak ada yang terlihat terburu-buru meski dirender seketika. Tidak ada yang sekali pakai - jadi setiap interaksi jadi sedikit lebih rapi daripada sebelumnya.
+- **Pekerjaannya sudah selesai saat mereka bertanya.** Alat yang dibuat pertama kali seseorang membutuhkan aset ini akan membuatnya lagi dalam hitungan detik, kapan pun, di zona waktu mana pun.
 
 ---
 
@@ -36,12 +40,12 @@ Anda sedang di perjalanan, decknya salah, pelanggan meminta sesuatu yang spesifi
 
 ### Perangkat editorial Anda, dibangun untuk kecepatan dan presisi.
 
-Bangun gaya info-editorial Anda sekali, lalu hasilkan aset berkualitas publikasi dari data langsung saat kejadian berlangsung.
+Bangun gaya info-editorial Anda satu kali, lalu hasilkan aset berkualitas publikasi dari data langsung begitu peristiwanya terjadi.
 
-- **Bawa data langsung ke dalam visual.** Hubungkan data terstruktur ke template bagan, peta, dan tabel. Perbarui angkanya; tata letak mengurus dirinya sendiri.
-- **Cocokkan gaya publikasi Anda, dengan persis.** Alat dibuat dengan batasan tipografi dan warna yang terpatri - gaya rumah Anda ditegakkan di level template, bukan sekadar panduan longgar.
-- **Siap cetak atau siap layar.** Ekspor SVG, PDF CMYK, PNG resolusi tinggi, atau video 60fps dari template yang sama. Satu sumber, setiap format yang dibutuhkan meja produksi Anda.
-- **Format yang dapat digunakan ulang untuk berita berulang.** Hasil pemilu, laba kuartalan, peristiwa cuaca - bangun template sekali dan gunakan ulang setiap kali beritanya tayang.
+- **Bawa data langsung ke dalam visual.** Hubungkan data terstruktur ke templat grafik, peta dan tabel. Perbarui angkanya; tata letaknya mengurus dirinya sendiri.
+- **Persis sesuai gaya publikasi Anda.** Alat ditulis dengan batasan tipografi dan warna yang dipatok di dalam kode - gaya baku redaksi Anda ditegakkan di tingkat templat, bukan sekadar panduan longgar.
+- **Siap cetak atau siap layar.** Ekspor SVG, PDF CMYK, PNG resolusi tinggi atau video 60fps dari templat yang sama. Satu sumber, setiap format yang dibutuhkan meja produksi Anda.
+- **Format pakai ulang untuk berita berulang.** Hasil pemilu, laba kuartalan, peristiwa cuaca - bangun templatnya sekali dan pakai lagi setiap kali beritanya tayang.
 
 ---
 
@@ -49,59 +53,59 @@ Bangun gaya info-editorial Anda sekali, lalu hasilkan aset berkualitas publikasi
 
 ### Ketelitian industri untuk keluaran sehari-hari.
 
-Tidak semuanya soal pemasaran. Label konsinyasi, cetakan badge, lembar kepatuhan satu halaman, pemberitahuan insiden - keluaran di mana tata letak menjadi penopang dan datanya tidak boleh salah. Lolly memperlakukan konten terstruktur dengan ketelitian yang sama seperti desain elite.
+Tidak semuanya soal pemasaran. Label pengiriman, cetakan tanda pengenal, lembar kepatuhan satu halaman, pemberitahuan insiden - keluaran yang tata letaknya membawa makna dan datanya tidak boleh salah. Lolly memperlakukan label pengiriman dengan ketelitian yang sama seperti poster kampanye.
 
-- **Data terstruktur masuk, keluaran presisi.** Masukkan tabel CSV atau JSON dan setiap kolom mendarat persis di tempat yang diharapkan template - satu berkas jadi per baris.
-- **Presisi fisik.** Satuan nyata (mm/cm/in/pt), DPI sebenarnya, bleed dan tanda potong. Printer label atau percetakan mendapatkan persis apa yang dibutuhkan.
-- **Logika berjalan di dalam alat.** Barcode, perhitungan tanggal, tata letak bersyarat, pemeriksaan kontras - dihitung saat render, bukan secara manual.
-- **Deterministik secara rancangan.** Input yang sama, berkas yang sama, setiap saat. Dapat diaudit, dapat diulang, dapat diotomatiskan dari CLI atau pipeline.
+- **Data terstruktur masuk, keluaran presisi.** Berikan tabel CSV atau JSON dan setiap kolom mendarat tepat di tempat yang diharapkan templat - satu berkas jadi per baris.
+- **Presisi fisik.** Satuan nyata (mm/cm/in/pt), DPI sesungguhnya, bleed dan tanda potong. Printer label atau percetakan mendapat tepat seperti yang dibutuhkan.
+- **Logika berjalan di dalam alat.** Barcode, hitungan tanggal, tata letak bersyarat, pemeriksaan kontras - dihitung saat render, bukan secara manual.
+- **Deterministik sejak rancangannya.** Masukan sama, berkas sama, setiap kali. Bisa diaudit, bisa diulang, bisa diotomatiskan dari CLI atau sebuah pipeline.
 
 ---
 
 ## Media & Kreatif
 
-### Berhenti melakukan hal yang paling baik dikerjakan mesin.
+### Berhenti mengerjakan hal yang paling baik dikerjakan mesin.
 
-Anda merancang sistem dan memecahkan masalah, bukan karya sekali pakai. Lolly adalah lapisan eksekusi yang mengubah keputusan desain Anda menjadi alat yang bisa digunakan seluruh organisasi Anda - tanpa perlu melibatkan Anda untuk setiap aset.
+Anda merancang sistem dan memecahkan masalah, bukan membuat barang sekali pakai. Lolly adalah lapisan eksekusi yang mengubah keputusan desain Anda menjadi alat yang bisa dipakai seluruh organisasi - tanpa perlu melibatkan Anda untuk setiap aset.
 
-- **Ini adalah garis depan.** Filter canggih, compositing, animasi, desain generatif - platform ini tak berbatas. Setiap teknologi web tersedia bagi pembuat template. Lakukan lebih dari yang diizinkan creative suite mana pun - dengan segala kekuatan untuk mencapai kualitas produksi yang matang.
-- **Alat menyusun alat.** Satu alat bisa menyematkan keluaran alat lain sebagai aset langsung - badge nama yang merender kode QR-nya sendiri, kartu yang menyisipkan bagan langsung - tanpa alat desain dan tanpa compositing manual.
-- **Buat alat, bukan berkas.** Bangun template yang menghasilkan 10.000 kartu sosial alih-alih membuat 10.000 kartu sosial. Waktu Anda tercurah untuk masalah desain, bukan proses produksi.
-- **Hilangkan yang membosankan.** Penataan huruf optimal, penempatan logo, posisi pin peta, pemeriksaan kontras warna, penentuan ukuran ekspor - semuanya diselesaikan di lapisan template. Anda menetapkan aturannya sekali, serahkan pengulangannya pada mesin.
-- **Kunci yang tak boleh berubah, bebaskan yang seharusnya.** Patri batasan brand. Tampilkan hanya variabel yang memang dimaksudkan untuk berubah. Alat menjadi pagar pengaman kreatif.
+- **Batas atasnya adalah platform web itu sendiri.** Filter tingkat lanjut, compositing, animasi, desain generatif: setiap teknologi web tersedia bagi penulis templat, dan apa pun yang bisa digambar peramban bisa diekspor sebuah alat dengan kualitas produksi.
+- **Alat menyusun alat.** Satu alat bisa menyematkan keluaran alat lain sebagai aset hidup - tanda pengenal yang merender kode QR-nya sendiri, kartu yang menyisipkan grafik langsung - tanpa aplikasi desain dan tanpa compositing manual.
+- **Tulis alat, bukan berkas.** Bangun templat yang menghasilkan 10.000 kartu media sosial alih-alih membuat 10.000 kartu media sosial. Waktu Anda tercurah pada masalah desainnya, bukan pada proses produksinya.
+- **Singkirkan yang membosankan.** Penataan huruf optimal, penempatan logo, posisi pin peta, pemeriksaan kontras warna, ukuran ekspor - semuanya diselesaikan di lapisan templat. Anda menetapkan aturannya sekali, sisakan pengulangannya untuk mesin.
+- **Kunci yang tidak boleh berubah, bebaskan yang memang harus.** Patok batasan merek di dalam kode. Buka hanya variabel yang memang dimaksudkan untuk berubah. Alat itu menjadi pagar pengaman kreatifnya.
 
 ---
 
 ## Pengembang
 
-### Pipeline build Anda seharusnya mencakup visual Anda.
+### Pipeline build Anda seharusnya mencakup visualnya juga.
 
-Gambar adalah artefak build. Perlakukan seperti itu. Lolly berjalan dari CLI sehingga Anda bisa menghasilkan aset dengan cara yang sama seperti Anda menghasilkan segala hal lain - dapat diulang, otomatis, dan sebagai bagian dari alur kerja Anda.
+Gambar adalah artefak build. Perlakukan seperti itu. Lolly berjalan dari CLI sehingga Anda bisa menghasilkan aset dengan cara yang sama seperti Anda menghasilkan hal lain - berulang, otomatis dan sebagai bagian dari alur kerja Anda.
 
-- **Lewati undian media genAI.** Anda sudah mencoba media genAI - mahal, dan belum cukup mendekati. Lolly adalah otomatisasi konten lokal yang gratis, lebih cepat, yang menyingkirkan sampah mereka dan kerja keras Anda.
-- **Keluaran yang dapat direproduksi.** Input yang sama menghasilkan berkas yang sama, setiap saat. Commit sebuah URL, hasilkan ulang sesuai permintaan - tak perlu lagi meng-commit gambar atau memburu versi terbaru dari Slack.
-- **Keluarkan media dari basis kode Anda.** Hasilkan gambar OG, kode QR, kartu sosial, dan visual data saat build alih-alih menyimpan biner di Git.
-- **Jalankan logika di dalam aset.** Alat seperti Code Canvas dan Chart Creator memungkinkan Anda menempatkan konten nyata - cuplikan kode, data terstruktur, nilai langsung - di dalam template berkualitas produksi tanpa membangun renderer khusus.
-- **Tanpa penguncian vendor.** Mesin open source, komputasi lokal, tanpa kunci API, tanpa batas laju.
+- **Pakai model untuk sketsanya, bukan untuk cetakannya.** Menghasilkan media berkualitas cetak lewat prompt itu mahal dan hasilnya mendekati, bukan tepat. Sebuah alat membuat berkas yang sama setiap kali, tanpa biaya.
+- **Keluaran yang bisa direproduksi.** Masukan yang sama menghasilkan berkas yang sama, setiap kali. Commit sebuah URL, hasilkan ulang saat dibutuhkan - tidak perlu lagi memasukkan gambar ke repositori atau mengejar versi terbaru lewat Slack.
+- **Keluarkan media dari basis kode Anda.** Hasilkan gambar OG, kode QR, kartu media sosial dan visual data saat build alih-alih menyimpan berkas biner di Git.
+- **Jalankan logika di dalam aset.** Alat seperti Code Canvas dan Chart Creator memungkinkan Anda menempatkan konten sungguhan - potongan kode, data terstruktur, nilai langsung - di dalam templat berkualitas produksi tanpa membangun renderer khusus.
+- **Tanpa lock-in.** Mesin open source, komputasi lokal, tanpa kunci API, tanpa batas laju.
 
 ```bash
 lolly qr-code --url=https://suse.com --output=og-qr.svg
-lolly quotes --quote="Ship it." --output=quote.png
+lolly wordmark --text="Ship it." --output=wordmark.png
 ```
 
 ---
 
 ## Agen AI
 
-### Perintahkan model Anda untuk menggunakan alat, bukan berhalusinasi.
+### Suruh model Anda memakai alat, bukan berhalusinasi.
 
-Sebuah URL dengan parameter hanyalah beberapa token. Brief kreatif ditambah pembuatan gambar berjumlah ribuan - dan hasilnya tetap tidak berkualitas cetak. Lolly memberi agen Anda lapisan kreatif yang deterministik, dapat ditinjau, dan siap produksi.
+Sebuah URL berisi parameter hanya beberapa token. Brief kreatif plus pembuatan gambar butuh ribuan - dan hasilnya tetap belum berkualitas cetak. Lolly memberi agen Anda lapisan kreatif yang deterministik dan bisa ditinjau, siap untuk produksi.
 
 
-- **Kualitas produksi tidak melenceng.** Alat menghasilkan karya berkualitas produksi dengan komputasi yang jauh lebih sedikit - dikerjakan secara lokal. Alat bersifat hard-coded. Saat model Anda menjadi malas, tata letaknya tidak. Aturan tipografi, nilai warna, spasi - semuanya bersifat struktural, bukan hasil prompt.
-- **Hemat token dalam skala besar.** Menghasilkan kartu acara khusus dari sebuah URL menghabiskan biaya yang jauh lebih kecil dibanding merekayasa prompt untuk keluaran yang sama melalui model generatif.
-- **Tempatkan data di tempat yang seharusnya.** Input terstruktur dipetakan ke template terstruktur. Nama pembicara, waktu sesi, versi produk - ditempatkan persis di tempat yang diharapkan desain, setiap saat.
-- **Deterministik, dapat diaudit, terkendali versi.** Setiap keluaran dapat direproduksi dari inputnya. Tak ada kejutan stokastik dalam aset produksi.
+- **Kualitas produksi tidak melenceng.** Alat menghasilkan karya berkualitas produksi dengan komputasi yang jauh lebih kecil - dikerjakan secara lokal. Alat dipatok di dalam kode. Ketika model Anda mulai malas, tata letaknya tidak. Aturan tipografi, nilai warna, jarak antarelemen - semuanya struktural, bukan hasil prompt.
+- **Hemat token dalam skala besar.** Menghasilkan kartu acara khusus dari sebuah URL jauh lebih murah daripada merekayasa prompt untuk keluaran yang sama lewat model generatif.
+- **Tempatkan data di tempatnya.** Masukan terstruktur dipetakan ke templat terstruktur. Nama pembicara, waktu sesi, versi produk - ditempatkan tepat di tempat yang diharapkan desainnya, setiap kali.
+- **Deterministik, bisa diaudit, terkendali versi.** Setiap keluaran bisa direproduksi dari masukannya. Tidak ada kejutan stokastik pada aset produksi.
 
 ```
 Use Lolly to invite the team to KubeCon.
@@ -116,43 +120,41 @@ Output the file URL.
 
 ---
 
-## Tim IT dan keamanan di perusahaan besar
+## Tim TI dan keamanan di perusahaan besar
 
-### Berkas kreatif tak seharusnya menjadi risiko keamanan.
+### Berkas kreatif seharusnya bukan risiko keamanan.
 
-Setiap kali seseorang mengunggah berkas ke layanan pihak ketiga hanya untuk "membuatnya terlihat pas," itu adalah peristiwa eksfiltrasi data yang menunggu untuk terjadi. Lolly menghapus masalah ini dari sumbernya - produksi kreatif tetap di perangkat, on-premise, dan dalam kendali Anda.
+Setiap kali seseorang mengunggah berkas ke layanan pihak ketiga hanya untuk "membuatnya terlihat pas", itu adalah peristiwa eksfiltrasi data yang tinggal menunggu waktu. Lolly menghapus masalahnya dari sumbernya - produksi kreatif tetap on-premise dan di bawah kendali Anda.
 
-- **Data tak pernah meninggalkan perangkat.** Secara bawaan, tidak ada yang dikirim ke pihak ketiga mana pun - tanpa rendering cloud, tanpa analitik, tanpa telemetri. Apa yang dibuat rekan kerja tetap ada di mesin mereka. Utilitas on-device seperti Strip Hidden Data membersihkan EXIF dan metadata dari gambar, SVG, dan PDF sepenuhnya di dalam browser - tidak ada yang diunggah. Bahkan mengunci PDF, seluruh unduhan, atau tautan berbagi dengan kata sandi terjadi di perangkat; kata sandinya tak pernah keluar dari sana.
-- **Host sendiri untuk kendali air-gap penuh.** Terapkan di infrastruktur Anda sendiri. Tanpa pemrosesan sisi server, tanpa basis data, tanpa backend. Beroperasi sepenuhnya offline, di balik firewall Anda, dengan kebijakan akses Anda sendiri.
-- **Kurangi area permukaan vendor.** Satu platform open-source menggantikan sekumpulan langganan SaaS untuk produksi kreatif. Lebih sedikit vendor berarti lebih sedikit kontrak, lebih sedikit audit, dan lebih sedikit vektor pelanggaran.
-- **Tegakkan tata kelola brand di level infrastruktur.** Alat dibuat sekali dan didistribusikan sebagai data - bukan berkas, bukan proses manual. Apa yang keluar persis sama dengan yang disetujui untuk keluar.
-- **Ubah informasi kritis menjadi format yang mudah dibaca manusia secara instan.** Komunikasi insiden, laporan kepatuhan, ringkasan eksekutif - data terstruktur menjadi keluaran berkualitas publikasi dalam hitungan detik, tanpa hambatan desain.
-- **Pengerasan untuk skala enterprise.** Lolly adalah prototipe closed-pilot: mesin kriptografi dan penguraian berkasnya saat ini sedang menjalani pengerasan infrastruktur ketat dari SUSE, mempersiapkan skala enterprise - kami sangat andal dalam hal ini. Provenans dan enkripsi on-device kuat secara rancangan; ujicobakan dalam konteks yang terbatas selagi pengerasan itu rampung. Lihat [Adopsi & tata kelola](/info/adoption-governance.html#status).
+- **Data tetap di perangkat.** Tidak ada render di cloud, tidak ada analitik, tidak ada telemetri - dan tidak ada permintaan jaringan sama sekali di luar segelintir yang dipicu pengguna secara eksplisit, masing-masing disebutkan dalam [kebijakan privasi](/info/privacy.html). Apa yang dibuat rekan kerja tetap ada di mesin mereka. Utilitas di perangkat seperti Strip Hidden Data membersihkan EXIF dan metadata dari gambar, SVG dan PDF sepenuhnya di dalam peramban - tidak ada yang diunggah. Bahkan mengunci PDF, seluruh unduhan atau tautan berbagi dengan kata sandi terjadi di perangkat; kata sandinya tidak pernah keluar dari sana.
+- **Self-host untuk kendali air-gap penuh.** Terapkan di infrastruktur Anda sendiri; dua komponen server opsional bisa dihilangkan seluruhnya. [Produksi berdaulat](/info/sovereign-production.html) menyatakan seluruh sikapnya, dan [Permukaan server](/info/server-surface.html) adalah inventarisnya yang lengkap.
+- **Kurangi luas permukaan vendor.** Satu platform open source menggantikan tumpukan langganan SaaS untuk produksi kreatif. Lebih sedikit vendor berarti lebih sedikit kontrak, lebih sedikit audit dan lebih sedikit vektor kebocoran.
+- **Tegakkan tata kelola merek di tingkat infrastruktur.** Alat ditulis sekali dan didistribusikan sebagai data - bukan berkas, bukan proses manual. Yang keluar persis seperti yang disetujui untuk keluar.
+- **Ubah informasi penting menjadi format yang terbaca manusia seketika.** Komunikasi insiden, laporan kepatuhan, ringkasan untuk eksekutif - data terstruktur menjadi keluaran berkualitas publikasi dalam hitungan detik, tanpa hambatan desain.
+- **Pengerasan, secara terbuka.** Mesin kriptografi dan pengurai berkas Lolly sedang menjalani pengerasan infrastruktur SUSE: disiplin di balik lebih dari tiga dekade teknologi dan layanan keamanan untuk perusahaan terbesar di dunia. Content Credentials dan enkripsi lokal kuat secara rancangan; ujicobakan dalam konteks terbatas selama proses itu berjalan. Lihat [Adopsi & tata kelola](/info/adoption-governance.html#status).
 
 ---
 
-## Sang Pembuat
+## Apa yang Anda dapatkan
 
-**Prototipe internal, dalam pilot tertutup.** Bukan produk jadi - sebuah eksperimen yang bergerak cepat. Kriptografi dan penguraiannya saat ini sedang menjalani pengerasan infrastruktur ketat dari SUSE, mempersiapkan skala enterprise. [Posisi Lolly saat ini →](/info/adoption-governance.html#status)
+**Platform produksi kreatif yang bertenaga.** Mesin Lolly bekerja untuk mencapai kualitas tertinggi yang bisa dihasilkan setiap format - vektor sejati, huruf yang dijadikan outline, warna kelas cetak, keluaran asli yang bisa diedit.
 
-**100% gratis dan open source.** Tanpa biaya SaaS, tanpa batas penggunaan, tanpa ketergantungan vendor.
+**100% gratis dan open source.** Tanpa biaya SaaS, tanpa batas pemakaian, tanpa ketergantungan vendor.
 
-**Bekerja di mana saja.** Web PWA, Mac, Linux, iOS, Android, CLI, TUI terminal - mesin yang sama, keluaran yang sama.
+**Berjalan di mana saja.** PWA web, Mac, Windows, Linux, iOS, Android, CLI, TUI terminal - mesin yang sama, keluaran yang sama.
 
-**Bekerja offline.** Komputasi lokal, penyimpanan lokal. Tidak perlu internet setelah sinkronisasi pertama.
+**Format, masuk dan keluar.** Puluhan masuk, puluhan keluar dan banyak di antaranya dua arah - rincian lengkapnya ada di [halaman Format](/info/formats.html), dan setiap format secara detail di [halaman Ekspor](/info/exporting.html).
 
-**Format, masuk dan keluar.** Membuat **25** format ekspor dan menyerap **13** format sumber - lihat rincian lengkapnya di bawah.
-
-**Kualitas produksi.** Huruf teroutline, dukungan warna Spot, 60FPS · Media yang layak untuk studio.
+**Kualitas produksi.** Huruf ber-outline, dukungan warna spot, 60FPS · Media yang layak untuk studio.
 
 
-## Alat
+## Alat-alatnya
 
 
-Bayangkan seperti mesin penjual otomatis untuk desain. Buat pilihan, dapatkan hasil. Setiap saat.
+Anggap saja seperti vending machine untuk desain. Tentukan pilihan, dapatkan hasilnya. Setiap kali.
 
-Sebuah alat adalah template kreatif siap pakai yang tahu persis apa yang dibuatnya dan bagaimana caranya. Berikan judul, tanggal, angka - dan ia menghasilkan aset jadi, sesuai spesifikasi.
+Alat adalah templat kreatif siap pakai yang tahu persis apa yang dibuatnya dan bagaimana caranya. Berikan judul, tanggal, angka - dan ia menghasilkan aset jadi, sesuai spesifikasi.
 
-Tanpa perlu pengalaman desain. Tanpa keputusan soal font, warna, atau spasi - alat sudah paling tahu. Baik Anda seorang desainer, pemasar, pengembang, atau agen AI, keluarannya sama.
+Tidak perlu pengalaman desain. Tidak ada keputusan soal huruf, warna atau jarak - alatnya sudah paling tahu. Entah Anda desainer, pemasar, pengembang atau agen AI, keluarannya sama.
 
-Alat dibuat sekali oleh orang-orang yang memahami brand, lalu digunakan oleh semua orang lain - dari browser web, ponsel, baris perintah, atau pipeline otomatis. Keputusan desain terkunci di level template. Satu-satunya hal yang tersisa adalah mengisi kontennya.
+Alat ditulis sekali oleh orang-orang yang memahami mereknya, lalu dipakai semua orang lain - dari peramban web, ponsel, baris perintah atau pipeline otomatis. Keputusan desainnya sudah dikunci di tingkat templat. Yang tersisa hanyalah mengisi kontennya.

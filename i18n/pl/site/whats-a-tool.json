@@ -15,7 +15,7 @@
     {
       "file": "hooks.js",
       "name": "Hooki",
-      "desc": "Opcjonalna logika, uruchamiana w piaskownicy"
+      "desc": "Opcjonalna logika, tylko API hosta"
     }
   ],
   "features": [
@@ -42,7 +42,7 @@
     {
       "icon": "toolFeatureShuffle",
       "title": "Swobodne płótno",
-      "desc": "Niektóre narzędzia otwierają się jako płótno z bezpośrednią manipulacją - przeciągaj, obracaj i przyciągaj pola z tekstem, kształtami i obrazami, eksportowane tą samą deterministyczną ścieżką."
+      "desc": "Niektóre narzędzia otwierają się jako płótno z bezpośrednią manipulacją - przeciągaj, obracaj i przyciągaj pola z tekstem, kształtami i obrazami, eksportowane dokładnie tą samą ścieżką co wszystko inne."
     },
     {
       "icon": "toolFeatureNested",

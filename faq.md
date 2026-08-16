@@ -28,13 +28,9 @@ Anybody can distribute their own apps, the tools and configuration of those apps
 
 ## Why the name "Lolly Tools"?
 
-**Lolly** Because freedom is sweet.
-**Tools** are inactive when not being used. Not spying on you, running secret programs, 
-Put it to work, your orders, actions and terms.
+**Lolly** because freedom is sweet, and because in Australia, New Zealand and Britain a lolly is a sweet.
 
-**Lolly** is an Australian, New Zealand, British term for 'sweets' or 'candy'. Just like lollies, tools are very tasty for people needing them.
-
-We're also laughing at the time and bills we are saving with this approach.
+**Tools** because a tool sits still until you pick it up. It does not run when you are not using it, and it does not watch you while you are.
 
 ## What hurdles could I expect adopting Lolly?
 
@@ -101,6 +97,14 @@ Yes. Open **Design** and click **Import a design**: it accepts a native Figma **
 
 Layers arrive as editable boxes on the open canvas: text stays retypable, shapes stay shapes, images join your own image library and type and colours conform to the brand globals. Save it and the layout becomes a reusable, URL-addressable template anyone with Lolly can refill - and you can mix in live tools (a QR code, a chart) that re-render on load. From there it renders like anything else in Lolly - SVG, PDF, PNG and the rest, reproducible from its URL. See [Import a design](/info/design-import.html).
 
+## Can I share my work as a file instead of a link?
+
+Yes. When a link can't carry everything (your own photos, long text), the Share dialog says exactly what would go missing and offers a **.lolly** file instead: one file holding the design, the images it uses and, if you choose, the tool itself. You decide how much travels - your name and details go in only if your profile opts in, licensed art is held back unless you include it, and whoever opens a file that carries a tool is asked whether they trust it before it can run. See [Sharing your work](/info/using.html#sharing-your-work).
+
+## Can two people work on the same design without the internet?
+
+Yes. One person shares an invite (a link, a QR code or a short code), the other accepts, and both devices hold the same session live - presence, focus rings and all. It works on any shared network, including a phone hotspot in a basement, because there is no server in the middle. See [Working together](/info/collaborate.html).
+
 ## Where did the SUSE-branded tools go?
 
 They already live in a separate, private repository. A public clone doesn't fetch the SUSE brand pack at all, so a public build runs the neutral `lolly-start` profile - the brand-agnostic community tools plus a blank brand you fill in with your own. SUSE operates its own instance to protect its trademarks.
@@ -109,21 +113,15 @@ They already live in a separate, private repository. A public clone doesn't fetc
 
 **We built Lolly for ourselves.** SUSE needed thousands of on-brand files, each with its name sealed inside, made without handing anything to outside services. So we built a tool that does all of it on the device, and released it as open source, like everything else we make. We keep maintaining it because we use it every day. **There is no obligation:** everything here works with or without us.
 
-That line is drawn in the licence, not in a promise: anything that runs locally is free, forever. See [positioning](/info/positioning.html) for the full statement.
+That line is drawn in the licence, not in a promise: anything that runs locally is free, forever. A version that has been released is licensed so it cannot be taken back, and there is no contributor agreement that could relicense anyone's work. See [positioning](/info/positioning.html) for the full statement.
 
 ## How much is SUSE keeping private? (aka when is the rug-pull)
 
 The engine, the shells, the schemas and the brand-agnostic tools are open source; SUSE's trademarks and branded tools are the part that stays private, and they are already separated out. You can find an unbranded instance of Lolly at [lolly.ART](https://lolly.art).
 
-SUSE is an enterprise open source infrastructure company with more than three decades of platform leadership. Its products include enterprise-tier Linux, Cloud Native, Edge and AI infrastructure solutions.
+The boundary is structural rather than promised. Every released version is open source and cannot be un-released, there is no contributor agreement that could relicense anyone's work, and the only thing held back is the trademark. When another company closed its enterprise Linux sources in 2023, SUSE co-founded [OpenELA](https://openela.org) to keep that code open - the same posture this project inherits.
 
-From SUSE's perspective, this is about walking the talk on sovereignty and security. As of today, the likelihood SUSE productizes Lolly is near absolute zero.
-
-Full disclosure: SUSE *is* building out internal tooling to integrate Lolly within its IT systems - that's about SUSE's internal set-up, not public vs. private development.
-
-Speaking of the public side, Lolly aims to be built through [Open Build Service](https://openbuildservice.org/), with secure supply-chain artifacts delivered by the [SUSE Application Collection](https://apps.rancher.io/applications).
-
-We'll build as much as we can in the open - you just won't see SUSE-branded tools for long, nor SUSE's internal workforce and commercial processes, which are unrelated to Lolly.
+Full disclosure: SUSE *is* building out internal tooling to integrate Lolly within its IT systems - that's about SUSE's internal set-up, not public vs. private development. Lolly also aims to be built through [Open Build Service](https://openbuildservice.org/), with secure supply-chain artifacts delivered by the [SUSE Application Collection](https://apps.rancher.io/applications).
 
 ## What flavour is that Lolly logo?
 

@@ -1,8 +1,5 @@
 {
   "statement": "Soberanía del contenido",
-  "pilotTag": "Prototipo",
-  "pilotText": "Piloto cerrado en curso · optimizando para escala empresarial",
-  "pilotAriaLabel": "Lolly es un prototipo interno en un piloto cerrado, en fase de optimización para escala empresarial",
   "ctas": [
     {
       "href": "/",
@@ -16,11 +13,11 @@
     }
   ],
   "trustChips": [
-    "100% gratis",
-    "Sin cookies",
-    "Sin registro",
+    "Gratis para siempre",
     "Código abierto",
-    "Privacidad primero"
+    "Sin cuenta",
+    "Sin cookies",
+    "No envía datos"
   ],
-  "toolCountSuffix": "Herramientas de ejemplo cargadas"
+  "toolCountSuffix": "herramientas listas"
 }

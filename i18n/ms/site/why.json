@@ -1,19 +1,22 @@
 {
   "eyebrow": "Sebab kami membina Lolly",
   "heading": "Kerja kreatif harian\ntidak sepatutnya sesukar ini.",
-  "lead": "Kebanyakan orang tidak mahukan studio reka bentuk. Mereka mahukan satu fail yang betul, sekarang - tanpa menjejaskan jenama, tanpa perlu menunggu sesiapa, dan tanpa perlu menyerahkan dokumen peribadi kepada laman web yang tidak pernah mereka dengari. Lolly wujud untuk menghapuskan ketiga-tiga kekecewaan ini.",
+  "lead": "Kebanyakan orang tidak mahukan studio reka bentuk. Mereka mahukan satu fail yang betul, sekarang - tanpa menjejaskan jenama, tanpa perlu menunggu sesiapa dan tanpa diminta mendaftar serta membayar sebelum boleh mula. Lolly wujud untuk menghapuskan ketiga-tiga kekecewaan ini.",
   "frustrations": [
     { "icon": "anxiety", "title": "Kebimbangan tersasar jenama", "desc": "Rasa bimbang yang senyap apabila memilih warna atau fon yang salah, dan tersilap di hadapan orang ramai." },
     { "icon": "bottleneck", "title": "Kesesakan", "desc": "Setiap aset kecil tersekat dalam barisan menunggu di belakang pereka yang sibuk, alat yang perlahan, atau satu lagi kelulusan." },
-    { "icon": "cloudDependence", "title": "Pergantungan pada awan", "desc": "Memuat naik fail sensitif hanya untuk menukar format atau memangkasnya - dan terkandas sebaik sahaja anda luar talian." }
+    { "icon": "tollGate", "title": "Pintu tol", "desc": "Akaun sebelum anda boleh mula, langganan yang hidup lebih lama daripada kerja itu dan satu lagi caj pada saat anda cuba memuat turun." }
   ],
   "matrix": [
-    { "pain": "Hantar brif melalui e-mel kepada pasukan reka bentuk, kemudian tunggu berhari-hari untuk satu grafik kecil.", "relief": "Isi beberapa medan sahaja. Aset yang siap sedia dalam beberapa saat." },
-    { "pain": "Meneka fon, warna dan logo yang betul - dan berharap ia lulus semakan jenama.", "relief": "Peraturan reka bentuk sudah terbina dalam alat ini. Ia boleh dilentur, bukan dipecah. " },
-    { "pain": "Memuat naik kontrak, slip gaji atau foto peribadi ke laman web percuma sembarangan untuk menukar format atau memangkasnya.", "relief": "Semuanya berjalan pada peranti anda sendiri. Tiada apa-apa dimuat naik; tiada apa-apa meninggalkan peranti individu yang bertanggungjawab." },
+    { "pain": "Log masuk dahulu sebelum anda dibenarkan mencipta apa-apa.", "relief": "Buka dan terus mula. Tiada akaun langsung." },
+    { "pain": "Kerja anda tersimpan di tempat yang anda tiada suara: peraturannya boleh berubah, dan anda tahu kemudian.", "relief": "Kerja anda kekal dengan anda. Setiap pilihan tentangnya milik anda, dan anda boleh melihat setiap satu." },
+    { "pain": "Langganan yang terus mengecaj lama selepas kerja itu selesai.", "relief": "Percuma, dan kekal percuma: versi yang sudah dikeluarkan tidak boleh ditarik balik." },
+    { "pain": "Templat yang hampir betul, tetapi bahagian yang anda perlukan terkunci di sebalik naik taraf.", "relief": "Apa yang patut berubah, anda yang ubah; apa yang tidak patut, sudah pun diuruskan." },
+    { "pain": "Siapkan reka bentuk, kemudian dapati muat turunnya dikenakan bayaran tambahan.", "relief": "Setiap eksport disertakan: PDF kualiti cetak, SVG tajam, video, semuanya." },
+    { "pain": "Bayar AI sekali lagi untuk sesuatu yang ia sudah hasilkan, dan dapat balik versi yang sedikit berbeza.", "relief": "AI ialah pilihan, dan ia tunduk kepada anda. Apa yang anda cipta kekal serupa di mana anda mahu ia serupa, berbeza mengikut cara anda mahu - dan menciptanya semula adalah percuma." },
+    { "pain": "Hantar brif melalui e-mel kepada pasukan reka bentuk, kemudian tunggu berhari-hari untuk satu grafik kecil.", "relief": "Isi beberapa medan sahaja. Fail siap sedia dalam beberapa saat." },
+    { "pain": "Meneka fon, warna dan logo yang betul - dan berharap ia lulus semakan jenama.", "relief": "Peraturan reka bentuk sudah terbina dalam alat ini. Ia boleh dilentur, bukan dipecah." },
     { "pain": "Membuat semula lencana, kad atau sepanduk yang sama beratus-ratus kali secara manual.", "relief": "Tampal satu hamparan data. Dapatkan seratus fail siap sedia untuk cetak sekali gus." },
-    { "pain": "“Versi mana yang terkini?” - mencari-cari dalam bebenang Slack dan pemacu kongsi.", "relief": "Aset itu adalah pautan. Input yang sama, fail yang sama, setiap kali." },
-    { "pain": "Tiada isyarat di dalam pesawat, atau rangkaian yang disekat - jadi anda hanya tersekat.", "relief": "Berfungsi sepenuhnya secara luar talian, pada mana-mana peranti, sebaik sahaja ia dimuatkan buat pertama kali." },
-    { "pain": "Kandungan embargo:  Profesional komunikasi terhalang daripada melibatkan kolaborator secara selamat.", "relief": "kunci, sulitkan, dan lindungi dengan kata laluan fail, zip, dan pautan kongsi - semuanya tanpa internet" }
+    { "pain": "“Versi mana yang terkini?” - mencari-cari dalam bebenang Slack dan pemacu kongsi.", "relief": "Fail itu ialah pautan. Input yang sama, fail yang sama, setiap kali." }
   ]
 }

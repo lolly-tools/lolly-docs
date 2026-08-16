@@ -1,129 +1,128 @@
-# Veelgestelde vragen (FAQ)
+# FAQ
 
-Veelgestelde vragen die worden getoond in de accordion op de `/info`-landingspagina.
+Veelgestelde vragen die in de accordeon op de landingspagina `/info` worden getoond.
 
-**Hoe onderhoud je dit:** elke `##`-kop hieronder is een vraag; alles eronder
-(tot de volgende `##`) is het antwoord. Antwoorden gebruiken dezelfde lichte markdown als
-de rest van de site - scheid alinea's met een lege regel. Voeg hier vragen toe, verwijder
-ze, of wijzig de volgorde, en voer daarna `npm run build:info` opnieuw uit (of `npm run dev:web`).
+**Zo houd je dit bij:** elke `##`-kop hieronder is een vraag; alles eronder
+(tot aan de volgende `##`) is het antwoord. Antwoorden gebruiken dezelfde lichte markdown als
+de rest van de site - scheid alinea's met een lege regel. Voeg hier vragen toe, haal ze weg of
+zet ze in een andere volgorde en draai `npm run build:info` (of `npm run dev:web`) opnieuw.
 Alles boven de eerste `##` (deze titel en deze notities) wordt door de build genegeerd.
 
-## Wat gebeurt er als ik opt-in geef op de /profile-pagina?
+## Wat gebeurt er als ik op de pagina /profile voor opt-in kies?
 
-Wanneer je Lolly voor het eerst gebruikt, is alles wat je waar dan ook typt volledig privé, totdat je die informatie bewust naar buiten wilt brengen via media of een deel-link (indien online).
+Als je Lolly voor het eerst gebruikt, is alles wat je waar dan ook typt volledig privé, totdat je die informatie bewust naar buiten wilt brengen via media of een deellink (als je online bent).
 
-Met de opt-in geselecteerd, nemen we een deel van je profielinformatie op als herkomst (provenance) in assets en bundels, zodat jij als bron te identificeren bent.
+Als opt-in aanstaat, worden de profielgegevens die je kiest verzegeld in wat je maakt, met jou als bron erbij vermeld. Er wordt niets meegenomen zonder dat jij het zelf kiest.
 
-Lolly produceert een grote hoeveelheid content. We hanteren een strikte aanpak van dataminimalisatie om risico te voorkomen.
+Lolly produceert een grote hoeveelheid content. We hanteren een strikte dataminimalisatie om risico te voorkomen.
 
-### Wat zijn de feature flags?
+## Wat zijn de feature flags?
 
-![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&dark=1&filename=pd-feature-flags)
+Feature flags zetten onderdelen van Lolly aan of uit. Meestal beheert een beheerder ze - bij Lolly heb jij de regie.
 
-Feature flags zetten onderdelen van Lolly aan of uit. Meestal heeft een beheerder daar controle over - bij Lolly heb jij de controle.
+![Elke feature flag is een schakelaar die van jou is en in je eigen profiel staat in plaats van in de console van een beheerder](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&dark=1&filename=pd-feature-flags)
 
 ## Hoe kom ik aan de mobiele of desktop-apps?
 
-Iedereen kan zijn eigen apps distribueren; de tools en configuratie van die apps kunnen sterk verschillen, afhankelijk van het beoogde publiek. Er is dus geen ene app, tenzij je hem zelf hebt gemaakt of iemand relevant hem aan je geeft.
+Iedereen kan zijn eigen apps verspreiden, en de tools en configuratie van die apps horen sterk te verschillen afhankelijk van het publiek waarvoor ze bedoeld zijn. Er is dus niet één app, tenzij je hem zelf hebt gemaakt of iemand uit je omgeving hem aan je geeft.
 
 ## Waarom de naam "Lolly Tools"?
 
-**Lolly** Omdat vrijheid zoet is.
-**Tools** zijn inactief wanneer ze niet worden gebruikt. Ze bespioneren je niet, draaien geen geheime programma's, 
-zet ze aan het werk, op jouw bevel, voor jouw acties en voorwaarden.
+**Lolly** omdat vrijheid zoet is, en omdat een lolly in Australië, Nieuw-Zeeland en Groot-Brittannië een snoepje is.
 
-**Lolly** is een Australische, Nieuw-Zeelandse en Britse term voor 'snoep' of 'snoepjes'. Net als lollies zijn tools erg smakelijk voor mensen die ze nodig hebben.
+**Tools** omdat gereedschap stil blijft liggen tot je het oppakt. Het draait niet als je het niet gebruikt en het kijkt niet met je mee terwijl je het wel gebruikt.
 
-We moeten ook lachen om de tijd en kosten die we besparen met deze aanpak.
+## Welke hordes kan ik verwachten als ik Lolly ga gebruiken?
 
-## Welke hindernissen kan ik verwachten bij het invoeren van Lolly?
+Lolly past overal waar je nu al bestanden genereert - de CLI is dezelfde engine
+als de app, dus een pipeline die om 2 uur 's nachts draait kan niet afwijken van wat iemand in een
+browser bekijkt. De weerstand bij invoering is zelden technisch; die is organisatorisch. Verwacht dit:
 
-Lolly past zich in waar je al bestanden genereert - de CLI is dezelfde engine
-als de app, dus een pipeline die om 2 uur 's nachts draait kan niet afwijken van wat iemand als preview in een
-browser ziet. De wrijving bij adoptie is zelden technisch; het is organisatorisch. Verwacht het volgende:
+**Er moet een samengestelde merkcatalogus worden opgebouwd.** Lolly is een platform, geen
+kant-en-klaar pakket met jouw templates. Voor een *bestuurde uitrol* legt iemand de gedeelde
+assetcatalogus vast (logo's, paletten, lettertypes als permanente ID's) en schrijft het manifest +
+template voor elk uitvoertype. Losse gebruikers hoeven daar niet op te wachten - in
+de open app kan iedereen vanaf dag één eigen bestanden in de catalogus opnemen en tools bouwen in
+Design.
 
-**Een samengestelde merkcatalogus moet worden opgesteld.** Lolly is een platform, geen
-kant-en-klaar pakket met jouw templates. Voor een *beheerde uitrol* definieert iemand de gedeelde
-assetcatalogus (logo's, paletten, lettertypen als permanente ID's) en schrijft voor elk outputtype
-het manifest + de template. Individuen hoeven daar niet op te wachten - in de open app kan iedereen
-zijn eigen bestanden in de catalogus opnemen en vanaf dag één tools bouwen in Design.
+**Geen git nodig om bij te dragen.** Ontwerpers maken hun eigen tools en templates
+in de app en delen ze daarna met collega's of dienen ze in bij wie de
+deployment beheert, zodat ze standaard worden meegeleverd.
 
-**Governance-by-git is optioneel - en onbekend terrein voor niet-engineers.** Als je een
-*gedeelde, beheerde* catalogus draait, is "de PR-review *is* de moderatie" elegant voor
-engineers, maar onbekend terrein voor de meeste merk- en marketingteams. Als de mensen die
-merkbeslissingen bezitten niet in git leven, heb je een workflow nodig die hen overbrugt - of IT
-wordt stilzwijgend de strategische designpartner en bredere institutionele poortwachter
-(bij velen in langlopende productieomgevingen zelfs de voorkeur). Teams die dit niet willen,
-slaan het gewoon over.
+**Het is bewust smal - presenteer het ook zo.** Lolly is niet bedoeld voor maatwerk of
+hero-content. Het *is* je persoonlijke DAM - gevoed en versterkt door je
+designsysteem, tools en catalogus - en het *heeft* wel degelijk een open canvas (Design), maar
+ook daar voldoen kleuren, typografie en assets aan de actieve design-globals, dus vrij
+schikken blijft binnen het systeem. Naast Figma of Canva gelegd oogt het
+beperkt. Beoordeeld op wat het is - geoperationaliseerde, terugkerende assetgeneratie op
+enorme schaal - is er geen concurrentie. De verkeerde framing is de meest voorkomende tegenslag.
 
-**Het is bewust beperkt - presenteer het ook zo.** Lolly is niet bedoeld voor maatwerk of hero-
-content. Het *is* je persoonlijke DAM - gevoed en versterkt door je designsysteem,
-tools en catalogus - en het *heeft* wel degelijk een open canvas (Design), maar
-zelfs daar volgen kleuren, typografie en assets de actieve designglobals, zodat vrije
-opmaak binnen het systeem blijft. Afgezet tegen Figma of Canva zal het beperkt
-ogen. Beoordeeld als wat het is - geoperationaliseerde, terugkerende assetgeneratie op
-massale schaal - is er niets dat ermee kan concurreren. De verkeerde framing is de meest voorkomende tegenslag.
-
-**Changemanagement aan de productiekant.** Bestaande processen werken vandaag, ook al is
-de output niet on-brand. Ze omleiden naar de engine betekent opnieuw testen, opnieuw leren,
+**Verandermanagement aan de productiekant.** Bestaande processen werken vandaag, ook al
+is de output niet merkconform. Ze naar de engine ombuigen betekent opnieuw testen en opnieuw leren,
 en "we kunnen al bestanden maken" wordt het excuus om niet te migreren. Begin met het omzetten van
-één zichtbare productie-output van hoge kwaliteit en laat het voor-en-na naast elkaar zien.
+één zichtbare uitvoer van productiekwaliteit en zet het voor en na naast elkaar.
 
 Lolly tilt alles naar een hoger niveau.
 
 
-## Wat maakt utilities anders dan tools?
+## Wat maakt hulpprogramma's anders dan tools?
 
-![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1)
+**Kort antwoord →** Hulpprogramma's hoeven niet altijd te renderen en kunnen daarom een andere UX krijgen. 
 
-**Kort antwoord →** Utilities hoeven niet altijd te renderen en kunnen daardoor een andere UX krijgen. 
+**Echte antwoord →** Hulpprogramma's kunnen binnen Lolly Tools worden gehost om nog een 'gemakslaag' aan verdediging toe te voegen die data-exfiltratie ontmoedigt. 
 
-**Eigenlijke antwoord →** De reden dat utilities binnen Lolly Tools gehost kunnen worden, is om nog een 'gemakslaag' aan verdediging toe te voegen die data-exfiltratie ontmoedigt. 
+Waarom? Omdat bekend is dat mensen elke dag **vertrouwelijke content die ze al hebben** aan een
+willekeurige website geven om er één kleine mechanische bewerking op uit te voeren:
 
-Waarom? Omdat het bekend is dat mensen elke dag **vertrouwelijke content die ze al hebben** aan een
-willekeurige website geven om daar één kleine mechanische bewerking op te laten uitvoeren:
+- "**Comprimeer deze PDF**" → uploadt een contract / loonstrook / bestuurspresentatie naar onbekende partijen.
+- "**converteer HEIC naar JPG**" → uploadt persoonlijke foto's (met GPS-EXIF) naar een host die van advertenties leeft
+- "**snijd deze afbeelding bij / schaal hem**" → uploadt een productscreenshot of een nog niet uitgebrachte asset
+- "**formatteer deze JSON**" / "decodeer deze JWT" → plakt API-antwoorden, tokens en secrets in een formatter
+- "**voeg deze PDF's samen**" → uploadt **twee documenten die nooit dezelfde server zouden mogen delen**
 
-- "**Comprimeer deze PDF**" → upload een contract / loonstrook / bestuursdocument naar onbekende partijen.
-- "**Zet HEIC om naar JPG**" → upload persoonlijke foto's (met GPS-EXIF) naar een advertentie-gefinancierde host
-- "**Snij deze afbeelding bij / wijzig het formaat**" → upload een productscreenshot of een nog niet uitgebracht asset
-- "**Formatteer deze JSON**" / "decodeer deze JWT" → plakt API-responses, tokens en geheimen in een formatter
-- "**Voeg deze PDF's samen**" → upload **twee documenten die nooit een server mogen delen**
-
-Deze sites en hun enorme staart aan kloons zijn **standaard niet betrouwbaar**, met
-onbekende bewaartermijnen, onbekende rechtsgebieden, onbekende subverwerkers, en een advertentie-/affiliate-
-verdienmodel dat elke prikkel heeft om te bewaren wat je ze geeft. De bewerking is
-triviaal; **de content is de prijs.** 
+Deze sites en hun enorme staart aan klonen zijn **standaard niet te vertrouwen**, met
+onbekende bewaartermijnen, onbekende jurisdicties, onbekende subverwerkers en een verdienmodel
+op basis van advertenties/affiliates dat er alle belang bij heeft te houden wat je ze geeft. De bewerking is
+triviaal; de **content is de prijs.** 
 
 We winnen de strijd om governance met uitstekend gemak en uitstekende service. 
 
+![De weergave Hulpprogramma's verzamelt de mechanische klussen die mensen normaal aan een willekeurige website geven, maar dan draaiend binnen Lolly](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1)
+
 ## Kan Lolly mijn Figma-, Penpot-, Illustrator- of InDesign-bestanden bewerken en renderen?
 
-![Design's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+Ja. Open **Design** en klik op **Import a design** (een ontwerp importeren): het accepteert een native Figma-**.fig** (Save local copy), een Penpot-export **.penpot**, een Illustrator-**.ai** of **.pdf**, een InDesign-**.idml** (File → Export → InDesign Markup) of **elke SVG** (de brede deur - vrijwel elke ontwerpapp exporteert dat). Geen account, geen plug-in en geen licentie voor een ontwerpapp nodig.
 
-Ja. Open **Design** en klik op **Een ontwerp importeren**: het accepteert een natieve Figma **.fig** (Save local copy), een Penpot **.penpot**-export, een Illustrator **.ai** of **.pdf**, een InDesign **.idml** (File → Export → InDesign Markup), of **elke SVG** (de brede deur - bijna elke ontwerptoepassing kan dit exporteren). Alles wordt volledig op je eigen apparaat verwerkt, geen account of plug-in nodig.
+![Het open canvas van Design, waar Import a design in de werkbalk zit](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
-Lagen komen binnen als bewerkbare vakken op het open canvas: tekst blijft herschrijfbaar, vormen blijven vormen, afbeeldingen worden toegevoegd aan je lokale bibliotheek, en typografie en kleuren volgen de merk-globals. Sla het op en de lay-out wordt een herbruikbare, via URL benaderbare template die iedereen met Lolly kan invullen - en je kunt er live tools doorheen mengen (een QR-code, een grafiek) die bij het laden opnieuw renderen. Van daaruit rendert het zoals al het andere in Lolly - SVG, PDF, PNG en de rest, reproduceerbaar vanaf de URL. Zie [Een ontwerp importeren](/info/design-import.html).
+Lagen komen binnen als bewerkbare vakken op het open canvas: tekst blijft overtypbaar, vormen blijven vormen, afbeeldingen komen in je eigen afbeeldingsbibliotheek en typografie en kleuren voldoen aan de merkglobals. Sla het op en de lay-out wordt een herbruikbare, via een URL adresseerbare template die iedereen met Lolly opnieuw kan vullen - en je kunt er live tools in mengen (een QR-code, een grafiek) die bij het laden opnieuw renderen. Vanaf daar rendert het net als al het andere in Lolly - SVG, PDF, PNG en de rest, reproduceerbaar vanaf de URL. Zie [Een ontwerp importeren](/info/design-import.html).
 
-## Wat gebeurt er op 29 augustus?
+## Kan ik mijn werk als bestand delen in plaats van als link?
 
-De tools met de SUSE-branding verlaten het project, en nieuwe generieke voorbeeldtools, gedefinieerd door de gebruiker, nemen het over.
+Ja. Als een link niet alles kan meenemen (je eigen foto's, lange teksten), vertelt het deelvenster precies wat er zou wegvallen en biedt het in plaats daarvan een **.lolly**-bestand aan: één bestand met het ontwerp, de afbeeldingen die het gebruikt en, als je dat wilt, de tool zelf. Jij bepaalt hoeveel er meereist - je naam en gegevens gaan alleen mee als je profiel daarvoor kiest, gelicentieerde beelden blijven achter tenzij je ze meestuurt, en wie een bestand opent waar een tool in zit, krijgt eerst de vraag of hij die vertrouwt voordat die mag draaien. Zie [Je werk delen](/info/using.html#sharing-your-work).
 
-SUSE zal zijn eigen Lolly beheren om zijn handelsmerken te beschermen.
+## Kunnen twee mensen aan hetzelfde ontwerp werken zonder internet?
 
-## Hoeveel houdt SUSE privé? (ook wel: wanneer komt de rug-pull)
+Ja. De één deelt een uitnodiging (een link, een QR-code of een korte code), de ander accepteert, en beide apparaten houden dezelfde sessie live - inclusief aanwezigheid en focusringen. Het werkt op elk gedeeld netwerk, ook op een telefoonhotspot in een kelder, want er zit geen server tussen. Zie [Samenwerken](/info/collaborate.html).
 
-De handelsmerken en gebrande tools van SUSE zijn alleen voor demonstratiedoeleinden, tot 29 augustus. Je vindt een ongebrande versie van Lolly op [lolly.ART](https://lolly.art).
+## Waar zijn de tools met SUSE-merk gebleven?
 
-SUSE is een enterprise open source infrastructuurbedrijf met meer dan drie decennia aan platformleiderschap. De producten omvatten Linux-, Cloud Native-, Edge- en AI-infrastructuuroplossingen op enterpriseniveau.
+Die staan al in een aparte, private repository. Een publieke clone haalt het SUSE-merkpakket helemaal niet op, dus een publieke build draait het neutrale profiel `lolly-start` - de merkonafhankelijke community-tools plus een leeg merk dat je met je eigen merk invult. SUSE draait een eigen instantie om zijn handelsmerken te beschermen.
 
-Vanuit het perspectief van SUSE gaat dit om het waarmaken van soevereiniteit en veiligheid. Vandaag de dag is de kans dat SUSE Lolly tot product maakt vrijwel nul.
+## Waarom is het gratis? Wat is het addertje?
 
-Volledige openheid: SUSE *is* wel bezig met het bouwen van interne tooling om Lolly te integreren binnen zijn IT-systemen - dat gaat over de interne inrichting van SUSE, niet over publieke versus private ontwikkeling.
+**We hebben Lolly voor onszelf gebouwd.** SUSE had duizenden merkconforme bestanden nodig, elk met zijn naam erin verzegeld, gemaakt zonder iets aan externe diensten af te staan. Dus bouwden we een tool die dat allemaal op het apparaat doet, en brachten die uit als open source, net als al het andere wat we maken. We blijven het onderhouden omdat we het elke dag gebruiken. **Er is geen enkele verplichting:** alles hier werkt met of zonder ons.
 
-Wat betreft de publieke kant: Lolly streeft ernaar gebouwd te worden via de [Open Build Service](https://openbuildservice.org/), met veilige supply-chain-artefacten die worden geleverd door de [SUSE Application Collection](https://apps.rancher.io/applications).
+Die grens ligt vast in de licentie, niet in een belofte: alles wat lokaal draait is gratis, voor altijd. Een versie die is uitgebracht, is zo gelicentieerd dat ze niet kan worden teruggenomen, en er is geen contributor agreement dat iemands werk opnieuw zou kunnen licentiëren. Zie [positionering](/info/positioning.html) voor de volledige verklaring.
 
-We bouwen zo veel mogelijk in het openbaar - je zult alleen niet lang meer tools met SUSE-branding zien, en evenmin het interne personeelsbestand en de commerciële processen van SUSE, die geen verband houden met Lolly.
+## Hoeveel houdt SUSE privé? (oftewel wanneer wordt het kleed onder ons vandaan getrokken)
+
+De engine, de shells, de schema's en de merkonafhankelijke tools zijn open source; de handelsmerken van SUSE en de tools met merk zijn het deel dat privé blijft, en die zijn al afgesplitst. Een instantie van Lolly zonder merk vind je op [lolly.ART](https://lolly.art).
+
+De grens is structureel, geen belofte. Elke uitgebrachte versie is open source en kan niet worden teruggetrokken, er is geen contributor agreement dat iemands werk opnieuw zou kunnen licentiëren, en het enige wat wordt achtergehouden is het handelsmerk. Toen een ander bedrijf in 2023 zijn enterprise-Linux-broncode sloot, was SUSE medeoprichter van [OpenELA](https://openela.org) om die code open te houden - dezelfde houding die dit project overneemt.
+
+Volledige openheid: SUSE *bouwt* wel degelijk interne tooling om Lolly in zijn IT-systemen te integreren - dat gaat over de interne inrichting van SUSE, niet over publieke versus private ontwikkeling. Lolly wil ook via [Open Build Service](https://openbuildservice.org/) gebouwd worden, met veilige supply-chain-artefacten geleverd door de [SUSE Application Collection](https://apps.rancher.io/applications).
 
 ## Welke smaak heeft dat Lolly-logo?
 
-Sommigen zeggen Limoen, anderen zeggen Munt en soms Appel - Lolly brengt de zoetigheid, jij bepaalt de smaak!
+Sommigen zeggen limoen, anderen zeggen munt en soms appel; Lolly brengt de zoetheid, jij zorgt voor de smaak!

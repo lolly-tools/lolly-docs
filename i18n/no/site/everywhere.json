@@ -1,9 +1,10 @@
 {
   "heading": "Alt,\nslik du er,\npå hva som helst",
-  "copy": "Kjør offline på enheten din, vær alltid tilgjengelig hostet online - du bestemmer.\nLolly Tools fungerer der.",
+  "copy": "Installer den, eller åpne en hostet adresse, eller begge deler samtidig - du bestemmer.\nLolly Tools kan fungere der.",
   "surfaces": [
     { "icon": "surfaceWeb", "label": "Web" },
     { "icon": "surfaceMacos", "label": "macOS" },
+    { "icon": "surfaceWindows", "label": "Windows" },
     { "icon": "surfaceLinux", "label": "Linux" },
     { "icon": "surfaceIos", "label": "iOS" },
     { "icon": "surfaceAndroid", "label": "Android" },
@@ -12,8 +13,8 @@
   ],
   "modelsIntro": "Tre leveringsmåter:",
   "models": [
-    { "n": "1", "icon": "modelDeploy", "label": "Distribuer", "desc": "Send til enheter gjennom din eksisterende MDM-løsning. Kjører helt offline, bak en hvilken som helst brannmur eller air gap - ingenting forlater enheten." },
+    { "n": "1", "icon": "modelDeploy", "label": "Distribuer", "desc": "Send til maskiner gjennom din eksisterende MDM-løsning. Kjører bak en hvilken som helst brannmur, og inne i et air-gapped nettverk uten noen vei ut i det hele tatt." },
     { "n": "2", "icon": "modelServe", "label": "Server", "desc": "Én hostet instans, brukt i en hvilken som helst nettleser. Ingenting å installere - godkjente oppdateringer når alle i det øyeblikket de slippes." },
-    { "n": "3", "icon": "modelHybrid", "label": "Hybrid", "desc": "Lokale offline-apper pluss en alltid oppdatert nettversjon, som deler ett felles verktøybibliotek - på tvers av alle operativsystemer samtidig." }
+    { "n": "3", "icon": "modelHybrid", "label": "Hybrid", "desc": "Installerte lokale apper pluss en alltid oppdatert nettversjon, som deler ett felles verktøybibliotek - på tvers av alle operativsystemer samtidig." }
   ]
 }

@@ -1,8 +1,5 @@
 {
   "statement": "İçerik egemenliği",
-  "pilotTag": "Prototip",
-  "pilotText": "Kapalı pilot sürüyor · kurumsal ölçek için sağlamlaştırılıyor",
-  "pilotAriaLabel": "Lolly, kapalı bir pilotta yer alan ve kurumsal ölçek için sağlamlaştırılan dahili bir prototiptir",
   "ctas": [
     {
       "href": "/",
@@ -16,11 +13,11 @@
     }
   ],
   "trustChips": [
-    "%100 Ücretsiz",
-    "Çerez Yok",
-    "Kayıt Yok",
+    "Sonsuza Dek Ücretsiz",
     "Açık Kaynak",
-    "Gizlilik Odaklı"
+    "Hesap Yok",
+    "Çerez Yok",
+    "Hiçbir Şey Geri Göndermez"
   ],
-  "toolCountSuffix": "Örnek Araç Yüklendi"
+  "toolCountSuffix": "Araç Hazır"
 }

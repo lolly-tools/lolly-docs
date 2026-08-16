@@ -1,8 +1,5 @@
 {
   "statement": "Suverenita obsahu",
-  "pilotTag": "Prototyp",
-  "pilotText": "Probíhá uzavřený pilotní program · ladíme pro podnikové nasazení",
-  "pilotAriaLabel": "Lolly je interní prototyp v uzavřeném pilotním programu, připravovaný pro podnikové nasazení",
   "ctas": [
     {
       "href": "/",
@@ -16,11 +13,11 @@
     }
   ],
   "trustChips": [
-    "100% zdarma",
-    "Bez cookies",
-    "Bez registrace",
+    "Zdarma navždy",
     "Otevřený zdroj",
-    "Soukromí na prvním místě"
+    "Bez účtu",
+    "Bez cookies",
+    "Nic neodesílá"
   ],
-  "toolCountSuffix": "Ukázkových nástrojů načteno"
+  "toolCountSuffix": "nástrojů připraveno"
 }

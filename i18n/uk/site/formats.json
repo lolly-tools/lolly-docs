@@ -1,10 +1,11 @@
 {
   "heading": "Кожен формат — на вхід і на вихід",
-  "lead": "Lolly читає 29 вихідних форматів і рендерить 31 - ось повний перелік, згрупований за типом кожного. П'ятнадцять {roundtrip}: читаються *і* записуються, тому з'являються в обох колонках.",
+  "_lead_note": "Deliberately count-free: the in/out/round-trip numbers are computed live in docs/build.ts from formats-catalog.json's dir fields, so no string in this file may hard-code one.",
+  "lead": "Lolly читає десятки вихідних форматів і рендерить ще десятки — ось повний перелік, згрупований за типом кожного. {roundtrip} із них читаються *і* записуються, тому стоять один раз посередині.",
   "ingestsLabel": "Імпорт",
-  "ingestsCount": "29 вхід",
+  "ingestsCount": "на вхід",
   "exportsLabel": "Експорт",
-  "exportsCount": "31 на вихід",
+  "exportsCount": "на вихід",
   "ingests": [
     {
       "category": "Вектор",
@@ -13,6 +14,10 @@
     {
       "category": "Растр",
       "list": "PNG · JPG · WEBP · GIF · HEIC · TIFF · AVIF"
+    },
+    {
+      "category": "Багатошарові",
+      "list": "PSD · PSB · XCF"
     },
     {
       "category": "Анімація",
@@ -43,6 +48,10 @@
     {
       "category": "Растр",
       "list": "PNG · JPG · WEBP · AVIF · TIFF · CMYK TIFF · ICO"
+    },
+    {
+      "category": "Багатошарові",
+      "list": "PSD"
     },
     {
       "category": "Анімація",

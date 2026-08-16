@@ -1,7 +1,7 @@
 {
   "eyebrow": "Bawa apa yang sudah Anda buat",
-  "heading": "File desain Anda tidak terjebak",
-  "lead": "Karya yang sudah selesai di **Figma, Penpot, Illustrator, InDesign, atau aplikasi SVG apa pun** tidak harus tetap terkunci di satu aplikasi saja. Buka **Design**, klik **Impor desain**, dan file tersebut terbuka sebagai layout yang hidup - bukan gambar yang sudah diratakan. Setiap layer menjadi kotak yang dapat diedit, siap untuk terus dikerjakan, digabungkan dengan alat, dan dirender melalui aturan yang sama.",
+  "heading": "Berkas desain Anda tidak terjebak",
+  "lead": "Karya yang sudah selesai di **Figma, Penpot, Illustrator, InDesign atau aplikasi SVG apa pun** tidak harus tetap terkunci di satu aplikasi saja. Buka **Design**, klik **Impor desain**, dan berkasnya terbuka sebagai layout yang hidup - bukan gambar yang sudah diratakan. Setiap layer menjadi kotak yang dapat diedit, siap untuk terus dikerjakan, digabungkan dengan alat dan dirender melalui aturan yang sama.",
   "sources": [
     { "mono": "Fig", "name": "Figma", "fmt": ".fig · SVG", "color": "#a259ff" },
     { "mono": "Pen", "name": "Penpot", "fmt": ".penpot", "color": "#12b886" },
@@ -10,9 +10,9 @@
     { "mono": "SVG", "name": "SVG Apa Saja", "fmt": "universal", "color": "#2453ff" }
   ],
   "flow": [
-    { "icon": "importFlowFile", "title": "File desain Anda", "desc": "Figma, Penpot, Illustrator, InDesign, atau SVG apa pun" },
-    { "icon": "importFlowCanvas", "title": "Kanvas yang dapat diedit", "desc": "Setiap layer menjadi kotak yang dapat Anda ubah teksnya, ubah gayanya, dan pindahkan" },
-    { "icon": "importFlowMix", "title": "Gabungkan dengan alat", "desc": "Tambahkan kode QR, bagan langsung, atau render lain" },
+    { "icon": "importFlowFile", "title": "Berkas desain Anda", "desc": "Figma, Penpot, Illustrator, InDesign atau SVG apa pun" },
+    { "icon": "importFlowCanvas", "title": "Kanvas yang dapat diedit", "desc": "Setiap layer menjadi kotak yang bisa Anda ketik ulang, ubah gayanya dan pindahkan" },
+    { "icon": "importFlowMix", "title": "Gabungkan dengan alat", "desc": "Tambahkan kode QR, bagan langsung atau render lain" },
     { "icon": "importFlowRender", "title": "Render di mana saja", "desc": "SVG, PDF, PNG, video - dapat direproduksi dari sebuah URL" }
   ],
   "points": [

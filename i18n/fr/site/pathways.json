@@ -1,30 +1,38 @@
 {
-  "title": "Trois façons de commencer",
-  "lead": "Commence par le [Démarrage rapide](/info/quickstart.html) - importe ta marque et sors ton premier fichier - puis suis le parcours qui te correspond.",
+  "title": "Par où commencer",
+  "lead": "Choisis une porte, ou lance-toi directement plus bas.",
   "cards": [
     {
-      "href": "/info/creators.html",
+      "href": "/info/make-something.html",
       "icon": "media",
+      "eyebrow": "Commence ici",
+      "name": "Crée quelque chose, tout simplement",
+      "desc": "Trois tâches du quotidien, bouclées en une minute chacune. Sans compte, sans installation.",
+      "cta": "C'est parti →"
+    },
+    {
+      "href": "/info/creators.html",
+      "icon": "tool",
       "eyebrow": "Pour les créateurs",
       "name": "Crée des choses",
-      "desc": "Des fichiers finis en quelques secondes - pas d'outil de design, pas d'attente. Les avantages, et comment tirer le meilleur parti de l'application.",
+      "desc": "Des fichiers finis en quelques secondes, et comment tirer le meilleur parti de l'application.",
       "cta": "Explorer →"
     },
     {
       "href": "/info/builders.html",
       "icon": "developers",
       "eyebrow": "Pour les développeurs",
-      "name": "Créer et intégrer",
-      "desc": "Crée des outils, pilote-les depuis la CLI, MCP ou un agent, et déploie la plateforme. La documentation technique.",
+      "name": "Créer et automatiser",
+      "desc": "Crée des outils, pilote-les depuis la CLI, MCP ou un agent, et déploie la plateforme.",
       "cta": "Lire la documentation →"
     },
     {
       "href": "/info/operators.html",
       "icon": "security",
       "eyebrow": "Pour les opérateurs",
-      "name": "Déploie-le en toute sécurité",
-      "desc": "Une stratégie de prévention des pertes de données en profondeur déguisée en plateforme créative. Stratégie, sécurité et adoption.",
-      "cta": "Voir la stratégie →"
+      "name": "Déploie-le",
+      "desc": "Une stratégie de sécurité qui se trouve être aussi une plateforme créative. Déploiement, gouvernance et adoption.",
+      "cta": "Voir comment →"
     }
   ]
 }

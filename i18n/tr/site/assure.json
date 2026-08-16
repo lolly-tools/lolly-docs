@@ -1,17 +1,15 @@
 {
-  "eyebrow": "Köken ve gizlilik",
+  "eyebrow": "Kanıt ve gizlilik",
   "heading": "Yaptığını kanıtla.\nSana ait olanı koru.",
-  "lead": "Dışa aktardığın her görsel, PDF ya da video, tamamen cihazında oluşturulan, kurcalamaya karşı korumalı bir [C2PA](https://c2pa.org) mührü olan bir **Content Credential** taşıyabilir. Dosyanın Lolly'den çıktığından bu yana değişmediğini kanıtlar ve bir kimlik kaydettirdiğinde kimin imzaladığını da not eder.",
-  "illustration": "illusCheck",
+  "lead": "Dışa aktardığın neredeyse her görsel, PDF ya da video - PNG, JPG, APNG, GIF, SVG, TIFF, WebP, PDF, MP4 ve WebM - bir **Content Credential** taşıyabilir: tam da çalıştığın yerde oluşturulup imzalanan, kurcalamaya karşı korumalı bir [C2PA](https://c2pa.org) mührü. Mühür, dışa aktarılan her baytı kapsar: bir şeyi değiştirdiğinde bir C2PA doğrulayıcısı bunu söyler, bir kimlik kaydettirdiğinde de kimin imzaladığını not eder. Rasterlar ayrıca, varsayılan olarak açık gelen görünmez **Lolly Imprint**'i piksellerin içinde taşır; böylece kimlik bilgisi silinse bile bir kopya yine tanınabilir.",
   "checks": [
     { "title": "Varsayılan olarak kurcalamaya karşı korumalı", "desc": "Mühür, dışa aktarılan her baytı kapsar. Tek bir pikseli değiştir, herhangi bir C2PA doğrulayıcısı bunu tespit eder." },
-    { "title": "Cihazında imzalanır", "desc": "İmzalama anahtarın yerel olarak oluşturulur ve cihazından asla çıkmaz - Lolly bile onu okuyamaz." },
-    { "title": "Herkes tarafından, çevrimdışı doğrulanabilir", "desc": "Dosya kendi kanıtını taşır. Verify sekmesinde, CLI'de ya da herhangi bir C2PA doğrulayıcısında kontrol et - hiçbir şey yüklenmez." }
+    { "title": "Yalnızca tarayıcının sahip olduğu bir anahtarla imzalanır", "desc": "Anahtar, dışarı çıkarılamaz biçimde oluşturulur; yani hiçbir kod - Lolly'ninki dahil - onu geri okuyamaz." },
+    { "title": "Her şeyi kendin doğrula", "desc": "Verify sekmesi bir dosyanın kimlik bilgisini kontrol eder, yapay zekâ üretimi içeriği işaretler, Lolly Imprint'i okur ve gizli verileri ortaya çıkarır." }
   ],
   "cards": [
-    { "icon": "assureEyeOff", "title": "Hiçbir şey cihazından çıkmaz", "desc": "Bulutta oluşturma yok, telemetri yok, analitik yok. Yaptığın şey kendi makinende kalır." },
-    { "icon": "assureScan", "title": "Cihazında temizle ve kilitle", "desc": "Strip Hidden Data, EXIF ve meta verileri yerel olarak kaldırır. Bir PDF'i, bir indirmeyi ya da bir paylaşım bağlantısını, cihazından hiç çıkmayan bir parolayla kilitle." },
-    { "icon": "assureServer", "title": "Kendi sunucunda barındır ya da hava boşluğunda çalıştır", "desc": "Sunucu yok, veritabanı yok, backend yok. Tamamen güvenlik duvarının arkasında, tamamen çevrimdışı çalıştır." }
+    { "icon": "assureScan", "title": "Temizle ve kilitle", "desc": "Strip Hidden Data, EXIF ve meta verileri yerel olarak kaldırır. Bir PDF'i, bir indirmeyi ya da bir paylaşım bağlantısını yalnızca sende olan bir parolayla kilitle." },
+    { "icon": "assureServer", "title": "Kendi sunucunda barındır ya da hava boşluğunda çalıştır", "desc": "Çekirdek oluşturma yolunda backend yok - işletilecek veritabanı yok, sunucu tarafında işlem yok. Tamamen kendi güvenlik duvarının arkasında çalıştır; isteğe bağlı sunucu eklentilerini hiç kullanmayabilirsin." }
   ],
   "cta": "Content Credentials nasıl çalışır →",
   "ctaHref": "/info/content-credentials-identity.html"

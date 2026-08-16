@@ -1,14 +1,24 @@
 {
   "panels": [
     {
-      "illustration": "illusSound",
-      "heading": "Accessible, avec du son",
-      "desc": "Une interface qui fonctionne comme toi - compatible avec les lecteurs d'écran et entièrement navigable au clavier, du début à la fin. Active des sons d'interface doux, ou passe en **Neurospicy Mode** : un rythme de concentration calme qui tourne en boucle discrètement pendant que tu travailles."
+      "heading": "Partage tout d'un bloc",
+      "desc": "Quand un lien ne peut pas tout emporter, Lolly te dit exactement ce qui manquerait et te propose l'ensemble sous forme d'un seul fichier **.lolly** : tes images, le design, et même l'outil. Tu choisis ce qui voyage - tes informations, les visuels sous licence et l'outil ne sont inclus que si tu le demandes, et la personne qui l'ouvre est prévenue avant qu'un outil embarqué puisse s'exécuter."
     },
     {
-      "illustration": "illusBulk",
+      "heading": "Travaille à plusieurs, sans internet",
+      "desc": "Deux personnes, deux appareils, un design, modifié en direct. Scanne un code d'un bout à l'autre de la table et les deux écrans tiennent la même session - dans un avion, dans une cave, sur un partage de connexion. Aucun serveur au milieu, ni à qui faire confiance ni qui puisse tomber en panne."
+    },
+    {
+      "heading": "Présente-le en plein écran",
+      "desc": "Les frames d'un design deviennent des diapositives : fais-les défiler sur grand écran, ouvre un mode présentateur avec les notes et un minuteur, ou laisse tourner en boucle sur l'écran de l'accueil. Pas d'appli de présentation à part."
+    },
+    {
       "heading": "Organise, puis génère en lot",
-      "desc": "Garde ton travail enregistré dans des dossiers **Projets** imbriqués. Quand vient le moment de livrer, génère un dossier entier - ou la sélection de ton choix - en un seul zip. Pas besoin de tableur, ni de grille de traitement par lots."
+      "desc": "Garde ton travail enregistré dans des dossiers **Projets** imbriqués. Quand vient le moment de livrer, génère un dossier entier - ou la sélection de ton choix - en un seul zip. Ou colle un tableur et obtiens un fichier fini par ligne."
+    },
+    {
+      "heading": "Accessible, avec du son",
+      "desc": "Une interface qui fonctionne comme toi - compatible avec les lecteurs d'écran et entièrement navigable au clavier, du début à la fin. Active des sons d'interface doux, ou passe en **Neurospicy Mode** : un rythme de concentration calme qui tourne en boucle discrètement pendant que tu travailles."
     }
   ]
 }

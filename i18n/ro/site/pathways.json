@@ -1,30 +1,38 @@
 {
-  "title": "Trei căi de intrare",
-  "lead": "Începe cu [Pornire rapidă](/info/quickstart.html) - adaugă-ți brandul și obține primul tău fișier - apoi urmează calea potrivită pentru tine.",
+  "title": "Căi de intrare",
+  "lead": "Alege o ușă, sau începe direct să creezi mai jos.",
   "cards": [
     {
-      "href": "/info/creators.html",
+      "href": "/info/make-something.html",
       "icon": "media",
+      "eyebrow": "Începe aici",
+      "name": "Creează pur și simplu ceva",
+      "desc": "Trei treburi de zi cu zi, gata în cam un minut fiecare. Fără cont, fără configurare.",
+      "cta": "Începe →"
+    },
+    {
+      "href": "/info/creators.html",
+      "icon": "tool",
       "eyebrow": "Pentru creatori",
       "name": "Creează lucruri",
-      "desc": "Fișiere finalizate în câteva secunde - fără instrument de design, fără așteptare. Avantajele și cum să obții maximul din aplicație.",
+      "desc": "Fișiere finalizate în câteva secunde, și cum să obții maximul din aplicație.",
       "cta": "Explorează →"
     },
     {
       "href": "/info/builders.html",
       "icon": "developers",
       "eyebrow": "Pentru dezvoltatori",
-      "name": "Creează și integrează",
-      "desc": "Creează instrumente, controlează-le din CLI, MCP sau un agent, și implementează platforma. Documentația tehnică.",
+      "name": "Creează și automatizează",
+      "desc": "Creează instrumente, controlează-le din CLI, MCP sau un agent și implementează platforma.",
       "cta": "Citește documentația →"
     },
     {
       "href": "/info/operators.html",
       "icon": "security",
       "eyebrow": "Pentru operatori",
-      "name": "Implementeaz-o în siguranță",
-      "desc": "O strategie de prevenire a pierderii de date cu apărare în profunzime, deghizată în platformă creativă. Strategie, securitate și adopție.",
-      "cta": "Vezi strategia →"
+      "name": "Implementeaz-o",
+      "desc": "O strategie de securitate care se nimerește să fie și o platformă creativă. Implementare, guvernanță și adopție.",
+      "cta": "Vezi cum →"
     }
   ]
 }

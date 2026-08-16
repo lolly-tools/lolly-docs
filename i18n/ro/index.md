@@ -1,47 +1,51 @@
 
-# Lolly - Textele paginii de destinație
+# Lolly - Textul paginii de start
 
-Fișiere gata de producție în câteva secunde - reguli de design, logică de layout și calitate de export integrate. Fără așteptare, fără presupuneri.
-Rulează pe propriul tău dispozitiv. Nimic de încărcat, nimic de învățat, funcționează offline.
+Tu le faci, tu le păstrezi: fișiere gata în câteva secunde, pe propriul tău dispozitiv.
+Alegi un instrument, adaugi textul tău și iese cum trebuie: culorile, fonturile și aranjarea sunt deja rezolvate.
+Identice acolo unde vrei, diferite cum vrei.
+Gratuit și rămâne gratuit: fără cont, fără card, fără capcane.
+
 
 ---
 
-## Marketing
+## Marketeri
 
-### Totul gata, fără nicio așteptare.
+### Totul gata, fără așteptare.
 
-Ai nevoie de un card cu citat, un tile de eveniment, o semnătură localizată - azi, nu în următorul sprint. Lolly ți-l dă înapoi finalizat și aliniat cu brandul, chiar dacă n-ai deschis niciodată un instrument de design. Regulile trăiesc în template, așa că rezultatul iese corect.
+Ai nevoie de un card cu un citat, de o imagine pentru un eveniment, de o semnătură localizată - azi, nu în sprintul următor. Lolly ți-l dă înapoi finisat și conform brandului, chiar dacă nu ai deschis niciodată un program de design. Regulile stau în șablon, așa că rezultatul iese cum trebuie.
 
-- **Completează câteva câmpuri, obții resursa finită.** Fără fonturi de ales, fără culori de pus la îndoială, fără „e ăsta logo-ul potrivit?”. Instrumentul știe deja. Tu aduci cuvintele.
-- **Permutări infinite, o singură sursă de adevăr.** Localizează un card cu citat în 12 limbi, schimbă un lockup de brand în 40 de campanii sau generează fiecare variantă de dimensiune pentru fiecare plasare - fără să atingi design-ul. Coordonează totul dintr-o foaie de calcul, în grila de batch: lipește sau importă un CSV și obții o resursă finită pentru fiecare rând.
-- **Fără blocaj de agenție creativă pentru resurse de rutină.** Semnături de email, numărători inverse pentru evenimente, carduri cu citate, hărți stradale - tot ce are nevoie echipa ta într-o marți la ora 16:00, în regim self-service.
-- **Colaborează fără risc de conformitate.** Fără date despre clienți încărcate pe servicii cloud terțe. Fără licențe SaaS de auditat. Rulează integral pe puterea de calcul locală a dispozitivului.
+- **Completezi câteva câmpuri, primești materialul finit.** Niciun font de ales, nicio culoare de pus la îndoială, niciun "o fi logoul potrivit?" Instrumentul știe deja. Tu aduci cuvintele.
+- **Variații fără număr, o singură sursă de adevăr.** Localizezi un card cu citat în 12 limbi, schimbi un lockup de brand în 40 de campanii sau faci fiecare variantă de dimensiune pentru fiecare plasare - fără să atingi designul. Conduci totul dintr-un tabel, în grila de loturi: lipești sau imporți un CSV și primești câte un fișier finit pentru fiecare rând.
+- **Fără blocaj la agenția de creație pentru materialele de rutină.** Semnături de e-mail, numărători inverse pentru evenimente, carduri cu citate, coduri QR - tot ce îi trebuie echipei tale marți la ora 16, în autoservire.
+- **Fără o rundă de achiziții pentru o imagine.** Niciun abonament nou de aprobat, nicio licență de auditat, niciun loc de cumpărat pentru omul care avea nevoie de o singură imagine într-o marți.
 
 ---
 
 ## Vânzări
 
-### Intră în fiecare întâlnire cu exact ce ai nevoie.
+### Intri în orice întâlnire exact cu ce îți trebuie.
 
-Ești pe drum, prezentarea nu e cea potrivită, clientul a cerut ceva anume. Lolly transformă orice dispozitiv într-un studio de resurse - fără designer, fără așteptare, fără scuze.
+Ești pe drum, prezentarea nu e cea potrivită, clientul a cerut ceva anume. Lolly transformă orice dispozitiv într-un studio de materiale - fără designer, fără așteptare, fără scuze.
 
-- **Nu aștepta nimic.** Dacă ești pe drum, dacă n-au mai rămas zile până la întâlnire, ai nevoie de resurse acum. Generează-le.
-- **O armată de-o singură persoană.** Puterea unei campanii globale coordonate, în palma mâinii tale. Fiecare reprezentant, fiecare regiune, aceeași finisare.
-- **Experiență de clasă mondială.** Nimic nu pare grăbit, deși a fost randat instantaneu. Nimic nu e un exemplar unic - așa că fiecare interacțiune iese puțin mai șlefuită decât precedenta.
-- **Uau, ce rapidă e echipa ta!** Ei dorm. Asta era deja rezolvată din prima dată când am avut nevoie de ea.
+- **Nu aștepți nimic.** Dacă ești pe drum și nu mai ai zile până la întâlnire, ai nevoie de materiale acum. Le generezi.
+- **Repari prezentarea pe care o ai deja.** Lași fișierul PowerPoint în Lolly și slide-urile lui se deschid imediat, așa că poți alege ce merită păstrat și poți refolosi conținutul ca grafică vectorială clară - apoi reconstruiești prezentarea din câteva rânduri de Markdown și trimiți înapoi un `.pptx` nativ, editabil.
+- **Un singur om, toată campania.** Fiecare reprezentant, din fiecare regiune, lucrează după aceleași reguli, cu aceeași finisare.
+- **Experiență de primă clasă.** Nimic nu pare făcut în grabă, deși a fost randat instantaneu. Nimic nu e de unică folosință - așa că fiecare interacțiune iese ceva mai șlefuită decât cea dinainte.
+- **Munca e deja făcută în clipa în care ți se cere.** Un instrument construit prima dată când cineva a avut nevoie de materialul acesta îl face din nou în câteva secunde, la orice oră, în orice fus orar.
 
 ---
 
 ## Jurnaliști
 
-### Trusa ta editorială, construită pentru viteză și precizie.
+### Trusa ta editorială, făcută pentru viteză și precizie.
 
-Construiește-ți stilul info-editorial o singură dată, apoi generează resurse la nivel de calitate pentru publicare, din date live, pe măsură ce se întâmplă.
+Îți construiești o singură dată stilul info-editorial, apoi generezi materiale de calitate publicabilă din date live, pe măsură ce apar.
 
-- **Adu datele direct în vizual.** Conectează date structurate la template-uri de grafice, hărți și tabele. Actualizează cifrele; layout-ul se ocupă singur de rest.
-- **Respectă exact stilul publicației tale.** Instrumentele sunt create cu constrângeri tipografice și de culoare fixate direct în cod - stilul casei tale, impus la nivel de template, nu ca un ghid vag.
-- **Gata de print sau gata de ecran.** Exportă SVG, PDF CMYK, PNG de rezoluție înaltă sau video la 60fps din același template. O singură sursă, fiecare format de care are nevoie redacția ta de producție.
-- **Formate reutilizabile pentru știri recurente.** Rezultate electorale, rezultate financiare trimestriale, evenimente meteo - construiește template-ul o singură dată și refolosește-l de fiecare dată când apare știrea.
+- **Aduci datele direct în vizualuri.** Conectezi date structurate la șabloane de grafice, hărți și tabele. Actualizezi cifrele; aranjarea se rezolvă singură.
+- **Respecți exact stilul publicației tale.** Instrumentele sunt scrise cu constrângeri tipografice și cromatice fixate în cod - stilul casei impus la nivelul șablonului, nu ca o recomandare vagă.
+- **Gata de tipar sau gata de ecran.** Exporți SVG, PDF CMYK, PNG la rezoluție mare sau video la 60fps din același șablon. O sursă, toate formatele de care are nevoie redacția de producție.
+- **Formate refolosibile pentru subiectele recurente.** Rezultate electorale, raportări trimestriale, fenomene meteo - construiești șablonul o dată și îl refolosești de fiecare dată când revine subiectul.
 
 ---
 
@@ -49,44 +53,44 @@ Construiește-ți stilul info-editorial o singură dată, apoi generează resurs
 
 ### Rigoare industrială pentru producția de zi cu zi.
 
-Nu totul e marketing. Etichete de expediție, loturi de ecusoane, fișe de o pagină pentru conformitate, notificări de incident - rezultate în care layout-ul are rol structural, iar datele nu au voie să fie greșite. Lolly tratează conținutul structurat cu aceeași rigoare ca designul de elită.
+Nu totul e marketing. Etichete de transport, serii de ecusoane, pagini de conformitate, anunțuri de incident - rezultate în care aranjarea poartă sensul și datele nu au voie să fie greșite. Lolly tratează o etichetă de transport cu aceeași rigoare cu care tratează un afiș de campanie.
 
-- **Date structurate la intrare, rezultat exact la ieșire.** Alimentează un tabel CSV sau JSON, iar fiecare câmp ajunge exact acolo unde se așteaptă template-ul - un fișier finit pentru fiecare rând.
-- **Precizie fizică.** Unități reale (mm/cm/in/pt), DPI real, bleed și cropmark-uri. O imprimantă de etichete sau o tipografie primește exact ce are nevoie.
-- **Logica rulează în interiorul instrumentului.** Coduri de bare, calcule de date, layout-uri condiționale, verificări de contrast - calculate în momentul randării, nu manual.
-- **Determinist prin design.** Aceleași date de intrare, același fișier, de fiecare dată. Auditabil, repetabil, automatizabil din CLI sau dintr-un pipeline.
+- **Date structurate la intrare, rezultat exact.** Îi dai un tabel CSV sau JSON și fiecare câmp ajunge exact acolo unde îl așteaptă șablonul - câte un fișier finit pentru fiecare rând.
+- **Precizie fizică.** Unități reale (mm/cm/in/pt), DPI real, bleed și semne de tăiere. O imprimantă de etichete sau o tipografie primește exact ce îi trebuie.
+- **Logica rulează în interiorul instrumentului.** Coduri de bare, calcule cu date calendaristice, aranjări condiționate, verificări de contrast - calculate la randare, nu de mână.
+- **Determinist prin construcție.** Aceleași intrări, același fișier, de fiecare dată. Auditabil, repetabil, automatizabil din CLI sau dintr-un pipeline.
 
 ---
 
-## Media și creativi
+## Media & creativi
 
-### Nu mai face ce se pricep mașinile să facă mai bine.
+### Nu mai face lucrurile pe care mașinile le fac cel mai bine.
 
-Tu proiectezi sisteme și rezolvi probleme, nu piese unicat. Lolly este stratul de execuție care transformă deciziile tale de design în instrumente pe care le poate folosi toată organizația - fără să fii tu implicat pentru fiecare resursă în parte.
+Tu proiectezi sisteme și rezolvi probleme, nu faci lucrări de unică folosință. Lolly e stratul de execuție care îți transformă deciziile de design în instrumente pe care le poate folosi toată organizația - fără să fii tu implicat la fiecare material.
 
-- **Aici e granița.** Filtre avansate, compositing, animație, design generativ - platforma nu are plafon. Fiecare tehnologie web e disponibilă pentru autorul de template-uri. Fă mai mult decât ar permite orice suită creativă - cu toată puterea necesară pentru a obține o calitate de producție finită.
-- **Instrumentele compun instrumente.** Un instrument poate integra rezultatul altui instrument ca resursă live - un ecuson nominal care își randează propriul cod QR, un card care inserează un grafic live - fără niciun instrument de design și fără compositing manual.
-- **Creează instrumente, nu fișiere.** Construiește un template care generează 10.000 de carduri pentru social media, în loc să creezi manual 10.000 de carduri. Timpul tău se duce spre problema de design, nu spre rularea de producție.
-- **Elimină ce e plictisitor.** Punere în pagină optimă, plasarea logo-ului, poziționarea pinurilor pe hartă, verificări de contrast al culorilor, dimensionarea la export - toate rezolvate la nivel de template. Definești regulile o singură dată și lași repetiția în seama mașinii.
-- **Blochează ce nu ar trebui să se schimbe, eliberează ce ar trebui.** Fixează constrângerile de brand direct în cod. Expune doar variabilele care chiar sunt menite să varieze. Instrumentul devine parapetul creativ.
+- **Limita de sus e chiar platforma web.** Filtre avansate, compoziție, animație, design generativ: orice tehnologie web îi stă la dispoziție autorului de șabloane, iar tot ce poate desena un browser poate exporta un instrument la calitate de producție.
+- **Instrumentele se compun din instrumente.** Un instrument poate include rezultatul altui instrument ca material viu - un ecuson care își randează propriul cod QR, un card în care intră un grafic live - fără program de design și fără compunere manuală.
+- **Scrii instrumente, nu fișiere.** Construiești un șablon care generează 10.000 de carduri pentru rețele sociale, în loc să faci 10.000 de carduri. Timpul tău merge în problema de design, nu în producția de serie.
+- **Scapi de partea plictisitoare.** Culegere optimă a textului, așezarea logoului, poziționarea pinilor pe hartă, verificările de contrast, dimensionarea la export - toate rezolvate la nivelul șablonului. Definești regulile o dată și lași repetiția pe seama mașinii.
+- **Blochezi ce nu trebuie să se schimbe, eliberezi ce trebuie.** Fixezi în cod constrângerile de brand. Expui doar variabilele care chiar sunt menite să varieze. Instrumentul devine parapetul creativ.
 
 ---
 
 ## Dezvoltatori
 
-### Pipeline-ul tău de build ar trebui să includă și elementele vizuale.
+### Pipeline-ul tău de build ar trebui să includă și vizualurile.
 
-Imaginile sunt artefacte de build. Tratează-le ca atare. Lolly rulează din CLI, așa că poți genera resurse la fel cum generezi orice altceva - repetabil, automat și ca parte din fluxul tău de lucru.
+Imaginile sunt artefacte de build. Tratează-le ca atare. Lolly rulează din CLI, așa că poți genera materiale la fel cum generezi tot restul - repetabil, automat și ca parte din fluxul tău de lucru.
 
-- **Sari peste loteria media generată prin AI.** Ai încercat media generată prin AI - costisitoare și tot nu suficient de bună. Lolly este automatizare de conținut locală, gratuită și mai rapidă, care elimină deopotrivă balastul lor și truda ta.
-- **Rezultate reproductibile.** Aceleași date de intrare produc același fișier, de fiecare dată. Faci commit la un URL, regenerezi la cerere - nu mai trebuie să faci commit la imagini sau să alergi după ultima versiune din Slack.
-- **Scoate media din codebase.** Generează imagini OG, coduri QR, carduri pentru social media și vizualizări de date la momentul build-ului, în loc să stochezi fișiere binare în Git.
-- **Execută logică în interiorul resurselor.** Instrumente precum Code Canvas și Chart Creator îți permit să plasezi conținut real - fragmente de cod, date structurate, valori live - în template-uri de calitate de producție, fără să construiești un motor de randare propriu.
-- **Zero lock-in.** Motor open source, calcul local, fără chei API, fără limite de rată.
+- **Pune modelul la schiță, nu la tipar.** Generarea prin prompt a unor materiale la calitate de tipar e scumpă și nimerește pe aproape, nu exact. Un instrument face același fișier de fiecare dată, pe gratis.
+- **Rezultate reproductibile.** Aceleași intrări produc același fișier, de fiecare dată. Comiți un URL și regenerezi la cerere - gata cu imaginile ținute în repository sau cu alergatul după ultima versiune pe Slack.
+- **Scoți materialele media din codul tău.** Generezi imagini OG, coduri QR, carduri pentru rețele sociale și vizualizări de date la build, în loc să ții binare în Git.
+- **Rulezi logică în interiorul materialelor.** Instrumente ca Code Canvas și Chart Creator îți permit să pui conținut real - fragmente de cod, date structurate, valori live - în șabloane de calitate de producție, fără să construiești un motor de randare propriu.
+- **Zero dependență de furnizor.** Motor open source, calcul local, fără chei de API, fără limite de rată.
 
 ```bash
 lolly qr-code --url=https://suse.com --output=og-qr.svg
-lolly quotes --quote="Ship it." --output=quote.png
+lolly wordmark --text="Ship it." --output=wordmark.png
 ```
 
 ---
@@ -95,64 +99,62 @@ lolly quotes --quote="Ship it." --output=quote.png
 
 ### Spune-i modelului tău să folosească un instrument, nu să halucineze.
 
-Un URL cu parametri înseamnă câțiva tokeni. Un brief creativ plus generarea unei imagini înseamnă mii - iar rezultatul tot nu are calitate de presă. Lolly îi oferă agentului tău un strat creativ determinist și verificabil, gata de producție.
+Un URL cu parametri înseamnă câteva tokenuri. Un brief creativ plus generarea imaginii înseamnă mii - iar rezultatul tot nu e la calitate de tipar. Lolly îi dă agentului tău un strat creativ determinist și verificabil, gata de producție.
 
 
-- **Calitatea de producție nu deviază.** Instrumentele produc grafică de calitate de producție cu o fracțiune din puterea de calcul - realizată local. Instrumentele sunt fixate direct în cod. Când modelul tău devine leneș, layout-ul rămâne neclintit. Regulile tipografice, valorile de culoare, spațierea - sunt structurale, nu rezultatul unui prompt.
-- **Economisește tokeni la scară.** Generarea unui card de eveniment personalizat dintr-un URL costă o fracțiune din cât ar costa să obții același rezultat prin prompt engineering, folosind un model generativ.
-- **Pune datele unde le e locul.** Datele de intrare structurate se mapează pe template-uri structurate. Nume de vorbitori, ore de sesiuni, versiuni de produs - plasate exact acolo unde le așteaptă design-ul, de fiecare dată.
-- **Determinist, auditabil, controlat prin versiuni.** Fiecare rezultat este reproductibil din datele sale de intrare. Fără surprize stocastice în resursele de producție.
+- **Calitatea de producție nu derivează.** Instrumentele produc grafică la calitate de producție cu o fracțiune din calcul - local. Instrumentele sunt fixate în cod. Când modelul tău devine leneș, aranjarea nu devine. Regulile tipografice, valorile de culoare, spațierea - sunt structurale, nu cerute prin prompt.
+- **Economisești tokenuri la scară.** Generarea unui card de eveniment personalizat dintr-un URL costă o fracțiune din cât costă obținerea aceluiași rezultat prin prompturi într-un model generativ.
+- **Pui datele acolo unde le e locul.** Intrările structurate se mapează pe șabloane structurate. Numele vorbitorilor, orele sesiunilor, versiunile de produs - așezate exact acolo unde le așteaptă designul, de fiecare dată.
+- **Determinist, auditabil, ținut în control de versiuni.** Fiecare rezultat e reproductibil din intrările lui. Fără surprize stocastice în materialele de producție.
 
 ```
-Folosește Lolly pentru a invita echipa la KubeCon.
+Use Lolly to invite the team to KubeCon.
 
 Parameters:
   title: "KubeCon 2026"
   date: "2026-11-10"
   location: "Atlanta"
 
-Returnează URL-ul fișierului.
+Output the file URL.
 ```
 
 ---
 
-## Echipele IT și de securitate din companiile mari
+## Echipe IT și de securitate din companii mari
 
-### Fișierele creative n-ar trebui să fie un risc de securitate.
+### Fișierele de creație nu ar trebui să fie un risc de securitate.
 
-De fiecare dată când cineva încarcă un fișier pe un serviciu terț ca să-l facă „doar să arate bine”, e un eveniment de exfiltrare a datelor care așteaptă să se întâmple. Lolly elimină problema la sursă - producția creativă rămâne pe dispozitiv, on-premise și sub controlul tău.
+De fiecare dată când cineva încarcă un fișier într-un serviciu terț doar ca "să arate bine", acolo se pregătește o exfiltrare de date. Lolly elimină problema de la sursă - producția de creație rămâne în infrastructura ta și sub controlul tău.
 
-- **Datele nu părăsesc niciodată dispozitivul.** Implicit, nimic nu este transmis către vreun terț - fără randare în cloud, fără analytics, fără telemetrie. Ce creează colegii rămâne pe calculatorul lor. Utilitare pe dispozitiv precum Strip Hidden Data elimină datele EXIF și metadatele din imagini, SVG și PDF integral în browser - nimic nu este încărcat. Chiar și blocarea unui PDF, a unui întreg download sau a unui link de distribuire cu o parolă se întâmplă pe dispozitiv; parola nu îl părăsește niciodată.
-- **Găzduiește-l singur, pentru control complet de tip air-gap.** Desfășoară-l pe propria infrastructură. Fără procesare pe server, fără bază de date, fără backend. Operează integral offline, în spatele firewall-ului tău, cu propriile politici de acces.
-- **Reduce suprafața de expunere la furnizori.** O singură platformă open source înlocuiește o mulțime dezordonată de abonamente SaaS pentru producția creativă. Mai puțini furnizori înseamnă mai puține contracte, mai puține audituri și mai puțini vectori de breșă.
-- **Impune guvernanța brandului la nivel de infrastructură.** Instrumentele sunt create o singură dată și distribuite ca date - nu fișiere, nu procese manuale. Ce iese pe ușă este exact ce a fost aprobat să iasă pe ușă.
-- **Transformă informația critică în formate lizibile pentru oameni, instantaneu.** Comunicări de incident, rapoarte de conformitate, briefinguri executive - datele structurate devin rezultate de calitate pentru publicare în câteva secunde, fără blocaj de design.
-- **Hardening pentru scară enterprise.** Lolly este un prototip aflat într-un pilot închis: motoarele sale de criptografie și parsare de fișiere trec în prezent prin hardening-ul strict de infrastructură al SUSE, în pregătire pentru scara enterprise - ne pricepem foarte bine la asta. Proveniența și criptarea pe dispozitiv sunt puternice prin design; testează-le într-un context limitat cât timp se finalizează acest hardening. Vezi [Adopție și guvernanță](/info/adoption-governance.html#status).
+- **Datele rămân pe dispozitiv.** Fără randare în cloud, fără analytics, fără telemetrie - și nicio cerere de rețea în afara celor câteva pe care utilizatorul le declanșează explicit, fiecare numită în [politica de confidențialitate](/info/privacy.html). Ce creează colegii rămâne pe calculatorul lor. Utilitarele care rulează pe dispozitiv, cum e Strip Hidden Data, curăță EXIF și metadatele din imagini, SVG și PDF în întregime în browser - nu se încarcă nimic. Chiar și blocarea cu parolă a unui PDF, a unei descărcări întregi sau a unui link de partajare se face pe dispozitiv; parola nu îl părăsește niciodată.
+- **Găzduiește-l singur, pentru control complet, izolat de rețea.** Îl instalezi pe propria infrastructură; cele două componente opționale de server pot fi omise complet. [Producția suverană](/info/sovereign-production.html) descrie întreaga poziție, iar [Suprafața de server](/info/server-surface.html) e inventarul complet.
+- **Reduci suprafața de furnizori.** O singură platformă open source înlocuiește un noian de abonamente SaaS pentru producția de creație. Mai puțini furnizori înseamnă mai puține contracte, mai puține audituri și mai puțini vectori de breșă.
+- **Impui guvernanța de brand la nivel de infrastructură.** Instrumentele sunt scrise o dată și distribuite ca date - nu ca fișiere, nu ca procese manuale. Ce iese pe ușă e exact ce a fost aprobat să iasă pe ușă.
+- **Treci informația critică în formate citibile de oameni, instantaneu.** Comunicări de incident, rapoarte de conformitate, informări pentru conducere - datele structurate devin rezultate de calitate publicabilă în câteva secunde, fără blocaj la design.
+- **Consolidare, la vedere.** Motoarele de criptografie și de parsare a fișierelor din Lolly trec prin procesul de consolidare a infrastructurii de la SUSE: disciplina din spatele a peste trei decenii de tehnologii și servicii de securitate pentru cele mai mari companii din lume. Content Credentials și criptarea locală sunt puternice prin construcție; folosește-le pilot într-un context delimitat până se încheie acest proces. Vezi [Adoptare & guvernanță](/info/adoption-governance.html#status).
 
 ---
 
-## Creatorii
+## Ce primești
 
-**Un prototip intern, aflat într-un pilot închis.** Nu un produs finit - un experiment care avansează rapid. Criptografia și parsarea sa trec în prezent prin hardening-ul strict de infrastructură al SUSE, în pregătire pentru scara enterprise. [Unde se află Lolly chiar acum →](/info/adoption-governance.html#status)
+**O platformă puternică de producție creativă.** Motorul Lolly urmărește cea mai bună calitate pe care o poate da fiecare format - vectori adevărați, text conturat, culoare de nivel tipografic, rezultate native, editabile.
 
 **100% gratuit și open source.** Fără taxe SaaS, fără limite de utilizare, fără dependență de furnizor.
 
-**Funcționează peste tot.** Web PWA, Mac, Linux, iOS, Android, CLI, TUI de terminal - același motor, același rezultat.
+**Merge peste tot.** Web PWA, Mac, Windows, Linux, iOS, Android, CLI, TUI în terminal - același motor, același rezultat.
 
-**Funcționează offline.** Calcul local, stocare locală. Nu este nevoie de internet după prima sincronizare.
+**Formate, la intrare și la ieșire.** Zeci la intrare, zeci la ieșire și multe dintre ele în ambele sensuri - detalierea completă e pe [pagina Formate](/info/formats.html), iar fiecare format în amănunt pe [pagina Export](/info/exporting.html).
 
-**Formate, la intrare și la ieșire.** Creează **25** de formate de export și preia **13** formate sursă - vezi mai jos detalierea completă.
-
-**Calitate de producție.** Text convertit în contur (outlined), suport pentru culori Spot, 60FPS · Media potrivită pentru studio.
+**Calitate de producție.** Text conturat, suport pentru culori spot, 60FPS · materiale demne de studio.
 
 
 ## Instrumentele
 
 
-Gândește-te la el ca la un automat de vending pentru design. Faci o selecție, obții un rezultat. De fiecare dată.
+Gândește-te la el ca la un automat de design. Alegi o poziție, primești un rezultat. De fiecare dată.
 
-Un instrument este un template creativ gata de utilizare, care știe exact ce produce și cum. Dă-i un titlu, o dată, un număr - și produce o resursă finită, conform specificațiilor.
+Un instrument e un șablon creativ gata de folosit, care știe exact ce face și cum. Îi dai un titlu, o dată, un număr - și scoate un material finit, conform specificației.
 
-Nu e nevoie de experiență în design. Nicio decizie despre fonturi, culori sau spațiere - instrumentul știe deja cel mai bine. Fie că ești designer, marketer, dezvoltator sau agent AI, rezultatul este același.
+Nu ai nevoie de experiență în design. Nicio decizie despre fonturi, culori sau spațiere - instrumentul știe deja cel mai bine. Fie că ești designer, marketer, dezvoltator sau agent AI, rezultatul e același.
 
-Instrumentele sunt create o singură dată de oamenii care cunosc brandul și apoi sunt folosite de toți ceilalți - dintr-un browser web, un telefon, linia de comandă sau un pipeline automatizat. Deciziile de design sunt blocate la nivel de template. Singurul lucru rămas de făcut este completarea conținutului.
+Instrumentele sunt scrise o dată de oamenii care cunosc brandul și apoi folosite de toți ceilalți - dintr-un browser web, de pe telefon, din linia de comandă sau dintr-un pipeline automat. Deciziile de design sunt fixate la nivelul șablonului. Singurul lucru rămas de făcut e să completezi conținutul.

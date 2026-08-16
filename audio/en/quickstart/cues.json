@@ -13,202 +13,202 @@
     {
       "blockId": "intro:p3",
       "start": 40.775,
-      "end": 56.2
+      "end": 60.25
     },
     {
       "blockId": "1-make-it-yours-configure-your-design-system",
-      "start": 56.9,
-      "end": 62.975
+      "start": 60.95,
+      "end": 67.025
     },
     {
       "blockId": "1-make-it-yours-configure-your-design-system:p1",
-      "start": 63.325,
-      "end": 87.4
+      "start": 67.375,
+      "end": 91.45
     },
     {
       "blockId": "start-from-scratch-the-design-system-builder",
-      "start": 88.1,
-      "end": 92.57499999999999
+      "start": 92.15,
+      "end": 96.625
     },
     {
       "blockId": "start-from-scratch-the-design-system-builder:p1",
-      "start": 92.925,
-      "end": 140.025
+      "start": 96.975,
+      "end": 144.325
     },
     {
       "blockId": "start-from-scratch-the-design-system-builder:p2",
-      "start": 140.375,
-      "end": 177.975
+      "start": 144.675,
+      "end": 182.275
     },
     {
       "blockId": "import-a-brand-you-already-have",
-      "start": 178.675,
-      "end": 182.425
+      "start": 182.975,
+      "end": 186.725
     },
     {
       "blockId": "import-a-brand-you-already-have:p1",
-      "start": 182.775,
-      "end": 199.05
+      "start": 187.075,
+      "end": 203.5
     },
     {
       "blockId": "import-a-brand-you-already-have:p2",
-      "start": 199.4,
-      "end": 220.05
+      "start": 203.85,
+      "end": 224.5
     },
     {
       "blockId": "import-a-brand-you-already-have:p3",
-      "start": 220.4,
-      "end": 225.65
+      "start": 224.85,
+      "end": 230.1
     },
     {
       "blockId": "import-a-brand-you-already-have:p4",
-      "start": 226,
-      "end": 229.25
+      "start": 230.45,
+      "end": 233.7
     },
     {
       "blockId": "import-a-brand-you-already-have:p5",
-      "start": 229.6,
-      "end": 262.25
+      "start": 234.05,
+      "end": 266.55
     },
     {
       "blockId": "tune-it-in-the-app",
-      "start": 262.95,
-      "end": 265.825
+      "start": 267.25,
+      "end": 270.125
     },
     {
       "blockId": "tune-it-in-the-app:p1",
-      "start": 266.175,
-      "end": 288.475
+      "start": 270.475,
+      "end": 292.77500000000003
     },
     {
       "blockId": "tune-it-in-the-app:p2",
-      "start": 288.825,
-      "end": 308.825
+      "start": 293.125,
+      "end": 313.125
     },
     {
       "blockId": "tune-it-in-the-app:p3",
-      "start": 309.175,
-      "end": 327.95
+      "start": 313.475,
+      "end": 332.125
     },
     {
       "blockId": "tune-it-in-the-app:p4",
-      "start": 328.3,
-      "end": 354.27500000000003
+      "start": 332.475,
+      "end": 358.45000000000005
     },
     {
       "blockId": "2-bring-in-what-you-already-have",
-      "start": 354.975,
-      "end": 360.25
+      "start": 359.15,
+      "end": 364.42499999999995
     },
     {
       "blockId": "2-bring-in-what-you-already-have:p1",
-      "start": 360.6,
-      "end": 370.77500000000003
+      "start": 364.775,
+      "end": 374.95
     },
     {
       "blockId": "open-source-design-files",
-      "start": 371.475,
-      "end": 375
+      "start": 375.65,
+      "end": 379.17499999999995
     },
     {
       "blockId": "open-source-design-files:p1",
-      "start": 375.35,
-      "end": 414.57500000000005
+      "start": 379.525,
+      "end": 418.775
     },
     {
       "blockId": "open-source-design-files:p2",
-      "start": 414.925,
-      "end": 429.90000000000003
+      "start": 419.125,
+      "end": 434.1
     },
     {
       "blockId": "open-source-design-files:p3",
-      "start": 430.25,
-      "end": 451.325
+      "start": 434.45,
+      "end": 455.525
     },
     {
       "blockId": "from-a-one-off-to-a-template",
-      "start": 452.025,
-      "end": 455.59999999999997
+      "start": 456.225,
+      "end": 459.8
     },
     {
       "blockId": "from-a-one-off-to-a-template:p1",
-      "start": 455.95,
-      "end": 489.825
+      "start": 460.15,
+      "end": 494.375
     },
     {
       "blockId": "open-data-and-open-tools",
-      "start": 490.525,
-      "end": 494.34999999999997
+      "start": 495.075,
+      "end": 498.9
     },
     {
       "blockId": "open-data-and-open-tools:p1",
-      "start": 494.7,
-      "end": 508.84999999999997
+      "start": 499.25,
+      "end": 513.4
     },
     {
       "blockId": "open-data-and-open-tools:p2",
-      "start": 509.2,
-      "end": 522.175
+      "start": 513.75,
+      "end": 526.725
     },
     {
       "blockId": "3-make-something-then-share-or-automate-it",
-      "start": 522.875,
-      "end": 528.825
+      "start": 527.425,
+      "end": 533.375
     },
     {
       "blockId": "3-make-something-then-share-or-automate-it:p1",
-      "start": 529.175,
-      "end": 536.6999999999999
+      "start": 533.725,
+      "end": 541.25
     },
     {
       "blockId": "3-make-something-then-share-or-automate-it:p2",
-      "start": 537.05,
-      "end": 552.5
+      "start": 541.6,
+      "end": 556.775
     },
     {
       "blockId": "3-make-something-then-share-or-automate-it:p3",
-      "start": 552.85,
-      "end": 566.525
+      "start": 557.125,
+      "end": 570.8
     },
     {
       "blockId": "3-make-something-then-share-or-automate-it:p4",
-      "start": 566.875,
-      "end": 577
+      "start": 571.15,
+      "end": 581.275
     },
     {
       "blockId": "3-make-something-then-share-or-automate-it:p5",
-      "start": 577.35,
-      "end": 587.85
+      "start": 581.625,
+      "end": 592.125
     },
     {
       "blockId": "3-make-something-then-share-or-automate-it:p6",
-      "start": 588.2,
-      "end": 607.125
+      "start": 592.475,
+      "end": 611.4
     },
     {
       "blockId": "where-to-go-next",
-      "start": 607.825,
-      "end": 610.575
+      "start": 612.1,
+      "end": 614.85
     },
     {
       "blockId": "where-to-go-next:p1",
-      "start": 610.925,
-      "end": 615.5
+      "start": 615.2,
+      "end": 619.7750000000001
     },
     {
       "blockId": "where-to-go-next:p2",
-      "start": 615.85,
-      "end": 625.075
+      "start": 620.125,
+      "end": 629.35
     },
     {
       "blockId": "where-to-go-next:p3",
-      "start": 625.425,
-      "end": 634.8249999999999
+      "start": 629.7,
+      "end": 639.0250000000001
     },
     {
       "blockId": "where-to-go-next:p4",
-      "start": 635.175,
-      "end": 644
+      "start": 639.375,
+      "end": 648.275
     }
   ],
   "words": [
@@ -513,3954 +513,4004 @@
       "end": 44.894261997384824
     },
     {
-      "text": "Open",
-      "start": 45.65832622147005,
-      "end": 46.06185309896842
+      "text": "Make",
+      "start": 45.67026768849697,
+      "end": 45.89067416621156
+    },
+    {
+      "text": "something",
+      "start": 45.951556532880744,
+      "end": 46.35379601613387
+    },
+    {
+      "text": "in",
+      "start": 46.396243381626654,
+      "end": 46.551783852032344
+    },
+    {
+      "text": "60",
+      "start": 46.65540974035954,
+      "end": 47.054951174124675
+    },
+    {
+      "text": "seconds",
+      "start": 47.128570450380465,
+      "end": 47.555116977563486
+    },
+    {
+      "text": "walks",
+      "start": 47.61578973783269,
+      "end": 47.92977805259204
+    },
+    {
+      "text": "you",
+      "start": 47.9906185061197,
+      "end": 48.17073452324823
+    },
+    {
+      "text": "through",
+      "start": 48.262442523141225,
+      "end": 48.516926498009106
+    },
+    {
+      "text": "three,",
+      "start": 48.61814175868689,
+      "end": 49.39647094761549
+    },
+    {
+      "text": "or",
+      "start": 49.46391835973262,
+      "end": 49.65319390971439
+    },
+    {
+      "text": "open",
+      "start": 49.740663584141075,
+      "end": 50.14204392356457
     },
     {
       "text": "the",
-      "start": 46.12294382070175,
-      "end": 46.278765976820296
+      "start": 50.20191417215736,
+      "end": 50.35578093048895
     },
     {
       "text": "app,",
-      "start": 46.36896068137504,
-      "end": 46.71204741762469
+      "start": 50.447815759874686,
+      "end": 50.845457976075316
     },
     {
       "text": "pick",
-      "start": 46.772735807153005,
-      "end": 46.95791085721265
+      "start": 50.9064125251964,
+      "end": 51.08765902869365
     },
     {
       "text": "any",
-      "start": 47.01168177713604,
-      "end": 47.21039095431995
+      "start": 51.142579899152786,
+      "end": 51.347533202143815
     },
     {
       "text": "tool",
-      "start": 47.27631565153768,
-      "end": 47.54014954247083
+      "start": 51.42119898396578,
+      "end": 51.70223663725362
     },
     {
       "text": "from",
-      "start": 47.60159887242637,
-      "end": 47.80875963914802
+      "start": 51.76301534882897,
+      "end": 51.939879952550704
     },
     {
       "text": "the",
-      "start": 47.84681455006658,
-      "end": 47.98441936450267
+      "start": 51.97624989508334,
+      "end": 52.09456906880909
     },
     {
       "text": "gallery,",
-      "start": 48.04590107976933,
-      "end": 48.61845215175787
+      "start": 52.15548837252421,
+      "end": 52.74307483061635
     },
     {
       "text": "fill",
-      "start": 48.70454616967845,
-      "end": 48.924931543597026
+      "start": 52.82897771507879,
+      "end": 53.04532207401073
     },
     {
       "text": "in",
-      "start": 48.95714696527409,
-      "end": 49.06673121195436
+      "start": 53.087379004929225,
+      "end": 53.211921614559934
     },
     {
       "text": "the",
-      "start": 49.10475239721701,
-      "end": 49.25492918238797
+      "start": 53.25121689090889,
+      "end": 53.3929479258277
     },
     {
-      "text": "blanks,",
-      "start": 49.3165501175376,
-      "end": 49.903016344118974
+      "text": "blanks",
+      "start": 53.45637972182175,
+      "end": 53.892713810463334
     },
     {
       "text": "and",
-      "start": 49.96407066243974,
-      "end": 50.195266782306575
+      "start": 53.93974050057986,
+      "end": 54.092455019564156
     },
     {
       "text": "hit",
-      "start": 50.25416569715545,
-      "end": 50.44898030164504
+      "start": 54.15306614833178,
+      "end": 54.33688547926688
     },
     {
-      "text": "Render.",
-      "start": 50.509639643526064,
-      "end": 51.59411926257651
+      "text": "Export.",
+      "start": 54.39676541264382,
+      "end": 55.644390175856046
     },
     {
       "text": "Come",
-      "start": 52.35214573491358,
-      "end": 52.59307750644745
+      "start": 56.402145734913574,
+      "end": 56.64307750644745
     },
     {
       "text": "back",
-      "start": 52.65429064253378,
-      "end": 52.9282842861151
+      "start": 56.704290642533785,
+      "end": 56.9782842861151
     },
     {
       "text": "here",
-      "start": 52.98950146717849,
-      "end": 53.27972510928398
+      "start": 57.039501467178496,
+      "end": 57.329725109283984
     },
     {
       "text": "when",
-      "start": 53.34048959879192,
-      "end": 53.487397663719484
+      "start": 57.39048959879192,
+      "end": 57.53739766371949
     },
     {
       "text": "you",
-      "start": 53.54727958026976,
-      "end": 53.67258613990932
+      "start": 57.597279580269756,
+      "end": 57.722586139909325
     },
     {
       "text": "want",
-      "start": 53.72155317244304,
-      "end": 53.9409798703557
+      "start": 57.771553172443035,
+      "end": 57.9909798703557
     },
     {
       "text": "it",
-      "start": 54.00760397811245,
-      "end": 54.2254159856694
+      "start": 58.05760397811245,
+      "end": 58.275415985669405
     },
     {
       "text": "wearing",
-      "start": 54.287569297531604,
-      "end": 54.690219184357616
+      "start": 58.3375692975316,
+      "end": 58.74021918435761
     },
     {
       "text": "your",
-      "start": 54.75225389632007,
-      "end": 54.97091728654422
+      "start": 58.80225389632007,
+      "end": 59.02091728654422
     },
     {
       "text": "brand.",
-      "start": 55.032417246677554,
-      "end": 56.16916292102519
+      "start": 59.08241724667756,
+      "end": 60.219162921025195
     },
     {
       "text": "1.",
-      "start": 57.312071360273045,
-      "end": 58.28028825156695
+      "start": 61.36207136027305,
+      "end": 62.330288251566955
     },
     {
       "text": "Make",
-      "start": 59.080466968002625,
-      "end": 59.34181053814089
+      "start": 63.13046696800263,
+      "end": 63.391810538140895
     },
     {
       "text": "it",
-      "start": 59.40699002593745,
-      "end": 59.59548967212187
+      "start": 63.45699002593746,
+      "end": 63.645489672121876
     },
     {
       "text": "yours",
-      "start": 59.68287569432163,
-      "end": 60.140447701072226
+      "start": 63.732875694321635,
+      "end": 64.19044770107223
     },
     {
       "text": "-",
-      "start": 60.18667423346713,
-      "end": 60.18667423346713
+      "start": 64.23667423346714,
+      "end": 64.23667423346714
     },
     {
       "text": "configure",
-      "start": 60.24933246248692,
-      "end": 60.89472233617206
+      "start": 64.29933246248693,
+      "end": 64.94472233617206
     },
     {
       "text": "your",
-      "start": 60.98696963854006,
-      "end": 61.20798022038775
+      "start": 65.03696963854006,
+      "end": 65.25798022038776
     },
     {
       "text": "Design",
-      "start": 61.27018169455274,
-      "end": 61.773342870151694
+      "start": 65.32018169455274,
+      "end": 65.82334287015169
     },
     {
       "text": "System",
-      "start": 61.83645693792995,
-      "end": 62.79480969484838
+      "start": 65.88645693792996,
+      "end": 66.8448096948484
     },
     {
       "text": "Your",
-      "start": 63.73094069319571,
-      "end": 63.938497531484046
+      "start": 67.7820566504673,
+      "end": 67.9960874203275
     },
     {
       "text": "brand",
-      "start": 63.99865032653902,
-      "end": 64.37484879034447
+      "start": 68.05660879770187,
+      "end": 68.43164090858153
     },
     {
       "text": "in",
-      "start": 64.4170078940813,
-      "end": 64.56741460886977
+      "start": 68.47778375627435,
+      "end": 68.63206135932633
     },
     {
       "text": "Lolly",
-      "start": 64.62775694992986,
-      "end": 65.0144511555993
+      "start": 68.69269552846379,
+      "end": 69.08353161565279
     },
     {
       "text": "is",
-      "start": 65.0897279235244,
-      "end": 65.27344293212036
+      "start": 69.17071460541558,
+      "end": 69.38175995271412
     },
     {
       "text": "a",
-      "start": 65.32670443733369,
-      "end": 65.4931826849827
+      "start": 69.44198467349172,
+      "end": 69.61664088109804
     },
     {
       "text": "small",
-      "start": 65.59843297914666,
-      "end": 65.93634524797965
+      "start": 69.73386762466559,
+      "end": 70.09418815192494
     },
     {
       "text": "design-tokens",
-      "start": 65.99616362128559,
-      "end": 67.03264086751669
+      "start": 70.15469448691957,
+      "end": 71.17645037495225
     },
     {
       "text": "document",
-      "start": 67.09302338875624,
-      "end": 67.60096525440682
+      "start": 71.2371103972742,
+      "end": 71.73125703560034
     },
     {
       "text": "-",
-      "start": 67.65893254972755,
-      "end": 67.65893254972755
+      "start": 71.77870178531991,
+      "end": 71.77870178531991
     },
     {
       "text": "colours,",
-      "start": 67.74477080837723,
-      "end": 68.3634302536829
+      "start": 71.85131034956203,
+      "end": 72.76470766379786
     },
     {
-      "text": "fonts,",
-      "start": 68.45039213943703,
-      "end": 69.29940535479287
+      "text": "fonts",
+      "start": 72.85414494110951,
+      "end": 73.27251151346717
     },
     {
       "text": "and",
-      "start": 69.35902150726731,
-      "end": 69.54608455770435
+      "start": 73.34928564597186,
+      "end": 73.56456579995493
     },
     {
       "text": "a",
-      "start": 69.62123491743611,
-      "end": 69.80240761177915
+      "start": 73.6380766751151,
+      "end": 73.81903355883044
     },
     {
       "text": "few",
-      "start": 69.8911661930779,
-      "end": 70.09938201570534
+      "start": 73.91105217806782,
+      "end": 74.12473946866365
     },
     {
       "text": "rules",
-      "start": 70.15986624680673,
-      "end": 70.5824724403574
+      "start": 74.18564574546599,
+      "end": 74.61185269308645
     },
     {
       "text": "-",
-      "start": 70.61467991194928,
-      "end": 70.61467991194928
+      "start": 74.64472673005768,
+      "end": 74.64472673005768
     },
     {
       "text": "that",
-      "start": 70.6535788474537,
-      "end": 70.81826756120964
+      "start": 74.68364596034594,
+      "end": 74.84989119667752
     },
     {
       "text": "every",
-      "start": 70.90755476749752,
-      "end": 71.2094212336384
+      "start": 74.94222588558674,
+      "end": 75.24595345003856
     },
     {
       "text": "tool",
-      "start": 71.29356036235781,
-      "end": 71.59976093897727
+      "start": 75.3313384029916,
+      "end": 75.64397522986542
     },
     {
       "text": "renders",
-      "start": 71.65958292625145,
-      "end": 72.03104228169853
+      "start": 75.70408607490111,
+      "end": 76.0740114340766
     },
     {
       "text": "against.",
-      "start": 72.09088538791943,
-      "end": 73.29466573114142
+      "start": 76.13415663602358,
+      "end": 77.34448803401081
     },
     {
       "text": "Set",
-      "start": 74.06556537171308,
-      "end": 74.26799758899534
+      "start": 78.11556537171307,
+      "end": 78.31799758899533
     },
     {
       "text": "it",
-      "start": 74.30213779688468,
-      "end": 74.46879318419627
+      "start": 78.35213779688468,
+      "end": 78.51879318419628
     },
     {
       "text": "once",
-      "start": 74.52810131006065,
-      "end": 74.83907793226147
+      "start": 78.57810131006065,
+      "end": 78.88907793226147
     },
     {
       "text": "and",
-      "start": 74.89502326701279,
-      "end": 75.18013995381864
+      "start": 78.94502326701279,
+      "end": 79.23013995381864
     },
     {
       "text": "everything",
-      "start": 75.27432957404805,
-      "end": 75.79050015008315
+      "start": 79.32432957404805,
+      "end": 79.84050015008314
     },
     {
       "text": "you",
-      "start": 75.8500376417206,
-      "end": 75.97275669472626
+      "start": 79.9000376417206,
+      "end": 80.02275669472625
     },
     {
       "text": "make",
-      "start": 76.02753493916163,
-      "end": 76.28612241315508
+      "start": 80.07753493916162,
+      "end": 80.33612241315508
     },
     {
       "text": "is",
-      "start": 76.34577218604765,
-      "end": 76.53272739296516
+      "start": 80.39577218604765,
+      "end": 80.58272739296515
     },
     {
       "text": "on-brand",
-      "start": 76.60911222939733,
-      "end": 77.24349007328767
+      "start": 80.65911222939732,
+      "end": 81.29349007328767
     },
     {
       "text": "by",
-      "start": 77.30291720953342,
-      "end": 77.53660100768556
+      "start": 81.35291720953342,
+      "end": 81.58660100768556
     },
     {
       "text": "construction,",
-      "start": 77.59642829618268,
-      "end": 78.591427629203
+      "start": 81.64642829618268,
+      "end": 82.64142762920298
     },
     {
       "text": "not",
-      "start": 78.65234281400586,
-      "end": 78.8631543005686
+      "start": 82.70234281400586,
+      "end": 82.91315430056859
     },
     {
       "text": "by",
-      "start": 78.922749192052,
-      "end": 79.18346509837113
+      "start": 82.97274919205199,
+      "end": 83.23346509837113
     },
     {
       "text": "review.",
-      "start": 79.24300558136447,
-      "end": 80.37004365343405
+      "start": 83.29300558136447,
+      "end": 84.42004365343405
     },
     {
       "text": "There",
-      "start": 81.14935865680502,
-      "end": 81.39325522172422
+      "start": 85.19935865680502,
+      "end": 85.4432552217242
     },
     {
       "text": "are",
-      "start": 81.48322782267134,
-      "end": 81.72813411513675
+      "start": 85.53322782267134,
+      "end": 85.77813411513675
     },
     {
       "text": "three",
-      "start": 81.84144370892074,
-      "end": 82.10157502547912
+      "start": 85.89144370892072,
+      "end": 86.15157502547912
     },
     {
       "text": "ways",
-      "start": 82.1641747035172,
-      "end": 82.50946286380992
+      "start": 86.21417470351722,
+      "end": 86.55946286380991
     },
     {
       "text": "in;",
-      "start": 82.5654224789559,
-      "end": 83.02288464519285
+      "start": 86.61542247895589,
+      "end": 87.07288464519283
     },
     {
       "text": "pick",
-      "start": 83.08546039838238,
-      "end": 83.2966422513122
+      "start": 87.13546039838238,
+      "end": 87.3466422513122
     },
     {
       "text": "the",
-      "start": 83.3595375901103,
-      "end": 83.51799605641204
+      "start": 87.40953759011029,
+      "end": 87.56799605641203
     },
     {
       "text": "one",
-      "start": 83.58088875688097,
-      "end": 83.8312638260063
+      "start": 87.63088875688096,
+      "end": 87.8812638260063
     },
     {
       "text": "that",
-      "start": 83.88808041843424,
-      "end": 84.04066303487284
+      "start": 87.93808041843425,
+      "end": 88.09066303487282
     },
     {
       "text": "matches",
-      "start": 84.10381049600352,
-      "end": 84.62678648277138
+      "start": 88.1538104960035,
+      "end": 88.67678648277138
     },
     {
       "text": "where",
-      "start": 84.69284890787466,
-      "end": 84.92989362102625
+      "start": 88.74284890787467,
+      "end": 88.97989362102624
     },
     {
       "text": "your",
-      "start": 84.99372175309253,
-      "end": 85.21323357570768
+      "start": 89.04372175309253,
+      "end": 89.26323357570767
     },
     {
       "text": "brand",
-      "start": 85.27613997749964,
-      "end": 85.67231631164854
+      "start": 89.32613997749965,
+      "end": 89.72231631164854
     },
     {
       "text": "already",
-      "start": 85.72425925052903,
-      "end": 86.10723161066731
+      "start": 89.77425925052904,
+      "end": 90.15723161066731
     },
     {
       "text": "lives.",
-      "start": 86.16992963842118,
-      "end": 87.36847748599955
+      "start": 90.21992963842118,
+      "end": 91.41847748599955
     },
     {
       "text": "Start from scratch «the design system builder»",
-      "start": 88.1,
-      "end": 92.57499999999999
+      "start": 92.15,
+      "end": 96.625
     },
     {
-      "text": "First run drops you on the gallery, with a short welcome dialog over it offering three ways in - Make it yours «the Brand Studio at #/start», Bring your design «drop a Figma, Penpot, InDesign or PDF file and it opens as an editable layout - the fastest route to §2 below», and Explore the community tools - plus a row of languages if English isn't yours.",
-      "start": 92.925,
-      "end": 118.69999999999999
+      "text": "First run drops you on the gallery, with a short welcome dialog over it offering three ways in - Make it yours «the Brand Studio at #/start», Bring your design «drop a Figma, Penpot, InDesign or PDF file and it opens as an editable layout - the fastest route to Bring in what you already have below» and Explore the community tools - plus a row of languages if English isn't yours.",
+      "start": 96.975,
+      "end": 123
     },
     {
       "text": "Take the first card and you land in the Brand Studio.",
-      "start": 119.05,
-      "end": 124.025
+      "start": 123.35,
+      "end": 128.325
     },
     {
       "text": "Give it a name and a primary colour and Lolly derives a complete, accessible palette from it - light/dark surfaces, text, accents - using the same colour maths the engine uses everywhere else.",
-      "start": 124.375,
-      "end": 140.025
+      "start": 128.67499999999998,
+      "end": 144.325
     },
     {
       "text": "Pick a font, and you have a working brand in under a minute.",
-      "start": 140.375,
-      "end": 145.65
+      "start": 144.675,
+      "end": 149.95000000000002
     },
     {
       "text": "From there the studio's six rooms - Overview, Colours, Type, Logos, Tokens, Files - let you take it as far as you like, in any order, refining any of it whenever you come back.",
-      "start": 146,
-      "end": 159.55
+      "start": 150.3,
+      "end": 163.85000000000002
     },
     {
       "text": "The dashboard's Design system tab «#/d» shows the result read-only and points back at #/start, which is where the editing happens «unless you're on a brand-locked build of Lolly, where the brand is fixed and there's nothing to change».",
-      "start": 159.9,
-      "end": 177.975
+      "start": 164.20000000000002,
+      "end": 182.275
     },
     {
       "text": "Import",
-      "start": 179.08735805047237,
-      "end": 179.731047062246
+      "start": 183.38735805047236,
+      "end": 184.031047062246
     },
     {
       "text": "a",
-      "start": 179.790049249947,
-      "end": 179.95267854129892
+      "start": 184.09004924994696,
+      "end": 184.2526785412989
     },
     {
       "text": "brand",
-      "start": 180.01834976182113,
-      "end": 180.45064734334647
+      "start": 184.3183497618211,
+      "end": 184.75064734334646
     },
     {
       "text": "you",
-      "start": 180.5176219885811,
-      "end": 180.74220272647995
+      "start": 184.8176219885811,
+      "end": 185.04220272647993
     },
     {
       "text": "already",
-      "start": 180.81381546131078,
-      "end": 181.3107937928089
+      "start": 185.11381546131076,
+      "end": 185.6107937928089
     },
     {
       "text": "have",
-      "start": 181.37459153044358,
-      "end": 182.11930150850847
+      "start": 185.67459153044356,
+      "end": 186.41930150850845
     },
     {
-      "text": "If your brand is already captured as design tokens - from Penpot, Tokens Studio «Figma», or any plain DTCG file - bring it in wholesale rather than retyping it.",
-      "start": 182.775,
-      "end": 196.82500000000002
+      "text": "If your brand is already captured as design tokens - from Penpot, Tokens Studio «Figma» or any plain DTCG file - bring it in wholesale rather than retyping it.",
+      "start": 187.075,
+      "end": 201.27499999999998
     },
     {
       "text": "Two routes:",
-      "start": 197.175,
-      "end": 199.05
+      "start": 201.625,
+      "end": 203.5
     },
     {
       "text": "In the app: the design system builder: Brand Studio «#/start» takes it through Add from…",
-      "start": 199.4,
-      "end": 206.95000000000002
+      "start": 203.85,
+      "end": 211.4
     },
     {
       "text": "at the foot of its room rail - a token file, a Penpot export, an SVG or a LollyBrand pack.",
-      "start": 207.3,
-      "end": 215.97500000000002
+      "start": 211.75,
+      "end": 220.425
     },
     {
       "text": "Drop it in and the palette lights up.",
-      "start": 216.32500000000002,
-      "end": 220.05
+      "start": 220.775,
+      "end": 224.5
     },
     {
       "text": "From",
-      "start": 220.7947418764199,
-      "end": 221.05630538774938
+      "start": 225.24474187641988,
+      "end": 225.50630538774936
     },
     {
       "text": "the",
-      "start": 221.1076534031992,
-      "end": 221.26098353858393
+      "start": 225.5576534031992,
+      "end": 225.71098353858392
     },
     {
       "text": "command",
-      "start": 221.3225032037586,
-      "end": 221.7655232465416
+      "start": 225.7725032037586,
+      "end": 226.21552324654158
     },
     {
       "text": "line,",
-      "start": 221.8217194056358,
-      "end": 222.3125692561811
+      "start": 226.2717194056358,
+      "end": 226.76256925618108
     },
     {
       "text": "to",
-      "start": 222.39689382432536,
-      "end": 222.64567817789867
+      "start": 226.84689382432535,
+      "end": 227.09567817789866
     },
     {
       "text": "stand",
-      "start": 222.70921647352296,
-      "end": 223.08124773477874
+      "start": 227.15921647352295,
+      "end": 227.53124773477873
     },
     {
       "text": "up",
-      "start": 223.11468155651914,
-      "end": 223.29416087746833
+      "start": 227.56468155651913,
+      "end": 227.74416087746832
     },
     {
       "text": "a",
-      "start": 223.33334692926545,
-      "end": 223.4812833825872
+      "start": 227.78334692926543,
+      "end": 227.9312833825872
     },
     {
       "text": "reusable",
-      "start": 223.54327473584797,
-      "end": 224.18177600216177
+      "start": 227.99327473584796,
+      "end": 228.63177600216176
     },
     {
       "text": "brand",
-      "start": 224.2432602834047,
-      "end": 224.5992702447927
+      "start": 228.6932602834047,
+      "end": 229.0492702447927
     },
     {
       "text": "pack:",
-      "start": 224.66177261399082,
-      "end": 225.6190818802832
+      "start": 229.1117726139908,
+      "end": 230.0690818802832
     },
     {
       "text": "Code",
-      "start": 226.397263037695,
-      "end": 226.84926816578627
+      "start": 230.847263037695,
+      "end": 231.29926816578626
     },
     {
       "text": "example",
-      "start": 226.91964878054046,
-      "end": 227.71966256326692
+      "start": 231.36964878054044,
+      "end": 232.1696625632669
     },
     {
       "text": "omitted.",
-      "start": 227.8155104436187,
-      "end": 229.21782047319925
+      "start": 232.2655104436187,
+      "end": 233.66782047319924
     },
     {
-      "text": "ingest:brand accepts all three containers Penpot / Tokens Studio export the same document in - a single tokens-json, a directory «$metadata-json + per-set files», or a project-penpot archive.",
-      "start": 229.6,
-      "end": 247.325
+      "text": "ingest:brand accepts all three containers Penpot / Tokens Studio export the same document in - a single tokens-json, a directory «$metadata-json + per-set files» or a project-penpot archive.",
+      "start": 234.05,
+      "end": 251.55
     },
     {
-      "text": "With --activate it registers the brand as a profile, switches to it, and rebuilds the catalog.",
-      "start": 247.67499999999998,
-      "end": 256.025
+      "text": "With --activate it registers the brand as a profile, switches to it and rebuilds the catalog.",
+      "start": 251.9,
+      "end": 260.325
     },
     {
       "text": "See Configuration for how brand packs and profiles fit together.",
-      "start": 256.375,
-      "end": 262.25
+      "start": 260.675,
+      "end": 266.55
     },
     {
       "text": "Tune",
-      "start": 263.34273383741606,
-      "end": 263.77797110103904
+      "start": 267.6427338374161,
+      "end": 268.07797110103905
     },
     {
       "text": "it",
-      "start": 263.87490110461385,
-      "end": 264.1845550431251
+      "start": 268.17490110461387,
+      "end": 268.4845550431251
     },
     {
       "text": "in",
-      "start": 264.2502353403436,
-      "end": 264.4396503900031
+      "start": 268.5502353403436,
+      "end": 268.73965039000313
     },
     {
       "text": "the",
-      "start": 264.52181791309135,
-      "end": 264.79549615365147
+      "start": 268.82181791309137,
+      "end": 269.0954961536515
     },
     {
       "text": "app",
-      "start": 264.90685862611105,
-      "end": 265.55507528123695
+      "start": 269.20685862611106,
+      "end": 269.85507528123696
     },
     {
       "text": "Once a brand is active, keep shaping it in the Brand Studio «#/start» - change a colour or a role and every preview across the app updates as you type.",
-      "start": 266.175,
-      "end": 278.90000000000003
+      "start": 270.475,
+      "end": 283.20000000000005
     },
     {
       "text": "«The dashboard's Design system tab at #/d shows the brand read-only; the Studio is where you edit it.»",
-      "start": 279.25,
-      "end": 288.475
+      "start": 283.55,
+      "end": 292.77500000000003
     },
     {
       "text": "The",
-      "start": 289.20070872812516,
-      "end": 289.3557360864287
+      "start": 293.5007087281252,
+      "end": 293.6557360864287
     },
     {
       "text": "same",
-      "start": 289.4354936547769,
-      "end": 289.72589202251464
+      "start": 293.7354936547769,
+      "end": 294.02589202251465
     },
     {
       "text": "brand",
-      "start": 289.7855836268383,
-      "end": 290.2178841980238
+      "start": 294.0855836268383,
+      "end": 294.5178841980238
     },
     {
       "text": "is",
-      "start": 290.28062695670525,
-      "end": 290.4468624481498
+      "start": 294.58062695670526,
+      "end": 294.7468624481498
     },
     {
       "text": "summarised",
-      "start": 290.5444549509062,
-      "end": 291.20697099229096
+      "start": 294.8444549509062,
+      "end": 295.50697099229103
     },
     {
       "text": "on",
-      "start": 291.2446173425353,
-      "end": 291.35103980354467
+      "start": 295.54461734253533,
+      "end": 295.6510398035447
     },
     {
       "text": "the",
-      "start": 291.3846312286628,
-      "end": 291.5059535121579
+      "start": 295.6846312286628,
+      "end": 295.8059535121579
     },
     {
       "text": "Profile",
-      "start": 291.5656830927628,
-      "end": 292.2374108491676
+      "start": 295.8656830927628,
+      "end": 296.5374108491676
     },
     {
       "text": "→",
-      "start": 292.3365852753991,
-      "end": 293.0134749632509
+      "start": 296.6365852753991,
+      "end": 297.31347496325094
     },
     {
       "text": "Your",
-      "start": 293.0756263664006,
-      "end": 293.27473194725667
+      "start": 297.37562636640064,
+      "end": 297.5747319472567
     },
     {
       "text": "brand",
-      "start": 293.33435294281486,
-      "end": 293.6955605139527
+      "start": 297.63435294281487,
+      "end": 297.99556051395274
     },
     {
       "text": "card.",
-      "start": 293.7771435872166,
-      "end": 294.8450251833068
+      "start": 298.0771435872166,
+      "end": 299.1450251833068
     },
     {
       "text": "Fonts",
-      "start": 295.62222874354813,
-      "end": 295.9789771088842
+      "start": 299.92222874354815,
+      "end": 300.2789771088842
     },
     {
       "text": "are",
-      "start": 296.0347148907882,
-      "end": 296.2132355070166
+      "start": 300.33471489078823,
+      "end": 300.5132355070166
     },
     {
       "text": "real:",
-      "start": 296.2888754272864,
-      "end": 297.03665349532986
+      "start": 300.58887542728644,
+      "end": 301.33665349532987
     },
     {
       "text": "pick",
-      "start": 297.09719740127775,
-      "end": 297.30028113123853
+      "start": 301.39719740127777,
+      "end": 301.60028113123855
     },
     {
       "text": "from",
-      "start": 297.36393487403984,
-      "end": 297.6376804012288
+      "start": 301.66393487403985,
+      "end": 301.9376804012288
     },
     {
       "text": "Google",
-      "start": 297.70199961576157,
-      "end": 298.05338433850125
+      "start": 302.0019996157616,
+      "end": 302.35338433850126
     },
     {
       "text": "Fonts",
-      "start": 298.1439655812123,
-      "end": 298.530726626203
+      "start": 302.4439655812123,
+      "end": 302.830726626203
     },
     {
       "text": "and",
-      "start": 298.58685620835445,
-      "end": 298.72714814800975
+      "start": 302.88685620835446,
+      "end": 303.02714814800976
     },
     {
       "text": "Lolly",
-      "start": 298.78733295930374,
-      "end": 299.07615696374086
+      "start": 303.08733295930375,
+      "end": 303.37615696374087
     },
     {
       "text": "stores",
-      "start": 299.15325029092094,
-      "end": 299.60265945501186
+      "start": 303.45325029092095,
+      "end": 303.9026594550119
     },
     {
       "text": "the",
-      "start": 299.66190171398216,
-      "end": 299.8135495053837
+      "start": 303.9619017139822,
+      "end": 304.11354950538373
     },
     {
       "text": "file",
-      "start": 299.90298835763866,
-      "end": 300.2627109026143
+      "start": 304.2029883576387,
+      "end": 304.5627109026143
     },
     {
       "text": "on",
-      "start": 300.3074685619198,
-      "end": 300.4629026825816
+      "start": 304.60746856191975,
+      "end": 304.7629026825816
     },
     {
       "text": "your",
-      "start": 300.52301171738975,
-      "end": 300.6911243979359
+      "start": 304.82301171738976,
+      "end": 304.9911243979359
     },
     {
       "text": "device",
-      "start": 300.7464215195399,
-      "end": 301.31555984802884
+      "start": 305.04642151954,
+      "end": 305.61555984802885
     },
     {
       "text": "as",
-      "start": 301.3981641568202,
-      "end": 301.631794520174
+      "start": 305.6981641568202,
+      "end": 305.93179452017404
     },
     {
       "text": "a",
-      "start": 301.6905455571121,
-      "end": 301.85192757426523
+      "start": 305.9905455571121,
+      "end": 306.15192757426524
     },
     {
       "text": "brand",
-      "start": 301.91228555446185,
-      "end": 302.260580803015
+      "start": 306.21228555446186,
+      "end": 306.560580803015
     },
     {
       "text": "asset,",
-      "start": 302.32199658409087,
-      "end": 303.2104883611456
+      "start": 306.6219965840909,
+      "end": 307.51048836114563
     },
     {
       "text": "so",
-      "start": 303.28780584438056,
-      "end": 303.50604966035246
+      "start": 307.58780584438057,
+      "end": 307.80604966035247
     },
     {
       "text": "your",
-      "start": 303.56799113972073,
-      "end": 303.7677540762886
+      "start": 307.86799113972074,
+      "end": 308.0677540762886
     },
     {
       "text": "typography",
-      "start": 303.827976284293,
-      "end": 304.5577034402453
+      "start": 308.127976284293,
+      "end": 308.85770344024525
     },
     {
       "text": "travels",
-      "start": 304.61789623103715,
-      "end": 305.0675425667328
+      "start": 308.91789623103716,
+      "end": 309.3675425667328
     },
     {
       "text": "offline",
-      "start": 305.1550560086776,
-      "end": 305.7252022201923
+      "start": 309.4550560086776,
+      "end": 310.0252022201923
     },
     {
       "text": "and",
-      "start": 305.78717508865185,
-      "end": 305.91452702776155
+      "start": 310.08717508865186,
+      "end": 310.21452702776156
     },
     {
       "text": "nothing",
-      "start": 305.9754727485717,
-      "end": 306.3440697715131
+      "start": 310.2754727485717,
+      "end": 310.6440697715131
     },
     {
       "text": "is",
-      "start": 306.3857684661389,
-      "end": 306.58159590627577
+      "start": 310.68576846613894,
+      "end": 310.88159590627583
     },
     {
       "text": "fetched",
-      "start": 306.66521224881166,
-      "end": 307.03618698967074
+      "start": 310.96521224881167,
+      "end": 311.33618698967075
     },
     {
       "text": "at",
-      "start": 307.08914547450047,
-      "end": 307.24280328591027
+      "start": 311.3891454745005,
+      "end": 311.5428032859103
     },
     {
       "text": "render",
-      "start": 307.3025050903756,
-      "end": 307.6231336805334
+      "start": 311.6025050903756,
+      "end": 311.9231336805334
     },
     {
       "text": "time.",
-      "start": 307.685853339167,
-      "end": 308.79476978416943
+      "start": 311.985853339167,
+      "end": 313.09476978416944
     },
     {
       "text": "When",
-      "start": 309.5637483226011,
-      "end": 309.75307107100184
+      "start": 313.8595238728588,
+      "end": 314.0517575306993
     },
     {
       "text": "you're",
-      "start": 309.8133491547216,
-      "end": 310.0104380309932
+      "start": 314.1113349109868,
+      "end": 314.31352498481743
     },
     {
       "text": "happy,",
-      "start": 310.07135519411696,
-      "end": 310.63121412639634
+      "start": 314.3735949622844,
+      "end": 314.9292294085574
     },
     {
       "text": "export",
-      "start": 310.6924300249236,
-      "end": 311.1635750914984
+      "start": 314.9894896238037,
+      "end": 315.45800256672663
     },
     {
       "text": "the",
-      "start": 311.21469616923804,
-      "end": 311.35380695892184
+      "start": 315.5087029663052,
+      "end": 315.64985631423593
     },
     {
       "text": "brand",
-      "start": 311.41501643597405,
-      "end": 311.81596127633804
+      "start": 315.71042586097764,
+      "end": 316.1151656310338
     },
     {
       "text": "as",
-      "start": 311.87914609925633,
-      "end": 312.0858605366913
+      "start": 316.1782144835404,
+      "end": 316.4050976127944
     },
     {
       "text": "a",
-      "start": 312.12422105188006,
-      "end": 312.2482512169546
+      "start": 316.4470462768911,
+      "end": 316.5756471305135
     },
     {
       "text": "LollyBrand",
-      "start": 312.30980300578466,
-      "end": 313.013517842691
+      "start": 316.6371871011013,
+      "end": 317.34723738992125
     },
     {
       "text": "pack",
-      "start": 313.08708645859684,
-      "end": 313.76586913260854
+      "start": 317.4243312270583,
+      "end": 318.08104643323173
     },
     {
       "text": "-",
-      "start": 313.8677936026377,
-      "end": 313.8677936026377
+      "start": 318.18246436710183,
+      "end": 318.18246436710183
     },
     {
       "text": "a",
-      "start": 313.9249772747471,
-      "end": 314.06365090053833
+      "start": 318.2397907074493,
+      "end": 318.37892241745817
     },
     {
       "text": "single",
-      "start": 314.1578949545431,
-      "end": 314.5091665822294
+      "start": 318.47586984385,
+      "end": 318.8294350515975
     },
     {
       "text": "file",
-      "start": 314.5986067091957,
-      "end": 314.97284459982467
+      "start": 318.9188856335784,
+      "end": 319.29277152366353
     },
     {
       "text": "a",
-      "start": 315.0253987318985,
-      "end": 315.1565252935214
+      "start": 319.3462029991134,
+      "end": 319.4799852901346
     },
     {
       "text": "colleague",
-      "start": 315.2331328856018,
-      "end": 315.71374850137704
+      "start": 319.5550410260236,
+      "end": 320.02584514577575
     },
     {
       "text": "can",
-      "start": 315.77462098197935,
-      "end": 315.9378170304882
+      "start": 320.0858568617751,
+      "end": 320.25806131676654
     },
     {
       "text": "import",
-      "start": 315.9800646455939,
-      "end": 316.41107195623954
+      "start": 320.30019109179693,
+      "end": 320.7292640452634
     },
     {
       "text": "to",
-      "start": 316.49100311868057,
-      "end": 316.6578889391946
+      "start": 320.81044120618884,
+      "end": 320.9816233368276
     },
     {
       "text": "get",
-      "start": 316.71886829107325,
-      "end": 316.9306030848725
+      "start": 321.0417186605865,
+      "end": 321.25640674883067
     },
     {
       "text": "the",
-      "start": 316.98574070502826,
-      "end": 317.124983134951
+      "start": 321.31242833758404,
+      "end": 321.4512811264834
     },
     {
       "text": "exact",
-      "start": 317.1798561996489,
-      "end": 317.63845408818315
+      "start": 321.50693924814743,
+      "end": 321.96340973852546
     },
     {
       "text": "same",
-      "start": 317.6991655370535,
-      "end": 317.97756849252715
+      "start": 322.02345004298456,
+      "end": 322.2926725548488
     },
     {
       "text": "palette,",
-      "start": 318.0408760977747,
-      "end": 318.56492159324176
+      "start": 322.3533120922456,
+      "end": 322.90947505203064
     },
     {
-      "text": "fonts,",
-      "start": 318.6513224063675,
-      "end": 319.09293128416846
+      "text": "fonts",
+      "start": 322.9916321337715,
+      "end": 323.3311024447202
     },
     {
       "text": "and",
-      "start": 319.1521198071627,
-      "end": 319.34375468538275
+      "start": 323.37544321748436,
+      "end": 323.5367325819112
     },
     {
       "text": "rules.",
-      "start": 319.4045933702799,
-      "end": 320.5693930113378
+      "start": 323.59670455983684,
+      "end": 324.7448273625958
     },
     {
       "text": "That's",
-      "start": 321.3287611295373,
-      "end": 321.60201463193965
+      "start": 325.50376112953734,
+      "end": 325.77701463193966
     },
     {
       "text": "how",
-      "start": 321.6625727500259,
-      "end": 321.97861304134716
+      "start": 325.8375727500259,
+      "end": 326.15361304134717
     },
     {
       "text": "a",
-      "start": 322.0563160961146,
-      "end": 322.2371437399318
+      "start": 326.2313160961146,
+      "end": 326.4121437399318
     },
     {
       "text": "brand",
-      "start": 322.29848433182406,
-      "end": 322.68900110681255
+      "start": 326.47348433182407,
+      "end": 326.86400110681257
     },
     {
       "text": "moves",
-      "start": 322.75086771169015,
-      "end": 323.09413912361805
+      "start": 326.92586771169016,
+      "end": 327.26913912361806
     },
     {
       "text": "between",
-      "start": 323.1541615721178,
-      "end": 323.57030967249233
+      "start": 327.3291615721178,
+      "end": 327.74530967249234
     },
     {
       "text": "people",
-      "start": 323.6309618817238,
-      "end": 324.02984944086813
+      "start": 327.8059618817238,
+      "end": 328.20484944086814
     },
     {
       "text": "and",
-      "start": 324.1188922191359,
-      "end": 324.3050401702007
+      "start": 328.2938922191359,
+      "end": 328.4800401702007
     },
     {
       "text": "machines",
-      "start": 324.3369978876702,
-      "end": 325.21433604930405
+      "start": 328.5119978876702,
+      "end": 329.389336049304
     },
     {
       "text": "without",
-      "start": 325.3100290916465,
-      "end": 325.7371561344973
+      "start": 329.48502909164654,
+      "end": 329.9121561344973
     },
     {
       "text": "a",
-      "start": 325.8001074416647,
-      "end": 325.98027766176847
+      "start": 329.9751074416647,
+      "end": 330.1552776617685
     },
     {
       "text": "server",
-      "start": 326.0768350624246,
-      "end": 326.4976665391442
+      "start": 330.2518350624246,
+      "end": 330.6726665391442
     },
     {
       "text": "in",
-      "start": 326.56304913559893,
-      "end": 326.6942212212482
+      "start": 330.73804913559894,
+      "end": 330.8692212212482
     },
     {
       "text": "the",
-      "start": 326.7469567696728,
-      "end": 326.8922788260952
+      "start": 330.9219567696728,
+      "end": 331.06727882609516
     },
     {
       "text": "middle.",
-      "start": 326.95273848732734,
-      "end": 327.91959012870683
+      "start": 331.12773848732735,
+      "end": 332.09459012870684
     },
     {
       "text": "Brand",
-      "start": 328.6839510273616,
-      "end": 329.139310196681
+      "start": 332.8589510273616,
+      "end": 333.314310196681
     },
     {
       "text": "tokens",
-      "start": 329.2207497793099,
-      "end": 329.7807632120187
+      "start": 333.39574977930994,
+      "end": 333.9557632120187
     },
     {
       "text": "round-trip",
-      "start": 329.878765782906,
-      "end": 330.58550551707094
+      "start": 334.053765782906,
+      "end": 334.76050551707095
     },
     {
       "text": "both",
-      "start": 330.6493214652288,
-      "end": 330.9725944713311
+      "start": 334.8243214652288,
+      "end": 335.1475944713311
     },
     {
       "text": "ways.",
-      "start": 331.03510039033324,
-      "end": 332.11856699030096
+      "start": 335.21010039033325,
+      "end": 336.293566990301
     },
     {
       "text": "Because",
-      "start": 332.86923535318255,
-      "end": 333.18803847069336
+      "start": 337.04423535318256,
+      "end": 337.36303847069337
     },
     {
       "text": "Lolly's",
-      "start": 333.2479383082847,
-      "end": 333.6190101175445
+      "start": 337.4229383082847,
+      "end": 337.79401011754453
     },
     {
       "text": "brand",
-      "start": 333.6791500125899,
-      "end": 334.0646613484917
+      "start": 337.8541500125899,
+      "end": 338.2396613484917
     },
     {
       "text": "is",
-      "start": 334.12781372083987,
-      "end": 334.3012314619431
+      "start": 338.3028137208399,
+      "end": 338.4762314619431
     },
     {
       "text": "DTCG",
-      "start": 334.36992911923744,
-      "end": 335.35817464597784
+      "start": 338.54492911923745,
+      "end": 339.53317464597785
     },
     {
       "text": "tokens",
-      "start": 335.438119258146,
-      "end": 335.9203394924203
+      "start": 339.613119258146,
+      "end": 340.0953394924203
     },
     {
       "text": "-",
-      "start": 335.95130812556727,
-      "end": 335.95130812556727
+      "start": 340.1263081255673,
+      "end": 340.1263081255673
     },
     {
       "text": "the",
-      "start": 335.99385384824336,
-      "end": 336.14242404738235
+      "start": 340.1688538482434,
+      "end": 340.31742404738236
     },
     {
       "text": "format",
-      "start": 336.23430365468454,
-      "end": 336.6279244988842
+      "start": 340.40930365468455,
+      "end": 340.80292449888424
     },
     {
       "text": "Penpot",
-      "start": 336.68802682751243,
-      "end": 337.17556817266376
+      "start": 340.86302682751244,
+      "end": 341.35056817266377
     },
     {
       "text": "reads",
-      "start": 337.23496192822483,
-      "end": 338.08284363992783
+      "start": 341.40996192822485,
+      "end": 342.25784363992784
     },
     {
       "text": "and",
-      "start": 338.19501607090103,
-      "end": 338.37028807516833
+      "start": 342.37001607090104,
+      "end": 342.54528807516834
     },
     {
       "text": "writes",
-      "start": 338.42868941172844,
-      "end": 338.75755138124015
+      "start": 342.60368941172845,
+      "end": 342.93255138124016
     },
     {
       "text": "natively",
-      "start": 338.83310716729414,
-      "end": 339.3935618455531
+      "start": 343.00810716729416,
+      "end": 343.5685618455531
     },
     {
       "text": "and",
-      "start": 339.4710737910375,
-      "end": 339.62810456551864
+      "start": 343.64607379103757,
+      "end": 343.80310456551865
     },
     {
       "text": "Tokens",
-      "start": 339.6883103288039,
-      "end": 340.14969097422016
+      "start": 343.8633103288039,
+      "end": 344.3246909742202
     },
     {
       "text": "Studio",
-      "start": 340.21129542295097,
-      "end": 340.84338767171437
+      "start": 344.386295422951,
+      "end": 345.0183876717144
     },
     {
       "text": "brings",
-      "start": 340.92012589513934,
-      "end": 341.2205281469974
+      "start": 345.09512589513935,
+      "end": 345.39552814699744
     },
     {
       "text": "to",
-      "start": 341.3082753970435,
-      "end": 341.51154571020265
+      "start": 345.4832753970435,
+      "end": 345.68654571020267
     },
     {
       "text": "Figma",
-      "start": 341.60215381330426,
-      "end": 341.96494690841064
+      "start": 345.77715381330427,
+      "end": 346.13994690841065
     },
     {
       "text": "-",
-      "start": 342.00353547627043,
-      "end": 342.00353547627043
+      "start": 346.17853547627044,
+      "end": 346.17853547627044
     },
     {
       "text": "the",
-      "start": 342.04654130906675,
-      "end": 342.1707428081954
+      "start": 346.22154130906677,
+      "end": 346.34574280819544
     },
     {
       "text": "palette",
-      "start": 342.2309599824012,
-      "end": 342.58052331964586
+      "start": 346.4059599824012,
+      "end": 346.7555233196459
     },
     {
       "text": "you",
-      "start": 342.6399260144273,
-      "end": 342.76421235337887
+      "start": 346.81492601442733,
+      "end": 346.9392123533789
     },
     {
       "text": "design",
-      "start": 342.80863524668473,
-      "end": 343.27396833184963
+      "start": 346.9836352466848,
+      "end": 347.44896833184964
     },
     {
       "text": "with",
-      "start": 343.33359304581154,
-      "end": 344.1124264213413
+      "start": 347.50859304581155,
+      "end": 348.2874264213413
     },
     {
       "text": "and",
-      "start": 344.22702100428313,
-      "end": 344.3779303051244
+      "start": 348.40202100428314,
+      "end": 348.5529303051244
     },
     {
       "text": "the",
-      "start": 344.413428899605,
-      "end": 344.5476292706209
+      "start": 348.588428899605,
+      "end": 348.7226292706209
     },
     {
       "text": "palette",
-      "start": 344.6079312190039,
-      "end": 344.95593129439044
+      "start": 348.7829312190039,
+      "end": 349.13093129439045
     },
     {
       "text": "Lolly",
-      "start": 345.0157579628077,
-      "end": 345.3143589160969
+      "start": 349.1907579628077,
+      "end": 349.48935891609693
     },
     {
       "text": "enforces",
-      "start": 345.3710949775121,
-      "end": 346.0407689302447
+      "start": 349.5460949775121,
+      "end": 350.21576893024474
     },
     {
       "text": "are",
-      "start": 346.13434091576863,
-      "end": 346.3431008463919
+      "start": 350.30934091576864,
+      "end": 350.5181008463919
     },
     {
       "text": "one",
-      "start": 346.4033599938335,
-      "end": 346.6153040593362
+      "start": 350.5783599938335,
+      "end": 350.7903040593362
     },
     {
       "text": "document,",
-      "start": 346.675039394723,
-      "end": 347.62755948142245
+      "start": 350.850039394723,
+      "end": 351.80255948142246
     },
     {
       "text": "not",
-      "start": 347.6886465570771,
-      "end": 347.90050239201827
+      "start": 351.8636465570771,
+      "end": 352.0755023920183
     },
     {
       "text": "two",
-      "start": 347.98617378498915,
-      "end": 348.16037174706776
+      "start": 352.16117378498916,
+      "end": 352.33537174706777
     },
     {
       "text": "lists",
-      "start": 348.2190809843986,
-      "end": 348.46520807199414
+      "start": 352.3940809843986,
+      "end": 352.64020807199415
     },
     {
       "text": "you",
-      "start": 348.5161729990037,
-      "end": 348.6402680009646
+      "start": 352.6911729990037,
+      "end": 352.81526800096464
     },
     {
       "text": "keep",
-      "start": 348.70008666632515,
-      "end": 348.9197108435912
+      "start": 352.87508666632516,
+      "end": 353.0947108435912
     },
     {
       "text": "in",
-      "start": 348.9513335782151,
-      "end": 349.10956757974816
+      "start": 353.1263335782151,
+      "end": 353.28456757974817
     },
     {
       "text": "sync",
-      "start": 349.20450854464946,
-      "end": 349.47763484626216
+      "start": 353.37950854464947,
+      "end": 353.6526348462622
     },
     {
       "text": "by",
-      "start": 349.5367775501557,
-      "end": 349.7994979884807
+      "start": 353.7117775501557,
+      "end": 353.9744979884807
     },
     {
       "text": "hand.",
-      "start": 349.8592194583718,
-      "end": 350.9449829143229
+      "start": 354.0342194583718,
+      "end": 355.1199829143229
     },
     {
       "text": "See",
-      "start": 351.74718590865905,
-      "end": 352.0490728321952
+      "start": 355.92218590865906,
+      "end": 356.2240728321952
     },
     {
       "text": "Design",
-      "start": 352.11728740371416,
-      "end": 352.7852063085268
+      "start": 356.29228740371417,
+      "end": 356.96020630852684
     },
     {
       "text": "Tokens.",
-      "start": 352.879405457607,
-      "end": 354.24335783404825
+      "start": 357.054405457607,
+      "end": 358.41835783404827
     },
     {
       "text": "2.",
-      "start": 355.3823768890683,
-      "end": 356.3557412266104
+      "start": 359.5573768890683,
+      "end": 360.53074122661036
     },
     {
       "text": "Bring",
-      "start": 357.15787139595784,
-      "end": 357.44710755743904
+      "start": 361.3328713959578,
+      "end": 361.622107557439
     },
     {
       "text": "in",
-      "start": 357.50288904559494,
-      "end": 357.69714253106144
+      "start": 361.6778890455949,
+      "end": 361.8721425310614
     },
     {
       "text": "what",
-      "start": 357.78029243288915,
-      "end": 358.0544170507161
+      "start": 361.9552924328891,
+      "end": 362.22941705071605
     },
     {
       "text": "you",
-      "start": 358.18621027701073,
-      "end": 358.5724461286044
+      "start": 362.3612102770107,
+      "end": 362.74744612860434
     },
     {
       "text": "already",
-      "start": 358.6596596920823,
-      "end": 359.1587890751416
+      "start": 362.83465969208225,
+      "end": 363.33378907514157
     },
     {
       "text": "have",
-      "start": 359.22565793483005,
-      "end": 359.95544578686844
+      "start": 363.40065793483,
+      "end": 364.1304457868684
     },
     {
       "text": "You",
-      "start": 361.0015579145194,
-      "end": 361.131381149886
+      "start": 365.1765579145194,
+      "end": 365.30638114988596
     },
     {
       "text": "don't",
-      "start": 361.1671865562394,
-      "end": 361.4162123554324
+      "start": 365.34218655623937,
+      "end": 365.59121235543233
     },
     {
       "text": "start",
-      "start": 361.47809722702664,
-      "end": 361.8823615108964
+      "start": 365.6530972270266,
+      "end": 366.0573615108963
     },
     {
       "text": "from",
-      "start": 361.9778654764957,
-      "end": 362.4119863789124
+      "start": 366.15286547649566,
+      "end": 366.58698637891234
     },
     {
       "text": "a",
-      "start": 362.47896495958076,
-      "end": 362.6000623338145
+      "start": 366.6539649595807,
+      "end": 366.77506233381445
     },
     {
       "text": "blank",
-      "start": 362.6724217107932,
-      "end": 363.03584581763505
+      "start": 366.8474217107931,
+      "end": 367.210845817635
     },
     {
       "text": "page.",
-      "start": 363.1130875056391,
-      "end": 364.2935418980101
+      "start": 367.28808750563906,
+      "end": 368.4685418980101
     },
     {
       "text": "Lolly",
-      "start": 365.0891157053662,
-      "end": 365.4293673135195
+      "start": 369.2641157053662,
+      "end": 369.60436731351945
     },
     {
       "text": "opens",
-      "start": 365.5142207438206,
-      "end": 366.03714625450135
+      "start": 369.68922074382056,
+      "end": 370.2121462545013
     },
     {
       "text": "the",
-      "start": 366.0980473417548,
-      "end": 366.24620989747706
+      "start": 370.27304734175476,
+      "end": 370.421209897477
     },
     {
       "text": "design",
-      "start": 366.3081814301261,
-      "end": 366.8488921195206
+      "start": 370.4831814301261,
+      "end": 371.02389211952055
     },
     {
       "text": "work",
-      "start": 366.9112508631844,
-      "end": 367.25255478771095
+      "start": 371.0862508631844,
+      "end": 371.4275547877109
     },
     {
       "text": "and",
-      "start": 367.31182122118787,
-      "end": 367.4665374051592
+      "start": 371.4868212211878,
+      "end": 371.64153740515917
     },
     {
       "text": "the",
-      "start": 367.5039228735118,
-      "end": 367.676203738071
+      "start": 371.67892287351174,
+      "end": 371.851203738071
     },
     {
       "text": "open",
-      "start": 367.7706562411359,
-      "end": 368.18963653094283
+      "start": 371.94565624113585,
+      "end": 372.3646365309428
     },
     {
       "text": "formats",
-      "start": 368.282923618031,
-      "end": 368.8142587449032
+      "start": 372.457923618031,
+      "end": 372.98925874490317
     },
     {
       "text": "you",
-      "start": 368.89948400545563,
-      "end": 369.1458044911477
+      "start": 373.0744840054556,
+      "end": 373.32080449114767
     },
     {
       "text": "already",
-      "start": 369.2150341135406,
-      "end": 369.6612244650115
+      "start": 373.39003411354054,
+      "end": 373.83622446501147
     },
     {
       "text": "own.",
-      "start": 369.7300118874923,
-      "end": 370.74381485297016
+      "start": 373.90501188749226,
+      "end": 374.9188148529701
     },
     {
       "text": "Open-source",
-      "start": 371.87654180198973,
-      "end": 372.91386124740643
+      "start": 376.0515418019897,
+      "end": 377.0888612474064
     },
     {
       "text": "design",
-      "start": 372.99667069089065,
-      "end": 373.6222246242365
+      "start": 377.1716706908906,
+      "end": 377.79722462423643
     },
     {
       "text": "files",
-      "start": 373.7209792872972,
-      "end": 374.7876293693983
+      "start": 377.89597928729717,
+      "end": 378.96262936939826
     },
     {
       "text": "Finished",
-      "start": 375.7341147080101,
-      "end": 376.07548999338314
+      "start": 379.91143293362563,
+      "end": 380.2514540422504
     },
     {
       "text": "work",
-      "start": 376.13494483832585,
-      "end": 376.40682346799593
+      "start": 380.31127910424686,
+      "end": 380.583598754125
     },
     {
       "text": "in",
-      "start": 376.44070372062623,
-      "end": 376.5912668185821
+      "start": 380.61925919353564,
+      "end": 380.7710181638156
     },
     {
       "text": "Figma,",
-      "start": 376.69362525807236,
-      "end": 377.2886885989655
+      "start": 380.8728608589053,
+      "end": 381.4629040368441
     },
     {
       "text": "Penpot,",
-      "start": 377.35170341177275,
-      "end": 378.1515794829814
+      "start": 381.5255082375956,
+      "end": 382.25980459284625
     },
     {
       "text": "Illustrator,",
-      "start": 378.2121474920225,
-      "end": 379.04325222822683
+      "start": 382.31978913562364,
+      "end": 383.57167841151687
     },
     {
-      "text": "InDesign,",
-      "start": 379.09825447988703,
-      "end": 380.2347902996205
+      "text": "InDesign",
+      "start": 383.6360953829168,
+      "end": 384.3423919029454
     },
     {
       "text": "or",
-      "start": 380.2945978607227,
-      "end": 380.4647174882204
+      "start": 384.409240849472,
+      "end": 384.57311462460456
     },
     {
       "text": "any",
-      "start": 380.5379765375983,
-      "end": 380.81726093579204
+      "start": 384.65864773451636,
+      "end": 384.9467542096967
     },
     {
       "text": "SVG",
-      "start": 380.9016602379429,
-      "end": 381.65475129062827
+      "start": 385.03262342405554,
+      "end": 385.7776646800373
     },
     {
       "text": "app",
-      "start": 381.72630557296554,
-      "end": 381.94088620923446
+      "start": 385.8438213945489,
+      "end": 386.0648149804899
     },
     {
       "text": "doesn't",
-      "start": 381.9998734759145,
-      "end": 382.2676997137861
+      "start": 386.12477885368077,
+      "end": 386.3903552197773
     },
     {
       "text": "have",
-      "start": 382.3102598637605,
-      "end": 382.5207193688275
+      "start": 386.42909388645637,
+      "end": 386.63847071742333
     },
     {
       "text": "to",
-      "start": 382.6078620507602,
-      "end": 382.79653009203685
+      "start": 386.7258975274092,
+      "end": 386.91868265729556
     },
     {
       "text": "stay",
-      "start": 382.85613151525183,
-      "end": 383.13851197209414
+      "start": 386.978575517383,
+      "end": 387.2626464650243
     },
     {
       "text": "locked",
-      "start": 383.1985707667945,
-      "end": 383.4667901864807
+      "start": 387.32307171270884,
+      "end": 387.60562197098864
     },
     {
       "text": "in",
-      "start": 383.50775247091985,
-      "end": 383.6555649714851
+      "start": 387.644251246435,
+      "end": 387.79461744675496
     },
     {
       "text": "the",
-      "start": 383.7155138095317,
-      "end": 383.9196193633684
+      "start": 387.855069782507,
+      "end": 388.072188851274
     },
     {
       "text": "app",
-      "start": 384.00065530577405,
-      "end": 384.19506610509654
+      "start": 388.1420869514283,
+      "end": 388.34342628869985
     },
     {
       "text": "you",
-      "start": 384.2543506993875,
-      "end": 384.3934912689439
+      "start": 388.4033944274099,
+      "end": 388.54998024058034
     },
     {
       "text": "drew",
-      "start": 384.4535518938645,
-      "end": 384.65141660580804
+      "start": 388.61044246956646,
+      "end": 388.81307277576525
     },
     {
       "text": "it",
-      "start": 384.6888245220536,
-      "end": 384.82677516439924
+      "start": 388.8571402275146,
+      "end": 389.0029294910387
     },
     {
       "text": "in.",
-      "start": 384.88031438727324,
-      "end": 385.7697724339664
+      "start": 389.05834021390837,
+      "end": 389.9696053729733
     },
     {
       "text": "Open",
-      "start": 386.53232482155363,
-      "end": 386.939132245635
+      "start": 390.7323248215536,
+      "end": 391.1391322456349
     },
     {
       "text": "Design,",
-      "start": 386.9995825375476,
-      "end": 387.6922899936248
+      "start": 391.1995825375476,
+      "end": 391.89228999362473
     },
     {
       "text": "click",
-      "start": 387.7552912300651,
-      "end": 388.00491694493076
+      "start": 391.95529123006503,
+      "end": 392.20491694493074
     },
     {
       "text": "Import",
-      "start": 388.0675870613463,
-      "end": 388.5204614141247
+      "start": 392.26758706134626,
+      "end": 392.7204614141247
     },
     {
       "text": "a",
-      "start": 388.57947651315357,
-      "end": 388.75791557166025
+      "start": 392.77947651315355,
+      "end": 392.9579155716602
     },
     {
       "text": "design,",
-      "start": 388.81842100466133,
-      "end": 389.7817375186086
+      "start": 393.01842100466126,
+      "end": 393.98173751860855
     },
     {
       "text": "and",
-      "start": 389.8413860360522,
-      "end": 389.97815844042947
+      "start": 394.04138603605213,
+      "end": 394.1781584404294
     },
     {
       "text": "the",
-      "start": 390.01501065373975,
-      "end": 390.1716772686111
+      "start": 394.21501065373974,
+      "end": 394.37167726861105
     },
     {
       "text": "file",
-      "start": 390.26122250910475,
-      "end": 390.6316803469573
+      "start": 394.4612225091047,
+      "end": 394.8316803469572
     },
     {
       "text": "opens",
-      "start": 390.7066892595043,
-      "end": 391.2896380590243
+      "start": 394.9066892595043,
+      "end": 395.48963805902423
     },
     {
       "text": "as",
-      "start": 391.3778388892555,
-      "end": 391.61339474092034
+      "start": 395.5778388892555,
+      "end": 395.8133947409203
     },
     {
       "text": "a",
-      "start": 391.6723882979157,
-      "end": 391.8397555571436
+      "start": 395.8723882979156,
+      "end": 396.0397555571435
     },
     {
       "text": "living",
-      "start": 391.9006526105806,
-      "end": 392.20510145066424
+      "start": 396.10065261058054,
+      "end": 396.4051014506642
     },
     {
       "text": "layout",
-      "start": 392.2660319925947,
-      "end": 392.7293677201176
+      "start": 396.46603199259465,
+      "end": 396.9293677201175
     },
     {
       "text": "-",
-      "start": 392.772590192626,
-      "end": 392.772590192626
+      "start": 396.97259019262594,
+      "end": 396.97259019262594
     },
     {
       "text": "not",
-      "start": 392.831482382192,
-      "end": 393.1104864874756
+      "start": 397.031482382192,
+      "end": 397.31048648747554
     },
     {
       "text": "a",
-      "start": 393.16972322155885,
-      "end": 393.340953054095
+      "start": 397.36972322155884,
+      "end": 397.540953054095
     },
     {
       "text": "flattened",
-      "start": 393.4172990274749,
-      "end": 393.8451075513178
+      "start": 397.6172990274748,
+      "end": 398.0451075513178
     },
     {
       "text": "picture.",
-      "start": 393.9060523964137,
-      "end": 395.044327007271
+      "start": 398.1060523964137,
+      "end": 399.24432700727095
     },
     {
       "text": "Every",
-      "start": 395.8157116514068,
-      "end": 396.1229867788041
+      "start": 400.0146764703774,
+      "end": 400.32111536390255
     },
     {
       "text": "layer",
-      "start": 396.18426698723346,
-      "end": 396.46616645139784
+      "start": 400.3822268118643,
+      "end": 400.6688595120396
     },
     {
       "text": "becomes",
-      "start": 396.5269436855529,
-      "end": 397.02933555534264
+      "start": 400.72948210978694,
+      "end": 401.2351045581407
     },
     {
       "text": "an",
-      "start": 397.12760696750644,
-      "end": 397.35593265651164
+      "start": 401.33333209668484,
+      "end": 401.57405386283733
     },
     {
       "text": "editable",
-      "start": 397.44536965034723,
-      "end": 397.9959050375229
+      "start": 401.6635968224217,
+      "end": 402.21376913355664
     },
     {
       "text": "box:",
-      "start": 398.0577788509288,
-      "end": 398.9835170209951
+      "start": 402.27542696382477,
+      "end": 403.19644419593226
     },
     {
       "text": "text",
-      "start": 399.05944358881203,
-      "end": 399.3821682218797
+      "start": 403.2746789142739,
+      "end": 403.5982604144606
     },
     {
       "text": "stays",
-      "start": 399.4296182139253,
-      "end": 399.8069971198686
+      "start": 403.6409411160248,
+      "end": 404.0120462154267
     },
     {
       "text": "retypable,",
-      "start": 399.86731208402347,
-      "end": 400.7829593393149
+      "start": 404.07242015871225,
+      "end": 405.09654068494683
     },
     {
       "text": "shapes",
-      "start": 400.8789941238178,
-      "end": 401.2026469041509
+      "start": 405.19372107507075,
+      "end": 405.5147074128577
     },
     {
       "text": "stay",
-      "start": 401.2475100849806,
-      "end": 401.53358274105784
+      "start": 405.5583518252221,
+      "end": 405.8438187766316
     },
     {
       "text": "shapes,",
-      "start": 401.6471424414369,
-      "end": 402.3192047185148
+      "start": 405.9569163281594,
+      "end": 406.7412236682638
     },
     {
       "text": "images",
-      "start": 402.3805323878696,
-      "end": 402.8889300694078
+      "start": 406.80499234425776,
+      "end": 407.31893504455365
     },
     {
       "text": "land",
-      "start": 402.9504058450269,
-      "end": 403.2887881837204
+      "start": 407.3801730046204,
+      "end": 407.72901895227767
     },
     {
       "text": "in",
-      "start": 403.323953371644,
-      "end": 403.4627853866695
+      "start": 407.76594235861234,
+      "end": 407.9076790257461
     },
     {
       "text": "your",
-      "start": 403.52449788576126,
-      "end": 403.7256689222501
+      "start": 407.9696427793301,
+      "end": 408.1725548699949
     },
     {
-      "text": "library,",
-      "start": 403.7868708627119,
-      "end": 404.5699302319703
+      "text": "library",
+      "start": 408.2337507061578,
+      "end": 408.83399384329743
     },
     {
       "text": "and",
-      "start": 404.63069037784413,
-      "end": 404.7932649629364
+      "start": 408.89803326818236,
+      "end": 409.03009085842865
     },
     {
       "text": "complex",
-      "start": 404.85587170569755,
-      "end": 405.41365652762266
+      "start": 409.0921168238884,
+      "end": 409.6508819726717
     },
     {
       "text": "vector",
-      "start": 405.4750554323923,
-      "end": 405.8195380937679
+      "start": 409.7121116904692,
+      "end": 410.05117240911835
     },
     {
       "text": "art",
-      "start": 405.9026331632757,
-      "end": 406.1881941042848
+      "start": 410.1307230885107,
+      "end": 410.4166495946881
     },
     {
       "text": "is",
-      "start": 406.26961764520166,
-      "end": 406.49786497818565
+      "start": 410.4910923778227,
+      "end": 410.71067003846383
     },
     {
       "text": "preserved",
-      "start": 406.55944458668637,
-      "end": 407.116089013857
+      "start": 410.77195651033924,
+      "end": 411.33049854458073
     },
     {
       "text": "faithfully.",
-      "start": 407.1906217156396,
-      "end": 408.4941583115952
+      "start": 411.4013238022003,
+      "end": 412.6942674591633
     },
     {
       "text": "It",
-      "start": 409.24485333579906,
-      "end": 409.4127234272637
+      "start": 413.444853335799,
+      "end": 413.61272342726363
     },
     {
       "text": "arrives",
-      "start": 409.47337973534894,
-      "end": 410.0859578040912
+      "start": 413.6733797353489,
+      "end": 414.2859578040912
     },
     {
       "text": "already",
-      "start": 410.1684986731127,
-      "end": 410.55509088351147
+      "start": 414.36849867311264,
+      "end": 414.7550908835114
     },
     {
       "text": "conformed",
-      "start": 410.61637362825286,
-      "end": 411.2213130786382
+      "start": 414.8163736282528,
+      "end": 415.42131307863815
     },
     {
       "text": "to",
-      "start": 411.3375301554923,
-      "end": 411.54440322288764
+      "start": 415.5375301554923,
+      "end": 415.74440322288757
     },
     {
       "text": "your",
-      "start": 411.6055790285472,
-      "end": 411.80087744261994
+      "start": 415.8055790285472,
+      "end": 416.00087744261987
     },
     {
       "text": "brand",
-      "start": 411.86021278175934,
-      "end": 412.17509355749513
+      "start": 416.06021278175933,
+      "end": 416.3750935574951
     },
     {
       "text": "faces",
-      "start": 412.2403923577393,
-      "end": 412.817313150281
+      "start": 416.4403923577393,
+      "end": 417.0173131502809
     },
     {
       "text": "and",
-      "start": 412.8808091022919,
-      "end": 413.02771938167507
+      "start": 417.0808091022919,
+      "end": 417.227719381675
     },
     {
       "text": "colour",
-      "start": 413.0897790945613,
-      "end": 413.3950856866473
+      "start": 417.28977909456125,
+      "end": 417.5950856866473
     },
     {
       "text": "rules.",
-      "start": 413.4559977442431,
-      "end": 414.54431515773854
+      "start": 417.65599774424305,
+      "end": 418.74431515773847
     },
     {
       "text": "The",
-      "start": 415.3117197846786,
-      "end": 415.47152652602375
+      "start": 419.5117197846786,
+      "end": 419.67152652602374
     },
     {
       "text": "whole",
-      "start": 415.5347771126576,
-      "end": 415.8543788490755
+      "start": 419.7347771126576,
+      "end": 420.0543788490755
     },
     {
       "text": "import",
-      "start": 415.91777379044555,
-      "end": 416.35481009655064
+      "start": 420.11777379044554,
+      "end": 420.5548100965506
     },
     {
       "text": "happens",
-      "start": 416.41594258087116,
-      "end": 416.9203652128542
+      "start": 420.61594258087115,
+      "end": 421.1203652128542
     },
     {
       "text": "on",
-      "start": 416.958874145936,
-      "end": 417.1187686951937
+      "start": 421.158874145936,
+      "end": 421.3187686951936
     },
     {
       "text": "your",
-      "start": 417.17978057432714,
-      "end": 417.35968164214546
+      "start": 421.3797805743271,
+      "end": 421.5596816421454
     },
     {
       "text": "device",
-      "start": 417.414916177685,
-      "end": 418.0858306840325
+      "start": 421.61491617768496,
+      "end": 422.2858306840325
     },
     {
       "text": "-",
-      "start": 418.1418729437242,
-      "end": 418.1418729437242
+      "start": 422.3418729437242,
+      "end": 422.3418729437242
     },
     {
       "text": "the",
-      "start": 418.197724798152,
-      "end": 418.35088036611353
+      "start": 422.397724798152,
+      "end": 422.5508803661135
     },
     {
       "text": "file",
-      "start": 418.4469002839253,
-      "end": 418.84023855277167
+      "start": 422.6469002839253,
+      "end": 423.04023855277165
     },
     {
       "text": "is",
-      "start": 418.8878707735214,
-      "end": 419.04693008454643
+      "start": 423.0878707735214,
+      "end": 423.2469300845464
     },
     {
       "text": "parsed",
-      "start": 419.12708969013266,
-      "end": 419.5398149741134
+      "start": 423.32708969013265,
+      "end": 423.7398149741134
     },
     {
       "text": "in",
-      "start": 419.5771793115177,
-      "end": 419.70133610464154
+      "start": 423.77717931151767,
+      "end": 423.90133610464153
     },
     {
       "text": "your",
-      "start": 419.7620926147912,
-      "end": 419.94571099521755
+      "start": 423.9620926147912,
+      "end": 424.14571099521754
     },
     {
       "text": "browser",
-      "start": 420.00695021232497,
-      "end": 420.75237161030816
+      "start": 424.20695021232495,
+      "end": 424.95237161030815
     },
     {
       "text": "and",
-      "start": 420.8624567517599,
-      "end": 421.0238768211225
+      "start": 425.0624567517599,
+      "end": 425.2238768211225
     },
     {
       "text": "nothing",
-      "start": 421.0868868807804,
-      "end": 421.49031667533893
+      "start": 425.2868868807804,
+      "end": 425.6903166753389
     },
     {
       "text": "is",
-      "start": 421.5476785653526,
-      "end": 421.7180659381948
+      "start": 425.7476785653526,
+      "end": 425.9180659381948
     },
     {
       "text": "uploaded.",
-      "start": 421.78213885734834,
-      "end": 423.0442650548508
+      "start": 425.98213885734833,
+      "end": 427.2442650548508
     },
     {
       "text": "Full",
-      "start": 423.8264124439927,
-      "end": 424.0593989560938
+      "start": 428.0264124439927,
+      "end": 428.2593989560937
     },
     {
       "text": "details,",
-      "start": 424.12267563403384,
-      "end": 424.85026874080876
+      "start": 428.3226756340338,
+      "end": 429.05026874080875
     },
     {
       "text": "and",
-      "start": 424.90806181610964,
-      "end": 425.08561361532963
+      "start": 429.1080618161096,
+      "end": 429.2856136153296
     },
     {
       "text": "exactly",
-      "start": 425.13630570732926,
-      "end": 425.7433013357058
+      "start": 429.33630570732925,
+      "end": 429.94330133570577
     },
     {
       "text": "what",
-      "start": 425.8057355362558,
-      "end": 426.02765147105123
+      "start": 430.00573553625577,
+      "end": 430.2276514710512
     },
     {
       "text": "carries",
-      "start": 426.090387908617,
-      "end": 426.5196882114939
+      "start": 430.290387908617,
+      "end": 430.71968821149386
     },
     {
       "text": "over,",
-      "start": 426.58642213501633,
-      "end": 427.24696059219025
+      "start": 430.7864221350163,
+      "end": 431.44696059219024
     },
     {
       "text": "are",
-      "start": 427.3234819526609,
-      "end": 427.5394528619907
+      "start": 431.5234819526609,
+      "end": 431.7394528619907
     },
     {
       "text": "in",
-      "start": 427.59454793246226,
-      "end": 427.7397823529001
+      "start": 431.79454793246225,
+      "end": 431.93978235290007
     },
     {
       "text": "Import",
-      "start": 427.8025354867947,
-      "end": 428.29999221172466
+      "start": 432.00253548679467,
+      "end": 432.49999221172465
     },
     {
       "text": "a",
-      "start": 428.36294396858875,
-      "end": 428.54087551965245
+      "start": 432.56294396858874,
+      "end": 432.74087551965243
     },
     {
       "text": "design.",
-      "start": 428.6024826842274,
-      "end": 429.8685942742351
+      "start": 432.8024826842274,
+      "end": 434.06859427423507
     },
     {
       "text": "Got",
-      "start": 430.65549716378484,
-      "end": 430.90549533530753
+      "start": 434.85549716378483,
+      "end": 435.1054953353075
     },
     {
       "text": "a",
-      "start": 430.9402674104205,
-      "end": 431.0794507368636
+      "start": 435.1402674104205,
+      "end": 435.27945073686357
     },
     {
       "text": "PowerPoint",
-      "start": 431.17137191703,
-      "end": 432.0454355399723
+      "start": 435.37137191703,
+      "end": 436.2454355399723
     },
     {
       "text": "deck",
-      "start": 432.13879369958056,
-      "end": 432.46556169713267
+      "start": 436.33879369958055,
+      "end": 436.66556169713266
     },
     {
       "text": "instead?",
-      "start": 432.5335626855468,
-      "end": 433.9178460436256
+      "start": 436.7335626855468,
+      "end": 438.1178460436256
     },
     {
       "text": "Drop",
-      "start": 434.70424748897125,
-      "end": 435.19285531701786
+      "start": 438.90424748897124,
+      "end": 439.39285531701785
     },
     {
       "text": "the",
-      "start": 435.296094307601,
-      "end": 435.7451495968714
+      "start": 439.49609430760097,
+      "end": 439.9451495968714
     },
     {
       "text": ".",
-      "start": 435.8750265842069,
-      "end": 436.0502496839436
+      "start": 440.0750265842069,
+      "end": 440.2502496839436
     },
     {
       "text": "pptx",
-      "start": 436.87229044964573,
-      "end": 437.8183892721338
+      "start": 441.0722904496457,
+      "end": 442.01838927213373
     },
     {
       "text": "on",
-      "start": 437.8747464155801,
-      "end": 438.0547611250919
+      "start": 442.0747464155801,
+      "end": 442.2547611250919
     },
     {
       "text": "Deck",
-      "start": 438.1163038767366,
-      "end": 438.33375621188435
+      "start": 442.3163038767366,
+      "end": 442.53375621188434
     },
     {
       "text": "Builder",
-      "start": 438.3943010113245,
-      "end": 438.7033690498029
+      "start": 442.5943010113245,
+      "end": 442.9033690498029
     },
     {
       "text": "to",
-      "start": 438.805738334781,
-      "end": 439.1577221456022
+      "start": 443.005738334781,
+      "end": 443.35772214560217
     },
     {
       "text": "edit",
-      "start": 439.24521653708524,
-      "end": 439.54590513959045
+      "start": 443.44521653708523,
+      "end": 443.74590513959043
     },
     {
       "text": "it",
-      "start": 439.6147204628399,
-      "end": 439.79821656602087
+      "start": 443.8147204628399,
+      "end": 443.99821656602086
     },
     {
       "text": "slide",
-      "start": 439.88202594531487,
-      "end": 440.24574837746644
+      "start": 444.08202594531485,
+      "end": 444.44574837746643
     },
     {
       "text": "by",
-      "start": 440.3008088747372,
-      "end": 440.54681181219144
+      "start": 444.5008088747372,
+      "end": 444.7468118121914
     },
     {
       "text": "slide,",
-      "start": 440.63848960490094,
-      "end": 441.6541169618352
+      "start": 444.83848960490093,
+      "end": 445.8541169618352
     },
     {
       "text": "already",
-      "start": 441.71809318467774,
-      "end": 442.09587591708805
+      "start": 445.91809318467773,
+      "end": 446.29587591708804
     },
     {
       "text": "snapped",
-      "start": 442.16882486892297,
-      "end": 442.54689110717965
+      "start": 446.36882486892296,
+      "end": 446.74689110717964
     },
     {
       "text": "to",
-      "start": 442.6383592595947,
-      "end": 442.82993416920743
+      "start": 446.83835925959465,
+      "end": 447.0299341692074
     },
     {
       "text": "your",
-      "start": 442.8906584128812,
-      "end": 443.087134305935
+      "start": 447.09065841288117,
+      "end": 447.287134305935
     },
     {
       "text": "brand",
-      "start": 443.1480746592422,
-      "end": 443.6252548204193
+      "start": 447.3480746592422,
+      "end": 447.8252548204193
     },
     {
       "text": "-",
-      "start": 443.6834451234219,
-      "end": 443.6834451234219
+      "start": 447.8834451234219,
+      "end": 447.8834451234219
     },
     {
       "text": "or",
-      "start": 443.7396924217942,
-      "end": 443.90152824527325
+      "start": 447.9396924217942,
+      "end": 448.10152824527324
     },
     {
       "text": "run",
-      "start": 443.96442217037895,
-      "end": 444.1836149204539
+      "start": 448.16442217037894,
+      "end": 448.3836149204539
     },
     {
       "text": "Rebrand",
-      "start": 444.239137106487,
-      "end": 444.8452060179267
+      "start": 448.439137106487,
+      "end": 449.0452060179267
     },
     {
       "text": "a",
-      "start": 444.9056128687405,
-      "end": 445.049838762169
+      "start": 449.1056128687405,
+      "end": 449.24983876216896
     },
     {
       "text": "Deck",
-      "start": 445.1111375331288,
-      "end": 445.32928151210393
+      "start": 449.3111375331288,
+      "end": 449.5292815121039
     },
     {
       "text": "to",
-      "start": 445.391572405307,
-      "end": 445.5815749662109
+      "start": 449.591572405307,
+      "end": 449.7815749662109
     },
     {
       "text": "get",
-      "start": 445.6423390837976,
-      "end": 445.85440015203125
+      "start": 449.8423390837976,
+      "end": 450.05440015203123
     },
     {
       "text": "the",
-      "start": 445.91255102287266,
-      "end": 446.0648380497545
+      "start": 450.11255102287265,
+      "end": 450.2648380497545
     },
     {
       "text": "same",
-      "start": 446.1540701824038,
-      "end": 446.453608067955
+      "start": 450.3540701824038,
+      "end": 450.65360806795496
     },
     {
       "text": "deck",
-      "start": 446.5148294335359,
-      "end": 446.731819766045
+      "start": 450.7148294335359,
+      "end": 450.931819766045
     },
     {
       "text": "back",
-      "start": 446.7926071395393,
-      "end": 447.06991770753933
+      "start": 450.99260713953925,
+      "end": 451.2699177075393
     },
     {
       "text": "re-themed,",
-      "start": 447.13301039770755,
-      "end": 448.25335093982653
+      "start": 451.33301039770754,
+      "end": 452.4533509398265
     },
     {
       "text": "charts",
-      "start": 448.32171773967997,
-      "end": 448.7520031043421
+      "start": 452.52171773967996,
+      "end": 452.9520031043421
     },
     {
       "text": "and",
-      "start": 448.83902920403585,
-      "end": 449.0753662864768
+      "start": 453.03902920403584,
+      "end": 453.2753662864768
     },
     {
       "text": "animations",
-      "start": 449.1261801538876,
-      "end": 449.95589879759086
+      "start": 453.3261801538876,
+      "end": 454.15589879759085
     },
     {
       "text": "intact.",
-      "start": 450.02234010013547,
-      "end": 451.29440916988443
+      "start": 454.22234010013545,
+      "end": 455.4944091698844
     },
     {
       "text": "From",
-      "start": 452.429108488033,
-      "end": 452.7815164264166
+      "start": 456.62910848803307,
+      "end": 456.98151642641665
     },
     {
       "text": "a",
-      "start": 452.8391035089783,
-      "end": 452.99942421538435
+      "start": 457.03910350897837,
+      "end": 457.1994242153844
     },
     {
       "text": "one-off",
-      "start": 453.06400980823986,
-      "end": 453.58814100688863
+      "start": 457.2640098082399,
+      "end": 457.7881410068887
     },
     {
       "text": "to",
-      "start": 453.70090235580454,
-      "end": 454.04764744706597
+      "start": 457.9009023558046,
+      "end": 458.247647447066
     },
     {
       "text": "a",
-      "start": 454.1083958279213,
-      "end": 454.2686822073883
+      "start": 458.30839582792134,
+      "end": 458.4686822073883
     },
     {
       "text": "template",
-      "start": 454.3307485508054,
-      "end": 455.37393584128085
+      "start": 458.53074855080547,
+      "end": 459.5739358412809
     },
     {
       "text": "Here's",
-      "start": 456.3428468515367,
-      "end": 456.6934108193903
+      "start": 460.5428468515367,
+      "end": 460.8934108193903
     },
     {
       "text": "the",
-      "start": 456.7520378177955,
-      "end": 456.9055109878779
+      "start": 460.9520378177955,
+      "end": 461.1055109878779
     },
     {
       "text": "payoff:",
-      "start": 456.9842382143925,
-      "end": 457.90019194319206
+      "start": 461.1842382143925,
+      "end": 462.10019194319204
     },
     {
       "text": "an",
-      "start": 457.96953941717743,
-      "end": 458.14081568902395
+      "start": 462.1695394171774,
+      "end": 462.34081568902394
     },
     {
       "text": "imported",
-      "start": 458.1964948533922,
-      "end": 458.77136457613994
+      "start": 462.3964948533922,
+      "end": 462.97136457613993
     },
     {
       "text": "layout",
-      "start": 458.8328527271204,
-      "end": 459.30734412373613
+      "start": 463.03285272712037,
+      "end": 463.5073441237361
     },
     {
       "text": "is",
-      "start": 459.3660031456032,
-      "end": 459.5441854266279
+      "start": 463.5660031456032,
+      "end": 463.7441854266279
     },
     {
       "text": "an",
-      "start": 459.60535427776654,
-      "end": 459.79270639214843
+      "start": 463.8053542777665,
+      "end": 463.9927063921484
     },
     {
       "text": "ordinary",
-      "start": 459.8885166275882,
-      "end": 460.3658315534738
+      "start": 464.0885166275882,
+      "end": 464.5658315534738
     },
     {
       "text": "Design",
-      "start": 460.42627092578914,
-      "end": 460.89308758258716
+      "start": 464.62627092578913,
+      "end": 465.09308758258715
     },
     {
       "text": "session,",
-      "start": 460.95755012938184,
-      "end": 461.5075386569683
+      "start": 465.15755012938183,
+      "end": 465.70753865696827
     },
     {
       "text": "so",
-      "start": 461.5753008784644,
-      "end": 461.78331915789335
+      "start": 465.7753008784644,
+      "end": 465.98331915789333
     },
     {
       "text": "once",
-      "start": 461.8447931049663,
-      "end": 462.1352776602073
+      "start": 466.0447931049663,
+      "end": 466.3352776602073
     },
     {
       "text": "you",
-      "start": 462.1954894466528,
-      "end": 462.33321881993214
+      "start": 466.3954894466528,
+      "end": 466.53321881993213
     },
     {
       "text": "save",
-      "start": 462.4223781286179,
-      "end": 462.72673825823404
+      "start": 466.62237812861787,
+      "end": 466.926738258234
     },
     {
       "text": "it,",
-      "start": 462.777779141326,
-      "end": 463.25718412280924
+      "start": 466.977779141326,
+      "end": 467.4571841228092
     },
     {
       "text": "it",
-      "start": 463.3183805469304,
-      "end": 463.4891461189306
+      "start": 467.5183805469304,
+      "end": 467.6891461189306
     },
     {
       "text": "lives",
-      "start": 463.5507238144948,
-      "end": 463.91321143353804
+      "start": 467.7507238144948,
+      "end": 468.113211433538
     },
     {
       "text": "at",
-      "start": 463.97112134038525,
-      "end": 464.17965731285096
+      "start": 468.17112134038524,
+      "end": 468.37965731285095
     },
     {
       "text": "a",
-      "start": 464.24700329989184,
-      "end": 464.4244620693805
+      "start": 468.44700329989183,
+      "end": 468.6244620693805
     },
     {
       "text": "URL.",
-      "start": 464.4864395849507,
-      "end": 465.84410897050697
+      "start": 468.6864395849507,
+      "end": 470.04410897050695
     },
     {
       "text": "Anyone",
-      "start": 466.59725188741174,
-      "end": 467.00890791540564
+      "start": 470.8047185960697,
+      "end": 471.243684553794
     },
     {
       "text": "with",
-      "start": 467.06246618400263,
-      "end": 467.27971361995895
+      "start": 471.29584676203706,
+      "end": 471.521992054754
     },
     {
       "text": "Lolly",
-      "start": 467.3388156457684,
-      "end": 467.6358778291751
+      "start": 471.58241396579774,
+      "end": 471.8918940567781
     },
     {
       "text": "can",
-      "start": 467.69489890337036,
-      "end": 467.8696770163309
+      "start": 471.95190721685157,
+      "end": 472.127197440747
     },
     {
       "text": "open",
-      "start": 467.93492711636577,
-      "end": 468.2898803701205
+      "start": 472.19309007326484,
+      "end": 472.558826372713
     },
     {
       "text": "that",
-      "start": 468.3413594269057,
-      "end": 468.54175764392085
+      "start": 472.6120366525787,
+      "end": 472.8175373992946
     },
     {
       "text": "URL,",
-      "start": 468.62516606944354,
-      "end": 469.52136670641323
+      "start": 472.90486457025963,
+      "end": 473.85508544249194
     },
     {
       "text": "change",
-      "start": 469.5836089302495,
-      "end": 469.9648112365176
+      "start": 473.9187948240963,
+      "end": 474.3129793079109
     },
     {
       "text": "the",
-      "start": 470.02010853082595,
-      "end": 470.1452634367047
+      "start": 474.3723809892329,
+      "end": 474.5170208851301
     },
     {
       "text": "words,",
-      "start": 470.20664509535453,
-      "end": 470.9159654347444
+      "start": 474.57974956471764,
+      "end": 475.4062740522164
     },
     {
       "text": "swap",
-      "start": 470.99398207820167,
-      "end": 471.2586939861728
+      "start": 475.4911566721882,
+      "end": 475.76428915868104
     },
     {
       "text": "an",
-      "start": 471.30440487561015,
-      "end": 471.4780698376697
+      "start": 475.8264230887286,
+      "end": 476.007512715246
     },
     {
-      "text": "image,",
-      "start": 471.53680407370643,
-      "end": 472.19209261389926
+      "text": "image",
+      "start": 476.0713724477001,
+      "end": 476.484286240718
     },
     {
       "text": "and",
-      "start": 472.24985743646647,
-      "end": 472.39737324662656
+      "start": 476.54112884558253,
+      "end": 476.67780270539834
     },
     {
       "text": "render",
-      "start": 472.45616916410836,
-      "end": 472.7743216771362
+      "start": 476.7376838485539,
+      "end": 477.069599711824
     },
     {
       "text": "their",
-      "start": 472.8330822039944,
-      "end": 473.040082603533
+      "start": 477.12939273863003,
+      "end": 477.33995817241225
     },
     {
       "text": "own",
-      "start": 473.09900737195886,
-      "end": 473.3252107768056
+      "start": 477.3998794049249,
+      "end": 477.6277277560008
     },
     {
       "text": "version",
-      "start": 473.38415561550704,
-      "end": 473.8405347170207
+      "start": 477.6876499054966,
+      "end": 478.156250299974
     },
     {
       "text": "-",
-      "start": 473.87737256127514,
-      "end": 473.87737256127514
+      "start": 478.19380603262744,
+      "end": 478.19380603262744
     },
     {
       "text": "no",
-      "start": 473.9351920671733,
-      "end": 474.13864328751714
+      "start": 478.25260381750246,
+      "end": 478.4593299517266
     },
     {
       "text": "design",
-      "start": 474.197360377611,
-      "end": 474.64733831770957
+      "start": 478.51911314961944,
+      "end": 478.98113589500974
     },
     {
       "text": "app,",
-      "start": 474.7059160089773,
-      "end": 475.12017025585556
+      "start": 479.04084739055133,
+      "end": 479.6033192498187
     },
     {
       "text": "and",
-      "start": 475.1779900153086,
-      "end": 475.32762279723335
+      "start": 479.66195961734263,
+      "end": 479.81021876836314
     },
     {
       "text": "the",
-      "start": 475.3716407093388,
-      "end": 475.51958941370714
+      "start": 479.85370423273423,
+      "end": 480.00402066410794
     },
     {
       "text": "locked",
-      "start": 475.5786479069648,
-      "end": 475.83865517780356
+      "start": 480.06448949603333,
+      "end": 480.3471240370234
     },
     {
       "text": "parts",
-      "start": 475.897815977629,
-      "end": 476.239601536004
+      "start": 480.40730158351994,
+      "end": 480.7575548660508
     },
     {
       "text": "stay",
-      "start": 476.283631235593,
-      "end": 476.5605604280023
+      "start": 480.8060549186869,
+      "end": 481.08790482011995
     },
     {
       "text": "locked.",
-      "start": 476.61954298439747,
-      "end": 477.62036106835706
+      "start": 481.1478861551469,
+      "end": 482.1698574628834
     },
     {
       "text": "A",
-      "start": 478.4068026794419,
-      "end": 478.6109054944777
+      "start": 482.95680267944186,
+      "end": 483.1609054944777
     },
     {
       "text": "once-off",
-      "start": 478.7114299862721,
-      "end": 479.4189576224786
+      "start": 483.2614299862721,
+      "end": 483.9689576224786
     },
     {
       "text": "design",
-      "start": 479.4845013597638,
-      "end": 480.124906293835
+      "start": 484.03450135976374,
+      "end": 484.67490629383497
     },
     {
       "text": "becomes",
-      "start": 480.18948421957333,
-      "end": 480.83594524132286
+      "start": 484.73948421957334,
+      "end": 485.3859452413229
     },
     {
       "text": "a",
-      "start": 480.93159257343495,
-      "end": 481.13066811753583
+      "start": 485.48159257343497,
+      "end": 485.68066811753584
     },
     {
       "text": "reusable",
-      "start": 481.22688923093915,
-      "end": 481.93420723019966
+      "start": 485.77688923093916,
+      "end": 486.4842072301996
     },
     {
       "text": "tool.",
-      "start": 482.0320999081333,
-      "end": 483.1421965352241
+      "start": 486.58209990813333,
+      "end": 487.6921965352241
     },
     {
       "text": "That's",
-      "start": 483.91378645885055,
-      "end": 484.22145604302113
+      "start": 488.46378645885056,
+      "end": 488.77145604302115
     },
     {
       "text": "the",
-      "start": 484.2821054782231,
-      "end": 484.4488337361727
+      "start": 488.83210547822307,
+      "end": 488.9988337361727
     },
     {
       "text": "whole",
-      "start": 484.5357043025581,
-      "end": 484.85768593924183
+      "start": 489.08570430255804,
+      "end": 489.40768593924184
     },
     {
       "text": "idea,",
-      "start": 484.95067486780965,
-      "end": 485.7522730855454
+      "start": 489.50067486780966,
+      "end": 490.3022730855454
     },
     {
       "text": "reached",
-      "start": 485.83095271211306,
-      "end": 486.2055117238798
+      "start": 490.38095271211307,
+      "end": 490.7555117238798
     },
     {
       "text": "without",
-      "start": 486.2495644018516,
-      "end": 486.6433983779947
+      "start": 490.7995644018516,
+      "end": 491.1933983779947
     },
     {
       "text": "writing",
-      "start": 486.7047386117425,
-      "end": 487.1818961812843
+      "start": 491.25473861174254,
+      "end": 491.7318961812843
     },
     {
       "text": "a",
-      "start": 487.2435581986407,
-      "end": 487.40760882772696
+      "start": 491.79355819864065,
+      "end": 491.957608827727
     },
     {
       "text": "line",
-      "start": 487.46908844232956,
-      "end": 487.842812651368
+      "start": 492.0190884423296,
+      "end": 492.39281265136793
     },
     {
       "text": "of",
-      "start": 487.88049527319686,
-      "end": 488.01509769422967
+      "start": 492.43049527319687,
+      "end": 492.5650976942297
     },
     {
       "text": "configuration.",
-      "start": 488.0766082777893,
-      "end": 489.7941527054665
+      "start": 492.6266082777893,
+      "end": 494.34415270546646
     },
     {
       "text": "Open",
-      "start": 490.9323722751858,
-      "end": 491.41679637066045
+      "start": 495.4823722751858,
+      "end": 495.96679637066046
     },
     {
       "text": "data",
-      "start": 491.48219983079855,
-      "end": 492.0544570105768
+      "start": 496.03219983079856,
+      "end": 496.6044570105768
     },
     {
       "text": "and",
-      "start": 492.181139081919,
-      "end": 492.4916208532123
+      "start": 496.731139081919,
+      "end": 497.0416208532123
     },
     {
       "text": "open",
-      "start": 492.5838972605078,
-      "end": 493.035112541096
+      "start": 497.1338972605078,
+      "end": 497.585112541096
     },
     {
       "text": "tools",
-      "start": 493.11602061946,
-      "end": 494.1462946689213
+      "start": 497.66602061946,
+      "end": 498.6962946689213
     },
     {
       "text": "The",
-      "start": 495.08646485085785,
-      "end": 495.2402486485909
+      "start": 499.63646485085786,
+      "end": 499.79024864859093
     },
     {
       "text": "community",
-      "start": 495.3006792122451,
-      "end": 495.8767326853845
+      "start": 499.8506792122451,
+      "end": 500.42673268538454
     },
     {
       "text": "tool",
-      "start": 495.9606689601296,
-      "end": 496.30366125309223
+      "start": 500.51066896012964,
+      "end": 500.85366125309224
     },
     {
       "text": "set",
-      "start": 496.3960139120953,
-      "end": 496.614167986867
+      "start": 500.94601391209534,
+      "end": 501.164167986867
     },
     {
       "text": "is",
-      "start": 496.65256839319215,
-      "end": 496.8123921196739
+      "start": 501.20256839319217,
+      "end": 501.3623921196739
     },
     {
       "text": "open",
-      "start": 496.89240862492284,
-      "end": 497.2841863201088
+      "start": 501.44240862492285,
+      "end": 501.8341863201088
     },
     {
       "text": "source",
-      "start": 497.38628247350323,
-      "end": 497.796641347568
+      "start": 501.93628247350324,
+      "end": 502.34664134756804
     },
     {
       "text": "and",
-      "start": 497.8411692945291,
-      "end": 497.97217867917055
+      "start": 502.3911692945291,
+      "end": 502.52217867917057
     },
     {
       "text": "brand-agnostic",
-      "start": 498.03264311285,
-      "end": 498.93409486201955
+      "start": 502.58264311285,
+      "end": 503.48409486201956
     },
     {
       "text": "-",
-      "start": 498.9828402438914,
-      "end": 498.9828402438914
+      "start": 503.5328402438914,
+      "end": 503.5328402438914
     },
     {
       "text": "QR",
-      "start": 499.0453055913932,
-      "end": 499.47501275775505
+      "start": 503.5953055913932,
+      "end": 504.02501275775506
     },
     {
       "text": "codes,",
-      "start": 499.54887292477673,
-      "end": 500.50290196845157
+      "start": 504.09887292477674,
+      "end": 505.0529019684516
     },
     {
       "text": "street",
-      "start": 500.5856219081052,
-      "end": 500.9318461629223
+      "start": 505.13562190810524,
+      "end": 505.4818461629223
     },
     {
       "text": "maps,",
-      "start": 500.9921579336303,
-      "end": 501.6609778985726
+      "start": 505.54215793363034,
+      "end": 506.2109778985726
     },
     {
       "text": "filters,",
-      "start": 501.7425965839815,
-      "end": 502.4089108933324
+      "start": 506.2925965839815,
+      "end": 506.9589108933324
     },
     {
       "text": "privacy",
-      "start": 502.4697548891792,
-      "end": 502.91773836960755
+      "start": 507.01975488917924,
+      "end": 507.46773836960756
     },
     {
       "text": "utilities",
-      "start": 502.9779532971749,
-      "end": 504.0162231028567
+      "start": 507.5279532971749,
+      "end": 508.5662231028567
     },
     {
       "text": "-",
-      "start": 504.09743662759894,
-      "end": 504.09743662759894
+      "start": 508.64743662759895,
+      "end": 508.64743662759895
     },
     {
       "text": "and",
-      "start": 504.15957891293124,
-      "end": 504.3630501588149
+      "start": 508.70957891293125,
+      "end": 508.9130501588149
     },
     {
       "text": "it",
-      "start": 504.43762241487406,
-      "end": 504.61497310705124
+      "start": 508.98762241487407,
+      "end": 509.16497310705125
     },
     {
       "text": "renders",
-      "start": 504.67525826477316,
-      "end": 505.1688081087489
+      "start": 509.2252582647732,
+      "end": 509.71880810874893
     },
     {
       "text": "against",
-      "start": 505.24191614908915,
-      "end": 505.63042176407896
+      "start": 509.79191614908916,
+      "end": 510.18042176407903
     },
     {
       "text": "your",
-      "start": 505.6906565663651,
-      "end": 505.88558775859093
+      "start": 510.2406565663651,
+      "end": 510.43558775859094
     },
     {
       "text": "brand",
-      "start": 505.9459154959379,
-      "end": 506.2885458073283
+      "start": 510.49591549593794,
+      "end": 510.83854580732833
     },
     {
       "text": "the",
-      "start": 506.34603901667197,
-      "end": 506.48954533969754
+      "start": 510.896039016672,
+      "end": 511.03954533969755
     },
     {
       "text": "moment",
-      "start": 506.5498863057218,
-      "end": 506.96587509158945
+      "start": 511.09988630572184,
+      "end": 511.51587509158946
     },
     {
       "text": "you",
-      "start": 507.0390446928334,
-      "end": 507.19933172275677
+      "start": 511.5890446928334,
+      "end": 511.7493317227568
     },
     {
       "text": "activate",
-      "start": 507.2789032544961,
-      "end": 507.84102010278576
+      "start": 511.8289032544961,
+      "end": 512.3910201027858
     },
     {
       "text": "it.",
-      "start": 507.9028852314765,
-      "end": 508.81966938082246
+      "start": 512.4528852314764,
+      "end": 513.3696693808225
     },
     {
       "text": "Feed",
-      "start": 509.5987205271431,
-      "end": 509.8613759237218
+      "start": 514.1487205271432,
+      "end": 514.4113759237218
     },
     {
       "text": "tools",
-      "start": 509.92241586529485,
-      "end": 510.3045236783714
+      "start": 514.4724158652948,
+      "end": 514.8545236783714
     },
     {
       "text": "your",
-      "start": 510.3761630020125,
-      "end": 510.5920898428797
+      "start": 514.9261630020126,
+      "end": 515.1420898428797
     },
     {
       "text": "own",
-      "start": 510.6672863535631,
-      "end": 510.9488368944444
+      "start": 515.2172863535632,
+      "end": 515.4988368944445
     },
     {
       "text": "open",
-      "start": 511.0256022001937,
-      "end": 511.4067174396741
+      "start": 515.5756022001938,
+      "end": 515.9567174396741
     },
     {
       "text": "data",
-      "start": 511.46723190587966,
-      "end": 511.8421320370551
+      "start": 516.0172319058796,
+      "end": 516.3921320370551
     },
     {
       "text": "too:",
-      "start": 511.93972644493647,
-      "end": 512.6195154191952
+      "start": 516.4897264449365,
+      "end": 517.1695154191951
     },
     {
       "text": "paste",
-      "start": 512.6826948437885,
-      "end": 513.0248004657193
+      "start": 517.2326948437884,
+      "end": 517.5748004657192
     },
     {
       "text": "or",
-      "start": 513.063888702644,
-      "end": 513.1956439634985
+      "start": 517.613888702644,
+      "end": 517.7456439634985
     },
     {
       "text": "drop",
-      "start": 513.2569264642555,
-      "end": 513.5409141014733
+      "start": 517.8069264642555,
+      "end": 518.0909141014732
     },
     {
       "text": "a",
-      "start": 513.6147192372381,
-      "end": 513.7860110888249
+      "start": 518.1647192372382,
+      "end": 518.336011088825
     },
     {
       "text": "CSV",
-      "start": 513.8878208881597,
-      "end": 514.6062007319161
+      "start": 518.4378208881598,
+      "end": 519.1562007319161
     },
     {
       "text": "or",
-      "start": 514.6568519821918,
-      "end": 514.7828993118454
+      "start": 519.2068519821918,
+      "end": 519.3328993118454
     },
     {
       "text": "JSON",
-      "start": 514.8439930357113,
-      "end": 515.4187586954575
+      "start": 519.3939930357113,
+      "end": 519.9687586954576
     },
     {
       "text": "table",
-      "start": 515.4797827086182,
-      "end": 516.0725515331656
+      "start": 520.0297827086183,
+      "end": 520.6225515331655
     },
     {
       "text": "and",
-      "start": 516.176685721848,
-      "end": 516.3664179960414
+      "start": 520.726685721848,
+      "end": 520.9164179960414
     },
     {
       "text": "a",
-      "start": 516.4256894029234,
-      "end": 516.5986665604946
+      "start": 520.9756894029233,
+      "end": 521.1486665604946
     },
     {
       "text": "tool's",
-      "start": 516.6780501634804,
-      "end": 517.066431267893
+      "start": 521.2280501634805,
+      "end": 521.616431267893
     },
     {
       "text": "repeating",
-      "start": 517.1236902366322,
-      "end": 517.6778442990634
+      "start": 521.6736902366323,
+      "end": 522.2278442990633
     },
     {
       "text": "fields",
-      "start": 517.7717738973741,
-      "end": 518.227246361009
+      "start": 522.3217738973741,
+      "end": 522.7772463610089
     },
     {
       "text": "fill",
-      "start": 518.3060817461688,
-      "end": 518.4993874545011
+      "start": 522.8560817461689,
+      "end": 523.049387454501
     },
     {
       "text": "from",
-      "start": 518.5847863479441,
-      "end": 518.8569379319384
+      "start": 523.1347863479441,
+      "end": 523.4069379319384
     },
     {
       "text": "it,",
-      "start": 518.9278203228245,
-      "end": 519.4531239137206
+      "start": 523.4778203228245,
+      "end": 524.0031239137205
     },
     {
       "text": "one",
-      "start": 519.517977409234,
-      "end": 519.7720240754812
+      "start": 524.067977409234,
+      "end": 524.3220240754812
     },
     {
       "text": "finished",
-      "start": 519.8649878001318,
-      "end": 520.2598959437743
+      "start": 524.4149878001317,
+      "end": 524.8098959437742
     },
     {
       "text": "asset",
-      "start": 520.3432207134153,
-      "end": 520.7432636290539
+      "start": 524.8932207134154,
+      "end": 525.2932636290539
     },
     {
       "text": "per",
-      "start": 520.8066168465897,
-      "end": 521.0688895527776
+      "start": 525.3566168465898,
+      "end": 525.6188895527777
     },
     {
       "text": "row.",
-      "start": 521.1294021126727,
-      "end": 522.1445574520747
+      "start": 525.6794021126726,
+      "end": 526.6945574520747
     },
     {
       "text": "3.",
-      "start": 523.2806563329801,
-      "end": 524.3634986993
+      "start": 527.8306563329801,
+      "end": 528.9134986992999
     },
     {
       "text": "Make",
-      "start": 525.182031273435,
-      "end": 525.4413752481728
+      "start": 529.7320312734349,
+      "end": 529.9913752481727
     },
     {
       "text": "something,",
-      "start": 525.5045512980882,
-      "end": 526.1049333535203
+      "start": 530.0545512980882,
+      "end": 530.6549333535203
     },
     {
       "text": "then",
-      "start": 526.1488163014234,
-      "end": 526.3588624810236
+      "start": 530.6988163014233,
+      "end": 530.9088624810236
     },
     {
       "text": "share",
-      "start": 526.4776418920603,
-      "end": 526.8300734026831
+      "start": 531.0276418920603,
+      "end": 531.380073402683
     },
     {
       "text": "or",
-      "start": 526.9192428364157,
-      "end": 527.1279249967246
+      "start": 531.4692428364157,
+      "end": 531.6779249967245
     },
     {
       "text": "automate",
-      "start": 527.2252580226486,
-      "end": 527.8263461357718
+      "start": 531.7752580226486,
+      "end": 532.3763461357718
     },
     {
       "text": "it",
-      "start": 527.9003936825169,
-      "end": 528.6063197088959
+      "start": 532.4503936825168,
+      "end": 533.1563197088958
     },
     {
       "text": "With",
-      "start": 529.557844499457,
-      "end": 529.7933214784473
+      "start": 534.1078444994571,
+      "end": 534.3433214784474
     },
     {
       "text": "a",
-      "start": 529.8442910115149,
-      "end": 529.9990664767039
+      "start": 534.394291011515,
+      "end": 534.549066476704
     },
     {
       "text": "brand",
-      "start": 530.0625405396584,
-      "end": 530.4709245857741
+      "start": 534.6125405396584,
+      "end": 535.0209245857742
     },
     {
       "text": "active",
-      "start": 530.5733526380794,
-      "end": 531.0649889346331
+      "start": 535.1233526380795,
+      "end": 535.6149889346332
     },
     {
       "text": "and",
-      "start": 531.1278372437151,
-      "end": 531.3028328626342
+      "start": 535.6778372437152,
+      "end": 535.8528328626343
     },
     {
       "text": "your",
-      "start": 531.3638786780009,
-      "end": 531.549684312668
+      "start": 535.913878678001,
+      "end": 536.099684312668
     },
     {
       "text": "material",
-      "start": 531.5917426892732,
-      "end": 532.2301211702331
+      "start": 536.1417426892733,
+      "end": 536.7801211702332
     },
     {
       "text": "in",
-      "start": 532.2720484035291,
-      "end": 532.4212803415453
+      "start": 536.8220484035292,
+      "end": 536.9712803415454
     },
     {
       "text": "hand,",
-      "start": 532.4831302084187,
-      "end": 533.2682203705846
+      "start": 537.0331302084188,
+      "end": 537.8182203705846
     },
     {
       "text": "every",
-      "start": 533.3400880202286,
-      "end": 533.6468795738323
+      "start": 537.8900880202286,
+      "end": 538.1968795738323
     },
     {
       "text": "tool",
-      "start": 533.7367142746709,
-      "end": 534.0716644194553
+      "start": 538.286714274671,
+      "end": 538.6216644194553
     },
     {
       "text": "produces",
-      "start": 534.1329639022414,
-      "end": 534.7953635950774
+      "start": 538.6829639022415,
+      "end": 539.3453635950775
     },
     {
       "text": "a",
-      "start": 534.8600272477862,
-      "end": 535.0368495730663
+      "start": 539.4100272477863,
+      "end": 539.5868495730664
     },
     {
       "text": "finished",
-      "start": 535.1165852427631,
-      "end": 535.4980770772142
+      "start": 539.6665852427632,
+      "end": 540.0480770772143
     },
     {
       "text": "file:",
-      "start": 535.5627047688703,
-      "end": 536.6692503956867
+      "start": 540.1127047688703,
+      "end": 541.2192503956868
     },
     {
       "text": "Render",
-      "start": 537.4395091094984,
-      "end": 537.7779459433539
+      "start": 541.9870856601428,
+      "end": 542.3297020728467
     },
     {
       "text": "any",
-      "start": 537.8416159822502,
-      "end": 538.0373035123434
+      "start": 542.391800832569,
+      "end": 542.585326304764
     },
     {
       "text": "tool",
-      "start": 538.1033072812322,
-      "end": 538.3940874521569
+      "start": 542.6516550297065,
+      "end": 542.9488174674292
     },
     {
       "text": "to",
-      "start": 538.4828961857343,
-      "end": 538.7189902048701
+      "start": 543.0378024944952,
+      "end": 543.2716719904013
     },
     {
       "text": "SVG,",
-      "start": 538.8015258295258,
-      "end": 539.8125082007801
+      "start": 543.3502435767377,
+      "end": 544.3854192773791
     },
     {
       "text": "PDF,",
-      "start": 539.8770339996655,
-      "end": 540.7405868621153
+      "start": 544.4491945719784,
+      "end": 545.3291029390703
     },
     {
       "text": "PNG,",
-      "start": 540.8107476207357,
-      "end": 541.7057079137918
+      "start": 545.3988471538845,
+      "end": 546.2991439660751
     },
     {
       "text": "JPG,",
-      "start": 541.766938003414,
-      "end": 542.6680580642915
+      "start": 546.3601602994266,
+      "end": 547.2491962169958
     },
     {
       "text": "WebP,",
-      "start": 542.7234807976466,
-      "end": 543.2495021478067
+      "start": 547.3050665782853,
+      "end": 547.8640050556169
     },
     {
-      "text": "video,",
-      "start": 543.2989082376286,
-      "end": 544.1182516598869
+      "text": "video",
+      "start": 547.9179370951146,
+      "end": 548.3352291138112
     },
     {
       "text": "and",
-      "start": 544.1781612815894,
-      "end": 544.3443027561029
+      "start": 548.3944336772267,
+      "end": 548.5721116783347
     },
     {
       "text": "more",
-      "start": 544.4050594717257,
-      "end": 544.6240989906712
+      "start": 548.632929776492,
+      "end": 548.8962705412331
     },
     {
       "text": "-",
-      "start": 544.6631992611398,
-      "end": 544.6631992611398
+      "start": 548.9459631816967,
+      "end": 548.9459631816967
     },
     {
       "text": "at",
-      "start": 544.7008407034544,
-      "end": 544.852002047983
+      "start": 548.9886171847813,
+      "end": 549.1412439033975
     },
     {
       "text": "true",
-      "start": 544.912099303198,
-      "end": 545.1107017921569
+      "start": 549.20084180397,
+      "end": 549.3993732450831
     },
     {
       "text": "print",
-      "start": 545.170684550225,
-      "end": 545.4115483808663
+      "start": 549.4590961166796,
+      "end": 549.6977508535723
     },
     {
       "text": "sizes",
-      "start": 545.4874959666482,
-      "end": 546.0394762879808
+      "start": 549.7726031004808,
+      "end": 550.3113524284302
     },
     {
       "text": "and",
-      "start": 546.1047622346583,
-      "end": 546.2629637721808
+      "start": 550.3699273032469,
+      "end": 550.528682884745
     },
     {
       "text": "physical",
-      "start": 546.3372041424749,
-      "end": 546.739485435554
+      "start": 550.6100457199695,
+      "end": 551.0100986463931
     },
     {
       "text": "units",
-      "start": 546.7991742551944,
-      "end": 547.1870741762549
+      "start": 551.0695515425924,
+      "end": 551.4558200718166
     },
     {
       "text": "when",
-      "start": 547.2353840312513,
-      "end": 547.3781441333459
+      "start": 551.5065322749903,
+      "end": 551.6492140790663
     },
     {
       "text": "you",
-      "start": 547.4377804541947,
-      "end": 547.5658861688606
+      "start": 551.7084998619903,
+      "end": 551.8396860832883
     },
     {
       "text": "need",
-      "start": 547.6246721988205,
-      "end": 547.8623066144808
+      "start": 551.8979389858455,
+      "end": 552.1363762929453
     },
     {
       "text": "them.",
-      "start": 547.9210968975506,
-      "end": 548.8200012051406
+      "start": 552.1948623511619,
+      "end": 553.0951145446538
     },
     {
       "text": "See",
-      "start": 549.6104730460319,
-      "end": 549.8435108137727
+      "start": 553.885473046032,
+      "end": 554.1185108137728
     },
     {
       "text": "Exporting",
-      "start": 549.9206994829326,
-      "end": 550.7231561371037
+      "start": 554.1956994829327,
+      "end": 554.9981561371038
     },
     {
       "text": "&",
-      "start": 550.8227483711322,
-      "end": 551.1109163147105
+      "start": 555.0977483711323,
+      "end": 555.3859163147106
     },
     {
       "text": "formats.",
-      "start": 551.2166933430755,
-      "end": 552.4689395945106
+      "start": 555.4916933430754,
+      "end": 556.7439395945106
     },
     {
       "text": "Share",
-      "start": 553.2744320390142,
-      "end": 553.6790000149306
+      "start": 557.5494320390142,
+      "end": 557.9540000149306
     },
     {
       "text": "a",
-      "start": 553.7437757913399,
-      "end": 553.9240711032087
+      "start": 558.0187757913399,
+      "end": 558.1990711032087
     },
     {
       "text": "link.",
-      "start": 554.0036419028983,
-      "end": 554.9936600828216
+      "start": 558.2786419028982,
+      "end": 559.2686600828216
     },
     {
       "text": "Every",
-      "start": 555.7520544643316,
-      "end": 556.0534958602078
+      "start": 560.0270544643316,
+      "end": 560.3284958602078
     },
     {
       "text": "tool",
-      "start": 556.1414904760361,
-      "end": 556.4302424154914
+      "start": 560.4164904760361,
+      "end": 560.7052424154914
     },
     {
       "text": "state",
-      "start": 556.4903654323743,
-      "end": 556.8826421522472
+      "start": 560.7653654323743,
+      "end": 561.1576421522471
     },
     {
       "text": "is",
-      "start": 556.9416144954655,
-      "end": 557.1270977184192
+      "start": 561.2166144954655,
+      "end": 561.4020977184192
     },
     {
       "text": "a",
-      "start": 557.1933476152791,
-      "end": 557.3726656030426
+      "start": 561.4683476152791,
+      "end": 561.6476656030426
     },
     {
       "text": "URL,",
-      "start": 557.4457017431682,
-      "end": 558.4155000005402
+      "start": 561.7207017431682,
+      "end": 562.6905000005402
     },
     {
       "text": "so",
-      "start": 558.4975037978575,
-      "end": 558.7396314223711
+      "start": 562.7725037978574,
+      "end": 563.014631422371
     },
     {
       "text": "a",
-      "start": 558.8109591731879,
-      "end": 558.9908655791786
+      "start": 563.0859591731879,
+      "end": 563.2658655791786
     },
     {
       "text": "finished",
-      "start": 559.0795166986286,
-      "end": 559.4488075608454
+      "start": 563.3545166986286,
+      "end": 563.7238075608453
     },
     {
       "text": "asset",
-      "start": 559.534579801037,
-      "end": 560.0186529519852
+      "start": 563.809579801037,
+      "end": 564.2936529519852
     },
     {
       "text": "is",
-      "start": 560.0776365785179,
-      "end": 560.2559368585072
+      "start": 564.3526365785178,
+      "end": 564.5309368585072
     },
     {
       "text": "reproducible",
-      "start": 560.315584882954,
-      "end": 561.1796819403309
+      "start": 564.590584882954,
+      "end": 565.4546819403308
     },
     {
       "text": "and",
-      "start": 561.2614260833252,
-      "end": 561.4151300527566
+      "start": 565.5364260833252,
+      "end": 565.6901300527566
     },
     {
       "text": "parameter-addressable",
-      "start": 561.4746099034592,
-      "end": 562.6878042375936
+      "start": 565.7496099034591,
+      "end": 566.9628042375936
     },
     {
       "text": "-",
-      "start": 562.735917763031,
-      "end": 562.735917763031
+      "start": 567.010917763031,
+      "end": 567.010917763031
     },
     {
       "text": "commit",
-      "start": 562.7963081156366,
-      "end": 563.1110642683868
+      "start": 567.0713081156366,
+      "end": 567.3860642683868
     },
     {
       "text": "the",
-      "start": 563.1713771165331,
-      "end": 563.3288911407355
+      "start": 567.4463771165331,
+      "end": 567.6038911407355
     },
     {
       "text": "link,",
-      "start": 563.3891530557362,
-      "end": 564.0893248878241
+      "start": 567.6641530557362,
+      "end": 568.3643248878241
     },
     {
       "text": "regenerate",
-      "start": 564.1533035818135,
-      "end": 564.9660160199277
+      "start": 568.4283035818135,
+      "end": 569.2410160199277
     },
     {
       "text": "on",
-      "start": 565.031275062266,
-      "end": 565.2073806369191
+      "start": 569.306275062266,
+      "end": 569.4823806369191
     },
     {
       "text": "demand.",
-      "start": 565.2670728337291,
-      "end": 566.4947543825064
+      "start": 569.5420728337291,
+      "end": 570.7697543825063
     },
     {
       "text": "Do",
-      "start": 567.2832717694919,
-      "end": 567.6187981920582
+      "start": 571.5582717694919,
+      "end": 571.8937981920582
     },
     {
       "text": "it",
-      "start": 567.7167554256939,
-      "end": 568.0077733887837
+      "start": 571.9917554256939,
+      "end": 572.2827733887837
     },
     {
       "text": "in",
-      "start": 568.0743124614197,
-      "end": 568.2994273444681
+      "start": 572.3493124614197,
+      "end": 572.5744273444681
     },
     {
       "text": "bulk.",
-      "start": 568.4005219442788,
-      "end": 569.4431654315989
+      "start": 572.6755219442788,
+      "end": 573.7181654315989
     },
     {
       "text": "Drive",
-      "start": 570.2172881921107,
-      "end": 570.6584752520587
+      "start": 574.4922881921107,
+      "end": 574.9334752520587
     },
     {
       "text": "a",
-      "start": 570.6947755629033,
-      "end": 570.815574156902
+      "start": 574.9697755629032,
+      "end": 575.090574156902
     },
     {
       "text": "template",
-      "start": 570.8784593356685,
-      "end": 571.4270675335822
+      "start": 575.1534593356685,
+      "end": 575.7020675335822
     },
     {
       "text": "from",
-      "start": 571.5175358846867,
-      "end": 571.8847722092178
+      "start": 575.7925358846867,
+      "end": 576.1597722092177
     },
     {
       "text": "a",
-      "start": 571.9413145194618,
-      "end": 572.074263393284
+      "start": 576.2163145194618,
+      "end": 576.349263393284
     },
     {
       "text": "spreadsheet",
-      "start": 572.1403019870316,
-      "end": 572.8143220806148
+      "start": 576.4153019870316,
+      "end": 577.0893220806148
     },
     {
       "text": "in",
-      "start": 572.845877842437,
-      "end": 572.9430227554695
+      "start": 577.1208778424368,
+      "end": 577.2180227554695
     },
     {
       "text": "the",
-      "start": 572.9767716662813,
-      "end": 573.1060598387639
+      "start": 577.2517716662812,
+      "end": 577.3810598387639
     },
     {
       "text": "batch",
-      "start": 573.1673007069953,
-      "end": 573.5024604791344
+      "start": 577.4423007069953,
+      "end": 577.7774604791343
     },
     {
       "text": "grid:",
-      "start": 573.5638614712433,
-      "end": 574.2185482741419
+      "start": 577.8388614712433,
+      "end": 578.4935482741419
     },
     {
       "text": "one",
-      "start": 574.2911486323055,
-      "end": 574.5829037538492
+      "start": 578.5661486323055,
+      "end": 578.8579037538492
     },
     {
       "text": "finished",
-      "start": 574.6821163982867,
-      "end": 575.0802421665702
+      "start": 578.9571163982866,
+      "end": 579.3552421665702
     },
     {
       "text": "asset",
-      "start": 575.1603775645111,
-      "end": 575.5663856228945
+      "start": 579.4353775645111,
+      "end": 579.8413856228944
     },
     {
       "text": "per",
-      "start": 575.6278874690947,
-      "end": 575.892392572943
+      "start": 579.9028874690947,
+      "end": 580.1673925729428
     },
     {
       "text": "row.",
-      "start": 575.9536242002176,
-      "end": 576.969219254611
+      "start": 580.2286242002176,
+      "end": 581.2442192546109
     },
     {
       "text": "Automate",
-      "start": 577.7554519308819,
-      "end": 578.4732256098191
+      "start": 582.0304519308819,
+      "end": 582.7482256098191
     },
     {
       "text": "it.",
-      "start": 578.5795331644565,
-      "end": 579.4929484694878
+      "start": 582.8545331644565,
+      "end": 583.7679484694878
     },
     {
       "text": "The",
-      "start": 580.2535740443104,
-      "end": 580.4070285278353
+      "start": 584.5285740443104,
+      "end": 584.6820285278353
     },
     {
       "text": "same",
-      "start": 580.4918474591232,
-      "end": 580.7759789517434
+      "start": 584.7668474591231,
+      "end": 585.0509789517433
     },
     {
       "text": "render",
-      "start": 580.8357090256229,
-      "end": 581.1875253550412
+      "start": 585.1107090256229,
+      "end": 585.4625253550412
     },
     {
       "text": "runs",
-      "start": 581.2673300621346,
-      "end": 581.6167106612951
+      "start": 585.5423300621346,
+      "end": 585.8917106612951
     },
     {
       "text": "from",
-      "start": 581.6765545329752,
-      "end": 581.8589161826026
+      "start": 585.9515545329751,
+      "end": 586.1339161826025
     },
     {
       "text": "the",
-      "start": 581.9020493246791,
-      "end": 582.0522122131346
+      "start": 586.177049324679,
+      "end": 586.3272122131345
     },
     {
       "text": "CLI",
-      "start": 582.1187292826329,
-      "end": 582.468741794691
+      "start": 586.3937292826329,
+      "end": 586.743741794691
     },
     {
       "text": "and",
-      "start": 582.5286726099105,
-      "end": 582.7058106237495
+      "start": 586.8036726099104,
+      "end": 586.9808106237494
     },
     {
       "text": "from",
-      "start": 582.798674305552,
-      "end": 583.1774909907356
+      "start": 587.073674305552,
+      "end": 587.4524909907356
     },
     {
       "text": "an",
-      "start": 583.2467188142756,
-      "end": 583.4199922388556
+      "start": 587.5217188142756,
+      "end": 587.6949922388555
     },
     {
       "text": "AI",
-      "start": 583.4972665343373,
-      "end": 583.9518556847111
+      "start": 587.7722665343373,
+      "end": 588.226855684711
     },
     {
       "text": "agent",
-      "start": 584.0113008279943,
-      "end": 584.7299018970538
+      "start": 588.2863008279943,
+      "end": 589.0049018970537
     },
     {
       "text": "-",
-      "start": 584.8241195902118,
-      "end": 584.8241195902118
+      "start": 589.0991195902118,
+      "end": 589.0991195902118
     },
     {
       "text": "a",
-      "start": 584.8827399748692,
-      "end": 585.0619388782378
+      "start": 589.1577399748692,
+      "end": 589.3369388782378
     },
     {
       "text": "URL",
-      "start": 585.1307636640755,
-      "end": 585.8254850978575
+      "start": 589.4057636640755,
+      "end": 590.1004850978575
     },
     {
       "text": "is",
-      "start": 585.892847169963,
-      "end": 586.0627011462217
+      "start": 590.167847169963,
+      "end": 590.3377011462217
     },
     {
       "text": "the",
-      "start": 586.1172851001703,
-      "end": 586.2698961045509
+      "start": 590.3922851001703,
+      "end": 590.5448961045508
     },
     {
       "text": "API.",
-      "start": 586.3475900552436,
-      "end": 587.8198458465274
+      "start": 590.6225900552436,
+      "end": 592.0948458465274
     },
     {
       "text": "\"A",
-      "start": 588.5599654607877,
-      "end": 588.8098111194723
+      "start": 592.8349654607877,
+      "end": 593.0848111194723
     },
     {
       "text": "URL",
-      "start": 588.8775445108796,
-      "end": 589.6482755883997
+      "start": 593.1525445108796,
+      "end": 593.9232755883996
     },
     {
       "text": "is",
-      "start": 589.7284202491453,
-      "end": 589.9193373439108
+      "start": 594.0034202491453,
+      "end": 594.1943373439108
     },
     {
       "text": "the",
-      "start": 589.9816684542801,
-      "end": 590.2003906243933
+      "start": 594.2566684542801,
+      "end": 594.4753906243933
     },
     {
       "text": "API\"",
-      "start": 590.2933730049198,
-      "end": 591.2584542096622
+      "start": 594.5683730049197,
+      "end": 595.5334542096622
     },
     {
       "text": "is",
-      "start": 591.3128216270046,
-      "end": 591.4984651281247
+      "start": 595.5878216270046,
+      "end": 595.7734651281247
     },
     {
       "text": "literal.",
-      "start": 591.5614242226602,
-      "end": 592.6434244901438
+      "start": 595.8364242226602,
+      "end": 596.9184244901438
     },
     {
       "text": "The",
-      "start": 593.4118153362967,
-      "end": 593.5669148233218
+      "start": 597.6868153362967,
+      "end": 597.8419148233218
     },
     {
       "text": "chart",
-      "start": 593.6282165490825,
-      "end": 593.9820007300143
+      "start": 597.9032165490825,
+      "end": 598.2570007300143
     },
     {
       "text": "below",
-      "start": 594.0422381186622,
-      "end": 594.4855452647315
+      "start": 598.3172381186622,
+      "end": 598.7605452647315
     },
     {
       "text": "was",
-      "start": 594.5429793299191,
-      "end": 594.7203292484314
+      "start": 598.8179793299191,
+      "end": 598.9953292484314
     },
     {
       "text": "not",
-      "start": 594.7808895925126,
-      "end": 594.9773126878466
+      "start": 599.0558895925126,
+      "end": 599.2523126878466
     },
     {
       "text": "drawn",
-      "start": 595.055880715396,
-      "end": 595.4142872729288
+      "start": 599.330880715396,
+      "end": 599.6892872729288
     },
     {
       "text": "by",
-      "start": 595.4743736796371,
-      "end": 595.7141538121598
+      "start": 599.7493736796371,
+      "end": 599.9891538121598
     },
     {
       "text": "anyone:",
-      "start": 595.8078253697274,
-      "end": 596.8072343285198
+      "start": 600.0828253697274,
+      "end": 601.0822343285198
     },
     {
       "text": "its",
-      "start": 596.8713140965331,
-      "end": 597.1226738836144
+      "start": 601.146314096533,
+      "end": 601.3976738836144
     },
     {
       "text": "type,",
-      "start": 597.2100474778139,
-      "end": 597.8645578399777
+      "start": 601.4850474778139,
+      "end": 602.1395578399777
     },
     {
       "text": "its",
-      "start": 597.9284688835344,
-      "end": 598.1681895101179
+      "start": 602.2034688835342,
+      "end": 602.4431895101179
     },
     {
       "text": "heading",
-      "start": 598.2289680773297,
-      "end": 598.5766253231599
+      "start": 602.5039680773297,
+      "end": 602.8516253231599
     },
     {
       "text": "and",
-      "start": 598.6300465675079,
-      "end": 598.7802906867141
+      "start": 602.9050465675078,
+      "end": 603.0552906867141
     },
     {
       "text": "its",
-      "start": 598.8372344941882,
-      "end": 599.0623067767895
+      "start": 603.1122344941882,
+      "end": 603.3373067767894
     },
     {
       "text": "whole",
-      "start": 599.123215958757,
-      "end": 599.3968179362182
+      "start": 603.398215958757,
+      "end": 603.6718179362182
     },
     {
       "text": "data",
-      "start": 599.457475630004,
-      "end": 599.8116193324881
+      "start": 603.7324756300039,
+      "end": 604.0866193324881
     },
     {
       "text": "table",
-      "start": 599.8741278962741,
-      "end": 600.2971284223927
+      "start": 604.1491278962742,
+      "end": 604.5721284223927
     },
     {
       "text": "were",
-      "start": 600.3568746688028,
-      "end": 600.5478829318041
+      "start": 604.6318746688028,
+      "end": 604.8228829318041
     },
     {
       "text": "typed",
-      "start": 600.618955650698,
-      "end": 600.9534211617352
+      "start": 604.893955650698,
+      "end": 605.2284211617351
     },
     {
       "text": "into",
-      "start": 600.9844834353701,
-      "end": 601.1986069893967
+      "start": 605.2594834353699,
+      "end": 605.4736069893967
     },
     {
       "text": "the",
-      "start": 601.2569910857196,
-      "end": 601.4016697144009
+      "start": 605.5319910857196,
+      "end": 605.6766697144009
     },
     {
       "text": "address",
-      "start": 601.461276356282,
-      "end": 601.839142361823
+      "start": 605.736276356282,
+      "end": 606.1141423618229
     },
     {
       "text": "bar,",
-      "start": 601.9071511347714,
-      "end": 602.6962723774694
+      "start": 606.1821511347714,
+      "end": 606.9712723774694
     },
     {
       "text": "and",
-      "start": 602.7579972411581,
-      "end": 602.9099009794444
+      "start": 607.0329972411581,
+      "end": 607.1849009794444
     },
     {
       "text": "the",
-      "start": 602.9493453927411,
-      "end": 603.1014400610909
+      "start": 607.224345392741,
+      "end": 607.3764400610909
     },
     {
       "text": "same",
-      "start": 603.1952841876162,
-      "end": 603.4916221397058
+      "start": 607.4702841876161,
+      "end": 607.7666221397058
     },
     {
       "text": "link",
-      "start": 603.5522525230808,
-      "end": 603.8173222172153
+      "start": 607.8272525230808,
+      "end": 608.0923222172153
     },
     {
       "text": "renders",
-      "start": 603.8790084624573,
-      "end": 604.2605870246326
+      "start": 608.1540084624572,
+      "end": 608.5355870246326
     },
     {
       "text": "the",
-      "start": 604.3184903444176,
-      "end": 604.4702653121523
+      "start": 608.5934903444175,
+      "end": 608.7452653121522
     },
     {
       "text": "same",
-      "start": 604.562355363386,
-      "end": 604.8634794880563
+      "start": 608.837355363386,
+      "end": 609.1384794880563
     },
     {
       "text": "chart",
-      "start": 604.9243216196128,
-      "end": 605.3358940801388
+      "start": 609.1993216196128,
+      "end": 609.6108940801388
     },
     {
       "text": "on",
-      "start": 605.3772028683298,
-      "end": 605.5173048584104
+      "start": 609.6522028683298,
+      "end": 609.7923048584104
     },
     {
       "text": "any",
-      "start": 605.5757463678763,
-      "end": 605.7777375176995
+      "start": 609.8507463678762,
+      "end": 610.0527375176995
     },
     {
       "text": "device.",
-      "start": 605.838177959597,
-      "end": 607.0945770726739
+      "start": 610.113177959597,
+      "end": 611.3695770726739
     },
     {
       "text": "Where",
-      "start": 608.2337302569482,
-      "end": 608.545807259298
+      "start": 612.5087302569482,
+      "end": 612.820807259298
     },
     {
       "text": "to",
-      "start": 608.6660824091053,
-      "end": 608.9408123616876
+      "start": 612.9410824091053,
+      "end": 613.2158123616875
     },
     {
       "text": "go",
-      "start": 609.0242819617226,
-      "end": 609.3563546893026
+      "start": 613.2992819617226,
+      "end": 613.6313546893026
     },
     {
       "text": "next",
-      "start": 609.4281901405514,
-      "end": 610.2969714439776
+      "start": 613.7031901405513,
+      "end": 614.5719714439775
     },
     {
       "text": "Three",
-      "start": 611.3273391875431,
-      "end": 611.6138063159792
+      "start": 615.6023391875432,
+      "end": 615.8888063159793
     },
     {
       "text": "pathways,",
-      "start": 611.679963265189,
-      "end": 612.4728262721331
+      "start": 615.9549632651891,
+      "end": 616.7478262721332
     },
     {
       "text": "depending",
-      "start": 612.5134036805227,
-      "end": 613.0137762686725
+      "start": 616.7884036805228,
+      "end": 617.2887762686726
     },
     {
       "text": "on",
-      "start": 613.0476363206208,
-      "end": 613.2015607105187
+      "start": 617.3226363206209,
+      "end": 617.4765607105188
     },
     {
       "text": "what",
-      "start": 613.2646688325982,
-      "end": 613.4880210840465
+      "start": 617.5396688325983,
+      "end": 617.7630210840466
     },
     {
       "text": "you're",
-      "start": 613.5512714935522,
-      "end": 613.7754663292013
+      "start": 617.8262714935523,
+      "end": 618.0504663292014
     },
     {
       "text": "here",
-      "start": 613.838301199512,
-      "end": 614.1074906383745
+      "start": 618.1133011995121,
+      "end": 618.3824906383746
     },
     {
       "text": "to",
-      "start": 614.2022238693501,
-      "end": 614.4377942582136
+      "start": 618.4772238693502,
+      "end": 618.7127942582136
     },
     {
       "text": "do:",
-      "start": 614.5020512958426,
-      "end": 615.4684433568178
+      "start": 618.7770512958427,
+      "end": 619.7434433568179
     },
     {
       "text": "Lolly",
-      "start": 616.2663286249581,
-      "end": 616.6306032691516
+      "start": 620.541328624958,
+      "end": 620.9056032691516
     },
     {
       "text": "for",
-      "start": 616.7292914920505,
-      "end": 616.9739419430986
+      "start": 621.0042914920505,
+      "end": 621.2489419430985
     },
     {
       "text": "Creators",
-      "start": 617.0430791870775,
-      "end": 617.8625421074681
+      "start": 621.3180791870775,
+      "end": 622.1375421074681
     },
     {
       "text": "-",
-      "start": 617.917407148842,
-      "end": 617.917407148842
+      "start": 622.192407148842,
+      "end": 622.192407148842
     },
     {
       "text": "you",
-      "start": 617.9795860586347,
-      "end": 618.1123016052851
+      "start": 622.2545860586347,
+      "end": 622.3873016052851
     },
     {
       "text": "make",
-      "start": 618.165995465574,
-      "end": 618.4227783249942
+      "start": 622.440995465574,
+      "end": 622.6977783249941
     },
     {
       "text": "things.",
-      "start": 618.4866143636765,
-      "end": 619.6185086707653
+      "start": 622.7616143636765,
+      "end": 623.8935086707653
     },
     {
       "text": "The",
-      "start": 620.383906970119,
-      "end": 620.5581801923381
+      "start": 624.658906970119,
+      "end": 624.8331801923381
     },
     {
       "text": "advantages,",
-      "start": 620.6179060536466,
-      "end": 621.7063722725741
+      "start": 624.8929060536466,
+      "end": 625.9813722725739
     },
     {
       "text": "and",
-      "start": 621.7632681918683,
-      "end": 621.9169581061565
+      "start": 626.0382681918683,
+      "end": 626.1919581061564
     },
     {
       "text": "how",
-      "start": 621.9772236921107,
-      "end": 622.2276021194473
+      "start": 626.2522236921106,
+      "end": 626.5026021194473
     },
     {
       "text": "to",
-      "start": 622.3250213809495,
-      "end": 622.5539576479572
+      "start": 626.6000213809494,
+      "end": 626.8289576479572
     },
     {
       "text": "get",
-      "start": 622.6143283961013,
-      "end": 622.8242562443855
+      "start": 626.8893283961013,
+      "end": 627.0992562443855
     },
     {
       "text": "the",
-      "start": 622.87446695262,
-      "end": 623.0011525957906
+      "start": 627.14946695262,
+      "end": 627.2761525957906
     },
     {
       "text": "most",
-      "start": 623.0615737385918,
-      "end": 623.3769928861785
+      "start": 627.3365737385918,
+      "end": 627.6519928861785
     },
     {
       "text": "out",
-      "start": 623.4370262027145,
-      "end": 623.6730669496951
+      "start": 627.7120262027145,
+      "end": 627.9480669496951
     },
     {
       "text": "of",
-      "start": 623.7081747675167,
-      "end": 623.8596944246916
+      "start": 627.9831747675166,
+      "end": 628.1346944246916
     },
     {
       "text": "the",
-      "start": 623.9191016191568,
-      "end": 624.0788283029071
+      "start": 628.1941016191568,
+      "end": 628.3538283029071
     },
     {
       "text": "app.",
-      "start": 624.1608076024736,
-      "end": 625.044647569397
+      "start": 628.4358076024736,
+      "end": 629.3196475693969
     },
     {
       "text": "Lolly",
-      "start": 625.8379254625385,
-      "end": 626.164083996085
+      "start": 630.111696268132,
+      "end": 630.4483960705593
     },
     {
       "text": "for",
-      "start": 626.2576996587178,
-      "end": 626.4778438353758
+      "start": 630.5428297377417,
+      "end": 630.7669115946491
     },
     {
       "text": "Builders",
-      "start": 626.5404057274475,
-      "end": 627.0666564072735
+      "start": 630.8292447852838,
+      "end": 631.3579059669901
     },
     {
       "text": "-",
-      "start": 627.1163154434149,
-      "end": 627.1163154434149
+      "start": 631.4105563373146,
+      "end": 631.4105563373146
     },
     {
       "text": "you",
-      "start": 627.1927704254364,
-      "end": 627.3941027851226
+      "start": 631.4915739566862,
+      "end": 631.701628401973
     },
     {
       "text": "author",
-      "start": 627.4564837424936,
-      "end": 627.7994409748574
+      "start": 631.7738140636797,
+      "end": 632.1324794121425
     },
     {
       "text": "tools,",
-      "start": 627.8931422926529,
-      "end": 628.6040730042976
+      "start": 632.2238024060155,
+      "end": 632.8965352122209
     },
     {
-      "text": "integrate,",
-      "start": 628.6646769719644,
-      "end": 629.3866246500617
+      "text": "integrate",
+      "start": 632.9573066498731,
+      "end": 633.5763993613192
     },
     {
       "text": "and",
-      "start": 629.4476962842698,
-      "end": 629.6676137941786
+      "start": 633.6395914350088,
+      "end": 633.8715821180501
     },
     {
       "text": "deploy.",
-      "start": 629.7068752695945,
-      "end": 630.968873185934
+      "start": 633.9154728701044,
+      "end": 635.1690854952675
     },
     {
       "text": "The",
-      "start": 631.750683590721,
-      "end": 632.0071825162179
+      "start": 635.950683590721,
+      "end": 636.207182516218
     },
     {
       "text": "technical",
-      "start": 632.1316508018642,
-      "end": 632.7964586910568
+      "start": 636.3316508018643,
+      "end": 636.9964586910569
     },
     {
       "text": "documentation.",
-      "start": 632.8785839609274,
-      "end": 634.7935411239029
+      "start": 637.0785839609274,
+      "end": 638.9935411239029
     },
     {
       "text": "Lolly",
-      "start": 635.5909736020493,
-      "end": 635.8924834974544
+      "start": 639.7947376633107,
+      "end": 640.1069427234986
     },
     {
       "text": "for",
-      "start": 635.9845017438194,
-      "end": 636.2017390879843
+      "start": 640.2026201639436,
+      "end": 640.4277336637734
     },
     {
       "text": "Operators",
-      "start": 636.2641389647786,
-      "end": 637.134838097305
+      "start": 640.4909026749212,
+      "end": 641.3712171172132
     },
     {
       "text": "-",
-      "start": 637.2000455016713,
-      "end": 637.2000455016713
+      "start": 641.4390375901248,
+      "end": 641.4390375901248
     },
     {
       "text": "you're",
-      "start": 637.2823983899536,
-      "end": 637.4940232530988
+      "start": 641.524857499833,
+      "end": 641.7482461680136
     },
     {
       "text": "responsible",
-      "start": 637.5523192673114,
-      "end": 638.3651970422648
+      "start": 641.8091651434079,
+      "end": 642.6424193435558
     },
     {
       "text": "for",
-      "start": 638.4578343283545,
-      "end": 638.6829303702184
+      "start": 642.7360655087838,
+      "end": 642.9640587008112
     },
     {
       "text": "brand,",
-      "start": 638.7452666587,
-      "end": 639.4622281058668
+      "start": 643.0267052798145,
+      "end": 643.8731428239214
     },
     {
-      "text": "security,",
-      "start": 639.5291156724886,
-      "end": 640.4757601857668
+      "text": "security",
+      "start": 643.9450143049113,
+      "end": 644.7472099930147
     },
     {
       "text": "and",
-      "start": 640.5383618917709,
-      "end": 640.7233752364476
+      "start": 644.8129061880275,
+      "end": 644.9728562114409
     },
     {
       "text": "rollout",
-      "start": 640.7857645191577,
-      "end": 641.3490221701313
+      "start": 645.0355395645096,
+      "end": 645.6184865822803
     },
     {
       "text": "across",
-      "start": 641.4114913191434,
-      "end": 641.8354824706391
+      "start": 645.6835603811702,
+      "end": 646.1014725790376
     },
     {
       "text": "an",
-      "start": 641.9304620492543,
-      "end": 642.157957523254
+      "start": 646.1978819902397,
+      "end": 646.4234137090938
     },
     {
       "text": "organisation.",
-      "start": 642.2206722407599,
-      "end": 643.9687365536383
+      "start": 646.4852126067176,
+      "end": 648.2435836510018
     }
   ]
 }

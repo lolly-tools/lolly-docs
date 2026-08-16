@@ -1,6 +1,6 @@
 {
   "heading": "Wszystko,\ntak jak jesteś,\nna czymkolwiek",
-  "copy": "Działaj offline na swoim urządzeniu, bądź zawsze dostępny online - ty decydujesz.\nNarzędzia Lolly mogą tam działać.",
+  "copy": "Zainstaluj albo otwórz hostowany adres, albo jedno i drugie naraz - ty decydujesz.\nNarzędzia Lolly mogą tam działać.",
   "surfaces": [
     {
       "icon": "surfaceWeb",
@@ -9,6 +9,10 @@
     {
       "icon": "surfaceMacos",
       "label": "macOS"
+    },
+    {
+      "icon": "surfaceWindows",
+      "label": "Windows"
     },
     {
       "icon": "surfaceLinux",
@@ -31,13 +35,13 @@
       "label": "TUI"
     }
   ],
-  "modelsIntro": "Trzy sposoby udostępniania:",
+  "modelsIntro": "Trzy tryby dostarczania:",
   "models": [
     {
       "n": "1",
       "icon": "modelDeploy",
       "label": "Wdrożenie",
-      "desc": "Wysyłaj na urządzenia przez swój istniejący MDM. Działa w pełni offline, za firewallem czy w trybie air-gap - nic nie opuszcza urządzenia."
+      "desc": "Wysyłaj na urządzenia przez swój istniejący MDM. Działa za dowolnym firewallem, a także w sieci air-gap bez żadnego wyjścia na zewnątrz."
     },
     {
       "n": "2",
@@ -49,7 +53,7 @@
       "n": "3",
       "icon": "modelHybrid",
       "label": "Hybryda",
-      "desc": "Lokalne aplikacje offline plus zawsze aktualna wersja webowa, współdzielące jedną bibliotekę narzędzi - na każdym systemie operacyjnym naraz."
+      "desc": "Zainstalowane aplikacje lokalne plus zawsze aktualna wersja webowa, współdzielące jedną bibliotekę narzędzi - na każdym systemie operacyjnym naraz."
     }
   ]
 }

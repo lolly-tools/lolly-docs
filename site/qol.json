@@ -1,12 +1,24 @@
 {
   "panels": [
     {
-      "heading": "Accessible, with sound",
-      "desc": "An interface that works the way you do - screen-reader friendly and fully keyboard-navigable throughout. Turn on gentle interface sounds, or switch to **Neurospicy Mode**: a calm focus beat that loops quietly while you work."
+      "heading": "Share it whole",
+      "desc": "When a link can't carry everything, Lolly says exactly what would go missing and offers the whole thing as one **.lolly** file instead: your images, the design, even the tool itself. You choose how much travels - your details, licensed art and the tool are each included only when you say so, and the person opening it is asked before a carried tool can run."
+    },
+    {
+      "heading": "Work together, no internet needed",
+      "desc": "Two people, two devices, one design, edited live. Scan a code across the table and both screens hold the same session - on a plane, in a basement, on a hotspot. There is no server in the middle to trust or to fail."
+    },
+    {
+      "heading": "Present it, full screen",
+      "desc": "A design's frames become slides: click through them on the big screen, open a speaker view with notes and a timer, or leave it looping on the screen in reception. No separate presentation app."
     },
     {
       "heading": "Organise, then render in bulk",
-      "desc": "Keep saved work in nested **Projects** folders. When it's time to ship, render a whole folder - or any handful you select - into a single zip. No spreadsheet, no batch grid required."
+      "desc": "Keep saved work in nested **Projects** folders. When it's time to ship, render a whole folder - or any handful you select - into a single zip. Or paste a spreadsheet and get one finished file per row."
+    },
+    {
+      "heading": "Accessible, with sound",
+      "desc": "An interface that works the way you do - screen-reader friendly and fully keyboard-navigable throughout. Turn on gentle interface sounds, or switch to **Neurospicy Mode**: a calm focus beat that loops quietly while you work."
     }
   ]
 }

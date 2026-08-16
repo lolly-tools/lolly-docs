@@ -1,195 +1,415 @@
-# Bruke Lolly
+# Slik bruker du Lolly
 
-En praktisk guide til å faktisk *bruke* appen - åpne et verktøy, jobbe med canvaset, eksportere, lagre og dele. Alt her kjører **på enheten din**: ingen konto, ingen opplasting, ingen internettforbindelse kreves etter første innlasting.
+En praktisk veiledning i å faktisk *bruke* appen - åpne et verktøy, jobbe på canvaset, eksportere, lagre og dele. Alt her kjører **på enheten din**: ingen konto, ingen opplasting, ingen internettforbindelse etter første lasting.
 
-> Ny her? [Hurtigstart](/info/quickstart.html) får deg i gang med å lage ting på minutter, og [Lolly for operatører](/info/operators.html) dekker installering/utrulling av appen; denne siden handler om å bruke den når den først er åpen.
+> Ny her? [Hurtigstart](/info/quickstart.html) får deg i gang med å lage ting på minutter, og [Lolly for driftsansvarlige](/info/operators.html) dekker installasjon og utrulling av appen; denne siden handler om å styre den når den først er åpen.
 
 ## Åpne et verktøy
 
-![The grey Show hidden tools tile at the end of the grid, and one dimmed hidden tool card revealed beneath it with Unhide in its menu](/t/url-shot?url=%2F%23%2F&width=1440&height=680&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-bulk%3D%22hide%22%5D%3Bwait%3A300%3Bclick%3A.gtile--hiddenbox%3Bpress%3AEnd%3Bwait%3A800&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&rasterDpi=96&dark=1&filename=misc-hidden-tools)
+Hjemskjermen er **galleriet** - alle verktøy, gruppert etter kategori. Klikk på et kort for å åpne verktøyet; har du jobbet med det før, gjenopptar en **Fortsett**-knapp den siste økten din. Bruk søkefeltet for å filtrere etter navn - eller [Søk](/info/search.html) fra linjen nederst på de seks oversiktsskjermene (galleriet, Hjelpeverktøy, Prosjekter, Katalogen, Oversikten og Profil), som når fram til det du har lagret, katalogen og innstillingene dine i tillegg til verktøyene. Inne i et verktøy trer linjen til side for verktøyets eget grensesnitt.
 
-![A tool's split view - the control stack on the left, and the live horizontal bar chart it draws on the right](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
+![Verktøygalleriet - hvert verktøy som et kort, gruppert etter kategori](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&localize=1&dark=1&filename=gallery&try=1)
 
-![The tool gallery - every tool as a card, grouped by category](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&localize=1&dark=1&filename=gallery&try=1)
+Hvert verktøy er en delt visning: **kontroller** på den ene siden, en levende **forhåndsvisning** (canvaset) på den andre. Endre en kontroll, så oppdateres forhåndsvisningen umiddelbart.
 
+![Et verktøys delte visning - kontrollstabelen til venstre, og det grupperte stolpediagrammet det tegner i sanntid til høyre](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
 
-Hjemskjermen er **galleriet** - alle verktøy, gruppert etter kategori. Klikk på et kort for å åpne verktøyet; hvis du har jobbet med det før, gjenopptar en **Fortsett**-knapp din siste økt. Bruk søkefeltet for å filtrere etter navn.
+> Noen få verktøy (som **Design**) åpnes i stedet som et **fritt canvas** - en kromfri flate for direkte manipulasjon der du drar, endrer størrelse på, roterer og fester bokser med tekst, former og bilder, og dobbeltklikker for å redigere tekst på stedet. Det eksporteres via samme renderingsvei som alle andre verktøy, så canvaset *er* filen. Se [Det frie canvaset](#the-free-canvas-design) nedenfor.
 
-Hvert verktøy er en delt visning: **kontroller** på den ene siden, en direkte **forhåndsvisning** (canvaset) på den andre. Endre en kontroll, så oppdateres forhåndsvisningen umiddelbart.
+To måter å forme selve rutenettet til det du vil ha:
 
-> Noen få verktøy (som **Design**) åpnes i stedet som et **fritt canvas** - en kromfri flate for direkte manipulasjon der du drar, endrer størrelse på, roterer og fester bokser med tekst, former og bilder, og dobbeltklikker for å redigere tekst direkte på stedet. Det eksporteres via samme renderingsvei som alle andre verktøy, så canvaset *er* filen. Se [Det frie canvaset](#the-free-canvas-design) nedenfor.
+- <!--i:star--> **Stjernemerk det du bruker.** Sett ★ på et kort, så får det sin egen store flis i en stripe over rutenettet - se [Favorittene dine](/info/favourites.html).
+- <!--i:eyeoff--> **Skjul et verktøy du aldri bruker.** Høyreklikk et kort (eller velg flere og bruk utvalgslinjen) → **Skjul verktøy**. Det faller ut av rutenettet, og ut av det du finner ved å skrive i rutenettet; en grå flis **Vis skjulte verktøy (N)** helt til slutt henter dem fram igjen, nedtonet, hver med **Vis verktøy igjen** i sin egen meny. Skjuling gjelder bare ditt rutenett - verktøyet åpnes fortsatt fra en lagret lenke eller et bokmerke, og det blir stående nøyaktig der det var for alle andre.
+
+![Slutten av verktøyrutenettet med de skjulte verktøyene framme: det nedtonede kortet QR Code Generator, og ved siden av den grå flisen som hentet det tilbake i visningen, som nå leser Skjul skjulte verktøy](/t/url-shot?url=%2F%23%2F&width=1440&height=680&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-bulk%3D%22hide%22%5D%3Bwait%3A300%3Bclick%3A.gtile--hiddenbox%3Bpress%3AEnd%3Bwait%3A800&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&rasterDpi=96&dark=1&filename=misc-hidden-tools)
+<!--
+SHOT NOTE (misc-hidden-tools): the trailing `press:End` is required. The
+hidden box and the revealed cards live at the very END of the grid, and
+clicking the box runs applyView(), which re-lays the grid out and drops the
+scroll back to the top - so without it the frame published the TOP of the
+gallery under a caption about its bottom. `press:` with no `on=` goes to the
+keyboard, and the End key with focus on the just-clicked box scrolls the
+document; the walker then anchors the body walk to that band.
+The tile reads "HIDE hidden tools" in the shot, not "Show" - it is a toggle and
+the recipe has just pressed it. The alt says so rather than quoting the resting
+label the prose above already gives.
+There is no standalone per-card "hide" button
+(unlike the always-visible fav/pin corner icons) - Hide only exists inside a
+tile's right-click menu or the bulk bar, both confirmed in views/gallery.ts.
+The recipe goes the bulk-bar route since it needs no `|right` context-menu
+step: tick the card (`[data-select="qr-code"]`, the same checkbox hook the
+selection bullet under Projects uses), click the bar's Hide button
+(`[data-bulk="hide"]` - the literal `data-bulk` value bulkBarHtml() writes,
+confirmed in lib/bulk-bar.ts), then click the grey reveal tile
+(`.gtile--hiddenbox`, confirmed in gallery.ts).
+-->
+
+### Spør Lolly
+
+Når du heller vil spørre enn å lete, tar **Spør Lolly** (`#/ask`) imot et skrevet spørsmål og gir deg tilbake det avsnittet i denne dokumentasjonen som passer, **ordrett** - veiledningenes egne ord, ikke et sammendrag og ikke noe generert - med siden det kom fra oppgitt og en **Åpne i dokumentasjonen**-lenke ved siden av. Under svaret ligger stedene i appen som det samme spørsmålet treffer: et verktøy, en innstilling, et lagret prosjekt, hvert som en knapp som rett og slett navigerer dit.
+
+Samtalen er øktminne: still et oppfølgingsspørsmål, så bygger tråden seg opp underveis, men last siden på nytt, og den starter på nytt. Søkeresultater har en rad **Spør Lolly: *søket ditt*** nederst - under de konkrete treffene de andre gruppene fant - som sender spørsmålet rett videre, så du kan starte i søkefeltet og avslutte her.
 
 ## Canvaset (forhåndsvisning)
 
-![The zoom HUD in the corner of the canvas - minus, the live percentage, plus, Fit, then the theme and sound toggles](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=.stage-nav%7Bopacity%3A1!important%7D&cropSelector=.stage-nav&walker=1&format=svg&dark=1&filename=use-zoom-hud)
-
-Forhåndsvisningen viser alltid nøyaktig det som vil bli eksportert.
+Forhåndsvisningen viser alltid nøyaktig det som blir eksportert.
 
 **Skrivebord**
 
-- **Zoom:** Cmd/Ctrl-scroll, eller knip sammen på en styreflate - zoomen sentreres rundt pekeren.
-- **Panorer:** hold nede **mellomrom** og dra, eller dra med **midterste museknapp**. (Vanlige klikk er fortsatt frie til å klikke på deler av designen.)
-- **Tastatur:** `0` = tilpass til vindu · `1` = 100 % · `+` / `−` = zoom.
-- **Zoom-HUD:** den lille kontrollen `−  NN%  +  Fit` i hjørnet. Klikk på prosenten for å veksle mellom Fit og 100 %.
+- **Zoom:** Cmd/Ctrl-scroll, eller knip på en styreflate - zoomen sentreres om pekeren.
+- **Panorer:** hold **mellomrom** og dra, eller dra med **midterste museknapp**. (Vanlige klikk er fortsatt ledige til å klikke på deler av designet.)
+- **Tastatur:** `0` = tilpass til vinduet · `1` = 100 % · `+` / `−` = zoom.
+- **Zoom-HUD:** den lille kontrollen `−  NN%  +  Fit` i hjørnet. Klikk på prosenten for å veksle Tilpass ↔ 100 %.
+
+![Zoom-HUD-en i hjørnet av canvaset - minus, den levende prosenten, pluss, Tilpass, og så tema- og lydbryterne](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=.stage-nav%7Bopacity%3A1!important%7D&cropSelector=.stage-nav&walker=1&format=svg&dark=1&filename=use-zoom-hud)
 
 **Berøring**
 
 - **Knip** for å zoome, **dra** for å panorere, **dobbelttrykk** for å tilbakestille til tilpasset visning.
 
-**Klikk for å hoppe til en kontroll:** klikk på et hvilket som helst element i designen, så får det tilsvarende inndatafeltet i sidepanelet fokus og rulles inn i visningen - for en gjentakende radgruppe folder den ut nøyaktig raden du klikket på, slik at å redigere det du ser er bare ett trykk unna.
+**Klikk for å hoppe til en kontroll:** klikk på et element i designet, så får det tilsvarende feltet i sidepanelet fokus og rulles fram - for en gjentakende radgruppe folder den ut nøyaktig raden du klikket på, slik at det å redigere det du ser er ett trykk unna.
 
 En endring av dimensjonene fører alltid visningen tilbake til en ren tilpasning.
 
 ### Det frie canvaset (Design)
 
-![Design's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+Verktøy med fritt canvas legger til en arbeidsflate *rundt* tegnebrettet, som en designers arbeidsbord:
 
-Verktøy med fritt canvas legger til en arbeidsflate *rundt* tegnebrettet, som en designers oppslagstavle:
+- **Mellomlagring utenfor canvaset.** Dra en boks forbi rammekanten, og den forblir fullt **synlig og valgbar** - parker elementer til side mens du ordner komposisjonen, og dra dem så tilbake inn. Alt utenfor rammen er **svakt nedtonet**, slik at eksportområdet alltid er lett å lese, og rammen beholder skyggen sin for å markere nøyaktig hvor filen begynner.
+- **Bare rammen eksporteres.** Den eksporterte filen avgrenses av tegnebrettet - alt som blir liggende utenfor (eller den delen av en boks som henger over kanten) blir rett og slett beskåret bort fra resultatet, i både raster- og vektorformater.
+- **Zoom ut forbi Tilpass** (ned til 20 %) for å se hele arbeidsbordet når du har plassert ting langt utenfor rammen.
+- **Tegnebrett med justerbar størrelse.** Å endre eksportdimensjonene endrer størrelsen på rammen der den står; boksene beholder posisjonene sine, så du kan ramme inn en layout på nytt rundt eksisterende innhold.
 
-- **Mellomlagring utenfor canvaset.** Dra en boks forbi rammens kant, og den forblir fullt **synlig og velgbar** - parker elementer til side mens du arrangerer komposisjonen, og dra dem så tilbake. Alt utenfor rammen er **svakt nedtonet**, slik at eksportområdet alltid er lett å oppfatte, og rammen beholder skyggen sin for å markere nøyaktig hvor filen begynner.
-- **Bare rammen eksporteres.** Den eksporterte filen avgrenses av tegnebrettet - alt som blir liggende utenfor (eller den delen av en boks som henger over kanten) blir rett og slett beskåret bort fra resultatet, både i raster- og vektorformater.
-- **Zoom ut forbi Fit** (ned til 20 %) for å se hele oppslagstavlen når du har plassert ting langt utenfor rammen.
-- **Tegnebrett med justerbar størrelse.** Å endre eksportdimensjonene endrer størrelsen på rammen på stedet; boksene beholder posisjonene sine, slik at du kan ramme inn en layout på nytt rundt eksisterende innhold.
+![Det frie canvaset i Design - tegnebrettet med arbeidsbordet rundt](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+
+### Tegne dine egne former (pennen)
+
+Bokser, sirkler og avrundede rammer dekker de fleste layouter. Når du trenger en form som ikke står på den listen, tegner du den: knappen **Penn** på verktøylinjen (eller tasten `P`) setter deg i tegnemodus. Tre enkelttaster flytter deg mellom modusene - **`V`** tilbake til Peker, **`P`** for Penn, **`N`** for nodeverktøyet (**Rediger punkter**) - og Peker er alltid veien ut av det du står i.
+
+![Verktøylinjen på det frie canvaset: et draghåndtak, Lolly-menyen, så Peker, Legg til en boks, Penn, Rediger punkter, Linje, Tidslinje, Tegnebrett og Auto-ordne](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2600&css=.fc-toolbar%7Bopacity%3A1!important%7D&cropSelector=.fc-toolbar&walker=1&format=svg&dark=1&filename=pen-editor-rail)
+
+- **Klikk** for å plassere et punkt. På standard kurvetype trekker **klikk og dra** ut håndtakene til punktet, og det er slik du tegner en kurve i stedet for et hjørne - hold **Alt** mens du klikker for å få et hardt hjørne i stedet. (På de andre kurvetypene er hvert plassert punkt et hjørne, og dragingen gjør ingenting; se **Splinetype** nedenfor.)
+- Punkter fester seg til tegnebrettet og til de andre boksene dine mens du plasserer dem, og tegner de samme hjelpelinjene som en vanlig draging gjør. Alt slår av rutenettet mens du tegner, og både rutenettet og kantene når du drar et punkt etterpå.
+- **Klikk på det første punktet** for å lukke løkken og bli ferdig i én bevegelse. Ellers trykker du **Enter**, dobbeltklikker eller bare bytter verktøy - tegningen beholdes, den kastes ikke.
+- **Escape** virker ett trinn om gangen: første trykk forlater tegningen uten å skrive noe, og et andre trykk avslutter pennen.
+- **Delete** mens du tegner fjerner det siste punktet du plasserte.
+
+Resultatet er en helt vanlig boks på canvaset. Flytt den, endre størrelsen, roter den, grupper den, still den opp, stokk om på rekkefølgen, gi den et fyll, en gradient, en skygge eller en gjennomsiktighet - en bane oppfører seg som alle andre bokser, og ingen av de kontrollene behandler den annerledes.
+
+Den kommer ferdig malt også. Den første banen du tegner får fyllet og strøket merkevaren din gir en bane, og deretter får hver nye bane **det du sist brukte** - sett et fyll én gang og fortsett å tegne, i stedet for å farge om hver form. (I et verktøy der merkevaren ikke sier noe om baner, får en tegnet bane strøk i den fargen du så den bli tegnet i, så den er aldri usynlig.)
+
+**Redigere punktene på nytt.** Dobbeltklikk formen (eller bruk **Rediger punkter** på objektlinjen), så kommer punktene tilbake. Dra et punkt for å flytte det, dra et håndtak for å sikte det på nytt, klikk hvor som helst på kurven for å sette inn et punkt, dra en markeringsramme rundt en gruppe punkter og trykk Delete for å fjerne de valgte. En bane beholder alltid minst to punkter, så du kan ikke slette den bort ved et uhell.
+
+**Splinetype** avgjør hva slags kurve som går gjennom punktene dine, og det er valget som er verdt å forstå:
+
+| Type | Hva den gjør |
+|---|---|
+| **Jevn (auto)** | Standardvalget. Regner ut håndtaklengdene sine selv, så vanlig klikk-klikk-klikk gir en virkelig jevn kurve uten håndtakfikling. Setter du et håndtak, låser det *retningen*, og kurven eier fortsatt lengden. |
+| **Bezier-håndtak** | Den klassiske pennen. Håndtakene er kontrollpunktene, og å sette inn et punkt flytter aldri kurven. |
+| **Gjennom punktene** | Går nøyaktig gjennom hvert punkt du plasserte, uten håndtak. |
+| **B-spline** | Flyter nær punktene i stedet for gjennom dem, for en mykere form. |
+| **Rette linjer** | En polylinje. |
+
+Å bytte en eksisterende bane til en type som regner ut sine egne håndtak spør først, fordi håndtaklengdene du har satt ikke kan hentes tilbake - å bytte til **Bezier-håndtak** er alltid tapsfritt. Midt i en tegning kommer det ingen forespørsel: byttet gjelder utkastet direkte, og håndtakene du allerede hadde trukket ut, følger med. På typene som eier håndtakene sine, endrer et innsatt punkt kurven en ørliten smule; på **Bezier-håndtak** gjør det ikke det.
+
+Hvert punkt har også en kontinuitetsregel, vist ved formen på canvaset - firkant for **Hjørne** (håndtakene beveger seg uavhengig), rund for **Jevn** (håndtakene holder linjen), rund med ring for **Symmetrisk** (i linje og like lange). Sett den for punktene du har valgt, så oppfyller kurven den umiddelbart.
+
+![To pennebaner rendret rett fra en lenke: en S-kurve med strøk og en lukket, fylt klatt](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fboxes%3D%5B%7B%22id%22%3A%22paper%22%2C%22kind%22%3A%22box%22%2C%22x%22%3A0%2C%22y%22%3A0%2C%22w%22%3A1080%2C%22h%22%3A1080%2C%22shape%22%3A%22rect%22%2C%22bg%22%3A%22%23ffffff%22%7D%2C%7B%22id%22%3A%22curve%22%2C%22kind%22%3A%22path%22%2C%22x%22%3A140%2C%22y%22%3A180%2C%22w%22%3A800%2C%22h%22%3A420%2C%22shape%22%3A%22rect%22%2C%22bg%22%3A%22%22%2C%22stroke%22%3A%22%234f84ba%22%2C%22strokeW%22%3A14%2C%22path%22%3A%221!cubic!0_.02!.85!!!.25!-.45!s_.5!.5!-.22!.32!.22!-.32!y_.98!.12!-.25!.45!!!s%22%7D%2C%7B%22id%22%3A%22blob%22%2C%22kind%22%3A%22path%22%2C%22x%22%3A340%2C%22y%22%3A620%2C%22w%22%3A400%2C%22h%22%3A320%2C%22shape%22%3A%22rect%22%2C%22bg%22%3A%22%23d1e7ff%22%2C%22stroke%22%3A%22%234f84ba%22%2C%22strokeW%22%3A6%2C%22fillRule%22%3A%22nonzero%22%2C%22path%22%3A%221!catmull-rom!1_.5!0_1!.42_.78!1_.22!1_0!.42%22%7D%5D&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=pen-path-geometry)
+
+En tegnet bane følger med i lenken som alt annet, så en form du tegner åpnes igjen fra en delingslenke og rendres likt fra CLI-et. Ingenting ved den avhenger av editoren.
+
+### Kombinere former (baneoperasjoner)
+
+Velg to eller flere former, **høyreklikk** på canvaset (tofingertrykk på berøringsskjerm), så tilbyr menyen de operasjonene du forventer av et tegneprogram:
+
+- **Union** slår dem sammen til én form og beholder fargen til den øverste.
+- **Trekk fra** skjærer alt som ligger over bort fra den nederste formen.
+- **Snitt** beholder bare overlappet.
+- **Ekskluder** beholder alt unntatt overlappet.
+
+Tre andre virker på én enkelt form: **Konturstrøk…** gjør et strøk om til en fylt form med samme kontur (nyttig når du vil beholde en tykkelse nøyaktig slik den er tegnet), **Forskyv bane…** utvider silhuetten utover eller, med et negativt tall, krymper den innover, og **Forenkle** bygger opp en bane på nytt med færre segmenter og samme form.
+
+![En halvmåne og en ring med et ekte hull, begge laget med Trekk fra](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fboxes%3D%5B%7B%22id%22%3A%22paper%22%2C%22kind%22%3A%22box%22%2C%22x%22%3A0%2C%22y%22%3A0%2C%22w%22%3A1080%2C%22h%22%3A1080%2C%22shape%22%3A%22rect%22%2C%22bg%22%3A%22%23ffffff%22%7D%2C%7B%22id%22%3A%22crescent%22%2C%22kind%22%3A%22path%22%2C%22x%22%3A120%2C%22y%22%3A330%2C%22w%22%3A374%2C%22h%22%3A400%2C%22shape%22%3A%22rect%22%2C%22bg%22%3A%22%234f84ba%22%2C%22path%22%3A%221!cubic!1_.750491!.957645!-.128211!-.062578!-.065985!.027232!c_.534759!1!.076762!!-.295339!!c_0!.5!!.276142!!-.276142!c_.534759!0!-.295339!!.200102!!c_1.000984!.254923!-.09169!-.152161!-.021205!-.003239!c_.935829!.25!.022185!!-.221505!!c_.534759!.625!!-.207107!!.14459!c%22%7D%2C%7B%22id%22%3A%22ring%22%2C%22kind%22%3A%22path%22%2C%22x%22%3A580%2C%22y%22%3A330%2C%22w%22%3A400%2C%22h%22%3A400%2C%22shape%22%3A%22rect%22%2C%22bg%22%3A%22%234f84ba%22%2C%22fillRule%22%3A%22nonzero%22%2C%22path%22%3A%221!cubic!1_1!.5!!-.276142!!.276142!c_.5!1!.276142!!-.276142!!c_0!.5!!.276142!!-.276142!c_.5!0!-.276142!!.276142!!c*1!cubic!1_.5!.7!-.110457!!.110457!!c_.7!.5!!.110457!!-.110457!c_.5!.3!.110457!!-.110457!!c_.3!.5!!-.110457!!.110457!c%22%7D%5D&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=path-ops-boolean-result)
+
+Resultatet er en ny bane du kan fortsette å redigere med pennen. Hull er ekte hull - en **Fyllregel**-kontroll i strøkpanelet avgjør om overlappende konturer fylles (*non-zero*) eller stanses ut (*even-odd*).
+
+To ting gjør disse operasjonene bevisst ikke. De **nekter i stedet for å ødelegge**: be om snittet av to former som ikke overlapper, og du får beskjed om at det ikke er noe å beholde, og ingenting endres. Og tekst- og bildebokser har ingen kontur å jobbe med, så de blir stående i fred i stedet for å bli tilnærmet av rammen sin. Et kombinert resultat lagres som vanlige Bezier-kurver, slik et tegneprogram også gjør - den opprinnelige splinetypen overlever ikke operasjonen.
+
+## Tidslinje (Sequence Studio)
+
+**Sequence Studio** legger *tid* til det frie canvaset. Hver boks kan starte på et gitt tidspunkt, vare en viss lengde og animeres inn og ut, og en tidslinje forankret under tegnebrettet er der du ordner dem. Åpne det, og en sekvens spiller allerede - et tittelkort, et klipp, et sluttkort, en navnestripe og en musikkbunn - så modellen er synlig før du endrer noe.
+
+![Tidslinjen i Sequence Studio: transportkontrollene, linjalen, et overleggsspor, den magnetiske sekvensraden med klipp og skjøtebrikker og stripen Alltid på](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1440&height=900&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A252px!important%7D&cropSelector=.tl-panel&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-timeline)
+
+Det finnes to slags rader, og forskjellen er hele poenget:
+
+- **Sekvensraden** er *magnetisk*. Klippene ligger uten mellomrom, ett etter ett, og å dra ett omorganiserer rekken i stedet for å etterlate et hull. Slett et klipp, så lukker resten seg. Dette er ryggraden din.
+- **Overleggssporene** er frie. En navnestripe, en logo, en tekstplakat - alt som flyter over ryggraden på sin egen tid - får sitt eget spor og sin egen start.
+- Under dem samler **Alltid på** boksene som ikke har noen tidsangivelse i det hele tatt: kulisser som rett og slett er der hele veien. `+` på en brikke løfter én opp på et spor; **Gjør alltid på** sender den tilbake.
+
+![Hele redigeringsflaten: tegnebrett, verktøylinje og tidslinje sammen](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1440&height=900&dpi=192&waitMs=7000&css=.fc-toolbar%7Bopacity%3A1!important%7D&cropSelector=%23tool-stage&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-stage)
+
+Å åpne tidslinjen gir den tastaturet, så mellomromstasten og piltastene styrer avspillingsposisjonen i stedet for siden - og fordi den åpner seg selv på en komposisjon som allerede har tidsangivelser, gjelder det fra det øyeblikket Sequence Studio lastes.
+
+> **[Sekvenseditoren](/info/sequence-editor.html)** går dypere inn i de fire tingene som avgjør om redigering i tid føles forutsigbar: hvilket klipp et klikk på canvaset redigerer, gjennomskinnelige skygger av naboklippene, hva en deling omfatter og Slå sammen som opphever et kutt, og trimming (inkludert tastatursettet). Trykk `?` med tidslinjen i fokus for hurtigtastarket.
+
+**Redigering.** Dra midten av et klipp for å flytte eller omorganisere det, dra innenfor noen få piksler fra en av endene for å trimme det, og trykk **Del ved avspillingsposisjonen** (eller `S`) for å kutte ett klipp i to. Deling krever et klipp med en reell **Lengde** og avspillingsposisjonen et stykke inni det, så et åpent klipp (musikkbunnen, for eksempel) kan ikke deles. **Fest til kanter** er på som standard og fester til klippkanter, avspillingsposisjonen og hele sekunder, med Alt for å overstyre. Hver draging er ett angretrinn, og forhåndsvisningen under dragingen bruker samme regnestykke som selve endringen, så det du ser mens du drar, er det du får.
+
+Velg et klipp, så gir inspektøren deg de samme endringene som tall: **Lengde**, **Trim inn** (hvor langt inn i kilden det starter), **Hastighet** som et sett faste multiplikatorer fra ×0,25 til ×4, **Animer inn** / **Animer ut** med lengdene sine og **Demp klipp**. Et klipp på den magnetiske raden har med vilje ikke noe **Start**-felt - raden eier rekkefølgen, så du drar for å flytte det.
+
+**Overganger** er forhåndsinnstillinger, ikke nøkkelbilder: Ton, Sprett, Utvid, Stigning, Fall, de fire Skyv-variantene, Zoom inn og ut, Vipp, Sveip, Spinn, Drift eller **Kutt (ingen animasjon)**. Avstandene skalerer med objektet, så den samme forhåndsinnstillingen leses riktig på et helsides kort og på et lite merke. Mellom to naboklipp på sekvensraden ligger en **skjøtebrikke**: klikk den og velg **Kutt** eller **Krysstoning**, som trer i kraft med én gang og lukker seg. Åpne den samme brikken igjen for å endre **Lengde (ms)** og trykk **Ferdig**. En krysstoning lagres som en uttoning av det ene og en inntoning av det neste, og eksporten utleder selve overtoningen fra det paret - derfor ser en krysstoning ut som to toninger i forhåndsvisningen og som en ekte overlevering i filen.
+
+**Lyd.** Legg til et **Lyd**-klipp, og det lever på tidslinjen som ethvert annet klipp: bølgeform, trimming, demping. (Den genererte bunnen standardøkten kommer med er det ene unntaket - den syntetiseres ved eksport, så stolpen forblir enkel og stum til du rendrer.) Trykk på mikrofonen for å **ta opp en fortellerstemme** rett på tidslinjen, med nedtelling og nivåmåler, og opptaket lagres som din egen ressurs på det punktet du startet. Musikk, dialog og et klipps egen lyd når alle fram til den eksporterte miksen. (Eksportpanelets **Lydspor** er noe annet: én bunn lagt under hele klippet, med toning og ducking. De to lever side om side.)
+
+**Rendre det.** En bevegelseseksport er en **deterministisk sammensetning**, ikke et skjermopptak - hver ramme dekodes, tegnes og kodes på et nøyaktig tidspunkt, så filen avhenger ikke av at maskinen din henger med, og det finnes ingen praktisk øvre grense for antall rammer i MP4 eller WebM. Tidslinjens egen lengde setter varigheten med mindre du skriver inn en. Content Credentials stemples som ved enhver annen eksport. En stillbildeeksport gir deg rammen ved avspillingsposisjonen, eller et helt kontaktark fra feltet **Rammer** ved siden av utdatastørrelsen - se [Eksportere](/info/exporting.html#stills-from-a-timed-composition).
+
+Noen grenser å ha i bakhodet: en sekvens er begrenset til én time, GIF og animert PNG bufrer rammene sine og holder seg derfor korte, lyden er stum på et klipp med en annen hastighet enn ×1 (det finnes ingen tidsstrekking ennå), og **Ta opp live** er skjult her fordi sammensetteren er den bedre veien.
+
+**Utover forhåndsinnstillinger: nøkkelbilder, dybde og et kamera.** En overgang animerer et klipp når det kommer og går. For å posisjonere en boks *inne i* et klipp - la den drive, tone den, gjøre den uskarp, løfte den av siden og legge den ned igjen - legger du til nøkkelbilder: velg klippet, trykk **+Nøkkelbilde** (diamanten i tidslinjens verktøyklynge, diamanten på objektlinjen på canvaset eller `K`), og avspillingsposisjonen avgjør hvilken positur neste endring skriver. Det samme maskineriet gir hver tidsatte komposisjon et **kamera** som kjører inn, panorerer og trekker fokus, og gjør én flat SVG om til en stabel av lag du kan fly mellom. **[Animere](/info/animating.html)** er den fullstendige veiledningen.
+
+Design-verktøyet har den samme tidslinjen, så du kan tidsette en layout uten å bytte verktøy, og det eksporterer bevegelse også.
+
+## Presentere
+
+Et Design-dokument som består av **tegnebrett** er allerede en presentasjon. Åpne **Lolly-menyen** på verktøylinjen og velg **Presenter** - den siste raden - så blir hvert tegnebrett et lysbilde i fullskjerm, i den rekkefølgen tegnebrettene ligger på canvaset. Presentasjonen kjører på en kopi av de rendrede tegnebrettene, så editoren under røres aldri, og går du ut, er du tilbake nøyaktig der du var.
+
+- **Gå videre** med **mellomrom**, `→`, **Page Down** eller et klikk på stripen ved høyre skjermkant; gå tilbake med `←`, **Page Up** eller stripen ved venstre kant. **Home** og **End** hopper til første og siste lysbilde. En liten kontrollinje toner inn hver gang du beveger pekeren, og skjuler seg igjen når du stopper.
+- **Oversikt** (`O` eller rutenettknappen) legger ut alle tegnebrettene på én gang i den ordningen du ga dem på canvaset; klikk på ett for å åpne det.
+- **Trinnvis visning.** Høyreklikk en boks og velg **Vis ved trinn 1**, **2** eller **3** i stedet for standardvalget **Alltid synlig**. Boksen venter da til du går videre til sitt trinn, så et lysbilde kan komme stykkevis; bokser med samme nummer kommer sammen.
+- **Presentatørvisning** (`S`) åpner et andre vindu med lysbildet du står på, det neste, notatene dine for det lysbildet og en klokke som går. Blokkerer nettleseren sprettoppvinduet, faller den tilbake til et panel over presentasjonen. Notater settes per tegnebrett og vises aldri på selve lysbildet.
+- `B` holder en svart skjerm (en hvilken som helst tast henter lysbildet tilbake), `F` går tilbake til fullskjerm, og **Escape** skreller av ett lag om gangen: oversikten tilbake til presentasjonen, presentasjonen tilbake til editoren.
+- **Kiosk.** Gi et tegnebrett en **Lengde**, så blir presentasjonen stående der så lenge og går videre av seg selv bak en tynn framdriftslinje; `K` (eller pauseknappen, som først dukker opp når noe har en lengde) stopper og starter det igjen. Legg `loop` til lenken, så går presentasjonen rundt på nytt til slutt, og det er det som gjør den til skilting.
+
+Presentasjonen er også en lenke. `?present` åpner rett inn i den, `s=` navngir lysbildet - en posisjon, en tegnebrett-id eller `id.step` for et byggetrinn - og adressen oppdateres mens du beveger deg, så det du sender er lysbildet du står på. Verktøyforfattere: de parameterne er dokumentert på siden [URL-modus](/info/url-mode.html#reserved-parameters).
 
 ## På en telefon
 
-![The free-canvas tool rail: a drag grip, the Lolly menu, then Pointer, Add a box, Pen and Timeline](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2600&css=.fc-toolbar%7Bopacity%3A1!important%7D&cropSelector=.fc-toolbar&walker=1&format=svg&dark=1&filename=pen-editor-rail)
-
-![Two pen paths rendered straight from a link: a stroked S-curve and a closed filled blob](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fboxes%3D%5B%7B%22id%22%3A%22paper%22%2C%22kind%22%3A%22box%22%2C%22x%22%3A0%2C%22y%22%3A0%2C%22w%22%3A1080%2C%22h%22%3A1080%2C%22shape%22%3A%22rect%22%2C%22bg%22%3A%22%23ffffff%22%7D%2C%7B%22id%22%3A%22curve%22%2C%22kind%22%3A%22path%22%2C%22x%22%3A140%2C%22y%22%3A180%2C%22w%22%3A800%2C%22h%22%3A420%2C%22shape%22%3A%22rect%22%2C%22bg%22%3A%22%22%2C%22stroke%22%3A%22%234f84ba%22%2C%22strokeW%22%3A14%2C%22path%22%3A%221!cubic!0_.02!.85!!!.25!-.45!s_.5!.5!-.22!.32!.22!-.32!y_.98!.12!-.25!.45!!!s%22%7D%2C%7B%22id%22%3A%22blob%22%2C%22kind%22%3A%22path%22%2C%22x%22%3A340%2C%22y%22%3A620%2C%22w%22%3A400%2C%22h%22%3A320%2C%22shape%22%3A%22rect%22%2C%22bg%22%3A%22%23d1e7ff%22%2C%22stroke%22%3A%22%234f84ba%22%2C%22strokeW%22%3A6%2C%22fillRule%22%3A%22nonzero%22%2C%22path%22%3A%221!catmull-rom!1_.5!0_1!.42_.78!1_.22!1_0!.42%22%7D%5D&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=pen-path-geometry)
-
-![A tool on a phone-width screen - controls as a sheet up top, the generated palette filling the preview below, and the render pill floating bottom-centre](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3Df97316%26harmony%3Dadjacent-3%26steps%3D9&width=430&height=900&dpi=192&waitMs=2200&walker=1&format=svg&dark=1&filename=vt-phone-palette)
-
 På smale skjermer flyter layouten om til én kolonne:
 
-- **Kontrollene blir et ark** øverst med et **draghåndtak** på nedre kant. Dra håndtaket for å endre størrelse - det smetter til **kikk / halv / full** - eller **trykk** på håndtaket for å veksle mellom sammenslått og utvidet. Forhåndsvisningen fyller plassen under og forblir synlig mens du redigerer.
-- En flytende **Render**-knapp åpner arket **Eksport** - alle kontrollene for format, størrelse, kopiering, lagring og nedlasting på ett sted. Lukk det ved å trykke på bakgrunnen.
+- **Kontrollene blir et ark** øverst med et **draghåndtak** på nedre kant. Dra håndtaket for å endre størrelsen - det fester seg til **kikk / halv / full** - eller **trykk** på håndtaket for å veksle mellom sammenslått ↔ utvidet. Forhåndsvisningen fyller plassen under og forblir synlig mens du redigerer.
+- En flytende **Eksporter**-knapp åpner eksportarket - alle kontrollene for format, størrelse, kopiering, lagring og nedlasting på ett sted. Lukk det ved å trykke på bakgrunnen.
 
-## Kontroller (inndata)
+![Et verktøy på en telefonbred skjerm - kontrollene som et ark øverst, den genererte paletten som fyller forhåndsvisningen under og renderpillen som flyter nederst i midten](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3Df97316%26harmony%3Dadjacent-3%26steps%3D9&width=430&height=900&dpi=192&waitMs=2200&walker=1&format=svg&dark=1&filename=vt-phone-palette)
 
-![A crescent and a ring with a real hole, both produced by Subtract](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fboxes%3D%5B%7B%22id%22%3A%22paper%22%2C%22kind%22%3A%22box%22%2C%22x%22%3A0%2C%22y%22%3A0%2C%22w%22%3A1080%2C%22h%22%3A1080%2C%22shape%22%3A%22rect%22%2C%22bg%22%3A%22%23ffffff%22%7D%2C%7B%22id%22%3A%22crescent%22%2C%22kind%22%3A%22path%22%2C%22x%22%3A120%2C%22y%22%3A330%2C%22w%22%3A374%2C%22h%22%3A400%2C%22shape%22%3A%22rect%22%2C%22bg%22%3A%22%234f84ba%22%2C%22path%22%3A%221!cubic!1_.750491!.957645!-.128211!-.062578!-.065985!.027232!c_.534759!1!.076762!!-.295339!!c_0!.5!!.276142!!-.276142!c_.534759!0!-.295339!!.200102!!c_1.000984!.254923!-.09169!-.152161!-.021205!-.003239!c_.935829!.25!.022185!!-.221505!!c_.534759!.625!!-.207107!!.14459!c%22%7D%2C%7B%22id%22%3A%22ring%22%2C%22kind%22%3A%22path%22%2C%22x%22%3A580%2C%22y%22%3A330%2C%22w%22%3A400%2C%22h%22%3A400%2C%22shape%22%3A%22rect%22%2C%22bg%22%3A%22%234f84ba%22%2C%22fillRule%22%3A%22nonzero%22%2C%22path%22%3A%221!cubic!1_1!.5!!-.276142!!.276142!c_.5!1!.276142!!-.276142!!c_0!.5!!.276142!!-.276142!c_.5!0!-.276142!!.276142!!c*1!cubic!1_.5!.7!-.110457!!.110457!!c_.7!.5!!.110457!!-.110457!c_.5!.3!.110457!!-.110457!!c_.3!.5!!-.110457!!.110457!c%22%7D%5D&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=path-ops-boolean-result)
+## Kontroller (felter)
 
-![A tool's control stack - a text field, colour triggers and a slider, and nothing else the author chose to lock down](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-inputs&walker=1&format=svg&dark=1&filename=use-tool-inputs)
+Verktøy viser bare de feltene som er ment å variere - alt annet (farger, layout, typografi, logikk) er låst av verktøyforfatteren, så det du lager oppfyller reglene forfatteren satte. Feltene omfatter tekst, glidebrytere, fargevelgere, nedtrekksmenyer, datoer, bildevelgere og gjentakende radgrupper. Noen er samlet under sammenleggbare seksjoner.
 
-Verktøy eksponerer bare inndataene som er ment å variere - alt annet (farger, layout, typografi, logikk) er låst av verktøyforfatteren, slik at det du lager alltid oppfyller reglene forfatteren har satt. Inndata omfatter tekst, glidebrytere, fargevelgere, nedtrekksmenyer, datoer, bildevelgere og gjentakende radgrupper. Noen er gruppert under sammenleggbare seksjoner.
+![Et verktøys kontrollstabel - et tekstfelt, fargeknapper og en glidebryter, og ingenting annet, siden forfatteren låste resten](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-inputs&walker=1&format=svg&dark=1&filename=use-tool-inputs)
 
-**Tilbakestill:** *Fjern endringer* tilbakestiller hver inndata til standardverdien.
+**Tilbakestilling:** *Fjern endringer* setter hvert felt tilbake til standardverdien.
 
-## Dine detaljer og portrettbilde
+### Angre og gjøre om
 
-![Sequence Studio's timeline: the transport, the ruler, an overlay lane, the magnetic sequence row with its clips and seam chips, and the Always on strip](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1440&height=900&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A252px!important%7D&cropSelector=.tl-panel&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-timeline)
+**Cmd/Ctrl-Z** går et steg tilbake og **Cmd/Ctrl-Shift-Z** (eller **Cmd/Ctrl-Y**) går fram igjen. Det samme paret ligger som knappene **Angre** og **Gjør om** i raden over kontrollene - på det frie canvaset ligger de på verktøylinjen i stedet - og hver av dem blir grå når det ikke er mer å ta tilbake. Hvert steg sier hva det var: angrer du en farge, navngir en liten melding feltet den nettopp gjenopprettet, med en **Gjør om**-knapp i seg for veien tilbake.
 
-![The whole editing surface: artboard, tool rail and timeline together](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1440&height=900&dpi=192&waitMs=7000&css=.fc-toolbar%7Bopacity%3A1!important%7D&cropSelector=%23tool-stage&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-stage)
+- **En draging er ett steg.** Gjentatte endringer på den samme kontrollen innenfor et halvt sekund slås sammen, så det å dra en glidebryter gjennom hele skalaen er én angring i stedet for to hundre.
+- **De siste 100 stegene beholdes** - eldre faller av. Gjør du en ny endring etter å ha angret, tømmes stabelen framover, slik den gjør overalt ellers.
+- **Mens markøren står i et tekstfelt** tilhører Cmd/Ctrl-Z feltet selv, tegn for tegn. Lolly tar over for de kontrollene som ikke har noen nyttig angring selv: glidebrytere, nedtrekksmenyer, farger og brytere.
+- **Å velge en fil** i et **fil**-felt er ikke et steg - de bytene holdes bare for økten, så det ville ikke være noe å legge tilbake.
 
-**Profil** (øverst til høyre i galleriet) inneholder navnet ditt, kontaktdetaljer og et valgfritt **portrettbilde**. Verktøy som spør etter disse feltene, fyller dem inn automatisk - sett dem én gang, så fyller e-postsignaturen, lockupene og merkene dine seg selv inn. Du kan fortsatt overstyre et hvilket som helst felt per økt. Slå på **Bruk mine detaljer** slik at et verktøy kan lese dem.
+I et direkte [samarbeid](/info/collaborate.html) forblir historikken bare din. En endring som kommer fra den andre enheten havner aldri på din stabel, så angre kan bare ta tilbake noe du selv gjorde.
 
-Portrettbildet og detaljene dine finnes **bare på denne enheten**. En profil kan være mer enn bare deg - et team eller en rolle du trer inn i nå og da. Se **[Profiler](/info/profile.html)** for hele bildet, inkludert hvordan du kan ha mer enn én.
+## Opplysningene og portrettbildet ditt
+
+**Profil** (øverst til høyre i galleriet) inneholder navnet ditt, kontaktopplysninger og et valgfritt **portrettbilde**. Verktøy som spør etter de feltene, fyller dem ut automatisk - sett dem én gang, så fyller e-signaturen, logolockupene og merkene seg ut selv. Du kan fortsatt overstyre et felt per økt. Slå på **Bruk mine opplysninger til å opprette**, så følger opplysningene dine med som forfatter på det du eksporterer.
+
+Portrettbildet og opplysningene dine ligger **bare på denne enheten**. En profil kan være mer enn bare deg - et team eller en rolle du går inn i nå og da. Se **[Profiler](/info/profile.html)** for hele bildet, inkludert det å ha flere enn én.
 
 ## Lagre og fortsette
 
-![The two-half render pill - an up arrow that opens the export panel, and a tick that saves the session in place](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=%23tool-inputs%7Bdisplay%3Anone%7D&cropSelector=.render-pill&walker=1&format=svg&dark=1&filename=use-render-pill)
+Klikk **Lagre** for å lagre de gjeldende verdiene som en økt for det verktøyet. Du kan ha flere navngitte økter per verktøy; hvert verktøys **Fortsett**-knapp åpner den siste igjen, og **historikk-knappen** (øverst til høyre, ved siden av profilen din) lister opp hver lagrede økt på tvers av alle verktøy. Økter er lokale på enheten. For å ordne dem åpner du **Prosjekter** (nedenfor).
 
-Klikk **Lagre** for å lagre gjeldende inndata som en økt for det verktøyet. Du kan ha flere navngitte økter per verktøy; hvert verktøys **Fortsett**-knapp åpner den siste igjen, og **historikk-knappen** (øverst til høyre, ved siden av profilen din) lister opp hver lagrede økt på tvers av alle verktøy. Økter er enhetslokale. For å organisere dem, åpne **Prosjekter** (nedenfor).
+![Renderpillen med to halvdeler - en pil opp som åpner eksportpanelet, og en hake som lagrer økten der den er](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&css=%23tool-inputs%7Bdisplay%3Anone%7D&cropSelector=.render-pill&walker=1&format=svg&dark=1&filename=use-render-pill)
 
 ## Prosjekter
 
-![Projects - saved sessions organised into nestable folders](/t/url-shot?url=%2F%23%2Fp&width=1440&height=900&dpi=192&waitMs=1200&walker=1&format=svg&localize=1&dark=1&filename=projects)
+**Prosjekter** - åpne det fra fanen **Prosjekter** ved siden av **Verktøy**, eller fra **Profil → Lagring → Ordne i Prosjekter** - er et hjem for alt du har lagret, og det fungerer som en filbehandler:
 
-**Prosjekter** - åpne det fra fanen **Prosjekter** ved siden av **Verktøy**, eller fra **Profil → Lagring → Organiser i Prosjekter** - er et hjem for alt du har lagret, og det fungerer som en filbehandler:
+![Prosjekter - lagrede økter ordnet i mapper som kan ligge inni hverandre](/t/url-shot?url=%2F%23%2Fp&width=1440&height=900&dpi=192&waitMs=1200&walker=1&format=svg&localize=1&dark=1&filename=projects)
 
-- **Mapper som kan nøstes.** Grupper lagrede økter i mapper, og mapper inni mapper, så dypt du vil. Opprett en mappe, gi den nytt navn, eller dra en flis til en annen mappe for å flytte den; en brødsmulesti fører deg tilbake opp. En alltid tilstedeværende mappe, **Ukategorisert**, inneholder alt som ennå ikke er arkivert.
-- **Arkiver nytt arbeid direkte.** Inne i en mappe åpner **+ Nytt verktøy** et verktøy og arkiverer den første lagringen i den mappen automatisk.
-- **Flervalg (skrivebord).** Kryss av en flis' avkrysningsboks, dra en markeringsboks over tomt canvas, eller **Shift/Cmd-klikk**; **høyreklikk** på en flis for kontekstmenyen. Utfør deretter en handling på hele utvalget samtidig.
-- **Render en hel mappe eller et utvalg.** **Render mappe** eksporterer hver lagrede økt i en mappe - inkludert undermapper - som én nøstet `.zip`. **Render utvalg** gjør det samme for et hvilket som helst flervalg, og en enkelt økt rendres rett til sin egen fil. Ingen Batch/Pro nødvendig.
-- **Del en lagret økt.** Høyreklikk på en økt → **Del lenke** for å kopiere en lenke som åpner den igjen med nøyaktig samme inndata (hele Del-dialogen - se nedenfor).
+- <!--i:folder--> **Mapper inni mapper.** Samle lagrede økter i mapper, og mapper inni mapper, så dypt du vil. Opprett en mappe, gi den nytt navn eller dra en flis over på en annen mappe for å flytte den; en brødsmulesti fører deg opp igjen. En mappe **Ukategorisert** er alltid til stede og holder på alt som ikke er sortert ennå.
+- <!--i:clock--> **Sorter på din egen måte.** **Vis og sorter** tilbyr **Navn**, **Dato lagt til**, **Sist endret** (standardvalget) og, inne i en mappe, **Etter verktøy**. Mapper kommer alltid først uansett hvilken sortering som er aktiv - sorteringen ordner bare øktene og mappene innenfor sin egen gruppe.
+- <!--i:document--> **Legg nytt arbeid rett inn.** **Ny ressurs** («Start en ny kreasjon» på rotnivå, «Legg til i *mappe*» inne i en) åpner et verktøy og legger den første lagringen i den mappen automatisk.
+- <!--i:checklist--> **Flervalg (skrivebord).** Kryss av en flis' avkrysningsboks, dra en markeringsramme over tomt område eller **Shift/Cmd-klikk**; **høyreklikk** en flis for kontekstmenyen. Så handler du på hele utvalget på én gang - den samme bevegelsen og den samme flytende handlingslinjen virker i verktøygalleriet, Hjelpeverktøy, Katalogen og Prosjekter, ikke bare her.
+- <!--i:download--> **Rendre en hel mappe eller et utvalg.** **Rendre mappe** eksporterer hver lagrede økt i en mappe - inkludert undermappene - som én nøstet `.zip`. **Rendre utvalg** gjør det samme for et hvilket som helst flervalg, og en enkelt økt rendres rett til sin egen fil. Du trenger ikke Batch/Pro.
+- <!--i:link--> **Hopp rett til et verktøys lagrede arbeid.** Kryss av ett eller flere verktøy i verktøygalleriet og velg **Vis økter** fra utvalgslinjen - Prosjekter åpnes og viser bare øktene som er laget med de verktøyene, med en **Fjern** for å komme tilbake til full visning.
+- <!--i:link--> **Del en lagret økt.** Høyreklikk en økt → **Del lenke** for å kopiere en lenke som åpner den igjen med nøyaktig de samme verdiene (hele delingsdialogen - se nedenfor).
 
-## Dele en lenke
+![Popoveren Vis og sorter åpen i Prosjekter, med en temarad, et valg mellom Forhåndsvisning eller Liste under Vis, og Navn, Dato lagt til og Sist endret under Sorter](/t/url-shot?url=%2F%23%2Fp&width=900&height=700&dpi=192&waitMs=1400&drive=click%3A.projects-viewopts&cropSelector=.projects-viewmenu&walker=1&format=svg&dark=1&filename=misc-projects-sort)
+<!--
+SHOT NOTE (misc-projects-sort): trigger button confirmed as
+`.filter-fab.projects-viewopts` in views/projects.ts (openViewOpts() is bound
+to `.projects-viewopts` specifically) - `.projects-viewopts` alone is the
+more specific hook, so that's what drives the click. The popover it opens
+(`.projects-viewmenu`, also confirmed directly in openViewOpts()) is body-
+appended, not nested under the Projects root, so cropSelector finds it
+regardless. "By tool" only appears inside a folder - this recipe captures at
+the Projects ROOT (`url=/#/p`), so if the capture pass wants "By tool"
+visible too, point url= at a real folder instead: the route is a path
+segment, `/#/p/<folderId>` (confirmed in main.ts's hash router - `parts[0]
+=== 'p'` reads `folderId` from `parts[1]`), not a query param. Caveat: a
+folder has to already EXIST in the capture profile, which a per-shot fresh
+context has none of.
+Also: the popover is not sort-only. openViewOpts() writes a theme segment, a
+"View" pair (Preview / List) and a sound segment around the Sort rows, so the
+alt text names them - do not re-caption this as "the sort menu".
+-->
 
-Hver inndata fanges i sidens URL, så en lenke *er* designen. Bruk **Del** i eksportkontrollene - eller **Del lenke** på en lagret økt i Prosjekter - for å åpne **Del-dialogen**: en lenke klar til å kopieres, pluss brytere for å kryptere lenken og hva som skjer når den åpnes (fullskjerm, eksportpanelet utvidet, nedlasting-ved-åpning med `&export`, eller kopiering-til-utklippstavle med `&copy`).
+**Hva utvalgslinjen tilbyr** varierer litt fra visning til visning, siden ikke alle handlinger gir mening overalt:
 
-En stor design ville gitt en lang URL, så dialogen tilbyr også en **Korteste lenke** som pakker hele tilstanden inn i en kompakt token - den lesbare formen er alltid tilgjengelig også. Lim den inn til en kollega, bokmerk den, eller commit den. (Fullstendige detaljer: [URL-modus](/info/url-mode.html).)
+- **Verktøy / Hjelpeverktøy:** Favoritt (eller Fjern favoritt), Skjul (eller Vis igjen), Tilgjengelig offline (eller Fjern fra offline), **Vis økter** (hoppet beskrevet over) og Kopier lenke når nøyaktig ett kort er valgt.
+- **Katalog:** Favoritt og Skjul gjelder for et hvilket som helst utvalg; Dupliser, Last ned og Slett dukker først opp når hvert valgte element er en av dine egne opplastinger - en delt designsystemressurs er en permanent kontrakt, så de tre holder seg unna den også i bulk.
+- **Prosjekter:** **Rendre utvalg**, **Flytt til…**, **Ny mappe**, **Slett**, **Rediger sammen** når utvalget er mellom to og åtte økter fra ett og samme verktøy (det åpner dem side om side under ett felles sidepanel) og **Rediger som ark**, som i stedet åpner hele utvalget som rader i batch-rutenettet. Det siste har **ingen størrelsesgrense** og bryr seg ikke om øktene kom fra samme verktøy, så det er nødutgangen når et utvalg er større eller mer blandet enn de to til åtte i Rediger sammen.
 
-> Bilder du har lastet opp fra enheten din, er **ikke** inkludert i en delt lenke - de finnes bare på din maskin.
+> En felle i merkingen: **Vis økter** finnes bare når noe er *valgt*. Høyreklikker du et enkelt kort som ikke er valgt, får du i stedet **N lagrede økter**, som åpner verktøyets egen historikkdialog i stedet for å navigere til Prosjekter.
 
-## Direktekamera (bevegelsesreaktive verktøy)
+![To verktøykort krysset av i verktøygalleriet, med den flytende utvalgslinjen som viser 2 valgt og tilbyr Tilgjengelig offline, Vis økter, Favoritt og Skjul](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22mesh-gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
+<!--
+SHOT NOTE (misc-bulkbar-gallery): drive targets `[data-select="qr-code"]` /
+`[data-select="d3"]` - the `.tile-check[data-select="<ref>"]` checkbox button
+confirmed directly in views/gallery.ts's card markup (the same attribute
+cardMarkup gives every tile), so these two clicks tick both cards without
+opening either tool.
 
-Fotofiltrene - Halftone, Scanline, Posterize, Duotone - viser en **Go live**-knapp der et kamera er tilgjengelig. Slå den på, så følger effekten webkameraet ditt bilde for bilde, slik at den reagerer på bevegelse; du kan ta opp resultatet som GIF, WebM eller MP4. Bilderutene leses og behandles **på enheten din** og forlater den aldri, og kameraet frigjøres i det øyeblikket du stopper eller forlater verktøyet. (En hvilken som helst bildevelger har også **Ta et bilde** for å fange én enkelt bilderute som et bilde på enheten.)
+SHOT NOTE (misc-sessions-by-tool, NOT PUBLISHED): the "View sessions" result
+had a recipe of its own (`/#/p?tools=qr-code,d3`, views/projects.ts's
+toolsBodyHtml()), dropped here because it has no `drive=` that can
+manufacture its own content - a saved session isn't a click away, it has to
+already exist, and build-docs-shots.ts gives every shot a fresh
+`browser.newContext()`. It would publish an empty list. Same dependency the
+`projects` shot above already carries; revisit if the pipeline gains a
+storage-seeding hook.
+-->
+
+
+## Dele arbeidet ditt
+
+Et design går ut på én av to måter: som en lenke eller som en fil. Delingsdialogen tilbyr begge. Åpne den med **Del** i eksportkontrollene; **Del lenke** på en lagret økt i Prosjekter åpner den samme dialogen for den økten.
+
+### Lenken
+
+Hvert felt fanges opp i side-URL-en, så en lenke *er* designet. Øverst i dialogen ligger lenken klar til kopiering, med to sammenslåtte seksjoner under.
+
+- **Lenkevalg** inneholder **Korteste lenke** (et stort design gir en lang URL, så dette pakker hele tilstanden inn i et kompakt token og viser deg besparelsen i tegn; den lesbare formen er alltid der også), **Passordbeskytt denne lenken** (AES-256 over hele lenken, passordet aldri i den) og **Lås til denne verktøyversjonen** - flagget `_v`, som fester lenken til den verktøyversjonen du ser på, slik at en senere oppdatering ikke kan endre det den rendrer.
+- **Lenkeoppførsel** er hva som skjer når mottakeren åpner den: fullskjerm, eksportpanelet allerede utvidet, nedlasting ved åpning med `&export` eller kopiering til utklippstavlen med `&copy`.
+
+Lim lenken inn til en kollega, bokmerk den eller sjekk den inn i koden. (Alle detaljer: [URL-modus](/info/url-mode.html).)
+
+**Dialogen sier hva en lenke ikke kan bære.** Tre ting får ikke plass i en URL: et bilde eller en fil du la til fra denne enheten, en svært lang tekstverdi eller en svært stor liste. Hver av dem telles mens lenken bygges. Måtte noe utelates, navngir dialogen det og peker deg til filen nedenfor, i stedet for å gi deg en lenke som åpnes uten bildet. En lenke som bare er *lang*, får en mildere merknad med antall tegn, siden pakking fortsatt kan redde lengden.
+
+### .lolly-filen
+
+**Last ned .lolly**, i delingsdialogen i verktøyet du jobber i, skriver det samme designet som en fil. Den bærer med seg den lagrede økten sammen med bildene og filene du la til fra enheten din. Katalogmateriellet designet bygger på, følger med inni den også, så filen åpnes komplett på en maskin som aldri har sett merkevaren din. Har enheten din et delingsark, gir **Send til…** filen rett videre dit (AirDrop, en Android-deling) i stedet for å lagre den på disk.
+
+En `.lolly` er en helt vanlig zip. Gi den navnet `.zip` og åpne den: dine egne bilder ligger under `assets/uploads/` og katalogmateriell under `assets/catalog/`, hver med sitt virkelige navn og filendelse, `manifest.json` lister opp hver enkelt, og en README øverst forteller hva filen er.
+
+Tre ting bestemmer du før den går:
+
+- **Om navnet ditt blir med.** Navn, e-post og organisasjon skrives inn i filen bare når **Bruk mine opplysninger til å opprette** er på i profilen din. Er den av, registrerer filen at den ble laget med Lolly og når - ingenting om deg.
+- **Om lisensiert materiell blir med.** Lisensierte og merkevarelåste ressurser holdes tilbake som standard. Bruker designet noen, sier dialogen hvor mange og gir deg to knapper - *Last ned uten dem* eller *Ta med og last ned* - fordi det å ta dem med gir selve filene til den som åpner `.lolly`-filen.
+- **Om verktøyet blir med.** **Ta med verktøyet** pakker verktøyets egne filer sammen med designet, så det åpnes på en enhet som ikke har det verktøyet. Det kommer avkrysset for et tilpasset verktøy - en avlegger eller et privat merkevareverktøy mottakeren neppe har - og uavkrysset for et som er byte for byte likt den signerte katalogen, siden kopien deres allerede er den samme filen.
+
+**Åpne en.** Slipp en `.lolly` på appen: ressursene havner i biblioteket ditt, økten havner i Prosjekter, og verktøyet åpnes på den. Ingenting av ditt blir overskrevet: økten kommer inn som en ny lagret plass, mens en ressurs som allerede finnes på enheten kjennes igjen på sjekksummen og gjenbrukes i stedet for å dupliseres. Hver del kontrolleres mot filens egne sjekksummer på vei inn, så en kopi som er skadet underveis avvises i stedet for å bli halvveis importert.
+
+Bærer filen med seg et verktøy du ikke har, spør Lolly før det verktøyet kan kjøre: **Stole på dette verktøyet?** navngir det og forfatteren og sier rett ut at å åpne det kjører verktøyets egen kode på enheten din, med **Stol på og installer** som veien videre. Sier du nei, blir det delte arbeidet likevel lagret i prosjektene dine, og venter der til den dagen du legger til verktøyet. (Én type verktøy kan ikke sidelastes ennå - et der koden leveres som en modul - og det avvises på samme måte.)
+
+Både en lenke og en fil gir fra seg et øyeblikksbilde. Vil du jobbe på den samme økten *samtidig* som en annen - to enheter, ingen server, ingen internettforbindelse nødvendig hvis dere er på samme nettverk - se [Jobbe sammen](/info/collaborate.html).
+
+## Direkte kamera (bevegelsesreaktive verktøy)
+
+Hvert **Filter** for foto - Halftone, Scanline, Posterize, Voronoi-celler, Fargebehandling, Pikselstrekk og Ujevnheter - viser en **Gå live**-knapp der et kamera er tilgjengelig. Slå den på, så følger effekten webkameraet ditt ramme for ramme, slik at den reagerer på bevegelse; du kan ta opp resultatet til GIF, WebM eller MP4. Rammene leses og behandles **på enheten din** og forlater den aldri, og kameraet frigis i det øyeblikket du stopper eller forlater verktøyet. (Enhver bildevelger har også **Ta et bilde** for å fange én enkelt ramme som et bilde på enheten.)
 
 ## Mine bilder
 
-![The View and sort popover in Projects open, with a theme row, a View choice of Preview or List, and Name, Date added and Last modified under Sort](/t/url-shot?url=%2F%23%2Fp&width=900&height=700&dpi=192&waitMs=1400&drive=click%3A.projects-viewopts&cropSelector=.projects-viewmenu&walker=1&format=svg&dark=1&filename=misc-projects-sort)
-
-![Two tool cards ticked in the Tools gallery, with the floating selection bar offering Available offline, View sessions, Favourite, Hide and Copy link](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22mesh-gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
-
-Når et verktøy lar deg legge til et bilde fra enheten din, skaleres det ned, strippes for EXIF/GPS, og lagres i det personlige biblioteket **Mine bilder** (under **Profil → Lagring**). Gjenbruk det i et hvilket som helst verktøy. Biblioteket har en øvre grense og er helt lokalt - administrer eller slett bilder der.
+Når et verktøy lar deg legge til et bilde fra enheten din, beholdes det nøyaktig slik det kom inn - så en Content Credential på det verifiseres fortsatt - og lagres i ditt personlige bibliotek **Mine bilder** (under **Profil → Lagring**). Bare en virkelig enorm fil spør om du vil beholde den eller endre størrelsen. Gjenbruk den i et hvilket som helst verktøy. For å fjerne EXIF/GPS mens bildene kommer inn slår du på **Fjern metadata fra opplastinger** i profilen din. Det finnes ingen grense: biblioteket er helt lokalt og begrenses bare av lagringsplassen på enheten din - der administrerer eller sletter du bilder.
 
 ## Katalogen - ressursbiblioteket ditt
 
-![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=2400&css=.plat-swatch-grid~%2A%7Bdisplay%3Anone%7D&walker=1&format=svg&localize=1&dark=1&filename=catalogue)
+**Katalogen** (`#/c`, eller segmentet **Katalog** i bryteren Prosjekter · Verktøy · Hjelpeverktøy · Katalog øverst i hver oversiktsvisning) samler alt verktøyene dine kan bygge på - merkevarelogoer, bilder, lyd og bevegelse, gruppert etter type - og det er også der dine **egne kreative filer** ligger. Ingen server, ingen adminkonsoll, ingen pull request: alt ligger på enheten din.
 
-**Katalogen** (`#/c`, eller lenken **Katalog** i menyen) samler alt verktøyene dine kan hente fra - merkevarelogoer, bilder, lyd og bevegelse, gruppert etter type - og det er også der dine **egne kreative filer** bor. Ingen server, ingen adminkonsoll, ingen pull request: alt er på enheten din.
+![Katalogen - merkevareressurser, fargeprøver og skrifter, pluss dine egne opplastinger](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=2400&css=.plat-swatch-grid~%2A%7Bdisplay%3Anone%7D&walker=1&format=svg&localize=1&dark=1&filename=catalogue)
 
-- **Ta med filene dine.** Dra et hvilket som helst bilde, SVG, lydklipp, video, Lottie, eller PDF inn på opplastingsområdet - eller klikk for å velge - og det havner i katalogen din umiddelbart, klart i hvert verktøys ressursvelger. Ta inn så mye du vil; det forlater aldri enheten din.
-- **Favoritter det du bruker ofte.** ★ en ressurs (eller en merkevarefargeprøve) og den festes øverst i hver velger, slik at favorittlogoen eller -fargen din er ett klikk unna.
-- **Rydd opp.** Omkategoriser en ressurs til en annen gruppe, skjul en delt merkevareressurs du ikke bruker (med **Vis skjulte** for å hente den tilbake), eller slett dine egne opplastinger for godt.
+- <!--i:upload--> **Ta filene dine inn.** Dra et hvilket som helst bilde, en SVG, et lydklipp, en video, en Lottie, en PDF eller en PowerPoint-presentasjon inn på opplastingsfeltet - eller klikk for å velge - så havner det i katalogen din umiddelbart, klart i hvert verktøys ressursvelger. En PDF med flere sider eller en `.pptx` spør hvilke sider eller lysbilder du vil beholde - hvert av dem blir en SVG-ressurs. Ta inn så mye du vil; det forlater aldri enheten din.
+- <!--i:star--> **Gjør det du bruker ofte til favoritt.** Sett ★ på en ressurs (eller en merkevarefarge), så festes den øverst i hver velger, slik at logoen eller fargen du alltid går til er ett klikk unna.
+- <!--i:folder--> **Rydd opp.** Omkategoriser en ressurs til en annen gruppe, skjul en delt merkevareressurs du ikke bruker (med **Vis skjulte** for å hente den tilbake) eller slett dine egne opplastinger for godt. Den samme flervalgsbevegelsen og flytende handlingslinjen som i Prosjekter virker her også, så alt dette kan gjøres på et helt utvalg på én gang.
 
-### Ta med paletten og skrifttypene dine hvor som helst
+### Ta paletten og skriftene dine med overalt
 
-![The Swatches panel - the five palette download buttons across the top, then every brand colour as a copyable chip](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=96&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&walker=1&format=svg&dark=1&filename=use-swatch-downloads)
+Katalogens panel **Fargeprøver** gjør mer enn å vise fram - klikk på en farge for å kopiere den, eller **last ned hele merkevarepaletten** i det formatet det andre verktøyet ditt snakker:
 
-Katalogens **Fargeprøver**-panel er ikke bare til referanse - klikk på en farge for å kopiere den, eller **last ned hele merkevarepaletten** i formatet det andre verktøyet ditt snakker:
+- <!--i:code--> **Designtokens (JSON)**, **CSS-variabler** eller **CSS-klasser** - slipp merkevaren rett inn i et stilark eller et bygg;
+- <!--i:palette--> **Adobe Swatch Exchange (.ase)** - last den inn i Illustrator eller Photoshop;
+- <!--i:pentool--> **GIMP-palett (.gpl)** - for GIMP eller Inkscape.
 
-- **Designtokener (JSON)**, **CSS-variabler**, eller **CSS-klasser** - sett merkevaren rett inn i et stilark eller en build;
-- **Adobe Swatch Exchange (.ase)** - last den inn i Illustrator eller Photoshop;
-- **GIMP-palett (.gpl)** - for GIMP eller Inkscape.
+![Panelet Fargeprøver - de fem nedlastingsknappene for paletten øverst, deretter hver merkevarefarge som en kopierbar brikke](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches&width=1440&height=900&dpi=96&waitMs=1800&css=.cat-group%3Anot%28%5Bdata-group%3Dswatches%5D%29%7Bdisplay%3Anone%7D&cropSelector=%5Bdata-group%3Dswatches%5D&walker=1&format=svg&dark=1&filename=use-swatch-downloads)
 
-**Skrifttyper**-panelet lister opp merkevarens skrifttyper med en **nedlasting** ved siden av hver, for lokal installasjon eller til et trykkeri. (Fanen Colours i [Brand Studio](/info/brand-studio.html) tilbyr den samme palettnedlastingen.)
+Panelet **Skrifter** lister opp merkevareskriftene dine med en **nedlasting** ved siden av hver, til å installere lokalt eller gi til et trykkeri. (Fargerommet i [Brand Studio](/info/brand-studio.html) tilbyr den samme palettnedlastingen.)
 
-Ressurser er den ene halvdelen av den åpne gjør-det-selv-veien; den andre er **å lage dine egne verktøy** - det frie canvaset (Design, beskrevet ovenfor) lar deg bygge ett visuelt, uten behov for kode.
+Ressurser er den ene halvdelen av den åpne gjør-det-selv-veien; den andre er å **lage dine egne verktøy** - det frie canvaset (Design, beskrevet over) lar deg bygge ett visuelt, uten kode.
 
 ## Lyd og tilgjengelighet
 
-Lolly har som mål å være behagelig å bruke for alle. Grensesnittet er tastaturnavigerbart, egendefinerte kontroller har riktige etiketter for skjermlesere, og hvert verktøys direkte forhåndsvisning eksponeres som ett enkelt merket bilde som beskriver hva det lager.
+Lolly skal være behagelig å bruke for alle. Grensesnittet kan navigeres med tastatur, egendefinerte kontroller har ordentlige merkelapper for skjermlesere, og hvert verktøys levende forhåndsvisning eksponeres som ett merket bilde som beskriver hva det lager.
 
-Et skånsomt lag med **hjelpelyder** bekrefter det du gjør - å komme inn i galleriet, en gyldig eller ugyldig Content Credentials-sjekk, å lukke et panel, å bytte filter. Det er **påslått som standard**, men alltid valgfritt: slå av **Lyd** hvor enn bryteren vises (hver visnings alternativ-popover, eller **Profil**), og valget huskes.
+Et forsiktig lag med **hjelpelyder** bekrefter det du gjør - at du kommer inn i galleriet, en gyldig eller ugyldig Content Credentials-sjekk, at et panel lukkes, at et filter byttes. Det er **av som standard**: slå på **Lyd** der bryteren dukker opp (hver visnings valgpopover, eller **Profil**), så huskes valget.
 
-Ved siden av den bryteren finnes **Neurospicy Mode** - et valgfritt, beroligende bakgrunnsfokusspor som spilles stille mens du arbeider. Å slå den på åpner en liten **spillerdokk** i det nederste hjørnet som følger deg gjennom appen; derfra kan du søke opp og velge et spor, hoppe frem og tilbake, justere volumet, og minimere eller lukke den. Sporlisten spenner over noen få kategorier - prosedurale *Lolly Sings*-melodier, ambiente looper og beats, ditt eget opplastede lydmateriale, og en håndfull direkte internett-**radio**-stasjoner (disse krever en tilkobling; alt annet spilles av offline). Den er **avslått som standard** og, som Lyd, huskes på tvers av økter og enheter. Å slå av Lyd demper også fokussporet.
+Fire komfortinnstillinger du selv slår på ligger under **Profil → Tilgjengelighet**: **Reduser bevegelse** (fjerner appens overganger og krusiduller), **Skjul fargerike forhåndsvisninger** (rolige gallerikort med ikon og tekst, og dempede prosjektminiatyrer), **Høy kontrast** (sterkere kanter, tekst og fokusringer) og **Stor tekst** (større skrift i appen - merkelapper, menyer, knappetekst). Alle fire roer appen *rundt* arbeidet ditt: de når aldri inn i et verktøycanvas og endrer ikke en piksel av det du eksporterer, og hver av dem er av til du slår den på. Alle detaljer i [Profilen din → Tilgjengelighet](/info/profile.html#accessibility).
+
+Ved siden av Lyd-bryteren ligger **Neurospicy-modus** - et valgfritt, beroligende bakgrunnsspor som spiller lavt mens du jobber. Slår du det på, åpnes en liten **spillerdokk** i nedre hjørne som følger deg gjennom appen; derfra kan du søke og velge et spor, hoppe fram og tilbake, stille volumet og minimere eller lukke den. Sporlisten spenner over noen få kategorier - prosedyrelagde *Lolly Sings*-melodier, ambiente løkker og beats, din egen opplastede lyd og en håndfull direktesendte **radiostasjoner** på nett (disse krever forbindelse; alt annet spilles av offline). Den er **av som standard** og huskes, som Lyd, på tvers av økter og enheter. Slår du av Lyd, dempes fokussporet også.
 
 ## Lagring og personvern
 
-Alt lagres i nettleserens lokale database (IndexedDB): profilen din, lagrede økter, opplastede bilder, og en mellomlagret kopi av nedlastet katalog­innhold. **Profil → Lagring** viser bruken og lar deg:
+Alt lagres i nettleserens lokale database (IndexedDB): profilen din, lagrede økter, opplastede bilder og en cache med nedlastet kataloginnhold. **Profil → Lagring** viser bruken og lar deg:
 
-- **Tøm mellomlager** - fjern nedlastet katalog­innhold (synkroniseres på nytt ved neste innlasting).
-- **Slett alle mine data** - fjerner profil, økter og bilder. *Kan ikke angres.*
+- <!--i:box--> **Tøm cache** - kast nedlastet kataloginnhold (synkroniseres på nytt ved neste lasting).
+- <!--i:trash--> **Slett alle mine data** - slett profil, økter og bilder. *Kan ikke angres.*
 
-![The storage card on a phone-width screen: every category of on-device data named, with the Clear all my data button at the bottom](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%2C.store-manages%2C.storage-subsection%2C.store-selbar%2C.store-chip-val%2C%23store-hero-num%2C%23store-headroom%2C%23store-quota%2C%23store-reclaim%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23storage-section&dark=1&filename=pv-storage-clear)
+![Lagringskortet på en telefonbred skjerm: hver kategori av data på enheten navngitt, med knappen Slett alle mine data nederst](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=430&height=1600&dpi=192&waitMs=2400&css=.welcome-dialog%2C.personalize-nudge%2C.store-manages%2C.storage-subsection%2C.store-selbar%2C.store-chip-val%2C%23store-hero-num%2C%23store-headroom%2C%23store-quota%2C%23store-reclaim%7Bdisplay%3Anone%7D&format=svg&walker=1&cropSelector=%23storage-section&dark=1&filename=pv-storage-clear)
 
-Ingenting overføres noe sted. Ingen telemetri, ingen skybasert rendering.
+Ingen av disse lokale dataene sendes noe sted - ingen telemetri, ingen skyrendering. Den komplette listen over hva appen noen gang henter eller sender finnes i [Personvernerklæringen](/info/privacy.html), og [Serverflate](/info/server-surface.html) går gjennom de valgfrie serverkomponentene.
 
 ## Flytte til en annen enhet
 
-Fordi alt finnes på enheten din, lar **Profil → Lagring → Flytt til en annen enhet** deg ta med alt til en ny installasjon - ingen konto, ingen sky:
+Fordi alt ligger på enheten din, lar **Profil → Lagring → Flytt til en annen enhet** deg ta med alt til en installasjon nummer to - ingen konto, ingen sky:
 
-- **Eksporter mine data** laster ned én `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` (navnedelene kommer fra profilen din og utelates hvis de ikke er satt; `<n>` er en teller per dag, slik at eksporter samme dag ikke kolliderer) som inneholder profilen din, hver lagrede økt (med miniatyrbilde), de opplastede bildene dine, og innstillingene dine (tema, sidepanelbredde, lokal aktivitetsstatistikk).
-- **Importer data …** på den andre installasjonen leser den filen inn igjen. Den **slår sammen**: alt med samme navn (profilen din, en øktplass, et bilde) erstattes av den importerte kopien; alt annet på enheten beholdes. Lagrede økter kobles automatisk til de importerte bildene dine igjen.
+- <!--i:download--> **Eksporter dataene mine** laster ned én enkelt `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` (navnedelene kommer fra profilen din og utelates hvis de ikke er satt; `<n>` er en teller per dag, så eksporter samme dag ikke kolliderer) som inneholder profilen din, hver lagrede økt (med miniatyrbildet), de opplastede bildene dine og innstillingene dine (tema, sidepanelbredde, lokal aktivitetsstatistikk).
+- <!--i:upload--> **Importer data…** på den andre installasjonen leser den filen inn igjen. Den **fletter**: alt med samme navn (profilen din, en øktplass, et bilde) erstattes av den importerte kopien; alt annet på den enheten beholdes. Lagrede økter kobles automatisk på nytt til de importerte bildene dine.
 
-Katalog­mellomlageret er ikke inkludert - det lastes ned på nytt av seg selv på den nye enheten. Pakken er en enkel zip-fil (`manifest.json` + `profile.json` + `sessions.json` + `assets.json` + `assets/blobs/…` + `prefs.json`, format-ID `lolly-backup`), så den overlever e-post, USB eller AirDrop intakt, og er det samme formatet hvert skall leser. Hver del er sjekksummert, slik at en fil som er skadet under overføring, oppdages ved import i stedet for å bli gjenopprettet halvveis ødelagt. (Fullstendig formatspesifikasjon: [Dataoverføring](/info/data-transfer.html).)
+Katalog-cachen er ikke med - den laster seg ned på nytt på den nye enheten. Pakken er en helt vanlig zip (`manifest.json` + `profile.json` + `sessions.json` + `assets.json` + `assets/blobs/…` + `prefs.json`, format-id `lolly-backup`), så den overlever e-post, USB eller AirDrop intakt og er det samme formatet hvert skall leser. Hver del har sjekksum, så en fil som er skadet underveis fanges opp ved import i stedet for å bli gjenopprettet halvveis ødelagt. (Full formatspesifikasjon: [Dataoverføring](/info/data-transfer.html).)
 
-## Importere en design (Figma, Penpot, Illustrator, InDesign)
+## Importere et design (Figma, Penpot, Illustrator, InDesign)
 
-Du kan ta med en eksisterende design inn i Lolly og fortsette å jobbe med den: åpne **Design**, klikk **Importer en design** i canvas-verktøylinjen, og velg en Figma **.fig** eller SVG, en Penpot **.penpot**, en Illustrator **.ai** / **.pdf**, eller en InDesign **.idml**. Lag blir redigerbare bokser på det frie canvaset - tekst forblir omskrivbar, bilder havner i **Mine bilder**, og skrift og farger tilpasser seg merkevarens globale verdier - deretter lagres, deles og rendres resultatet som en hvilken som helst annen økt. Tolkningen skjer helt og holdent på enheten din. Fullstendige detaljer: **[Importer en design](/info/design-import.html)**.
+Du kan ta et eksisterende design inn i Lolly og jobbe videre med det: åpne **Design**, klikk **Importer et design** i canvasets verktøylinje, og velg en Figma-**.fig** eller SVG, en Penpot-**.penpot**, en Illustrator-**.ai** / **.pdf** eller en InDesign-**.idml**. Lagene blir redigerbare bokser på det frie canvaset - teksten kan fortsatt skrives om, bilder havner i **Mine bilder**, og skrift og farger retter seg etter merkevarens globale verdier - og resultatet lagres, deles og rendres som enhver annen økt. Analysen skjer i sin helhet på enheten din. Alle detaljer: **[Importere et design](/info/design-import.html)**.
 
 ## Eksportere
 
-Se **[Eksport og formater](/info/exporting.html)** for hele historien - valg av format, utdatastørrelse og trykkenheter, gjennomsiktighet, video, og kopiering/deling. Kort sagt: velg et format, still inn størrelsen om du trenger det, og **Last ned** (eller **Kopier** til utklippstavlen).
+Se **[Eksport og formater](/info/exporting.html)** for hele historien - å velge format, utdatastørrelse og trykkenheter, gjennomsiktighet, video og kopiering/deling. Kort sagt: velg et format, sett størrelsen om du trenger det og **Last ned** (eller **Kopier** til utklippstavlen).
 
 ## Batch-modus (Pro)
 
-![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
+For avanserte brukere rendrer **Batch** (lenket fra galleriet, bak Pro-funksjonsflagget, som er på som standard) mange varianter på én gang - et rutenett der hver rad er et sett med verdier, eksportert samlet. Ideelt for å lokalisere et kort til et dusin språk eller lage alle størrelsesvarianter i én omgang. Fyll radene ved å skrive, lime rett inn fra et regneark eller importere en CSV (du kan eksportere en tilbake også), og sett format, størrelse og filnavn per rad. Lagre et helt rutenett som en navngitt **batch-økt** som åpnes igjen fra galleriet, og last ned hver rad som én enkelt `.zip`.
 
-For avanserte brukere rendrer **Batch** (lenket fra galleriet, sperret bak Pro-funksjonsflagget, som er påslått som standard) mange varianter på én gang - et rutenett der hver rad er et sett med inndata, eksportert sammen. Ideelt for å lokalisere et kort til et dusin språk, eller generere hver størrelsesvariant i én omgang. Fyll ut rader ved å skrive, lime inn direkte fra et regneark, eller importere en CSV (du kan også eksportere en tilbake), og still inn format, størrelse og utfilnavn per rad. Lagre et helt rutenett som en navngitt **batch-økt** som åpnes igjen fra galleriet, og last ned hver rad som én samlet `.zip`.
+![Batch-verktøylinjen - zip-navn, enheter, DPI og formatet hver rad arver, med Økter og Rendre til høyre](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
 
-Batch er for å generere **mange varianter av én mal** på én gang. For å rendre på nytt økter du **allerede har lagret**, bruk **Prosjekter → Render mappe / Render utvalg** (ovenfor) - ingen Pro nødvendig.
+Batch er til å lage **mange varianter av én mal** på én gang. For å rendre økter du **allerede har lagret** på nytt, bruk **Prosjekter → Rendre mappe / Rendre utvalg** (over) - du trenger ikke Pro.
+
+## Redigere side om side (Multiredigering)
+
+Batch er mange varianter av *ett* design. **Multiredigering** er den andre halvdelen av jobben: flere **forskjellige** lagrede design åpne samtidig, slik at én endring treffer alle sammen. Kryss av mellom **to og åtte** lagrede økter i **Prosjekter** og velg **Rediger sammen** fra utvalgslinjen; de åpnes som levende kort side om side på `#/multi?s=<slot>,<slot>…`. Hvert kort er en ekte rendring av den økten, ikke et lagret miniatyrbilde, så det du ser er det den vil eksportere.
+
+Ett sidepanel styrer hele settet:
+
+- <!--i:sliders--> **Delt** står først - hvert felt som to eller flere av de valgte øktene erklærer *på samme måte* (samme id, samme type, samme begrensninger - den samme flettereglen batch-rutenettet bruker på kolonnene sine). Endre en delt kontroll én gang, så sprer verdien seg til hver økt som erklærer den, direkte på hvert kort. To økter fra samme verktøy deler alt; to forskjellige verktøy deler det de tilfeldigvis har felles, og ingenting mer.
+- <!--i:document--> Under det ligger **ett sammenslått kort per økt** med alle den øktens egne felter, like fullstendig som verktøyets eget sidepanel - ressursvelgere, gjentakende radgrupper, fargefelter - pluss en kompakt eksportblokk: **Format**, **B** / **H**, **Enhet**, **DPI** og sin egen **Last ned**. Den nedlastingen lagrer økten først og rendrer den så gjennom den vanlige eksportveien for økter, så filen bærer det samme filnavnet, formatet og de samme Content Credentials som den ville gjort rett fra verktøyet.
+- <!--i:search--> **Filtrer felt…** øverst snevrer inn kontrollene på *alle* kortene samtidig - det er slik du kommer til «overskriften» i åtte økter uten å måtte rulle etter den.
+
+Klikk på et canvas (eller trykk Enter på det), så åpnes den øktens kort i sidepanelet og rulles fram. **Lagre alle** skriver hver økt tilbake til sin egen plass. **Last ned alle** lagrer først og rendrer så hele settet gjennom den samme rørledningen som **Rendre utvalg** i Prosjekter - én zip, med den valgfrie passordlåsen tilbudt underveis.
+
+To ærlige grenser. Grensen på to til åtte er reell: hvert kort starter sin egen levende kjøretid, og det er antallet som holder seg responsivt - en lenke som ber om flere (eller om en økt som ikke lenger finnes) sier fra i stedet for å laste halvveis. Og lenken navngir *dine* lagrede plasser, så den åpner det settet igjen på denne enheten; den er ikke en delingslenke.
+
+Når utvalget er større enn åtte, blander verktøy eller inneholder bilder i tillegg til økter, er nødutgangen **Rediger som ark** i den samme utvalgslinjen: det åpner hele utvalget som **rader i batch-rutenettet** (`#/pro?s=…`), uten størrelsesgrense og uten krav om samme verktøy. Mapper holdes utenfor begge - de har sin egen vei inn i rutenettet. ([Søk](/info/search.html) er det ene som ikke når inn hit ennå: Multiredigering er den eneste visningen søkefeltet ikke kjenner til.)
 
 ## Offline og installasjon
 
-Lolly er en PWA. Etter første innlasting fungerer den **offline** - installer den fra nettleserens adressefelt (eller *Legg til på Hjem-skjerm* på mobil) for en app-lignende, fullskjermsopplevelse. Den oppdaterer seg selv når du er tilkoblet igjen.
+Lolly er en PWA. Etter første lasting virker den **offline** - installer den fra nettleserens adressefelt (eller *Legg til på startskjermen* på mobil) for en app-lignende opplevelse i fullskjerm. Den oppdaterer seg selv når du er på nett igjen.

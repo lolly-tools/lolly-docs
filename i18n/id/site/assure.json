@@ -1,17 +1,15 @@
 {
-  "eyebrow": "Asal usul & privasi",
+  "eyebrow": "Bukti & privasi",
   "heading": "Buktikan apa yang Anda buat.\nJaga milik Anda.",
-  "lead": "Setiap gambar, PDF, atau video yang Anda ekspor dapat membawa **Content Credential** - segel [C2PA](https://c2pa.org) anti-manipulasi yang dibuat sepenuhnya di perangkat Anda. Ini membuktikan berkas belum berubah sejak keluar dari Lolly, dan setelah Anda mendaftarkan identitas, mencatat siapa yang menandatanganinya.",
-  "illustration": "illusCheck",
+  "lead": "Hampir setiap gambar, PDF atau video yang Anda ekspor - PNG, JPG, APNG, GIF, SVG, TIFF, WebP, PDF, MP4 dan WebM - dapat membawa **Content Credential** - segel [C2PA](https://c2pa.org) anti-manipulasi yang dibuat dan ditandatangani tepat di tempat Anda bekerja. Segel itu mencakup setiap byte yang diekspor: ubah apa pun dan validator C2PA akan mengatakannya, dan begitu Anda mendaftarkan identitas, segel itu juga mencatat siapa yang menandatanganinya. Berkas raster juga membawa **Lolly Imprint** yang tak terlihat di dalam pikselnya, aktif secara default, sehingga sebuah salinan tetap bisa dikenali bahkan setelah credential-nya dilepas.",
   "checks": [
     { "title": "Anti-manipulasi secara default", "desc": "Segel ini mencakup setiap byte yang diekspor. Ubah satu piksel saja dan validator C2PA mana pun akan menandainya." },
-    { "title": "Ditandatangani di perangkat Anda", "desc": "Kunci penandatanganan Anda dibuat secara lokal dan tidak pernah meninggalkan perangkat - bahkan Lolly pun tidak bisa membacanya." },
-    { "title": "Dapat diverifikasi siapa saja, secara offline", "desc": "Berkas ini membawa buktinya sendiri. Periksa di tab Verify, CLI, atau validator C2PA mana pun - tidak ada yang diunggah." }
+    { "title": "Ditandatangani dengan kunci yang hanya dipegang browser Anda", "desc": "Kunci itu dibuat dalam mode non-extractable, jadi tidak ada kode - termasuk kode Lolly - yang bisa membacanya kembali." },
+    { "title": "Verifikasi apa pun, sendiri", "desc": "Tab Verify memeriksa credential sebuah berkas, menandai konten buatan AI, membaca Lolly Imprint dan memunculkan data tersembunyi." }
   ],
   "cards": [
-    { "icon": "assureEyeOff", "title": "Tidak ada yang meninggalkan perangkat Anda", "desc": "Tanpa rendering di cloud, tanpa telemetri, tanpa analitik. Apa pun yang Anda buat tetap berada di komputer Anda." },
-    { "icon": "assureScan", "title": "Bersihkan dan kunci, langsung di perangkat", "desc": "Strip Hidden Data menghapus EXIF dan metadata secara lokal. Kunci PDF, unduhan, atau tautan berbagi dengan kata sandi yang tidak pernah meninggalkan perangkat Anda." },
-    { "icon": "assureServer", "title": "Hosting sendiri atau air-gap", "desc": "Tanpa server, tanpa database, tanpa backend. Berjalan sepenuhnya di balik firewall Anda, sepenuhnya offline." }
+    { "icon": "assureScan", "title": "Bersihkan dan kunci", "desc": "Strip Hidden Data menghapus EXIF dan metadata secara lokal. Kunci PDF, unduhan atau tautan berbagi dengan kata sandi yang hanya Anda pegang." },
+    { "icon": "assureServer", "title": "Hosting sendiri atau air-gap", "desc": "Tanpa backend di jalur render inti - tanpa database, tanpa proses sisi server yang perlu dijalankan. Jalankan sepenuhnya di balik firewall Anda sendiri; add-on server yang opsional boleh ditiadakan." }
   ],
   "cta": "Cara kerja Content Credentials →",
   "ctaHref": "/info/content-credentials-identity.html"

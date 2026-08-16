@@ -1,14 +1,24 @@
 {
   "panels": [
     {
-      "illustration": "illusSound",
-      "heading": "Accesibil, cu sunet",
-      "desc": "O interfață care funcționează așa cum lucrezi tu - prietenoasă cu cititoarele de ecran și complet navigabilă de la tastatură, de la un capăt la altul. Activează sunete discrete de interfață, sau treci în **Neurospicy Mode**: un ritm calm de concentrare care se repetă discret cât timp lucrezi."
+      "heading": "Trimite-l întreg",
+      "desc": "Când un link nu poate duce tot, Lolly îți spune exact ce s-ar pierde și îți oferă în schimb totul într-un singur fișier **.lolly**: imaginile tale, designul, chiar și instrumentul. Tu alegi cât călătorește - datele tale, materialele licențiate și instrumentul intră în pachet doar dacă spui tu, iar cine îl deschide e întrebat înainte ca un instrument adus astfel să poată rula."
     },
     {
-      "illustration": "illusBulk",
+      "heading": "Lucrați împreună, fără internet",
+      "desc": "Doi oameni, două dispozitive, un singur design, editat live. Scanezi un cod peste masă și ambele ecrane țin aceeași sesiune - în avion, într-un subsol, pe un hotspot. Nu e niciun server la mijloc în care să ai încredere sau care să pice."
+    },
+    {
+      "heading": "Prezintă-l, pe tot ecranul",
+      "desc": "Cadrele unui design devin slide-uri: le parcurgi cu un clic pe ecranul mare, deschizi o vedere pentru vorbitor cu notițe și cronometru, sau îl lași să meargă în buclă pe ecranul de la recepție. Fără o aplicație separată de prezentare."
+    },
+    {
       "heading": "Organizează, apoi randează în bloc",
-      "desc": "Păstrează lucrările salvate în foldere **Proiecte** imbricate. Când e timpul să livrezi, randează un folder întreg - sau orice selecție alegi - într-o singură arhivă zip. Nu ai nevoie de foaie de calcul, nici de grilă de tip batch."
+      "desc": "Păstrează lucrările salvate în foldere **Proiecte** imbricate. Când e timpul să livrezi, randează un folder întreg - sau orice selecție alegi - într-o singură arhivă zip. Sau lipești un tabel și primești câte un fișier finalizat pentru fiecare rând."
+    },
+    {
+      "heading": "Accesibil, cu sunet",
+      "desc": "O interfață care funcționează așa cum lucrezi tu - prietenoasă cu cititoarele de ecran și complet navigabilă de la tastatură, de la un capăt la altul. Activează sunete discrete de interfață, sau treci în **Neurospicy Mode**: un ritm calm de concentrare care se repetă discret cât timp lucrezi."
     }
   ]
 }

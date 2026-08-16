@@ -188,9 +188,9 @@ npm run --silent cli -- validate ./out.svg --trust-anchor=./signing-cert.pem
 
 ```
 out.svg  [svg]
-✦ Made with Lolly — credential intact, file unchanged since export
+✦ Made with Lolly - credential intact, file unchanged since export
   Title       QR Code Generator
-  Identity    release-bot@example.org — verified by release-bot@example.org
+  Identity    release-bot@example.org - verified by release-bot@example.org
   Tool        QR Code Generator
   Made with   Lolly 1.95.0
   Signed      2026-08-01T11:10:33Z
@@ -199,13 +199,13 @@ out.svg  [svg]
   Issuer      Example Org (self-signed)
   Algorithm   ES256
   Manifest    urn:uuid:b9e6ce01-0d00-4eaf-9f9d-ceed4af868ff
-  ✓ assertion.hashedURI.match — hashed uri matched: self#jumbf=c2pa.assertions/c2pa.actions.v2
-  ✓ assertion.hashedURI.match — hashed uri matched: self#jumbf=c2pa.assertions/c2pa.hash.data
-  ✓ assertion.hashedURI.match — hashed uri matched: self#jumbf=c2pa.assertions/tools.lolly.export
-  ✓ claimSignature.validated — claim signature valid
-  ✓ claimSignature.insideValidity — signing certificate within its validity window
-  ✓ assertion.dataHash.match — data hash valid
-  ✓ signingCredential.trusted — signing certificate chains to a pinned CA root — verified identity: release-bot@example.org
+  ✓ assertion.hashedURI.match - hashed uri matched: self#jumbf=c2pa.assertions/c2pa.actions.v2
+  ✓ assertion.hashedURI.match - hashed uri matched: self#jumbf=c2pa.assertions/c2pa.hash.data
+  ✓ assertion.hashedURI.match - hashed uri matched: self#jumbf=c2pa.assertions/tools.lolly.export
+  ✓ claimSignature.validated - claim signature valid
+  ✓ claimSignature.insideValidity - signing certificate within its validity window
+  ✓ assertion.dataHash.match - data hash valid
+  ✓ signingCredential.trusted - signing certificate chains to a pinned CA root - verified identity: release-bot@example.org
   Trust anchors: C2PA known-certificate list (54) · pinned: signing-cert.pem · Lolly CA root
 ```
 
@@ -213,13 +213,13 @@ out.svg  [svg]
 
 ```
 # the self-signed identity from 4.1
-  ℹ signingCredential.untrusted — signing certificate untrusted — a self-signed certificate, which vouches only for itself (pin it as a trust anchor to verify the identity)
+  ℹ signingCredential.untrusted - signing certificate untrusted - a self-signed certificate, which vouches only for itself (pin it as a trust anchor to verify the identity)
 
 # an identity issued by a real CA whose root nobody here pinned
-  ℹ signingCredential.untrusted — signing certificate untrusted — a CA-issued certificate that chains to no pinned trust anchor (pin its root to verify the identity)
+  ℹ signingCredential.untrusted - signing certificate untrusted - a CA-issued certificate that chains to no pinned trust anchor (pin its root to verify the identity)
 
 # no identity at all: the default anonymous signer
-  ℹ signingCredential.untrusted — signing certificate untrusted — an ephemeral on-device key, not a CA-issued identity
+  ℹ signingCredential.untrusted - signing certificate untrusted - an ephemeral on-device key, not a CA-issued identity
 ```
 
 Three different problems with three different fixes: distribute your root, ask the recipient to pin the CA, or configure an identity.
@@ -244,7 +244,7 @@ Precedence is the CLI's uniform rule: **flag, then environment**. Configuring a 
 
 ## 5. Trust anchors
 
-**Pinned by default:** the **Lolly CA root** and the **vendored C2PA known-certificate list** (54 roots - Adobe, the camera makers, the big generators). That default is [contract §12 O1](https://github.com/lolly-tools/lolly/blob/main/plans/73-cli-ga-contract.md), decided so that "Verified" means the same thing in a browser and in a terminal.
+**Pinned by default:** the **Lolly CA root** and the **vendored C2PA known-certificate list** (54 roots - Adobe, the camera makers, the big generators). That default is [contract section 12, O1](https://github.com/lolly-tools/lolly/blob/main/plans/73-cli-ga-contract.md), decided so that "Verified" means the same thing in a browser and in a terminal.
 
 **Pin your own root**, repeatably, or through the environment:
 
@@ -269,7 +269,7 @@ Note what the default does **not** do: a stranger's CA is not trusted because it
 
 ## 6. Provenance defaults
 
-Content Credentials and the Lolly Imprint are **on by default** for `lolly run`, matching the app exactly ([contract §12 O2](https://github.com/lolly-tools/lolly/blob/main/plans/73-cli-ga-contract.md)). A tool opts out for everyone through its manifest (`render.c2pa: false`, or `privacy: 'on-device'`); a run opts out with `--c2pa=off`, `--imprint=0`, or `--no-provenance` for all of them at once.
+Content Credentials and the Lolly Imprint are **on by default** for `lolly run`, matching the app exactly ([contract section 12, O2](https://github.com/lolly-tools/lolly/blob/main/plans/73-cli-ga-contract.md)). A tool opts out for everyone through its manifest (`render.c2pa: false`, or `privacy: 'on-device'`); a run opts out with `--c2pa=off`, `--imprint=0`, or `--no-provenance` for all of them at once.
 
 What a credential embeds: the tool and its input digest, the output format and dimensions, the surface (`cli`), the Node version and OS, a timestamp, the action history, your author details when `useDetails` is on and - with an identity - your certificate chain.
 
@@ -328,7 +328,7 @@ Every message below is the exact text the CLI prints, keyed to what to do about 
 | `The passphrase for the signing key at … is wrong (the key did not decrypt).` (exit 6) | Wrong passphrase. | Check the secret. Note the message never echoes what you supplied. |
 | `--no-provenance turns every provenance mark off, but --sign-key/--sign-cert asks for a signed credential.` | Two contradictory instructions. | Drop one. |
 | `A signing identity is configured, but Content Credentials are off for this run…` | The identity loaded but the tool or the run has credentials off, so nothing was signed with it. | Drop `--c2pa=off`, or accept that this tool never signs (`privacy: 'on-device'` tools do not). |
-| `Warning: format "dxf" has no C2PA container — Content Credentials skipped.` | The format cannot carry a credential at all. It is a warning here, because you asked. | Export a format that can: `pdf`, `pdf-cmyk`, `png`, `apng`, `jpg`, `jpeg`, `gif`, `svg`, `tiff`, `cmyk-tiff`, `webp`, `avif`, `mp4`, `m4a`, `webm`, `mp3`, `wav`, `ogg`, `opus`. Two of those are Lolly's own home for the manifest rather than a spec-defined one - `webm` (a Matroska part) and `ogg`/`opus` (a `C2PA=` comment field) - so only Lolly's verifier reads them back; the rest verify in third-party tools. |
+| `Warning: format "dxf" has no C2PA container - Content Credentials skipped.` | The format cannot carry a credential at all. Because you asked for one, the skip is reported as a warning instead of staying silent. | Export a format that can: `pdf`, `pdf-cmyk`, `png`, `apng`, `jpg`, `jpeg`, `gif`, `svg`, `tiff`, `cmyk-tiff`, `webp`, `avif`, `mp4`, `m4a`, `webm`, `mp3`, `wav`, `ogg`, `opus`. Two of those are Lolly's own home for the manifest rather than a spec-defined one - `webm` (a Matroska part) and `ogg`/`opus` (a `C2PA=` comment field) - so only Lolly's verifier reads them back; the rest verify in third-party tools. |
 
 ---
 

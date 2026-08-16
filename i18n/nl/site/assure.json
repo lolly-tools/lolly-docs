@@ -1,17 +1,15 @@
 {
-  "eyebrow": "Herkomst & privacy",
+  "eyebrow": "Bewijs & privacy",
   "heading": "Bewijs wat je hebt gemaakt.\nHoud wat van jou is.",
-  "lead": "Elke afbeelding, PDF of video die je exporteert kan een **Content Credential** dragen - een manipulatiebestendige [C2PA](https://c2pa.org)-verzegeling die volledig op je apparaat wordt gemaakt. Het bewijst dat het bestand niet is gewijzigd sinds het Lolly verliet, en zodra je een identiteit registreert, legt het vast wie het heeft ondertekend.",
-  "illustration": "illusCheck",
+  "lead": "Bijna elke afbeelding, PDF of video die je exporteert - PNG, JPG, APNG, GIF, SVG, TIFF, WebP, PDF, MP4 en WebM - kan een **Content Credential** dragen - een manipulatiebestendige [C2PA](https://c2pa.org)-verzegeling die wordt gemaakt en ondertekend op de plek waar je werkt. De verzegeling dekt elke geëxporteerde byte: verander er iets aan en een C2PA-validator zegt het meteen, en zodra je een identiteit registreert legt hij ook vast wie heeft ondertekend. Rasterbestanden dragen daarnaast het onzichtbare **Lolly Imprint** in de pixels zelf, standaard aan, zodat een kopie herkenbaar blijft ook nadat de credential is weggehaald.",
   "checks": [
     { "title": "Standaard manipulatiebestendig", "desc": "De verzegeling dekt elke geëxporteerde byte. Verander één pixel en elke C2PA-validator geeft dit aan." },
-    { "title": "Ondertekend op je apparaat", "desc": "Je ondertekeningssleutel wordt lokaal gegenereerd en verlaat het apparaat nooit - zelfs Lolly kan hem niet lezen." },
-    { "title": "Door iedereen te verifiëren, offline", "desc": "Het bestand draagt zijn eigen bewijs. Controleer het in het tabblad Verify, de CLI, of een willekeurige C2PA-validator - er wordt niets geüpload." }
+    { "title": "Ondertekend met een sleutel die alleen jouw browser heeft", "desc": "De sleutel wordt niet-uitleesbaar gegenereerd, dus geen enkele code - die van Lolly incluis - kan hem er weer uit halen." },
+    { "title": "Verifieer alles, zelf", "desc": "Het tabblad Verify controleert de credential van een bestand, markeert door AI gemaakte content, leest het Lolly Imprint en brengt verborgen data aan het licht." }
   ],
   "cards": [
-    { "icon": "assureEyeOff", "title": "Niets verlaat je apparaat", "desc": "Geen cloud-rendering, geen telemetrie, geen analytics. Wat je maakt, blijft op je machine." },
-    { "icon": "assureScan", "title": "Opschonen en vergrendelen, op het apparaat", "desc": "Strip Hidden Data verwijdert lokaal EXIF en metadata. Vergrendel een PDF, een download, of een deellink met een wachtwoord dat je apparaat nooit verlaat." },
-    { "icon": "assureServer", "title": "Zelf hosten of air-gapped draaien", "desc": "Geen server, geen database, geen backend. Draai volledig achter je firewall, volledig offline." }
+    { "icon": "assureScan", "title": "Opschonen en vergrendelen", "desc": "Strip Hidden Data verwijdert lokaal EXIF en metadata. Vergrendel een PDF, een download of een deellink met een wachtwoord dat alleen jij hebt." },
+    { "icon": "assureServer", "title": "Zelf hosten of air-gapped draaien", "desc": "Geen backend in het kernrenderpad - geen database, geen serververwerking om te beheren. Draai het volledig achter je eigen firewall; de optionele serveruitbreidingen kun je weglaten." }
   ],
   "cta": "Hoe Content Credentials werken →",
   "ctaHref": "/info/content-credentials-identity.html"

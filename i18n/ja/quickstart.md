@@ -1,94 +1,94 @@
 # クイックスタート
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1)
+Lolly は、色、書体、レイアウト、ロジックといったあなたのルールを、誰でも使えるツールに変えます。いくつかの項目を埋めるだけで、画像、PDF、ソーシャルカード、動画といった完成ファイルができあがります。覚えることはほとんどなく、アップロードも不要です。作成も書き出しも、オンラインでもオフラインでも、お使いのデバイス上で動きます。
 
-Lolly は、色・タイポグラフィ・レイアウト・ロジックといったあなたのルールを、誰でも使えるツールに変換します。いくつかの項目を入力するだけで、画像、PDF、ソーシャルカード、動画などの完成ファイルを作成できます。学ぶことは何もなく、アップロードも不要です。すべてお使いのデバイス上で、オンラインでもオフラインでも動作します。
+まず読むべきページはここ1枚です。すぐに使えるようになるために必要なのは2つ、**Lolly を自分のものにすること**と、**すでにお持ちのものを取り込むこと**（デザインファイルとトークン）です。それ以外はすべてリンクの先にあります。
 
-最初に読むべきはこの1ページです。生産性を高める2つのポイントがあります。**Lolly を自分のものにすること**(あなたのブランドに合わせること)と、**すでにお持ちのものを取り込むこと**(デザインファイルやトークン)です。それ以外はすべてリンク一つで確認できます。
+> Lolly は初めてで、とにかく何か作ってみたいですか。[60秒で何かを作る](/info/make-something.html) では3つの作例を案内します。あるいは [アプリを開いて](/#/)、ギャラリーから好きなツールを選び、空欄を埋めて **Export** を押してください。*あなたの*ブランドをまとわせたくなったら、このページに戻ってきてください。
 
-> Lolly を初めて使う方で、とにかく何か作ってみたいですか? アプリを開き、ギャラリーから好きなツールを選び、空欄を埋めて **Render** を押してください。*あなたの*ブランドをまとわせたくなったら、またこのページに戻ってきてください。
+![ユーティリティ画面。Strip Hidden Data、Compress PDF、Convert Image など、デバイス上で動く実用ツールが一か所に集まっています](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1)
 
-## 1. 自分のものにする — ブランドを設定する
+## 1. 自分のものにする：デザインシステムを設定する
 
-Lolly におけるあなたのブランドとは、色・フォント・いくつかのルールからなる小さな**デザイントークン**ドキュメントであり、すべてのツールはこれに基づいてレンダリングされます。一度設定すれば、作成するものはレビューによってではなく、仕組みとして最初からブランドに沿ったものになります。取り込み方法は3通りあり、あなたのブランドが今どこにあるかに合わせて選べます。
+Lolly におけるブランドとは、色、フォント、いくつかのルールからなる小さな **design-tokens** ドキュメントで、すべてのツールがこれを参照して描画します。一度設定すれば、作るものはレビューによってではなく仕組みとしてブランドに沿ったものになります。入り口は3つあります。ブランドが今どこにあるかに合わせて選んでください。
 
-### ゼロから始める(ウィザード)
+### ゼロから始める（デザインシステムビルダー）
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+初回起動では **gallery**（ギャラリー）が開き、その上に短いウェルカムダイアログが重なって、3つの入り口を示します。**Make it yours**（`#/start` の Brand Studio）、**Bring your design**（Figma、Penpot、InDesign、PDF のファイルをドロップすると編集できるレイアウトとして開きます。後述の [すでにお持ちのものを取り込む](#2-bring-in-what-you-already-have) への最短ルートです）、そして **Explore the community tools** の3つで、英語が母語でない方のために言語の並びも添えられています。1枚目のカードを選ぶと [**Brand Studio**](/info/brand-studio.html) に着きます。名前とプライマリカラーを与えれば、Lolly はそこから、ライト／ダークの面、テキスト、アクセントまで含む完全でアクセシブルなパレットを*導出*します。エンジンが他のどこでも使っているのと同じ色の計算によるものです。
 
-初回起動時には **Start** 画面(`#/start`)が表示されます。名前とプライマリカラーを指定すると、Lolly はエンジンが他の箇所でも使用しているのと同じ色彩計算を用いて、ライト/ダークのサーフェス・テキスト・アクセントを含む、完全でアクセシブルなパレットを*導出*します。フォントを選べば、1分足らずで動作するブランドが完成します。どの項目も後から調整できます。
+![Brand Studio の Colours ルーム。プライマリカラーと、そこから Lolly が導出したアクセシブルなパレット](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours) フォントを選べば、1分とかからず使えるブランドができあがります。そこから先は、スタジオの6つのルーム、Overview、Colours、Type、Logos、Tokens、Files で、好きな順に、好きなところまで作り込めます。あとから戻っていつでも手直しできます。ダッシュボードの **Design system** タブ（`#/d`）は結果を読み取り専用で表示し、編集の場である `#/start` を指し示します（ブランドが固定されたブランドロック版の Lolly では、変更できるものはありません）。
 
 ### すでにあるブランドをインポートする
 
-ブランドがすでに **Penpot**、**Tokens Studio**(Figma)、あるいは通常の **DTCG** ファイルとしてデザイントークンの形で存在している場合は、打ち直すのではなくそのまま丸ごと取り込みましょう。方法は2通りあります。
+ブランドがすでにデザイントークンとして、**Penpot**、**Tokens Studio**（Figma）、あるいは素の **DTCG** ファイルの形になっているなら、入力し直すのではなくまるごと取り込んでください。方法は2つあります。
 
-- <!--i:palette--> **アプリ内で:** Start 画面と *Your brand* エディタは、トークンファイル(または `LollyBrand` パック)を直接受け付けます。ドロップするだけでパレットが反映されます。
-- <!--i:code--> **コマンドラインから**、再利用可能なブランドパックを構築する場合:
+- <!--i:palette--> **アプリ内で：** [デザインシステムビルダー：Brand Studio](/info/brand-studio.html)（`#/start`）なら、ルームレール下部の **Add from…** から取り込めます。トークンファイル、Penpot のエクスポート、SVG、`LollyBrand` パックに対応します。ドロップすればパレットが灯ります。
+- <!--i:code--> **コマンドラインから**、再利用できるブランドパックを用意するには：
 
 ```bash
 # a monolithic tokens.json, a one-file-per-set directory, or a Penpot project archive
 npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 ```
 
-`ingest:brand` は、Penpot / Tokens Studio が同じドキュメントをエクスポートする際の3種類のコンテナすべて — 単一の `tokens.json`、ディレクトリ(`$metadata.json` + セットごとのファイル)、または `project.penpot` アーカイブ — を受け付けます。`--activate` を付けると、そのブランドをプロファイルとして登録し、切り替えて、カタログを再構築します。ブランドパックとプロファイルがどのように連携するかについては [設定](/info/configuration.html) を参照してください。
+`ingest:brand` は、Penpot / Tokens Studio が同じドキュメントを書き出す3つの入れ物すべてを受け付けます。単一の `tokens.json`、ディレクトリ（`$metadata.json` とセットごとのファイル）、`project.penpot` アーカイブです。`--activate` を付けると、そのブランドをプロファイルとして登録し、そこへ切り替え、カタログを再構築します。ブランドパックとプロファイルの関係は [設定](/info/configuration.html) を参照してください。
 
 ### アプリ内で調整する
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=dashboard-brand)
+ブランドを有効にしたあとも、[**Brand Studio**](/info/brand-studio.html)（`#/start`）で形を整え続けられます。色や役割を変えると、アプリ全体のプレビューが入力に合わせて即座に更新されます。（`#/d` のダッシュボードの **Design system** タブはブランドを読み取り専用で*表示*するもので、編集はスタジオで行います。）
 
-ブランドが有効になると、ダッシュボードの **Your brand** エディタ(`#/d`)はライブエディタとして機能し、色やロールを変更するたびにページ上のすべてのプレビューがその場で更新されます。同じブランドは **Profile → Your brand** カードにも要約表示されます。フォントは実体のあるファイルです。Google Fonts から選択すると、Lolly はそのファイルをブランドアセットとして**お使いのデバイス上**に保存するため、タイポグラフィはオフラインでも持ち運べ、レンダリング時に何かを取得することもありません。
+![ダッシュボードの Design system タブ。有効なブランドを読み取り専用で表示](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=dashboard-brand) 同じブランドは **Profile → Your brand** カードにも要約されます。フォントは実体を伴います。Google Fonts から選ぶと Lolly はそのファイルを**お使いのデバイス上に**ブランドアセットとして保存するので、書体はオフラインでも一緒に持ち運べ、描画時に何も取得しません。
 
-満足のいく形になったら、**ブランドを `LollyBrand` パックとしてエクスポート**しましょう。これは1つのファイルで、同僚がインポートすれば全く同じパレット・フォント・ルールを得られます。これが、サーバーを介さずに人や機械の間でブランドを受け渡す方法です。
+満足できたら、**ブランドを `LollyBrand` パックとして書き出しましょう**。同僚がインポートすれば、まったく同じパレット、フォント、ルールが手に入る1つのファイルです。サーバーを介さずにブランドが人と機械のあいだを移動する仕組みです。
 
-> **ブランドトークンは双方向に行き来します。** Lolly のブランドは DTCG トークンそのもの — Penpot がネイティブに読み書きし、Tokens Studio が Figma に持ち込む形式 — であるため、あなたが*デザインに使う*パレットと Lolly が*適用する*パレットは、手作業で同期させる2つのリストではなく、1つのドキュメントです。詳しくは [デザイントークン](/info/design-tokens.html) を参照してください。
+> **ブランドトークンは双方向に往復します。** Lolly のブランドは DTCG トークン*そのもの*、つまり Penpot がネイティブに読み書きし、Tokens Studio が Figma に持ち込むあの形式なので、デザインに*使う*パレットと Lolly が*強制する*パレットは、手作業で同期する2つのリストではなく1つのドキュメントです。[デザイントークン](/info/design-tokens.html) を参照してください。
 
 ## 2. すでにお持ちのものを取り込む
 
-白紙から始める必要はありません。Lolly は、あなたがすでに持っているデザインの成果物やオープンなフォーマットを開くことができます。
+白紙から始める必要はありません。Lolly は、すでにお持ちのデザイン作業とオープンフォーマットをそのまま開きます。
 
-### あらゆる形式のデザインファイル
+### オープンソースのデザインファイル
 
-**Figma、Penpot、Illustrator、InDesign、あるいは任意の SVG アプリ**で仕上げた作品を、描いたアプリの中に閉じ込めておく必要はありません。**Design** を開き、**Import a design** をクリックすると、そのファイルは平坦な画像ではなく*生きたレイアウト*として開かれます。すべてのレイヤーは編集可能なボックスになります。テキストは再入力可能なまま、図形は図形のまま、画像はライブラリに格納され、複雑なベクターアートも忠実に保持されます。取り込んだ時点ですでにあなたのブランドの書体と色ルールに沿った状態になっています。
+**Figma、Penpot、Illustrator、InDesign、あるいは任意の SVG アプリ**で仕上げた成果物は、描いたアプリの中に閉じ込めておく必要はありません。**Design** を開き、**Import a design** をクリックすると、そのファイルは平坦な絵ではなく*生きたレイアウト*として開きます。どのレイヤーも編集できるボックスになります。テキストは打ち直せ、シェイプはシェイプのまま、画像はライブラリに入り、複雑なベクターアートも忠実に保たれます。取り込まれた時点で、あなたのブランドの書体と配色ルールに揃っています。
 
 | お持ちのもの | 取り込み方 |
 |---|---|
-| Figma のフレーム | ネイティブ `.fig`(File → Save local copy)、または SVG エクスポート |
-| Penpot のデザイン | `.penpot` エクスポート、または任意の SVG |
-| Illustrator のファイル | ネイティブ `.ai`(PDF互換)または `.pdf` — そのまま直接開けます |
-| InDesign のレイアウト | `.idml`(File → Export → InDesign Markup) |
-| それ以外 | **任意の SVG** — 万能の入り口 |
+| Figma のフレーム | ネイティブの `.fig`（File → Save local copy）、または SVG 書き出し |
+| Penpot のデザイン | その `.penpot` エクスポート、または任意の SVG |
+| Illustrator のファイル | ネイティブの `.ai`（PDF 互換）または `.pdf`。そのまま開けます |
+| InDesign のレイアウト | `.idml`（File → Export → InDesign Markup） |
+| その他すべて | **任意の SVG**。どこからでも入れる共通の入り口です |
 
-インポートはすべて**お使いのデバイス上**で行われます。ファイルはブラウザ内で解析され、アップロードは一切行われません。詳細と、何がそのまま引き継がれるかについては、[デザインのインポート](/info/design-import.html) をご覧ください。
+インポートはすべて**お使いのデバイス上で**行われます。ファイルはブラウザー内で解析され、何もアップロードされません。詳細と、何がそのまま引き継がれるかは [デザインをインポートする](/info/design-import.html) にあります。
 
-### 一度限りのデザインをテンプレートへ
+お持ちなのが **PowerPoint のデッキ**なら、`.pptx` を **Deck Builder** にドロップすれば、すでにブランドに沿った状態でスライドごとに編集できます。**Rebrand a Deck** を使えば、同じデッキがグラフもアニメーションもそのままにテーマだけ変わって返ってきます。
 
-ここに真のメリットがあります。インポートされたレイアウトは通常の Design セッションなので、**保存**すればそれは1つの URL として存在するようになります。Lolly を使える人なら誰でもその URL を開き、文言を変更し、画像を差し替えて、自分自身のバージョンをレンダリングできます — デザインアプリは不要で、ロックされた部分はロックされたままです。一度限りのデザインが、再利用可能なツールになるのです。これが全体の狙いであり、設定を一行も書かずに実現されます。
+### 一度きりの制作物からテンプレートへ
+
+ここが効いてくるところです。インポートしたレイアウトはごく普通の Design セッションなので、**保存**すればそれは URL として存在します。Lolly を使える人なら誰でもその URL を開き、文言を変え、画像を差し替えて、自分の版を描き出せます。デザインアプリは不要で、ロックされた部分はロックされたままです。一度きりのデザインが、再利用できるツールになります。設定を1行も書かずにたどり着ける、これが狙いのすべてです。
 
 ### オープンなデータとオープンなツール
 
-[コミュニティツールセット](/info/builders.html) はオープンソースかつブランドに依存しません — QR コード、地図、フィルター、プライバシーユーティリティなど — そして、あなたがブランドを有効化した瞬間から*あなたの*ブランドに沿ってレンダリングされます。
+[コミュニティツール群](/info/builders.html) はオープンソースでブランドに依存しません。QR コード、街路地図、フィルター、プライバシーユーティリティなどがあり、ブランドを有効にした瞬間から*あなたの*ブランドで描画されます。
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1)
+ツールには自分のオープンデータも渡せます。**CSV** や **JSON** の表を貼り付けるかドロップすると、ツールの繰り返しフィールドがそこから埋まり、1行につき1つの完成アセットができます。
 
-あなた自身のオープンなデータもツールに取り込めます。**CSV** や **JSON** のテーブルを貼り付けるかドロップすれば、ツールの繰り返しフィールドがそこから自動入力され、行ごとに1つの完成アセットが生成されます。
+## 3. 何かを作り、共有するか自動化する
 
-## 3. 何かを作り、共有または自動化する
+ブランドが有効になり、素材が手元にあれば、どのツールも完成ファイルを生み出します。
 
-「URL が API である」というのは文字どおりの意味です。下のチャートは誰かが描いたものではありません。チャートの種類、見出し、データテーブル全体がアドレスバーに入力されたものであり、同じリンクはどのデバイスでも同じチャートをレンダリングします。
+- <!--i:download--> **描き出す。** どのツールも **SVG、PDF、PNG、JPG、WebP、動画** ほかの形式に描き出せます。必要なら実寸の印刷サイズや物理単位でも出せます。[書き出しと形式](/info/exporting.html) を参照してください。
+- <!--i:link--> **リンクを共有する。** すべてのツールの状態は URL なので、完成したアセットは再現可能で、パラメーターで指定できます。リンクをコミットしておき、必要なときに再生成できます。
+- <!--i:layers--> **まとめて処理する。** [バッチグリッド](/info/exporting.html) でスプレッドシートからテンプレートを駆動します。1行につき1つの完成アセットです。
+- <!--i:cpu--> **自動化する。** 同じ描画が [CLI](/info/cli.html) からも [AI エージェント](/info/ai-agents.html) からも走ります。URL が API です。
 
-![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-d3-url-chart)
+「URL が API です」は文字どおりの意味です。下のチャートは誰も描いていません。種類も見出しもデータ表全体も、アドレスバーに入力されたものです。同じリンクはどのデバイスでも同じチャートを描きます。
 
-ブランドが有効になり、素材も手元にあれば、どのツールも完成したファイルを生成します。
+![月ごとのサインアップ数のエリアチャート。すべての値はクリックではなくクエリパラメーターとして届きました](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-d3-url-chart)
 
-- <!--i:download--> どのツールも **SVG、PDF、PNG、JPG、WebP、動画** など、必要に応じて実寸の印刷サイズや物理単位で**レンダリング**できます。詳しくは [エクスポートとフォーマット](/info/exporting.html) を参照してください。
-- <!--i:link--> **リンクを共有する。** すべてのツールの状態は URL として表現されるため、完成したアセットは再現可能でパラメータによってアドレス指定でき、リンクをコミットしておけば必要なときに再生成できます。
-- <!--i:layers--> **一括で行う。** [バッチグリッド](/info/exporting.html) でスプレッドシートからテンプレートを駆動し、行ごとに1つの完成アセットを生成します。
-- <!--i:cpu--> **自動化する。** 同じレンダリングは [CLI](/info/cli.html) や [AIエージェント](/info/ai-agents.html) からも実行できます — URL がそのまま API です。
+## 次に進む先
 
-## 次に進むには
+ここへ来た目的に応じて、道筋は3つあります。
 
-目的に応じて、3つの進み方があります。
-
-- <!--i:people--> **[Lolly クリエイター向け](/info/creators.html)** — ものを作る人向け。得られるメリットと、アプリを最大限に活用する方法。
-- <!--i:code--> **[Lolly ビルダー向け](/info/builders.html)** — ツールを作成し、統合し、デプロイする人向け。技術文書。
-- <!--i:shieldcheck--> **[Lolly オペレーター向け](/info/operators.html)** — 組織全体のブランド、セキュリティ、展開に責任を持つ人向け。
+- <!--i:people--> **[クリエイター向けの Lolly](/info/creators.html)**：ものを作る方へ。その利点と、アプリを使いこなす方法。
+- <!--i:code--> **[ビルダー向けの Lolly](/info/builders.html)**：ツールを作り、統合し、デプロイする方へ。技術ドキュメント。
+- <!--i:shieldcheck--> **[運用担当者向けの Lolly](/info/operators.html)**：組織全体のブランド、セキュリティ、展開に責任を持つ方へ。

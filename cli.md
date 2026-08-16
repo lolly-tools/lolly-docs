@@ -434,9 +434,9 @@ Trust is only meaningful next to "trusted by what", so every report says which a
 ```
 $ lolly validate ./qr.svg
 ./qr.svg  [svg]
-✦ Made with Lolly — credential intact, file unchanged since export
+✦ Made with Lolly - credential intact, file unchanged since export
   …
-  ℹ signingCredential.untrusted — signing certificate untrusted — an ephemeral on-device key, not a CA-issued identity
+  ℹ signingCredential.untrusted - signing certificate untrusted - an ephemeral on-device key, not a CA-issued identity
   Trust anchors: C2PA known-certificate list (54) · pinned: none · Lolly CA root
 
 $ lolly validate ./qr.svg --no-default-anchors

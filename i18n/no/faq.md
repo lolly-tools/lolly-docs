@@ -1,130 +1,128 @@
-# Ofte stilte spørsmål
+# FAQ
 
 Ofte stilte spørsmål som vises i trekkspillmenyen på landingssiden `/info`.
 
-**Slik vedlikeholder du filen:** hver `##`-overskrift nedenfor er et spørsmål; alt under den
-(fram til neste `##`) er svaret. Svarene bruker den samme lettvekts-markdownen som
+**Slik vedlikeholder du siden:** hver `##`-overskrift nedenfor er et spørsmål; alt under den
+(fram til neste `##`) er svaret. Svarene bruker den samme lette markdown-en som
 resten av nettstedet - skill avsnitt med en tom linje. Legg til, fjern eller
-endre rekkefølgen på spørsmålene her og kjør `npm run build:info` på nytt (eller `npm run dev:web`).
-Alt over den første `##`-overskriften (denne tittelen og disse notatene) blir ignorert av byggeprosessen.
+endre rekkefølgen på spørsmål her og kjør `npm run build:info` (eller `npm run dev:web`) på nytt.
+Alt over den første `##` (denne tittelen og disse notatene) ignoreres av bygget.
 
-## Hva skjer når jeg velger å delta på /profile-siden?
+## Hva skjer når jeg gir samtykke på /profile-siden?
 
-Når du bruker Lolly for første gang, er alt du skriver, hvor som helst, helt privat helt til du bevisst ønsker at den informasjonen skal ut via media eller en delingslenke (hvis du er tilkoblet).
+Når du bruker Lolly for første gang, er alt du skriver hvor som helst, helt privat, helt til du bevisst vil ha den informasjonen ut via medier eller en delingslenke (hvis du er på nett).
 
-Når du har valgt å delta, bygger vi inn deler av profilinformasjonen din som opprinnelse i ressurser og pakker for å identifisere deg som kilden.
+Når samtykket er valgt, forsegles profilopplysningene du velger, inn i det du lager, og navngir deg som kilde. Ingenting tas med uten at du velger det.
 
-Lolly produserer store mengder innhold. Vi følger en streng dataminimeringstilnærming for å redusere risiko.
+Lolly produserer store mengder innhold. Vi følger en streng dataminimering for å unngå risiko.
 
-### Hva er funksjonsflagg?
+## Hva er funksjonsflaggene?
 
-![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&dark=1&filename=pd-feature-flags)
+Funksjonsflagg slår deler av Lolly av og på. Vanligvis er det en administrator som styrer dem - i Lolly er det du som styrer.
 
-Funksjonsflagg slår deler av Lolly av eller på. Vanligvis er det en administrator som styrer disse - med Lolly er det du som har kontrollen.
+![Hvert funksjonsflagg er en bryter du eier, som ligger i din egen profil i stedet for i en administratorkonsoll](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&dark=1&filename=pd-feature-flags)
 
 ## Hvordan får jeg tak i mobil- eller skrivebordsappene?
 
-Hvem som helst kan distribuere sine egne apper - verktøyene og konfigurasjonen av disse appene bør variere mye avhengig av hvilket publikum de er tiltenkt. Så det finnes ingen én app, med mindre du har laget den selv eller fått den av noen relevant.
+Hvem som helst kan distribuere sine egne apper, og verktøyene og oppsettet i dem vil variere mye ut fra hvilket publikum de er laget for. Derfor finnes det ingen enkelt app, med mindre du har laget den selv eller noen relevant gir deg den.
 
 ## Hvorfor navnet «Lolly Tools»?
 
-**Lolly** Fordi frihet er søtt.
-**Tools** er inaktive når de ikke er i bruk. Spionerer ikke på deg, kjører ingen hemmelige programmer, 
-Sett dem i arbeid, dine ordre, handlinger og vilkår.
+**Lolly** fordi frihet er søtt, og fordi en «lolly» er godteri i Australia, New Zealand og Storbritannia.
 
-**Lolly** er et australsk, newzealandsk og britisk uttrykk for «godteri» eller «slikkerier». Akkurat som lollies, er verktøy svært smakfulle for dem som trenger dem.
+**Tools** fordi et verktøy ligger stille til du tar det opp. Det kjører ikke når du ikke bruker det, og det overvåker deg ikke mens du gjør det.
 
-Vi ler også av tiden og regningene vi sparer med denne tilnærmingen.
+## Hvilke hindringer kan jeg møte når jeg tar i bruk Lolly?
 
-## Hvilke hindringer kan jeg forvente ved innføring av Lolly?
-
-Lolly passer inn overalt der du allerede genererer filer - CLI-en er samme motor
-som appen, så en pipeline som kjøres klokken 02 om natten ikke kan avvike fra det en person forhåndsviser i en
-nettleser. Friksjonen ved innføring er sjelden teknisk; den er organisatorisk. Forvent følgende:
+Lolly passer inn der du allerede lager filer - CLI-en er den samme motoren
+som appen, så en pipeline som kjører klokka to om natta, kan ikke drive fra det en person
+forhåndsviser i en nettleser. Friksjonen ved innføring er sjelden teknisk; den er organisatorisk. Forvent disse:
 
 **En kuratert merkevarekatalog må lages.** Lolly er en plattform, ikke en
-ferdig pakke med dine maler. For en *styrt utrulling* definerer noen den delte
-ressurskatalogen (logoer, paletter, skrifter som permanente ID-er) og skriver
-manifest + mal for hver utdatatype. Enkeltpersoner trenger imidlertid ikke vente
-på det - i den åpne appen kan hvem som helst importere sine egne filer til
-katalogen og bygge verktøy i Design fra dag én.
+ferdig pakke med malene dine. Ved en *styrt utrulling* er det noen som definerer den felles
+ressurskatalogen (logoer, paletter, fonter som permanente ID-er) og skriver manifestet +
+malen for hver utdatatype. Enkeltbrukere trenger likevel ikke å vente på det - i
+den åpne appen kan hvem som helst importere sine egne filer inn i katalogen og bygge verktøy i
+Design fra dag én.
 
-**Styring via git er valgfritt - og ukjent for ikke-utviklere.** Hvis du drifter
-en *delt, kontrollert* katalog, er «PR-gjennomgangen *er* moderasjonen» elegant
-for utviklere, men ukjent for de fleste merkevare- og markedsføringsteam. Hvis de
-som eier merkevarebeslutningene ikke lever i git, trenger du en arbeidsflyt som
-bygger bro til dem - ellers blir IT i stillhet den strategiske designpartneren og
-den bredere institusjonelle portvakten (foretrukket av mange i langvarige
-produksjonsmiljøer). Team som ikke ønsker dette, hopper rett og slett over det.
+**Du trenger ikke git for å bidra.** Designere lager sine egne verktøy og maler
+i appen, og deler dem så med kolleger eller sender dem til den som eier
+installasjonen, for å få dem med som standard.
 
-**Det er bevisst smalt - omtal det slik.** Lolly er ikke for skreddersydd eller hero-
-innhold. Det *er* din personlige DAM - hydrert og superladet av designsystemet,
-verktøyene og katalogen din - og den *har* faktisk en åpen canvas (Design), men
-selv der følger farger, typografi og ressurser de aktive designglobalene, slik at fri
-utforming holder seg innenfor systemet. Vurdert mot Figma eller Canva vil den
-virke begrenset. Vurdert for hva den faktisk er - operasjonalisert, tilbakevendende ressursgenerering
-i massiv skala - er det ingenting som konkurrerer. Feil innramming er det vanligste tilbakeslaget.
+**Den er bevisst smal - presenter den slik.** Lolly er ikke laget for skreddersydd innhold
+eller hero-innhold. Den *er* ditt personlige DAM - fylt og forsterket av designsystemet,
+verktøyene og katalogen din - og den *har* et åpent lerret (Design), men
+selv der følger farger, typografi og ressurser de aktive designglobalene, så fri
+komposisjon holder seg innenfor systemet. Målt mot Figma eller Canva ser den
+begrenset ut. Målt som det den er - operasjonalisert, gjentakende ressursgenerering i
+stor skala - er det ingenting som konkurrerer. Feil innramming er det vanligste tilbakeslaget.
 
 **Endringsledelse på produksjonssiden.** Eksisterende prosesser fungerer i dag, selv om
-resultatet ikke er merkevareriktig. Å peke dem om mot motoren innebærer ny testing, ny læring,
-og «vi kan jo allerede lage filer» blir unnskyldningen for å ikke migrere. Start med å konvertere
-ett produksjonsresultat med høy synlighet og vise før/etter side om side.
+resultatet ikke er i tråd med merkevaren. Å peke dem mot motoren betyr ny testing og ny læring,
+og «vi kan jo allerede lage filer» blir unnskyldningen for ikke å bytte. Start med å konvertere
+ett godt synlig resultat i produksjonskvalitet og vise før/etter side om side.
 
 Lolly løfter alt.
 
 
-## Hva skiller utilities fra verktøy?
+## Hva skiller nytteverktøy fra verktøy?
 
-![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1)
+**Enkelt svar →** Nytteverktøy trenger ikke alltid å rendre, og kan derfor få en annen brukeropplevelse. 
 
-**Enkelt svar →** Utilities trenger ikke alltid å rendre, og kan derfor få en annen UX. 
+**Det egentlige svaret →** Grunnen til at nytteverktøy kan kjøre inne i Lolly Tools, er å legge til enda et «bekvemmelighetslag» av forsvar som gjør det mindre fristende å sende data ut av huset. 
 
-**Egentlig svar →** Grunnen til at utilities kan ligge inne i Lolly Tools, er for å legge til enda et «bekvemmelighetslag» med forsvar som demotiverer dataeksfiltrering. 
-
-Hvorfor? Fordi det er kjent at folk hver dag tar **konfidensielt innhold de allerede har** og gir
-det til et tilfeldig nettsted for å utføre én liten mekanisk handling:
+Hvorfor? Fordi det er kjent at folk hver dag tar **fortrolig innhold de allerede har**, og gir det til et
+tilfeldig nettsted for å få utført én liten mekanisk operasjon:
 
 - «**Komprimer denne PDF-en**» → laster opp en kontrakt / lønnsslipp / styrepresentasjon til ukjente aktører.
-- «**konverter HEIC til JPG**» → laster opp personlige bilder (med GPS-EXIF) til en annonsefinansiert vert
-- «**beskjær / endre størrelse på dette bildet**» → laster opp et produktskjermbilde eller en ikke-lansert ressurs
-- «**formater denne JSON-en**» / «dekod denne JWT-en» → limer API-svar, tokener og hemmeligheter inn i en formaterer
-- «**slå sammen disse PDF-ene**» → laster opp **to dokumenter som aldri burde dele server**
+- «**konverter HEIC til JPG**» → laster opp private bilder (med GPS-EXIF) til en annonsefinansiert tjeneste
+- «**beskjær / endre størrelse på dette bildet**» → laster opp et produktskjermbilde eller en uutgitt ressurs
+- «**formater denne JSON-en**» / «dekod denne JWT-en» → limer inn API-svar, tokener og hemmeligheter i en formaterer
+- «**slå sammen disse PDF-ene**» → laster opp **to dokumenter som aldri burde dele en server**
 
-Disse nettstedene og deres enorme hale av kloner er **ikke pålitelige som standard**, med
-ukjent lagringstid, ukjente jurisdiksjoner, ukjente underleverandører, og en
-annonse-/affiliateforretningsmodell som har alle insentiver til å beholde det du gir dem. Operasjonen er
-triviell; **innholdet er kostnaden.** 
+Disse nettstedene og den enorme halen av kloner er **ikke troverdige som standard**, med
+ukjent lagringstid, ukjente jurisdiksjoner, ukjente underleverandører og en forretningsmodell basert på
+annonser og affiliate som har all grunn til å beholde det du gir dem. Operasjonen er
+triviell; **innholdet er prisen.** 
 
-Vi vinner kampen om styring med utmerket bekvemmelighet og service. 
+Vi vinner kampen om styring med fremragende bekvemmelighet og service. 
 
-## Kan Lolly redigere og rendre mine Figma-, Penpot-, Illustrator- eller InDesign-filer?
+![Nytteverktøy-visningen samler de mekaniske jobbene folk vanligvis gir til et tilfeldig nettsted, og kjører dem inne i Lolly i stedet](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1)
 
-![Design's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+## Kan Lolly redigere og rendre Figma-, Penpot-, Illustrator- eller InDesign-filene mine?
 
-Ja. Åpne **Design** og klikk på **Importer en design**: det godtar en nativ Figma **.fig** (Save local copy), en Penpot **.penpot**-eksport, en Illustrator **.ai** eller **.pdf**, en InDesign **.idml** (File → Export → InDesign Markup), eller **hvilken som helst SVG** (den brede døren - nesten alle designprogrammer kan eksportere det). Alt tolkes fullstendig på din egen enhet, ingen konto eller plugin nødvendig.
+Ja. Åpne **Design** og klikk **Import a design** (importer et design): den godtar en Figma-fil **.fig** (Save local copy), en Penpot-eksport **.penpot**, en Illustrator-fil **.ai** eller **.pdf**, en InDesign-fil **.idml** (File → Export → InDesign Markup) eller **hvilken som helst SVG** (den vide døra - nesten alle designprogrammer eksporterer det). Ingen konto, ingen plugin og ingen lisens på et designprogram er nødvendig.
 
-Lag kommer inn som redigerbare bokser på den åpne canvasen: tekst forblir omskrivbar, former forblir former, bilder blir med i biblioteket ditt på enheten, og typografi og farger følger merkevarens globale verdier. Lagre den, så blir layouten en gjenbrukbar, URL-adresserbar mal som hvem som helst med Lolly kan fylle på nytt - og du kan blande inn levende verktøy (en QR-kode, et diagram) som rendres på nytt ved innlasting. Derfra rendres den som alt annet i Lolly - SVG, PDF, PNG og resten, reproduserbar fra URL-en sin. Se [Importer en design](/info/design-import.html).
+![Designs åpne lerret, der Import a design ligger i verktøylinja](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
-## Hva skjer 29. august?
+Lag kommer inn som redigerbare bokser på det åpne lerretet: tekst kan fortsatt skrives om, former er fortsatt former, bilder havner i ditt eget bildebibliotek, og typografi og farger følger merkevareglobalene. Lagre den, og oppsettet blir en gjenbrukbar mal med egen URL som hvem som helst med Lolly kan fylle på nytt - og du kan blande inn levende verktøy (en QR-kode, et diagram) som rendres på nytt ved innlasting. Derfra rendres den som alt annet i Lolly - SVG, PDF, PNG og resten, reproduserbart fra URL-en. Se [Importer et design](/info/design-import.html).
 
-De SUSE-merkede verktøyene forlater prosjektet, og nye generiske eksempelverktøy definert av brukeren tar over.
+## Kan jeg dele arbeidet mitt som en fil i stedet for en lenke?
 
-SUSE vil drifte sin egen Lolly for å beskytte sine varemerker.
+Ja. Når en lenke ikke kan bære alt (dine egne bilder, lang tekst), sier delingsdialogen nøyaktig hva som ville falt bort, og tilbyr en **.lolly**-fil i stedet: én fil som inneholder designet, bildene det bruker og, hvis du vil, selve verktøyet. Du bestemmer hvor mye som blir med - navnet og opplysningene dine blir bare med hvis profilen din samtykker, lisensiert kunst holdes tilbake med mindre du tar den med, og den som åpner en fil med et verktøy i, blir spurt om vedkommende stoler på det før det kan kjøre. Se [Deling av arbeidet ditt](/info/using.html#sharing-your-work).
 
-## Hvor mye holder SUSE privat? (aka når skjer rug-pullen)
+## Kan to personer jobbe på det samme designet uten internett?
 
-SUSEs varemerker og merkede verktøy er kun til demonstrasjon, fram til 29. august. Du finner en umerket instans av Lolly på [lolly.ART](https://lolly.art).
+Ja. Én person deler en invitasjon (en lenke, en QR-kode eller en kort kode), den andre godtar, og begge enhetene holder den samme økta i live - med tilstedeværelse, fokusringer og det hele. Det fungerer på et hvilket som helst delt nettverk, også et mobilt trådløst nett i en kjeller, fordi det ikke er noen server i midten. Se [Samarbeid](/info/collaborate.html).
 
-SUSE er et selskap innen infrastruktur for åpen kildekode for bedrifter, med mer enn tre tiår med lederskap innen plattformer. Produktene inkluderer Linux, Cloud Native, Edge og AI-infrastrukturløsninger i bedriftsklasse.
+## Hvor ble det av de SUSE-merkede verktøyene?
 
-Fra SUSEs perspektiv handler dette om å leve som man lærer når det gjelder suverenitet og sikkerhet. Per i dag er sannsynligheten for at SUSE gjør Lolly til et produkt, tilnærmet lik null.
+De ligger allerede i et eget, privat repositorium. En offentlig klone henter ikke SUSE-merkevarepakken i det hele tatt, så et offentlig bygg kjører den nøytrale profilen `lolly-start` - de merkevareuavhengige fellesskapsverktøyene pluss en tom merkevare du fyller inn med din egen. SUSE drifter sin egen instans for å beskytte varemerkene sine.
 
-Full åpenhet: SUSE *bygger* faktisk ut interne verktøy for å integrere Lolly i sine IT-systemer - det handler om SUSEs interne oppsett, ikke om offentlig kontra privat utvikling.
+## Hvorfor er det gratis? Hva er haken?
 
-Når vi snakker om den offentlige siden: Lolly har som mål å bygges gjennom [Open Build Service](https://openbuildservice.org/), med sikre forsyningskjede-artefakter levert av [SUSE Application Collection](https://apps.rancher.io/applications).
+**Vi bygde Lolly for oss selv.** SUSE trengte tusenvis av filer i tråd med merkevaren, hver med navnet sitt forseglet inni, laget uten å gi noe fra oss til eksterne tjenester. Så vi bygde et verktøy som gjør alt sammen på enheten, og ga det ut som åpen kildekode, slik vi gjør med alt annet vi lager. Vi fortsetter å vedlikeholde det fordi vi bruker det hver dag. **Det følger ingen forpliktelser med:** alt her fungerer med eller uten oss.
 
-Vi kommer til å bygge så mye vi kan i det åpne - du vil bare ikke se SUSE-merkede verktøy særlig lenge, og heller ikke SUSEs interne arbeidsstyrke og kommersielle prosesser, som er uavhengige av Lolly.
+Den grensa er trukket i lisensen, ikke i et løfte: alt som kjører lokalt, er gratis, for alltid. En versjon som er gitt ut, er lisensiert slik at den ikke kan trekkes tilbake, og det finnes ingen bidragsyteravtale som kunne gitt noens arbeid en ny lisens. Se [posisjonering](/info/positioning.html) for hele erklæringen.
+
+## Hvor mye holder SUSE privat? (altså: når blir teppet dratt vekk?)
+
+Motoren, skallene, skjemaene og de merkevareuavhengige verktøyene er åpen kildekode; SUSEs varemerker og merkede verktøy er den delen som forblir privat, og de er allerede skilt ut. Du finner en umerket instans av Lolly på [lolly.ART](https://lolly.art).
+
+Grensa er strukturell, ikke lovet. Hver utgitte versjon er åpen kildekode og kan ikke trekkes tilbake, det finnes ingen bidragsyteravtale som kunne gitt noens arbeid en ny lisens, og det eneste som holdes tilbake, er varemerket. Da et annet selskap lukket kildekoden til sin enterprise-Linux i 2023, var SUSE med på å grunnlegge [OpenELA](https://openela.org) for å holde den koden åpen - den samme holdningen som dette prosjektet arver.
+
+For ordens skyld: SUSE *holder* på å bygge intern verktøystøtte for å integrere Lolly i IT-systemene sine - det handler om SUSEs interne oppsett, ikke om offentlig kontra privat utvikling. Lolly skal også bygges gjennom [Open Build Service](https://openbuildservice.org/), med sikre forsyningskjede-artefakter levert av [SUSE Application Collection](https://apps.rancher.io/applications).
 
 ## Hvilken smak har den Lolly-logoen?
 
-Noen sier Lime, andre sier Mint og noen ganger Eple - Lolly bidrar med sødmen, du skaper smaken!
+Noen sier lime, andre sier mint og av og til eple. Lolly står for det søte, du bestemmer smaken!

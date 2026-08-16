@@ -1,26 +1,23 @@
 {
   "statement": "Soberania do conteúdo",
-  "pilotTag": "Protótipo",
-  "pilotText": "Piloto fechado em andamento · aprimorando a robustez para escala empresarial",
-  "pilotAriaLabel": "Lolly é um protótipo interno em um piloto fechado, em fase de aprimoramento para escala empresarial",
   "ctas": [
     {
       "href": "/",
-      "label": "Abrir App ↗",
+      "label": "Abrir app ↗",
       "class": "btn btn-primary"
     },
     {
       "href": "/info/about.html",
-      "label": "Saiba Mais",
+      "label": "Saiba mais",
       "class": "btn btn-secondary"
     }
   ],
   "trustChips": [
-    "100% Grátis",
-    "Sem Cookies",
-    "Sem Cadastro",
-    "Código Aberto",
-    "Privacidade em Primeiro Lugar"
+    "Grátis para sempre",
+    "Código aberto",
+    "Sem cadastro",
+    "Sem cookies",
+    "Não envia nada de volta"
   ],
-  "toolCountSuffix": "Ferramentas de Exemplo Carregadas"
+  "toolCountSuffix": "ferramentas prontas"
 }

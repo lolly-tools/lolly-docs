@@ -1,94 +1,94 @@
-# Hızlı Başlangıç
+# Hızlı başlangıç
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1)
+Lolly, kurallarını - renkleri, tipografiyi, yerleşimleri, mantığı - herkesin birkaç alanı doldurarak bitmiş dosyalar üretebileceği araçlara dönüştürür: görseller, PDF'ler, sosyal medya kartları, video. Öğrenilecek pek bir şey yok, yüklenecek hiçbir şey yok: üretmek de dışa aktarmak da, çevrimiçi ya da çevrimdışı, kendi cihazında çalışır.
 
-Lolly; kurallarını -renkler, yazı tipleri, düzenler, mantık- birkaç alanı doldurarak herkesin bitmiş dosyalar oluşturmak için kullanabileceği araçlara dönüştürür: görseller, PDF'ler, sosyal medya kartları, video. Öğrenilecek ya da yüklenecek hiçbir şey yok: her şey cihazında çalışır, çevrimiçi ya da çevrimdışı.
+Önce okunması gereken tek sayfa bu. Seni üretken kılan iki şey var: **Lolly'yi kendine göre ayarlamak** ve **halihazırda elinde olanı içeri almak** (tasarım dosyaların ve token'ların). Geri kalan her şey bir bağlantı uzakta.
 
-Önce okuman gereken tek sayfa bu. Seni üretken kılan iki şey var: **Lolly'yi kendine göre yap** ve **zaten sahip olduklarını içeri al** (tasarım dosyaların ve belirteçlerin). Geri kalan her şey bir bağlantı uzağında.
+> Lolly'de yenisin ve hemen bir şey üretmek mi istiyorsun? [60 saniyede bir şey üret](/info/make-something.html) sana üç örnek üzerinden yol gösterir; ya da [uygulamayı aç](/#/), galeriden bir araç seç, boşlukları doldur ve **Export**'a bas. Ürettiğin şeyin *senin* markanı taşımasını istediğinde buraya geri dön.
 
-> Lolly'de yenisin ve sadece bir şey yapmak mı istiyorsun? Uygulamayı aç, galeriden herhangi bir araç seç, boşlukları doldur ve **Oluştur**'a bas. *Kendi* markanı giydirmek istediğinde buraya geri dön.
+![Utilities görünümü - Strip Hidden Data, Compress PDF ve Convert Image gibi cihaz üzerinde çalışan iş atları, hepsi tek yerde](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1)
 
-## 1. Kendine göre yap - Tasarım Sistemini yapılandır
+## 1. Kendine göre ayarla - tasarım sistemini yapılandır
 
-Lolly'deki markan; renkler, yazı tipleri ve birkaç kuraldan oluşan küçük bir **tasarım belirteçleri** belgesidir - her araç bu belgeye göre oluşturulur. Bir kez ayarla, ürettiğin her şey incelemeyle değil, yapısı gereği markana uygun olsun. İçeri girmenin üç yolu var; markanın zaten bulunduğu yere uyanı seç.
+Lolly'deki markan küçük bir **design-tokens** belgesidir - renkler, fontlar ve birkaç kural - ve her araç bunu temel alarak render eder. Bir kez ayarla, ürettiğin her şey denetim sayesinde değil, kuruluşu gereği markaya uygun olsun. Üç giriş yolu var; markanın hâlihazırda durduğu yere uyanı seç.
 
-### Sıfırdan başla (tasarım sistemi oluşturucu)
+### Sıfırdan başla (tasarım sistemi oluşturucusu)
 
-![The Brand Studio's Colours tab - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+İlk açılışta seni **galeri** karşılar; üzerinde üç giriş yolu sunan kısa bir hoş geldin penceresi olur - **Make it yours** (`#/start` adresindeki Brand Studio), **Bring your design** (bir Figma, Penpot, InDesign ya da PDF dosyası bırak, düzenlenebilir bir yerleşim olarak açılsın - aşağıdaki [Halihazırda elinde olanı içeri al](#2-bring-in-what-you-already-have) bölümüne giden en hızlı yol) ve **Explore the community tools** - ayrıca İngilizce senin dilin değilse bir dil sırası. İlk kartı seç, [**Brand Studio**](/info/brand-studio.html) açılsın. Ona bir ad ve bir ana renk ver; Lolly bundan eksiksiz, erişilebilir bir palet *türetir* - açık/koyu yüzeyler, metin, vurgular - motorun her yerde kullandığı aynı renk matematiğiyle.
 
-İlk çalıştırmada **Başlangıç** ekranına (`#/start`) düşersin - yani [**Marka Stüdyosu**](/info/brand-studio.html)'na. Ona bir ad ve bir ana renk ver; Lolly da motorun her yerde kullandığı aynı renk matematiğiyle bundan eksiksiz, erişilebilir bir palet *türetir* - açık/koyu yüzeyler, metin, vurgular. Bir yazı tipi seç, bir dakikadan kısa sürede çalışan bir markan olsun. Oradan itibaren stüdyonun beş sekmesi (Logolar, Renkler, Yazı Tipi, Belirteçler, Katalog) istediğin kadar ileri götürmene izin verir - ne zaman geri dönersen dön, herhangi bir kısmını daha sonra da inceltebilirsin. Bunu her zaman kontrol panelinden tekrar ziyaret edebilirsin (Lolly'nin marka kilitli bir sürümünü kullanmıyorsan).
+![Brand Studio'nun Colours odası - bir ana renk ve Lolly'nin ondan türettiği erişilebilir palet](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours) Bir font seç, bir dakikadan kısa sürede çalışan bir markan olsun. Sonrasında stüdyonun altı odası - Overview, Colours, Type, Logos, Tokens, Files - markanı istediğin kadar ileri götürmene izin verir; sıra fark etmez, her geri dönüşünde herhangi bir yerini yeniden inceltebilirsin. Panonun **Design system** sekmesi (`#/d`) sonucu salt okunur gösterir ve düzenlemenin yapıldığı `#/start` adresine yönlendirir (markası kilitli bir Lolly sürümünde değilsen; orada marka sabittir ve değiştirilecek bir şey yoktur).
 
-### Zaten sahip olduğun bir markayı içe aktar
+### Halihazırda sahip olduğun bir markayı içeri aktar
 
-Markan zaten tasarım belirteçleri olarak yakalanmışsa - **Penpot**, **Tokens Studio** (Figma) ya da düz bir **DTCG** dosyasından - onu yeniden yazmak yerine olduğu gibi içeri al. İki yol var:
+Markan zaten design token olarak kayıtlıysa - **Penpot**, **Tokens Studio** (Figma) ya da herhangi bir düz **DTCG** dosyasından - yeniden yazmak yerine toptan içeri al. İki yol var:
 
-- <!--i:palette--> **Uygulama içinde:** [tasarım sistemi oluşturucu: Marka Stüdyosu](/info/brand-studio.html) (`#/start`) bir belirteç dosyasını, bir Penpot dışa aktarımını veya doğrudan bir `LollyBrand` paketini kabul eder - bırak, palet canlansın.
-- <!--i:code--> **Komut satırından**, yeniden kullanılabilir bir marka paketi oluşturmak için:
+- <!--i:palette--> **Uygulamada:** [tasarım sistemi oluşturucusu: Brand Studio](/info/brand-studio.html) (`#/start`) bunu oda rayının altındaki **Add from…** ile alır - bir token dosyası, bir Penpot dışa aktarımı, bir SVG ya da bir `LollyBrand` paketi. Bırak, palet anında canlansın.
+- <!--i:code--> **Komut satırından**, yeniden kullanılabilir bir marka paketi kurmak için:
 
 ```bash
 # a monolithic tokens.json, a one-file-per-set directory, or a Penpot project archive
 npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 ```
 
-`ingest:brand`, Penpot / Tokens Studio'nun aynı belgeyi dışa aktardığı üç kabın tümünü kabul eder - tek bir `tokens.json`, bir dizin (`$metadata.json` + set başına dosyalar) ya da bir `project.penpot` arşivi. `--activate` ile marka bir profil olarak kaydedilir, ona geçilir ve katalog yeniden oluşturulur. Marka paketlerinin ve profillerin nasıl bir araya geldiğini görmek için [Yapılandırma](/info/configuration.html) sayfasına bak.
+`ingest:brand`, Penpot / Tokens Studio'nun aynı belgeyi dışa aktardığı üç kabın üçünü de kabul eder - tek bir `tokens.json`, bir dizin (`$metadata.json` + set başına dosyalar) ya da bir `project.penpot` arşivi. `--activate` ile markayı bir profil olarak kaydeder, ona geçer ve kataloğu yeniden derler. Marka paketleriyle profillerin birbirine nasıl oturduğu için [Yapılandırma](/info/configuration.html) sayfasına bak.
 
-### Uygulama içinde ince ayar yap
+### Uygulamada ince ayar yap
 
-![The Dashboard's Design-system tab - the active brand shown read-only](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=dashboard-brand)
+Bir marka etkinleştikten sonra onu [**Brand Studio**](/info/brand-studio.html) (`#/start`) içinde şekillendirmeye devam et - bir rengi ya da bir rolü değiştir, uygulamadaki her önizleme sen yazarken güncellensin. (Panonun `#/d` adresindeki **Design system** sekmesi markayı salt okunur *gösterir*; düzenleme Studio'da yapılır.)
 
-Bir marka etkinleştirildiğinde, onu şekillendirmeye [**Marka Stüdyosu**](/info/brand-studio.html)'nda (`#/start`) devam et - bir rengi ya da bir rolü değiştir, yazdıkça uygulama genelindeki her önizleme güncellensin. (Kontrol panelindeki `#/d` adresindeki **Tasarım sistemi** sekmesi markayı salt okunur olarak *gösterir*; onu düzenlediğin yer Stüdyo'dur.) Aynı marka **Profil → Markan** kartında özetlenir. Yazı tipleri gerçektir: Google Fonts'tan seç, Lolly dosyayı bir marka varlığı olarak **cihazında** saklar; böylece tipografin çevrimdışı seninle gelir ve oluşturma sırasında hiçbir şey ağdan indirilmez.
+![Panonun Design-system sekmesi - etkin marka salt okunur gösteriliyor](/t/url-shot?url=%2F%23%2Fd%3Ftab%3Dbrand&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=dashboard-brand) Aynı marka **Profile → Your brand** kartında da özetlenir. Fontlar gerçektir: Google Fonts'tan birini seç, Lolly dosyayı bir marka varlığı olarak **cihazında** saklasın; böylece tipografin çevrimdışı da yanında gelir ve render sırasında hiçbir şey indirilmez.
 
-Memnun kaldığında, **markayı bir `LollyBrand` paketi olarak dışa aktar** - bir meslektaşının aynı paleti, yazı tiplerini ve kuralları almak için içe aktarabileceği tek bir dosya. Bir markanın aradan sunucu geçmeden insanlar ve makineler arasında dolaşması işte böyle olur.
+Sonuçtan memnunsan **markayı bir `LollyBrand` paketi olarak dışa aktar** - bir iş arkadaşının içeri aktarıp tıpatıp aynı paleti, fontları ve kuralları alabileceği tek bir dosya. Bir marka, arada bir sunucu olmadan insanlar ve makineler arasında böyle dolaşır.
 
-> **Marka belirteçleri iki yönde de gidip gelir.** Lolly'nin markası *tam olarak* DTCG belirteçleri olduğundan - Penpot'un doğrudan okuyup yazdığı ve Tokens Studio'nun Figma'ya taşıdığı format - *tasarladığın* palet ile Lolly'nin *uyguladığı* palet, elle senkronize tuttuğun iki liste değil, tek bir belgedir. Bkz. [Tasarım Belirteçleri](/info/design-tokens.html).
+> **Marka token'ları iki yönde de gidip gelir.** Lolly'nin markası doğrudan DTCG token'larından *ibaret* olduğu için - Penpot'un kendiliğinden okuyup yazdığı, Tokens Studio'nun Figma'ya taşıdığı format - tasarım yaparken kullandığın palet ile Lolly'nin *dayattığı* palet tek bir belgedir; elle senkron tuttuğun iki liste değil. Bkz. [Design Tokens](/info/design-tokens.html).
 
-## 2. Zaten sahip olduklarını içeri al
+## 2. Halihazırda elinde olanı içeri al
 
-Boş bir sayfadan başlamıyorsun. Lolly, zaten sahip olduğun tasarım çalışmalarını ve açık formatları açar.
+Boş bir sayfadan başlamıyorsun. Lolly, zaten sahip olduğun tasarım işlerini ve açık formatları açar.
 
-### Açık kaynak tasarım dosyaları
+### Açık kaynaklı tasarım dosyaları
 
-**Figma, Penpot, Illustrator, InDesign veya herhangi bir SVG uygulamasındaki** bitmiş çalışmaların, onları çizdiğin uygulamada kilitli kalmak zorunda değil. **Design**'yu aç, **Bir tasarım içe aktar**'a tıkla; dosya düzleştirilmiş bir resim olarak değil, *yaşayan bir düzen* olarak açılsın. Her katman düzenlenebilir bir kutuya dönüşür: metin yeniden yazılabilir kalır, şekiller şekil kalır, görseller kitaplığına iner ve karmaşık vektör grafikleri sadık biçimde korunur. Markanın yazı tiplerine ve renk kurallarına önceden uyarlanmış olarak gelir.
+**Figma, Penpot, Illustrator, InDesign ya da herhangi bir SVG uygulamasında** bitirdiğin işlerin, onları çizdiğin uygulamada kilitli kalması gerekmez. **Design**'ı aç, **Import a design**'a tıkla; dosya düzleştirilmiş bir resim olarak değil, *canlı bir yerleşim* olarak açılır. Her katman düzenlenebilir bir kutuya dönüşür: metin yeniden yazılabilir kalır, şekiller şekil kalır, görseller kitaplığına iner ve karmaşık vektör çizimleri sadakatle korunur. Dosya, marka yazı karakterlerine ve renk kurallarına uydurulmuş olarak gelir.
 
-| Elinde olan | Şu şekilde içeri al |
+| Elindeki | İçeri alma yolu |
 |---|---|
-| Bir Figma çerçevesi | Yerel `.fig` (File → Save local copy) ya da bir SVG dışa aktarımı |
+| Bir Figma frame'i | Yerel `.fig` (File → Save local copy) ya da bir SVG dışa aktarımı |
 | Bir Penpot tasarımı | `.penpot` dışa aktarımı ya da herhangi bir SVG |
 | Bir Illustrator dosyası | Yerel `.ai` (PDF uyumlu) ya da `.pdf` - doğrudan açılır |
-| Bir InDesign düzeni | `.idml` (File → Export → InDesign Markup) |
-| Başka her şey | **Herhangi bir SVG** - evrensel giriş kapısı |
+| Bir InDesign yerleşimi | `.idml` (File → Export → InDesign Markup) |
+| Başka her şey | **Herhangi bir SVG** - herkese açık giriş kapısı |
 
-Tüm içe aktarma **cihazında** gerçekleşir - dosya tarayıcında ayrıştırılır ve hiçbir şey yüklenmez. Tüm ayrıntılar ve tam olarak nelerin aktarıldığı [Bir tasarım içe aktar](/info/design-import.html) sayfasında.
+İçeri aktarmanın tamamı **cihazında** olur - dosya tarayıcında ayrıştırılır ve hiçbir şey yüklenmez. Tüm ayrıntılar ve tam olarak nelerin aktarıldığı [Import a design](/info/design-import.html) sayfasında.
 
-### Tek seferlik bir işten bir şablona
+Elinde bir **PowerPoint sunumu** mu var? `.pptx` dosyasını **Deck Builder** üzerine bırak, markana oturmuş halde slayt slayt düzenle - ya da **Rebrand a Deck**'i çalıştır, aynı sunumu grafikleri ve animasyonları bozulmadan yeniden temalanmış olarak geri al.
 
-İşte kazanç: içe aktarılan bir düzen sıradan bir Design oturumudur; bu yüzden onu **kaydettiğin** anda bir URL'de yaşar. Lolly'si olan herkes o URL'yi açabilir, kelimeleri değiştirebilir, bir görseli değiştirebilir ve kendi sürümünü oluşturabilir - tasarım uygulaması olmadan ve kilitli kısımlar kilitli kalır. Tek seferlik bir tasarım, yeniden kullanılabilir bir araca dönüşür. Tek bir satır yapılandırma yazmadan ulaşılan bütün fikir bu.
+### Tek seferlik bir işten şablona
 
-### Açık veriler ve açık araçlar
+Asıl kazanç şu: içeri aktarılan bir yerleşim sıradan bir Design oturumudur, yani **kaydettiğin** anda bir URL'de yaşar. Lolly'si olan herkes o URL'yi açıp metinleri değiştirebilir, bir görseli değiştirebilir ve kendi sürümünü render edebilir - tasarım uygulamasına gerek yok, kilitli parçalar da kilitli kalır. Tek seferlik bir tasarım, yeniden kullanılabilir bir araca dönüşür. Bütün fikir bu ve buraya tek satır yapılandırma yazmadan varılıyor.
 
-[Topluluk araç seti](/info/builders.html) açık kaynaklı ve markadan bağımsızdır - QR kodları, sokak haritaları, filtreler, gizlilik yardımcı araçları - ve onu etkinleştirdiğin an *senin* markana göre oluşturulur.
+### Açık veri ve açık araçlar
 
-![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1)
+[Topluluk araç seti](/info/builders.html) açık kaynaklıdır ve markadan bağımsızdır - QR kodları, sokak haritaları, filtreler, gizlilik araçları - ve markanı etkinleştirdiğin anda *senin* markanla render eder.
 
-Araçlara kendi açık verilerini de besle: bir **CSV** veya **JSON** tablosunu yapıştır ya da bırak, bir aracın tekrarlayan alanları ondan dolsun, satır başına bir bitmiş varlık.
+Araçlara kendi açık verini de ver: bir **CSV** ya da **JSON** tablosunu yapıştır veya sürükleyip bırak, aracın tekrarlanan alanları oradan dolsun; her satır için bitmiş bir varlık.
 
-## 3. Bir şey yap, sonra paylaş ya da otomatikleştir
+## 3. Bir şey üret, sonra paylaş ya da otomatikleştir
 
-"Bir URL, API'dir" sözü birebir doğru. Aşağıdaki grafiği kimse çizmedi: türü, başlığı ve bütün veri tablosu adres çubuğuna yazıldı ve aynı bağlantı her cihazda aynı grafiği oluşturur.
+Etkin bir marka ve elindeki malzemeyle her araç bitmiş bir dosya üretir:
 
-![An area chart of monthly signups, every value of which arrived as a query parameter rather than a click](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-d3-url-chart)
+- <!--i:download--> Herhangi bir aracı **SVG, PDF, PNG, JPG, WebP, video** ve daha fazlasına **render et** - gerektiğinde gerçek baskı boyutlarında ve fiziksel birimlerle. Bkz. [Dışa aktarma & formatlar](/info/exporting.html).
+- <!--i:link--> **Bağlantı paylaş.** Her araç durumu bir URL'dir, yani bitmiş bir varlık yeniden üretilebilir ve parametreyle adreslenebilir - bağlantıyı kaydet, istediğinde yeniden üret.
+- <!--i:layers--> **Toplu yap.** [Toplu ızgarada](/info/exporting.html) bir şablonu hesap tablosundan sür: her satır için bitmiş bir varlık.
+- <!--i:cpu--> **Otomatikleştir.** Aynı render [CLI](/info/cli.html) üzerinden ve bir [yapay zekâ ajanı](/info/ai-agents.html) üzerinden de çalışır - URL zaten API'dir.
 
-Etkin bir marka ve elinde malzemenle her araç bitmiş bir dosya üretir:
+"URL zaten API'dir" sözü birebir doğrudur. Aşağıdaki grafiği kimse çizmedi: türü, başlığı ve bütün veri tablosu adres çubuğuna yazıldı ve aynı bağlantı, her cihazda aynı grafiği render ediyor.
 
-- <!--i:download--> **Oluştur** herhangi bir aracı **SVG, PDF, PNG, JPG, WebP, video** ve daha fazlasına - ihtiyaç duyduğunda gerçek baskı boyutları ve fiziksel birimlerle. Bkz. [Dışa aktarma ve formatlar](/info/exporting.html).
-- <!--i:link--> **Bir bağlantı paylaş.** Her araç durumu bir URL'dir; böylece bitmiş bir varlık yeniden üretilebilir ve parametreyle adreslenebilir - bağlantıyı commit'le, istendiğinde yeniden üret.
-- <!--i:layers--> **Toplu yap.** [Toplu ızgarada](/info/exporting.html) bir şablonu bir elektronik tablodan sür: satır başına bir bitmiş varlık.
-- <!--i:cpu--> **Otomatikleştir.** Aynı render, [CLI](/info/cli.html)'dan ve bir [yapay zeka ajanından](/info/ai-agents.html) çalışır - bir URL, API'dir.
+![Aylık kayıtları gösteren bir alan grafiği; her değeri bir tıklamayla değil, bir sorgu parametresiyle geldi](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-d3-url-chart)
 
-## Sırada nereye
+## Bundan sonra nereye
 
-Burada ne yapmaya geldiğine bağlı olarak üç yol:
+Burada ne yapmak istediğine göre üç yol:
 
-- <!--i:people--> **[Yaratıcılar için Lolly](/info/creators.html)** - sen şeyler yaparsın. Avantajlar ve uygulamadan en iyi şekilde nasıl yararlanılır.
-- <!--i:code--> **[Geliştiriciler için Lolly](/info/builders.html)** - sen araçlar yazar, entegre eder ve dağıtırsın. Teknik dokümantasyon.
-- <!--i:shieldcheck--> **[Operatörler için Lolly](/info/operators.html)** - marka, güvenlik ve bir kuruluş genelinde dağıtımdan sen sorumlusun.
+- <!--i:people--> **[Üretenler için Lolly](/info/creators.html)** - bir şeyler üretiyorsun. Avantajlar ve uygulamadan en iyi şekilde yararlanmanın yolları.
+- <!--i:code--> **[Geliştiriciler için Lolly](/info/builders.html)** - araç yazıyor, entegre ediyor ve dağıtıyorsun. Teknik dokümantasyon.
+- <!--i:shieldcheck--> **[Operatörler için Lolly](/info/operators.html)** - bir kurum genelinde markadan, güvenlikten ve yaygınlaştırmadan sen sorumlusun.

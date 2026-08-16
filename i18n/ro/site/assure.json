@@ -1,17 +1,15 @@
 {
-  "eyebrow": "Proveniență și confidențialitate",
+  "eyebrow": "Dovadă și confidențialitate",
   "heading": "Dovedește ce ai creat.\nPăstrează ce e al tău.",
-  "lead": "Fiecare imagine, PDF sau video pe care îl exporți poate purta un **Content Credential** - un sigiliu [C2PA](https://c2pa.org) care dezvăluie orice modificare, generat integral pe dispozitivul tău. Dovedește că fișierul nu s-a schimbat de când a părăsit Lolly și, odată ce îți înregistrezi o identitate, înregistrează cine l-a semnat.",
-  "illustration": "illusCheck",
+  "lead": "Aproape fiecare imagine, PDF sau video pe care îl exporți - PNG, JPG, APNG, GIF, SVG, TIFF, WebP, PDF, MP4 și WebM - poate purta un **Content Credential** - un sigiliu [C2PA](https://c2pa.org) care dezvăluie orice modificare, creat și semnat chiar acolo unde lucrezi. Sigiliul acoperă fiecare octet exportat: schimbă orice și un validator C2PA o spune, iar odată ce îți înregistrezi o identitate reține și cine l-a semnat. Imaginile raster poartă în plus **Lolly Imprint** invizibil, chiar în pixeli, activ implicit, așa că o copie tot poate fi recunoscută și după ce credentialul a fost scos.",
   "checks": [
     { "title": "Dezvăluie orice modificare, implicit", "desc": "Sigiliul acoperă fiecare octet exportat. Schimbă un singur pixel și orice validator C2PA îl semnalează." },
-    { "title": "Semnat pe dispozitivul tău", "desc": "Cheia ta de semnare este generată local și nu părăsește niciodată dispozitivul - nici măcar Lolly nu o poate citi." },
-    { "title": "Verificabil de oricine, offline", "desc": "Fișierul își poartă propria dovadă. Verifică-l în tab-ul Verify, în CLI sau cu orice validator C2PA - nimic nu este încărcat." }
+    { "title": "Semnat cu o cheie pe care doar browserul tău o are", "desc": "Cheia e generată ca neextractibilă, așa că niciun cod - nici măcar al Lolly - nu o poate citi înapoi." },
+    { "title": "Verifică orice, singur", "desc": "Tab-ul Verify verifică credentialul unui fișier, semnalează conținutul generat de AI, citește Lolly Imprint și scoate la iveală datele ascunse." }
   ],
   "cards": [
-    { "icon": "assureEyeOff", "title": "Nimic nu părăsește dispozitivul tău", "desc": "Fără randare în cloud, fără telemetrie, fără analytics. Ce creezi rămâne pe calculatorul tău." },
-    { "icon": "assureScan", "title": "Curăță și blochează, pe dispozitiv", "desc": "Strip Hidden Data elimină EXIF și metadatele local. Blochează un PDF, un download sau un link de partajare cu o parolă care nu părăsește niciodată dispozitivul tău." },
-    { "icon": "assureServer", "title": "Auto-găzduire sau air-gap", "desc": "Fără server, fără bază de date, fără backend. Rulează integral în spatele firewall-ului tău, complet offline." }
+    { "icon": "assureScan", "title": "Curăță și blochează", "desc": "Strip Hidden Data elimină EXIF și metadatele local. Blochează un PDF, o descărcare sau un link de partajare cu o parolă pe care o ai doar tu." },
+    { "icon": "assureServer", "title": "Auto-găzduire sau air-gap", "desc": "Niciun backend pe traseul principal de randare - fără bază de date, fără procesare pe server de întreținut. Rulează-l integral în spatele propriului firewall; extensiile opționale de server pot fi lăsate deoparte." }
   ],
   "cta": "Cum funcționează Content Credentials →",
   "ctaHref": "/info/content-credentials-identity.html"

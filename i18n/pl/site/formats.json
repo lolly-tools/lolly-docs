@@ -1,10 +1,11 @@
 {
   "heading": "Każdy format, na wejściu i wyjściu",
-  "lead": "Lolly odczytuje 29 formatów źródłowych i renderuje 31 - oto pełny zestaw, pogrupowany według tego, czym każdy z nich jest. Piętnaście {roundtrip}: odczytywane *i* zapisywane, więc pojawiają się w obu kolumnach.",
+  "_lead_note": "Deliberately count-free: the in/out/round-trip numbers are computed live in docs/build.ts from formats-catalog.json's dir fields, so no string in this file may hard-code one.",
+  "lead": "Lolly odczytuje dziesiątki formatów źródłowych i renderuje jeszcze więcej - oto pełny zestaw, pogrupowany według tego, czym każdy z nich jest. Te {roundtrip} są odczytywane *i* zapisywane, więc stoją raz, pośrodku.",
   "ingestsLabel": "Import",
-  "ingestsCount": "29 wejść",
+  "ingestsCount": "wejść",
   "exportsLabel": "Eksport",
-  "exportsCount": "31 wyjść",
+  "exportsCount": "wyjść",
   "ingests": [
     {
       "category": "Wektor",
@@ -13,6 +14,10 @@
     {
       "category": "Raster",
       "list": "PNG · JPG · WEBP · GIF · HEIC · TIFF · AVIF"
+    },
+    {
+      "category": "Warstwowe",
+      "list": "PSD · PSB · XCF"
     },
     {
       "category": "Animacja",
@@ -43,6 +48,10 @@
     {
       "category": "Raster",
       "list": "PNG · JPG · WEBP · AVIF · TIFF · CMYK TIFF · ICO"
+    },
+    {
+      "category": "Warstwowe",
+      "list": "PSD"
     },
     {
       "category": "Animacja",

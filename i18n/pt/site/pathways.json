@@ -1,30 +1,38 @@
 {
-  "title": "Três maneiras de começar",
-  "lead": "Comece pelo [Guia rápido](/info/quickstart.html) - coloque sua marca e gere seu primeiro arquivo - depois siga o caminho que combina com você.",
+  "title": "Por onde começar",
+  "lead": "Escolha uma porta, ou já comece a criar aqui embaixo.",
   "cards": [
     {
-      "href": "/info/creators.html",
+      "href": "/info/make-something.html",
       "icon": "media",
+      "eyebrow": "Comece por aqui",
+      "name": "Crie alguma coisa",
+      "desc": "Três tarefas do dia a dia, cada uma pronta em cerca de um minuto. Sem cadastro, sem configuração.",
+      "cta": "Vamos →"
+    },
+    {
+      "href": "/info/creators.html",
+      "icon": "tool",
       "eyebrow": "Para criadores",
       "name": "Crie coisas",
-      "desc": "Arquivos prontos em segundos - sem ferramenta de design, sem espera. As vantagens e como aproveitar ao máximo o aplicativo.",
+      "desc": "Arquivos prontos em segundos, e como aproveitar ao máximo o aplicativo.",
       "cta": "Explorar →"
     },
     {
       "href": "/info/builders.html",
       "icon": "developers",
       "eyebrow": "Para desenvolvedores",
-      "name": "Crie e integre",
-      "desc": "Crie ferramentas, controle-as pela CLI, MCP ou um agente, e implante a plataforma. A documentação técnica.",
+      "name": "Crie e automatize",
+      "desc": "Crie ferramentas, controle-as pela CLI, MCP ou um agente, e implante a plataforma.",
       "cta": "Ler a documentação →"
     },
     {
       "href": "/info/operators.html",
       "icon": "security",
       "eyebrow": "Para operadores",
-      "name": "Implemente com segurança",
-      "desc": "Uma estratégia de prevenção contra perda de dados em profundidade disfarçada de plataforma criativa. Estratégia, segurança e adoção.",
-      "cta": "Ver a estratégia →"
+      "name": "Implante para todos",
+      "desc": "Uma estratégia de segurança que por acaso também é uma plataforma criativa. Implantação, governança e adoção.",
+      "cta": "Ver como →"
     }
   ]
 }

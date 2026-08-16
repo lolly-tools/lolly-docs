@@ -1,129 +1,128 @@
 # FAQ
 
-Häufig gestellte Fragen, die im Akkordeon auf der `/info`-Landingpage angezeigt werden.
+Häufige Fragen, die im Akkordeon auf der Landingpage `/info` angezeigt werden.
 
-**Pflegehinweis:** Jede `##`-Überschrift unten ist eine Frage; alles darunter
-(bis zur nächsten `##`) ist die Antwort. Antworten verwenden dasselbe einfache Markdown wie
-der Rest der Website - Absätze werden durch eine Leerzeile getrennt. Fragen hier
-hinzufügen, entfernen oder neu anordnen und anschließend `npm run build:info` (oder `npm run dev:web`)
-erneut ausführen. Alles oberhalb der ersten `##`-Überschrift (dieser Titel und diese Hinweise) wird vom Build ignoriert.
+**So wird gepflegt:** Jede `##`-Überschrift unten ist eine Frage; alles darunter
+(bis zur nächsten `##`) ist die Antwort. Die Antworten nutzen dasselbe schlanke Markdown wie
+der Rest der Website - trennen Sie Absätze mit einer Leerzeile. Fügen Sie hier Fragen hinzu,
+entfernen oder sortieren Sie sie um und führen Sie `npm run build:info` (oder `npm run dev:web`) erneut aus.
+Alles oberhalb der ersten `##` (dieser Titel und diese Hinweise) wird beim Build ignoriert.
 
-## Was geschieht, wenn ich auf der /profile-Seite dem Opt-in zustimme?
+## Was passiert, wenn ich auf der Seite /profile zustimme?
 
-Wenn Sie Lolly zum ersten Mal verwenden, ist alles, was Sie überall eingeben, vollständig privat, bis Sie diese Informationen bewusst über Medien oder einen Freigabelink (sofern online) nach außen geben möchten.
+Wenn Sie Lolly zum ersten Mal verwenden, bleibt alles, was Sie irgendwo eingeben, vollständig privat, bis Sie diese Informationen bewusst nach außen geben - über Medien oder einen Freigabelink (sofern online).
 
-Wenn das Opt-in ausgewählt ist, betten wir einige Ihrer Profilinformationen als Herkunftsnachweis in Assets und Bundles ein, um Sie als Quelle zu identifizieren.
+Wenn Sie zugestimmt haben, werden die von Ihnen gewählten Profildaten fest in das eingebettet, was Sie erzeugen, und nennen Sie als Quelle. Nichts wird aufgenommen, ohne dass Sie es auswählen.
 
-Lolly erzeugt eine große Menge an Inhalten. Wir verfolgen einen strikten Ansatz der Datenminimierung, um Risiken zu vermeiden.
+Lolly erzeugt sehr viele Inhalte. Wir gehen streng nach dem Grundsatz der Datenminimierung vor, um Risiken zu vermeiden.
 
-### Was sind die Feature-Flags?
+## Was sind die Feature-Flags?
 
-![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&dark=1&filename=pd-feature-flags)
+Feature-Flags schalten Teile von Lolly ein oder aus. Üblicherweise steuert das eine Administratorin oder ein Administrator - bei Lolly haben Sie die Kontrolle.
 
-Feature-Flags schalten Teile von Lolly ein oder aus. Normalerweise steuert ein Administrator diese - bei Lolly haben Sie die Kontrolle.
+![Jedes Feature-Flag ist ein Schalter, der Ihnen gehört - er sitzt in Ihrem eigenen Profil statt in einer Administrationskonsole](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&dark=1&filename=pd-feature-flags)
 
-## Wie bekomme ich die mobilen Apps oder Desktop-Apps?
+## Wie bekomme ich die Apps für Mobilgeräte oder den Desktop?
 
-Jeder kann seine eigenen Apps verteilen; die Tools und die Konfiguration dieser Apps sollten je nach Zielgruppe stark variieren. Es gibt also keine einzige App, es sei denn, Sie haben sie selbst erstellt oder eine relevante Person hat sie Ihnen gegeben.
+Jeder kann eigene Apps verteilen; die Werkzeuge und die Konfiguration dieser Apps unterscheiden sich stark, je nachdem, für welches Publikum sie gedacht sind. Es gibt also nicht die eine App - es sei denn, Sie haben sie selbst gebaut oder jemand aus Ihrem Umfeld gibt sie Ihnen.
 
-## Warum der Name „Lolly Tools“?
+## Warum der Name "Lolly Tools"?
 
-**Lolly** Weil Freiheit süß ist.
-**Tools** sind untätig, wenn sie nicht verwendet werden. Sie spionieren Ihnen nicht nach, führen keine geheimen Programme aus, 
-Setzen Sie sie ein - Ihre Anweisungen, Ihre Aktionen, Ihre Bedingungen.
+**Lolly**, weil Freiheit süß ist und weil "lolly" in Australien, Neuseeland und Großbritannien eine Süßigkeit bedeutet.
 
-**Lolly** ist ein australischer, neuseeländischer und britischer Begriff für „Süßigkeiten“ oder „Bonbons“. Genau wie Lollies sind Tools sehr verlockend für Menschen, die sie brauchen.
+**Tools**, weil ein Werkzeug still daliegt, bis Sie es in die Hand nehmen. Es läuft nicht, wenn Sie es nicht benutzen, und es beobachtet Sie nicht, während Sie es benutzen.
 
-Wir lachen auch über die Zeit und die Kosten, die wir mit diesem Ansatz sparen.
+## Mit welchen Hürden muss ich bei der Einführung von Lolly rechnen?
 
-## Welche Hürden könnte ich bei der Einführung von Lolly erwarten?
+Lolly fügt sich überall dort ein, wo Sie schon heute Dateien erzeugen - die CLI nutzt dieselbe
+Engine wie die App, deshalb kann ein Pipeline-Lauf um 2 Uhr nachts nicht von dem abweichen, was
+jemand im Browser sieht. Die Reibung bei der Einführung ist selten technisch, sondern organisatorisch. Rechnen Sie mit Folgendem:
 
-Lolly fügt sich überall dort ein, wo Sie bereits Dateien erzeugen - die CLI nutzt dieselbe Engine
-wie die App, sodass ein um 2 Uhr nachts laufender Pipeline-Durchlauf nicht von dem abweichen kann, was eine Person in einem
-Browser als Vorschau sieht. Die Reibung bei der Einführung ist selten technischer Natur; sie ist organisatorisch. Rechnen Sie mit Folgendem:
+**Ein kuratierter Markenkatalog muss erst entstehen.** Lolly ist eine Plattform, kein
+fertiges Paket Ihrer Vorlagen. Für einen *gesteuerten Rollout* legt jemand den gemeinsamen
+Asset-Katalog fest (Logos, Paletten, Schriften als dauerhafte IDs) und schreibt Manifest +
+Template für jeden Ausgabetyp. Einzelne müssen darauf aber nicht warten - in der
+offenen App kann jeder eigene Dateien in den Katalog übernehmen und vom ersten Tag an
+Werkzeuge in Design bauen.
 
-**Ein kuratierter Markenkatalog muss erstellt werden.** Lolly ist eine Plattform, kein
-fertiges Paket Ihrer Vorlagen. Für einen *gesteuerten Rollout* definiert jemand den gemeinsamen
-Asset-Katalog (Logos, Farbpaletten, Schriften als dauerhafte IDs) und schreibt für jeden Ausgabetyp
-das Manifest und die Vorlage. Einzelpersonen müssen darauf jedoch nicht warten - in der offenen App
-kann jeder eigene Dateien in den Katalog einpflegen und von Tag eins an Tools in Design bauen.
+**Für Beiträge ist kein Git nötig.** Designerinnen und Designer bauen ihre eigenen Werkzeuge
+und Vorlagen direkt in der App, teilen sie mit Kolleginnen und Kollegen oder reichen sie bei
+den Betreibern des Deployments ein, damit sie standardmäßig ausgeliefert werden.
 
-**Governance per Git ist optional - und für Nicht-Entwickler ungewohnt.** Wenn Sie einen
-*gemeinsamen, kontrollierten* Katalog betreiben, ist „der PR-Review *ist* die Moderation“ für
-Entwickler elegant und für die meisten Marken- und Marketingteams ungewohnt. Wenn die Personen, die
-Markenentscheidungen verantworten, nicht in Git zu Hause sind, brauchen Sie einen Workflow, der sie
-einbindet - oder die IT-Abteilung wird stillschweigend zum strategischen Design-Partner und umfassenderen
-institutionellen Torwächter (das wird in lange laufenden Produktionsumgebungen von vielen bevorzugt).
-Teams, die das nicht wollen, überspringen es einfach.
+**Es ist bewusst eng gefasst - stellen Sie es auch so dar.** Lolly ist nicht für maßgeschneiderte
+Einzelstücke gedacht. Es *ist* Ihr persönliches DAM - gespeist und verstärkt durch Ihr
+Designsystem, Ihre Werkzeuge und Ihren Katalog - und es *hat* eine offene Arbeitsfläche (Design),
+doch auch dort richten sich Farben, Typografie und Assets nach den aktiven Design-Globals,
+sodass freies Anordnen innerhalb des Systems bleibt. Gemessen an Figma oder Canva wirkt es
+begrenzt. Gemessen an dem, was es ist - operationalisierte, wiederkehrende Asset-Erzeugung in
+großem Umfang - hält nichts mit. Die falsche Einordnung ist der häufigste Rückschlag.
 
-**Es ist bewusst eng gefasst - stellen Sie es entsprechend dar.** Lolly ist nicht für maßgeschneiderte oder
-Hero-Inhalte gedacht. Es *ist* Ihr persönliches DAM - angereichert und verstärkt durch Ihr Design-
-System, Ihre Tools und Ihren Katalog - und es *verfügt* über eine offene Arbeitsfläche (Design), aber
-selbst dort richten sich Farben, Schrift und Assets nach den aktiven Design-Vorgaben, sodass die freie
-Anordnung innerhalb des Systems bleibt. Im Vergleich zu Figma oder Canva wirkt es
-eingeschränkt. Als das beurteilt, was es ist - operationalisierte, wiederkehrende Asset-Erstellung in
-massivem Maßstab - gibt es keine Konkurrenz. Die falsche Einordnung ist der häufigste Rückschlag.
-
-**Change-Management auf der Erstellungsseite.** Bestehende Prozesse funktionieren heute, selbst wenn
-das Ergebnis nicht markenkonform ist. Sie auf die Engine umzustellen bedeutet erneutes Testen, erneutes Erlernen,
-und „wir können schon Dateien erzeugen“ wird zur Ausrede, nicht zu migrieren. Beginnen Sie damit, eine
-hochsichtbare, produktionsreife Ausgabe umzustellen und das Vorher/Nachher nebeneinander zu zeigen.
+**Veränderung auf der Produktionsseite begleiten.** Bestehende Abläufe funktionieren heute, auch wenn
+das Ergebnis nicht markenkonform ist. Sie auf die Engine umzustellen heißt: neu testen, neu lernen,
+und "wir können doch schon Dateien erzeugen" wird zur Ausrede, nicht zu migrieren. Beginnen Sie damit,
+eine gut sichtbare Ausgabe in Produktionsqualität umzustellen und Vorher/Nachher nebeneinander zu zeigen.
 
 Lolly hebt alles auf ein höheres Niveau.
 
 
 ## Was unterscheidet Utilities von Tools?
 
-![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1)
+**Kurze Antwort →** Utilities müssen nicht immer etwas rendern und können deshalb eine andere Bedienoberfläche bekommen. 
 
-**Einfache Antwort →** Utilities müssen nicht immer rendern und können daher eine andere UX erhalten. 
+**Eigentliche Antwort →** Utilities laufen deshalb in Lolly Tools, weil sie eine weitere 'Bequemlichkeitsschicht' der Verteidigung hinzufügen, die Datenabfluss unattraktiv macht. 
 
-**Eigentliche Antwort →** Der Grund, warum Utilities innerhalb von Lolly Tools gehostet werden können, ist, eine weitere „Komfortebene“ als Schutz hinzuzufügen, um Datenexfiltration unattraktiv zu machen. 
+Warum? Weil bekanntermaßen jeden Tag Menschen **vertrauliche Inhalte, die sie ohnehin schon haben**, nehmen und sie
+einer beliebigen Website übergeben, damit sie einen kleinen mechanischen Handgriff erledigt:
 
-Warum? Weil bekannt ist, dass Menschen jeden Tag **vertrauliche Inhalte, die sie bereits besitzen**, nehmen und einer
-beliebigen Website übergeben, um eine kleine mechanische Operation ausführen zu lassen:
+- "**Dieses PDF komprimieren**" → lädt einen Vertrag / eine Gehaltsabrechnung / eine Vorstandspräsentation zu unbekannten Anbietern hoch.
+- "**HEIC in JPG umwandeln**" → lädt private Fotos (samt GPS-EXIF) zu einem werbefinanzierten Anbieter hoch
+- "**dieses Bild zuschneiden / skalieren**" → lädt einen Produkt-Screenshot oder ein unveröffentlichtes Asset hoch
+- "**dieses JSON formatieren**" / "dieses JWT dekodieren" → fügt API-Antworten, Tokens und Geheimnisse in einen Formatierer ein
+- "**diese PDFs zusammenführen**" → lädt **zwei Dokumente hoch, die niemals denselben Server teilen dürften**
 
-- „**Diese PDF komprimieren**“ → lädt einen Vertrag / eine Gehaltsabrechnung / eine Vorstandspräsentation bei unbekannten Anbietern hoch.
-- „**HEIC in JPG umwandeln**“ → lädt private Fotos (mit GPS-EXIF-Daten) auf einen werbefinanzierten Host hoch
-- „**Dieses Bild zuschneiden / skalieren**“ → lädt einen Produkt-Screenshot oder ein unveröffentlichtes Asset hoch
-- „**Dieses JSON formatieren**“ / „dieses JWT dekodieren“ → fügt API-Antworten, Tokens, Geheimnisse in einen Formatierer ein
-- „**Diese PDFs zusammenführen**“ → lädt **zwei Dokumente hoch, die niemals denselben Server teilen sollten**
+Diese Seiten und die unzähligen Klone in ihrem Windschatten sind **standardmäßig nicht vertrauenswürdig**:
+unbekannte Aufbewahrung, unbekannte Rechtsräume, unbekannte Unterauftragsverarbeiter und ein Werbe- bzw.
+Affiliate-Geschäftsmodell, das jeden Anreiz hat, zu behalten, was Sie ihm geben. Der Vorgang ist
+trivial; **der Preis ist der Inhalt.** 
 
-Diese Websites und ihr riesiger Klon-Long-Tail sind **standardmäßig nicht vertrauenswürdig** - mit
-unbekannter Aufbewahrungsdauer, unbekannten Rechtsräumen, unbekannten Subunternehmern und einem werbe-/affiliate-basierten
-Geschäftsmodell, das jeden Anreiz hat, zu behalten, was Sie ihm geben. Die Operation ist
-trivial; der **Inhalt ist die Kosten.** 
+Wir gewinnen den Kampf um Governance mit hervorragendem Komfort und gutem Service. 
 
-Wir gewinnen den Kampf um Governance mit hervorragender Bequemlichkeit und Service. 
+![Die Utilities-Ansicht bündelt die mechanischen Aufgaben, die man sonst einer beliebigen Website überlässt - hier laufen sie stattdessen in Lolly](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1)
 
 ## Kann Lolly meine Figma-, Penpot-, Illustrator- oder InDesign-Dateien bearbeiten und rendern?
 
-![Design's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+Ja. Öffnen Sie **Design** und klicken Sie auf **Import a design**: Akzeptiert werden eine native Figma-Datei **.fig** (Save local copy), ein Penpot-Export **.penpot**, eine Illustrator-Datei **.ai** oder **.pdf**, eine InDesign-Datei **.idml** (File → Export → InDesign Markup) oder **jedes SVG** (die breite Tür - fast jede Design-App exportiert es). Kein Konto, kein Plug-in und keine Lizenz für eine Design-App nötig.
 
-Ja. Öffnen Sie **Design** und klicken Sie auf **Design importieren**: Es akzeptiert eine native Figma-**.fig**-Datei (Lokale Kopie speichern), einen Penpot-**.penpot**-Export, eine Illustrator-**.ai**- oder **.pdf**-Datei, ein InDesign-**.idml** (Datei → Exportieren → InDesign Markup) oder **jede SVG**-Datei (die breite Tür - fast jede Design-App exportiert sie). Alles wird vollständig auf Ihrem Gerät verarbeitet, kein Konto und kein Plugin nötig.
+![Die offene Arbeitsfläche von Design, in deren Werkzeugleiste Import a design liegt](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
-Ebenen kommen als bearbeitbare Boxen auf der offenen Arbeitsfläche an: Text bleibt neu eintippbar, Formen bleiben Formen, Bilder werden Teil Ihrer geräteinternen Bibliothek, und Schrift und Farben richten sich nach den Marken-Vorgaben. Speichern Sie es, und das Layout wird zu einer wiederverwendbaren, über eine URL adressierbaren Vorlage, die jeder mit Lolly neu befüllen kann - und Sie können lebendige Tools einbinden (einen QR-Code, ein Diagramm), die beim Laden neu gerendert werden. Von dort aus wird es wie alles andere in Lolly gerendert - SVG, PDF, PNG und mehr, reproduzierbar aus seiner URL. Siehe [Design importieren](/info/design-import.html).
+Ebenen kommen als bearbeitbare Kästen auf der offenen Arbeitsfläche an: Text bleibt neu tippbar, Formen bleiben Formen, Bilder wandern in Ihre eigene Bildbibliothek und Schrift und Farben richten sich nach den Marken-Globals. Speichern Sie das Layout, und es wird zu einer wiederverwendbaren, per URL adressierbaren Vorlage, die jeder mit Lolly neu befüllen kann - und Sie können lebende Werkzeuge einmischen (einen QR-Code, ein Diagramm), die beim Laden neu gerendert werden. Von da an rendert es wie alles andere in Lolly - SVG, PDF, PNG und den Rest, reproduzierbar aus seiner URL. Siehe [Import a design](/info/design-import.html).
 
-## Was passiert am 29. August?
+## Kann ich meine Arbeit als Datei statt als Link teilen?
 
-Die SUSE-gebrandeten Tools verlassen das Projekt, und neue generische, vom Nutzer definierte Beispiel-Tools übernehmen.
+Ja. Wenn ein Link nicht alles mitnehmen kann (eigene Fotos, lange Texte), sagt der Share-Dialog genau, was verloren ginge, und bietet stattdessen eine **.lolly**-Datei an: eine Datei mit dem Design, den verwendeten Bildern und, wenn Sie möchten, dem Werkzeug selbst. Sie entscheiden, wie viel mitreist - Ihr Name und Ihre Daten kommen nur hinein, wenn Ihr Profil dem zustimmt, lizenzierte Grafiken bleiben außen vor, sofern Sie sie nicht einschließen, und wer eine Datei mit einem Werkzeug öffnet, wird gefragt, ob er ihm vertraut, bevor es laufen darf. Siehe [Ihre Arbeit teilen](/info/using.html#sharing-your-work).
 
-SUSE wird ein eigenes Lolly betreiben, um seine Markenzeichen zu schützen.
+## Können zwei Personen ohne Internet am selben Design arbeiten?
 
-## Wie viel behält SUSE privat? (auch bekannt als: wann kommt der Rug-Pull)
+Ja. Eine Person teilt eine Einladung (einen Link, einen QR-Code oder einen kurzen Code), die andere nimmt sie an, und beide Geräte halten dieselbe Sitzung live - samt Anwesenheit und Fokusringen. Das funktioniert in jedem gemeinsamen Netzwerk, auch über einen Handy-Hotspot im Keller, weil kein Server dazwischensteht. Siehe [Zusammenarbeiten](/info/collaborate.html).
 
-SUSEs Markenzeichen und gebrandete Tools dienen bis zum 29. August ausschließlich Demonstrationszwecken. Eine ungebrandete Instanz von Lolly finden Sie unter [lolly.ART](https://lolly.art).
+## Wo sind die Werkzeuge mit SUSE-Branding geblieben?
 
-SUSE ist ein Unternehmen für Enterprise-Open-Source-Infrastruktur mit mehr als drei Jahrzehnten Plattform-Führerschaft. Zu seinen Produkten zählen Enterprise-Linux-, Cloud-Native-, Edge- und KI-Infrastrukturlösungen.
+Sie liegen bereits in einem separaten, privaten Repository. Ein öffentlicher Klon holt das SUSE-Brand-Pack gar nicht erst, deshalb läuft ein öffentlicher Build mit dem neutralen Profil `lolly-start` - den markenunabhängigen Community-Werkzeugen plus einer leeren Marke, die Sie mit Ihrer eigenen füllen. SUSE betreibt eine eigene Instanz, um seine Marken zu schützen.
 
-Aus Sicht von SUSE geht es dabei darum, beim Thema Souveränität und Sicherheit Wort zu halten. Nach heutigem Stand ist die Wahrscheinlichkeit, dass SUSE Lolly zu einem Produkt macht, nahezu null.
+## Warum ist es kostenlos? Wo ist der Haken?
 
-Zur vollständigen Offenlegung: SUSE baut *tatsächlich* interne Tools auf, um Lolly in seine IT-Systeme zu integrieren - dabei geht es um SUSEs internen Aufbau, nicht um öffentliche versus private Entwicklung.
+**Wir haben Lolly für uns selbst gebaut.** SUSE brauchte Tausende markenkonformer Dateien, jede mit dem eigenen Namen fest darin, erzeugt ohne irgendetwas an fremde Dienste zu geben. Also haben wir ein Werkzeug gebaut, das all das auf dem Gerät erledigt, und es als Open Source veröffentlicht, wie alles andere, was wir machen. Wir pflegen es weiter, weil wir es jeden Tag benutzen. **Es gibt keine Verpflichtung:** Alles hier funktioniert mit uns oder ohne uns.
 
-Was die öffentliche Seite betrifft: Lolly soll über den [Open Build Service](https://openbuildservice.org/) gebaut werden, mit sicheren Supply-Chain-Artefakten, die von der [SUSE Application Collection](https://apps.rancher.io/applications) bereitgestellt werden.
+Diese Grenze zieht die Lizenz, nicht ein Versprechen: Alles, was lokal läuft, ist kostenlos, für immer. Eine veröffentlichte Version ist so lizenziert, dass sie nicht zurückgenommen werden kann, und es gibt keine Contributor-Vereinbarung, die die Arbeit anderer neu lizenzieren könnte. Die vollständige Aussage steht unter [Positionierung](/info/positioning.html).
 
-Wir werden so viel wie möglich offen entwickeln - Sie werden nur nicht mehr lange SUSE-gebrandete Tools sehen, ebenso wenig wie SUSEs interne Belegschaft und kommerzielle Prozesse, die nichts mit Lolly zu tun haben.
+## Wie viel behält SUSE für sich? (also: wann kommt der Rückzieher)
 
-## Welchen Geschmack hat dieses Lolly-Logo?
+Die Engine, die Shells, die Schemas und die markenunabhängigen Werkzeuge sind Open Source; privat bleiben die Marken von SUSE und die gebrandeten Werkzeuge, und die sind bereits herausgetrennt. Eine Instanz von Lolly ohne Branding finden Sie unter [lolly.ART](https://lolly.art).
 
-Manche sagen Limette, andere sagen Minze und manchmal Apfel - Lolly bringt die Süße, Sie machen den Geschmack daraus!
+Die Grenze ist strukturell, nicht bloß versprochen. Jede veröffentlichte Version ist Open Source und lässt sich nicht zurückziehen, es gibt keine Contributor-Vereinbarung, die die Arbeit anderer neu lizenzieren könnte, und zurückgehalten wird allein die Marke. Als ein anderes Unternehmen 2023 die Quellen seines Enterprise-Linux schloss, hat SUSE [OpenELA](https://openela.org) mitgegründet, um diesen Code offen zu halten - dieselbe Haltung erbt dieses Projekt.
+
+Zur vollen Offenlegung: SUSE baut *sehr wohl* interne Werkzeuge, um Lolly in die eigenen IT-Systeme einzubinden - das betrifft den internen Aufbau bei SUSE, nicht öffentliche gegenüber privater Entwicklung. Lolly soll außerdem über den [Open Build Service](https://openbuildservice.org/) gebaut werden, mit sicheren Supply-Chain-Artefakten aus der [SUSE Application Collection](https://apps.rancher.io/applications).
+
+## Welche Geschmacksrichtung hat dieses Lolly-Logo?
+
+Die einen sagen Limette, die anderen Minze und manchmal Apfel: Lolly bringt die Süße, den Geschmack machen Sie!

@@ -1,104 +1,129 @@
 # FAQ
 
-Mga madalas itanong na ipinapakita sa accordion ng `/info` landing page.
+Mga madalas itanong na ipinapakita sa accordion sa `/info` landing page.
 
-**Paano i-maintain:** bawat `##` heading sa ibaba ay isang tanong; lahat ng nasa ilalim nito
-(hanggang sa susunod na `##`) ang sagot. Gumagamit ang mga sagot ng parehong lightweight markdown
-gaya ng ibang bahagi ng site - paghiwalayin ang mga paragraph gamit ang blangkong linya. Magdagdag, mag-alis, o
-muling ayusin ang mga tanong dito at i-rerun ang `npm run build:info` (o `npm run dev:web`).
-Anumang nasa itaas ng unang `##` (ang title na ito at ang mga note na ito) ay hindi isinasama ng build.
+**Paano i-maintain:** bawat `##` heading sa ibaba ay isang tanong; lahat ng nasa
+ilalim nito (hanggang sa susunod na `##`) ang sagot. Gumagamit ang mga sagot ng
+parehong magaan na markdown tulad ng iba pang bahagi ng site - paghiwalayin ang mga
+talata gamit ang blangkong linya. Magdagdag, mag-alis o mag-ayos ng mga tanong dito
+at patakbuhin ulit ang `npm run build:info` (o `npm run dev:web`).
+Ang lahat ng nasa itaas ng unang `##` (ang pamagat na ito at ang mga notang ito) ay hindi pinapansin ng build.
 
 ## Ano ang mangyayari kapag nag-opt-in ako sa /profile page?
 
-Sa unang pagkakataong gamitin mo ang Lolly, lahat ng iyong ini-type kahit saan ay ganap na pribado hanggang sadyain mong ilabas ang impormasyong iyon sa pamamagitan ng media o isang share link (kung online).
+Sa unang paggamit mo ng Lolly, ganap na pribado ang lahat ng ita-type mo kahit saan hanggang sa sadyain mong ilabas ang impormasyong iyon sa pamamagitan ng media o ng share link (kung online).
 
-Kapag napili ang opt-in, ini-embed namin ang ilan sa iyong profile information bilang provenance sa mga asset at bundle upang makilala ka bilang pinagmulan.
+Kapag napili ang opt-in, ang mga detalye ng profile na pipiliin mo ay isinasara sa loob ng ginagawa mo, na nagpapangalan sa iyo bilang pinagmulan. Walang naisasama nang hindi mo pinipili.
 
-Gumagawa ang Lolly ng malaking dami ng content. Sumusunod kami sa mahigpit na data minimization approach para maiwasan ang panganib.
+Malaki ang dami ng content na nagagawa ng Lolly. Mahigpit ang aming data minimization approach para maiwasan ang panganib.
 
-### Ano ang mga feature flag?
+## Ano ang mga feature flag?
 
-![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&dark=1&filename=pd-feature-flags)
+Binubuksan o isinasara ng mga feature flag ang mga bahagi ng Lolly. Karaniwan, administrator ang kumokontrol nito - sa Lolly, ikaw ang may kontrol.
 
-Binubuksan o isinasara ng feature flags ang mga bahagi ng Lolly. Karaniwan, isang administrator ang kumokontrol dito - pero sa Lolly, ikaw ang may kontrol.
+![Bawat feature flag ay switch na pag-aari mo, nakalagay sa sarili mong profile sa halip na sa console ng isang administrator](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&dark=1&filename=pd-feature-flags)
 
 ## Paano ko makukuha ang mobile o desktop apps?
 
-Kahit sino ay maaaring mag-distribute ng sarili nilang apps; ang mga tool at configuration ng mga app na iyon ay malaki ang pagkakaiba-iba depende sa audience na pinag-uukulan nito. Kaya walang iisang app maliban na lang kung ikaw mismo ang gumawa nito o may kaugnay na taong nagbigay nito sa iyo.
+Kahit sino ay puwedeng mamahagi ng sarili niyang apps, at dapat malaki ang pagkakaiba-iba ng tools at configuration ng mga app na iyon depende sa audience na pinaglalaanan nito. Kaya walang iisang app maliban kung ikaw ang gumawa nito o may kaugnay na taong nagbigay nito sa iyo.
 
-## Bakit ang pangalang "Lolly Tools"?
+## Bakit "Lolly Tools" ang pangalan?
 
-**Lolly** Dahil matamis ang kalayaan.
-**Tools** ay hindi aktibo kapag hindi ginagamit. Hindi ka sinusubaybayan, walang tumatakbong lihim na programa,
-Pinapatakbo mo ito ayon sa iyong mga utos, aksyon, at tuntunin.
+**Lolly** dahil matamis ang kalayaan, at dahil sa Australia, New Zealand at Britain, kendi ang tawag na lolly.
 
-**Lolly** ay terminong Australian, New Zealand, at British para sa 'matamis' o 'kendi'. Tulad ng mga lolly, sarap na sarap ang mga tool para sa mga taong nangangailangan nito.
+**Tools** dahil nakatigil lang ang isang kasangkapan hangga't hindi mo ito dinadampot. Hindi ito tumatakbo kapag hindi mo ginagamit, at hindi ka nito binabantayan habang ginagamit mo.
 
-Natatawa rin kami sa oras at mga bayarin na naiipon namin sa approach na ito.
+## Anong mga hadlang ang puwede kong asahan sa pag-adopt ng Lolly?
 
-## Anong mga hadlang ang aasahan ko sa pag-adopt ng Lolly?
+Kasyang-kasya ang Lolly saanman ka na gumagawa ng mga file - iisa ang engine ng CLI
+at ng App, kaya hindi puwedeng lumihis ang isang pipeline na tumatakbo nang alas-dos ng
+madaling araw sa nakikita ng tao sa preview sa browser. Bihirang teknikal ang hadlang sa pag-adopt; organisasyonal ito. Asahan ang mga ito:
 
-Kumakasya ang Lolly kahit saan ka na gumagawa ng files - ang CLI ay parehong engine ng App, kaya't hindi maaaring lumihis ang isang pipeline run nang 2am mula sa napi-preview ng tao sa browser. Bihirang teknikal ang friction sa pag-adopt; organisasyonal ito. Asahan ang mga sumusunod:
+**Kailangang may gumawa ng curated na brand catalog.** Ang Lolly ay platform, hindi
+tapos nang pakete ng mga template mo. Para sa isang *governed rollout*, may nagtatakda ng
+shared asset catalog (mga logo, palette, font bilang permanenteng ID) at sumusulat ng manifest +
+template para sa bawat uri ng output. Pero hindi kailangang maghintay doon ng mga indibidwal - sa
+bukas na app, kahit sino ay puwedeng mag-ingest ng sariling files sa catalogue at gumawa ng tools sa
+Design mula sa unang araw.
 
-**Kailangang i-author ang isang curated na brand catalog.** Ang Lolly ay isang platform, hindi isang tapos nang pack ng iyong mga template. Para sa isang *governed rollout*, tinutukoy ng isang tao ang shared asset catalog (logos, palettes, fonts bilang permanenteng IDs) at isinusulat ang manifest + template para sa bawat output type. Hindi naman kailangang maghintay diyan ang mga indibidwal - sa open app, kahit sino ay maaaring mag-ingest ng sarili nilang mga file sa catalogue at bumuo ng mga tool sa Design simula sa unang araw.
+**Hindi kailangan ng git para makapag-ambag.** Gumagawa ang mga designer ng sarili nilang tools at templates
+sa loob ng app, saka ibinabahagi ang mga ito sa mga kasamahan o isinusumite sa kung sino man ang may-ari ng
+deployment para maisama bilang default.
 
-**Opsyonal ang governance-by-git - at hindi ito pamilyar sa mga hindi engineer.** Kung nagpapatakbo ka ng *shared, controlled* na catalog, elegante para sa mga engineer ang "Ang PR review *ay* ang moderation" ngunit hindi pamilyar sa karamihan ng mga brand at marketing team. Kung ang mga taong may-ari ng mga desisyon sa brand ay hindi gumagalaw sa git, kakailanganin mo ng workflow na magiging tulay sa kanila - o tahimik na magiging strategic design partner at mas malawak na institutional gatekeeper ang IT (mas gusto ito ng marami sa matagal nang tumatakbong production environment). Ang mga team na ayaw nito ay basta nilalaktawan na lang ito.
+**Sadyang makitid ito - ganoon dapat ang pagpapakilala.** Hindi para sa bespoke o hero
+content ang Lolly. Ito *ay* ang personal mong DAM - pinalusog at pinalakas ng design
+system, tools at catalog mo - at *mayroon* itong open canvas (Design), pero
+kahit doon ay sumusunod pa rin sa aktibong design globals ang mga kulay, type at asset, kaya
+nananatili sa loob ng sistema ang malayang pag-aayos. Kapag itinabi sa Figma o Canva, mukha
+itong limitado. Kapag tiningnan bilang kung ano talaga ito - naoperasyonalisa, paulit-ulit at napakalaking-eskalang
+paggawa ng asset - walang kalaban. Ang maling pagpapakilala ang pinakakaraniwang balakid.
 
-**Sadyang makitid ito - ganito ang pag-frame dito.** Hindi ang Lolly para sa bespoke o hero content. Ito *ay* ang iyong personal DAM - hydrated at supercharged ng iyong design system, tools at catalog - at *mayroon* itong open canvas (Design), pero kahit doon, sumusunod ang mga kulay, type, at assets sa aktibong design globals, kaya't nananatili sa loob ng system ang malayang pag-aayos. Kung ihahambing sa Figma o Canva, magmumukhang limitado ito. Pero kung tutuusin sa kung ano talaga ito - operationalized, paulit-ulit, massive-scale na asset generation - walang makakatapat. Ang maling framing ang pinakakaraniwang set-back.
+**Change management sa panig ng gumagawa.** Gumagana na ngayon ang mga umiiral nang proseso, kahit
+off-brand ang output. Ang muling pagturo ng mga ito sa engine ay nangangahulugan ng muling pagsubok at muling pag-aaral,
+at nagiging dahilan ang "kaya na naman naming gumawa ng file" para hindi mag-migrate. Magsimula sa pag-convert
+ng isang high-visibility at production quality na output at ipakita nang magkatabi ang before/after.
 
-**Change management sa panig ng producing.** Gumagana ang mga umiiral na proseso ngayon, kahit off-brand ang output. Ang pag-re-point sa kanila papunta sa engine ay nangangahulugan ng muling pagsubok at muling pagkatuto, at ang "kaya na naming gumawa ng files" ay nagiging dahilan para hindi mag-migrate. Simulan sa pag-convert ng isang high-visibility, production-quality na output at ipakita ang before/after nang magkatabi.
-
-Itinataas ng Lolly ang lahat.
+Itinataas ng Lolly ang antas ng lahat.
 
 
-## Ano ang nagpapaiba sa utilities kumpara sa tools?
+## Ano ang pagkakaiba ng utilities sa tools?
 
-![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1)
+**Simpleng Sagot →** Hindi laging kailangang mag-render ng utilities kaya puwede silang bigyan ng ibang UX. 
 
-**Basic na Sagot →** Hindi laging kailangang mag-render ng utilities kaya maaari itong magkaroon ng ibang UX.
+**Tunay na Sagot →** Ang dahilan kung bakit puwedeng i-host ang utilities sa loob ng Lolly Tools ay para magdagdag ng isa pang 'convenience layer' ng depensa na pumipigil sa data-exfiltration. 
 
-**Tunay na Sagot →** Ang dahilan kung bakit ma-host ang utilities sa loob ng Lolly Tools ay para magdagdag ng isa pang 'convenience layer' ng depensa upang mabawasan ang insentibo para sa data-exfiltration.
+Bakit? Dahil alam nating araw-araw, kinukuha ng mga tao ang **kumpidensyal na content na hawak na nila** at ibinibigay ito sa
+kung anong website para gawin ang isang maliit na mekanikal na operasyon:
 
-Bakit? Dahil alam nating araw-araw, kinukuha ng mga tao ang **kumpidensyal na content na nasa kanila na** at ibinibigay ito sa isang random na website para lamang magsagawa ng isang maliit na mekanikal na operasyon:
-
-- "**I-compress ang PDF na ito**" → nag-a-upload ng kontrata / payslip / board deck sa hindi kilalang entity.
-- "**i-convert ang HEIC papuntang JPG**" → nag-a-upload ng personal na mga larawan (may GPS EXIF) sa isang ad-funded host
-- "**i-crop / i-resize ang larawang ito**" → nag-a-upload ng product screenshot o hindi pa inilabas na asset
+- "**I-compress ang PDF na ito**" → nag-a-upload ng kontrata / payslip / board deck sa mga hindi kilalang entidad.
+- "**i-convert ang HEIC sa JPG**" → nag-a-upload ng personal na litrato (may GPS EXIF) sa host na pinondohan ng ads
+- "**i-crop / i-resize ang larawang ito**" → nag-a-upload ng screenshot ng produkto o hindi pa inilalabas na asset
 - "**i-format ang JSON na ito**" / "i-decode ang JWT na ito" → nagpe-paste ng API responses, tokens, secrets sa isang formatter
-- "**pagsamahin ang mga PDF na ito**" → nag-a-upload ng **dalawang dokumentong hindi dapat magkasama sa isang server**
+- "**pagsamahin ang mga PDF na ito**" → nag-a-upload ng **dalawang dokumentong hindi dapat magkasama sa iisang server**
 
-Ang mga site na ito at ang malawak nilang clone long-tail ay **hindi mapagkakatiwalaan bilang default**, may hindi kilalang retention, hindi kilalang jurisdictions, hindi kilalang subprocessors, at isang ad/affiliate business model na may buong insentibo para itago ang ibinibigay mo sa kanila. Simple lang ang operasyon; ang **content ang kabayaran.**
+Ang mga site na ito at ang napakaraming clone na kasunod nila ay **hindi mapagkakatiwalaan bilang default** -
+hindi alam ang retention, hindi alam ang hurisdiksiyon, hindi alam ang mga subprocessor at may ad/affiliate
+business model na may lahat ng dahilan para itago ang ibinibigay mo. Maliit na bagay ang operasyon;
+ang **content ang bayad.** 
 
-Nananalo kami sa digmaan para sa governance sa pamamagitan ng napakahusay na convenience at serbisyo.
+Napapanalunan namin ang labanan para sa governance sa pamamagitan ng mahusay na kaginhawahan at serbisyo. 
 
-## Kaya bang i-edit at i-render ng Lolly ang aking mga Figma, Penpot, Illustrator o InDesign files?
+![Tinitipon ng Utilities view ang mga mekanikal na trabahong karaniwang ipinapasa ng mga tao sa kung anong website, pero dito ay tumatakbo ang lahat sa loob ng Lolly](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1)
 
-![Design's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+## Kaya bang i-edit at i-render ng Lolly ang mga file kong Figma, Penpot, Illustrator o InDesign?
 
-Oo. Buksan ang **Design** at i-click ang **Mag-import ng Disenyo**: tinatanggap nito ang native Figma **.fig** (Save local copy), isang Penpot **.penpot** export, isang Illustrator **.ai** o **.pdf**, isang InDesign **.idml** (File → Export → InDesign Markup), o **anumang SVG** (ang malawak na pinto - halos lahat ng design app ay maaaring mag-export nito). Lahat ay pino-parse nang ganap sa iyong device, walang kailangang account o plugin.
+Oo. Buksan ang **Design** at i-click ang **Import a design**: tumatanggap ito ng native na Figma **.fig** (Save local copy), ng Penpot **.penpot** export, ng Illustrator **.ai** o **.pdf**, ng InDesign **.idml** (File → Export → InDesign Markup) o ng **kahit anong SVG** (ang malapad na pinto - halos lahat ng design app ay nag-e-export nito). Walang kailangang account, plugin o lisensya ng design app.
 
-Dumarating ang mga layer bilang mga editable box sa bukas na canvas: mananatiling made-edit muli ang text, mananatiling shapes ang mga hugis, sumasali ang mga larawan sa iyong on-device library, at sumusunod ang type at mga kulay sa brand globals. I-save ito at magiging isang reusable, URL-addressable na template ang layout na maaaring punan ulit ng kahit sinong may Lolly - at maaari kang maghalo ng mga live tool (isang QR code, isang chart) na nag-re-render kapag na-load. Mula doon, nire-render ito tulad ng iba pang bagay sa Lolly - SVG, PDF, PNG at iba pa, reproducible mula sa URL nito. Tingnan ang [Mag-import ng Disenyo](/info/design-import.html).
+![Ang open canvas ng Design, kung saan nasa toolbar ang Import a design](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
-## Ano ang mangyayari sa Agosto 29?
+Dumarating ang mga layer bilang mga kahong puwedeng i-edit sa open canvas: nananatiling puwedeng muling i-type ang teksto, nananatiling hugis ang mga hugis, sumasama ang mga larawan sa sarili mong image library at sumusunod sa brand globals ang type at mga kulay. I-save ito at magiging muling nagagamit at URL-addressable na template ang layout na puwedeng punan ng kahit sinong may Lolly - at puwede kang maghalo ng live na tools (isang QR code, isang chart) na muling nagre-render pagka-load. Mula roon ay nagre-render ito tulad ng iba pang bagay sa Lolly - SVG, PDF, PNG at iba pa, muling magagawa mula sa URL nito. Tingnan ang [Import a design](/info/design-import.html).
 
-Aalis ang mga SUSE-branded na tool sa proyekto, at papalitan ito ng mga bagong generic na example tool na tinutukoy ng user.
+## Puwede ko bang ibahagi ang gawa ko bilang file sa halip na link?
 
-Magpapatakbo ang SUSE ng sarili nitong Lolly para protektahan ang mga trademark nito.
+Oo. Kapag hindi kayang dalhin ng link ang lahat (sarili mong mga litrato, mahabang teksto), sinasabi ng Share dialog kung ano mismo ang mawawala at nag-aalok ito ng **.lolly** file sa halip: isang file na naglalaman ng design, ng mga larawang ginagamit nito at, kung gugustuhin mo, ng tool mismo. Ikaw ang magpapasya kung gaano karami ang isasama - papasok lang ang pangalan at mga detalye mo kung naka-opt in ang profile mo, hindi kasama ang lisensyadong art maliban kung isasama mo ito, at tatanungin ang sinumang magbubukas ng file na may dalang tool kung pinagkakatiwalaan niya ito bago ito makatakbo. Tingnan ang [Pagbabahagi ng iyong gawa](/info/using.html#sharing-your-work).
 
-## Gaano karami ang pinananatiling pribado ng SUSE? (aka kailan ang rug-pull)
+## Puwede bang magtulungan ang dalawang tao sa iisang design nang walang internet?
 
-Ang mga trademark at branded tool ng SUSE ay para lamang sa demonstrasyon, hanggang Agosto 29. Mahahanap mo ang isang unbranded na instance ng Lolly sa [lolly.ART](https://lolly.art).
+Oo. Nagbabahagi ng imbitasyon ang isa (isang link, isang QR code o isang short code), tinatanggap ito ng isa pa, at parehong hawak ng dalawang device ang iisang live na session - kasama ang presence, focus rings at lahat. Gumagana ito sa anumang shared network, pati sa hotspot ng cellphone sa loob ng gusaling walang signal, dahil walang server sa gitna. Tingnan ang [Pagtutulungan](/info/collaborate.html).
 
-Ang SUSE ay isang enterprise open source infrastructure company na mahigit tatlong dekada nang platform leader. Kasama sa mga produkto nito ang enterprise-tier Linux, Cloud Native, Edge, at AI infrastructure solutions.
+## Saan napunta ang mga SUSE-branded na tool?
 
-Mula sa perspektibo ng SUSE, ito ay tungkol sa pagsasabuhay ng sinasabi nila tungkol sa sovereignty at security. Sa ngayon, halos absolute zero ang posibilidad na i-productize ng SUSE ang Lolly.
+Nasa hiwalay at pribadong repository na sila. Hindi man lang kinukuha ng isang public clone ang SUSE brand pack, kaya ang tumatakbo sa isang public build ay ang neutral na `lolly-start` profile - ang mga brand-agnostic na community tool kasama ang blangkong brand na pupunan mo ng sarili mo. May sariling instance ang SUSE para protektahan ang mga trademark nito.
 
-Full disclosure: *talagang* gumagawa ang SUSE ng internal tooling para i-integrate ang Lolly sa loob ng mga IT system nito - tungkol ito sa internal set-up ng SUSE, hindi sa public vs. private development.
+## Bakit libre ito? Ano ang kapalit?
 
-Sa usapin ng public side, layunin ng Lolly na maitayo sa pamamagitan ng [Open Build Service](https://openbuildservice.org/), na may secure supply-chain artifacts na ihahatid ng [SUSE Application Collection](https://apps.rancher.io/applications).
+**Ginawa namin ang Lolly para sa aming sarili.** Kailangan ng SUSE ng libu-libong on-brand na file, bawat isa ay may pangalan nitong nakaselyo sa loob, gawa nang walang ibinibigay sa mga panlabas na serbisyo. Kaya gumawa kami ng tool na ginagawa ang lahat ng iyon sa mismong device, at inilabas ito bilang open source, tulad ng lahat ng iba pang ginagawa namin. Patuloy namin itong minementina dahil ginagamit namin ito araw-araw. **Walang obligasyon:** gumagana ang lahat dito, kasama man kami o wala.
 
-Gagawin namin ito nang bukas hangga't kaya - hindi mo lang makikita ang mga SUSE-branded na tool nang matagal, ni ang internal workforce at commercial processes ng SUSE, na walang kinalaman sa Lolly.
+Nakaguhit ang linyang iyon sa lisensya, hindi sa pangako: anumang tumatakbo nang lokal ay libre, habambuhay. Lisensyado ang isang bersyong nailabas na kaya hindi na ito puwedeng bawiin, at walang contributor agreement na puwedeng mag-relicense ng gawa ninuman. Tingnan ang [positioning](/info/positioning.html) para sa buong pahayag.
 
-## Anong flavour ang Lolly logo na iyon?
+## Gaano karami ang itinatago ng SUSE bilang pribado? (o kung kailan kami iiwan sa ere)
 
-May nagsasabing Lime, may nagsasabing Mint, at minsan Apple - dinadala ng Lolly ang tamis, ikaw ang gumagawa ng flavour!
+Open source ang engine, ang mga shell, ang mga schema at ang mga brand-agnostic na tool; ang mga trademark at branded na tool ng SUSE ang bahaging nananatiling pribado, at nakahiwalay na ang mga ito. Makikita mo ang isang unbranded na instance ng Lolly sa [lolly.ART](https://lolly.art).
+
+Estruktural ang hangganan, hindi lamang pangako. Bawat inilabas na bersyon ay open source at hindi na maibabalik sa pagkakatago, walang contributor agreement na puwedeng mag-relicense ng gawa ninuman, at ang trademark lang ang pinipigil. Nang isara ng isa pang kumpanya ang mga source ng enterprise Linux nito noong 2023, isa ang SUSE sa nagtatag ng [OpenELA](https://openela.org) para manatiling bukas ang code na iyon - ito rin ang paninindigang minana ng proyektong ito.
+
+Buong pagsisiwalat: *totoong* gumagawa ang SUSE ng internal tooling para i-integrate ang Lolly sa mga IT system nito - tungkol iyon sa internal na set-up ng SUSE, hindi sa public vs. private na development. Layunin din ng Lolly na maitayo sa pamamagitan ng [Open Build Service](https://openbuildservice.org/), na may secure supply-chain artifacts na inihahatid ng [SUSE Application Collection](https://apps.rancher.io/applications).
+
+## Anong lasa ang Lolly logo na iyan?
+
+May nagsasabing Lime, may nagsasabing Mint at minsan Apple, ang Lolly ang nagdadala ng tamis, ikaw ang bahalang magpalasa!

@@ -1,30 +1,38 @@
 {
-  "title": "Tři cesty, jak začít",
-  "lead": "Začni s [Rychlým startem](/info/quickstart.html) - nahraješ svou značku a vytvoříš první soubor - a pak pokračuj cestou, která ti sedí.",
+  "title": "Kudy začít",
+  "lead": "Vyber si dveře, nebo prostě začni tvořit níž.",
   "cards": [
     {
-      "href": "/info/creators.html",
+      "href": "/info/make-something.html",
       "icon": "media",
+      "eyebrow": "Začni tady",
+      "name": "Prostě něco vytvoř",
+      "desc": "Tři běžné úkoly, každý hotový asi za minutu. Bez účtu, bez nastavování.",
+      "cta": "Začít →"
+    },
+    {
+      "href": "/info/creators.html",
+      "icon": "tool",
       "eyebrow": "Pro tvůrce",
       "name": "Tvoř věci",
-      "desc": "Hotové soubory za pár vteřin - žádný designový nástroj, žádné čekání. Výhody a jak z aplikace vytěžit maximum.",
+      "desc": "Hotové soubory za pár vteřin a jak z aplikace vytěžit maximum.",
       "cta": "Prozkoumat →"
     },
     {
       "href": "/info/builders.html",
       "icon": "developers",
       "eyebrow": "Pro vývojáře",
-      "name": "Vytvářej a integruj",
-      "desc": "Vytvářej nástroje, ovládej je z CLI, MCP nebo agenta a nasaď platformu. Technická dokumentace.",
+      "name": "Vytvářej a automatizuj",
+      "desc": "Vytvářej nástroje, ovládej je z CLI, MCP nebo agenta a nasaď platformu.",
       "cta": "Číst dokumentaci →"
     },
     {
       "href": "/info/operators.html",
       "icon": "security",
       "eyebrow": "Pro provozovatele",
-      "name": "Nasaď to bezpečně",
-      "desc": "Vícevrstvá strategie na ochranu proti úniku dat v přestrojení za kreativní platformu. Strategie, bezpečnost a zavádění.",
-      "cta": "Zobrazit strategii →"
+      "name": "Zaveď to u vás",
+      "desc": "Bezpečnostní strategie, která je zároveň kreativní platformou. Zavádění, správa a osvojení.",
+      "cta": "Jak na to →"
     }
   ]
 }

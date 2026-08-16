@@ -1,8 +1,5 @@
 {
   "statement": "Souveraineté du contenu",
-  "pilotTag": "Prototype",
-  "pilotText": "Pilote fermé en cours · renforcement pour l'échelle entreprise",
-  "pilotAriaLabel": "Lolly est un prototype interne en pilote fermé, en cours de renforcement pour l'échelle entreprise",
   "ctas": [
     {
       "href": "/",
@@ -16,11 +13,11 @@
     }
   ],
   "trustChips": [
-    "100 % gratuit",
-    "Sans cookies",
-    "Sans inscription",
+    "Gratuit pour toujours",
     "Open source",
-    "Confidentialité avant tout"
+    "Sans compte",
+    "Sans cookies",
+    "Ne renvoie rien"
   ],
-  "toolCountSuffix": "Outils d'exemple chargés"
+  "toolCountSuffix": "outils prêts"
 }

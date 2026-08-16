@@ -1,8 +1,5 @@
 {
   "statement": "Kedaulatan konten",
-  "pilotTag": "Prototipe",
-  "pilotText": "Uji coba tertutup sedang berlangsung · penguatan untuk skala enterprise",
-  "pilotAriaLabel": "Lolly adalah prototipe internal dalam uji coba tertutup, sedang diperkuat untuk skala enterprise",
   "ctas": [
     {
       "href": "/",
@@ -16,11 +13,11 @@
     }
   ],
   "trustChips": [
-    "100% Gratis",
-    "Tanpa Cookie",
-    "Tanpa Pendaftaran",
+    "Gratis Selamanya",
     "Sumber Terbuka",
-    "Privasi Diutamakan"
+    "Tanpa Akun",
+    "Tanpa Cookie",
+    "Tidak Mengirim Data"
   ],
-  "toolCountSuffix": "Contoh Alat Dimuat"
+  "toolCountSuffix": "Alat Siap Pakai"
 }

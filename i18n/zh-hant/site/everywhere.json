@@ -1,9 +1,10 @@
 {
   "heading": "全部功能，\n維持原樣，\n什麼裝置都能用",
-  "copy": "在你的裝置上離線執行，也可以代管在線上隨時使用，由你決定。\nLolly Tools 到處都能用。",
+  "copy": "安裝下來用、開啟一個代管網址，或者兩種一起用，由你決定。\nLolly Tools 在那裡都能運作。",
   "surfaces": [
     { "icon": "surfaceWeb", "label": "網頁" },
     { "icon": "surfaceMacos", "label": "macOS" },
+    { "icon": "surfaceWindows", "label": "Windows" },
     { "icon": "surfaceLinux", "label": "Linux" },
     { "icon": "surfaceIos", "label": "iOS" },
     { "icon": "surfaceAndroid", "label": "Android" },
@@ -12,8 +13,8 @@
   ],
   "modelsIntro": "三種交付模式：",
   "models": [
-    { "n": "1", "icon": "modelDeploy", "label": "部署", "desc": "透過你現有的 MDM 部署到裝置。完全離線執行，無論是在防火牆之後還是實體隔離環境，資料都不會離開裝置。" },
-    { "n": "2", "icon": "modelServe", "label": "服務", "desc": "單一代管執行個體，可在任何瀏覽器使用。不需安裝——核准的更新一發布，所有人立即收到。" },
-    { "n": "3", "icon": "modelHybrid", "label": "混合", "desc": "離線本機應用程式，加上永遠是最新版本的網頁版，共用同一套工具庫——同時涵蓋所有作業系統。" }
+    { "n": "1", "icon": "modelDeploy", "label": "部署", "desc": "透過你現有的 MDM 派送到各台裝置。可以在任何防火牆之後運作，也能在完全沒有對外出口的實體隔離網路裡運作。" },
+    { "n": "2", "icon": "modelServe", "label": "服務", "desc": "單一代管執行個體，可在任何瀏覽器使用。不需安裝，核准的更新一發布，所有人立即收到。" },
+    { "n": "3", "icon": "modelHybrid", "label": "混合", "desc": "已安裝的本機應用程式，加上永遠是最新版本的網頁版，共用同一套工具庫，同時涵蓋所有作業系統。" }
   ]
 }

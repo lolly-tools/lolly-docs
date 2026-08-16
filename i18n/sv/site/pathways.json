@@ -1,30 +1,38 @@
 {
-  "title": "Tre vägar in",
-  "lead": "Börja med [Snabbstart](/info/quickstart.html) - lägg in ditt varumärke och få ut din första fil - följ sedan den väg som passar dig.",
+  "title": "Vägar in",
+  "lead": "Välj en dörr, eller börja bara skapa här nedanför.",
   "cards": [
     {
-      "href": "/info/creators.html",
+      "href": "/info/make-something.html",
       "icon": "media",
+      "eyebrow": "Börja här",
+      "name": "Skapa bara något",
+      "desc": "Tre vardagsjobb, vart och ett klart på ungefär en minut. Inget konto, ingen installation.",
+      "cta": "Sätt igång →"
+    },
+    {
+      "href": "/info/creators.html",
+      "icon": "tool",
       "eyebrow": "För kreatörer",
       "name": "Skapa saker",
-      "desc": "Färdiga filer på några sekunder - inget designverktyg, ingen väntan. Fördelarna, och hur du får ut mesta möjliga av appen.",
+      "desc": "Färdiga filer på några sekunder, och hur du får ut mest av appen.",
       "cta": "Utforska →"
     },
     {
       "href": "/info/builders.html",
       "icon": "developers",
       "eyebrow": "För utvecklare",
-      "name": "Skapa & integrera",
-      "desc": "Skapa verktyg, styr dem från CLI, MCP eller en agent, och driftsätt plattformen. Den tekniska dokumentationen.",
+      "name": "Bygg & automatisera",
+      "desc": "Skapa verktyg, styr dem från CLI, MCP eller en agent, och driftsätt plattformen.",
       "cta": "Läs dokumentationen →"
     },
     {
       "href": "/info/operators.html",
       "icon": "security",
       "eyebrow": "För driftansvariga",
-      "name": "Rulla ut det säkert",
-      "desc": "En strategi för dataförlustskydd med flera säkerhetslager, förklädd till en kreativ plattform. Strategi, säkerhet och införande.",
-      "cta": "Se strategin →"
+      "name": "Rulla ut det",
+      "desc": "En säkerhetsstrategi som råkar vara en kreativ plattform också. Utrullning, styrning och införande.",
+      "cta": "Se hur →"
     }
   ]
 }

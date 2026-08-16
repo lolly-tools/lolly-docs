@@ -1,17 +1,15 @@
 {
-  "eyebrow": "Původ a soukromí",
+  "eyebrow": "Důkaz a soukromí",
   "heading": "Dokaž, co jsi vytvořil.\nNech si, co je tvoje.",
-  "lead": "Každý obrázek, PDF nebo video, který exportuješ, může nést **Content Credential** - pečeť [C2PA](https://c2pa.org) odhalující jakoukoli manipulaci, vytvořenou celou na tvém zařízení. Dokazuje, že se soubor od odchodu z Lolly nezměnil, a jakmile si zaregistruješ identitu, zaznamená také, kdo ho podepsal.",
-  "illustration": "illusCheck",
+  "lead": "Skoro každý obrázek, PDF nebo video, které exportuješ - PNG, JPG, APNG, GIF, SVG, TIFF, WebP, PDF, MP4 a WebM - může nést **Content Credential**: pečeť [C2PA](https://c2pa.org), která odhalí jakoukoli manipulaci a vzniká i podepisuje se přímo tam, kde pracuješ. Pečeť pokrývá každý exportovaný bajt: změň cokoli a validátor C2PA to řekne, a jakmile si zaregistruješ identitu, zaznamená i to, kdo ji podepsal. Rastry navíc nesou neviditelný **Lolly Imprint** přímo v pixelech, ve výchozím nastavení zapnutý, takže se kopie pozná i poté, co někdo Content Credential odstraní.",
   "checks": [
-    { "title": "Manipulace se vždy pozná", "desc": "Pečeť pokrývá každý exportovaný bajt. Změň jediný pixel a kterýkoli validátor C2PA to odhalí." },
-    { "title": "Podepsáno na tvém zařízení", "desc": "Tvůj podpisový klíč se vygeneruje lokálně a nikdy neopustí zařízení - nepřečte si ho ani Lolly." },
-    { "title": "Ověřitelné kýmkoli, offline", "desc": "Soubor si nese svůj vlastní důkaz. Zkontroluj ho na kartě Verify, v CLI nebo v libovolném validátoru C2PA - nikam se nic nenahrává." }
+    { "title": "Manipulaci odhalí i bez nastavování", "desc": "Pečeť pokrývá každý exportovaný bajt. Změň jediný pixel a kterýkoli validátor C2PA to odhalí." },
+    { "title": "Podepsáno klíčem, který má jen tvůj prohlížeč", "desc": "Klíč vzniká jako neexportovatelný, takže ho žádný kód - ani ten od Lolly - nepřečte zpátky." },
+    { "title": "Ověř si cokoli sám", "desc": "Karta Verify zkontroluje Content Credential souboru, upozorní na obsah vytvořený AI, přečte Lolly Imprint a odhalí skrytá data." }
   ],
   "cards": [
-    { "icon": "assureEyeOff", "title": "Nic neopustí tvé zařízení", "desc": "Žádné cloudové vykreslování, žádná telemetrie, žádná analytika. Co vytvoříš, zůstává na tvém počítači." },
-    { "icon": "assureScan", "title": "Vyčištění a uzamčení přímo v zařízení", "desc": "Strip Hidden Data lokálně odstraní EXIF a metadata. Zamkni PDF, stažený soubor nebo sdílený odkaz heslem, které nikdy neopustí tvé zařízení." },
-    { "icon": "assureServer", "title": "Self-hosting nebo air-gap", "desc": "Žádný server, žádná databáze, žádný backend. Spusť ho celý za svým firewallem, úplně offline." }
+    { "icon": "assureScan", "title": "Vyčisti a zamkni", "desc": "Strip Hidden Data odstraní EXIF a metadata lokálně. Zamkni PDF, stažený soubor nebo sdílený odkaz heslem, které máš jen ty." },
+    { "icon": "assureServer", "title": "Self-hosting nebo air-gap", "desc": "V hlavní vykreslovací cestě není žádný backend - žádná databáze, žádné zpracování na serveru, které bys musel provozovat. Spusť to celé za svým vlastním firewallem; volitelné serverové doplňky můžeš vynechat." }
   ],
   "cta": "Jak fungují Content Credentials →",
   "ctaHref": "/info/content-credentials-identity.html"

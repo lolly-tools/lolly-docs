@@ -25,13 +25,13 @@ The engine's crypto core is **platform-agnostic and uses only `globalThis.crypto
 | Area | Standard |
 |---|---|
 | Content Credentials | **C2PA 2.x** (reads v1 + v2 manifests from any producer) |
-| Signing certificates | **RFC 5280** (X.509/PKIX), C2PA cert profile §14.5.1 |
+| Signing certificates | **RFC 5280** (X.509/PKIX), C2PA cert profile, section 14.5.1 |
 | Signature container | **RFC 9052 / 9360** (COSE_Sign1) |
 | Serialization | **RFC 8949** (deterministic CBOR) |
 | Key fingerprinting | **RFC 7638** (JWK thumbprint) |
 | Credential boxing | **ISO 19566-5** (JUMBF) |
 | Video binding | **ISO 14496-12** (BMFF) |
-| PDF encryption | **ISO 32000-2 §7.6.4** (PDF 2.0 AES-256, R6) |
+| PDF encryption | **ISO 32000-2, section 7.6.4** (PDF 2.0 AES-256, R6) |
 | Zip encryption | **PKWARE APPNOTE** + **WinZip AE-2** |
 | Byte-level signatures | **SEAL** (verification) |
 | Durable soft binding | **Adobe TrustMark** (read + write; write off by default) |

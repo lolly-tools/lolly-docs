@@ -1,17 +1,15 @@
 {
-  "eyebrow": "Asal usul & privasi",
+  "eyebrow": "Bukti & privasi",
   "heading": "Buktikan apa yang anda cipta.\nKekalkan milik anda.",
-  "lead": "Setiap imej, PDF, atau video yang anda eksport boleh membawa **Content Credential** - meterai [C2PA](https://c2pa.org) kalis gangguan yang dicipta sepenuhnya pada peranti anda. Ia membuktikan fail tidak berubah sejak ia meninggalkan Lolly, dan sebaik sahaja anda mendaftarkan identiti, ia merekodkan siapa yang menandatanganinya.",
-  "illustration": "illusCheck",
+  "lead": "Hampir setiap imej, PDF atau video yang anda eksport - PNG, JPG, APNG, GIF, SVG, TIFF, WebP, PDF, MP4 dan WebM - boleh membawa **Content Credential** - meterai [C2PA](https://c2pa.org) kalis gangguan yang dicipta dan ditandatangani terus di tempat anda bekerja. Meterai itu merangkumi setiap bait yang dieksport: ubah apa-apa dan pengesah C2PA akan memberitahunya, dan sebaik anda mendaftarkan identiti, ia turut merekodkan siapa yang menandatanganinya. Raster juga membawa **Lolly Imprint** yang halimunan di dalam piksel itu sendiri, hidup secara lalai, supaya salinannya masih boleh dikenali walaupun selepas Content Credential itu ditanggalkan.",
   "checks": [
     { "title": "Kalis gangguan secara lalai", "desc": "Meterai ini merangkumi setiap bait yang dieksport. Ubah walau satu piksel dan mana-mana pengesah C2PA akan mengesannya." },
-    { "title": "Ditandatangani pada peranti anda", "desc": "Kunci tandatangan anda dijana secara tempatan dan tidak sekali-kali meninggalkan peranti - malah Lolly sendiri tidak dapat membacanya." },
-    { "title": "Boleh disahkan oleh sesiapa sahaja, secara luar talian", "desc": "Fail ini membawa buktinya sendiri. Semaknya dalam tab Verify, CLI, atau mana-mana pengesah C2PA - tiada apa-apa yang dimuat naik." }
+    { "title": "Ditandatangani dengan kunci yang hanya pelayar anda pegang", "desc": "Kunci itu dijana supaya tidak boleh diekstrak, jadi tiada kod - termasuk kod Lolly sendiri - boleh membacanya semula." },
+    { "title": "Sahkan apa-apa sahaja, sendiri", "desc": "Tab Verify menyemak Content Credential sesuatu fail, menandakan kandungan janaan AI, membaca Lolly Imprint dan mendedahkan data tersembunyi." }
   ],
   "cards": [
-    { "icon": "assureEyeOff", "title": "Tiada apa-apa meninggalkan peranti anda", "desc": "Tiada pemaparan awan, tiada telemetri, tiada analitik. Apa yang anda cipta kekal pada mesin anda." },
-    { "icon": "assureScan", "title": "Bersihkan dan kunci, pada peranti", "desc": "Strip Hidden Data mengalih keluar EXIF dan metadata secara tempatan. Kunci PDF, muat turun, atau pautan perkongsian dengan kata laluan yang tidak sekali-kali meninggalkan peranti anda." },
-    { "icon": "assureServer", "title": "Hos sendiri atau air-gap", "desc": "Tiada pelayan, tiada pangkalan data, tiada backend. Jalankan sepenuhnya di sebalik firewall anda, sepenuhnya luar talian." }
+    { "icon": "assureScan", "title": "Bersihkan dan kunci", "desc": "Strip Hidden Data mengalih keluar EXIF dan metadata secara tempatan. Kunci PDF, muat turun atau pautan kongsi dengan kata laluan yang hanya anda pegang." },
+    { "icon": "assureServer", "title": "Hos sendiri atau air-gap", "desc": "Tiada backend dalam laluan render teras - tiada pangkalan data, tiada pemprosesan sisi pelayan untuk dikendalikan. Jalankan sepenuhnya di sebalik firewall anda sendiri; tambahan pelayan yang pilihan itu boleh ditinggalkan." }
   ],
   "cta": "Bagaimana Content Credentials berfungsi →",
   "ctaHref": "/info/content-credentials-identity.html"

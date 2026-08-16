@@ -1,30 +1,38 @@
 {
-  "title": "Tre modi per iniziare",
-  "lead": "Inizia con la [Guida rapida](/info/quickstart.html) - porta dentro il tuo brand e ottieni il tuo primo file - poi segui il percorso più adatto a te.",
+  "title": "Da dove iniziare",
+  "lead": "Scegli una porta, oppure mettiti subito a creare qui sotto.",
   "cards": [
     {
-      "href": "/info/creators.html",
+      "href": "/info/make-something.html",
       "icon": "media",
+      "eyebrow": "Inizia da qui",
+      "name": "Crea qualcosa e basta",
+      "desc": "Tre lavoretti di tutti i giorni, ognuno finito in circa un minuto. Nessun account, niente da configurare.",
+      "cta": "Vai →"
+    },
+    {
+      "href": "/info/creators.html",
+      "icon": "tool",
       "eyebrow": "Per i creator",
       "name": "Crea cose",
-      "desc": "File finiti in pochi secondi - nessuno strumento di design, nessuna attesa. I vantaggi, e come sfruttare al meglio l'app.",
+      "desc": "File finiti in pochi secondi, e come sfruttare al meglio l'app.",
       "cta": "Esplora →"
     },
     {
       "href": "/info/builders.html",
       "icon": "developers",
       "eyebrow": "Per gli sviluppatori",
-      "name": "Crea e integra",
-      "desc": "Crea strumenti, guidali dalla CLI, da MCP o da un agente, e distribuisci la piattaforma. La documentazione tecnica.",
+      "name": "Crea e automatizza",
+      "desc": "Crea strumenti, guidali dalla CLI, da MCP o da un agente, e distribuisci la piattaforma.",
       "cta": "Leggi la documentazione →"
     },
     {
       "href": "/info/operators.html",
       "icon": "security",
       "eyebrow": "Per gli operatori",
-      "name": "Distribuiscilo in sicurezza",
-      "desc": "Una strategia di prevenzione della perdita di dati a difesa stratificata, travestita da piattaforma creativa. Strategia, sicurezza e adozione.",
-      "cta": "Scopri la strategia →"
+      "name": "Distribuiscilo",
+      "desc": "Una strategia di sicurezza che è anche una piattaforma creativa. Distribuzione, governance e adozione.",
+      "cta": "Scopri come →"
     }
   ]
 }

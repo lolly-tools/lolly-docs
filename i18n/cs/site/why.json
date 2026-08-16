@@ -1,19 +1,22 @@
 {
   "eyebrow": "Proč jsme vytvořili Lolly",
-  "heading": "Každodenní tvůrčí práce\nneměla by být tak náročná.",
-  "lead": "Většina lidí nechce grafické studio. Chtějí jeden správný soubor, hned - bez porušení značky, bez čekání na někoho a bez odevzdávání soukromého dokumentu webu, o kterém nikdy neslyšeli. Lolly vzniklo přesně proto, aby tyhle tři starosti odstranilo.",
+  "heading": "Každodenní tvůrčí práce\nby neměla být takhle těžká.",
+  "lead": "Většina lidí nechce grafické studio. Chtějí jeden správný soubor, hned - bez porušení značky, bez čekání na někoho a bez toho, aby se museli registrovat a platit, ještě než vůbec začnou. Lolly vzniklo přesně proto, aby tyhle tři starosti odstranilo.",
   "frustrations": [
     { "icon": "anxiety", "title": "Strach z porušení značky", "desc": "Tichý strach z toho, že zvolíš špatnou barvu nebo písmo - a uděláš chybu veřejně." },
     { "icon": "bottleneck", "title": "Úzké hrdlo", "desc": "Každý drobný podklad uvízne ve frontě za vytíženým designérem, pomalým nástrojem nebo dalším schvalováním." },
-    { "icon": "cloudDependence", "title": "Závislost na cloudu", "desc": "Nahráváš citlivé soubory jen kvůli převodu nebo oříznutí - a jakmile jsi offline, jsi v koncích." }
+    { "icon": "tollGate", "title": "Mýtná brána", "desc": "Účet dřív, než smíš začít, předplatné, které přežije samotnou práci, a další poplatek přesně ve chvíli, kdy chceš stahovat." }
   ],
   "matrix": [
+    { "pain": "Přihlas se, než vůbec smíš něco vytvořit.", "relief": "Otevři a začni. Žádný účet tu není." },
+    { "pain": "Tvoje práce žije tam, kde nemáš hlas: pravidla se můžou změnit a ty se to dozvíš až potom.", "relief": "Tvoje práce zůstává u tebe. Každé rozhodnutí o ní je tvoje a na každé vidíš." },
+    { "pain": "Předplatné, které strhává peníze dlouho poté, co je práce hotová.", "relief": "Zdarma a zdarma zůstane: vydanou verzi už nikdo nemůže vzít zpátky." },
+    { "pain": "Šablona, která je skoro správná, jenže část, kterou potřebuješ, je zamčená za placeným upgradem.", "relief": "Co se měnit má, měníš ty; co se měnit nemá, je už vyřešené." },
+    { "pain": "Dokončíš návrh a pak zjistíš, že stahování stojí navíc.", "relief": "Každý export je v ceně: PDF v tiskové kvalitě, ostré SVG, video, všechno." },
+    { "pain": "Zaplatit AI znovu za něco, co už jednou vytvořila, a dostat to zpátky trochu jinak.", "relief": "AI je volitelná a poslouchá tebe. Co vytvoříš, je shodné tam, kde chceš, a jiné tak, jak chceš - a udělat to znovu nic nestojí." },
     { "pain": "Poslat zadání e-mailem designérskému týmu a pak dny čekat na jednu drobnou grafiku.", "relief": "Vyplň pár polí. Hotový podklad je připravený za pár vteřin." },
-    { "pain": "Hádat správné písmo, barvu a logo - a doufat, že to projde schválením značky.", "relief": "Pravidla designu jsou zabudovaná přímo v nástroji. Ohýbají se, ale nelámou. " },
-    { "pain": "Nahrát smlouvu, výplatní pásku nebo soukromou fotku na nějaký náhodný bezplatný web kvůli převodu nebo oříznutí.", "relief": "Všechno běží na tvém vlastním zařízení. Nic se nenahrává; nic neopustí zařízení zodpovědné osoby." },
+    { "pain": "Hádat správné písmo, barvu a logo - a doufat, že to projde schválením značky.", "relief": "Pravidla designu jsou zabudovaná přímo v nástroji. Ohýbají se, ale nelámou." },
     { "pain": "Znovu ručně vyrábět stejný odznak, kartu nebo banner stokrát dokola.", "relief": "Vlož tabulku. Získej najednou stovku hotových souborů připravených k tisku." },
-    { "pain": "„Která verze je ta poslední?“ - pátrání ve vláknech na Slacku a sdílených discích.", "relief": "Podklad je odkaz. Stejný vstup, stejný soubor, pokaždé." },
-    { "pain": "Žádný signál v letadle nebo uzamčená síť - a najednou jsi prostě zablokovaný.", "relief": "Funguje úplně offline, na jakémkoli zařízení, jakmile se jednou načte." },
-    { "pain": "Embargovaný obsah:  komunikační profesionálové nemají bezpečný způsob, jak spolupracovat s externími partnery.", "relief": "zamkni, zašifruj a chraň heslem soubory, zipy a sdílené odkazy - vše bez připojení k internetu" }
+    { "pain": "„Která verze je ta poslední?“ - pátrání ve vláknech na Slacku a sdílených discích.", "relief": "Podklad je odkaz. Stejný vstup, stejný soubor, pokaždé." }
   ]
 }

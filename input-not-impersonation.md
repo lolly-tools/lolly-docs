@@ -28,7 +28,7 @@ Worth being clear about what an agent is really doing when it supplies an input.
 
 The distinction holds up because inputs and identity are two different things travelling in a file. The pixels are output, and anyone with an image editor can approximate a brand's output. The claim is an identity assertion, and that is cryptographic. You cannot approximate a signature. You either hold the key or you do not.
 
-So Lolly does not try to stop agents making things, which would be both futile and pointless. It makes the claim impossible to fake, and makes every export state plainly what it actually is.
+So Lolly does not try to stop agents making things, which would be both futile and pointless. It makes the claim checkable instead: a claim that was altered, or signed with a key the signer does not hold, fails validation - and every export states plainly what it actually is.
 
 ## Agents are a supported audience
 
@@ -56,7 +56,7 @@ Here is where it gets, step by step.
 
 - **Not detection of every fake.** Lolly cannot tell you that an image made in other software is a forgery. Nothing can. It can tell you what a file does and does not carry.
 - **Not a guarantee anyone checks.** Provenance only helps when someone verifies, which is why verification is free, offline, needs no account and takes one drag. Making it easy is the only lever available.
-- **Not proof of truth.** A credential proves origin and integrity, not that the content is accurate. A signed advisory from a verified signer can still be wrong. That is a matter for editors, not cryptography.
+- **Not proof of truth.** A credential shows where a file came from and that it has not been altered since, not that the content is accurate. A signed advisory from a verified signer can still be wrong. That is a matter for editors, not cryptography.
 - **Not protection from a stolen key.** If an organisation's signing credential is compromised, files can be signed in its name until it is revoked. Credentials are short-lived for that reason. See [Trust tiers](/info/content-credentials-identity.html) for what a verifier can actually conclude at each level.
 
 The honest summary: an agent can make something that looks like your brand, and it cannot make something that proves it is your brand. The first has always been true. The second is new, and it is the part worth building.

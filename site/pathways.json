@@ -1,30 +1,38 @@
 {
-  "title": "Three ways in",
-  "lead": "Start with the [design system tour](/start/). Add your style in and make your first files, or explore more below",
+  "title": "Ways in",
+  "lead": "Pick a door, or just start making below.",
   "cards": [
     {
-      "href": "/info/creators.html",
+      "href": "/info/make-something.html",
       "icon": "media",
+      "eyebrow": "Start here",
+      "name": "Just make something",
+      "desc": "Three everyday jobs, finished in about a minute each. No account, no set-up.",
+      "cta": "Go →"
+    },
+    {
+      "href": "/info/creators.html",
+      "icon": "tool",
       "eyebrow": "For Creators",
       "name": "Make things",
-      "desc": "Finished files in seconds - no design tool, no waiting. The advantages, and how to get the most from the app.",
+      "desc": "Finished files in seconds, and how to get the most from the app.",
       "cta": "Explore →"
     },
     {
       "href": "/info/builders.html",
       "icon": "developers",
       "eyebrow": "For Builders",
-      "name": "Author & integrate",
-      "desc": "Author tools, drive them from the CLI, MCP or an agent, and deploy the platform. The technical documentation.",
+      "name": "Build & automate",
+      "desc": "Author tools, drive them from the CLI, MCP or an agent, and deploy the platform.",
       "cta": "Read the docs →"
     },
     {
       "href": "/info/operators.html",
       "icon": "security",
       "eyebrow": "For Operators",
-      "name": "Roll it out safely",
-      "desc": "A defence-in-depth data-loss-prevention strategy masquerading as a creative platform. Strategy, security and adoption.",
-      "cta": "See the strategy →"
+      "name": "Roll it out",
+      "desc": "A security strategy that also happens to be a creative platform. Rollout, governance and adoption.",
+      "cta": "See how →"
     }
   ]
 }

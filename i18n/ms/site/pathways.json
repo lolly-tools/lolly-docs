@@ -1,30 +1,38 @@
 {
-  "title": "Tiga cara untuk bermula",
-  "lead": "Mulakan dengan [Quickstart](/info/quickstart.html) - masukkan jenama anda dan hasilkan fail pertama anda - kemudian ikuti laluan yang paling sesuai dengan anda.",
+  "title": "Pintu masuk",
+  "lead": "Pilih satu pintu, atau terus mula mencipta di bawah.",
   "cards": [
     {
-      "href": "/info/creators.html",
+      "href": "/info/make-something.html",
       "icon": "media",
+      "eyebrow": "Mula di sini",
+      "name": "Terus cipta sesuatu",
+      "desc": "Tiga kerja harian, siap dalam kira-kira seminit setiap satu. Tiada akaun, tiada persediaan.",
+      "cta": "Mula →"
+    },
+    {
+      "href": "/info/creators.html",
+      "icon": "tool",
       "eyebrow": "Untuk Pencipta",
       "name": "Cipta sesuatu",
-      "desc": "Fail siap dalam beberapa saat - tanpa alat reka bentuk, tanpa menunggu. Kelebihannya, dan cara mendapat manfaat penuh daripada aplikasi ini.",
+      "desc": "Fail siap dalam beberapa saat, dan cara mendapat manfaat penuh daripada aplikasi ini.",
       "cta": "Terokai →"
     },
     {
       "href": "/info/builders.html",
       "icon": "developers",
       "eyebrow": "Untuk Pembina",
-      "name": "Cipta & Integrasikan",
-      "desc": "Cipta alat, jalankannya melalui CLI, MCP, atau ejen, dan lancarkan platform ini. Dokumentasi teknikal.",
+      "name": "Bina & automasikan",
+      "desc": "Cipta alat, jalankannya melalui CLI, MCP atau ejen, dan lancarkan platform ini.",
       "cta": "Baca dokumentasi →"
     },
     {
       "href": "/info/operators.html",
       "icon": "security",
       "eyebrow": "Untuk Operator",
-      "name": "Laksanakan dengan selamat",
-      "desc": "Strategi pencegahan kehilangan data pertahanan-berlapis yang menyamar sebagai platform kreatif. Strategi, keselamatan, dan penerimaan pakai.",
-      "cta": "Lihat strategi →"
+      "name": "Laksanakannya",
+      "desc": "Strategi keselamatan yang kebetulan juga sebuah platform kreatif. Pelaksanaan, tadbir urus dan penerimaan pakai.",
+      "cta": "Lihat caranya →"
     }
   ]
 }

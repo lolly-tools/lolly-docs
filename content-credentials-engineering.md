@@ -141,7 +141,7 @@ Report verdict semantics (surfaced by the `/verify` view):
 same verifier, same report; `--trust-anchor` loads PEM → DER and appends to
 `trustAnchors`, and `--deep` adds the neural pixel-watermark scan (browser tier). The default anchor set is the **Lolly CA root plus the vendored C2PA
 known-certificate list**, identical to the web `/valid` view and to MCP's `lolly_verify`
-(plans/73-cli-ga-contract.md §12 O1) - so a Lolly-CA-signed export reads the same on every
+([plans/73-cli-ga-contract.md](https://github.com/lolly-tools/lolly/blob/main/plans/73-cli-ga-contract.md), section 12 O1) - so a Lolly-CA-signed export reads the same on every
 surface. `--no-default-anchors` drops both built-in sets for a bare-trust check, and
 every report prints which set produced the verdict.
 

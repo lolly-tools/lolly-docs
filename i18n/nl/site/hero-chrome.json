@@ -1,8 +1,5 @@
 {
   "statement": "Contentsoevereiniteit",
-  "pilotTag": "Prototype",
-  "pilotText": "Gesloten pilot in uitvoering · wordt gehard voor enterprise-schaal",
-  "pilotAriaLabel": "Lolly is een intern prototype in een gesloten pilot, dat wordt gehard voor enterprise-schaal",
   "ctas": [
     {
       "href": "/",
@@ -16,11 +13,11 @@
     }
   ],
   "trustChips": [
-    "100% gratis",
-    "Geen cookies",
-    "Geen aanmelding nodig",
+    "Altijd gratis",
     "Open source",
-    "Privacy voorop"
+    "Geen account",
+    "Geen cookies",
+    "Stuurt niets terug"
   ],
-  "toolCountSuffix": "Komt met {count} voorbeelden"
+  "toolCountSuffix": "tools klaar voor gebruik"
 }

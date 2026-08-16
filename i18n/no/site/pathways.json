@@ -1,30 +1,38 @@
 {
-  "title": "Tre veier inn",
-  "lead": "Begynn med [Hurtigstart](/info/quickstart.html) - få merkevaren inn og den første filen ut - følg deretter veien som passer deg.",
+  "title": "Veier inn",
+  "lead": "Velg en dør, eller bare begynn å lage noe nedenfor.",
   "cards": [
     {
-      "href": "/info/creators.html",
+      "href": "/info/make-something.html",
       "icon": "media",
+      "eyebrow": "Start her",
+      "name": "Bare lag noe",
+      "desc": "Tre hverdagsoppgaver, hver ferdig på omtrent ett minutt. Ingen konto, ingen oppsett.",
+      "cta": "Sett i gang →"
+    },
+    {
+      "href": "/info/creators.html",
+      "icon": "tool",
       "eyebrow": "For skapere",
       "name": "Lag ting",
-      "desc": "Ferdige filer på sekunder - ingen designverktøy, ingen venting. Fordelene, og hvordan du får mest ut av appen.",
+      "desc": "Ferdige filer på sekunder, og hvordan du får mest ut av appen.",
       "cta": "Utforsk →"
     },
     {
       "href": "/info/builders.html",
       "icon": "developers",
       "eyebrow": "For utviklere",
-      "name": "Lag og integrer",
-      "desc": "Lag verktøy, styr dem fra CLI, MCP eller en agent, og distribuer plattformen. Den tekniske dokumentasjonen.",
+      "name": "Bygg og automatiser",
+      "desc": "Lag verktøy, styr dem fra CLI, MCP eller en agent, og distribuer plattformen.",
       "cta": "Les dokumentasjonen →"
     },
     {
       "href": "/info/operators.html",
       "icon": "security",
       "eyebrow": "For driftsansvarlige",
-      "name": "Rull det ut trygt",
-      "desc": "En dybdeforsvarsstrategi mot datatap forkledd som en kreativ plattform. Strategi, sikkerhet og innføring.",
-      "cta": "Se strategien →"
+      "name": "Rull det ut",
+      "desc": "En sikkerhetsstrategi som tilfeldigvis også er en kreativ plattform. Utrulling, styring og innføring.",
+      "cta": "Se hvordan →"
     }
   ]
 }

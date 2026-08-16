@@ -1,30 +1,38 @@
 {
-  "title": "Trzy sposoby na start",
-  "lead": "Zacznij od [Szybki start](/info/quickstart.html) - wgraj swoją markę i wyeksportuj pierwszy plik - a potem wybierz ścieżkę, która najbardziej ci pasuje.",
+  "title": "Od czego zacząć",
+  "lead": "Wybierz drzwi albo po prostu zacznij tworzyć poniżej.",
   "cards": [
     {
-      "href": "/info/creators.html",
+      "href": "/info/make-something.html",
       "icon": "media",
+      "eyebrow": "Zacznij tutaj",
+      "name": "Po prostu coś zrób",
+      "desc": "Trzy codzienne zadania, każde gotowe w mniej więcej minutę. Bez konta, bez konfiguracji.",
+      "cta": "Ruszaj →"
+    },
+    {
+      "href": "/info/creators.html",
+      "icon": "tool",
       "eyebrow": "Dla twórców",
       "name": "Twórz rzeczy",
-      "desc": "Gotowe pliki w kilka sekund - bez narzędzi projektowych, bez czekania. Zalety i sposoby na jak najlepsze wykorzystanie aplikacji.",
+      "desc": "Gotowe pliki w kilka sekund i sposoby na jak najlepsze wykorzystanie aplikacji.",
       "cta": "Odkryj →"
     },
     {
       "href": "/info/builders.html",
       "icon": "developers",
       "eyebrow": "Dla deweloperów",
-      "name": "Twórz i integruj",
-      "desc": "Twórz narzędzia, uruchamiaj je z CLI, MCP lub agenta i wdrażaj platformę. Dokumentacja techniczna.",
+      "name": "Twórz i automatyzuj",
+      "desc": "Twórz narzędzia, uruchamiaj je z CLI, MCP lub agenta i wdrażaj platformę.",
       "cta": "Przeczytaj dokumentację →"
     },
     {
       "href": "/info/operators.html",
       "icon": "security",
       "eyebrow": "Dla operatorów",
-      "name": "Wdrażaj bezpiecznie",
-      "desc": "Wielowarstwowa strategia zapobiegania utracie danych, udająca platformę kreatywną. Strategia, bezpieczeństwo i wdrożenie.",
-      "cta": "Zobacz strategię →"
+      "name": "Wdróż u siebie",
+      "desc": "Strategia bezpieczeństwa, która przy okazji jest platformą kreatywną. Wdrożenie, nadzór i adopcja.",
+      "cta": "Zobacz, jak to działa →"
     }
   ]
 }

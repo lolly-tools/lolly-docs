@@ -1,8 +1,5 @@
 {
   "statement": "Inhaltssouveränität",
-  "pilotTag": "Prototyp",
-  "pilotText": "Pilotbetrieb mit ausgewählten Kunden. Optimierung und Skalierung.",
-  "pilotAriaLabel": "Lolly ist ein interner Prototyp im Pilotbetrieb mit ausgewählten Kunden und wird laufend optimiert und skaliert",
   "ctas": [
     {
       "href": "/",
@@ -16,11 +13,11 @@
     }
   ],
   "trustChips": [
-    "100 % kostenlos",
-    "Keine Cookies",
-    "Keine Registrierung",
+    "Für immer kostenlos",
     "Open Source",
-    "Datenschutz zuerst"
+    "Kein Konto",
+    "Keine Cookies",
+    "Meldet nichts zurück"
   ],
-  "toolCountSuffix": "Beispiel-Tools geladen"
+  "toolCountSuffix": "Tools bereit"
 }

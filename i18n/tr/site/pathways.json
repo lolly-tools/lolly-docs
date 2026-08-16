@@ -1,30 +1,38 @@
 {
-  "title": "Başlamanın üç yolu",
-  "lead": "[Quickstart](/info/quickstart.html) ile başla - markanı ekle ve ilk dosyanı çıkar - sonra sana uyan yolu izle.",
+  "title": "Giriş yolları",
+  "lead": "Bir kapı seç ya da aşağıdan doğrudan üretmeye başla.",
   "cards": [
     {
-      "href": "/info/creators.html",
+      "href": "/info/make-something.html",
       "icon": "media",
+      "eyebrow": "Buradan başla",
+      "name": "Hemen bir şey yap",
+      "desc": "Üç günlük iş, her biri yaklaşık bir dakikada biter. Hesap yok, kurulum yok.",
+      "cta": "Başla →"
+    },
+    {
+      "href": "/info/creators.html",
+      "icon": "tool",
       "eyebrow": "Yaratıcılar İçin",
       "name": "Bir şeyler yap",
-      "desc": "Saniyeler içinde bitmiş dosyalar - tasarım aracı yok, bekleme yok. Avantajlar ve uygulamadan en iyi şekilde nasıl yararlanılacağı.",
+      "desc": "Saniyeler içinde bitmiş dosyalar ve uygulamadan en iyi şekilde nasıl yararlanılacağı.",
       "cta": "Keşfet →"
     },
     {
       "href": "/info/builders.html",
       "icon": "developers",
       "eyebrow": "Geliştiriciler İçin",
-      "name": "Yaz ve entegre et",
-      "desc": "Araçlar yaz, onları CLI, MCP ya da bir ajandan çalıştır ve platformu dağıt. Teknik dokümantasyon.",
+      "name": "Yaz ve otomatikleştir",
+      "desc": "Araçlar yaz, onları CLI, MCP ya da bir ajandan çalıştır ve platformu dağıt.",
       "cta": "Dokümanları oku →"
     },
     {
       "href": "/info/operators.html",
       "icon": "security",
       "eyebrow": "Operatörler İçin",
-      "name": "Güvenle devreye al",
-      "desc": "Yaratıcı bir platform kılığına girmiş, çok katmanlı bir veri kaybı önleme stratejisi. Strateji, güvenlik ve benimseme.",
-      "cta": "Stratejiyi gör →"
+      "name": "Devreye al",
+      "desc": "Aynı zamanda yaratıcı bir platform olan bir güvenlik stratejisi. Devreye alma, yönetişim ve benimseme.",
+      "cta": "Nasıl olduğunu gör →"
     }
   ]
 }

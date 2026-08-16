@@ -1,132 +1,128 @@
 # FAQ
 
-Întrebări frecvente afișate în acordeonul de pe pagina de start `/info`.
+Întrebări frecvente afișate în acordeonul de pe pagina de destinație `/info`.
 
 **Cum se întreține:** fiecare titlu `##` de mai jos este o întrebare; tot ce se află sub el
 (până la următorul `##`) este răspunsul. Răspunsurile folosesc același markdown simplu ca
-restul site-ului - paragrafele se separă printr-o linie goală. Adaugă, elimină sau
+restul site-ului - separă paragrafele cu o linie goală. Adaugă, șterge sau
 reordonează întrebările aici și rulează din nou `npm run build:info` (sau `npm run dev:web`).
 Tot ce se află deasupra primului `##` (acest titlu și aceste note) este ignorat de build.
 
-## Ce se întâmplă când activez opt-in-ul pe pagina /profile?
+## Ce se întâmplă când îmi dau acordul pe pagina /profile?
 
-Când folosești Lolly pentru prima dată, tot ce scrii oriunde este complet privat, până când vrei în mod deliberat ca acea informație să iasă în lume, prin media sau printr-un link de partajare (dacă ești online).
+Când folosești Lolly prima dată, tot ce scrii oriunde rămâne complet privat până când vrei tu, în mod deliberat, ca informația să iasă în lume printr-un fișier media sau un link de partajare (dacă ești online).
 
-Cu opt-in-ul selectat, integrăm o parte din informațiile din profilul tău ca proveniență în resurse și pachete, pentru a te identifica drept sursă.
+Cu acordul activat, detaliile de profil pe care le alegi sunt sigilate în ceea ce creezi, indicându-te ca sursă. Nimic nu este inclus fără să alegi tu.
 
-Lolly produce un volum mare de conținut. Adoptăm o abordare strictă de minimizare a datelor, pentru a preveni riscurile.
+Lolly produce un volum mare de conținut. Adoptăm o abordare strictă de minimizare a datelor, ca să prevenim riscurile.
 
-### Ce sunt feature flag-urile?
+## Ce sunt feature flags?
 
-![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&dark=1&filename=pd-feature-flags)
+Feature flags activează sau dezactivează părți din Lolly. De obicei le controlează un administrator - în Lolly, controlul îl ai tu.
 
-Feature flag-urile activează sau dezactivează părți din Lolly. De obicei, un administrator controlează acest lucru - cu Lolly, tu ai controlul.
+![Fiecare feature flag este un comutator care îți aparține, aflat în propriul tău profil, nu în consola unui administrator](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&dark=1&filename=pd-feature-flags)
 
-## Cum obțin aplicațiile mobile sau desktop?
+## Cum obțin aplicațiile pentru mobil sau desktop?
 
-Oricine își poate distribui propriile aplicații; instrumentele și configurația acestor aplicații ar trebui să varieze mult, în funcție de publicul căruia îi sunt destinate. Așadar, nu există o singură aplicație unică, decât dacă ai construit-o tu sau ți-a dat-o cineva relevant.
+Oricine își poate distribui propriile aplicații, iar instrumentele și configurația acestor aplicații ar trebui să difere mult în funcție de publicul căruia i se adresează. Deci nu există o singură aplicație, decât dacă ai făcut-o tu sau ți-o dă cineva relevant.
 
-## De ce numele „Lolly Tools”?
+## De ce numele "Lolly Tools"?
 
-**Lolly** Pentru că libertatea e dulce.
-**Tools** sunt inactive când nu sunt folosite. Nu te spionează, nu rulează programe secrete, 
-Pune-le la treabă - comenzile tale, acțiunile tale, condițiile tale.
+**Lolly** pentru că libertatea este dulce și pentru că în Australia, Noua Zeelandă și Marea Britanie "lolly" înseamnă bomboană.
 
-**Lolly** este un termen australian, neozeelandez și britanic pentru „dulciuri” sau „bomboane”. Exact ca bomboanele, instrumentele sunt foarte apetisante pentru oamenii care au nevoie de ele.
+**Tools** pentru că o unealtă stă nemișcată până când o iei în mână. Nu funcționează când nu o folosești și nu te supraveghează cât timp o folosești.
 
-De asemenea, râdem de timpul și de costurile pe care le economisim cu această abordare.
-
-## Ce obstacole aș putea întâlni la adoptarea Lolly?
+## La ce obstacole mă pot aștepta când adopt Lolly?
 
 Lolly se integrează oriunde generezi deja fișiere - CLI-ul este același motor
-ca și Aplicația, așa că o rulare de pipeline la ora 2 dimineața nu se poate abate de la ce
-previzualizează o persoană într-un browser. Frecarea la adoptare este rareori tehnică;
-este organizațională. Așteaptă-te la următoarele:
+ca aplicația, așa că o rulare de pipeline la 2 noaptea nu se poate abate de la ce vede cineva
+în previzualizare, într-un browser. Frecarea la adopție este rareori tehnică; este organizațională. Așteaptă-te la:
 
-**Un catalog de brand organizat trebuie creat.** Lolly este o platformă, nu un
-pachet finit al șabloanelor tale. Pentru o *implementare guvernată*, cineva definește
-catalogul comun de resurse (logo-uri, palete, fonturi ca ID-uri permanente) și scrie
-manifestul + template-ul pentru fiecare tip de rezultat. Totuși, persoanele individuale
-nu trebuie să aștepte asta - în aplicația deschisă, oricine își poate include propriile
-fișiere în catalog și poate construi instrumente în Design chiar din prima zi.
+**Trebuie creat un catalog de brand curatoriat.** Lolly este o platformă, nu un
+pachet gata făcut cu șabloanele tale. Pentru o *implementare guvernată*, cineva definește catalogul comun
+de resurse (logouri, palete, fonturi ca ID-uri permanente) și scrie manifestul +
+șablonul pentru fiecare tip de rezultat. Persoanele individuale nu trebuie totuși să aștepte asta - în
+aplicația deschisă oricine își poate încărca propriile fișiere în catalog și poate construi instrumente în
+Design din prima zi.
 
-**Guvernanța prin git este opțională - și neobișnuită pentru cei care nu sunt ingineri.**
-Dacă rulezi un catalog *comun, controlat*, „review-ul de PR *este* moderarea” este elegant
-pentru ingineri, dar neobișnuit pentru majoritatea echipelor de brand și marketing. Dacă
-persoanele care dețin deciziile de brand nu trăiesc în git, vei avea nevoie de un flux de
-lucru care să facă legătura - sau IT-ul devine, tacit, partenerul strategic de design și
-gardianul instituțional mai larg (preferat de mulți în medii de producție care rulează de
-mult timp). Echipele care nu își doresc acest lucru pur și simplu îl omit.
+**Nu ai nevoie de git ca să contribui.** Designerii își fac propriile instrumente și șabloane
+în aplicație, apoi le împart cu colegii sau le trimit celui care deține
+instalarea, pentru a fi incluse implicit.
 
-**Este îngust în mod deliberat - prezintă-l așa.** Lolly nu este pentru conținut
-personalizat sau hero. *Este* DAM-ul tău personal - hidratat și super-alimentat de sistemul
-tău de design, instrumentele și catalogul tău - și *chiar are* un canvas deschis (Design), dar chiar și acolo culorile, tipografia și resursele respectă valorile globale de
-design active, astfel încât aranjarea liberă rămâne în interiorul sistemului. Judecat față
-de Figma sau Canva, va părea limitat. Judecat pentru ceea ce este - generare de resurse
-operaționalizată, recurentă, la scară masivă - nimic nu se compară. Încadrarea greșită este
-cel mai frecvent obstacol.
+**Este restrâns în mod deliberat - prezintă-l ca atare.** Lolly nu este pentru conținut la comandă
+sau de tip vedetă. *Este* propriul tău DAM - alimentat și potențat de sistemul tău de design,
+de instrumente și de catalog - și *are* un canvas deschis (Design), dar
+și acolo culorile, tipografia și resursele respectă variabilele globale de design active, așa că aranjarea
+liberă rămâne în interiorul sistemului. Comparat cu Figma sau Canva, va părea
+limitat. Judecat pentru ceea ce este - generare de resurse operaționalizată,
+recurentă, la scară masivă - nimic nu îl concurează. Încadrarea greșită este cel mai frecvent obstacol.
 
-**Managementul schimbării pe partea de producție.** Procesele existente funcționează
-astăzi, chiar dacă rezultatul nu respectă brandul. Redirecționarea lor către motor înseamnă
-re-testare și re-învățare, iar „putem deja să facem fișiere” devine scuza pentru a nu migra.
-Începe prin a converti un singur rezultat de producție, vizibil și de calitate, și arată
-comparația înainte/după, una lângă alta.
+**Managementul schimbării de partea celor care produc.** Procesele existente funcționează azi, chiar dacă
+rezultatul nu respectă brandul. Redirecționarea lor către motor înseamnă retestare și reînvățare,
+iar "putem face deja fișiere" devine scuza de a nu migra. Începe prin a converti
+un singur rezultat de calitate de producție, cu vizibilitate mare, și arată alăturat înainte/după.
 
-Lolly ridică totul la un nivel superior.
+Lolly ridică ștacheta peste tot.
 
 
-## Ce diferențiază utilitarele de instrumente?
+## Prin ce se deosebesc utilitarele de instrumente?
 
-![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1)
+**Răspunsul simplu →** Utilitarele nu au întotdeauna nevoie să randeze și de aceea pot avea un UX diferit. 
 
-**Răspuns simplu →** Utilitarele nu trebuie mereu să randeze și, prin urmare, pot avea o UX diferită. 
+**Răspunsul real →** Motivul pentru care utilitarele pot fi găzduite în Lolly Tools este să adauge încă un "strat de comoditate" de apărare, care să descurajeze exfiltrarea de date. 
 
-**Răspuns real →** Motivul pentru care utilitarele pot fi găzduite în Lolly Tools este să adauge încă un „strat de comoditate” de apărare, care descurajează exfiltrarea de date. 
+De ce? Pentru că se știe că, zilnic, oamenii iau **conținut confidențial pe care îl au deja** și îl dau unui
+site oarecare pentru o singură operațiune mecanică măruntă:
 
-De ce? Pentru că se știe că, în fiecare zi, oamenii iau **conținut confidențial pe care îl au deja** și îl predau unui
-site web oarecare, pentru a efectua o singură operațiune mecanică mică:
+- "**Comprimă acest PDF**" → încarcă un contract / fluturaș de salariu / prezentare de consiliu către entități necunoscute.
+- "**convertește HEIC în JPG**" → încarcă fotografii personale (cu GPS EXIF) pe o gazdă finanțată din reclame
+- "**decupează / redimensionează această imagine**" → încarcă o captură a unui produs sau o resursă nelansată
+- "**formatează acest JSON**" / "decodează acest JWT" → lipește răspunsuri de API, token-uri și secrete într-un instrument de formatare
+- "**unește aceste PDF-uri**" → încarcă **două documente care nu ar trebui să stea niciodată pe același server**
 
-- „**Comprimă acest PDF**” → încarcă un contract / un fluturaș de salariu / o prezentare pentru consiliul de administrație către entități necunoscute.
-- „**convertește HEIC în JPG**” → încarcă fotografii personale (cu EXIF GPS) pe o gazdă finanțată prin reclame
-- „**decupează / redimensionează această imagine**” → încarcă o captură de ecran a unui produs sau o resursă nelansată
-- „**formatează acest JSON**” / „decodează acest JWT” → lipește răspunsuri API, tokenuri, secrete într-un instrument de formatare
-- „**combină aceste PDF-uri**” → încarcă **două documente care nu ar trebui niciodată să partajeze un server**
+Aceste site-uri și lunga lor coadă de clone **nu sunt de încredere în mod implicit**: retenție
+necunoscută, jurisdicții necunoscute, subprocesatori necunoscuți și un model de afaceri bazat pe
+reclame/afiliere, care are toate motivele să păstreze ce le dai. Operațiunea este
+banală; **conținutul este prețul.** 
 
-Aceste site-uri și lunga lor listă de clone masive sunt **nedemne de încredere în mod implicit** - cu
-retenție necunoscută, jurisdicții necunoscute, subprocesatori necunoscuți și un model de afaceri
-bazat pe reclame/afiliere, care are tot interesul să păstreze ce îi dai. Operațiunea este
-trivială; **conținutul este costul.** 
+Câștigăm războiul guvernanței prin comoditate și servicii excelente. 
 
-Câștigăm războiul pentru guvernanță prin comoditate și servicii excelente. 
+![Vederea Utilitare adună sarcinile mecanice pe care oamenii le dau de obicei unui site oarecare, toate rulând în schimb în Lolly](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1)
 
 ## Poate Lolly să editeze și să randeze fișierele mele Figma, Penpot, Illustrator sau InDesign?
 
-![Design's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+Da. Deschide **Design** și apasă **Import a design** (Importă un design): acceptă un fișier nativ Figma **.fig** (Save local copy), un export Penpot **.penpot**, un Illustrator **.ai** sau **.pdf**, un InDesign **.idml** (File → Export → InDesign Markup) sau **orice SVG** (ușa largă - aproape orice aplicație de design îl exportă). Fără cont, fără plugin și fără licență de aplicație de design.
 
-Da. Deschide **Design** și dă click pe **Importă un design**: acceptă un fișier Figma nativ **.fig** (Salvează o copie locală), un export Penpot **.penpot**, un fișier Illustrator **.ai** sau **.pdf**, un fișier InDesign **.idml** (Fișier → Export → InDesign Markup), sau **orice SVG** (ușa largă - aproape orice aplicație de design îl poate exporta). Totul este analizat integral pe dispozitivul tău, fără a fi nevoie de cont sau plugin.
+![Canvasul deschis din Design, unde Import a design se află în bara de instrumente](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
-Straturile ajung ca niște casete editabile pe canvas-ul deschis: textul rămâne re-editabil, formele rămân forme, imaginile se alătură bibliotecii tale de pe dispozitiv, iar tipografia și culorile respectă valorile globale de brand. Salvează-l și layout-ul devine un template reutilizabil, adresabil prin URL, pe care oricine cu Lolly îl poate reumple - și poți combina instrumente live (un cod QR, un grafic) care se re-randează la încărcare. De acolo, se randează ca orice altceva în Lolly - SVG, PDF, PNG și restul, reproductibil din URL-ul său. Vezi [Importă un design](/info/design-import.html).
+Straturile ajung ca niște casete editabile pe canvasul deschis: textul rămâne rescriabil, formele rămân forme, imaginile intră în propria ta bibliotecă de imagini, iar tipografia și culorile respectă variabilele globale ale brandului. Salvează-l și macheta devine un șablon reutilizabil, adresabil prin URL, pe care oricine are Lolly îl poate reumple - și poți amesteca în el instrumente vii (un cod QR, un grafic) care se re-randează la încărcare. De acolo se randează ca orice altceva în Lolly - SVG, PDF, PNG și restul, reproductibil din URL-ul său. Vezi [Importă un design](/info/design-import.html).
 
-## Ce se întâmplă pe 29 august?
+## Pot să îmi partajez lucrarea ca fișier în loc de link?
 
-Instrumentele cu branding SUSE părăsesc proiectul, iar noi instrumente generice de exemplu, definite de utilizator, le iau locul.
+Da. Când un link nu poate duce tot (fotografiile tale, texte lungi), dialogul Share spune exact ce s-ar pierde și oferă în schimb un fișier **.lolly**: un singur fișier care conține designul, imaginile pe care le folosește și, dacă vrei, instrumentul în sine. Tu decizi cât călătorește - numele și datele tale intră doar dacă profilul tău își dă acordul, arta licențiată este reținută dacă nu o incluzi tu, iar cine deschide un fișier care poartă un instrument este întrebat dacă are încredere în el înainte ca acesta să poată rula. Vezi [Partajarea lucrărilor tale](/info/using.html#sharing-your-work).
 
-SUSE va opera propriul Lolly, pentru a-și proteja mărcile înregistrate.
+## Pot două persoane să lucreze la același design fără internet?
 
-## Cât păstrează SUSE privat? (cunoscută și ca: când vine rug-pull-ul)
+Da. O persoană trimite o invitație (un link, un cod QR sau un cod scurt), cealaltă o acceptă și ambele dispozitive țin aceeași sesiune live - prezență, inele de focalizare și tot restul. Funcționează în orice rețea comună, inclusiv pe un hotspot de telefon dintr-o pivniță, pentru că nu există niciun server la mijloc. Vezi [Lucrul împreună](/info/collaborate.html).
 
-Mărcile înregistrate și instrumentele cu branding SUSE sunt doar pentru demonstrație, până pe 29 august. Poți găsi o instanță nebrandată a Lolly la [lolly.ART](https://lolly.art).
+## Unde au dispărut instrumentele cu brand SUSE?
 
-SUSE este o companie de infrastructură enterprise open source, cu peste trei decenii de leadership de platformă. Produsele sale includ soluții de infrastructură Linux, Cloud Native, Edge și IA, la nivel enterprise.
+Se află deja într-un depozit separat, privat. O clonă publică nu descarcă deloc pachetul de brand SUSE, așa că un build public rulează profilul neutru `lolly-start` - instrumentele comunitare, independente de brand, plus un brand gol pe care îl completezi cu al tău. SUSE își operează propria instanță pentru a-și proteja mărcile înregistrate.
 
-Din perspectiva SUSE, este vorba despre a-ți respecta cuvântul în privința suveranității și securității. La ora actuală, probabilitatea ca SUSE să transforme Lolly într-un produs comercial este aproape absolut zero.
+## De ce este gratuit? Unde e șmecheria?
 
-Transparență completă: SUSE *chiar* construiește instrumente interne pentru a integra Lolly în sistemele sale IT - asta ține de configurația internă a SUSE, nu de dezvoltarea publică versus privată.
+**Am construit Lolly pentru noi.** SUSE avea nevoie de mii de fișiere conforme cu brandul, fiecare cu numele sigilat înăuntru, făcute fără a preda nimic unor servicii externe. Așa că am construit un instrument care face totul pe dispozitiv și l-am lansat ca open source, ca tot ce facem. Îl întreținem în continuare pentru că îl folosim zilnic. **Nu există nicio obligație:** tot ce e aici funcționează cu sau fără noi.
 
-Vorbind despre partea publică, Lolly își propune să fie construit prin [Open Build Service](https://openbuildservice.org/), cu artefacte securizate de lanț de aprovizionare livrate de [SUSE Application Collection](https://apps.rancher.io/applications).
+Linia aceasta este trasată în licență, nu într-o promisiune: tot ce rulează local este gratuit, pentru totdeauna. O versiune care a fost lansată este licențiată astfel încât nu poate fi retrasă și nu există niciun acord de contribuitor care să poată relicenția munca cuiva. Vezi [poziționarea](/info/positioning.html) pentru declarația completă.
 
-Vom construi cât mai mult posibil în mod deschis - pur și simplu nu vei mai vedea multă vreme instrumente cu branding SUSE, și nici forța de muncă internă și procesele comerciale ale SUSE, care nu au legătură cu Lolly.
+## Cât păstrează SUSE privat? (adică, când se trage covorul de sub picioare)
 
-## Ce aromă are logo-ul Lolly?
+Motorul, shell-urile, schemele și instrumentele independente de brand sunt open source; mărcile înregistrate SUSE și instrumentele cu brand sunt partea care rămâne privată și sunt deja separate. Poți găsi o instanță fără brand a lui Lolly la [lolly.ART](https://lolly.art).
 
-Unii spun Lime, alții spun Mentă, iar uneori Măr - Lolly aduce dulceața, tu faci aroma să prindă viață!
+Granița este structurală, nu promisă. Fiecare versiune lansată este open source și nu poate fi retrasă, nu există niciun acord de contribuitor care să poată relicenția munca cuiva, iar singurul lucru păstrat deoparte este marca înregistrată. Când o altă companie și-a închis sursele Linux pentru întreprinderi în 2023, SUSE a cofondat [OpenELA](https://openela.org) pentru a menține acel cod deschis - aceeași poziție pe care o moștenește acest proiect.
+
+Transparență totală: SUSE *chiar* dezvoltă instrumente interne pentru a integra Lolly în sistemele sale IT - asta ține de configurarea internă a SUSE, nu de dezvoltare publică vs. privată. Lolly își propune de asemenea să fie construit prin [Open Build Service](https://openbuildservice.org/), cu artefacte securizate de lanț de aprovizionare livrate de [SUSE Application Collection](https://apps.rancher.io/applications).
+
+## Ce aromă are logoul Lolly?
+
+Unii spun Lime, alții Mentă și uneori Măr; Lolly aduce dulceața, tu creezi aroma!

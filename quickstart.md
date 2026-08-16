@@ -4,7 +4,7 @@ Lolly turns your rules - colours, type, layouts, logic - into tools anyone can u
 
 This is the one page to read first. Two things get you productive: **make Lolly yours** and **bring in what you already have** (your design files and tokens). Everything else is a link away.
 
-> New to Lolly and just want to make something? [Open the app](/#/), pick any tool from the gallery, fill in the blanks and hit **Render**. Come back here when you want it wearing *your* brand.
+> New to Lolly and just want to make something? [Make something in 60 seconds](/info/make-something.html) walks you through three, or [open the app](/#/), pick any tool from the gallery, fill in the blanks and hit **Export**. Come back here when you want it wearing *your* brand.
 
 ![The Utilities view - the on-device workhorses like Strip Hidden Data, Compress PDF and Convert Image, all in one place](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1)
 
@@ -14,7 +14,7 @@ Your brand in Lolly is a small **design-tokens** document - colours, fonts and a
 
 ### Start from scratch (the design system builder)
 
-First run drops you on the **gallery**, with a short welcome dialog over it offering three ways in - **Make it yours** (the Brand Studio at `#/start`), **Bring your design** (drop a Figma, Penpot, InDesign or PDF file and it opens as an editable layout - the fastest route to §2 below) and **Explore the community tools** - plus a row of languages if English isn't yours. Take the first card and you land in the [**Brand Studio**](/info/brand-studio.html). Give it a name and a primary colour and Lolly *derives* a complete, accessible palette from it - light/dark surfaces, text, accents - using the same colour maths the engine uses everywhere else.
+First run drops you on the **gallery**, with a short welcome dialog over it offering three ways in - **Make it yours** (the Brand Studio at `#/start`), **Bring your design** (drop a Figma, Penpot, InDesign or PDF file and it opens as an editable layout - the fastest route to [Bring in what you already have](#2-bring-in-what-you-already-have) below) and **Explore the community tools** - plus a row of languages if English isn't yours. Take the first card and you land in the [**Brand Studio**](/info/brand-studio.html). Give it a name and a primary colour and Lolly *derives* a complete, accessible palette from it - light/dark surfaces, text, accents - using the same colour maths the engine uses everywhere else.
 
 ![The Brand Studio's Colours room - a primary colour, and the accessible palette Lolly derives from it](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours) Pick a font, and you have a working brand in under a minute. From there the studio's six rooms - Overview, Colours, Type, Logos, Tokens, Files - let you take it as far as you like, in any order, refining any of it whenever you come back. The dashboard's **Design system** tab (`#/d`) shows the result read-only and points back at `#/start`, which is where the editing happens (unless you're on a brand-locked build of Lolly, where the brand is fixed and there's nothing to change).
 

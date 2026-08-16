@@ -1,271 +1,268 @@
 WEBVTT
 
-00:00:00.393 --> 00:00:03.308
+00:00:00.390 --> 00:00:03.288
 The technical documentation - for anyone
 
-00:00:03.369 --> 00:00:06.702
+00:00:03.348 --> 00:00:06.706
 who authors tools, integrates Lolly into a
 
-00:00:06.765 --> 00:00:10.129
+00:00:06.770 --> 00:00:10.114
 pipeline, self-hosts it, or extends the
 
-00:00:10.191 --> 00:00:11.519
+00:00:10.176 --> 00:00:11.494
 platform.
 
-00:00:12.302 --> 00:00:14.794
+00:00:12.279 --> 00:00:14.819
 What's in it for you.
 
-00:00:15.560 --> 00:00:18.461
+00:00:15.592 --> 00:00:18.520
 Build a tool once and the request stops
 
-00:00:18.523 --> 00:00:20.494
+00:00:18.583 --> 00:00:20.593
 coming back to you.
 
-00:00:21.269 --> 00:00:25.044
+00:00:21.372 --> 00:00:25.169
 The repetitive "can you just make me a…"
 
-00:00:25.809 --> 00:00:28.398
+00:00:25.937 --> 00:00:28.475
 that eats your afternoons becomes a
 
-00:00:28.487 --> 00:00:30.923
+00:00:28.565 --> 00:00:31.034
 template other people fill in themselves -
 
-00:00:30.984 --> 00:00:34.169
+00:00:31.095 --> 00:00:34.269
 correctly, without you in the loop.
 
-00:00:34.963 --> 00:00:39.692
+00:00:35.063 --> 00:00:39.845
 Your work is plain HTML/CSS/JS:
 
-00:00:39.767 --> 00:00:42.319
-version-controlled, diffable, reviewable,
+00:00:39.919 --> 00:00:42.321
+version-controlled, diffable, reviewable
 
-00:00:42.381 --> 00:00:44.936
+00:00:42.385 --> 00:00:45.018
 and running on an open engine with no
 
-00:00:44.998 --> 00:00:48.369
+00:00:45.079 --> 00:00:48.544
 vendor lock-in, so it stays yours.
 
-00:00:49.135 --> 00:00:51.933
+00:00:49.312 --> 00:00:52.121
 Automate the production run and your time
 
-00:00:51.994 --> 00:00:54.783
+00:00:52.182 --> 00:00:55.023
 goes to the interesting problem, not the
 
-00:00:54.866 --> 00:00:57.095
+00:00:55.103 --> 00:00:57.319
 ten-thousandth export.
 
-00:00:57.475 --> 00:01:09.725
+00:00:57.700 --> 00:01:09.900
 Lolly is a platform-agnostic engine that runs the same render path across several shells «web PWA, Tauri desktop/mobile, CLI, TUI».
 
-00:01:10.075 --> 00:01:20.400
+00:01:10.250 --> 00:01:20.625
 Tools are data, not bundled code - a manifest plus a template plus optional hooks - so new tools ship without an app update.
 
-00:01:20.750 --> 00:01:28.225
+00:01:20.975 --> 00:01:28.475
 Start with the Overview for the architecture, then follow the track that fits what you're building.
 
-00:01:28.989 --> 00:01:31.694
+00:01:29.241 --> 00:01:31.969
 New to the platform?
 
-00:01:32.452 --> 00:01:35.332
+00:01:32.731 --> 00:01:35.579
 The Quickstart gets a brand and your first
 
-00:01:35.392 --> 00:01:38.344
+00:01:35.639 --> 00:01:38.644
 render in place before you go deep.
 
-00:01:38.725 --> 00:01:42.475
+00:01:39.025 --> 00:01:42.700
 You're the multiplier in the relay.
 
-00:01:42.825 --> 00:02:04.875
+00:01:43.050 --> 00:02:05.300
 A creative authors a template «Lolly for Creators»; you take that exact tool and scale it - into a pipeline, a CLI batch or an MCP endpoint - so a non-designer can self-serve the finished asset offline, and an AI agent can run it at a volume no person would sit through.
 
-00:02:05.225 --> 00:02:10.425
+00:02:05.650 --> 00:02:10.900
 See where your work sits in The lifecycle of a campaign.
 
-00:02:11.518 --> 00:02:14.220
+00:02:11.990 --> 00:02:14.695
 Understand the architecture
 
-00:02:15.315 --> 00:02:17.671
+00:02:15.791 --> 00:02:18.243
 Overview - why Lolly exists, the
 
-00:02:17.763 --> 00:02:21.610
+00:02:18.337 --> 00:02:22.198
 engine/shell/tools separation, the
 
-00:02:21.672 --> 00:02:24.106
-capability bridge, and the settled
+00:02:22.260 --> 00:02:24.519
+capability bridge and the settled
 
-00:02:24.190 --> 00:02:26.344
+00:02:24.605 --> 00:02:26.769
 architectural commitments.
 
-00:02:27.109 --> 00:02:30.541
+00:02:27.535 --> 00:02:30.986
 Design Tokens - the DTCG token model
 
-00:02:30.601 --> 00:02:33.669
+00:02:31.047 --> 00:02:34.124
 brands are expressed in, and how tools
 
-00:02:33.729 --> 00:02:35.295
+00:02:34.185 --> 00:02:35.744
 consume them.
 
-00:02:36.431 --> 00:02:38.174
+00:02:36.877 --> 00:02:38.629
 Author tools
 
-00:02:39.148 --> 00:02:42.503
+00:02:39.597 --> 00:02:42.925
 Every control below was generated from a
 
-00:02:42.562 --> 00:02:45.520
+00:02:42.984 --> 00:02:45.920
 declared input in tool-json.
 
-00:02:46.295 --> 00:02:48.770
+00:02:46.693 --> 00:02:49.221
 You write the manifest line, the host
 
-00:02:48.833 --> 00:02:51.481
-draws the widget, and the same model
+00:02:49.281 --> 00:02:52.246
+draws the widget and the same model drives
 
-00:02:51.541 --> 00:02:54.545
-drives the CLI and the URL.
+00:02:52.296 --> 00:02:54.795
+the CLI and the URL.
 
-00:02:55.312 --> 00:02:58.969
+00:02:55.566 --> 00:02:59.268
 That scales further than five controls.
 
-00:02:59.737 --> 00:03:02.839
+00:03:00.032 --> 00:03:03.060
 Give an input a section and the host folds
 
-00:03:02.888 --> 00:03:06.858
+00:03:03.118 --> 00:03:07.035
 it away, so a fifty-input tool like the D3
 
-00:03:06.919 --> 00:03:10.584
+00:03:07.095 --> 00:03:10.748
 Chart Studio still opens as a short stack
 
-00:03:10.688 --> 00:03:14.169
+00:03:10.852 --> 00:03:14.295
 with the rest filed behind named groups.
 
-00:03:14.929 --> 00:03:17.202
+00:03:15.056 --> 00:03:17.366
 Authoring Tools - the full guide:
 
-00:03:17.278 --> 00:03:19.876
+00:03:17.446 --> 00:03:20.035
 manifest, template, styles, hooks,
 
-00:03:19.937 --> 00:03:22.344
-composition, and publishing.
+00:03:20.096 --> 00:03:22.419
+composition and publishing.
 
-00:03:23.109 --> 00:03:26.031
+00:03:23.187 --> 00:03:26.155
 Authoring Assets - catalog assets, tiers,
 
-00:03:26.091 --> 00:03:28.915
-locales, palettes, themable icons, and
+00:03:26.215 --> 00:03:28.893
+locales, palettes, themable icons and
 
-00:03:28.981 --> 00:03:30.069
+00:03:28.982 --> 00:03:30.069
 fonts.
 
-00:03:30.450 --> 00:03:44.675
+00:03:30.450 --> 00:03:44.650
 Host API - the HostV1 capability bridge every tool is written against «the portable API tools are written against - note hooks are not sandboxed, see Authoring Tools».
 
-00:03:45.439 --> 00:03:49.748
+00:03:45.416 --> 00:03:49.732
 URL Mode - every input as a URL parameter;
 
-00:03:49.810 --> 00:03:52.663
+00:03:49.795 --> 00:03:52.637
 reserved params, compact encoding, packed
 
-00:03:52.725 --> 00:03:53.769
+00:03:52.699 --> 00:03:53.744
 links.
 
-00:03:54.915 --> 00:03:57.157
+00:03:54.884 --> 00:03:57.135
 Run & integrate
 
-00:03:58.101 --> 00:04:00.861
+00:03:58.082 --> 00:04:00.880
 CLI - headless rendering; the same render
 
-00:04:00.928 --> 00:04:05.470
+00:04:00.949 --> 00:04:05.569
 path as the GUI, driven by --foo=bar argv.
 
-00:04:06.233 --> 00:04:09.619
+00:04:06.336 --> 00:04:09.744
 TUI - the interactive terminal shell.
 
-00:04:10.386 --> 00:04:13.911
+00:04:10.509 --> 00:04:13.968
 MCP Server - the native endpoint that lets
 
-00:04:13.993 --> 00:04:17.844
+00:04:14.057 --> 00:04:17.944
 an AI agent discover and run tools.
 
-00:04:18.619 --> 00:04:22.167
+00:04:18.718 --> 00:04:22.286
 AI Agents - driving Lolly from a model: a
 
-00:04:22.247 --> 00:04:25.019
+00:04:22.368 --> 00:04:25.119
 URL is the API.
 
-00:04:25.779 --> 00:04:29.462
+00:04:25.887 --> 00:04:29.646
 Chrome Extension - capture a live URL as a
 
-00:04:29.524 --> 00:04:31.369
+00:04:29.710 --> 00:04:31.593
 reusable asset.
 
-00:04:32.533 --> 00:04:34.742
+00:04:32.748 --> 00:04:34.923
 Ship & operate it
 
-00:04:35.707 --> 00:04:38.363
+00:04:35.881 --> 00:04:38.548
 Build Guide - build every target: CLI,
 
-00:04:38.444 --> 00:04:40.844
+00:04:38.629 --> 00:04:41.044
 TUI, desktop, mobile.
 
-00:04:41.605 --> 00:04:44.115
-Deployment - the web app, the apps, and
+00:04:41.805 --> 00:04:44.299
+Deployment - the web app, the apps and the
 
-00:04:44.146 --> 00:04:46.682
-the backend services; where each piece
+00:04:44.355 --> 00:04:47.919
+backend services; where each piece runs.
 
-00:04:46.743 --> 00:04:47.844
-runs.
-
-00:04:48.599 --> 00:04:51.752
+00:04:48.672 --> 00:04:51.832
 Configuration - profiles, brand packs,
 
-00:04:51.814 --> 00:04:54.487
-capability gating, feature flags, and
+00:04:51.894 --> 00:04:54.439
+capability gating, feature flags and
 
-00:04:54.551 --> 00:04:56.569
+00:04:54.502 --> 00:04:56.520
 catalog validation.
 
-00:04:57.681 --> 00:04:59.796
+00:04:57.627 --> 00:04:59.724
 Trust & data
 
-00:05:00.818 --> 00:05:03.806
+00:05:00.765 --> 00:05:03.740
 Rights and authorship are inputs like any
 
-00:05:03.853 --> 00:05:04.794
+00:05:03.790 --> 00:05:04.719
 other.
 
-00:05:05.569 --> 00:05:08.632
+00:05:05.495 --> 00:05:08.558
 Embed & Track Image declares creator,
 
-00:05:08.704 --> 00:05:12.367
+00:05:08.629 --> 00:05:12.295
 copyright, licence and contact fields, and
 
-00:05:12.401 --> 00:05:15.246
+00:05:12.330 --> 00:05:15.179
 the export writes them into the file's own
 
-00:05:15.306 --> 00:05:18.969
+00:05:15.239 --> 00:05:18.944
 metadata and its C2PA manifest.
 
-00:05:19.728 --> 00:05:22.868
+00:05:19.698 --> 00:05:22.851
 Content Credentials Identity - CA-issued
 
-00:05:22.937 --> 00:05:26.357
+00:05:22.920 --> 00:05:26.303
 signing for on-device C2PA; engine
 
-00:05:26.418 --> 00:05:29.394
+00:05:26.364 --> 00:05:29.295
 contracts and the operator runbook.
 
-00:05:30.163 --> 00:05:33.182
+00:05:30.066 --> 00:05:33.157
 Data Transfer - the lolly-backup bundle:
 
-00:05:33.258 --> 00:05:35.711
-envelope, integrity, and cross-shell
+00:05:33.235 --> 00:05:35.650
+envelope, integrity and cross-shell
 
-00:05:35.772 --> 00:05:37.244
+00:05:35.711 --> 00:05:37.194
 guarantees.
 
-00:05:38.026 --> 00:05:41.162
-About - the project, its licence boundary,
+00:05:37.969 --> 00:05:41.037
+About - the project, its licence boundary
 
-00:05:41.223 --> 00:05:43.144
+00:05:41.134 --> 00:05:43.044
 and the repository.

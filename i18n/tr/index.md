@@ -1,21 +1,24 @@
 
 # Lolly - Açılış sayfası metni
 
-Saniyeler içinde üretime hazır dosyalar - tasarım kuralları, düzen mantığı ve dışa aktarma kalitesi işin içinde. Beklemek yok, tahmin yürütmek yok.
-Kendi cihazında çalışır. Yüklenecek bir şey yok, öğrenilecek bir şey yok, çevrimdışı çalışır.
+Sen yaparsın, sende kalır: saniyeler içinde bitmiş dosyalar, kendi cihazında.
+Bir araç seç, kendi sözlerini ekle, sonuç doğru çıksın: renkler, yazı tipleri ve düzen çoktan halledildi.
+İstediğin yerde birebir aynı, istediğin gibi farklı.
+Ücretsiz ve öyle kalacak: hesap yok, kart yok, bit yeniği yok.
+
 
 ---
 
 ## Pazarlamacılar
 
-### Beklemeden, her şey tamamlanmış halde.
+### Her şey bitmiş halde, beklemeden.
 
-Bir alıntı kartına, bir etkinlik kartına, yerelleştirilmiş bir imzaya ihtiyacın var - bugün, bir sonraki sprintte değil. Lolly, bir tasarım aracını hiç açmamış olsan bile onu bitmiş ve markaya uygun şekilde eline teslim eder. Kurallar şablonun içinde yaşar, böylece çıktı doğru çıkar.
+Bir alıntı kartına, bir etkinlik karosuna, yerelleştirilmiş bir imzaya ihtiyacın var - gelecek sprintte değil, bugün. Hiç tasarım aracı açmamış olsan bile Lolly onu bitmiş ve markaya uygun şekilde geri verir. Kurallar şablonun içinde durur, dolayısıyla çıktı doğru çıkar.
 
-- **Birkaç alanı doldur, bitmiş varlığı al.** Seçilecek yazı tipi yok, kararsız kalınacak renk yok, "bu doğru logo mu?" derdi yok. Araç bunu zaten biliyor. Sen sadece kelimeleri getirirsin.
-- **Sonsuz varyasyon, tek doğruluk kaynağı.** Bir alıntı kartını 12 dile yerelleştir, bir marka lockup'ını 40 kampanyada değiştir ya da her yerleşim için her boyut varyantını üret - tasarıma dokunmadan. Bunların hepsini toplu işlem ızgarasındaki bir e-tablodan yönet: bir CSV yapıştır ya da içe aktar, her satır için bitmiş bir varlık al.
-- **Rutin varlıklar için kreatif ajans darboğazı yok.** E-posta imzaları, etkinlik geri sayımları, alıntı kartları, sokak haritaları - ekibinin salı günü saat 16:00'da ihtiyaç duyduğu her şey, self-servis.
-- **Uyumluluk riski olmadan iş birliği yap.** Üçüncü taraf bulut hizmetlerine yüklenen müşteri verisi yok. Denetlenmesi gereken SaaS lisansı yok. Tamamen yerel cihaz işlem gücünde çalışır.
+- **Birkaç alanı doldur, bitmiş varlığı al.** Seçilecek yazı tipi yok, tekrar tekrar düşünülecek renk yok, "bu doğru logo mu?" yok. Araç zaten biliyor. Sen sözleri getir.
+- **Sonsuz varyasyon, tek doğruluk kaynağı.** Bir alıntı kartını 12 dile yerelleştir, bir marka lockup'ını 40 kampanyada değiştir ya da her yerleşim için her boyut varyantını üret - tasarıma hiç dokunmadan. Hepsini toplu işlem ızgarasındaki bir tablodan yönet: bir CSV yapıştır veya içe aktar, her satır için bitmiş bir dosya al.
+- **Rutin varlıklar için kreatif ajans darboğazı yok.** E-posta imzaları, etkinlik geri sayımları, alıntı kartları, QR kodları - ekibinin salı günü saat 16.00'da ihtiyaç duyduğu her şey, self servis.
+- **Bir görsel için satın alma turu yok.** Onaylanacak yeni abonelik yok, denetlenecek lisans yok, salı günü tek bir karo isteyen kişi için alınacak kullanıcı lisansı yok.
 
 ---
 
@@ -23,38 +26,39 @@ Bir alıntı kartına, bir etkinlik kartına, yerelleştirilmiş bir imzaya ihti
 
 ### Her toplantıya tam ihtiyacın olanla gir.
 
-Yoldasın, sunum yanlış, müşteri özel bir şey istedi. Lolly herhangi bir cihazı bir varlık stüdyosuna dönüştürür - tasarımcı yok, bekleme yok, bahane yok.
+Yoldasın, sunum yanlış, müşteri özel bir şey istedi. Lolly her cihazı bir varlık stüdyosuna çevirir - tasarımcı yok, bekleme yok, bahane yok.
 
-- **Hiçbir şey için bekleme.** Yoldaysan, toplantına kadar hiç gün kalmadıysa, varlıklara şimdi ihtiyacın var demektir. Onları oluştur.
-- **Tek kişilik ordu.** Koordineli bir küresel kampanyanın gücü avucunun içinde. Her temsilci, her bölge, aynı özen.
-- **Dünya standartlarında deneyim.** Anında oluşturulmuş olsa da hiçbir şey aceleye getirilmiş görünmez. Hiçbir şey tek seferlik değildir - böylece her etkileşim bir öncekinden biraz daha özenli olur.
-- **Vay, ekibin ne hızlıymış!** Onlar uyuyor. Bu, ilk defa ihtiyaç duyduğumda çözülmüştü.
+- **Hiçbir şeyi bekleme.** Yoldaysan, toplantına gün kalmadıysa, varlıklara şimdi ihtiyacın var demektir. Hemen üret.
+- **Elindeki sunumu düzelt.** PowerPoint dosyasını Lolly'ye bırak, slaytları anında açılsın; saklamaya değer olanları seç ve keskin vektör görseller olarak yeniden kullan - sonra sunumu birkaç satır Markdown'dan yeniden kur ve düzenlenebilir, yerel bir `.pptx` olarak geri gönder.
+- **Tek kişi, kampanyanın tamamı.** Her bölgedeki her temsilci, aynı kurallarla ve aynı bitişle çalışır.
+- **Dünya standartlarında deneyim.** Anında işlenmiş olsa bile hiçbir şey aceleye gelmiş görünmez. Hiçbir şey tek seferlik değildir - böylece her etkileşim bir öncekinden biraz daha rafine olur.
+- **Onlar istediğinde iş çoktan bitmiştir.** Bu varlığa ilk kez biri ihtiyaç duyduğunda kurulan araç, onu her saatte, her saat diliminde saniyeler içinde yeniden üretir.
 
 ---
 
 ## Gazeteciler
 
-### Hız ve hassasiyet için tasarlanmış editoryal araç setin.
+### Editoryal araç setin, hız ve hassasiyet için kurulmuş.
 
-Bilgi-editoryal stilini bir kez oluştur, ardından canlı verilerden yayın kalitesinde varlıkları anında üret.
+İnfo-editoryal stilini bir kez kur, sonra canlı veriden, olay akarken yayın kalitesinde varlıklar üret.
 
-- **Veriyi doğrudan görsellere taşı.** Yapılandırılmış veriyi grafik, harita ve tablo şablonlarına bağla. Sayıları güncelle; düzen kendi kendine halleder.
-- **Yayınının stilini tam olarak yakala.** Araçlar sabit kodlanmış tipografik ve renk kısıtlamalarıyla yazılır - kurum stilin gevşek bir kılavuz olarak değil, şablon düzeyinde uygulanır.
-- **Baskıya hazır ya da ekrana hazır.** Aynı şablondan SVG, CMYK PDF, yüksek çözünürlüklü PNG ya da 60fps video dışa aktar. Tek kaynak, prodüksiyon masanın ihtiyaç duyduğu her format.
-- **Tekrarlayan haberler için yeniden kullanılabilir formatlar.** Seçim sonuçları, çeyreklik kazançlar, hava olayları - şablonu bir kez oluştur, haber her yayınlandığında yeniden kullan.
+- **Veriyi doğrudan görsellere taşı.** Yapılandırılmış veriyi grafik, harita ve tablo şablonlarına bağla. Sayıları güncelle; düzen kendi işini kendi görür.
+- **Yayınının stiline birebir uy.** Araçlar, tipografik ve renk kısıtları koda gömülü olarak yazılır - kurum stilin gevşek bir kılavuz olarak değil, şablon seviyesinde zorunlu kılınır.
+- **Baskıya hazır ya da ekrana hazır.** Aynı şablondan SVG, CMYK PDF, yüksek çözünürlüklü PNG veya 60fps video dışa aktar. Tek kaynak, prodüksiyon masanın ihtiyaç duyduğu her format.
+- **Tekrarlayan haberler için yeniden kullanılabilir formatlar.** Seçim sonuçları, çeyreklik bilançolar, hava olayları - şablonu bir kez kur, haber her döndüğünde yeniden kullan.
 
 ---
 
 ## Operasyon
 
-### Günlük çıktı için endüstriyel titizlik.
+### Gündelik çıktı için endüstriyel titizlik.
 
-Her şey pazarlama değildir. Sevkiyat etiketleri, yaka kartı baskıları, uyumluluk tek sayfalıkları, olay bildirimleri - düzenin taşıyıcı olduğu ve verinin yanlış olamayacağı çıktılar. Lolly, yapılandırılmış içeriği elit tasarımla aynı titizlikle ele alır.
+Her şey pazarlama değildir. Sevkiyat etiketleri, yaka kartı serileri, tek sayfalık uyumluluk belgeleri, olay bildirimleri - anlamı düzenin taşıdığı ve verinin yanlış olamayacağı çıktılar. Lolly bir sevkiyat etiketine, bir kampanya afişine gösterdiği titizliğin aynısını gösterir.
 
-- **Yapılandırılmış veri gir, kesin çıktı çık.** Bir CSV ya da JSON tablosu ver, her alan tam olarak şablonun beklediği yere yerleşir - her satır için bir bitmiş dosya.
-- **Fiziksel hassasiyet.** Gerçek birimler (mm/cm/in/pt), gerçek DPI, taşma payı ve kesim işaretleri. Bir etiket yazıcısı ya da matbaa tam ihtiyacı olanı alır.
-- **Mantık aracın içinde çalışır.** Barkodlar, tarih hesaplamaları, koşullu düzenler, kontrast kontrolleri - elle değil, oluşturma anında hesaplanır.
-- **Tasarım gereği deterministik.** Aynı girdiler, aynı dosya, her seferinde. CLI'dan ya da bir pipeline'dan denetlenebilir, tekrarlanabilir, otomatikleştirilebilir.
+- **Yapılandırılmış veri girer, tam çıktı çıkar.** Bir CSV veya JSON tablosu ver, her alan şablonun beklediği yere tam olarak otursun - her satır için bitmiş bir dosya.
+- **Fiziksel hassasiyet.** Gerçek birimler (mm/cm/in/pt), gerçek DPI, taşma payı ve kesim işaretleri. Bir etiket yazıcısı ya da bir matbaa tam olarak ihtiyacı olanı alır.
+- **Mantık aracın içinde çalışır.** Barkodlar, tarih hesapları, koşullu düzenler, kontrast kontrolleri - elle değil, işleme anında hesaplanır.
+- **Tasarım gereği deterministik.** Aynı girdiler, aynı dosya, her seferinde. Denetlenebilir, tekrarlanabilir, CLI'dan veya bir işlem hattından otomatikleştirilebilir.
 
 ---
 
@@ -62,46 +66,46 @@ Her şey pazarlama değildir. Sevkiyat etiketleri, yaka kartı baskıları, uyum
 
 ### Makinelerin en iyi yaptığı işleri yapmayı bırak.
 
-Sistemler tasarlarsın, sorunları çözersin - tek seferlik işler değil. Lolly, tasarım kararlarını tüm organizasyonunun kullanabileceği araçlara dönüştüren uygulama katmanıdır - her varlık için sürecin içinde olmana gerek kalmadan.
+Sen sistemler tasarlar ve problem çözersin, tek seferlik işler üretmezsin. Lolly, tasarım kararlarını tüm kurumunun kullanabileceği araçlara çeviren uygulama katmanıdır - her varlık için sana danışılmadan.
 
-- **Sınır burası.** Gelişmiş filtreler, kompozisyon, animasyon, üretken tasarım - platformun bir tavanı yok. Her web teknolojisi şablon yazarının kullanımına açık. Herhangi bir kreatif paketin izin vereceğinden fazlasını yap - bitmiş prodüksiyon kalitesine ulaşmak için gereken tüm güçle.
-- **Araçlar araçları birleştirir.** Bir araç, başka bir aracın çıktısını canlı bir varlık olarak gömebilir - kendi QR kodunu oluşturan bir yaka kartı, canlı bir grafik ekleyen bir kart - tasarım aracı ya da elle kompozisyon olmadan.
-- **Araç yaz, dosya değil.** 10.000 sosyal medya kartı yapmak yerine, 10.000 sosyal medya kartı üreten bir şablon oluştur. Zamanın tasarım problemine gider, üretim sürecine değil.
-- **Sıkıcı işleri ortadan kaldır.** Optimal dizgi, logo yerleşimi, harita iğnesi konumlandırma, renk kontrastı kontrolleri, dışa aktarma boyutlandırması - hepsi şablon katmanında çözülür. Kuralları bir kez tanımla, tekrarı makineye bırak.
-- **Değişmemesi gerekeni kilitle, değişmesi gerekeni serbest bırak.** Marka kısıtlamalarını sabit kodla. Yalnızca gerçekten değişmesi gereken değişkenleri açığa çıkar. Araç, kreatif bir koruma bariyerine dönüşür.
+- **Tavan, web platformunun kendisidir.** Gelişmiş filtreler, kompozitleme, animasyon, üretken tasarım: her web teknolojisi şablon yazarının elinin altındadır ve bir tarayıcı neyi çizebiliyorsa, bir araç onu prodüksiyon kalitesinde dışa aktarabilir.
+- **Araçlar araçları birleştirir.** Bir araç, başka bir aracın çıktısını canlı varlık olarak gömebilir - kendi QR kodunu üreten bir yaka kartı, içine canlı bir grafik yerleşen bir kart - tasarım aracı olmadan, elle kompozitleme olmadan.
+- **Dosya değil, araç yaz.** 10.000 sosyal medya kartı yapmak yerine 10.000 sosyal medya kartı üreten bir şablon kur. Zamanın prodüksiyon turuna değil, tasarım problemine gider.
+- **Sıkıcı olanı ortadan kaldır.** En uygun dizgi, logo yerleşimi, harita iğnesi konumu, renk kontrastı kontrolleri, dışa aktarma boyutlandırması - hepsi şablon katmanında çözülür. Kuralları bir kez tanımlarsın, tekrarı makineye bırakırsın.
+- **Değişmemesi gerekeni kilitle, değişmesi gerekeni serbest bırak.** Marka kısıtlarını koda göm. Yalnızca gerçekten değişmesi gereken değişkenleri dışarı aç. Araç, yaratıcı işin koruma bariyeri olur.
 
 ---
 
 ## Geliştiriciler
 
-### Build pipeline'ın görsellerini de içermeli.
+### Derleme hattın görselleri de kapsamalı.
 
-Görseller birer build çıktısıdır. Onlara öyle davran. Lolly CLI üzerinden çalışır, böylece varlıkları ürettiğin diğer her şey gibi üretebilirsin - tekrarlanabilir şekilde, otomatik olarak ve iş akışının bir parçası olarak.
+Görseller birer derleme çıktısıdır. Onlara öyle davran. Lolly CLI'dan çalışır, böylece varlıkları da diğer her şeyi ürettiğin gibi üretebilirsin - tekrarlanabilir, otomatik ve iş akışının bir parçası olarak.
 
-- **GenAI medya piyangosunu atla.** GenAI medyayı denedin - pahalı ve yeterince yakın değil. Lolly, onların çöplüğünü ve senin didinmeni ortadan kaldıran ücretsiz, daha hızlı, yerel içerik otomasyonudur.
-- **Yeniden üretilebilir çıktılar.** Aynı girdiler her seferinde aynı dosyayı üretir. Bir URL'yi commit'le, talep üzerine yeniden oluştur - artık görselleri commit'lemene ya da Slack'ten en son sürümü kovalamana gerek yok.
-- **Medyayı kod tabanından çıkar.** İkili dosyaları Git'te saklamak yerine, build zamanında OG görselleri, QR kodları, sosyal medya kartları ve veri görselleri üret.
-- **Mantığı varlıkların içinde çalıştır.** Code Canvas ve Chart Creator gibi araçlar, özel bir renderer oluşturmadan prodüksiyon kalitesindeki şablonların içine gerçek içerik yerleştirmeni sağlar - kod parçacıkları, yapılandırılmış veri, canlı değerler.
-- **Sıfır lock-in.** Açık kaynak motor, yerel işlem gücü, API anahtarı yok, rate limit yok.
+- **Modeli matbaaya değil, eskize koy.** Baskı kalitesinde medyayı prompt ile üretmek pahalıdır ve sonuç doğru değil, yaklaşık olur. Bir araç ise aynı dosyayı her seferinde, bedavaya üretir.
+- **Yeniden üretilebilir çıktılar.** Aynı girdiler her seferinde aynı dosyayı üretir. Bir URL'yi commit'le, istediğinde yeniden üret - artık görselleri depoya eklemek ya da en son sürümü Slack'ten kovalamak yok.
+- **Medyayı kod tabanından çıkar.** Git'te ikili dosyalar saklamak yerine OG görsellerini, QR kodlarını, sosyal medya kartlarını ve veri görsellerini derleme anında üret.
+- **Varlıkların içinde mantık çalıştır.** Code Canvas ve Chart Creator gibi araçlar, özel bir işleyici yazmadan gerçek içeriği - kod parçacıkları, yapılandırılmış veri, canlı değerler - prodüksiyon kalitesinde şablonların içine yerleştirmeni sağlar.
+- **Sıfır bağımlılık.** Açık kaynak motor, yerel hesaplama, API anahtarı yok, hız sınırı yok.
 
 ```bash
 lolly qr-code --url=https://suse.com --output=og-qr.svg
-lolly quotes --quote="Ship it." --output=quote.png
+lolly wordmark --text="Ship it." --output=wordmark.png
 ```
 
 ---
 
-## Yapay Zeka Ajanları
+## Yapay Zekâ Ajanları
 
-### Modeline bir araç kullanmasını söyle, halüsinasyon görmesini değil.
+### Modeline halüsinasyon görmesini değil, araç kullanmasını söyle.
 
-Parametreli bir URL birkaç token'dır. Bir kreatif brief artı görsel üretimi ise binlerce - ve sonuç yine de basın kalitesinde değildir. Lolly, ajanına deterministik, incelenebilir, prodüksiyona hazır bir kreatif katman sunar.
+Parametreli bir URL birkaç token eder. Kreatif brief artı görsel üretimi ise binlercesi - üstelik sonuç yine de baskı kalitesinde olmaz. Lolly, ajanına deterministik, gözden geçirilebilir ve prodüksiyona hazır bir kreatif katman verir.
 
 
-- **Prodüksiyon kalitesi kaymaz.** Araçlar, işlem gücünün çok küçük bir kısmıyla prodüksiyon kalitesinde görsel üretir - yerel olarak yapılır. Araçlar sabit kodludur. Modelin tembelleştiğinde, düzen tembelleşmez. Tipografik kurallar, renk değerleri, boşluklar - bunlar prompt'lanmış değil, yapısaldır.
-- **Token'ları ölçekte tasarrufla.** Bir URL'den özel bir etkinlik kartı üretmek, aynı çıktıyı üretken bir modelden prompt mühendisliğiyle almanın maliyetinin çok küçük bir kısmına mal olur.
-- **Veriyi ait olduğu yere koy.** Yapılandırılmış girdiler yapılandırılmış şablonlara eşlenir. Konuşmacı isimleri, oturum saatleri, ürün sürümleri - her seferinde tasarımın beklediği tam yere yerleştirilir.
-- **Deterministik, denetlenebilir, sürüm kontrollü.** Her çıktı, girdilerinden yeniden üretilebilir. Prodüksiyon varlıklarında stokastik sürprizler yok.
+- **Prodüksiyon kalitesi kaymaz.** Araçlar, hesaplama gücünün çok küçük bir kısmıyla prodüksiyon kalitesinde işler üretir - hem de yerelde. Araçlar koda gömülüdür. Modelin üşengeçleştiğinde düzen üşengeçleşmez. Tipografik kurallar, renk değerleri, boşluklar - bunlar prompt'tan değil, yapıdan gelir.
+- **Ölçekte token tasarrufu.** Bir URL'den özel bir etkinlik kartı üretmek, aynı çıktıyı üretken bir modelde prompt mühendisliğiyle elde etmenin maliyetinin çok küçük bir kısmına mal olur.
+- **Veriyi ait olduğu yere koy.** Yapılandırılmış girdiler yapılandırılmış şablonlarla eşleşir. Konuşmacı adları, oturum saatleri, ürün sürümleri - her seferinde tasarımın beklediği yere tam olarak yerleşir.
+- **Deterministik, denetlenebilir, sürüm kontrollü.** Her çıktı girdilerinden yeniden üretilebilir. Prodüksiyon varlıklarında olasılıksal sürpriz yok.
 
 ```
 Use Lolly to invite the team to KubeCon.
@@ -120,39 +124,37 @@ Output the file URL.
 
 ### Kreatif dosyalar bir güvenlik riski olmamalı.
 
-Biri bir dosyayı sadece "doğru görünsün" diye üçüncü taraf bir hizmete her yüklediğinde, bu gerçekleşmeyi bekleyen bir veri sızdırma olayıdır. Lolly, sorunu kaynağında ortadan kaldırır - kreatif üretim cihazda, yerinde ve senin kontrolünde kalır.
+Birisi "şunun görüntüsü bir düzelsin" diye üçüncü taraf bir hizmete dosya yüklediği her seferinde, olmayı bekleyen bir veri sızdırma olayı doğar. Lolly sorunu kaynağında ortadan kaldırır - kreatif üretim kurum içinde ve senin kontrolünde kalır.
 
-- **Veri cihazdan asla çıkmaz.** Varsayılan olarak hiçbir şey üçüncü bir tarafa iletilmez - bulut render'ı yok, analitik yok, telemetri yok. Meslektaşların oluşturduğu şey kendi makinesinde kalır. Strip Hidden Data gibi cihaz üzerinde çalışan yardımcı programlar, görsellerden, SVG'lerden ve PDF'lerden EXIF ve metadata'yı tamamen tarayıcı içinde temizler - hiçbir şey yüklenmez. Bir PDF'i, tüm bir indirmeyi ya da bir paylaşım linkini bir şifreyle kilitlemek bile cihaz üzerinde gerçekleşir; şifre cihazdan asla çıkmaz.
-- **Tam hava boşluğu kontrolü için kendi sunucunda barındır.** Kendi altyapında dağıt. Sunucu tarafı işlem yok, veritabanı yok, backend yok. Tamamen çevrimdışı, güvenlik duvarının arkasında, kendi erişim politikalarınla çalıştır.
-- **Tedarikçi yüzeyini azalt.** Tek bir açık kaynaklı platform, kreatif üretim için dağınık bir SaaS abonelikleri yığınının yerini alır. Daha az tedarikçi, daha az sözleşme, daha az denetim ve daha az ihlal vektörü demektir.
-- **Marka yönetişimini altyapı düzeyinde uygula.** Araçlar bir kez yazılır ve veri olarak dağıtılır - dosya değil, elle yürütülen süreç değil. Kapıdan çıkan şey, tam olarak çıkması onaylanan şeydir.
-- **Kritik bilgiyi anında insanın okuyabileceği formatlara dönüştür.** Olay bildirimleri, uyumluluk raporları, yönetici brifingleri - yapılandırılmış veri saniyeler içinde yayın kalitesinde çıktıya dönüşür, tasarım darboğazı olmadan.
-- **Kurumsal ölçek için sağlamlaştırma.** Lolly kapalı bir pilot aşamasındaki bir prototiptir: kriptografi ve dosya ayrıştırma motorları şu anda SUSE'nin kurumsal ölçeğe hazırlanan sıkı altyapı sağlamlaştırma sürecinden geçiyor - bu konuda gerçekten iyiyiz. Köken bilgisi ve cihaz üzerinde şifreleme tasarım gereği güçlüdür; bu sağlamlaştırma tamamlanırken bunları sınırlı bir bağlamda pilot olarak dene. Bkz. [Benimseme & Yönetişim](/info/adoption-governance.html#status).
+- **Veri cihazda kalır.** Bulutta işleme yok, analitik yok, telemetri yok - ve kullanıcının açıkça tetiklediği bir avuç istek dışında hiçbir ağ isteği yok; her biri [gizlilik politikasında](/info/privacy.html) adıyla sayılı. Meslektaşlarının ürettiği şey kendi makinelerinde kalır. Strip Hidden Data gibi cihaz üstü yardımcı araçlar, görsellerden, SVG ve PDF dosyalarından EXIF ve meta veriyi tamamen tarayıcı içinde temizler - hiçbir şey yüklenmez. Bir PDF'i, bir indirmenin tamamını ya da bir paylaşım bağlantısını parolayla kilitlemek bile cihazda olur; parola cihazdan hiç çıkmaz.
+- **Tam air-gap kontrolü için kendin barındır.** Kendi altyapına kur; isteğe bağlı iki sunucu bileşeni tamamen dışarıda bırakılabilir. [Egemen üretim](/info/sovereign-production.html) duruşun tamamını anlatır, [Sunucu Yüzeyi](/info/server-surface.html) ise eksiksiz envanterdir.
+- **Tedarikçi yüzeyini küçült.** Tek bir açık kaynak platform, kreatif üretimdeki dağınık SaaS abonelikleri yığınının yerini alır. Daha az tedarikçi, daha az sözleşme, daha az denetim ve daha az ihlal vektörü demektir.
+- **Marka yönetişimini altyapı seviyesinde zorunlu kıl.** Araçlar bir kez yazılır ve veri olarak dağıtılır - dosya olarak değil, elle süreç olarak değil. Kapıdan çıkan şey, tam olarak çıkması onaylanan şeydir.
+- **Kritik bilgiyi anında insanın okuyabileceği formatlara dök.** Olay bildirimleri, uyumluluk raporları, yönetim brifingleri - yapılandırılmış veri saniyeler içinde yayın kalitesinde çıktıya dönüşür, tasarım darboğazı olmadan.
+- **Sıkılaştırma, açıkta.** Lolly'nin kriptografi ve dosya ayrıştırma motorları SUSE'nin altyapı sıkılaştırmasından geçiyor: dünyanın en büyük kurumlarına otuz yılı aşkın süredir güvenlik teknolojisi ve hizmeti sunan disiplin. Content Credentials ve yerel şifreleme tasarım gereği güçlüdür; bu süreç tamamlanana kadar onları kapsamı belirli bir bağlamda pilot olarak kullan. Bkz. [Benimseme & yönetişim](/info/adoption-governance.html#status).
 
 ---
 
-## Yaratıcı
+## Ne elde edersin
 
-**Kapalı bir pilot aşamasında, dahili bir prototip.** Bitmiş bir ürün değil - hızla ilerleyen bir deney. Kriptografisi ve ayrıştırması şu anda SUSE'nin kurumsal ölçeğe hazırlanan sıkı altyapı sağlamlaştırma sürecinden geçiyor. [Lolly şu anda nerede →](/info/adoption-governance.html#status)
+**Güçlü bir kreatif üretim platformu.** Lolly motoru her formatın üretebileceği en yüksek kaliteyi hedefler - gerçek vektörler, eğriye çevrilmiş yazı, baskı kalitesinde renk, yerel ve düzenlenebilir çıktı.
 
 **%100 ücretsiz ve açık kaynak.** SaaS ücreti yok, kullanım sınırı yok, tedarikçi bağımlılığı yok.
 
-**Her yerde çalışır.** Web PWA, Mac, Linux, iOS, Android, CLI, terminal TUI - aynı motor, aynı çıktı.
+**Her yerde çalışır.** Web PWA, Mac, Windows, Linux, iOS, Android, CLI, terminal TUI - aynı motor, aynı çıktı.
 
-**Çevrimdışı çalışır.** Yerel işlem gücü, yerel depolama. İlk senkronizasyondan sonra internet gerekmez.
+**Formatlar, girişte ve çıkışta.** Onlarcası girer, onlarcası çıkar, çoğu da iki yönde - tam dökümü [Formatlar sayfasında](/info/formats.html), her formatın ayrıntısı ise [Dışa aktarma sayfasında](/info/exporting.html).
 
-**Formatlar, giren ve çıkan.** **25** dışa aktarma formatı oluşturur ve **13** kaynak formatını içe aktarır - tam dökümü aşağıda gör.
-
-**Prodüksiyon kalitesi.** Konturlu tipografi, Spot renk desteği, 60FPS · Stüdyoya yakışır medya.
+**Prodüksiyon kalitesi.** Eğriye çevrilmiş yazı, Spot renk desteği, 60FPS · Stüdyoya yakışır medya.
 
 
 ## Araçlar
 
 
-Bunu tasarım için bir otomat gibi düşün. Bir seçim yap, bir sonuç al. Her seferinde.
+Bunu tasarım için bir otomat gibi düşün. Seçimini yap, sonucunu al. Her seferinde.
 
-Bir araç, tam olarak ne ürettiğini ve nasıl ürettiğini bilen, kullanıma hazır bir kreatif şablondur. Ona bir başlık, bir tarih, bir sayı ver - ve tam spesifikasyona uygun, bitmiş bir varlık üretir.
+Araç, ne ürettiğini ve nasıl ürettiğini tam olarak bilen, kullanıma hazır bir kreatif şablondur. Ona bir başlık, bir tarih, bir sayı ver - sana bitmiş bir varlığı, istenen ölçülerde üretsin.
 
-Tasarım deneyimi gerekmez. Yazı tipleri, renkler ya da boşluklar hakkında karar vermene gerek yok - araç zaten en iyisini biliyor. İster tasarımcı, ister pazarlamacı, ister geliştirici, ister bir yapay zeka ajanı ol, çıktı aynıdır.
+Tasarım deneyimi gerekmez. Yazı tipi, renk veya boşluk kararı yok - araç zaten en iyisini biliyor. İster tasarımcı, ister pazarlamacı, ister geliştirici ol, ister yapay zekâ ajanı, çıktı aynıdır.
 
-Araçlar, markayı bilen kişiler tarafından bir kez yazılır ve ardından herkes tarafından kullanılır - bir web tarayıcısından, bir telefondan, komut satırından ya da otomatik bir pipeline'dan. Tasarım kararları şablon düzeyinde kilitlenmiştir. Geriye yapılacak tek şey içeriği doldurmaktır.
+Araçlar markayı bilen kişiler tarafından bir kez yazılır, sonra diğer herkes tarafından kullanılır - bir web tarayıcısından, bir telefondan, komut satırından ya da otomatik bir işlem hattından. Tasarım kararları şablon seviyesinde sabitlenir. Geriye yalnızca içeriği doldurmak kalır.

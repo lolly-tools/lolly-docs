@@ -1,8 +1,7 @@
 {
   "eyebrow": "Mang những gì bạn đã tạo ra",
   "heading": "Tệp thiết kế của bạn không bị mắc kẹt",
-  "lead": "Thành phẩm từ **Figma, Penpot, Illustrator, InDesign hoặc bất kỳ ứng dụng SVG nào** không cần phải bị khoá trong một ứng dụng duy nhất. Mở **Design**, nhấn **Nhập thiết kế**, và tệp sẽ mở ra thành một bố cục sống động - không phải một hình ảnh đã làm phẳng. Mọi lớp trở thành một khối có thể chỉnh sửa, sẵn sàng để tiếp tục làm việc, kết hợp với các công cụ khác, và kết xuất theo cùng một bộ quy tắc."
-  ,
+  "lead": "Thành phẩm từ **Figma, Penpot, Illustrator, InDesign hoặc bất kỳ ứng dụng SVG nào** không cần phải bị khoá trong một ứng dụng duy nhất. Mở **Design**, nhấn **Nhập thiết kế**, và tệp sẽ mở ra thành một bố cục sống động - không phải một hình ảnh đã làm phẳng. Mọi lớp trở thành một khối có thể chỉnh sửa, sẵn sàng để tiếp tục làm việc, kết hợp với các công cụ khác, và kết xuất theo cùng một bộ quy tắc.",
   "sources": [
     { "mono": "Fig", "name": "Figma", "fmt": ".fig · SVG", "color": "#a259ff" },
     { "mono": "Pen", "name": "Penpot", "fmt": ".penpot", "color": "#12b886" },

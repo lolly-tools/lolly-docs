@@ -1,14 +1,24 @@
 {
   "panels": [
     {
-      "illustration": "illusSound",
-      "heading": "Dostępne, z dźwiękiem",
-      "desc": "Interfejs, który działa tak jak ty - przyjazny dla czytników ekranu i w pełni dostępny z klawiatury. Włącz delikatne dźwięki interfejsu albo przełącz się na **Neurospicy Mode**: spokojny rytm do skupienia, który cicho gra w tle, kiedy pracujesz."
+      "heading": "Udostępnij w całości",
+      "desc": "Kiedy link nie uniesie wszystkiego, Lolly mówi dokładnie, czego zabraknie, i proponuje całość jako jeden plik **.lolly**: twoje obrazy, projekt, a nawet samo narzędzie. Ty decydujesz, ile pojedzie dalej - twoje dane, licencjonowana grafika i narzędzie trafiają tam tylko wtedy, gdy tak powiesz, a osoba otwierająca plik jest pytana, zanim przeniesione narzędzie się uruchomi."
     },
     {
-      "illustration": "illusBulk",
+      "heading": "Pracujcie razem, bez internetu",
+      "desc": "Dwie osoby, dwa urządzenia, jeden projekt, edytowany na żywo. Zeskanuj kod przez stół, a oba ekrany trzymają tę samą sesję - w samolocie, w piwnicy, na hotspocie. Pośrodku nie ma serwera, któremu trzeba ufać albo który może paść."
+    },
+    {
+      "heading": "Prezentuj na pełnym ekranie",
+      "desc": "Klatki projektu stają się slajdami: przeklikaj je na dużym ekranie, otwórz widok prelegenta z notatkami i minutnikiem albo zostaw wszystko w pętli na ekranie w recepcji. Bez osobnej aplikacji do prezentacji."
+    },
+    {
       "heading": "Uporządkuj, potem renderuj masowo",
-      "desc": "Przechowuj zapisane prace w zagnieżdżonych folderach **Projekty**. Gdy przyjdzie czas na eksport, wyrenderuj cały folder - albo wybraną garstkę plików - do jednego pliku zip. Bez arkusza kalkulacyjnego, bez siatki wsadowej."
+      "desc": "Przechowuj zapisane prace w zagnieżdżonych folderach **Projekty**. Gdy przychodzi czas na wysyłkę, wyrenderuj cały folder - albo dowolną garstkę zaznaczonych plików - do jednego pliku zip. Albo wklej arkusz kalkulacyjny i dostań jeden gotowy plik na wiersz."
+    },
+    {
+      "heading": "Dostępne, z dźwiękiem",
+      "desc": "Interfejs, który działa tak jak ty - przyjazny dla czytników ekranu i w pełni dostępny z klawiatury. Włącz delikatne dźwięki interfejsu albo przełącz się na **Neurospicy Mode**: spokojny rytm do skupienia, który cicho gra w tle, kiedy pracujesz."
     }
   ]
 }

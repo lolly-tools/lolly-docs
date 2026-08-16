@@ -1,133 +1,127 @@
 # SSS
 
-`/info` açılış sayfasındaki akordeonda gösterilen sıkça sorulan sorular.
+`/info` açılış sayfasındaki akordeonda gösterilen sık sorulan sorular.
 
-**Nasıl bakımı yapılır:** aşağıdaki her `##` başlığı bir sorudur; altındaki her şey
-(bir sonraki `##`'ye kadar) cevaptır. Cevaplar, sitenin geri kalanıyla aynı hafif
-markdown'u kullanır - paragrafları boş bir satırla ayır. Soruları burada ekle, kaldır
-veya yeniden sırala ve `npm run build:info` komutunu (ya da `npm run dev:web`'i)
-yeniden çalıştır. İlk `##`'den önceki her şey (bu başlık ve bu notlar) derleme
-tarafından yok sayılır.
+**Nasıl güncellenir:** aşağıdaki her `##` başlığı bir sorudur; altındaki her şey
+(bir sonraki `##` başlığına kadar) cevaptır. Cevaplar sitenin geri kalanıyla aynı hafif
+markdown'ı kullanır - paragrafları boş bir satırla ayır. Soruları burada ekle, çıkar ya da
+yeniden sırala ve `npm run build:info` (ya da `npm run dev:web`) komutunu yeniden çalıştır.
+İlk `##` başlığından önceki her şeyi (bu başlık ve bu notlar) derleme yok sayar.
 
-## /profile sayfasında opt-in yaptığımda ne olur?
+## /profile sayfasında onay verdiğimde ne olur?
 
-Lolly'yi ilk kullandığında, her yere yazdığın her şey, o bilgiyi bilerek bir medya ya da paylaşım bağlantısıyla (çevrimiçiyken) dışarı çıkarmak istemedikçe tamamen özel kalır.
+Lolly'yi ilk kullandığında, nereye yazarsan yaz her şey tamamen özeldir; ta ki o bilgiyi bir medya dosyasıyla ya da (çevrimiçiysen) bir paylaşım bağlantısıyla bilerek dışarı çıkarmak isteyene kadar.
 
-Opt-in seçili olduğunda, seni kaynak olarak tanımlamak için profil bilgilerinin bir kısmını varlıklara ve paketlere köken bilgisi olarak gömüyoruz.
+Onayı verdiğinde, seçtiğin profil bilgileri ürettiğin şeyin içine mühürlenir ve seni kaynak olarak belirtir. Sen seçmeden hiçbir şey eklenmez.
 
-Lolly büyük hacimde içerik üretir. Riski önlemek için sıkı bir veri minimizasyonu yaklaşımı benimsiyoruz.
+Lolly büyük hacimde içerik üretir. Riski önlemek için katı bir veri minimizasyonu yaklaşımı benimsiyoruz.
 
-### Özellik bayrakları nedir?
+## Özellik bayrakları nedir?
 
-![Every feature flag is a switch you own, sitting in your own profile rather than an administrator's console](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&dark=1&filename=pd-feature-flags)
+Özellik bayrakları Lolly'nin bazı bölümlerini açar ya da kapatır. Bunları genelde bir yönetici denetler - Lolly'de denetim sende.
 
-Özellik bayrakları, Lolly'nin bazı bölümlerini açıp kapatır. Genellikle bunları bir yönetici kontrol eder - Lolly'de kontrol sende.
+![Her özellik bayrağı, bir yöneticinin konsolunda değil kendi profilinde duran, sana ait bir anahtardır](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&format=svg&cropSelector=%23feature-flags-section&walker=1&dark=1&filename=pd-feature-flags)
 
-## Mobil veya masaüstü uygulamalarını nasıl alırım?
+## Mobil ya da masaüstü uygulamalarını nasıl edinirim?
 
-Herkes kendi uygulamasını dağıtabilir; bu uygulamaların araçları ve yapılandırması, hangi kitleye yönelik olduğuna bağlı olarak büyük ölçüde değişir. Yani sen yapmadıkça ya da ilgili biri sana vermedikçe tek bir uygulama yoktur.
+Herkes kendi uygulamasını dağıtabilir; bu uygulamaların araçları ve yapılandırması, hedeflenen kitleye göre büyük ölçüde değişir. Yani sen yapmadıkça ya da ilgili biri sana vermedikçe tek bir uygulama yok.
 
-## Neden "Lolly Tools" ismi?
+## Neden "Lolly Tools" adı?
 
-**Lolly** Çünkü özgürlük tatlıdır.
-**Tools** kullanılmadığında hareketsizdir. Seni gözetlemez, gizli programlar çalıştırmaz,
-Onu çalıştır - emirlerin, eylemlerin ve şartların geçerlidir.
+**Lolly** çünkü özgürlük tatlıdır ve Avustralya, Yeni Zelanda ile Britanya'da lolly şeker demektir.
 
-**Lolly**, Avustralya, Yeni Zelanda ve İngiltere'de 'şeker' ya da 'tatlı' anlamına gelen bir terimdir. Lolly'ler gibi, araçlar da onlara ihtiyacı olan kişiler için çok lezzetlidir.
+**Tools** çünkü bir alet, sen eline alana kadar öylece durur. Kullanmadığında çalışmaz, kullanırken de seni izlemez.
 
-Ayrıca bu yaklaşımla kazandığımız zamana ve tasarruf ettiğimiz faturalara gülüyoruz.
+## Lolly'ye geçerken hangi engelleri beklemeliyim?
 
-## Lolly'yi benimserken ne gibi engellerle karşılaşabilirim?
+Lolly, halihazırda dosya ürettiğin her yere yerleşir - CLI, uygulamayla aynı motordur;
+yani gece 2'de çalışan bir pipeline, bir kişinin tarayıcıda gördüğü önizlemeden sapamaz.
+Benimsemedeki sürtünme nadiren tekniktir; kurumsaldır. Şunları bekle:
 
-Lolly, dosya ürettiğin her yere zaten oturur - CLI, uygulamayla aynı motoru kullanır,
-bu yüzden gece 2'de çalışan bir pipeline, bir kişinin tarayıcıda gördüğü önizlemeden
-asla sapmaz. Benimsemenin önündeki sürtünme nadiren tekniktir; kurumsaldır. Şunları bekle:
+**Özenle hazırlanmış bir marka kataloğunun yazılması gerekir.** Lolly bir platformdur,
+şablonlarının hazır bir paketi değil. *Yönetişimli bir yayılım* için biri ortak varlık
+kataloğunu (kalıcı kimlikler olarak logolar, paletler, fontlar) tanımlar ve her çıktı türü
+için manifest + şablon yazar. Yine de bireylerin bunu beklemesi gerekmez - açık uygulamada
+herkes kendi dosyalarını katalogda içeri aktarabilir ve ilk günden Design içinde araç kurabilir.
 
-**Küratörlü bir marka kataloğu oluşturulmalıdır.** Lolly bir platformdur, şablonlarının
-hazır bir paketi değildir. *Yönetilen bir dağıtım* için biri, paylaşılan varlık kataloğunu
-(logolar, paletler, kalıcı ID'ler olarak yazı tipleri) tanımlar ve her çıktı türü için
-manifest + şablon yazar. Ancak bireylerin bunu beklemesine gerek yoktur - açık uygulamada
-herkes kendi dosyalarını kataloğa içe aktarabilir ve daha ilk günden Design'da
-araçlar oluşturabilir.
+**Katkı vermek için git gerekmez.** Tasarımcılar kendi araçlarını ve şablonlarını
+uygulamada yapar, sonra bunları meslektaşlarıyla paylaşır ya da varsayılan olarak dahil
+edilmesi için dağıtımın sahibine gönderir.
 
-**Git üzerinden yönetişim isteğe bağlıdır - ve mühendis olmayanlar için tanıdık değildir.**
-*Paylaşılan, denetimli* bir katalog işletiyorsan, "PR incelemesi *tam da* moderasyondur"
-mühendisler için zarif, çoğu marka ve pazarlama ekibi için ise yabancı bir yaklaşımdır.
-Marka kararlarının sahibi olan kişiler git içinde yaşamıyorsa, onları köprüleyen bir iş
-akışına ihtiyacın olur - ya da IT sessizce stratejik tasarım ortağı ve daha geniş kurumsal
-kapı bekçisi haline gelir (uzun soluklu üretim ortamlarında birçoklarının tercih ettiği
-gibi). Bunu istemeyen ekipler bunu basitçe atlar.
-
-**Bilerek dar tutulmuştur - bu şekilde çerçevele.** Lolly, özel yapım ya da hero içerik
-için değildir. O, tasarım sistemin, araçların ve kataloğunla beslenip güçlendirilmiş
-*gerçek* kişisel DAM'ındır - ve açık bir kanvası (Design) *gerçekten de* vardır,
-ama orada bile renkler, tipografi ve varlıklar etkin tasarım globalleriyle uyumlu kalır,
-böylece serbest düzenleme sistemin içinde kalır. Figma ya da Canva'yla karşılaştırıldığında
-sınırlı görünür. Ne olduğu haliyle değerlendirildiğinde - kurumsallaşmış, tekrarlı, devasa
-ölçekli varlık üretimi - hiçbir şey onunla yarışamaz. Yanlış çerçeveleme en sık karşılaşılan
-aksaklıktır.
+**Kapsamı bilerek dar tutuldu - öyle anlat.** Lolly, özel yapım ya da amiral gemisi
+içerikler için değil. Tasarım sistemin, araçların ve kataloğunla beslenip güçlendirilmiş
+kişisel DAM'in *odur* - ve evet, açık bir tuvali *var* (Design), ama orada bile renkler,
+tipografi ve varlıklar etkin tasarım globallerine uyar; yani serbest yerleşim de sistemin
+içinde kalır. Figma ya da Canva ile kıyaslanırsa sınırlı görünür. Gerçekte ne olduğuyla -
+operasyonel hale getirilmiş, tekrar eden, çok büyük ölçekli varlık üretimi - kıyaslanırsa
+rakibi yok. En sık karşılaşılan aksaklık, yanlış çerçevelemedir.
 
 **Üretim tarafında değişim yönetimi.** Mevcut süreçler bugün çalışıyor, çıktı marka dışı
-olsa bile. Onları motora yönlendirmek yeniden test etmeyi ve yeniden öğrenmeyi gerektirir,
-ve "zaten dosya üretebiliyoruz" göçü ertelemek için bir bahaneye dönüşür. Yüksek
-görünürlüğe sahip, üretim kalitesindeki tek bir çıktıyı dönüştürerek ve öncesini/sonrasını
-yan yana göstererek başla.
+olsa bile. Onları motora yönlendirmek yeniden test etmek, yeniden öğrenmek demektir ve
+"zaten dosya üretebiliyoruz" cümlesi taşınmamak için bahaneye dönüşür. İşe, çok göz önünde
+olan üretim kalitesinde tek bir çıktıyı dönüştürüp öncesini ve sonrasını yan yana göstererek başla.
 
-Lolly her şeyi yukarı taşır.
+Lolly her şeyin seviyesini yükseltir.
 
 
-## Yardımcı araçları araçlardan farklı kılan nedir?
+## Yardımcı araçları (Utilities) araçlardan ayıran nedir?
 
-![The Utilities view collects the mechanical jobs people usually hand to a random website, all running on your own device](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1)
+**Kısa cevap →** Yardımcı araçların her zaman render etmesi gerekmez, bu yüzden farklı bir kullanıcı deneyimi alabilirler. 
 
-**Temel Cevap →** Yardımcı araçların her zaman render etmesi gerekmez, bu yüzden farklı bir UX alabilirler.
+**Asıl cevap →** Yardımcı araçların Lolly Tools içinde barındırılabilmesinin nedeni, veri sızdırmayı caydırmak için bir 'kolaylık katmanı' savunması daha eklemektir. 
 
-**Gerçek Cevap →** Yardımcı araçların Lolly Tools içinde barındırılabilir olmasının nedeni, veri sızdırmayı caydırmak için bir 'kolaylık katmanı' savunması daha eklemektir.
+Neden? Çünkü biliniyor ki insanlar her gün **ellerindeki gizli içeriği** alıp küçücük mekanik tek bir işlem yapsın diye
+rastgele bir siteye teslim ediyor:
 
-Neden? Çünkü her gün insanların, zaten ellerinde olan **gizli içerikleri** alıp küçük,
-mekanik bir işlemi gerçekleştirmesi için rastgele bir web sitesine verdiği biliniyor:
+- "**Bu PDF'i sıkıştır**" → bir sözleşmeyi / maaş bordrosunu / yönetim kurulu sunumunu bilinmeyen taraflara yükler.
+- "**HEIC'i JPG'ye çevir**" → kişisel fotoğrafları (GPS EXIF'iyle birlikte) reklamla finanse edilen bir sunucuya yükler
+- "**Bu görseli kırp / yeniden boyutlandır**" → bir ürün ekran görüntüsünü ya da yayımlanmamış bir varlığı yükler
+- "**Bu JSON'u biçimlendir**" / "şu JWT'yi çöz" → API yanıtlarını, tokenları, gizli anahtarları bir biçimlendiriciye yapıştırır
+- "**Bu PDF'leri birleştir**" → **asla aynı sunucuyu paylaşmaması gereken iki belgeyi** yükler
 
-- "**Bu PDF'i sıkıştır**" → bir sözleşmeyi / bordroyu / yönetim kurulu sunumunu bilinmeyen taraflara yükler.
-- "**HEIC'i JPG'ye dönüştür**" → kişisel fotoğrafları (GPS EXIF verisiyle birlikte) reklamla finanse edilen bir sunucuya yükler
-- "**bu görseli kırp / yeniden boyutlandır**" → bir ürün ekran görüntüsünü ya da henüz yayınlanmamış bir varlığı yükler
-- "**bu JSON'u biçimlendir**" / "bu JWT'yi çöz" → API yanıtlarını, tokenları, sırları bir biçimlendiriciye yapıştırır
-- "**bu PDF'leri birleştir**" → **asla aynı sunucuyu paylaşmaması gereken iki belgeyi** yükler
+Bu siteler ve devasa klon kuyrukları **varsayılan olarak güvenilir değildir**: saklama süresi
+bilinmez, hangi ülkenin hukukuna tabi oldukları bilinmez, alt işleyenleri bilinmez ve verdiğin şeyi
+saklamak için her türlü teşviki olan bir reklam/ortaklık iş modeliyle çalışırlar. İşlem önemsizdir;
+**bedel içeriktir.** 
 
-Bu siteler ve devasa klon kuyruğu, bilinmeyen saklama süreleri, bilinmeyen yargı yetkileri,
-bilinmeyen alt işlemciler ve sana verdiğin her şeyi elde tutmak için her türlü teşvike
-sahip bir reklam/ortaklık iş modeliyle **varsayılan olarak güvenilir değildir**. İşlem
-önemsizdir; **içerik ise bedeldir.**
+Yönetişim savaşını kusursuz kolaylık ve hizmetle kazanırız. 
 
-Yönetişim savaşını mükemmel kolaylık ve hizmetle kazanıyoruz.
+![Utilities görünümü, insanların genelde rastgele bir siteye devrettiği mekanik işleri bir araya getirir; hepsi bunun yerine Lolly içinde çalışır](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=use-utilities&try=1)
 
-## Lolly, Figma, Penpot, Illustrator veya InDesign dosyalarımı düzenleyip render edebilir mi?
+## Lolly, Figma, Penpot, Illustrator ya da InDesign dosyalarımı düzenleyip render edebilir mi?
 
-![Design's open canvas, where Import a design sits in the toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+Evet. **Design**'ı aç ve **Import a design**'a tıkla: yerel bir Figma **.fig** (Save local copy), bir Penpot **.penpot** dışa aktarımı, bir Illustrator **.ai** ya da **.pdf**, bir InDesign **.idml** (File → Export → InDesign Markup) veya **herhangi bir SVG** (geniş kapı - neredeyse her tasarım uygulaması bunu dışa aktarır) kabul edilir. Hesap, eklenti ve tasarım uygulaması lisansı gerekmez.
 
-Evet. **Design**'yu aç ve **Bir tasarım içe aktar**'a tıkla: yerel bir Figma **.fig** dosyasını (Save local copy), bir Penpot **.penpot** dışa aktarımını, bir Illustrator **.ai** veya **.pdf** dosyasını, bir InDesign **.idml** dosyasını (File → Export → InDesign Markup) ya da **herhangi bir SVG**'yi (geniş kapı - hemen hemen her tasarım uygulaması bunu dışa aktarır) kabul eder. Her şey tamamen cihazında ayrıştırılır, hesap veya eklenti gerekmez.
+![Design'ın açık tuvali; Import a design araç çubuğunda duruyor](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
-Katmanlar, açık kanvasta düzenlenebilir kutular olarak gelir: metin yeniden yazılabilir kalır, şekiller şekil olarak kalır, görseller cihaz-içi kitaplığına katılır, tipografi ve renkler ise marka globalleriyle uyumlu hale gelir. Kaydet ve düzen, Lolly'si olan herkesin yeniden doldurabileceği, yeniden kullanılabilir, URL ile adreslenebilir bir şablona dönüşür - ayrıca sayfa yüklendiğinde yeniden render edilen canlı araçları (bir QR kodu, bir grafik) da karıştırabilirsin. Buradan itibaren, Lolly'deki her şey gibi render edilir - SVG, PDF, PNG ve gerisi, kendi URL'sinden yeniden üretilebilir. Bkz. [Bir tasarım içe aktar](/info/design-import.html).
+Katmanlar açık tuvale düzenlenebilir kutular olarak gelir: metin yeniden yazılabilir kalır, şekiller şekil kalır, görseller kendi görsel kitaplığına katılır, tipografi ve renkler ise marka globallerine uyar. Kaydettiğinde düzen, Lolly'si olan herkesin yeniden doldurabileceği, URL ile adreslenebilir ve tekrar kullanılabilir bir şablona dönüşür - üstelik yüklenirken yeniden render olan canlı araçları (bir QR kodu, bir grafik) araya karıştırabilirsin. Oradan sonrası Lolly'deki her şey gibi render edilir - SVG, PDF, PNG ve gerisi, URL'sinden yeniden üretilebilir şekilde. Bkz. [Import a design](/info/design-import.html).
 
-## 29 Ağustos'ta ne olacak?
+## Çalışmamı bağlantı yerine dosya olarak paylaşabilir miyim?
 
-SUSE markalı araçlar projeden ayrılır ve kullanıcı tarafından tanımlanan yeni, genel örnek araçlar onların yerini alır.
+Evet. Bir bağlantı her şeyi taşıyamadığında (kendi fotoğrafların, uzun metinler), Share penceresi neyin eksik kalacağını tam olarak söyler ve bunun yerine bir **.lolly** dosyası önerir: tasarımı, kullandığı görselleri ve istersen aracın kendisini tutan tek bir dosya. Ne kadarının yola çıkacağına sen karar verirsin - adın ve bilgilerin yalnızca profilin onay verdiyse girer, lisanslı görseller sen dahil etmedikçe geride bırakılır ve içinde araç taşıyan bir dosyayı açan kişiye, araç çalışmadan önce ona güvenip güvenmediği sorulur. Bkz. [Çalışmanı paylaşmak](/info/using.html#sharing-your-work).
 
-SUSE, ticari markalarını korumak için kendi Lolly'sini işletecek.
+## İki kişi internet olmadan aynı tasarım üzerinde çalışabilir mi?
 
-## SUSE ne kadarını özel tutuyor? (diğer bir deyişle, halı ne zaman çekilecek)
+Evet. Biri bir davet paylaşır (bir bağlantı, bir QR kodu ya da kısa bir kod), diğeri kabul eder ve iki cihaz aynı oturumu canlı tutar - kimin nerede olduğu, odak halkaları, hepsi. Ortak olan her ağda çalışır, bodrumdaki bir telefon hotspot'u dahil, çünkü arada sunucu yok. Bkz. [Birlikte çalışmak](/info/collaborate.html).
 
-SUSE'nin ticari markaları ve markalı araçları, 29 Ağustos'a kadar yalnızca gösterim amaçlıdır. Lolly'nin markasız bir örneğini [lolly.ART](https://lolly.art) adresinde bulabilirsin.
+## SUSE markalı araçlar nereye gitti?
 
-SUSE, otuz yılı aşkın platform liderliğine sahip bir kurumsal açık kaynak altyapı şirketidir. Ürünleri arasında kurumsal düzeyde Linux, Cloud Native, Edge ve AI altyapı çözümleri yer alır.
+Onlar zaten ayrı, özel bir depoda duruyor. Herkese açık bir klon SUSE marka paketini hiç çekmez; dolayısıyla herkese açık bir derleme nötr `lolly-start` profilini çalıştırır - markadan bağımsız topluluk araçları ve kendi markanla doldurduğun boş bir marka. SUSE, ticari markalarını korumak için kendi örneğini işletir.
 
-SUSE'nin bakış açısından bu, egemenlik ve güvenlik konusunda söylediğini uygulamakla ilgilidir. Bugün itibarıyla, SUSE'nin Lolly'yi ürünleştirme olasılığı neredeyse sıfırdır.
+## Neden ücretsiz? Bit yeniği nerede?
 
-Açıkça belirtelim: SUSE, Lolly'yi kendi BT sistemleriyle entegre etmek için *gerçekten de* dahili araçlar geliştiriyor - bu, SUSE'nin dahili kurulumuyla ilgilidir, kamuya açık ile özel geliştirme arasındaki farkla değil.
+**Lolly'yi kendimiz için yaptık.** SUSE'nin, her birinin içine adı mühürlenmiş, marka uyumlu binlerce dosyaya ihtiyacı vardı; hem de dışarıdaki hizmetlere hiçbir şey teslim etmeden. Biz de bunların tamamını cihazın üzerinde yapan bir araç yaptık ve ürettiğimiz her şey gibi onu da açık kaynak olarak yayımladık. Her gün kullandığımız için bakımını sürdürüyoruz. **Hiçbir zorunluluk yok:** buradaki her şey biz olsak da olmasak da çalışır.
 
-Kamuya açık taraftan bahsetmişken, Lolly'nin [Open Build Service](https://openbuildservice.org/) aracılığıyla inşa edilmesi ve güvenli tedarik zinciri yapılarının [SUSE Application Collection](https://apps.rancher.io/applications) tarafından teslim edilmesi hedefleniyor.
+Bu sınır bir sözle değil, lisansla çizildi: yerelde çalışan her şey sonsuza kadar ücretsizdir. Yayımlanmış bir sürüm, geri alınamayacak şekilde lisanslanır ve kimsenin çalışmasını yeniden lisanslayabilecek bir katkıda bulunan sözleşmesi yoktur. Tam metin için bkz. [konumlandırma](/info/positioning.html).
 
-Elimizden geldiğince açık şekilde inşa edeceğiz - sadece SUSE markalı araçları uzun süre görmeyeceksin, ne de Lolly ile ilgisi olmayan SUSE'nin dahili iş gücünü ve ticari süreçlerini.
+## SUSE ne kadarını özel tutuyor? (yani halı ne zaman ayağımızın altından çekilecek)
 
-## Bu Lolly logosu hangi aromada?
+Motor, kabuklar, şemalar ve markadan bağımsız araçlar açık kaynaktır; özel kalan kısım SUSE'nin ticari markaları ile markalı araçlarıdır ve bunlar zaten ayrılmış durumdadır. Lolly'nin markasız bir örneğini [lolly.ART](https://lolly.art) adresinde bulabilirsin.
 
-Kimileri Lime der, kimileri Nane, bazen de Elma; Lolly tatlılığı getirir, aromayı sen yaratırsın!
+Bu sınır söz verilmiş değil, yapısaldır. Yayımlanan her sürüm açık kaynaktır ve yayımlanmamış hale getirilemez, kimsenin çalışmasını yeniden lisanslayabilecek bir katkıda bulunan sözleşmesi yoktur ve geride tutulan tek şey ticari markadır. 2023'te başka bir şirket kurumsal Linux kaynaklarını kapattığında SUSE, o kodu açık tutmak için [OpenELA](https://openela.org) oluşumunun kurucularından biri oldu - bu proje de aynı duruşu devralıyor.
+
+Açık olalım: SUSE, Lolly'yi kendi BT sistemlerine entegre etmek için dahili araçlar *geliştiriyor* - ama bu, SUSE'nin kendi iç kurulumuyla ilgili; açık geliştirme mi kapalı geliştirme mi meselesi değil. Lolly ayrıca [Open Build Service](https://openbuildservice.org/) üzerinden derlenmeyi ve güvenli tedarik zinciri artefaktlarının [SUSE Application Collection](https://apps.rancher.io/applications) tarafından sunulmasını hedefliyor.
+
+## O Lolly logosu hangi aromada?
+
+Kimi misket limonu der, kimi nane, bazen de elma; tatlılığı Lolly getirir, aromayı sen yaratırsın!

@@ -1,754 +1,784 @@
 WEBVTT
 
-00:00:00.432 --> 00:00:03.666
+00:00:00.434 --> 00:00:03.699
 Lolly Inclusive Design Policy
 
-00:00:04.657 --> 00:00:08.693
+00:00:04.683 --> 00:00:08.765
 Last updated: 30 July 20 26
 
-00:00:09.627 --> 00:00:11.668
+00:00:09.700 --> 00:00:11.694
 Our ethos.
 
-00:00:12.465 --> 00:00:15.739
+00:00:12.489 --> 00:00:15.762
 An open source community includes all of
 
-00:00:15.800 --> 00:00:16.793
+00:00:15.824 --> 00:00:16.818
 us.
 
-00:00:17.585 --> 00:00:20.055
+00:00:17.608 --> 00:00:20.118
 Software that anyone can read, run and
 
-00:00:20.115 --> 00:00:23.054
+00:00:20.179 --> 00:00:22.932
 change only earns that openness when
 
-00:00:23.145 --> 00:00:25.836
+00:00:23.023 --> 00:00:25.800
 anyone can actually use it - whatever they
 
-00:00:25.949 --> 00:00:29.244
+00:00:25.914 --> 00:00:29.120
 see, hear, process, speak or believe.
 
-00:00:30.042 --> 00:00:32.965
+00:00:29.915 --> 00:00:32.875
 So we treat accommodation as a form of
 
-00:00:33.045 --> 00:00:36.542
+00:00:32.954 --> 00:00:36.480
 celebration, never a compromise: a
 
-00:00:36.617 --> 00:00:38.667
+00:00:36.554 --> 00:00:38.581
 preference that makes Lolly calmer,
 
-00:00:38.727 --> 00:00:41.641
+00:00:38.641 --> 00:00:41.536
 louder, larger or more familiar for
 
-00:00:41.732 --> 00:00:44.405
+00:00:41.629 --> 00:00:44.281
 someone is not a degraded mode of the
 
-00:00:44.466 --> 00:00:45.669
+00:00:44.342 --> 00:00:45.544
 product.
 
-00:00:46.421 --> 00:00:49.413
+00:00:46.297 --> 00:00:49.315
 It is the product, meeting one more of us
 
-00:00:49.474 --> 00:00:51.019
+00:00:49.376 --> 00:00:50.919
 where they are.
 
-00:00:52.161 --> 00:00:54.666
+00:00:52.060 --> 00:00:54.541
 What this policy covers
 
-00:00:55.645 --> 00:00:59.087
+00:00:55.517 --> 00:00:58.907
 Lolly is a creative tool: people come here
 
-00:00:59.188 --> 00:01:01.894
+00:00:59.008 --> 00:01:01.694
 to make things that represent them.
 
-00:01:02.652 --> 00:01:05.355
+00:01:02.454 --> 00:01:05.175
 That shapes every accommodation below in
 
-00:01:05.416 --> 00:01:08.647
+00:01:05.235 --> 00:01:08.474
 one specific way - adjusting the app never
 
-00:01:08.707 --> 00:01:10.520
+00:01:08.534 --> 00:01:10.370
 adjusts your work.
 
-00:01:11.300 --> 00:01:14.143
+00:01:11.148 --> 00:01:13.995
 Accessibility preferences restyle Lolly's
 
-00:01:14.235 --> 00:01:17.912
+00:01:14.086 --> 00:01:17.724
 own interface: menus, cards, navigation,
 
-00:01:17.984 --> 00:01:19.019
+00:01:17.793 --> 00:01:18.819
 type.
 
-00:01:19.784 --> 00:01:22.551
+00:01:19.585 --> 00:01:22.383
 They are engineered never to reach inside
 
-00:01:22.598 --> 00:01:26.344
+00:01:22.429 --> 00:01:26.190
 the tool canvas or the export pipeline,
 
-00:01:26.411 --> 00:01:29.573
+00:01:26.258 --> 00:01:29.406
 and automated tests fail our builds if a
 
-00:01:29.635 --> 00:01:32.529
+00:01:29.468 --> 00:01:32.331
 preference could move a single pixel of an
 
-00:01:32.607 --> 00:01:34.420
+00:01:32.407 --> 00:01:34.219
 exported file.
 
-00:01:35.193 --> 00:01:37.644
+00:01:34.992 --> 00:01:37.465
 You should never have to choose between a
 
-00:01:37.705 --> 00:01:41.020
+00:01:37.525 --> 00:01:40.795
 comfortable app and a faithful render.
 
-00:01:42.156 --> 00:01:43.928
+00:01:41.928 --> 00:01:43.699
 Accessibility
 
-00:01:44.500 --> 00:01:58.425
+00:01:44.275 --> 00:01:58.375
 Beyond following the platform's own signals «system dark mode, the OS reduced-motion preference», Lolly ships explicit, opt-in accessibility preferences on your profile:
 
-00:01:59.164 --> 00:02:02.044
+00:01:59.111 --> 00:02:01.952
 Reduce motion turns off transitions,
 
-00:02:02.140 --> 00:02:05.480
+00:02:02.049 --> 00:02:05.379
 slides and animated flourishes in the
 
-00:02:06.025 --> 00:02:12.200
+00:02:05.925 --> 00:02:12.100
 app, and combines with «never overrides» your operating system's setting.
 
-00:02:12.550 --> 00:02:17.850
+00:02:12.450 --> 00:02:17.725
 Animated exports keep moving exactly as designed.
 
-00:02:18.591 --> 00:02:21.514
+00:02:18.463 --> 00:02:21.391
 High contrast strengthens borders, text
 
-00:02:21.553 --> 00:02:24.494
+00:02:21.432 --> 00:02:24.344
 and focus rings around your work.
 
-00:02:25.287 --> 00:02:28.565
+00:02:25.141 --> 00:02:28.482
 Your brand colours and canvas stay exactly
 
-00:02:28.627 --> 00:02:30.344
+00:02:28.547 --> 00:02:30.318
 as you set them.
 
-00:02:31.130 --> 00:02:34.197
+00:02:31.104 --> 00:02:34.145
 Large text grows the app's type and icon
 
-00:02:34.258 --> 00:02:36.670
+00:02:34.207 --> 00:02:36.647
 glyphs without reflowing your
 
-00:02:37.591 --> 00:02:40.213
+00:02:37.569 --> 00:02:40.205
 designs, so what you export is
 
-00:02:40.278 --> 00:02:41.994
+00:02:40.269 --> 00:02:41.993
 byte-identical.
 
-00:02:42.754 --> 00:02:44.947
+00:02:42.751 --> 00:02:44.907
 Hide colourful previews swaps the
 
-00:02:45.008 --> 00:02:48.323
+00:02:44.968 --> 00:02:48.181
 gallery's preview artwork for calm icon
 
-00:02:49.210 --> 00:02:51.909
+00:02:49.133 --> 00:02:51.771
 and text cards, and softens project
 
-00:02:51.984 --> 00:02:54.291
+00:02:51.847 --> 00:02:54.180
 thumbnails, halving their colour and
 
-00:02:54.352 --> 00:02:56.999
+00:02:54.241 --> 00:02:56.843
 contrast, so they stay recognisable
 
-00:02:57.052 --> 00:02:59.170
+00:02:56.895 --> 00:02:59.020
 without the colour noise.
 
-00:02:59.952 --> 00:03:02.533
+00:02:59.804 --> 00:03:02.393
 Full colour returns the moment you step
 
-00:03:02.599 --> 00:03:05.340
+00:03:02.456 --> 00:03:05.192
 inside a tool, so the one place
 
-00:03:05.424 --> 00:03:08.401
+00:03:05.283 --> 00:03:08.285
 high-stimulus imagery appears is the one
 
-00:03:08.463 --> 00:03:11.244
+00:03:08.347 --> 00:03:11.144
 place you chose to work on it.
 
-00:03:12.016 --> 00:03:15.038
+00:03:11.924 --> 00:03:14.978
+You can set these for yourself right now:
+
+00:03:15.049 --> 00:03:17.502
+open your Accessibility settings - the
+
+00:03:17.623 --> 00:03:20.760
+four switches above, on one plain card, no
+
+00:03:20.822 --> 00:03:21.894
+digging.
+
+00:03:22.670 --> 00:03:25.706
 Alongside the preferences: controls carry
 
-00:03:15.122 --> 00:03:17.245
+00:03:25.788 --> 00:03:28.010
 accessible names and pressed states,
 
-00:03:17.305 --> 00:03:19.509
+00:03:28.072 --> 00:03:30.287
 changes are announced to screen readers,
 
-00:03:19.554 --> 00:03:22.063
-overlays close on Escape, keyboard focus
+00:03:30.337 --> 00:03:32.568
+overlays close on Escape, the drawing
 
-00:03:22.117 --> 00:03:24.115
-is visible and strengthened further under
+00:03:32.629 --> 00:03:34.758
+tools answer single keypresses and the
 
-00:03:24.175 --> 00:03:26.651
-high contrast, and every one of these
+00:03:34.817 --> 00:03:36.555
+arrow keys nudge whatever you have
 
-00:03:26.711 --> 00:03:29.530
-switches is a plain, always-visible card
+00:03:36.616 --> 00:03:39.629
+selected, keyboard focus is visible and
 
-00:03:29.561 --> 00:03:32.432
-on the profile page - findable by someone
+00:03:39.689 --> 00:03:42.176
+strengthened further under high contrast
 
-00:03:32.489 --> 00:03:35.483
-who can barely read the page as it is,
+00:03:42.251 --> 00:03:44.439
+and every one of these switches is a
 
-00:03:35.539 --> 00:03:38.095
-which is the moment it matters.
+00:03:44.527 --> 00:03:47.488
+plain, always-visible card on the profile
 
-00:03:38.889 --> 00:03:40.033
+00:03:47.549 --> 00:03:48.644
+page -
+
+00:03:49.423 --> 00:03:52.064
+findable by someone who can barely read
+
+00:03:52.123 --> 00:03:55.604
+the page as it is, which is the moment it
+
+00:03:55.665 --> 00:03:56.894
+matters.
+
+00:03:57.693 --> 00:03:58.859
 Listen.
 
-00:03:40.806 --> 00:03:43.427
-Every page of this documentation can be
+00:03:59.649 --> 00:04:02.593
+Eleven core pages of this documentation
 
-00:03:43.488 --> 00:03:46.315
-read aloud - play, pause, and follow the
+00:04:02.680 --> 00:04:05.590
+can be read aloud - play, pause and follow
 
-00:03:46.375 --> 00:03:49.481
-words as they are spoken, at a pace you
+00:04:05.651 --> 00:04:08.876
+the words as they are spoken, at a pace
 
-00:03:49.571 --> 00:03:50.545
-set.
+00:04:08.936 --> 00:04:10.169
+you set.
 
-00:03:51.333 --> 00:03:54.808
+00:04:10.953 --> 00:04:14.031
+Narration is English-only for now, and
+
+00:04:14.092 --> 00:04:16.969
+more pages are being recorded.
+
+00:04:17.757 --> 00:04:21.205
 Slowing down costs nothing in quality: it
 
-00:03:54.855 --> 00:03:57.362
+00:04:21.250 --> 00:04:23.728
 is a different speed, not a lesser one,
 
-00:03:57.444 --> 00:04:00.669
+00:04:23.810 --> 00:04:27.020
 for anyone who learns at their own pace.
 
-00:04:01.807 --> 00:04:05.081
+00:04:28.160 --> 00:04:31.453
 Reduced and enhanced stimulation
 
-00:04:05.984 --> 00:04:09.184
+00:04:32.355 --> 00:04:35.557
 Neurodivergent people are not one audience
 
-00:04:09.241 --> 00:04:10.869
+00:04:35.613 --> 00:04:37.219
 with one need.
 
-00:04:11.639 --> 00:04:14.448
+00:04:37.991 --> 00:04:40.797
 The same brain that is overwhelmed by a
 
-00:04:14.538 --> 00:04:17.739
+00:04:40.885 --> 00:04:44.101
 wall of colourful thumbnails on a hard day
 
-00:04:17.836 --> 00:04:20.954
+00:04:44.199 --> 00:04:47.364
 may seek strong sensory input on another,
 
-00:04:21.044 --> 00:04:24.071
+00:04:47.456 --> 00:04:50.559
 so Lolly accommodates in both directions,
 
-00:04:24.135 --> 00:04:25.920
+00:04:50.623 --> 00:04:52.419
 always opt-in:
 
-00:04:26.696 --> 00:04:28.793
+00:04:53.197 --> 00:04:55.293
 Turning it down.
 
-00:04:29.572 --> 00:04:32.520
+00:04:56.073 --> 00:04:59.023
 Reduce motion and Hide colourful previews
 
-00:04:32.608 --> 00:04:33.731
+00:04:59.106 --> 00:05:00.234
 strip the
 
-00:04:34.350 --> 00:04:39.600
+00:05:00.850 --> 00:05:06.025
 interface back to icons, text and one accent colour.
 
-00:04:39.950 --> 00:04:58.525
+00:05:06.375 --> 00:05:24.975
 Navigation stays busy-free for people with ADHD, autistic people and dyslexic people who find dense, high-variance imagery hard to scan; nothing you need «favourites, pinning, actions» is taken away in the calmer presentation.
 
-00:04:59.270 --> 00:05:01.118
+00:05:25.719 --> 00:05:27.543
 Turning it up.
 
-00:05:01.910 --> 00:05:04.845
+00:05:28.337 --> 00:05:31.286
 Neurospicy Mode is a deliberate sensory
 
-00:05:04.906 --> 00:05:06.391
+00:05:31.347 --> 00:05:32.846
 layer - focus
 
-00:05:07.363 --> 00:05:09.616
+00:05:33.809 --> 00:05:36.081
 loops, an atmosphere mixer with
 
-00:05:09.695 --> 00:05:12.382
+00:05:36.167 --> 00:05:38.866
 individually levelled ambient beds,
 
-00:05:12.444 --> 00:05:14.877
+00:05:38.927 --> 00:05:41.354
 procedural music and interface sound
 
-00:05:14.913 --> 00:05:18.131
+00:05:41.387 --> 00:05:44.515
 effects - for people who focus best with
 
-00:05:18.212 --> 00:05:19.719
+00:05:44.599 --> 00:05:46.094
 rich input.
 
-00:05:20.478 --> 00:05:23.884
+00:05:46.857 --> 00:05:50.297
 It is off by default and never auto-plays
 
-00:05:23.945 --> 00:05:25.669
+00:05:50.359 --> 00:05:52.119
 before you ask.
 
-00:05:26.473 --> 00:05:28.818
+00:05:52.926 --> 00:05:55.293
 Sound is separable.
 
-00:05:29.581 --> 00:05:32.645
+00:05:56.056 --> 00:05:59.107
 Every audible layer has its own switch, so
 
-00:05:32.689 --> 00:05:33.845
+00:05:59.152 --> 00:06:00.319
 "visuals
 
-00:05:34.755 --> 00:05:38.248
+00:06:01.228 --> 00:06:04.683
 calm, sound rich" and the reverse are both
 
-00:05:38.322 --> 00:05:41.188
+00:06:04.759 --> 00:06:07.635
 real configurations, not a single
 
-00:05:41.260 --> 00:05:43.918
+00:06:07.704 --> 00:06:10.349
 accessibility bundle someone else composed
 
-00:05:43.993 --> 00:05:45.245
+00:06:10.425 --> 00:06:11.670
 for you.
 
-00:05:46.399 --> 00:05:50.191
+00:06:12.822 --> 00:06:16.598
 Language and localization priority
 
-00:05:51.164 --> 00:05:54.209
+00:06:17.564 --> 00:06:20.594
 Lolly's interface and documentation are
 
-00:05:54.272 --> 00:05:57.516
+00:06:20.656 --> 00:06:23.945
 translated into more than 25
 
-00:05:58.554 --> 00:06:01.984
+00:06:24.979 --> 00:06:28.396
 languages, and we prioritise languages by
 
-00:06:02.045 --> 00:06:05.293
+00:06:28.458 --> 00:06:31.715
 how many people speak them, not by market
 
-00:06:05.362 --> 00:06:08.278
+00:06:31.786 --> 00:06:34.714
 revenue - Hindi, Bengali, Urdu and
 
-00:06:08.340 --> 00:06:11.587
+00:06:34.774 --> 00:06:38.031
 Indonesian arrived in the same waves as
 
-00:06:11.680 --> 00:06:13.544
+00:06:38.124 --> 00:06:39.994
 French and German.
 
-00:06:14.318 --> 00:06:16.908
+00:06:40.768 --> 00:06:43.375
 Right-to-left scripts are first-class:
 
-00:06:16.983 --> 00:06:20.369
+00:06:43.451 --> 00:06:46.867
 Arabic ships with full RTL layout, not
 
-00:06:21.304 --> 00:06:23.943
+00:06:47.804 --> 00:06:50.443
 a mirrored afterthought.
 
-00:06:24.739 --> 00:06:26.759
+00:06:51.245 --> 00:06:53.278
 Languages are distinct, not
 
-00:06:26.815 --> 00:06:30.079
+00:06:53.328 --> 00:06:56.607
 interchangeable: Indonesian and Malay are
 
-00:06:30.172 --> 00:06:31.070
+00:06:56.698 --> 00:06:57.609
 separate
 
-00:06:32.040 --> 00:06:34.807
+00:06:58.584 --> 00:07:01.337
 catalogs, Traditional and Simplified
 
-00:06:34.869 --> 00:06:37.986
-Chinese are separate catalogs, and the
+00:07:01.398 --> 00:07:04.451
+Chinese are separate catalogs and the
 
-00:06:38.048 --> 00:06:40.610
+00:07:04.511 --> 00:07:07.049
 language attribute is set before first
 
-00:06:40.672 --> 00:06:43.170
+00:07:07.110 --> 00:07:09.462
 paint so Han characters and script
 
-00:06:43.233 --> 00:06:45.704
+00:07:09.525 --> 00:07:12.071
 fallbacks render correctly for your
 
-00:06:45.766 --> 00:06:48.619
+00:07:12.131 --> 00:07:14.969
 language, not a lookalike.
 
-00:06:49.383 --> 00:06:51.985
+00:07:15.739 --> 00:07:18.407
 The language menu lists every language in
 
-00:06:52.017 --> 00:06:55.501
+00:07:18.439 --> 00:07:21.935
 its own name and script, and can be
 
-00:06:56.310 --> 00:06:59.561
+00:07:22.763 --> 00:07:26.043
 ordered by speaker population, so finding
 
-00:06:59.623 --> 00:07:02.282
+00:07:26.105 --> 00:07:28.772
 yours never requires knowing its English
 
-00:07:02.343 --> 00:07:03.369
+00:07:28.833 --> 00:07:29.869
 name.
 
-00:07:04.479 --> 00:07:06.556
+00:07:30.984 --> 00:07:33.096
 Cultural inclusion
 
-00:07:07.466 --> 00:07:10.055
+00:07:34.011 --> 00:07:36.585
 The neutral starting brand assumes nothing
 
-00:07:10.092 --> 00:07:13.235
+00:07:36.622 --> 00:07:39.739
 about who you are; Lolly exists so
 
-00:07:14.191 --> 00:07:16.973
+00:07:40.684 --> 00:07:43.424
 your own identity, palette and type
 
-00:07:17.022 --> 00:07:19.493
+00:07:43.474 --> 00:07:45.919
 replace ours in minutes.
 
-00:07:20.267 --> 00:07:23.561
+00:07:46.686 --> 00:07:49.925
 Type is treated as a cultural surface:
 
-00:07:23.630 --> 00:07:26.652
+00:07:49.994 --> 00:07:52.956
 uploaded and Google fonts are shaped
 
-00:07:27.585 --> 00:07:30.647
+00:07:53.883 --> 00:07:56.919
 with proper text shaping across scripts,
 
-00:07:30.739 --> 00:07:34.169
+00:07:57.008 --> 00:08:00.428
 so names, diacritics and non-Latin text
 
-00:07:34.226 --> 00:07:37.223
+00:08:00.487 --> 00:08:03.482
 export as correctly drawn outlines rather
 
-00:07:37.285 --> 00:07:40.119
+00:08:03.542 --> 00:08:06.344
 than tofu or substitutions.
 
-00:07:40.879 --> 00:07:43.522
+00:08:07.103 --> 00:08:09.752
 Copy avoids idioms and culture-bound
 
-00:07:43.582 --> 00:07:46.747
+00:08:09.813 --> 00:08:12.985
 references that translate poorly, and
 
-00:07:47.731 --> 00:07:50.922
+00:08:13.956 --> 00:08:17.100
 translators receive clean, bare strings
 
-00:07:50.985 --> 00:07:53.330
+00:08:17.163 --> 00:08:19.516
 rather than sentences with markup
 
-00:07:53.395 --> 00:07:55.294
+00:08:19.581 --> 00:08:21.469
 fragments baked in.
 
-00:07:56.413 --> 00:07:59.023
+00:08:22.591 --> 00:08:25.272
 Why this produces better work, not just
 
-00:07:59.098 --> 00:08:00.594
+00:08:25.343 --> 00:08:26.852
 kinder software
 
-00:08:01.598 --> 00:08:04.714
+00:08:27.853 --> 00:08:31.032
 Accessibility gets filed under compliance,
 
-00:08:04.763 --> 00:08:08.169
+00:08:31.084 --> 00:08:34.543
 which quietly frames it as a cost.
 
-00:08:08.944 --> 00:08:11.018
+00:08:35.324 --> 00:08:37.468
 It is not one.
 
-00:08:11.784 --> 00:08:14.162
+00:08:38.234 --> 00:08:40.645
 The same properties that make a tool
 
-00:08:14.222 --> 00:08:17.368
+00:08:40.705 --> 00:08:43.844
 usable on a hard day make it faster on
 
-00:08:17.458 --> 00:08:20.570
+00:08:43.933 --> 00:08:47.020
 every other day, and they compound.
 
-00:08:21.343 --> 00:08:25.343
+00:08:47.795 --> 00:08:51.818
 Cognitive endurance is the real budget.
 
-00:08:26.138 --> 00:08:29.098
+00:08:52.611 --> 00:08:55.608
 Attention is finite and it
 
-00:08:30.102 --> 00:08:32.468
+00:08:56.607 --> 00:08:58.993
 drains unevenly.
 
-00:08:33.226 --> 00:08:36.102
+00:08:59.755 --> 00:09:02.715
 Every dialog you dismiss, every setting
 
-00:08:36.157 --> 00:08:38.905
+00:09:02.769 --> 00:09:05.525
 that resets, every choice a template
 
-00:08:38.968 --> 00:08:41.462
+00:09:05.587 --> 00:09:08.098
 should have made for you spends a little
 
-00:08:41.514 --> 00:08:44.370
+00:09:08.158 --> 00:09:11.070
 of what you had left for the work.
 
-00:08:45.129 --> 00:08:47.695
+00:09:11.827 --> 00:09:14.380
 Constraint-first tools spend almost none
 
-00:08:47.728 --> 00:08:51.120
+00:09:14.413 --> 00:09:17.850
 of it: the brand decisions were made once,
 
-00:08:51.186 --> 00:08:53.990
+00:09:17.917 --> 00:09:20.683
 at the tool, so producing the twentieth
 
-00:08:54.042 --> 00:08:56.844
+00:09:20.733 --> 00:09:23.519
 asset costs what the first did.
 
-00:08:57.590 --> 00:09:00.386
+00:09:24.260 --> 00:09:27.019
 People who need that most feel it first,
 
-00:09:00.444 --> 00:09:03.220
+00:09:27.077 --> 00:09:29.845
 and everyone benefits from it.
 
-00:09:03.983 --> 00:09:07.137
+00:09:30.612 --> 00:09:33.818
 Creative confidence comes from a floor you
 
-00:09:07.199 --> 00:09:09.019
+00:09:33.881 --> 00:09:35.719
 cannot fall through.
 
-00:09:09.814 --> 00:09:10.480
+00:09:36.514 --> 00:09:37.181
 When
 
-00:09:11.535 --> 00:09:14.129
+00:09:38.229 --> 00:09:40.744
 any output could be wrong in a way you
 
-00:09:14.187 --> 00:09:16.951
+00:09:40.800 --> 00:09:43.505
 will only discover later, you check
 
-00:09:17.045 --> 00:09:20.094
+00:09:43.595 --> 00:09:46.595
 everything twice and stay cautious.
 
-00:09:20.868 --> 00:09:24.050
+00:09:47.369 --> 00:09:50.519
 When off-brand output is not reachable,
 
-00:09:24.112 --> 00:09:26.791
+00:09:50.581 --> 00:09:53.268
 the checking stops being your job and the
 
-00:09:26.864 --> 00:09:29.569
+00:09:53.340 --> 00:09:56.044
 caution goes back into the work.
 
-00:09:30.326 --> 00:09:33.508
-Confidence is not a mood here, it is a
+00:09:56.799 --> 00:10:00.305
+Confidence is not a mood, it is a property
 
-00:09:33.573 --> 00:09:35.994
-property of the constraints.
+00:10:00.361 --> 00:10:02.169
+of the constraints.
 
-00:09:36.795 --> 00:09:38.768
+00:10:02.971 --> 00:10:04.943
 Right compounds.
 
-00:09:39.533 --> 00:09:42.797
+00:10:05.711 --> 00:10:08.981
 A decision encoded in a tool is correct
 
-00:09:42.897 --> 00:09:44.228
+00:10:09.082 --> 00:10:10.427
 every time
 
-00:09:45.125 --> 00:09:47.707
+00:10:11.333 --> 00:10:13.997
 that tool runs, in every language, at
 
-00:09:47.780 --> 00:09:51.295
+00:10:14.072 --> 00:10:17.669
 every size, for everyone who uses it.
 
-00:09:52.058 --> 00:09:54.244
+00:10:18.431 --> 00:10:20.626
 A decision written in some style
 
-00:09:54.306 --> 00:09:57.934
+00:10:20.687 --> 00:10:24.274
 guidelines doc is only influential correct
 
-00:09:58.040 --> 00:10:00.669
+00:10:24.377 --> 00:10:27.019
 as often as it is read.
 
-00:10:01.432 --> 00:10:04.486
+00:10:27.787 --> 00:10:30.875
 With no promise of correct output to the
 
-00:10:04.548 --> 00:10:05.594
+00:10:30.938 --> 00:10:31.993
 reader.
 
-00:10:06.371 --> 00:10:09.255
+00:10:32.764 --> 00:10:35.604
 The difference is small on one asset and
 
-00:10:09.308 --> 00:10:11.843
+00:10:35.654 --> 00:10:38.119
 enormous across a year.
 
-00:10:12.629 --> 00:10:15.246
+00:10:38.905 --> 00:10:41.539
 What protects the workflow protects the
 
-00:10:15.309 --> 00:10:16.519
+00:10:41.602 --> 00:10:42.818
 person.
 
-00:10:17.304 --> 00:10:19.768
+00:10:43.610 --> 00:10:46.067
 On-device rendering,
 
-00:10:20.536 --> 00:10:23.788
+00:10:46.829 --> 00:10:50.156
 plain-file exports and offline capability
 
-00:10:23.886 --> 00:10:27.101
+00:10:50.267 --> 00:10:53.467
 are usually filed under privacy, and they
 
-00:10:27.180 --> 00:10:29.899
+00:10:53.546 --> 00:10:56.219
 are also what keeps you working on a bad
 
-00:10:29.961 --> 00:10:33.218
-connection, on a locked-down machine, or
+00:10:56.280 --> 00:10:59.312
+connection, on a locked-down machine or
 
-00:10:33.273 --> 00:10:36.119
+00:10:59.371 --> 00:11:02.219
 the day a subscription lapses.
 
-00:10:36.902 --> 00:10:39.678
+00:11:03.003 --> 00:11:05.802
 Your workflow does not have dependencies
 
-00:10:39.770 --> 00:10:41.769
+00:11:05.893 --> 00:11:07.869
 you did not choose.
 
-00:10:42.548 --> 00:10:44.818
+00:11:08.647 --> 00:11:10.919
 Two things follow that we treat as
 
-00:10:44.876 --> 00:10:48.518
+00:11:10.979 --> 00:11:14.670
 inseparable: operational superiority,
 
-00:10:48.579 --> 00:10:50.640
+00:11:14.731 --> 00:11:16.775
 because software that respects your
 
-00:10:50.698 --> 00:10:53.661
+00:11:16.831 --> 00:11:19.807
 attention and your data is simply faster
 
-00:10:53.751 --> 00:10:56.810
+00:11:19.898 --> 00:11:22.996
 to work in, and ethics that cannot be
 
-00:10:56.872 --> 00:10:58.908
+00:11:23.058 --> 00:11:25.037
 traded away, because they are
 
-00:10:58.997 --> 00:11:01.844
+00:11:25.125 --> 00:11:27.969
 architectural rather than promised.
 
-00:11:02.615 --> 00:11:06.493
+00:11:28.744 --> 00:11:32.618
 A policy can be revised under pressure.
 
-00:11:07.276 --> 00:11:10.445
+00:11:33.401 --> 00:11:36.562
 An engine that never receives your content
 
-00:11:10.512 --> 00:11:12.894
+00:11:36.629 --> 00:11:39.019
 has nothing to revise.
 
-00:11:14.032 --> 00:11:15.944
+00:11:40.160 --> 00:11:42.069
 Ethical commitments
 
-00:11:16.857 --> 00:11:19.718
+00:11:42.978 --> 00:11:45.818
 Privacy by architecture.
 
-00:11:20.533 --> 00:11:23.667
+00:11:46.627 --> 00:11:49.743
 Your work stays on your device.
 
-00:11:24.454 --> 00:11:25.951
+00:11:50.528 --> 00:11:52.006
 There are no
 
-00:11:26.928 --> 00:11:30.234
+00:11:52.985 --> 00:11:56.343
 trackers or analytics in the codebase, and
 
-00:11:30.291 --> 00:11:33.308
+00:11:56.392 --> 00:11:59.501
 the few network touchpoints are enumerated
 
-00:11:33.368 --> 00:11:35.495
+00:11:59.563 --> 00:12:01.719
 in the Privacy Policy.
 
-00:11:36.263 --> 00:11:39.179
+00:12:02.488 --> 00:12:05.389
 Accessibility and language preferences are
 
-00:11:39.266 --> 00:11:43.028
+00:12:05.476 --> 00:12:09.245
 stored in your own profile, on your device
 
-00:11:43.112 --> 00:11:45.940
+00:12:09.333 --> 00:12:12.155
 - a person's disability or language is
 
-00:11:46.027 --> 00:11:47.745
+00:12:12.234 --> 00:12:13.945
 never telemetry.
 
-00:11:48.510 --> 00:11:51.943
+00:12:14.710 --> 00:12:18.126
 Telemetry is no friend of this project: we
 
-00:11:51.982 --> 00:11:54.569
+00:12:18.161 --> 00:12:20.734
 don't want it, and nobody should have to
 
-00:11:54.629 --> 00:11:56.695
+00:12:20.795 --> 00:12:22.845
 give their data away.
 
-00:11:57.475 --> 00:11:59.468
+00:12:23.628 --> 00:12:25.643
 Honest provenance.
 
-00:12:00.229 --> 00:12:03.842
+00:12:26.404 --> 00:12:30.044
 Exports can carry Content Credentials, and
 
-00:12:04.877 --> 00:12:09.293
+00:12:31.074 --> 00:12:35.443
 AI-generated content is labelled as such.
 
-00:12:10.067 --> 00:12:12.988
+00:12:36.215 --> 00:12:39.106
 We believe audiences deserve to know how
 
-00:12:13.049 --> 00:12:16.705
+00:12:39.166 --> 00:12:42.830
 media was made, and creators deserve tools
 
-00:12:16.763 --> 00:12:19.595
+00:12:42.888 --> 00:12:45.720
 that can prove their work is theirs.
 
-00:12:20.407 --> 00:12:22.718
+00:12:46.534 --> 00:12:48.843
 No dark patterns.
 
-00:12:23.464 --> 00:12:26.158
+00:12:49.594 --> 00:12:52.309
 Preferences are plain switches that do
 
-00:12:26.219 --> 00:12:27.719
+00:12:52.371 --> 00:12:53.894
 what they say,
 
-00:12:28.100 --> 00:12:41.200
-defaults are dormant until you choose them, and platform conventions «native scrolling, browser shortcuts, standard dialogs» are respected rather than hijacked.
+00:12:54.275 --> 00:13:06.975
+defaults are dormant until you choose them and platform conventions «native scrolling, browser shortcuts, standard dialogs» are respected rather than hijacked.
 
-00:12:41.945 --> 00:12:43.844
+00:13:07.719 --> 00:13:09.619
 Open source.
 
-00:12:44.624 --> 00:12:48.005
+00:13:10.396 --> 00:13:13.741
 The engine, shells and community tools are
 
-00:12:48.067 --> 00:12:49.194
+00:13:13.803 --> 00:13:14.919
 public.
 
-00:12:49.979 --> 00:12:50.638
+00:13:15.710 --> 00:13:16.396
 Every
 
-00:12:51.565 --> 00:12:54.140
+00:13:17.313 --> 00:13:19.883
 claim in this document is checkable in the
 
-00:12:54.243 --> 00:12:57.804
+00:13:19.984 --> 00:13:23.540
 source, and several are enforced by tests
 
-00:12:57.865 --> 00:13:00.133
+00:13:23.599 --> 00:13:25.812
 that fail the build when broken - the
 
-00:13:00.231 --> 00:13:03.070
+00:13:25.908 --> 00:13:28.787
 additive-by-default rule for accessibility
 
-00:13:03.131 --> 00:13:05.999
+00:13:28.847 --> 00:13:31.688
 attributes, the ban on preferences
 
-00:13:06.061 --> 00:13:09.108
-reaching exports, and the keeping-in-step
+00:13:31.761 --> 00:13:34.365
+reaching exports and the keeping-in-step
 
-00:13:09.141 --> 00:13:11.353
+00:13:34.398 --> 00:13:36.624
 of the app's two copies of each
 
-00:13:11.415 --> 00:13:12.694
+00:13:36.685 --> 00:13:37.969
 preference.
 
-00:13:13.826 --> 00:13:16.481
+00:13:39.100 --> 00:13:41.751
 Holding ourselves to it
 
-00:13:17.075 --> 00:13:27.325
+00:13:42.350 --> 00:13:52.550
 Inclusive design here is a policy in the engineering sense: invariants with tests, not aspirations with adjectives.
 
-00:13:27.675 --> 00:13:43.925
+00:13:52.900 --> 00:14:09.125
 When an accommodation and a feature conflict, we redesign the feature «when a 'hide previews' setting also hid icons off utility cards, the fix was to keep the actions, not to excuse the loss».
 
-00:13:44.275 --> 00:13:55.425
+00:14:09.475 --> 00:14:20.600
 If something in Lolly excludes you - a missing language, an overwhelming moment, an assumption we baked in without noticing - that is a bug.
 
-00:13:55.775 --> 00:13:59.125
+00:14:20.950 --> 00:14:24.400
 Tell us: fitzy@suse-com.

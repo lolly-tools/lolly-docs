@@ -169,12 +169,25 @@ A few limits to keep in mind: a sequence is capped at one hour, GIF and animated
 
 The Design tool has the same timeline, so you can time a layout without moving to another tool, and it exports motion too.
 
+## Presenting
+
+A Design document made of **artboards** is already a deck. Open the **Lolly menu** on the tool rail and choose **Present** - the last row - and each artboard becomes a full-screen slide, in the order the artboards sit on the canvas. The deck runs on a copy of the rendered artboards, so the editor underneath is never touched and leaving puts you back exactly where you were.
+
+- **Advance** with **Space**, `→`, **Page Down** or a click on the strip at the right edge of the screen; go back with `←`, **Page Up** or the strip at the left edge. **Home** and **End** jump to the first and last slide. A small bar of controls fades in whenever you move the pointer and hides itself again once you stop.
+- **Overview** (`O` or the grid button) lays every artboard out at once in the arrangement you gave them on the canvas; click one to open it.
+- **Reveal steps.** Right-click a box and choose **Reveal at step 1**, **2** or **3** instead of the default **Always visible**. That box then waits until you advance onto its step, so a slide can arrive in pieces; boxes sharing a number arrive together.
+- **Speaker view** (`S`) opens a second window with the current slide, the one coming next, your notes for that slide and a running clock. If the browser blocks the pop-up it falls back to a panel over the deck. Notes are set per artboard and never appear on the slide itself.
+- `B` holds a black screen (any key brings the slide back), `F` returns to fullscreen and **Escape** peels one layer at a time: overview back to the deck, deck back to the editor.
+- **Kiosk.** Give an artboard a **Length** and the deck holds there for that long, then advances itself behind a thin progress bar; `K` (or the pause button, which appears only once something has a length) stops and restarts that. Add `loop` to the link and the deck wraps at the end, which is what makes it signage.
+
+The deck is a link as well. `?present` opens straight into it, `s=` names the slide - a position, an artboard id or `id.step` for a build step - and the address updates as you move, so what you send is the slide you're on. Tool authors: those parameters are documented on the [URL Mode](/info/url-mode.html#reserved-parameters) page.
+
 ## On a phone
 
 On narrow screens the layout reflows to one column:
 
 - The **controls become a sheet** at the top with a **drag grip** on its lower edge. Drag the grip to resize it - it snaps to **peek / half / full** - or **tap** the grip to toggle collapsed ↔ expanded. The preview fills the space below and stays visible while you edit.
-- A floating **Render** button opens the **Export** sheet - all the format, size, copy, save and download controls in one place. Dismiss it by tapping the backdrop.
+- A floating **Export** button opens the export sheet - all the format, size, copy, save and download controls in one place. Dismiss it by tapping the backdrop.
 
 ![A tool on a phone-width screen - controls as a sheet up top, the generated palette filling the preview below and the render pill floating bottom-centre](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3Df97316%26harmony%3Dadjacent-3%26steps%3D9&width=430&height=900&dpi=192&waitMs=2200&walker=1&format=svg&dark=1&filename=vt-phone-palette)
 
@@ -185,6 +198,17 @@ Tools expose only the inputs that are meant to vary - everything else (colours, 
 ![A tool's control stack - a text field, colour triggers and a slider and nothing else the author chose to lock down](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-inputs&walker=1&format=svg&dark=1&filename=use-tool-inputs)
 
 **Reset:** *Clear changes* returns every input to its defaults.
+
+### Undo and redo
+
+**Cmd/Ctrl-Z** steps back and **Cmd/Ctrl-Shift-Z** (or **Cmd/Ctrl-Y**) steps forward again. The same pair sits as **Undo** and **Redo** buttons in the row above the controls - on the free canvas they're on the tool rail instead - and each greys out while there's nothing left to take back. Every step says what it was: undo a colour and a small message names the input it just restored, with a **Redo** button in it for the way back.
+
+- **A drag is one step.** Repeated changes to the same control within half a second merge together, so pulling a slider across its range is a single undo rather than two hundred.
+- **The last 100 steps are kept** - older ones drop off the end. Making a fresh edit after undoing clears the forward stack, as it does everywhere else.
+- **While your caret is in a text box**, Cmd/Ctrl-Z belongs to the field itself, character by character. Lolly takes over for the controls with no useful undo of their own: sliders, dropdowns, colours and switches.
+- **Choosing a file** in a **file** input isn't a step - those bytes are held for the session only, so there would be nothing to put back.
+
+In a live [collaboration](/info/collaborate.html) the history stays yours alone. A change arriving from the other device never lands on your stack, so undo can only ever take back something you did.
 
 ## Your details & headshot
 
@@ -259,18 +283,38 @@ storage-seeding hook.
 -->
 
 
-## Sharing a link
+## Sharing your work
 
-Every input is captured in the page URL, so a link *is* the design. Use **Share** in the export controls - or **Share link** on any saved session in Projects - to open the **Share dialog**: a ready-to-copy link with two collapsed sections under it.
+A design goes out one of two ways: as a link or as a file. The Share dialog offers both. Open it with **Share** in the export controls; **Share link** on a saved session in Projects opens the same dialog for that session.
 
-- **Link options** holds **Shortest link** (a big design makes a long URL, so this packs the whole state into a compact token; the readable form is always there too), **Password-protect this link** (AES-256 over the whole link, the password never in it) and **Pin this tool version** - the `_v` flag, which nails the link to the tool version you're looking at so a later update can't change what it renders.
+### The link
+
+Every input is captured in the page URL, so a link *is* the design. At the top of the dialog sits the ready-to-copy link, with two collapsed sections under it.
+
+- **Link options** holds **Shortest link** (a big design makes a long URL, so this packs the whole state into a compact token and shows you the saving in characters; the readable form is always there too), **Password-protect this link** (AES-256 over the whole link, the password never in it) and **Pin this tool version** - the `_v` flag, which nails the link to the tool version you're looking at so a later update can't change what it renders.
 - **Link behaviour** is what happens when the recipient opens it: fullscreen, the export panel already expanded, download-on-open with `&export` or copy-to-clipboard with `&copy`.
 
 Paste the link to a colleague, bookmark it or commit it. (Full details: [URL Mode](/info/url-mode.html).)
 
-> Images you uploaded from your device are **not** included in a shared link - they only exist on your machine.
+**The dialog says what a link cannot carry.** Three things don't fit in a URL: an image or file you added from this device, a very long text value or a very large list. Each one is counted as the link is built. If anything had to be dropped the dialog names it and points you at the file below, instead of handing you a link that opens with the picture missing. A link that is merely *long* gets a milder note with its character count, since packing can still rescue length.
 
-A link hands over a snapshot. To work on the same session *at the same time* as someone else - two devices, no server, no internet needed if you're on one network - see [Working together](/info/collaborate.html).
+### The .lolly file
+
+**Download .lolly**, in the Share dialog of the tool you're working in, writes the same design as a file. It carries the saved session together with the images and files you added from your device. The catalogue art the design draws on rides along inside it too, so the file opens complete on a machine that has never seen your brand. Where your device has a share sheet, **Send to…** hands that file straight to it (AirDrop, an Android share) rather than saving it to disk.
+
+A `.lolly` is an ordinary zip. Rename it `.zip` and open it: your own images are under `assets/uploads/` and catalogue art under `assets/catalog/`, each with its real name and extension, `manifest.json` lists every one and a README at the top says what the file is.
+
+Three things are yours to decide before it goes:
+
+- **Whether your name goes in.** Your name, email and organisation are written into the file only when **Use my details to create** is on in your profile. With it off, the file records that it was made with Lolly and when - nothing about you.
+- **Whether licensed art goes in.** Licensed and brand-locked assets are held back by default. If the design uses any, the dialog says how many and offers two buttons - *Download without them* or *Include and download* - because including them hands the actual files to whoever opens the `.lolly`.
+- **Whether the tool goes in.** **Include the tool** packs the tool's own files alongside the design, so it opens on a device that doesn't have that tool. It arrives ticked for a custom tool - a fork or a private brand tool your recipient is unlikely to have - and unticked for one that matches the signed catalogue byte for byte, since their copy is already the same file.
+
+**Opening one.** Drop a `.lolly` onto the app: the assets land in your library, the session lands in Projects and the tool opens on it. Nothing of yours is overwritten: the session arrives as a new saved slot, while an asset already on this device is matched by checksum and reused rather than duplicated. Every part is checked against the file's own checksums on the way in, so a copy damaged in transit is refused rather than half-imported.
+
+If the file carries a tool you don't have, Lolly asks before that tool can run: **Trust this tool?** names it and its author and says plainly that opening it runs the tool's own code on your device, with **Trust & install** as the way through. Decline and the shared work is still saved to your projects, waiting there for the day you add the tool. (One kind of tool can't be sideloaded yet - one whose code ships as a module - and it's turned away the same way.)
+
+A link and a file both hand over a snapshot. To work on the same session *at the same time* as someone else - two devices, no server, no internet needed if you're on one network - see [Working together](/info/collaborate.html).
 
 ## Live camera (motion-reactive tools)
 

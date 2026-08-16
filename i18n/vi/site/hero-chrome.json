@@ -1,8 +1,5 @@
 {
   "statement": "Chủ quyền nội dung",
-  "pilotTag": "Nguyên mẫu",
-  "pilotText": "Đang thí điểm nội bộ · đang được củng cố để mở rộng quy mô doanh nghiệp",
-  "pilotAriaLabel": "Lolly là một nguyên mẫu nội bộ đang trong giai đoạn thí điểm khép kín, đang được củng cố để mở rộng quy mô doanh nghiệp",
   "ctas": [
     {
       "href": "/",
@@ -16,11 +13,11 @@
     }
   ],
   "trustChips": [
-    "100% Miễn phí",
-    "Không Cookie",
-    "Không cần đăng ký",
+    "Miễn phí mãi mãi",
     "Mã nguồn mở",
-    "Ưu tiên quyền riêng tư"
+    "Không cần tài khoản",
+    "Không cookie",
+    "Không gửi gì về"
   ],
-  "toolCountSuffix": "Công cụ mẫu đã tải"
+  "toolCountSuffix": "công cụ sẵn sàng"
 }

@@ -36,6 +36,7 @@ security posture).
 |---|---|---|
 | [site.md](site.md) | end user | Copy for the `/info` landing page. Registered as the `index` page with `isLanding: true`, so it renders as the front door rather than an article. |
 | [quickstart.md](quickstart.md) | end user | The one page to read first: make Lolly wear your brand, bring in the design files and tokens you already have, then pick a pathway. Its own pathway hub. |
+| [make-something.md](make-something.md) | end user | Make something in 60 seconds: three short walkthroughs (a QR code, a wordmark, a filtered photo) that need no account, no setup and no design skill. The first click for a brand-new visitor. |
 
 ## For Creators
 
@@ -52,13 +53,14 @@ security posture).
 | [favourites.md](favourites.md) | end user | Starring a tool and the strip it earns above the grid, the Gallery/Cover Flow view choice, and why the list travels with a profile export while the view mode stays on the device. |
 | [design-import.md](design-import.md) | end user | Bringing a Figma, Penpot, Illustrator or InDesign file into Design as an editable session, parsed entirely on device. |
 | [sequence-editor.md](sequence-editor.md) | end user | Editing in time: which clip a canvas click edits, onion-skin ghosts, split scope and Join, reversible detach audio, and trimming (pointer and keyboard). |
+| [extension.md](extension.md) | end user | The Lolly URL Screenshot browser extension, which gives the web app page capture that a browser tab cannot do alone. |
 | [animating.md](animating.md) | end user | Keyframes and depth: +Keyframe's two homes, the playhead-as-arm latch, the Keyframes popup and its curves, the Depth slider and Depth shadow, the scene camera and its five moves, Lift layers, and what a posed frame exports as. |
 | [collaborate.md](collaborate.md) | end user | Two devices editing one tool session live: the invite ceremony (link, QR, code door), the matching plates that confirm the peer, presence and focus rings, beaming files across, and why it still works with no internet. |
 | [formats.md](formats.md) | end user | The whole format register as one three-zone table - read-only at the left, written-only at the right, both-ways in the middle - with a plain-language card behind every chip. |
 | [exporting.md](exporting.md) | end user | Choosing a format, setting output size, and the three paths that produce a file (canvas render, generated text/data, on-device transform). |
 | [positioning.md](positioning.md) | end user | Where Lolly sits against Canva, brand portals, Illustrator and Figma/Penpot, and where it deliberately does not play. |
 | [compare.md](compare.md) | end user | The index of the tool-by-tool compare pages: what each competing tool does better, and what Lolly does instead. Dated, concession first, no superlatives. |
-| [compare-canva.md](compare-canva.md) · [compare-adobe.md](compare-adobe.md) · [compare-figma.md](compare-figma.md) · [compare-render-apis.md](compare-render-apis.md) · [compare-converters.md](compare-converters.md) | end user | The per-competitor compare pages, reached from the compare index and the format-page footers rather than the top-level nav. |
+| [compare-canva.md](compare-canva.md) · [compare-adobe.md](compare-adobe.md) · [compare-figma.md](compare-figma.md) · [compare-render-apis.md](compare-render-apis.md) · [compare-converters.md](compare-converters.md) · [compare-penpot.md](compare-penpot.md) · [compare-brand-portals.md](compare-brand-portals.md) | end user | The per-competitor compare pages, reached from the compare index and the format-page footers rather than the top-level nav. |
 
 ## For Builders
 
@@ -67,6 +69,9 @@ security posture).
 | [builders.md](builders.md) | tool author | Pathway hub. The technical map: author tools, integrate, self-host, extend. |
 | [overview.md](overview.md) | contributor | **The architecture document.** The three-layer separation (engine, shells, tool/brand packs), the capability-bridge boundary, the repository layout, the ten architectural commitments, and where the engine ends and the host begins. Opens with the product rationale, so use its navigation note to jump straight to the architecture. |
 | [design-tokens.md](design-tokens.md) | tool author | The DTCG token model as the single source of truth for brand primitives, and what round-trips with Penpot and Tokens Studio. |
+| [constraints.md](constraints.md) | end user | The constraints concept page: why output comes out right by construction, with the mechanism, the enforcing tests and the limits. |
+| [determinism.md](determinism.md) | end user | The determinism concept page: same inputs, same file, one render path behind every shell, and what is byte-reproducible against what is not. |
+| [reproducibility.md](reproducibility.md) | end user | The reproducibility concept page: the URL as the artifact, what travels in a link and what a bare link cannot carry. |
 | [authoring-tools.md](authoring-tools.md) | tool author | The tool anatomy (`tool.json`, template, hooks), the input types, and publishing via the generated catalog index. |
 | [authoring-assets.md](authoring-assets.md) | tool author | Catalog assets: the `type` enum from `schemas/asset.schema.json`, asset anatomy, versioning and the permanent-id rule. |
 | [host-api.md](host-api.md) | tool author | The `HostV1` capability bridge every tool calls into, and which shell implements what. |
@@ -75,12 +80,8 @@ security posture).
 | [tui.md](tui.md) | tool author | The interactive terminal shell: browse, fill inputs, save projects and export without a browser. |
 | [mcp.md](mcp.md) | tool author | The native MCP server, its two hosted tiers, and the callable tools it exposes. |
 | [ai-agents.md](ai-agents.md) | tool author | Driving Lolly from an agent by building a URL or CLI command instead of generating pixels. |
-| [extension.md](extension.md) | end user | The Lolly URL Screenshot browser extension, which gives the web app page capture that a browser tab cannot do alone. |
 | [contributing-setup.md](contributing-setup.md) | contributor | Getting a development checkout sized to what you're here to do: slim clone personas for tool authors and engine developers, and how to upgrade to the full thing later. |
-| [build-guide.md](build-guide.md) | operator | Per-target build steps: CLI binary, desktop app, mobile apps, and the web shell as a container image. |
 | [ios-build.md](ios-build.md) | contributor | The full iOS walkthrough for `shells/tauri-mobile`: prerequisites, one-time init, the simulator dev loop, code signing, camera permissions. Sits next to the Build Guide under Builders, which links to it. |
-| [deployment.md](deployment.md) | operator | Where each piece runs, and the delivery postures (distribute to devices, host the PWA, run the services). |
-| [configuration.md](configuration.md) | operator | Profiles, brand packs, tool sets and per-tool capabilities as files rather than in-app settings. |
 | [data-transfer.md](data-transfer.md) | contributor | The `lolly-backup` bundle format spec: what a bundle carries, what it deliberately does not, and the round-trip contract. Its own pathway is Builders; the Trust sidebar carries it too. |
 
 The Builders sidebar also carries an **About** entry, which renders the repo-root
@@ -93,6 +94,10 @@ The Builders sidebar also carries an **About** entry, which renders the repo-roo
 | [operators.md](operators.md) | operator | Pathway hub. The security and governance case for handing a creative tool to everyone. |
 | [adoption-governance.md](adoption-governance.md) | operator | The honest pilot account: current status, who it is for, how adoption is measured, who governs the output. |
 | [cli-signing.md](cli-signing.md) | operator | Setting up a real signing identity for the CLI, so files made from the terminal carry a verifiable name rather than an anonymous on-device key. Its own pathway is Operators; the Builders sidebar carries it too. |
+| [deployment.md](deployment.md) | operator | Where each piece runs, and the delivery postures (distribute to devices, host the PWA, run the services). |
+| [configuration.md](configuration.md) | operator | Profiles, brand packs, tool sets and per-tool capabilities as files rather than in-app settings. |
+| [build-guide.md](build-guide.md) | operator | Per-target build steps: CLI binary, desktop app, mobile apps, and the web shell as a container image. |
+| [sovereign-production.md](sovereign-production.md) | operator | Sovereign creative production: no server in the render path, consent-gated networking, air-gapped deployment, on-device signing, and the limits stated as facts. |
 
 ## For Trust
 
@@ -107,6 +112,7 @@ The fifth pathway, and the one the other four link into whenever a claim needs i
 | [content-credentials-engineering.md](content-credentials-engineering.md) | security | The engineering companion: device/CA architecture, engine contracts, the CA service, web-shell wiring, one-time operator setup. |
 | [ai-stance.md](ai-stance.md) | end user | AI welcomed as labour and refused as impersonation: where Lolly stands on generated content, and the machinery behind each commitment. |
 | [ai-features.md](ai-features.md) | end user | Text-to-speech, upscaling and background removal - generated once under guard-rails, then rendered identically everywhere, and why inventing pixels is marked AI while removing them is not. |
+| [eu-ai-act.md](eu-ai-act.md) | end user | Article 50 and AI-content marking since 2 August 2026, and where Lolly honestly fits: preserving arriving marks, declaring its own AI operations, verifying any file on-device. |
 | [beatrice-warde.md](beatrice-warde.md) | end user | The typographer whose 1932 lines this project adapted, what we changed, and who she was. |
 | [verify-yourself.md](verify-yourself.md) | security | Falsifiable procedures with exact commands and expected output for the privacy and security claims. |
 | [security-verification.md](security-verification.md) | security | A reviewer's summary of the cryptography behind Content Credentials, verification and encryption, and the tests behind each claim. |

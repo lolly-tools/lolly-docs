@@ -1,8 +1,5 @@
 {
   "statement": "Suveranitatea conținutului",
-  "pilotTag": "Prototip",
-  "pilotText": "Pilot închis în desfășurare · hardening pentru scară enterprise",
-  "pilotAriaLabel": "Lolly este un prototip intern aflat într-un pilot închis, în curs de hardening pentru scară enterprise",
   "ctas": [
     {
       "href": "/",
@@ -16,11 +13,11 @@
     }
   ],
   "trustChips": [
-    "100% gratuit",
-    "Fără cookie-uri",
-    "Fără înregistrare",
+    "Gratuit pentru totdeauna",
     "Open Source",
-    "Confidențialitate mai întâi"
+    "Fără cont",
+    "Fără cookie-uri",
+    "Nu raportează nimic"
   ],
-  "toolCountSuffix": "Instrumente de exemplu încărcate"
+  "toolCountSuffix": "Instrumente gata de folosit: {count}"
 }

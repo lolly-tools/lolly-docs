@@ -239,7 +239,7 @@ the user's call, offered at the moment the certificate is actually minted:
   `?c2pa=90` on a share/deep-link URL sets a 90-day ephemeral window (and pre-sets the
   export panel), `c2pa=off` forces it off and the CLI accepts the same as `--c2pa=90`.
   A CLI render is credentialed **by default**, exactly as an export from the app is
-  (plans/73-cli-ga-contract.md §12 O2). `--no-provenance` is the one-word opt-out, and the
+  ([plans/73-cli-ga-contract.md](https://github.com/lolly-tools/lolly/blob/main/plans/73-cli-ga-contract.md), section 12 O2). `--no-provenance` is the one-word opt-out, and the
   way to get byte-identical output run to run. The default signer there is the ephemeral
   on-device one - *browser* enrolment is a browser feature, because the device key is
   generated non-extractable and cannot be handed to a terminal - but the CLI can sign

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MPL-2.0
 /**
- * Banked docs art - the masthead bank and the figure bank (plans/105 §6).
+ * Banked docs art - the masthead bank and the figure bank (plans/105 section 6).
  *
  * Two directories, one pipeline. `docs/mastheads/<id>.svg|.html` is a stable
  * library a page maps into by slug; `docs/figures/<page-slug>-<name>.svg|.html`
@@ -50,7 +50,7 @@ import { resolve } from 'node:path';
 
 import { stripPlacedArmorLine } from '../engine/src/c2pa-containers.ts';
 
-/** The two banks. Same pipeline, different lifecycles (plan §6). */
+/** The two banks. Same pipeline, different lifecycles (plan section 6). */
 export type ArtBank = 'mastheads' | 'figures';
 
 export interface DocsArt {
@@ -63,7 +63,7 @@ export interface DocsArt {
   path: string;
   /** The served URL of the SAME file, e.g. `/info/mastheads/hero.de.svg`. */
   src: string;
-  /** `svg` (§A.3.3 metadata carrier) or `html` (Lolly fragment armour profile). */
+  /** `svg` (section A.3.3 metadata carrier) or `html` (Lolly fragment armour profile). */
   kind: 'svg' | 'html';
   /** The id-space prefix this artifact's inlined copy is namespaced with. */
   prefix: string;
@@ -117,7 +117,7 @@ export function resolveDocsArt(
  * The carriers a presentation copy must not keep.
  *
  * `<metadata>` is where placeSvg puts `<c2pa:manifest>` (engine/src/c2pa-containers.ts).
- * §A.9's armour line is removed by the ENGINE's own {@link stripPlacedArmorLine} - 
+ * section A.9's armour line is removed by the ENGINE's own {@link stripPlacedArmorLine} - 
  * the placer's inverse, imported rather than re-written. This file used to carry a
  * third hand-made copy of that rule, and like the second one it was lazy across
  * lines (`[\s\S]*?` to the first `-----END`), so any content between a quoted
@@ -137,7 +137,7 @@ const STRIP: ReadonlyArray<RegExp> = [
 ];
 
 /** Anything matching this after the strip means a CARRIER survived - the C2PA
- *  manifest element, its namespace declaration, an armour delimiter, or §A.7's
+ *  manifest element, its namespace declaration, an armour delimiter, or section A.7's
  *  script element. A plain `<metadata>` is no longer on this list because it is no
  *  longer stripped: it is the artifact's own (RDF licensing, editor provenance),
  *  and a presentation copy is the artifact minus its credential, nothing else. */
@@ -207,7 +207,7 @@ export function inlineDocsArt(art: DocsArt): { html: string } | { error: string 
  * painted behind it, which is why this composes the same wrapper the default
  * band uses rather than a second one. The art is `aria-hidden`: it is
  * decorative even when it carries words, because the h1 IS the page's name
- * (plan §6, words + locale charter).
+ * (plan section 6, words + locale charter).
  */
 export function mastheadArtBand(parts: { art: string; heading: string; credential: string }): string {
   return `<div class="docs-masthead docs-masthead--art">`

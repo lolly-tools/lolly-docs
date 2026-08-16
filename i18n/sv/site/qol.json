@@ -1,14 +1,24 @@
 {
   "panels": [
     {
-      "illustration": "illusSound",
-      "heading": "Tillgänglig, med ljud",
-      "desc": "Ett gränssnitt som fungerar som du vill - skärmläsarvänligt och fullt tangentbordsnavigerbart genomgående. Slå på milda gränssnittsljud, eller växla till **Neurospicy Mode**: en lugn fokusrytm som loopar tyst medan du arbetar."
+      "heading": "Dela allt i ett",
+      "desc": "När en länk inte kan bära allt säger Lolly exakt vad som skulle falla bort, och erbjuder i stället alltihop som en enda **.lolly**-fil: dina bilder, designen, till och med själva verktyget. Du väljer hur mycket som följer med - dina uppgifter, licensierad grafik och verktyget tas bara med när du säger till, och den som öppnar filen blir tillfrågad innan ett medskickat verktyg får köras."
     },
     {
-      "illustration": "illusBulk",
+      "heading": "Jobba tillsammans, utan internet",
+      "desc": "Två personer, två enheter, en design, redigerad live. Skanna en kod över bordet så håller båda skärmarna samma session - på ett flygplan, i en källare, på en delad mobiluppkoppling. Det finns ingen server i mitten att lita på eller som kan gå sönder."
+    },
+    {
+      "heading": "Presentera i helskärm",
+      "desc": "Ramarna i en design blir bilder i ett bildspel: klicka dig igenom dem på storbildsskärmen, öppna en talarvy med anteckningar och timer, eller låt den loopa på skärmen i receptionen. Ingen separat presentationsapp."
+    },
+    {
       "heading": "Organisera, rendera sedan i bulk",
-      "desc": "Spara ditt arbete i nästlade **Projekt**-mappar. När det är dags att leverera renderar du en hel mapp - eller valfritt urval du själv väljer - till en enda zip-fil. Inget kalkylblad, inget bulk-rutnät krävs."
+      "desc": "Spara ditt arbete i nästlade **Projekt**-mappar. När det är dags att leverera renderar du en hel mapp - eller valfritt urval du väljer - till en enda zip-fil. Eller klistra in ett kalkylblad och få en färdig fil per rad."
+    },
+    {
+      "heading": "Tillgänglig, med ljud",
+      "desc": "Ett gränssnitt som fungerar som du vill - skärmläsarvänligt och fullt tangentbordsnavigerbart genomgående. Slå på milda gränssnittsljud, eller växla till **Neurospicy Mode**: en lugn fokusrytm som loopar tyst medan du arbetar."
     }
   ]
 }

@@ -1,14 +1,24 @@
 {
   "panels": [
     {
-      "illustration": "illusSound",
-      "heading": "Accessibile, con audio",
-      "desc": "Un'interfaccia che funziona come lavori tu - compatibile con gli screen reader e completamente navigabile da tastiera. Attiva i suoni discreti dell'interfaccia, oppure passa alla **Neurospicy Mode**: un ritmo di concentrazione tranquillo che gira in loop a basso volume mentre lavori."
+      "heading": "Condividilo per intero",
+      "desc": "Quando un link non riesce a portare tutto, Lolly ti dice esattamente cosa andrebbe perso e ti offre l'insieme completo come un unico file **.lolly**: le tue immagini, il design, perfino lo strumento stesso. Scegli tu quanto viaggia - i tuoi dati, le immagini con licenza e lo strumento vengono inclusi solo se lo dici tu, e a chi lo apre viene chiesto il permesso prima che uno strumento incluso possa partire."
     },
     {
-      "illustration": "illusBulk",
+      "heading": "Lavorate insieme, senza internet",
+      "desc": "Due persone, due dispositivi, un design, modificato dal vivo. Scansiona un codice dall'altra parte del tavolo e i due schermi condividono la stessa sessione: in aereo, in cantina, con un hotspot. Non c'è nessun server in mezzo di cui fidarsi o che possa cadere."
+    },
+    {
+      "heading": "Presentalo a schermo intero",
+      "desc": "I frame di un design diventano diapositive: scorrile sullo schermo grande, apri una vista relatore con note e timer, oppure lascia tutto in loop sullo schermo della reception. Nessuna app di presentazioni a parte."
+    },
+    {
       "heading": "Organizza, poi renderizza in blocco",
-      "desc": "Conserva il lavoro salvato in cartelle **Progetti** annidate. Quando è il momento di pubblicare, renderizza un'intera cartella - o una qualsiasi selezione - in un unico zip. Nessun foglio di calcolo, nessuna griglia batch necessaria."
+      "desc": "Conserva il lavoro salvato in cartelle **Progetti** annidate. Quando è il momento di pubblicare, renderizza un'intera cartella - o una qualsiasi selezione - in un unico zip. Oppure incolla un foglio di calcolo e ottieni un file finito per ogni riga."
+    },
+    {
+      "heading": "Accessibile, con audio",
+      "desc": "Un'interfaccia che funziona come lavori tu - compatibile con gli screen reader e completamente navigabile da tastiera. Attiva i suoni discreti dell'interfaccia, oppure passa alla **Neurospicy Mode**: un ritmo di concentrazione tranquillo che gira in loop a basso volume mentre lavori."
     }
   ]
 }

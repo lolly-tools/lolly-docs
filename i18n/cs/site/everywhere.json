@@ -1,9 +1,10 @@
 {
   "heading": "Všechno,\ntak jak jsi,\nna čemkoli",
-  "copy": "Běž offline na svém zařízení, buď vždy dostupný v hostované online verzi, rozhoduješ ty.\nLolly Tools tam dokážou fungovat.",
+  "copy": "Nainstaluj si to, otevři hostovanou adresu, nebo obojí najednou - rozhoduješ ty.\nLolly Tools tam dokážou fungovat.",
   "surfaces": [
     { "icon": "surfaceWeb", "label": "Web" },
     { "icon": "surfaceMacos", "label": "macOS" },
+    { "icon": "surfaceWindows", "label": "Windows" },
     { "icon": "surfaceLinux", "label": "Linux" },
     { "icon": "surfaceIos", "label": "iOS" },
     { "icon": "surfaceAndroid", "label": "Android" },
@@ -12,8 +13,8 @@
   ],
   "modelsIntro": "Tři způsoby nasazení:",
   "models": [
-    { "n": "1", "icon": "modelDeploy", "label": "Nasazení", "desc": "Nasaď do zařízení pomocí svého stávajícího MDM. Běží zcela offline, za jakýmkoli firewallem nebo air-gapem - ze zařízení nic neodejde." },
+    { "n": "1", "icon": "modelDeploy", "label": "Nasazení", "desc": "Rozvez to do zařízení přes svoje stávající MDM. Běží za jakýmkoli firewallem i uvnitř air-gapped sítě, která nemá ven vůbec žádnou cestu." },
     { "n": "2", "icon": "modelServe", "label": "Provoz", "desc": "Jedna hostovaná instance, dostupná v libovolném prohlížeči. Nic se neinstaluje - schválené aktualizace se ke všem dostanou ve chvíli, kdy vyjdou." },
-    { "n": "3", "icon": "modelHybrid", "label": "Hybrid", "desc": "Offline lokální aplikace plus vždy aktuální webová verze, sdílející jednu knihovnu nástrojů - napříč všemi OS najednou." }
+    { "n": "3", "icon": "modelHybrid", "label": "Hybrid", "desc": "Nainstalované lokální aplikace plus vždy aktuální webová verze, sdílející jednu knihovnu nástrojů - napříč všemi OS najednou." }
   ]
 }

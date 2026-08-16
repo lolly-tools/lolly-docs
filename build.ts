@@ -27,13 +27,13 @@ import { scan as scanVernacular, staleAllows as staleVernacularAllows } from '..
     process.exit(1);
   }
 }
-// Banked docs art (plans/105 §6). The strip/namespace + composition live in their
+// Banked docs art (plans/105 section 6). The strip/namespace + composition live in their
 // own module because this one runs build() on import: a test can exercise them
 // there without building the site (see tests/docs-figures.test.ts).
 // parseFigureFence + figureBlock moved to @lolly-tools/docs-render (the renderer composes
 // figures there); the filesystem art resolvers + the masthead band stay here.
 import { resolveDocsArt, inlineDocsArt, mastheadArtBand } from './docs-art.ts';
-// Page seals (plans/105 §7): the <link rel="c2pa-manifest"> each English page
+// Page seals (plans/105 section 7): the <link rel="c2pa-manifest"> each English page
 // carries, and the signing pass that runs after every page is on disk. Same
 // reason as docs-art.ts for living outside this file - sealing is exercised by
 // tests/docs-page-seal.test.ts, and importing build.ts would build the site.
@@ -168,6 +168,7 @@ const pages: Page[] = [
 
   // ── Primary article ──────────────────────────────────────────────────────
   { slug: 'quickstart',       title: 'Quickstart', src: 'quickstart.md', pathway: 'quickstart', isHub: true },
+  { slug: 'make-something',   title: 'Make something in 60 seconds', src: 'make-something.md', pathway: 'quickstart', description: "Pick a tool, type a few words and download the finished file: three short walkthroughs that need no account, no setup and no design skill." },
 
   // ── Pathway hubs ─────────────────────────────────────────────────────────
   { slug: 'creators',         title: 'Lolly for Creators',  src: 'creators.md',  pathway: 'creators',  isHub: true },
@@ -212,10 +213,15 @@ const pages: Page[] = [
   { slug: 'compare-figma',      title: 'Lolly and Figma',   src: 'compare-figma.md',   pathway: 'creators', description: "Laying out a design and turning it into a reusable output: where Lolly and Figma overlap, and what Figma does better." },
   { slug: 'compare-render-apis', title: 'Lolly and rendering APIs', src: 'compare-render-apis.md', pathway: 'creators', description: "Generating many on-brand images from data: where Lolly and a hosted rendering API like Bannerbear or Placid overlap." },
   { slug: 'compare-converters', title: 'Lolly and online file converters', src: 'compare-converters.md', pathway: 'creators', description: "Turning one file format into another on your own device, without uploading it to a stranger's server." },
+  { slug: 'compare-penpot',   title: 'Lolly and Penpot',  src: 'compare-penpot.md',  pathway: 'creators', description: "Two open-source answers to design work: where Lolly and Penpot overlap, what Penpot does better today, and how the two projects work together." },
+  { slug: 'compare-brand-portals', title: 'Lolly and brand portals', src: 'compare-brand-portals.md', pathway: 'creators', description: "Locked templates without the portal: where Lolly overlaps with brand platforms like Bynder, Frontify and Marq, and what a portal still does better." },
 
   // ── Builders pathway ─────────────────────────────────────────────────────
-  { slug: 'overview',         title: 'Overview',          src: 'overview.md',        pathway: 'builders', description: "How the Lolly platform is put together: the engine, the shells, the capability bridge, and why tools are data rather than bundled code." },
+  { slug: 'overview',         title: 'Architecture',      src: 'overview.md',        pathway: 'builders', description: "How the Lolly platform is put together: the engine, the shells, the capability bridge, and why tools are data rather than bundled code." },
   { slug: 'design-tokens',    title: 'Design Tokens',     src: 'design-tokens.md',   pathway: 'builders' },
+  { slug: 'constraints',      title: 'Constraints',       src: 'constraints.md',     pathway: 'builders', description: "Why output comes out right by construction: inputs declared in the manifest, logic-less templates and brand values resolved from tokens, with the tests that enforce each." },
+  { slug: 'determinism',      title: 'Determinism',       src: 'determinism.md',     pathway: 'builders', description: "Same inputs, same file: one render path behind every shell, what is byte-reproducible and what is not, and the receipts for both." },
+  { slug: 'reproducibility',  title: 'Reproducibility',   src: 'reproducibility.md', pathway: 'builders', description: "The URL is the artifact: every input travels as parameters, so a link re-renders next year, and the limits of what a bare link can carry." },
   { slug: 'authoring-tools',  title: 'Authoring Tools',   src: 'authoring-tools.md', pathway: 'builders', description: "Author a Lolly tool: the manifest, the template, the optional hooks, and the invariants that keep one tool running unchanged in the browser, on the desktop and in the terminal." },
   { slug: 'authoring-assets', title: 'Authoring Assets',  src: 'authoring-assets.md', pathway: 'builders' },
   { slug: 'host-api',         title: 'Host API',          src: 'host-api.md',        pathway: 'builders' },
@@ -225,12 +231,12 @@ const pages: Page[] = [
   { slug: 'tui',              title: 'TUI',               src: 'tui.md',             pathway: 'builders' },
   { slug: 'mcp',              title: 'MCP Server',        src: 'mcp.md',             pathway: 'builders' },
   { slug: 'ai-agents',        title: 'AI Agents',         src: 'ai-agents.md',       pathway: 'builders' },
-  { slug: 'extension',        title: 'Browser Extension', src: 'extension.md',       pathway: 'builders' },
+  { slug: 'extension',        title: 'Browser Extension', src: 'extension.md',       pathway: 'creators' },
   { slug: 'contributing-setup', title: 'Contributing Setup', src: 'contributing-setup.md', pathway: 'builders', description: "Get a development checkout sized to what you're here to do: slim clone personas for tool authors and engine developers, and how to upgrade to the full thing later." },
-  { slug: 'build-guide',      title: 'Build Guide',       src: 'build-guide.md',     pathway: 'builders', description: "Build Lolly for each target: the CLI binary, the desktop app, mobile, and the web PWA. Prerequisites, commands and what each build produces." },
+  { slug: 'build-guide',      title: 'Build Guide',       src: 'build-guide.md',     pathway: 'operators', description: "Build Lolly for each target: the CLI binary, the desktop app, mobile, and the web PWA. Prerequisites, commands and what each build produces." },
   { slug: 'ios-build',        title: 'Building for iOS',  src: 'ios-build.md',       pathway: 'builders' },
-  { slug: 'deployment',       title: 'Deployment',        src: 'deployment.md',      pathway: 'builders' },
-  { slug: 'configuration',    title: 'Configuration',     src: 'configuration.md',   pathway: 'builders', description: "Everything that shapes a Lolly instance: which brand it wears, which tools it exposes, and what each tool may do on the device it runs on." },
+  { slug: 'deployment',       title: 'Deployment',        src: 'deployment.md',      pathway: 'operators' },
+  { slug: 'configuration',    title: 'Configuration',     src: 'configuration.md',   pathway: 'operators', description: "Everything that shapes a Lolly instance: which brand it wears, which tools it exposes, and what each tool may do on the device it runs on." },
   { slug: 'content-credentials-identity', title: 'Content Credentials Identity', src: 'content-credentials-identity.md', pathway: 'trust' },
   { slug: 'content-credentials-engineering', title: 'Content Credentials - Engineering', src: 'content-credentials-engineering.md', pathway: 'trust' },
   { slug: 'data-transfer',    title: 'Data Transfer',     src: 'data-transfer.md',   pathway: 'builders' },
@@ -238,6 +244,7 @@ const pages: Page[] = [
 
   // ── Operators pathway ────────────────────────────────────────────────────
   { slug: 'adoption-governance', title: 'Adoption & Governance', src: 'adoption-governance.md', pathway: 'operators', description: "Adopting Lolly across a team: who approves tools, how brand rules become enforceable, and what changes in a creative workflow." },
+  { slug: 'sovereign-production', title: 'Sovereign creative production', src: 'sovereign-production.md', pathway: 'operators', description: "Creative production with no server in the render path: air-gapped deployment, consent-gated networking, on-device signing and the tools as files you hold." },
   { slug: 'security',         title: 'Security & Verification', src: 'security-verification.md', pathway: 'trust', description: "The cryptography behind Lolly's Content Credentials, verification and encryption, summarised for a security reviewer with the limits stated as clearly as the guarantees." },
   { slug: 'threat-model',     title: 'Threat Model & Trust Boundaries', src: 'threat-model.md', pathway: 'trust', description: "What Lolly defends against, what it explicitly does not, and where each trust boundary sits. Written for reviewers who need the limits stated as plainly as the protections." },
   { slug: 'parser-inventory', title: 'Parser Inventory',  src: 'parser-inventory.md', pathway: 'trust' },
@@ -247,11 +254,12 @@ const pages: Page[] = [
   { slug: 'inclusive-design', title: 'Inclusive Design',  src: 'inclusive-design.md', pathway: 'trust', description: "Accessibility, language coverage and the ethical commitments Lolly holds itself to, with the tests that fail the build when one is broken." },
   { slug: 'ai-stance',        title: 'Our AI Stance',     src: 'ai-stance.md',       pathway: 'trust', description: "AI is welcome as labour and refused as impersonation. Where Lolly stands on generated content, and the machinery that enforces each commitment." },
   { slug: 'ai-features',      title: 'Generated once, rendered the same', src: 'ai-features.md', pathway: 'trust', description: "Text-to-speech, upscaling and background removal: generated once under guard-rails, then rendered identically everywhere. Why inventing pixels is marked AI and removing them is not." },
+  { slug: 'eu-ai-act',        title: 'AI marking and the EU AI Act', src: 'eu-ai-act.md', pathway: 'trust', description: "Article 50 has applied since 2 August 2026, and its Code of Practice points at C2PA. Lolly's honest fit: it preserves arriving AI marks, declares its own AI operations and verifies files on-device." },
   { slug: 'beatrice-warde',   title: 'Beatrice Warde',    src: 'beatrice-warde.md',  pathway: 'trust', description: "The typographer whose 1932 lines this project adapted, who proved that the types the whole trade called Garamond had been cut by somebody else entirely." },
 ];
 
 /**
- * Which page opens on which BANKED masthead - `slug → docs/mastheads/<id>` (plans/105 §6).
+ * Which page opens on which BANKED masthead - `slug → docs/mastheads/<id>` (plans/105 section 6).
  *
  * Empty, and that is the shipped state: the default band (the chip field behind the
  * h1, `docsMasthead` below) is every page's masthead until a real artifact is banked
@@ -351,11 +359,14 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
   quickstart: {
     title: 'Quickstart',
     groups: [
-      { label: 'Start here', items: [ { slug: 'quickstart', label: 'Quickstart' } ] },
+      { label: 'Start here', items: [
+        { slug: 'make-something', label: 'Make something' },
+        { slug: 'quickstart',     label: 'Quickstart' } ] },
       { label: 'Then pick a path', items: [
         { slug: 'creators',  label: 'For Creators' },
         { slug: 'builders',  label: 'For Builders' },
-        { slug: 'operators', label: 'For Operators' } ] },
+        { slug: 'operators', label: 'For Operators' },
+        { slug: 'trust',     label: 'Trust' } ] },
     ],
   },
   // The creators rail used to be one six-item "Make things" group with everything in
@@ -375,7 +386,8 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
         { slug: 'design-import',   label: 'Import a design' },
         { slug: 'sequence-editor', label: 'The sequence editor' },
         { slug: 'animating',       label: 'Animating' },
-        { slug: 'utilities',       label: 'Utility views' } ] },
+        { slug: 'utilities',       label: 'Utility views' },
+        { slug: 'extension',       label: 'Browser Extension' } ] },
       // Search, favourites and the profile are the three pages about getting back to
       // your own things - finding them, keeping them to hand, and the on-device record
       // both of the other two are written onto.
@@ -386,12 +398,20 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
         { slug: 'favourites',  label: 'Your favourites' },
         { slug: 'profile',     label: 'Your profile' } ] },
       { label: 'Share & collaborate', items: [
-        { slug: 'collaborate', label: 'Working together' },
-        { slug: 'formats',     label: 'Formats, in and out' },
-        { slug: 'exporting',   label: 'Exporting & formats' } ] },
+        { slug: 'collaborate', label: 'Working together' } ] },
+      { label: 'Formats & export', items: [
+        { slug: 'formats',     label: 'What Lolly opens and makes' },
+        { slug: 'exporting',   label: 'Exporting a file' } ] },
       { label: 'Compare', items: [
         { slug: 'positioning', label: 'How Lolly compares' },
-        { slug: 'compare',     label: 'Tool by tool' } ] },
+        { slug: 'compare',     label: 'Tool by tool' },
+        { slug: 'compare-canva',         label: 'and Canva' },
+        { slug: 'compare-adobe',         label: 'and Adobe' },
+        { slug: 'compare-figma',         label: 'and Figma' },
+        { slug: 'compare-penpot',        label: 'and Penpot' },
+        { slug: 'compare-render-apis',   label: 'and rendering APIs' },
+        { slug: 'compare-brand-portals', label: 'and brand portals' },
+        { slug: 'compare-converters',    label: 'and online converters' } ] },
     ],
   },
   builders: {
@@ -403,6 +423,12 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
       { label: 'Architecture', items: [
         { slug: 'overview',      label: 'Architecture' },
         { slug: 'design-tokens', label: 'Design Tokens' } ] },
+      // The three concept pages: each takes one term the landing states in plain
+      // words and shows the mechanism, the receipts and the limits (plan 117 section 2).
+      { label: 'Concepts', items: [
+        { slug: 'constraints',     label: 'Constraints' },
+        { slug: 'determinism',     label: 'Determinism' },
+        { slug: 'reproducibility', label: 'Reproducibility' } ] },
       { label: 'Author tools', items: [
         { slug: 'authoring-tools',  label: 'Authoring Tools' },
         { slug: 'authoring-assets', label: 'Authoring Assets' },
@@ -411,23 +437,23 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
       { label: 'Run & integrate', items: [
         { slug: 'cli',         label: 'CLI' },
         { slug: 'cli-signing', label: 'Signing from the terminal' },
-        { slug: 'tui',       label: 'TUI' },
+        { slug: 'tui',       label: 'Terminal (TUI)' },
         { slug: 'mcp',       label: 'MCP Server' },
         { slug: 'ai-agents', label: 'AI Agents' },
-        { slug: 'extension', label: 'Chrome Extension' } ] },
+        { slug: 'extension', label: 'Browser Extension' } ] },
       { label: 'Ship & operate', items: [
         { slug: 'contributing-setup', label: 'Contributing setup' },
         { slug: 'build-guide',   label: 'Build Guide' },
         { slug: 'ios-build',     label: 'Building for iOS' },
         { slug: 'deployment',    label: 'Deployment' },
-        { slug: 'configuration', label: 'Configuration' } ] },
+        { slug: 'configuration', label: 'Configuration' },
+        { slug: 'about',         label: 'About' } ] },
       { label: 'Trust & data', items: [
         { slug: 'content-credentials-identity', label: 'Content Credentials' },
         { slug: 'security',      label: 'Security & Verification' },
         { slug: 'threat-model',     label: 'Threat Model' },
-        { slug: 'parser-inventory', label: 'Parser Inventory' },
-        { slug: 'data-transfer', label: 'Data Transfer' },
-        { slug: 'about',         label: 'About' } ] },
+        { slug: 'parser-inventory', label: 'Every parser we run' },
+        { slug: 'data-transfer', label: 'Backup file format' } ] },
     ],
   },
   operators: {
@@ -438,15 +464,24 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
         { slug: 'quickstart', label: 'Quickstart' } ] },
       { label: 'Adopt & govern', items: [
         { slug: 'adoption-governance', label: 'Adoption & Governance' },
+        { slug: 'sovereign-production', label: 'Sovereign production' },
         { slug: 'deployment',    label: 'Deployment' },
-        { slug: 'configuration', label: 'Configuration' } ] },
+        { slug: 'configuration', label: 'Configuration' },
+        { slug: 'build-guide',   label: 'Build Guide' } ] },
       { label: 'Trust', items: [
         { slug: 'trust',    label: 'Trust overview' },
         { slug: 'security', label: 'Security & Verification' },
+        { slug: 'verify-yourself', label: 'Verify It Yourself' },
+        { slug: 'threat-model',    label: 'Threat Model' },
+        { slug: 'server-surface',  label: 'What a server sees' },
+        { slug: 'parser-inventory', label: 'Every parser we run' },
         { slug: 'cli-signing', label: 'Signing from the terminal' },
         { slug: 'privacy',  label: 'Privacy Policy' } ] },
     ],
   },
+  // The trust rail is tiered by reader (2026-08-16): the lay essays first, the
+  // hands-on check next, the reviewer references clearly labelled as such, and an
+  // exit group so a convinced reviewer has a next step instead of a cul-de-sac.
   trust: {
     title: 'Trust',
     groups: [
@@ -455,21 +490,27 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
         { slug: 'status-quo',       label: 'Why this differs' },
         { slug: 'inclusive-design', label: 'Inclusive Design' } ] },
       { label: 'Where content comes from', items: [
-        { slug: 'input-not-impersonation',         label: 'Input, not impersonation' },
-        { slug: 'content-credentials-identity',    label: 'Content Credentials' },
-        { slug: 'content-credentials-engineering', label: 'Content Credentials - Engineering' },
-        { slug: 'ai-stance',                       label: 'Our AI Stance' },
-        { slug: 'ai-features',                     label: 'AI features' },
-        { slug: 'beatrice-warde',                  label: 'Beatrice Warde' } ] },
+        { slug: 'input-not-impersonation',      label: 'Input, not impersonation' },
+        { slug: 'content-credentials-identity', label: 'Content Credentials' },
+        { slug: 'ai-stance',                    label: 'Our AI Stance' },
+        { slug: 'ai-features',                  label: 'AI features' },
+        { slug: 'eu-ai-act',                    label: 'The EU AI Act' },
+        { slug: 'beatrice-warde',               label: 'Beatrice Warde' } ] },
       { label: 'Check it yourself', items: [
         { slug: 'verify-yourself', label: 'Verify It Yourself' },
-        { slug: 'security',        label: 'Security & Verification' },
-        { slug: 'threat-model',    label: 'Threat Model' },
-        { slug: 'parser-inventory', label: 'Parser Inventory' },
-        { slug: 'server-surface',  label: 'Server Surface' } ] },
+        { slug: 'security',        label: 'Security & Verification' } ] },
+      { label: 'For reviewers', items: [
+        { slug: 'threat-model',     label: 'Threat Model' },
+        { slug: 'parser-inventory', label: 'Every parser we run' },
+        { slug: 'server-surface',   label: 'What a server sees' },
+        { slug: 'content-credentials-engineering', label: 'Content Credentials - Engineering' } ] },
       { label: 'Your data', items: [
-        { slug: 'privacy',          label: 'Privacy Policy' },
-        { slug: 'data-transfer',    label: 'Data Transfer' } ] },
+        { slug: 'privacy',       label: 'Privacy Policy' },
+        { slug: 'data-transfer', label: 'Backup file format' } ] },
+      { label: 'Roll it out', items: [
+        { slug: 'adoption-governance',  label: 'Adoption & Governance' },
+        { slug: 'sovereign-production', label: 'Sovereign production' },
+        { slug: 'deployment',           label: 'Deployment' } ] },
     ],
   },
 };
@@ -1193,7 +1234,7 @@ function englishAudienceH2s(): string[] {
 // page (plus the two bands the landing shares with their own pages), and
 // tests/docs-claims.test.ts reads it as SOURCE: the say-offline-once purge, the
 // competitor-name rule and the banned-word list are enforced against these bytes
-// (plans/117 §6, plans/116 §3). Sub-regions that are allowed to break one of those
+// (plans/117 section 6, plans/116 section 3). Sub-regions that are allowed to break one of those
 // rules are marked CLAIMS-ALLOW, each with the reason on the line - and the test
 // excuses exactly those, so an unmarked exception fails the build's test run.
 
@@ -1496,10 +1537,10 @@ function makeSomethingBlock(lang: Lang): string {
 /**
  * Block 3 - the sovereignty statement. The ONE place on this page the offline /
  * nothing-leaves claim is made in full (the hero's "on your own device" decode is
- * the only other mention, and §6's test holds that line). Andy's maxim, 2026-08-15.
+ * the only other mention, and section 6's test holds that line). Andy's maxim, 2026-08-15.
  */
 function sovereigntyBlock(lang: Lang): string {
-  // CLAIMS-ALLOW: offline-statement - block 3 IS the home of the claim (plan 117 §1).
+  // CLAIMS-ALLOW: offline-statement - block 3 IS the home of the claim (plan 117 section 1).
   const statement = t('**The internet is optional here: use it when it helps, never surrender control.** A font you pick, a place you look up, a link you share - things happen online only because you asked. Nothing you make ever leaves your device, and no one is listening in. Turn the Wi-Fi off and everything still works. **Freedom is sweet.**');
   // CLAIMS-ALLOW END
   return `<section class="sovereign-section" id="sovereign">
@@ -1517,14 +1558,14 @@ function sovereigntyBlock(lang: Lang): string {
 /**
  * Block 5 - AI, on your terms. Three short answers to the three things the
  * front-door reader does NOT know: who is in control, what it keeps costing, and
- * how it stays honest (plans/116 §9). No tool-authoring claim here - that one is
+ * how it stays honest (plans/116 section 9). No tool-authoring claim here - that one is
  * gated on save-to-tool.
  */
 function aiBlock(lang: Lang): string {
   const points: { title: string; desc: string }[] = [
     { title: t('You are in control'), desc: t('AI helps only when you ask, and only with the piece you point it at. Nothing is decided for you.') },
     { title: t('It stops costing'), desc: t('If AI helps make something once, the result is yours. Using it again is free, however many times you need it.') },
-    { title: t('It stays honest'), desc: t('A piece made by AI says so, and what you make carries your name instead of pretending to be someone else.') },
+    { title: t('It stays honest'), desc: t('A piece made by AI says so, and what you make carries your name instead of pretending to be someone else. Even the built-in help works this way: ask it a question and it answers with the manual’s own sentence and a link, never a made-up answer.') },
   ];
   return `<section class="ai-section" id="ai">
   <div class="ai-inner">
@@ -1549,17 +1590,45 @@ function aiBlock(lang: Lang): string {
  * wording; tests/docs-claims.test.ts pins the three byte-identical.
  */
 function whoIsBehindBlock(lang: Lang): string {
-  // CLAIMS-ALLOW: sceptic-paragraph - FINAL copy, pinned identical in three homes (plan 117 blocks 7 + §6).
+  // CLAIMS-ALLOW: sceptic-paragraph - FINAL copy, pinned identical in three homes (plan 117 blocks 7 + section 6).
   const scepticParagraph = '**We built Lolly for ourselves.** SUSE needed thousands of on-brand files, each with its name sealed inside, made without handing anything to outside services. So we built a tool that does all of it on the device, and released it as open source, like everything else we make. We keep maintaining it because we use it every day. **There is no obligation:** everything here works with or without us.';
   // CLAIMS-ALLOW END
+  // The assurance, beside the pinned paragraph (plan 122 directive 4): the credential
+  // as fact, the unexpected-entrant motive as the interest-conflict answer. "We" is
+  // allowed in this block only. Public facts only: "more than three decades" is on
+  // record; function headcount and reporting lines never appear in public copy.
+  const assurance = t('You did not expect an infrastructure company here. The most critical problem in everyday creative tools is where the files go, and that is the problem SUSE has worked on for more than three decades, securing IT for many of the largest enterprises in the world. We had the creative problem ourselves, so we fixed it the way we fix everything: in the open, where anyone can check the work.');
   return `<section class="behind-section" id="behind">
   <div class="behind-inner reveal">
     <span class="behind-eyebrow">${esc(t('Who is behind this'))}</span>
     <p class="behind-para">${inline(t(scepticParagraph))}</p>
+    <p class="behind-para behind-assure">${inline(assurance)}</p>
     <div class="behind-links">
       <a href="${esc(localeHref(lang, 'trust'))}">${esc(t('Trust'))}</a>
       <span class="behind-dot" aria-hidden="true">·</span>
       <a href="${esc(localeHref(lang, 'about'))}">${esc(t('About'))}</a>
+    </div>
+  </div>
+</section>`;
+}
+
+/**
+ * The refusal (plan 122 block 11) - replaces the social-proof and open-source bands.
+ * The trio stated once, simply: free, open, blind - plus the visible vote. No "we"
+ * here: the who-is-behind block owns that voice; the subjects are Lolly and the reader.
+ */
+function refusalBlock(lang: Lang): string {
+  const beats: { title: string; desc: string }[] = [
+    { title: t('Free, and it stays free'), desc: t('A version that has been released is licensed so it can never be taken back. The free Lolly always exists, whatever happens next.') },
+    { title: t('Open source'), desc: t('Read it, run it, fork it, keep it. Nothing on this page needs to be believed: the code is public and the claims are checkable.') },
+    { title: t('Blind by design'), desc: t('Lolly reports nothing back. Nobody, the makers included, can see who runs it or what they make. A tool that cannot see you has nothing to sell about you.') },
+    { title: t('Your vote, visible'), desc: t('Your work never goes where you have no say. Anything that touches the internet happens because you chose it, at the moment you chose it, and the code that keeps that promise is open for anyone to read.') },
+  ];
+  return `<section class="refusal-section" id="refusal">
+  <div class="assure-inner">
+    <h2 class="refusal-title reveal">${esc(t('Nothing to sell you, nothing to take'))}</h2>
+    <div class="tool-features refusal-beats">
+      ${beats.map((b, i) => `<div class="tool-feature reveal reveal-${(i % 6) + 1}"><strong>${esc(b.title)}</strong><p>${esc(b.desc)}</p></div>`).join('\n      ')}
     </div>
   </div>
 </section>`;
@@ -1622,6 +1691,33 @@ function buildLandingContent(md: string, lang: Lang = 'en') {
   const iconOf = (i: number, h2: string) => getIcon(enH2[i] ?? h2);
   const slugOf = (i: number, h2: string) => toSlug(enH2[i] ?? h2);
 
+  // Plan 122 block 7: the last two authored sections (AI Agents, IT & Security) are
+  // not human roles, so they leave the tab strip for their own quiet band below. The
+  // split is by POSITION, so every locale twin (same section order) splits identically
+  // with its index-keyed icons intact - no site.md restructure, no locale desync.
+  const MACHINE_TABS = 2;
+  const humanData = cardData.slice(0, Math.max(0, cardData.length - MACHINE_TABS));
+  const machineData = cardData.slice(Math.max(0, cardData.length - MACHINE_TABS));
+
+  // The everyday audience's own tab, first and default (plan 122 block 7). Authored
+  // here with t() rather than in site.md so every locale falls back to English until
+  // the wave, and the index-keyed icon/slug wiring for the authored tabs never shifts.
+  const anyoneCard = {
+    h2: t('Anyone with something to make'),
+    h3: t('The everyday jobs, finished properly.'),
+    intro: t('A poster for the fete, a price list for the stall, an invitation with a code that just works. You type the words; the layout, colours and type are already right.'),
+    bullets: [
+      t('**No account, no set-up.** Open it and start; the first file takes about a minute.'),
+      t('**It comes out right.** The design decisions are already made, so you cannot pick the wrong font.'),
+      t('**The old way was waiting for a favour or fighting a template site.** Here it is type, look, done.'),
+      t('**Make three now.** [Make something in 60 seconds](/info/make-something.html) walks you through.'),
+    ],
+    codeBlocks: [] as { lang: string; code: string }[],
+  };
+  const humanTabs = [anyoneCard, ...humanData];
+  const tabSlug = (i: number, h2: string) => (i === 0 ? 'anyone' : slugOf(i - 1, h2));
+  const tabIcon = (i: number, h2: string) => (i === 0 ? ICONS.platform : iconOf(i - 1, h2));
+
   // Tab strip with header
   const audienceChrome = loadSiteJson('audience-chrome.json', lang) as { title: string; subtitle: string };
   const tabsHtml = `<div class="audience-header reveal">
@@ -1632,23 +1728,44 @@ function buildLandingContent(md: string, lang: Lang = 'en') {
   </div>
 </div>
 <div class="audience-tabs" role="tablist" aria-label="Who is it for?">
-${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-selected="${i === 0 ? 'true' : 'false'}" data-panel="${i}" data-slug="${slugOf(i, h2)}">
-    <span class="tab-icon">${iconOf(i, h2)}</span>
+${humanTabs.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-selected="${i === 0 ? 'true' : 'false'}" data-panel="${i}" data-slug="${tabSlug(i, h2)}">
+    <span class="tab-icon">${tabIcon(i, h2)}</span>
     <span class="tab-label">${esc(tabLabel(h2))}</span>
   </button>`).join('\n')}
 </div>`;
 
-  // Cards as full-width panels (two-column on desktop)
-  const cardsHtml = cardData.map(({ h2, h3, intro, bullets, codeBlocks }, i) => `<div class="audience-card${i === 0 ? ' tab-active' : ''}" id="${slugOf(i, h2)}" data-panel="${i}">
+  const renderAudienceCard = (
+    { h2, h3, intro, bullets, codeBlocks }: ReturnType<typeof parseAudienceCard>,
+    opts: { id: string; icon: string; panel?: number; active: boolean },
+  ) => `<div class="audience-card${opts.active ? ' tab-active' : ''}" id="${opts.id}"${opts.panel !== undefined ? ` data-panel="${opts.panel}"` : ''}>
   <div class="card-main">
-    <div class="card-icon">${iconOf(i, h2)}</div>
+    <div class="card-icon">${opts.icon}</div>
     <div class="card-audience">${esc(h2)}</div>
     <div class="card-tagline">${inline(h3)}</div>
     ${intro ? `<p class="card-intro">${inline(intro)}</p>` : ''}
     ${codeBlocks[0] ? `<pre><code class="language-${esc(codeBlocks[0]!.lang)}">${esc(codeBlocks[0]!.code)}</code></pre>` : ''}
   </div>
   <ul class="card-benefits">${bullets.map(b => `<li><span class="bullet-icon">${getBulletIcon(b)}</span><span>${inline(b)}</span></li>`).join('')}</ul>
-</div>`).join('\n');
+</div>`;
+
+  // Cards as full-width panels (two-column on desktop)
+  const cardsHtml = humanTabs.map((card, i) =>
+    renderAudienceCard(card, { id: tabSlug(i, card.h2), icon: tabIcon(i, card.h2), panel: i, active: i === 0 })).join('\n');
+
+  // The machines band: always visible, no tabs - a reader is either sent here or
+  // scrolls past it, and neither needs a click (plan 122 block 7).
+  const machinesHtml = machineData.length ? `<section class="audience-section machines-section">
+  <div class="audience-header reveal">
+    <div class="audience-header-text">
+      <h2 class="audience-title machines-title">${esc(t('Also built for machines'))}</h2>
+      <p class="audience-sub">${esc(t('An agent fills in the same tools a person does, and the people who answer for them get the security case at technical depth.'))}</p>
+    </div>
+  </div>
+  <div class="audience-panels machines-panels">
+    ${machineData.map((card, i) =>
+      renderAudienceCard(card, { id: slugOf(humanData.length + i, card.h2), icon: iconOf(humanData.length + i, card.h2), active: true })).join('\n')}
+  </div>
+</section>` : '';
 
   // Parse platform features and "What's a tool?" from tail. Locate the two `## `
   // headings ("The Creator", "The Tools" in the English source) by ORDINAL
@@ -1723,7 +1840,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   // Activate from hash on load
   var hash=location.hash.slice(1);
   if(hash) activateBySlug(hash);
-  else activateBySlug('marketers');
+  else activateBySlug('anyone');
   // Click: activate and push slug to hash
   tabs.forEach(function(tab,idx){
     tab.addEventListener('click',function(){
@@ -1849,6 +1966,7 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
       ${assure.cards.map(c => `<div class="assure-card"><span class="assure-card-ic">${siteIcon(c.icon)}</span><strong>${esc(c.title)}</strong><p>${inline(c.desc)}</p></div>`).join('\n      ')}
     </div>
     <div class="assure-cta reveal reveal-3"><a href="${esc(localizeHref(lang, assure.ctaHref))}">${esc(assure.cta)}</a></div>
+    <p class="assure-status reveal reveal-3">${esc(t('Lolly is young: its cryptography and file parsing are in SUSE’s infrastructure hardening now, the discipline behind more than three decades of securing the world’s largest enterprises. Content Credentials and local encryption are strong by design, and the security has not yet been externally audited.'))}</p>
     ${ASSURE_DOC_LINKS(lang)}
   </div>
 </section>`;
@@ -1881,13 +1999,16 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
       ${why.matrix.map(r => `<div class="matrix-cell matrix-cell--old" role="cell"><span class="matrix-mark" aria-hidden="true">✕</span><span>${esc(r.pain)}</span></div>
       <div class="matrix-cell matrix-cell--new" role="cell"><span class="matrix-mark" aria-hidden="true">✓</span><span>${esc(r.relief)}</span></div>`).join('\n      ')}
     </div>
-    <div class="section-more-row"><a class="section-more" href="${esc(localeHref(lang, 'status-quo'))}">${esc(t('Why this differs'))} <span aria-hidden="true">→</span></a></div>
+    <div class="section-more-row"><a class="section-more" href="${esc(localeHref(lang, 'status-quo'))}">${esc(t('The trade we never agreed to: the full story'))} <span aria-hidden="true">→</span></a></div>
   </div>
 </section>`;
 
+  // The pilot chip left the hero on 2026-08-16 (plan 122 block 1): nothing that says
+  // "closed" may share a screen with "Launch App". The honest status line lives in the
+  // assure band instead (ASSURE_STATUS below), capability-first. Locale twins may still
+  // carry the retired pilot* keys; they are simply unread.
   const heroChrome = loadSiteJson('hero-chrome.json', lang) as {
     statement: string;
-    pilotTag: string; pilotText: string; pilotAriaLabel: string;
     ctas: { href: string; label: string; class: string }[];
     trustChips: string[]; toolCountSuffix: string;
   };
@@ -1896,10 +2017,9 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
     cards: { href: string; icon: string; eyebrow: string; name: string; desc: string; cta: string }[];
   };
   const platformChrome = loadSiteJson('platform-chrome.json', lang) as { whatsLabel: string; heading: string; tagline: string };
-  const socialProof = loadSiteJson('social-proof.json', lang) as {
-    heading: string; date: string; descClassed1: string; descPlain: string; descClassed2: string;
-    creditPrefix: string; creditLinkLabel: string; creditLinkHref: string;
-  };
+  // social-proof.json and opensource.md retired from the landing 2026-08-16 (plan 122
+  // block 11): both bands folded into refusalBlock(). The files stay for the locale
+  // twins' sake until the wave, unread by this build.
   const aboutItems = loadSiteJson('about-items.json', lang) as { icon: string; desc: string }[];
   // about.md: heading / lead paragraph / subheading, 3 blocks split on a blank line
   // (kept a dedicated parse rather than mdToHtml so the lead paragraph keeps its
@@ -1920,7 +2040,6 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
   </div>
   <div class="hero-details">
     <h1 class="hero-statement">${esc(heroChrome.statement)}</h1>
-    <span class="hero-pilot" aria-label="${esc(heroChrome.pilotAriaLabel)}"><span class="hero-pilot-tag">${esc(heroChrome.pilotTag)}</span><span class="hero-pilot-text">${esc(heroChrome.pilotText)}</span></span>
     <p class="subtitle">${heroSubtitle}</p>
     <div class="hero-cta">
       ${heroChrome.ctas.map(c => `<a href="${esc(localizeHref(lang, c.href))}" class="${esc(c.class)}">${esc(c.label)}</a>`).join('\n      ')}
@@ -1970,8 +2089,8 @@ ${cardData.map(({ h2 }, i) => `  <button class="audience-tab" role="tab" aria-se
     <a href="#faq">${esc(t('FAQ'))}</a>
   </div>
 </nav>${makeSomethingBlock(lang)}
-${sovereigntyBlock(lang)}
 ${WHY_MATRIX_HTML}
+${sovereigntyBlock(lang)}
 ${aiBlock(lang)}
 <section class="audience-section">
   ${tabsHtml}
@@ -1979,6 +2098,7 @@ ${aiBlock(lang)}
     ${cardsHtml}
   </div>
 </section>
+${machinesHtml}
 <div class="platform-whats-wrap">
 <div class="whats-label">${esc(platformChrome.whatsLabel)}</div>
 <section class="platform-section">
@@ -2045,32 +2165,9 @@ ${teaserSection({
       ${everywhere.surfaces.map(s => `<span class="everywhere-chip">${siteIcon(s.icon)}<span>${esc(s.label)}</span></span>`).join('')}
     </div>
   </div>
-  <div class="everywhere-models reveal">
-    <p class="everywhere-models-intro">${esc(everywhere.modelsIntro)}</p>
-    <div class="everywhere-models-grid">
-      ${everywhere.models.map(m => `
-      <div class="everywhere-model">
-        <div class="everywhere-model-main">
-          <span class="everywhere-model-num">Option ${esc(m.n)}</span>
-          ${siteIcon(m.icon)}
-          <h3>${esc(m.label)}</h3>
-        </div>
-        <p>${esc(m.desc)}</p>
-      </div>`).join('')}
-    </div>
-    <div class="section-more-row"><a class="section-more" href="${esc(localeHref(lang, 'deployment'))}">${esc(t('Run it yourself'))} <span aria-hidden="true">→</span></a></div>
-  </div>
+  <div class="section-more-row reveal"><a class="section-more" href="${esc(localeHref(lang, 'deployment'))}">${esc(t('Run it yourself'))} <span aria-hidden="true">→</span></a></div>
 </section>
-<section class="social-proof">
-  <div class="social-proof-inner reveal">
-    <h2>${esc(socialProof.heading)}</h2>
-    <p class="social-proof-date">${esc(socialProof.date)}</p>
-    <p class="social-proof-desc">${esc(socialProof.descClassed1)}</p> <p>${esc(socialProof.descPlain)}</p>
-    <p class="social-proof-desc">${esc(socialProof.descClassed2)}</p>
-  </div>
-  <div class="social-proof-founded">${FOUNDED_BY}</div>
-  <p class="social-proof-credit">${esc(socialProof.creditPrefix)} <a href="${esc(socialProof.creditLinkHref)}" target="_blank" rel="noopener"> ${esc(socialProof.creditLinkLabel)}</a></p>
-</section>
+${refusalBlock(lang)}
 <section class="about-section">
   <div class="about-inner reveal">
     <div class="about-header">
@@ -2089,11 +2186,6 @@ ${teaserSection({
       </div>`).join('\n      ')}
     </div>
 
-  </div>
-</section>
-<section class="opensource-section">
-  <div class="opensource-inner reveal">
-    ${mdToHtml(loadSiteMd('opensource.md', lang))}
   </div>
 </section>
 ${faqHtml}
@@ -2135,12 +2227,26 @@ function sideDoorJsonLd(opts: { name: string; description: string; url: string; 
   return `<script type="application/ld+json">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>`;
 }
 
-/** The shared in-content footer both side-door page kinds carry (why-free + compare). */
-function sideDoorFoot(lang: Lang): string {
+/** The shared in-content footer both side-door page kinds carry: the why-free
+ *  line, then three onward paths (do it, browse every format, learn the app).
+ *  Three real routes because a side-door searcher is the likeliest first-time
+ *  visitor, and one competitor link was their only exit before. */
+function sideDoorFoot(lang: Lang, appHash: string): string {
   return `<footer class="sidedoor-foot">
     <p class="sidedoor-foot-why"><strong>${esc(t('Why is this free?'))}</strong> ${esc(t('Lolly is open source and made by SUSE, who use it every day.'))}</p>
-    <a class="sidedoor-foot-link" href="${esc(localeHref(lang, 'compare'))}">${esc(t('See how Lolly compares'))} <span aria-hidden="true">→</span></a>
+    <nav class="sidedoor-foot-links">
+      <a class="sidedoor-foot-link" href="${esc(appHref(lang, appHash))}">${esc(t('Do it now'))} <span aria-hidden="true">→</span></a>
+      <a class="sidedoor-foot-link" href="${esc(localeHref(lang, 'formats'))}">${esc(t('Every format Lolly can open and make'))}</a>
+      <a class="sidedoor-foot-link" href="${esc(localeHref(lang, 'quickstart'))}">${esc(t('Start with the quickstart'))}</a>
+    </nav>
   </footer>`;
+}
+
+/** The one contrast line every side-door page carries above the fold. The person
+ *  arriving here searched a format or a conversion and normally lands on an
+ *  upload site; category prose only, no vendor named. */
+function sideDoorContrastLine(): string {
+  return `<p class="sidedoor-contrast">${esc(t('Most tools like this are upload sites: your file goes to their server, and ads pay the bill. Lolly runs on your device, so your file stays with you.'))}</p>`;
 }
 
 /** The reads/writes/round-trip line, chosen by direction (fixed labels via t()). */
@@ -2166,6 +2272,7 @@ function renderFormatSideDoor(model: FormatPageModel, lang: Lang): string {
     <p class="sidedoor-full">${esc(model.full)}</p>
     <p class="sidedoor-dir">${sideDoorDirLine(model.dir)}</p>
     <p class="sidedoor-lead">${esc(model.desc)}</p>
+    ${sideDoorContrastLine()}
     <ul class="sidedoor-promise">
       <li>${esc(t('Runs on your device'))}</li>
       <li>${esc(t('Free, no account'))}</li>
@@ -2178,7 +2285,7 @@ function renderFormatSideDoor(model: FormatPageModel, lang: Lang): string {
       <p class="sidedoor-offline">${esc(t('Everything happens on your device, so it works with the Wi-Fi off.'))}</p>
     </section>
     ${sideDoorJsonLd({ name: model.name, description: model.description, url, featureList: model.featureLabels })}
-    ${sideDoorFoot(lang)}
+    ${sideDoorFoot(lang, model.appHash)}
   </article>`;
 }
 
@@ -2205,6 +2312,7 @@ function renderConvertSideDoor(model: ConvertPageModel, lang: Lang): string {
         <p>${esc(model.outDesc)}</p>
       </div>
     </div>
+    ${sideDoorContrastLine()}
     <ul class="sidedoor-promise">
       <li>${esc(t('Runs on your device'))}</li>
       <li>${esc(t('Free, no account'))}</li>
@@ -2218,7 +2326,7 @@ function renderConvertSideDoor(model: ConvertPageModel, lang: Lang): string {
       <p class="sidedoor-offline">${esc(t('Everything happens on your device, so it works with the Wi-Fi off.'))}</p>
     </section>
     ${sideDoorJsonLd({ name: model.title, description: model.description, url, featureList: model.outFeatureLabels })}
-    ${sideDoorFoot(lang)}
+    ${sideDoorFoot(lang, model.appHash)}
   </article>`;
 }
 
@@ -2477,7 +2585,8 @@ nav .nav-group + .nav-group{margin-left:.5rem;padding-left:.625rem;border-left:1
 .pathways-mascot{width:clamp(160px,20vw,300px);flex-shrink:0}
 .pathways-lead{color:hsl(var(--on-band-dark) / .7);font-size:1.0625rem;margin:0}
 .pathways-lead a{color:var(--light);font-weight:600}
-.pathways-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;text-align:start}
+.pathways-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;text-align:start}
+@media(max-width:1020px){.pathways-grid{grid-template-columns:repeat(2,1fr)}}
 .pathway-card{    backdrop-filter: blur(5px);display:flex;flex-direction:column;gap:.5rem;padding:1.75rem;border-radius:14px;background:rgba(255,255,255,.05);border:0;    box-shadow: inset 0 1px #fff1, 0 .2em .5em #0002;transition:transform .18s ease,border-color .18s ease,background .18s ease}
 .pathway-card:hover{text-decoration:none;transform:translateY(-3px);border-color:var(--green);background:rgba(255,255,255,.08)}
 .pathway-ic{align-self:flex-start;display:inline-flex;align-items:center;justify-content:center;width:2.75rem;height:2.75rem;margin-bottom:.35rem;border-radius:12px;color:hsl(var(--on-band-dark));background:linear-gradient(163deg,hsl(150 66% 51%),hsl(154 58% 33%));border:1px solid hsl(0 0% 100% / .3);box-shadow:inset 0 1px 0 hsl(0 0% 100% / .45),0 6px 16px -6px hsl(151 57% 40% / .75);transition:box-shadow .18s ease,transform .18s ease}
@@ -2614,6 +2723,29 @@ html[data-theme="dark"] .ai-point strong{color:hsl(var(--foreground))}
 .behind-para{font-size:1.0625rem;line-height:1.85;color:var(--muted);margin:0}
 .behind-para strong{color:var(--dark);font-weight:700}
 html[data-theme="dark"] .behind-para strong{color:hsl(var(--foreground))}
+.behind-assure{margin-top:1.25rem}
+/* The refusal band (plan 122 block 11): the trio + the visible vote, reusing the
+   tool-feature card grid so the beats read as one set. */
+.refusal-section{padding:4.5rem 1.5rem;background:var(--page)}
+.refusal-section .assure-inner{max-width:1080px;margin:0 auto}
+.refusal-title{text-align:center;font-size:1.75rem;margin:0 0 2rem}
+.refusal-beats{margin-top:0}
+/* The machines band sits directly under the human tabs and shows both cards open. */
+.machines-section{padding-top:0}
+.machines-panels .audience-card{margin-bottom:1.5rem}
+.machines-title{font-size:clamp(1.5rem,2.6vw,2.25rem)!important;-webkit-text-stroke:0;letter-spacing:0}
+.assure-status{font-size:.9375rem;color:var(--muted);max-width:64ch;margin:1.5rem auto 0;text-align:center}
+/* Dark-band contrast repairs (2026-08-16 review): these elements inherit the deep
+   green --dark ink while sitting ON a deep green band, which reads as empty boxes.
+   Explicit paint, appended last so it wins the cascade. */
+.audience-tab[aria-selected="true"] .tab-label,
+.audience-tab[aria-selected="true"] .tab-icon{color:#fff}
+.matrix-head--new{color:#fff}
+.pathway-name{color:#fff}
+.pathways-section .pathway-card .pathway-go{color:#30ba78;opacity:1}
+.pathways-section .pathway-card:hover .pathway-go{color:#fff}
+.everywhere-section .section-more{color:#fff;text-decoration:underline;text-underline-offset:3px}
+.platform-feature a{color:#fff;text-decoration:underline;text-underline-offset:2px}
 .behind-links{margin-top:1.6rem;display:flex;align-items:center;justify-content:center;gap:.75rem;font-size:.875rem;font-weight:600}
 .behind-dot{color:var(--muted);opacity:.5}
 
@@ -2832,7 +2964,7 @@ html[data-theme="dark"] .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
 .tool-feature strong{font-size:.9rem;color:var(--dark);font-weight:700;line-height:1.25}
 .tool-feature p{font-size:.8rem;color:var(--muted);line-height:1.55;margin:0}
 /* Floats at the bottom seam where the two columns meet (relative to .platform-whats-wrap). */
-.try-now-callout{left:50%;bottom:0;transform:translate(-50%,50%);z-index:10;width:min(92%,640px);background:#01564a;border-radius:14px;padding:1.5rem 1.75rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;box-shadow: 0 10px 30px rgba(0,0,0,.2), inset 0 .06rem .1rem #fff2}
+.try-now-callout{position:absolute;left:50%;bottom:0;transform:translate(-50%,50%);z-index:10;width:min(92%,640px);background:#01564a;border-radius:14px;padding:1.5rem 1.75rem;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;box-shadow: 0 10px 30px rgba(0,0,0,.2), inset 0 .06rem .1rem #fff2}
 .try-now-text{flex:1;min-width:0}
 .try-now-text strong{color:var(--green);font-size:.9375rem;display:block;margin-bottom:.35rem;font-weight:700}
 .try-now-text p{color:hsl(var(--on-band-dark));font-size:.85rem;line-height:1.6;margin:0}
@@ -2882,8 +3014,6 @@ html[data-theme="dark"] .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
 
 /* Docs layout */
 .docs-wrap{display:grid;grid-template-columns:220px 1fr;max-width:1180px;margin:0 auto;min-height:calc(100vh - 3.5rem - 60px)}
-/* A generated side-door page has no rail, so it is a single centred column. */
-.docs-wrap--standalone{grid-template-columns:1fr;max-width:900px}
 .docs-sidebar{padding:2rem 1.25rem;border-right:1px solid var(--border);position:sticky;top:3.75rem;height:calc(100vh - 3.75rem);overflow-y:auto}
 /* Format / convert side-door pages (plan 116 workstream A). */
 .sidedoor-eyebrow{display:flex;align-items:center;gap:.5rem;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;color:var(--green);margin-bottom:.75rem}
@@ -2891,6 +3021,7 @@ html[data-theme="dark"] .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
 .sidedoor .sidedoor-full{color:var(--muted);font-size:1.0625rem;margin:-1rem 0 1.25rem}
 .sidedoor-dir{font-weight:600;margin:0 0 1rem}
 .sidedoor-lead{font-size:1.0625rem;line-height:1.7;margin-bottom:1.5rem}
+.sidedoor-contrast{color:var(--muted);font-size:.9375rem;line-height:1.65;border-inline-start:3px solid var(--green);padding-inline-start:.85rem;margin:0 0 1.5rem}
 .sidedoor-promise{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.5rem .75rem;margin:0 0 1.5rem}
 .sidedoor-promise li{display:inline-flex;align-items:center;gap:.4em;background:hsl(var(--card));border:1px solid var(--border);border-radius:999px;padding:.3rem .85rem;font-size:.875rem;font-weight:600}
 .sidedoor-promise li::before{content:"✓";color:var(--green);font-weight:700}
@@ -2909,6 +3040,7 @@ html[data-theme="dark"] .fmt-dialog-unsup{background:rgba(254,124,63,.13)}
 .sidedoor-offline{color:var(--muted);margin:.25rem 0 0}
 .sidedoor-foot{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--border)}
 .sidedoor-foot-why{margin:0 0 .5rem}
+.sidedoor-foot-links{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem}
 .sidedoor-foot-link{font-weight:700;text-decoration:none;color:var(--green)}
 .sidedoor-foot-link:hover{text-decoration:underline}
 .sidebar-label{font-size:.6875rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700;margin:1.5rem 0 .5rem}
@@ -3911,7 +4043,7 @@ footer .founded-badge{margin-top:.5rem}
 .matrix{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;align-items:stretch}
 .matrix-head{font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;padding:.85rem 1.1rem;border-radius:10px;text-align:center}
 .matrix-head--old{background:rgba(90,112,103,.14);color:var(--muted)}
-.matrix-head--new{background:var(--green);color:#04231a}
+.matrix-head--new{background:var(--green);color:#fff}
 .matrix-cell{display:flex;gap:.7rem;align-items:flex-start;padding:1rem 1.15rem;border-radius:12px;font-size:.95rem;line-height:1.5}
 .matrix-cell--old{background:hsl(var(--card));border:0;color:var(--muted)}
 .matrix-cell--new{background:rgba(48,186,120,.08);color:var(--text);box-shadow:0 2px 12px rgba(48,186,120,.12)}
@@ -4140,7 +4272,7 @@ const SHOWCASE_SCRIPT = `<script>(function(){
  * hover state.
  */
 const SHOT_CRED_SCRIPT = `<script>(function(){
-  // "Copy signed source" — the banked art's third action (plans/105 §6). Fetches the
+  // "Copy signed source" — the banked art's third action (plans/105 section 6). Fetches the
   // SAME file the other two actions point at and puts its text on the clipboard, so a
   // reader can paste it straight into /verify's box and check the credential without
   // downloading anything. Wired FIRST, and independently of the reveal below: an
@@ -4787,7 +4919,7 @@ const DOC_JUMP_SCRIPT = `<script>(function(){
 //
 // A flat {EnglishSource: Translated} catalog per language (docs/i18n/<lang>/
 // site.json), generated by `npm run translate -- --corpus site` (see
-// plans/38-localize.md §8) - the same English-as-key, identity-fallback contract
+// plans/38-localize.md section 8) - the same English-as-key, identity-fallback contract
 // as the SPA's i18n.ts. Page BODY content follows the same fallback: a
 // docs/i18n/<lang>/<slug>.md sidecar is used when present, else the page ships
 // in English inside the localized chrome rather than 404ing.
@@ -5142,31 +5274,35 @@ const PATHWAY_HUB: Record<Pathway, string> = {
  */
 interface SitemapSection { hub: Pathway; label: string; slugs: string[] }
 const FOOTER_SECTIONS: SitemapSection[] = [
-  { hub: 'quickstart', label: 'Quickstart', slugs: ['index', 'positioning', 'compare',
-    'compare-canva', 'compare-adobe', 'compare-figma', 'compare-render-apis', 'compare-converters'] },
+  { hub: 'quickstart', label: 'Quickstart', slugs: ['index', 'make-something', 'positioning', 'compare',
+    'compare-canva', 'compare-adobe', 'compare-figma', 'compare-render-apis', 'compare-converters',
+    'compare-penpot', 'compare-brand-portals'] },
   // Keeps the pathway's own name rather than the rail's "Make things", because the
   // FIRST column of a split pathway is where a reader looks for the pathway - the
   // same position "For Builders" and "Trust" hold below. Its membership is still the
   // rail's "Make things" group exactly.
   { hub: 'creators', label: 'For Creators', slugs: [
-    'using', 'brand-studio', 'design-import', 'sequence-editor', 'animating', 'utilities'] },
+    'using', 'brand-studio', 'design-import', 'sequence-editor', 'animating', 'utilities', 'extension'] },
   { hub: 'creators', label: 'Find your way', slugs: [
     'search', 'ask', 'dashboard', 'favourites', 'profile'] },
   { hub: 'creators', label: 'Share & collaborate', slugs: [
     'collaborate', 'formats', 'exporting'] },
   { hub: 'builders', label: 'For Builders', slugs: [
     'overview', 'design-tokens', 'authoring-tools', 'authoring-assets', 'host-api', 'url-mode'] },
+  { hub: 'builders', label: 'Concepts', slugs: [
+    'constraints', 'determinism', 'reproducibility'] },
   { hub: 'builders', label: 'Run & integrate', slugs: [
-    'cli', 'tui', 'mcp', 'ai-agents', 'extension', 'data-transfer'] },
+    'cli', 'tui', 'mcp', 'ai-agents', 'data-transfer'] },
   { hub: 'builders', label: 'Ship & operate', slugs: [
-    'contributing-setup', 'build-guide', 'ios-build', 'deployment', 'configuration', 'about'] },
-  { hub: 'operators', label: 'For Operators', slugs: ['adoption-governance', 'cli-signing'] },
+    'contributing-setup', 'ios-build', 'about'] },
+  { hub: 'operators', label: 'For Operators', slugs: [
+    'adoption-governance', 'sovereign-production', 'deployment', 'configuration', 'build-guide', 'cli-signing'] },
   { hub: 'trust', label: 'Trust', slugs: [
     'status-quo', 'input-not-impersonation', 'content-credentials-identity',
-    'content-credentials-engineering', 'ai-stance', 'ai-features', 'beatrice-warde'] },
+    'content-credentials-engineering', 'ai-stance', 'ai-features', 'eu-ai-act', 'beatrice-warde'] },
   { hub: 'trust', label: 'Check it yourself', slugs: [
-    'verify-yourself', 'security', 'threat-model', 'parser-inventory', 'server-surface',
-    'privacy', 'inclusive-design'] },
+    'verify-yourself', 'security', 'threat-model', 'parser-inventory', 'server-surface'] },
+  { hub: 'trust', label: 'Your data', slugs: ['privacy', 'inclusive-design'] },
 ];
 
 // The guard that makes "full site map" a property of the build rather than a claim in
@@ -5263,6 +5399,11 @@ const SIDEBAR_ICON: Record<string, string> = {
   using: 'pentool', 'brand-studio': 'palette', profile: 'usercheck', 'design-import': 'upload',
   'sequence-editor': 'clock', animating: 'layers', exporting: 'download', formats: 'convert', positioning: 'sliders', compare: 'checklist',
   'compare-canva': 'checklist', 'compare-adobe': 'checklist', 'compare-figma': 'checklist', 'compare-render-apis': 'checklist', 'compare-converters': 'checklist',
+  'compare-penpot': 'checklist', 'compare-brand-portals': 'checklist',
+  'make-something': 'pentool',
+  // Concepts: the locked rule set, the same-every-time check, the link as the artifact.
+  constraints: 'lock', determinism: 'check', reproducibility: 'link',
+  'sovereign-production': 'server',
   ask: 'sparkle', dashboard: 'monitor', utilities: 'wrench',
   collaborate: 'people', search: 'search', favourites: 'star',
   // Builders - architecture & authoring
@@ -5276,7 +5417,7 @@ const SIDEBAR_ICON: Record<string, string> = {
   'adoption-governance': 'people',
   // Trust - where content comes from
   'content-credentials-identity': 'seal', 'content-credentials-engineering': 'cpu', 'ai-stance': 'sparkle',
-  'ai-features': 'sparkle',
+  'ai-features': 'sparkle', 'eu-ai-act': 'document',
   'beatrice-warde': 'font',
   // Trust - check it yourself
   'verify-yourself': 'check', security: 'shieldcheck', 'threat-model': 'lock',
@@ -5468,11 +5609,11 @@ const LISTEN_STYLE = `<style>
 </style>`;
 
 // The lazy loader - the ONLY player code a page carries. The bundle is fetched
-// on the first press (plan §6.1), or on arrival when the previous page's
+// on the first press (plan section 6.1), or on arrival when the previous page's
 // auto-advance/prev/next left a hand-off in sessionStorage.
 const LISTEN_SCRIPT = `<script>(function(){
 var btn=document.querySelector('.docs-listen');if(!btn)return;
-// Opus-only shipping decision (plan §4.2): browsers that cannot play Ogg/Opus
+// Opus-only shipping decision (plan section 4.2): browsers that cannot play Ogg/Opus
 // (iOS Safari before 18.4) get no button at all - no dead controls.
 try{if(!document.createElement('audio').canPlayType('audio/ogg; codecs=opus')){
 var bar=btn.closest('.listen-bar');if(bar)bar.remove();return;}}catch(e){}
@@ -5487,7 +5628,7 @@ if(s&&JSON.parse(s).slug===btn.getAttribute('data-listen-slug'))open(JSON.parse(
 })();</script>`;
 
 /**
- * Build-time cue→anchor assertion (plans/40-docs-audio-listen.md §10): every
+ * Build-time cue→anchor assertion (plans/40-docs-audio-listen.md section 10): every
  * blockId in a narrated page's committed cues.json must still resolve against
  * the BUILT page, judged the way the player maps blocks (buildBlockMap in
  * docs/player/player.ts) - a blockId that survives in the CURRENT extraction,
@@ -5668,8 +5809,8 @@ function wrapPage(lang: Lang, page: Page, content: string, ogSlugs: Set<string>,
   // own first sentence, else the site line for the landing page.
   const description = t(page.description || (isLanding ? SITE_DESCRIPTION : mdDescription(md) || SITE_DESCRIPTION));
 
-  // Narration is English-only at launch (plan §2): the locale pages would pair
-  // an English voice with a translated body, which §9 rules out - so the button
+  // Narration is English-only at launch (plan section 2): the locale pages would pair
+  // an English voice with a translated body, which section 9 rules out - so the button
   // (and its loader) ship on English pages only, and only where audio exists.
   const audio = lang === 'en' ? audioBySlug.get(page.slug) : undefined;
   const listen = audio ? listenButtonHtml(page, audio) : '';
@@ -5692,7 +5833,8 @@ function wrapPage(lang: Lang, page: Page, content: string, ogSlugs: Set<string>,
   // A generated page renders as a single column (no rail) under the same nav.
   const body = isLanding ? `${listen}${content}`
     : page.generated ? `
-<div class="docs-wrap docs-wrap--standalone">
+<div class="docs-wrap">
+  ${buildSidebar(lang, page, activeHref)}
   <main class="docs-content no-mast page-${slugClass}">
     ${article}
   </main>
@@ -5712,7 +5854,7 @@ ${mast ? mast.band : ''}
   const alternates = LANGS.map(l =>
     `<link rel="alternate" hreflang="${LANG_META[l].htmlLang}" href="${esc(`${SITE_URL}${localeHref(l, page.slug)}`)}">`,
   ).join('\n') + `\n<link rel="alternate" hreflang="x-default" href="${esc(`${SITE_URL}${localeHref('en', page.slug)}`)}">`;
-  // The page's OWN Content Credential, C2PA 2.4 §A.7.1.2's external form: one
+  // The page's OWN Content Credential, C2PA 2.4 section A.7.1.2's external form: one
   // stable link, the store beside it at /info/<slug>.c2pa, signed after this
   // string has been written to disk (docs/page-seal.ts explains the ordering).
   //
@@ -5795,12 +5937,25 @@ const LLMS_SECTIONS: Array<{ pathway: Pathway; label: string }> = [
   { pathway: 'creators',   label: 'For Creators' },
   { pathway: 'builders',   label: 'For Builders' },
   { pathway: 'operators',  label: 'For Operators' },
+  // The privacy and provenance story: Privacy, Threat Model, Verify It Yourself
+  // and the rest of the Trust rail. Omitting it meant every AI-mediated read of
+  // the docs missed exactly the pages the sceptical reader needs.
+  { pathway: 'trust',      label: 'Trust' },
 ];
 
 // slug → English markdown source, collected on the en pass. Membership doubles as
 // "the twin actually exists on disk" for the llms.txt lines (a missing source is
 // skipped by the page loop, so it must be skipped here too).
 function buildLlmsTxt(mdBySlug: Map<string, string>): string {
+  // Every pathway a registered page carries must have an llms.txt section, or
+  // that whole rail silently vanishes from the agent-readable index (the Trust
+  // rail shipped invisible this way). Same build-time-fail pattern as
+  // FOOTER_SECTIONS/SIDEBAR_ICON.
+  const covered = new Set(LLMS_SECTIONS.map((s) => s.pathway));
+  const missing = [...new Set(pages.map((p) => p.pathway ?? 'builders'))].filter((pw) => !covered.has(pw));
+  if (missing.length) {
+    throw new Error(`llms.txt is missing a section for pathway(s): ${missing.join(', ')} - add them to LLMS_SECTIONS`);
+  }
   const sections = LLMS_SECTIONS.map(({ pathway, label }) => {
     const lines = pages
       .filter((p) => p.pathway === pathway && mdBySlug.has(p.slug))
@@ -5899,7 +6054,7 @@ async function build() {
     console.log(`✓  /info/${bank}/ (${art.length} signed ${art.length === 1 ? 'artifact' : 'artifacts'})`);
   }
 
-  // Docs narration - mirror the committed artefacts and link them (plan §4.5).
+  // Docs narration - mirror the committed artefacts and link them (plan section 4.5).
   // Same mirror-don't-accumulate rule as shots: a withdrawn narration must not
   // stay behind in the gitignored output dir to be served stale. The player
   // bundle and audio-index.json exist only while at least one page has audio,
@@ -5940,10 +6095,10 @@ async function build() {
   // English at /info/, every other locale mirrored under /info/<lang>/ - same
   // page set, same slugs, translated chrome + (where a docs/i18n/<lang>/<slug>.md
   // sidecar exists) translated body; otherwise the English body ships inside the
-  // localized chrome rather than 404ing. See plans/38-localize.md §8.
+  // localized chrome rather than 404ing. See plans/38-localize.md section 8.
   const sitemapUrls: Array<{ slug: string; isLanding?: boolean }> = [];
   const mdBySlug = new Map<string, string>();
-  // The English pages to seal, collected as they are written (plans/105 §7). The
+  // The English pages to seal, collected as they are written (plans/105 section 7). The
   // list is built here rather than from `pages` so a page whose source could not
   // be read - and which therefore has no file on disk - is never sealed.
   const sealTargets: SealTarget[] = [];
@@ -6019,10 +6174,14 @@ async function build() {
       const model = buildFormatPageModel(entry, sideDoorCatalog);
       const slug = `formats/${model.slug}`;
       const gp: Page = { slug, title: model.title, src: '', description: model.description, pathway: 'creators', generated: true };
-      const html = wrapPage(lang, gp, renderFormatSideDoor(model, lang), ogSlugs, '');
+      const content = renderFormatSideDoor(model, lang);
+      const html = wrapPage(lang, gp, content, ogSlugs, '');
       const dir = resolve(localeOutDir, 'formats', model.slug);
       mkdirSync(dir, { recursive: true });
       writeFileSync(resolve(dir, 'index.html'), html, 'utf-8');
+      // One record per page (no id'd headings inside): the searcher who types a
+      // format name must find its page, not only the formats table.
+      searchRecords.push(...indexSections(content, slug, gp.title));
       if (lang === 'en') sitemapUrls.push({ slug });
       sideDoorCount++;
     }
@@ -6030,10 +6189,12 @@ async function build() {
       const model = buildConvertPageModel(pair, sideDoorCatalog);
       const slug = `convert/${model.slug}`;
       const gp: Page = { slug, title: model.title, src: '', description: model.description, pathway: 'creators', generated: true };
-      const html = wrapPage(lang, gp, renderConvertSideDoor(model, lang), ogSlugs, '');
+      const content = renderConvertSideDoor(model, lang);
+      const html = wrapPage(lang, gp, content, ogSlugs, '');
       const dir = resolve(localeOutDir, 'convert', model.slug);
       mkdirSync(dir, { recursive: true });
       writeFileSync(resolve(dir, 'index.html'), html, 'utf-8');
+      searchRecords.push(...indexSections(content, slug, gp.title));
       if (lang === 'en') sitemapUrls.push({ slug });
       sideDoorCount++;
     }
@@ -6083,8 +6244,8 @@ async function build() {
   writeFileSync(resolve(outDir, 'llms.txt'), buildLlmsTxt(mdBySlug), 'utf-8');
   console.log(`✓  /info/llms.txt (+${mdBySlug.size} markdown twins)`);
 
-  // ── Page seals (plans/105 §7) ──────────────────────────────────────────────
-  // LAST, and after every page is on disk: C2PA 2.4 §A.7.1.3 hashes the whole
+  // ── Page seals (plans/105 section 7) ──────────────────────────────────────────────
+  // LAST, and after every page is on disk: C2PA 2.4 section A.7.1.3 hashes the whole
   // document, so anything that rewrote a page after this point would silently
   // invalidate its own credential. Only pages whose bytes (or whose signed
   // components) actually changed are re-signed - see docs/page-seal.ts for why
@@ -6141,7 +6302,7 @@ function writeInfoManifest(): void {
     if (seg === 'og' || f.url === '/info/manifest.json') continue;
     if (seg === 'shots') shots.push(f);
     // Narration + its player travel as their own group, which docsFileList()
-    // deliberately EXCLUDES from the default docs part (plan §7): audio grows
+    // deliberately EXCLUDES from the default docs part (plan section 7): audio grows
     // linearly with pages × locales and must never silently fatten "Available
     // offline: Docs". Online playback still caches incidentally via the SW's
     // lolly-info bucket. The player chunks live here too — the biggest one is
@@ -6260,7 +6421,7 @@ if (ogExpected > 0 && ogGenerated.size < ogExpected) {
   );
 }
 
-// Awaited: build() signs each changed page as its last step (plans/105 §7), and a
+// Awaited: build() signs each changed page as its last step (plans/105 section 7), and a
 // process that exits before those writes land would publish pages pointing at
 // sidecars that were never written.
 await build();
