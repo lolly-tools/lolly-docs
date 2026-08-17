@@ -139,7 +139,7 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 
 **Sequence Studio**는 자유 캔버스에 *시간*을 더해요. 상자마다 시작 시점과 지속 길이를 갖고 들어오고 나가는 애니메이션을 붙일 수 있고, 아트보드 아래에 붙은 타임라인이 그것들을 배치하는 자리예요. 열어 보면 이미 시퀀스가 재생되고 있어요 - 제목 카드, 클립, 엔딩 카드, 하단 자막, 배경 음악까지 - 그래서 아무것도 바꾸기 전에 구조가 눈에 들어와요.
 
-![Sequence Studio의 타임라인 - 재생 컨트롤, 눈금자, 오버레이 레인, 클립과 이음매 칩이 놓인 자석 시퀀스 행, 그리고 Always on 띠](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1440&height=900&dpi=192&waitMs=7000&css=.tl-panel%7Bheight%3A252px!important%7D&cropSelector=.tl-panel&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-timeline)
+![Sequence Studio의 타임라인 - 재생 컨트롤, 눈금자, 오버레이 레인, 클립과 이음매 칩이 놓인 자석 시퀀스 행, 그리고 Always on 띠](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A252px!important%7D&cropSelector=.tl-panel&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-timeline)
 
 행에는 두 종류가 있고, 그 차이가 핵심 그 자체예요:
 
@@ -147,7 +147,7 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 - **오버레이 레인**은 자유로워요. 하단 자막, 로고, 캡션처럼 뼈대 위에 각자의 시간으로 떠 있는 것은 저마다의 레인과 시작 시점을 가져요.
 - 그 아래 **Always on**은 타이밍이 아예 없는 상자를 모아 둬요. 처음부터 끝까지 그냥 있는 배경 요소죠. 칩의 `+`를 누르면 하나를 레인으로 올리고, **Make always on**은 다시 내려보내요.
 
-![편집 화면 전체 - 아트보드와 도구 막대, 타임라인이 함께 있는 모습](/t/url-shot?url=%2F%23%2Ftool%2Fsequence-studio&width=1440&height=900&dpi=192&waitMs=7000&css=.fc-toolbar%7Bopacity%3A1!important%7D&cropSelector=%23tool-stage&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-stage)
+![편집 화면 전체 - 아트보드와 도구 막대, 타임라인이 함께 있는 모습](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.fc-toolbar%7Bopacity%3A1!important%7D&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-stage)
 
 타임라인을 열면 키보드가 타임라인으로 넘어가서, Space와 화살표 키가 페이지 대신 재생 헤드를 움직여요 - 이미 타이밍이 있는 구성에서는 타임라인이 알아서 열리니, Sequence Studio가 뜨는 순간부터 그래요.
 
