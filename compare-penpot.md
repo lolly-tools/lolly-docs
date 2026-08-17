@@ -6,7 +6,7 @@ Lolly is not a replacement for Penpot, though it does what many people need Penp
 
 ## Where they overlap
 
-Both are open source and both read the same brand primitives. Penpot shipped design tokens natively in 2.6.0 (April 2025), following the W3C DTCG draft, with 17 token types and multidimensional themes; Lolly's brand is a DTCG document too, so one palette serves both. Lolly's [Import a design](/info/design-import.html) opens a `.penpot` export as an editable layout. The Lolly Export plugin for Penpot is Lolly's own work, and it signs C2PA Content Credentials with Lolly's engine, on the device and opt-in - and, like every on-device credential, it reads as unverified in a stranger's validator until [an identity anchors it](/info/content-credentials-identity.html).
+Both are open source and both read the same brand primitives. Penpot shipped design tokens natively in 2.6.0 (April 2025), following the W3C DTCG draft, with 17 token types and multidimensional themes; Lolly's brand is a DTCG document too, so one palette serves both. Lolly's [Import a design](/info/design-import.html) opens a `.penpot` export as an editable layout. The Lolly Export plugin for Penpot is Lolly's own work, and it signs C2PA Content Credentials with Lolly's engine, on the device and opt-in - and, like every on-device credential, it reads as unverified in a stranger's validator until [an identity vouches for it](/info/content-credentials-identity.html).
 
 ## What Penpot does better today
 

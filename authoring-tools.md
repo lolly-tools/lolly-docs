@@ -756,6 +756,19 @@ npm run dev:web
 # open localhost - your tool appears in the gallery
 ```
 
+### Sharing a tool without a catalog (`.lolly`)
+
+Neither route above helps if you have no catalog to build into and no repo to push to. The third path is the share file: open your tool, choose **Share → Download .lolly** and tick **Include the tool**. The file then carries `tool.json`, `template.html`, `styles.css`, `hooks.js`, `icon.svg`, whichever sibling text templates the declared formats call for and the sidecar for the active language, all alongside the design, so it opens on a device that has never seen the tool. The checkbox arrives ticked for any tool the deployment's signed catalog doesn't list, which is the state of anything you just authored (and of every tool on a build that signs nothing).
+
+The thumbnail and anything under your tool's `assets/` are picked up from the signed catalog's own file list, so an unsigned build packs neither. If your tool is going out this way before it is ever published, inline its art in the template rather than referencing `/tools/<id>/assets/…`, which would 404 on the recipient's device.
+
+**Their consent is what stands between your `hooks.js` and their device.** On import Lolly asks **Trust this tool?** - naming the tool, naming you as its author when the file carries your details, and saying that opening it runs the tool's own code on their device - with **Trust & install** as the way through. Decline and your design still lands in their Projects, waiting there for the day they have the tool. Two things to author for:
+
+- **Classic `hooks.js` only.** A manifest declaring `hooks.module` is refused at install, so a module-code tool cannot travel this way yet.
+- **Nothing re-verifies your tool on the far side.** A sideloaded tool loads outside the recipient's signed-catalog check, and the file's own checksums only prove your bytes arrived intact. Their decision at that dialog is the whole control, so keep a hand-shared tool's hooks short enough for a careful recipient to read.
+
+The end-user view of the same file - what it carries, what it asks and what happens on a decline - is [Sharing your work](/info/using.html#sharing-your-work), and the boundary itself is a row in the [Threat Model](/info/threat-model.html).
+
 ## Localizing a tool
 
 A tool's user-facing strings live in the manifest (English by default). To translate it, add an `i18n/<lang>.json` sidecar - a sparse, flat, dotted-path overlay of just the strings a translator touched:

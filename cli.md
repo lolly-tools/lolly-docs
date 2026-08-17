@@ -272,7 +272,7 @@ The finding to know about: if your brand declares a spot ink that is actually a 
 
 ## Scripting & CI
 
-The same inputs give the same **render** every time - that is what makes a tool a build artifact rather than a generation - so the CLI fits anywhere you generate other build outputs. ("The same render" is not "the same bytes": see the measurements below, and note that a default render is *signed*, which alone is enough to move the bytes.)
+The same inputs give the same **render** every time - that is what makes a tool a build artifact rather than a generation - so you can run the CLI wherever you generate other build outputs. ("The same render" is not "the same bytes": see the measurements below, and note that a default render is *signed*, which alone is enough to move the bytes.)
 
 ```bash
 # Generate an OG image at build time instead of committing a binary:

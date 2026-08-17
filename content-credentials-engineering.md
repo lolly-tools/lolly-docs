@@ -112,7 +112,7 @@ verifyC2pa(bytes, { trustAnchors } = {})   // trustAnchors: Uint8Array[] (root c
 ```
 
 Zero-options behaviour stays byte-identical (contract tests guard it). With
-anchors it captures the full x5chain and verifies leaf-signed-by-anchor
+anchors supplied, it captures the full x5chain and verifies leaf-signed-by-anchor
 (issuer-name DER bytes match anchor subject bytes + a signature check over the
 leaf's tbsCertificate using the anchor SPKI). `parseCertificate` is extended
 **additively** (tbsBytes, rawSignature, issuer/subject bytes, SAN emails,
