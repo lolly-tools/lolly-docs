@@ -126,18 +126,18 @@ Output the file URL.
 
 Every time someone uploads a file to a third-party service to "just make it look right," that's a data exfiltration event waiting to happen. Lolly eliminates the problem at the source - creative production stays on-premise and under your control.
 
-- **Data stays on the device.** No cloud rendering, no analytics, no telemetry - and no network request at all beyond the handful a user explicitly triggers, each one named in the [privacy policy](/info/privacy.html). What colleagues create stays on their machine. On-device utilities like Strip Hidden Data scrub EXIF and metadata from images, SVG and PDF entirely in the browser - nothing is uploaded. Even locking a PDF, a whole download or a share link with a password happens on-device; the password never leaves it.
+- **Data stays on the device.** No cloud rendering, no analytics, no telemetry - and no network request at all beyond the handful a user explicitly triggers, each one named in the [privacy policy](/info/privacy.html). What colleagues create stays on their machine. On-device utilities help you out - nothing is uploaded. Even encryption and passwords happens on-device..
 - **Self-host for full air-gap control.** Deploy on your own infrastructure; the two optional server components can be omitted entirely. [Sovereign production](/info/sovereign-production.html) states the whole posture, and [Server Surface](/info/server-surface.html) is the complete inventory.
 - **Reduce vendor surface area.** One open-source platform replaces a sprawl of SaaS subscriptions for creative production. Fewer vendors means fewer contracts, fewer audits and fewer breach vectors.
 - **Enforce brand governance at the infrastructure level.** Tools are authored once and distributed as data - not files, not manual processes. What goes out the door is exactly what was approved to go out the door.
 - **Get critical information into human-readable formats instantly.** Incident communications, compliance reports, executive briefings - structured data becomes publication-quality output in seconds, no design bottleneck.
-- **Hardening, in the open.** Lolly's cryptography and file-parsing engines are going through SUSE's infrastructure hardening: the discipline behind more than three decades of security technology and services for the world's largest enterprises. Content Credentials and local encryption are strong by design; pilot them in a scoped context while that completes. See [Adoption & governance](/info/adoption-governance.html#status).
+- **Hardening, in the open.** Lolly's cryptography and file-parsing engines are going through SUSE's infrastructure hardening: the experts behind more than three decades of security technology and services for the world's largest enterprises. Content Credentials and local encryption are strong by design. See [Adoption & governance](/info/adoption-governance.html#status).
 
 ---
 
 ## What you get
 
-**A powerful creative production platform.** The Lolly engine works to achieve the highest quality each format can produce - true vectors, outlined type, print-grade colour, native editable output.
+**A powerful creative production platform.** The Lolly engine works to achieve the highest quality each format can produce on your hardware, without comrpromise.
 
 **100% free and open source.** No SaaS fees, no usage limits, no vendor dependency.
 

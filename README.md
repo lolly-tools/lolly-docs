@@ -58,7 +58,7 @@ security posture).
 | [collaborate.md](collaborate.md) | end user | Two devices editing one tool session live: the invite ceremony (link, QR, code door), the matching plates that confirm the peer, presence and focus rings, beaming files across, and why it still works with no internet. |
 | [formats.md](formats.md) | end user | The whole format register as one three-zone table - read-only at the left, written-only at the right, both-ways in the middle - with a plain-language card behind every chip. |
 | [exporting.md](exporting.md) | end user | Choosing a format, setting output size, and the three paths that produce a file (canvas render, generated text/data, on-device transform). |
-| [positioning.md](positioning.md) | end user | Where Lolly sits against Canva, brand portals, Illustrator and Figma/Penpot, and where it deliberately does not play. |
+| [positioning.md](positioning.md) | end user | How Lolly compares with Canva, brand portals, Illustrator and Figma/Penpot, and where it deliberately does not play. |
 | [compare.md](compare.md) | end user | The index of the tool-by-tool compare pages: what each competing tool does better, and what Lolly does instead. Dated, concession first, no superlatives. |
 | [compare-canva.md](compare-canva.md) · [compare-adobe.md](compare-adobe.md) · [compare-figma.md](compare-figma.md) · [compare-render-apis.md](compare-render-apis.md) · [compare-converters.md](compare-converters.md) · [compare-penpot.md](compare-penpot.md) · [compare-brand-portals.md](compare-brand-portals.md) | end user | The per-competitor compare pages, reached from the compare index and the format-page footers rather than the top-level nav. |
 

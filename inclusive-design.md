@@ -126,15 +126,15 @@ faster on every other day, and they compound.
   decisions were made once, at the tool, so producing the twentieth asset costs
   what the first did. People who need that most feel it first, and everyone
   benefits from it.
-- <!--i:star--> **Creative confidence comes from a floor you cannot fall through.** When
+- <!--i:star--> **Creative confidence comes from safety.** When
   any output could be wrong in a way you will only discover later, you check
   everything twice and stay cautious. When off-brand output is not reachable,
   the checking stops being your job and the caution goes back into the work.
   Confidence is not a mood, it is a property of the constraints.
-- <!--i:convert--> **Right compounds.** A decision encoded in a tool is correct every time
+- <!--i:convert--> **The value of tools is compounding.** A decision set by a tool is correct every time
   that tool runs, in every language, at every size, for everyone who uses it.
-  A decision written in some style guidelines doc is only influential correct as often as it is read. With no promise of correct output to the reader. The
-  difference is small on one asset and enormous across a year.
+  A rule written in some style guidelines doc is only as influential when it is read. With no promise of correct output to the reader. The
+  difference is small at first; huge when multiplied by every task.
 - <!--i:lock--> **What protects the workflow protects the person.** On-device rendering,
   plain-file exports and offline capability are usually filed under privacy, and
   they are also what keeps you working on a bad connection, on a locked-down

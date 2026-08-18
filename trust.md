@@ -2,11 +2,10 @@
 
 Most software asks you to trust it. This section is the opposite: every claim Lolly makes about your content, your data and its own behaviour is written down here with the mechanism that enforces it, so you can check rather than believe.
 
-Three questions bring people here. Start wherever yours sits.
 
 ## Where did this content come from?
 
-Every image, PDF and video Lolly renders carries [Content Credentials](/info/content-credentials-identity.html) by default - a signed record of what made it, from what and when. When a file arrives with a history already attached, Lolly preserves it rather than flattening it, so the chain stays intact through an edit.
+The media Lolly renders carries [Content Credentials](/info/content-credentials-identity.html) by default - a signed record of what made it, from what and when. When a file arrives with a history already attached, Lolly preserves it rather than flattening it, so the chain stays intact through an edit.
 
 - <!--i:seal--> [**Content Credentials**](/info/content-credentials-identity.html) - what gets signed, what the signature proves and who the signer is.
 - <!--i:cpu--> [**Content Credentials - Engineering**](/info/content-credentials-engineering.html) - the C2PA implementation itself: manifests, ingredients, action histories, formats.

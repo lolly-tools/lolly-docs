@@ -1,22 +1,22 @@
 {
   "eyebrow": "Why we built Lolly",
-  "heading": "Everyday creative work\nshouldn’t be this hard.",
-  "lead": "Most people don’t want a design studio. They want one correct file, now - without breaking the brand, without waiting on someone and without being asked to sign up and pay before they can start. Lolly exists to take those three frustrations away.",
+  "heading": "Everyday creative work\nshouldn’t be hard.",
+  "lead": "Most people don’t want a design studio. They want one correct file, now - without breaking the style, without waiting on someone and without being asked to sign up and pay before they can start. Lolly can help.",
   "frustrations": [
-    { "icon": "anxiety", "title": "Off-brand anxiety", "desc": "The quiet dread of picking the wrong colour or font and getting it wrong in public." },
-    { "icon": "bottleneck", "title": "The bottleneck", "desc": "Every small asset stuck in a queue behind a busy designer, a slow tool or one more approval." },
-    { "icon": "tollGate", "title": "The toll gate", "desc": "An account before you can start, a subscription that outlives the job and one more charge at the moment you try to download." }
+    { "icon": "anxiety", "title": "aesthetic anxiety", "desc": "The quiet fear of picking the wrong colour or font. Over-thinking what was meant to be simple." },
+    { "icon": "bottleneck", "title": "The bottleneck", "desc": "Every asset stuck with a busy human queue, a slow tool, or one more approval." },
+    { "icon": "tollGate", "title": "The toll gate", "desc": "An account before you can start, a subscription that outlives the job, and predatory pricing ladders holding your work hostage." }
   ],
   "matrix": [
     { "pain": "Sign in before you are allowed to make anything.", "relief": "Open it and start. There is no account." },
-    { "pain": "Your work lives where you don't get a vote: the rules can change, and you find out later.", "relief": "Your work stays with you. Every choice about it is yours, and you can see each one." },
-    { "pain": "A subscription that keeps charging long after the job is done.", "relief": "Free, and it stays free: a version that has been released can never be taken back." },
+    { "pain": "Your work lives where you don't get a vote: the rules can change, and you find out later.", "relief": "Your work stays with you. Every choice is yours, and you can exit or pivot to anything you like." },
+    { "pain": "A subscription that keeps charging long after the job is done.", "relief": "Lolly is 100% free, forever: what has been released can never be taken back from you." },
     { "pain": "The template that is almost right, but the part you need is locked behind an upgrade.", "relief": "What should change is yours to change; what should not is already handled." },
     { "pain": "Finish the design, then find the download costs extra.", "relief": "Every export is included: print-quality PDF, sharp SVG, video, all of it." },
-    { "pain": "Pay the AI again for something it already made, and get it back slightly different.", "relief": "AI is optional, and it answers to you. What you make is identical where you want it, different how you want it - and re-making it is free." },
-    { "pain": "Email a brief to the design team, then wait days for one small graphic.", "relief": "Fill in a few fields. The finished file is ready in seconds." },
-    { "pain": "Guess at the right font, colour and logo - and hope it passes brand review.", "relief": "The design rules are baked into the tool. They bend, not break." },
-    { "pain": "Re-make the same badge, card or banner a hundred times by hand.", "relief": "Paste a spreadsheet. Get a hundred finished, print-ready files at once." },
+    { "pain": "Pay the AI again for something it already made, and get it back slightly different.", "relief": "How you use AI is your choice. Identical and consistent, different when you decide - for free." },
+    { "pain": "Email a brief to someone, wait days, all for content you know the details of.", "relief": "Fill in a few fields. The finished file is ready in seconds." },
+    { "pain": "Guess at the right font, boilerplate, and rules - and hope it passes a review.", "relief": "Constraints baked into the tool. They bend, not break." },
+    { "pain": "Re-make the same video, graphic, or audio file many times by hand.", "relief": "Paste a spreadsheet. Get all finished, print-ready files at once." },
     { "pain": "“Which version is the latest?” - hunting through Slack threads and shared drives.", "relief": "The file is a link. Same inputs, same file, every single time." }
   ]
 }

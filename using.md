@@ -82,6 +82,8 @@ Free-canvas tools add a working surface *around* the artboard, like a designer's
 
 ![Design's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
+**Flip a selection.** Right-click any box and choose **Flip horizontal** or **Flip vertical** to mirror it in place, or press `Shift+H` / `Shift+V` from the keyboard - Shift, because a bare `V` is the Pointer tool. Each selected box mirrors on its own axis in one undo step, and the mirror is a real transform, so it holds in the exported SVG, PDF and PNG rather than only on the canvas.
+
 ### Drawing your own shapes (the pen)
 
 Boxes, circles and rounded frames cover most layouts. When you need a shape that isn't in that list, draw it: the rail's **Pen** button (or the `P` key) puts you in drawing mode. Three single keys move between the modes - **`V`** back to the Pointer, **`P`** for the Pen, **`N`** for the node tool (**Edit points**) - and the Pointer is always the way out of whatever you're in.
@@ -333,6 +335,7 @@ The **Catalogue** (`#/c`, or the **Catalog** segment of the Projects · Tools ·
 - <!--i:upload--> **Bring your files in.** Drag any image, SVG, audio clip, video, Lottie, PDF or PowerPoint deck onto the upload area - or click to choose - and it lands in your catalogue instantly, ready in every tool's asset picker. A multi-page PDF or a `.pptx` asks which pages or slides to keep - each becomes an SVG asset. Ingest as much as you like; it never leaves your device.
 - <!--i:star--> **Favourite what you reach for.** ★ an asset (or a brand swatch) and it pins to the top of every picker, so your go-to logo or colour is one click away.
 - <!--i:folder--> **Tidy up.** Recategorise an asset into a different group, hide a shared brand asset you don't use (with **Show hidden** to bring it back) or delete your own uploads outright. The same multi-select gesture and floating action bar as Projects work here too, so any of that can be done to a whole selection at once.
+- <!--i:layers--> **Lift a video off its background.** Open a video's detail or right-click its card in any asset picker and choose **Remove background…** to save a transparent alternative - an animated WebP or PNG with real alpha. Pick a **Method**: an **On-device model** cuts a subject out of a busy scene, or a **Colour key** keys out an evenly lit, flat backdrop like a green screen or a plain wall, with **Tolerance**, **Softness** and **Spill removal** to tune the edge. The colour key needs no model download and no network, so **Remove background** is offered on any video and is often cleaner on tidy footage. A **Resolution** control (360, 480, 720 or 1080p, never past the source) trades detail for a smaller, faster file. It runs as a background job on your device. The finished cut-out lands beside the original as its own asset and the source video's Content Credential rides along as an ingredient. (See [Generated once, rendered the same](/info/ai-features.html) for why removing a background stays a plain edit.)
 
 ### Take your palette and fonts anywhere
 

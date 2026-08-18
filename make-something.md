@@ -26,19 +26,18 @@ About twenty seconds, once you have the web address to hand.
 
 If the code is going somewhere it might get scuffed or rained on, set **Error correction** to **High (30%)** first. It packs in enough spare information that a damaged code still reads.
 
-## A name, set properly
+## Feeling shy? Your voice is plenty
 
-The club, the band, the bake sale, the sign over the table. Type the name and it comes out looking like someone was paid to do it.
+A voice note becomes a finished video: a moving waveform, your words on the cover, your colours. No camera, no makeup needed.
 
-1. Open **Wordmark** and type the name into **Text**.
-2. Drag **Weight** for how heavy the letters sit - 100 is a hairline, 900 is solid - and **Tracking** for how far apart they stand.
-3. Set **Colour** to your ink.
-4. **Font** offers **Brand font** or **Mono font**. Try both and keep the one that suits the name.
-5. **Export** as **SVG**, then **Download**.
+1. Open **Audiogram** and drop your recording into **Audio** - a voice memo from your phone works as it is.
+2. Type the **Title** and **Subtitle** - the episode name, who is speaking, the date.
+3. Pick a **Style** for the waveform - bars, a ring, a wave - and press play to watch it move with the sound.
+4. **Export**, choose **MP4** for most places or **WebM**, then **Download**.
 
-Under a minute.
+A couple of minutes, most of it listening back to your own clip.
 
-The letters come out as drawn outlines rather than as text in a font file, so whoever opens it sees your lettering even without that font on their machine. That is the difference between a file a printer can use and one that quietly substitutes something else.
+The same file also exports as plain audio (MP3, M4A) or a still cover (PNG), so one recording covers the podcast feed, the social post and the artwork without touching another tool.
 
 ## A photo, ready for the poster
 

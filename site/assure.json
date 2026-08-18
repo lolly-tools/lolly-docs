@@ -1,7 +1,7 @@
 {
   "eyebrow": "Proof & privacy",
   "heading": "Prove what you made.\nKeep what's yours.",
-  "lead": "Almost every image, PDF or video you export - PNG, JPG, APNG, GIF, SVG, TIFF, WebP, PDF, MP4 and WebM - can carry a **Content Credential** - a tamper-evident [C2PA](https://c2pa.org) seal made and signed right where you work. The seal covers every exported byte: change anything and a C2PA validator says so, and once you enrol an identity it also records who signed it. Rasters also carry the invisible **Lolly Imprint** in the pixels themselves, on by default, so a copy can still be recognised even after the credential is stripped.",
+  "lead": "Almost everything you export can carry a **Content Credential** - a tamper-evident [C2PA](https://c2pa.org) seal made and signed right where you work. The tamper-evident seal covers every exported byte: change anything and a C2PA validator says so, and once you enrol an identity it also records who signed it. Rasters also carry the invisible **Lolly Imprint** in the pixels themselves, on by default, so your work can still be identified even after the credential is stripped.",
   "checks": [
     { "title": "Tamper-evident by default", "desc": "The seal covers every exported byte. Change one pixel and any C2PA validator flags it." },
     { "title": "Signed with a key only your browser holds", "desc": "The key is generated non-extractable, so no code - Lolly's included - can read it back out." },

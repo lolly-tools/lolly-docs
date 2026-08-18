@@ -60,4 +60,4 @@ Your question never leaves the device. Matching runs locally against files fetch
 
 ---
 
-**Related:** [Search](/info/search.html) for the bar that hands questions over. [Using Lolly](/info/using.html#ask-lolly) for where Ask sits in the rest of the app. [Your profile](/info/profile.html#available-offline) for taking the documentation offline first.
+**Related:** [Search](/info/search.html) for the bar that hands questions over. [Using Lolly](/info/using.html#ask-lolly) for how Ask works within the rest of the app. [Your profile](/info/profile.html#available-offline) for taking the documentation offline first.

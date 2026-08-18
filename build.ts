@@ -1294,7 +1294,7 @@ function importBand(lang: Lang, opts: { cta?: boolean } = {}): string {
   return `<section class="import-section">
   <div class="import-inner">
     <div class="import-lede reveal">
-      ${credentialedMascot('/info/mascots/kookaburra.png', 'import-mascot')}
+      ${credentialedMascot('/info/mascots/kookaburra.webp', 'import-mascot')}
       <div class="import-lede-text">
         <span class="import-eyebrow">${esc(importData.eyebrow)}</span>
         <h2>${esc(importData.heading)}</h2>
@@ -1498,11 +1498,13 @@ const LANDING_SCENES: Scene[] = [
     scene: 'A code for the invitation',
     line: 'Print it on the invite or pin it to the noticeboard, and everyone lands in the right place.',
     alt: 'A square QR code in dark ink on warm paper' },
-  { tool: 'wordmark', look: 'wordmark.look0.svg',
-    query: 'text=Aurora&weight=600&size=160&color=%230c322c',
-    scene: 'A name, set properly',
-    line: 'The club, the band, the bake sale. Type the name and it comes out looking like someone was paid to do it.',
-    alt: 'The word Aurora set in a clean green typeface' },
+  // Slot 2 is the audiogram (Andy, 2026-08-17): the camera-shy path deserves featuring.
+  // The query seeds the manifest's own look0 example so the preview and the click agree.
+  { tool: 'audiogram', look: 'audiogram.look0.svg',
+    query: 'title=Slow%20is%20smooth%2C%20smooth%20is%20fast&subtitle=The%20Build%20Notes%20podcast%20%C2%B7%20Ep.%2041&style=bars',
+    scene: 'Feeling shy? Your voice is plenty',
+    line: 'A voice note becomes a finished video: moving waveform, your words on the cover, your colours. No camera, no makeup needed.',
+    alt: 'An audiogram video cover with a title and a sound waveform' },
   { tool: 'filter', look: 'filter.look1.svg',
     query: 'effect=duotone',
     scene: 'A photo, ready for the poster',
@@ -1541,7 +1543,7 @@ function makeSomethingBlock(lang: Lang): string {
  */
 function sovereigntyBlock(lang: Lang): string {
   // CLAIMS-ALLOW: offline-statement - block 3 IS the home of the claim (plan 117 section 1).
-  const statement = t('**The internet is optional here: use it when it helps, never surrender control.** A font you pick, a place you look up, a link you share - things happen online only because you asked. Nothing you make ever leaves your device, and no one is listening in. Turn the Wi-Fi off and everything still works. **Freedom is sweet.**');
+  const statement = t('**The internet is optional with Lolly: use it when it helps, never surrender control.** A font you pick, a place you look up, a link you share - things happen online only because you asked. Nothing you make ever leaves your device without your control and informed consent, Nobody is listening in. Go offline and everything you have works. **Freedom is sweet.**');
   // CLAIMS-ALLOW END
   return `<section class="sovereign-section" id="sovereign">
   <div class="sovereign-inner reveal">
@@ -1597,16 +1599,21 @@ function whoIsBehindBlock(lang: Lang): string {
   // as fact, the unexpected-entrant motive as the interest-conflict answer. "We" is
   // allowed in this block only. Public facts only: "more than three decades" is on
   // record; function headcount and reporting lines never appear in public copy.
-  const assurance = t('You did not expect an infrastructure company here. The most critical problem in everyday creative tools is where the files go, and that is the problem SUSE has worked on for more than three decades, securing IT for many of the largest enterprises in the world. We had the creative problem ourselves, so we fixed it the way we fix everything: in the open, where anyone can check the work.');
+  const assurance = t('Didn\'t expect an infrastructure company here? The problem with everyday creative tools and modern AI is where your data goes, and that is the problem SUSE has worked on for more than three decades, securing IT for the largest enterprises in the world.  We solve this challenge the way we fix everything:  in the open, used in confidence, zero-trust creative sovereignty for all.');
   return `<section class="behind-section" id="behind">
   <div class="behind-inner reveal">
     <span class="behind-eyebrow">${esc(t('Who is behind this'))}</span>
-    <p class="behind-para">${inline(t(scepticParagraph))}</p>
-    <p class="behind-para behind-assure">${inline(assurance)}</p>
-    <div class="behind-links">
-      <a href="${esc(localeHref(lang, 'trust'))}">${esc(t('Trust'))}</a>
-      <span class="behind-dot" aria-hidden="true">·</span>
-      <a href="${esc(localeHref(lang, 'about'))}">${esc(t('About'))}</a>
+    <div class="behind-cols">
+      <p class="behind-para">${inline(t(scepticParagraph))}</p>
+      <p class="behind-para behind-assure">${inline(assurance)}</p>
+    </div>
+    <div class="behind-foot">
+      ${FOUNDED_BY}
+      <div class="behind-links">
+        <a href="${esc(localeHref(lang, 'trust'))}">${esc(t('Trust'))}</a>
+        <span class="behind-dot" aria-hidden="true">·</span>
+        <a href="${esc(localeHref(lang, 'about'))}">${esc(t('About'))}</a>
+      </div>
     </div>
   </div>
 </section>`;
@@ -1627,8 +1634,11 @@ function refusalBlock(lang: Lang): string {
   return `<section class="refusal-section" id="refusal">
   <div class="assure-inner">
     <h2 class="refusal-title reveal">${esc(t('Nothing to sell you, nothing to take'))}</h2>
-    <div class="tool-features refusal-beats">
-      ${beats.map((b, i) => `<div class="tool-feature reveal reveal-${(i % 6) + 1}"><strong>${esc(b.title)}</strong><p>${esc(b.desc)}</p></div>`).join('\n      ')}
+    <div class="refusal-row">
+      <div class="tool-features refusal-beats">
+        ${beats.map((b, i) => `<div class="tool-feature reveal reveal-${(i % 6) + 1}"><strong>${esc(b.title)}</strong><p>${esc(b.desc)}</p></div>`).join('\n        ')}
+      </div>
+      ${credentialedMascot('/info/mascots/ringtail-possum.webp', 'refusal-mascot')}
     </div>
   </div>
 </section>`;
@@ -1718,7 +1728,14 @@ function buildLandingContent(md: string, lang: Lang = 'en') {
   const tabSlug = (i: number, h2: string) => (i === 0 ? 'anyone' : slugOf(i - 1, h2));
   const tabIcon = (i: number, h2: string) => (i === 0 ? ICONS.platform : iconOf(i - 1, h2));
 
-  // Tab strip with header
+  // Tab strip with header. Plan 123 D1 final form (Andy, 2026-08-17): CSS-ONLY tabs.
+  // Hidden radio inputs sit as direct siblings ahead of the strip and the panels; each
+  // compact pill is a <label> for its radio, and docs-landing.css's
+  // `:checked ~ .audience-panels` pairing rules (index-matched nth-of-type/nth-child)
+  // show exactly one card. No script on either surface - the in-app reader rehosts this
+  // markup untouched and it just works. Keyboard is the native radio group (labels
+  // focus/arrow through the radios; the focus ring rides the paired pill). An old
+  // #slug deep link still opens its card through the `.audience-card:target` hatch.
   const audienceChrome = loadSiteJson('audience-chrome.json', lang) as { title: string; subtitle: string };
   const tabsHtml = `<div class="audience-header reveal">
   ${credentialedMascot('/info/mascots/quoll.webp', 'audience-mascot')}
@@ -1727,17 +1744,17 @@ function buildLandingContent(md: string, lang: Lang = 'en') {
     <p class="audience-sub">${esc(audienceChrome.subtitle)}</p>
   </div>
 </div>
-<div class="audience-tabs" role="navigation" aria-label="Who is it for?">
-${humanTabs.map(({ h2 }, i) => `  <a class="audience-tab" href="#${tabSlug(i, h2)}">
+${humanTabs.map(({ h2 }, i) => `<input class="aud-radio" type="radio" name="audience" id="aud-${tabSlug(i, h2)}"${i === 0 ? ' checked' : ''}>`).join('\n')}
+<div class="audience-tabs">
+${humanTabs.map(({ h2 }, i) => `  <label class="audience-tab" for="aud-${tabSlug(i, h2)}">
     <span class="tab-icon">${tabIcon(i, h2)}</span>
     <span class="tab-label">${esc(tabLabel(h2))}</span>
-  </a>`).join('\n')}
+  </label>`).join('\n')}
 </div>`;
 
-  // Plan 123 D1 (2026-08-17): the strip above is jump pills over STACKED sections now,
-  // not tabs over hidden panels - every card is always open, script-free on both the
-  // static site and the in-app reader. Card ids are unchanged, so an old #slug deep
-  // link (or a pill click) lands by native anchor scroll alone.
+  // The card ids are unchanged across every D1 iteration, so old #slug links keep
+  // landing. The machines band's cards are NEVER gated: the hide rule anchors on a
+  // preceding .aud-radio sibling, and that section has none.
   const renderAudienceCard = (
     { h2, h3, intro, bullets, codeBlocks }: ReturnType<typeof parseAudienceCard>,
     opts: { id: string; icon: string },
@@ -1756,6 +1773,40 @@ ${humanTabs.map(({ h2 }, i) => `  <a class="audience-tab" href="#${tabSlug(i, h2
   const cardsHtml = humanTabs.map((card, i) =>
     renderAudienceCard(card, { id: tabSlug(i, card.h2), icon: tabIcon(i, card.h2) })).join('\n');
 
+  // The machines band's two sections wear CONTRASTING treatments (Andy, 2026-08-17):
+  // the same card grid twice read as one undifferentiated slab. By POSITION, matching
+  // the plan-122 split rule so every locale renders identically: the FIRST machine
+  // section (AI Agents, the one with a code block) is a deep split panel where the
+  // prompt IS the hero, framed as a terminal pane; every other section is a light
+  // ruled audit sheet, one claim per row. Copy untouched; card ids keep their slugs.
+  const renderMachineCard = (
+    { h2, h3, intro, bullets, codeBlocks }: ReturnType<typeof parseAudienceCard>,
+    opts: { id: string; icon: string; kind: 'agents' | 'audit' },
+  ) => {
+    const eyebrow = `<div class="mc-eyebrow"><span class="mc-ic">${opts.icon}</span>${esc(h2)}</div>`;
+    const head = `${eyebrow}
+    <h3 class="mc-title">${inline(h3)}</h3>
+    ${intro ? `<p class="mc-intro">${inline(intro)}</p>` : ''}`;
+    const rows = bullets.map(b =>
+      `<li><span class="bullet-icon">${getBulletIcon(b)}</span><span>${inline(b)}</span></li>`).join('');
+    if (opts.kind === 'agents') {
+      return `<div class="machine-card machine-card--agents reveal" id="${opts.id}">
+  <div class="mc-main">
+    ${head}
+    <ul class="mc-points">${rows}</ul>
+  </div>
+  ${codeBlocks[0] ? `<div class="mc-term">
+    
+    <pre><code class="language-${esc(codeBlocks[0]!.lang)}">${esc(codeBlocks[0]!.code)}</code></pre>
+  </div>` : ''}
+</div>`;
+    }
+    return `<div class="machine-card machine-card--audit reveal" id="${opts.id}">
+  <div class="mc-main">${head}</div>
+  <ul class="mc-audit">${rows}</ul>
+</div>`;
+  };
+
   // The machines band: always visible, no tabs - a reader is either sent here or
   // scrolls past it, and neither needs a click (plan 122 block 7).
   const machinesHtml = machineData.length ? `<section class="audience-section machines-section">
@@ -1765,9 +1816,13 @@ ${humanTabs.map(({ h2 }, i) => `  <a class="audience-tab" href="#${tabSlug(i, h2
       <p class="audience-sub">${esc(t('An agent fills in the same tools a person does, and the people who answer for them get the security case at technical depth.'))}</p>
     </div>
   </div>
-  <div class="audience-panels machines-panels">
+  <div class="machines-band">
     ${machineData.map((card, i) =>
-      renderAudienceCard(card, { id: slugOf(humanData.length + i, card.h2), icon: iconOf(humanData.length + i, card.h2) })).join('\n')}
+      renderMachineCard(card, {
+        id: slugOf(humanData.length + i, card.h2),
+        icon: iconOf(humanData.length + i, card.h2),
+        kind: i === 0 && card.codeBlocks.length ? 'agents' : 'audit',
+      })).join('\n')}
   </div>
 </section>` : '';
 
@@ -1945,7 +2000,7 @@ ${humanTabs.map(({ h2 }, i) => `  <a class="audience-tab" href="#${tabSlug(i, h2
       ${assure.cards.map(c => `<div class="assure-card"><span class="assure-card-ic">${siteIcon(c.icon)}</span><strong>${esc(c.title)}</strong><p>${inline(c.desc)}</p></div>`).join('\n      ')}
     </div>
     <div class="assure-cta reveal reveal-3"><a href="${esc(localizeHref(lang, assure.ctaHref))}">${esc(assure.cta)}</a></div>
-    <p class="assure-status reveal reveal-3">${esc(t('Lolly is young: its cryptography and file parsing are in SUSE’s infrastructure hardening now, the discipline behind more than three decades of securing the world’s largest enterprises. Content Credentials and local encryption are strong by design, and the security has not yet been externally audited.'))}</p>
+    <p class="assure-status reveal reveal-3">${esc(t('Lolly is very new: cryptography and security testing are undergoing SUSE’s infrastructure hardening now. Content Credentials and local encryption are strong by design'))}</p>
     ${ASSURE_DOC_LINKS(lang)}
   </div>
 </section>`;
@@ -1967,7 +2022,7 @@ ${humanTabs.map(({ h2 }, i) => `  <a class="audience-tab" href="#${tabSlug(i, h2
         <h2>${br(why.heading)}</h2>
         <p class="why-lead">${inline(why.lead)}</p>
       </div>
-      ${credentialedMascot('/info/mascots/ringtail-possum.webp', 'why-mascot')}
+      ${credentialedMascot('/info/mascots/quokka.webp', 'why-mascot')}
     </div>
     <div class="why-frustrations reveal reveal-1">
       ${why.frustrations.map(f => `<div class="why-frustration"><span class="why-frustration-ic">${siteIcon(f.icon)}</span><strong>${esc(f.title)}</strong><p>${inline(f.desc)}</p></div>`).join('\n      ')}
@@ -2015,7 +2070,7 @@ ${humanTabs.map(({ h2 }, i) => `  <a class="audience-tab" href="#${tabSlug(i, h2
 <section class="hero">
   <div class="hero-inner">
   <div class="hero-heading">
-    <div class="hero-logo-slot"><div class="hero-logo-mark"><a href="${esc(localizeHref(lang, '/'))}" class="hero-logo-link" aria-label="Open Lolly - browse all tools"><img src="/info/icon.svg" alt="Lolly" class="hero-logo"></a></div>${HERO_VERIFY(lang)}</div>
+    <div class="hero-logo-slot"><div class="hero-logo-mark"><a href="${esc(localizeHref(lang, '/'))}" class="hero-logo-link" aria-label="Open Lolly - browse all tools"><img src="/info/icon.svg" alt="Lolly" class="hero-logo"><img src="/icons/icon-512.png" alt="" aria-hidden="true" class="hero-logo-still"></a></div>${HERO_VERIFY(lang)}</div>
   </div>
   <div class="hero-details">
     <h1 class="hero-statement">${esc(heroChrome.statement)}</h1>
@@ -2950,20 +3005,6 @@ button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;f
    whole point of the picture — so this hero's mark sits mid-height rather than in the bottom
    corner where it would cover the words it is arguing about. */
 .asset-cred[data-shot="/info/not-a-pipe.webp"] .shot-cred{inset-block-end:50%}
-/* A landing mascot wrapped with its Content Credential. The mascot's sizing class
-   (.about-mascot / .audience-mascot / .everywhere-mascot: width, flex-shrink, drop-shadow)
-   rides on THIS span, so it stays the flex child it was; the img just fills it, and the
-   corner credential positions against it. NOT .asset-cred (that is width:100%, for the
-   full-column docs hero). */
-.mascot-cred{position:relative;display:block;flex-shrink:0}
-.mascot-cred>img{display:block;width:100%;height:auto;margin:0}
-/* Keep a landing mascot's credit INSIDE its box (the brief), unlike a screenshot's
-   caption which deliberately overhangs the artwork edge. Clamp the line to the mascot's
-   own width and let the pills WRAP into a compact stack rather than run off the side. The
-   glyph stays bottom-anchored; the expanded line grows upward within the box. */
-.mascot-cred .shot-cred{max-width:calc(100% - 1rem)}
-.mascot-cred .shot-cred-line{max-width:100%}
-.mascot-cred .shot-cred-row{flex-wrap:wrap}
 /* The line is a stack of ROWS, and a shot with no readable file has exactly one of
    them — so the column above is byte-identical to the single row it replaced. The
    second row (what the file is made of) only ever appears inside the expanded line,
@@ -3179,8 +3220,6 @@ tr:nth-child(even) td{background:hsl(var(--muted) / 0.4)}
 .social-proof-date{font-size:.8125rem;color:var(--green);font-weight:600;margin-bottom:.625rem;letter-spacing:.02em;text-transform:uppercase}
 .social-proof-desc{color:var(--muted);font-size:.9375rem;line-height:1.6}
 /* "Founded by SUSE" badge - same size everywhere it appears (hero, social proof, footer) */
-.founded-badge{display:inline-block;line-height:0}
-.founded-badge img{display:block;width:15em;max-width:100%;height:auto}
 .social-proof-founded{margin:1.5rem 0 0;text-align:center}
 .social-proof-credit{text-align:center;color:var(--muted);font-size:.875rem;margin-top:1.75rem;padding:0 1.5rem}
 .social-proof-credit a{color:var(--green);font-weight:600;text-decoration:none}
@@ -3304,13 +3343,14 @@ footer .founded-badge{margin-top:.5rem}
   .docs-content{padding:1.75rem 1rem 1.5rem}
   .docs-content.no-mast{padding-top:5.25rem}
   .audience-card{
+    --aud-card-display:flex;
     display:flex;flex-direction:column;
     gap:2rem;padding:2.5rem 1.25rem;
   }
   .audience-header{padding:3rem 1rem 1.25rem}
   .audience-title{font-size:1.875rem}
-  .audience-tabs{display:flex;flex-wrap:wrap;justify-content:center;overflow-x:visible;gap:.375rem;padding:.625rem .75rem .875rem}
-  .audience-tab{flex:0 0 calc(25% - .375rem);min-width:0;padding:.625rem .375rem}
+  .audience-tabs{gap:.375rem;padding:.625rem .75rem .875rem}
+  .audience-tab{padding:.4rem .7rem}
   .tool-anatomy{gap:.5rem}
   .tool-plus{display:none}
   .tool-part{min-width:110px}
@@ -3319,7 +3359,6 @@ footer .founded-badge{margin-top:.5rem}
   .platform-features{grid-template-columns:1fr}
   .tool-features{grid-template-columns:1fr}
   .card-benefits{grid-template-columns:1fr}
-  .audience-tab{flex-basis:calc(33.333% - .375rem)}
   .try-now-callout{position:static;transform:none;width:auto;margin-top:1.75rem;flex-direction:column;align-items:stretch}
   .try-now-callout .btn{text-align:center;justify-content:center}
 }
@@ -4524,7 +4563,7 @@ function buildNav(lang: Lang, slug: string, activeHref: string, isLanding: boole
   // Draft marker: English only, and deliberately not run through t() - it must
   // not enter the translation corpora, because it is meant to come straight back
   // out again once the docs are no longer a draft.
-  const draft = lang === 'en' ? '<span class="nav-draft">Draft only</span>' : '';
+  const draft = lang === 'en' ? '<span class="nav-draft">BETA</span>' : '';
   // The landing page has no rail, so it gets no page-nav block - an empty heading
   // and a separator with nothing under it would be worse than the omission.
   const pageNav = isLanding ? '' : mobilePageNavHtml(lang, activePathway ?? 'builders', activeHref);
@@ -4601,25 +4640,26 @@ const FOOTER_SECTIONS: SitemapSection[] = [
     'compare-canva', 'compare-adobe', 'compare-figma', 'compare-render-apis', 'compare-converters',
     'compare-penpot', 'compare-brand-portals'] },
   // Keeps the pathway's own name rather than the rail's "Make things", because the
-  // FIRST column of a split pathway is where a reader looks for the pathway - the
-  // same position "For Builders" and "Trust" hold below. Its membership is still the
-  // rail's "Make things" group exactly.
+  // FIRST column of a split pathway is where a reader looks for the pathway. The three
+  // "For …" pathway heads sit NEXT TO EACH OTHER (Andy, 2026-08-17): they are the same
+  // kind of thing - who-you-are doors - so they read as one group, with each pathway's
+  // sub-columns following after the trio. Membership is unchanged, order only.
   { hub: 'creators', label: 'For Creators', slugs: [
     'using', 'brand-studio', 'design-import', 'sequence-editor', 'animating', 'utilities', 'extension'] },
+  { hub: 'builders', label: 'For Builders', slugs: [
+    'overview', 'design-tokens', 'authoring-tools', 'authoring-assets', 'host-api', 'url-mode'] },
+  { hub: 'operators', label: 'For Operators', slugs: [
+    'adoption-governance', 'sovereign-production', 'deployment', 'configuration', 'build-guide', 'cli-signing'] },
   { hub: 'creators', label: 'Find your way', slugs: [
     'search', 'ask', 'dashboard', 'favourites', 'profile'] },
   { hub: 'creators', label: 'Share & collaborate', slugs: [
     'collaborate', 'formats', 'exporting'] },
-  { hub: 'builders', label: 'For Builders', slugs: [
-    'overview', 'design-tokens', 'authoring-tools', 'authoring-assets', 'host-api', 'url-mode'] },
   { hub: 'builders', label: 'Concepts', slugs: [
     'constraints', 'determinism', 'reproducibility'] },
   { hub: 'builders', label: 'Run & integrate', slugs: [
     'cli', 'tui', 'mcp', 'ai-agents', 'data-transfer'] },
   { hub: 'builders', label: 'Ship & operate', slugs: [
     'contributing-setup', 'ios-build', 'about'] },
-  { hub: 'operators', label: 'For Operators', slugs: [
-    'adoption-governance', 'sovereign-production', 'deployment', 'configuration', 'build-guide', 'cli-signing'] },
   { hub: 'trust', label: 'Trust', slugs: [
     'status-quo', 'input-not-impersonation', 'content-credentials-identity',
     'content-credentials-engineering', 'ai-stance', 'ai-features', 'eu-ai-act', 'beatrice-warde'] },
