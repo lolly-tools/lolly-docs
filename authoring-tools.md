@@ -95,7 +95,7 @@ Most of what `render` declares surfaces in one place the user sees: the export p
 - `paged` - defaults `false`. Marks a multi-page document tool (one that lays out several `[data-pdf-page]` boxes, like `multi-page-pdf`); the gallery renders each page as its own horizontally-scrollable preview slide rather than input-variant examples.
 - `paginate` - `{ "source": "<tableInputId>" }`. **Engine-driven pagination**: the runtime hydrates your template once per row of the named `table` input and wraps each hydration in its own `[data-pdf-page]` box - you author ONE page and never manage pagination, page counts or loops. Each hydration's context gains a `page` object: `page.index`/`page.number`/`page.count`, `page.first` (the row's first cell - the natural page title), `page.cells` (`[{ column, value, col }]` for every column - `col` is the cell's original column index, stable even when the template renders only a subset), `page.fields` (cells minus the first - the labelled body fields, whose labels are the user's own column headings) and `page.byColumn` (trimmed lower-cased column name → the row's cell, for by-name lookup: `{{lookup page.byColumn "icon"}}`). A template can opt any rendered cell into the web shell's on-canvas editing by stamping it `data-cell="{{page.index}}:{{col}}"` (add `data-cell-md` when the cell holds markdown rendered with `{{{markdown value}}}` - edits round-trip back to markdown in the table input; without it the cell edits as plain text), and can offer a click-to-pick image slot with `data-cell-pick="{{page.index}}"` plus `data-pick-column="Icon"` (the column written to, created if absent) and optional `data-pick-tag="icon"` (catalog tag filter). Pair with `paged: true` for the scrolling all-pages canvas and filmstrip. `battlecards` is the reference tool: a hook-free one-card template that turns any pasted table into a multi-page PDF, one card per row.
 - `filmstrip` - `"left"` (default) or `"bottom"`. Which edge a `paged` tool's slide-sorter thumbnail rail runs along. `left` is a vertical rail beside the canvas, right for tall documents; `bottom` is the deck-strip shape, for tools whose pages are wide and few (cards, slides), where a left rail eats the width the page needs. `battlecards` uses `bottom`.
-- `pages` - `{ count, width, height, gap?, min?, max? }`. Turns an `editor`-layout tool into a **multi-page canvas** (the carousel-maker pattern): the shell sizes the canvas to a horizontal strip of N same-size page frames and the free-canvas overlay places boxes across all of them. Box coordinates stay one flat, global, URL-expressible array; the tool's hook derives which page each box belongs to and emits one `[data-pdf-page]` frame per page, so headless CLI/URL renders match and export fans out (multi-page PDF, or one still per page). Requires `layout: "editor"` and `paged: true`. Each property names the input id the geometry is read from (`count`/`width`/`height` are number inputs), so the shell stays generic.
+- `pages` - `{ count, width, height, gap?, min?, max? }`. Turns an `editor`-layout tool into a **multi-page canvas** (the social-carousel pattern): the shell sizes the canvas to a horizontal strip of N same-size page frames and the free-canvas overlay places boxes across all of them. Box coordinates stay one flat, global, URL-expressible array; the tool's hook derives which page each box belongs to and emits one `[data-pdf-page]` frame per page, so headless CLI/URL renders match and export fans out (multi-page PDF, or one still per page). Requires `layout: "editor"` and `paged: true`. Each property names the input id the geometry is read from (`count`/`width`/`height` are number inputs), so the shell stays generic.
 
 **Multi-page PDF.** A tool builds a paginated PDF by marking page boxes in its template with `data-pdf-page` - each flagged element becomes one true PDF page sized to its own CSS box, so a cover, content that flows across pages and a back page render as real pages rather than one tall image. Pages are drawn as vectors (text outlined to paths) and the document can carry an open-`password`. The path falls back to the normal single-page renderer when no `[data-pdf-page]` boxes are present, and it bypasses the crop/bleed print-finishing path (pair it with `printMarks: false`). See the `multi-page-pdf` tool for the reference layout (cover + flowing `blocks` content + back page).
 
@@ -450,6 +450,31 @@ The data-format helpers `{{icsStamp}}`, `{{rfcText}}` and `{{csvCell}}` are for 
 ## Styles (`styles.css`)
 
 Scoped automatically. Write top-level selectors targeting your own classes. Don't write global rules (`body`, `html`); they'll be scoped to `#tool-canvas` and probably won't do what you want.
+
+### Letting the DOCUMENT bring its own CSS
+
+A tool can also give the person using it a stylesheet - Design does, as its `customCss`
+input. Three rules make that safe, and a tool that offers user CSS is expected to follow
+all three (`community/design/hooks.js` is the reference; `tests/design-custom-css.test.ts`
+is the security shape to copy):
+
+1. **Sanitise in the hook, never in the shell.** The hook neutralises `</style` and strips
+   `@import`, then hands back a string the template emits inside `<style>`. Doing it in the
+   hook is what makes the CLI's output identical to the browser's - a shell-side filter
+   would leave the headless render unfiltered.
+2. **Emit, then let the shell scope.** The shell re-scopes template `<style>` to the tool
+   canvas (`scopeTemplateStyles`), and its scoper handles top-level `@keyframes` correctly,
+   so real animations belong at the document level rather than nested per element.
+3. **Give the CSS something to aim at.** Free-text rules need stable handles: Design stamps
+   `data-frame-id` on each artboard, sanitised `data-frame-state` tokens from a per-frame
+   `state` field, and a per-box `cls` field whose tokens join the element's class list
+   (`.callout { … }`). Those pass through the same parse-and-re-serialise treatment as any
+   other free text - lowercased, cleaned to `[a-z0-9_-]`, and refused where they'd collide
+   with the app's own namespaces (`lolly-`, `pr-`, `seq-`, `fc-`).
+
+**Custom JS is not offered, and should not be.** Hooks are closure-injected, not sandboxed,
+so a per-document script input would be stored XSS in every shared URL. The escape hatch
+that exists is composition: a `run-web-code` tool link placed as a box.
 
 ## Data formats (`json` / `csv` / `ics` / `vcf`)
 

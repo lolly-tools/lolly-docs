@@ -180,7 +180,7 @@ An animated source flattens to its first frame. Read the *result's* `mime`/`widt
 
 ## `host.raster` *(pixel work in a hook - optional, v1.105)*
 
-The sibling of `host.images` for tools that composite, sample or mutate pixels *themselves* (Bitmap Studio, the `filter-*` family, the logo composers, Redact). Where `images` is the convert path - encoded bytes in, encoded bytes out, no pixel access - this hands back drawable pixels. Not a gated capability; feature-detect `host.raster` (undefined on the headless CLI/jsdom shell, which has no canvas) and degrade to the existing placeholder.
+The sibling of `host.images` for tools that composite, sample or mutate pixels *themselves* (Darkroom, the Filter tool, the logo composers, Redact). Where `images` is the convert path - encoded bytes in, encoded bytes out, no pixel access - this hands back drawable pixels. Not a gated capability; feature-detect `host.raster` (undefined on the headless CLI/jsdom shell, which has no canvas) and degrade to the existing placeholder.
 
 | Method | Returns | Notes |
 |---|---|---|
@@ -296,7 +296,7 @@ A **`CodecFrame`** is `{ width, height, data: Float32Array, space? }`. `data` is
 
 The SDR encoders (`png16` and `dither8`) gamma-encode and clamp at their display boundary. `exr` and `radiance` keep the unbounded linear values. Every method is async, so a shell can offload the encode to a Worker.
 
-This pairs with a tool's **`exportStill`** hook. A tool declares `exportStill` in its manifest `hooks`, and the runtime calls it before `host.export.render` with `{ node, format, opts, host }`. Returning `{ bytes, mime }` short-circuits the export to those bytes (computed in float via `host.codec`). Returning `null` declines and falls through to the normal DOM raster path for that format, so a tool owns only the formats it has real depth for. Like the `exportFile` transform path, tool-supplied bytes carry no watermark and no engine provenance. Bitmap Studio is the reference consumer.
+This pairs with a tool's **`exportStill`** hook. A tool declares `exportStill` in its manifest `hooks`, and the runtime calls it before `host.export.render` with `{ node, format, opts, host }`. Returning `{ bytes, mime }` short-circuits the export to those bytes (computed in float via `host.codec`). Returning `null` declines and falls through to the normal DOM raster path for that format, so a tool owns only the formats it has real depth for. Like the `exportFile` transform path, tool-supplied bytes carry no watermark and no engine provenance. Darkroom is the reference consumer.
 
 ## `host.layers` *(layered bitmap write-back - optional, v1.102)*
 

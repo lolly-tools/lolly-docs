@@ -290,4 +290,4 @@ Every id the host can render, grouped. These are also the values for the URL `fo
 | Text & data | `html` · `md` · `txt` · `json` · `csv` · `ics` · `vcf` · `css` · `scss` · `gpl` (GIMP palette) |
 | Bundle | `zip` |
 
-A few more ids come from a **tool's own export hook** rather than the shared render path: `ase` (Adobe Swatch Exchange, from Palette Lab), `exr` and `hdr` (Bitmap Studio's high-dynamic-range rasters) and `ttf` / `otf` / `woff` (Font Convert). They pick a format the same way - the picker, `format=`, `--export=` - the bytes are just built by the tool. Font Convert is the one exception: it transforms a font file *you* supply, so there's nothing for a bare URL to render.
+A few more ids come from a **tool's own export hook** rather than the shared render path: `ase` (Adobe Swatch Exchange, from Palette Lab), `exr` and `hdr` (Darkroom's high-dynamic-range rasters) and `ttf` / `otf` / `woff` (Font Convert). They pick a format the same way - the picker, `format=`, `--export=` - the bytes are just built by the tool. Font Convert is the one exception: it transforms a font file *you* supply, so there's nothing for a bare URL to render.
