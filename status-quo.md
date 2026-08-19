@@ -2,7 +2,7 @@
 
 Nobody sat us down and offered us the deal. It arrived one tool at a time, each step reasonable on its own, until the normal way to resize an image was to send it to a company none of us have met.
 
-This page is about that accumulation. Not about villains, because most of it was built by people making sensible decisions inside incentives that pointed one way. The incentives are the problem, and they are the thing worth naming.
+This page is about that accumulation. Not about villains, because most of it was built by people making sensible decisions inside incentives that pointed one way. The incentives are the problem, and this page names them.
 
 ::: cols
 ## We did this easily
@@ -20,7 +20,7 @@ This page is about that accumulation. Not about villains, because most of it was
 - <!--i:upload--> **Our content became the price.** A tool that runs on someone else's server has to be paid for, so the bill arrives as a subscription, an ad, a data broker or a training corpus. The upload was never technically necessary for resizing a picture. Browsers have done that locally for years.
 - <!--i:lock--> **Our files became leverage.** Work kept in a format only one program opens is leverage over the person who made it, and leverage that expires with a card is not a partnership.
 - <!--i:eyeoff--> **Our consent became paperwork.** Twelve toggles and a forty-page policy do not produce informed agreement. They produce legal cover, and one more task standing between us and the work.
-- <!--i:hash--> **Our proof went missing.** For most of the last decade a file carried no reliable record of where it came from. That was survivable while making a convincing image still took a studio. It is not survivable now.
+- <!--i:hash--> **Our proof went missing.** For most of the last decade a file carried no reliable record of where it came from. You could live with that while making a convincing image still took a studio. You cannot now.
 :::
 
 None of it was carelessness. Each step was the reasonable one available at the time, and the incentives underneath were pointing the same way for everyone.

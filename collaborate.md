@@ -110,7 +110,7 @@ The invite as a QR on screen. The other device points its camera at it and scans
 
 **When it fits:** the two devices are in the same room and there is no channel between them at all. It is also the leg that works when one device is a phone and the other is a laptop across a desk.
 
-Two things to know. The reply comes back the same way, so this is genuinely two scans and not one: your device shows the invite, theirs scans it, then theirs shows the reply and yours scans that. Numbering the steps 1-2-3 is what keeps that survivable. And scanning is only offered where the browser can actually decode a QR, which today means Chromium-family browsers. Where it cannot, there is no **Scan a code** button at all rather than a button that opens a camera and never finds anything - the code beside the QR is the same payload, so pasting is always available.
+Two things to know. The reply comes back the same way, so this is genuinely two scans and not one: your device shows the invite, theirs scans it, then theirs shows the reply and yours scans that. Numbering the steps 1-2-3 is what stops that going wrong. And scanning is only offered where the browser can actually decode a QR, which today means Chromium-family browsers. Where it cannot, there is no **Scan a code** button at all rather than a button that opens a camera and never finds anything - the code beside the QR is the same payload, so pasting is always available.
 
 ### A code
 
