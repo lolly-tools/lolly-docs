@@ -1,114 +1,119 @@
 # Lolly för operatörer
 
-### En säkerhets- och underrättelsestrategi med djupförsvar - som råkar vara en kreativ produktionsplattform
+### En försvar-på-djupet-säkerhets- och underrättelsestrategi - som råkar vara en kreativ produktionsplattform
 
-Det nolltillitsbaserade organisatoriska immunförsvaret som omsluter det du redan gör - så att det rutinmässiga kreativa arbete dina team behöver varje dag sker *inom* din perimeter istället för att läcka ut ur den.
+Det noll-tillit-organisatoriska immunförsvaret som lindas runt det ni redan gör - så att det rutinmässiga kreativa arbete era team behöver varje dag sker *innanför* er perimeter i stället för att läcka ut ur den.
 
-**Vad du får ut av det.** Du får vara personen som sa ja till något som är både säkert *och* populärt. Du täpper till ett exfiltreringshål, vinner kapacitet och raderar en beställningskö i ett och samma drag - den sällsynta säkerhetsvinsten som gör dig mer omtyckt, inte mindre. Inget samtal klockan tre på natten från juristerna för att embargobelagda filer eller kunddata hamnat i ett slumpmässigt webbverktyg; färre SaaS-leverantörer, avtal och granskningar att hålla koll på; och ett fullständigt reproducerbart granskningsspår du kan peka på när någon frågar. Du sover bättre, och gör några dagar lite ljusare på köpet.
+**Vad du får ut av det.** Du får vara personen som sa ja till något som är både säkert *och* populärt. Du täpper till ett läckagehål, vinner ny förmåga och raderar en förfrågningskö i ett och samma drag - den ovanliga säkerhetsvinsten som gör dig mer omtyckt, inte mindre. Inget samtal klockan tre på natten från juridikavdelningen för att embargobelagda filer eller kunddata hittat vägen in i ett slumpmässigt webbverktyg; färre SaaS-leverantörer, avtal och revisioner på ditt bord; och ett fullt reproducerbart granskningsspår du kan peka på när någon frågar. Du sover bättre, och lyser upp några dagar samtidigt.
 
-Lolly är inget kreativt verktyg av andra klass: det lägger produktionsfärdiga resultat i allas händer, och den varumärkesstyrda skapandeupplevelsen är i särklass. Anledningen till att det är *säkert* att dela ut brett är arkitektonisk: inget laddas upp som du inte själv lagt dit, varje resultat är reproducerbart, och varje export kan bära flera lager av branschledande kryptografiska uppgifter. Oavsett hur ett dokument hamnade på ditt skrivbord kan du se dess fullständiga proveniens, om det har manipulerats, och om du kan återskapa det pixelperfekt.
+Lolly är inget andraklassens kreativt verktyg: det lägger utdata av produktionskvalitet i allas händer, och den varumärkesstyrda skapandeupplevelsen är oöverträffad. Anledningen till att det är *säkert* att dela ut i stor skala är arkitektonisk: inget laddas upp som du inte själv lagt dit, varje resultat är reproducerbart och varje export kan bära flera lager av branschledande kryptografiska register. Oavsett hur ett dokument nått ditt skrivbord kan du se dess fullständiga proveniens, om det manipulerats och om du kan återskapa det pixelperfekt.
 
-> **Var det står idag.** Lollys säkerhetsegenskaper är starka till sin konstruktion, och dess kryptografi- och filtolkningsmotorer genomgår SUSE:s infrastrukturhärdning av företagsklass. Förseglingarna, signeringen på enheten och krypteringen nedan är verkliga och försvarbara nu, och mognar mot oberoende certifiering - så där ett avtal kräver certifierad garanti, driftsätt dem som skydd i flera lager medan den processen slutförs.
+> **Var det står i dag.** Lollys säkerhetsegenskaper är starka genom design, och dess kryptografi- och filtolkningsmotorer genomgår SUSE:s infrastrukturhärdning i företagsklass. Sigillen, signeringen på enheten och krypteringen nedan är verkliga och försvarbara redan nu, och mognar mot oberoende certifiering - så där ett avtal kräver certifierad säkerhet, driftsätt dem som försvar på djupet medan den processen slutförs.
 
 ## Den strategiska fördelen
 
-Det vanliga sättet rutinmässigt kreativt arbete utförs på är en riskyta: filer mejlade till externa designleverantörer, varumärkestillgångar uppladdade till ett dussin SaaS-redigerare, kunddata inklistrad i en främlings webbverktyg för att "bara göra en snabb grafik." Var och en av dessa är data som lämnar din kontroll.
+Det vanliga sättet rutinmässigt kreativt arbete utförs på är en ansvarsyta: filer mejlade till externa designkonsulter, varumärkestillgångar uppladdade till ett dussin SaaS-redigerare, kunddata inklistrad i en främlings webbverktyg för att "bara göra en snabb grafik". Vart och ett av dessa är data som lämnar er kontroll.
 
-Lolly vänder på det. Arbetet som *drev* dessa läckor - citatkortet, den lokaliserade bannern, evenemangsmärket, den redigerade skärmdumpen - sker nu i ett verktyg som körs på medarbetarens egen enhet, mot ditt varumärke, utan någon server inblandad. Du lade inte till en kontroll ovanpå ett riskabelt arbetsflöde; du ersatte det riskabla arbetsflödet med ett som från grunden saknar exfiltreringsväg.
+Lolly vänder på det. Arbetet som *drev* de där läckorna - citatkortet, den lokaliserade bannern, evenemangsbrickan, den redigerade skärmdumpen - sker nu i ett verktyg som körs på medarbetarens egen enhet, mot ert varumärke, utan någon server inblandad. Ni lade inte till en kontroll ovanpå ett riskabelt arbetsflöde; ni ersatte det riskabla arbetsflödet med ett som inte har någon läckväg över huvud taget.
 
-- **Konfigurationen är din egen.** Motorn och skalen är öppen källkod (MPL-2.0). Lägg på din egen autentisering, telemetri eller CA; hosta det eller låt bli; du har full kontroll över funktioner och kostnader, git-spårat, inte inlåst i en SaaS-databas.
-- **Styrning kan vara data, inte en instrumentpanel.** När du vill ha den kontrollen, hantera verktygskatalogen som ett Git-repository - granskning via pull request blir varumärkesgodkännande, med ett fullständigt granskningsspår och omedelbar återställning av varje mall din personal kan röra vid. Det är ett alternativ, inte en skyldighet: team som bara vill skapa saker gör sina egna verktyg i Design och matar in sina egna filer i katalogen, helt och hållet i appen, utan att någonsin röra git. Se [Införande och styrning](/info/adoption-governance.html).
-- **Skyddsräcken är strukturella.** Varumärkesbegränsningar är hårdkodade i mallarna, inte publicerade som riktlinjer som folk kan strunta i. Fel resultat avråds inte bara - det går inte att åstadkomma.
+- **Konfigurationen är er.** Motorn och skalen är öppen källkod (MPL-2.0). Lägg på er egen autentisering, telemetri eller CA; hosta det eller låt bli; ni har full kontroll över funktioner och kostnad, git-spårat, inte inlåst i en SaaS-databas.
+- **Styrning kan vara data, inte en instrumentpanel.** När ni vill ha den kontrollen kan ni hantera verktygskatalogen som ett Git-repo - granskning av pull-requests blir varumärkesgodkännande, med ett fullständigt granskningsspår och omedelbar återställning av varje mall era medarbetare kan komma åt. Det är ett alternativ, inte en skyldighet, och det landar på precis ett skrivbord: skaparna arbetar helt i appen, sparar det de gör som en **session** och lämnar den vidare som en delningslänk, en säkerhetskopia eller ett live-samarbete - inget av det kräver git. När en av de sessionerna förtjänar att bli en permanent startpunkt öppnar den som driftsätter länken, spelar in dess värden som en **mall** på det verktyget i varumärkespaketet och committar. Därefter dyker den upp i verktygets "Ny från mall"-väljare och kan djuplänkas som `?template=<id>`. Git är administratörens låssteg, använt en gång, och aldrig något en skapare behöver röra. Se [Adoption och styrning](/info/adoption-governance.html).
+- **Skyddsräcken är strukturella.** Varumärkesbegränsningar är hårdkodade i mallar, inte publicerade som riktlinjer folk kan ignorera. Fel utdata avskräcks inte - den kan inte ens uppstå.
 
-## Radera beställningskön medan innehållet mångfaldigas.
+> **Ni styr hela stafetten.** En kreatör skriver reglerna och en utvecklare skalar dem, men det är operatören som gör den livscykeln säker att köra i hela organisationen - samma verktyg som låter en säljare självbetjäna sig på ett flygplan är ett ni kan grinda genom Git-granskning, driftsätta genom er MDM och verifiera kryptografiskt. Se hur rollerna samverkar i [Livscykeln för en kampanj](/info/overview.html#the-lifecycle-of-a-campaign), och hur ni styr den i [Adoption och styrning](/info/adoption-governance.html).
 
-Ett mål med Lolly är **avledning av designbeställningar**: rutinbeställningar som aldrig behöver nå en designer eftersom personen som behövde tillgången gjorde den själv, korrekt, på några minuter. Varje avlett ärende är både en produktivitetsvinst och en fil mindre som byter händer.
+## Radera förfrågningskön samtidigt som innehållet ökar.
 
-Lolly är byggt för att passa hur din organisation faktiskt fungerar - det finns inget enda rätt sätt att driftsätta det på:
+Ett mål med Lolly är **avledning av designförfrågningar**: rutinförfrågningar som aldrig behöver nå en designer eftersom personen som behövde tillgången gjorde den själv, korrekt, på några minuter. Varje avledd ärende är både en produktivitetsvinst och en fil mindre som byter händer.
 
-- **Driftsätt, servera inte.** Skicka ut Lolly till enheter via din befintliga MDM (Intune, Jamf, Munki…). Det körs lokalt som en dator-/mobilapp eller en offline-PWA - fungerar bakom vilken brandvägg som helst, i vilken luftgapad miljö som helst, utan någon server att underhålla och med IT i kontroll över uppdateringstakten.
-- **Endast servera.** Kör en instans inom ditt nätverk (eller bakom en VPN); användare når den i en webbläsare, inget installeras. Publicera ett verktyg en gång, alla har det direkt; koppla ihop med din IdP för åtkomstkontroll.
-- **Hybrid.** Lokala appar för offline fältarbete, en alltid uppdaterad webbläsarversion för lånade maskiner - båda pekar mot samma verktygsbibliotek.
+Lolly är byggt för att passa hur er organisation faktiskt arbetar - det finns inget enda rätt sätt att driftsätta det på:
 
-Den fullständiga genomgången av driftsättningsmodeller och administration finns i [Driftsättning](/info/deployment.html) och [Konfiguration](/info/configuration.html).
+- **Driftsätt, servera inte.** Skicka Lolly till enheter via er befintliga MDM (Intune, Jamf, Munki…). Det körs lokalt som en dator-/mobilapp eller en offline-PWA - fungerar bakom vilken brandvägg som helst, i vilken luftgapad miljö som helst, utan server att underhålla och med IT i kontroll över uppdateringstakten.
+- **Endast servera.** Kör en instans inuti ert nätverk (eller bakom en VPN); användare når den i en webbläsare, inget installerat. Publicera ett verktyg en gång, alla har det direkt; para ihop med er IdP för åtkomstkontroll.
+- **Hybrid.** Lokala appar för offline-fältarbete, en alltid aktuell webbläsarversion för lånade maskiner - båda pekar mot samma verktygsbibliotek.
 
-## Verktyg mot exfiltrering
+De fullständiga driftsättningsmodellerna och administrationsgenomgången finns i [Distribution](/info/deployment.html) och [Konfiguration](/info/configuration.html).
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
+## Verktyg mot dataläckage
 
-Text Helper är samma överenskommelse för text i stället för filer. Det är den flikbaserade arbetsbänken en medarbetare annars hade letat efter på en främlings webbplats, och den deklarerar inga indata alls, eftersom inget den rör vid någonsin lämnar sidan.
+En kategori Lolly-verktyg - integritetsverktygen - finns *specifikt* för att hålla filer innanför perimetern.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1200&height=750&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
 
-Compress PDF kompletterar uppsättningen: den överstora bilagan krymper under en kvalitetsnivå du väljer, på maskinen som redan har den.
-
-![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=ov2-compress-pdf)
-
-En kategori Lolly-verktyg - sekretessverktygen - finns *specifikt* för att hålla filer innanför perimetern.
-
-- **Ta bort dold data**
+- **Strip hidden data**
  Ta bort plats och all dold identifierande information från dokument och mediefiler.
 
-- **Texthjälp**  
-Anonymisera, koda, formatera och bearbeta strukturerad och ostrukturerad text.
+- **Text Helper**  
+Anonymisera, koda, formatera och manipulera strukturerad och ostrukturerad text. 
 
-- **Komprimera PDF**
-Krymp en överdimensionerad PDF på enheten, så att ingen behöver vända sig till en tredjepartswebbplats för att "komprimera min PDF" så fort en fil blir för stor för att mejla - exakt där data trillar ur fönstret.
+- **Compress PDF**
+Krymp en för stor PDF på enheten, så att ingen behöver ta till en tredjeparts "komprimera min PDF"-webbplats så fort en fil är för stor för att mejla - vilket är precis där data läcker ut. 
 
-Alla dessa är transformationer på enheten: din fil eller data går in, rensade bytes kommer ut, och **det finns ingen server att ladda upp till**. De är den medvetna motsatsen till det typiska verktyget "ladda upp din fil till en främlings webbplats för att rensa den" som en välmenande medarbetare annars hade tagit till.
+Alla dessa är transformationer på enheten: din fil eller data går in, rensade byte kommer ut och **det finns ingen server att ladda upp till**. De är den medvetna motsatsen till det typiska "ladda upp din fil till en främlings webbplats för att rensa den"-verktyget som en välmenande medarbetare annars tar till.
+
+![Strip Hidden Data: filen hamnar på canvasen och märket anger tydligt att inget laddas upp](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
+
+Text Helper är samma affär för text i stället för filer. Det är den flikade arbetsbänken en medarbetare annars skulle leta efter på en främlings webbplats, och den deklarerar inga inmatningar alls eftersom inget den rör vid någonsin lämnar sidan.
+
+![Text Helpers arbetsbänk - en rad med åtgärdsflikar ovanför ett kort som anger att inget du klistrar in lämnar din enhet](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1200&height=750&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
+
+Compress PDF kompletterar samlingen: den för stora bilagan krymps under en kvalitetsinställning du väljer, på den maskin som redan har den.
+
+![Compress PDF - en kvalitetsnivå och en gråskale-omkopplare till vänster, en dropzon för din egen PDF till höger och ingen uppladdning någonstans](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=ov2-compress-pdf)
 
 ## Determinism och reproducerbarhet
 
-Prompt to Image är determinism i sin enklaste form: texten är hela indatan, den satta bilden är hela utdatan, och samma text sätts alltid på samma sätt.
+Varje verktygsinmatning kan uttryckas som en URL-parameter, och samma inmatning ger samma fil. Det får två konsekvenser för den som driftar:
 
-![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+- **En URL är artefakten.** Committa länken, generera tillgången på nytt vid behov - inga binärer incheckade i Git, inget jagande efter "senaste versionen" i chatten. Tillgångs- och verktygs-ID är permanenta kontrakt, så en länk som skapas idag går fortfarande att lösa upp senare.
+- **CLI:n är samma renderingsväg** som gränssnittet, så byggpipelines och appen glider aldrig isär. Generera OG-bilder, sociala kort och datavisualiseringar vid byggtillfället, reproducerbart.
 
-Varje verktygsinmatning kan uttryckas som en URL-parameter, och samma indata ger samma fil. Det får två konsekvenser för operatören:
+Prompt to Image är determinism i sin enklaste form: texten är hela inmatningen, den typsatta bilden är hela utmatningen och samma text sätts alltid likadant.
 
-- **En URL är artefakten.** Committa länken, regenerera tillgången vid behov - inga binärfiler checkas in i Git, inget jagande efter "senaste versionen" i chatten. Tillgångs- och verktygs-ID:n är permanenta kontrakt, så en länk som skapas idag går fortfarande att slå upp senare.
-- **CLI:t är samma renderingsväg** som GUI:t, så byggpipelines och appen glider aldrig isär. Generera OG-bilder, sociala kort och datavisualiseringar vid byggtillfället, på ett reproducerbart sätt.
+![Prompt to Image - ett block av promptext typsatt till en kvadratisk bild, med inget i resultatet som inte fanns i inmatningen](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## Proveniens och Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
+![Verify-dropzonen tar emot vilken fil som helst, från vilken källa som helst, och läser den utan ett enda nätverksanrop](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
-Exporter kan bära **Content Credentials** - ett signerat [C2PA](https://c2pa.org)-manifest bundet till en hash av filens bytes. Varje senare ändring av filen bryter förseglingen, så en C2PA-medveten verifierare **upptäcker ändringar kryptografiskt, offline**. Autentiseringsuppgiften är manipulations-*avslöjande*: den flaggar manipulation snarare än förhindrar den, vilket är precis det som gör fullständig offline-verifiering möjlig.
+Exporter kan bära **Content Credentials** - ett signerat [C2PA](https://c2pa.org)-manifest bundet till en hash av filens byte. Varje senare ändring av filen bryter sigillet, så en C2PA-medveten verifierare **upptäcker ändringar kryptografiskt, offline**. Referensen är manipulations-*synlig*: den flaggar manipulation snarare än förhindrar den, vilket är precis det som gör helt offline verifiering möjlig.
 
-- **Aktiverat som standard, på enheten.** Signeringsnyckeln genereras på enheten, är icke-extraherbar (inte ens Lolly kan läsa den), och signeringen sker lokalt - endast valfri identitets*registrering* rör någonsin nätverket.
-- **Förtroendenivåer.** En oregistrerad export är strukturellt giltig men signerad anonymt (`untrusted`). Registrera en **verifierad identitet** (kortlivat certifikat från Lolly CA, kopplat till en e-postadress) så rapporterar verifierare som pinnar Lolly-roten `trusted` + signerarens e-postadress. En betrodd tidsstämplingsinstans och grönt ljus från tredjepartsvalidator (C2PA-konformitet) finns på färdplanen. Varje nivå är explicit, och en fil gör bara anspråk på det förtroende den kan bevisa.
-- **Autentiseringsuppgiftens livslängd** avgörs av operatören/användaren vid signeringstillfället: 7 / 30 / 90 / 365 dagar, standard 30.
-- **Lolly Imprint.** En andra, kompletterande signal som är **aktiverad som standard**: en osynlig pixelvattenstämpel inbakad i rasterexporter (och de Lolly-renderade rastren inuti en PDF/PPTX, aldrig en användares egen inbäddade bild). Där autentiseringsuppgiften dör vid varje containerändring överlever Imprint en omsparning eller skärmdump - en varaktig antydan om att "de här pixlarna har passerat genom Lolly", enbart närvaro, inga personuppgifter. Det är säkerhet genom dunkelhet, inte ett härdat skydd, och kompletterar autentiseringsuppgiften snarare än att ersätta den. `imprint=0` väljer bort det.
-- **Durable Content Credentials (valbart).** En rasterexport kan dessutom bära en osynlig *varaktig* markering som kodar en identifierare med mjuk bindning, så att C2PA-autentiseringsuppgiften kan återställas även efter att en uppladdning till sociala medier eller en omsparning har rensat bort filens metadata - fallet där en vanlig autentiseringsuppgift annars skulle gå förlorad. Den är enbart för raster och kräver en neural kodningsomgång, så den är avstängd som standard (`durable=1` för att aktivera den). Lolly känner idag igen sin egen varaktiga markering offline på `/verify`; återställning via tredjepartsverktyg (t.ex. Adobe) följer så snart branschens lösning för mjuk bindning finns på plats.
-- **Verifiering sker på enheten.** Släpp valfri fil på `/verify` (eller `lolly validate <file>`) för en offline-rapport om huruvida den verkligen skapades med Lolly och är oförändrad sedan dess. Webbens Verify-vy flaggar även AI-genererat innehåll, upptäcker Lolly Imprint, verifierar **SEAL**-signaturer (en signatur på bytenivå med nyckel i DNS - den enda nätverkskontakten är en DNS-nyckeluppslagning, aldrig själva filen), djupskannar valfritt efter tredjeparts pixelvattenstämplar (en engångsnedladdning av en modell på enheten), och blottar dold data - allt utan att ladda upp filen. Se [Content Credentials-identitet](/info/content-credentials-identity.html).
+- **På som standard, på enheten.** Signeringsnyckeln genereras på enheten, är oextraherbar (inte ens Lolly kan läsa den) och signering sker lokalt - endast valfri identitets-*registrering* rör nätverket alls.
+- **Förtroendenivåer.** En oregistrerad export är korrekt utformad men signerad anonymt (`untrusted`). Registrera en **verifierad identitet** (kortlivat certifikat från Lolly CA, kopplat till en e-postadress) så rapporterar verifierare som litar på Lolly-roten `trusted` + signerarens e-post. En betrodd tidsstämpelmyndighet och tredjepartsvalidator-godkännande (C2PA-konformitet) finns på färdplanen. Varje nivå är explicit, och en fil hävdar aldrig mer förtroende än den kan bevisa.
+- **Referensens livslängd** är operatörens/användarens val vid signeringstillfället: 7 / 30 / 90 / 365 dagar, standard 30.
+- **Lolly Imprint.** En andra, kompletterande signal som är **på som standard**: ett osynligt pixelvattenmärke inbakat i rasterexporter (och de Lolly-renderade rastren inuti en PDF/PPTX, aldrig en användares egen inbäddade bild). Där referensen dör vid varje behållarändring överlever Imprint en omsparning eller skärmdump - en beständig "dessa pixlar passerade genom Lolly"-ledtråd, endast närvaro, ingen personlig data. Det är säkerhet genom dunkelhet, inget hårdgjort skydd, och kompletterar referensen snarare än ersätter den. `imprint=0` väljer bort det.
+- **Beständiga Content Credentials (valbart).** En rasterexport kan dessutom bära ett osynligt *beständigt* märke som kodar en löst bunden identifierare, så att C2PA-referensen kan återvinnas även efter att en uppladdning på sociala medier eller en omsparning har rensat bort filens metadata - fallet där en vanlig referens annars skulle gå förlorad. Det är endast för raster och kostar ett neuralt kodningssteg, så det är av som standard (`durable=1` för att slå på det). Lolly känner igen sitt eget beständiga märke offline på `/verify` redan idag; återvinning med tredjepartsverktyg (t.ex. Adobe) följer när branschens lösning för lös bindning finns på plats.
+- **Verifiering sker på enheten.** Släpp valfri fil på `/verify` (eller `lolly validate <file>`) för en offlinerapport om huruvida den verkligen skapades med Lolly och är oförändrad sedan dess. Webbens Verify-vy flaggar även AI-genererat innehåll, upptäcker Lolly Imprint, verifierar **SEAL**-signaturer (en bytenivå-signatur - utan ett enda nätverksanrop: motorn tar en *injicerad* DNS-nyckelresolver och inget skal injicerar en idag, så en post som bär sin egen infogade `pk=`-nyckel verifieras helt offline medan en DNS-nyckelbaserad rapporterar "ingen nyckelresolver och ingen infogad nyckel" i stället för att nå ut - se `SealPublicKeyResolver` i `engine/src/seal.ts`), valfritt djupskannar efter tredjeparts pixelvattenmärken (en engångsnedladdning av en modell på enheten) och visar dold data - allt utan att ladda upp filen. Se [Content Credentials Identity](/info/content-credentials-identity.html).
 
-> **Interoperabilitetsanmärkningar.** Lolly verifierar sina egna autentiseringsuppgifter och många från tredje part offline idag, inklusive läsning av C2PA-anspråks-**v2**-manifest från andra producenter. En interop-punkt pågår fortfarande: WebM - som ännu inte har någon standardiserad C2PA-mappning, så Lolly bifogar manifestet som en Matroska-del (tredjepartsverktyg verifierar Lollys MP4 direkt; WebM följer när standarden har satt sig).
+> **Anteckningar om interoperabilitet.** Lolly verifierar sina egna referenser och många tredjepartsreferenser offline redan idag, inklusive läsning av C2PA claim-**v2**-manifest från andra producenter. Två behållarformat är fortfarande under arbete, båda för att C2PA ännu inte har någon standardiserad mappning för dem, så Lolly bär referensen på en egen plats och det är Lollys verifierare som läser tillbaka den: **WebM** (manifestet åker som en Matroska-bilaga) och **Ogg/Opus** (ett `C2PA=`-fält i OpusTags-kommentarhuvudet, med det byteintervallet uteslutet från bindningen så att ljudet fortfarande hashar identiskt). Allt annat följer specifikationen - tredjepartsverktyg verifierar Lollys MP4, M4A, MP3, WAV, PNG, JPEG och PDF direkt. Se `engine/src/c2pa-containers.ts` för båda mappningarna; de konvergerar mot standarden när den blir klar.
 
 ## Kryptering och lösenordsskydd
 
-![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&walker=1&format=svg&dark=1&filename=aud-pdf-lock)
-
 För filer som måste färdas låsta sker allt på enheten:
 
-- **PDF-öppningslösenord** - *Standard* är ett 40-bitars RC4-avskräckande skydd (öppnas var som helst, kan färdas i en länk); *Stark* är **AES-256** (PDF 2.0), skrivs in vid export och läggs aldrig i en länk.
-- **Låsta nedladdningar** - en ZIP, en Projects-mapp eller en batchkörning kan låsas i sin helhet: *Standard* ZipCrypto (svagt, universellt) eller *Stark* **AES-256** (WinZip AE-2). Skydd i flera lager: varje PDF inuti en Stark-zip är *också* individuellt AES-256-låst, så den förblir låst efter uppackning.
-- **Lösenordsskyddade delningslänkar** - hela länktillståndet är AES-256-krypterat under en PBKDF2-härledd nyckel; endast chiffertext färdas, lösenordet finns aldrig i länken, och dekrypteringen sker i mottagarens webbläsare.
+![Låskortet i exportpanelen: ett lösenord och ett explicit val mellan de två nivåerna](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&walker=1&format=svg&dark=1&filename=aud-pdf-lock)
+
+- **PDF-öppningslösenord** - *Standard* är ett 40-bitars RC4-avskräckande (öppnas var som helst, kan färdas i en länk); *Strong* är **AES-256** (PDF 2.0), skrivet vid export och aldrig lagt i en länk.
+- **Låsta nedladdningar** - en ZIP, en Projects-mapp eller en batchkörning kan låsas helt: *Standard* ZipCrypto (svagt, universellt) eller *Strong* **AES-256** (WinZip AE-2). Försvar på djupet: varje PDF inuti en Strong-zip är *också* individuellt AES-256-låst, så den förblir låst efter uppackning.
+- **Lösenordsskyddade delningslänkar** - hela länktillståndet är AES-256-krypterat under en PBKDF2-härledd nyckel; endast krypterad text färdas, lösenordet finns aldrig i länken och dekryptering sker i mottagarens webbläsare.
 
 ## Redo för luftgap
 
-Luftgap är en **förstklassig driftsättning**, inte ett specialläge - Lolly körs med inget nätverk vid renderingstillfället direkt ur lådan. Webbskalet är en offline-first PWA (service worker); typsnitt och WASM lagras på enheten; verktygstillstånd sparas lokalt via värdbryggan, aldrig `localStorage`. Alla verktyg som når nätverket gör det endast via en **tillåtelselistad** `host.net`-funktion som måste deklareras i dess manifest - ett skal som inte kan (eller vill) uppfylla det stubbar ut det. Skicka ut skalen till enheter via din MDM, eller servera en instans inom ditt nätverk, så renderar, exporterar, krypterar och verifierar en fullständigt luftgapad installation autentiseringsuppgifter utan något att ringa hem till.
+Luftgap är en **förstklassig driftsättning**, inget specialläge - Lolly körs utan nätverk vid rendering direkt ur lådan. Webbskalet är en offline-first PWA (service worker); typsnitt och WASM lagras på enheten; verktygstillstånd lagras lokalt via värdbryggan, aldrig `localStorage`. Det stödda sättet för ett verktyg att nå nätverket är en **tillåtelselistad** `host.net`-förmåga det deklarerar i sin manifest - ett skal som inte kan (eller inte vill) uppfylla det stubbar ut det. Det är ett portabilitetskontrakt snarare än en tvingad gräns (se anteckningen om hooks nedan), vilket är varför granskning av verktygskod förblir kontrollen - även om det på en luftgapad enhet inte finns något att nå åt något håll. Distribuera skalen till enheter via din MDM, eller servera en instans inuti ditt nätverk, och en helt luftgapad installation renderar, exporterar, krypterar och verifierar referenser utan något att ringa hem till.
 
 ## Bra att veta
 
 Några saker värda att ha klart för sig innan du rullar ut det:
 
-- **Härdning pågår.** Kryptografin och parsrarna genomgår SUSE:s härdning av företagsskala (se ovan) - starkt till sin konstruktion idag; driftsätt som skydd i flera lager där ett avtal kräver certifierad garanti.
-- **Verktygskrokar är *inte* en säkerhetssandlåda.** Ett verktygs valfria `hooks.js` körs med värdbryggan injicerad, men i ett webbläsarskal exekverar det i sidans realm och *kan* nå `window`/`document`/`fetch`. Behandla verktygskod på samma sätt som du behandlar all kod du kör - granska den. Det är därför en organisation som kör en delad katalog kan grinda den genom Git-granskning; oavsett vilket, kör bara verktyg du har granskat tills Worker-isolering lanseras.
-- **Content Credentials är manipulations-avslöjande.** De upptäcker ändringar snarare än förhindrar dem - se interoperabilitetsanmärkningarna ovan.
-- **Två krypteringsnivåer.** *Standard*-lås är snabba, universella avskräckningar; *Stark* (AES-256) är fullständigt skydd - ta till Stark för allt känsligt, med förbehållet att den vill ha en modern läsare.
+- **Härdning pågår.** Kryptografin och parsarna genomgår SUSEs härdning i företagsskala (se ovan) - stark till sin design redan idag; distribuera som försvar på djupet där ett avtal kräver certifierad säkerhet.
+- **Verktygshooks är *inte* en säkerhetssandlåda.** Ett verktygs valfria `hooks.js` körs med värdbryggan injicerad, men i ett webbläsarskal exekverar det i sidans realm och *kan* nå `window`/`document`/`fetch`. Behandla verktygskod som du behandlar all kod du kör - granska den. Det är därför en organisation som driver en delad katalog kan grinda den via Git-granskning; kör i vilket fall bara verktyg du har granskat tills Worker-isolering lanseras.
+- **Content Credentials är manipulations-synliga.** De upptäcker ändringar snarare än förhindrar dem - se anteckningarna om interoperabilitet ovan.
+- **Två krypteringsnivåer.** *Standard*-lås är snabba, universella avskräckningsmedel; *Strong* (AES-256) är fullt skydd - ta till Strong för allt känsligt, med tanke på att det kräver en modern läsare.
 
-## Vart du kan gå härnäst
+## Vart du ska gå härnäst
 
-- **[Införande och styrning](/info/adoption-governance.html)** - personas, avledningsmåttet och styrning-som-data i sin helhet.
-- **[Driftsättning](/info/deployment.html)** - driftsätt/servera/hybrid, MDM och självhostning av tjänsterna.
-- **[Konfiguration](/info/configuration.html)** - profiler, varumärkespaket, funktionsspärrar och feature flags.
-- **[Integritetspolicy](/info/privacy.html)** - det formella uttalandet "samlar inget, laddar upp inget".
+- **[Security & Verification](/info/security.html)** - standarderna, primitiverna, förtroendemodellen och testningen bakom referenserna och krypteringen ovan.
+- **[Adoption & Governance](/info/adoption-governance.html)** - personas, avledningsmåttet och styrning-som-data i sin helhet.
+- **[Deployment](/info/deployment.html)** - distribuera/servera/hybrid, MDM och egen driftsättning av tjänsterna.
+- **[Configuration](/info/configuration.html)** - profiler, varumärkespaket, förmågespärrar och funktionsflaggor.
+- **[Privacy Policy](/info/privacy.html)** - det formella uttalandet om vad som samlas in, lagras och skickas, och vad som inte gör det.
+- **[Server Surface](/info/server-surface.html)** - den fullständiga inventeringen av vad som körs serversidan (två valfria komponenter) jämfört med på enheten.

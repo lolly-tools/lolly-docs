@@ -1,82 +1,100 @@
 # Panoramica
 
-Questo documento raccoglie lo scopo, la struttura e le decisioni architetturali della piattaforma Lolly. Riflette sia la visione di prodotto sia lo stato attuale della codebase.
+![Icona di Lolly - Grande lecca-lecca verde e bianco](/info/icon.svg)
 
-> **Stato:** Lolly è un prototipo interno in un **pilota chiuso che non si è ancora concluso**. Il motore è deterministico e internamente coerente, ma il prodotto è agli inizi - SUSE è il cliente numero uno - e i suoi motori di crittografia e di analisi dei file stanno attualmente attraversando il rigoroso irrobustimento dell'infrastruttura di SUSE, in preparazione alla scala enterprise (in questo siamo davvero bravi). Leggi l'architettura qui sotto come intento di design sotto verifica, non come un prodotto finito e certificato. Vedi [Adozione e governance](/info/adoption-governance.html#status) per sapere come viene condotto e misurato il pilota.
+Questo documento riassume lo scopo, la struttura e le decisioni architetturali della piattaforma Lolly. Riflette sia la visione del prodotto sia lo stato attuale del codice.
+
+> **Stato:** Lolly è un prototipo interno in un **pilota chiuso non ancora completato**. Il motore è deterministico e internamente coerente, ma il prodotto è agli inizi - SUSE è il cliente numero uno - e i suoi motori di crittografia e di parsing dei file sono attualmente sottoposti al rigido irrobustimento infrastrutturale di SUSE, in preparazione alla scala enterprise (in questo siamo davvero bravi). Leggi l'architettura qui sotto come intento progettuale in fase di test, non come un prodotto finito e certificato. Vedi [Adozione e Governance](/info/adoption-governance.html#status) per come viene condotto e misurato il pilota.
+
+> **Come leggere questa pagina.** Contiene due tipi di materiale, in ordine. La prima metà spiega
+> **perché esiste**: il problema, il posizionamento e il ciclo di vita che attraversa un singolo asset.
+> Da [Il quadro d'insieme](#the-big-picture-how-the-layers-fit) in poi si tratta di
+> **come si incastrano i livelli**: il documento di architettura per chi contribuisce, che copre la
+> separazione motore/shell/pacchetto, la struttura del repository, gli obiettivi di distribuzione e gli
+> impegni che vincolano ogni modifica alla piattaforma. Se sei qui per modificare il codice anziché per
+> capire il prodotto, inizia dal quadro d'insieme.
+>
+> Due documenti complementari approfondiscono più di questa pagina. [`engine/README.md`](../engine/README.md) nel
+> repository è la mappa del motore modulo per modulo, con una tabella generata di ogni modulo e
+> di cosa analizza o scrive. [Modello di minaccia e confini di fiducia](/info/threat-model.html)
+> è la stessa architettura letta in termini di confini di fiducia, ed è la pagina giusta per qualsiasi domanda su
+> cosa il motore considera non attendibile.
 
 ---
 
 ## Perché esiste
 
-Le squadre affrontano un problema ricorrente: lavoro creativo e di contenuto ripetibile, troppo prevedibile per giustificare mani esperte ogni volta, ma troppo sensibile alla qualità per essere delegato senza barriere di sicurezza. Il risultato è, a seconda dei casi, un flusso lento (collo di bottiglia dello specialista), incoerenza (ognuno usa lo strumento che ha a disposizione), oppure dipendenza da un fornitore (un DAM SaaS che controlla i tuoi template).
+I team affrontano un problema ricorrente: lavoro creativo e di contenuto ripetibile che è troppo prevedibile per giustificare mani esperte ogni volta, ma troppo sensibile alla qualità per essere delegato senza vincoli. Il risultato è una produttività lenta (collo di bottiglia dello specialista), incoerenza (persone che usano qualsiasi strumento hanno a disposizione) oppure dipendenza dal fornitore (un DAM SaaS che controlla i tuoi template).
 
-Questa piattaforma è la risposta strutturale:
+Questa piattaforma è la risposta diretta:
 
-> **Creatività e contenuti programmatici su larga scala** - generazione di asset a costo di manodopera zero, con le regole sotto controllo centralizzato, per dipendenti, fornitori e partner.
+> **Contenuti e creatività programmatici su larga scala** - generazione di asset a lavoro zero, con le regole sotto controllo centrale, per dipendenti, fornitori e partner.
 
-Il risultato è l'**abbondanza**: ogni evento ha la segnaletica corretta, ogni allerta CVE rispetta lo stile aziendale, ogni etichetta si stampa pulita, ogni firma email è aggiornata - tutto senza un ticket di design. La piattaforma gestisce la creatività operazionalizzata e ricorrente. Deliberatamente non è uno strumento creativo su misura - i designer restano proprietari del lavoro di punta.
+Il risultato è **abbondanza**: ogni evento ha la segnaletica corretta, ogni avviso CVE rispetta lo stile della casa, ogni etichetta si stampa pulita, ogni firma email è aggiornata - tutto senza un ticket di design. La piattaforma gestisce la creatività ricorrente e operativizzata. Deliberatamente non è uno strumento creativo su misura - i designer continuano a possedere il lavoro di punta.
 
-### Dove si colloca nel panorama
+### Innova in modo probabilistico, scala in modo deterministico
 
-![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=aud-gallery-landscape)
+Ogni discussione sull'IA in una pipeline creativa si arena sulla stessa domanda: quale parte di questo è compito della macchina? È una domanda antica con una risposta consolidata. Amanuensi e miniaturisti già lavoravano tra due strumenti - lo schizzo libero, dove nulla era fissato e tutto poteva essere provato, e la stampa a caratteri mobili, intimidatoria proprio perché si impegnava. Gli schizzi erano dove nasceva l'arte. La stampa era il modo in cui raggiungeva chiunque. Nessuno confondeva i due, ed entrambi continuavano a progredire - nuovi inchiostri, nuovi caratteri, nuove presse - migliorando ciascuno in armonia con l'arte e l'intento che servivano.
 
-| Funzionalità | Canva | Portali di marca | Illustrator | Figma / Penpot | **Lolly** |
-|---|---|---|---|---|---|
-| Generazione di contenuti in massa | parziale | ✗ | ✗ | ✗ | **✓** |
-| Funziona completamente offline | ✗ | ✗ | ✓ | parziale | **✓** |
-| Logica dei template e vincoli rigidi | ✗ | parziale | ✗ | parziale | **✓** |
-| Nessuna competenza di design richiesta | parziale | ✓ | ✗ | ✗ | **✓** |
-| Content Credentials automatiche | ✗ | ✗ | parziale | ✗ | **✓** |
-| Gli strumenti compongono altri strumenti | ✗ | ✗ | ✗ | ✗ | **✓** |
-| Motore aperto, non vincolato a un SaaS | ✗ | ✗ | ✗ | parziale | **✓** |
-| C2PA content credentials | ✗ | ✗ | ✗ | ✗ | **✓** |
-| Provenienza forense opzionale | ✗ | ✗ | ✗ | ✗ | **✓** |
-| App mobili e desktop | ✓ | ✗ | ✗ | parziale | **✓** |
-| Riga di comando e TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
+Lolly traccia la stessa linea. Esplora in modo probabilistico: un modello, un designer, un'idea abbozzata, un prompt che va da qualche parte che nessuno aveva pianificato. Poi scala in modo deterministico - ciò che raggiunge diecimila output è uno *strumento*, e uno strumento si renderizza allo stesso modo ogni volta a partire da input che puoi leggere. L'esplorazione resta libera perché nulla a valle dipende dal fatto che approdi due volte nello stesso modo. L'output guadagna fiducia perché non è un'ipotesi. Portare la sperimentazione con l'IA verso risultati prevedibili e riproducibili non è una disciplina nuova; è la stessa divisione del lavoro che ha reso affidabile il lavoro a stampa fin dall'inizio.
 
-La lacuna è chiara: niente nel panorama esistente ci offre un output basato su vincoli, capace di funzionare offline, con basse competenze richieste e accessibile internamente. Lolly include perfino un canvas aperto - **Design** - dove colori, tipografia e asset si conformano alle variabili globali di marca, così che la disposizione libera resti basata su vincoli. Ciò che **non** è: una suite di design senza vincoli. I designer continuano a usare Illustrator e Figma per il lavoro di punta su misura. Le permutazioni possono essere assemblate con questo strumento.
+> Fidati del processo creativo, scala con rigore.
 
-**Usalo per:** generazione rapida di asset creativi operazionalizzati - tessere per eventi, badge nominativi, firme, allerte CVE, codici QR, card social, etichette di spedizione, report strutturati.
+### Contro le alternative
 
-**Non usarlo per:** contenuti hero su misura.
+::: figure positioning-comparison
+Completezza delle capacità tra gli strumenti creativi odierni, ricercata ad agosto 2026. Punteggio: 0 assente, 25 livello soluzione di ripiego, 50 reale ma limitato o parziale, 75 solido con avvertenze, 100 competenza centrale.
+:::
+
+Il divario è evidente: nulla di ciò che è oggi disponibile offre output prima-vincoli, capace di funzionare offline, a basso livello di competenza e accessibile internamente. Lolly include persino una tela aperta - **Design** - dove colori, tipografia e asset si conformano ai globali del brand, così l'organizzazione libera resta prima-vincoli. Ciò che **non** è, è una suite di design non vincolata: i designer continuano a usare Illustrator e Figma per il lavoro di punta su misura. Le permutazioni possono essere assemblate con questo strumento.
+
+![Ogni strumento della libreria come scheda, raggruppato per categoria, così un produttore ne sceglie uno e inizia](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=aud-gallery-landscape)
+
+**Usalo per:** Generazione rapida di asset creativi operativizzati - riquadri per eventi, badge nominativi, firme, avvisi CVE, codici QR, card social, etichette di spedizione, report strutturati.
+
+**Non usarlo per:** Contenuti hero su misura.
 
 ---
 
 ## Il ciclo di vita di una campagna
 
-![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+Il modo più chiaro per vedere cos'è Lolly non è un elenco di funzionalità - è seguire un singolo asset mentre passa di mano in mano. Osserva una card di campagna localizzata mentre attraversa l'organizzazione:
 
-Il modo più chiaro per capire cos'è Lolly non è un elenco di funzioni: è seguire un singolo asset mentre passa di mano in mano. Guarda una sola card di campagna localizzata attraversare l'organizzazione:
+1. **Il creativo stabilisce le regole.** Un designer crea il template di base nello strumento Design, codificando la tipografia e le variabili di colore del brand. Non sta creando una sola card - sta facendo il lavoro fondamentale *una volta sola* per non doverla mai più localizzare a mano.
+2. **Lo sviluppatore lo scala.** Lo stesso template viene collegato a una pipeline notturna tramite la CLI, così un nuovo grafico o una nuova variante linguistica viene generata automaticamente - nessun designer riapre il file.
+3. **Il produttore semplicemente lo usa.** Un rappresentante di vendita, offline su un aereo, apre lo stesso strumento e genera un deck perfettamente in linea con il brand per un incontro con un cliente. Nessuna competenza di design, nessuna rete, nessuna attesa.
 
-1. **Il creativo fissa le regole.** Un designer crea il template di base in Design, codificando la tipografia e le variabili colore del brand. Non sta facendo una card: sta facendo il lavoro di fondo *una volta sola*, per non doverla mai più localizzare a mano.
-2. **Lo sviluppatore lo porta in scala.** Lo stesso template viene collegato a una pipeline notturna tramite la CLI, così un grafico nuovo o una variante linguistica vengono generati automaticamente - nessun designer riapre il file.
-3. **Il produttore lo usa e basta.** Un commerciale, offline in aereo, apre lo stesso strumento e genera una presentazione perfettamente in linea con il brand per un incontro con un cliente. Nessuna competenza di design, nessuna rete, nessuna attesa.
+Il "nuovo grafico" del secondo passaggio è un rendering come questo, prodotto da una stringa di dati e da alcuni parametri senza che nessuno apra un file di design:
 
-Un "grafico nuovo" è un render come questo, prodotto da una stringa di dati e da una manciata di parametri, senza che nessuno apra un file di design:
+![Un grafico ad area impilata con titolo, le sue tre serie in fasce con una palette fredda, con assi, legenda e titolo posizionati tutti dal template anziché a mano](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
-Il punto non è che Lolly va bene per i designer *e* per gli sviluppatori *e* per le vendite, ognuno preso a sé. È una **staffetta**: il lavoro iniziale del creativo viene portato in scala dallo sviluppatore, che a sua volta mette il produttore in condizione di lavorare. L'esperienza senza sforzo del commerciale non tecnico in aereo è *possibile* solo grazie al rigore fissato dal designer e messo in opera dallo sviluppatore.
+Il punto non è che Lolly sia buono per i designer *e* buono per gli sviluppatori *e* buono per le vendite, ciascuno nel vuoto. È una **staffetta**: il lavoro iniziale del creativo viene scalato dallo sviluppatore, che a sua volta abilita il produttore. L'esperienza senza sforzo per il rappresentante non tecnico sull'aereo è possibile solo grazie al rigore fissato dal designer e implementato dallo sviluppatore.
 
-Questo è il moltiplicatore di forza. Lolly non è un cassetto di strumenti separati per ruoli separati: è un unico ciclo di vita deterministico dell'asset che ogni ruolo tocca, e ogni mano attraverso cui passa moltiplica il valore della precedente.
+Questo è il moltiplicatore di forza. Lolly non è un cassetto di strumenti separati per ruoli separati - è un unico ciclo di vita deterministico dell'asset che ogni ruolo tocca, e ogni passaggio di mano moltiplica il valore del precedente.
 
 ---
 
 ## Un'approvazione, diecimila asset
 
-![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+Poiché l'approvazione risiede nello strumento e non nel file (vedi [Come si confronta Lolly](/info/positioning.html)), scalare smette di essere un problema di revisione. Approva una volta uno strumento per card social localizzate, poi genera **10.000 asset in 12 lingue** da un foglio di calcolo - e nessuno di essi richiede un nuovo controllo di conformità da parte del legale o del brand, perché il template da cui provengono tutti era già stato approvato.
 
-Poiché l'approvazione vive nello strumento e non nel file (vedi [Come si confronta Lolly](/info/positioning.html)), la scala smette di essere un problema di revisione. Approva una volta uno strumento per card social localizzate, poi genera **10.000 asset in 12 lingue** da un foglio di calcolo - e nessuno di essi richiede un nuovo controllo di conformità da parte del legale o del brand, perché il template da cui provengono tutti era già approvato.
-
-Lo stesso strumento deterministico raggiunge quella scala in tre modi, che producono tutti un output identico e pre-approvato:
+Lo stesso strumento deterministico raggiunge quella scala in tre modi, tutti producendo un output identico e pre-approvato:
 
 - <!--i:people--> **Una persona, nell'app.** La griglia batch `/pro`: incolla o importa le righe, ottieni un asset finito per riga, scarica lo zip. Nessuna competenza di design, nessun ticket, nessuna attesa.
-- <!--i:code--> **Uno sviluppatore, da riga di comando.** La CLI esegue lo *stesso* motore e lo *stesso* percorso di render in modalità headless, così lo strumento può essere eseguito in sequenza su tutte le 10.000 righe in uno script o in una pipeline notturna. Una chiamata `lolly <tool> --field=…` dentro un ciclo è tutta l'integrazione.
-- <!--i:cpu--> **Un sistema o un agente IA, via MCP.** Lo stesso strumento pilotato in modo programmatico, con la stessa fedeltà e a una scala ancora maggiore - perché una macchina non si annoia mentre arrivano migliaia di file.
+- <!--i:code--> **Uno sviluppatore, dalla riga di comando.** La CLI esegue *lo stesso* motore e *lo stesso* percorso di rendering in modalità headless, così lo strumento può essere sequenziato su tutte le 10.000 righe in uno script o in una pipeline notturna. Una chiamata `lolly <tool> --field=…` in un ciclo è l'intera integrazione.
+- <!--i:cpu--> **Un sistema o un agente IA, tramite MCP.** Lo stesso strumento azionato in modo programmatico, alla stessa fedeltà e su una scala ancora maggiore - perché una macchina non si annoia mentre arrivano migliaia di file.
 
-Un solo insieme di vincoli di brand, fissato una volta dal designer; tre strade verso lo stesso output pre-approvato - e la strada della macchina è quella che arriva più lontano, perché non si stanca mai mentre i file continuano ad arrivare.
+![La modalità batch su un'installazione pulita: una riga vuota in attesa di uno strumento, con l'intera superficie del foglio di calcolo e il suo pulsante Render già presenti prima dell'arrivo di qualsiasi dato](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+
+Un insieme di vincoli di brand, fissato una volta da un designer; tre percorsi verso lo stesso output identico e pre-approvato - e il percorso macchina scala più di tutti gli altri, perché non si stanca mai mentre i file arrivano.
 
 ---
 
-## Il quadro d'insieme
+## Il quadro d'insieme: come si incastrano i livelli
+
+Tutto da qui in poi è architettura. Il diagramma è l'intero sistema in un'unica vista: gli strumenti sono
+dati in alto, il motore al centro non conosce nulla di alcuna piattaforma, le shell sotto di esso
+implementano un unico contratto, e i cataloghi forniscono il contenuto.
 
 ```
                 ┌─────────────────────────────────────────────┐
@@ -112,352 +130,347 @@ Un solo insieme di vincoli di brand, fissato una volta dal designer; tre strade 
 
 ### Struttura del repository
 
+I contenuti sono montati come pacchetti: `community/`, `docs/`, ogni `shells/*`, sia `services/*` sia `brands/suse` sono ciascuno un proprio repository, estratto come sottomodulo git di questo. Il repository genitore possiede `engine/`, `schemas/`, `scripts/`, `tests/`, `api/`, `brands/lolly-start/` e `profiles.json`. Vedi [Guida alla build » Ottenere il codice sorgente](/info/build-guide.html) per il comando di checkout e il flusso di lavoro multi-repository.
+
 ```
 lolly/
-├── engine/           # Nucleo indipendente dalla piattaforma. Open source (MPL-2.0).
+├── engine/           # Platform-agnostic core. Open source (MPL-2.0).
 │   └── src/
-│       ├── index.ts          # superficie pubblica - loader, runtime, template, inputs, url-mode
-│       ├── loader.ts         # recupera e valida i file dello strumento
-│       ├── runtime.ts        # orchestra il ciclo di vita in 5 fasi
-│       ├── template.ts       # idratazione Handlebars + annotateTemplate
-│       ├── inputs.ts         # manifest → modello di input a runtime
-│       ├── url-mode.ts       # andata e ritorno URL ↔ stato degli input
-│       ├── validate.ts       # validazione JSON Schema dei manifest
-│       ├── compose.ts        # risolve i render annidati di strumenti (composes)
-│       ├── embed.ts          # analizza gli URL di embed portabili di lolly.tools
+│       ├── index.ts          # public surface - loader, runtime, template, inputs, url-mode
+│       ├── loader.ts         # fetches and validates tool files
+│       ├── runtime.ts        # orchestrates the 5-step lifecycle
+│       ├── template.ts       # Handlebars hydration + annotateTemplate
+│       ├── inputs.ts         # manifest → runtime input model
+│       ├── url-mode.ts       # URL ↔ input state round-trip
+│       ├── validate.ts       # JSON Schema validation of manifests
+│       ├── compose.ts        # resolve nested tool renders (composes)
+│       ├── embed.ts          # parse portable lolly.tools embed URLs
 │       └── bridge/
-│           └── host-v1.ts    # interfaccia TypeScript - il contratto del ponte
+│           └── host-v1.ts    # type re-export of the @lolly-tools/core contract
 │
 ├── shells/
-│   ├── web/          # PWA - ospitata online; distribuzione principale
+│   ├── web/          # PWA - hosted online; primary distribution
 │   │   └── src/
-│   │       ├── main.ts           # avvio, routing
-│   │       ├── theme.ts          # applicazione/persistenza del tema (prevenzione FOUC)
-│   │       ├── bridge/           # implementazioni web delle API HostV1
-│   │       │   ├── index.ts      # compone tutti i pezzi del ponte
-│   │       │   ├── db.ts         # configurazione di IndexedDB
-│   │       │   ├── state.ts      # host.state - modifiche salvate
-│   │       │   ├── profile.ts    # host.profile - dati utente
-│   │       │   ├── assets.ts     # host.assets - catalogo + upload utente
+│   │       ├── main.ts           # boot, routing
+│   │       ├── theme.ts          # theme apply/persist (FOUC prevention)
+│   │       ├── bridge/           # web implementations of HostV1 APIs
+│   │       │   ├── index.ts      # compose all bridge pieces
+│   │       │   ├── db.ts         # IndexedDB setup
+│   │       │   ├── state.ts      # host.state - saved edits
+│   │       │   ├── profile.ts    # host.profile - user details
+│   │       │   ├── assets.ts     # host.assets - catalog + user uploads
 │   │       │   ├── clipboard.ts  # host.clipboard
-│   │       │   ├── export.ts     # host.export - rasterizza/serializza
-│   │       │   ├── net.ts        # host.net - fetch con lista consentita
-│   │       │   └── media.ts      # host.media - fotogrammi camera dal vivo (onFrame)
+│   │       │   ├── export.ts     # host.export - rasterise/serialize
+│   │       │   ├── net.ts        # host.net - allowlisted fetch
+│   │       │   └── media.ts      # host.media - live camera frames (onFrame)
 │   │       ├── catalog/
-│   │       │   └── sync.ts       # sincronizzazione del catalogo all'avvio + cache offline
-│   │       ├── styles/           # CSS dell'intera app (app.css, picker.css, tokens.css)
+│   │       │   └── sync.ts       # boot-time catalog sync + offline cache
+│   │       ├── styles/           # app-wide CSS (app.css, picker.css, tokens.css)
 │   │       └── views/
-│   │           ├── gallery.ts    # elenco della libreria di strumenti + card di stato salvato
-│   │           ├── tool.ts       # monta uno strumento (input + canvas + azioni)
-│   │           ├── picker.ts     # interfaccia del selettore asset (invocata da host.assets)
-│   │           ├── profile.ts    # editor dei dati utente
-│   │           ├── projects.ts   # /p - cartelle di sessioni salvate (annidate; export di cartella/selezione)
-│   │           └── free-canvas.ts # overlay dell'editor a canvas libero per gli strumenti render.layout:"editor"
+│   │           ├── gallery.ts    # tool library listing + saved-state cards
+│   │           ├── tool.ts       # mounts one tool (inputs + canvas + actions)
+│   │           ├── picker.ts     # asset picker UI (invoked by host.assets)
+│   │           ├── profile.ts    # user details editor
+│   │           ├── projects.ts   # /p - folders of saved sessions (nested; folder/selection export)
+│   │           └── free-canvas.ts # free-canvas editor overlay for render.layout:"editor" tools
 │   │
-│   ├── cli/          # CLI Node.js - stesso motore, jsdom headless
+│   ├── cli/          # Node.js CLI - same engine, headless jsdom
 │   │   ├── bin/lolly.ts
 │   │   └── src/
-│   │       ├── run.ts    # loadTool → createRuntime → export → scrive il file
-│   │       └── bridge.ts # implementazione CLI di HostV1
+│   │       ├── run.ts    # loadTool → createRuntime → export → write file
+│   │       └── bridge.ts # CLI implementation of HostV1
 │   │
-│   ├── tui/          # Shell di terminale interattiva (Ink) - riusa il ponte della CLI
+│   ├── tui/          # Interactive terminal shell (Ink) - reuses the CLI bridge
 │   │   └── src/
-│   │       ├── main.tsx  # app a schermo intero: Gallery / Projects / Profile / ToolView
-│   │       └── bridge.ts # ponte della CLI + stato su disco sotto ~/.lolly
+│   │       ├── main.tsx  # full-screen app: Gallery / Projects / Profile / ToolView
+│   │       └── bridge.ts # CLI bridge + on-disk state under ~/.lolly
 │   │
-│   ├── tauri-desktop/ # app desktop scaricabile
-│   └── tauri-mobile/  # app iOS/Android
+│   ├── tauri-desktop/ # downloadable desktop app
+│   └── tauri-mobile/  # iOS/Android app
 │
-├── tools/            # VISTA di profilo (gitignored) - dati, non codice. Unita a partire dai pack:
-│                     #   community/ (pubblico, agnostico rispetto al brand, MPL) + brands/<active>/tools (di proprietà del brand).
+├── tools/            # profile VIEW (gitignored) - data, not code. Merged from packs:
+│                     #   community/ (public, brand-agnostic, MPL) + brands/<active>/tools (brand-owned).
+│                     #   A SELECTION follows - the mounted set depends on the profile.
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
 │   ├── code-canvas/
 │   ├── countdown-timer/
 │   ├── color-palette/
-│   ├── color-block/           # blocchi tipizzati/eterogenei (discriminatore addMenu)
+│   ├── color-block/           # typed/heterogeneous blocks (addMenu discriminator)
 │   ├── dynamic-layout/
-│   ├── tool-logo/         # "Logo" - logo di marca a commutazione automatica
-│   ├── street-map/        # mappe vettoriali offline di isolati urbani
-│   ├── url-shot/          # "URL Screenshot" (capacità capture)
-│   ├── strip-data/        # rimozione metadati sul dispositivo - JPEG/PNG/SVG/PDF (file in ingresso → file pulito in uscita)
-│   ├── compress-pdf/      # compressore PDF sul dispositivo - ricomprime le immagini (file in ingresso → file più piccolo in uscita)
-│   ├── brand-lockup/      # "Brand Lockup" - lockup del logo SUSE; testo-a-tracciato HarfBuzz (wasm)
-│   ├── chart-creator/     # grafici SVG da dati strutturati
-│   ├── filter-duotone/    # trattamento fotografico a due colori
-│   ├── filter-halftone/   # foto → griglia vettoriale di punti in retinatura
-│   ├── filter-scanline/   # foto → griglia scanline retrò posterizzata (SVG / raster trasparente)
-│   ├── meeting-planner/   # pianificatore di riunioni multi-fuso orario
-│   ├── calendar-ics/      # evento → file calendario .ics più una card
-│   ├── digi-ad/           # "Animated Ad" - banner in loop a partire da scene
-│   ├── event-name-badge/  # badge per conferenze - compone qr-code come SVG
-│   ├── wayfinding-signage/ # segnaletica per eventi; i blocchi di direzione adattano automaticamente il testo dell'etichetta
-│   ├── text-helper/       # banco di lavoro testuale sul dispositivo (formatta/decodifica/hash/de-identifica)
-│   ├── design/     # "Design" - canvas editor WYSIWYG a forma libera (render.layout: editor)
-│   ├── multi-page-pdf/    # documento PDF multipagina - copertina, blocchi di contenuto fluido, retro
-│   ├── diagram-builder/   # diagrammi org / layercake / process / cycle / pyramid
-│   ├── logo-wall/         # molti loghi → griglia con impacchettamento automatico
-│   ├── logo-lockup-partner/ # lockup co-brand SUSE + partner
-│   ├── web-icon/          # favicon .ico / png / svg da testo + colori
-│   ├── filter-posterize/  # foto → separazioni vettoriali posterizzate piatte
-│   ├── filter-pixel-stretch/ # foto → effetto di trascinamento pixel
-│   ├── lottie-digi-ad/    # banner pubblicitari animati Lottie
-│   └── pose-geeko/        # posa la mascotte SUSE Geeko - immagini fisse pronte per la stampa
+│   ├── tool-logo/         # "Logo" - auto-switching brand logo
+│   ├── street-map/        # offline vector city-block maps
+│   ├── url-shot/          # "URL Screenshot" (capture capability)
+│   ├── strip-data/        # on-device metadata strip - JPEG/PNG/SVG/PDF (file in → clean file out)
+│   ├── compress-pdf/      # on-device PDF compressor - recompresses images (file in → smaller file out)
+│   ├── brand-lockup/      # "Brand Lockup" - SUSE logo lockups; HarfBuzz text-to-path (wasm)
+│   ├── chart-creator/     # SVG charts from structured data
+│   ├── filter/            # photo effects in one tool - halftone/scanline/posterize/voronoi (vector), duotone/pixel-stretch/imperfections (raster)
+│   ├── meeting-planner/   # global timezone meeting scheduler
+│   ├── calendar-ics/      # event → .ics calendar file plus a card
+│   ├── digi-ad/           # "Animated Ad" - looping banner from scenes
+│   ├── event-name-badge/  # conference badges - composes qr-code as an SVG
+│   ├── wayfinding-signage/ # event signage; directions blocks auto-fit label text
+│   ├── text-helper/       # on-device text workbench (format/decode/hash/de-identify)
+│   ├── design/     # "Design" - freeform WYSIWYG editor canvas (render.layout: editor)
+│   ├── multi-page-pdf/    # multi-page PDF document - cover, flowing content blocks, back page
+│   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
+│   ├── logo-wall/         # many logos → auto-packed grid
+│   ├── logo-lockup-partner/ # SUSE + partner co-brand lockup
+│   ├── web-icon/          # favicon .ico / png / svg from text + colours
+│   ├── lottie-digi-ad/    # animated Lottie ad banners
+│   └── pose-geeko/        # pose the SUSE Geeko mascot - print-ready stills
 │
 ├── catalog/
-│   ├── tools/index.json        # registro degli strumenti
+│   ├── tools/index.json        # tool registry
 │   └── assets/
-│       ├── index.json          # registro degli asset
-│       └── suse/...            # logo, palette, ecc.
+│       ├── index.json          # asset registry
+│       └── suse/...            # logo, palette, etc.
 │
-├── schemas/          # JSON Schema per tool.json, voci asset, AssetRef
+├── schemas/          # JSON Schema for tool.json, asset entries, AssetRef
 ├── scripts/          # build-catalog-index.ts, checksum-assets.ts, validate-catalog.ts
-├── tests/            # test del motore
-└── docs/             # questo file + guide di creazione + posizionamento
+├── tests/            # engine tests
+└── docs/             # this file + authoring guides + positioning
 ```
 
 ---
 
 ## Modello di distribuzione della piattaforma
 
-La piattaforma gira su diverse superfici - PWA web, Tauri desktop/mobile, la CLI scriptabile e la TUI interattiva. Tutte usano lo stesso motore e gli stessi file di strumento.
+La piattaforma funziona su diverse superfici - PWA web, desktop/mobile Tauri, la CLI scriptabile e la TUI interattiva. Tutte usano lo stesso motore e gli stessi file degli strumenti.
 
 ### Web (PWA) - distribuzione principale
+Ospitata su un URL controllato da SUSE. Funziona offline una volta che il service worker ha memorizzato nella cache strumenti e asset. È qui che la maggior parte di dipendenti, fornitori e partner userà la piattaforma. Nessun account richiesto - lo stato è memorizzato in IndexedDB per dispositivo.
 
-![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&dark=1&filename=aud-web-split)
+La shell web è responsive a partire da un unico layout. Su desktop uno strumento è una barra laterale di controlli ridimensionabile accanto a un piano di anteprima con navigazione della tela nativa per trackpad (Cmd/Ctrl-rotellina o pizzico per zoomare intorno al cursore, trascinamento con Spazio o con il tasto centrale per spostarsi, i tasti `0`/`1`/`+`/`−` e un HUD Adatta/%). Su mobile (≤640px) i controlli diventano un foglio ancorato in alto con una maniglia trascinabile che si aggancia a sguardo/metà/pieno (il tocco commuta) sopra un'anteprima statica a schermo intero, e un pulsante flottante **Render** apre i controlli di **Esportazione** in un popup a foglio inferiore. Il tocco offre pizzico per zoomare e trascinamento per spostarsi sull'anteprima. Il percorso di rendering e i controlli di esportazione sono identici in entrambi i casi - solo l'interfaccia si riorganizza.
 
-![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![La vista divisa desktop - i controlli generati dal manifest a sinistra, il canvas live a destra](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&dark=1&filename=aud-web-split)
 
-Ospitata a un URL controllato da SUSE. Funziona offline non appena il service worker ha messo in cache strumenti e asset. È qui che la maggior parte di dipendenti, fornitori e partner userà la piattaforma. Non serve un account - lo stato è memorizzato in IndexedDB per dispositivo.
+Lo stesso strumento in larghezza telefono, senza un secondo layout da mantenere: i controlli diventano un foglio in alto, l'anteprima occupa tutto lo schermo e la pillola di rendering fluttua sopra.
 
-La shell web è responsive a partire da un unico layout. Su desktop, uno strumento è una barra laterale di controlli ridimensionabile accanto a un'area di anteprima con navigazione del canvas nativa da trackpad (rotella con Cmd/Ctrl o pizzico per zoomare intorno al cursore, trascinamento con Spazio o clic centrale per spostarsi, i tasti `0`/`1`/`+`/`−`, e un HUD Adatta/%). Su mobile (≤640px) i controlli diventano un foglio ancorato in alto con una maniglia di trascinamento che si aggancia a intravisto/metà/pieno (il tocco alterna tra gli stati) sopra un'anteprima statica a schermo intero, e un pulsante flottante **Rendering** apre i controlli di **Esportazione** in un popup a foglio dal basso. Il tocco offre pizzico per lo zoom e trascinamento per lo spostamento sull'anteprima. Il percorso di rendering e i controlli di export sono identici in entrambi i casi - cambia solo la disposizione dell'interfaccia.
+![Un audiogramma su uno schermo largo 430px - il foglio dei controlli sopra, l'artwork quadrato finito sotto e la pillola di rendering fluttuante](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
-**Modalità batch (`/pro`).** La shell web include anche una griglia batch in stile foglio di calcolo (`shells/web/src/pro/`) che renderizza molte righe alla volta su uno o più strumenti. Gestisce l'andata e ritorno CSV/TSV più l'incolla da foglio di calcolo, template/formato/dimensione/unità/dpi per riga, un pannello laterale editor di blocchi con anteprima dal vivo, colonne di export comprimibili, una barra di tag di "rilevanza" per riga, il riordino delle righe tramite maniglia di trascinamento a sinistra, la conferma di eliminazione in due passaggi, sessioni batch salvate, e un download in `.zip`. Questa è la superficie uno-a-molti dietro il posizionamento "generazione di contenuti in massa".
+**Modalità batch (`/pro`).** La shell web include anche una griglia batch in stile foglio di calcolo (`shells/web/src/pro/`) che renderizza molte righe insieme su uno o più strumenti. Gestisce round-trip CSV/TSV più incolla da foglio di calcolo, template/formato/dimensione/unità/dpi per riga, un pannello laterale editor di blocchi con anteprima live, colonne di export comprimibili, una barra di tag "rilevanza" per riga, riordino righe con maniglia di trascinamento a sinistra, conferma di eliminazione in due passaggi, sessioni batch salvate e download in `.zip`. È la superficie uno-a-molti dietro il posizionamento "generazione di contenuti di massa".
 
 ### Tauri desktop / mobile
-App nativa impacchettata (footprint ridotto grazie a Tauri). Offre piena disponibilità offline, accesso al filesystem per gli strumenti che dipendono dalla CLI (PDF Smasher, Font Outliner), e accesso alla fotocamera. Programmata per un potenziamento degli strumenti a metà 2026.
+App nativa pacchettizzata (footprint ridotto grazie a Tauri). Offre piena disponibilità offline, accesso al filesystem per gli strumenti che dipendono dalla CLI (PDF Smasher, Font Outliner) e accesso alla fotocamera. Prevista per un potenziamento degli strumenti a metà 2026.
 
 ### CLI
-
-Lo stesso strumento alla larghezza di un telefono, senza un secondo layout da mantenere: i controlli diventano un foglio in alto, l'anteprima occupa tutto lo schermo, e il pulsante flottante di rendering le sta sopra.
-
 `lolly <tool-id> [--input=value ...] --output=file.png`
 
-Gli utenti desktop possono invocare molti strumenti dal terminale. La shell CLI carica lo stesso motore, crea un DOM jsdom, esegue lo stesso percorso di rendering, e scrive il file. La modalità URL è il trasporto - la CLI non è un'implementazione separata. Questo garantisce che gli output di CLI e GUI siano identici.
+Gli utenti desktop possono richiamare molti strumenti dal terminale. La shell CLI carica lo stesso motore, crea un DOM jsdom, esegue lo stesso percorso di rendering e scrive il file. La URL mode è il trasporto - la CLI non è un'implementazione separata. Questo garantisce che gli output di CLI e GUI siano identici.
 
 ```bash
 lolly qr-code --url=https://suse.com --output=qr.svg
 lolly quotes --quote="Ship it." --output=quote.png
-lolly                        # elenca gli strumenti disponibili
-lolly qr-code                # elenca gli input di quello strumento
+lolly                        # lists available tools
+lolly qr-code                # lists inputs for that tool
 ```
 
 ### TUI
 `npm run tui`
 
-La controparte interattiva della CLI: un'app da terminale a schermo intero, pensata prima di tutto per la tastiera (costruita su Ink) per sfogliare gli strumenti, compilare gli input, salvare i progetti ed esportare - tutto senza GUI. Il suo ponte lato host **riusa l'implementazione della CLI** per i formati senza DOM (SVG/EMF/EPS/HTML + testo/dati), e aggiunge stato su disco sotto `~/.lolly` più un'anteprima inline opzionale. Oltre a questo, dispone di un **livello di rendering nel browser**: un Chromium headless con ambito limitato (lo stesso installato dal server MCP) che produce raster/PDF/video e cattura di URL dal vivo su richiesta - pilotando una copia compilata della shell web in modo che l'output sia identico, e avviandosi solo alla prima esportazione di un formato simile. Così anche `url-shot` (con ritaglio + ricolorazione + PDF/SVG vettoriale) e ogni strumento raster/pdf girano nel terminale. Vedi la [guida alla TUI](/info/tui.html).
+La controparte interattiva della CLI: un'app da terminale a schermo intero e keyboard-first (costruita su Ink) per sfogliare gli strumenti, compilare gli input, salvare progetti ed esportare - tutto senza GUI. Il suo host bridge **riutilizza l'implementazione della CLI** per i formati DOM-free (SVG/EMF/EPS/HTML + testo/dati), e aggiunge stato su disco sotto `~/.lolly` più un'anteprima inline opzionale. Oltre a questo ha un **livello di rendering via browser**: un Chromium headless dedicato (lo stesso installato dal server MCP) che produce raster/PDF/video e cattura di URL live su richiesta - guidando una copia buildata della shell web così che l'output sia identico, e avviandosi solo al primo export di un formato del genere. Così `url-shot` (con crop + ricolorazione + PDF/SVG vettoriale) e ogni strumento raster/pdf funzionano anche nel terminale. Vedi la [guida TUI](/info/tui.html).
 
-Su qualsiasi superficie ti trovi, la scheda Capacità della dashboard è la mappa completa di ciò che la piattaforma dichiara di saper fare, raggruppata e leggibile senza aprire un solo strumento.
+Su qualunque superficie ti trovi, la scheda Capabilities della dashboard è la mappa completa di ciò che la piattaforma dichiara di saper fare, raggruppata e leggibile senza aprire un solo strumento.
 
 ---
 
 ## Categorie di strumenti
 
-![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=aud-utilities)
-
 Gli strumenti sono etichettati con una `category` nel loro manifest per il raggruppamento nella galleria.
 
-Le righe sono elencate nell'ordine delle sezioni della galleria. La sezione `utility` viene sempre renderizzata **per ultima** nella galleria (dopo ogni altra categoria, incluse quelle future) - è il cassetto "Utilità offline" sul dispositivo.
+Le righe sono elencate nell'ordine delle sezioni della galleria. La sezione `utility` viene sempre renderizzata **per ultima** nella galleria (dopo ogni altra categoria, incluse quelle future) - è il cassetto "Offline Utilities" on-device.
 
-| Categoria | Strumenti pubblicati | Pianificati |
+| Categoria | Esempi | Pianificati |
 |---|---|---|
-| `everyone` | QR Code Generator, Quote Card, Email Signature, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
-| `designer` | Brand Lockup, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
-| `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS | Event Stationery, Bulk Name Badges, Room Agenda Cards |
+| `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
+| `designer` | Brand Lockup, Design, Chart Creator, D3 Chart Studio, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Design | Convertitori di unità/formato, altre utilità di privacy sul dispositivo |
+| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Convertitori di unità/formato, altre utility di privacy on-device |
 
-Gli strumenti sono anche classificati per stato: `official` (approvato dal brand, senza filigrana), `community` (contributo esterno), `experimental` (export con filigrana). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap e Diagram Builder portano attualmente lo stato `experimental`; Web Icon Maker e Design vengono pubblicati come strumenti `community`.
+Quelle celle sono **esempi, non inventari**. Quali strumenti esistano è una proprietà del profilo che hai montato, non di questa pagina: un pacchetto brand aggiunge i propri, e può escludere uno strumento community che preferisce non distribuire. `catalog/tools/index.json` - generato dai manifest, ed è il registro che la galleria legge davvero - è la lista autorevole; per contare cosa monta un profilo, conta i manifest (`ls community/*/tool.json brands/*/tools/*/tool.json`) invece di fidarti di un numero scritto qui. (Un id di strumento presente in due pacchetti viene montato una sola volta, dal pacchetto vincente.)
 
-**Design** è il primo strumento costruito sulla modalità canvas libero `render.layout: "editor"` - una superficie priva di cornice, a manipolazione diretta, dove trascini, ridimensioni, ruoti e agganci riquadri di testo, forme e immagini, per poi esportare attraverso lo stesso percorso di rendering di ogni altro strumento.
+Gli strumenti sono anche classificati per stato: `official` (approvato dal brand, senza watermark), `community` (contributo esterno), `experimental` (export con watermark). Gran parte della libreria è `official`; gli studio più recenti e gli strumenti di cattura tendono a stare su `community` o `experimental` mentre si consolidano. Ogni superficie mostra il badge, così chi legge sa cosa sta prendendo prima di aprirlo - e, come le celle delle categorie sopra, l'appartenenza per stato cambia troppo in fretta per essere elencata qui. Leggila dalla galleria o dall'indice generato.
 
-**Strip Hidden Data** è la prima **utilità sul dispositivo** (`privacy: "on-device"`): uno strumento di trasformazione dei contenuti che prende un file fornito *da te*, lo elabora interamente nel browser, e ti restituisce una copia pulita - mai caricata, mai con filigrana, nessuna provenienza applicata. **Text Helper** è la seconda - un banco di lavoro sul dispositivo per le attività quotidiane di incolla-in-un-sito-web (formattazione JSON, decodifica JWT, Base64, codifica/decodifica URL, hashing SHA). **Compress PDF** è la terza - riduce un PDF ricomprimendo le sue immagini, anche in questo caso interamente sul dispositivo. Tutte e tre portano il testo del badge "Funziona sul tuo dispositivo - niente viene caricato". Questo è l'inizio di una categoria di utilità per la privacy che sostituisce la consegna di file riservati a siti web a scopo unico.
+**Design** è il primo strumento costruito sulla modalità canvas libero `render.layout: "editor"` - una superficie senza chrome a manipolazione diretta dove trascini, ridimensioni, ruoti e agganci box di testo, forme e immagini, poi esporti attraverso lo stesso percorso di rendering di ogni altro strumento.
 
-> Nota: `category` e `status` vengono denormalizzati in `catalog/tools/index.json` (il registro letto dalla galleria) a partire da ogni `tool.json`. Il manifest è la fonte di verità - l'indice viene **generato** da `npm run build:catalog`, e `npm run validate:catalog` fa fallire la CI se l'indice committato diverge dai manifest.
+**Strip Hidden Data** è la prima **utility on-device** (`privacy: "on-device"`): uno strumento di trasformazione dei contenuti che prende un file fornito *da te*, lo elabora interamente nel browser e restituisce una copia pulita - mai caricata, mai marcata con watermark, nessuna provenienza timbrata. **Text Helper** è il secondo - un banco di lavoro on-device per i lavori quotidiani da incollare in un sito web (formattazione JSON, decodifica JWT, Base64, codifica/decodifica URL, hashing SHA). **Compress PDF** è il terzo - riduce un PDF ricomprimendone le immagini, sempre interamente on-device. Il marcatore e il testo del badge "Runs on your device - nothing is uploaded" ora coprono l'intero insieme di trasformazioni: Strip Hidden Data, Text Helper, Compress PDF, **Convert Image** (HEIC/TIFF/AVIF → WebP/JPG/PNG), **Convert Font**, **Redact** (distrugge regioni di un'immagine, SVG o PDF), **Prompt to Image** e **Rebrand a Deck** (ri-tematizza un `.pptx` sul posto) dove il profilo lo monta. È una categoria di utility per la privacy che sostituisce la consegna di file confidenziali a siti web monofunzione.
+
+![Il cassetto Utilities, dove ogni card è uno strumento che trasforma un file che hai già](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=aud-utilities)
+
+> Nota: `category` e `status` sono denormalizzati in `catalog/tools/index.json` (il registro che la galleria legge) a partire da ogni `tool.json`. Il manifest è la fonte di verità - l'indice è **generato** da `npm run build:catalog` e `npm run validate:catalog` fallisce in CI se l'indice committato diverge dai manifest.
 
 ---
 
 ## Impegni architetturali
 
-Queste decisioni sono consolidate. Cambiarne anche solo una è un'impresa importante - modellano ogni altra decisione nella codebase.
+Queste decisioni sono definitive. Cambiarne una qualsiasi è un'impresa importante - condizionano ogni altra decisione nel codebase.
 
 ### 1. Strumenti dichiarativi, con una via di fuga imperativa
-
-![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-street-map-controls)
 
 Uno strumento è un manifest (`tool.json`) + un template (`template.html`) + `hooks.js` opzionale.
 
 **Il manifest dichiara gli input.** Non il template. Gli input non vengono dedotti dai token Handlebars. Il manifest è il contratto; il template consuma variabili con nome tramite `{{id}}`.
 
-**Gli hook sono opzionali.** La maggior parte degli strumenti è puramente dichiarativa - manifest + template bastano. Gli strumenti che necessitano di valori calcolati (codifica QR, formattazione dei dati dei grafici) forniscono un `hooks.js` che espone funzioni del ciclo di vita con nome (`onInit`, `onInput`, `onFrame` - l'hook per fotogramma della camera dal vivo per gli strumenti reattivi al movimento - `beforeRender`, `beforeExport`, `afterExport`, e `exportFile` - il percorso di trasformazione file-in/file-out usato dalle utilità sul dispositivo come Strip Hidden Data). L'host carica gli hook tramite `new Function('host', …)` con il ponte delle capacità iniettato come ambito di closure. Questo è un **contratto di portabilità, non un sandbox di sicurezza**: gli hook continuano a girare nel realm della pagina e *possono* raggiungere `window`/`fetch`/`document` in una shell browser - `host.*` è la superficie supportata e portabile, non un confine imposto. I risultati asincroni degli hook hanno un limite di tempo (onInit 5s, onInput 2s, gli altri 5s) e i risultati tardivi vengono scartati; un hook *sincrono* fuori controllo non può essere interrotto. Per questo il codice di hook di terze parti non affidabile non è sicuro da eseguire finché non sarà disponibile l'isolamento tramite Worker.
+![Lo stack di controlli di Street Map - un menu a tendina città, una select tema, slider di spessore e trigger colore, ognuno tratto da una riga del manifest](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-street-map-controls)
 
-Questo è importante perché: gli strumenti dichiarativi possono essere creati da chi non è sviluppatore. Se ogni strumento fosse un'app web, la nota di rischio "competenze limitate per creare/mantenere i template di uso quotidiano" diventerebbe un collo di bottiglia permanente.
+**Gli hook sono opzionali.** La maggior parte degli strumenti è puramente dichiarativa - manifest + template bastano. Gli strumenti che richiedono valori calcolati (codifica QR, formattazione dati dei grafici) forniscono `hooks.js` che espone funzioni di ciclo di vita con nome (`onInit`, `onInput`, `onFrame` - l'hook per frame della fotocamera live per strumenti motion-reactive - `onLevel`, `beforeExport`, `afterExport`, `exportFile` - il percorso di trasformazione file-in/file-out usato dalle utility on-device come Strip Hidden Data - e `exportStill`, per uno strumento che gestisce il proprio raster profondo). L'host carica gli hook tramite `new Function('host', …)` con il capability bridge iniettato come closure scope. Questo è un **contratto di portabilità, non una sandbox di sicurezza**: gli hook girano comunque nel realm della pagina e *possono* raggiungere `window`/`fetch`/`document` in una shell browser - `host.*` è la superficie supportata e portabile, non un confine imposto. I risultati degli hook asincroni sono a tempo (`onInit` 5s, `onInput` 2s, `beforeExport`/`afterExport` 5s, `exportFile`/`exportStill` 10s) e i risultati tardivi vengono scartati; un hook *sincrono* fuori controllo non può essere prelazionato. Il codice hook di terze parti non fidato non è quindi sicuro da eseguire finché non arriverà l'isolamento tramite Worker.
 
-### 2. Strumenti e asset sono dati, non codice incluso
+Questo conta perché: gli strumenti dichiarativi possono essere scritti da non sviluppatori. Se ogni strumento fosse una web app, la nota di rischio "competenze limitate per creare/mantenere template workhorse" diventerebbe un collo di bottiglia permanente.
 
-Le app web e Tauri recuperano i cataloghi di strumenti e asset da un URL noto all'avvio, li mettono in cache localmente, e operano su ciò che trovano. **Aggiungere una nuova tessera evento o un asset stagionale non richiede una nuova release dell'app.**
+### 2. Strumenti e asset sono dati, non codice pacchettizzato
 
-I byte degli asset sono sottoposti a checksum SHA-256 per prevenire l'avvelenamento della CDN. L'`id` + la `version` dell'asset determinano l'invalidazione della cache.
+Le app web e Tauri recuperano i cataloghi di strumenti e asset da un URL noto all'avvio, li mettono in cache localmente e operano su ciò che c'è. **Aggiungere una nuova tile evento o un asset stagionale non richiede una release dell'app.**
 
-### 3. Il ponte delle capacità è l'unica API che gli strumenti vedono
+I byte degli asset hanno checksum SHA-256 per prevenire il poisoning del CDN. `id` + `version` dell'asset guidano l'invalidazione della cache.
 
-Gli strumenti non toccano mai il DOM al di fuori della propria area di template, non chiamano mai `fetch` direttamente, non leggono mai il filesystem. Chiamano metodi `host.*` versionati. Il ponte è definito in `engine/src/bridge/host-v1.ts`:
+### 3. Il Capability Bridge è l'unica API che gli strumenti vedono
 
-| API del ponte | Cosa fa |
+Gli strumenti non toccano mai il DOM al di fuori della loro area template, non chiamano mai `fetch` direttamente, non leggono mai il filesystem. Chiamano metodi `host.*` versionati. La definizione canonica del contratto è `packages/core/src/host-v1.ts` - l'SDK per autori di strumenti `@lolly-tools/core`, così una terza parte può costruirci sopra senza dipendere dal motore; `engine/src/bridge/host-v1.ts` ne è una re-esportazione di tipo, e il codice del motore/delle shell continua a importare da quel percorso senza modifiche:
+
+| API del bridge | Cosa fa |
 |---|---|
-| `host.profile` | Nome, email, foto profilo, città, ecc. dell'utente. Pre-compila gli input tramite `bindToProfile`. |
-| `host.assets` | Query al catalogo, risoluzione degli asset, interfaccia del selettore fornita dall'host. |
-| `host.state` | Salva / carica gli slot di input. IndexedDB sul web, filesystem su Tauri, memoria sulla CLI. |
+| `host.profile` | Nome, email, foto profilo, città ecc. dell'utente. Pre-compila gli input tramite `bindToProfile`. |
+| `host.assets` | Query sul catalogo, risoluzione degli asset, UI di selezione fornita dall'host. |
+| `host.state` | Salva / carica slot di input. IndexedDB su web, filesystem su Tauri, memoria su CLI. |
 | `host.clipboard` | Scrive testo o immagine negli appunti (con fallback per piattaforma). |
-| `host.export` | Rasterizza o serializza il target di rendering. Applica la filigrana per gli strumenti sperimentali. |
-| `host.net` | Fetch con lista consentita - disponibile solo se lo strumento ha dichiarato la capacità `"network"`. (Nessuno strumento pubblicato la usa attualmente.) |
+| `host.export` | Rasterizza o serializza il target di rendering. Applica il watermark per gli strumenti experimental. |
+| `host.net` | Fetch con allowlist - disponibile solo se lo strumento ha dichiarato la capability `"network"`. (Nessuno strumento in distribuzione la usa attualmente.) |
 
-Superfici opzionali e additive compaiono solo quando una shell le fornisce. Due sono **vincolate da una capacità** - esposte solo quando lo strumento dichiara il flag corrispondente: `host.compose` (incorpora il render di un altro strumento - `compose`) e `host.capture` (cattura di pagina per URL Screenshot - `capture`). Le altre vengono **rilevate per funzionalità** - presenti ogni volta che la shell può fornirle: `host.text` (testo-a-tracciato tramite HarfBuzz WASM; la capacità `wasm` segnala gli strumenti che ne dipendono), `host.pdf` (parsing/compressione PDF, usato da Strip Hidden Data e Compress PDF), e `host.tokens` (design token DTCG). Le capacità dichiarabili sono: `network`, `filesystem`, `clipboard`, `camera`, `ffmpeg`, `wasm`, `capture`, `compose`.
+Le superfici opzionali e additive compaiono solo quando una shell le fornisce. Alcune sono **gated per capability** - esposte solo quando lo strumento dichiara il flag corrispondente: `host.compose` (incorpora il rendering di un altro strumento - `compose`), `host.capture` (cattura pagina per URL Screenshot - `capture`) e `host.recorder` (cattura microfono/fotocamera/schermo per gli strumenti di registrazione - `microphone` / `camera` / `screen`). Le altre sono **feature-detected** - presenti ogniqualvolta la shell può fornirle, con lo strumento che mantiene un fallback per le shell che non possono.
 
-Lo stesso strumento gira nel browser, in Tauri e nella CLI headless perché ogni shell implementa questa interfaccia - lo strumento non sa mai in quale si trovi.
+Una manciata di superfici principali, per mostrare cosa copre - [Host API](/info/host-api.html) documenta ognuna, e `packages/core/src/host-v1.ts` è il contratto stesso:
 
-Il ponte è versionato. Aggiungere metodi è una versione minore. Rimuovere o cambiare le firme è un salto di versione maggiore. Quando uscirà la v2, la v1 dovrà continuare a funzionare.
+| Superficie | Da | Cosa aggiunge |
+|---|---|---|
+| `host.tokens` | 1.0 | Design token DTCG - le primitive proprie del brand |
+| `host.text` | 1.0 | Testo-in-path tramite HarfBuzz WASM (il flag di capability `wasm` marca gli strumenti che ne dipendono) |
+| `host.media` | 1.4 | Frame della fotocamera live che guidano l'hook `onFrame`. Progressive enhancement, deliberatamente *non* gated dal flag `camera` - un tale strumento funziona comunque come un normale strumento a immagine fissa |
+| `host.color` | 1.40 | Matematica del colore percettiva: ΔEOK, contrasto WCAG + APCA, rampe OKLab, class-breaks, palette categoriche, schemi di armonia (1.60), miscelazione CSS Color 4 e generazione di gradienti (1.68). Pura e sincrona - le shell allegano semplicemente il `makeColorApi()` del motore invece di implementare qualcosa, così non può divergere |
+| `host.images` | 1.60 | Decodifica / ridimensiona / ricodifica byte on-device - il percorso di conversione (HEIC → JPEG, compressione a WebP, downscale). Distribuito nella shell web come facade lazy, così il decoder HEIC non finisce mai nel chunk di avvio |
+| `host.geom` | 1.64 | Geometria vettoriale esatta: booleane su path, offsetting, stroke-to-fill, lowering di spline, semplificazione, hit testing. Anche questa pura, sincrona e allegata dal motore (`makeGeomApi()`); i fallimenti vengono *restituiti*, mai lanciati |
+
+Il resto segue le stesse regole ed è documentato insieme a esse: `pdf` (1.8) e `pptx` (1.58) per la chirurgia di documenti on-device, `audio` (1.71) e `speech` (1.96) per l'analisi delle clip e TTS/trascrizione on-device, `viz` (1.72) per il contratto placeholder MilkDrop, `codec` (1.100) e `layers` (1.102) per output deep-bit e bitmap a livelli, `upscale` (1.101) e `matte` (1.103) per i modelli on-device, `raster` (1.105) per hook che fanno da soli il lavoro sui pixel, `connectors` (1.106) per frecce export-safe e `c2pa` (1.85) per firmare byte finiti. Il conteggio cresce; le regole no.
+
+Le capability dichiarabili sono: `network`, `filesystem`, `clipboard`, `camera`, `microphone`, `screen`, `ffmpeg`, `wasm`, `capture`, `compose`. (`screen`, aggiunta nella 1.54, è cattura dello schermo tramite `host.recorder` - l'utente sceglie uno schermo/finestra/scheda nella UI nativa del browser; distinta da `capture`, che rasterizza un URL indicato dallo strumento stesso.)
+
+Lo stesso strumento gira su browser, Tauri e CLI headless perché ogni shell implementa questa interfaccia - lo strumento non sa mai in quale si trova.
+
+Il bridge è versionato. Aggiungere metodi è una versione minor. Rimuovere o cambiare firme è un bump di versione major. Quando uscirà v2, v1 dovrà continuare a funzionare.
 
 ### 4. Gli ID degli asset sono per sempre
 
 `suse/logo/primary` è un contratto. Una volta pubblicato:
 - L'ID non cambia mai, non viene mai riutilizzato.
-- Cambiamenti nei byte → incrementa `version` nel manifest.
-- Sostituito da un nuovo asset → imposta `deprecated: true` ed eventualmente `replacedBy`.
+- Cambi ai byte → incrementa `version` nel manifest.
+- Sostituito da un nuovo asset → imposta `deprecated: true` e opzionalmente `replacedBy`.
 - I riferimenti esistenti si risolvono sempre.
 
-Questo rende gli stati degli strumenti salvati e i link condivisi via URL duraturi nel corso degli anni.
+Questo rende gli stati salvati degli strumenti e i link condivisi via URL durevoli negli anni.
 
-### 5. La modalità URL è di prima classe
+### 5. La URL mode è di prima classe
 
-![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-url-mode-qr)
-
-![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-url-palette)
-
-Ogni input deve poter essere espresso come parametro URL:
+Ogni input deve essere esprimibile come parametro URL:
 
 ```
 lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H
 ```
 
-La modalità CLI è la modalità URL sotto un trasporto diverso - la shell CLI costruisce un oggetto di stato-URL a partire da argv ed esegue la **stessa** pipeline del motore. Esiste un solo percorso di rendering. La CLI non può divergere dalla GUI perché non è un'implementazione separata.
+![Quel link da solo, senza nient'altro, è l'asset finito](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-url-mode-qr)
 
-`url-mode.ts` gestisce l'andata e ritorno (parsing e serializzazione). Parametri riservati (mai inoltrati allo strumento come input): `format`, `export`, `copy`, `slot`, `output`, `filename`, `_v`, `z` (stato compattato - il token "Link più corto"), `width`/`w`, `height`/`h`, `unit`, `dpi`, `profile`, `password`, `bleed`, `marks`, `full`, `options`, `nostage`. Gli input di tipo asset in modalità URL vengono serializzati tramite il loro `id`; il runtime li risolve via `host.assets.get()` prima dell'idratazione. `width`/`height` sono valori in `unit` (predefinito `px`, oppure `mm`/`cm`/`in`/`pt`/`pc`); con un'unità fisica, `dpi` imposta la risoluzione raster. Impostano la dimensione del documento del canvas e pre-compilano il pannello delle dimensioni di export.
+La modalità CLI è la URL mode sotto un trasporto diverso - la shell CLI costruisce un oggetto di stato URL a partire da argv ed esegue la **stessa** pipeline del motore. C'è un solo percorso di rendering. La CLI non può divergere dalla GUI perché non è un'implementazione separata.
 
-### 6. Lo storage passa attraverso il ponte, mai direttamente
+`url-mode.ts` gestisce il round-trip (parsing e serializzazione). Un insieme di **parametri riservati** non viene mai inoltrato allo strumento come input: i controlli di output (`format`, `export`, `copy`, `filename`, `width`/`w`, `height`/`h`, `unit`, `dpi`), i quadranti di stampa e provenienza (`bleed`, `marks`, `profile`, `password`, `c2pa`, `imprint`, `durable`, `meta`, `hdr`, `depth`, `cuts`) e i portatori di stato (`template`, `z` - il token compattato "Shortest link" - e `zx`, lo stesso cifrato con una password). L'insieme `RESERVED` in `engine/src/url-mode.ts` è l'autorità ed è fissato da un test; [URL Mode](/info/url-mode.html) documenta ognuno di essi, inclusa la manciata non elencata qui. Gli input di tipo asset in URL mode vengono serializzati tramite il loro `id`; il runtime li risolve via `host.assets.get()` prima dell'idratazione. `width`/`height` sono valori in `unit` (predefinito `px`, anche `mm`/`cm`/`in`/`pt`/`pc`); con un'unità fisica `dpi` imposta la risoluzione raster. Impostano la dimensione del documento canvas e pre-compilano il pannello delle dimensioni di export.
 
-Shell web: IndexedDB. Tauri: filesystem. CLI: in memoria. Gli strumenti vedono solo `host.state.save(slot, data)` e `host.state.load(slot)`. `localStorage` non viene usato - è troppo piccolo e non può contenere blob.
+Poiché ogni input viaggia nel link, un cambio di parametro è un asset finito diverso. Questa intera palette è un solo colore seme, un'armonia e un numero di passi:
 
-Gli utenti possono salvare più slot di modifica con nome per strumento e tornare a ogni sessione in seguito. Non è richiesta la creazione di un account; lo stato è per dispositivo. Poiché il ponte è l'unico punto di giunzione, quello stato per dispositivo è anche *portabile*: `shells/web/src/data-transfer.ts` rilegge tutto attraverso `host.profile`/`host.state`/`host.assets` in un unico zip `lolly-backup` che si importa su qualsiasi altra installazione - la risposta offline a "passare a un nuovo dispositivo" che non richiede un server (specifica completa: `docs/data-transfer.md`). L'integrazione con SUSE ID (sincronizzazione multi-dispositivo) è un traguardo futuro costruito sopra questa base.
+![Nove passaggi su quattro tonalità, tutti generati dal singolo colore seme trasportato nel link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-url-palette)
 
-### 7. Le etichette di maturità rispondono strutturalmente al rischio "approvato dal brand"
+### 6. L'archiviazione passa dal bridge, non diretta
 
-Poiché ogni input viaggia nel link, cambiare un parametro dà un asset finito diverso. Tutta questa palette è un colore seme, un'armonia e un numero di passi:
+Web shell: IndexedDB. Tauri: filesystem. CLI: in memoria. I tool vedono solo `host.state.save(slot, data)` e `host.state.load(slot)`. `localStorage` non è usato - è troppo piccolo e non può contenere blob.
 
-Ogni strumento dichiara `status: official | community | experimental` nel proprio manifest. La galleria ordina per stato. Gli strumenti sperimentali applicano automaticamente una filigrana ai propri export - la filigrana viene applicata da `host.export.render`, non dallo strumento, quindi un autore di strumenti non ufficiale non può disattivarla.
+Gli utenti possono salvare più slot di modifica con nome per ogni tool e tornare a ogni sessione in seguito. Non è richiesta la creazione di un account; lo stato è per dispositivo. Poiché il bridge è l'unico punto di passaggio, quello stato per dispositivo è anche *portabile*: `shells/web/src/data-transfer.ts` rilegge tutto tramite `host.profile`/`host.state`/`host.assets` in un unico zip `lolly-backup` che si importa su qualsiasi altra installazione - la risposta offline a "passa a un nuovo dispositivo" che non richiede un server (specifica completa: `docs/data-transfer.md`). L'integrazione con SUSE ID (sincronizzazione multi-dispositivo) è una milestone futura costruita sopra questo.
 
-Questa è una risposta strutturale al rischio percettivo che usare un qualsiasi strumento implichi l'approvazione del brand. Le risposte di processo (una coda di revisione, il controllo d'accesso tramite SUSE ID) si aggiungono sopra.
+### 7. I tag di maturità rispondono per design al rischio "approvato dal brand"
 
-### 8. Gli input degli strumenti sono tipizzati tramite il manifest, asset inclusi
+Ogni tool dichiara `status: official | community | experimental` nel proprio manifest. La galleria ordina per status. I tool sperimentali filigranano automaticamente i propri export - la filigrana è applicata da `host.export.render`, non dal tool, quindi non può essere disattivata da un autore di tool non ufficiale.
 
-Gli input dichiarano un `type`: `text`, `longtext`, `number`, `boolean`, `color`, `select`, `asset`, `date`, `time`, `datetime-local`, `url`, `profile`, `blocks`, `vector`, e `file`. L'host renderizza un controllo generico per ogni tipo a partire dal manifest - gli strumenti non scrivono alcun codice di controllo. Tre pesano più degli altri:
+Questa è una risposta strutturale al rischio di percezione secondo cui usare un qualsiasi tool implichi approvazione del brand. Le risposte di processo (una coda di revisione, il gating via SUSE ID) si aggiungono sopra.
 
-- **`asset`** (con `filter` e `allowUpload`) è il ponte verso il sistema globale degli asset; `allowUpload: false` è la leva di applicazione del brand per casi come i loghi delle tessere di sponsorizzazione, dove sono ammessi solo asset di libreria. I caricamenti dell'utente usano la stessa forma `AssetRef` degli asset di libreria, quindi gli strumenti li gestiscono in modo identico.
-- **`blocks`** è un gruppo di campi ripetibile - una mini-tabella dentro un unico input, modificata in un pannello laterale, con un menu di aggiunta tipizzato/discriminato e campi asset per blocco. Cliccare su un blocco renderizzato nel canvas mette a fuoco la riga di quel blocco. Usato da `meeting-planner`, `chart-creator`, `event-name-badge`, `wayfinding-signage`, `color-block`, e `digi-ad`.
-- **`vector`** raggruppa un insieme fisso di numeri (ad es. una trasformazione) in un unico controllo composto; **`file`** conserva il file dell'utente come byte in memoria per le utilità di trasformazione sul dispositivo (ad es. `strip-data` e `compress-pdf`).
+### 8. Gli input dei tool sono tipizzati tramite il manifest, asset inclusi
 
-### 9. I template sono privi di logica (Handlebars, non EJS)
+Gli input dichiarano un `type`: `text`, `longtext`, `number`, `boolean`, `color`, `select`, `asset`, `date`, `time`, `datetime-local`, `url`, `blocks`, `vector`, `table` e `file`. L'host renderizza un controllo generico per ogni tipo a partire dal manifest - i tool non scrivono codice di controllo. (Il pre-riempimento dal profilo utente non è un tipo - qualsiasi input può portare `bindToProfile`.) Tre pesano più degli altri:
 
-Handlebars è stato scelto al posto di EJS deliberatamente:
-- Privo di logica. I template possono essere creati da chi non è sviluppatore.
-- Sicuro per impostazione predefinita. `{{x}}` esegue l'escape dell'HTML; `{{{x}}}` è raw, da attivare esplicitamente.
-- Niente JS arbitrario nei template significa nessuna superficie di audit XSS per template.
+- **`asset`** (con `filter` e `allowUpload`) è il ponte verso il sistema di asset globale; `allowUpload: false` è la leva di applicazione del brand per cose come i loghi delle tile di sponsorizzazione, dove sono ammessi solo asset di libreria. I caricamenti dell'utente usano la stessa forma `AssetRef` degli asset di libreria, quindi i tool li gestiscono in modo identico.
+- **`blocks`** è un gruppo di campi ripetuto - una mini-tabella dentro un unico input, modificata in un pannello laterale, con un menu di aggiunta tipizzato/discriminato e campi asset per blocco. Cliccare un blocco renderizzato sul canvas mette a fuoco la riga di quel blocco. Usato da `meeting-planner`, `chart-creator`, `event-name-badge`, `wayfinding-signage`, `color-block` e `digi-ad`.
+- **`vector`** raggruppa un insieme fisso di numeri (ad esempio una trasformazione) in un unico controllo composto; **`file`** contiene il file dell'utente stesso come byte in memoria per utilità di trasformazione on-device (ad esempio `strip-data` e `compress-pdf`).
 
-La logica vive in `hooks.js`, dove è esplicita e revisionabile. Helper Handlebars disponibili: `{{default}}`, `{{upper}}`, `{{lower}}`, `{{eq}}`, `{{markdown}}`, `{{asset ref}}`, `{{asset ref "property"}}` (più gli helper di formattazione dati `icsStamp`/`rfcText`/`csvCell`, usati dai template affini `.ics`/`.vcf`/`.csv`).
+### 9. I template sono senza logica (Handlebars, non EJS)
 
-### 10. Gli strumenti compongono strumenti
+Handlebars è stato scelto rispetto a EJS deliberatamente:
+- Senza logica. I template possono essere scritti da non sviluppatori.
+- Sicuro per default. `{{x}}` esegue l'escape HTML; `{{{x}}}` è raw solo se esplicitamente richiesto.
+- Nessun JS arbitrario nei template significa nessuna superficie di audit XSS per template.
 
+La logica vive in `hooks.js`, dove è esplicita e revisionabile. Helper Handlebars disponibili: `{{default}}`, `{{upper}}`, `{{lower}}`, `{{eq}}`, `{{markdown}}`, `{{asset ref}}`, `{{asset ref "property"}}` (più gli helper di formato dati `icsStamp`/`rfcText`/`csvCell` usati dai template affiancati `.ics`/`.vcf`/`.csv`).
 
-Uno strumento può incorporare il render di **un altro** strumento senza alcun import da strumento a strumento - la composizione viene risolta dal motore, mai dal codice dello strumento. Ci sono due superfici:
+### 10. I tool compongono tool
 
-- **Manifest dichiarativo** - `composes: [{ id, tool, inputs, format?, width?, height? }]`. Il motore renderizza il figlio nominato e colloca il risultato nel template privo di logica come `{{asset <id>}}`. Oggi `event-name-badge` compone `qr-code` come SVG.
-- **URL di embed portabile** - `<img src="https://lolly.tools/tool/<id>.<ext>?<inputs>">`. La shell renderizza quel figlio **localmente** (viene mostrato un pixel segnaposto finché il render locale non si risolve); non viene mai recuperato nulla da `lolly.tools`.
+Un tool può incorporare il render di un **altro** tool senza import tra tool - la composizione è risolta dal motore, mai dal codice del tool. Ci sono due superfici:
 
-Puoi comporre il render di qualsiasi strumento: un figlio **SVG** resta un vero vettore quando il genitore esporta in SVG o PDF, e si rasterizza con nitidezza per PNG; i figli **PNG/JPG/WEBP** vengono incorporati come immagini. Richiede la capacità `compose`. I figli composti sono intermedi - mai con filigrana né con provenienza applicata - e la composizione degrada in modo elegante: una shell che non può renderizzare un figlio si limita a omettere lo slot e il genitore continua comunque a renderizzare.
+- **Manifest dichiarativo** - `composes: [{ id, tool, inputs, format?, width?, height? }]`. Il motore renderizza il figlio nominato e posiziona il risultato nel template senza logica come `{{asset <id>}}`. `event-name-badge` compone oggi `qr-code` come SVG.
+- **URL di embed portabile** - `<img src="https://lolly.tools/tool/<id>.<ext>?<inputs>">`. La shell renderizza quel figlio **localmente** (un pixel segnaposto viene mostrato finché il render locale non si risolve); nulla viene mai recuperato da `lolly.tools`.
+
+Componi il render di qualsiasi tool: un figlio **SVG** resta un vero vettore quando il genitore esporta in SVG o PDF e viene rasterizzato in modo nitido per PNG; i figli **PNG/JPG/WEBP** vengono incorporati come immagini. Richiede la capability `compose`. I figli composti sono intermedi - mai filigranati né marcati con provenienza - e la composizione degrada in modo controllato: una shell che non può renderizzare un figlio omette semplicemente lo slot e il genitore viene comunque renderizzato.
 
 ---
 
 ## Cosa abbiamo scelto esplicitamente di non fare
 
-- **Niente EJS / niente JS arbitrario nei template.** La superficie XSS è zero. La logica vive in `hooks.js`.
-- **Nessun CMS per gli asset.** Il catalogo degli asset è git. Gli aggiornamenti passano attraverso la revisione delle PR. Nessuna UI di caricamento, nessuna autenticazione, nessuna coda di moderazione. La revisione git _è_ la moderazione.
-- **Nessun RBAC nell'MVP.** Accesso pubblico. Il rischio di brand è gestito da etichette di maturità + filigrane + il fatto strutturale che tutti gli asset visti dagli utenti sono passati attraverso una revisione di PR.
+- **Nessun EJS / nessun JS arbitrario nei template.** La superficie XSS è zero. La logica vive in `hooks.js`.
+- **Nessun CMS di asset obbligatorio.** I singoli utenti importano i propri file creativi direttamente nel proprio catalogo dentro l'app (la vista [Catalogo](/info/using.html) e il Brand Studio) - nessun server, nessuna console di amministrazione. Il lavoro viene passato avanti come **sessione**: un link di condivisione porta con sé l'intero stato, e la stessa sessione viaggia in un backup o in una sessione di collaborazione. Chi controlla il deployment può quindi bloccare una sessione condivisa come **template** - apre il link, registra i suoi valori come voce template nella directory di quel tool nel pacchetto brand e fa commit - dopodiché appare nel selettore "New from template" del tool ed è collegabile in profondità come `?template=<id>`. Git è il passaggio di blocco di chi possiede il deployment, mai quello del creatore. Per un catalogo *condiviso e governato*, un'organizzazione **può** gestire la directory degli asset nello stesso modo e vincolare gli aggiornamenti tramite revisione delle PR - un modello di governance disponibile, non un requisito dell'app.
+- **Nessun RBAC forzato.** L'app aperta è ad accesso pubblico per default; il rischio per il brand è gestito tramite tag di maturità + filigrane. Un'organizzazione che vuole un controllo più stretto aggiunge sopra la propria autenticazione e il catalogo rivisto via git di cui sopra.
 - **Nessun database centrale.** Tutto lo stato utente è per dispositivo. L'integrazione con SUSE ID è nella roadmap ma non è un blocco per il lancio.
-- **Nessun percorso di codice condiviso tra strumenti e motore.** Il motore è open source; `tools/` e `assets/` restano contenuto proprietario di SUSE nei propri repository. La separazione è imposta (nessun import incrociato), così la divisione resta pulita.
+- **Nessun percorso di codice tool/engine condiviso.** Il motore è open source; `tools/` e `assets/` restano contenuti proprietari SUSE nei propri repository. La separazione è applicata (nessun import incrociato) così la divisione resta pulita.
 
 ---
 
 ## Ciclo di vita, dall'inizio alla fine
 
-![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=aud-export-popup)
-
-Lo strumento Slides è costruito su quella seconda superficie, l'URL di embed portabile: qualsiasi slot di qualsiasi slide può contenere un altro strumento Lolly invece di un'immagine.
-
 Un utente apre `lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H`:
 
-1. **Avvio.** La shell web apre IndexedDB, costruisce il ponte delle capacità, sincronizza i cataloghi di strumenti e asset (o carica dalla cache quando è offline).
-2. **Routing.** Hash dell'URL → vista `tool`, con `qr-code` e i parametri URL estratti.
-3. **Caricamento.** `loadTool('qr-code', fetchFile)` recupera `tool.json`, lo valida rispetto al JSON Schema, recupera `template.html`, `styles.css`, e il sorgente di `hooks.js`.
-4. **Parsing dello stato URL.** `parseUrlState` traduce i parametri URL in valori di input iniziali. I riferimenti agli asset (`?logo=suse/logo/primary`) vengono analizzati come oggetti leggeri `{ id, _unresolved: true }`.
-5. **Runtime.** `createRuntime(tool, host, initialValues)` costruisce il modello di input (unendo dati di profilo, valori predefiniti e valori iniziali), risolve i riferimenti agli asset tramite `host.assets.get()`, carica gli hook (`host` con ambito di closure, senza sandbox), chiama `hooks.onInit`.
-6. **Rendering.** La shell si sottoscrive al runtime; a ogni cambiamento di stato riceve `{ model, hydrated }`. Renderizza i controlli di input a partire dal modello e scrive l'HTML del template idratato in `#tool-canvas`.
-7. **Interazione.** L'utente digita in un input → `runtime.setInput(id, value)` → vengono applicati i vincoli → viene chiamato `hooks.onInput` → nuova idratazione → nuovo render. Il canvas si aggiorna dal vivo.
-8. **Esportazione.** L'utente fa clic su Scarica (PNG) → `runtime.export(canvasNode, 'png')` → `host.export.render` (rasterizza tramite dom-to-image-more; SVG/PDF passano attraverso vettorizzatori dedicati che attraversano il DOM) → blob → `host.export.download`. La gamma di formati a cui uno strumento può aderire è ampia: `svg`, `png`, `jpg`/`jpeg`, `webp`, `avif`, `pdf`, i formati vettoriali `emf`, `eps`, più i formati stampa/CMYK `pdf-cmyk`, `cmyk-tiff`, `eps-cmyk`; i formati video `webm`, `mp4`, `gif`; e i formati dati/testo `html`, `md`, `txt`, `json`, `csv`, `ics`, `vcf`, `ico`, `zip`. (Gli strumenti che impostano `render.export: false` - ad es. Color Palette, Countdown Timer, Strip Hidden Data, Text Helper, Compress PDF - nascondono i controlli di download/formato/dimensione.) Le unità fisiche vengono convertite per formato in questa fase (PDF → punti di pagina reali, raster → pixel al DPI con un chunk `pHYs`). I metadati di autorialità/provenienza (autore, strumento, fonte - costruiti da `engine/src/metadata.ts`) vengono incorporati per formato: iTXt per PNG, EXIF per JPEG, dizionario info per PDF, `<metadata>` per SVG, commento per GIF. Gli strumenti sperimentali ricevono una filigrana inserita dall'host, non dallo strumento.
+1. **Avvio.** La web shell apre IndexedDB, costruisce il capability bridge, sincronizza i cataloghi di tool e asset (o carica dalla cache se offline).
+2. **Routing.** L'hash dell'URL → vista `tool`, con `qr-code` e i parametri URL estratti.
+3. **Caricamento.** `loadTool('qr-code', fetchFile)` recupera `tool.json`, lo valida contro lo JSON Schema, recupera `template.html`, `styles.css` e il sorgente `hooks.js`.
+4. **Parsing dello stato URL.** `parseUrlState` traduce i parametri URL in valori di input iniziali. I riferimenti agli asset (`?logo=suse/logo/primary`) sono parsati come oggetti leggeri `{ id, _unresolved: true }`.
+5. **Runtime.** `createRuntime(tool, host, initialValues)` costruisce il modello di input (unendo dati di profilo, default e valori iniziali), risolve i riferimenti agli asset tramite `host.assets.get()`, carica gli hook (`host` con scope di closure, non sandboxato), chiama `hooks.onInit`.
+6. **Render.** La shell si sottoscrive al runtime; a ogni cambio di stato riceve `{ model, hydrated }`. Renderizza i controlli di input dal modello e scrive l'HTML del template idratato in `#tool-canvas`.
+7. **Interazione.** L'utente digita in un input → `runtime.setInput(id, value)` → vincoli applicati → `hooks.onInput` chiamato → re-idratazione → re-render. Il canvas si aggiorna dal vivo.
+8. **Export.** L'utente clicca Download(PNG) → `runtime.export(canvasNode, 'png')` → `host.export.render` (rasterizza tramite dom-to-image-more; SVG/PDF passano attraverso vettorizzatori dedicati che percorrono il DOM) → blob → `host.export.download`. La gamma di formati a cui un tool può aderire è ampia, e l'enum `render.formats` in `schemas/tool.schema.json` è l'autorità in materia - raster e float raster, vettori e file di taglio, stampa/CMYK, motion, documenti modificabili (`pptx`, `docx`, `odt`), palette e output dati/testo, file audio e font. [URL Mode](/info/url-mode.html) elenca ogni id e cosa produce. L'audio è in quell'enum come qualsiasi altra cosa (`wav`, `mp3`, `m4a`, `opus`, dichiarati dall'audiogram e dai tool di registrazione); separatamente, la modalità `render.capture` di un tool di registrazione pilota `host.recorder`, la cui ripresa arriva come un Blob finito nel contenitore in cui il browser ha registrato. (I tool che impostano `render.export: false` - ad esempio Color Palette, Countdown Timer, Strip Hidden Data, Text Helper, Compress PDF - nascondono i controlli di download/formato/dimensione.) Le unità fisiche vengono convertite per formato qui (PDF → punti pagina reali, raster → pixel a DPI con un chunk `pHYs`). I metadati di autorialità/provenienza (autore, tool, fonte - costruiti da `engine/src/metadata.ts`) sono incorporati per formato: PNG iTXt, JPEG EXIF, dizionario info PDF, `<metadata>` SVG, commento GIF. I tool sperimentali ricevono una filigrana inserita dall'host, non dal tool.
 
-Stesso ciclo di vita in Tauri. Stesso ciclo di vita nella CLI - jsdom fornisce il DOM headless; l'output va su un file o su stdout.
+![Il pannello di export che `?options` apre: la coppia nome file e formato, la dimensione di output e i controlli che scrivono il file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=aud-export-popup)
+
+Stesso ciclo di vita in Tauri. Stesso ciclo di vita in CLI - jsdom fornisce il DOM headless; l'output va su file o su stdout.
 
 ---
 
 ## Stato open source
 
-Le directory `engine/`, `shells/`, `schemas/`, e `docs/` sono open source sotto **MPL-2.0** - una piattaforma di scaffolding neutrale rispetto al fornitore per il tooling di brand, con ogni unità distribuibile suddivisa nel proprio repository sotto [github.com/lolly-tools](https://github.com/lolly-tools). `tools/` e `catalog/assets/` sono contenuto specifico di SUSE e restano **proprietà esclusiva di SUSE** (tutti i diritti riservati - vedi il `NOTICE.md` di ciascun repository); non sono coperti dalla MPL.
+Le directory `engine/`, `shells/`, `schemas/` e `docs/` sono open source sotto **MPL-2.0** - una piattaforma di scaffolding neutrale rispetto al vendor per gli strumenti di brand, con ogni unità distribuibile divisa nel proprio repository sotto [github.com/lolly-tools](https://github.com/lolly-tools). `tools/` e `catalog/assets/` sono contenuti specifici di SUSE e restano **proprietà esclusiva di SUSE** (tutti i diritti riservati - vedi il `NOTICE.md` di ciascun repo); non sono coperti dalla MPL.
 
-La separazione è imposta - non ci sono import incrociati da `engine/` verso `tools/` o `assets/` - così il confine tra piattaforma e contenuto resta pulito.
-
----
-
-## Roadmap
-
-| Traguardo | Scadenza | Cosa |
-|---|---|---|
-| **Strumenti iniziali** | ✅ Fatto | QR Code, Quote Card, Email Signature, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Chart Creator, Filter: Duotone, Meeting Planner - shell web in produzione |
-| **Potenziare gli strumenti attuali** | Metà 2026 ✅ Fatto  | App offline scaricabile (Tauri); strumenti aggiuntivi per dipendenti ed eventi; pipeline di export più ricca (stabilità del testo-a-tracciato, metadati, formati aggiuntivi - vedi `plans.md`) |
-| **Rendere open source il motore** | Fine 2026 ✅ Fatto  | Motore, shell, schemi, documentazione diventano pubblici - non gli strumenti/asset di marca |
-| **Trasferimento da dispositivo a dispositivo** | ✅ Fatto | Il bundle portabile `lolly-backup` trasporta profilo, sessioni salvate, immagini caricate e preferenze tra due installazioni qualsiasi - offline o online, senza account. Busta retrocompatibile e verificata per integrità (specifica: `docs/data-transfer.md`) |
-| **Definire una roadmap formale degli strumenti** | Fine 2026 | Kit di riferimento per i clienti, ingestione di design con IA, modalità di richiesta GET/URL |
-| **Utilità di privacy sul dispositivo** | 🚧 In corso | Strumenti di trasformazione dei contenuti che elaborano *il tuo* file localmente (file in ingresso → file pulito in uscita), sostituendo l'esfiltrazione verso SaaS a scopo unico. **Fatto:** tipo di input `file` + percorso di trasformazione `exportFile` + convenzioni `privacy:"on-device"` (nessuna filigrana/provenienza) + **Strip Hidden Data** (metadati JPEG/PNG/SVG/PDF, PDF tramite il ponte `host.pdf`) e **Text Helper** (il banco di lavoro sul dispositivo per le attività quotidiane di incolla-in-un-sito-web - formattazione JSON, decodifica JWT, Base64, codifica/decodifica URL, hashing SHA, più un gruppo Novità). **Prossimo:** ritaglio/ridimensionamento, conversione/compressione immagini; poi un ponte di codec `host.image` (specifica: `plans/34-exfiltration-app-content.md`) |
-| **Design token (DTCG)** | 🚧 Colore pubblicato | Le primitive di brand come [W3C Design Tokens (DTCG)](https://www.designtokens.org/TR/drafts/format/) canonici - il formato che [Penpot importa/esporta](https://help.penpot.app/user-guide/design-systems/design-tokens/). **Fatto:** design token di colore (`suse/tokens/brand`), ponte `host.tokens`, campioni nel selettore + valori collegati per riferimento (specifica: `docs/design-tokens.md`). **Prossimo:** token di dimensione/tipografia, import/export Penpot, token utente nel bundle di trasferimento (`tokens.json`) |
-| **Endpoint agente MCP (render)** | ✅ Fatto | Un server [MCP](https://modelcontextprotocol.io) espone il catalogo + il percorso di rendering come strumenti invocabili (`lolly_list_tools` / `describe_tool` / `build_url` / `render` / `transform`) così che qualsiasi agente possa produrre asset finiti e vincolati alle regole - aggiungilo a qualsiasi client MCP come connettore personalizzato (OAuth 2.1) oppure punta un client CLI/HTTP con un bearer token. Attivo su `mcp.lolly.tools` (endpoint completo: raster/PDF/animazione/video tramite un browser headless ospitato) e `lolly.tools/api/mcp` (livello serverless senza browser). Distinto dall'MCP di *authoring* di Penpot qui sotto, che riguarda la **creazione** di strumenti (specifica: `plans/77-mcp-server.md`; guida: `docs/mcp.md` + `docs/ai-agents.md`) |
-| **Ingestione di file Penpot come strumenti** | 2027+ | Importa un file Penpot ed esponilo *come uno strumento Lolly* (dichiarativo, basato su vincoli), trasformando i design creati in Penpot in generatori deterministici |
-| **Estensione MCP + Penpot (authoring solo online)** | 2027+ | Un server MCP di Penpot articola nuovi strumenti con l'IA - il modo più visivo per creare template deterministici: un primo giro informato dal brand, perfezionato con un umano nel ciclo, puntando nel tempo a nuovi contesti one-shot. La *creazione* di strumenti è solo online; gli strumenti che produce girano ovunque |
-| **RBAC + SUSE ID** | 2027+ | Restringere l'accesso a strumenti specifici tramite SUSE ID; stato salvato multi-dispositivo; ingestione/export Google Drive |
+La divisione è applicata - non ci sono import incrociati da `engine/` verso `tools/` o `assets/` - così il confine tra piattaforma e contenuto resta pulito.
 
 ---
 
-## Dove finisce il motore e comincia l'host
+## Dove finisce il motore e inizia l'host
 
-Se puoi descriverlo in dati puri + Handlebars → **motore**.
-Se tocca il DOM, il filesystem, la rete, o una qualsiasi API di browser/SO → **host**.
+Se puoi descriverlo in puri dati + Handlebars → **engine**.
+Se tocca il DOM, il filesystem, la rete o una qualsiasi API browser/OS → **host**.
 
-Il confine è netto di proposito. Il motore è la parte open source. Tutto ciò che conosce SUSE, piattaforme specifiche, o ambienti di esecuzione ne resta fuori.
+La linea è netta di proposito. Il motore è la parte open source. Tutto ciò che conosce SUSE, piattaforme specifiche o ambienti di runtime resta fuori.
+
+Per il livello di dettaglio successivo, [`engine/README.md`](../engine/README.md) elenca ogni modulo del motore e di cosa è responsabile, e [Threat Model & Trust Boundaries](/info/threat-model.html) registra dove quella stessa linea funge anche da confine di fiducia.

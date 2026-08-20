@@ -82,6 +82,8 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 
 ![Design 的自由画布——画板及其周围的粘贴板](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
+**翻转所选内容。** 右键点击任意方框,选择 **Flip horizontal**(水平翻转)或 **Flip vertical**(垂直翻转)即可原地镜像,或按键盘上的 `Shift+H` / `Shift+V` - 之所以要加 Shift,是因为单独的 `V` 是 Pointer 工具。每个被选中的方框都沿自己的轴镜像,并作为一个撤销步骤记录;镜像是真正的变换,因此它会保留在导出的 SVG、PDF 和 PNG 中,而不只是停留在画布上。
+
 ### 绘制你自己的形状（钢笔）
 
 方框、圆形和圆角框足以应付大多数版面。当你需要的形状不在其中时，就把它画出来：工具栏上的**钢笔**按钮（或 `P` 键）会让你进入绘制模式。三个单键在模式之间切换——**`V`** 回到指针，**`P`** 是钢笔，**`N`** 是节点工具（**编辑节点**）——而指针始终是从当前模式退出的出口。
@@ -139,7 +141,7 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 
 **Sequence Studio** 为自由画布加上了*时间*。每个方框都可以在某个时刻开始、持续一段时长、带入场和出场动画，而停靠在画板下方的时间轴就是你排布它们的地方。打开它，已经有一段序列在播放——标题卡、一段片段、片尾卡、下三分之一字幕和一条背景音乐——因此在你动手改动之前，这套模型就已一目了然。
 
-![Sequence Studio 的时间轴：播放控制条、标尺、一条叠加轨、带片段和接缝标记的磁性序列轨，以及“始终显示”区域](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A252px!important%7D&cropSelector=.tl-panel&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-timeline)
+![Sequence Studio 的时间线:传输控制条、标尺、一条叠加轨道、带片段与接缝标记的吸附序列行,以及常驻的 Always on 条](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A252px!important%7D&cropSelector=.tl-panel&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-timeline)
 
 轨道有两种，两者的区别正是整个想法的关键：
 
@@ -147,7 +149,7 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 - **叠加轨**则是自由的。下三分之一字幕、Logo、字幕说明——任何按自己的时间浮在主干之上的东西——都有自己的轨道和自己的起点。
 - 在这些之下，**始终显示**收纳完全没有时间设定的方框：全程都在画面里的布景。方框标记上的 `+` 可以把它提升到某条轨道上；**设为始终显示**则把它送回去。
 
-![完整的编辑界面：画板、工具栏和时间轴同框](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.fc-toolbar%7Bopacity%3A1!important%7D&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-stage)
+![编辑舞台:居中的画板、左侧的工具栏,以及角落的缩放 HUD](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.fc-toolbar%7Bopacity%3A1!important%7D&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-stage)
 
 打开时间轴会把键盘交给它，于是空格键和方向键驱动的是播放头而不是页面——而且由于面对已有时间设定的作品时它会自行打开，从 Sequence Studio 载入的那一刻起就是如此。
 
@@ -306,9 +308,9 @@ storage-seeding hook.
 
 在它送出之前，有三件事由你决定：
 
-- **要不要写上你的名字。** 只有当个人资料里开启了**使用我的资料创作**时，你的姓名、邮箱和所属机构才会写进文件。关闭时，文件只记录它由 Lolly 制作以及制作时间——关于你的什么都没有。
-- **要不要放进受授权的素材。** 受授权和品牌锁定的素材默认不会装进去。如果设计用到了这类素材，对话框会说明有多少个，并给出两个按钮——*不含它们下载*或*包含并下载*——因为包含它们就等于把实际文件交给打开这个 `.lolly` 的任何人。
-- **要不要放进工具本身。** **包含该工具**会把工具自己的文件和设计一起打包，这样它在没有该工具的设备上也能打开。对于自定义工具——一个分支版本，或对方多半没有的私有品牌工具——这一项默认勾选；对于与已签名目录逐字节一致的工具则默认不勾选，因为对方手上的副本本来就是同一个文件。
+- **你的姓名是否写入。** 只有当个人资料中的 **Use my details to create** 开启时,你的姓名、邮箱和组织才会写入文件。关闭时,文件只记录它是用 Lolly 制作的以及制作时间 - 不包含任何关于你的信息。
+- **授权素材是否写入。** 已授权和品牌锁定的素材默认会被排除在外。如果设计中用到了这类素材,对话框会说明数量,并提供两个按钮 - *Download without them*(不含这些素材下载)或 *Include and download*(包含并下载) - 因为包含它们就相当于把实际文件交给了任何打开该 `.lolly` 文件的人。
+- **工具本身是否写入。** **Include the tool** 会将工具自身的文件与设计一起打包,这样它就能在没有安装该工具的设备上打开。对于自定义工具 - 比如收件人不太可能拥有的分支或私有品牌工具 - 该选项默认勾选;对于签名目录中列出的工具则默认不勾选,因为对方的副本来自同一来源。(在没有签名目录的构建中,每个工具都算作自定义工具,该选项默认勾选。)
 
 **打开一个。** 把 `.lolly` 拖到应用上：素材落进你的素材库，会话落进项目，工具随之在它上面打开。你原有的东西不会被覆盖：会话会作为一个新的保存槽位到来，而本设备上已有的素材会通过校验和匹配并复用，而不是重复一份。每个部分在进来时都会对照文件自带的校验和检查，因此传输中损坏的副本会被拒绝，而不是导入一半。
 
@@ -330,9 +332,10 @@ storage-seeding hook.
 
 ![目录——品牌素材、色板和字体，以及你自己上传的内容](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=2400&css=.plat-swatch-grid~%2A%7Bdisplay%3Anone%7D&walker=1&format=svg&localize=1&dark=1&filename=catalogue)
 
-- <!--i:upload--> **把你的文件带进来。** 把任意图片、SVG、音频片段、视频、Lottie、PDF 或 PowerPoint 演示文稿拖到上传区域——或点击选择——它就会立刻进入你的目录，在每个工具的素材选择器里随时可用。多页 PDF 或 `.pptx` 会先问你保留哪些页或哪些幻灯片——每一页都会成为一个 SVG 素材。想导入多少都可以；它绝不会离开你的设备。
-- <!--i:star--> **收藏你常用的素材。** 给某个素材（或某个品牌色板）点上 ★，它就会置顶到每个选择器的最前面，让常用的 Logo 或颜色一键即达。
-- <!--i:folder--> **整理归置。** 把某个素材重新归入其他分组、隐藏你不用的共享品牌素材（用**显示隐藏项**再把它找回来），或直接删除你自己上传的内容。与项目相同的多选手势和悬浮操作栏在这里同样有效，因此上述任何操作都可以对整个选中范围一次完成。
+- <!--i:upload--> **导入你的文件。** 将任意图片、SVG、音频片段、视频、Lottie、PDF 或 PowerPoint 演示文稿拖到上传区域 - 或点击选择 - 它会立即进入你的目录,可在每个工具的素材选择器中使用。多页 PDF 或 `.pptx` 会询问要保留哪些页面或幻灯片 - 每一页都会成为一个 SVG 素材。想导入多少都可以;它永远不会离开你的设备。
+- <!--i:star--> **收藏常用素材。** 为一个素材(或一个品牌色板)加上 ★,它就会固定在每个选择器的顶部,让你常用的标志或色彩一键可及。
+- <!--i:folder--> **整理素材。** 把素材重新归类到另一个组,隐藏一个你用不到的共享品牌素材(可通过 **Show hidden** 恢复),或彻底删除你自己上传的内容。与 Projects 中相同的多选手势和浮动操作栏在这里同样可用,因此以上操作都可以一次性应用到整批选中的内容。
+- <!--i:layers--> **从视频中抠出背景。** 打开视频详情,或在任意素材选择器中右键点击其卡片,选择 **Remove background…**(移除背景)即可保存一个透明版本 - 一个带真实 alpha 通道的动态 WebP 或 PNG。选择一种 **Method**(方法):**On-device model**(本地模型)可从繁杂场景中抠出主体,或用 **Colour key**(色键)抠除均匀打光的纯色背景,例如绿幕或素色墙面,并可用 **Tolerance**(容差)、**Softness**(柔化)和 **Spill removal**(溢色去除)来调整边缘。色键无需下载模型也无需联网,因此 **Remove background** 可用于任何视频,且在整洁的画面上效果往往更干净。**Resolution**(分辨率)控制项(360、480、720 或 1080p,不会超过原始分辨率)以细节换取更小、更快的文件。它在你的设备上以后台任务方式运行。抠好的成片会作为独立素材出现在原视频旁边,源视频的 Content Credential 会作为素材来源随之携带。(关于移除背景为何仍属于一次普通编辑,参见[一次生成,渲染如一](/info/ai-features.html)。)
 
 ### 把你的调色板和字体带到任何地方
 

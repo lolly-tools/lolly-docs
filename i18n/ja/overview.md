@@ -1,42 +1,51 @@
 # 概要
 
-このドキュメントは、Lolly プラットフォームの目的、構造、そしてアーキテクチャ上の決定事項をまとめたものです。プロダクトビジョンと、コードベースの現状の両方を反映しています。
+![Lollyアイコン - 大きな緑と白のロリポップキャンディ](/info/icon.svg)
 
-> **ステータス:** Lolly は、**まだ完了していないクローズドパイロット**における社内プロトタイプです。エンジンは決定論的で内部的に一貫していますが、プロダクトはまだ初期段階にあり——SUSE が最初の顧客です——その暗号処理とファイル解析エンジンは現在、エンタープライズ規模に備えて SUSE の厳格なインフラストラクチャ強化を受けている最中です(私たちはこの分野を非常に得意としています)。以下のアーキテクチャは、完成し認定されたプロダクトとしてではなく、検証中の設計意図として読んでください。パイロットがどのように運用・測定されているかについては [導入とガバナンス](/info/adoption-governance.html#status) を参照してください。
+このドキュメントは、Lollyプラットフォームの目的、構造、アーキテクチャ上の決定事項をまとめたものです。プロダクトビジョンとコードベースの現状の両方を反映しています。
+
+> **ステータス:** Lollyは**まだ完了していないクローズドパイロット**の中にある社内プロトタイプです。エンジンは決定論的で内部的に一貫していますが、プロダクトとしてはまだ初期段階です - SUSEが最初の顧客です - そして暗号化とファイル解析エンジンは現在、エンタープライズ規模に備えたSUSEの厳格なインフラ強化を受けています(これは私たちの得意分野です)。以下のアーキテクチャは、完成し認証されたプロダクトとしてではなく、テスト中の設計意図として読んでください。パイロットの運用方法と評価方法については[Adoption & Governance](/info/adoption-governance.html#status)を参照してください。
+
+> **このページの読み方。** ここには2種類の内容が順に書かれています。前半は
+> **これが存在する理由**です。問題、ポジショニング、1つのアセットがたどるライフサイクル
+> を扱います。[The big picture](#the-big-picture-how-the-layers-fit)以降は
+> **レイヤーがどう組み合わさるか**です。コントリビューター向けのアーキテクチャドキュメントで、engine/shell/packの
+> 分離、リポジトリのレイアウト、配信対象、プラットフォームへのあらゆる変更を制約するコミットメントを扱います。プロダクトを理解するためではなくコードベースを変更するためにここに来たなら、big pictureから始めてください。
+>
+> このページより詳しく踏み込む2つの関連ドキュメントがあります。リポジトリ内の[`engine/README.md`](../engine/README.md)は、エンジンのモジュールごとのマップで、各モジュールが何を解析し何を書き出すかを示す生成済みの表を含みます。[Threat Model & Trust Boundaries](/info/threat-model.html)
+> は同じアーキテクチャをトラストバウンダリとして読み解いたもので、エンジンが何を信頼できないものとして扱うかについての質問には、こちらのページが適しています。
 
 ---
 
-## 存在する理由
+## これが存在する理由
 
-チームは繰り返し同じ問題に直面します。反復的なクリエイティブ・コンテンツ制作は、毎回熟練者の手を煩わせるほどではないくらい予測可能でありながら、ガードレールなしに任せるにはあまりに品質に敏感です。その結果は、スループットの低下(専門家のボトルネック)、一貫性の欠如(手元にあるツールを各自が使う)、あるいはベンダーロックイン(テンプレートを支配する SaaS 型 DAM)のいずれかに行き着きます。
+チームは繰り返し同じ問題に直面します。反復的なクリエイティブおよびコンテンツ制作の作業は、毎回熟練者の手を借りるほどではないほど予測可能でありながら、ガードレールなしに任せるにはあまりに品質に敏感です。その結果は、遅いスループット(専門家がボトルネックになる)、一貫性の欠如(手元にあるツールを各自が使う)、またはベンダーロックイン(テンプレートを支配するSaaS DAM)のいずれかに行き着きます。
 
-このプラットフォームは、その構造的な答えです:
+このプラットフォームはその直接的な答えです。
 
-> **プログラムによる大規模なクリエイティブ・コンテンツ制作**——ルールを一元管理しながら、従業員・ベンダー・パートナー向けに労力ゼロでアセットを生成する。
+> **プログラムによる大規模なクリエイティブとコンテンツ** - 従業員、ベンダー、パートナー向けに、ルールを一元管理しながら、労力ゼロでアセットを生成します。
 
-その結果もたらされるのは**豊かさ**です。あらゆるイベントに正しいサイネージが用意され、あらゆる CVE アラートがハウススタイルに一致し、あらゆるラベルがきれいに印刷され、あらゆるメール署名が最新の状態を保ちます——しかもデザインチケットを起票することなく。このプラットフォームが扱うのは、反復的で運用化されたクリエイティブ制作です。意図的にオーダーメイドのクリエイティブツールではありません——旗艦となる作品は、引き続きデザイナーが担います。
+その結果得られるのは**豊富さ**です。あらゆるイベントに正しいサイネージが用意され、あらゆるCVEアラートが自社のスタイルに準拠し、あらゆるラベルがきれいに印刷され、あらゆるメール署名が最新の状態を保つ - これらすべてがデザインチケットなしに実現します。このプラットフォームが担うのは、反復的でオペレーション化されたクリエイティブです。あえてオーダーメイドのクリエイティブツールにはしていません - フラッグシップの制作は引き続きデザイナーが担います。
 
-### ランドスケープの中での位置づけ
+### 確率的に革新し、決定論的にスケールする
 
-![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=aud-gallery-landscape)
+クリエイティブパイプラインにおけるAIをめぐる議論は、いつも同じ問いで行き詰まります。この作業のどの部分が機械の仕事なのか、と。これは古い問いであり、すでに答えは出ています。写字生や装飾写本の画家たちは、すでに2つの道具の間で仕事をしていました - 何も固定されず何でも試せるラフスケッチと、まさに確定してしまうがゆえに恐れられた印刷機です。芸術が生まれたのはスケッチの中でした。それを誰の手にも届けたのは印刷機でした。誰もこの2つを混同することはなく、両方とも進化を続けました - 新しいインク、新しい書体、新しい印刷機 - それぞれが、その技巧と目的に調和しながら進歩していったのです。
 
-| 機能 | Canva | Brand portals | Illustrator | Figma / Penpot | **Lolly** |
-|---|---|---|---|---|---|
-| 大量コンテンツ生成 | 一部対応 | ✗ | ✗ | ✗ | **✓** |
-| 完全オフライン動作 | ✗ | ✗ | ✓ | 一部対応 | **✓** |
-| テンプレートロジックと厳格な制約 | ✗ | 一部対応 | ✗ | 一部対応 | **✓** |
-| デザインスキル不要 | 一部対応 | ✓ | ✗ | ✗ | **✓** |
-| 自動 Content Credentials | ✗ | ✗ | 一部対応 | ✗ | **✓** |
-| ツールが他のツールを組み合わせる | ✗ | ✗ | ✗ | ✗ | **✓** |
-| オープンなエンジン、SaaS にロックインされない | ✗ | ✗ | ✗ | 一部対応 | **✓** |
-| C2PA content credentials | ✗ | ✗ | ✗ | ✗ | **✓** |
-| オプトイン型のフォレンジックレベルの来歴情報 | ✗ | ✗ | ✗ | ✗ | **✓** |
-| モバイルおよびデスクトップアプリ | ✓ | ✗ | ✗ | 一部対応 | **✓** |
-| コマンドラインと TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
+Lollyも同じ線引きをしています。探索は確率的に行います - モデル、デザイナー、ラフなアイデア、誰も計画していなかった場所へ行き着くプロンプト。そしてスケールは決定論的に行います - 1万件の出力に届くのは*ツール*であり、ツールは読み取り可能な入力から毎回同じようにレンダリングします。探索が自由でいられるのは、それが2回とも同じ結果に着地することに何も依存していないからです。出力が信頼を勝ち得るのは、それが当て推量ではないからです。AIによる実験を予測可能で再現性のある結果へと落とし込むことは、新しい規律ではありません。そもそも印刷物を信頼に足るものにしたのと同じ、分業の姿なのです。
 
-ギャップは明白です。既存のランドスケープの中には、制約ファースト・オフライン対応・低スキル・社内で誰でもアクセスできる出力を提供するものが一つもありません。Lolly にはオープンキャンバス——**Design**——も含まれており、そこでも色・タイポグラフィ・アセットはブランドのグローバル設定に準拠するため、自由な配置であっても制約ファーストであり続けます。このツールが**そうではない**のは、制約のないデザインスイートだということです。旗艦となるオーダーメイド作品には、デザイナーが引き続き Illustrator や Figma を使用します。バリエーションの組み合わせは、このツールで組み立てられます。
+> クリエイティブなプロセスを信頼し、厳密さをもってスケールする。
 
-**こんな用途に:** 運用化されたクリエイティブアセットの迅速な生成——イベントタイル、ネームバッジ、署名、CVE アラート、QR コード、ソーシャルカード、出荷ラベル、構造化されたレポートなど。
+### 代替手段との比較
+
+::: figure positioning-comparison
+現在のクリエイティブツール群における機能の充実度、2026年8月調査。スコアリング:0=なし、25=回避策レベル、50=実装済みだが制限付きまたは部分的、75=注意点付きで強力、100=中核機能。
+:::
+
+ギャップは明白です。現在出荷されているものの中に、制約優先、オフライン対応、低スキルでも使え、社内で誰でもアクセスできる出力を提供するものはありません。Lollyにはオープンなキャンバス - **Design** - もあり、そこでは色、タイプ、アセットがブランドのグローバル設定に従うため、自由な配置であっても制約優先のままです。Lollyが**そうではない**のは、制約のないデザインスイートである、という点です。オーダーメイドのフラッグシップ制作には、デザイナーは引き続きIllustratorとFigmaを使います。バリエーションの組み立てにはこのツールを使えます。
+
+![ライブラリ内のすべてのツールがカードとしてカテゴリ別にまとめられ、プロデューサーが1つを選んで作業を始められる様子](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=aud-gallery-landscape)
+
+**こんな用途に:** オペレーション化されたクリエイティブアセットの高速生成 - イベントタイル、名札、署名、CVEアラート、QRコード、ソーシャルカード、出荷ラベル、構造化レポート。
 
 **こんな用途には向きません:** オーダーメイドのヒーローコンテンツ。
 
@@ -44,39 +53,43 @@
 
 ## キャンペーンのライフサイクル
 
-![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+Lollyが何であるかを理解する最も明快な方法は、機能一覧を眺めることではありません - 1つのアセットが人から人へと渡っていく様子を追うことです。ローカライズされた1枚のキャンペーンカードが組織の中を動いていく様子を見てみましょう。
 
-Lolly が何であるかを最もはっきり示してくれるのは機能一覧ではなく、1 つのアセットが人の手から手へ渡っていく様子を追うことです。ローカライズされたキャンペーンカードが 1 枚、組織の中をどう進んでいくかを見てみましょう。
+1. **クリエイティブがルールを定める。** デザイナーがDesignツールでベーステンプレートを作成し、ブランドのタイポグラフィと色の変数をハードコードします。彼らが作っているのは1枚のカードではありません - 二度と手作業でローカライズしなくて済むように、基礎となる作業を*一度だけ*行っているのです。
+2. **開発者がそれをスケールさせる。** 同じテンプレートがCLI経由で夜間パイプラインに組み込まれ、新しいチャートや新しい言語バリアントが自動的に生成されます - デザイナーがファイルを開き直すことはありません。
+3. **プロデューサーはただ使うだけ。** 飛行機の中でオフラインの営業担当者が同じツールを開き、クライアントとの打ち合わせ用に完璧にオンブランドなデッキを生成します。デザインスキルもネットワークも待ち時間も不要です。
 
-1. **クリエイターがルールを決めます。** デザイナーが Design でベーステンプレートを作り、ブランドのタイポグラフィとカラー変数をハードコードします。作っているのは 1 枚のカードではありません——この土台となる作業を*一度だけ*行い、以後は手作業でローカライズしなくて済むようにしているのです。
-2. **開発者がそれをスケールさせます。** その同じテンプレートを CLI 経由で毎晩のパイプラインに組み込めば、新しいチャートや新しい言語バリアントが自動的に生成されます——デザイナーがファイルを開き直すことはありません。
-3. **制作担当者はただ使うだけです。** 営業担当者が飛行機の中でオフラインのまま同じツールを開き、顧客との商談用に完全にブランドに沿ったデッキを生成します。デザインスキルも、ネットワークも、待ち時間も必要ありません。
+ステップ2の「新しいチャート」とは、まさにこのようなレンダリングのことです。データ文字列といくつかのパラメーターだけから、誰もデザインファイルを開くことなく生成されます。
 
-ステップ 2 の「新しいチャート」とは、たとえば下のようなレンダリングです。データ文字列といくつかのパラメータから生成されており、デザインファイルを開いた人は誰もいません。
+![タイトル付きの積み上げエリアチャート。3つの系列がクールな配色で帯状に表示され、軸・凡例・タイトルはすべて手作業ではなくテンプレートによって配置されている](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
-重要なのは、Lolly がそれぞれ独立に、デザイナーにとって良く、*かつ*開発者にとって良く、*かつ*営業にとって良い、ということではありません。これは**リレー競走**です。クリエイターの最初の仕事が開発者によってスケールされ、それがそのまま制作担当者の力になります。飛行機の中にいる非技術者の担当者が労せず使えるのは、デザイナーが定めた厳格さと開発者が展開した仕組みがあってこそ*可能*になっているのです。
+重要なのは、Lollyがデザイナーにとって良い、*かつ*開発者にとって良い、*かつ*営業にとって良い、という話がそれぞれ独立して成り立つことではありません。これは**リレー競走**です。クリエイティブが最初に行った仕事を開発者がスケールさせ、それが今度はプロデューサーの力になります。飛行機の中の非技術者の担当者が労せずして得られる体験は、デザイナーが定めて開発者が展開した厳密さがあってこそ*初めて可能*になるのです。
 
-それが力の増幅です。Lolly は役割ごとに別々のツールをしまっておく引き出しではありません——あらゆる役割が触れる 1 本の決定論的なアセットライフサイクルであり、手を経るたびに前の工程の価値が何倍にもなっていきます。
-
----
-
-## 1 回の承認で、1 万点のアセット
-
-![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
-
-承認がファイルではなくツールに宿るため（[Lollyの比較](/info/positioning.html) を参照）、スケールはもはやレビューの問題ではなくなります。ローカライズされたソーシャルカードのツールを一度承認すれば、あとはスプレッドシートから**12 言語にまたがる 10,000 点のアセット**を生成できます——しかもそのどれ 1 つも、法務やブランドチームによる新たなコンプライアンスチェックを必要としません。すべての元になっているテンプレートが、すでに承認済みだからです。
-
-同じ決定論的なツールが、3 つの経路でそのスケールに到達し、いずれも同一の事前承認済み出力を生み出します。
-
-- <!--i:people--> **人が、アプリの中で。** `/pro` のバッチグリッド:行を貼り付けるかインポートすれば、1 行につき 1 点の完成アセットが得られ、zip でダウンロードできます。デザインスキルも、チケットも、待ち時間も不要です。
-- <!--i:code--> **開発者が、コマンドラインから。** CLI は*同じ*エンジンと*同じ*レンダリングパスをヘッドレスで実行するので、スクリプトや毎晩のパイプラインの中でツールを 10,000 行すべてに対して順に走らせられます。ループの中で `lolly <tool> --field=…` を呼ぶだけで、それが統合作業のすべてです。
-- <!--i:cpu--> **システムや AI エージェントが、MCP 経由で。** 同じツールをプログラムから操作し、忠実度は同じまま、さらに大きなスケールへ——ファイルが何千と流れ込んでくる間、機械は飽きたりしないからです。
-
-デザイナーが一度だけ定めた 1 組のブランド制約と、同一の事前承認済み出力へ至る 3 つの経路——そして最も遠くまでスケールするのは機械の経路です。ファイルが流れ込み続けても、決して疲れないからです。
+これが力を何倍にも増幅させる仕組みです。Lollyは役割ごとに別々のツールを詰め込んだ引き出しではありません - すべての役割が触れる、1つの決定論的なアセットライフサイクルであり、渡っていく手ごとに前の価値を何倍にも増やしていきます。
 
 ---
 
-## 全体像
+## 承認は1回、アセットは1万件
+
+承認がファイルではなくツールに宿るため([How Lolly compares](/info/positioning.html)を参照)、スケールはもはやレビューの問題ではなくなります。ローカライズされたソーシャルカードツールを一度承認すれば、スプレッドシートから**12言語にわたる1万件のアセット**を生成できます - そのどれ1つとして、法務やブランドによる新たなコンプライアンスチェックを必要としません。すべてが生まれるもとになったテンプレートが、すでに承認されているからです。
+
+同じ決定論的なツールが、3つの方法でその規模に到達します。いずれも同一の、事前承認済みの出力を生み出します。
+
+- <!--i:people--> **人が、アプリの中で。** `/pro`バッチグリッド:行を貼り付けるかインポートし、1行につき1件の完成したアセットを得て、zipをダウンロードします。デザインスキルもチケットも待ち時間も不要です。
+- <!--i:code--> **開発者が、コマンドラインから。** CLIは*同じ*エンジンと*同じ*レンダーパスをヘッドレスで実行するため、スクリプトや夜間パイプラインの中で1万行すべてにわたってツールを連続実行できます。ループの中で`lolly <tool> --field=…`を呼び出すだけで統合は完結します。
+- <!--i:cpu--> **システムやAIエージェントが、MCP経由で。** 同じツールをプログラムから操作でき、同じ忠実度で、さらに大きな規模にも対応します - 何千ものファイルが次々と生成されていっても、機械は飽きることがないからです。
+
+![新規インストール直後のバッチモード。ツールを待つ空の1行と、データが入る前から用意されたスプレッドシート全体とRenderボタン](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+
+デザイナーによって一度定められた1組のブランド制約。同一の事前承認済み出力へと至る3つの経路 - そして機械による経路がもっとも遠くまでスケールします。ファイルが次々と生成される間、決して疲れることがないからです。
+
+---
+
+## 全体像:レイヤーがどう組み合わさるか
+
+ここから先はすべてアーキテクチャの話です。この図はシステム全体を1つのビューにまとめたものです。上部ではツールが
+データであり、中央のエンジンはどのプラットフォームについても何も知らず、その下のシェルは
+1つの契約を実装し、カタログがコンテンツを供給します。
 
 ```
                 ┌─────────────────────────────────────────────┐
@@ -110,354 +123,349 @@ Lolly が何であるかを最もはっきり示してくれるのは機能一�
                 └─────────────────────────────────────────────┘
 ```
 
-### リポジトリレイアウト
+### リポジトリのレイアウト
+
+コンテンツはパックとしてマウントされます。`community/`、`docs/`、すべての`shells/*`、`services/*`の両方、そして`brands/suse`は、それぞれ独立したリポジトリであり、このリポジトリのgitサブモジュールとしてチェックアウトされます。親リポジトリが所有するのは`engine/`、`schemas/`、`scripts/`、`tests/`、`api/`、`brands/lolly-start/`、`profiles.json`です。チェックアウトコマンドとリポジトリ横断のワークフローについては[Build Guide » Getting the source](/info/build-guide.html)を参照してください。
 
 ```
 lolly/
-├── engine/           # プラットフォームに依存しないコア。オープンソース(MPL-2.0)。
+├── engine/           # Platform-agnostic core. Open source (MPL-2.0).
 │   └── src/
-│       ├── index.ts          # 公開サーフェス — loader、runtime、template、inputs、url-mode
-│       ├── loader.ts         # ツールファイルを取得・検証する
-│       ├── runtime.ts        # 5 ステップのライフサイクルを統括する
-│       ├── template.ts       # Handlebars によるハイドレーション + annotateTemplate
-│       ├── inputs.ts         # マニフェスト → ランタイムの入力モデル
-│       ├── url-mode.ts       # URL ↔ 入力状態の往復変換
-│       ├── validate.ts       # マニフェストの JSON Schema 検証
-│       ├── compose.ts        # 入れ子のツールレンダリング(composes)を解決する
-│       ├── embed.ts          # ポータブルな lolly.tools 埋め込み URL を解析する
+│       ├── index.ts          # public surface - loader, runtime, template, inputs, url-mode
+│       ├── loader.ts         # fetches and validates tool files
+│       ├── runtime.ts        # orchestrates the 5-step lifecycle
+│       ├── template.ts       # Handlebars hydration + annotateTemplate
+│       ├── inputs.ts         # manifest → runtime input model
+│       ├── url-mode.ts       # URL ↔ input state round-trip
+│       ├── validate.ts       # JSON Schema validation of manifests
+│       ├── compose.ts        # resolve nested tool renders (composes)
+│       ├── embed.ts          # parse portable lolly.tools embed URLs
 │       └── bridge/
-│           └── host-v1.ts    # TypeScript インターフェース — ブリッジ契約
+│           └── host-v1.ts    # type re-export of the @lolly-tools/core contract
 │
 ├── shells/
-│   ├── web/          # PWA — オンラインでホスト、主要な配信手段
+│   ├── web/          # PWA - hosted online; primary distribution
 │   │   └── src/
-│   │       ├── main.ts           # 起動、ルーティング
-│   │       ├── theme.ts          # テーマの適用/永続化(FOUC 防止)
-│   │       ├── bridge/           # HostV1 API の web 実装
-│   │       │   ├── index.ts      # ブリッジの各部品をまとめる
-│   │       │   ├── db.ts         # IndexedDB のセットアップ
-│   │       │   ├── state.ts      # host.state — 保存された編集内容
-│   │       │   ├── profile.ts    # host.profile — ユーザー情報
-│   │       │   ├── assets.ts     # host.assets — カタログ + ユーザーのアップロード
+│   │       ├── main.ts           # boot, routing
+│   │       ├── theme.ts          # theme apply/persist (FOUC prevention)
+│   │       ├── bridge/           # web implementations of HostV1 APIs
+│   │       │   ├── index.ts      # compose all bridge pieces
+│   │       │   ├── db.ts         # IndexedDB setup
+│   │       │   ├── state.ts      # host.state - saved edits
+│   │       │   ├── profile.ts    # host.profile - user details
+│   │       │   ├── assets.ts     # host.assets - catalog + user uploads
 │   │       │   ├── clipboard.ts  # host.clipboard
-│   │       │   ├── export.ts     # host.export — ラスタライズ/シリアライズ
-│   │       │   ├── net.ts        # host.net — 許可リスト化された fetch
-│   │       │   └── media.ts      # host.media — ライブカメラフレーム(onFrame)
+│   │       │   ├── export.ts     # host.export - rasterise/serialize
+│   │       │   ├── net.ts        # host.net - allowlisted fetch
+│   │       │   └── media.ts      # host.media - live camera frames (onFrame)
 │   │       ├── catalog/
-│   │       │   └── sync.ts       # 起動時のカタログ同期 + オフラインキャッシュ
-│   │       ├── styles/           # アプリ全体の CSS(app.css、picker.css、tokens.css)
+│   │       │   └── sync.ts       # boot-time catalog sync + offline cache
+│   │       ├── styles/           # app-wide CSS (app.css, picker.css, tokens.css)
 │   │       └── views/
-│   │           ├── gallery.ts    # ツールライブラリの一覧 + 保存状態カード
-│   │           ├── tool.ts       # 1つのツールをマウントする(入力 + キャンバス + アクション)
-│   │           ├── picker.ts     # アセットピッカー UI(host.assets から呼び出される)
-│   │           ├── profile.ts    # ユーザー情報エディタ
-│   │           ├── projects.ts   # /p — 保存済みセッションのフォルダー(入れ子構造。フォルダー/選択範囲の書き出し)
-│   │           └── free-canvas.ts # render.layout:"editor" ツール向けのフリーキャンバスエディタオーバーレイ
+│   │           ├── gallery.ts    # tool library listing + saved-state cards
+│   │           ├── tool.ts       # mounts one tool (inputs + canvas + actions)
+│   │           ├── picker.ts     # asset picker UI (invoked by host.assets)
+│   │           ├── profile.ts    # user details editor
+│   │           ├── projects.ts   # /p - folders of saved sessions (nested; folder/selection export)
+│   │           └── free-canvas.ts # free-canvas editor overlay for render.layout:"editor" tools
 │   │
-│   ├── cli/          # Node.js CLI — 同じエンジン、ヘッドレスな jsdom
+│   ├── cli/          # Node.js CLI - same engine, headless jsdom
 │   │   ├── bin/lolly.ts
 │   │   └── src/
-│   │       ├── run.ts    # loadTool → createRuntime → export → ファイル書き出し
-│   │       └── bridge.ts # CLI 版の HostV1 実装
+│   │       ├── run.ts    # loadTool → createRuntime → export → write file
+│   │       └── bridge.ts # CLI implementation of HostV1
 │   │
-│   ├── tui/          # 対話型ターミナルシェル(Ink)— CLI のブリッジを再利用
+│   ├── tui/          # Interactive terminal shell (Ink) - reuses the CLI bridge
 │   │   └── src/
-│   │       ├── main.tsx  # フルスクリーンアプリ:Gallery / Projects / Profile / ToolView
-│   │       └── bridge.ts # CLI ブリッジ + ~/.lolly 以下のディスク上状態
+│   │       ├── main.tsx  # full-screen app: Gallery / Projects / Profile / ToolView
+│   │       └── bridge.ts # CLI bridge + on-disk state under ~/.lolly
 │   │
-│   ├── tauri-desktop/ # ダウンロード可能なデスクトップアプリ
-│   └── tauri-mobile/  # iOS/Android アプリ
+│   ├── tauri-desktop/ # downloadable desktop app
+│   └── tauri-mobile/  # iOS/Android app
 │
-├── tools/            # プロファイル VIEW(gitignore 対象)— データであり、コードではない。以下のパックから統合される:
-│                     #   community/(公開、ブランド非依存、MPL)+ brands/<active>/tools(ブランド所有)。
+├── tools/            # profile VIEW (gitignored) - data, not code. Merged from packs:
+│                     #   community/ (public, brand-agnostic, MPL) + brands/<active>/tools (brand-owned).
+│                     #   A SELECTION follows - the mounted set depends on the profile.
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
 │   ├── code-canvas/
 │   ├── countdown-timer/
 │   ├── color-palette/
-│   ├── color-block/           # 型付き/異種混在のブロック(addMenu ディスクリミネーター)
+│   ├── color-block/           # typed/heterogeneous blocks (addMenu discriminator)
 │   ├── dynamic-layout/
-│   ├── tool-logo/         # "Logo" — 自動切り替えのブランドロゴ
-│   ├── street-map/        # オフラインのベクター市街区画地図
-│   ├── url-shot/          # "URL Screenshot"(capture ケイパビリティ)
-│   ├── strip-data/        # オンデバイスのメタデータ除去 — JPEG/PNG/SVG/PDF(ファイル入力 → クリーンなファイル出力)
-│   ├── compress-pdf/      # オンデバイスの PDF 圧縮 — 画像を再圧縮する(ファイル入力 → 小さいファイル出力)
-│   ├── brand-lockup/      # "Brand Lockup" — SUSE ロゴロックアップ;HarfBuzz によるテキストのパス化(wasm)
-│   ├── chart-creator/     # 構造化データから SVG チャートを生成
-│   ├── filter-duotone/    # 2 色の写真加工
-│   ├── filter-halftone/   # 写真 → ベクターのハーフトーン・ドットグリッド
-│   ├── filter-scanline/   # 写真 → レトロなポスタライズ・スキャンラインのグリッド(SVG / 透明ラスター)
-│   ├── meeting-planner/   # グローバルなタイムゾーン会議スケジューラー
-│   ├── calendar-ics/      # イベント → .ics カレンダーファイル + カード
-│   ├── digi-ad/           # "Animated Ad" — シーンから作るループバナー
-│   ├── event-name-badge/  # カンファレンスバッジ — qr-code を SVG として組み合わせる
-│   ├── wayfinding-signage/ # イベントサイネージ;方向ブロックがラベルテキストを自動調整
-│   ├── text-helper/       # オンデバイスのテキスト作業台(整形/デコード/ハッシュ/匿名化)
-│   ├── design/     # "Design" — 自由形式の WYSIWYG エディタキャンバス(render.layout: editor)
-│   ├── multi-page-pdf/    # 複数ページの PDF ドキュメント — 表紙、流し込み式のコンテンツブロック、裏表紙
-│   ├── diagram-builder/   # 組織図 / レイヤーケーキ / プロセス / サイクル / ピラミッド図
-│   ├── logo-wall/         # 多数のロゴ → 自動配置のグリッド
-│   ├── logo-lockup-partner/ # SUSE + パートナーの共同ブランドロックアップ
-│   ├── web-icon/          # テキストと色から作る favicon の .ico / png / svg
-│   ├── filter-posterize/  # 写真 → フラットにポスタライズされたベクター分版
-│   ├── filter-pixel-stretch/ # 写真 → ピクセルの引き伸ばしエフェクト
-│   ├── lottie-digi-ad/    # アニメーション Lottie 広告バナー
-│   └── pose-geeko/        # SUSE の Geeko マスコットにポーズを付ける — 印刷用の静止画
+│   ├── tool-logo/         # "Logo" - auto-switching brand logo
+│   ├── street-map/        # offline vector city-block maps
+│   ├── url-shot/          # "URL Screenshot" (capture capability)
+│   ├── strip-data/        # on-device metadata strip - JPEG/PNG/SVG/PDF (file in → clean file out)
+│   ├── compress-pdf/      # on-device PDF compressor - recompresses images (file in → smaller file out)
+│   ├── brand-lockup/      # "Brand Lockup" - SUSE logo lockups; HarfBuzz text-to-path (wasm)
+│   ├── chart-creator/     # SVG charts from structured data
+│   ├── filter/            # photo effects in one tool - halftone/scanline/posterize/voronoi (vector), duotone/pixel-stretch/imperfections (raster)
+│   ├── meeting-planner/   # global timezone meeting scheduler
+│   ├── calendar-ics/      # event → .ics calendar file plus a card
+│   ├── digi-ad/           # "Animated Ad" - looping banner from scenes
+│   ├── event-name-badge/  # conference badges - composes qr-code as an SVG
+│   ├── wayfinding-signage/ # event signage; directions blocks auto-fit label text
+│   ├── text-helper/       # on-device text workbench (format/decode/hash/de-identify)
+│   ├── design/     # "Design" - freeform WYSIWYG editor canvas (render.layout: editor)
+│   ├── multi-page-pdf/    # multi-page PDF document - cover, flowing content blocks, back page
+│   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
+│   ├── logo-wall/         # many logos → auto-packed grid
+│   ├── logo-lockup-partner/ # SUSE + partner co-brand lockup
+│   ├── web-icon/          # favicon .ico / png / svg from text + colours
+│   ├── lottie-digi-ad/    # animated Lottie ad banners
+│   └── pose-geeko/        # pose the SUSE Geeko mascot - print-ready stills
 │
 ├── catalog/
-│   ├── tools/index.json        # ツールレジストリ
+│   ├── tools/index.json        # tool registry
 │   └── assets/
-│       ├── index.json          # アセットレジストリ
-│       └── suse/...            # ロゴ、パレットなど
+│       ├── index.json          # asset registry
+│       └── suse/...            # logo, palette, etc.
 │
-├── schemas/          # tool.json、アセットエントリ、AssetRef の JSON Schema
-├── scripts/          # build-catalog-index.ts、checksum-assets.ts、validate-catalog.ts
-├── tests/            # エンジンのテスト
-└── docs/             # このファイル + 執筆ガイド + ポジショニング
+├── schemas/          # JSON Schema for tool.json, asset entries, AssetRef
+├── scripts/          # build-catalog-index.ts, checksum-assets.ts, validate-catalog.ts
+├── tests/            # engine tests
+└── docs/             # this file + authoring guides + positioning
 ```
 
 ---
 
-## プラットフォームの配信モデル
+## プラットフォーム配信モデル
 
-このプラットフォームは、web PWA、Tauri デスクトップ/モバイル、スクリプト可能な CLI、対話型の TUI という複数のサーフェス上で動作します。そのすべてが同じエンジンと同じツールファイルを使用します。
+このプラットフォームは複数のサーフェス - Web PWA、Tauriデスクトップ/モバイル、スクリプト可能なCLI、対話型のTUI - にまたがって動作します。そのすべてが同じエンジンと同じツールファイルを使用します。
 
-### Web (PWA) — 主要な配信手段
+### Web (PWA) - 主要な配信経路
+SUSEが管理するURLでホストされます。サービスワーカーがツールとアセットをキャッシュした後はオフラインでも動作します。ほとんどの従業員、ベンダー、パートナーがプラットフォームを利用するのはここです。アカウントは不要です - 状態はデバイスごとにIndexedDBに保存されます。
 
-![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&dark=1&filename=aud-web-split)
+Webシェルは1つのレイアウトからレスポンシブに対応します。デスクトップでは、ツールはサイズ変更可能なコントロールサイドバーがプレビューステージの横に並び、トラックパッドネイティブなキャンバスナビゲーションを備えます(Cmd/Ctrl+ホイールまたはピンチでカーソル位置を中心にズーム、Spaceまたは中クリックドラッグでパン、`0`/`1`/`+`/`−`キーとFit/%のHUD)。モバイル(640px以下)では、コントロールは上部固定のシートになり、ドラッググリップでpeek/half/fullにスナップし(タップでも切り替わり)、その下には静的なフルスクリーンプレビューが表示されます。フローティングの**Render**ボタンを押すと、**Export**コントロールがボトムシートのポップアップで開きます。タッチではプレビュー上でピンチズームとドラッグパンが使えます。レンダーパスとエクスポートコントロールはどちらでも同一です - 変化するのはクロームだけです。
 
-![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![デスクトップのスプリットビュー - マニフェストから生成されたコントロールが左側、ライブキャンバスが右側](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&dark=1&filename=aud-web-split)
 
-SUSE が管理する URL でホストされます。service worker がツールとアセットをキャッシュした後は、オフラインでも動作します。ほとんどの従業員、ベンダー、パートナーがこのプラットフォームを利用するのは、この形態です。アカウントは不要です——状態はデバイスごとに IndexedDB に保存されます。
+同じツールをスマートフォン幅で表示した場合も、維持すべき第2のレイアウトはありません。コントロールは上部のシートになり、プレビューが画面全体を占め、レンダーピルがその上に浮かびます。
 
-web シェルは単一のレイアウトからレスポンシブに対応します。デスクトップでは、ツールはリサイズ可能なコントロールサイドバーと、トラックパッドネイティブなキャンバスナビゲーション(Cmd/Ctrl + ホイール、またはピンチでカーソル位置を中心にズーム、Space キーまたは中ボタンドラッグでパン、`0`/`1`/`+`/`−` キー、Fit/% の HUD)を備えたプレビューステージが並ぶ構成になります。モバイル(640px 以下)では、コントロールは上部に固定されたシートとなり、ドラッググリップで peek/half/full を切り替えられ(タップでもトグル可能)、静的なフルスクリーンプレビューの上に重なります。フローティングの **Render** ボタンを押すと、ボトムシートのポップアップで **Export** コントロールが開きます。タッチ操作ではプレビュー上でピンチズームとドラッグパンが行えます。レンダリング経路と書き出しコントロールは両者で全く同一です——変わるのは chrome(外枠)のレイアウトだけです。
+![430px幅の画面に表示されたオーディオグラム - 上部にコントロールシート、下部に完成した正方形のアートワーク、そして浮遊するレンダーピル](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
-同じツールをスマートフォンの幅で見ても、維持すべき2つ目のレイアウトは存在しません。コントロールは上部のシートになり、プレビューが画面全体を占め、フローティングの Render ボタンがその上に浮かびます。
+**バッチモード（`/pro`）。** Webシェルには、1つまたは複数のツールにまたがる多数の行を一度にレンダリングする、スプレッドシート形式のバッチグリッド（`shells/web/src/pro/`）も搭載されています。CSV/TSVの相互変換とスプレッドシートからの貼り付け、行ごとのテンプレート/フォーマット/サイズ/単位/DPI、ライブプレビュー付きのブロックエディタサイドパネル、折りたたみ可能なエクスポート列、行ごとの「関連性」タグバー、左側のドラッグハンドルによる行の並べ替え、2段階の削除確認、保存されたバッチセッション、`.zip`ダウンロードを備えています。これが「大量コンテンツ生成」というポジショニングを支える1対多のサーフェスです。
 
-**バッチモード(`/pro`)。** web シェルには、1つまたは複数のツールにまたがって多数の行を一度にレンダリングする、スプレッドシート形式のバッチグリッド(`shells/web/src/pro/`)も搭載されています。CSV/TSV の往復変換に加えてスプレッドシートからの貼り付け、行ごとのテンプレート/フォーマット/サイズ/単位/DPI、ライブプレビュー付きのブロックエディタサイドパネル、折りたたみ可能な書き出し列、行ごとの「関連性」タグバー、左側のドラッグハンドルによる行の並べ替え、2段階の削除確認、保存済みバッチセッション、`.zip` ダウンロードに対応しています。これが「大量コンテンツ生成」というポジショニングを支える、1対多のサーフェスです。
-
-### Tauri デスクトップ / モバイル
-パッケージ化されたネイティブアプリ(Tauri により小さなフットプリント)。完全なオフライン可用性、CLI 依存ツール(PDF Smasher、Font Outliner)向けのファイルシステムアクセス、カメラアクセスを提供します。2026年半ばのツール強化が予定されています。
+### Tauriデスクトップ / モバイル
+Tauriによるパッケージ化されたネイティブアプリ（小さなフットプリント）。完全なオフライン利用、CLI依存ツール（PDF Smasher、Font Outliner）のファイルシステムアクセス、カメラアクセスを提供します。2026年半ばのツール強化が予定されています。
 
 ### CLI
-
 `lolly <tool-id> [--input=value ...] --output=file.png`
 
-デスクトップユーザーは、ターミナルから多くのツールを呼び出せます。CLI シェルは同じエンジンを読み込み、jsdom の DOM を生成し、同じレンダリング経路を実行して、ファイルを書き出します。トランスポートとして URL モードを使用しており——CLI は別実装ではありません。これにより、CLI と GUI の出力が同一であることが保証されます。
+デスクトップユーザーは、多くのツールをターミナルから実行できます。CLIシェルは同じエンジンを読み込み、jsdom DOMを作成し、同じレンダーパスを実行してファイルを書き出します。URLモードがトランスポートであり、CLIは別個の実装ではありません。これにより、CLIとGUIの出力が同一であることが保証されます。
 
 ```bash
 lolly qr-code --url=https://suse.com --output=qr.svg
 lolly quotes --quote="Ship it." --output=quote.png
-lolly                        # 利用可能なツールを一覧表示する
-lolly qr-code                # そのツールの入力を一覧表示する
+lolly                        # lists available tools
+lolly qr-code                # lists inputs for that tool
 ```
 
 ### TUI
 `npm run tui`
 
-CLI に対応する対話型版です。ツールの閲覧、入力の記入、プロジェクトの保存、書き出しを、GUI なしに、フルスクリーンでキーボード主体のターミナルアプリ(Ink 製)として行えます。そのホストブリッジは、DOM を必要としないフォーマット(SVG/EMF/EPS/HTML + テキスト/データ)については **CLI の実装を再利用**し、それに加えて `~/.lolly` 以下のディスク上状態と、オプトインのインラインプレビューを備えます。それを超える範囲には**ブラウザレンダリング層**があります。スコープを限定したヘッドレス Chromium(MCP サーバーがインストールするものと同一)が、ラスター/PDF/動画とライブ URL のキャプチャをオンデマンドで生成します——ビルド済みの web シェルのコピーを駆動するため出力は同一であり、そうしたフォーマットを最初に書き出すときにだけ起動します。そのため `url-shot`(クロップ + 色変更 + ベクター PDF/SVG 対応)や、あらゆるラスター/pdf ツールもターミナル内で実行できます。詳しくは [TUI ガイド](/info/tui.html) を参照してください。
+CLIに対応するインタラクティブな存在です。ツールの閲覧、入力の記入、プロジェクトの保存、エクスポートをGUIなしで行える、フルスクリーンでキーボード操作を前提としたターミナルアプリ（Ink製）です。そのホストブリッジは、DOMを使わないフォーマット（SVG/EMF/EPS/HTML + テキスト/データ）については**CLIの実装を再利用**し、さらに`~/.lolly`配下のオンディスク状態と、オプトインのインラインプレビューを追加します。それに加えて**ブラウザレンダー層**を備えています。これは、必要になったときにラスター/PDF/動画とライブURLキャプチャを生成する、スコープ限定のヘッドレスChromium（MCPサーバーがインストールするものと同一）で、Webシェルのビルド済みコピーを動かすことで出力を同一に保ち、そのフォーマットを最初にエクスポートするときにのみ起動します。そのため、`url-shot`（クロップ + 色の再設定 + ベクターPDF/SVG付き）をはじめ、あらゆるラスター/PDFツールもターミナル上で動作します。詳しくは[TUIガイド](/info/tui.html)を参照してください。
 
-どのサーフェスを使っていても、ダッシュボードの機能（Capabilities）タブは、このプラットフォームが自ら宣言している能力の全体像を示す地図です。グループごとに整理されて読める形になっており、ツールを1つも開く必要はありません。
+どのサーフェスを使っていても、ダッシュボードのCapabilitiesタブは、プラットフォームが実行できると宣言している内容の完全なマップであり、1つのツールも開かずにグループ化された形で読むことができます。
 
 ---
 
-## ツールのカテゴリ
+## ツールカテゴリ
 
-![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=aud-utilities)
+ツールは、ギャラリーでのグループ化のために、マニフェスト内で`category`がタグ付けされています。
 
-ツールはギャラリーでのグルーピングのために、マニフェスト内で `category` によってタグ付けされます。
+行はギャラリーのセクション順に並んでいます。`utility`セクションは、（将来追加されるものも含め）他のすべてのカテゴリの後、ギャラリー内で常に**最後**に表示されます - これはオンデバイスの「Offline Utilities」ドロワーです。
 
-各行はギャラリーのセクション順に並んでいます。`utility` セクションは常にギャラリーの**最後**に表示されます(将来追加されるものを含む、他のすべてのカテゴリの後)——これはオンデバイスの「Offline Utilities」ドロワーです。
-
-| カテゴリ | 提供済みツール | 計画中 |
+| カテゴリ | 例 | 予定 |
 |---|---|---|
-| `everyone` | QR Code Generator、Quote Card、Email Signature、Code Canvas、Color Block、Dynamic Layout、Logo、Web Icon Maker | Employee Image Stationery |
-| `designer` | Brand Lockup、Chart Creator、Street Map、Animated Ad、Multi-Page PDF、Diagram Builder、Logo Lockup: Grid (NASCAR)、Logo Lockup: Partner、Filter: Duotone、Filter: Halftone、Filter: Scanline、Filter: Posterize Bitmap、Filter: Pixel Stretch | Font Outliner |
-| `event` | Meeting Planner、Event Name Badge、Wayfinding Signage、Calendar ICS | Event Stationery、Bulk Name Badges、Room Agenda Cards |
-| `product` | — | CVE Alert、Product Release Announcement、Blog OG Image |
-| `utility` | Countdown Timer、Color Palette、URL Screenshot、Strip Hidden Data、Text Helper、Compress PDF、Design | 単位/フォーマット変換ツール、その他のオンデバイス・プライバシーユーティリティ |
+| `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
+| `designer` | Brand Lockup, Design, Chart Creator, D3 Chart Studio, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | Event Stationery, Bulk Name Badges, Room Agenda Cards |
+| `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
+| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Unit/format converters, more on-device privacy utilities |
 
-ツールは `status` によっても分類されます:`official`(ブランド承認済み、透かしなし)、`community`(外部からの貢献)、`experimental`(書き出しに透かしが入る)。Dynamic Layout、URL Screenshot、Logo Lockup: Grid (NASCAR)、Filter: Posterize Bitmap、Diagram Builder は現在 `experimental` ステータスであり、Web Icon Maker と Design は `community` ツールとして提供されています。
+これらのセルは**在庫一覧ではなく例**です。どのツールが存在するかは、このページではなく、マウントしたプロファイルのプロパティです。ブランドパックは独自のツールを追加でき、出荷したくないコミュニティツールを除外することもできます。`catalog/tools/index.json` - マニフェストから生成され、ギャラリーが実際に読み込むレジストリ - が正式なリストです。あるプロファイルが何をマウントしているかを数えるには、ここに書かれた数を信用するのではなく、マニフェスト（`ls community/*/tool.json brands/*/tools/*/tool.json`）を数えてください。（2つのパックに存在するツールidは、勝ったパックから1回だけマウントされます。）
 
-**Design** は、`render.layout: "editor"` のフリーキャンバスモード上に構築された最初のツールです——テキスト・図形・画像のボックスをドラッグ、リサイズ、回転、スナップできる、chrome のない直接操作型のサーフェスであり、他のあらゆるツールと同じレンダリング経路を通じて書き出されます。
+ツールはステータスによっても分類されます: `official`（ブランド承認済み、透かしなし）、`community`（外部からの貢献）、`experimental`（透かし入りエクスポート）。ライブラリの大部分は`official`ですが、新しめのスタジオやキャプチャ系ツールは、安定するまで`community`または`experimental`に位置することが多くなっています。どのサーフェスにもバッジが表示されるため、読者は開く前に自分が何を手に取っているかがわかります - そして、上のカテゴリのセルと同様、ステータスごとの所属はここで列挙するには変化が速すぎます。ギャラリーまたは生成されたインデックスから確認してください。
 
-**Strip Hidden Data** は最初の**オンデバイスユーティリティ**(`privacy: "on-device"`)です。*あなた自身*が指定したファイルを受け取り、ブラウザ内だけで完全に処理して、きれいなコピーを返すコンテンツ変換ツールです——アップロードされることも、透かしが入ることも、来歴が刻まれることもありません。**Text Helper** は2番目のオンデバイスユーティリティで、日常的な「ウェブサイトに貼り付けるだけ」の作業(JSON 整形、JWT デコード、Base64、URL エンコード/デコード、SHA ハッシュ化)のための作業台です。**Compress PDF** は3番目で、画像を再圧縮することで PDF を軽量化します——これも完全にオンデバイスで行われます。この3つはいずれも「お使いのデバイス上で実行——アップロードは一切ありません」というバッジ文言を掲げています。これは、機密ファイルを単機能のウェブサイトに渡す代わりとなる、プライバシーユーティリティというカテゴリの始まりです。
+**Design**は、`render.layout: "editor"`のフリーキャンバスモードで構築された最初のツールです - テキスト、図形、画像のボックスをドラッグ、リサイズ、回転、スナップできる、UI装飾を排した直接操作サーフェスであり、他のすべてのツールと同じレンダーパスでエクスポートされます。
 
-> 注:`category` と `status` は、各 `tool.json` から `catalog/tools/index.json`(ギャラリーが読み込むレジストリ)へと非正規化されます。信頼できる唯一の情報源はマニフェストであり、インデックスは `npm run build:catalog` によって**生成**されます。コミットされたインデックスがマニフェストからずれている場合、`npm run validate:catalog` は CI を失敗させます。
+**Strip Hidden Data**は、最初の**オンデバイスユーティリティ**（`privacy: "on-device"`）です。*あなた*が提供したファイルを受け取り、完全にブラウザ内で処理してクリーンなコピーを返すコンテンツ変換ツールで、アップロードされることも、透かしが入ることも、来歴（プロビナンス）が刻まれることもありません。**Text Helper**が2つ目です - JSON整形、JWTデコード、Base64、URLエンコード/デコード、SHAハッシュ化など、日常的にウェブサイトへ貼り付ける作業のためのオンデバイスワークベンチです。**Compress PDF**が3つ目で、画像を再圧縮することでPDFを縮小します。これも完全にオンデバイスです。このマーカーとバッジテキスト「Runs on your device - nothing is uploaded」は、現在、変換系ツール全体をカバーしています: Strip Hidden Data、Text Helper、Compress PDF、**Convert Image**（HEIC/TIFF/AVIF → WebP/JPG/PNG）、**Convert Font**、**Redact**（画像、SVG、PDFの特定領域を破壊）、**Prompt to Image**、そしてプロファイルがマウントしている場合は**Rebrand a Deck**（`.pptx`をその場でリテーマ）です。これは、機密ファイルを単機能のウェブサイトに渡す代わりとなる、プライバシーユーティリティのカテゴリです。
+
+![Utilitiesドロワー - すべてのカードが、すでに持っているファイルを変換するツールです](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=aud-utilities)
+
+> 注: `category`と`status`は、各`tool.json`から`catalog/tools/index.json`（ギャラリーが読み込むレジストリ）に非正規化されています。マニフェストが唯一の正となる情報源であり、インデックスは`npm run build:catalog`によって**生成**され、コミット済みのインデックスがマニフェストとずれている場合、`npm run validate:catalog`はCIを失敗させます。
 
 ---
 
-## アーキテクチャ上の確定事項
+## アーキテクチャ上のコミットメント
 
-これらの決定事項は確定済みです。いずれを変更するにも大がかりな作業が必要になります——これらはコードベース内の他のあらゆる決定を形作っています。
+これらの決定は確定済みです。いずれかを変更することは大掛かりな作業であり、コードベース内の他のあらゆる決定を形作っています。
 
-### 1. 宣言的なツールと、命令型のエスケープハッチ
+### 1. 宣言的なツール、命令的な逃げ道付き
 
-![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-street-map-controls)
+ツールは、マニフェスト（`tool.json`）+ テンプレート（`template.html`）+ オプションの`hooks.js`で構成されます。
 
-ツールとは、マニフェスト(`tool.json`)+ テンプレート(`template.html`)+ 任意の `hooks.js` から成るものです。
+**入力を宣言するのはマニフェストです。** テンプレートではありません。入力はHandlebarsのトークンから推測されることはありません。マニフェストが契約であり、テンプレートは`{{id}}`によって名前付き変数を利用します。
 
-**入力を宣言するのはマニフェストです。** テンプレートではありません。入力は Handlebars のトークンから推論されることはありません。マニフェストが契約であり、テンプレートは `{{id}}` によって名前付きの変数を利用します。
+![Street Mapのコントロールスタック - 都市ドロップダウン、テーマ選択、太さのスライダー、色のトリガー、そのすべてがマニフェストの1行から描画されています](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-street-map-controls)
 
-**フックは任意です。** ほとんどのツールは純粋に宣言的であり、マニフェスト + テンプレートだけで十分です。計算された値を必要とするツール(QR エンコーディング、チャートデータの整形など)は、名前付きのライフサイクル関数(`onInit`、`onInput`、`onFrame`——モーションリアクティブなツール向けのフレームごとのライブカメラフック——`beforeRender`、`beforeExport`、`afterExport`、そして Strip Hidden Data のようなオンデバイスユーティリティが使う、ファイル入力/ファイル出力の変換経路である `exportFile`)を公開する `hooks.js` を提供します。ホストは `new Function('host', …)` を通じてフックを読み込み、ケイパビリティブリッジをクロージャスコープとして注入します。これは**ポータビリティの契約であって、セキュリティサンドボックスではありません**。フックはページのレルム内で実行され続けるため、ブラウザシェルでは `window`/`fetch`/`document` に*到達できてしまいます*——`host.*` はサポートされたポータブルなサーフェスであって、強制される境界ではありません。非同期のフックの結果には時間制限が設けられており(onInit は 5 秒、onInput は 2 秒、それ以外は 5 秒)、遅延した結果は破棄されます。暴走した*同期*フックは中断できません。したがって、信頼できないサードパーティ製のフックコードは、Worker による分離が実現するまで安全に実行できません。
+**フックはオプションです。** ほとんどのツールは純粋に宣言的で、マニフェスト+テンプレートだけで十分です。計算された値を必要とするツール（QRエンコード、チャートデータの整形）は、名前付きのライフサイクル関数（`onInit`、`onInput`、`onFrame` - モーションリアクティブなツール向けのフレームごとのライブカメラフック - `onLevel`、`beforeExport`、`afterExport`、`exportFile` - Strip Hidden Dataのようなオンデバイスユーティリティが使うファイルイン/ファイルアウトの変換パス - および、独自の深いラスターを持つツール向けの`exportStill`）を公開する`hooks.js`を提供します。ホストは、ケイパビリティブリッジをクロージャースコープとして注入しつつ、`new Function('host', …)`経由でフックを読み込みます。これは**ポータビリティの契約であり、セキュリティサンドボックスではありません**。フックはページのレルム内で実行され続けるため、ブラウザシェルでは`window`/`fetch`/`document`に*到達できてしまいます* - `host.*`はサポートされたポータブルなサーフェスであり、強制される境界ではありません。非同期フックの結果には時間制限があり（`onInit` 5秒、`onInput` 2秒、`beforeExport`/`afterExport` 5秒、`exportFile`/`exportStill` 10秒）、遅延した結果は破棄されますが、暴走する*同期*フックはプリエンプトできません。したがって、信頼できないサードパーティのフックコードは、Worker分離が実装されるまで安全に実行できません。
 
-これが重要な理由は次の通りです。宣言的なツールは非エンジニアでも作成できます。もしすべてのツールが web アプリだったなら、「実用テンプレートを作成・保守できるスキルが限られている」というリスクが、恒久的なボトルネックになってしまいます。
+これが重要な理由: 宣言的なツールは、開発者でなくても作成できます。もしすべてのツールがWebアプリだったなら、「主力となるテンプレートを作成・保守するスキルが限られている」というリスク上の注記が、恒久的なボトルネックになってしまいます。
 
-### 2. ツールとアセットはデータであり、同梱されたコードではない
+### 2. ツールとアセットはバンドルされたコードではなくデータである
 
-web と Tauri のアプリは、起動時に既知の URL からツールとアセットのカタログを取得し、ローカルにキャッシュして、そこにあるものに対して動作します。**新しいイベントタイルや季節性のアセットを追加するのに、アプリのリリースは必要ありません。**
+WebアプリとTauriアプリは、起動時に既知のURLからツールとアセットのカタログを取得し、ローカルにキャッシュして、そこにあるものに対して動作します。**新しいイベントタイルや季節のアセットを追加するのに、アプリのリリースは不要です。**
 
-アセットのバイト列は SHA-256 でチェックサムされ、CDN ポイズニングを防ぎます。アセットの `id` + `version` がキャッシュの無効化を駆動します。
+アセットのバイトはCDNポイズニングを防ぐためにSHA-256でチェックサム化されています。アセットの`id` + `version`がキャッシュの無効化を駆動します。
 
-### 3. ケイパビリティブリッジこそが、ツールから見える唯一の API
+### 3. ケイパビリティブリッジがツールから見える唯一のAPIである
 
-ツールは、自身のテンプレート領域の外側で DOM に触れることはなく、`fetch` を直接呼び出すこともなく、ファイルシステムを読み取ることもありません。ツールが呼び出すのは、バージョン管理された `host.*` メソッドです。このブリッジは `engine/src/bridge/host-v1.ts` で定義されています。
+ツールは、テンプレート領域の外でDOMに触れることも、`fetch`を直接呼び出すことも、ファイルシステムを読み取ることも一切ありません。バージョン管理された`host.*`メソッドを呼び出すだけです。この契約の正規の定義は`packages/core/src/host-v1.ts`にあります - これはツール作者向けSDKである`@lolly-tools/core`であり、サードパーティがエンジンに依存せずにこれを利用して開発できるようにするためのものです。`engine/src/bridge/host-v1.ts`はそれを型として再エクスポートしたものであり、エンジンおよびシェルのコードは引き続きそのパスから変更なくインポートします:
 
-| ブリッジ API | できること |
+| ブリッジAPI | 機能 |
 |---|---|
-| `host.profile` | ユーザーのファーストネーム、メール、顔写真、都市など。`bindToProfile` を通じて入力を事前入力する。 |
-| `host.assets` | カタログのクエリ、アセットの解決、ホストが提供するピッカー UI。 |
-| `host.state` | 入力スロットの保存/読み込み。web では IndexedDB、Tauri ではファイルシステム、CLI ではメモリを使用。 |
-| `host.clipboard` | テキストまたは画像をクリップボードに書き込む(プラットフォームごとのフォールバック付き)。 |
-| `host.export` | レンダリング対象をラスタライズまたはシリアライズする。experimental ツールには透かしを適用する。 |
-| `host.net` | 許可リスト化された fetch——ツールが `"network"` ケイパビリティを宣言している場合にのみ利用可能。(現時点でこれを使用している提供済みツールはない。) |
+| `host.profile` | ユーザーの名、メール、顔写真、市区町村など。`bindToProfile`経由で入力欄を事前入力します。 |
+| `host.assets` | カタログのクエリ、アセットの解決、ホスト提供のピッカーUI。 |
+| `host.state` | 入力スロットの保存・読み込み。Webでは IndexedDB、Tauriではファイルシステム、CLIではメモリ。 |
+| `host.clipboard` | テキストまたは画像をクリップボードに書き込みます（プラットフォームごとのフォールバック付き）。 |
+| `host.export` | レンダーターゲットをラスタライズまたはシリアライズします。experimentalなツールには透かしを適用します。 |
+| `host.net` | 許可リスト方式のfetch - ツールが`"network"`ケイパビリティを宣言している場合にのみ利用可能です。（現在出荷されているツールでこれを使用しているものはありません。） |
 
-任意で追加的なサーフェスは、シェルがそれを提供する場合にのみ現れます。そのうち2つは**ケイパビリティによってゲートされ**、ツールが対応するフラグを宣言した場合にのみ公開されます:`host.compose`(他のツールのレンダリングを埋め込む——`compose`)と `host.capture`(URL Screenshot 向けのページキャプチャ——`capture`)です。残りは**機能検出**方式で、シェルが提供できる場合には常に存在します:`host.text`(HarfBuzz WASM によるテキストのパス化。それに依存するツールには `wasm` ケイパビリティのフラグが立つ)、`host.pdf`(PDF の解析/圧縮。Strip Hidden Data と Compress PDF が使用)、`host.tokens`(DTCG デザイントークン)です。宣言可能なケイパビリティは次の通りです:`network`、`filesystem`、`clipboard`、`camera`、`ffmpeg`、`wasm`、`capture`、`compose`。
+オプションの追加的なサーフェスは、シェルがそれらを提供する場合にのみ現れます。一部は**ケイパビリティによってゲートされて**おり、ツールが対応するフラグを宣言している場合にのみ公開されます: `host.compose`（他のツールのレンダーを埋め込む - `compose`）、`host.capture`（URL Screenshot用のページキャプチャ - `capture`）、`host.recorder`（録画系ツール向けのマイク/カメラ/画面キャプチャ - `microphone` / `camera` / `screen`）。残りは**機能検出方式**で、シェルが提供できる場合には常に存在し、提供できないシェルに対してはツール側がフォールバックを保持します。
 
-同じツールがブラウザ、Tauri、ヘッドレスな CLI で動作するのは、それぞれのシェルがこのインターフェースを実装しているからです——ツール自身は、自分がどこで動いているかを知ることはありません。
+カバー範囲を示すための、主要なサーフェスをいくつか紹介します - [Host API](/info/host-api.html)がそのすべてを文書化しており、`packages/core/src/host-v1.ts`が契約そのものです:
 
-このブリッジはバージョン管理されています。メソッドの追加はマイナーバージョンです。削除やシグネチャの変更はメジャーバージョンの引き上げになります。v2 がリリースされても、v1 は動作し続けなければなりません。
+| サーフェス | 追加バージョン | 何を追加するか |
+|---|---|---|
+| `host.tokens` | 1.0 | DTCGデザイントークン - ブランド自身のプリミティブ |
+| `host.text` | 1.0 | HarfBuzz WASM経由のテキスト→パス変換（`wasm`ケイパビリティが、これに依存するツールにフラグを立てます） |
+| `host.media` | 1.4 | `onFrame`フックを駆動するライブカメラフレーム。プログレッシブエンハンスメントであり、意図的に`camera`フラグによるゲートは*かけていません* - そのようなツールも通常の静止画ツールとして動作します |
+| `host.color` | 1.40 | 知覚的な色の計算: ΔEOK、WCAG + APCAコントラスト、OKLabランプ、クラスブレイク、カテゴリカルパレット、ハーモニースキーム（1.60）、CSS Color 4のミキシングとグラデーションベイキング（1.68）。純粋かつ同期的 - シェルは何も実装せず、エンジンの`makeColorApi()`をアタッチするだけなので、ずれが生じ得ません |
+| `host.images` | 1.60 | バイトのオンデバイスでのデコード/リサイズ/再エンコード - 変換パス（HEIC → JPEG、WebPへの圧縮、ダウンスケール）。Webシェルでは遅延ファサードとして提供されるため、HEICデコーダーが起動チャンクに含まれることはありません |
+| `host.geom` | 1.64 | 正確なベクター幾何学: パスのブール演算、オフセット、ストローク→フィル変換、スプラインの低次化、簡略化、ヒットテスト。こちらも純粋、同期的で、エンジンからアタッチされます（`makeGeomApi()`）。失敗は決してスローされず、常に*返り値として*返されます |
 
-### 4. アセット ID は永久に不変
+残りも同じルールに従っており、それらと並んで文書化されています: オンデバイスでのドキュメント編集のための`pdf`（1.8）と`pptx`（1.58）、クリップ解析とオンデバイスTTS/文字起こしのための`audio`（1.71）と`speech`（1.96）、MilkDropプレースホルダー契約のための`viz`（1.72）、ディープビットおよびレイヤー化ビットマップ出力のための`codec`（1.100）と`layers`（1.102）、オンデバイスモデルのための`upscale`（1.101）と`matte`（1.103）、独自のピクセル処理を行うフックのための`raster`（1.105）、エクスポートセーフな矢印のための`connectors`（1.106）、完成したバイト列に署名するための`c2pa`（1.85）。数は増えていきますが、ルールは変わりません。
 
-`suse/logo/primary` は契約です。一度公開されたら:
-- ID は決して変更されず、再利用されることもありません。
-- バイト列に変更があれば → マニフェストの `version` を上げます。
-- 新しいアセットに置き換えられた場合 → `deprecated: true` を設定し、必要に応じて `replacedBy` を設定します。
-- 既存の参照は常に解決できます。
+宣言可能なケイパビリティは次のとおりです: `network`、`filesystem`、`clipboard`、`camera`、`microphone`、`screen`、`ffmpeg`、`wasm`、`capture`、`compose`。（1.54で追加された`screen`は、`host.recorder`経由の画面キャプチャで、ユーザーがブラウザネイティブのUIで画面/ウィンドウ/タブを選択します。ツール自身が指定したURLをラスタライズする`capture`とは異なります。）
 
-これにより、保存されたツールの状態や URL で共有されたリンクは、何年経っても有効であり続けます。
+同じツールがブラウザ、Tauri、ヘッドレスCLIで動作するのは、各シェルがこのインターフェースを実装しているためです - ツール自身は、自分がどのシェルの中にいるかを一切知りません。
 
-### 5. URL モードは第一級の機能
+ブリッジはバージョン管理されています。メソッドの追加はマイナーバージョンです。削除やシグネチャの変更はメジャーバージョンアップとなります。v2がリリースされても、v1は動作し続けなければなりません。
 
-![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-url-mode-qr)
+### 4. アセットIDは永久に不変である
 
-![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-url-palette)
+`suse/logo/primary`は契約です。一度公開されると:
+- IDは決して変更されず、再利用もされません。
+- バイトが変わる場合 → マニフェストの`version`を上げます。
+- 新しいアセットに置き換わる場合 → `deprecated: true`を設定し、必要に応じて`replacedBy`を設定します。
+- 既存の参照は常に解決されます。
 
-あらゆる入力は URL パラメータとして表現可能でなければなりません:
+これにより、保存されたツールの状態やURLで共有されたリンクは、何年経っても有効なままです。
+
+### 5. URLモードはファーストクラスである
+
+すべての入力は、URLパラメータとして表現できなければなりません:
 
 ```
 lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H
 ```
 
-CLI モードは、別のトランスポート上で動く URL モードです——CLI シェルは argv から URL 状態オブジェクトを組み立て、**同じ**エンジンパイプラインを実行します。レンダリング経路は1つだけです。CLI は別実装ではないため、GUI からずれることがありません。
+![そのリンク単体で、他に何もなくても、完成したアセットになります](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-url-mode-qr)
 
-`url-mode.ts` が往復変換(パースとシリアライズ)を担います。予約パラメータ(ツールへの入力としては決して渡されません):`format`、`export`、`copy`、`slot`、`output`、`filename`、`_v`、`z`(パックされた状態——「Shortest link」トークン)、`width`/`w`、`height`/`h`、`unit`、`dpi`、`profile`、`password`、`bleed`、`marks`、`full`、`options`、`nostage`。URL モードにおけるアセット入力はその `id` によってシリアライズされ、ランタイムはハイドレーション前に `host.assets.get()` を通じてそれを解決します。`width`/`height` は `unit`(デフォルトは `px`。他に `mm`/`cm`/`in`/`pt`/`pc`)の値です。物理単位を使う場合、`dpi` がラスター解像度を設定します。これらはキャンバスのドキュメントサイズを決定し、書き出しの寸法パネルを事前入力します。
+CLIモードは、別のトランスポート上で動くURLモードです - CLIシェルはargvからURL状態オブジェクトを構築し、**同じ**エンジンパイプラインを実行します。レンダーパスは1つしかありません。CLIは別個の実装ではないため、GUIからずれることはありません。
 
-すべての入力がリンクに乗って運ばれるため、パラメータを1つ変えれば、それは別の完成アセットになります。パレット全体が、1つのシードカラーと配色の調和、そしてステップ数だけから生まれます。
+`url-mode.ts`が往復変換（パースとシリアライズ）を処理します。**予約済みパラメータ**の集合は、入力としてツールに渡されることは決してありません: 出力コントロール（`format`、`export`、`copy`、`filename`、`width`/`w`、`height`/`h`、`unit`、`dpi`）、印刷と来歴のダイヤル（`bleed`、`marks`、`profile`、`password`、`c2pa`、`imprint`、`durable`、`meta`、`hdr`、`depth`、`cuts`）、状態キャリア（`template`、「Shortest link」のパックされたトークンである`z`、そしてパスワードで暗号化された同等物である`zx`）です。`engine/src/url-mode.ts`内の`RESERVED`集合が正であり、テストによって固定されています。[URL Mode](/info/url-mode.html)がそのすべて、ここに列挙されていないわずかな項目も含めて文書化しています。URLモードでのアセット入力は、その`id`によってシリアライズされます。ランタイムはハイドレーション前に`host.assets.get()`経由でそれらを解決します。`width`/`height`は`unit`（デフォルトは`px`、他に`mm`/`cm`/`in`/`pt`/`pc`も可）での値です。物理単位を使う場合、`dpi`がラスター解像度を設定します。これらはキャンバスのドキュメントサイズを設定し、エクスポート寸法パネルを事前入力します。
 
-### 6. ストレージは直接ではなくブリッジを経由する
+すべての入力がリンクの中を伝わるため、パラメータを変えれば、それは別の完成アセットになります。このパレット全体は、1つのシード色、1つのハーモニー、1つのステップ数だけでできています:
 
-web シェル:IndexedDB。Tauri:ファイルシステム。CLI:インメモリ。ツールから見えるのは `host.state.save(slot, data)` と `host.state.load(slot)` だけです。`localStorage` は使用されません——容量が小さすぎ、blob を保持できないためです。
+![4色相にわたる9段階、すべてリンクに含まれる単一のシード色から生成されています](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-url-palette)
 
-ユーザーはツールごとに複数の名前付き編集スロットを保存し、後で各セッションに戻ることができます。アカウント作成は不要で、状態はデバイスごとに保持されます。ブリッジが唯一の接点であるため、このデバイスごとの状態は*持ち運び可能*でもあります。`shells/web/src/data-transfer.ts` は `host.profile`/`host.state`/`host.assets` を通じてすべてを読み出し、他のどのインストール先でもインポートできる単一の `lolly-backup` zip にまとめます——これはサーバーを必要としない、「新しいデバイスへ移行する」というオフラインの答えです(完全な仕様:`docs/data-transfer.md`)。SUSE ID 統合(マルチデバイス同期)は、この上に構築される将来のマイルストーンです。
+### 6. ストレージは直接ではなくブリッジ経由
 
-### 7. 成熟度タグが「ブランド承認済み」リスクに構造的に答える
+Webシェル: IndexedDB。Tauri: ファイルシステム。CLI: インメモリ。ツールが目にするのは `host.state.save(slot, data)` と `host.state.load(slot)` のみです。`localStorage` は使用されません - 容量が小さすぎ、blobを保持できないためです。
 
-すべてのツールは、マニフェスト内で `status: official | community | experimental` を宣言します。ギャラリーはステータスによって並び替えられます。experimental のツールは、書き出しに自動的に透かしが入ります——透かしを適用するのはツールではなく `host.export.render` であるため、official ではないツールの作者がこれをオプトアウトすることはできません。
+ユーザーはツールごとに複数の名前付き編集スロットを保存し、後で各セッションに戻ることができます。アカウント作成は不要で、状態はデバイス単位です。ブリッジが唯一の接点であるため、そのデバイス単位の状態も*可搬*です。`shells/web/src/data-transfer.ts` は `host.profile`/`host.state`/`host.assets` を通じてすべてを読み出し、単一の `lolly-backup` zipにまとめます。これは他の環境でもインポートでき、サーバーを必要としない「新しいデバイスへの移行」のオフライン向けの答えです(完全な仕様は `docs/data-transfer.md` を参照)。SUSE ID連携(マルチデバイス同期)はこの上に構築される今後のマイルストーンです。
 
-これは、どのツールを使ってもブランド承認を意味すると受け取られてしまうという認識上のリスクに対する、構造的な答えです。プロセス面での対策(レビューキュー、SUSE ID によるゲーティング)は、この上に重ねられます。
+### 7. 成熟度タグが「ブランド承認済み」というリスクに設計上答える
 
-### 8. ツールの入力はマニフェストを通じて型付けされる(アセットを含む)
+すべてのツールはマニフェストで `status: official | community | experimental` を宣言します。ギャラリーはステータスでソートされます。実験的なツールは自動的にエクスポートに透かしが入ります - 透かしは `host.export.render` によって適用されるため、公式でないツール作成者がオプトアウトすることはできません。
 
-入力は `type` を宣言します:`text`、`longtext`、`number`、`boolean`、`color`、`select`、`asset`、`date`、`time`、`datetime-local`、`url`、`profile`、`blocks`、`vector`、`file` です。ホストはマニフェストから型ごとの汎用コントロールをレンダリングします——ツール側がコントロール用のコードを書くことは一切ありません。中でも次の3つは、他よりも重要な意味を持ちます:
+これは、任意のツールを使うことがブランド承認を意味してしまうという認識上のリスクへの構造的な答えです。プロセス面の答え(レビューキュー、SUSE IDによるゲーティング)はこの上に重ねられます。
 
-- **`asset`**(`filter` と `allowUpload` を伴う)は、グローバルなアセットシステムへの橋渡しです。`allowUpload: false` は、スポンサータイルのロゴのようにライブラリアセットのみが許可される場面で、ブランドを強制するためのレバーです。ユーザーのアップロードはライブラリアセットと同じ `AssetRef` の形状を使うため、ツールはそれらを同一に扱えます。
-- **`blocks`** は繰り返しのフィールドグループです——1つの入力の中にあるミニテーブルで、サイドパネルで編集され、型付き/判別可能な追加メニューとブロックごとのアセットフィールドを持ちます。キャンバス上でレンダリングされたブロックをクリックすると、そのブロックの行にフォーカスします。`meeting-planner`、`chart-creator`、`event-name-badge`、`wayfinding-signage`、`color-block`、`digi-ad` で使用されています。
-- **`vector`** は、固定された数値の集合(例えば変形情報)を1つの複合コントロールにまとめます。**`file`** は、`strip-data` や `compress-pdf` のようなオンデバイス変換ユーティリティのために、ユーザー自身のファイルをメモリ上のバイト列として保持します。
+### 8. ツール入力はマニフェストを介して型指定される(アセットも含む)
 
-### 9. テンプレートはロジックレス(EJS ではなく Handlebars)
+入力は `type` を宣言します: `text`、`longtext`、`number`、`boolean`、`color`、`select`、`asset`、`date`、`time`、`datetime-local`、`url`、`blocks`、`vector`、`table`、`file`。ホストはマニフェストから型ごとに汎用コントロールをレンダリングします - ツール側はコントロールのコードを一切書きません。(ユーザーのプロフィールからの事前入力は型ではなく、どの入力も `bindToProfile` を持てます。)このうち3つは他より重要です:
 
-Handlebars は、EJS ではなく意図的に選ばれました:
-- ロジックレスであること。テンプレートは非エンジニアでも作成できます。
-- デフォルトで安全であること。`{{x}}` は HTML エスケープされ、`{{{x}}}` はオプトインの生出力です。
-- テンプレート内に任意の JS がないため、テンプレートごとの XSS 監査対象が発生しません。
+- **`asset`**(`filter` と `allowUpload` を伴う)はグローバルなアセットシステムへの橋渡しです。`allowUpload: false` は、ライブラリのアセットのみを許可すべきスポンサータイルのロゴのようなケースで使う、ブランド強制のためのレバーです。ユーザーのアップロードはライブラリのアセットと同じ `AssetRef` 形式を使うため、ツールはどちらも同一に扱えます。
+- **`blocks`** は繰り返しのフィールドグループ - 1つの入力内にあるミニテーブルで、サイドパネルで編集され、型付き/判別付きの追加メニューとブロックごとのアセットフィールドを持ちます。キャンバス上でレンダリングされたブロックをクリックすると、そのブロックの行にフォーカスします。`meeting-planner`、`chart-creator`、`event-name-badge`、`wayfinding-signage`、`color-block`、`digi-ad` で使用されています。
+- **`vector`** は固定の数値集合(例えば変換行列)を1つの複合コントロールにまとめます。**`file`** は、デバイス上の変換ユーティリティ(例えば `strip-data` や `compress-pdf`)向けに、ユーザー自身のファイルをメモリ上のバイト列として保持します。
 
-ロジックは `hooks.js` に置かれ、そこでは明示的でレビュー可能です。利用できる Handlebars ヘルパー:`{{default}}`、`{{upper}}`、`{{lower}}`、`{{eq}}`、`{{markdown}}`、`{{asset ref}}`、`{{asset ref "property"}}`(加えて、`.ics`/`.vcf`/`.csv` の姉妹テンプレートが使うデータフォーマット用ヘルパー `icsStamp`/`rfcText`/`csvCell`)。
+### 9. テンプレートはロジックレス(EJSではなくHandlebars)
 
-### 10. ツールはツールを組み合わせる
+HandlebarsはEJSよりも意図的に選ばれました:
+- ロジックレス。テンプレートは非開発者でも作成できます。
+- デフォルトで安全。`{{x}}` はHTMLエスケープされ、`{{{x}}}` はオプトインの生出力です。
+- テンプレートに任意のJSがないため、テンプレートごとのXSS監査面がありません。
 
+ロジックは `hooks.js` に置かれ、明示的でレビュー可能です。利用できるHandlebarsヘルパー: `{{default}}`、`{{upper}}`、`{{lower}}`、`{{eq}}`、`{{markdown}}`、`{{asset ref}}`、`{{asset ref "property"}}`(加えて、姉妹となる `.ics`/`.vcf`/`.csv` テンプレートで使われるデータフォーマットヘルパー `icsStamp`/`rfcText`/`csvCell`)。
 
-ツールは、ツール同士のインポートを一切行うことなく、**別の**ツールのレンダリングを埋め込むことができます——コンポジションはエンジンによって解決され、ツールのコードが行うことは決してありません。サーフェスは2つあります:
+### 10. ツールはツールを合成する
 
-- **宣言的なマニフェスト** — `composes: [{ id, tool, inputs, format?, width?, height? }]`。エンジンは指定された子を描画し、その結果をロジックレスなテンプレート内に `{{asset <id>}}` として配置します。`event-name-badge` は現在、`qr-code` を SVG として組み合わせています。
-- **ポータブルな埋め込み URL** — `<img src="https://lolly.tools/tool/<id>.<ext>?<inputs>">`。シェルはその子を**ローカルで**レンダリングします(ローカルのレンダリングが解決するまではプレースホルダーのピクセルが表示されます)。`lolly.tools` から何かが取得されることは決してありません。
+あるツールは、ツール間のインポートなしに**別の**ツールのレンダリングを埋め込むことができます - 合成はエンジンによって解決され、ツールのコードによっては行われません。表面は2つあります:
 
-Slides ツールは、この2つ目のサーフェスの上に成り立っています。どのスライドのどのスロットにも、画像の代わりに別の Lolly ツールを置けます。
+- **宣言的マニフェスト** - `composes: [{ id, tool, inputs, format?, width?, height? }]`。エンジンは指定された子をレンダリングし、その結果をロジックレステンプレート内に `{{asset <id>}}` として配置します。`event-name-badge` は現在 `qr-code` をSVGとして合成しています。
+- **可搬な埋め込みURL** - `<img src="https://lolly.tools/tool/<id>.<ext>?<inputs>">`。シェルはその子を**ローカルで**レンダリングします(ローカルのレンダリングが解決するまでプレースホルダーのピクセルが表示されます)。`lolly.tools` から何かがフェッチされることは決してありません。
 
-どのツールのレンダリングも組み合わせられます。**SVG** の子は、親が SVG や PDF に書き出す際には真のベクターのままであり、PNG では鮮明にラスタライズされます。**PNG/JPG/WEBP** の子は画像として埋め込まれます。`compose` ケイパビリティが必要です。組み合わされた子は中間生成物であり——透かしも来歴の刻印も決して行われません——コンポジションは破綻せず縮退します。子をレンダリングできないシェルは、そのスロットを単に省略するだけで、親は引き続きレンダリングされます。
-
----
-
-## 私たちが明示的に選ばなかったこと
-
-- **EJS は使わない / テンプレート内に任意の JS を書かせない。** XSS のサーフェスはゼロです。ロジックは `hooks.js` に置かれます。
-- **アセット CMS は用意しない。** アセットカタログは git です。更新は PR レビューを経ます。アップロード UI も、認証も、モデレーションキューもありません。git レビューそのものが、モデレーション*です*。
-- **MVP では RBAC を実装しない。** 公開アクセスです。ブランドリスクは、成熟度タグ + 透かし + ユーザーが目にするすべてのアセットが PR レビューを経ているという構造的事実によって管理されます。
-- **中央データベースは持たない。** すべてのユーザー状態はデバイスごとに保持されます。SUSE ID 統合はロードマップ上にありますが、ローンチを妨げるものではありません。
-- **ツールとエンジンでコードパスを共有しない。** エンジンはオープンソースですが、`tools/` と `assets/` は、それぞれ独自のリポジトリ内で SUSE の独占的なコンテンツであり続けます。この分離は(相互インポートの禁止という形で)強制されており、分割をクリーンに保っています。
+任意のツールのレンダリングを合成できます: **SVG** の子は、親がSVGまたはPDFにエクスポートする際は真のベクターのままとなり、PNGの場合はくっきりとラスタライズされます。**PNG/JPG/WEBP** の子は画像として埋め込まれます。`compose` ケーパビリティが必要です。合成された子は中間生成物です - 透かしやプロベナンスのスタンプが入ることは決してなく、合成は段階的に劣化します: 子をレンダリングできないシェルは単にそのスロットを省略し、親は問題なくレンダリングされます。
 
 ---
 
-## ライフサイクル:エンドツーエンドで
+## あえてやらないと決めたこと
 
-![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=aud-export-popup)
-
-あるユーザーが `lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H` を開いたとします:
-
-1. **起動。** web シェルが IndexedDB を開き、ケイパビリティブリッジを構築し、ツールとアセットのカタログを同期します(オフライン時はキャッシュから読み込みます)。
-2. **ルーティング。** URL のハッシュ → `tool` ビューへ。`qr-code` と URL パラメータが抽出されます。
-3. **読み込み。** `loadTool('qr-code', fetchFile)` が `tool.json` を取得し、JSON Schema に照らして検証し、`template.html`、`styles.css`、`hooks.js` のソースを取得します。
-4. **URL 状態のパース。** `parseUrlState` が URL パラメータを初期の入力値に変換します。アセット参照(`?logo=suse/logo/primary`)は、軽量な `{ id, _unresolved: true }` オブジェクトとしてパースされます。
-5. **ランタイム。** `createRuntime(tool, host, initialValues)` が(プロフィールデータ、デフォルト値、初期値をマージして)入力モデルを構築し、`host.assets.get()` を通じてアセット参照を解決し、フックを読み込み(`host` はクロージャスコープであり、サンドボックス化はされていません)、`hooks.onInit` を呼び出します。
-6. **レンダリング。** シェルはランタイムを購読し、状態が変化するたびに `{ model, hydrated }` を受け取ります。モデルから入力コントロールをレンダリングし、ハイドレーションされたテンプレートの HTML を `#tool-canvas` に書き込みます。
-7. **操作。** ユーザーが入力欄に入力する → `runtime.setInput(id, value)` → 制約が適用される → `hooks.onInput` が呼び出される → 再ハイドレーション → 再レンダリング。キャンバスはライブで更新されます。
-8. **書き出し。** ユーザーが Download(PNG)をクリックする → `runtime.export(canvasNode, 'png')` → `host.export.render`(dom-to-image-more によるラスタライズ。SVG/PDF は専用の DOM 走査型ベクタライザーを経由します)→ blob → `host.export.download`。ツールが対応できるフォーマットの幅は広く、`svg`、`png`、`jpg`/`jpeg`、`webp`、`avif`、`pdf`、ベクター形式の `emf`、`eps`、印刷/CMYK 形式の `pdf-cmyk`、`cmyk-tiff`、`eps-cmyk`、動画形式の `webm`、`mp4`、`gif`、データ/テキスト形式の `html`、`md`、`txt`、`json`、`csv`、`ics`、`vcf`、`ico`、`zip` があります。(`render.export: false` を設定したツール——例えば Color Palette、Countdown Timer、Strip Hidden Data、Text Helper、Compress PDF——は、ダウンロード/フォーマット/寸法のコントロールを非表示にします。)物理単位はここでフォーマットごとに変換されます(PDF → 実寸のページポイント、ラスター → DPI に応じたピクセル + `pHYs` チャンク)。作成者/来歴のメタデータ(作成者、ツール、ソース——`engine/src/metadata.ts` が構築)は、フォーマットごとに埋め込まれます:PNG は iTXt、JPEG は EXIF、PDF は info dict、SVG は `<metadata>`、GIF はコメントです。experimental なツールには、ツールではなくホストによって透かしが挿入されます。
-
-Tauri でも同じライフサイクルです。CLI でも同じライフサイクルです——jsdom がヘッドレスな DOM を提供し、出力はファイルまたは標準出力に送られます。
+- **EJSなし/テンプレートに任意のJSなし。** XSSの面はゼロです。ロジックは `hooks.js` に置かれます。
+- **必須のアセットCMSなし。** 個人は自分自身のクリエイティブファイルをアプリ内で直接カタログに取り込みます([カタログ](/info/using.html)ビューとブランドスタジオ) - サーバーも管理コンソールもありません。作業は**セッション**として受け渡されます: 共有リンクは状態全体を運び、同じセッションがバックアップやコラボレーションセッションを通じて移動します。デプロイを管理する者は、共有セッションを**テンプレート**としてロックできます - リンクを開き、その値をブランドパック内のそのツールのディレクトリにテンプレートエントリとして記録し、コミットする - その後、そのツールの「テンプレートから新規作成」の選択肢に表示され、`?template=<id>` としてディープリンク可能になります。Gitはデプロイの所有者によるロック手順であり、作成者のものでは決してありません。*共有された、ガバナンスされた*カタログについては、組織はアセットディレクトリを同じ方法で管理し、PRレビューを通じて更新をゲートすることが**できます** - これは利用可能なガバナンスモデルであり、アプリの要件ではありません。
+- **強制的なRBACなし。** オープンなアプリはデフォルトで公開アクセスであり、ブランドリスクは成熟度タグと透かしで管理されます。より厳格な管理を望む組織は、独自の認証と上記のGitレビュー済みカタログを重ねます。
+- **中央データベースなし。** すべてのユーザー状態はデバイス単位です。SUSE ID連携はロードマップにありますが、ローンチのブロッカーではありません。
+- **共有のtools/engineコードパスなし。** エンジンはオープンソースです。`tools/` と `assets/` は、それぞれ独自のリポジトリでSUSEの専有コンテンツとして残ります。分離は(相互インポートなしとして)強制されており、分割が汚れないようになっています。
 
 ---
 
-## オープンソースの状況
+## ライフサイクル、始めから終わりまで
 
-`engine/`、`shells/`、`schemas/`、`docs/` の各ディレクトリは、**MPL-2.0** の下でオープンソース化されています——ブランドツーリングのためのベンダーニュートラルな足場となるプラットフォームであり、出荷可能な各ユニットは [github.com/lolly-tools](https://github.com/lolly-tools) 配下のそれぞれ独立したリポジトリに分割されています。`tools/` と `catalog/assets/` は SUSE 固有のコンテンツであり、**SUSE の独占的財産**(全著作権を留保。各リポジトリの `NOTICE.md` を参照)であり続けます。これらは MPL の対象外です。
+ユーザーが `lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H` を開きます:
 
-この分割は強制されています——`engine/` から `tools/` や `assets/` への相互インポートは存在しません——そのため、プラットフォームとコンテンツの境界はクリーンに保たれています。
+1. **起動。** WebシェルがIndexedDBを開き、ケーパビリティブリッジを構築し、ツールとアセットのカタログを同期します(オフライン時はキャッシュから読み込みます)。
+2. **ルーティング。** URLハッシュ → `tool` ビュー、`qr-code` とURLパラメータが抽出されます。
+3. **読み込み。** `loadTool('qr-code', fetchFile)` が `tool.json` をフェッチし、JSON Schemaに対して検証し、`template.html`、`styles.css`、`hooks.js` のソースをフェッチします。
+4. **URL状態のパース。** `parseUrlState` がURLパラメータを初期入力値に変換します。アセット参照(`?logo=suse/logo/primary`)は軽量な `{ id, _unresolved: true }` オブジェクトとしてパースされます。
+5. **ランタイム。** `createRuntime(tool, host, initialValues)` が入力モデルを構築し(プロフィールデータ、デフォルト値、初期値をマージ)、`host.assets.get()` 経由でアセット参照を解決し、フック(クロージャスコープの `host`、サンドボックス化はされていません)を読み込み、`hooks.onInit` を呼び出します。
+6. **レンダリング。** シェルはランタイムを購読し、状態が変化するたびに `{ model, hydrated }` を受け取ります。モデルから入力コントロールをレンダリングし、ハイドレートされたテンプレートHTMLを `#tool-canvas` に書き込みます。
+7. **操作。** ユーザーが入力欄に入力する → `runtime.setInput(id, value)` → 制約が適用される → `hooks.onInput` が呼ばれる → 再ハイドレート → 再レンダリング。キャンバスはライブで更新されます。
+8. **エクスポート。** ユーザーがダウンロード(PNG)をクリック → `runtime.export(canvasNode, 'png')` → `host.export.render`(dom-to-image-more経由でラスタライズ。SVG/PDFは専用のDOMウォーキング・ベクタライザーを通ります) → blob → `host.export.download`。ツールがオプトインできるフォーマットの範囲は広く、`schemas/tool.schema.json` の `render.formats` enumがその権威です - ラスター画像とfloatラスター、ベクターとカットファイル、印刷/CMYK、モーション、編集可能なドキュメント(`pptx`、`docx`、`odt`)、パレットとデータ/テキスト出力、音声とフォントファイル。[URL Mode](/info/url-mode.html) がすべてのidと生成物を列挙しています。音声もこのenumに他と同様に含まれます(`wav`、`mp3`、`m4a`、`opus`。オーディオグラムとレコーディング系ツールが宣言します)。別途、レコーディングツールの `render.capture` モードは `host.recorder` を駆動し、その録画結果はブラウザが録画したコンテナ形式のまま完成したBlobとして届きます。(`render.export: false` を設定したツール - 例えばColor Palette、Countdown Timer、Strip Hidden Data、Text Helper、Compress PDF - はダウンロード/フォーマット/寸法コントロールを非表示にします。)物理単位はここでフォーマットごとに変換されます(PDF → 真のページポイント、ラスター → DPIに応じたピクセル、`pHYs` チャンク付き)。作者/プロベナンスのメタデータ(作者、ツール、ソース - `engine/src/metadata.ts` によって構築)はフォーマットごとに埋め込まれます: PNG iTXt、JPEG EXIF、PDF情報辞書、SVG `<metadata>`、GIFコメント。実験的なツールにはツール自身ではなくホストによって透かしが挿入されます。
 
----
+![`?options` が開くエクスポートパネル: ファイル名とフォーマットの組み合わせ、出力サイズ、ファイルを書き出すコントロール](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=aud-export-popup)
 
-## ロードマップ
-
-| マイルストーン | 目標時期 | 内容 |
-|---|---|---|
-| **Initial tools** | ✅ 完了 | QR Code、Quote Card、Email Signature、Code Canvas、Countdown Timer、Color Palette、Brand Lockup、Chart Creator、Filter: Duotone、Meeting Planner — web シェルが稼働中 |
-| **Enhance current tooling** | 2026年半ば ✅ 完了 | ダウンロード可能なオフラインアプリ(Tauri);従業員・イベント向けツールの追加;より充実した書き出しパイプライン(テキストのパス化の安定性、メタデータ、追加フォーマット — `plans.md` を参照) |
-| **Open source the engine** | 2026年後半 ✅ 完了 | エンジン、シェル、スキーマ、ドキュメントを公開 — ブランド付きのツール/アセットは非公開のまま |
-| **Device-to-device transfer** | ✅ 完了 | ポータブルな `lolly-backup` バンドルが、任意の2つのインストール先の間でプロフィール、保存済みセッション、アップロードした画像、設定を運びます — オフラインでもオンラインでも、アカウントなしで。前方互換性があり、整合性が検証されるエンベロープです(仕様:`docs/data-transfer.md`) |
-| **Establish formal tool roadmap** | 2026年後半 | 顧客向けリファレンスキット、AI によるデザイン取り込み、GET/URL リクエストモード |
-| **On-device privacy utilities** | 🚧 進行中 | *あなた自身*のファイルをローカルで処理する(ファイル入力 → クリーンなファイル出力)コンテンツ変換ツールであり、単機能 SaaS へのデータ持ち出し(エクスフィルトレーション)に代わるものです。**完了:** `file` 入力タイプ + `exportFile` 変換経路 + `privacy:"on-device"` の規約(透かし/来歴なし)+ **Strip Hidden Data**(JPEG/PNG/SVG/PDF のメタデータ。PDF は `host.pdf` ブリッジ経由)と **Text Helper**(JSON 整形、JWT デコード、Base64、URL エンコード/デコード、SHA ハッシュ化に加えて Novelty グループを備えた、日常的な「ウェブサイトに貼り付けるだけ」の作業のためのオンデバイス作業台)。**次:** クロップ/リサイズ、画像の変換/圧縮。その後 `host.image` コーデックブリッジ(仕様:`plans/34-exfiltration-app-content.md`) |
-| **Design tokens (DTCG)** | 🚧 色は提供済み | ブランドのプリミティブを、標準的な [W3C Design Tokens (DTCG)](https://www.designtokens.org/TR/drafts/format/) — [Penpot がインポート/エクスポートする](https://help.penpot.app/user-guide/design-systems/design-tokens/)形式 — として扱う。**完了:** カラートークン(`suse/tokens/brand`)、`host.tokens` ブリッジ、参照リンクされた値を持つピッカーのスウォッチ(仕様:`docs/design-tokens.md`)。**次:** 寸法/タイプトークン、Penpot のインポート/エクスポート、転送バンドル内のユーザートークン(`tokens.json`) |
-| **MCP agent endpoint (render)** | ✅ 完了 | [MCP](https://modelcontextprotocol.io) サーバーが、カタログとレンダリング経路を呼び出し可能なツール(`lolly_list_tools` / `describe_tool` / `build_url` / `render` / `transform`)として公開するため、どのエージェントも完成した、ルールに沿ったアセットを生成できます — 任意の MCP クライアントにカスタムコネクタ(OAuth 2.1)として追加するか、CLI/HTTP クライアントからベアラートークンで直接呼び出せます。`mcp.lolly.tools`(フルエンドポイント:ホストされたヘッドレスブラウザ経由のラスター/PDF/アニメーション/動画)と `lolly.tools/api/mcp`(サーバーレスでブラウザ不要のティア)で稼働中です。下記の Penpot の*オーサリング*用 MCP とは別物で、そちらはツールの**作成**に関するものです(仕様:`plans/77-mcp-server.md`;ガイド:`docs/mcp.md` + `docs/ai-agents.md`) |
-| **Penpot file ingest as tools** | 2027年以降 | Penpot ファイルをインポートし、それを*Lolly のツールとして*(宣言的で制約ファーストな形で)表面化させ、Penpot 上で制作されたデザインを決定論的なジェネレーターへと変える |
-| **MCP + Penpot extension (online-only authoring)** | 2027年以降 | Penpot の MCP サーバーが、AI を使って新しいツールを組み立てます — 決定論的なテンプレートを作る、最もビジュアルな方法です。ブランドを踏まえた最初のラウンドを、人間がループに入って仕上げ、時間の経過とともにワンショットで新しい文脈に対応することを目指します。ツールの*作成*はオンライン限定ですが、生成されたツールはどこでも動作します |
-| **RBAC + SUSE ID** | 2027年以降 | 特定のツールを SUSE ID の背後にゲートする;マルチデバイスでの保存状態;Google Drive の取り込み/書き出し |
+Tauriでも同じライフサイクル。CLIでも同じライフサイクル - jsdomがヘッドレスDOMを提供し、出力はファイルまたはstdoutに送られます。
 
 ---
 
-## エンジンが終わり、ホストが始まる境界
+## オープンソースのステータス
 
-純粋なデータ + Handlebars だけで記述できるなら → **エンジン**。
-DOM、ファイルシステム、ネットワーク、あるいはブラウザ/OS の API に触れるなら → **ホスト**。
+`engine/`、`shells/`、`schemas/`、`docs/` の各ディレクトリは**MPL-2.0**の下でオープンソースです - ブランドツーリングのためのベンダー中立な足場プラットフォームで、出荷可能な各単位は [github.com/lolly-tools](https://github.com/lolly-tools) 配下のそれぞれ独自のリポジトリに分割されています。`tools/` と `catalog/assets/` はSUSE固有のコンテンツであり、**SUSEの専有物**として残ります(全権利留保 - 各リポジトリの `NOTICE.md` を参照)。これらはMPLの対象ではありません。
 
-この線引きは、意図的に明確にされています。エンジンはオープンソースの部分です。SUSE や特定のプラットフォーム、実行環境について知っているものはすべて、エンジンの外側に置かれます。
+この分割は強制されています - `engine/` から `tools/` や `assets/` への相互インポートは存在しません - プラットフォームとコンテンツの境界が汚れないようになっています。
+
+---
+
+## エンジンが終わりホストが始まるところ
+
+純粋なデータとHandlebarsで表現できるなら → **エンジン**。
+DOM、ファイルシステム、ネットワーク、あるいはブラウザ/OSのAPIに触れるなら → **ホスト**。
+
+この線引きは意図的に明確にされています。エンジンはオープンソースの部分です。SUSE、特定のプラットフォーム、実行環境について知っているものはすべてその外側に置かれます。
+
+さらに詳しいレベルについては、[`engine/README.md`](../engine/README.md) がすべてのエンジンモジュールとそれぞれの責務を列挙しており、[脅威モデルと信頼境界](/info/threat-model.html) は同じ線がどこで信頼境界を兼ねているかを記録しています。

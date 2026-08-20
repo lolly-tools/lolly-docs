@@ -1,82 +1,99 @@
-# 總覽
+# 概覽
 
-本文件記錄 Lolly 平台的目的、結構與架構決策，同時反映產品願景與程式碼庫的現況。
+![Lolly 圖示 - 大型綠白色棒棒糖](/info/icon.svg)
 
-> **狀態：** Lolly 是一個內部原型，目前處於**尚未完成的封閉式試行**階段。引擎具有確定性且內部一致，但產品仍處於早期階段——SUSE 是第一位客戶——其加密與檔案解析引擎目前正接受 SUSE 嚴格的基礎架構強化，為企業規模做準備（這件事我們非常擅長）。請將以下架構視為仍在測試中的設計意圖，而非已完成、已認證的產品。試行如何執行與衡量，請見[採用與治理](/info/adoption-governance.html#status)。
+本文件記錄了 Lolly 平台的目的、結構與架構決策，同時反映了產品願景與程式碼庫的現況。
 
----
+> **狀態：** Lolly 目前是內部原型，處於**尚未完成的封閉試辦**階段。引擎具確定性且內部一致，但產品仍屬早期階段 - SUSE 是第一號客戶 - 其加密與檔案解析引擎目前正接受 SUSE 嚴格的基礎架構強化，為企業規模做準備（這方面我們相當在行）。請將以下架構視為正在測試中的設計意圖，而非已完成、經過認證的產品。試辦計畫如何執行與評估，詳見[採用與治理](/info/adoption-governance.html#status)。
 
-## 為何存在
-
-團隊經常面對一個反覆出現的問題：重複性的創意與內容工作，可預測到不值得每次都動用專業人力，卻又對品質敏感到不能在毫無防護的情況下交出去。結果不是產出速度緩慢（專業人力成為瓶頸），就是品質不一致（每個人用自己手邊有的工具），或是被廠商綁定（由 SaaS DAM 掌控你的範本）。
-
-這個平台是結構性的解法：
-
-> **大規模的程式化創意與內容生成**——零人力的素材產出，規則由中央集中控管，供員工、供應商與合作夥伴使用。
-
-結果是**充裕**：每一場活動都有正確的指標標示，每一則 CVE 警示都符合公司樣式，每一張標籤都印得乾淨俐落，每一份電子郵件簽名檔都是最新版——完全不需要開一張設計工單。這個平台處理的是重複出現、已作業化的創意工作。它刻意不是一套客製化創意工具——旗艦級的工作仍然由設計師掌控。
-
-### 在整體格局中的定位
-
-![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=aud-gallery-landscape)
-
-| 能力 | Canva | 品牌入口網站 | Illustrator | Figma / Penpot | **Lolly** |
-|---|---|---|---|---|---|
-| 大量內容生成 | 部分 | ✗ | ✗ | ✗ | **✓** |
-| 完全離線運作 | ✗ | ✗ | ✓ | 部分 | **✓** |
-| 範本邏輯與硬性限制 | ✗ | 部分 | ✗ | 部分 | **✓** |
-| 不需要設計技能 | 部分 | ✓ | ✗ | ✗ | **✓** |
-| 自動 Content Credentials | ✗ | ✗ | 部分 | ✗ | **✓** |
-| 工具可組合其他工具 | ✗ | ✗ | ✗ | ✗ | **✓** |
-| 開放式引擎，不受 SaaS 綁定 | ✗ | ✗ | ✗ | 部分 | **✓** |
-| C2PA 內容憑證 | ✗ | ✗ | ✗ | ✗ | **✓** |
-| 可選擇加入的鑑識等級溯源 | ✗ | ✗ | ✗ | ✗ | **✓** |
-| 行動裝置與桌面應用程式 | ✓ | ✗ | ✗ | 部分 | **✓** |
-| 命令列與 TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
-
-這個落差很清楚：現有格局中沒有任何東西能提供限制優先、可離線運作、低技能門檻、內部可存取的輸出。Lolly 甚至包含一個開放式畫布——**版面工作室**——色彩、字體與素材都遵循品牌全域設定，因此即使是自由排列，依然保持限制優先。它**不是**一套無限制的設計套件：設計師仍然使用 Illustrator 與 Figma 進行客製化的旗艦級工作。各種排列組合可以用這個工具組裝出來。
-
-**適用情境：** 快速生成已作業化的創意素材——活動卡片、識別徽章、簽名檔、CVE 警示、QR code、社群卡片、託運標籤、結構化報告。
-
-**不適用情境：** 客製化的旗艦級主打內容。
+> **這一頁怎麼讀。** 內容按順序分成兩類。前半部是
+> **為什麼會有這個平台**：問題所在、定位，以及單一素材所經歷的
+> 生命週期。從[全局觀](#the-big-picture-how-the-layers-fit)開始則是
+> **各層如何組成**：給貢獻者看的架構文件，涵蓋 engine/shell/pack
+> 的分工、儲存庫配置、交付目標，以及限制平台每一次變更的承諾。如果你來這裡是要
+> 修改程式碼庫而非了解產品，請從全局觀開始讀起。
+>
+> 有兩份輔助文件比本頁更深入。儲存庫中的 [`engine/README.md`](../engine/README.md)
+> 是引擎逐模組的地圖，附有自動產生的表格，列出每個模組
+> 解析或寫入的內容。[威脅模型與信任邊界](/info/threat-model.html)
+> 則是以信任邊界角度重新閱讀同一份架構，任何關於
+> 引擎將什麼視為不受信任的問題，都應該去看這一頁。
 
 ---
 
-## 一場行銷活動的生命週期
+## 為什麼會有這個平台
 
-![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+團隊經常面臨一個反覆出現的問題：可重複的創意與內容工作，規律性高到不值得每次都動用專業人力，但對品質的要求又高到無法在沒有防護機制的情況下隨意外包。結果不是產能低落（專家成為瓶頸）、就是品質不一（每個人用手邊有的工具湊合），不然就是被供應商綁死（由 SaaS DAM 掌控你的範本）。
 
-要看清 Lolly 究竟是什麼，最清楚的方式不是列一長串功能，而是跟著一份素材，看它如何在不同人手中傳遞。下面就跟著一張本地化的行銷活動卡片，看它如何走過整個組織：
+這個平台就是直接的解答：
 
-1. **創意人員訂下規則。** 設計師在 Design 裡撰寫基礎範本，把品牌的字體與色彩變數寫死在裡面。他們做的不是一張卡片——他們只把這份底層工作做*一次*，從此再也不必手工做本地化。
-2. **開發者把它放大。** 同一個範本透過 CLI 接進每晚執行的流水線，於是一張新圖表或一個新語言版本都會自動產生——不需要任何設計師再打開檔案。
-3. **產出者直接拿來用。** 一位銷售代表在飛機上離線打開同一個工具，為客戶會議產出一份完全符合品牌的簡報。不需要設計技能，不需要網路，也不用等。
+> **規模化的程式化創意與內容產出** - 零人力的素材生成，規則由中央集中控管，供員工、供應商與合作夥伴使用。
 
-第二步裡那張「新圖表」，就是下面這樣一次渲染：由一段資料字串加上少數幾個參數產生，沒有人需要打開任何設計檔案。
+結果就是**豐足**：每一場活動都有正確的標示、每一則 CVE 警示都符合公司風格、每一張標籤都印刷乾淨、每一個電子郵件簽名檔都是最新的 - 而且完全不需要送設計工單。這個平台處理的是重複、可作業化的創意工作，刻意不做成客製化的創意工具 - 旗艦作品仍由設計師掌控。
 
-重點並不是 Lolly 各自獨立地對設計師好用、*而且*對開發者好用、*而且*對銷售好用。它是一場**接力賽**：創意人員最初的工作被開發者放大，而這又讓產出者有了能力。飛機上那位非技術同事之所以能有毫不費力的體驗，*正是*因為設計師立下的嚴謹規則與開發者完成的部署。
+### 機率性創新，確定性擴展
 
-這就是它的力量倍增效果。Lolly 不是一個為不同角色擺放不同工具的抽屜——它是一條決定論式的素材生命週期，每個角色都會經手，而每一次傳遞都會放大上一環的價值。
+每一場關於 AI 在創意流程中該扮演什麼角色的爭論，最後都卡在同一個問題：哪一部分該交給機器？這其實是個老問題，而且早有定論。抄寫員與泥金裝飾畫師早已在兩種工具之間工作 - 一邊是隨手的草稿，什麼都還沒定案、什麼都能嘗試；另一邊是印刷機，之所以令人望而生畏，正是因為它一旦付印就無法更改。藝術發生在草稿裡，而讓作品觸及所有人的則是印刷機。沒有人會把兩者混為一談，而兩者也都持續進步 - 新的墨水、新的字體、新的印刷機 - 每一項進步都與其所服務的技藝與意圖相輔相成。
+
+Lolly 也劃出同樣的界線。以機率性的方式探索：一個模型、一位設計師、一個粗略的想法、一個走向沒人預料到之處的提示詞。接著以確定性的方式擴展 - 能觸及一萬份輸出的，是一個*工具*，而工具每次都會依可讀的輸入，以相同方式算繪。探索可以保持自由，因為下游沒有任何東西仰賴它每次都得出相同結果。輸出之所以值得信任，是因為它不是猜測。讓 AI 的實驗轉化為可預測、可重現的成果，並不是什麼新的學問；這正是當初讓印刷品值得信賴的那套分工方式。
+
+> 信任創意過程，以嚴謹擴展規模。
+
+### 與其他替代方案相比
+
+::: figure positioning-comparison
+現今各創意工具的功能完整度，調查於 2026 年 8 月。評分標準：0 分表示不具備，25 分表示需以變通方式達成，50 分表示有實際功能但受限或不完整，75 分表示強大但有但書，100 分表示核心能力。
+:::
+
+差距很明顯：目前已上市的產品，沒有一個能同時做到以限制為先、可離線使用、低技術門檻、內部就能取得的輸出。Lolly 甚至包含一個開放式畫布 - **Design** - 其中的色彩、字體與素材都遵循品牌全域設定，因此自由排列仍然維持以限制為先。它**不是**一套不受限制的設計套件：設計師仍會使用 Illustrator 與 Figma 來製作客製化的旗艦作品。各種排列組合則可以用這個工具來組裝。
+
+![工具庫中每個工具都以卡片呈現，依類別分組，方便製作人選擇並開始使用](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=aud-gallery-landscape)
+
+**適用情境：** 快速產生可作業化的創意素材 - 活動版塊、姓名識別證、簽名檔、CVE 警示、QR code、社群卡片、託運標籤、結構化報告。
+
+**不適用情境：** 客製化的主視覺內容。
 
 ---
 
-## 一次核准，一萬份素材
+## 一場活動的生命週期
 
-![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+要看清 Lolly 究竟是什麼，最清楚的方式不是看功能清單 - 而是跟著一份素材，看它如何在不同人手中流轉。以下追蹤一張在地化的活動卡片如何在組織中傳遞：
 
-因為核准發生在工具上而不是檔案上（參見 [Lolly 如何比較](/info/positioning.html)），規模就不再是審核問題。把一個本地化社群卡片工具核准一次，然後從一張試算表產出**橫跨 12 種語言的 10,000 份素材**——其中沒有任何一份需要法務或品牌部門再做一次合規檢查，因為它們共同來自的那個範本早已核准過了。
+1. **創意人員訂下規則。** 設計師在 Design 工具中製作基礎範本，將品牌的字體排版與色彩變數寫死進去。他們製作的不是一張卡片 - 而是*一次性*完成基礎工作，從此再也不必手動在地化。
+2. **開發人員將它規模化。** 同一個範本透過 CLI 接入夜間排程管線，自動產生最新的圖表或新的語言版本 - 沒有設計師需要重新開啟檔案。
+3. **製作人直接使用它。** 一位在飛機上離線的業務代表，開啟同一個工具，為客戶會議產生一份完全符合品牌規範的簡報。不需要設計技能、不需要網路、不需要等待。
 
-同一個決定論式的工具有三條途徑可以達到這種規模，產出的結果完全一致，而且都已事先核准：
+第二步中的「最新圖表」就像這樣的算繪結果，由一段資料字串與少數幾個參數產生，完全沒有人開啟設計檔案：
 
-- <!--i:people--> **一個人，在應用程式裡。** `/pro` 批次表格：貼上或匯入各列資料，每一列得到一份完成素材，然後下載 zip。不需要設計技能，不需要開單，不用等。
-- <!--i:code--> **一位開發者，在命令列裡。** CLI 以無介面方式執行*同一套*引擎、*同一條*渲染路徑，因此可以在腳本或每晚的流水線裡把這個工具跑遍全部 10,000 列。在迴圈裡呼叫一次 `lolly <tool> --field=…`，就是全部的整合工作。
-- <!--i:cpu--> **一個系統或一個 AI 代理，透過 MCP。** 同一個工具以程式方式操作，保真度相同，規模還能更大——因為檔案成千上萬地湧出來時，機器不會覺得無聊。
+![一張帶標題的堆疊區域圖，三個資料系列以冷色調配色呈現，座標軸、圖例與標題全都由範本自動排版，而非手動放置](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
-一套品牌限制，由設計師訂下一次；三條路徑通往完全相同、事先核准好的產出——其中機器這條路走得最遠，因為檔案不斷湧出時它永遠不會累。
+重點不在於 Lolly 分別對設計師好、對開發人員好、對業務人員也好，各自獨立不相干。而是一場**接力賽**：創意人員最初的成果由開發人員加以規模化，進而賦能給製作人。飛機上那位非技術背景業務代表所享有的毫不費力的體驗，*之所以可能*，正是因為設計師訂下的嚴謹規範以及開發人員的部署工作。
+
+這就是力量倍增器。Lolly 不是一個裝著各種角色專用工具的抽屜 - 而是一條確定性的素材生命週期，每個角色都會參與其中，每經過一雙手，前一份成果的價值就會被放大。
 
 ---
 
-## 大局
+## 一次核准，萬份素材
+
+因為核准的對象是工具本身，而不是檔案（詳見[Lolly 與其他方案的比較](/info/positioning.html)），規模化就不再是審核上的難題。核准一個在地化的社群卡片工具一次，之後就能從一份試算表產生**橫跨 12 種語言的 10,000 份素材** - 而且沒有一份需要法務或品牌再次進行合規檢查，因為它們共同的範本早已通過核准。
+
+同一個確定性工具能以三種方式達到這樣的規模，而且都會產出完全相同、已預先核准的結果：
+
+- <!--i:people--> **一個人，在應用程式中操作。** `/pro` 批次網格：貼上或匯入資料列，每一列產出一份完成的素材，下載為 zip 檔。不需要設計技能、不需要工單、不需要等待。
+- <!--i:code--> **一位開發人員，透過命令列。** CLI 以無頭模式執行*相同*的引擎與*相同*的算繪路徑，因此可以在腳本或夜間管線中對全部 10,000 列依序執行該工具。在迴圈中呼叫 `lolly <tool> --field=…` 就是整個整合工作。
+- <!--i:cpu--> **一個系統或 AI 代理，透過 MCP。** 同一個工具以程式化方式操作，保持相同的精確度，甚至能達到更大的規模 - 因為機器不會在數千份檔案陸續產生時感到厭倦。
+
+![全新安裝後的批次模式：一列空白資料等待選擇工具，整個試算表介面與 Render 按鈕都已就緒，尚未輸入任何資料](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+
+一套品牌限制，由設計師一次訂定；三條路徑通往完全相同、已預先核准的輸出 - 而機器這條路徑能擴展得最遠，因為它在檔案陸續產生時永遠不會疲倦。
+
+---
+
+## 全局觀：各層如何組成
+
+從這裡開始的內容全部屬於架構層面。這張圖以單一視角呈現整個系統：最上層的工具是
+資料，中間的引擎對任何平台都一無所知，其下的殼層則
+實作同一份合約，而目錄提供內容。
 
 ```
                 ┌─────────────────────────────────────────────┐
@@ -110,356 +127,349 @@
                 └─────────────────────────────────────────────┘
 ```
 
-### 儲存庫結構
+### 儲存庫配置
+
+內容以套件形式掛載：`community/`、`docs/`、每個 `shells/*`、兩個 `services/*` 以及 `brands/suse`，各自都是獨立的儲存庫，以 git submodule 的形式簽出到這個主儲存庫中。主儲存庫本身擁有 `engine/`、`schemas/`、`scripts/`、`tests/`、`api/`、`brands/lolly-start/` 與 `profiles.json`。取得原始碼的簽出指令與跨儲存庫工作流程，詳見[建置指南 » 取得原始碼](/info/build-guide.html)。
 
 ```
 lolly/
-├── engine/           # 平台無關的核心。開放原始碼（MPL-2.0）。
+├── engine/           # Platform-agnostic core. Open source (MPL-2.0).
 │   └── src/
-│       ├── index.ts          # 公開介面——loader、runtime、template、inputs、url-mode
-│       ├── loader.ts         # 擷取並驗證工具檔案
-│       ├── runtime.ts        # 協調五個步驟的生命週期
-│       ├── template.ts       # Handlebars 渲染 + annotateTemplate
-│       ├── inputs.ts         # manifest → runtime 輸入模型
-│       ├── url-mode.ts       # URL ↔ 輸入狀態 雙向轉換
-│       ├── validate.ts       # 對 manifest 進行 JSON Schema 驗證
-│       ├── compose.ts        # 解析巢狀工具渲染（composes）
-│       ├── embed.ts          # 解析可攜式的 lolly.tools 嵌入網址
+│       ├── index.ts          # public surface - loader, runtime, template, inputs, url-mode
+│       ├── loader.ts         # fetches and validates tool files
+│       ├── runtime.ts        # orchestrates the 5-step lifecycle
+│       ├── template.ts       # Handlebars hydration + annotateTemplate
+│       ├── inputs.ts         # manifest → runtime input model
+│       ├── url-mode.ts       # URL ↔ input state round-trip
+│       ├── validate.ts       # JSON Schema validation of manifests
+│       ├── compose.ts        # resolve nested tool renders (composes)
+│       ├── embed.ts          # parse portable lolly.tools embed URLs
 │       └── bridge/
-│           └── host-v1.ts    # TypeScript 介面——橋接層的合約
+│           └── host-v1.ts    # type re-export of the @lolly-tools/core contract
 │
 ├── shells/
-│   ├── web/          # PWA——線上代管；主要發布管道
+│   ├── web/          # PWA - hosted online; primary distribution
 │   │   └── src/
-│   │       ├── main.ts           # 啟動、路由
-│   │       ├── theme.ts          # 主題套用／保存（避免 FOUC 閃爍）
-│   │       ├── bridge/           # HostV1 API 的 web 實作
-│   │       │   ├── index.ts      # 組合所有橋接層元件
-│   │       │   ├── db.ts         # IndexedDB 設定
-│   │       │   ├── state.ts      # host.state——已儲存的編輯內容
-│   │       │   ├── profile.ts    # host.profile——使用者詳細資料
-│   │       │   ├── assets.ts     # host.assets——目錄素材＋使用者上傳
+│   │       ├── main.ts           # boot, routing
+│   │       ├── theme.ts          # theme apply/persist (FOUC prevention)
+│   │       ├── bridge/           # web implementations of HostV1 APIs
+│   │       │   ├── index.ts      # compose all bridge pieces
+│   │       │   ├── db.ts         # IndexedDB setup
+│   │       │   ├── state.ts      # host.state - saved edits
+│   │       │   ├── profile.ts    # host.profile - user details
+│   │       │   ├── assets.ts     # host.assets - catalog + user uploads
 │   │       │   ├── clipboard.ts  # host.clipboard
-│   │       │   ├── export.ts     # host.export——點陣化／序列化
-│   │       │   ├── net.ts        # host.net——白名單制的 fetch
-│   │       │   └── media.ts      # host.media——即時攝影機影格（onFrame）
+│   │       │   ├── export.ts     # host.export - rasterise/serialize
+│   │       │   ├── net.ts        # host.net - allowlisted fetch
+│   │       │   └── media.ts      # host.media - live camera frames (onFrame)
 │   │       ├── catalog/
-│   │       │   └── sync.ts       # 啟動時的目錄同步＋離線快取
-│   │       ├── styles/           # 全應用程式的 CSS（app.css、picker.css、tokens.css）
+│   │       │   └── sync.ts       # boot-time catalog sync + offline cache
+│   │       ├── styles/           # app-wide CSS (app.css, picker.css, tokens.css)
 │   │       └── views/
-│   │           ├── gallery.ts    # 工具庫列表＋已儲存狀態卡片
-│   │           ├── tool.ts       # 掛載單一工具（輸入＋畫布＋操作）
-│   │           ├── picker.ts     # 素材選擇器 UI（由 host.assets 呼叫）
-│   │           ├── profile.ts    # 使用者詳細資料編輯器
-│   │           ├── projects.ts   # /p——已儲存工作階段的資料夾（可巢狀；資料夾／選取匯出）
-│   │           └── free-canvas.ts # 給 render.layout:"editor" 工具用的自由畫布編輯疊層
+│   │           ├── gallery.ts    # tool library listing + saved-state cards
+│   │           ├── tool.ts       # mounts one tool (inputs + canvas + actions)
+│   │           ├── picker.ts     # asset picker UI (invoked by host.assets)
+│   │           ├── profile.ts    # user details editor
+│   │           ├── projects.ts   # /p - folders of saved sessions (nested; folder/selection export)
+│   │           └── free-canvas.ts # free-canvas editor overlay for render.layout:"editor" tools
 │   │
-│   ├── cli/          # Node.js CLI——相同的引擎，headless jsdom
+│   ├── cli/          # Node.js CLI - same engine, headless jsdom
 │   │   ├── bin/lolly.ts
 │   │   └── src/
-│   │       ├── run.ts    # loadTool → createRuntime → export → 寫入檔案
-│   │       └── bridge.ts # HostV1 的 CLI 實作
+│   │       ├── run.ts    # loadTool → createRuntime → export → write file
+│   │       └── bridge.ts # CLI implementation of HostV1
 │   │
-│   ├── tui/          # 互動式終端機殼層（Ink）——重複使用 CLI 橋接層
+│   ├── tui/          # Interactive terminal shell (Ink) - reuses the CLI bridge
 │   │   └── src/
-│   │       ├── main.tsx  # 全螢幕應用程式：Gallery／Projects／Profile／ToolView
-│   │       └── bridge.ts # CLI 橋接層＋位於 ~/.lolly 的磁碟狀態
+│   │       ├── main.tsx  # full-screen app: Gallery / Projects / Profile / ToolView
+│   │       └── bridge.ts # CLI bridge + on-disk state under ~/.lolly
 │   │
-│   ├── tauri-desktop/ # 可下載的桌面應用程式
-│   └── tauri-mobile/  # iOS／Android 應用程式
+│   ├── tauri-desktop/ # downloadable desktop app
+│   └── tauri-mobile/  # iOS/Android app
 │
-├── tools/            # profile 視圖（已加入 gitignore）——資料，不是程式碼。合併自以下內容包：
-│                     #   community/（公開、與品牌無關、MPL）＋ brands/<active>/tools（品牌所有）。
+├── tools/            # profile VIEW (gitignored) - data, not code. Merged from packs:
+│                     #   community/ (public, brand-agnostic, MPL) + brands/<active>/tools (brand-owned).
+│                     #   A SELECTION follows - the mounted set depends on the profile.
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
 │   ├── code-canvas/
 │   ├── countdown-timer/
 │   ├── color-palette/
-│   ├── color-block/           # 有型別、可混合的區塊（addMenu 判別器）
+│   ├── color-block/           # typed/heterogeneous blocks (addMenu discriminator)
 │   ├── dynamic-layout/
-│   ├── tool-logo/         # "Logo"——自動切換的品牌標誌
-│   ├── street-map/        # 離線向量街廓地圖
-│   ├── url-shot/          # "URL Screenshot"（capture 能力）
-│   ├── strip-data/        # 裝置端中繼資料清除——JPEG/PNG/SVG/PDF（檔案輸入 → 乾淨檔案輸出）
-│   ├── compress-pdf/      # 裝置端 PDF 壓縮器——重新壓縮圖片（檔案輸入 → 較小檔案輸出）
-│   ├── brand-lockup/      # "Brand Lockup"——SUSE 標誌組合；HarfBuzz 文字轉路徑（wasm）
-│   ├── chart-creator/     # 由結構化資料產生 SVG 圖表
-│   ├── filter-duotone/    # 雙色相片效果
-│   ├── filter-halftone/   # 相片 → 向量網點網格
-│   ├── filter-scanline/   # 相片 → 復古色階掃描線網格（SVG／透明點陣圖）
-│   ├── meeting-planner/   # 跨時區會議排程工具
-│   ├── calendar-ics/      # 活動 → .ics 行事曆檔案＋一張卡片
-│   ├── digi-ad/           # "Animated Ad"——由場景組成的循環播放橫幅
-│   ├── event-name-badge/  # 研討會識別證——以 SVG 形式組合 qr-code
-│   ├── wayfinding-signage/ # 活動指標標示；方向區塊會自動調整標籤文字
-│   ├── text-helper/       # 裝置端文字工作台（格式化／解碼／雜湊／去識別化）
-│   ├── design/     # "Design"——自由格式的 WYSIWYG 編輯器畫布（render.layout: editor）
-│   ├── multi-page-pdf/    # 多頁 PDF 文件——封面、可流動的內容區塊、封底
-│   ├── diagram-builder/   # 組織圖／分層圖／流程圖／循環圖／金字塔圖
-│   ├── logo-wall/         # 多個標誌 → 自動排列成網格
-│   ├── logo-lockup-partner/ # SUSE ＋合作夥伴聯名標誌組合
-│   ├── web-icon/          # 由文字＋顏色產生 favicon（.ico／png／svg）
-│   ├── filter-posterize/  # 相片 → 平面色階向量分色
-│   ├── filter-pixel-stretch/ # 相片 → 像素拖曳效果
-│   ├── lottie-digi-ad/    # Lottie 動態廣告橫幅
-│   └── pose-geeko/        # 擺出 SUSE Geeko 吉祥物姿勢——可供印刷的靜態圖
+│   ├── tool-logo/         # "Logo" - auto-switching brand logo
+│   ├── street-map/        # offline vector city-block maps
+│   ├── url-shot/          # "URL Screenshot" (capture capability)
+│   ├── strip-data/        # on-device metadata strip - JPEG/PNG/SVG/PDF (file in → clean file out)
+│   ├── compress-pdf/      # on-device PDF compressor - recompresses images (file in → smaller file out)
+│   ├── brand-lockup/      # "Brand Lockup" - SUSE logo lockups; HarfBuzz text-to-path (wasm)
+│   ├── chart-creator/     # SVG charts from structured data
+│   ├── filter/            # photo effects in one tool - halftone/scanline/posterize/voronoi (vector), duotone/pixel-stretch/imperfections (raster)
+│   ├── meeting-planner/   # global timezone meeting scheduler
+│   ├── calendar-ics/      # event → .ics calendar file plus a card
+│   ├── digi-ad/           # "Animated Ad" - looping banner from scenes
+│   ├── event-name-badge/  # conference badges - composes qr-code as an SVG
+│   ├── wayfinding-signage/ # event signage; directions blocks auto-fit label text
+│   ├── text-helper/       # on-device text workbench (format/decode/hash/de-identify)
+│   ├── design/     # "Design" - freeform WYSIWYG editor canvas (render.layout: editor)
+│   ├── multi-page-pdf/    # multi-page PDF document - cover, flowing content blocks, back page
+│   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
+│   ├── logo-wall/         # many logos → auto-packed grid
+│   ├── logo-lockup-partner/ # SUSE + partner co-brand lockup
+│   ├── web-icon/          # favicon .ico / png / svg from text + colours
+│   ├── lottie-digi-ad/    # animated Lottie ad banners
+│   └── pose-geeko/        # pose the SUSE Geeko mascot - print-ready stills
 │
 ├── catalog/
-│   ├── tools/index.json        # 工具登錄檔
+│   ├── tools/index.json        # tool registry
 │   └── assets/
-│       ├── index.json          # 素材登錄檔
-│       └── suse/...            # 標誌、調色盤等
+│       ├── index.json          # asset registry
+│       └── suse/...            # logo, palette, etc.
 │
-├── schemas/          # tool.json、素材項目、AssetRef 的 JSON Schema
-├── scripts/          # build-catalog-index.ts、checksum-assets.ts、validate-catalog.ts
-├── tests/            # 引擎測試
-└── docs/             # 本文件＋撰寫指南＋定位文件
+├── schemas/          # JSON Schema for tool.json, asset entries, AssetRef
+├── scripts/          # build-catalog-index.ts, checksum-assets.ts, validate-catalog.ts
+├── tests/            # engine tests
+└── docs/             # this file + authoring guides + positioning
 ```
 
 ---
 
-## 平台交付模式
+## 平台交付模型
 
-這個平台運行在多個介面上——web PWA、Tauri 桌面版／行動版、可指令化的 CLI，以及互動式 TUI。它們全部使用相同的引擎與相同的工具檔案。
+這個平台可在多個介面上運作 - web PWA、Tauri 桌面/行動版、可腳本化的 CLI，以及互動式 TUI。它們全部使用相同的引擎與相同的工具檔案。
 
-### Web（PWA）——主要發布管道
+### Web (PWA) - 主要發布管道
+託管於 SUSE 控管的網址。一旦 service worker 快取了工具與素材，即可離線運作。大多數員工、供應商與合作夥伴都會在這裡使用這個平台。不需要帳號 - 狀態會依裝置儲存在 IndexedDB 中。
 
-![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&dark=1&filename=aud-web-split)
+web 殼層採用單一版面配置做響應式設計。在桌面版上，工具是一個可調整大小的控制項側邊欄，搭配一個預覽舞台，並具備原生觸控板式的畫布導覽（Cmd/Ctrl + 滾輪或雙指縮放以游標為中心縮放、按住 Space 或中鍵拖曳平移、`0`/`1`/`+`/`−` 按鍵，以及 Fit/% HUD）。在行動裝置上（≤640px）控制項會變成一個上方固定的面板，附有可拖曳的把手，可吸附至窺視/半展開/全展開三種狀態（點擊可切換），覆蓋在靜態的全螢幕預覽上，而浮動的 **Render** 按鈕會以底部彈出面板開啟 **Export** 控制項。觸控操作可在預覽上進行雙指縮放與拖曳平移。兩者的算繪路徑與匯出控制項完全相同 - 只有介面外框會重新排版。
 
-![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![桌面版分割檢視 - 左側是從 manifest 產生的控制項，右側是即時畫布](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&dark=1&filename=aud-web-split)
 
-代管於 SUSE 掌控的網址上。一旦 service worker 快取好工具與素材，就能離線運作。多數員工、供應商與合作夥伴都會在這裡使用這個平台。不需要帳號——狀態依裝置各自儲存在 IndexedDB 中。
+同一個工具在手機寬度下，不需要維護第二種版面：控制項變成頂端的表單頁，預覽佔滿整個畫面，輸出按鈕則浮在其上。
 
-網頁殼層採用單一版面的響應式設計。桌面上，一個工具是可調整寬度的控制項側欄，旁邊是預覽舞台，並支援原生觸控板的畫布導覽（Cmd/Ctrl + 滾輪或雙指縮放以游標為中心、按住空白鍵或用中鍵拖曳平移、`0`／`1`／`+`／`−` 按鍵，以及一個 Fit／% 的 HUD 顯示）。行動裝置上（螢幕寬度 ≤640px），控制項變成一個固定在頂端的面板，帶有拖曳把手，可吸附至半展開／半開／全展開三種狀態（點按可切換），覆蓋在靜態的全螢幕預覽上方，而一個懸浮的**渲染**按鈕會以底部彈出面板打開**匯出**控制項。觸控裝置在預覽畫面上可用雙指縮放與拖曳平移。渲染路徑與匯出控制項在兩者之間完全相同——只有外框介面會重新排版。
+![430px 寬螢幕上的 Audiogram - 上方是控制項表單，下方是完成的方形作品，以及浮動的輸出按鈕](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
-同一個工具在手機寬度下也是同一套，不需要再維護第二種版面：控制項變成頂端的面板，預覽佔滿整個螢幕，懸浮的渲染按鈕就浮在它上面。
-
-**批次模式（`/pro`）。** 網頁殼層還內建一個試算表風格的批次網格（`shells/web/src/pro/`），可以跨一或多個工具，一次渲染大量列。它支援 CSV／TSV 雙向轉換與試算表貼上、每列各自的 template／格式／尺寸／單位／dpi、一個附即時預覽的區塊編輯側面板、可摺疊的匯出欄位、每列的「相關性」標籤列、左側拖曳把手可調整列順序、兩階段刪除確認、已儲存的批次工作階段，以及 `.zip` 下載。這就是「大量內容生成」定位背後那個一對多的介面。
+**批次模式（`/pro`）。** Web shell 也提供一個試算表風格的批次網格（`shells/web/src/pro/`），可一次跨一個或多個工具算繪多列。它支援 CSV/TSV 雙向轉換與試算表貼上、逐列的樣板/格式/尺寸/單位/dpi、附即時預覽的 blocks 編輯側欄、可收合的輸出欄、逐列「相關性」標籤列、左側拖曳把手可重新排序、兩階段刪除確認、已儲存的批次工作階段，以及 `.zip` 下載。這就是「大量內容產出」定位背後的一對多介面。
 
 ### Tauri 桌面版／行動版
-
-封裝好的原生應用程式（透過 Tauri 實現小巧的體積）。提供完整的離線可用性、供依賴檔案系統的工具（PDF Smasher、Font Outliner）存取檔案系統，以及攝影機存取權限。預計在 2026 年年中進行工具強化。
+打包好的原生應用程式（透過 Tauri 保持小體積）。提供完整離線可用性、供仰賴 CLI 的工具（PDF Smasher、Font Outliner）使用的檔案系統存取，以及相機存取。預計 2026 年年中進行工具強化。
 
 ### CLI
-
 `lolly <tool-id> [--input=value ...] --output=file.png`
 
-桌面使用者可以從終端機呼叫許多工具。CLI 殼層載入相同的引擎、建立一個 jsdom DOM、執行相同的渲染路徑，並寫入檔案。URL 模式就是傳輸方式——CLI 不是另一套獨立的實作。這保證了 CLI 與 GUI 的輸出完全一致。
+桌面版使用者可以從終端機呼叫許多工具。CLI shell 載入同一個引擎、建立一個 jsdom DOM、執行同一條算繪路徑，並寫出檔案。URL 模式就是傳輸方式 - CLI 並非另一套實作。這確保 CLI 與 GUI 的輸出完全一致。
 
 ```bash
 lolly qr-code --url=https://suse.com --output=qr.svg
 lolly quotes --quote="Ship it." --output=quote.png
-lolly                        # 列出可用的工具
-lolly qr-code                # 列出該工具的輸入項目
+lolly                        # lists available tools
+lolly qr-code                # lists inputs for that tool
 ```
 
 ### TUI
-
 `npm run tui`
 
-CLI 的互動式對應版本：一個全螢幕、以鍵盤為主要操作方式的終端機應用程式（以 Ink 打造），可以瀏覽工具、填寫輸入、儲存專案並匯出——完全不需要 GUI。它的主機橋接層在不需要 DOM 的格式（SVG/EMF/EPS/HTML ＋文字／資料）上**重複使用 CLI 的實作**，並額外加上位於 `~/.lolly` 的磁碟狀態，以及一個選用的行內預覽。除此之外，它還有一個**瀏覽器渲染層**：一個範圍受限的無介面 Chromium（與 MCP 伺服器安裝的是同一套），可依需求產生點陣圖／PDF／影片，並擷取即時網址畫面——驅動的是一份已建置好的網頁殼層副本，因此輸出結果完全相同，且只有在你第一次匯出這類格式時才會啟動。所以 `url-shot`（含裁切＋改色＋向量 PDF/SVG）以及每一個點陣圖／PDF 工具，也都能在終端機中執行。詳見 [TUI 指南](/info/tui.html)。
+CLI 的互動版對應物：一個以鍵盤操作為主的全螢幕終端機應用程式（以 Ink 打造），可瀏覽工具、填寫輸入、儲存專案並輸出 - 全程不需要 GUI。其 host bridge 針對無 DOM 的格式（SVG/EMF/EPS/HTML + 文字/資料）**重用 CLI 的實作**，並加上 `~/.lolly` 底下的磁碟狀態，以及可選擇啟用的行內預覽。除此之外，它還有一個**瀏覽器算繪層**：一個範圍受限的無頭 Chromium（與 MCP 伺服器安裝的是同一套），可依需求產生點陣圖／PDF／影片與即時 URL 擷取 - 驅動一份已建置好的 web shell 副本，因此輸出完全一致，並且只在你首次輸出這類格式時才啟動。因此 `url-shot`（含裁切、重新上色與向量 PDF/SVG）以及每個點陣圖／pdf 工具，也都能在終端機中執行。詳見 [TUI 指南](/info/tui.html)。
 
-不論你在哪個介面上，儀表板的功能（Capabilities）分頁都是這個平台宣告自己能做什麼的完整地圖——已經分好組、可以直接閱讀，不必打開任何一個工具。
+無論你在哪個介面，儀表板的 Capabilities 分頁都是平台宣告自身能力的完整地圖，依分類整理，不需要開啟任何一個工具就能閱讀。
 
 ---
 
 ## 工具分類
 
-![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=aud-utilities)
+工具在其 manifest 中以 `category` 標記，用於藝廊分組。
 
-工具在其 manifest 中會標上一個 `category`，用於工具庫中的分組。
+各列依藝廊區塊順序列出。`utility` 區塊在藝廊中永遠**最後**呈現（排在所有其他分類之後，包括未來新增的分類）- 它是裝置端的「離線工具」抽屜。
 
-各列依工具庫區塊的顯示順序排列。`utility` 區塊在工具庫中永遠**排在最後**（在其他所有分類之後，包括未來新增的分類）——它是裝置端的「離線公用程式」抽屜。
-
-| 分類 | 已上線工具 | 規劃中 |
+| 分類 | 範例 | 規劃中 |
 |---|---|---|
-| `everyone` | QR Code Generator, Quote Card, Email Signature, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
-| `designer` | Brand Lockup, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
-| `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS | Event Stationery, Bulk Name Badges, Room Agenda Cards |
-| `product` | — | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Design | 單位／格式轉換器、更多裝置端隱私公用程式 |
+| `everyone` | QR Code Generator、Quote Card、Email Signature、Logo、Wordmark、Audiogram、Battlecards、Sequence Studio、Record | Employee Image Stationery |
+| `designer` | Brand Lockup、Design、Chart Creator、D3 Chart Studio、Darkroom、Filter、Pose Geeko、Multi-Page PDF | Font Outliner |
+| `event` | Meeting Planner、Event Name Badge、Wayfinding Signage、Calendar ICS、Booth Studio | Event Stationery、Bulk Name Badges、Room Agenda Cards |
+| `product` | - | CVE Alert、Product Release Announcement、Blog OG Image |
+| `utility` | Strip Hidden Data、Text Helper、Compress PDF、Convert Image、Convert Font、Redact、Run Web Code、Screen Capture、URL Screenshot | 單位／格式轉換器、更多裝置端隱私工具 |
 
-工具也會依狀態分類：`official`（品牌核准、無浮水印）、`community`（外部貢獻）、`experimental`（匯出檔案帶浮水印）。Dynamic Layout、URL Screenshot、Logo Lockup: Grid (NASCAR)、Filter: Posterize Bitmap 與 Diagram Builder 目前為 `experimental` 狀態；Web Icon Maker 與 Design 則以 `community` 工具的形式上線。
+這些欄位是**範例，不是完整清單**。哪些工具存在，取決於你所掛載的 profile，而不是這個頁面 - 品牌套件會加入自己的工具，也可以排除某個它不想提供的社群工具。`catalog/tools/index.json` - 由 manifest 產生，也是藝廊實際讀取的登錄檔 - 才是權威清單；要計算某個 profile 掛載了多少工具，應清點 manifest（`ls community/*/tool.json brands/*/tools/*/tool.json`），而不是信任這裡寫下的數字。（同一個工具 id 若出現在兩個套件中，只會掛載一次，以優先的套件為準。）
 
-**版面工作室**是第一個建立在 `render.layout: "editor"` 自由畫布模式上的工具——一個沒有多餘介面裝飾、可直接操作的畫面，你可以在其中拖曳、調整大小、旋轉並吸附文字、形狀與圖片方塊，接著透過與其他所有工具相同的渲染路徑匯出。
+工具也依狀態分類：`official`（品牌核准，無浮水印）、`community`（外部貢獻）、`experimental`（輸出加浮水印）。函式庫中大多數是 `official`；較新的工作室與擷取類工具在穩定下來前，通常會落在 `community` 或 `experimental`。每個介面都會顯示徽章，讓讀者在開啟工具之前就知道自己拿到的是什麼 - 而且，就像上方的分類欄位一樣，各狀態下的工具成員異動太快，無法在此列舉。請以藝廊或產生的索引為準。
 
-**Strip Hidden Data** 是第一個**裝置端公用程式**（`privacy: "on-device"`）：一個內容轉換工具，接收*你*提供的檔案，完全在瀏覽器中處理，再交回一份乾淨的副本——不上傳、不加浮水印、不蓋來源印記。**Text Helper** 是第二個——一個裝置端工作台，處理日常那些「貼到某個網站上」的工作（JSON 格式化、JWT 解碼、Base64、URL 編碼／解碼、SHA 雜湊）。**Compress PDF** 是第三個——它透過重新壓縮圖片來縮小 PDF 檔案，同樣完全在裝置端完成。這三個工具都帶有徽章文字「Runs on your device — nothing is uploaded」。這是一個隱私工具分類的起點，用來取代把機密檔案交給單一用途網站處理的做法。
+**Design** 是第一個建立在 `render.layout: "editor"` 自由畫布模式上的工具 - 一個無外框、直接操作的介面，你可以拖曳、縮放、旋轉並吸附文字、形狀與圖片方塊，再透過與其他所有工具相同的算繪路徑輸出。
 
-> 附註：`category` 與 `status` 會從每個 `tool.json` 反正規化寫入 `catalog/tools/index.json`（工具庫讀取的登錄檔）。manifest 才是唯一真實來源——這個索引由 `npm run build:catalog` **產生**，如果已提交的索引與 manifest 有落差，`npm run validate:catalog` 就會讓 CI 失敗。
+**Strip Hidden Data** 是第一個**裝置端工具**（`privacy: "on-device"`）：這是一個內容轉換工具，接收*你*提供的檔案、完全在瀏覽器內處理，再交還一份乾淨的副本 - 從不上傳、從不加浮水印、不蓋任何來源標記。**Text Helper** 是第二個 - 一個處理日常「貼上網站」工作的裝置端工具台（JSON 格式化、JWT 解碼、Base64、URL 編碼／解碼、SHA 雜湊）。**Compress PDF** 是第三個 - 它透過重新壓縮 PDF 中的圖片來縮小檔案，同樣完全在裝置端進行。這個標記與其徽章文字「在你的裝置上執行 - 不會上傳任何內容」，如今涵蓋整個轉換工具集：Strip Hidden Data、Text Helper、Compress PDF、**Convert Image**（HEIC/TIFF/AVIF → WebP/JPG/PNG）、**Convert Font**、**Redact**（銷毀圖片、SVG 或 PDF 中的區域）、**Prompt to Image**，以及在該 profile 有掛載的情況下的 **Rebrand a Deck**（就地重新套用 `.pptx` 的主題）。這是一個隱私工具分類，用來取代把機密檔案交給單一用途的網站處理。
+
+![工具抽屜，其中每張卡片都是可轉換你既有檔案的工具](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=aud-utilities)
+
+> 注意：`category` 與 `status` 是從各自的 `tool.json` 反正規化寫入 `catalog/tools/index.json`（藝廊實際讀取的登錄檔）。manifest 才是唯一真實來源 - 索引由 `npm run build:catalog` **產生**，若已提交的索引與 manifest 出現偏差，`npm run validate:catalog` 會讓 CI 失敗。
 
 ---
 
 ## 架構承諾
 
-這些決策已經拍板定案。更動其中任何一項都是重大工程——它們形塑了程式碼庫中的其他所有決策。
+以下決策已經定案。更動其中任何一項都是重大工程 - 它們塑造了程式碼庫中的其他每一項決策。
 
-### 1. 宣告式工具，搭配命令式的逃生艙口
+### 1. 宣告式工具，搭配命令式逃生艙
 
-![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-street-map-controls)
+一個工具是一份 manifest（`tool.json`）+ 一份樣板（`template.html`）+ 選用的 `hooks.js`。
 
-一個工具由 manifest（`tool.json`）＋ template（`template.html`）＋選用的 `hooks.js` 組成。
+**輸入由 manifest 宣告。** 而非樣板。輸入不是從 Handlebars 標記推斷出來的。manifest 是合約；樣板透過 `{{id}}` 使用具名變數。
 
-**manifest 宣告輸入項目。** 不是 template。輸入項目不是從 Handlebars 標記推斷出來的。manifest 是合約；template 則透過 `{{id}}` 使用具名變數。
+![Street Map 的控制項堆疊 - 一個城市下拉選單、一個主題選擇器、粗細滑桿與色彩觸發器，每一項都繪製自 manifest 的一行設定](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-street-map-controls)
 
-**hooks 是選用的。** 多數工具是純宣告式的——manifest ＋ template 就足夠了。需要計算數值的工具（QR 編碼、圖表資料整形）會提供 `hooks.js`，公開具名的生命週期函式（`onInit`、`onInput`、`onFrame`——給動態反應工具用的逐格即時攝影機掛鉤——`beforeRender`、`beforeExport`、`afterExport`，以及 `exportFile`——供 Strip Hidden Data 這類裝置端公用程式使用的檔案輸入／輸出轉換路徑）。主機透過 `new Function('host', …)` 載入 hooks，並把能力橋接層以閉包作用域的方式注入。這是一份**可攜性合約，不是安全沙箱**：hooks 仍然在頁面的執行環境中運作，在瀏覽器殼層中*可以*存取 `window`／`fetch`／`document`——`host.*` 是受支援、可攜的介面，而不是強制執行的邊界。非同步的 hook 結果會有時間限制（onInit 5 秒、onInput 2 秒、其餘 5 秒），逾時的結果會被捨棄；但失控的*同步* hook 無法被中斷。因此，在 Worker 隔離機制推出之前，執行不受信任的第三方 hook 程式碼並不安全。
+**Hooks 是選用的。** 大多數工具是純宣告式的 - manifest + 樣板就已足夠。需要計算值的工具（QR 編碼、圖表資料整形）提供 `hooks.js`，公開具名的生命週期函式（`onInit`、`onInput`、`onFrame` - 供動態反應相機工具使用的逐幀即時相機掛鉤 - `onLevel`、`beforeExport`、`afterExport`、`exportFile` - Strip Hidden Data 等裝置端工具使用的檔案輸入／檔案輸出轉換路徑 - 以及 `exportStill`，供自行掌管深度點陣算繪的工具使用）。host 透過 `new Function('host', …)` 載入 hooks，並以閉包範圍注入能力橋接（capability bridge）。這是一份**可攜性合約，而非安全沙箱**：hooks 仍在頁面 realm 中執行，在瀏覽器 shell 中*可以*存取 `window`／`fetch`／`document` - `host.*` 是受支援的可攜介面，而非強制邊界。非同步 hook 結果有時間限制（`onInit` 5 秒、`onInput` 2 秒、`beforeExport`／`afterExport` 5 秒、`exportFile`／`exportStill` 10 秒），逾時結果會被捨棄；失控的*同步* hook 則無法被中斷。因此，在 Worker 隔離上線之前，執行不受信任的第三方 hook 程式碼並不安全。
 
-這一點很重要，原因是：宣告式工具可以由非開發者撰寫。如果每個工具都是一個網頁應用程式，「缺乏技能來建立／維護日常範本」這項風險就會變成永久的瓶頸。
+這點之所以重要：宣告式工具可以由非開發者撰寫。如果每個工具都是一個網頁應用程式，「創建／維護核心樣板的技能有限」這項風險就會變成永久的瓶頸。
 
-### 2. 工具與素材是資料，不是打包好的程式碼
+### 2. 工具與資產是資料，不是綁定的程式碼
 
-網頁版與 Tauri 應用程式會在啟動時從一個已知網址擷取工具與素材目錄，在本機快取，並依當下擁有的內容運作。**新增一張活動卡片或季節性素材，不需要發布新版應用程式。**
+Web 與 Tauri 應用程式會在啟動時，從已知的 URL 擷取工具與資產目錄，在本機快取後，依當下所有的內容運作。**新增一張活動版型或季節性資產，不需要發布新版應用程式。**
 
-素材位元組會以 SHA-256 計算校驗碼，以防止 CDN 遭到污染。素材的 `id` ＋ `version` 決定快取何時失效。
+資產位元組經過 SHA-256 校驗，以防止 CDN 遭下毒。資產的 `id` + `version` 驅動快取失效。
 
-### 3. 能力橋接層是工具唯一看得到的 API
+### 3. 能力橋接是工具唯一能看見的 API
 
-工具永遠不會碰觸其 template 區域以外的 DOM，永遠不會直接呼叫 `fetch`，也永遠不會讀取檔案系統。它們呼叫的是有版本編號的 `host.*` 方法。橋接層定義於 `engine/src/bridge/host-v1.ts`：
+工具永遠不會在其樣板區域之外碰觸 DOM，不會直接呼叫 `fetch`，也不會讀取檔案系統。它們呼叫已版本化的 `host.*` 方法。此合約的權威定義位於 `packages/core/src/host-v1.ts` - 也就是工具作者 SDK `@lolly-tools/core`，讓第三方無需依賴引擎就能據此開發；`engine/src/bridge/host-v1.ts` 是它的型別重新匯出，引擎／shell 的程式碼仍照舊從該路徑匯入：
 
-| 橋接層 API | 功能 |
+| 橋接 API | 功能 |
 |---|---|
-| `host.profile` | 使用者的名字、電子郵件、大頭照、城市等。透過 `bindToProfile` 預先填入輸入項目。 |
-| `host.assets` | 目錄查詢、素材解析、主機提供的選擇器 UI。 |
-| `host.state` | 儲存／載入輸入槽位。web 上是 IndexedDB，Tauri 上是檔案系統，CLI 上是記憶體。 |
-| `host.clipboard` | 把文字或圖片寫入剪貼簿（附平台備援方案）。 |
-| `host.export` | 將渲染目標點陣化或序列化。對 experimental 工具套用浮水印。 |
-| `host.net` | 白名單制的 fetch——只有在工具宣告了 `"network"` 能力時才可使用。（目前沒有任何已上線的工具用到它。） |
+| `host.profile` | 使用者的名字、電子郵件、大頭照、城市等。透過 `bindToProfile` 預先填入輸入欄位。 |
+| `host.assets` | 目錄查詢、資產解析、host 提供的選取器 UI。 |
+| `host.state` | 儲存／載入輸入欄位槽。Web 版用 IndexedDB，Tauri 用檔案系統，CLI 用記憶體。 |
+| `host.clipboard` | 將文字或圖片寫入剪貼簿（並提供平台備援方案）。 |
+| `host.export` | 將算繪目標點陣化或序列化。對 experimental 工具套用浮水印。 |
+| `host.net` | 允許清單內的 fetch - 僅在工具宣告 `"network"` 能力時才可用。（目前沒有已上線的工具使用它。） |
 
-選用、附加性的介面，只有在某個殼層提供時才會出現。其中兩個是**能力閘控**的——只有在工具宣告了對應旗標時才會公開：`host.compose`（嵌入另一個工具的渲染結果——`compose`）與 `host.capture`（供 URL Screenshot 使用的頁面擷取——`capture`）。其餘的則是**功能偵測**的——只要殼層能夠提供，就會存在：`host.text`（透過 HarfBuzz WASM 進行文字轉路徑；`wasm` 能力會標記依賴它的工具）、`host.pdf`（PDF 解析／壓縮，供 Strip Hidden Data 與 Compress PDF 使用），以及 `host.tokens`（DTCG 設計權杖）。可宣告的能力有：`network`、`filesystem`、`clipboard`、`camera`、`ffmpeg`、`wasm`、`capture`、`compose`。
+選用、可疊加的介面只會在某個 shell 提供時出現。有些是**依能力閘控**的 - 僅在工具宣告對應旗標時才會公開：`host.compose`（嵌入另一個工具的算繪結果 - `compose`）、`host.capture`（供 URL Screenshot 使用的頁面擷取 - `capture`），以及 `host.recorder`（供錄製類工具使用的麥克風／相機／畫面擷取 - `microphone` / `camera` / `screen`）。其餘則是**特徵偵測式**的 - 只要 shell 能提供就會出現，工具則為無法提供的 shell 保留備援方案。
 
-同一個工具能在瀏覽器、Tauri 與無介面的 CLI 中執行，是因為每個殼層都實作了這個介面——工具本身永遠不知道自己身處哪一種環境。
+以下列出幾個代表性介面，用以說明其涵蓋範圍 - [Host API](/info/host-api.html) 記載了每一個項目，而 `packages/core/src/host-v1.ts` 本身就是合約：
 
-橋接層有版本編號。新增方法屬於次版本更新。移除或變更簽章則需要主版本號升級。當 v2 推出時，v1 必須繼續正常運作。
+| 介面 | 自版本 | 新增內容 |
+|---|---|---|
+| `host.tokens` | 1.0 | DTCG 設計 tokens - 品牌自身的基本元素 |
+| `host.text` | 1.0 | 透過 HarfBuzz WASM 的文字轉路徑（`wasm` 能力旗標標示仰賴此功能的工具） |
+| `host.media` | 1.4 | 驅動 `onFrame` 掛鉤的即時相機影格。屬於漸進增強，刻意*不*被 `camera` 旗標閘控 - 這類工具即使沒有此能力，仍可作為一般靜態圖片工具運作 |
+| `host.color` | 1.40 | 感知式色彩數學：ΔEOK、WCAG 與 APCA 對比度、OKLab 漸層、分級斷點、分類調色盤、調和方案（1.60）、CSS Color 4 混色與漸層烘焙（1.68）。純函式且同步 - shell 直接掛上引擎的 `makeColorApi()`，而非自行實作，因此不會出現偏差 |
+| `host.images` | 1.60 | 在裝置端解碼／縮放／重新編碼位元組 - 也就是轉檔路徑（HEIC → JPEG、壓縮成 WebP、縮小尺寸）。在 web shell 中以延遲載入的門面（facade）方式提供，因此 HEIC 解碼器不會進入開機主要區塊 |
+| `host.geom` | 1.64 | 精確的向量幾何：路徑布林運算、外擴（offsetting）、描邊轉填色、雲形線降階、簡化、命中測試。同樣是純函式、同步，並由引擎掛載（`makeGeomApi()`）；失敗會被*回傳*，而非拋出例外 |
 
-### 4. 素材 ID 永久不變
+其餘部分遵循相同規則，並在其旁一併記載：`pdf`（1.8）與 `pptx`（1.58）用於裝置端文件加工，`audio`（1.71）與 `speech`（1.96）用於片段分析與裝置端 TTS／轉錄，`viz`（1.72）用於 MilkDrop 佔位合約，`codec`（1.100）與 `layers`（1.102）用於深位元與分層點陣輸出，`upscale`（1.101）與 `matte`（1.103）用於裝置端模型，`raster`（1.105）供自行處理像素運算的 hooks 使用，`connectors`（1.106）用於輸出安全的箭頭，以及 `c2pa`（1.85）用於為完成的位元組簽章。數量會持續增加；規則不會。
+
+可宣告的能力有：`network`、`filesystem`、`clipboard`、`camera`、`microphone`、`screen`、`ffmpeg`、`wasm`、`capture`、`compose`。（`screen` 於 1.54 新增，是透過 `host.recorder` 的畫面擷取 - 使用者在瀏覽器原生 UI 中選取螢幕／視窗／分頁；與 `capture` 不同，後者是將工具自行指定的某個 URL 點陣化。）
+
+同一個工具能在瀏覽器、Tauri 與無頭 CLI 中執行，是因為每個 shell 都實作了這個介面 - 工具本身並不知道自己身處哪一個環境。
+
+這個橋接是有版本的。新增方法屬於次版號更新。移除或變更簽章屬於主版號更新。當 v2 上線時，v1 必須持續可用。
+
+### 4. 資產 ID 永遠不變
 
 `suse/logo/primary` 是一份合約。一旦發布：
-- 這個 ID 永遠不會改變，也永遠不會被重複使用。
+- ID 永遠不會變更，也不會被重複使用。
 - 位元組內容變更 → 在 manifest 中提升 `version`。
-- 被新素材取代 → 設定 `deprecated: true`，並可選擇設定 `replacedBy`。
-- 既有的參照永遠都能被正確解析。
+- 被新資產取代 → 設定 `deprecated: true`，並可選擇性設定 `replacedBy`。
+- 既有的參照永遠能被解析。
 
-這讓已儲存的工具狀態，以及透過網址分享的連結，能夠跨越數年依然有效。
+這讓已儲存的工具狀態與 URL 分享連結，能夠歷經多年依然可用。
 
-### 5. URL 模式是第一等公民
+### 5. URL 模式屬於一等公民
 
-![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-url-mode-qr)
-
-![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-url-palette)
-
-每一個輸入項目都必須能夠表示成一個 URL 參數：
+每個輸入都必須能以 URL 參數表達：
 
 ```
 lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H
 ```
 
-CLI 模式就是 URL 模式換了一種傳輸方式——CLI 殼層會從 argv 建立一個 URL 狀態物件，並執行**同一套**引擎流程。渲染路徑只有一條。CLI 不可能與 GUI 產生落差，因為它根本不是另一套獨立的實作。
+![那個連結本身，不含其他任何東西，就是完成的成品](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-url-mode-qr)
 
-`url-mode.ts` 負責處理這個雙向轉換（解析與序列化）。保留參數（絕不會當作輸入項目轉發給工具）：`format`、`export`、`copy`、`slot`、`output`、`filename`、`_v`、`z`（封裝狀態——也就是「Shortest link」權杖）、`width`／`w`、`height`／`h`、`unit`、`dpi`、`profile`、`password`、`bleed`、`marks`、`full`、`options`、`nostage`。URL 模式中的素材輸入會以其 `id` 序列化；runtime 會在渲染之前透過 `host.assets.get()` 解析它們。`width`／`height` 是以 `unit` 為單位的數值（預設為 `px`，也支援 `mm`／`cm`／`in`／`pt`／`pc`）；使用實體單位時，`dpi` 會決定點陣圖解析度。它們會設定畫布文件尺寸，並預先填入匯出尺寸面板。
+CLI 模式就是換了一種傳輸方式的 URL 模式 - CLI shell 會從 argv 建構一個 URL 狀態物件，並執行**同一條**引擎管線。只有一條算繪路徑。CLI 不可能與 GUI 出現偏差，因為它並非另一套實作。
 
-因為每一個輸入項目都隨著連結一起傳遞，改一個參數就等於換成另一份完成的素材：一整套色盤，背後其實只是一個種子色、一種配色關係與一個階數。
+`url-mode.ts` 負責處理往返轉換（解析與序列化）。有一組**保留參數**永遠不會以輸入形式轉發給工具：輸出控制項（`format`、`export`、`copy`、`filename`、`width`/`w`、`height`/`h`、`unit`、`dpi`）、印刷與來源標記旋鈕（`bleed`、`marks`、`profile`、`password`、`c2pa`、`imprint`、`durable`、`meta`、`hdr`、`depth`、`cuts`），以及狀態載體（`template`、`z` - 也就是「最短連結」封裝權杖 - 與 `zx`，即以密碼加密後的同一種權杖）。`engine/src/url-mode.ts` 中的 `RESERVED` 集合是權威來源，並由測試釘住；[URL Mode](/info/url-mode.html) 記載了其中每一個項目，包括這裡未列出的少數幾個。URL 模式下的資產輸入以其 `id` 序列化；執行環境會在生成前透過 `host.assets.get()` 解析它們。`width`／`height` 是以 `unit` 為單位的數值（預設 `px`，也可用 `mm`/`cm`/`in`/`pt`/`pc`）；使用實體單位時，`dpi` 會設定點陣解析度。它們會設定畫布的文件尺寸，並預先填入輸出尺寸面板。
 
-### 6. 儲存一律透過橋接層，不能直接存取
+由於每個輸入都會隨連結一起傳遞，參數一變，就是不同的成品。以下整個調色盤，就只是一個種子色、一種調和方式與一個階數：
 
-網頁殼層：IndexedDB。Tauri：檔案系統。CLI：記憶體內。工具只會看到 `host.state.save(slot, data)` 與 `host.state.load(slot)`。不使用 `localStorage`——它容量太小，也無法儲存 blob。
+![四種色相中的九個階段,全部從連結中攜帶的單一種子色衍生而來](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-url-palette)
 
-使用者可以為每個工具儲存多個具名的編輯槽位，之後再回到各個工作階段。不需要建立帳號；狀態是依裝置各自保存的。正因為橋接層是唯一的介接點，這種依裝置保存的狀態同時也是*可攜的*：`shells/web/src/data-transfer.ts` 會透過 `host.profile`／`host.state`／`host.assets` 把所有內容讀出，打包成單一個 `lolly-backup` zip 檔，可以匯入任何其他安裝——這就是「換到新裝置」這個問題的離線解法，完全不需要伺服器（完整規格見 `docs/data-transfer.md`）。SUSE ID 整合（多裝置同步）是建立在這之上的未來里程碑。
+### 6. 儲存透過橋接層進行,而非直接存取
 
-### 7. 成熟度標籤從結構上回應「品牌是否核准」的風險
+Web shell:IndexedDB。Tauri:檔案系統。CLI:記憶體內。工具只能看到 `host.state.save(slot, data)` 和 `host.state.load(slot)`。不使用 `localStorage` - 它太小,也無法儲存 blob。
 
-每個工具都會在其 manifest 中宣告 `status: official | community | experimental`。工具庫會依狀態排序。experimental 工具的匯出檔案會自動加上浮水印——這個浮水印是由 `host.export.render` 套用的，不是由工具本身套用，因此非官方的工具作者無法選擇跳過它。
+使用者可以為每個工具儲存多個具名編輯槽,之後回到各個工作階段。不需要建立帳號;狀態是以裝置為單位的。由於橋接層是唯一的介面,這種以裝置為單位的狀態也是*可攜的*:`shells/web/src/data-transfer.ts` 透過 `host.profile`/`host.state`/`host.assets` 讀出所有內容,整合成單一 `lolly-backup` 壓縮檔,可在任何其他安裝中匯入 - 這是不需要伺服器就能解決「移到新裝置」問題的離線方案(完整規格見 `docs/data-transfer.md`)。SUSE ID 整合(多裝置同步)是建立在此之上的未來里程碑。
 
-這是針對「使用任何工具都意味著品牌已核准」這種觀感風險的結構性解法。流程面的解法（審查佇列、SUSE ID 閘控）則疊加在這之上。
+### 7. 成熟度標籤透過設計解決「品牌核准」的風險
 
-### 8. 工具輸入項目透過 manifest 定型，素材也不例外
+每個工具都在其清單中宣告 `status: official | community | experimental`。圖庫依狀態排序。實驗性工具的匯出會自動加上浮水印 - 浮水印由 `host.export.render` 套用,而非由工具本身套用,因此非官方工具作者無法選擇退出。
 
-輸入項目會宣告一個 `type`：`text`、`longtext`、`number`、`boolean`、`color`、`select`、`asset`、`date`、`time`、`datetime-local`、`url`、`profile`、`blocks`、`vector` 與 `file`。主機會依 manifest 為每種類型渲染一個通用控制項——工具完全不需要寫任何控制項程式碼。其中三種的份量比其他的更重：
+這是對「使用任何工具即代表獲得品牌核准」這種觀感風險的結構性解答。流程性解答(審核佇列、SUSE ID 閘控)則疊加於其上。
 
-- **`asset`**（搭配 `filter` 與 `allowUpload`）是通往全域素材系統的橋樑；`allowUpload: false` 是品牌強制執行的開關，用在像贊助商卡片標誌這類只允許使用素材庫素材的場合。使用者上傳的檔案採用與素材庫素材相同的 `AssetRef` 結構，因此工具能用同樣的方式處理兩者。
-- **`blocks`** 是一個可重複的欄位群組——一個輸入項目裡的迷你表格，在側面板中編輯，帶有分型別／可判別的新增選單，以及每個區塊各自的素材欄位。點按畫布上已渲染的區塊，就會聚焦到該區塊對應的那一列。`meeting-planner`、`chart-creator`、`event-name-badge`、`wayfinding-signage`、`color-block` 與 `digi-ad` 都使用了它。
-- **`vector`** 把一組固定數量的數字（例如一個變換）組合成單一個複合控制項；**`file`** 則把使用者自己的檔案以位元組形式保存在記憶體中，供裝置端轉換公用程式使用（例如 `strip-data` 與 `compress-pdf`）。
+### 8. 工具輸入透過清單定型,資產也不例外
 
-### 9. Template 不含邏輯（用 Handlebars，不用 EJS）
+輸入項宣告一個 `type`:`text`、`longtext`、`number`、`boolean`、`color`、`select`、`asset`、`date`、`time`、`datetime-local`、`url`、`blocks`、`vector`、`table` 和 `file`。主機會依清單中的類型渲染通用控制項 - 工具本身不需要撰寫任何控制項程式碼。(從使用者個人檔案預先填入不算是一種類型 - 任何輸入都可以帶有 `bindToProfile`。)其中有三種份量特別重:
 
-選擇 Handlebars 而非 EJS 是刻意的決定：
-- 不含邏輯。template 可以由非開發者撰寫。
-- 預設安全。`{{x}}` 會做 HTML 逸出；`{{{x}}}` 則是選擇加入的原始輸出。
-- template 中沒有任意的 JS，代表不需要針對每個 template 逐一做 XSS 稽核。
+- **`asset`**(搭配 `filter` 和 `allowUpload`)是連接全域資產系統的橋接;`allowUpload: false` 是品牌強制執行的槓桿,適用於贊助方塊標誌之類只允許使用圖庫資產的情況。使用者上傳的檔案使用與圖庫資產相同的 `AssetRef` 格式,因此工具能以相同方式處理它們。
+- **`blocks`** 是一種重複的欄位群組 - 一個輸入內的迷你表格,在側邊面板中編輯,附有已定型/可判別的新增選單以及每個區塊的資產欄位。點擊畫布上渲染出的區塊,會聚焦該區塊對應的列。用於 `meeting-planner`、`chart-creator`、`event-name-badge`、`wayfinding-signage`、`color-block` 和 `digi-ad`。
+- **`vector`** 將一組固定的數值(例如一個變形)歸為一個複合控制項;**`file`** 將使用者自己的檔案以位元組形式保存在記憶體中,供裝置端轉換工具使用(例如 `strip-data` 和 `compress-pdf`)。
 
-邏輯全部放在 `hooks.js` 裡，明確且可供審查。可用的 Handlebars helper：`{{default}}`、`{{upper}}`、`{{lower}}`、`{{eq}}`、`{{markdown}}`、`{{asset ref}}`、`{{asset ref "property"}}`（另外還有給同層級 `.ics`／`.vcf`／`.csv` template 使用的資料格式 helper：`icsStamp`／`rfcText`／`csvCell`）。
+### 9. 模板不含邏輯(Handlebars,而非 EJS)
 
-### 10. 工具可以組合工具
+刻意選擇 Handlebars 而非 EJS:
+- 不含邏輯。模板可以由非開發人員撰寫。
+- 預設安全。`{{x}}` 會進行 HTML 逸出;`{{{x}}}` 則是選擇性的原始輸出。
+- 模板中沒有任意 JS,代表不需要逐模板進行 XSS 稽核。
 
+邏輯存在於 `hooks.js` 中,明確且可審閱。可用的 Handlebars 輔助函式:`{{default}}`、`{{upper}}`、`{{lower}}`、`{{eq}}`、`{{markdown}}`、`{{asset ref}}`、`{{asset ref "property"}}`(還有並列的 `.ics`/`.vcf`/`.csv` 模板所用的資料格式輔助函式 `icsStamp`/`rfcText`/`csvCell`)。
 
-一個工具可以嵌入**另一個**工具的渲染結果，而不需要工具與工具之間互相 import——組合是由引擎解析的，絕不是由工具程式碼解析。有兩種介面：
+### 10. 工具組合工具
 
-- **宣告式 manifest**——`composes: [{ id, tool, inputs, format?, width?, height? }]`。引擎會渲染指定的子工具，並把結果以 `{{asset <id>}}` 的形式放進不含邏輯的 template 中。目前 `event-name-badge` 會以 SVG 形式組合 `qr-code`。
-- **可攜式嵌入網址**——`<img src="https://lolly.tools/tool/<id>.<ext>?<inputs>">`。殼層會**在本機**渲染那個子工具（在本機渲染完成之前會先顯示一個佔位像素）；不會有任何內容真的從 `lolly.tools` 擷取。
+一個工具可以嵌入**另一個**工具的渲染結果,而不需要工具對工具的匯入 - 組合是由引擎解析的,絕不是由工具程式碼解析。有兩種介面:
 
-Slides 工具就建立在第二種介面之上：任何一張投影片上的任何一個位置，都可以放另一個 Lolly 工具，而不只是一張圖片。
+- **宣告式清單** - `composes: [{ id, tool, inputs, format?, width?, height? }]`。引擎渲染指定的子工具,並將結果以 `{{asset <id>}}` 的形式放入不含邏輯的模板中。`event-name-badge` 目前以 SVG 形式組合了 `qr-code`。
+- **可攜式嵌入網址** - `<img src="https://lolly.tools/tool/<id>.<ext>?<inputs>">`。Shell 會在**本機**渲染該子項(在本機渲染完成前顯示佔位像素);絕不會從 `lolly.tools` 取得任何內容。
 
-可以組合任何工具的渲染結果：當父工具匯出成 SVG 或 PDF 時，**SVG** 子項會維持真正的向量圖形，匯出成 PNG 時則會清晰地點陣化；**PNG／JPG／WEBP** 子項則以圖片形式內嵌。這需要 `compose` 能力。被組合的子項屬於中介產物——永遠不會加浮水印，也不會蓋來源印記——而且組合會優雅地降級：如果某個殼層無法渲染某個子項，就只會省略那個位置，父工具依然能正常渲染。
-
----
-
-## 我們刻意不做的事
-
-- **不用 EJS／template 中沒有任意 JS。** XSS 攻擊面為零。邏輯全部放在 `hooks.js` 裡。
-- **沒有素材 CMS。** 素材目錄就是 git。更新一律透過 PR 審查。沒有上傳 UI、沒有身分驗證、沒有審核佇列。git 審查*就是*審核機制。
-- **MVP 階段沒有 RBAC。** 公開存取。品牌風險透過成熟度標籤＋浮水印，以及「使用者看到的所有素材都經過 PR 審查」這項結構性事實來管理。
-- **沒有中央資料庫。** 所有使用者狀態都依裝置各自保存。SUSE ID 整合已在路線圖上，但不是上線的阻礙條件。
-- **沒有共用的 tools／engine 程式碼路徑。** 引擎是開放原始碼；`tools/` 與 `assets/` 則維持在各自的儲存庫中，屬於 SUSE 的專有內容。這個切分是強制執行的（不允許互相 import），讓分割保持乾淨。
+組合任何工具的渲染結果:當父項匯出為 SVG 或 PDF 時,**SVG** 子項仍保持真正的向量狀態,匯出為 PNG 時則精確點陣化;**PNG/JPG/WEBP** 子項則以圖片形式內嵌。需要 `compose` 能力。被組合的子項屬於中介產物 - 絕不加上浮水印或來源標記 - 而且組合會優雅降級:無法渲染子項的 shell 只會省略該槽位,父項仍會正常渲染。
 
 ---
 
-## 完整的生命週期
+## 我們明確選擇不做的事
 
-![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=aud-export-popup)
+- **模板中不使用 EJS / 不使用任意 JS。** XSS 攻擊面為零。邏輯存在於 `hooks.js` 中。
+- **不強制使用資產 CMS。** 個人可直接在應用程式內將自己的創作檔案匯入其目錄([目錄](/info/using.html)檢視畫面與 Brand Studio)- 不需要伺服器,不需要管理主控台。工作成果以**工作階段**的形式交接:分享連結攜帶完整狀態,同一個工作階段也能透過備份或協作工作階段傳遞。掌控部署的人可以將共享的工作階段鎖定為**模板** - 開啟連結、將其值記錄為該工具目錄中品牌套件裡的模板項目並提交 - 之後它就會出現在該工具的「從模板新增」選單中,也能以 `?template=<id>` 的形式深層連結。Git 是部署擁有者的鎖定步驟,絕非創作者的。若要建立*共享、受治理*的目錄,組織**可以**用相同方式管理資產目錄,並透過 PR 審核來把關更新 - 這是一種可用的治理模式,而非應用程式的強制要求。
+- **不強制使用 RBAC。** 開放式應用程式預設公開存取;品牌風險透過成熟度標籤與浮水印來管理。想要更嚴格控管的組織,可在此之上疊加自己的驗證機制以及上述經 git 審核的目錄。
+- **沒有中央資料庫。** 所有使用者狀態都是以裝置為單位的。SUSE ID 整合已列入藍圖,但不是上線的阻礙。
+- **沒有共用的工具/引擎程式碼路徑。** 引擎是開放原始碼;`tools/` 和 `assets/` 則仍是各自倉庫中專屬於 SUSE 的私有內容。這種分隔是強制執行的(不允許跨向匯入),讓拆分維持乾淨。
 
-使用者開啟 `lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H`：
+---
 
-1. **啟動。** 網頁殼層開啟 IndexedDB、建構能力橋接層、同步工具與素材目錄（離線時則從快取載入）。
-2. **路由。** URL hash → `tool` 視圖，並解析出 `qr-code` 與 URL 參數。
-3. **載入。** `loadTool('qr-code', fetchFile)` 擷取 `tool.json`、依 JSON Schema 驗證，再擷取 `template.html`、`styles.css` 與 `hooks.js` 原始碼。
-4. **解析 URL 狀態。** `parseUrlState` 把 URL 參數轉換成初始輸入值。素材參照（`?logo=suse/logo/primary`）會被解析成輕量的 `{ id, _unresolved: true }` 物件。
-5. **Runtime。** `createRuntime(tool, host, initialValues)` 建構輸入模型（合併個人資料、預設值與初始值）、透過 `host.assets.get()` 解析素材參照、載入 hooks（以閉包作用域注入 `host`，並非沙箱化），並呼叫 `hooks.onInit`。
-6. **渲染。** 殼層訂閱 runtime；每次狀態變化時都會收到 `{ model, hydrated }`。它依模型渲染輸入控制項，並把渲染後的 template HTML 寫入 `#tool-canvas`。
-7. **互動。** 使用者在輸入框中輸入 → `runtime.setInput(id, value)` → 套用限制條件 → 呼叫 `hooks.onInput` → 重新渲染 template → 重新渲染畫面。畫布即時更新。
-8. **匯出。** 使用者點擊下載（PNG） → `runtime.export(canvasNode, 'png')` → `host.export.render`（透過 dom-to-image-more 點陣化；SVG／PDF 則走專用的 DOM 走訪向量化器） → blob → `host.export.download`。工具可以選擇支援的格式範圍很廣：`svg`、`png`、`jpg`／`jpeg`、`webp`、`avif`、`pdf`，向量格式 `emf`、`eps`，加上印刷／CMYK 格式 `pdf-cmyk`、`cmyk-tiff`、`eps-cmyk`；影片格式 `webm`、`mp4`、`gif`；以及資料／文字格式 `html`、`md`、`txt`、`json`、`csv`、`ics`、`vcf`、`ico`、`zip`。（設定 `render.export: false` 的工具——例如 Color Palette、Countdown Timer、Strip Hidden Data、Text Helper、Compress PDF——會隱藏下載／格式／尺寸控制項。）實體單位會在這裡依格式各自換算（PDF → 真實頁面點數，點陣圖 → 依 DPI 換算成像素，並附上 `pHYs` chunk）。作者／來源中繼資料（作者、工具、來源——由 `engine/src/metadata.ts` 建構）會依格式各自內嵌：PNG iTXt、JPEG EXIF、PDF 資訊字典、SVG `<metadata>`、GIF 註解。experimental 工具的浮水印是由主機插入的，不是由工具本身插入。
+## 完整生命週期
 
-在 Tauri 中是相同的生命週期。在 CLI 中也是相同的生命週期——由 jsdom 提供無介面的 DOM；輸出結果會寫入檔案或 stdout。
+使用者開啟 `lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H`:
+
+1. **啟動。** Web shell 開啟 IndexedDB,建構能力橋接層,同步工具與資產目錄(離線時則從快取載入)。
+2. **路由。** URL 雜湊 → `tool` 檢視畫面,並取出 `qr-code` 與 URL 參數。
+3. **載入。** `loadTool('qr-code', fetchFile)` 取得 `tool.json`,依 JSON Schema 驗證,並取得 `template.html`、`styles.css` 和 `hooks.js` 原始碼。
+4. **解析 URL 狀態。** `parseUrlState` 將 URL 參數轉譯為初始輸入值。資產參照(`?logo=suse/logo/primary`)會被解析為輕量的 `{ id, _unresolved: true }` 物件。
+5. **執行環境。** `createRuntime(tool, host, initialValues)` 建構輸入模型(合併個人檔案資料、預設值和初始值)、透過 `host.assets.get()` 解析資產參照、載入 hooks(以閉包範圍存取 `host`,而非沙盒),呼叫 `hooks.onInit`。
+6. **渲染。** Shell 訂閱執行環境;每次狀態變更都會收到 `{ model, hydrated }`。它依模型渲染輸入控制項,並將水合後的模板 HTML 寫入 `#tool-canvas`。
+7. **互動。** 使用者在輸入欄輸入內容 → `runtime.setInput(id, value)` → 套用限制條件 → 呼叫 `hooks.onInput` → 重新水合 → 重新渲染。畫布即時更新。
+8. **匯出。** 使用者點擊下載(PNG)→ `runtime.export(canvasNode, 'png')` → `host.export.render`(透過 dom-to-image-more 點陣化;SVG/PDF 則透過專用的 DOM 走訪向量化器)→ blob → `host.export.download`。工具可選用的格式範圍相當廣泛,`schemas/tool.schema.json` 中的 `render.formats` 列舉是這方面的權威定義 - 點陣圖與浮點點陣圖、向量與裁切檔案、印刷/CMYK、動態影像、可編輯文件(`pptx`、`docx`、`odt`)、調色盤與資料/文字輸出,以及音訊和字型檔案。[URL 模式](/info/url-mode.html)列出了每個 ID 及其產出的內容。音訊也和其他項目一樣屬於這個列舉(`wav`、`mp3`、`m4a`、`opus`,由 audiogram 和錄製工具所宣告);另外,錄製工具的 `render.capture` 模式會驅動 `host.recorder`,其成品會以瀏覽器錄製時所用的容器格式,以完成的 Blob 形式送達。(設定 `render.export: false` 的工具 - 例如 Color Palette、Countdown Timer、Strip Hidden Data、Text Helper、Compress PDF - 會隱藏下載/格式/尺寸控制項。)實體單位會在這個階段依格式進行轉換(PDF → 真實頁面點數,點陣圖 → 依 DPI 換算的像素,並帶有 `pHYs` 區塊)。作者/來源元資料(作者、工具、來源 - 由 `engine/src/metadata.ts` 建構)會依格式內嵌:PNG iTXt、JPEG EXIF、PDF info 字典、SVG `<metadata>`、GIF 註解。實驗性工具的浮水印是由主機插入,而非由工具本身插入。
+
+![`?options` 開啟的匯出面板:檔名與格式配對、輸出尺寸,以及寫入檔案的控制項](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=aud-export-popup)
+
+Tauri 中的生命週期相同。CLI 中的生命週期也相同 - jsdom 提供無頭 DOM;輸出寫入檔案或標準輸出。
 
 ---
 
 ## 開放原始碼狀態
 
-`engine/`、`shells/`、`schemas/` 與 `docs/` 這幾個目錄以 **MPL-2.0** 授權開放原始碼——這是一個與廠商無關的品牌工具腳手架平台，每個可獨立發布的單元都拆分成 [github.com/lolly-tools](https://github.com/lolly-tools) 底下自己的儲存庫。`tools/` 與 `catalog/assets/` 是 SUSE 專屬的內容，維持**SUSE 專有**（保留所有權利——詳見各儲存庫的 `NOTICE.md`）；它們不受 MPL 授權涵蓋。
+`engine/`、`shells/`、`schemas/` 和 `docs/` 目錄以 **MPL-2.0** 授權開放原始碼 - 這是一個廠商中立的品牌工具鷹架平台,每個可獨立交付的單元都拆分到 [github.com/lolly-tools](https://github.com/lolly-tools) 底下各自的倉庫中。`tools/` 和 `catalog/assets/` 是 SUSE 特有內容,仍**專屬於 SUSE**(保留所有權利 - 詳見各倉庫的 `NOTICE.md`);它們不受 MPL 涵蓋。
 
-這個切分是強制執行的——`engine/` 不會 import `tools/` 或 `assets/` 中的任何內容——讓平台與內容之間的界線保持乾淨。
-
----
-
-## 路線圖
-
-| 里程碑 | 目標時間 | 內容 |
-|---|---|---|
-| **初始工具** | ✅ 已完成 | QR Code, Quote Card, Email Signature, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Chart Creator, Filter: Duotone, Meeting Planner——網頁殼層上線 |
-| **強化現有工具** | 2026 年年中 ✅ 已完成  | 可下載的離線應用程式（Tauri）；更多員工與活動用工具；更豐富的匯出流程（文字轉路徑穩定性、中繼資料、額外格式——見 `plans.md`） |
-| **開放引擎原始碼** | 2026 年底 ✅ 已完成  | 引擎、殼層、schemas、docs 公開——品牌工具／素材則不公開 |
-| **裝置間傳輸** | ✅ 已完成 | 可攜式的 `lolly-backup` 封裝包，能在任兩個安裝之間攜帶個人資料、已儲存的工作階段、已上傳的圖片與偏好設定——不論離線或連線，都不需要帳號。是一個向前相容、具完整性檢查的封套（規格：`docs/data-transfer.md`） |
-| **建立正式的工具路線圖** | 2026 年底 | 客戶參考套件、AI 設計匯入、GET／URL 請求模式 |
-| **裝置端隱私公用程式** | 🚧 進行中 | 在本機處理*你自己*檔案的內容轉換工具（檔案輸入 → 乾淨檔案輸出），取代把資料外流到單一用途 SaaS 的做法。**已完成：** `file` 輸入類型 ＋ `exportFile` 轉換路徑 ＋ `privacy:"on-device"` 慣例（不加浮水印／不留來源資訊） ＋ **Strip Hidden Data**（JPEG/PNG/SVG/PDF 中繼資料，PDF 部分透過 `host.pdf` 橋接層）與 **Text Helper**（給日常「貼到某個網站上」工作用的裝置端工作台——JSON 格式化、JWT 解碼、Base64、URL 編碼／解碼、SHA 雜湊，外加一個 Novelty 分組）。**下一步：** 裁切／調整大小、圖片轉檔／壓縮；接著是一個 `host.image` 編解碼器橋接層（規格：`plans/34-exfiltration-app-content.md`） |
-| **設計權杖（DTCG）** | 🚧 色彩部分已上線 | 品牌基本元素採用標準的 [W3C Design Tokens（DTCG）](https://www.designtokens.org/TR/drafts/format/)——也就是 [Penpot 匯入／匯出](https://help.penpot.app/user-guide/design-systems/design-tokens/)所用的格式。**已完成：** 色彩權杖（`suse/tokens/brand`）、`host.tokens` 橋接層、選擇器色票＋參照連結的數值（規格：`docs/design-tokens.md`）。**下一步：** 尺寸／字體權杖、Penpot 匯入／匯出、傳輸封裝包中的使用者權杖（`tokens.json`） |
-| **MCP 代理端點（渲染）** | ✅ 已完成 | 一個 [MCP](https://modelcontextprotocol.io) 伺服器把目錄＋渲染路徑公開成可呼叫的工具（`lolly_list_tools`／`describe_tool`／`build_url`／`render`／`transform`），讓任何代理程式都能產出完成、受規則約束的素材——可以把它加到任何 MCP 用戶端，當作自訂連接器（OAuth 2.1），也可以讓 CLI／HTTP 用戶端用持有人權杖指向它。上線於 `mcp.lolly.tools`（完整端點：透過代管的無介面瀏覽器提供點陣圖／PDF／動畫／影片）與 `lolly.tools/api/mcp`（無伺服器、免瀏覽器層級）。這與下方的 Penpot *撰寫*用 MCP 不同，後者談的是工具的**建立**（規格：`plans/77-mcp-server.md`；指南：`docs/mcp.md` ＋ `docs/ai-agents.md`） |
-| **把 Penpot 檔案匯入為工具** | 2027+ | 匯入一個 Penpot 檔案，並將它*呈現為一個 Lolly 工具*（宣告式、限制優先），把用 Penpot 撰寫的設計變成具確定性的產生器 |
-| **MCP ＋ Penpot 擴充功能（僅限連線撰寫）** | 2027+ | 一個 Penpot MCP 伺服器透過 AI 來組織新工具——這是建立具確定性 template 最視覺化的方式：先由品牌資訊產出第一輪草案，再由人類參與把關完善，目標是隨時間逐步達到一次到位的新情境產出。工具的*建立*僅限連線；但它產出的工具可以在任何地方執行 |
-| **RBAC ＋ SUSE ID** | 2027+ | 把特定工具鎖在 SUSE ID 之後；多裝置已儲存狀態；Google Drive 匯入／匯出 |
+這種拆分是強制執行的 - `engine/` 不會有任何跨向 `tools/` 或 `assets/` 的匯入 - 讓平台/內容的界線維持乾淨。
 
 ---
 
-## 引擎的終點，主機的起點
+## 引擎在哪裡結束,主機從哪裡開始
 
-如果能用純資料 ＋ Handlebars 描述 → **引擎**。
-如果會碰觸 DOM、檔案系統、網路，或任何瀏覽器／作業系統 API → **主機**。
+如果可以用純資料 + Handlebars 描述 → **引擎**。
+如果涉及 DOM、檔案系統、網路或任何瀏覽器/作業系統 API → **主機**。
 
-這條界線刻意畫得很清楚。引擎是開放原始碼的部分。任何知道 SUSE、特定平台，或執行環境細節的東西，都不會出現在引擎裡。
+這條界線是刻意畫得清楚的。引擎是開放原始碼的部分。任何知道 SUSE、特定平台或執行環境細節的東西,都不會放進引擎。
+
+想了解更深一層的細節,[`engine/README.md`](../engine/README.md) 列出了每個引擎模組及其職責,而[威脅模型與信任邊界](/info/threat-model.html)則記錄了這條界線同時作為信任邊界的位置。

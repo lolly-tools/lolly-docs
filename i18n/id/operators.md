@@ -1,116 +1,119 @@
 # Lolly untuk Operator
 
-### Strategi keamanan & intelijen dengan pertahanan berlapis - yang kebetulan juga merupakan platform produksi kreatif
+### Strategi keamanan & intelijen defence-in-depth - yang kebetulan juga sebuah platform produksi kreatif
 
 Sistem imun organisasi zero-trust yang membungkus apa yang sudah Anda lakukan - sehingga pekerjaan kreatif rutin yang dibutuhkan tim Anda setiap hari terjadi *di dalam* perimeter Anda, bukan bocor keluar darinya.
 
-**Apa untungnya bagi Anda.** Anda bisa menjadi orang yang berkata ya untuk sesuatu yang aman *sekaligus* populer. Anda menutup celah eksfiltrasi, memperoleh kapabilitas, dan menghapus antrean permintaan dalam satu langkah - kemenangan keamanan langka yang membuat Anda lebih disukai, bukan sebaliknya. Tidak ada telepon jam 3 pagi dari tim legal karena berkas berembargo atau data pelanggan berakhir di perkakas web sembarangan; lebih sedikit vendor SaaS, kontrak, dan audit di meja Anda; serta jejak audit yang sepenuhnya dapat direproduksi, yang bisa Anda tunjukkan saat seseorang bertanya. Anda tidur lebih nyenyak, dan menceriakan beberapa hari karenanya.
+**Apa untungnya bagi Anda.** Anda menjadi orang yang mengatakan ya untuk sesuatu yang aman *sekaligus* populer. Anda menutup lubang eksfiltrasi, memperoleh kapabilitas dan menghapus antrean permintaan dalam satu langkah - kemenangan keamanan langka yang membuat Anda lebih disukai, bukan sebaliknya. Tidak ada telepon jam 3 pagi dari legal karena file embargo atau data pelanggan masuk ke tool web sembarangan; lebih sedikit vendor SaaS, kontrak dan audit di meja Anda; dan jejak audit yang sepenuhnya bisa direproduksi untuk ditunjukkan saat ada yang bertanya. Anda tidur lebih nyenyak, dan mencerahkan beberapa hari sambil melakukannya.
 
-Lolly bukan perkakas kreatif kelas dua: ia menempatkan keluaran berkualitas produksi di tangan semua orang, dan pengalaman berkarya yang terpandu brand ini tidak ada duanya. Alasan mengapa *aman* membagikannya seluas itu bersifat arsitektural: tidak ada yang diunggah kecuali yang Anda taruh sendiri, setiap hasil dapat direproduksi, dan setiap ekspor dapat membawa berlapis-lapis catatan kriptografis yang terdepan di industri. Tidak peduli bagaimana sebuah dokumen sampai ke meja Anda, Anda bisa melihat provenansnya secara utuh, apakah dokumen itu telah diubah, dan apakah Anda dapat membuatnya ulang dengan presisi sempurna hingga ke piksel.
+Lolly bukan tool kreatif kelas dua: ia menaruh keluaran berkualitas produksi di tangan semua orang, dan pengalaman penciptaan yang dipandu brand ini tak tertandingi. Alasan ia *aman* untuk dibagikan secara luas bersifat arsitektural: tidak ada yang terunggah kecuali yang Anda taruh sendiri, setiap hasil bisa direproduksi dan setiap ekspor bisa membawa beberapa lapis catatan kriptografis kelas terdepan industri. Tidak peduli bagaimana sebuah dokumen sampai ke meja Anda, Anda bisa melihat provenansnya secara utuh, apakah ia telah diubah dan apakah Anda bisa membuatnya ulang persis piksel demi piksel.
 
-> **Posisinya hari ini.** Properti keamanan Lolly kuat secara rancangan, dan mesin kriptografi serta penguraian berkasnya sedang menjalani pengerasan infrastruktur berkelas enterprise dari SUSE. Segel, penandatanganan di perangkat, dan enkripsi di bawah ini nyata dan dapat dipertahankan sekarang, serta terus matang menuju sertifikasi independen - jadi bila sebuah kontrak menuntut jaminan bersertifikat, gelar semuanya sebagai pertahanan berlapis selama proses itu rampung.
+> **Di mana posisinya hari ini.** Properti keamanan Lolly kuat by design, dan mesin kriptografi serta parsing file-nya sedang melalui pengerasan infrastruktur kelas enterprise milik SUSE. Segel, penandatanganan on-device dan enkripsi di bawah ini nyata dan dapat dipertanggungjawabkan sekarang, serta sedang matang menuju sertifikasi independen - jadi bila sebuah kontrak menuntut jaminan bersertifikat, terapkan ini sebagai defence-in-depth sementara proses itu berlangsung.
 
 ## Keunggulan strategis
 
-Cara biasa pekerjaan kreatif rutin diselesaikan adalah permukaan liabilitas: berkas dikirim lewat email ke kontraktor desain eksternal, aset brand diunggah ke belasan editor SaaS, data pelanggan ditempelkan ke perkakas web orang asing hanya untuk "sekadar membuat grafik cepat." Setiap satunya adalah data yang keluar dari kendali Anda.
+Cara biasa pekerjaan kreatif rutin dikerjakan adalah permukaan liabilitas: file dikirim lewat email ke kontraktor desain eksternal, aset brand diunggah ke selusin editor SaaS, data pelanggan ditempel ke tool web milik orang asing untuk "sekadar bikin grafik cepat". Setiap satu dari itu adalah data yang keluar dari kendali Anda.
 
-Lolly membalikkannya. Pekerjaan yang *memicu* kebocoran itu - kartu kutipan, banner terlokalisasi, lencana acara, tangkapan layar yang disunting - kini terjadi di perkakas yang berjalan di perangkat karyawan sendiri, selaras dengan brand Anda, tanpa server di dalam alur. Anda tidak menambahkan kontrol di atas alur kerja berisiko; Anda mengganti alur kerja berisiko itu dengan alur yang sejak awal tidak punya jalur eksfiltrasi.
+Lolly membaliknya. Pekerjaan yang *memicu* kebocoran itu - kartu kutipan, banner terlokalisasi, badge acara, tangkapan layar yang disunting - kini terjadi pada tool yang berjalan di perangkat karyawan sendiri, terhadap brand Anda, tanpa server yang terlibat. Anda tidak menambahkan kontrol di atas alur kerja berisiko; Anda mengganti alur kerja berisiko itu dengan yang sejak awal tidak memiliki jalur eksfiltrasi.
 
-- **Konfigurasi milik Anda.** Engine dan shell bersifat open source (MPL-2.0). Tumpangkan auth, telemetri, atau CA Anda sendiri; hosting atau tidak; Anda memegang kendali penuh atas fitur dan biaya, terlacak git, tidak terkunci di basis data SaaS.
-- **Tata kelola bisa berupa data, bukan dasbor.** Saat Anda menginginkan kendali itu, kelola katalog perkakas sebagai repositori Git - tinjauan pull request menjadi persetujuan brand, dengan jejak audit lengkap dan rollback instan atas setiap template yang bisa disentuh tenaga kerja Anda. Ini opsi, bukan kewajiban: tim yang sekadar ingin berkarya membuat perkakas mereka sendiri di Design dan menyerap berkas mereka sendiri ke dalam katalog, sepenuhnya di dalam aplikasi, tanpa pernah menyentuh git. Lihat [Adopsi & Tata Kelola](/info/adoption-governance.html).
-- **Pagar pengaman bersifat struktural.** Batasan brand ditanamkan langsung ke dalam template, bukan diterbitkan sebagai pedoman yang bisa diabaikan orang. Keluaran yang salah bukan sekadar tidak dianjurkan - melainkan tidak dapat direpresentasikan.
+- **Konfigurasi milik Anda.** Engine dan shell bersifat open source (MPL-2.0). Lapiskan autentikasi, telemetri atau CA milik Anda sendiri; host sendiri atau tidak; Anda memegang kendali penuh atas fitur dan biaya, dilacak lewat git, tidak terkunci dalam database SaaS.
+- **Governance bisa berupa data, bukan dashboard.** Ketika Anda menginginkan kontrol itu, kelola katalog tool sebagai repositori Git - review pull request menjadi persetujuan brand, dengan jejak audit penuh dan rollback instan untuk setiap template yang bisa disentuh tenaga kerja Anda. Ini pilihan, bukan kewajiban, dan mendarat di tepat satu meja: pembuat bekerja sepenuhnya di dalam aplikasi, menyimpan hasil karyanya sebagai **sesi** dan meneruskannya sebagai tautan berbagi, backup atau kolaborasi langsung - tak satu pun dari itu memerlukan git. Ketika salah satu sesi itu layak menjadi titik awal permanen, siapa pun yang menjalankan deployment membuka tautannya, mencatat nilainya sebagai **template** pada tool itu di brand pack lalu commit. Sejak itu ia muncul di pemilih "New from template" tool tersebut dan bisa ditautkan langsung sebagai `?template=<id>`. Git adalah langkah penguncian admin, dipakai sekali, dan bukan sesuatu yang harus disentuh pembuat. Lihat [Adoption & Governance](/info/adoption-governance.html).
+- **Guard-rail bersifat struktural.** Batasan brand di-hardcode ke dalam template, bukan diterbitkan sebagai pedoman yang bisa diabaikan orang. Keluaran yang salah bukan sekadar tidak dianjurkan - ia tidak bisa diwujudkan.
 
-## Hapus antrean permintaan sembari memperbanyak konten.
+> **Anda mengatur seluruh relay.** Seorang kreatif menulis aturan dan seorang developer menskalakannya, tapi operatorlah yang membuat siklus hidup itu aman dijalankan seluas organisasi - tool yang sama yang memungkinkan seorang rep melayani diri sendiri di pesawat adalah tool yang bisa Anda gerbangi lewat review Git, deploy lewat MDM Anda dan verifikasi secara kriptografis. Lihat bagaimana peran-peran itu bertumpuk di [The lifecycle of a campaign](/info/overview.html#the-lifecycle-of-a-campaign), dan bagaimana Anda mengaturnya di [Adoption & Governance](/info/adoption-governance.html).
 
-Salah satu tujuan Lolly adalah **pengalihan permintaan desain**: permintaan rutin yang tidak pernah perlu sampai ke seorang desainer karena orang yang membutuhkan aset itu membuatnya sendiri, dengan benar, dalam hitungan menit. Setiap tiket yang dialihkan adalah kemenangan produktivitas sekaligus satu berkas lebih sedikit yang berpindah tangan.
+## Hapus antrean permintaan sambil memperbanyak konten.
 
-Lolly dibangun agar cocok dengan cara organisasi Anda benar-benar beroperasi - tidak ada satu cara yang benar untuk menggelarnya:
+Salah satu tujuan Lolly adalah **deflection permintaan desain**: permintaan rutin yang tidak pernah perlu sampai ke desainer karena orang yang membutuhkan aset itu membuatnya sendiri, dengan benar, dalam hitungan menit. Setiap tiket yang terdeflect adalah kemenangan produktivitas sekaligus satu file lebih sedikit yang berpindah tangan.
 
-- **Gelar, jangan sajikan.** Kirim Lolly ke perangkat melalui MDM yang sudah Anda miliki (Intune, Jamf, Munki…). Ia berjalan secara lokal sebagai aplikasi desktop/seluler atau PWA luring - bekerja di balik firewall apa pun, di lingkungan air-gapped mana pun, tanpa server untuk dipelihara dan TI mengendalikan irama pembaruan.
-- **Sajikan saja.** Jalankan satu instance di dalam jaringan Anda (atau di balik VPN); pengguna menjangkaunya lewat browser, tanpa instalasi. Terbitkan sebuah perkakas sekali, semua orang langsung memilikinya; padukan dengan IdP Anda untuk kontrol akses.
-- **Hibrida.** Aplikasi lokal untuk kerja lapangan luring, versi browser yang selalu terkini untuk mesin pinjaman - keduanya mengarah ke pustaka perkakas yang sama.
+Lolly dibangun untuk menyesuaikan cara organisasi Anda sebenarnya beroperasi - tidak ada satu cara yang benar untuk men-deploy-nya:
 
-Model penggelaran lengkap dan panduan administrasi tersedia di [Penggelaran](/info/deployment.html) dan [Konfigurasi](/info/configuration.html).
+- **Deploy, jangan sajikan.** Kirim Lolly ke perangkat lewat MDM yang sudah Anda miliki (Intune, Jamf, Munki…). Ia berjalan secara lokal sebagai aplikasi desktop/mobile atau PWA offline - bekerja di balik firewall apa pun, di lingkungan air-gapped mana pun, tanpa server yang perlu dirawat dan IT memegang kendali kadensi pembaruan.
+- **Sajikan saja.** Jalankan satu instance di dalam jaringan Anda (atau di balik VPN); pengguna mengaksesnya lewat browser, tanpa instalasi apa pun. Terbitkan sebuah tool sekali, semua orang langsung memilikinya; pasangkan dengan IdP Anda untuk kontrol akses.
+- **Hybrid.** Aplikasi lokal untuk kerja lapangan offline, versi browser yang selalu terkini untuk perangkat pinjaman - keduanya menunjuk ke pustaka tool yang sama.
+
+Model deployment lengkap dan panduan administrasi ada di [Deployment](/info/deployment.html) dan [Configuration](/info/configuration.html).
 
 ## Utilitas anti-eksfiltrasi
 
-Satu kategori perkakas Lolly - utilitas privasi - hadir *khusus* untuk menjaga berkas tetap di dalam perimeter.
+Sebuah kategori tool Lolly - utilitas privasi - ada *khusus* untuk menjaga file tetap di dalam perimeter.
 
 
-- **Buang Data Tersembunyi**
- Hapus lokasi dan semua informasi pengenal tersembunyi dari berkas dokumen dan media.
+- **Strip hidden data**
+ Hapus lokasi dan semua informasi identitas tersembunyi dari dokumen dan file media.
 
-- **Pembantu Teks**  
-Anonimkan, enkode, format, dan manipulasi teks terstruktur maupun tak terstruktur. 
+- **Text Helper**  
+Anonimkan, enkode, format, dan manipulasi teks terstruktur dan tidak terstruktur. 
 
-- **Kompres PDF**
-Perkecil ukuran PDF yang kelewat besar di perangkat, sehingga tidak seorang pun perlu mencari situs pihak ketiga "kompres PDF saya" begitu sebuah berkas menjadi terlalu besar untuk dikirim lewat email - persis di situlah data biasa lolos keluar jendela. 
+- **Compress PDF**
+Perkecil ukuran PDF yang terlalu besar langsung di perangkat, sehingga tidak ada yang beralih ke situs pihak ketiga "compress my PDF" begitu file terlalu besar untuk dikirim lewat email - yang justru menjadi titik kebocoran data. 
 
-Semua ini adalah transformasi di perangkat: berkas atau data Anda masuk, byte yang sudah dibersihkan keluar, dan **tidak ada server tujuan unggah**. Semuanya adalah lawan yang disengaja dari perkakas "unggah berkas Anda ke situs orang asing untuk membersihkannya" yang biasa dijangkau karyawan berniat baik jika tidak ada pilihan lain.
+Semua ini adalah transformasi di perangkat: file atau data Anda masuk, byte yang sudah dibersihkan keluar, dan **tidak ada server untuk diunggah**. Ini sengaja dibuat sebagai kebalikan dari alat "unggah file Anda ke situs orang asing untuk membersihkannya" yang biasa dituju oleh karyawan yang bermaksud baik.
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
+![Strip Hidden Data: file mendarat di kanvas dan lencana menyatakan dengan jelas bahwa tidak ada yang diunggah](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
 
-Text Helper menawarkan kesepakatan yang sama, tetapi untuk teks alih-alih berkas. Inilah meja kerja bertab yang jika tidak ada, seorang karyawan akan mencarinya di situs orang asing, dan tool ini sama sekali tidak mendeklarasikan input karena apa pun yang disentuhnya tidak pernah meninggalkan halaman.
+Text Helper menawarkan hal yang sama untuk teks, bukan file. Ini adalah ruang kerja bertab yang seharusnya dicari karyawan di situs orang asing, dan alat ini tidak mendeklarasikan input sama sekali karena tidak ada yang disentuhnya yang pernah meninggalkan halaman.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1200&height=750&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
+![Ruang kerja Text Helper - deretan tab operasi di atas kartu yang menyatakan bahwa tidak ada yang Anda tempel meninggalkan perangkat Anda](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1200&height=750&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
 
-Compress PDF melengkapi rangkaian ini: lampiran yang kelewat besar menyusut sesuai tingkat kualitas yang Anda pilih, di mesin yang memang sudah menyimpannya.
+Compress PDF melengkapi rangkaian ini: lampiran yang terlalu besar diperkecil sesuai pengaturan kualitas yang Anda pilih, di mesin yang sudah menyimpannya.
 
-![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=ov2-compress-pdf)
+![Compress PDF - tingkat kualitas dan sakelar skala abu-abu di sebelah kiri, zona letak untuk PDF Anda sendiri di sebelah kanan, dan tanpa unggahan di mana pun](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=ov2-compress-pdf)
 
+## Determinisme & reproduksibilitas
 
-## Determinisme & reprodusibilitas
+Setiap input alat dapat dinyatakan sebagai parameter URL, dan input yang sama menghasilkan file yang sama. Ini memiliki dua konsekuensi bagi operator:
 
-Prompt to Image adalah determinisme dalam bentuk paling sederhana: teksnya adalah seluruh input, gambar hasil penataan hurufnya adalah seluruh output, dan teks yang sama selalu ditata dengan cara yang sama.
+- **URL adalah artefaknya.** Commit tautannya, buat ulang aset sesuai kebutuhan - tanpa biner yang di-commit ke Git, tanpa mengejar "versi terbaru" di chat. ID aset dan alat adalah kontrak permanen, jadi tautan yang dibuat hari ini tetap dapat diresolusi nanti.
+- **CLI menggunakan jalur render yang sama** dengan GUI, sehingga pipeline build dan aplikasi tidak pernah menyimpang. Hasilkan gambar OG, kartu sosial, dan visual data saat build, secara reproduktif.
 
-![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+Prompt to Image adalah determinisme dalam bentuk paling sederhana: teks adalah seluruh input, gambar hasil typeset adalah seluruh output, dan teks yang sama selalu di-typeset dengan cara yang sama.
 
-Setiap masukan perkakas dapat dinyatakan sebagai parameter URL, dan masukan yang sama menghasilkan berkas yang sama. Itu punya dua konsekuensi bagi operator:
+![Prompt to Image - blok teks prompt yang di-typeset menjadi gambar persegi, tanpa apa pun dalam hasilnya yang tidak ada dalam input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
-- **URL adalah artefaknya.** Commit tautannya, hasilkan ulang asetnya sesuai kebutuhan - tidak ada biner yang di-commit ke Git, tidak perlu mengejar "versi terbaru" di obrolan. ID aset dan perkakas adalah kontrak permanen, jadi tautan yang dibuat hari ini tetap dapat diselesaikan nanti.
-- **CLI adalah jalur render yang sama** dengan GUI, sehingga pipeline build dan aplikasi tidak pernah menyimpang. Hasilkan gambar OG, kartu sosial, dan visual data pada waktu build, secara reprodusibel.
+## Asal-usul & Content Credentials
 
-## Provenans & Content Credentials
+![Zona letak Verify menerima file apa pun, dari sumber mana pun, dan membacanya tanpa panggilan jaringan](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
+Ekspor dapat membawa **Content Credentials** - manifes [C2PA](https://c2pa.org) yang ditandatangani dan terikat pada hash byte file tersebut. Perubahan apa pun pada file setelahnya akan merusak segel, sehingga verifier yang mendukung C2PA **mendeteksi perubahan secara kriptografis, secara offline**. Kredensial ini bersifat tamper-*evident*: kredensial ini menandai perubahan alih-alih mencegahnya, yang justru membuat verifikasi sepenuhnya offline menjadi mungkin.
 
-Ekspor dapat membawa **Content Credentials** - manifest [C2PA](https://c2pa.org) bertanda tangan yang terikat pada hash dari byte berkas. Perubahan apa pun pada berkas setelahnya merusak segelnya, sehingga verifikator yang mengenali C2PA **mendeteksi perubahan secara kriptografis, luring**. Kredensial ini *menunjukkan* gangguan: ia menandai upaya perusakan alih-alih mencegahnya, dan justru itulah yang memungkinkan verifikasi sepenuhnya luring.
+- **Aktif secara default, di perangkat.** Kunci penandatanganan dibuat di perangkat, tidak dapat diekstrak (bahkan Lolly tidak dapat membacanya), dan penandatanganan terjadi secara lokal - hanya *pendaftaran* identitas opsional yang pernah menyentuh jaringan.
+- **Tingkat kepercayaan.** Ekspor yang belum terdaftar tetap terbentuk dengan benar tetapi ditandatangani secara anonim (`untrusted`). Daftarkan **identitas terverifikasi** (sertifikat berumur pendek dari Lolly CA, terikat ke email) dan verifier yang mem-pin root Lolly akan melaporkan `trusted` + email penandatangan. Otoritas stempel waktu tepercaya dan validator pihak ketiga hijau (kesesuaian C2PA) ada dalam roadmap. Setiap tingkat bersifat eksplisit, dan sebuah file hanya pernah mengklaim kepercayaan yang dapat dibuktikannya.
+- **Masa berlaku kredensial** adalah keputusan operator/pengguna saat penandatanganan: 7 / 30 / 90 / 365 hari, default 30.
+- **Lolly Imprint.** Sinyal kedua yang saling melengkapi dan **aktif secara default**: watermark piksel tak terlihat yang tertanam pada ekspor raster (dan raster yang dirender Lolly di dalam PDF/PPTX, tidak pernah gambar tersemat milik pengguna sendiri). Ketika kredensial hilang akibat perubahan kontainer apa pun, Imprint tetap bertahan melalui penyimpanan ulang atau tangkapan layar - petunjuk tahan lama "piksel ini pernah melewati Lolly", hanya berupa keberadaan, tanpa data pribadi. Ini adalah security-through-obscurity, bukan pertahanan yang diperkuat, dan melengkapi kredensial alih-alih menggantikannya. `imprint=0` untuk menonaktifkan.
+- **Durable Content Credentials (opt-in).** Ekspor raster dapat juga membawa tanda *durable* tak terlihat yang mengenkode pengidentifikasi soft-binding, sehingga kredensial C2PA dapat dipulihkan bahkan setelah unggahan ke media sosial atau penyimpanan ulang menghapus metadata file - kasus di mana kredensial biasa akan hilang. Ini hanya berlaku untuk raster dan memerlukan proses neural-encode, sehingga nonaktif secara default (`durable=1` untuk mengaktifkannya). Lolly mengenali tanda durable miliknya sendiri secara offline di `/verify` saat ini; pemulihan oleh alat pihak ketiga (misalnya Adobe) akan menyusul setelah resolusi soft-binding industri diberlakukan.
+- **Verifikasi dilakukan di perangkat.** Letakkan file apa pun di `/verify` (atau `lolly validate <file>`) untuk laporan offline apakah file tersebut benar-benar dibuat dengan Lolly dan tidak berubah sejak itu. Tampilan web Verify juga menandai konten hasil AI, mendeteksi Lolly Imprint, memverifikasi tanda tangan **SEAL** (tanda tangan tingkat byte - dengan nol permintaan jaringan: engine menerima resolver kunci DNS yang *disuntikkan* dan belum ada shell yang menyuntikkannya saat ini, sehingga rekaman yang membawa kunci `pk=` inline miliknya sendiri terverifikasi sepenuhnya offline, sementara rekaman berbasis kunci DNS melaporkan "tidak ada key resolver dan tidak ada kunci inline" alih-alih menjangkau ke luar - lihat `SealPublicKeyResolver` di `engine/src/seal.ts`), secara opsional melakukan pemindaian mendalam untuk watermark piksel pihak ketiga (unduhan model di perangkat satu kali) dan menampilkan data tersembunyi - semuanya tanpa mengunggah file. Lihat [Content Credentials Identity](/info/content-credentials-identity.html).
 
-- **Aktif secara bawaan, di perangkat.** Kunci penandatanganan dibangkitkan di perangkat, tidak dapat diekstraksi (bahkan Lolly tidak bisa membacanya), dan penandatanganan terjadi secara lokal - hanya *pendaftaran* identitas opsional yang pernah menyentuh jaringan.
-- **Tingkatan kepercayaan.** Ekspor yang belum terdaftar valid secara struktural tetapi ditandatangani secara anonim (`untrusted`). Daftarkan sebuah **identitas terverifikasi** (sertifikat berumur pendek dari Lolly CA, terkait dengan sebuah email) dan verifikator yang menyematkan root Lolly melaporkan `trusted` + email penanda tangan. Otoritas stempel waktu tepercaya dan lampu hijau validator pihak ketiga (kesesuaian C2PA) ada dalam peta jalan. Setiap tingkatan bersifat eksplisit, dan sebuah berkas hanya mengklaim kepercayaan yang bisa dibuktikannya.
-- **Masa berlaku kredensial** ditentukan oleh operator/pengguna saat penandatanganan: 7 / 30 / 90 / 365 hari, bawaan 30.
-- **Lolly Imprint.** Sinyal kedua yang saling melengkapi dan **aktif secara bawaan**: watermark piksel tak kasatmata yang tertanam permanen dalam ekspor raster (termasuk raster hasil render Lolly di dalam PDF/PPTX, tidak pernah gambar milik pengguna sendiri yang disisipkan). Ketika kredensial mati akibat perubahan wadah apa pun, Imprint tetap bertahan melewati penyimpanan ulang atau tangkapan layar - petunjuk tahan lama berupa "piksel-piksel ini pernah melalui Lolly", hanya menandakan kehadiran, tanpa data pribadi. Ini adalah keamanan melalui ketersamaran, bukan pertahanan yang diperkeras, dan melengkapi kredensial itu alih-alih menggantikannya. `imprint=0` untuk memilih keluar.
-- **Durable Content Credentials (opsional).** Sebuah ekspor raster secara tambahan dapat membawa tanda *durable* (tahan lama) tak kasatmata yang mengenkode sebuah identifier soft-binding, sehingga kredensial C2PA dapat dipulihkan bahkan setelah unggahan ke media sosial atau penyimpanan ulang menghapus metadata berkasnya - kasus di mana kredensial biasa akan hilang. Fitur ini khusus raster dan memerlukan satu proses neural-encode, sehingga nonaktif secara bawaan (`durable=1` untuk mengaktifkannya). Lolly mengenali tanda durable buatannya sendiri secara luring di `/verify` hari ini; pemulihan oleh perkakas pihak ketiga (mis. Adobe) akan menyusul begitu resolusi soft-binding industri telah tersedia.
-- **Verifikasi terjadi di perangkat.** Jatuhkan berkas apa pun ke `/verify` (atau `lolly validate <file>`) untuk laporan luring apakah berkas itu benar-benar dibuat dengan Lolly dan tidak berubah sejak itu. Tampilan Verify di web juga menandai konten yang dihasilkan AI, mendeteksi Lolly Imprint, memverifikasi tanda tangan **SEAL** (tanda tangan tingkat byte yang kuncinya disimpan di DNS - satu-satunya sentuhan jaringan adalah pencarian kunci DNS, tidak pernah berkasnya sendiri), secara opsional melakukan pemindaian mendalam untuk watermark piksel pihak ketiga (unduhan model di perangkat satu kali), dan mengungkap data tersembunyi - semuanya tanpa mengunggah berkas. Lihat [Identitas Content Credentials](/info/content-credentials-identity.html).
+> **Catatan interoperabilitas.** Lolly memverifikasi kredensialnya sendiri dan banyak kredensial pihak ketiga secara offline saat ini, termasuk membaca manifes klaim C2PA **v2** dari produser lain. Dua kontainer masih dalam proses, keduanya karena C2PA belum memiliki pemetaan standar untuknya, sehingga Lolly menyimpan kredensial di tempatnya sendiri dan verifier Lolly-lah yang membacanya kembali: **WebM** (manifes dibawa sebagai lampiran Matroska) dan **Ogg/Opus** (bidang `C2PA=` di header komentar OpusTags, dengan rentang byte tersebut dikecualikan dari binding sehingga audio tetap menghasilkan hash yang identik). Selebihnya distempel sesuai spesifikasi - alat pihak ketiga memverifikasi MP4, M4A, MP3, WAV, PNG, JPEG, dan PDF milik Lolly langsung tanpa penyesuaian. Lihat `engine/src/c2pa-containers.ts` untuk kedua pemetaan tersebut; keduanya akan menyatu dengan standar begitu standar itu ditetapkan.
 
-> **Catatan interoperabilitas.** Lolly memverifikasi kredensialnya sendiri dan banyak kredensial pihak ketiga secara luring saat ini, termasuk membaca manifest klaim C2PA **v2** dari produsen lain. Satu item interop masih berjalan: WebM - yang belum punya pemetaan C2PA terstandardisasi, sehingga Lolly melampirkan manifest sebagai bagian Matroska (perkakas pihak ketiga memverifikasi MP4 dari Lolly tanpa penyesuaian; WebM menyusul begitu standarnya mapan).
+## Enkripsi & kata sandi
 
-## Enkripsi & pemberian kata sandi
+Untuk file yang harus dikirim dalam keadaan terkunci, semuanya terjadi di perangkat:
 
-![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&walker=1&format=svg&dark=1&filename=aud-pdf-lock)
+![Kartu kunci di panel ekspor: kata sandi, dan pilihan eksplisit antara dua tingkat](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&walker=1&format=svg&dark=1&filename=aud-pdf-lock)
 
-Untuk berkas yang harus berpindah dalam keadaan terkunci, semuanya terjadi di perangkat:
-
-- **Kata sandi pembuka PDF** - *Standar* adalah penghalang RC4 40-bit (bisa dibuka di mana saja, boleh ikut dalam tautan); *Kuat* adalah **AES-256** (PDF 2.0), diketik saat ekspor dan tidak pernah dimasukkan ke tautan.
-- **Unduhan terkunci** - sebuah ZIP, folder Projects, atau proses batch bisa dikunci sepenuhnya: ZipCrypto *Standar* (lemah, universal) atau **AES-256** *Kuat* (WinZip AE-2). Pertahanan berlapis: setiap PDF di dalam zip *Kuat* *juga* dikunci AES-256 secara individual, sehingga tetap terkunci setelah dibuka.
-- **Tautan berbagi bergerbang kata sandi** - seluruh state tautan dienkripsi AES-256 di bawah kunci turunan PBKDF2; hanya ciphertext yang berpindah, kata sandi tidak pernah ada dalam tautan, dan dekripsi terjadi di browser penerima.
+- **Kata sandi buka PDF** - *Standard* adalah pencegah RC4 40-bit (terbuka di mana saja, dapat dikirim lewat tautan); *Strong* adalah **AES-256** (PDF 2.0), diketik saat ekspor dan tidak pernah dimasukkan ke tautan.
+- **Unduhan terkunci** - ZIP, folder Projects, atau proses batch dapat dikunci secara utuh: *Standard* ZipCrypto (lemah, universal) atau *Strong* **AES-256** (WinZip AE-2). Pertahanan berlapis: PDF apa pun di dalam zip Strong *juga* terkunci AES-256 secara individual, sehingga tetap terkunci setelah diekstrak.
+- **Tautan berbagi berpassword** - seluruh status tautan dienkripsi AES-256 di bawah kunci turunan PBKDF2; hanya ciphertext yang dikirim, kata sandi tidak pernah ada di dalam tautan, dan dekripsi terjadi di peramban penerima.
 
 ## Siap air-gap
 
-Air-gap adalah **penggelaran kelas satu**, bukan mode khusus - Lolly berjalan tanpa jaringan pada waktu render secara bawaan. Web shell adalah PWA yang mengutamakan luring (service worker); font dan WASM disimpan di perangkat; state perkakas dipertahankan secara lokal melalui host bridge, bukan `localStorage`. Perkakas apa pun yang menjangkau jaringan hanya melakukannya melalui kapabilitas `host.net` yang **diizinkan** dan wajib dideklarasikan dalam manifestnya - shell yang tidak bisa (atau tidak mau) memenuhinya akan menyekatnya. Kirim shell ke perangkat melalui MDM Anda, atau sajikan satu instance di dalam jaringan Anda, dan instalasi yang sepenuhnya air-gapped akan merender, mengekspor, mengenkripsi, dan memverifikasi kredensial tanpa perlu menghubungi siapa pun.
+Air-gap adalah **deployment kelas satu**, bukan mode khusus - Lolly berjalan tanpa jaringan saat render langsung dari awal. Shell web adalah PWA offline-first (service worker); font dan WASM disimpan di perangkat; status alat disimpan secara lokal melalui host bridge, tidak pernah `localStorage`. Cara yang didukung agar sebuah alat dapat menjangkau jaringan adalah kapabilitas `host.net` yang **diberi izin (allowlisted)** yang dideklarasikannya di manifesnya - shell yang tidak bisa (atau tidak mau) memenuhinya akan meniadakannya. Itu adalah kontrak portabilitas, bukan batasan yang dipaksakan (lihat catatan hooks di bawah), itulah sebabnya meninjau kode alat tetap menjadi kontrolnya - meskipun pada perangkat air-gapped memang tidak ada apa pun untuk dijangkau. Kirimkan shell ke perangkat melalui MDM Anda, atau layani satu instance di dalam jaringan Anda, dan instalasi yang sepenuhnya air-gapped akan merender, mengekspor, mengenkripsi, dan memverifikasi kredensial tanpa apa pun untuk dihubungi ke luar.
 
-## Perlu diketahui
+## Baik untuk diketahui
 
-Beberapa hal yang perlu diluruskan sebelum Anda menggelarnya:
+Beberapa hal yang perlu dipahami dengan jelas sebelum Anda meluncurkannya:
 
-- **Pengerasan sedang berlangsung.** Kriptografi dan parser sedang menjalani pengerasan berskala enterprise dari SUSE (lihat di atas) - kuat secara rancangan saat ini; gelar sebagai pertahanan berlapis bila sebuah kontrak menuntut jaminan bersertifikat.
-- **Hook perkakas *bukan* sandbox keamanan.** Berkas `hooks.js` opsional milik sebuah perkakas berjalan dengan host bridge yang disuntikkan, tetapi di dalam browser shell ia dieksekusi di realm halaman dan *bisa* menjangkau `window`/`document`/`fetch`. Perlakukan kode perkakas seperti Anda memperlakukan kode apa pun yang Anda jalankan - tinjau. Inilah sebabnya organisasi yang menjalankan katalog bersama bisa menggerbangnya melalui tinjauan Git; bagaimanapun juga, jalankan hanya perkakas yang sudah Anda tinjau sampai isolasi Worker tersedia.
-- **Content Credentials bersifat bukti-gangguan.** Ia mendeteksi perubahan alih-alih mencegahnya - lihat catatan interoperabilitas di atas.
-- **Dua tingkatan enkripsi.** Kunci *Standar* adalah penghalang cepat dan universal; *Kuat* (AES-256) adalah perlindungan penuh - pilih Kuat untuk apa pun yang sensitif, dengan catatan ia membutuhkan pembaca modern.
+- **Hardening sedang berlangsung.** Kriptografi dan parser sedang melalui hardening skala enterprise dari SUSE (lihat di atas) - kuat secara desain hari ini; terapkan sebagai pertahanan berlapis di tempat yang membutuhkan jaminan bersertifikat sesuai kontrak.
+- **Hooks alat *bukan* sandbox keamanan.** `hooks.js` opsional milik sebuah alat berjalan dengan host bridge yang disuntikkan, tetapi di shell peramban ia dieksekusi dalam realm halaman dan *dapat* menjangkau `window`/`document`/`fetch`. Perlakukan kode alat sebagaimana Anda memperlakukan kode apa pun yang Anda jalankan - tinjau kodenya. Inilah sebabnya organisasi yang menjalankan katalog bersama dapat menggerbanginya melalui tinjauan Git; bagaimanapun, jalankan hanya alat yang sudah Anda tinjau hingga isolasi Worker dirilis.
+- **Content Credentials bersifat tamper-evident.** Kredensial ini mendeteksi perubahan, bukan mencegahnya - lihat catatan interoperabilitas di atas.
+- **Dua tingkat enkripsi.** Kunci *Standard* adalah pencegah cepat dan universal; *Strong* (AES-256) adalah perlindungan penuh - gunakan Strong untuk apa pun yang sensitif, dengan catatan ini memerlukan pembaca modern.
 
 ## Ke mana selanjutnya
 
-- **[Adopsi & Tata Kelola](/info/adoption-governance.html)** - persona, metrik pengalihan, dan tata-kelola-sebagai-data selengkapnya.
-- **[Penggelaran](/info/deployment.html)** - gelar/sajikan/hibrida, MDM, dan hosting mandiri untuk layanannya.
-- **[Konfigurasi](/info/configuration.html)** - profil, paket brand, penggerbangan kapabilitas, dan feature flag.
-- **[Kebijakan Privasi](/info/privacy.html)** - pernyataan formal "tidak mengumpulkan apa pun, tidak mengunggah apa pun".
+- **[Security & Verification](/info/security.html)** - standar, primitif, model kepercayaan, dan pengujian di balik kredensial dan enkripsi di atas.
+- **[Adoption & Governance](/info/adoption-governance.html)** - persona, metrik deflection, dan governance-as-data secara lengkap.
+- **[Deployment](/info/deployment.html)** - deploy/serve/hybrid, MDM, dan self-hosting layanan.
+- **[Configuration](/info/configuration.html)** - profil, brand pack, capability gating, dan feature flags.
+- **[Privacy Policy](/info/privacy.html)** - pernyataan formal tentang apa yang dikumpulkan, disimpan, dan dikirim, dan apa yang tidak.
+- **[Server Surface](/info/server-surface.html)** - inventaris lengkap tentang apa yang berjalan di sisi server (dua komponen opsional) dibandingkan di perangkat.

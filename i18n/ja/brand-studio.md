@@ -1,189 +1,232 @@
-# Brand Studio
+# ブランドスタジオ
 
-`#/start` にある **Brand Studio** は、ロゴ、色、タイプ、その他のトークン、そして保持しているファイルまで、あなたのブランドを形づくる唯一の場所です。ここで一度設定すれば、あらゆるツール、ページ、書き出しは、レビューによってではなく*仕組みとして*それに従います。
+`#/start`にある**Brand Studio**は、ブランド(ロゴ、色、書体、その他のトークン、保管するファイル)を形作る唯一の場所です。ここで一度設定すれば、すべてのツール、ページ、エクスポートはレビューによってではなく*構造上*それに従います。
 
-変更は、行うそばから**アプリ全体でライブにプレビュー**されるため、確定する前に、色やフォントがあらゆる場所にどう反映されるかを確認できます。すべてはお使いのデバイス上で完結します — あなたのブランドがマシンの外に出ることはなく、単一の[ブランドパック](#move-a-brand-between-devices)ファイルとして持ち運べます。
+変更は行うと同時に**アプリ全体でライブプレビュー**されるため、色やフォントを確定する前に、それがあらゆる場所に反映される様子を確認できます。すべてオンデバイスです。ブランドのファイルとトークンがあなたのマシンから外に出ることはありません(Google Fontsを選ぶと、同意ダイアログの後にそのファミリーだけをGoogleから一度取得します)。ブランドは1つの[brand pack](#move-a-brand-between-devices)ファイルとして持ち運べます。
 
-> **ここはエディタです。ダッシュボードは鏡です。** [ダッシュボード](/info/using.html)（`#/d`）の Design-system タブは、あなたのブランドを読み取り専用で*表示*するだけです。*編集*するのはここ、`#/start` の Brand Studio です。後で色を変更したくなったら、Brand Studio に戻ってきてください。
+> **これはエディターです。ダッシュボードは鏡です。** ダッシュボード(`#/d`)の**Design system**タブはブランドを読み取り専用で*表示*するだけです。*編集*はここ`#/start`で行います。後で色を変更したい場合は、Brand Studioに戻ってきてください。
 
-## 5つのステップ
+## ルーム
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.ds-rail&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1)
+スタジオは、側面のレールに並んだ一連の**ルーム**で構成されています - 手順ではありません。何にも番号は振られておらず、何も他のものによって制限されておらず、どのルームにたどり着いても正当です。
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.ds-rail&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1)
+- **Overview** - ハブです。今何が存在するかを一目で確認でき、各ルームへの入口があります。
+- **Colours** - 色を1つずつ追加し、役割を割り当てたり、1色からパレット全体を生成したりします。
+- **Type** - アプリ、ツール、すべてのエクスポートが参照する4つの書体です。
+- **Logos** - あらゆる向きと処理を施したあなたのマークです。
+- **Tokens** - 角の丸み、間隔、影、その他のシステムです。
+- **Files** - ブランドが保持する画像、音声、モーションのファイルです。
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.ds-rail&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1)
+電話では同じリストがヘッダーの下に固定された横並びのチップ帯になります。ルームを切り替えても何も再読み込みされません - エディターはすべてのパネルをマウントしたままにしており、要求されたものを表示するだけです。
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.ds-rail&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1)
+`#/start?area=<key>`で**ルームへのディープリンク**が可能です。キーは`overview`、`color`*(URLではアメリカ式のスペルであることに注意)*、`type`、`logos`、`tokens`、`catalogue`(Filesルーム - パネルキーは永続的な契約なので、URLは旧名のままです)、`versions`です。`?tab=`は同じものを指す長年のエイリアスで、今も解決されるため、古いリンクやブックマークは引き続き機能します。認識されないものはデッドエンドにならず、Overviewを開きます。
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.ds-rail&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1)
+**レールの下端**には、1つのルームではなくデザインシステム全体に属するアクションが固定されています。
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.ds-rail&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1)
+- **Add from…** - ファイル、PDF、画像、フォント、ウェブサイトからブランドを取り込むためのソースピッカーです。下記の[Bring a brand in](#bring-a-brand-in)を参照してください。
+- **Tray** - スキャンで見つかったものの、まだ確定していない候補です。スキャンが実際に何かを保持するまでは非表示のままで、保持した場合は件数が表示されます。その行でAddを押すまでは、中の何もあなたのブランドを変更しません。
+- **Export** - ブランド全体を1つの`LollyBrand-…zip`として書き出します。
+- **Tokens (.json)** - リポジトリ、ビルドステップ、他のトークンツール向けの、単独のプレーンなdesign-tokensドキュメントです。
+- **Versions** - デザインシステムの名前付きコピーを公開、有効化、復元します。公開すべき独自のものができるまでは非表示です(または`?area=versions`リンクで名指しで要求された場合)。
 
-スタジオは5つのタブからなるエディタです。左から右へ進んでもよいですし、任意のタブへ直接ジャンプしても構いません：
+![スタジオのルームレール - Overview、Colours、Type、Logos、Tokens、Files](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.ds-rail&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1)
 
-1. **Logos** — あらゆる向きと仕上げでの、あなたのマーク。
-2. **Colours** — 1つのプライマリカラーから完全なアクセシブルパレットを導出します。そこから調整、生成、追加ができます。
-3. **Type** — 任意の Google Font を、このデバイスにダウンロードして使用します。
-4. **Tokens** — 角丸、余白、シャドウなど、システムの残りの部分です。
-5. **Catalogue** — ブランドが保持する画像・音声・モーションファイルです。
+## Overview
 
-何かを変更した瞬間に **Save & continue** ボタンが現れ、次のステップへ進めます（最後のステップでは **Save & finish** と表示されます）。次のタブがやさしく点灯し、進むよう促してくれます。順番通りに進む必要はありません — どのステップも任意かつ独立しています。
+Overviewは最初に到達するルームで、2つの顔を持っています。
 
-`#/start?tab=<key>` で、任意のタブへ**ディープリンク**できます。キーは `logos`、`color`（*URL 内ではアメリカ式のスペルになる点に注意*）、`type`、`tokens`、`catalogue` です。
+**まだ何も設定されていない**状態では、2つの入口が提示されます - **Start from a file**(design tokens、Penpotプロジェクト、design systemパック、またはSVG)と**Start from scratch**(1色を追加し、好きなときに続ける)です - そしてその下にはひっそりと**Explore the tools**という退出先もあります。離れることもまた正当な答えだからです。
+
+デザインシステムができると、同じルームは**今あるもの**を示します: パレットとその色数、有効な書体ファミリー、埋まっているロゴスロットの数、トークンの数、そしてFilesルームです。どのブロックもそのルームへの入口です。ここにあるのは件数だけで、進捗バーも完了カードも一切ありません - このスタジオでは何も義務付けられていません。
 
 ## Logos
 
-![The logo matrix - each orientation across the top, each treatment as its own dashed slot, all of them optional](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dlogos&width=1440&height=1600&dpi=192&waitMs=1600&cropSelector=.be-logo-grid&format=svg&walker=1&dark=1&filename=bs-logo-slots)
+まずはマークの入ったフォルダーを上部のドロップゾーンに丸ごと投入することから始めます。**"Drop marks here, or choose several at once"**は、手持ちのファイルを一度にいくつでも受け付けます。各ファイルはその形状とインクが読み取られ、**Waiting for a slot**の下に、判断内容を示すチップとしてキューに入ります - *"Looks like the Horizontal primary"*のように、根拠にした測定値とともに**Place**ボタン(そのスロットが既に埋まっている場合は**Replace**)が付きます。確信が持てない場合、チップはその旨を率直に示し、代わりに8つすべてを一覧にした**Change slot**を提示します。何かを押すまでは何も配置されません。
 
-ブランドのマークはすべて、ここに置き場所があります — **向き × 仕上げ**のグリッド状のスロットです：
+そのキューをめぐって2つのことが起こります。余分な余白のあるマークには、まず**トリムの提案**が示されます - それに回答するか、Escapeを押すと元のファイルがそのまま入ります。また、あるマークが空の兄弟スロットを満たせる場合、ルームは派生した**mono**版または**reverse**版を、*Generated*と表示された独自のチップとして提示します。これは、別の方法でそのスロットを埋めると再び消えます。
 
-- **Orientations:** Horizontal（ワードマーク＋シンボルを横並びに）と Vertical（正方形や縦長のスペース向けに縦積み）。
-- **Treatments:** Primary、Primary reverse（暗い背景向け）、Mono（単色）、Mono reverse。
+その下には、すべてのマークが最終的に収まるグリッド - **orientation × treatment**のスロットがあります。
 
-これで任意のスロットが8つになります。スロットをクリックして PNG、SVG、JPEG、WebP を追加してください。埋まっているスロットをクリックすると差し替えられます。どのスロットも任意であり、すべてこのデバイス上にとどまります。
+- **Orientations:** Horizontal(ワードマーク+シンボルを横一列に)とVertical(縦に積み重ね、正方形や縦長のスペース向け)。
+- **Treatments:** Primary、Primary reverse(暗い背景向け)、Mono(単色)、Mono reverse。
 
-- **Custom marks** — アイコン、紋章、favicon など、ブランド独自の呼び方をするマークは **Custom marks** の下に追加します。名前を付けてファイルを選んでください。
-- **More identities** — サブブランド、プロダクト、イベントは、それぞれ独自の完全なロゴ一式を持てます。**+ Add another logo** を使って名前を付けてください。メインのセットは単に "Your logo" と呼ばれます。
-- **SVG をアップロードすると、Lolly がその色を読み取ります。** まっさらなインストールでは、ロゴからプライマリカラーがそっと設定されます。既存のブランドでは、Colours タブでその色が提案として — *"Found in your logo"* として — 表示されます。
+これで8つの任意スロットになります。スロットをクリックしてPNG、SVG、JPEG、WebPを追加できます。埋まっているスロットをクリックすると置き換えられます。どのスロットも任意で、すべてこのデバイス内にとどまります。
+
+![ロゴマトリックス - 上部に各orientation、各treatmentが独自の破線スロットとして並び、すべて任意です](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dlogos&width=1440&height=1600&dpi=192&waitMs=1600&cropSelector=.be-logo-grid&format=svg&walker=1&dark=1&filename=bs-logo-slots)
+
+- **Custom marks** - ブランド独自の名前を付けたマーク(アイコン、紋章、favicon)を**Custom marks**の下に追加します。名前を付けてファイルを選ぶだけです。
+- **More identities** - サブブランド、製品、イベントは独自のロゴ一式を持てます。**+ Add another logo**を使って名前を付けてください。メインの一式は単に"Your logo"です。
+- **Upload an SVG and Lolly reads its colours.** 新規インストールでは、ロゴからプライマリカラーを静かに設定し、その旨を伝えます。既存のブランドでは、代わりにその色を提案として提示します - Coloursルームで*"Found in the logo: #…"*と、その横に**Use as primary**ボタンが表示され、採用するか却下するか選べます。
 
 ## Colours
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+最も内容の充実したルームで、2つのペインに分かれています。左側が作業する場所、右側があなたの**ライブパレット**です。両者の間の仕切りをドラッグしてサイズ変更できます(そこでEnterを押すとパレットを折りたたんで邪魔にならないようにできます)。
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![Coloursルーム - プライマリカラーからランプが導出され、コントラスト比付きの見本カードとライブパレットが表示されます](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+### 色を追加し、役割を与える
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+**Add a colour**が、そのシンプルな流れのすべてです。どのような記法でも色を貼り付けるか選ぶと、それがそのまま1つのトークンになります。そこから何かが導出されることも、何かが提案されることもなく、他に何も求められません。色の*リスト*をまるごと貼り付けると、それぞれが個別に追加できるチップになります。
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+**Roles**はその上に重なるレイヤーで、どの色がどの役割を担うかを決めます。Rolesは任意です(自由な3色だけでrolesを持たないデザインシステムも十分に良いものです)。どのスウォッチにも役割を割り当てられ、コントラストの読み取りは背景に対して測定され、まずAPCAが用いられます。
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+### エキスパート用ウィング
 
-最も奥が深いステップです。左ペインは**導き出し、生成する**場所で、右ペインはあなたの**ライブパレット**です。分割線をドラッグしてリサイズできます。
+その2つの下には、4つの折りたたまれたセクションがあります。必要なものを開いてください。それぞれ`#/start?area=color&focus=<wing>`としてディープリンク可能です。
 
-### 1つの色から、パレット全体を
+- **Generate a starter palette**(`focus=generate`) - 1色から完全な階調一式を生成します。下記で説明します。
+- **Shade curves**(`focus=curves`) - ランプをポイントごとに作り直します。明度、彩度、色相にはそれぞれ独自のカーブがあり、L / C / Hで切り替え、下のシェードはドラッグに応じてライブで再生成されます。
+- **Contrast**(`focus=contrast`) - **Contrast-lock**は選んだ背景に対してAPCAの目標値を満たすようランプの色調を調整し直し、各ステップは自身の色相と彩度を保持します。**Rotate hue**はランプ全体をホイール上でまとめて回転させ、各シェードは明度と彩度を保持します。
+- **Print**(`focus=print`) - プライマリカラーが印刷でどうなるか: 自動の画面値、または固定されたCMYKビルド、あるいは指定のスポットインクです。
 
-![The four ramps stacked above light and dark specimen cards, each card carrying its own WCAG contrast ratio](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+### 1色から、パレット全体へ
 
-**プライマリカラー**を選ぶと、Lolly はエンジンがどこでも使っているのと同じ知覚的な色彩計算（OKLCH）を用いて、ライト／ダークのサーフェス、テキスト、アクセント、そして完全なティント／シェードのランプを含む、完全なパレットを導出します。導出のチューニング：
+**Generate a starter palette**の中で**Primary colour**を選ぶと、Lollyはエンジンがどこでも使っているのと同じ知覚的な色の数学(OKLCH)を使って、完全なパレット - 明暗のサーフェス、テキスト、アクセント、tint/shadeの完全なランプ - を導き出します。導出を調整するには:
 
-- **Scheme** — Mono、Complement、Analogous、Triad のいずれか — セカンダリカラーがプライマリとどう関係するかを決めます。
-- **Shades** — 3〜20（既定 5）のスライダーで、各ランプが生成するステップ数を制御します。
-- **Fine-tune**（折りたたみ） — **UI intensity**（Muted / Deep）、**Contrast**（Comfort / High）、**Text on brand**（Auto / Light / Dark）。
+- **Scheme** - Mono、Complement、Analogous、Triad - セカンダリカラーがプライマリとどう関係するかを設定します。
+- **Shades** - 3から20までのスライダー(デフォルト5)で、各ランプが生成するステップ数を制御します。
+- **Fine-tune**(折りたたみ) - **UI intensity**(Muted / Deep)、**Contrast**(Comfort / High)、**Text on brand**(Auto / Light / Dark)。
 
-重要な2つのボタンがあり、この違いには意味があります：
+このウィングの中の何も、あなたのブランドに書き込まれることはありません。これはプレビューであり、**Replace palette**(下記)を押すまでは、アプリ全体でライブに表示され、判断材料にできます。
 
-- **Use this colour** はパレットをライブドラフトへ再導出します — アプリは更新されて確認できますが、まだ何も保存されていません。
-- **Save colour** が、実際に保存を行うボタンです。
+プライマリの下には、ライブの**Primary / Neutral / Secondary / Blend**ランプと、LightおよびDarkの見本カードが表示され、それぞれに独自のコントラスト読み取り値 - WCAG比とその横のAPCA `Lc`値 - が付きます。**NeutralまたはSecondaryランプのステップをクリック**すると、導出されたデフォルトの代わりにそのシェードを固定できます。
 
-このタブでのすべての操作は**保存するまではドラフト**の状態なので、自由に試すことができます。実際にブランドへ書き込むのは **Save colour** だけです。（Logos、Type、Tokens、パレットの編集といった他のタブは、即座に保存されます。）
+![明暗のサンプルカードの上に積み重なった4つのランプ。各カードにはそれぞれのWCAGコントラスト比が付されている](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
-プライマリの下には、ライブの **Primary / Neutral / Secondary / Blend** ランプと、WCAG コントラスト比付きのライト／ダークのサンプルカードが表示されます。**Neutral または Secondary のランプの任意のステップをクリック**すると、導出された既定値の代わりにそのシェードを選べます。
+### パレットを作成する（ハーモニージェネレーター）
 
-### Build your palette（配色ジェネレーター）
+同じウイングの中で、**パレットを作成する**は、プライマリカラーから調和するアクセントカラーを生成します。**ハーモニー**を選びます - **補色**、**近似色**、**トライアド**、**テトラード**、**アナロガス**（これは独自の**アクセント**数、2から5、そして10°から45°の色相**角度**を伴います）- そして各候補には自動生成された分かりやすい名前と**+ 追加**ボタンが付いてきます。1つ追加すると、その色は即座にパレットに入ります。1回の操作で1つのトークンです。*「あなたのパレット、適用済み」*は、実際のグラフィック上でセット全体をプレビューします。
 
-![Generated accents, each with a swatch, an auto-generated name, its hex and an Add button](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
+![生成されたアクセント。それぞれにスウォッチ、自動生成された名前、16進値、追加ボタンが付いている](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
 
-**Build your palette** では、プライマリカラーから調和するアクセントカラーを生成します。配色パターン — **Complementary**、**Adjacent**、**Triad**、**Tetrad** — を選ぶと、それぞれの候補に自動生成された人が読める名前と **+ Add** ボタンが付いてきます。追加した色はすぐにパレットに反映されます。*"Your palette, applied"* が、実際のグラフィック上でそれらをプレビューします。
+### 生成したパレットを確定する
 
-### パレット、ホイール、そして各スウォッチ
+**パレットを置き換える**は、このウイングの中で何かを書き込む唯一のコントロールですが、すぐには書き込みません。押すと、まずレビューカードが開き、**「パレットを置き換えますか?」**という見出しの下に、これから起きることが正確に列挙されます - 割り当てた通りに保たれるロールの数、自分で追加した色のうち保持される数、再アンカーされるシェードカーブの数、再ピン留めされる印刷ロックの数、非表示のまま残る隠しシェードの数、色を保ったままのグラデーションストップの数。
 
-![The palette pane, every group foldable, with the download pill parked at its bottom edge](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
+そのカードの**パレットを置き換える**を押すと確定され、**キャンセル**は何も変更せずに離脱します。実行後、カードは**「パレットを置き換えました。」**に変わり、すでにフォーカスされた**取り消し**ボタンが1つ付きます - そしてスワップの*前*にデザインシステム全体のチェックポイントが取得されるため、「元に戻す」ことは復元であり、失われた午後にはなりません。
 
-![The OKLCH wheel - angle is hue, distance out is chroma, and the greys ride a lightness rail down the side](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
+### パレット、チャート、各スウォッチ
 
-右ペインには、あなたのブランドが持つすべての色が、グループ分けされて（Primary、Neutral、Secondary、Spectrum、Custom、Roles）一覧表示されます。各グループは折りたためて、それぞれに専用の **+ Add** があります。**Colour chart** を開くと **OKLCH ホイール**が表示されます — ドットをドラッグして色を変え、ドットをクリックして編集し、空いた場所をクリックして新しいスウォッチを追加できます。
+右ペインには、ブランドが持つすべての色がグループ（プライマリ、ニュートラル、セカンダリ、スペクトラム、カスタム、ロール）ごとにリストされ、各グループは独自の**+ 追加**を持ち折りたたみ可能です。その下の**カラーチャート**は、同じスウォッチの2つのビューに折りたたまれています - **ホイール**（OKLCHホイール - ドットをドラッグして色を変え、ドットをクリックして編集するか、空いている場所をクリックして新しいスウォッチを追加）と**ガマット**チャート、表示可能な範囲が実際にどこで終わるかを示します。`#/start?area=color&focus=chart`は、`?wheel`が常にそうしているように、直接カードを開きます。
 
-任意のスウォッチをクリックすると、そのエディタが開きます：
+![パレットペイン。すべてのグループが折りたたみ可能で、ダウンロードピルが下端に配置されている](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
 
-- **Rename** — 名前を変更します。
-- **Set by value** — Hex、RGB、RGBA、HSL、OKLCH、CMYK のいずれかで色を入力します。（CMYK 値を入力すると、それがそのスウォッチの印刷用代替色にもなります — 詳細は後述。）
-- **Stored as** — スウォッチをどの形式で保存するかを選びます: **LCH**（既定 — 知覚的で広色域、編集に最適な選択肢）、Hex、RGB、HSL のいずれかです。既存の hex 値を正確に固定したい場合や sRGB の値に一致させたい場合は、これを上書きしてください。
-- **Print substitutes**（折りたたみ） — 色の印刷時の挙動を固定します：
-  - **CMYK** — チェックすると、自動の sRGB→CMYK 変換を、正確なインク値（C/M/Y/K、0〜100）で上書きします。
-  - **Spot** — チェックすると、スウォッチをスポットカラーに固定します。**Name**（例: `PANTONE 186 C`）と、任意で **Book** を指定してください。
+![OKLCHホイール - 角度が色相、外側への距離が彩度、グレーは側面のライトネスレールに沿って並ぶ](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
 
-これらの印刷用ロックは、CMYK の PDF や TIFF を書き出す際に印刷会社が使う値です — 詳しくは [書き出し](/info/exporting.html#colour-profiles) を参照してください。
+任意のスウォッチをクリックすると、そのエディタが開きます。
 
-**スウォッチの削除**は安全です。導出されたランプのステップやテーマロールは*非表示*になるだけで（元となるトークンは解決され続けるため、下流で何かが壊れることはありません）、自分で追加した色は完全に削除されます。
+- **名前を変更**します。
+- **色を設定**- ピッカーは知覚的な**OKLCH**スライダーで開き、**16進**、**HSL**、**RGB**、**CMYK**のモードがあります。値フィールドは有効なスペースで読み書き*両方*を行うため、16進を貼り付けたりインク割合を入力したりできます。CMYKを入力すると変換によって*画面上の*色が設定される点に注意してください - 正確なインクを固定するには、下の印刷ロックを使用してください。
+- **保存形式**- スウォッチをどう永続化するかを選びます: **LCH**（デフォルト - 知覚的で広色域、編集に最適）、16進、RGB、HSL。正確な従来型の16進値やsRGB値に合わせて固定する必要がある場合は、これを上書きしてください。
+- **用途**- ロールパネルに戻らずに、このスウォッチにブランドロールの1つを直接割り当てます。（ロール自身のタイルにはこれがありません - ロールはロールを取れません。）
+- **印刷代替**（折りたたみ）- 色の印刷挙動をロックします。
+  - **CMYK**- **自動**から**ロック**に切り替えて、自動sRGB→CMYK変換を正確なインク値（C/M/Y/K、0〜100）で上書きします。
+  - **スポットカラー**- **なし**から**設定**に切り替えて、スウォッチをスポットカラーに固定します。**名前**（例: `PANTONE 186 C`）、任意の**ブック**、任意の**仕上げ**（デフォルトは通常インク）を指定します。インクがまったくインクではない場合 - 箔押し、エンボスやデボス、部分ニス、ソフトタッチ、型抜き、折り目、ミシン目などに使います。
+- **他の色空間で**（折りたたみ）- 同じ考え方をさらに広げたもの: 各行はこのスウォッチが表現できる色空間であり、正準値から導出されるか、あなたが自分で指定するかのいずれかで、指定したものはエクスポート時に優先されます。
 
-### Gradients
+これらの印刷ロックは、CMYKのPDFやTIFFをエクスポートするときに印刷所が使用するものです - [エクスポート](/info/exporting.html#colour-profiles)を参照してください。
 
-任意の **Gradients** パネルは、背景やアクセント用に、パレットからブレンドトークンを生成します。ブランドにグラデーションが不要であれば、まるごとスキップして構いません。各グラデーションには、プレビュー、名前付きのストップ（2〜8個）、そして角度があります。重要な挙動として、**ストップはスウォッチを参照する**ため、そのスウォッチの色を変えるとグラデーションもそれに追従します。補間はきれいなブレンドのために OKLCH で行われます。ストップを削除すると、その分を減らせます。
+**スウォッチを削除する**のは安全です。派生したランプのステップとテーマロールは*非表示*になります（背後のトークンは引き続き解決されるため、下流で何も壊れません）。一方、自分で追加した色は完全に削除されます。
 
-### パレットを外部へ持ち出す
+### グラデーション
 
-パレットペイン下部のフローティングピルから、パレット全体を **デザイントークン（JSON）**、**CSS 変数**、**CSS クラス**、**GIMP パレット（.gpl）**、または **Adobe Swatch Exchange（.ase）** としてダウンロードできます — ブランドがそのまま Illustrator、Figma、GIMP、スタイルシートに取り込めます。（パレットは [Catalogue](/info/using.html) ビューからもダウンロードできます。）
+任意の**グラデーション**パネルは、背景やアクセント用に、パレットからブレンドトークンを作成します。ブランドがグラデーションを使わないなら完全にスキップしてください。各グラデーションにはプレビュー、名前付きストップ（2〜8個）、角度があります。重要な挙動: **ストップはスウォッチを参照する**ため、そのスウォッチの色を変えるとグラデーションも追従します。補間はきれいなブレンドのためOKLCHで行われます。ストップを削除するとランが短くなります。
 
-## Type
+### パレットを他所へ持ち出す
 
-![The Type roles specimen - heading, body, italic and code, each set in the face that role resolves to, with the face name beside it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&walker=1&format=svg&dark=1&filename=bs-type-specimen)
+パレットペインの下端に配置されたフローティングピルは、パレット全体を**デザイントークン（JSON）**、**CSS変数**、**CSSクラス**、**SCSS変数**、**GIMPパレット（.gpl）**、**Adobe Swatch Exchange（.ase）**としてダウンロードします - ブランドをそのままIllustrator、Figma、GIMP、スタイルシートに投入できます。ペインのスクロール領域の外に置かれているため、パレットがどれだけスクロールしても定位置を保ちます。（[カタログ](/info/using.html)ビューからパレットをダウンロードすることもできます。）
 
-![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+## タイプ
 
-![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+このルームは**4つのロールカード**から始まります - アプリ、あなたのツール、そしてすべてのエクスポートが実際に参照する4つのフェイスです。各カードには、そのロールに現在設定されているものが、そのフェイスで表示され、実際のコピーが1行添えられています。
 
-![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+- **プライマリ**- 本文コピー、ボタン、すべてのツール。
+- **見出し**- `h1`/`h2`用のディスプレイフェイス。
+- **コード**- コードやデータ用のモノスペースフェイス。
+- **イタリック**- 強調、引用、脇注のための本物のイタリックコンパニオン。
 
-![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+見出し、コード、イタリックは、割り当てるまでそれぞれプライマリにフォールバックするため、フォント1種類のブランドはここで何も決める必要がありません。カード上の操作は何も確定しません。**変更**（または空のロールでは**フェイスを選ぶ**）は、そのロールに絞った**比較ステージ**を開きます。
 
-![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+![タイプルーム - ロールカードと、各フェイスが実際に機能しているライブサンプル](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
 
-![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+### 比較ステージ
 
-**任意の Google Font** を追加すると、このデバイスにダウンロードされます — アプリ内、ツール内、あらゆる書き出しでレンダリングされ、永久にオフラインで使え、ブランドパックにも同梱されます。レンダリング時に何かを取得することもありません。
+このステージはダイアログではなく**ルーム内にインラインで**開くため、元にいたカードは画面に残ったままです。Google Fontsのファミリー（Inter、Fraunces、Space Grotesk……）を検索するか、フォントファイルをドロップし、**比較に追加**を押すと、いずれもインストールされる前に候補が同じ単語で並んで表示されます。Escapeでキャンセルすると、開いたカードにキーボード操作を戻します。
 
-ファミリーを検索し（Inter、Fraunces、Space Grotesk…）、**Add font**。リスト内の各フォントには役割を割り当てられます：
+それが唯一の入口であり、だからこそブランドに何かが見られずに入ることはありません。ステージの下には、2つの管理パネルがあります。
 
-- **Primary** — メインのブランド書体・本文書体です（**Make primary**）。
-- **Code** — コードやデータ用の任意の等幅書体です（**Use for code**）。
+- **このデバイスのフォント**- インストール済みのすべてのファミリー、それが担うロール、削除。ここでの**フェイスを追加**は、範囲指定なしで同じ比較ステージを開きます。
+- **あなたのフォント**- 自分のマシンから**TTF**、**OTF**、**WOFF**をアップロードします。すでに所有しているライセンス付きの企業書体を使う場合の経路です。
 
-**Type roles** パネルには、Heading、Body、Code のライブなサンプルが表示され、それぞれの書体が実際に使われる様子を確認できます。Google Fonts にあるものはすべて、オープンライセンス（OFL/Apache/UFL）のもとで提供されています。
+いずれの方法でも、フェイスはこのデバイスに留まり、アプリ内で、あなたのツールで、そしてすべてのエクスポートでレンダリングされ、永遠にオフラインで機能し、あなたのブランドパックと一緒に移動します - レンダリング時に何も取得されません。Google Fontsにあるものはすべてオープンライセンス（OFL/Apache/UFL）で提供されています。
 
-## Tokens
+下部の**タイプロール**パネルには、各ロールのライブサンプルが表示されます - プライマリでの本文とUI、上位見出し用の任意のディスプレイフェイス、強調用のイタリック、コードとデータ用のモノ - セット全体が連携して機能する様子を確認できます。
 
-![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+![タイプロールのサンプル - 見出し、本文、イタリック、コードがそれぞれ解決されたフェイスで組まれ、フェイス名が横に添えられている](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&walker=1&format=svg&dark=1&filename=bs-type-specimen)
 
-![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+## トークン
 
-![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+デザインシステムの残りの部分を、コードに触れずに編集できます。
 
-![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+![トークンルーム - 角丸スライダーに加え、スペーシング、サイジング、シャドウ、その他のシステム](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
 
-![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+- **角丸**- アプリ全体のカード、ボタン、パネルが従う単一の半径スライダー（0〜1.5rem）。
+- **その他のトークン**- **スペーシング**、**サイジング**、**線幅**、**不透明度**、**回転**、プレーンな**数値**、**シャドウ**を追加・編集します。タイプを選び、名前を付け（*Gutter、Card shadowなど*）、値を設定します。これらは標準の[デザイントークン](/info/design-tokens.html)（DTCG）として保存され、ブランドと一緒に移動します。
 
-![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+## ファイル
 
-デザインシステムの残りの部分を、コードに触れることなく編集できます：
+ブランドが保持するファイル - ロゴを除く - をここにドロップします: **ベクター**、**画像**、**音声**、**モーション**（動画、Lottie、アニメーション）アセット。これらは[カタログ](/info/using.html)に入り、セクションごとに整理され、すべてのツールのアセットピッカーですぐに使えるようになります。すべてこのデバイスに留まります。（レール上のラベルはこのルームを**ファイル**と表記していますが、URLキーは`catalogue`のままです。パネルキーは永続的な契約であるためです。）
 
-- **Rounded corners** — 1つの半径スライダー（0〜1.5rem）で、アプリ全体のカード、ボタン、パネルがこれに従います。
-- **More tokens** — **spacing**、**sizing**、**stroke width**、**opacity**、**rotation**、単純な **numbers**、**shadows** を追加・編集できます。種類を選び、名前を付け（*Gutter、Card shadow…*）、値を設定してください。これらは標準的な[デザイントークン](/info/design-tokens.html)（DTCG）として保存され、ブランドとともに持ち運ばれます。
+## ブランドを取り込む
 
-## Catalogue
+レール下部の**追加元…**は、2段階のピッカーを開きます。最初の段階では、フォーマットではなく、あなたが*何を持っているか*を尋ねます。
 
-ロゴ以外であなたのブランドが保持するファイルは、ここにドロップしてください: **ベクター**、**画像**、**音声**、**モーション**（動画、Lottie、アニメーション）のアセットです。これらは[Catalogue](/info/using.html)に届き、セクションごとに整理され、あらゆるツールのアセットピッカーですぐに使えるようになります。すべてこのデバイス上にとどまります。
+- **デザイントークンまたはデザインファイル**- DTCGまたはTokens StudioのJSON、Penpotプロジェクト、**トークンセットのzip**、Lollyデザインシステムパック、またはSVG。
+- **PDF**- デッキやガイドラインファイル。このデバイス上で、色、マーク、埋め込まれた書体を読み取ります。
+- **画像**- スクリーンショットや写真。その色はこのデバイス上で読み取られ、何もアップロードされません。
+- **フォントファイル**- TTF、OTF、WOFF。タイプルームを開き、そこでフェイスがインストールされます。
+- **ウェブサイト**- 1ページ分。色とタイプを読み取ります。このタイルは、実際にページを読み取れるデバイスにのみ表示されます。誰も押せないものを宣伝する無効なタイルは、タイルがないより悪いからです。表示される場合、読み取り主体を明確に示します: このデバイス上でアプリによって取得されるか、あなたとしてサインインしたバックグラウンドタブでブラウザ拡張機能を通じて読み取られます。URLを名前で指定するだけではフィールドが*事前入力*されるだけです - 取得ボタンが同意にあたるため、誰かが送ってきたリンクだけで読み取りが始まることはありません。
 
-## ブランドを別のデバイスへ移す
+デザインファイルのソースを選ぶと、第2段階は下のカードです。受け付けるフォーマットが優先順にアイコンタイルとして先頭に並び、カード全体が1つのドロップターゲットです - カード上のどこをクリックしても、ファイルをドラッグしても構いません。ファイルをスタジオに直接ドロップすることもできます。
 
-![The import card - the accepted formats lead as icon tiles, and the whole card is one drop target](/t/url-shot?url=%2F%23%2Fstart%3Fsource%3Dfile&width=1440&height=900&dpi=192&waitMs=1600&css=.start-import-modal%20.modal-msg%2C.start-import-modal%20.modal-title%7Bdisplay%3Anone%7D&cropSelector=.start-import-drop&walker=1&format=svg&dark=1&filename=bs-brand-import-formats)
+![インポートカード - 受け付けるフォーマットが優先順にアイコンタイルとして並び、カード全体が1つのドロップターゲットになっている](/t/url-shot?url=%2F%23%2Fstart%3Fsource%3Dfile&width=1440&height=900&dpi=192&waitMs=1600&css=.start-import-modal%20.modal-msg%2C.start-import-modal%20.modal-title%7Bdisplay%3Anone%7D&cropSelector=.start-import-drop&walker=1&format=svg&dark=1&filename=bs-brand-import-formats)
 
-上部のアクション行にある **Export** ボタンは、トークン、フォント、ロゴ、テーマ設定と整合性マニフェストをまとめた、単一の **`LollyBrand-…zip`** を書き出します。**Import…** ボタン（またはスタジオへのドラッグ＆ドロップ）は、次のものを受け付けます：
+各デザインファイルが提供するもの:
 
-- **LollyBrand** パック（`.zip`） — 1ステップでインストールされます。
-- **Penpot** のエクスポート（`.penpot`） — そのデザイントークンを取り込みます。
-- **Design Tokens** ファイル（`.json`） — W3C DTCG または Tokens Studio。
-- **通常の SVG**（`.svg`） — Lolly がその色を読み取り、残す色を選べるようにします。最初の色がプライマリになります。
+- **LollyBrand**パック（`.zip`）- 1ステップでインストールされます。
+- **Penpot**エクスポート（`.penpot`）- そのデザイントークンを取り込みます。
+- **Design Tokens**ファイル（`.json`）- W3C DTCG。
+- **Tokens Studio**ファイル（`.json`）- Tokens Studio。
+- **プレーンなSVG**（`.svg`）- Lollyがその色をスキャンし、どれを残すか選ばせます。最初のものがプライマリになります。
 
-これが、同僚からブランドを受け取ったり、2台目のインストール先へブランドを持ち運んだりする方法です — アカウントもクラウドも不要です。コマンドラインからブランドを取り込みたい場合は、[`ingest:brand`](/info/configuration.html#brand-packs) を参照してください。
+ソースのインストールは、まず**チェックポイントを取得します**。そのため「インポート前に戻す」は1回の復元で済みます。そして、スキャンで見つかったものはそのまま入るわけではありません。候補は**トレイ**に置かれ、それぞれがその種類の素材を所管するルームを通じて、個別の操作で追加されます。
+
+`#/start?source=<kind>`は指定したソース（`file`、`pdf`、`image`、`font`、`url`）でピッカーを開き、`?import`はプレーンなリストで開きます。
+
+## デバイス間でブランドを移動する
+
+レール下部の**エクスポート**は、単一の**`LollyBrand-…zip`**を書き出します - トークン、フォント、ロゴ、テーマ設定に加え、戻す際に検証される整合性マニフェスト付きです。その横の**トークン（.json）**は、プレーンなデザイントークンドキュメントだけを単独で書き出します。フォントもロゴもなく、トークンのみです。これはリポジトリ、CIステップ、他のトークンツールが実際に読み取るものです。
+
+それを戻すには、**追加元… → デザイントークンまたはデザインファイル**（上記）を使うか、スタジオへのドラッグ&ドロップで行います。これは、同僚がブランドをあなたに渡す方法、あるいはあなたが2台目のインストールへブランドを持ち込む方法です - アカウントもクラウドも不要です。コマンドラインからブランドを取り込むには、代わりに[`ingest:brand`](/info/configuration.html#brand-packs)を参照してください。
+
+## バージョン
+
+レール下部の**バージョン**は、デザインシステムが動く標的であることをやめる場所です。1つを公開すると、このデバイス上に保存される**永続的な名前付きコピー**が得られます。それ以降変化しないので、それを固定して参照するツールは常に同じものを描画し続けます。パネルは、公開すべき自分自身のものが何もない間は隠れたままなので、一度も公開しないスタジオにはこの仕組みが表示されることはありません。
+
+何かを押す前に知っておくべき3つのことがあり、パネルは押す前にこの3つすべてを提示します(押した後ではなく)。
+
+- **バージョンは永続的です。** まだ削除機能はないため、パネルは何が保持されたか、そしてそれが保持され続けることを述べるだけで、嘘をつくボタンは用意されていません。
+- **削除はコンパチビリティカードの先頭に表示されます。** 追加や変更されたトークンはニュースですが、*削除*されたトークンはツールを壊すものなので、最初に名指しでその通りに呼ばれます。
+- **公開は取り消せませんが、復元は取り消せます。** *このバージョンから最新を復元*は先頭に対する通常の編集なので、スタジオのUndoスタックに載り、パネルはすぐに**Undo**を提示します。
+
+**Publish only**、または**Publish and make active**を選べます。違いは、ツールとアプリが今後そのバージョンに従うか、それとも最新の編集に従い続けるかです。**Follow the latest again**を選ぶと、すべての編集が行われた瞬間にライブに反映されます。`#/start?area=versions`はパネルを直接開きます。
 
 ## ブランドが固定されている場合
 
-一部のビルドは**ロックされたブランド**として配布されます — その色、フォント、トークンがすべてのツールと書き出しで使われ、変更できる部分はありません。その場合、スタジオの代わりに、このビルドは固定されたブランドで配布されており編集が無効になっている旨を説明する短い注記が表示されます。これは意図的な仕様です — 組織が、すべてが確実にブランドに沿ったものであり続けることを保証する方法だからです。
+一部のビルドは**ロックされたブランド**を出荷します。色、フォント、トークンはすべてのツールと書き出しが使用するものであり、変更する余地はありません。この場合、スタジオはこのビルドが固定ブランドで出荷されており編集が無効になっている旨を説明する短いメモに置き換えられます。これは意図的なものです。組織がすべてをオンブランドに保証する方法なのです。
 
-## 次に進むには
+## 次に進む先
 
-- **[Lolly の使い方](/info/using.html)** — キャンバス、保存、プロジェクト、カタログについて。
-- **[デザイントークン](/info/design-tokens.html)** — あなたのブランドを表現するトークンモデルについて。
-- **[書き出しとフォーマット](/info/exporting.html)** — 印刷単位、CMYK、そしてあなたのブランドが書き出せるフォーマットについて。
+- **[Using Lolly](/info/using.html)** - キャンバス、保存、プロジェクト、カタログについて。
+- **[Design Tokens](/info/design-tokens.html)** - あなたのブランドが表現されているトークンモデル。
+- **[Exporting & formats](/info/exporting.html)** - 印刷単位、CMYK、あなたのブランドが書き出す形式について。

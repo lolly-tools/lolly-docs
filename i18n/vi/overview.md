@@ -1,82 +1,100 @@
 # Tổng quan
 
-Tài liệu này trình bày mục đích, cấu trúc, và các quyết định kiến trúc của nền tảng Lolly. Nó phản ánh cả tầm nhìn sản phẩm lẫn hiện trạng của codebase.
+![Biểu tượng Lolly - kẹo mút lớn màu xanh lá và trắng](/info/icon.svg)
 
-> **Trạng thái:** Lolly là một nguyên mẫu nội bộ, đang trong **giai đoạn thử nghiệm khép kín (closed pilot) chưa hoàn tất**. Engine mang tính xác định (deterministic) và nhất quán nội bộ, nhưng sản phẩm vẫn còn ở giai đoạn sớm - SUSE là khách hàng đầu tiên - và các engine mật mã học cùng bộ phân tích tệp của nó hiện đang trải qua quá trình gia cố hạ tầng nghiêm ngặt của SUSE, chuẩn bị cho quy mô doanh nghiệp (đây là lĩnh vực chúng tôi thực sự giỏi). Hãy đọc phần kiến trúc dưới đây như một ý đồ thiết kế đang được kiểm chứng, chứ không phải một sản phẩm hoàn chỉnh, đã được chứng nhận. Xem [Áp dụng & Quản trị](/info/adoption-governance.html#status) để biết cách chương trình thử nghiệm này được vận hành và đo lường.
+Tài liệu này ghi lại mục đích, cấu trúc và các quyết định kiến trúc cho nền tảng Lolly. Nó phản ánh cả tầm nhìn sản phẩm lẫn hiện trạng của codebase.
+
+> **Trạng thái:** Lolly là một nguyên mẫu nội bộ trong một **giai đoạn thử nghiệm khép kín chưa hoàn tất**. Engine có tính tất định và nhất quán nội tại, nhưng sản phẩm còn ở giai đoạn sớm - SUSE là khách hàng số một - và các engine mã hóa cùng phân tích file của nó hiện đang trải qua quá trình siết chặt hạ tầng nghiêm ngặt của SUSE, chuẩn bị cho quy mô doanh nghiệp (chúng tôi thực sự giỏi khoản này). Hãy đọc kiến trúc dưới đây như ý đồ thiết kế đang được kiểm chứng, không phải một sản phẩm hoàn thiện, đã được chứng nhận. Xem [Áp dụng & Quản trị](/info/adoption-governance.html#status) để biết giai đoạn thử nghiệm được vận hành và đo lường ra sao.
+
+> **Cách đọc trang này.** Trang này chứa hai loại nội dung, theo thứ tự. Nửa đầu là
+> **vì sao điều này tồn tại**: vấn đề, định vị và vòng đời mà một tài sản đơn lẻ trải
+> qua. Từ [Bức tranh toàn cảnh](#the-big-picture-how-the-layers-fit) trở đi là
+> **các lớp khớp với nhau ra sao**: tài liệu kiến trúc dành cho người đóng góp, bao gồm sự phân
+> tách engine/shell/pack, bố cục kho mã, các đích triển khai và các cam kết ràng buộc mọi
+> thay đổi lên nền tảng. Nếu bạn ở đây để thay đổi codebase thay vì tìm hiểu
+> sản phẩm, hãy bắt đầu từ bức tranh toàn cảnh.
+>
+> Có hai tài liệu đồng hành đi sâu hơn trang này. [`engine/README.md`](../engine/README.md) trong
+> kho mã là bản đồ engine theo từng module, với một bảng được tạo tự động liệt kê mọi module và
+> những gì nó phân tích hay ghi ra. [Mô hình đe dọa & Ranh giới tin cậy](/info/threat-model.html)
+> là cùng một kiến trúc được đọc dưới góc độ ranh giới tin cậy, và là trang đúng cho bất kỳ câu hỏi nào về
+> những gì engine coi là không đáng tin cậy.
 
 ---
 
-## Vì sao Lolly tồn tại
+## Vì sao điều này tồn tại
 
-Các đội ngũ luôn gặp phải một vấn đề lặp đi lặp lại: công việc sáng tạo và nội dung mang tính lặp lại, đủ dễ đoán để không cần đến bàn tay chuyên môn mỗi lần, nhưng lại đủ nhạy cảm về chất lượng để không thể giao phó mà thiếu rào chắn. Kết quả là hoặc thông lượng chậm (nghẽn cổ chai ở chuyên gia), hoặc thiếu nhất quán (mỗi người dùng bất kỳ công cụ nào họ có sẵn), hoặc bị khóa chặt vào nhà cung cấp (một DAM SaaS kiểm soát các mẫu của bạn).
+Các đội nhóm gặp phải một vấn đề lặp lại: công việc sáng tạo và nội dung lặp đi lặp lại quá dễ đoán để cần bàn tay chuyên nghiệp mỗi lần, nhưng lại quá nhạy về chất lượng để giao phó mà không có rào chắn. Kết quả là hoặc thông lượng chậm (nút thắt chuyên gia), thiếu nhất quán (mỗi người dùng công cụ mình có sẵn), hoặc lệ thuộc nhà cung cấp (một DAM SaaS kiểm soát template của bạn).
 
-Nền tảng này là câu trả lời mang tính cấu trúc:
+Nền tảng này là câu trả lời trực tiếp:
 
-> **Sáng tạo và nội dung lập trình hoá ở quy mô lớn** - tạo asset gần như không tốn công sức, với các quy tắc nằm dưới sự kiểm soát tập trung, dành cho nhân viên, nhà cung cấp và đối tác.
+> **Sáng tạo và nội dung theo chương trình ở quy mô lớn** - tạo tài sản không tốn nhân lực, với các quy tắc được kiểm soát tập trung, dành cho nhân viên, nhà cung cấp và đối tác.
 
-Kết quả là **sự dồi dào**: mọi sự kiện đều có biển chỉ dẫn đúng chuẩn, mọi cảnh báo CVE đều khớp phong cách thương hiệu, mọi nhãn in đều sạch đẹp, mọi chữ ký email đều cập nhật - tất cả mà không cần một ticket thiết kế nào. Nền tảng này xử lý công việc sáng tạo mang tính vận hành, lặp lại. Nó cố tình không phải là một công cụ sáng tạo đặt riêng theo yêu cầu - các nhà thiết kế vẫn nắm giữ những sản phẩm chủ lực.
+Kết quả là **sự dồi dào**: mọi sự kiện có bảng hiệu đúng chuẩn, mọi cảnh báo CVE khớp phong cách công ty, mọi nhãn in sạch, mọi chữ ký email luôn cập nhật - tất cả không cần một phiếu yêu cầu thiết kế. Nền tảng xử lý công việc sáng tạo mang tính vận hành lặp lại. Nó cố tình không phải là một công cụ sáng tạo tùy biến - các nhà thiết kế vẫn giữ quyền sở hữu các công việc chủ lực.
 
-### Vị trí trong bối cảnh
+### Đổi mới theo xác suất, mở rộng theo tất định
 
-![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=aud-gallery-landscape)
+Mọi cuộc tranh luận về AI trong một pipeline sáng tạo đều mắc kẹt ở cùng một câu hỏi: phần nào trong việc này là việc của máy móc? Đây là một câu hỏi cũ đã có đáp án ổn định. Các thầy chép sách và họa sĩ minh họa từ xưa đã làm việc giữa hai công cụ - bản phác thảo tự do, nơi không gì cố định và mọi thứ đều có thể thử, và máy in, đáng gờm chính vì nó cam kết. Các bản phác thảo là nơi nghệ thuật diễn ra. Máy in là cách nó đến được với mọi người. Không ai nhầm lẫn hai thứ đó, và cả hai đều tiếp tục tiến bộ - mực mới, kiểu chữ mới, máy in mới - mỗi thứ cải tiến hài hòa với tay nghề và mục đích nó phục vụ.
 
-| Khả năng | Canva | Cổng thương hiệu | Illustrator | Figma / Penpot | **Lolly** |
-|---|---|---|---|---|---|
-| Tạo nội dung hàng loạt | một phần | ✗ | ✗ | ✗ | **✓** |
-| Hoạt động hoàn toàn ngoại tuyến | ✗ | ✗ | ✓ | một phần | **✓** |
-| Logic mẫu & ràng buộc cứng | ✗ | một phần | ✗ | một phần | **✓** |
-| Không yêu cầu kỹ năng thiết kế | một phần | ✓ | ✗ | ✗ | **✓** |
-| Content Credentials tự động | ✗ | ✗ | một phần | ✗ | **✓** |
-| Công cụ kết hợp với công cụ khác | ✗ | ✗ | ✗ | ✗ | **✓** |
-| Engine mở, không khóa theo SaaS | ✗ | ✗ | ✗ | một phần | **✓** |
-| Chứng chỉ nội dung C2PA | ✗ | ✗ | ✗ | ✗ | **✓** |
-| Nguồn gốc cấp độ pháp y (tùy chọn bật) | ✗ | ✗ | ✗ | ✗ | **✓** |
-| Ứng dụng Di động và Desktop | ✓ | ✗ | ✗ | một phần | **✓** |
-| Dòng lệnh & TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
+Lolly kẻ cùng một ranh giới đó. Khám phá theo xác suất: một mô hình, một nhà thiết kế, một ý tưởng thô, một câu lệnh dẫn tới nơi không ai định trước. Rồi mở rộng theo tất định - thứ chạm tới mười nghìn kết quả là một *công cụ*, và một công cụ kết xuất giống hệt nhau mỗi lần từ các đầu vào mà bạn có thể đọc được. Việc khám phá vẫn tự do vì không có gì ở phía sau phụ thuộc vào việc nó ra kết quả giống nhau hai lần. Đầu ra giành được lòng tin vì nó không phải một phỏng đoán. Đưa việc thử nghiệm AI vào những kết quả có thể dự đoán, tái lập được không phải một ngành mới; đó chính là sự phân công lao động đã từng khiến bản in đáng tin cậy ngay từ đầu.
 
-Khoảng trống này rất rõ ràng: không có gì trong bối cảnh hiện tại mang lại đầu ra ưu tiên ràng buộc, có khả năng ngoại tuyến, yêu cầu kỹ năng thấp, và dễ tiếp cận nội bộ. Lolly thậm chí còn có một canvas mở - **Design** - nơi màu sắc, kiểu chữ và asset đều tuân theo các biến toàn cục của thương hiệu, nên việc sắp xếp tự do vẫn giữ tính ưu tiên ràng buộc. Điều nó **không** phải là một bộ công cụ thiết kế không ràng buộc: các nhà thiết kế vẫn tiếp tục dùng Illustrator và Figma cho công việc chủ lực đặt riêng theo yêu cầu. Các biến thể có thể được lắp ráp bằng công cụ này.
+> Tin tưởng quá trình sáng tạo, mở rộng bằng sự nghiêm ngặt.
 
-**Dùng để:** Tạo nhanh các asset sáng tạo mang tính vận hành - ô sự kiện, thẻ tên, chữ ký, cảnh báo CVE, mã QR, thẻ mạng xã hội, nhãn lô hàng, báo cáo có cấu trúc.
+### So với các lựa chọn khác
 
-**Không dùng để:** Nội dung chủ lực, đặt riêng theo yêu cầu.
+::: figure positioning-comparison
+Mức độ hoàn thiện năng lực trên các công cụ sáng tạo hiện nay, khảo sát tháng 8/2026. Thang điểm: 0 không có, 25 mức giải pháp tạm, 50 có thật nhưng bị giới hạn hoặc một phần, 75 mạnh nhưng có lưu ý, 100 năng lực cốt lõi.
+:::
+
+Khoảng trống rất rõ: không có công cụ nào hiện đang bán ra cho chúng ta đầu ra ưu tiên ràng buộc, chạy offline, kỹ năng thấp, truy cập nội bộ được. Lolly thậm chí còn có một canvas mở - **Design** - nơi màu sắc, kiểu chữ và tài sản tuân theo các biến toàn cục của thương hiệu, để việc sắp xếp tự do vẫn ưu tiên ràng buộc. Điều nó **không** phải là một bộ công cụ thiết kế không giới hạn: các nhà thiết kế vẫn dùng Illustrator và Figma cho công việc chủ lực tùy biến. Các hoán vị có thể được lắp ráp bằng công cụ này.
+
+![Mọi công cụ trong thư viện dưới dạng thẻ, nhóm theo danh mục, để một nhà sản xuất chọn một cái và bắt đầu](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=aud-gallery-landscape)
+
+**Dùng cho:** Tạo nhanh các tài sản sáng tạo mang tính vận hành - ô sự kiện, thẻ tên, chữ ký, cảnh báo CVE, mã QR, thẻ mạng xã hội, nhãn lô hàng, báo cáo có cấu trúc.
+
+**Không dùng cho:** Nội dung chủ lực tùy biến.
 
 ---
 
 ## Vòng đời của một chiến dịch
 
-![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+Cách rõ ràng nhất để thấy Lolly là gì không phải là một danh sách tính năng - mà là theo dõi một tài sản duy nhất khi nó chuyển từ tay người này sang tay người khác. Hãy quan sát một thẻ chiến dịch đã bản địa hóa di chuyển qua tổ chức:
 
-Cách rõ nhất để thấy Lolly là gì không phải một danh sách tính năng - mà là dõi theo một asset duy nhất khi nó được chuyền từ tay này sang tay khác. Hãy xem một thẻ chiến dịch đã bản địa hoá đi qua tổ chức:
+1. **Người sáng tạo đặt ra quy tắc.** Một nhà thiết kế soạn template gốc trong công cụ Design, cố định sẵn các biến kiểu chữ và màu sắc của thương hiệu. Họ không làm một thẻ duy nhất - họ đang làm công việc nền tảng *một lần* để không bao giờ phải bản địa hóa thủ công lại nữa.
+2. **Nhà phát triển mở rộng nó.** Cùng template đó được nối vào một pipeline chạy hàng đêm qua CLI, để một biểu đồ mới hay một biến thể ngôn ngữ mới được tạo tự động - không nhà thiết kế nào phải mở lại file.
+3. **Nhà sản xuất chỉ việc dùng nó.** Một đại diện bán hàng, offline trên máy bay, mở cùng công cụ đó và tạo ra một bản trình chiếu hoàn toàn đúng thương hiệu cho một cuộc gặp khách hàng. Không cần kỹ năng thiết kế, không cần mạng, không chờ đợi.
 
-1. **Người sáng tạo đặt ra luật.** Một nhà thiết kế soạn template gốc trong Design, mã hoá cứng kiểu chữ và các biến màu của thương hiệu. Họ không làm ra một thẻ - họ làm phần việc nền tảng *một lần* để không bao giờ phải bản địa hoá thủ công lại nữa.
-2. **Lập trình viên nhân rộng nó.** Cũng chính template đó được nối vào một pipeline chạy hằng đêm qua CLI, nên một biểu đồ mới hay một biến thể ngôn ngữ mới được tạo ra tự động - không nhà thiết kế nào phải mở lại tệp.
-3. **Người sản xuất chỉ việc dùng.** Một nhân viên bán hàng, đang ngoại tuyến trên máy bay, mở đúng công cụ đó và tạo ra một bộ slide đúng chuẩn thương hiệu cho buổi gặp khách hàng. Không cần kỹ năng thiết kế, không cần mạng, không phải chờ.
+"Biểu đồ mới" ở bước hai là một bản kết xuất như thế này, được tạo ra từ một chuỗi dữ liệu và vài tham số mà không ai mở file thiết kế:
 
-"Biểu đồ mới" ở bước hai là một bản render như thế này, được tạo ra từ một chuỗi dữ liệu và vài tham số, không ai phải mở tệp thiết kế nào:
+![Một biểu đồ vùng xếp chồng có tiêu đề, ba chuỗi dữ liệu được dải màu theo bảng màu lạnh với trục, chú giải và tiêu đề đều do template đặt chứ không phải làm thủ công](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
-Vấn đề không phải là Lolly tốt cho nhà thiết kế *và* tốt cho lập trình viên *và* tốt cho bộ phận bán hàng, mỗi bên một cách riêng lẻ. Đó là một **cuộc chạy tiếp sức**: công việc ban đầu của người sáng tạo được lập trình viên nhân rộng, và điều đó lại tiếp sức cho người sản xuất. Trải nghiệm nhẹ nhàng của nhân viên không chuyên kỹ thuật trên máy bay chỉ *khả thi* nhờ sự chặt chẽ mà nhà thiết kế đặt ra và lập trình viên triển khai.
+Điểm mấu chốt không phải là Lolly tốt cho nhà thiết kế *và* tốt cho nhà phát triển *và* tốt cho bán hàng, mỗi thứ trong khoảng chân không riêng. Đó là một **cuộc chạy tiếp sức**: công việc ban đầu của người sáng tạo được nhà phát triển mở rộng, từ đó trao quyền cho nhà sản xuất. Trải nghiệm không tốn công cho đại diện phi kỹ thuật trên máy bay chỉ *khả thi* nhờ vào sự nghiêm ngặt mà nhà thiết kế đặt ra và nhà phát triển triển khai.
 
-Đó chính là hệ số nhân. Lolly không phải một ngăn tủ chứa các công cụ riêng lẻ cho từng vai trò - nó là một vòng đời asset mang tính xác định mà mọi vai trò đều chạm vào, và mỗi bàn tay nó đi qua lại nhân lên giá trị của bàn tay trước.
-
----
-
-## Một lần phê duyệt, mười nghìn asset
-
-![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
-
-Vì việc phê duyệt nằm ở công cụ chứ không ở tệp (xem [Lolly so sánh như thế nào](/info/positioning.html)), quy mô không còn là vấn đề của việc rà soát. Hãy phê duyệt một công cụ tạo thẻ mạng xã hội đã bản địa hoá đúng một lần, rồi tạo ra **10.000 asset trên 12 ngôn ngữ** từ một bảng tính - và không cái nào cần một lượt kiểm tra tuân thủ mới từ bộ phận pháp lý hay thương hiệu, bởi template mà tất cả chúng sinh ra từ đó đã được phê duyệt rồi.
-
-Cùng một công cụ mang tính xác định đó đạt tới quy mô ấy theo ba đường, tất cả đều cho ra đầu ra giống hệt nhau và đã được phê duyệt trước:
-
-- <!--i:people--> **Một con người, trong ứng dụng.** Lưới batch `/pro`: dán hoặc nhập các hàng, nhận một asset hoàn chỉnh cho mỗi hàng, tải zip về. Không cần kỹ năng thiết kế, không cần ticket, không phải chờ.
-- <!--i:code--> **Một lập trình viên, từ dòng lệnh.** CLI chạy *cùng* engine và *cùng* đường render đó ở chế độ headless, nên công cụ có thể được lặp qua toàn bộ 10.000 hàng trong một script hay một pipeline hằng đêm. Một lệnh `lolly <tool> --field=…` trong vòng lặp là toàn bộ phần tích hợp.
-- <!--i:cpu--> **Một hệ thống hay một AI agent, qua MCP.** Cùng công cụ đó được vận hành theo cách lập trình, với cùng độ trung thực và ở quy mô còn lớn hơn - bởi máy không biết chán khi hàng nghìn tệp lần lượt hiện ra.
-
-Một bộ ràng buộc thương hiệu, do nhà thiết kế cố định một lần; ba lối dẫn tới đúng một đầu ra đã được phê duyệt trước - và lối máy móc mở rộng xa nhất, vì nó không bao giờ mỏi khi các tệp lần lượt đổ về.
+Đó là bộ khuếch đại lực. Lolly không phải một ngăn kéo các công cụ riêng lẻ cho từng vai trò riêng lẻ - mà là một vòng đời tài sản tất định duy nhất mà mọi vai trò đều chạm vào, và mỗi bàn tay nó đi qua nhân lên giá trị của bàn tay trước đó.
 
 ---
 
-## Bức tranh toàn cảnh
+## Một lần phê duyệt, mười nghìn tài sản
+
+Vì sự phê duyệt nằm trong công cụ chứ không phải trong file (xem [Lolly so sánh thế nào](/info/positioning.html)), quy mô không còn là một vấn đề rà soát. Phê duyệt một công cụ thẻ mạng xã hội đã bản địa hóa một lần, rồi tạo ra **10.000 tài sản trên 12 ngôn ngữ** từ một bảng tính - và không tài sản nào trong số đó cần kiểm tra tuân thủ mới từ pháp lý hay thương hiệu, vì template mà tất cả chúng bắt nguồn đã được phê duyệt sẵn.
+
+Cùng một công cụ tất định đạt tới quy mô đó theo ba cách, tất cả đều cho ra đầu ra giống hệt nhau, đã được phê duyệt trước:
+
+- <!--i:people--> **Một người, trong ứng dụng.** Lưới hàng loạt `/pro`: dán hoặc nhập các hàng, nhận một tài sản hoàn thiện cho mỗi hàng, tải xuống file zip. Không cần kỹ năng thiết kế, không phiếu yêu cầu, không chờ đợi.
+- <!--i:code--> **Một nhà phát triển, từ dòng lệnh.** CLI chạy *cùng* engine và *cùng* đường kết xuất không giao diện, nên công cụ có thể được xếp chuỗi chạy qua toàn bộ 10.000 hàng trong một script hay một pipeline chạy đêm. Một lệnh gọi `lolly <tool> --field=…` trong một vòng lặp là toàn bộ tích hợp.
+- <!--i:cpu--> **Một hệ thống hoặc một tác nhân AI, qua MCP.** Cùng công cụ được vận hành theo chương trình, với cùng độ trung thực và ở quy mô còn lớn hơn - vì một cỗ máy sẽ không thấy chán khi hàng nghìn file lần lượt đổ về.
+
+![Chế độ hàng loạt trên một bản cài mới: một hàng trống chờ một công cụ, với toàn bộ bề mặt bảng tính và nút Render đã sẵn sàng trước khi có dữ liệu nào tới](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+
+Một bộ ràng buộc thương hiệu duy nhất, được một nhà thiết kế ấn định một lần; ba con đường dẫn tới cùng một đầu ra đã được phê duyệt trước - và con đường máy móc mở rộng xa nhất trong tất cả, vì nó không bao giờ mệt mỏi khi các file lần lượt đổ về.
+
+---
+
+## Bức tranh toàn cảnh: các lớp khớp với nhau ra sao
+
+Mọi thứ từ đây trở xuống là kiến trúc. Sơ đồ là toàn bộ hệ thống trong một cái nhìn: các công cụ là
+dữ liệu ở trên cùng, engine ở giữa không biết gì về bất kỳ nền tảng nào, các shell bên dưới nó
+triển khai một hợp đồng duy nhất, và các catalog cung cấp nội dung.
 
 ```
                 ┌─────────────────────────────────────────────┐
@@ -110,7 +128,9 @@ Một bộ ràng buộc thương hiệu, do nhà thiết kế cố định một
                 └─────────────────────────────────────────────┘
 ```
 
-### Cấu trúc repository
+### Bố cục kho mã
+
+Nội dung được gắn vào dưới dạng các gói: `community/`, `docs/`, mọi `shells/*`, cả hai `services/*` và `brands/suse` mỗi cái là một kho mã riêng, được checkout như các git submodule của kho này. Kho mẹ sở hữu `engine/`, `schemas/`, `scripts/`, `tests/`, `api/`, `brands/lolly-start/` và `profiles.json`. Xem [Hướng dẫn Build » Lấy mã nguồn](/info/build-guide.html) để biết lệnh checkout và quy trình làm việc đa kho.
 
 ```
 lolly/
@@ -126,7 +146,7 @@ lolly/
 │       ├── compose.ts        # resolve nested tool renders (composes)
 │       ├── embed.ts          # parse portable lolly.tools embed URLs
 │       └── bridge/
-│           └── host-v1.ts    # TypeScript interface - the bridge contract
+│           └── host-v1.ts    # type re-export of the @lolly-tools/core contract
 │
 ├── shells/
 │   ├── web/          # PWA - hosted online; primary distribution
@@ -170,6 +190,7 @@ lolly/
 │
 ├── tools/            # profile VIEW (gitignored) - data, not code. Merged from packs:
 │                     #   community/ (public, brand-agnostic, MPL) + brands/<active>/tools (brand-owned).
+│                     #   A SELECTION follows - the mounted set depends on the profile.
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
@@ -185,9 +206,7 @@ lolly/
 │   ├── compress-pdf/      # on-device PDF compressor - recompresses images (file in → smaller file out)
 │   ├── brand-lockup/      # "Brand Lockup" - SUSE logo lockups; HarfBuzz text-to-path (wasm)
 │   ├── chart-creator/     # SVG charts from structured data
-│   ├── filter-duotone/    # two-color photo treatment
-│   ├── filter-halftone/   # photo → vector halftone dot grid
-│   ├── filter-scanline/   # photo → retro posterised scanline grid (SVG / transparent raster)
+│   ├── filter/            # photo effects in one tool - halftone/scanline/posterize/voronoi (vector), duotone/pixel-stretch/imperfections (raster)
 │   ├── meeting-planner/   # global timezone meeting scheduler
 │   ├── calendar-ics/      # event → .ics calendar file plus a card
 │   ├── digi-ad/           # "Animated Ad" - looping banner from scenes
@@ -200,8 +219,6 @@ lolly/
 │   ├── logo-wall/         # many logos → auto-packed grid
 │   ├── logo-lockup-partner/ # SUSE + partner co-brand lockup
 │   ├── web-icon/          # favicon .ico / png / svg from text + colours
-│   ├── filter-posterize/  # photo → flat posterised vector separations
-│   ├── filter-pixel-stretch/ # photo → pixel-smear effect
 │   ├── lottie-digi-ad/    # animated Lottie ad banners
 │   └── pose-geeko/        # pose the SUSE Geeko mascot - print-ready stills
 │
@@ -219,245 +236,241 @@ lolly/
 
 ---
 
-## Mô hình phân phối nền tảng
+## Mô hình triển khai nền tảng
 
-Nền tảng này chạy trên nhiều bề mặt khác nhau - web PWA, Tauri desktop/mobile, CLI có thể viết script, và TUI tương tác. Tất cả đều dùng chung một engine và cùng các tệp công cụ.
+Nền tảng chạy trên nhiều bề mặt - PWA web, Tauri desktop/mobile, CLI có thể viết script và TUI tương tác. Tất cả đều dùng cùng một engine và cùng các file công cụ.
 
-### Web (PWA) - kênh phân phối chính
+### Web (PWA) - phân phối chính
+Được lưu trữ tại một URL do SUSE kiểm soát. Hoạt động offline khi service worker đã cache công cụ và tài sản. Đây là nơi phần lớn nhân viên, nhà cung cấp và đối tác sẽ dùng nền tảng. Không cần tài khoản - trạng thái được lưu trong IndexedDB theo từng thiết bị.
 
-![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&dark=1&filename=aud-web-split)
+Shell web đáp ứng đa thiết bị từ một bố cục duy nhất. Trên desktop, một công cụ là một thanh bên điều khiển có thể đổi cỡ bên cạnh một sân khấu xem trước với điều hướng canvas gốc trackpad (Cmd/Ctrl-cuộn hoặc chụm để thu phóng quanh con trỏ, Space- hoặc kéo bằng nút giữa để lia, các phím `0`/`1`/`+`/`−` và một HUD Fit/%). Trên di động (≤640px), các điều khiển trở thành một tấm neo trên cùng với một tay cầm kéo tự khớp vào peek/half/full (chạm để chuyển đổi) phủ trên một bản xem trước toàn màn hình tĩnh, và một nút **Render** nổi mở các điều khiển **Export** trong một popup dạng tấm dưới. Chạm nhận chụm-thu phóng và kéo-lia trên bản xem trước. Đường kết xuất và các điều khiển xuất giống hệt nhau trên cả hai - chỉ phần khung giao diện là bố trí lại.
 
-![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![Chế độ chia đôi trên desktop - các control được tạo từ manifest ở bên trái, canvas trực tiếp ở bên phải](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&dark=1&filename=aud-web-split)
 
-Được host tại một URL do SUSE kiểm soát. Hoạt động ngoại tuyến một khi service worker đã lưu bộ nhớ đệm cho các công cụ và asset. Đây là nơi hầu hết nhân viên, nhà cung cấp và đối tác sẽ dùng nền tảng. Không cần tài khoản - trạng thái được lưu trong IndexedDB theo từng thiết bị.
+Cùng một công cụ ở độ rộng điện thoại, không cần duy trì layout thứ hai: các control trở thành một sheet ở phía trên, bản xem trước chiếm toàn màn hình và nút render nổi trên đó.
 
-Web shell là responsive từ một bố cục duy nhất. Trên desktop, một công cụ là một sidebar điều khiển có thể đổi kích thước nằm cạnh khung xem trước, với khả năng điều hướng canvas thuần trackpad (cuộn kèm Cmd/Ctrl hoặc chụm hai ngón để thu phóng quanh con trỏ, giữ Space hoặc kéo bằng nút chuột giữa để di chuyển khung nhìn, các phím `0`/`1`/`+`/`−`, và một HUD Fit/%). Trên di động (≤640px), các điều khiển trở thành một tấm trượt neo ở phía trên với tay cầm kéo tự chốt vào peek/half/full (chạm để chuyển đổi), nằm trên một bản xem trước toàn màn hình tĩnh, còn nút **Render** nổi sẽ mở các điều khiển **Export** trong một popup dạng tấm trượt. Cảm ứng thì dùng chụm để thu phóng và kéo để di chuyển khung nhìn trên bản xem trước. Render path và các điều khiển export giống hệt nhau ở cả hai - chỉ phần khung giao diện (chrome) là đổi cách bố trí.
+![Một audiogram trên màn hình rộng 430px - sheet điều khiển ở trên, tác phẩm vuông hoàn chỉnh ở dưới và nút render nổi](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
-**Chế độ Batch (`/pro`).** Web shell cũng đi kèm một lưới batch kiểu bảng tính (`shells/web/src/pro/`) render nhiều hàng cùng lúc trên một hoặc nhiều công cụ. Nó hỗ trợ round-trip CSV/TSV cộng với dán trực tiếp từ bảng tính, template/định dạng/kích thước/đơn vị/dpi theo từng hàng, một panel bên chỉnh sửa blocks kèm xem trước trực tiếp, các cột export có thể thu gọn, một thanh gắn nhãn "relevance" theo từng hàng, sắp xếp lại hàng bằng tay cầm kéo bên trái, xác nhận xoá hai bước, các phiên batch đã lưu, và tải xuống dạng `.zip`. Đây là bề mặt một-đến-nhiều đứng sau định vị "tạo nội dung hàng loạt".
+**Chế độ hàng loạt (`/pro`).** Web shell cũng đi kèm một lưới hàng loạt kiểu bảng tính (`shells/web/src/pro/`) render nhiều hàng cùng lúc trên một hoặc nhiều công cụ. Nó hỗ trợ chuyển đổi qua lại CSV/TSV cộng với dán từ bảng tính, template/format/kích thước/đơn vị/dpi theo từng hàng, một side panel blocks-editor với bản xem trước trực tiếp, các cột export có thể thu gọn, một thanh nhãn "mức độ liên quan" theo từng hàng, sắp xếp lại hàng bằng tay kéo bên trái, xác nhận xóa hai bước, các phiên hàng loạt đã lưu và tải xuống dạng `.zip`. Đây là bề mặt một-đến-nhiều đứng sau định vị "tạo nội dung hàng loạt".
 
 ### Tauri desktop / mobile
-Ứng dụng native đóng gói sẵn (dung lượng nhỏ nhờ Tauri). Cung cấp khả năng hoạt động ngoại tuyến đầy đủ, quyền truy cập hệ thống tệp cho các công cụ phụ thuộc CLI (PDF Smasher, Font Outliner), và quyền truy cập camera. Dự kiến được nâng cấp bộ công cụ vào giữa năm 2026.
+Ứng dụng native đóng gói (dung lượng nhỏ nhờ Tauri). Cung cấp khả năng hoạt động offline đầy đủ, quyền truy cập hệ thống tệp cho các công cụ phụ thuộc CLI (PDF Smasher, Font Outliner) và quyền truy cập camera. Dự kiến nâng cấp công cụ vào giữa 2026.
 
 ### CLI
-
-Cùng một công cụ ở chiều rộng điện thoại, không cần bảo trì bố cục thứ hai: các điều khiển trở thành một tấm trượt ở phía trên, phần xem trước chiếm cả màn hình, và nút Render nổi bên trên.
-
 `lolly <tool-id> [--input=value ...] --output=file.png`
 
-Người dùng desktop có thể gọi nhiều công cụ ngay từ terminal. CLI shell nạp cùng một engine, tạo ra một DOM jsdom, chạy cùng render path, và ghi ra tệp. Chế độ URL chính là lớp truyền tải - CLI không phải là một cài đặt (implementation) riêng biệt. Điều này đảm bảo đầu ra của CLI và GUI luôn giống hệt nhau.
+Người dùng desktop có thể gọi nhiều công cụ từ terminal. CLI shell tải cùng một engine, tạo một DOM jsdom, chạy cùng render path và ghi tệp. URL mode chính là lớp vận chuyển - CLI không phải là một cài đặt riêng biệt. Điều này đảm bảo đầu ra của CLI và GUI giống hệt nhau.
 
 ```bash
 lolly qr-code --url=https://suse.com --output=qr.svg
 lolly quotes --quote="Ship it." --output=quote.png
-lolly                        # liệt kê các công cụ khả dụng
-lolly qr-code                # liệt kê các đầu vào của công cụ đó
+lolly                        # lists available tools
+lolly qr-code                # lists inputs for that tool
 ```
 
 ### TUI
 `npm run tui`
 
-Phiên bản tương tác song song với CLI: một ứng dụng terminal toàn màn hình, ưu tiên bàn phím (xây trên Ink) để duyệt công cụ, điền đầu vào, lưu project, và export - tất cả mà không cần GUI. Host bridge của nó **tái sử dụng cài đặt của CLI** cho các định dạng không cần DOM (SVG/EMF/EPS/HTML + văn bản/dữ liệu), và bổ sung trạng thái lưu trên đĩa dưới `~/.lolly` cùng một bản xem trước nội tuyến tùy chọn. Ngoài ra nó còn có một **tầng render trình duyệt**: một Chromium headless có phạm vi giới hạn (cùng loại mà MCP server cài đặt) tạo ra raster/PDF/video và chụp URL trực tiếp theo yêu cầu - vận hành một bản build của web shell nên đầu ra giống hệt nhau, và chỉ khởi chạy khi bạn export một định dạng như vậy lần đầu tiên. Vì vậy `url-shot` (với crop + đổi màu + vector PDF/SVG) và mọi công cụ raster/pdf khác cũng chạy được ngay trong terminal. Xem [hướng dẫn TUI](/info/tui.html).
+Phiên bản tương tác song hành với CLI: một ứng dụng terminal toàn màn hình, ưu tiên bàn phím (xây trên Ink) để duyệt công cụ, điền input, lưu dự án và export - tất cả không cần GUI. Host bridge của nó **tái sử dụng cài đặt của CLI** cho các định dạng không cần DOM (SVG/EMF/EPS/HTML + text/data), và bổ sung state trên đĩa dưới `~/.lolly` cùng bản xem trước nội tuyến tùy chọn. Ngoài ra nó còn có một **lớp render trình duyệt**: một Chromium headless phạm vi hẹp (cùng bản mà MCP server cài đặt) tạo ra raster/PDF/video và chụp URL trực tiếp theo yêu cầu - vận hành một bản build của web shell nên đầu ra giống hệt nhau, và chỉ khởi chạy khi bạn export định dạng đó lần đầu. Vì vậy `url-shot` (kèm crop + đổi màu + PDF/SVG vector) và mọi công cụ raster/pdf đều chạy được trong terminal. Xem [hướng dẫn TUI](/info/tui.html).
 
-Dù bạn đang ở bề mặt nào, tab Năng lực trong bảng điều khiển vẫn là bản đồ đầy đủ về những gì nền tảng tuyên bố nó làm được, được nhóm lại và dễ đọc mà không cần mở một công cụ nào.
+Dù đang ở bề mặt nào, tab Capabilities của dashboard là bản đồ đầy đủ những gì nền tảng khai báo có thể làm, được nhóm lại và dễ đọc mà không cần mở bất kỳ công cụ nào.
 
 ---
 
 ## Danh mục công cụ
 
-![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=aud-utilities)
+Các công cụ được gắn thẻ `category` trong manifest để nhóm trong gallery.
 
-Các công cụ được gắn nhãn bằng một `category` trong manifest của chúng để nhóm lại trong gallery.
+Các hàng được liệt kê theo thứ tự phần trong gallery. Phần `utility` luôn hiển thị **cuối cùng** trong gallery (sau mọi danh mục khác, kể cả những danh mục tương lai) - đây là ngăn kéo "Offline Utilities" chạy trên thiết bị.
 
-Các hàng được liệt kê theo đúng thứ tự các mục trong gallery. Mục `utility` luôn render **cuối cùng** trong gallery (sau mọi danh mục khác, kể cả những danh mục sẽ có trong tương lai) - đây là ngăn kéo "Offline Utilities" chạy trên thiết bị.
-
-| Danh mục | Công cụ đã phát hành | Dự kiến |
+| Category | Ví dụ | Dự kiến |
 |---|---|---|
-| `everyone` | QR Code Generator, Quote Card, Email Signature, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
-| `designer` | Brand Lockup, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
-| `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS | Event Stationery, Bulk Name Badges, Room Agenda Cards |
+| `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
+| `designer` | Brand Lockup, Design, Chart Creator, D3 Chart Studio, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Design | Bộ chuyển đổi đơn vị/định dạng, thêm các tiện ích quyền riêng tư trên thiết bị khác |
+| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Bộ chuyển đổi đơn vị/định dạng, thêm các tiện ích riêng tư chạy trên thiết bị |
 
-Các công cụ cũng được phân loại theo `status`: `official` (được thương hiệu phê duyệt, không có watermark), `community` (đóng góp từ bên ngoài), `experimental` (bản xuất có gắn watermark). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap và Diagram Builder hiện mang trạng thái `experimental`; Web Icon Maker và Design được phát hành như các công cụ `community`.
+Các ô đó là **ví dụ, không phải danh mục đầy đủ**. Những công cụ nào tồn tại là thuộc tính của profile bạn đã mount, không phải của trang này: một brand pack thêm công cụ riêng của nó, và có thể loại trừ một công cụ cộng đồng mà nó không muốn phân phối. `catalog/tools/index.json` - được tạo ra từ các manifest, và là registry mà gallery thực sự đọc - là danh sách chính thức; để đếm những gì một profile mount, hãy đếm các manifest (`ls community/*/tool.json brands/*/tools/*/tool.json`) thay vì tin vào một con số ghi ở đây. (Một tool id xuất hiện trong hai pack chỉ mount một lần, từ pack thắng.)
 
-**Design** là công cụ đầu tiên được xây trên chế độ canvas tự do `render.layout: "editor"` - một bề mặt thao tác trực tiếp, không khung giao diện, nơi bạn kéo, đổi kích thước, xoay và gắn (snap) các khối văn bản, hình khối và hình ảnh, rồi export qua cùng render path như mọi công cụ khác.
+Các công cụ cũng được phân loại theo status: `official` (được brand phê duyệt, không watermark), `community` (đóng góp bên ngoài), `experimental` (export có watermark). Phần lớn thư viện là `official`; các studio mới hơn và các công cụ chụp thường ở mức `community` hoặc `experimental` trong khi ổn định dần. Mọi bề mặt đều hiển thị badge, để người đọc biết mình đang lấy gì trước khi mở nó - và, giống như các ô danh mục ở trên, số lượng thành viên theo status thay đổi quá nhanh để liệt kê ở đây. Hãy đọc trực tiếp từ gallery hoặc index được tạo ra.
 
-**Strip Hidden Data** là **tiện ích chạy trên thiết bị (on-device)** đầu tiên (`privacy: "on-device"`): một công cụ biến đổi nội dung nhận vào một tệp do *bạn* cung cấp, xử lý hoàn toàn trong trình duyệt, và trả lại một bản sao sạch - không bao giờ tải lên, không bao giờ gắn watermark, không đóng dấu nguồn gốc (provenance). **Text Helper** là tiện ích thứ hai - một bàn làm việc trên thiết bị cho các tác vụ dán-vào-một-trang-web thường ngày (định dạng JSON, giải mã JWT, Base64, mã hoá/giải mã URL, băm SHA). **Compress PDF** là tiện ích thứ ba - nó thu nhỏ một PDF bằng cách nén lại hình ảnh bên trong, cũng hoàn toàn trên thiết bị. Cả ba đều mang dòng chữ huy hiệu "Runs on your device - nothing is uploaded". Đây là khởi đầu của một danh mục tiện ích quyền riêng tư nhằm thay thế việc giao tệp bí mật cho các trang web đơn chức năng.
+**Design** là công cụ đầu tiên xây trên chế độ canvas tự do `render.layout: "editor"` - một bề mặt thao tác trực tiếp, không khung viền, nơi bạn kéo, thay đổi kích thước, xoay và snap các hộp văn bản, hình dạng và hình ảnh, rồi export qua cùng render path như mọi công cụ khác.
 
-> Lưu ý: `category` và `status` được phi chuẩn hoá (denormalise) vào `catalog/tools/index.json` (registry mà gallery đọc) từ từng `tool.json`. Manifest là nguồn chân lý duy nhất - index được **sinh ra tự động** bởi `npm run build:catalog`, và `npm run validate:catalog` sẽ làm CI thất bại nếu index đã commit lệch khỏi các manifest.
+**Strip Hidden Data** là **tiện ích chạy trên thiết bị** đầu tiên (`privacy: "on-device"`): một công cụ chuyển đổi nội dung nhận một tệp *bạn* cung cấp, xử lý hoàn toàn trong trình duyệt và trả lại một bản sạch - không bao giờ được tải lên, không bao giờ có watermark, không đóng dấu nguồn gốc. **Text Helper** là công cụ thứ hai - một không gian làm việc trên thiết bị cho các tác vụ dán-vào-website hàng ngày (định dạng JSON, giải mã JWT, Base64, mã hóa/giải mã URL, băm SHA). **Compress PDF** là công cụ thứ ba - nó thu nhỏ một PDF bằng cách nén lại hình ảnh bên trong, cũng hoàn toàn trên thiết bị. Dấu hiệu này và văn bản badge của nó "Chạy trên thiết bị của bạn - không có gì được tải lên" giờ đây bao phủ toàn bộ tập hợp công cụ chuyển đổi: Strip Hidden Data, Text Helper, Compress PDF, **Convert Image** (HEIC/TIFF/AVIF → WebP/JPG/PNG), **Convert Font**, **Redact** (xóa bỏ các vùng của một hình ảnh, SVG hoặc PDF), **Prompt to Image** và **Rebrand a Deck** (đổi theme cho một `.pptx` tại chỗ) ở những profile có mount nó. Đây là một danh mục tiện ích riêng tư thay thế việc giao tệp mật cho các website đơn chức năng.
+
+![Ngăn kéo Utilities, nơi mỗi thẻ là một công cụ chuyển đổi một tệp bạn đã có sẵn](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=aud-utilities)
+
+> Lưu ý: `category` và `status` được phi chuẩn hóa (denormalised) vào `catalog/tools/index.json` (registry mà gallery đọc) từ mỗi `tool.json`. Manifest là nguồn sự thật - index được **tạo ra** bởi `npm run build:catalog` và `npm run validate:catalog` sẽ khiến CI thất bại nếu index đã commit lệch khỏi các manifest.
 
 ---
 
-## Các cam kết kiến trúc
+## Cam kết kiến trúc
 
-Đây là những quyết định đã chốt. Thay đổi bất kỳ điều nào trong số đó là một việc lớn - chúng định hình mọi quyết định khác trong codebase.
+Những quyết định này đã được chốt. Thay đổi bất kỳ cái nào cũng là một việc lớn - chúng định hình mọi quyết định khác trong codebase.
 
-### 1. Công cụ khai báo (declarative), với một lối thoát mệnh lệnh (imperative)
-
-![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-street-map-controls)
+### 1. Công cụ khai báo, kèm lối thoát mệnh lệnh
 
 Một công cụ là một manifest (`tool.json`) + một template (`template.html`) + `hooks.js` tùy chọn.
 
-**Manifest khai báo các đầu vào (input).** Không phải template. Các đầu vào không được suy luận từ các token Handlebars. Manifest là hợp đồng (contract); template chỉ tiêu thụ các biến đã được đặt tên qua `{{id}}`.
+**Manifest khai báo các input.** Không phải template. Các input không được suy ra từ token Handlebars. Manifest là hợp đồng; template tiêu thụ các biến được đặt tên qua `{{id}}`.
 
-**Hook là tùy chọn.** Hầu hết các công cụ hoàn toàn mang tính khai báo - manifest + template là đủ. Những công cụ cần giá trị tính toán (mã hoá QR, tạo hình dữ liệu biểu đồ) cung cấp `hooks.js` phơi bày các hàm vòng đời (lifecycle) đã đặt tên (`onInit`, `onInput`, `onFrame` - hook camera trực tiếp theo từng khung hình dành cho các công cụ phản ứng theo chuyển động - `beforeRender`, `beforeExport`, `afterExport`, và `exportFile` - đường biến đổi file-vào/file-ra dùng bởi các tiện ích chạy trên thiết bị như Strip Hidden Data). Host nạp các hook qua `new Function('host', …)` với capability bridge được tiêm vào dưới dạng closure scope. Đây là một **hợp đồng về tính khả chuyển (portability), không phải một sandbox bảo mật**: hook vẫn chạy trong realm của trang và *có thể* chạm đến `window`/`fetch`/`document` trong một shell trình duyệt - `host.*` là bề mặt được hỗ trợ, có thể mang đi được, chứ không phải một ranh giới được cưỡng chế. Các kết quả hook bất đồng bộ được giới hạn thời gian (onInit 5s, onInput 2s, các hook khác 5s) và kết quả đến muộn sẽ bị bỏ qua; một hook *đồng bộ* chạy loạn thì không thể bị ngắt giữa chừng. Vì vậy mã hook của bên thứ ba không đáng tin cậy chưa an toàn để chạy cho đến khi tính năng cách ly Worker ra mắt.
+![Chồng control của Street Map - một dropdown thành phố, một select theme, các slider độ dày và các trigger màu, mỗi cái đều được vẽ từ một dòng manifest](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-street-map-controls)
 
-Điều này quan trọng vì: các công cụ khai báo có thể được viết bởi những người không phải lập trình viên. Nếu mọi công cụ đều là một ứng dụng web, thì rủi ro "thiếu kỹ năng để tạo/bảo trì các template chủ lực" sẽ trở thành một nút thắt cổ chai vĩnh viễn.
+**Hooks là tùy chọn.** Phần lớn công cụ hoàn toàn khai báo - manifest + template là đủ. Các công cụ cần giá trị tính toán (mã hóa QR, tạo hình dữ liệu biểu đồ) cung cấp `hooks.js` để lộ ra các hàm vòng đời được đặt tên (`onInit`, `onInput`, `onFrame` - hook camera trực tiếp theo từng khung hình cho các công cụ phản ứng chuyển động - `onLevel`, `beforeExport`, `afterExport`, `exportFile` - đường chuyển đổi file-vào/file-ra dùng bởi các tiện ích trên thiết bị như Strip Hidden Data - và `exportStill`, cho một công cụ tự sở hữu bản raster độ sâu riêng). Host tải hooks qua `new Function('host', …)` với capability bridge được tiêm vào làm closure scope. Đây là một **hợp đồng khả chuyển, không phải một sandbox bảo mật**: hooks vẫn chạy trong realm của trang và *có thể* truy cập `window`/`fetch`/`document` trong một web shell - `host.*` là bề mặt được hỗ trợ, khả chuyển, chứ không phải một ranh giới được thực thi. Kết quả hook bất đồng bộ có giới hạn thời gian (`onInit` 5s, `onInput` 2s, `beforeExport`/`afterExport` 5s, `exportFile`/`exportStill` 10s) và kết quả đến trễ bị loại bỏ; một hook *đồng bộ* chạy vượt thời gian không thể bị ngắt trước. Do đó mã hook bên thứ ba chưa tin cậy không an toàn để chạy cho đến khi cách ly Worker được triển khai.
 
-### 2. Công cụ và asset là dữ liệu, không phải code đóng gói sẵn
+Điều này quan trọng vì: công cụ khai báo có thể được người không lập trình tạo ra. Nếu mỗi công cụ đều là một ứng dụng web, ghi chú rủi ro "kỹ năng hạn chế để tạo/duy trì các template chủ lực" sẽ trở thành một nút thắt cổ chai vĩnh viễn.
 
-Các ứng dụng web và Tauri lấy về catalog công cụ và asset từ một URL đã biết ngay khi khởi động, lưu bộ nhớ đệm cục bộ, rồi vận hành trên bất cứ thứ gì có sẵn ở đó. **Thêm một ô sự kiện mới hay một asset theo mùa không cần đến việc phát hành ứng dụng mới.**
+### 2. Công cụ và asset là dữ liệu, không phải mã đóng gói
 
-Các byte của asset được tính checksum SHA-256 để ngăn chặn CDN bị đầu độc (poisoning). `id` + `version` của asset điều khiển việc vô hiệu hoá bộ nhớ đệm.
+Ứng dụng web và Tauri lấy các catalog công cụ và asset từ một URL đã biết khi khởi động, cache chúng cục bộ và vận hành trên bất cứ thứ gì có ở đó. **Thêm một ô sự kiện mới hoặc asset theo mùa không cần một bản phát hành ứng dụng.**
 
-### 3. Capability Bridge là API duy nhất mà công cụ nhìn thấy
+Byte của asset được kiểm tra checksum SHA-256 để ngăn chặn đầu độc CDN. `id` + `version` của asset điều khiển việc vô hiệu hóa cache.
 
-Công cụ không bao giờ chạm vào DOM bên ngoài vùng template của chúng, không bao giờ gọi `fetch` trực tiếp, không bao giờ đọc hệ thống tệp. Chúng gọi các phương thức `host.*` đã được đánh phiên bản. Bridge được định nghĩa trong `engine/src/bridge/host-v1.ts`:
+### 3. Capability Bridge là API duy nhất mà công cụ thấy được
 
-| Bridge API | Chức năng |
+Công cụ không bao giờ chạm vào DOM ngoài khu vực template của nó, không bao giờ gọi `fetch` trực tiếp, không bao giờ đọc hệ thống tệp. Chúng gọi các phương thức `host.*` đã được đánh version. Định nghĩa chính thức của hợp đồng là `packages/core/src/host-v1.ts` - SDK dành cho tác giả công cụ `@lolly-tools/core`, để bên thứ ba có thể xây dựng dựa trên nó mà không cần phụ thuộc vào engine; `engine/src/bridge/host-v1.ts` là một bản re-export kiểu (type) của nó, và mã engine/shell vẫn import từ đường dẫn đó không đổi:
+
+| API Bridge | Chức năng |
 |---|---|
-| `host.profile` | Tên, email, ảnh chân dung, thành phố, v.v. của người dùng. Tự điền sẵn các đầu vào qua `bindToProfile`. |
-| `host.assets` | Truy vấn catalog, phân giải asset, giao diện picker do host cung cấp. |
-| `host.state` | Lưu / nạp các slot đầu vào. IndexedDB trên web, hệ thống tệp trên Tauri, bộ nhớ trên CLI. |
-| `host.clipboard` | Ghi văn bản hoặc hình ảnh vào clipboard (có phương án dự phòng theo từng nền tảng). |
-| `host.export` | Raster hoá hoặc serialise mục tiêu render. Áp watermark cho các công cụ experimental. |
-| `host.net` | Fetch nằm trong danh sách cho phép (allowlisted) - chỉ khả dụng nếu công cụ khai báo khả năng `"network"`. (Hiện chưa có công cụ nào đã phát hành dùng đến nó.) |
+| `host.profile` | Tên riêng, email, ảnh chân dung, thành phố của người dùng, v.v. Điền sẵn input qua `bindToProfile`. |
+| `host.assets` | Truy vấn catalog, phân giải asset, giao diện chọn asset do host cung cấp. |
+| `host.state` | Lưu / tải các slot input. IndexedDB trên web, hệ thống tệp trên Tauri, bộ nhớ trên CLI. |
+| `host.clipboard` | Ghi văn bản hoặc hình ảnh vào clipboard (kèm dự phòng theo nền tảng). |
+| `host.export` | Chuyển đổi thành raster hoặc tuần tự hóa mục tiêu render. Áp dụng watermark cho các công cụ experimental. |
+| `host.net` | Fetch có danh sách cho phép - chỉ khả dụng nếu công cụ khai báo capability `"network"`. (Hiện chưa có công cụ nào đang phân phối sử dụng nó.) |
 
-Các bề mặt bổ sung, tùy chọn chỉ xuất hiện khi một shell cung cấp chúng. Hai trong số đó **bị khoá theo khả năng (capability-gated)** - chỉ được phơi bày khi công cụ khai báo cờ tương ứng: `host.compose` (nhúng bản render của một công cụ khác - `compose`) và `host.capture` (chụp trang cho URL Screenshot - `capture`). Số còn lại được **phát hiện theo tính năng (feature-detected)** - có mặt bất cứ khi nào shell có thể cung cấp: `host.text` (chuyển văn bản thành đường path qua HarfBuzz WASM; khả năng `wasm` đánh dấu các công cụ phụ thuộc vào nó), `host.pdf` (phân tích/nén PDF, dùng bởi Strip Hidden Data và Compress PDF), và `host.tokens` (token thiết kế DTCG). Các khả năng có thể khai báo là: `network`, `filesystem`, `clipboard`, `camera`, `ffmpeg`, `wasm`, `capture`, `compose`.
+Các bề mặt tùy chọn, bổ sung chỉ xuất hiện khi một shell cung cấp chúng. Một số được **khóa theo capability** - chỉ lộ ra khi công cụ khai báo cờ tương ứng: `host.compose` (nhúng render của công cụ khác - `compose`), `host.capture` (chụp trang cho URL Screenshot - `capture`) và `host.recorder` (chụp mic/camera/màn hình cho các công cụ ghi âm/ghi hình - `microphone` / `camera` / `screen`). Phần còn lại được **phát hiện theo tính năng** - có mặt bất cứ khi nào shell có thể cung cấp chúng, với công cụ giữ một phương án dự phòng cho các shell không thể.
 
-Cùng một công cụ chạy được trong trình duyệt, Tauri, và CLI headless vì mỗi shell đều cài đặt giao diện (interface) này - công cụ không bao giờ biết nó đang chạy trong shell nào.
+Một vài bề mặt tiêu biểu, để cho thấy phạm vi bao phủ - [Host API](/info/host-api.html) ghi lại từng cái một, và `packages/core/src/host-v1.ts` chính là hợp đồng:
 
-Bridge được đánh phiên bản. Thêm phương thức mới là một phiên bản nhỏ (minor version). Gỡ bỏ hoặc đổi signature là một lần tăng phiên bản lớn (major version). Khi v2 ra mắt, v1 vẫn phải tiếp tục hoạt động.
+| Bề mặt | Từ phiên bản | Bổ sung gì |
+|---|---|---|
+| `host.tokens` | 1.0 | Design token DTCG - các nguyên thể (primitives) riêng của brand |
+| `host.text` | 1.0 | Chuyển văn bản thành path qua HarfBuzz WASM (cờ capability `wasm` đánh dấu các công cụ phụ thuộc vào nó) |
+| `host.media` | 1.4 | Khung hình camera trực tiếp điều khiển hook `onFrame`. Tăng cường lũy tiến, cố tình *không* bị khóa bởi cờ `camera` - một công cụ như vậy vẫn hoạt động như một công cụ ảnh tĩnh bình thường |
+| `host.color` | 1.40 | Toán học màu cảm nhận: ΔEOK, độ tương phản WCAG + APCA, dải OKLab, các ngưỡng phân lớp, bảng màu phân loại, các sơ đồ hài hòa (1.60), pha trộn CSS Color 4 và nướng gradient (1.68). Thuần túy và đồng bộ - các shell gắn `makeColorApi()` của engine thay vì tự cài đặt bất cứ thứ gì, nên không thể bị lệch |
+| `host.images` | 1.60 | Giải mã / thay đổi kích thước / mã hóa lại byte trên thiết bị - đường chuyển đổi (HEIC → JPEG, nén thành WebP, giảm kích thước). Được phân phối trong web shell dưới dạng lazy facade, nên bộ giải mã HEIC không bao giờ nằm trong chunk khởi động |
+| `host.geom` | 1.64 | Hình học vector chính xác: phép boolean trên path, offsetting, stroke-to-fill, hạ cấp spline, đơn giản hóa, kiểm tra va chạm (hit testing). Cũng thuần túy, đồng bộ và được gắn từ engine (`makeGeomApi()`); lỗi được *trả về*, không bao giờ throw |
 
-### 4. ID của asset là vĩnh viễn
+Phần còn lại tuân theo cùng quy tắc và được ghi lại cùng với chúng: `pdf` (1.8) và `pptx` (1.58) cho phẫu thuật tài liệu trên thiết bị, `audio` (1.71) và `speech` (1.96) cho phân tích clip và TTS/phiên âm trên thiết bị, `viz` (1.72) cho hợp đồng placeholder MilkDrop, `codec` (1.100) và `layers` (1.102) cho đầu ra bit sâu và bitmap phân lớp, `upscale` (1.101) và `matte` (1.103) cho các model trên thiết bị, `raster` (1.105) cho các hook tự xử lý pixel riêng, `connectors` (1.106) cho mũi tên an toàn khi export và `c2pa` (1.85) để ký byte đã hoàn tất. Số lượng tăng lên; quy tắc thì không.
 
-`suse/logo/primary` là một hợp đồng. Một khi đã công bố:
+Các capability có thể khai báo là: `network`, `filesystem`, `clipboard`, `camera`, `microphone`, `screen`, `ffmpeg`, `wasm`, `capture`, `compose`. (`screen`, được thêm ở 1.54, là chụp màn hình qua `host.recorder` - người dùng chọn một màn hình/cửa sổ/tab trong giao diện gốc của trình duyệt; khác với `capture`, vốn render một URL do chính công cụ đặt tên.)
+
+Cùng một công cụ chạy trên trình duyệt, Tauri và CLI headless vì mỗi shell cài đặt giao diện này - công cụ không bao giờ biết nó đang ở đâu.
+
+Bridge được đánh version. Thêm phương thức là một minor version. Xóa hoặc thay đổi chữ ký là một bước nhảy major version. Khi v2 ra mắt, v1 phải tiếp tục hoạt động.
+
+### 4. Asset ID là vĩnh viễn
+
+`suse/logo/primary` là một hợp đồng. Khi đã xuất bản:
 - ID không bao giờ thay đổi, không bao giờ được tái sử dụng.
-- Byte thay đổi → tăng `version` trong manifest.
-- Được thay thế bằng một asset mới → đặt `deprecated: true` và tùy chọn thêm `replacedBy`.
+- Thay đổi byte → tăng `version` trong manifest.
+- Được thay thế bởi asset mới → đặt `deprecated: true` và tùy chọn `replacedBy`.
 - Các tham chiếu hiện có luôn phân giải được.
 
 Điều này khiến các trạng thái công cụ đã lưu và các liên kết chia sẻ qua URL bền vững qua nhiều năm.
 
-### 5. Chế độ URL là công dân hạng nhất
+### 5. URL mode là hạng nhất
 
-![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-url-mode-qr)
-
-![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-url-palette)
-
-Mọi đầu vào đều phải có thể biểu diễn được dưới dạng một tham số URL:
+Mọi input phải có thể biểu diễn được dưới dạng tham số URL:
 
 ```
 lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H
 ```
 
-Chế độ CLI chính là chế độ URL dưới một lớp truyền tải khác - CLI shell dựng một đối tượng trạng thái URL từ argv rồi chạy **cùng** pipeline engine. Chỉ có một render path duy nhất. CLI không thể lệch khỏi GUI vì nó không phải là một cài đặt riêng biệt.
+![Riêng liên kết đó, không kèm gì khác, chính là tác phẩm hoàn chỉnh](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-url-mode-qr)
 
-`url-mode.ts` xử lý round-trip (phân tích và serialize). Các tham số dành riêng (không bao giờ được chuyển tới công cụ như một đầu vào): `format`, `export`, `copy`, `slot`, `output`, `filename`, `_v`, `z` (trạng thái đã đóng gói - token của "Shortest link"), `width`/`w`, `height`/`h`, `unit`, `dpi`, `profile`, `password`, `bleed`, `marks`, `full`, `options`, `nostage`. Các đầu vào asset trong chế độ URL được serialize theo `id` của chúng; runtime phân giải chúng qua `host.assets.get()` trước khi hydrate. `width`/`height` là các giá trị theo `unit` (mặc định `px`, ngoài ra còn `mm`/`cm`/`in`/`pt`/`pc`); với một đơn vị vật lý, `dpi` sẽ đặt độ phân giải raster. Chúng thiết lập kích thước tài liệu của canvas và điền sẵn vào panel kích thước export.
+Chế độ CLI chính là URL mode dưới một lớp vận chuyển khác - CLI shell dựng một đối tượng trạng thái URL từ argv và chạy **cùng** pipeline engine. Chỉ có một render path. CLI không thể lệch khỏi GUI vì nó không phải là một cài đặt riêng biệt.
 
-### 6. Lưu trữ luôn đi qua bridge, không truy cập trực tiếp
+`url-mode.ts` xử lý việc chuyển đổi qua lại (parse và serialize). Một tập các **tham số dành riêng** không bao giờ được chuyển tới công cụ dưới dạng input: các control đầu ra (`format`, `export`, `copy`, `filename`, `width`/`w`, `height`/`h`, `unit`, `dpi`), các nút xoay in ấn và nguồn gốc (`bleed`, `marks`, `profile`, `password`, `c2pa`, `imprint`, `durable`, `meta`, `hdr`, `depth`, `cuts`) và các thành phần mang trạng thái (`template`, `z` - token đóng gói "Liên kết ngắn nhất" - và `zx`, cùng loại đó nhưng được mã hóa dưới một mật khẩu). Tập `RESERVED` trong `engine/src/url-mode.ts` là nguồn thẩm quyền và được một bài test ghim chặt; [URL Mode](/info/url-mode.html) ghi lại từng tham số một, kể cả một vài cái không liệt kê ở đây. Các input asset trong URL mode được tuần tự hóa theo `id` của chúng; runtime phân giải chúng qua `host.assets.get()` trước khi hydrate. `width`/`height` là các giá trị theo `unit` (mặc định `px`, cũng có `mm`/`cm`/`in`/`pt`/`pc`); với đơn vị vật lý, `dpi` đặt độ phân giải raster. Chúng đặt kích thước tài liệu của canvas và điền sẵn bảng kích thước export.
 
-Web shell: IndexedDB. Tauri: hệ thống tệp. CLI: trong bộ nhớ. Công cụ chỉ nhìn thấy `host.state.save(slot, data)` và `host.state.load(slot)`. `localStorage` không được dùng - nó quá nhỏ và không chứa được blob.
+Vì mọi input đều đi theo trong liên kết, một thay đổi tham số là một tác phẩm hoàn chỉnh khác. Toàn bộ bảng màu này chỉ là một màu gốc, một sơ đồ hài hòa và một số bước:
 
-Người dùng có thể lưu nhiều slot chỉnh sửa có tên riêng cho mỗi công cụ và quay lại từng phiên làm việc sau này. Không cần tạo tài khoản; trạng thái là theo từng thiết bị. Vì bridge là điểm nối (seam) duy nhất, trạng thái theo thiết bị đó cũng *có thể mang đi được (portable)*: `shells/web/src/data-transfer.ts` đọc lại toàn bộ qua `host.profile`/`host.state`/`host.assets` thành một file zip `lolly-backup` duy nhất, có thể nhập vào bất kỳ bản cài đặt nào khác - câu trả lời ngoại tuyến cho việc "chuyển sang thiết bị mới" mà không cần máy chủ (đặc tả đầy đủ: `docs/data-transfer.md`). Tích hợp SUSE ID (đồng bộ đa thiết bị) là một cột mốc trong tương lai, xây trên nền tảng này.
+![Chín bước qua bốn tông màu, tất cả đều lớn lên từ một màu hạt giống duy nhất mang trong liên kết](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-url-palette)
 
-### 7. Nhãn độ trưởng thành giải quyết rủi ro "được thương hiệu phê duyệt" một cách mang tính cấu trúc
+### 6. Lưu trữ đi qua cầu nối, không truy cập trực tiếp
 
-Vì mọi input đều đi theo liên kết, một thay đổi tham số là một tài nguyên hoàn chỉnh khác. Cả bảng màu này chỉ gồm một màu gốc, một quy tắc hòa sắc và một số bước:
+Web shell: IndexedDB. Tauri: hệ thống tệp. CLI: trong bộ nhớ. Các công cụ chỉ thấy `host.state.save(slot, data)` và `host.state.load(slot)`. `localStorage` không được dùng - nó quá nhỏ và không thể chứa blob.
 
-Mọi công cụ đều khai báo `status: official | community | experimental` trong manifest của nó. Gallery sắp xếp theo status. Các công cụ experimental tự động gắn watermark lên bản xuất - watermark được áp bởi `host.export.render`, không phải bởi công cụ, nên tác giả của một công cụ không chính thức (non-official) không thể tắt nó đi.
+Người dùng có thể lưu nhiều slot chỉnh sửa có tên cho mỗi công cụ và quay lại từng phiên sau đó. Không cần tạo tài khoản; trạng thái là theo từng thiết bị. Vì cầu nối là mối nối duy nhất, trạng thái theo thiết bị đó cũng có thể *di chuyển được*: `shells/web/src/data-transfer.ts` đọc lại mọi thứ qua `host.profile`/`host.state`/`host.assets` thành một tệp zip `lolly-backup` duy nhất có thể nhập vào bất kỳ bản cài đặt nào khác - câu trả lời ngoại tuyến cho việc "chuyển sang thiết bị mới" mà không cần máy chủ (đặc tả đầy đủ: `docs/data-transfer.md`). Tích hợp SUSE ID (đồng bộ đa thiết bị) là một cột mốc tương lai xây trên nền này.
 
-Đây là câu trả lời mang tính cấu trúc cho rủi ro về nhận thức rằng việc dùng bất kỳ công cụ nào cũng ngầm ý được thương hiệu phê duyệt. Các câu trả lời về quy trình (hàng đợi review, khoá bằng SUSE ID) được xếp chồng lên trên nền tảng này.
+### 7. Nhãn độ trưởng thành trả lời rủi ro "được thương hiệu phê duyệt" ngay từ thiết kế
 
-### 8. Đầu vào của công cụ được định kiểu qua manifest, kể cả asset
+Mỗi công cụ khai báo `status: official | community | experimental` trong manifest của nó. Gallery sắp xếp theo status. Các công cụ thử nghiệm tự động đóng dấu bản quyền (watermark) khi xuất - watermark được áp dụng bởi `host.export.render`, không phải bởi công cụ, nên tác giả của một công cụ không chính thức không thể tắt nó.
 
-Các đầu vào khai báo một `type`: `text`, `longtext`, `number`, `boolean`, `color`, `select`, `asset`, `date`, `time`, `datetime-local`, `url`, `profile`, `blocks`, `vector`, và `file`. Host render một control chung cho mỗi loại dựa trên manifest - công cụ không phải viết một dòng code control nào. Ba loại trong số đó mang nhiều trọng lượng hơn phần còn lại:
+Đây là câu trả lời mang tính cấu trúc cho rủi ro nhận thức rằng việc dùng bất kỳ công cụ nào cũng đồng nghĩa với việc thương hiệu phê duyệt. Các câu trả lời về quy trình (hàng đợi duyệt, giới hạn qua SUSE ID) được xếp chồng lên trên.
 
-- **`asset`** (kèm `filter` và `allowUpload`) là cầu nối tới hệ thống asset toàn cục; `allowUpload: false` là đòn bẩy cưỡng chế thương hiệu cho những trường hợp như logo trên ô tài trợ, nơi chỉ asset trong thư viện mới được phép dùng. File người dùng tải lên dùng chung khuôn dạng `AssetRef` với asset trong thư viện, nên công cụ xử lý chúng giống hệt nhau.
-- **`blocks`** là một nhóm trường lặp lại - một bảng mini bên trong một đầu vào duy nhất, được chỉnh sửa trong một panel bên cạnh, có menu thêm mới được định kiểu/phân loại và các trường asset riêng cho từng block. Nhấp vào một block đã render trên canvas sẽ focus vào hàng tương ứng của block đó. Được dùng bởi `meeting-planner`, `chart-creator`, `event-name-badge`, `wayfinding-signage`, `color-block`, và `digi-ad`.
-- **`vector`** nhóm một tập số cố định (ví dụ một transform) thành một control ghép duy nhất; **`file`** giữ file của chính người dùng dưới dạng byte trong bộ nhớ, dùng cho các tiện ích biến đổi trên thiết bị (ví dụ `strip-data` và `compress-pdf`).
+### 8. Đầu vào của công cụ được định kiểu qua manifest, kể cả tài sản
+
+Các đầu vào khai báo một `type`: `text`, `longtext`, `number`, `boolean`, `color`, `select`, `asset`, `date`, `time`, `datetime-local`, `url`, `blocks`, `vector`, `table` và `file`. Host hiển thị một control chung cho mỗi loại từ manifest - các công cụ không viết bất kỳ mã control nào. (Tự điền sẵn từ hồ sơ người dùng không phải là một loại - bất kỳ đầu vào nào cũng có thể mang `bindToProfile`.) Ba loại mang trọng lượng hơn các loại còn lại:
+
+- **`asset`** (với `filter` và `allowUpload`) là cầu nối tới hệ thống tài sản toàn cục; `allowUpload: false` là đòn bẩy thực thi thương hiệu cho những thứ như logo ô tài trợ, nơi chỉ cho phép dùng tài sản trong thư viện. Tệp người dùng tải lên dùng cùng hình dạng `AssetRef` như tài sản thư viện, nên các công cụ xử lý chúng như nhau.
+- **`blocks`** là một nhóm trường lặp lại - một bảng thu nhỏ bên trong một đầu vào, được chỉnh sửa trong một bảng bên, với menu thêm có phân loại/định kiểu và các trường tài sản theo từng block. Nhấp vào một block đã hiển thị trên canvas sẽ tập trung vào hàng của block đó. Được dùng bởi `meeting-planner`, `chart-creator`, `event-name-badge`, `wayfinding-signage`, `color-block` và `digi-ad`.
+- **`vector`** nhóm một tập số cố định (ví dụ một phép biến đổi) thành một control kết hợp; **`file`** giữ tệp của chính người dùng dưới dạng byte trong bộ nhớ cho các tiện ích biến đổi trên thiết bị (ví dụ `strip-data` và `compress-pdf`).
 
 ### 9. Template không chứa logic (Handlebars, không phải EJS)
 
-Handlebars được chọn thay vì EJS một cách có chủ đích:
-- Không chứa logic. Template có thể được viết bởi những người không phải lập trình viên.
-- An toàn theo mặc định. `{{x}}` sẽ HTML-escape; `{{{x}}}` là raw, phải tự chọn dùng (opt-in).
-- Không có JS tùy ý trong template nghĩa là không có bề mặt cần audit XSS cho từng template.
+Handlebars được chọn thay cho EJS một cách có chủ đích:
+- Không chứa logic. Template có thể được soạn bởi người không phải lập trình viên.
+- An toàn theo mặc định. `{{x}}` thoát HTML; `{{{x}}}` là tùy chọn thô (opt-in raw).
+- Không có JS tùy ý trong template nghĩa là không có bề mặt kiểm toán XSS cho từng template.
 
-Logic nằm trong `hooks.js`, nơi nó tường minh và có thể review được. Các helper Handlebars khả dụng: `{{default}}`, `{{upper}}`, `{{lower}}`, `{{eq}}`, `{{markdown}}`, `{{asset ref}}`, `{{asset ref "property"}}` (cùng với các helper định dạng dữ liệu `icsStamp`/`rfcText`/`csvCell` dùng bởi các template `.ics`/`.vcf`/`.csv` đi kèm).
+Logic nằm trong `hooks.js`, nơi nó rõ ràng và có thể xem xét được. Các helper Handlebars có sẵn: `{{default}}`, `{{upper}}`, `{{lower}}`, `{{eq}}`, `{{markdown}}`, `{{asset ref}}`, `{{asset ref "property"}}` (cùng các helper định dạng dữ liệu `icsStamp`/`rfcText`/`csvCell` dùng bởi các template `.ics`/`.vcf`/`.csv` song hành).
 
-### 10. Công cụ kết hợp với công cụ
+### 10. Công cụ ghép công cụ
 
+Một công cụ có thể nhúng bản kết xuất của một công cụ **khác** mà không cần import công cụ-tới-công cụ - việc ghép được engine giải quyết, không bao giờ do mã của công cụ. Có hai bề mặt:
 
-Một công cụ có thể nhúng bản render của **một công cụ khác** mà không cần import giữa công cụ với công cụ - việc kết hợp được engine giải quyết, không bao giờ do code của công cụ. Có hai bề mặt:
+- **Manifest khai báo** - `composes: [{ id, tool, inputs, format?, width?, height? }]`. Engine kết xuất công cụ con được nêu tên và đặt kết quả vào template không chứa logic dưới dạng `{{asset <id>}}`. `event-name-badge` ghép `qr-code` dưới dạng SVG ngay hôm nay.
+- **URL nhúng có thể di chuyển** - `<img src="https://lolly.tools/tool/<id>.<ext>?<inputs>">`. Shell kết xuất công cụ con đó **cục bộ** (một pixel giữ chỗ hiển thị cho tới khi bản kết xuất cục bộ hoàn tất); không có gì bao giờ được lấy từ `lolly.tools`.
 
-- **Manifest khai báo** - `composes: [{ id, tool, inputs, format?, width?, height? }]`. Engine render công cụ con đã đặt tên và đặt kết quả vào template không chứa logic dưới dạng `{{asset <id>}}`. Hiện tại `event-name-badge` kết hợp `qr-code` dưới dạng SVG.
-- **URL nhúng có thể mang đi được (portable)** - `<img src="https://lolly.tools/tool/<id>.<ext>?<inputs>">`. Shell render công cụ con đó **cục bộ** (một pixel giữ chỗ hiển thị cho đến khi bản render cục bộ hoàn tất); không có gì được fetch từ `lolly.tools` cả.
-
-Có thể kết hợp bản render của bất kỳ công cụ nào: một công cụ con dạng **SVG** vẫn giữ nguyên là vector thật khi công cụ cha export ra SVG hoặc PDF, và raster hoá sắc nét cho PNG; các công cụ con **PNG/JPG/WEBP** được nhúng như hình ảnh. Yêu cầu khả năng `compose`. Các công cụ con đã kết hợp chỉ là trung gian - không bao giờ bị gắn watermark hay đóng dấu provenance - và việc kết hợp suy giảm một cách nhẹ nhàng: một shell không render được một công cụ con sẽ chỉ bỏ qua slot đó, còn công cụ cha vẫn render bình thường.
+Ghép bản kết xuất của bất kỳ công cụ nào: một công cụ con **SVG** vẫn giữ nguyên là vector thật khi công cụ cha xuất sang SVG hoặc PDF và rasterize sắc nét cho PNG; công cụ con **PNG/JPG/WEBP** nhúng dưới dạng hình ảnh. Yêu cầu khả năng `compose`. Các công cụ con được ghép là trung gian - không bao giờ bị đóng watermark hay đóng dấu nguồn gốc - và việc ghép suy giảm một cách nhẹ nhàng: một shell không thể kết xuất một công cụ con chỉ đơn giản bỏ qua slot đó và công cụ cha vẫn kết xuất.
 
 ---
 
-## Những điều chúng tôi cố tình chọn không làm
+## Những gì chúng tôi cố tình chọn không làm
 
-- **Không dùng EJS / không có JS tùy ý trong template.** Bề mặt XSS bằng không. Logic nằm trong `hooks.js`.
-- **Không có CMS cho asset.** Catalog asset chính là git. Cập nhật đi qua review PR. Không có giao diện tải lên, không xác thực (auth), không hàng đợi kiểm duyệt. Việc review trên git _chính là_ việc kiểm duyệt.
-- **Không có RBAC trong MVP.** Truy cập công khai. Rủi ro thương hiệu được quản lý bằng nhãn độ trưởng thành + watermark + thực tế mang tính cấu trúc rằng mọi asset người dùng nhìn thấy đều đã đi qua review PR.
-- **Không có cơ sở dữ liệu trung tâm.** Mọi trạng thái người dùng đều theo từng thiết bị. Tích hợp SUSE ID nằm trong lộ trình nhưng không phải là điều kiện chặn ra mắt.
-- **Không có đường code dùng chung giữa tools/engine.** Engine là mã nguồn mở; `tools/` và `assets/` vẫn là nội dung độc quyền của SUSE, nằm trong các repository riêng của chúng. Sự tách biệt này được cưỡng chế (không import chéo) để việc chia tách luôn sạch sẽ.
+- **Không EJS / không JS tùy ý trong template.** Bề mặt XSS bằng không. Logic nằm trong `hooks.js`.
+- **Không có CMS tài sản bắt buộc.** Cá nhân nhập trực tiếp các tệp sáng tạo của riêng họ vào danh mục của họ ngay trong ứng dụng (khung nhìn [Danh mục](/info/using.html) và Brand Studio) - không máy chủ, không bảng quản trị. Công việc được bàn giao dưới dạng một **phiên làm việc**: một liên kết chia sẻ mang toàn bộ trạng thái, và cùng phiên đó di chuyển trong một bản sao lưu hoặc qua một phiên cộng tác. Bất kỳ ai kiểm soát việc triển khai sau đó có thể khóa một phiên được chia sẻ lại thành một **template** - mở liên kết, ghi lại các giá trị của nó thành một mục template trong thư mục của công cụ đó trong gói thương hiệu và commit - sau đó nó xuất hiện trong bộ chọn "Tạo mới từ template" của công cụ và có thể liên kết sâu dưới dạng `?template=<id>`. Git là bước khóa của chủ triển khai, không bao giờ là của người sáng tạo. Với một catalog *được chia sẻ, có quản trị*, một tổ chức **có thể** quản lý thư mục tài sản theo cùng cách đó và giới hạn cập nhật qua xét duyệt PR - một mô hình quản trị khả dụng, không phải yêu cầu bắt buộc của ứng dụng.
+- **Không RBAC bắt buộc.** Ứng dụng mở mặc định cho phép truy cập công khai; rủi ro thương hiệu được quản lý bằng nhãn độ trưởng thành + watermark. Một tổ chức muốn kiểm soát chặt hơn có thể xếp chồng lớp xác thực riêng của mình và catalog được xét duyệt qua git ở trên.
+- **Không có cơ sở dữ liệu trung tâm.** Toàn bộ trạng thái người dùng là theo từng thiết bị. Tích hợp SUSE ID nằm trong lộ trình nhưng không phải điều kiện chặn ra mắt.
+- **Không có đường dẫn mã tools/engine dùng chung.** Engine là mã nguồn mở; `tools/` và `assets/` vẫn là nội dung độc quyền của SUSE trong các kho riêng của chúng. Sự tách biệt này được thực thi (không import chéo) để ranh giới tách biệt luôn sạch sẽ.
 
 ---
 
 ## Vòng đời, từ đầu đến cuối
 
-![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=aud-export-popup)
-
-Công cụ Slides được xây trên bề mặt thứ hai đó: bất kỳ khe nào trên bất kỳ slide nào cũng có thể chứa một công cụ Lolly khác thay cho một hình ảnh.
-
 Một người dùng mở `lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H`:
 
-1. **Boot.** Web shell mở IndexedDB, dựng capability bridge, đồng bộ catalog công cụ và asset (hoặc nạp từ cache khi ngoại tuyến).
-2. **Route.** URL hash → view `tool`, với `qr-code` và các tham số URL được trích xuất.
-3. **Load.** `loadTool('qr-code', fetchFile)` fetch `tool.json`, kiểm định theo JSON Schema, fetch `template.html`, `styles.css`, và mã nguồn `hooks.js`.
-4. **Parse URL state.** `parseUrlState` chuyển các tham số URL thành các giá trị đầu vào ban đầu. Các asset ref (`?logo=suse/logo/primary`) được phân tích thành các đối tượng nhẹ `{ id, _unresolved: true }`.
-5. **Runtime.** `createRuntime(tool, host, initialValues)` dựng mô hình đầu vào (hợp nhất dữ liệu profile, giá trị mặc định, và giá trị ban đầu), phân giải asset ref qua `host.assets.get()`, nạp hook (`host` theo closure scope, không sandbox), gọi `hooks.onInit`.
-6. **Render.** Shell subscribe vào runtime; mỗi khi trạng thái thay đổi, nó nhận được `{ model, hydrated }`. Nó render các control đầu vào từ model và ghi HTML template đã hydrate vào `#tool-canvas`.
-7. **Interact.** Người dùng gõ vào một đầu vào → `runtime.setInput(id, value)` → các ràng buộc được áp dụng → `hooks.onInput` được gọi → hydrate lại → render lại. Canvas cập nhật trực tiếp.
-8. **Export.** Người dùng nhấp Download(PNG) → `runtime.export(canvasNode, 'png')` → `host.export.render` (raster hoá qua dom-to-image-more; SVG/PDF đi qua các bộ vector hoá chuyên dụng duyệt DOM) → blob → `host.export.download`. Phạm vi định dạng mà một công cụ có thể lựa chọn khá rộng: `svg`, `png`, `jpg`/`jpeg`, `webp`, `avif`, `pdf`, các định dạng vector `emf`, `eps`, cộng với các định dạng in ấn/CMYK `pdf-cmyk`, `cmyk-tiff`, `eps-cmyk`; các định dạng video `webm`, `mp4`, `gif`; và các định dạng dữ liệu/văn bản `html`, `md`, `txt`, `json`, `csv`, `ics`, `vcf`, `ico`, `zip`. (Các công cụ đặt `render.export: false` - ví dụ Color Palette, Countdown Timer, Strip Hidden Data, Text Helper, Compress PDF - sẽ ẩn các control download/định dạng/kích thước.) Đơn vị vật lý được chuyển đổi theo từng định dạng ngay tại bước này (PDF → điểm trang thật, raster → pixel theo DPI kèm một chunk `pHYs`). Metadata về tác giả/nguồn gốc (author, tool, source - được dựng bởi `engine/src/metadata.ts`) được nhúng theo từng định dạng: PNG iTXt, JPEG EXIF, PDF info dict, SVG `<metadata>`, GIF comment. Các công cụ experimental được host chèn watermark, không phải do công cụ tự làm.
+1. **Khởi động.** Web shell mở IndexedDB, xây dựng cầu nối khả năng, đồng bộ catalog công cụ và tài sản (hoặc tải từ bộ nhớ đệm khi ngoại tuyến).
+2. **Định tuyến.** URL hash → khung nhìn `tool`, với `qr-code` và các tham số URL được trích xuất.
+3. **Tải.** `loadTool('qr-code', fetchFile)` lấy `tool.json`, xác thực theo JSON Schema, lấy mã nguồn `template.html`, `styles.css` và `hooks.js`.
+4. **Phân tích trạng thái URL.** `parseUrlState` dịch các tham số URL thành giá trị đầu vào ban đầu. Tham chiếu tài sản (`?logo=suse/logo/primary`) được phân tích thành các đối tượng nhẹ `{ id, _unresolved: true }`.
+5. **Runtime.** `createRuntime(tool, host, initialValues)` xây dựng mô hình đầu vào (gộp dữ liệu hồ sơ, giá trị mặc định và giá trị ban đầu), giải quyết tham chiếu tài sản qua `host.assets.get()`, tải hooks (`host` trong phạm vi closure, không sandbox), gọi `hooks.onInit`.
+6. **Kết xuất.** Shell đăng ký nhận runtime; ở mỗi thay đổi trạng thái nó nhận `{ model, hydrated }`. Nó kết xuất các control đầu vào từ mô hình và ghi HTML template đã hydrate vào `#tool-canvas`.
+7. **Tương tác.** Người dùng gõ vào một đầu vào → `runtime.setInput(id, value)` → áp dụng ràng buộc → gọi `hooks.onInput` → hydrate lại → kết xuất lại. Canvas cập nhật trực tiếp.
+8. **Xuất.** Người dùng nhấp Tải xuống (PNG) → `runtime.export(canvasNode, 'png')` → `host.export.render` (rasterize qua dom-to-image-more; SVG/PDF đi qua các bộ vector hóa duyệt DOM chuyên biệt) → blob → `host.export.download`. Phạm vi định dạng mà một công cụ có thể chọn dùng khá rộng, và enum `render.formats` trong `schemas/tool.schema.json` là nguồn thẩm quyền cho việc đó - raster và float raster, vector và tệp cắt, in/CMYK, chuyển động, tài liệu có thể chỉnh sửa (`pptx`, `docx`, `odt`), bảng màu và đầu ra dữ liệu/văn bản, tệp âm thanh và font. [URL Mode](/info/url-mode.html) nêu tên từng id và nó tạo ra gì. Âm thanh nằm trong enum đó như bất kỳ thứ gì khác (`wav`, `mp3`, `m4a`, `opus`, được khai báo bởi audiogram và các công cụ ghi âm); riêng biệt, chế độ `render.capture` của một công cụ ghi âm điều khiển `host.recorder`, mà bản ghi đến dưới dạng một Blob hoàn chỉnh trong bất kỳ container nào mà trình duyệt đã ghi. (Các công cụ đặt `render.export: false` - ví dụ Color Palette, Countdown Timer, Strip Hidden Data, Text Helper, Compress PDF - ẩn các control tải xuống/định dạng/kích thước.) Các đơn vị vật lý được chuyển đổi theo từng định dạng ở đây (PDF → điểm trang thật, raster → pixel theo DPI với chunk `pHYs`). Metadata tác giả/nguồn gốc (tác giả, công cụ, nguồn - được xây dựng bởi `engine/src/metadata.ts`) được nhúng theo từng định dạng: PNG iTXt, JPEG EXIF, PDF info dict, SVG `<metadata>`, GIF comment. Các công cụ thử nghiệm được host chèn watermark, không phải công cụ.
 
-Vòng đời tương tự trong Tauri. Vòng đời tương tự trong CLI - jsdom cung cấp DOM headless; đầu ra đi vào một file hoặc stdout.
+![Bảng xuất mà `?options` mở ra: cặp tên tệp và định dạng, kích thước đầu ra và các control ghi tệp](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=aud-export-popup)
+
+Cùng vòng đời trong Tauri. Cùng vòng đời trong CLI - jsdom cung cấp DOM không giao diện; đầu ra đi vào một tệp hoặc stdout.
 
 ---
 
 ## Trạng thái mã nguồn mở
 
-Các thư mục `engine/`, `shells/`, `schemas/`, và `docs/` là mã nguồn mở theo giấy phép **MPL-2.0** - một nền tảng scaffolding trung lập nhà cung cấp cho việc xây dựng công cụ thương hiệu, với mỗi đơn vị có thể phát hành được tách thành repository riêng dưới [github.com/lolly-tools](https://github.com/lolly-tools). `tools/` và `catalog/assets/` là nội dung riêng của SUSE và vẫn **thuộc sở hữu độc quyền của SUSE** (giữ mọi quyền - xem `NOTICE.md` của từng repo); chúng không thuộc phạm vi của MPL.
+Các thư mục `engine/`, `shells/`, `schemas/` và `docs/` là mã nguồn mở theo giấy phép **MPL-2.0** - một nền tảng dàn dựng trung lập với nhà cung cấp cho công cụ thương hiệu, mỗi đơn vị có thể phát hành được tách thành kho riêng dưới [github.com/lolly-tools](https://github.com/lolly-tools). `tools/` và `catalog/assets/` là nội dung dành riêng cho SUSE và vẫn **độc quyền thuộc về SUSE** (bảo lưu mọi quyền - xem `NOTICE.md` của từng kho); chúng không thuộc phạm vi MPL.
 
-Sự chia tách này được cưỡng chế - không có import chéo từ `engine/` sang `tools/` hay `assets/` - nên ranh giới giữa nền tảng và nội dung luôn sạch sẽ.
-
----
-
-## Lộ trình
-
-| Cột mốc | Thời hạn | Nội dung |
-|---|---|---|
-| **Các công cụ ban đầu** | ✅ Đã hoàn thành | QR Code, Quote Card, Email Signature, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Chart Creator, Filter: Duotone, Meeting Planner - web shell đã hoạt động |
-| **Nâng cấp bộ công cụ hiện tại** | Giữa 2026 ✅ Đã hoàn thành  | Ứng dụng ngoại tuyến có thể tải về (Tauri); thêm công cụ cho nhân viên và sự kiện; pipeline export phong phú hơn (độ ổn định text-to-path, metadata, thêm định dạng - xem `plans.md`) |
-| **Mở mã nguồn cho engine** | Cuối 2026 ✅ Đã hoàn thành  | Engine, shells, schemas, docs được công khai - không bao gồm tools/assets mang thương hiệu |
-| **Chuyển giữa các thiết bị** | ✅ Đã hoàn thành | Gói `lolly-backup` có thể mang đi được, mang theo profile, các phiên đã lưu, hình ảnh đã tải lên và tùy chọn (prefs) giữa bất kỳ hai bản cài đặt nào - ngoại tuyến hoặc trực tuyến, không cần tài khoản. Envelope tương thích ngược, có kiểm tra tính toàn vẹn (đặc tả: `docs/data-transfer.md`) |
-| **Thiết lập lộ trình công cụ chính thức** | Cuối 2026 | Bộ tài liệu tham chiếu cho khách hàng, nạp thiết kế bằng AI, chế độ yêu cầu GET/URL |
-| **Tiện ích quyền riêng tư trên thiết bị** | 🚧 Đang triển khai | Các công cụ biến đổi nội dung xử lý *tệp của chính bạn* ngay tại chỗ (file vào → file sạch ra), thay thế cho việc để dữ liệu rò rỉ sang các SaaS đơn chức năng. **Đã xong:** kiểu đầu vào `file` + đường biến đổi `exportFile` + quy ước `privacy:"on-device"` (không watermark/provenance) + **Strip Hidden Data** (metadata JPEG/PNG/SVG/PDF, PDF qua bridge `host.pdf`) và **Text Helper** (bàn làm việc trên thiết bị cho các tác vụ dán-vào-một-trang-web thường ngày - định dạng JSON, giải mã JWT, Base64, mã hoá/giải mã URL, băm SHA, cộng thêm một nhóm Novelty). **Tiếp theo:** crop/resize, chuyển đổi/nén hình ảnh; sau đó là một bridge codec `host.image` (đặc tả: `plans/34-exfiltration-app-content.md`) |
-| **Token thiết kế (DTCG)** | 🚧 Đã phát hành phần màu sắc | Các thành phần gốc của thương hiệu dưới dạng chuẩn [W3C Design Tokens (DTCG)](https://www.designtokens.org/TR/drafts/format/) - định dạng mà [Penpot nhập/xuất](https://help.penpot.app/user-guide/design-systems/design-tokens/). **Đã xong:** token màu sắc (`suse/tokens/brand`), bridge `host.tokens`, các mẫu màu trong picker + giá trị liên kết tham chiếu (đặc tả: `docs/design-tokens.md`). **Tiếp theo:** token kích thước/kiểu chữ, nhập/xuất Penpot, token người dùng trong gói chuyển dữ liệu (`tokens.json`) |
-| **Endpoint agent MCP (render)** | ✅ Đã hoàn thành | Một server [MCP](https://modelcontextprotocol.io) phơi bày catalogue + render path dưới dạng các công cụ có thể gọi được (`lolly_list_tools` / `describe_tool` / `build_url` / `render` / `transform`) để bất kỳ agent nào cũng có thể tạo ra asset hoàn chỉnh, tuân theo quy tắc - thêm nó vào bất kỳ MCP client nào như một connector tùy chỉnh (OAuth 2.1), hoặc trỏ một CLI/HTTP client vào nó bằng bearer token. Đang hoạt động tại `mcp.lolly.tools` (endpoint đầy đủ: raster/PDF/animation/video qua một trình duyệt headless được host) và `lolly.tools/api/mcp` (tầng serverless không cần trình duyệt). Khác với MCP soạn tác (authoring) Penpot bên dưới - vốn nói về việc **tạo** công cụ (đặc tả: `plans/77-mcp-server.md`; hướng dẫn: `docs/mcp.md` + `docs/ai-agents.md`) |
-| **Nạp file Penpot thành công cụ** | 2027+ | Nhập một file Penpot và phơi bày nó *như một công cụ Lolly* (khai báo, ưu tiên ràng buộc), biến các thiết kế được tạo trong Penpot thành các bộ sinh mang tính xác định |
-| **Tiện ích mở rộng MCP + Penpot (soạn tác chỉ-trực tuyến)** | 2027+ | Một server MCP cho Penpot tạo ra các công cụ mới bằng AI - cách trực quan nhất để tạo các template mang tính xác định: một vòng đầu tiên dựa trên thông tin thương hiệu, được hoàn thiện với con người tham gia vào vòng lặp, hướng tới việc xử lý các ngữ cảnh mới chỉ trong một lượt theo thời gian. Việc **tạo** công cụ chỉ hoạt động trực tuyến; nhưng các công cụ nó tạo ra thì chạy được ở bất cứ đâu |
-| **RBAC + SUSE ID** | 2027+ | Khoá các công cụ cụ thể sau SUSE ID; trạng thái đã lưu đồng bộ đa thiết bị; nhập/xuất Google Drive |
+Sự tách biệt được thực thi - không có import chéo nào từ `engine/` sang `tools/` hoặc `assets/` - để ranh giới nền tảng/nội dung luôn sạch sẽ.
 
 ---
 
-## Ranh giới giữa nơi engine kết thúc và host bắt đầu
+## Nơi engine kết thúc và host bắt đầu
 
-Nếu có thể mô tả nó bằng dữ liệu thuần + Handlebars → **engine**.
-Nếu nó chạm vào DOM, hệ thống tệp, mạng, hoặc bất kỳ API trình duyệt/hệ điều hành nào → **host**.
+Nếu bạn có thể mô tả nó bằng dữ liệu thuần túy + Handlebars → **engine**.
+Nếu nó chạm vào DOM, hệ thống tệp, mạng hoặc bất kỳ API trình duyệt/hệ điều hành nào → **host**.
 
-Ranh giới này rõ ràng một cách có chủ đích. Engine là phần mã nguồn mở. Mọi thứ biết về SUSE, các nền tảng cụ thể, hay môi trường runtime đều nằm ngoài nó.
+Ranh giới này rõ ràng một cách có chủ đích. Engine là phần mã nguồn mở. Mọi thứ biết về SUSE, các nền tảng cụ thể hay môi trường runtime đều nằm ngoài nó.
+
+Để biết thêm chi tiết, [`engine/README.md`](../engine/README.md) liệt kê mọi module của engine và chức năng của nó, và [Threat Model & Trust Boundaries](/info/threat-model.html) ghi lại nơi cùng ranh giới đó cũng đóng vai trò là ranh giới tin cậy.

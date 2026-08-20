@@ -1,114 +1,119 @@
 # Operatörler için Lolly
 
-### Katmanlı savunmaya dayalı bir güvenlik ve istihbarat stratejisi - üstelik aynı zamanda bir yaratıcı üretim platformu
+### Derinlemesine savunma güvenlik ve istihbarat stratejisi - ki bu aynı zamanda bir yaratıcı üretim platformu
 
-Zaten yaptığın işin etrafını saran, sıfır güven temelli kurumsal bağışıklık sistemi - böylece ekiplerinin her gün ihtiyaç duyduğu rutin yaratıcı işler, çevrenin dışına sızmak yerine *içinde* gerçekleşir.
+Zaten yaptığın işin etrafını saran sıfır güven kurumsal bağışıklık sistemi - böylece ekiplerinin her gün ihtiyaç duyduğu rutin yaratıcı iş, perimetrenden sızmak yerine *içinde* gerçekleşir.
 
-**Senin için ne var.** Hem güvenli *hem de* popüler bir şeye evet diyen kişi olma şansını yakalarsın. Bir sızıntı deliğini kapatır, yetkinlik kazanır ve bir talep kuyruğunu tek hamlede silersin - seni daha az değil, daha çok sevdiren o nadir güvenlik kazanımı. Ambargolu dosyaların ya da müşteri verilerinin rastgele bir web aracına sızması yüzünden hukuk biriminden gelen sabahın 3'ündeki telefon artık yok; üzerindeki SaaS satıcısı, sözleşme ve denetim yükü azalır; ve birisi sorduğunda gösterebileceğin, tamamen yeniden üretilebilir bir denetim izi olur. Geceleri daha rahat uyursun, hem de bunu yaparken birkaç kişinin gününü aydınlatırsın.
+**Senin için ne var.** Hem güvenli hem de popüler bir şeye evet diyen kişi olma fırsatını elde ediyorsun. Bir sızıntı deliğini kapatıyor, yetenek kazanıyor ve tek bir hamlede bir talep kuyruğunu siliyorsun - seni daha az değil daha çok sevilir kılan nadir güvenlik kazanımı. Gizli dosyalar veya müşteri verileri rastgele bir web aracına karıştığı için hukuktan gelen gece yarısı telefonu yok; masanda daha az SaaS satıcısı, sözleşme ve denetim; ve birinin sorması durumunda gösterebileceğin, tamamen yeniden üretilebilir bir denetim izi. Daha rahat uyuyorsun ve bunu yaparken birkaç günü de aydınlatıyorsun.
 
-Lolly ikinci sınıf bir yaratıcı araç değildir: üretim kalitesinde çıktıyı herkesin eline verir, markaya uygun oluşturma deneyimi ise eşi benzeri yoktur. Bunu bu kadar geniş çapta dağıtmanın *güvenli* olmasının nedeni mimaridir: senin oraya koymadığın hiçbir şey yüklenmez, her sonuç yeniden üretilebilir ve her dışa aktarım, sektörde öncü, birden çok katmanlı kriptografik kayıt taşıyabilir. Bir belge masana nasıl ulaşmış olursa olsun, kökenini eksiksiz görebilir, üzerinde oynanıp oynanmadığını anlayabilir ve onu piksel piksel yeniden oluşturup oluşturamayacağını bilebilirsin.
+Lolly ikinci sınıf bir yaratıcı araç değildir: üretim kalitesinde çıktıyı herkesin eline verir ve markaya uygun yaratım deneyimi eşsizdir. Geniş çapta dağıtmanın *güvenli* olmasının nedeni mimaridir: sen koymadığın hiçbir şey yüklenmez, her sonuç yeniden üretilebilir ve her dışa aktarım, sektör lideri kriptografik kayıtların birden çok katmanını taşıyabilir. Bir belge masana nasıl ulaşmış olursa olsun, tam provenansını, üzerinde oynama yapılıp yapılmadığını ve onu piksel piksel yeniden oluşturup oluşturamayacağını görebilirsin.
 
-> **Bugün itibarıyla durum.** Lolly'nin güvenlik özellikleri tasarım gereği güçlü ve kriptografi ile dosya ayrıştırma motorları, SUSE'nin kurumsal düzeydeki altyapı sertleştirme sürecinden geçiyor. Aşağıdaki mühürler, cihaz üzerinde imzalama ve şifreleme bugün gerçek ve savunulabilir durumda, bağımsız sertifikasyona doğru olgunlaşıyor - bu yüzden bir sözleşme sertifikalı güvence istediğinde, bu süreç tamamlanana kadar bunları katmanlı savunma olarak devreye al.
+> **Bugün nerede durduğu.** Lolly'nin güvenlik özellikleri tasarım gereği güçlüdür ve kriptografi ile dosya ayrıştırma motorları SUSE'nin kurumsal düzeyde altyapı sertleştirmesinden geçiyor. Aşağıdaki mühürler, cihaz üzerinde imzalama ve şifreleme şu anda gerçek ve savunulabilirdir, bağımsız sertifikasyona doğru olgunlaşıyor - bu yüzden bir sözleşme sertifikalı güvence gerektirdiğinde, bu süreç tamamlanırken bunları derinlemesine savunma olarak devreye al.
 
 ## Stratejik avantaj
 
-Rutin yaratıcı işlerin genelde yapılma biçimi bir risk yüzeyi oluşturur: dosyalar dış tasarım yüklenicilerine e-postalanır, marka varlıkları düzinelerce SaaS düzenleyicisine yüklenir, müşteri verileri "sadece hızlı bir görsel yapayım" diye bir yabancının web aracına yapıştırılır. Bunların her biri, kontrolünden çıkan veri demektir.
+Rutin yaratıcı işin genellikle yapılma şekli bir sorumluluk yüzeyidir: harici tasarım yüklenicilerine e-postayla gönderilen dosyalar, bir düzine SaaS düzenleyicisine yüklenen marka varlıkları, "sadece hızlıca bir görsel yapmak" için bir yabancının web aracına yapıştırılan müşteri verileri. Bunların her biri, kontrolünden çıkan veridir.
 
-Lolly bunu tersine çevirir. Bu sızıntılara *yol açan* iş - alıntı kartı, yerelleştirilmiş banner, etkinlik rozeti, sansürlenmiş ekran görüntüsü - artık çalışanın kendi cihazında, senin markana karşı, araya hiçbir sunucu girmeden çalışan bir araç üzerinde gerçekleşir. Riskli bir iş akışının üzerine bir kontrol eklemedin; riskli iş akışını, başından beri sızıntı yolu olmayan bir başkasıyla değiştirdin.
+Lolly bunu tersine çevirir. Bu sızıntılara *neden olan* iş - alıntı kartı, yerelleştirilmiş banner, etkinlik rozeti, sansürlenmiş ekran görüntüsü - artık çalışanın kendi cihazında, senin markana karşı, aradan sunucu geçmeden yapılıyor. Riskli bir iş akışının üzerine bir kontrol eklemedin; onu, baştan sızıntı yolu olmayan bir iş akışıyla değiştirdin.
 
-- **Yapılandırma senindir.** Motor ve kabuklar açık kaynaktır (MPL-2.0). Kendi kimlik doğrulamanı, telemetrini veya CA'nı üzerine ekle; ister barındır ister barındırma; özellik ve maliyet üzerinde tam kontrol sende olur, Git ile takip edilir, bir SaaS veritabanına kilitlenmez.
-- **Yönetişim, bir panodan çok veri olabilir.** Bu kontrolü istediğinde, araç katalogunu bir Git deposu olarak yönet - pull request incelemesi marka onayına dönüşür, çalışanlarının dokunabileceği her şablon için eksiksiz bir denetim izi ve anlık geri alma imkânıyla. Bu bir seçenektir, zorunluluk değil: sadece bir şeyler üretmek isteyen ekipler kendi araçlarını Design'da yazar ve kendi dosyalarını, Git'e hiç dokunmadan, tamamen uygulama içinden kataloğa aktarır. Bkz. [Benimseme ve Yönetişim](/info/adoption-governance.html).
-- **Koruma bariyerleri yapısaldır.** Marka kısıtlamaları, insanların görmezden gelebileceği kurallar olarak yayımlanmaz; doğrudan şablonlara gömülüdür. Yanlış çıktı caydırılmaz - zaten temsil edilemez.
+- **Yapılandırma sana ait.** Motor ve kabuklar açık kaynaktır (MPL-2.0). Kendi kimlik doğrulamanı, telemetrini veya CA'nı üzerine ekle; barındır veya barındırma; SaaS veritabanına kilitlenmeden, git ile izlenen tam özellik ve maliyet kontrolüne sahip olursun.
+- **Yönetişim bir gösterge paneli değil, veri olabilir.** Bu kontrolü istediğinde, araç kataloğunu bir Git deposu olarak yönet - pull-request incelemesi marka onayı haline gelir, iş gücünün dokunabileceği her şablonun tam bir denetim izi ve anında geri alınmasıyla. Bu bir zorunluluk değil, bir seçenektir ve tam olarak tek bir masaya iner: oluşturucular tamamen uygulama içinde çalışır, yaptıklarını bir **oturum** olarak kaydeder ve bunu bir paylaşım bağlantısı, bir yedekleme veya canlı bir işbirliği olarak devreder - bunların hiçbiri git gerektirmez. Bu oturumlardan biri kalıcı bir başlangıç noktası olmayı hak ettiğinde, dağıtımı çalıştıran kişi bağlantıyı açar, değerlerini marka paketindeki o araç üzerinde bir **şablon** olarak kaydeder ve commit eder. O andan itibaren aracın "Şablondan yeni" seçicisinde görünür ve `?template=<id>` olarak derin bağlantı verilebilir. Git, yöneticinin bir kez kullanılan kilitleme adımıdır ve bir oluşturucunun asla dokunması gerekmeyen bir şeydir. Bkz. [Benimseme ve Yönetişim](/info/adoption-governance.html).
+- **Koruma bariyerleri yapısaldır.** Marka kısıtlamaları, göz ardı edilebilecek yönergeler olarak yayımlanmak yerine şablonlara sabit kodlanmıştır. Yanlış çıktı caydırılmaz - temsil edilemez hale getirilir.
 
-## İçerik üretimini artırırken talep kuyruğunu sil.
+> **Bütün bayrak yarışını sen yönetiyorsun.** Bir yaratıcı kuralları yazar ve bir geliştirici bunları ölçeklendirir, ama o yaşam döngüsünü kurum genelinde çalıştırılabilir hale getiren operatördür - bir temsilcinin uçakta kendi kendine hizmet almasını sağlayan aynı araç, senin Git incelemesiyle sınırlayabileceğin, MDM'in üzerinden dağıtabileceğin ve kriptografik olarak doğrulayabileceğin araçtır. Rollerin nasıl bileştiğini [Bir kampanyanın yaşam döngüsü](/info/overview.html#the-lifecycle-of-a-campaign)'nde, ve bunu nasıl yönettiğini [Benimseme ve Yönetişim](/info/adoption-governance.html)'de gör.
 
-Lolly'nin hedeflerinden biri **tasarım talebi saptırma**: varlığa ihtiyaç duyan kişinin onu birkaç dakikada, doğru biçimde kendisinin oluşturması sayesinde hiçbir zaman bir tasarımcıya ulaşması gerekmeyen rutin talepler. Saptırılan her talep hem bir verimlilik kazancıdır hem de el değiştiren bir dosya eksiltir.
+## İçeriği çoğaltırken talep kuyruğunu sil.
 
-Lolly, kurumunun gerçekte nasıl çalıştığına uyacak şekilde tasarlanmıştır - devreye almanın tek bir doğru yolu yoktur:
+Lolly'nin hedeflerinden biri **tasarım talebi saptırma**dır: bir tasarımcıya asla ulaşmasına gerek kalmayan rutin talepler, çünkü varlığa ihtiyaç duyan kişi onu birkaç dakikada, doğru şekilde kendisi yapmıştır. Saptırılan her talep hem bir üretkenlik kazanımıdır hem de el değiştiren bir dosya eksik demektir.
 
-- **Sunma, doğrudan dağıt.** Lolly'yi mevcut MDM'in üzerinden (Intune, Jamf, Munki…) cihazlara dağıt. Yerel olarak bir masaüstü/mobil uygulama ya da çevrimdışı bir PWA olarak çalışır - herhangi bir güvenlik duvarının arkasında, herhangi bir hava boşluklu ortamda çalışır, bakılacak bir sunucu yoktur ve güncelleme temposu BT'nin kontrolündedir.
-- **Yalnızca sun.** Ağının içinde (ya da bir VPN'in arkasında) tek bir örnek çalıştır; kullanıcılar tarayıcıdan erişir, hiçbir şey kurulmaz. Bir aracı bir kez yayımla, herkes anında sahip olsun; erişim kontrolü için IdP'inle eşleştir.
-- **Hibrit.** Çevrimdışı saha çalışması için yerel uygulamalar, ödünç alınan makineler için her zaman güncel bir tarayıcı sürümü - ikisi de aynı araç kitaplığına bağlı.
+Lolly, kuruluşunun gerçekte nasıl çalıştığına uyacak şekilde inşa edilmiştir - onu dağıtmanın tek bir doğru yolu yoktur:
 
-Devreye alma modellerinin tamamı ve yönetim rehberi [Dağıtım](/info/deployment.html) ve [Yapılandırma](/info/configuration.html) sayfalarında yer alır.
+- **Sun, sunma.** Lolly'yi mevcut MDM'in (Intune, Jamf, Munki…) üzerinden cihazlara gönder. Yerel olarak bir masaüstü/mobil uygulama veya çevrimdışı bir PWA olarak çalışır - herhangi bir güvenlik duvarının arkasında, herhangi bir hava boşluklu ortamda, bakımı gereken bir sunucu olmadan ve güncelleme temposunu kontrol eden BT ile çalışır.
+- **Yalnızca sun.** Ağın içinde (veya bir VPN'in arkasında) tek bir örnek çalıştır; kullanıcılar tarayıcıdan erişir, hiçbir şey yüklenmez. Bir aracı bir kez yayınla, herkes anında sahip olur; erişim kontrolü için IdP'inle eşleştir.
+- **Hibrit.** Çevrimdışı saha çalışması için yerel uygulamalar, ödünç alınan makineler için her zaman güncel bir tarayıcı sürümü - ikisi de aynı araç kitaplığına işaret eder.
 
-## Sızıntı önleyici yardımcı araçlar
+Tam dağıtım modelleri ve yönetim yürütümü [Dağıtım](/info/deployment.html) ve [Yapılandırma](/info/configuration.html)'da yer alır.
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
+## Sızıntı önleme araçları
 
-Text Helper, dosyalar için değil metin için aynı anlaşmayı sunar. Bir çalışanın normalde yabancı bir sitede arayacağı sekmeli çalışma tezgâhıdır ve hiç girdi bildirmez, çünkü dokunduğu hiçbir şey sayfadan dışarı çıkmaz.
+Lolly araçlarının bir kategorisi - gizlilik araçları - dosyaları perimetrenin içinde tutmak için *özellikle* var.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1200&height=750&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
 
-Compress PDF ise seti tamamlar: boyutu şişmiş ek, senin seçtiğin bir kalite ayarıyla, dosyayı zaten elinde tutan makinede küçülür.
+- **Gizli veriyi kaldır**
+ Belgelerden ve medya dosyalarından konumu ve tüm gizli tanımlayıcı bilgileri kaldır.
 
-![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=ov2-compress-pdf)
-
-Lolly araçlarının bir kategorisi - gizlilik yardımcı araçları - dosyaları çevrenin içinde tutmak için *özel olarak* var.
-
-- **Strip hidden data**
- Belgelerden ve medya dosyalarından konum bilgisini ve tüm gizli tanımlayıcı bilgileri kaldırır.
-
-- **Text Helper**
-Yapılandırılmış ve yapılandırılmamış metni anonimleştirir, kodlar, biçimlendirir ve düzenler.
+- **Text Helper**  
+Yapılandırılmış ve yapılandırılmamış metni anonimleştir, kodla, biçimlendir ve düzenle. 
 
 - **Compress PDF**
-Aşırı büyük bir PDF'yi cihaz üzerinde küçültür; böylece bir dosya e-postayla gönderilemeyecek kadar büyüdüğü an kimse üçüncü taraf bir "PDF'imi sıkıştır" web sitesine başvurmaz - veri tam olarak o anda sızar.
+Aşırı büyük bir PDF'yi cihaz üzerinde küçült, böylece bir dosya e-postayla gönderilemeyecek kadar büyüdüğü anda kimse üçüncü taraf bir "PDF'imi sıkıştır" sitesine yönelmez - verinin sızdığı nokta tam da orasıdır. 
 
-Bunların hepsi cihaz üzerinde dönüşümlerdir: dosyan ya da verin girer, temizlenmiş baytlar çıkar ve **yüklenecek bir sunucu yoktur**. Bunlar, iyi niyetli bir çalışanın aksi halde başvurduğu tipik "dosyanı temizlemek için bir yabancının web sitesine yükle" aracının tam tersidir.
+Bunların hepsi cihaz üzerinde dönüşümlerdir: dosyan veya verin girer, temizlenmiş bayt'lar çıkar ve **yüklenecek bir sunucu yoktur**. Bunlar, iyi niyetli bir çalışanın aksi halde başvuracağı tipik "dosyanı temizlemek için bir yabancının sitesine yükle" aracının kasıtlı tam tersidir.
 
-## Determinizm ve yeniden üretilebilirlik
+![Strip Hidden Data: dosya tuvale iner ve rozet hiçbir şeyin yüklenmediğini açıkça belirtir](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
 
-Prompt to Image, determinizmin en yalın hâli: girdinin tamamı metin, çıktının tamamı dizilmiş görsel ve aynı metin her zaman aynı şekilde dizilir.
+Text Helper, dosyalar yerine metin için aynı anlaşmayı sunar. Bir çalışanın aksi halde bir yabancının sitesinde arayacağı sekmeli çalışma tezgahıdır ve dokunduğu hiçbir şey sayfadan asla ayrılmadığı için hiçbir girdi bildirmez.
 
-![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Text Helper'ın çalışma tezgahı - yapıştırdığın hiçbir şeyin cihazından ayrılmadığını belirten bir kartın üzerinde işlem sekmelerinden oluşan bir şerit](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1200&height=750&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
+
+Compress PDF seti tamamlar: aşırı büyük ek, seçtiğin bir kalite ayarı altında, onu zaten barındıran makinede küçülür.
+
+![Compress PDF - solda bir kalite düzeyi ve bir gri tonlama anahtarı, sağda kendi PDF'in için bir bırakma alanı ve hiçbir yerde yükleme yok](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=ov2-compress-pdf)
+
+## Belirlenimcilik ve yeniden üretilebilirlik
 
 Her araç girdisi bir URL parametresi olarak ifade edilebilir ve aynı girdiler aynı dosyayı üretir. Bunun operatör açısından iki sonucu vardır:
 
-- **URL, çıktının kendisidir.** Bağlantıyı commit'le, varlığı istendiğinde yeniden üret - Git'e ikili dosya eklemek yok, sohbette "en son sürümü" kovalamak yok. Varlık ve araç kimlikleri kalıcı sözleşmelerdir, bu yüzden bugün oluşturulan bir bağlantı ileride de çözümlenmeye devam eder.
-- **CLI, GUI ile aynı render yoludur**, bu yüzden derleme hatları ile uygulama asla birbirinden sapmaz. Derleme sırasında OG görsellerini, sosyal kartları ve veri görsellerini yeniden üretilebilir biçimde oluştur.
+- **Bir URL, çıktının ta kendisidir.** Bağlantıyı commit'le, varlığı talep üzerine yeniden üret - Git'e kaydedilmiş ikili dosya yok, sohbette "en son sürümü" kovalamak yok. Varlık ve araç ID'leri kalıcı sözleşmelerdir, bu yüzden bugün üretilen bir bağlantı daha sonra da çözülmeye devam eder.
+- **CLI, GUI ile aynı render yoludur**, bu yüzden derleme hatları ve uygulama asla birbirinden sapmaz. OG görsellerini, sosyal kartları ve veri görsellerini derleme zamanında, yeniden üretilebilir şekilde oluştur.
+
+Prompt to Image, belirlenimciliğin en yalın halidir: metin girdinin tamamıdır, dizgilenmiş görsel çıktının tamamıdır ve aynı metin her zaman aynı şekilde dizilir.
+
+![Prompt to Image - bir istem metni bloğunun kare bir görsele dizgilenmiş hali, sonuçta girdide olmayan hiçbir şey yok](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## Köken ve Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
+![Verify bırakma alanı, herhangi bir kaynaktan gelen herhangi bir dosyayı kabul eder ve onu ağ çağrısı yapmadan okur](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
-Dışa aktarımlar **Content Credentials** taşıyabilir - dosyanın baytlarının bir karmasına (hash) bağlı, imzalı bir [C2PA](https://c2pa.org) manifesti. Dosyada sonradan yapılan herhangi bir değişiklik mührü bozar; böylece C2PA farkındalığı olan bir doğrulayıcı **değişikliği kriptografik olarak, çevrimdışı algılar**. Kimlik bilgisi kurcalamayı *belli eder*: kurcalamayı engellemek yerine işaretler ve tamamen çevrimdışı doğrulamayı mümkün kılan da tam olarak budur.
+Dışa aktarımlar **Content Credentials** taşıyabilir - dosyanın baytlarının bir özetine bağlanmış, imzalı bir [C2PA](https://c2pa.org) manifestosu. Dosyada sonradan yapılan herhangi bir değişiklik mührü bozar, bu yüzden C2PA'dan haberdar bir doğrulayıcı **değişikliği kriptografik olarak, çevrimdışı tespit eder**. Kimlik bilgisi kurcalamaya karşı *duyarlıdır*: kurcalamayı önlemek yerine bunu işaret eder - tamamen çevrimdışı doğrulamayı mümkün kılan da tam olarak budur.
 
-- **Varsayılan olarak açık, cihaz üzerinde.** İmzalama anahtarı cihazda oluşturulur, çıkarılamaz (Lolly bile onu okuyamaz) ve imzalama yerel olarak gerçekleşir - yalnızca isteğe bağlı kimlik *kaydı* ağa dokunur.
-- **Güven katmanları.** Kaydı olmayan bir dışa aktarım yapısal olarak geçerlidir ama anonim olarak imzalanmıştır (`untrusted`). Bir **doğrulanmış kimlik** kaydet (Lolly CA'dan, bir e-postaya bağlı kısa ömürlü sertifika) ve Lolly kökünü sabitleyen doğrulayıcılar `trusted` + imzalayanın e-postasını bildirsin. Güvenilir bir zaman damgası otoritesi ve üçüncü taraf doğrulayıcı yeşili (C2PA uyumluluğu) yol haritasında. Her katman açıktır ve bir dosya yalnızca kanıtlayabildiği güveni iddia eder.
+- **Varsayılan olarak açık, cihaz üzerinde.** İmzalama anahtarı cihazda üretilir, çıkarılamaz (Lolly bile okuyamaz) ve imzalama yerel olarak gerçekleşir - ağa dokunan tek şey isteğe bağlı kimlik *kaydı*dır.
+- **Güven katmanları.** Kaydı yapılmamış bir dışa aktarım biçimsel olarak doğrudur ama anonim olarak imzalanmıştır (`untrusted`). Bir **doğrulanmış kimlik** kaydet (Lolly CA'dan kısa ömürlü, bir e-postaya bağlı sertifika) ve Lolly kökünü sabitleyen doğrulayıcılar `trusted` + imzalayanın e-postasını bildirir. Güvenilir bir zaman damgası otoritesi ve üçüncü taraf doğrulayıcı yeşili (C2PA uyumluluğu) yol haritasında. Her katman açıktır ve bir dosya yalnızca kanıtlayabildiği güveni iddia eder.
 - **Kimlik bilgisi ömrü**, imzalama sırasında operatörün/kullanıcının kararıdır: 7 / 30 / 90 / 365 gün, varsayılan 30.
-- **Lolly Imprint.** **Varsayılan olarak açık** olan ikinci, tamamlayıcı bir sinyal: raster dışa aktarımların içine (ve bir PDF/PPTX içindeki, Lolly tarafından render edilen rasterlerin içine - asla kullanıcının kendi gömülü görseline değil) gömülü, görünmez bir piksel filigranı. Kimlik bilgisi kapsayıcıdaki (container) herhangi bir değişiklikte yok olurken, Imprint yeniden kaydetmeye ya da ekran görüntüsü almaya dayanır - "bu pikseller Lolly'den geçti" diyen kalıcı bir ipucu; yalnızca varlığı gösterir, hiçbir kişisel veri taşımaz. Sertleştirilmiş bir savunma değil, gizlilik yoluyla güvenliktir (security-through-obscurity) ve kimlik bilgisinin yerini almak yerine onu tamamlar. `imprint=0` bunu devre dışı bırakır.
-- **Durable Content Credentials (isteğe bağlı).** Bir raster dışa aktarım, bir yumuşak-bağlama (soft-binding) tanımlayıcısını kodlayan görünmez, *kalıcı (durable)* bir işaret de taşıyabilir; böylece bir sosyal medyaya yükleme ya da yeniden kaydetme dosyanın meta verilerini silmiş olsa bile - normal bir kimlik bilgisinin kaybolacağı durumda - C2PA kimlik bilgisi geri kazanılabilir. Yalnızca raster için geçerlidir ve bir sinirsel kodlama (neural-encode) geçişine mal olur, bu yüzden varsayılan olarak kapalıdır (`durable=1` açar). Lolly bugün kendi kalıcı işaretini `/verify` üzerinde çevrimdışı tanır; üçüncü taraf araçlarla (ör. Adobe) kurtarma, endüstri çapındaki yumuşak-bağlama çözümü yerleştikten sonra gelecek.
-- **Doğrulama cihaz üzerindedir.** Herhangi bir dosyayı `/verify` üzerine bırak (ya da `lolly validate <file>` çalıştır) ve gerçekten Lolly ile yapılıp yapılmadığına ve o günden beri değişip değişmediğine dair çevrimdışı bir rapor al. Web Verify görünümü ayrıca yapay zeka tarafından üretilen içeriği işaretler, Lolly Imprint'i tespit eder, **SEAL** imzalarını doğrular (DNS üzerinde anahtarlanan bayt düzeyinde bir imza - ağa dokunan tek şey bir DNS anahtar sorgusudur, dosyanın kendisi asla), isteğe bağlı olarak üçüncü taraf piksel filigranları için derin tarama yapar (tek seferlik, cihaz üzerinde bir model indirmesi) ve gizli verileri ortaya çıkarır - hepsi dosyayı hiç yüklemeden. Bkz. [Content Credentials Kimliği](/info/content-credentials-identity.html).
+- **Lolly Imprint.** **Varsayılan olarak açık** olan, tamamlayıcı ikinci bir sinyal: raster dışa aktarımlara (ve bir PDF/PPTX içindeki Lolly tarafından render edilmiş rasterlere, kullanıcının kendi gömülü görseline asla) işlenmiş görünmez bir piksel filigranı. Kimlik bilgisi herhangi bir kapsayıcı değişikliğinde yok olurken, Imprint yeniden kaydetmeye veya ekran görüntüsüne dayanıklıdır - kalıcı bir "bu pikseller Lolly'den geçti" ipucu, yalnızca varlık bildirir, kişisel veri içermez. Bu, sertleştirilmiş bir savunma değil, gizlilik yoluyla güvenliktir ve kimlik bilgisinin yerini almak yerine onu tamamlar. `imprint=0` devre dışı bırakır.
+- **Dayanıklı Content Credentials (isteğe bağlı).** Bir raster dışa aktarım, ek olarak bir soft-binding tanımlayıcısı kodlayan görünmez, *dayanıklı* bir işaret taşıyabilir; böylece bir sosyal medya yüklemesi veya yeniden kaydetme dosyanın meta verisini sildikten sonra bile - normal bir kimlik bilgisinin kaybolacağı durumda - C2PA kimlik bilgisi geri kazanılabilir. Yalnızca rasterlerde çalışır ve bir sinirsel kodlama geçişine mal olur, bu yüzden varsayılan olarak kapalıdır (açmak için `durable=1`). Lolly bugün kendi dayanıklı işaretini `/verify` üzerinde çevrimdışı olarak tanır; üçüncü taraf araçlar (ör. Adobe) tarafından geri kazanım, sektörün soft-binding çözümü yerine oturduğunda gelecektir.
+- **Doğrulama cihaz üzerindedir.** Bir dosyanın gerçekten Lolly ile yapılıp yapılmadığını ve o zamandan beri değişmediğini çevrimdışı bir raporla öğrenmek için herhangi bir dosyayı `/verify` üzerine bırak (veya `lolly validate <file>`). Web Verify görünümü ayrıca yapay zeka tarafından üretilen içeriği işaretler, Lolly Imprint'i tespit eder, **SEAL** imzalarını doğrular (bayt düzeyinde bir imza - sıfır ağ isteğiyle: motor *enjekte edilmiş* bir DNS anahtar çözücü alır ve bugün hiçbir shell bunu enjekte etmez, bu yüzden kendi satır içi `pk=` anahtarını taşıyan bir kayıt tamamen çevrimdışı doğrulanırken, DNS anahtarlı bir kayıt dışarı çıkmak yerine "anahtar çözücü yok ve satır içi anahtar yok" bildirir - bkz. `engine/src/seal.ts` içindeki `SealPublicKeyResolver`), isteğe bağlı olarak üçüncü taraf piksel filigranları için derin tarama yapar (tek seferlik, cihaz üzerinde model indirmesi) ve gizli verileri ortaya çıkarır - hepsi dosyayı yüklemeden. Bkz. [Content Credentials Identity](/info/content-credentials-identity.html).
 
-> **Birlikte çalışabilirlik notları.** Lolly bugün kendi kimlik bilgilerini ve birçok üçüncü taraf kimlik bilgisini çevrimdışı doğrular; bu, diğer üreticilerden gelen C2PA claim **v2** manifestlerini okumayı da kapsar. Devam eden tek bir birlikte çalışabilirlik konusu var: WebM - henüz standartlaştırılmış bir C2PA eşlemesi olmadığından Lolly manifesti bir Matroska parçası olarak ekler (üçüncü taraf araçlar Lolly'nin MP4'ünü hazırdan doğrular; WebM, standart oturunca gelir).
+> **Birlikte çalışabilirlik notları.** Lolly bugün kendi kimlik bilgilerini ve birçok üçüncü taraf kimlik bilgisini çevrimdışı doğrular, diğer üreticilerin C2PA claim **v2** manifestolarını okumak dahil. İki kapsayıcı hâlâ çalışma aşamasındadır, ikisi de C2PA'nın bunlar için henüz standart bir eşleme sunmamasından ötürü; bu yüzden Lolly kimlik bilgisini kendi belirlediği bir yerde taşır ve onu geri okuyan da Lolly'nin doğrulayıcısıdır: **WebM** (manifesto bir Matroska eki olarak taşınır) ve **Ogg/Opus** (OpusTags yorum başlığında bir `C2PA=` alanı, ses hâlâ aynı şekilde özetlensin diye o bayt aralığı bağlamadan hariç tutulur). Geri kalan her şey standarda uygun damgalanır - üçüncü taraf araçlar Lolly'nin MP4, M4A, MP3, WAV, PNG, JPEG ve PDF dosyalarını kutudan çıktığı gibi doğrular. Her iki eşleme için `engine/src/c2pa-containers.ts` dosyasına bak; standart yerine oturduğunda bunlar da onunla birleşecek.
 
 ## Şifreleme ve parola koruması
 
-![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&walker=1&format=svg&dark=1&filename=aud-pdf-lock)
+Kilitli olarak yol alması gereken dosyalar için her şey cihaz üzerinde gerçekleşir:
 
-Kilitli seyahat etmesi gereken dosyalar için her şey cihaz üzerinde gerçekleşir:
+![Dışa aktarım panelindeki kilit kartı: bir parola ve iki katman arasında açık bir seçim](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&walker=1&format=svg&dark=1&filename=aud-pdf-lock)
 
-- **PDF açma parolası** - *Standart*, 40-bit bir RC4 caydırıcısıdır (her yerde açılır, bir bağlantıda seyahat edebilir); *Güçlü*, dışa aktarımda yazılan ve asla bir bağlantıya konmayan **AES-256**'dır (PDF 2.0).
-- **Kilitli indirmeler** - bir ZIP, bir Projeler klasörü ya da bir toplu çalıştırma bütün olarak kilitlenebilir: *Standart* ZipCrypto (zayıf, evrensel) ya da *Güçlü* **AES-256** (WinZip AE-2). Katmanlı savunma: Güçlü bir zip içindeki herhangi bir PDF *ayrıca* ayrı ayrı AES-256 ile kilitlenir; böylece açıldıktan sonra da kilitli kalır.
-- **Parola korumalı paylaşım bağlantıları** - tüm bağlantı durumu, PBKDF2 ile türetilen bir anahtar altında AES-256 ile şifrelenir; yalnızca şifreli metin seyahat eder, parola asla bağlantıda olmaz ve şifre çözme alıcının tarayıcısında gerçekleşir.
+- **PDF açma parolası** - *Standard*, 40 bit'lik bir RC4 caydırıcısıdır (her yerde açılır, bir bağlantıda yol alabilir); *Strong*, dışa aktarımda yazılan ve asla bir bağlantıya konmayan **AES-256**'dır (PDF 2.0).
+- **Kilitli indirmeler** - bir ZIP, bir Projects klasörü veya toplu bir çalıştırma bütünüyle kilitlenebilir: *Standard* ZipCrypto (zayıf, evrensel) veya *Strong* **AES-256** (WinZip AE-2). Katmanlı savunma: Strong bir zip içindeki herhangi bir PDF *ayrıca* tek tek AES-256 ile de kilitlenir, böylece açıldıktan sonra da kilitli kalır.
+- **Parola korumalı paylaşım bağlantıları** - bağlantının tüm durumu, PBKDF2'den türetilmiş bir anahtar altında AES-256 ile şifrelenir; yalnızca şifreli metin yol alır, parola asla bağlantıda yer almaz ve şifre çözme alıcının tarayıcısında gerçekleşir.
 
-## Hava boşluğuna hazır
+## Air-gap'e hazır
 
-Hava boşluğu (air-gap), özel bir mod değil, **birinci sınıf bir dağıtımdır** - Lolly, render sırasında ağ olmadan hazırdan çalışır. Web kabuğu, çevrimdışı öncelikli bir PWA'dır (service worker); yazı tipleri ve WASM cihazda saklanır; araç durumu, `localStorage` değil, host köprüsü aracılığıyla yerel olarak kalıcılaştırılır. Ağa ulaşan herhangi bir araç, bunu yalnızca manifestinde bildirmesi gereken bir **izin listesindeki** `host.net` yeteneği üzerinden yapar - bunu yerine getiremeyen (ya da getirmeyen) bir kabuk onu devre dışı bırakır. Kabukları MDM'in üzerinden cihazlara dağıt ya da ağının içinde tek bir örnek sun; tamamen hava boşluklu bir kurulum, eve telefon edecek hiçbir şey olmadan render eder, dışa aktarır, şifreler ve kimlik bilgilerini doğrular.
+Air-gap özel bir mod değil, **birinci sınıf bir dağıtım**dır - Lolly kutudan çıktığı haliyle render sırasında ağ olmadan çalışır. Web shell'i çevrimdışı öncelikli bir PWA'dır (service worker); fontlar ve WASM cihaz üzerinde saklanır; araç durumu host köprüsü üzerinden yerel olarak kalıcı hale getirilir, asla `localStorage` ile değil. Bir aracın ağa ulaşmasının desteklenen yolu, manifestosunda bildirdiği **izin listesine alınmış** bir `host.net` yeteneğidir - bunu karşılayamayan (veya karşılamak istemeyen) bir shell onu boş bırakır. Bu, zorunlu kılınan bir sınır değil, bir taşınabilirlik sözleşmesidir (aşağıdaki hook'lar notuna bak), bu yüzden kontrol aracı olarak araç kodunu incelemek kalır - gerçi air-gap'li bir cihazda zaten her iki yönde de ulaşılacak bir şey yoktur. Shell'leri MDM'in üzerinden cihazlara gönder, ya da ağının içinde tek bir örnek sun; tamamen air-gap'li bir kurulum, eve telefon edecek hiçbir şeyi olmadan render eder, dışa aktarır, şifreler ve kimlik bilgilerini doğrular.
 
 ## Bilmekte fayda var
 
-Devreye almadan önce netleştirmekte fayda olan birkaç şey:
+Devreye almadan önce netleştirmeye değer birkaç şey:
 
-- **Sertleştirme devam ediyor.** Kriptografi ve ayrıştırıcılar, SUSE'nin kurumsal ölçekteki sertleştirme sürecinden geçiyor (yukarıya bak) - bugün tasarım gereği güçlü; bir sözleşme sertifikalı güvence istediğinde katmanlı savunma olarak devreye al.
-- **Araç kancaları bir güvenlik korumalı alanı *değildir*.** Bir aracın isteğe bağlı `hooks.js`'i host köprüsü enjekte edilmiş halde çalışır ama bir tarayıcı kabuğunda sayfanın gerçekliğinde (realm) yürür ve `window`/`document`/`fetch`'e *ulaşabilir*. Araç koduna, çalıştırdığın herhangi bir koda davrandığın gibi davran - onu incele. Ortak bir katalog çalıştıran bir kuruluşun bunu Git incelemesinden geçirebilmesinin nedeni budur; her durumda, Worker yalıtımı gelene kadar yalnızca incelediğin araçları çalıştır.
-- **Content Credentials kurcalamayı belli eder.** Değişikliği engellemek yerine algılar - yukarıdaki birlikte çalışabilirlik notlarına bak.
-- **İki şifreleme katmanı.** *Standart* kilitler hızlı, evrensel caydırıcılardır; *Güçlü* (AES-256) tam korumadır - hassas her şey için Güçlü'ye başvur, modern bir okuyucu istediğini not ederek.
+- **Sertleştirme sürüyor.** Kriptografi ve ayrıştırıcılar SUSE'nin kurumsal ölçekli sertleştirmesinden geçiyor (yukarıya bak) - bugün tasarım gereği güçlü; sertifikalı güvence isteyen bir sözleşme olduğunda katmanlı savunma olarak devreye al.
+- **Araç hook'ları bir güvenlik sandbox'ı *değildir*.** Bir aracın isteğe bağlı `hooks.js`'i host köprüsü enjekte edilmiş halde çalışır, ama bir tarayıcı shell'inde sayfanın alanında yürütülür ve `window`/`document`/`fetch`'e *ulaşabilir*. Araç kodunu, çalıştırdığın herhangi bir kod gibi ele al - incele. Paylaşılan bir katalog çalıştıran bir kuruluşun bunu Git incelemesiyle kapı altına alabilmesinin nedeni de budur; her iki durumda da Worker izolasyonu gelene kadar yalnızca incelediğin araçları çalıştır.
+- **Content Credentials kurcalamaya karşı duyarlıdır.** Değişikliği önlemek yerine tespit eder - yukarıdaki birlikte çalışabilirlik notlarına bak.
+- **İki şifreleme katmanı.** *Standard* kilitler hızlı, evrensel caydırıcılardır; *Strong* (AES-256) tam korumadır - hassas herhangi bir şey için Strong'a yönel, bunun modern bir okuyucu istediğini unutma.
 
-## Sırada nereye
+## Bundan sonra nereye
 
-- **[Benimseme ve Yönetişim](/info/adoption-governance.html)** - kişilikler, saptırma metriği ve veri olarak yönetişim tüm ayrıntılarıyla.
-- **[Dağıtım](/info/deployment.html)** - dağıt/sun/hibrit, MDM ve hizmetleri kendin barındırma.
-- **[Yapılandırma](/info/configuration.html)** - profiller, marka paketleri, yetenek kapıları ve özellik bayrakları.
-- **[Gizlilik Politikası](/info/privacy.html)** - resmi "hiçbir şey toplamaz, hiçbir şey yüklemez" beyanı.
+- **[Security & Verification](/info/security.html)** - yukarıdaki kimlik bilgileri ve şifrelemenin arkasındaki standartlar, ilkeller, güven modeli ve testler.
+- **[Adoption & Governance](/info/adoption-governance.html)** - personalar, yönlendirme metriği ve veri olarak yönetişimin tamamı.
+- **[Deployment](/info/deployment.html)** - dağıt/sun/hibrit, MDM ve hizmetleri kendi kendine barındırma.
+- **[Configuration](/info/configuration.html)** - profiller, marka paketleri, yetenek kapılama ve özellik bayrakları.
+- **[Privacy Policy](/info/privacy.html)** - nelerin toplanıp toplanmadığının, saklanıp saklanmadığının ve gönderilip gönderilmediğinin resmi beyanı.
+- **[Server Surface](/info/server-surface.html)** - sunucu tarafında çalışanların (iki isteğe bağlı bileşen) cihaz üzerinde çalışanlara karşı tam envanteri.

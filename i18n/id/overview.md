@@ -1,84 +1,100 @@
-# Ringkasan
+# Ikhtisar
 
-![Lolly Icon - Large green and white lollipop candy](/info/icon.svg)
+![Ikon Lolly - Permen lolipop hijau dan putih berukuran besar](/info/icon.svg)
 
-Dokumen ini merangkum tujuan, struktur, dan keputusan arsitektur untuk platform Lolly. Dokumen ini mencerminkan visi produk sekaligus keadaan basis kode saat ini.
+Dokumen ini mencatat tujuan, struktur dan keputusan arsitektur untuk platform Lolly. Ini mencerminkan baik visi produk maupun kondisi basis kode saat ini.
 
-> **Status:** Lolly adalah prototipe internal dalam **pilot tertutup yang belum selesai**. Engine bersifat deterministik dan konsisten secara internal, tetapi produknya masih dini - SUSE adalah pelanggan nomor satu - dan engine kriptografi serta pengurai berkasnya saat ini sedang menjalani pengetatan infrastruktur ketat dari SUSE, mempersiapkan skala enterprise (kami sangat andal dalam hal ini). Bacalah arsitektur di bawah sebagai maksud desain yang sedang diuji, bukan produk jadi yang tersertifikasi. Lihat [Adopsi & Tata Kelola](/info/adoption-governance.html#status) untuk memahami bagaimana pilot ini dijalankan dan diukur.
+> **Status:** Lolly adalah prototipe internal dalam **uji coba tertutup yang belum selesai**. Mesinnya deterministik dan konsisten secara internal, tetapi produknya masih dini - SUSE adalah pelanggan nomor satu - dan mesin kriptografi serta penguraian filenya saat ini sedang menjalani pengerasan infrastruktur ketat milik SUSE, mempersiapkan skala enterprise (kami sangat mahir dalam hal ini). Bacalah arsitektur di bawah ini sebagai niat desain yang sedang diuji, bukan produk jadi yang tersertifikasi. Lihat [Adopsi & Tata Kelola](/info/adoption-governance.html#status) untuk cara uji coba ini dijalankan dan diukur.
+
+> **Cara membaca halaman ini.** Halaman ini memuat dua jenis materi, secara berurutan. Separuh pertama adalah
+> **mengapa ini ada**: masalahnya, positioning-nya dan siklus hidup yang dilalui satu aset. Mulai dari
+> [Gambaran besar](#the-big-picture-how-the-layers-fit) dan seterusnya adalah
+> **bagaimana lapisan-lapisannya menyatu**: dokumen arsitektur untuk kontributor, mencakup pemisahan
+> engine/shell/pack, tata letak repositori, target pengiriman dan komitmen yang membatasi setiap
+> perubahan pada platform. Jika Anda di sini untuk mengubah basis kode alih-alih memahami
+> produknya, mulailah dari gambaran besar.
+>
+> Dua dokumen pendamping menyelami lebih dalam daripada halaman ini. [`engine/README.md`](../engine/README.md) di
+> repositori adalah peta modul-demi-modul dari engine, dengan tabel yang dihasilkan otomatis dari setiap modul dan
+> apa yang diuraikan atau ditulisnya. [Model Ancaman & Batas Kepercayaan](/info/threat-model.html)
+> adalah arsitektur yang sama dibaca sebagai batas kepercayaan, dan itu adalah halaman yang tepat untuk pertanyaan apa pun tentang
+> apa yang dianggap engine sebagai tidak tepercaya.
 
 ---
 
 ## Mengapa ini ada
 
-Tim menghadapi masalah yang berulang: pekerjaan kreatif dan konten berulang yang terlalu dapat diprediksi untuk membenarkan tenaga ahli setiap kali, tetapi terlalu sensitif terhadap kualitas untuk diserahkan tanpa pengaman. Hasilnya adalah salah satu dari: throughput lambat (kemacetan spesialis), inkonsistensi (orang memakai alat apa pun yang mereka punya), atau ketergantungan vendor (DAM SaaS yang mengendalikan template Anda).
+Tim menghadapi masalah yang berulang: pekerjaan kreatif dan konten yang bisa diulang, terlalu dapat diprediksi untuk membenarkan tangan terampil setiap kali, tetapi terlalu sensitif terhadap kualitas untuk diserahkan tanpa pengaman. Hasilnya adalah salah satu dari: throughput lambat (bottleneck spesialis), inkonsistensi (orang memakai alat apa pun yang mereka punya) atau vendor lock-in (DAM SaaS yang mengendalikan template Anda).
 
-Platform ini adalah jawaban strukturalnya:
+Platform ini adalah jawaban langsungnya:
 
-> **Kreatif dan konten programatik dalam skala besar** - pembuatan aset tanpa tenaga kerja, dengan aturan di bawah kendali terpusat, untuk karyawan, vendor, dan mitra.
+> **Kreatif dan konten programatik dalam skala besar** - pembuatan aset tanpa tenaga kerja, dengan aturan di bawah kendali terpusat, untuk karyawan, vendor dan mitra.
 
-Hasilnya adalah **kelimpahan**: setiap acara punya papan penanda yang benar, setiap peringatan CVE sesuai gaya rumahan, setiap label tercetak bersih, setiap tanda tangan email selalu mutakhir - semuanya tanpa tiket desain. Platform ini menangani kreatif operasional yang berulang. Ini sengaja bukan alat kreatif kustom - desainer tetap memegang karya unggulan.
+Hasilnya adalah **kelimpahan**: setiap acara memiliki signage yang benar, setiap peringatan CVE cocok dengan gaya perusahaan, setiap label tercetak bersih, setiap tanda tangan email selalu terkini - semua tanpa tiket desain. Platform ini menangani kreatif operasional yang berulang. Ini sengaja bukan alat kreatif custom - desainer tetap memegang kendali atas karya unggulan.
 
-### Posisinya dalam lanskap
+### Berinovasi secara probabilistik, berskala secara deterministik
 
-![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=aud-gallery-landscape)
+Setiap perdebatan tentang AI dalam alur kerja kreatif terhenti pada pertanyaan yang sama: bagian mana dari ini yang menjadi tugas mesin? Ini pertanyaan lama dengan jawaban yang sudah mapan. Juru tulis dan pelukis manuskrip sudah bekerja di antara dua instrumen - sketsa bebas, di mana tidak ada yang tetap dan segalanya bisa dicoba, dan mesin cetak, yang menakutkan justru karena ia mengikat komitmen. Sketsa adalah tempat seni terjadi. Mesin cetak adalah cara seni itu menjangkau siapa pun. Tak seorang pun mencampuradukkan keduanya, dan keduanya terus maju - tinta baru, huruf baru, mesin cetak baru - masing-masing berkembang selaras dengan kerajinan dan maksud yang dilayaninya.
 
-| Kapabilitas | Canva | Portal brand | Illustrator | Figma / Penpot | **Lolly** |
-|---|---|---|---|---|---|
-| Pembuatan konten massal | sebagian | ✗ | ✗ | ✗ | **✓** |
-| Bekerja sepenuhnya offline | ✗ | ✗ | ✓ | sebagian | **✓** |
-| Logika template & batasan tegas | ✗ | sebagian | ✗ | sebagian | **✓** |
-| Tak perlu keahlian desain | sebagian | ✓ | ✗ | ✗ | **✓** |
-| Content Credentials otomatis | ✗ | ✗ | sebagian | ✗ | **✓** |
-| Alat menyusun alat lain | ✗ | ✗ | ✗ | ✗ | **✓** |
-| Engine terbuka, tak terkunci SaaS | ✗ | ✗ | ✗ | sebagian | **✓** |
-| Content credentials C2PA | ✗ | ✗ | ✗ | ✗ | **✓** |
-| Provenans tingkat forensik opsional | ✗ | ✗ | ✗ | ✗ | **✓** |
-| Aplikasi Seluler dan Desktop | ✓ | ✗ | ✗ | sebagian | **✓** |
-| Command Line & TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
+Lolly menarik garis yang sama. Jelajahi secara probabilistik: sebuah model, seorang desainer, ide kasar, sebuah prompt yang menuju ke arah yang tidak direncanakan siapa pun. Lalu berskalalah secara deterministik - hal yang menjangkau sepuluh ribu output adalah sebuah *alat*, dan alat merender dengan cara yang sama setiap kali dari input yang bisa Anda baca. Eksplorasi tetap bebas karena tidak ada apa pun di hilir yang bergantung pada hasil yang sama dua kali. Outputnya mendapatkan kepercayaan karena bukan tebakan. Membawa eksperimen AI ke hasil yang dapat diprediksi dan direproduksi bukanlah disiplin baru; itu adalah pembagian kerja yang sama yang membuat karya cetak layak dipercaya sejak awal.
 
-Kesenjangannya jelas: tak ada di lanskap yang ada memberi kita keluaran yang mengutamakan batasan, mampu offline, minim keahlian, dan dapat diakses internal. Lolly bahkan menyertakan kanvas terbuka - **Design** - tempat warna, tipe, dan aset menyesuaikan diri dengan global brand, sehingga penataan bebas tetap mengutamakan batasan. Yang ia **bukan** adalah suite desain tanpa batasan: desainer tetap memakai Illustrator dan Figma untuk karya unggulan kustom. Permutasi dapat dirakit dengan alat ini.
+> Percayai proses kreatif, berskala dengan kedisiplinan.
 
-**Gunakan untuk:** Pembuatan cepat aset kreatif operasional - kartu acara, tanda pengenal nama, tanda tangan, peringatan CVE, kode QR, kartu sosial, label konsinyasi, laporan terstruktur.
+### Melawan alternatif
 
-**Jangan gunakan untuk:** Konten unggulan yang kustom.
+::: figure positioning-comparison
+Kelengkapan kapabilitas di antara alat kreatif hari ini, diteliti Agustus 2026. Penilaian: 0 tidak ada, 25 tingkat akal-akalan, 50 nyata tetapi terbatas atau parsial, 75 kuat dengan catatan, 100 kompetensi inti.
+:::
+
+Kesenjangannya jelas: tidak ada yang tersedia hari ini yang memberi kami output constraints-first, mampu offline, keterampilan rendah, dan dapat diakses secara internal. Lolly bahkan menyertakan kanvas terbuka - **Design** - di mana warna, tipografi dan aset menaati brand global, sehingga penataan bebas tetap constraints-first. Yang **bukan** ini adalah suite desain tanpa batasan: desainer tetap memakai Illustrator dan Figma untuk karya unggulan custom. Permutasi dapat dirakit dengan alat ini.
+
+![Setiap alat di pustaka sebagai kartu, dikelompokkan menurut kategori, sehingga seorang produser memilih satu dan langsung mulai](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=aud-gallery-landscape)
+
+**Gunakan untuk:** Pembuatan cepat aset kreatif operasional - ubin acara, badge nama, tanda tangan, peringatan CVE, kode QR, kartu sosial, label konsinyasi, laporan terstruktur.
+
+**Jangan gunakan untuk:** Konten unggulan custom.
 
 ---
 
 ## Siklus hidup sebuah kampanye
 
-![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+Cara paling jelas untuk melihat apa itu Lolly bukanlah daftar fitur - melainkan mengikuti satu aset saat berpindah dari tangan ke tangan. Amati satu kartu kampanye yang dilokalkan bergerak melalui organisasi:
 
-Cara paling jelas untuk melihat apa itu Lolly bukanlah daftar fitur - melainkan mengikuti satu aset saat ia berpindah dari tangan ke tangan. Perhatikan satu kartu kampanye terlokalkan bergerak melintasi organisasi:
+1. **Sang kreatif menetapkan aturan.** Seorang desainer menyusun template dasar di alat Design, menetapkan tipografi dan variabel warna brand secara hard-coded. Mereka bukan membuat satu kartu - mereka melakukan pekerjaan fondasi *sekali* agar tidak pernah perlu melokalkan secara manual lagi.
+2. **Sang developer menskalakannya.** Template yang sama dihubungkan ke pipeline malam hari lewat CLI, sehingga chart segar atau varian bahasa baru dihasilkan secara otomatis - tidak ada desainer yang membuka ulang file.
+3. **Sang produser tinggal memakainya.** Seorang sales rep, offline di pesawat, membuka alat yang sama dan menghasilkan deck yang sepenuhnya on-brand untuk pertemuan klien. Tanpa keterampilan desain, tanpa jaringan, tanpa menunggu.
 
-1. **Tim kreatif menetapkan aturannya.** Seorang desainer menyusun template dasar di Design, mengodekan tipografi dan variabel warna brand secara kaku. Mereka tidak sedang membuat satu kartu - mereka mengerjakan fondasinya *sekali* agar tidak perlu lagi melokalkannya secara manual.
-2. **Developer menskalakannya.** Template yang sama itu dirangkai ke pipeline malam melalui CLI, sehingga grafik baru atau varian bahasa baru dihasilkan otomatis - tidak ada desainer yang membuka ulang berkasnya.
-3. **Produser tinggal memakainya.** Seorang sales rep, offline di dalam pesawat, membuka alat yang sama dan menghasilkan deck yang persis sesuai brand untuk rapat dengan klien. Tanpa keterampilan desain, tanpa jaringan, tanpa menunggu.
+"Chart segar" pada langkah kedua adalah render seperti ini, dihasilkan dari sebuah string data dan segenggam parameter tanpa seorang pun membuka file desain:
 
-"Grafik baru" pada langkah dua adalah render seperti ini, dihasilkan dari sebuah string data dan beberapa parameter tanpa seorang pun membuka berkas desain:
+![Chart area bertumpuk berjudul, tiga serinya berpita dalam palet dingin dengan sumbu, legenda dan judul semuanya ditempatkan oleh template, bukan secara manual](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
-Intinya bukan bahwa Lolly bagus untuk desainer *dan* bagus untuk developer *dan* bagus untuk sales, masing-masing secara terpisah. Ini sebuah **lomba lari estafet**: kerja awal tim kreatif diskalakan oleh developer, dan itu pada gilirannya memberdayakan produser. Pengalaman yang terasa mudah bagi rep non-teknis di dalam pesawat itu hanya *mungkin* karena kedisiplinan yang ditetapkan desainer dan diterapkan developer.
+Intinya bukan bahwa Lolly bagus untuk desainer *dan* bagus untuk developer *dan* bagus untuk sales, masing-masing dalam ruang hampa. Ini adalah **lomba estafet**: pekerjaan awal sang kreatif diskalakan oleh developer, yang pada gilirannya memberdayakan produser. Pengalaman tanpa hambatan bagi sales rep non-teknis di pesawat itu hanya *mungkin* karena kedisiplinan yang ditetapkan desainer dan diterapkan developer.
 
-Itulah pengganda dayanya. Lolly bukan lemari berisi alat-alat terpisah untuk peran-peran terpisah - ia satu siklus hidup aset deterministik yang disentuh setiap peran, dan setiap tangan yang dilaluinya menggandakan nilai tangan sebelumnya.
+Itulah pengganda kekuatannya. Lolly bukan laci berisi alat-alat terpisah untuk peran-peran terpisah - ini satu siklus hidup aset deterministik yang disentuh setiap peran, dan setiap tangan yang dilaluinya melipatgandakan nilai tangan sebelumnya.
 
 ---
 
 ## Satu persetujuan, sepuluh ribu aset
 
-![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+Karena persetujuan berada di alat, bukan di file (lihat [Bagaimana Lolly dibandingkan](/info/positioning.html)), skala berhenti menjadi masalah peninjauan. Setujui alat kartu sosial yang dilokalkan sekali, lalu hasilkan **10.000 aset dalam 12 bahasa** dari sebuah spreadsheet - dan tidak satu pun dari aset itu memerlukan pemeriksaan kepatuhan baru dari legal atau brand, karena template asal semuanya sudah disetujui.
 
-Karena persetujuan berada pada alatnya dan bukan pada berkasnya (lihat [Bagaimana Lolly dibandingkan](/info/positioning.html)), skala berhenti menjadi persoalan peninjauan. Setujui satu alat kartu sosial terlokalkan sekali saja, lalu hasilkan **10.000 aset dalam 12 bahasa** dari sebuah spreadsheet - dan tidak satu pun di antaranya perlu pemeriksaan kepatuhan baru dari legal atau brand, karena template asal mereka semua sudah disetujui.
+Alat deterministik yang sama mencapai skala itu dengan tiga cara, semuanya menghasilkan output identik yang sudah disetujui sebelumnya:
 
-Alat deterministik yang sama mencapai skala itu melalui tiga jalan, semuanya menghasilkan keluaran identik yang telah disetujui sebelumnya:
+- <!--i:people--> **Seseorang, di dalam aplikasi.** Grid batch `/pro`: tempel atau impor barisnya, dapatkan satu aset jadi per baris, unduh zip-nya. Tanpa keterampilan desain, tanpa tiket, tanpa menunggu.
+- <!--i:code--> **Seorang developer, dari baris perintah.** CLI menjalankan engine yang *sama* dan jalur render yang *sama* secara headless, sehingga alat itu bisa dijalankan berurutan di seluruh 10.000 baris dalam sebuah skrip atau pipeline malam hari. Panggilan `lolly <tool> --field=…` dalam sebuah loop adalah keseluruhan integrasinya.
+- <!--i:cpu--> **Sebuah sistem atau agen AI, lewat MCP.** Alat yang sama dijalankan secara programatik, dengan fidelitas yang sama dan skala yang bahkan lebih besar - karena mesin tidak akan bosan sementara ribuan file terus masuk.
 
-- <!--i:people--> **Seorang manusia, di dalam aplikasi.** Grid batch `/pro`: tempel atau impor barisnya, dapatkan satu aset jadi per baris, unduh zipnya. Tanpa keterampilan desain, tanpa tiket, tanpa menunggu.
-- <!--i:code--> **Seorang developer, dari command line.** CLI menjalankan engine *yang sama* dan jalur render *yang sama* secara headless, sehingga alat itu dapat diurutkan melintasi seluruh 10.000 baris di dalam sebuah skrip atau pipeline malam. Satu panggilan `lolly <tool> --field=…` di dalam loop adalah seluruh integrasinya.
-- <!--i:cpu--> **Sebuah sistem atau agen AI, lewat MCP.** Alat yang sama dioperasikan secara programatis, pada fidelitas yang sama dan pada skala yang lebih besar lagi - karena mesin tidak akan bosan sementara ribuan berkas terus masuk.
+![Mode batch pada instalasi baru: satu baris kosong menunggu sebuah alat, dengan seluruh permukaan spreadsheet dan tombol Render-nya sudah siap sebelum data apa pun tiba](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
 
-Satu set batasan brand, ditetapkan sekali oleh desainer; tiga rute menuju keluaran identik yang telah disetujui - dan rute mesinlah yang menskala paling jauh, karena ia tidak pernah lelah sementara berkas-berkas terus berdatangan.
+Satu set batasan brand, ditetapkan sekali oleh seorang desainer; tiga rute menuju output identik yang sudah disetujui sebelumnya - dan rute mesin berskala paling jauh dari semuanya, karena ia tidak pernah lelah selagi file terus mengalir masuk.
 
 ---
 
-## Gambaran besar
+## Gambaran besar: bagaimana lapisan-lapisannya menyatu
+
+Semua yang ada dari sini ke bawah adalah arsitektur. Diagramnya adalah seluruh sistem dalam satu pandangan: alat adalah
+data di bagian atas, engine di tengah tidak mengetahui apa pun tentang platform mana pun, shell di bawahnya
+mengimplementasikan satu kontrak, dan katalog memasok kontennya.
 
 ```
                 ┌─────────────────────────────────────────────┐
@@ -114,6 +130,8 @@ Satu set batasan brand, ditetapkan sekali oleh desainer; tiga rute menuju keluar
 
 ### Tata letak repositori
 
+Konten dipasang sebagai pack: `community/`, `docs/`, setiap `shells/*`, kedua `services/*` dan `brands/suse` masing-masing adalah repositori tersendiri, di-checkout sebagai git submodule dari repositori ini. Induknya memiliki `engine/`, `schemas/`, `scripts/`, `tests/`, `api/`, `brands/lolly-start/` dan `profiles.json`. Lihat [Panduan Build » Mendapatkan sumbernya](/info/build-guide.html) untuk perintah checkout dan alur kerja lintas-repositori.
+
 ```
 lolly/
 ├── engine/           # Platform-agnostic core. Open source (MPL-2.0).
@@ -128,7 +146,7 @@ lolly/
 │       ├── compose.ts        # resolve nested tool renders (composes)
 │       ├── embed.ts          # parse portable lolly.tools embed URLs
 │       └── bridge/
-│           └── host-v1.ts    # TypeScript interface - the bridge contract
+│           └── host-v1.ts    # type re-export of the @lolly-tools/core contract
 │
 ├── shells/
 │   ├── web/          # PWA - hosted online; primary distribution
@@ -172,6 +190,7 @@ lolly/
 │
 ├── tools/            # profile VIEW (gitignored) - data, not code. Merged from packs:
 │                     #   community/ (public, brand-agnostic, MPL) + brands/<active>/tools (brand-owned).
+│                     #   A SELECTION follows - the mounted set depends on the profile.
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
@@ -187,9 +206,7 @@ lolly/
 │   ├── compress-pdf/      # on-device PDF compressor - recompresses images (file in → smaller file out)
 │   ├── brand-lockup/      # "Brand Lockup" - SUSE logo lockups; HarfBuzz text-to-path (wasm)
 │   ├── chart-creator/     # SVG charts from structured data
-│   ├── filter-duotone/    # two-color photo treatment
-│   ├── filter-halftone/   # photo → vector halftone dot grid
-│   ├── filter-scanline/   # photo → retro posterised scanline grid (SVG / transparent raster)
+│   ├── filter/            # photo effects in one tool - halftone/scanline/posterize/voronoi (vector), duotone/pixel-stretch/imperfections (raster)
 │   ├── meeting-planner/   # global timezone meeting scheduler
 │   ├── calendar-ics/      # event → .ics calendar file plus a card
 │   ├── digi-ad/           # "Animated Ad" - looping banner from scenes
@@ -202,8 +219,6 @@ lolly/
 │   ├── logo-wall/         # many logos → auto-packed grid
 │   ├── logo-lockup-partner/ # SUSE + partner co-brand lockup
 │   ├── web-icon/          # favicon .ico / png / svg from text + colours
-│   ├── filter-posterize/  # photo → flat posterised vector separations
-│   ├── filter-pixel-stretch/ # photo → pixel-smear effect
 │   ├── lottie-digi-ad/    # animated Lottie ad banners
 │   └── pose-geeko/        # pose the SUSE Geeko mascot - print-ready stills
 │
@@ -221,32 +236,30 @@ lolly/
 
 ---
 
-## Model penyampaian platform
+## Model pengiriman platform
 
-Platform berjalan di beberapa permukaan - web PWA, Tauri desktop/seluler, CLI yang dapat diskripkan, dan TUI interaktif. Semuanya memakai engine yang sama dan berkas alat yang sama.
+Platform ini berjalan di berbagai permukaan - web PWA, Tauri desktop/mobile, CLI yang bisa diskrip dan TUI interaktif. Semuanya memakai engine yang sama dan file alat yang sama.
 
 ### Web (PWA) - distribusi utama
+Di-hosting di URL yang dikendalikan SUSE. Bekerja secara offline setelah service worker menyimpan cache alat dan aset. Di sinilah sebagian besar karyawan, vendor dan mitra akan memakai platform ini. Tidak perlu akun - status disimpan di IndexedDB per perangkat.
 
-![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&dark=1&filename=aud-web-split)
+Shell web bersifat responsif dari satu tata letak. Di desktop, sebuah alat adalah sidebar kontrol yang dapat diubah ukurannya di samping panggung pratinjau dengan navigasi kanvas asli-trackpad (roda Cmd/Ctrl atau cubit untuk zoom di sekitar kursor, seret Space atau tombol tengah untuk pan, tombol `0`/`1`/`+`/`−` dan HUD Fit/%). Di mobile (≤640px) kontrol menjadi sheet berlabuh di atas dengan grip seret yang mengunci ke peek/half/full (ketuk untuk beralih) di atas pratinjau layar penuh statis, dan tombol **Render** mengambang membuka kontrol **Export** di popup bottom-sheet. Sentuhan mendapat pinch-zoom dan drag-pan pada pratinjau. Jalur render dan kontrol ekspor identik di keduanya - hanya chrome-nya yang menyesuaikan.
 
-![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![Tampilan split desktop - kontrol yang dihasilkan dari manifest di sebelah kiri, kanvas langsung di sebelah kanan](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&dark=1&filename=aud-web-split)
 
-Dihosting di URL yang dikendalikan SUSE. Bekerja offline setelah service worker menyimpan cache alat dan aset. Di sinilah sebagian besar karyawan, vendor, dan mitra akan memakai platform. Tak perlu akun - status disimpan di IndexedDB per perangkat.
+Tool yang sama pada lebar ponsel, tanpa layout kedua yang perlu dipelihara: kontrol menjadi sheet di bagian atas, preview memenuhi seluruh layar dan pill render mengambang di atasnya.
 
-Shell web bersifat responsif dari satu tata letak. Di desktop, sebuah alat adalah sidebar kontrol yang dapat diubah ukurannya di samping panggung pratinjau dengan navigasi kanvas native-trackpad (Cmd/Ctrl-roda atau cubit untuk zoom mengarah ke kursor, Spasi- atau seret-tengah untuk geser, tombol `0`/`1`/`+`/`−`, dan HUD Fit/%). Di seluler (≤640px) kontrol menjadi lembar berlabuh-atas dengan pegangan seret yang mengunci intip/setengah/penuh (ketuk untuk beralih) di atas pratinjau layar-penuh statis, dan tombol **Render** mengambang membuka kontrol **Ekspor** dalam popup lembar-bawah. Sentuhan mendapat zoom-cubit dan geser-seret pada pratinjau. Jalur render dan kontrol ekspor identik di keduanya - hanya chrome yang mengalir ulang.
+![Audiogram pada layar selebar 430px - sheet kontrol di atas, artwork persegi yang sudah jadi di bawah dan pill render yang mengambang](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
-**Mode batch (`/pro`).** Shell web juga menyertakan grid batch bergaya spreadsheet (`shells/web/src/pro/`) yang merender banyak baris sekaligus di satu atau banyak alat. Ia melakukan bolak-balik CSV/TSV plus tempel spreadsheet, template/format/ukuran/unit/dpi per baris, panel samping editor-blok dengan pratinjau langsung, kolom ekspor yang dapat diciutkan, bilah tag "relevansi" per baris, penataan-ulang baris dengan pegangan-seret kiri, konfirmasi hapus dua langkah, sesi batch tersimpan, dan unduhan `.zip`. Inilah permukaan satu-ke-banyak di balik pemosisian "pembuatan konten massal".
+**Mode batch (`/pro`).** Web shell juga menyediakan grid batch bergaya spreadsheet (`shells/web/src/pro/`) yang me-render banyak baris sekaligus di satu atau banyak tool. Ia melakukan round-trip CSV/TSV plus tempel spreadsheet, template/format/ukuran/unit/dpi per baris, panel samping blocks-editor dengan preview langsung, kolom ekspor yang bisa dilipat, bar tag "relevance" per baris, susun ulang baris dengan drag-handle di kiri, konfirmasi hapus dua langkah, sesi batch tersimpan dan unduhan `.zip`. Inilah permukaan satu-ke-banyak di balik positioning "mass content generation".
 
-### Tauri desktop / seluler
-Aplikasi native terpaket (jejak kecil via Tauri). Menyediakan ketersediaan offline penuh, akses berkas untuk alat yang bergantung pada CLI (PDF Smasher, Font Outliner), dan akses kamera. Dijadwalkan untuk peningkatan perkakas pertengahan-2026.
+### Tauri desktop / mobile
+Aplikasi native yang dikemas (footprint kecil via Tauri). Menyediakan ketersediaan offline penuh, akses filesystem untuk tool yang bergantung pada CLI (PDF Smasher, Font Outliner) dan akses kamera. Dijadwalkan untuk peningkatan tooling pertengahan 2026.
 
 ### CLI
-
-Tool yang sama pada lebar ponsel, tanpa tata letak kedua yang harus dipelihara: kontrolnya menjadi lembar di bagian atas, pratinjau mengisi seluruh layar, dan pil Render mengapung di atasnya.
-
 `lolly <tool-id> [--input=value ...] --output=file.png`
 
-Pengguna desktop dapat menjalankan banyak alat dari terminal. Shell CLI memuat engine yang sama, membuat DOM jsdom, menjalankan jalur render yang sama, dan menulis berkasnya. Mode URL adalah transportnya - CLI bukan implementasi terpisah. Ini menjamin keluaran CLI dan GUI identik.
+Pengguna desktop dapat menjalankan banyak tool dari terminal. CLI shell memuat engine yang sama, membuat DOM jsdom, menjalankan render path yang sama dan menulis file. URL mode adalah transportnya - CLI bukan implementasi terpisah. Ini menjamin output CLI dan GUI identik.
 
 ```bash
 lolly qr-code --url=https://suse.com --output=qr.svg
@@ -258,94 +271,107 @@ lolly qr-code                # lists inputs for that tool
 ### TUI
 `npm run tui`
 
-Padanan interaktif dari CLI: aplikasi terminal layar-penuh yang mengutamakan keyboard (dibangun di atas Ink) untuk menjelajahi alat, mengisi input, menyimpan proyek, dan mengekspor - semuanya tanpa GUI. Host bridge-nya **memakai ulang implementasi CLI** untuk format bebas-DOM (SVG/EMF/EPS/HTML + teks/data), dan menambahkan status pada-disk di bawah `~/.lolly` plus pratinjau inline opsional. Selain itu, ia punya **tingkat render browser**: Chromium headless bercakupan (yang sama yang dipasang server MCP) yang menghasilkan raster/PDF/video dan tangkapan URL-langsung sesuai permintaan - menggerakkan salinan terbangun dari shell web sehingga keluarannya identik, dan meluncur hanya saat Anda pertama kali mengekspor format semacam itu. Jadi `url-shot` (dengan pangkas + rewarna + PDF/SVG vektor) dan setiap alat raster/pdf juga berjalan di terminal. Lihat [panduan TUI](/info/tui.html).
+Rekan interaktif dari CLI: aplikasi terminal full-screen yang mengutamakan keyboard (dibangun di atas Ink) untuk menjelajahi tool, mengisi input, menyimpan proyek dan mengekspor - semua tanpa GUI. Host bridge-nya **menggunakan kembali implementasi CLI** untuk format bebas-DOM (SVG/EMF/EPS/HTML + text/data), dan menambahkan state on-disk di bawah `~/.lolly` plus preview inline opsional. Selain itu ia memiliki **tier render browser**: Chromium headless terbatas (yang sama dengan yang diinstal server MCP) yang menghasilkan raster/PDF/video dan capture URL langsung sesuai permintaan - menjalankan salinan web shell yang sudah dibuat sehingga output identik, dan hanya diluncurkan saat pertama kali Anda mengekspor format semacam itu. Jadi `url-shot` (dengan crop + recolor + vector PDF/SVG) dan setiap tool raster/pdf juga berjalan di terminal. Lihat [panduan TUI](/info/tui.html).
 
-Di permukaan mana pun Anda berada, tab Kapabilitas pada dasbor adalah peta lengkap tentang apa yang dinyatakan mampu dilakukan platform ini - terkelompok dan mudah dibaca tanpa membuka satu tool pun.
+Di permukaan mana pun Anda berada, tab Capabilities pada dashboard adalah peta lengkap dari apa yang dinyatakan mampu dilakukan platform, dikelompokkan dan mudah dibaca tanpa membuka satu tool pun.
 
 ---
 
-## Kategori alat
+## Kategori tool
 
-![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=aud-utilities)
+Tool diberi tag `category` di manifest-nya untuk pengelompokan galeri.
 
-Alat ditandai dengan `category` di manifesnya untuk pengelompokan galeri.
+Baris didaftar sesuai urutan bagian galeri. Bagian `utility` selalu dirender **terakhir** di galeri (setelah setiap kategori lain, termasuk yang akan datang) - itulah laci "Offline Utilities" on-device.
 
-Baris terdaftar dalam urutan bagian galeri. Bagian `utility` selalu dirender **terakhir** di galeri (setelah setiap kategori lain, termasuk yang akan datang) - inilah laci "Utilitas Offline" pada-perangkat.
-
-| Kategori | Alat yang dirilis | Direncanakan |
+| Kategori | Contoh | Direncanakan |
 |---|---|---|
-| `everyone` | Generator Kode QR, Kartu Kutipan, Tanda Tangan Email, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Alat Tulis Gambar Karyawan |
-| `designer` | Brand Lockup, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
-| `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS | Alat Tulis Acara, Tanda Pengenal Nama Massal, Kartu Agenda Ruang |
-| `product` | - | Peringatan CVE, Pengumuman Rilis Produk, Gambar OG Blog |
-| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Design | Konverter unit/format, lebih banyak utilitas privasi pada-perangkat |
+| `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
+| `designer` | Brand Lockup, Design, Chart Creator, D3 Chart Studio, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | Event Stationery, Bulk Name Badges, Room Agenda Cards |
+| `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
+| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Konverter unit/format, lebih banyak utilitas privasi on-device |
 
-Alat juga diklasifikasikan berdasarkan status: `official` (disetujui brand, tanpa watermark), `community` (kontribusi eksternal), `experimental` (ekspor ber-watermark). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap, dan Diagram Builder saat ini menyandang status `experimental`; Web Icon Maker dan Design dirilis sebagai alat `community`.
+Sel-sel tersebut adalah **contoh, bukan inventaris**. Tool apa saja yang ada adalah properti dari profil yang Anda pasang, bukan dari halaman ini: sebuah brand pack menambahkan miliknya sendiri, dan dapat mengecualikan tool community yang tidak ingin dikirimkannya. `catalog/tools/index.json` - dihasilkan dari manifest, dan registry yang sebenarnya dibaca galeri - adalah daftar otoritatif; untuk menghitung apa yang dipasang sebuah profil, hitung manifest-nya (`ls community/*/tool.json brands/*/tools/*/tool.json`) daripada mempercayai angka yang tertulis di sini. (Sebuah id tool yang ada di dua pack hanya terpasang sekali, dari pack yang menang.)
 
-**Design** adalah alat pertama yang dibangun pada mode kanvas-bebas `render.layout: "editor"` - permukaan manipulasi-langsung tanpa-chrome tempat Anda menyeret, mengubah ukuran, memutar, dan mengunci kotak teks, bentuk, dan gambar, lalu mengekspor melalui jalur render yang sama seperti setiap alat lain.
+Tool juga diklasifikasikan menurut status: `official` (disetujui brand, tanpa watermark), `community` (kontribusi eksternal), `experimental` (ekspor berwatermark). Sebagian besar library berstatus `official`; studio yang lebih baru dan tool capture cenderung berada di `community` atau `experimental` selagi menetap. Setiap permukaan menampilkan badge, sehingga pembaca tahu apa yang mereka ambil sebelum membukanya - dan, seperti sel kategori di atas, keanggotaan per-status bergerak terlalu cepat untuk didaftar di sini. Baca dari galeri atau index yang dihasilkan.
 
-**Strip Hidden Data** adalah **utilitas pada-perangkat** pertama (`privacy: "on-device"`): alat transformasi-konten yang mengambil berkas yang *Anda* sediakan, memprosesnya sepenuhnya di browser, dan mengembalikan salinan bersih - tak pernah diunggah, tak pernah di-watermark, tanpa cap provenans. **Text Helper** adalah yang kedua - bengkel kerja pada-perangkat untuk pekerjaan tempel-ke-situs-web sehari-hari (format JSON, dekode JWT, Base64, enkode/dekode URL, hashing SHA). **Compress PDF** adalah yang ketiga - ia mengecilkan PDF dengan mengompres ulang gambarnya, lagi-lagi sepenuhnya pada-perangkat. Ketiganya menyandang teks lencana "Berjalan di perangkat Anda - tak ada yang diunggah". Ini adalah awal dari kategori utilitas-privasi yang menggantikan penyerahan berkas rahasia ke situs web tujuan-tunggal.
+**Design** adalah tool pertama yang dibangun di atas mode free-canvas `render.layout: "editor"` - permukaan direct-manipulation tanpa chrome tempat Anda menyeret, mengubah ukuran, memutar dan menempelkan (snap) kotak teks, bentuk dan gambar, lalu mengekspor melalui render path yang sama seperti setiap tool lainnya.
 
-> Catatan: `category` dan `status` didenormalisasi ke dalam `catalog/tools/index.json` (registry yang dibaca galeri) dari setiap `tool.json`. Manifes adalah sumber kebenaran - indeks **dihasilkan** oleh `npm run build:catalog` dan `npm run validate:catalog` menggagalkan CI jika indeks yang di-commit menyimpang dari manifes.
+**Strip Hidden Data** adalah **utilitas on-device** pertama (`privacy: "on-device"`): tool transformasi konten yang mengambil file yang *Anda* berikan, memprosesnya sepenuhnya di browser dan mengembalikan salinan bersih - tidak pernah diunggah, tidak pernah diberi watermark, tidak ada provenance yang distempel. **Text Helper** adalah yang kedua - workbench on-device untuk pekerjaan tempel-ke-situs sehari-hari (format JSON, decode JWT, Base64, encode/decode URL, hashing SHA). **Compress PDF** adalah yang ketiga - ia mengecilkan PDF dengan mengompresi ulang gambar-gambarnya, juga sepenuhnya on-device. Penanda dan teks badge-nya "Runs on your device - nothing is uploaded" kini mencakup seluruh rangkaian transformasi: Strip Hidden Data, Text Helper, Compress PDF, **Convert Image** (HEIC/TIFF/AVIF → WebP/JPG/PNG), **Convert Font**, **Redact** (menghancurkan area pada gambar, SVG atau PDF), **Prompt to Image** dan **Rebrand a Deck** (mengubah tema `.pptx` di tempat) di mana profil memasangnya. Ini adalah kategori utilitas privasi yang menggantikan penyerahan file rahasia ke situs-situs bertujuan tunggal.
+
+![Laci Utilities, tempat setiap kartu adalah tool yang mentransformasi file yang sudah Anda miliki](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=aud-utilities)
+
+> Catatan: `category` dan `status` didenormalisasi ke dalam `catalog/tools/index.json` (registry yang dibaca galeri) dari setiap `tool.json`. Manifest adalah source of truth - index **dihasilkan** oleh `npm run build:catalog` dan `npm run validate:catalog` akan gagal di CI jika index yang di-commit menyimpang dari manifest.
 
 ---
 
-## Komitmen arsitektur
+## Komitmen arsitektural
 
-Keputusan-keputusan ini sudah final. Mengubah salah satunya adalah upaya besar - mereka membentuk setiap keputusan lain dalam basis kode.
+Keputusan-keputusan ini sudah final. Mengubah salah satunya adalah upaya besar - keputusan ini membentuk setiap keputusan lain dalam codebase.
 
-### 1. Alat deklaratif, dengan jalan keluar imperatif
+### 1. Tool deklaratif, dengan jalan keluar imperatif
 
-![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-street-map-controls)
+Sebuah tool adalah manifest (`tool.json`) + template (`template.html`) + `hooks.js` opsional.
 
-Sebuah alat adalah manifes (`tool.json`) + template (`template.html`) + `hooks.js` opsional.
+**Manifest mendeklarasikan input.** Bukan template. Input tidak disimpulkan dari token Handlebars. Manifest adalah kontraknya; template mengonsumsi variabel bernama melalui `{{id}}`.
 
-**Manifes mendeklarasikan input.** Bukan template. Input tidak disimpulkan dari token Handlebars. Manifes adalah kontraknya; template mengonsumsi variabel bernama lewat `{{id}}`.
+![Tumpukan kontrol Street Map - dropdown kota, pemilihan tema, slider ketebalan dan pemicu warna, masing-masing diambil dari satu baris manifest](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-street-map-controls)
 
-**Hook bersifat opsional.** Sebagian besar alat murni deklaratif - manifes + template sudah cukup. Alat yang butuh nilai terhitung (enkode QR, pembentukan data chart) menyediakan `hooks.js` yang mengekspos fungsi siklus-hidup bernama (`onInit`, `onInput`, `onFrame` - hook kamera-langsung per-frame untuk alat yang reaktif-gerak - `beforeExport`, `afterExport`, dan `exportFile` - jalur transformasi berkas-masuk/berkas-keluar yang dipakai utilitas pada-perangkat seperti Strip Hidden Data). (`beforeRender` dicadangkan dalam kontrak hook tetapi saat ini tak punya situs pemanggilan - jangan mengandalkannya.) Host memuat hook lewat `new Function('host', …)` dengan capability bridge disuntikkan sebagai lingkup closure. Ini adalah **kontrak portabilitas, bukan sandbox keamanan**: hook tetap berjalan di realm halaman dan *dapat* menjangkau `window`/`fetch`/`document` di shell browser - `host.*` adalah permukaan portabel yang didukung, bukan batasan yang dipaksakan. Hasil hook asinkron dibatasi waktu (onInit 5d, onInput 2d, lainnya 5d) dan hasil yang terlambat dibuang; hook *sinkron* yang lepas kendali tak dapat didahulukan. Karena itu, kode hook pihak-ketiga yang tak tepercaya tidak aman untuk dijalankan sampai isolasi Worker dirilis.
+**Hooks bersifat opsional.** Sebagian besar tool sepenuhnya deklaratif - manifest + template sudah cukup. Tool yang membutuhkan nilai terhitung (encoding QR, pembentukan data chart) menyediakan `hooks.js` yang mengekspos fungsi lifecycle bernama (`onInit`, `onInput`, `onFrame` - hook live-camera per-frame untuk tool motion-reactive - `onLevel`, `beforeExport`, `afterExport`, `exportFile` - jalur transformasi file-in/file-out yang digunakan utilitas on-device seperti Strip Hidden Data - dan `exportStill`, untuk tool yang memiliki raster mendalamnya sendiri). Host memuat hooks melalui `new Function('host', …)` dengan capability bridge disuntikkan sebagai closure scope. Ini adalah **kontrak portabilitas, bukan sandbox keamanan**: hooks tetap berjalan dalam realm halaman dan *dapat* menjangkau `window`/`fetch`/`document` di browser shell - `host.*` adalah permukaan portabel yang didukung, bukan batas yang dipaksakan. Hasil hook async dibatasi waktu (`onInit` 5s, `onInput` 2s, `beforeExport`/`afterExport` 5s, `exportFile`/`exportStill` 10s) dan hasil yang terlambat dibuang; hook *sinkron* yang lepas kendali tidak dapat dihentikan paksa. Karena itu, kode hook pihak ketiga yang tidak tepercaya belum aman dijalankan sampai isolasi Worker hadir.
 
-Ini penting karena: alat deklaratif dapat diautorkan oleh non-developer. Jika setiap alat adalah aplikasi web, catatan risiko "keahlian terbatas untuk membuat/memelihara template pekerja keras" menjadi kemacetan permanen.
+Ini penting karena: tool deklaratif dapat dibuat oleh non-developer. Jika setiap tool adalah aplikasi web, catatan risiko "keterbatasan skill untuk membuat/memelihara template workhorse" menjadi bottleneck permanen.
 
-### 2. Alat dan aset adalah data, bukan kode terbundel
+### 2. Tool dan asset adalah data, bukan kode yang dibundel
 
-Aplikasi web dan Tauri mengambil katalog alat dan aset dari URL yang diketahui saat boot, menyimpannya di cache lokal, dan beroperasi atas apa pun yang ada di sana. **Menambahkan kartu acara baru atau aset musiman tidak memerlukan rilis aplikasi.**
+Aplikasi web dan Tauri mengambil katalog tool dan asset dari URL yang diketahui saat boot, menyimpannya secara lokal (cache) dan beroperasi dengan apa pun yang ada di sana. **Menambahkan tile event baru atau asset musiman tidak memerlukan rilis aplikasi.**
 
-Byte aset di-checksum SHA-256 untuk mencegah peracunan CDN. `id` + `version` aset menggerakkan invalidasi cache.
+Byte asset di-checksum dengan SHA-256 untuk mencegah CDN poisoning. `id` + `version` asset menggerakkan invalidasi cache.
 
-### 3. Capability Bridge adalah satu-satunya API yang dilihat alat
+### 3. Capability Bridge adalah satu-satunya API yang dilihat tool
 
-Alat tak pernah menyentuh DOM di luar area templatenya, tak pernah memanggil `fetch` secara langsung, tak pernah membaca berkas. Mereka memanggil metode `host.*` berversi. Bridge didefinisikan di `engine/src/bridge/host-v1.ts`:
+Tool tidak pernah menyentuh DOM di luar area template-nya, tidak pernah memanggil `fetch` secara langsung, tidak pernah membaca filesystem. Mereka memanggil metode `host.*` yang berversi. Definisi kanonis kontraknya adalah `packages/core/src/host-v1.ts` - SDK tool-author `@lolly-tools/core`, sehingga pihak ketiga dapat membangun di atasnya tanpa bergantung pada engine; `engine/src/bridge/host-v1.ts` adalah re-export tipe darinya, dan kode engine/shell tetap mengimpor dari path tersebut tanpa perubahan:
 
-| API Bridge | Fungsinya |
+| Bridge API | Apa yang dilakukannya |
 |---|---|
-| `host.profile` | Nama depan, email, foto kepala, kota, dll. pengguna. Mengisi input sebelumnya via `bindToProfile`. |
-| `host.assets` | Kueri katalog, resolusi aset, UI pemilih yang disediakan host. |
-| `host.state` | Simpan / muat slot input. IndexedDB di web, berkas di Tauri, memori di CLI. |
+| `host.profile` | Nama depan, email, headshot, kota pengguna, dll. Mengisi input di awal via `bindToProfile`. |
+| `host.assets` | Query katalog, resolusi asset, UI picker yang disediakan host. |
+| `host.state` | Simpan / muat slot input. IndexedDB di web, filesystem di Tauri, memory di CLI. |
 | `host.clipboard` | Menulis teks atau gambar ke clipboard (dengan fallback platform). |
-| `host.export` | Meraster atau menyerialkan target render. Menerapkan watermark untuk alat eksperimental. |
-| `host.net` | Fetch beralamat-izin - hanya tersedia jika alat mendeklarasikan kapabilitas `"network"`. (Tak ada alat rilis yang saat ini memakainya.) |
+| `host.export` | Merasterisasi atau menserialisasi target render. Menerapkan watermark untuk tool experimental. |
+| `host.net` | Fetch yang di-allowlist - hanya tersedia jika tool mendeklarasikan capability `"network"`. (Belum ada tool yang dirilis menggunakannya saat ini.) |
 
-Permukaan opsional dan aditif muncul hanya saat sebuah shell menyediakannya. Dua di antaranya **berpagar-kapabilitas** - terekspos hanya saat alat mendeklarasikan flag yang cocok: `host.compose` (menyematkan render alat lain - `compose`) dan `host.capture` (tangkapan halaman untuk URL Screenshot - `capture`). Sisanya **terdeteksi-fitur** - hadir kapan pun shell dapat menyediakannya: `host.text` (teks-ke-path via HarfBuzz WASM; kapabilitas `wasm` menandai alat yang mengandalkannya), `host.pdf` (penguraian/kompresi PDF, dipakai Strip Hidden Data dan Compress PDF), dan `host.tokens` (token desain DTCG). Kapabilitas yang dapat dideklarasikan adalah: `network`, `filesystem`, `clipboard`, `camera`, `ffmpeg`, `wasm`, `capture`, `compose`.
+Permukaan opsional yang bersifat aditif hanya muncul saat shell menyediakannya. Sebagian bersifat **capability-gated** - hanya diekspos saat tool mendeklarasikan flag yang sesuai: `host.compose` (menyematkan render tool lain - `compose`), `host.capture` (capture halaman untuk URL Screenshot - `capture`) dan `host.recorder` (capture mic/kamera/display untuk tool recording - `microphone` / `camera` / `screen`). Sisanya bersifat **feature-detected** - hadir kapan pun shell dapat menyediakannya, dengan tool tetap memiliki fallback untuk shell yang tidak bisa.
 
-Alat yang sama berjalan di browser, Tauri, dan CLI headless karena setiap shell mengimplementasikan antarmuka ini - alat tak pernah tahu ia sedang di mana.
+Beberapa permukaan utama, untuk menunjukkan cakupannya - [Host API](/info/host-api.html) mendokumentasikan setiap satu, dan `packages/core/src/host-v1.ts` adalah kontraknya sendiri:
 
-Bridge berversi. Menambahkan metode adalah versi minor. Menghapus atau mengubah tanda tangan adalah kenaikan versi mayor. Saat v2 dirilis, v1 harus tetap bekerja.
+| Surface | Sejak | Apa yang ditambahkannya |
+|---|---|---|
+| `host.tokens` | 1.0 | Token desain DTCG - primitif milik brand sendiri |
+| `host.text` | 1.0 | Text-to-path via HarfBuzz WASM (capability `wasm` menandai tool yang bergantung padanya) |
+| `host.media` | 1.4 | Frame kamera langsung yang menggerakkan hook `onFrame`. Progressive enhancement, sengaja *tidak* di-gate oleh flag `camera` - tool semacam itu tetap berfungsi sebagai tool still-image biasa |
+| `host.color` | 1.40 | Matematika warna perseptual: ΔEOK, kontras WCAG + APCA, ramp OKLab, class-breaks, palet kategorikal, skema harmoni (1.60), pencampuran CSS Color 4 dan gradient baking (1.68). Murni dan sinkron - shell melampirkan `makeColorApi()` milik engine alih-alih mengimplementasikan apa pun, sehingga tidak bisa menyimpang |
+| `host.images` | 1.60 | Decode / resize / re-encode byte di device - jalur convert (HEIC → JPEG, kompres ke WebP, downscale). Dirilis di web shell sebagai lazy facade, sehingga decoder HEIC tidak pernah masuk ke boot chunk |
+| `host.geom` | 1.64 | Geometri vektor eksak: path boolean, offsetting, stroke-to-fill, spline lowering, simplifikasi, hit testing. Juga murni, sinkron dan dilampirkan dari engine (`makeGeomApi()`); kegagalan *dikembalikan*, tidak pernah di-throw |
 
-### 4. ID aset selamanya
+Sisanya mengikuti aturan yang sama dan didokumentasikan bersamanya: `pdf` (1.8) dan `pptx` (1.58) untuk operasi dokumen on-device, `audio` (1.71) dan `speech` (1.96) untuk analisis klip dan TTS/transkripsi on-device, `viz` (1.72) untuk kontrak placeholder MilkDrop, `codec` (1.100) dan `layers` (1.102) untuk output deep-bit dan layered-bitmap, `upscale` (1.101) dan `matte` (1.103) untuk model on-device, `raster` (1.105) untuk hook yang melakukan pekerjaan pixel sendiri, `connectors` (1.106) untuk panah yang aman diekspor dan `c2pa` (1.85) untuk menandatangani byte yang sudah jadi. Jumlahnya bertambah; aturannya tidak.
+
+Capability yang dapat dideklarasikan adalah: `network`, `filesystem`, `clipboard`, `camera`, `microphone`, `screen`, `ffmpeg`, `wasm`, `capture`, `compose`. (`screen`, ditambahkan di 1.54, adalah capture display via `host.recorder` - pengguna memilih layar/window/tab di UI native browser; berbeda dari `capture`, yang merasterisasi URL yang ditentukan tool itu sendiri.)
+
+Tool yang sama berjalan di browser, Tauri dan CLI headless karena setiap shell mengimplementasikan interface ini - tool tidak pernah tahu ia berada di mana.
+
+Bridge ini berversi. Menambahkan metode adalah minor version. Menghapus atau mengubah signature adalah major version bump. Saat v2 dirilis, v1 harus tetap berfungsi.
+
+### 4. ID asset berlaku selamanya
 
 `suse/logo/primary` adalah kontrak. Setelah dipublikasikan:
-- ID tak pernah berubah, tak pernah dipakai ulang.
-- Perubahan byte → naikkan `version` di manifes.
-- Digantikan oleh aset baru → setel `deprecated: true` dan opsional `replacedBy`.
-- Referensi yang ada selalu ter-resolve.
+- ID tidak pernah berubah, tidak pernah digunakan ulang.
+- Perubahan byte → naikkan `version` di manifest.
+- Digantikan oleh asset baru → set `deprecated: true` dan opsional `replacedBy`.
+- Referensi yang sudah ada selalu ter-resolve.
 
-Ini membuat status alat tersimpan dan tautan-berbagi-URL awet selama bertahun-tahun.
+Ini membuat state tool tersimpan dan link yang dibagikan via URL tahan lama selama bertahun-tahun.
 
-### 5. Mode URL adalah kelas-utama
-
-![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-url-mode-qr)
-
-![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-url-palette)
+### 5. URL mode bersifat first-class
 
 Setiap input harus dapat diekspresikan sebagai parameter URL:
 
@@ -353,113 +379,98 @@ Setiap input harus dapat diekspresikan sebagai parameter URL:
 lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H
 ```
 
-Mode CLI adalah mode URL dengan transport berbeda - shell CLI membangun objek status-URL dari argv dan menjalankan pipeline engine yang **sama**. Ada satu jalur render. CLI tak bisa menyimpang dari GUI karena ia bukan implementasi terpisah.
+![Link itu sendiri, tanpa apa pun yang lain di dalamnya, adalah asset yang sudah jadi](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-url-mode-qr)
 
-`url-mode.ts` menangani bolak-baliknya (parse dan serialize). Parameter tercadang (tak pernah diteruskan ke alat sebagai input): `format`, `export`, `copy`, `slot`, `output`, `filename`, `_v`, `z` (status terkemas - token "Tautan terpendek"), `width`/`w`, `height`/`h`, `unit`, `dpi`, `profile`, `password`, `bleed`, `marks`, `full`, `options`, `nostage`. Input aset dalam mode URL diserialkan berdasarkan `id`-nya; runtime me-resolve-nya via `host.assets.get()` sebelum hidrasi. `width`/`height` adalah nilai dalam `unit` (default `px`, juga `mm`/`cm`/`in`/`pt`/`pc`); dengan unit fisik, `dpi` menyetel resolusi raster. Mereka menyetel ukuran dokumen kanvas dan mengisi sebelumnya panel dimensi ekspor.
+Mode CLI adalah URL mode dengan transport yang berbeda - CLI shell membangun objek URL-state dari argv dan menjalankan pipeline engine yang **sama**. Hanya ada satu render path. CLI tidak bisa menyimpang dari GUI karena ia bukan implementasi terpisah.
+
+`url-mode.ts` menangani round-trip (parse dan serialize). Sekumpulan **parameter reserved** tidak pernah diteruskan ke tool sebagai input: kontrol output (`format`, `export`, `copy`, `filename`, `width`/`w`, `height`/`h`, `unit`, `dpi`), dial print dan provenance (`bleed`, `marks`, `profile`, `password`, `c2pa`, `imprint`, `durable`, `meta`, `hdr`, `depth`, `cuts`) dan pembawa state (`template`, `z` - token terpaket "Shortest link" - dan `zx`, versi terenkripsi dengan password yang sama). Set `RESERVED` di `engine/src/url-mode.ts` adalah otoritasnya dan dipatok oleh sebuah test; [URL Mode](/info/url-mode.html) mendokumentasikan setiap satu darinya, termasuk beberapa yang tidak tercantum di sini. Input asset dalam URL mode diserialisasi menurut `id`-nya; runtime me-resolve-nya via `host.assets.get()` sebelum hidrasi. `width`/`height` adalah nilai dalam `unit` (default `px`, juga `mm`/`cm`/`in`/`pt`/`pc`); dengan unit fisik, `dpi` menetapkan resolusi raster. Keduanya menetapkan ukuran dokumen canvas dan mengisi di awal panel dimensi ekspor.
+
+Karena setiap input berpindah dalam link, perubahan parameter berarti asset jadi yang berbeda. Seluruh palet ini adalah satu warna seed, satu harmoni dan satu jumlah step:
+
+![Sembilan langkah dalam empat corak warna, semuanya tumbuh dari satu warna benih yang dibawa dalam tautan](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-url-palette)
 
 ### 6. Penyimpanan lewat bridge, bukan langsung
 
-Shell web: IndexedDB. Tauri: berkas. CLI: dalam-memori. Alat hanya melihat `host.state.save(slot, data)` dan `host.state.load(slot)`. `localStorage` tidak dipakai - terlalu kecil dan tak bisa menampung blob.
+Web shell: IndexedDB. Tauri: filesystem. CLI: in-memory. Tools hanya melihat `host.state.save(slot, data)` dan `host.state.load(slot)`. `localStorage` tidak digunakan - terlalu kecil dan tidak bisa menyimpan blob.
 
-Pengguna dapat menyimpan beberapa slot edit bernama per alat dan kembali ke setiap sesi nanti. Tak perlu pembuatan akun; status bersifat per-perangkat. Karena bridge adalah satu-satunya jahitan, status per-perangkat itu juga *portabel*: `shells/web/src/data-transfer.ts` membaca semuanya kembali lewat `host.profile`/`host.state`/`host.assets` ke dalam satu zip `lolly-backup` yang diimpor pada instalasi lain mana pun - jawaban offline untuk "pindah ke perangkat baru" yang tak butuh server (spesifikasi lengkap: `docs/data-transfer.md`). Integrasi SUSE ID (sinkronisasi multi-perangkat) adalah tonggak masa depan di atas ini.
+Pengguna dapat menyimpan beberapa slot edit bernama per tool dan kembali ke tiap sesi nanti. Tidak perlu membuat akun; state bersifat per perangkat. Karena bridge adalah satu-satunya titik sambung, state per perangkat itu juga *portabel*: `shells/web/src/data-transfer.ts` membaca kembali semuanya lewat `host.profile`/`host.state`/`host.assets` menjadi satu zip `lolly-backup` yang bisa diimpor di instalasi lain - jawaban offline untuk "pindah ke perangkat baru" yang tidak butuh server (spesifikasi lengkap: `docs/data-transfer.md`). Integrasi SUSE ID (sinkronisasi multi-perangkat) adalah milestone masa depan di atas mekanisme ini.
 
-### 7. Tag kematangan menjawab risiko "disetujui brand" secara struktural
+### 7. Tag kematangan menjawab risiko "disetujui brand" secara desain
 
-Karena setiap input ikut berjalan di dalam tautan, satu perubahan parameter berarti satu aset jadi yang berbeda. Seluruh palet ini hanya berasal dari satu warna benih, satu harmoni, dan satu jumlah langkah:
+Setiap tool mendeklarasikan `status: official | community | experimental` dalam manifesnya. Galeri diurutkan berdasarkan status. Tool experimental otomatis membubuhkan watermark pada ekspornya - watermark diterapkan oleh `host.export.render`, bukan oleh tool, sehingga tidak bisa dinonaktifkan oleh penulis tool non-official.
 
-Setiap alat mendeklarasikan `status: official | community | experimental` di manifesnya. Galeri mengurutkan berdasarkan status. Alat eksperimental mem-watermark ekspornya secara otomatis - watermark diterapkan oleh `host.export.render`, bukan oleh alat, sehingga tak bisa dinonaktifkan oleh autor alat non-resmi.
+Ini adalah jawaban struktural atas risiko persepsi bahwa memakai tool apa pun berarti disetujui brand. Jawaban proses (antrean review, gating SUSE ID) melapis di atasnya.
 
-Ini adalah jawaban struktural terhadap risiko persepsi bahwa memakai alat apa pun menyiratkan persetujuan brand. Jawaban proses (antrean tinjauan, pemagaran SUSE ID) berlapis di atasnya.
+### 8. Input tool ditipekan lewat manifes, termasuk aset
 
-### 8. Input alat diketik lewat manifes, termasuk aset
+Input mendeklarasikan `type`: `text`, `longtext`, `number`, `boolean`, `color`, `select`, `asset`, `date`, `time`, `datetime-local`, `url`, `blocks`, `vector`, `table` dan `file`. Host merender kontrol generik per tipe dari manifes - tool tidak menulis kode kontrol sama sekali. (Pra-isi dari profil pengguna bukan tipe - input apa pun bisa membawa `bindToProfile`.) Tiga di antaranya membawa bobot lebih dari yang lain:
 
-Input mendeklarasikan `type`: `text`, `longtext`, `number`, `boolean`, `color`, `select`, `asset`, `date`, `time`, `datetime-local`, `url`, `profile`, `blocks`, `vector`, dan `file`. Host merender kontrol generik per tipe dari manifes - alat tak menulis kode kontrol sama sekali. Tiga di antaranya lebih berbobot dari sisanya:
+- **`asset`** (dengan `filter` dan `allowUpload`) adalah jembatan ke sistem aset global; `allowUpload: false` adalah tuas penegakan brand untuk hal seperti logo ubin sponsor yang hanya boleh berupa aset pustaka. Unggahan pengguna memakai bentuk `AssetRef` yang sama dengan aset pustaka, jadi tool memperlakukannya secara identik.
+- **`blocks`** adalah grup field berulang - mini-tabel di dalam satu input, diedit di panel samping, dengan menu tambah yang bertipe/terdiskriminasi dan field aset per blok. Mengklik blok yang dirender di kanvas memfokuskan baris blok itu. Dipakai oleh `meeting-planner`, `chart-creator`, `event-name-badge`, `wayfinding-signage`, `color-block` dan `digi-ad`.
+- **`vector`** mengelompokkan sekumpulan angka tetap (misalnya sebuah transform) menjadi satu kontrol majemuk; **`file`** menyimpan file milik pengguna sendiri sebagai byte di memori untuk utilitas transformasi on-device (misalnya `strip-data` dan `compress-pdf`).
 
-- **`asset`** (dengan `filter` dan `allowUpload`) adalah jembatan ke sistem aset global; `allowUpload: false` adalah tuas keterberlakuan-brand untuk hal-hal seperti logo kartu-sponsor di mana hanya aset pustaka yang diizinkan. Unggahan pengguna memakai bentuk `AssetRef` yang sama seperti aset pustaka, sehingga alat menanganinya secara identik.
-- **`blocks`** adalah grup-bidang berulang - mini-tabel di dalam satu input, disunting di panel samping, dengan menu tambah yang diketik/diskriminasi dan bidang aset per-blok. Mengeklik blok yang dirender pada kanvas memfokuskan baris blok itu. Dipakai oleh `meeting-planner`, `chart-creator`, `event-name-badge`, `wayfinding-signage`, `color-block`, dan `digi-ad`.
-- **`vector`** mengelompokkan sekumpulan angka tetap (mis. sebuah transform) menjadi satu kontrol majemuk; **`file`** menahan berkas milik pengguna sebagai byte dalam memori untuk utilitas transformasi pada-perangkat (mis. `strip-data` dan `compress-pdf`).
+### 9. Template tanpa logika (Handlebars, bukan EJS)
 
-### 9. Template bersifat tanpa-logika (Handlebars, bukan EJS)
+Handlebars dipilih dibanding EJS secara sengaja:
+- Tanpa logika. Template bisa ditulis oleh non-developer.
+- Aman secara default. `{{x}}` melakukan HTML-escape; `{{{x}}}` bersifat raw opt-in.
+- Tidak ada JS bebas dalam template berarti tidak ada permukaan audit XSS per template.
 
-Handlebars dipilih ketimbang EJS secara sengaja:
-- Tanpa logika. Template dapat diautorkan oleh non-developer.
-- Aman secara default. `{{x}}` meng-escape HTML; `{{{x}}}` adalah raw opsional.
-- Tak ada JS sembarang dalam template berarti tak ada permukaan audit XSS per-template.
+Logika berada di `hooks.js` tempat ia eksplisit dan bisa direview. Helper Handlebars yang tersedia: `{{default}}`, `{{upper}}`, `{{lower}}`, `{{eq}}`, `{{markdown}}`, `{{asset ref}}`, `{{asset ref "property"}}` (ditambah helper format data `icsStamp`/`rfcText`/`csvCell` yang dipakai oleh template `.ics`/`.vcf`/`.csv` sejenis).
 
-Logika hidup di `hooks.js` tempat ia eksplisit dan dapat ditinjau. Helper Handlebars yang tersedia: `{{default}}`, `{{upper}}`, `{{lower}}`, `{{eq}}`, `{{markdown}}`, `{{asset ref}}`, `{{asset ref "property"}}` (plus helper format-data `icsStamp`/`rfcText`/`csvCell` yang dipakai template `.ics`/`.vcf`/`.csv` sekerabat).
+### 10. Tool menyusun tool
 
-### 10. Alat menyusun alat
+Satu tool bisa menyematkan render tool **lain** tanpa impor antar-tool - komposisi diselesaikan oleh engine, tidak pernah oleh kode tool. Ada dua permukaan:
 
+- **Manifes deklaratif** - `composes: [{ id, tool, inputs, format?, width?, height? }]`. Engine merender anak yang disebutkan dan menempatkan hasilnya di template tanpa logika sebagai `{{asset <id>}}`. `event-name-badge` menyusun `qr-code` sebagai SVG saat ini.
+- **URL sematan portabel** - `<img src="https://lolly.tools/tool/<id>.<ext>?<inputs>">`. Shell merender anak itu **secara lokal** (piksel placeholder tampil sampai render lokal selesai); tidak ada yang pernah diambil dari `lolly.tools`.
 
-Sebuah alat dapat menyematkan render alat **lain** tanpa impor alat-ke-alat - komposisi di-resolve oleh engine, tak pernah oleh kode alat. Ada dua permukaan:
-
-- **Manifes deklaratif** - `composes: [{ id, tool, inputs, format?, width?, height? }]`. Engine merender anak bernama dan menempatkan hasilnya di template tanpa-logika sebagai `{{asset <id>}}`. `event-name-badge` menyusun `qr-code` sebagai SVG hari ini.
-- **URL sematan portabel** - `<img src="https://lolly.tools/tool/<id>.<ext>?<inputs>">`. Shell merender anak itu **secara lokal** (piksel placeholder muncul sampai render lokal ter-resolve); tak ada yang pernah diambil dari `lolly.tools`.
-
-Susun render alat apa pun: anak **SVG** tetap vektor sejati saat induk mengekspor ke SVG atau PDF dan meraster tajam untuk PNG; anak **PNG/JPG/WEBP** menyemat sebagai gambar. Membutuhkan kapabilitas `compose`. Anak yang tersusun adalah perantara - tak pernah di-watermark atau dicap-provenans - dan komposisi menurun secara anggun: shell yang tak bisa merender anak cukup menghilangkan slotnya dan induk tetap merender.
+Menyusun render tool apa pun: anak **SVG** tetap menjadi vektor sejati saat induk diekspor ke SVG atau PDF, dan dirasterisasi dengan tajam untuk PNG; anak **PNG/JPG/WEBP** disematkan sebagai gambar. Memerlukan kapabilitas `compose`. Anak hasil komposisi adalah perantara - tidak pernah diberi watermark atau cap provenans - dan komposisi terdegradasi secara wajar: shell yang tidak bisa merender anak cukup mengosongkan slotnya dan induk tetap dirender.
 
 ---
 
-## Yang secara eksplisit kami pilih untuk tidak lakukan
+## Apa yang secara sengaja tidak kami lakukan
 
-- **Tanpa EJS / tanpa JS sembarang dalam template.** Permukaan XSS adalah nol. Logika hidup di `hooks.js`.
-- **Tanpa CMS aset wajib.** Individu mengonsumsi berkas kreatif mereka sendiri langsung ke katalog mereka di dalam aplikasi (tampilan [Katalog](/info/using.html) dan Brand Studio) dan mengautorkan alat mereka sendiri dengan menyimpan sesi [Design](/info/using.html) - tanpa server, tanpa konsol admin. Untuk katalog *bersama yang terkelola*, sebuah organisasi **dapat** mengelola direktori aset sebagai git dan memagari pembaruan lewat tinjauan PR - itu adalah model tata kelola yang tersedia, bukan syarat aplikasi.
-- **Tanpa RBAC yang dipaksakan.** Aplikasi terbuka bersifat akses-publik secara default; risiko brand dikelola dengan tag kematangan + watermark. Organisasi yang menginginkan kendali lebih ketat berlapis pada auth-nya sendiri dan katalog yang ditinjau-git di atas.
-- **Tanpa basis data terpusat.** Semua status pengguna bersifat per-perangkat. Integrasi SUSE ID ada di peta jalan tetapi bukan penghambat peluncuran.
-- **Tanpa jalur kode alat/engine bersama.** Engine adalah open source; `tools/` dan `assets/` tetap konten milik SUSE dalam repositori mereka sendiri. Pemisahan dipaksakan (tanpa impor silang) sehingga pembelahan tetap bersih.
+- **Tidak ada EJS / tidak ada JS bebas dalam template.** Permukaan XSS nol. Logika berada di `hooks.js`.
+- **Tidak ada CMS aset wajib.** Individu memasukkan file kreatif mereka sendiri langsung ke katalognya di dalam aplikasi (tampilan [Katalog](/info/using.html) dan Brand Studio) - tanpa server, tanpa konsol admin. Pekerjaan diteruskan sebagai **sesi**: tautan berbagi membawa seluruh state, dan sesi yang sama berpindah lewat backup atau sesi kolaborasi. Siapa pun yang mengendalikan deployment kemudian bisa mengunci sesi bersama itu menjadi sebuah **template** - buka tautannya, catat nilainya sebagai entri template di direktori tool itu dalam brand pack lalu commit - setelah itu ia muncul di pemilih "New from template" tool tersebut dan bisa ditautkan langsung sebagai `?template=<id>`. Git adalah langkah penguncian milik pemilik deployment, bukan milik pembuatnya. Untuk katalog yang *dibagikan dan diatur*, sebuah organisasi **bisa** mengelola direktori aset dengan cara yang sama dan menggerbangi pembaruan lewat review PR - sebuah model governance yang tersedia, bukan keharusan aplikasi.
+- **Tidak ada RBAC paksaan.** Aplikasi terbuka bersifat akses publik secara default; risiko brand dikelola lewat tag kematangan + watermark. Organisasi yang menginginkan kontrol lebih ketat melapiskan autentikasi miliknya sendiri dan katalog yang direview lewat git di atas.
+- **Tidak ada database terpusat.** Semua state pengguna bersifat per perangkat. Integrasi SUSE ID ada di roadmap tetapi bukan penghalang peluncuran.
+- **Tidak ada jalur kode tools/engine bersama.** Engine bersifat open source; `tools/` dan `assets/` tetap konten SUSE proprietary di repositorinya sendiri. Pemisahan ini ditegakkan (tanpa impor silang) agar pembagian tetap bersih.
 
 ---
 
-## Siklus hidup, ujung ke ujung
-
-![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=aud-export-popup)
-
-Tool Slides dibangun di atas permukaan kedua itu: slot mana pun pada slide mana pun bisa memuat tool Lolly lain, bukan cuma sebuah gambar.
+## Siklus hidup, dari awal sampai akhir
 
 Seorang pengguna membuka `lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H`:
 
-1. **Boot.** Shell web membuka IndexedDB, membangun capability bridge, menyinkronkan katalog alat dan aset (atau memuat dari cache saat offline).
-2. **Rute.** Hash URL → tampilan `tool`, dengan `qr-code` dan parameter URL diekstrak.
-3. **Muat.** `loadTool('qr-code', fetchFile)` mengambil `tool.json`, memvalidasi terhadap JSON Schema, mengambil `template.html`, `styles.css`, dan sumber `hooks.js`.
-4. **Parse status URL.** `parseUrlState` menerjemahkan parameter URL menjadi nilai input awal. Referensi aset (`?logo=suse/logo/primary`) diurai sebagai objek `{ id, _unresolved: true }` yang ringan.
-5. **Runtime.** `createRuntime(tool, host, initialValues)` membangun model input (menggabungkan data profil, default, dan nilai awal), me-resolve referensi aset via `host.assets.get()`, memuat hook (`host` bercakupan-closure, bukan bersandbox), memanggil `hooks.onInit`.
-6. **Render.** Shell berlangganan ke runtime; pada setiap perubahan status ia menerima `{ model, hydrated }`. Ia merender kontrol input dari model dan menulis HTML template terhidrasi ke `#tool-canvas`.
-7. **Interaksi.** Pengguna mengetik di input → `runtime.setInput(id, value)` → batasan diterapkan → `hooks.onInput` dipanggil → hidrasi ulang → render ulang. Kanvas diperbarui secara langsung.
-8. **Ekspor.** Pengguna mengeklik Unduh(PNG) → `runtime.export(canvasNode, 'png')` → `host.export.render` (meraster via dom-to-image-more; SVG/PDF melewati vektorizer penelusur-DOM khusus) → blob → `host.export.download`. Rentang format yang dapat dipilih sebuah alat luas: `svg`, `png`, `jpg`/`jpeg`, `webp`, `avif`, `pdf`, format vektor `emf`, `eps`, plus format cetak/CMYK `pdf-cmyk`, `cmyk-tiff`, `eps-cmyk`; format video `webm`, `mp4`, `gif`; dan format data/teks `html`, `md`, `txt`, `json`, `csv`, `ics`, `vcf`, `ico`, `zip`. (Alat yang menyetel `render.export: false` - mis. Color Palette, Countdown Timer, Strip Hidden Data, Text Helper, Compress PDF - menyembunyikan kontrol unduh/format/dimensi.) Unit fisik dikonversi per format di sini (PDF → poin halaman sejati, raster → piksel pada DPI dengan chunk `pHYs`). Metadata kepengarangan/provenans (autor, alat, sumber - dibangun oleh `engine/src/metadata.ts`) disematkan per format: PNG iTXt, JPEG EXIF, PDF info dict, SVG `<metadata>`, komentar GIF. Alat eksperimental mendapat watermark yang disisipkan oleh host, bukan alat.
+1. **Boot.** Web shell membuka IndexedDB, membangun capability bridge, menyinkronkan katalog tool dan aset (atau memuat dari cache saat offline).
+2. **Route.** Hash URL → tampilan `tool`, dengan `qr-code` dan parameter URL diekstrak.
+3. **Load.** `loadTool('qr-code', fetchFile)` mengambil `tool.json`, memvalidasinya terhadap JSON Schema, mengambil `template.html`, `styles.css` dan kode sumber `hooks.js`.
+4. **Parse URL state.** `parseUrlState` menerjemahkan parameter URL menjadi nilai input awal. Referensi aset (`?logo=suse/logo/primary`) diuraikan sebagai objek ringan `{ id, _unresolved: true }`.
+5. **Runtime.** `createRuntime(tool, host, initialValues)` membangun model input (menggabungkan data profil, default dan nilai awal), menyelesaikan referensi aset lewat `host.assets.get()`, memuat hooks (`host` bercakupan closure, tidak di-sandbox), memanggil `hooks.onInit`.
+6. **Render.** Shell berlangganan ke runtime; pada setiap perubahan state ia menerima `{ model, hydrated }`. Ia merender kontrol input dari model dan menulis HTML template yang sudah dihidrasi ke `#tool-canvas`.
+7. **Interact.** Pengguna mengetik di sebuah input → `runtime.setInput(id, value)` → constraint diterapkan → `hooks.onInput` dipanggil → hidrasi ulang → render ulang. Kanvas diperbarui secara langsung.
+8. **Export.** Pengguna mengklik Download(PNG) → `runtime.export(canvasNode, 'png')` → `host.export.render` (merasterisasi lewat dom-to-image-more; SVG/PDF melalui vektoriser penyusur DOM khusus) → blob → `host.export.download`. Rentang format yang bisa dipilih sebuah tool luas, dan enum `render.formats` di `schemas/tool.schema.json` adalah otoritas atasnya - raster dan float raster, vektor dan file potong, cetak/CMYK, motion, dokumen yang bisa diedit (`pptx`, `docx`, `odt`), palet dan keluaran data/teks, file audio dan font. [URL Mode](/info/url-mode.html) menyebutkan setiap id dan apa yang dihasilkannya. Audio berada dalam enum itu seperti yang lain (`wav`, `mp3`, `m4a`, `opus`, dideklarasikan oleh audiogram dan tool perekaman); secara terpisah, mode `render.capture` sebuah tool perekaman menggerakkan `host.recorder`, yang hasil rekamannya tiba sebagai Blob jadi dalam kontainer apa pun yang direkam browser. (Tool yang menyetel `render.export: false` - misalnya Color Palette, Countdown Timer, Strip Hidden Data, Text Helper, Compress PDF - menyembunyikan kontrol download/format/dimensi.) Satuan fisik dikonversi per format di sini (PDF → poin halaman sesungguhnya, raster → piksel pada DPI dengan chunk `pHYs`). Metadata kepenulisan/provenans (author, tool, source - dibangun oleh `engine/src/metadata.ts`) disematkan per format: PNG iTXt, JPEG EXIF, PDF info dict, SVG `<metadata>`, GIF comment. Tool experimental mendapat watermark yang disisipkan oleh host, bukan oleh tool.
 
-Siklus hidup yang sama di Tauri. Siklus hidup yang sama di CLI - jsdom menyediakan DOM headless; keluaran pergi ke berkas atau stdout.
+![Panel ekspor yang dibuka `?options`: pasangan nama file dan format, ukuran keluaran dan kontrol yang menulis file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=aud-export-popup)
 
----
-
-## Status open-source
-
-Direktori `engine/`, `shells/`, `schemas/`, dan `docs/` adalah open source di bawah **MPL-2.0** - platform perancah yang netral-vendor untuk perkakas brand, dengan setiap unit yang dapat dirilis dibelah ke repositorinya sendiri di bawah [github.com/lolly-tools](https://github.com/lolly-tools). `tools/` dan `catalog/assets/` adalah konten khusus SUSE dan tetap **milik SUSE** (semua hak dilindungi - lihat `NOTICE.md` tiap repo); mereka tidak dicakup oleh MPL.
-
-Pembelahan dipaksakan - tak ada impor silang dari `engine/` ke `tools/` atau `assets/` - sehingga batas platform/konten tetap bersih.
+Siklus hidup yang sama di Tauri. Siklus hidup yang sama di CLI - jsdom menyediakan DOM headless; keluaran menuju file atau stdout.
 
 ---
 
-## Peta jalan
+## Status open source
 
-| Tonggak | Target | Apa |
-|---|---|---|
-| **Alat awal** | ✅ Selesai | QR Code, Kartu Kutipan, Tanda Tangan Email, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Chart Creator, Filter: Duotone, Meeting Planner - shell web hidup |
-| **Tingkatkan perkakas saat ini** | Pertengahan 2026 ✅ Selesai  | Aplikasi offline yang dapat diunduh (Tauri); alat karyawan dan acara tambahan; pipeline ekspor lebih kaya (stabilitas teks-ke-path, metadata, format ekstra - lihat `plans.md`) |
-| **Open source engine** | Akhir 2026 ✅ Selesai  | Engine, shell, skema, docs menjadi publik - bukan alat/aset ber-brand |
-| **Transfer perangkat-ke-perangkat** | ✅ Selesai | Bundel `lolly-backup` portabel membawa profil, sesi tersimpan, gambar yang diunggah, dan preferensi antara dua instalasi mana pun - offline atau online, tanpa akun. Amplop yang kompatibel-maju dan terperiksa-integritas (spesifikasi: `docs/data-transfer.md`) |
-| **Tetapkan peta jalan alat formal** | Akhir 2026 | Kit referensi pelanggan, konsumsi desain AI, mode permintaan GET/URL |
-| **Utilitas privasi pada-perangkat** | 🚧 Sedang berjalan | Alat transformasi-konten yang memproses berkas *milik Anda sendiri* secara lokal (berkas masuk → berkas bersih keluar), menggantikan eksfiltrasi ke SaaS tujuan-tunggal. **Selesai:** tipe input `file` + jalur transformasi `exportFile` + konvensi `privacy:"on-device"` (tanpa watermark/provenans) + **Strip Hidden Data** (metadata JPEG/PNG/SVG/PDF, PDF via bridge `host.pdf`) dan **Text Helper** (bengkel kerja pada-perangkat untuk pekerjaan tempel-ke-situs-web sehari-hari - format JSON, dekode JWT, Base64, enkode/dekode URL, hashing SHA, plus grup Novelty). **Berikutnya:** pangkas/ubah ukuran, konversi/kompres gambar; lalu bridge codec `host.image` (spesifikasi: `plans/34-exfiltration-app-content.md`) |
-| **Token desain (DTCG)** | 🚧 Warna dirilis | Primitif brand sebagai [W3C Design Tokens (DTCG)](https://www.designtokens.org/TR/drafts/format/) kanonis - format yang [Penpot impor/ekspor](https://help.penpot.app/user-guide/design-systems/design-tokens/). **Selesai:** token warna (`suse/tokens/brand`), bridge `host.tokens`, swatch pemilih + nilai bertaut-referensi (spesifikasi: `docs/design-tokens.md`). **Berikutnya:** token dimensi/tipe, impor/ekspor Penpot, token pengguna dalam bundel transfer (`tokens.json`) |
-| **Endpoint agen MCP (render)** | ✅ Selesai | Server [MCP](https://modelcontextprotocol.io) mengekspos katalog + jalur render sebagai alat yang dapat dipanggil (`lolly_list_tools` / `describe_tool` / `build_url` / `render` / `transform`) sehingga agen mana pun dapat menghasilkan aset jadi yang terikat-aturan - tambahkan ke klien MCP mana pun sebagai konektor kustom (OAuth 2.1) atau arahkan klien CLI/HTTP ke sana dengan token bearer. Hidup di `mcp.lolly.tools` (endpoint penuh: raster/PDF/animasi/video via browser headless yang dihosting) dan `lolly.tools/api/mcp` (tingkat tanpa-browser serverless). Berbeda dari MCP *pengautoran* Penpot di bawah, yang tentang **pembuatan** alat (spesifikasi: `plans/77-mcp-server.md`; panduan: `docs/mcp.md` + `docs/ai-agents.md`) |
-| **Konsumsi berkas Penpot sebagai alat** | 2027+ | Impor berkas Penpot dan tampilkan *sebagai alat Lolly* (deklaratif, mengutamakan-batasan), mengubah desain yang diautorkan di Penpot menjadi generator deterministik |
-| **Ekstensi MCP + Penpot (pengautoran online-saja)** | 2027+ | Server MCP Penpot mengartikulasikan alat baru dengan AI - cara paling visual untuk membuat template deterministik: putaran pertama yang terinformasi-brand, disempurnakan dengan manusia dalam loop, menyasar konteks baru sekali-jadi seiring waktu. *Pembuatan* alat bersifat online-saja; alat yang dihasilkannya berjalan di mana saja |
-| **RBAC + SUSE ID** | 2027+ | Pagari alat tertentu di balik SUSE ID; status tersimpan multi-perangkat; konsumsi/ekspor Google Drive |
+Direktori `engine/`, `shells/`, `schemas/` dan `docs/` bersifat open source di bawah **MPL-2.0** - sebuah platform scaffolding brand tooling yang netral vendor, dengan setiap unit yang bisa dikirim dipisahkan ke repositorinya sendiri di bawah [github.com/lolly-tools](https://github.com/lolly-tools). `tools/` dan `catalog/assets/` adalah konten khusus SUSE dan tetap **proprietary milik SUSE** (semua hak dilindungi - lihat `NOTICE.md` masing-masing repo); keduanya tidak tercakup oleh MPL.
+
+Pemisahan ini ditegakkan - tidak ada impor silang dari `engine/` ke `tools/` atau `assets/` - sehingga batas platform/konten tetap bersih.
 
 ---
 
 ## Di mana engine berakhir dan host dimulai
 
-Jika Anda dapat mendeskripsikannya dalam data murni + Handlebars → **engine**.
-Jika ia menyentuh DOM, berkas, jaringan, atau API browser/OS apa pun → **host**.
+Jika bisa dideskripsikan dalam data murni + Handlebars → **engine**.
+Jika menyentuh DOM, filesystem, jaringan atau API browser/OS apa pun → **host**.
 
-Garisnya tajam dengan sengaja. Engine adalah bagian open-source. Segala sesuatu yang tahu tentang SUSE, platform tertentu, atau lingkungan runtime tetap di luarnya.
+Garis batas ini tajam dengan sengaja. Engine adalah bagian open source. Segala sesuatu yang mengetahui tentang SUSE, platform tertentu atau lingkungan runtime tetap di luarnya.
+
+Untuk level detail berikutnya, [`engine/README.md`](../engine/README.md) mencantumkan setiap modul engine dan apa tanggung jawabnya, dan [Threat Model & Trust Boundaries](/info/threat-model.html) mencatat di mana garis yang sama itu sekaligus menjadi batas kepercayaan.

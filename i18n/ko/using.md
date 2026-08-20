@@ -82,6 +82,8 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 
 ![Design의 자유 캔버스 - 아트보드와 그것을 둘러싼 작업대](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
+**선택 항목 뒤집기.** 아무 박스나 우클릭한 뒤 **Flip horizontal** 또는 **Flip vertical**을 선택하면 그 자리에서 좌우 또는 상하로 뒤집힙니다. 키보드로는 `Shift+H` / `Shift+V`를 누르면 됩니다 - Shift를 쓰는 이유는 단독 `V`가 포인터 도구이기 때문입니다. 선택한 각 박스는 자신의 축을 기준으로 실행 취소 한 단계 안에서 뒤집히며, 이 뒤집기는 실제 변형이므로 캔버스뿐 아니라 내보낸 SVG, PDF, PNG에도 그대로 유지됩니다.
+
 ### 직접 도형 그리기(펜)
 
 상자와 원, 모서리가 둥근 프레임이면 대부분의 레이아웃은 해결돼요. 그 목록에 없는 도형이 필요하면 직접 그리세요. 도구 막대의 **Pen** 버튼(또는 `P` 키)을 누르면 그리기 모드로 들어가요. 모드 사이는 키 하나로 오가요 - **`V`**는 Pointer로 돌아가고, **`P`**는 Pen, **`N`**은 노드 도구(**Edit points**)예요 - 어떤 모드에 있든 빠져나오는 길은 언제나 Pointer예요.
@@ -139,7 +141,7 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 
 **Sequence Studio**는 자유 캔버스에 *시간*을 더해요. 상자마다 시작 시점과 지속 길이를 갖고 들어오고 나가는 애니메이션을 붙일 수 있고, 아트보드 아래에 붙은 타임라인이 그것들을 배치하는 자리예요. 열어 보면 이미 시퀀스가 재생되고 있어요 - 제목 카드, 클립, 엔딩 카드, 하단 자막, 배경 음악까지 - 그래서 아무것도 바꾸기 전에 구조가 눈에 들어와요.
 
-![Sequence Studio의 타임라인 - 재생 컨트롤, 눈금자, 오버레이 레인, 클립과 이음매 칩이 놓인 자석 시퀀스 행, 그리고 Always on 띠](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A252px!important%7D&cropSelector=.tl-panel&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-timeline)
+![시퀀스 스튜디오의 타임라인: 트랜스포트, 눈금자, 오버레이 레인, 클립과 이음매 칩이 있는 자석형 시퀀스 행, Always on 스트립](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A252px!important%7D&cropSelector=.tl-panel&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-timeline)
 
 행에는 두 종류가 있고, 그 차이가 핵심 그 자체예요:
 
@@ -147,7 +149,7 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 - **오버레이 레인**은 자유로워요. 하단 자막, 로고, 캡션처럼 뼈대 위에 각자의 시간으로 떠 있는 것은 저마다의 레인과 시작 시점을 가져요.
 - 그 아래 **Always on**은 타이밍이 아예 없는 상자를 모아 둬요. 처음부터 끝까지 그냥 있는 배경 요소죠. 칩의 `+`를 누르면 하나를 레인으로 올리고, **Make always on**은 다시 내려보내요.
 
-![편집 화면 전체 - 아트보드와 도구 막대, 타임라인이 함께 있는 모습](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.fc-toolbar%7Bopacity%3A1!important%7D&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-stage)
+![편집 스테이지: 중앙의 아트보드, 왼쪽의 도구 레일, 모서리의 줌 HUD](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.fc-toolbar%7Bopacity%3A1!important%7D&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-stage)
 
 타임라인을 열면 키보드가 타임라인으로 넘어가서, Space와 화살표 키가 페이지 대신 재생 헤드를 움직여요 - 이미 타이밍이 있는 구성에서는 타임라인이 알아서 열리니, Sequence Studio가 뜨는 순간부터 그래요.
 
@@ -306,9 +308,9 @@ storage-seeding hook.
 
 나가기 전에 직접 정할 것이 셋 있어요:
 
-- **내 이름을 넣을지.** 이름과 이메일, 소속은 프로필에서 **Use my details to create**가 켜져 있을 때만 파일에 기록돼요. 꺼 두면 파일에는 Lolly로 만들었다는 사실과 그 시점만 남고, 나에 관한 것은 아무것도 남지 않아요.
-- **라이선스가 붙은 자산을 넣을지.** 라이선스가 있거나 브랜드에 묶인 자산은 기본적으로 빠져요. 디자인이 그런 자산을 쓰고 있으면 대화상자가 몇 개인지 알려 주고 두 버튼을 내줘요 - *Download without them* 또는 *Include and download*예요. 포함하면 `.lolly`를 여는 사람에게 실제 파일이 그대로 넘어가니까요.
-- **도구를 넣을지.** **Include the tool**은 도구 자체의 파일을 디자인과 함께 담아서, 그 도구가 없는 기기에서도 열리게 해요. 맞춤 도구, 즉 포크나 받는 사람이 가지고 있을 리 없는 비공개 브랜드 도구라면 체크된 채로 나오고, 서명된 카탈로그와 바이트까지 똑같은 도구라면 상대의 사본이 이미 같은 파일이니 체크가 꺼진 채로 나와요.
+- **내 이름 포함 여부.** 이름, 이메일, 소속 조직은 프로필에서 **Use my details to create**가 켜져 있을 때만 파일에 기록됩니다. 꺼져 있으면 파일에는 Lolly로 언제 만들어졌는지만 남고 당신에 대한 정보는 남지 않습니다.
+- **라이선스 아트 포함 여부.** 라이선스가 걸려 있거나 브랜드에 잠긴 에셋은 기본적으로 제외됩니다. 디자인에 그런 에셋이 있으면 대화상자에 몇 개인지 표시되고 두 가지 버튼 중 하나를 선택할 수 있습니다 - *Download without them* 또는 *Include and download* - 포함하면 `.lolly`를 여는 사람에게 실제 파일이 넘어가기 때문입니다.
+- **도구 포함 여부.** **Include the tool**을 선택하면 도구 자체의 파일이 디자인과 함께 패키징되어 그 도구가 없는 기기에서도 열립니다. 커스텀 도구 - 수신자가 갖고 있을 가능성이 낮은 포크나 비공개 브랜드 도구 - 는 기본적으로 체크되어 있고, 서명된 카탈로그에 등재된 도구는 상대방도 같은 출처에서 받으므로 기본적으로 체크되어 있지 않습니다. (서명된 카탈로그가 없는 빌드에서는 모든 도구가 커스텀으로 취급되어 체크박스가 처음부터 켜져 있습니다.)
 
 **여는 방법.** `.lolly`를 앱 위로 끌어다 놓으세요. 자산은 내 라이브러리로, 세션은 Projects로 들어가고 도구가 그 세션으로 열려요. 내 것은 하나도 덮어쓰이지 않아요. 세션은 새 저장 칸으로 들어오고, 이 기기에 이미 있는 자산은 체크섬으로 대조해 복제하지 않고 다시 써요. 들어오는 길에 모든 부분을 파일 자체의 체크섬과 대조하니, 전송 중에 손상된 사본은 절반만 들어오는 대신 아예 거절돼요.
 
@@ -330,9 +332,10 @@ storage-seeding hook.
 
 ![카탈로그 - 브랜드 자산과 색 견본, 글꼴, 그리고 내가 올린 파일](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=2400&css=.plat-swatch-grid~%2A%7Bdisplay%3Anone%7D&walker=1&format=svg&localize=1&dark=1&filename=catalogue)
 
-- <!--i:upload--> **파일을 가져오세요.** 이미지, SVG, 오디오 클립, 영상, Lottie, PDF, PowerPoint 문서를 업로드 영역으로 끌어다 놓거나 클릭해서 고르면 곧바로 카탈로그에 들어와, 모든 도구의 자산 선택기에서 바로 쓸 수 있어요. 여러 쪽짜리 PDF나 `.pptx`는 어느 쪽이나 슬라이드를 남길지 물어보고, 각각이 SVG 자산이 돼요. 원하는 만큼 넣으세요. 기기 밖으로 나가지 않아요.
-- <!--i:star--> **자주 손이 가는 것에 별 달기.** 자산(또는 브랜드 색 견본)에 ★를 달면 모든 선택기의 맨 위에 고정돼서, 늘 쓰는 로고나 색이 한 번의 클릭 거리에 있어요.
-- <!--i:folder--> **정리하기.** 자산을 다른 그룹으로 옮기고, 쓰지 않는 공유 브랜드 자산을 숨기고(**Show hidden**으로 다시 꺼낼 수 있어요), 내가 올린 것은 아예 삭제하세요. Projects와 같은 다중 선택 동작과 떠 있는 실행 바가 여기서도 통하니, 그 모든 것을 선택 전체에 한 번에 할 수 있어요.
+- <!--i:upload--> **파일 가져오기.** 이미지, SVG, 오디오 클립, 동영상, Lottie, PDF, PowerPoint 파일을 업로드 영역에 드래그하거나 클릭해서 선택하면 즉시 카탈로그에 들어가 모든 도구의 에셋 선택기에서 바로 쓸 수 있습니다. 여러 페이지 PDF나 `.pptx`는 어떤 페이지나 슬라이드를 남길지 물어보며, 각각이 SVG 에셋이 됩니다. 얼마든지 많이 가져와도 기기 밖으로 나가지 않습니다.
+- <!--i:star--> **자주 쓰는 항목 즐겨찾기.** 에셋(또는 브랜드 색상 견본)에 ★를 누르면 모든 선택기 맨 위에 고정되어, 자주 쓰는 로고나 색상을 클릭 한 번으로 쓸 수 있습니다.
+- <!--i:folder--> **정리하기.** 에셋을 다른 그룹으로 재분류하고, 쓰지 않는 공유 브랜드 에셋을 숨기고(**Show hidden**으로 다시 표시), 자신이 업로드한 에셋은 완전히 삭제할 수 있습니다. 프로젝트와 동일한 다중 선택 제스처와 플로팅 액션 바를 여기서도 사용할 수 있어, 선택한 항목 전체에 한 번에 적용할 수 있습니다.
+- <!--i:layers--> **동영상 배경 제거하기.** 어떤 에셋 선택기에서든 동영상의 상세 정보를 열거나 카드를 우클릭한 뒤 **Remove background…**를 선택하면 실제 알파 채널이 있는 애니메이션 WebP 또는 PNG로 투명 버전을 저장할 수 있습니다. **Method**를 고를 수 있습니다: **On-device model**은 복잡한 장면에서 피사체를 잘라내고, **Colour key**는 그린 스크린이나 단색 벽처럼 고르게 조명된 단색 배경을 **Tolerance**, **Softness**, **Spill removal**로 경계를 다듬어 제거합니다. 컬러 키는 모델 다운로드도 네트워크도 필요 없으므로 **Remove background**는 어떤 동영상에도 제공되며, 깔끔한 촬영본일수록 결과가 더 좋은 경우가 많습니다. **Resolution** 옵션(360, 480, 720 또는 1080p, 원본을 넘지 않음)으로 화질과 더 작고 빠른 파일 크기를 맞바꿀 수 있습니다. 이 작업은 기기에서 백그라운드 작업으로 실행됩니다. 완성된 컷아웃은 원본 옆에 별도 에셋으로 나타나며 원본 동영상의 Content Credential이 재료(ingredient)로 함께 따라갑니다. (배경 제거가 왜 단순 편집으로 남는지는 [한 번 생성되면 같은 결과로 렌더링됩니다](/info/ai-features.html) 참고.)
 
 ### 팔레트와 글꼴을 어디로든 가져가기
 

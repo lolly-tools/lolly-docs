@@ -82,6 +82,8 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 
 ![Design 的自由畫布：畫板與其周圍的檯面](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
+**翻轉選取項目。** 在任何方框上按右鍵，選擇 **Flip horizontal** 或 **Flip vertical** 即可原地鏡射，或以鍵盤按下 `Shift+H` / `Shift+V` - 之所以要按 Shift，是因為單獨的 `V` 是 Pointer 工具。每個選取的方框都會依自己的軸鏡射，並在一個復原步驟內完成，而且鏡射是真正的變形，因此會保留在匯出的 SVG、PDF 與 PNG 中，而不僅僅是畫布上。
+
 ### 畫出自己的形狀（鋼筆）
 
 方塊、圓形與圓角框足以應付大多數版面。需要清單裡沒有的形狀時，就自己畫：工具列的**鋼筆**按鈕（或 `P` 鍵）會讓你進入繪製模式。三個單鍵在模式之間移動：**`V`** 回到指標、**`P`** 是鋼筆、**`N`** 是節點工具（**編輯節點**），而指標永遠是離開目前狀態的出口。
@@ -139,7 +141,7 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 
 **Sequence Studio** 為自由畫布加上*時間*。每個方塊都可以在某個時刻開始、持續一段長度，並帶進場與出場動畫，而停靠在畫板下方的時間軸就是你安排它們的地方。一開啟就已經有一段序列在播放：一張標題卡、一段片段、一張結尾卡、一條下方字幕條與一段配樂，因此你還沒改動任何東西，就能看見整個模型。
 
-![Sequence Studio 的時間軸：播放控制、尺規、一條疊加軌道、帶有片段與接縫標籤的磁性序列列，以及全程顯示區](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A252px!important%7D&cropSelector=.tl-panel&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-timeline)
+![Sequence Studio 的時間軸：播放控制列、尺標、疊加軌道、含有片段與接縫標籤的磁吸式序列列，以及 Always on 條帶](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A252px!important%7D&cropSelector=.tl-panel&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-timeline)
 
 有兩種列，而兩者的差別正是整個構想所在：
 
@@ -147,7 +149,7 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 - **疊加軌道**則是自由的。下方字幕條、標誌、字幕，任何以自己的時間浮在主幹之上的東西，都會有自己的軌道與自己的起點。
 - 在那之下，**全程顯示**收納完全沒有時間設定的方塊：整段期間都存在的佈景。標籤上的 `+` 可以把其中一個提升到軌道上；**設為全程顯示**則把它送回去。
 
-![整個編輯介面：畫板、工具列與時間軸一起](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.fc-toolbar%7Bopacity%3A1!important%7D&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-stage)
+![編輯舞台：置中的畫板、左側的工具列，以及角落的縮放 HUD](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.fc-toolbar%7Bopacity%3A1!important%7D&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-stage)
 
 開啟時間軸就等於把鍵盤交給它，因此 Space 與方向鍵驅動的是播放磁頭，而不是頁面；又因為在已經帶有時間設定的作品上它會自行開啟，所以 Sequence Studio 一載入就是如此。
 
@@ -306,9 +308,9 @@ storage-seeding hook.
 
 送出之前有三件事由你決定：
 
-- **要不要寫上你的名字。** 只有在你的個人資料中開啟**使用我的資料來建立**時，你的姓名、電子郵件與組織才會寫進檔案。關閉時，檔案只記錄它是用 Lolly 製作的以及製作時間，關於你的部分一概沒有。
-- **要不要放進授權美術資源。** 有授權與品牌鎖定的素材預設會保留不放。若設計用到了，對話框會說明有幾個，並提供兩顆按鈕：*不含它們下載*或*包含並下載*，因為包含就等於把實際檔案交給任何打開這個 `.lolly` 的人。
-- **要不要放進工具本身。** **包含工具**會把工具本身的檔案和設計一起打包，讓它在沒有該工具的裝置上也能開啟。自訂工具（分支版本，或收件者不太可能有的私有品牌工具）預設會勾選；與已簽章目錄逐位元組相符的工具則不勾選，因為對方那份本來就是同一個檔案。
+- **你的姓名是否會寫入。** 只有在你的個人檔案中開啟 **Use my details to create** 時，你的姓名、電子郵件與組織才會寫入檔案。若關閉此選項，檔案只會記錄這是用 Lolly 製作的以及製作時間 - 不會有任何關於你的資訊。
+- **授權素材是否會納入。** 已授權與品牌鎖定的素材預設會被保留在外。若設計中使用了任何這類素材，對話框會顯示數量，並提供兩個按鈕 - *Download without them* 或 *Include and download* - 因為納入它們等於把實際檔案交給任何打開該 `.lolly` 檔的人。
+- **工具本身是否會納入。** **Include the tool** 會將工具自身的檔案與設計一併打包，讓它能在沒有該工具的裝置上開啟。若是自訂工具 - 例如收件人不太可能擁有的分支版本或私有品牌工具 - 此選項預設會勾選；若是已簽署目錄中列出的工具，則預設不勾選，因為對方的版本來自同一個來源。（在沒有已簽署目錄的版本中，每個工具都算作自訂工具，方框預設勾選。）
 
 **開啟。** 把 `.lolly` 拖到應用程式上：素材落入你的素材庫，工作階段落入專案，工具則以它開啟。你的東西不會被覆寫：工作階段會以新的儲存位置抵達，而這台裝置上已經有的素材會以檢查碼比對後重複使用，不會再複製一份。匯入過程中每個部分都會與檔案自己的檢查碼比對，因此在傳輸中損壞的副本會被拒絕，而不是匯入到一半。
 
@@ -330,9 +332,10 @@ storage-seeding hook.
 
 ![目錄：品牌素材、色票與字體，以及你自己上傳的檔案](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=2400&css=.plat-swatch-grid~%2A%7Bdisplay%3Anone%7D&walker=1&format=svg&localize=1&dark=1&filename=catalogue)
 
-- <!--i:upload--> **把你的檔案帶進來。** 把任何圖片、SVG、音訊片段、影片、Lottie、PDF 或 PowerPoint 簡報拖到上傳區（或點一下選擇），它就會立刻落進你的目錄，在每個工具的素材選擇器中隨時可用。多頁 PDF 或 `.pptx` 會問你要保留哪些頁面或投影片，每一個都會變成一個 SVG 素材。想收多少就收多少；它絕不離開你的裝置。
-- <!--i:star--> **把常用的加星號。** 為素材（或品牌色票）按 ★，它就會釘在每個選擇器的最上方，讓你的愛用標誌或顏色一點就到。
-- <!--i:folder--> **整理。** 把素材重新分到其他群組、隱藏你不用的共用品牌素材（用**顯示隱藏項目**把它找回來），或直接刪除你自己上傳的東西。和專案相同的多選手勢與浮動動作列在這裡同樣適用，因此上述任何一項都可以一次對整個選取範圍執行。
+- <!--i:upload--> **匯入你的檔案。** 將任何圖片、SVG、音訊片段、影片、Lottie、PDF 或 PowerPoint 簡報拖曳到上傳區 - 或點擊選擇 - 它會立即進入你的目錄，並在每個工具的素材選取器中可用。多頁 PDF 或 `.pptx` 會詢問要保留哪些頁面或投影片 - 每一頁都會變成一個 SVG 素材。想匯入多少都可以；它永遠不會離開你的裝置。
+- <!--i:star--> **把常用的加入最愛。** 為素材（或品牌色票）加上 ★，它就會固定在每個選取器的頂端，讓你常用的標誌或色彩只需一次點擊即可取得。
+- <!--i:folder--> **整理。** 將素材重新分類到不同群組、隱藏你不使用的共用品牌素材（可用 **Show hidden** 找回），或直接刪除你自己上傳的檔案。這裡也適用與 Projects 相同的多選手勢與浮動動作列，因此以上動作都能一次套用到整個選取範圍。
+- <!--i:layers--> **從影片中去除背景。** 在任何素材選取器中開啟影片詳細資訊或右鍵點擊其卡片，選擇 **Remove background…** 即可另存一個透明版本 - 具有真正 Alpha 通道的動態 WebP 或 PNG。選擇一種 **Method**：**On-device model** 會從雜亂的場景中裁出主體，或者用 **Colour key** 去除均勻打光的單色背景，例如綠幕或素色牆面，並可用 **Tolerance**、**Softness** 與 **Spill removal** 微調邊緣。色彩去背不需要下載模型也不需要網路連線，因此任何影片都能使用 **Remove background**，在乾淨的畫面上通常效果更佳。**Resolution** 控制項（360、480、720 或 1080p，絕不超過原始畫質）可用畫質換取更小、更快的檔案。這會在你的裝置上以背景工作方式執行。完成的去背版本會以獨立素材的形式出現在原始影片旁，而來源影片的 Content Credential 也會作為成分一併帶入。（關於去除背景為何仍屬於單純的編輯，詳見[產生一次，算繪結果一致](/info/ai-features.html)。）
 
 ### 把你的色盤與字體帶著走
 

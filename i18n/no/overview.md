@@ -1,42 +1,56 @@
 # Oversikt
 
-Dette dokumentet fanger opp formålet, strukturen og de arkitektoniske beslutningene for Lolly-plattformen. Det gjenspeiler både produktvisjonen og kodebasens nåværende tilstand.
+![Lolly-ikon - Stor grønn og hvit slikkepinne](/info/icon.svg)
 
-> **Status:** Lolly er en intern prototype i en **lukket pilot som ennå ikke er avsluttet**. Motoren er deterministisk og internt konsistent, men produktet er tidlig i utviklingen - SUSE er kunde nummer én - og kryptografi- og filtolkningsmotorene gjennomgår for tiden SUSEs strenge infrastrukturherding, i forberedelse til virksomhetsskala (det er vi virkelig gode på). Les arkitekturen nedenfor som designintensjon under test, ikke som et ferdig, sertifisert produkt. Se [Innføring og styring](/info/adoption-governance.html#status) for hvordan piloten drives og måles.
+Dette dokumentet fanger opp formålet, strukturen og de arkitektoniske avgjørelsene for Lolly-plattformen. Det gjenspeiler både produktvisjonen og den nåværende tilstanden til kodebasen.
+
+> **Status:** Lolly er en intern prototype i en **lukket pilot som ikke er fullført**. Motoren er deterministisk og internt konsistent, men produktet er tidlig - SUSE er kunde nummer én - og kryptografi- og filtolkningsmotorene gjennomgår for tiden SUSEs strenge infrastrukturherding, i forberedelse til virksomhetsskala (vi er veldig gode på dette). Les arkitekturen nedenfor som designintensjon under test, ikke et ferdig, sertifisert produkt. Se [Adoption & Governance](/info/adoption-governance.html#status) for hvordan piloten drives og måles.
+
+> **Hvordan lese denne siden.** Den inneholder to typer materiale, i rekkefølge. Den første halvdelen er
+> **hvorfor dette finnes**: problemet, posisjoneringen og livssyklusen en enkelt ressurs beveger seg
+> gjennom. Fra [Det store bildet](#the-big-picture-how-the-layers-fit) og utover er det
+> **hvordan lagene passer sammen**: arkitekturdokumentet for bidragsytere, som dekker engine/shell/pack-
+> separasjonen, repository-oppsettet, leveringsmålene og forpliktelsene som begrenser hver
+> endring av plattformen. Hvis du er her for å endre kodebasen fremfor å forstå
+> produktet, start ved det store bildet.
+>
+> To følgesvenner går dypere enn denne siden gjør. [`engine/README.md`](../engine/README.md) i
+> repositoryet er modul-for-modul-kartet over motoren, med en generert tabell over hver modul og
+> hva den tolker eller skriver. [Threat Model & Trust Boundaries](/info/threat-model.html)
+> er den samme arkitekturen lest som tillitsgrenser, og det er den rette siden for ethvert spørsmål om
+> hva motoren behandler som ikke tiltrodd.
 
 ---
 
 ## Hvorfor dette finnes
 
-Team støter på et tilbakevendende problem: repeterbart kreativt arbeid og innholdsarbeid som er for forutsigbart til å rettferdiggjøre kompetente hender hver gang, men for kvalitetssensitivt til å overlates uten rekkverk. Resultatet blir enten lav gjennomstrømning (spesialistflaskehals), inkonsistens (folk bruker det verktøyet de har for hånden), eller leverandørinnlåsing (en SaaS-DAM som styrer malene dine).
+Team møter et tilbakevendende problem: repeterbart kreativt og innholdsmessig arbeid som er for forutsigbart til å rettferdiggjøre kyndige hender hver gang, men for kvalitetsfølsomt til å overlates uten sikkerhetsnett. Resultatet er enten lav gjennomstrømning (spesialistflaskehals), inkonsistens (folk som bruker det verktøyet de har for hånden) eller leverandørlåsing (en SaaS-DAM som kontrollerer malene dine).
 
-Denne plattformen er det strukturelle svaret:
+Denne plattformen er det direkte svaret:
 
-> **Programmatisk kreativt arbeid og innhold i stor skala** - ressursgenerering uten arbeidsinnsats, med reglene under sentral kontroll, for ansatte, leverandører og partnere.
+> **Programmatisk kreativt innhold i stor skala** - ressursgenerering uten arbeidsinnsats, med reglene under sentral kontroll, for ansatte, leverandører og partnere.
 
-Resultatet er **overflod**: hvert arrangement har korrekt skilting, hver CVE-varsling følger husstilen, hver etikett trykkes rent, hver e-postsignatur er oppdatert - alt uten en designsak. Plattformen håndterer tilbakevendende, operasjonalisert kreativt arbeid. Den er bevisst ikke et skreddersydd kreativt verktøy - designere eier fortsatt flaggskiparbeidet.
+Resultatet er **overflod**: hvert arrangement har korrekt skilting, hvert CVE-varsel matcher husstilen, hver etikett skrives ut rent, hver e-postsignatur er oppdatert - alt uten en designsak. Plattformen håndterer tilbakevendende, operasjonalisert kreativt arbeid. Det er bevisst ikke et skreddersydd kreativt verktøy - designere eier fortsatt flaggskipsarbeidet.
 
-### Hvor den passer inn i landskapet
+### Innoverer probabilistisk, skalerer deterministisk
 
-![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=aud-gallery-landscape)
+Enhver diskusjon om KI i en kreativ pipeline stanser opp ved det samme spørsmålet: hvilken del av dette er maskinens jobb? Det er et gammelt spørsmål med et avklart svar. Skrivere og illuminatorer arbeidet allerede mellom to instrumenter - den løse skissen, der ingenting var fastlagt og alt kunne prøves, og trykkpressen, skremmende nettopp fordi den forpliktet. Skissene var der kunsten skjedde. Pressen var hvordan den nådde noen. Ingen forvekslet de to, og begge fortsatte å utvikle seg - ny blekk, nye typesnitt, nye presser - hver forbedring i harmoni med håndverket og intensjonen den tjente.
 
-| Funksjon | Canva | Merkevareportaler | Illustrator | Figma / Penpot | **Lolly** |
-|---|---|---|---|---|---|
-| Massegenerering av innhold | delvis | ✗ | ✗ | ✗ | **✓** |
-| Fungerer helt offline | ✗ | ✗ | ✓ | delvis | **✓** |
-| Mallogikk og harde begrensninger | ✗ | delvis | ✗ | delvis | **✓** |
-| Ingen designkompetanse kreves | delvis | ✓ | ✗ | ✗ | **✓** |
-| Automatiske Content Credentials | ✗ | ✗ | delvis | ✗ | **✓** |
-| Verktøy komponerer andre verktøy | ✗ | ✗ | ✗ | ✗ | **✓** |
-| Åpen motor, ikke SaaS-låst | ✗ | ✗ | ✗ | delvis | **✓** |
-| C2PA content credentials | ✗ | ✗ | ✗ | ✗ | **✓** |
-| Valgfri forensisk opprinnelse | ✗ | ✗ | ✗ | ✗ | **✓** |
-| Mobil- og skrivebordsapper | ✓ | ✗ | ✗ | delvis | **✓** |
-| Kommandolinje og TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
+Lolly trekker den samme linjen. Utforsk probabilistisk: en modell, en designer, en løs idé, en prompt som havner et sted ingen planla. Skaler så deterministisk - det som når ti tusen outputs er et *verktøy*, og et verktøy rendrer på samme måte hver gang ut fra input du kan lese. Utforskningen forblir fri fordi ingenting nedstrøms er avhengig av at den lander likt to ganger. Resultatet fortjener tillit fordi det ikke er en gjetning. Å få KI-eksperimentering inn i forutsigbare, reproduserbare resultater er ikke en ny disiplin; det er den samme arbeidsdelingen som gjorde trykt arbeid verdt å stole på i utgangspunktet.
 
-Gapet er tydelig: ingenting i det eksisterende landskapet gir oss begrensningsstyrt, offlinekapabel, lavterskel, internt tilgjengelig resultat. Lolly inkluderer til og med en åpen canvas - **Design** - der farger, typografi og ressurser følger merkevarens globale verdier, slik at fri utforming forblir begrensningsstyrt. Det den **ikke** er, er en ubegrenset designsuite: designere fortsetter å bruke Illustrator og Figma til skreddersydd flaggskiparbeid. Permutasjoner kan settes sammen med dette verktøyet.
+> Stol på den kreative prosessen, skaler med presisjon.
 
-**Bruk det til:** Rask generering av operasjonalisert kreativt materiale - arrangementsfliser, navnebrikker, signaturer, CVE-varsler, QR-koder, sosiale kort, fraktetiketter, strukturerte rapporter.
+### Sammenlignet med alternativene
+
+::: figure positioning-comparison
+Funksjonsfullstendighet på tvers av dagens kreative verktøy, undersøkt august 2026. Poengsetting: 0 fraværende, 25 omvei-nivå, 50 reell, men avgrenset eller delvis, 75 sterk med forbehold, 100 kjernekompetanse.
+:::
+
+Gapet er tydelig: ingenting som leveres i dag gir oss begrensningsstyrt, offline-kapabel, lavterskel, internt tilgjengelig output. Lolly inkluderer til og med et åpent lerret - **Design** - der farger, typografi og ressurser følger merkevarens globale innstillinger, slik at fri utforming forblir begrensningsstyrt. Det den **ikke** er, er en ubegrenset designpakke: designere fortsetter å bruke Illustrator og Figma til skreddersydd flaggskipsarbeid. Permutasjoner kan settes sammen med dette verktøyet.
+
+![Hvert verktøy i biblioteket som et kort, gruppert etter kategori, slik at en produsent velger ett og starter](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=aud-gallery-landscape)
+
+**Bruk det til:** Rask generering av operasjonaliserte kreative ressurser - arrangementsflis, navneskilt, signaturer, CVE-varsler, QR-koder, sosiale kort, forsendelsesetiketter, strukturerte rapporter.
 
 **Ikke bruk det til:** Skreddersydd hero-innhold.
 
@@ -44,39 +58,43 @@ Gapet er tydelig: ingenting i det eksisterende landskapet gir oss begrensningsst
 
 ## Livssyklusen til en kampanje
 
-![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+Den klareste måten å se hva Lolly er, er ikke en funksjonsliste - det er å følge én enkelt ressurs mens den går fra hånd til hånd. Se hvordan ett lokalisert kampanjekort beveger seg gjennom organisasjonen:
 
-Den klareste måten å se hva Lolly er, er ingen funksjonsliste - det er å følge én enkelt ressurs mens den går fra hånd til hånd. Se hvordan ett lokalisert kampanjekort beveger seg gjennom organisasjonen:
+1. **Den kreative setter reglene.** En designer lager basmalen i Design-verktøyet, og hardkoder merkevarens typografi- og fargevariabler. De lager ikke ett kort - de gjør grunnarbeidet *én gang* slik at de aldri trenger å håndlokalisere det igjen.
+2. **Utvikleren skalerer det.** Den samme malen kobles inn i en nattlig pipeline gjennom CLI-en, slik at et nytt diagram eller en ny språkvariant genereres automatisk - ingen designer åpner filen på nytt.
+3. **Produsenten bruker det bare.** En selger, offline på et fly, åpner det samme verktøyet og genererer en perfekt merkevaretro presentasjon til et kundemøte. Ingen designkompetanse, ingen nettverk, ingen venting.
 
-1. **Kreatøren setter reglene.** En designer lager grunnmalen i Design og hardkoder merkevarens typografi- og fargevariabler. Hun lager ikke ett kort - hun gjør grunnarbeidet *én gang*, slik at hun aldri må lokalisere det for hånd igjen.
-2. **Utvikleren skalerer det.** Akkurat samme mal kobles inn i en nattlig pipeline via CLI, slik at et ferskt diagram eller en ny språkvariant genereres automatisk - ingen designer åpner filen på nytt.
-3. **Produsenten bare bruker det.** En selger åpner samme verktøy offline på et fly og genererer et helt merkevareriktig deck til et kundemøte. Ingen designkompetanse, ingen nettverkstilgang, ingen venting.
+Det "nye diagrammet" i trinn to er en rendring som denne, produsert fra en datastreng og en håndfull parametere uten at noen åpner en designfil:
 
-Det «ferske diagrammet» i steg to er en rendering som denne, laget fra en datastreng og en håndfull parametere uten at noen åpner en designfil:
+![Et stablet arealdiagram med tittel, der de tre seriene er farget i en kjølig palett, med akser, tegnforklaring og tittel plassert av malen i stedet for for hånd](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
-Poenget er ikke at Lolly er bra for designere *og* bra for utviklere *og* bra for salg, hver for seg i et vakuum. Det er et **stafettløp**: kreatørens første arbeid skaleres av utvikleren, som i sin tur gir produsenten kraft. Den friksjonsfrie opplevelsen for den ikke-tekniske selgeren på flyet er bare *mulig* på grunn av grundigheten designeren la til grunn og utvikleren rullet ut.
+Poenget er ikke at Lolly er bra for designere *og* bra for utviklere *og* bra for salg, hver for seg i et vakuum. Det er et **stafettløp**: den kreatives innledende arbeid skaleres av utvikleren, som igjen setter produsenten i stand. Den friksjonsfrie opplevelsen for den ikke-tekniske selgeren på flyet er bare *mulig* på grunn av presisjonen designeren fastsatte og utvikleren tok i bruk.
 
-Det er kraftmultiplikatoren. Lolly er ingen skuff med separate verktøy for separate roller - det er én deterministisk livssyklus for en ressurs som hver rolle er innom, og hver hånd den går gjennom, mangedobler verdien av den forrige.
+Det er kraftmultiplikatoren. Lolly er ikke en skuff med separate verktøy for separate roller - det er én deterministisk ressurslivssyklus som hver rolle berører, og hver hånd den går gjennom multipliserer verdien av den forrige.
 
 ---
 
 ## Én godkjenning, ti tusen ressurser
 
-![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+Fordi godkjenningen ligger i verktøyet og ikke i filen (se [Hvordan Lolly sammenlignes](/info/positioning.html)), slutter skala å være et gjennomgangsproblem. Godkjenn et lokalisert verktøy for sosiale kort én gang, generer deretter **10 000 ressurser på 12 språk** fra et regneark - og ikke én av dem trenger en ny compliance-sjekk fra jus eller merkevare, fordi malen de alle kommer fra allerede var godkjent.
 
-Fordi godkjenningen ligger i verktøyet og ikke i filen (se [Hvordan Lolly sammenlignes](/info/positioning.html)), slutter skala å være et gjennomgangsproblem. Godkjenn et verktøy for lokaliserte sosiale kort én gang, og generer deretter **10 000 ressurser på 12 språk** fra et regneark - og ikke én av dem trenger en ny etterlevelsessjekk fra juridisk eller merkevareteamet, fordi malen de alle kommer fra, allerede var godkjent.
+Det samme deterministiske verktøyet når den skalaen på tre måter, alle med identisk, forhåndsgodkjent output:
 
-Det samme deterministiske verktøyet når den skalaen på tre måter, som alle gir identisk, forhåndsgodkjent utdata:
+- <!--i:people--> **En person, i appen.** `/pro`-batchrutenettet: lim inn eller importer radene, få én ferdig ressurs per rad, last ned zip-en. Ingen designkompetanse, ingen sak, ingen venting.
+- <!--i:code--> **En utvikler, fra kommandolinjen.** CLI-en kjører *samme* motor og *samme* rendringsvei uten grensesnitt, slik at verktøyet kan kjøres i sekvens over alle 10 000 radene i et skript eller en nattlig pipeline. Et `lolly <tool> --field=…`-kall i en løkke er hele integrasjonen.
+- <!--i:cpu--> **Et system eller en KI-agent, over MCP.** Det samme verktøyet betjent programmatisk, med samme troskap og enda større skala - fordi en maskin ikke blir lei mens tusenvis av filer ruller inn.
 
-- <!--i:people--> **Et menneske, i appen.** Batch-rutenettet på `/pro`: lim inn eller importer radene, få én ferdig ressurs per rad, last ned zip-filen. Ingen designkompetanse, ingen sak i køen, ingen venting.
-- <!--i:code--> **En utvikler, fra kommandolinjen.** CLI-en kjører *samme* motor og *samme* renderingsvei headless, så verktøyet kan kjøres over alle 10 000 radene i et skript eller en nattlig pipeline. Ett `lolly <tool> --field=…`-kall i en løkke er hele integrasjonen.
-- <!--i:cpu--> **Et system eller en KI-agent, via MCP.** Samme verktøy styrt programmatisk, med samme kvalitet og i enda større skala - for en maskin blir ikke lei mens tusenvis av filer ruller inn.
+![Batch-modus på en fersk installasjon: én tom rad som venter på et verktøy, med hele regnearkflaten og Render-knappen på plass før noen data kommer inn](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
 
-Ett sett merkevareregler, fastsatt én gang av en designer; tre veier til identisk forhåndsgodkjent utdata - og maskinveien skalerer aller lengst, for den blir aldri trøtt mens filene ruller inn.
+Ett sett merkevarebegrensninger, fastsatt én gang av en designer; tre veier til den identiske, forhåndsgodkjente outputen - og maskinveien skalerer lengst av alle, fordi den aldri blir sliten mens filene ruller inn.
 
 ---
 
-## Det store bildet
+## Det store bildet: hvordan lagene passer sammen
+
+Alt herfra og nedover er arkitektur. Diagrammet er hele systemet i én visning: verktøy er
+data øverst, motoren i midten vet ingenting om noen plattform, skallene under den
+implementerer én kontrakt, og katalogene leverer innholdet.
 
 ```
                 ┌─────────────────────────────────────────────┐
@@ -110,240 +128,250 @@ Ett sett merkevareregler, fastsatt én gang av en designer; tre veier til identi
                 └─────────────────────────────────────────────┘
 ```
 
-### Repositorystruktur
+### Repository-oppsett
+
+Innhold monteres som pakker: `community/`, `docs/`, hver `shells/*`, både `services/*` og `brands/suse` er hver sitt eget repository, sjekket ut som git-submoduler av dette. Foreldrerepositoryet eier `engine/`, `schemas/`, `scripts/`, `tests/`, `api/`, `brands/lolly-start/` og `profiles.json`. Se [Build Guide » Getting the source](/info/build-guide.html) for utsjekkingskommandoen og arbeidsflyten på tvers av repositorier.
 
 ```
 lolly/
-├── engine/           # Plattformuavhengig kjerne. Åpen kildekode (MPL-2.0).
+├── engine/           # Platform-agnostic core. Open source (MPL-2.0).
 │   └── src/
-│       ├── index.ts          # offentlig grensesnitt - loader, runtime, template, inputs, url-mode
-│       ├── loader.ts         # henter og validerer verktøyfiler
-│       ├── runtime.ts        # orkestrerer den 5-trinns livssyklusen
-│       ├── template.ts       # Handlebars-hydrering + annotateTemplate
-│       ├── inputs.ts         # manifest → inndatamodell for runtime
-│       ├── url-mode.ts       # URL ↔ inndatatilstand, tur-retur
-│       ├── validate.ts       # JSON Schema-validering av manifester
-│       ├── compose.ts        # løser opp nøstede verktøyrenderinger (composes)
-│       ├── embed.ts          # tolker portable lolly.tools-innbyggings-URL-er
+│       ├── index.ts          # public surface - loader, runtime, template, inputs, url-mode
+│       ├── loader.ts         # fetches and validates tool files
+│       ├── runtime.ts        # orchestrates the 5-step lifecycle
+│       ├── template.ts       # Handlebars hydration + annotateTemplate
+│       ├── inputs.ts         # manifest → runtime input model
+│       ├── url-mode.ts       # URL ↔ input state round-trip
+│       ├── validate.ts       # JSON Schema validation of manifests
+│       ├── compose.ts        # resolve nested tool renders (composes)
+│       ├── embed.ts          # parse portable lolly.tools embed URLs
 │       └── bridge/
-│           └── host-v1.ts    # TypeScript-grensesnitt - brokontrakten
+│           └── host-v1.ts    # type re-export of the @lolly-tools/core contract
 │
 ├── shells/
-│   ├── web/          # PWA - driftet online; primær distribusjon
+│   ├── web/          # PWA - hosted online; primary distribution
 │   │   └── src/
-│   │       ├── main.ts           # oppstart, ruting
-│   │       ├── theme.ts          # tema-bruk/lagring (FOUC-forebygging)
-│   │       ├── bridge/           # web-implementasjoner av HostV1-API-er
-│   │       │   ├── index.ts      # komponerer alle brodelene
-│   │       │   ├── db.ts         # IndexedDB-oppsett
-│   │       │   ├── state.ts      # host.state - lagrede redigeringer
-│   │       │   ├── profile.ts    # host.profile - brukerdetaljer
-│   │       │   ├── assets.ts     # host.assets - katalog + brukeropplastinger
+│   │       ├── main.ts           # boot, routing
+│   │       ├── theme.ts          # theme apply/persist (FOUC prevention)
+│   │       ├── bridge/           # web implementations of HostV1 APIs
+│   │       │   ├── index.ts      # compose all bridge pieces
+│   │       │   ├── db.ts         # IndexedDB setup
+│   │       │   ├── state.ts      # host.state - saved edits
+│   │       │   ├── profile.ts    # host.profile - user details
+│   │       │   ├── assets.ts     # host.assets - catalog + user uploads
 │   │       │   ├── clipboard.ts  # host.clipboard
-│   │       │   ├── export.ts     # host.export - rasterisere/serialisere
-│   │       │   ├── net.ts        # host.net - fetch med tillatelsesliste
-│   │       │   └── media.ts      # host.media - direkte kamerabilder (onFrame)
+│   │       │   ├── export.ts     # host.export - rasterise/serialize
+│   │       │   ├── net.ts        # host.net - allowlisted fetch
+│   │       │   └── media.ts      # host.media - live camera frames (onFrame)
 │   │       ├── catalog/
-│   │       │   └── sync.ts       # katalogsynkronisering ved oppstart + offline-cache
-│   │       ├── styles/           # CSS for hele appen (app.css, picker.css, tokens.css)
+│   │       │   └── sync.ts       # boot-time catalog sync + offline cache
+│   │       ├── styles/           # app-wide CSS (app.css, picker.css, tokens.css)
 │   │       └── views/
-│   │           ├── gallery.ts    # verktøybibliotek-oversikt + kort for lagrede tilstander
-│   │           ├── tool.ts       # monterer ett verktøy (inndata + canvas + handlinger)
-│   │           ├── picker.ts     # grensesnitt for ressursvelger (kalt av host.assets)
-│   │           ├── profile.ts    # redigering av brukerdetaljer
-│   │           ├── projects.ts   # /p - mapper med lagrede økter (nøstet; mappe-/utvalgseksport)
-│   │           └── free-canvas.ts # overlay for fri-canvas-redigering for render.layout:"editor"-verktøy
+│   │           ├── gallery.ts    # tool library listing + saved-state cards
+│   │           ├── tool.ts       # mounts one tool (inputs + canvas + actions)
+│   │           ├── picker.ts     # asset picker UI (invoked by host.assets)
+│   │           ├── profile.ts    # user details editor
+│   │           ├── projects.ts   # /p - folders of saved sessions (nested; folder/selection export)
+│   │           └── free-canvas.ts # free-canvas editor overlay for render.layout:"editor" tools
 │   │
-│   ├── cli/          # Node.js CLI - samme motor, hodeløs jsdom
+│   ├── cli/          # Node.js CLI - same engine, headless jsdom
 │   │   ├── bin/lolly.ts
 │   │   └── src/
-│   │       ├── run.ts    # loadTool → createRuntime → export → skriv fil
-│   │       └── bridge.ts # CLI-implementasjon av HostV1
+│   │       ├── run.ts    # loadTool → createRuntime → export → write file
+│   │       └── bridge.ts # CLI implementation of HostV1
 │   │
-│   ├── tui/          # Interaktivt terminalskall (Ink) - gjenbruker CLI-broen
+│   ├── tui/          # Interactive terminal shell (Ink) - reuses the CLI bridge
 │   │   └── src/
-│   │       ├── main.tsx  # fullskjerm-app: Gallery / Projects / Profile / ToolView
-│   │       └── bridge.ts # CLI-bro + tilstand på disk under ~/.lolly
+│   │       ├── main.tsx  # full-screen app: Gallery / Projects / Profile / ToolView
+│   │       └── bridge.ts # CLI bridge + on-disk state under ~/.lolly
 │   │
-│   ├── tauri-desktop/ # nedlastbar skrivebordsapp
-│   └── tauri-mobile/  # iOS/Android-app
+│   ├── tauri-desktop/ # downloadable desktop app
+│   └── tauri-mobile/  # iOS/Android app
 │
-├── tools/            # profil-VISNING (gitignored) - data, ikke kode. Sammenslått fra pakker:
-│                     #   community/ (offentlig, merkevareuavhengig, MPL) + brands/<active>/tools (merkevareeid).
+├── tools/            # profile VIEW (gitignored) - data, not code. Merged from packs:
+│                     #   community/ (public, brand-agnostic, MPL) + brands/<active>/tools (brand-owned).
+│                     #   A SELECTION follows - the mounted set depends on the profile.
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
 │   ├── code-canvas/
 │   ├── countdown-timer/
 │   ├── color-palette/
-│   ├── color-block/           # typede/heterogene blokker (addMenu-diskriminator)
+│   ├── color-block/           # typed/heterogeneous blocks (addMenu discriminator)
 │   ├── dynamic-layout/
-│   ├── tool-logo/         # "Logo" - automatisk vekslende merkevarelogo
-│   ├── street-map/        # offline vektorbaserte kart over bykvartaler
-│   ├── url-shot/          # "URL Screenshot" (capture-funksjon)
-│   ├── strip-data/        # metadatafjerning på enheten - JPEG/PNG/SVG/PDF (fil inn → ren fil ut)
-│   ├── compress-pdf/      # PDF-komprimering på enheten - komprimerer bilder på nytt (fil inn → mindre fil ut)
-│   ├── brand-lockup/      # "Brand Lockup" - SUSE-logolockuper; HarfBuzz tekst-til-bane (wasm)
-│   ├── chart-creator/     # SVG-diagrammer fra strukturert data
-│   ├── filter-duotone/    # tofarget bildebehandling
-│   ├── filter-halftone/   # foto → vektorbasert rastermønster med punkter
-│   ├── filter-scanline/   # foto → retro posterisert skannlinjemønster (SVG / transparent raster)
-│   ├── meeting-planner/   # global møteplanlegger for tidssoner
-│   ├── calendar-ics/      # arrangement → .ics-kalenderfil pluss et kort
-│   ├── digi-ad/           # "Animated Ad" - loopende banner fra scener
-│   ├── event-name-badge/  # konferansebrikker - komponerer qr-code som en SVG
-│   ├── wayfinding-signage/ # arrangementsskilting; retningsblokker autotilpasser etikettekst
-│   ├── text-helper/       # tekstverksted på enheten (formater/dekod/hash/anonymiser)
-│   ├── design/     # "Design" - fri WYSIWYG-redigeringscanvas (render.layout: editor)
-│   ├── multi-page-pdf/    # PDF-dokument med flere sider - forside, flytende innholdsblokker, bakside
-│   ├── diagram-builder/   # org / layercake / prosess / syklus / pyramidediagrammer
-│   ├── logo-wall/         # mange logoer → automatisk pakket rutenett
-│   ├── logo-lockup-partner/ # SUSE + partner samarbeidslockup
-│   ├── web-icon/          # favicon .ico / png / svg fra tekst + farger
-│   ├── filter-posterize/  # foto → flate posteriserte vektorseparasjoner
-│   ├── filter-pixel-stretch/ # foto → pikselutsmøringseffekt
-│   ├── lottie-digi-ad/    # animerte Lottie-annonsebannere
-│   └── pose-geeko/        # poser SUSE-maskoten Geeko - trykkeklare stillbilder
+│   ├── tool-logo/         # "Logo" - auto-switching brand logo
+│   ├── street-map/        # offline vector city-block maps
+│   ├── url-shot/          # "URL Screenshot" (capture capability)
+│   ├── strip-data/        # on-device metadata strip - JPEG/PNG/SVG/PDF (file in → clean file out)
+│   ├── compress-pdf/      # on-device PDF compressor - recompresses images (file in → smaller file out)
+│   ├── brand-lockup/      # "Brand Lockup" - SUSE logo lockups; HarfBuzz text-to-path (wasm)
+│   ├── chart-creator/     # SVG charts from structured data
+│   ├── filter/            # photo effects in one tool - halftone/scanline/posterize/voronoi (vector), duotone/pixel-stretch/imperfections (raster)
+│   ├── meeting-planner/   # global timezone meeting scheduler
+│   ├── calendar-ics/      # event → .ics calendar file plus a card
+│   ├── digi-ad/           # "Animated Ad" - looping banner from scenes
+│   ├── event-name-badge/  # conference badges - composes qr-code as an SVG
+│   ├── wayfinding-signage/ # event signage; directions blocks auto-fit label text
+│   ├── text-helper/       # on-device text workbench (format/decode/hash/de-identify)
+│   ├── design/     # "Design" - freeform WYSIWYG editor canvas (render.layout: editor)
+│   ├── multi-page-pdf/    # multi-page PDF document - cover, flowing content blocks, back page
+│   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
+│   ├── logo-wall/         # many logos → auto-packed grid
+│   ├── logo-lockup-partner/ # SUSE + partner co-brand lockup
+│   ├── web-icon/          # favicon .ico / png / svg from text + colours
+│   ├── lottie-digi-ad/    # animated Lottie ad banners
+│   └── pose-geeko/        # pose the SUSE Geeko mascot - print-ready stills
 │
 ├── catalog/
-│   ├── tools/index.json        # verktøyregister
+│   ├── tools/index.json        # tool registry
 │   └── assets/
-│       ├── index.json          # ressursregister
-│       └── suse/...            # logo, palett, osv.
+│       ├── index.json          # asset registry
+│       └── suse/...            # logo, palette, etc.
 │
-├── schemas/          # JSON Schema for tool.json, ressursoppføringer, AssetRef
+├── schemas/          # JSON Schema for tool.json, asset entries, AssetRef
 ├── scripts/          # build-catalog-index.ts, checksum-assets.ts, validate-catalog.ts
-├── tests/            # motortester
-└── docs/             # denne filen + forfatterguider + posisjonering
+├── tests/            # engine tests
+└── docs/             # this file + authoring guides + positioning
 ```
 
 ---
 
-## Plattformens leveringsmodell
+## Leveringsmodell for plattformen
 
-Plattformen kjører på flere overflater - web-PWA, Tauri desktop/mobil, den skriptbare CLI-en og den interaktive TUI-en. Alle bruker samme motor og de samme verktøyfilene.
+Plattformen kjører på tvers av flere overflater - web-PWA, Tauri desktop/mobil, den skriptbare CLI-en og den interaktive TUI-en. Alle bruker den samme motoren og de samme verktøyfilene.
 
 ### Web (PWA) - primær distribusjon
+Hostet på en SUSE-kontrollert URL. Fungerer offline når service worker har mellomlagret verktøy og ressurser. Dette er der de fleste ansatte, leverandører og partnere vil bruke plattformen. Ingen konto kreves - tilstand lagres i IndexedDB per enhet.
 
-![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&dark=1&filename=aud-web-split)
+Web-skallet er responsivt fra ett enkelt oppsett. På desktop er et verktøy et størrelsesjusterbart kontrollsidefelt ved siden av en forhåndsvisningsscene med trackpad-native lerretsnavigasjon (Cmd/Ctrl-hjul eller knip for å zoome rundt markøren, Mellomrom- eller midtre-dra for å panorere, `0`/`1`/`+`/`−`-taster og en Fit/%-HUD). På mobil (≤640px) blir kontrollene et toppforankret ark med et draghåndtak som smetter mellom peek/halv/full (tap veksler) over en statisk fullskjerms forhåndsvisning, og en flytende **Render**-knapp åpner **Export**-kontrollene i en bunnark-popup. Berøring gir knip-zoom og dra-panorering på forhåndsvisningen. Rendringsveien og eksportkontrollene er identiske på tvers av begge - bare rammen flyter om.
 
-![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![Delt visning på desktop - kontroller generert fra manifestet til venstre, det levende lerretet til høyre](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&dark=1&filename=aud-web-split)
 
-Driftet på en SUSE-kontrollert URL. Fungerer offline når service workeren har mellomlagret verktøy og ressurser. Det er her de fleste ansatte, leverandører og partnere vil bruke plattformen. Ingen konto kreves - tilstand lagres i IndexedDB per enhet.
+Samme verktøy i telefonbredde, uten et andre layout å vedlikeholde: kontrollene blir et ark øverst, forhåndsvisningen fyller hele skjermen og render-pillen flyter over den.
 
-Nettskallet er responsivt fra ett enkelt oppsett. På skrivebordet er et verktøy en justerbar sidepanel med kontroller ved siden av en forhåndsvisningsflate, med trackpad-native canvas-navigasjon (Cmd/Ctrl-hjul eller knip for å zoome rundt markøren, mellomrom- eller midtre-dra for å panorere, tastene `0`/`1`/`+`/`−`, og en Fit/%-HUD). På mobil (≤640px) blir kontrollene et toppforankret ark med et draghåndtak som smetter til kikk/halv/full (trykk veksler), over en statisk fullskjerms forhåndsvisning, og en flytende **Render**-knapp åpner **Eksport**-kontrollene i en bunnark-popup. Touch får knipe-zoom og dra-panorering på forhåndsvisningen. Renderingsveien og eksportkontrollene er identiske i begge - bare kromet omorganiseres.
+![Et audiogram på en 430px bred skjerm - kontrollarket over, det ferdige kvadratiske verket under og den flytende render-pillen](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
-**Batch-modus (`/pro`).** Nettskallet leverer også et regnearklignende batch-rutenett (`shells/web/src/pro/`) som rendrer mange rader samtidig på tvers av ett eller flere verktøy. Det håndterer CSV/TSV tur-retur pluss innliming fra regneark, mal/format/størrelse/enhet/dpi per rad, et sidepanel med blokkredigering og live forhåndsvisning, sammenleggbare eksportkolonner, en «relevans»-taglinje per rad, radomorganisering med draghåndtak til venstre, tostegs slette-bekreftelse, lagrede batch-økter, og en `.zip`-nedlasting. Dette er en-til-mange-overflaten bak «massegenerering av innhold»-posisjoneringen.
+**Batch-modus (`/pro`).** Web-skallet leverer også et regnearklignende batch-rutenett (`shells/web/src/pro/`) som rendrer mange rader på én gang på tvers av ett eller flere verktøy. Det håndterer CSV/TSV-rundtur pluss innliming fra regneark, per-rad mal/format/størrelse/enhet/dpi, et sidepanel for blokk-redigering med levende forhåndsvisning, sammenleggbare eksportkolonner, en per-rad "relevans"-tagglinje, dra-håndtak for radomorganisering til venstre, to-trinns slettebekreftelse, lagrede batch-økter og nedlasting som `.zip`. Dette er en-til-mange-flaten bak posisjoneringen "masseproduksjon av innhold".
 
 ### Tauri desktop / mobil
-Pakket som en nativ app (lite fotavtrykk via Tauri). Gir full offline-tilgjengelighet, filsystemtilgang for CLI-avhengige verktøy (PDF Smasher, Font Outliner), og kameratilgang. Planlagt for verktøyforbedring midt i 2026.
+Pakket, native app (lite fotavtrykk via Tauri). Gir full offline-tilgjengelighet, filsystemtilgang for CLI-avhengige verktøy (PDF Smasher, Font Outliner) og kameratilgang. Planlagt for verktøyforbedring midt i 2026.
 
 ### CLI
-
-Det samme verktøyet i telefonbredde, uten et andre oppsett å vedlikeholde: kontrollene blir et ark øverst, forhåndsvisningen fyller hele skjermen, og render-knappen flyter over den.
-
 `lolly <tool-id> [--input=value ...] --output=file.png`
 
-Skrivebordsbrukere kan kalle mange verktøy fra terminalen. CLI-skallet laster samme motor, oppretter en jsdom-DOM, kjører samme renderingsvei, og skriver filen. URL-modus er transporten - CLI-en er ikke en separat implementasjon. Dette garanterer at CLI- og GUI-resultater er identiske.
+Desktop-brukere kan starte mange verktøy fra terminalen. CLI-skallet laster samme motor, oppretter et jsdom-DOM, kjører samme render-sti og skriver filen. URL-modus er transportmekanismen - CLI er ikke en separat implementasjon. Dette garanterer at CLI- og GUI-utdata er identiske.
 
 ```bash
 lolly qr-code --url=https://suse.com --output=qr.svg
 lolly quotes --quote="Ship it." --output=quote.png
-lolly                        # lister tilgjengelige verktøy
-lolly qr-code                # lister inndata for det verktøyet
+lolly                        # lists available tools
+lolly qr-code                # lists inputs for that tool
 ```
 
 ### TUI
 `npm run tui`
 
-Den interaktive motparten til CLI-en: en fullskjerms, tastaturførst terminal-app (bygget på Ink) for å bla i verktøy, fylle ut inndata, lagre prosjekter og eksportere - helt uten et GUI. Vertsbroen dens **gjenbruker CLI-ens implementasjon** for de DOM-frie formatene (SVG/EMF/EPS/HTML + tekst/data), og legger til tilstand på disk under `~/.lolly` pluss en valgfri inline forhåndsvisning. I tillegg har den et **nettleser-rendringsnivå**: en avgrenset hodeløs Chromium (den samme MCP-serveren installerer) som produserer raster/PDF/video og direkte URL-capture på forespørsel - den styrer en bygget kopi av nettskallet slik at resultatet blir identisk, og starter først når du eksporterer et slikt format for første gang. Så `url-shot` (med beskjæring + omfarging + vektor-PDF/SVG) og alle raster-/pdf-verktøy kjører i terminalen også. Se [TUI-guiden](/info/tui.html).
+Det interaktive motstykket til CLI: en fullskjerms, tastaturstyrt terminal-app (bygget på Ink) for å bla i verktøy, fylle ut inndata, lagre prosjekter og eksportere - alt uten en GUI. Vertsbroen dens **gjenbruker CLI-ens implementasjon** for de DOM-frie formatene (SVG/EMF/EPS/HTML + tekst/data), og legger til tilstand på disk under `~/.lolly` pluss en valgfri innebygd forhåndsvisning. Utover det har den et **nettleser-rendringsnivå**: en avgrenset, hodeløs Chromium (den samme som MCP-serveren installerer) som produserer raster/PDF/video og fanging av levende URL-er på forespørsel - ved å drive en bygget kopi av web-skallet slik at utdata blir identisk, og som først starter når du eksporterer et slikt format for første gang. Dermed kjører `url-shot` (med beskjæring + omfarging + vektor-PDF/SVG) og hvert raster/pdf-verktøy også i terminalen. Se [TUI-guiden](/info/tui.html).
 
-Uansett hvilken flate du er på, er Capabilities-fanen i dashbordet det fullstendige kartet over hva plattformen erklærer at den kan, gruppert og lesbart uten at du åpner et eneste verktøy.
+Uansett hvilken flate du er på, er dashbordets Capabilities-fane det fullstendige kartet over hva plattformen erklærer at den kan gjøre, gruppert og lesbart uten å åpne et eneste verktøy.
 
 ---
 
 ## Verktøykategorier
 
-![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=aud-utilities)
+Verktøy merkes med en `category` i manifestet for gruppering i galleriet.
 
-Verktøy merkes med en `category` i manifestet for galleri-gruppering.
+Radene listes i galleriets seksjonsrekkefølge. `utility`-seksjonen rendres alltid **sist** i galleriet (etter alle andre kategorier, inkludert fremtidige) - det er skuffen "Offline-verktøy" på enheten.
 
-Radene er listet i galleriseksjonenes rekkefølge. Seksjonen `utility` rendres alltid **sist** i galleriet (etter alle andre kategorier, inkludert fremtidige) - det er «Offlineverktøy»-skuffen på enheten.
-
-| Kategori | Leverte verktøy | Planlagt |
+| Kategori | Eksempler | Planlagt |
 |---|---|---|
-| `everyone` | QR Code Generator, Quote Card, Email Signature, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
-| `designer` | Brand Lockup, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
-| `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS | Event Stationery, Bulk Name Badges, Room Agenda Cards |
-| `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Design | Enhets-/formatkonvertere, flere personvernverktøy på enheten |
+| `everyone` | QR-kodegenerator, Sitatkort, E-postsignatur, Logo, Ordmerke, Audiogram, Battlecards, Sekvensstudio, Record | Ansattbilde-stasjonært materiell |
+| `designer` | Merkevare-lockup, Design, Chart Creator, D3 Chart Studio, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `event` | Møteplanlegger, Navneskilt for arrangement, Skiltsystem, Kalender-ICS, Booth Studio | Stasjonært materiell for arrangementer, Navneskilt i bulk, Romagenda-kort |
+| `product` | - | CVE-varsel, Produktlanseringskunngjøring, Blogg-OG-bilde |
+| `utility` | Fjern skjulte data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Enhets-/formatkonvertere, flere personvernverktøy på enheten |
 
-Verktøy klassifiseres også etter status: `official` (merkevaregodkjent, ingen vannmerke), `community` (eksternt bidrag), `experimental` (eksporter med vannmerke). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap og Diagram Builder har for tiden status `experimental`; Web Icon Maker og Design leveres som `community`-verktøy.
+Disse cellene er **eksempler, ikke inventarlister**. Hvilke verktøy som finnes, er en egenskap ved profilen du har montert, ikke ved denne siden: en merkevarepakke legger til sine egne, og kan utelate et fellesverktøy den heller ikke vil levere. `catalog/tools/index.json` - generert fra manifestene, og registeret galleriet faktisk leser - er den autoritative listen; for å telle hva en profil monterer, tell manifestene (`ls community/*/tool.json brands/*/tools/*/tool.json`) i stedet for å stole på et tall skrevet ned her. (En verktøy-id som finnes i to pakker, monteres kun én gang, fra den vinnende pakken.)
 
-**Design** er det første verktøyet bygget på den frie canvas-modusen `render.layout: "editor"` - en kromfri overflate for direkte manipulasjon der du drar, endrer størrelse på, roterer og fester bokser med tekst, former og bilder, og deretter eksporterer via samme renderingsvei som alle andre verktøy.
+Verktøy klassifiseres også etter status: `official` (godkjent av merkevaren, ingen vannmerke), `community` (eksternt bidrag), `experimental` (eksporter med vannmerke). Mesteparten av biblioteket er `official`; de nyere studioene og fangstverktøyene ligger gjerne på `community` eller `experimental` mens de modnes. Hver flate viser merket, slik at leseren vet hva de tar med seg før de åpner det - og, som kategoricellene over, beveger status-medlemskapet seg for raskt til å listes opp her. Les det av galleriet eller det genererte indekset.
 
-**Strip Hidden Data** er det første **verktøyet på enheten** (`privacy: "on-device"`): et innholdstransformerende verktøy som tar en fil *du* leverer, behandler den helt i nettleseren, og gir tilbake en ren kopi - aldri lastet opp, aldri vannmerket, ingen opprinnelse stemplet. **Text Helper** er det andre - et verksted på enheten for hverdagslige lim-inn-på-en-nettside-oppgaver (JSON-formatering, JWT-dekoding, Base64, URL-koding/-dekoding, SHA-hashing). **Compress PDF** er det tredje - det krymper en PDF ved å komprimere bildene på nytt, igjen helt på enheten. Alle tre bærer merketeksten "Runs on your device - nothing is uploaded". Dette er starten på en personvernverktøy-kategori som erstatter det å gi fra seg konfidensielle filer til nettsteder med ett enkelt formål.
+**Design** er det første verktøyet bygget på det frie lerret-modusen `render.layout: "editor"` - en kromfri, direktemanipulasjonsflate der du drar, endrer størrelse på, roterer og fester bokser med tekst, former og bilder, og deretter eksporterer gjennom samme render-sti som alle andre verktøy.
 
-> Obs: `category` og `status` denormaliseres til `catalog/tools/index.json` (registeret galleriet leser) fra hver `tool.json`. Manifestet er den autoritative kilden - indeksen **genereres** av `npm run build:catalog`, og `npm run validate:catalog` gjør at CI feiler hvis den committede indeksen avviker fra manifestene.
+**Strip Hidden Data** er det første **verktøyet på enheten** (`privacy: "on-device"`): et innholdstransformasjonsverktøy som tar en fil *du* selv oppgir, behandler den helt i nettleseren og leverer tilbake en ren kopi - aldri lastet opp, aldri vannmerket, ingen proveniens stemplet. **Text Helper** er det andre - en on-device-arbeidsbenk for hverdagslige lim-inn-i-en-nettside-jobber (JSON-formatering, JWT-dekoding, Base64, URL-koding/dekoding, SHA-hashing). **Compress PDF** er det tredje - det krymper en PDF ved å rekomprimere bildene, igjen helt på enheten. Markøren og merketeksten "Kjøres på din enhet - ingenting lastes opp" dekker nå hele transformasjonssettet: Strip Hidden Data, Text Helper, Compress PDF, **Convert Image** (HEIC/TIFF/AVIF → WebP/JPG/PNG), **Convert Font**, **Redact** (ødelegg områder i et bilde, SVG eller PDF), **Prompt to Image** og **Rebrand a Deck** (omtem et `.pptx`-dokument på stedet) der profilen monterer det. Dette er en personvern-verktøykategori som erstatter det å overlevere konfidensielle filer til enkeltformåls-nettsteder.
+
+![Verktøyskuffen, der hvert kort er et verktøy som transformerer en fil du allerede har](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=aud-utilities)
+
+> Merk: `category` og `status` denormaliseres inn i `catalog/tools/index.json` (registeret galleriet leser) fra hver `tool.json`. Manifestet er sannhetskilden - indeksen er **generert** av `npm run build:catalog`, og `npm run validate:catalog` feiler i CI hvis den innsjekkede indeksen avviker fra manifestene.
 
 ---
 
 ## Arkitektoniske forpliktelser
 
-Disse beslutningene er fastsatt. Å endre noen av dem er en stor oppgave - de former alle andre beslutninger i kodebasen.
+Disse beslutningene er avgjort. Å endre noen av dem er et stort foretak - de former alle andre beslutninger i kodebasen.
 
 ### 1. Deklarative verktøy, med en imperativ nødutgang
 
-![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-street-map-controls)
-
 Et verktøy er et manifest (`tool.json`) + en mal (`template.html`) + valgfri `hooks.js`.
 
-**Manifestet deklarerer inndata.** Ikke malen. Inndata utledes ikke fra Handlebars-tokener. Manifestet er kontrakten; malen bruker navngitte variabler via `{{id}}`.
+**Manifestet erklærer inndata.** Ikke malen. Inndata utledes ikke fra Handlebars-tokener. Manifestet er kontrakten; malen bruker navngitte variabler via `{{id}}`.
 
-**Hooks er valgfrie.** De fleste verktøy er rent deklarative - manifest + mal er nok. Verktøy som trenger beregnede verdier (QR-koding, forming av diagramdata) leverer `hooks.js` som eksponerer navngitte livssyklusfunksjoner (`onInit`, `onInput`, `onFrame` - hooken per bilderute for direktekamera i bevegelsesreaktive verktøy - `beforeRender`, `beforeExport`, `afterExport`, og `exportFile` - fil-inn/fil-ut-transformasjonsveien som brukes av verktøy på enheten som Strip Hidden Data). Verten laster inn hooks via `new Function('host', …)` med kapabilitetsbroen injisert som closure-scope. Dette er en **portabilitetskontrakt, ikke en sikkerhetssandkasse**: hooks kjører fortsatt i sidens realm og *kan* nå `window`/`fetch`/`document` i et nettskall - `host.*` er den støttede, portable overflaten, ikke en håndhevet grense. Asynkrone hook-resultater er tidsavgrenset (onInit 5s, onInput 2s, øvrige 5s), og sene resultater forkastes; en løpsk *synkron* hook kan ikke avbrytes. Upålitelig tredjeparts-hook-kode er derfor ikke trygt å kjøre før Worker-isolasjon lanseres.
+![Street Maps kontrollstabel - en byvelger, et temavalg, vektglidere og fargeutløsere, hver eneste én hentet fra en manifestlinje](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-street-map-controls)
 
-Dette har betydning fordi: deklarative verktøy kan lages av ikke-utviklere. Hvis hvert verktøy var en nettapp, ville risikonotatet «begrensede ferdigheter til å lage/vedlikeholde arbeidshest-maler» blitt en permanent flaskehals.
+**Hooks er valgfrie.** De fleste verktøy er rent deklarative - manifest + mal er nok. Verktøy som trenger beregnede verdier (QR-koding, formforming av diagramdata) leverer `hooks.js` som eksponerer navngitte livssyklusfunksjoner (`onInit`, `onInput`, `onFrame` - per-bilde-hooken for kamera i sanntid for bevegelsesreaktive verktøy - `onLevel`, `beforeExport`, `afterExport`, `exportFile` - fil-inn/fil-ut-transformasjonsstien brukt av on-device-verktøy som Strip Hidden Data - og `exportStill`, for et verktøy som eier sin egen dype rasterisering). Verten laster hooks via `new Function('host', …)` med kapabilitetsbroen injisert som lukkeromfang (closure scope). Dette er en **portabilitetskontrakt, ikke en sikkerhets-sandkasse**: hooks kjører fortsatt i sideomfanget og *kan* nå `window`/`fetch`/`document` i et nettleserskall - `host.*` er den støttede, portable overflaten, ikke en håndhevet grense. Asynkrone hook-resultater er tidsbegrensede (`onInit` 5s, `onInput` 2s, `beforeExport`/`afterExport` 5s, `exportFile`/`exportStill` 10s), og sene resultater forkastes; en løpsk *synkron* hook kan ikke avbrytes. Ubetrodd tredjeparts hook-kode er derfor ikke trygg å kjøre før Worker-isolasjon er levert.
 
-### 2. Verktøy og ressurser er data, ikke medfølgende kode
+Dette betyr noe fordi: deklarative verktøy kan lages av ikke-utviklere. Hvis hvert verktøy var en webapp, ville risikoen "begrenset kompetanse til å lage/vedlikeholde arbeidshest-maler" bli en permanent flaskehals.
 
-Web- og Tauri-appene henter verktøy- og ressurskataloger fra en kjent URL ved oppstart, mellomlagrer dem lokalt, og opererer med det som er der. **Å legge til en ny arrangementsflis eller sesongressurs krever ikke en app-utgivelse.**
+### 2. Verktøy og ressurser er data, ikke pakket kode
 
-Ressursbytene sjekksummeres med SHA-256 for å forhindre CDN-forgiftning. Ressursens `id` + `version` styrer cache-invalidering.
+Web- og Tauri-appene henter verktøy- og ressurskataloger fra en kjent URL ved oppstart, mellomlagrer dem lokalt og opererer på det som finnes der. **Å legge til en ny arrangementsflis eller sesongbasert ressurs krever ikke en app-utgivelse.**
 
-### 3. Kapabilitetsbroen er det eneste API-et verktøy ser
+Ressursbyte sjekksummeres med SHA-256 for å hindre CDN-forgiftning. Ressursens `id` + `version` driver mellomlagringsinvalidering.
 
-Verktøy rører aldri DOM-en utenfor sitt mal-område, kaller aldri `fetch` direkte, og leser aldri filsystemet. De kaller versjonerte `host.*`-metoder. Broen er definert i `engine/src/bridge/host-v1.ts`:
+### 3. Kapabilitetsbroen er den eneste API-en verktøy ser
+
+Verktøy rører aldri DOM-en utenfor sitt malområde, kaller aldri `fetch` direkte, leser aldri filsystemet. De kaller versjonerte `host.*`-metoder. Kontraktens kanoniske definisjon er `packages/core/src/host-v1.ts` - SDK-en for verktøyforfattere, `@lolly-tools/core`, slik at en tredjepart kan bygge mot den uten å være avhengig av motoren; `engine/src/bridge/host-v1.ts` er en type-reeksport av den, og motor-/skallkode fortsetter å importere fra den stien uendret:
 
 | Bro-API | Hva den gjør |
 |---|---|
 | `host.profile` | Brukerens fornavn, e-post, portrettbilde, by, osv. Forhåndsutfyller inndata via `bindToProfile`. |
-| `host.assets` | Katalogspørringer, ressursoppløsning, vertlevert grensesnitt for velgeren. |
+| `host.assets` | Katalogspørringer, ressursoppløsning, vertlevert velger-UI. |
 | `host.state` | Lagre / laste inndataplasser. IndexedDB på web, filsystem på Tauri, minne på CLI. |
 | `host.clipboard` | Skriv tekst eller bilde til utklippstavlen (med plattformreserveløsninger). |
-| `host.export` | Rasteriser eller serialiser renderingsmålet. Bruker vannmerke for eksperimentelle verktøy. |
-| `host.net` | Fetch med tillatelsesliste - bare tilgjengelig hvis verktøyet har deklarert funksjonen `"network"`. (Ingen leverte verktøy bruker den for øyeblikket.) |
+| `host.export` | Rasteriser eller serialiser rendermålet. Bruker vannmerke for eksperimentelle verktøy. |
+| `host.net` | Fetch med tillatelsesliste - kun tilgjengelig hvis verktøyet har erklært kapabiliteten `"network"`. (Ingen verktøy i produksjon bruker den for øyeblikket.) |
 
-Valgfrie tilleggsoverflater vises bare når et skall tilbyr dem. To er **funksjonssperret** - eksponert bare når verktøyet deklarerer det tilhørende flagget: `host.compose` (bygge inn et annet verktøys rendering - `compose`) og `host.capture` (sidefangst for URL Screenshot - `capture`). Resten er **funksjonsdetektert** - til stede når skallet kan tilby dem: `host.text` (tekst-til-bane via HarfBuzz WASM; funksjonen `wasm` merker verktøy som er avhengige av den), `host.pdf` (PDF-tolking/komprimering, brukt av Strip Hidden Data og Compress PDF), og `host.tokens` (DTCG-designtokener). De deklarerbare funksjonene er: `network`, `filesystem`, `clipboard`, `camera`, `ffmpeg`, `wasm`, `capture`, `compose`.
+Valgfrie, additive overflater vises kun når et skall leverer dem. Noen er **kapabilitetsstyrte** - eksponert kun når verktøyet erklærer det matchende flagget: `host.compose` (bygg inn et annet verktøys render - `compose`), `host.capture` (sidefangst for URL Screenshot - `capture`) og `host.recorder` (mikrofon-/kamera-/skjermfangst for opptaksverktøyene - `microphone` / `camera` / `screen`). Resten er **funksjonsdetekterte** - til stede når skallet kan levere dem, med en reserveløsning i verktøyet for skall som ikke kan.
 
-Det samme verktøyet kjører i nettleseren, Tauri og hodeløs CLI fordi hvert skall implementerer dette grensesnittet - verktøyet vet aldri hvilket det er i.
+Et lite utvalg toppoverflater, for å vise hva den dekker - [Host API](/info/host-api.html) dokumenterer hver eneste én, og `packages/core/src/host-v1.ts` er selve kontrakten:
 
-Broen er versjonert. Å legge til metoder er en mindre versjon. Å fjerne eller endre signaturer er en stor versjonsøkning. Når v2 lanseres, må v1 fortsette å fungere.
+| Overflate | Siden | Hva den legger til |
+|---|---|---|
+| `host.tokens` | 1.0 | DTCG designtokener - merkevarens egne primitiver |
+| `host.text` | 1.0 | Tekst-til-bane via HarfBuzz WASM (kapabilitetsflagget `wasm` merker verktøy som er avhengige av det) |
+| `host.media` | 1.4 | Levende kamerabilder som driver `onFrame`-hooken. Progressiv forbedring, bevisst *ikke* styrt av `camera`-flagget - et slikt verktøy fungerer fortsatt som et vanlig stillbildeverktøy |
+| `host.color` | 1.40 | Perseptuell fargematematikk: ΔEOK, WCAG- og APCA-kontrast, OKLab-ramper, klassebrudd, kategoriske paletter, harmonisemaer (1.60), fargeblanding og gradientbaking etter CSS Color 4 (1.68). Ren og synkron - skall kobler til motorens `makeColorApi()` i stedet for å implementere noe selv, så den kan ikke avvike |
+| `host.images` | 1.60 | Dekode / endre størrelse / re-enkode byte på enheten - konverteringsstien (HEIC → JPEG, komprimer til WebP, nedskaler). Levert i web-skallet som en lat fasade, slik at HEIC-dekoderen aldri havner i oppstartsblokken |
+| `host.geom` | 1.64 | Eksakt vektorgeometri: bane-boolske operasjoner, forskyvning, strøk-til-fyll, spline-nedgradering, forenkling, trefftesting. Også ren, synkron og koblet til fra motoren (`makeGeomApi()`); feil *returneres*, kastes aldri |
 
-### 4. Ressurs-ID-er varer for alltid
+Resten følger de samme reglene og er dokumentert sammen med dem: `pdf` (1.8) og `pptx` (1.58) for dokumentkirurgi på enheten, `audio` (1.71) og `speech` (1.96) for klippanalyse og TTS/transkripsjon på enheten, `viz` (1.72) for MilkDrop-plassholderkontrakten, `codec` (1.100) og `layers` (1.102) for dyp bitdybde og lagdelt bitmap-utdata, `upscale` (1.101) og `matte` (1.103) for modellene på enheten, `raster` (1.105) for hooks som gjør sitt eget pikselarbeid, `connectors` (1.106) for eksportsikre piler og `c2pa` (1.85) for signering av ferdige byte. Antallet vokser; reglene gjør det ikke.
+
+De erklærbare kapabilitetene er: `network`, `filesystem`, `clipboard`, `camera`, `microphone`, `screen`, `ffmpeg`, `wasm`, `capture`, `compose`. (`screen`, lagt til i 1.54, er skjermfangst via `host.recorder` - brukeren velger en skjerm/vindu/fane i nettleserens egen UI; skilt fra `capture`, som rasteriserer en URL verktøyet selv oppgir.)
+
+Det samme verktøyet kjører i nettleser, Tauri og hodeløs CLI fordi hvert skall implementerer dette grensesnittet - verktøyet vet aldri hvilket det er i.
+
+Broen er versjonert. Å legge til metoder er en mindre versjon. Å fjerne eller endre signaturer er en hovedversjonsoppgradering. Når v2 lanseres, må v1 fortsette å fungere.
+
+### 4. Ressurs-ID-er er for alltid
 
 `suse/logo/primary` er en kontrakt. Når den er publisert:
 - ID-en endres aldri, gjenbrukes aldri.
-- Byte-endringer → øk `version` i manifestet.
+- Byteendringer → øk `version` i manifestet.
 - Erstattet av en ny ressurs → sett `deprecated: true` og eventuelt `replacedBy`.
 - Eksisterende referanser løses alltid opp.
 
-Dette gjør at lagrede verktøytilstander og URL-delte lenker holder seg over flere år.
+Dette gjør lagrede verktøytilstander og URL-delte lenker holdbare på tvers av år.
 
 ### 5. URL-modus er førsteklasses
-
-![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-url-mode-qr)
-
-![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-url-palette)
 
 Hver inndata må kunne uttrykkes som en URL-parameter:
 
@@ -351,113 +379,98 @@ Hver inndata må kunne uttrykkes som en URL-parameter:
 lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H
 ```
 
-CLI-modus er URL-modus under en annen transport - CLI-skallet bygger et URL-tilstandsobjekt fra argv og kjører **samme** motor-pipeline. Det finnes én renderingsvei. CLI-en kan ikke avvike fra GUI-et fordi den ikke er en separat implementasjon.
+![Den lenken alene, uten noe annet i seg, er det ferdige verket](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-url-mode-qr)
 
-`url-mode.ts` håndterer tur-returen (tolking og serialisering). Reserverte parametre (videresendes aldri til verktøyet som inndata): `format`, `export`, `copy`, `slot`, `output`, `filename`, `_v`, `z` (pakket tilstand - token for «Korteste lenke»), `width`/`w`, `height`/`h`, `unit`, `dpi`, `profile`, `password`, `bleed`, `marks`, `full`, `options`, `nostage`. Ressursinndata i URL-modus serialiseres via sin `id`; runtimen løser dem opp via `host.assets.get()` før hydrering. `width`/`height` er verdier i `unit` (standard `px`, også `mm`/`cm`/`in`/`pt`/`pc`); med en fysisk enhet setter `dpi` rasteroppløsningen. De setter canvasets dokumentstørrelse og forhåndsutfyller panelet for eksportdimensjoner.
+CLI-modus er URL-modus under en annen transportmekanisme - CLI-skallet bygger et URL-tilstandsobjekt fra argv og kjører **samme** motor-pipeline. Det finnes én render-sti. CLI kan ikke avvike fra GUI fordi det ikke er en separat implementasjon.
 
-### 6. Lagring går via broen, ikke direkte
+`url-mode.ts` håndterer rundturen (parsing og serialisering). Et sett med **reserverte parametere** videresendes aldri til verktøyet som inndata: utdatakontrollene (`format`, `export`, `copy`, `filename`, `width`/`w`, `height`/`h`, `unit`, `dpi`), trykk- og proveniensbryterne (`bleed`, `marks`, `profile`, `password`, `c2pa`, `imprint`, `durable`, `meta`, `hdr`, `depth`, `cuts`) og tilstandsbærerne (`template`, `z` - det pakkede tokenet for "Korteste lenke" - og `zx`, det samme kryptert med et passord). Settet `RESERVED` i `engine/src/url-mode.ts` er autoriteten og er sikret av en test; [URL-modus](/info/url-mode.html) dokumenterer hver eneste én av dem, inkludert de få som ikke er listet her. Ressurs-inndata i URL-modus serialiseres ved sin `id`; runtimen løser dem opp via `host.assets.get()` før hydrering. `width`/`height` er verdier i `unit` (standard `px`, også `mm`/`cm`/`in`/`pt`/`pc`); med en fysisk enhet setter `dpi` rasteroppløsningen. De setter lerretets dokumentstørrelse og forhåndsutfyller eksportdimensjonspanelet.
 
-Nettskall: IndexedDB. Tauri: filsystem. CLI: i minnet. Verktøy ser bare `host.state.save(slot, data)` og `host.state.load(slot)`. `localStorage` brukes ikke - det er for lite og kan ikke holde blober.
+Fordi hver inndata følger med i lenken, gir en parameterendring et annet ferdig verk. Denne hele paletten er én utgangsfarge, en harmoni og et trinnantall:
 
-Brukere kan lagre flere navngitte redigeringsplasser per verktøy og komme tilbake til hver økt senere. Ingen kontooppretting kreves; tilstand er per enhet. Fordi broen er den eneste sømmen, er denne per-enhet-tilstanden også *portabel*: `shells/web/src/data-transfer.ts` leser alt ut igjen via `host.profile`/`host.state`/`host.assets` til en enkelt `lolly-backup`-zip som importeres på en hvilken som helst annen installasjon - det offline svaret på «flytt til en ny enhet» som ikke trenger en server (full spesifikasjon: `docs/data-transfer.md`). SUSE ID-integrasjon (synkronisering på tvers av enheter) er en fremtidig milepæl oppå dette.
+![Ni trinn over fire fargenyanser, alle vokst fra den samme frøfargen som ligger i lenken](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-url-palette)
 
-### 7. Modenhetstagger svarer strukturelt på risikoen «merkevaregodkjent»
+### 6. Lagring går gjennom broen, ikke direkte
 
-Fordi hver inndata reiser med i lenken, er en endret parameter en annen ferdig ressurs. Hele denne paletten er én startfarge, en harmoni og et antall trinn:
+Web-shell: IndexedDB. Tauri: filsystem. CLI: i minnet. Verktøy ser bare `host.state.save(slot, data)` og `host.state.load(slot)`. `localStorage` brukes ikke - det er for lite og kan ikke lagre blober.
 
-Hvert verktøy deklarerer `status: official | community | experimental` i manifestet. Galleriet sorterer etter status. Eksperimentelle verktøy vannmerker eksportene sine automatisk - vannmerket påføres av `host.export.render`, ikke av verktøyet, så det kan ikke velges bort av en ikke-offisiell verktøyforfatter.
+Brukere kan lagre flere navngitte redigeringsplasser per verktøy og komme tilbake til hver økt senere. Ingen kontoopprettelse kreves; tilstanden er per enhet. Fordi broen er den eneste skjøten, er denne per-enhet-tilstanden også *portabel*: `shells/web/src/data-transfer.ts` leser alt tilbake gjennom `host.profile`/`host.state`/`host.assets` til en enkelt `lolly-backup`-zip som kan importeres på enhver annen installasjon - det frakoblede svaret på "flytt til en ny enhet" som ikke trenger en server (full spesifikasjon: `docs/data-transfer.md`). SUSE ID-integrasjon (synkronisering på tvers av enheter) er en fremtidig milepæl oppå dette.
 
-Dette er et strukturelt svar på oppfatningsrisikoen at bruk av et hvilket som helst verktøy antyder merkevaregodkjenning. Prosessuelle svar (en godkjenningskø, SUSE ID-sperring) legges oppå dette.
+### 7. Modenhetsmerker svarer på "merkevare-godkjent"-risikoen ved design
+
+Hvert verktøy erklærer `status: official | community | experimental` i manifestet sitt. Galleriet sorterer etter status. Eksperimentelle verktøy vannmerker eksportene sine automatisk - vannmerket påføres av `host.export.render`, ikke av verktøyet, så det kan ikke velges bort av en ikke-offisiell verktøyforfatter.
+
+Dette er et strukturelt svar på oppfatningsrisikoen at bruk av et hvilket som helst verktøy antyder merkevaregodkjenning. Prosessvar (en gjennomgangskø, SUSE ID-sperring) legges oppå dette.
 
 ### 8. Verktøyinndata er typet via manifestet, inkludert ressurser
 
-Inndata deklarerer en `type`: `text`, `longtext`, `number`, `boolean`, `color`, `select`, `asset`, `date`, `time`, `datetime-local`, `url`, `profile`, `blocks`, `vector`, og `file`. Verten rendrer en generisk kontroll per type fra manifestet - verktøy skriver null linjer kontrollkode. Tre veier tyngre enn resten:
+Inndata erklærer en `type`: `text`, `longtext`, `number`, `boolean`, `color`, `select`, `asset`, `date`, `time`, `datetime-local`, `url`, `blocks`, `vector`, `table` og `file`. Verten rendrer en generisk kontroll per type ut fra manifestet - verktøy skriver null kontrollkode. (Forhåndsutfylling fra brukerens profil er ikke en type - enhver inndata kan bære `bindToProfile`.) Tre veier tyngre enn resten:
 
-- **`asset`** (med `filter` og `allowUpload`) er broen til det globale ressurssystemet; `allowUpload: false` er spaken for merkevarehåndheving for ting som sponsorflis-logoer der bare biblioteksressurser er tillatt. Brukeropplastinger bruker samme `AssetRef`-form som biblioteksressurser, så verktøy håndterer dem identisk.
-- **`blocks`** er en gjentakende feltgruppe - en minitabell inni én inndata, redigert i et sidepanel, med en typet/diskriminert legg-til-meny og ressursfelt per blokk. Å klikke på en rendret blokk på canvaset fokuserer den blokkens rad. Brukt av `meeting-planner`, `chart-creator`, `event-name-badge`, `wayfinding-signage`, `color-block`, og `digi-ad`.
-- **`vector`** grupperer et fast sett med tall (f.eks. en transformasjon) i én sammensatt kontroll; **`file`** holder brukerens egen fil som bytes i minnet for transformasjonsverktøy på enheten (f.eks. `strip-data` og `compress-pdf`).
+- **`asset`** (med `filter` og `allowUpload`) er broen til det globale ressurssystemet; `allowUpload: false` er håndtaket for merkevarehåndhevelse til ting som logoer på sponsorflis, der bare biblioteksressurser er tillatt. Brukeropplastinger bruker samme `AssetRef`-form som biblioteksressurser, så verktøy håndterer dem identisk.
+- **`blocks`** er en gjentakende feltgruppe - en minitabell inne i én inndata, redigert i et sidepanel, med en typet/diskriminert legg-til-meny og ressursfelt per blokk. Å klikke på en rendret blokk på lerretet fokuserer den blokkens rad. Brukt av `meeting-planner`, `chart-creator`, `event-name-badge`, `wayfinding-signage`, `color-block` og `digi-ad`.
+- **`vector`** grupperer et fast sett med tall (f.eks. en transform) til én sammensatt kontroll; **`file`** holder brukerens egen fil som bytes i minnet for on-device transformasjonsverktøy (f.eks. `strip-data` og `compress-pdf`).
 
 ### 9. Maler er logikkfrie (Handlebars, ikke EJS)
 
-Handlebars ble bevisst valgt fremfor EJS:
+Handlebars ble valgt fremfor EJS med hensikt:
 - Logikkfritt. Maler kan lages av ikke-utviklere.
 - Trygt som standard. `{{x}}` HTML-escaper; `{{{x}}}` er valgfritt rått.
 - Ingen vilkårlig JS i maler betyr ingen XSS-revisjonsflate per mal.
 
-Logikk lever i `hooks.js`, der den er eksplisitt og kan gjennomgås. Tilgjengelige Handlebars-hjelpere: `{{default}}`, `{{upper}}`, `{{lower}}`, `{{eq}}`, `{{markdown}}`, `{{asset ref}}`, `{{asset ref "property"}}` (pluss dataformat-hjelperne `icsStamp`/`rfcText`/`csvCell` brukt av søsken-malene `.ics`/`.vcf`/`.csv`).
+Logikk bor i `hooks.js`, der den er eksplisitt og gjennomgåelig. Tilgjengelige Handlebars-hjelpere: `{{default}}`, `{{upper}}`, `{{lower}}`, `{{eq}}`, `{{markdown}}`, `{{asset ref}}`, `{{asset ref "property"}}` (pluss dataformat-hjelperne `icsStamp`/`rfcText`/`csvCell` brukt av søster-malene `.ics`/`.vcf`/`.csv`).
 
 ### 10. Verktøy komponerer verktøy
 
-
-Et verktøy kan bygge inn **et annet** verktøys rendering uten verktøy-til-verktøy-importer - komposisjon løses opp av motoren, aldri av verktøykode. Det finnes to overflater:
+Et verktøy kan bygge inn **et annet** verktøys rendering uten verktøy-til-verktøy-importer - komponering løses av motoren, aldri av verktøykode. Det finnes to flater:
 
 - **Deklarativt manifest** - `composes: [{ id, tool, inputs, format?, width?, height? }]`. Motoren rendrer det navngitte barnet og plasserer resultatet i den logikkfrie malen som `{{asset <id>}}`. `event-name-badge` komponerer `qr-code` som en SVG i dag.
-- **Portabel embed-URL** - `<img src="https://lolly.tools/tool/<id>.<ext>?<inputs>">`. Skallet rendrer det barnet **lokalt** (en plassholderpiksel vises til den lokale renderingen er løst); ingenting hentes noensinne fra `lolly.tools`.
+- **Portabel innbyggingsURL** - `<img src="https://lolly.tools/tool/<id>.<ext>?<inputs>">`. Skallet rendrer det barnet **lokalt** (en plassholderpiksel vises til den lokale renderingen er ferdig); ingenting hentes noensinne fra `lolly.tools`.
 
-Komponer et hvilket som helst verktøys rendering: et **SVG**-barn forblir en ekte vektor når forelderen eksporterer til SVG eller PDF, og rasteriseres skarpt for PNG; **PNG/JPG/WEBP**-barn bygges inn som bilder. Krever funksjonen `compose`. Komponerte barn er mellomprodukter - aldri vannmerket eller opprinnelsesstemplet - og komposisjon degraderer elegant: et skall som ikke kan rendre et barn, utelater bare plassen, og forelderen rendres likevel.
-
----
-
-## Hva vi bevisst valgte å ikke gjøre
-
-- **Ingen EJS / ingen vilkårlig JS i maler.** XSS-overflaten er null. Logikk lever i `hooks.js`.
-- **Ingen ressurs-CMS.** Ressurskatalogen er git. Oppdateringer går via PR-gjennomgang. Ingen opplastingsgrensesnitt, ingen autentisering, ingen modereringskø. Git-gjennomgangen _er_ moderasjonen.
-- **Ingen RBAC i MVP-en.** Offentlig tilgang. Merkevarerisiko håndteres gjennom modenhetstagger + vannmerker + det strukturelle faktumet at alle ressurser brukere ser, har gått gjennom PR-gjennomgang.
-- **Ingen sentral database.** All brukertilstand er per enhet. SUSE ID-integrasjon er på veikartet, men er ikke en lanseringsblokkerer.
-- **Ingen delt kodevei for verktøy/motor.** Motoren er åpen kildekode; `tools/` og `assets/` forblir proprietært SUSE-innhold i sine egne repositorier. Separasjonen håndheves (ingen kryssimporter), slik at delingen forblir ren.
+Komponer renderingen av et hvilket som helst verktøy: et **SVG**-barn forblir en ekte vektor når forelderen eksporterer til SVG eller PDF, og rastreres skarpt for PNG; **PNG/JPG/WEBP**-barn bygges inn som bilder. Krever `compose`-egenskapen. Komponerte barn er mellomtrinn - aldri vannmerket eller proveniens-stemplet - og komponering degraderer gradvis: et skall som ikke kan rendre et barn, hopper bare over plassen, og forelderen rendrer likevel.
 
 ---
 
-## Livssyklus, fra start til slutt
+## Hva vi eksplisitt valgte å ikke gjøre
 
-![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=aud-export-popup)
+- **Ingen EJS / ingen vilkårlig JS i maler.** XSS-flaten er null. Logikk bor i `hooks.js`.
+- **Ingen obligatorisk ressurs-CMS.** Enkeltpersoner tar inn sine egne kreative filer rett inn i katalogen sin i appen (visningen [Catalogue](/info/using.html) og Brand Studio) - ingen server, ingen adminkonsoll. Arbeid overleveres som en **økt**: en delingslenke bærer hele tilstanden, og den samme økten følger med i en sikkerhetskopi eller over en samarbeidsøkt. Den som kontrollerer utrullingen kan deretter låse en delt økt som en **mal** - åpne lenken, registrere verdiene som en maloppføring i det verktøyets mappe i merkevarepakken og commit - hvoretter den vises i verktøyets "New from template"-velger og kan lenkes direkte som `?template=<id>`. Git er utrullingseierens låsesteg, aldri skaperens. For en *delt, styrt* katalog **kan** en organisasjon forvalte ressursmappen på samme måte og sperre oppdateringer gjennom PR-gjennomgang - en tilgjengelig styringsmodell, ikke et krav fra appen.
+- **Ingen tvungen RBAC.** Den åpne appen er offentlig tilgjengelig som standard; merkevarerisiko håndteres med modenhetsmerker + vannmerker. En organisasjon som vil ha strammere kontroll legger på sin egen autentisering og den git-gjennomgåtte katalogen ovenfor.
+- **Ingen sentral database.** All brukertilstand er per enhet. SUSE ID-integrasjon er på veikartet, men ikke en lanseringssperre.
+- **Ingen delt verktøy-/motorkodesti.** Motoren er åpen kildekode; `tools/` og `assets/` forblir proprietært SUSE-innhold i sine egne depoter. Skillet håndheves (ingen kryssimporter) slik at delingen forblir ren.
 
-Slides-verktøyet er bygget på den andre flaten: hver slot på hvert slide kan inneholde et annet Lolly-verktøy i stedet for et bilde.
+---
+
+## Livssyklus, fra ende til ende
 
 En bruker åpner `lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H`:
 
-1. **Oppstart.** Nettskallet åpner IndexedDB, konstruerer kapabilitetsbroen, synkroniserer verktøy- og ressurskatalogene (eller laster fra cache når offline).
-2. **Ruting.** URL-hash → `tool`-visning, med `qr-code` og URL-parametre hentet ut.
-3. **Innlasting.** `loadTool('qr-code', fetchFile)` henter `tool.json`, validerer mot JSON Schema, henter `template.html`, `styles.css`, og kildekoden til `hooks.js`.
-4. **Tolke URL-tilstand.** `parseUrlState` oversetter URL-parametre til innledende inndataverdier. Ressursreferanser (`?logo=suse/logo/primary`) tolkes som lettvekts `{ id, _unresolved: true }`-objekter.
-5. **Runtime.** `createRuntime(tool, host, initialValues)` bygger inndatamodellen (slår sammen profildata, standardverdier og innledende verdier), løser opp ressursreferanser via `host.assets.get()`, laster hooks (`host` i closure-scope, ikke sandkassebasert), kaller `hooks.onInit`.
-6. **Rendering.** Skallet abonnerer på runtimen; ved hver tilstandsendring mottar det `{ model, hydrated }`. Det rendrer inndatakontroller fra modellen og skriver den hydrerte mal-HTML-en inn i `#tool-canvas`.
-7. **Interaksjon.** Brukeren skriver i en inndata → `runtime.setInput(id, value)` → begrensninger påføres → `hooks.onInput` kalles → rehydrerer → rendrer på nytt. Canvaset oppdateres direkte.
-8. **Eksport.** Brukeren klikker Last ned (PNG) → `runtime.export(canvasNode, 'png')` → `host.export.render` (rasteriserer via dom-to-image-more; SVG/PDF går via dedikerte DOM-gjennomgående vektoriserere) → blob → `host.export.download`. Formatspennet et verktøy kan velge inn i er bredt: `svg`, `png`, `jpg`/`jpeg`, `webp`, `avif`, `pdf`, vektorformatene `emf`, `eps`, pluss trykk-/CMYK-formatene `pdf-cmyk`, `cmyk-tiff`, `eps-cmyk`; videoformatene `webm`, `mp4`, `gif`; og data-/tekstformatene `html`, `md`, `txt`, `json`, `csv`, `ics`, `vcf`, `ico`, `zip`. (Verktøy som setter `render.export: false` - f.eks. Color Palette, Countdown Timer, Strip Hidden Data, Text Helper, Compress PDF - skjuler kontrollene for nedlasting/format/dimensjon.) Fysiske enheter konverteres per format her (PDF → ekte sidepunkter, raster → piksler ved DPI med en `pHYs`-chunk). Forfatterskap-/opprinnelsesmetadata (forfatter, verktøy, kilde - bygget av `engine/src/metadata.ts`) bygges inn per format: PNG iTXt, JPEG EXIF, PDF info-dict, SVG `<metadata>`, GIF-kommentar. Eksperimentelle verktøy får et vannmerke satt inn av verten, ikke av verktøyet.
+1. **Oppstart.** Web-shell åpner IndexedDB, konstruerer egenskapsbroen, synkroniserer verktøy- og ressurskatalogene (eller laster fra buffer ved frakobling).
+2. **Rute.** URL-hash → `tool`-visning, med `qr-code` og URL-parametere hentet ut.
+3. **Last.** `loadTool('qr-code', fetchFile)` henter `tool.json`, validerer mot JSON Schema, henter `template.html`, `styles.css` og `hooks.js`-kildekode.
+4. **Tolk URL-tilstand.** `parseUrlState` oversetter URL-parametere til initielle inndataverdier. Ressursreferanser (`?logo=suse/logo/primary`) tolkes som lettvekts `{ id, _unresolved: true }`-objekter.
+5. **Kjøretid.** `createRuntime(tool, host, initialValues)` bygger inndatamodellen (slår sammen profildata, standardverdier og initielle verdier), løser ressursreferanser via `host.assets.get()`, laster hooks (closure-scopet `host`, ikke sandkassert), kaller `hooks.onInit`.
+6. **Rendring.** Skallet abonnerer på kjøretiden; ved hver tilstandsendring mottar det `{ model, hydrated }`. Det rendrer inndatakontroller fra modellen og skriver den hydrerte mal-HTML-en inn i `#tool-canvas`.
+7. **Interaksjon.** Brukeren skriver i en inndata → `runtime.setInput(id, value)` → begrensninger anvendes → `hooks.onInput` kalles → re-hydrering → re-rendring. Lerretet oppdateres live.
+8. **Eksport.** Brukeren klikker Download(PNG) → `runtime.export(canvasNode, 'png')` → `host.export.render` (rastrerer via dom-to-image-more; SVG/PDF går gjennom dedikerte DOM-vandrende vektoriserere) → blob → `host.export.download`. Formatspekteret et verktøy kan velge inn i er bredt, og `render.formats`-enumen i `schemas/tool.schema.json` er autoriteten på det - rastere og flytende rastere, vektorer og kuttfiler, trykk/CMYK, bevegelse, redigerbare dokumenter (`pptx`, `docx`, `odt`), palett- og data-/tekstutdata, lyd- og skriftfiler. [URL Mode](/info/url-mode.html) navngir hver id og hva den produserer. Lyd er i den enumen som alt annet (`wav`, `mp3`, `m4a`, `opus`, erklært av audiogrammet og opptaksverktøyene); separat driver et opptaksverktøys `render.capture`-modus `host.recorder`, hvis opptak ankommer som en ferdig Blob i hva enn beholder nettleseren tok opp i. (Verktøy som setter `render.export: false` - f.eks. Color Palette, Countdown Timer, Strip Hidden Data, Text Helper, Compress PDF - skjuler kontrollene for nedlasting/format/dimensjon.) Fysiske enheter konverteres per format her (PDF → ekte sidepunkter, raster → piksler ved DPI med en `pHYs`-blokk). Forfatterskaps-/proveniens-metadata (forfatter, verktøy, kilde - bygget av `engine/src/metadata.ts`) bygges inn per format: PNG iTXt, JPEG EXIF, PDF info-dict, SVG `<metadata>`, GIF-kommentar. Eksperimentelle verktøy får et vannmerke satt inn av verten, ikke av verktøyet.
 
-Samme livssyklus i Tauri. Samme livssyklus i CLI - jsdom gir den hodeløse DOM-en; resultatet går til en fil eller stdout.
+![Eksportpanelet som `?options` åpner: filnavn- og formatparet, utdatastørrelsen og kontrollene som skriver filen](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=aud-export-popup)
+
+Samme livssyklus i Tauri. Samme livssyklus i CLI - jsdom leverer den hodeløse DOM-en; utdata går til en fil eller stdout.
 
 ---
 
 ## Status for åpen kildekode
 
-Katalogene `engine/`, `shells/`, `schemas/` og `docs/` er åpen kildekode under **MPL-2.0** - en leverandørnøytral stillasplattform for merkevareverktøy, der hver leverbare enhet er delt opp i sitt eget repository under [github.com/lolly-tools](https://github.com/lolly-tools). `tools/` og `catalog/assets/` er SUSE-spesifikt innhold og forblir **proprietært for SUSE** (alle rettigheter forbeholdt - se hvert repositorys `NOTICE.md`); de dekkes ikke av MPL.
+Mappene `engine/`, `shells/`, `schemas/` og `docs/` er åpen kildekode under **MPL-2.0** - en leverandørnøytral stillasplattform for merkevareverktøy, der hver leveringsklare enhet er delt opp i sitt eget depot under [github.com/lolly-tools](https://github.com/lolly-tools). `tools/` og `catalog/assets/` er SUSE-spesifikt innhold og forblir **proprietært for SUSE** (alle rettigheter forbeholdt - se hvert depots `NOTICE.md`); de dekkes ikke av MPL.
 
-Delingen håndheves - det finnes ingen kryssimporter fra `engine/` til `tools/` eller `assets/` - slik at grensen mellom plattform og innhold forblir ren.
-
----
-
-## Veikart
-
-| Milepæl | Tidsramme | Hva |
-|---|---|---|
-| **Innledende verktøy** | ✅ Ferdig | QR Code, Quote Card, Email Signature, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Chart Creator, Filter: Duotone, Meeting Planner - nettskallet live |
-| **Forbedre eksisterende verktøy** | Midt i 2026 ✅ Ferdig  | Nedlastbar offline-app (Tauri); flere verktøy for ansatte og arrangementer; rikere eksportpipeline (stabilitet for tekst-til-bane, metadata, ekstra formater - se `plans.md`) |
-| **Åpne kildekoden for motoren** | Slutten av 2026 ✅ Ferdig  | Engine, shells, schemas, docs blir offentlige - ikke de merkevaremerkede verktøyene/ressursene |
-| **Overføring mellom enheter** | ✅ Ferdig | Portabel `lolly-backup`-pakke bærer profil, lagrede økter, opplastede bilder og innstillinger mellom to hvilke som helst installasjoner - offline eller online, ingen konto. Fremoverkompatibel, integritetssjekket konvolutt (spesifikasjon: `docs/data-transfer.md`) |
-| **Etablere formelt verktøy-veikart** | Slutten av 2026 | Kundereferansepakker, AI-designinntak, GET/URL-forespørselsmodus |
-| **Personvernverktøy på enheten** | 🚧 Pågår | Innholdstransformerende verktøy som behandler *din egen* fil lokalt (fil inn → ren fil ut), som erstatter eksfiltrering til enkeltformåls-SaaS. **Ferdig:** inndatatypen `file` + transformasjonsveien `exportFile` + konvensjonene `privacy:"on-device"` (ingen vannmerke/opprinnelse) + **Strip Hidden Data** (JPEG/PNG/SVG/PDF-metadata, PDF via `host.pdf`-broen) og **Text Helper** (verkstedet på enheten for hverdagslige lim-inn-på-en-nettside-oppgaver - JSON-formatering, JWT-dekoding, Base64, URL-koding/-dekoding, SHA-hashing, pluss en Novelty-gruppe). **Neste:** beskjæring/endre størrelse, bildekonvertering/-komprimering; deretter en `host.image`-kodek-bro (spesifikasjon: `plans/34-exfiltration-app-content.md`) |
-| **Designtokener (DTCG)** | 🚧 Farge levert | Merkevareprimitiver som kanoniske [W3C Design Tokens (DTCG)](https://www.designtokens.org/TR/drafts/format/) - formatet [Penpot importerer/eksporterer](https://help.penpot.app/user-guide/design-systems/design-tokens/). **Ferdig:** fargetokener (`suse/tokens/brand`), `host.tokens`-bro, velger-fargeprøver + referanselenkede verdier (spesifikasjon: `docs/design-tokens.md`). **Neste:** dimensjons-/typetokener, Penpot-import/-eksport, brukertokener i overføringspakken (`tokens.json`) |
-| **MCP-agentendepunkt (render)** | ✅ Ferdig | En [MCP](https://modelcontextprotocol.io)-server eksponerer katalogen + renderingsveien som kallbare verktøy (`lolly_list_tools` / `describe_tool` / `build_url` / `render` / `transform`), slik at en hvilken som helst agent kan produsere ferdige, regelbundne ressurser - legg den til i en hvilken som helst MCP-klient som en tilpasset connector (OAuth 2.1), eller pek en CLI-/HTTP-klient mot den med et bearer-token. Live på `mcp.lolly.tools` (fullt endepunkt: raster/PDF/animasjon/video via en hostet hodeløs nettleser) og `lolly.tools/api/mcp` (serverløst, nettleserfritt nivå). Atskilt fra Penpot-*forfatter*-MCP-en nedenfor, som handler om **oppretting** av verktøy (spesifikasjon: `plans/77-mcp-server.md`; guide: `docs/mcp.md` + `docs/ai-agents.md`) |
-| **Penpot-filinntak som verktøy** | 2027+ | Importer en Penpot-fil og gjør den tilgjengelig *som et Lolly-verktøy* (deklarativt, begrensningsstyrt), og gjør design laget i Penpot om til deterministiske generatorer |
-| **MCP + Penpot-utvidelse (kun nettbasert forfatterskap)** | 2027+ | En Penpot MCP-server formulerer nye verktøy med AI - den mest visuelle måten å lage deterministiske maler på: en merkevareinformert første runde, finpusset med et menneske i sløyfen, med sikte på å treffe nye kontekster i ett forsøk over tid. **Opprettelse** av verktøy er kun nettbasert; verktøyene den produserer kjører hvor som helst |
-| **RBAC + SUSE ID** | 2027+ | Sperre spesifikke verktøy bak SUSE ID; lagret tilstand på tvers av enheter; Google Drive-inntak/-eksport |
+Skillet håndheves - det finnes ingen kryssimporter fra `engine/` til `tools/` eller `assets/` - slik at grensen mellom plattform og innhold forblir ren.
 
 ---
 
 ## Der motoren slutter og verten begynner
 
 Hvis du kan beskrive det i ren data + Handlebars → **motor**.
-Hvis det rører DOM-en, filsystemet, nettverket, eller et hvilket som helst nettleser-/OS-API → **vert**.
+Hvis det berører DOM-en, filsystemet, nettverket eller et hvilket som helst nettleser-/OS-API → **vert**.
 
-Grensen er skarp med hensikt. Motoren er den åpen kildekode-delen. Alt som vet om SUSE, spesifikke plattformer, eller kjøretidsmiljøer, holdes utenfor den.
+Grensen er skarp med hensikt. Motoren er den åpne kildekode-delen. Alt som vet om SUSE, spesifikke plattformer eller kjøretidsmiljøer holdes utenfor den.
+
+For neste detaljnivå lister [`engine/README.md`](../engine/README.md) opp hver motormodul og hva den har ansvar for, og [Threat Model & Trust Boundaries](/info/threat-model.html) dokumenterer hvor den samme grensen også fungerer som en tillitsgrense.

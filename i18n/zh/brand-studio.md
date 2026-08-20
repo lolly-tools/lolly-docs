@@ -1,189 +1,232 @@
 # 品牌工作室
 
-**品牌工作室**（位于 `#/start`）是你塑造品牌的唯一场所——它的徽标、颜色、字体、其余的令牌，以及它所保留的文件。在这里设置一次，之后每个工具、每个页面和每一次导出都会*从结构上*遵循它，而不是靠审核把关。
+位于 `#/start` 的**品牌工作室**是你塑造品牌的唯一场所 - 它的标志、颜色、字体、其余的令牌以及它保存的文件。在这里设置一次,每个工具、页面和导出都会*天然*遵循它,而不是靠事后审查。
 
-你所做的更改会在**整个应用中实时预览**，因此在真正提交之前，你就能看到一个颜色或一款字体落地到各处的效果。这一切都在设备端完成：你的品牌永远不会离开你的机器，并且它只需一个[品牌包](#move-a-brand-between-devices)文件即可流转。
+你所做的修改会**在整个应用中实时预览**,让你在提交之前就能看到某个颜色或字体落地到各处的效果。这一切都在设备本地完成:你的品牌文件和令牌永不离开你的机器(选择 Google 字体时,会在同意对话框之后从 Google 获取那一个字族,仅此一次),而品牌以单个[品牌包](#move-a-brand-between-devices)文件的形式携带。
 
-> **这里是编辑器，仪表盘是镜像。** [仪表盘](/info/using.html)（`#/d`）上的“设计系统”标签页只是**只读地展示**你的品牌；你在这里（`#/start`）编辑它。之后如果想更改一个颜色，请回到品牌工作室。
+> **这里是编辑器,仪表盘是镜子。**仪表盘(`#/d`)上的**设计系统**标签*只读展示*你的品牌;你在这里,即 `#/start`,进行*编辑*。之后想改一个颜色,回到品牌工作室来。
 
-## 五个步骤
+## 房间
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.ds-rail&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1)
+工作室由侧栏中列出的一组**房间**组成 - 不是步骤。没有编号,彼此之间没有前置条件,从任意一个房间进入都是合理的:
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.ds-rail&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1)
+- **概览** - 中枢。一眼看清当前拥有什么,并有通往每个房间的入口。
+- **颜色** - 逐个添加颜色,指定角色,或从一个颜色生成整套调色板。
+- **字体** - 应用、你的工具及每次导出所读取的四种字体。
+- **标志** - 你的标志,涵盖每种方向和处理方式。
+- **令牌** - 圆角、间距、阴影及系统的其余部分。
+- **文件** - 你的品牌保存的图像、音频和动效文件。
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.ds-rail&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1)
+在手机上,同样的列表会变成固定在页头下方的横向标签条。切换房间从不会重新加载任何内容 - 编辑器把所有面板都保持挂载,只是显示你要求的那一个。
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.ds-rail&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1)
+用 `#/start?area=<key>` **深链到某个房间**。键值有 `overview`、`color`(*注意 URL 中是美式拼写*)、`type`、`logos`、`tokens`、`catalogue`(即文件房间 - 面板键是永久性契约,所以 URL 沿用旧名)以及 `versions`。`?tab=` 是同一功能长期存在的别名,仍然有效,所以旧链接和书签能继续使用;无法识别的值会打开概览,而不是死路一条。
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.ds-rail&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1)
+固定在**侧栏底部**的,是属于整个设计系统、而非某个房间的操作:
 
-![The Brand Studio - a five-tab editor for logos, colours, type, tokens and the catalogue](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.ds-rail&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1)
+- **从…添加** - 来源选择器,用于从文件、PDF、图片、字体或网站导入品牌。见下方[导入品牌](#bring-a-brand-in)。
+- **候选区** - 扫描找出但尚未提交的候选项。它默认隐藏,只有扫描确实保留了内容时才会出现,并显示数量;在你对该行按下“添加”之前,其中任何内容都不会改变你的品牌。
+- **导出** - 将整个品牌写成一个 `LollyBrand-…zip`。
+- **令牌(.json)** - 单独的纯设计令牌文档,供仓库、构建步骤或其他令牌工具使用。
+- **版本** - 发布、启用并恢复设计系统的命名副本。在你有自己的内容可发布之前保持隐藏(或者有 `?area=versions` 链接按名请求它)。
 
-工作室是一个五个标签页的编辑器。可以从左到右依次操作——也可以直接跳到任意一个标签页：
+![工作室房间侧栏 - 概览、颜色、字体、标志、令牌和文件](/t/url-shot?url=%2F%23%2Fstart&width=1440&height=900&dpi=192&waitMs=1600&cropSelector=.ds-rail&format=svg&walker=1&localize=1&dark=1&filename=brand-studio&try=1)
 
-1. **徽标**——你的标志，涵盖每一种方向与处理方式。
-2. **颜色**——一个主色即可推导出一整套无障碍调色板；在此基础上进一步调整、生成和添加。
-3. **字体**——任意 Google Font，下载到本设备。
-4. **令牌**——圆角、间距、阴影，以及系统的其余部分。
-5. **目录**——你的品牌所保留的图片、音频与动态文件。
+## 概览
 
-一旦你做出更改，**保存并继续**按钮就会出现，并带你进入下一步（在最后一步会显示为**保存并完成**）。下一个标签页会轻轻亮起，作为提示。你不必按顺序操作——每一步都是可选且相互独立的。
+概览是你降落进入的房间,它有两副面孔。
 
-可以用 `#/start?tab=<key>` 直接深链到某个标签页，其中的键值为 `logos`、`color`（*注意 URL 中使用的是美式拼写*）、`type`、`tokens` 和 `catalogue`。
+**尚未设置任何内容**时,它提供两扇门 - **从文件开始**(设计令牌、Penpot 项目、设计系统包或 SVG)和**从零开始**(先添加一个颜色,之后随时继续) - 以及它们下方一个低调的**探索工具**出口,因为离开也是合理的选择。
 
-## 徽标
+一旦设计系统已经存在,同一个房间会显示**你已拥有的内容**:调色板及其颜色数量、当前使用的字体家族、已填入多少个标志槽位、有多少个令牌,以及文件房间。每个板块都是通往对应房间的入口。这里只有数量,从没有进度条,也从没有“完成”卡片 - 这个工作室不欠你任何东西。
 
-![The logo matrix - each orientation across the top, each treatment as its own dashed slot, all of them optional](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dlogos&width=1440&height=1600&dpi=192&waitMs=1600&cropSelector=.be-logo-grid&format=svg&walker=1&dark=1&filename=bs-logo-slots)
+## 标志
 
-每一个品牌标志在这里都有属于自己的位置——一个由**方向 × 处理方式**组成的插槽网格：
+从把你文件夹里的标志一次性拖入顶部的放置区开始:“**把标志拖到这里,或一次选择多个**”一次能接收你拥有的所有文件。每个文件都会被读取其形状和用色,然后在**等待槽位**下排队,显示为一个说明其判断的芯片 - 例如“*看起来是水平主标志*”,附带它据以判断的度量,以及一个**放置**按钮(如果该槽位已被占用,则是**替换**)。当它不确定时,芯片会明确说明,并改为提供**更改槽位**按钮,列出全部八个槽位。在你点击之前,不会有任何内容被放置。
 
-- **方向：** 横向（字标 + 图形符号并排）与纵向（堆叠排列，适用于方形和竖长空间）。
-- **处理方式：** 主色版、主色反白版（用于深色背景）、单色版（单一颜色）与单色反白版。
+围绕这个队列会发生两件事。空白边距过多的标志会先收到**裁切建议**——回应它或按 Esc,原始文件都会原样放入。而当某个标志能够补全一个空着的兄弟槽位时,该房间会把派生出的**单色**或**反白**版本作为独立芯片提供,标注为*已生成*,如果你用别的方式填了那个槽位,它就会再次消失。
 
-一共是八个可选插槽。点击一个插槽即可添加 PNG、SVG、JPEG 或 WebP 文件；点击一个已填充的插槽即可替换它。每个插槽都是可选的，且一切都保留在本设备上。
+下方是每个标志最终归属的网格 - **方向 × 处理方式**的槽位:
 
-- **自定义标志**——在**自定义标志**下，添加你的品牌以自己方式命名的标志（图标、徽章、favicon）；为它命名并选择一个文件。
-- **更多身份**——子品牌、产品或活动都可以拥有自己完整的一套标志。使用**+ 添加另一个标志**并为它命名；你的主要标志集就叫作“你的标志”。
-- **上传一个 SVG，Lolly 会读取它的颜色。** 在全新安装时，它会悄悄地用标志中的颜色设置你的主色。在已有品牌上，它会在**颜色**标签页把这个颜色作为建议提供给你——“在你的标志中发现”。
+- **方向:**水平(字标 + 图形并排)和垂直(堆叠,适合方形和竖直空间)。
+- **处理方式:**主色、主色反白(用于深色背景)、单色(一种颜色)和单色反白。
+
+这就是八个可选槽位。点击一个槽位可添加 PNG、SVG、JPEG 或 WebP;点击已填入的槽位可替换它。每个槽位都是可选的,一切都保留在本设备上。
+
+![标志矩阵 - 顶部是各个方向,每种处理方式都是自己的虚线槽位,全部可选](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dlogos&width=1440&height=1600&dpi=192&waitMs=1600&cropSelector=.be-logo-grid&format=svg&walker=1&dark=1&filename=bs-logo-slots)
+
+- **自定义标志** - 在**自定义标志**下添加你的品牌以自己方式命名的标志(图标、徽记、favicon);命名并选择一个文件即可。
+- **更多身份** - 子品牌、产品或活动可以拥有自己完整的一套标志。使用**+ 添加另一个标志**并命名;你的主标志集就是简单的“你的标志”。
+- **上传一个 SVG,Lolly 会读取其中的颜色。**在全新安装上,它会悄悄地把你的主色设为标志中的颜色,并说明这一点。在已有品牌上,它会改为把该颜色作为建议提供 - “*在标志中发现:#…*”旁边带一个**设为主色**按钮 - 位于颜色房间中,你可以采纳或忽略它。
 
 ## 颜色
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+最丰富的房间,分为两个面板。左侧是你工作的地方;右侧是你的**实时调色板**。拖动两者之间的分隔条可调整大小(在其上按 Enter 会把调色板收起到一旁)。
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+![颜色房间 - 一个主色派生出色阶,带对比度比值的样本卡片,以及一个实时调色板](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+### 添加一个颜色,再赋予它一个用途
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+**添加颜色**是简单路径的全部内容:以任何表示法粘贴或选取一个颜色,它就会成为恰好一个令牌。不会由它派生任何东西,不会向它建议任何东西,也不要求其他任何东西。粘贴一整个*颜色列表*,每个都会成为一个可单独添加的芯片。
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+**角色**是叠加在其上的一层 - 哪个颜色扮演哪个部分。角色是可选的(一个只有三种松散颜色、没有任何角色的设计系统也完全没问题),任何色板都可以承担一个角色,对比度读数是相对于表面测量的,优先使用 APCA。
 
-![The Colours tab - a primary colour derives ramps, specimen cards with WCAG ratios, and a live palette](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&localize=1&dark=1&filename=brand-colours)
+### 专家侧翼
 
-内容最丰富的一步。左侧面板负责**推导与生成**；右侧面板是你的**实时调色板**。拖动分隔线即可调整大小。
+这两者下方有四个折叠区块。展开你想要的那个;每个都可通过 `#/start?area=color&focus=<wing>` 深链访问:
 
-### 一个颜色，一整套调色板
+- **生成起始调色板**(`focus=generate`) - 从一个颜色生成一整套色调。见下文说明。
+- **色阶曲线**(`focus=curves`) - 逐点重塑一条色阶。明度、彩度和色相各自拥有自己的曲线,用 L / C / H 切换,拖动时下方的色阶会实时重新生成。
+- **对比度**(`focus=contrast`) - **对比度锁定**会重新调色一条色阶,使其相对于你选择的背景达到 APCA 目标值,每一级都保持自己的色相和彩度;**旋转色相**会让整条色阶在色轮上整体旋转,每一级都保持自己的明度和彩度。
+- **印刷**(`focus=print`) - 主色在印刷时会变成什么:其自动的屏幕值,或者固定的 CMYK 构建,或者一个指定的专色油墨。
 
-![The four ramps stacked above light and dark specimen cards, each card carrying its own WCAG contrast ratio](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+### 一个颜色,一整套调色板
 
-选择一个**主色**，Lolly 就会推导出完整的调色板——明暗表面、文字、强调色，以及完整的深浅色阶——使用的是引擎在各处统一采用的同一套感知色彩数学（OKLCH）。可以调整推导方式：
+在**生成起始调色板**中,选取一个**主色**,Lolly 会算出一整套调色板 - 浅色和深色表面、文本、强调色以及完整的色调/暗调色阶 - 使用引擎在各处统一采用的同一套感知颜色数学(OKLCH)。可调节的派生参数:
 
-- **配色方案**——单色、互补色、类似色或三角配色——决定辅助色与主色之间的关系。
-- **色阶数**——一个从 3 到 20 的滑块（默认 5），控制每条色阶生成多少级。
-- **微调**（折叠）——**UI 强度**（柔和 / 浓郁）、**对比度**（舒适 / 高）与**品牌色上的文字**（自动 / 浅色 / 深色）。
+- **配色方案** - 单色、互补、类似或三分色 - 决定次色与主色的关系。
+- **色阶数** - 一个从 3 到 20 的滑块(默认 5),控制每条色阶生成多少级。
+- **微调**(折叠) - **界面强度**(柔和 / 深邃)、**对比度**(舒适 / 高)和**品牌上的文字**(自动 / 浅色 / 深色)。
 
-有两个重要的按钮，它们之间的区别很重要：
+这一侧翼中的任何操作都不会写入你的品牌。它是一个预览,在整个应用中实时呈现,供你判断,直到你按下**替换调色板**(见下文)为止。
 
-- **使用此颜色**会把调色板重新推导为一个实时草稿——应用界面会更新以便你查看效果，但此时还没有任何内容被保存。
-- **保存颜色**才会真正把它保留下来。
+在主色下方,你会看到实时的**主色 / 中性色 / 次色 / 混合**色阶,以及浅色和深色样本卡片,各自带有自己的对比度读数 - WCAG 比值旁边附带 APCA `Lc` 数值。**点击中性色或次色色阶中的某一级**,即可将该色调锁定为固定值,而不是使用派生的默认值。
 
-这个标签页上的一切在保存之前都只是**草稿**，因此可以放心尝试；只有**保存颜色**才会把它写入你的品牌。（其他标签页——徽标、字体、令牌、调色板编辑——都是立即保存的。）
+![堆叠在浅色和深色样本卡上方的四条渐变带,每张卡都带有自己的 WCAG 对比度](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
-主色下方，你会看到实时的**主色 / 中性色 / 辅助色 / 混合色**色阶，以及带有 WCAG 对比度的浅色/深色样本卡片。**点击中性色或辅助色色阶中的某一级**，即可选用该色阶而不是推导出的默认值。
+### 构建你的调色板(和谐生成器)
 
-### 搭建你的调色板（配色生成器）
+仍在同一区域,**构建你的调色板** 会根据你的主色生成匹配的强调色。选择一种 **和谐方式** - **互补**、**邻近**、**三角**、**四角** 或 **类比**(后者自带 2 到 5 的 **强调色** 数量,以及 10° 到 45° 的色相 **角度**)- 每个候选色都带有自动生成的可读名称和一个 **+ 添加** 按钮。添加一个即可立即将该颜色纳入你的调色板,一次按下对应一个令牌。*"你的调色板,应用效果"* 会在真实图形上预览整套配色。
 
-![Generated accents, each with a swatch, an auto-generated name, its hex and an Add button](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
+![生成的强调色,每个都带有色块、自动生成的名称、十六进制值和一个添加按钮](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&css=.start-head%2C.be-colour%7Bdisplay%3Anone%7D&cropSelector=.be-candidates&walker=1&format=svg&dark=1&filename=bs-harmony-candidates)
 
-在**搭建你的调色板**下，可以从主色生成与之搭配的强调色。选择一种配色关系——**互补色**、**邻近色**、**三角配色**或**四角配色**——每个候选颜色都会自动生成一个易读的名称，并配有一个**+ 添加**按钮。添加的颜色会立即进入你的调色板。“你的调色板，实际应用”会在真实图稿上预览这些颜色。
+### 提交生成的调色板
 
-### 调色板、色轮与每一个色板
+**替换调色板** 是该区域中唯一会写入数据的控件,但它从不立即写入。按下它,会先弹出一张审阅卡,标题为 "替换调色板?",逐项列出即将发生的变化:有多少角色保留你分配的设置、有多少你自行添加的颜色会被保留、有多少色阶曲线会重新锚定、有多少印刷锁定会重新固定、有多少隐藏色阶保持隐藏、有多少渐变节点保留其颜色。
 
-![The palette pane, every group foldable, with the download pill parked at its bottom edge](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
+该卡片上的 **替换调色板** 会提交更改;**取消** 则退出且不做任何改动。运行完成后,该卡片会变为 "调色板已替换。",并已聚焦一个 **撤销** 按钮 - 而且在替换 *之前* 会先对整个设计系统做一次检查点,所以"恢复原状"只是一次还原操作,而不会丢掉一下午的工作。
 
-![The OKLCH wheel - angle is hue, distance out is chroma, and the greys ride a lightness rail down the side](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
+### 调色板、色轮图与每个色块
 
-右侧面板列出你的品牌拥有的每一个颜色，按分组排列（主色、中性色、辅助色、光谱色、自定义、角色），每个分组都可折叠，并各自带有**+ 添加**。打开**色彩图表**即可看到 **OKLCH 色轮**——拖动一个圆点即可重新上色，点击一个圆点即可编辑，点击空白处即可新建一个色板。
+右侧面板列出你的品牌拥有的每一种颜色,按分组(主色、中性色、辅助色、光谱、自定义、角色)排列,每组都可折叠,并各自带有 **+ 添加**。其下方,**色彩图表** 展开后是同一批色块的两种视图:**色轮**(OKLCH 色轮 - 拖动一个点可为其重新上色,点击一个点可编辑它,或点击空白处添加新色块)和 **色域** 图,显示可显示范围实际终止的位置。`#/start?area=color&focus=chart` 会直接打开该卡片,`?wheel` 也一直如此。
 
-点击任意色板即可打开它的编辑器：
+![调色板面板,每组都可折叠,下载按钮固定在其底部边缘](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-split-side&walker=1&format=svg&dark=1&filename=bs-palette-pane)
 
-- **重命名**它。
-- **按数值设置**——以 Hex、RGB、RGBA、HSL、OKLCH 或 CMYK 输入一个颜色。（输入一个 CMYK 数值，它还会同时成为该色板的印刷替代色——见下文。）
-- **存储格式**——选择该色板的持久化方式：**LCH**（默认——感知均匀、广色域，是编辑时的最佳选择）、Hex、RGB 或 HSL。当你需要锁定一个精确的历史 Hex 值，或匹配某个 sRGB 数值时，可以覆盖这一设置。
-- **印刷替代色**（折叠）——锁定该颜色的印刷表现：
-  - **CMYK**——勾选后，可以用精确的油墨数值（C/M/Y/K，0–100）覆盖自动的 sRGB→CMYK 转换。
-  - **专色**——勾选后，可以把该色板锁定为一个专色；为它设置一个**名称**（例如 `PANTONE 186 C`）和可选的**色卡**。
+![OKLCH 色轮 - 角度代表色相,距离代表彩度,灰色沿侧边的明度轨道排列](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor%26wheel&width=1440&height=900&dpi=192&waitMs=2400&css=.start-head%2C.be-pal%2C.be-gradients%7Bdisplay%3Anone%7D&cropSelector=.be-pal-wheel&walker=1&format=svg&dark=1&filename=bs-colour-wheel)
 
-当你导出 CMYK PDF 或 TIFF 时，印刷厂使用的正是这些印刷锁定设置——见[导出](/info/exporting.html#colour-profiles)。
+点击任意色块以打开其编辑器:
 
-**删除一个色板是安全的：** 推导出的色阶级次和主题角色只会被*隐藏*（底层令牌依然能正常解析，因此不会影响下游任何内容），而你自己添加的颜色则会被彻底删除。
+- **重命名** 它。
+- **设置颜色** - 拾色器以感知性的 **OKLCH** 滑块打开,并提供 **Hex**、**HSL**、**RGB** 和 **CMYK** 模式;数值输入框会以当前激活的空间进行读取 *和* 写入,因此你可以粘贴十六进制值或输入油墨百分比。请注意,输入 CMYK 是通过换算来设置 *屏幕* 颜色 - 若要固定精确的油墨值,请使用下方的印刷锁定。
+- **存储为** - 选择色块的持久化方式:**LCH**(默认 - 感知性、广色域,是编辑时的最佳选择)、Hex、RGB 或 HSL。当你需要固定一个精确的旧版十六进制值或匹配 sRGB 值时可覆盖此设置。
+- **用作** - 将此色块直接赋予某个品牌角色,无需返回角色面板。(角色本身的卡片不提供此选项 - 角色不能再取用角色。)
+- **印刷替代**(折叠)- 锁定该颜色的印刷表现:
+  - **CMYK** - 将其从 **自动** 切换为 **锁定**,以精确油墨值(C/M/Y/K,0-100)覆盖自动的 sRGB→CMYK 转换。
+  - **专色** - 将其从 **无** 切换为 **设置**,以将色块锁定为专色;为其指定一个 **名称**(例如 `PANTONE 186 C`)、一个可选的 **色卡** 和一个可选的 **工艺**(默认为普通油墨),用于油墨根本不是油墨的情况 - 例如烫金、凹凸压印、局部上光、软触感涂层或模切、压痕或打孔。
+- **在其他色彩空间中**(折叠)- 同一思路的扩展:每一行是该色块可以表达的一个色彩空间,要么由标准值推导而来,要么由你自行指定,导出时以你指定的值为准。
+
+这些印刷锁定值就是印刷厂在你导出 CMYK PDF 或 TIFF 时所使用的值 - 参见[导出](/info/exporting.html#colour-profiles)。
+
+**删除一个色块** 是安全的:派生的色阶步进和主题角色会被 *隐藏*(底层令牌仍会继续解析,因此下游不会出错),而你自行添加的颜色则会被彻底移除。
 
 ### 渐变
 
-一个可选的**渐变**面板，可以从你的调色板中构建用于背景和强调色的混合色令牌。如果你的品牌不使用渐变，完全可以跳过这一部分。每个渐变都有一个预览、具名的节点（2 到 8 个）和一个角度。关键行为是：**节点引用色板**，因此重新为该色板上色，渐变也会随之变化。插值计算在 OKLCH 中进行，以获得干净的混合效果。删除一个节点即可缩短渐变。
+一个可选的 **渐变** 面板可根据你的调色板为背景和强调色构建混合令牌。如果你的品牌不使用渐变,可以完全跳过它。每个渐变都有一个预览、命名的节点(2-8 个)以及一个角度。关键行为是:**节点引用某个色块**,所以重新为该色块上色,渐变也会随之改变。插值在 OKLCH 中进行,以获得干净的混合效果。删除一个节点即可缩减渐变的走向。
 
-### 把调色板带到别处
+### 将调色板用到别处
 
-调色板面板底部的悬浮胶囊按钮，可以把整套调色板下载为**设计令牌（JSON）**、**CSS 变量**、**CSS 类**、**GIMP 调色板（.gpl）**或 **Adobe Swatch Exchange（.ase）**——让品牌直接进入 Illustrator、Figma、GIMP，或某份样式表。（你也可以从[目录](/info/using.html)视图下载调色板。）
+停靠在调色板面板底部边缘的浮动按钮可将整个调色板下载为 **设计令牌(JSON)**、**CSS 变量**、**CSS 类**、**SCSS 变量**、**GIMP 调色板(.gpl)** 或 **Adobe Swatch Exchange(.ase)** - 使品牌可直接导入 Illustrator、Figma、GIMP 或样式表。它位于面板滚动区域之外,因此无论调色板滚动到多远,它都保持在原位。(你也可以从[目录](/info/using.html)视图下载调色板。)
 
 ## 字体
 
-![The Type roles specimen - heading, body, italic and code, each set in the face that role resolves to, with the face name beside it](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&walker=1&format=svg&dark=1&filename=bs-type-specimen)
+该区域以 **四张角色卡** 开头 - 这是应用、你的工具以及每一次导出实际读取的四种字体。每张卡都会展示该角色当前使用的字体、以该字体呈现的样式,以及卡片下方的一行真实文案:
 
-![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+- **主体** - 正文文案、按钮和所有工具。
+- **标题** - `h1`/`h2` 使用的展示字体。
+- **代码** - 用于代码和数据的等宽字体。
+- **斜体** - 用于强调、引用和旁白的真正斜体配套字体。
 
-![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+标题、代码和斜体在你未指定之前都会回退到主体字体,因此单字体品牌在这里完全不需要做任何决定。卡片上的任何操作都不会立即提交:**更改**(空角色上为 **选择字体**)会打开限定于该角色的 **对比舞台**。
 
-![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+![字体区域 - 角色卡以及每种字体实际效果的实时样张](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
 
-![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+### 对比舞台
 
-![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+该舞台以 **内嵌于该区域** 的方式打开,而非弹出对话框,因此你从中打开它的卡片会一直留在屏幕上。搜索一个 Google Fonts 字体族(Inter、Fraunces、Space Grotesk……)或拖入一个字体文件,按下 **加入对比**,各个候选字体便会以相同的文字并排展示,而此时它们都还未安装。按 Esc 会取消操作,并将键盘焦点交还给你打开该舞台所用的卡片。
 
-![The Type tab - add a Google Font and a live Heading / Body / Code specimen shows each face](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=1800&format=svg&walker=1&dark=1&filename=brand-type)
+这是唯一的入口,因此不会有任何字体在你未察觉的情况下进入你的品牌。舞台下方是两个管理面板:
 
-添加**任意 Google Font**，它就会下载到本设备——在应用、你的工具，以及每一次导出中渲染，永久离线可用，并随你的品牌包一同携带。渲染时不会再去获取任何内容。
+- **本设备上的字体** - 每个已安装的字体族、它服务的角色以及一个删除按钮。此处的 **添加字体** 会打开同一个未限定范围的对比舞台。
+- **你的字体** - 从你自己的设备上传 **TTF**、**OTF** 或 **WOFF**。这是导入你已拥有授权的企业专属字体的方式。
 
-搜索一个字体族（Inter、Fraunces、Space Grotesk……），然后点击**添加字体**。列表中的每种字体都可以承担一个角色：
+无论哪种方式,该字体都会保留在此设备上,在应用中、在你的工具中以及每一次导出中渲染,永久离线可用,并随你的品牌包一同携带 - 渲染时不会去获取任何内容。Google Fonts 上的所有字体均以开放许可证(OFL/Apache/UFL)发布。
 
-- **主字体**——你的主要品牌与正文字体（**设为主字体**）。
-- **代码**——用于代码和数据的可选等宽字体（**用作代码字体**）。
+面板底部的 **字体角色** 面板展示了每个角色的实时样张 - 以主体字体呈现的正文与界面文字、顶部标题的可选展示字体、用于强调的斜体、用于代码和数据的等宽字体 - 让你能看到整套字体协同工作的效果。
 
-**字体角色**面板会展示**标题**、**正文**和**代码**的实时样张，让你看到每款字体的实际效果。Google Fonts 上的所有字体都采用开放许可（OFL/Apache/UFL）发布。
+![字体角色样张 - 标题、正文、斜体和代码,各自以其角色所解析到的字体呈现,并在旁边标注字体名称](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtype&width=1440&height=900&dpi=192&waitMs=2600&css=.start-head%2C.be-custom-fonts%2C.be-fonts%7Bdisplay%3Anone%7D&walker=1&format=svg&dark=1&filename=bs-type-specimen)
 
 ## 令牌
 
-![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+设计系统的其余部分,无需接触代码即可编辑:
 
-![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+![令牌区域 - 一个圆角滑块,以及间距、尺寸、阴影和系统的其余部分](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
 
-![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+- **圆角** - 一个单一的半径滑块(0-1.5rem),应用中的卡片、按钮和面板都会跟随它。
+- **更多令牌** - 添加和编辑 **间距**、**尺寸**、**描边宽度**、**不透明度**、**旋转角度**、普通 **数字** 和 **阴影**。选择一种类型,为其命名(例如 *Gutter、Card shadow……*),然后设置其值。这些以标准[设计令牌](/info/design-tokens.html)(DTCG)形式存储,并随你的品牌一同携带。
 
-![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+## 文件
 
-![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+在这里放置你的品牌所拥有的文件 - 徽标除外:**矢量**、**图像**、**音频** 和 **动效**(视频、Lottie、动画)资源。它们会进入你的[目录](/info/using.html),按类别分组,并在每个工具的素材选择器中随时可用。所有内容都保留在此设备上。(侧边栏将该区域标注为"文件";其 URL 键仍为 `catalogue`,因为面板键是永久约定。)
 
-![The Tokens tab - a corner-radius slider plus spacing, sizing, shadows and the rest of the system](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dtokens&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&dark=1&filename=brand-tokens)
+## 导入品牌
 
-设计系统的其余部分，无需接触代码即可编辑：
+侧边栏底部的 **从…添加** 会打开一个两阶段选择器。第一阶段询问你 *拥有* 什么,而不是它是什么格式:
 
-- **圆角**——一个单一的圆角半径滑块（0 到 1.5rem），应用中的卡片、按钮和面板都会遵循它。
-- **更多令牌**——添加和编辑**间距**、**尺寸**、**描边宽度**、**不透明度**、**旋转**、纯**数字**，以及**阴影**。选择一种类型，为它命名（例如 *Gutter*、*Card shadow*……），然后设置它的数值。这些都以标准[设计令牌](/info/design-tokens.html)（DTCG）的形式存储，并随你的品牌一同流转。
+- **设计令牌或设计文件** - DTCG 或 Tokens Studio JSON、Penpot 项目、**令牌集的 zip 压缩包**、Lolly 设计系统包或 SVG。
+- **PDF** - 演示文稿或指南文件,在本设备上读取其颜色、标记和内嵌字体。
+- **图像** - 一张截图或照片;其颜色在本设备上读取,不会上传任何内容。
+- **字体文件** - TTF、OTF 或 WOFF。打开字体区域,该字体将在此安装。
+- **网站** - 一个页面,读取其颜色和字体。此图块仅在能够实际读取页面的设备上出现,因为一个禁用状态却在宣传某个谁都按不了的功能的图块,比根本没有图块更糟。它出现时会清楚说明其读取方式:由本设备上的应用获取,或通过浏览器扩展在后台标签页中以你的登录身份读取。仅填入一个网址只会 *预填* 该字段 - 获取按钮才是同意操作,因此别人发给你的链接永远无法自行触发读取。
 
-## 目录
+选择设计文件来源后,第二阶段就是下方这张卡片:可接受的格式以图标图块的形式按优先顺序排列,整张卡片都是一个放置目标 - 点击卡片任意位置或将文件拖到上面均可。你也可以直接将文件拖放到工作室上。
 
-把徽标以外、你的品牌所保留的文件都放到这里：**矢量**、**图片**、**音频**与**动态**（视频、Lottie、动画）素材。它们会进入你的[目录](/info/using.html)，按板块归类，并在每个工具的素材选择器中随时可用。一切都保留在本设备上。
+![导入卡片 - 可接受的格式以图标图块的形式排列在前,整张卡片是一个放置目标](/t/url-shot?url=%2F%23%2Fstart%3Fsource%3Dfile&width=1440&height=900&dpi=192&waitMs=1600&css=.start-import-modal%20.modal-msg%2C.start-import-modal%20.modal-title%7Bdisplay%3Anone%7D&cropSelector=.start-import-drop&walker=1&format=svg&dark=1&filename=bs-brand-import-formats)
 
-## 把品牌迁移到另一台设备
+每种设计文件能带给你什么:
 
-![The import card - the accepted formats lead as icon tiles, and the whole card is one drop target](/t/url-shot?url=%2F%23%2Fstart%3Fsource%3Dfile&width=1440&height=900&dpi=192&waitMs=1600&css=.start-import-modal%20.modal-msg%2C.start-import-modal%20.modal-title%7Bdisplay%3Anone%7D&cropSelector=.start-import-drop&walker=1&format=svg&dark=1&filename=bs-brand-import-formats)
+- **LollyBrand** 包(`.zip`)- 一步安装;
+- **Penpot** 导出文件(`.penpot`)- 引入其设计令牌;
+- **Design Tokens** 文件(`.json`)- W3C DTCG;
+- **Tokens Studio** 文件(`.json`)- Tokens Studio;
+- **纯 SVG**(`.svg`)- Lolly 会扫描其颜色,让你选择保留哪些,第一个会成为你的主色。
 
-顶部操作栏中的**导出**按钮会生成一个 `LollyBrand-…zip` 文件——包含你的令牌、字体、徽标和主题偏好设置，并附带一份完整性清单。**导入…**按钮（或直接把文件拖放到工作室中）可以接受：
+来源导入会 **先做一次检查点**,因此"恢复到导入之前"只是一次还原操作。而扫描发现的内容不会直接生效:候选项会进入 **暂存区**,在那里每一项都需要通过拥有该类素材的对应区域,自行按下才会被添加。
 
-- 一个 **LollyBrand** 包（`.zip`）——一步安装；
-- 一个 **Penpot** 导出文件（`.penpot`）——引入其设计令牌；
-- 一个**设计令牌**文件（`.json`）——W3C DTCG 或 Tokens Studio 格式；
-- 一个纯 **SVG**（`.svg`）——Lolly 会扫描它的颜色，让你选择保留哪些，第一个会成为你的主色。
+`#/start?source=<kind>` 会在指定来源(`file`、`pdf`、`image`、`font`、`url`)上打开选择器,`?import` 则会打开纯列表视图。
 
-这就是同事把品牌交给你、或是你把品牌带到第二个安装实例的方式——无需账户，无需云端。若想改用命令行导入品牌，请参见 [`ingest:brand`](/info/configuration.html#brand-packs)。
+## 在设备之间迁移品牌
 
-## 当品牌被锁定时
+侧边栏底部的 **导出** 会写出一个单独的 **`LollyBrand-…zip`** - 包含你的令牌、字体、徽标和主题偏好,并附带一份完整性清单,在重新导入时会进行校验。旁边的 **令牌(.json)** 会单独写出纯设计令牌文档:不含字体、不含徽标,只有令牌 - 这正是代码仓库、CI 步骤或其他令牌工具实际会读取的内容。
 
-有些构建版本自带一个**锁定的品牌**——它的颜色、字体和令牌就是所有工具和导出所使用的版本，没有可更改的余地。这种情况下，工作室会被替换为一段简短说明，告知你这个构建版本自带固定品牌，编辑功能已关闭。这是刻意为之的设计：这正是一个组织确保一切始终保持在品牌规范内的方式。
+要将其导入回来,可使用 **从…添加 → 设计令牌或设计文件**(见上文),或直接拖放到工作室上。这是同事将品牌交给你,或你将品牌带到第二台设备安装的方式 - 无需账户,无需云端。若要改从命令行导入品牌,请参见 [`ingest:brand`](/info/configuration.html#brand-packs)。
+
+## 版本
+
+侧栏底部的**版本**是设计系统不再是移动目标的地方。发布一个版本，你就会在此设备上得到一份**永久的具名副本**：此后它不再变化，因此固定引用它的工具会持续绘制相同的内容。面板在你拥有可发布的内容之前保持隐藏，因此从未发布过的工作室永远不会看到这套机制。
+
+在你按下任何按钮之前，有三件事需要了解，面板会在按下之前而不是之后说明这三点：
+
+- **版本是永久的。** 目前还没有删除功能，因此面板只说明已保留的内容以及它会持续保留，而不是提供一个会说谎的按钮。
+- **移除项在兼容性卡片中排在最前。** 新增和更改的令牌是消息；而*移除*的令牌才是破坏工具的元凶，所以它被排在最前面并被如实称呼。
+- **发布无法撤销；恢复可以。** *从此版本恢复到最新*是对头部的一次普通编辑，因此它会进入工作室的撤销栈，面板会立即提供**撤销**选项。
+
+你可以**仅发布**，或**发布并设为活动版本** - 区别在于工具和应用今后是跟随该版本，还是继续跟随你最新的编辑。**再次跟随最新版本**会让每一次编辑一发生就立即上线。`#/start?area=versions` 可直接打开该面板。
+
+## 品牌固定时
+
+部分构建版本附带**锁定的品牌** - 其颜色、字体和令牌是每个工具和导出都使用的内容，没有可更改之处。在这种情况下，工作室会被一段简短说明取代，说明此构建版本附带固定品牌，编辑功能已关闭。这是刻意为之：这是组织确保一切保持品牌统一的方式。
 
 ## 接下来去哪里
 
-- **[使用 Lolly](/info/using.html)**——画布、保存、项目与目录。
-- **[设计令牌](/info/design-tokens.html)**——你的品牌所使用的令牌模型。
-- **[导出与格式](/info/exporting.html)**——印刷单位、CMYK，以及你的品牌能够渲染成的各种格式。
+- **[使用 Lolly](/info/using.html)** - 画布、保存、项目和目录。
+- **[设计令牌](/info/design-tokens.html)** - 你的品牌所表达的令牌模型。
+- **[导出与格式](/info/exporting.html)** - 印刷单位、CMYK 以及你的品牌可渲染成的格式。

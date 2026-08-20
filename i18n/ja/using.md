@@ -82,6 +82,8 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 
 ![Design のフリーキャンバス。アートボードとそれを囲む台紙](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
+**選択範囲を反転する。** 任意のボックスを右クリックして**Flip horizontal**または**Flip vertical**を選ぶと、その場で反転できます。あるいはキーボードで`Shift+H` / `Shift+V`を押します - Shiftが必要なのは、単独の`V`がPointerツールに割り当てられているためです。選択された各ボックスはそれぞれの軸で反転し、1回のUndoステップにまとまります。反転は実際の変形なので、キャンバス上だけでなく書き出したSVG、PDF、PNGにも保持されます。
+
 ### 自分で図形を描く（ペン）
 
 四角、円、角丸フレームでたいていのレイアウトは足ります。一覧にない形が必要なときは自分で描きます。ツールレールの **Pen** ボタン（または `P` キー）で描画モードに入ります。モードの切り替えは 3 つのキーで行います。**`V`** でポインターに戻り、**`P`** でペン、**`N`** でノードツール（**Edit points**）です。どのモードからでも、抜ける先は常にポインターです。
@@ -139,7 +141,7 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 
 **Sequence Studio** はフリーキャンバスに*時間*を加えます。どのボックスも開始時点を持ち、一定の長さだけ再生され、出入りのアニメーションを付けられます。並べる場所はアートボードの下に固定されたタイムラインです。開くとすでにシーケンスが再生されています。タイトルカード、クリップ、エンドカード、ローワーサード、音楽ベッドがあり、何も変えないうちから仕組みが目に見えます。
 
-![Sequence Studio のタイムライン。トランスポート、ルーラー、オーバーレイレーン、クリップと継ぎ目チップが並ぶマグネティックなシーケンス行、そして Always on の帯](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A252px!important%7D&cropSelector=.tl-panel&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-timeline)
+![Sequence Studioのタイムライン:トランスポート、ルーラー、オーバーレイレーン、クリップとシームチップを備えたマグネットのようなシーケンス行、Always onストリップ](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A252px!important%7D&cropSelector=.tl-panel&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-timeline)
 
 行には 2 種類あり、その違いこそが要点です。
 
@@ -147,7 +149,7 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 - **オーバーレイレーン**は自由です。ローワーサード、ロゴ、キャプションなど、背骨の上に独自のタイミングで重なるものは、それぞれ専用のレーンと開始時点を持ちます。
 - その下の **Always on** には、タイミングをまったく持たないボックスがまとまります。最初から最後まで置かれているだけの背景要素です。チップの `+` でレーンに引き上げ、**Make always on** で戻します。
 
-![編集画面の全体。アートボード、ツールレール、タイムラインが揃った状態](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.fc-toolbar%7Bopacity%3A1!important%7D&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-stage)
+![編集ステージ:中央に配置されたアートボード、左側のツールレール、隅にあるズームHUD](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.fc-toolbar%7Bopacity%3A1!important%7D&format=svg&walker=1&tolerance=0.03&dark=1&filename=seq-studio-stage)
 
 タイムラインを開くとキーボードの操作対象がタイムラインになり、Space と矢印キーはページではなく再生ヘッドを動かします。すでにタイミングを持つコンポジションでは自動的に開くため、Sequence Studio を読み込んだ時点からそうなります。
 
@@ -306,9 +308,9 @@ storage-seeding hook.
 
 送り出す前に決められることが 3 つあります。
 
-- **自分の名前を入れるかどうか。** 氏名、メールアドレス、所属がファイルに書き込まれるのは、プロフィールで **Use my details to create** が有効なときだけです。無効なら、Lolly で作られたことと作成日時だけが記録され、あなたに関する情報は入りません。
-- **ライセンス素材を入れるかどうか。** ライセンス付きの素材やブランドで保護された素材は、既定では含まれません。デザインで使っている場合は、その数を示したうえで *Download without them* と *Include and download* の 2 つのボタンが提示されます。含めるということは、その `.lolly` を開いた人に実ファイルを渡すことになるからです。
-- **ツールを入れるかどうか。** **Include the tool** はツール自体のファイルをデザインと一緒に梱包するので、そのツールがないデバイスでも開けます。カスタムツール（フォークや、相手が持っている可能性の低い非公開のブランドツール）では最初からオンになり、署名済みカタログとバイト単位で一致するツールでは、相手の手元にあるものが同じファイルなのでオフになります。
+- **氏名を含めるかどうか。** 氏名、メールアドレス、組織名がファイルに書き込まれるのは、プロフィールで**Use my details to create**がオンになっている場合のみです。オフの場合、ファイルにはLollyで作成されたことといつ作成されたかだけが記録され、あなたについての情報は含まれません。
+- **ライセンス素材を含めるかどうか。** ライセンス済みおよびブランドロックされたアセットは、デフォルトでは除外されます。デザインがそれらを使用している場合、ダイアログにその数が表示され、*Download without them*と*Include and download*の2つのボタンが提示されます - 含めると、`.lolly`を開いた相手に実際のファイルが渡ってしまうためです。
+- **ツールを含めるかどうか。** **Include the tool**をオンにすると、ツール自体のファイルがデザインと一緒にパックされ、そのツールを持っていないデバイスでも開けるようになります。カスタムツール - 受け取り手が持っていそうにないフォークやプライベートなブランドツール - の場合はチェック済みで届き、署名済みカタログに載っているツールの場合はチェックなしで届きます。相手の手元にあるコピーも同じソースから来ているためです。(署名済みカタログのないビルドでは、すべてのツールがカスタム扱いとなり、チェックボックスは最初からオンになります。)
 
 **開くとき。** `.lolly` をアプリにドロップすると、素材はライブラリーに、セッションは Projects に入り、ツールがそのセッションで開きます。既存のものが上書きされることはありません。セッションは新しい保存枠として追加され、すでにこのデバイスにある素材はチェックサムで照合し、重複させずに再利用します。取り込み時にはすべての部分がファイル自身のチェックサムと照合されるため、転送中に壊れたものは中途半端に取り込まれず、拒否されます。
 
@@ -330,9 +332,10 @@ storage-seeding hook.
 
 ![カタログ。ブランド素材、スウォッチ、フォント、そして自分でアップロードしたもの](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=2400&css=.plat-swatch-grid~%2A%7Bdisplay%3Anone%7D&walker=1&format=svg&localize=1&dark=1&filename=catalogue)
 
-- <!--i:upload--> **ファイルを取り込む。** 画像、SVG、音声、動画、Lottie、PDF、PowerPoint のいずれかをアップロード領域にドラッグする（またはクリックして選ぶ）と、すぐにカタログに入り、どのツールの素材ピッカーでも使えます。複数ページの PDF や `.pptx` では、どのページやスライドを残すかを尋ねられ、それぞれが SVG の素材になります。取り込む量に制限はなく、デバイスの外に出ることもありません。
-- <!--i:star--> **よく使うものをお気に入りに。** 素材（やブランドのスウォッチ）に ★ を付けると、どのピッカーでも先頭に固定されるので、定番のロゴや色がワンクリックで選べます。
-- <!--i:folder--> **整理する。** 素材を別のグループに分類し直す、使わない共有ブランド素材を隠す（**Show hidden** で戻せます）、自分のアップロードを完全に削除する、といった操作ができます。Projects と同じ複数選択の操作とフローティングのアクションバーがここでも使えるので、いずれも選んだもの全体にまとめて適用できます。
+- <!--i:upload--> **ファイルを取り込む。** 画像、SVG、音声クリップ、動画、Lottie、PDF、PowerPointのデッキをアップロードエリアにドラッグする - またはクリックして選択する - と、即座にカタログに追加され、すべてのツールのアセットピッカーで使えるようになります。複数ページのPDFや`.pptx`では、どのページやスライドを残すか尋ねられ、それぞれがSVGアセットになります。好きなだけ取り込んでください。デバイスの外に出ることはありません。
+- <!--i:star--> **よく使うものをお気に入りに。** アセット(またはブランドスウォッチ)に★を付けると、すべてのピッカーの先頭に固定され、いつも使うロゴや色にワンクリックでたどり着けます。
+- <!--i:folder--> **整理する。** アセットを別のグループに再分類したり、使わない共有ブランドアセットを非表示にしたり(**Show hidden**で元に戻せます)、自分がアップロードしたものを完全に削除したりできます。Projectsと同じ複数選択ジェスチャーとフローティングアクションバーがここでも使え、選択範囲全体に対してまとめて操作できます。
+- <!--i:layers--> **動画から背景を切り離す。** 動画の詳細を開くか、任意のアセットピッカーでそのカードを右クリックして**Remove background…**を選ぶと、実アルファ付きのアニメーションWebPまたはPNGとして透過版を保存できます。**Method**を選びます。**On-device model**は込み入ったシーンから被写体を切り出し、**Colour key**は均一に照らされたフラットな背景 - グリーンスクリーンや無地の壁など - をキー抜きし、**Tolerance**、**Softness**、**Spill removal**でエッジを調整できます。カラーキーはモデルのダウンロードもネットワークも不要なため、**Remove background**はどの動画にも提供され、きれいに撮影された映像ではより仕上がりがきれいなことが多いです。**Resolution**コントロール(360、480、720、1080pのいずれか。元素材を超えることはありません)で、ディテールと引き換えにファイルを小さく、高速にできます。処理はデバイス上でバックグラウンドジョブとして実行されます。完成した切り抜きは独自のアセットとして元素材の隣に追加され、元の動画のContent Credentialはイングリディエントとして引き継がれます。(背景の削除が単なる編集にとどまる理由については、[Generated once, rendered the same](/info/ai-features.html)を参照してください。)
 
 ### パレットとフォントをどこへでも
 
