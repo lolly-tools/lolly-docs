@@ -390,7 +390,6 @@ CLI 模式就是 URL 模式換了一種傳輸方式——CLI 殼層會從 argv �
 
 ### 10. 工具可以組合工具
 
-![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-slides-deck)
 
 一個工具可以嵌入**另一個**工具的渲染結果，而不需要工具與工具之間互相 import——組合是由引擎解析的，絕不是由工具程式碼解析。有兩種介面：
 

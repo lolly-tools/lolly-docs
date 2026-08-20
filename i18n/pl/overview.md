@@ -389,7 +389,6 @@ Logika mieszka w `hooks.js`, gdzie jest jawna i podlega przeglądowi. Dostępne 
 
 ### 10. Narzędzia komponują narzędzia
 
-![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-slides-deck)
 
 Narzędzie może osadzić render **innego** narzędzia bez importów między narzędziami - kompozycja jest rozwiązywana przez silnik, nigdy przez kod narzędzia. Istnieją dwie powierzchnie:
 

@@ -388,7 +388,6 @@ Logica trăiește în `hooks.js`, unde este explicită și revizuibilă. Helper-
 
 ### 10. Instrumentele compun instrumente
 
-![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-slides-deck)
 
 Un instrument poate integra randarea **altui** instrument fără importuri instrument-la-instrument - compunerea este rezolvată de motor, niciodată de codul instrumentului. Există două suprafețe:
 

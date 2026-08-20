@@ -388,7 +388,6 @@ La logica vive in `hooks.js`, dove è esplicita e revisionabile. Helper Handleba
 
 ### 10. Gli strumenti compongono strumenti
 
-![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-slides-deck)
 
 Uno strumento può incorporare il render di **un altro** strumento senza alcun import da strumento a strumento - la composizione viene risolta dal motore, mai dal codice dello strumento. Ci sono due superfici:
 

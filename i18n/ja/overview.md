@@ -388,7 +388,6 @@ Handlebars は、EJS ではなく意図的に選ばれました:
 
 ### 10. ツールはツールを組み合わせる
 
-![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-slides-deck)
 
 ツールは、ツール同士のインポートを一切行うことなく、**別の**ツールのレンダリングを埋め込むことができます——コンポジションはエンジンによって解決され、ツールのコードが行うことは決してありません。サーフェスは2つあります:
 

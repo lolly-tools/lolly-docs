@@ -389,7 +389,6 @@ Handlebars беше избран пред EJS съзнателно:
 
 ### 10. Инструментите композират инструменти
 
-![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-slides-deck)
 
 Един инструмент може да вгради рендера на **друг** инструмент без импорти между инструментите — композицията се резолва от двигателя, никога от кода на инструмента. Има две повърхности:
 

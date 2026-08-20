@@ -388,7 +388,6 @@ A lógica vive no `hooks.js`, onde é explícita e revisável. Helpers do Handle
 
 ### 10. Ferramentas compõem ferramentas
 
-![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-slides-deck)
 
 Uma ferramenta pode incorporar a renderização de **outra** ferramenta sem nenhum import de ferramenta para ferramenta - a composição é resolvida pelo engine, nunca pelo código da ferramenta. Existem duas superfícies:
 

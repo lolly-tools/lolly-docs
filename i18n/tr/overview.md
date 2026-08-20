@@ -390,7 +390,6 @@ Mantık, açık ve incelenebilir olduğu `hooks.js` içinde yaşar. Kullanılabi
 
 ### 10. Araçlar, araçları birleştirir
 
-![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-slides-deck)
 
 Bir araç, araçtan araca içe aktarma olmadan **başka** bir aracın oluşturduğunu gömebilir - birleştirme, araç kodu tarafından değil, her zaman motor tarafından çözümlenir. İki yüzey vardır:
 

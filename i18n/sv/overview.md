@@ -388,7 +388,6 @@ Logik finns i `hooks.js` där den är explicit och granskningsbar. Tillgängliga
 
 ### 10. Verktyg komponerar verktyg
 
-![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-slides-deck)
 
 Ett verktyg kan bädda in **ett annat** verktygs rendering utan några verktyg-till-verktyg-importer - komposition löses upp av motorn, aldrig av verktygskod. Det finns två ytor:
 

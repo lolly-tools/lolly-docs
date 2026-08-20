@@ -388,7 +388,6 @@ Logic nằm trong `hooks.js`, nơi nó tường minh và có thể review đư�
 
 ### 10. Công cụ kết hợp với công cụ
 
-![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-slides-deck)
 
 Một công cụ có thể nhúng bản render của **một công cụ khác** mà không cần import giữa công cụ với công cụ - việc kết hợp được engine giải quyết, không bao giờ do code của công cụ. Có hai bề mặt:
 

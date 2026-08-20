@@ -389,7 +389,6 @@ Handlebars کو جان بوجھ کر EJS پر ترجیح دی گئی:
 
 ### 10. ٹولز ٹولز کو ترتیب دیتے ہیں
 
-![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-slides-deck)
 
 ایک ٹول کسی **دوسرے** ٹول کا رینڈر ایمبیڈ کر سکتا ہے، بغیر کسی ٹول-سے-ٹول امپورٹ کے — کمپوزیشن انجن حل کرتا ہے، کبھی ٹول کوڈ نہیں۔ دو سطحیں ہیں:
 

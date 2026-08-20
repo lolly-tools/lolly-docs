@@ -389,7 +389,6 @@ EJS-এর বদলে Handlebars ইচ্ছাকৃতভাবে বে�
 
 ### 10. টুল টুলকে কম্পোজ করে
 
-![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-slides-deck)
 
 একটি টুল কোনো টুল-থেকে-টুল ইমপোর্ট ছাড়াই **অন্য** একটি টুলের রেন্ডার এমবেড করতে পারে—কম্পোজিশন ইঞ্জিন দ্বারা রিজলভ হয়, কখনো টুল কোড দ্বারা নয়। দুটি সারফেস আছে:
 

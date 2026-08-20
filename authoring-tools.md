@@ -201,7 +201,7 @@ A `blocks` input is a list of repeating sub-records (e.g. team members, each wit
 
 In the template, iterate with `{{#each people}}…{{/each}}`. The value round-trips to the URL as a JSON array (see `docs/url-mode.md`); very large lists outgrow a pasteable link - the shell auto-compresses long queries (the packed `z` form) and warns past ~2,000 chars, so share those states via a saved-state `slot` instead. Blocks are edited in a side panel, and clicking a rendered block on the canvas focuses that block's field. `meeting-planner` is the reference implementation for the simple (homogeneous) case.
 
-![The Slides tool's blocks input - each row is its own card of fields, carrying the row type as its label and an Add slide button below the stack](/t/url-shot?url=%2F%23%2Ftool%2Fslides&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=.blocks-input%5Bdata-input-id%3D%22deck%22%5D&dark=1&filename=auth-blocks-rows)
+![Deck Studio's blocks input - each row is its own card of fields, carrying the row type as its label and an Add slide button below the stack](/t/url-shot?url=%2F%23%2Ftool%2Fdeck-studio&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=.blocks-input%5Bdata-input-id%3D%22deck%22%5D&dark=1&filename=auth-blocks-rows)
 
 **Advanced blocks (typed / heterogeneous rows).** Sub-fields aren't limited to `text` - a field may be `text`, `color`, `select`, `asset`, `number` or `boolean`. And the row set can be **discriminated** by a `select` sub-field:
 

@@ -388,7 +388,6 @@ La logique vit dans `hooks.js`, où elle est explicite et relisable. Helpers Han
 
 ### 10. Les outils composent des outils
 
-![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-slides-deck)
 
 Un outil peut intégrer le rendu d'un **autre** outil sans aucun import outil-à-outil - la composition est résolue par le moteur, jamais par le code de l'outil. Il y a deux surfaces :
 

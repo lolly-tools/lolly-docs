@@ -388,7 +388,6 @@ Handlebars는 EJS 대신 의도적으로 선택됐어요:
 
 ### 10. 도구가 도구를 조합해요
 
-![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-slides-deck)
 
 도구는 도구 간 임포트 없이 **다른** 도구의 렌더링을 임베드할 수 있어요——조합은 엔진이 해석하며, 도구 코드가 처리하는 일은 결코 없어요. 여기에는 두 가지 영역이 있어요:
 

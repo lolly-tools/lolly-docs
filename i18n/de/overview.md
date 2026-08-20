@@ -388,7 +388,6 @@ Logik lebt in `hooks.js`, wo sie explizit und überprüfbar ist. Verfügbare Han
 
 ### 10. Tools komponieren Tools
 
-![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-slides-deck)
 
 Ein Tool kann den Render eines **anderen** Tools einbetten, ganz ohne Tool-zu-Tool-Imports - die Komposition wird von der Engine aufgelöst, nie vom Tool-Code. Es gibt zwei Oberflächen:
 

@@ -387,7 +387,6 @@ Logika žije v `hooks.js`, kde je explicitní a dá se recenzovat. Dostupné hel
 
 ### 10. Nástroje skládají nástroje
 
-![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-slides-deck)
 
 Nástroj může vložit render **jiného** nástroje bez jakýchkoli importů mezi nástroji - kompozici řeší engine, nikdy kód nástroje. Existují dvě plochy:
 

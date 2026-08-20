@@ -286,7 +286,7 @@ Rows are listed in gallery section order. The `utility` section always renders *
 | Category | Examples | Planned |
 |---|---|---|
 | `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
-| `designer` | Brand Lockup, Design, Chart Creator, D3 Chart Studio, Slides, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `designer` | Brand Lockup, Design, Chart Creator, D3 Chart Studio, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
 | `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Unit/format converters, more on-device privacy utilities |
@@ -424,10 +424,6 @@ A tool can embed **another** tool's render with no tool-to-tool imports - compos
 
 - **Declarative manifest** - `composes: [{ id, tool, inputs, format?, width?, height? }]`. The engine renders the named child and places the result in the logic-less template as `{{asset <id>}}`. `event-name-badge` composes `qr-code` as an SVG today.
 - **Portable embed URL** - `<img src="https://lolly.tools/tool/<id>.<ext>?<inputs>">`. The shell renders that child **locally** (a placeholder pixel shows until the local render resolves); nothing is ever fetched from `lolly.tools`.
-
-The Slides tool is built on that second surface: any slot on any slide can hold another Lolly tool instead of an image.
-
-![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-slides-deck)
 
 Compose any tool's render: an **SVG** child stays a true vector when the parent exports to SVG or PDF and rasterises crisply for PNG; **PNG/JPG/WEBP** children embed as images. Requires the `compose` capability. Composed children are intermediates - never watermarked or provenance-stamped - and composition degrades gracefully: a shell that can't render a child just omits the slot and the parent still renders.
 

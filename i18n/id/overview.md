@@ -390,7 +390,6 @@ Logika hidup di `hooks.js` tempat ia eksplisit dan dapat ditinjau. Helper Handle
 
 ### 10. Alat menyusun alat
 
-![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-slides-deck)
 
 Sebuah alat dapat menyematkan render alat **lain** tanpa impor alat-ke-alat - komposisi di-resolve oleh engine, tak pernah oleh kode alat. Ada dua permukaan:
 

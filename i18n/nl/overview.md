@@ -388,7 +388,6 @@ Logica leeft in `hooks.js`, waar die expliciet en review-baar is. Beschikbare Ha
 
 ### 10. Tools combineren tools
 
-![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-slides-deck)
 
 Een tool kan de render van **een andere** tool insluiten zonder tool-naar-tool-imports - compositie wordt opgelost door de engine, nooit door toolcode. Er zijn twee oppervlakken:
 

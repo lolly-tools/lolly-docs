@@ -388,7 +388,6 @@ Web 壳层：IndexedDB。Tauri：文件系统。CLI：内存。工具看到的�
 
 ### 10. 工具组合工具
 
-![The opening slide of the default deck, whose own subtitle states that every slide can hold another Lolly tool](/t/url-shot?url=%2F%23%2Ftool%2Fslides%3FfocusSlide%3D1%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-slides-deck)
 
 一个工具可以嵌入**另一个**工具的渲染结果，而无需工具之间互相导入——组合关系由引擎解析，从不由工具代码本身处理。这里有两种途径：
 
