@@ -126,18 +126,18 @@ Output the file URL.
 
 Pokaždé, když někdo nahraje soubor do cizí služby, aby to „jenom vypadalo dobře“, je to únik dat čekající na svou příležitost. Lolly odstraňuje problém u zdroje - kreativní výroba zůstává on-premise a pod tvou kontrolou.
 
-- **Data zůstávají v zařízení.** Žádné vykreslování v cloudu, žádná analytika, žádná telemetrie - a vůbec žádný síťový požadavek kromě té hrstky, kterou uživatel výslovně vyvolá; každý z nich je vyjmenovaný v [zásadách ochrany soukromí](/info/privacy.html). Co kolegové vytvoří, zůstane na jejich počítači. Nástroje běžící přímo v zařízení, jako Strip Hidden Data, vyčistí EXIF a metadata z obrázků, SVG a PDF celé v prohlížeči - nic se nikam nenahrává. I zamknutí PDF, celého stažení nebo sdíleného odkazu heslem probíhá v zařízení; heslo ho nikdy neopustí.
-- **Self-hosting pro plnou kontrolu i v air-gap režimu.** Nasaď na vlastní infrastrukturu; dvě volitelné serverové komponenty se dají vynechat úplně. [Suverénní provoz](/info/sovereign-production.html) popisuje celý postoj a [Serverová plocha](/info/server-surface.html) je kompletní soupis.
-- **Zmenši dodavatelskou plochu.** Jedna open-source platforma nahradí roztroušená SaaS předplatná pro kreativní výrobu. Míň dodavatelů znamená míň smluv, míň auditů a míň vektorů úniku.
-- **Vynucuj správu značky na úrovni infrastruktury.** Nástroje vzniknou jednou a distribuují se jako data - ne jako soubory, ne jako ruční postupy. Ven jde přesně to, co bylo ke zveřejnění schválené.
-- **Dostaň kritické informace do čitelné podoby okamžitě.** Komunikace k incidentům, reporty pro compliance, podklady pro vedení - ze strukturovaných dat je během vteřin výstup v publikační kvalitě, bez čekání na grafika.
-- **Hardening, veřejně.** Kryptografie Lolly a její enginy pro parsování souborů procházejí infrastrukturním hardeningem od SUSE: disciplínou, za kterou stojí víc než tři dekády bezpečnostních technologií a služeb pro největší firmy na světě. Content Credentials a lokální šifrování jsou silné už z návrhu; než se to dokončí, nasazuj je pilotně v omezeném rozsahu. Viz [Zavádění a správa](/info/adoption-governance.html#status).
+- **Data zůstávají na zařízení.** Žádné cloudové vykreslování, žádná analytika, žádná telemetrie - a vůbec žádný síťový požadavek nad rámec hrstky, které uživatel výslovně spustí, každý pojmenovaný v [zásadách ochrany soukromí](/info/privacy.html). Co kolegové vytvoří, zůstává na jejich stroji. Nástroje na zařízení ti pomohou - nic se nikam nenahrává. I šifrování a hesla probíhají na zařízení..
+- **Self-hosting pro plnou kontrolu air-gap.** Nasaď na vlastní infrastrukturu; obě volitelné serverové součásti lze zcela vynechat. [Suverénní provoz](/info/sovereign-production.html) popisuje celý postoj a [Server Surface](/info/server-surface.html) je úplný soupis.
+- **Sniž počet dodavatelů.** Jedna open-source platforma nahrazuje rozházené předplatné SaaS pro kreativní produkci. Méně dodavatelů znamená méně smluv, méně auditů a méně vektorů úniku.
+- **Vynucuj správu brandu na úrovni infrastruktury.** Nástroje se autorizují jednou a distribuují se jako data - ne soubory, ne ruční procesy. Co jde ven, je přesně to, co bylo schváleno k vydání.
+- **Dostaň kritické informace do čitelných formátů okamžitě.** Komunikace při incidentech, zprávy o souladu, přehledy pro vedení - strukturovaná data se během vteřin promění v publikovatelný výstup, bez čekání na design.
+- **Zpevňování, na veřejnost.** Kryptografické a parsovací enginy Lolly procházejí zpevňováním infrastruktury SUSE: odborníky za více než třemi desítkami let bezpečnostních technologií a služeb pro největší podniky na světě. Content Credentials a lokální šifrování jsou od návrhu silné. Viz [Adopce a správa](/info/adoption-governance.html#status).
 
 ---
 
 ## Co dostaneš
 
-**Výkonná platforma pro kreativní výrobu.** Engine Lolly jde vždy po nejvyšší kvalitě, jakou daný formát umí - skutečné vektory, písmo v křivkách, barvy v tiskové kvalitě, nativní editovatelné výstupy.
+**Výkonná platforma pro kreativní produkci.** Engine Lolly usiluje o nejvyšší kvalitu, jakou daný formát dokáže na tvém hardwaru poskytnout, bez kompromisů.
 
 **100% zdarma a open source.** Žádné poplatky za SaaS, žádné limity používání, žádná závislost na dodavateli.
 

@@ -126,18 +126,18 @@ Output the file URL.
 
 Cada vez que alguien sube un archivo a un servicio de terceros para "que quede bien y ya está", ahí tienes una fuga de datos esperando a ocurrir. Lolly elimina el problema de raíz - la producción creativa se queda en tus instalaciones y bajo tu control.
 
-- **Los datos se quedan en el dispositivo.** Sin renderizado en la nube, sin analítica, sin telemetría - y sin ninguna petición de red más allá del puñado que la persona usuaria activa de forma explícita, cada una detallada en la [política de privacidad](/info/privacy.html). Lo que crean tus compañeros se queda en su máquina. Las utilidades en el dispositivo como Strip Hidden Data limpian EXIF y metadatos de imágenes, SVG y PDF íntegramente en el navegador - no se sube nada. Incluso proteger con contraseña un PDF, una descarga entera o un enlace compartido ocurre en el dispositivo; la contraseña nunca sale de él.
-- **Aloja tú mismo para tener control total en red aislada.** Despliega en tu propia infraestructura; los dos componentes de servidor opcionales se pueden omitir por completo. [Producción soberana](/info/sovereign-production.html) expone la postura completa y [Superficie de servidor](/info/server-surface.html) es el inventario completo.
-- **Reduce la superficie de proveedores.** Una sola plataforma de código abierto sustituye a una maraña de suscripciones SaaS para la producción creativa. Menos proveedores significa menos contratos, menos auditorías y menos vectores de brecha.
-- **Aplica el gobierno de marca a nivel de infraestructura.** Las herramientas se crean una vez y se distribuyen como datos - no como archivos ni procesos manuales. Lo que sale por la puerta es exactamente lo que se aprobó que saliera.
-- **Pasa la información crítica a formatos legibles al instante.** Comunicaciones de incidencias, informes de cumplimiento, resúmenes para dirección - los datos estructurados se convierten en resultados con calidad de publicación en segundos, sin cuellos de botella de diseño.
-- **Fortificación, a la vista de todos.** Los motores de criptografía y de análisis de archivos de Lolly están pasando por la fortificación de infraestructura de SUSE: la disciplina que hay detrás de más de tres décadas de tecnología y servicios de seguridad para las mayores empresas del mundo. Content Credentials y el cifrado local son sólidos por diseño; ponlos a prueba en un contexto acotado mientras eso se completa. Consulta [Adopción y gobierno](/info/adoption-governance.html#status).
+- **Los datos permanecen en el dispositivo.** Sin renderizado en la nube, sin analítica, sin telemetría - y ninguna solicitud de red en absoluto más allá del puñado que un usuario dispara explícitamente, cada una detallada en la [política de privacidad](/info/privacy.html). Lo que los compañeros crean permanece en su máquina. Las utilidades en el dispositivo ayudan - nada se sube. Incluso el cifrado y las contraseñas se procesan en el dispositivo..
+- **Autoalójate para un control total con air-gap.** Despliega en tu propia infraestructura; los dos componentes de servidor opcionales pueden omitirse por completo. [Sovereign production](/info/sovereign-production.html) expone toda la postura, y [Server Surface](/info/server-surface.html) es el inventario completo.
+- **Reduce la superficie de proveedores.** Una plataforma de código abierto sustituye a un maremágnum de suscripciones SaaS para la producción creativa. Menos proveedores significa menos contratos, menos auditorías y menos vectores de brecha.
+- **Aplica la gobernanza de marca a nivel de infraestructura.** Las herramientas se crean una vez y se distribuyen como datos - no como archivos, no como procesos manuales. Lo que sale por la puerta es exactamente lo que se aprobó que saliera.
+- **Convierte información crítica en formatos legibles al instante.** Comunicaciones de incidentes, informes de cumplimiento, resúmenes ejecutivos - los datos estructurados se convierten en un resultado de calidad de publicación en segundos, sin cuello de botella de diseño.
+- **Fortalecimiento, a la vista de todos.** Los motores de criptografía y de análisis de archivos de Lolly están pasando por el fortalecimiento de infraestructura de SUSE: los expertos detrás de más de tres décadas de tecnologías y servicios de seguridad para las mayores empresas del mundo. Content Credentials y el cifrado local son sólidos por diseño. Consulta [Adoption & governance](/info/adoption-governance.html#status).
 
 ---
 
 ## Lo que obtienes
 
-**Una plataforma potente de producción creativa.** El motor de Lolly trabaja para lograr la máxima calidad que cada formato puede dar - vectores reales, texto convertido a curvas, color de calidad de imprenta, salida nativa y editable.
+**Una potente plataforma de producción creativa.** El motor de Lolly trabaja para lograr la máxima calidad que cada formato puede producir en tu hardware, sin concesiones.
 
 **100% gratis y de código abierto.** Sin cuotas de SaaS, sin límites de uso, sin dependencia de proveedor.
 

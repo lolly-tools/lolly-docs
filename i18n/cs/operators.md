@@ -1,114 +1,119 @@
-# Lolly pro operátory
+# Lolly pro provozovatele
 
-### Vícevrstvá (defence-in-depth) bezpečnostní a zpravodajská strategie - která je jen shodou okolností kreativní produkční platformou
+### Strategie obrany do hloubky pro bezpečnost a intelligence - která shodou okolností je i platforma pro kreativní produkci
 
-Zero-trust organizační imunitní systém, který obepíná to, co už děláš - takže běžná kreativní práce, kterou tvé týmy potřebují každý den, probíhá *uvnitř* tvého perimetru místo toho, aby z něj unikala.
+Zero-trust organizační imunitní systém, který obepíná to, co už děláte - takže rutinní kreativní práce, kterou vaše týmy potřebují každý den, probíhá *uvnitř* vašeho perimetru, místo aby z něj unikala.
 
-**Co z toho budeš mít.** Staneš se tím, kdo řekl ano něčemu, co je zároveň bezpečné *i* oblíbené. Jedním tahem uzavřeš díru pro únik dat, získáš novou schopnost a zrušíš frontu požadavků - vzácné bezpečnostní vítězství, díky kterému tě budou mít radši, ne míň. Žádný telefonát ve 3 ráno od právního oddělení kvůli tomu, že se embargované soubory nebo data zákazníků dostaly do náhodného webového nástroje; méně SaaS dodavatelů, smluv a auditů na tvém stole; a plně reprodukovatelný audit trail, na který můžeš ukázat, když se někdo zeptá. Budeš spát klidněji a zpříjemníš tím pár dní.
+**Co z toho máte vy.** Stanete se člověkem, který řekl ano něčemu bezpečnému *i* oblíbenému. Uzavřete cestu k úniku dat, získáte schopnost a jedním tahem zrušíte frontu požadavků - vzácná bezpečnostní výhra, díky které jste oblíbenější, ne méně. Žádný telefonát od právního oddělení ve tři ráno kvůli tomu, že embargované soubory nebo data zákazníků skončily v náhodném webovém nástroji; méně SaaS dodavatelů, smluv a auditů na vašem stole; a plně reprodukovatelná auditní stopa, na kterou můžete ukázat, když se někdo zeptá. Spíte lépe a pár dní tím i zpříjemníte.
 
-Lolly není žádný kreativní nástroj druhé kategorie: dává produkčně kvalitní výstup do rukou každému a zážitek z tvorby vedené brandem nemá konkurenci. Důvod, proč je bezpečné rozdat ho tak široko, je ale architektonický: nic se nenahrává, co jsi tam sám nevložil, každý výsledek je reprodukovatelný a každý export může nést hned několik vrstev špičkových kryptografických záznamů. Bez ohledu na to, jak se dokument dostal na tvůj stůl, uvidíš jeho úplný původ, jestli s ním bylo manipulováno a jestli ho dokážeš znovu vytvořit pixel po pixelu.
+Lolly není druhořadý kreativní nástroj: dává výstup produkční kvality do rukou každého a jeho zážitek tvorby vedený značkou nemá konkurenci. Důvod, proč je *bezpečné* ho rozdat široce, je architektonický: nic se nenahraje, co jste tam nedali sami, každý výsledek je reprodukovatelný a každý export může nést více vrstev kryptografických záznamů na úrovni oborového standardu. Bez ohledu na to, jak se dokument dostal na váš stůl, vidíte jeho úplný původ, zda s ním bylo manipulováno a zda ho dokážete znovu vytvořit pixel po pixelu.
 
-> **Kde to stojí dnes.** Bezpečnostní vlastnosti Lolly jsou silné už ze své podstaty a jeho kryptografické a souborové parsovací enginy procházejí infrastrukturním hardeningem na enterprise úrovni od SUSE. Pečetě, podepisování na zařízení a šifrování popsané níže jsou reálné a obhajitelné už teď a dozrávají směrem k nezávislé certifikaci - takže tam, kde smlouva vyžaduje certifikované ujištění, nasaď je jako vícevrstvou ochranu (defence-in-depth), zatímco tento proces probíhá.
+> **Kde to dnes stojí.** Bezpečnostní vlastnosti Lolly jsou už z návrhu silné a jeho kryptografické a soubor-parsovací enginy procházejí enterprise úrovní hardeningu infrastruktury SUSE. Pečetě, on-device podepisování a šifrování popsané níže jsou reálné a obhajitelné už teď a směřují k nezávislé certifikaci - takže tam, kde smlouva vyžaduje certifikovanou garanci, je nasaďte jako obranu do hloubky, dokud tento proces neproběhne.
 
 ## Strategická výhoda
 
-Obvyklý způsob, jakým se běžná kreativní práce dělá, je jedna velká riziková plocha: soubory posílané e-mailem externím designovým dodavatelům, brandové assety nahrávané do desítky SaaS editorů, data zákazníků vkládaná do cizího webového nástroje jen proto, aby vznikla „rychlá grafika". Každý z těchto případů znamená data, která opouštějí tvou kontrolu.
+Obvyklý způsob, jakým se dělá rutinní kreativní práce, je plocha rizika: soubory posílané mailem externím designovým dodavatelům, brandové assety nahrávané do desítky SaaS editorů, data zákazníků vkládaná do cizího webového nástroje, aby se "jen rychle udělala grafika". Každá z těchto věcí je data opouštějící vaši kontrolu.
 
-Lolly to obrací naruby. Práce, která tyhle úniky *způsobovala* - citátová karta, lokalizovaný banner, jmenovka na akci, začerněný screenshot - teď probíhá v nástroji, který běží přímo na zařízení zaměstnance, proti tvému brandu, bez jakéhokoli serveru mezi tím. Nepřidal jsi kontrolu na vrchol rizikového procesu; nahradil jsi rizikový proces takovým, který od začátku žádnou cestu k úniku dat nemá.
+Lolly to obrací. Práce, která *poháněla* tyto úniky - citátová karta, lokalizovaný banner, jmenovka na akci, redigovaný screenshot - teď probíhá v nástroji, který běží na vlastním zařízení zaměstnance, proti vaší značce, bez serveru v cestě. Nepřidali jste kontrolu nad rizikovým workflow; nahradili jste rizikový workflow takovým, který od základu nemá cestu k úniku dat.
 
-- **Konfigurace je tvoje.** Engine a shelly jsou open source (MPL-2.0). Nasaď si vlastní autentizaci, telemetrii nebo CA; hostuj to, nebo ne; máš plnou kontrolu nad funkcemi i náklady, sledovanou v gitu, ne uzamčenou v SaaS databázi.
-- **Governance může být data, ne dashboard.** Když tuhle kontrolu chceš, spravuj katalog nástrojů jako Git repozitář - review pull requestů se stává schvalováním brandu, s kompletním audit trailem a okamžitým rollbackem každé šablony, ke které se tví lidé mohou dostat. Je to možnost, ne povinnost: týmy, které chtějí prostě jen tvořit, si své vlastní nástroje autorsky vytvoří v Layout Studiu a nahrají si vlastní soubory do katalogu, celé v aplikaci, a gitu se nikdy ani nedotknou. Viz [Zavádění a governance](/info/adoption-governance.html).
-- **Mantinely jsou strukturální.** Brandová omezení jsou napevno zakódovaná v šablonách, ne publikovaná jako doporučení, která se dají ignorovat. Špatný výstup není jen nedoporučený - je nevytvořitelný.
+- **Konfigurace je tvoje.** Engine a shelly jsou open source (MPL-2.0). Přidej si vlastní autentizaci, telemetrii nebo CA; hostuj to nebo ne; máš plnou kontrolu nad funkcemi i náklady, sledovanou v gitu, ne uzamčenou v SaaS databázi.
+- **Governance může být data, ne dashboard.** Když tuhle kontrolu chceš, spravuj katalog nástrojů jako Git repozitář - review pull requestu se stane schválením značky, s plným auditním záznamem a okamžitým rollbackem každé šablony, ke které se tvůj tým dostane. Je to možnost, ne povinnost, a dopadá přesně na jeden stůl: tvůrci pracují celou dobu v aplikaci, ukládají to, co vytvoří, jako **session** a předávají to dál jako odkaz na sdílení, zálohu nebo živou spolupráci - nic z toho git nepotřebuje. Když si některá z těch session zaslouží stát se trvalým výchozím bodem, ten, kdo řídí nasazení, otevře odkaz, zapíše jeho hodnoty jako **šablonu** u daného nástroje v brand packu a commitne. Od té chvíle se objevuje v selektoru "New from template" u nástroje a je dohledatelná přes deep link `?template=<id>`. Git je administrátorský uzamykací krok, použitý jednou, a nikdy nic, čeho by se tvůrce musel dotknout. Viz [Adopce a governance](/info/adoption-governance.html).
+- **Mantinely jsou strukturální.** Omezení značky jsou napevno zakódovaná v šablonách, ne publikovaná jako doporučení, která lze ignorovat. Špatný výstup není odrazovaný - je nezobrazitelný.
 
-## Zruš frontu požadavků a přitom množ obsah.
+> **Řídíš celou štafetu.** Kreativec autoruje pravidla a vývojář je škáluje, ale bezpečný provoz v rámci celé organizace zajišťuje operátor - stejný nástroj, který dovolí obchodnímu zástupci si poradit sám v letadle, je ten, který můžeš zgatovat přes Git review, nasadit přes svůj MDM a kryptograficky ověřit. Podívej se, jak se role sčítají v [Životní cyklus kampaně](/info/overview.html#the-lifecycle-of-a-campaign), a jak to řídíš v [Adopce a governance](/info/adoption-governance.html).
 
-Jedním z cílů Lolly je **odklánění designových požadavků** (design-request deflection): běžné požadavky, které se vůbec nemusí dostat k designérovi, protože si člověk, který asset potřeboval, ho udělal sám, správně, během pár minut. Každý odkloněný tiket je zároveň zvýšením produktivity i jedním souborem méně, který mezi lidmi putuje.
+## Smaž frontu požadavků a přitom množ obsah.
 
-Lolly je postavený tak, aby seděl na to, jak tvoje organizace skutečně funguje - neexistuje jediný správný způsob, jak ho nasadit:
+Jedním z cílů Lolly je **odklon požadavků na design**: rutinní požadavky, které nikdy nemusí dorazit k designérovi, protože si člověk, který asset potřeboval, ho vytvořil sám, správně, za pár minut. Každý odkloněný tiket je zároveň zisk produktivity a o jeden soubor méně, který mění majitele.
 
-- **Nasaď, neservíruj.** Distribuuj Lolly na zařízení přes tvůj stávající MDM (Intune, Jamf, Munki…). Běží lokálně jako desktopová/mobilní aplikace nebo offline PWA - funguje za jakýmkoli firewallem, v jakémkoli air-gapped prostředí, bez serveru, který by se musel udržovat, a s IT oddělením, které má tempo aktualizací plně pod kontrolou.
-- **Jen servíruj.** Spusť jednu instanci uvnitř své sítě (nebo za VPN); uživatelé se k ní dostanou přes prohlížeč, nic se neinstaluje. Publikuješ nástroj jednou a všichni ho mají okamžitě k dispozici; napoj to na svůj IdP pro kontrolu přístupu.
-- **Hybridně.** Lokální aplikace pro offline práci v terénu, vždy aktuální verze v prohlížeči pro vypůjčené počítače - obě míří na stejnou knihovnu nástrojů.
+Lolly je postavená tak, aby seděla na to, jak tvoje organizace skutečně funguje - neexistuje jeden správný způsob nasazení:
 
-Kompletní přehled modelů nasazení a administrace najdeš v sekcích [Nasazení](/info/deployment.html) a [Konfigurace](/info/configuration.html).
+- **Nasaď, neservíruj.** Dodej Lolly na zařízení přes svůj stávající MDM (Intune, Jamf, Munki…). Běží lokálně jako desktopová/mobilní aplikace nebo offline PWA - funguje za jakýmkoli firewallem, v jakémkoli air-gapped prostředí, bez serveru k údržbě, s IT plně v kontrole nad tempem aktualizací.
+- **Jen servíruj.** Spusť jednu instanci ve své síti (nebo za VPN); uživatelé se k ní dostanou přes prohlížeč, nic se neinstaluje. Publikuj nástroj jednou a má ho každý okamžitě; napoj na svého IdP pro kontrolu přístupu.
+- **Hybrid.** Lokální aplikace pro offline práci v terénu, vždy aktuální verze v prohlížeči pro vypůjčené počítače - obojí míří na stejnou knihovnu nástrojů.
 
-## Utility proti úniku dat
+Kompletní modely nasazení a průvodce administrací najdeš v [Nasazení](/info/deployment.html) a [Konfigurace](/info/configuration.html).
 
-Jedna kategorie nástrojů Lolly - utility na ochranu soukromí - existuje *výslovně* proto, aby soubory zůstávaly uvnitř perimetru.
+## Nástroje proti exfiltraci
 
-- **Odstranění skrytých dat**  
-Odstraní polohu a všechny skryté identifikující informace z dokumentů a mediálních souborů.
+Kategorie nástrojů Lolly - utility na ochranu soukromí - existuje *přímo za tím účelem*, aby soubory udržela uvnitř perimetru.
 
-- **Textový pomocník**  
-Anonymizuj, kóduj, formátuj a uprav strukturovaný i nestrukturovaný text.
 
-- **Komprese PDF**  
-Zmenši předimenzované PDF přímo na zařízení, takže nikdo nesáhne po webu třetí strany na „zkomprimování mého PDF" ve chvíli, kdy je soubor na e-mail moc velký - a přesně tam data unikají z okna.
+- **Strip hidden data**
+ Odstraní polohu a všechny skryté identifikující informace z dokumentů a mediálních souborů.
 
-Všechny tyto nástroje jsou transformace přímo na zařízení: vstoupí tvůj soubor nebo data, vystoupí vyčištěné bajty a **není žádný server, kam by se něco nahrávalo**. Jsou záměrným opakem typického nástroje typu „nahraj svůj soubor na cizí web a necháme ho vyčistit", po kterém by jinak sáhl dobře míněný zaměstnanec.
+- **Text Helper**  
+Anonymizuje, kóduje, formátuje a upravuje strukturovaný i nestrukturovaný text. 
 
-![Strip Hidden Data: the file lands on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
+- **Compress PDF**
+Zmenší předimenzované PDF přímo na zařízení, aby nikdo v okamžiku, kdy je soubor moc velký na e-mail, nesáhl po webu třetí strany typu "zkomprimuj mi PDF" - což je přesně místo, kudy data utíkají ven oknem. 
 
-Text Helper je stejná dohoda, jen pro text místo souborů. Je to ta záložkami rozdělená dílna, kterou by zaměstnanec jinak hledal na cizím webu, a nedeklaruje vůbec žádné vstupy, protože nic, čeho se dotkne, nikdy neopustí stránku.
+Všechny tyto jsou transformace přímo na zařízení: vstoupí tvůj soubor nebo data, vyjdou vyčištěné bajty a **neexistuje žádný server, kam by se nahrávalo**. Jsou záměrným opakem typického nástroje "nahraj svůj soubor na cizí web, aby ho vyčistil", po kterém jinak sáhne dobře míněný zaměstnanec.
 
-![Text Helper's workbench - a rail of operation tabs above a card stating that nothing you paste leaves your device](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1200&height=750&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
+![Strip Hidden Data: soubor přistane na plátně a odznak jasně sděluje, že se nic nenahrává](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
 
-Compress PDF tu sadu doplňuje: předimenzovaná příloha se zmenší podle nastavení kvality, které si zvolíš, a to na stroji, který ji už drží.
+Text Helper je stejná dohoda, jen pro text místo souborů. Je to sešitová pracovní deska, po které by zaměstnanec jinak pátral na cizím webu, a nedeklaruje vůbec žádné vstupy, protože nic, čeho se dotkne, stránku nikdy neopustí.
 
-![Compress PDF - a quality level and a greyscale switch on the left, a drop zone for your own PDF on the right, and no upload anywhere](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=ov2-compress-pdf)
+![Pracovní deska Text Helperu - lišta záložek s operacemi nad kartou, která uvádí, že nic z toho, co vložíš, neopustí tvé zařízení](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1200&height=750&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
+
+Compress PDF doplňuje sadu: předimenzovaná příloha se zmenší podle úrovně kvality, kterou zvolíš, na stroji, který ji už drží.
+
+![Compress PDF - vlevo úroveň kvality a přepínač do stupňů šedi, vpravo zóna pro upuštění vlastního PDF a nikde žádné nahrávání](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=ov2-compress-pdf)
 
 ## Determinismus a reprodukovatelnost
 
-Každý vstup nástroje lze vyjádřit jako parametr URL a stejné vstupy vytvoří stejný soubor. To má pro provozní tým dva důsledky:
+Každý vstup nástroje lze vyjádřit jako parametr URL a stejné vstupy dávají stejný soubor. To má dva důsledky pro operátora:
 
-- **URL je ten artefakt.** Commitni odkaz, asset si vygeneruj znovu podle potřeby - žádné binárky commitnuté do Gitu, žádné honění se za „poslední verzí" v chatu. ID assetů a nástrojů jsou trvalý kontrakt, takže odkaz vytvořený dnes bude fungovat i později.
-- **CLI používá stejnou vykreslovací cestu** jako GUI, takže se build pipeline a aplikace nikdy nerozejdou. Generuj OG obrázky, karty na sociální sítě a datové vizualizace při buildu, reprodukovatelně.
+- **URL je artefakt.** Commitni odkaz, asset vygeneruj na vyžádání znovu - žádné binárky commitnuté do gitu, žádné honění "poslední verze" v chatu. ID assetu a nástroje jsou trvalé smlouvy, takže odkaz vyražený dnes se rozřeší i později.
+- **CLI je stejná renderovací cesta** jako GUI, takže build pipeline a aplikace se nikdy nerozejdou. Generuj OG obrázky, sociální karty a datové vizualizace v čase buildu, reprodukovatelně.
 
-Prompt to Image je determinismus v té nejprostší podobě: text je celý vstup, vysazený obrázek je celý výstup a stejný text se vždycky vysadí stejně.
+Prompt to Image je determinismus v té nejčistší podobě: text je celý vstup, sázený obrázek je celý výstup a stejný text se vysází vždy stejně.
 
-![Prompt to Image - a block of prompt text typeset into a square image, with nothing in the result that was not in the input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - blok textu promptu sázený do čtvercového obrázku, přičemž ve výsledku není nic, co nebylo ve vstupu](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
-## Ověřování původu a Content Credentials
+## Provenience a Content Credentials
 
-![The Verify drop zone accepts any file, from any source, and reads it without a network call](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
+![Zóna pro upuštění souboru u Verify přijme jakýkoli soubor z jakéhokoli zdroje a přečte ho bez síťového volání](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
 
-Exporty mohou nést **Content Credentials** - podepsaný manifest [C2PA](https://c2pa.org) svázaný s hashem bajtů souboru. Jakákoli pozdější změna souboru poruší pečeť, takže ověřovatel podporující C2PA **odhalí úpravu kryptograficky, offline**. Pověření je tamper-*evident* (prokazatelně narušitelné): manipulaci spíš označí, než aby jí zabránilo, což je přesně to, co umožňuje plně offline ověření.
+Exporty mohou nést **Content Credentials** - podepsaný manifest [C2PA](https://c2pa.org) vázaný na hash bajtů souboru. Jakákoli pozdější změna souboru pečeť poruší, takže verifikátor znalý C2PA **odhalí úpravu kryptograficky, offline**. Přihláška je tamper-*evidentní*: úpravu spíš odhalí, než jí zabrání, a přesně to je to, co umožňuje plně offline ověřování.
 
-- **Ve výchozím stavu zapnuto, přímo na zařízení.** Podpisový klíč se generuje na zařízení, nedá se z něj extrahovat (ani Lolly ho nedokáže přečíst) a podepisování probíhá lokálně - sítě se dotkne jedině volitelná *registrace* identity.
-- **Úrovně důvěry.** Neregistrovaný export je strukturálně platný, ale podepsaný anonymně (`untrusted`). Zaregistruj si **ověřenou identitu** (krátkodobý certifikát od Lolly CA, navázaný na e-mail) a ověřovatelé, kteří pinují kořenový certifikát Lolly, nahlásí `trusted` + e-mail podepisující osoby. Důvěryhodná časová autorita a zelené hodnocení od validátoru třetí strany (shoda s C2PA) jsou na roadmapě. Každá úroveň je explicitní a soubor si nikdy nenárokuje víc důvěry, než dokáže prokázat.
-- **Platnost pověření** je na rozhodnutí operátora/uživatele v okamžiku podepisování: 7 / 30 / 90 / 365 dní, výchozí je 30.
-- **Lolly Imprint.** Druhý, doplňkový signál, který je **ve výchozím stavu zapnutý**: neviditelný pixelový vodoznak zapečený do rastrových exportů (a do rastrů, které vykreslila Lolly uvnitř PDF/PPTX, nikdy do vlastního vloženého obrázku uživatele). Zatímco pověření zanikne při jakékoli změně kontejneru, Imprint přežije opětovné uložení nebo screenshot - trvalá stopa „tyhle pixely prošly Lolly", jen přítomnost, žádná osobní data. Je to security-through-obscurity, ne tvrdá ochrana, a doplňuje pověření, místo aby ho nahrazoval. Vypnout ho jde přes `imprint=0`.
-- **Durable Content Credentials (volitelné).** Rastrový export může navíc nést neviditelnou *durable* značku, která kóduje identifikátor soft-bindingu, takže pověření C2PA lze obnovit i poté, co nahrání na sociální síť nebo opětovné uložení odstranilo metadata souboru - tedy přesně v případě, kdy by běžné pověření bylo ztraceno. Funguje jen pro rastry a stojí neuronový enkódovací průchod navíc, takže je ve výchozím stavu vypnutá (zapneš ji přes `durable=1`). Lolly dnes rozpozná vlastní durable značku offline na `/verify`; obnovení nástroji třetích stran (např. Adobe) bude následovat, jakmile bude hotové odvětvové řešení pro soft-binding.
-- **Ověřování probíhá na zařízení.** Přetáhni jakýkoli soubor na `/verify` (nebo `lolly validate <file>`) a získáš offline zprávu o tom, jestli byl opravdu vytvořen v Lolly a od té doby nezměněn. Webové zobrazení Verify navíc označí AI generovaný obsah, detekuje Lolly Imprint, ověří podpisy **SEAL** (podpis na úrovni bajtů zakotvený v DNS - jediný dotek sítě je vyhledání klíče v DNS, nikdy samotný soubor), volitelně hloubkově proskenuje soubor na vodoznaky třetích stran (jednorázové stažení modelu přímo na zařízení) a odhalí skrytá data - to všechno bez nahrávání souboru kamkoli. Viz [Identita Content Credentials](/info/content-credentials-identity.html).
+- **Ve výchozím stavu zapnuto, přímo na zařízení.** Podpisový klíč se generuje na zařízení, je neexportovatelný (ani Lolly ho nepřečte) a podepisování probíhá lokálně - sítě se dotkne jen volitelný krok *registrace* identity.
+- **Úrovně důvěry.** Neregistrovaný export je formálně v pořádku, ale podepsaný anonymně (`untrusted`). Zaregistruj **ověřenou identitu** (krátkodobý certifikát z Lolly CA, navázaný na e-mail) a verifikátory, které přišpendlují kořen Lolly, nahlásí `trusted` + e-mail podepisujícího. Důvěryhodná časová autorita a zelená od validátoru třetí strany (shoda s C2PA) jsou na roadmapě. Každá úroveň je explicitní a soubor si nikdy nenárokuje víc důvěry, než dokáže doložit.
+- **Životnost přihlášky** je na rozhodnutí operátora nebo uživatele v okamžiku podpisu: 7 / 30 / 90 / 365 dní, výchozí 30.
+- **Lolly Imprint.** Druhý, doplňkový signál, který je **ve výchozím stavu zapnutý**: neviditelný pixelový vodoznak zapečený do rastrových exportů (a do rastrů vyrenderovaných Lolly uvnitř PDF/PPTX, nikdy do uživatelova vlastního vloženého obrázku). Tam, kde přihláška zaniká při jakékoli změně kontejneru, Imprint přežije re-save nebo screenshot - trvalá nápověda "tyto pixely prošly Lolly", pouze přítomnostní, bez osobních dat. Je to bezpečnost skrze neprůhlednost, ne tvrdá obrana, a doplňuje přihlášku, ne že by ji nahrazovala. `imprint=0` to vypne.
+- **Trvalé Content Credentials (opt-in).** Rastrový export může navíc nést neviditelnou *trvalou* značku, která kóduje identifikátor s měkkou vazbou, takže C2PA přihlášku lze obnovit i poté, co nahrání na sociální síť nebo re-save odstranilo metadata souboru - přesně případ, kdy by se běžná přihláška ztratila. Je jen pro rastr a stojí neurální encode průchod, takže je ve výchozím stavu vypnutá (zapneš ji `durable=1`). Lolly svou vlastní trvalou značku dnes rozpozná offline na `/verify`; obnova nástroji třetích stran (např. Adobe) přijde, jakmile bude na místě řešení měkké vazby napříč odvětvím.
+- **Ověřování probíhá na zařízení.** Upusť libovolný soubor na `/verify` (nebo `lolly validate <file>`) a získáš offline zprávu o tom, jestli byl skutečně vytvořen v Lolly a od té doby nezměněn. Webové zobrazení Verify navíc označí AI generovaný obsah, detekuje Lolly Imprint, ověří podpisy **SEAL** (podpis na úrovni bajtů - bez jediného síťového požadavku: engine přijímá *injektovaný* resolver DNS klíče a žádný shell ho dnes neinjektuje, takže záznam nesoucí vlastní inline klíč `pk=` se ověří plně offline, zatímco záznam klíčovaný přes DNS nahlásí "no key resolver and no inline key" místo toho, aby síť oslovil - viz `SealPublicKeyResolver` v `engine/src/seal.ts`), volitelně hloubkově skenuje pixelové vodoznaky třetích stran (jednorázové stažení modelu na zařízení) a odhalí skrytá data - to vše bez nahrávání souboru. Viz [Content Credentials Identity](/info/content-credentials-identity.html).
 
-> **Poznámky k interoperabilitě.** Lolly dnes offline ověří svá vlastní pověření i řadu pověření třetích stran, včetně čtení manifestů C2PA claim **v2** od jiných tvůrců. Jedna položka pro interoperabilitu ještě zbývá: WebM - pro který zatím neexistuje standardizované mapování C2PA, takže Lolly připojuje manifest jako část Matroska (nástroje třetích stran ověří Lolly MP4 rovnou; WebM bude následovat, jakmile se standard ustálí).
+> **Poznámky k interoperabilitě.** Lolly dnes offline ověřuje své vlastní přihlášky i řadu přihlášek třetích stran, včetně čtení manifestů C2PA claim **v2** od jiných tvůrců. Dva kontejnery zůstávají rozpracované, oba z toho důvodu, že pro ně C2PA zatím nemá standardizované mapování, takže Lolly nese přihlášku na vlastním místě a je to verifikátor Lolly, kdo ji zpětně čte: **WebM** (manifest jede jako příloha Matroska) a **Ogg/Opus** (pole `C2PA=` v hlavičce komentářů OpusTags, přičemž tento rozsah bajtů je z vazby vyloučen, takže audio pořád hashuje identicky). Všechno ostatní se razí podle specifikace - nástroje třetích stran ověří Lolly MP4, M4A, MP3, WAV, PNG, JPEG a PDF rovnou po vybalení. Obě mapování viz `engine/src/c2pa-containers.ts`; jakmile se to ustálí, sblíží se se standardem.
 
 ## Šifrování a heslování
 
-![The lock card in the export panel: a password, and an explicit choice between the two tiers](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&walker=1&format=svg&dark=1&filename=aud-pdf-lock)
+Pro soubory, které musí cestovat uzamčené, se všechno odehrává na zařízení:
 
-Pro soubory, které musí cestovat uzamčené, se všechno odehrává přímo na zařízení:
+![Karta se zámkem v exportním panelu: heslo a explicitní volba mezi oběma úrovněmi](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&walker=1&format=svg&dark=1&filename=aud-pdf-lock)
 
-- **Heslo pro otevření PDF** - *Standardní* je 40bitová RC4 překážka (dá se odemknout kdekoli, může cestovat v odkazu); *Silné* je **AES-256** (PDF 2.0), zadává se při exportu a nikdy nekončí v odkazu.
-- **Uzamčená stažení** - ZIP, složka Projects nebo dávkový běh (batch run) se dají uzamknout celé: *Standardní* ZipCrypto (slabé, univerzální) nebo *Silné* **AES-256** (WinZip AE-2). Vícevrstvá ochrana (defence-in-depth): jakékoli PDF uvnitř Silného zipu je *navíc* individuálně uzamčené AES-256, takže zůstane uzamčené i po rozbalení.
-- **Sdílené odkazy chráněné heslem** - celý stav odkazu je zašifrovaný AES-256 pod klíčem odvozeným pomocí PBKDF2; cestuje jen šifrovaný text, heslo nikdy není součástí odkazu a dešifrování probíhá v prohlížeči příjemce.
+- **PDF heslo pro otevření** - *Standard* je 40bitová zábrana RC4 (otevře se kdekoli, může cestovat v odkazu); *Strong* je **AES-256** (PDF 2.0), zadaná při exportu a nikdy nevkládaná do odkazu.
+- **Uzamčená stažení** - ZIP, složku Projects nebo dávkový běh lze uzamknout jako celek: *Standard* ZipCrypto (slabé, univerzální) nebo *Strong* **AES-256** (WinZip AE-2). Obrana do hloubky: jakékoli PDF uvnitř Strong zipu je *navíc* jednotlivě uzamčeno AES-256, takže zůstane uzamčené i po rozbalení.
+- **Odkazy na sdílení chráněné heslem** - celý stav odkazu je zašifrovaný AES-256 pod klíčem odvozeným přes PBKDF2; cestuje jen šifrovaný text, heslo v odkazu nikdy není a dešifrování probíhá v prohlížeči příjemce.
 
 ## Připraveno na air-gap
 
-Air-gap je **plnohodnotné nasazení**, ne zvláštní režim - Lolly běží bez sítě v okamžiku renderování rovnou po vybalení. Webový shell je offline-first PWA (service worker); fonty a WASM jsou uložené přímo na zařízení; stav nástroje se ukládá lokálně přes host bridge, nikdy ne přes `localStorage`. Jakýkoli nástroj, který se dostává do sítě, tak dělá jedině přes **allowlistovanou** schopnost `host.net`, kterou musí deklarovat ve svém manifestu - shell, který ji neumí (nebo nechce) naplnit, ji nahradí prázdnou implementací (stub). Distribuuj shelly na zařízení přes svůj MDM, nebo spusť jednu instanci uvnitř své sítě, a plně air-gapped instalace renderuje, exportuje, šifruje a ověřuje pověření, aniž by měla kam „zavolat domů".
+Air-gap je **plnohodnotné nasazení**, ne zvláštní režim - Lolly rovnou z výroby běží při renderování bez sítě. Webový shell je offline-first PWA (service worker); fonty a WASM jsou uložené na zařízení; stav nástroje se ukládá lokálně přes host bridge, nikdy přes `localStorage`. Podporovaný způsob, jak se nástroj dostane k síti, je funkce `host.net` na **allowlistu**, kterou deklaruje ve svém manifestu - shell, který ji nedokáže (nebo nechce) splnit, ji nahradí zástupným řešením. Je to smlouva o přenositelnosti, ne vynucená hranice (viz poznámka k hookům níže), a proto zůstává kontrolou review kódu nástroje - i když na air-gapped zařízení stejně není kam se natáhnout, ani v jednom směru. Dodej shelly na zařízení přes svůj MDM, nebo servíruj jednu instanci ve své síti, a plně air-gapped instalace renderuje, exportuje, šifruje a ověřuje přihlášky, aniž by měla komu volat domů.
 
 ## Dobré vědět
 
-Pár věcí, které je dobré mít ujasněné, než to nasadíš:
+Pár věcí, které stojí za to mít jasné, než to nasadíš:
 
-- **Hardening probíhá.** Kryptografie a parsery procházejí hardeningem na enterprise úrovni od SUSE (viz výše) - dnes silné už ze své podstaty; tam, kde smlouva vyžaduje certifikované ujištění, nasaď je jako vícevrstvou ochranu.
-- **Hooky nástrojů *nejsou* bezpečnostní sandbox.** Volitelný `hooks.js` nástroje běží s vloženým host bridge, ale v prohlížečovém shellu se vykonává v realmu stránky a *může* se dostat na `window`/`document`/`fetch`. Ke kódu nástroje přistupuj stejně jako ke každému kódu, který spouštíš - zkontroluj ho. Proto může organizace, která provozuje sdílený katalog, hlídat přístup přes Git review; ať tak či onak, spouštěj jen nástroje, které jsi zkontroloval, dokud nedorazí izolace přes Worker.
-- **Content Credentials jsou tamper-evident.** Manipulaci spíš odhalí, než aby jí zabránily - viz poznámky k interoperabilitě výše.
-- **Dvě úrovně šifrování.** Zámky *Standardní* jsou rychlé, univerzální odstrašující prostředky; *Silné* (AES-256) je plná ochrana - po Silném sáhni u čehokoli citlivého, s tím, že chce moderní čtečku.
+- **Zpevňování probíhá.** Kryptografie a parsery procházejí zpevňováním v rozsahu SUSE enterprise (viz výše) - dnes silné svým návrhem; nasazuj jako obranu do hloubky tam, kde smlouva vyžaduje certifikovanou jistotu.
+- **Hooky nástroje *nejsou* bezpečnostní sandbox.** Volitelný `hooks.js` nástroje běží s injektovaným host bridge, ale v prohlížečovém shellu se vykonává v realmu stránky a *dokáže* se natáhnout k `window`/`document`/`fetch`. Zacházej s kódem nástroje jako s jakýmkoli kódem, který spouštíš - projdi ho reviewem. Proto může organizace, která provozuje sdílený katalog, zgatovat ho přes Git review; v obou případech spouštěj jen nástroje, které jsi prošel reviewem, dokud nedorazí izolace přes Worker.
+- **Content Credentials jsou tamper-evidentní.** Odhalí úpravu, spíš než aby jí zabránily - viz poznámky k interoperabilitě výše.
+- **Dvě úrovně šifrování.** *Standard* zámky jsou rychlá, univerzální zábrana; *Strong* (AES-256) je plná ochrana - pro cokoli citlivého sáhni po Strong, s vědomím, že chce moderní čtečku.
 
-## Kam pokračovat dál
+## Kam dál
 
-- **[Zavádění a governance](/info/adoption-governance.html)** - persony, metrika odklánění požadavků a governance-jako-data v plné šíři.
+- **[Bezpečnost a ověřování](/info/security.html)** - standardy, primitiva, model důvěry a testování za výše uvedenými přihláškami a šifrováním.
+- **[Adopce a governance](/info/adoption-governance.html)** - persony, metrika odklonu a governance jako data v plném rozsahu.
 - **[Nasazení](/info/deployment.html)** - deploy/serve/hybrid, MDM a self-hosting služeb.
-- **[Konfigurace](/info/configuration.html)** - profily, brand packy, řízení přístupu ke schopnostem (capability gating) a feature flagy.
-- **[Zásady ochrany osobních údajů](/info/privacy.html)** - formální prohlášení „nic nesbíráme, nic nenahráváme".
+- **[Konfigurace](/info/configuration.html)** - profily, brand packy, gatování funkcí a feature flagy.
+- **[Zásady ochrany soukromí](/info/privacy.html)** - formální prohlášení o tom, co se sbírá, ukládá a odesílá a co ne.
+- **[Serverová plocha](/info/server-surface.html)** - kompletní přehled toho, co běží na straně serveru (dvě volitelné komponenty) oproti tomu, co běží na zařízení.

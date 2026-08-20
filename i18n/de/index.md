@@ -126,18 +126,18 @@ Output the file URL.
 
 Jedes Mal, wenn jemand eine Datei zu einem fremden Dienst hochlädt, damit sie "einfach gut aussieht", ist das ein Datenabfluss, der nur auf seine Gelegenheit wartet. Lolly beseitigt das Problem an der Wurzel - die kreative Produktion bleibt im Haus und unter Ihrer Kontrolle.
 
-- **Die Daten bleiben auf dem Gerät.** Kein Rendern in der Cloud, keine Analyse, keine Telemetrie - und überhaupt keine Netzwerkanfrage außer der Handvoll, die eine Person ausdrücklich auslöst, jede davon in der [Datenschutzerklärung](/info/privacy.html) benannt. Was Kolleginnen und Kollegen erstellen, bleibt auf ihrem Rechner. Lokale Werkzeuge wie Strip Hidden Data entfernen EXIF und Metadaten aus Bildern, SVG und PDF vollständig im Browser - nichts wird hochgeladen. Auch ein PDF, ein ganzer Download oder ein Freigabelink wird mit einem Passwort direkt auf dem Gerät gesperrt; das Passwort verlässt es nie.
-- **Selbst hosten für vollständige Air-Gap-Kontrolle.** Setzen Sie Lolly auf Ihrer eigenen Infrastruktur ein; die beiden optionalen Serverkomponenten lassen sich ganz weglassen. [Souveräne Produktion](/info/sovereign-production.html) beschreibt die gesamte Haltung, und [Server Surface](/info/server-surface.html) ist die vollständige Bestandsaufnahme.
-- **Weniger Angriffsfläche durch Anbieter.** Eine Open-Source-Plattform ersetzt einen Wildwuchs an SaaS-Abos für die kreative Produktion. Weniger Anbieter heißt weniger Verträge, weniger Audits und weniger Einfallstore.
-- **Markenführung auf Infrastrukturebene durchsetzen.** Tools werden einmal erstellt und als Daten verteilt - nicht als Dateien, nicht als manuelle Prozesse. Was das Haus verlässt, ist genau das, was dafür freigegeben wurde.
-- **Kritische Informationen sofort in lesbare Formate bringen.** Störungsmeldungen, Compliance-Berichte, Vorstandsbriefings - aus strukturierten Daten wird in Sekunden eine Ausgabe in Publikationsqualität, ohne Nadelöhr im Design.
-- **Härtung, öffentlich einsehbar.** Die Kryptografie und die Datei-Parser von Lolly durchlaufen die Infrastruktur-Härtung von SUSE: die Sorgfalt aus mehr als drei Jahrzehnten Sicherheitstechnologie und Sicherheitsdiensten für die größten Unternehmen der Welt. Content Credentials und lokale Verschlüsselung sind von Grund auf stark ausgelegt; setzen Sie sie bis zum Abschluss dieser Arbeit in einem abgegrenzten Rahmen pilothaft ein. Siehe [Einführung & Governance](/info/adoption-governance.html#status).
+- **Daten bleiben auf dem Gerät.** Kein Cloud-Rendering, keine Analyse, keine Telemetrie - und überhaupt keine Netzwerkanfrage über die Handvoll hinaus, die ein Nutzer ausdrücklich auslöst, jede davon in der [Datenschutzrichtlinie](/info/privacy.html) benannt. Was Kolleginnen und Kollegen erstellen, bleibt auf ihrem Rechner. On-Device-Werkzeuge unterstützen Sie - nichts wird hochgeladen. Selbst Verschlüsselung und Passwörter geschehen auf dem Gerät.
+- **Selbst hosten für vollständige Air-Gap-Kontrolle.** Auf eigener Infrastruktur bereitstellen; die beiden optionalen Serverkomponenten können vollständig weggelassen werden. [Souveräne Produktion](/info/sovereign-production.html) legt die gesamte Haltung dar, und [Server Surface](/info/server-surface.html) ist die vollständige Inventarliste.
+- **Anbieterfläche reduzieren.** Eine Open-Source-Plattform ersetzt eine Vielzahl von SaaS-Abonnements für die kreative Produktion. Weniger Anbieter bedeuten weniger Verträge, weniger Audits und weniger Angriffsvektoren.
+- **Markengovernance auf Infrastrukturebene durchsetzen.** Werkzeuge werden einmal erstellt und als Daten verteilt - nicht als Dateien, nicht als manuelle Prozesse. Was hinausgeht, ist genau das, was zur Freigabe genehmigt wurde.
+- **Kritische Informationen sofort in menschenlesbare Formate bringen.** Vorfallskommunikation, Compliance-Berichte, Führungskräfte-Briefings - strukturierte Daten werden in Sekunden zu Output in Publikationsqualität, ohne Design-Engpass.
+- **Härtung, offen einsehbar.** Lollys Kryptografie- und Dateiparsing-Engines durchlaufen SUSEs Infrastruktur-Härtung: die Experten hinter mehr als drei Jahrzehnten Sicherheitstechnologie und -services für die größten Unternehmen der Welt. Content Credentials und lokale Verschlüsselung sind von Grund auf robust. Siehe [Adoption & Governance](/info/adoption-governance.html#status).
 
 ---
 
 ## Was Sie bekommen
 
-**Eine leistungsfähige Plattform für kreative Produktion.** Die Lolly-Engine holt aus jedem Format die höchste Qualität heraus, die es hergibt - echte Vektoren, in Pfade umgewandelte Schrift, Farbe in Druckqualität, native und bearbeitbare Ausgaben.
+**Eine leistungsstarke Plattform für kreative Produktion.** Die Lolly-Engine arbeitet darauf hin, für jedes Format die höchstmögliche Qualität auf Ihrer Hardware zu erzielen, ohne Kompromisse.
 
 **100 % kostenlos und quelloffen.** Keine SaaS-Gebühren, keine Nutzungsgrenzen, keine Anbieterabhängigkeit.
 

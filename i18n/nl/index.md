@@ -126,18 +126,18 @@ Output the file URL.
 
 Elke keer dat iemand een bestand uploadt naar een externe dienst om het "even mooi te maken", ligt er data-exfiltratie op de loer. Lolly neemt het probleem bij de bron weg - creatieve productie blijft on-premise en onder jouw controle.
 
-- **Data blijft op het apparaat.** Geen cloudrendering, geen analytics, geen telemetrie - en helemaal geen netwerkverzoek behalve het handjevol dat een gebruiker zelf in gang zet, elk daarvan benoemd in het [privacybeleid](/info/privacy.html). Wat collega's maken, blijft op hun machine. Hulpmiddelen op het apparaat zoals Strip Hidden Data wissen EXIF en metadata uit afbeeldingen, SVG en PDF volledig in de browser - er wordt niets geüpload. Zelfs een PDF, een hele download of een deellink vergrendelen met een wachtwoord gebeurt op het apparaat; het wachtwoord verlaat het nooit.
-- **Host zelf voor volledige air-gapcontrole.** Draai het op je eigen infrastructuur; de twee optionele servercomponenten kun je volledig weglaten. [Soevereine productie](/info/sovereign-production.html) beschrijft de volledige houding en [Server Surface](/info/server-surface.html) is de complete inventaris.
-- **Verklein het leveranciersoppervlak.** Eén opensourceplatform vervangt een wildgroei aan SaaS-abonnementen voor creatieve productie. Minder leveranciers betekent minder contracten, minder audits en minder aanvalsroutes.
-- **Dwing merkgovernance af op infrastructuurniveau.** Tools worden één keer gebouwd en verspreid als data - geen bestanden, geen handmatige processen. Wat naar buiten gaat, is precies wat is goedgekeurd om naar buiten te gaan.
-- **Zet kritieke informatie direct om in leesbare formats.** Incidentcommunicatie, compliancerapporten, directiebriefings - gestructureerde data wordt in seconden output van publicatiekwaliteit, zonder flessenhals bij design.
-- **Hardening, in de openbaarheid.** De cryptografie- en bestandsparsingengines van Lolly gaan door SUSE's infrastructuurhardening: de discipline achter ruim drie decennia beveiligingstechnologie en -diensten voor de grootste ondernemingen ter wereld. Content Credentials en lokale versleuteling zijn sterk van opzet; zet ze als pilot in een afgebakende context in terwijl dat wordt afgerond. Zie [Adoptie & governance](/info/adoption-governance.html#status).
+- **Gegevens blijven op het apparaat.** Geen cloudrendering, geen analytics, geen telemetrie - en helemaal geen netwerkverzoek behalve de handvol die een gebruiker expliciet activeert, elk genoemd in het [privacybeleid](/info/privacy.html). Wat collega's maken blijft op hun machine. On-device hulpmiddelen helpen je verder - er wordt niets geüpload. Zelfs versleuteling en wachtwoorden gebeuren on-device..
+- **Self-host voor volledige air-gap controle.** Deploy op je eigen infrastructuur; de twee optionele servercomponenten kunnen volledig worden weggelaten. [Sovereign production](/info/sovereign-production.html) beschrijft de volledige houding, en [Server Surface](/info/server-surface.html) is de complete inventaris.
+- **Verminder de leveranciersoppervlakte.** Eén open-source platform vervangt een wildgroei aan SaaS-abonnementen voor creatieve productie. Minder leveranciers betekent minder contracten, minder audits en minder inbraakvectoren.
+- **Handhaaf merkgovernance op infrastructuurniveau.** Tools worden één keer geautoriseerd en verspreid als data - geen bestanden, geen handmatige processen. Wat de deur uitgaat is precies wat werd goedgekeurd om de deur uit te gaan.
+- **Krijg kritieke informatie direct in leesbare formaten.** Incidentcommunicatie, compliancerapporten, directiebriefings - gestructureerde data wordt in seconden output van publicatiekwaliteit, geen designbottleneck.
+- **Verharding, in het openbaar.** Lolly's cryptografie- en bestandsparse-engines doorlopen SUSE's infrastructuurverharding: de experts achter meer dan drie decennia beveiligingstechnologie en -diensten voor 's werelds grootste ondernemingen. Content Credentials en lokale versleuteling zijn sterk door ontwerp. Zie [Adoption & governance](/info/adoption-governance.html#status).
 
 ---
 
 ## Wat je krijgt
 
-**Een krachtig platform voor creatieve productie.** De Lolly-engine haalt uit elk formaat de hoogste kwaliteit die het kan leveren - echte vectoren, tekst omgezet naar contouren, kleur op drukkwaliteit, native bewerkbare output.
+**Een krachtig platform voor creatieve productie.** De Lolly-engine werkt om de hoogste kwaliteit te behalen die elk formaat op je hardware kan produceren, zonder compromis.
 
 **100% gratis en open source.** Geen SaaS-kosten, geen gebruikslimieten, geen leveranciersafhankelijkheid.
 

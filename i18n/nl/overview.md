@@ -1,42 +1,56 @@
 # Overzicht
 
-Dit document legt het doel, de structuur en de architecturale keuzes van het Lolly-platform vast. Het weerspiegelt zowel de productvisie als de huidige staat van de codebase.
+![Lolly-icoon - Grote groen-witte lollipop-snoep](/info/icon.svg)
 
-> **Status:** Lolly is een intern prototype in een **gesloten pilot die nog niet is afgerond**. De engine is deterministisch en intern consistent, maar het product is nog pril - SUSE is klant nummer één - en de cryptografie- en file-parsing-engines ondergaan momenteel SUSE's strikte infrastructuur-hardening, in voorbereiding op enterprise-schaal (daar zijn we heel goed in). Lees de architectuur hieronder als ontwerpintentie die nog wordt getest, niet als een afgerond, gecertificeerd product. Zie [Adoptie & Governance](/info/adoption-governance.html#status) voor hoe de pilot wordt uitgevoerd en gemeten.
+Dit document legt het doel, de structuur en de architectuurbeslissingen voor het Lolly-platform vast. Het weerspiegelt zowel de productvisie als de huidige staat van de codebase.
+
+> **Status:** Lolly is een intern prototype in een **gesloten pilot die nog niet is afgerond**. De engine is deterministisch en intern consistent, maar het product is vroeg - SUSE is klant nummer één - en de cryptografie- en bestandsparse-engines ondergaan momenteel SUSE's strikte infrastructuurhardening, ter voorbereiding op enterprise-schaal (daar zijn we echt goed in). Lees de architectuur hieronder als ontwerpintentie onder test, niet als een afgerond, gecertificeerd product. Zie [Adoptie & Governance](/info/adoption-governance.html#status) voor hoe de pilot wordt uitgevoerd en gemeten.
+
+> **Hoe je deze pagina leest.** Ze bevat twee soorten materiaal, in volgorde. De eerste helft gaat over
+> **waarom dit bestaat**: het probleem, de positionering en de levenscyclus die één asset doorloopt.
+> Vanaf [Het grote plaatje](#the-big-picture-how-the-layers-fit) gaat het over
+> **hoe de lagen passen**: het architectuurdocument voor bijdragers, dat de engine/shell/pack-scheiding,
+> de repository-indeling, de leverdoelen en de toezeggingen behandelt die elke wijziging aan het platform
+> beperken. Als je hier bent om de codebase te wijzigen in plaats van het product te begrijpen,
+> begin dan bij het grote plaatje.
+>
+> Twee begeleidende documenten gaan dieper dan deze pagina. [`engine/README.md`](../engine/README.md) in de
+> repository is de module-voor-module kaart van de engine, met een gegenereerde tabel van elke module en
+> wat die parset of schrijft. [Threat Model & Trust Boundaries](/info/threat-model.html)
+> is dezelfde architectuur gelezen als trust boundaries, en het is de juiste pagina voor elke vraag over
+> wat de engine als niet-vertrouwd beschouwt.
 
 ---
 
 ## Waarom dit bestaat
 
-Teams hebben te maken met een terugkerend probleem: herhaalbaar creatief en content-werk dat te voorspelbaar is om er telkens vakkundige handen op te zetten, maar te kwaliteitsgevoelig om zonder guardrails uit handen te geven. Het resultaat is ofwel trage doorvoer (specialistenknelpunt), inconsistentie (mensen die gebruiken wat ze toevallig bij de hand hebben), of vendor lock-in (een SaaS-DAM die je templates controleert).
+Teams staan voor een terugkerend probleem: herhaalbaar creatief en content-werk dat te voorspelbaar is om steeds vaardige handen in te zetten, maar te kwaliteitsgevoelig om zonder vangrails uit te besteden. Het resultaat is óf trage doorvoer (specialistenknelpunt), óf inconsistentie (mensen die gebruiken wat ze bij de hand hebben), óf vendor lock-in (een SaaS-DAM die je templates beheerst).
 
-Dit platform is het structurele antwoord:
+Dit platform is het directe antwoord:
 
-> **Programmatisch creatief werk en content op schaal** - assetgeneratie zonder handwerk, met de regels onder centrale controle, voor medewerkers, leveranciers en partners.
+> **Programmatisch creatief en content op schaal** - asset-generatie zonder arbeid, met de regels centraal onder controle, voor medewerkers, leveranciers en partners.
 
-Het resultaat is **overvloed**: elk event heeft correcte bewegwijzering, elke CVE-melding volgt de huisstijl, elk label print schoon, elke e-mailhandtekening is actueel - allemaal zonder ontwerpticket. Het platform verzorgt terugkerend, geoperationaliseerd creatief werk. Het is bewust geen tool voor maatwerk - ontwerpers blijven eigenaar van vlaggenschipwerk.
+Het resultaat is **overvloed**: elk evenement heeft correcte bewegwijzering, elke CVE-melding past bij de huisstijl, elk label print schoon, elke e-mailhandtekening is actueel - allemaal zonder ontwerpticket. Het platform behandelt terugkerend, geoperationaliseerd creatief werk. Het is bewust geen tool voor maatwerkcreativiteit - ontwerpers blijven eigenaar van het vlaggenschipwerk.
 
-### Waar het past in het landschap
+### Innoveer probabilistisch, schaal deterministisch
 
-![Every tool in the library as a card, grouped by category, so a producer picks one and starts](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=aud-gallery-landscape)
+Elke discussie over AI in een creatieve pipeline loopt vast op dezelfde vraag: welk deel is het werk van de machine? Het is een oude vraag met een uitgemaakt antwoord. Schrijvers en verluchters werkten al met twee instrumenten - de losse schets, waarin niets vaststond en alles geprobeerd kon worden, en de drukpers, intimiderend juist omdat ze zich vastlegde. De schetsen waren waar de kunst gebeurde. De pers was hoe die bij iedereen terechtkwam. Niemand verwarde de twee, en beide bleven zich ontwikkelen - nieuwe inkten, nieuwe lettertypen, nieuwe persen - elk verbeterend in harmonie met het vakmanschap en de intentie die het diende.
 
-| Mogelijkheid | Canva | Merkportals | Illustrator | Figma / Penpot | **Lolly** |
-|---|---|---|---|---|---|
-| Massale contentgeneratie | gedeeltelijk | ✗ | ✗ | ✗ | **✓** |
-| Werkt volledig offline | ✗ | ✗ | ✓ | gedeeltelijk | **✓** |
-| Templatelogica & harde constraints | ✗ | gedeeltelijk | ✗ | gedeeltelijk | **✓** |
-| Geen ontwerpvaardigheden vereist | gedeeltelijk | ✓ | ✗ | ✗ | **✓** |
-| Automatische Content Credentials | ✗ | ✗ | gedeeltelijk | ✗ | **✓** |
-| Tools combineren andere tools | ✗ | ✗ | ✗ | ✗ | **✓** |
-| Open engine, geen SaaS-lock-in | ✗ | ✗ | ✗ | gedeeltelijk | **✓** |
-| C2PA content credentials | ✗ | ✗ | ✗ | ✗ | **✓** |
-| Opt-in forensische herkomstregistratie | ✗ | ✗ | ✗ | ✗ | **✓** |
-| Mobiele en desktop-apps | ✓ | ✗ | ✗ | gedeeltelijk | **✓** |
-| Command line & TUI | ✗ | ✗ | ✗ | ✗ | **✓** |
+Lolly trekt dezelfde lijn. Verken probabilistisch: een model, een ontwerper, een ruw idee, een prompt die ergens uitkomt dat niemand gepland had. Schaal daarna deterministisch - het ding dat tienduizend outputs bereikt is een *tool*, en een tool rendert elke keer op dezelfde manier vanuit inputs die je kunt lezen. De verkenning blijft vrij omdat niets stroomafwaarts ervan afhangt dat het twee keer hetzelfde uitpakt. De output verdient vertrouwen omdat het geen gok is. AI-experimenten omzetten in voorspelbare, reproduceerbare resultaten is geen nieuwe discipline; het is dezelfde arbeidsverdeling die gedrukt werk in de eerste plaats betrouwbaar maakte.
 
-De vorm van het gat is duidelijk: niets in het bestaande landschap biedt ons constraints-first, offline-geschikte, laagdrempelige, intern toegankelijke output. Lolly heeft zelfs een eigen open canvas - **Design** - waar kleuren, typografie en assets conformeren aan de brand-globals, zodat ook vrije opmaak constraints-first blijft. Wat het **niet** is, is een onbeperkte ontwerpsuite: ontwerpers blijven Illustrator en Figma gebruiken voor maatwerk vlaggenschipwerk. Permutaties kunnen met deze tool worden samengesteld.
+> Vertrouw het creatieve proces, schaal met precisie.
 
-**Gebruik het voor:** Snelle generatie van geoperationaliseerd creatief werk - eventtegels, naambadges, handtekeningen, CVE-meldingen, QR-codes, social cards, verzendlabels, gestructureerde rapporten.
+### Tegenover de alternatieven
+
+::: figure positioning-comparison
+Volledigheid van functionaliteit bij de creatieve tools van vandaag, onderzocht in augustus 2026. Score: 0 afwezig, 25 workaround-niveau, 50 echt maar beperkt of gedeeltelijk, 75 sterk met kanttekeningen, 100 kerncompetentie.
+:::
+
+De kloof is duidelijk: niets dat vandaag geleverd wordt, biedt output die constraints-first, offline-geschikt, laagdrempelig en intern toegankelijk is. Lolly bevat zelfs een open canvas - **Design** - waarin kleuren, typografie en assets zich houden aan de merk-globals, zodat vrije opmaak constraints-first blijft. Wat het **niet** is, is een onbeperkte ontwerpsuite: ontwerpers blijven Illustrator en Figma gebruiken voor maatwerk-vlaggenschipwerk. Permutaties kunnen met deze tool worden samengesteld.
+
+![Elke tool in de bibliotheek als kaart, gegroepeerd per categorie, zodat een producer er een kiest en begint](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=aud-gallery-landscape)
+
+**Gebruik het voor:** Snelle generatie van geoperationaliseerde creatieve assets - eventtegels, naambadges, handtekeningen, CVE-meldingen, QR-codes, socialcards, zendingslabels, gestructureerde rapporten.
 
 **Gebruik het niet voor:** Maatwerk hero-content.
 
@@ -44,39 +58,43 @@ De vorm van het gat is duidelijk: niets in het bestaande landschap biedt ons con
 
 ## De levenscyclus van een campagne
 
-![A titled stacked area chart, its three series banded in a cool palette with axes, legend and title all placed by the template rather than by hand](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+De duidelijkste manier om te zien wat Lolly is, is geen functielijst - het is één asset volgen terwijl die van hand tot hand gaat. Bekijk hoe één gelokaliseerde campagnekaart door de organisatie beweegt:
 
-De helderste manier om te zien wat Lolly is, is geen functielijst - het is één asset volgen terwijl het van hand tot hand gaat. Kijk hoe één gelokaliseerde campagnekaart door de organisatie beweegt:
+1. **De ontwerper stelt de regels op.** Een ontwerper maakt de basissjabloon in de Design-tool en legt de typografie- en kleurvariabelen van het merk vast. Ze maken niet één kaart - ze doen het fundamentele werk *één keer*, zodat ze het nooit meer handmatig hoeven te lokaliseren.
+2. **De developer schaalt het.** Diezelfde sjabloon wordt via de CLI in een nachtelijke pipeline aangesloten, zodat een nieuwe grafiek of een nieuwe taalversie automatisch wordt gegenereerd - niemand hoeft het bestand opnieuw te openen.
+3. **De producer gebruikt het gewoon.** Een verkoper, offline in een vliegtuig, opent dezelfde tool en genereert een volledig on-brand presentatie voor een klantafspraak. Geen ontwerpvaardigheid, geen netwerk, geen wachttijd.
 
-1. **De creative stelt de regels vast.** Een ontwerper maakt de basistemplate in Design en codeert de typografie- en kleurvariabelen van het merk hard. Hij maakt niet één kaart - hij doet het fundamentele werk *één keer*, zodat hij het nooit meer met de hand hoeft te lokaliseren.
-2. **De developer schaalt het op.** Precies diezelfde template wordt via de CLI in een nachtelijke pipeline gehangen, zodat een frisse grafiek of een nieuwe taalvariant automatisch wordt gegenereerd - geen ontwerper opent het bestand opnieuw.
-3. **De producer gebruikt het gewoon.** Een salesmedewerker opent offline in het vliegtuig dezelfde tool en genereert een perfect merkvaste deck voor een klantgesprek. Geen ontwerpvaardigheid, geen netwerk, geen wachttijd.
+De "nieuwe grafiek" in stap twee is een render zoals deze, gegenereerd uit een datastring en een handvol parameters zonder dat iemand een ontwerpbestand opent:
 
-De "frisse grafiek" in stap twee is een render zoals deze, gemaakt uit een datastring en een handvol parameters, zonder dat iemand een ontwerpbestand opent:
+![Een gestapeld vlakdiagram met titel, de drie reeksen in banden in een koel palet met assen, legenda en titel allemaal door de sjabloon geplaatst in plaats van handmatig](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
-Het punt is niet dat Lolly goed is voor ontwerpers *en* goed voor developers *en* goed voor sales, elk in een vacuüm. Het is een **estafette**: het beginwerk van de creative wordt opgeschaald door de developer, wat op zijn beurt de producer in staat stelt om te leveren. De moeiteloze ervaring voor de niet-technische medewerker in het vliegtuig is alleen *mogelijk* door de striktheid die de ontwerper vastlegde en de developer uitrolde.
+Het punt is niet dat Lolly goed is voor ontwerpers *en* goed voor developers *en* goed voor sales, elk op zichzelf. Het is een **estafette**: het aanvankelijke werk van de ontwerper wordt door de developer geschaald, wat op zijn beurt de producer versterkt. De moeiteloze ervaring voor de niet-technische verkoper in het vliegtuig is alleen *mogelijk* dankzij de precisie die de ontwerper vastlegde en de developer implementeerde.
 
-Dat is de krachtvermenigvuldiger. Lolly is geen lade met losse tools voor losse rollen - het is één deterministische levenscyclus van een asset die elke rol aanraakt, en elke hand waar het door gaat vermenigvuldigt de waarde van de vorige.
+Dat is de krachtvermenigvuldiger. Lolly is geen lade met losse tools voor losse rollen - het is één deterministische asset-levenscyclus die elke rol aanraakt, en elke hand waar hij doorheen gaat vermenigvuldigt de waarde van de vorige.
 
 ---
 
 ## Eén goedkeuring, tienduizend assets
 
-![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+Omdat de goedkeuring in de tool zit en niet in het bestand (zie [Hoe Lolly zich verhoudt](/info/positioning.html)), stopt schaal een reviewprobleem te zijn. Keur een gelokaliseerde socialcard-tool één keer goed, genereer daarna **10.000 assets in 12 talen** vanuit een spreadsheet - en niet één ervan heeft een nieuwe compliancecheck van juridische zaken of merk nodig, omdat de sjabloon waar ze allemaal uit komen al was goedgekeurd.
 
-Omdat de goedkeuring in de tool zit en niet in het bestand (zie [Hoe Lolly zich verhoudt](/info/positioning.html)), is schaal geen reviewprobleem meer. Keur een tool voor gelokaliseerde social cards één keer goed en genereer daarna **10.000 assets in 12 talen** uit een spreadsheet - en geen enkele daarvan heeft een nieuwe compliancecheck van legal of brand nodig, want de template waar ze allemaal uit komen was al goedgekeurd.
+Dezelfde deterministische tool bereikt die schaal op drie manieren, allemaal met identieke, vooraf goedgekeurde output:
 
-Dezelfde deterministische tool haalt die schaal op drie manieren, die alle drie identieke, voorgekeurde output leveren:
+- <!--i:people--> **Een persoon, in de app.** Het `/pro`-batchraster: plak of importeer de rijen, krijg één afgeronde asset per rij, download de zip. Geen ontwerpvaardigheid, geen ticket, geen wachttijd.
+- <!--i:code--> **Een developer, vanaf de command line.** De CLI draait *dezelfde* engine en *hetzelfde* renderpad headless, zodat de tool over alle 10.000 rijen kan worden doorlopen in een script of een nachtelijke pipeline. Een `lolly <tool> --field=…`-aanroep in een lus is de hele integratie.
+- <!--i:cpu--> **Een systeem of een AI-agent, via MCP.** Dezelfde tool programmatisch bediend, met dezelfde nauwkeurigheid en zelfs grotere schaal - omdat een machine zich niet verveelt terwijl duizenden bestanden binnenkomen.
 
-- <!--i:people--> **Een mens, in de app.** Het batchraster op `/pro`: plak of importeer de rijen, krijg één afgerond asset per rij, download de zip. Geen ontwerpvaardigheid, geen ticket, geen wachttijd.
-- <!--i:code--> **Een developer, vanaf de commandline.** De CLI draait *dezelfde* engine en *hetzelfde* renderpad headless, zodat de tool in een script of nachtelijke pipeline over alle 10.000 rijen kan worden afgelopen. Eén `lolly <tool> --field=…`-aanroep in een lus is de hele integratie.
-- <!--i:cpu--> **Een systeem of een AI-agent, via MCP.** Dezelfde tool programmatisch bediend, met dezelfde kwaliteit en op nog grotere schaal - want een machine verveelt zich niet terwijl duizenden bestanden binnenrollen.
+![Batchmodus bij een verse installatie: één lege rij wachtend op een tool, met het hele spreadsheetoppervlak en de Render-knop al aanwezig voordat er data binnenkomt](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
 
-Één set merkbeperkingen, één keer vastgelegd door een ontwerper; drie routes naar identieke voorgekeurde output - en de machineroute schaalt het verst van allemaal, want die wordt nooit moe terwijl de bestanden binnenrollen.
+Eén set merkregels, eenmalig vastgelegd door een ontwerper; drie routes naar dezelfde vooraf goedgekeurde output - en de machineroute schaalt het verst van alle drie, omdat ze nooit moe wordt terwijl de bestanden binnenkomen.
 
 ---
 
-## Het grote plaatje
+## Het grote plaatje: hoe de lagen samenkomen
+
+Alles vanaf hier is architectuur. Het diagram is het hele systeem in één beeld: tools zijn
+data bovenaan, de engine in het midden weet niets van welk platform dan ook, de shells eronder
+implementeren één contract, en de catalogi leveren de content.
 
 ```
                 ┌─────────────────────────────────────────────┐
@@ -112,6 +130,8 @@ Dezelfde deterministische tool haalt die schaal op drie manieren, die alle drie 
 
 ### Repository-indeling
 
+Content wordt gemount als packs: `community/`, `docs/`, elke `shells/*`, zowel `services/*` als `brands/suse` zijn elk hun eigen repository, uitgecheckt als git-submodules van deze. De parent bezit `engine/`, `schemas/`, `scripts/`, `tests/`, `api/`, `brands/lolly-start/` en `profiles.json`. Zie [Build Guide » De broncode ophalen](/info/build-guide.html) voor het checkout-commando en de cross-repo workflow.
+
 ```
 lolly/
 ├── engine/           # Platform-agnostic core. Open source (MPL-2.0).
@@ -126,7 +146,7 @@ lolly/
 │       ├── compose.ts        # resolve nested tool renders (composes)
 │       ├── embed.ts          # parse portable lolly.tools embed URLs
 │       └── bridge/
-│           └── host-v1.ts    # TypeScript interface - the bridge contract
+│           └── host-v1.ts    # type re-export of the @lolly-tools/core contract
 │
 ├── shells/
 │   ├── web/          # PWA - hosted online; primary distribution
@@ -170,6 +190,7 @@ lolly/
 │
 ├── tools/            # profile VIEW (gitignored) - data, not code. Merged from packs:
 │                     #   community/ (public, brand-agnostic, MPL) + brands/<active>/tools (brand-owned).
+│                     #   A SELECTION follows - the mounted set depends on the profile.
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
@@ -185,9 +206,7 @@ lolly/
 │   ├── compress-pdf/      # on-device PDF compressor - recompresses images (file in → smaller file out)
 │   ├── brand-lockup/      # "Brand Lockup" - SUSE logo lockups; HarfBuzz text-to-path (wasm)
 │   ├── chart-creator/     # SVG charts from structured data
-│   ├── filter-duotone/    # two-color photo treatment
-│   ├── filter-halftone/   # photo → vector halftone dot grid
-│   ├── filter-scanline/   # photo → retro posterised scanline grid (SVG / transparent raster)
+│   ├── filter/            # photo effects in one tool - halftone/scanline/posterize/voronoi (vector), duotone/pixel-stretch/imperfections (raster)
 │   ├── meeting-planner/   # global timezone meeting scheduler
 │   ├── calendar-ics/      # event → .ics calendar file plus a card
 │   ├── digi-ad/           # "Animated Ad" - looping banner from scenes
@@ -200,8 +219,6 @@ lolly/
 │   ├── logo-wall/         # many logos → auto-packed grid
 │   ├── logo-lockup-partner/ # SUSE + partner co-brand lockup
 │   ├── web-icon/          # favicon .ico / png / svg from text + colours
-│   ├── filter-posterize/  # photo → flat posterised vector separations
-│   ├── filter-pixel-stretch/ # photo → pixel-smear effect
 │   ├── lottie-digi-ad/    # animated Lottie ad banners
 │   └── pose-geeko/        # pose the SUSE Geeko mascot - print-ready stills
 │
@@ -219,115 +236,130 @@ lolly/
 
 ---
 
-## Platform-uitleveringsmodel
+## Platformleveringsmodel
 
-Het platform draait op meerdere oppervlakken - web-PWA, Tauri desktop/mobile, de scriptbare CLI en de interactieve TUI. Ze gebruiken allemaal dezelfde engine en dezelfde toolbestanden.
+Het platform draait op meerdere oppervlakken - web-PWA, Tauri desktop/mobiel, de scriptbare CLI en de interactieve TUI. Ze gebruiken allemaal dezelfde engine en dezelfde toolbestanden.
 
 ### Web (PWA) - primaire distributie
+Gehost op een door SUSE beheerde URL. Werkt offline zodra de service worker tools en assets heeft gecachet. Dit is waar de meeste medewerkers, leveranciers en partners het platform zullen gebruiken. Geen account vereist - status wordt per apparaat opgeslagen in IndexedDB.
 
-![The desktop split view - controls generated from the manifest on the left, the live canvas on the right](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&dark=1&filename=aud-web-split)
+De webshell is responsive vanuit één layout. Op desktop is een tool een resizable bedieningszijbalk naast een previewvenster met trackpad-eigen canvasnavigatie (Cmd/Ctrl-scroll of pinch om rond de cursor te zoomen, Space- of middelklik-slepen om te pannen, `0`/`1`/`+`/`−`-toetsen en een Fit/%-HUD). Op mobiel (≤640px) worden de bedieningselementen een bovenaan verankerd sheet met een sleepgreep die peek/half/full vastklikt (tikken schakelt), boven een statische fullscreen preview, en een zwevende **Render**-knop opent de **Export**-bediening in een bottom-sheet popup. Touch krijgt pinch-zoom en sleep-pan op de preview. Het renderpad en de exportbediening zijn identiek in beide gevallen - alleen de chrome herschikt zich.
 
-![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below, and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![De desktop-splitview - bediening gegenereerd uit het manifest links, het live canvas rechts](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&dark=1&filename=aud-web-split)
 
-Gehost op een door SUSE beheerde URL. Werkt offline zodra de service worker tools en assets heeft gecachet. Hier zullen de meeste medewerkers, leveranciers en partners het platform gebruiken. Geen account nodig - status wordt per apparaat opgeslagen in IndexedDB.
+Dezelfde tool op telefoonbreedte, zonder tweede layout om te onderhouden: de bediening wordt een sheet bovenaan, de preview vult het hele scherm en de renderpil zweeft eroverheen.
 
-De webshell is responsive vanuit één layout. Op desktop is een tool een verstelbare zijbalk met bedieningselementen naast een voorvertoningsvlak, met trackpad-native canvasnavigatie (Cmd/Ctrl-scroll of knijpen om te zoomen rond de cursor, Spatie- of middelklik-slepen om te pannen, de toetsen `0`/`1`/`+`/`−`, en een Fit/%-HUD). Op mobiel (≤640px) worden de bedieningselementen een bovenaan verankerde sheet met een sleepgreep die vastklikt op kijkje / half / volledig (tikken wisselt), boven een statische, schermvullende voorvertoning, en een zwevende **Render**-knop opent de **Export**-bediening in een bottom-sheet-popup. Touch krijgt knijp-zoom en sleep-pan op de voorvertoning. Het renderpad en de exportbediening zijn in beide gevallen identiek - alleen de chrome herschikt.
+![Een audiogram op een 430px breed scherm - de bedieningssheet erboven, het afgeronde vierkante werk eronder en de zwevende renderpil](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
-**Batch-modus (`/pro`).** De webshell levert ook een spreadsheet-achtig batch-grid (`shells/web/src/pro/`) dat veel rijen tegelijk rendert, over één of meerdere tools heen. Het biedt CSV/TSV-round-trip plus spreadsheet-plakken, per-rij template/formaat/grootte/eenheid/dpi, een blocks-editor-zijpaneel met live voorvertoning, inklapbare exportkolommen, een per-rij "relevantie"-tagbalk, rijen herordenen via een sleepgreep links, tweestaps verwijderbevestiging, opgeslagen batch-sessies, en een `.zip`-download. Dit is het één-op-veel-oppervlak achter de positionering "massale contentgeneratie".
+**Batchmodus (`/pro`).** De webshell levert ook een spreadsheet-achtig batchraster (`shells/web/src/pro/`) dat veel rijen tegelijk rendert over één of meerdere tools. Het doet CSV/TSV-round-trip plus spreadsheet-plakken, per-rij sjabloon/formaat/afmeting/eenheid/dpi, een blocks-editor zijpaneel met live preview, inklapbare exportkolommen, een per-rij "relevantie"-tagbalk, links een sleepgreep om rijen te herschikken, tweestaps verwijderbevestiging, opgeslagen batchsessies en een `.zip`-download. Dit is het one-to-many oppervlak achter de "massale contentgeneratie"-positionering.
 
-### Tauri desktop / mobile
-Verpakt als native app (kleine footprint via Tauri). Biedt volledige offline beschikbaarheid, bestandssysteemtoegang voor CLI-afhankelijke tools (PDF Smasher, Font Outliner), en cameratoegang. Gepland voor tooling-uitbreiding medio 2026.
+### Tauri desktop / mobiel
+Verpakte native app (kleine footprint via Tauri). Biedt volledige offline beschikbaarheid, bestandssysteemtoegang voor CLI-afhankelijke tools (PDF Smasher, Font Outliner) en cameratoegang. Gepland voor tooling-verbetering medio 2026.
 
 ### CLI
-
-Dezelfde tool op telefoonbreedte, zonder een tweede lay-out om te onderhouden: de besturingselementen worden een blad bovenaan, de preview vult het hele scherm, en de renderknop zweeft eroverheen.
-
 `lolly <tool-id> [--input=value ...] --output=file.png`
 
-Desktopgebruikers kunnen veel tools vanaf de terminal aanroepen. De CLI-shell laadt dezelfde engine, maakt een jsdom-DOM aan, doorloopt hetzelfde renderpad en schrijft het bestand weg. URL-modus is het transport - de CLI is geen aparte implementatie. Dit garandeert dat CLI- en GUI-uitvoer identiek zijn.
+Desktopgebruikers kunnen veel tools vanaf de terminal aanroepen. De CLI-shell laadt dezelfde engine, maakt een jsdom-DOM aan, doorloopt hetzelfde renderpad en schrijft het bestand. URL-modus is het transport - CLI is geen aparte implementatie. Dit garandeert dat CLI- en GUI-output identiek zijn.
 
 ```bash
 lolly qr-code --url=https://suse.com --output=qr.svg
 lolly quotes --quote="Ship it." --output=quote.png
-lolly                        # toont beschikbare tools
-lolly qr-code                # toont inputs voor die tool
+lolly                        # lists available tools
+lolly qr-code                # lists inputs for that tool
 ```
 
 ### TUI
 `npm run tui`
 
-De interactieve tegenhanger van de CLI: een volledig-scherm, toetsenbord-eerst terminal-app (gebouwd op Ink) om tools te doorbladeren, invoer in te vullen, projecten op te slaan en te exporteren - allemaal zonder GUI. De host-bridge ervan **hergebruikt de implementatie van de CLI** voor de DOM-vrije formaten (SVG/EMF/EPS/HTML + tekst/data), en voegt status-op-schijf toe onder `~/.lolly` plus een optionele inline voorvertoning. Daarnaast heeft hij een **browser-rendertier**: een afgebakende headless Chromium (dezelfde die de MCP-server installeert) die raster/PDF/video en live-URL-capture op aanvraag produceert - hij stuurt daarvoor een gebouwde kopie van de webshell aan, zodat de uitvoer identiek is, en start pas op wanneer je voor het eerst zo'n formaat exporteert. Zo draaien ook `url-shot` (met bijsnijden + herkleuren + vector-PDF/SVG) en elke raster-/pdf-tool in de terminal. Zie de [TUI-gids](/info/tui.html).
+De interactieve tegenhanger van de CLI: een fullscreen, toetsenbord-eerst terminalapp (gebouwd op Ink) om tools te bladeren, invoer in te vullen, projecten op te slaan en te exporteren - allemaal zonder GUI. De hostbridge **hergebruikt de implementatie van de CLI** voor de DOM-vrije formaten (SVG/EMF/EPS/HTML + tekst/data), en voegt op-schijf status toe onder `~/.lolly` plus een opt-in inline preview. Daarnaast heeft het een **browser-rendertier**: een scoped headless Chromium (dezelfde die de MCP-server installeert) die raster/PDF/video en live-URL-capture op aanvraag produceert - waarbij een gebouwde kopie van de webshell wordt aangestuurd zodat de output identiek is, en die alleen start wanneer je zo'n formaat voor het eerst exporteert. Zo draaien `url-shot` (met bijsnijden + herkleuren + vector-PDF/SVG) en elke raster/pdf-tool ook in de terminal. Zie de [TUI-gids](/info/tui.html).
 
-Op welk oppervlak je ook zit, het Capabilities-tabblad van het dashboard is de volledige kaart van wat het platform verklaart te kunnen, gegroepeerd en leesbaar zonder ook maar één tool te openen.
+Op welk oppervlak je ook zit, het tabblad Capabilities van het dashboard is de volledige kaart van wat het platform verklaart te kunnen, gegroepeerd en leesbaar zonder ook maar één tool te openen.
 
 ---
 
 ## Toolcategorieën
 
-![The Utilities drawer, where every card is a tool that transforms a file you already have](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=aud-utilities)
+Tools worden in hun manifest getagd met een `category` voor groepering in de gallery.
 
-Tools krijgen een `category` mee in hun manifest, voor groepering in de gallery.
+Rijen staan in de volgorde van de gallerysecties. De sectie `utility` wordt altijd als **laatste** in de gallery weergegeven (na elke andere categorie, ook toekomstige) - dit is de on-device lade "Offline Utilities".
 
-Rijen staan in de volgorde van de gallery-secties. De sectie `utility` rendert altijd **als laatste** in de gallery (na elke andere categorie, ook toekomstige) - het is de on-device "Offline Utilities"-lade.
-
-| Categorie | Uitgeleverde tools | Gepland |
+| Categorie | Voorbeelden | Gepland |
 |---|---|---|
-| `everyone` | QR Code Generator, Quote Card, Email Signature, Code Canvas, Color Block, Dynamic Layout, Logo, Web Icon Maker | Employee Image Stationery |
-| `designer` | Brand Lockup, Chart Creator, Street Map, Animated Ad, Multi-Page PDF, Diagram Builder, Logo Lockup: Grid (NASCAR), Logo Lockup: Partner, Filter: Duotone, Filter: Halftone, Filter: Scanline, Filter: Posterize Bitmap, Filter: Pixel Stretch | Font Outliner |
-| `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS | Event Stationery, Bulk Name Badges, Room Agenda Cards |
+| `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
+| `designer` | Brand Lockup, Design, Chart Creator, D3 Chart Studio, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Countdown Timer, Color Palette, URL Screenshot, Strip Hidden Data, Text Helper, Compress PDF, Design | Eenheden-/formaatconverters, meer on-device privacytools |
+| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Unit/format converters, more on-device privacy utilities |
 
-Tools worden ook ingedeeld naar status: `official` (merkgoedgekeurd, geen watermerk), `community` (externe bijdrage), `experimental` (exports met watermerk). Dynamic Layout, URL Screenshot, Logo Lockup: Grid (NASCAR), Filter: Posterize Bitmap en Diagram Builder dragen momenteel de status `experimental`; Web Icon Maker en Design worden uitgeleverd als `community`-tools.
+Die cellen zijn **voorbeelden, geen inventarissen**. Welke tools bestaan is een eigenschap van het profiel dat je hebt gemount, niet van deze pagina: een brandpack voegt zijn eigen tools toe en kan een communitytool uitsluiten die het liever niet meelevert. `catalog/tools/index.json` - gegenereerd uit de manifests, en het register dat de gallery daadwerkelijk leest - is de gezaghebbende lijst; om te tellen wat een profiel mount, tel je de manifests (`ls community/*/tool.json brands/*/tools/*/tool.json`) in plaats van te vertrouwen op een getal dat hier is opgeschreven. (Een tool-id dat in twee packs voorkomt, wordt eenmaal gemount, vanuit het winnende pack.)
 
-**Design** is de eerste tool gebouwd op de vrije-canvasmodus `render.layout: "editor"` - een chromeloos oppervlak voor directe manipulatie waarop je vakken met tekst, vormen en afbeeldingen sleept, van grootte verandert, roteert en laat vastklikken, en dat vervolgens exporteert via hetzelfde renderpad als elke andere tool.
+Tools worden ook geclassificeerd naar status: `official` (goedgekeurd door het merk, geen watermerk), `community` (externe bijdrage), `experimental` (exports met watermerk). Het grootste deel van de bibliotheek is `official`; de nieuwere studio's en de capture-tools staan doorgaans op `community` of `experimental` terwijl ze zich settelen. Elk oppervlak toont de badge, zodat een lezer weet wat hij oppikt voordat hij het opent - en, net als de categoriecellen hierboven, verandert het lidmaatschap per status te snel om hier op te sommen. Lees het af van de gallery of de gegenereerde index.
 
-**Strip Hidden Data** is de eerste **on-device utility** (`privacy: "on-device"`): een content-transformatietool die een bestand neemt dat *jij* aanlevert, dit volledig in de browser verwerkt, en een schone kopie teruggeeft - nooit geüpload, nooit van een watermerk voorzien, nooit van een herkomststempel voorzien. **Text Helper** is de tweede - een on-device werkbank voor alledaagse plak-in-een-website-klusjes (JSON-formattering, JWT-decoderen, Base64, URL-encoderen/decoderen, SHA-hashing). **Compress PDF** is de derde - hij verkleint een PDF door de afbeeldingen erin opnieuw te comprimeren, ook weer volledig on-device. Alle drie dragen de badgetekst "Runs on your device - nothing is uploaded". Dit is het begin van een privacytool-categorie die het overhandigen van vertrouwelijke bestanden aan singlepurpose-websites vervangt.
+**Design** is de eerste tool die is gebouwd op de vrije-canvasmodus `render.layout: "editor"` - een chromeloos oppervlak voor directe manipulatie waarop je vakken met tekst, vormen en afbeeldingen sleept, formaat wijzigt, roteert en uitlijnt, om vervolgens via hetzelfde renderpad als elke andere tool te exporteren.
 
-> Opmerking: `category` en `status` worden gedenormaliseerd naar `catalog/tools/index.json` (het register dat de gallery uitleest) vanuit elke `tool.json`. Het manifest is de bron van waarheid - de index wordt **gegenereerd** door `npm run build:catalog`, en `npm run validate:catalog` laat CI falen als de gecommitte index afwijkt van de manifesten.
+**Strip Hidden Data** is de eerste **on-device utility** (`privacy: "on-device"`): een content-transformatietool die een bestand verwerkt dat *jij* aanlevert, volledig in de browser, en een schone kopie teruggeeft - nooit geüpload, nooit voorzien van watermerk, geen herkomst gestempeld. **Text Helper** is de tweede - een on-device werkbank voor alledaagse plak-in-een-website-klussen (JSON-opmaak, JWT-decodering, Base64, URL-encoderen/decoderen, SHA-hashing). **Compress PDF** is de derde - deze verkleint een PDF door de afbeeldingen erin opnieuw te comprimeren, ook weer volledig on-device. De marker en de bijbehorende badgetekst "Runs on your device - nothing is uploaded" dekken nu de hele transformatieset: Strip Hidden Data, Text Helper, Compress PDF, **Convert Image** (HEIC/TIFF/AVIF → WebP/JPG/PNG), **Convert Font**, **Redact** (delen van een afbeelding, SVG of PDF vernietigen), **Prompt to Image** en **Rebrand a Deck** (een `.pptx` ter plekke van thema wisselen) waar het profiel die meelevert. Dit is een privacy-utilitycategorie die de noodzaak vervangt om vertrouwelijke bestanden aan single-purpose websites toe te vertrouwen.
+
+![De Utilities-lade, waarin elke kaart een tool is die een bestand transformeert dat je al hebt](/t/url-shot?url=%2F%23%2Fu&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%2C.brand-tips%7Bdisplay%3Anone!important%7D&tolerance=0.03&format=svg&walker=1&dark=1&filename=aud-utilities)
+
+> Opmerking: `category` en `status` worden vanuit elke `tool.json` gedenormaliseerd naar `catalog/tools/index.json` (het register dat de gallery leest). Het manifest is de bron van waarheid - de index wordt **gegenereerd** door `npm run build:catalog` en `npm run validate:catalog` laat CI falen als de vastgelegde index afwijkt van de manifests.
 
 ---
 
-## Architecturale keuzes
+## Architecturale toezeggingen
 
-Deze beslissingen liggen vast. Elke wijziging eraan is een majeure onderneming - ze bepalen elke andere beslissing in de codebase.
+Deze beslissingen staan vast. Elke wijziging hierin is een grote onderneming - ze bepalen elke andere beslissing in de codebase.
 
 ### 1. Declaratieve tools, met een imperatief ontsnappingsluik
 
-![Street Map's control stack - a city dropdown, a theme select, weight sliders and colour triggers, every one of them drawn from a manifest line](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-street-map-controls)
-
 Een tool is een manifest (`tool.json`) + een template (`template.html`) + optionele `hooks.js`.
 
-**Het manifest declareert de inputs.** Niet het template. Inputs worden niet afgeleid uit Handlebars-tokens. Het manifest is het contract; het template consumeert benoemde variabelen via `{{id}}`.
+**Het manifest declareert de inputs.** Niet het template. Inputs worden niet afgeleid uit Handlebars-tokens. Het manifest is het contract; het template gebruikt benoemde variabelen via `{{id}}`.
 
-**Hooks zijn optioneel.** De meeste tools zijn puur declaratief - manifest + template volstaat. Tools die berekende waarden nodig hebben (QR-encodering, chart-datavorming) leveren `hooks.js` met benoemde lifecycle-functies (`onInit`, `onInput`, `onFrame` - de per-frame live-camera-hook voor bewegingsgevoelige tools - `beforeRender`, `beforeExport`, `afterExport`, en `exportFile` - het file-in/file-out-transformatiepad dat on-device utilities zoals Strip Hidden Data gebruiken). De host laadt hooks via `new Function('host', …)`, met de capability bridge geïnjecteerd als closure scope. Dit is een **portabiliteitscontract, geen security sandbox**: hooks draaien nog altijd in het realm van de pagina en *kunnen* in een browsershell bij `window`/`fetch`/`document` - `host.*` is het ondersteunde, portabele oppervlak, geen afgedwongen grens. Async hook-resultaten zijn time-boxed (onInit 5s, onInput 2s, overige 5s) en late resultaten worden genegeerd; een op hol geslagen *synchrone* hook kan niet worden onderbroken. Niet-vertrouwde hookcode van derden is daarom pas veilig om uit te voeren zodra Worker-isolatie er is.
+![De controlestack van Street Map - een stad-dropdown, een themaselector, dikte-sliders en kleurtriggers, elk daarvan afkomstig uit een manifestregel](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Damsterdam&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-street-map-controls)
 
-Dit is belangrijk omdat: declaratieve tools geschreven kunnen worden door mensen die geen developer zijn. Als elke tool een webapp was, wordt de risiconotitie "beperkte vaardigheden om workhorse-templates te maken/onderhouden" een permanent knelpunt.
+**Hooks zijn optioneel.** De meeste tools zijn zuiver declaratief - manifest + template is genoeg. Tools die berekende waarden nodig hebben (QR-codering, vormgeving van chartdata) leveren `hooks.js` met benoemde levenscyclusfuncties (`onInit`, `onInput`, `onFrame` - de per-frame live-camerahook voor bewegingsreactieve tools - `onLevel`, `beforeExport`, `afterExport`, `exportFile` - het file-in/file-out-transformatiepad dat on-device utilities zoals Strip Hidden Data gebruiken - en `exportStill`, voor een tool die zijn eigen deep raster beheert). De host laadt hooks via `new Function('host', …)` waarbij de capability bridge als closure-scope wordt geïnjecteerd. Dit is een **portabiliteitscontract, geen beveiligingssandbox**: hooks draaien nog steeds in het page realm en *kunnen* in een browsershell bij `window`/`fetch`/`document` - `host.*` is het ondersteunde, portable oppervlak, geen afgedwongen grens. Asynchrone hookresultaten zijn tijdgebonden (`onInit` 5s, `onInput` 2s, `beforeExport`/`afterExport` 5s, `exportFile`/`exportStill` 10s) en late resultaten worden verworpen; een op hol geslagen *synchrone* hook kan niet worden onderbroken. Onvertrouwde hookcode van derden is daarom niet veilig om uit te voeren totdat Worker-isolatie er is.
+
+Dit is van belang omdat: declaratieve tools door niet-ontwikkelaars kunnen worden geschreven. Als elke tool een webapp zou zijn, wordt de risico-opmerking "beperkte vaardigheden om workhorse-templates te maken/onderhouden" een permanent knelpunt.
 
 ### 2. Tools en assets zijn data, geen gebundelde code
 
-De web- en Tauri-apps halen bij het opstarten tool- en asset-catalogi op van een bekende URL, cachen ze lokaal, en werken met wat daar staat. **Een nieuwe eventtegel of seizoensasset toevoegen vereist geen app-release.**
+De web- en Tauri-apps halen tool- en assetcatalogi bij het opstarten op van een bekende URL, cachen ze lokaal en werken met wat daar staat. **Het toevoegen van een nieuwe eventtegel of seizoensasset vereist geen app-release.**
 
-Asset-bytes krijgen een SHA-256-checksum om CDN-poisoning te voorkomen. Asset-`id` + `version` stuurt cache-invalidatie aan.
+Assetbytes krijgen een SHA-256-checksum om CDN-poisoning te voorkomen. Asset-`id` + `version` stuurt cache-invalidatie aan.
 
 ### 3. De Capability Bridge is de enige API die tools zien
 
-Tools raken nooit de DOM buiten hun template-gebied aan, roepen nooit rechtstreeks `fetch` aan, en lezen nooit het bestandssysteem. Ze roepen geversioneerde `host.*`-methoden aan. De bridge is gedefinieerd in `engine/src/bridge/host-v1.ts`:
+Tools raken nooit de DOM buiten hun templategebied aan, roepen nooit rechtstreeks `fetch` aan en lezen nooit het bestandssysteem. Ze roepen geversioneerde `host.*`-methoden aan. De canonieke definitie van het contract is `packages/core/src/host-v1.ts` - de tool-author-SDK `@lolly-tools/core`, zodat een derde partij ertegen kan bouwen zonder van de engine af te hangen; `engine/src/bridge/host-v1.ts` is daar een type-re-export van, en engine-/shellcode blijft ongewijzigd vanaf dat pad importeren:
 
-| Bridge API | Wat het doet |
+| Bridge-API | Wat het doet |
 |---|---|
 | `host.profile` | Voornaam, e-mail, pasfoto, stad enz. van de gebruiker. Vult inputs vooraf in via `bindToProfile`. |
 | `host.assets` | Catalogusquery's, asset-resolutie, door de host geleverde picker-UI. |
-| `host.state` | Invoerslots opslaan / laden. IndexedDB op web, bestandssysteem op Tauri, geheugen op CLI. |
-| `host.clipboard` | Tekst of afbeelding naar het klembord schrijven (met platform-fallbacks). |
-| `host.export` | Rasteriseert of serialiseert het renderdoel. Past watermerk toe bij experimentele tools. |
-| `host.net` | Fetch met allowlist - alleen beschikbaar als de tool de capability `"network"` heeft gedeclareerd. (Momenteel gebruikt geen uitgeleverde tool dit.) |
+| `host.state` | Input-slots opslaan/laden. IndexedDB op web, bestandssysteem op Tauri, geheugen op CLI. |
+| `host.clipboard` | Tekst of afbeelding naar het klembord schrijven (met platformfallbacks). |
+| `host.export` | Het renderdoel rasteriseren of serialiseren. Past een watermerk toe voor experimentele tools. |
+| `host.net` | Fetch met allowlist - alleen beschikbaar als de tool de capability `"network"` heeft gedeclareerd. (Geen enkele geleverde tool gebruikt dit momenteel.) |
 
-Optionele, additieve oppervlakken verschijnen alleen wanneer een shell ze levert. Twee ervan zijn **capability-gated** - alleen zichtbaar wanneer de tool de bijbehorende flag declareert: `host.compose` (de render van een andere tool insluiten - `compose`) en `host.capture` (paginacapture voor URL Screenshot - `capture`). De rest is **feature-detected** - aanwezig wanneer de shell ze kan leveren: `host.text` (tekst-naar-pad via HarfBuzz WASM; de capability `wasm` markeert tools die hierop leunen), `host.pdf` (PDF-parsing/-compressie, gebruikt door Strip Hidden Data en Compress PDF), en `host.tokens` (DTCG design tokens). De declareerbare capabilities zijn: `network`, `filesystem`, `clipboard`, `camera`, `ffmpeg`, `wasm`, `capture`, `compose`.
+Optionele, additieve oppervlakken verschijnen alleen wanneer een shell ze levert. Sommige zijn **capability-gated** - alleen beschikbaar wanneer de tool de bijbehorende flag declareert: `host.compose` (de render van een andere tool insluiten - `compose`), `host.capture` (paginacapture voor URL Screenshot - `capture`) en `host.recorder` (mic-/camera-/schermcapture voor de opnametools - `microphone` / `camera` / `screen`). De rest is **feature-detected** - aanwezig zodra de shell ze kan leveren, waarbij de tool een fallback behoudt voor shells die dat niet kunnen.
 
-Dezelfde tool draait in de browser, in Tauri en in de headless CLI, omdat elke shell deze interface implementeert - de tool weet nooit in welke hij zich bevindt.
+Een handvol kernoppervlakken, om te laten zien wat het bestrijkt - [Host API](/info/host-api.html) documenteert ze allemaal, en `packages/core/src/host-v1.ts` is het contract zelf:
 
-De bridge is geversioneerd. Methoden toevoegen is een minor-versie. Signatures verwijderen of wijzigen is een major-versiesprong. Wanneer v2 uitkomt, moet v1 blijven werken.
+| Oppervlak | Sinds | Wat het toevoegt |
+|---|---|---|
+| `host.tokens` | 1.0 | DTCG-designtokens - de eigen primitieven van het merk |
+| `host.text` | 1.0 | Tekst-naar-pad via HarfBuzz WASM (de capability `wasm` markeert tools die hierop leunen) |
+| `host.media` | 1.4 | Live camerabeelden die de `onFrame`-hook aansturen. Progressive enhancement, bewust *niet* gated door de `camera`-flag - zo'n tool werkt nog steeds als een gewone stilstaande-beeldtool |
+| `host.color` | 1.40 | Perceptuele kleurwiskunde: ΔEOK, WCAG- + APCA-contrast, OKLab-ramps, class-breaks, categorische paletten, harmonieschema's (1.60), CSS Color 4-menging en gradiëntbaking (1.68). Puur en synchroon - shells koppelen de `makeColorApi()` van de engine in plaats van zelf iets te implementeren, zodat het niet kan afwijken |
+| `host.images` | 1.60 | Bytes on device decoderen/schalen/opnieuw coderen - het convert-pad (HEIC → JPEG, comprimeren naar WebP, downscalen). In de webshell geleverd als lazy facade, zodat de HEIC-decoder nooit in de bootchunk terechtkomt |
+| `host.geom` | 1.64 | Exacte vectorgeometrie: padbooleans, offsetting, stroke-naar-fill, spline-verlaging, vereenvoudiging, hit testing. Ook puur, synchroon en gekoppeld vanuit de engine (`makeGeomApi()`); fouten worden *geretourneerd*, nooit gethrowd |
+
+De rest volgt dezelfde regels en is er samen mee gedocumenteerd: `pdf` (1.8) en `pptx` (1.58) voor on-device documentchirurgie, `audio` (1.71) en `speech` (1.96) voor clipanalyse en on-device TTS/transcriptie, `viz` (1.72) voor het MilkDrop-placeholdercontract, `codec` (1.100) en `layers` (1.102) voor deep-bit- en layered-bitmap-output, `upscale` (1.101) en `matte` (1.103) voor de on-device modellen, `raster` (1.105) voor hooks die hun eigen pixelwerk doen, `connectors` (1.106) voor exportveilige pijlen en `c2pa` (1.85) voor het ondertekenen van afgeronde bytes. Het aantal groeit; de regels niet.
+
+De declareerbare capabilities zijn: `network`, `filesystem`, `clipboard`, `camera`, `microphone`, `screen`, `ffmpeg`, `wasm`, `capture`, `compose`. (`screen`, toegevoegd in 1.54, is schermcapture via `host.recorder` - de gebruiker kiest een scherm/venster/tabblad in de browsereigen UI; dit is anders dan `capture`, dat een URL rasteriseert die de tool zelf noemt.)
+
+Dezelfde tool draait in browser, Tauri en headless CLI omdat elke shell deze interface implementeert - de tool weet nooit in welke hij zit.
+
+De bridge is geversioneerd. Het toevoegen van methoden is een minor version. Het verwijderen of wijzigen van signatures is een major version bump. Wanneer v2 uitkomt, moet v1 blijven werken.
 
 ### 4. Asset-ID's zijn voor altijd
 
@@ -335,129 +367,110 @@ De bridge is geversioneerd. Methoden toevoegen is een minor-versie. Signatures v
 - De ID verandert nooit, wordt nooit hergebruikt.
 - Bytewijzigingen → verhoog `version` in het manifest.
 - Vervangen door een nieuwe asset → zet `deprecated: true` en optioneel `replacedBy`.
-- Bestaande verwijzingen blijven altijd oplosbaar.
+- Bestaande referenties worden altijd opgelost.
 
-Dit maakt opgeslagen toolstatussen en via URL gedeelde links duurzaam over jaren heen.
+Dit maakt opgeslagen tool-states en via URL gedeelde links jarenlang duurzaam.
 
-### 5. URL-modus is eersteklas
+### 5. URL-modus is first-class
 
-![That link on its own, with nothing else in it, is the finished asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-url-mode-qr)
-
-![Nine steps across four hues, all grown from the single seed colour carried in the link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-url-palette)
-
-Elke input moet uit te drukken zijn als URL-parameter:
+Elke input moet uitdrukbaar zijn als een URL-parameter:
 
 ```
 lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H
 ```
 
-CLI-modus is URL-modus onder een ander transport - de CLI-shell bouwt een URL-status-object op vanuit argv en doorloopt dezelfde engine-pipeline. Er is één renderpad. De CLI kan niet uit de pas lopen met de GUI, omdat het geen aparte implementatie is.
+![Die link op zichzelf, zonder iets anders erin, is de afgeronde asset](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Fsuse.com%26ecl%3DH%26full&width=760&height=760&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-url-mode-qr)
 
-`url-mode.ts` regelt de round-trip (parsen en serialiseren). Gereserveerde params (nooit doorgegeven aan de tool als input): `format`, `export`, `copy`, `slot`, `output`, `filename`, `_v`, `z` (packed status - het "Kortste link"-token), `width`/`w`, `height`/`h`, `unit`, `dpi`, `profile`, `password`, `bleed`, `marks`, `full`, `options`, `nostage`. Asset-inputs worden in URL-modus geserialiseerd via hun `id`; de runtime lost ze op via `host.assets.get()` vóór hydratatie. `width`/`height` zijn waarden in `unit` (standaard `px`, ook `mm`/`cm`/`in`/`pt`/`pc`); bij een fysieke eenheid stelt `dpi` de rasterresolutie in. Ze bepalen de documentgrootte van het canvas en vullen het exportafmetingenpaneel vooraf in.
+CLI-modus is URL-modus onder een ander transport - de CLI-shell bouwt een URL-state-object op uit argv en draait **dezelfde** engine-pipeline. Er is één renderpad. De CLI kan niet afwijken van de GUI omdat het geen aparte implementatie is.
+
+`url-mode.ts` verzorgt de round-trip (parsen en serialiseren). Een set **gereserveerde parameters** wordt nooit als inputs aan de tool doorgegeven: de outputbedieningen (`format`, `export`, `copy`, `filename`, `width`/`w`, `height`/`h`, `unit`, `dpi`), de print- en herkomstknoppen (`bleed`, `marks`, `profile`, `password`, `c2pa`, `imprint`, `durable`, `meta`, `hdr`, `depth`, `cuts`) en de state-dragers (`template`, `z` - het gepakte token voor "Shortest link" - en `zx`, hetzelfde maar versleuteld met een wachtwoord). De set `RESERVED` in `engine/src/url-mode.ts` is gezaghebbend en wordt door een test vastgepind; [URL Mode](/info/url-mode.html) documenteert ze allemaal, inclusief de handvol die hier niet staat vermeld. Asset-inputs in URL-modus worden geserialiseerd via hun `id`; de runtime lost ze op via `host.assets.get()` voordat hydratie plaatsvindt. `width`/`height` zijn waarden in `unit` (standaard `px`, ook `mm`/`cm`/`in`/`pt`/`pc`); bij een fysieke eenheid stelt `dpi` de rasterresolutie in. Ze bepalen het canvasdocumentformaat en vullen het exportafmetingenpaneel vooraf in.
+
+Omdat elke input meereist in de link, is een parameterwijziging een andere afgeronde asset. Dit hele palet is één basiskleur, een harmonie en een stapaantal:
+
+![Negen stappen over vier kleurtinten, allemaal gegroeid uit de ene zaadkleur in de link](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3De0521a%26harmony%3Dtetrad-4%26steps%3D9%26full&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-url-palette)
 
 ### 6. Opslag loopt via de bridge, niet rechtstreeks
 
-Webshell: IndexedDB. Tauri: bestandssysteem. CLI: in-memory. Tools zien alleen `host.state.save(slot, data)` en `host.state.load(slot)`. `localStorage` wordt niet gebruikt - te klein, en kan geen blobs bevatten.
+Web shell: IndexedDB. Tauri: bestandssysteem. CLI: in-memory. Tools zien alleen `host.state.save(slot, data)` en `host.state.load(slot)`. `localStorage` wordt niet gebruikt - het is te klein en kan geen blobs bevatten.
 
-Gebruikers kunnen meerdere benoemde bewerkingsslots per tool opslaan en later naar elke sessie terugkeren. Er is geen accountaanmaak vereist; status is per apparaat. Omdat de bridge de enige naad is, is die per-apparaat-status ook *overdraagbaar*: `shells/web/src/data-transfer.ts` leest alles weer uit via `host.profile`/`host.state`/`host.assets` naar één `lolly-backup`-zip die op elke andere installatie te importeren is - het offline antwoord op "verhuizen naar een nieuw apparaat" zonder dat daar een server voor nodig is (volledige spec: `docs/data-transfer.md`). SUSE ID-integratie (multi-device-sync) is een toekomstige milestone die daar nog bovenop komt.
+Gebruikers kunnen meerdere benoemde bewerkingsslots per tool opslaan en later terugkeren naar elke sessie. Een account aanmaken is niet nodig; de status is per apparaat. Omdat de bridge de enige naad is, is die per-apparaat status ook *overdraagbaar*: `shells/web/src/data-transfer.ts` leest alles terug via `host.profile`/`host.state`/`host.assets` in één `lolly-backup`-zip die op elke andere installatie te importeren is - het offline antwoord op "verhuis naar een nieuw apparaat" zonder server (volledige specificatie: `docs/data-transfer.md`). SUSE ID-integratie (synchronisatie tussen meerdere apparaten) is een toekomstige mijlpaal hierbovenop.
 
-### 7. Maturity-tags beantwoorden het risico "merkgoedgekeurd" structureel
+### 7. Volwassenheidslabels beantwoorden het "door het merk goedgekeurd"-risico structureel
 
-Omdat elke input meereist in de link, is een gewijzigde parameter een ander afgewerkt asset. Dit hele palet is één startkleur, een harmonie en een aantal stappen:
+Elke tool declareert `status: official | community | experimental` in zijn manifest. De galerij sorteert op status. Experimentele tools voorzien hun exports automatisch van een watermerk - het watermerk wordt toegepast door `host.export.render`, niet door de tool, dus een niet-officiële tool-auteur kan er niet voor uitschakelen.
 
-Elke tool declareert `status: official | community | experimental` in zijn manifest. De gallery sorteert op status. Experimentele tools watermerken hun exports automatisch - het watermerk wordt toegepast door `host.export.render`, niet door de tool zelf, zodat een niet-officiële tool-auteur het niet kan uitschakelen.
+Dit is een structureel antwoord op het perceptierisico dat het gebruik van welke tool dan ook merkgoedkeuring impliceert. Procesantwoorden (een reviewwachtrij, SUSE ID-gating) komen daar bovenop.
 
-Dit is een structureel antwoord op het perceptierisico dat het gebruik van een willekeurige tool merkgoedkeuring impliceert. Procesmatige antwoorden (een reviewwachtrij, SUSE ID-gating) komen daar nog bovenop.
+### 8. Tool-invoer is getypeerd via het manifest, inclusief assets
 
-### 8. Tool-inputs zijn getypeerd via het manifest, inclusief assets
+Invoervelden declareren een `type`: `text`, `longtext`, `number`, `boolean`, `color`, `select`, `asset`, `date`, `time`, `datetime-local`, `url`, `blocks`, `vector`, `table` en `file`. De host rendert een generieke besturing per type vanuit het manifest - tools schrijven nul regels besturingscode. (Vooraf invullen vanuit het profiel van de gebruiker is geen type - elke invoer kan `bindToProfile` dragen.) Drie wegen zwaarder dan de rest:
 
-Inputs declareren een `type`: `text`, `longtext`, `number`, `boolean`, `color`, `select`, `asset`, `date`, `time`, `datetime-local`, `url`, `profile`, `blocks`, `vector`, en `file`. De host rendert vanuit het manifest een generiek bedieningselement per type - tools schrijven geen regel bedieningscode. Drie ervan wegen zwaarder dan de rest:
-
-- **`asset`** (met `filter` en `allowUpload`) is de brug naar het globale asset-systeem; `allowUpload: false` is de hendel om merkhandhaving af te dwingen bij dingen als sponsortegel-logo's, waar alleen bibliotheekassets zijn toegestaan. Gebruikersuploads gebruiken dezelfde `AssetRef`-vorm als bibliotheekassets, zodat tools ze identiek behandelen.
-- **`blocks`** is een herhalende veldgroep - een minitabel binnen één input, bewerkt in een zijpaneel, met een getypeerd/gediscrimineerd toevoegmenu en asset-velden per blok. Klikken op een gerenderd blok op het canvas geeft focus aan de rij van dat blok. Gebruikt door `meeting-planner`, `chart-creator`, `event-name-badge`, `wayfinding-signage`, `color-block`, en `digi-ad`.
-- **`vector`** groepeert een vaste set getallen (bijv. een transform) tot één samengesteld bedieningselement; **`file`** bevat het eigen bestand van de gebruiker als bytes in het geheugen, voor on-device transformatietools (bijv. `strip-data` en `compress-pdf`).
+- **`asset`** (met `filter` en `allowUpload`) is de brug naar het globale assetsysteem; `allowUpload: false` is de hendel voor merkhandhaving voor dingen zoals sponsortegellogo's waar alleen bibliotheekassets toegestaan zijn. Gebruikersuploads gebruiken dezelfde `AssetRef`-vorm als bibliotheekassets, dus tools behandelen ze identiek.
+- **`blocks`** is een herhalende veldgroep - een minitabel binnen één invoerveld, bewerkt in een zijpaneel, met een getypeerd/onderscheiden toevoegmenu en assetvelden per blok. Klikken op een gerenderd blok op het canvas focust de rij van dat blok. Gebruikt door `meeting-planner`, `chart-creator`, `event-name-badge`, `wayfinding-signage`, `color-block` en `digi-ad`.
+- **`vector`** groepeert een vaste set getallen (bijvoorbeeld een transform) in één samengestelde besturing; **`file`** houdt het eigen bestand van de gebruiker als bytes in het geheugen voor on-device transformatie-utilities (bijvoorbeeld `strip-data` en `compress-pdf`).
 
 ### 9. Templates zijn logicaloos (Handlebars, geen EJS)
 
-Handlebars is bewust gekozen boven EJS:
-- Logicaloos. Templates kunnen geschreven worden door mensen die geen developer zijn.
-- Veilig by default. `{{x}}` escapet HTML; `{{{x}}}` is opt-in raw.
+Handlebars is bewust boven EJS gekozen:
+- Logicaloos. Templates kunnen door niet-developers worden opgesteld.
+- Standaard veilig. `{{x}}` escapet HTML; `{{{x}}}` is optioneel rauw.
 - Geen willekeurige JS in templates betekent geen XSS-auditoppervlak per template.
 
-Logica leeft in `hooks.js`, waar die expliciet en review-baar is. Beschikbare Handlebars-helpers: `{{default}}`, `{{upper}}`, `{{lower}}`, `{{eq}}`, `{{markdown}}`, `{{asset ref}}`, `{{asset ref "property"}}` (plus dataformaat-helpers `icsStamp`/`rfcText`/`csvCell`, gebruikt door de naastliggende `.ics`/`.vcf`/`.csv`-templates).
+Logica leeft in `hooks.js`, waar die expliciet en beoordeelbaar is. Beschikbare Handlebars-helpers: `{{default}}`, `{{upper}}`, `{{lower}}`, `{{eq}}`, `{{markdown}}`, `{{asset ref}}`, `{{asset ref "property"}}` (plus dataformaathelpers `icsStamp`/`rfcText`/`csvCell` gebruikt door de bijbehorende `.ics`/`.vcf`/`.csv`-templates).
 
-### 10. Tools combineren tools
+### 10. Tools stellen tools samen
 
+Een tool kan de render van een **andere** tool embedden zonder tool-naar-tool imports - samenstelling wordt opgelost door de engine, nooit door tool-code. Er zijn twee oppervlakken:
 
-Een tool kan de render van **een andere** tool insluiten zonder tool-naar-tool-imports - compositie wordt opgelost door de engine, nooit door toolcode. Er zijn twee oppervlakken:
+- **Declaratief manifest** - `composes: [{ id, tool, inputs, format?, width?, height? }]`. De engine rendert het genoemde kind en plaatst het resultaat in de logicaloze template als `{{asset <id>}}`. `event-name-badge` stelt vandaag `qr-code` samen als SVG.
+- **Overdraagbare embed-URL** - `<img src="https://lolly.tools/tool/<id>.<ext>?<inputs>">`. De shell rendert dat kind **lokaal** (een placeholderpixel toont zich tot de lokale render klaar is); er wordt nooit iets opgehaald bij `lolly.tools`.
 
-- **Declaratief manifest** - `composes: [{ id, tool, inputs, format?, width?, height? }]`. De engine rendert het benoemde kind en plaatst het resultaat in het logicaloze template als `{{asset <id>}}`. `event-name-badge` stelt vandaag `qr-code` samen als SVG.
-- **Draagbare embed-URL** - `<img src="https://lolly.tools/tool/<id>.<ext>?<inputs>">`. De shell rendert dat kind **lokaal** (een placeholder-pixel is zichtbaar tot de lokale render is opgelost); er wordt nooit iets opgehaald bij `lolly.tools`.
-
-Stel de render van elke tool samen: een **SVG**-kind blijft een echte vector wanneer de ouder naar SVG of PDF exporteert, en rasteriseert scherp voor PNG; **PNG/JPG/WEBP**-kinderen worden ingesloten als afbeeldingen. Vereist de capability `compose`. Samengestelde kinderen zijn tussenproducten - nooit voorzien van watermerk of herkomststempel - en compositie degradeert netjes: een shell die een kind niet kan renderen laat de slot gewoon weg en de ouder rendert alsnog.
+Stel de render van elke tool samen: een **SVG**-kind blijft een echte vector wanneer het bovenliggende item naar SVG of PDF exporteert en rasteriseert scherp voor PNG; **PNG/JPG/WEBP**-kinderen worden als afbeeldingen ingesloten. Vereist de `compose`-capability. Samengestelde kinderen zijn tussenproducten - nooit voorzien van watermerk of herkomststempel - en samenstelling degradeert gracieus: een shell die een kind niet kan renderen laat de slot gewoon weg en het bovenliggende item rendert alsnog.
 
 ---
 
-## Wat we bewust niet hebben gedaan
+## Wat we expliciet niet deden
 
 - **Geen EJS / geen willekeurige JS in templates.** XSS-oppervlak is nul. Logica leeft in `hooks.js`.
-- **Geen asset-CMS.** De asset-catalogus is git. Updates gaan via PR-review. Geen upload-UI, geen auth, geen moderatiewachtrij. De git-review _is_ de moderatie.
-- **Geen RBAC in de MVP.** Publieke toegang. Merkrisico wordt beheerst door maturity-tags + watermerken + het structurele gegeven dat elke asset die gebruikers zien via PR-review is gegaan.
-- **Geen centrale database.** Alle gebruikersstatus is per apparaat. SUSE ID-integratie staat op de roadmap, maar is geen launch-blocker.
-- **Geen gedeeld tools/engine-codepad.** De engine is open source; `tools/` en `assets/` blijven proprietaire SUSE-content in hun eigen repositories. De scheiding wordt afgedwongen (geen cross-imports), zodat de splitsing schoon blijft.
+- **Geen verplicht assets-CMS.** Individuen nemen hun eigen creatieve bestanden rechtstreeks op in hun catalogus in de app (de [Catalogus](/info/using.html)-weergave en de Brand Studio) - geen server, geen beheerconsole. Werk wordt overgedragen als een **sessie**: een deellink draagt de volledige status, en dezelfde sessie reist mee in een back-up of via een collab-sessie. Wie de implementatie beheert kan een gedeelde sessie vervolgens vastzetten als een **template** - open de link, leg de waarden vast als templatevermelding in de map van die tool in het merkpakket en commit - waarna het verschijnt in de "Nieuw vanuit template"-kiezer van de tool en diep te linken is als `?template=<id>`. Git is de vastzetstap van de eigenaar van de implementatie, nooit die van de maker. Voor een *gedeelde, gereguleerde* catalogus **kan** een organisatie de assetmap op dezelfde manier beheren en updates poorten via PR-review - een beschikbaar governancemodel, geen vereiste van de app.
+- **Geen verplichte RBAC.** De open app is standaard publiek toegankelijk; merkrisico wordt beheerd via volwassenheidslabels + watermerken. Een organisatie die strakkere controle wil, legt haar eigen auth en de git-beoordeelde catalogus hierboven erover heen.
+- **Geen centrale database.** Alle gebruikersstatus is per apparaat. SUSE ID-integratie staat op de roadmap maar is geen lanceerblokkade.
+- **Geen gedeeld tools/engine-codepad.** De engine is opensource; `tools/` en `assets/` blijven eigen SUSE-content in hun eigen repositories. De scheiding wordt afgedwongen (geen cross-imports) zodat de splitsing schoon blijft.
 
 ---
 
 ## Levenscyclus, van begin tot eind
 
-![The export panel that `?options` opens: the filename and format pair, the output size, and the controls that write the file](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=aud-export-popup)
-
-De Slides-tool is op dat tweede oppervlak gebouwd: elke slot op elke slide kan een andere Lolly-tool bevatten in plaats van een afbeelding.
-
 Een gebruiker opent `lolly.tools/#/tool/qr-code?url=https://suse.com&ecl=H`:
 
-1. **Boot.** De webshell opent IndexedDB, bouwt de capability bridge op, synchroniseert de tool- en asset-catalogi (of laadt uit cache wanneer offline).
-2. **Route.** URL-hash → `tool`-view, waarbij `qr-code` en de URL-params worden uitgelezen.
-3. **Laden.** `loadTool('qr-code', fetchFile)` haalt `tool.json` op, valideert tegen het JSON Schema, en haalt de bron van `template.html`, `styles.css` en `hooks.js` op.
-4. **URL-status parsen.** `parseUrlState` vertaalt URL-params naar initiële inputwaarden. Asset-refs (`?logo=suse/logo/primary`) worden geparsed als lichtgewicht `{ id, _unresolved: true }`-objecten.
-5. **Runtime.** `createRuntime(tool, host, initialValues)` bouwt het inputmodel op (waarbij profielgegevens, standaardwaarden en initiële waarden worden samengevoegd), lost asset-refs op via `host.assets.get()`, laadt hooks (`host` in closure-scope, niet sandboxed), en roept `hooks.onInit` aan.
-6. **Render.** De shell abonneert zich op de runtime; bij elke statuswijziging ontvangt hij `{ model, hydrated }`. Hij rendert bedieningselementen vanuit het model en schrijft de gehydrateerde template-HTML naar `#tool-canvas`.
-7. **Interactie.** De gebruiker typt in een input → `runtime.setInput(id, value)` → constraints worden toegepast → `hooks.onInput` wordt aangeroepen → opnieuw hydrateren → opnieuw renderen. Het canvas werkt live bij.
-8. **Export.** De gebruiker klikt op Download(PNG) → `runtime.export(canvasNode, 'png')` → `host.export.render` (rasteriseert via dom-to-image-more; SVG/PDF lopen via speciale DOM-doorlopende vectoriseerders) → blob → `host.export.download`. Het formatenbereik waar een tool voor kan kiezen is breed: `svg`, `png`, `jpg`/`jpeg`, `webp`, `avif`, `pdf`, de vectorformaten `emf`, `eps`, plus de print-/CMYK-formaten `pdf-cmyk`, `cmyk-tiff`, `eps-cmyk`; de videoformaten `webm`, `mp4`, `gif`; en de data-/tekstformaten `html`, `md`, `txt`, `json`, `csv`, `ics`, `vcf`, `ico`, `zip`. (Tools die `render.export: false` zetten - bijv. Color Palette, Countdown Timer, Strip Hidden Data, Text Helper, Compress PDF - verbergen de download-/formaat-/afmetingenbediening.) Fysieke eenheden worden hier per formaat omgerekend (PDF → echte pagina-punten, raster → pixels op DPI met een `pHYs`-chunk). Auteurschap-/herkomstmetadata (auteur, tool, bron - opgebouwd door `engine/src/metadata.ts`) wordt per formaat ingebed: PNG iTXt, JPEG EXIF, PDF info-dict, SVG `<metadata>`, GIF-comment. Experimentele tools krijgen een watermerk ingevoegd door de host, niet door de tool.
+1. **Boot.** De web shell opent IndexedDB, bouwt de capability-bridge, synchroniseert de tool- en assetcatalogi (of laadt vanuit cache bij offline gebruik).
+2. **Route.** URL-hash → `tool`-weergave, met `qr-code` en URL-parameters geëxtraheerd.
+3. **Laden.** `loadTool('qr-code', fetchFile)` haalt `tool.json` op, valideert tegen het JSON Schema, haalt `template.html`, `styles.css` en de `hooks.js`-broncode op.
+4. **URL-status parsen.** `parseUrlState` vertaalt URL-parameters naar initiële invoerwaarden. Asset-referenties (`?logo=suse/logo/primary`) worden geparst als lichtgewicht `{ id, _unresolved: true }`-objecten.
+5. **Runtime.** `createRuntime(tool, host, initialValues)` bouwt het invoermodel (profielgegevens, standaardwaarden en initiële waarden samenvoegend), lost asset-referenties op via `host.assets.get()`, laadt hooks (closure-scoped `host`, niet gesandboxt), roept `hooks.onInit` aan.
+6. **Render.** De shell abonneert zich op de runtime; bij elke statuswijziging ontvangt ze `{ model, hydrated }`. Ze rendert invoerbesturingen vanuit het model en schrijft de gehydrateerde template-HTML naar `#tool-canvas`.
+7. **Interactie.** De gebruiker typt in een invoerveld → `runtime.setInput(id, value)` → beperkingen toegepast → `hooks.onInput` aangeroepen → opnieuw hydrateren → opnieuw renderen. Het canvas werkt live bij.
+8. **Export.** De gebruiker klikt op Download(PNG) → `runtime.export(canvasNode, 'png')` → `host.export.render` (rasteriseert via dom-to-image-more; SVG/PDF gaan via toegewijde DOM-doorlopende vectoriseerders) → blob → `host.export.download`. Het formaatbereik waarvoor een tool kan kiezen is breed, en de `render.formats`-enum in `schemas/tool.schema.json` is daarvoor het gezag - rasters en float-rasters, vectoren en snijbestanden, print/CMYK, beweging, bewerkbare documenten (`pptx`, `docx`, `odt`), palet- en data/tekstuitvoer, audio- en lettertypebestanden. [URL-modus](/info/url-mode.html) noemt elke id en wat die produceert. Audio staat in die enum net als al het andere (`wav`, `mp3`, `m4a`, `opus`, gedeclareerd door de audiogram en de opnametools); apart daarvan stuurt de `render.capture`-modus van een opnametool `host.recorder` aan, waarvan de opname als een afgeronde Blob binnenkomt in welke container de browser ook opnam. (Tools die `render.export: false` instellen - bijvoorbeeld Color Palette, Countdown Timer, Strip Hidden Data, Text Helper, Compress PDF - verbergen de download-/formaat-/afmetingsbesturingen.) Fysieke eenheden worden hier per formaat omgezet (PDF → echte paginapunten, raster → pixels op DPI met een `pHYs`-chunk). Auteurschap/herkomstmetadata (auteur, tool, bron - gebouwd door `engine/src/metadata.ts`) wordt per formaat ingesloten: PNG iTXt, JPEG EXIF, PDF-infowoordenboek, SVG `<metadata>`, GIF-commentaar. Experimentele tools krijgen een watermerk ingevoegd door de host, niet door de tool.
 
-Dezelfde levenscyclus in Tauri. Dezelfde levenscyclus in de CLI - jsdom levert de headless DOM; de uitvoer gaat naar een bestand of stdout.
+![Het exportpaneel dat `?options` opent: het bestandsnaam- en formaatpaar, de uitvoergrootte en de besturingen die het bestand schrijven](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-popup&walker=1&format=svg&dark=1&filename=aud-export-popup)
 
----
-
-## Open source-status
-
-De mappen `engine/`, `shells/`, `schemas/` en `docs/` zijn open source onder **MPL-2.0** - een vendorneutraal scaffolding-platform voor merktooling, waarbij elke uitleverbare eenheid is opgesplitst in zijn eigen repository onder [github.com/lolly-tools](https://github.com/lolly-tools). `tools/` en `catalog/assets/` zijn SUSE-specifieke content en blijven **eigendom van SUSE** (alle rechten voorbehouden - zie het `NOTICE.md`-bestand van elke repo); ze vallen niet onder de MPL.
-
-De splitsing wordt afgedwongen - er zijn geen cross-imports vanuit `engine/` naar `tools/` of `assets/` - zodat de grens tussen platform en content schoon blijft.
+Zelfde levenscyclus in Tauri. Zelfde levenscyclus in CLI - jsdom levert de headless DOM; de uitvoer gaat naar een bestand of stdout.
 
 ---
 
-## Roadmap
+## Opensourcestatus
 
-| Mijlpaal | Streefdatum | Wat |
-|---|---|---|
-| **Initiële tools** | ✅ Klaar | QR Code, Quote Card, Email Signature, Code Canvas, Countdown Timer, Color Palette, Brand Lockup, Chart Creator, Filter: Duotone, Meeting Planner - webshell live |
-| **Bestaande tooling uitbreiden** | Medio 2026 ✅ Klaar  | Downloadbare offline app (Tauri); extra tools voor medewerkers en events; rijkere exportpipeline (stabiliteit van tekst-naar-pad, metadata, extra formaten - zie `plans.md`) |
-| **De engine open source maken** | Eind 2026 ✅ Klaar  | Engine, shells, schemas, docs worden publiek - niet de merkgebonden tools/assets |
-| **Overdracht tussen apparaten** | ✅ Klaar | Draagbare `lolly-backup`-bundel draagt profiel, opgeslagen sessies, geüploade afbeeldingen en voorkeuren over tussen twee installaties - offline of online, zonder account. Forward-compatible, integriteitsgecontroleerde envelop (spec: `docs/data-transfer.md`) |
-| **Formele toolroadmap opstellen** | Eind 2026 | Klant-referentiekits, AI-ontwerpingest, GET/URL-requestmodus |
-| **On-device privacytools** | 🚧 In uitvoering | Content-transformatietools die *je eigen* bestand lokaal verwerken (bestand erin → schoon bestand eruit), als vervanging voor exfiltratie naar singlepurpose-SaaS. **Klaar:** input-type `file` + transformatiepad `exportFile` + conventies `privacy:"on-device"` (geen watermerk/herkomst) + **Strip Hidden Data** (JPEG/PNG/SVG/PDF-metadata, PDF via de `host.pdf`-bridge) en **Text Helper** (de on-device werkbank voor alledaagse plak-in-een-website-klusjes - JSON-formattering, JWT-decoderen, Base64, URL-encoderen/decoderen, SHA-hashing, plus een Novelty-groep). **Volgende:** bijsnijden/formaat wijzigen, afbeelding omzetten/comprimeren; daarna een `host.image`-codec-bridge (spec: `plans/34-exfiltration-app-content.md`) |
-| **Design tokens (DTCG)** | 🚧 Kleur uitgeleverd | Merkprimitieven als canonieke [W3C Design Tokens (DTCG)](https://www.designtokens.org/TR/drafts/format/) - het formaat dat [Penpot importeert/exporteert](https://help.penpot.app/user-guide/design-systems/design-tokens/). **Klaar:** kleurtokens (`suse/tokens/brand`), `host.tokens`-bridge, picker-swatches + naar referenties gekoppelde waarden (spec: `docs/design-tokens.md`). **Volgende:** dimensie-/typetokens, Penpot-import/-export, gebruikerstokens in de transferbundel (`tokens.json`) |
-| **MCP-agent-endpoint (render)** | ✅ Klaar | Een [MCP](https://modelcontextprotocol.io)-server ontsluit de catalogus + het renderpad als aanroepbare tools (`lolly_list_tools` / `describe_tool` / `build_url` / `render` / `transform`), zodat elke agent afgewerkte, regelgebonden assets kan produceren - voeg hem toe aan elke MCP-client als custom connector (OAuth 2.1), of richt een CLI-/HTTP-client erop met een bearer-token. Live op `mcp.lolly.tools` (volledig endpoint: raster/PDF/animatie/video via een gehoste headless browser) en `lolly.tools/api/mcp` (serverless, browservrije tier). Anders dan de Penpot-*authoring*-MCP hieronder, die gaat over het **creëren** van tools (spec: `plans/77-mcp-server.md`; gids: `docs/mcp.md` + `docs/ai-agents.md`) |
-| **Penpot-bestanden inlezen als tools** | 2027+ | Importeer een Penpot-bestand en ontsluit het *als een Lolly-tool* (declaratief, constraints-first), waardoor in Penpot ontworpen designs deterministische generatoren worden |
-| **MCP + Penpot-extensie (alleen-online authoring)** | 2027+ | Een Penpot MCP-server verwoordt nieuwe tools met AI - de meest visuele manier om deterministische templates te maken: een merkgeïnformeerde eerste ronde, verfijnd met een mens in de lus, gericht op steeds nieuwe contexten in één keer goed. Het **creëren** van tools is alleen-online; de tools die het oplevert draaien overal |
-| **RBAC + SUSE ID** | 2027+ | Specifieke tools afschermen achter SUSE ID; opgeslagen status over meerdere apparaten; Google Drive-in-/uitvoer |
+De mappen `engine/`, `shells/`, `schemas/` en `docs/` zijn opensource onder **MPL-2.0** - een leveranciersneutraal scaffoldingplatform voor merktooling, waarbij elke uitleverbare eenheid gesplitst is in zijn eigen repository onder [github.com/lolly-tools](https://github.com/lolly-tools). `tools/` en `catalog/assets/` zijn SUSE-specifieke content en blijven **eigendom van SUSE** (alle rechten voorbehouden - zie het `NOTICE.md`-bestand van elke repo); ze vallen niet onder de MPL.
+
+De splitsing wordt afgedwongen - er zijn geen cross-imports van `engine/` naar `tools/` of `assets/` - zodat de grens tussen platform en content schoon blijft.
 
 ---
 
-## Waar de engine ophoudt en de host begint
+## Waar de engine eindigt en de host begint
 
 Als je het kunt beschrijven in pure data + Handlebars → **engine**.
-Als het de DOM, het bestandssysteem, het netwerk, of een browser-/OS-API aanraakt → **host**.
+Als het de DOM, het bestandssysteem, het netwerk of een browser-/OS-API raakt → **host**.
 
-De grens is bewust scherp. De engine is het open-source deel. Alles wat iets weet van SUSE, specifieke platforms, of runtime-omgevingen blijft erbuiten.
+De lijn is bewust scherp. De engine is het opensource-deel. Alles wat iets weet over SUSE, specifieke platforms of runtime-omgevingen blijft eruit.
+
+Voor het volgende detailniveau somt [`engine/README.md`](../engine/README.md) elke enginemodule op en waar die verantwoordelijk voor is, en [Dreigingsmodel & vertrouwensgrenzen](/info/threat-model.html) legt vast waar diezelfde lijn tevens een vertrouwensgrens is.
