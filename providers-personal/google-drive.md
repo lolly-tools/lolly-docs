@@ -30,6 +30,32 @@ session only and there is no refresh token - which is why the /profile row
 says "signs in when you send" instead of offering stay-connected. Re-consent
 after the first grant is a fast auto-closing popup.
 
+## The DESKTOP apps (plans/129 WP4) - a second, Desktop-type client
+
+The Tauri shells run sign-in in the person's SYSTEM browser with a loopback
+return (Google refuses OAuth inside embedded webviews, and managed-account
+SSO already lives in the default browser - for Workspace users the sign-in
+collapses to an account-chooser click). That flow needs its own client:
+
+1. Same Cloud project → Clients → Create client → **Desktop app**. No origins
+   or redirect URIs to enter - Google's Desktop type accepts loopback
+   `http://127.0.0.1:<any port>` redirects by design.
+2. Copy the client id AND the client secret. For installed apps Google's own
+   docs state the secret is NOT treated as confidential - it ships in every
+   native binary using this flow; that is why it may sit in build config.
+3. The deploy sets `VITE_GOOGLE_DESKTOP_CLIENT_ID` and
+   `VITE_GOOGLE_DESKTOP_CLIENT_SECRET` for the desktop frontend build. No
+   pair → no Drive UI in the desktop apps (the web pair does nothing there).
+
+Desktop uses code+PKCE, so unlike the web it CAN mint refresh tokens: the
+/profile row offers "Stay connected on this device", with the refresh token
+stored under the same custody rules as Dropbox.
+
+An org can also supply its OWN Desktop client at runtime
+(`setDriveDesktopClient`, e.g. from a brand instance or `.lolly` pack): a
+Workspace-internal client skips the unverified-app interstitial and is
+admin-trusted by construction.
+
 ## Verify
 
 Export anything → Send to Google Drive → account picker → `drive.file`

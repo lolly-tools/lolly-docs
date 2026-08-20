@@ -1,10 +1,10 @@
 
 # Lolly - Landing page copy
 
-Yours to make, yours to keep: finished files in seconds, on your own device.
-Pick a tool, add your words, it comes out right: colours, fonts and layout are already sorted.
-Identical where you want it, different how you want it.
-Free, and it stays free: no account, no card, no catch.
+Studio quality files in seconds, on your own device.
+
+Identical how you want, different when you need.
+Free & open source: no account, no card, no catch.
 
 
 ---

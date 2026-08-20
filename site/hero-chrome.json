@@ -13,11 +13,9 @@
     }
   ],
   "trustChips": [
-    "Free forever",
-    "Open Source",
-    "No Account",
     "No Cookies",
-    "Reports Nothing Back"
+    "No Analytics",
+    "No Worries"
   ],
   "toolCountSuffix": "Tools Ready"
 }
