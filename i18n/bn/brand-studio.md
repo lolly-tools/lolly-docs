@@ -91,7 +91,7 @@ Overview হলো যে room-এ আপনি প্রথম পৌঁছা�
 
 Primary-র নিচে আপনি লাইভ **Primary / Neutral / Secondary / Blend** ramp এবং Light ও Dark specimen কার্ড দেখতে পাবেন, প্রতিটি তার নিজস্ব contrast readout বহন করে - WCAG অনুপাত এবং তার পাশে APCA `Lc` সংখ্যা। ডেরাইভড ডিফল্টের বদলে সেই shade-কে anchor করতে **Neutral বা Secondary ramp-এ একটি ধাপে ক্লিক করুন**।
 
-![চারটি র‍্যাম্প হালকা ও গাঢ় নমুনা কার্ডের উপরে সাজানো, প্রতিটি কার্ডে নিজস্ব WCAG কনট্রাস্ট অনুপাত রয়েছে](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
+![চারটি র্যাম্প হালকা ও গাঢ় নমুনা কার্ডের উপরে সাজানো, প্রতিটি কার্ডে নিজস্ব WCAG কনট্রাস্ট অনুপাত রয়েছে](/t/url-shot?url=%2F%23%2Fstart%3Farea%3Dcolor%26focus%3Dgenerate&width=1440&height=1400&dpi=192&waitMs=1800&css=.start-head%7Bdisplay%3Anone%7D&cropSelector=.be-preview&format=svg&walker=1&dark=1&filename=bs-colour-ramps)
 
 ### আপনার প্যালেট তৈরি করুন (হারমনি জেনারেটর)
 
@@ -126,7 +126,7 @@ Primary-র নিচে আপনি লাইভ **Primary / Neutral / Seconda
 
 এই প্রিন্ট লকগুলোই একটি প্রেস ব্যবহার করে যখন আপনি একটি CMYK PDF বা TIFF এক্সপোর্ট করেন - দেখুন [Exporting](/info/exporting.html#colour-profiles)।
 
-**একটি সোয়াচ ডিলিট করা** নিরাপদ: উদ্ভূত র‍্যাম্প স্টেপ এবং থিম রোলগুলো *লুকিয়ে* রাখা হয় (অন্তর্নিহিত টোকেন রিজলভ করতে থাকে, তাই ডাউনস্ট্রিমে কিছু ভাঙে না), যখন আপনি নিজে যোগ করা রঙগুলো সম্পূর্ণভাবে সরিয়ে ফেলা হয়।
+**একটি সোয়াচ ডিলিট করা** নিরাপদ: উদ্ভূত র্যাম্প স্টেপ এবং থিম রোলগুলো *লুকিয়ে* রাখা হয় (অন্তর্নিহিত টোকেন রিজলভ করতে থাকে, তাই ডাউনস্ট্রিমে কিছু ভাঙে না), যখন আপনি নিজে যোগ করা রঙগুলো সম্পূর্ণভাবে সরিয়ে ফেলা হয়।
 
 ### গ্রেডিয়েন্ট
 

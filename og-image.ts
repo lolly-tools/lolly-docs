@@ -531,7 +531,7 @@ const DOCS_ICON =
 
 // Pages without their own description fall back to the site tagline rather than a bare
 // title card. Matches docs/build.ts's SITE_DESCRIPTION intent (kept in sync by eye).
-const DOCS_DESC_FALLBACK = 'Fast, free, reproducible assets and tools — on your own device.';
+const DOCS_DESC_FALLBACK = 'Fast, free, reproducible assets and tools - on your own device.';
 
 /**
  * Generate one PNG per /info page into <outDir>/og/<slug>.png, in the same view-card

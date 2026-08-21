@@ -1,15 +1,15 @@
 {
   "eyebrow": "证明与隐私",
   "heading": "证明你的创作。\n保留属于你的一切。",
-  "lead": "你导出的几乎每一张图片、PDF 或视频——PNG、JPG、APNG、GIF、SVG、TIFF、WebP、PDF、MP4 和 WebM——都可以携带一个 **Content Credential**：一枚防篡改的 [C2PA](https://c2pa.org) 印记，就在你工作的地方生成并签名。这枚印记覆盖每一个导出的字节：任何改动都会被 C2PA 验证工具指出来；一旦你注册了身份，它还会记录是谁签的名。位图还会在像素本身里携带隐形的 **Lolly Imprint**，默认开启，因此即使凭据被剥离，副本依然认得出来。",
+  "lead": "你导出的几乎每一张图片、PDF 或视频--PNG、JPG、APNG、GIF、SVG、TIFF、WebP、PDF、MP4 和 WebM--都可以携带一个 **Content Credential**：一枚防篡改的 [C2PA](https://c2pa.org) 印记，就在你工作的地方生成并签名。这枚印记覆盖每一个导出的字节：任何改动都会被 C2PA 验证工具指出来；一旦你注册了身份，它还会记录是谁签的名。位图还会在像素本身里携带隐形的 **Lolly Imprint**，默认开启，因此即使凭据被剥离，副本依然认得出来。",
   "checks": [
     { "title": "默认防篡改", "desc": "该印记覆盖每一个导出的字节。哪怕只改动一个像素，任何 C2PA 验证工具都会标记出来。" },
-    { "title": "用只有你的浏览器持有的密钥签名", "desc": "该密钥以不可导出的方式生成，因此任何代码——包括 Lolly 自己的——都无法把它读出来。" },
+    { "title": "用只有你的浏览器持有的密钥签名", "desc": "该密钥以不可导出的方式生成，因此任何代码--包括 Lolly 自己的--都无法把它读出来。" },
     { "title": "任何文件，你自己就能验证", "desc": "Verify 标签页会检查文件的凭据、标记 AI 生成的内容、读取 Lolly Imprint，并揭示隐藏数据。" }
   ],
   "cards": [
     { "icon": "assureScan", "title": "清除与加锁", "desc": "清除隐藏数据会在本地移除 EXIF 和元数据。可以为 PDF、下载文件或分享链接加上只有你掌握的密码。" },
-    { "icon": "assureServer", "title": "自托管或物理隔离", "desc": "核心渲染路径上没有后端——没有数据库，也没有需要运维的服务端处理。可以完全在你自己的防火墙之后运行；可选的服务端组件也可以不装。" }
+    { "icon": "assureServer", "title": "自托管或物理隔离", "desc": "核心渲染路径上没有后端--没有数据库，也没有需要运维的服务端处理。可以完全在你自己的防火墙之后运行；可选的服务端组件也可以不装。" }
   ],
   "cta": "Content Credentials 的工作原理 →",
   "ctaHref": "/info/content-credentials-identity.html"

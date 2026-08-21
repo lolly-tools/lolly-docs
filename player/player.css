@@ -7,7 +7,7 @@
  * is left here is what lives on the PAGE rather than in the dock: the follow-along
  * highlight on the narrated block, and the seek-target cursor on headings while
  * the player is open. Built to /info/docs-player.css by docs/build.ts and linked
- * by the player bundle on first open — pages that never press Listen never fetch
+ * by the player bundle on first open - pages that never press Listen never fetch
  * it.
  *
  * Colours come from the app tokens docs/build.ts inlines (tokens.css → :root),

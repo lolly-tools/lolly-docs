@@ -208,7 +208,7 @@ export function collectPageIngredients(
         const bytes = new Uint8Array(readFileSync(resolve(outDir, ref.replace(/^\/info\//, ''))));
         const found = prepareC2paIngredient(bytes);
         if (found) ing = { ...found, title: ref, relationship: 'componentOf' };
-      } catch { /* missing or unreadable component — the page still seals */ }
+      } catch { /* missing or unreadable component - the page still seals */ }
       cache.set(ref, ing);
     }
     if (ing) out.push(ing);
@@ -369,7 +369,7 @@ async function sealOne(
   if (existsSync(sidecar)) {
     try {
       if (await sealHolds(bytes, new Uint8Array(readFileSync(sidecar)), labels)) return { outcome: 'kept' };
-    } catch { /* unreadable sidecar — re-sign it */ }
+    } catch { /* unreadable sidecar - re-sign it */ }
   }
   if (check) return { outcome: 'wouldSign' };
   try {

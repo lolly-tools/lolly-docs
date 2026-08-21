@@ -1,7 +1,7 @@
 {
   "heading": "所有格式，读取与导出",
   "_lead_note": "Deliberately count-free: the in/out/round-trip numbers are computed live in docs/build.ts from formats-catalog.json's dir fields, so no string in this file may hard-code one.",
-  "lead": "Lolly 能读取数十种源格式，还能渲染出更多——下面是完整列表，按各自的类型分组。其中 {roundtrip} 种既可读取*也*可写入，因此只在中间出现一次。",
+  "lead": "Lolly 能读取数十种源格式，还能渲染出更多--下面是完整列表，按各自的类型分组。其中 {roundtrip} 种既可读取*也*可写入，因此只在中间出现一次。",
   "ingestsLabel": "导入",
   "ingestsCount": "种输入",
   "exportsLabel": "导出",

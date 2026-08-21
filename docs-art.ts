@@ -164,7 +164,7 @@ export function stripArtForInline(source: string, prefix: string): string {
     .replace(/url\(#([^)]+)\)/g, `url(#${prefix}$1)`)
     .replace(/\bhref="#([^"]+)"/g, `href="#${prefix}$1"`);
   if (RESIDUAL.test(out)) {
-    throw new Error('a C2PA carrier survived the strip — the inlined copy would fail its own credential');
+    throw new Error('a C2PA carrier survived the strip - the inlined copy would fail its own credential');
   }
   return out.trim();
 }

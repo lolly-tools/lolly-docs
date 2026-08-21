@@ -1,7 +1,7 @@
 {
-  "heading": "Кожен формат — на вхід і на вихід",
+  "heading": "Кожен формат - на вхід і на вихід",
   "_lead_note": "Deliberately count-free: the in/out/round-trip numbers are computed live in docs/build.ts from formats-catalog.json's dir fields, so no string in this file may hard-code one.",
-  "lead": "Lolly читає десятки вихідних форматів і рендерить ще десятки — ось повний перелік, згрупований за типом кожного. {roundtrip} із них читаються *і* записуються, тому стоять один раз посередині.",
+  "lead": "Lolly читає десятки вихідних форматів і рендерить ще десятки - ось повний перелік, згрупований за типом кожного. {roundtrip} із них читаються *і* записуються, тому стоять один раз посередині.",
   "ingestsLabel": "Імпорт",
   "ingestsCount": "на вхід",
   "exportsLabel": "Експорт",

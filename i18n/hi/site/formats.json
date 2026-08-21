@@ -1,7 +1,7 @@
 {
   "heading": "हर फ़ॉर्मैट, अंदर और बाहर",
   "_lead_note": "Deliberately count-free: the in/out/round-trip numbers are computed live in docs/build.ts from formats-catalog.json's dir fields, so no string in this file may hard-code one.",
-  "lead": "Lolly दर्जनों स्रोत फ़ॉर्मैट पढ़ता है और दर्जनों और रेंडर करता है — यहाँ पूरा सेट है, जो इस आधार पर समूहित है कि हर एक क्या है। {roundtrip} वाले पढ़े *और* लिखे जाते हैं, इसलिए वे बीच में एक ही बार बैठते हैं।",
+  "lead": "Lolly दर्जनों स्रोत फ़ॉर्मैट पढ़ता है और दर्जनों और रेंडर करता है - यहाँ पूरा सेट है, जो इस आधार पर समूहित है कि हर एक क्या है। {roundtrip} वाले पढ़े *और* लिखे जाते हैं, इसलिए वे बीच में एक ही बार बैठते हैं।",
   "ingestsLabel": "इनजेस्ट",
   "ingestsCount": "अंदर",
   "exportsLabel": "एक्सपोर्ट",

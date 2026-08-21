@@ -298,7 +298,7 @@ const MASTHEADS: Record<string, string> = {
   // Artwork by GLM-5.2 (z.ai), Andy-directed.
   'collaborate': 'collaborate',
   // The five below: AI-directed (Claude Opus 4.8) art by Claude Fable 5 / Sonnet 5.
-  'quickstart': 'quickstart',   // facet on-ramp — sparse inputs clicking into a whole (Fable 5)
+  'quickstart': 'quickstart',   // facet on-ramp - sparse inputs clicking into a whole (Fable 5)
   'builders': 'builders',       // one module stamping into an aligned grid of copies (Sonnet 5)
   'operators': 'operators',     // governed deploy-wave across a framed grid (Sonnet 5)
   'url-mode': 'url-mode',        // one encoded line resolving to an exact render (Fable 5)
@@ -312,7 +312,7 @@ const MASTHEADS: Record<string, string> = {
   'content-credentials-engineering': 'content-credentials-engineering', // nested manifest container tree (Fable 5)
   'server-surface': 'server-surface',       // negative space, one minimal footprint (Sonnet 5)
   'parser-inventory': 'parser-inventory',   // chaotic bytes tamed into ordered rows (Fable 5)
-  'beatrice-warde': 'beatrice-warde',       // the Crystal Goblet — clarity through glass (Sonnet 5)
+  'beatrice-warde': 'beatrice-warde',       // the Crystal Goblet - clarity through glass (Sonnet 5)
   'mcp': 'mcp',                             // one port, bidirectional call-and-return (Fable 5)
 };
 
@@ -842,7 +842,7 @@ function shotSize(file: string, from?: string): { w: number; h: number } | null 
     return null;
   })();
   shotSizeCache.set(path, out);
-  if (!out) console.warn(`⚠  ${path}: could not read intrinsic size — the image will not reserve space and may not settle`);
+  if (!out) console.warn(`⚠  ${path}: could not read intrinsic size - the image will not reserve space and may not settle`);
   return out;
 }
 
@@ -2395,15 +2395,15 @@ const CSS = `
 @font-face{font-family:'SUSE';src:url('/fonts/SUSE-Italic[wght].woff2') format('woff2-variations'),url('/catalog/fonts/webfonts/SUSE-Italic[wght].woff2') format('woff2-variations');font-weight:100 900;font-style:italic;font-display:swap}
 @font-face{font-family:'SUSE Mono';src:url('/fonts/SUSEMono[wght].woff2') format('woff2-variations'),url('/catalog/fonts/webfonts/SUSEMono[wght].woff2') format('woff2-variations');font-weight:100 900;font-style:normal;font-display:swap}
 @font-face{font-family:'SUSE Mono';src:url('/fonts/SUSEMono-Italic[wght].woff2') format('woff2-variations'),url('/catalog/fonts/webfonts/SUSEMono-Italic[wght].woff2') format('woff2-variations');font-weight:100 900;font-style:italic;font-display:swap}
-/* Cinzel (SIL OFL 1.1, see /info/fonts/Cinzel-OFL.txt) — Roman inscriptional capitals,
+/* Cinzel (SIL OFL 1.1, see /info/fonts/Cinzel-OFL.txt) - Roman inscriptional capitals,
    the same source Gill drew Perpetua Titling from. Self-hosted, not fetched from
    fonts.gstatic.com: a third-party request on every docs page would contradict what
    server-surface.md tells the reader. Latin subset only, 26 KB, loaded on one page. */
 @font-face{font-family:'Cinzel';src:url('/info/fonts/cinzel-latin.woff2') format('woff2-variations');font-weight:400 900;font-style:normal;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+2000-206F,U+2122,U+2212}
 ${APP_TOKENS}
 /* Bridge: the docs' legacy token names, expressed in the app's design tokens above, so the
-   whole docs stylesheet follows the app's [data-theme] light/dark/brand system and — inside
-   the app shell — the active brand. Neutrals/surfaces map cleanly; the ACCENT (--green ->
+   whole docs stylesheet follows the app's [data-theme] light/dark/brand system and - inside
+   the app shell - the active brand. Neutrals/surfaces map cleanly; the ACCENT (--green ->
    --primary) is the one design choice to review: the app's primary is deep teal in light,
    pine green in dark/brand, so light-mode links become teal rather than green. */
 :root{
@@ -2417,7 +2417,7 @@ ${APP_TOKENS}
   --light:hsl(var(--primary)/0.4);
   --red:hsl(var(--destructive));
   /* The deep, ALWAYS-DARK marketing-band / chrome surface (nav, hero, platform, assure,
-     about, everywhere, pathways). It must stay dark in EVERY theme — unlike --background/
+     about, everywhere, pathways). It must stay dark in EVERY theme - unlike --background/
      --card which flip light in the light theme, and unlike --primary which goes pine-green
      in dark/brand. Default is the SUSE deep teal (= the old #0c322c); brand-vars.ts will
      override it per active brand in the app shell (M2) so a self-hosted org's dark bands
@@ -2435,7 +2435,7 @@ ${APP_TOKENS}
   --on-band-dark:0 0% 100%;
   /* The always-BRIGHT accent that rides on --band-dark for CTAs on the dark chrome (the
      nav "Launch App" pill). Band-invariant like the pair above: the nav is dark in every
-     theme, so its CTA must POP in every theme — it can't borrow --primary, which goes deep
+     theme, so its CTA must POP in every theme - it can't borrow --primary, which goes deep
      teal in the LIGHT theme and would sink the button into the dark band. Default is the
      pine green (= dark/brand --primary, the old bright SUSE green); brand-vars.ts overrides
      it per active brand in the app shell. Paired with --band-dark as its ink (dark-on-green,
@@ -2470,19 +2470,19 @@ strong{font-weight:600}
 /* Nav */
 nav{display:flex;align-items:center;gap:.25rem;padding:0 1.5rem;height:3.75rem;background:transparent;position:fixed;width:100%;top:0;z-index:100;overflow-x:auto;transition:background .25s}
 nav.nav-solid{background:hsl(var(--band-dark))}
-/* On-page quick nav — a sticky jump bar under the top nav, on the landing only. */
+/* On-page quick nav - a sticky jump bar under the top nav, on the landing only. */
 html{scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 section[id]{scroll-margin-top:6.4rem}
 /* The nav sits on #0c322c in BOTH themes (nav.nav-solid, and the dark hero on the
    landing page), so its text needs a fixed light colour. It used var(--pale),
-   which the dark theme redefines to #0d2419 — near-identical to that background,
+   which the dark theme redefines to #0d2419 - near-identical to that background,
    about 1.1:1, so the wordmark disappeared in dark mode. Every other nav control
    already uses a literal white for this reason. */
 .brand{display:inline-flex;align-items:center;gap:.5rem;font-weight:800;color:hsl(var(--on-band-dark));font-size:1.05rem;white-space:nowrap;margin-right:.75rem;letter-spacing:-.01em;text-transform:uppercase}
 .brand:hover{color:var(--light);text-decoration:none}
 .brand-icon{width:1.5rem;height:1.5rem;border-radius:5px;flex-shrink:0;object-fit:contain}
-/* Draft marker in the nav. English pages only (see buildNav) — the translated
+/* Draft marker in the nav. English pages only (see buildNav) - the translated
    pages are a fallback to English source anyway, and a red pill nobody can read
    in their own language is a worse signal than none. flex:none so the scrolling
    nav can never squeeze it to unreadable. */
@@ -2571,14 +2571,14 @@ ${LANDING_CSS}
 .sidebar-label:first-child{margin-top:0}
 .sidebar-home{display:block;font-size:.8125rem;color:var(--muted)!important;margin-bottom:1rem;padding:0!important}
 .sidebar-home:hover{color:var(--green)!important;background:none!important}
-/* Docs search — in the TOPBAR, not the rail. It sits with the other whole-site
+/* Docs search - in the TOPBAR, not the rail. It sits with the other whole-site
    controls (language, theme, launch) because it acts on the whole site: the rail
    answers "what is there", the box answers "where is the thing I already know I
    want", and that second question does not belong inside the first question's list.
    It is also where readers look for it.
 
    Logical properties throughout so the Arabic build mirrors without a second rule
-   set. The field lives inside a fixed-height (3.75rem) nav on purpose — .docs-sidebar
+   set. The field lives inside a fixed-height (3.75rem) nav on purpose - .docs-sidebar
    pins its sticky top and height to that number, so this must not change it. */
 .docs-search{position:relative;flex:none;margin-inline-start:.25rem}
 .docs-search-input{inline-size:11rem;box-sizing:border-box;padding:.4rem .7rem;font:inherit;font-size:.8125rem;
@@ -2589,7 +2589,7 @@ ${LANDING_CSS}
 .docs-search-input:focus{outline:none;inline-size:15rem;background:rgba(255,255,255,.18);border-color:var(--green)}
 /* Only on genuinely small screens does the field collapse to a puck that opens on
    focus. The breakpoint is 560px, not the ~900px that looks natural in isolation,
-   because the nav sheds its whole link row at 1100px (see the hamburger block) —
+   because the nav sheds its whole link row at 1100px (see the hamburger block) -
    from there down to 560px the bar is just brand, search and three controls, so a
    readable field fits easily and shrinking it early would cost function for nothing.
    Below 560px the remaining controls do start to crowd, so it becomes a glyph. */
@@ -2600,7 +2600,7 @@ ${LANDING_CSS}
 }
 /* FIXED, not absolute: the nav is a horizontally scrolling flex bar, so an absolute
    panel would be clipped to a 3.75rem-tall strip and scroll away with the field.
-   Fixed escapes it (nothing on the ancestor chain establishes a containing block —
+   Fixed escapes it (nothing on the ancestor chain establishes a containing block -
    no transform, no filter, no backdrop-filter on nav, which is what would trap it),
    and the script positions it from the input's rect on scroll and resize.
 
@@ -2609,7 +2609,7 @@ ${LANDING_CSS}
    free to be wider than whatever it hangs from. */
 .docs-search-results{position:fixed;z-index:110;inline-size:min(30rem,calc(100vw - 2rem));max-height:min(60vh,28rem);overflow-y:auto;background:hsl(var(--popover));border:1px solid var(--border);border-radius:10px;box-shadow:0 10px 34px #00000026;padding:.25rem}
 /* A hit is explicitly a flex COLUMN rather than a block. It used to be a block that
-   had to out-specify the rail's .docs-sidebar a{display:flex} — and when that
+   had to out-specify the rail's .docs-sidebar a{display:flex} - and when that
    fight was lost the three spans became flex items in a ROW, so every result was
    three narrow columns of one-word-per-line text. The panel no longer lives in the
    rail, but declaring the axis means the layout cannot be decided by whichever
@@ -2666,15 +2666,15 @@ ${LANDING_CSS}
 [data-theme="dark"] .docs-sidebar a:hover:has(.sidebar-ic.is-inclusive),[data-theme="dark"] .docs-sidebar a.active:has(.sidebar-ic.is-inclusive),[data-theme="brand"] .docs-sidebar a:hover:has(.sidebar-ic.is-inclusive),[data-theme="brand"] .docs-sidebar a.active:has(.sidebar-ic.is-inclusive){background:rgba(244,114,182,.19);color:#ffc2dd}
 [data-theme="dark"] .docs-sidebar a:hover .sidebar-ic.is-ai,[data-theme="dark"] .docs-sidebar a.active .sidebar-ic.is-ai,[data-theme="brand"] .docs-sidebar a:hover .sidebar-ic.is-ai,[data-theme="brand"] .docs-sidebar a.active .sidebar-ic.is-ai{color:#cbbdff}
 [data-theme="dark"] .docs-sidebar a:hover .sidebar-ic.is-inclusive,[data-theme="dark"] .docs-sidebar a.active .sidebar-ic.is-inclusive,[data-theme="brand"] .docs-sidebar a:hover .sidebar-ic.is-inclusive,[data-theme="brand"] .docs-sidebar a.active .sidebar-ic.is-inclusive{color:#ffc2dd}
-/* Icon bullet lists (the <!--i:key--> md marker — policy pages). Logical
+/* Icon bullet lists (the <!--i:key--> md marker - policy pages). Logical
    properties so the Arabic build mirrors correctly. */
 .docs-content ul.icon-list{list-style:none;padding-inline-start:0;display:flex;flex-direction:column;gap:.9rem}
 .docs-content ul.icon-list>li.ic{display:flex;align-items:flex-start;gap:.75rem}
-/* Technology marks (the <!--l:key--> md marker — docs/logos.ts). Sized in em so a
+/* Technology marks (the <!--l:key--> md marker - docs/logos.ts). Sized in em so a
    mark tracks whatever text it sits in, capped so it cannot become an illustration,
    and nudged onto the baseline the way an inline image needs to be. Muted by default
    at the same weight the sidebar glyphs use: these are landmarks for the eye, not a
-   second reading of the sentence. Slightly OVER 1em (1.1) on purpose — these marks
+   second reading of the sentence. Slightly OVER 1em (1.1) on purpose - these marks
    are dense little pictures, and at exactly the type size they read as smudges.
 
    HEADINGS CARRY NO MARKS. A heading is the page's own name for a section and the
@@ -2682,7 +2682,7 @@ ${LANDING_CSS}
    Where a section really is about a technology, the marks go ABOVE it as a block
    (.doc-logo-block) instead, and the heading keeps its line to itself.
 
-   Colour is deliberately just currentColor at reduced opacity — no per-brand fills.
+   Colour is deliberately just currentColor at reduced opacity - no per-brand fills.
    The site colours exactly two glyph families on purpose (the AI and inclusive-design
    sidebar rows); twenty brand palettes down a build page would be a carnival, and
    every mark here is someone else's trademark, which is not ours to restyle. If one
@@ -2693,7 +2693,7 @@ ${LANDING_CSS}
 .docs-content td .doc-logo{opacity:.85}
 /* The block form (<!--lb:a b--> on its own line, before a major heading): the same
    marks given air and scale, so scrolling past one reads as arriving somewhere.
-   Centred, generous margin above and below, and still monochrome — the size is what
+   Centred, generous margin above and below, and still monochrome - the size is what
    makes it an event, not colour. Sized in px rather than em: this row belongs to the
    PAGE's rhythm, not to the type around it, and every block should be the same size
    on every page. */
@@ -2746,10 +2746,10 @@ ${LANDING_CSS}
    this one up with the column the article is about to start in makes the band feel
    structural instead of pasted on. Logical padding, so an RTL locale mirrors it.
 
-   isolation:isolate keeps the canvas's blend mode inside the band — without it the
+   isolation:isolate keeps the canvas's blend mode inside the band - without it the
    dark theme's color-dodge would reach the page behind. */
 .docs-masthead{position:relative;isolation:isolate;overflow:hidden;padding:calc(3.75rem + 3.25rem) 0 3rem;min-height:clamp(14rem,30vh,20rem);display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(180deg,var(--pale) 0%,var(--page) 100%)}
-/* The dark plate stays a PLATE — a green a couple of steps up from the page — because
+/* The dark plate stays a PLATE - a green a couple of steps up from the page - because
    color-dodge divides by the backdrop: over near-black (#061816) the chips resolve to
    near-black too and the field disappears. The gradient's last stop still reaches the
    page colour, so the band ends where the article begins. */
@@ -2764,7 +2764,7 @@ ${LANDING_CSS}
    the field MEETS the page, and the page's own theme rules already know that. */
 [data-theme="dark"] .docs-mast-canvas{mix-blend-mode:color-dodge;opacity:.6}
 /* Two scrims, both above the canvas and below the h1 (::before/::after are z-index 1,
-   the heading is 2). The first is legibility insurance — the heading is currentColor,
+   the heading is 2). The first is legibility insurance - the heading is currentColor,
    so decoration must never be allowed to eat its contrast; the second melts the band
    into the page it sits on, which at full bleed is the whole difference between a
    masthead and a banner. */
@@ -2785,7 +2785,7 @@ ${LANDING_CSS}
 @media(max-width:768px){.docs-masthead{padding:calc(3.75rem + 1.75rem) 0 1.75rem;min-height:9rem}.docs-mast-inner{padding-inline:1rem}}
 /* ── Banked masthead art (MASTHEADS + docs-art.ts) ────────────────────────────
    A signed artifact inlined in place of the chip canvas. SAME BAND: same padding,
-   min-height, scrims and hoisted h1 — the only thing that changes is what is painted
+   min-height, scrims and hoisted h1 - the only thing that changes is what is painted
    behind the heading, so a page that gains banked art does not also silently gain a
    different top. The art takes the canvas's z-index (0), under both scrims, so the
    heading's contrast is protected by the same two layers whatever the artwork does.
@@ -2793,26 +2793,26 @@ ${LANDING_CSS}
    width/height 100% on an SVG artifact's root rather than its own attributes: the
    band's height is the band's decision (it is furniture on a page, not a picture), and
    an SVG that keeps its own preserveAspectRatio then fills it the way it was drawn to.
-   A fragment (markup + script) sizes ITSELF inside this box — it brought its own CSS,
+   A fragment (markup + script) sizes ITSELF inside this box - it brought its own CSS,
    and a blanket rule here would fight it. */
 .docs-mast-art{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
 .docs-mast-art>svg{display:block;width:100%;height:100%}
 /* The credential is a mark on the ARTWORK, so it hangs off the band's own corner like a
-   screenshot's does — but the band is full-bleed, so it is inset to the same gutter the
+   screenshot's does - but the band is full-bleed, so it is inset to the same gutter the
    footer and nav use rather than sitting against the window edge. Above both scrims
    (z-index 3) or the melt gradient would fade the one line on the band that must stay
    legible; pointer-events are restored by .shot-cred-btn/.shot-cred-line themselves. */
 .docs-masthead--art .shot-cred--mast{inset-block-end:.8rem;inset-inline-end:1.2rem;z-index:3}
-/* A banked masthead carries a full claim — signer, file, kind, date, an AI pill and its
-   model, plus all three actions — which is far more than the one short row .shot-cred-row's
+/* A banked masthead carries a full claim - signer, file, kind, date, an AI pill and its
+   model, plus all three actions - which is far more than the one short row .shot-cred-row's
    nowrap was written for, so on the mast the line overflows its padded card and the facts
    row lands adrift. Same fix the asset/mascot/figure marks use: give the card room and let
    the row WRAP into a compact stack inside it, right-aligned to the anchored corner. */
 .docs-masthead--art .shot-cred--mast .shot-cred-line{max-width:min(30rem,calc(100vw - 3rem))}
 .docs-masthead--art .shot-cred--mast .shot-cred-row{flex-wrap:wrap}
-/* ── Figures (::: figure — a banked artifact in the text flow) ────────────────
+/* ── Figures (::: figure - a banked artifact in the text flow) ────────────────
    Content, not decoration: it sits in the column with the prose that argues with it,
-   and its caption is a real caption (the showcase's, which this deliberately matches —
+   and its caption is a real caption (the showcase's, which this deliberately matches -
    two inlined-vector blocks that read differently would be two grammars for one idea).
    The credential rides INSIDE the figcaption rather than on the artwork's corner: a
    figure's provenance is part of what the caption says. */
@@ -2835,7 +2835,7 @@ ${LANDING_CSS}
 .docs-figure figcaption .shot-cred-line{align-items:center;max-width:100%}
 .docs-figure figcaption .shot-cred-row{flex-wrap:wrap;justify-content:center}
 /* "Copy signed source" is a BUTTON among two links (it does something to the reader's
-   machine rather than going somewhere), so it is stripped back to look like them —
+   machine rather than going somewhere), so it is stripped back to look like them -
    the alternative, a link with a click handler, would lie to the keyboard and to the
    status bar about where it goes. */
 button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;font-size:.6875rem;
@@ -2873,7 +2873,7 @@ button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;f
    NO scale, on purpose: an <img> of an SVG is rasterised by Blink at the
    composited scale, so a transform-SCALED shot goes soft DURING the motion and
    snaps crisp only at rest. Since the whole point of these shots is that they are
-   vector — razor-sharp at any size — the settle only translates and fades; it
+   vector - razor-sharp at any size - the settle only translates and fades; it
    never scales, so the artwork stays crisp through the entire motion. The
    showcase block below makes the vector argument outright (it animates real
    geometry). */
@@ -2890,7 +2890,7 @@ button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;f
     transition:opacity .5s ease,transform .75s cubic-bezier(.16,.84,.3,1)}
   /* Every rule that undoes the start state carries the SAME .shots-motion
      qualifier, so it matches the (0,2,0) above. A bare .shot--in here is
-     (0,1,0) and loses to the hidden state — which would leave every screenshot
+     (0,1,0) and loses to the hidden state - which would leave every screenshot
      on the site invisible forever. */
   .shots-motion .shot--in{opacity:1;transform:none}
   .shots-motion .shot>img{transition:box-shadow .75s cubic-bezier(.16,.84,.3,1)}
@@ -2904,7 +2904,7 @@ button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;f
    pills plus two actions.
 
    NO JavaScript is required for the reveal, and that is a deliberate a11y choice.
-   The line is never display:none — it is opacity 0 with pointer-events off — so it
+   The line is never display:none - it is opacity 0 with pointer-events off - so it
    stays in the accessibility tree and in tab order, and :focus-within brings it
    into view the instant a keyboard reaches one of its links. A hidden-until-JS
    popover would have had to lie about aria-expanded in the no-JS case; this cannot.
@@ -2920,7 +2920,7 @@ button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;f
    would fire whenever the pointer crossed the bottom of the shot. */
 /* align-items:flex-END, not center: the line is a flex SIBLING of the glyph and is
    opacity-0 (never display:none), so it keeps its box in the layout at rest. Under
-   center a taller line — which is exactly what the second, anatomy row makes it —
+   center a taller line - which is exactly what the second, anatomy row makes it -
    would re-centre the glyph upward off its anchored corner, on every shot, expanded or
    not. Bottom-aligning pins the glyph to inset-block-end regardless of how tall the
    invisible line beside it is, so the resting mark is identical whether or not a shot
@@ -2929,13 +2929,13 @@ button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;f
   display:flex;align-items:flex-end;justify-content:flex-end;gap:.4rem;flex-direction:row-reverse;
   width:max-content;max-width:min(28rem,calc(100vw - 3rem));pointer-events:none}
 /* Quiet by COLOUR and size, never by transparency. This mark used to rest at
-   opacity:.34, which faded the glyph's strokes along with its puck — so the ripple
+   opacity:.34, which faded the glyph's strokes along with its puck - so the ripple
    path dissolved into whatever the screenshot's own corner happened to be and, at
    1.4rem, read as a smudge rather than a mark. A credential nobody can make out is
    not discreet, it is decoration.
 
    So: the puck stays opaque enough to GUARANTEE the glyph's contrast whatever sits
-   behind it (screenshot corners are unpredictable — a white card, a dark timeline, a
+   behind it (screenshot corners are unpredictable - a white card, a dark timeline, a
    photo), and the glyph is muted against that puck instead of against the shot. Rest
    is legible; hover only sharpens it. */
 .shot-cred-btn{display:grid;place-items:center;width:1.4rem;height:1.4rem;flex:none;padding:0;
@@ -2966,7 +2966,7 @@ button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;f
 .shot-cred[data-open] .shot-cred-line{opacity:1;pointer-events:auto;transform:none}
 /* The "try it" offer under a shot. In the FLOW and OUTSIDE the .shot wrapper, not in
    the overlay: the credential is a mark on the artwork, this is a line of the page, and
-   they must not compete. Outside matters structurally too — .shot-cred is anchored to
+   they must not compete. Outside matters structurally too - .shot-cred is anchored to
    the wrapper's bottom edge, so a link inside it pushes that edge down and the mark
    lifts off the artwork's corner onto the caption. Centred under the picture (the shot
    itself is a centred fit-content box), quiet until approached. */
@@ -2976,7 +2976,7 @@ button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;f
 .shot-try:hover,.shot-try:focus-visible{color:var(--green);text-decoration:underline}
 /* A PAGE ASSET's credential (the AI stance hero): open at rest, because the file's
    history is what the surrounding page is arguing about rather than a footnote to a
-   screenshot. Same mark, same line, same two links — only the resting state differs,
+   screenshot. Same mark, same line, same two links - only the resting state differs,
    so a reader who never hovers still sees who signed the picture they are looking at. */
 .shot-cred--asset .shot-cred-line{opacity:1;pointer-events:auto;transform:none}
 /* Full column width, and nothing else: page artwork sizes itself (the hero is
@@ -2985,8 +2985,8 @@ button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;f
    zero, which is the other reason this is not a .shot. */
 .asset-cred{display:block;position:relative;width:100%}
 .asset-cred>img{display:block;width:100%;height:auto;margin:1em auto}
-/* A page-asset credential rests OPEN on a full-width hero, so — unlike a screenshot's
-   caption, which deliberately overhangs a narrow crop (see the .shot-cred notes above) —
+/* A page-asset credential rests OPEN on a full-width hero, so - unlike a screenshot's
+   caption, which deliberately overhangs a narrow crop (see the .shot-cred notes above) -
    it must stay INSIDE the frame: there is a whole column of room, so a spill past the
    edge like the one on /input-not-impersonation is just a bug. Same fix the mascot credit
    uses a few rules down: clamp the line to the artwork, and let the rows WRAP into a
@@ -2996,17 +2996,17 @@ button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;f
 .asset-cred .shot-cred-line{max-width:18em}
 .asset-cred .shot-cred-row{flex-wrap:wrap}
 /* not-a-pipe keeps the DEFAULT centred, 40em-capped image (see .docs-content img above),
-   so its .asset-cred wrapper is the full column — wider than the picture — and a mark
+   so its .asset-cred wrapper is the full column - wider than the picture - and a mark
    anchored to the wrapper's edge hangs off into the margin. Hug the wrapper to the same cap
    so the credential aligns to the artwork's real edge. (the-flood escapes this only because
    it overrides its image to width:100% further down, filling the wrapper.) */
 .asset-cred[data-shot="/info/not-a-pipe.webp"]{max-width:min(100%,40em);margin-inline:auto}
 /* Its caption "Ceci n'est pas une pipe" runs along the bottom edge, and that writing is the
-   whole point of the picture — so this hero's mark sits mid-height rather than in the bottom
+   whole point of the picture - so this hero's mark sits mid-height rather than in the bottom
    corner where it would cover the words it is arguing about. */
 .asset-cred[data-shot="/info/not-a-pipe.webp"] .shot-cred{inset-block-end:50%}
 /* The line is a stack of ROWS, and a shot with no readable file has exactly one of
-   them — so the column above is byte-identical to the single row it replaced. The
+   them - so the column above is byte-identical to the single row it replaced. The
    second row (what the file is made of) only ever appears inside the expanded line,
    which is the only state the line has: at rest the whole thing is opacity 0. The
    glyph itself does not move when the second row is present, because .shot-cred
@@ -3017,19 +3017,19 @@ button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;f
    wrap the one-row rule was written to prevent. */
 .shot-cred-row{display:flex;align-items:center;gap:.3rem;flex-wrap:nowrap;justify-content:flex-end}
 /* The line's pills are chips on a chip, so they sit a step quieter than the ones
-   the prose uses — and they must not inherit the docs paragraph line-height, which
+   the prose uses - and they must not inherit the docs paragraph line-height, which
    would make the row twice as tall as the glyph beside it. */
 .shot-cred-row>*{flex:none}
 .shot-cred-line .prov-pill{font-size:.6875rem;line-height:1.3;padding:.1em .5em;margin:0;white-space:nowrap}
 .shot-cred-line .prov-seal{width:.8em;height:.8em}
 .shot-cred-do{font-size:.6875rem;font-weight:600;white-space:nowrap;padding:.1em .35em;border-radius:.6em}
 .shot-cred-do:hover{background:var(--pale);text-decoration:underline}
-/* An AI declaration is not a detail to be discovered — if a shot ever carries one,
+/* An AI declaration is not a detail to be discovered - if a shot ever carries one,
    its mark arrives already at full contrast and wearing the brand ring, so it reads
    as a statement rather than as the same quiet glyph every other shot has. */
 .shot-cred--ai .shot-cred-btn{color:hsl(var(--on-band-dark));background:hsl(var(--band-dark));box-shadow:0 0 0 2px var(--green)}
-/* Dark mode: same contract, inverted. The puck is near-opaque for the same reason —
-   a dark screenshot's corner is not reliably darker than the puck — and the glyph is
+/* Dark mode: same contract, inverted. The puck is near-opaque for the same reason -
+   a dark screenshot's corner is not reliably darker than the puck - and the glyph is
    a muted PALE against it, not a full-white one, so it stays quiet without becoming
    the invisible stroke this used to be. */
 [data-theme="dark"] .shot-cred-btn{color:#93a8a0;background:hsl(var(--popover) / 0.9);box-shadow:0 1px 3px #0006}
@@ -3046,13 +3046,13 @@ button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;f
   .shot-cred-line{max-width:100%;transform:translateY(.4rem)}
 }
 
-/* ── Geometry showcase (::: showcase — one inlined vector shot) ─────────────
+/* ── Geometry showcase (::: showcase - one inlined vector shot) ─────────────
    Scroll drives --p from 0 to 1. Everything that moves is geometry:
 
-     camera  the svg viewBox is lerped from a centre crop out to full extent (JS —
+     camera  the svg viewBox is lerped from a centre crop out to full extent (JS -
              viewBox is an attribute, not a CSS property). The captured strokes are
              non-scaling-stroke, so they stay hairline all the way in. No re-raster,
-             no blur, at any zoom — the whole point of the block.
+             no blur, at any zoom - the whole point of the block.
      ink     grayscale(1 - p): the drawing arrives as ink and takes on its colour.
              A filter function list CAN transition, unlike the url() case above.
      order   each leaf shape appears when p passes its share of the paint order, so
@@ -3062,7 +3062,7 @@ button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;f
    --p is set by JS, so with no JS the fallbacks below (p:1) render the finished
    artwork at full extent, in colour, every layer visible. */
 .showcase{--p:1;margin:2.5rem auto;max-width:100%;width:fit-content}
-/* The radius lives on the artwork, NOT as overflow:hidden on the stage — the stage
+/* The radius lives on the artwork, NOT as overflow:hidden on the stage - the stage
    also holds the credential line, which is allowed to extend past the artwork's
    edge, and a clipping stage would cut it off. */
 .showcase-stage{position:relative;border-radius:1.2em;
@@ -3070,7 +3070,7 @@ button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;f
 [data-theme="dark"] .showcase-stage{
   box-shadow:inset 0 0 0 1px hsl(var(--border)), 0 3px 8px #00000073, 0 6px 2em #0000004d}
 /* The <img> the build emits, and the live SVG that replaces it, must occupy the
-   same box — the swap happens under the reader's eyes and any size change would
+   same box - the swap happens under the reader's eyes and any size change would
    read as a jump rather than an upgrade. */
 .showcase-fallback,.showcase-art{display:block;width:min(100%,40em);height:auto;margin:0;border-radius:1.2em}
 .showcase-art{filter:grayscale(calc(1 - var(--p)))}
@@ -3088,7 +3088,7 @@ button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;f
   max-width:34em;margin-inline:auto}
 .showcase figcaption p{margin:0}
 @media(prefers-reduced-motion:reduce){
-  /* No camera, no ink phase, no stagger — the finished artwork, still. */
+  /* No camera, no ink phase, no stagger - the finished artwork, still. */
   .showcase{--p:1 !important}
   .showcase-art{filter:none}
   .showcase-art [data-sc-i]{opacity:1}
@@ -3102,7 +3102,7 @@ button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;f
 
    Ungated (no .shots-motion, no media query) so it holds with JS off, and scoped
    to .shot--dual so a shot with no twin is byte-identical to before. Each twin
-   carries its OWN credential line — two separately signed files. */
+   carries its OWN credential line - two separately signed files. */
 /* Every img rule here is qualified with the ELEMENT as well as the class: the base
    .docs-content img rule sets display:block at (0,1,1), so a bare .shot-alt (0,1,0)
    loses and BOTH twins render, one under the other. */
@@ -3116,7 +3116,7 @@ button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;f
    data tags in sentence order, so the hierarchy is carried by weight and fill, not
    by size: ACTORS solid and darkest, SIGNATURES outlined with a seal, then the
    mechanical detail (actions, filenames, sizes) quiet enough to skim past.
-   The paragraph stays ordinary inline text — a flex row would make every word
+   The paragraph stays ordinary inline text - a flex row would make every word
    between the pills its own flex item and strand the connecting commas. */
 .prov-pill{display:inline-block;border-radius:999px;padding:.16em .62em;font-size:.8125rem;
   line-height:1.4;margin:0 .08em;vertical-align:baseline}
@@ -3158,7 +3158,7 @@ button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;f
 
 /* The AI-stance hero photo carries a three-manifest C2PA chain (Google's two as
    ingredients, Lolly's own on top) that readers are invited to verify, so its
-   bytes are exactly what Lolly exported — never re-encode it in a build step.
+   bytes are exactly what Lolly exported - never re-encode it in a build step.
    Full column width: it is the page's one image and the argument's evidence. */
 .docs-content img[src*="the-flood"]{width:100%;max-width:100%;border-radius:1.2em;box-shadow:0 3px 6px #0002, 0 6px 2em #0001}
 .docs-content h2{font-size:1.5rem;font-weight:700;letter-spacing:normal;text-transform:none;border-top:1px solid var(--border);padding-top:2rem;margin-top:2.5rem;margin-bottom:.75rem;color:var(--dark)}
@@ -3170,7 +3170,7 @@ button.shot-cred-copy{border:0;background:none;padding:.1em .35em;font:inherit;f
    idea as section[id] on the landing page, with room for the heading's rule. */
 .docs-content h2[id],.docs-content h3[id],.docs-content h4[id]{scroll-margin-top:5.5rem}
 .docs-content ul,.docs-content ol{margin-bottom:1rem}
-/* ── "On this page" jump nav (long docs pages only — pageJumpNav) ─────────────
+/* ── "On this page" jump nav (long docs pages only - pageJumpNav) ─────────────
    Bottom-right, deliberately quiet: a 2.25rem disc that reads as page furniture
    until you want it. Logical inset so the Arabic build puts it in the corner an RTL
    reader reaches for. Tokens only (--text/--muted/--border/--pale, all redefined by
@@ -3256,7 +3256,7 @@ footer .founded-badge{margin-top:.5rem}
 .footer-sitemap a{display:flex;align-items:flex-start;gap:.45em;color:var(--muted);text-decoration:none;padding:.15rem 0 .15rem;line-height:2}
 .footer-sitemap a:hover{color:var(--green);text-decoration:underline}
 /* Every sitemap link opens with the SAME glyph the docs sidebar gives that page
-   (SIDEBAR_ICON — one page→icon mapping, both navs), so the landmark a reader
+   (SIDEBAR_ICON - one page→icon mapping, both navs), so the landmark a reader
    learned on the rail keeps working down here. Decorative: aria-hidden spans,
    sized in em to the footer's own text so rows and the smaller uppercase headings
    each get a matching icon from one rule. margin-top holds the 1.5em glyph on the
@@ -3268,8 +3268,8 @@ footer .founded-badge{margin-top:.5rem}
    the full enumeration: the overview never costs a row of its own, and the two or
    three columns a long pathway is split across all point their heading at the same
    hub. It keeps the heading's own weight and colour rather than the muted link
-   treatment two rules above — declared AFTER them so it wins without a specificity
-   fight — and takes the underline only on hover, so it reads as a heading first and
+   treatment two rules above - declared AFTER them so it wins without a specificity
+   fight - and takes the underline only on hover, so it reads as a heading first and
    a destination second. footer a{text-decoration:underline} is the rule overridden. */
 .sitemap-title{font-size:.6875rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text);font-weight:700;margin-bottom:.5rem;text-decoration:none}
 .footer-sitemap a.sitemap-title{color:var(--text)}
@@ -3300,7 +3300,7 @@ footer .founded-badge{margin-top:.5rem}
    navigation are described in one place. */
 .nav-mobile-page{display:none;margin-top:.75rem;padding-top:.75rem;border-top:1px solid rgba(255,255,255,.14)}
 .nav-mobile-title{color:var(--green);font-size:.8125rem;font-weight:700;letter-spacing:.02em;padding:0 .625rem .25rem}
-/* .55 not .42 — at 42% over the panel's #0c322c this computes to 3.7:1, under AA
+/* .55 not .42 - at 42% over the panel's #0c322c this computes to 3.7:1, under AA
    for 11px text. .55 clears 5.3:1 and still reads as a quieter tier than the
    links at .7. */
 .nav-mobile-label{font-size:.6875rem;text-transform:uppercase;letter-spacing:.1em;color:hsl(var(--on-band-dark) / .55);font-weight:700;margin:.75rem 0 .125rem;padding:0 .625rem}
@@ -3321,7 +3321,7 @@ footer .founded-badge{margin-top:.5rem}
    font-fallback margin. (The docs grid + content keep reflowing at 768px below.) */
 @media(max-width:1100px){
   nav{overflow-x:visible}
-  /* Collapse the desktop nav links into the hamburger — but NOT the search-result
+  /* Collapse the desktop nav links into the hamburger - but NOT the search-result
      anchors, which are also <a> inside <nav> (the results panel lives in .docs-search).
      Without the exemption this rule hid every hit, collapsing the results panel to an
      empty strip on any viewport ≤1100px, and neither the jump nav's section links
@@ -3338,7 +3338,7 @@ footer .founded-badge{margin-top:.5rem}
      on by the same breakpoint. */
   .docs-sidebar{display:none}
   .nav-mobile-page{display:block}
-  /* Top padding must still clear the 3.75rem FIXED nav — collapsing it with the
+  /* Top padding must still clear the 3.75rem FIXED nav - collapsing it with the
      side padding slid every page's h1 underneath the bar on phones. */
   .docs-content{padding:1.75rem 1rem 1.5rem}
   .docs-content.no-mast{padding-top:5.25rem}
@@ -3390,7 +3390,7 @@ footer .founded-badge{margin-top:.5rem}
 [data-theme="dark"] footer{border-top-color:var(--border)}
 [data-theme="dark"] .docs-content h1,[data-theme="dark"] .docs-content h2,[data-theme="dark"] .docs-content h3{color:var(--text)}
 [data-theme="dark"] th{color:var(--text)}
-/* Code on a dark ground (dark AND brand — brand is a dark-teal theme with no
+/* Code on a dark ground (dark AND brand - brand is a dark-teal theme with no
    [data-theme="brand"] overrides of its own, so it inherits the base rules; the
    base pre now uses hsl(var(--foreground)) so it is already legible, and these
    add the dark box + border for parity). Give inline code a dark surface + light
@@ -3401,14 +3401,14 @@ footer .founded-badge{margin-top:.5rem}
 [data-theme="dark"] .docs-content pre,[data-theme="brand"] .docs-content pre{background:hsl(var(--muted));color:var(--text);border:1px solid var(--border)}
 /* The Warde page sets its two verse blocks as an inscription rather than as code.
    Scoped to the page so no other fenced block is touched. Centred and letterspaced
-   because that is what the 1932 broadside and the 1940 bronze both do — the poem was
+   because that is what the 1932 broadside and the 1940 bronze both do - the poem was
    cut in capitals for a titling face, and reading it as a listing loses the shape. */
 .page-beatrice-warde .docs-content pre{font-family:'Cinzel',Georgia,serif;font-size:1.0625rem;line-height:2.05;letter-spacing:.055em;text-align:center;background:linear-gradient(#fbfaf7,#f4f2ec);color:#25313a;padding:2.5rem 1.5rem;border-radius:10px;box-shadow:inset 0 0 0 1px #0000000f,0 1px 2px #0000000a;white-space:pre-wrap;text-wrap:balance}
 .page-beatrice-warde .docs-content pre code{font-family:inherit;font-size:inherit;background:none;padding:0}
 [data-theme="dark"] .page-beatrice-warde .docs-content pre,[data-theme="brand"] .page-beatrice-warde .docs-content pre{background:linear-gradient(#12271d,#0d2016);color:#e8f0ea;box-shadow:inset 0 0 0 1px #ffffff14}
 .doc-audio{margin:0 0 .5rem;padding:0}
 .doc-audio audio{width:100%;height:40px;display:block}
-/* An audiogram MP4 is square (1080²) and would swamp the column at full width —
+/* An audiogram MP4 is square (1080²) and would swamp the column at full width -
    cap it and centre it, letting its own aspect ratio set the height. The dark
    fill matches the audiogram's own background so the poster-load gap isn't black. */
 .doc-video{margin:0 auto 1rem;max-width:min(420px,100%)}
@@ -3502,7 +3502,7 @@ const SHOT_MOTION_SCRIPT = `<script>(function(){
   function land(el){
     // The RENDERED image, which on a dual shot in dark mode is the second one.
     // Blink fetches display:none images too, so keying off the first would happen
-    // to work — and would be landing the motion on the wrong file's decode.
+    // to work - and would be landing the motion on the wrong file's decode.
     var imgs=el.querySelectorAll('img'),img=imgs[0];
     for(var k=0;k<imgs.length;k++){if(getComputedStyle(imgs[k]).display!=='none'){img=imgs[k];break;}}
     // Decoded already (cache) → settle now. Otherwise settle on load, so the
@@ -3534,7 +3534,7 @@ const SHOT_MOTION_SCRIPT = `<script>(function(){
 const SHOWCASE_SCRIPT = `<script>(function(){
   var els=document.querySelectorAll('.showcase');if(!els.length)return;
   if(window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;  // the <img> is already the finished state
-  var ZOOM=0.22;   // p=0 shows this fraction of each axis, centred — deep in the streets
+  var ZOOM=0.22;   // p=0 shows this fraction of each axis, centred - deep in the streets
   var items=[];
 
   // Swap the <img> for live SVG parsed from the same file. Only ever an upgrade:
@@ -3634,7 +3634,7 @@ const SHOWCASE_SCRIPT = `<script>(function(){
  * hover state.
  */
 const SHOT_CRED_SCRIPT = `<script>(function(){
-  // "Copy signed source" — the banked art's third action (plans/105 section 6). Fetches the
+  // "Copy signed source" - the banked art's third action (plans/105 section 6). Fetches the
   // SAME file the other two actions point at and puts its text on the clipboard, so a
   // reader can paste it straight into /verify's box and check the credential without
   // downloading anything. Wired FIRST, and independently of the reveal below: an
@@ -3852,7 +3852,7 @@ const CHIP_FIELD_JS = `
 window.__lollyChipField=function(canvas,opt){
   opt=opt||{};
   var ctx=canvas.getContext('2d');
-  // GENERATED at build time from docs/site/formats-catalog.json (chipExtensions()) —
+  // GENERATED at build time from docs/site/formats-catalog.json (chipExtensions()) -
   // every format the catalog says Lolly can WRITE. Not a hand list: the last one was
   // written when Lolly exported 27 formats and was still claiming 27 long after the
   // real answer had passed 40, because nothing failed when it fell behind.
@@ -4015,7 +4015,7 @@ window.__lollyChipField=function(canvas,opt){
     if(running) requestAnimationFrame(tick);
   }
 
-  // One frame, no loop — the reduced-motion rendering. The field still SAYS what it
+  // One frame, no loop - the reduced-motion rendering. The field still SAYS what it
   // says (formats, drifting); it just doesn't move while saying it.
   function paintOnce(){
     fill(true);
@@ -4127,7 +4127,7 @@ const DOCS_MASTHEAD_SCRIPT = `<script>${CHIP_FIELD_JS}(function(){
   function palette(){
     var th=document.documentElement.dataset.theme;
     var dark=th==='dark'||th==='brand';  // brand is a dark ground too
-    // Dark: the landing's own chip fill over the dark band, under color-dodge —
+    // Dark: the landing's own chip fill over the dark band, under color-dodge -
     // the same glow the front door has. Light: a mint chip on a near-white band,
     // normal blend, so the field reads as watermark rather than decoration.
     return dark
@@ -4175,7 +4175,7 @@ function load(){
   return pending;
 }
 
-// Every term must appear somewhere in the record — an AND, so adding a word
+// Every term must appear somewhere in the record - an AND, so adding a word
 // narrows rather than widens. Where it matched decides the rank: a heading beats
 // a page title beats body prose.
 function score(r,terms){
@@ -4193,7 +4193,7 @@ function score(r,terms){
 function close(){out.hidden=true;out.textContent='';active=-1;input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');}
 
 // The panel is position:fixed to escape the sidebar's scroll clipping, so it has
-// to be told where the input is — and told again whenever that moves. Clamped so
+// to be told where the input is - and told again whenever that moves. Clamped so
 // a narrow window can't push it off the inline edge.
 function place(){
   if(out.hidden)return;
@@ -5131,12 +5131,12 @@ function mastheadArt(slug: string, heading: string): string {
   if (!id) return '';
   const art = resolveDocsArt('mastheads', id, { dir: __dirname, lang: activeLang });
   if (!art) {
-    console.warn(`⚠  masthead: /${slug} maps to '${id}', which is not in docs/mastheads/ — the page keeps the default band`);
+    console.warn(`⚠  masthead: /${slug} maps to '${id}', which is not in docs/mastheads/ - the page keeps the default band`);
     return '';
   }
   const inlined = inlineDocsArt(art);
   if ('error' in inlined) {
-    console.warn(`⚠  masthead ${id}: ${inlined.error} — the page keeps the default band`);
+    console.warn(`⚠  masthead ${id}: ${inlined.error} - the page keeps the default band`);
     return '';
   }
   // Read from the SAME file that was just inlined (art.path), pointed at the same
@@ -5146,7 +5146,7 @@ function mastheadArt(slug: string, heading: string): string {
   // Renders anyway (art with no line is still art), but never silently: an unsigned
   // artifact in a bank whose whole premise is "banked art is credentialed art" is a
   // sign step that did not run, and the page gives the reader no way to notice.
-  if (!cred) console.warn(`⚠  masthead ${art.file}: no readable Content Credential — run 'node scripts/sign-docs-art.ts'`);
+  if (!cred) console.warn(`⚠  masthead ${art.file}: no readable Content Credential - run 'node scripts/sign-docs-art.ts'`);
   return mastheadArtBand({ art: inlined.html, heading, credential: cred });
 }
 
@@ -5672,7 +5672,7 @@ function writeInfoManifest(): void {
     // deliberately EXCLUDES from the default docs part (plan section 7): audio grows
     // linearly with pages × locales and must never silently fatten "Available
     // offline: Docs". Online playback still caches incidentally via the SW's
-    // lolly-info bucket. The player chunks live here too — the biggest one is
+    // lolly-info bucket. The player chunks live here too - the biggest one is
     // butterchurn, useless without the audio it visualises.
     else if (seg === 'audio' || /^\/info\/(docs-player[^/]*|audio-index\.json)$/.test(f.url)) audio.push(f);
     else if (localeDirs.has(seg)) (locales[seg] ??= []).push(f);

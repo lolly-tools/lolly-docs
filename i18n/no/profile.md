@@ -116,7 +116,7 @@ Fordi en profil er helt lokal, er den eneste måten å få den inn på en blank 
 
 Pakken er en enkel, selvstendig zip-fil, så den kan reise på **en hvilken som helst** måte - USB, AirDrop, en nettverksdeling, e-post til deg selv - og målet kan være helt offline. Hver del er sjekksummert, slik at en fil som er skadet under overføring, oppdages ved import i stedet for å bli gjenopprettet halvveis ødelagt. Import **slår sammen** (profil/økt/bilde med samme navn overskrives; alt annet beholdes), så den sletter aldri et mål som allerede er i bruk.
 
-Det som ikke følger med: katalog­mellomlageret (det laster seg ned på nytt på den nye enheten) og selve verktøyene (antas allerede å være til stede).
+Det som ikke følger med: katalogmellomlageret (det laster seg ned på nytt på den nye enheten) og selve verktøyene (antas allerede å være til stede).
 
 For den eksakte pakkestrukturen, versjonspolicyen og integritetsreglene, se **[Dataoverføring](/info/data-transfer.html)**; for gjennomgangen fra start til slutt, **[Bruke Lolly → Flytte til en annen enhet](/info/using.html#moving-to-another-device)**.
 

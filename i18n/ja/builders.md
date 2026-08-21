@@ -12,8 +12,8 @@ Lolly はプラットフォームに依存しない**エンジン**であり、�
 
 
 
-- **[Overview](/info/overview.html)** — Lolly が存在する理由、エンジン/シェル/ツールの分離、ケイパビリティブリッジ、そして確定したアーキテクチャ上の方針について。
-- **[Design Tokens](/info/design-tokens.html)** — ブランドが表現される DTCG トークンモデルと、ツールがそれをどのように利用するかについて。
+- **[Overview](/info/overview.html)** - Lolly が存在する理由、エンジン/シェル/ツールの分離、ケイパビリティブリッジ、そして確定したアーキテクチャ上の方針について。
+- **[Design Tokens](/info/design-tokens.html)** - ブランドが表現される DTCG トークンモデルと、ツールがそれをどのように利用するかについて。
 
 ## ツールを作成する
 
@@ -25,24 +25,24 @@ Lolly はプラットフォームに依存しない**エンジン**であり、�
 
 ![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-d3-sections)
 
-- **[Authoring Tools](/info/authoring-tools.html)** — マニフェスト、テンプレート、スタイル、フック、コンポジション、公開までを網羅した完全ガイド。
-- **[Authoring Assets](/info/authoring-assets.html)** — カタログアセット、ティア、ロケール、パレット、テーマ対応アイコン、フォントについて。
-- **[Host API](/info/host-api.html)** — すべてのツールが実装対象とする `HostV1` ケイパビリティブリッジ(ツールから見える唯一の API)について。
-- **[URL Mode](/info/url-mode.html)** — あらゆる入力を URL パラメータとして表現する方法。予約パラメータ、コンパクトエンコーディング、パックドリンクについて。
+- **[Authoring Tools](/info/authoring-tools.html)** - マニフェスト、テンプレート、スタイル、フック、コンポジション、公開までを網羅した完全ガイド。
+- **[Authoring Assets](/info/authoring-assets.html)** - カタログアセット、ティア、ロケール、パレット、テーマ対応アイコン、フォントについて。
+- **[Host API](/info/host-api.html)** - すべてのツールが実装対象とする `HostV1` ケイパビリティブリッジ(ツールから見える唯一の API)について。
+- **[URL Mode](/info/url-mode.html)** - あらゆる入力を URL パラメータとして表現する方法。予約パラメータ、コンパクトエンコーディング、パックドリンクについて。
 
 ## 実行と統合
 
-- **[CLI](/info/cli.html)** — ヘッドレスレンダリング。GUI と同じレンダリングパスを、`--foo=bar` という argv で駆動します。
-- **[TUI](/info/tui.html)** — 対話型のターミナルシェル。
-- **[MCP Server](/info/mcp.html)** — AI エージェントがツールを発見し実行できるようにするネイティブエンドポイント。
-- **[AI Agents](/info/ai-agents.html)** — モデルから Lolly を操作する方法:URL がそのまま API になります。
-- **[Chrome Extension](/info/extension.html)** — ライブ URL を再利用可能なアセットとしてキャプチャします。
+- **[CLI](/info/cli.html)** - ヘッドレスレンダリング。GUI と同じレンダリングパスを、`--foo=bar` という argv で駆動します。
+- **[TUI](/info/tui.html)** - 対話型のターミナルシェル。
+- **[MCP Server](/info/mcp.html)** - AI エージェントがツールを発見し実行できるようにするネイティブエンドポイント。
+- **[AI Agents](/info/ai-agents.html)** - モデルから Lolly を操作する方法:URL がそのまま API になります。
+- **[Chrome Extension](/info/extension.html)** - ライブ URL を再利用可能なアセットとしてキャプチャします。
 
 ## 出荷と運用
 
-- **[Build Guide](/info/build-guide.html)** — CLI、TUI、デスクトップ、モバイルなど、あらゆるターゲットのビルド方法。
-- **[Deployment](/info/deployment.html)** — web アプリ、各アプリ、バックエンドサービスについて。それぞれがどこで動作するか。
-- **[Configuration](/info/configuration.html)** — プロファイル、ブランドパック、ケイパビリティゲーティング、フィーチャーフラグ、カタログ検証について。
+- **[Build Guide](/info/build-guide.html)** - CLI、TUI、デスクトップ、モバイルなど、あらゆるターゲットのビルド方法。
+- **[Deployment](/info/deployment.html)** - web アプリ、各アプリ、バックエンドサービスについて。それぞれがどこで動作するか。
+- **[Configuration](/info/configuration.html)** - プロファイル、ブランドパック、ケイパビリティゲーティング、フィーチャーフラグ、カタログ検証について。
 
 ## 信頼とデータ
 
@@ -50,6 +50,6 @@ Lolly はプラットフォームに依存しない**エンジン**であり、�
 
 ![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-rights-fields)
 
-- **[Content Credentials Identity](/info/content-credentials-identity.html)** — オンデバイスの C2PA 向けに CA が発行する署名について。エンジンの契約とオペレーター向けランブック。
-- **[Data Transfer](/info/data-transfer.html)** — `lolly-backup` バンドルについて:エンベロープ、整合性、シェル間での保証。
-- **[About](/info/about.html)** — プロジェクト、そのライセンス境界、リポジトリについて。
+- **[Content Credentials Identity](/info/content-credentials-identity.html)** - オンデバイスの C2PA 向けに CA が発行する署名について。エンジンの契約とオペレーター向けランブック。
+- **[Data Transfer](/info/data-transfer.html)** - `lolly-backup` バンドルについて:エンベロープ、整合性、シェル間での保証。
+- **[About](/info/about.html)** - プロジェクト、そのライセンス境界、リポジトリについて。
