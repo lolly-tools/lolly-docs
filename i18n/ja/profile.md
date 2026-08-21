@@ -19,7 +19,7 @@
 | **Accessibility** | 4つの快適設定 - *Reduce motion*、*Hide colourful previews*、*High contrast*、*Large text* - はプロフィールレコードに保持されるため、プロフィールのエクスポートにも付随します。[Accessibility](#accessibility)を参照してください。 |
 | **Your work** | 保存されたセッション(サムネイル付き) - **[Projects](/info/using.html)**内のネストされたフォルダに整理されます - および**My images**ライブラリとローカルのアクティビティ統計。すべてこのプロフィールに紐づきます。 |
 
-![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&walker=1&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
 
 ![Profile画面 - 氏名、連絡先、任意のヘッドショット、各種設定](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&dark=1&filename=profile-details)
 
@@ -35,7 +35,7 @@
 
 ### 個人として
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
 
 ![ヘッドショットのコントロール。写真をアップロードするまでは空で、アップロード後はこの端末に保存される](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
 
@@ -53,7 +53,7 @@ Lollyでは、その役割は単に**手元に置いておく別のプロフィ�
 
 どの瞬間でも、あるインストールには**1つのアクティブなプロフィール**しかありません - それが今この瞬間にツールから見えている詳細情報です。アプリ内にプロフィール切り替え機能はありません。その代わり、各プロフィールは**持ち運び可能なバンドル**(単一の`.zip`、[下記](#moving-a-profile-to-a-new-device)を参照)です。これは新しい端末への移行と意図的に同じ仕組みです - プロフィールは保存、コピー、読み込みができる1つのファイルです。
 
-![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
 
 - <!--i:trash--> **最もクリーンな切り替え方:** **Profile → Storage → Clear all my data**を実行し、その後、移行先のコンテキスト用のバンドルを**Import**します。これで、そのプロフィールとして純粋に作成する状態になります。
 - <!--i:layers--> **レイヤー化:** 先にクリアせずにインポートすると**マージ**されます - インポートされたプロフィール、セッション、画像は既存のものの上に重なり、同名のものは置き換えられ、それ以外は残ります。あるチームの保存済みセッションを自分の環境に取り込むのに便利ですが、明確な役割の境界が必要な場合には向きません。
@@ -104,7 +104,7 @@ Lollyは利用しながらキャッシュを蓄積していきますが、この
 
 ## プロフィールを新しいデバイスへ移行する
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls)
 
 プロフィールは完全にローカルなものであるため、まっさらなインストール--新しいノートPC、リセットしたばかりのブラウザ、同僚のマシン、オフラインの端末--にそれを持ち込む唯一の方法は、**ファイルを運ぶこと**です。ログインによって復元されることはありません。それこそが重要な点であり、そもそもあなたのデバイスから何かが外に出たことは一度もないのです。
 
@@ -122,7 +122,7 @@ Lollyは利用しながらキャッシュを蓄積していきますが、この
 
 ## ツールがプロフィールをどう使うか
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&dark=1&filename=pd-use-my-details)
 
 ツールは、明示的に紐づけるよう作られたプロフィールのフィールドを*事前入力*するだけです。
 

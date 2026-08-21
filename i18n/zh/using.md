@@ -393,7 +393,7 @@ Lolly 力求让每个人用起来都舒适。界面支持键盘导航，自定�
 
 对高级用户而言，**批量**（从工具库中链接进入，由默认开启的 Pro 功能开关控制）可以一次渲染许多变体--一个网格，每一行是一组输入项，一起导出。非常适合把一张卡片本地化成十几种语言，或一次生成所有尺寸变体。可以手动输入、直接从电子表格粘贴，或导入 CSV（也可以导出一份）来填充各行，并为每一行分别设置格式、尺寸和输出文件名。整个网格可以存成一个具名的**批量会话**，从工具库重新打开，并把每一行下载为一个 `.zip`。
 
-![批量工具栏--zip 名称、单位、DPI 以及每一行继承的格式，右侧是会话和渲染](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
+![批量工具栏--zip 名称、单位、DPI 以及每一行继承的格式，右侧是会话和渲染](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
 
 批量用于一次生成**同一个模板的许多变体**。若要重新渲染你**已经保存**的会话，请使用**项目 → 渲染文件夹 / 渲染所选内容**（见上文）--无需 Pro。
 

@@ -393,7 +393,7 @@ Consulta **[Esportazione e formati](/info/exporting.html)** per la storia comple
 
 Per gli utenti avanzati, **Batch** (collegato dalla galleria, protetto dietro il feature flag Pro, attivo per impostazione predefinita) renderizza molte varianti insieme - una griglia dove ogni riga è un insieme di input, esportati tutti insieme. Ideale per localizzare una card in una dozzina di lingue o generare ogni variante di dimensione in un solo passaggio. Compila le righe digitando, incollando direttamente da un foglio di calcolo o importando un CSV (puoi anche esportarne uno), e imposta formato, dimensione e nome del file di output per ogni riga. Salva un'intera griglia come **sessione batch** con nome che si riapre dalla galleria, e scarica ogni riga come un unico `.zip`.
 
-![La barra degli strumenti batch - nome dello zip, unità, DPI e il formato che ogni riga eredita, con Sessions e Render a destra](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
+![La barra degli strumenti batch - nome dello zip, unità, DPI e il formato che ogni riga eredita, con Sessions e Render a destra](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
 
 Batch serve per generare **molte varianti di un template** in una volta sola. Per rirenderizzare sessioni che hai **già salvato**, usa **Progetti → Renderizza cartella / Renderizza selezione** (più sopra) - non serve Pro.
 

@@ -167,7 +167,7 @@ Select a clip and the inspector gives you the same edits as numbers: **Length**,
 
 A few limits to keep in mind: a sequence is capped at one hour, GIF and animated PNG buffer their frames so they stay short, audio is silent on a clip whose speed isn't ×1 (there's no time-stretching yet) and **Record live** is hidden here because the compositor is the better path.
 
-**Beyond presets: keyframes, depth and a camera.** A transition animates a clip as it arrives and leaves. To pose a box *within* a clip - drift it, fade it, blur it, lift it off the page and settle it back - add keyframes: select the clip, press **+Keyframe** (the diamond in the timeline's tool cluster, the diamond on the canvas object bar or `K`) and the playhead's position decides which pose your next edit writes. The same machinery gives every timed composition a **camera** that pushes in, pans across and pulls focus and turns one flat SVG into a stack of layers you can fly between. **[Animating](/info/animating.html)** is the full guide.
+**Beyond presets: keyframes, depth and a camera.** A transition animates a clip as it arrives and leaves. To pose a box *within* a clip - drift it, fade it, blur it, lift it off the page and settle it back - add keyframes: select the clip, press **+Keyframe** (the diamond in the timeline's tool cluster, the diamond on the canvas object bar or `K`) and the playhead's position decides which pose your next edit writes. The same keyframe system gives every timed composition a **camera** that pushes in, pans across and pulls focus and turns one flat SVG into a stack of layers you can fly between. **[Animating](/info/animating.html)** is the full guide.
 
 The Design tool has the same timeline, so you can time a layout without moving to another tool, and it exports motion too.
 
@@ -393,7 +393,7 @@ See **[Exporting & Formats](/info/exporting.html)** for the full story - choosin
 
 For power users, **Batch** (linked from the gallery, gated behind the Pro feature flag, which defaults on) renders many variations at once - a grid where each row is a set of inputs, exported together. Ideal for localising a card into a dozen languages or generating every size variant in one pass. Fill rows by typing, pasting straight from a spreadsheet or importing a CSV (you can export one back too), and set per-row format, size and output filename. Save a whole grid as a named **batch session** that reopens from the gallery, and download every row as a single `.zip`.
 
-![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
+![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
 
 Batch is for generating **many variants of one template** at once. To re-render sessions you've **already saved**, use **Projects → Render folder / Render selection** (above) - no Pro needed.
 

@@ -393,7 +393,7 @@ Zie **[Exporteren & formaten](/info/exporting.html)** voor het volledige verhaal
 
 Voor gevorderde gebruikers rendert **Batch** (gelinkt vanuit de galerij, afgeschermd achter de Pro-functievlag, die standaard aan staat) veel varianten tegelijk - een raster waarin elke rij een set invoer is, samen geëxporteerd. Ideaal om een kaart in een tiental talen te lokaliseren of om elke formaatvariant in één keer te genereren. Vul rijen door te typen, rechtstreeks vanuit een spreadsheet te plakken of een CSV te importeren (je kunt er ook weer een exporteren), en stel per rij het formaat, de grootte en de uitvoerbestandsnaam in. Sla een heel raster op als een benoemde **batch-sessie** die vanuit de galerij weer opent, en download elke rij als één `.zip`.
 
-![De batchwerkbalk - zipnaam, eenheden, DPI en het formaat dat elke rij overneemt, met rechts Sessies en Renderen](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
+![De batchwerkbalk - zipnaam, eenheden, DPI en het formaat dat elke rij overneemt, met rechts Sessies en Renderen](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
 
 Batch is bedoeld om **veel varianten van één template** tegelijk te genereren. Om sessies die je **al hebt opgeslagen** opnieuw te renderen, gebruik je **Projecten → Map renderen / Selectie renderen** (hierboven) - geen Pro nodig.
 

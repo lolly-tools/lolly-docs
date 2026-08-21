@@ -393,7 +393,7 @@ Pełną historię znajdziesz w **[Eksport i formaty](/info/exporting.html)** - w
 
 Dla zaawansowanych użytkowników **Batch** (link z galerii, za flagą funkcji Pro, domyślnie włączoną) renderuje wiele wariantów naraz - siatka, w której każdy wiersz to zestaw wartości pól eksportowanych razem. Idealne do lokalizacji karty na kilkanaście języków albo wygenerowania wszystkich wariantów rozmiaru w jednym przebiegu. Wiersze wypełnisz pisaniem, wklejeniem wprost z arkusza kalkulacyjnego albo importem CSV (możesz też wyeksportować taki plik z powrotem), a format, rozmiar i nazwę pliku wyjściowego ustawisz osobno dla każdego wiersza. Zapisz całą siatkę jako nazwaną **sesję wsadową**, która otwiera się z galerii, i pobierz wszystkie wiersze jako jeden `.zip`.
 
-![Pasek narzędzi Batch - nazwa zipa, jednostki, DPI i format dziedziczony przez każdy wiersz, a po prawej Sessions i Render](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
+![Pasek narzędzi Batch - nazwa zipa, jednostki, DPI i format dziedziczony przez każdy wiersz, a po prawej Sessions i Render](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
 
 Batch służy do generowania **wielu wariantów jednego szablonu** naraz. Aby ponownie wyrenderować sesje, które **już zapisałeś**, użyj **Projects → Render folder / Render selection** (powyżej) - Pro nie jest potrzebne.
 

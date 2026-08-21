@@ -393,7 +393,7 @@ Sound 스위치 옆에는 **Neurospicy Mode**가 있어요 - 일하는 동안 �
 
 고급 사용자를 위한 **Batch**(갤러리에서 연결되고, 기본으로 켜져 있는 Pro 기능 플래그 뒤에 있어요)는 여러 변형을 한 번에 렌더링해요. 각 행이 입력 한 벌인 격자를 함께 내보내는 방식이에요. 카드 하나를 열두 개 언어로 현지화하거나, 모든 크기 변형을 한 번에 만들 때 딱 맞아요. 행은 직접 입력하거나 스프레드시트에서 그대로 붙여넣거나 CSV를 가져와 채우고(다시 CSV로 내보낼 수도 있어요), 행마다 형식과 크기, 출력 파일 이름을 정하세요. 격자 전체를 이름 붙인 **배치 세션**으로 저장하면 갤러리에서 다시 열리고, 모든 행을 하나의 `.zip`으로 내려받을 수 있어요.
 
-![배치 툴바 - zip 이름, 단위, DPI, 모든 행이 물려받는 형식, 그리고 오른쪽의 Sessions와 Render](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
+![배치 툴바 - zip 이름, 단위, DPI, 모든 행이 물려받는 형식, 그리고 오른쪽의 Sessions와 Render](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
 
 Batch는 **한 템플릿의 여러 변형**을 한 번에 만드는 기능이에요. **이미 저장한** 세션을 다시 렌더링하려면 위에서 설명한 **Projects → Render folder / Render selection**을 쓰세요 - Pro는 필요 없어요.
 

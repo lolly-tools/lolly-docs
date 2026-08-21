@@ -393,7 +393,7 @@ Veja **[Exportação e Formatos](/info/exporting.html)** para a história comple
 
 Para usuários avançados, o **Batch** (acessível pela galeria, restrito à feature flag Pro, que vem ativada por padrão) renderiza várias variações de uma vez - uma grade em que cada linha é um conjunto de inputs, exportados juntos. Ideal para localizar um cartão em uma dezena de idiomas ou gerar cada variante de tamanho em uma única passagem. Preencha as linhas digitando, colando direto de uma planilha ou importando um CSV (você também pode exportar um de volta), e defina formato, tamanho e nome do arquivo de saída por linha. Salve uma grade inteira como uma **sessão de lote** nomeada, que reabre pela galeria, e baixe cada linha como um único `.zip`.
 
-![A barra de ferramentas do lote - nome do zip, unidades, DPI e o formato que todas as linhas herdam, com Sessões e Renderizar à direita](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
+![A barra de ferramentas do lote - nome do zip, unidades, DPI e o formato que todas as linhas herdam, com Sessões e Renderizar à direita](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
 
 O Batch serve para gerar **muitas variantes de um mesmo template** de uma vez. Para renderizar novamente sessões que você **já salvou**, use **Projetos → Renderizar pasta / Renderizar seleção** (acima) - sem precisar do Pro.
 

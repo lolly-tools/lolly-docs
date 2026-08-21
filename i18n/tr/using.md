@@ -393,7 +393,7 @@ Format seçme, çıktı boyutu ve baskı birimleri, şeffaflık, video ve kopyal
 
 Güçlü kullanıcılar için **Batch** (galeriden bağlantılı, varsayılan olarak açık olan Pro özellik bayrağının arkasında) birçok varyasyonu bir kerede oluşturur - her satırın birlikte dışa aktarılan bir girdi seti olduğu bir ızgara. Bir kartı bir düzine dile yerelleştirmek ya da her boyut varyantını tek geçişte üretmek için ideal. Satırları yazarak, doğrudan bir e-tablodan yapıştırarak ya da bir CSV içe aktararak doldur (bir tane de dışa aktarabilirsin) ve satır başına format, boyut ve çıktı dosya adını ayarla. Bütün bir ızgarayı galeriden yeniden açılan adlandırılmış bir **batch oturumu** olarak kaydet ve her satırı tek bir `.zip` olarak indir.
 
-![Toplu işlem araç çubuğu - zip adı, birimler, DPI ve her satırın devraldığı format; sağda Oturumlar ve Oluştur](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
+![Toplu işlem araç çubuğu - zip adı, birimler, DPI ve her satırın devraldığı format; sağda Oturumlar ve Oluştur](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
 
 Batch, **bir şablonun birçok varyantını** bir kerede üretmek içindir. **Zaten kaydettiğin** oturumları yeniden oluşturmak için **Projeler → Klasörü oluştur / Seçimi oluştur**'u kullan (yukarıda) - Pro gerekmez.
 

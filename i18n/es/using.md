@@ -393,7 +393,7 @@ Consulta **[Exportar y formatos](/info/exporting.html)** para la historia comple
 
 Para usuarios avanzados, **Batch** (enlazado desde la galería, protegido tras el indicador de función Pro, que está activado por defecto) renderiza muchas variaciones a la vez - una cuadrícula donde cada fila es un conjunto de entradas, exportadas juntas. Ideal para localizar una tarjeta en una docena de idiomas o generar cada variante de tamaño de una sola vez. Rellena las filas escribiendo, pegando directamente desde una hoja de cálculo o importando un CSV (también puedes exportar uno de vuelta), y define el formato, el tamaño y el nombre de archivo de salida por fila. Guarda una cuadrícula completa como una **sesión por lotes** con nombre que se reabre desde la galería, y descarga cada fila como un único `.zip`.
 
-![La barra de herramientas de Batch - nombre del zip, unidades, DPI y el formato que hereda cada fila, con Sesiones y Renderizar a la derecha](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
+![La barra de herramientas de Batch - nombre del zip, unidades, DPI y el formato que hereda cada fila, con Sesiones y Renderizar a la derecha](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
 
 Batch sirve para generar **muchas variantes de una misma plantilla** a la vez. Para volver a renderizar sesiones que **ya has guardado**, usa **Proyectos → Renderizar carpeta / Renderizar selección** (más arriba) - no hace falta Pro.
 

@@ -393,7 +393,7 @@ Sound スイッチの隣にあるのが **Neurospicy Mode** です。作業中�
 
 上級者向けに、**Batch**（ギャラリーからリンクされ、既定で有効な Pro 機能フラグで制御されます）は多数のバリエーションを一度にレンダリングします。各行が 1 組の入力になったグリッドを、まとめて書き出す仕組みです。カードを十数か国語にローカライズしたり、全サイズ違いを一度に生成したりするのに向いています。行は手入力、表計算ソフトからの貼り付け、CSV の読み込み（書き出しも可能）で埋められ、行ごとに形式、サイズ、出力ファイル名を設定できます。グリッド全体は名前付きの **batch session** として保存してギャラリーから開き直せ、全行を 1 つの `.zip` としてダウンロードできます。
 
-![バッチのツールバー。zip 名、単位、DPI、全行が引き継ぐ形式が並び、右側に Sessions と Render がある](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
+![バッチのツールバー。zip 名、単位、DPI、全行が引き継ぐ形式が並び、右側に Sessions と Render がある](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
 
 Batch は**1 つのテンプレートから多数のバリエーション**を一度に生成するための機能です。**すでに保存済み**のセッションを再レンダリングするには、上で説明した **Projects → Render folder / Render selection** を使います。Pro は不要です。
 

@@ -393,7 +393,7 @@ Sound स्विच के बगल में **Neurospicy Mode** है - �
 
 पावर उपयोगकर्ताओं के लिए, **Batch** (गैलरी से लिंक किया गया, Pro फ़ीचर फ़्लैग के पीछे, जो डिफ़ॉल्ट रूप से चालू है) एक साथ कई रूपांतर रेंडर करता है - एक ग्रिड, जिसकी हर पंक्ति इनपुट का एक सेट है, और सब साथ-साथ एक्सपोर्ट होते हैं। किसी कार्ड को दर्जन भर भाषाओं में लोकलाइज़ करने या हर आकार का वैरिएंट एक ही बार में बनाने के लिए आदर्श। पंक्तियाँ टाइप करके, सीधे स्प्रेडशीट से पेस्ट करके, या CSV इंपोर्ट करके भरें (एक CSV वापस एक्सपोर्ट भी कर सकते हैं), और हर पंक्ति के लिए फ़ॉर्मैट, आकार और आउटपुट फ़ाइलनाम सेट करें। पूरे ग्रिड को नामित **batch session** के रूप में सहेजें, जो गैलरी से फिर से खुलता है, और हर पंक्ति को एक ही `.zip` में डाउनलोड करें।
 
-![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
+![The batch toolbar - zip name, units, DPI and the format every row inherits, with Sessions and Render on the right](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
 
 Batch एक ही टेम्पलेट के **कई वैरिएंट** एक साथ बनाने के लिए है। **पहले से सहेजे** सेशनों को दोबारा रेंडर करने के लिए **Projects → Render folder / Render selection** (ऊपर) इस्तेमाल करें - Pro की ज़रूरत नहीं।
 

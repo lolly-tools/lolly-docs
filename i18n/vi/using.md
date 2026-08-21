@@ -393,7 +393,7 @@ Xem **[Xuất file & Định dạng](/info/exporting.html)** để biết toàn 
 
 Dành cho người dùng chuyên sâu, **Batch** (liên kết từ gallery, nằm sau cờ tính năng Pro vốn bật theo mặc định) render nhiều biến thể cùng lúc - một bảng lưới nơi mỗi hàng là một tập trường đầu vào, được xuất cùng nhau. Lý tưởng để bản địa hoá một tấm thiệp sang hàng chục ngôn ngữ hoặc tạo mọi biến thể kích thước trong một lượt. Điền các hàng bằng cách gõ vào, dán thẳng từ một bảng tính hoặc nhập một file CSV (bạn cũng xuất ngược ra được một file), và đặt định dạng, kích thước, tên file xuất theo từng hàng. Lưu cả một bảng lưới thành một **phiên batch** có tên riêng để mở lại từ gallery, và tải mọi hàng xuống dưới dạng một file `.zip` duy nhất.
 
-![Thanh công cụ batch - tên file zip, đơn vị, DPI và định dạng mà mọi hàng kế thừa, với Sessions và Render ở bên phải](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
+![Thanh công cụ batch - tên file zip, đơn vị, DPI và định dạng mà mọi hàng kế thừa, với Sessions và Render ở bên phải](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
 
 Batch dùng để tạo **nhiều biến thể của cùng một mẫu** cùng lúc. Để render lại các phiên bạn **đã lưu từ trước**, hãy dùng **Projects → Render folder / Render selection** (ở trên) - không cần Pro.
 

@@ -393,7 +393,7 @@ Lihat **[Ekspor & Format](/info/exporting.html)** untuk cerita lengkapnya - memi
 
 Untuk pengguna tingkat lanjut, **Batch** (tertaut dari galeri, dibatasi oleh flag fitur Pro yang aktif secara bawaan) merender banyak variasi sekaligus - sebuah kisi yang setiap barisnya adalah satu set input, diekspor bersamaan. Ideal untuk melokalkan sebuah kartu ke belasan bahasa atau menghasilkan setiap varian ukuran dalam satu jalan. Isi barisnya dengan mengetik, menempel langsung dari spreadsheet atau mengimpor CSV (Anda juga bisa mengekspornya kembali), dan atur format, ukuran serta nama berkas keluaran per baris. Simpan satu kisi utuh sebagai **sesi batch** bernama yang bisa dibuka lagi dari galeri, dan unduh setiap barisnya sebagai satu `.zip`.
 
-![Bilah alat batch - nama zip, satuan, DPI dan format yang diwarisi setiap baris, dengan Sessions dan Render di sebelah kanan](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
+![Bilah alat batch - nama zip, satuan, DPI dan format yang diwarisi setiap baris, dengan Sessions dan Render di sebelah kanan](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
 
 Batch untuk menghasilkan **banyak varian dari satu templat** sekaligus. Untuk merender ulang sesi yang **sudah Anda simpan**, gunakan **Projects → Render folder / Render selection** (di atas) - tanpa perlu Pro.
 

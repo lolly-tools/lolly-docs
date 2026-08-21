@@ -393,7 +393,7 @@ Lihat **[Mengeksport & Format](/info/exporting.html)** untuk cerita penuhnya - m
 
 Untuk pengguna mahir, **Batch** (dipautkan daripada galeri, di sebalik bendera ciri Pro yang lalainya dihidupkan) merender banyak variasi sekali gus - satu grid dengan setiap baris ialah satu set input, dieksport bersama-sama. Sesuai untuk menyetempatkan sesuatu kad ke dalam belasan bahasa atau menjana setiap varian saiz dalam satu pusingan. Isi baris dengan menaip, menampal terus daripada hamparan atau mengimport CSV (anda juga boleh mengeksport satu semula), dan tetapkan format, saiz dan nama fail output bagi setiap baris. Simpan keseluruhan grid sebagai **sesi kelompok** bernama yang boleh dibuka semula daripada galeri, dan muat turun setiap baris sebagai satu `.zip`.
 
-![Bar alat kelompok - nama zip, unit, DPI dan format yang diwarisi setiap baris, dengan Sessions dan Render di sebelah kanan](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
+![Bar alat kelompok - nama zip, unit, DPI dan format yang diwarisi setiap baris, dengan Sessions dan Render di sebelah kanan](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
 
 Batch adalah untuk menjana **banyak varian daripada satu templat** sekali gus. Untuk merender semula sesi yang **sudah anda simpan**, gunakan **Projects → Render folder / Render selection** (di atas) - tidak memerlukan Pro.
 

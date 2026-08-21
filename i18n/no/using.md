@@ -393,7 +393,7 @@ Se **[Eksport og formater](/info/exporting.html)** for hele historien - å velge
 
 For avanserte brukere rendrer **Batch** (lenket fra galleriet, bak Pro-funksjonsflagget, som er på som standard) mange varianter på én gang - et rutenett der hver rad er et sett med verdier, eksportert samlet. Ideelt for å lokalisere et kort til et dusin språk eller lage alle størrelsesvarianter i én omgang. Fyll radene ved å skrive, lime rett inn fra et regneark eller importere en CSV (du kan eksportere en tilbake også), og sett format, størrelse og filnavn per rad. Lagre et helt rutenett som en navngitt **batch-økt** som åpnes igjen fra galleriet, og last ned hver rad som én enkelt `.zip`.
 
-![Batch-verktøylinjen - zip-navn, enheter, DPI og formatet hver rad arver, med Økter og Rendre til høyre](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
+![Batch-verktøylinjen - zip-navn, enheter, DPI og formatet hver rad arver, med Økter og Rendre til høyre](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
 
 Batch er til å lage **mange varianter av én mal** på én gang. For å rendre økter du **allerede har lagret** på nytt, bruk **Prosjekter → Rendre mappe / Rendre utvalg** (over) - du trenger ikke Pro.
 

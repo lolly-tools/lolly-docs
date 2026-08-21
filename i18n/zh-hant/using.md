@@ -393,7 +393,7 @@ Lolly 希望每個人用起來都舒適。介面可以用鍵盤操作，自訂�
 
 給進階使用者的**批次**（從工具庫連過去，由預設開啟的 Pro 功能旗標控管）能一次算出許多變體：一張格線，每一列是一組輸入項，一起匯出。很適合把一張卡片在地化成十來種語言，或一次生成所有尺寸變體。填列的方式可以是直接輸入、從試算表貼上，或匯入 CSV（也可以匯出一份），並可逐列設定格式、尺寸與輸出檔名。整張格線可以存成具名的**批次工作階段**，之後從工具庫重新開啟，也能把每一列一起下載成單一個 `.zip`。
 
-![批次工具列：zip 名稱、單位、DPI 與每一列繼承的格式，右側是工作階段與算圖](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
+![批次工具列：zip 名稱、單位、DPI 與每一列繼承的格式，右側是工作階段與算圖](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
 
 批次是用來一次生成**同一個範本的許多變體**。若要重新算圖你**已經儲存**的工作階段，請用**專案 → 算圖資料夾／算繪選取範圍**（見上文），不需要 Pro。
 

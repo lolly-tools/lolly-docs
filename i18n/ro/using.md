@@ -393,7 +393,7 @@ Vezi **[Export & formate](/info/exporting.html)** pentru povestea completă - al
 
 Pentru utilizatorii avansați, **Batch** (accesibil din galerie, în spatele indicatorului de funcționalitate Pro, care e activ implicit) randează multe variante deodată - o grilă în care fiecare rând e un set de valori, exportate împreună. Ideal pentru localizarea unui card în douăsprezece limbi sau pentru generarea tuturor variantelor de dimensiune dintr-o singură trecere. Umple rândurile tastând, lipind direct dintr-o foaie de calcul sau importând un CSV (poți și exporta unul înapoi) și setează formatul, dimensiunea și numele fișierului de ieșire pentru fiecare rând. Salvează o grilă întreagă ca **sesiune de lot** cu nume, care se redeschide din galerie, și descarcă toate rândurile ca un singur `.zip`.
 
-![Bara de instrumente Batch - numele arhivei zip, unitățile, DPI-ul și formatul pe care îl moștenește fiecare rând, cu Sessions și Render în dreapta](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
+![Bara de instrumente Batch - numele arhivei zip, unitățile, DPI-ul și formatul pe care îl moștenește fiecare rând, cu Sessions și Render în dreapta](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
 
 Batch e pentru generarea **multor variante ale unui singur șablon** deodată. Ca să randezi din nou sesiuni pe care le-ai **salvat deja**, folosește **Projects → Render folder / Render selection** (mai sus) - fără Pro.
 

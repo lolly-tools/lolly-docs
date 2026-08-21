@@ -393,7 +393,7 @@ Die ganze Geschichte steht unter **[Export & Formate](/info/exporting.html)** - 
 
 Für erfahrene Nutzerinnen und Nutzer rendert **Batch** (aus der Galerie verlinkt, hinter dem Pro-Feature-Flag, das standardmäßig an ist) viele Varianten auf einmal - ein Raster, in dem jede Zeile ein Satz Eingaben ist, gemeinsam exportiert. Ideal, um eine Karte in ein Dutzend Sprachen zu übertragen oder alle Größenvarianten in einem Durchgang zu erzeugen. Füllen Sie Zeilen durch Tippen, direktes Einfügen aus einer Tabellenkalkulation oder den Import einer CSV (Sie können auch eine zurück exportieren), und legen Sie Format, Größe und Ausgabedateinamen je Zeile fest. Speichern Sie ein ganzes Raster als benannte **Batch-Sitzung**, die sich aus der Galerie wieder öffnet, und laden Sie alle Zeilen als eine einzige `.zip` herunter.
 
-![Die Batch-Werkzeugleiste - Zip-Name, Einheiten, DPI und das Format, das jede Zeile erbt, rechts Sitzungen und Rendern](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
+![Die Batch-Werkzeugleiste - Zip-Name, Einheiten, DPI und das Format, das jede Zeile erbt, rechts Sitzungen und Rendern](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
 
 Batch ist dafür da, **viele Varianten einer Vorlage** auf einmal zu erzeugen. Um Sitzungen neu zu rendern, die Sie **bereits gespeichert** haben, nutzen Sie **Projekte → Ordner rendern / Auswahl rendern** (oben) - dafür braucht es kein Pro.
 

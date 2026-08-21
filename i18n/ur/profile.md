@@ -35,7 +35,7 @@
 
 ### ایک فرد کے طور پر
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
 
 ![ہیڈ شاٹ کنٹرول، خالی جب تک آپ کوئی تصویر اپ لوڈ نہ کریں، جو پھر اسی ڈیوائس پر رہتی ہے](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
 
@@ -104,7 +104,7 @@ Lolly چلتے چلتے کیش کرتا ہے، لیکن چلتے چلتے کیش
 
 ## پروفائل کو نئے ڈیوائس پر منتقل کرنا
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls)
 
 چونکہ پروفائل مکمل طور پر مقامی ہے، اسے کسی خالی انسٹال پر لانے کا واحد طریقہ - نیا لیپ ٹاپ، تازہ ری سیٹ کیا گیا براؤزر، کسی ساتھی کی مشین، ایک آف لائن باکس - یہ ہے کہ **فائل کو ساتھ لے جائیں**۔ کوئی لاگ ان اسے آپ کے لیے بحال نہیں کرتا، اور یہی نکتہ ہے: شروع سے ہی کچھ بھی آپ کے ڈیوائس سے باہر نہیں گیا۔
 
@@ -122,7 +122,7 @@ Lolly چلتے چلتے کیش کرتا ہے، لیکن چلتے چلتے کیش
 
 ## ٹولز آپ کی پروفائل کو کیسے استعمال کرتے ہیں
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&dark=1&filename=pd-use-my-details)
 
 کوئی ٹول صرف انہی پروفائل فیلڈز کو *پہلے سے بھرتا* ہے جنہیں بائنڈ کرنے کے لیے اسے واضح طور پر بنایا گیا تھا:
 

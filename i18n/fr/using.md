@@ -393,7 +393,7 @@ Consulte **[Export et formats](/info/exporting.html)** pour l'histoire complète
 
 Pour les utilisateurs avancés, **Batch** (accessible depuis la galerie, réservé au drapeau de fonctionnalité Pro, activé par défaut) rend de nombreuses variantes d'un coup - une grille où chaque ligne est un ensemble de champs, exportés ensemble. Idéal pour localiser une carte en une douzaine de langues ou générer toutes les variantes de taille en une seule passe. Remplis les lignes en tapant, en collant directement depuis un tableur ou en important un CSV (tu peux aussi en exporter un), et règle le format, la taille et le nom de fichier de sortie ligne par ligne. Enregistre toute une grille comme une **session batch** nommée qui se rouvre depuis la galerie, et télécharge chaque ligne dans un seul `.zip`.
 
-![La barre d'outils du lot - nom du zip, unités, DPI et le format dont hérite chaque ligne, avec Sessions et Rendu à droite](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
+![La barre d'outils du lot - nom du zip, unités, DPI et le format dont hérite chaque ligne, avec Sessions et Rendu à droite](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
 
 Batch sert à générer **de nombreuses variantes d'un même modèle** d'un coup. Pour re-rendre des sessions que tu as **déjà enregistrées**, utilise **Projets → Rendre le dossier / Rendre la sélection** (ci-dessus) - pas besoin de Pro.
 

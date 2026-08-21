@@ -211,7 +211,7 @@ Bringing one back is **Add from… → Design tokens or a design file** (above),
 
 ## Versions
 
-**Versions** at the foot of the rail is where a design system stops being a moving target. Publish one and you get a **permanent, named copy** kept on this device: it never changes afterwards, so a tool that pins it keeps drawing the same thing. The panel stays hidden until there's something of your own to publish, so a studio that never publishes is never shown the machinery.
+**Versions** at the foot of the rail is where a design system stops being a moving target. Publish one and you get a **permanent, named copy** kept on this device: it never changes afterwards, so a tool that pins it keeps drawing the same thing. The panel stays hidden until there's something of your own to publish, so a studio that never publishes never sees the controls.
 
 Three things to know before you press anything, and the panel says all three before the press rather than after:
 

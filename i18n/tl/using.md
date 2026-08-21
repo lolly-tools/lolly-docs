@@ -393,7 +393,7 @@ Tingnan ang **[Pag-export at mga format](/info/exporting.html)** para sa buong k
 
 Para sa mga power user, nagre-render ang **Batch** (naka-link mula sa gallery, nasa likod ng Pro feature flag, na naka-on bilang default) ng maraming baryasyon nang sabay - isang grid kung saan ang bawat row ay isang set ng mga input, na sabay-sabay na ini-export. Mainam para sa paglo-localise ng isang card sa isang dosenang wika o sa paggawa ng bawat baryasyon ng laki sa iisang pasada. Punan ang mga row sa pamamagitan ng pagtatype, pag-paste diretso mula sa spreadsheet o pag-import ng CSV (puwede ka ring mag-export pabalik ng isa), at itakda ang format, laki at output filename kada row. I-save ang buong grid bilang isang pinangalanang **batch session** na muling bubukas mula sa gallery, at i-download ang bawat row bilang iisang `.zip`.
 
-![Ang batch toolbar - pangalan ng zip, mga unit, DPI at ang format na minamana ng bawat row, kasama ang Sessions at Render sa kanan](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
+![Ang batch toolbar - pangalan ng zip, mga unit, DPI at ang format na minamana ng bawat row, kasama ang Sessions at Render sa kanan](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
 
 Ang Batch ay para sa paggawa ng **maraming baryasyon ng iisang template** nang sabay. Para i-render muli ang mga session na **naka-save mo na**, gamitin ang **Projects → Render folder / Render selection** (sa itaas) - hindi kailangan ng Pro.
 

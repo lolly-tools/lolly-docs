@@ -2,7 +2,7 @@
 
 The **Lolly URL Screenshot** extension lets the web app screenshot any web page from inside your browser. Without it, capturing a URL needs the desktop app - a browser page can't read pixels from another site on its own. The extension can, using the same capture the desktop app uses.
 
-It does one other job with the same machinery: reading a single page you name so Brand Studio can pull a brand out of a live website. Both are covered below.
+It does one other job the same way: reading a single page you name so Brand Studio can pull a brand out of a live website. Both are covered below.
 
 It runs on Chromium-based browsers: **Chrome, Edge, Brave, Arc, Opera** - Chrome 111 or newer.
 
