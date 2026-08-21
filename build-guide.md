@@ -89,7 +89,7 @@ npm run profile:suse
 - **`npm install` dies with a syntax error in a `.ts` file** - your Node is too old for type-stripping; you need ≥ 22.18 or ≥ 24 (`node -v`). With Homebrew, note `node@22` is keg-only: add `export PATH="$(brew --prefix node@22)/bin:$PATH"` to your shell profile.
 - **`Cannot find module '@lolly-tools/…'` or a workspace `package.json` is missing** - the submodules weren't checked out before `npm install`. Run `git submodule update --init --recursive`, then `npm install` again.
 - **`brands/suse` won't clone** - it's private. Drop `--suse`; you land on `lolly-start` and everything still builds and runs.
-- **A tool edit doesn't show up, or lands in the wrong repo** - `tools/` and `catalog/` at the repo root are gitignored symlink views into the packs, so edits flow through to the pack checkout and commits belong *inside* the owning submodule - see the next section.
+- **A tool edit doesn't show up, or ends up in the wrong repo** - `tools/` and `catalog/` at the repo root are gitignored symlink views into the packs, so edits flow through to the pack checkout and commits belong *inside* the owning submodule - see the next section.
 
 ### Working across submodules
 
@@ -543,7 +543,7 @@ docker push <your-registry>/lolly-web:0.1.0
 What the two stages do:
 
 - **build** - `node:26-bookworm`, pinned by digest, runs `npm ci` then the real `npm run build:web`. Deliberately not the slim variant: the optional native dependencies (sharp, onnxruntime, resvg, playwright) need build tooling slim doesn't carry.
-- **runtime** - `nginxinc/nginx-unprivileged`, also digest-pinned, running as uid 101 on port **8080**. `dist/` is copied to `/usr/share/nginx/html`, `deploy/docker/nginx.conf` becomes `conf.d/default.conf` and `deploy/docker/security-headers.conf` lands beside it.
+- **runtime** - `nginxinc/nginx-unprivileged`, also digest-pinned, running as uid 101 on port **8080**. `dist/` is copied to `/usr/share/nginx/html`, `deploy/docker/nginx.conf` becomes `conf.d/default.conf` and `deploy/docker/security-headers.conf` is copied beside it.
 
 `--build-arg LOLLY_PROFILE=suse|lolly-start` bakes one brand into the static output - theme colour, PWA chrome and the resolved `tools/` + `catalog/` content. Nothing is read at serve time, which is why the chart needs no pack, config or volume mounted for the web app; changing brand means rebuilding the image and rolling the deployment.
 
@@ -731,4 +731,4 @@ shells/tauri-mobile/
         └── state.ts    ← filesystem via tauri-plugin-fs (Tauri builds)
 ```
 
-The Tauri-built frontend lands in `shells/tauri-{desktop,mobile}/dist/`, which `tauri.conf.json` references as `frontendDist`. The web shell's own `dist/` is unaffected.
+The Tauri-built frontend is written to `shells/tauri-{desktop,mobile}/dist/`, which `tauri.conf.json` references as `frontendDist`. The web shell's own `dist/` is unaffected.

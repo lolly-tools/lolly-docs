@@ -131,7 +131,7 @@ Verified against `ALL_TARGETS` in `tests/fuzz/targets.ts` and against each modul
 
 ## Adding a new parser
 
-Four requirements. All four, before the module lands.
+Four requirements. All four, before the module merges.
 
 1. **Declare named `MAX_*` constants in one block, near the top, before the walkers.** One constant per thing a hostile input can declare: byte length, element or record count, nesting depth, coordinate magnitude, text length. Each gets a comment with its unit and the largest legitimate value you measured. Never inline a bare number into a loop bound. If a bound is genuinely structural rather than numeric, say so in the header the way `svg-path.ts` and `der-read.ts` do, and explain why.
 

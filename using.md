@@ -210,7 +210,7 @@ Tools expose only the inputs that are meant to vary - everything else (colours, 
 - **While your caret is in a text box**, Cmd/Ctrl-Z belongs to the field itself, character by character. Lolly takes over for the controls with no useful undo of their own: sliders, dropdowns, colours and switches.
 - **Choosing a file** in a **file** input isn't a step - those bytes are held for the session only, so there would be nothing to put back.
 
-In a live [collaboration](/info/collaborate.html) the history stays yours alone. A change arriving from the other device never lands on your stack, so undo can only ever take back something you did.
+In a live [collaboration](/info/collaborate.html) the history stays yours alone. A change arriving from the other device never goes onto your stack, so undo can only ever take back something you did.
 
 ## Your details & headshot
 
@@ -312,7 +312,7 @@ Three things are yours to decide before it goes:
 - **Whether licensed art goes in.** Licensed and brand-locked assets are held back by default. If the design uses any, the dialog says how many and offers two buttons - *Download without them* or *Include and download* - because including them hands the actual files to whoever opens the `.lolly`.
 - **Whether the tool goes in.** **Include the tool** packs the tool's own files alongside the design, so it opens on a device that doesn't have that tool. It arrives ticked for a custom tool - a fork or a private brand tool your recipient is unlikely to have - and unticked for a tool the signed catalogue lists, since their copy comes from the same source. (On a build with no signed catalogue, every tool counts as custom and the box starts ticked.)
 
-**Opening one.** Drop a `.lolly` onto the app: the assets land in your library, the session lands in Projects and the tool opens on it. Nothing of yours is overwritten: the session arrives as a new saved slot, while an asset already on this device is matched by checksum and reused rather than duplicated. Every part is checked against the file's own checksums on the way in, so a copy damaged in transit is refused rather than half-imported.
+**Opening one.** Drop a `.lolly` onto the app: the assets go to your library, the session goes to Projects and the tool opens on it. Nothing of yours is overwritten: the session arrives as a new saved slot, while an asset already on this device is matched by checksum and reused rather than duplicated. Every part is checked against the file's own checksums on the way in, so a copy damaged in transit is refused rather than half-imported.
 
 If the file carries a tool you don't have, Lolly asks before that tool can run: **Trust this tool?** names it and its author and says plainly that opening it runs the tool's own code on your device, with **Trust & install** as the way through. Decline and the shared work is still saved to your projects, waiting there for the day you add the tool. (One kind of tool can't be sideloaded yet - one whose code ships as a module - and it's turned away the same way.)
 
@@ -332,10 +332,10 @@ The **Catalogue** (`#/c`, or the **Catalog** segment of the Projects · Tools ·
 
 ![The Catalogue - brand assets, swatches and fonts, plus your own uploads](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=2400&css=.plat-swatch-grid~%2A%7Bdisplay%3Anone%7D&walker=1&format=svg&localize=1&dark=1&filename=catalogue)
 
-- <!--i:upload--> **Bring your files in.** Drag any image, SVG, audio clip, video, Lottie, PDF or PowerPoint deck onto the upload area - or click to choose - and it lands in your catalogue instantly, ready in every tool's asset picker. A multi-page PDF or a `.pptx` asks which pages or slides to keep - each becomes an SVG asset. Ingest as much as you like; it never leaves your device.
+- <!--i:upload--> **Bring your files in.** Drag any image, SVG, audio clip, video, Lottie, PDF or PowerPoint deck onto the upload area - or click to choose - and it arrives in your catalogue instantly, ready in every tool's asset picker. A multi-page PDF or a `.pptx` asks which pages or slides to keep - each becomes an SVG asset. Ingest as much as you like; it never leaves your device.
 - <!--i:star--> **Favourite what you reach for.** ★ an asset (or a brand swatch) and it pins to the top of every picker, so your go-to logo or colour is one click away.
 - <!--i:folder--> **Tidy up.** Recategorise an asset into a different group, hide a shared brand asset you don't use (with **Show hidden** to bring it back) or delete your own uploads outright. The same multi-select gesture and floating action bar as Projects work here too, so any of that can be done to a whole selection at once.
-- <!--i:layers--> **Lift a video off its background.** Open a video's detail or right-click its card in any asset picker and choose **Remove background…** to save a transparent alternative - an animated WebP or PNG with real alpha. Pick a **Method**: an **On-device model** cuts a subject out of a busy scene, or a **Colour key** keys out an evenly lit, flat backdrop like a green screen or a plain wall, with **Tolerance**, **Softness** and **Spill removal** to tune the edge. The colour key needs no model download and no network, so **Remove background** is offered on any video and is often cleaner on tidy footage. A **Resolution** control (360, 480, 720 or 1080p, never past the source) trades detail for a smaller, faster file. It runs as a background job on your device. The finished cut-out lands beside the original as its own asset and the source video's Content Credential rides along as an ingredient. (See [Generated once, rendered the same](/info/ai-features.html) for why removing a background stays a plain edit.)
+- <!--i:layers--> **Lift a video off its background.** Open a video's detail or right-click its card in any asset picker and choose **Remove background…** to save a transparent alternative - an animated WebP or PNG with real alpha. Pick a **Method**: an **On-device model** cuts a subject out of a busy scene, or a **Colour key** keys out an evenly lit, flat backdrop like a green screen or a plain wall, with **Tolerance**, **Softness** and **Spill removal** to tune the edge. The colour key needs no model download and no network, so **Remove background** is offered on any video and is often cleaner on tidy footage. A **Resolution** control (360, 480, 720 or 1080p, never past the source) trades detail for a smaller, faster file. It runs as a background job on your device. The finished cut-out is saved beside the original as its own asset and the source video's Content Credential rides along as an ingredient. (See [Generated once, rendered the same](/info/ai-features.html) for why removing a background stays a plain edit.)
 
 ### Take your palette and fonts anywhere
 
@@ -399,7 +399,7 @@ Batch is for generating **many variants of one template** at once. To re-render 
 
 ## Editing side by side (Multi-edit)
 
-Batch is many variants of *one* design. **Multi-edit** is the other half of the job: several **different** saved designs open at once, so one change lands on all of them. Tick between **two and eight** saved sessions in **Projects** and pick **Edit together** from the selection bar; they open as live cards side by side at `#/multi?s=<slot>,<slot>…`. Each card is a real render of that session, not a stored thumbnail, so what you see is what it will export.
+Batch is many variants of *one* design. **Multi-edit** is the other half of the job: several **different** saved designs open at once, so one change applies to all of them. Tick between **two and eight** saved sessions in **Projects** and pick **Edit together** from the selection bar; they open as live cards side by side at `#/multi?s=<slot>,<slot>…`. Each card is a real render of that session, not a stored thumbnail, so what you see is what it will export.
 
 One sidebar drives the lot:
 

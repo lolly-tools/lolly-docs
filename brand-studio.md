@@ -153,7 +153,7 @@ Headings, code and italic each fall back to the primary until you assign them, s
 
 The stage opens **inline in the room**, not in a dialog, so the cards you came from stay on screen. Search a Google Fonts family (Inter, Fraunces, Space Grotesk…) or drop a font file, press **Add to the comparison** and the candidates stand side by side in the same words before any of them installs. Escape cancels and hands the keyboard back to the card you opened it from.
 
-That is the one door in, which is why nothing lands in your brand unseen. Below the stage sit the two management panels:
+That is the one door in, which is why nothing enters your brand unseen. Below the stage sit the two management panels:
 
 - **Fonts on this device** - every installed family, the roles it serves and a delete. **Add a face** here opens the same compare stage unscoped.
 - **Your fonts** - upload a **TTF**, **OTF** or **WOFF** off your own machine. That's the path for a licensed corporate typeface you already own.
@@ -217,7 +217,7 @@ Three things to know before you press anything, and the panel says all three bef
 
 - **A version is permanent.** There's no delete yet, so the panel states what has been kept and that it stays kept rather than offering a button that lies.
 - **Removals lead the compatibility card.** Added and changed tokens are news; a *removed* one is the thing that breaks a tool, so it's named first and called what it is.
-- **Publishing can't be undone; restoring can.** *Restore latest from this version* is an ordinary edit to the head, so it lands on the studio's undo stack and the panel offers you the **Undo** straight away.
+- **Publishing can't be undone; restoring can.** *Restore latest from this version* is an ordinary edit to the head, so it goes onto the studio's undo stack and the panel offers you the **Undo** straight away.
 
 You can **Publish only**, or **Publish and make active** - the difference being whether tools and the app follow that version from now on or keep following your latest edit. **Follow the latest again** puts every edit live the moment it's made. `#/start?area=versions` opens the panel directly.
 

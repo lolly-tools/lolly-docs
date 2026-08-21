@@ -29,7 +29,7 @@ GET https://<host>/tool/<tool-id>.<ext>?<inputs>
 
 > **Where this is live.** The route is per-deployment. It is **switched off on
 > lolly.tools** (`LOLLY_DISABLE_RENDER_GET=1` - every such URL returns 404) until that
-> service moves to organisation-owned hosting, because a GET's query string lands in
+> service moves to organisation-owned hosting, because a GET's query string ends up in
 > the host's access logs and a link's inputs can carry personal data. It is
 > deliberately **live on lolly.art**, the public demo instance. The
 > [privacy policy](/info/privacy.html) explains the reasoning.

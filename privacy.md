@@ -146,7 +146,7 @@ written into the URL.
   on your device is read. Your documents, sessions and uploads never leave your
   browser - they cannot appear in these links at all.
 - <!--i:document--> **But the URL itself is recorded.** A URL's query string is part of the request
-  line, so it lands in the hosting platform's ordinary access logs the same way
+  line, so it shows up in the hosting platform's ordinary access logs the same way
   every requested path does. If a link's inputs contain someone's name or email -
   a name badge, an email signature - **that text sits in those logs**, and no
   amount of policy wording changes it. This is the specific reason the feature is

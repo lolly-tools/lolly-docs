@@ -68,7 +68,7 @@ A match is sorted into groups, always shown in the same order:
 - **Places** - the app's own destinations, most of which don't carry the bar
   themselves: Verify, Convert, the spreadsheet, the Colour Lab, the PDF tool,
   the Design System studio, the component library, Script audio and Batch
-  mode. Typing "verify" or "oklch" lands you there directly.
+  mode. Typing "verify" or "oklch" takes you there directly.
 
 <!--
 ACCURACY NOTE for whoever merges this: "the feature flags" is deliberately not
@@ -76,7 +76,7 @@ ACCURACY NOTE for whoever merges this: "the feature flags" is deliberately not
 plus a hand-listed STANDALONE_FLAGS (neurospicy, jelly, pro, strip-upload-meta,
 preflight) - PRIVATE_COLLAB_FLAG is NOT in that array, so "private collab" is
 currently unfindable in Settings. That is a one-line fix in the provider, and
-this sentence can go back to "every" the moment it lands.
+this sentence can go back to "every" the moment it ships.
 Places also carries Dashboard and Profile, which DO show the bar - hence "most
 of which" rather than the flat claim.
 -->
@@ -119,7 +119,7 @@ Press **Control-Space** from any screen that shows the bar and it jumps
 straight to the field. (Cmd-Space is quietly wired in too, for anyone whose
 Mac muscle memory reaches for it, but it's never the one advertised: on an
 unmodified Mac the OS keeps that combination for Spotlight before the browser
-ever sees it, so Ctrl-Space is the one that reliably lands, everywhere.) A
+ever sees it, so Ctrl-Space is the one that reliably works, everywhere.) A
 small `⌃␣` chip sits inside the empty field as the reminder, on a wide enough
 screen with a mouse or trackpad.
 

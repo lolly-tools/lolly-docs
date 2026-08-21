@@ -33,7 +33,7 @@ cd lolly
 ./setup.sh
 ```
 
-The classic form (`git clone --recurse-submodules … && npm install`) works identically if you'd rather manage the toolchain yourself. See the Build Guide's "Getting the source" for the script's flags (`--suse`, `--profile`, `--skip-node`), the SSH variant and putting each submodule on a branch. Budget about 1.2 GB of download and 2.6 GB on disk once `node_modules` lands.
+The classic form (`git clone --recurse-submodules … && npm install`) works identically if you'd rather manage the toolchain yourself. See the Build Guide's "Getting the source" for the script's flags (`--suse`, `--profile`, `--skip-node`), the SSH variant and putting each submodule on a branch. Budget about 1.2 GB of download and 2.6 GB on disk once `node_modules` is installed.
 
 ---
 

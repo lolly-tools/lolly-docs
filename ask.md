@@ -24,7 +24,7 @@ The first word of your question decides what leads the answer:
 
 Both halves are always retrieved, so a misread question reorders an answer rather than losing half of it.
 
-Matching drops the common question words (*how*, *do*, *I*, *the*, *my*) and ranks a section first by how many of your remaining words it covers, then by where they landed - a heading counts for more than body text. It is substring matching, folded for case and accents, not fuzzy: it will not correct a typo or guess at a word you did not type. When nothing matches, it says so and points at the documentation index rather than inventing an answer.
+Matching drops the common question words (*how*, *do*, *I*, *the*, *my*) and ranks a section first by how many of your remaining words it covers, then by where they matched - a heading counts for more than body text. It is substring matching, folded for case and accents, not fuzzy: it will not correct a typo or guess at a word you did not type. When nothing matches, it says so and points at the documentation index rather than inventing an answer.
 
 ## What comes back
 

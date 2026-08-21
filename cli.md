@@ -116,7 +116,7 @@ Naming the format explicitly is how you opt out, because then you have said whic
 | `--share`, `--link` | Print a shareable `lolly.tools` link for these inputs instead of rendering anything. |
 | `--z=<token>` | Expand a packed link token into the inputs it encodes. |
 | `--zx=<token>`, `--link-password=<pw>` | A password-protected share link's state, and its password. A missing or wrong password is an error (exit 6), never a silent render of the tool's defaults. |
-| `--<inputId>-data=<file>` | Fill an input from a file: CSV/TSV/JSON/Markdown or `.xlsx`. Works on `blocks` (rows into the repeating group), `table` (first row = headings) and `text`/`longtext` (the file's content lands in the field). The ingest counterpart of CSV export. Add `--<inputId>-sheet=<name\|index>` to pick a sheet from a multi-sheet workbook; without it the first is read, and the CLI says so. |
+| `--<inputId>-data=<file>` | Fill an input from a file: CSV/TSV/JSON/Markdown or `.xlsx`. Works on `blocks` (rows into the repeating group), `table` (first row = headings) and `text`/`longtext` (the file's content fills the field). The ingest counterpart of CSV export. Add `--<inputId>-sheet=<name\|index>` to pick a sheet from a multi-sheet workbook; without it the first is read, and the CLI says so. |
 | `--verify` | For an on-device utility, print one line per file saying its export checks ran and none failed. A failed check writes nothing and exits `1` (`FAILED`) - the gate lives in the tool's own hook, which throws like any other failure, so this shell does not claim to tell it apart from one. |
 | `--<inputId>=<value>` | Any tool input (see the tool's schema). |
 | `--<flag>` | A bare flag (no `=`) is truthy - handy for boolean inputs. |
@@ -346,7 +346,7 @@ One code per outcome, so a pipeline can branch instead of grepping stderr. Froze
 | 1 | `FAILED` | It was possible, it ran, it failed (a hook threw, the render produced nothing). |
 | 2 | `USAGE` | Wrong invocation: unknown tool, undeclared format, missing argument, unreadable path. |
 | 3 | `UNAVAILABLE_HERE` | Impossible in **this** installation - no browser, an unmet capability. May well succeed on another runner; this is the code to retry elsewhere on. |
-| 4 | `REFUSED` | A protective check **this shell** ran said no: the bytes were not the format claimed, a credential is present but broken, `--strict` promoted a gate-class warning, `--depth=float` over an 8-bit render. A gate inside a tool's own hook (`--verify`) throws like any other hook and lands on `1`. |
+| 4 | `REFUSED` | A protective check **this shell** ran said no: the bytes were not the format claimed, a credential is present but broken, `--strict` promoted a gate-class warning, `--depth=float` over an 8-bit render. A gate inside a tool's own hook (`--verify`) throws like any other hook and exits with `1`. |
 | 5 | `NOT_FOUND` | A legitimate negative answer. `validate`: no credential present. Not an error. |
 | 6 | `AUTH` | Missing or wrong password. |
 | 70 | `INTERNAL` | Unclassified exception: a bug in Lolly. Distinct so an agent stops retrying it. |

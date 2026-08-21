@@ -60,7 +60,7 @@ So a one-shot, ready-to-download link is just:
 
 ## Getting an actual file
 
-- **Interactive / in a browser session:** append `&export` (or `&copy`) - the file downloads (or lands on the clipboard) on load.
+- **Interactive / in a browser session:** append `&export` (or `&copy`) - the file downloads (or goes to the clipboard) on load.
 - **Headless / server-side automation:** use the **[CLI](/info/cli.html)** - it's the same parameter surface and writes bytes to a file or stdout:
 
   ```bash

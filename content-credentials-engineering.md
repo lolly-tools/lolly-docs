@@ -5,7 +5,7 @@ The engineering companion to [Content Credentials identity](/info/content-creden
 contracts, the CA service, the web-shell wiring, the one-time operator setup, the
 threat model and the roadmap.
 
-> **Versioning.** CA-issued signing first landed at engine 1.11. The capability
+> **Versioning.** CA-issued signing first shipped at engine 1.11. The capability
 > bridge is additive-only, so everything here still holds, but the verifier has
 > grown since: it now reads **both C2PA 1.x and 2.x** claims (so credentials from
 > Gemini, Adobe and other generators verify), Lolly **writes** 2.x by default and

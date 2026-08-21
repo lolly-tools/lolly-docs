@@ -17,7 +17,7 @@
   ],
   "points": [
     { "icon": "importPointEdit", "title": "It stays editable", "desc": "Text stays text, shapes stay shapes, images join your library. You keep working on the design - you never repaint a screenshot." },
-    { "icon": "importPointShield", "title": "It arrives conformed", "desc": "Fonts remap to your faces and every fill passes the same colour guard as a native box. A foreign artboard lands already governed." },
+    { "icon": "importPointShield", "title": "It arrives conformed", "desc": "Fonts remap to your faces and every fill passes the same colour guard as a native box. A foreign artboard arrives already governed." },
     { "icon": "importPointGrid", "title": "It becomes a template", "desc": "Save it and the layout is a reusable, URL-addressable tool - one anyone with Lolly can open, refill and render. No design app required." }
   ],
   "cta": "See how importing a design works →",

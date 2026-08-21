@@ -215,7 +215,7 @@ be proven - never silently downgraded to broken, never inflated to verified.
 
 ## Credential lifetime (7 / 30 / 90 / 365 days, default 30)
 
-Until the timestamp authority lands (Tier 3), the certificate window does
+Until the timestamp authority ships (Tier 3), the certificate window does
 double duty: it bounds abuse (expiry is our only revocation) **and** it is how
 long an exported file keeps its verified badge - the verifier compares the
 cert window against *verification* time, not signing time. So the lifetime is

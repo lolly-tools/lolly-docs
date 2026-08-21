@@ -55,7 +55,7 @@ Build your info-editorial style once, then generate publication-quality assets f
 
 Not everything is marketing. Consignment labels, badge runs, compliance one-pagers, incident notices - output where the layout carries the meaning and the data can't be wrong. Lolly treats a consignment label with the same rigour it treats a campaign poster.
 
-- **Structured data in, exact output.** Feed a CSV or JSON table and every field lands precisely where the template expects it - one finished file per row.
+- **Structured data in, exact output.** Feed a CSV or JSON table and every field goes precisely where the template expects it - one finished file per row.
 - **Physical precision.** Real units (mm/cm/in/pt), true DPI, bleed and crop marks. A label printer or a print shop gets exactly what it needs.
 - **Logic runs inside the tool.** Barcodes, date maths, conditional layouts, contrast checks - computed at render time, not by hand.
 - **Deterministic by design.** Same inputs, same file, every time. Auditable, repeatable, automatable from the CLI or a pipeline.
@@ -82,7 +82,7 @@ You design systems and solve problems, not one-offs. Lolly is the execution laye
 
 Images are build artifacts. Treat them that way. Lolly runs from the CLI so you can generate assets the same way you generate everything else - repeatably, automatically and as part of your workflow.
 
-- **Put the model on the sketch, not the press.** Generating press-quality media by prompt is expensive and lands close rather than right. A tool makes the same file every time, for nothing.
+- **Put the model on the sketch, not the press.** Generating press-quality media by prompt is expensive and gets close rather than right. A tool makes the same file every time, for nothing.
 - **Reproducible outputs.** Same inputs produce the same file, every time. Commit a URL, regenerate on demand - no more checking in images or chasing the latest version from Slack.
 - **Get media out of your codebase.** Generate OG images, QR codes, social cards and data visuals at build time instead of storing binaries in Git.
 - **Execute logic inside assets.** Tools like Code Canvas and Chart Creator let you place real content - code snippets, structured data, live values - inside production-quality templates without building a custom renderer.

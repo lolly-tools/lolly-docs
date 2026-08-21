@@ -47,7 +47,7 @@ Validated against `schemas/asset.schema.json`.
 }
 ```
 
-Each entry becomes one tile in the Catalogue, grouped by what its tags say it is. A pack of audio beds and token documents lands under **More**; logos, backgrounds and icons get their own sections once the tags are there.
+Each entry becomes one tile in the Catalogue, grouped by what its tags say it is. A pack of audio beds and token documents appears under **More**; logos, backgrounds and icons get their own sections once the tags are there.
 
 ![The More group in the Catalogue - one tile per index entry, each carrying the name and file type from its index.json record](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dother&width=1440&height=1400&dpi=96&waitMs=2400&format=svg&walker=1&cropSelector=.cat-group%5Bdata-group%3D%22other%22%5D&dark=1&filename=at2-catalogue-more-group)
 

@@ -32,7 +32,7 @@ There is no record button and no stopwatch. Where the playhead sits decides what
 
 The Keyframes group says which one you are in: its first line reads **Scene pose** off a diamond and **Keyframe @ 0:01.8** on one. Off a diamond the pose fields show the values the box is passing through at that instant, and all but Depth are inactive, because there is no keyframe to write to.
 
-Scrubbing **latches onto diamonds**: drag the playhead near one and it lands on it, so "edit the pose I can see" is the easy thing to do. Hold **Alt** to park between them.
+Scrubbing **latches onto diamonds**: drag the playhead near one and it snaps to it, so "edit the pose I can see" is the easy thing to do. Hold **Alt** to park between them.
 
 Closing the timeline turns all of this off. The playhead is the arm, so the arm has to be visible.
 
@@ -86,7 +86,7 @@ Under the moves are the camera's own channels - **Pan X** and **Pan Y**, **Dolly
 Two things to know about the model:
 
 - A camera holding a **single pose** is the scene default. Pan it, dolly it or change its focus and the whole shot changes, with no keyframes involved.
-- **Cuts come from a second camera.** Park the playhead where you want the cut, choose **Camera** from the timeline's `+` menu and click the canvas to drop it (the same two steps every kind added from the timeline takes). It lands as a clip starting at that instant, and from there the shot looks through it.
+- **Cuts come from a second camera.** Park the playhead where you want the cut, choose **Camera** from the timeline's `+` menu and click the canvas to drop it (the same two steps every kind added from the timeline takes). It arrives as a clip starting at that instant, and from there the shot looks through it.
 
 **Focus** is a distance and **Aperture** is how shallow the focus is; at `0` everything is sharp, and raising it softens whatever sits away from the focus distance. **FOV strength** changes the perspective, not the magnification - it is a dolly (the camera's own Depth) that makes things bigger.
 

@@ -174,7 +174,7 @@ note used to ask for cannot be taken: the ACCEPTOR's Connected screen is torn do
 own live mount inside the task that painted it (the drill reads its plate from a mutation
 record for exactly this reason), so there is no instant when both screens are live to
 photograph. The drill tries the pair first and falls back to the inviter alone; if the
-handoff ever pauses on the Connected screen, the pair lands automatically.
+handoff ever pauses on the Connected screen, the pair completes automatically.
 Worth Andy's eye separately: if the acceptor's screen really does not survive a frame,
 then on that side no human ever sees the plate to compare - which is the one security
 property of this feature that needs a person.
@@ -227,7 +227,7 @@ outline appears in this same frame whenever the peer is in a control that draws 
 
 **What you do not see is a floating mouse pointer.** That is a decision rather than a gap: the canvas here is a rendered preview and not a freeform surface, so "Priya is editing the Headline" is both truer and cheaper than an arrow drifting over a picture. Nothing about presence is written into the render - the rings and outlines are painted on a layer above it - so someone else working alongside you cannot change a single byte of what you export.
 
-**Undo stays yours.** Your undo history is a record of your own edits and nothing else. A change arriving from the other device never lands on your undo stack, so you can never undo something you did not do. When you do undo, the value goes back the way you meant and that change travels to the other device like any other edit.
+**Undo stays yours.** Your undo history is a record of your own edits and nothing else. A change arriving from the other device never goes onto your undo stack, so you can never undo something you did not do. When you do undo, the value goes back the way you meant and that change travels to the other device like any other edit.
 
 **Two people in the same field.** The last write wins, per field. There is no locking and no queue, and both of you will see the same final value. Two people typing into the same text field at the same moment is the one case that behaves poorly, for the same reason it does in every design tool: you get one of the two versions, not a merge of both. In practice this is what the focus rings are for - you can see where the other person is.
 

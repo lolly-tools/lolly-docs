@@ -17,7 +17,7 @@ Even if you rely mostly on this method, it's good to understand how tools operat
 
 You don't always start from a blank manifest. If the layout already exists in **Figma, Penpot, Illustrator or InDesign**, bring it in with the **Design** tool's **[Import a design](/info/design-import.html)** button and skip straight to a working artboard.
 
-A finished file - a native Figma `.fig`, a Penpot export or *any SVG* (InDesign and Illustrator export it, and nearly every design app can) - is parsed on your device and lands on the free canvas as editable boxes: text stays retypable, shapes stay shapes, images join your library and type and colours conform to the brand globals. From there it's an ordinary session, so it already behaves like a tool:
+A finished file - a native Figma `.fig`, a Penpot export or *any SVG* (InDesign and Illustrator export it, and nearly every design app can) - is parsed on your device and opens on the free canvas as editable boxes: text stays retypable, shapes stay shapes, images join your library and type and colours conform to the brand globals. From there it's an ordinary session, so it already behaves like a tool:
 
 - **Save it and it's a reusable template** at a URL - anyone with Lolly can open, refill and render it - locked parts still locked - with no design app.
 - **Mix in other tools.** Drop a QR code, a live chart or another render into any box through the asset picker; embedded tools stay live and re-render on load.
@@ -121,7 +121,7 @@ The pre-`examples` alias `featured.variants` still renders but is deprecated - a
 
 ### A short walkthrough (`guide`)
 
-Some tools aren't finished when the render is. An email signature is finished the moment it's pasted into Gmail's settings, and nothing on the canvas says so. `guide` is a handful of steps for that last mile, shown by the shell as a dialog behind a help button beside the tool's name - and opened once automatically the first time a device lands on the tool.
+Some tools aren't finished when the render is. An email signature is finished the moment it's pasted into Gmail's settings, and nothing on the canvas says so. `guide` is a handful of steps for that last mile, shown by the shell as a dialog behind a help button beside the tool's name - and opened once automatically the first time a device opens the tool.
 
 ```jsonc
 "guide": {
@@ -213,7 +213,7 @@ In the template, iterate with `{{#each people}}…{{/each}}`. The value round-tr
 
 **Drop files to add rows.** A `blocks` input may declare `dropToAdd: { field, accept }` - dropping one or more files onto the blocks list appends one row per file, uploading each into the named `asset` sub-`field` (the row's other fields start at their defaults). `accept` is a MIME filter (default `image/*`). `logo-wall` is the reference: drop many logos → one block each. (It ships with the **SUSE brand pack**, so it is only on disk on a profile that mounts that pack.)
 
-**Paste a Markdown document (`mdPaste`).** A `blocks` input may set `mdPaste: true` to add a **Paste Markdown** button to the blocks toolbar: it reads the clipboard, splits the Markdown into one block per heading (heading line → the block's `heading` field, the section beneath → its `body` field, kept as Markdown for a `{{markdown}}` render) and appends the blocks - so a whole document lands as editable, page-flowing blocks. Used by the paged/document tools.
+**Paste a Markdown document (`mdPaste`).** A `blocks` input may set `mdPaste: true` to add a **Paste Markdown** button to the blocks toolbar: it reads the clipboard, splits the Markdown into one block per heading (heading line → the block's `heading` field, the section beneath → its `body` field, kept as Markdown for a `{{markdown}}` render) and appends the blocks - so a whole document arrives as editable, page-flowing blocks. Used by the paged/document tools.
 
 **Import rows from a spreadsheet (`importData`).** A `blocks` input may declare `importData: { formats?, mode?, columns? }` to offer an **Import data** button that fills the whole list from a **CSV or JSON** file - the ingest counterpart to CSV/JSON *export*. The engine (`parseDataRows`) maps columns onto the block's sub-fields: an explicit `columns` map (`{ fieldId: "Column Name" }`) wins, otherwise each column header/key is matched case-insensitively to a field's `id` then its `label`. `formats` limits the accepted types (default both); `mode` is `replace` (default) or `append`. JSON may be an array of objects, an array of arrays (positional, in field order) or `{ "data": [ … ] }`. The imported rows are ordinary blocks - they serialise to the URL and save like any hand-entered data. `chart-creator` is the reference: import a two-column `Label,Value` sheet to chart it.
 
@@ -787,7 +787,7 @@ Neither route above helps if you have no catalog to build into and no repo to pu
 
 The thumbnail and anything under your tool's `assets/` are picked up from the signed catalog's own file list, so an unsigned build packs neither. If your tool is going out this way before it is ever published, inline its art in the template rather than referencing `/tools/<id>/assets/…`, which would 404 on the recipient's device.
 
-**Their consent is what stands between your `hooks.js` and their device.** On import Lolly asks **Trust this tool?** - naming the tool, naming you as its author when the file carries your details, and saying that opening it runs the tool's own code on their device - with **Trust & install** as the way through. Decline and your design still lands in their Projects, waiting there for the day they have the tool. Two things to author for:
+**Their consent is what stands between your `hooks.js` and their device.** On import Lolly asks **Trust this tool?** - naming the tool, naming you as its author when the file carries your details, and saying that opening it runs the tool's own code on their device - with **Trust & install** as the way through. Decline and your design still arrives in their Projects, waiting there for the day they have the tool. Two things to author for:
 
 - **Classic `hooks.js` only.** A manifest declaring `hooks.module` is refused at install, so a module-code tool cannot travel this way yet.
 - **Nothing re-verifies your tool on the far side.** A sideloaded tool loads outside the recipient's signed-catalog check, and the file's own checksums only prove your bytes arrived intact. Their decision at that dialog is the whole control, so keep a hand-shared tool's hooks short enough for a careful recipient to read.

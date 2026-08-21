@@ -126,7 +126,7 @@ Paste or drop a table and a tool's repeating blocks fill from it (up to 1,000 ro
 
 ### Audio
 
-Audio lands in the asset picker - ready as a **music bed** under a video export, or in Neurospicy Mode's ambient player.
+Audio arrives in the asset picker - ready as a **music bed** under a video export, or in Neurospicy Mode's ambient player.
 
 | Format | Notes |
 |---|---|

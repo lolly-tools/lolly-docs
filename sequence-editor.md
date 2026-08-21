@@ -14,13 +14,13 @@ A timed canvas is a window onto **one instant**. One sentence governs everything
 
 Read the three clauses as three promises.
 
-**Moving the playhead never changes what is selected.** Scrubbing is looking, not choosing. This is the direction that goes wrong in other editors: when time drives selection, you type a value into a panel and it lands on whichever clip happened to be under the playhead rather than the one you picked.
+**Moving the playhead never changes what is selected.** Scrubbing is looking, not choosing. This is the direction that goes wrong in other editors: when time drives selection, you type a value into a panel and it hits whichever clip happened to be under the playhead rather than the one you picked.
 
 **Selecting in the timeline moves the playhead.** Click a clip's bar and the playhead steps inside it, so the thing you just selected is the thing on screen. It only moves when it has to: never while playing, never for an Always on box (which has no time of its own) and never when the playhead is already inside the clip.
 
 **An off-playhead selection says so.** Selection can still end up pointing at something the canvas is not showing - you selected a clip, then scrubbed away. Rather than leave editing furniture floating over nothing, the canvas takes the outline, the eight resize handles, the rotate handle and the contextual bar down, and raises a small banner with a **Go to it** button that seeks to the clip's start. The banner is suppressed during playback, where scenes coming and going is the point.
 
-While a selection is off-playhead the keyboard refuses every key that would change the model - the arrows, Delete, duplicate, group, z-order and starting a text edit. Escape, Tab and Select all keep working. Nothing is silently dropped: either the edit lands on what you can see, or it does not happen.
+While a selection is off-playhead the keyboard refuses every key that would change the model - the arrows, Delete, duplicate, group, z-order and starting a text edit. Escape, Tab and Select all keep working. Nothing is silently dropped: either the edit applies to what you can see, or it does not happen.
 
 **The fallbacks are never gated.** The timeline's own inspector (Length, Trim in, Speed, the two transitions, Mute) and the tool sidebar edit the selected clip whatever the playhead is doing. They are the precision route, and the accessible one.
 
@@ -32,7 +32,7 @@ Clips that are not live at the playhead are not painted, and a click **falls thr
 
 The one state that does get words is the stuck one: a selection that is off-playhead, which is exactly the case you cannot reason your way out of by clicking somewhere else.
 
-![The canvas at one instant: only the clip live at the playhead is painted, so a click lands on it or falls through to whatever is underneath](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A300px%21important%7D%23tool-stage%7Bbackground-image%3Anone%21important%7D&drive=wait%3A600&cropBottom=0.35&walker=1&format=svg&dark=1&filename=seq-click-live-scene)
+![The canvas at one instant: only the clip live at the playhead is painted, so a click hits it or falls through to whatever is underneath](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D11dZBb5swFADgX8MOiRYZB0J76GFpNO2wnbr7ZMwDrBg7s01C8usngmNwSqJszaT2aD8_G54_PUgJXRdK1iJ7CvAcpSHG6FMqG9BPQbwMkmWAMcsCjIP5lwDjUsp1O8DPAcZrJvpIKhsXaLpZ1I323mjXjcJHbCdKO4Ee7ISSxsvQJdmAO0cBNe6gtHDzQbKkkks101ARYRidaaBSZETtg2TlMgw0xuX8LBXANCN7PTVyWki3Kr-6b61yQmG4ay6FeWEHOL1K1E0TzgrhdqIgDCiXs_WjFcsyDi66A1aU_ZMuEPIOcwFNhHYRzgR8GySGs9CW0BDlFzWrVTe2qdCwftOcZP2TtJEfuovFyKZzIvor0fD7WKhVGzsXo2ALhH8UMxvFqmtiXmQFpmSimArYBfGzYHpKZcVEcS87-OHedpK72cHndmYWunu6rtxM-3wuwGqTXskacov-nhs15KNYG7HgWZtMvpNa0LJtUJNJi-2rYhnZ3ybtuNUVZuj9MotOrAbQFmPQbuB0uxwud4NX9-ycrmWIJw59Pg9h5AF6RGd-5vgWPhvG-2b5xs8bl5zvZ0ZK3tf_bd0pxu_lw2YDG2Jv6VRdj9Hi__WrKB7pV3OELuBKIRunReqM9f8d1tbnKPFsJVHs2Zqf9SaMLrSmASCjiNAbokD0lD0t_95Wxu-MVaQ4uT6WQ8ta0V46Z6lq9br1fVEOh7ypju-FFyjBC7fmVy0UaMm3YBcbVYMt-dhfTlUbe2BOuD6ujFd_AA&width=1440&height=900&dpi=192&waitMs=7000&waitSelector=.tl-clip&css=.tl-panel%7Bheight%3A300px%21important%7D%23tool-stage%7Bbackground-image%3Anone%21important%7D&drive=wait%3A600&cropBottom=0.35&walker=1&format=svg&dark=1&filename=seq-click-live-scene)
 
 ## Onion skin
 
@@ -67,7 +67,7 @@ The scope resolves in one order, everywhere:
 
 `Shift+S` (or Shift-clicking the blade) is the wider variant: every timed clip the playhead is inside, on every lane, ignoring the selection. Whichever route you take, the whole cut is a **single undo step**.
 
-The cut snaps to clip edges and whole seconds like every other timeline gesture, so pressing it twice at the same spot lands exactly on the existing cut and does nothing at all - no write, no undo entry.
+The cut snaps to clip edges and whole seconds like every other timeline gesture, so pressing it twice at the same spot snaps exactly onto the existing cut and does nothing at all - no write, no undo entry.
 
 ### Through edits, and Join
 

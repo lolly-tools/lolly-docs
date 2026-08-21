@@ -14,7 +14,7 @@ That split is what makes a generated element safe to build on. The moment a voic
 
 This is why a generated ingredient is not a moving target. Re-open a project next year, render it in CI, paste the link to a colleague on another platform - the speech, the upscaled photo, the cutout all compose exactly the same way, because none of them is re-generated. It is also what provenance rests on. A Content Credential that attests to *these bytes* is only meaningful when those bytes are stable, and here they are stable by construction.
 
-![A spoken clip turned into an audiogram, its waveform the actual shape of the audio - the kind of card a synthesised voice lands in before it chains into a video's credentials](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DA%2520read%2520aloud%26subtitle%3DSynthesised%2520on%2520device%26style%3Dwave&width=1440&height=900&dpi=192&waitMs=3600&walker=1&format=svg&rasterDpi=110&cropSelector=%23tool-canvas&dark=1&filename=aif-audiogram)
+![A spoken clip turned into an audiogram, its waveform the actual shape of the audio - the kind of card a synthesised voice arrives in before it chains into a video's credentials](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DA%2520read%2520aloud%26subtitle%3DSynthesised%2520on%2520device%26style%3Dwave&width=1440&height=900&dpi=192&waitMs=3600&walker=1&format=svg&rasterDpi=110&cropSelector=%23tool-canvas&dark=1&filename=aif-audiogram)
 
 ## The features, and how each is marked
 
