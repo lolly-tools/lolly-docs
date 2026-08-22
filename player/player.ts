@@ -27,6 +27,12 @@
  */
 import { createAudioDock, type DockController } from '../../packages/audio-dock/src/index.ts';
 import { createDocsNarrationHost, type DocsNarrationHost } from './narration-host.ts';
+import { createDocsTtsHost, type DocsTtsHost } from './tts-host.ts';
+
+/** Either narration host satisfies DockHost and offers play()/destroy(); the dock
+ *  drives them identically. Produced audio is preferred; device voice is the
+ *  fallback that lets a Listen pill work on every page (plan 131 B.3). */
+type NarrationHost = DocsNarrationHost | DocsTtsHost;
 
 export interface OpenOpts {
   slug: string;
@@ -39,7 +45,7 @@ export interface OpenOpts {
 
 // The single open dock, if any. A second Listen press focuses it rather than
 // building a twin.
-let active: { controller: DockController; host: DocsNarrationHost; trigger: HTMLElement | null } | null = null;
+let active: { controller: DockController; host: NarrationHost; trigger: HTMLElement | null } | null = null;
 // Claimed for the async gap between "resolve the track" and "mount the dock", so
 // two quick presses can't both fetch and build a twin.
 let opening = false;
@@ -54,13 +60,16 @@ export async function openDocsPlayer(opts: OpenOpts): Promise<void> {
   if (opening) return;
   opening = true;
 
-  let host: DocsNarrationHost | null = null;
+  let host: NarrationHost | null = null;
   try {
+    // Produced audio wins where it exists (the polished front-door voice); every
+    // other page falls back to the reader's own device voice (plan 131 B.3).
     host = await createDocsNarrationHost({ slug: opts.slug, title: opts.title });
+    if (!host) host = createDocsTtsHost({ slug: opts.slug, title: opts.title });
   } finally {
     opening = false;
   }
-  if (!host) return; // no committed audio for this slug - mount nothing
+  if (!host) return; // no produced audio, no device voice, or nothing speakable - mount nothing
   // A concurrent open won the slot while we awaited: stand this one down.
   if (active) { host.destroy(); return; }
 

@@ -4099,7 +4099,7 @@ window.__lollyChipField=function(canvas,opt){
 };
 `;
 
-const HERO_CANVAS_SCRIPT = `<script>${CHIP_FIELD_JS}(function(){
+const HERO_CANVAS_SCRIPT = `<script>(function(){
   var canvas=document.getElementById('heroCanvas');
   if(!canvas)return;
   // The landing hero: default palette, always running, and it bursts when tapped.
@@ -4117,7 +4117,7 @@ const HERO_CANVAS_SCRIPT = `<script>${CHIP_FIELD_JS}(function(){
  * ground. Blend + opacity are CSS's job (.docs-mast-canvas), so
  * the JS only ever decides two colours.
  */
-const DOCS_MASTHEAD_SCRIPT = `<script>${CHIP_FIELD_JS}(function(){
+const DOCS_MASTHEAD_SCRIPT = `<script>(function(){
   var canvas=document.querySelector('.docs-mast-canvas');
   if(!canvas)return;
   function tok(name,fallback){
@@ -4976,10 +4976,15 @@ const LISTEN_STYLE = `<style>
 // auto-advance/prev/next left a hand-off in sessionStorage.
 const LISTEN_SCRIPT = `<script>(function(){
 var btn=document.querySelector('.docs-listen');if(!btn)return;
-// Opus-only shipping decision (plan section 4.2): browsers that cannot play Ogg/Opus
-// (iOS Safari before 18.4) get no button at all - no dead controls.
-try{if(!document.createElement('audio').canPlayType('audio/ogg; codecs=opus')){
-var bar=btn.closest('.listen-bar');if(bar)bar.remove();return;}}catch(e){}
+// The ladder (plan 131 B.3): a produced page needs Ogg/Opus playback; every page can
+// fall back to the device voice (speechSynthesis). Remove the control only when there
+// is genuinely nothing to play - a produced page this browser can't decode (iOS Safari
+// before 18.4) AND no device voice, or a device-voice page with no speechSynthesis
+// (some webkitgtk - the Linux gap a native command will close).
+var produced=btn.hasAttribute('data-listen-produced');
+var hasTts=('speechSynthesis' in window)&&(typeof SpeechSynthesisUtterance!=='undefined');
+var canOpus=false;try{canOpus=!!document.createElement('audio').canPlayType('audio/ogg; codecs=opus');}catch(e){}
+if((!produced||!canOpus)&&!hasTts){var bar=btn.closest('.listen-bar');if(bar)bar.remove();return;}
 var busy=false;
 function open(auto){if(busy)return;busy=true;btn.classList.add('is-loading');
 import('/info/docs-player.js').then(function(m){
@@ -5045,9 +5050,15 @@ function assertAudioCues(page: Page, content: string, md: string): void {
   console.log(`✓  docs audio cues: ${page.slug} - ${blocks.length - missed}/${blocks.length} blocks anchored${missed ? ' (drift within tolerance)' : ''}`);
 }
 
-function listenButtonHtml(page: Page, a: AudioEntry): string {
-  const mins = a.duration > 0 ? `${Math.max(1, Math.round(a.duration / 60))} min` : '';
-  return `${LISTEN_STYLE}<div class="listen-bar${page.isLanding ? ' listen-bar-float' : ''}"><button type="button" class="docs-listen" data-listen-slug="${esc(page.slug)}" data-listen-title="${esc(page.title)}" aria-label="${esc(`Listen to ${page.title}`)}">${LISTEN_ICON}<span>Listen</span>${mins ? `<span class="listen-mins">${esc(mins)}</span>` : ''}</button></div>`;
+// The Listen pill ships on EVERY page (plan 131 B.3). A page with committed audio
+// (`a` present) plays its produced Kokoro voice; every other page - all locales, the
+// reference/side-door pages - falls back to the reader's device voice via
+// speechSynthesis. `data-listen-produced` lets the loader tell the two apart for its
+// codec ladder; the minutes badge only makes sense for a fixed-length produced track.
+function listenButtonHtml(page: Page, a?: AudioEntry): string {
+  const mins = a && a.duration > 0 ? `${Math.max(1, Math.round(a.duration / 60))} min` : '';
+  const producedAttr = a ? ' data-listen-produced' : '';
+  return `${LISTEN_STYLE}<div class="listen-bar${page.isLanding ? ' listen-bar-float' : ''}"><button type="button" class="docs-listen"${producedAttr} data-listen-slug="${esc(page.slug)}" data-listen-title="${esc(page.title)}" aria-label="${esc(`Listen to ${page.title}`)}">${LISTEN_ICON}<span>Listen</span>${mins ? `<span class="listen-mins">${esc(mins)}</span>` : ''}</button></div>`;
 }
 
 // ── "On this page" jump nav ──────────────────────────────────────────────────
@@ -5153,6 +5164,41 @@ function mastheadArt(slug: string, heading: string): string {
 // buildFigure (::: figure <id>) now lives in @lolly-tools/docs-render's render.ts, driven by
 // docCtx.art + the package's figureBlock; mdToHtml moved with it.
 
+// ── Shared chrome CSS + JS, shipped once (plan 131 B.1) ───────────────────────────
+// CSS and the body scripts are byte-identical on every page and every locale, so they
+// ship as two fingerprinted files linked per page instead of ~185 KB inlined into each
+// one. A locale tree goes ~43 MB -> ~13 MB raw; across 27 locales + root, /info drops
+// from ~361 MB to ~85 MB in the binary, and the web deploy caches one stylesheet
+// instead of re-downloading 153 KB per page view.
+//
+// Every body script is already its own `(function(){...})();` and self-guards
+// (`if(!el)return`), so one always-loaded bundle is safe - each no-ops when its DOM
+// target is absent. CHIP_FIELD_JS assigns `window.__lollyChipField` and is included
+// ONCE here (its two consumers, HERO/MASTHEAD, dropped their inline copies above).
+// LIQUID_GLASS_SCRIPT is the one without an early-return; it only touches
+// `.btn-primary`/`.btn-secondary`, which exist on the landing page alone today, so on
+// every other page its querySelectorAll is an empty-set no-op. THEME_INIT_SCRIPT and
+// SHOT_MOTION_INIT stay inline in <head> (FOUC-critical, must run before paint);
+// LISTEN_STYLE stays in body (injected by listenButtonHtml). CSP allows both 'self'
+// and 'unsafe-inline' for script/style, so external same-origin + the head inits both
+// load. The seals (sealPages, run tail) re-hash whole-document bytes, so every English
+// page re-signs once when this first rebuilds - the intended self-healing churn.
+const stripScriptTags = (s: string): string =>
+  s.replace(/^\s*<script>/, '').replace(/<\/script>\s*$/, '');
+const DOCS_JS = [
+  CHIP_FIELD_JS,
+  FORMATS_DIALOG_SCRIPT, THEME_INTERACT_SCRIPT, SHOT_MOTION_SCRIPT, SHOWCASE_SCRIPT,
+  SHOT_CRED_SCRIPT, SCROLL_REVEAL_SCRIPT, LIQUID_GLASS_SCRIPT, HERO_CANVAS_SCRIPT,
+  DOCS_MASTHEAD_SCRIPT, VERIFY_POPOUT_SCRIPT, DOCS_SEARCH_SCRIPT, HAMBURGER_SCRIPT,
+  DOC_JUMP_SCRIPT, LANG_PICKER_SCRIPT, LISTEN_SCRIPT,
+].map(stripScriptTags).join('\n;\n');
+const fingerprint = (s: string): string =>
+  createHash('sha256').update(s).digest('base64url').slice(0, 16);
+const DOCS_CSS_FILE = `docs.${fingerprint(CSS)}.css`;
+const DOCS_JS_FILE = `docs.${fingerprint(DOCS_JS)}.js`;
+const DOCS_CSS_LINK = `<link rel="stylesheet" href="/info/${DOCS_CSS_FILE}">`;
+const DOCS_JS_TAG = `<script src="/info/${DOCS_JS_FILE}" defer></script>`;
+
 function wrapPage(lang: Lang, page: Page, content: string, ogSlugs: Set<string>, md = '') {
   const activeHref = page.slug === 'index' ? '/info/index.html' : `/info/${page.slug}.html`; // logical (English) - identity only
   const isLanding  = page.isLanding;
@@ -5172,11 +5218,14 @@ function wrapPage(lang: Lang, page: Page, content: string, ogSlugs: Set<string>,
   // own first sentence, else the site line for the landing page.
   const description = t(page.description || (isLanding ? SITE_DESCRIPTION : mdDescription(md) || SITE_DESCRIPTION));
 
-  // Narration is English-only at launch (plan section 2): the locale pages would pair
-  // an English voice with a translated body, which section 9 rules out - so the button
-  // (and its loader) ship on English pages only, and only where audio exists.
+  // The Listen pill ships on EVERY page (plan 131 B.3). English pages with committed
+  // audio play the produced Kokoro voice; every other page - all locales, the
+  // reference/side-door pages - falls back to the reader's device voice (the OS speaks
+  // the page's own `<html lang>`). The produced track is English-only, so only English
+  // resolves an AudioEntry; a locale page passes undefined and the loader/host take the
+  // device-voice branch. Cues (produced-only) are still asserted where audio exists.
   const audio = lang === 'en' ? audioBySlug.get(page.slug) : undefined;
-  const listen = audio ? listenButtonHtml(page, audio) : '';
+  const listen = listenButtonHtml(page, audio);
   if (audio) assertAudioCues(page, content, md);
 
   // Docs pages only: the landing page already carries its own sticky quicknav, and
@@ -5203,6 +5252,7 @@ function wrapPage(lang: Lang, page: Page, content: string, ogSlugs: Set<string>,
 <div class="docs-wrap">
   ${buildSidebar(lang, page, activeHref)}
   <main class="docs-content no-mast page-${slugClass}">
+    ${listen}
     ${article}
   </main>
 </div>`
@@ -5261,28 +5311,14 @@ ${alternates}${seal}
 <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/SUSE[wght].woff2">
 ${THEME_INIT_SCRIPT}
 ${SHOT_MOTION_INIT}
-<style>${CSS}</style>
+${DOCS_CSS_LINK}
 </head>
 <body class="page-${slugClass}">
 ${buildNav(lang, page.slug, activeHref, isLanding, page.pathway)}
 ${body}
 ${FOOTER(lang)}
 ${jump}
-${THEME_INTERACT_SCRIPT}
-${HAMBURGER_SCRIPT}
-${isLanding ? '' : DOCS_SEARCH_SCRIPT}
-${VERIFY_POPOUT_SCRIPT}
-${LANG_PICKER_SCRIPT}
-${SCROLL_REVEAL_SCRIPT}
-${SHOT_MOTION_SCRIPT}
-${SHOT_CRED_SCRIPT}
-${jump ? DOC_JUMP_SCRIPT : ''}
-${isLanding ? '' : SHOWCASE_SCRIPT}
-${isLanding ? HERO_CANVAS_SCRIPT : ''}
-${mast?.canvas ? DOCS_MASTHEAD_SCRIPT : ''}
-${isLanding ? LIQUID_GLASS_SCRIPT : ''}
-${content.includes('id="fmt-catalog-data"') ? FORMATS_DIALOG_SCRIPT : ''}
-${audio ? LISTEN_SCRIPT : ''}
+${DOCS_JS_TAG}
 </body>
 </html>`;
 }
@@ -5356,6 +5392,16 @@ function buildLlmsFormatsSection(): string {
 async function build() {
   // Ensure output dirs exist and copy static assets (icons).
   mkdirSync(outDir, { recursive: true });
+
+  // The shared chrome CSS + JS (plan 131 B.1), written once and linked per page.
+  // Mirror, don't accumulate: a content change moves the hash, so drop any prior
+  // docs.<hash>.{css,js} first or the gitignored output keeps serving stale twins.
+  for (const f of readdirSync(outDir)) {
+    if (/^docs\.[A-Za-z0-9_-]{16}\.(css|js)$/.test(f)) rmSync(resolve(outDir, f));
+  }
+  writeFileSync(resolve(outDir, DOCS_CSS_FILE), CSS, 'utf-8');
+  writeFileSync(resolve(outDir, DOCS_JS_FILE), DOCS_JS, 'utf-8');
+  console.log(`✓  /info/${DOCS_CSS_FILE} + /info/${DOCS_JS_FILE} (shared chrome, linked per page)`);
   // icon.svg is THE site mark (hero logo; the README + overview doc use it too) - the
   // single source of truth, a hand-drawn C2PA- + RDF-signed vector, served verbatim so its
   // provenance travels. A missing source is a broken landing page, so warn loudly.

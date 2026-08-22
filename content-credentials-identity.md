@@ -1,6 +1,6 @@
 # Content Credentials identity - verified signing for on-device C2PA
 
-> **In plain terms.** Every image, PDF, or video you export from Lolly can carry a
+> **The short version.** Every image, PDF, or video you export from Lolly can carry a
 > **Content Credential** - a signed [C2PA](https://c2pa.org) manifest, created
 > entirely on your device - that proves the file hasn't been altered since it left
 > Lolly, and (once you enrol an identity) records *who* signed it. Anyone can check

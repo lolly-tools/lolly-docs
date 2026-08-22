@@ -106,7 +106,7 @@ either. Same documented blocker as the gallery's own Cover Flow shots
 
 ## This is local, not part of the design system
 
-Your starred tools are saved onto your **profile** - the same on-device record that holds your name, your headshot and your other preferences (see [Profiles](/info/profile.html)). In plain terms:
+Your starred tools are saved onto your **profile** - the same on-device record that holds your name, your headshot and your other preferences (see [Profiles](/info/profile.html)). That means:
 
 - It's saved **on this device**, in the browser's own local database. No account, nothing uploaded.
 - It has nothing to do with the **design system** - the colours, fonts and tools the app was set up with. Starring a tool is a personal shortcut for you; it changes nothing about what anyone else's install shows.

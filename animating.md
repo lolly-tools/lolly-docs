@@ -6,7 +6,7 @@ Everything here runs on your device. Nothing plays on its own: the preview moves
 
 ## A keyframe is a pose at a moment
 
-A keyframe records where a box sits, how large it is, how see-through, how blurred and how far it stands off the page - all at one instant. Two keyframes make a move, and Lolly fills in everything between them.
+A keyframe records a box's position, its size, how see-through, how blurred and how far it lifts off the page - all at one instant. Two keyframes make a move, and Lolly fills in everything between them.
 
 **+Keyframe** has two homes and one behaviour:
 
@@ -25,7 +25,7 @@ A box that has never been animated shows one control instead - **Animate**, in i
 
 ## The playhead is the arm
 
-There is no record button and no stopwatch. Where the playhead sits decides what an edit writes.
+There is no record button and no stopwatch. The playhead's position decides what an edit writes.
 
 - **Parked on a diamond**, the canvas and the pose fields edit *that keyframe*. Drag the box, rotate it, resize it or type a number, and only that pose changes. A box resized on a diamond tweens its size between keyframes, and text inside it reflows as it goes.
 - **Parked off every diamond**, the same edits change the box itself, which moves the whole animation with it. This is how you reposition a finished move without re-keying it.

@@ -33,7 +33,7 @@
  * Listen pill) mounts NOTHING - the content gate stays exactly as it was.
  */
 import { extractSpokenText, type SpokenBlock } from '../../scripts/lib/docs-spoken-text.ts';
-import type { DockHost, DockNarration, DockNowPlaying, DockViz } from '../../packages/audio-dock/src/index.ts';
+import type { DockHost, DockNarration, DockNowPlaying, DockViz, DockVolume } from '../../packages/audio-dock/src/index.ts';
 
 interface Cue { blockId: string; start: number; end: number }
 export interface Track { slug: string; title: string; url: string; duration: number; bytes: number }
@@ -65,6 +65,9 @@ const FOLLOW_KEY = 'lolly-docs-follow-off';
  *  listener's choice rides the auto-advance hand-off. -v3 matches the old
  *  player's key so a returning listener's stored rate carries over. */
 const SPEED_KEY = 'lolly-docs-speed-v3';
+/** Master volume (0..1), remembered like speed so a listener's level rides the
+ *  auto-advance hand-off and carries to the device-voice host too. */
+const VOLUME_KEY = 'lolly-docs-volume';
 
 const reduced = (): boolean => matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -125,6 +128,13 @@ export interface CreateDocsNarrationOpts {
  * the index and the block map are English.
  */
 export async function createDocsNarrationHost(opts: CreateDocsNarrationOpts): Promise<DocsNarrationHost | null> {
+  // The produced track is Ogg/Opus. A browser that can't decode it (iOS Safari before
+  // 18.4) gets null here so the caller falls back to the device voice (plan 131 B.3),
+  // instead of a host that owns an <audio> element it can never play.
+  try {
+    if (!new Audio().canPlayType('audio/ogg; codecs=opus')) return null;
+  } catch { /* no Audio support at all: let the caller try the device voice */ return null; }
+
   const index = await fetch('/info/audio-index.json')
     .then((r) => (r.ok ? r.json() : []))
     .catch(() => []) as Track[];
@@ -147,6 +157,7 @@ export async function createDocsNarrationHost(opts: CreateDocsNarrationOpts): Pr
 export class DocsNarrationHost implements DockHost {
   readonly narration: DockNarration;
   readonly viz: DockViz;
+  readonly volume: DockVolume;
 
   private readonly playlist: Track[];
   private readonly track: Track;
@@ -200,6 +211,10 @@ export class DocsNarrationHost implements DockHost {
     this.audio.src = track.url;
     this.audio.preload = 'auto';
     this.audio.playbackRate = SPEEDS[this.speedIdx]!;
+    try {
+      const savedVol = Number(sessionStorage.getItem(VOLUME_KEY));
+      if (Number.isFinite(savedVol) && savedVol >= 0 && savedVol <= 1) this.audio.volume = savedVol;
+    } catch { /* storage may be disabled */ }
 
     this.narration = {
       getFollow: () => !this.followOff,
@@ -209,6 +224,16 @@ export class DocsNarrationHost implements DockHost {
       speeds: () => SPEEDS,
       caption: () => this.captionText,
       disclosure: () => DISCLOSURE,
+    };
+    this.volume = {
+      id: 'master',
+      label: 'Volume',
+      get: () => this.audio.volume,
+      set: (v) => {
+        this.audio.volume = Math.max(0, Math.min(1, v));
+        try { sessionStorage.setItem(VOLUME_KEY, String(this.audio.volume)); } catch { /* best effort */ }
+        this.emit();
+      },
     };
     // The dock draws its OWN 2D frequency backdrop - supported() gates that loop,
     // which a Canvas 2D context always satisfies. getAnalyser() is null until the

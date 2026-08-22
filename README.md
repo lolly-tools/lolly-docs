@@ -107,12 +107,12 @@ The fifth pathway, and the one the other four link into whenever a claim needs i
 |---|---|---|
 | [trust.md](trust.md) | end user | Pathway hub. Where your content comes from, how to check it yourself, and what happens to your data - each claim paired with the mechanism that enforces it. |
 | [status-quo.md](status-quo.md) | end user | The frictions we all learned to accept - uploading a logo to a stranger to resize it, artwork locked behind a lapsed plan - and what replaces them. |
-| [input-not-impersonation.md](input-not-impersonation.md) | end user | An AI agent may fill in the inputs and may not claim to be you: where the line sits, how it is enforced, and what a rogue agent still cannot do. |
+| [input-not-impersonation.md](input-not-impersonation.md) | end user | An AI agent may fill in the inputs and may not claim to be you: what the exact line is, how it is enforced, and what a rogue agent still cannot do. |
 | [content-credentials-identity.md](content-credentials-identity.md) | end user | What a Content Credential is, what enrolling an identity adds, and how anyone checks a file. |
 | [content-credentials-engineering.md](content-credentials-engineering.md) | security | The engineering companion: device/CA architecture, engine contracts, the CA service, web-shell wiring, one-time operator setup. |
-| [ai-stance.md](ai-stance.md) | end user | AI welcomed as labour and refused as impersonation: where Lolly stands on generated content, and what backs each commitment. |
+| [ai-stance.md](ai-stance.md) | end user | AI welcomed as labour and refused as impersonation: Lolly's position on generated content, and what backs each commitment. |
 | [ai-features.md](ai-features.md) | end user | Text-to-speech, upscaling and background removal - generated once under guard-rails, then rendered identically everywhere, and why inventing pixels is marked AI while removing them is not. |
-| [eu-ai-act.md](eu-ai-act.md) | end user | Article 50 and AI-content marking since 2 August 2026, and where Lolly honestly fits: preserving arriving marks, declaring its own AI operations, verifying any file on-device. |
+| [eu-ai-act.md](eu-ai-act.md) | end user | Article 50 and AI-content marking since 2 August 2026, and what Lolly honestly does: preserving arriving marks, declaring its own AI operations, verifying any file on-device. |
 | [beatrice-warde.md](beatrice-warde.md) | end user | The typographer whose 1932 lines this project adapted, what we changed, and who she was. |
 | [verify-yourself.md](verify-yourself.md) | security | Falsifiable procedures with exact commands and expected output for the privacy and security claims. |
 | [security-verification.md](security-verification.md) | security | A reviewer's summary of the cryptography behind Content Credentials, verification and encryption, and the tests behind each claim. |

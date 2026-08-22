@@ -298,72 +298,72 @@
     {
       "blockId": "development:p7",
       "start": 785.65,
-      "end": 827.65
+      "end": 827.625
     },
     {
       "blockId": "development:p8",
-      "start": 828,
-      "end": 841.05
+      "start": 827.975,
+      "end": 841.025
     },
     {
       "blockId": "development:p9",
-      "start": 841.4,
-      "end": 844.65
+      "start": 841.375,
+      "end": 844.625
     },
     {
       "blockId": "development:p10",
-      "start": 845,
-      "end": 848.25
+      "start": 844.975,
+      "end": 848.225
     },
     {
       "blockId": "development:p11",
-      "start": 848.6,
-      "end": 870.1750000000001
+      "start": 848.575,
+      "end": 870.1500000000001
     },
     {
       "blockId": "current-tools",
-      "start": 870.875,
-      "end": 873.05
+      "start": 870.85,
+      "end": 873.025
     },
     {
       "blockId": "current-tools:p1",
-      "start": 873.4,
-      "end": 892.6
+      "start": 873.375,
+      "end": 892.575
     },
     {
       "blockId": "current-tools:p2",
-      "start": 892.95,
-      "end": 899.8000000000001
+      "start": 892.925,
+      "end": 899.775
     },
     {
       "blockId": "licensing-structure",
-      "start": 900.5,
-      "end": 903.7
+      "start": 900.475,
+      "end": 903.6750000000001
     },
     {
       "blockId": "licensing-structure:p1",
-      "start": 904.05,
-      "end": 915.625
+      "start": 904.025,
+      "end": 915.6
     },
     {
       "blockId": "licensing-structure:p2",
-      "start": 915.975,
-      "end": 923.75
+      "start": 915.95,
+      "end": 923.725
     },
     {
       "blockId": "licensing-structure:p3",
-      "start": 924.1,
-      "end": 957.45
+      "start": 924.075,
+      "end": 957.4250000000001
     },
     {
       "blockId": "licensing-structure:p4",
-      "start": 957.8,
-      "end": 981.75
+      "start": 957.775,
+      "end": 981.725
     },
     {
       "blockId": "licensing-structure:p5",
-      "start": 982.1,
-      "end": 988.6750000000001
+      "start": 982.075,
+      "end": 988.6500000000001
     }
   ],
   "words": [
@@ -3868,374 +3868,374 @@
       "end": 800.725
     },
     {
-      "text": "The tools/ and catalog/ views are symlinks into the packs, so editing through them lands in the right pack checkout automatically.",
+      "text": "The tools/ and catalog/ views are symlinks into the packs, so editing through them flows to the right pack checkout automatically.",
       "start": 801.0749999999999,
-      "end": 812.3
+      "end": 812.275
     },
     {
       "text": "Editing a SUSE tool touches two repos «suse-lolly + umbrella pointer»; a community tool touches three «lolly-tools manifest, suse-lolly regenerated index, umbrella pointer».",
-      "start": 812.65,
-      "end": 827.65
+      "start": 812.625,
+      "end": 827.625
     },
     {
       "text": "loldev",
-      "start": 828.4145463624545,
-      "end": 829.0491646079786
+      "start": 828.3895463624546,
+      "end": 829.0241646079786
     },
     {
       "text": "-",
-      "start": 829.0985861257961,
-      "end": 829.0985861257961
+      "start": 829.0735861257962,
+      "end": 829.0735861257962
     },
     {
       "text": "one",
-      "start": 829.1600419225431,
-      "end": 829.3922971879858
+      "start": 829.1350419225431,
+      "end": 829.3672971879859
     },
     {
       "text": "command",
-      "start": 829.4544662932369,
-      "end": 829.9652523940867
+      "start": 829.4294662932369,
+      "end": 829.9402523940868
     },
     {
       "text": "to",
-      "start": 830.0864180862504,
-      "end": 830.3546064757276
+      "start": 830.0614180862505,
+      "end": 830.3296064757276
     },
     {
       "text": "ship",
-      "start": 830.4680884978296,
-      "end": 830.7150643662831
+      "start": 830.4430884978296,
+      "end": 830.6900643662831
     },
     {
       "text": "a",
-      "start": 830.7597113296263,
-      "end": 830.9289008040769
+      "start": 830.7347113296263,
+      "end": 830.9039008040769
     },
     {
       "text": "change.",
-      "start": 830.9912733596066,
-      "end": 832.2188166820829
+      "start": 830.9662733596066,
+      "end": 832.1938166820829
     },
     {
       "text": "A",
-      "start": 832.9878067183502,
-      "end": 833.1764273449841
+      "start": 832.9628067183502,
+      "end": 833.1514273449841
     },
     {
       "text": "helper",
-      "start": 833.2398569576959,
-      "end": 833.6678676360245
+      "start": 833.2148569576959,
+      "end": 833.6428676360246
     },
     {
       "text": "that",
-      "start": 833.7304855155623,
-      "end": 833.885766661618
+      "start": 833.7054855155624,
+      "end": 833.8607666616181
     },
     {
       "text": "does",
-      "start": 833.9478526221553,
-      "end": 834.1678919436422
+      "start": 833.9228526221553,
+      "end": 834.1428919436422
     },
     {
       "text": "the",
-      "start": 834.2303909133678,
-      "end": 834.4261852291623
+      "start": 834.2053909133679,
+      "end": 834.4011852291624
     },
     {
       "text": "multi-repo",
-      "start": 834.5250142857564,
-      "end": 835.3771003501073
+      "start": 834.5000142857564,
+      "end": 835.3521003501073
     },
     {
       "text": "dance",
-      "start": 835.4403820161949,
-      "end": 835.8490372912784
+      "start": 835.4153820161949,
+      "end": 835.8240372912784
     },
     {
       "text": "for",
-      "start": 835.9492695147487,
-      "end": 836.2153366772285
+      "start": 835.9242695147487,
+      "end": 836.1903366772285
     },
     {
       "text": "you.",
-      "start": 836.3104954233561,
-      "end": 837.2935277311523
+      "start": 836.2854954233561,
+      "end": 837.2685277311523
     },
     {
       "text": "Install",
-      "start": 838.0892031234774,
-      "end": 838.8269736713535
+      "start": 838.0642031234775,
+      "end": 838.8019736713535
     },
     {
       "text": "it",
-      "start": 838.9281247895779,
-      "end": 839.226327168505
+      "start": 838.9031247895779,
+      "end": 839.201327168505
     },
     {
       "text": "on",
-      "start": 839.307197985225,
-      "end": 839.5293797777578
+      "start": 839.282197985225,
+      "end": 839.5043797777578
     },
     {
       "text": "your",
-      "start": 839.6064088144761,
-      "end": 839.8836997993542
+      "start": 839.5814088144762,
+      "end": 839.8586997993542
     },
     {
       "text": "PATH:",
-      "start": 839.954629159171,
-      "end": 841.017679324893
+      "start": 839.929629159171,
+      "end": 840.9926793248931
     },
     {
       "text": "Code",
-      "start": 841.797263037695,
-      "end": 842.2492681657862
+      "start": 841.772263037695,
+      "end": 842.2242681657863
     },
     {
       "text": "example",
-      "start": 842.3196487805404,
-      "end": 843.1196625632668
+      "start": 842.2946487805405,
+      "end": 843.0946625632669
     },
     {
       "text": "omitted.",
-      "start": 843.2155104436187,
-      "end": 844.6178204731992
+      "start": 843.1905104436187,
+      "end": 844.5928204731993
     },
     {
       "text": "Code",
-      "start": 845.397263037695,
-      "end": 845.8492681657863
+      "start": 845.372263037695,
+      "end": 845.8242681657863
     },
     {
       "text": "example",
-      "start": 845.9196487805405,
-      "end": 846.7196625632669
+      "start": 845.8946487805405,
+      "end": 846.6946625632669
     },
     {
       "text": "omitted.",
-      "start": 846.8155104436187,
-      "end": 848.2178204731993
+      "start": 846.7905104436187,
+      "end": 848.1928204731993
     },
     {
       "text": "loldev operates on ~/Build/lolly by default «override with LOLLY_ROOT».",
-      "start": 848.6,
-      "end": 856.325
+      "start": 848.575,
+      "end": 856.3000000000001
     },
     {
       "text": "The underlying scripts live in scripts/subrepo/ - sync-sh, status-sh, verify-sh, plus migrate-sh/snap-history-sh «the one-time split».",
-      "start": 856.6750000000001,
-      "end": 870.1750000000001
+      "start": 856.6500000000001,
+      "end": 870.1500000000001
     },
     {
       "text": "Current",
-      "start": 871.2725855380452,
-      "end": 871.7052998082534
+      "start": 871.2475855380452,
+      "end": 871.6802998082534
     },
     {
       "text": "tools",
-      "start": 871.7989623931282,
-      "end": 872.8013201467713
+      "start": 871.7739623931283,
+      "end": 872.7763201467714
     },
     {
       "text": "The SUSE catalog ships 66 tools today - 65 listed in the gallery, plus one unlisted helper «Asset Export».",
-      "start": 873.4,
-      "end": 883.9
+      "start": 873.375,
+      "end": 883.875
     },
     {
       "text": "Generated from catalog/tools/index-json by npm run build:readme-tools:",
-      "start": 884.25,
-      "end": 892.6
+      "start": 884.225,
+      "end": 892.575
     },
     {
       "text": "The",
-      "start": 893.3438602728144,
-      "end": 893.511072732166
+      "start": 893.3188602728143,
+      "end": 893.4860727321659
     },
     {
       "text": "utility",
-      "start": 893.572892188752,
-      "end": 894.406491588617
+      "start": 893.5478921887519,
+      "end": 894.3814915886169
     },
     {
       "text": "\"Offline",
-      "start": 894.4956485711522,
-      "end": 895.0669492882375
+      "start": 894.4706485711521,
+      "end": 895.0419492882374
     },
     {
       "text": "Utilities\"",
-      "start": 895.1246022566426,
-      "end": 895.974086096345
+      "start": 895.0996022566425,
+      "end": 895.9490860963449
     },
     {
       "text": "section",
-      "start": 896.0431411516677,
-      "end": 896.6156780131358
+      "start": 896.0181411516676,
+      "end": 896.5906780131357
     },
     {
       "text": "always",
-      "start": 896.718315012973,
-      "end": 897.1565230053336
+      "start": 896.6933150129729,
+      "end": 897.1315230053335
     },
     {
       "text": "renders",
-      "start": 897.223970301852,
-      "end": 897.6642161093595
+      "start": 897.1989703018519,
+      "end": 897.6392161093594
     },
     {
       "text": "last",
-      "start": 897.742404145746,
-      "end": 898.1951758919661
+      "start": 897.717404145746,
+      "end": 898.170175891966
     },
     {
       "text": "in",
-      "start": 898.2566689006328,
-      "end": 898.3776396020302
+      "start": 898.2316689006327,
+      "end": 898.3526396020301
     },
     {
       "text": "the",
-      "start": 898.4179444021277,
-      "end": 898.553350343544
+      "start": 898.3929444021276,
+      "end": 898.5283503435439
     },
     {
       "text": "gallery.",
-      "start": 898.6151907305886,
-      "end": 899.7690065144878
+      "start": 898.5901907305885,
+      "end": 899.7440065144878
     },
     {
       "text": "Licensing",
-      "start": 900.9282817378524,
-      "end": 901.8647395610066
+      "start": 900.9032817378525,
+      "end": 901.8397395610066
     },
     {
       "text": "&",
-      "start": 901.9824347895426,
-      "end": 902.2745490205295
+      "start": 901.9574347895426,
+      "end": 902.2495490205296
     },
     {
       "text": "structure",
-      "start": 902.3405894683774,
-      "end": 903.3417917851235
+      "start": 902.3155894683774,
+      "end": 903.3167917851235
     },
     {
       "text": "Every unit now lives in its own repo under github-com/lolly-tools, pinned as a submodule of this umbrella «see Repository layout».",
-      "start": 904.05,
-      "end": 915.625
+      "start": 904.025,
+      "end": 915.6
     },
     {
       "text": "Code",
-      "start": 916.3549425382727,
-      "end": 916.6492604130829
+      "start": 916.3299425382727,
+      "end": 916.6242604130829
     },
     {
       "text": "-",
-      "start": 916.6871079030675,
-      "end": 916.6871079030675
+      "start": 916.6621079030675,
+      "end": 916.6621079030675
     },
     {
       "text": "engine/,",
-      "start": 916.7457098310763,
-      "end": 917.8292223144083
+      "start": 916.7207098310763,
+      "end": 917.8042223144083
     },
     {
       "text": "shells/,",
-      "start": 917.8995544606191,
-      "end": 918.8254325305796
+      "start": 917.8745544606192,
+      "end": 918.8004325305797
     },
     {
       "text": "services/,",
-      "start": 918.8992752007231,
-      "end": 920.0368196036978
+      "start": 918.8742752007231,
+      "end": 920.0118196036979
     },
     {
       "text": "docs/",
-      "start": 920.0963236839563,
-      "end": 920.8754487888438
+      "start": 920.0713236839563,
+      "end": 920.8504487888438
     },
     {
       "text": "-",
-      "start": 920.9084127872762,
-      "end": 920.9084127872762
+      "start": 920.8834127872763,
+      "end": 920.8834127872763
     },
     {
       "text": "is",
-      "start": 920.9408142965607,
-      "end": 921.0952817364222
+      "start": 920.9158142965607,
+      "end": 921.0702817364222
     },
     {
       "text": "MPL-2",
-      "start": 921.1604753969406,
-      "end": 922.1529450643905
+      "start": 921.1354753969406,
+      "end": 922.1279450643905
     },
     {
       "text": "point",
-      "start": 922.2145094070386,
-      "end": 922.5086784089217
+      "start": 922.1895094070386,
+      "end": 922.4836784089217
     },
     {
       "text": "0.",
-      "start": 922.5711575207171,
-      "end": 923.7191486326029
+      "start": 922.5461575207171,
+      "end": 923.694148632603
     },
     {
       "text": "Tool content ships as brand packs.",
-      "start": 924.1,
-      "end": 928.0500000000001
+      "start": 924.075,
+      "end": 928.0250000000001
     },
     {
       "text": "community/ «public lolly-tools» holds the brand-agnostic tools; brands/suse/ «private suse-lolly» holds the SUSE tools and catalog - including its licensed PremiumBeat music, which stays private with the pack.",
-      "start": 928.4,
-      "end": 946.35
+      "start": 928.375,
+      "end": 946.325
     },
     {
       "text": "The repo-root tools/ and catalog/ are gitignored profile views assembled from those packs; see each pack's NOTICE-md.",
-      "start": 946.7,
-      "end": 957.45
+      "start": 946.6750000000001,
+      "end": 957.4250000000001
     },
     {
       "text": "Fonts ship inside each brand pack under the SIL Open Font License 1 point 1 - the SUSE pack carries the SUSE and SUSE Mono typefaces «neither the MPL nor SUSE-proprietary; \"SUSE\" is a SUSE trademark».",
-      "start": 957.8,
-      "end": 975.5749999999999
+      "start": 957.775,
+      "end": 975.55
     },
     {
       "text": "They appear at catalog/fonts/ in a built profile view.",
-      "start": 975.925,
-      "end": 981.75
+      "start": 975.9,
+      "end": 981.725
     },
     {
       "text": "Bundled",
-      "start": 982.4921759159116,
-      "end": 982.9867701549323
+      "start": 982.4671759159116,
+      "end": 982.9617701549323
     },
     {
       "text": "third-party",
-      "start": 983.0854318606931,
-      "end": 983.9003603937589
+      "start": 983.0604318606931,
+      "end": 983.8753603937589
     },
     {
       "text": "attributions",
-      "start": 983.9558792679447,
-      "end": 984.8607799596357
+      "start": 983.9308792679448,
+      "end": 984.8357799596357
     },
     {
       "text": "are",
-      "start": 984.9689497117336,
-      "end": 985.1876546696201
+      "start": 984.9439497117336,
+      "end": 985.1626546696201
     },
     {
       "text": "listed",
-      "start": 985.2504169607546,
-      "end": 985.7755277551169
+      "start": 985.2254169607546,
+      "end": 985.7505277551169
     },
     {
       "text": "in",
-      "start": 985.8530259265832,
-      "end": 986.0376239660194
+      "start": 985.8280259265832,
+      "end": 986.0126239660194
     },
     {
       "text": "THIRD-PARTY-NOTICES-md.",
-      "start": 986.1553350416176,
-      "end": 988.6435859032229
+      "start": 986.1303350416176,
+      "end": 988.6185859032229
     }
   ]
 }

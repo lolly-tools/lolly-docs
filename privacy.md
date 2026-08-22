@@ -2,7 +2,7 @@
 
 *Last updated: 11 August 2026*
 
-> **In plain terms.** The documents, images, videos and files you make in Lolly stay
+> **The short version.** The documents, images, videos and files you make in Lolly stay
 > on your device. There are no accounts for ordinary use, no cookies from the app
 > itself and no analytics or trackers anywhere in the codebase - not "we don't use
 > the data," genuinely not present in the source. A short, complete list of

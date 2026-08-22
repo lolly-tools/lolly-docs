@@ -8,7 +8,7 @@ The zero-trust organizational immune system that wraps around what you already d
 
 Lolly is no second-class creative tool: it puts production-quality output in everyone's hands, and the brand-guided creation experience is second to none. The reason it is *safe* to hand out widely is architectural: nothing uploads that you didn't put there, every result is reproducible and every export can carry multiple layers of industry-leading cryptographic records. No matter how a document reached your desk, you can see its full provenance, whether it has been tampered with and whether you can recreate it pixel-perfect.
 
-> **Where it stands today.** Lolly's security properties are strong by design, and its cryptography and file-parsing engines are going through SUSE's enterprise-grade infrastructure hardening. The seals, on-device signing and encryption below are real and defensible now, and maturing toward independent certification - so where a contract calls for certified assurance, deploy them as defence-in-depth while that process completes.
+> **The current state.** Lolly's security properties are strong by design, and its cryptography and file-parsing engines are going through SUSE's enterprise-grade infrastructure hardening. The seals, on-device signing and encryption below are real and defensible now, and maturing toward independent certification - so where a contract calls for certified assurance, deploy them as defence-in-depth while that process completes.
 
 ## The strategic advantage
 

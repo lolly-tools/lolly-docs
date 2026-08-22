@@ -531,254 +531,251 @@ People who need that most feel it first,
 00:09:27.077 --> 00:09:29.845
 and everyone benefits from it.
 
-00:09:30.612 --> 00:09:33.818
-Creative confidence comes from a floor you
+00:09:30.624 --> 00:09:34.393
+Creative confidence comes from safety.
 
-00:09:33.881 --> 00:09:35.719
-cannot fall through.
-
-00:09:36.514 --> 00:09:37.181
+00:09:35.189 --> 00:09:35.856
 When
 
-00:09:38.229 --> 00:09:40.744
+00:09:36.904 --> 00:09:39.419
 any output could be wrong in a way you
 
-00:09:40.800 --> 00:09:43.505
+00:09:39.475 --> 00:09:42.180
 will only discover later, you check
 
-00:09:43.595 --> 00:09:46.595
+00:09:42.270 --> 00:09:45.270
 everything twice and stay cautious.
 
-00:09:47.369 --> 00:09:50.519
+00:09:46.044 --> 00:09:49.194
 When off-brand output is not reachable,
 
-00:09:50.581 --> 00:09:53.268
+00:09:49.256 --> 00:09:51.943
 the checking stops being your job and the
 
-00:09:53.340 --> 00:09:56.044
+00:09:52.015 --> 00:09:54.719
 caution goes back into the work.
 
-00:09:56.799 --> 00:10:00.305
+00:09:55.474 --> 00:09:58.980
 Confidence is not a mood, it is a property
 
-00:10:00.361 --> 00:10:02.169
+00:09:59.036 --> 00:10:00.844
 of the constraints.
 
-00:10:02.971 --> 00:10:04.943
-Right compounds.
+00:10:01.631 --> 00:10:05.143
+The value of tools is compounding.
 
-00:10:05.711 --> 00:10:08.981
-A decision encoded in a tool is correct
+00:10:05.905 --> 00:10:09.367
+A decision set by a tool is correct every
 
-00:10:09.082 --> 00:10:10.427
-every time
+00:10:09.434 --> 00:10:10.375
+time
 
-00:10:11.333 --> 00:10:13.997
+00:10:11.283 --> 00:10:13.947
 that tool runs, in every language, at
 
-00:10:14.072 --> 00:10:17.669
+00:10:14.022 --> 00:10:17.619
 every size, for everyone who uses it.
 
-00:10:18.431 --> 00:10:20.626
-A decision written in some style
+00:10:18.386 --> 00:10:21.234
+A rule written in some style guidelines
 
-00:10:20.687 --> 00:10:24.274
-guidelines doc is only influential correct
+00:10:21.298 --> 00:10:24.558
+doc is only as influential when it is
 
-00:10:24.377 --> 00:10:27.019
-as often as it is read.
+00:10:24.622 --> 00:10:25.669
+read.
 
-00:10:27.787 --> 00:10:30.875
+00:10:26.437 --> 00:10:29.525
 With no promise of correct output to the
 
-00:10:30.938 --> 00:10:31.993
+00:10:29.588 --> 00:10:30.643
 reader.
 
-00:10:32.764 --> 00:10:35.604
-The difference is small on one asset and
+00:10:31.414 --> 00:10:34.398
+The difference is small at first; huge
 
-00:10:35.654 --> 00:10:38.119
-enormous across a year.
+00:10:34.459 --> 00:10:37.419
+when multiplied by every task.
 
-00:10:38.905 --> 00:10:41.539
+00:10:38.205 --> 00:10:40.839
 What protects the workflow protects the
 
-00:10:41.602 --> 00:10:42.818
+00:10:40.902 --> 00:10:42.118
 person.
 
-00:10:43.610 --> 00:10:46.067
+00:10:42.910 --> 00:10:45.367
 On-device rendering,
 
-00:10:46.829 --> 00:10:50.156
+00:10:46.129 --> 00:10:49.456
 plain-file exports and offline capability
 
-00:10:50.267 --> 00:10:53.467
+00:10:49.567 --> 00:10:52.767
 are usually filed under privacy, and they
 
-00:10:53.546 --> 00:10:56.219
+00:10:52.846 --> 00:10:55.519
 are also what keeps you working on a bad
 
-00:10:56.280 --> 00:10:59.312
+00:10:55.580 --> 00:10:58.612
 connection, on a locked-down machine or
 
-00:10:59.371 --> 00:11:02.219
+00:10:58.671 --> 00:11:01.519
 the day a subscription lapses.
 
-00:11:03.003 --> 00:11:05.802
+00:11:02.303 --> 00:11:05.102
 Your workflow does not have dependencies
 
-00:11:05.893 --> 00:11:07.869
+00:11:05.193 --> 00:11:07.169
 you did not choose.
 
-00:11:08.647 --> 00:11:10.919
+00:11:07.947 --> 00:11:10.219
 Two things follow that we treat as
 
-00:11:10.979 --> 00:11:14.670
+00:11:10.279 --> 00:11:13.970
 inseparable: operational superiority,
 
-00:11:14.731 --> 00:11:16.775
+00:11:14.031 --> 00:11:16.075
 because software that respects your
 
-00:11:16.831 --> 00:11:19.807
+00:11:16.131 --> 00:11:19.107
 attention and your data is simply faster
 
-00:11:19.898 --> 00:11:22.996
+00:11:19.198 --> 00:11:22.296
 to work in, and ethics that cannot be
 
-00:11:23.058 --> 00:11:25.037
+00:11:22.358 --> 00:11:24.337
 traded away, because they are
 
-00:11:25.125 --> 00:11:27.969
+00:11:24.425 --> 00:11:27.269
 architectural rather than promised.
 
-00:11:28.744 --> 00:11:32.618
+00:11:28.044 --> 00:11:31.918
 A policy can be revised under pressure.
 
-00:11:33.401 --> 00:11:36.562
+00:11:32.701 --> 00:11:35.862
 An engine that never receives your content
 
-00:11:36.629 --> 00:11:39.019
+00:11:35.929 --> 00:11:38.319
 has nothing to revise.
 
-00:11:40.160 --> 00:11:42.069
+00:11:39.460 --> 00:11:41.369
 Ethical commitments
 
-00:11:42.978 --> 00:11:45.818
+00:11:42.278 --> 00:11:45.118
 Privacy by architecture.
 
-00:11:46.627 --> 00:11:49.743
+00:11:45.927 --> 00:11:49.043
 Your work stays on your device.
 
-00:11:50.528 --> 00:11:52.006
+00:11:49.828 --> 00:11:51.306
 There are no
 
-00:11:52.985 --> 00:11:56.343
+00:11:52.285 --> 00:11:55.643
 trackers or analytics in the codebase, and
 
-00:11:56.392 --> 00:11:59.501
+00:11:55.692 --> 00:11:58.801
 the few network touchpoints are enumerated
 
-00:11:59.563 --> 00:12:01.719
+00:11:58.863 --> 00:12:01.019
 in the Privacy Policy.
 
-00:12:02.488 --> 00:12:05.389
+00:12:01.788 --> 00:12:04.689
 Accessibility and language preferences are
 
-00:12:05.476 --> 00:12:09.245
+00:12:04.776 --> 00:12:08.545
 stored in your own profile, on your device
 
-00:12:09.333 --> 00:12:12.155
+00:12:08.633 --> 00:12:11.455
 - a person's disability or language is
 
-00:12:12.234 --> 00:12:13.945
+00:12:11.534 --> 00:12:13.245
 never telemetry.
 
-00:12:14.710 --> 00:12:18.126
+00:12:14.010 --> 00:12:17.426
 Telemetry is no friend of this project: we
 
-00:12:18.161 --> 00:12:20.734
+00:12:17.461 --> 00:12:20.034
 don't want it, and nobody should have to
 
-00:12:20.795 --> 00:12:22.845
+00:12:20.095 --> 00:12:22.145
 give their data away.
 
-00:12:23.628 --> 00:12:25.643
+00:12:22.928 --> 00:12:24.943
 Honest provenance.
 
-00:12:26.404 --> 00:12:30.044
+00:12:25.704 --> 00:12:29.344
 Exports can carry Content Credentials, and
 
-00:12:31.074 --> 00:12:35.443
+00:12:30.374 --> 00:12:34.743
 AI-generated content is labelled as such.
 
-00:12:36.215 --> 00:12:39.106
+00:12:35.515 --> 00:12:38.406
 We believe audiences deserve to know how
 
-00:12:39.166 --> 00:12:42.830
+00:12:38.466 --> 00:12:42.130
 media was made, and creators deserve tools
 
-00:12:42.888 --> 00:12:45.720
+00:12:42.188 --> 00:12:45.020
 that can prove their work is theirs.
 
-00:12:46.534 --> 00:12:48.843
+00:12:45.834 --> 00:12:48.143
 No dark patterns.
 
-00:12:49.594 --> 00:12:52.309
+00:12:48.894 --> 00:12:51.609
 Preferences are plain switches that do
 
-00:12:52.371 --> 00:12:53.894
+00:12:51.671 --> 00:12:53.194
 what they say,
 
-00:12:54.275 --> 00:13:06.975
+00:12:53.575 --> 00:13:06.275
 defaults are dormant until you choose them and platform conventions «native scrolling, browser shortcuts, standard dialogs» are respected rather than hijacked.
 
-00:13:07.719 --> 00:13:09.619
+00:13:07.019 --> 00:13:08.919
 Open source.
 
-00:13:10.396 --> 00:13:13.741
+00:13:09.696 --> 00:13:13.041
 The engine, shells and community tools are
 
-00:13:13.803 --> 00:13:14.919
+00:13:13.103 --> 00:13:14.219
 public.
 
-00:13:15.710 --> 00:13:16.396
+00:13:15.010 --> 00:13:15.696
 Every
 
-00:13:17.313 --> 00:13:19.883
+00:13:16.613 --> 00:13:19.183
 claim in this document is checkable in the
 
-00:13:19.984 --> 00:13:23.540
+00:13:19.284 --> 00:13:22.840
 source, and several are enforced by tests
 
-00:13:23.599 --> 00:13:25.812
+00:13:22.899 --> 00:13:25.112
 that fail the build when broken - the
 
-00:13:25.908 --> 00:13:28.787
+00:13:25.208 --> 00:13:28.087
 additive-by-default rule for accessibility
 
-00:13:28.847 --> 00:13:31.688
+00:13:28.147 --> 00:13:30.988
 attributes, the ban on preferences
 
-00:13:31.761 --> 00:13:34.365
+00:13:31.061 --> 00:13:33.665
 reaching exports and the keeping-in-step
 
-00:13:34.398 --> 00:13:36.624
+00:13:33.698 --> 00:13:35.924
 of the app's two copies of each
 
-00:13:36.685 --> 00:13:37.969
+00:13:35.985 --> 00:13:37.269
 preference.
 
-00:13:39.100 --> 00:13:41.751
+00:13:38.400 --> 00:13:41.051
 Holding ourselves to it
 
-00:13:42.350 --> 00:13:52.550
+00:13:41.650 --> 00:13:51.850
 Inclusive design here is a policy in the engineering sense: invariants with tests, not aspirations with adjectives.
 
-00:13:52.900 --> 00:14:09.125
+00:13:52.200 --> 00:14:08.425
 When an accommodation and a feature conflict, we redesign the feature «when a 'hide previews' setting also hid icons off utility cards, the fix was to keep the actions, not to excuse the loss».
 
-00:14:09.475 --> 00:14:20.600
+00:14:08.775 --> 00:14:19.900
 If something in Lolly excludes you - a missing language, an overwhelming moment, an assumption we baked in without noticing - that is a bug.
 
-00:14:20.950 --> 00:14:24.400
+00:14:20.250 --> 00:14:23.700
 Tell us: fitzy@suse-com.

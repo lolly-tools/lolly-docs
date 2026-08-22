@@ -531,80 +531,80 @@ is the single source of truth for it.
 00:13:15.725 --> 00:13:20.725
 Commit inside the submodule, or use loldev «below».
 
-00:13:21.075 --> 00:13:32.300
-The tools/ and catalog/ views are symlinks into the packs, so editing through them lands in the right pack checkout automatically.
+00:13:21.075 --> 00:13:32.275
+The tools/ and catalog/ views are symlinks into the packs, so editing through them flows to the right pack checkout automatically.
 
-00:13:32.650 --> 00:13:47.650
+00:13:32.625 --> 00:13:47.625
 Editing a SUSE tool touches two repos «suse-lolly + umbrella pointer»; a community tool touches three «lolly-tools manifest, suse-lolly regenerated index, umbrella pointer».
 
-00:13:48.415 --> 00:13:52.219
+00:13:48.390 --> 00:13:52.194
 loldev - one command to ship a change.
 
-00:13:52.988 --> 00:13:55.849
+00:13:52.963 --> 00:13:55.824
 A helper that does the multi-repo dance
 
-00:13:55.949 --> 00:13:57.294
+00:13:55.924 --> 00:13:57.269
 for you.
 
-00:13:58.089 --> 00:14:01.018
+00:13:58.064 --> 00:14:00.993
 Install it on your PATH:
 
-00:14:01.797 --> 00:14:04.618
+00:14:01.772 --> 00:14:04.593
 Code example omitted.
 
-00:14:05.397 --> 00:14:08.218
+00:14:05.372 --> 00:14:08.193
 Code example omitted.
 
-00:14:08.600 --> 00:14:16.325
+00:14:08.575 --> 00:14:16.300
 loldev operates on ~/Build/lolly by default «override with LOLLY_ROOT».
 
-00:14:16.675 --> 00:14:30.175
+00:14:16.650 --> 00:14:30.150
 The underlying scripts live in scripts/subrepo/ - sync-sh, status-sh, verify-sh, plus migrate-sh/snap-history-sh «the one-time split».
 
-00:14:31.273 --> 00:14:32.801
+00:14:31.248 --> 00:14:32.776
 Current tools
 
-00:14:33.400 --> 00:14:43.900
+00:14:33.375 --> 00:14:43.875
 The SUSE catalog ships 66 tools today - 65 listed in the gallery, plus one unlisted helper «Asset Export».
 
-00:14:44.250 --> 00:14:52.600
+00:14:44.225 --> 00:14:52.575
 Generated from catalog/tools/index-json by npm run build:readme-tools:
 
-00:14:53.344 --> 00:14:56.616
+00:14:53.319 --> 00:14:56.591
 The utility "Offline Utilities" section
 
-00:14:56.718 --> 00:14:59.769
+00:14:56.693 --> 00:14:59.744
 always renders last in the gallery.
 
-00:15:00.928 --> 00:15:03.342
+00:15:00.903 --> 00:15:03.317
 Licensing & structure
 
-00:15:04.050 --> 00:15:15.625
+00:15:04.025 --> 00:15:15.600
 Every unit now lives in its own repo under github-com/lolly-tools, pinned as a submodule of this umbrella «see Repository layout».
 
-00:15:16.355 --> 00:15:20.875
+00:15:16.330 --> 00:15:20.850
 Code - engine/, shells/, services/, docs/
 
-00:15:20.908 --> 00:15:23.719
+00:15:20.883 --> 00:15:23.694
 - is MPL-2 point 0.
 
-00:15:24.100 --> 00:15:28.050
+00:15:24.075 --> 00:15:28.025
 Tool content ships as brand packs.
 
-00:15:28.400 --> 00:15:46.350
+00:15:28.375 --> 00:15:46.325
 community/ «public lolly-tools» holds the brand-agnostic tools; brands/suse/ «private suse-lolly» holds the SUSE tools and catalog - including its licensed PremiumBeat music, which stays private with the pack.
 
-00:15:46.700 --> 00:15:57.450
+00:15:46.675 --> 00:15:57.425
 The repo-root tools/ and catalog/ are gitignored profile views assembled from those packs; see each pack's NOTICE-md.
 
-00:15:57.800 --> 00:16:15.575
+00:15:57.775 --> 00:16:15.550
 Fonts ship inside each brand pack under the SIL Open Font License 1 point 1 - the SUSE pack carries the SUSE and SUSE Mono typefaces «neither the MPL nor SUSE-proprietary; "SUSE" is a SUSE trademark».
 
-00:16:15.925 --> 00:16:21.750
+00:16:15.900 --> 00:16:21.725
 They appear at catalog/fonts/ in a built profile view.
 
-00:16:22.492 --> 00:16:25.188
+00:16:22.467 --> 00:16:25.163
 Bundled third-party attributions are
 
-00:16:25.250 --> 00:16:28.644
+00:16:25.225 --> 00:16:28.619
 listed in THIRD-PARTY-NOTICES-md.
