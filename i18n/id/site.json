@@ -202,5 +202,9 @@
   "Parser Inventory": "Inventaris Parser",
   "Server Surface": "Permukaan Server",
   "Generated once, rendered the same": "Dibuat sekali, dirender sama",
-  "AI marking and the EU AI Act": "Penandaan AI dan UU AI Uni Eropa"
+  "AI marking and the EU AI Act": "Penandaan AI dan UU AI Uni Eropa",
+  "What carries over": "Apa yang ikut terbawa",
+  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "Pengonversi memindahkan deskripsi, penulis, hak cipta, dan tanggal pengambilan ke berkas baru. Lokasi ditinggalkan kecuali Anda menyalakannya, dan Content Credential tidak bisa disalin: ia terikat pada byte aslinya.",
+  "Every table in the font, its name and licence records included, passes through untouched.": "Setiap tabel dalam fon, termasuk catatan nama dan lisensinya, lewat tanpa berubah.",
+  "Nothing embedded carries over: the new file is written fresh with Lolly's own details, and your original keeps its own.": "Tidak ada yang tertanam ikut terbawa: berkas baru ditulis dari awal dengan data Lolly sendiri, dan berkas asli Anda tetap menyimpan miliknya."
 }

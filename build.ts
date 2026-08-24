@@ -80,6 +80,8 @@ import {
   buildFormatPageModel,
   buildConvertPageModel,
   llmsFormatsSection,
+  METADATA_LABEL,
+  type FmtMetadata,
   type FmtCatalog as SideDoorCatalog,
   type FormatPageModel,
   type ConvertPageModel,
@@ -1332,7 +1334,7 @@ function importBand(lang: Lang, opts: { cta?: boolean } = {}): string {
 // ── The formats register ─────────────────────────────────────────────────────
 // The structural data (tokens, direction, features, descriptions) lives in the
 // English-only docs/site/formats-catalog.json - format names are not translated.
-interface FmtEntry { token: string; name: string; full: string; category: string; dir: 'in' | 'out' | 'both'; features: string[]; desc: string; }
+interface FmtEntry { token: string; name: string; full: string; category: string; dir: 'in' | 'out' | 'both'; features: string[]; desc: string; metadata: FmtMetadata; }
 interface FmtCatalog { features: Record<string, string>; specifics?: Record<string, string[]>; unsupported?: Record<string, string[]>; formats: FmtEntry[] }
 let _fmtCatalog: FmtCatalog | null = null;
 function formatCatalog(): FmtCatalog {
@@ -1413,7 +1415,8 @@ function formatsSection(lang: Lang, opts: { head?: boolean } = {}): string {
     specifics: catalog.specifics || {},
     unsupported: catalog.unsupported || {},
     catIcons: FMT_CAT_ICON,
-    formats: Object.fromEntries(catalog.formats.map(f => [f.token, { name: f.name, full: f.full, category: f.category, dir: f.dir, features: f.features, desc: f.desc }])),
+    metaLabels: METADATA_LABEL,
+    formats: Object.fromEntries(catalog.formats.map(f => [f.token, { name: f.name, full: f.full, category: f.category, dir: f.dir, features: f.features, desc: f.desc, metadata: f.metadata }])),
   }).replace(/</g, '\\u003c');
   return `<section class="formats-section" id="formats">
   <div class="formats-inner">
@@ -1444,6 +1447,7 @@ function formatsSection(lang: Lang, opts: { head?: boolean } = {}): string {
       <p class="fmt-dialog-desc" id="fmt-dlg-desc"></p>
       <ul class="fmt-dialog-specs" id="fmt-dlg-specs"></ul>
       <ul class="fmt-dialog-feats" id="fmt-dlg-feats"></ul>
+      <p class="fmt-dialog-meta" id="fmt-dlg-meta"></p>
       <div class="fmt-dialog-unsup" id="fmt-dlg-unsup-wrap" hidden>
         <span class="fmt-dialog-unsup-label">Not yet supported</span>
         <ul class="fmt-dialog-unsup-list" id="fmt-dlg-unsup"></ul>
@@ -2329,6 +2333,20 @@ function renderConvertSideDoor(model: ConvertPageModel, lang: Lang): string {
   const provLine = model.provenance
     ? t('Content Credentials survive this format')
     : t('This format carries no Content Credential');
+  // What carries over (plans/144 O1): the static twin of the converter's own
+  // disclosure line. The container names come from the register (the input's
+  // reads intersected with the output's writes); the sentence after them is the
+  // carry story for this KIND of pair, so a page never promises a carry the
+  // pipeline does not perform.
+  const carryTail = model.carryKind === 'converter'
+    ? t('The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.')
+    : model.carryKind === 'font'
+      ? t('Every table in the font, its name and licence records included, passes through untouched.')
+      : t('Nothing embedded carries over: the new file is written fresh with Lolly\'s own details, and your original keeps its own.');
+  const carryNames = model.carryKind === 'converter' && model.carriesLabels.length
+    ? `${model.carriesLabels.join(', ')} - `
+    : '';
+  const carryLine = `${t('What carries over')}: ${carryNames}${carryTail}`;
   const outFeats = model.outFeatureLabels.map((label) => `<li>${esc(label)}</li>`).join('');
   return `<article class="sidedoor page-convert">
     <div class="sidedoor-eyebrow">${DOC_ICONS.convert}<span>${esc(t('Convert'))}</span></div>
@@ -2356,6 +2374,7 @@ function renderConvertSideDoor(model: ConvertPageModel, lang: Lang): string {
     <section class="sidedoor-detail">
       <h2>${esc(t('What Lolly supports'))}</h2>
       ${outFeats ? `<ul class="sidedoor-feats">${outFeats}</ul>` : ''}
+      <p class="sidedoor-carry">${esc(carryLine)}</p>
       <p class="sidedoor-prov">${esc(provLine)}</p>
       <p class="sidedoor-offline">${esc(t('Everything happens on your device, so it works with the Wi-Fi off.'))}</p>
     </section>
@@ -2560,6 +2579,7 @@ ${LANDING_CSS}
 .sidedoor-detail{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border)}
 .sidedoor-feats{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1rem}
 .sidedoor-feats li{background:hsl(var(--card));border:1px solid var(--border);border-radius:.5rem;padding:.3rem .75rem;font-size:.8125rem}
+.sidedoor-carry{color:var(--muted);margin:.5rem 0;line-height:1.6}
 .sidedoor-prov{font-weight:600;margin:.5rem 0}
 .sidedoor-offline{color:var(--muted);margin:.25rem 0 0}
 .sidedoor-foot{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--border)}
@@ -3474,6 +3494,9 @@ const FORMATS_DIALOG_SCRIPT = `<script>(function(){
     ((data.specifics&&data.specifics[tok])||[]).forEach(function(s){var li=document.createElement('li');li.textContent=s;us.appendChild(li);});
     var ul=q('#fmt-dlg-feats');ul.textContent='';
     (f.features||[]).forEach(function(k){var li=document.createElement('li');li.textContent=(data.features&&data.features[k])||k;ul.appendChild(li);});
+    var md=f.metadata||null,mEl=q('#fmt-dlg-meta');
+    var names=function(v){return (v&&v.length?v:[]).map(function(k){return (data.metaLabels&&data.metaLabels[k])||k;}).join(', ')||'nothing';};
+    mEl.textContent=md?('Metadata: reads '+names(md.reads)+' · writes '+names(md.writes)+' · round trip '+md.preserves+'.'+(md.note?' '+md.note:'')):'';
     var un=q('#fmt-dlg-unsup'),unWrap=q('#fmt-dlg-unsup-wrap');un.textContent='';
     var gaps=(data.unsupported&&data.unsupported[tok])||[];
     gaps.forEach(function(s){var li=document.createElement('li');li.textContent=s;un.appendChild(li);});
@@ -5372,6 +5395,13 @@ function buildLlmsTxt(mdBySlug: Map<string, string>): string {
 Every page below is also served as plain markdown - a twin of the HTML page at
 the same slug under ${SITE_URL}/info/ - so fetch the .md URL directly. English
 only. Product landing copy: ${SITE_URL}/info/index.md
+
+Reading this as an agent? Lolly speaks MCP, so you can act, not just read:
+connect at https://mcp.lolly.tools/mcp (full render tier) or
+${SITE_URL}/api/mcp (browser-free tier: vector and data output). Access
+tokens come from the instance operator; endpoints, auth and the tool list:
+${SITE_URL}/info/mcp.md and ${SITE_URL}/info/ai-agents.md. Machine-readable
+format claims: ${SITE_URL}/info/capabilities.json
 
 ${sections.join('\n\n')}
 

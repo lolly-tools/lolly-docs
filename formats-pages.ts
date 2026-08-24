@@ -16,6 +16,38 @@
  * ways.
  */
 
+/**
+ * What Lolly reads and writes in a format's own metadata containers, and what
+ * survives an ingest then re-export round trip (plans/144 O1). `reads`/`writes`
+ * use one controlled vocabulary (see METADATA_VOCAB); an empty array means none.
+ * Every claim here is checked against the real writer by
+ * the claim tests under tests/, so the register cannot drift from the code.
+ */
+export interface FmtMetadata {
+  reads: string[];
+  writes: string[];
+  preserves: 'full' | 'partial' | 'none' | 'n/a';
+  note?: string;
+}
+
+/** The only tokens `reads`/`writes` may contain. No 'none' token: use []. */
+export const METADATA_VOCAB = [
+  'exif', 'xmp', 'iptc', 'dc', 'core-props', 'id3', 'info', 'prodid', 'c2pa',
+] as const;
+
+/** Display names for the vocabulary, used on the convert pages and in llms.txt. */
+export const METADATA_LABEL: Record<string, string> = {
+  exif: 'EXIF',
+  xmp: 'XMP',
+  iptc: 'IPTC',
+  dc: 'Dublin Core',
+  'core-props': 'Office core properties',
+  id3: 'ID3',
+  info: 'RIFF INFO',
+  prodid: 'PRODID',
+  c2pa: 'Content Credential',
+};
+
 /** One format entry, matching the shape in docs/site/formats-catalog.json. */
 export interface FmtEntry {
   token: string;
@@ -25,6 +57,7 @@ export interface FmtEntry {
   dir: 'in' | 'out' | 'both';
   features: string[];
   desc: string;
+  metadata: FmtMetadata;
 }
 
 /** The parsed register: the feature label map plus the format array. */
@@ -77,6 +110,8 @@ export interface CapabilityRow {
   writes: boolean;
   roundTrips: boolean;
   features: string[];
+  /** The register's metadata claims, verbatim (plans/144 O1). */
+  metadata: FmtMetadata;
 }
 export interface CapabilitiesDoc {
   generator: 'lolly';
@@ -100,6 +135,12 @@ export function buildCapabilities(catalog: FmtCatalog, opts: { url?: string } = 
       writes: writes(f),
       roundTrips: f.dir === 'both',
       features: [...f.features],
+      metadata: {
+        reads: [...f.metadata.reads],
+        writes: [...f.metadata.writes],
+        preserves: f.metadata.preserves,
+        ...(f.metadata.note ? { note: f.metadata.note } : {}),
+      },
     })),
   };
 }
@@ -305,24 +346,65 @@ export interface ConvertPageModel {
   title: string;
   description: string;
   appHash: string;
+  /**
+   * The metadata containers BOTH sides speak: the input's `reads` intersected
+   * with the output's `writes`, as display labels. Derived from the register, so
+   * it moves when a claim moves.
+   */
+  carriesLabels: string[];
+  /**
+   * Which carry story this pair actually gets. 'converter' is the image
+   * converter's own carry (plans/144 Wave 1) and is the only pair kind where
+   * Lolly moves fields from the source file into the output; 'font' is the
+   * on-device container swap, where the whole font passes through; 'none' is
+   * every other pair, where the output is rendered fresh.
+   */
+  carryKind: 'converter' | 'font' | 'none';
+}
+
+/** The carry story for a pair, keyed off the tool the page's link opens. */
+function carryKindFor(inToken: string, outToken: string): ConvertPageModel['carryKind'] {
+  const hash = convertAppHash(inToken, outToken);
+  if (hash.startsWith('#/tool/convert-image')) return 'converter';
+  if (hash === '#/tool/font-convert') return 'font';
+  return 'none';
+}
+
+/** "reads exif, xmp; writes exif, xmp, c2pa; round trip partial" - the register's
+ *  metadata claims for one format, as one flat clause for llms.txt. */
+export function metadataClause(m: FmtMetadata): string {
+  const list = (v: string[]): string => (v.length ? v.join(', ') : 'nothing');
+  return `reads ${list(m.reads)}; writes ${list(m.writes)}; round trip ${m.preserves}`;
 }
 
 /**
  * The Formats section for /info/llms.txt. One line per per-format page, plus a
  * pointer to the machine-readable capabilities.json and the convert pages. Pure,
  * so the llms test can assert on it without building the site.
+ *
+ * The metadata claims ride INLINE on each format's existing line: the pinned test
+ * counts "- [" lines against the register, so a second bullet per format would
+ * break the bijection it guards.
  */
 export function llmsFormatsSection(catalog: FmtCatalog, opts: { url?: string } = {}): string {
   const url = opts.url ?? 'https://lolly.tools';
   const lines = catalog.formats.map((f) => {
     const dir = f.dir === 'both' ? 'reads and writes' : f.dir === 'in' ? 'reads' : 'writes';
-    return `- [${f.name}](${url}/info/formats/${tokenSlug(f.token)}/): Lolly ${dir} ${f.name}.`;
+    return `- [${f.name}](${url}/info/formats/${tokenSlug(f.token)}/): Lolly ${dir} ${f.name}.` +
+      ` Metadata: ${metadataClause(f.metadata)}.`;
   });
   return `## Formats
 
 Machine-readable capabilities (no scraping): ${url}/info/capabilities.json - a
-static JSON of every format, whether Lolly reads it, writes it, or both, and its
-features. Curated conversion pages live under ${url}/info/convert/.
+static JSON of every format, whether Lolly reads it, writes it, or both, its
+features and its metadata claims. Curated conversion pages live under
+${url}/info/convert/.
+
+Each line below ends with what Lolly reads and writes in that format's own
+metadata containers (exif, xmp, iptc, dc, core-props, id3, info, prodid, c2pa),
+and what survives an ingest then re-export round trip: full, partial, none, or
+n/a for a one-direction format. Those claims are tested against the real writers,
+so they describe the code rather than an intention.
 
 ${lines.join('\n')}`;
 }
@@ -343,5 +425,9 @@ export function buildConvertPageModel(pair: ConvertPair, catalog: FmtCatalog): C
       `Turn ${pair.in.name} into ${pair.out.name} on your own device. ` +
       `Free, no account, nothing uploaded.`,
     appHash: convertAppHash(pair.inToken, pair.outToken),
+    carriesLabels: pair.in.metadata.reads
+      .filter((r) => pair.out.metadata.writes.includes(r))
+      .map((r) => METADATA_LABEL[r] ?? r),
+    carryKind: carryKindFor(pair.inToken, pair.outToken),
   };
 }

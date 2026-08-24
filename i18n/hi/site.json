@@ -202,5 +202,9 @@
   "Parser Inventory": "पार्सर सूची",
   "Server Surface": "सर्वर सतह",
   "Generated once, rendered the same": "एक बार जनरेट, हर बार वही रेंडर",
-  "AI marking and the EU AI Act": "AI मार्किंग और EU AI अधिनियम"
+  "AI marking and the EU AI Act": "AI मार्किंग और EU AI अधिनियम",
+  "What carries over": "क्या साथ जाता है",
+  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "कन्वर्टर विवरण, लेखक, कॉपीराइट और खींचने की तारीख को नई फ़ाइल में ले जाता है। जब तक आप इसे चालू न करें, लोकेशन पीछे रह जाती है, और Content Credential की नकल नहीं हो सकती: वह मूल बाइट्स से बंधा होता है।",
+  "Every table in the font, its name and licence records included, passes through untouched.": "फ़ॉन्ट की हर टेबल, उसके नाम और लाइसेंस रिकॉर्ड सहित, ज्यों की त्यों चली जाती है।",
+  "Nothing embedded carries over: the new file is written fresh with Lolly's own details, and your original keeps its own.": "एम्बेड किया हुआ कुछ भी साथ नहीं जाता: नई फ़ाइल Lolly के अपने विवरण के साथ नए सिरे से लिखी जाती है, और आपकी मूल फ़ाइल अपने विवरण रखती है।"
 }

@@ -202,5 +202,9 @@
   "Parser Inventory": "パーサー一覧",
   "Server Surface": "サーバー攻撃面",
   "Generated once, rendered the same": "一度生成すれば、同じように描画されます",
-  "AI marking and the EU AI Act": "AI表示とEU AI法"
+  "AI marking and the EU AI Act": "AI表示とEU AI法",
+  "What carries over": "引き継がれるもの",
+  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "コンバーターは説明、作成者、著作権、撮影日時を新しいファイルに引き継ぎます。位置情報はオンにしない限り残されず、Content Credential は複製できません。元のバイト列に結び付いているためです。",
+  "Every table in the font, its name and licence records included, passes through untouched.": "フォント内のすべてのテーブルは、名前とライセンスのレコードを含めてそのまま引き継がれます。",
+  "Nothing embedded carries over: the new file is written fresh with Lolly's own details, and your original keeps its own.": "埋め込まれた情報は引き継がれません。新しいファイルは Lolly 自身の情報で新規に書き出され、元のファイルは自分の情報を保ちます。"
 }

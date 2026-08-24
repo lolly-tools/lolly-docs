@@ -202,5 +202,9 @@
   "Parser Inventory": "قائمة المحلِّلات",
   "Server Surface": "سطح الخادم",
   "Generated once, rendered the same": "ينشأ مرة واحدة، ويظهر كما هو دائما",
-  "AI marking and the EU AI Act": "وسم الذكاء الاصطناعي وقانون الذكاء الاصطناعي للاتحاد الأوروبي"
+  "AI marking and the EU AI Act": "وسم الذكاء الاصطناعي وقانون الذكاء الاصطناعي للاتحاد الأوروبي",
+  "What carries over": "ما الذي ينتقل",
+  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "ينقل المحول الوصف والمؤلف وحقوق النشر وتاريخ الالتقاط إلى الملف الجديد. يبقى الموقع خارج الملف ما لم تفعله، ولا يمكن نسخ Content Credential: فهو مرتبط بالبايتات الأصلية.",
+  "Every table in the font, its name and licence records included, passes through untouched.": "كل جدول في الخط، بما في ذلك سجلات الاسم والترخيص، ينتقل كما هو.",
+  "Nothing embedded carries over: the new file is written fresh with Lolly's own details, and your original keeps its own.": "لا ينتقل أي شيء مضمن: يكتب الملف الجديد من جديد ببيانات Lolly الخاصة، ويحتفظ ملفك الأصلي ببياناته."
 }

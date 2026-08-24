@@ -202,5 +202,9 @@
   "Parser Inventory": "Parser-Übersicht",
   "Server Surface": "Server-Angriffsfläche",
   "Generated once, rendered the same": "Einmal erzeugt, immer gleich gerendert",
-  "AI marking and the EU AI Act": "KI-Kennzeichnung und der EU AI Act"
+  "AI marking and the EU AI Act": "KI-Kennzeichnung und der EU AI Act",
+  "What carries over": "Was übernommen wird",
+  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "Der Konverter übernimmt Beschreibung, Autor, Copyright und Aufnahmedatum in die neue Datei. Der Standort bleibt zurück, sofern Sie ihn nicht aktivieren, und ein Content Credential lässt sich nicht kopieren: Es ist an die ursprünglichen Bytes gebunden.",
+  "Every table in the font, its name and licence records included, passes through untouched.": "Jede Tabelle der Schrift, einschließlich Namens- und Lizenzeinträgen, wird unverändert übernommen.",
+  "Nothing embedded carries over: the new file is written fresh with Lolly's own details, and your original keeps its own.": "Nichts Eingebettetes wird übernommen: Die neue Datei wird neu mit Lollys eigenen Angaben geschrieben, Ihr Original behält seine eigenen."
 }

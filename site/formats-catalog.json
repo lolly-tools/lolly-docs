@@ -436,6 +436,7 @@
     ]
   },
   "_unsupported_note": "Known gaps per format token, shown in the dialog under 'Not yet supported'. Editorial and accurate, not exhaustive: seed only what is genuinely true today. A format with no entry shows no gap list. Expand this during the format-support roadmap review.",
+  "_metadata_note": "Per-format metadata claims (plans/144 O1). reads/writes use one controlled vocabulary only: exif, xmp, iptc, dc, core-props, id3, info, prodid, c2pa. An empty array means none - there is no \"none\" token. preserves describes an ingest then re-export round trip: full, partial, none, or n/a for a one-direction format. Every claim is checked against the real writer by the claim tests under tests/, so a claim cannot drift from the code.",
   "unsupported": {
     "JPG": [
       "No transparency (alpha is flattened onto white)"
@@ -482,7 +483,19 @@
         "embeds-bitmaps",
         "provenance"
       ],
-      "desc": "The web's vector picture format: shapes and text described as maths, so it stays razor-sharp at any size and the file stays tiny. Lolly reads almost any SVG (sanitising out scripts first) and, on export, outlines every letter to a path so it renders even where the font isn't installed. It can carry a Content Credential and even reproduces CSS box-shadows."
+      "desc": "The web's vector picture format: shapes and text described as maths, so it stays razor-sharp at any size and the file stays tiny. Lolly reads almost any SVG (sanitising out scripts first) and, on export, outlines every letter to a path so it renders even where the font isn't installed. It can carry a Content Credential and even reproduces CSS box-shadows.",
+      "metadata": {
+        "reads": [
+          "dc",
+          "xmp"
+        ],
+        "writes": [
+          "dc",
+          "c2pa"
+        ],
+        "preserves": "none",
+        "note": "Export writes <title>/<desc> plus a Dublin Core <metadata> block. An imported SVG keeps its own metadata; the re-export is written fresh."
+      }
     },
     {
       "token": "PDF",
@@ -498,7 +511,17 @@
         "provenance",
         "encryption"
       ],
-      "desc": "The universal 'looks the same everywhere' document. Lolly writes true page sizes at real physical dimensions (A4, US Letter, and so on), outlines text to paths, and can build multi-page documents. It can lock a PDF with a password (a light 40-bit RC4 lock, or strong AES-256) and carry Content Credentials, and it reads PDFs back in as editable artwork."
+      "desc": "The universal 'looks the same everywhere' document. Lolly writes true page sizes at real physical dimensions (A4, US Letter, and so on), outlines text to paths, and can build multi-page documents. It can lock a PDF with a password (a light 40-bit RC4 lock, or strong AES-256) and carry Content Credentials, and it reads PDFs back in as editable artwork.",
+      "metadata": {
+        "reads": [
+          "xmp"
+        ],
+        "writes": [
+          "c2pa"
+        ],
+        "preserves": "none",
+        "note": "Reads the info dictionary and any XMP packet. Writes the PDF info dictionary (creator, author, title, subject, keywords); an XMP packet only on the PDF/X-4 path."
+      }
     },
     {
       "token": "PNG",
@@ -513,7 +536,20 @@
         "hdr",
         "provenance"
       ],
-      "desc": "The go-to lossless image format, with real transparency, so nothing is thrown away and edges over a background stay clean. Great for logos, screenshots and artwork. Lolly tags it with an sRGB profile, can boost it to genuine HDR brightness on capable screens, and embeds provenance and Content Credentials."
+      "desc": "The go-to lossless image format, with real transparency, so nothing is thrown away and edges over a background stay clean. Great for logos, screenshots and artwork. Lolly tags it with an sRGB profile, can boost it to genuine HDR brightness on capable screens, and embeds provenance and Content Credentials.",
+      "metadata": {
+        "reads": [
+          "exif",
+          "xmp"
+        ],
+        "writes": [
+          "exif",
+          "xmp",
+          "c2pa"
+        ],
+        "preserves": "partial",
+        "note": "Export writes iTXt text chunks plus an XMP packet. The image converter also carries the source EXIF into an eXIf chunk: descriptive fields carry, location only if you turn it on, and a Content Credential is never copied across a re-encode."
+      }
     },
     {
       "token": "JPG",
@@ -527,7 +563,21 @@
         "hdr",
         "provenance"
       ],
-      "desc": "The classic photo format: smaller files by discarding detail your eye barely notices, which makes it ideal for photographs but poor for crisp graphics or text. It's always opaque (no transparency). Lolly tags it sRGB, can write an HDR version for bright displays, and embeds provenance and Content Credentials."
+      "desc": "The classic photo format: smaller files by discarding detail your eye barely notices, which makes it ideal for photographs but poor for crisp graphics or text. It's always opaque (no transparency). Lolly tags it sRGB, can write an HDR version for bright displays, and embeds provenance and Content Credentials.",
+      "metadata": {
+        "reads": [
+          "exif",
+          "xmp",
+          "iptc"
+        ],
+        "writes": [
+          "exif",
+          "xmp",
+          "c2pa"
+        ],
+        "preserves": "partial",
+        "note": "Export writes an EXIF APP1 segment plus an XMP packet. Same converter carry rules as PNG: descriptive fields carry, location on opt-in, no credential copy."
+      }
     },
     {
       "token": "WEBP",
@@ -542,7 +592,20 @@
         "lossy",
         "provenance"
       ],
-      "desc": "A modern web image format that packs smaller than PNG or JPG while still supporting transparency, and can be either lossless or lossy depending on what you need. Widely supported in browsers. Lolly can embed Content Credentials; it does not do HDR in WebP (the format's 8-bit)."
+      "desc": "A modern web image format that packs smaller than PNG or JPG while still supporting transparency, and can be either lossless or lossy depending on what you need. Widely supported in browsers. Lolly can embed Content Credentials; it does not do HDR in WebP (the format's 8-bit).",
+      "metadata": {
+        "reads": [
+          "exif",
+          "xmp"
+        ],
+        "writes": [
+          "exif",
+          "xmp",
+          "c2pa"
+        ],
+        "preserves": "partial",
+        "note": "RIFF EXIF and XMP chunks with the VP8X flags set. Same converter carry rules as PNG and JPG."
+      }
     },
     {
       "token": "GIF",
@@ -556,7 +619,15 @@
         "animation",
         "provenance"
       ],
-      "desc": "The old format everyone knows for short looping animations. It works literally everywhere, which is its charm, but it's limited to 256 colours and only on/off transparency, so files are larger and less colourful than modern video. Lolly reads animated GIFs verbatim and can export one, with a Content Credential in its comment block."
+      "desc": "The old format everyone knows for short looping animations. It works literally everywhere, which is its charm, but it's limited to 256 colours and only on/off transparency, so files are larger and less colourful than modern video. Lolly reads animated GIFs verbatim and can export one, with a Content Credential in its comment block.",
+      "metadata": {
+        "reads": [],
+        "writes": [
+          "c2pa"
+        ],
+        "preserves": "none",
+        "note": "GIF has no EXIF or XMP container: the credit line goes in a comment extension block."
+      }
     },
     {
       "token": "TIFF",
@@ -570,7 +641,19 @@
         "hdr",
         "provenance"
       ],
-      "desc": "A high-quality, uncompressed raster format favoured for archiving and handing to print or photo editors. Lolly writes a plain sRGB TIFF at your chosen DPI (transparency is flattened onto white), can also write an HDR version, and records provenance in the file's metadata. It's a desktop format: browsers can't preview it."
+      "desc": "A high-quality, uncompressed raster format favoured for archiving and handing to print or photo editors. Lolly writes a plain sRGB TIFF at your chosen DPI (transparency is flattened onto white), can also write an HDR version, and records provenance in the file's metadata. It's a desktop format: browsers can't preview it.",
+      "metadata": {
+        "reads": [
+          "exif",
+          "xmp"
+        ],
+        "writes": [
+          "exif",
+          "c2pa"
+        ],
+        "preserves": "none",
+        "note": "Writes the baseline tags ImageDescription, Software and Artist. TIFF is not an output of the image converter, so nothing is carried across."
+      }
     },
     {
       "token": "AVIF",
@@ -585,7 +668,19 @@
         "hdr",
         "provenance"
       ],
-      "desc": "The newest of the small-file image formats, built on the AV1 video codec: excellent compression, transparency, and real HDR support. Lolly can write an HDR AVIF for bright displays. It reads and writes wherever your browser supports it natively, and now carries a Content Credential over its native ISO-BMFF structure - so an AI-made or upscaled AVIF keeps its provenance instead of losing it on export."
+      "desc": "The newest of the small-file image formats, built on the AV1 video codec: excellent compression, transparency, and real HDR support. Lolly can write an HDR AVIF for bright displays. It reads and writes wherever your browser supports it natively, and now carries a Content Credential over its native ISO-BMFF structure - so an AI-made or upscaled AVIF keeps its provenance instead of losing it on export.",
+      "metadata": {
+        "reads": [
+          "exif",
+          "xmp"
+        ],
+        "writes": [
+          "exif",
+          "c2pa"
+        ],
+        "preserves": "none",
+        "note": "EXIF is written as a HEIF Exif item (engine insertAvifExif) and read the same way, alongside the XMP item. The Content Credential uses the BMFF binding."
+      }
     },
     {
       "token": "PSD",
@@ -599,7 +694,13 @@
         "alpha",
         "cmyk"
       ],
-      "desc": "Photoshop's native format, where an image is kept as a stack of separate layers you can move and restyle independently. Lolly reads full layered files (including 16-bit and CMYK documents, converted through their embedded colour profile) and writes an 8-bit RGB PSD back out with each layer's name, opacity, visibility and blend mode preserved, so it opens cleanly in Photoshop, GIMP or Krita."
+      "desc": "Photoshop's native format, where an image is kept as a stack of separate layers you can move and restyle independently. Lolly reads full layered files (including 16-bit and CMYK documents, converted through their embedded colour profile) and writes an 8-bit RGB PSD back out with each layer's name, opacity, visibility and blend mode preserved, so it opens cleanly in Photoshop, GIMP or Krita.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "none",
+        "note": "Layer names, opacity and blend modes carry; PSD image resource blocks are neither read nor written."
+      }
     },
     {
       "token": "MP4",
@@ -613,7 +714,17 @@
         "audio",
         "provenance"
       ],
-      "desc": "The default video format for social and sharing: best quality for the file size, plays on essentially every phone and app, and carries a soundtrack. Lolly records it in the browser (where the browser can) and can lay a music bed under the clip. It's one of the few video formats that can carry a verifiable Content Credential."
+      "desc": "The default video format for social and sharing: best quality for the file size, plays on essentially every phone and app, and carries a soundtrack. Lolly records it in the browser (where the browser can) and can lay a music bed under the clip. It's one of the few video formats that can carry a verifiable Content Credential.",
+      "metadata": {
+        "reads": [
+          "xmp"
+        ],
+        "writes": [
+          "c2pa"
+        ],
+        "preserves": "none",
+        "note": "Writes udta/ilst tags (title, artist, date, comment, encoder). Reads the XMP box, the ilst tags and the QuickTime mdta keys."
+      }
     },
     {
       "token": "WEBM",
@@ -627,7 +738,15 @@
         "audio",
         "provenance"
       ],
-      "desc": "An open web video format, the one Firefox and some Chrome setups record. Quality-per-byte is excellent and it carries audio. Because the video standard hasn't settled on a home for Content Credentials in WebM yet, Lolly tucks the credential in as an attachment its own verifier (and the CLI) can read."
+      "desc": "An open web video format, the one Firefox and some Chrome setups record. Quality-per-byte is excellent and it carries audio. Because the video standard hasn't settled on a home for Content Credentials in WebM yet, Lolly tucks the credential in as an attachment its own verifier (and the CLI) can read.",
+      "metadata": {
+        "reads": [],
+        "writes": [
+          "c2pa"
+        ],
+        "preserves": "none",
+        "note": "Writes Matroska Tags (title, artist, date, comment, encoder); the credential travels as an attachment."
+      }
     },
     {
       "token": "MP3",
@@ -639,7 +758,15 @@
         "audio",
         "lossy"
       ],
-      "desc": "The everywhere audio format for music and voice: compressed to a small file that plays in any app or device. Lolly's Voice Recorder saves your mic take as MP3 by default (transcoded on your device), and MP3 audio you bring in can become the music bed under a video."
+      "desc": "The everywhere audio format for music and voice: compressed to a small file that plays in any app or device. Lolly's Voice Recorder saves your mic take as MP3 by default (transcoded on your device), and MP3 audio you bring in can become the music bed under a video.",
+      "metadata": {
+        "reads": [],
+        "writes": [
+          "c2pa"
+        ],
+        "preserves": "none",
+        "note": "No ID3 title or artist writer today. The Content Credential travels in an ID3v2 GEOB frame."
+      }
     },
     {
       "token": "M4A",
@@ -652,7 +779,17 @@
         "lossy",
         "provenance"
       ],
-      "desc": "An audio-only MP4 file, usually holding AAC-encoded sound, the format Apple devices and many browsers record natively. It sounds a little better than MP3 at the same size. Lolly's Voice Recorder can save your take as M4A, and imported M4A audio can drive a video's music bed. As an MP4-family file it carries a Content Credential over the same binding as MP4 - so a synthetic or AI-voiced clip stays attributable."
+      "desc": "An audio-only MP4 file, usually holding AAC-encoded sound, the format Apple devices and many browsers record natively. It sounds a little better than MP3 at the same size. Lolly's Voice Recorder can save your take as M4A, and imported M4A audio can drive a video's music bed. As an MP4-family file it carries a Content Credential over the same binding as MP4 - so a synthetic or AI-voiced clip stays attributable.",
+      "metadata": {
+        "reads": [
+          "xmp"
+        ],
+        "writes": [
+          "c2pa"
+        ],
+        "preserves": "none",
+        "note": "Audio-only MP4: the credential uses the BMFF binding. The M4A export path writes no container tags."
+      }
     },
     {
       "token": "PPTX",
@@ -666,7 +803,17 @@
         "embeds-bitmaps",
         "data-table"
       ],
-      "desc": "PowerPoint's slide-deck format. Lolly doesn't flatten a slide to a picture: it hands over a deck you can actually edit, where text stays as real editable text boxes, logos come through as crisp vector pictures, and images and tables stay extractable. It reads decks back in too, so you can rebrand or rebuild an existing PowerPoint."
+      "desc": "PowerPoint's slide-deck format. Lolly doesn't flatten a slide to a picture: it hands over a deck you can actually edit, where text stays as real editable text boxes, logos come through as crisp vector pictures, and images and tables stay extractable. It reads decks back in too, so you can rebrand or rebuild an existing PowerPoint.",
+      "metadata": {
+        "reads": [
+          "core-props"
+        ],
+        "writes": [
+          "core-props"
+        ],
+        "preserves": "none",
+        "note": "Reads and writes docProps/core.xml (title, creator, description, created). A rebranded deck does not yet re-export the source deck's creator; the seam is recorded in plans/144 Wave 2."
+      }
     },
     {
       "token": "CSV",
@@ -677,7 +824,13 @@
       "features": [
         "data-table"
       ],
-      "desc": "The plain-text spreadsheet: rows of data separated by commas that any spreadsheet app opens. Paste or drop one and a tool's repeating fields fill from it, up to 1,000 rows; export one to round-trip a tool's content back out. Lolly follows the RFC 4180 rules, so quoted fields, embedded commas and newlines all survive."
+      "desc": "The plain-text spreadsheet: rows of data separated by commas that any spreadsheet app opens. Paste or drop one and a tool's repeating fields fill from it, up to 1,000 rows; export one to round-trip a tool's content back out. Lolly follows the RFC 4180 rules, so quoted fields, embedded commas and newlines all survive.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "none",
+        "note": "Plain text: no metadata container."
+      }
     },
     {
       "token": "JSON",
@@ -688,7 +841,13 @@
       "features": [
         "data-table"
       ],
-      "desc": "A simple, human-readable text format for structured data, the common language of the web. Lolly imports a table of rows from it (an array of objects, positional arrays, or a wrapped {\"data\": [...]} shape) and can export a tool's content as JSON to re-import later. No colours or pixels, just the underlying data."
+      "desc": "A simple, human-readable text format for structured data, the common language of the web. Lolly imports a table of rows from it (an array of objects, positional arrays, or a wrapped {\"data\": [...]} shape) and can export a tool's content as JSON to re-import later. No colours or pixels, just the underlying data.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "none",
+        "note": "Plain data: no metadata container."
+      }
     },
     {
       "token": "Penpot",
@@ -701,7 +860,12 @@
         "editable-text",
         "embeds-bitmaps"
       ],
-      "desc": "The export bundle from Penpot, the open-source design tool. It imports as an editable Lolly session with text and shapes intact. Penpot is also where brand tokens round-trip both ways, since Lolly's palette uses the same DTCG design-token format Penpot reads and writes natively."
+      "desc": "The export bundle from Penpot, the open-source design tool. It imports as an editable Lolly session with text and shapes intact. Penpot is also where brand tokens round-trip both ways, since Lolly's palette uses the same DTCG design-token format Penpot reads and writes natively.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "n/a"
+      }
     },
     {
       "token": "Illustrator",
@@ -714,7 +878,13 @@
         "editable-text",
         "embeds-bitmaps"
       ],
-      "desc": "Adobe Illustrator's drawing files. Saved with the default PDF-compatible option, an .ai opens directly in Lolly, no export step needed: vector paint, text and images are read straight off the page and land as an editable layout, with type staying as text where it can and complex art baked to crisp vector fallbacks."
+      "desc": "Adobe Illustrator's drawing files. Saved with the default PDF-compatible option, an .ai opens directly in Lolly, no export step needed: vector paint, text and images are read straight off the page and land as an editable layout, with type staying as text where it can and complex art baked to crisp vector fallbacks.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "n/a",
+        "note": "Read as PDF-compatible artwork; the file's own XMP is not surfaced."
+      }
     },
     {
       "token": "InDesign",
@@ -727,7 +897,12 @@
         "editable-text",
         "embeds-bitmaps"
       ],
-      "desc": "Adobe InDesign page layouts. Lolly can't read a raw .indd, but InDesign's File → Export → InDesign Markup gives an .idml that comes in as an editable, brand-conformed Lolly session, text as text and images extracted, so a print layout keeps working rather than becoming a flat picture."
+      "desc": "Adobe InDesign page layouts. Lolly can't read a raw .indd, but InDesign's File → Export → InDesign Markup gives an .idml that comes in as an editable, brand-conformed Lolly session, text as text and images extracted, so a print layout keeps working rather than becoming a flat picture.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "n/a"
+      }
     },
     {
       "token": "Figma",
@@ -740,7 +915,12 @@
         "editable-text",
         "embeds-bitmaps"
       ],
-      "desc": "A native Figma design file (File → Save local copy). Lolly decodes it entirely in your browser, with no Figma account, plugin or API key involved. Frames become editable boxes, text stays retypable, and images are extracted, so a design leaves Figma as a live layout rather than a screenshot."
+      "desc": "A native Figma design file (File → Save local copy). Lolly decodes it entirely in your browser, with no Figma account, plugin or API key involved. Frames become editable boxes, text stays retypable, and images are extracted, so a design leaves Figma as a live layout rather than a screenshot.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "n/a"
+      }
     },
     {
       "token": "HEIC",
@@ -752,7 +932,16 @@
         "raster",
         "lossy"
       ],
-      "desc": "The efficient photo format iPhones shoot by default: smaller than JPG at similar quality. Lolly reads HEIC/HEIF photos even on browsers that can't open them, using a bundled decoder, so an iPhone photo just works as an image. It's import-only, and it carries no Content Credential."
+      "desc": "The efficient photo format iPhones shoot by default: smaller than JPG at similar quality. Lolly reads HEIC/HEIF photos even on browsers that can't open them, using a bundled decoder, so an iPhone photo just works as an image. It's import-only, and it carries no Content Credential.",
+      "metadata": {
+        "reads": [
+          "exif",
+          "xmp"
+        ],
+        "writes": [],
+        "preserves": "n/a",
+        "note": "The HEIF Exif and XMP items are read (authorship, capture data, GPS) - the source of the image converter's carry for iPhone photos. Lolly does not write HEIC."
+      }
     },
     {
       "token": "PSB",
@@ -766,7 +955,12 @@
         "alpha",
         "cmyk"
       ],
-      "desc": "Photoshop's 'big brother' format for huge canvases beyond PSD's size limit. Lolly reads it the same way it reads a PSD, layers and all (including 16-bit and CMYK documents via their embedded profile), so an oversized Photoshop file comes in as editable layers. It's read-only: Lolly doesn't write PSB."
+      "desc": "Photoshop's 'big brother' format for huge canvases beyond PSD's size limit. Lolly reads it the same way it reads a PSD, layers and all (including 16-bit and CMYK documents via their embedded profile), so an oversized Photoshop file comes in as editable layers. It's read-only: Lolly doesn't write PSB.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "n/a"
+      }
     },
     {
       "token": "XCF",
@@ -779,7 +973,12 @@
         "raster",
         "alpha"
       ],
-      "desc": "GIMP's native layered format, the free-software counterpart to PSD. Lolly reads the layer stack, with each layer's pixels, position and transparency, so a GIMP project imports as editable layers. It's read-only, and unusual precisions (linear or floating-point) are declined rather than misread."
+      "desc": "GIMP's native layered format, the free-software counterpart to PSD. Lolly reads the layer stack, with each layer's pixels, position and transparency, so a GIMP project imports as editable layers. It's read-only, and unusual precisions (linear or floating-point) are declined rather than misread.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "n/a"
+      }
     },
     {
       "token": "MOV",
@@ -792,7 +991,15 @@
         "lossy",
         "audio"
       ],
-      "desc": "Apple's QuickTime video format, common straight off an iPhone or a Mac. Lolly stores it exactly as-is (never re-compressed) and reads its dimensions on your device, so a .mov can go straight onto a timeline or become source footage. It comes in but isn't a Lolly export format."
+      "desc": "Apple's QuickTime video format, common straight off an iPhone or a Mac. Lolly stores it exactly as-is (never re-compressed) and reads its dimensions on your device, so a .mov can go straight onto a timeline or become source footage. It comes in but isn't a Lolly export format.",
+      "metadata": {
+        "reads": [
+          "xmp"
+        ],
+        "writes": [],
+        "preserves": "n/a",
+        "note": "Same BMFF reader as MP4: the XMP box, the ilst tags and the QuickTime mdta keys."
+      }
     },
     {
       "token": "Lottie",
@@ -804,7 +1011,12 @@
         "vector",
         "animation"
       ],
-      "desc": "A lightweight vector animation format (Bodymovin JSON, or its packed .lottie form) used for slick UI motion and micro-animations. Because it's vector, it stays sharp at any size and the file is tiny. Lolly validates and places these as live animations you can drop into a layout."
+      "desc": "A lightweight vector animation format (Bodymovin JSON, or its packed .lottie form) used for slick UI motion and micro-animations. Because it's vector, it stays sharp at any size and the file is tiny. Lolly validates and places these as live animations you can drop into a layout.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "n/a"
+      }
     },
     {
       "token": "WAV",
@@ -816,7 +1028,16 @@
         "audio",
         "lossless"
       ],
-      "desc": "Uncompressed, lossless audio: the raw, full-quality sound format, which means large files. Lolly reads a WAV and decodes it on your device, and it exports one too - full-quality PCM audio straight from a tool like the Audiogram or Sequence Studio. It reads standard PCM WAVs and declines exotic encodings rather than misreading them as noise."
+      "desc": "Uncompressed, lossless audio: the raw, full-quality sound format, which means large files. Lolly reads a WAV and decodes it on your device, and it exports one too - full-quality PCM audio straight from a tool like the Audiogram or Sequence Studio. It reads standard PCM WAVs and declines exotic encodings rather than misreading them as noise.",
+      "metadata": {
+        "reads": [],
+        "writes": [
+          "info",
+          "c2pa"
+        ],
+        "preserves": "none",
+        "note": "Writes a RIFF LIST/INFO chunk (INAM, IART, ICMT, ICOP, ISFT). A source WAV's own INFO chunk is not read back."
+      }
     },
     {
       "token": "Opus",
@@ -829,7 +1050,15 @@
         "lossy",
         "provenance"
       ],
-      "desc": "The modern, efficient audio codec built for the web: it sounds better than MP3 at much smaller sizes and is royalty-free. Lolly exports Opus (in a WebM container) as the soundtrack from tools like the Audiogram and Sequence Studio, and reads Opus in too as part of the OGG/WebM audio it decodes. Its WebM container carries a Content Credential Lolly's own verifier reads (the standard doesn't map C2PA into Matroska yet, so c2patool can't)."
+      "desc": "The modern, efficient audio codec built for the web: it sounds better than MP3 at much smaller sizes and is royalty-free. Lolly exports Opus (in a WebM container) as the soundtrack from tools like the Audiogram and Sequence Studio, and reads Opus in too as part of the OGG/WebM audio it decodes. Its WebM container carries a Content Credential Lolly's own verifier reads (the standard doesn't map C2PA into Matroska yet, so c2patool can't).",
+      "metadata": {
+        "reads": [],
+        "writes": [
+          "c2pa"
+        ],
+        "preserves": "n/a",
+        "note": "The credential travels in the OpusTags comment header, which Lolly's own verifier reads."
+      }
     },
     {
       "token": "OGG",
@@ -841,7 +1070,12 @@
         "audio",
         "lossy"
       ],
-      "desc": "An open, royalty-free compressed audio format (usually Vorbis or Opus inside), a free-software alternative to MP3. Lolly keeps the file intact and decodes it on-device, so an OGG track can drive a video's music bed or play in the ambient player."
+      "desc": "An open, royalty-free compressed audio format (usually Vorbis or Opus inside), a free-software alternative to MP3. Lolly keeps the file intact and decodes it on-device, so an OGG track can drive a video's music bed or play in the ambient player.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "n/a"
+      }
     },
     {
       "token": "FLAC",
@@ -853,7 +1087,12 @@
         "audio",
         "lossless"
       ],
-      "desc": "Lossless compressed audio: full CD-or-better quality with no detail thrown away, but smaller than WAV. Popular with music archivists. Lolly keeps a FLAC byte-for-byte and decodes it on your device, ready to use as a soundtrack under a video."
+      "desc": "Lossless compressed audio: full CD-or-better quality with no detail thrown away, but smaller than WAV. Popular with music archivists. Lolly keeps a FLAC byte-for-byte and decodes it on your device, ready to use as a soundtrack under a video.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "n/a"
+      }
     },
     {
       "token": "MIDI",
@@ -865,7 +1104,12 @@
         "audio",
         "sequenced"
       ],
-      "desc": "Not a recording but a score: MIDI stores which notes to play and when, so the file is tiny and the sound is produced on playback. Lolly converts an imported .mid into a small on-device synth track you can use as a music bed, capping note and step counts so a pathological file can't hang the tab."
+      "desc": "Not a recording but a score: MIDI stores which notes to play and when, so the file is tiny and the sound is produced on playback. Lolly converts an imported .mid into a small on-device synth track you can use as a music bed, capping note and step counts so a pathological file can't hang the tab.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "n/a"
+      }
     },
     {
       "token": "MOD",
@@ -877,7 +1121,12 @@
         "audio",
         "sequenced"
       ],
-      "desc": "A 'tracker module', the demoscene/retro-game way of storing music as a pattern of notes plus a handful of short instrument samples, so a whole song is only a few kilobytes. Lolly plays MOD (and its XM, IT, S3M, STM and MTM cousins) with a bundled on-device player, ready as a music bed or ambient track."
+      "desc": "A 'tracker module', the demoscene/retro-game way of storing music as a pattern of notes plus a handful of short instrument samples, so a whole song is only a few kilobytes. Lolly plays MOD (and its XM, IT, S3M, STM and MTM cousins) with a bundled on-device player, ready as a music bed or ambient track.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "n/a"
+      }
     },
     {
       "token": "GLB",
@@ -888,7 +1137,12 @@
       "features": [
         "3d"
       ],
-      "desc": "A single-file 3D model, geometry, textures and materials all packed into one binary, the standard way to move 3D between apps. Lolly's 3D tool loads your own .glb (read on-device, never uploaded) and renders it as a still or a turntable animation. It's an import for rendering, not a Lolly export format."
+      "desc": "A single-file 3D model, geometry, textures and materials all packed into one binary, the standard way to move 3D between apps. Lolly's 3D tool loads your own .glb (read on-device, never uploaded) and renders it as a still or a turntable animation. It's an import for rendering, not a Lolly export format.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "n/a"
+      }
     },
     {
       "token": "glTF",
@@ -899,7 +1153,12 @@
       "features": [
         "3d"
       ],
-      "desc": "The text-based sibling of GLB: the same open 3D standard, written as a JSON file (often alongside separate texture files) rather than one binary blob. Lolly's 3D tool loads a .gltf to render as a photo or a spinning turntable clip, all on your device. Import-only."
+      "desc": "The text-based sibling of GLB: the same open 3D standard, written as a JSON file (often alongside separate texture files) rather than one binary blob. Lolly's 3D tool loads a .gltf to render as a photo or a spinning turntable clip, all on your device. Import-only.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "n/a"
+      }
     },
     {
       "token": "CMYK PDF",
@@ -916,7 +1175,16 @@
         "provenance",
         "encryption"
       ],
-      "desc": "A press-ready PDF whose colours are written as CMYK ink values rather than screen RGB, the way a commercial printer needs them. Lolly declares a target press condition (Coated FOGRA39 by default) so a print shop knows how to read the inks, and supports crop/bleed marks, true page sizes, and outlined text. Load your own CMYK profile and it can embed it for genuine PDF/X-4."
+      "desc": "A press-ready PDF whose colours are written as CMYK ink values rather than screen RGB, the way a commercial printer needs them. Lolly declares a target press condition (Coated FOGRA39 by default) so a print shop knows how to read the inks, and supports crop/bleed marks, true page sizes, and outlined text. Load your own CMYK profile and it can embed it for genuine PDF/X-4.",
+      "metadata": {
+        "reads": [],
+        "writes": [
+          "xmp",
+          "c2pa"
+        ],
+        "preserves": "n/a",
+        "note": "The info dictionary plus the PDF/X-4 XMP packet, which also states the output-intent press condition."
+      }
     },
     {
       "token": "EPS",
@@ -929,7 +1197,13 @@
         "text-as-paths",
         "embeds-bitmaps"
       ],
-      "desc": "An older but still widely accepted vector format for design and print workflows, the kind of file Illustrator and print houses happily place. Lolly writes device-RGB EPS with all text outlined to paths, so it renders anywhere without the original fonts. Export-only."
+      "desc": "An older but still widely accepted vector format for design and print workflows, the kind of file Illustrator and print houses happily place. Lolly writes device-RGB EPS with all text outlined to paths, so it renders anywhere without the original fonts. Export-only.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "n/a",
+        "note": "A %%Creator comment names Lolly, omitted when metadata is stripped."
+      }
     },
     {
       "token": "CMYK EPS",
@@ -943,7 +1217,13 @@
         "text-as-paths",
         "embeds-bitmaps"
       ],
-      "desc": "The print-colour version of EPS, with colours written as CMYK ink values for a press workflow. Lolly writes straightforward DeviceCMYK (a naive conversion, not a profiled one), with text outlined to paths. Reach for it when a print vendor specifically asks for CMYK EPS. Export-only."
+      "desc": "The print-colour version of EPS, with colours written as CMYK ink values for a press workflow. Lolly writes straightforward DeviceCMYK (a naive conversion, not a profiled one), with text outlined to paths. Reach for it when a print vendor specifically asks for CMYK EPS. Export-only.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "n/a",
+        "note": "A %%Creator comment names Lolly, omitted when metadata is stripped."
+      }
     },
     {
       "token": "EMF",
@@ -955,7 +1235,13 @@
         "vector",
         "text-as-paths"
       ],
-      "desc": "Windows' native vector format, and the one that matters for Office: an EMF pastes into PowerPoint or Word as an editable vector picture that stays crisp when resized, instead of a blurry screenshot. Lolly writes device-RGB EMF with text outlined to paths. Export-only."
+      "desc": "Windows' native vector format, and the one that matters for Office: an EMF pastes into PowerPoint or Word as an editable vector picture that stays crisp when resized, instead of a blurry screenshot. Lolly writes device-RGB EMF with text outlined to paths. Export-only.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "n/a",
+        "note": "The format has no metadata record."
+      }
     },
     {
       "token": "DXF",
@@ -968,7 +1254,13 @@
         "text-as-paths",
         "print"
       ],
-      "desc": "The file a cutting machine reads: laser cutters, vinyl plotters and CNC/CAD software all speak DXF. Lolly writes outline paths in real millimetres (curves smoothed to a fine tolerance, text outlined, colours mapped to the nearest AutoCAD Color Index that usually picks the cutting operation). It's line-art only, so photographic or filtered regions are dropped with a warning."
+      "desc": "The file a cutting machine reads: laser cutters, vinyl plotters and CNC/CAD software all speak DXF. Lolly writes outline paths in real millimetres (curves smoothed to a fine tolerance, text outlined, colours mapped to the nearest AutoCAD Color Index that usually picks the cutting operation). It's line-art only, so photographic or filtered regions are dropped with a warning.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "n/a",
+        "note": "A 999 comment names Lolly."
+      }
     },
     {
       "token": "CMYK TIFF",
@@ -982,7 +1274,16 @@
         "print",
         "lossless"
       ],
-      "desc": "An uncompressed, press-ready raster where every pixel is stored as CMYK ink values for a print RIP. Lolly writes DeviceCMYK pixels at your chosen DPI and records the intended press condition (FOGRA39 by default) in the file's metadata. It's a desktop format, browsers can't preview it. Export-only."
+      "desc": "An uncompressed, press-ready raster where every pixel is stored as CMYK ink values for a print RIP. Lolly writes DeviceCMYK pixels at your chosen DPI and records the intended press condition (FOGRA39 by default) in the file's metadata. It's a desktop format, browsers can't preview it. Export-only.",
+      "metadata": {
+        "reads": [],
+        "writes": [
+          "exif",
+          "c2pa"
+        ],
+        "preserves": "n/a",
+        "note": "Baseline TIFF tags: ImageDescription (with the press condition), Software and Artist."
+      }
     },
     {
       "token": "EXR",
@@ -997,7 +1298,13 @@
         "lossless",
         "alpha"
       ],
-      "desc": "The film and VFX industry's high-dynamic-range image format: it stores light as floating-point values far beyond ordinary black-to-white, so highlights never clip and the file survives heavy grading and compositing. Lolly's Bitmap Studio writes a true OpenEXR master from its own high-precision float pixels, keeping the unbounded linear light intact. Export-only."
+      "desc": "The film and VFX industry's high-dynamic-range image format: it stores light as floating-point values far beyond ordinary black-to-white, so highlights never clip and the file survives heavy grading and compositing. Lolly's Bitmap Studio writes a true OpenEXR master from its own high-precision float pixels, keeping the unbounded linear light intact. Export-only.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "n/a",
+        "note": "The standard's own software attribute names Lolly."
+      }
     },
     {
       "token": "Radiance HDR",
@@ -1010,7 +1317,13 @@
         "hdr",
         "deep-color"
       ],
-      "desc": "The original high-dynamic-range image format (.hdr), long used for lighting and 360° environment maps in 3D. It packs a huge brightness range into a compact RGBE encoding. Lolly's Bitmap Studio writes a Radiance master from its float pixels, keeping the unbounded linear values for HDR and lighting workflows. Export-only."
+      "desc": "The original high-dynamic-range image format (.hdr), long used for lighting and 360° environment maps in 3D. It packs a huge brightness range into a compact RGBE encoding. Lolly's Bitmap Studio writes a Radiance master from its float pixels, keeping the unbounded linear values for HDR and lighting workflows. Export-only.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "n/a",
+        "note": "A SOFTWARE= header line names Lolly."
+      }
     },
     {
       "token": "ICO",
@@ -1023,7 +1336,13 @@
         "alpha",
         "lossless"
       ],
-      "desc": "The favicon format, the little icon in a browser tab. One .ico bundles the same image at several small sizes so a site serves whichever fits. Lolly writes it with transparency preserved, and now reads one back too: it picks the largest image in the bundle and decodes it, whether that size was stored as a PNG or a classic BMP icon (honouring the 1-bit transparency mask)."
+      "desc": "The favicon format, the little icon in a browser tab. One .ico bundles the same image at several small sizes so a site serves whichever fits. Lolly writes it with transparency preserved, and now reads one back too: it picks the largest image in the bundle and decodes it, whether that size was stored as a PNG or a classic BMP icon (honouring the 1-bit transparency mask).",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "none",
+        "note": "The icon bundle has no metadata container."
+      }
     },
     {
       "token": "APNG",
@@ -1038,7 +1357,18 @@
         "lossless",
         "provenance"
       ],
-      "desc": "An animated PNG: like a GIF, but with full colour and real transparency instead of GIF's 256-colour, on/off limits. Great for a short, high-quality looping animation that plays in any modern browser. Lolly can embed a Content Credential in it. It has no soundtrack. Lolly reads an animated PNG back in too, kept verbatim so every frame survives."
+      "desc": "An animated PNG: like a GIF, but with full colour and real transparency instead of GIF's 256-colour, on/off limits. Great for a short, high-quality looping animation that plays in any modern browser. Lolly can embed a Content Credential in it. It has no soundtrack. Lolly reads an animated PNG back in too, kept verbatim so every frame survives.",
+      "metadata": {
+        "reads": [
+          "exif",
+          "xmp"
+        ],
+        "writes": [
+          "c2pa"
+        ],
+        "preserves": "none",
+        "note": "Writes the same PNG iTXt text chunks as a still PNG (Software, Author, Description, Copyright). The XMP packet the still path writes is not applied on the animated path."
+      }
     },
     {
       "token": "Animated WebP",
@@ -1053,7 +1383,18 @@
         "lossy",
         "provenance"
       ],
-      "desc": "An animated WebP: full colour and transparency like APNG, but better-compressed, so it's the smallest of the animated-image options. Ideal for a lightweight web loop. Lolly can embed a Content Credential; it's silent by nature. Lolly reads an animated WebP back in too, kept verbatim so every frame survives."
+      "desc": "An animated WebP: full colour and transparency like APNG, but better-compressed, so it's the smallest of the animated-image options. Ideal for a lightweight web loop. Lolly can embed a Content Credential; it's silent by nature. Lolly reads an animated WebP back in too, kept verbatim so every frame survives.",
+      "metadata": {
+        "reads": [
+          "exif",
+          "xmp"
+        ],
+        "writes": [
+          "c2pa"
+        ],
+        "preserves": "none",
+        "note": "The still-WebP EXIF and XMP stamper does not run on the animated mux."
+      }
     },
     {
       "token": "Animated SVG",
@@ -1068,7 +1409,16 @@
         "alpha",
         "provenance"
       ],
-      "desc": "A vector animation rather than a bitmap one: Lolly stacks vector snapshots with embedded CSS keyframes, so it scales to any size with no codec and no external runtime, and loops in a browser tab or an <img> tag. Text is outlined so it renders anywhere. Heavier per frame than a bitmap, so it uses a lower default frame rate. Carries a Content Credential in its <metadata>, like a still SVG."
+      "desc": "A vector animation rather than a bitmap one: Lolly stacks vector snapshots with embedded CSS keyframes, so it scales to any size with no codec and no external runtime, and loops in a browser tab or an <img> tag. Text is outlined so it renders anywhere. Heavier per frame than a bitmap, so it uses a lower default frame rate. Carries a Content Credential in its <metadata>, like a still SVG.",
+      "metadata": {
+        "reads": [],
+        "writes": [
+          "dc",
+          "c2pa"
+        ],
+        "preserves": "n/a",
+        "note": "A Dublin Core <metadata> block with dc:description, plus a leading credit comment."
+      }
     },
     {
       "token": "HTML",
@@ -1080,7 +1430,15 @@
         "editable-text",
         "embeds-bitmaps"
       ],
-      "desc": "Rich, formatted text as a web fragment. Lolly reads HTML in - a pasted rich-text selection, or an HTML table that fills a tool's rows - and writes it out, most usefully as an email signature you can paste straight into a mail client with its styling and inline logo intact. Generated from content, never a rasterised picture."
+      "desc": "Rich, formatted text as a web fragment. Lolly reads HTML in - a pasted rich-text selection, or an HTML table that fills a tool's rows - and writes it out, most usefully as an email signature you can paste straight into a mail client with its styling and inline logo intact. Generated from content, never a rasterised picture.",
+      "metadata": {
+        "reads": [],
+        "writes": [
+          "c2pa"
+        ],
+        "preserves": "none",
+        "note": "The C2PA text binding can stamp an HTML export; the markup itself carries no metadata block."
+      }
     },
     {
       "token": "MD",
@@ -1091,7 +1449,15 @@
       "features": [
         "editable-text"
       ],
-      "desc": "Plain text with a light sprinkle of formatting marks (# for headings, * for emphasis) that stays readable as-is and converts cleanly to HTML. Popular for notes, docs and READMEs. Lolly reads Markdown you paste or import and renders it, and writes a tool's text content back out as Markdown."
+      "desc": "Plain text with a light sprinkle of formatting marks (# for headings, * for emphasis) that stays readable as-is and converts cleanly to HTML. Popular for notes, docs and READMEs. Lolly reads Markdown you paste or import and renders it, and writes a tool's text content back out as Markdown.",
+      "metadata": {
+        "reads": [],
+        "writes": [
+          "c2pa"
+        ],
+        "preserves": "none",
+        "note": "The C2PA text binding travels in an armoured comment; Markdown has no metadata container."
+      }
     },
     {
       "token": "TXT",
@@ -1102,7 +1468,13 @@
       "features": [
         "editable-text"
       ],
-      "desc": "Just the words, no formatting, no styling - the most universal file there is. Lolly reads plain text into a tool's fields and writes a tool's content back out as plain text that opens in anything."
+      "desc": "Just the words, no formatting, no styling - the most universal file there is. Lolly reads plain text into a tool's fields and writes a tool's content back out as plain text that opens in anything.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "none",
+        "note": "Plain words: no metadata container."
+      }
     },
     {
       "token": "ICS",
@@ -1113,7 +1485,15 @@
       "features": [
         "calendar"
       ],
-      "desc": "A calendar-event file that imports into Apple Calendar, Google Calendar, Outlook and the rest. Lolly builds it from a tool's content (title, time, place) with the dates and text escaped to the iCalendar standard, so a 'save the date' becomes an event people can add in one tap. Export-only."
+      "desc": "A calendar-event file that imports into Apple Calendar, Google Calendar, Outlook and the rest. Lolly builds it from a tool's content (title, time, place) with the dates and text escaped to the iCalendar standard, so a 'save the date' becomes an event people can add in one tap. Export-only.",
+      "metadata": {
+        "reads": [],
+        "writes": [
+          "prodid"
+        ],
+        "preserves": "n/a",
+        "note": "The calendar tools write a PRODID line naming Lolly."
+      }
     },
     {
       "token": "VCF",
@@ -1124,7 +1504,13 @@
       "features": [
         "contacts"
       ],
-      "desc": "A contact card, the standard file that drops a name, number and email straight into a phone's Contacts or an address book. Lolly generates it from the tool's fields with the text properly escaped, so a business card or signature can hand over its details as a real contact. Export-only."
+      "desc": "A contact card, the standard file that drops a name, number and email straight into a phone's Contacts or an address book. Lolly generates it from the tool's fields with the text properly escaped, so a business card or signature can hand over its details as a real contact. Export-only.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "n/a",
+        "note": "The card carries the contact's own fields; no PRODID is written."
+      }
     },
     {
       "token": "DTCG",
@@ -1136,7 +1522,12 @@
         "design-tokens",
         "palette"
       ],
-      "desc": "The emerging W3C standard for design tokens - colours, type, spacing and gradients as structured JSON that design tools share. Lolly imports a DTCG document to hydrate a whole brand (palette, ramps, type) and exports its palette back out as DTCG tokens, so a brand round-trips with any tool that speaks the standard, Penpot included."
+      "desc": "The emerging W3C standard for design tokens - colours, type, spacing and gradients as structured JSON that design tools share. Lolly imports a DTCG document to hydrate a whole brand (palette, ramps, type) and exports its palette back out as DTCG tokens, so a brand round-trips with any tool that speaks the standard, Penpot included.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "none"
+      }
     },
     {
       "token": "Tokens Studio",
@@ -1148,7 +1539,12 @@
         "design-tokens",
         "palette"
       ],
-      "desc": "The token format from the popular Tokens Studio Figma plugin - one monolithic JSON, or a one-file-per-set export. Lolly reads it to build a brand pack, so palette, ramps and themes come in ready to use. Import-only."
+      "desc": "The token format from the popular Tokens Studio Figma plugin - one monolithic JSON, or a one-file-per-set export. Lolly reads it to build a brand pack, so palette, ramps and themes come in ready to use. Import-only.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "n/a"
+      }
     },
     {
       "token": "ASE",
@@ -1159,7 +1555,12 @@
       "features": [
         "palette"
       ],
-      "desc": "Adobe's colour-swatch format, the one that loads a palette straight into Photoshop, Illustrator and InDesign. Lolly exports your brand palette as an .ase so the exact brand colours drop into any Adobe app. Export-only."
+      "desc": "Adobe's colour-swatch format, the one that loads a palette straight into Photoshop, Illustrator and InDesign. Lolly exports your brand palette as an .ase so the exact brand colours drop into any Adobe app. Export-only.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "n/a"
+      }
     },
     {
       "token": "GPL",
@@ -1170,7 +1571,12 @@
       "features": [
         "palette"
       ],
-      "desc": "The plain-text palette format GIMP, Inkscape and Krita read. Lolly writes your brand colours as a .gpl so the free-software design stack picks up the exact palette. Export-only."
+      "desc": "The plain-text palette format GIMP, Inkscape and Krita read. Lolly writes your brand colours as a .gpl so the free-software design stack picks up the exact palette. Export-only.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "n/a"
+      }
     },
     {
       "token": "CSS variables",
@@ -1183,7 +1589,12 @@
         "design-tokens",
         "editable-text"
       ],
-      "desc": "Your brand palette as ready-to-paste CSS - custom properties (--brand-…) or utility classes - so a developer wires the exact brand colours into a website with no guesswork or eyedropper. Export-only."
+      "desc": "Your brand palette as ready-to-paste CSS - custom properties (--brand-…) or utility classes - so a developer wires the exact brand colours into a website with no guesswork or eyedropper. Export-only.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "n/a"
+      }
     },
     {
       "token": "SCSS",
@@ -1191,8 +1602,16 @@
       "full": "Sass variables",
       "category": "Tokens",
       "dir": "out",
-      "features": ["palette", "editable-text"],
-      "desc": "Your brand palette as Sass variables - the pre-processor twin of the CSS variables export, ready to paste into a Sass codebase with the exact brand values. Export-only."
+      "features": [
+        "palette",
+        "editable-text"
+      ],
+      "desc": "Your brand palette as Sass variables - the pre-processor twin of the CSS variables export, ready to paste into a Sass codebase with the exact brand values. Export-only.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "n/a"
+      }
     },
     {
       "token": "ZIP",
@@ -1204,7 +1623,13 @@
         "multi-file-bundle",
         "encryption"
       ],
-      "desc": "A single archive that bundles many files together, how Lolly delivers a multi-format export, a whole folder of saved sessions, or a batch run. You can lock the whole zip with one password: a Standard lock (traditional ZipCrypto, opens in any unzip tool including Windows) or Strong AES-256 (needs 7-Zip, Keka or WinZip). Any PDF inside is also individually locked with the same password. Drop a plain .zip in and Lolly explodes it, adding each member as its own asset (an office file inside - .xlsx/.pptx/.docx - is routed to its own reader, not shredded)."
+      "desc": "A single archive that bundles many files together, how Lolly delivers a multi-format export, a whole folder of saved sessions, or a batch run. You can lock the whole zip with one password: a Standard lock (traditional ZipCrypto, opens in any unzip tool including Windows) or Strong AES-256 (needs 7-Zip, Keka or WinZip). Any PDF inside is also individually locked with the same password. Drop a plain .zip in and Lolly explodes it, adding each member as its own asset (an office file inside - .xlsx/.pptx/.docx - is routed to its own reader, not shredded).",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "none",
+        "note": "The archive carries no metadata of its own; every member keeps its own file intact."
+      }
     },
     {
       "token": "SVGZ",
@@ -1218,7 +1643,19 @@
         "text-as-paths",
         "provenance"
       ],
-      "desc": "A gzip-compressed SVG: byte-for-byte the same vector picture as an .svg, just 60 to 70% smaller on the wire. Every vector editor and browser reads it, and Lolly unzips one straight back to SVG on import, so the outlined text and Content Credential survive the round trip."
+      "desc": "A gzip-compressed SVG: byte-for-byte the same vector picture as an .svg, just 60 to 70% smaller on the wire. Every vector editor and browser reads it, and Lolly unzips one straight back to SVG on import, so the outlined text and Content Credential survive the round trip.",
+      "metadata": {
+        "reads": [
+          "dc",
+          "xmp"
+        ],
+        "writes": [
+          "dc",
+          "c2pa"
+        ],
+        "preserves": "none",
+        "note": "gzip around an SVG: the same Dublin Core block, read and written through the SVG path."
+      }
     },
     {
       "token": "BMP",
@@ -1231,7 +1668,13 @@
         "alpha",
         "lossless"
       ],
-      "desc": "The uncompressed Windows bitmap, the lowest-common-denominator raster a legacy Windows, embedded, or clipboard consumer will take when it cannot read a PNG. Lolly writes 24-bit, or 32-bit the moment a pixel is see-through, and reads both back. It carries the Lolly pixel imprint; PNG stays the display master."
+      "desc": "The uncompressed Windows bitmap, the lowest-common-denominator raster a legacy Windows, embedded, or clipboard consumer will take when it cannot read a PNG. Lolly writes 24-bit, or 32-bit the moment a pixel is see-through, and reads both back. It carries the Lolly pixel imprint; PNG stays the display master.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "none",
+        "note": "No metadata box, so no Content Credential either. The pixel imprint is the only provenance this format holds."
+      }
     },
     {
       "token": "WMF",
@@ -1243,7 +1686,13 @@
         "vector",
         "text-as-paths"
       ],
-      "desc": "The 16-bit ancestor of EMF, and still the safest vector paste for older Office builds and legacy clip-art pipelines: a placeable WMF drops into PowerPoint or Word as an editable vector picture. Lolly writes device-RGB WMF with curves flattened to fine polylines and text outlined to paths. Line-art only, so photographic regions are dropped. Export-only."
+      "desc": "The 16-bit ancestor of EMF, and still the safest vector paste for older Office builds and legacy clip-art pipelines: a placeable WMF drops into PowerPoint or Word as an editable vector picture. Lolly writes device-RGB WMF with curves flattened to fine polylines and text outlined to paths. Line-art only, so photographic regions are dropped. Export-only.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "n/a",
+        "note": "The format has no metadata record."
+      }
     },
     {
       "token": "WOFF",
@@ -1255,7 +1704,13 @@
         "font",
         "lossless"
       ],
-      "desc": "A web font is an OpenType font (TTF or OTF) wrapped in a compressed container so it downloads smaller. Lolly converts between them losslessly on-device: unwrap a WOFF to a plain TTF or OTF, or wrap one up, rebuilding the table directory and checksums each way. TrueType and CFF outlines both pass through untouched. WOFF2 (Brotli) is read-detected but not yet written."
+      "desc": "A web font is an OpenType font (TTF or OTF) wrapped in a compressed container so it downloads smaller. Lolly converts between them losslessly on-device: unwrap a WOFF to a plain TTF or OTF, or wrap one up, rebuilding the table directory and checksums each way. TrueType and CFF outlines both pass through untouched. WOFF2 (Brotli) is read-detected but not yet written.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "partial",
+        "note": "Every sfnt table, the name and licence records included, survives the container swap. WOFF's optional extended-metadata block is not written."
+      }
     },
     {
       "token": "TTF",
@@ -1263,8 +1718,17 @@
       "full": "TrueType Font",
       "category": "Font",
       "dir": "both",
-      "features": ["font", "lossless"],
-      "desc": "The classic font container with TrueType glyph outlines. Lolly reads one anywhere a font can be added - the brand's Type room, the font picker - and writes one back out on-device by unwrapping a WOFF, rebuilding the table directory and checksums losslessly."
+      "features": [
+        "font",
+        "lossless"
+      ],
+      "desc": "The classic font container with TrueType glyph outlines. Lolly reads one anywhere a font can be added - the brand's Type room, the font picker - and writes one back out on-device by unwrapping a WOFF, rebuilding the table directory and checksums losslessly.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "full",
+        "note": "Every sfnt table, the name and licence records included, is copied unchanged; only the head checksum is recomputed."
+      }
     },
     {
       "token": "OTF",
@@ -1272,8 +1736,17 @@
       "full": "OpenType Font (CFF)",
       "category": "Font",
       "dir": "both",
-      "features": ["font", "lossless"],
-      "desc": "The OpenType container with CFF (PostScript-flavour) outlines. Read wherever a font can be added, and written back out on-device by unwrapping a WOFF - the outlines pass through untouched either way."
+      "features": [
+        "font",
+        "lossless"
+      ],
+      "desc": "The OpenType container with CFF (PostScript-flavour) outlines. Read wherever a font can be added, and written back out on-device by unwrapping a WOFF - the outlines pass through untouched either way.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "full",
+        "note": "Every sfnt table, the name and licence records included, is copied unchanged; only the head checksum is recomputed."
+      }
     },
     {
       "token": "XLSX",
@@ -1284,7 +1757,13 @@
       "features": [
         "data-table"
       ],
-      "desc": "Excel's spreadsheet workbook. Drop one and a tool's repeating fields fill from its first sheet, up to 1,000 rows, exactly like a pasted CSV with the first row becoming the column headers. Lolly reads the cells directly (shared strings, inline text, numbers, dates and formula results). Macro-enabled .xlsm workbooks are refused. Import-only."
+      "desc": "Excel's spreadsheet workbook. Drop one and a tool's repeating fields fill from its first sheet, up to 1,000 rows, exactly like a pasted CSV with the first row becoming the column headers. Lolly reads the cells directly (shared strings, inline text, numbers, dates and formula results). Macro-enabled .xlsm workbooks are refused. Import-only.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "n/a",
+        "note": "Cells are read; the workbook core properties are not."
+      }
     },
     {
       "token": "EPUB",
@@ -1296,7 +1775,15 @@
         "multi-file-bundle",
         "editable-text"
       ],
-      "desc": "A reflowable EPUB 3 e-book: one XHTML file per chapter, a spine in reading order and a navigation table of contents, packed as a valid OCF zip. Opens in Apple Books, Kobo, Calibre and every e-reader, and the text reflows to any screen. Export-only."
+      "desc": "A reflowable EPUB 3 e-book: one XHTML file per chapter, a spine in reading order and a navigation table of contents, packed as a valid OCF zip. Opens in Apple Books, Kobo, Calibre and every e-reader, and the text reflows to any screen. Export-only.",
+      "metadata": {
+        "reads": [],
+        "writes": [
+          "dc"
+        ],
+        "preserves": "n/a",
+        "note": "The OPF package carries dc:title, dc:creator and dc:language."
+      }
     },
     {
       "token": "DOCX",
@@ -1307,7 +1794,15 @@
       "features": [
         "editable-text"
       ],
-      "desc": "Microsoft Word's document format. Lolly doesn't flatten your writing to a picture: it hands over a real .docx whose headings and paragraphs stay fully editable text, opening cleanly in Word, LibreOffice Writer and Google Docs. Export-only."
+      "desc": "Microsoft Word's document format. Lolly doesn't flatten your writing to a picture: it hands over a real .docx whose headings and paragraphs stay fully editable text, opening cleanly in Word, LibreOffice Writer and Google Docs. Export-only.",
+      "metadata": {
+        "reads": [],
+        "writes": [
+          "core-props"
+        ],
+        "preserves": "n/a",
+        "note": "docProps/core.xml (title, creator, description, created, modified) plus app.xml."
+      }
     },
     {
       "token": "ODT",
@@ -1318,7 +1813,15 @@
       "features": [
         "editable-text"
       ],
-      "desc": "The OpenDocument text format used by LibreOffice Writer. Lolly writes a valid OpenDocument package with your headings and paragraphs as real editable text, not a rasterised page, opening in LibreOffice, Word and Google Docs. Export-only."
+      "desc": "The OpenDocument text format used by LibreOffice Writer. Lolly writes a valid OpenDocument package with your headings and paragraphs as real editable text, not a rasterised page, opening in LibreOffice, Word and Google Docs. Export-only.",
+      "metadata": {
+        "reads": [],
+        "writes": [
+          "dc"
+        ],
+        "preserves": "n/a",
+        "note": "meta.xml carries dc:title only."
+      }
     },
     {
       "token": "GZ",
@@ -1330,7 +1833,13 @@
         "compression",
         "lossless"
       ],
-      "desc": "Single-file gzip compression (RFC 1952), the ubiquitous .gz. Wraps raw DEFLATE with a CRC-checked header and trailer. Lolly compresses and decompresses on-device; it is what powers .svgz and a generic 'compress this download'."
+      "desc": "Single-file gzip compression (RFC 1952), the ubiquitous .gz. Wraps raw DEFLATE with a CRC-checked header and trailer. Lolly compresses and decompresses on-device; it is what powers .svgz and a generic 'compress this download'.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "none",
+        "note": "gzip carries no descriptive metadata of its own."
+      }
     },
     {
       "token": "TAR",
@@ -1341,7 +1850,13 @@
       "features": [
         "multi-file-bundle"
       ],
-      "desc": "The classic uncompressed multi-file archive (POSIX USTAR): one header per file, readable by system tar, libarchive and every standard library. Pack several assets into one download, or drop a .tar (or a gzipped .tar.gz) back in and Lolly explodes it, adding each member as its own asset."
+      "desc": "The classic uncompressed multi-file archive (POSIX USTAR): one header per file, readable by system tar, libarchive and every standard library. Pack several assets into one download, or drop a .tar (or a gzipped .tar.gz) back in and Lolly explodes it, adding each member as its own asset.",
+      "metadata": {
+        "reads": [],
+        "writes": [],
+        "preserves": "none",
+        "note": "USTAR headers keep each member name, mode and timestamp; the archive holds no descriptive metadata."
+      }
     }
   ]
 }

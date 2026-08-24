@@ -202,5 +202,9 @@
   "Parser Inventory": "剖析器清單",
   "Server Surface": "伺服器攻擊面",
   "Generated once, rendered the same": "產生一次，每次算圖都一樣",
-  "AI marking and the EU AI Act": "AI 標記與歐盟《人工智慧法案》"
+  "AI marking and the EU AI Act": "AI 標記與歐盟《人工智慧法案》",
+  "What carries over": "哪些資訊會保留",
+  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "轉換器會把描述、作者、版權與拍攝日期寫入新檔案。除非你開啟位置資訊，否則它不會隨行；Content Credential 無法複製，因為它綁定在原始位元組上。",
+  "Every table in the font, its name and licence records included, passes through untouched.": "字型中的每一張表，包括名稱與授權記錄，都會原樣通過。",
+  "Nothing embedded carries over: the new file is written fresh with Lolly's own details, and your original keeps its own.": "嵌入的資訊都不會保留：新檔案會以 Lolly 自己的資訊重新寫出，你的原始檔案保留它自己的資訊。"
 }

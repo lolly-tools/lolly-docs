@@ -202,5 +202,9 @@
   "Parser Inventory": "Parseroversikt",
   "Server Surface": "Serverens angrepsflate",
   "Generated once, rendered the same": "Generert én gang, rendret likt",
-  "AI marking and the EU AI Act": "AI-merking og EUs AI-forordning"
+  "AI marking and the EU AI Act": "AI-merking og EUs AI-forordning",
+  "What carries over": "Hva som følger med",
+  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "Konvertereren tar med beskrivelse, opphavsperson, opphavsrett og opptaksdato til den nye filen. Posisjonen blir igjen med mindre du slår den på, og en Content Credential kan ikke kopieres: den er bundet til de opprinnelige bytene.",
+  "Every table in the font, its name and licence records included, passes through untouched.": "Hver tabell i skriften, inkludert navne- og lisensdataene, følger med uendret.",
+  "Nothing embedded carries over: the new file is written fresh with Lolly's own details, and your original keeps its own.": "Ingenting innebygd følger med: den nye filen skrives fra bunnen med Lollys egne opplysninger, og originalen din beholder sine."
 }

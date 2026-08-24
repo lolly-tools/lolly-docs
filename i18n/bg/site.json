@@ -202,5 +202,9 @@
   "Parser Inventory": "Инвентар на парсерите",
   "Server Surface": "Сървърна повърхност",
   "Generated once, rendered the same": "Генерирано веднъж, рендерирано еднакво",
-  "AI marking and the EU AI Act": "Маркиране на ИИ и Законът на ЕС за ИИ"
+  "AI marking and the EU AI Act": "Маркиране на ИИ и Законът на ЕС за ИИ",
+  "What carries over": "Какво се пренася",
+  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "Конверторът пренася описанието, автора, авторското право и датата на заснемане в новия файл. Местоположението остава настрана, освен ако не го включите, а Content Credential не може да се копира: той е свързан с оригиналните байтове.",
+  "Every table in the font, its name and licence records included, passes through untouched.": "Всяка таблица в шрифта, включително записите за име и лиценз, преминава непокътната.",
+  "Nothing embedded carries over: the new file is written fresh with Lolly's own details, and your original keeps its own.": "Нищо вградено не се пренася: новият файл се записва наново със собствените данни на Lolly, а вашият оригинал запазва своите."
 }

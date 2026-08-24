@@ -202,5 +202,9 @@
   "Parser Inventory": "Danh mục Parser",
   "Server Surface": "Bề mặt Server",
   "Generated once, rendered the same": "Tạo một lần, kết xuất y hệt",
-  "AI marking and the EU AI Act": "Đánh dấu AI và Đạo luật AI của EU"
+  "AI marking and the EU AI Act": "Đánh dấu AI và Đạo luật AI của EU",
+  "What carries over": "Những gì được giữ lại",
+  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "Bộ chuyển đổi đưa mô tả, tác giả, bản quyền và ngày chụp sang tệp mới. Vị trí bị bỏ lại trừ khi bạn bật lên, và Content Credential không thể sao chép: nó gắn với các byte gốc.",
+  "Every table in the font, its name and licence records included, passes through untouched.": "Mọi bảng trong phông chữ, gồm cả bản ghi tên và giấy phép, đi qua nguyên vẹn.",
+  "Nothing embedded carries over: the new file is written fresh with Lolly's own details, and your original keeps its own.": "Không có dữ liệu nhúng nào được giữ lại: tệp mới được ghi mới với thông tin riêng của Lolly, còn bản gốc của bạn giữ thông tin của nó."
 }

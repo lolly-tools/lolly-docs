@@ -202,5 +202,9 @@
   "Parser Inventory": "Inventar de parsere",
   "Server Surface": "Suprafața serverului",
   "Generated once, rendered the same": "Generat o dată, randat identic",
-  "AI marking and the EU AI Act": "Marcarea IA și Legea UE privind IA"
+  "AI marking and the EU AI Act": "Marcarea IA și Legea UE privind IA",
+  "What carries over": "Ce se păstrează",
+  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "Convertorul mută descrierea, autorul, drepturile de autor și data capturii în noul fișier. Locația rămâne pe loc dacă nu o activezi, iar un Content Credential nu poate fi copiat: este legat de octeții originali.",
+  "Every table in the font, its name and licence records included, passes through untouched.": "Fiecare tabel al fontului, inclusiv înregistrările de nume și licență, trece neatins.",
+  "Nothing embedded carries over: the new file is written fresh with Lolly's own details, and your original keeps its own.": "Nimic încorporat nu se păstrează: noul fișier este scris de la zero cu datele proprii ale Lolly, iar originalul tău le păstrează pe ale sale."
 }

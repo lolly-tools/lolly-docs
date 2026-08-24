@@ -202,5 +202,9 @@
   "Parser Inventory": "Přehled parserů",
   "Server Surface": "Serverová plocha",
   "Generated once, rendered the same": "Vygenerováno jednou, vykresleno stejně",
-  "AI marking and the EU AI Act": "Označování AI a AI Act EU"
+  "AI marking and the EU AI Act": "Označování AI a AI Act EU",
+  "What carries over": "Co se přenese",
+  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "Převodník přenese do nového souboru popis, autora, copyright a datum pořízení. Poloha zůstane stranou, pokud ji nezapnete, a Content Credential zkopírovat nelze: je vázán na původní bajty.",
+  "Every table in the font, its name and licence records included, passes through untouched.": "Každá tabulka písma včetně záznamů o názvu a licenci projde beze změny.",
+  "Nothing embedded carries over: the new file is written fresh with Lolly's own details, and your original keeps its own.": "Nic vloženého se nepřenese: nový soubor se zapíše znovu s vlastními údaji Lolly a váš originál si ponechá své."
 }

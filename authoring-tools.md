@@ -34,6 +34,7 @@ tools/your-tool-id/
 ├── styles.css          # optional - auto-scoped to #tool-canvas
 ├── hooks.js            # optional - imperative escape hatch
 ├── thumb.png           # optional - gallery thumbnail (recommended)
+├── templates/          # optional - curated starting points (see Templates & presets)
 ├── i18n/               # optional - <lang>.json string overlays (see Localizing a tool)
 └── assets/             # optional - tool-local images, fonts, etc.
 ```
@@ -475,6 +476,48 @@ is the security shape to copy):
 **Custom JS is not offered, and should not be.** Hooks are closure-injected, not sandboxed,
 so a per-document script input would be stored XSS in every shared URL. The escape hatch
 that exists is composition: a `run-web-code` tool link placed as a box.
+
+## Templates & presets (`templates/`)
+
+A tool's curated starting points live as one file per template in `tools/<id>/templates/`:
+
+```json
+{
+  "id": "poster",
+  "name": "Poster",
+  "category": "Poster",
+  "description": "One artboard, one message.",
+  "values": { "<inputId>": "<value>" },
+  "presets": [
+    { "id": "story", "name": "Story", "description": "9:16 for social stories.",
+      "values": { "<inputId>": "<overlay value>" } }
+  ]
+}
+```
+
+- **`id` must equal the file basename** (`poster.json` → `"id": "poster"`) - it is the
+  stable address the `?template=` launcher and the chooser use. Ids are permanent, like
+  tool ids.
+- **`values` is a full input seed**: input ids from your manifest mapped to values of the
+  right type. It is what a fresh session opens with when the person picks this template.
+- **`presets` are variants inside the template** - each one a values overlay merged over
+  the template's base (shallow, per input id, preset wins). A size variant of a blocks
+  composition therefore carries the FULL replacement array, not a fragment. Deep-link a
+  preset as `?template=<tid>&preset=<pid>`.
+- The synced catalog index carries **metadata only** (names, categories, descriptions -
+  never `values`), so templates cost nothing at rest however large the seed grows; the
+  values file is fetched when picked. Run `npm run build:catalog` after adding or editing
+  one, and `npm run validate:catalog` checks the shape (ids, uniqueness, object values).
+- With at least one template, a blank fresh open of your tool presents the **Start
+  chooser** (search, category chips, live-rendered tiles, preset chips); the tools view
+  shows the count on your card, lists every template in the About dialog, and finds the
+  tool by its template and preset names in search. In the editor layouts, "New from
+  template" in the Lolly menu reopens the chooser mid-session.
+- Keep names and descriptions short and plain - they are user-facing copy and will be
+  localized.
+
+People also save their own templates in the app (see Publishing) - those join the same
+chooser under "Your templates", no files involved.
 
 ## Data formats (`json` / `csv` / `ics` / `vcf`)
 

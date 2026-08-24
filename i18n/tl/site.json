@@ -202,5 +202,9 @@
   "Parser Inventory": "Imbentaryo ng Parser",
   "Server Surface": "Server Surface",
   "Generated once, rendered the same": "Isang beses na-generate, pareho ang render",
-  "AI marking and the EU AI Act": "Pagmamarka ng AI at ang EU AI Act"
+  "AI marking and the EU AI Act": "Pagmamarka ng AI at ang EU AI Act",
+  "What carries over": "Ano ang kasamang nadadala",
+  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "Inililipat ng converter ang paglalarawan, may-akda, copyright at petsa ng pagkuha sa bagong file. Naiiwan ang lokasyon maliban kung buksan mo ito, at hindi makokopya ang Content Credential: nakatali ito sa orihinal na mga byte.",
+  "Every table in the font, its name and licence records included, passes through untouched.": "Bawat talahanayan sa font, kasama ang mga tala ng pangalan at lisensya, ay dumadaan nang buo.",
+  "Nothing embedded carries over: the new file is written fresh with Lolly's own details, and your original keeps its own.": "Walang naka-embed na nadadala: isinusulat nang bago ang file gamit ang sariling detalye ng Lolly, at nananatili sa orihinal mo ang sarili nitong detalye."
 }

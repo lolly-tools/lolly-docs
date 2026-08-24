@@ -231,10 +231,11 @@ These keys are never treated as tool inputs. They control shell-level behaviour.
 | `filename` | web only | Name for the downloaded file (no extension). Defaults to the tool ID. |
 | `slot` | web only | Name of a saved state slot to pre-load. URL params override saved values. (The one-shot CLI has no saved-state store, so it ignores `slot`.) |
 | `template` | web only | Id of a `templates[]` entry in the tool's manifest to seed a fresh session from, skipping the "New from template" chooser (a launcher for a retired tool id, e.g. `?template=carousel`). The entry's `values` are read in-process (never packed into the link); an unknown or absent id falls through to the normal fresh-open flow. The CLI has no chooser, so it ignores `template`. |
+| `preset` | web only | Id of a preset inside the named template - a preset is a curated values overlay on its template's base values, so `?template=poster&preset=story` seeds the Poster template in its Story variant. Only read alongside `template`; an unknown or absent id applies the template base alone. Ignored by the CLI. |
 | `output` | CLI only | File path to write the exported file. Defaults to stdout. |
 | `_v` | web + CLI | Tool version pin (e.g. `1.0.0`). Ignored if not matched - forward-compat safety. |
-| `width` / `w` | web + CLI | Output width, as a value in `unit`. Also pre-fills the export dimensions panel. |
-| `height` / `h` | web + CLI | Output height, as a value in `unit`. Also pre-fills the export dimensions panel. |
+| `width` / `w` | web + CLI | Output width, as a value in `unit`. Also pre-fills the export dimensions panel. On a multi-artboard document, see the note below the table. |
+| `height` / `h` | web + CLI | Output height, as a value in `unit`. Also pre-fills the export dimensions panel. On a multi-artboard document, see the note below the table. |
 | `unit` | web + CLI | Physical unit for `width`/`height`: `px` (default), `mm`, `cm`, `in`, `pt`, `pc`. |
 | `dpi` | web + CLI | Raster resolution for physical units (default `300`). Ignored for `px` and for vector formats. |
 | `password` | web + CLI | Open password for `pdf` and `zip` - the **standard** tier only (the export panel's strong AES-256 tier, which also covers `pdf-cmyk`, is typed at export and deliberately never travels in a link). The CLI applies it wherever it can render a PDF. A basic lock, not strong encryption; it travels in clear text in the URL, so it's a light deterrent, not protection for confidential material. Ignored when `bleed`/`marks` are on (encrypted PDFs can't carry print finishing). |
@@ -258,6 +259,8 @@ These keys are never treated as tool inputs. They control shell-level behaviour.
 | `zx` | web only | An **encrypted** whole-state token - the packed state AES-256-GCM-encrypted under a password-derived key (PBKDF2). Opening the link prompts for the password **in the browser** (no server); the password itself is never in the link. See [Encrypted links](#encrypted-links-zx) below. |
 
 The reserved `z` (and `zx`) above is a **top-level** param only - the whole-state packed/encrypted token. A box's own `z` depth field and a keyframe track's `z` channel token live inside the `boxes` block's per-box sub-fields, a separate namespace decoded positionally, so there is no collision between the two.
+
+**Dimensions on a multi-artboard document** (a Design doc with more than one artboard): the artboards are the size truth, and `width`/`height` describe the **active** artboard - the selected one for still formats, the one under the playhead for animated ones. In the app the export panel mirrors that artboard live, and editing the fields resizes it. At export time each format resolves the boards its own way: still images fan out to one file per artboard at that board's own size (zipped when there is more than one, and `?s=` narrows to one board), PDF and PPTX carry every board as a page at its native size, and the animated formats composite every scene into a `width`×`height` output frame, letterboxing a board whose aspect differs. So on a framed document `w`/`h` never scales the whole set - it is the size of one board, and the video frame.
 
 `export`, `copy`, `full`, `options`, `nostage`, `present` and `loop` are **presence flags** - the parameter value is ignored; what matters is whether the key appears in the URL.
 
