@@ -249,7 +249,7 @@ De webshell is responsive vanuit één layout. Op desktop is een tool een resiza
 
 Dezelfde tool op telefoonbreedte, zonder tweede layout om te onderhouden: de bediening wordt een sheet bovenaan, de preview vult het hele scherm en de renderpil zweeft eroverheen.
 
-![Een audiogram op een 430px breed scherm - de bedieningssheet erboven, het afgeronde vierkante werk eronder en de zwevende renderpil](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![Een audiogram op een 430px breed scherm - de bedieningssheet erboven, het afgeronde vierkante werk eronder en de zwevende renderpil](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **Batchmodus (`/pro`).** De webshell levert ook een spreadsheet-achtig batchraster (`shells/web/src/pro/`) dat veel rijen tegelijk rendert over één of meerdere tools. Het doet CSV/TSV-round-trip plus spreadsheet-plakken, per-rij sjabloon/formaat/afmeting/eenheid/dpi, een blocks-editor zijpaneel met live preview, inklapbare exportkolommen, een per-rij "relevantie"-tagbalk, links een sleepgreep om rijen te herschikken, tweestaps verwijderbevestiging, opgeslagen batchsessies en een `.zip`-download. Dit is het one-to-many oppervlak achter de "massale contentgeneratie"-positionering.
 

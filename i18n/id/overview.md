@@ -249,7 +249,7 @@ Shell web bersifat responsif dari satu tata letak. Di desktop, sebuah alat adala
 
 Tool yang sama pada lebar ponsel, tanpa layout kedua yang perlu dipelihara: kontrol menjadi sheet di bagian atas, preview memenuhi seluruh layar dan pill render mengambang di atasnya.
 
-![Audiogram pada layar selebar 430px - sheet kontrol di atas, artwork persegi yang sudah jadi di bawah dan pill render yang mengambang](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![Audiogram pada layar selebar 430px - sheet kontrol di atas, artwork persegi yang sudah jadi di bawah dan pill render yang mengambang](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **Mode batch (`/pro`).** Web shell juga menyediakan grid batch bergaya spreadsheet (`shells/web/src/pro/`) yang me-render banyak baris sekaligus di satu atau banyak tool. Ia melakukan round-trip CSV/TSV plus tempel spreadsheet, template/format/ukuran/unit/dpi per baris, panel samping blocks-editor dengan preview langsung, kolom ekspor yang bisa dilipat, bar tag "relevance" per baris, susun ulang baris dengan drag-handle di kiri, konfirmasi hapus dua langkah, sesi batch tersimpan dan unduhan `.zip`. Inilah permukaan satu-ke-banyak di balik positioning "mass content generation".
 

@@ -249,7 +249,7 @@ Web-skallet er responsivt fra ett enkelt oppsett. På desktop er et verktøy et 
 
 Samme verktøy i telefonbredde, uten et andre layout å vedlikeholde: kontrollene blir et ark øverst, forhåndsvisningen fyller hele skjermen og render-pillen flyter over den.
 
-![Et audiogram på en 430px bred skjerm - kontrollarket over, det ferdige kvadratiske verket under og den flytende render-pillen](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![Et audiogram på en 430px bred skjerm - kontrollarket over, det ferdige kvadratiske verket under og den flytende render-pillen](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **Batch-modus (`/pro`).** Web-skallet leverer også et regnearklignende batch-rutenett (`shells/web/src/pro/`) som rendrer mange rader på én gang på tvers av ett eller flere verktøy. Det håndterer CSV/TSV-rundtur pluss innliming fra regneark, per-rad mal/format/størrelse/enhet/dpi, et sidepanel for blokk-redigering med levende forhåndsvisning, sammenleggbare eksportkolonner, en per-rad "relevans"-tagglinje, dra-håndtak for radomorganisering til venstre, to-trinns slettebekreftelse, lagrede batch-økter og nedlasting som `.zip`. Dette er en-til-mange-flaten bak posisjoneringen "masseproduksjon av innhold".
 

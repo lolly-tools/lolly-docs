@@ -249,7 +249,7 @@ lolly/
 
 Същият инструмент при ширина на телефон, без втори layout за поддръжка: контролите стават лист в горната част, прегледът заема целия екран, а хапчето за рендиране плава над него.
 
-![Аудиограма на екран с ширина 430px - листът с контроли отгоре, готовата квадратна визия отдолу и плаващото хапче за рендиране](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![Аудиограма на екран с ширина 430px - листът с контроли отгоре, готовата квадратна визия отдолу и плаващото хапче за рендиране](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **Режим Batch (`/pro`).** Уеб обвивката предлага и таблична batch мрежа (`shells/web/src/pro/`), която рендира много редове наведнъж през един или няколко инструмента. Тя поддържа кръгова обработка на CSV/TSV плюс поставяне от таблица, шаблон/формат/размер/мерна единица/dpi за всеки ред, страничен панел с редактор на блокове с преглед на живо, свиваеми колони за експорт, лента с етикети „relevance“ за всеки ред, преподреждане на редове чрез плъзгане с ляв манипулатор, двустъпково потвърждение за изтриване, запазени batch сесии и изтегляне на `.zip`. Това е повърхността „едно към много“ зад позиционирането „масово генериране на съдържание“.
 

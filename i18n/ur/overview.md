@@ -245,7 +245,7 @@ lolly/
 
 فون کی چوڑائی پر وہی ٹول، بغیر کسی دوسرے لے آؤٹ کو برقرار رکھے: کنٹرولز اوپر ایک شیٹ بن جاتے ہیں، پیش نظارہ پوری اسکرین پر ہوتا ہے اور رینڈر پِل اس کے اوپر تیرتی ہے۔
 
-![430px چوڑی اسکرین پر ایک آڈیوگرام - اوپر کنٹرولز شیٹ، نیچے مکمل مربع آرٹ ورک اور تیرتی ہوئی رینڈر پِل](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![430px چوڑی اسکرین پر ایک آڈیوگرام - اوپر کنٹرولز شیٹ، نیچے مکمل مربع آرٹ ورک اور تیرتی ہوئی رینڈر پِل](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **بیچ موڈ (`/pro`)۔** ویب شیل ایک اسپریڈشیٹ طرز کا بیچ گرڈ بھی فراہم کرتا ہے (`shells/web/src/pro/`) جو ایک یا کئی ٹولز میں بیک وقت متعدد قطاریں رینڈر کرتا ہے۔ یہ CSV/TSV راؤنڈ ٹرپ اور اسپریڈشیٹ پیسٹ، فی قطار ٹیمپلیٹ/فارمیٹ/سائز/یونٹ/dpi، ایک لائیو پیش نظارے کے ساتھ بلاکس-ایڈیٹر سائیڈ پینل، سکڑنے والے ایکسپورٹ کالمز، فی قطار "مطابقت" ٹیگ بار، بائیں جانب ڈریگ ہینڈل سے قطار کی ترتیب نو، دو مرحلوں پر مشتمل حذف کی تصدیق، محفوظ شدہ بیچ سیشنز اور ایک `.zip` ڈاؤن لوڈ فراہم کرتا ہے۔ یہ "بڑے پیمانے پر مواد کی تخلیق" کی پوزیشننگ کے پیچھے موجود ایک سے کئی سطح ہے۔
 

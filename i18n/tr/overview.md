@@ -249,7 +249,7 @@ Web kabuğu tek bir düzenden duyarlıdır. Masaüstünde bir araç, imleç etra
 
 Aynı araç telefon genişliğinde, korunması gereken ikinci bir düzen olmadan: kontroller üstte bir sayfaya dönüşür, önizleme tüm ekranı kaplar ve render hapı üzerinde yüzer.
 
-![430px genişliğinde bir ekranda audiogram - üstte kontroller sayfası, altta bitmiş kare görsel ve yüzen render hapı](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![430px genişliğinde bir ekranda audiogram - üstte kontroller sayfası, altta bitmiş kare görsel ve yüzen render hapı](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **Toplu mod (`/pro`).** Web kabuğu ayrıca bir veya birçok araç genelinde tek seferde birçok satır render eden, tablo tarzı bir toplu ızgara da (`shells/web/src/pro/`) sunar. CSV/TSV gidiş-dönüşü ve tablodan yapıştırma, satır başına şablon/format/boyut/birim/dpi, canlı önizlemeli bir bloklar-editörü yan paneli, daraltılabilir dışa aktarma sütunları, satır başına bir "ilgililik" etiket çubuğu, soldan sürükle-tutamaçlı satır yeniden sıralama, iki adımlı silme onayı, kaydedilmiş toplu iş oturumları ve bir `.zip` indirmesi sunar. "Kitlesel içerik üretimi" konumlandırmasının arkasındaki bire-çok yüzey budur.
 

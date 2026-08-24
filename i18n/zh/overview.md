@@ -248,7 +248,7 @@ web 宿主是基于单一布局的响应式设计。桌面端上,工具由一个
 
 同一个工具在手机宽度下,无需维护第二套布局:控件变成顶部的面板,预览占据整个屏幕,渲染按钮悬浮其上。
 
-![430px 宽屏幕上的音频图 - 上方是控件面板,下方是完成的方形作品,渲染按钮悬浮其上](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![430px 宽屏幕上的音频图 - 上方是控件面板,下方是完成的方形作品,渲染按钮悬浮其上](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **批处理模式(`/pro`)。** Web 端还提供一个电子表格式的批处理网格(`shells/web/src/pro/`),可跨一个或多个工具一次渲染多行。它支持 CSV/TSV 往返导入导出以及电子表格粘贴、按行设置模板/格式/尺寸/单位/dpi、带实时预览的区块编辑器侧边栏、可折叠的导出列、按行的"相关性"标签栏、左侧拖拽手柄行重排、两步删除确认、已保存的批处理会话和 `.zip` 下载。这就是"批量内容生成"定位背后的一对多界面。
 

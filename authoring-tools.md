@@ -528,6 +528,7 @@ Some tools export *data* alongside the rendered image - a calendar invite, a con
   - `{{icsStamp meetingTime}}` - a `date`/`datetime-local` value → iCalendar basic form (`20260915T143000`).
   - `{{rfcText x}}` - escape an iCalendar (RFC 5545) **or** vCard (RFC 6350) text field (`\` `;` `,` newline).
   - `{{csvCell x}}` - quote a CSV field per RFC 4180 only when needed.
+- **`srt` / `vtt`** (v1.150) - the same sibling-template mechanism, for subtitle sidecars: ship `template.srt` or `template.vtt`. The cue text itself is a hook extra (a captions tool already holds one in its target input), so the template is usually a single `{{captions}}`. SRT downloads as `text/plain` (SubRip has no registered MIME), WebVTT as `text/vtt`.
 - **`css` / `scss` / `gpl`** - the same sibling-template mechanism, for palette output: ship `template.css`, `template.scss` or `template.gpl`. `color-palette` is the reference (its `ase` sibling is binary, so that one comes from an `exportStill` hook instead of a template).
 
 Example `template.ics` (see `tools/meeting-planner/`):
@@ -665,6 +666,24 @@ An **`AudioLevel`** is `{ rms, peak, dbfs, clipping, t }` - `rms` (0–1 loudnes
 - `window`, `document`, `fetch`, `localStorage`. Hooks are loaded via `new Function` with `host` injected as closure scope - a **portability contract, not a sandbox** - so in a browser shell these globals *are* technically reachable. But leaning on them ties your tool to browser shells (it breaks headless in the CLI) and will break outright when hooks move into Worker isolation. `host.*` is the only supported surface. (Browser-only paths like the `onFrame` canvas trick above are the deliberate exception.)
 - Importing other modules. Hooks are loaded as a single source string, so `import` doesn't work.
 - Slow work. Async hook results are time-boxed (`onInit` 5s, `onInput` 2s, `beforeExport`/`afterExport` 5s, `exportFile` 10s) and a result that arrives late is discarded; a synchronous overrun can't be preempted and just gets logged as a warning.
+
+### Transcribing audio (`render.transcribe`)
+
+Engine **v1.150**. Point at an audio/video input and a text input, and the shell mounts the whole speech-to-text affordance for you - consent for the one-time on-device model download, a background job whose toast owns progress and cancel, and one undoable write into the target input:
+
+```json
+"render": {
+  "width": 1920, "height": 1080, "formats": ["png", "srt"],
+  "transcribe": { "source": "clip", "target": "captions", "format": "srt", "auto": "autoCaption" }
+}
+```
+
+- **`source`** - id of the `asset` input holding the clip. While it is empty the button is disabled and says why.
+- **`target`** - id of the `longtext` (or `text`) input the result is written into. One write, so one undo.
+- **`format`** - `"srt"` (default) or `"vtt"` for numbered subtitle cue blocks, or `"words"` for the plain spoken text, one cue per line, no timestamps.
+- **`auto`** - optional id of a `boolean` input. While it is on, a freshly recorded or freshly picked source runs with no click. The consent sheet still appears the first time the model is not on-device.
+
+Everything runs locally: the clip is decoded and read on the device, and nothing is uploaded. A clip with no speech writes an **empty value** and says so - never invented text. The declaration is feature-detected, not capability-gated, so a shell without on-device speech (the headless CLI) mounts nothing and leaves the target input exactly as the URL or the saved session set it. Pair it with a `template.srt` / `template.vtt` sibling (see [Data formats](#data-formats-json--csv--ics--vcf)) to export the cues as a sidecar file.
 
 ### Newer optional host APIs (feature-detect)
 

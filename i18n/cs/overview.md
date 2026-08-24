@@ -249,7 +249,7 @@ Webový shell je responzivní z jednoho layoutu. Na desktopu je nástroj měnite
 
 Stejný nástroj na šířku telefonu, bez druhého layoutu k udržování: ovládání se stává listem nahoře, náhled zabírá celou obrazovku a pilulka renderu se nad ním vznáší.
 
-![Audiogram na obrazovce široké 430px - list s ovládáním nahoře, hotové čtvercové dílo dole a plovoucí pilulka renderu](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![Audiogram na obrazovce široké 430px - list s ovládáním nahoře, hotové čtvercové dílo dole a plovoucí pilulka renderu](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **Dávkový režim (`/pro`).** Webový shell dodává i dávkovou mřížku ve stylu tabulky (`shells/web/src/pro/`), která vykresluje mnoho řádků najednou napříč jedním nebo více nástroji. Zvládá roundtrip CSV/TSV plus vkládání z tabulek, šablonu/formát/velikost/jednotku/dpi na řádek, boční panel editoru bloků s živým náhledem, sbalitelné exportní sloupce, lištu tagů "relevance" na řádek, přeuspořádání řádků tažením za levý úchyt, dvoukrokové potvrzení smazání, uložené dávkové relace a stažení `.zip`. Toto je povrch jeden-k-mnoha za pozicováním "hromadné generování obsahu".
 

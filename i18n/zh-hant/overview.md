@@ -248,7 +248,7 @@ web 殼層採用單一版面配置做響應式設計。在桌面版上，工具�
 
 同一個工具在手機寬度下，不需要維護第二種版面：控制項變成頂端的表單頁，預覽佔滿整個畫面，輸出按鈕則浮在其上。
 
-![430px 寬螢幕上的 Audiogram - 上方是控制項表單，下方是完成的方形作品，以及浮動的輸出按鈕](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![430px 寬螢幕上的 Audiogram - 上方是控制項表單，下方是完成的方形作品，以及浮動的輸出按鈕](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **批次模式（`/pro`）。** Web shell 也提供一個試算表風格的批次網格（`shells/web/src/pro/`），可一次跨一個或多個工具算繪多列。它支援 CSV/TSV 雙向轉換與試算表貼上、逐列的樣板/格式/尺寸/單位/dpi、附即時預覽的 blocks 編輯側欄、可收合的輸出欄、逐列「相關性」標籤列、左側拖曳把手可重新排序、兩階段刪除確認、已儲存的批次工作階段，以及 `.zip` 下載。這就是「大量內容產出」定位背後的一對多介面。
 

@@ -249,7 +249,7 @@ Shell web đáp ứng đa thiết bị từ một bố cục duy nhất. Trên d
 
 Cùng một công cụ ở độ rộng điện thoại, không cần duy trì layout thứ hai: các control trở thành một sheet ở phía trên, bản xem trước chiếm toàn màn hình và nút render nổi trên đó.
 
-![Một audiogram trên màn hình rộng 430px - sheet điều khiển ở trên, tác phẩm vuông hoàn chỉnh ở dưới và nút render nổi](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![Một audiogram trên màn hình rộng 430px - sheet điều khiển ở trên, tác phẩm vuông hoàn chỉnh ở dưới và nút render nổi](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **Chế độ hàng loạt (`/pro`).** Web shell cũng đi kèm một lưới hàng loạt kiểu bảng tính (`shells/web/src/pro/`) render nhiều hàng cùng lúc trên một hoặc nhiều công cụ. Nó hỗ trợ chuyển đổi qua lại CSV/TSV cộng với dán từ bảng tính, template/format/kích thước/đơn vị/dpi theo từng hàng, một side panel blocks-editor với bản xem trước trực tiếp, các cột export có thể thu gọn, một thanh nhãn "mức độ liên quan" theo từng hàng, sắp xếp lại hàng bằng tay kéo bên trái, xác nhận xóa hai bước, các phiên hàng loạt đã lưu và tải xuống dạng `.zip`. Đây là bề mặt một-đến-nhiều đứng sau định vị "tạo nội dung hàng loạt".
 

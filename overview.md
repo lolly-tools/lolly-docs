@@ -249,7 +249,7 @@ The web shell is responsive from one layout. On desktop a tool is a resizable co
 
 The same tool at phone width, with no second layout to maintain: the controls become a sheet at the top, the preview holds the whole screen and the render pill floats over it.
 
-![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![An audiogram on a 430px-wide screen - the controls sheet above, the finished square artwork below and the floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **Batch mode (`/pro`).** The web shell also ships a spreadsheet-style batch grid (`shells/web/src/pro/`) that renders many rows at once across one or many tools. It does CSV/TSV round-trip plus spreadsheet paste, per-row template/format/size/unit/dpi, a blocks-editor side panel with a live preview, collapsible export columns, a per-row "relevance" tag bar, left drag-handle row reorder, two-step delete confirm, saved batch sessions and a `.zip` download. This is the one-to-many surface behind the "mass content generation" positioning.
 

@@ -244,7 +244,7 @@ Webシェルは1つのレイアウトからレスポンシブに対応します�
 
 同じツールをスマートフォン幅で表示した場合も、維持すべき第2のレイアウトはありません。コントロールは上部のシートになり、プレビューが画面全体を占め、レンダーピルがその上に浮かびます。
 
-![430px幅の画面に表示されたオーディオグラム - 上部にコントロールシート、下部に完成した正方形のアートワーク、そして浮遊するレンダーピル](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![430px幅の画面に表示されたオーディオグラム - 上部にコントロールシート、下部に完成した正方形のアートワーク、そして浮遊するレンダーピル](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **バッチモード（`/pro`）。** Webシェルには、1つまたは複数のツールにまたがる多数の行を一度にレンダリングする、スプレッドシート形式のバッチグリッド（`shells/web/src/pro/`）も搭載されています。CSV/TSVの相互変換とスプレッドシートからの貼り付け、行ごとのテンプレート/フォーマット/サイズ/単位/DPI、ライブプレビュー付きのブロックエディタサイドパネル、折りたたみ可能なエクスポート列、行ごとの「関連性」タグバー、左側のドラッグハンドルによる行の並べ替え、2段階の削除確認、保存されたバッチセッション、`.zip`ダウンロードを備えています。これが「大量コンテンツ生成」というポジショニングを支える1対多のサーフェスです。
 

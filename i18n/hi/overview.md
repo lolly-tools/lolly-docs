@@ -246,7 +246,7 @@ lolly/
 
 वही टूल फ़ोन चौड़ाई पर, बनाए रखने के लिए कोई दूसरा लेआउट नहीं: नियंत्रण शीर्ष पर एक शीट बन जाते हैं, प्रीव्यू पूरी स्क्रीन घेर लेता है और रेंडर पिल उसके ऊपर तैरती है।
 
-![430px-चौड़ी स्क्रीन पर एक ऑडियोग्राम - ऊपर नियंत्रण शीट, नीचे तैयार वर्गाकार आर्टवर्क और तैरती रेंडर पिल](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![430px-चौड़ी स्क्रीन पर एक ऑडियोग्राम - ऊपर नियंत्रण शीट, नीचे तैयार वर्गाकार आर्टवर्क और तैरती रेंडर पिल](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **बैच मोड (`/pro`)।** वेब शेल एक स्प्रेडशीट-शैली की बैच ग्रिड (`shells/web/src/pro/`) भी प्रदान करता है जो एक या कई टूल में एक साथ कई पंक्तियाँ रेंडर करती है। यह CSV/TSV राउंड-ट्रिप के साथ-साथ स्प्रेडशीट पेस्ट, प्रति-पंक्ति टेम्पलेट/फ़ॉर्मैट/आकार/यूनिट/dpi, लाइव प्रीव्यू सहित एक ब्लॉक्स-एडिटर साइड पैनल, संकुचनीय एक्सपोर्ट कॉलम, प्रति-पंक्ति "प्रासंगिकता" टैग बार, बाईं ओर ड्रैग-हैंडल से पंक्ति पुनर्क्रम, दो-चरण डिलीट पुष्टि, सहेजे गए बैच सत्र और `.zip` डाउनलोड करती है। यह "mass content generation" पोज़िशनिंग के पीछे की वन-टू-मैनी सतह है।
 
