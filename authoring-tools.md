@@ -304,6 +304,60 @@ In URL mode (and `/pro` CSV) each field is its **own flat param/column**, namesp
 
 `imageFraming` is a **canonical input** (see below) - reuse that id and field set verbatim for any zoom/pan-an-image control rather than inventing a synonym.
 
+#### Framing an image: one pattern, every tool
+
+Placing, cropping, straightening and perspective-correcting an image is ONE control everywhere (plans/148). Do not write an `object-position` string by hand, and do not invent a second set of ids for the same job: a divergent id or range forfeits the shared `/pro` column, and a hand-written recipe drifts from what the export paths actually do.
+
+Three declarations make an image slot framable:
+
+```json
+{ "id": "image", "type": "asset", "assetType": "image", "label": "Image" },
+{ "id": "imageFraming", "type": "vector", "label": "Zoom & Position", "framingFor": "image",
+  "fields": [
+    { "id": "zoom",   "label": "Zoom",       "min": 100,  "max": 400, "step": 1,   "default": 100 },
+    { "id": "x",      "label": "X",          "min": 0,    "max": 100, "step": 1,   "default": 50  },
+    { "id": "y",      "label": "Y",          "min": 0,    "max": 100, "step": 1,   "default": 50  },
+    { "id": "rotate", "label": "Rotate",     "min": -180, "max": 180, "step": 0.5, "default": 0   },
+    { "id": "pitch",  "label": "Vertical",   "min": -45,  "max": 45,  "step": 0.5, "default": 0   },
+    { "id": "yaw",    "label": "Horizontal", "min": -45,  "max": 45,  "step": 0.5, "default": 0   }
+  ] },
+{ "id": "imageFit", "type": "select", "label": "Fit", "attachTo": "image", "display": "icon-toggle",
+  "default": "cover",
+  "options": [
+    { "value": "cover",   "label": "Fill", "icon": "fitCover" },
+    { "value": "contain", "label": "Fit",  "icon": "fitContain" }
+  ] }
+```
+
+Every field is opt-in: declare `x`/`y` alone for a pan-only slot, add `rotate` to straighten, add `pitch`/`yaw` for perspective correction (the Geometry panel in Lightroom, "Adjust" in Instagram). `framingFor` names the asset input the vector frames, and it is what turns the sidebar numbers into a real on-canvas control.
+
+Render it with the **`{{framing}}` helper**, which emits the placement CSS *and* the marker the shell binds to, in one call:
+
+```html
+<img src="{{asset image}}" {{framing "imageFraming"}}>
+```
+
+The argument is the input's **id**, not its value - the helper needs the id for the marker, and reads the value (and the companion `imageFit`) off the render context. A `style=` option appends your own declarations after the geometry, and `persp=` overrides the viewing distance the pitch/yaw envelope projects through.
+
+What the author gets for those three declarations, with no shell code and no per-tool branch:
+
+- **on the canvas** - tap the image to arm it, then drag to move, scroll or pinch to zoom about the pointer, drag the top handle to straighten (Shift snaps to 15 degrees), hold Alt and drag to correct converging verticals, double-click to reset, arrow keys to nudge, Escape to release. One drag is one undo step;
+- **"Use as a new image"** - bakes the framing into new pixels saved to the user's library as a child of the original, with the source carried as a Content Credential ingredient, then points the input at the child and resets the framing. Only ever on an explicit click; the default outcome is always that the original is untouched and the framing lives in the URL;
+- **URL and CLI parity** - `?imageFraming.zoom=180&imageFraming.yaw=-6`, or `--imageFraming.yaw=-6`, with no extra work;
+- **export parity** - the same numbers place the image in the SVG walker, the PDF vector path, the raster path and PPTX.
+
+One caveat before you offer `pitch`/`yaw`: a tilted plane is a projective homography, which SVG and PDF have no transform for. Pan, zoom and roll stay fully vector; a *tilted* image exports through the walker's posed-raster path for that element instead. Leave the two fields out of a tool whose output must stay vector at all costs.
+
+**Canvas-drawing tools** (a hook compositing into a `<canvas>`) call `drawFramed(ctx, source, iw, ih, W, H, framing, fit)` from `community/_shared/framing.js` instead of the helper, and mark the rendered element with `data-framing="imageFraming"` by hand. It is the same maths - a fixture table pins the two implementations equal - so a canvas tool and a DOM tool place the same photo the same way.
+
+**Inside a `blocks` row** a sub-field cannot be a `vector`, so the same values live as sibling numbers `<prefix>Zoom` / `<prefix>X` / `<prefix>Y` / `<prefix>Rotate` / `<prefix>Pitch` / `<prefix>Yaw`. Put `framingFor: "<prefix>"` on the row's asset sub-field and render with the helper's block mode:
+
+```html
+{{#each blocks}}<img src="{{asset this.bgImage}}" {{framing "bg" block="blocks" index=@index}}>{{/each}}
+```
+
+Whole marks are the documented exception: `logo-wall`, `logo-lockup-partner` and `code-canvas`'s title icon offer scale only, because a logo is not cropped.
+
 #### `asset` - library or device upload
 
 An `asset` input opens the host's asset picker and stores the chosen `AssetRef` - uniform whether it came from the catalog or the user's device:
