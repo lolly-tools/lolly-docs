@@ -54,6 +54,18 @@ Advanced filters, compositing, animation, live camera effects, generative design
 
 ![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
+### Grown, not drawn
+
+**Growth** grows the picture instead of drawing it: a seeded system spreads out from a ring, a line, your own words or your logo until it fills the frame, in your palette. The same seed always grows the same piece, so a link reproduces it exactly. What comes out is ordinary SVG geometry rather than a picture of a drawing, so it prints, plots and cuts - and the same design animates from the first seed to the finished form as video.
+
+![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
+### Motion that answers the music
+
+**Synth** solves a fluid field on the graphics card and paints it in your colours. Give it a track and the field moves with the sound; it exports as an MP4, WebM, GIF or animated PNG loop that joins cleanly end to end, rendered frame by frame from a driven clock rather than recorded off the screen - so the motion never drifts against the soundtrack, and the same link renders the same clip at any length.
+
+![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
+
 Author *tools*, not files: build the thing that generates 10,000 cards rather than making 10,000 cards. Lock what shouldn't change; expose only what's meant to vary.
 
 ## Touches you'll notice

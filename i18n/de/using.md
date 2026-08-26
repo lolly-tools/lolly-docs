@@ -291,6 +291,8 @@ Ein Design geht auf zwei Wegen hinaus: als Link oder als Datei. Der Teilen-Dialo
 
 ### Der Link
 
+![Jump Page in the editor - the heading, three link scenes each with its own wash and a Made with Lolly footer, laid out as one page in the canvas](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
+
 Jede Eingabe wird in der Seiten-URL festgehalten, ein Link *ist* also das Design. Oben im Dialog steht der kopierbereite Link, darunter zwei eingeklappte Abschnitte.
 
 - **Link-Optionen** enthält **Kürzester Link** (ein großes Design ergibt eine lange URL, deshalb packt dies den ganzen Zustand in ein kompaktes Token und zeigt Ihnen die Ersparnis in Zeichen; die lesbare Form bleibt immer verfügbar), **Diesen Link mit Passwort schützen** (AES-256 über den gesamten Link, das Passwort steht nie darin) und **Diese Tool-Version festhalten** - das Flag `_v`, das den Link an die Tool-Version bindet, die Sie gerade vor sich haben, damit eine spätere Aktualisierung nicht ändern kann, was er rendert.

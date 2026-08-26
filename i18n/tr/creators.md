@@ -58,6 +58,8 @@ Gelişmiş filtreler, kompozisyon, animasyon, canlı kamera efektleri, üretken 
 
 ## Fark edeceğin dokunuşlar
 
+![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
 - **Baskı, doğru yapılır.** Gerçek fiziksel birimler (mm/cm/in/pt) ve DPI, taşma payı ve kesim işaretleri, CMYK ve PDF/X-4 çıktı amacı - bir matbaa tam olarak ihtiyacı olanı alır. Bkz. [Dışa Aktarma](/info/exporting.html#size-print-units).
 - **Video ve hareket.** WebM/MP4 (ses izleriyle birlikte), animasyonlu PNG/WebP ve animasyonlu SVG dışa aktar - sabit görsellerini oluşturan aynı şablondan. **Sequence Studio** daha da ileri gider: tuvalin altında gerçek bir zaman çizelgesi, klipslerin mıknatıslı bir sırası, serbest bindirme şeritleri, kırpma ve bölme, geçiş ön ayarları, seslendirme kaydı ve müzik miksajıyla - bir ekran kaydı yerine deterministik bir kompozitör tarafından MP4, WebM, GIF veya APNG olarak render edilir. Lottie dosyaları animasyonlu varlık olarak *içeri* girer ve bunların herhangi birine render edilebilir. Klipslerin üzerinde **anahtar kareler** yer alır: bir kutuyu tek bir anda konumlandır, sayfadan gerçek derinlikle kaldır ve sonucun üzerinde bir kamera uçur. Bkz. [Lolly'yi Kullanma → Zaman Çizelgesi](/info/using.html#timeline-sequence-studio) ve [Canlandırma](/info/animating.html).
 - **Ses.** Bir sesli not kaydet ve tamamen cihaz üzerinde MP3 (veya kendi M4A/OGG/WebM biçiminde) olarak kaydet - ve bir video altında müzik altyapısı veya Neurospicy Mode'da bir ortam parçası olarak MP3, WAV, OGG, M4A, FLAC, MIDI veya tracker modülleri (MOD/XM/IT/…) getir.
@@ -68,6 +70,8 @@ Gelişmiş filtreler, kompozisyon, animasyon, canlı kamera efektleri, üretken 
 - **İstediğinde daha sakin bir arayüz.** **Profile → Accessibility** altındaki dört anahtar - *Reduce motion*, *Hide colourful previews*, *High contrast* ve *Large text* - uygulamayı çalışmanın etrafında sakinleştirir. Her biri sen açana kadar kapalıdır ve hiçbiri tuvaline dokunmaz veya dışa aktardığın bir pikseli bile oynatmaz. Bkz. [Profilin → Erişilebilirlik](/info/profile.html#accessibility).
 
 ## Ondan en iyi şekilde yararlan
+
+![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[Quickstart](/info/quickstart.html)** - marka içeri, ilk dosya dışarı.
 - **[The Brand Studio](/info/brand-studio.html)** - logolarını, renklerini, tipografini ve tokenlarını şekillendir (`#/start`).

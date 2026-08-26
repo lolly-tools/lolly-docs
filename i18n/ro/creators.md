@@ -58,6 +58,8 @@ Creează *unelte*, nu fișiere: construiește lucrul care generează 10.000 de c
 
 ## Detalii pe care le vei observa
 
+![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
 - **Tipar, făcut corect.** Unități fizice reale (mm/cm/in/pt) și DPI, semne de bleed și crop marks, ieșire CMYK și PDF/X-4 - o tipografie primește exact ce îi trebuie. Vezi [Exportarea](/info/exporting.html#size-print-units).
 - **Video și mișcare.** Exportă WebM/MP4 (cu piste audio), PNG/WebP animate și SVG animat - din același șablon care produce și imaginile tale statice. **Sequence Studio** merge mai departe: o cronologie reală sub canvas, cu un rând magnetic de clipuri, benzi libere de suprapunere, tăiere și divizare, presetări de tranziție, înregistrare voiceover și mixaj muzical - randate ca MP4, WebM, GIF sau APNG de un compozitor determinist, nu de o înregistrare a ecranului. Fișierele Lottie *intră* ca active animate și se randează în oricare dintre acele formate. Deasupra clipurilor stau **keyframe-urile**: poziționează o casetă la un moment dat, ridic-o de pe pagină cu adâncime reală și zboară o cameră peste rezultat. Vezi [Folosirea Lolly → Cronologie](/info/using.html#timeline-sequence-studio) și [Animarea](/info/animating.html).
 - **Audio.** Înregistrează o notă vocală și salveaz-o ca MP3 (sau în formatul nativ M4A/OGG/WebM), totul pe dispozitiv - și adu MP3, WAV, OGG, M4A, FLAC, MIDI sau module tracker (MOD/XM/IT/…) ca fundal muzical sub un video sau ca pistă ambientală în Neurospicy Mode.
@@ -68,6 +70,8 @@ Creează *unelte*, nu fișiere: construiește lucrul care generează 10.000 de c
 - **O interfață mai calmă, când vrei una.** Patru comutatoare sub **Profil → Accesibilitate** - *Reduce mișcarea*, *Ascunde previzualizările colorate*, *Contrast ridicat* și *Text mare* - liniștesc aplicația în jurul muncii tale. Fiecare e oprit până îl activezi, și niciunul nu atinge canvas-ul sau nu mișcă vreun pixel din ce exporți. Vezi [Profilul tău → Accesibilitate](/info/profile.html#accessibility).
 
 ## Cum să obții tot ce poți din ea
+
+![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[Ghid rapid](/info/quickstart.html)** - brandul intră, primul fișier iese.
 - **[Brand Studio](/info/brand-studio.html)** - modelează-ți logo-urile, culorile, tipografia și token-urile (`#/start`).

@@ -291,6 +291,8 @@ storage-seeding hook.
 
 ### الرابط
 
+![Jump Page in the editor - the heading, three link scenes each with its own wash and a Made with Lolly footer, laid out as one page in the canvas](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
+
 يلتقط كل مدخل في عنوان الصفحة، فالرابط *هو* التصميم. وفي أعلى النافذة يقع الرابط الجاهز للنسخ، وتحته قسمان مطويان.
 
 - **خيارات الرابط** تضم **أقصر رابط** (فالتصميم الكبير يصنع عنوانا طويلا، ولذلك يحزم هذا الخيار الحالة كلها في رمز مضغوط ويبين لك الوفر بعدد الأحرف؛ والصيغة المقروءة موجودة دائما أيضا)، و**حماية هذا الرابط بكلمة مرور** (AES-256 على الرابط كله، وكلمة المرور ليست فيه أبدا)، و**تثبيت إصدار الأداة**، وهو الراية `_v` التي تربط الرابط بإصدار الأداة الذي تراه، فلا يستطيع تحديث لاحق تغيير ما يعرضه.

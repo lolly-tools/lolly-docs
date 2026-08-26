@@ -291,6 +291,8 @@ storage-seeding hook.
 
 ### リンク
 
+![Jump Page in the editor - the heading, three link scenes each with its own wash and a Made with Lolly footer, laid out as one page in the canvas](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
+
 すべての入力はページの URL に収められるため、リンクがそのままデザインです。ダイアログの上部にはコピーできる状態のリンクがあり、その下に折りたたまれたセクションが 2 つあります。
 
 - **Link options** には **Shortest link**（大きなデザインは URL が長くなるため、状態全体を小さなトークンにまとめ、削減できた文字数を表示します。読める形式も常に併記されます）、**Password-protect this link**（リンク全体を AES-256 で保護し、パスワードはリンクに含まれません）、**Pin this tool version**（`_v` フラグ。今見ているツールのバージョンにリンクを固定し、以降の更新で描画内容が変わらないようにします）があります。

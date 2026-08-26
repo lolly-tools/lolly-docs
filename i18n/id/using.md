@@ -291,6 +291,8 @@ Sebuah desain keluar lewat salah satu dari dua cara: sebagai tautan atau sebagai
 
 ### Tautannya
 
+![Jump Page in the editor - the heading, three link scenes each with its own wash and a Made with Lolly footer, laid out as one page in the canvas](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
+
 Setiap input tertangkap di URL halaman, jadi sebuah tautan *adalah* desainnya. Di bagian atas dialog terdapat tautan yang siap disalin, dengan dua bagian terlipat di bawahnya.
 
 - **Link options** memuat **Shortest link** (desain besar menghasilkan URL panjang, jadi opsi ini memampatkan seluruh keadaan ke dalam token ringkas dan menunjukkan penghematannya dalam jumlah karakter; bentuk yang terbaca selalu tersedia juga), **Password-protect this link** (AES-256 atas seluruh tautan, kata sandinya tidak pernah ada di dalamnya) dan **Pin this tool version** - flag `_v`, yang memaku tautan ke versi tool yang sedang Anda lihat sehingga pembaruan berikutnya tidak bisa mengubah hasil rendernya.

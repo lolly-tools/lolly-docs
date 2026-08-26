@@ -58,6 +58,8 @@ Street Map इस अदला-बदली का एक उचित उदा
 
 ## आपको जो बदलाव नज़र आएँगे
 
+![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
 - **प्रिंट, सही तरीक़े से।** असली भौतिक इकाइयाँ (mm/cm/in/pt) और DPI, ब्लीड और क्रॉप मार्क्स, CMYK और PDF/X-4 आउटपुट-इंटेंट - प्रिंट शॉप को वही मिलता है जिसकी उसे ज़रूरत है। देखें [एक्सपोर्ट करना](/info/exporting.html#size-print-units)।
 - **वीडियो और गति।** WebM/MP4 (ऑडियो ट्रैक सहित), एनिमेटेड PNG/WebP और एनिमेटेड SVG एक्सपोर्ट करें - उसी टेम्पलेट से जो आपकी स्टिल इमेज बनाता है। **Sequence Studio** और आगे जाता है: कैनवास के नीचे एक असली टाइमलाइन, क्लिप्स की एक चुंबकीय पंक्ति, स्वतंत्र ओवरले लेन, ट्रिम और स्प्लिट, ट्रांज़िशन प्रीसेट, वॉयसओवर रिकॉर्डिंग और म्यूज़िक मिक्स के साथ - जो स्क्रीन रिकॉर्डिंग की बजाय एक डिटरमिनिस्टिक कंपोज़िटर द्वारा MP4, WebM, GIF या APNG के रूप में रेंडर होता है। Lottie फ़ाइलें एनिमेटेड एसेट के रूप में *अंदर* आती हैं और इनमें से किसी भी फ़ॉर्मेट में रेंडर होती हैं। क्लिप्स के ऊपर **कीफ़्रेम** होते हैं: एक क्षण में बॉक्स को पोज़ करें, उसे असली गहराई के साथ पेज से ऊपर उठाएँ और परिणाम पर कैमरा उड़ाएँ। देखें [Lolly का उपयोग → टाइमलाइन](/info/using.html#timeline-sequence-studio) और [एनिमेट करना](/info/animating.html)।
 - **ऑडियो।** एक वॉइस नोट रिकॉर्ड करें और इसे MP3 (या इसके नेटिव M4A/OGG/WebM) के रूप में सेव करें, यह सब डिवाइस पर ही - और MP3, WAV, OGG, M4A, FLAC, MIDI या ट्रैकर मॉड्यूल (MOD/XM/IT/…) को वीडियो के नीचे म्यूज़िक बेड के रूप में या Neurospicy Mode में एंबिएंट ट्रैक के रूप में लाएँ।
@@ -68,6 +70,8 @@ Street Map इस अदला-बदली का एक उचित उदा
 - **जब चाहें एक शांत इंटरफ़ेस।** **Profile → Accessibility** के नीचे चार स्विच - *Reduce motion*, *Hide colourful previews*, *High contrast* और *Large text* - ऐप को आपके काम के इर्द-गिर्द व्यवस्थित करते हैं। हर एक तब तक बंद रहता है जब तक आप उसे चालू न करें, और इनमें से कोई भी आपके कैनवास को नहीं छूता या आपके एक्सपोर्ट के किसी पिक्सेल को नहीं हिलाता। देखें [आपकी प्रोफ़ाइल → Accessibility](/info/profile.html#accessibility)।
 
 ## इसका पूरा फ़ायदा उठाएँ
+
+![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[Quickstart](/info/quickstart.html)** - ब्रांड अंदर, पहली फ़ाइल बाहर।
 - **[The Brand Studio](/info/brand-studio.html)** - अपने लोगो, रंग, टाइप और टोकन तय करें (`#/start`)।

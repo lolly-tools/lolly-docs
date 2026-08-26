@@ -291,6 +291,8 @@ storage-seeding hook.
 
 ### لنک
 
+![Jump Page in the editor - the heading, three link scenes each with its own wash and a Made with Lolly footer, laid out as one page in the canvas](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
+
 ہر ان پٹ صفحے کے URL میں محفوظ ہوتا ہے، تو لنک *ہی* ڈیزائن ہے۔ ڈائیلاگ کے اوپر کاپی کے لیے تیار لنک ہوتا ہے، اور اس کے نیچے دو سکڑے ہوئے سیکشن۔
 
 - **Link options** میں **Shortest link** ہے (بڑا ڈیزائن لمبا URL بناتا ہے، تو یہ پوری حالت کو ایک مختصر ٹوکن میں سمیٹ دیتا ہے اور آپ کو حروف میں بچت دکھاتا ہے؛ پڑھنے کے قابل شکل بھی ہمیشہ موجود رہتی ہے)، **Password-protect this link** (پورے لنک پر AES-256، اور پاس ورڈ کبھی اس میں نہیں ہوتا) اور **Pin this tool version** - یعنی `_v` فلیگ، جو لنک کو اسی ٹول ورژن سے باندھ دیتا ہے جو آپ دیکھ رہے ہیں تاکہ بعد کی کوئی اپ ڈیٹ اس کی رینڈرنگ نہ بدل سکے۔

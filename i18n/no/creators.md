@@ -58,6 +58,8 @@ Forfatt *verktøy*, ikke filer: bygg det som genererer 10 000 kort fremfor å la
 
 ## Detaljer du vil legge merke til
 
+![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
 - **Utskrift, gjort riktig.** Ekte fysiske enheter (mm/cm/in/pt) og DPI, utfallende og skjæremerker, CMYK og PDF/X-4 output-intent - et trykkeri får akkurat det de trenger. Se [Eksportering](/info/exporting.html#size-print-units).
 - **Video og bevegelse.** Eksporter WebM/MP4 (med lydspor), animert PNG/WebP og animert SVG - fra samme mal som lager stillbildene dine. **Sequence Studio** går lenger: en ekte tidslinje under lerretet, med en magnetisk rad med klipp, frie overleggsspor, trim og splitt, overgangsforhåndsinnstillinger, innspilling av voiceover og en lydmiks - rendret ut som MP4, WebM, GIF eller APNG av en deterministisk kompositør i stedet for et skjermopptak. Lottie-filer kommer *inn* som animerte ressurser og rendres ut til alle disse. Over klippene ligger **keyframes**: plasser en boks i ett øyeblikk, løft den av siden med ekte dybde og la et kamera fly over resultatet. Se [Bruke Lolly → Tidslinje](/info/using.html#timeline-sequence-studio) og [Animering](/info/animating.html).
 - **Lyd.** Ta opp en talenotat og lagre den som MP3 (eller den native M4A/OGG/WebM), alt på enheten - og hent inn MP3, WAV, OGG, M4A, FLAC, MIDI eller tracker-moduler (MOD/XM/IT/…) som et musikkteppe under en video eller et ambient spor i Neurospicy Mode.
@@ -68,6 +70,8 @@ Forfatt *verktøy*, ikke filer: bygg det som genererer 10 000 kort fremfor å la
 - **Et roligere grensesnitt når du vil ha det.** Fire brytere under **Profile → Accessibility** - *Reduce motion*, *Hide colourful previews*, *High contrast* og *Large text* - roer appen ned rundt arbeidet ditt. Hver er av til du slår den på, og ingen av dem berører lerretet ditt eller flytter en piksel av det du eksporterer. Se [Din profil → Tilgjengelighet](/info/profile.html#accessibility).
 
 ## Få mest mulig ut av det
+
+![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[Hurtigstart](/info/quickstart.html)** - merkevare inn, første fil ut.
 - **[Brand Studio](/info/brand-studio.html)** - form logoene, fargene, typografien og tokenene dine (`#/start`).

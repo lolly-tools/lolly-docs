@@ -291,6 +291,8 @@ Een ontwerp gaat op één van twee manieren de deur uit: als link of als bestand
 
 ### De link
 
+![Jump Page in the editor - the heading, three link scenes each with its own wash and a Made with Lolly footer, laid out as one page in the canvas](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
+
 Elke invoer wordt vastgelegd in de pagina-URL, dus een link *is* het ontwerp. Bovenaan de dialoog staat de direct te kopiëren link, met twee ingeklapte secties eronder.
 
 - **Linkopties** bevat **Kortste link** (een groot ontwerp levert een lange URL op, dus dit pakt de volledige status in een compact token en laat je de besparing in tekens zien; de leesbare vorm is er altijd ook), **Deze link met een wachtwoord beveiligen** (AES-256 over de hele link, het wachtwoord staat er nooit in) en **Deze toolversie vastzetten** - de vlag `_v`, die de link vastpint op de toolversie die je voor je hebt, zodat een latere update niet kan veranderen wat hij rendert.

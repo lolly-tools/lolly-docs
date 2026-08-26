@@ -348,7 +348,7 @@ A **`MatteFrame`** is `{ width, height, data: Uint8ClampedArray }` - RGBA, 8-bit
 | `canRun(src, opts?)` | `Promise<MatteFeasibility>` | Honest feasibility on this device, before any bytes move |
 | `run(frame, opts?)` | `Promise<MatteFrame>` | Cut out the subject. Rejects (`AbortError`) on `opts.signal`; never half-produces |
 
-The three models tier the picker: `u2netp` (fast preview), `isnet-general` (the default) and `birefnet-lite` (near-SOTA pro edges). All ship under permissive licences (Apache-2.0, MIT). The roster leaves out the popular non-commercial models such as BRIA RMBG. `MatteOpts` takes `model`, `maxEdge` (a cap on the output's longest edge), `signal` and `onProgress`. `MatteFeasibility` mirrors `UpscaleFeasibility` - `ok`, `reason`, `message`, `suggestedMaxEdge` and `suggestedModel`.
+Two models tier the picker: `u2netp` (U²-Net lite, ~4.5 MB - the default, and the one that works on any subject) and `modnet` (MODNet, ~26 MB - tuned for people, weaker on everything else). Both ship under Apache-2.0. The roster leaves out the popular non-commercial models such as BRIA RMBG. It also **narrows** over time - `isnet-general` was retired in 2026-08, the BiRefNet pair in 2026-08 - so read `models()` rather than hard-coding an id; a shell that no longer carries the id you pass falls back to its default and logs, rather than failing the run. `MatteOpts` takes `model`, `maxEdge` (a cap on the output's longest edge), `signal` and `onProgress`. `MatteFeasibility` mirrors `UpscaleFeasibility` - `ok`, `reason`, `message`, `suggestedMaxEdge` and `suggestedModel`.
 
 ## `host.speech` *(speech synthesis + transcription - optional, v1.96)*
 

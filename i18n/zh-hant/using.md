@@ -291,6 +291,8 @@ storage-seeding hook.
 
 ### 連結
 
+![Jump Page in the editor - the heading, three link scenes each with its own wash and a Made with Lolly footer, laid out as one page in the canvas](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
+
 每個輸入項都收在頁面網址裡，因此連結*就是*設計。對話框頂端是可直接複製的連結，底下有兩個收合的區塊。
 
 - **連結選項**包含**最短連結**（大型設計會產生很長的網址，這會把整份狀態打包成一個精簡的權杖，並告訴你省下多少字元；可讀的形式一直都在）、**為這個連結設定密碼**（以 AES-256 加密整個連結，密碼絕不放在裡面），以及**釘住這個工具版本**，也就是 `_v` 旗標，把連結釘在你眼前的工具版本上，讓日後的更新無法改變它算出來的結果。

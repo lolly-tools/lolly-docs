@@ -96,6 +96,8 @@ memang dimaksudkan untuk bervariasi.
 
 ## Sentuhan yang akan Anda perhatikan
 
+![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
 - **Cetak, dilakukan dengan benar.** Satuan fisik nyata (mm/cm/in/pt) dan DPI, bleed dan crop mark, output CMYK dan PDF/X-4 - percetakan mendapatkan persis apa yang dibutuhkan. Lihat [Mengekspor](/info/exporting.html#size-print-units).
 - **Video dan gerakan.** Ekspor WebM/MP4 (dengan trek audio), PNG/WebP animasi dan SVG animasi - dari template yang sama yang membuat gambar diam Anda. **Sequence Studio** melangkah lebih jauh: timeline sungguhan di bawah kanvas, dengan baris klip magnetis, jalur overlay bebas, trim dan split, preset transisi, perekaman voiceover dan pencampuran musik - dirender sebagai MP4, WebM, GIF atau APNG oleh compositor deterministik, bukan perekaman layar. File Lottie *masuk* sebagai aset animasi dan dirender ke salah satu format tersebut. Di atas klip terdapat **keyframe**: pose sebuah kotak pada satu momen, angkat dari halaman dengan kedalaman nyata dan terbangkan kamera melintasi hasilnya. Lihat [Menggunakan Lolly → Timeline](/info/using.html#timeline-sequence-studio) dan [Menganimasikan](/info/animating.html).
 - **Audio.** Rekam catatan suara dan simpan sebagai MP3 (atau format aslinya M4A/OGG/WebM), semuanya di perangkat - dan bawa masuk MP3, WAV, OGG, M4A, FLAC, MIDI atau modul tracker (MOD/XM/IT/…) sebagai iringan musik di bawah video atau trek ambient di Neurospicy Mode.
@@ -106,6 +108,8 @@ memang dimaksudkan untuk bervariasi.
 - **Antarmuka yang lebih tenang saat Anda menginginkannya.** Empat sakelar di bawah **Profile → Accessibility** - *Reduce motion*, *Hide colourful previews*, *High contrast* dan *Large text* - menenangkan aplikasi di sekitar pekerjaan Anda. Masing-masing nonaktif sampai Anda menyalakannya, dan tak satu pun menyentuh kanvas Anda atau menggeser satu piksel pun dari yang Anda ekspor. Lihat [Profil Anda → Aksesibilitas](/info/profile.html#accessibility).
 
 ## Manfaatkan sepenuhnya
+
+![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[Quickstart](/info/quickstart.html)** - brand masuk, file pertama keluar.
 - **[The Brand Studio](/info/brand-studio.html)** - bentuk logo, warna, tipografi dan token Anda (`#/start`).

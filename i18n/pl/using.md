@@ -291,6 +291,8 @@ Projekt wychodzi na dwa sposoby: jako link albo jako plik. Okno Share oferuje ob
 
 ### Link
 
+![Jump Page in the editor - the heading, three link scenes each with its own wash and a Made with Lolly footer, laid out as one page in the canvas](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
+
 Każde pole jest zapisane w adresie URL strony, więc link *jest* projektem. Na górze okna leży gotowy do skopiowania link, a pod nim dwie zwinięte sekcje.
 
 - **Link options** mieści **Shortest link** (duży projekt daje długi adres URL, więc ta opcja pakuje cały stan w zwarty token i pokazuje oszczędność w znakach; czytelna forma zawsze pozostaje dostępna), **Password-protect this link** (AES-256 na całym linku, hasło nigdy w nim nie siedzi) oraz **Pin this tool version** - flagę `_v`, która przypina link do oglądanej właśnie wersji narzędzia, żeby późniejsza aktualizacja nie zmieniła tego, co się renderuje.

@@ -291,6 +291,8 @@ Un design sort de deux façons : en lien ou en fichier. La boîte de dialogue de
 
 ### Le lien
 
+![Jump Page in the editor - the heading, three link scenes each with its own wash and a Made with Lolly footer, laid out as one page in the canvas](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
+
 Chaque champ est capturé dans l'URL de la page, donc un lien *est* le design. En haut de la boîte de dialogue se trouve le lien prêt à copier, avec deux sections repliées en dessous.
 
 - **Options du lien** contient **Lien le plus court** (un gros design donne une longue URL, alors ceci compresse tout l'état dans un jeton compact et t'indique l'économie en caractères ; la forme lisible reste toujours disponible), **Protéger ce lien par mot de passe** (AES-256 sur tout le lien, le mot de passe n'y figurant jamais) et **Épingler cette version de l'outil** - le drapeau `_v`, qui cloue le lien à la version de l'outil que tu as sous les yeux pour qu'une mise à jour ultérieure ne puisse pas changer ce qu'il rend.

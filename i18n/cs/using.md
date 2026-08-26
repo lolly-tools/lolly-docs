@@ -291,6 +291,8 @@ Návrh jde ven jednou ze dvou cest: jako odkaz, nebo jako soubor. Dialog Sdílet
 
 ### Odkaz
 
+![Jump Page in the editor - the heading, three link scenes each with its own wash and a Made with Lolly footer, laid out as one page in the canvas](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
+
 Každý vstup je zachycený v URL adrese stránky, takže odkaz *je* návrh. Nahoře v dialogu je odkaz připravený ke zkopírování a pod ním dvě sbalené sekce.
 
 - **Možnosti odkazu** obsahují **Nejkratší odkaz** (velký návrh dělá dlouhou URL, takže tohle sbalí celý stav do kompaktního tokenu a ukáže ti úsporu ve znacích; čitelná podoba je tam vždycky taky), **Chránit tento odkaz heslem** (AES-256 přes celý odkaz, heslo v něm nikdy není) a **Připnout tuto verzi nástroje** - příznak `_v`, který odkaz přibije k verzi nástroje, na kterou se právě díváš, aby pozdější aktualizace nemohla změnit, co vykreslí.

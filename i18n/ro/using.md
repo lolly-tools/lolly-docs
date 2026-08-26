@@ -291,6 +291,8 @@ Un design pleacă în două feluri: ca link sau ca fișier. Dialogul Share le of
 
 ### Linkul
 
+![Jump Page in the editor - the heading, three link scenes each with its own wash and a Made with Lolly footer, laid out as one page in the canvas](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
+
 Fiecare câmp e cuprins în URL-ul paginii, așa că un link *este* designul. În capul dialogului stă linkul gata de copiat, cu două secțiuni restrânse sub el.
 
 - **Link options** conține **Shortest link** (un design mare face un URL lung, așa că asta împachetează toată starea într-un jeton compact și îți arată economia în caractere; forma lizibilă rămâne mereu disponibilă), **Password-protect this link** (AES-256 peste tot linkul, iar parola nu e niciodată în el) și **Pin this tool version** - indicatorul `_v`, care fixează linkul la versiunea de instrument pe care o vezi, ca o actualizare ulterioară să nu poată schimba ce randează.

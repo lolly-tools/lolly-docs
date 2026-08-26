@@ -291,6 +291,8 @@ Sesuatu reka bentuk keluar melalui salah satu daripada dua cara: sebagai pautan 
 
 ### Pautan
 
+![Jump Page in the editor - the heading, three link scenes each with its own wash and a Made with Lolly footer, laid out as one page in the canvas](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
+
 Setiap input dirakam dalam URL halaman, jadi sesuatu pautan itu *ialah* reka bentuk itu sendiri. Di bahagian atas dialog terletak pautan yang sedia untuk disalin, dengan dua bahagian terkuncup di bawahnya.
 
 - **Link options** mengandungi **Shortest link** (reka bentuk yang besar menghasilkan URL yang panjang, jadi ini memadatkan keseluruhan keadaan ke dalam token ringkas dan menunjukkan penjimatan dalam bilangan aksara; bentuk yang boleh dibaca sentiasa ada juga), **Password-protect this link** (AES-256 ke atas keseluruhan pautan, kata laluan tidak pernah berada di dalamnya) dan **Pin this tool version** - bendera `_v`, yang mengunci pautan itu pada versi alat yang sedang anda lihat supaya kemas kini kemudian tidak boleh mengubah apa yang direndernya.

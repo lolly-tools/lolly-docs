@@ -58,6 +58,8 @@ Street Map اس تجارت کی ایک مناسب مثال ہے: آپ ایک ش�
 
 ## وہ چیزیں جو آپ محسوس کریں گے
 
+![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
 - **پرنٹ، صحیح طریقے سے۔** حقیقی فزیکل یونٹس (mm/cm/in/pt) اور DPI، بلیڈ اور کراپ مارکس، CMYK اور PDF/X-4 آؤٹ پٹ-انٹینٹ - پرنٹ شاپ کو بالکل وہی ملتا ہے جس کی اسے ضرورت ہے۔ دیکھیں [ایکسپورٹ کرنا](/info/exporting.html#size-print-units)۔
 - **ویڈیو اور موشن۔** WebM/MP4 (آڈیو ٹریکس کے ساتھ)، اینیمیٹڈ PNG/WebP اور اینیمیٹڈ SVG ایکسپورٹ کریں - اسی ٹیمپلیٹ سے جو آپ کی سٹلز بناتا ہے۔ **Sequence Studio** مزید آگے جاتا ہے: کینوس کے نیچے ایک حقیقی ٹائم لائن، کلپس کی میگنیٹک قطار، آزاد اوورلے لینز، ٹرم اور سپلٹ، ٹرانزیشن پریسیٹس، وائس اوور ریکارڈنگ اور میوزک مکس کے ساتھ - MP4، WebM، GIF یا APNG کے طور پر ایک ڈیٹرمنسٹک کمپوزیٹر کے ذریعے رینڈر کیا جاتا ہے، نہ کہ اسکرین ریکارڈنگ کے ذریعے۔ Lottie فائلیں اینیمیٹڈ اثاثوں کے طور پر *اندر* آتی ہیں اور ان میں سے کسی بھی شکل میں رینڈر ہو سکتی ہیں۔ کلپس کے اوپر **کی فریمز** بیٹھتے ہیں: ایک لمحے میں ایک باکس پوز کریں، اسے حقیقی گہرائی کے ساتھ صفحے سے اٹھائیں اور نتیجے پر کیمرہ اڑائیں۔ دیکھیں [Lolly استعمال کرنا → ٹائم لائن](/info/using.html#timeline-sequence-studio) اور [اینیمیٹ کرنا](/info/animating.html)۔
 - **آڈیو۔** ایک وائس نوٹ ریکارڈ کریں اور اسے MP3 (یا اس کے مقامی M4A/OGG/WebM) کے طور پر محفوظ کریں، سب کچھ آن-ڈیوائس - اور MP3، WAV، OGG، M4A، FLAC، MIDI یا ٹریکر ماڈیولز (MOD/XM/IT/…) کو ویڈیو کے نیچے میوزک بیڈ یا Neurospicy موڈ میں ایمبیئنٹ ٹریک کے طور پر لائیں۔
@@ -68,6 +70,8 @@ Street Map اس تجارت کی ایک مناسب مثال ہے: آپ ایک ش�
 - **جب چاہیں ایک پرسکون انٹرفیس۔** **پروفائل → رسائی** کے تحت چار سوئچز - *موشن کم کریں*، *رنگین پیش نظارے چھپائیں*، *ہائی کنٹراسٹ* اور *بڑا ٹیکسٹ* - ایپ کو آپ کے کام کے گرد پرسکون کرتے ہیں۔ ہر ایک بند رہتا ہے جب تک آپ اسے آن نہ کریں، اور ان میں سے کوئی بھی آپ کے کینوس کو چھوتا یا آپ کی ایکسپورٹ کا کوئی پکسل نہیں ہلاتا۔ دیکھیں [آپ کا پروفائل → رسائی](/info/profile.html#accessibility)۔
 
 ## اس سے زیادہ سے زیادہ فائدہ اٹھائیں
+
+![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[کوئیک اسٹارٹ](/info/quickstart.html)** - برانڈ اندر، پہلی فائل باہر۔
 - **[برانڈ اسٹوڈیو](/info/brand-studio.html)** - اپنے لوگو، رنگ، ٹائپ اور ٹوکنز کو شکل دیں (`#/start`)۔

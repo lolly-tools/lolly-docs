@@ -112,6 +112,8 @@ changer ; n'expose que ce qui est censé varier.
 
 ## Les détails que tu remarqueras
 
+![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
 - **L'impression, bien faite.** De vraies unités physiques (mm/cm/in/pt) et le DPI, les fonds perdus et les repères de coupe, la sortie CMJN et PDF/X-4 - un imprimeur obtient exactement ce dont il a besoin. Voir [Exporter](/info/exporting.html#size-print-units).
 - **Vidéo et animation.** Exporte en WebM/MP4 (avec pistes audio), en PNG/WebP animés et en SVG animé - depuis le même modèle qui produit tes images fixes. **Sequence Studio** va plus loin : une vraie timeline sous le canevas, avec une rangée magnétique de clips, des pistes de superposition libres, le découpage et la scission, des préréglages de transition, l'enregistrement de voix off et un mixage musical - le tout restitué en MP4, WebM, GIF ou APNG par un compositeur déterministe plutôt qu'un enregistrement d'écran. Les fichiers Lottie entrent comme ressources animées et se restituent dans n'importe lequel de ces formats. Au-dessus des clips se trouvent les **images clés** : pose une boîte à un instant précis, détache-la de la page avec une vraie profondeur et fais survoler la scène par une caméra. Voir [Utiliser Lolly → Timeline](/info/using.html#timeline-sequence-studio) et [Animer](/info/animating.html).
 - **Audio.** Enregistre un mémo vocal et enregistre-le en MP3 (ou dans son format natif M4A/OGG/WebM), le tout sur l'appareil - et importe des fichiers MP3, WAV, OGG, M4A, FLAC, MIDI ou des modules tracker (MOD/XM/IT/…) comme fond musical sous une vidéo ou comme piste d'ambiance en mode Neurospicy.
@@ -122,6 +124,8 @@ changer ; n'expose que ce qui est censé varier.
 - **Une interface plus calme quand tu en as besoin.** Quatre interrupteurs sous **Profil → Accessibilité** - *Réduire les animations*, *Masquer les aperçus colorés*, *Contraste élevé* et *Texte large* - apaisent l'app autour de ton travail. Chacun est désactivé jusqu'à ce que tu l'actives, et aucun ne touche à ton canevas ni ne déplace un pixel de ce que tu exportes. Voir [Ton profil → Accessibilité](/info/profile.html#accessibility).
 
 ## En tirer le meilleur parti
+
+![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[Démarrage rapide](/info/quickstart.html)** - la marque entre, le premier fichier sort.
 - **[Le Brand Studio](/info/brand-studio.html)** - façonne tes logos, couleurs, typographie et tokens (`#/start`).

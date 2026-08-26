@@ -58,6 +58,8 @@ Sumulat ng *mga tool*, hindi mga file: buuin ang bagay na gumagawa ng 10,000 car
 
 ## Mga bagay na mapapansin mo
 
+![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
 - **Print, tama ang pagkakagawa.** Tunay na pisikal na yunit (mm/cm/in/pt) at DPI, bleed at crop marks, CMYK at PDF/X-4 output-intent - eksaktong makukuha ng print shop ang kailangan nito. Tingnan ang [Exporting](/info/exporting.html#size-print-units).
 - **Video at galaw.** I-export ang WebM/MP4 (may audio tracks), animated PNG/WebP at animated SVG - mula sa parehong template na gumagawa ng iyong mga still. Higit pang sinusulong ito ng **Sequence Studio**: tunay na timeline sa ilalim ng canvas, may magnetic na hanay ng mga clip, malayang overlay lanes, trim at split, transition presets, pag-record ng voiceover at music mix - ini-render bilang MP4, WebM, GIF o APNG ng isang deterministic na compositor sa halip na screen recording. Pumapasok ang mga Lottie file bilang animated assets at ini-render papunta sa alinman sa mga ito. Sa ibabaw ng mga clip ay ang **keyframes**: i-pose ang isang box sa isang sandali, itaas ito mula sa pahina gamit ang tunay na lalim at lipadin ang isang camera sa ibabaw ng resulta. Tingnan ang [Using Lolly → Timeline](/info/using.html#timeline-sequence-studio) at [Animating](/info/animating.html).
 - **Audio.** Mag-record ng voice note at i-save ito bilang MP3 (o ang katutubong M4A/OGG/WebM nito), lahat on-device - at magdala ng MP3, WAV, OGG, M4A, FLAC, MIDI o tracker modules (MOD/XM/IT/…) bilang music bed sa ilalim ng isang video o ambient track sa Neurospicy Mode.
@@ -68,6 +70,8 @@ Sumulat ng *mga tool*, hindi mga file: buuin ang bagay na gumagawa ng 10,000 car
 - **Mas kalmadong interface kapag gusto mo.** Apat na switch sa ilalim ng **Profile → Accessibility** - *Reduce motion*, *Hide colourful previews*, *High contrast* at *Large text* - nagpapakalma sa app sa paligid ng iyong ginagawa. Naka-off ang bawat isa hanggang sa i-on mo ito, at wala sa mga ito ang humihipo sa iyong canvas o gumagalaw ng kahit isang pixel ng ie-export mo. Tingnan ang [Your profile → Accessibility](/info/profile.html#accessibility).
 
 ## Sulitin ang paggamit nito
+
+![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[Quickstart](/info/quickstart.html)** - ipasok ang brand, ilabas ang unang file.
 - **[The Brand Studio](/info/brand-studio.html)** - hubugin ang iyong mga logo, kulay, uri ng titik at tokens (`#/start`).

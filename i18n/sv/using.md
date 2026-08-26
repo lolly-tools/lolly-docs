@@ -291,6 +291,8 @@ En design går ut på ett av två sätt: som en länk eller som en fil. Dialogru
 
 ### Länken
 
+![Jump Page in the editor - the heading, three link scenes each with its own wash and a Made with Lolly footer, laid out as one page in the canvas](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
+
 Varje inmatning fångas i sidans URL, så en länk *är* designen. Överst i dialogrutan sitter länken redo att kopieras, med två hopfällda avsnitt under sig.
 
 - **Länkalternativ** innehåller **Kortaste länk** (en stor design ger en lång URL, så det här packar hela tillståndet i en kompakt token och visar dig besparingen i tecken; den läsbara formen finns alltid kvar också), **Lösenordsskydda den här länken** (AES-256 över hela länken, lösenordet aldrig i den) och **Lås till den här verktygsversionen** - flaggan `_v`, som spikar fast länken vid den verktygsversion du tittar på så att en senare uppdatering inte kan ändra vad den renderar.

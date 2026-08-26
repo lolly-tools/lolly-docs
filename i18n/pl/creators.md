@@ -58,6 +58,8 @@ Twórz *narzędzia*, nie pliki: zbuduj coś, co generuje 10 000 kart, zamiast tw
 
 ## Szczegóły, które zauważysz
 
+![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
 - **Druk zrobiony jak trzeba.** Prawdziwe jednostki fizyczne (mm/cm/in/pt) i DPI, spady i znaczniki cięcia, CMYK oraz output-intent PDF/X-4 - drukarnia dostaje dokładnie to, czego potrzebuje. Zobacz [Eksportowanie](/info/exporting.html#size-print-units).
 - **Wideo i ruch.** Eksport WebM/MP4 (ze ścieżkami audio), animowanego PNG/WebP i animowanego SVG - z tego samego szablonu, który tworzy twoje statyczne obrazy. **Sequence Studio** idzie dalej: prawdziwa oś czasu pod płótnem, z magnetycznym rzędem klipów, wolnymi ścieżkami nakładek, przycinaniem i dzieleniem, gotowymi przejściami, nagrywaniem lektora i miksem muzycznym - renderowane jako MP4, WebM, GIF lub APNG przez deterministyczny kompozytor, a nie nagranie ekranu. Pliki Lottie *wchodzą* jako animowane zasoby i renderują się do dowolnego z tych formatów. Nad klipami znajdują się **klatki kluczowe**: ustaw pozycję ramki w jednej chwili, unieś ją nad stronę z prawdziwą głębią i przelot kamerą nad wynikiem. Zobacz [Using Lolly → Timeline](/info/using.html#timeline-sequence-studio) i [Animowanie](/info/animating.html).
 - **Audio.** Nagraj notatkę głosową i zapisz ją jako MP3 (lub natywnie jako M4A/OGG/WebM), wszystko na urządzeniu - a także wczytaj MP3, WAV, OGG, M4A, FLAC, MIDI lub moduły trackerowe (MOD/XM/IT/…) jako podkład muzyczny pod wideo lub ścieżkę ambientową w Neurospicy Mode.
@@ -68,6 +70,8 @@ Twórz *narzędzia*, nie pliki: zbuduj coś, co generuje 10 000 kart, zamiast tw
 - **Spokojniejszy interfejs, kiedy tego chcesz.** Cztery przełączniki w **Profile → Accessibility** - *Reduce motion*, *Hide colourful previews*, *High contrast* i *Large text* - dostosowują aplikację do twojej pracy. Każdy jest domyślnie wyłączony, dopóki go nie włączysz, i żaden z nich nie dotyka twojego płótna ani nie przesuwa piksela w eksportowanym pliku. Zobacz [Twój profil → Dostępność](/info/profile.html#accessibility).
 
 ## Wykorzystaj to w pełni
+
+![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[Szybki start](/info/quickstart.html)** - marka na wejściu, pierwszy plik na wyjściu.
 - **[Brand Studio](/info/brand-studio.html)** - kształtuj swoje logo, kolory, typografię i tokeny (`#/start`).

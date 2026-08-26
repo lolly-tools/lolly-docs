@@ -58,6 +58,8 @@ Viết *công cụ*, không phải tệp: xây dựng thứ tạo ra 10.000 th�
 
 ## Những điểm nhấn bạn sẽ nhận ra
 
+![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
 - **In ấn, làm đúng chuẩn.** Đơn vị vật lý thực (mm/cm/in/pt) và DPI, bleed và crop mark, đầu ra CMYK và PDF/X-4 - một xưởng in nhận đúng thứ họ cần. Xem [Xuất file](/info/exporting.html#size-print-units).
 - **Video và chuyển động.** Xuất WebM/MP4 (kèm track âm thanh), PNG/WebP động và SVG động - từ cùng một template tạo ra ảnh tĩnh của bạn. **Sequence Studio** đi xa hơn: một dòng thời gian thực dưới canvas, với một hàng clip có nam châm căn chỉnh, các lane overlay tự do, cắt và tách, các preset chuyển cảnh, ghi lời thoại và trộn nhạc - kết xuất thành MP4, WebM, GIF hoặc APNG bởi một bộ compositor tất định thay vì ghi màn hình. File Lottie đi *vào* dưới dạng tài sản động và kết xuất ra bất kỳ định dạng nào trong số đó. Trên các clip là **keyframe**: đặt tư thế một khối tại một thời điểm, nâng nó khỏi trang với chiều sâu thực và cho camera bay qua kết quả. Xem [Sử dụng Lolly → Timeline](/info/using.html#timeline-sequence-studio) và [Tạo hoạt hình](/info/animating.html).
 - **Âm thanh.** Ghi một ghi chú giọng nói và lưu thành MP3 (hoặc định dạng gốc M4A/OGG/WebM), tất cả ngay trên thiết bị - và đưa vào MP3, WAV, OGG, M4A, FLAC, MIDI hoặc các module tracker (MOD/XM/IT/…) làm nền nhạc dưới một video hoặc một track không khí trong Neurospicy Mode.
@@ -68,6 +70,8 @@ Viết *công cụ*, không phải tệp: xây dựng thứ tạo ra 10.000 th�
 - **Một giao diện điềm tĩnh hơn khi bạn muốn.** Bốn công tắc dưới **Hồ sơ → Trợ năng** - *Giảm chuyển động*, *Ẩn bản xem trước nhiều màu*, *Tương phản cao* và *Chữ lớn* - làm dịu ứng dụng quanh công việc của bạn. Mỗi cái tắt cho đến khi bạn bật, và không cái nào chạm vào canvas hay dịch chuyển dù chỉ một pixel của thứ bạn xuất ra. Xem [Hồ sơ của bạn → Trợ năng](/info/profile.html#accessibility).
 
 ## Tận dụng tối đa
+
+![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[Bắt đầu nhanh](/info/quickstart.html)** - đưa thương hiệu vào, có file đầu tiên ra.
 - **[Brand Studio](/info/brand-studio.html)** - định hình logo, màu sắc, kiểu chữ và token của bạn (`#/start`).

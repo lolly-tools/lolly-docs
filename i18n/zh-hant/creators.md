@@ -58,6 +58,8 @@ Street Map 就是這種取捨的一個公道範例:你選一座城市和幾個�
 
 ## 你會注意到的細節
 
+![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
 - **列印，做得恰到好處。** 真實的實體單位（mm/cm/in/pt）與 DPI、出血與裁切標記、CMYK 與 PDF/X-4 輸出意圖 - 印刷廠能拿到完全符合需求的檔案。詳見[匯出](/info/exporting.html#size-print-units)。
 - **影片與動態效果。** 匯出 WebM/MP4（含音軌）、動態 PNG/WebP 與動態 SVG - 全都出自製作靜態圖的同一個範本。**Sequence Studio** 更進一步：畫布下方有一條真正的時間軸，具有磁吸式的片段列、自由的疊加軌道、修剪與分割、轉場預設、旁白錄音與混音功能 - 由確定性的合成器輸出成 MP4、WebM、GIF 或 APNG，而非螢幕錄影。Lottie 檔案可作為動態素材*匯入*，並輸出成上述任一格式。片段上方是**關鍵影格**：在某一瞬間擺好一個方框姿勢、以真實深度將它從頁面上抬起，並讓攝影機掠過成果。詳見[使用 Lolly → 時間軸](/info/using.html#timeline-sequence-studio)與[製作動畫](/info/animating.html)。
 - **音訊。** 錄製語音備忘錄並存成 MP3（或其原生格式 M4A/OGG/WebM），全程在裝置上完成 - 也可以匯入 MP3、WAV、OGG、M4A、FLAC、MIDI 或 tracker 模組（MOD/XM/IT/…）作為影片的配樂，或作為 Neurospicy Mode 中的環境音軌。
@@ -68,6 +70,8 @@ Street Map 就是這種取捨的一個公道範例:你選一座城市和幾個�
 - **需要時可以更沉靜的介面。** **Profile → Accessibility** 下有四個開關 - *Reduce motion*、*Hide colourful previews*、*High contrast* 與 *Large text* - 讓應用程式安靜下來配合你的工作。每一項在你開啟之前都是關閉的，而且都不會影響你的畫布，也不會動到匯出結果的任何一個像素。詳見[你的個人檔案 → 無障礙功能](/info/profile.html#accessibility)。
 
 ## 充分發揮它的效益
+
+![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[快速入門](/info/quickstart.html)** - 匯入品牌，產出第一個檔案。
 - **[Brand Studio](/info/brand-studio.html)** - 打造你的標誌、色彩、字體與設計權杖（`#/start`）。

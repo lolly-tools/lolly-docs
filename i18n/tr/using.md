@@ -291,6 +291,8 @@ Bir tasarım iki yoldan biriyle dışarı çıkar: bir bağlantı olarak ya da b
 
 ### Bağlantı
 
+![Jump Page in the editor - the heading, three link scenes each with its own wash and a Made with Lolly footer, laid out as one page in the canvas](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
+
 Her girdi sayfa URL'sinde yakalanır, yani bir bağlantı tasarımın *ta kendisidir*. Pencerenin en üstünde kopyalamaya hazır bağlantı durur, altında da katlanmış iki bölüm vardır.
 
 - **Bağlantı seçenekleri** şunları barındırır: **En kısa bağlantı** (büyük bir tasarım uzun bir URL yapar, bu yüzden bu seçenek tüm durumu kompakt bir jetona sıkıştırır ve kaç karakter kazandığını gösterir; okunabilir biçim de her zaman oradadır), **Bu bağlantıyı parolayla koru** (tüm bağlantı üzerinde AES-256, parola bağlantının içinde asla yer almaz) ve **Bu araç sürümünü sabitle** - yani `_v` bayrağı, bağlantıyı baktığın araç sürümüne çivileyerek sonraki bir güncellemenin neyi oluşturduğunu değiştirmesini engeller.

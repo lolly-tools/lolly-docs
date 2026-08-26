@@ -58,6 +58,8 @@ Street Map এই লেনদেনের একটি যথাযথ উদ�
 
 ## যেসব ছোঁয়া আপনার নজরে পড়বে
 
+![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
 - **প্রিন্ট, সঠিকভাবে।** প্রকৃত ভৌত এককে (mm/cm/in/pt) এবং DPI, ব্লিড ও ক্রপ মার্ক, CMYK ও PDF/X-4 আউটপুট-ইনটেন্ট - একটি প্রিন্ট শপ ঠিক যা প্রয়োজন তা-ই পায়। দেখুন [Exporting](/info/exporting.html#size-print-units)।
 - **ভিডিও ও মোশন।** WebM/MP4 (অডিও ট্র্যাকসহ), অ্যানিমেটেড PNG/WebP এবং অ্যানিমেটেড SVG এক্সপোর্ট করুন - একই টেমপ্লেট থেকে যা আপনার স্থিরচিত্র তৈরি করে। **Sequence Studio** আরও এগিয়ে যায়: ক্যানভাসের নিচে একটি প্রকৃত টাইমলাইন, ক্লিপগুলোর একটি ম্যাগনেটিক সারি, মুক্ত ওভারলে লেন, ট্রিম ও স্প্লিট, ট্রানজিশন প্রিসেট, ভয়েসওভার রেকর্ডিং এবং একটি মিউজিক মিক্সসহ - স্ক্রিন রেকর্ডিংয়ের বদলে একটি ডিটারমিনিস্টিক কম্পোজিটর দ্বারা MP4, WebM, GIF বা APNG হিসেবে রেন্ডার হয়। Lottie ফাইল অ্যানিমেটেড অ্যাসেট হিসেবে *ভেতরে* আসে এবং এসবের যেকোনো একটিতে রেন্ডার হয়ে বের হয়। ক্লিপগুলোর উপরে থাকে **কীফ্রেম**: এক মুহূর্তে একটি বক্সকে পোজ করুন, প্রকৃত গভীরতা দিয়ে পাতা থেকে তুলুন এবং ফলাফলের উপর দিয়ে একটি ক্যামেরা ওড়ান। দেখুন [Using Lolly → Timeline](/info/using.html#timeline-sequence-studio) এবং [Animating](/info/animating.html)।
 - **অডিও।** একটি ভয়েস নোট রেকর্ড করুন এবং তা MP3 (বা এর নেটিভ M4A/OGG/WebM) হিসেবে সংরক্ষণ করুন, সবই অন-ডিভাইস - এবং একটি ভিডিওর নিচে মিউজিক বেড হিসেবে বা Neurospicy Mode-এ একটি অ্যাম্বিয়েন্ট ট্র্যাক হিসেবে MP3, WAV, OGG, M4A, FLAC, MIDI বা ট্র্যাকার মডিউল (MOD/XM/IT/…) নিয়ে আসুন।
@@ -68,6 +70,8 @@ Street Map এই লেনদেনের একটি যথাযথ উদ�
 - **যখন চান তখনই একটি শান্ত ইন্টারফেস।** **Profile → Accessibility**-এর অধীনে চারটি সুইচ - *Reduce motion*, *Hide colourful previews*, *High contrast* এবং *Large text* - অ্যাপকে আপনার কাজের চারপাশে স্থির করে। প্রতিটি ততক্ষণ বন্ধ থাকে যতক্ষণ না আপনি তা চালু করেন, এবং এগুলোর কোনোটিই আপনার ক্যানভাস স্পর্শ করে না বা আপনার এক্সপোর্ট করা কোনো পিক্সেল সরায় না। দেখুন [Your profile → Accessibility](/info/profile.html#accessibility)।
 
 ## এটি থেকে সর্বোচ্চ সুবিধা নিন
+
+![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[Quickstart](/info/quickstart.html)** - ব্র্যান্ড ইনপুট দিন, প্রথম ফাইল আউটপুট নিন।
 - **[The Brand Studio](/info/brand-studio.html)** - আপনার লোগো, রং, টাইপ ও টোকেন গঠন করুন (`#/start`)।

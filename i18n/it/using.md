@@ -291,6 +291,8 @@ Un design esce in uno di due modi: come link o come file. La finestra di dialogo
 
 ### Il link
 
+![Jump Page in the editor - the heading, three link scenes each with its own wash and a Made with Lolly footer, laid out as one page in the canvas](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
+
 Ogni input viene catturato nell'URL della pagina, quindi un link *è* il design. In cima alla finestra c'è il link pronto da copiare, con sotto due sezioni compresse.
 
 - **Opzioni del link** contiene **Link più corto** (un design grande produce un URL lungo, quindi questo comprime l'intero stato in un token compatto e ti mostra il risparmio in caratteri; la forma leggibile resta comunque sempre disponibile), **Proteggi questo link con password** (AES-256 sull'intero link, con la password che non ci finisce mai dentro) e **Fissa questa versione dello strumento** - il flag `_v`, che inchioda il link alla versione dello strumento che stai guardando, così un aggiornamento successivo non può cambiare ciò che renderizza.

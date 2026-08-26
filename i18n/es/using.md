@@ -291,6 +291,8 @@ Un diseño sale de una de estas dos maneras: como enlace o como archivo. El diá
 
 ### El enlace
 
+![Jump Page in the editor - the heading, three link scenes each with its own wash and a Made with Lolly footer, laid out as one page in the canvas](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
+
 Cada entrada queda capturada en la URL de la página, así que un enlace *es* el diseño. En la parte superior del diálogo está el enlace listo para copiar, con dos secciones plegadas debajo.
 
 - **Opciones del enlace** contiene **Enlace más corto** (un diseño grande genera una URL larga, así que esto empaqueta todo el estado en un token compacto y te muestra el ahorro en caracteres; la forma legible sigue estando siempre), **Proteger este enlace con contraseña** (AES-256 sobre todo el enlace, y la contraseña nunca dentro) y **Fijar esta versión de la herramienta** - el indicador `_v`, que clava el enlace a la versión de la herramienta que estás viendo para que una actualización posterior no pueda cambiar lo que renderiza.

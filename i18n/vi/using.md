@@ -291,6 +291,8 @@ Một thiết kế đi ra ngoài theo một trong hai cách: dưới dạng mộ
 
 ### Liên kết
 
+![Jump Page in the editor - the heading, three link scenes each with its own wash and a Made with Lolly footer, laid out as one page in the canvas](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
+
 Mọi trường đầu vào đều được ghi lại trong URL của trang, nên một liên kết *chính là* thiết kế. Ở đầu hộp thoại là liên kết sẵn sàng để sao chép, với hai mục thu gọn bên dưới.
 
 - **Link options** chứa **Shortest link** (một thiết kế lớn tạo ra URL dài, nên tuỳ chọn này nén toàn bộ trạng thái vào một token gọn và cho bạn thấy tiết kiệm được bao nhiêu ký tự; dạng dễ đọc thì vẫn luôn có sẵn), **Password-protect this link** (AES-256 phủ toàn bộ liên kết, mật khẩu không bao giờ nằm trong đó) và **Pin this tool version** - cờ `_v`, ghim liên kết vào đúng phiên bản công cụ bạn đang xem để một bản cập nhật sau này không đổi được thứ nó render.

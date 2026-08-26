@@ -291,6 +291,8 @@ storage-seeding hook.
 
 ### लिंक
 
+![Jump Page in the editor - the heading, three link scenes each with its own wash and a Made with Lolly footer, laid out as one page in the canvas](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
+
 हर इनपुट पेज के URL में दर्ज रहता है, इसलिए लिंक ही *डिज़ाइन है*। डायलॉग के सबसे ऊपर कॉपी करने के लिए तैयार लिंक बैठा रहता है, और उसके नीचे दो समेटे हुए खंड।
 
 - **Link options** में **Shortest link** है (बड़ा डिज़ाइन लंबा URL बना देता है, इसलिए यह पूरी स्थिति को एक कॉम्पैक्ट टोकन में समेट देता है और आपको अक्षरों में हुई बचत दिखाता है; पढ़ने योग्य रूप भी हमेशा साथ रहता है), **Password-protect this link** (पूरे लिंक पर AES-256, और पासवर्ड कभी उसमें नहीं जाता) और **Pin this tool version** - यानी `_v` फ़्लैग, जो लिंक को उसी टूल संस्करण से बाँध देता है जो आप देख रहे हैं, ताकि बाद का कोई अपडेट यह न बदल सके कि वह क्या रेंडर करता है।

@@ -291,6 +291,8 @@ Dalawang paraan ang labasan ng isang disenyo: bilang link o bilang file. Inaalok
 
 ### Ang link
 
+![Jump Page in the editor - the heading, three link scenes each with its own wash and a Made with Lolly footer, laid out as one page in the canvas](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
+
 Nakukuha sa URL ng pahina ang bawat input, kaya ang link *ang* disenyo mismo. Sa itaas ng dialog nakaupo ang handang-kopyahing link, na may dalawang nakatiklop na seksyon sa ilalim nito.
 
 - Nasa **Link options** ang **Shortest link** (ang isang malaking disenyo ay gumagawa ng mahabang URL, kaya siniksik nito ang buong estado sa isang maliit na token at ipinapakita sa iyo ang natipid na karakter; naroon pa rin lagi ang nababasang anyo), ang **Password-protect this link** (AES-256 sa buong link, at hindi kailanman nasa loob nito ang password) at ang **Pin this tool version** - ang `_v` na flag, na nagtatali sa link sa bersyon ng tool na tinitingnan mo para hindi mabago ng isang susunod na update ang ini-render nito.

@@ -298,6 +298,10 @@ Every input is captured in the page URL, so a link *is* the design. At the top o
 
 Paste the link to a colleague, bookmark it or commit it. (Full details: [URL Mode](/info/url-mode.html).)
 
+**Some tools make the link the whole product.** Jump Page gathers your links into one page to hand out - a bio link, a conference talk, a shop front. There is nothing to host and no account behind it: the page is the link, so it opens as fast as the URL travels. In the editor you see the finished page beside the fields; a visitor who opens the link gets it full width, one link per scene as they scroll.
+
+![Jump Page in the editor - the heading, three link scenes each with its own wash and a Made with Lolly footer, laid out as one page in the canvas](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
+
 **The dialog says what a link cannot carry.** Three things don't fit in a URL: an image or file you added from this device, a very long text value or a very large list. Each one is counted as the link is built. If anything had to be dropped the dialog names it and points you at the file below, instead of handing you a link that opens with the picture missing. A link that is merely *long* gets a milder note with its character count, since packing can still rescue length.
 
 ### The .lolly file

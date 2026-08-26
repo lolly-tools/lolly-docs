@@ -291,6 +291,8 @@ storage-seeding hook.
 
 ### 链接
 
+![Jump Page in the editor - the heading, three link scenes each with its own wash and a Made with Lolly footer, laid out as one page in the canvas](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
+
 每一个输入项都记录在页面 URL 中，因此一个链接*就是*这份设计。对话框顶部是可直接复制的链接，下面折叠着两个分区。
 
 - **链接选项**里有**最短链接**（大的设计会产生很长的 URL，这一项把整个状态打包成一个紧凑的令牌，并告诉你省下了多少字符；可读形式也始终保留）、**为此链接设置密码**（对整个链接使用 AES-256，密码绝不会出现在链接里）和**锁定此工具版本**--即 `_v` 标记，把链接钉在你眼前的这个工具版本上，后来的更新就不会改变它渲染出的结果。

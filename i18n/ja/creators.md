@@ -58,6 +58,8 @@ Street Mapはその交換条件をよく表す一例です。都市といくつ�
 
 ## 気づく細部
 
+![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
 - **印刷を正しく。** 実寸単位(mm/cm/in/pt)とDPI、ドブと断ち落としマーク、CMYKとPDF/X-4アウトプットインテント - 印刷会社が必要とするものをそのまま渡せます。[エクスポート](/info/exporting.html#size-print-units)を参照してください。
 - **動画とモーション。** WebM/MP4(音声トラック付き)、アニメーションPNG/WebP、アニメーションSVGを書き出せます - 静止画を作るのと同じテンプレートから。**Sequence Studio**はさらに一歩進み、キャンバスの下に本物のタイムラインを備えます。クリップがマグネットのように並ぶ行、自由なオーバーレイレーン、トリムと分割、トランジションプリセット、ボイスオーバー録音、音楽ミックス - これらを画面録画ではなく決定論的なコンポジターでMP4、WebM、GIF、APNGとして書き出します。Lottieファイルはアニメーションアセットとして*取り込め*、それらのどの形式にも書き出せます。クリップの上には**キーフレーム**があり、ある瞬間にボックスをポーズさせ、実際の奥行きでページから持ち上げ、その結果の上をカメラで飛ばせます。[Lollyの使い方 → タイムライン](/info/using.html#timeline-sequence-studio)と[アニメーション](/info/animating.html)を参照してください。
 - **オーディオ。** ボイスメモを録音してMP3(またはネイティブのM4A/OGG/WebM)として保存 - すべてオンデバイスで。さらにMP3、WAV、OGG、M4A、FLAC、MIDI、トラッカーモジュール(MOD/XM/IT/…)を取り込み、動画の下の音楽ベッドやNeurospicy Modeのアンビエントトラックとして使えます。
@@ -68,6 +70,8 @@ Street Mapはその交換条件をよく表す一例です。都市といくつ�
 - **必要なときは、より落ち着いたインターフェースに。** **Profile → Accessibility**にある4つのスイッチ - *Reduce motion*、*Hide colourful previews*、*High contrast*、*Large text* - がアプリを作業に合わせて落ち着かせます。それぞれオンにするまではオフのままで、キャンバスにも書き出し結果の1ピクセルにも影響しません。[プロフィール → アクセシビリティ](/info/profile.html#accessibility)を参照してください。
 
 ## 最大限に活用する
+
+![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[クイックスタート](/info/quickstart.html)** - ブランドを入れて、最初のファイルを出す。
 - **[The Brand Studio](/info/brand-studio.html)** - ロゴ、色、タイプ、トークンを作り込む(`#/start`)。

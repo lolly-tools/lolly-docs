@@ -58,6 +58,8 @@ Street Map е добър пример за компромиса: избират�
 
 ## Детайли, които ще забележиш
 
+![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
 - **Печат, направен правилно.** Реални физически единици (mm/cm/in/pt) и DPI, блийд и рязателни маркери, CMYK и PDF/X-4 output-intent - печатницата получава точно това, от което се нуждае. Виж [Експортиране](/info/exporting.html#size-print-units).
 - **Видео и движение.** Експортирай WebM/MP4 (с аудио писти), анимиран PNG/WebP и анимиран SVG - от същия шаблон, който прави и статичните ти кадри. **Sequence Studio** отива по-далеч: истинска времева линия под платното, с магнитен ред от клипове, свободни ленти за наслагване, изрязване и разделяне, готови преходи, запис на глас зад кадър и музикален микс - изведени като MP4, WebM, GIF или APNG чрез детерминиран компоузър, а не чрез запис на екрана. Файловете Lottie влизат *като* анимирани активи и се изеждат във всеки от тези формати. Над клиповете стоят **ключови кадри**: постави кутия в един момент, повдигни я от страницата с реална дълбочина и прелети камерата над резултата. Виж [Използване на Lolly → Времева линия](/info/using.html#timeline-sequence-studio) и [Анимиране](/info/animating.html).
 - **Аудио.** Запиши гласова бележка и я запази като MP3 (или в родния му M4A/OGG/WebM), всичко на устройството - и внеси MP3, WAV, OGG, M4A, FLAC, MIDI или tracker модули (MOD/XM/IT/…) като музикална основа под видео или амбиентна писта в Neurospicy Mode.
@@ -68,6 +70,8 @@ Street Map е добър пример за компромиса: избират�
 - **По-спокоен интерфейс, когато го искаш.** Четири превключвателя под **Профил → Достъпност** - *Намалено движение*, *Скриване на цветните визуализации*, *Висок контраст* и *Едър текст* - успокояват приложението около работата ти. Всеки е изключен, докато не го включиш, и нито един не докосва платното ти или премества дори пиксел от това, което експортираш. Виж [Твоят профил → Достъпност](/info/profile.html#accessibility).
 
 ## Извлечи максимума от него
+
+![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[Бърз старт](/info/quickstart.html)** - брандът влиза, първият файл излиза.
 - **[Brand Studio](/info/brand-studio.html)** - оформи логата, цветовете, шрифтовете и токените си (`#/start`).

@@ -291,6 +291,8 @@ Et design går ut på én av to måter: som en lenke eller som en fil. Delingsdi
 
 ### Lenken
 
+![Jump Page in the editor - the heading, three link scenes each with its own wash and a Made with Lolly footer, laid out as one page in the canvas](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
+
 Hvert felt fanges opp i side-URL-en, så en lenke *er* designet. Øverst i dialogen ligger lenken klar til kopiering, med to sammenslåtte seksjoner under.
 
 - **Lenkevalg** inneholder **Korteste lenke** (et stort design gir en lang URL, så dette pakker hele tilstanden inn i et kompakt token og viser deg besparelsen i tegn; den lesbare formen er alltid der også), **Passordbeskytt denne lenken** (AES-256 over hele lenken, passordet aldri i den) og **Lås til denne verktøyversjonen** - flagget `_v`, som fester lenken til den verktøyversjonen du ser på, slik at en senere oppdatering ikke kan endre det den rendrer.

@@ -58,6 +58,8 @@ Street Map مثال جيد على هذه المفاضلة: تختار مدينة
 
 ## لمسات ستلاحظها
 
+![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
 - **الطباعة، بالشكل الصحيح.** وحدات فعلية حقيقية (مم/سم/بوصة/نقطة) ودقة DPI، وعلامات النزيف والقص، ونية إخراج CMYK وPDF/X-4 - تحصل المطبعة على ما تحتاجه بالضبط. راجع [التصدير](/info/exporting.html#size-print-units).
 - **الفيديو والحركة.** صدّر WebM/MP4 (مع مسارات الصوت)، وPNG/WebP متحركين، وSVG متحرك - من القالب نفسه الذي ينتج صورك الثابتة. يذهب **استوديو التسلسل (Sequence Studio)** إلى أبعد من ذلك: خط زمني حقيقي أسفل اللوحة، مع صف مغناطيسي من المقاطع، ومسارات تراكب حرة، وقص وتقسيم، وأنماط انتقال جاهزة، وتسجيل تعليق صوتي ومزج موسيقي - يُصدَّر كـ MP4 أو WebM أو GIF أو APNG بواسطة مُركِّب حتمي وليس بتسجيل للشاشة. تدخل ملفات Lottie كأصول متحركة وتُصدَّر إلى أي من هذه الصيغ. وفوق المقاطع توجد **الإطارات المفتاحية (keyframes)**: ضع صندوقًا في لحظة واحدة، وارفعه عن الصفحة بعمق حقيقي، وحرّك كاميرا فوق النتيجة. راجع [استخدام Lolly ← الخط الزمني](/info/using.html#timeline-sequence-studio) و[التحريك](/info/animating.html).
 - **الصوت.** سجّل ملاحظة صوتية واحفظها بصيغة MP3 (أو بصيغتها الأصلية M4A/OGG/WebM)، كل ذلك على الجهاز - واستورد MP3 وWAV وOGG وM4A وFLAC وMIDI أو وحدات المتعقب (MOD/XM/IT/…) كقاعدة موسيقية أسفل فيديو أو كمسار محيطي في وضع Neurospicy.
@@ -68,6 +70,8 @@ Street Map مثال جيد على هذه المفاضلة: تختار مدينة
 - **واجهة أكثر هدوءًا عندما تريد ذلك.** أربعة مفاتيح تحت **الملف الشخصي ← إمكانية الوصول** - *تقليل الحركة*، و*إخفاء المعاينات الملونة*، و*التباين العالي*، و*النص الكبير* - تهدّئ التطبيق حول عملك. كل مفتاح مطفأ حتى تُشغّله بنفسك، ولا يمس أي منها لوحتك أو يحرّك بكسلاً واحدًا مما تصدّره. راجع [ملفك الشخصي ← إمكانية الوصول](/info/profile.html#accessibility).
 
 ## استفد منه إلى أقصى حد
+
+![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[البدء السريع](/info/quickstart.html)** - أدخل العلامة التجارية، واحصل على أول ملف.
 - **[استوديو العلامة التجارية](/info/brand-studio.html)** - شكّل شعاراتك وألوانك وخطوطك ورموزك المميزة (tokens) (`#/start`).

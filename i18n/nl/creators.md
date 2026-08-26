@@ -58,6 +58,8 @@ Schrijf *tools*, geen bestanden: bouw het ding dat 10.000 kaarten genereert in p
 
 ## Details die je zult opmerken
 
+![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
 - **Print, goed gedaan.** Echte fysieke eenheden (mm/cm/in/pt) en DPI, afloop en snijlijnen, CMYK en PDF/X-4 output-intent - een drukkerij krijgt precies wat hij nodig heeft. Zie [Exporteren](/info/exporting.html#size-print-units).
 - **Video en beweging.** Exporteer WebM/MP4 (met audiotracks), geanimeerde PNG/WebP en geanimeerde SVG - vanuit dezelfde template die je stills maakt. **Sequence Studio** gaat verder: een echte tijdlijn onder het canvas, met een magnetische rij clips, vrije overlaylanen, trimmen en splitsen, overgangspresets, voice-overopname en een muziekmix - uitgevoerd als MP4, WebM, GIF of APNG door een deterministische compositor in plaats van een schermopname. Lottie-bestanden komen *binnen* als geanimeerde assets en renderen uit naar elk van die formaten. Boven de clips zitten **keyframes**: zet een box op één moment neer, til hem met echte diepte van de pagina en vlieg een camera over het resultaat. Zie [Lolly gebruiken → Tijdlijn](/info/using.html#timeline-sequence-studio) en [Animeren](/info/animating.html).
 - **Audio.** Neem een spraaknotitie op en sla die op als MP3 (of native M4A/OGG/WebM), allemaal op het apparaat - en breng MP3, WAV, OGG, M4A, FLAC, MIDI of trackermodules (MOD/XM/IT/…) binnen als muziekbed onder een video of een ambient track in Neurospicy Mode.
@@ -68,6 +70,8 @@ Schrijf *tools*, geen bestanden: bouw het ding dat 10.000 kaarten genereert in p
 - **Een rustigere interface wanneer je die wilt.** Vier schakelaars onder **Profiel → Toegankelijkheid** - *Beweging beperken*, *Kleurrijke previews verbergen*, *Hoog contrast* en *Grote tekst* - kalmeren de app rond je werk. Elk staat uit tot je hem aanzet, en geen ervan raakt je canvas of verplaatst een pixel van wat je exporteert. Zie [Je profiel → Toegankelijkheid](/info/profile.html#accessibility).
 
 ## Er het meeste uit halen
+
+![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[Snel starten](/info/quickstart.html)** - merk erin, eerste bestand eruit.
 - **[De Brand Studio](/info/brand-studio.html)** - vorm je logo's, kleuren, typografie en tokens (`#/start`).

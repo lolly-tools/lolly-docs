@@ -85,6 +85,8 @@ Street Map은 이 방식을 잘 보여주는 예입니다: 도시와 색상 몇 
 
 ## 눈에 띄는 디테일
 
+![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
 - **인쇄, 제대로.** 실제 물리 단위(mm/cm/in/pt)와 DPI, 도련과 재단 마크, CMYK와 PDF/X-4 출력 의도까지 - 인쇄소가 필요한 것을 정확히 얻습니다. [내보내기](/info/exporting.html#size-print-units) 참고.
 - **동영상과 모션.** 정지 이미지를 만드는 것과 같은 템플릿에서 WebM/MP4(오디오 트랙 포함), 애니메이션 PNG/WebP, 애니메이션 SVG를 내보냅니다. **시퀀스 스튜디오**는 한 걸음 더 나아가 캔버스 아래에 실제 타임라인을 두고, 클립이 자석처럼 붙는 행, 자유로운 오버레이 레인, 트림과 분할, 전환 프리셋, 보이스오버 녹음, 음악 믹스까지 제공합니다 - 화면 녹화가 아니라 결정적 컴포지터가 MP4, WebM, GIF 또는 APNG로 렌더링합니다. Lottie 파일은 애니메이션 에셋으로 *들어오고* 이 형식들로 렌더링되어 나갑니다. 클립 위에는 **키프레임**이 있습니다: 특정 순간에 박스를 배치하고 실제 깊이로 화면에서 띄운 뒤 카메라를 그 위로 날립니다. [Lolly 사용하기 → 타임라인](/info/using.html#timeline-sequence-studio)과 [애니메이션](/info/animating.html) 참고.
 - **오디오.** 음성 메모를 녹음해 MP3(또는 기본 형식인 M4A/OGG/WebM)로 저장합니다 - 모두 온디바이스로 처리됩니다 - 그리고 MP3, WAV, OGG, M4A, FLAC, MIDI 또는 트래커 모듈(MOD/XM/IT/…)을 동영상 아래에 깔리는 배경음악이나 Neurospicy 모드의 앰비언트 트랙으로 가져옵니다.
@@ -95,6 +97,8 @@ Street Map은 이 방식을 잘 보여주는 예입니다: 도시와 색상 몇 
 - **원할 때 차분해지는 인터페이스.** **프로필 → 접근성**의 네 가지 스위치 - *모션 줄이기*, *화려한 미리보기 숨기기*, *고대비*, *큰 텍스트* - 로 작업 환경을 차분하게 만듭니다. 각 항목은 켜기 전까지 꺼져 있으며, 캔버스나 내보내기 결과의 픽셀 하나도 건드리지 않습니다. [내 프로필 → 접근성](/info/profile.html#accessibility) 참고.
 
 ## 최대한 활용하기
+
+![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[퀵스타트](/info/quickstart.html)** - 브랜드를 입력하면 첫 파일이 나옵니다.
 - **[브랜드 스튜디오](/info/brand-studio.html)** - 로고, 색상, 서체, 토큰을 다듬습니다(`#/start`).
