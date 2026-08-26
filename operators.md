@@ -109,6 +109,10 @@ A few things worth having straight before you roll it out:
 - **Content Credentials are tamper-evident.** They detect alteration rather than prevent it - see the interoperability notes above.
 - **Two encryption tiers.** *Standard* locks are quick, universal deterrents; *Strong* (AES-256) is full protection - reach for Strong for anything sensitive, noting it wants a modern reader.
 
+## Standalone, or governed by a control plane
+
+Two shapes, and you choose per deployment. **Standalone is the default and needs no server:** Lolly renders on-device, every producer works in-app, and the git-as-data governance above is entirely optional - a single organisation can run this repo with nothing hosted at all. **When you want org-wide control, add a control plane.** [lolly.work](https://lolly.work) is a separate, open-source (MPL-2.0) service you host - or evaluate on the hosted sandbox - that governs the shell live: SSO-gated sign-in, feature-flag / export / watermark policy, tool-input overlays, catalog federation, approvals and a hash-chained audit log, all served to the shell without a code change here. It is brand-agnostic (config plus a pack mount), consumes this repo's engine and packs unmodified, and never becomes the render path: Lolly still renders on-device by design. OSS = individual freedom; OSS + control plane = organizational freedom.
+
 ## Where to go next
 
 - **[Security & Verification](/info/security.html)** - the standards, primitives, trust model and testing behind the credentials and encryption above.

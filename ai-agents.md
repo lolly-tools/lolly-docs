@@ -82,7 +82,7 @@ A few tools won't hand back a file this way:
 
 Beyond building URLs by hand, Lolly ships an optional **[Model Context Protocol](https://modelcontextprotocol.io) server** - a native endpoint any MCP client (an agent runtime, an IDE, a CLI, a hosted assistant) connects to directly. It exposes the catalogue and the render path as callable tools, so an agent can discover a tool, fill its declared inputs and get back a finished file plus an editable `lolly.tools` link - with no app update, because tools sync to the server as data.
 
-Six verbs:
+Seven verbs:
 
 | Tool | Does |
 |---|---|
@@ -91,6 +91,7 @@ Six verbs:
 | `lolly_build_url` | Build a shareable, editable link + raw render URL - without rendering. |
 | `lolly_render` | Render a tool to a file (returns the bytes plus the editable link). |
 | `lolly_transform` | Run an on-device file utility (`strip-data`, `compress-pdf`) on a file you supply. |
+| `lolly_redact` | Redact regions of an image, SVG or PDF on-device - covered content is destroyed and the file rebuilt, so nothing is recoverable underneath. |
 | `lolly_verify` | Verify a file's Content Credentials (C2PA) - the verdict, signer identity, edit history and embedded metadata. Checked in-process, never stored. |
 
 ### Any format, transparently

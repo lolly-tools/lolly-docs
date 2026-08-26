@@ -78,15 +78,15 @@ signed anonymously. That is the default anyway.
 Full reference: [Content Credentials Identity](/info/content-credentials-identity.html)
 and the [engineering detail](/info/content-credentials-engineering.html).
 
-## A deployment with a management plane
+## A deployment with a control plane
 
-A deployment may add an **optional management plane** - a separate server
+A deployment may add an **optional control plane** - a separate server
 product an organisation runs so its instance can govern sign-in, policy,
 shared projects and its own catalogue. The app carries one seam for it
 (`src/org/` in the web shell), and that seam is **dormant by default**: on a
 plain deployment it makes one tolerant, time-boxed probe (`GET
 /api/auth/config`), remembers the absence, and the app behaves exactly as a
-build without the seam. Everything the seam can do when a management plane
+build without the seam. Everything the seam can do when a control plane
 answers is additive and documented in the shell source: sign-in gating,
 org-config policy, an instance manifest (`GET /api/v1/instance`, read before
 anyone signs in), and device-code sign-in for the installed apps.
@@ -98,7 +98,7 @@ installs apart. It rides only requests your own use already makes; there is no
 timer and nothing phones home. Leaving the instance (Profile → Lolly instance → Leave) removes the
 organisation's brand, tools and catalogue from the device, deletes the
 install id (a device that reconnects presents a fresh one), and your own
-work stays. The management plane's own endpoints, storage
+work stays. The control plane's own endpoints, storage
 and data handling are that product's documentation, not this page's - this
 page keeps its promise for what *Lolly* ships.
 

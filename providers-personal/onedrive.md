@@ -24,7 +24,8 @@
 deploy env. No id → the OneDrive rows and buttons do not exist.
 
 The deploy CSP must allow the Graph upload-session hosts for files over 4 MB
-(shells/web/vercel.json already lists `graph.microsoft.com`,
+(both copies of the policy - the root `vercel.json` and the `$lolly_csp` map in
+`deploy/docker/nginx.conf` - already list `graph.microsoft.com`,
 `login.microsoftonline.com`, `api.onedrive.com`, `*.up.1drv.com`,
 `*.sharepoint.com`); a deploy that trims them keeps small files working and
 large uploads fail with an honest message.
