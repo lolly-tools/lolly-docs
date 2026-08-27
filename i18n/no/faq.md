@@ -16,6 +16,34 @@ Når samtykket er valgt, forsegles profilopplysningene du velger, inn i det du l
 
 Lolly produserer store mengder innhold. Vi følger en streng dataminimering for å unngå risiko.
 
+## Ble Lolly "vibekodet"?
+
+Lolly ble utviklet med AI-assistert koding, AI-assistert oppdagelse og, mange steder, AI-assistert innhold, med en blanding av modeller og leverandører, inkludert ledende selskaper innen offentlig skyteknologi.
+
+På tidspunktet dette ble skrevet, inneholder Lolly null kjente sikkerhetssårbarheter i forsyningskjeden og forplikter seg til rask sikkerhetsrespons når CVE-er dukker opp.
+
+Et menneske skapte arkitekturen, kuraterte koden med hensikt og artdirigerte opplevelsen.
+
+Aller viktigst: Lolly står på skuldrene til tiår med åpen kildekode-innovasjon fra ekte eksperter over hele verden.
+
+Det finnes en deterministisk byggsperre i Lollys kodebase for å holde kode og dokumentasjon forståelig for den vanlige leseren og "avsøple" opplevelsen. Dette kan gjøre det vanskelig med proprietær syntetisk kartlegging av opprinnelse. Det er utilsiktet.
+
+**Informasjon om generativ AI:**
+
+- **LLM-skrevet kode:** Opus 4.8, Gemini 3.1, Qwen3-Coder-Next (listen kan bli utvidet)
+- **LLM-oppdagelse:** Gemini 3.1, Fable
+- **Dokumentasjon:** Sonnet 5
+- **Åpen kildekode-biblioteker:** deres respektive forfattere, angitt i SBOM, kommentarer og filhoder
+
+Denne listen omfatter ikke modeller som er pakket inn (vendored) i Lolly.
+
+**Menneskelig bidrag:**
+
+- **Arkitektur:** Andy Fitzsimon
+- **Artdirection:** Andy Fitzsimon
+- **Menneskeskrevet kode:** Andy Fitzsimon
+- **Idémyldring, gjennomgang og tilbakemelding:** Ravan Naidoo, Matthias Eckermann, Kelly Andrews, Ryan Kleeman, Peter Chamalian, Penpot-fellesskapet (listen er ikke uttømmende)
+
 ## Hva er funksjonsflaggene?
 
 Funksjonsflagg slår deler av Lolly av og på. Vanligvis er det en administrator som styrer dem - i Lolly er det du som styrer.
@@ -93,7 +121,7 @@ Vi vinner kampen om styring med fremragende bekvemmelighet og service.
 
 Ja. Åpne **Design** og klikk **Import a design** (importer et design): den godtar en Figma-fil **.fig** (Save local copy), en Penpot-eksport **.penpot**, en Illustrator-fil **.ai** eller **.pdf**, en InDesign-fil **.idml** (File → Export → InDesign Markup) eller **hvilken som helst SVG** (den vide døra - nesten alle designprogrammer eksporterer det). Ingen konto, ingen plugin og ingen lisens på et designprogram er nødvendig.
 
-![Designs åpne lerret, der Import a design ligger i verktøylinja](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Designs åpne lerret, med Importer en design i verktøylinjen](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Lag kommer inn som redigerbare bokser på det åpne lerretet: tekst kan fortsatt skrives om, former er fortsatt former, bilder havner i ditt eget bildebibliotek, og typografi og farger følger merkevareglobalene. Lagre den, og oppsettet blir en gjenbrukbar mal med egen URL som hvem som helst med Lolly kan fylle på nytt - og du kan blande inn levende verktøy (en QR-kode, et diagram) som rendres på nytt ved innlasting. Derfra rendres den som alt annet i Lolly - SVG, PDF, PNG og resten, reproduserbart fra URL-en. Se [Importer et design](/info/design-import.html).
 

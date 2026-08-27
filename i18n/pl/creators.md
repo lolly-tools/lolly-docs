@@ -52,7 +52,7 @@ Jedno narzędzie może osadzić na żywo wynik innego narzędzia jako plik - pla
 
 Zaawansowane filtry, kompozycja, animacja, efekty kamery na żywo, projektowanie generatywne - autor szablonu ma do dyspozycji każdą technologię webową, więc sufit jest wysoko.
 
-![Wynik Mesh Gradient - generatywne pole miękkiego koloru zbudowane w całości z tokenów palety Twojej marki](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Wynik Mesh Gradient - generatywne pole miękkiego koloru zbudowane w całości z tokenów palety Twojej marki](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 Twórz *narzędzia*, nie pliki: zbuduj coś, co generuje 10 000 kart, zamiast tworzyć 10 000 kart ręcznie. Zablokuj to, co nie powinno się zmieniać; udostępniaj tylko to, co ma się różnić.
 

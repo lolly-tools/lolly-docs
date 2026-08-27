@@ -16,6 +16,34 @@ Když je souhlas zapnutý, vybrané údaje z profilu se zapečetí do toho, co v
 
 Lolly vytváří velké množství obsahu. Držíme se přísné minimalizace dat, abychom předešli riziku.
 
+## Byla Lolly "vibe codovaná"?
+
+Lolly vznikala s pomocí AI asistovaného programování, AI asistovaného objevování a na mnoha místech i AI asistovaného obsahu, s využitím kombinace modelů a dodavatelů, včetně předních firem z oblasti veřejného cloudu.
+
+V době psaní tohoto textu neobsahuje Lolly žádné známé bezpečnostní zranitelnosti ve svém dodavatelském řetězci a zavazuje se k rychlé reakci na bezpečnostní incidenty, jakmile se objeví CVE.
+
+Člověk vytvořil architekturu, cíleně kurátoroval kód a umělecky vedl výsledný zážitek.
+
+A co je nejdůležitější, Lolly stojí na ramenou desetiletí inovací open source od skutečných odborníků z celého světa.
+
+V kódové základně Lolly existuje deterministická build-brána, která udržuje kód a dokumentaci srozumitelné pro běžného čtenáře a "odbalastňuje" celý zážitek. To může ztěžovat proprietární syntetické určování původu. Není to záměr.
+
+**Prohlášení o generativní AI:**
+
+- **Kód napsaný LLM:** Opus 4.8, Gemini 3.1, Qwen3-Coder-Next (tento seznam se může rozšiřovat)
+- **Objevování pomocí LLM:** Gemini 3.1, Fable
+- **Dokumentace:** Sonnet 5
+- **Knihovny open source:** jejich příslušní autoři, uvedení v SBOM, komentářích a hlavičkách souborů
+
+Tento seznam nezahrnuje modely začleněné (vendored) do Lolly.
+
+**Lidský přínos:**
+
+- **Architektura:** Andy Fitzsimon
+- **Umělecké vedení:** Andy Fitzsimon
+- **Kód napsaný člověkem:** Andy Fitzsimon
+- **Koncepce, revize a zpětná vazba:** Ravan Naidoo, Matthias Eckermann, Kelly Andrews, Ryan Kleeman, Peter Chamalian, komunita Penpot (seznam není úplný)
+
 ## Co jsou feature flagy?
 
 Feature flagy zapínají a vypínají části Lolly. Obvykle je ovládá administrátor - u Lolly je máš v rukou ty.
@@ -93,7 +121,7 @@ Válku o governance vyhrajeme skvělým pohodlím a službou.
 
 Ano. Otevři **Design** a klikni na **Import a design**: bere nativní Figma **.fig** (Save local copy), export z Penpotu **.penpot**, Illustrator **.ai** nebo **.pdf**, InDesign **.idml** (File → Export → InDesign Markup) nebo **jakékoli SVG** (ta široká vrata - vyexportuje ho skoro každá designová aplikace). Není potřeba účet, plugin ani licence designové aplikace.
 
-![Otevřené plátno Designu, kde je v nástrojové liště Import a design](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Otevřené plátno nástroje Design s tlačítkem Importovat návrh na panelu nástrojů](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Vrstvy přijdou jako upravitelné boxy na otevřeném plátně: text jde dál přepisovat, tvary zůstávají tvary, obrázky se přidají do tvé vlastní knihovny obrázků a písmo i barvy se řídí globálními hodnotami značky. Ulož to a z layoutu je znovupoužitelná šablona s vlastní URL, kterou může kdokoli s Lolly znovu naplnit - a můžeš do ní přimíchat živé nástroje (QR kód, graf), které se při načtení přerenderují. Odtamtud se renderuje jako cokoli jiného v Lolly - SVG, PDF, PNG a zbytek, reprodukovatelné z URL. Viz [Import designu](/info/design-import.html).
 

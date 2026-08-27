@@ -61,7 +61,7 @@ Lollyが何であるかを理解する最も明快な方法は、機能一覧を
 
 ステップ2の「新しいチャート」とは、まさにこのようなレンダリングのことです。データ文字列といくつかのパラメーターだけから、誰もデザインファイルを開くことなく生成されます。
 
-![タイトル付きの積み上げエリアチャート。3つの系列がクールな配色で帯状に表示され、軸・凡例・タイトルはすべて手作業ではなくテンプレートによって配置されている](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![タイトル付きの積み上げエリアチャート。3つの系列がクールな配色で帯状に表示され、軸・凡例・タイトルはすべて手作業ではなくテンプレートによって配置されている](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 重要なのは、Lollyがデザイナーにとって良い、*かつ*開発者にとって良い、*かつ*営業にとって良い、という話がそれぞれ独立して成り立つことではありません。これは**リレー競走**です。クリエイティブが最初に行った仕事を開発者がスケールさせ、それが今度はプロデューサーの力になります。飛行機の中の非技術者の担当者が労せずして得られる体験は、デザイナーが定めて開発者が展開した厳密さがあってこそ*初めて可能*になるのです。
 
@@ -189,7 +189,7 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── code-canvas/
+│   ├── snippet/
 │   ├── countdown-timer/
 │   ├── color-palette/
 │   ├── color-block/           # typed/heterogeneous blocks (addMenu discriminator)
@@ -213,7 +213,7 @@ lolly/
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
 │   ├── logo-wall/         # many logos → auto-packed grid
 │   ├── logo-lockup-partner/ # SUSE + partner co-brand lockup
-│   ├── web-icon/          # favicon .ico / png / svg from text + colours
+│   ├── icon/          # favicon .ico / png / svg from text + colours
 │   ├── lottie-digi-ad/    # animated Lottie ad banners
 │   └── pose-geeko/        # pose the SUSE Geeko mascot - print-ready stills
 │

@@ -12,6 +12,34 @@
 
 Lolly 會產出大量內容。我們採取嚴格的資料最小化做法來預防風險。
 
+## Lolly是用「氛圍程式設計」做出來的嗎?
+
+Lolly的開發運用了AI輔助程式設計、AI輔助探索,許多地方還使用了AI輔助生成的內容,所使用的模型與供應商多種多樣,包括來自公有雲前沿企業的模型。
+
+截至本文撰寫時,Lolly的供應鏈中不存在已知的資安漏洞,並承諾在CVE出現時採取快速的資安應變措施。
+
+架構由人類設計,程式碼經過有意識地審慎篩選,體驗則由人類進行藝術指導。
+
+最重要的是,Lolly站在世界各地真正專家們數十年開源創新成果的肩膀之上。
+
+Lolly的程式碼庫中有一個確定性建置關卡,用以讓程式碼和文件對一般讀者保持連貫,並為體驗「去水」。這可能會讓專有的合成式溯源枚舉變得困難。這並非刻意為之。
+
+**生成式AI揭露:**
+
+- **LLM撰寫的程式碼:** Opus 4.8、Gemini 3.1、Qwen3-Coder-Next(此清單可能會擴充)
+- **LLM探索:** Gemini 3.1、Fable
+- **文件:** Sonnet 5
+- **開源函式庫:** 各自的作者,詳見SBOM、註解與檔案標頭
+
+此清單不包括內嵌於Lolly中的模型。
+
+**人類貢獻:**
+
+- **架構:** Andy Fitzsimon
+- **藝術指導:** Andy Fitzsimon
+- **人工撰寫的程式碼:** Andy Fitzsimon
+- **構想發想、審閱與意見回饋:** Ravan Naidoo、Matthias Eckermann、Kelly Andrews、Ryan Kleeman、Peter Chamalian、Penpot社群(清單並不詳盡)
+
 ## 功能旗標是什麼？
 
 功能旗標可以開啟或關閉 Lolly 的各個部分。這類開關通常由管理員掌控；在 Lolly，掌控權在你手上。
@@ -67,7 +95,7 @@ Lolly 把整體水準一起拉上來。
 
 可以。開啟 **Design**，點 **匯入設計**：它接受原生的 Figma **.fig**（Save local copy）、Penpot 的 **.penpot** 匯出檔、Illustrator 的 **.ai** 或 **.pdf**、InDesign 的 **.idml**（File → Export → InDesign Markup），或是**任何 SVG**（這是最寬的一道門，幾乎每個設計軟體都匯得出來）。不需要帳號、不需要外掛，也不需要設計軟體的授權。
 
-![Design 的開放畫布，匯入設計就放在工具列上](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design 的開放畫布,工具列中顯示匯入設計](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 圖層會以可編輯的方塊出現在開放畫布上：文字仍然可以重打，形狀仍然是形狀，圖片會加進你自己的圖庫，字體與顏色則遵循品牌全域設定。存檔之後，這份版面就成為可重複使用、可用網址取用的範本，任何有 Lolly 的人都能重新填入內容；你還可以混入會在載入時重新算圖的即時工具（QR code、圖表）。從那裡開始，它就跟 Lolly 裡的其他東西一樣算圖：SVG、PDF、PNG 等等，都能從網址重現。請見[匯入設計](/info/design-import.html)。
 

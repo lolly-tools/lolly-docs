@@ -69,7 +69,7 @@ Setiap input alat dapat dinyatakan sebagai parameter URL, dan input yang sama me
 
 Prompt to Image adalah determinisme dalam bentuk paling sederhana: teks adalah seluruh input, gambar hasil typeset adalah seluruh output, dan teks yang sama selalu di-typeset dengan cara yang sama.
 
-![Prompt to Image - blok teks prompt yang di-typeset menjadi gambar persegi, tanpa apa pun dalam hasilnya yang tidak ada dalam input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - blok teks prompt yang di-typeset menjadi gambar persegi, tanpa apa pun dalam hasilnya yang tidak ada dalam input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## Asal-usul & Content Credentials
 

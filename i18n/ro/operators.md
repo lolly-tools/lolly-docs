@@ -69,7 +69,7 @@ Fiecare intrare a unui instrument poate fi exprimată ca parametru URL, iar acel
 
 Prompt to Image este determinismul în forma sa cea mai simplă: textul este întreaga intrare, imaginea culeasă este întreaga ieșire, iar același text se culege mereu la fel.
 
-![Prompt to Image - un bloc de text de prompt culese într-o imagine pătrată, fără nimic în rezultat care să nu fi fost în intrare](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - un bloc de text de prompt culese într-o imagine pătrată, fără nimic în rezultat care să nu fi fost în intrare](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## Proveniență și Content Credentials
 

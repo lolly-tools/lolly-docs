@@ -66,7 +66,7 @@ Il modo più chiaro per vedere cos'è Lolly non è un elenco di funzionalità - 
 
 Il "nuovo grafico" del secondo passaggio è un rendering come questo, prodotto da una stringa di dati e da alcuni parametri senza che nessuno apra un file di design:
 
-![Un grafico ad area impilata con titolo, le sue tre serie in fasce con una palette fredda, con assi, legenda e titolo posizionati tutti dal template anziché a mano](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![Un grafico ad area impilata con titolo, le sue tre serie in fasce con una palette fredda, con assi, legenda e titolo posizionati tutti dal template anziché a mano](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 Il punto non è che Lolly sia buono per i designer *e* buono per gli sviluppatori *e* buono per le vendite, ciascuno nel vuoto. È una **staffetta**: il lavoro iniziale del creativo viene scalato dallo sviluppatore, che a sua volta abilita il produttore. L'esperienza senza sforzo per il rappresentante non tecnico sull'aereo è possibile solo grazie al rigore fissato dal designer e implementato dallo sviluppatore.
 
@@ -194,7 +194,7 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── code-canvas/
+│   ├── snippet/
 │   ├── countdown-timer/
 │   ├── color-palette/
 │   ├── color-block/           # typed/heterogeneous blocks (addMenu discriminator)
@@ -218,7 +218,7 @@ lolly/
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
 │   ├── logo-wall/         # many logos → auto-packed grid
 │   ├── logo-lockup-partner/ # SUSE + partner co-brand lockup
-│   ├── web-icon/          # favicon .ico / png / svg from text + colours
+│   ├── icon/          # favicon .ico / png / svg from text + colours
 │   ├── lottie-digi-ad/    # animated Lottie ad banners
 │   └── pose-geeko/        # pose the SUSE Geeko mascot - print-ready stills
 │

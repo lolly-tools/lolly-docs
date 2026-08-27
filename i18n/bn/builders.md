@@ -23,7 +23,7 @@ Lolly হলো একটি প্ল্যাটফর্ম-নিরপে�
 
 এটা পাঁচটা কন্ট্রোলের চেয়ে অনেক দূর পর্যন্ত বাড়ে। কোনো ইনপুটকে একটা `section` দিন আর হোস্ট সেটা গুটিয়ে রাখে, তাই D3 Chart Studio-র মতো পঞ্চাশ-ইনপুটের টুলও একটা ছোট তালিকা হিসেবেই খোলে, বাকিটা নাম দেওয়া গ্রুপের পিছনে সাজানো থাকে।
 
-![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-d3-sections)
+![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fchart&width=1440&height=1600&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-d3-sections)
 
 - **[Authoring Tools](/info/authoring-tools.html)** - সম্পূর্ণ গাইড: ম্যানিফেস্ট, টেমপ্লেট, স্টাইল, hooks, কম্পোজিশন, এবং পাবলিশিং।
 - **[Authoring Assets](/info/authoring-assets.html)** - ক্যাটালগ অ্যাসেট, টিয়ার, লোকেল, প্যালেট, থিমযোগ্য আইকন, এবং ফন্ট।
@@ -48,7 +48,7 @@ Lolly হলো একটি প্ল্যাটফর্ম-নিরপে�
 
 অধিকার আর কৃতিত্বও আর সবকিছুর মতোই ইনপুট। Embed & Track Image ক্রিয়েটর, কপিরাইট, লাইসেন্স আর যোগাযোগের ঘর ঘোষণা করে, আর এক্সপোর্ট সেগুলো ফাইলের নিজের মেটাডেটা আর তার C2PA ম্যানিফেস্টে লিখে দেয়।
 
-![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-rights-fields)
+![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fclaim%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-rights-fields)
 
 - **[Content Credentials Identity](/info/content-credentials-identity.html)** - অন-ডিভাইস C2PA-র জন্য CA-প্রদত্ত সাইনিং; ইঞ্জিন কন্ট্রাক্ট এবং অপারেটর রানবুক।
 - **[Data Transfer](/info/data-transfer.html)** - `lolly-backup` বান্ডল: এনভেলপ, ইন্টেগ্রিটি, এবং ক্রস-শেল গ্যারান্টি।

@@ -23,7 +23,7 @@ Lolly는 여러 **셸**(web PWA, Tauri 데스크톱/모바일, CLI, TUI)에서 �
 
 이 방식은 컨트롤 다섯 개에서 끝나지 않아요. 입력에 `section`을 주면 호스트가 그것을 접어두기 때문에, D3 Chart Studio처럼 입력이 50개인 도구도 열었을 때는 짧은 컨트롤 묶음으로 보이고, 나머지는 이름이 붙은 그룹 뒤에 정리돼요.
 
-![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-d3-sections)
+![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fchart&width=1440&height=1600&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-d3-sections)
 
 - **[도구 제작 가이드](/info/authoring-tools.html)** - 매니페스트, 템플릿, 스타일, 훅, 조합, 게시까지 다루는 전체 가이드.
 - **[에셋 제작 가이드](/info/authoring-assets.html)** - 카탈로그 에셋, 티어, 로케일, 팔레트, 테마 지원 아이콘, 폰트.
@@ -48,7 +48,7 @@ Lolly는 여러 **셸**(web PWA, Tauri 데스크톱/모바일, CLI, TUI)에서 �
 
 권리와 저작자 표시도 다른 입력과 똑같아요. Embed & Track Image는 제작자, 저작권, 라이선스, 연락처 필드를 선언하고, 내보내기가 그 값을 파일 자체의 메타데이터와 C2PA 매니페스트에 기록해요.
 
-![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-rights-fields)
+![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fclaim%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-rights-fields)
 
 - **[Content Credentials Identity](/info/content-credentials-identity.html)** - 온디바이스 C2PA를 위한 CA 발급 서명; 엔진 계약과 운영자 런북.
 - **[데이터 이전](/info/data-transfer.html)** - `lolly-backup` 번들: 봉투 형식, 무결성, 셸 간 보장 사항.

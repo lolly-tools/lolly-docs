@@ -69,7 +69,7 @@ Toda entrada de uma ferramenta pode ser expressa como um parâmetro de URL, e as
 
 Prompt to Image é o determinismo em sua forma mais simples: o texto é toda a entrada, a imagem tipografada é toda a saída e o mesmo texto sempre é composto da mesma forma.
 
-![Prompt to Image - um bloco de texto de prompt tipografado em uma imagem quadrada, sem nada no resultado que não estivesse na entrada](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - um bloco de texto de prompt tipografado em uma imagem quadrada, sem nada no resultado que não estivesse na entrada](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## Proveniência e Content Credentials
 

@@ -45,7 +45,7 @@ The consequence is worth stating rather than discovering: a hook that calls it
 can put the user's CA-verified identity onto bytes of its own choosing. That is
 the point of the API (the tool *is* the author here), so **tool review is the
 control** - the same control that covers a `{{{x}}}` in a template. Two shipping
-tools use it: `community/redact` and `community/embed-track-image`. The engine
+tools use it: `community/redact` and `community/claim`. The engine
 additions remain ordinary options (`opts.signer`, `opts.trustAnchors`) on
 existing pure functions.
 

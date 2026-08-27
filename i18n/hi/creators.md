@@ -52,7 +52,7 @@ Street Map इस अदला-बदली का एक उचित उदा
 
 एडवांस्ड फ़िल्टर, कंपोज़िटिंग, एनिमेशन, लाइव कैमरा इफ़ेक्ट, जनरेटिव डिज़ाइन - हर वेब तकनीक एक टेम्पलेट लेखक के लिए उपलब्ध है, इसलिए छत ऊंची है।
 
-![Mesh Gradient का आउटपुट - आपके ब्रांड के पैलेट टोकन से पूरी तरह से बना नरम रंग का एक जनरेटिव क्षेत्र](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Mesh Gradient का आउटपुट - आपके ब्रांड के पैलेट टोकन से पूरी तरह से बना नरम रंग का एक जनरेटिव क्षेत्र](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 फ़ाइलें नहीं, *टूल्स* बनाएं: 10,000 कार्ड बनाने के बजाय वह चीज़ बनाएं जो 10,000 कार्ड जनरेट करती है। जो नहीं बदलना चाहिए उसे लॉक करें; केवल वही एक्सपोज़ करें जिसे बदलना है।
 

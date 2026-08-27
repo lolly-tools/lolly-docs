@@ -69,7 +69,7 @@ Compress PDF 補完了這一組工具：過大的附件會依照你選擇的品�
 
 Prompt to Image 是確定性最單純的體現：文字就是全部的輸入，排版好的圖片就是全部的輸出，相同的文字永遠會排出相同的結果。
 
-![Prompt to Image - 一段提示文字排版成正方形圖片，結果中沒有任何內容不是來自輸入](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - 一段提示文字排版成正方形圖片，結果中沒有任何內容不是來自輸入](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## 來源與 Content Credentials
 

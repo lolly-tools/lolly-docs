@@ -83,7 +83,7 @@ Met een actief merk en je materiaal bij de hand levert elke tool een afgewerkt b
 
 "Een URL is de API" is letterlijk bedoeld. De grafiek hieronder is door niemand getekend: het type, de kop en de hele datatabel zijn in de adresbalk getypt, en dezelfde link rendert dezelfde grafiek op elk apparaat.
 
-![Een vlakgrafiek van maandelijkse aanmeldingen, waarvan elke waarde als queryparameter binnenkwam in plaats van via een klik](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-d3-url-chart)
+![Een vlakgrafiek van maandelijkse aanmeldingen, waarvan elke waarde als queryparameter binnenkwam in plaats van via een klik](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-d3-url-chart)
 
 ## Waar je hierna heen kunt
 

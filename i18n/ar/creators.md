@@ -52,7 +52,7 @@ Street Map مثال جيد على هذه المفاضلة: تختار مدينة
 
 المرشحات المتقدمة، والتركيب، والرسوم المتحركة، وتأثيرات الكاميرا الحية، والتصميم التوليدي - كل تقنيات الويب متاحة لمؤلف القالب، لذا فالسقف مرتفع.
 
-![مخرجات Mesh Gradient - حقل توليدي من الألوان الناعمة مبني بالكامل من رموز لوحة ألوان علامتك التجارية](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![مخرجات Mesh Gradient - حقل توليدي من الألوان الناعمة مبني بالكامل من رموز لوحة ألوان علامتك التجارية](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 ألّف *أدوات*، لا ملفات: ابنِ الشيء الذي يُولّد 10,000 بطاقة بدلًا من صنع 10,000 بطاقة بنفسك. اقفل ما لا ينبغي أن يتغيّر؛ واكشف فقط عمّا يُراد له أن يتنوّع.
 

@@ -69,7 +69,7 @@ Chaque entrée d'outil peut s'exprimer comme paramètre d'URL, et les mêmes ent
 
 Prompt to Image incarne le déterminisme dans sa forme la plus simple : le texte est toute l'entrée, l'image composée est toute la sortie, et le même texte se compose toujours de la même façon.
 
-![Prompt to Image - un bloc de texte de prompt composé en une image carrée, sans rien dans le résultat qui ne soit déjà dans l'entrée](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - un bloc de texte de prompt composé en une image carrée, sans rien dans le résultat qui ne soit déjà dans l'entrée](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## Provenance et Content Credentials
 

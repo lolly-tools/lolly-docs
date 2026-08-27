@@ -69,7 +69,7 @@ Compress PDF इस सेट को पूरा करता है: ओवर
 
 Prompt to Image डिटरमिनिज़्म का सबसे सीधा उदाहरण है: टेक्स्ट ही पूरा इनपुट है, टाइपसेट की गई इमेज ही पूरा आउटपुट है, और वही टेक्स्ट हमेशा उसी तरह सेट होता है।
 
-![Prompt to Image - प्रॉम्प्ट टेक्स्ट के एक ब्लॉक को एक वर्गाकार इमेज में टाइपसेट किया गया, परिणाम में वही कुछ है जो इनपुट में था](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - प्रॉम्प्ट टेक्स्ट के एक ब्लॉक को एक वर्गाकार इमेज में टाइपसेट किया गया, परिणाम में वही कुछ है जो इनपुट में था](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## उद्भव और Content Credentials
 

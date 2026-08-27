@@ -12,7 +12,7 @@ Het startscherm is de **galerij** - elke tool, gegroepeerd per categorie. Klik o
 
 Elke tool is een gesplitste weergave: **bedieningselementen** aan de ene kant, een live **voorvertoning** (het canvas) aan de andere. Verander een bedieningselement en de voorvertoning wordt direct bijgewerkt.
 
-![De gesplitste weergave van een tool - de stapel bedieningselementen links, en rechts het live gegroepeerde staafdiagram dat hij tekent](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
+![De gesplitste weergave van een tool - de stapel bedieningselementen links, en rechts het live gegroepeerde staafdiagram dat hij tekent](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
 
 > Een paar tools (zoals **Design**) openen in plaats daarvan als een **vrij canvas** - een chromeloos oppervlak voor directe manipulatie waarop je vakken met tekst, vormen en afbeeldingen sleept, van grootte verandert, roteert en laat vastklikken, en waar je dubbelklikt om tekst ter plekke te bewerken. Het exporteert via hetzelfde renderpad als elke andere tool, dus het canvas *is* het bestand. Zie [Het vrije canvas](#the-free-canvas-design) hieronder.
 
@@ -266,7 +266,7 @@ alt text names them - do not re-caption this as "the sort menu".
 
 > Één labelvalkuil: **Sessies bekijken** bestaat alleen zodra er iets *geselecteerd* is. Rechtsklikken op een enkele niet-geselecteerde kaart biedt in plaats daarvan **N opgeslagen sessies**, wat het eigen geschiedenisvenster van die tool opent in plaats van naar Projecten te navigeren.
 
-![Twee aangevinkte toolkaarten in de galerij Tools, met de zwevende selectiebalk die 2 geselecteerd toont en Offline beschikbaar, Sessies bekijken, Favoriet en Verbergen aanbiedt](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22mesh-gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
+![Twee aangevinkte toolkaarten in de galerij Tools, met de zwevende selectiebalk die 2 geselecteerd toont en Offline beschikbaar, Sessies bekijken, Favoriet en Verbergen aanbiedt](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
 <!--
 SHOT NOTE (misc-bulkbar-gallery): drive targets `[data-select="qr-code"]` /
 `[data-select="d3"]` - the `.tile-check[data-select="<ref>"]` checkbox button

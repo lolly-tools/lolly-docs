@@ -12,7 +12,7 @@
 
 ہر ٹول ایک سپلٹ ویو ہے: ایک طرف **کنٹرولز**، دوسری طرف ایک لائیو **پیش نظارہ** (کینوس)۔ کوئی بھی کنٹرول بدلیں اور پیش نظارہ فوراً اپ ڈیٹ ہو جاتا ہے۔
 
-![کسی ٹول کا سپلٹ ویو - بائیں طرف کنٹرولز کا ڈھیر، اور دائیں طرف اس کا بنایا ہوا لائیو گروپڈ بار چارٹ](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
+![کسی ٹول کا سپلٹ ویو - بائیں طرف کنٹرولز کا ڈھیر، اور دائیں طرف اس کا بنایا ہوا لائیو گروپڈ بار چارٹ](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
 
 > چند ٹولز (جیسے **Design**) اس کے بجائے ایک **آزاد کینوس** کے طور پر کھلتے ہیں - ایک کروم لیس، براہِ راست ہیرا پھیری والی سطح جہاں آپ متن، شکلوں اور تصاویر کے باکس ڈریگ، ری سائز، گھماتے اور سنیپ کرتے ہیں اور جگہ پر متن ایڈٹ کرنے کے لیے ڈبل کلک کرتے ہیں۔ یہ ہر دوسرے ٹول جیسے ہی رینڈر پاتھ سے ایکسپورٹ ہوتا ہے، لہٰذا کینوس *ہی* فائل ہے۔ نیچے [آزاد کینوس](#the-free-canvas-design) دیکھیں۔
 
@@ -266,7 +266,7 @@ alt text names them - do not re-caption this as "the sort menu".
 
 > ایک لیبل کا دھوکا: **View sessions** تبھی موجود ہوتا ہے جب کوئی چیز *منتخب* ہو۔ کسی غیر منتخب اکیلے کارڈ پر رائٹ کلک کرنے سے اس کے بجائے **N saved sessions** ملتا ہے، جو Projects پر جانے کے بجائے اسی ٹول کا اپنا history ڈائیلاگ کھولتا ہے۔
 
-![Tools گیلری میں دو ٹول کارڈ ٹک شدہ، اور فلوٹنگ سلیکشن بار پر 2 selected لکھا ہے جو Available offline، View sessions، Favourite اور Hide پیش کرتا ہے](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22mesh-gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
+![Tools گیلری میں دو ٹول کارڈ ٹک شدہ، اور فلوٹنگ سلیکشن بار پر 2 selected لکھا ہے جو Available offline، View sessions، Favourite اور Hide پیش کرتا ہے](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
 <!--
 SHOT NOTE (misc-bulkbar-gallery): drive targets `[data-select="qr-code"]` /
 `[data-select="d3"]` - the `.tile-check[data-select="<ref>"]` checkbox button

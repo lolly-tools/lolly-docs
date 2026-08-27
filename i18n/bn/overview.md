@@ -64,7 +64,7 @@ Lolly আসলে কী তা দেখার সবচেয়ে স্প
 
 ধাপ দুইয়ের "নতুন চার্ট" হলো এমন একটি রেন্ডার, একটি ডেটা স্ট্রিং ও কয়েকটি প্যারামিটার থেকে তৈরি, কেউ কোনো ডিজাইন ফাইল না খুলেই:
 
-![একটি শিরোনামযুক্ত স্ট্যাকড এরিয়া চার্ট, যার তিনটি সিরিজ একটি কুল প্যালেটে ব্যান্ড করা, অক্ষ, লিজেন্ড ও শিরোনাম সবই হাতে নয় বরং টেমপ্লেট দ্বারা স্থাপিত](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![একটি শিরোনামযুক্ত স্ট্যাকড এরিয়া চার্ট, যার তিনটি সিরিজ একটি কুল প্যালেটে ব্যান্ড করা, অক্ষ, লিজেন্ড ও শিরোনাম সবই হাতে নয় বরং টেমপ্লেট দ্বারা স্থাপিত](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 বিষয়টি এই নয় যে Lolly ডিজাইনারদের জন্য ভালো *এবং* ডেভেলপারদের জন্য ভালো *এবং* সেলসের জন্য ভালো, প্রতিটি আলাদা শূন্যতায়। এটি একটি **রিলে রেস**: ক্রিয়েটিভের প্রাথমিক কাজ ডেভেলপার দ্বারা স্কেল হয়, যা পরবর্তীতে প্রোডিউসারকে ক্ষমতায়িত করে। প্লেনে থাকা অ-প্রযুক্তিগত রেপের জন্য অনায়াস অভিজ্ঞতাটি কেবল *সম্ভব* হয় ডিজাইনার যে কঠোরতা নির্ধারণ করেছিলেন এবং ডেভেলপার যা ডিপ্লয় করেছিলেন তার কারণে।
 
@@ -192,7 +192,7 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── code-canvas/
+│   ├── snippet/
 │   ├── countdown-timer/
 │   ├── color-palette/
 │   ├── color-block/           # typed/heterogeneous blocks (addMenu discriminator)
@@ -216,7 +216,7 @@ lolly/
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
 │   ├── logo-wall/         # many logos → auto-packed grid
 │   ├── logo-lockup-partner/ # SUSE + partner co-brand lockup
-│   ├── web-icon/          # favicon .ico / png / svg from text + colours
+│   ├── icon/          # favicon .ico / png / svg from text + colours
 │   ├── lottie-digi-ad/    # animated Lottie ad banners
 │   └── pose-geeko/        # pose the SUSE Geeko mascot - print-ready stills
 │

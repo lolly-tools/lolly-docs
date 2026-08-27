@@ -16,6 +16,34 @@ Khi đã bật tuỳ chọn, những thông tin hồ sơ bạn chọn sẽ đư�
 
 Lolly tạo ra một lượng nội dung rất lớn. Chúng tôi áp dụng cách tiếp cận tối giản dữ liệu nghiêm ngặt để ngăn rủi ro.
 
+## Lolly có được "vibe coded" không?
+
+Lolly được phát triển bằng việc viết mã có hỗ trợ AI, khám phá có hỗ trợ AI và, ở nhiều nơi, nội dung có hỗ trợ AI, sử dụng nhiều mô hình và nhà cung cấp khác nhau, kể cả từ các công ty tiên phong về đám mây công cộng.
+
+Tính đến thời điểm viết bài này, Lolly không có lỗ hổng bảo mật nào được biết đến trong chuỗi cung ứng của mình, và cam kết thực hiện các biện pháp ứng phó bảo mật nhanh chóng khi CVE xuất hiện.
+
+Con người đã tạo ra kiến trúc, chọn lọc mã nguồn một cách có chủ đích và định hướng nghệ thuật cho trải nghiệm.
+
+Quan trọng nhất, Lolly đứng trên vai những đổi mới mã nguồn mở trong nhiều thập kỷ từ các chuyên gia thực thụ trên khắp thế giới.
+
+Có một build-gate tất định trong codebase của Lolly để giữ cho mã nguồn và tài liệu luôn mạch lạc với người đọc bình thường và "dọn rác" khỏi trải nghiệm. Điều này có thể gây khó khăn cho việc liệt kê tổng hợp độc quyền về nguồn gốc. Đó là điều không chủ ý.
+
+**Công bố AI tạo sinh:**
+
+- **Mã do LLM viết:** Opus 4.8, Gemini 3.1, Qwen3-Coder-Next (danh sách này có thể mở rộng)
+- **Khám phá bằng LLM:** Gemini 3.1, Fable
+- **Tài liệu:** Sonnet 5
+- **Thư viện mã nguồn mở:** tác giả tương ứng của từng thư viện, được thể hiện trong SBOM, chú thích và phần đầu tệp
+
+Danh sách này không bao gồm các mô hình được vendor vào Lolly.
+
+**Đóng góp của con người:**
+
+- **Kiến trúc:** Andy Fitzsimon
+- **Chỉ đạo nghệ thuật:** Andy Fitzsimon
+- **Mã do con người viết:** Andy Fitzsimon
+- **Lên ý tưởng, đánh giá và phản hồi:** Ravan Naidoo, Matthias Eckermann, Kelly Andrews, Ryan Kleeman, Peter Chamalian, Cộng đồng Penpot (danh sách chưa đầy đủ)
+
 ## Feature flag là gì?
 
 Feature flag bật hoặc tắt từng phần của Lolly. Thông thường quản trị viên là người kiểm soát chúng - với Lolly, bạn mới là người kiểm soát.
@@ -93,7 +121,7 @@ Chúng tôi thắng cuộc chiến quản trị bằng sự tiện lợi và d�
 
 Có. Mở **Design** rồi bấm **Import a design**: nó nhận tệp Figma **.fig** gốc (Save local copy), bản xuất **.penpot** của Penpot, tệp Illustrator **.ai** hoặc **.pdf**, tệp InDesign **.idml** (File → Export → InDesign Markup) hoặc **bất kỳ SVG nào** (cánh cửa rộng nhất - gần như mọi ứng dụng thiết kế đều xuất được). Không cần tài khoản, không cần plugin và không cần giấy phép ứng dụng thiết kế.
 
-![Canvas mở của Design, nơi Import a design nằm trên thanh công cụ](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Canvas mở của Design, có Import a design trên toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Các lớp hiện ra thành những hộp chỉnh sửa được trên canvas mở: chữ vẫn gõ lại được, hình vẫn là hình, ảnh được thêm vào thư viện ảnh của bạn, còn kiểu chữ và màu sắc tuân theo thiết lập chung của thương hiệu. Lưu lại và bố cục trở thành một template tái sử dụng được, có địa chỉ URL, ai có Lolly cũng điền lại được - và bạn có thể trộn thêm các công cụ sống (một mã QR, một biểu đồ) tự render lại khi tải. Từ đó nó render như mọi thứ khác trong Lolly - SVG, PDF, PNG và phần còn lại, tái tạo được từ URL của nó. Xem [Import a design](/info/design-import.html).
 

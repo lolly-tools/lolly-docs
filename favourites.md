@@ -22,10 +22,10 @@ SHOT NOTE (fav-strip-gallery): the two drive clicks star `qr-code` and
 `battlecards`, and the pairing is not arbitrary - BOTH MUST BE IN THE FIRST
 GRID ROW. Playwright scrolls each click target into view, so the last click
 sets the final scroll position, and the walker anchors a body walk to the
-visible band. The recipe originally starred `qr-code` and `d3`; `d3` is in row
+visible band. The recipe originally starred `qr-code` and `chart`; `chart` is in row
 three, so the frame came out anchored 562px down and the strip this shot is
 ABOUT was off the top of it. Measured row 1 at 1440px: audiogram, battlecards,
-mesh-gradient, qr-code.
+gradient, qr-code.
 `captureNeutralPinned()` (lib/capture-neutral.ts) already forces the strip into
 Gallery/filmstrip mode for any automated capture and freezes the cross-fade, so
 no extra flag is needed to avoid Cover Flow here.

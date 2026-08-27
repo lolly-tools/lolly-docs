@@ -69,7 +69,7 @@ Compress PDF допълва комплекта: прекалено големи�
 
 Prompt to Image е детерминизмът в най-чист вид: текстът е целият вход, набраното изображение е целият изход и един и същ текст винаги се набира по еднакъв начин.
 
-![Prompt to Image - блок текст от подкана, набран в квадратно изображение, без нищо в резултата, което да не е било във входа](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - блок текст от подкана, набран в квадратно изображение, без нищо в резултата, което да не е било във входа](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## Произход и Content Credentials
 

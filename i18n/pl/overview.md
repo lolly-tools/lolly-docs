@@ -66,7 +66,7 @@ Najjaśniejszym sposobem zobaczenia, czym jest Lolly, nie jest lista funkcji - t
 
 "Świeży wykres" z kroku drugiego to render taki jak ten, wygenerowany z ciągu danych i garści parametrów, bez otwierania przez nikogo pliku projektowego:
 
-![Zatytułowany wykres warstwowy typu area, jego trzy serie w chłodnej palecie barw, z osiami, legendą i tytułem rozmieszczonymi przez szablon, a nie ręcznie](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![Zatytułowany wykres warstwowy typu area, jego trzy serie w chłodnej palecie barw, z osiami, legendą i tytułem rozmieszczonymi przez szablon, a nie ręcznie](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 Chodzi nie o to, że Lolly jest dobre dla projektantów *i* dobre dla deweloperów *i* dobre dla sprzedaży, każde z osobna. To **sztafeta**: początkową pracę twórcy skaluje deweloper, co z kolei daje siłę producentowi. Bezwysiłkowe doświadczenie nietechnicznego handlowca w samolocie jest *możliwe* wyłącznie dzięki rygorowi, który ustalił projektant, a wdrożył deweloper.
 
@@ -194,7 +194,7 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── code-canvas/
+│   ├── snippet/
 │   ├── countdown-timer/
 │   ├── color-palette/
 │   ├── color-block/           # typed/heterogeneous blocks (addMenu discriminator)
@@ -218,7 +218,7 @@ lolly/
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
 │   ├── logo-wall/         # many logos → auto-packed grid
 │   ├── logo-lockup-partner/ # SUSE + partner co-brand lockup
-│   ├── web-icon/          # favicon .ico / png / svg from text + colours
+│   ├── icon/          # favicon .ico / png / svg from text + colours
 │   ├── lottie-digi-ad/    # animated Lottie ad banners
 │   └── pose-geeko/        # pose the SUSE Geeko mascot - print-ready stills
 │

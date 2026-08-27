@@ -69,7 +69,7 @@ Her araç girdisi bir URL parametresi olarak ifade edilebilir ve aynı girdiler 
 
 Prompt to Image, belirlenimciliğin en yalın halidir: metin girdinin tamamıdır, dizgilenmiş görsel çıktının tamamıdır ve aynı metin her zaman aynı şekilde dizilir.
 
-![Prompt to Image - bir istem metni bloğunun kare bir görsele dizgilenmiş hali, sonuçta girdide olmayan hiçbir şey yok](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - bir istem metni bloğunun kare bir görsele dizgilenmiş hali, sonuçta girdide olmayan hiçbir şey yok](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## Köken ve Content Credentials
 

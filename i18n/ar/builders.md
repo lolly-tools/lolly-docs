@@ -23,7 +23,7 @@ Lolly **محرك** محايد تجاه المنصات يشغل مسار التص
 
 وهذا يتوسع إلى ما يتجاوز خمسة عناصر تحكم. أعط المدخل `section` فيطويه المضيف، وبذلك تبقى أداة بخمسين مدخلا مثل D3 Chart Studio تفتح كقائمة قصيرة، والبقية مرتبة خلف مجموعات مسماة.
 
-![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-d3-sections)
+![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fchart&width=1440&height=1600&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-d3-sections)
 
 - **[تأليف الأدوات](/info/authoring-tools.html)** - الدليل الكامل: بيان التعريف، والقالب، والأنماط، والخطافات، والتركيب، والنشر.
 - **[تأليف الأصول](/info/authoring-assets.html)** - أصول الكتالوج، والمستويات، واللغات المحلية، ولوحات الألوان، والأيقونات المتوافقة مع السمات، والخطوط.
@@ -48,7 +48,7 @@ Lolly **محرك** محايد تجاه المنصات يشغل مسار التص
 
 الحقوق ونسبة التأليف مدخلات كغيرها. تعلن Embed & Track Image حقول المنشئ وحقوق النشر والترخيص وجهة الاتصال، والتصدير يكتبها في البيانات الوصفية للملف نفسه وفي بيان C2PA الخاص به.
 
-![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-rights-fields)
+![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fclaim%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-rights-fields)
 
 - **[هوية Content Credentials](/info/content-credentials-identity.html)** - توقيع صادر عن مرجع إصدار (CA) لاعتمادات C2PA على الجهاز؛ عقود المحرك ودليل التشغيل للمشغلين.
 - **[نقل البيانات](/info/data-transfer.html)** - حزمة `lolly-backup`: الغلاف، والسلامة، والضمانات عبر الأغلفة.

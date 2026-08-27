@@ -64,7 +64,7 @@ Lolly가 무엇인지 가장 분명하게 보는 방법은 기능 목록이 아�
 
 두 번째 단계의 '새 차트'는 바로 이런 렌더링입니다. 데이터 문자열과 몇 가지 매개변수만으로 만들어지며, 디자인 파일을 여는 사람은 아무도 없습니다:
 
-![제목이 있는 누적 영역 차트. 세 개의 시리즈가 차분한 팔레트로 구분되어 있고, 축과 범례와 제목 모두 손이 아니라 템플릿이 배치했습니다](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![제목이 있는 누적 영역 차트. 세 개의 시리즈가 차분한 팔레트로 구분되어 있고, 축과 범례와 제목 모두 손이 아니라 템플릿이 배치했습니다](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 요점은 Lolly가 디자이너에게도 좋고 *또* 개발자에게도 좋고 *또* 영업에도 좋다는, 각각 별개로 좋다는 것이 아닙니다. 이것은 **이어달리기**입니다: 크리에이티브의 초기 작업을 개발자가 확장하고, 그것이 다시 프로듀서에게 힘을 실어줍니다. 비행기 안의 비기술직 영업 담당자가 누리는 수고 없는 경험은 오직 디자이너가 세우고 개발자가 배포한 엄격함 덕분에 *가능*한 것입니다.
 
@@ -192,7 +192,7 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── code-canvas/
+│   ├── snippet/
 │   ├── countdown-timer/
 │   ├── color-palette/
 │   ├── color-block/           # typed/heterogeneous blocks (addMenu discriminator)
@@ -216,7 +216,7 @@ lolly/
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
 │   ├── logo-wall/         # many logos → auto-packed grid
 │   ├── logo-lockup-partner/ # SUSE + partner co-brand lockup
-│   ├── web-icon/          # favicon .ico / png / svg from text + colours
+│   ├── icon/          # favicon .ico / png / svg from text + colours
 │   ├── lottie-digi-ad/    # animated Lottie ad banners
 │   └── pose-geeko/        # pose the SUSE Geeko mascot - print-ready stills
 │

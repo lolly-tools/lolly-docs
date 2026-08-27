@@ -23,7 +23,7 @@ Fiecare control de mai jos a fost generat dintr-un input declarat în `tool.json
 
 Asta scalează mult peste cinci controale. Dă unui input o `section` și hostul îl pliază, așa că un instrument cu cincizeci de inputuri precum D3 Chart Studio se deschide tot ca o listă scurtă, restul fiind aranjat în grupuri denumite.
 
-![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-d3-sections)
+![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fchart&width=1440&height=1600&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-d3-sections)
 
 - **[Crearea instrumentelor](/info/authoring-tools.html)** - ghidul complet: manifest, template, stiluri, hook-uri, compunere și publicare.
 - **[Crearea resurselor](/info/authoring-assets.html)** - resurse din catalog, niveluri, localizări, palete, icoane tematizabile și fonturi.
@@ -48,7 +48,7 @@ Asta scalează mult peste cinci controale. Dă unui input o `section` și hostul
 
 Drepturile și paternitatea sunt inputuri ca oricare altele. Embed & Track Image declară câmpuri pentru autor, copyright, licență și contact, iar exportul le scrie în metadatele proprii ale fișierului și în manifestul său C2PA.
 
-![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-rights-fields)
+![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fclaim%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-rights-fields)
 
 - **[Identitate Content Credentials](/info/content-credentials-identity.html)** - semnare emisă de o CA pentru C2PA pe dispozitiv; contractele motorului și runbook-ul operatorului.
 - **[Transfer de date](/info/data-transfer.html)** - pachetul `lolly-backup`: plic, integritate și garanții între shell-uri.

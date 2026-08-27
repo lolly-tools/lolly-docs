@@ -16,6 +16,34 @@ Onayı verdiğinde, seçtiğin profil bilgileri ürettiğin şeyin içine mühü
 
 Lolly büyük hacimde içerik üretir. Riski önlemek için katı bir veri minimizasyonu yaklaşımı benimsiyoruz.
 
+## Lolly "vibe coding" ile mi kodlandı?
+
+Lolly; yapay zeka destekli kodlama, yapay zeka destekli keşif ve birçok yerde yapay zeka destekli içerikle, kamu bulutunun öncü şirketleri dahil çeşitli model ve tedarikçilerin bir karışımı kullanılarak geliştirildi.
+
+Bu yazının yazıldığı tarih itibarıyla Lolly, tedarik zincirinde bilinen sıfır güvenlik açığı içeriyor ve CVE'ler ortaya çıktığında hızlı güvenlik müdahale uygulamalarını taahhüt ediyor.
+
+Mimariyi bir insan oluşturdu, kodu bilinçli biçimde derledi ve deneyimin sanat yönetmenliğini üstlendi.
+
+En önemlisi, Lolly dünyanın dört bir yanındaki gerçek uzmanların on yıllara dayanan açık kaynak yeniliğinin omuzları üzerinde yükseliyor.
+
+Lolly'nin kod tabanında, kodu ve belgeleri ortalama okuyucu için tutarlı tutan ve deneyimi "de-slop" eden deterministik bir build-gate bulunuyor. Bu, kökenin özel sentetik olarak tespit edilmesini zorlaştırabilir. Bu kasıtlı değildir.
+
+**Üretken yapay zeka bildirimi:**
+
+- **LLM tarafından yazılan kod:** Opus 4.8, Gemini 3.1, Qwen3-Coder-Next (bu liste genişleyebilir)
+- **LLM ile keşif:** Gemini 3.1, Fable
+- **Dokümantasyon:** Sonnet 5
+- **Açık kaynak kütüphaneler:** ilgili yazarları, SBOM, yorumlar ve dosya üstbilgilerinde belirtildiği gibi
+
+Bu liste, Lolly içine gömülü modelleri içermez.
+
+**İnsan katkısı:**
+
+- **Mimari:** Andy Fitzsimon
+- **Sanat yönetmenliği:** Andy Fitzsimon
+- **İnsan tarafından yazılan kod:** Andy Fitzsimon
+- **Fikir, inceleme ve geri bildirim:** Ravan Naidoo, Matthias Eckermann, Kelly Andrews, Ryan Kleeman, Peter Chamalian, Penpot Topluluğu (liste eksiksiz değildir)
+
 ## Özellik bayrakları nedir?
 
 Özellik bayrakları Lolly'nin bazı bölümlerini açar ya da kapatır. Bunları genelde bir yönetici denetler - Lolly'de denetim sende.
@@ -92,7 +120,7 @@ Yönetişim savaşını kusursuz kolaylık ve hizmetle kazanırız.
 
 Evet. **Design**'ı aç ve **Import a design**'a tıkla: yerel bir Figma **.fig** (Save local copy), bir Penpot **.penpot** dışa aktarımı, bir Illustrator **.ai** ya da **.pdf**, bir InDesign **.idml** (File → Export → InDesign Markup) veya **herhangi bir SVG** (geniş kapı - neredeyse her tasarım uygulaması bunu dışa aktarır) kabul edilir. Hesap, eklenti ve tasarım uygulaması lisansı gerekmez.
 
-![Design'ın açık tuvali; Import a design araç çubuğunda duruyor](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design'ın açık tuvali, araç çubuğunda Import a design ile](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Katmanlar açık tuvale düzenlenebilir kutular olarak gelir: metin yeniden yazılabilir kalır, şekiller şekil kalır, görseller kendi görsel kitaplığına katılır, tipografi ve renkler ise marka globallerine uyar. Kaydettiğinde düzen, Lolly'si olan herkesin yeniden doldurabileceği, URL ile adreslenebilir ve tekrar kullanılabilir bir şablona dönüşür - üstelik yüklenirken yeniden render olan canlı araçları (bir QR kodu, bir grafik) araya karıştırabilirsin. Oradan sonrası Lolly'deki her şey gibi render edilir - SVG, PDF, PNG ve gerisi, URL'sinden yeniden üretilebilir şekilde. Bkz. [Import a design](/info/design-import.html).
 

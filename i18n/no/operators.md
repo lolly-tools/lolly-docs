@@ -69,7 +69,7 @@ Hver verktøyinndata kan uttrykkes som en URL-parameter, og de samme inndataene 
 
 Prompt to Image er determinisme i sin reneste form: teksten er hele inndataen, det typesatte bildet er hele resultatet, og samme tekst setter alltid opp likt.
 
-![Prompt to Image - en blokk med prompt-tekst typesatt til et kvadratisk bilde, uten noe i resultatet som ikke fantes i inndataen](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - en blokk med prompt-tekst typesatt til et kvadratisk bilde, uten noe i resultatet som ikke fantes i inndataen](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## Proveniens og Content Credentials
 

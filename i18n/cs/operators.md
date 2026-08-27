@@ -69,7 +69,7 @@ Každý vstup nástroje lze vyjádřit jako parametr URL a stejné vstupy dávaj
 
 Prompt to Image je determinismus v té nejčistší podobě: text je celý vstup, sázený obrázek je celý výstup a stejný text se vysází vždy stejně.
 
-![Prompt to Image - blok textu promptu sázený do čtvercového obrázku, přičemž ve výsledku není nic, co nebylo ve vstupu](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - blok textu promptu sázený do čtvercového obrázku, přičemž ve výsledku není nic, co nebylo ve vstupu](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## Provenience a Content Credentials
 

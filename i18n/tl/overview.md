@@ -65,7 +65,7 @@ Ang pinakamalinaw na paraan para makita kung ano ang Lolly ay hindi isang featur
 
 Ang "sariwang chart" sa hakbang dalawa ay isang render tulad nito, ginawa mula sa isang data string at ilang parameter nang walang sinumang nagbukas ng design file:
 
-![Isang stacked area chart na may pamagat, ang tatlong series nito ay naka-banda sa isang cool na palette, may mga axis, legend at title na inilagay ng template sa halip na sa kamay](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![Isang stacked area chart na may pamagat, ang tatlong series nito ay naka-banda sa isang cool na palette, may mga axis, legend at title na inilagay ng template sa halip na sa kamay](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 Hindi ang punto ay mahusay ang Lolly para sa mga designer *at* mahusay para sa mga developer *at* mahusay para sa sales, bawat isa nang nag-iisa. Isa itong **relay race**: ang paunang gawa ng creative ay ini-scale ng developer, na sa gilid nito ay nagbibigay-kapangyarihan sa producer. Ang walang-pagod na karanasan para sa non-technical na rep sa eroplano ay *posible* lamang dahil sa rigor na itinakda ng designer at na-deploy ng developer.
 
@@ -193,7 +193,7 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── code-canvas/
+│   ├── snippet/
 │   ├── countdown-timer/
 │   ├── color-palette/
 │   ├── color-block/           # typed/heterogeneous blocks (addMenu discriminator)
@@ -217,7 +217,7 @@ lolly/
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
 │   ├── logo-wall/         # many logos → auto-packed grid
 │   ├── logo-lockup-partner/ # SUSE + partner co-brand lockup
-│   ├── web-icon/          # favicon .ico / png / svg from text + colours
+│   ├── icon/          # favicon .ico / png / svg from text + colours
 │   ├── lottie-digi-ad/    # animated Lottie ad banners
 │   └── pose-geeko/        # pose the SUSE Geeko mascot - print-ready stills
 │

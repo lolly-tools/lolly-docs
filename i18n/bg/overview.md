@@ -66,7 +66,7 @@ Lolly прокарва същата линия. Изследвай вероят�
 
 „Новата диаграма" в стъпка две е рендиране като това тук, произведено от низ с данни и шепа параметри, без никой да отваря дизайнерски файл:
 
-![Диаграма с наслоена площ и заглавие, трите ѝ серии оцветени в хладна палитра, с оси, легенда и заглавие, поставени от шаблона, а не на ръка](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![Диаграма с наслоена площ и заглавие, трите ѝ серии оцветени в хладна палитра, с оси, легенда и заглавие, поставени от шаблона, а не на ръка](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 Смисълът не е, че Lolly е добър за дизайнери *и* добър за разработчици *и* добър за продажби, всеки във вакуум. Това е **щафета**: първоначалната работа на твореца се мащабира от разработчика, което на свой ред дава сила на продуцента. Безусилното изживяване за нетехническия представител в самолета е *възможно* само благодарение на точността, зададена от дизайнера и внедрена от разработчика.
 
@@ -194,7 +194,7 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── code-canvas/
+│   ├── snippet/
 │   ├── countdown-timer/
 │   ├── color-palette/
 │   ├── color-block/           # typed/heterogeneous blocks (addMenu discriminator)
@@ -218,7 +218,7 @@ lolly/
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
 │   ├── logo-wall/         # many logos → auto-packed grid
 │   ├── logo-lockup-partner/ # SUSE + partner co-brand lockup
-│   ├── web-icon/          # favicon .ico / png / svg from text + colours
+│   ├── icon/          # favicon .ico / png / svg from text + colours
 │   ├── lottie-digi-ad/    # animated Lottie ad banners
 │   └── pose-geeko/        # pose the SUSE Geeko mascot - print-ready stills
 │

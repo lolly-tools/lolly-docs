@@ -52,7 +52,7 @@ Street Map এই লেনদেনের একটি যথাযথ উদ�
 
 উন্নত ফিল্টার, কম্পোজিটিং, অ্যানিমেশন, লাইভ ক্যামেরা ইফেক্ট, জেনারেটিভ ডিজাইন - একজন টেমপ্লেট লেখকের জন্য প্রতিটি ওয়েব প্রযুক্তি উপলব্ধ, তাই সিলিং অনেক উঁচু।
 
-![Mesh Gradient-এর আউটপুট - আপনার ব্র্যান্ডের প্যালেট টোকেন থেকে সম্পূর্ণভাবে তৈরি নরম রঙের একটি জেনারেটিভ ক্ষেত্র](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Mesh Gradient-এর আউটপুট - আপনার ব্র্যান্ডের প্যালেট টোকেন থেকে সম্পূর্ণভাবে তৈরি নরম রঙের একটি জেনারেটিভ ক্ষেত্র](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 *টুল* লিখুন, ফাইল নয়: 10,000টি কার্ড তৈরি করার বদলে এমন কিছু তৈরি করুন যা 10,000টি কার্ড জেনারেট করে। যা বদলানো উচিত নয় তা লক করুন; শুধু যা পরিবর্তিত হওয়ার কথা তাই প্রকাশ করুন।
 

@@ -83,7 +83,7 @@ Mit einer aktiven Marke und Ihrem Material zur Hand erzeugt jedes Werkzeug eine 
 
 „Eine URL ist die API“ ist wörtlich zu nehmen. Das Diagramm unten hat niemand gezeichnet: Sein Typ, seine Überschrift und die gesamte Datentabelle wurden in die Adresszeile eingetippt, und derselbe Link rendert auf jedem Gerät dasselbe Diagramm.
 
-![Ein Flächendiagramm der monatlichen Anmeldungen, dessen Werte allesamt als Query-Parameter statt per Klick eintrafen](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-d3-url-chart)
+![Ein Flächendiagramm der monatlichen Anmeldungen, dessen Werte allesamt als Query-Parameter statt per Klick eintrafen](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-d3-url-chart)
 
 ## Wie es weitergeht
 

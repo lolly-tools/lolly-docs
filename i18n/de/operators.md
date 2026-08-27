@@ -69,7 +69,7 @@ Jede Tool-Eingabe lässt sich als URL-Parameter ausdrücken, und dieselben Einga
 
 Prompt to Image ist Determinismus in seiner reinsten Form: Der Text ist die gesamte Eingabe, das gesetzte Bild ist die gesamte Ausgabe, und derselbe Text setzt sich immer gleich.
 
-![Prompt to Image - ein Block Prompt-Text, gesetzt zu einem quadratischen Bild, wobei nichts im Ergebnis steht, das nicht in der Eingabe war](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - ein Block Prompt-Text, gesetzt zu einem quadratischen Bild, wobei nichts im Ergebnis steht, das nicht in der Eingabe war](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## Herkunftsnachweis & Content Credentials
 

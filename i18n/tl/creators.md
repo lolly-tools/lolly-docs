@@ -52,7 +52,7 @@ Maaaring i-embed ng isang tool ang live output ng ibang tool bilang isang asset 
 
 Advanced na filter, compositing, animation, live camera effect, generative design - available sa may-akda ng template ang bawat web technology, kaya mataas ang kisame.
 
-![Output ng Mesh Gradient - isang generative field ng malambot na kulay na binuo nang lubusan mula sa palette tokens ng iyong brand](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Output ng Mesh Gradient - isang generative field ng malambot na kulay na binuo nang lubusan mula sa palette tokens ng iyong brand](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 Sumulat ng *mga tool*, hindi mga file: buuin ang bagay na gumagawa ng 10,000 card sa halip na gumawa ng 10,000 card. I-lock ang hindi dapat magbago; ilantad lamang ang sinadyang mag-iba.
 

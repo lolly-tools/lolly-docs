@@ -52,7 +52,7 @@ Eén tool kan de live output van een andere tool insluiten als asset - een naamb
 
 Geavanceerde filters, compositing, animatie, live cameraeffecten, generatief ontwerp - elke webtechnologie staat een templateauteur ter beschikking, dus het plafond ligt hoog.
 
-![De output van Mesh Gradient - een generatief veld van zachte kleur, volledig opgebouwd uit de paletttokens van je merk](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![De output van Mesh Gradient - een generatief veld van zachte kleur, volledig opgebouwd uit de paletttokens van je merk](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 Schrijf *tools*, geen bestanden: bouw het ding dat 10.000 kaarten genereert in plaats van 10.000 kaarten te maken. Vergrendel wat niet mag veranderen; stel alleen bloot wat bedoeld is om te variëren.
 

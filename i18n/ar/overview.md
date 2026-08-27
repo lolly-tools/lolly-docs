@@ -66,7 +66,7 @@
 
 "الرسم البياني الجديد" في الخطوة الثانية هو عرض مثل هذا، يُنتَج من سلسلة بيانات وحفنة من المعاملات دون أن يفتح أحد ملف تصميم:
 
-![مخطط مساحي مكدّس بعنوان، سلاسله الثلاث مموّجة بلوحة ألوان باردة، مع محاور ومفتاح تفسير وعنوان وضعها القالب جميعًا بدلًا من اليد](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![مخطط مساحي مكدّس بعنوان، سلاسله الثلاث مموّجة بلوحة ألوان باردة، مع محاور ومفتاح تفسير وعنوان وضعها القالب جميعًا بدلًا من اليد](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 الفكرة ليست أن Lolly جيدة للمصممين *و* جيدة للمطورين *و* جيدة للمبيعات، كل على حدة في فراغ. إنها **سباق تتابع (relay race)**: يُنشر عمل المبدع الأولي على نطاق واسع بواسطة المطوّر، الذي يمكّن بدوره المُنتِج. التجربة السلسة للمندوب غير التقني في الطائرة ممكنة *فقط* بفضل الصرامة التي وضعها المصمم ونشرها المطوّر.
 
@@ -194,7 +194,7 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── code-canvas/
+│   ├── snippet/
 │   ├── countdown-timer/
 │   ├── color-palette/
 │   ├── color-block/           # typed/heterogeneous blocks (addMenu discriminator)
@@ -218,7 +218,7 @@ lolly/
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
 │   ├── logo-wall/         # many logos → auto-packed grid
 │   ├── logo-lockup-partner/ # SUSE + partner co-brand lockup
-│   ├── web-icon/          # favicon .ico / png / svg from text + colours
+│   ├── icon/          # favicon .ico / png / svg from text + colours
 │   ├── lottie-digi-ad/    # animated Lottie ad banners
 │   └── pose-geeko/        # pose the SUSE Geeko mascot - print-ready stills
 │

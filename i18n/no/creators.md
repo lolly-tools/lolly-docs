@@ -52,7 +52,7 @@ Ett verktøy kan bygge inn et annet verktøys levende resultat som et element - 
 
 Avanserte filtre, sammensetting, animasjon, live kameraeffekter, generativt design - all webteknologi er tilgjengelig for en malforfatter, så taket er høyt.
 
-![Mesh Gradients resultat - et generativt felt av mykt fargespill bygget helt fra merkevarens palett-tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Mesh Gradients resultat - et generativt felt av mykt fargespill bygget helt fra merkevarens palett-tokens](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 Forfatt *verktøy*, ikke filer: bygg det som genererer 10 000 kort fremfor å lage 10 000 kort for hånd. Lås det som ikke bør endres; eksponer kun det som er ment å variere.
 

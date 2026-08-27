@@ -69,7 +69,7 @@ Compress PDF সেটটি সম্পূর্ণ করে: আপনি �
 
 Prompt to Image হলো ডিটারমিনিজমের সবচেয়ে সরল রূপ: টেক্সটটিই সম্পূর্ণ ইনপুট, টাইপসেট করা ছবিটিই সম্পূর্ণ আউটপুট, এবং একই টেক্সট সবসময় একইভাবে সেট হয়।
 
-![Prompt to Image - একটি প্রম্পট টেক্সট ব্লক একটি বর্গাকার ছবিতে টাইপসেট করা, যেখানে ইনপুটে না থাকা কিছুই ফলাফলে নেই](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - একটি প্রম্পট টেক্সট ব্লক একটি বর্গাকার ছবিতে টাইপসেট করা, যেখানে ইনপুটে না থাকা কিছুই ফলাফলে নেই](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## প্রোভেন্যান্স ও Content Credentials
 

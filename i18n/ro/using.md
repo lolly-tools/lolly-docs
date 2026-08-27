@@ -12,7 +12,7 @@ Ecranul principal e **galeria** - toate instrumentele, grupate pe categorii. Dă
 
 Fiecare instrument e o vedere împărțită în două: **comenzile** pe o parte, o **previzualizare** live (canvasul) pe cealaltă. Schimbi orice comandă și previzualizarea se actualizează instantaneu.
 
-![Vederea împărțită a unui instrument - stiva de comenzi în stânga și graficul cu bare grupate pe care îl desenează, live, în dreapta](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
+![Vederea împărțită a unui instrument - stiva de comenzi în stânga și graficul cu bare grupate pe care îl desenează, live, în dreapta](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
 
 > Câteva instrumente (cum e **Design**) se deschid în schimb ca un **canvas liber** - o suprafață fără interfață în jur, cu manipulare directă, unde tragi, redimensionezi, rotești și aliniezi casete de text, forme și imagini și dai dublu clic ca să editezi textul pe loc. Exportă pe aceeași cale de randare ca orice alt instrument, așa că pânza *este* fișierul. Vezi [Canvasul liber](#the-free-canvas-design) mai jos.
 
@@ -266,7 +266,7 @@ alt text names them - do not re-caption this as "the sort menu".
 
 > O capcană de etichetă: **View sessions** există doar după ce ceva e *selectat*. Clic dreapta pe o singură cartelă neselectată oferă în schimb **N saved sessions**, care deschide dialogul de istoric al instrumentului aceluia, în loc să te ducă la Projects.
 
-![Două cartele de instrumente bifate în galeria Tools, cu bara de selecție plutitoare care afișează 2 selected și oferă Available offline, View sessions, Favourite și Hide](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22mesh-gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
+![Două cartele de instrumente bifate în galeria Tools, cu bara de selecție plutitoare care afișează 2 selected și oferă Available offline, View sessions, Favourite și Hide](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
 <!--
 SHOT NOTE (misc-bulkbar-gallery): drive targets `[data-select="qr-code"]` /
 `[data-select="d3"]` - the `.tile-check[data-select="<ref>"]` checkbox button

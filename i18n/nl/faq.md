@@ -16,6 +16,34 @@ Als opt-in aanstaat, worden de profielgegevens die je kiest verzegeld in wat je 
 
 Lolly produceert een grote hoeveelheid content. We hanteren een strikte dataminimalisatie om risico te voorkomen.
 
+## Is Lolly "vibe coded"?
+
+Lolly is ontwikkeld met AI-ondersteunde codering, AI-ondersteunde ontdekking en, op veel plekken, AI-ondersteunde inhoud, met behulp van een mix van modellen en leveranciers, waaronder die van toonaangevende public-cloudbedrijven.
+
+Op het moment van schrijven bevat Lolly geen bekende beveiligingskwetsbaarheden in zijn supply chain, en zet zich in voor snelle beveiligingsreacties zodra er CVE's opduiken.
+
+Een mens heeft de architectuur gemaakt, de code met intentie samengesteld en de ervaring artistiek geregisseerd.
+
+Belangrijker nog: Lolly staat op de schouders van decennia aan opensource-innovatie van echte experts wereldwijd.
+
+Er bestaat een deterministische build-gate in de codebase van Lolly om code en documentatie begrijpelijk te houden voor de gemiddelde lezer en de ervaring te "ontrommelen". Dit kan het lastiger maken om de herkomst via propriëtaire synthetische methodes op te sommen. Dat is onbedoeld.
+
+**Bekendmaking van generatieve AI:**
+
+- **Door LLM's geschreven code:** Opus 4.8, Gemini 3.1, Qwen3-Coder-Next (deze lijst kan groeien)
+- **LLM-ontdekking:** Gemini 3.1, Fable
+- **Documentatie:** Sonnet 5
+- **Opensourcebibliotheken:** hun respectievelijke auteurs, vermeld in de SBOM, commentaar en bestandsheaders
+
+Deze lijst omvat geen modellen die in Lolly zijn ingebouwd.
+
+**Menselijke bijdrage:**
+
+- **Architectuur:** Andy Fitzsimon
+- **Artistieke leiding:** Andy Fitzsimon
+- **Door mensen geschreven code:** Andy Fitzsimon
+- **Ideevorming, review en feedback:** Ravan Naidoo, Matthias Eckermann, Kelly Andrews, Ryan Kleeman, Peter Chamalian, de Penpot-community (lijst niet volledig)
+
 ## Wat zijn de feature flags?
 
 Feature flags zetten onderdelen van Lolly aan of uit. Meestal beheert een beheerder ze - bij Lolly heb jij de regie.
@@ -93,7 +121,7 @@ We winnen de strijd om governance met uitstekend gemak en uitstekende service.
 
 Ja. Open **Design** en klik op **Import a design** (een ontwerp importeren): het accepteert een native Figma-**.fig** (Save local copy), een Penpot-export **.penpot**, een Illustrator-**.ai** of **.pdf**, een InDesign-**.idml** (File → Export → InDesign Markup) of **elke SVG** (de brede deur - vrijwel elke ontwerpapp exporteert dat). Geen account, geen plug-in en geen licentie voor een ontwerpapp nodig.
 
-![Het open canvas van Design, waar Import a design in de werkbalk zit](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Het open canvas van Design, met Import a design in de werkbalk](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Lagen komen binnen als bewerkbare vakken op het open canvas: tekst blijft overtypbaar, vormen blijven vormen, afbeeldingen komen in je eigen afbeeldingsbibliotheek en typografie en kleuren voldoen aan de merkglobals. Sla het op en de lay-out wordt een herbruikbare, via een URL adresseerbare template die iedereen met Lolly opnieuw kan vullen - en je kunt er live tools in mengen (een QR-code, een grafiek) die bij het laden opnieuw renderen. Vanaf daar rendert het net als al het andere in Lolly - SVG, PDF, PNG en de rest, reproduceerbaar vanaf de URL. Zie [Een ontwerp importeren](/info/design-import.html).
 

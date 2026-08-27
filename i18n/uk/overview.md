@@ -66,7 +66,7 @@ Lolly проводить ту саму межу. Досліджуйте ймов
 
 «Свіжий графік» на кроці два - це рендер на кшталт цього, вироблений з рядка даних і жменьки параметрів без відкривання файлу дизайну кимось:
 
-![Стековий діаграма-область з заголовком, три серії якої відтіновані в холодній палітрі з осями, легендою та заголовком, розміщеними шаблоном, а не вручну](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![Стековий діаграма-область з заголовком, три серії якої відтіновані в холодній палітрі з осями, легендою та заголовком, розміщеними шаблоном, а не вручну](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 Суть не в тому, що Lolly добрий для дизайнерів *і* добрий для розробників *і* добрий для продажів, кожен окремо у вакуумі. Це **естафета**: початкову роботу творчої особи масштабує розробник, що своєю чергою дає можливості продюсеру. Легкий досвід для нетехнічного представника в літаку можливий лише завдяки строгості, яку встановив дизайнер і розгорнув розробник.
 
@@ -194,7 +194,7 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── code-canvas/
+│   ├── snippet/
 │   ├── countdown-timer/
 │   ├── color-palette/
 │   ├── color-block/           # typed/heterogeneous blocks (addMenu discriminator)
@@ -218,7 +218,7 @@ lolly/
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
 │   ├── logo-wall/         # many logos → auto-packed grid
 │   ├── logo-lockup-partner/ # SUSE + partner co-brand lockup
-│   ├── web-icon/          # favicon .ico / png / svg from text + colours
+│   ├── icon/          # favicon .ico / png / svg from text + colours
 │   ├── lottie-digi-ad/    # animated Lottie ad banners
 │   └── pose-geeko/        # pose the SUSE Geeko mascot - print-ready stills
 │

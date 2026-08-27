@@ -17,6 +17,34 @@ Kapag napili ang opt-in, ang mga detalye ng profile na pipiliin mo ay isinasara 
 
 Malaki ang dami ng content na nagagawa ng Lolly. Mahigpit ang aming data minimization approach para maiwasan ang panganib.
 
+## "Vibe coded" ba ang Lolly?
+
+Binuo ang Lolly gamit ang AI-assisted coding, AI-assisted discovery at sa maraming bahagi, AI-assisted content, gamit ang iba't ibang model at vendor, kabilang ang mula sa mga nangungunang kompanya sa public cloud.
+
+Sa oras na isinulat ito, wala ni isang kilalang security vulnerability ang Lolly sa supply chain nito, at nangangako sa mabilisang security response kapag lumitaw ang mga CVE.
+
+Isang tao ang lumikha ng architecture, nag-curate ng code nang may intensyon at nag-art direct sa experience.
+
+Higit sa lahat, nakatayo ang Lolly sa balikat ng dekada-dekadang open source innovation mula sa mga tunay na eksperto sa buong mundo.
+
+May deterministic build-gate sa codebase ng Lolly para panatilihing coherent ang code at documentation para sa average reader at "i-de-slop" ang experience. Baka mahirapan dahil dito ang proprietary synthetic enumeration ng origin nito. Hindi iyon sinadya.
+
+**Pagsisiwalat ng Generative AI:**
+
+- **LLM-written code:** Opus 4.8, Gemini 3.1, Qwen3-Coder-Next (posibleng lumawak ang listahang ito)
+- **LLM discovery:** Gemini 3.1, Fable
+- **Documentation:** Sonnet 5
+- **Open source libraries:** ang kani-kanilang mga awtor, nakasaad sa SBOM, comments at file headers
+
+Hindi kasama sa listahang ito ang mga model na na-vendor sa Lolly.
+
+**Kontribusyon ng tao:**
+
+- **Architecture:** Andy Fitzsimon
+- **Art direction:** Andy Fitzsimon
+- **Human-written code:** Andy Fitzsimon
+- **Ideation, review at feedback:** Ravan Naidoo, Matthias Eckermann, Kelly Andrews, Ryan Kleeman, Peter Chamalian, ang Penpot Community (hindi kumpleto ang listahan)
+
 ## Ano ang mga feature flag?
 
 Binubuksan o isinasara ng mga feature flag ang mga bahagi ng Lolly. Karaniwan, administrator ang kumokontrol nito - sa Lolly, ikaw ang may kontrol.
@@ -94,7 +122,7 @@ Napapanalunan namin ang labanan para sa governance sa pamamagitan ng mahusay na 
 
 Oo. Buksan ang **Design** at i-click ang **Import a design**: tumatanggap ito ng native na Figma **.fig** (Save local copy), ng Penpot **.penpot** export, ng Illustrator **.ai** o **.pdf**, ng InDesign **.idml** (File → Export → InDesign Markup) o ng **kahit anong SVG** (ang malapad na pinto - halos lahat ng design app ay nag-e-export nito). Walang kailangang account, plugin o lisensya ng design app.
 
-![Ang open canvas ng Design, kung saan nasa toolbar ang Import a design](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Bukas na canvas ng Design, may Import a design sa toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Dumarating ang mga layer bilang mga kahong puwedeng i-edit sa open canvas: nananatiling puwedeng muling i-type ang teksto, nananatiling hugis ang mga hugis, sumasama ang mga larawan sa sarili mong image library at sumusunod sa brand globals ang type at mga kulay. I-save ito at magiging muling nagagamit at URL-addressable na template ang layout na puwedeng punan ng kahit sinong may Lolly - at puwede kang maghalo ng live na tools (isang QR code, isang chart) na muling nagre-render pagka-load. Mula roon ay nagre-render ito tulad ng iba pang bagay sa Lolly - SVG, PDF, PNG at iba pa, muling magagawa mula sa URL nito. Tingnan ang [Import a design](/info/design-import.html).
 

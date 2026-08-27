@@ -52,7 +52,7 @@ Street Map 就是這種取捨的一個公道範例:你選一座城市和幾個�
 
 進階濾鏡、合成、動畫、即時鏡頭效果、生成式設計 - 每一項網頁技術都能供範本作者使用,因此上限很高。
 
-![Mesh Gradient 的輸出結果 - 一個完全由你品牌調色盤 token 構成的柔和色彩生成場域](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Mesh Gradient 的輸出結果 - 一個完全由你品牌調色盤 token 構成的柔和色彩生成場域](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 編寫*工具*,而非檔案:打造能產生一萬張卡片的東西,而不是親手做出一萬張卡片。鎖定不該變動的部分;只開放真正應該變動的部分。
 

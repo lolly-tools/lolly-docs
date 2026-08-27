@@ -52,7 +52,7 @@ Street Map اس تجارت کی ایک مناسب مثال ہے: آپ ایک ش�
 
 ایڈوانسڈ فلٹرز، کمپوزٹنگ، اینیمیشن، لائیو کیمرہ اثرات، جنریٹو ڈیزائن - ٹیمپلیٹ کے مصنف کے لیے ہر ویب ٹیکنالوجی دستیاب ہے، اس لیے حد بہت اونچی ہے۔
 
-![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 *ٹولز* تیار کریں، فائلیں نہیں: وہ چیز بنائیں جو 10,000 کارڈز جنریٹ کرتی ہے بجائے اس کے کہ 10,000 کارڈز بنائیں۔ جو نہیں بدلنا چاہیے اسے لاک کریں؛ صرف وہ ظاہر کریں جو تبدیل ہونے کے لیے ہے۔
 

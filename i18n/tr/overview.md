@@ -66,7 +66,7 @@ Lolly'nin ne olduğunu görmenin en net yolu bir özellik listesi değil - tek b
 
 İkinci adımdaki "yeni grafik", kimsenin bir tasarım dosyası açmadan, bir veri dizesi ve bir avuç parametreden üretilen, tam olarak buna benzer bir render'dır:
 
-![Başlıklı yığılmış alan grafiği, üç serisi eksenleri, açıklaması ve başlığı elle değil şablon tarafından yerleştirilmiş soğuk bir palette bantlanmış](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![Başlıklı yığılmış alan grafiği, üç serisi eksenleri, açıklaması ve başlığı elle değil şablon tarafından yerleştirilmiş soğuk bir palette bantlanmış](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 Mesele Lolly'nin tasarımcılar için iyi *ve* geliştiriciler için iyi *ve* satış için iyi olması değil, her biri kendi başına. Bu bir **bayrak yarışı**: yaratıcının ilk işi geliştirici tarafından ölçeklendirilir, bu da üreticiyi güçlendirir. Uçaktaki teknik olmayan temsilci için zahmetsiz deneyim, ancak tasarımcının belirlediği ve geliştiricinin devreye aldığı titizlik sayesinde *mümkündür*.
 
@@ -194,7 +194,7 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── code-canvas/
+│   ├── snippet/
 │   ├── countdown-timer/
 │   ├── color-palette/
 │   ├── color-block/           # typed/heterogeneous blocks (addMenu discriminator)
@@ -218,7 +218,7 @@ lolly/
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
 │   ├── logo-wall/         # many logos → auto-packed grid
 │   ├── logo-lockup-partner/ # SUSE + partner co-brand lockup
-│   ├── web-icon/          # favicon .ico / png / svg from text + colours
+│   ├── icon/          # favicon .ico / png / svg from text + colours
 │   ├── lottie-digi-ad/    # animated Lottie ad banners
 │   └── pose-geeko/        # pose the SUSE Geeko mascot - print-ready stills
 │

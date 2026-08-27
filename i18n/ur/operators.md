@@ -69,7 +69,7 @@ Compress PDF اس مجموعے کو مکمل کرتا ہے: بڑا اٹیچمن�
 
 Prompt to Image قطعیت کی سب سے سادہ مثال ہے: متن ہی پورا ان پٹ ہے، ٹائپ سیٹ شدہ تصویر ہی پورا آؤٹ پٹ ہے اور وہی متن ہمیشہ اسی طرح سیٹ ہوتا ہے۔
 
-![Prompt to Image - ایک مربع تصویر میں ٹائپ سیٹ کیا گیا پرامپٹ متن کا ایک بلاک، نتیجے میں ایسا کچھ نہیں جو ان پٹ میں موجود نہ ہو](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - ایک مربع تصویر میں ٹائپ سیٹ کیا گیا پرامپٹ متن کا ایک بلاک، نتیجے میں ایسا کچھ نہیں جو ان پٹ میں موجود نہ ہو](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## اصلیت اور Content Credentials
 

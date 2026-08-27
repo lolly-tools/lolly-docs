@@ -62,7 +62,7 @@ Lolly وہی حد کھینچتا ہے۔ امکانی طور پر تلاش کری
 
 مرحلہ دو میں "تازہ چارٹ" اسی طرح کا ایک رینڈر ہے، جو ایک ڈیٹا اسٹرنگ اور چند پیرامیٹرز سے تیار کیا گیا ہے بغیر کسی کے ڈیزائن فائل کھولے:
 
-![ایک عنوان والا اسٹیکڈ ایریا چارٹ، جس کی تین سیریز ٹھنڈے پیلیٹ میں بینڈ کی گئی ہیں محوروں، لیجنڈ اور عنوان کے ساتھ جو سب ٹیمپلیٹ نے ہاتھ کے بجائے خود رکھے ہیں](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![ایک عنوان والا اسٹیکڈ ایریا چارٹ، جس کی تین سیریز ٹھنڈے پیلیٹ میں بینڈ کی گئی ہیں محوروں، لیجنڈ اور عنوان کے ساتھ جو سب ٹیمپلیٹ نے ہاتھ کے بجائے خود رکھے ہیں](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 نکتہ یہ نہیں ہے کہ Lolly ڈیزائنرز کے لیے اچھا ہے *اور* ڈیولپرز کے لیے اچھا ہے *اور* سیلز کے لیے اچھا ہے، ہر ایک الگ الگ۔ یہ ایک **ریلے ریس** ہے: تخلیق کار کا ابتدائی کام ڈیولپر کے ذریعے پیمانہ بنایا جاتا ہے، جو بدلے میں پروڈیوسر کو بااختیار بناتا ہے۔ ہوائی جہاز میں غیر تکنیکی نمائندے کے لیے بے تکلف تجربہ صرف اس لیے *ممکن* ہے کیونکہ ڈیزائنر نے سختی طے کی اور ڈیولپر نے اسے تعینات کیا۔
 
@@ -190,7 +190,7 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── code-canvas/
+│   ├── snippet/
 │   ├── countdown-timer/
 │   ├── color-palette/
 │   ├── color-block/           # typed/heterogeneous blocks (addMenu discriminator)
@@ -214,7 +214,7 @@ lolly/
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
 │   ├── logo-wall/         # many logos → auto-packed grid
 │   ├── logo-lockup-partner/ # SUSE + partner co-brand lockup
-│   ├── web-icon/          # favicon .ico / png / svg from text + colours
+│   ├── icon/          # favicon .ico / png / svg from text + colours
 │   ├── lottie-digi-ad/    # animated Lottie ad banners
 │   └── pose-geeko/        # pose the SUSE Geeko mascot - print-ready stills
 │

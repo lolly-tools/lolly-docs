@@ -86,9 +86,9 @@ A number can also set how much of a thing gets made. Colour Palette builds one r
 ?showBorder=false
 ```
 
-One flag can add a whole layer of information: `/#/tool/d3?showValues=1` prints the number on every bar.
+One flag can add a whole layer of information: `/#/tool/chart?showValues=1` prints the number on every bar.
 
-![The D3 bar chart with a value printed on each bar, switched on by a single boolean param](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FshowValues%3D1&width=1440&height=900&dpi=192&waitMs=2800&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=um-boolean-values)
+![The D3 bar chart with a value printed on each bar, switched on by a single boolean param](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FshowValues%3D1&width=1440&height=900&dpi=192&waitMs=2800&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=um-boolean-values)
 
 ### Color
 
@@ -101,7 +101,7 @@ Pass a hex value (URL-encode the `#`).
 
 Colour params stack. Mesh Gradient takes one per stop, so three hex values in a link are three fields of colour in the render.
 
-![A generative gradient blooming in coral, amber and violet, one bloom per colour param](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Fcount%3D3%26blend%3Dnormal%26color1%3D%2523ff5f6d%26color2%3D%2523ffc371%26color3%3D%25236a11cb&width=880&height=560&dpi=96&waitMs=2400&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=um-color-mesh&try=1)
+![A generative gradient blooming in coral, amber and violet, one bloom per colour param](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Fcount%3D3%26blend%3Dnormal%26color1%3D%2523ff5f6d%26color2%3D%2523ffc371%26color3%3D%25236a11cb&width=880&height=560&dpi=96&waitMs=2400&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=um-color-mesh&try=1)
 
 ### Asset
 
@@ -157,7 +157,7 @@ A `vector` input is a fixed group of numbers edited as one control (e.g. a zoom 
 
 One readable value per param. Used by tools such as `pose-geeko`, `chart-creator`, `filter`, `dynamic-layout` and `quotes`. Mesh Gradient parks each colour stop with one, so adding `?pos1.x=8&pos1.y=8&pos2.x=92&pos2.y=12&pos3.x=50&pos3.y=94` to the gradient above drives its three blooms out to the edges:
 
-![The coral, amber and violet gradient again, this time with each bloom pinned to an edge by its own dotted x and y param](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Fcount%3D3%26blend%3Dnormal%26color1%3D%2523ff5f6d%26color2%3D%2523ffc371%26color3%3D%25236a11cb%26pos1.x%3D8%26pos1.y%3D8%26pos2.x%3D92%26pos2.y%3D12%26pos3.x%3D50%26pos3.y%3D94&width=880&height=560&dpi=96&waitMs=2400&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=um-vector-positions)
+![The coral, amber and violet gradient again, this time with each bloom pinned to an edge by its own dotted x and y param](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Fcount%3D3%26blend%3Dnormal%26color1%3D%2523ff5f6d%26color2%3D%2523ffc371%26color3%3D%25236a11cb%26pos1.x%3D8%26pos1.y%3D8%26pos2.x%3D92%26pos2.y%3D12%26pos3.x%3D50%26pos3.y%3D94&width=880&height=560&dpi=96&waitMs=2400&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=um-vector-positions)
 
 ### File
 
@@ -213,7 +213,7 @@ Tools can opt into a shorter URL form, which the web shell emits when you **copy
 
 `chart-creator` is a live tool that uses `urlKey`, so a link copied via its Copy URL / share button won't match the long-form examples in this doc - that's expected. `d3` uses them too: `?ct=radar&pl=cool&t=Short keys&lg=0` is chart type, palette, heading and legend in twelve characters of query.
 
-![A radar chart in the cool palette, drawn from four short-key params instead of their long names](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Dradar%26pl%3Dcool%26t%3DShort%2520keys%26lg%3D0&width=1440&height=900&dpi=192&waitMs=2800&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=um-compact-shortkeys)
+![A radar chart in the cool palette, drawn from four short-key params instead of their long names](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Dradar%26pl%3Dcool%26t%3DShort%2520keys%26lg%3D0&width=1440&height=900&dpi=192&waitMs=2800&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=um-compact-shortkeys)
 
 ---
 
@@ -486,7 +486,7 @@ web-shell affordance; the CLI ignores it (use `--output` / stdout).
 
 Mixing long and short forms is fine - `?width=1200&h=630` works. The canvas preview updates to the new aspect ratio.
 
-![Mesh Gradient reshaped to a 1920 by 1080 canvas by the w and h params alone](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Fw%3D1920%26h%3D1080&width=880&height=560&dpi=96&waitMs=2400&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=exp-url-dims)
+![Mesh Gradient reshaped to a 1920 by 1080 canvas by the w and h params alone](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Fw%3D1920%26h%3D1080&width=880&height=560&dpi=96&waitMs=2400&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=exp-url-dims)
 
 ---
 
@@ -500,7 +500,7 @@ Mixing long and short forms is fine - `?width=1200&h=630` works. The canvas prev
 
 Any tool takes it. Mesh Gradient with `full` is artwork and nothing else.
 
-![A tool opened with full - no sidebar and no chrome, just the artwork edge to edge](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2400&walker=1&format=svg&dark=1&filename=exp-url-full)
+![A tool opened with full - no sidebar and no chrome, just the artwork edge to edge](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2400&walker=1&format=svg&dark=1&filename=exp-url-full)
 
 Combine with `export` for a clean unattended export flow:
 
@@ -568,10 +568,10 @@ This opens the QR tool, applies all inputs, sets the canvas to 600×600, collaps
 The same stacking works on a chart, where inputs, compact keys, canvas size and `full` arrive together:
 
 ```
-/#/tool/d3?ct=donut&pl=warm&t=Everything+in+one+link&lg=1&lp=right&sv=1&w=1200&h=800&full
+/#/tool/chart?ct=donut&pl=warm&t=Everything+in+one+link&lg=1&lp=right&sv=1&w=1200&h=800&full
 ```
 
-![A warm-palette donut with a legend on the right and values on every slice, filling the window because the same link also passed full](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Ddonut%26pl%3Dwarm%26t%3DEverything%2520in%2520one%2520link%26lg%3D1%26lp%3Dright%26sv%3D1%26w%3D1200%26h%3D800%26full&width=1440&height=900&dpi=192&waitMs=2800&walker=1&format=svg&dark=1&filename=um-combined-stack)
+![A warm-palette donut with a legend on the right and values on every slice, filling the window because the same link also passed full](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Ddonut%26pl%3Dwarm%26t%3DEverything%2520in%2520one%2520link%26lg%3D1%26lp%3Dright%26sv%3D1%26w%3D1200%26h%3D800%26full&width=1440&height=900&dpi=192&waitMs=2800&walker=1&format=svg&dark=1&filename=um-combined-stack)
 
 ---
 

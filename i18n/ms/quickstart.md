@@ -83,7 +83,7 @@ Dengan jenama yang aktif dan bahan anda di tangan, setiap alat menghasilkan fail
 
 "Satu URL ialah API" itu bermaksud harfiah. Carta di bawah tidak dilukis oleh sesiapa pun: jenisnya, tajuknya dan keseluruhan jadual datanya ditaip ke dalam bar alamat, dan pautan yang sama menghasilkan carta yang sama pada mana-mana peranti.
 
-![Carta kawasan pendaftaran bulanan, yang setiap nilainya tiba sebagai parameter pertanyaan dan bukan melalui klik](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-d3-url-chart)
+![Carta kawasan pendaftaran bulanan, yang setiap nilainya tiba sebagai parameter pertanyaan dan bukan melalui klik](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-d3-url-chart)
 
 ## Ke mana seterusnya
 

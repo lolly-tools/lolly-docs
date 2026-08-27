@@ -52,7 +52,7 @@ Jeden nástroj může vložit živý výstup jiného nástroje jako asset - jmen
 
 Pokročilé filtry, skládání, animace, efekty živé kamery, generativní design - autorovi šablony je k dispozici každá webová technologie, takže strop je vysoko.
 
-![Výstup Mesh Gradientu - generativní pole jemné barvy postavené výhradně z tokenů palety tvé značky](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Výstup Mesh Gradientu - generativní pole jemné barvy postavené výhradně z tokenů palety tvé značky](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 Vytvářej *nástroje*, ne soubory: postav věc, která vygeneruje 10 000 karet, místo abys vytvořil 10 000 karet. Uzamkni to, co se nemá měnit; odkryj jen to, co se má měnit.
 

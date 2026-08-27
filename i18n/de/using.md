@@ -12,7 +12,7 @@ Der Startbildschirm ist die **Galerie** - jedes Tool, nach Kategorie gruppiert. 
 
 Jedes Tool ist eine geteilte Ansicht: **Steuerelemente** auf der einen Seite, eine Live-**Vorschau** (die Zeichenfläche) auf der anderen. Ändern Sie ein Steuerelement, und die Vorschau aktualisiert sich sofort.
 
-![Die geteilte Ansicht eines Tools - links die Steuerelemente, rechts das live gezeichnete gruppierte Balkendiagramm](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
+![Die geteilte Ansicht eines Tools - links die Steuerelemente, rechts das live gezeichnete gruppierte Balkendiagramm](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
 
 > Einige Tools (wie **Design**) öffnen stattdessen als **freie Zeichenfläche** - eine rahmenlose Oberfläche zur direkten Bearbeitung, auf der Sie Boxen mit Text, Formen und Bildern ziehen, skalieren, drehen und einrasten lassen und Text per Doppelklick an Ort und Stelle bearbeiten. Sie exportiert über denselben Renderpfad wie jedes andere Tool, die Zeichenfläche *ist* also die Datei. Siehe [Die freie Zeichenfläche](#the-free-canvas-design) weiter unten.
 
@@ -266,7 +266,7 @@ alt text names them - do not re-caption this as "the sort menu".
 
 > Eine Falle bei den Bezeichnungen: **Sitzungen ansehen** gibt es erst, wenn etwas *ausgewählt* ist. Ein Rechtsklick auf eine einzelne, nicht ausgewählte Karte bietet stattdessen **N gespeicherte Sitzungen**, was den Verlaufsdialog dieses Tools öffnet, statt zu Projekten zu wechseln.
 
-![Zwei angehakte Tool-Karten in der Tools-Galerie, mit der schwebenden Auswahlleiste, die 2 ausgewählt anzeigt und Offline verfügbar, Sitzungen ansehen, Favorit und Ausblenden anbietet](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22mesh-gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
+![Zwei angehakte Tool-Karten in der Tools-Galerie, mit der schwebenden Auswahlleiste, die 2 ausgewählt anzeigt und Offline verfügbar, Sitzungen ansehen, Favorit und Ausblenden anbietet](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
 <!--
 SHOT NOTE (misc-bulkbar-gallery): drive targets `[data-select="qr-code"]` /
 `[data-select="d3"]` - the `.tile-check[data-select="<ref>"]` checkbox button

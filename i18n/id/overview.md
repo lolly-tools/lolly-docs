@@ -66,7 +66,7 @@ Cara paling jelas untuk melihat apa itu Lolly bukanlah daftar fitur - melainkan 
 
 "Chart segar" pada langkah kedua adalah render seperti ini, dihasilkan dari sebuah string data dan segenggam parameter tanpa seorang pun membuka file desain:
 
-![Chart area bertumpuk berjudul, tiga serinya berpita dalam palet dingin dengan sumbu, legenda dan judul semuanya ditempatkan oleh template, bukan secara manual](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![Chart area bertumpuk berjudul, tiga serinya berpita dalam palet dingin dengan sumbu, legenda dan judul semuanya ditempatkan oleh template, bukan secara manual](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 Intinya bukan bahwa Lolly bagus untuk desainer *dan* bagus untuk developer *dan* bagus untuk sales, masing-masing dalam ruang hampa. Ini adalah **lomba estafet**: pekerjaan awal sang kreatif diskalakan oleh developer, yang pada gilirannya memberdayakan produser. Pengalaman tanpa hambatan bagi sales rep non-teknis di pesawat itu hanya *mungkin* karena kedisiplinan yang ditetapkan desainer dan diterapkan developer.
 
@@ -194,7 +194,7 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── code-canvas/
+│   ├── snippet/
 │   ├── countdown-timer/
 │   ├── color-palette/
 │   ├── color-block/           # typed/heterogeneous blocks (addMenu discriminator)
@@ -218,7 +218,7 @@ lolly/
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
 │   ├── logo-wall/         # many logos → auto-packed grid
 │   ├── logo-lockup-partner/ # SUSE + partner co-brand lockup
-│   ├── web-icon/          # favicon .ico / png / svg from text + colours
+│   ├── icon/          # favicon .ico / png / svg from text + colours
 │   ├── lottie-digi-ad/    # animated Lottie ad banners
 │   └── pose-geeko/        # pose the SUSE Geeko mascot - print-ready stills
 │

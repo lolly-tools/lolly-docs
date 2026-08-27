@@ -12,7 +12,7 @@ Skrin utama ialah **galeri** - setiap alat, dikumpulkan mengikut kategori. Klik 
 
 Setiap alat ialah paparan terbahagi: **kawalan** di satu sisi, **pratonton** langsung (kanvas) di sisi yang lain. Ubah mana-mana kawalan dan pratonton dikemas kini serta-merta.
 
-![Paparan terbahagi sesuatu alat - susunan kawalan di sebelah kiri, dan carta bar berkumpulan langsung yang dilukisnya di sebelah kanan](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
+![Paparan terbahagi sesuatu alat - susunan kawalan di sebelah kiri, dan carta bar berkumpulan langsung yang dilukisnya di sebelah kanan](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
 
 > Beberapa alat (seperti **Design**) sebaliknya dibuka sebagai **kanvas bebas** - permukaan manipulasi terus tanpa bingkai antara muka, tempat anda menyeret, mengubah saiz, memutar dan melekapkan kotak teks, bentuk dan imej serta klik dua kali untuk menyunting teks di tempatnya. Ia dieksport melalui laluan render yang sama seperti setiap alat lain, jadi kanvas itu *ialah* fail itu sendiri. Lihat [Kanvas bebas](#the-free-canvas-design) di bawah.
 
@@ -266,7 +266,7 @@ alt text names them - do not re-caption this as "the sort menu".
 
 > Satu perangkap label: **View sessions** hanya wujud setelah sesuatu *dipilih*. Klik kanan pada satu kad yang tidak dipilih sebaliknya menawarkan **N saved sessions**, yang membuka dialog sejarah alat itu sendiri dan bukannya membawa anda ke Projects.
 
-![Dua kad alat ditandakan dalam galeri Tools, dengan bar pemilihan terapung tertera 2 selected dan menawarkan Available offline, View sessions, Favourite dan Hide](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22mesh-gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
+![Dua kad alat ditandakan dalam galeri Tools, dengan bar pemilihan terapung tertera 2 selected dan menawarkan Available offline, View sessions, Favourite dan Hide](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
 <!--
 SHOT NOTE (misc-bulkbar-gallery): drive targets `[data-select="qr-code"]` /
 `[data-select="d3"]` - the `.tile-check[data-select="<ref>"]` checkbox button

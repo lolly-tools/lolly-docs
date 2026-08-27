@@ -15,6 +15,34 @@
 
 Lolly 会产出大量内容。我们采取严格的数据最小化原则来防范风险。
 
+## Lolly是用“氛围编程”做出来的吗?
+
+Lolly的开发运用了AI辅助编码、AI辅助探索,许多地方还使用了AI辅助生成的内容,所用的模型与供应商多种多样,包括来自公有云前沿企业的模型。
+
+截至本文撰写时,Lolly的供应链中不存在已知的安全漏洞,并承诺在CVE出现时采取快速的安全响应措施。
+
+架构由人类设计,代码经过有意识的审慎筛选,体验则由人类进行艺术指导。
+
+最重要的是,Lolly站在世界各地真正专家们数十年开源创新成果的肩膀之上。
+
+Lolly的代码库中有一个确定性构建关卡,用来让代码和文档对普通读者保持连贯清晰,并为体验“去水”。这可能会让专有的合成式溯源枚举变得困难。这并非有意为之。
+
+**生成式AI披露:**
+
+- **LLM编写的代码:** Opus 4.8、Gemini 3.1、Qwen3-Coder-Next(此列表可能会扩展)
+- **LLM探索:** Gemini 3.1、Fable
+- **文档:** Sonnet 5
+- **开源库:** 各自的作者,详见SBOM、注释与文件头
+
+此列表不包括内嵌于Lolly中的模型。
+
+**人类贡献:**
+
+- **架构:** Andy Fitzsimon
+- **艺术指导:** Andy Fitzsimon
+- **人工编写代码:** Andy Fitzsimon
+- **创意构思、评审与反馈:** Ravan Naidoo、Matthias Eckermann、Kelly Andrews、Ryan Kleeman、Peter Chamalian、Penpot社区(列表并不详尽)
+
 ## 什么是功能开关？
 
 功能开关用于启用或关闭 Lolly 的各个部分。通常这些开关由管理员掌控，而在 Lolly 中，掌控权在你手里。
@@ -85,7 +113,7 @@ Lolly 让一切水涨船高。
 
 可以。打开 **Design**，点击 **Import a design**（导入设计）：它接受 Figma 原生的 **.fig**（Save local copy）、Penpot 导出的 **.penpot**、Illustrator 的 **.ai** 或 **.pdf**、InDesign 的 **.idml**（File → Export → InDesign Markup），或者**任意 SVG**（这是最宽的一道门，几乎所有设计软件都能导出）。不需要账号、不需要插件，也不需要设计软件的授权。
 
-![Design 的自由画布，Import a design 就在工具栏中](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design 的开放画布,工具栏中显示导入设计](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 图层会以可编辑的方框出现在自由画布上：文字仍可重新输入，形状仍是形状，图片进入你自己的图片库，字体和颜色遵循品牌全局设定。保存之后，这个版式就成为一个可复用、可用 URL 寻址的模板，任何用 Lolly 的人都能重新填充内容，你还可以混入在加载时重新渲染的实时工具（二维码、图表）。之后它就和 Lolly 里的其他东西一样渲染：SVG、PDF、PNG 等等，都可以从它的 URL 复现。参见[导入设计](/info/design-import.html)。
 

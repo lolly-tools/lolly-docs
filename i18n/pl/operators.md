@@ -69,7 +69,7 @@ Każde dane wejściowe narzędzia można wyrazić jako parametr URL, a te same d
 
 Prompt to Image to determinizm w najczystszej postaci: tekst jest całym wejściem, złożony obraz jest całym wyjściem, a ten sam tekst zawsze składa się tak samo.
 
-![Prompt to Image - blok tekstu promptu złożony w kwadratowy obraz, bez niczego w wyniku, czego nie było w wejściu](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - blok tekstu promptu złożony w kwadratowy obraz, bez niczego w wyniku, czego nie było w wejściu](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## Pochodzenie i Content Credentials
 

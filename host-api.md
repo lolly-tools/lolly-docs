@@ -417,7 +417,7 @@ An authored gradient is **one URL-safe string** - `lin_90_30ba78-0_efefef-100` i
 
 Read and written by `parseGradientSpec` / `formatGradientSpec` in the engine, baked to CSS by `gradientCss` above. The Design tool's per-box gradient fill is the reference consumer.
 
-The idiomatic chart pattern - series colours that follow the **active brand** (see `chart-creator` / `d3`, the reference implementations): prefer the brand's own `color.spectrum.*` tokens from `host.tokens.colors()` (they carry measured print inks), top up with `distinct()` anchored on `{color.semantic.primary}` and keep your shipped palette as the fallback for shells without `host.color`.
+The idiomatic chart pattern - series colours that follow the **active brand** (see `chart`, the reference implementations): prefer the brand's own `color.spectrum.*` tokens from `host.tokens.colors()` (they carry measured print inks), top up with `distinct()` anchored on `{color.semantic.primary}` and keep your shipped palette as the fallback for shells without `host.color`.
 
 ## `host.geom` *(exact vector geometry - optional, v1.64)*
 

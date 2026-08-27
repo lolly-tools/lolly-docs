@@ -65,7 +65,7 @@ Lolly 划的是同一条线。以概率的方式探索:一个模型、一位设�
 
 第二步中提到的“新图表”,就是像下面这样的渲染结果 - 由一段数据字符串和几个参数生成,全程没有任何人打开设计文件:
 
-![一张带标题的堆叠面积图,三个系列以冷色调色板分区,坐标轴、图例和标题均由模板自动排布而非手工放置](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![一张带标题的堆叠面积图,三个系列以冷色调色板分区,坐标轴、图例和标题均由模板自动排布而非手工放置](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 重点不在于 Lolly 对设计师好用,*而且*对开发者好用,*而且*对销售也好用,三者各自孤立。它是一场**接力赛**:创意人员的初始工作被开发者放大规模,进而赋能制作者。飞机上那位非技术背景代表所体验到的毫不费力,*之所以可能*,正是因为设计师定下了严谨标准,开发者又将其部署落地。
 
@@ -193,7 +193,7 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── code-canvas/
+│   ├── snippet/
 │   ├── countdown-timer/
 │   ├── color-palette/
 │   ├── color-block/           # typed/heterogeneous blocks (addMenu discriminator)
@@ -217,7 +217,7 @@ lolly/
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
 │   ├── logo-wall/         # many logos → auto-packed grid
 │   ├── logo-lockup-partner/ # SUSE + partner co-brand lockup
-│   ├── web-icon/          # favicon .ico / png / svg from text + colours
+│   ├── icon/          # favicon .ico / png / svg from text + colours
 │   ├── lottie-digi-ad/    # animated Lottie ad banners
 │   └── pose-geeko/        # pose the SUSE Geeko mascot - print-ready stills
 │

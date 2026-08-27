@@ -69,7 +69,7 @@ Compress PDFがこのセットを完成させます。肥大化した添付フ�
 
 Prompt to Imageは決定性を最も分かりやすく体現しています。テキストが入力のすべてであり、組版された画像が出力のすべてであり、同じテキストは常に同じように組まれます。
 
-![Prompt to Image - プロンプトテキストのブロックが正方形の画像に組版され、結果には入力になかったものは何も含まれない](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - プロンプトテキストのブロックが正方形の画像に組版され、結果には入力になかったものは何も含まれない](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## 来歴とContent Credentials
 

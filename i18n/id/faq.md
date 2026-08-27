@@ -16,6 +16,34 @@ Bila opt-in dipilih, detail profil yang Anda pilih disegel ke dalam karya yang A
 
 Lolly menghasilkan konten dalam jumlah besar. Kami menerapkan pendekatan minimalisasi data yang ketat untuk mencegah risiko.
 
+## Apakah Lolly "vibe coded"?
+
+Lolly dikembangkan dengan coding berbantuan AI, penemuan berbantuan AI dan, di banyak bagian, konten berbantuan AI, menggunakan berbagai model dan vendor, termasuk dari perusahaan cloud publik terdepan.
+
+Hingga tulisan ini dibuat, Lolly tidak memiliki kerentanan keamanan yang diketahui dalam rantai pasokannya, dan berkomitmen pada praktik respons keamanan yang cepat saat CVE muncul.
+
+Seorang manusia menciptakan arsitekturnya, mengkurasi kodenya dengan sengaja dan mengarahkan seni pengalamannya.
+
+Yang terpenting, Lolly berdiri di atas bahu puluhan tahun inovasi open source dari para pakar sejati di seluruh dunia.
+
+Ada build-gate deterministik dalam basis kode Lolly untuk menjaga kode dan dokumentasi tetap koheren bagi pembaca rata-rata dan "membersihkan slop" dari pengalamannya. Ini mungkin mempersulit enumerasi sintetis proprietary atas asal-usulnya. Itu tidak disengaja.
+
+**Pengungkapan AI generatif:**
+
+- **Kode yang ditulis LLM:** Opus 4.8, Gemini 3.1, Qwen3-Coder-Next (daftar ini dapat bertambah)
+- **Penemuan LLM:** Gemini 3.1, Fable
+- **Dokumentasi:** Sonnet 5
+- **Pustaka open source:** penulis masing-masing, dinyatakan dalam SBOM, komentar dan header file
+
+Daftar ini tidak mencakup model yang di-vendor-kan ke dalam Lolly.
+
+**Kontribusi manusia:**
+
+- **Arsitektur:** Andy Fitzsimon
+- **Arahan seni:** Andy Fitzsimon
+- **Kode yang ditulis manusia:** Andy Fitzsimon
+- **Ideasi, ulasan dan umpan balik:** Ravan Naidoo, Matthias Eckermann, Kelly Andrews, Ryan Kleeman, Peter Chamalian, Komunitas Penpot (daftar ini tidak lengkap)
+
 ## Apa itu feature flag?
 
 Feature flag menyalakan atau mematikan bagian-bagian Lolly. Biasanya administrator yang mengendalikannya - di Lolly, Anda yang memegang kendali.
@@ -93,7 +121,7 @@ Kami memenangkan pertarungan tata kelola dengan kenyamanan dan layanan yang ungg
 
 Ya. Buka **Design** lalu klik **Import a design**: ia menerima **.fig** asli dari Figma (Save local copy), ekspor **.penpot** dari Penpot, **.ai** atau **.pdf** dari Illustrator, **.idml** dari InDesign (File → Export → InDesign Markup) atau **SVG apa pun** (pintu terlebarnya - hampir semua aplikasi desain bisa mengekspornya). Tidak perlu akun, tidak perlu plugin dan tidak perlu lisensi aplikasi desain.
 
-![Kanvas terbuka Design, tempat Import a design berada di toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Kanvas terbuka Design, dengan Import a design di toolbar](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Layer masuk sebagai kotak yang bisa diedit di kanvas terbuka: teks tetap bisa diketik ulang, bentuk tetap menjadi bentuk, gambar bergabung ke pustaka gambar Anda sendiri, serta tipografi dan warna mengikuti brand global. Simpan, dan tata letaknya menjadi template yang bisa dipakai ulang, dialamatkan lewat URL dan diisi ulang oleh siapa pun yang punya Lolly - dan Anda bisa menyisipkan alat langsung (kode QR, bagan) yang dirender ulang saat dimuat. Setelah itu ia dirender seperti apa pun di Lolly - SVG, PDF, PNG dan lainnya, bisa direproduksi dari URL-nya. Lihat [Import a design](/info/design-import.html).
 

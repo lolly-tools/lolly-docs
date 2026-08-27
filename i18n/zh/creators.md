@@ -52,7 +52,7 @@ Street Map 就是这种取舍的一个恰当例子:你选一座城市和几种�
 
 高级滤镜、合成、动画、实时摄像头特效、生成式设计 - 模板作者可以使用任何一种 Web 技术,因此上限很高。
 
-![Mesh Gradient 的输出效果 - 一片完全由你品牌调色板令牌构建而成的柔和生成式色彩场](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Mesh Gradient 的输出效果 - 一片完全由你品牌调色板令牌构建而成的柔和生成式色彩场](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 编写*工具*,而非文件:构建能生成一万张卡片的东西,而不是手工做一万张卡片。把不该变的东西锁定;只暴露那些本就该变化的部分。
 

@@ -52,7 +52,7 @@ Uma ferramenta pode incorporar a saída ao vivo de outra ferramenta como um mate
 
 Filtros avançados, composição, animação, efeitos de câmera ao vivo, design generativo - toda tecnologia web está disponível para quem cria um template, então o teto é alto.
 
-![A saída do Mesh Gradient - um campo generativo de cor suave construído inteiramente a partir dos tokens de paleta da sua marca](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![A saída do Mesh Gradient - um campo generativo de cor suave construído inteiramente a partir dos tokens de paleta da sua marca](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 Crie *ferramentas*, não arquivos: construa a coisa que gera 10.000 cartões em vez de fazer 10.000 cartões. Trave o que não deve mudar; exponha apenas o que deve variar.
 

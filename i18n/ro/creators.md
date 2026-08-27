@@ -52,7 +52,7 @@ O unealtă poate încorpora rezultatul live al altei unelte ca asset - un ecuson
 
 Filtre avansate, compoziție, animație, efecte de cameră live, design generativ - fiecare tehnologie web este disponibilă unui autor de șablon, deci plafonul este ridicat.
 
-![Rezultatul Mesh Gradient - un câmp generativ de culoare moale construit în întregime din token-urile de paletă ale brandului tău](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Rezultatul Mesh Gradient - un câmp generativ de culoare moale construit în întregime din token-urile de paletă ale brandului tău](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 Creează *unelte*, nu fișiere: construiește lucrul care generează 10.000 de carduri în loc să faci manual 10.000 de carduri. Blochează ce nu ar trebui să se schimbe; expune doar ce este menit să varieze.
 

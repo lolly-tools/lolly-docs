@@ -69,7 +69,7 @@ Ogni input di uno strumento è esprimibile come parametro URL, e gli stessi inpu
 
 Prompt to Image è il determinismo nella sua forma più semplice: il testo è l'intero input, l'immagine composta è l'intero output e lo stesso testo si compone sempre allo stesso modo.
 
-![Prompt to Image - un blocco di testo prompt composto in un'immagine quadrata, senza nulla nel risultato che non fosse già nell'input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - un blocco di testo prompt composto in un'immagine quadrata, senza nulla nel risultato che non fosse già nell'input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## Provenienza e Content Credentials
 

@@ -79,7 +79,7 @@ Street Map은 이 방식을 잘 보여주는 예입니다: 도시와 색상 몇 
 고급 필터, 합성, 애니메이션, 실시간 카메라 효과, 생성형 디자인 - 모든 웹 기술을 템플릿
 제작자가 사용할 수 있으므로 그 한계는 매우 높습니다.
 
-![Mesh Gradient의 출력 결과 - 여러분 브랜드의 팔레트 토큰만으로 만들어진 부드러운 색상의 생성형 필드](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Mesh Gradient의 출력 결과 - 여러분 브랜드의 팔레트 토큰만으로 만들어진 부드러운 색상의 생성형 필드](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 파일이 아니라 *도구*를 만드세요: 카드 1만 장을 직접 만드는 대신, 카드 1만 장을 생성해내는 것을 만드세요. 바뀌면 안 되는 것은 고정하고, 달라져야 하는 것만 노출하세요.
 

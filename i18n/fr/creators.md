@@ -104,7 +104,7 @@ Filtres avancés, compositing, animation, effets de caméra en direct, design
 génératif - chaque technologie web est disponible pour l'auteur d'un template,
 le plafond est donc élevé.
 
-![Le résultat de Mesh Gradient - un champ génératif de couleurs douces construit entièrement à partir des tokens de palette de ta marque](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Le résultat de Mesh Gradient - un champ génératif de couleurs douces construit entièrement à partir des tokens de palette de ta marque](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 Crée des *outils*, pas des fichiers : construis la chose qui génère 10 000
 cartes plutôt que de faire 10 000 cartes. Verrouille ce qui ne doit pas

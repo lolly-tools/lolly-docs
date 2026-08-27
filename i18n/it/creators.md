@@ -101,7 +101,7 @@ Filtri avanzati, compositing, animazione, effetti fotocamera dal vivo, design
 generativo - ogni tecnologia web è disponibile per chi crea un template, quindi
 il tetto è alto.
 
-![L'output di Mesh Gradient - un campo generativo di colore morbido costruito interamente dai token di palette del tuo brand](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![L'output di Mesh Gradient - un campo generativo di colore morbido costruito interamente dai token di palette del tuo brand](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 Crea *strumenti*, non file: costruisci la cosa che genera 10.000 card invece
 di fare 10.000 card. Blocca ciò che non deve cambiare; esponi solo ciò che è

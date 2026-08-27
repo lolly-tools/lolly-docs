@@ -12,7 +12,7 @@ Ang home screen ay ang **gallery** - lahat ng tool, nakagrupo ayon sa kategorya.
 
 Bawat tool ay isang split view: **controls** sa isang gilid, at buhay na **preview** (ang canvas) sa kabila. Baguhin ang alinmang control at agad na nag-a-update ang preview.
 
-![Ang split view ng isang tool - ang control stack sa kaliwa, at ang buhay na grouped bar chart na iginuguhit nito sa kanan](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
+![Ang split view ng isang tool - ang control stack sa kaliwa, at ang buhay na grouped bar chart na iginuguhit nito sa kanan](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
 
 > May ilang tool (tulad ng **Design**) na bumubukas bilang **free canvas** - isang chromeless at direct-manipulation na surface kung saan dinadrag, binabago ang laki, iniikot at isinasnap mo ang mga box ng teksto, hugis at larawan, at dini-double-click para i-edit ang teksto sa mismong kinalalagyan nito. Nag-e-export ito sa parehong render path gaya ng ibang tool, kaya ang canvas *ang* file mismo. Tingnan ang [Ang free canvas](#the-free-canvas-design) sa ibaba.
 
@@ -266,7 +266,7 @@ alt text names them - do not re-caption this as "the sort menu".
 
 > Isang bitag sa label: umiiral lang ang **View sessions** kapag may bagay nang *napili*. Ang pag-right-click sa isang card na hindi napili ay nag-aalok naman ng **N saved sessions**, na binubuksan ang sariling history dialog ng tool na iyon sa halip na dalhin ka sa Projects.
 
-![Dalawang tool card na may tsek sa Tools gallery, kasama ang lumulutang na selection bar na nagbabasang 2 selected at nag-aalok ng Available offline, View sessions, Favourite at Hide](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22mesh-gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
+![Dalawang tool card na may tsek sa Tools gallery, kasama ang lumulutang na selection bar na nagbabasang 2 selected at nag-aalok ng Available offline, View sessions, Favourite at Hide](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
 <!--
 SHOT NOTE (misc-bulkbar-gallery): drive targets `[data-select="qr-code"]` /
 `[data-select="d3"]` - the `.tile-check[data-select="<ref>"]` checkbox button

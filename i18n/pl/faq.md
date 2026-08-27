@@ -16,6 +16,34 @@ Po włączeniu zgody wybrane przez ciebie dane profilu są zapieczętowane w tym
 
 Lolly tworzy duże ilości treści. Stosujemy ścisłą minimalizację danych, żeby ograniczyć ryzyko.
 
+## Czy Lolly została "vibe codowana"?
+
+Lolly powstała dzięki kodowaniu wspomaganemu przez AI, odkrywaniu wspomaganemu przez AI oraz, w wielu miejscach, treściom wspomaganym przez AI, z wykorzystaniem różnych modeli i dostawców, w tym czołowych firm z obszaru publicznej chmury.
+
+W chwili pisania tego tekstu Lolly nie zawiera żadnych znanych luk bezpieczeństwa w swoim łańcuchu dostaw i zobowiązuje się do szybkiej reakcji na incydenty bezpieczeństwa, gdy pojawiają się CVE.
+
+Człowiek stworzył architekturę, świadomie wyselekcjonował kod i pokierował stroną artystyczną doświadczenia.
+
+Co najważniejsze, Lolly opiera się na dziesięcioleciach innowacji open source tworzonych przez prawdziwych ekspertów na całym świecie.
+
+W kodzie źródłowym Lolly istnieje deterministyczna bramka budowania, która utrzymuje spójność kodu i dokumentacji dla przeciętnego czytelnika i "odbadziewia" doświadczenie. Może to utrudniać zastrzeżone, syntetyczne ustalanie pochodzenia. Nie jest to zamierzone.
+
+**Ujawnienie użycia generatywnej AI:**
+
+- **Kod napisany przez LLM:** Opus 4.8, Gemini 3.1, Qwen3-Coder-Next (ta lista może się rozszerzyć)
+- **Odkrywanie przez LLM:** Gemini 3.1, Fable
+- **Dokumentacja:** Sonnet 5
+- **Biblioteki open source:** ich odpowiedni autorzy, wskazani w SBOM, komentarzach i nagłówkach plików
+
+Ta lista nie obejmuje modeli dołączonych (vendored) do Lolly.
+
+**Wkład ludzki:**
+
+- **Architektura:** Andy Fitzsimon
+- **Kierownictwo artystyczne:** Andy Fitzsimon
+- **Kod napisany przez człowieka:** Andy Fitzsimon
+- **Koncepcja, przegląd i opinie:** Ravan Naidoo, Matthias Eckermann, Kelly Andrews, Ryan Kleeman, Peter Chamalian, społeczność Penpot (lista niepełna)
+
 ## Czym są flagi funkcji?
 
 Flagi funkcji włączają i wyłączają części Lolly. Zwykle steruje nimi administrator - w Lolly sterujesz nimi ty.
@@ -93,7 +121,7 @@ Wojnę o ład wygrywamy znakomitą wygodą i obsługą.
 
 Tak. Otwórz **Design** i kliknij **Import a design**: przyjmuje natywny plik Figmy **.fig** (Save local copy), eksport Penpota **.penpot**, plik Illustratora **.ai** lub **.pdf**, plik InDesigna **.idml** (File → Export → InDesign Markup) albo **dowolny SVG** (szeroko otwarte drzwi - eksportuje go niemal każdy program graficzny). Nie potrzeba konta, wtyczki ani licencji na program graficzny.
 
-![Otwarte płótno Design, na którego pasku narzędzi znajduje się Import a design](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Otwarty obszar roboczy Design z przyciskiem Zaimportuj projekt na pasku narzędzi](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Warstwy trafiają na otwarte płótno jako edytowalne bloki: tekst nadal da się przepisać, kształty pozostają kształtami, obrazy dołączają do twojej biblioteki obrazów, a typografia i kolory trzymają się ustawień globalnych marki. Zapisz układ, a stanie się on szablonem wielokrotnego użytku z własnym adresem URL, który każdy, kto ma Lolly, może wypełnić na nowo - możesz też wpleść w niego żywe narzędzia (kod QR, wykres), które renderują się ponownie przy wczytaniu. Dalej renderuje się jak wszystko inne w Lolly - SVG, PDF, PNG i reszta, odtwarzalne z adresu URL. Zobacz [Import a design](/info/design-import.html).
 

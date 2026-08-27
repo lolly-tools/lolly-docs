@@ -52,7 +52,7 @@ Street Mapはその交換条件をよく表す一例です。都市といくつ�
 
 高度なフィルター、合成、アニメーション、ライブカメラエフェクト、生成的デザイン - あらゆるウェブ技術がテンプレート作者に開放されているため、天井は非常に高くなっています。
 
-![Mesh Gradientの出力 - あなたのブランドのパレットトークンだけから構築された、柔らかな色彩の生成的フィールド](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Mesh Gradientの出力 - あなたのブランドのパレットトークンだけから構築された、柔らかな色彩の生成的フィールド](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 *ファイル*ではなく*ツール*を作成する。1万枚のカードを作るのではなく、1万枚のカードを生成するものを作る。変わってはならないものは固定し、変わってよいものだけを公開する。
 

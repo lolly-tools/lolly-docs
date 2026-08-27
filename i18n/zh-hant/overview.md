@@ -65,7 +65,7 @@ Lolly 也劃出同樣的界線。以機率性的方式探索：一個模型、�
 
 第二步中的「最新圖表」就像這樣的算繪結果，由一段資料字串與少數幾個參數產生，完全沒有人開啟設計檔案：
 
-![一張帶標題的堆疊區域圖，三個資料系列以冷色調配色呈現，座標軸、圖例與標題全都由範本自動排版，而非手動放置](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![一張帶標題的堆疊區域圖，三個資料系列以冷色調配色呈現，座標軸、圖例與標題全都由範本自動排版，而非手動放置](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 重點不在於 Lolly 分別對設計師好、對開發人員好、對業務人員也好，各自獨立不相干。而是一場**接力賽**：創意人員最初的成果由開發人員加以規模化，進而賦能給製作人。飛機上那位非技術背景業務代表所享有的毫不費力的體驗，*之所以可能*，正是因為設計師訂下的嚴謹規範以及開發人員的部署工作。
 
@@ -193,7 +193,7 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── code-canvas/
+│   ├── snippet/
 │   ├── countdown-timer/
 │   ├── color-palette/
 │   ├── color-block/           # typed/heterogeneous blocks (addMenu discriminator)
@@ -217,7 +217,7 @@ lolly/
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
 │   ├── logo-wall/         # many logos → auto-packed grid
 │   ├── logo-lockup-partner/ # SUSE + partner co-brand lockup
-│   ├── web-icon/          # favicon .ico / png / svg from text + colours
+│   ├── icon/          # favicon .ico / png / svg from text + colours
 │   ├── lottie-digi-ad/    # animated Lottie ad banners
 │   └── pose-geeko/        # pose the SUSE Geeko mascot - print-ready stills
 │

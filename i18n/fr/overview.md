@@ -66,7 +66,7 @@ La façon la plus claire de voir ce qu'est Lolly n'est pas une liste de fonction
 
 Le « nouveau graphique » de l'étape deux est une restitution comme celle-ci, produite à partir d'une chaîne de données et d'une poignée de paramètres, sans que personne n'ouvre un fichier de design :
 
-![Un graphique en aires empilées avec titre, ses trois séries en bandes dans une palette froide, avec axes, légende et titre tous placés par le modèle plutôt qu'à la main](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![Un graphique en aires empilées avec titre, ses trois séries en bandes dans une palette froide, avec axes, légende et titre tous placés par le modèle plutôt qu'à la main](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 Le point n'est pas que Lolly soit bon pour les designers *et* bon pour les développeurs *et* bon pour les commerciaux, chacun dans son coin. C'est une **course de relais** : le travail initial du créatif est déployé à l'échelle par le développeur, qui à son tour donne du pouvoir au producteur. L'expérience sans effort pour le commercial non technique dans l'avion n'est possible que grâce à la rigueur fixée par le designer et déployée par le développeur.
 
@@ -194,7 +194,7 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── code-canvas/
+│   ├── snippet/
 │   ├── countdown-timer/
 │   ├── color-palette/
 │   ├── color-block/           # typed/heterogeneous blocks (addMenu discriminator)
@@ -218,7 +218,7 @@ lolly/
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
 │   ├── logo-wall/         # many logos → auto-packed grid
 │   ├── logo-lockup-partner/ # SUSE + partner co-brand lockup
-│   ├── web-icon/          # favicon .ico / png / svg from text + colours
+│   ├── icon/          # favicon .ico / png / svg from text + colours
 │   ├── lottie-digi-ad/    # animated Lottie ad banners
 │   └── pose-geeko/        # pose the SUSE Geeko mascot - print-ready stills
 │

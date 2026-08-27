@@ -69,7 +69,7 @@ Setiap input alat boleh dinyatakan sebagai parameter URL, dan input yang sama me
 
 Prompt to Image ialah determinisme dalam bentuk paling ringkas: teks adalah keseluruhan input, imej yang ditaip huruf adalah keseluruhan output dan teks yang sama sentiasa disusun dengan cara yang sama.
 
-![Prompt to Image - blok teks gesaan ditaip huruf ke dalam imej segi empat sama, dengan tiada apa dalam hasilnya yang tiada dalam input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - blok teks gesaan ditaip huruf ke dalam imej segi empat sama, dengan tiada apa dalam hasilnya yang tiada dalam input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## Asal-usul & Content Credentials
 

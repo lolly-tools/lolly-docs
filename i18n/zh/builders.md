@@ -23,7 +23,7 @@ Lolly 是一个与平台无关的**引擎**，在多个**壳层**（web PWA、Ta
 
 这套做法远不止能撑起五个控件。给一个输入项加上 `section`，宿主就会把它折叠收起，所以像 D3 Chart Studio 这样有五十个输入项的工具，打开时依然只是一小叠控件，其余的都归到具名分组之后。
 
-![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fd3&width=1440&height=1600&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-d3-sections)
+![The D3 sidebar - a handful of primary controls, then Data, Columns, Chart, Axes and the other sections collapsed into one line each](/t/url-shot?url=%2F%23%2Ftool%2Fchart&width=1440&height=1600&dpi=192&waitMs=2400&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-d3-sections)
 
 - **[编写工具指南](/info/authoring-tools.html)** - 完整指南：清单、模板、样式、hooks、组合方式与发布流程。
 - **[编写素材指南](/info/authoring-assets.html)** - 目录素材、层级、语言区域、调色板、可主题化图标与字体。
@@ -48,7 +48,7 @@ Lolly 是一个与平台无关的**引擎**，在多个**壳层**（web PWA、Ta
 
 权利与署名信息也和其他输入项一样。Embed & Track Image 声明了创作者、版权、许可与联系方式等字段，导出时会把它们写入文件自身的元数据以及它的 C2PA 清单。
 
-![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fembed-track-image%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-rights-fields)
+![The Embed and Track Image controls - creator, copyright, a licence dropdown, contact and title, filled from the link](/t/url-shot?url=%2F%23%2Ftool%2Fclaim%3Fcreator%3DAda%2520Lovelace%26title%3DEngine%2520Notes&width=1440&height=1200&dpi=192&waitMs=2200&walker=1&format=svg&css=%23tool-canvas%7Bdisplay%3Anone%7D&cropSelector=%23tool-inputs&dark=1&filename=ov2-rights-fields)
 
 - **[Content Credentials Identity](/info/content-credentials-identity.html)** - 面向设备端 C2PA 的 CA 签发签名；引擎契约与运维手册。
 - **[数据传输](/info/data-transfer.html)** - `lolly-backup` 包：信封结构、完整性与跨壳层保证。

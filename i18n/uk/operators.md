@@ -69,7 +69,7 @@ Compress PDF завершує набір: занадто великий вкла
 
 Prompt to Image - найпростіший приклад детермінізму: текст - це весь вхід, набране зображення - весь вихід, і той самий текст завжди набирається однаково.
 
-![Prompt to Image - блок тексту підказки, набраний у квадратне зображення, де в результаті немає нічого, чого не було у вхідних даних](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - блок тексту підказки, набраний у квадратне зображення, де в результаті немає нічого, чого не було у вхідних даних](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## Походження та Content Credentials
 

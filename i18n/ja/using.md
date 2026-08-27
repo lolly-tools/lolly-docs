@@ -12,7 +12,7 @@
 
 どのツールも分割ビューです。一方に**コントロール**、もう一方にライブの**プレビュー**（キャンバス）があります。コントロールを変えると、プレビューは即座に更新されます。
 
-![ツールの分割ビュー。左にコントロールの列、右にそれが描くライブのグループ棒グラフ](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
+![ツールの分割ビュー。左にコントロールの列、右にそれが描くライブのグループ棒グラフ](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
 
 > 一部のツール（**Design** など）は代わりに**フリーキャンバス**として開きます。装飾のない直接操作の作業面で、テキスト・図形・画像のボックスをドラッグ、リサイズ、回転、スナップでき、ダブルクリックでその場でテキストを編集できます。書き出しは他のツールと同じレンダーパスを通るため、キャンバスがそのままファイルになります。下の[フリーキャンバス](#the-free-canvas-design)をご覧ください。
 
@@ -266,7 +266,7 @@ alt text names them - do not re-caption this as "the sort menu".
 
 > 名称の紛らわしい点が 1 つあります。**View sessions** は何かが*選択されている*ときにだけ現れます。選択していないカードを右クリックすると代わりに **N saved sessions** が表示され、これは Projects に移動するのではなく、そのツール自身の履歴ダイアログを開きます。
 
-![Tools ギャラリーでツールカードを 2 枚選択し、フローティングの選択バーに 2 selected と表示され、Available offline、View sessions、Favourite、Hide が並ぶ](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22mesh-gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
+![Tools ギャラリーでツールカードを 2 枚選択し、フローティングの選択バーに 2 selected と表示され、Available offline、View sessions、Favourite、Hide が並ぶ](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
 <!--
 SHOT NOTE (misc-bulkbar-gallery): drive targets `[data-select="qr-code"]` /
 `[data-select="d3"]` - the `.tile-check[data-select="<ref>"]` checkbox button

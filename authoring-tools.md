@@ -178,9 +178,9 @@ Four declarations of four different types are four different controls. `color-pa
 
 ![Colour Palette's whole sidebar - a swatch trigger, a harmony dropdown, a shades slider and a neutrals switch, one control per declared type](/t/url-shot?url=%2F%23%2Ftool%2Fcolor-palette%3Fseed%3D%25232563eb%26harmony%3Dtetrad-4%26steps%3D9&width=1440&height=900&dpi=192&waitMs=2000&format=svg&cropSelector=%23tool-inputs&walker=1&dark=1&filename=at2-input-types-palette)
 
-`text` and `longtext` differ only in the declaration, and the shell picks the control: a single-line field for one, a sized textarea for the other. `prompt-to-image`'s prompt is a `longtext`.
+`text` and `longtext` differ only in the declaration, and the shell picks the control: a single-line field for one, a sized textarea for the other. `prompt-card`'s prompt is a `longtext`.
 
-![The prompt field in Prompt to Image - a tall textarea holding many lines, produced by nothing more than type longtext](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image&width=1440&height=900&dpi=192&waitMs=2000&css=%23tool-canvas%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.input-row%3Ahas%28%5Bdata-input-id%3D%22text%22%5D%29&dark=1&filename=at2-input-longtext)
+![The prompt field in Prompt to Image - a tall textarea holding many lines, produced by nothing more than type longtext](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card&width=1440&height=900&dpi=192&waitMs=2000&css=%23tool-canvas%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.input-row%3Ahas%28%5Bdata-input-id%3D%22text%22%5D%29&dark=1&filename=at2-input-longtext)
 
 The three moment types (`date`, `time`, `datetime-local`) are real input types with real controls, but no tool in the open community set declares one, so there is no screenshot of them here.
 
@@ -296,7 +296,7 @@ Use `vector` when a few related numbers belong together - zoom + pan, an x/y off
 }
 ```
 
-![A vector control in Mesh Gradient - one labelled row of compact number fields you can drag to scrub or type into](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient&width=1440&height=900&dpi=192&waitMs=2000&css=%23tool-canvas%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.input-row%3Ahas%28.vector-input%5Bdata-input-id%3D%22pos1%22%5D%29&dark=1&filename=auth-vector-control)
+![A vector control in Mesh Gradient - one labelled row of compact number fields you can drag to scrub or type into](/t/url-shot?url=%2F%23%2Ftool%2Fgradient&width=1440&height=900&dpi=192&waitMs=2000&css=%23tool-canvas%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.input-row%3Ahas%28.vector-input%5Bdata-input-id%3D%22pos1%22%5D%29&dark=1&filename=auth-vector-control)
 
 The value is an object keyed by field id, so the template reads each part with dot access: `{{imageFraming.zoom}}`, `{{imageFraming.x}}`, `{{imageFraming.y}}`. Each field clamps to its own `min`/`max` and falls back to its `default`.
 
@@ -356,7 +356,7 @@ One caveat before you offer `pitch`/`yaw`: a tilted plane is a projective homogr
 {{#each blocks}}<img src="{{asset this.bgImage}}" {{framing "bg" block="blocks" index=@index}}>{{/each}}
 ```
 
-Whole marks are the documented exception: `logo-wall`, `logo-lockup-partner` and `code-canvas`'s title icon offer scale only, because a logo is not cropped.
+Whole marks are the documented exception: `logo-wall`, `logo-lockup-partner` and `snippet`'s title icon offer scale only, because a logo is not cropped.
 
 #### `asset` - library or device upload
 
@@ -529,7 +529,7 @@ is the security shape to copy):
 
 **Custom JS is not offered, and should not be.** Hooks are closure-injected, not sandboxed,
 so a per-document script input would be stored XSS in every shared URL. The escape hatch
-that exists is composition: a `run-web-code` tool link placed as a box.
+that exists is composition: a `sandbox` tool link placed as a box.
 
 ## Templates & presets (`templates/`)
 
@@ -604,9 +604,9 @@ Reference wirings: `meeting-planner`→ICS, `email-signature`→vCard, `chart-cr
 
 Optional. Required only if you need computed values, async data or anything the template can't express.
 
-A layout no logic-less template could reach is the sign that you need one. The D3 tool parses its pasted table, runs the layout and hands the template a finished shape list as extras; the template itself just prints it.
+A layout no logic-less template could reach is the sign that you need one. The Chart tool parses its pasted table, runs the layout and hands the template a finished shape list as extras; the template itself just prints it.
 
-![A treemap from the D3 tool - nested rectangles sized and placed by a hook, with the template only printing the shapes it was handed](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Dtreemap%26full&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=at2-hooks-d3-treemap&try=1)
+![A treemap from the Chart tool - nested rectangles sized and placed by a hook, with the template only printing the shapes it was handed](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Dtreemap%26full&width=1440&height=900&dpi=192&waitMs=2400&walker=1&format=svg&dark=1&filename=at2-hooks-d3-treemap&try=1)
 
 ```js
 // Top-level functions are picked up by name. Declare any you need.

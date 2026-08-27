@@ -16,6 +16,34 @@ Con la opción activada, los datos de perfil que elijas quedan sellados dentro d
 
 Lolly produce un gran volumen de contenido. Aplicamos un enfoque estricto de minimización de datos para evitar riesgos.
 
+## ¿Lolly fue "vibe coded"?
+
+Lolly se desarrolló con programación asistida por IA, descubrimiento asistido por IA y, en muchos lugares, contenido asistido por IA, usando una combinación de modelos y proveedores, incluidos los de empresas punteras de la nube pública.
+
+A fecha de esta redacción, Lolly no contiene ninguna vulnerabilidad de seguridad conocida en su cadena de suministro, y se compromete a aplicar prácticas de respuesta rápida en materia de seguridad en cuanto surgen CVEs.
+
+Una persona creó la arquitectura, curó el código con intención y dirigió artísticamente la experiencia.
+
+Y lo más importante, Lolly se apoya en los hombros de décadas de innovación de código abierto de verdaderos expertos de todo el mundo.
+
+En el código base de Lolly existe una compuerta de compilación determinista que mantiene el código y la documentación coherentes para el lector medio y "desengrasa" la experiencia. Esto puede dificultar la enumeración sintética propietaria del origen. Eso no es intencionado.
+
+**Divulgación sobre IA generativa:**
+
+- **Código escrito por LLM:** Opus 4.8, Gemini 3.1, Qwen3-Coder-Next (esta lista puede ampliarse)
+- **Descubrimiento por LLM:** Gemini 3.1, Fable
+- **Documentación:** Sonnet 5
+- **Bibliotecas de código abierto:** sus respectivos autores, indicados en el SBOM, los comentarios y las cabeceras de archivo
+
+Esta lista no incluye los modelos integrados en Lolly.
+
+**Contribución humana:**
+
+- **Arquitectura:** Andy Fitzsimon
+- **Dirección de arte:** Andy Fitzsimon
+- **Código escrito por humanos:** Andy Fitzsimon
+- **Ideación, revisión y comentarios:** Ravan Naidoo, Matthias Eckermann, Kelly Andrews, Ryan Kleeman, Peter Chamalian, la comunidad de Penpot (lista no exhaustiva)
+
 ## ¿Qué son los feature flags?
 
 Los feature flags activan o desactivan partes de Lolly. Normalmente los controla un administrador - con Lolly, el control lo tienes tú.

@@ -63,7 +63,7 @@ Lolly क्या है यह देखने का सबसे स्प�
 
 दूसरे चरण में "ताज़ा चार्ट" ऐसा ही एक रेंडर है, जो एक डेटा स्ट्रिंग और कुछ पैरामीटर से बनता है, बिना किसी के डिज़ाइन फ़ाइल खोले:
 
-![एक शीर्षक वाला स्टैक्ड एरिया चार्ट, इसकी तीन श्रृंखलाएँ ठंडे पैलेट में बैंडेड, अक्ष, लीजेंड और शीर्षक सब टेम्पलेट द्वारा रखे गए, हाथ से नहीं](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![एक शीर्षक वाला स्टैक्ड एरिया चार्ट, इसकी तीन श्रृंखलाएँ ठंडे पैलेट में बैंडेड, अक्ष, लीजेंड और शीर्षक सब टेम्पलेट द्वारा रखे गए, हाथ से नहीं](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 मुद्दा यह नहीं है कि Lolly डिज़ाइनरों के लिए *और* डेवलपर्स के लिए *और* सेल्स के लिए अलग-अलग अच्छा है, हर एक अकेले में। यह एक **रिले रेस** है: क्रिएटिव का शुरुआती काम डेवलपर द्वारा स्केल किया जाता है, जो बदले में निर्माता को सशक्त बनाता है। विमान में मौजूद ग़ैर-तकनीकी प्रतिनिधि के लिए सहज अनुभव तभी *संभव* है क्योंकि डिज़ाइनर ने कठोरता तय की और डेवलपर ने उसे डिप्लॉय किया।
 
@@ -191,7 +191,7 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── code-canvas/
+│   ├── snippet/
 │   ├── countdown-timer/
 │   ├── color-palette/
 │   ├── color-block/           # typed/heterogeneous blocks (addMenu discriminator)
@@ -215,7 +215,7 @@ lolly/
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
 │   ├── logo-wall/         # many logos → auto-packed grid
 │   ├── logo-lockup-partner/ # SUSE + partner co-brand lockup
-│   ├── web-icon/          # favicon .ico / png / svg from text + colours
+│   ├── icon/          # favicon .ico / png / svg from text + colours
 │   ├── lottie-digi-ad/    # animated Lottie ad banners
 │   └── pose-geeko/        # pose the SUSE Geeko mascot - print-ready stills
 │

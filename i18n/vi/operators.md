@@ -69,7 +69,7 @@ Mọi input của công cụ đều có thể biểu diễn dưới dạng tham 
 
 Prompt to Image là tính tất định ở dạng thuần túy nhất: văn bản là toàn bộ input, ảnh đã dàn chữ là toàn bộ output, và cùng một văn bản luôn dàn chữ giống hệt nhau.
 
-![Prompt to Image - một khối văn bản prompt được dàn chữ thành một ảnh vuông, không có gì trong kết quả mà không có trong input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - một khối văn bản prompt được dàn chữ thành một ảnh vuông, không có gì trong kết quả mà không có trong input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## Nguồn gốc & Content Credentials
 

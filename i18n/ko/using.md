@@ -12,7 +12,7 @@
 
 도구마다 화면이 둘로 나뉘어요. 한쪽에는 **컨트롤**, 다른 쪽에는 실시간 **미리보기**(캔버스)가 있어요. 컨트롤을 바꾸면 미리보기가 즉시 갱신돼요.
 
-![도구의 분할 화면 - 왼쪽에는 컨트롤 묶음, 오른쪽에는 그것이 그려 내는 실시간 그룹 막대 차트](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
+![도구의 분할 화면 - 왼쪽에는 컨트롤 묶음, 오른쪽에는 그것이 그려 내는 실시간 그룹 막대 차트](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
 
 > 일부 도구(예를 들면 **Design**)는 대신 **자유 캔버스**로 열려요 - 조작 틀이 없는 직접 조작 화면에서 텍스트와 도형, 이미지 상자를 끌고, 크기를 바꾸고, 돌리고, 맞물리게 놓고, 더블클릭해 그 자리에서 텍스트를 편집해요. 다른 모든 도구와 똑같은 렌더 경로로 내보내니, 캔버스가 *그대로* 파일이에요. 아래 [자유 캔버스](#the-free-canvas-design)를 참고하세요.
 
@@ -266,7 +266,7 @@ alt text names them - do not re-caption this as "the sort menu".
 
 > 이름 때문에 헷갈리기 쉬운 지점 하나. **View sessions**는 무언가 *선택된* 뒤에만 있어요. 선택하지 않은 카드 하나를 오른쪽 클릭하면 대신 **N saved sessions**가 나오는데, 이건 Projects로 이동하는 대신 그 도구의 기록 대화상자를 열어요.
 
-![Tools 갤러리에서 도구 카드 두 개가 체크된 모습 - 떠 있는 선택 바가 2 selected라고 표시하며 Available offline, View sessions, Favourite, Hide를 내주고 있어요](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22mesh-gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
+![Tools 갤러리에서 도구 카드 두 개가 체크된 모습 - 떠 있는 선택 바가 2 selected라고 표시하며 Available offline, View sessions, Favourite, Hide를 내주고 있어요](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
 <!--
 SHOT NOTE (misc-bulkbar-gallery): drive targets `[data-select="qr-code"]` /
 `[data-select="d3"]` - the `.tile-check[data-select="<ref>"]` checkbox button

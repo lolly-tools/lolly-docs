@@ -12,7 +12,7 @@
 
 Кожен інструмент - це розділений вигляд: **елементи керування** з одного боку та живий **попередній перегляд** (полотно) з іншого. Змініть будь-який елемент керування - і попередній перегляд оновиться миттєво.
 
-![Розділений вигляд інструмента - стек елементів керування ліворуч і жива згрупована стовпчикова діаграма, яку він малює, праворуч](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
+![Розділений вигляд інструмента - стек елементів керування ліворуч і жива згрупована стовпчикова діаграма, яку він малює, праворуч](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
 
 > Кілька інструментів (як-от **Design**) натомість відкриваються як **вільне полотно** - поверхня без зайвого інтерфейсу з прямим маніпулюванням, де ви перетягуєте, змінюєте розмір, обертаєте та прив'язуєте блоки тексту, фігур і зображень, а подвійним клацанням редагуєте текст на місці. Воно експортується тим самим шляхом рендерингу, що й будь-який інший інструмент, тож полотно *і є* файл. Див. [Вільне полотно](#the-free-canvas-design) нижче.
 
@@ -266,7 +266,7 @@ alt text names them - do not re-caption this as "the sort menu".
 
 > Одна пастка з назвами: **Переглянути сесії** існує лише тоді, коли щось *вибрано*. Клацання правою кнопкою по одній невибраній картці натомість пропонує **N збережених сесій**, що відкриває власне вікно історії цього інструмента, а не веде до Проєктів.
 
-![Дві картки інструментів позначено в галереї Інструменти, а плаваюча панель виділення показує 2 selected і пропонує Available offline, View sessions, Favourite та Hide](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22mesh-gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
+![Дві картки інструментів позначено в галереї Інструменти, а плаваюча панель виділення показує 2 selected і пропонує Available offline, View sessions, Favourite та Hide](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
 <!--
 SHOT NOTE (misc-bulkbar-gallery): drive targets `[data-select="qr-code"]` /
 `[data-select="d3"]` - the `.tile-check[data-select="<ref>"]` checkbox button

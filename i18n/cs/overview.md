@@ -66,7 +66,7 @@ Nejjasnější způsob, jak vidět, co Lolly je, není seznam funkcí - je to sl
 
 "Nový graf" ve druhém kroku je render jako tento, vytvořený z datového řetězce a hrstky parametrů, aniž by kdokoli otevřel designový soubor:
 
-![Skládaný plošný graf s titulkem, jeho tři řady v chladné paletě s osami, legendou a titulkem umístěnými šablonou, ne ručně](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![Skládaný plošný graf s titulkem, jeho tři řady v chladné paletě s osami, legendou a titulkem umístěnými šablonou, ne ručně](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 Smysl není v tom, že Lolly je dobrá pro designéry *a* dobrá pro vývojáře *a* dobrá pro obchod, každého zvlášť ve vakuu. Je to **štafeta**: počáteční práci kreativce škáluje vývojář, což zase posiluje producenta. Bezproblémový zážitek pro netechnického zástupce v letadle je vůbec *možný* jen díky rigoróznosti, kterou nastavil designér a nasadil vývojář.
 
@@ -194,7 +194,7 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── code-canvas/
+│   ├── snippet/
 │   ├── countdown-timer/
 │   ├── color-palette/
 │   ├── color-block/           # typed/heterogeneous blocks (addMenu discriminator)
@@ -218,7 +218,7 @@ lolly/
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
 │   ├── logo-wall/         # many logos → auto-packed grid
 │   ├── logo-lockup-partner/ # SUSE + partner co-brand lockup
-│   ├── web-icon/          # favicon .ico / png / svg from text + colours
+│   ├── icon/          # favicon .ico / png / svg from text + colours
 │   ├── lottie-digi-ad/    # animated Lottie ad banners
 │   └── pose-geeko/        # pose the SUSE Geeko mascot - print-ready stills
 │

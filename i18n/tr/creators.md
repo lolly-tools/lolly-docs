@@ -52,7 +52,7 @@ Bir araç, başka bir aracın canlı çıktısını bir varlık olarak gömebili
 
 Gelişmiş filtreler, kompozisyon, animasyon, canlı kamera efektleri, üretken tasarım - her web teknolojisi bir şablon yazarına açıktır, bu yüzden tavan yüksektir.
 
-![Mesh Gradient'in çıktısı - tamamen markanın palet token'larından oluşturulmuş, yumuşak renklerden üretken bir alan](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Mesh Gradient'in çıktısı - tamamen markanın palet token'larından oluşturulmuş, yumuşak renklerden üretken bir alan](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 *Dosya* değil, *araç* yaz: 10.000 kart üreten aracı yap, 10.000 kart yapmak yerine. Değişmemesi gerekeni kilitle; yalnızca değişmesi gereken şeyi açığa çıkar.
 

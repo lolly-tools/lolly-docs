@@ -92,7 +92,7 @@ dimuatkan; ia tidak pernah menjadi gambar rata.
 Penapis lanjutan, penyusunan, animasi, kesan kamera langsung, reka bentuk generatif -
 setiap teknologi web tersedia untuk penulis templat, jadi silingnya tinggi.
 
-![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 Karang *alat*, bukan fail: bina benda yang menjana 10,000 kad dan bukannya membuat 10,000
 kad. Kunci apa yang tidak sepatutnya berubah; dedahkan hanya apa yang dimaksudkan untuk

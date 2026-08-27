@@ -100,7 +100,7 @@ det är aldrig en platt bild.
 Avancerade filter, sammansättning, animation, live-kameraeffekter, generativ design -
 varje webbteknik är tillgänglig för en mallskapare, så taket är högt.
 
-![Mesh Gradients output - ett generativt fält av mjuk färg byggt helt från ditt varumärkes palett-tokens](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Mesh Gradients output - ett generativt fält av mjuk färg byggt helt från ditt varumärkes palett-tokens](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 Skapa *verktyg*, inte filer: bygg det som genererar 10 000 kort istället för att göra 10 000
 kort för hand. Lås det som inte ska ändras; exponera bara det som är tänkt att variera.

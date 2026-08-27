@@ -52,7 +52,7 @@ Một công cụ có thể nhúng đầu ra trực tiếp của một công cụ
 
 Bộ lọc nâng cao, ghép ảnh, hoạt hình, hiệu ứng camera trực tiếp, thiết kế tạo sinh - mọi công nghệ web đều sẵn có cho tác giả khuôn mẫu, nên trần năng lực rất cao.
 
-![Đầu ra của Mesh Gradient - một trường màu mềm mại tạo sinh, được xây dựng hoàn toàn từ các token bảng màu thương hiệu của bạn](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Đầu ra của Mesh Gradient - một trường màu mềm mại tạo sinh, được xây dựng hoàn toàn từ các token bảng màu thương hiệu của bạn](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 Viết *công cụ*, không phải tệp: xây dựng thứ tạo ra 10.000 thẻ thay vì tự tay làm 10.000 thẻ. Khóa những gì không nên thay đổi; chỉ để lộ những gì được phép biến đổi.
 

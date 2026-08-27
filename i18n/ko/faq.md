@@ -16,6 +16,34 @@ Lolly를 처음 사용할 때, 어디에 입력하든 그 내용은 사용자가
 
 Lolly는 대량의 콘텐츠를 생성해요. 저희는 위험을 방지하기 위해 엄격한 데이터 최소화 방침을 취하고 있어요.
 
+## Lolly는 "바이브 코딩"으로 만들어졌나요?
+
+Lolly는 퍼블릭 클라우드 프론티어 기업의 모델을 포함해 다양한 모델과 벤더를 활용하여 AI 지원 코딩, AI 지원 리서치, 그리고 여러 부분에서 AI 지원 콘텐츠 제작을 통해 개발되었어요.
+
+이 글을 작성하는 시점을 기준으로 Lolly의 공급망에는 알려진 보안 취약점이 전혀 없으며, CVE가 발견되면 신속하게 보안 대응에 나설 것을 약속해요.
+
+아키텍처는 사람이 설계했고, 코드는 의도를 갖고 세심하게 선별했으며, 경험은 사람이 아트 디렉션을 맡았어요.
+
+무엇보다 중요한 건, Lolly가 전 세계 진짜 전문가들이 수십 년에 걸쳐 이룬 오픈소스 혁신이라는 토대 위에 서 있다는 점이에요.
+
+Lolly의 코드베이스에는 코드와 문서를 일반 독자가 이해하기 쉽게 일관되게 유지하고 경험을 "슬롭 제거"하기 위한 결정론적 빌드 게이트가 있어요. 이로 인해 출처를 독점적·합성적으로 열거하기가 어려워질 수 있는데, 이는 의도한 것이 아니에요.
+
+**생성형 AI 공개:**
+
+- **LLM이 작성한 코드:** Opus 4.8, Gemini 3.1, Qwen3-Coder-Next(이 목록은 늘어날 수 있어요)
+- **LLM 리서치:** Gemini 3.1, Fable
+- **문서:** Sonnet 5
+- **오픈소스 라이브러리:** 각 라이브러리의 저자. SBOM, 주석, 파일 헤더에 명시되어 있어요
+
+이 목록에는 Lolly에 내장된 모델은 포함되지 않아요.
+
+**인간의 기여:**
+
+- **아키텍처:** Andy Fitzsimon
+- **아트 디렉션:** Andy Fitzsimon
+- **사람이 작성한 코드:** Andy Fitzsimon
+- **아이디어 구상, 검토 및 피드백:** Ravan Naidoo, Matthias Eckermann, Kelly Andrews, Ryan Kleeman, Peter Chamalian, Penpot 커뮤니티(목록이 전부는 아니에요)
+
 ## 피처 플래그란 무엇인가요?
 
 피처 플래그는 Lolly의 일부 기능을 켜거나 꺼요. 보통은 관리자가 이를 제어하지만, Lolly에서는 사용자 자신이 제어해요.
@@ -93,7 +121,7 @@ Lolly는 모든 것의 수준을 끌어올려요.
 
 네. **Design**을 열고 **Import a design**을 클릭하세요. Figma 네이티브 **.fig**(Save local copy), Penpot **.penpot** 내보내기, Illustrator **.ai** 또는 **.pdf**, InDesign **.idml**(File → Export → InDesign Markup), 그리고 **모든 SVG**(가장 넓은 문 - 거의 모든 디자인 앱이 내보낼 수 있어요)를 받아들여요. 계정도, 플러그인도, 디자인 앱 라이선스도 필요 없어요.
 
-![툴바에 Import a design이 자리한 Design의 열린 캔버스](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design의 열린 캔버스, 툴바에 디자인 가져오기 표시](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 레이어는 열린 캔버스 위에 편집 가능한 상자로 들어와요. 텍스트는 다시 입력할 수 있고, 도형은 도형 그대로 남고, 이미지는 사용자의 이미지 라이브러리에 합류하며, 서체와 색상은 브랜드 전역 값을 따라요. 저장하면 그 레이아웃은 Lolly를 쓰는 누구나 내용을 다시 채울 수 있는, URL로 지정 가능한 재사용 템플릿이 돼요 - 불러올 때 다시 렌더링되는 라이브 도구(QR 코드, 차트)도 함께 섞어 넣을 수 있고요. 그다음부터는 Lolly의 다른 결과물과 똑같이 렌더링돼요 - SVG, PDF, PNG 등 무엇이든, URL로 재현할 수 있어요. [Import a design](/info/design-import.html)을 참고하세요.
 

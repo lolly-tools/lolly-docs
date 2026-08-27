@@ -69,7 +69,7 @@ Compress PDF가 세트를 완성합니다. 이미 파일을 갖고 있는 기기
 
 Prompt to Image는 결정성을 가장 단순하게 보여줍니다. 텍스트가 입력의 전부이고, 조판된 이미지가 출력의 전부이며, 동일한 텍스트는 항상 동일한 방식으로 조판됩니다.
 
-![Prompt to Image - 프롬프트 텍스트 한 덩어리가 정사각형 이미지로 조판되며, 결과물에는 입력에 없던 것이 전혀 없습니다](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - 프롬프트 텍스트 한 덩어리가 정사각형 이미지로 조판되며, 결과물에는 입력에 없던 것이 전혀 없습니다](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## 출처와 Content Credentials
 

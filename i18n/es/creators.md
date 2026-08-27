@@ -52,7 +52,7 @@ Una herramienta puede incrustar la salida en vivo de otra herramienta como activ
 
 Filtros avanzados, composición, animación, efectos de cámara en vivo, diseño generativo - toda tecnología web está disponible para el autor de una plantilla, así que el techo es alto.
 
-![Resultado de Mesh Gradient - un campo generativo de color suave construido enteramente a partir de los tokens de paleta de tu marca](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Resultado de Mesh Gradient - un campo generativo de color suave construido enteramente a partir de los tokens de paleta de tu marca](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 Crea *herramientas*, no archivos: construye lo que genera 10.000 tarjetas en lugar de hacer 10.000 tarjetas. Fija lo que no debe cambiar; expón solo lo que está pensado para variar.
 

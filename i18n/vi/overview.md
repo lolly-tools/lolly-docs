@@ -66,7 +66,7 @@ Cách rõ ràng nhất để thấy Lolly là gì không phải là một danh s
 
 "Biểu đồ mới" ở bước hai là một bản kết xuất như thế này, được tạo ra từ một chuỗi dữ liệu và vài tham số mà không ai mở file thiết kế:
 
-![Một biểu đồ vùng xếp chồng có tiêu đề, ba chuỗi dữ liệu được dải màu theo bảng màu lạnh với trục, chú giải và tiêu đề đều do template đặt chứ không phải làm thủ công](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![Một biểu đồ vùng xếp chồng có tiêu đề, ba chuỗi dữ liệu được dải màu theo bảng màu lạnh với trục, chú giải và tiêu đề đều do template đặt chứ không phải làm thủ công](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 Điểm mấu chốt không phải là Lolly tốt cho nhà thiết kế *và* tốt cho nhà phát triển *và* tốt cho bán hàng, mỗi thứ trong khoảng chân không riêng. Đó là một **cuộc chạy tiếp sức**: công việc ban đầu của người sáng tạo được nhà phát triển mở rộng, từ đó trao quyền cho nhà sản xuất. Trải nghiệm không tốn công cho đại diện phi kỹ thuật trên máy bay chỉ *khả thi* nhờ vào sự nghiêm ngặt mà nhà thiết kế đặt ra và nhà phát triển triển khai.
 
@@ -194,7 +194,7 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── code-canvas/
+│   ├── snippet/
 │   ├── countdown-timer/
 │   ├── color-palette/
 │   ├── color-block/           # typed/heterogeneous blocks (addMenu discriminator)
@@ -218,7 +218,7 @@ lolly/
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
 │   ├── logo-wall/         # many logos → auto-packed grid
 │   ├── logo-lockup-partner/ # SUSE + partner co-brand lockup
-│   ├── web-icon/          # favicon .ico / png / svg from text + colours
+│   ├── icon/          # favicon .ico / png / svg from text + colours
 │   ├── lottie-digi-ad/    # animated Lottie ad banners
 │   └── pose-geeko/        # pose the SUSE Geeko mascot - print-ready stills
 │

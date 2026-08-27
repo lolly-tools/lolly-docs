@@ -16,6 +16,34 @@ Wenn Sie zugestimmt haben, werden die von Ihnen gewählten Profildaten fest in d
 
 Lolly erzeugt sehr viele Inhalte. Wir gehen streng nach dem Grundsatz der Datenminimierung vor, um Risiken zu vermeiden.
 
+## Wurde Lolly "vibe coded"?
+
+Lolly wurde mit KI-unterstütztem Coding, KI-unterstützter Recherche und, an vielen Stellen, KI-unterstützten Inhalten entwickelt, unter Verwendung einer Mischung aus Modellen und Anbietern, darunter auch solche von Public-Cloud-Frontier-Unternehmen.
+
+Zum Zeitpunkt der Erstellung enthält Lolly null bekannte Sicherheitslücken in seiner Lieferkette und verpflichtet sich zu einer schnellen Reaktion auf Sicherheitsprobleme, sobald CVEs bekannt werden.
+
+Ein Mensch hat die Architektur entworfen, den Code mit Bedacht kuratiert und das Erlebnis künstlerisch geleitet.
+
+Vor allem aber steht Lolly auf den Schultern jahrzehntelanger Open-Source-Innovation echter Experten aus aller Welt.
+
+Ein deterministisches Build-Gate existiert in Lollys Codebase, um Code und Dokumentation für den durchschnittlichen Leser kohärent zu halten und das Erlebnis zu "entschlacken". Dies kann es erschweren, die Herkunft mit proprietären synthetischen Verfahren automatisiert zu erfassen. Das ist unbeabsichtigt.
+
+**Offenlegung zu generativer KI:**
+
+- **Von LLMs geschriebener Code:** Opus 4.8, Gemini 3.1, Qwen3-Coder-Next (diese Liste kann erweitert werden)
+- **LLM-Recherche:** Gemini 3.1, Fable
+- **Dokumentation:** Sonnet 5
+- **Open-Source-Bibliotheken:** ihre jeweiligen Autoren, ausgewiesen in der SBOM, in Kommentaren und Datei-Headern
+
+Diese Liste umfasst keine Modelle, die fest in Lolly eingebunden sind.
+
+**Menschlicher Beitrag:**
+
+- **Architektur:** Andy Fitzsimon
+- **Künstlerische Leitung:** Andy Fitzsimon
+- **Von Menschen geschriebener Code:** Andy Fitzsimon
+- **Ideenfindung, Review und Feedback:** Ravan Naidoo, Matthias Eckermann, Kelly Andrews, Ryan Kleeman, Peter Chamalian, die Penpot-Community (Liste nicht abschließend)
+
 ## Was sind die Feature-Flags?
 
 Feature-Flags schalten Teile von Lolly ein oder aus. Üblicherweise steuert das eine Administratorin oder ein Administrator - bei Lolly haben Sie die Kontrolle.
@@ -93,7 +121,7 @@ Wir gewinnen den Kampf um Governance mit hervorragendem Komfort und gutem Servic
 
 Ja. Öffnen Sie **Design** und klicken Sie auf **Import a design**: Akzeptiert werden eine native Figma-Datei **.fig** (Save local copy), ein Penpot-Export **.penpot**, eine Illustrator-Datei **.ai** oder **.pdf**, eine InDesign-Datei **.idml** (File → Export → InDesign Markup) oder **jedes SVG** (die breite Tür - fast jede Design-App exportiert es). Kein Konto, kein Plug-in und keine Lizenz für eine Design-App nötig.
 
-![Die offene Arbeitsfläche von Design, in deren Werkzeugleiste Import a design liegt](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Die offene Arbeitsfläche von Design, mit Import a design in der Symbolleiste](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Ebenen kommen als bearbeitbare Kästen auf der offenen Arbeitsfläche an: Text bleibt neu tippbar, Formen bleiben Formen, Bilder wandern in Ihre eigene Bildbibliothek und Schrift und Farben richten sich nach den Marken-Globals. Speichern Sie das Layout, und es wird zu einer wiederverwendbaren, per URL adressierbaren Vorlage, die jeder mit Lolly neu befüllen kann - und Sie können lebende Werkzeuge einmischen (einen QR-Code, ein Diagramm), die beim Laden neu gerendert werden. Von da an rendert es wie alles andere in Lolly - SVG, PDF, PNG und den Rest, reproduzierbar aus seiner URL. Siehe [Import a design](/info/design-import.html).
 

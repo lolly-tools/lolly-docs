@@ -69,7 +69,7 @@ Elke tool-invoer is uit te drukken als een URL-parameter, en dezelfde invoer pro
 
 Prompt to Image is determinisme op zijn eenvoudigst: de tekst is de hele invoer, de gezette afbeelding is de hele uitvoer en dezelfde tekst zet altijd op dezelfde manier.
 
-![Prompt to Image - een blok prompttekst gezet in een vierkante afbeelding, zonder iets in het resultaat dat niet in de invoer zat](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-to-image%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - een blok prompttekst gezet in een vierkante afbeelding, zonder iets in het resultaat dat niet in de invoer zat](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## Herkomst & Content Credentials
 

@@ -16,6 +16,34 @@ Cu acordul activat, detaliile de profil pe care le alegi sunt sigilate în ceea 
 
 Lolly produce un volum mare de conținut. Adoptăm o abordare strictă de minimizare a datelor, ca să prevenim riscurile.
 
+## Lolly a fost „vibe coded”?
+
+Lolly a fost dezvoltat cu programare asistată de AI, descoperire asistată de AI și, în multe locuri, conținut asistat de AI, folosind un mix de modele și furnizori, inclusiv de la companii de frontieră din cloud public.
+
+La data redactării, Lolly nu conține nicio vulnerabilitate de securitate cunoscută în lanțul de aprovizionare și se angajează la practici de răspuns rapid în materie de securitate atunci când apar CVE-uri.
+
+Un om a creat arhitectura, a curatoriat codul cu intenție și a direcționat artistic experiența.
+
+Cel mai important, Lolly se sprijină pe umerii a zeci de ani de inovație open source din partea unor experți reali din întreaga lume.
+
+În baza de cod a Lolly există o poartă de build deterministă, care păstrează codul și documentația coerente pentru cititorul obișnuit și „de-slop-uiește” experiența. Acest lucru poate îngreuna enumerarea sintetică proprietară a originii. Asta este neintenționat.
+
+**Declarație privind AI generativă:**
+
+- **Cod scris de LLM:** Opus 4.8, Gemini 3.1, Qwen3-Coder-Next (această listă poate crește)
+- **Descoperire prin LLM:** Gemini 3.1, Fable
+- **Documentație:** Sonnet 5
+- **Biblioteci open source:** autorii lor respectivi, menționați în SBOM, comentarii și antetele fișierelor
+
+Această listă nu include modelele integrate direct în Lolly.
+
+**Contribuție umană:**
+
+- **Arhitectură:** Andy Fitzsimon
+- **Direcție artistică:** Andy Fitzsimon
+- **Cod scris de om:** Andy Fitzsimon
+- **Idei, recenzie și feedback:** Ravan Naidoo, Matthias Eckermann, Kelly Andrews, Ryan Kleeman, Peter Chamalian, comunitatea Penpot (lista nu este exhaustivă)
+
 ## Ce sunt feature flags?
 
 Feature flags activează sau dezactivează părți din Lolly. De obicei le controlează un administrator - în Lolly, controlul îl ai tu.
@@ -93,7 +121,7 @@ Câștigăm războiul guvernanței prin comoditate și servicii excelente.
 
 Da. Deschide **Design** și apasă **Import a design** (Importă un design): acceptă un fișier nativ Figma **.fig** (Save local copy), un export Penpot **.penpot**, un Illustrator **.ai** sau **.pdf**, un InDesign **.idml** (File → Export → InDesign Markup) sau **orice SVG** (ușa largă - aproape orice aplicație de design îl exportă). Fără cont, fără plugin și fără licență de aplicație de design.
 
-![Canvasul deschis din Design, unde Import a design se află în bara de instrumente](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Canvasul deschis al Design, cu Import a design în bara de instrumente](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
 
 Straturile ajung ca niște casete editabile pe canvasul deschis: textul rămâne rescriabil, formele rămân forme, imaginile intră în propria ta bibliotecă de imagini, iar tipografia și culorile respectă variabilele globale ale brandului. Salvează-l și macheta devine un șablon reutilizabil, adresabil prin URL, pe care oricine are Lolly îl poate reumple - și poți amesteca în el instrumente vii (un cod QR, un grafic) care se re-randează la încărcare. De acolo se randează ca orice altceva în Lolly - SVG, PDF, PNG și restul, reproductibil din URL-ul său. Vezi [Importă un design](/info/design-import.html).
 

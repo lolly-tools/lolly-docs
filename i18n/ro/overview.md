@@ -66,7 +66,7 @@ Cel mai clar mod de a vedea ce este Lolly nu e o listă de funcții - e să urm�
 
 „Diagrama nouă” din pasul doi este o randare precum aceasta, produsă dintr-un șir de date și câțiva parametri, fără ca nimeni să deschidă un fișier de design:
 
-![O diagramă de arie stivuită cu titlu, cele trei serii în benzi dintr-o paletă rece, cu axe, legendă și titlu poziționate toate de șablon, nu manual](/t/url-shot?url=%2F%23%2Ftool%2Fd3%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![O diagramă de arie stivuită cu titlu, cele trei serii în benzi dintr-o paletă rece, cu axe, legendă și titlu poziționate toate de șablon, nu manual](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 Ideea nu este că Lolly e bun pentru designeri *și* bun pentru dezvoltatori *și* bun pentru vânzări, fiecare izolat. Este o **cursă de ștafetă**: munca inițială a celui din echipa creativă este scalată de dezvoltator, care la rândul lui capacitează producătorul. Experiența fără efort pentru reprezentantul netehnic din avion este posibilă *doar* datorită rigorii stabilite de designer și implementate de dezvoltator.
 
@@ -194,7 +194,7 @@ lolly/
 │   ├── qr-code/
 │   ├── quotes/
 │   ├── email-signature/
-│   ├── code-canvas/
+│   ├── snippet/
 │   ├── countdown-timer/
 │   ├── color-palette/
 │   ├── color-block/           # typed/heterogeneous blocks (addMenu discriminator)
@@ -218,7 +218,7 @@ lolly/
 │   ├── diagram-builder/   # org / layercake / process / cycle / pyramid diagrams
 │   ├── logo-wall/         # many logos → auto-packed grid
 │   ├── logo-lockup-partner/ # SUSE + partner co-brand lockup
-│   ├── web-icon/          # favicon .ico / png / svg from text + colours
+│   ├── icon/          # favicon .ico / png / svg from text + colours
 │   ├── lottie-digi-ad/    # animated Lottie ad banners
 │   └── pose-geeko/        # pose the SUSE Geeko mascot - print-ready stills
 │

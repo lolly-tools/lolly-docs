@@ -16,6 +16,34 @@ With the opt-in selected, the profile details you choose are sealed into what yo
 
 Lolly produces a large volume of content. We take a strict data minimization approach to prevent risk.
 
+## Was Lolly "vibe coded"?
+
+Lolly was developed with AI-assisted coding, AI-assisted discovery and, in many places, AI-assisted content, using a mix of models and vendors, including those from public-cloud frontier companies.
+
+As of this writing Lolly contains zero known security vulnerabilities in its supply chain, and commits to rapid security response practices when CVEs surface.
+
+A human created the architecture, curated the code with intention and art directed the experience.
+
+Most importantly, Lolly stands on the shoulders of decades of open source innovation from real experts around the world.
+
+A deterministic build-gate exists in Lolly's codebase to keep code and documentation coherent to the average reader and "de-slop" the experience. This may make it difficult for proprietary synthetic enumeration of origin. That is unintentional.
+
+**Generative AI disclosure:**
+
+- **LLM-written code:** Opus 4.8, Gemini 3.1, Qwen3-Coder-Next (this list may expand)
+- **LLM discovery:** Gemini 3.1, Fable
+- **Documentation:** Sonnet 5
+- **Open source libraries:** their respective authors, expressed in the SBOM, comments and file headers
+
+This list does not include models vendored into Lolly.
+
+**Human claims:**
+
+- **Architecture:** Andy Fitzsimon
+- **Art direction:** Andy Fitzsimon
+- **Human-written code:** Andy Fitzsimon
+- **Ideation, review and feedback:** Ravan Naidoo, Matthias Eckermann, Kelly Andrews, Ryan Kleeman, Peter Chamalian, the Penpot Community (list not exhaustive)
+
 ## What are the feature flags?
 
 Feature flags turn parts of Lolly on or off. Usually an administrator controls these - with Lolly, you are in control.

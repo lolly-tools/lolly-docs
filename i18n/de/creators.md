@@ -52,7 +52,7 @@ Ein Tool kann die Live-Ausgabe eines anderen Tools als Asset einbetten - ein Nam
 
 Erweiterte Filter, Compositing, Animation, Live-Kameraeffekte, generatives Design - jede Web-Technologie steht einem Template-Autor zur Verfügung, deshalb ist die Decke hoch.
 
-![Die Ausgabe von Mesh Gradient - ein generatives Feld aus weicher Farbe, vollständig aus den Palette-Tokens Ihrer Marke aufgebaut](/t/url-shot?url=%2F%23%2Ftool%2Fmesh-gradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Die Ausgabe von Mesh Gradient - ein generatives Feld aus weicher Farbe, vollständig aus den Palette-Tokens Ihrer Marke aufgebaut](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
 Erstellen Sie *Tools*, keine Dateien: bauen Sie das, was 10.000 Karten erzeugt, statt 10.000 Karten von Hand zu machen. Sperren Sie, was sich nicht ändern soll; geben Sie nur frei, was variieren soll.
 
