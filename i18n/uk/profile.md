@@ -35,7 +35,7 @@
 
 ### Як окрема особа
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
 
 ![Керування фото - порожнє, доки ви не завантажите фотографію, яка після цього лишається на цьому пристрої](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
 
@@ -104,7 +104,7 @@ Lolly кешує все по ходу справи, але кешування п
 
 ## Перенесення профілю на новий пристрій
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls)
 
 Оскільки профіль повністю локальний, єдиний спосіб перенести його на порожню інсталяцію — новий ноутбук, щойно скинутий браузер, машину колеги, офлайн-пристрій — це **перенести файл**. Жоден вхід не відновить його за вас, і в цьому вся суть: спочатку ніщо ніколи й не покидало ваш пристрій.
 
@@ -122,7 +122,7 @@ Lolly кешує все по ходу справи, але кешування п
 
 ## Як інструменти використовують ваш профіль
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&dark=1&filename=pd-use-my-details)
 
 Інструмент лише *попередньо заповнює* ті поля профілю, для прив'язки до яких його було явно створено:
 

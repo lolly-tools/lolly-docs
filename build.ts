@@ -106,9 +106,11 @@ const OG_IMAGE = `${SITE_URL}/og.png`;
 // It's still the one mark: icon-512.png is rasterised from icon.svg by `npm run icons`.
 const OG_LOGO = `${SITE_URL}/icons/icon-512.png`;
 const SITE_DESCRIPTION = 'Lolly: constraint-first, template-driven platform for generating production-ready creative and content assets at scale.';
-// Landing-page <title>/share title - the brand tagline (matches the web shell's
-// index.html). Other pages use "<page title> - Lolly", so this is landing-only.
-const LANDING_TITLE = 'Lolly - assets that stay the same so everything else can change';
+// Landing-page <title>/share title (matches the web shell's index.html). Other
+// pages use "<page title> - Lolly", so this is landing-only. Kept short: the
+// Listen player and the browser tab both wear this string, so a tagline here
+// makes the player comically wide.
+const LANDING_TITLE = 'Lolly Tools';
 
 // Tool count for the hero badge - read from the generated catalog index so it
 // tracks the real number of tools rather than drifting as a hand-edited literal.
@@ -562,6 +564,9 @@ const BICONS = {
 
 function getBulletIcon(raw: string) {
   const t = raw.toLowerCase();
+  if (t.includes('real studio'))                                          return BICONS.star;
+  if (t.includes('hdr') || t.includes('spot colour'))                     return BICONS.sliders;
+  if (t.includes('finished work'))                                        return BICONS.image;
   if (t.includes('compliance') || t.includes('risk'))                    return BICONS.alertTriangle;
   if (t.includes('governance') || t.includes('enforce'))                  return BICONS.shield;
   if (t.includes('self-host'))                                             return BICONS.server;

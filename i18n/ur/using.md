@@ -80,7 +80,7 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 - **Fit سے آگے زوم آؤٹ کریں** (20% تک) تاکہ جب آپ نے چیزیں فریم سے کافی باہر رکھی ہوں تو پورا پیسٹ بورڈ نظر آئے۔
 - **ری سائز ہونے والا آرٹ بورڈ۔** ایکسپورٹ کے طول و عرض بدلنے سے فریم اپنی جگہ ری سائز ہو جاتا ہے؛ باکس اپنی پوزیشن پر رہتے ہیں، تو آپ موجودہ مواد کے گرد لے آؤٹ کو نئے سرے سے فریم کر سکتے ہیں۔
 
-![Design کا آزاد کینوس - آرٹ بورڈ اور اس کے گرد پیسٹ بورڈ](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design کا آزاد کینوس - آرٹ بورڈ اور اس کے گرد پیسٹ بورڈ](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D17VVRa9swEP41ekyQLrbjPOyhVeeOrSsbG3lXbLkYZCnISmn264tO9irFhdJCoZQIpBNn9N2dvu_k3cOX1opeEuCTpeNkG0BDy8ljZe28pyDA74UlUC4WOyt0sxgOthW1JJAD9wv1y6rFQWCDMB6BAK-NdqLTBLg2thcqeAnk68vaKGOXg-yFdl29dPLBef8VAZ6V_qjUTloCvO-aRvlcc0QdhB58iCWDMVNnD1iSUIOcAvASY2qsEUeex-XSOEJ6koaT_6Q1iY89IY4mw4TCmmJYc9BNZKPQ00ywxxJS-BlqcnL2KfJF3xhZf3WdwwsMd8xZ4VEgEF6EGornaH-ByW_iHkVAj-aAtpcO7Y1R6kggX1Uz7ext1wt7PNEOk7BZ7UbtYCpKtj4NZ_YE-Doh_hOwHnff-1K_M83xlPmyiJhn8AbmL5C61nZSN8g00OlFoK2xkyjCRofOBro3g5N2OdPE2PqxIGjL1iCCIPA1SPSQpQ_B6qyIVyiCsp8s-_Gn2P76fpHfVlt6WV3_Lv5e5_6mul7cSVRFhiWhOIrsaaVTMbKZaUWNbQ-VMncGN__b_fwn-CAKeAQ&width=1360&height=850&dpi=192&waitMs=3000&format=png&localize=1&dark=1&filename=design)
 
 **سلیکشن کو فلپ کریں۔** کسی بھی باکس پر رائٹ-کلک کریں اور **افقی فلپ کریں** یا **عمودی فلپ کریں** چنیں تاکہ اسے اسی جگہ آئینہ بنایا جا سکے، یا کی بورڈ سے `Shift+H` / `Shift+V` دبائیں - Shift، کیونکہ خالی `V` پوائنٹر ٹول ہے۔ ہر منتخب باکس اپنے محور پر ایک انڈو مرحلے میں آئینہ بنتا ہے، اور یہ آئینہ ایک حقیقی ٹرانسفارم ہے، تو یہ ایکسپورٹ شدہ SVG، PDF اور PNG میں برقرار رہتا ہے، صرف کینوس پر نہیں۔
 

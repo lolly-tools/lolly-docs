@@ -64,15 +64,15 @@ Not everything is marketing. Consignment labels, badge runs, compliance one-page
 
 ## Media & Creatives
 
-### Stop doing things machines do best.
+### A studio when you need one, a system when you don't.
 
-You design systems and solve problems, not one-offs. Lolly is the execution layer that turns your design decisions into tools your whole organization can use - without you in the loop for every asset.
+Arrive with nothing and you still have a full studio - an open canvas, a real video timeline, print-true colour. Arrive with finished work and import it. Either way, your design decisions become tools your whole organization can use, without you in the loop for every asset.
 
-- **The ceiling is the web platform itself.** Advanced filters, compositing, animation, generative design: every web technology is available to the template author, and whatever a browser can draw, a tool can export at production quality.
-- **Tools compose tools.** One tool can embed another tool's output as a live asset - a name badge that renders its own QR code, a card that drops in a live chart - with no design tool and no manual compositing.
+- **A real studio, day one.** Lay out pages freehand on the Design canvas. Cut clips, music and voiceover on Sequence Studio's timeline. Record clean takes with live coaching. No suite to buy first.
+- **Colour that survives production.** HDR video, high bit-depth stills, spot colours and CMYK for print - with real units, bleed and crop marks. The colour you approve is the colour that ships.
+- **Bring finished work with you.** Import a design file or any SVG: layers stay editable, type stays retypable, and a saved layout becomes a template anyone can refill.
 - **Author tools, not files.** Build a template that generates 10,000 social cards rather than making 10,000 social cards. Your time goes to the design problem, not the production run.
-- **Eliminate the tedious.** Optimal typesetting, logo placement, map pin positioning, color contrast checks, export sizing - all resolved at the template layer. You define the rules once, leave the repetition to the machine.
-- **Lock what shouldn't change, free what should.** Hard-code the brand constraints. Expose only the variables that are actually meant to vary. The tool becomes the creative guardrail.
+- **Lock what shouldn't change, free what should.** Hard-code the constraints, expose only the variables that are meant to vary, and hand collaborators a locked design system they can't accidentally break. The tool becomes the creative guardrail.
 
 ---
 
@@ -126,7 +126,7 @@ Output the file URL.
 
 Every time someone uploads a file to a third-party service to "just make it look right," that's a data exfiltration event waiting to happen. Lolly eliminates the problem at the source - creative production stays on-premise and under your control.
 
-- **Data stays on the device.** No cloud rendering, no analytics, no telemetry - and no network request at all beyond the handful a user explicitly triggers, each one named in the [privacy policy](/info/privacy.html). What colleagues create stays on their machine. On-device utilities help you out - nothing is uploaded. Even encryption and passwords happens on-device..
+- **Data stays on the device.** No cloud rendering, no analytics, no telemetry - and no network request at all beyond the handful a user explicitly triggers, each one named in the [privacy policy](/info/privacy.html). What colleagues create stays on their machine. On-device utilities help you out - nothing is uploaded. Even encryption and password protection happen on-device.
 - **Self-host for full air-gap control.** Deploy on your own infrastructure; the two optional server components can be omitted entirely. [Sovereign production](/info/sovereign-production.html) states the whole posture, and [Server Surface](/info/server-surface.html) is the complete inventory.
 - **Reduce vendor surface area.** One open-source platform replaces a sprawl of SaaS subscriptions for creative production. Fewer vendors means fewer contracts, fewer audits and fewer breach vectors.
 - **Enforce brand governance at the infrastructure level.** Tools are authored once and distributed as data - not files, not manual processes. What goes out the door is exactly what was approved to go out the door.
@@ -137,7 +137,7 @@ Every time someone uploads a file to a third-party service to "just make it look
 
 ## What you get
 
-**A powerful creative production platform.** The Lolly engine works to achieve the highest quality each format can produce on your hardware, without comrpromise.
+**A powerful creative production platform.** The Lolly engine works to achieve the highest quality each format can produce on your hardware, without compromise.
 
 **100% free and open source.** No SaaS fees, no usage limits, no vendor dependency.
 

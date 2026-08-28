@@ -35,7 +35,7 @@
 
 ### একজন ব্যক্তি হিসেবে
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
 
 ![হেডশট কন্ট্রোল, ফাঁকা থাকে যতক্ষণ না আপনি একটি ছবি আপলোড করেন যা এরপর এই ডিভাইসেই থেকে যায়](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
 
@@ -104,7 +104,7 @@ Lolly আপনি যেতে যেতে ক্যাশ করে, কি�
 
 ## নতুন ডিভাইসে প্রোফাইল সরানো
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls)
 
 যেহেতু একটি প্রোফাইল সম্পূর্ণ লোকাল, তাই এটি কোনো ফাঁকা ইনস্টলে নেওয়ার একমাত্র উপায় — একটি নতুন ল্যাপটপ, সদ্য রিসেট করা ব্রাউজার, সহকর্মীর মেশিন, একটি অফলাইন বক্স — হলো **ফাইলটি সঙ্গে নিয়ে যাওয়া**। কোনো লগইন এটি আপনার জন্য ফিরিয়ে আনে না, আর এটাই মূল কথা: প্রথম থেকেই কিছুই আপনার ডিভাইস ছেড়ে যায়নি।
 
@@ -122,7 +122,7 @@ Lolly আপনি যেতে যেতে ক্যাশ করে, কি�
 
 ## আপনার প্রোফাইল টুল কীভাবে ব্যবহার করে
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&dark=1&filename=pd-use-my-details)
 
 একটি টুল কেবল সেই প্রোফাইল ফিল্ডগুলোই *প্রি-ফিল* করে যেগুলো বাঁধার জন্য এটি স্পষ্টভাবে তৈরি করা হয়েছিল:
 

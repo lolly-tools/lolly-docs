@@ -80,7 +80,7 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 - ফ্রেমের অনেক বাইরে জিনিস সরিয়ে রাখলে পুরো কাজের জায়গাটি দেখতে **Fit-এর চেয়েও বেশি জুম আউট করুন** (20% পর্যন্ত)।
 - **আকার বদলানো যায় এমন আর্টবোর্ড।** এক্সপোর্টের মাপ বদলালে ফ্রেমটি জায়গাতেই ছোট-বড় হয়; বক্সগুলি নিজেদের অবস্থানে থাকে, তাই বিদ্যমান কনটেন্টকে ঘিরে লেআউট নতুন করে সাজানো যায়।
 
-![Design-এর ফ্রি ক্যানভাস - আর্টবোর্ড আর তাকে ঘিরে থাকা কাজের জায়গা](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design-এর ফ্রি ক্যানভাস - আর্টবোর্ড আর তাকে ঘিরে থাকা কাজের জায়গা](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D17VVRa9swEP41ekyQLrbjPOyhVeeOrSsbG3lXbLkYZCnISmn264tO9irFhdJCoZQIpBNn9N2dvu_k3cOX1opeEuCTpeNkG0BDy8ljZe28pyDA74UlUC4WOyt0sxgOthW1JJAD9wv1y6rFQWCDMB6BAK-NdqLTBLg2thcqeAnk68vaKGOXg-yFdl29dPLBef8VAZ6V_qjUTloCvO-aRvlcc0QdhB58iCWDMVNnD1iSUIOcAvASY2qsEUeex-XSOEJ6koaT_6Q1iY89IY4mw4TCmmJYc9BNZKPQ00ywxxJS-BlqcnL2KfJF3xhZf3WdwwsMd8xZ4VEgEF6EGornaH-ByW_iHkVAj-aAtpcO7Y1R6kggX1Uz7ext1wt7PNEOk7BZ7UbtYCpKtj4NZ_YE-Doh_hOwHnff-1K_M83xlPmyiJhn8AbmL5C61nZSN8g00OlFoK2xkyjCRofOBro3g5N2OdPE2PqxIGjL1iCCIPA1SPSQpQ_B6qyIVyiCsp8s-_Gn2P76fpHfVlt6WV3_Lv5e5_6mul7cSVRFhiWhOIrsaaVTMbKZaUWNbQ-VMncGN__b_fwn-CAKeAQ&width=1360&height=850&dpi=192&waitMs=3000&format=png&localize=1&dark=1&filename=design)
 
 **একটি সিলেকশন ফ্লিপ করুন।** যেকোনো বক্সে রাইট-ক্লিক করে **Flip horizontal** বা **Flip vertical** বেছে নিন সেটিকে যথাস্থানে মিরর করতে, অথবা কিবোর্ড থেকে `Shift+H` / `Shift+V` চাপুন - Shift, কারণ একা `V` হলো Pointer টুল। নির্বাচিত প্রতিটি বক্স নিজ অক্ষে এক Undo ধাপে মিরর হয়, এবং মিররটি একটি প্রকৃত ট্রান্সফর্ম, তাই এটি শুধু ক্যানভাসে নয়, বরং এক্সপোর্ট করা SVG, PDF ও PNG-তেও বজায় থাকে।
 

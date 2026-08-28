@@ -116,7 +116,7 @@ Lolly は、そのすべてを底上げします。
 
 はい。**Design** を開いて **Import a design**（デザインの読み込み）をクリックしてください。Figma のネイティブ形式 **.fig**（Save local copy）、Penpot の **.penpot** エクスポート、Illustrator の **.ai** または **.pdf**、InDesign の **.idml**（File → Export → InDesign Markup）、そして **あらゆる SVG**（間口の広い入口で、ほとんどのデザインアプリが書き出せます）に対応します。アカウントもプラグインも、デザインアプリのライセンスも必要ありません。
 
-![Designのオープンキャンバス、ツールバーにデザインのインポートを表示](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Designのオープンキャンバス、ツールバーにデザインのインポートを表示](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D17VVRa9swEP41ekyQLrbjPOyhVeeOrSsbG3lXbLkYZCnISmn264tO9irFhdJCoZQIpBNn9N2dvu_k3cOX1opeEuCTpeNkG0BDy8ljZe28pyDA74UlUC4WOyt0sxgOthW1JJAD9wv1y6rFQWCDMB6BAK-NdqLTBLg2thcqeAnk68vaKGOXg-yFdl29dPLBef8VAZ6V_qjUTloCvO-aRvlcc0QdhB58iCWDMVNnD1iSUIOcAvASY2qsEUeex-XSOEJ6koaT_6Q1iY89IY4mw4TCmmJYc9BNZKPQ00ywxxJS-BlqcnL2KfJF3xhZf3WdwwsMd8xZ4VEgEF6EGornaH-ByW_iHkVAj-aAtpcO7Y1R6kggX1Uz7ext1wt7PNEOk7BZ7UbtYCpKtj4NZ_YE-Doh_hOwHnff-1K_M83xlPmyiJhn8AbmL5C61nZSN8g00OlFoK2xkyjCRofOBro3g5N2OdPE2PqxIGjL1iCCIPA1SPSQpQ_B6qyIVyiCsp8s-_Gn2P76fpHfVlt6WV3_Lv5e5_6mul7cSVRFhiWhOIrsaaVTMbKZaUWNbQ-VMncGN__b_fwn-CAKeAQ&width=1360&height=850&dpi=192&waitMs=3000&format=png&localize=1&dark=1&filename=design)
 
 レイヤーは、オープンキャンバス上に編集できるボックスとして読み込まれます。テキストは入力し直せるままで、シェイプはシェイプのまま、画像はあなた自身の画像ライブラリーに加わり、書体と色はブランドのグローバル設定に従います。保存すれば、そのレイアウトは Lolly を持つ誰もが中身を入れ替えられる、URL で指定できる再利用可能なテンプレートになります。読み込み時に再レンダリングされるライブツール（QR コード、チャートなど）を混ぜ込むこともできます。あとは Lolly の他のものと同じようにレンダリングされ、SVG、PDF、PNG などを、その URL から再現できます。[デザインの読み込み](/info/design-import.html)を参照してください。
 

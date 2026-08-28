@@ -80,7 +80,7 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 - **縮到比 Fit 更小**（最小到 20%），當你把東西擱在離畫框很遠的地方時，可以看到整片檯面。
 - **可調整大小的畫板。** 變更匯出尺寸會就地調整畫框大小；方塊的位置保持不變，因此你可以圍著既有內容重新取景。
 
-![Design 的自由畫布：畫板與其周圍的檯面](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design 的自由畫布：畫板與其周圍的檯面](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D17VVRa9swEP41ekyQLrbjPOyhVeeOrSsbG3lXbLkYZCnISmn264tO9irFhdJCoZQIpBNn9N2dvu_k3cOX1opeEuCTpeNkG0BDy8ljZe28pyDA74UlUC4WOyt0sxgOthW1JJAD9wv1y6rFQWCDMB6BAK-NdqLTBLg2thcqeAnk68vaKGOXg-yFdl29dPLBef8VAZ6V_qjUTloCvO-aRvlcc0QdhB58iCWDMVNnD1iSUIOcAvASY2qsEUeex-XSOEJ6koaT_6Q1iY89IY4mw4TCmmJYc9BNZKPQ00ywxxJS-BlqcnL2KfJF3xhZf3WdwwsMd8xZ4VEgEF6EGornaH-ByW_iHkVAj-aAtpcO7Y1R6kggX1Uz7ext1wt7PNEOk7BZ7UbtYCpKtj4NZ_YE-Doh_hOwHnff-1K_M83xlPmyiJhn8AbmL5C61nZSN8g00OlFoK2xkyjCRofOBro3g5N2OdPE2PqxIGjL1iCCIPA1SPSQpQ_B6qyIVyiCsp8s-_Gn2P76fpHfVlt6WV3_Lv5e5_6mul7cSVRFhiWhOIrsaaVTMbKZaUWNbQ-VMncGN__b_fwn-CAKeAQ&width=1360&height=850&dpi=192&waitMs=3000&format=png&localize=1&dark=1&filename=design)
 
 **翻轉選取項目。** 在任何方框上按右鍵，選擇 **Flip horizontal** 或 **Flip vertical** 即可原地鏡射，或以鍵盤按下 `Shift+H` / `Shift+V` - 之所以要按 Shift，是因為單獨的 `V` 是 Pointer 工具。每個選取的方框都會依自己的軸鏡射，並在一個復原步驟內完成，而且鏡射是真正的變形，因此會保留在匯出的 SVG、PDF 與 PNG 中，而不僅僅是畫布上。
 

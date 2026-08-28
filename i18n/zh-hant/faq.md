@@ -95,7 +95,7 @@ Lolly 把整體水準一起拉上來。
 
 可以。開啟 **Design**，點 **匯入設計**：它接受原生的 Figma **.fig**（Save local copy）、Penpot 的 **.penpot** 匯出檔、Illustrator 的 **.ai** 或 **.pdf**、InDesign 的 **.idml**（File → Export → InDesign Markup），或是**任何 SVG**（這是最寬的一道門，幾乎每個設計軟體都匯得出來）。不需要帳號、不需要外掛，也不需要設計軟體的授權。
 
-![Design 的開放畫布,工具列中顯示匯入設計](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design 的開放畫布,工具列中顯示匯入設計](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D17VVRa9swEP41ekyQLrbjPOyhVeeOrSsbG3lXbLkYZCnISmn264tO9irFhdJCoZQIpBNn9N2dvu_k3cOX1opeEuCTpeNkG0BDy8ljZe28pyDA74UlUC4WOyt0sxgOthW1JJAD9wv1y6rFQWCDMB6BAK-NdqLTBLg2thcqeAnk68vaKGOXg-yFdl29dPLBef8VAZ6V_qjUTloCvO-aRvlcc0QdhB58iCWDMVNnD1iSUIOcAvASY2qsEUeex-XSOEJ6koaT_6Q1iY89IY4mw4TCmmJYc9BNZKPQ00ywxxJS-BlqcnL2KfJF3xhZf3WdwwsMd8xZ4VEgEF6EGornaH-ByW_iHkVAj-aAtpcO7Y1R6kggX1Uz7ext1wt7PNEOk7BZ7UbtYCpKtj4NZ_YE-Doh_hOwHnff-1K_M83xlPmyiJhn8AbmL5C61nZSN8g00OlFoK2xkyjCRofOBro3g5N2OdPE2PqxIGjL1iCCIPA1SPSQpQ_B6qyIVyiCsp8s-_Gn2P76fpHfVlt6WV3_Lv5e5_6mul7cSVRFhiWhOIrsaaVTMbKZaUWNbQ-VMncGN__b_fwn-CAKeAQ&width=1360&height=850&dpi=192&waitMs=3000&format=png&localize=1&dark=1&filename=design)
 
 圖層會以可編輯的方塊出現在開放畫布上：文字仍然可以重打，形狀仍然是形狀，圖片會加進你自己的圖庫，字體與顏色則遵循品牌全域設定。存檔之後，這份版面就成為可重複使用、可用網址取用的範本，任何有 Lolly 的人都能重新填入內容；你還可以混入會在載入時重新算圖的即時工具（QR code、圖表）。從那裡開始，它就跟 Lolly 裡的其他東西一樣算圖：SVG、PDF、PNG 等等，都能從網址重現。請見[匯入設計](/info/design-import.html)。
 

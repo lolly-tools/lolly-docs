@@ -80,7 +80,7 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 - **Fit보다 더 축소**(20%까지)하면 프레임에서 멀리 떨어진 곳까지 세워 뒀을 때 작업대 전체를 볼 수 있어요.
 - **크기를 바꿀 수 있는 아트보드.** 내보내기 크기를 바꾸면 프레임이 제자리에서 리사이즈돼요. 상자는 위치를 지키니, 기존 내용을 중심으로 레이아웃을 다시 잡을 수 있어요.
 
-![Design의 자유 캔버스 - 아트보드와 그것을 둘러싼 작업대](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design의 자유 캔버스 - 아트보드와 그것을 둘러싼 작업대](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D17VVRa9swEP41ekyQLrbjPOyhVeeOrSsbG3lXbLkYZCnISmn264tO9irFhdJCoZQIpBNn9N2dvu_k3cOX1opeEuCTpeNkG0BDy8ljZe28pyDA74UlUC4WOyt0sxgOthW1JJAD9wv1y6rFQWCDMB6BAK-NdqLTBLg2thcqeAnk68vaKGOXg-yFdl29dPLBef8VAZ6V_qjUTloCvO-aRvlcc0QdhB58iCWDMVNnD1iSUIOcAvASY2qsEUeex-XSOEJ6koaT_6Q1iY89IY4mw4TCmmJYc9BNZKPQ00ywxxJS-BlqcnL2KfJF3xhZf3WdwwsMd8xZ4VEgEF6EGornaH-ByW_iHkVAj-aAtpcO7Y1R6kggX1Uz7ext1wt7PNEOk7BZ7UbtYCpKtj4NZ_YE-Doh_hOwHnff-1K_M83xlPmyiJhn8AbmL5C61nZSN8g00OlFoK2xkyjCRofOBro3g5N2OdPE2PqxIGjL1iCCIPA1SPSQpQ_B6qyIVyiCsp8s-_Gn2P76fpHfVlt6WV3_Lv5e5_6mul7cSVRFhiWhOIrsaaVTMbKZaUWNbQ-VMncGN__b_fwn-CAKeAQ&width=1360&height=850&dpi=192&waitMs=3000&format=png&localize=1&dark=1&filename=design)
 
 **선택 항목 뒤집기.** 아무 박스나 우클릭한 뒤 **Flip horizontal** 또는 **Flip vertical**을 선택하면 그 자리에서 좌우 또는 상하로 뒤집힙니다. 키보드로는 `Shift+H` / `Shift+V`를 누르면 됩니다 - Shift를 쓰는 이유는 단독 `V`가 포인터 도구이기 때문입니다. 선택한 각 박스는 자신의 축을 기준으로 실행 취소 한 단계 안에서 뒤집히며, 이 뒤집기는 실제 변형이므로 캔버스뿐 아니라 내보낸 SVG, PDF, PNG에도 그대로 유지됩니다.
 

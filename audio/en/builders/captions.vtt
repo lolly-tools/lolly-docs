@@ -126,143 +126,143 @@ the CLI and the URL.
 00:02:55.816 --> 00:02:59.518
 That scales further than five controls.
 
-00:03:00.282 --> 00:03:03.310
+00:03:00.286 --> 00:03:03.378
 Give an input a section and the host folds
 
-00:03:03.368 --> 00:03:07.285
-it away, so a fifty-input tool like the D3
+00:03:03.439 --> 00:03:06.891
+it away, so a fifty-input tool like Chart
 
-00:03:07.345 --> 00:03:10.998
-Chart Studio still opens as a short stack
+00:03:06.966 --> 00:03:10.349
+still opens as a short stack with the rest
 
-00:03:11.102 --> 00:03:14.545
-with the rest filed behind named groups.
+00:03:10.435 --> 00:03:12.969
+filed behind named groups.
 
-00:03:15.306 --> 00:03:17.616
+00:03:13.731 --> 00:03:16.041
 Authoring Tools - the full guide:
 
-00:03:17.696 --> 00:03:20.285
+00:03:16.121 --> 00:03:18.710
 manifest, template, styles, hooks,
 
-00:03:20.346 --> 00:03:22.669
+00:03:18.771 --> 00:03:21.094
 composition and publishing.
 
-00:03:23.437 --> 00:03:26.405
+00:03:21.862 --> 00:03:24.830
 Authoring Assets - catalog assets, tiers,
 
-00:03:26.465 --> 00:03:29.143
+00:03:24.890 --> 00:03:27.568
 locales, palettes, themable icons and
 
-00:03:29.232 --> 00:03:30.319
+00:03:27.657 --> 00:03:28.744
 fonts.
 
-00:03:30.700 --> 00:03:44.900
+00:03:29.125 --> 00:03:43.325
 Host API - the HostV1 capability bridge every tool is written against «the portable API tools are written against - note hooks are not sandboxed, see Authoring Tools».
 
-00:03:45.666 --> 00:03:49.982
+00:03:44.091 --> 00:03:48.407
 URL Mode - every input as a URL parameter;
 
-00:03:50.045 --> 00:03:52.887
+00:03:48.470 --> 00:03:51.312
 reserved params, compact encoding, packed
 
-00:03:52.949 --> 00:03:53.994
+00:03:51.374 --> 00:03:52.419
 links.
 
-00:03:55.134 --> 00:03:57.385
+00:03:53.559 --> 00:03:55.810
 Run & integrate
 
-00:03:58.332 --> 00:04:01.130
+00:03:56.757 --> 00:03:59.555
 CLI - headless rendering; the same render
 
-00:04:01.199 --> 00:04:05.819
+00:03:59.624 --> 00:04:04.244
 path as the GUI, driven by --foo=bar argv.
 
-00:04:06.586 --> 00:04:09.994
+00:04:05.011 --> 00:04:08.419
 TUI - the interactive terminal shell.
 
-00:04:10.759 --> 00:04:14.218
+00:04:09.184 --> 00:04:12.643
 MCP Server - the native endpoint that lets
 
-00:04:14.307 --> 00:04:18.194
+00:04:12.732 --> 00:04:16.619
 an AI agent discover and run tools.
 
-00:04:18.968 --> 00:04:22.536
+00:04:17.393 --> 00:04:20.961
 AI Agents - driving Lolly from a model: a
 
-00:04:22.618 --> 00:04:25.369
+00:04:21.043 --> 00:04:23.794
 URL is the API.
 
-00:04:26.137 --> 00:04:29.896
+00:04:24.562 --> 00:04:28.321
 Chrome Extension - capture a live URL as a
 
-00:04:29.960 --> 00:04:31.843
+00:04:28.385 --> 00:04:30.268
 reusable asset.
 
-00:04:32.998 --> 00:04:35.173
+00:04:31.423 --> 00:04:33.598
 Ship & operate it
 
-00:04:36.131 --> 00:04:38.798
+00:04:34.556 --> 00:04:37.223
 Build Guide - build every target: CLI,
 
-00:04:38.879 --> 00:04:41.294
+00:04:37.304 --> 00:04:39.719
 TUI, desktop, mobile.
 
-00:04:42.055 --> 00:04:44.549
+00:04:40.480 --> 00:04:42.974
 Deployment - the web app, the apps and the
 
-00:04:44.605 --> 00:04:48.169
+00:04:43.030 --> 00:04:46.594
 backend services; where each piece runs.
 
-00:04:48.922 --> 00:04:52.082
+00:04:47.347 --> 00:04:50.507
 Configuration - profiles, brand packs,
 
-00:04:52.144 --> 00:04:54.689
+00:04:50.569 --> 00:04:53.114
 capability gating, feature flags and
 
-00:04:54.752 --> 00:04:56.770
+00:04:53.177 --> 00:04:55.195
 catalog validation.
 
-00:04:57.877 --> 00:04:59.974
+00:04:56.302 --> 00:04:58.399
 Trust & data
 
-00:05:01.015 --> 00:05:03.990
+00:04:59.440 --> 00:05:02.415
 Rights and authorship are inputs like any
 
-00:05:04.040 --> 00:05:04.969
+00:05:02.465 --> 00:05:03.394
 other.
 
-00:05:05.745 --> 00:05:08.808
+00:05:04.170 --> 00:05:07.233
 Embed & Track Image declares creator,
 
-00:05:08.879 --> 00:05:12.545
+00:05:07.304 --> 00:05:10.970
 copyright, licence and contact fields, and
 
-00:05:12.580 --> 00:05:15.429
+00:05:11.005 --> 00:05:13.854
 the export writes them into the file's own
 
-00:05:15.489 --> 00:05:19.194
+00:05:13.914 --> 00:05:17.619
 metadata and its C2PA manifest.
 
-00:05:19.948 --> 00:05:23.101
+00:05:18.373 --> 00:05:21.526
 Content Credentials Identity - CA-issued
 
-00:05:23.170 --> 00:05:26.553
+00:05:21.595 --> 00:05:24.978
 signing for on-device C2PA; engine
 
-00:05:26.614 --> 00:05:29.545
+00:05:25.039 --> 00:05:27.970
 contracts and the operator runbook.
 
-00:05:30.316 --> 00:05:33.407
+00:05:28.741 --> 00:05:31.832
 Data Transfer - the lolly-backup bundle:
 
-00:05:33.485 --> 00:05:35.900
+00:05:31.910 --> 00:05:34.325
 envelope, integrity and cross-shell
 
-00:05:35.961 --> 00:05:37.444
+00:05:34.386 --> 00:05:35.869
 guarantees.
 
-00:05:38.219 --> 00:05:41.287
+00:05:36.644 --> 00:05:39.712
 About - the project, its licence boundary
 
-00:05:41.384 --> 00:05:43.294
+00:05:39.809 --> 00:05:41.719
 and the repository.

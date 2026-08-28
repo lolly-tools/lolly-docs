@@ -19,7 +19,7 @@ Tout ce qui compose un profil vit **sur l'appareil**, dans la base de données l
 | **Accessibilité** | Quatre interrupteurs de confort - *Reduce motion*, *Hide colourful previews*, *High contrast*, *Large text* - conservés sur la fiche du profil, donc inclus dans un export de profil. Voir [Accessibilité](#accessibility). |
 | **Ton travail** | Les sessions enregistrées (avec vignettes) - organisées en dossiers imbriqués dans **[Projects](/info/using.html)** - ta bibliothèque **My images** et les statistiques d'activité locales, tout cela lié à ce profil. |
 
-![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&walker=1&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
 
 ![L'écran Profile - nom, contact, une photo de profil optionnelle et tes préférences](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&dark=1&filename=profile-details)
 
@@ -35,7 +35,7 @@ Le mot « profil » suggère une personne fixe et unique, mais dans Lolly c'est 
 
 ### En tant qu'individu
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
 
 ![Le contrôle de photo de profil, vide jusqu'à ce que tu importes une photo qui reste ensuite sur cet appareil](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
 
@@ -53,7 +53,7 @@ Dans Lolly, ce rôle n'est qu'**un autre profil que tu gardes sous la main** - u
 
 À tout moment, une installation n'a **qu'un seul profil actif** - les informations qu'un outil voit à l'instant présent. Il n'existe pas de sélecteur de profil dans l'application ; à la place, chaque profil est un **paquet portable** (un simple `.zip`, voir [ci-dessous](#moving-a-profile-to-a-new-device)). C'est volontairement le même mécanisme que pour changer d'appareil - un profil est un fichier que tu peux enregistrer, copier et charger.
 
-![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
 
 - <!--i:trash--> **Changement le plus propre :** **Profile → Storage → Clear all my data**, puis **Import** le paquet du contexte dans lequel tu entres. Tu crées désormais uniquement sous ce profil.
 - <!--i:layers--> **Superposition :** importer *sans* d'abord effacer **fusionne** - le profil importé, les sessions et les images viennent s'ajouter à ce qui existe déjà, remplaçant tout ce qui porte le même nom et laissant le reste intact. Pratique pour récupérer les sessions enregistrées d'une équipe dans ta propre configuration ; pas ce qu'il faut si tu as besoin d'une séparation nette des rôles.
@@ -104,7 +104,7 @@ Si le navigateur n'a pas accordé de stockage persistant, la section le signale 
 
 ## Déplacer un profil vers un nouvel appareil
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls)
 
 Comme un profil est entièrement local, la seule façon de le faire arriver sur une installation vierge - un nouvel ordinateur portable, un navigateur fraîchement réinitialisé, la machine d'un collègue, une machine hors ligne - est de **transporter le fichier**. Aucune connexion ne le restaure pour toi, et c'est précisément le but : rien n'a jamais quitté ton appareil au départ.
 
@@ -122,7 +122,7 @@ Pour la disposition exacte du bundle, la politique de version et les règles d'i
 
 ## Comment les outils utilisent ton profil
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&dark=1&filename=pd-use-my-details)
 
 Un outil ne fait jamais que *pré-remplir* les champs de profil qu'il a été explicitement conçu pour lier :
 

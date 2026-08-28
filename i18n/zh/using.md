@@ -80,7 +80,7 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 - **缩小到超过“适应”比例**（最小可到 20%），当你把元素暂存到离画框很远的地方时，可以借此看到整个粘贴板。
 - **可调整大小的画板。** 更改导出尺寸会原地调整画框大小；方框保持原有位置，因此你可以围绕现有内容重新取景。
 
-![Design 的自由画布——画板及其周围的粘贴板](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design 的自由画布——画板及其周围的粘贴板](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D17VVRa9swEP41ekyQLrbjPOyhVeeOrSsbG3lXbLkYZCnISmn264tO9irFhdJCoZQIpBNn9N2dvu_k3cOX1opeEuCTpeNkG0BDy8ljZe28pyDA74UlUC4WOyt0sxgOthW1JJAD9wv1y6rFQWCDMB6BAK-NdqLTBLg2thcqeAnk68vaKGOXg-yFdl29dPLBef8VAZ6V_qjUTloCvO-aRvlcc0QdhB58iCWDMVNnD1iSUIOcAvASY2qsEUeex-XSOEJ6koaT_6Q1iY89IY4mw4TCmmJYc9BNZKPQ00ywxxJS-BlqcnL2KfJF3xhZf3WdwwsMd8xZ4VEgEF6EGornaH-ByW_iHkVAj-aAtpcO7Y1R6kggX1Uz7ext1wt7PNEOk7BZ7UbtYCpKtj4NZ_YE-Doh_hOwHnff-1K_M83xlPmyiJhn8AbmL5C61nZSN8g00OlFoK2xkyjCRofOBro3g5N2OdPE2PqxIGjL1iCCIPA1SPSQpQ_B6qyIVyiCsp8s-_Gn2P76fpHfVlt6WV3_Lv5e5_6mul7cSVRFhiWhOIrsaaVTMbKZaUWNbQ-VMncGN__b_fwn-CAKeAQ&width=1360&height=850&dpi=192&waitMs=3000&format=png&localize=1&dark=1&filename=design)
 
 **翻转所选内容。** 右键点击任意方框,选择 **Flip horizontal**(水平翻转)或 **Flip vertical**(垂直翻转)即可原地镜像,或按键盘上的 `Shift+H` / `Shift+V` - 之所以要加 Shift,是因为单独的 `V` 是 Pointer 工具。每个被选中的方框都沿自己的轴镜像,并作为一个撤销步骤记录;镜像是真正的变换,因此它会保留在导出的 SVG、PDF 和 PNG 中,而不只是停留在画布上。
 

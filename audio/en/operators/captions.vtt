@@ -843,47 +843,68 @@ Two encryption tiers.
 00:20:38.825 --> 00:20:53.025
 Standard locks are quick, universal deterrents; Strong «AES-256» is full protection - reach for Strong for anything sensitive, noting it wants a modern reader.
 
-00:20:54.134 --> 00:20:56.197
+00:20:54.115 --> 00:20:57.275
+Standalone, or governed by a control plane
+
+00:20:57.950 --> 00:21:01.900
+Two shapes, and you choose per deployment.
+
+00:21:02.250 --> 00:21:20.525
+Standalone is the default and needs no server: Lolly renders on-device, every producer works in-app, and the git-as-data governance above is entirely optional - a single organisation can run this repo with nothing hosted at all.
+
+00:21:20.875 --> 00:21:25.925
+When you want org-wide control, add a control plane.
+
+00:21:26.275 --> 00:21:51.075
+lolly-work is a separate, open-source «MPL-2 point 0» service you host - or evaluate on the hosted sandbox - that governs the shell live: SSO-gated sign-in, feature-flag / export / watermark policy, tool-input overlays, catalog federation, approvals and a hash-chained audit log, all served to the shell without a code change here.
+
+00:21:51.425 --> 00:22:06.150
+It is brand-agnostic «config plus a pack mount», consumes this repo's engine and packs unmodified, and never becomes the render path: Lolly still renders on-device by design.
+
+00:22:06.500 --> 00:22:14.600
+OSS = individual freedom; OSS + control plane = organizational freedom.
+
+00:22:15.709 --> 00:22:17.772
 Where to go next
 
-00:20:57.235 --> 00:21:00.819
+00:22:18.810 --> 00:22:22.394
 Security & Verification - the standards,
 
-00:21:00.884 --> 00:21:04.325
+00:22:22.459 --> 00:22:25.900
 primitives, trust model and testing behind
 
-00:21:04.371 --> 00:21:07.543
+00:22:25.946 --> 00:22:29.118
 the credentials and encryption above.
 
-00:21:08.325 --> 00:21:11.326
+00:22:29.900 --> 00:22:32.901
 Adoption & Governance - personas, the
 
-00:21:11.388 --> 00:21:14.301
+00:22:32.963 --> 00:22:35.876
 deflection metric and governance-as-data
 
-00:21:14.369 --> 00:21:15.669
+00:22:35.944 --> 00:22:37.244
 in full.
 
-00:21:16.428 --> 00:21:20.873
+00:22:38.003 --> 00:22:42.448
 Deployment - deploy/serve/hybrid, MDM and
 
-00:21:20.965 --> 00:21:23.370
+00:22:42.540 --> 00:22:44.945
 self-hosting the services.
 
-00:21:24.118 --> 00:21:27.177
+00:22:45.693 --> 00:22:48.752
 Configuration - profiles, brand packs,
 
-00:21:27.237 --> 00:21:30.370
+00:22:48.812 --> 00:22:51.945
 capability gating and feature flags.
 
-00:21:31.116 --> 00:21:33.968
+00:22:52.691 --> 00:22:55.543
 Privacy Policy - the formal statement of
 
-00:21:34.031 --> 00:21:36.976
+00:22:55.606 --> 00:22:58.551
 what is and isn't collected, stored and
 
-00:21:37.076 --> 00:21:38.119
+00:22:58.651 --> 00:22:59.694
 sent.
 
-00:21:38.500 --> 00:21:47.475
+00:23:00.075 --> 00:23:09.050
 Server Surface - the complete inventory of what runs server-side «two optional components» versus on-device.

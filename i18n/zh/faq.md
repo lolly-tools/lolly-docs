@@ -113,7 +113,7 @@ Lolly 让一切水涨船高。
 
 可以。打开 **Design**，点击 **Import a design**（导入设计）：它接受 Figma 原生的 **.fig**（Save local copy）、Penpot 导出的 **.penpot**、Illustrator 的 **.ai** 或 **.pdf**、InDesign 的 **.idml**（File → Export → InDesign Markup），或者**任意 SVG**（这是最宽的一道门，几乎所有设计软件都能导出）。不需要账号、不需要插件，也不需要设计软件的授权。
 
-![Design 的开放画布,工具栏中显示导入设计](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design 的开放画布,工具栏中显示导入设计](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D17VVRa9swEP41ekyQLrbjPOyhVeeOrSsbG3lXbLkYZCnISmn264tO9irFhdJCoZQIpBNn9N2dvu_k3cOX1opeEuCTpeNkG0BDy8ljZe28pyDA74UlUC4WOyt0sxgOthW1JJAD9wv1y6rFQWCDMB6BAK-NdqLTBLg2thcqeAnk68vaKGOXg-yFdl29dPLBef8VAZ6V_qjUTloCvO-aRvlcc0QdhB58iCWDMVNnD1iSUIOcAvASY2qsEUeex-XSOEJ6koaT_6Q1iY89IY4mw4TCmmJYc9BNZKPQ00ywxxJS-BlqcnL2KfJF3xhZf3WdwwsMd8xZ4VEgEF6EGornaH-ByW_iHkVAj-aAtpcO7Y1R6kggX1Uz7ext1wt7PNEOk7BZ7UbtYCpKtj4NZ_YE-Doh_hOwHnff-1K_M83xlPmyiJhn8AbmL5C61nZSN8g00OlFoK2xkyjCRofOBro3g5N2OdPE2PqxIGjL1iCCIPA1SPSQpQ_B6qyIVyiCsp8s-_Gn2P76fpHfVlt6WV3_Lv5e5_6mul7cSVRFhiWhOIrsaaVTMbKZaUWNbQ-VMncGN__b_fwn-CAKeAQ&width=1360&height=850&dpi=192&waitMs=3000&format=png&localize=1&dark=1&filename=design)
 
 图层会以可编辑的方框出现在自由画布上：文字仍可重新输入，形状仍是形状，图片进入你自己的图片库，字体和颜色遵循品牌全局设定。保存之后，这个版式就成为一个可复用、可用 URL 寻址的模板，任何用 Lolly 的人都能重新填充内容，你还可以混入在加载时重新渲染的实时工具（二维码、图表）。之后它就和 Lolly 里的其他东西一样渲染：SVG、PDF、PNG 等等，都可以从它的 URL 复现。参见[导入设计](/info/design-import.html)。
 

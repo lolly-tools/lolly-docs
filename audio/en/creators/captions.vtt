@@ -429,245 +429,317 @@ every web technology is available to a
 00:08:12.752 --> 00:08:16.545
 template author, so the ceiling is high.
 
-00:08:17.323 --> 00:08:20.656
+00:08:17.674 --> 00:08:19.416
+Grown, not drawn
+
+00:08:20.507 --> 00:08:22.651
+Growth grows the picture instead of
+
+00:08:22.710 --> 00:08:25.637
+drawing it: a seeded system spreads out
+
+00:08:25.723 --> 00:08:28.969
+from a ring, a line, your own words or
+
+00:08:29.028 --> 00:08:31.784
+your logo until it fills the frame, in
+
+00:08:31.844 --> 00:08:33.170
+your palette.
+
+00:08:33.941 --> 00:08:37.359
+The same seed always grows the same piece,
+
+00:08:37.429 --> 00:08:40.694
+so a link reproduces it exactly.
+
+00:08:41.469 --> 00:08:44.688
+What comes out is ordinary SVG geometry
+
+00:08:44.780 --> 00:08:48.203
+rather than a picture of a drawing, so it
+
+00:08:48.274 --> 00:08:51.252
+prints, plots and cuts - and the same
+
+00:08:51.306 --> 00:08:54.215
+design animates from the first seed to the
+
+00:08:54.297 --> 00:08:56.495
+finished form as video.
+
+00:08:57.645 --> 00:09:00.577
+Motion that answers the music
+
+00:09:01.569 --> 00:09:04.542
+Synth solves a fluid field on the graphics
+
+00:09:04.606 --> 00:09:07.819
+card and paints it in your colours.
+
+00:09:08.580 --> 00:09:10.795
+Give it a track and the field moves with
+
+00:09:10.851 --> 00:09:15.217
+the sound; it exports as an MP4, WebM, GIF
+
+00:09:15.275 --> 00:09:18.132
+or animated PNG loop that joins cleanly
+
+00:09:18.205 --> 00:09:21.910
+end to end, rendered frame by frame from a
+
+00:09:21.974 --> 00:09:24.261
+driven clock rather than recorded off the
+
+00:09:24.327 --> 00:09:26.510
+screen - so the motion never drifts
+
+00:09:26.547 --> 00:09:29.343
+against the soundtrack, and the same link
+
+00:09:29.405 --> 00:09:32.345
+renders the same clip at any length.
+
+00:09:33.123 --> 00:09:36.456
 Author tools, not files: build the thing
 
-00:08:20.715 --> 00:08:23.613
+00:09:36.515 --> 00:09:39.413
 that generates 10000 cards rather than
 
-00:08:23.665 --> 00:08:26.243
+00:09:39.465 --> 00:09:42.043
 making 10000 cards.
 
-00:08:27.024 --> 00:08:29.931
+00:09:42.824 --> 00:09:45.731
 Lock what shouldn't change; expose only
 
-00:08:29.994 --> 00:08:32.094
+00:09:45.794 --> 00:09:47.894
 what's meant to vary.
 
-00:08:33.217 --> 00:08:35.595
+00:09:49.017 --> 00:09:51.395
 Touches you'll notice
 
-00:08:36.175 --> 00:08:38.625
+00:09:51.975 --> 00:09:54.425
 Print, done right.
 
-00:08:38.975 --> 00:08:54.325
+00:09:54.775 --> 00:10:10.125
 Real physical units «mm/cm/in/pt» and DPI, bleed and crop marks, CMYK and PDF/X-4 output-intent - a print shop gets exactly what it needs.
 
-00:08:54.675 --> 00:08:57.000
+00:10:10.475 --> 00:10:12.800
 See Exporting.
 
-00:08:57.350 --> 00:09:00.125
+00:10:13.150 --> 00:10:15.925
 Video and motion.
 
-00:09:00.475 --> 00:09:13.600
+00:10:16.275 --> 00:10:29.400
 Export WebM/MP4 «with audio tracks», animated PNG/WebP and animated SVG - from the same template that makes your stills.
 
-00:09:13.950 --> 00:09:36.325
+00:10:29.750 --> 00:10:52.125
 Sequence Studio goes further: a real timeline under the canvas, with a magnetic row of clips, free overlay lanes, trim and split, transition presets, voiceover recording and a music mix - rendered out as MP4, WebM, GIF or APNG by a deterministic compositor rather than a screen recording.
 
-00:09:36.675 --> 00:09:43.250
+00:10:52.475 --> 00:10:59.050
 Lottie files come in as animated assets and render out to any of those.
 
-00:09:43.600 --> 00:09:54.150
+00:10:59.400 --> 00:11:09.950
 Above the clips sit keyframes: pose a box at one instant, lift it off the page with real depth and fly a camera over the result.
 
-00:09:54.500 --> 00:09:59.525
+00:11:10.300 --> 00:11:15.325
 See Using Lolly → Timeline and Animating.
 
-00:09:59.875 --> 00:10:01.700
+00:11:15.675 --> 00:11:17.500
 Audio.
 
-00:10:02.050 --> 00:10:20.500
+00:11:17.850 --> 00:11:36.300
 Record a voice note and save it as MP3 «or its native M4A/OGG/WebM», all on-device - and bring in MP3, WAV, OGG, M4A, FLAC, MIDI or tracker modules «MOD/XM/IT/…»
 
-00:10:20.850 --> 00:10:27.425
+00:11:36.650 --> 00:11:43.225
 as a music bed under a video or an ambient track in Neurospicy Mode.
 
-00:10:28.165 --> 00:10:30.219
+00:11:43.965 --> 00:11:46.019
 Draw, don't settle.
 
-00:10:30.990 --> 00:10:34.281
+00:11:46.790 --> 00:11:50.081
 The Design tool has a real pen: click to
 
-00:10:34.342 --> 00:10:37.159
+00:11:50.142 --> 00:11:52.959
 place points, drag to curve and pick the
 
-00:10:37.221 --> 00:10:39.894
+00:11:53.021 --> 00:11:55.694
 kind of curve that runs through them.
 
-00:10:40.660 --> 00:10:43.288
+00:11:56.460 --> 00:11:59.088
 Combine shapes with union, subtract,
 
-00:10:43.332 --> 00:10:46.716
+00:11:59.132 --> 00:12:02.516
 intersect and exclude, outline a stroke,
 
-00:10:46.779 --> 00:10:50.015
+00:12:02.579 --> 00:12:05.815
 offset a silhouette, simplify a path - the
 
-00:10:50.076 --> 00:10:53.965
+00:12:05.876 --> 00:12:09.765
 geometry is exact Bezier maths, so a shape
 
-00:10:54.022 --> 00:10:56.526
+00:12:09.822 --> 00:12:12.326
 you draw stays crisp at any size and
 
-00:10:56.587 --> 00:10:59.173
+00:12:12.387 --> 00:12:14.973
 renders identically from a link or the
 
-00:10:59.241 --> 00:11:00.394
+00:12:15.041 --> 00:12:16.194
 CLI.
 
-00:11:01.185 --> 00:11:05.269
+00:12:16.985 --> 00:12:21.069
 See Using Lolly → Drawing your own shapes.
 
-00:11:05.650 --> 00:11:08.325
+00:12:21.450 --> 00:12:24.125
 Editable vectors.
 
-00:11:08.675 --> 00:11:13.225
+00:12:24.475 --> 00:12:29.025
 SVG, EPS, EMF and DXF export.
 
-00:11:13.575 --> 00:11:23.400
+00:12:29.375 --> 00:12:39.200
 Text becomes outlined paths in vector output, so a print shop or a cutter gets crisp geometry that opens anywhere.
 
-00:11:23.750 --> 00:11:33.075
+00:12:39.550 --> 00:12:48.875
 «Outlined text is no longer re-typable in Illustrator - that's the trade for perfect fidelity without the font.»
 
-00:11:33.814 --> 00:11:36.568
+00:12:49.614 --> 00:12:52.368
 Convenience that adds up.
 
-00:11:37.338 --> 00:11:39.766
+00:12:53.138 --> 00:12:55.566
 Batch a spreadsheet into a folder of
 
-00:11:39.842 --> 00:11:43.167
+00:12:55.642 --> 00:12:58.967
 assets; save sessions and organise them
 
-00:11:43.202 --> 00:11:47.171
+00:12:59.002 --> 00:13:02.971
 into Projects; share any state as a URL;
 
-00:11:47.242 --> 00:11:50.294
+00:13:03.042 --> 00:13:06.094
 render a whole folder as one zip.
 
-00:11:51.080 --> 00:11:54.343
+00:13:06.880 --> 00:13:10.143
 A UI that's actually pleasant.
 
-00:11:55.133 --> 00:11:58.445
+00:13:10.933 --> 00:13:14.245
 Undo/redo everywhere, a sound layer you
 
-00:11:58.504 --> 00:12:01.904
+00:13:14.304 --> 00:13:17.704
 can turn off, a theme cycle, live-camera
 
-00:12:01.999 --> 00:12:04.586
+00:13:17.799 --> 00:13:20.386
 filters - and Neurospicy Mode, a
 
-00:12:04.648 --> 00:12:07.304
+00:13:20.448 --> 00:13:23.104
 background focus-music player that follows
 
-00:12:07.380 --> 00:12:10.344
+00:13:23.180 --> 00:13:26.144
 you across the app in its own dock.
 
-00:12:11.106 --> 00:12:14.519
+00:13:26.906 --> 00:13:30.319
 A calmer interface when you want one.
 
-00:12:15.305 --> 00:12:17.978
+00:13:31.105 --> 00:13:33.778
 Four switches under Profile →
 
-00:12:18.058 --> 00:12:20.930
+00:13:33.858 --> 00:13:36.730
 Accessibility - Reduce motion, Hide
 
-00:12:21.017 --> 00:12:23.896
+00:13:36.817 --> 00:13:39.696
 colourful previews, High contrast and
 
-00:12:23.957 --> 00:12:26.427
+00:13:39.757 --> 00:13:42.227
 Large text - settle the app around your
 
-00:12:26.488 --> 00:12:27.494
+00:13:42.288 --> 00:13:43.294
 work.
 
-00:12:28.262 --> 00:12:31.367
+00:13:44.062 --> 00:13:47.167
 Each is off until you turn it on, and none
 
-00:12:31.409 --> 00:12:34.644
+00:13:47.209 --> 00:13:50.444
 of them touch your canvas or move a pixel
 
-00:12:34.711 --> 00:12:36.719
+00:13:50.511 --> 00:13:52.519
 of what you export.
 
-00:12:37.525 --> 00:12:41.518
+00:13:53.325 --> 00:13:57.318
 See Your profile → Accessibility.
 
-00:12:42.654 --> 00:12:45.115
+00:13:58.454 --> 00:14:00.915
 Get the most out of it
 
-00:12:46.075 --> 00:12:49.418
+00:14:01.875 --> 00:14:05.218
 Quickstart - brand in, first file out.
 
-00:12:49.800 --> 00:12:56.500
+00:14:05.600 --> 00:14:12.300
 The Brand Studio - shape your logos, colours, type and tokens «#/start».
 
-00:12:57.247 --> 00:12:59.935
+00:14:13.047 --> 00:14:15.735
 Using Lolly - the canvas, controls,
 
-00:13:00.014 --> 00:13:02.694
+00:14:15.814 --> 00:14:18.494
 saving, projects and phone use.
 
-00:13:03.472 --> 00:13:06.350
+00:14:19.272 --> 00:14:22.150
 Your profile - the details tools pre-fill
 
-00:13:06.456 --> 00:13:09.102
+00:14:22.256 --> 00:14:24.902
 from, and how to carry them between
 
-00:13:09.148 --> 00:13:10.544
+00:14:24.948 --> 00:14:26.344
 devices.
 
-00:13:11.318 --> 00:13:14.351
+00:14:27.118 --> 00:14:30.151
 Import a design - bring in your Figma /
 
-00:13:14.412 --> 00:13:18.530
+00:14:30.212 --> 00:14:34.330
 Penpot / Illustrator / InDesign work, and
 
-00:13:18.591 --> 00:13:21.213
+00:14:34.391 --> 00:14:37.013
 your PowerPoint decks - edited or
 
-00:13:21.275 --> 00:13:23.420
+00:14:37.075 --> 00:14:39.220
 rebranded on-device.
 
-00:13:24.186 --> 00:13:26.665
+00:14:39.986 --> 00:14:42.465
 Working together - two people editing one
 
-00:13:26.753 --> 00:13:30.196
+00:14:42.553 --> 00:14:45.996
 session live, device to device, with no
 
-00:13:30.256 --> 00:13:33.120
+00:14:46.056 --> 00:14:48.920
 account and no server in the middle.
 
-00:13:33.917 --> 00:13:36.077
+00:14:49.717 --> 00:14:51.877
 Search - one field at the foot of the
 
-00:13:36.154 --> 00:13:38.938
+00:14:51.954 --> 00:14:54.738
 gallery, Utilities, Projects, the
 
-00:13:39.002 --> 00:13:41.937
+00:14:54.802 --> 00:14:57.737
 Catalogue, the Dashboard and Profile that
 
-00:13:41.998 --> 00:13:44.834
+00:14:57.798 --> 00:15:00.634
 reaches your tools, your saved work, the
 
-00:13:44.897 --> 00:13:47.344
+00:15:00.697 --> 00:15:03.144
 catalogue and your settings.
 
-00:13:47.725 --> 00:13:58.050
+00:15:03.525 --> 00:15:13.850
 Ask Lolly «#/ask» - type a question and get the matching section of these guides back verbatim, with a link straight to it.
 
-00:13:58.400 --> 00:14:13.100
+00:15:14.200 --> 00:15:28.900
 The Dashboard «#/d» - the instrument panel: your design system shown read-only, the full capability map, what this device can do and a glance at your activity and storage.
 
-00:14:13.836 --> 00:14:16.698
+00:15:29.636 --> 00:15:32.498
 Your favourites - star what you use and it
 
-00:14:16.769 --> 00:14:19.870
+00:15:32.569 --> 00:15:35.670
 gets a tile of its own above the grid.
 
-00:14:20.645 --> 00:14:23.803
+00:15:36.445 --> 00:15:39.603
 Exporting & formats - every format, print
 
-00:14:23.839 --> 00:14:26.069
+00:15:39.639 --> 00:15:41.869
 units, video and batch.

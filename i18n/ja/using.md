@@ -80,7 +80,7 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 - フレームの遠くに要素を置いたときは、**Fit より先までズームアウト**（20% まで）すると台紙全体が見えます。
 - **アートボードはサイズを変えられます。** 書き出しサイズを変えるとフレームがその場でリサイズされます。ボックスの位置は変わらないので、既存の内容に合わせてレイアウトを取り直せます。
 
-![Design のフリーキャンバス。アートボードとそれを囲む台紙](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![Design のフリーキャンバス。アートボードとそれを囲む台紙](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D17VVRa9swEP41ekyQLrbjPOyhVeeOrSsbG3lXbLkYZCnISmn264tO9irFhdJCoZQIpBNn9N2dvu_k3cOX1opeEuCTpeNkG0BDy8ljZe28pyDA74UlUC4WOyt0sxgOthW1JJAD9wv1y6rFQWCDMB6BAK-NdqLTBLg2thcqeAnk68vaKGOXg-yFdl29dPLBef8VAZ6V_qjUTloCvO-aRvlcc0QdhB58iCWDMVNnD1iSUIOcAvASY2qsEUeex-XSOEJ6koaT_6Q1iY89IY4mw4TCmmJYc9BNZKPQ00ywxxJS-BlqcnL2KfJF3xhZf3WdwwsMd8xZ4VEgEF6EGornaH-ByW_iHkVAj-aAtpcO7Y1R6kggX1Uz7ext1wt7PNEOk7BZ7UbtYCpKtj4NZ_YE-Doh_hOwHnff-1K_M83xlPmyiJhn8AbmL5C61nZSN8g00OlFoK2xkyjCRofOBro3g5N2OdPE2PqxIGjL1iCCIPA1SPSQpQ_B6qyIVyiCsp8s-_Gn2P76fpHfVlt6WV3_Lv5e5_6mul7cSVRFhiWhOIrsaaVTMbKZaUWNbQ-VMncGN__b_fwn-CAKeAQ&width=1360&height=850&dpi=192&waitMs=3000&format=png&localize=1&dark=1&filename=design)
 
 **選択範囲を反転する。** 任意のボックスを右クリックして**Flip horizontal**または**Flip vertical**を選ぶと、その場で反転できます。あるいはキーボードで`Shift+H` / `Shift+V`を押します - Shiftが必要なのは、単独の`V`がPointerツールに割り当てられているためです。選択された各ボックスはそれぞれの軸で反転し、1回のUndoステップにまとまります。反転は実際の変形なので、キャンバス上だけでなく書き出したSVG、PDF、PNGにも保持されます。
 

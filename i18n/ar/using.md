@@ -80,7 +80,7 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 - **قلل التكبير إلى ما دون الملاءمة** (حتى 20%) لترى الطاولة كاملة حين تجهز أشياء بعيدا خارج الإطار.
 - **لوح رسم قابل لتغيير الحجم.** تغيير أبعاد التصدير يغير حجم الإطار في مكانه؛ وتحتفظ الصناديق بمواضعها، فيمكنك إعادة تأطير تخطيط حول محتوى قائم.
 
-![اللوحة الحرة في Design: لوح الرسم مع الطاولة المحيطة به](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Ftemplate%3D__blank__&width=1440&height=900&dpi=192&waitMs=2000&walker=1&format=svg&localize=1&dark=1&filename=design)
+![اللوحة الحرة في Design: لوح الرسم مع الطاولة المحيطة به](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D17VVRa9swEP41ekyQLrbjPOyhVeeOrSsbG3lXbLkYZCnISmn264tO9irFhdJCoZQIpBNn9N2dvu_k3cOX1opeEuCTpeNkG0BDy8ljZe28pyDA74UlUC4WOyt0sxgOthW1JJAD9wv1y6rFQWCDMB6BAK-NdqLTBLg2thcqeAnk68vaKGOXg-yFdl29dPLBef8VAZ6V_qjUTloCvO-aRvlcc0QdhB58iCWDMVNnD1iSUIOcAvASY2qsEUeex-XSOEJ6koaT_6Q1iY89IY4mw4TCmmJYc9BNZKPQ00ywxxJS-BlqcnL2KfJF3xhZf3WdwwsMd8xZ4VEgEF6EGornaH-ByW_iHkVAj-aAtpcO7Y1R6kggX1Uz7ext1wt7PNEOk7BZ7UbtYCpKtj4NZ_YE-Doh_hOwHnff-1K_M83xlPmyiJhn8AbmL5C61nZSN8g00OlFoK2xkyjCRofOBro3g5N2OdPE2PqxIGjL1iCCIPA1SPSQpQ_B6qyIVyiCsp8s-_Gn2P76fpHfVlt6WV3_Lv5e5_6mul7cSVRFhiWhOIrsaaVTMbKZaUWNbQ-VMncGN__b_fwn-CAKeAQ&width=1360&height=850&dpi=192&waitMs=3000&format=png&localize=1&dark=1&filename=design)
 
 **اقلب التحديد.** انقر بزر الفأرة الأيمن على أي صندوق واختر **Flip horizontal** أو **Flip vertical** لعكسه في مكانه، أو اضغط `Shift+H` / `Shift+V` من لوحة المفاتيح - وShift لأن `V` وحدها هي أداة المؤشر (Pointer). ينعكس كل صندوق محدد على محوره الخاص في خطوة تراجع واحدة، والانعكاس تحويل حقيقي، لذا يبقى ثابتًا في ملفات SVG وPDF وPNG المصدَّرة وليس على اللوحة فقط.
 
