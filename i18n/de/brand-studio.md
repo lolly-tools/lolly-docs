@@ -153,7 +153,7 @@ Der Raum beginnt mit **vier Rollenkarten** - den vier Schriftarten, die die App,
 
 Die Bühne öffnet sich **inline im Raum**, nicht in einem Dialog, sodass die Karten, von denen Sie kamen, sichtbar bleiben. Suchen Sie eine Google-Fonts-Familie (Inter, Fraunces, Space Grotesk…) oder ziehen Sie eine Schriftdatei hinein, drücken Sie **Add to the comparison**, und die Kandidaten stehen mit denselben Wörtern nebeneinander, bevor auch nur einer davon installiert wird. Escape bricht ab und gibt die Tastatur an die Karte zurück, von der aus Sie sie geöffnet haben.
 
-Das ist der einzige Zugang, weshalb nichts ungesehen in Ihrer Marke landet. Unterhalb der Bühne befinden sich die beiden Verwaltungs-Panels:
+Das ist die eine Tür herein, weshalb nichts ungesehen in Ihre Marke gelangt. Unter der Bühne liegen die beiden Verwaltungspanels:
 
 - **Fonts on this device** (Schriftarten auf diesem Gerät) - jede installierte Familie, die Rollen, die sie bedient, und eine Löschfunktion. **Add a face** öffnet hier dieselbe Vergleichsbühne ohne Rolleneinschränkung.
 - **Your fonts** (Ihre Schriftarten) - laden Sie eine **TTF**-, **OTF**- oder **WOFF**-Datei von Ihrem eigenen Rechner hoch. Das ist der Weg für eine lizenzierte Unternehmensschrift, die Sie bereits besitzen.
@@ -211,13 +211,13 @@ Eine zurückzuholen geht über **Add from… → Design tokens or a design file*
 
 ## Versionen
 
-**Versionen** am Fuß der Leiste ist der Ort, an dem ein Designsystem aufhört, ein bewegliches Ziel zu sein. Veröffentlichen Sie eine, erhalten Sie eine **dauerhafte, benannte Kopie**, die auf diesem Gerät aufbewahrt wird: Sie ändert sich danach nie mehr, sodass ein Tool, das sie fixiert, immer dasselbe zeichnet. Das Panel bleibt verborgen, bis es etwas Eigenes zu veröffentlichen gibt, sodass einem Studio, das nie veröffentlicht, die Mechanik nie gezeigt wird.
+**Versionen** am Fuß der Leiste ist der Ort, an dem ein Designsystem aufhört, ein bewegliches Ziel zu sein. Veröffentlichen Sie eine, und Sie erhalten eine **dauerhafte, benannte Kopie**, die auf diesem Gerät verbleibt: Sie ändert sich danach nie mehr, sodass ein Tool, das sie fixiert, immer dasselbe zeichnet. Das Panel bleibt verborgen, bis es etwas Eigenes zu veröffentlichen gibt, sodass ein Studio, das nie veröffentlicht, die Steuerelemente auch nie zu sehen bekommt.
 
 Drei Dinge sollten Sie wissen, bevor Sie irgendetwas drücken, und das Panel nennt alle drei vor dem Drücken, nicht danach:
 
-- **Eine Version ist dauerhaft.** Es gibt noch kein Löschen, daher gibt das Panel an, was aufbewahrt wurde und dass es aufbewahrt bleibt, statt eine Schaltfläche anzubieten, die lügt.
-- **Entfernungen führen die Kompatibilitätskarte an.** Hinzugefügte und geänderte Token sind Neuigkeiten; ein *entferntes* ist das, was ein Tool zerbrechen lässt, also wird es zuerst genannt und beim Namen genannt.
-- **Veröffentlichen lässt sich nicht rückgängig machen; Wiederherstellen schon.** *Neueste Version aus dieser Version wiederherstellen* ist eine gewöhnliche Bearbeitung des Kopfs, sie landet also auf dem Undo-Stapel des Studios, und das Panel bietet Ihnen sofort **Rückgängig** an.
+- **Eine Version ist dauerhaft.** Es gibt noch kein Löschen, daher hält das Panel fest, was aufbewahrt wurde und dass es aufbewahrt bleibt, statt eine Schaltfläche anzubieten, die lügt.
+- **Entfernungen führen die Kompatibilitätskarte an.** Hinzugefügte und geänderte Tokens sind Neuigkeiten; ein *entferntes* ist das, was ein Tool zerbricht, daher wird es zuerst genannt und beim Namen genannt.
+- **Veröffentlichen lässt sich nicht rückgängig machen; Wiederherstellen schon.** *Aktuellsten Stand aus dieser Version wiederherstellen* ist eine gewöhnliche Bearbeitung des Kopfs, daher landet sie auf dem Undo-Stapel des Studios, und das Panel bietet Ihnen sofort das **Rückgängig** an.
 
 Sie können **Nur veröffentlichen** oder **Veröffentlichen und aktivieren** - der Unterschied besteht darin, ob Tools und die App ab jetzt dieser Version folgen oder weiter Ihrer neuesten Bearbeitung folgen. **Wieder der neuesten folgen** bringt jede Bearbeitung im selben Moment live, in dem sie gemacht wird. `#/start?area=versions` öffnet das Panel direkt.
 

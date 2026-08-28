@@ -58,6 +58,7 @@
   "Formats": "형식",
   "Everywhere": "어디서나",
   "FAQ": "자주 묻는 질문",
+  "Make it yours": "나만의 것으로 만드세요",
   "Lolly opens {in} kinds of file and makes {out}, and {both} of them go both ways.": "Lolly는 {in}가지 형식의 파일을 열고 {out}가지를 만들며, 그중 {both}가지는 양방향으로 오가요.",
   "See everything Lolly can open and make": "Lolly가 열고 만들 수 있는 모든 것 보기",
   "Already have designs? They aren't stranded - bring Figma, Penpot, Illustrator, InDesign or any SVG.": "이미 만든 디자인이 있나요? 그대로 묶여 있지 않아요 - Figma, Penpot, Illustrator, InDesign, 어떤 SVG든 가져오세요.",
@@ -76,6 +77,10 @@
   "Free, no account": "무료, 계정 불필요",
   "What Lolly supports": "Lolly가 지원하는 것",
   "Everything happens on your device, so it works with the Wi-Fi off.": "모든 작업이 내 기기에서 이뤄져서 Wi-Fi를 꺼도 작동해요.",
+  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "변환기는 설명, 저작자, 저작권, 촬영 날짜를 새 파일로 옮겨요. 위치 정보는 직접 켜지 않는 한 남지 않으며, Content Credential은 복사할 수 없어요: 원본 바이트에 고정되어 있기 때문이에요.",
+  "Every table in the font, its name and licence records included, passes through untouched.": "폰트 안의 모든 테이블은 이름과 라이선스 기록을 포함해 그대로 유지돼요.",
+  "Nothing embedded carries over: the new file is written fresh with Lolly\\'s own details, and your original keeps its own.": "포함된 정보는 아무것도 그대로 옮겨지지 않아요: 새 파일은 Lolly 고유의 정보로 새로 작성되고, 원본은 원본대로의 정보를 유지해요.",
+  "What carries over": "그대로 남는 정보",
   "Convert": "변환",
   "What goes in": "입력 형식",
   "What comes out": "출력 형식",
@@ -202,9 +207,5 @@
   "Parser Inventory": "파서 목록",
   "Server Surface": "서버 공격 표면",
   "Generated once, rendered the same": "한 번 생성하면 언제나 같은 결과",
-  "AI marking and the EU AI Act": "AI 표시와 EU AI법",
-  "What carries over": "무엇이 이어지나",
-  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "변환기는 설명, 작성자, 저작권, 촬영 날짜를 새 파일로 옮깁니다. 위치는 켜지 않는 한 남지 않으며, Content Credential은 복사할 수 없습니다. 원본 바이트에 묶여 있기 때문입니다.",
-  "Every table in the font, its name and licence records included, passes through untouched.": "글꼴의 모든 테이블은 이름과 라이선스 레코드까지 그대로 넘어갑니다.",
-  "Nothing embedded carries over: the new file is written fresh with Lolly's own details, and your original keeps its own.": "포함된 정보는 이어지지 않습니다. 새 파일은 Lolly 자체 정보로 새로 작성되고, 원본은 원래 정보를 그대로 유지합니다."
+  "AI marking and the EU AI Act": "AI 표시와 EU AI법"
 }

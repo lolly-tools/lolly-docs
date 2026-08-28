@@ -2,14 +2,14 @@
 
 *Senast uppdaterad: 11 augusti 2026*
 
-> **Enkelt uttryckt.** Dokumenten, bilderna, videoklippen och filerna du skapar i Lolly stannar
-> på din enhet. Det finns inga konton för vanlig användning, inga cookies från appen
-> i sig och ingen analys eller spårning någonstans i koden - inte "vi använder inte
-> datan", utan genuint inte närvarande i källkoden. En kort, komplett lista med
-> undantag finns för de fall då mjukvaran över huvud taget pratar med ett nätverk, och alla
+> **Kortversionen.** Dokumenten, bilderna, videorna och filerna du skapar i Lolly stannar
+> på din enhet. Det finns inga konton för vanlig användning, inga kakor från appen
+> själv och ingen analys eller spårning någonstans i koden - inte "vi använder inte
+> datan", utan genuint inte närvarande i källkoden. En kort, komplett lista över
+> undantag finns där programvaran över huvud taget pratar med ett nätverk, och alla
 > dessa beskrivs nedan i detalj: vad som lämnar enheten, till vem och när. Det enda
-> undantaget som involverar något personligt är en inloggning du själv måste
-> starta uttryckligen. Om det inte står i det här dokumentet händer det inte.
+> undantaget som rör något personligt är en inloggning du uttryckligen måste
+> starta. Om det inte står i det här dokumentet händer det inte.
 
 ## Vad den här policyn omfattar
 
@@ -79,20 +79,20 @@ oss - poängen med de flesta av dem är att ta bort & skydda data, inte lägga t
 Tabellen nedan är den fullständiga listan över allt appen hämtar eller skickar över ett
 nätverk. Om det inte finns här gör appen det inte.
 
-| Vad | Vad som faktiskt lämnar din enhet | När (handlingen som utlöser det) | Om en operatör blockerar det |
+| Vad | Vad som faktiskt lämnar din enhet | När (händelsen som utlöser det) | Om en operatör blockerar det |
 |---|---|---|---|
-| Synkronisering av verktygskatalog | Inget personligt - en förfrågan om Lollys egna publika verktygs- och tillgångsindex, till appens egen ursprungsadress | Vid uppstart, sedan cachad offline | Appen körs på sin cachade verktygsuppsättning. Den slutar bara upptäcka nya verktyg |
-| Ett verktyg som behöver realtidsdata | Vad det specifika verktyget än begär, till den värd som anges i dess egen beskrivning. I dag är det bara stadssökningen i verktyget Meeting Planner, som frågar `geocoding-api.open-meteo.com` för att omvandla ett stadsnamn till koordinater och en tidszon - inget konto, ingen nyckel och ingen identifierare utöver själva förfrågan. Fältet säger det där du skriver, och varje svar sparas på din enhet så att en stad slås upp bara en gång | Bara medan du använder det verktyget, och bara när du anger en plats | Den enskilda uppslagningen misslyckas. Du kan fortfarande skriva koordinater för hand, och inget annat påverkas |
-| Google Fonts | Det valda typsnittsfamiljenamnet och din IP-adress, till Googles typsnittsservrar (`fonts.googleapis.com` för stilmallen, `fonts.gstatic.com` för typsnittsfilen) | Bara om du lägger till ett Google Font i varumärkesredigeraren, **och bara efter att du godkänt det i en dialogruta som säger precis detta** - en engångshämtning per familj, sedan finns det på din enhet och används offline | Väljaren för Google Fonts stängs av. Ladda upp en typsnittsfil i stället |
-| Send to Google Drive | Den enda fil du valde att skicka, till Googles Drive-API (`www.googleapis.com`), efter en Google-inloggning du slutför i Googles eget popup-fönster. Lollys åtkomst är begränsad till filer den själv skapat (behörighetsomfånget `drive.file` - den kan aldrig läsa resten av din Drive), och inloggningstoken hålls i minnet under sessionen, aldrig sparad | Bara när du trycker på "Send to Google Drive" på en EMF-export, och bara i byggen där operatören har konfigurerat ett Google-klient-id - utan ett sådant finns knappen inte | Knappen visas aldrig. Ladda ner filen och ladda upp den till Drive själv |
-| Send to Dropbox | Den enda fil du valde att skicka, till Dropbox API (`api.dropboxapi.com` för inloggning och metadata, `content.dropboxapi.com` för själva filen), efter en Dropbox-inloggning du slutför i Dropbox eget fönster. Lollys åtkomst gäller bara app-mappen (den kan bara någonsin se `Apps/` och sin egen mapp där - aldrig resten av din Dropbox), "Open"-länken den visar dig är en kortlivad privat länk (ingen offentlig delning skapas), och en förnyelsetoken sparas bara om du kryssar i "stay connected" | Bara när du trycker på "Send to Dropbox" på en fil, och bara i byggen där operatören har konfigurerat ett Dropbox-klient-id - utan ett sådant finns knappen inte | Knappen visas aldrig. Ladda ner filen och ladda upp den till Dropbox själv |
-| Send to OneDrive | Den enda fil du valde att skicka, till Microsofts identitets- och Graph-tjänster (`login.microsoftonline.com` för inloggning, `graph.microsoft.com` för uppladdningen; en stor fil laddas upp i delar till en Microsoft-ägd uppladdningsadress på `api.onedrive.com`, `*.up.1drv.com` eller `*.sharepoint.com`), efter en Microsoft-inloggning du slutför i Microsofts eget fönster. Lollys åtkomst är begränsad till sin egen mapp under `Apps/` (den kan aldrig läsa resten av din OneDrive) plus ditt visningsnamn för kontoetiketten, och en förnyelsetoken sparas bara om du kryssar i "stay connected" | Bara när du trycker på "Send to OneDrive" på en fil, och bara i byggen där operatören har konfigurerat ett Microsoft-klient-id - utan ett sådant finns knappen inte | Knappen visas aldrig. Ladda ner filen och ladda upp den till OneDrive själv |
-| ICC-tryckprofiler | Inget personligt - en förfrågan om en standardprofil för tryckförhållanden, till ICC:s publika register (`registry.color.org`, `www.color.org`) | Bara om du klickar på en ICC-förinställning i profilhanteraren för tryck - en engångshämtning per profil, sedan finns den på din enhet | ICC-förinställningar misslyckas. Ange din egen `.icc`-profil i stället |
-| Internetradio | Inget personligt - en spellisteförfrågan och en ljudström, till stationen (`api.somafm.com` och den icecast-server den anger, `*.somafm.com`) | Bara när du spelar den valfria inbyggda radion i ljudspelaren | Radion misslyckas. Alla andra ljudfunktioner fungerar fortfarande |
-| En URL du ber ett verktyg fånga | En förfrågan till exakt den webbadress du skriver in, från skärmdumpsverktyget för URL:er. Oavsett vilken adress det är. Den här värden ingår inte i policyn nedan, eftersom du väljer den vid användningstillfället | Bara när du anger en URL i det verktyget och startar fångsten | En operatör kan inte tillåtlista detta per värd. För att ta bort det, ta bort verktyget |
-| SEAL-signaturkontroll | **Ingenting.** Webbappen har ingen DNS-resolver alls - se nedan | Aldrig | Inget att blockera |
-| Modeller för djupskanningsdetektor | Inget personligt - en engångsnedladdning av modell från samma ursprung (inte en tredje part) | Bara om du väljer in i Verifys djupskanning | Djupskanning är inte tillgänglig. Standardverifiering fungerar fortfarande |
-| Fjärrinstans | Vad den instans du anger än returnerar, via samma katalogsynkronisering som beskrivs ovan. Du väljer värden vid användningstillfället, så den ingår inte i policyn nedan | Bara om du uttryckligen pekar skalet mot en annan Lolly-driftsättning | Instansbyte misslyckas. Din lokala instans påverkas inte |
+| Synkronisering av verktygskatalogen | Inget personligt - en förfrågan om Lollys egna publika verktygs- och resursindex, till appens egen ursprungsadress | Vid start, sedan cachat offline | Appen körs på sin cachade verktygsuppsättning. Den slutar bara upptäcka nya verktyg |
+| Ett verktyg som behöver liveinformation | Vad det specifika verktyget än begär, till värden som anges i dess egen beskrivning. I dag är det bara stadssökningen i verktyget Mötesplanerare, som frågar `geocoding-api.open-meteo.com` för att omvandla ett stadsnamn till koordinater och en tidszon - inget konto, ingen nyckel och ingen identifierare utöver själva förfrågan. Inmatningsfältet säger det precis där du skriver, och varje svar sparas på din enhet så att en stad slås upp bara en gång | Bara medan du använder det verktyget, och bara när du anger en plats | Just den sökningen misslyckas. Du kan fortfarande skriva koordinater för hand, och inget annat påverkas |
+| Google Fonts | Det valda typsnittsfamiljens namn och din IP-adress, till Googles typsnittsservrar (`fonts.googleapis.com` för stilmallen, `fonts.gstatic.com` för typsnittsfilen) | Bara om du lägger till ett Google Font i varumärkesredigeraren, **och bara efter att du godkänt det i en dialog som säger precis detta** - en engångshämtning per familj, sedan finns det på din enhet och används offline | Google Fonts-väljaren stängs av. Ladda upp en typsnittsfil istället |
+| Skicka till Google Drive | Den enda filen du valde att skicka, till Googles Drive-API (`www.googleapis.com`), efter en Google-inloggning du genomför i Googles eget popup-fönster. Lollys åtkomst är begränsad till filer den själv skapat (omfånget `drive.file` - den kan aldrig läsa resten av din Drive), och inloggningstoken hålls bara i minnet för sessionen, sparas aldrig | Bara när du trycker på "Skicka till Google Drive" på en EMF-export, och bara i byggen där operatören har konfigurerat ett Google-klient-id - utan ett sådant finns knappen inte | Knappen visas aldrig. Ladda ned filen och ladda upp den till Drive själv |
+| Skicka till Dropbox | Den enda filen du valde att skicka, till Dropbox API (`api.dropboxapi.com` för inloggning och metadata, `content.dropboxapi.com` för själva filen), efter en Dropbox-inloggning du genomför i Dropbox eget fönster. Lollys åtkomst gäller endast appmappen (den kan bara se `Apps/` och sin egen mapp där - aldrig resten av din Dropbox), "Öppna"-länken den visar dig är en kortlivad privat länk (ingen offentlig delning skapas), och en uppdateringstoken sparas bara om du kryssar i "förbli ansluten" | Bara när du trycker på "Skicka till Dropbox" på en fil, och bara i byggen där operatören har konfigurerat ett Dropbox-klient-id - utan ett sådant finns knappen inte | Knappen visas aldrig. Ladda ned filen och ladda upp den till Dropbox själv |
+| Skicka till OneDrive | Den enda filen du valde att skicka, till Microsofts identitets- och Graph-tjänster (`login.microsoftonline.com` för inloggning, `graph.microsoft.com` för uppladdningen; en stor fil laddas upp i delar till en Microsoft-ägd uppladdningsadress på `api.onedrive.com`, `*.up.1drv.com` eller `*.sharepoint.com`), efter en Microsoft-inloggning du genomför i Microsofts eget fönster. Lollys åtkomst är begränsad till sin egen mapp under `Apps/` (den kan aldrig läsa resten av din OneDrive) plus ditt visningsnamn för kontoetiketten, och en uppdateringstoken sparas bara om du kryssar i "förbli ansluten" | Bara när du trycker på "Skicka till OneDrive" på en fil, och bara i byggen där operatören har konfigurerat ett Microsoft-klient-id - utan ett sådant finns knappen inte | Knappen visas aldrig. Ladda ned filen och ladda upp den till OneDrive själv |
+| ICC-tryckprofiler | Inget personligt - en förfrågan om en standardprofil för tryckförhållanden, till ICC:s publika register (`registry.color.org`, `www.color.org`) | Bara om du klickar på en ICC-förinställning i profilhanteraren för tryck - en engångshämtning per profil, sedan finns den på din enhet | ICC-förinställningar misslyckas. Ange din egen `.icc`-profil istället |
+| Internetradio | Inget personligt - en spellisteförfrågan och en ljudström, till stationen (`api.somafm.com` och den icecast-server den anger, `*.somafm.com`) | Bara medan du spelar den valfria inbyggda radion i ljudspelaren | Radion slutar fungera. Alla andra ljudfunktioner fungerar fortfarande |
+| En URL du ber ett verktyg fånga | En förfrågan till exakt den webbadress du skriver, från verktyget för URL-skärmdump. Vad den adressen än är. Den här värden finns inte med i policyn nedan, eftersom du väljer den i användningsögonblicket | Bara när du anger en URL i det verktyget och startar fångsten | En operatör kan inte tillåtlista detta per värd. För att ta bort det, ta bort verktyget |
+| SEAL-signaturkontroll | **Inget.** Webbappen har ingen DNS-uppslagare alls - se nedan | Aldrig | Inget att blockera |
+| Detektormodeller för djupsökning | Inget personligt - en engångshämtning av en modell från samma ursprung (inte en tredje part) | Bara om du väljer in i Verifiera-verktygets djupsökning | Djupsökning är inte tillgänglig. Standardverifiering fungerar fortfarande |
+| Fjärrinstans | Vad instansen du anger än svarar med, via samma katalogsynkronisering som beskrivs ovan - plus en versionstagg på förfrågningar till den (skaltyp och motorversion, samma information som en user agent bär), så att dess operatör kan se vilka Lolly-versioner som används ute i fält. På en hanterad instans, medan du är inloggad, bär den taggen också ett per-enhets installations-id så att operatörens enhetslista kan skilja den här installationen från andra. Det åker bara med i förfrågningar din egen användning redan gör - det finns ingen timer och inget ringer hem - och att lämna instansen tar bort id:t, så en enhet som återansluter senare visar upp ett nytt. Du väljer värden i användningsögonblicket, så den finns inte med i policyn nedan | Bara om du uttryckligen pekar skalet mot en annan Lolly-driftsättning | Instansbyte misslyckas. Din lokala instans påverkas inte |
 
 Varje fast värd i den tabellen är också den fullständiga tillåtlistan i appens
 Content-Security-Policy, som webbläsaren tillämpar. Listan är alltså inte bara en
@@ -139,19 +139,19 @@ länk kan visas som en levande bild i en README, en wiki eller en instrumentpane
 sådan ber servern rendera **publik verktygs- och katalogdata** med indata
 skrivna i URL:en.
 
-- <!--i:usercheck--> **Inga konton, inga cookies, inget tillstånd.** Endpointen är anonym, och inget
+- <!--i:usercheck--> **Inga konton, inga kakor, inget tillstånd.** Slutpunkten är anonym, och inget
   på din enhet läses. Dina dokument, sessioner och uppladdningar lämnar aldrig din
-  webbläsare - de kan aldrig visas i dessa länkar.
-- <!--i:document--> **Men själva URL:en registreras.** En URL:s frågesträng är en del av request-
-  raden, så den hamnar i värdplattformens vanliga åtkomstloggar på samma sätt
+  webbläsare - de kan inte förekomma i de här länkarna alls.
+- <!--i:document--> **Men själva URL:en registreras.** En URL:s frågesträng är en del av
+  förfrågningsraden, så den hamnar i värdplattformens vanliga åtkomstloggar på samma sätt
   som varje begärd sökväg gör. Om en länks indata innehåller någons namn eller e-post -
   en namnbricka, en e-postsignatur - **finns den texten i de loggarna**, och ingen
-  mängd policyformulering ändrar det. Det här är den specifika anledningen till att funktionen
-  är avstängd här i stället för påslagen.
-- <!--i:globe--> **Indata är offentliga till sin natur** ändå - de är vad länkens
-  upphovsperson än skrev in i URL:en, läsbara av vem som helst länken når. Lägg inte
+  mängd policytext ändrar på det. Det är det specifika skälet till att funktionen är
+  avstängd här snarare än påslagen.
+- <!--i:globe--> **Indata är offentliga av konstruktion** i vilket fall - de är vad som helst
+  länkens upphovsperson skrev in i URL:en, läsbart för alla länken når. Lägg inte
   hemligheter i en delad länk. Lolly erbjuder länkkryptering för känsligt innehåll.
-- <!--i:eyeoff--> Svar är **cachade och hastighetsbegränsade** som vilken publik bild som helst, och märkta
+- <!--i:eyeoff--> Svar **cachas och hastighetsbegränsas** som vilken publik bild som helst, och märks
   `noindex` så att sökmotorer inte indexerar dina renderingar.
 
 Självhostar du Lolly och vill inte ha en publik renderingsyta? Sätt

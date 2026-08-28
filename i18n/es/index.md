@@ -1,10 +1,10 @@
 
 # Lolly - Texto de la página de inicio
 
-Tuyo para crearlo, tuyo para conservarlo: archivos terminados en segundos, en tu propio dispositivo.
-Elige una herramienta, pon tus palabras y sale bien: colores, tipografías y maquetación ya están resueltos.
-Idéntico donde tú quieras, distinto como tú quieras.
-Gratis, y seguirá siendo gratis: sin cuenta, sin tarjeta, sin truco.
+Archivos con calidad de estudio en segundos, en tu propio dispositivo.
+
+Idéntico cuando quieras, distinto cuando lo necesites.
+Gratis y de código abierto: sin cuenta, sin tarjeta, sin trampa.
 
 
 ---
@@ -55,10 +55,10 @@ Define tu estilo infográfico-editorial una vez y genera recursos con calidad de
 
 No todo es marketing. Etiquetas de envío, tiradas de acreditaciones, fichas de cumplimiento, avisos de incidencias - resultados donde la maquetación transmite el significado y los datos no pueden estar mal. Lolly trata una etiqueta de envío con el mismo rigor que un cartel de campaña.
 
-- **Datos estructurados dentro, resultado exacto.** Dale una tabla CSV o JSON y cada campo cae justo donde la plantilla lo espera - un archivo terminado por fila.
-- **Precisión física.** Unidades reales (mm/cm/in/pt), DPI reales, sangrado y marcas de corte. Una impresora de etiquetas o una imprenta reciben exactamente lo que necesitan.
-- **La lógica se ejecuta dentro de la herramienta.** Códigos de barras, cálculos de fechas, maquetaciones condicionales, comprobaciones de contraste - calculados al renderizar, no a mano.
-- **Determinista por diseño.** Mismas entradas, mismo archivo, siempre. Auditable, repetible y automatizable desde la CLI o un pipeline.
+- **Datos estructurados de entrada, salida exacta.** Aporta una tabla CSV o JSON y cada campo va exactamente donde la plantilla lo espera - un archivo terminado por fila.
+- **Precisión física.** Unidades reales (mm/cm/in/pt), DPI real, sangrado y marcas de corte. Una impresora de etiquetas o una imprenta obtiene exactamente lo que necesita.
+- **La lógica se ejecuta dentro de la herramienta.** Códigos de barras, cálculos de fechas, diseños condicionales, comprobaciones de contraste - calculados en el momento del renderizado, no a mano.
+- **Determinista por diseño.** Mismas entradas, mismo archivo, siempre. Auditable, repetible, automatizable desde la CLI o un pipeline.
 
 ---
 
@@ -82,11 +82,11 @@ Diseñas sistemas y resuelves problemas, no piezas sueltas. Lolly es la capa de 
 
 Las imágenes son artefactos de compilación. Trátalas como tales. Lolly se ejecuta desde la CLI, así que puedes generar recursos igual que generas todo lo demás - de forma repetible, automática y dentro de tu flujo de trabajo.
 
-- **Pon el modelo en el boceto, no en la imprenta.** Generar medios con calidad de imprenta a base de prompts sale caro y se queda cerca en vez de acertar. Una herramienta hace el mismo archivo siempre, y gratis.
-- **Resultados reproducibles.** Las mismas entradas producen el mismo archivo, siempre. Haz commit de una URL y regenera cuando quieras - se acabó subir imágenes al repositorio o perseguir la última versión por Slack.
-- **Saca los medios de tu código.** Genera imágenes OG, códigos QR, tarjetas para redes y visualizaciones de datos en tiempo de compilación en lugar de guardar binarios en Git.
-- **Ejecuta lógica dentro de los recursos.** Herramientas como Code Canvas y Chart Creator te permiten colocar contenido real - fragmentos de código, datos estructurados, valores en vivo - dentro de plantillas con calidad de producción sin construir un renderizador propio.
-- **Cero dependencia del proveedor.** Motor de código abierto, cómputo local, sin claves de API, sin límites de uso.
+- **Pon el modelo en el boceto, no en la impresión final.** Generar medios de calidad de impresión mediante un prompt es caro y se acerca al resultado sin llegar a él. Una herramienta crea el mismo archivo cada vez, gratis.
+- **Resultados reproducibles.** Las mismas entradas producen el mismo archivo, siempre. Haz commit de una URL, regenera cuando lo necesites - se acabó versionar imágenes o perseguir la última versión en Slack.
+- **Saca los medios de tu base de código.** Genera imágenes OG, códigos QR, tarjetas sociales y visuales de datos en el momento del build en lugar de almacenar binarios en Git.
+- **Ejecuta lógica dentro de los assets.** Herramientas como Code Canvas y Chart Creator te permiten colocar contenido real - fragmentos de código, datos estructurados, valores en directo - dentro de plantillas de calidad de producción sin construir un renderizador a medida.
+- **Cero dependencia forzada.** Motor de código abierto, cálculo local, sin claves de API, sin límites de tasa.
 
 ```bash
 lolly qr-code --url=https://suse.com --output=og-qr.svg

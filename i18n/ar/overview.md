@@ -66,7 +66,7 @@
 
 "الرسم البياني الجديد" في الخطوة الثانية هو عرض مثل هذا، يُنتَج من سلسلة بيانات وحفنة من المعاملات دون أن يفتح أحد ملف تصميم:
 
-![مخطط مساحي مكدّس بعنوان، سلاسله الثلاث مموّجة بلوحة ألوان باردة، مع محاور ومفتاح تفسير وعنوان وضعها القالب جميعًا بدلًا من اليد](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![مخطط مساحي مكدَّس ذو عنوان، سلاسله الثلاث مموّجة بلوحة ألوان باردة، مع محاور ومفتاح وعنوان وضعها القالب لا اليد](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 الفكرة ليست أن Lolly جيدة للمصممين *و* جيدة للمطورين *و* جيدة للمبيعات، كل على حدة في فراغ. إنها **سباق تتابع (relay race)**: يُنشر عمل المبدع الأولي على نطاق واسع بواسطة المطوّر، الذي يمكّن بدوره المُنتِج. التجربة السلسة للمندوب غير التقني في الطائرة ممكنة *فقط* بفضل الصرامة التي وضعها المصمم ونشرها المطوّر.
 
@@ -84,7 +84,7 @@
 - <!--i:code--> **مطوّر، من سطر الأوامر.** يشغّل سطر الأوامر (CLI) المحرك *نفسه* ومسار العرض *نفسه* بلا واجهة، بحيث يمكن تشغيل الأداة تسلسليًا على كل الصفوف العشرة آلاف في نص برمجي أو خط أنابيب ليلي. استدعاء `lolly <tool> --field=…` داخل حلقة تكرار هو التكامل بأكمله.
 - <!--i:cpu--> **نظام أو عميل ذكاء اصطناعي، عبر MCP.** الأداة نفسها تُشغَّل برمجيًا، بالدقة نفسها وبنطاق أكبر حتى - لأن الآلة لن تملّ بينما تتدفق آلاف الملفات.
 
-![وضع الدُفعات على تثبيت جديد: صف فارغ واحد ينتظر أداة، مع سطح جدول البيانات بأكمله وزر Render في مكانه قبل وصول أي بيانات](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+![وضع الدُفعات في تثبيت جديد: صف فارغ واحد بانتظار أداة، مع سطح الجدول الكامل وزر العرض في مكانه قبل وصول أي بيانات](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
 
 مجموعة واحدة من قيود العلامة التجارية، يثبّتها مصمم مرة واحدة؛ وثلاثة مسارات تؤدي إلى المخرج نفسه المعتمد مسبقًا - ويصل مسار الآلة إلى أبعد نطاق من الجميع، لأنها لا تتعب أبدًا بينما تتدفق الملفات.
 
@@ -249,7 +249,7 @@ lolly/
 
 الأداة نفسها بعرض الهاتف، دون تخطيط ثانٍ يجب الحفاظ عليه: تتحول عناصر التحكم إلى ورقة في الأعلى، وتشغل المعاينة الشاشة بأكملها، وتطفو حبة الرسم فوقها.
 
-![مخطط صوتي (audiogram) على شاشة بعرض 430 بكسل - ورقة عناصر التحكم في الأعلى، والعمل الفني المربع النهائي في الأسفل، وحبة الرسم العائمة](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![مخطط صوتي (audiogram) على شاشة عرضها 430 بكسل - لوحة عناصر التحكم أعلاه، والعمل الفني المربع النهائي أسفله، وحبة العرض العائمة](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **وضع الدفعات (`/pro`).** يشحن غلاف الويب أيضًا شبكة دفعات بأسلوب جدول البيانات (`shells/web/src/pro/`) تُصيّر صفوفًا كثيرة دفعة واحدة عبر أداة واحدة أو عدة أدوات. تقوم بتبادل CSV/TSV ذهابًا وإيابًا بالإضافة إلى اللصق من جدول بيانات، وقالب/صيغة/حجم/وحدة/دقة لكل صف، ولوحة جانبية لمحرر الكتل مع معاينة حية، وأعمدة تصدير قابلة للطي، وشريط وسوم "الصلة" لكل صف، وإعادة ترتيب الصفوف بمقبض سحب على اليسار، وتأكيد حذف من خطوتين، وجلسات دفعات محفوظة، وتنزيل بصيغة `.zip`. هذه هي واجهة "واحد إلى كثير" وراء موضع "إنشاء المحتوى الجماعي".
 
@@ -283,13 +283,13 @@ lolly qr-code                # lists inputs for that tool
 
 تُدرج الصفوف بترتيب أقسام المعرض. يُعرض قسم `utility` دائمًا **أخيرًا** في المعرض (بعد كل فئة أخرى، بما في ذلك الفئات المستقبلية) - إنه درج "الأدوات المساعدة دون اتصال" العامل على الجهاز.
 
-| الفئة | أمثلة | مخطط لها |
+| الفئة | أمثلة | مخطط له |
 |---|---|---|
 | `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
-| `designer` | Brand Lockup, Design, Chart Creator, D3 Chart Studio, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `designer` | Brand Lockup, Design, Chart, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Unit/format converters, more on-device privacy utilities |
+| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | محوّلات الوحدات/الصيغ، والمزيد من أدوات الخصوصية العاملة على الجهاز |
 
 هذه الخلايا **أمثلة، لا قوائم جرد**. الأدوات الموجودة فعليًا خاصية للملف الشخصي (profile) الذي ركّبته، لا لهذه الصفحة: تضيف حزمة العلامة التجارية أدواتها الخاصة، ويمكنها استبعاد أداة مجتمعية تفضّل عدم شحنها. `catalog/tools/index.json` - المُولَّد من البيانات، والسجل الذي يقرؤه المعرض فعليًا - هو القائمة الموثوقة؛ لعدّ ما يُركّبه ملف شخصي ما، عُدّ البيانات (`ls community/*/tool.json brands/*/tools/*/tool.json`) بدلًا من الثقة برقم مكتوب هنا. (معرّف أداة موجود في حزمتين يُركَّب مرة واحدة، من الحزمة الفائزة.)
 
@@ -344,14 +344,14 @@ lolly qr-code                # lists inputs for that tool
 
 حفنة من الأسطح الرئيسية، لبيان ما تغطيه - يوثّق [Host API](/info/host-api.html) كل واحدة منها، و`packages/core/src/host-v1.ts` هو العقد نفسه:
 
-| السطح | منذ | ما يضيفه |
+| السطح | منذ | ما الذي يضيفه |
 |---|---|---|
-| `host.tokens` | 1.0 | رموز تصميم DTCG - بدائيات العلامة التجارية الخاصة بها |
-| `host.text` | 1.0 | تحويل النص إلى مسار عبر HarfBuzz WASM (قدرة `wasm` تُعلّم الأدوات المعتمدة عليه) |
-| `host.media` | 1.4 | إطارات كاميرا حية تُشغّل خطاف `onFrame`. تحسين تدريجي، وغير مُقيَّد عمدًا بعلم `camera` - فأداة كهذه لا تزال تعمل كأداة صورة ثابتة عادية |
-| `host.color` | 1.40 | رياضيات لونية إدراكية: ΔEOK، وتباين WCAG + APCA، ودرجات OKLab، وفواصل الفئات، ولوحات ألوان تصنيفية، ومخططات توافق (1.60)، ومزج CSS Color 4 وخبز التدرجات (1.68). نقية ومتزامنة - تُرفق الأغلفة `makeColorApi()` الخاصة بالمحرك بدلًا من تنفيذ أي شيء، بحيث لا يمكن أن تنحرف |
-| `host.images` | 1.60 | فك ترميز / تغيير حجم / إعادة ترميز البايتات على الجهاز - مسار التحويل (HEIC → JPEG، الضغط إلى WebP، تقليل الحجم). مشحونة في غلاف الويب كواجهة كسولة (lazy facade)، بحيث لا يهبط فاك ترميز HEIC أبدًا في حزمة الإقلاع |
-| `host.geom` | 1.64 | هندسة متجهية دقيقة: عمليات بوليانية على المسارات، والإزاحة، وتحويل الخط الحدودي إلى تعبئة، وخفض المنحنيات (spline)، والتبسيط، واختبار الإصابة. نقية ومتزامنة أيضًا ومُرفقة من المحرك (`makeGeomApi()`)؛ الإخفاقات *تُعاد* دائمًا ولا تُرمى أبدًا |
+| `host.tokens` | 1.0 | رموز تصميم DTCG - العناصر الأولية الخاصة بالعلامة التجارية |
+| `host.text` | 1.0 | تحويل النص إلى مسار عبر HarfBuzz WASM (تُعلِّم سمة القدرة `wasm` الأدوات التي تعتمد عليها) |
+| `host.media` | 1.4 | إطارات كاميرا حية تُشغِّل خطاف `onFrame`. تحسين تدريجي، ومتعمَّد *عدم* تقييده بسمة القدرة `camera` - إذ تعمل هذه الأداة رغم ذلك كأداة صورة ثابتة عادية |
+| `host.color` | 1.40 | رياضيات لونية إدراكية: ΔEOK، وتباين WCAG + APCA، ومتدرجات OKLab، وحدود الفئات، ولوحات فئوية، ومخططات توافق (1.60)، ومزج CSS Color 4 وصهر التدرجات (1.68). خالصة ومتزامنة - تُلحق الأغلفة (shells) دالة المحرك `makeColorApi()` بدلاً من تنفيذ أي شيء بنفسها، فلا يمكن أن تنحرف عنها |
+| `host.images` | 1.60 | فك ترميز/تغيير حجم/إعادة ترميز البايتات على الجهاز - مسار التحويل (HEIC → JPEG، الضغط إلى WebP، تقليل الدقة). يُشحَن في غلاف الويب كواجهة كسولة (lazy facade)، بحيث لا يدخل مفكِّك ترميز HEIC أبدًا إلى حزمة الإقلاع |
+| `host.geom` | 1.64 | هندسة متجهية دقيقة: عمليات منطقية على المسارات، والإزاحة، وتحويل الخط إلى تعبئة، وتبسيط المنحنيات، والتبسيط، واختبار الإصابة (hit testing). خالصة ومتزامنة أيضًا وملحَقة من المحرك (`makeGeomApi()`)؛ وتُعاد الإخفاقات *كقيمة*، لا تُرمى أبدًا |
 
 البقية تتبع القواعد نفسها وموثّقة إلى جانبها: `pdf` (1.8) و`pptx` (1.58) لجراحة المستندات على الجهاز، و`audio` (1.71) و`speech` (1.96) لتحليل المقاطع والتحويل النصي/الكلامي على الجهاز، و`viz` (1.72) لعقد MilkDrop البديل المؤقت، و`codec` (1.100) و`layers` (1.102) لمخرجات البت العميق والصور النقطية الطبقية، و`upscale` (1.101) و`matte` (1.103) للنماذج العاملة على الجهاز، و`raster` (1.105) للخطاطيف التي تُنفّذ عملها الخاص على مستوى البكسل، و`connectors` (1.106) للأسهم الآمنة للتصدير، و`c2pa` (1.85) لتوقيع البايتات النهائية. العدد يزداد؛ القواعد لا تتغير.
 

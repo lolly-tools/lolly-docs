@@ -2,14 +2,14 @@
 
 *Dernière mise à jour : 11 août 2026*
 
-> **En clair.** Les documents, images, vidéos et fichiers que tu crées dans Lolly restent
-> sur ton appareil. Il n'y a pas de comptes pour un usage ordinaire, pas de cookies venant
-> de l'application elle-même et aucun analytics ni traceur nulle part dans le code - pas
-> "nous n'utilisons pas les données", vraiment absent du code source. Une liste courte et
-> complète d'exceptions existe là où le logiciel communique avec un réseau, et chacune
-> d'elles est décrite ci-dessous avec précision : ce qui sort, vers qui et quand. La seule
-> exception qui implique quoi que ce soit de personnel est une connexion que tu dois lancer
-> explicitement toi-même. Si ce n'est pas dans ce document, ça n'arrive pas.
+> **La version courte.** Les documents, images, vidéos et fichiers que tu crées dans Lolly restent
+> sur ton appareil. Il n'y a pas de comptes pour un usage ordinaire, pas de cookies venant de l'app
+> elle-même et pas d'analytique ni de traceurs nulle part dans le code - pas « on n'utilise pas
+> les données », vraiment absent du code source. Il existe une liste courte et complète
+> d'exceptions où le logiciel parle à un réseau, et chacune
+> d'elles est décrite ci-dessous en détail : ce qui sort, vers qui et quand. La seule
+> exception qui touche à quelque chose de personnel est une connexion que tu dois démarrer
+> explicitement. Si ce n'est pas dans ce document, ça n'arrive pas.
 
 ## Ce que couvre cette politique
 
@@ -86,20 +86,20 @@ d'entre eux est de retirer & protéger des données, pas d'ajouter un risque.
 Le tableau ci-dessous est la liste complète de tout ce que l'application récupère ou
 envoie sur un réseau. Si ce n'est pas ici, l'application ne le fait pas.
 
-| Quoi | Ce qui sort réellement de ton appareil | Quand (l'action qui le déclenche) | Si un opérateur le bloque |
+| Quoi | Ce qui quitte réellement ton appareil | Quand (l'action qui le déclenche) | Si un opérateur le bloque |
 |---|---|---|---|
-| Synchronisation du catalogue d'outils | Rien de personnel - une requête pour l'index public d'outils et d'assets de Lolly, vers l'origine propre de l'application | Au démarrage, puis mis en cache hors ligne | L'application fonctionne sur son jeu d'outils en cache. Elle cesse seulement de découvrir de nouveaux outils |
-| Un outil qui a besoin de données en direct | Ce que cet outil précis demande, vers l'hôte nommé dans sa propre description. Aujourd'hui c'est uniquement la recherche de ville dans l'outil Meeting Planner, qui interroge `geocoding-api.open-meteo.com` pour transformer un nom de ville en coordonnées et fuseau horaire - pas de compte, pas de clé et aucun identifiant au-delà de la requête elle-même. Le champ le précise là où tu tapes, et chaque réponse est enregistrée sur ton appareil pour qu'une ville ne soit recherchée qu'une fois | Uniquement pendant l'usage de cet outil, et uniquement une fois que tu saisis un lieu | Cette recherche échoue seule. Tu peux toujours saisir des coordonnées à la main, et rien d'autre n'est affecté |
-| Google Fonts | Le nom de la famille de police choisie et ton adresse IP, vers les serveurs de polices de Google (`fonts.googleapis.com` pour la feuille de style, `fonts.gstatic.com` pour le fichier de police) | Uniquement si tu ajoutes une Google Font dans l'éditeur de marque, **et uniquement après avoir accepté dans une boîte de dialogue qui dit exactement cela** - une récupération unique par famille, puis elle vit sur ton appareil et est utilisée hors ligne | Le sélecteur Google Fonts échoue par défaut. Téléverse plutôt un fichier de police |
-| Envoyer vers Google Drive | Le seul fichier que tu as choisi d'envoyer, vers l'API Drive de Google (`www.googleapis.com`), après une connexion Google que tu effectues dans la propre fenêtre popup de Google. L'accès de Lolly se limite aux fichiers qu'il a créés (la portée `drive.file` - il ne peut jamais lire le reste de ton Drive), et le jeton de connexion est conservé en mémoire pour la session, jamais stocké | Uniquement quand tu appuies sur "Send to Google Drive" sur un export EMF, et uniquement sur les builds où l'opérateur a configuré un identifiant client Google - sans cela le bouton n'existe pas | Le bouton n'apparaît jamais. Télécharge le fichier et téléverse-le toi-même vers Drive |
-| Envoyer vers Dropbox | Le seul fichier que tu as choisi d'envoyer, vers l'API Dropbox (`api.dropboxapi.com` pour la connexion et les métadonnées, `content.dropboxapi.com` pour le fichier lui-même), après une connexion Dropbox que tu effectues dans la propre fenêtre de Dropbox. L'accès de Lolly se limite au dossier de l'application (il ne peut jamais voir que `Apps/` et son propre dossier là-dedans - jamais le reste de ton Dropbox), le lien "Open" qu'il t'affiche est un lien privé de courte durée (aucun partage public n'est créé), et un jeton de rafraîchissement n'est stocké que si tu coches "stay connected" | Uniquement quand tu appuies sur "Send to Dropbox" sur un fichier, et uniquement sur les builds où l'opérateur a configuré un identifiant client Dropbox - sans cela le bouton n'existe pas | Le bouton n'apparaît jamais. Télécharge le fichier et téléverse-le toi-même vers Dropbox |
-| Envoyer vers OneDrive | Le seul fichier que tu as choisi d'envoyer, vers les services d'identité et Graph de Microsoft (`login.microsoftonline.com` pour la connexion, `graph.microsoft.com` pour le téléversement ; un gros fichier est téléversé par blocs vers une adresse de téléversement appartenant à Microsoft sur `api.onedrive.com`, `*.up.1drv.com` ou `*.sharepoint.com`), après une connexion Microsoft que tu effectues dans la propre fenêtre de Microsoft. L'accès de Lolly se limite à son propre dossier sous `Apps/` (il ne peut jamais lire le reste de ton OneDrive) plus ton nom d'affichage pour l'étiquette de compte, et un jeton de rafraîchissement n'est stocké que si tu coches "stay connected" | Uniquement quand tu appuies sur "Send to OneDrive" sur un fichier, et uniquement sur les builds où l'opérateur a configuré un identifiant client Microsoft - sans cela le bouton n'existe pas | Le bouton n'apparaît jamais. Télécharge le fichier et téléverse-le toi-même vers OneDrive |
-| Profils presse ICC | Rien de personnel - une requête pour un profil de condition d'impression standard, vers le registre public de l'ICC (`registry.color.org`, `www.color.org`) | Uniquement si tu cliques sur un préréglage ICC dans le gestionnaire de profils d'impression - une récupération unique par profil, puis il vit sur ton appareil | Les préréglages ICC échouent. Fournis plutôt ton propre profil `.icc` |
-| Radio internet | Rien de personnel - une requête de playlist et un flux audio, vers la station (`api.somafm.com` et le serveur icecast qu'elle nomme, `*.somafm.com`) | Uniquement pendant que tu écoutes la radio intégrée optionnelle dans le lecteur audio | La radio échoue. Toutes les autres fonctions audio marchent toujours |
-| Une URL que tu demandes à un outil de capturer | Une requête vers l'adresse web exacte que tu saisis, depuis l'outil de capture d'écran d'URL. Quelle que soit cette adresse. Cet hôte ne figure pas dans la politique ci-dessous, parce que tu le choisis au moment de l'usage | Uniquement quand tu saisis une URL dans cet outil et lances la capture | Un opérateur ne peut pas mettre ceci sur liste blanche par hôte. Pour le retirer, il faut retirer l'outil |
-| Vérification de signature SEAL | **Rien.** L'application web n'a aucun résolveur DNS du tout - voir ci-dessous | Jamais | Rien à bloquer |
-| Modèles de détection deep-scan | Rien de personnel - un téléchargement unique de modèle en same-origin (pas un tiers) | Uniquement si tu actives le deep scan de Verify | Le deep scan est indisponible. La vérification standard fonctionne toujours |
-| Instance distante | Ce que l'instance que tu nommes renvoie, via la même synchronisation de catalogue décrite ci-dessus. Tu choisis l'hôte au moment de l'usage, donc il ne figure pas dans la politique ci-dessous | Uniquement si tu pointes explicitement la coque vers un autre déploiement Lolly | Le changement d'instance échoue. Ton instance locale n'est pas affectée |
+| Synchronisation du catalogue d'outils | Rien de personnel - une requête vers le propre index public d'outils et d'assets de Lolly, vers l'origine de l'app elle-même | Au démarrage, puis mis en cache hors ligne | L'app continue de fonctionner avec son jeu d'outils en cache. Elle arrête seulement de découvrir de nouveaux outils |
+| Un outil qui a besoin de données en direct | Ce que cet outil précis demande, vers l'hôte nommé dans sa propre description. Aujourd'hui, c'est uniquement la recherche de ville dans l'outil Meeting Planner, qui demande à `geocoding-api.open-meteo.com` de transformer un nom de ville en coordonnées et en fuseau horaire - pas de compte, pas de clé et aucun identifiant au-delà de la requête elle-même. L'entrée le précise juste là où tu tapes, et chaque réponse est enregistrée sur ton appareil pour qu'une ville ne soit recherchée qu'une fois | Uniquement pendant l'utilisation de cet outil, et seulement une fois que tu saisis un lieu | Seule cette recherche échoue. Tu peux toujours saisir des coordonnées à la main, et rien d'autre n'est affecté |
+| Google Fonts | Le nom de la famille de police choisie et ton adresse IP, vers les serveurs de polices de Google (`fonts.googleapis.com` pour la feuille de style, `fonts.gstatic.com` pour le fichier de police) | Uniquement si tu ajoutes une police Google dans l'éditeur de marque, **et seulement après avoir accepté dans une boîte de dialogue qui dit exactement cela** - une récupération unique par famille, qui vit ensuite sur ton appareil et est utilisée hors ligne | La sélection de polices Google reste alors désactivée. Importe plutôt un fichier de police |
+| Envoyer vers Google Drive | Le seul fichier que tu as choisi d'envoyer, vers l'API Drive de Google (`www.googleapis.com`), après une connexion Google que tu effectues dans la propre fenêtre popup de Google. L'accès de Lolly est limité aux fichiers qu'il a créés (le champ d'application `drive.file` - il ne peut jamais lire le reste de ton Drive), et le jeton de connexion est conservé en mémoire pour la session, jamais stocké | Uniquement quand tu cliques sur « Envoyer vers Google Drive » sur un export EMF, et seulement sur les builds où l'opérateur a configuré un identifiant client Google - sans cela, le bouton n'existe pas | Le bouton n'apparaît jamais. Télécharge le fichier et importe-le toi-même dans Drive |
+| Envoyer vers Dropbox | Le seul fichier que tu as choisi d'envoyer, vers l'API de Dropbox (`api.dropboxapi.com` pour la connexion et les métadonnées, `content.dropboxapi.com` pour le fichier lui-même), après une connexion Dropbox que tu effectues dans la propre fenêtre de Dropbox. L'accès de Lolly se limite au dossier de l'app (il ne voit jamais que `Apps/` et son propre dossier à l'intérieur - jamais le reste de ton Dropbox), le lien « Ouvrir » qu'il t'affiche est un lien privé de courte durée (aucun partage public n'est créé), et un jeton de rafraîchissement n'est stocké que si tu coches « Rester connecté » | Uniquement quand tu cliques sur « Envoyer vers Dropbox » sur un fichier, et seulement sur les builds où l'opérateur a configuré un identifiant client Dropbox - sans cela, le bouton n'existe pas | Le bouton n'apparaît jamais. Télécharge le fichier et importe-le toi-même dans Dropbox |
+| Envoyer vers OneDrive | Le seul fichier que tu as choisi d'envoyer, vers les services d'identité et Graph de Microsoft (`login.microsoftonline.com` pour la connexion, `graph.microsoft.com` pour l'import ; un fichier volumineux est importé par blocs vers une adresse d'import appartenant à Microsoft sur `api.onedrive.com`, `*.up.1drv.com` ou `*.sharepoint.com`), après une connexion Microsoft que tu effectues dans la propre fenêtre de Microsoft. L'accès de Lolly se limite à son propre dossier sous `Apps/` (il ne peut jamais lire le reste de ton OneDrive), plus ton nom d'affichage pour l'intitulé du compte, et un jeton de rafraîchissement n'est stocké que si tu coches « Rester connecté » | Uniquement quand tu cliques sur « Envoyer vers OneDrive » sur un fichier, et seulement sur les builds où l'opérateur a configuré un identifiant client Microsoft - sans cela, le bouton n'existe pas | Le bouton n'apparaît jamais. Télécharge le fichier et importe-le toi-même dans OneDrive |
+| Profils d'impression ICC | Rien de personnel - une requête vers un profil de condition d'impression standard, vers le registre public de l'ICC (`registry.color.org`, `www.color.org`) | Uniquement si tu cliques sur un préréglage ICC dans le gestionnaire de profils d'impression - une récupération unique par profil, qui vit ensuite sur ton appareil | Les préréglages ICC échouent. Fournis plutôt ton propre profil `.icc` |
+| Radio internet | Rien de personnel - une requête de playlist et un flux audio, vers la station (`api.somafm.com` et le serveur icecast qu'elle nomme, `*.somafm.com`) | Uniquement pendant que tu joues la radio intégrée optionnelle dans le lecteur audio | La radio échoue. Toutes les autres fonctions audio continuent de fonctionner |
+| Une URL que tu demandes à un outil de capturer | Une requête vers exactement l'adresse web que tu tapes, depuis l'outil de capture d'URL. Quelle que soit cette adresse. Cet hôte ne figure pas dans la politique ci-dessous, car tu le choisis toi-même au moment de l'utiliser | Uniquement quand tu saisis une URL dans cet outil et lances la capture | Un opérateur ne peut pas mettre ça sur liste blanche par hôte. Pour le supprimer, retire l'outil |
+| Vérification de signature SEAL | **Rien.** L'app web n'a aucun résolveur DNS - voir ci-dessous | Jamais | Rien à bloquer |
+| Modèles de détection Deep Scan | Rien de personnel - un téléchargement unique de modèle depuis la même origine (pas un tiers) | Uniquement si tu actives le Deep Scan de Verify | Le Deep Scan est indisponible. La vérification standard continue de fonctionner |
+| Instance distante | Tout ce que renvoie l'instance que tu nommes, via la même synchronisation de catalogue décrite ci-dessus - plus une étiquette de version sur les requêtes qui lui sont adressées (type de shell et version du moteur, la même information qu'un user agent transmet), pour que son opérateur puisse voir quelles versions de Lolly sont en usage. Sur une instance gérée, tant que tu es connecté, cette étiquette porte aussi un identifiant d'installation propre à l'appareil, pour que la liste d'appareils de l'opérateur puisse distinguer cette installation. Elle ne voyage qu'avec des requêtes que ton propre usage déclenche déjà - il n'y a pas de minuteur et rien ne se manifeste tout seul - et quitter l'instance supprime l'identifiant, si bien qu'un appareil qui se reconnecte plus tard en présente un nouveau. Tu choisis l'hôte au moment de l'utiliser, donc il ne figure pas dans la politique ci-dessous | Uniquement si tu pointes explicitement le shell vers un autre déploiement de Lolly | Le changement d'instance échoue. Ton instance locale n'est pas affectée |
 
 Chaque hôte fixe de ce tableau est aussi la liste blanche complète de la
 Content-Security-Policy de l'application, que le navigateur applique. La liste n'est
@@ -151,24 +151,20 @@ qu'un lien Lolly partagé puisse apparaître comme une image vivante dans un REA
 wiki ou un tableau de bord. Récupérer l'une d'elles demande au serveur de rendre des
 **données publiques d'outil et de catalogue** avec les entrées inscrites dans l'URL.
 
-- <!--i:usercheck--> **Pas de comptes, pas de cookies, pas d'état.** Le point d'accès est anonyme, et
-  rien sur ton appareil n'est lu. Tes documents, sessions et fichiers téléversés ne
-  quittent jamais ton navigateur - ils ne peuvent absolument pas apparaître dans ces
-  liens.
-- <!--i:document--> **Mais l'URL elle-même est enregistrée.** La chaîne de requête d'une URL fait
-  partie de la ligne de requête, donc elle atterrit dans les journaux d'accès
-  ordinaires de la plateforme d'hébergement, comme n'importe quel chemin demandé. Si
-  les entrées d'un lien contiennent le nom ou l'e-mail de quelqu'un - un badge nominatif,
-  une signature d'e-mail - **ce texte se trouve dans ces journaux**, et aucune
-  formulation de politique n'y change quoi que ce soit. C'est la raison précise pour
-  laquelle cette fonctionnalité est désactivée ici plutôt qu'activée.
-- <!--i:globe--> **Les entrées sont publiques par construction** de toute façon - ce sont celles
-  que l'auteur du lien a tapées dans l'URL, lisibles par quiconque atteint ce lien. Ne
-  mets pas de secrets dans un lien partagé. Lolly propose un chiffrement de lien pour
-  le contenu sensible.
-- <!--i:eyeoff--> Les réponses sont **mises en cache et limitées en débit** comme n'importe quelle
-  image publique, et marquées `noindex` pour que les moteurs de recherche n'indexent
-  pas tes rendus.
+- <!--i:usercheck--> **Pas de comptes, pas de cookies, pas d'état.** Le point d'accès est anonyme, et rien
+  n'est lu sur ton appareil. Tes documents, sessions et imports ne quittent jamais ton
+  navigateur - ils ne peuvent absolument pas apparaître dans ces liens.
+- <!--i:document--> **Mais l'URL elle-même est enregistrée.** La chaîne de requête d'une URL fait partie de la ligne de
+  requête, donc elle apparaît dans les journaux d'accès habituels de la plateforme d'hébergement, tout comme
+  n'importe quel chemin demandé. Si les entrées d'un lien contiennent le nom ou l'email de quelqu'un -
+  un badge nominatif, une signature email - **ce texte se retrouve dans ces journaux**, et aucune
+  formulation de politique n'y change quoi que ce soit. C'est la raison précise pour laquelle cette fonction est
+  désactivée ici par défaut plutôt qu'activée.
+- <!--i:globe--> **Les entrées sont de toute façon publiques par construction** - elles sont ce que l'auteur ou l'autrice
+  du lien a tapé dans l'URL, lisible par quiconque le lien atteint. Ne mets pas de
+  secrets dans un lien partagé. Lolly propose le chiffrement de liens pour le contenu sensible.
+- <!--i:eyeoff--> Les réponses sont **mises en cache et limitées en débit** comme n'importe quelle image publique, et marquées
+  `noindex` pour que les moteurs de recherche n'indexent pas tes rendus.
 
 Tu auto-héberges Lolly et tu ne veux pas d'une surface de rendu publique ? Définis
 `LOLLY_DISABLE_RENDER_GET=1` - ce que fait actuellement lolly.tools lui-même - et

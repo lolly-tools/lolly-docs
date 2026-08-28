@@ -58,6 +58,7 @@
   "Formats": "Định dạng",
   "Everywhere": "Mọi nơi",
   "FAQ": "FAQ",
+  "Make it yours": "Biến thành của bạn",
   "Lolly opens {in} kinds of file and makes {out}, and {both} of them go both ways.": "Lolly mở được {in} loại tệp và tạo ra {out}, trong đó {both} loại đi cả hai chiều.",
   "See everything Lolly can open and make": "Xem tất cả những gì Lolly mở và tạo được",
   "Already have designs? They aren't stranded - bring Figma, Penpot, Illustrator, InDesign or any SVG.": "Đã có sẵn thiết kế? Chúng không bị bỏ lại - mang theo Figma, Penpot, Illustrator, InDesign hay bất kỳ SVG nào.",
@@ -76,6 +77,10 @@
   "Free, no account": "Miễn phí, không cần tài khoản",
   "What Lolly supports": "Lolly hỗ trợ những gì",
   "Everything happens on your device, so it works with the Wi-Fi off.": "Mọi thứ diễn ra trên thiết bị của bạn, nên tắt Wi-Fi vẫn chạy.",
+  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "Trình chuyển đổi chuyển phần mô tả, tác giả, bản quyền và ngày chụp sang tệp mới. Vị trí sẽ không được chuyển trừ khi bạn bật tùy chọn này, và Content Credential không thể sao chép: nó gắn liền với dữ liệu byte gốc.",
+  "Every table in the font, its name and licence records included, passes through untouched.": "Mọi bảng trong phông chữ, kể cả tên và thông tin giấy phép, đều được giữ nguyên không thay đổi.",
+  "Nothing embedded carries over: the new file is written fresh with Lolly\\'s own details, and your original keeps its own.": "Không có gì được nhúng sẽ được chuyển sang: tệp mới được tạo lại hoàn toàn với thông tin riêng của Lolly, còn tệp gốc của bạn vẫn giữ nguyên thông tin của nó.",
+  "What carries over": "Nội dung được chuyển sang",
   "Convert": "Chuyển đổi",
   "What goes in": "Đầu vào",
   "What comes out": "Đầu ra",
@@ -202,9 +207,5 @@
   "Parser Inventory": "Danh mục Parser",
   "Server Surface": "Bề mặt Server",
   "Generated once, rendered the same": "Tạo một lần, kết xuất y hệt",
-  "AI marking and the EU AI Act": "Đánh dấu AI và Đạo luật AI của EU",
-  "What carries over": "Những gì được giữ lại",
-  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "Bộ chuyển đổi đưa mô tả, tác giả, bản quyền và ngày chụp sang tệp mới. Vị trí bị bỏ lại trừ khi bạn bật lên, và Content Credential không thể sao chép: nó gắn với các byte gốc.",
-  "Every table in the font, its name and licence records included, passes through untouched.": "Mọi bảng trong phông chữ, gồm cả bản ghi tên và giấy phép, đi qua nguyên vẹn.",
-  "Nothing embedded carries over: the new file is written fresh with Lolly's own details, and your original keeps its own.": "Không có dữ liệu nhúng nào được giữ lại: tệp mới được ghi mới với thông tin riêng của Lolly, còn bản gốc của bạn giữ thông tin của nó."
+  "AI marking and the EU AI Act": "Đánh dấu AI và Đạo luật AI của EU"
 }

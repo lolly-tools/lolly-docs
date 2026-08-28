@@ -1,4 +1,4 @@
-# 個人資料--你創作時的身分
+# 個人資料——你創作時的身分
 
 **設定檔（profile）**是 Lolly 用來進行創作的工作身分。它是一小組工具可以取用的細節，讓你不必每次都重新輸入 - 你的姓名、聯絡方式、可選的大頭照、幾項偏好設定 - 再加上你在使用過程中累積的一切：已儲存的工作階段、上傳的圖片，以及本機活動統計。
 
@@ -19,7 +19,7 @@
 | **無障礙** | 四個舒適度開關 - *減少動態效果*、*隱藏彩色預覽*、*高對比*、*大字體* - 都儲存在設定檔紀錄中，因此會隨設定檔匯出一併攜帶。詳見[無障礙](#accessibility)。 |
 | **你的作品** | 已儲存的工作階段（附縮圖） - 在**[Projects](/info/using.html)** 中以巢狀資料夾整理 - 你的**My images** 圖庫，以及本機活動統計，全部都以此設定檔為索引。 |
 
-![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&walker=1&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
 
 ![設定檔畫面 - 姓名、聯絡方式、選用的大頭照與你的偏好設定](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&dark=1&filename=profile-details)
 
@@ -31,11 +31,11 @@
 
 ## 個人資料是一種情境，而不只是一個人
 
-「個人資料」這個詞聽起來像是指一個固定不變的人，但在 Lolly 裡，它其實是一種**創作情境**--也就是*你在製作這個東西時的身分*。這個情境可以有三種不同的樣貌，而 Lolly 對待它們的方式完全相同。
+「個人資料」這個詞聽起來像是指一個固定不變的人，但在 Lolly 裡，它其實是一種**創作情境**——也就是*你在製作這個東西時的身分*。這個情境可以有三種不同的樣貌，而 Lolly 對待它們的方式完全相同。
 
 ### 作為個人
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
 
 ![大頭照控制項，在你上傳照片之前是空的，上傳後照片會留在這台裝置上](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
 
@@ -43,17 +43,17 @@
 
 設定檔不一定要對應單一個人，也可以代表組織內的**團隊或職能**：團隊的共用名稱、群組收件信箱（`events@…`）、部門、團隊大頭照或單位標記。由一個人設定好、匯出（見下文），其餘團隊成員載入同一份設定檔 - 這樣團隊產出的一切就會攜帶一致的資訊，不必每個人重複輸入。共用的資訊站或借出的展示筆電，也可以統一使用同一份團隊設定檔，讓每個使用它的人都以該身分創作。
 
-### 作為一種職能--偶爾才擔任的角色
+### 作為一種職能——偶爾才擔任的角色
 
 這是「一人一份個人資料」這種僵化模式會漏掉的情況。你可能一年只有**三天是活動經理**，其餘時間則完全是另一個角色。那三天，你想要的是活動資料、活動信箱，或許還有活動子品牌，來填入識別證與指標；其餘 362 天，你想拿回平常的身分。
 
-在 Lolly 裡，這個角色就只是**你隨手備著的另一份個人資料**--一個儲存起來的包裹（見下一節），活動時載入，結束後放到一邊。這個角色是一頂帽子，不是一個新帳號。需要時戴上，用完就摘下。
+在 Lolly 裡，這個角色就只是**你隨手備著的另一份個人資料**——一個儲存起來的包裹（見下一節），活動時載入，結束後放到一邊。這個角色是一頂帽子，不是一個新帳號。需要時戴上，用完就摘下。
 
-## 一次安裝，一份使用中的個人資料--但你可以保留很多份
+## 一次安裝，一份使用中的個人資料——但你可以保留很多份
 
 在任何時刻，一次安裝只會有**一個使用中的設定檔** - 也就是工具目前看到的細節。應用程式內沒有設定檔切換器；取而代之的是，每個設定檔都是一個**可攜式套件**（單一 `.zip` 檔，見[下文](#moving-a-profile-to-a-new-device)）。這刻意設計成與換到新裝置時相同的機制 - 設定檔就是一個你可以儲存、複製與載入的檔案。
 
-![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
 
 - <!--i:trash--> **最乾淨的切換方式：** 依序點選 **Profile → Storage → Clear all my data**，然後 **Import（匯入）**你要切換進去的情境所對應的套件。此後你就純粹以那個設定檔進行創作。
 - <!--i:layers--> **疊加：** 若*不先*清除就匯入，會**合併** - 匯入的設定檔、工作階段與圖片會疊加在既有內容之上，同名項目會被取代，其餘保留。適合把某個團隊已儲存的工作階段拉進你自己的環境；若你需要乾淨的角色邊界，就不適合這麼做。
@@ -104,9 +104,9 @@ Lolly 會隨著你的使用逐步快取內容，但這種邊用邊快取的方�
 
 ## 把個人資料搬到新裝置
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
 
-由於個人資料完全存放在本機，要把它帶到一個全新的安裝環境--新筆電、剛重設的瀏覽器、同事的電腦、離線的機器--唯一的方法就是**帶著檔案走**。沒有任何登入程序能幫你還原它，而這正是重點所在：一開始就沒有任何東西離開過你的裝置。
+由於個人資料完全存放在本機，要把它帶到一個全新的安裝環境——新筆電、剛重設的瀏覽器、同事的電腦、離線的機器——唯一的方法就是**帶著檔案走**。沒有任何登入程序能幫你還原它，而這正是重點所在：一開始就沒有任何東西離開過你的裝置。
 
 - <!--i:download--> **匯出我的資料**會下載一個 `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - 以所屬設定檔命名,並附上每日序號,避免重複匯出時檔名衝突(設定檔缺少的名稱部分會省略)。內容包含你的設定檔、每個已儲存的工作階段(含縮圖)、你上傳的圖片 - 你的品牌權杖與已安裝字型會一併作為使用者素材附帶 - 以及你的偏好設定(主題、版面配置、本機活動統計)。
 - <!--i:upload--> 在另一個安裝環境上使用**匯入資料…**讀回該檔案,即可從你離開的地方原樣接續。
@@ -114,7 +114,7 @@ Lolly 會隨著你的使用逐步快取內容，但這種邊用邊快取的方�
 
 ![搬移整個安裝環境的兩個按鈕:匯出我的資料寫入一個 zip,匯入資料再讀回](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls)
 
-這個包裹是單純、自含的 zip 檔，所以可以透過**任何**方式傳遞--USB、AirDrop、網路共用資料夾、寄給自己的電子郵件--而且目標裝置可以完全離線。每個部分都有做校驗碼，所以傳輸過程中損壞的檔案會在匯入時被抓出來，而不會半殘地被還原。匯入會**合併**（同名的個人資料／工作階段／圖片會被覆蓋；其餘的都會保留），所以絕不會清空一個原本就在使用中的目標裝置。
+這個包裹是單純、自含的 zip 檔，所以可以透過**任何**方式傳遞——USB、AirDrop、網路共用資料夾、寄給自己的電子郵件——而且目標裝置可以完全離線。每個部分都有做校驗碼，所以傳輸過程中損壞的檔案會在匯入時被抓出來，而不會半殘地被還原。匯入會**合併**（同名的個人資料／工作階段／圖片會被覆蓋；其餘的都會保留），所以絕不會清空一個原本就在使用中的目標裝置。
 
 不會一併搬過去的：目錄快取（會在新裝置上自行重新下載）以及工具本身（假設新裝置上已經存在）。
 
@@ -122,7 +122,7 @@ Lolly 會隨著你的使用逐步快取內容，但這種邊用邊快取的方�
 
 ## 工具如何使用你的個人資料
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&dark=1&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
 
 工具只會*預先填入*它明確設計要綁定的個人資料欄位：
 
@@ -140,7 +140,7 @@ Lolly 會隨著你的使用逐步快取內容，但這種邊用邊快取的方�
 
 個人資料改變的是一項資產*來自誰*；平台改變的是它*看起來像什麼*；功能則是*你能做出什麼*。
 
-### 「Profile」在別處還有另外兩種意思--都不是這一個
+### 「Profile」在別處還有另外兩種意思——都不是這一個
 
 這個詞在整個專案裡疊用了好幾種意思。以下兩者都不是本頁所談的個人資料：
 

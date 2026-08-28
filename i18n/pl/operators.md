@@ -8,7 +8,7 @@ System immunologiczny organizacji oparty na zero-trust, który otacza to, co ju�
 
 Lolly to nie narzędzie kreatywne drugiej kategorii: daje każdemu w ręce wynik jakości produkcyjnej, a doświadczenie tworzenia prowadzone marką nie ma sobie równych. Powód, dla którego *bezpiecznie* jest udostępniać je szeroko, ma naturę architektoniczną: nic się nie przesyła, czego sam tam nie umieściłeś, każdy wynik jest odtwarzalny, a każdy eksport może nieść wiele warstw wiodących w branży kryptograficznych zapisów. Bez względu na to, jak dokument trafił na twoje biurko, widzisz jego pełne pochodzenie, czy został zmodyfikowany i czy możesz go odtworzyć piksel w piksel.
 
-> **Gdzie to dziś stoi.** Właściwości bezpieczeństwa Lolly są z założenia silne, a jego mechanizmy kryptografii i parsowania plików przechodzą przez klasy korporacyjnej hartowanie infrastruktury SUSE. Pieczęcie, podpisywanie na urządzeniu i szyfrowanie opisane poniżej są realne i obronne już dziś, a jednocześnie dojrzewają w kierunku niezależnej certyfikacji - więc tam, gdzie umowa wymaga certyfikowanej gwarancji, wdrażaj je jako ochronę w głębi warstw, dopóki ten proces się nie zakończy.
+> **Obecny stan.** Właściwości bezpieczeństwa Lolly są mocne z założenia projektowego, a jej silniki kryptografii i parsowania plików przechodzą przez utwardzanie infrastruktury na poziomie klasy korporacyjnej SUSE. Poniższe pieczęcie, podpisywanie na urządzeniu i szyfrowanie są realne i obronne już teraz, i dojrzewają w kierunku niezależnej certyfikacji - więc tam, gdzie umowa wymaga certyfikowanej gwarancji, wdrażaj je jako obronę warstwową, dopóki ten proces się nie zakończy.
 
 ## Przewaga strategiczna
 
@@ -16,9 +16,9 @@ Zwyczajny sposób wykonywania rutynowej pracy kreatywnej to powierzchnia ryzyka:
 
 Lolly to odwraca. Praca, która *napędzała* te wycieki - karta z cytatem, zlokalizowany baner, plakietka wydarzenia, zredagowany zrzut ekranu - odbywa się teraz w narzędziu działającym na własnym urządzeniu pracownika, względem twojej marki, bez serwera w pętli. Nie dodałeś kontroli na wierzchu ryzykownego procesu; zastąpiłeś ryzykowny proces takim, który od początku nie ma żadnej ścieżki eksfiltracji.
 
-- **Konfiguracja jest twoja.** Silnik i powłoki są open source (MPL-2.0). Nałóż własne uwierzytelnianie, telemetrię czy CA; hostuj to albo nie; masz pełną kontrolę nad funkcjami i kosztami, śledzoną w git, a nie zamkniętą w bazie danych SaaS.
-- **Zarządzanie może być danymi, nie panelem.** Gdy chcesz taką kontrolę, zarządzaj katalogiem narzędzi jako repozytorium Git - recenzja pull requestów staje się zatwierdzeniem marki, z pełną ścieżką audytu i natychmiastowym cofnięciem każdego szablonu, do którego ma dostęp twoja załoga. To opcja, nie obowiązek, i spoczywa dokładnie na jednym biurku: twórcy pracują całkowicie w aplikacji, zapisując to, co tworzą, jako **sesję** i przekazując ją dalej jako link do udostępnienia, kopię zapasową lub współpracę na żywo - nic z tego nie wymaga gita. Gdy jedna z tych sesji zasługuje na to, by stać się trwałym punktem wyjścia, osoba zarządzająca wdrożeniem otwiera link, zapisuje jego wartości jako **szablon** tego narzędzia w pakiecie marki i zatwierdza commitem. Od tej chwili pojawia się w selektorze "Nowy z szablonu" tego narzędzia i jest dostępny przez głęboki link jako `?template=<id>`. Git to krok blokujący administratora, użyty raz, i nigdy nie jest czymś, czego musi dotknąć twórca. Zobacz [Wdrażanie i zarządzanie](/info/adoption-governance.html).
-- **Zabezpieczenia są strukturalne.** Ograniczenia marki są zaszyte na stałe w szablonach, a nie publikowane jako wytyczne, które można zignorować. Błędny wynik nie jest odradzany - jest niemożliwy do przedstawienia.
+- **Konfiguracja należy do Ciebie.** Silnik i powłoki są open source (MPL-2.0). Nałóż własne uwierzytelnianie, telemetrię czy CA; hostuj to albo nie; masz pełną kontrolę nad funkcjami i kosztami, śledzoną w git, a nie zamkniętą w bazie danych SaaS.
+- **Zarządzanie może być danymi, a nie panelem.** Gdy chcesz tej kontroli, zarządzaj katalogiem narzędzi jako repozytorium Git - przegląd pull requesta staje się zatwierdzeniem marki, z pełną ścieżką audytu i natychmiastowym cofnięciem każdego szablonu, do którego ma dostęp Twój zespół. To opcja, nie obowiązek, i należy dokładnie do jednego stanowiska: twórcy pracują całkowicie w aplikacji, zapisując to, co tworzą, jako **sesję** i przekazując to dalej jako link do udostępnienia, kopię zapasową lub współpracę na żywo - nic z tego nie wymaga gita. Gdy jedna z tych sesji zasługuje na to, by stać się trwałym punktem wyjścia, ktokolwiek zarządza wdrożeniem, otwiera link, zapisuje jej wartości jako **szablon** dla tego narzędzia w pakiecie marki i zatwierdza commit. Od tej pory pojawia się w selektorze "New from template" tego narzędzia i można się do niego odwołać przez `?template=<id>`. Git to krok blokujący administratora, wykonywany raz, i nigdy coś, czego musi dotykać twórca. Zobacz [Adopcja i zarządzanie](/info/adoption-governance.html).
+- **Bariery ochronne są strukturalne.** Ograniczenia marki są zakodowane na sztywno w szablonach, a nie publikowane jako wytyczne, które można zignorować. Błędny wynik nie jest odradzany - jest niemożliwy do przedstawienia.
 
 > **Zarządzasz całą sztafetą.** Twórca autoryzuje reguły, a deweloper skaluje je, ale to operator sprawia, że ten cykl życia jest bezpieczny do uruchomienia w całej organizacji - to samo narzędzie, które pozwala przedstawicielowi obsłużyć się samemu w samolocie, możesz bramkować przez recenzję Git, wdrażać przez swój MDM i weryfikować kryptograficznie. Zobacz, jak te role się sumują w [Cyklu życia kampanii](/info/overview.html#the-lifecycle-of-a-campaign), i jak nimi zarządzać w [Wdrażanie i zarządzanie](/info/adoption-governance.html).
 
@@ -50,7 +50,7 @@ Zmniejsz zbyt duży plik PDF na urządzeniu, żeby nikt nie sięgał po zewnętr
 
 Wszystkie to przekształcenia wykonywane na urządzeniu: Twój plik lub dane wchodzą, oczyszczone bajty wychodzą, a **nie ma żadnego serwera, na który trzeba by je wysłać**. To celowe przeciwieństwo typowego narzędzia "prześlij plik na stronę obcej firmy, żeby go oczyścić", po które sięga dobrze myślący pracownik w innym wypadku.
 
-![Strip Hidden Data: plik trafia na płótno, a plakietka jasno stwierdza, że nic nie jest przesyłane](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
+![Strip Hidden Data: plik trafia na płótno, a plakietka wprost stwierdza, że nic nie jest przesyłane](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
 
 Text Helper to ta sama umowa, tylko dla tekstu zamiast plików. To warsztat z zakładkami, którego pracownik szukałby inaczej na obcej stronie, i nie deklaruje żadnych danych wejściowych, bo nic, czego dotyka, nigdy nie opuszcza strony.
 
@@ -69,7 +69,7 @@ Każde dane wejściowe narzędzia można wyrazić jako parametr URL, a te same d
 
 Prompt to Image to determinizm w najczystszej postaci: tekst jest całym wejściem, złożony obraz jest całym wyjściem, a ten sam tekst zawsze składa się tak samo.
 
-![Prompt to Image - blok tekstu promptu złożony w kwadratowy obraz, bez niczego w wyniku, czego nie było w wejściu](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - blok tekstu promptu złożony w kwadratowym obrazie, gdzie w wyniku nie ma niczego, czego nie było na wejściu](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## Pochodzenie i Content Credentials
 
@@ -108,6 +108,10 @@ Kilka rzeczy warto mieć jasnych, zanim to wdrożysz:
 - **Hooki narzędzi *nie są* piaskownicą bezpieczeństwa.** Opcjonalny plik `hooks.js` narzędzia działa z wstrzykniętym mostem hosta, ale w powłoce przeglądarkowej wykonuje się w obrębie strony i *może* sięgnąć do `window`/`document`/`fetch`. Traktuj kod narzędzia tak, jak każdy kod, który uruchamiasz - przeglądaj go. Dlatego organizacja prowadząca wspólny katalog może kontrolować go przez przegląd w Git; tak czy inaczej, uruchamiaj tylko narzędzia, które przejrzałeś, dopóki nie pojawi się izolacja Worker.
 - **Content Credentials są odporne na manipulację w sensie wykrywalności.** Wykrywają zmiany, zamiast im zapobiegać - zobacz uwagi o interoperacyjności powyżej.
 - **Dwa poziomy szyfrowania.** Blokady *Standard* to szybkie, uniwersalne zabezpieczenia odstraszające; *Strong* (AES-256) to pełna ochrona - sięgaj po Strong przy wszystkim wrażliwym, pamiętając, że wymaga nowoczesnego czytnika.
+
+## Samodzielnie albo pod kontrolą warstwy zarządzania
+
+Dwa kształty, a Ty wybierasz dla każdego wdrożenia. **Samodzielny jest domyślny i nie wymaga serwera:** Lolly renderuje na urządzeniu, każdy twórca pracuje w aplikacji, a opisane wyżej zarządzanie git-jako-dane jest całkowicie opcjonalne - jedna organizacja może uruchomić to repozytorium bez niczego hostowanego. **Gdy chcesz kontroli w skali całej organizacji, dodaj warstwę zarządzania.** [lolly.work](https://lolly.work) to osobna, open source'owa (MPL-2.0) usługa, którą hostujesz sam - albo testujesz w hostowanej piaskownicy - i która zarządza powłoką na żywo: logowanie bramkowane przez SSO, politykę flag funkcji / eksportu / znaku wodnego, nakładki na dane wejściowe narzędzi, federację katalogów, zatwierdzenia i dziennik audytu połączony hashami, wszystko dostarczane do powłoki bez zmiany kodu tutaj. Jest niezależna od marki (konfiguracja plus zamontowany pakiet), korzysta z silnika i pakietów tego repozytorium bez modyfikacji i nigdy nie staje się ścieżką renderowania: Lolly nadal renderuje na urządzeniu z założenia. OSS = wolność jednostki; OSS + warstwa zarządzania = wolność organizacyjna.
 
 ## Dokąd dalej
 

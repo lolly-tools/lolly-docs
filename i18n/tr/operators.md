@@ -8,7 +8,7 @@ Zaten yaptığın işin etrafını saran sıfır güven kurumsal bağışıklık
 
 Lolly ikinci sınıf bir yaratıcı araç değildir: üretim kalitesinde çıktıyı herkesin eline verir ve markaya uygun yaratım deneyimi eşsizdir. Geniş çapta dağıtmanın *güvenli* olmasının nedeni mimaridir: sen koymadığın hiçbir şey yüklenmez, her sonuç yeniden üretilebilir ve her dışa aktarım, sektör lideri kriptografik kayıtların birden çok katmanını taşıyabilir. Bir belge masana nasıl ulaşmış olursa olsun, tam provenansını, üzerinde oynama yapılıp yapılmadığını ve onu piksel piksel yeniden oluşturup oluşturamayacağını görebilirsin.
 
-> **Bugün nerede durduğu.** Lolly'nin güvenlik özellikleri tasarım gereği güçlüdür ve kriptografi ile dosya ayrıştırma motorları SUSE'nin kurumsal düzeyde altyapı sertleştirmesinden geçiyor. Aşağıdaki mühürler, cihaz üzerinde imzalama ve şifreleme şu anda gerçek ve savunulabilirdir, bağımsız sertifikasyona doğru olgunlaşıyor - bu yüzden bir sözleşme sertifikalı güvence gerektirdiğinde, bu süreç tamamlanırken bunları derinlemesine savunma olarak devreye al.
+> **Mevcut durum.** Lolly'nin güvenlik özellikleri tasarım gereği güçlüdür ve kriptografi ile dosya ayrıştırma motorları SUSE'nin kurumsal düzeydeki altyapı sağlamlaştırmasından geçiyor. Aşağıdaki mühürler, cihaz üzerinde imzalama ve şifreleme şu anda gerçek ve savunulabilirdir, ve bağımsız sertifikasyona doğru olgunlaşıyor - bu yüzden bir sözleşme sertifikalı güvence gerektirdiğinde, bu süreç tamamlanırken bunları derinlemesine savunma olarak uygula.
 
 ## Stratejik avantaj
 
@@ -16,9 +16,9 @@ Rutin yaratıcı işin genellikle yapılma şekli bir sorumluluk yüzeyidir: har
 
 Lolly bunu tersine çevirir. Bu sızıntılara *neden olan* iş - alıntı kartı, yerelleştirilmiş banner, etkinlik rozeti, sansürlenmiş ekran görüntüsü - artık çalışanın kendi cihazında, senin markana karşı, aradan sunucu geçmeden yapılıyor. Riskli bir iş akışının üzerine bir kontrol eklemedin; onu, baştan sızıntı yolu olmayan bir iş akışıyla değiştirdin.
 
-- **Yapılandırma sana ait.** Motor ve kabuklar açık kaynaktır (MPL-2.0). Kendi kimlik doğrulamanı, telemetrini veya CA'nı üzerine ekle; barındır veya barındırma; SaaS veritabanına kilitlenmeden, git ile izlenen tam özellik ve maliyet kontrolüne sahip olursun.
-- **Yönetişim bir gösterge paneli değil, veri olabilir.** Bu kontrolü istediğinde, araç kataloğunu bir Git deposu olarak yönet - pull-request incelemesi marka onayı haline gelir, iş gücünün dokunabileceği her şablonun tam bir denetim izi ve anında geri alınmasıyla. Bu bir zorunluluk değil, bir seçenektir ve tam olarak tek bir masaya iner: oluşturucular tamamen uygulama içinde çalışır, yaptıklarını bir **oturum** olarak kaydeder ve bunu bir paylaşım bağlantısı, bir yedekleme veya canlı bir işbirliği olarak devreder - bunların hiçbiri git gerektirmez. Bu oturumlardan biri kalıcı bir başlangıç noktası olmayı hak ettiğinde, dağıtımı çalıştıran kişi bağlantıyı açar, değerlerini marka paketindeki o araç üzerinde bir **şablon** olarak kaydeder ve commit eder. O andan itibaren aracın "Şablondan yeni" seçicisinde görünür ve `?template=<id>` olarak derin bağlantı verilebilir. Git, yöneticinin bir kez kullanılan kilitleme adımıdır ve bir oluşturucunun asla dokunması gerekmeyen bir şeydir. Bkz. [Benimseme ve Yönetişim](/info/adoption-governance.html).
-- **Koruma bariyerleri yapısaldır.** Marka kısıtlamaları, göz ardı edilebilecek yönergeler olarak yayımlanmak yerine şablonlara sabit kodlanmıştır. Yanlış çıktı caydırılmaz - temsil edilemez hale getirilir.
+- **Yapılandırma sana ait.** Motor ve kabuklar açık kaynaktır (MPL-2.0). Kendi kimlik doğrulamanı, telemetrini veya CA'nı üzerine ekle; barındır ya da barındırma; git ile izlenen, bir SaaS veritabanına kilitlenmemiş tam özellik ve maliyet kontrolüne sahipsin.
+- **Yönetişim bir panel değil, veri olabilir.** Bu kontrolü istediğinde, araç kataloğunu bir Git deposu olarak yönet - pull request incelemesi marka onayına dönüşür, çalışanının dokunabileceği her şablonun tam bir denetim izi ve anında geri alınması ile birlikte. Bu bir seçenektir, zorunluluk değil, ve tam olarak tek bir masaya ait: yaratıcılar tamamen uygulama içinde çalışır, yarattıklarını bir **oturum** olarak kaydeder ve bunu bir paylaşım bağlantısı, bir yedek veya canlı bir işbirliği olarak aktarır - bunların hiçbiri git gerektirmez. Bu oturumlardan biri kalıcı bir başlangıç noktası olmayı hak ettiğinde, dağıtımı yöneten kişi bağlantıyı açar, değerlerini marka paketindeki o araç üzerinde bir **şablon** olarak kaydeder ve commit eder. O andan itibaren aracın "New from template" seçicisinde görünür ve `?template=<id>` olarak derin bağlantı verilebilir. Git, yöneticinin bir kez kullanılan kilitleme adımıdır ve asla bir yaratıcının dokunması gereken bir şey değildir. Bkz. [Benimseme ve Yönetişim](/info/adoption-governance.html).
+- **Koruma bariyerleri yapısaldır.** Marka kısıtlamaları, insanların görmezden gelebileceği yönergeler olarak yayınlanmak yerine şablonlara sabit kodlanmıştır. Yanlış çıktı caydırılmaz - temsil edilemez.
 
 > **Bütün bayrak yarışını sen yönetiyorsun.** Bir yaratıcı kuralları yazar ve bir geliştirici bunları ölçeklendirir, ama o yaşam döngüsünü kurum genelinde çalıştırılabilir hale getiren operatördür - bir temsilcinin uçakta kendi kendine hizmet almasını sağlayan aynı araç, senin Git incelemesiyle sınırlayabileceğin, MDM'in üzerinden dağıtabileceğin ve kriptografik olarak doğrulayabileceğin araçtır. Rollerin nasıl bileştiğini [Bir kampanyanın yaşam döngüsü](/info/overview.html#the-lifecycle-of-a-campaign)'nde, ve bunu nasıl yönettiğini [Benimseme ve Yönetişim](/info/adoption-governance.html)'de gör.
 
@@ -50,7 +50,7 @@ Aşırı büyük bir PDF'yi cihaz üzerinde küçült, böylece bir dosya e-post
 
 Bunların hepsi cihaz üzerinde dönüşümlerdir: dosyan veya verin girer, temizlenmiş bayt'lar çıkar ve **yüklenecek bir sunucu yoktur**. Bunlar, iyi niyetli bir çalışanın aksi halde başvuracağı tipik "dosyanı temizlemek için bir yabancının sitesine yükle" aracının kasıtlı tam tersidir.
 
-![Strip Hidden Data: dosya tuvale iner ve rozet hiçbir şeyin yüklenmediğini açıkça belirtir](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
+![Strip Hidden Data: dosya tuvale gelir ve rozet hiçbir şeyin yüklenmediğini açıkça belirtir](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
 
 Text Helper, dosyalar yerine metin için aynı anlaşmayı sunar. Bir çalışanın aksi halde bir yabancının sitesinde arayacağı sekmeli çalışma tezgahıdır ve dokunduğu hiçbir şey sayfadan asla ayrılmadığı için hiçbir girdi bildirmez.
 
@@ -69,7 +69,7 @@ Her araç girdisi bir URL parametresi olarak ifade edilebilir ve aynı girdiler 
 
 Prompt to Image, belirlenimciliğin en yalın halidir: metin girdinin tamamıdır, dizgilenmiş görsel çıktının tamamıdır ve aynı metin her zaman aynı şekilde dizilir.
 
-![Prompt to Image - bir istem metni bloğunun kare bir görsele dizgilenmiş hali, sonuçta girdide olmayan hiçbir şey yok](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - girdide olmayan hiçbir şeyin sonuçta olmadığı, kare bir görsele dizilmiş bir prompt metni bloğu](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## Köken ve Content Credentials
 
@@ -108,6 +108,10 @@ Devreye almadan önce netleştirmeye değer birkaç şey:
 - **Araç hook'ları bir güvenlik sandbox'ı *değildir*.** Bir aracın isteğe bağlı `hooks.js`'i host köprüsü enjekte edilmiş halde çalışır, ama bir tarayıcı shell'inde sayfanın alanında yürütülür ve `window`/`document`/`fetch`'e *ulaşabilir*. Araç kodunu, çalıştırdığın herhangi bir kod gibi ele al - incele. Paylaşılan bir katalog çalıştıran bir kuruluşun bunu Git incelemesiyle kapı altına alabilmesinin nedeni de budur; her iki durumda da Worker izolasyonu gelene kadar yalnızca incelediğin araçları çalıştır.
 - **Content Credentials kurcalamaya karşı duyarlıdır.** Değişikliği önlemek yerine tespit eder - yukarıdaki birlikte çalışabilirlik notlarına bak.
 - **İki şifreleme katmanı.** *Standard* kilitler hızlı, evrensel caydırıcılardır; *Strong* (AES-256) tam korumadır - hassas herhangi bir şey için Strong'a yönel, bunun modern bir okuyucu istediğini unutma.
+
+## Bağımsız veya bir kontrol düzlemi tarafından yönetilen
+
+İki biçim var, ve her dağıtım için sen seçersin. **Bağımsız mod varsayılandır ve sunucu gerektirmez:** Lolly cihazda render eder, her üretici uygulama içinde çalışır ve yukarıdaki git-veri-olarak yönetişim tamamen isteğe bağlıdır - tek bir organizasyon bu depoyu hiçbir şey barındırmadan çalıştırabilir. **Organizasyon genelinde kontrol istediğinde, bir kontrol düzlemi ekle.** [lolly.work](https://lolly.work), senin barındırdığın - veya barındırılan sandbox'ta değerlendirdiğin - ayrı, açık kaynaklı (MPL-2.0) bir hizmettir ve kabuğu canlı olarak yönetir: SSO korumalı oturum açma, feature flag / dışa aktarma / filigran politikası, araç girişi katmanları, katalog federasyonu, onaylar ve hash zincirli bir denetim günlüğü, tümü burada hiçbir kod değişikliği olmadan kabuğa sunulur. Marka bağımsızdır (yapılandırma artı monte edilmiş bir paket), bu deponun motorunu ve paketlerini değiştirmeden kullanır ve asla render yolu haline gelmez: Lolly hâlâ tasarım gereği cihazda render eder. OSS = bireysel özgürlük; OSS + kontrol düzlemi = organizasyonel özgürlük.
 
 ## Bundan sonra nereye
 

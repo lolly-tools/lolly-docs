@@ -153,7 +153,7 @@ Headings, code dan italic masing-masing kembali kepada primary sehingga anda men
 
 Peringkat ini dibuka **secara inline dalam bilik**, bukan dalam dialog, jadi kad yang anda datang daripadanya kekal pada skrin. Cari satu keluarga Google Fonts (Inter, Fraunces, Space Grotesk…) atau jatuhkan satu fail fon, tekan **Add to the comparison** dan calon-calon berdiri bersebelahan dalam perkataan yang sama sebelum mana-mana daripadanya dipasang. Escape membatalkan dan menyerahkan papan kekunci kembali kepada kad yang anda buka daripadanya.
 
-Itulah satu-satunya pintu masuk, sebab itulah tiada apa yang mendarat dalam jenama anda tanpa dilihat. Di bawah peringkat itu terletak dua panel pengurusan:
+Itulah satu-satunya pintu masuk, itulah sebabnya tiada apa-apa yang memasuki jenama anda tanpa dilihat. Di bawah stage terdapat dua panel pengurusan:
 
 - **Fonts on this device** - setiap keluarga yang dipasang, peranan yang dikhidmatinya dan satu padam. **Add a face** di sini membuka peringkat perbandingan yang sama tanpa had.
 - **Your fonts** - muat naik satu **TTF**, **OTF** atau **WOFF** daripada mesin anda sendiri. Itulah laluan untuk muka taip korporat berlesen yang sudah anda miliki.
@@ -211,13 +211,13 @@ Membawa satu semula ke dalam adalah **Add from… → Design tokens or a design 
 
 ## Versi
 
-**Versions** di bahagian bawah rel ialah tempat sistem reka bentuk berhenti menjadi sasaran yang sentiasa berubah. Terbitkan satu dan anda akan mendapat **salinan kekal dan bernama** yang disimpan pada peranti ini: ia tidak akan berubah selepas itu, jadi alat yang menyematkannya akan terus melukis perkara yang sama. Panel ini kekal tersembunyi sehingga terdapat sesuatu milik anda sendiri untuk diterbitkan, jadi studio yang tidak pernah menerbitkan tidak akan pernah ditunjukkan mekanismenya.
+**Versions** di kaki rel ialah tempat sesuatu design system berhenti menjadi sasaran yang sentiasa bergerak. Terbitkan satu dan anda mendapat **salinan kekal bernama** yang disimpan pada peranti ini: ia tidak pernah berubah selepas itu, jadi sesuatu alat yang menyematkannya akan terus melukis perkara yang sama. Panel ini kekal tersembunyi sehingga ada sesuatu milik anda sendiri untuk diterbitkan, jadi sesebuah studio yang tidak pernah menerbitkan tidak akan sekali-kali melihat kawalan-kawalan ini.
 
 Tiga perkara yang perlu diketahui sebelum anda menekan apa-apa, dan panel ini menyatakan ketiga-tiganya sebelum penekanan dan bukan selepasnya:
 
-- **Versi adalah kekal.** Belum ada fungsi padam buat masa ini, jadi panel ini menyatakan apa yang telah disimpan dan bahawa ia kekal disimpan, bukannya menawarkan butang yang berbohong.
-- **Pengalihan keluar mendahului kad keserasian.** Token yang ditambah dan diubah adalah berita; token yang *dialih keluar* ialah perkara yang merosakkan alat, jadi ia dinamakan dahulu dan disebut sebagaimana adanya.
-- **Penerbitan tidak boleh dibuat asal; pemulihan boleh.** *Restore latest from this version* ialah suntingan biasa kepada head, jadi ia mendarat pada tindanan buat asal studio dan panel menawarkan **Undo** dengan serta-merta.
+- **Sesuatu versi bersifat kekal.** Belum ada ciri padam, jadi panel itu menyatakan apa yang telah disimpan dan bahawa ia kekal tersimpan, bukannya menawarkan butang yang berbohong.
+- **Pengalihan keluar diutamakan pada kad keserasian.** Token yang ditambah dan diubah adalah berita; satu token yang *dialih keluar* ialah perkara yang merosakkan sesuatu alat, jadi ia dinamakan terlebih dahulu dan disebut sebagaimana adanya.
+- **Penerbitan tidak boleh dibuat asal; pemulihan boleh.** *Restore latest from this version* ialah suntingan biasa pada head, jadi ia masuk ke dalam tindanan buat asal studio itu dan panel itu terus menawarkan anda **Undo**.
 
 Anda boleh **Publish only**, atau **Publish and make active** - perbezaannya ialah sama ada alat dan aplikasi mengikut versi tersebut mulai sekarang atau terus mengikut suntingan terkini anda. **Follow the latest again** menjadikan setiap suntingan langsung sebaik sahaja ia dibuat. `#/start?area=versions` membuka panel tersebut secara terus.
 

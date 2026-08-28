@@ -52,13 +52,23 @@ Một công cụ có thể nhúng đầu ra trực tiếp của một công cụ
 
 Bộ lọc nâng cao, ghép ảnh, hoạt hình, hiệu ứng camera trực tiếp, thiết kế tạo sinh - mọi công nghệ web đều sẵn có cho tác giả khuôn mẫu, nên trần năng lực rất cao.
 
-![Đầu ra của Mesh Gradient - một trường màu mềm mại tạo sinh, được xây dựng hoàn toàn từ các token bảng màu thương hiệu của bạn](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Kết quả của Mesh Gradient - một trường màu mềm được tạo sinh, xây dựng hoàn toàn từ các token bảng màu của thương hiệu bạn](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+
+### Được nuôi lớn, không phải được vẽ ra
+
+**Growth** nuôi lớn bức tranh thay vì vẽ nó: một hệ thống có hạt giống (seed) lan tỏa ra từ một vòng tròn, một đường thẳng, chính những từ ngữ của bạn hoặc logo của bạn cho đến khi lấp đầy khung hình, theo bảng màu của bạn. Cùng một hạt giống luôn nuôi lớn ra cùng một tác phẩm, nên một liên kết sẽ tái tạo nó chính xác. Kết quả tạo ra là hình học SVG thông thường chứ không phải một bức ảnh chụp lại một bản vẽ, nên nó có thể in, plot và cắt được - và cùng một thiết kế đó sẽ chuyển động từ hạt giống ban đầu đến hình dạng hoàn chỉnh dưới dạng video.
+
+![Hoa văn mặc định của Growth - một trường dày đặc các đường lặp mang màu thương hiệu, nuôi lớn ra từ một vòng tròn, mỗi đường đều là một path SVG thực sự](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
+### Chuyển động đáp lại âm nhạc
+
+**Synth** giải một trường chất lỏng trên card đồ họa và tô nó bằng màu sắc của bạn. Cho nó một bản nhạc và trường này sẽ chuyển động theo âm thanh; nó xuất ra dưới dạng vòng lặp MP4, WebM, GIF hoặc PNG động, nối liền mạch từ đầu đến cuối, được kết xuất từng khung hình theo một đồng hồ điều khiển thay vì được ghi lại từ màn hình - nên chuyển động không bao giờ trôi lệch so với bản nhạc, và cùng một liên kết sẽ kết xuất ra cùng một đoạn clip ở bất kỳ độ dài nào.
+
+![Một khung hình từ cảnh mực của Synth - một trường chất lỏng tối được chiếu sáng bằng các sắc xanh lá của thương hiệu, bắt giữa lúc xoáy](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 Viết *công cụ*, không phải tệp: xây dựng thứ tạo ra 10.000 thẻ thay vì tự tay làm 10.000 thẻ. Khóa những gì không nên thay đổi; chỉ để lộ những gì được phép biến đổi.
 
 ## Những điểm nhấn bạn sẽ nhận ra
-
-![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
 
 - **In ấn, làm đúng chuẩn.** Đơn vị vật lý thực (mm/cm/in/pt) và DPI, bleed và crop mark, đầu ra CMYK và PDF/X-4 - một xưởng in nhận đúng thứ họ cần. Xem [Xuất file](/info/exporting.html#size-print-units).
 - **Video và chuyển động.** Xuất WebM/MP4 (kèm track âm thanh), PNG/WebP động và SVG động - từ cùng một template tạo ra ảnh tĩnh của bạn. **Sequence Studio** đi xa hơn: một dòng thời gian thực dưới canvas, với một hàng clip có nam châm căn chỉnh, các lane overlay tự do, cắt và tách, các preset chuyển cảnh, ghi lời thoại và trộn nhạc - kết xuất thành MP4, WebM, GIF hoặc APNG bởi một bộ compositor tất định thay vì ghi màn hình. File Lottie đi *vào* dưới dạng tài sản động và kết xuất ra bất kỳ định dạng nào trong số đó. Trên các clip là **keyframe**: đặt tư thế một khối tại một thời điểm, nâng nó khỏi trang với chiều sâu thực và cho camera bay qua kết quả. Xem [Sử dụng Lolly → Timeline](/info/using.html#timeline-sequence-studio) và [Tạo hoạt hình](/info/animating.html).
@@ -70,8 +80,6 @@ Viết *công cụ*, không phải tệp: xây dựng thứ tạo ra 10.000 th�
 - **Một giao diện điềm tĩnh hơn khi bạn muốn.** Bốn công tắc dưới **Hồ sơ → Trợ năng** - *Giảm chuyển động*, *Ẩn bản xem trước nhiều màu*, *Tương phản cao* và *Chữ lớn* - làm dịu ứng dụng quanh công việc của bạn. Mỗi cái tắt cho đến khi bạn bật, và không cái nào chạm vào canvas hay dịch chuyển dù chỉ một pixel của thứ bạn xuất ra. Xem [Hồ sơ của bạn → Trợ năng](/info/profile.html#accessibility).
 
 ## Tận dụng tối đa
-
-![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[Bắt đầu nhanh](/info/quickstart.html)** - đưa thương hiệu vào, có file đầu tiên ra.
 - **[Brand Studio](/info/brand-studio.html)** - định hình logo, màu sắc, kiểu chữ và token của bạn (`#/start`).

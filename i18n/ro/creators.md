@@ -52,13 +52,23 @@ O unealtă poate încorpora rezultatul live al altei unelte ca asset - un ecuson
 
 Filtre avansate, compoziție, animație, efecte de cameră live, design generativ - fiecare tehnologie web este disponibilă unui autor de șablon, deci plafonul este ridicat.
 
-![Rezultatul Mesh Gradient - un câmp generativ de culoare moale construit în întregime din token-urile de paletă ale brandului tău](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Rezultatul Mesh Gradient - un câmp generativ de culoare fină, construit în întregime din tokenurile paletei brandului tău](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+
+### Crescut, nu desenat
+
+**Growth** cultivă imaginea în loc s-o deseneze: un sistem pornit de la o sămânță se răspândește dintr-un inel, o linie, propriile tale cuvinte sau logo-ul tău, până umple cadrul, în paleta ta. Aceeași sămânță crește mereu aceeași lucrare, așa că un link o reproduce exact. Ce rezultă este geometrie SVG obișnuită, nu imaginea unui desen, așa că se poate tipări, plota și tăia - iar același design animă de la prima sămânță până la forma finală ca video.
+
+![Înflorirea implicită a Growth - un câmp dens de linii în culorile brandului, care se buclează, crescute dintr-un inel, fiecare linie fiind o cale SVG reală](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
+### Mișcare care răspunde muzicii
+
+**Synth** calculează un câmp de fluid pe placa grafică și îl pictează în culorile tale. Dă-i o piesă și câmpul se mișcă odată cu sunetul; se exportă ca MP4, WebM, GIF sau buclă animată PNG care se unește curat de la capăt la capăt, randată cadru cu cadru dintr-un ceas controlat, nu înregistrată de pe ecran - astfel încât mișcarea nu se abate niciodată de la coloana sonoră, iar același link randează același clip la orice lungime.
+
+![Un cadru din scena \"ink\" a Synth - un câmp de fluid întunecat luminat în verdele brandului, surprins în mijlocul unui vârtej](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 Creează *unelte*, nu fișiere: construiește lucrul care generează 10.000 de carduri în loc să faci manual 10.000 de carduri. Blochează ce nu ar trebui să se schimbe; expune doar ce este menit să varieze.
 
 ## Detalii pe care le vei observa
-
-![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
 
 - **Tipar, făcut corect.** Unități fizice reale (mm/cm/in/pt) și DPI, semne de bleed și crop marks, ieșire CMYK și PDF/X-4 - o tipografie primește exact ce îi trebuie. Vezi [Exportarea](/info/exporting.html#size-print-units).
 - **Video și mișcare.** Exportă WebM/MP4 (cu piste audio), PNG/WebP animate și SVG animat - din același șablon care produce și imaginile tale statice. **Sequence Studio** merge mai departe: o cronologie reală sub canvas, cu un rând magnetic de clipuri, benzi libere de suprapunere, tăiere și divizare, presetări de tranziție, înregistrare voiceover și mixaj muzical - randate ca MP4, WebM, GIF sau APNG de un compozitor determinist, nu de o înregistrare a ecranului. Fișierele Lottie *intră* ca active animate și se randează în oricare dintre acele formate. Deasupra clipurilor stau **keyframe-urile**: poziționează o casetă la un moment dat, ridic-o de pe pagină cu adâncime reală și zboară o cameră peste rezultat. Vezi [Folosirea Lolly → Cronologie](/info/using.html#timeline-sequence-studio) și [Animarea](/info/animating.html).
@@ -70,8 +80,6 @@ Creează *unelte*, nu fișiere: construiește lucrul care generează 10.000 de c
 - **O interfață mai calmă, când vrei una.** Patru comutatoare sub **Profil → Accesibilitate** - *Reduce mișcarea*, *Ascunde previzualizările colorate*, *Contrast ridicat* și *Text mare* - liniștesc aplicația în jurul muncii tale. Fiecare e oprit până îl activezi, și niciunul nu atinge canvas-ul sau nu mișcă vreun pixel din ce exporți. Vezi [Profilul tău → Accesibilitate](/info/profile.html#accessibility).
 
 ## Cum să obții tot ce poți din ea
-
-![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[Ghid rapid](/info/quickstart.html)** - brandul intră, primul fișier iese.
 - **[Brand Studio](/info/brand-studio.html)** - modelează-ți logo-urile, culorile, tipografia și token-urile (`#/start`).

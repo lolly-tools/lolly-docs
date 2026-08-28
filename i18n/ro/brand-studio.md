@@ -153,7 +153,7 @@ Titlurile, codul și italicul revin implicit la fontul principal până le atrib
 
 Scena se deschide **direct în cameră**, nu într-un dialog, așa că nu pierzi cardurile de la care ai pornit. Caută o familie din Google Fonts (Inter, Fraunces, Space Grotesk...) sau lasă un fișier de font, apasă **Add to the comparison** (Adaugă la comparație) și candidații stau unul lângă altul, în aceleași cuvinte, înainte ca vreunul dintre ei să se instaleze. Escape anulează și predă tastatura înapoi cardului de la care ai deschis-o.
 
-Aceasta este singura ușă de intrare, motiv pentru care nimic nu ajunge în brandul tău neobservat. Sub scenă stau cele două panouri de gestionare:
+Aceasta este singura ușă de intrare, motiv pentru care nimic nu intră în brandul tău nevăzut. Sub scenă se află cele două panouri de gestionare:
 
 - **Fonts on this device** (Fonturi pe acest dispozitiv) - fiecare familie instalată, rolurile pe care le deservește și o opțiune de ștergere. **Add a face** (Adaugă un font) aici deschide aceeași scenă de comparație, fără limitare de rol.
 - **Your fonts** (Fonturile tale) - încarcă un **TTF**, **OTF** sau **WOFF** de pe propriul calculator. Acesta este drumul pentru un font corporate licențiat pe care îl deții deja.
@@ -211,13 +211,13 @@ Aducerea uneia înapoi se face prin **Add from... → Design tokens or a design 
 
 ## Versiuni
 
-**Versiuni**, la baza panoului, este locul unde un sistem de brand încetează să mai fie o țintă mobilă. Publici una și obții o **copie permanentă, numită**, păstrată pe acest dispozitiv: nu se mai schimbă după aceea, așa că un tool care o fixează continuă să deseneze același lucru. Panoul rămâne ascuns până există ceva propriu de publicat, așa că un studio care nu publică niciodată nu vede mecanismul.
+**Versions** la baza barei este locul unde un sistem de design încetează să mai fie o țintă mobilă. Publică una și obții o **copie permanentă, cu nume** păstrată pe acest dispozitiv: nu se mai schimbă niciodată după aceea, așa că un instrument care o fixează continuă să deseneze același lucru. Panoul rămâne ascuns până există ceva al tău de publicat, astfel încât un studio care nu publică niciodată nu vede niciodată aceste comenzi.
 
 Trei lucruri de știut înainte să apeși orice, iar panoul le spune pe toate trei înainte de apăsare, nu după:
 
-- **O versiune este permanentă.** Nu există încă ștergere, așa că panoul spune ce a fost păstrat și că rămâne păstrat, în loc să ofere un buton care minte.
-- **Eliminările conduc cardul de compatibilitate.** Token-urile adăugate și modificate sunt noutăți; unul *eliminat* este ce strică un tool, așa că e numit primul și numit exact așa cum e.
-- **Publicarea nu poate fi anulată; restaurarea poate.** *Restore latest from this version* este o editare obișnuită a capului, așa că ajunge pe stiva de undo a studioului, iar panoul îți oferă imediat **Undo**.
+- **O versiune este permanentă.** Nu există încă ștergere, așa că panoul declară ce a fost păstrat și că rămâne păstrat, în loc să ofere un buton care minte.
+- **Eliminările conduc cardul de compatibilitate.** Tokenurile adăugate și modificate sunt noutăți; unul *eliminat* este ceea ce strică un instrument, așa că este numit primul și numit exact ceea ce este.
+- **Publicarea nu poate fi anulată; restaurarea poate.** *Restore latest from this version* este o modificare obișnuită a capului, așa că merge pe stiva de anulare a studioului, iar panoul îți oferă imediat **Undo**.
 
 Poți **Publish only**, sau **Publish and make active** - diferența fiind dacă tool-urile și aplicația urmează de acum acea versiune sau continuă să urmeze ultima ta editare. **Follow the latest again** pune fiecare editare live în momentul în care e făcută. `#/start?area=versions` deschide panoul direct.
 

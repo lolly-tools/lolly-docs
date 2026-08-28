@@ -8,7 +8,7 @@ Zero-trust organizační imunitní systém, který obepíná to, co už děláte
 
 Lolly není druhořadý kreativní nástroj: dává výstup produkční kvality do rukou každého a jeho zážitek tvorby vedený značkou nemá konkurenci. Důvod, proč je *bezpečné* ho rozdat široce, je architektonický: nic se nenahraje, co jste tam nedali sami, každý výsledek je reprodukovatelný a každý export může nést více vrstev kryptografických záznamů na úrovni oborového standardu. Bez ohledu na to, jak se dokument dostal na váš stůl, vidíte jeho úplný původ, zda s ním bylo manipulováno a zda ho dokážete znovu vytvořit pixel po pixelu.
 
-> **Kde to dnes stojí.** Bezpečnostní vlastnosti Lolly jsou už z návrhu silné a jeho kryptografické a soubor-parsovací enginy procházejí enterprise úrovní hardeningu infrastruktury SUSE. Pečetě, on-device podepisování a šifrování popsané níže jsou reálné a obhajitelné už teď a směřují k nezávislé certifikaci - takže tam, kde smlouva vyžaduje certifikovanou garanci, je nasaďte jako obranu do hloubky, dokud tento proces neproběhne.
+> **Současný stav.** Bezpečnostní vlastnosti Lolly jsou už z návrhu silné a její kryptografická a soubor-parsovací jádra procházejí utužováním infrastruktury na podnikové úrovni SUSE. Níže uvedené pečetě, podepisování na zařízení a šifrování jsou reálné a obhajitelné už teď a dozrávají směrem k nezávislé certifikaci - takže tam, kde smlouva vyžaduje certifikovanou záruku, je nasaď jako obranu do hloubky, dokud tento proces neskončí.
 
 ## Strategická výhoda
 
@@ -16,9 +16,9 @@ Obvyklý způsob, jakým se dělá rutinní kreativní práce, je plocha rizika:
 
 Lolly to obrací. Práce, která *poháněla* tyto úniky - citátová karta, lokalizovaný banner, jmenovka na akci, redigovaný screenshot - teď probíhá v nástroji, který běží na vlastním zařízení zaměstnance, proti vaší značce, bez serveru v cestě. Nepřidali jste kontrolu nad rizikovým workflow; nahradili jste rizikový workflow takovým, který od základu nemá cestu k úniku dat.
 
-- **Konfigurace je tvoje.** Engine a shelly jsou open source (MPL-2.0). Přidej si vlastní autentizaci, telemetrii nebo CA; hostuj to nebo ne; máš plnou kontrolu nad funkcemi i náklady, sledovanou v gitu, ne uzamčenou v SaaS databázi.
-- **Governance může být data, ne dashboard.** Když tuhle kontrolu chceš, spravuj katalog nástrojů jako Git repozitář - review pull requestu se stane schválením značky, s plným auditním záznamem a okamžitým rollbackem každé šablony, ke které se tvůj tým dostane. Je to možnost, ne povinnost, a dopadá přesně na jeden stůl: tvůrci pracují celou dobu v aplikaci, ukládají to, co vytvoří, jako **session** a předávají to dál jako odkaz na sdílení, zálohu nebo živou spolupráci - nic z toho git nepotřebuje. Když si některá z těch session zaslouží stát se trvalým výchozím bodem, ten, kdo řídí nasazení, otevře odkaz, zapíše jeho hodnoty jako **šablonu** u daného nástroje v brand packu a commitne. Od té chvíle se objevuje v selektoru "New from template" u nástroje a je dohledatelná přes deep link `?template=<id>`. Git je administrátorský uzamykací krok, použitý jednou, a nikdy nic, čeho by se tvůrce musel dotknout. Viz [Adopce a governance](/info/adoption-governance.html).
-- **Mantinely jsou strukturální.** Omezení značky jsou napevno zakódovaná v šablonách, ne publikovaná jako doporučení, která lze ignorovat. Špatný výstup není odrazovaný - je nezobrazitelný.
+- **Konfigurace patří tobě.** Jádro a shelly jsou open source (MPL-2.0). Nasaď si vlastní autentizaci, telemetrii nebo CA; hostuj to nebo ne; máš plnou kontrolu nad funkcemi a náklady, sledovanou v gitu, ne zamčenou v databázi SaaS.
+- **Správa může být data, ne dashboard.** Když tuhle kontrolu chceš, spravuj katalog nástrojů jako Git repozitář - kontrola pull requestu se stane schválením značky, s úplnou auditní stopou a okamžitým vrácením každé šablony, ke které má tvůj tým přístup. Je to volba, ne povinnost, a patří přesně na jeden stůl: tvůrci pracují celé v appce, ukládají to, co vytvoří, jako **relaci** a předávají to dál jako odkaz ke sdílení, zálohu nebo živou spolupráci - nic z toho git nepotřebuje. Když si jedna z těch relací zaslouží stát se trvalým výchozím bodem, kdokoli spravuje nasazení, otevře odkaz, zapíše její hodnoty jako **šablonu** u toho nástroje v balíčku značky a commitne. Od té chvíle se objevuje ve výběru "New from template" u toho nástroje a lze na ni přímo odkázat jako `?template=<id>`. Git je uzamykací krok administrátora, použitý jednou, a nikdy něco, čeho by se musel dotýkat tvůrce. Viz [Přijetí a správa](/info/adoption-governance.html).
+- **Zábrany jsou strukturální.** Omezení značky jsou napevno zakódovaná do šablon, ne publikovaná jako pokyny, které lze ignorovat. Špatný výstup není odrazován - je nezobrazitelný.
 
 > **Řídíš celou štafetu.** Kreativec autoruje pravidla a vývojář je škáluje, ale bezpečný provoz v rámci celé organizace zajišťuje operátor - stejný nástroj, který dovolí obchodnímu zástupci si poradit sám v letadle, je ten, který můžeš zgatovat přes Git review, nasadit přes svůj MDM a kryptograficky ověřit. Podívej se, jak se role sčítají v [Životní cyklus kampaně](/info/overview.html#the-lifecycle-of-a-campaign), a jak to řídíš v [Adopce a governance](/info/adoption-governance.html).
 
@@ -50,7 +50,7 @@ Zmenší předimenzované PDF přímo na zařízení, aby nikdo v okamžiku, kdy
 
 Všechny tyto jsou transformace přímo na zařízení: vstoupí tvůj soubor nebo data, vyjdou vyčištěné bajty a **neexistuje žádný server, kam by se nahrávalo**. Jsou záměrným opakem typického nástroje "nahraj svůj soubor na cizí web, aby ho vyčistil", po kterém jinak sáhne dobře míněný zaměstnanec.
 
-![Strip Hidden Data: soubor přistane na plátně a odznak jasně sděluje, že se nic nenahrává](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
+![Strip Hidden Data: soubor dorazí na plátno a odznak jasně uvádí, že se nic nenahrává](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
 
 Text Helper je stejná dohoda, jen pro text místo souborů. Je to sešitová pracovní deska, po které by zaměstnanec jinak pátral na cizím webu, a nedeklaruje vůbec žádné vstupy, protože nic, čeho se dotkne, stránku nikdy neopustí.
 
@@ -69,7 +69,7 @@ Každý vstup nástroje lze vyjádřit jako parametr URL a stejné vstupy dávaj
 
 Prompt to Image je determinismus v té nejčistší podobě: text je celý vstup, sázený obrázek je celý výstup a stejný text se vysází vždy stejně.
 
-![Prompt to Image - blok textu promptu sázený do čtvercového obrázku, přičemž ve výsledku není nic, co nebylo ve vstupu](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - blok textu promptu vysázený do čtvercového obrázku, kde ve výsledku není nic, co by nebylo na vstupu](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## Provenience a Content Credentials
 
@@ -108,6 +108,10 @@ Pár věcí, které stojí za to mít jasné, než to nasadíš:
 - **Hooky nástroje *nejsou* bezpečnostní sandbox.** Volitelný `hooks.js` nástroje běží s injektovaným host bridge, ale v prohlížečovém shellu se vykonává v realmu stránky a *dokáže* se natáhnout k `window`/`document`/`fetch`. Zacházej s kódem nástroje jako s jakýmkoli kódem, který spouštíš - projdi ho reviewem. Proto může organizace, která provozuje sdílený katalog, zgatovat ho přes Git review; v obou případech spouštěj jen nástroje, které jsi prošel reviewem, dokud nedorazí izolace přes Worker.
 - **Content Credentials jsou tamper-evidentní.** Odhalí úpravu, spíš než aby jí zabránily - viz poznámky k interoperabilitě výše.
 - **Dvě úrovně šifrování.** *Standard* zámky jsou rychlá, univerzální zábrana; *Strong* (AES-256) je plná ochrana - pro cokoli citlivého sáhni po Strong, s vědomím, že chce moderní čtečku.
+
+## Samostatně, nebo pod kontrolní vrstvou
+
+Dvě podoby, a ty si vybíráš pro každé nasazení. **Samostatný režim je výchozí a nepotřebuje server:** Lolly vykresluje na zařízení, každý tvůrce pracuje v appce a výše popsaná správa git-jako-data je zcela volitelná - jedna organizace může tento repozitář provozovat bez čehokoli hostovaného. **Když chceš kontrolu napříč celou organizací, přidej kontrolní vrstvu.** [lolly.work](https://lolly.work) je samostatná open source (MPL-2.0) služba, kterou hostuješ sám - nebo ji vyzkoušíš v hostované pískovišti - a která živě řídí shell: přihlášení bráněné přes SSO, politiku feature flagů / exportu / vodoznaku, překryvy vstupů nástrojů, federaci katalogů, schvalování a hash-řetězený auditní log, to vše doručované do shellu bez změny kódu tady. Je nezávislá na značce (konfigurace plus připojený balíček), využívá jádro a balíčky tohoto repozitáře beze změny a nikdy se nestává vykreslovací cestou: Lolly stále vykresluje na zařízení z podstaty. OSS = svoboda jednotlivce; OSS + kontrolní vrstva = organizační svoboda.
 
 ## Kam dál
 

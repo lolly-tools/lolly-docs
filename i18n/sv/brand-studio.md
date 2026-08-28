@@ -153,7 +153,7 @@ Headings, code och italic faller alla tillbaka på primary tills du tilldelar de
 
 Vyn öppnas **inline i rummet**, inte i en dialogruta, så att korten du kom ifrån ligger kvar på skärmen. Sök efter en Google Fonts-familj (Inter, Fraunces, Space Grotesk…) eller släpp en typsnittsfil, tryck på **Add to the comparison** och kandidaterna ställs sida vid sida i samma ord innan något av dem installeras. Escape avbryter och lämnar tillbaka tangentbordsfokus till kortet du öppnade det från.
 
-Det är den enda ingången, vilket är varför inget hamnar i ditt varumärke osett. Under vyn ligger de två hanteringspanelerna:
+Det är den enda dörren in, vilket är varför inget kommer in i ditt varumärke osett. Under scenen sitter de två hanteringspanelerna:
 
 - **Fonts on this device** - alla installerade familjer, rollerna de fyller och en raderingsknapp. **Add a face** här öppnar samma jämförelsevy utan avgränsning.
 - **Your fonts** - ladda upp en **TTF**, **OTF** eller **WOFF** från din egen dator. Det är vägen för ett licensierat företagstypsnitt du redan äger.
@@ -211,13 +211,13 @@ Att ta tillbaka en sker via **Add from… → Design tokens or a design file** (
 
 ## Versioner
 
-**Versioner** längst ner i panelen är där ett designsystem slutar vara ett rörligt mål. Publicera en och du får en **permanent, namngiven kopia** som sparas på den här enheten: den ändras aldrig efteråt, så ett verktyg som pinnar den fortsätter rita samma sak. Panelen förblir dold tills det finns något eget att publicera, så en studio som aldrig publicerar visas aldrig maskineriet.
+**Versioner** längst ner i listen är där ett designsystem slutar vara ett rörligt mål. Publicera en och du får en **permanent, namngiven kopia** som sparas på den här enheten: den ändras aldrig efteråt, så ett verktyg som fäster den fortsätter rita samma sak. Panelen förblir dold tills det finns något eget att publicera, så en studio som aldrig publicerar ser aldrig kontrollerna.
 
 Tre saker att veta innan du trycker på något, och panelen säger alla tre före tryckningen snarare än efter:
 
-- **En version är permanent.** Det finns ännu ingen radering, så panelen anger vad som har sparats och att det förblir sparat i stället för att erbjuda en knapp som ljuger.
-- **Borttagningar leder kompatibilitetskortet.** Tillagda och ändrade tokens är nyheter; en *borttagen* är det som får ett verktyg att gå sönder, så den nämns först och kallas vad den är.
-- **Publicering kan inte ångras; återställning kan.** *Restore latest from this version* är en vanlig redigering av huvudet, så den hamnar på studions ångra-stack och panelen erbjuder dig **Undo** direkt.
+- **En version är permanent.** Det finns ingen borttagningsfunktion ännu, så panelen anger vad som har sparats och att det förblir sparat istället för att erbjuda en knapp som ljuger.
+- **Borttagningar leder kompatibilitetskortet.** Tillagda och ändrade token är nyheter; en *borttagen* är det som förstör ett verktyg, så den nämns först och kallas vid sitt rätta namn.
+- **Publicering kan inte ångras; återställning kan.** *Återställ senaste från den här versionen* är en vanlig ändring på huvudet, så den hamnar på studions ångra-stack och panelen erbjuder dig **Ångra** direkt.
 
 Du kan **Publish only**, eller **Publish and make active** - skillnaden är om verktyg och appen följer den versionen från och med nu eller fortsätter följa din senaste redigering. **Follow the latest again** gör varje redigering live i samma stund den görs. `#/start?area=versions` öppnar panelen direkt.
 

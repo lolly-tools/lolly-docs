@@ -2,7 +2,7 @@
 
 Sambungan **Lolly URL Screenshot** membolehkan aplikasi web mengambil tangkapan skrin mana-mana halaman web dari dalam pelayar anda. Tanpanya, menangkap URL memerlukan aplikasi desktop - halaman pelayar tidak boleh membaca piksel dari tapak lain dengan sendirinya. Sambungan ini boleh, menggunakan tangkapan yang sama seperti yang digunakan oleh aplikasi desktop.
 
-Ia melakukan satu lagi tugas dengan jentera yang sama: membaca satu halaman yang anda namakan supaya Brand Studio dapat menarik jenama daripada laman web sebenar. Kedua-duanya diterangkan di bawah.
+Ia melakukan satu lagi tugas dengan cara yang sama: membaca satu halaman yang anda namakan supaya Brand Studio boleh menarik sesuatu jenama daripada satu laman web langsung. Kedua-duanya dibincangkan di bawah.
 
 Ia berjalan pada pelayar berasaskan Chromium: **Chrome, Edge, Brave, Arc, Opera** - Chrome 111 atau lebih baharu.
 

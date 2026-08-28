@@ -2,7 +2,7 @@
 
 Rozszerzenie **Lolly URL Screenshot** pozwala aplikacji webowej zrobić zrzut ekranu dowolnej strony internetowej z poziomu przeglądarki. Bez niego przechwycenie URL-a wymaga aplikacji desktopowej - strona w przeglądarce nie może sama odczytać pikseli innej witryny. Rozszerzenie może, korzystając z tego samego mechanizmu przechwytywania, którego używa aplikacja desktopowa.
 
-Tym samym mechanizmem wykonuje jeszcze jedno zadanie: odczytuje pojedynczą wskazaną przez ciebie stronę, dzięki czemu Brand Studio może wydobyć markę z działającej witryny. Oba przypadki opisano poniżej.
+Wykonuje w ten sam sposób jeszcze jedno zadanie: odczytuje pojedynczą podaną przez Ciebie stronę, dzięki czemu Brand Studio może wydobyć markę z działającej strony internetowej. Obie te funkcje opisano poniżej.
 
 Działa w przeglądarkach opartych na Chromium: **Chrome, Edge, Brave, Arc, Opera** - Chrome 111 lub nowszy.
 

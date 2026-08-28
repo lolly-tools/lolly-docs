@@ -153,7 +153,7 @@ Headings, code, dan italic masing-masing kembali ke primary sampai Anda menetapk
 
 Stage ini terbuka **inline di dalam ruang**, bukan dalam dialog, sehingga kartu tempat Anda datang tetap ada di layar. Cari keluarga Google Fonts (Inter, Fraunces, Space Grotesk…) atau jatuhkan file font, tekan **Add to the comparison** dan kandidat berdiri berdampingan dalam kata-kata yang sama sebelum salah satu di antaranya terpasang. Escape membatalkan dan mengembalikan keyboard ke kartu tempat Anda membukanya.
 
-Itulah satu-satunya pintu masuk, itulah sebabnya tidak ada yang masuk ke brand Anda tanpa terlihat. Di bawah stage terdapat dua panel manajemen:
+Itulah satu-satunya pintu masuk, itulah sebabnya tidak ada apa pun yang masuk ke brand Anda tanpa terlihat. Di bawah stage terdapat dua panel manajemen:
 
 - **Fonts on this device** - setiap keluarga yang terpasang, peran yang dilayaninya, dan tombol hapus. **Add a face** di sini membuka compare stage yang sama tanpa batasan.
 - **Your fonts** - unggah **TTF**, **OTF** atau **WOFF** dari mesin Anda sendiri. Itulah jalur untuk typeface korporat berlisensi yang sudah Anda miliki.
@@ -211,13 +211,13 @@ Membawanya kembali adalah **Add from… → Design tokens or a design file** (di
 
 ## Versi
 
-**Versions** di bagian bawah rel adalah tempat sistem desain berhenti menjadi target yang bergerak. Publikasikan satu dan Anda mendapatkan **salinan permanen bernama** yang disimpan di perangkat ini: salinan itu tidak pernah berubah setelahnya, sehingga alat yang mengaitkannya tetap menggambar hal yang sama. Panel ini tetap tersembunyi sampai ada sesuatu milik Anda sendiri untuk dipublikasikan, sehingga studio yang tidak pernah mempublikasikan tidak pernah diperlihatkan mekanismenya.
+**Versions** di kaki rail adalah tempat sebuah design system berhenti menjadi target yang bergerak. Publikasikan satu dan Anda mendapatkan **salinan permanen bernama** yang disimpan di perangkat ini: ia tidak pernah berubah setelahnya, jadi sebuah alat yang menyematkannya akan terus menggambar hal yang sama. Panel ini tetap tersembunyi sampai ada sesuatu milik Anda sendiri untuk dipublikasikan, jadi sebuah studio yang tidak pernah mempublikasikan tidak akan pernah melihat kontrol-kontrol ini.
 
 Tiga hal yang perlu diketahui sebelum Anda menekan apa pun, dan panel ini menyatakan ketiganya sebelum penekanan, bukan sesudahnya:
 
-- **A version is permanent.** Belum ada fitur hapus, jadi panel ini menyatakan apa yang telah disimpan dan bahwa itu tetap tersimpan, alih-alih menawarkan tombol yang berbohong.
-- **Removals lead the compatibility card.** Token yang ditambahkan dan diubah adalah berita; token yang *dihapus* adalah hal yang merusak alat, jadi itu disebutkan lebih dulu dan disebut sesuai adanya.
-- **Publishing can't be undone; restoring can.** *Restore latest from this version* adalah pengeditan biasa pada head, jadi itu masuk ke tumpukan undo studio dan panel langsung menawarkan **Undo** kepada Anda.
+- **Sebuah versi bersifat permanen.** Belum ada fitur hapus, jadi panel menyatakan apa yang telah disimpan dan bahwa itu tetap tersimpan, bukan menawarkan tombol yang berbohong.
+- **Penghapusan memimpin kartu kompatibilitas.** Token yang ditambahkan dan diubah adalah berita; sebuah token yang *dihapus* adalah hal yang merusak sebuah alat, jadi ia disebutkan pertama dan disebut apa adanya.
+- **Publikasi tidak bisa dibatalkan; restore bisa.** *Restore latest from this version* adalah edit biasa pada head, jadi ia masuk ke undo stack studio dan panel langsung menawarkan Anda **Undo**.
 
 Anda dapat **Publish only**, atau **Publish and make active** - bedanya adalah apakah alat dan aplikasi mengikuti versi tersebut mulai sekarang atau tetap mengikuti pengeditan terbaru Anda. **Follow the latest again** membuat setiap pengeditan langsung aktif begitu dibuat. `#/start?area=versions` membuka panel secara langsung.
 

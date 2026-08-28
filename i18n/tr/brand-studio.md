@@ -153,7 +153,7 @@ Başlıklar, kod ve italik, sen onları atayana kadar birincile geri döner, bö
 
 Sahne bir iletişim kutusunda değil, **odanın içinde** açılır, böylece geldiğin kartlar ekranda kalır. Bir Google Fonts ailesini ara (Inter, Fraunces, Space Grotesk…) ya da bir font dosyası bırak, **Karşılaştırmaya ekle**ye bas ve adaylar hiçbiri kurulmadan önce aynı sözcüklerde yan yana durur. Escape iptal eder ve klavyeyi onu açtığın karta geri verir.
 
-O, içeri açılan tek kapıdır, bu yüzden markana hiçbir şey görülmeden düşmez. Sahnenin altında iki yönetim paneli oturur:
+Bu tek giriş kapısıdır, bu yüzden markana görülmeden hiçbir şey girmez. Sahnenin altında iki yönetim paneli bulunur:
 
 - **Bu cihazdaki fontlar** - kurulu her aile, hizmet ettiği roller ve bir silme. Buradaki **Bir yüz ekle**, aynı karşılaştırma sahnesini kapsamsız açar.
 - **Fontların** - kendi makinenden bir **TTF**, **OTF** ya da **WOFF** yükle. Zaten sahip olduğun lisanslı bir kurumsal yazı tipi için yol budur.
@@ -211,13 +211,13 @@ Birini geri getirmek **Şuradan ekle… → Tasarım token'ları ya da bir tasar
 
 ## Sürümler
 
-Rayın altındaki **Sürümler**, bir tasarım sisteminin hareketli bir hedef olmaktan çıktığı yerdir. Birini yayımladığında bu cihazda saklanan **kalıcı, adlandırılmış bir kopya** elde edersin: sonrasında hiç değişmez, bu yüzden onu sabitleyen bir araç aynı şeyi çizmeye devam eder. Panel, yayımlayacak kendine ait bir şey olana kadar gizli kalır, bu yüzden hiç yayımlamayan bir stüdyoya makine hiç gösterilmez.
+**Versions**, rayın alt kısmında, bir tasarım sisteminin hareketli bir hedef olmaktan çıktığı yerdir. Birini yayınla ve bu cihazda tutulan **kalıcı, adlandırılmış bir kopya** elde et: bundan sonra asla değişmez, bu yüzden onu sabitleyen bir araç aynı şeyi çizmeye devam eder. Panel, yayınlanacak kendine ait bir şey olana kadar gizli kalır, bu yüzden asla yayınlamayan bir stüdyo bu kontrolleri hiç görmez.
 
 Herhangi bir şeye basmadan önce bilmen gereken üç şey var, ve panel bu üçünü de basmadan önce söyler, sonra değil:
 
-- **Bir sürüm kalıcıdır.** Henüz silme yok, bu yüzden panel neyin korunduğunu ve korunmuş kalacağını belirtir, yalan söyleyen bir düğme sunmak yerine.
-- **Kaldırmalar uyumluluk kartında önde gelir.** Eklenen ve değiştirilen tokenler haberdir; *kaldırılan* bir token ise bir aracı bozan şeydir, bu yüzden önce adlandırılır ve olduğu gibi anılır.
-- **Yayımlamak geri alınamaz; geri yüklemek geri alınabilir.** *Bu sürümden en güncel hâli geri yükle*, en güncel hâl üzerinde sıradan bir düzenlemedir, bu yüzden stüdyonun geri al yığınına iner ve panel sana hemen **Geri Al**'ı sunar.
+- **Bir sürüm kalıcıdır.** Henüz silme yok, bu yüzden panel yalan söyleyen bir düğme sunmak yerine neyin tutulduğunu ve tutulmaya devam ettiğini belirtir.
+- **Kaldırmalar uyumluluk kartına öncülük eder.** Eklenen ve değiştirilen tokenlar haberdir; *kaldırılan* bir tane bir aracı bozan şeydir, bu yüzden önce o adlandırılır ve ne olduğu söylenir.
+- **Yayınlamak geri alınamaz; geri yükleme geri alınabilir.** *Restore latest from this version*, başa yapılan sıradan bir düzenlemedir, bu yüzden stüdyonun geri alma yığınına gider ve panel sana hemen **Undo**'yu sunar.
 
 **Sadece Yayımla** veya **Yayımla ve etkinleştir** seçebilirsin - fark, araçların ve uygulamanın bundan sonra o sürümü mü izleyeceği yoksa en güncel düzenlemeni mi izlemeye devam edeceği. **Yeniden en güncel hâli izle**, her düzenlemeyi yapıldığı anda canlıya alır. `#/start?area=versions` paneli doğrudan açar.
 

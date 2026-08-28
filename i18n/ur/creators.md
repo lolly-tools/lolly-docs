@@ -52,13 +52,23 @@ Street Map اس تجارت کی ایک مناسب مثال ہے: آپ ایک ش�
 
 ایڈوانسڈ فلٹرز، کمپوزٹنگ، اینیمیشن، لائیو کیمرہ اثرات، جنریٹو ڈیزائن - ٹیمپلیٹ کے مصنف کے لیے ہر ویب ٹیکنالوجی دستیاب ہے، اس لیے حد بہت اونچی ہے۔
 
-![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Mesh Gradient کا نتیجہ - نرم رنگ کا ایک generative میدان جو مکمل طور پر آپ کے برانڈ کی پیلیٹ ٹوکنز سے بنایا گیا ہے](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+
+### اگایا گیا، بنایا نہیں گیا
+
+**Growth** تصویر کھینچنے کے بجائے اسے اگاتا ہے: ایک بیج (seed) پر مبنی نظام ایک حلقے، لکیر، آپ کے اپنے الفاظ یا آپ کے لوگو سے پھیلتا ہے یہاں تک کہ آپ کی پیلیٹ میں فریم بھر دیتا ہے۔ ایک ہی بیج ہمیشہ وہی ٹکڑا اگاتا ہے، اس لیے ایک لنک اسے عین اسی طرح دوبارہ پیدا کرتا ہے۔ جو نتیجہ نکلتا ہے وہ کسی ڈرائنگ کی تصویر کے بجائے عام SVG جیومیٹری ہے، اس لیے یہ پرنٹ، پلاٹ اور کٹ ہو سکتی ہے - اور وہی ڈیزائن پہلے بیج سے لے کر مکمل شکل تک بطور ویڈیو متحرک ہوتا ہے۔
+
+![Growth کا ڈیفالٹ bloom - برانڈ رنگوں میں گھومتی لکیروں کا ایک گھنا میدان جو ایک حلقے سے اگایا گیا، ہر لکیر ایک حقیقی SVG path ہے](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
+### حرکت جو موسیقی کا جواب دیتی ہے
+
+**Synth** گرافکس کارڈ پر ایک fluid میدان حل کرتا ہے اور اسے آپ کے رنگوں میں رنگتا ہے۔ اسے کوئی ٹریک دیں اور میدان آواز کے ساتھ حرکت کرتا ہے؛ یہ MP4، WebM، GIF یا animated PNG loop کے طور پر export ہوتا ہے جو سرے سے سرے تک صاف جڑتا ہے، اسکرین سے ریکارڈ کیے جانے کے بجائے ایک driven clock سے فریم بہ فریم render کیا جاتا ہے - اس لیے حرکت کبھی soundtrack سے نہیں بہکتی، اور وہی لنک کسی بھی طوالت پر وہی کلپ render کرتا ہے۔
+
+![Synth کے ink سین کا ایک فریم - برانڈ کے سبز رنگوں میں روشن ایک تاریک fluid میدان، گھومتے ہوئے پکڑا گیا](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 *ٹولز* تیار کریں، فائلیں نہیں: وہ چیز بنائیں جو 10,000 کارڈز جنریٹ کرتی ہے بجائے اس کے کہ 10,000 کارڈز بنائیں۔ جو نہیں بدلنا چاہیے اسے لاک کریں؛ صرف وہ ظاہر کریں جو تبدیل ہونے کے لیے ہے۔
 
 ## وہ چیزیں جو آپ محسوس کریں گے
-
-![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
 
 - **پرنٹ، صحیح طریقے سے۔** حقیقی فزیکل یونٹس (mm/cm/in/pt) اور DPI، بلیڈ اور کراپ مارکس، CMYK اور PDF/X-4 آؤٹ پٹ-انٹینٹ - پرنٹ شاپ کو بالکل وہی ملتا ہے جس کی اسے ضرورت ہے۔ دیکھیں [ایکسپورٹ کرنا](/info/exporting.html#size-print-units)۔
 - **ویڈیو اور موشن۔** WebM/MP4 (آڈیو ٹریکس کے ساتھ)، اینیمیٹڈ PNG/WebP اور اینیمیٹڈ SVG ایکسپورٹ کریں - اسی ٹیمپلیٹ سے جو آپ کی سٹلز بناتا ہے۔ **Sequence Studio** مزید آگے جاتا ہے: کینوس کے نیچے ایک حقیقی ٹائم لائن، کلپس کی میگنیٹک قطار، آزاد اوورلے لینز، ٹرم اور سپلٹ، ٹرانزیشن پریسیٹس، وائس اوور ریکارڈنگ اور میوزک مکس کے ساتھ - MP4، WebM، GIF یا APNG کے طور پر ایک ڈیٹرمنسٹک کمپوزیٹر کے ذریعے رینڈر کیا جاتا ہے، نہ کہ اسکرین ریکارڈنگ کے ذریعے۔ Lottie فائلیں اینیمیٹڈ اثاثوں کے طور پر *اندر* آتی ہیں اور ان میں سے کسی بھی شکل میں رینڈر ہو سکتی ہیں۔ کلپس کے اوپر **کی فریمز** بیٹھتے ہیں: ایک لمحے میں ایک باکس پوز کریں، اسے حقیقی گہرائی کے ساتھ صفحے سے اٹھائیں اور نتیجے پر کیمرہ اڑائیں۔ دیکھیں [Lolly استعمال کرنا → ٹائم لائن](/info/using.html#timeline-sequence-studio) اور [اینیمیٹ کرنا](/info/animating.html)۔
@@ -70,8 +80,6 @@ Street Map اس تجارت کی ایک مناسب مثال ہے: آپ ایک ش�
 - **جب چاہیں ایک پرسکون انٹرفیس۔** **پروفائل → رسائی** کے تحت چار سوئچز - *موشن کم کریں*، *رنگین پیش نظارے چھپائیں*، *ہائی کنٹراسٹ* اور *بڑا ٹیکسٹ* - ایپ کو آپ کے کام کے گرد پرسکون کرتے ہیں۔ ہر ایک بند رہتا ہے جب تک آپ اسے آن نہ کریں، اور ان میں سے کوئی بھی آپ کے کینوس کو چھوتا یا آپ کی ایکسپورٹ کا کوئی پکسل نہیں ہلاتا۔ دیکھیں [آپ کا پروفائل → رسائی](/info/profile.html#accessibility)۔
 
 ## اس سے زیادہ سے زیادہ فائدہ اٹھائیں
-
-![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[کوئیک اسٹارٹ](/info/quickstart.html)** - برانڈ اندر، پہلی فائل باہر۔
 - **[برانڈ اسٹوڈیو](/info/brand-studio.html)** - اپنے لوگو، رنگ، ٹائپ اور ٹوکنز کو شکل دیں (`#/start`)۔

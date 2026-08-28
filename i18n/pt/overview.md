@@ -66,7 +66,7 @@ A forma mais clara de ver o que o Lolly é não é uma lista de recursos - é ac
 
 O "gráfico novo" do passo dois é uma renderização como esta, produzida a partir de uma string de dados e alguns parâmetros sem ninguém abrir um arquivo de design:
 
-![Um gráfico de área empilhada com título, suas três séries em faixas de uma paleta fria com eixos, legenda e título posicionados todos pelo template em vez de manualmente](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![Um gráfico de área empilhada com título, suas três séries em faixas de uma paleta fria, com eixos, legenda e título posicionados pelo modelo em vez de manualmente](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 O ponto não é que o Lolly é bom para designers *e* bom para desenvolvedores *e* bom para vendas, cada um isoladamente. É uma **corrida de revezamento**: o trabalho inicial do criativo é escalado pelo desenvolvedor, que por sua vez capacita o produtor. A experiência sem esforço para o representante não técnico no avião só é *possível* por causa do rigor que o designer estabeleceu e o desenvolvedor implantou.
 
@@ -84,7 +84,7 @@ A mesma ferramenta determinística alcança essa escala de três formas, todas p
 - <!--i:code--> **Um desenvolvedor, pela linha de comando.** A CLI roda o *mesmo* engine e o *mesmo* caminho de renderização sem interface, então a ferramenta pode ser sequenciada por todas as 10.000 linhas em um script ou pipeline noturno. Uma chamada `lolly <tool> --field=…` em um loop é toda a integração.
 - <!--i:cpu--> **Um sistema ou agente de IA, via MCP.** A mesma ferramenta operada programaticamente, com a mesma fidelidade e escala ainda maior - porque uma máquina não fica entediada enquanto milhares de arquivos vão chegando.
 
-![Modo lote em uma instalação nova: uma linha vazia esperando por uma ferramenta, com toda a superfície de planilha e seu botão Render já no lugar antes de qualquer dado chegar](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+![O modo Batch em uma instalação nova: uma linha vazia esperando por uma ferramenta, com toda a superfície de planilha e seu botão Render já no lugar antes de qualquer dado chegar](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
 
 Um conjunto de restrições de marca, fixado uma vez por um designer; três caminhos para a mesma saída pré-aprovada - e o caminho da máquina escala mais longe de todos, porque nunca se cansa enquanto os arquivos vão chegando.
 
@@ -249,7 +249,7 @@ O shell web é responsivo a partir de um único layout. No desktop, uma ferramen
 
 A mesma ferramenta em largura de celular, sem um segundo layout para manter: os controles viram uma folha no topo, a prévia ocupa a tela inteira e o botão de renderizar flutua sobre ela.
 
-![Um audiograma em uma tela de 430px de largura - a folha de controles acima, a arte quadrada finalizada abaixo e o botão de renderizar flutuante](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![Um Audiogram em uma tela de 430px de largura - a folha de controles acima, a arte quadrada finalizada abaixo e a pílula flutuante de renderização](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **Modo em lote (`/pro`).** O shell web também traz uma grade de lote no estilo planilha (`shells/web/src/pro/`) que renderiza muitas linhas de uma vez em uma ou várias ferramentas. Ela faz round-trip de CSV/TSV mais colar de planilha, template/formato/tamanho/unidade/dpi por linha, um painel lateral de editor de blocos com prévia ao vivo, colunas de exportação recolhíveis, uma barra de tags de "relevância" por linha, reordenação de linhas por alça de arraste à esquerda, confirmação de exclusão em duas etapas, sessões de lote salvas e um download em `.zip`. Essa é a superfície de um-para-muitos por trás do posicionamento de "geração de conteúdo em massa".
 
@@ -286,10 +286,10 @@ As linhas são listadas na ordem das seções da galeria. A seção `utility` se
 | Categoria | Exemplos | Planejado |
 |---|---|---|
 | `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
-| `designer` | Brand Lockup, Design, Chart Creator, D3 Chart Studio, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `designer` | Brand Lockup, Design, Chart, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Conversores de unidade/formato, mais utilitários de privacidade on-device |
+| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Conversores de unidade/formato, mais utilitários de privacidade no dispositivo |
 
 Essas células são **exemplos, não inventários**. Quais ferramentas existem é uma propriedade do perfil que você montou, não desta página: um pacote de marca adiciona as suas próprias e pode excluir uma ferramenta da comunidade que prefira não distribuir. `catalog/tools/index.json` - gerado a partir dos manifestos, e o registro que a galeria de fato lê - é a lista autoritativa; para contar o que um perfil monta, conte os manifestos (`ls community/*/tool.json brands/*/tools/*/tool.json`) em vez de confiar em um número anotado aqui. (Um id de ferramenta presente em dois pacotes monta uma única vez, a partir do pacote vencedor.)
 
@@ -346,12 +346,12 @@ Um punhado de superfícies principais, para mostrar o que ela cobre - [Host API]
 
 | Superfície | Desde | O que adiciona |
 |---|---|---|
-| `host.tokens` | 1.0 | Tokens de design DTCG - as primitivas próprias da marca |
-| `host.text` | 1.0 | Texto para path via HarfBuzz WASM (a flag de capacidade `wasm` marca ferramentas que dependem disso) |
-| `host.media` | 1.4 | Quadros de câmera ao vivo alimentando o hook `onFrame`. Aprimoramento progressivo, deliberadamente *não* restrito pela flag `camera` - essa ferramenta ainda funciona como uma ferramenta comum de imagem estática |
-| `host.color` | 1.40 | Matemática perceptual de cor: ΔEOK, contraste WCAG + APCA, rampas OKLab, quebras de classe, paletas categóricas, esquemas de harmonia (1.60), mistura CSS Color 4 e geração de gradiente (1.68). Pura e síncrona - os shells anexam o `makeColorApi()` do próprio engine em vez de implementar qualquer coisa, então não pode divergir |
-| `host.images` | 1.60 | Decodificar / redimensionar / recodificar bytes no dispositivo - o caminho de conversão (HEIC → JPEG, comprimir para WebP, reduzir escala). Entregue no shell web como uma fachada preguiçosa, para que o decodificador HEIC nunca entre no chunk de boot |
-| `host.geom` | 1.64 | Geometria vetorial exata: booleanos de path, deslocamento (offset), stroke-to-fill, rebaixamento de spline, simplificação, teste de colisão. Também pura, síncrona e anexada a partir do engine (`makeGeomApi()`); falhas são *retornadas*, nunca lançadas |
+| `host.tokens` | 1.0 | Tokens de design DTCG - os primitivos da própria marca |
+| `host.text` | 1.0 | Texto para caminho (text-to-path) via HarfBuzz WASM (a flag de capacidade `wasm` sinaliza as ferramentas que dependem disso) |
+| `host.media` | 1.4 | Quadros de câmera ao vivo acionando o hook `onFrame`. Aprimoramento progressivo, deliberadamente *não* condicionado pela flag `camera` - essa ferramenta continua funcionando como uma ferramenta comum de imagem estática |
+| `host.color` | 1.40 | Matemática de cor perceptual: ΔEOK, contraste WCAG + APCA, rampas OKLab, class-breaks, paletas categóricas, esquemas de harmonia (1.60), mistura CSS Color 4 e bake de gradiente (1.68). Pura e síncrona - os shells anexam o `makeColorApi()` do engine em vez de implementar qualquer coisa, então não pode haver divergência |
+| `host.images` | 1.60 | Decodifica / redimensiona / recodifica bytes no dispositivo - o caminho de conversão (HEIC → JPEG, compressão para WebP, downscale). Entregue no shell web como uma fachada preguiçosa (lazy facade), para que o decodificador HEIC nunca entre no chunk de boot |
+| `host.geom` | 1.64 | Geometria vetorial exata: booleanos de caminho, offsetting, stroke-to-fill, rebaixamento de splines, simplificação, hit testing. Também pura, síncrona e anexada a partir do engine (`makeGeomApi()`); falhas são *retornadas*, nunca lançadas (thrown) |
 
 O restante segue as mesmas regras e é documentado junto com elas: `pdf` (1.8) e `pptx` (1.58) para cirurgia de documentos on-device, `audio` (1.71) e `speech` (1.96) para análise de clipe e TTS/transcrição on-device, `viz` (1.72) para o contrato placeholder do MilkDrop, `codec` (1.100) e `layers` (1.102) para saída de bits profundos e bitmap em camadas, `upscale` (1.101) e `matte` (1.103) para os modelos on-device, `raster` (1.105) para hooks que fazem seu próprio trabalho de pixel, `connectors` (1.106) para setas seguras para exportação e `c2pa` (1.85) para assinar bytes finalizados. A contagem cresce; as regras não.
 

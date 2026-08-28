@@ -233,7 +233,7 @@ These keys are never treated as tool inputs. They control shell-level behaviour.
 | `template` | web only | Id of a `templates[]` entry in the tool's manifest to seed a fresh session from, skipping the "New from template" chooser (a launcher for a retired tool id, e.g. `?template=carousel`). The entry's `values` are read in-process (never packed into the link); an unknown or absent id falls through to the normal fresh-open flow. The CLI has no chooser, so it ignores `template`. |
 | `preset` | web only | Id of a preset inside the named template - a preset is a curated values overlay on its template's base values, so `?template=poster&preset=story` seeds the Poster template in its Story variant. Only read alongside `template`; an unknown or absent id applies the template base alone. Ignored by the CLI. |
 | `output` | CLI only | File path to write the exported file. Defaults to stdout. |
-| `_v` | web + CLI | Tool version pin (e.g. `1.0.0`). Ignored if not matched - forward-compat safety. |
+| `_v` | web + CLI | Tool version pin (e.g. `1.0.0`). Ignored if not matched - forward-compat safety. The `_` prefix as a whole is a **reserved namespace**: any param starting with `_` is skipped before input matching, and no tool input or `urlKey` may claim such a name - future reserved params are minted there so they can never collide with a tool's inputs. |
 | `width` / `w` | web + CLI | Output width, as a value in `unit`. Also pre-fills the export dimensions panel. On a multi-artboard document, see the note below the table. |
 | `height` / `h` | web + CLI | Output height, as a value in `unit`. Also pre-fills the export dimensions panel. On a multi-artboard document, see the note below the table. |
 | `unit` | web + CLI | Physical unit for `width`/`height`: `px` (default), `mm`, `cm`, `in`, `pt`, `pc`. |
@@ -254,7 +254,7 @@ These keys are never treated as tool inputs. They control shell-level behaviour.
 | `nostage` | web only | Presence flag - for the `html` export only, drop the fixed-size canvas frame ("stage") so the saved page fills the whole window: the tool's content becomes the document body, with no centred card or grey backdrop. Mirrors the **Full page** toggle in the export panel. |
 | `present` | web only | Presence flag - open a frame document (Design) as a fullscreen, click-advanced **deck**. The document's frames become slides in presentation order (`order`, tie-break `x`); a non-frame **timed** document instead mounts normally and starts its sequence transport. The CLI documents it as a no-op (there is no fullscreen to present into). |
 | `s` | web + CLI | The **state address** of a deck. `s=2` is the 1-based position in presentation order; anything else (`s=slide1`, a ULID) is a frame id; an `.N` suffix (`s=2.3`) names a build step. With `present` it deep-links that slide (and that build step); without `present` the editor centres that frame on mount. It is also a **still-export filter**: `?s=2&format=png` renders just that one slide, so every slide of a deck has its own image link, and `lolly design --s=2 --export=png` means the same thing (both shells resolve the address with the same engine code). Build steps are presenter-only - a still export always shows every build. Formats that carry the whole deck by construction (`pdf`, `zip`, `pptx`, `html`) and the motion formats (where time selects the frame, not `s`) are rendered whole; the CLI says so rather than obeying a filter it cannot apply. An address that names no slide never falls back to slide 1: the web shell exports the whole deck and announces the mismatch, the CLI exits 2 and writes nothing. |
-| `loop` | web only (present mode) | Presence flag - the presenter **wraps** at the ends and a timed document's transport loops, so `?present&loop` is digital signage (pair with per-frame `dur` for dwell). **Not a reserved param**: `loop` is a real input id in several tools (Deck Builder, 3D, Flythrough, …), so it is read as a kiosk flag only in the Design tool, which has no `loop` input. |
+| `kiosk` | web only (present mode) | Presence flag - the presenter **wraps** at the ends and a timed document's transport loops, so `?present&kiosk` is digital signage (pair with per-frame `dur` for dwell). This flag was named `loop` until 2026-08-28; it was renamed and reserved because `loop` is a real input id in several tools (Deck Builder, 3D, Flythrough, …) and could never be reserved without stripping their value. Old `?present&loop` links no longer loop - re-mint them with `kiosk`. |
 | `z` | web + CLI | A **packed** whole-state token - the entire readable query, compressed (raw DEFLATE) and base64url-encoded, for complex tools whose readable link would blow past practical URL limits. See [Packed links](#packed-links-z) below. |
 | `zx` | web only | An **encrypted** whole-state token - the packed state AES-256-GCM-encrypted under a password-derived key (PBKDF2). Opening the link prompts for the password **in the browser** (no server); the password itself is never in the link. See [Encrypted links](#encrypted-links-zx) below. |
 
@@ -262,7 +262,7 @@ The reserved `z` (and `zx`) above is a **top-level** param only - the whole-stat
 
 **Dimensions on a multi-artboard document** (a Design doc with more than one artboard): the artboards are the size truth, and `width`/`height` describe the **active** artboard - the selected one for still formats, the one under the playhead for animated ones. In the app the export panel mirrors that artboard live, and editing the fields resizes it. At export time each format resolves the boards its own way: still images fan out to one file per artboard at that board's own size (zipped when there is more than one, and `?s=` narrows to one board), PDF and PPTX carry every board as a page at its native size, and the animated formats composite every scene into a `width`×`height` output frame, letterboxing a board whose aspect differs. So on a framed document `w`/`h` never scales the whole set - it is the size of one board, and the video frame.
 
-`export`, `copy`, `full`, `options`, `nostage`, `present` and `loop` are **presence flags** - the parameter value is ignored; what matters is whether the key appears in the URL.
+`export`, `copy`, `full`, `options`, `nostage`, `present` and `kiosk` are **presence flags** - the parameter value is ignored; what matters is whether the key appears in the URL.
 
 `lang` is the one reserved param that changes the interface rather than the file. Adding `?lang=ja` to any tool link hands the recipient the whole sidebar in Japanese for that session, without touching their saved preference.
 
@@ -642,3 +642,103 @@ lolly qr-code \
   --export=svg \
   --output=./dist/qr-${SLUG}.svg
 ```
+
+---
+
+## App links
+
+Everything above addresses a **tool**. The rest of the app is addressable the same way: the browse views, the studio, the dashboard and the settings pages each read a few params off their own route, so a link can land someone on a particular shelf of the catalogue or a particular settings card rather than on the front door.
+
+Two audiences use this, and they want the same thing for different reasons:
+
+- **Sharing.** "Here, look at *this*" - a link that opens where you were looking, so the person on the other end doesn't have to be talked through four clicks.
+- **Automation.** A screenshot run, an agent driving the app, a docs recipe. Every `/info` screenshot in these docs is one of these links handed to `url-shot`; the app has to arrive in a known state, deterministically, with no clicking.
+
+Three rules hold everywhere below, and they are what make the links safe to paste:
+
+1. **Consumed on arrival.** These params are read once, when the view mounts. They are never written back into a link the app generates for you, so a state you deep-linked into doesn't get re-shared by accident.
+2. **Never persisted.** A param that overrides a saved preference - sort order, view mode, theme - does so *for that page load only*. Opening someone's link never rewrites your own settings.
+3. **Unknown values are ignored.** A param naming something that doesn't exist (a retired category, a typo'd section) is dropped and the view opens normally. Links don't break; they just stop steering.
+
+### App-wide
+
+| Param | Description |
+|---|---|
+| `lang` | UI language for this session, on any route (`#/c?lang=ja`, `/#/profile?lang=ar`). Same value set as the tool-route `lang` above; same "session only, saved preference untouched" rule. |
+| `theme` | `light`, `dark` or `brand` - pins the app's look for this page load. Deliberately **not** saved to the profile or to `localStorage`: a link you paste must not permanently flip someone's theme. Mostly for screenshots and for "here's how it looks in dark" links. **App views only** - on a tool link (`/t/<id>`, `#/tool/<id>`, `/design`) it is left alone, because `theme` is a declared input in a dozen tools where it already means "draw the artwork dark". |
+
+### Gallery (`#/`, and `#/u` for utilities)
+
+| Param | Description |
+|---|---|
+| `q` | Seeds the search field. |
+| `cat` | Category pill to open on - `all`, `favourites`, or a category key the pills actually show on that install (feature flags and the Utilities view already narrow that set). |
+| `sort` | `recent`, `az`, `za`, `format` or `category`. Overrides the saved sort for this visit only. |
+| `dir` | `asc` or `desc`. |
+| `tool=<id>` | Opens that tool card's info dialog on top of the gallery. |
+| `history` \| `history=<id>` | Opens a tool's saved-sessions dialog instead of the info one. |
+| `welcome` | Presence flag - forces the first-run welcome dialog open even if it has been dismissed, so it can be captured deterministically. Ignored on branded and brand-locked installs: a link can't nag someone who already has a design system. |
+
+### Catalogue (`#/c`)
+
+| Param | Description |
+|---|---|
+| `asset=<id>` | Scrolls to and highlights that asset. |
+| `section=<key>[,<key>…]` | Opens with those sections expanded (over the collapsed default) and scrolls the first into view. |
+| `q` | Seeds the search field. |
+| `type` | Filetype filter: `all`, `image`, `vector`, `motion`, `audio`, `text`. Falls back to `all` if that bucket is empty on this install. |
+| `hidden` | Presence flag - opens with hidden assets revealed. |
+
+### Projects (`#/p`, `#/p/<folderId>`)
+
+| Param | Description |
+|---|---|
+| `q` | Enters the explicit results mode with that search. |
+| `tools` | Narrows to sessions belonging to those tools. |
+| `view` | `preview` (tile grid) or `list`. |
+| `sort` | `modified`, `added`, `name`, `tool` or `size`. |
+| `rev` | Presence flag - reverses whichever sort is active. |
+
+`view`, `sort` and `rev` override both the device-wide and the per-folder saved preference for that visit, and neither is rewritten.
+
+### Batch (`#/batch`)
+
+`#/batch?s=<slot>,<slot>` opens those saved sessions as rows in the grid - what **Edit as sheet** builds. `#/pro` was the route's name before 2026-08-20 and still redirects here with its query intact, as does the `/pro` path form.
+
+### Multi-edit (`#/multi`)
+
+`#/multi?s=<slot>,<slot>` opens those sessions side by side.
+
+### Design system studio (`#/start`)
+
+| Param | Description |
+|---|---|
+| `area` | Which room: `overview`, `color`, `type`, `logos`, `tokens`, `catalogue`, or `versions`. |
+| `focus` | A wing of the colour room: `generate`, `curves`, `contrast`, `print`, `chart`. |
+| `seed=<hex>` | Primes the Generate wing's primary colour before it opens. |
+| `wheel` | Presence flag - opens the OKLCH colour chart (the same target as `focus=chart`). |
+| `import` | Presence flag - opens the source picker on arrival (`import=0` means shut). |
+| `source` | Which source the picker opens on: `file`, `image`, `font`, `pdf`, `url`. Naming one implies the picker opens. It is a signpost, never an action - nothing is fetched or read on your behalf. |
+
+Everything except `area` is one-shot: it acts on arrival and is dropped from the address bar as soon as you move between rooms. That is deliberate, so a link copied mid-session says which room you're in rather than re-firing a modal for the next person.
+
+### Dashboard (`#/d`)
+
+`#/d?tab=<tab>` opens a primary tab - `device`, `brand`, `caps`, `activity`. `#/d?<section-id>` scrolls to and opens one section directly (`#/d?dash-storage`, `#/d?cap-formats`); the section ids are the `DASH_SECTIONS` rows in `shells/web/src/views/dashboard-registry.ts`. `#/b` and `#/brand` are shortlinks to the Design system tab.
+
+### Profile (`#/profile`)
+
+`#/profile?focus=<section>` opens and scrolls to one settings card. The sections are `details-section`, `identity-section`, `appearance-section`, `a11y-section`, `connections-section`, `renders-section`, `storage-section`, `offline-section`, `activity-section`, `feature-flags-section` and `instance-section`.
+
+### The remaining views
+
+| Route | Params |
+|---|---|
+| `#/verify` | `src=<path>` checks a file **served by this site** (an absolute same-origin path - anything else is refused, because the page's promise is that it fetches nothing on your behalf). `check=1` alongside it also resolves the credential reference the page names, without the second "Fetch and check" click. |
+| `#/docs/<slug>` | Renders in the app's current language; `#/docs/<lang>/<slug>` pins one, and `?lang=` does the same thing. `?h=<heading>` jumps to a heading. |
+| `#/ask` | `?q=<question>` seeds the question box. |
+| `#/lab` | `?c=<any CSS colour>` opens the Colour Lab on that colour. |
+
+### On a tool route
+
+For completeness, the app-state flags that live on a tool link rather than on a view. All but one are in the reserved-parameter table above: `options` (open on the export panel), `full` (fullscreen, no chrome), `template=<id>` (start from that template, skipping the chooser - a bare `?template=` opens the chooser itself, which is what the gallery's **+New** chip links to), `present` + `s=` + `kiosk` (presentation mode), `slot=` (resume a saved session). The exception is `share`, a presence flag read by the tool view rather than by the engine: it opens the Share dialog on load, so a click-only surface has an address.

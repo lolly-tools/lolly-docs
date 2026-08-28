@@ -66,7 +66,7 @@ La forma más clara de ver qué es Lolly no es una lista de funciones - es segui
 
 El «gráfico nuevo» del paso dos es un render como este, producido a partir de una cadena de datos y un puñado de parámetros sin que nadie abra un archivo de diseño:
 
-![Un gráfico de área apilada con título, sus tres series en bandas de una paleta fría, con ejes, leyenda y título colocados todos por la plantilla y no a mano](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![Un gráfico de área apilada con título, sus tres series en bandas dentro de una paleta fría, con ejes, leyenda y título colocados todos por la plantilla en lugar de a mano](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 No se trata de que Lolly sea buena para diseñadores *y* buena para desarrolladores *y* buena para ventas, cada una en un vacío. Es una **carrera de relevos**: el trabajo inicial del creativo lo escala el desarrollador, lo que a su vez capacita al productor. La experiencia sin esfuerzo para el representante sin conocimientos técnicos en el avión solo es *posible* gracias al rigor que fijó el diseñador y desplegó el desarrollador.
 
@@ -84,7 +84,7 @@ La misma herramienta determinista alcanza esa escala de tres formas, todas produ
 - <!--i:code--> **Un desarrollador, desde la línea de comandos.** La CLI ejecuta el *mismo* motor y la *misma* ruta de render sin interfaz, de modo que la herramienta puede secuenciarse sobre las 10.000 filas en un script o un pipeline nocturno. Una llamada `lolly <tool> --field=…` en un bucle es toda la integración.
 - <!--i:cpu--> **Un sistema o un agente de IA, mediante MCP.** La misma herramienta operada mediante programación, con la misma fidelidad y una escala aún mayor - porque una máquina no se aburre mientras entran miles de archivos.
 
-![Modo lote en una instalación nueva: una fila vacía esperando una herramienta, con toda la superficie de la hoja de cálculo y su botón de renderizar ya en su sitio antes de que llegue ningún dato](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+![El modo Batch en una instalación recién hecha: una fila vacía esperando una herramienta, con toda la superficie tipo hoja de cálculo y su botón Renderizar ya en su sitio antes de que lleguen datos](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
 
 Un conjunto de restricciones de marca, fijado una sola vez por un diseñador; tres rutas hacia el mismo resultado idéntico y preaprobado - y la ruta de la máquina escala más lejos que ninguna otra, porque nunca se cansa mientras entran los archivos.
 
@@ -249,7 +249,7 @@ El shell web es responsivo a partir de un único diseño. En escritorio, una her
 
 La misma herramienta con ancho de teléfono, sin un segundo diseño que mantener: los controles se convierten en una hoja arriba, la vista previa ocupa toda la pantalla y la píldora de render flota sobre ella.
 
-![Un audiograma en una pantalla de 430px de ancho - la hoja de controles arriba, la obra cuadrada terminada abajo y la píldora de render flotante](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![Un audiograma en una pantalla de 430px de ancho - la hoja de controles arriba, la ilustración cuadrada terminada abajo y la píldora de renderizado flotante](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **Modo lote (`/pro`).** El shell web también incluye una cuadrícula de lote tipo hoja de cálculo (`shells/web/src/pro/`) que renderiza muchas filas a la vez en una o varias herramientas. Ofrece ida y vuelta CSV/TSV más pegado tipo hoja de cálculo, plantilla/formato/tamaño/unidad/dpi por fila, un panel lateral editor de bloques con vista previa en vivo, columnas de exportación colapsables, una barra de etiquetas de «relevancia» por fila, reordenación de filas mediante asa de arrastre a la izquierda, confirmación de borrado en dos pasos, sesiones de lote guardadas y una descarga en `.zip`. Esta es la superficie de uno a muchos detrás del posicionamiento de «generación masiva de contenido».
 
@@ -283,10 +283,10 @@ Las herramientas están etiquetadas con una `category` en su manifiesto para agr
 
 Las filas se listan en el orden de sección de la galería. La sección `utility` siempre se muestra **al final** en la galería (después de cualquier otra categoría, incluidas las futuras) - es el cajón «Utilidades sin conexión» en el dispositivo.
 
-| Categoría | Ejemplos | Planeado |
+| Categoría | Ejemplos | Previsto |
 |---|---|---|
 | `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
-| `designer` | Brand Lockup, Design, Chart Creator, D3 Chart Studio, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `designer` | Brand Lockup, Design, Chart, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
 | `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Unit/format converters, more on-device privacy utilities |
@@ -347,11 +347,11 @@ Un puñado de superficies destacadas, para mostrar lo que cubre - [Host API](/in
 | Superficie | Desde | Qué añade |
 |---|---|---|
 | `host.tokens` | 1.0 | Tokens de diseño DTCG - las primitivas propias de la marca |
-| `host.text` | 1.0 | Texto a trazado vía HarfBuzz WASM (la bandera de capacidad `wasm` marca las herramientas que dependen de él) |
-| `host.media` | 1.4 | Fotogramas de cámara en vivo que alimentan el hook `onFrame`. Mejora progresiva, deliberadamente *no* restringida por la bandera `camera` - esa herramienta sigue funcionando como una herramienta de imagen fija ordinaria |
-| `host.color` | 1.40 | Matemática de color perceptual: ΔEOK, contraste WCAG + APCA, rampas OKLab, cortes por clase, paletas categóricas, esquemas de armonía (1.60), mezcla CSS Color 4 y generación de gradientes (1.68). Puro y síncrono - los shells adjuntan el `makeColorApi()` del motor en lugar de implementar nada, así que no puede desviarse |
-| `host.images` | 1.60 | Decodifica / redimensiona / recodifica bytes en el dispositivo - la ruta de conversión (HEIC → JPEG, comprimir a WebP, reducir resolución). Distribuido en el shell web como una fachada perezosa, para que el decodificador de HEIC nunca llegue al fragmento de arranque |
-| `host.geom` | 1.64 | Geometría vectorial exacta: booleanas de trayectorias, desplazamiento, trazo a relleno, reducción de splines, simplificación, prueba de impacto. También puro, síncrono y adjunto desde el motor (`makeGeomApi()`); los fallos se *devuelven*, nunca se lanzan |
+| `host.text` | 1.0 | Texto a trazado vía HarfBuzz WASM (el indicador de capacidad `wasm` marca las herramientas que dependen de él) |
+| `host.media` | 1.4 | Fotogramas de cámara en directo que impulsan el hook `onFrame`. Mejora progresiva, deliberadamente *no* condicionada por el indicador `camera` - esa herramienta sigue funcionando como una herramienta de imagen fija normal |
+| `host.color` | 1.40 | Matemáticas de color perceptuales: ΔEOK, contraste WCAG y APCA, degradados OKLab, cortes de clase, paletas categóricas, esquemas de armonía (1.60), mezcla CSS Color 4 y horneado de degradados (1.68). Puro y síncrono - los shells conectan el `makeColorApi()` del motor en lugar de implementar nada, así que no puede desviarse |
+| `host.images` | 1.60 | Decodificar / redimensionar / recodificar bytes en el dispositivo - la ruta de conversión (HEIC → JPEG, comprimir a WebP, reducir escala). Distribuido en el shell web como una fachada perezosa, así que el decodificador HEIC nunca entra en el fragmento de arranque |
+| `host.geom` | 1.64 | Geometría vectorial exacta: booleanos de trazados, desplazamiento, contorno a relleno, reducción de splines, simplificación, detección de colisiones. También puro, síncrono y conectado desde el motor (`makeGeomApi()`); los fallos se *devuelven*, nunca se lanzan |
 
 El resto sigue las mismas reglas y está documentado junto a ellas: `pdf` (1.8) y `pptx` (1.58) para cirugía de documentos en el dispositivo, `audio` (1.71) y `speech` (1.96) para análisis de clips y TTS/transcripción en el dispositivo, `viz` (1.72) para el contrato de sustituto de MilkDrop, `codec` (1.100) y `layers` (1.102) para salida en profundidad de bits y de mapa de bits por capas, `upscale` (1.101) y `matte` (1.103) para los modelos en el dispositivo, `raster` (1.105) para hooks que hacen su propio trabajo de píxeles, `connectors` (1.106) para flechas seguras para exportación y `c2pa` (1.85) para firmar bytes finalizados. La lista crece; las reglas no.
 

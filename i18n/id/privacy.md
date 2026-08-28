@@ -2,13 +2,15 @@
 
 *Terakhir diperbarui: 11 Agustus 2026*
 
-> **Secara sederhana.** Dokumen, gambar, video dan file yang Anda buat di Lolly tetap
-> di perangkat Anda. Tidak ada akun untuk penggunaan biasa, tidak ada cookie dari aplikasi
-> itu sendiri dan tidak ada analitik atau pelacak di mana pun dalam basis kode - bukan "kami tidak menggunakan
-> data tersebut," tapi memang benar-benar tidak ada dalam kode sumber. Ada daftar
-> pengecualian yang singkat dan lengkap di mana perangkat lunak berkomunikasi dengan jaringan sama sekali, dan setiap
-> pengecualian dijelaskan secara rinci di bawah ini: apa yang keluar, kepada siapa dan kapan. Satu-satunya
-> pengecualian yang melibatkan sesuatu yang bersifat pribadi adalah proses masuk yang harus Anda mulai secara eksplisit. Jika tidak ada dalam dokumen ini, itu tidak terjadi.
+> **Versi singkatnya.** Dokumen, gambar, video dan file yang Anda buat di Lolly tetap
+> berada di perangkat Anda. Tidak ada akun untuk penggunaan biasa, tidak ada cookie dari
+> aplikasi itu sendiri dan tidak ada analitik atau pelacak di mana pun dalam kodebase - ini
+> bukan "kami tidak menggunakan data," tetapi memang benar-benar tidak ada dalam source.
+> Ada daftar singkat dan lengkap tentang pengecualian di mana software ini berbicara
+> dengan jaringan sama sekali, dan tiap pengecualian dijelaskan secara rinci di bawah:
+> apa yang keluar, kepada siapa dan kapan. Satu-satunya pengecualian yang melibatkan
+> sesuatu yang bersifat pribadi adalah proses masuk yang harus Anda mulai secara
+> eksplisit. Jika tidak tercantum dalam dokumen ini, itu tidak terjadi.
 
 ## Cakupan kebijakan ini
 
@@ -83,18 +85,18 @@ jaringan. Jika tidak ada di sini, aplikasi tidak melakukannya.
 
 | Apa | Apa yang sebenarnya keluar dari perangkat Anda | Kapan (tindakan yang memicunya) | Jika operator memblokirnya |
 |---|---|---|---|
-| Sinkronisasi katalog tool | Tidak ada yang bersifat pribadi - sebuah permintaan untuk indeks tool dan aset publik Lolly sendiri, ke origin aplikasi itu sendiri | Saat startup, lalu di-cache secara offline | Aplikasi berjalan dengan set tool yang di-cache-nya. Ia hanya berhenti menemukan tool baru |
-| Tool yang membutuhkan data live | Apa pun yang diminta tool spesifik itu, ke host yang disebutkan dalam deskripsinya sendiri. Saat ini hanya pencarian kota di tool Meeting Planner, yang meminta `geocoding-api.open-meteo.com` untuk mengubah nama kota menjadi koordinat dan zona waktu - tanpa akun, tanpa kunci dan tanpa pengenal di luar permintaan itu sendiri. Input menyatakannya tepat di tempat Anda mengetik, dan setiap jawaban disimpan di perangkat Anda sehingga sebuah kota hanya dicari sekali | Hanya saat menggunakan tool tersebut, dan hanya setelah Anda memasukkan lokasi | Pencarian itu gagal. Anda tetap bisa mengetik koordinat secara manual, dan tidak ada yang lain terpengaruh |
-| Google Fonts | Nama keluarga font yang dipilih dan alamat IP Anda, ke server font Google (`fonts.googleapis.com` untuk stylesheet, `fonts.gstatic.com` untuk file font) | Hanya jika Anda menambahkan Google Font di editor brand, **dan hanya setelah Anda menyetujuinya dalam dialog yang menyatakan persis ini** - satu kali pengambilan per keluarga font, lalu tersimpan di perangkat Anda dan digunakan secara offline | Pemilih Google Fonts gagal secara tertutup. Unggah file font sebagai gantinya |
-| Kirim ke Google Drive | Satu file yang Anda pilih untuk dikirim, ke Drive API Google (`www.googleapis.com`), setelah Anda menyelesaikan sign-in Google di jendela popup Google sendiri. Akses Lolly terbatas pada file yang dibuatnya (scope `drive.file` - Lolly tidak pernah bisa membaca sisa Drive Anda), dan token sign-in disimpan di memori selama sesi, tidak pernah disimpan permanen | Hanya saat Anda menekan "Send to Google Drive" pada ekspor EMF, dan hanya pada build di mana operator telah mengonfigurasi Google client id - tanpa itu tombolnya tidak ada | Tombol tidak pernah muncul. Unduh file dan unggah sendiri ke Drive |
-| Kirim ke Dropbox | Satu file yang Anda pilih untuk dikirim, ke API Dropbox (`api.dropboxapi.com` untuk sign-in dan metadata, `content.dropboxapi.com` untuk file itu sendiri), setelah Anda menyelesaikan sign-in Dropbox di jendela Dropbox sendiri. Akses Lolly hanya sebatas app-folder (hanya dapat melihat `Apps/` dan foldernya sendiri di sana - tidak pernah sisa Dropbox Anda), tautan "Open" yang ditampilkannya adalah tautan pribadi berumur pendek (tidak ada share publik yang dibuat), dan refresh token hanya disimpan jika Anda mencentang "stay connected" | Hanya saat Anda menekan "Send to Dropbox" pada sebuah file, dan hanya pada build di mana operator telah mengonfigurasi Dropbox client id - tanpa itu tombolnya tidak ada | Tombol tidak pernah muncul. Unduh file dan unggah sendiri ke Dropbox |
-| Kirim ke OneDrive | Satu file yang Anda pilih untuk dikirim, ke layanan identitas dan Graph Microsoft (`login.microsoftonline.com` untuk sign-in, `graph.microsoft.com` untuk unggahan; file besar diunggah dalam potongan ke alamat unggah milik Microsoft di `api.onedrive.com`, `*.up.1drv.com` atau `*.sharepoint.com`), setelah Anda menyelesaikan sign-in Microsoft di jendela Microsoft sendiri. Akses Lolly terbatas pada foldernya sendiri di bawah `Apps/` (tidak pernah dapat membaca sisa OneDrive Anda) ditambah nama tampilan Anda untuk label akun, dan refresh token hanya disimpan jika Anda mencentang "stay connected" | Hanya saat Anda menekan "Send to OneDrive" pada sebuah file, dan hanya pada build di mana operator telah mengonfigurasi Microsoft client id - tanpa itu tombolnya tidak ada | Tombol tidak pernah muncul. Unduh file dan unggah sendiri ke OneDrive |
-| Profil cetak ICC | Tidak ada yang bersifat pribadi - sebuah permintaan untuk profil kondisi cetak standar, ke registri publik ICC (`registry.color.org`, `www.color.org`) | Hanya jika Anda mengklik preset ICC di print-profile manager - satu kali pengambilan per profil, lalu tersimpan di perangkat Anda | Preset ICC gagal. Berikan profil `.icc` Anda sendiri sebagai gantinya |
-| Radio internet | Tidak ada yang bersifat pribadi - permintaan playlist dan stream audio, ke stasiun (`api.somafm.com` dan server icecast yang disebutkannya, `*.somafm.com`) | Hanya saat Anda memutar radio bawaan opsional di sound player | Radio gagal. Semua fitur suara lainnya tetap berfungsi |
-| URL yang Anda minta ditangkap oleh sebuah tool | Sebuah permintaan ke alamat web persis yang Anda ketik, dari tool URL screenshot. Apa pun alamat itu. Host ini tidak ada dalam kebijakan di bawah, karena Anda memilihnya pada saat penggunaan | Hanya saat Anda memasukkan URL di tool tersebut dan memulai penangkapan | Operator tidak dapat mengizinkan (allowlist) ini berdasarkan host. Untuk menghapusnya, hapus tool tersebut |
-| Pemeriksaan tanda tangan SEAL | **Tidak ada.** Aplikasi web sama sekali tidak memiliki DNS resolver - lihat di bawah | Tidak pernah | Tidak ada yang perlu diblokir |
-| Model detektor deep-scan | Tidak ada yang bersifat pribadi - satu kali unduhan model same-origin (bukan pihak ketiga) | Hanya jika Anda mengaktifkan deep scan Verify | Deep scan tidak tersedia. Verifikasi standar tetap berfungsi |
-| Instans jarak jauh | Apa pun yang dikembalikan oleh instans yang Anda sebutkan, melalui sinkronisasi katalog yang sama seperti dijelaskan di atas. Anda memilih host pada saat penggunaan, jadi tidak ada dalam kebijakan di bawah | Hanya jika Anda secara eksplisit mengarahkan shell ke deployment Lolly lain | Peralihan instans gagal. Instans lokal Anda tidak terpengaruh |
+| Sinkronisasi katalog alat | Tidak ada yang pribadi - permintaan untuk indeks alat dan aset publik milik Lolly sendiri, ke origin milik aplikasi itu sendiri | Saat startup, lalu di-cache secara offline | Aplikasi berjalan dengan set alat yang di-cache-nya. Yang berhenti hanyalah penemuan alat baru |
+| Alat yang memerlukan data live | Apa pun yang diminta oleh alat spesifik itu, ke host yang disebutkan dalam deskripsinya sendiri. Saat ini itu hanya pencarian kota di alat Meeting Planner, yang meminta `geocoding-api.open-meteo.com` untuk mengubah nama kota menjadi koordinat dan zona waktu - tanpa akun, tanpa key dan tanpa identifier selain permintaan itu sendiri. Hal ini dijelaskan langsung di tempat Anda mengetik, dan tiap jawaban disimpan di perangkat Anda sehingga satu kota hanya dicari sekali | Hanya saat menggunakan alat itu, dan hanya setelah Anda memasukkan lokasi | Pencarian tunggal itu gagal. Anda tetap bisa mengetik koordinat secara manual, dan tidak ada yang lain yang terpengaruh |
+| Google Fonts | Nama font family yang dipilih dan alamat IP Anda, ke server font Google (`fonts.googleapis.com` untuk stylesheet, `fonts.gstatic.com` untuk file font) | Hanya jika Anda menambahkan Google Font di brand editor, **dan hanya setelah Anda menyetujuinya dalam dialog yang menyatakan persis ini** - satu kali fetch per family, lalu tersimpan di perangkat Anda dan digunakan secara offline | Google Fonts picker gagal secara tertutup. Unggah file font sebagai gantinya |
+| Send to Google Drive | Satu file yang Anda pilih untuk dikirim, ke Drive API milik Google (`www.googleapis.com`), setelah proses masuk Google yang Anda selesaikan di jendela popup milik Google sendiri. Akses Lolly terbatas pada file yang dibuatnya sendiri (scope `drive.file` - Lolly tidak pernah bisa membaca sisa Drive Anda), dan token masuk hanya disimpan di memori selama sesi, tidak pernah disimpan permanen | Hanya saat Anda menekan "Send to Google Drive" pada ekspor EMF, dan hanya pada build di mana operator telah mengonfigurasi client id Google - tanpa itu tombolnya tidak ada | Tombolnya tidak pernah muncul. Unduh filenya dan unggah sendiri ke Drive |
+| Send to Dropbox | Satu file yang Anda pilih untuk dikirim, ke API Dropbox (`api.dropboxapi.com` untuk masuk dan metadata, `content.dropboxapi.com` untuk file itu sendiri), setelah proses masuk Dropbox yang Anda selesaikan di jendela milik Dropbox sendiri. Akses Lolly hanya terbatas pada app-folder (Lolly hanya bisa melihat `Apps/` dan foldernya sendiri di sana - tidak pernah sisa Dropbox Anda), link "Open" yang ditampilkan adalah link privat berumur pendek (tidak ada share publik yang dibuat), dan refresh token hanya disimpan jika Anda mencentang "stay connected" | Hanya saat Anda menekan "Send to Dropbox" pada sebuah file, dan hanya pada build di mana operator telah mengonfigurasi client id Dropbox - tanpa itu tombolnya tidak ada | Tombolnya tidak pernah muncul. Unduh filenya dan unggah sendiri ke Dropbox |
+| Send to OneDrive | Satu file yang Anda pilih untuk dikirim, ke layanan identity dan Graph milik Microsoft (`login.microsoftonline.com` untuk masuk, `graph.microsoft.com` untuk unggahan; file besar diunggah dalam bagian-bagian ke alamat unggah milik Microsoft di `api.onedrive.com`, `*.up.1drv.com` atau `*.sharepoint.com`), setelah proses masuk Microsoft yang Anda selesaikan di jendela milik Microsoft sendiri. Akses Lolly terbatas pada foldernya sendiri di bawah `Apps/` (Lolly tidak pernah bisa membaca sisa OneDrive Anda) ditambah nama tampilan Anda untuk label akun, dan refresh token hanya disimpan jika Anda mencentang "stay connected" | Hanya saat Anda menekan "Send to OneDrive" pada sebuah file, dan hanya pada build di mana operator telah mengonfigurasi client id Microsoft - tanpa itu tombolnya tidak ada | Tombolnya tidak pernah muncul. Unduh filenya dan unggah sendiri ke OneDrive |
+| Profil press ICC | Tidak ada yang pribadi - permintaan untuk profil kondisi cetak standar, ke registry publik ICC (`registry.color.org`, `www.color.org`) | Hanya jika Anda mengklik preset ICC di print-profile manager - satu kali fetch per profil, lalu tersimpan di perangkat Anda | Preset ICC gagal. Berikan profil `.icc` Anda sendiri sebagai gantinya |
+| Radio internet | Tidak ada yang pribadi - permintaan playlist dan stream audio, ke stasiun (`api.somafm.com` dan server icecast yang disebutkannya, `*.somafm.com`) | Hanya saat Anda memutar radio bawaan opsional di sound player | Radio gagal. Semua fitur suara lainnya tetap berfungsi |
+| URL yang Anda minta suatu alat untuk menangkapnya | Permintaan ke alamat web persis yang Anda ketik, dari alat URL screenshot. Apa pun alamat itu. Host ini tidak ada dalam kebijakan di bawah, karena Anda memilihnya pada saat penggunaan | Hanya saat Anda memasukkan URL di alat itu dan memulai penangkapan | Operator tidak dapat meng-allowlist ini berdasarkan host. Untuk menghapusnya, hapus alatnya |
+| Pemeriksaan signature SEAL | **Tidak ada.** Aplikasi web ini sama sekali tidak memiliki DNS resolver - lihat di bawah | Tidak pernah | Tidak ada yang perlu diblokir |
+| Model detector deep-scan | Tidak ada yang pribadi - unduhan model same-origin satu kali (bukan pihak ketiga) | Hanya jika Anda memilih ikut serta dalam deep scan Verify | Deep scan tidak tersedia. Verifikasi standar tetap berfungsi |
+| Instance remote | Apa pun yang dikirim balik oleh instance yang Anda sebutkan, melalui sinkronisasi katalog yang sama seperti dijelaskan di atas - ditambah tag versi pada permintaan ke instance itu (jenis shell dan versi engine, informasi yang sama seperti yang dibawa oleh user agent), sehingga operatornya dapat melihat versi Lolly mana saja yang ada di lapangan. Pada instance yang dikelola, selama Anda masuk, tag itu juga membawa install id per perangkat sehingga daftar perangkat operator dapat membedakan instalasi ini. Ini hanya menumpang pada permintaan yang sudah dibuat oleh penggunaan Anda sendiri - tidak ada timer dan tidak ada yang menghubungi rumah dengan sendirinya - dan meninggalkan instance akan menghapus id itu, sehingga perangkat yang tersambung kembali nanti akan menampilkan id baru. Anda memilih host pada saat penggunaan, jadi ini tidak tercantum dalam kebijakan di bawah | Hanya jika Anda secara eksplisit mengarahkan shell ke deployment Lolly lain | Peralihan instance gagal. Instance lokal Anda tidak terpengaruh |
 
 Setiap host tetap dalam tabel itu juga merupakan allowlist lengkap dalam Content-Security-Policy
 aplikasi, yang ditegakkan oleh peramban. Jadi daftar ini bukan hanya
@@ -141,20 +143,21 @@ dapat muncul sebagai gambar live di README, wiki atau dasbor. Mengambil salah sa
 meminta server merender **data tool dan katalog publik** dengan input yang
 tertulis dalam URL.
 
-- <!--i:usercheck--> **Tidak ada akun, tidak ada cookie, tidak ada state.** Endpoint ini anonim, dan tidak ada
-  yang dibaca di perangkat Anda. Dokumen, sesi dan unggahan Anda tidak pernah meninggalkan
-  peramban Anda - itu sama sekali tidak bisa muncul dalam tautan-tautan ini.
-- <!--i:document--> **Tapi URL itu sendiri tercatat.** Query string sebuah URL adalah bagian dari baris permintaan, jadi
-  ia masuk ke log akses biasa platform hosting sama seperti setiap
-  path yang diminta. Jika input sebuah tautan berisi nama atau email seseorang -
-  sebuah name badge, sebuah tanda tangan email - **teks itu berada dalam log tersebut**, dan tidak ada
-  susunan kata kebijakan apa pun yang mengubah itu. Ini adalah alasan spesifik mengapa fitur ini
-  dimatikan di sini alih-alih diaktifkan.
-- <!--i:globe--> **Inputnya bersifat publik secara konstruksi** bagaimanapun juga - apa pun yang diketikkan
-  penulis tautan ke URL, dapat dibaca oleh siapa pun yang dijangkau tautan itu. Jangan menaruh
-  informasi rahasia dalam tautan yang dibagikan. Lolly menawarkan enkripsi tautan untuk konten sensitif.
-- <!--i:eyeoff--> Respons **di-cache dan dibatasi laju (rate-limited)** seperti gambar publik mana pun, dan ditandai
-  `noindex` sehingga mesin pencari tidak mengindeks hasil render Anda.
+- <!--i:usercheck--> **Tidak ada akun, tidak ada cookie, tidak ada state.** Endpoint ini anonim, dan tidak
+  ada yang dibaca di perangkat Anda. Dokumen, sesi dan unggahan Anda tidak pernah
+  keluar dari browser Anda - itu semua sama sekali tidak bisa muncul di link ini.
+- <!--i:document--> **Tetapi URL itu sendiri tercatat.** Query string sebuah URL adalah bagian dari
+  baris permintaan, jadi ia muncul di access log biasa milik platform hosting sama
+  seperti setiap path yang diminta. Jika input sebuah link berisi nama atau email
+  seseorang - sebuah name badge, sebuah signature email - maka **teks itu tersimpan di
+  log tersebut**, dan tidak ada susunan kata kebijakan yang mengubahnya. Inilah alasan
+  spesifik mengapa fitur ini nonaktif di sini, bukan aktif.
+- <!--i:globe--> **Input-input itu memang secara struktural bersifat publik** - apa pun isinya, penulis
+  link itulah yang mengetiknya ke dalam URL, dan siapa pun yang menerima link itu
+  dapat membacanya. Jangan taruh rahasia di link yang dibagikan. Lolly menawarkan
+  enkripsi link untuk konten sensitif.
+- <!--i:eyeoff--> Respons **di-cache dan dibatasi rate-nya** seperti gambar publik mana pun, dan
+  ditandai `noindex` sehingga mesin pencari tidak mengindeks render Anda.
 
 Self-hosting Lolly dan tidak ingin permukaan render publik? Setel
 `LOLLY_DISABLE_RENDER_GET=1` - yang saat ini dilakukan lolly.tools sendiri - dan setiap

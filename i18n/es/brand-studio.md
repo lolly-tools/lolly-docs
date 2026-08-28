@@ -153,7 +153,7 @@ Titulares, código y cursiva recurren cada uno a la principal hasta que se los a
 
 El escenario se abre **integrado en la sala**, no en un diálogo, así que las tarjetas de las que viniste permanecen en pantalla. Busca una familia de Google Fonts (Inter, Fraunces, Space Grotesk…) o suelta un archivo de fuente, pulsa **Añadir a la comparación** y las candidatas se colocan lado a lado con las mismas palabras antes de que ninguna se instale. Escape cancela y devuelve el teclado a la tarjeta desde la que lo abriste.
 
-Esa es la única puerta de entrada, por eso nada llega a tu marca sin verse antes. Debajo del escenario están los dos paneles de gestión:
+Esa es la única puerta de entrada, por lo que nada entra en tu marca sin ser visto. Bajo el escenario están los dos paneles de gestión:
 
 - **Fuentes en este dispositivo** - cada familia instalada, los roles a los que sirve y un botón de eliminar. **Añadir una fuente** aquí abre el mismo escenario de comparación sin restringir a un rol.
 - **Tus fuentes** - sube un **TTF**, **OTF** o **WOFF** desde tu propia máquina. Ese es el camino para una tipografía corporativa con licencia que ya posees.
@@ -211,13 +211,13 @@ Traer una de vuelta es **Añadir desde… → Tokens de diseño o un archivo de 
 
 ## Versiones
 
-**Versiones**, al pie del panel lateral, es donde un sistema de marca deja de ser un blanco móvil. Publica una y obtienes una **copia permanente y con nombre** guardada en este dispositivo: nunca cambia después, así que una herramienta que la fija sigue dibujando siempre lo mismo. El panel permanece oculto hasta que hay algo propio que publicar, así que un estudio que nunca publica nunca ve el mecanismo.
+**Versiones**, al pie de la barra, es donde un design system deja de ser un objetivo móvil. Publica una y obtienes una **copia permanente y con nombre** conservada en este dispositivo: nunca cambia después, así que una herramienta que la fija sigue dibujando lo mismo. El panel permanece oculto hasta que hay algo propio que publicar, así que un estudio que nunca publica nunca ve los controles.
 
 Tres cosas que conviene saber antes de pulsar nada, y el panel las dice las tres antes de pulsar, no después:
 
-- **Una versión es permanente.** Todavía no existe la opción de eliminar, así que el panel indica lo que se ha guardado y que permanece guardado, en lugar de ofrecer un botón que mienta.
-- **Las eliminaciones encabezan la tarjeta de compatibilidad.** Los tokens añadidos y modificados son noticia; uno *eliminado* es lo que rompe una herramienta, así que se nombra primero y se llama por lo que es.
-- **Publicar no se puede deshacer; restaurar sí.** *Restaurar la última versión de esta versión* es una edición normal sobre la cabeza, así que aterriza en la pila de deshacer del estudio y el panel te ofrece **Deshacer** de inmediato.
+- **Una versión es permanente.** Todavía no hay eliminación, así que el panel indica lo que se ha conservado y que sigue conservado, en lugar de ofrecer un botón que mienta.
+- **Las eliminaciones encabezan la tarjeta de compatibilidad.** Los tokens añadidos y modificados son novedades; uno *eliminado* es lo que rompe una herramienta, así que se nombra primero y se llama por lo que es.
+- **Publicar no se puede deshacer; restaurar, sí.** *Restaurar lo último desde esta versión* es una edición ordinaria de la cabeza, así que aterriza en la pila de deshacer del estudio y el panel te ofrece de inmediato el botón **Deshacer**.
 
 Puedes **Publicar solo**, o **Publicar y activar** - la diferencia está en si las herramientas y la app siguen esa versión a partir de ahora o siguen tu última edición. **Volver a seguir la última** pone en vivo cada edición en el momento en que se hace. `#/start?area=versions` abre el panel directamente.
 

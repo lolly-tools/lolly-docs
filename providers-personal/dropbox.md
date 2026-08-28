@@ -19,7 +19,17 @@
 ## What the deploy sets
 
 `VITE_DROPBOX_CLIENT_ID=<app key>` - dev: `shells/web/.env.local`; prod: the
-deploy env. No id → the Dropbox rows and buttons do not exist.
+deploy env.
+
+## No deploy id? Bring your own
+
+A deploy with no registration still shows the Dropbox row on the web: it asks
+for an **App key** instead of hiding. Do the registration above for yourself
+(the redirect URI is this deploy's `<origin>/oauth-return.html`), paste the App
+key into the /profile row, and Connect. The key rides the connection record on
+this device - custody follows the same "stay connected" choice as the tokens,
+and Disconnect wipes it. Only Tauri shells still require the deploy-set id
+(popup OAuth needs a real browser).
 
 ## Verify
 

@@ -2,13 +2,14 @@
 
 *Ultima actualizare: 11 august 2026*
 
-> **Pe scurt.** Documentele, imaginile, videoclipurile și fișierele pe care le creezi în Lolly rămân
-> pe dispozitivul tău. Nu există conturi pentru utilizarea obișnuită, nu există cookie-uri din partea
-> aplicației însăși și nu există analytics sau trackere nicăieri în codul sursă - nu "nu folosim
-> datele," chiar nu sunt prezente în sursă. Există o listă scurtă și completă de
-> excepții acolo unde software-ul comunică deloc cu o rețea, iar fiecare dintre
-> ele este descrisă mai jos în detaliu: ce iese, către cine și când. Singura
-> excepție care implică ceva personal este o autentificare pe care trebuie s-o pornești explicit tu. Dacă nu e în acest document, nu se întâmplă.
+> **Versiunea pe scurt.** Documentele, imaginile, videoclipurile și fișierele pe care le creezi în Lolly rămân
+> pe dispozitivul tău. Nu există conturi pentru utilizarea obișnuită, nu există cookie-uri din partea aplicației
+> însăși și nu există nicio analitică sau elemente de urmărire nicăieri în codul sursă - nu spunem doar "nu folosim
+> datele", chiar nu sunt prezente în cod. Există o listă scurtă și completă de
+> excepții pentru cazurile în care software-ul comunică deloc cu o rețea, și fiecare
+> dintre ele este descrisă mai jos în detaliu: ce pleacă, către cine și când. Singura
+> excepție care implică ceva personal este o autentificare pe care trebuie s-o pornești
+> tu însuți, explicit. Dacă nu este în acest document, nu se întâmplă.
 
 ## Ce acoperă această politică
 
@@ -79,20 +80,20 @@ noastre - scopul majorității lor este să elimine și să protejeze date, nu s
 Tabelul de mai jos este lista completă a tot ce preia sau trimite aplicația printr-o
 rețea. Dacă nu e aici, aplicația nu o face.
 
-| Ce | Ce iese efectiv de pe dispozitivul tău | Când (acțiunea care declanșează) | Dacă un operator o blochează |
+| Ce | Ce părăsește efectiv dispozitivul tău | Când (acțiunea care declanșează asta) | Dacă un operator blochează asta |
 |---|---|---|---|
-| Sincronizare catalog de tool-uri | Nimic personal - o cerere pentru indexul propriu, public, de tool-uri și asset-uri al Lolly, către originea proprie a aplicației | La pornire, apoi cache-uit offline | Aplicația rulează pe setul de tool-uri din cache. Doar nu mai descoperă tool-uri noi |
-| Un tool care are nevoie de date live | Orice cere acel tool specific, către host-ul numit în propria sa descriere. Astăzi asta e doar căutarea de oraș din tool-ul Meeting Planner, care întreabă `geocoding-api.open-meteo.com` pentru a transforma un nume de oraș în coordonate și fus orar - fără cont, fără cheie și fără vreun identificator dincolo de cererea în sine. Câmpul de intrare spune asta chiar unde tastezi, iar fiecare răspuns este salvat pe dispozitivul tău astfel încât un oraș este căutat o singură dată | Doar cât timp folosești acel tool, și doar după ce introduci o locație | Doar acea căutare eșuează. Poți totuși introduce coordonate manual, iar nimic altceva nu este afectat |
-| Google Fonts | Numele familiei de font ales și adresa ta IP, către serverele de fonturi ale Google (`fonts.googleapis.com` pentru foaia de stiluri, `fonts.gstatic.com` pentru fișierul de font) | Doar dacă adaugi un Google Font în editorul de brand, **și doar după ce accepți într-un dialog care spune exact asta** - o preluare unică per familie, apoi rămâne pe dispozitivul tău și este folosit offline | Selectorul Google Fonts eșuează cu blocare. Încarcă în schimb un fișier de font |
-| Trimite către Google Drive | Fișierul unic pe care l-ai ales să-l trimiți, către API-ul Drive al Google (`www.googleapis.com`), după o autentificare Google pe care o completezi în fereastra pop-up proprie a Google. Accesul Lolly este limitat la fișierele pe care le-a creat (scope-ul `drive.file` - nu poate citi niciodată restul Drive-ului tău), iar token-ul de autentificare este păstrat în memorie pentru sesiune, niciodată stocat | Doar când apeși "Trimite către Google Drive" pe un export EMF, și doar pe build-urile unde operatorul a configurat un id de client Google - fără unul, butonul nici nu există | Butonul nu apare niciodată. Descarcă fișierul și încarcă-l tu însuți pe Drive |
-| Trimite către Dropbox | Fișierul unic pe care l-ai ales să-l trimiți, către API-ul Dropbox (`api.dropboxapi.com` pentru autentificare și metadate, `content.dropboxapi.com` pentru fișierul propriu-zis), după o autentificare Dropbox pe care o completezi în fereastra proprie a Dropbox. Accesul Lolly este limitat la folderul aplicației (poate vedea doar `Apps/` și folderul propriu de acolo - niciodată restul Dropbox-ului tău), link-ul "Deschide" pe care ți-l arată este un link privat cu durată scurtă (nu se creează niciun share public), iar un token de reîmprospătare este stocat doar dacă bifezi "rămâi conectat" | Doar când apeși "Trimite către Dropbox" pe un fișier, și doar pe build-urile unde operatorul a configurat un id de client Dropbox - fără unul, butonul nici nu există | Butonul nu apare niciodată. Descarcă fișierul și încarcă-l tu însuți pe Dropbox |
-| Trimite către OneDrive | Fișierul unic pe care l-ai ales să-l trimiți, către serviciile de identitate și Graph ale Microsoft (`login.microsoftonline.com` pentru autentificare, `graph.microsoft.com` pentru încărcare; un fișier mare se încarcă în bucăți către o adresă de încărcare deținută de Microsoft pe `api.onedrive.com`, `*.up.1drv.com` sau `*.sharepoint.com`), după o autentificare Microsoft pe care o completezi în fereastra proprie a Microsoft. Accesul Lolly este limitat la propriul folder sub `Apps/` (nu poate citi niciodată restul OneDrive-ului tău) plus numele tău de afișare pentru eticheta contului, iar un token de reîmprospătare este stocat doar dacă bifezi "rămâi conectat" | Doar când apeși "Trimite către OneDrive" pe un fișier, și doar pe build-urile unde operatorul a configurat un id de client Microsoft - fără unul, butonul nici nu există | Butonul nu apare niciodată. Descarcă fișierul și încarcă-l tu însuți pe OneDrive |
-| Profiluri de tipar ICC | Nimic personal - o cerere pentru un profil standard de condiții de tipar, către registrul public al ICC (`registry.color.org`, `www.color.org`) | Doar dacă dai clic pe un preset ICC în managerul de profiluri de tipar - o preluare unică per profil, apoi rămâne pe dispozitivul tău | Presetele ICC eșuează. Furnizează în schimb propriul tău profil `.icc` |
-| Radio pe internet | Nimic personal - o cerere de playlist și un stream audio, către stație (`api.somafm.com` și serverul icecast pe care aceasta îl numește, `*.somafm.com`) | Doar cât timp redai radioul opțional încorporat în playerul de sunet | Radioul eșuează. Orice altă funcție de sunet funcționează în continuare |
-| Un URL pe care ceri unui tool să-l captureze | O cerere către adresa web exactă pe care o tastezi, din tool-ul de captură de ecran de URL-uri. Oricare ar fi acea adresă. Acest host nu este în politica de mai jos, pentru că îl alegi tu în momentul utilizării | Doar când introduci un URL în acel tool și pornești captura | Un operator nu poate face allowlist pe host pentru asta. Pentru a o elimina, elimină tool-ul |
-| Verificare semnătură SEAL | **Nimic.** Aplicația web nu are niciun resolver DNS deloc - vezi mai jos | Niciodată | Nimic de blocat |
-| Modele de detector deep-scan | Nimic personal - o descărcare unică de model de pe aceeași origine (nu un terț) | Doar dacă optezi pentru scanarea profundă în Verify | Scanarea profundă nu este disponibilă. Verificarea standard funcționează în continuare |
-| Instanță la distanță | Orice servește înapoi instanța pe care o numești, prin aceeași sincronizare de catalog descrisă mai sus. Alegi tu host-ul în momentul utilizării, deci nu este în politica de mai jos | Doar dacă îndrepți explicit shell-ul către o altă implementare Lolly | Comutarea instanței eșuează. Instanța ta locală nu este afectată |
+| Sincronizarea catalogului de instrumente | Nimic personal - o cerere pentru propriul index public de instrumente și resurse al Lolly, către originea proprie a aplicației | La pornire, apoi stocat în cache pentru offline | Aplicația rulează cu setul ei de instrumente stocat în cache. Doar încetează să mai descopere instrumente noi |
+| Un instrument care are nevoie de date live | Orice solicită acel instrument specific, către hostul numit în propria descriere. Astăzi este doar căutarea orașelor din instrumentul Meeting Planner, care întreabă `geocoding-api.open-meteo.com` pentru a transforma numele unui oraș în coordonate și fus orar - fără cont, fără cheie și fără niciun identificator dincolo de cererea în sine. Câmpul de introducere spune asta chiar acolo unde scrii, iar fiecare răspuns este salvat pe dispozitivul tău, astfel încât un oraș este căutat o singură dată | Doar în timp ce folosești acel instrument și doar după ce introduci o locație | Doar acea căutare eșuează. Poți totuși introduce coordonatele manual, și nimic altceva nu este afectat |
+| Google Fonts | Numele familiei de font aleasă și adresa ta IP, către serverele de fonturi Google (`fonts.googleapis.com` pentru foaia de stil, `fonts.gstatic.com` pentru fișierul de font) | Doar dacă adaugi un font Google în editorul de brand, **și doar după ce accepți asta într-un dialog care spune exact acest lucru** - o descărcare unică per familie, apoi rămâne pe dispozitivul tău și este folosit offline | Selectorul de fonturi Google eșuează în siguranță. Încarcă în schimb un fișier de font |
+| Trimite către Google Drive | Fișierul unic pe care ai ales să-l trimiți, către API-ul Google Drive (`www.googleapis.com`), după o autentificare Google pe care o finalizezi în fereastra pop-up proprie a Google. Accesul Lolly este limitat la fișierele pe care le-a creat (domeniul `drive.file` - nu poate niciodată citi restul Drive-ului tău), iar token-ul de autentificare este păstrat doar în memorie pe durata sesiunii și nu este niciodată stocat | Doar când apeși "Send to Google Drive" la un export EMF, și doar în build-urile în care operatorul a configurat un client id Google - fără unul, butonul nu există | Butonul nu apare niciodată. Descarcă fișierul și încarcă-l tu însuți pe Drive |
+| Trimite către Dropbox | Fișierul unic pe care ai ales să-l trimiți, către API-ul Dropbox (`api.dropboxapi.com` pentru autentificare și metadate, `content.dropboxapi.com` pentru fișierul propriu-zis), după o autentificare Dropbox pe care o finalizezi în fereastra proprie a Dropbox. Accesul Lolly este limitat doar la folderul aplicației (poate vedea doar `Apps/` și propriul folder de acolo - niciodată restul Dropbox-ului tău), linkul "Open" pe care ți-l arată este un link privat de scurtă durată (nu se creează nicio partajare publică), iar un token de reîmprospătare este stocat doar dacă bifezi "stay connected" | Doar când apeși "Send to Dropbox" la un fișier, și doar în build-urile în care operatorul a configurat un client id Dropbox - fără unul, butonul nu există | Butonul nu apare niciodată. Descarcă fișierul și încarcă-l tu însuți pe Dropbox |
+| Trimite către OneDrive | Fișierul unic pe care ai ales să-l trimiți, către serviciile de identitate și Graph ale Microsoft (`login.microsoftonline.com` pentru autentificare, `graph.microsoft.com` pentru încărcare; un fișier mare se încarcă în bucăți la o adresă de încărcare deținută de Microsoft pe `api.onedrive.com`, `*.up.1drv.com` sau `*.sharepoint.com`), după o autentificare Microsoft pe care o finalizezi în fereastra proprie a Microsoft. Accesul Lolly este limitat la propriul folder sub `Apps/` (nu poate niciodată citi restul OneDrive-ului tău) plus numele tău de afișare pentru eticheta contului, iar un token de reîmprospătare este stocat doar dacă bifezi "stay connected" | Doar când apeși "Send to OneDrive" la un fișier, și doar în build-urile în care operatorul a configurat un client id Microsoft - fără unul, butonul nu există | Butonul nu apare niciodată. Descarcă fișierul și încarcă-l tu însuți pe OneDrive |
+| Profiluri de tipar ICC | Nimic personal - o cerere pentru un profil standard de condiții de tipar, către registrul public ICC (`registry.color.org`, `www.color.org`) | Doar dacă dai clic pe o presetare ICC în managerul de profiluri de tipar - o descărcare unică per profil, apoi rămâne pe dispozitivul tău | Presetările ICC eșuează. Furnizează în schimb propriul profil `.icc` |
+| Radio prin internet | Nimic personal - o cerere de playlist și un stream audio, către stație (`api.somafm.com` și serverul icecast pe care aceasta îl numește, `*.somafm.com`) | Doar cât timp redai radioul opțional încorporat din playerul de sunet | Radioul eșuează. Orice altă funcție de sunet funcționează în continuare |
+| O adresă URL pe care ceri unui instrument s-o captureze | O cerere către exact adresa web pe care o tastezi, din instrumentul de captură de ecran pentru URL. Indiferent care este acea adresă. Acest host nu se află în politica de mai jos, deoarece tu îl alegi în momentul utilizării | Doar când introduci o adresă URL în acel instrument și pornești captura | Un operator nu poate permite asta după host. Pentru a o elimina, trebuie eliminat instrumentul |
+| Verificarea semnăturii SEAL | **Nimic.** Aplicația web nu are deloc un resolver DNS - vezi mai jos | Niciodată | Nimic de blocat |
+| Modelele detectorului de scanare profundă | Nimic personal - o descărcare unică de model de la aceeași origine (nu de la o terță parte) | Doar dacă activezi scanarea profundă din Verify | Scanarea profundă nu este disponibilă. Verificarea standard funcționează în continuare |
+| Instanță la distanță | Orice returnează instanța pe care o numești, prin aceeași sincronizare a catalogului descrisă mai sus - plus o etichetă de versiune la cererile către ea (tipul de shell și versiunea motorului, aceeași informație pe care o poartă un user agent), astfel încât operatorul ei poate vedea ce versiuni de Lolly sunt în uz. Pe o instanță gestionată, cât timp ești autentificat, acea etichetă poartă și un id de instalare per dispozitiv, astfel încât lista de dispozitive a operatorului poate distinge această instalare. Aceasta călătorește doar pe cererile pe care propria ta utilizare le face oricum - nu există niciun cronometru și nimic nu "sună acasă" de la sine - iar părăsirea instanței șterge acest id, astfel încât un dispozitiv care se reconectează mai târziu prezintă unul nou. Tu alegi hostul în momentul utilizării, deci nu se află în politica de mai jos | Doar dacă îndrepți explicit shell-ul către o altă implementare Lolly | Comutarea instanței eșuează. Instanța ta locală nu este afectată |
 
 Fiecare host fix din acel tabel este și lista completă de allowlist din Content-Security-Policy
 al aplicației, pe care browserul o aplică. Deci lista nu este doar o
@@ -137,20 +138,20 @@ link Lolly partajat poate apărea ca imagine live într-un README, un wiki sau u
 îi cere serverului să randeze **date publice de tool și de catalog** cu intrările
 scrise în URL.
 
-- <!--i:usercheck--> **Fără conturi, fără cookie-uri, fără stare.** Endpoint-ul este anonim, și nimic
-  de pe dispozitivul tău nu este citit. Documentele, sesiunile și fișierele încărcate ale tale nu părăsesc niciodată
-  browserul tău - nu pot apărea deloc în aceste link-uri.
-- <!--i:document--> **Dar URL-ul în sine este înregistrat.** Șirul de interogare al unui URL face parte din linia cererii,
-  deci ajunge în jurnalele obișnuite de acces ale platformei de găzduire, la fel cum ajunge
-  fiecare cale cerută. Dacă intrările unui link conțin numele sau adresa de email a cuiva -
-  o insignă cu nume, o semnătură de email - **acel text stă în acele jurnale**, și niciun
-  fel de formulare a politicii nu schimbă asta. Acesta este motivul specific pentru care funcția este
-  dezactivată aici, nu activată.
-- <!--i:globe--> **Intrările sunt publice prin construcție** oricum - sunt orice a tastat autorul link-ului
-  în URL, citibile de oricine ajunge la acel link. Nu pune secrete într-un link partajat.
-  Lolly oferă criptare de link pentru conținut sensibil.
-- <!--i:eyeoff--> Răspunsurile sunt **cache-uite și limitate ca rată** ca orice imagine publică, și marcate
-  `noindex` astfel încât motoarele de căutare să nu-ți indexeze randările.
+- <!--i:usercheck--> **Fără conturi, fără cookie-uri, fără stare.** Endpoint-ul este anonim și nimic
+  de pe dispozitivul tău nu este citit. Documentele, sesiunile și fișierele tale încărcate nu părăsesc niciodată
+  browserul tău - nu pot apărea deloc în aceste linkuri.
+- <!--i:document--> **Dar adresa URL în sine este înregistrată.** Șirul de interogare al unei URL face parte din linia
+  cererii, așa că apare în jurnalele obișnuite de acces ale platformei de găzduire la fel cum
+  o face fiecare cale solicitată. Dacă intrările unui link conțin numele sau e-mailul cuiva -
+  o ecuson cu nume, o semnătură de e-mail - **acel text ajunge în acele jurnale**, și nicio
+  formulare a politicii nu schimbă asta. Acesta este motivul specific pentru care funcția este
+  dezactivată aici, și nu activată.
+- <!--i:globe--> **Intrările sunt publice prin construcție** oricum - sunt orice a
+  scris autorul linkului în adresa URL, lizibil pentru oricine ajunge la link. Nu pune
+  informații secrete într-un link partajat. Lolly oferă criptare pentru linkuri cu conținut sensibil.
+- <!--i:eyeoff--> Răspunsurile sunt **stocate în cache și limitate ca rată** la fel ca orice imagine publică, și marcate
+  `noindex`, astfel încât motoarele de căutare nu îți indexează randările.
 
 Faci self-hosting la Lolly și nu vrei o suprafață publică de randare? Setează
 `LOLLY_DISABLE_RENDER_GET=1` - ceea ce face în prezent chiar lolly.tools - și fiecare

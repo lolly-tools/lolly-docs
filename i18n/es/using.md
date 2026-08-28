@@ -12,7 +12,7 @@ La pantalla de inicio es la **galería** - todas las herramientas, agrupadas por
 
 Cada herramienta es una vista dividida: **controles** a un lado, una **vista previa** en vivo (el lienzo) al otro. Cambia cualquier control y la vista previa se actualiza al instante.
 
-![La vista dividida de una herramienta - la pila de controles a la izquierda y el gráfico de barras agrupadas en vivo que dibuja a la derecha](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
+![La vista dividida de una herramienta - la pila de controles a la izquierda, y el gráfico de barras agrupadas en directo que dibuja a la derecha](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
 
 > Algunas herramientas (como **Design**) se abren en cambio como un **lienzo libre** - una superficie sin interfaz, de manipulación directa, donde arrastras, redimensionas, rotas y ajustas cajas de texto, formas e imágenes, y haces doble clic para editar el texto en el sitio. Se exporta por la misma ruta de renderizado que cualquier otra herramienta, así que el lienzo *es* el archivo. Consulta [El lienzo libre](#the-free-canvas-design) más abajo.
 
@@ -167,7 +167,7 @@ Selecciona un clip y el inspector te da las mismas ediciones como números: **Du
 
 Unos límites que conviene tener presentes: una secuencia está limitada a una hora, GIF y PNG animado guardan sus fotogramas en memoria, así que se quedan cortos, el audio queda mudo en un clip cuya velocidad no sea ×1 (todavía no hay estiramiento temporal) y **Grabar en directo** está oculto aquí porque el compositor es el mejor camino.
 
-**Más allá de los preajustes: fotogramas clave, profundidad y una cámara.** Una transición anima un clip al entrar y al salir. Para colocar una caja *dentro* de un clip - desplazarla, fundirla, desenfocarla, levantarla de la página y volver a posarla - añade fotogramas clave: selecciona el clip, pulsa **+Fotograma clave** (el rombo del grupo de herramientas de la línea de tiempo, el rombo de la barra del objeto en el lienzo o `K`) y la posición del cabezal decide qué pose escribe tu siguiente edición. La misma maquinaria le da a toda composición con tiempos una **cámara** que se acerca, hace panorámicas y cambia el foco, y convierte un SVG plano en una pila de capas por las que puedes volar. **[Animar](/info/animating.html)** es la guía completa.
+**Más allá de los preajustes: fotogramas clave, profundidad y una cámara.** Una transición anima un clip cuando llega y cuando se va. Para posar una caja *dentro* de un clip - hacerla derivar, aparecer o desaparecer en fundido, difuminarla, levantarla de la página y volver a asentarla - añade fotogramas clave: selecciona el clip, pulsa **+Fotograma clave** (el rombo en el grupo de herramientas de la línea de tiempo, el rombo en la barra de objeto del lienzo, o `K`), y la posición de la cabeza de reproducción decide qué pose escribe tu próxima edición. El mismo sistema de fotogramas clave le da a cada composición cronometrada una **cámara** que se acerca, gira y enfoca, y convierte un SVG plano en una pila de capas entre las que puedes volar. **[Animar](/info/animating.html)** es la guía completa.
 
 La herramienta Design tiene la misma línea de tiempo, así que puedes dar tiempos a una composición sin cambiar de herramienta, y también exporta movimiento.
 
@@ -180,7 +180,7 @@ Un documento de Design hecho de **áreas de diseño** ya es una presentación. A
 - **Pasos de revelado.** Haz clic derecho en una caja y elige **Revelar en el paso 1**, **2** o **3** en lugar del predeterminado **Siempre visible**. Esa caja espera entonces a que avances hasta su paso, así una diapositiva puede llegar por partes; las cajas que comparten número llegan juntas.
 - **Vista del presentador** (`S`) abre una segunda ventana con la diapositiva actual, la siguiente, tus notas para esa diapositiva y un reloj en marcha. Si el navegador bloquea la ventana emergente, recurre a un panel sobre la presentación. Las notas se definen por área de diseño y nunca aparecen en la propia diapositiva.
 - `B` mantiene una pantalla en negro (cualquier tecla devuelve la diapositiva), `F` vuelve a pantalla completa y **Escape** pela una capa cada vez: de la vista general a la presentación, de la presentación al editor.
-- **Quiosco.** Dale una **Duración** a un área de diseño y la presentación se detiene ahí ese tiempo, y luego avanza sola tras una fina barra de progreso; `K` (o el botón de pausa, que solo aparece cuando algo tiene duración) lo detiene y lo reanuda. Añade `loop` al enlace y la presentación vuelve a empezar al final, que es lo que la convierte en señalización.
+- **Quiosco.** Dale una **Duración** a un área de diseño y la presentación se detiene ahí ese tiempo, y luego avanza sola tras una fina barra de progreso; `K` (o el botón de pausa, que solo aparece cuando algo tiene duración) lo detiene y lo reanuda. Añade `kiosk` al enlace y la presentación vuelve a empezar al final, que es lo que la convierte en señalización.
 
 La presentación también es un enlace. `?present` la abre directamente, `s=` nombra la diapositiva - una posición, el id de un área de diseño o `id.step` para un paso de construcción - y la dirección se actualiza a medida que avanzas, así que lo que envías es la diapositiva en la que estás. Para quien crea herramientas: esos parámetros están documentados en la página [Modo URL](/info/url-mode.html#reserved-parameters).
 
@@ -210,7 +210,7 @@ Las herramientas exponen solo las entradas que están pensadas para variar - tod
 - **Mientras el cursor está en un cuadro de texto**, Cmd/Ctrl-Z pertenece al propio campo, carácter a carácter. Lolly toma el relevo en los controles que no tienen un deshacer útil propio: deslizadores, menús desplegables, colores e interruptores.
 - **Elegir un archivo** en una entrada de tipo **archivo** no es un paso - esos bytes se guardan solo para la sesión, así que no habría nada que devolver.
 
-En una [colaboración](/info/collaborate.html) en directo el historial sigue siendo solo tuyo. Un cambio que llega del otro dispositivo nunca entra en tu pila, así que deshacer solo puede retirar algo que hiciste tú.
+En una [colaboración](/info/collaborate.html) en directo, el historial sigue siendo solo tuyo. Un cambio que llega desde el otro dispositivo nunca aterriza en tu pila, así que deshacer solo puede recuperar algo que hiciste tú.
 
 ## Tus datos y tu foto
 
@@ -266,10 +266,10 @@ alt text names them - do not re-caption this as "the sort menu".
 
 > Una trampa de etiquetas: **Ver sesiones** solo existe cuando hay algo *seleccionado*. Hacer clic derecho en una sola tarjeta no seleccionada ofrece en cambio **N sesiones guardadas**, que abre el diálogo de historial de esa herramienta en lugar de llevarte a Proyectos.
 
-![Dos tarjetas de herramienta marcadas en la galería de Herramientas, con la barra de selección flotante indicando 2 seleccionadas y ofreciendo Disponible sin conexión, Ver sesiones, Favorito y Ocultar](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
+![Dos tarjetas de herramientas marcadas en la galería de Herramientas, con la barra de selección flotante mostrando 2 seleccionados y ofreciendo Disponible sin conexión, Ver sesiones, Favorito y Ocultar](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
 <!--
 SHOT NOTE (misc-bulkbar-gallery): drive targets `[data-select="qr-code"]` /
-`[data-select="d3"]` - the `.tile-check[data-select="<ref>"]` checkbox button
+`[data-select="gradient"]` - the `.tile-check[data-select="<ref>"]` checkbox button
 confirmed directly in views/gallery.ts's card markup (the same attribute
 cardMarkup gives every tile), so these two clicks tick both cards without
 opening either tool.
@@ -291,14 +291,16 @@ Un diseño sale de una de estas dos maneras: como enlace o como archivo. El diá
 
 ### El enlace
 
-![Jump Page in the editor - the heading, three link scenes each with its own wash and a Made with Lolly footer, laid out as one page in the canvas](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
-
 Cada entrada queda capturada en la URL de la página, así que un enlace *es* el diseño. En la parte superior del diálogo está el enlace listo para copiar, con dos secciones plegadas debajo.
 
 - **Opciones del enlace** contiene **Enlace más corto** (un diseño grande genera una URL larga, así que esto empaqueta todo el estado en un token compacto y te muestra el ahorro en caracteres; la forma legible sigue estando siempre), **Proteger este enlace con contraseña** (AES-256 sobre todo el enlace, y la contraseña nunca dentro) y **Fijar esta versión de la herramienta** - el indicador `_v`, que clava el enlace a la versión de la herramienta que estás viendo para que una actualización posterior no pueda cambiar lo que renderiza.
 - **Comportamiento del enlace** es lo que ocurre cuando quien lo recibe lo abre: pantalla completa, el panel de exportación ya desplegado, descarga al abrir con `&export` o copia al portapapeles con `&copy`.
 
 Pégale el enlace a un colega, guárdalo en marcadores o inclúyelo en un commit. (Detalles completos: [Modo URL](/info/url-mode.html).)
+
+**Algunas herramientas hacen del enlace el producto entero.** Jump Page reúne tus enlaces en una sola página para repartir - un enlace de bio, una charla de conferencia, un escaparate. No hay nada que alojar ni ninguna cuenta detrás: la página es el enlace, así que se abre tan rápido como viaja la URL. En el editor ves la página terminada junto a los campos; quien abre el enlace la recibe a todo lo ancho, una escena por enlace conforme se desplaza.
+
+![Jump Page en el editor - el título, tres escenas de enlaces con su propio tinte cada una, y un pie de página Made with Lolly, dispuestos como una sola página en el lienzo](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
 
 **El diálogo dice lo que un enlace no puede llevar.** Tres cosas no caben en una URL: una imagen o un archivo que añadiste desde este dispositivo, un valor de texto muy largo o una lista muy grande. Cada una se cuenta mientras se construye el enlace. Si hubo que dejar algo fuera, el diálogo lo nombra y te señala el archivo de más abajo, en lugar de darte un enlace que se abre sin la imagen. Un enlace que solo es *largo* recibe un aviso más suave con su recuento de caracteres, ya que empaquetarlo aún puede salvar la longitud.
 
@@ -314,7 +316,7 @@ Tres cosas las decides tú antes de que salga:
 - **Si el arte con licencia entra o no.** Los activos con licencia y bloqueados por marca se retienen por defecto. Si el diseño usa alguno, el diálogo dice cuántos hay y ofrece dos botones - *Download without them* o *Include and download* - porque incluirlos entrega los archivos reales a quien abra el `.lolly`.
 - **Si la herramienta entra o no.** **Include the tool** empaqueta los propios archivos de la herramienta junto con el diseño, para que se abra en un dispositivo que no tiene esa herramienta. Llega marcado para una herramienta personalizada - un fork o una herramienta de marca privada que tu destinatario probablemente no tenga - y sin marcar para una herramienta que figura en el catálogo firmado, ya que su copia viene de la misma fuente. (En una compilación sin catálogo firmado, toda herramienta cuenta como personalizada y la casilla empieza marcada.)
 
-**Abrir uno.** Suelta un `.lolly` sobre la app: los recursos aterrizan en tu biblioteca, la sesión aterriza en Proyectos y la herramienta se abre con ella. No se sobrescribe nada tuyo: la sesión llega como una ranura guardada nueva, mientras que un recurso que ya está en este dispositivo se identifica por checksum y se reutiliza en lugar de duplicarse. Cada parte se comprueba contra los checksums del propio archivo al entrar, así que una copia dañada en tránsito se rechaza en vez de importarse a medias.
+**Abrir uno.** Suelta un `.lolly` sobre la app: los assets van a tu biblioteca, la sesión va a Proyectos y la herramienta se abre con ella. Nada tuyo se sobrescribe: la sesión llega como una nueva ranura guardada, mientras que un asset que ya está en este dispositivo se identifica por suma de comprobación y se reutiliza en lugar de duplicarse. Cada parte se verifica contra las propias sumas de comprobación del archivo al importarlo, así que una copia dañada en tránsito se rechaza en lugar de importarse a medias.
 
 Si el archivo lleva una herramienta que no tienes, Lolly pregunta antes de que esa herramienta pueda ejecutarse: **¿Confiar en esta herramienta?** la nombra a ella y a su autor y dice con claridad que abrirla ejecuta el código de la herramienta en tu dispositivo, con **Confiar e instalar** como la vía para seguir. Si lo rechazas, el trabajo compartido se guarda igualmente en tus proyectos, esperando ahí al día en que añadas la herramienta. (Un tipo de herramienta todavía no se puede cargar así - una cuyo código se distribuye como módulo - y se rechaza de la misma manera.)
 
@@ -334,10 +336,10 @@ El **Catálogo** (`#/c`, o el segmento **Catálogo** del selector Proyectos · H
 
 ![El Catálogo - recursos de marca, muestras y tipografías, además de tus propias subidas](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=2400&css=.plat-swatch-grid~%2A%7Bdisplay%3Anone%7D&walker=1&format=svg&localize=1&dark=1&filename=catalogue)
 
-- <!--i:upload--> **Trae tus archivos.** Arrastra cualquier imagen, SVG, clip de audio, video, Lottie, PDF o presentación de PowerPoint al área de subida - o haz clic para elegir - y aterriza en tu catálogo al instante, listo en el selector de activos de cada herramienta. Un PDF de varias páginas o un `.pptx` pregunta qué páginas o diapositivas conservar - cada una se convierte en un activo SVG. Ingresa todo lo que quieras; nunca sale de tu dispositivo.
-- <!--i:star--> **Marca con estrella lo que usas a menudo.** ★ un activo (o una muestra de marca) y se fija en la parte superior de cada selector, así tu logo o color habitual está a un clic.
-- <!--i:folder--> **Ordena.** Recategoriza un activo en un grupo distinto, oculta un activo de marca compartido que no usas (con **Show hidden** para recuperarlo) o elimina tus propias subidas por completo. El mismo gesto de selección múltiple y la barra de acciones flotante de Proyectos funcionan aquí también, así que cualquiera de esas acciones se puede hacer sobre toda una selección a la vez.
-- <!--i:layers--> **Quita el fondo de un video.** Abre el detalle de un video o haz clic derecho en su tarjeta en cualquier selector de activos y elige **Remove background…** para guardar una alternativa transparente - un WebP o PNG animado con alfa real. Elige un **Método**: un **modelo en el dispositivo** recorta un sujeto de una escena cargada, o una **clave de color** elimina un fondo uniforme y plano como una pantalla verde o una pared lisa, con **Tolerancia**, **Suavidad** y **Eliminación de contaminación** para ajustar el borde. La clave de color no necesita descarga de modelo ni red, así que **Remove background** se ofrece en cualquier video y suele quedar más limpia en material ordenado. Un control de **Resolución** (360, 480, 720 o 1080p, nunca más allá de la fuente) intercambia detalle por un archivo más pequeño y rápido. Se ejecuta como una tarea en segundo plano en tu dispositivo. El recorte terminado aterriza junto al original como su propio activo y la Credencial de Contenido del video de origen viaja como ingrediente. (Ver [Generado una vez, renderizado igual](/info/ai-features.html) para saber por qué quitar un fondo sigue siendo una edición simple.)
+- <!--i:upload--> **Trae tus archivos.** Arrastra cualquier imagen, SVG, clip de audio, vídeo, Lottie, PDF o presentación de PowerPoint a la zona de subida - o haz clic para elegir - y llega a tu catálogo al instante, listo en el selector de assets de cada herramienta. Un PDF de varias páginas o un `.pptx` pregunta qué páginas o diapositivas conservar - cada una se convierte en un asset SVG. Importa todo lo que quieras; nunca sale de tu dispositivo.
+- <!--i:star--> **Marca como favorito lo que usas a menudo.** ★ un asset (o un color de marca) y se fija arriba en cada selector, para que tu logo o color habitual estén a un clic.
+- <!--i:folder--> **Ordena.** Recategoriza un asset a otro grupo, oculta un asset de marca compartido que no usas (con **Mostrar ocultos** para recuperarlo) o elimina directamente tus propias subidas. El mismo gesto de selección múltiple y la misma barra de acciones flotante que en Proyectos funcionan aquí también, así que todo eso se puede hacer sobre una selección entera a la vez.
+- <!--i:layers--> **Separa un vídeo de su fondo.** Abre el detalle de un vídeo o haz clic derecho en su tarjeta en cualquier selector de assets, y elige **Quitar fondo…** para guardar una alternativa transparente - un WebP o PNG animado con canal alfa real. Elige un **Método**: un **Modelo en el dispositivo** recorta un sujeto de una escena cargada, o una **Clave de color** recorta un fondo uniforme y bien iluminado como una pantalla verde o una pared lisa, con **Tolerancia**, **Suavidad** y **Eliminación de derrame** para ajustar el borde. La clave de color no necesita ninguna descarga de modelo ni red, así que **Quitar fondo** se ofrece en cualquier vídeo y suele quedar más limpio en material bien nítido. Un control de **Resolución** (360, 480, 720 o 1080p, nunca más allá de la fuente) cambia detalle por un archivo más pequeño y rápido. Se ejecuta como tarea en segundo plano en tu dispositivo. El recorte final se guarda junto al original como su propio asset, y el Content Credential del vídeo de origen viaja con él como ingrediente. (Consulta [Generado una vez, renderizado igual](/info/ai-features.html) para saber por qué quitar un fondo sigue siendo una edición sencilla.)
 
 ### Lleva tu paleta y tus tipografías a cualquier parte
 
@@ -401,7 +403,7 @@ Batch sirve para generar **muchas variantes de una misma plantilla** a la vez. P
 
 ## Editar en paralelo (Multiedición)
 
-Batch son muchas variantes de *un* diseño. **Multiedición** es la otra mitad del trabajo: varios diseños guardados **distintos** abiertos a la vez, para que un cambio caiga en todos ellos. Marca entre **dos y ocho** sesiones guardadas en **Proyectos** y elige **Editar juntos** en la barra de selección; se abren como tarjetas en vivo, una al lado de otra, en `#/multi?s=<slot>,<slot>…`. Cada tarjeta es un renderizado real de esa sesión, no una miniatura guardada, así que lo que ves es lo que exportará.
+Batch son muchas variantes de *un solo* diseño. **Multi-Edit** es la otra mitad del trabajo: varios diseños guardados **distintos** abiertos a la vez, para que un cambio se aplique a todos ellos. Marca entre **dos y ocho** sesiones guardadas en **Proyectos** y elige **Editar juntos** en la barra de selección; se abren como tarjetas en directo una junto a otra en `#/multi?s=<slot>,<slot>…`. Cada tarjeta es un render real de esa sesión, no una miniatura guardada, así que lo que ves es lo que se exportará.
 
 Una sola barra lateral lo gobierna todo:
 
@@ -418,3 +420,5 @@ Cuando la selección supera las ocho, mezcla herramientas o incluye imágenes ad
 ## Sin conexión e instalación
 
 Lolly es una PWA. Después de la primera carga funciona **sin conexión** - instálala desde la barra de direcciones de tu navegador (o *Añadir a pantalla de inicio* en el móvil) para una experiencia a pantalla completa, como la de una app. Se actualiza sola cuando vuelves a tener conexión.
+
+Sobre las actualizaciones: si una vista alguna vez no carga justo después de una (un panel en blanco, un "failed to fetch" en la esquina), recarga la página una vez - la app adopta la nueva versión sin problemas y tu trabajo, sesiones y marca quedan intactos. Almacena todo en tu dispositivo, no en la página.

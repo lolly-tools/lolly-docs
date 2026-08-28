@@ -2,14 +2,15 @@
 
 *Terakhir dikemas kini: 11 Ogos 2026*
 
-> **Dalam erti kata mudah.** Dokumen, imej, video dan fail yang anda buat dalam Lolly kekal
-> pada peranti anda. Tiada akaun untuk penggunaan biasa, tiada kuki daripada aplikasi
-> itu sendiri dan tiada analitik atau penjejak di mana-mana dalam kod sumber - bukan "kami tidak guna
-> data itu," tetapi memang tiada dalam sumber. Satu senarai pendek dan lengkap
-> pengecualian wujud di mana perisian ini berhubung dengan rangkaian, dan setiap satu
-> daripadanya diterangkan di bawah secara terperinci: apa yang keluar, kepada siapa dan bila.
-> Satu-satunya pengecualian yang melibatkan sesuatu yang peribadi ialah log masuk yang
-> anda perlu mulakan secara jelas. Jika ia tiada dalam dokumen ini, ia tidak berlaku.
+> **Versi ringkasnya.** Dokumen, imej, video dan fail yang anda hasilkan dalam Lolly kekal
+> pada peranti anda. Tiada akaun untuk penggunaan biasa, tiada kuki daripada
+> aplikasi itu sendiri dan tiada analitik atau penjejak di mana-mana dalam kod sumber - ini
+> bukan "kami tidak menggunakan data," tetapi memang benar-benar tiada dalam source.
+> Terdapat senarai ringkas dan lengkap tentang pengecualian di mana perisian ini
+> berkomunikasi dengan rangkaian sama sekali, dan setiap satu daripadanya diterangkan
+> secara terperinci di bawah: apa yang keluar, kepada siapa dan bila. Satu-satunya
+> pengecualian yang melibatkan sesuatu yang bersifat peribadi ialah log masuk yang
+> perlu anda mulakan secara jelas. Jika ia tiada dalam dokumen ini, ia tidak berlaku.
 
 ## Apa yang diliputi dasar ini
 
@@ -82,20 +83,20 @@ kami - tujuan kebanyakan alat ini adalah untuk membuang & melindungi data, bukan
 Jadual di bawah ialah senarai lengkap segala yang diambil atau dihantar oleh aplikasi melalui
 rangkaian. Jika ia tiada di sini, aplikasi tidak melakukannya.
 
-| Apa | Apa yang sebenarnya keluar dari peranti anda | Bila (tindakan yang mencetuskannya) | Jika pengendali menyekatnya |
+| Apa | Apa yang sebenarnya keluar daripada peranti anda | Bila (tindakan yang mencetuskannya) | Jika operator menyekatnya |
 |---|---|---|---|
-| Penyegerakan katalog alat | Tiada apa-apa yang peribadi - permintaan untuk indeks alat dan aset awam Lolly sendiri, ke asal usul (origin) aplikasi itu sendiri | Semasa permulaan, kemudian dicache secara luar talian | Aplikasi berjalan menggunakan set alat yang dicache. Ia hanya berhenti menemui alat baharu |
-| Alat yang memerlukan data langsung | Apa sahaja yang diminta oleh alat khusus itu, kepada hos yang dinamakan dalam penerangannya sendiri. Pada masa ini itu hanyalah carian bandar dalam alat Meeting Planner, yang meminta `geocoding-api.open-meteo.com` untuk menukar nama bandar kepada koordinat dan zon waktu - tiada akaun, tiada kunci dan tiada pengenal pasti selain permintaan itu sendiri. Input itu menyatakan begitu tepat di tempat anda menaip, dan setiap jawapan disimpan pada peranti anda supaya sesuatu bandar hanya dicari sekali | Hanya semasa menggunakan alat itu, dan hanya sebaik sahaja anda memasukkan lokasi | Carian itu sahaja gagal. Anda masih boleh menaip koordinat secara manual, dan tiada apa-apa lagi terjejas |
-| Google Fonts | Nama keluarga fon yang dipilih dan alamat IP anda, kepada pelayan fon Google (`fonts.googleapis.com` untuk helaian gaya, `fonts.gstatic.com` untuk fail fon) | Hanya jika anda menambah Google Font dalam penyunting jenama, **dan hanya selepas anda bersetuju dalam dialog yang menyatakan perkara ini dengan tepat** - satu kali capaian bagi setiap keluarga, kemudian ia kekal pada peranti anda dan digunakan luar talian | Pemilih Google Fonts gagal secara tertutup (fail closed). Muat naik fail fon anda sendiri sebagai gantinya |
-| Send to Google Drive | Fail tunggal yang anda pilih untuk dihantar, kepada API Drive Google (`www.googleapis.com`), selepas anda melengkapkan log masuk Google dalam tetingkap pop timbul Google sendiri. Akses Lolly terhad kepada fail yang dicipta olehnya (skop `drive.file` - ia tidak boleh membaca selebihnya Drive anda), dan token log masuk disimpan dalam memori untuk sesi itu sahaja, tidak pernah disimpan kekal | Hanya apabila anda menekan "Send to Google Drive" pada eksport EMF, dan hanya pada binaan (build) di mana pengendali telah mengkonfigurasikan id klien Google - tanpa satu, butang itu tidak wujud | Butang itu tidak pernah muncul. Muat turun fail itu dan muat naiknya sendiri ke Drive |
-| Send to Dropbox | Fail tunggal yang anda pilih untuk dihantar, kepada API Dropbox (`api.dropboxapi.com` untuk log masuk dan metadata, `content.dropboxapi.com` untuk fail itu sendiri), selepas anda melengkapkan log masuk Dropbox dalam tetingkap Dropbox sendiri. Akses Lolly hanya terhad kepada folder aplikasi (ia hanya boleh melihat `Apps/` dan folder sendirinya di situ - tidak pernah selebihnya Dropbox anda), pautan "Open" yang dipaparkan ialah pautan peribadi berjangka pendek (tiada perkongsian awam dicipta), dan token muat semula (refresh token) hanya disimpan jika anda menandakan "stay connected" | Hanya apabila anda menekan "Send to Dropbox" pada sesuatu fail, dan hanya pada binaan di mana pengendali telah mengkonfigurasikan id klien Dropbox - tanpa satu, butang itu tidak wujud | Butang itu tidak pernah muncul. Muat turun fail itu dan muat naiknya sendiri ke Dropbox |
-| Send to OneDrive | Fail tunggal yang anda pilih untuk dihantar, kepada perkhidmatan identiti dan Graph Microsoft (`login.microsoftonline.com` untuk log masuk, `graph.microsoft.com` untuk muat naik; fail besar dimuat naik secara berkelompok (chunks) ke alamat muat naik milik Microsoft di `api.onedrive.com`, `*.up.1drv.com` atau `*.sharepoint.com`), selepas anda melengkapkan log masuk Microsoft dalam tetingkap Microsoft sendiri. Akses Lolly terhad kepada folder sendirinya di bawah `Apps/` (ia tidak pernah boleh membaca selebihnya OneDrive anda) ditambah nama paparan anda untuk label akaun, dan token muat semula hanya disimpan jika anda menandakan "stay connected" | Hanya apabila anda menekan "Send to OneDrive" pada sesuatu fail, dan hanya pada binaan di mana pengendali telah mengkonfigurasikan id klien Microsoft - tanpa satu, butang itu tidak wujud | Butang itu tidak pernah muncul. Muat turun fail itu dan muat naiknya sendiri ke OneDrive |
-| Profil cetakan ICC | Tiada apa-apa yang peribadi - permintaan untuk profil syarat cetakan piawai, kepada registri awam ICC (`registry.color.org`, `www.color.org`) | Hanya jika anda mengklik pratetap ICC dalam pengurus profil cetak - satu kali capaian bagi setiap profil, kemudian ia kekal pada peranti anda | Pratetap ICC gagal. Sediakan profil `.icc` anda sendiri sebagai gantinya |
-| Radio Internet | Tiada apa-apa yang peribadi - permintaan senarai main dan strim audio, kepada stesen (`api.somafm.com` dan pelayan icecast yang dinamakannya, `*.somafm.com`) | Hanya semasa anda memainkan radio terbina dalam pilihan dalam pemain bunyi | Radio itu gagal. Setiap ciri bunyi lain masih berfungsi |
-| URL yang anda minta alat untuk tangkap | Permintaan kepada alamat web tepat yang anda taip, daripada alat tangkapan skrin URL. Apa sahaja alamat itu. Hos ini tiada dalam dasar di bawah, kerana anda memilihnya pada saat penggunaan | Hanya apabila anda memasukkan URL dalam alat itu dan memulakan tangkapan | Pengendali tidak boleh membenarkan (allowlist) ini mengikut hos. Untuk membuangnya, buang alat itu |
-| Semakan tandatangan SEAL | **Tiada apa-apa.** Aplikasi web ini tiada penyelesai DNS (DNS resolver) langsung - lihat di bawah | Tidak pernah | Tiada apa-apa untuk disekat |
-| Model pengesan imbasan mendalam | Tiada apa-apa yang peribadi - muat turun model asal usul sama (same-origin) sekali sahaja (bukan pihak ketiga) | Hanya jika anda memilih untuk menyertai imbasan mendalam Verify | Imbasan mendalam tidak tersedia. Pengesahan standard masih berfungsi |
-| Instans jauh | Apa sahaja yang dihantar balik oleh instans yang anda namakan, melalui penyegerakan katalog yang sama seperti diterangkan di atas. Anda memilih hos itu pada saat penggunaan, jadi ia tiada dalam dasar di bawah | Hanya jika anda secara jelas mengarahkan shell ke penggunaan Lolly yang lain | Pertukaran instans gagal. Instans tempatan anda tidak terjejas |
+| Penyegerakan katalog alat | Tiada apa-apa yang peribadi - permintaan untuk indeks alat dan aset awam milik Lolly sendiri, ke origin milik aplikasi itu sendiri | Semasa permulaan, kemudian dicache secara luar talian | Aplikasi berjalan dengan set alat yang dicachenya. Ia hanya berhenti menemui alat baharu |
+| Alat yang memerlukan data langsung | Apa sahaja yang diminta oleh alat khusus itu, kepada hos yang dinamakan dalam huraiannya sendiri. Pada masa ini itu hanya carian bandar dalam alat Meeting Planner, yang meminta `geocoding-api.open-meteo.com` untuk menukar nama bandar kepada koordinat dan zon waktu - tiada akaun, tiada kunci dan tiada pengenal pasti selain permintaan itu sendiri. Perkara ini dinyatakan tepat di tempat anda menaip, dan setiap jawapan disimpan pada peranti anda supaya sesebuah bandar hanya dicari sekali | Hanya semasa menggunakan alat itu, dan hanya sebaik anda memasukkan lokasi | Carian tunggal itu gagal. Anda masih boleh menaip koordinat secara manual, dan tiada apa-apa lagi yang terjejas |
+| Google Fonts | Nama keluarga fon yang dipilih dan alamat IP anda, kepada pelayan fon Google (`fonts.googleapis.com` untuk helaian gaya, `fonts.gstatic.com` untuk fail fon) | Hanya jika anda menambah Google Font dalam penyunting jenama, **dan hanya selepas anda bersetuju dengannya dalam dialog yang menyatakan perkara ini dengan tepat** - satu kali fetch bagi setiap keluarga, kemudian ia tinggal pada peranti anda dan digunakan secara luar talian | Pemilih Google Fonts gagal secara tertutup. Muat naik fail fon sebagai gantinya |
+| Send to Google Drive | Satu fail yang anda pilih untuk dihantar, kepada API Drive milik Google (`www.googleapis.com`), selepas log masuk Google yang anda selesaikan dalam tetingkap timbul milik Google sendiri. Akses Lolly terhad kepada fail yang dihasilkannya sendiri (skop `drive.file` - ia tidak sekali-kali dapat membaca selebihnya Drive anda), dan token log masuk disimpan dalam memori untuk sesi itu sahaja, tidak pernah disimpan kekal | Hanya apabila anda menekan "Send to Google Drive" pada eksport EMF, dan hanya pada binaan di mana operator telah mengkonfigurasikan id klien Google - tanpanya butang itu tidak wujud | Butang itu tidak pernah muncul. Muat turun fail itu dan muat naiknya sendiri ke Drive |
+| Send to Dropbox | Satu fail yang anda pilih untuk dihantar, kepada API Dropbox (`api.dropboxapi.com` untuk log masuk dan metadata, `content.dropboxapi.com` untuk fail itu sendiri), selepas log masuk Dropbox yang anda selesaikan dalam tetingkap milik Dropbox sendiri. Akses Lolly hanya terhad kepada folder aplikasi (ia hanya dapat melihat `Apps/` dan folder miliknya sendiri di situ - tidak sekali-kali selebihnya Dropbox anda), pautan "Open" yang ditunjukkannya kepada anda ialah pautan peribadi berjangka pendek (tiada perkongsian awam dicipta), dan token muat semula hanya disimpan jika anda menandakan "stay connected" | Hanya apabila anda menekan "Send to Dropbox" pada sesuatu fail, dan hanya pada binaan di mana operator telah mengkonfigurasikan id klien Dropbox - tanpanya butang itu tidak wujud | Butang itu tidak pernah muncul. Muat turun fail itu dan muat naiknya sendiri ke Dropbox |
+| Send to OneDrive | Satu fail yang anda pilih untuk dihantar, kepada perkhidmatan identiti dan Graph milik Microsoft (`login.microsoftonline.com` untuk log masuk, `graph.microsoft.com` untuk muat naik; fail besar dimuat naik secara berkelompok ke alamat muat naik milik Microsoft di `api.onedrive.com`, `*.up.1drv.com` atau `*.sharepoint.com`), selepas log masuk Microsoft yang anda selesaikan dalam tetingkap milik Microsoft sendiri. Akses Lolly terhad kepada folder miliknya sendiri di bawah `Apps/` (ia tidak sekali-kali dapat membaca selebihnya OneDrive anda) ditambah nama paparan anda untuk label akaun, dan token muat semula hanya disimpan jika anda menandakan "stay connected" | Hanya apabila anda menekan "Send to OneDrive" pada sesuatu fail, dan hanya pada binaan di mana operator telah mengkonfigurasikan id klien Microsoft - tanpanya butang itu tidak wujud | Butang itu tidak pernah muncul. Muat turun fail itu dan muat naiknya sendiri ke OneDrive |
+| Profil percetakan ICC | Tiada apa-apa yang peribadi - permintaan untuk profil keadaan percetakan piawai, kepada registri awam ICC (`registry.color.org`, `www.color.org`) | Hanya jika anda mengklik prapenetapan ICC dalam pengurus profil cetak - satu kali fetch bagi setiap profil, kemudian ia tinggal pada peranti anda | Prapenetapan ICC gagal. Berikan profil `.icc` anda sendiri sebagai gantinya |
+| Radio internet | Tiada apa-apa yang peribadi - permintaan senarai main dan strim audio, kepada stesen itu (`api.somafm.com` dan pelayan icecast yang dinamakannya, `*.somafm.com`) | Hanya semasa anda memainkan radio terbina dalam yang bersifat pilihan dalam pemain bunyi | Radio itu gagal. Semua ciri bunyi lain masih berfungsi |
+| URL yang anda minta sesuatu alat untuk menangkapnya | Permintaan ke alamat web tepat yang anda taip, daripada alat tangkapan skrin URL. Apa sahaja alamat itu. Hos ini tiada dalam dasar di bawah, kerana anda memilihnya pada saat penggunaan | Hanya apabila anda memasukkan URL dalam alat itu dan memulakan tangkapan | Operator tidak dapat meng-allowlist perkara ini mengikut hos. Untuk mengalih keluarnya, alih keluar alat itu |
+| Pemeriksaan tandatangan SEAL | **Tiada apa-apa.** Aplikasi web ini langsung tiada penyelesai DNS - lihat di bawah | Tidak pernah | Tiada apa-apa untuk disekat |
+| Model pengesan imbasan mendalam | Tiada apa-apa yang peribadi - muat turun model same-origin sekali sahaja (bukan pihak ketiga) | Hanya jika anda memilih untuk menyertai imbasan mendalam Verify | Imbasan mendalam tidak tersedia. Pengesahan piawai masih berfungsi |
+| Instance jauh | Apa sahaja yang dihantar balik oleh instance yang anda namakan, melalui penyegerakan katalog yang sama seperti diterangkan di atas - ditambah tag versi pada permintaan kepadanya (jenis shell dan versi enjin, maklumat yang sama seperti yang dibawa oleh ejen pengguna), supaya operatornya dapat melihat versi Lolly mana yang ada di lapangan. Pada instance yang diurus, semasa anda log masuk, tag itu turut membawa id pemasangan bagi setiap peranti supaya senarai peranti operator dapat membezakan pemasangan ini. Ia hanya menumpang pada permintaan yang sudah dibuat oleh penggunaan anda sendiri - tiada pemasa dan tiada apa-apa yang menghubungi rumah dengan sendirinya - dan meninggalkan instance itu memadamkan id tersebut, supaya peranti yang menyambung semula kemudian akan menunjukkan id baharu. Anda memilih hos pada saat penggunaan, jadi ia tiada dalam dasar di bawah | Hanya jika anda secara jelas mengarahkan shell ke penggunaan Lolly yang lain | Peralihan instance gagal. Instance tempatan anda tidak terjejas |
 
 Setiap hos tetap dalam jadual itu juga merupakan senarai benar (allowlist) lengkap dalam
 Content-Security-Policy aplikasi, yang dikuatkuasakan oleh pelayar. Jadi senarai itu bukan sekadar
@@ -141,20 +142,21 @@ yang dikongsi boleh muncul sebagai imej langsung dalam README, wiki atau papan p
 Mengambil satu daripadanya meminta pelayan untuk merender **data alat dan katalog awam**
 dengan input yang ditulis ke dalam URL.
 
-- <!--i:usercheck--> **Tiada akaun, tiada kuki, tiada keadaan (state).** Titik akhir ini tanpa nama, dan tiada apa-apa
-  pada peranti anda dibaca. Dokumen, sesi dan muat naik anda tidak pernah meninggalkan
-  pelayar anda - ia langsung tidak boleh muncul dalam pautan ini.
-- <!--i:document--> **Tetapi URL itu sendiri direkodkan.** Rentetan pertanyaan (query string) sesuatu URL adalah sebahagian daripada baris
-  permintaan, jadi ia mendarat dalam log capaian biasa platform pengehosan sama seperti
-  setiap laluan yang diminta. Jika input sesuatu pautan mengandungi nama atau e-mel seseorang -
-  lencana nama, tandatangan e-mel - **teks itu berada dalam log tersebut**, dan tiada
-  susunan kata dasar dapat mengubahnya. Ini sebab khusus mengapa ciri ini
-  dimatikan di sini dan bukannya dihidupkan.
-- <!--i:globe--> **Input itu bersifat awam mengikut binaannya** dalam apa jua keadaan - ia adalah apa sahaja yang ditaip
-  oleh pencipta pautan itu ke dalam URL, boleh dibaca oleh sesiapa yang menerima pautan itu. Jangan letak
-  rahsia dalam pautan yang dikongsi. Lolly menawarkan penyulitan pautan untuk kandungan sensitif.
-- <!--i:eyeoff--> Respons **dicache dan dihadkan kadar (rate-limited)** seperti mana-mana imej awam, dan ditanda
-  `noindex` supaya enjin carian tidak mengindeks render anda.
+- <!--i:usercheck--> **Tiada akaun, tiada kuki, tiada state.** Titik akhir ini tanpa nama, dan tiada
+  apa-apa dibaca pada peranti anda. Dokumen, sesi dan muat naik anda tidak pernah
+  keluar daripada pelayar anda - semua itu langsung tidak boleh muncul dalam pautan ini.
+- <!--i:document--> **Tetapi URL itu sendiri direkodkan.** Rentetan pertanyaan sesuatu URL ialah sebahagian
+  daripada baris permintaan, jadi ia muncul dalam log akses biasa milik platform hosting sama
+  seperti setiap laluan yang diminta. Jika input sesuatu pautan mengandungi nama atau e-mel
+  seseorang - lencana nama, tandatangan e-mel - maka **teks itu kekal dalam log
+  tersebut**, dan tiada susunan kata dasar yang mengubahnya. Inilah sebab khusus mengapa ciri
+  ini dimatikan di sini dan bukannya dihidupkan.
+- <!--i:globe--> **Input-input itu memang bersifat awam secara struktur** - apa sahaja kandungannya, penulis
+  pautan itulah yang menaipnya ke dalam URL, dan sesiapa sahaja yang mencapai pautan itu
+  boleh membacanya. Jangan letakkan rahsia dalam pautan yang dikongsi. Lolly menawarkan
+  penyulitan pautan untuk kandungan sensitif.
+- <!--i:eyeoff--> Respons **dicache dan dihadkan kadarnya** seperti mana-mana imej awam, dan
+  ditandakan `noindex` supaya enjin carian tidak mengindeks render anda.
 
 Menghoskan Lolly sendiri dan tidak mahu permukaan render awam? Tetapkan
 `LOLLY_DISABLE_RENDER_GET=1` - iaitu apa yang dilakukan oleh lolly.tools sendiri pada masa ini - dan setiap

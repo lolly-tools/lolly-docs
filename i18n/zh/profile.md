@@ -1,4 +1,4 @@
-# 个人资料--创作时你的身份
+# 个人资料——创作时你的身份
 
 **个人资料**是 Lolly 用以创建内容的工作身份。它是一小组工具可以调用的信息,让你不必每次都重新输入 - 你的姓名、联系方式、一张可选的头像照片、一些偏好设置 - 再加上你工作过程中积累的一切:已保存的会话、上传的图片以及本地活动统计。
 
@@ -19,7 +19,7 @@
 | **无障碍** | 四个舒适度开关 - *Reduce motion*、*Hide colourful previews*、*High contrast*、*Large text* - 保存在个人资料记录中,因此会随个人资料一起导出。参见 [无障碍](#accessibility)。 |
 | **你的工作内容** | 已保存的会话(带缩略图) - 在 **[Projects](/info/using.html)** 中组织为嵌套文件夹 - 你的 **My images** 图库以及本地活动统计,全部与此个人资料关联。 |
 
-![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&walker=1&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
 
 ![个人资料页面 - 姓名、联系方式、一张可选头像照片以及你的偏好设置](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&dark=1&filename=profile-details)
 
@@ -31,11 +31,11 @@
 
 ## 个人资料是一种情境,而不仅仅是一个人
 
-“个人资料”这个词让人联想到一个固定不变的人,但在 Lolly 中,它其实是一种**创作情境**--*你在制作这件作品时是谁*。这种情境可以呈现三种不同的形态,Lolly 对待它们的方式完全相同。
+“个人资料”这个词让人联想到一个固定不变的人,但在 Lolly 中,它其实是一种**创作情境**——*你在制作这件作品时是谁*。这种情境可以呈现三种不同的形态,Lolly 对待它们的方式完全相同。
 
 ### 作为个人
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
 
 ![头像控件,在你上传照片之前为空,上传后照片会保留在此设备上](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
 
@@ -43,17 +43,17 @@
 
 个人资料不必对应单个人。它可以代表**组织内的一个团队或职能部门**:团队的共用名称、一个群组收件地址(`events@…`)、某个部门、团队的头像或标志。一个人设置好并导出它(见下文),团队其他成员加载同一个个人资料 - 这样团队产出的一切都携带一致的信息,而不需要任何人重新输入。共享的信息亭或借出的演示笔记本电脑可以运行同一个团队个人资料,让每个使用它的人都以此身份创建内容。
 
-### 作为一种职能--你偶尔扮演的角色
+### 作为一种职能——你偶尔扮演的角色
 
 这正是死板的“一人一份个人资料”模式所忽略的情况。你可能**一年中有三天是活动经理**,其余时间则完全是另一个身份。这三天里,你需要活动的详细信息、活动收件地址,或许还有一个活动子品牌来填充你的徽章和标识牌;其余 362 天,你想恢复平时的身份。
 
-在 Lolly 中,这个角色只是**另一份随手可用的个人资料**--一个已保存的资料包(见下一节),你在活动时加载它,结束后放到一边。这个角色是一顶帽子,而不是一个新账户。需要时戴上,用完就摘下。
+在 Lolly 中,这个角色只是**另一份随手可用的个人资料**——一个已保存的资料包(见下一节),你在活动时加载它,结束后放到一边。这个角色是一顶帽子,而不是一个新账户。需要时戴上,用完就摘下。
 
-## 一次安装,一个活跃的个人资料--但你可以保留多份
+## 一次安装,一个活跃的个人资料——但你可以保留多份
 
 在任意时刻,一个安装只有**一个活动个人资料** - 也就是工具此刻能看到的信息。应用内没有个人资料切换器;取而代之的是,每个个人资料都是一个**可移动的包**(一个 `.zip` 文件,参见[下文](#moving-a-profile-to-a-new-device))。这是刻意与迁移到新设备使用相同的机制 - 个人资料就是一个可以保存、复制和加载的文件。
 
-![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
 
 - <!--i:trash--> **最干净的切换方式:** **Profile → Storage → Clear all my data**,然后 **Import** 你即将进入的那个场景所对应的包。此后你就是纯粹以那个个人资料在创建。
 - <!--i:layers--> **叠加:** 不先清空就导入会**合并** - 导入的个人资料、会话和图片会叠加在已有内容之上,覆盖同名的内容,保留其余部分。适合把某个团队已保存的会话拉进你自己的环境;但如果你需要一个干净的角色边界,这就不是你想要的做法。
@@ -104,9 +104,9 @@ Lolly 会随着你的使用逐步缓存内容,但这种边用边缓存的方式�
 
 ## 将个人资料迁移到新设备
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
 
-由于个人资料完全保存在本地,要把它带到一次全新的安装--一台新笔记本电脑、一个刚重置的浏览器、同事的电脑、一台离线设备--唯一的方法就是**携带这个文件**。没有登录能替你恢复它,而这正是重点所在:从一开始就没有任何东西离开过你的设备。
+由于个人资料完全保存在本地,要把它带到一次全新的安装——一台新笔记本电脑、一个刚重置的浏览器、同事的电脑、一台离线设备——唯一的方法就是**携带这个文件**。没有登录能替你恢复它,而这正是重点所在:从一开始就没有任何东西离开过你的设备。
 
 - <!--i:download--> **导出我的数据**会下载一个 `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` - 以所属档案命名,并带有按日的序号,避免重复导出冲突(档案缺少的部分会在文件名中省略)。其中包含你的档案、每一个已保存的会话(含缩略图)、你上传的图片 - 你的品牌令牌和已安装字体也作为用户资产一并打包 - 以及你的偏好设置(主题、布局、本地活动统计)。
 - <!--i:upload--> 在另一台设备上用**导入数据…**读取该文件,即可原样接续。
@@ -114,7 +114,7 @@ Lolly 会随着你的使用逐步缓存内容,但这种边用边缓存的方式�
 
 ![移动整个安装内容的两个按钮:导出我的数据写出一个 zip,导入数据将其读回](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls)
 
-这个资料包是一个普通的、自包含的 zip 文件,因此可以通过**任何**方式传输--U 盘、AirDrop、网络共享、发邮件给自己--目标设备也可以完全离线。每个部分都经过校验,因此传输中损坏的文件会在导入时被发现,而不会以半损坏状态被恢复。导入会**合并**(同名的个人资料/会话/图片会被覆盖;其余全部保留),所以它绝不会清空一个已在使用中的目标设备。
+这个资料包是一个普通的、自包含的 zip 文件,因此可以通过**任何**方式传输——U 盘、AirDrop、网络共享、发邮件给自己——目标设备也可以完全离线。每个部分都经过校验,因此传输中损坏的文件会在导入时被发现,而不会以半损坏状态被恢复。导入会**合并**(同名的个人资料/会话/图片会被覆盖;其余全部保留),所以它绝不会清空一个已在使用中的目标设备。
 
 不会随行的内容:目录缓存(会在新设备上自动重新下载)以及工具本身(假定已经存在)。
 
@@ -122,7 +122,7 @@ Lolly 会随着你的使用逐步缓存内容,但这种边用边缓存的方式�
 
 ## 工具如何使用你的个人资料
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&dark=1&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
 
 工具只会*预填*它被明确设计用来绑定的个人资料字段:
 
@@ -140,7 +140,7 @@ Lolly 会随着你的使用逐步缓存内容,但这种边用边缓存的方式�
 
 个人资料决定一份资源*来自谁*;平台决定它*看起来是什么样*;功能决定*你能做出什么*。
 
-### “个人资料”一词在别处另有两种含义--都不是这一种
+### “个人资料”一词在别处另有两种含义——都不是这一种
 
 这个词在整个项目中被反复借用。以下两者都不是本页所讲的个人资料:
 

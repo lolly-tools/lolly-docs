@@ -58,6 +58,7 @@
   "Formats": "格式",
   "Everywhere": "到處都能用",
   "FAQ": "常見問題",
+  "Make it yours": "打造專屬版本",
   "Lolly opens {in} kinds of file and makes {out}, and {both} of them go both ways.": "Lolly 能開啟 {in} 種檔案、產出 {out} 種，其中 {both} 種雙向皆可。",
   "See everything Lolly can open and make": "看看 Lolly 能開啟與產出的一切",
   "Already have designs? They aren't stranded - bring Figma, Penpot, Illustrator, InDesign or any SVG.": "已經有設計稿？它們不會被困住，Figma、Penpot、Illustrator、InDesign 或任何 SVG 都帶進來。",
@@ -76,6 +77,10 @@
   "Free, no account": "免費，不用帳號",
   "What Lolly supports": "Lolly 支援什麼",
   "Everything happens on your device, so it works with the Wi-Fi off.": "一切都在你的裝置上完成，關掉 Wi-Fi 照樣能用。",
+  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "轉換工具會將描述、作者、版權與拍攝日期移入新檔案。除非你開啟位置資訊,否則會保留在原處;Content Credential 無法複製,因為它與原始位元組綁定。",
+  "Every table in the font, its name and licence records included, passes through untouched.": "字型中的每個資料表,包括名稱與授權紀錄,都會原封不動地保留。",
+  "Nothing embedded carries over: the new file is written fresh with Lolly\\'s own details, and your original keeps its own.": "內嵌資訊不會保留:新檔案會以 Lolly 自己的資料重新寫入,而你的原始檔案仍保有自己的資料。",
+  "What carries over": "延續下來的內容",
   "Convert": "轉換",
   "What goes in": "可以放進去的",
   "What comes out": "可以做出來的",
@@ -202,9 +207,5 @@
   "Parser Inventory": "剖析器清單",
   "Server Surface": "伺服器攻擊面",
   "Generated once, rendered the same": "產生一次，每次算圖都一樣",
-  "AI marking and the EU AI Act": "AI 標記與歐盟《人工智慧法案》",
-  "What carries over": "哪些資訊會保留",
-  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "轉換器會把描述、作者、版權與拍攝日期寫入新檔案。除非你開啟位置資訊，否則它不會隨行；Content Credential 無法複製，因為它綁定在原始位元組上。",
-  "Every table in the font, its name and licence records included, passes through untouched.": "字型中的每一張表，包括名稱與授權記錄，都會原樣通過。",
-  "Nothing embedded carries over: the new file is written fresh with Lolly's own details, and your original keeps its own.": "嵌入的資訊都不會保留：新檔案會以 Lolly 自己的資訊重新寫出，你的原始檔案保留它自己的資訊。"
+  "AI marking and the EU AI Act": "AI 標記與歐盟《人工智慧法案》"
 }

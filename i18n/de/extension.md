@@ -2,7 +2,7 @@
 
 Die Erweiterung **Lolly URL Screenshot** lässt die Web-App eine beliebige Webseite direkt aus Ihrem Browser heraus fotografieren. Ohne sie braucht das Erfassen einer URL die Desktop-App - eine Browserseite kann von sich aus keine Pixel von einer anderen Website lesen. Die Erweiterung kann das, mit derselben Aufnahmetechnik, die auch die Desktop-App nutzt.
 
-Mit derselben Technik erledigt sie noch eine zweite Aufgabe: eine von Ihnen genannte Seite lesen, damit Brand Studio eine Marke aus einer bestehenden Website ableiten kann. Beides wird unten beschrieben.
+Es erledigt auf dieselbe Weise noch eine weitere Aufgabe: eine einzelne von Ihnen genannte Seite zu lesen, damit Brand Studio eine Marke aus einer Live-Website ziehen kann. Beides wird unten behandelt.
 
 Sie läuft auf Chromium-basierten Browsern: **Chrome, Edge, Brave, Arc, Opera** - Chrome 111 oder neuer.
 

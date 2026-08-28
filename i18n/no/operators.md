@@ -8,7 +8,7 @@ Det nulltillit-organisatoriske immunsystemet som legger seg rundt det du allered
 
 Lolly er ikke noe annenrangs kreativt verktøy: det legger utdata av produksjonskvalitet i alles hender, og den merkevarestyrte skapelsesopplevelsen er uten sidestykke. Grunnen til at det er *trygt* å dele bredt er arkitektonisk: ingenting lastes opp som du ikke selv la der, hvert resultat er reproduserbart, og hver eksport kan bære flere lag med bransjeledende kryptografiske registreringer. Uansett hvordan et dokument havnet på pulten din, kan du se dets fulle proveniens, om det er blitt tuklet med, og om du kan gjenskape det pikselperfekt.
 
-> **Hvor det står i dag.** Lollys sikkerhetsegenskaper er sterke av design, og kryptografi- og filtolkningsmotorene går gjennom SUSEs bedriftsklasse infrastrukturherding. Forseglingene, signeringen på enheten og krypteringen nedenfor er reelle og forsvarbare nå, og modnes mot uavhengig sertifisering - så der en kontrakt krever sertifisert forsikring, distribuer dem som forsvar i dybden mens den prosessen fullføres.
+> **Dagens status.** Lollys sikkerhetsegenskaper er sterke av design, og krypterings- og filtolkningsmotorene går gjennom SUSEs infrastrukturherding på bedriftsnivå. Forseglingene, signeringen på enheten og krypteringen under er reelle og forsvarlige nå, og modnes mot uavhengig sertifisering - så der en kontrakt krever sertifisert sikkerhet, brukes de som forsvar i dybden mens den prosessen fullføres.
 
 ## Den strategiske fordelen
 
@@ -16,9 +16,9 @@ Den vanlige måten rutinemessig kreativt arbeid blir gjort på er en ansvarsflat
 
 Lolly snur det på hodet. Arbeidet som *drev frem* disse lekkasjene - sitatkortet, den lokaliserte banneren, arrangementsmerket, det sladdede skjermbildet - skjer nå på et verktøy som kjører på den ansattes egen enhet, mot din merkevare, uten noen server i loopen. Du la ikke til en kontroll oppå en risikofylt arbeidsflyt; du erstattet den risikofylte arbeidsflyten med en som ikke har noen eksfiltreringsvei i utgangspunktet.
 
-- **Konfigurasjonen er din.** Motoren og skallene er åpen kildekode (MPL-2.0). Legg på din egen autentisering, telemetri eller CA; host det eller ikke; du har full kontroll over funksjoner og kostnader, git-sporet, ikke låst inne i en SaaS-database.
-- **Styring kan være data, ikke et dashbord.** Når du vil ha den kontrollen, forvalt verktøykatalogen som et Git-depot - PR-gjennomgang blir merkevaregodkjenning, med et fullt revisjonsspor og øyeblikkelig tilbakerulling av hver mal arbeidsstyrken din kan berøre. Det er et alternativ, ikke en plikt, og det havner på nøyaktig ett skrivebord: skapere jobber helt i appen, lagrer det de lager som en **økt** og gir den videre som en delingslenke, en sikkerhetskopi eller et direkte samarbeid - ingenting av dette krever git. Når en av de øktene fortjener å bli et permanent startpunkt, åpner den som drifter utrullingen lenken, registrerer verdiene som en **mal** på det verktøyet i merkevarepakken og committer. Fra da av vises den i verktøyets "New from template"-velger og kan lenkes direkte som `?template=<id>`. Git er administratorens låsesteg, brukt én gang, og aldri noe en skaper må røre. Se [Adoption & Governance](/info/adoption-governance.html).
-- **Rekkverkene er strukturelle.** Merkevarebegrensninger er hardkodet inn i maler, ikke publisert som retningslinjer folk kan ignorere. Feil utdata blir ikke frarådet - det er umulig å representere.
+- **Konfigurasjonen er din.** Motoren og skallene er åpen kildekode (MPL-2.0). Legg på din egen autentisering, telemetri eller CA; host den eller ikke; du har full kontroll over funksjoner og kostnader, git-sporet, ikke låst inne i en SaaS-database.
+- **Styring kan være data, ikke et dashbord.** Når du vil ha den kontrollen, forvalt verktøykatalogen som et Git-repositorium - pull request-gjennomgang blir merkevaregodkjenning, med et fullstendig revisjonsspor og øyeblikkelig tilbakerulling av hver mal arbeidsstyrken din kan berøre. Det er et alternativ, ikke en forpliktelse, og det tilhører nøyaktig ett skrivebord: skapere jobber utelukkende i appen, og lagrer det de lager som en **økt** og fører det videre som en delelenke, en sikkerhetskopi eller et direktesamarbeid - ingenting av det trenger git. Når en av de øktene fortjener å bli et permanent utgangspunkt, åpner den som driver installasjonen, lenken, registrerer verdiene som en **mal** på det verktøyet i merkevarepakken og committer. Fra da av dukker den opp i verktøyets "Ny fra mal"-velger og kan dyplenkes som `?template=<id>`. Git er administratorens låsesteg, brukt én gang, og aldri noe en skaper må røre. Se [Adopsjon og styring](/info/adoption-governance.html).
+- **Vernetiltakene er strukturelle.** Merkevarebegrensninger er hardkodet inn i malene, ikke publisert som retningslinjer folk kan ignorere. Feil resultat blir ikke frarådet - det er umulig å representere.
 
 > **Du styrer hele stafetten.** En kreatør forfatter reglene og en utvikler skalerer dem, men det er driftsansvarlig som gjør den livssyklusen trygg å kjøre i hele organisasjonen - det samme verktøyet som lar en representant betjene seg selv på et fly er ett du kan sperre gjennom Git-gjennomgang, distribuere gjennom din MDM og verifisere kryptografisk. Se hvordan rollene forsterker hverandre i [The lifecycle of a campaign](/info/overview.html#the-lifecycle-of-a-campaign), og hvordan du styrer det i [Adoption & Governance](/info/adoption-governance.html).
 
@@ -50,7 +50,7 @@ Krymp en for stor PDF på enheten, slik at ingen tyr til en tredjeparts "komprim
 
 Alle disse er transformasjoner på enheten: filen eller dataene dine går inn, rensede byte kommer ut, og **det finnes ingen server å laste opp til**. De er det bevisste motstykket til det typiske "last opp filen din til en fremmed nettside for å rense den"-verktøyet en velmenende ansatt ellers ville ha grepet til.
 
-![Strip Hidden Data: filen havner på lerretet og merket sier rett ut at ingenting lastes opp](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
+![Strip Hidden Data: filen ankommer lerretet, og merket sier rett ut at ingenting lastes opp](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
 
 Text Helper er den samme avtalen for tekst i stedet for filer. Det er verktøybenken med faner en ansatt ellers ville ha lett etter på en fremmed side, og den oppgir ingen inndata i det hele tatt fordi ingenting den rører ved noensinne forlater siden.
 
@@ -69,7 +69,7 @@ Hver verktøyinndata kan uttrykkes som en URL-parameter, og de samme inndataene 
 
 Prompt to Image er determinisme i sin reneste form: teksten er hele inndataen, det typesatte bildet er hele resultatet, og samme tekst setter alltid opp likt.
 
-![Prompt to Image - en blokk med prompt-tekst typesatt til et kvadratisk bilde, uten noe i resultatet som ikke fantes i inndataen](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - en blokk med prompt-tekst satt inn i et kvadratisk bilde, uten noe i resultatet som ikke var i inndataen](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## Proveniens og Content Credentials
 
@@ -108,6 +108,10 @@ Noen ting som er verdt å ha klart før du ruller det ut:
 - **Verktøy-hooks er *ikke* et sikkerhetssandkasse.** Et verktøys valgfrie `hooks.js` kjører med vertsbroen injisert, men i et nettleserskall kjører det i sidens realm og *kan* nå `window`/`document`/`fetch`. Behandle verktøykode slik du behandler all kode du kjører - gjennomgå den. Dette er hvorfor en organisasjon som kjører en delt katalog kan sluse den gjennom Git-gjennomgang; uansett, kjør bare verktøy du har gjennomgått frem til Worker-isolasjon lanseres.
 - **Content Credentials er manipuleringssynlige.** De oppdager endring i stedet for å hindre den - se merknadene om interoperabilitet over.
 - **To krypteringsnivåer.** *Standard*-låser er raske, universelle avskrekkere; *Strong* (AES-256) er fullstendig beskyttelse - grip til Strong for alt sensitivt, og merk at det krever en moderne leser.
+
+## Frittstående, eller styrt av et kontrollplan
+
+To former, og du velger per installasjon. **Frittstående er standarden og trenger ingen server:** Lolly rendrer på enheten, hver skaper jobber i appen, og git-som-data-styringen over er helt valgfri - én enkelt organisasjon kan kjøre dette repositoriet uten at noe som helst er hostet. **Når du vil ha organisasjonsomfattende kontroll, legg til et kontrollplan.** [lolly.work](https://lolly.work) er en separat, åpen kildekode-tjeneste (MPL-2.0) du hoster selv - eller evaluerer i den hostede sandkassen - som styrer skallet direkte: SSO-sperret innlogging, policy for funksjonsflagg/eksport/vannmerke, overlegg for verktøyinndata, katalogføderasjon, godkjenninger og en hash-kjedet revisjonslogg, alt levert til skallet uten en eneste kodeendring her. Det er merkevarenøytralt (konfigurasjon pluss en pakkemontering), forbruker dette repositoriets motor og pakker uendret, og blir aldri rendringsveien: Lolly rendrer fortsatt på enheten av design. OSS = individuell frihet; OSS + kontrollplan = organisatorisk frihet.
 
 ## Hvor du går videre
 

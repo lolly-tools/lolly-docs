@@ -2,7 +2,7 @@
 
 Rozšíření **Lolly URL Screenshot** umožňuje webové aplikaci vyfotit libovolnou webovou stránku přímo z prohlížeče. Bez něj potřebuje snímání URL desktopovou aplikaci - stránka v prohlížeči neumí sama přečíst pixely z jiného webu. Rozšíření to umí, díky stejnému snímání, jaké používá desktopová aplikace.
 
-Stejnou technikou dělá ještě jednu věc: přečte jednu stránku, kterou zadáš, aby Brand Studio mohlo vytáhnout brand z živého webu. Oba případy jsou popsané níže.
+Stejným způsobem dělá ještě jednu věc: čte jedinou stránku, kterou pojmenuješ, aby Brand Studio mohlo vytáhnout značku z živé webové stránky. Obě jsou popsané níže.
 
 Funguje v prohlížečích založených na Chromiu: **Chrome, Edge, Brave, Arc, Opera** - Chrome 111 nebo novější.
 

@@ -2,7 +2,7 @@
 
 **Lolly URL Screenshot** uzantısı, web uygulamasının tarayıcın içinden herhangi bir web sayfasının ekran görüntüsünü almasını sağlar. Uzantı olmadan bir URL'yi yakalamak masaüstü uygulamasını gerektirir - bir tarayıcı sayfası başka bir siteden tek başına piksel okuyamaz. Uzantı bunu, masaüstü uygulamasının kullandığı aynı yakalamayı kullanarak yapabilir.
 
-Aynı mekanizmayla başka bir iş daha yapar: Brand Studio'nun canlı bir web sitesinden marka çıkarabilmesi için belirttiğin tek bir sayfayı okumak. İkisi de aşağıda ele alınıyor.
+Aynı şekilde başka bir iş daha yapar: adlandırdığın tek bir sayfayı okur, böylece Brand Studio canlı bir web sitesinden bir marka çekebilir. İkisi de aşağıda ele alınıyor.
 
 Chromium tabanlı tarayıcılarda çalışır: **Chrome, Edge, Brave, Arc, Opera** - Chrome 111 veya üzeri.
 

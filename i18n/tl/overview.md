@@ -65,7 +65,7 @@ Ang pinakamalinaw na paraan para makita kung ano ang Lolly ay hindi isang featur
 
 Ang "sariwang chart" sa hakbang dalawa ay isang render tulad nito, ginawa mula sa isang data string at ilang parameter nang walang sinumang nagbukas ng design file:
 
-![Isang stacked area chart na may pamagat, ang tatlong series nito ay naka-banda sa isang cool na palette, may mga axis, legend at title na inilagay ng template sa halip na sa kamay](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![Isang stacked area chart na may pamagat, ang tatlong series nito ay may banda sa isang malamig na palette, kasama ang axes, legend, at pamagat na inilagay lahat ng template sa halip na manu-mano](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 Hindi ang punto ay mahusay ang Lolly para sa mga designer *at* mahusay para sa mga developer *at* mahusay para sa sales, bawat isa nang nag-iisa. Isa itong **relay race**: ang paunang gawa ng creative ay ini-scale ng developer, na sa gilid nito ay nagbibigay-kapangyarihan sa producer. Ang walang-pagod na karanasan para sa non-technical na rep sa eroplano ay *posible* lamang dahil sa rigor na itinakda ng designer at na-deploy ng developer.
 
@@ -83,7 +83,7 @@ Naaabot ng parehong deterministic na tool ang sukat na iyon sa tatlong paraan, n
 - <!--i:code--> **Isang developer, mula sa command line.** Pinapatakbo ng CLI ang *parehong* engine at *parehong* render path nang headless, kaya puwedeng i-sequence ang tool sa lahat ng 10,000 row sa isang script o isang nightly pipeline. Ang isang `lolly <tool> --field=…` na tawag sa isang loop ang buong integration.
 - <!--i:cpu--> **Isang system o isang AI agent, sa MCP.** Ang parehong tool na pinapatakbo nang programmatic, sa parehong fidelity at mas malaking sukat pa - dahil hindi mababagot ang isang makina habang dumaraan ang libu-libong file.
 
-![Batch mode sa isang bagong install: isang walang lamang row na naghihintay ng tool, kasama ang buong spreadsheet surface at ang Render button nito na nasa lugar na bago pa man dumating ang anumang data](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+![Batch mode sa isang bagong install: isang walang laman na row na naghihintay ng isang tool, kasama ang buong spreadsheet surface at ang Render button nito na nasa lugar na bago pa man may dumating na data](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
 
 Isang set ng brand constraints, itinakda nang minsan ng isang designer; tatlong ruta patungo sa magkatulad na pre-approved na output - at ang ruta ng makina ang pinaka-umaabot sa sukat, dahil hindi ito napapagod habang dumaraan ang mga file.
 
@@ -248,7 +248,7 @@ Responsive ang web shell mula sa isang layout. Sa desktop, ang isang tool ay isa
 
 Ang parehong tool sa phone width, walang pangalawang layout na dapat pagtuunan: nagiging isang sheet ang mga kontrol sa itaas, kinukuha ng preview ang buong screen at lumulutang ang render pill sa ibabaw nito.
 
-![Isang audiogram sa 430px-wide na screen - ang controls sheet sa itaas, ang natapos na square artwork sa ibaba at ang lumulutang na render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![Isang audiogram sa isang 430px-wide na screen - ang controls sheet sa itaas, ang tapos na square artwork sa ibaba, at ang floating render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **Batch mode (`/pro`).** Ang web shell ay nagbibigay din ng spreadsheet-style na batch grid (`shells/web/src/pro/`) na nagre-render ng maraming row nang sabay-sabay sa isa o maraming tool. May CSV/TSV round-trip ito kasama ang spreadsheet paste, per-row na template/format/size/unit/dpi, isang blocks-editor side panel na may live preview, mga collapsible export column, isang per-row na "relevance" tag bar, left drag-handle row reorder, two-step delete confirm, mga naka-save na batch session at isang `.zip` download. Ito ang one-to-many surface sa likod ng "mass content generation" positioning.
 
@@ -282,13 +282,13 @@ Ang mga tool ay may tag na `category` sa kanilang manifest para sa gallery group
 
 Nakalista ang mga row ayon sa pagkakasunod-sunod ng gallery section. Ang `utility` section ay palaging nire-render nang **huli** sa gallery (pagkatapos ng bawat ibang kategorya, kasama ang mga susunod pa) - ito ang on-device na "Offline Utilities" drawer.
 
-| Category | Examples | Planned |
+| Kategorya | Mga Halimbawa | Nakaplano |
 |---|---|---|
 | `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
-| `designer` | Brand Lockup, Design, Chart Creator, D3 Chart Studio, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `designer` | Brand Lockup, Design, Chart, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Unit/format converters, mas marami pang on-device na privacy utility |
+| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Unit/format converters, more on-device privacy utilities |
 
 Ang mga cell na iyon ay **mga halimbawa lang, hindi imbentaryo**. Ang kung anong mga tool ang umiiral ay katangian ng profile na na-mount mo, hindi ng pahinang ito: nagdaragdag ang isang brand pack ng sarili nitong mga tool, at puwede rin nitong ibukod ang isang community tool na ayaw nitong i-ship. Ang `catalog/tools/index.json` - na ginawa mula sa mga manifest, at siyang registry na aktwal na binabasa ng gallery - ang authoritative na listahan; para bilangin kung ano ang na-mount ng isang profile, bilangin ang mga manifest (`ls community/*/tool.json brands/*/tools/*/tool.json`) sa halip na paniwalaan ang isang bilang na nakasulat dito. (Ang isang tool id na nasa dalawang pack ay minamount nang isang beses lang, mula sa nagwaging pack.)
 
@@ -343,14 +343,14 @@ Lumalabas lang ang mga opsyonal, additive na surface kapag ibinibigay ito ng isa
 
 Ilang headline na surface, para ipakita kung ano ang saklaw nito - dokumentado ang bawat isa sa [Host API](/info/host-api.html), at ang `packages/core/src/host-v1.ts` mismo ang kontrata:
 
-| Surface | Since | Idinaragdag Nito |
+| Surface | Simula Bersyon | Ano ang idinaragdag nito |
 |---|---|---|
-| `host.tokens` | 1.0 | Mga DTCG design token - ang sariling mga primitive ng brand |
-| `host.text` | 1.0 | Text-to-path sa pamamagitan ng HarfBuzz WASM (minamarka ng `wasm` capability flag ang mga tool na umaasa dito) |
-| `host.media` | 1.4 | Mga live camera frame na nagpapatakbo sa `onFrame` hook. Progressive enhancement, sinasadyang *hindi* naka-gate sa `camera` flag - gumagana pa rin ang ganitong tool bilang ordinaryong still-image na tool |
-| `host.color` | 1.40 | Perceptual color math: ΔEOK, WCAG + APCA contrast, OKLab ramps, class-breaks, categorical palette, harmony scheme (1.60), CSS Color 4 mixing at gradient baking (1.68). Pure at synchronous - idinudugtong ng mga shell ang `makeColorApi()` ng engine sa halip na mag-implement ng kahit ano, kaya hindi ito puwedeng mag-drift |
-| `host.images` | 1.60 | Mag-decode / mag-resize / mag-re-encode ng mga byte on-device - ang convert path (HEIC → JPEG, i-compress sa WebP, i-downscale). Naka-ship sa web shell bilang lazy facade, kaya hindi kailanman napupunta ang HEIC decoder sa boot chunk |
-| `host.geom` | 1.64 | Eksaktong vector geometry: path booleans, offsetting, stroke-to-fill, spline lowering, simplification, hit testing. Pure din, synchronous at nakadugtong mula sa engine (`makeGeomApi()`); *ibinabalik* ang mga pagkabigo, hindi kailanman itinatapon |
+| `host.tokens` | 1.0 | DTCG design token - ang sariling primitives ng brand |
+| `host.text` | 1.0 | Text-to-path sa pamamagitan ng HarfBuzz WASM (minamarkahan ng `wasm` capability flag ang mga tool na umaasa dito) |
+| `host.media` | 1.4 | Live na camera frame na nagpapatakbo sa `onFrame` hook. Progressive enhancement, sinasadyang *hindi* naka-gate sa `camera` flag - gumagana pa rin ang ganitong tool bilang isang ordinaryong still-image na tool |
+| `host.color` | 1.40 | Perceptual na matematika ng kulay: ΔEOK, WCAG + APCA contrast, OKLab ramp, class-break, categorical na palette, harmony scheme (1.60), CSS Color 4 mixing, at gradient baking (1.68). Pure at synchronous - ikinakabit ng mga shell ang `makeColorApi()` ng engine sa halip na mag-implement ng kahit ano, kaya hindi ito puwedeng mag-drift |
+| `host.images` | 1.60 | Pag-decode / pag-resize / pag-re-encode ng byte sa device - ang convert path (HEIC → JPEG, i-compress sa WebP, i-downscale). Ipinapadala sa web shell bilang isang lazy facade, kaya ang HEIC decoder ay hindi kailanman pumapasok sa boot chunk |
+| `host.geom` | 1.64 | Eksaktong vector geometry: path boolean, offsetting, stroke-to-fill, spline lowering, simplification, hit testing. Pure rin, synchronous, at ikinakabit mula sa engine (`makeGeomApi()`); ang mga failure ay *ibinabalik*, hindi kailanman ini-throw |
 
 Sinusunod ng iba ang parehong mga tuntunin at nakadokumento kasama ang mga ito: `pdf` (1.8) at `pptx` (1.58) para sa on-device na document surgery, `audio` (1.71) at `speech` (1.96) para sa clip analysis at on-device na TTS/transcription, `viz` (1.72) para sa MilkDrop placeholder contract, `codec` (1.100) at `layers` (1.102) para sa deep-bit at layered-bitmap na output, `upscale` (1.101) at `matte` (1.103) para sa mga on-device na modelo, `raster` (1.105) para sa mga hook na gumagawa ng sarili nilang pixel work, `connectors` (1.106) para sa export-safe na mga arrow at `c2pa` (1.85) para sa pag-sign ng natapos na bytes. Lumalaki ang bilang; hindi ang mga tuntunin.
 

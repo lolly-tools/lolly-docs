@@ -2,13 +2,14 @@
 
 *Cập nhật lần cuối: 11 tháng 8 năm 2026*
 
-> **Nói đơn giản.** Tài liệu, hình ảnh, video và tệp bạn tạo trong Lolly ở lại
-> trên thiết bị của bạn. Không có tài khoản cho việc sử dụng thông thường, không có cookie từ chính
-> ứng dụng và không có phân tích hay trình theo dõi nào trong toàn bộ mã nguồn - không phải "chúng tôi
-> không dùng dữ liệu đó," mà thực sự không tồn tại trong mã nguồn. Có một danh sách ngắn, đầy đủ các
-> ngoại lệ ở những chỗ phần mềm có kết nối mạng, và mỗi ngoại lệ đều được mô tả cụ thể bên
-> dưới: cái gì rời đi, tới ai và khi nào. Ngoại lệ duy nhất liên quan đến điều gì đó cá nhân là một
-> lượt đăng nhập mà bạn phải chủ động khởi tạo. Nếu điều gì không có trong tài liệu này, nó không xảy ra.
+> **Phiên bản ngắn gọn.** Các tài liệu, hình ảnh, video và tệp bạn tạo trong Lolly luôn
+> ở lại trên thiết bị của bạn. Không có tài khoản cho việc sử dụng thông thường, không có cookie từ
+> chính ứng dụng và không có bất kỳ phân tích hay trình theo dõi nào trong mã nguồn - không phải kiểu "chúng tôi
+> không dùng dữ liệu đó," mà thực sự không tồn tại trong mã nguồn. Có một danh sách ngắn gọn, đầy đủ về
+> các trường hợp ngoại lệ khi phần mềm có giao tiếp với mạng, và mỗi
+> trường hợp đều được mô tả chi tiết bên dưới: những gì rời đi, đến ai và khi nào. Ngoại lệ
+> duy nhất liên quan đến bất kỳ điều gì mang tính cá nhân là việc đăng nhập mà bạn phải chủ động
+> bắt đầu. Nếu điều đó không có trong tài liệu này, nó sẽ không xảy ra.
 
 ## Chính sách này bao gồm những gì
 
@@ -80,20 +81,20 @@ của chúng tôi - mục đích của phần lớn các công cụ này là lo�
 Bảng dưới đây là danh sách đầy đủ mọi thứ ứng dụng lấy về hoặc gửi đi qua
 mạng. Nếu không có ở đây, ứng dụng không làm điều đó.
 
-| Cái gì | Cái gì thực sự rời khỏi thiết bị của bạn | Khi nào (hành động kích hoạt) | Nếu bên vận hành chặn nó |
+| Mục | Điều thực sự rời khỏi thiết bị của bạn | Khi nào (hành động kích hoạt việc này) | Nếu người vận hành chặn nó |
 |---|---|---|---|
-| Đồng bộ danh mục công cụ | Không có gì cá nhân - một yêu cầu tới chỉ mục công cụ và tài sản công khai của chính Lolly, tới origin riêng của ứng dụng | Khi khởi động, sau đó lưu đệm ngoại tuyến | Ứng dụng chạy trên bộ công cụ đã đệm. Nó chỉ ngừng phát hiện công cụ mới |
-| Một công cụ cần dữ liệu trực tiếp | Bất cứ gì công cụ cụ thể đó yêu cầu, tới máy chủ được nêu trong mô tả của chính nó. Hiện tại chỉ có tra cứu thành phố trong công cụ Meeting Planner, hỏi `geocoding-api.open-meteo.com` để chuyển tên thành phố thành tọa độ và múi giờ - không có tài khoản, không có khóa và không có định danh nào ngoài chính yêu cầu đó. Ô nhập liệu nói rõ điều này ngay chỗ bạn gõ, và mỗi câu trả lời được lưu trên thiết bị của bạn để một thành phố chỉ được tra cứu một lần | Chỉ khi đang dùng công cụ đó, và chỉ khi bạn nhập một địa điểm | Riêng lượt tra cứu đó thất bại. Bạn vẫn có thể gõ tọa độ bằng tay, và không gì khác bị ảnh hưởng |
-| Google Fonts | Tên họ phông chữ đã chọn và địa chỉ IP của bạn, tới máy chủ phông chữ của Google (`fonts.googleapis.com` cho stylesheet, `fonts.gstatic.com` cho tệp phông chữ) | Chỉ khi bạn thêm một Google Font trong trình biên tập thương hiệu, **và chỉ sau khi bạn đồng ý trong một hộp thoại nói đúng điều này** - một lần lấy về cho mỗi họ phông chữ, sau đó nó ở trên thiết bị của bạn và được dùng ngoại tuyến | Bộ chọn Google Fonts thất bại theo hướng đóng. Hãy tải lên tệp phông chữ thay vào đó |
-| Gửi tới Google Drive | Một tệp duy nhất bạn chọn gửi, tới API Drive của Google (`www.googleapis.com`), sau khi bạn hoàn tất đăng nhập Google trong cửa sổ popup của chính Google. Quyền truy cập của Lolly giới hạn ở các tệp nó tạo ra (phạm vi `drive.file` - nó không bao giờ có thể đọc phần còn lại trong Drive của bạn), và token đăng nhập được giữ trong bộ nhớ cho phiên làm việc, không bao giờ được lưu trữ | Chỉ khi bạn nhấn "Send to Google Drive" trên một tệp xuất EMF, và chỉ trên các bản dựng mà bên vận hành đã cấu hình mã ứng dụng khách Google - nếu không có, nút này không tồn tại | Nút không bao giờ xuất hiện. Hãy tải tệp về và tự tải lên Drive |
-| Gửi tới Dropbox | Một tệp duy nhất bạn chọn gửi, tới API của Dropbox (`api.dropboxapi.com` cho đăng nhập và siêu dữ liệu, `content.dropboxapi.com` cho chính tệp), sau khi bạn hoàn tất đăng nhập Dropbox trong cửa sổ của chính Dropbox. Quyền truy cập của Lolly chỉ giới hạn trong thư mục ứng dụng (nó chỉ có thể thấy `Apps/` và thư mục riêng của nó ở đó - không bao giờ thấy phần còn lại trong Dropbox của bạn), liên kết "Open" nó hiển thị cho bạn là một liên kết riêng tư có thời hạn ngắn (không tạo chia sẻ công khai nào), và token làm mới chỉ được lưu trữ nếu bạn tích "stay connected" | Chỉ khi bạn nhấn "Send to Dropbox" trên một tệp, và chỉ trên các bản dựng mà bên vận hành đã cấu hình mã ứng dụng khách Dropbox - nếu không có, nút này không tồn tại | Nút không bao giờ xuất hiện. Hãy tải tệp về và tự tải lên Dropbox |
-| Gửi tới OneDrive | Một tệp duy nhất bạn chọn gửi, tới các dịch vụ danh tính và Graph của Microsoft (`login.microsoftonline.com` cho đăng nhập, `graph.microsoft.com` cho tải lên; một tệp lớn được tải lên theo từng phần tới một địa chỉ tải lên do Microsoft sở hữu trên `api.onedrive.com`, `*.up.1drv.com` hoặc `*.sharepoint.com`), sau khi bạn hoàn tất đăng nhập Microsoft trong cửa sổ của chính Microsoft. Quyền truy cập của Lolly giới hạn ở thư mục riêng của nó dưới `Apps/` (nó không bao giờ có thể đọc phần còn lại trong OneDrive của bạn) cộng với tên hiển thị của bạn cho nhãn tài khoản, và token làm mới chỉ được lưu trữ nếu bạn tích "stay connected" | Chỉ khi bạn nhấn "Send to OneDrive" trên một tệp, và chỉ trên các bản dựng mà bên vận hành đã cấu hình mã ứng dụng khách Microsoft - nếu không có, nút này không tồn tại | Nút không bao giờ xuất hiện. Hãy tải tệp về và tự tải lên OneDrive |
-| Hồ sơ in ICC | Không có gì cá nhân - một yêu cầu tới hồ sơ điều kiện in tiêu chuẩn, tới sổ đăng ký công khai của ICC (`registry.color.org`, `www.color.org`) | Chỉ khi bạn nhấp vào một cài đặt sẵn ICC trong trình quản lý hồ sơ in - một lần lấy về cho mỗi hồ sơ, sau đó nó ở trên thiết bị của bạn | Các cài đặt sẵn ICC thất bại. Hãy cung cấp hồ sơ `.icc` của riêng bạn thay vào đó |
-| Đài phát thanh internet | Không có gì cá nhân - một yêu cầu danh sách phát và một luồng âm thanh, tới đài phát (`api.somafm.com` và máy chủ icecast mà nó nêu tên, `*.somafm.com`) | Chỉ khi bạn phát đài phát thanh tích hợp tùy chọn trong trình phát âm thanh | Đài phát thanh thất bại. Mọi tính năng âm thanh khác vẫn hoạt động |
-| Một URL bạn yêu cầu một công cụ chụp | Một yêu cầu tới đúng địa chỉ web bạn gõ, từ công cụ chụp ảnh màn hình URL. Bất kể địa chỉ đó là gì. Máy chủ này không có trong chính sách bên dưới, vì bạn chọn nó ngay tại thời điểm sử dụng | Chỉ khi bạn nhập một URL trong công cụ đó và bắt đầu chụp | Bên vận hành không thể đưa vào danh sách cho phép theo máy chủ. Để loại bỏ nó, hãy loại bỏ công cụ |
-| Kiểm tra chữ ký SEAL | **Không có gì.** Ứng dụng web không có trình phân giải DNS nào cả - xem bên dưới | Không bao giờ | Không có gì để chặn |
-| Mô hình phát hiện quét sâu | Không có gì cá nhân - một lần tải mô hình cùng origin (không phải bên thứ ba) | Chỉ khi bạn chọn tham gia tính năng quét sâu của Verify | Quét sâu không khả dụng. Xác minh tiêu chuẩn vẫn hoạt động |
-| Thực thể từ xa | Bất cứ gì thực thể bạn nêu tên trả về, qua cùng cơ chế đồng bộ danh mục được mô tả ở trên. Bạn chọn máy chủ ngay tại thời điểm sử dụng, nên nó không có trong chính sách bên dưới | Chỉ khi bạn chủ động trỏ lớp vỏ tới một bản triển khai Lolly khác | Việc chuyển thực thể thất bại. Thực thể cục bộ của bạn không bị ảnh hưởng |
+| Đồng bộ danh mục công cụ | Không có gì mang tính cá nhân - một yêu cầu lấy chỉ mục công cụ và tài sản công khai của riêng Lolly, gửi đến origin riêng của ứng dụng | Khi khởi động, sau đó được lưu vào bộ nhớ đệm ngoại tuyến | Ứng dụng chạy trên bộ công cụ đã lưu trong bộ nhớ đệm. Nó chỉ ngừng phát hiện công cụ mới |
+| Một công cụ cần dữ liệu trực tiếp | Bất cứ điều gì công cụ cụ thể đó yêu cầu, gửi đến host được nêu tên ngay trong mô tả của chính nó. Hiện tại chỉ có việc tra cứu thành phố trong công cụ Meeting Planner, gửi yêu cầu đến `geocoding-api.open-meteo.com` để chuyển tên thành phố thành tọa độ và múi giờ - không tài khoản, không khóa và không có bất kỳ định danh nào ngoài chính yêu cầu đó. Điều này được ghi rõ ngay tại nơi bạn nhập, và mỗi câu trả lời được lưu trên thiết bị của bạn để một thành phố chỉ cần tra cứu một lần | Chỉ khi đang dùng công cụ đó, và chỉ khi bạn nhập một địa điểm | Riêng lượt tra cứu đó sẽ thất bại. Bạn vẫn có thể tự nhập tọa độ bằng tay, và không có gì khác bị ảnh hưởng |
+| Google Fonts | Tên họ phông chữ đã chọn và địa chỉ IP của bạn, gửi đến máy chủ phông chữ của Google (`fonts.googleapis.com` cho stylesheet, `fonts.gstatic.com` cho tệp phông chữ) | Chỉ khi bạn thêm một Google Font trong trình chỉnh sửa thương hiệu, **và chỉ sau khi bạn đồng ý trong hộp thoại nói chính xác điều này** - tải về một lần cho mỗi họ phông chữ, sau đó nó nằm trên thiết bị của bạn và được dùng ngoại tuyến | Bộ chọn Google Fonts sẽ ngừng hoạt động theo hướng an toàn (fail closed). Hãy tải lên tệp phông chữ thay thế |
+| Gửi sang Google Drive | Tệp duy nhất bạn chọn để gửi, đến Drive API của Google (`www.googleapis.com`), sau khi bạn hoàn tất đăng nhập Google trong cửa sổ popup riêng của Google. Quyền truy cập của Lolly chỉ giới hạn ở các tệp do nó tạo ra (phạm vi `drive.file` - nó không bao giờ đọc được phần còn lại trong Drive của bạn), và token đăng nhập chỉ được giữ trong bộ nhớ cho phiên làm việc, không bao giờ được lưu trữ | Chỉ khi bạn nhấn "Send to Google Drive" trên một bản xuất EMF, và chỉ trên các bản dựng mà người vận hành đã cấu hình client id của Google - nếu không có, nút này sẽ không tồn tại | Nút này sẽ không bao giờ xuất hiện. Hãy tự tải tệp xuống và tải lên Drive |
+| Gửi sang Dropbox | Tệp duy nhất bạn chọn để gửi, đến API của Dropbox (`api.dropboxapi.com` cho đăng nhập và metadata, `content.dropboxapi.com` cho chính tệp), sau khi bạn hoàn tất đăng nhập Dropbox trong cửa sổ riêng của Dropbox. Quyền truy cập của Lolly chỉ giới hạn trong thư mục ứng dụng (nó chỉ có thể thấy `Apps/` và thư mục riêng của nó trong đó - không bao giờ thấy phần còn lại trong Dropbox của bạn), liên kết "Open" mà nó hiển thị cho bạn là một liên kết riêng tư có thời hạn ngắn (không tạo chia sẻ công khai nào), và token làm mới chỉ được lưu nếu bạn tích chọn "stay connected" | Chỉ khi bạn nhấn "Send to Dropbox" trên một tệp, và chỉ trên các bản dựng mà người vận hành đã cấu hình client id của Dropbox - nếu không có, nút này sẽ không tồn tại | Nút này sẽ không bao giờ xuất hiện. Hãy tự tải tệp xuống và tải lên Dropbox |
+| Gửi sang OneDrive | Tệp duy nhất bạn chọn để gửi, đến các dịch vụ định danh và Graph của Microsoft (`login.microsoftonline.com` cho đăng nhập, `graph.microsoft.com` cho việc tải lên; một tệp lớn được tải lên theo từng phần đến một địa chỉ tải lên thuộc sở hữu Microsoft tại `api.onedrive.com`, `*.up.1drv.com` hoặc `*.sharepoint.com`), sau khi bạn hoàn tất đăng nhập Microsoft trong cửa sổ riêng của Microsoft. Quyền truy cập của Lolly chỉ giới hạn trong thư mục riêng của nó dưới `Apps/` (nó không bao giờ đọc được phần còn lại trong OneDrive của bạn) cộng với tên hiển thị của bạn để dùng làm nhãn tài khoản, và token làm mới chỉ được lưu nếu bạn tích chọn "stay connected" | Chỉ khi bạn nhấn "Send to OneDrive" trên một tệp, và chỉ trên các bản dựng mà người vận hành đã cấu hình client id của Microsoft - nếu không có, nút này sẽ không tồn tại | Nút này sẽ không bao giờ xuất hiện. Hãy tự tải tệp xuống và tải lên OneDrive |
+| Hồ sơ in ICC | Không có gì mang tính cá nhân - một yêu cầu lấy hồ sơ điều kiện in tiêu chuẩn, gửi đến sổ đăng ký công khai của ICC (`registry.color.org`, `www.color.org`) | Chỉ khi bạn nhấp vào một preset ICC trong trình quản lý hồ sơ in - tải về một lần cho mỗi hồ sơ, sau đó nó nằm trên thiết bị của bạn | Các preset ICC sẽ không hoạt động. Hãy cung cấp hồ sơ `.icc` của riêng bạn thay thế |
+| Radio Internet | Không có gì mang tính cá nhân - một yêu cầu danh sách phát và một luồng âm thanh, gửi đến đài (`api.somafm.com` và máy chủ icecast mà nó nêu tên, `*.somafm.com`) | Chỉ khi bạn phát radio tích hợp tùy chọn trong trình phát âm thanh | Radio sẽ không hoạt động. Mọi tính năng âm thanh khác vẫn hoạt động bình thường |
+| Một URL bạn yêu cầu công cụ chụp lại | Một yêu cầu đến chính xác địa chỉ web bạn nhập, từ công cụ chụp ảnh màn hình URL. Dù địa chỉ đó là gì. Host này không nằm trong chính sách bên dưới, vì bạn chọn nó ngay tại thời điểm sử dụng | Chỉ khi bạn nhập một URL vào công cụ đó và bắt đầu chụp | Người vận hành không thể đưa host này vào allowlist. Để loại bỏ nó, hãy loại bỏ công cụ đó |
+| Kiểm tra chữ ký SEAL | **Không có gì cả.** Ứng dụng web hoàn toàn không có bộ phân giải DNS - xem bên dưới | Không bao giờ | Không có gì để chặn |
+| Mô hình phát hiện quét sâu | Không có gì mang tính cá nhân - một lượt tải mô hình một lần từ cùng origin (không phải bên thứ ba) | Chỉ khi bạn chọn tham gia tính năng quét sâu của Verify | Quét sâu sẽ không khả dụng. Xác minh tiêu chuẩn vẫn hoạt động bình thường |
+| Phiên bản từ xa (remote instance) | Bất cứ điều gì mà phiên bản bạn nêu tên trả về, qua cùng cơ chế đồng bộ danh mục đã mô tả ở trên - cộng thêm một thẻ phiên bản (version tag) trên các yêu cầu gửi đến nó (loại shell và phiên bản engine, cùng loại thông tin mà một user agent mang theo), để người vận hành có thể thấy những phiên bản Lolly nào đang được sử dụng. Trên một phiên bản được quản lý, trong khi bạn đã đăng nhập, thẻ đó cũng mang theo một id cài đặt riêng cho từng thiết bị để danh sách thiết bị của người vận hành có thể phân biệt lượt cài đặt này. Nó chỉ đi kèm những yêu cầu mà việc sử dụng của chính bạn đã tạo ra - không có bộ đếm thời gian và không có gì tự động gọi về - và việc rời khỏi phiên bản đó sẽ xóa id, nên một thiết bị kết nối lại sau này sẽ có một id mới. Bạn chọn host tại thời điểm sử dụng, vì vậy nó không nằm trong chính sách bên dưới | Chỉ khi bạn chủ động trỏ shell đến một triển khai Lolly khác | Việc chuyển đổi phiên bản sẽ thất bại. Phiên bản cục bộ của bạn không bị ảnh hưởng |
 
 Mọi máy chủ cố định trong bảng đó cũng chính là danh sách cho phép đầy đủ trong Content-Security-Policy
 của ứng dụng, được trình duyệt thực thi. Vì vậy danh sách này không chỉ là một
@@ -140,20 +141,20 @@ chia sẻ có thể xuất hiện như một hình ảnh sống trong README, wi
 một liên kết như vậy yêu cầu máy chủ render **dữ liệu công cụ và danh mục công khai** với các dữ liệu đầu vào được
 ghi trong URL.
 
-- <!--i:usercheck--> **Không tài khoản, không cookie, không trạng thái.** Điểm cuối là ẩn danh, và không
-  có gì trên thiết bị của bạn được đọc. Tài liệu, phiên làm việc và tệp tải lên của bạn không bao giờ
-  rời khỏi trình duyệt của bạn - chúng hoàn toàn không thể xuất hiện trong các liên kết này.
-- <!--i:document--> **Nhưng chính URL đó được ghi lại.** Chuỗi truy vấn của một URL là một phần của dòng
-  yêu cầu, nên nó nằm trong nhật ký truy cập thông thường của nền tảng lưu trữ giống như mọi
-  đường dẫn được yêu cầu khác. Nếu dữ liệu đầu vào của một liên kết chứa tên hay email của ai đó -
-  một thẻ tên, một chữ ký email - **đoạn văn bản đó nằm trong các nhật ký đó**, và không
-  lượng câu chữ chính sách nào thay đổi được điều đó. Đây chính là lý do cụ thể tính năng này
+- <!--i:usercheck--> **Không tài khoản, không cookie, không trạng thái.** Endpoint này ẩn danh, và không có gì
+  trên thiết bị của bạn bị đọc. Tài liệu, phiên làm việc và tệp tải lên của bạn không bao giờ rời khỏi
+  trình duyệt của bạn - chúng hoàn toàn không thể xuất hiện trong các liên kết này.
+- <!--i:document--> **Nhưng chính URL lại được ghi lại.** Chuỗi truy vấn của một URL là một phần của dòng
+  yêu cầu, nên nó xuất hiện trong nhật ký truy cập thông thường của nền tảng lưu trữ, giống như
+  mọi đường dẫn được yêu cầu khác. Nếu đầu vào của một liên kết chứa tên hoặc email của ai đó -
+  một thẻ tên, một chữ ký email - **văn bản đó sẽ nằm trong những nhật ký đó**, và không
+  câu chữ chính sách nào có thể thay đổi điều đó. Đây chính là lý do tính năng này
   bị tắt ở đây thay vì bật.
-- <!--i:globe--> **Dữ liệu đầu vào vốn công khai theo bản chất** dù sao đi nữa - chúng là bất cứ gì tác giả của
-  liên kết đã gõ vào URL, ai tiếp cận được liên kết cũng đọc được. Đừng đặt bí mật
-  vào một liên kết được chia sẻ. Lolly cung cấp mã hóa liên kết cho nội dung nhạy cảm.
-- <!--i:eyeoff--> Các phản hồi được **lưu đệm và giới hạn tốc độ** như bất kỳ hình ảnh công khai nào, và được đánh dấu
-  `noindex` để công cụ tìm kiếm không lập chỉ mục các bản render của bạn.
+- <!--i:globe--> **Các đầu vào vốn đã công khai theo bản chất** dù sao đi nữa - chúng là bất cứ điều gì tác giả
+  của liên kết đã nhập vào URL, ai nhận được liên kết cũng đọc được. Đừng đặt
+  bí mật vào một liên kết được chia sẻ. Lolly cung cấp mã hóa liên kết cho nội dung nhạy cảm.
+- <!--i:eyeoff--> Các phản hồi được **lưu vào bộ nhớ đệm và giới hạn tốc độ** giống như bất kỳ hình ảnh công khai nào, và được đánh dấu
+  `noindex` để công cụ tìm kiếm không lập chỉ mục các bản kết xuất của bạn.
 
 Tự lưu trữ Lolly và không muốn một bề mặt render công khai? Đặt
 `LOLLY_DISABLE_RENDER_GET=1` - điều mà chính lolly.tools hiện đang làm - và mọi

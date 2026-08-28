@@ -58,6 +58,7 @@
   "Formats": "الصيغ",
   "Everywhere": "في كل مكان",
   "FAQ": "الأسئلة",
+  "Make it yours": "اجعله ملكك",
   "Lolly opens {in} kinds of file and makes {out}, and {both} of them go both ways.": "يفتح Lolly {in} نوعا من الملفات وينتج {out}، و{both} منها تعمل في الاتجاهين.",
   "See everything Lolly can open and make": "اطلع على كل ما يفتحه Lolly وينتجه",
   "Already have designs? They aren't stranded - bring Figma, Penpot, Illustrator, InDesign or any SVG.": "لديك تصاميم بالفعل؟ لن تبقى عالقة - أحضر Figma أو Penpot أو Illustrator أو InDesign أو أي SVG.",
@@ -76,6 +77,10 @@
   "Free, no account": "مجاني، بلا حساب",
   "What Lolly supports": "ما يدعمه Lolly",
   "Everything happens on your device, so it works with the Wi-Fi off.": "كل شيء يحدث على جهازك، فيعمل ولو كان Wi-Fi مغلقا.",
+  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "ينقل المحوّل الوصف والمؤلف وحقوق النشر وتاريخ الالتقاط إلى الملف الجديد. يبقى الموقع خارجًا ما لم تُفعّله، ولا يمكن نسخ Content Credential: فهو مرتبط بالبايتات الأصلية.",
+  "Every table in the font, its name and licence records included, passes through untouched.": "يمر كل جدول في الخط، بما في ذلك سجلات الاسم والترخيص، دون أي تغيير.",
+  "Nothing embedded carries over: the new file is written fresh with Lolly\\'s own details, and your original keeps its own.": "لا شيء من البيانات المضمّنة يُنقل: يُكتب الملف الجديد من جديد ببيانات Lolly الخاصة، ويحتفظ ملفك الأصلي ببياناته الخاصة.",
+  "What carries over": "ما الذي يُنقل",
   "Convert": "تحويل",
   "What goes in": "ما يدخل",
   "What comes out": "ما يخرج",
@@ -202,9 +207,5 @@
   "Parser Inventory": "قائمة المحلِّلات",
   "Server Surface": "سطح الخادم",
   "Generated once, rendered the same": "ينشأ مرة واحدة، ويظهر كما هو دائما",
-  "AI marking and the EU AI Act": "وسم الذكاء الاصطناعي وقانون الذكاء الاصطناعي للاتحاد الأوروبي",
-  "What carries over": "ما الذي ينتقل",
-  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "ينقل المحول الوصف والمؤلف وحقوق النشر وتاريخ الالتقاط إلى الملف الجديد. يبقى الموقع خارج الملف ما لم تفعله، ولا يمكن نسخ Content Credential: فهو مرتبط بالبايتات الأصلية.",
-  "Every table in the font, its name and licence records included, passes through untouched.": "كل جدول في الخط، بما في ذلك سجلات الاسم والترخيص، ينتقل كما هو.",
-  "Nothing embedded carries over: the new file is written fresh with Lolly's own details, and your original keeps its own.": "لا ينتقل أي شيء مضمن: يكتب الملف الجديد من جديد ببيانات Lolly الخاصة، ويحتفظ ملفك الأصلي ببياناته."
+  "AI marking and the EU AI Act": "وسم الذكاء الاصطناعي وقانون الذكاء الاصطناعي للاتحاد الأوروبي"
 }

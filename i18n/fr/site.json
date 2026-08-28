@@ -58,6 +58,7 @@
   "Formats": "Formats",
   "Everywhere": "Partout",
   "FAQ": "FAQ",
+  "Make it yours": "Fais-le tien",
   "Lolly opens {in} kinds of file and makes {out}, and {both} of them go both ways.": "Lolly ouvre {in} types de fichier et en produit {out}, et {both} d'entre eux vont dans les deux sens.",
   "See everything Lolly can open and make": "Voir tout ce que Lolly peut ouvrir et créer",
   "Already have designs? They aren't stranded - bring Figma, Penpot, Illustrator, InDesign or any SVG.": "Tu as déjà des designs ? Ils ne sont pas perdus - amène Figma, Penpot, Illustrator, InDesign ou n'importe quel SVG.",
@@ -76,6 +77,10 @@
   "Free, no account": "Gratuit, sans compte",
   "What Lolly supports": "Ce que Lolly prend en charge",
   "Everything happens on your device, so it works with the Wi-Fi off.": "Tout se passe sur ton appareil, donc ça fonctionne avec le Wi-Fi coupé.",
+  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "Le convertisseur transfère la description, l'auteur, le copyright et la date de capture dans le nouveau fichier. La localisation reste de côté sauf si tu l'actives, et un Content Credential ne peut pas être copié : il est lié aux octets d'origine.",
+  "Every table in the font, its name and licence records included, passes through untouched.": "Chaque table de la police, y compris ses enregistrements de nom et de licence, passe sans modification.",
+  "Nothing embedded carries over: the new file is written fresh with Lolly\\'s own details, and your original keeps its own.": "Rien de ce qui est intégré n'est conservé : le nouveau fichier est écrit à neuf avec les propres informations de Lolly, et ton original garde les siennes.",
+  "What carries over": "Ce qui est conservé",
   "Convert": "Convertir",
   "What goes in": "Ce qui entre",
   "What comes out": "Ce qui sort",
@@ -202,9 +207,5 @@
   "Parser Inventory": "Inventaire des analyseurs",
   "Server Surface": "Surface du serveur",
   "Generated once, rendered the same": "Généré une fois, rendu à l'identique",
-  "AI marking and the EU AI Act": "Marquage de l’IA et règlement IA de l’UE",
-  "What carries over": "Ce qui est conservé",
-  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "Le convertisseur reprend la description, l'auteur, le copyright et la date de prise de vue dans le nouveau fichier. La localisation reste de côté sauf si vous l'activez, et un Content Credential ne peut pas être copié : il est lié aux octets d'origine.",
-  "Every table in the font, its name and licence records included, passes through untouched.": "Chaque table de la police, y compris ses enregistrements de nom et de licence, passe intacte.",
-  "Nothing embedded carries over: the new file is written fresh with Lolly's own details, and your original keeps its own.": "Rien d'intégré n'est repris : le nouveau fichier est écrit avec les informations propres à Lolly, et votre original garde les siennes."
+  "AI marking and the EU AI Act": "Marquage de l’IA et règlement IA de l’UE"
 }

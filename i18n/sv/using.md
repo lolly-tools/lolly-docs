@@ -12,7 +12,7 @@ Startskärmen är **galleriet** - alla verktyg, grupperade efter kategori. Klick
 
 Varje verktyg är en delad vy: **kontroller** på ena sidan, en live **förhandsvisning** (arbetsytan) på den andra. Ändra en kontroll så uppdateras förhandsvisningen omedelbart.
 
-![Ett verktygs delade vy - kontrollstapeln till vänster och det grupperade stapeldiagram den ritar i realtid till höger](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
+![Ett verktygs delade vy - kontrollstapeln till vänster, och det levande grupperade stapeldiagrammet det ritar till höger](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
 
 > Några verktyg (som **Design**) öppnas istället som en **fri arbetsyta** - en kromfri yta för direktmanipulation där du drar, ändrar storlek på, roterar och snäpper fast rutor med text, former och bilder, och dubbelklickar för att redigera text direkt på plats. Den exporteras via samma renderingsväg som alla andra verktyg, så arbetsytan *är* filen. Se [Den fria arbetsytan](#the-free-canvas-design) nedan.
 
@@ -167,7 +167,7 @@ Markera ett klipp så ger inspektören dig samma redigeringar som siffror: **Lä
 
 Några begränsningar att ha i minnet: en sekvens är begränsad till en timme, GIF och animerad PNG buffrar sina bildrutor så att de förblir korta, ljudet är tyst i ett klipp vars hastighet inte är ×1 (det finns ingen tidsuttänjning ännu) och **Spela in live** är dolt här eftersom kompositören är den bättre vägen.
 
-**Bortom förinställningar: nyckelbilder, djup och en kamera.** En övergång animerar ett klipp när det kommer och när det går. För att posera en ruta *inom* ett klipp - låta den driva, tona den, göra den suddig, lyfta den från sidan och lägga tillbaka den - lägger du till nyckelbilder: markera klippet, tryck på **+Nyckelbild** (diamanten i tidslinjens verktygsklunga, diamanten i objektfältet på arbetsytan eller `K`) så avgör spelhuvudets läge vilken pose din nästa ändring skriver. Samma maskineri ger varje tidsatt komposition en **kamera** som zoomar in, panorerar och drar fokus och gör en platt SVG till en trave lager som du kan flyga mellan. **[Animering](/info/animating.html)** är den fullständiga guiden.
+**Bortom förinställningar: nyckelbilder, djup och en kamera.** En övergång animerar ett klipp när det kommer in och lämnar. För att posera en ruta *inuti* ett klipp - driva den, tona den, sudda den, lyfta den från sidan och landa den igen - lägg till nyckelbilder: markera klippet, tryck **+Nyckelbild** (romben i tidslinjens verktygskluster, romben på ritytans objektfält eller `K`) och spelhuvudets position avgör vilken pose din nästa ändring skriver. Samma nyckelbildssystem ger varje tidsstyrd komposition en **kamera** som zoomar in, panorerar och drar fokus och förvandlar en platt SVG till en stapel lager du kan flyga mellan. **[Animering](/info/animating.html)** är den fullständiga guiden.
 
 Verktyget Design har samma tidslinje, så du kan tidsätta en layout utan att byta verktyg, och det exporterar rörelse också.
 
@@ -180,7 +180,7 @@ Ett Design-dokument som består av **ritytor** är redan en presentation. Öppna
 - **Visningssteg.** Högerklicka på en ruta och välj **Visa vid steg 1**, **2** eller **3** i stället för standardvalet **Alltid synlig**. Rutan väntar då tills du går fram till sitt steg, så en bild kan komma i delar; rutor med samma nummer kommer tillsammans.
 - **Talarvy** (`S`) öppnar ett andra fönster med den aktuella bilden, den som kommer härnäst, dina anteckningar för den bilden och en klocka som går. Om webbläsaren blockerar popup-fönstret faller den tillbaka på en panel över presentationen. Anteckningar sätts per rityta och syns aldrig på själva bilden.
 - `B` håller en svart skärm (vilken tangent som helst tar tillbaka bilden), `F` återgår till helskärm och **Escape** skalar av ett lager i taget: överblick tillbaka till presentationen, presentation tillbaka till redigeraren.
-- **Kiosk.** Ge en rityta en **Längd** så stannar presentationen där så länge och går sedan vidare av sig själv bakom en tunn förloppsindikator; `K` (eller pausknappen, som visas först när något har en längd) stoppar och startar om det. Lägg till `loop` i länken så börjar presentationen om vid slutet, vilket är det som gör den till skyltning.
+- **Kiosk.** Ge en rityta en **Längd** så stannar presentationen där så länge och går sedan vidare av sig själv bakom en tunn förloppsindikator; `K` (eller pausknappen, som visas först när något har en längd) stoppar och startar om det. Lägg till `kiosk` i länken så börjar presentationen om vid slutet, vilket är det som gör den till skyltning.
 
 Presentationen är också en länk. `?present` öppnar direkt i den, `s=` anger bilden - en position, ett rityte-id eller `id.step` för ett byggsteg - och adressen uppdateras när du förflyttar dig, så det du skickar är den bild du står på. Verktygsförfattare: de parametrarna dokumenteras på sidan [URL-läge](/info/url-mode.html#reserved-parameters).
 
@@ -210,7 +210,7 @@ Verktyg exponerar bara de inmatningar som är avsedda att varieras - allt annat 
 - **Medan markören står i en textruta** tillhör Cmd/Ctrl-Z fältet självt, tecken för tecken. Lolly tar över för de kontroller som inte har någon användbar egen ångring: reglage, rullgardinsmenyer, färger och strömbrytare.
 - **Att välja en fil** i en **fil**-inmatning är inget steg - de byten hålls bara för sessionen, så det skulle inte finnas något att lägga tillbaka.
 
-I ett direkt [samarbete](/info/collaborate.html) förblir historiken din egen. En ändring som kommer från den andra enheten hamnar aldrig på din stack, så ångra kan bara ta tillbaka något du själv gjorde.
+I ett live-[samarbete](/info/collaborate.html) förblir historiken din egen. En ändring som kommer från den andra enheten hamnar aldrig på din stack, så ångra kan bara någonsin ta tillbaka något du själv gjorde.
 
 ## Dina uppgifter och profilbild
 
@@ -266,10 +266,10 @@ alt text names them - do not re-caption this as "the sort menu".
 
 > En etikettfälla: **Visa sessioner** finns bara när något är *markerat*. Att högerklicka på ett enskilt omarkerat kort ger i stället **N sparade sessioner**, som öppnar det verktygets egen historikdialog i stället för att navigera till Projekt.
 
-![Två verktygskort ikryssade i verktygsgalleriet, med det flytande markeringsfältet som visar 2 markerade och erbjuder Tillgänglig offline, Visa sessioner, Favorit och Dölj](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
+![Två verktygskort ikryssade i Verktygsgalleriet, med det svävande urvalsfältet som visar 2 valda och erbjuder Tillgänglig offline, Visa sessioner, Favorit och Dölj](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
 <!--
 SHOT NOTE (misc-bulkbar-gallery): drive targets `[data-select="qr-code"]` /
-`[data-select="d3"]` - the `.tile-check[data-select="<ref>"]` checkbox button
+`[data-select="gradient"]` - the `.tile-check[data-select="<ref>"]` checkbox button
 confirmed directly in views/gallery.ts's card markup (the same attribute
 cardMarkup gives every tile), so these two clicks tick both cards without
 opening either tool.
@@ -291,14 +291,16 @@ En design går ut på ett av två sätt: som en länk eller som en fil. Dialogru
 
 ### Länken
 
-![Jump Page in the editor - the heading, three link scenes each with its own wash and a Made with Lolly footer, laid out as one page in the canvas](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
-
 Varje inmatning fångas i sidans URL, så en länk *är* designen. Överst i dialogrutan sitter länken redo att kopieras, med två hopfällda avsnitt under sig.
 
 - **Länkalternativ** innehåller **Kortaste länk** (en stor design ger en lång URL, så det här packar hela tillståndet i en kompakt token och visar dig besparingen i tecken; den läsbara formen finns alltid kvar också), **Lösenordsskydda den här länken** (AES-256 över hela länken, lösenordet aldrig i den) och **Lås till den här verktygsversionen** - flaggan `_v`, som spikar fast länken vid den verktygsversion du tittar på så att en senare uppdatering inte kan ändra vad den renderar.
 - **Länkbeteende** är vad som händer när mottagaren öppnar den: helskärm, exportpanelen redan expanderad, nedladdning-vid-öppning med `&export` eller kopiering-till-urklipp med `&copy`.
 
 Klistra in länken till en kollega, bokmärk den eller checka in den. (Fullständiga detaljer: [URL-läge](/info/url-mode.html).)
+
+**Vissa verktyg gör länken till hela produkten.** Jump Page samlar dina länkar på en sida att dela ut - en bio-länk, ett konferenstal, en butiksfasad. Det finns inget att hosta och inget konto bakom: sidan är länken, så den öppnas lika snabbt som URL:en färdas. I redigeraren ser du den färdiga sidan bredvid fälten; en besökare som öppnar länken får den i full bredd, en länk per scen medan de scrollar.
+
+![Jump Page i redigeraren - rubriken, tre länkscener som var och en har sin egen ton och en Skapad med Lolly-sidfot, upplagda som en sida i ritytan](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
 
 **Dialogrutan säger vad en länk inte kan bära.** Tre saker får inte plats i en URL: en bild eller fil du lagt till från den här enheten, ett mycket långt textvärde eller en mycket stor lista. Var och en räknas medan länken byggs. Om något har måst utelämnas namnger dialogrutan det och pekar dig mot filen nedan, i stället för att ge dig en länk som öppnas med bilden saknad. En länk som bara är *lång* får en mildare notis med sitt teckenantal, eftersom packning fortfarande kan rädda längd.
 
@@ -314,7 +316,7 @@ Tre saker är dina att avgöra innan den går i väg:
 - **Om licensierad konst tas med.** Licensierade och varumärkeslåsta tillgångar hålls tillbaka som standard. Om designen använder några säger dialogrutan hur många och erbjuder två knappar - *Download without them* eller *Include and download* - eftersom att inkludera dem ger de faktiska filerna till den som öppnar `.lolly`-filen.
 - **Om verktyget tas med.** **Include the tool** packar verktygets egna filer tillsammans med designen, så att den öppnas på en enhet som inte har det verktyget. Det anländer förbockat för ett anpassat verktyg - en fork eller ett privat varumärkesverktyg din mottagare sannolikt inte har - och avbockat för ett verktyg som den signerade katalogen listar, eftersom deras kopia kommer från samma källa. (På en build utan signerad katalog räknas varje verktyg som anpassat och rutan börjar förbockad.)
 
-**Att öppna en.** Släpp en `.lolly` på appen: tillgångarna hamnar i ditt bibliotek, sessionen hamnar i Projekt och verktyget öppnas på den. Inget av ditt skrivs över: sessionen kommer in som en ny sparad plats, medan en tillgång som redan finns på den här enheten matchas med checksumma och återanvänds i stället för att dubbleras. Varje del kontrolleras mot filens egna checksummor på vägen in, så en kopia som skadats under överföring avvisas i stället för att importeras till hälften.
+**Att öppna en.** Släpp en `.lolly` på appen: resurserna går till ditt bibliotek, sessionen går till Projekt och verktyget öppnas med den. Inget av ditt skrivs över: sessionen anländer som en ny sparad plats, medan en resurs som redan finns på den här enheten matchas via checksumma och återanvänds istället för att dupliceras. Varje del kontrolleras mot filens egna checksummor på vägen in, så en kopia som skadats under överföringen avvisas istället för att importeras halvvägs.
 
 Om filen bär ett verktyg du inte har frågar Lolly innan det verktyget får köras: **Litar du på det här verktyget?** namnger det och dess upphovsperson och säger rakt ut att öppna det kör verktygets egen kod på din enhet, med **Lita på och installera** som vägen vidare. Tackar du nej sparas det delade arbetet ändå i dina projekt och väntar där tills den dag du lägger till verktyget. (En sorts verktyg går ännu inte att sidoladda - ett vars kod levereras som en modul - och det avvisas på samma sätt.)
 
@@ -334,10 +336,10 @@ När ett verktyg låter dig lägga till en bild från din enhet behålls den exa
 
 ![Katalogen - varumärkestillgångar, färgrutor och typsnitt, plus dina egna uppladdningar](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=2400&css=.plat-swatch-grid~%2A%7Bdisplay%3Anone%7D&walker=1&format=svg&localize=1&dark=1&filename=catalogue)
 
-- <!--i:upload--> **Ta in dina filer.** Dra en bild, SVG, ljudklipp, video, Lottie, PDF eller PowerPoint-presentation till uppladdningsområdet - eller klicka för att välja - och den hamnar i din katalog direkt, redo i varje verktygs tillgångsväljare. En flersidig PDF eller en `.pptx` frågar vilka sidor eller bilder som ska behållas - var och en blir en SVG-tillgång. Mata in så mycket du vill; det lämnar aldrig din enhet.
-- <!--i:star--> **Favoritmarkera det du använder ofta.** ★ en tillgång (eller ett varumärkessvatch) och den fästs överst i varje väljare, så din go-to-logga eller favoritfärg är ett klick bort.
-- <!--i:folder--> **Snygga till.** Omkategorisera en tillgång till en annan grupp, dölj en delad varumärkestillgång du inte använder (med **Show hidden** för att ta fram den igen) eller radera dina egna uppladdningar helt. Samma flervalsgest och flytande åtgärdsfält som i Projekt fungerar här också, så allt det kan göras på en hel markering på en gång.
-- <!--i:layers--> **Lyft en video från dess bakgrund.** Öppna en videos detaljvy eller högerklicka dess kort i valfri tillgångsväljare och välj **Remove background…** för att spara ett transparent alternativ - en animerad WebP eller PNG med riktig alfa. Välj en **Method**: en **On-device model** klipper ut ett motiv från en rörig scen, eller en **Colour key** nyckelklipper en jämnt belyst, flat bakgrund som en greenscreen eller en enkel vägg, med **Tolerance**, **Softness** och **Spill removal** för att finjustera kanten. Färgnyckeln behöver ingen modellnedladdning och inget nätverk, så **Remove background** erbjuds på alla videor och är ofta renare på städat filmmaterial. En **Resolution**-kontroll (360, 480, 720 eller 1080p, aldrig förbi källan) byter detaljrikedom mot en mindre, snabbare fil. Det körs som ett bakgrundsjobb på din enhet. Det färdiga utklippet hamnar bredvid originalet som en egen tillgång och källvideons Content Credential följer med som en ingrediens. (Se [Genererad en gång, renderad likadant](/info/ai-features.html) för varför att ta bort en bakgrund förblir en vanlig redigering.)
+- <!--i:upload--> **Ta in dina filer.** Dra valfri bild, SVG, ljudklipp, video, Lottie, PDF eller PowerPoint-presentation till uppladdningsytan - eller klicka för att välja - så hamnar den i din katalog direkt, redo i varje verktygs resursväljare. En flersidig PDF eller en `.pptx` frågar vilka sidor eller bilder som ska behållas - var och en blir en SVG-resurs. Mata in så mycket du vill; det lämnar aldrig din enhet.
+- <!--i:star--> **Favoritmarkera det du använder ofta.** ★ en resurs (eller ett varumärkessvatch) och den fästs överst i varje väljare, så din stående logotyp eller färg är ett klick bort.
+- <!--i:folder--> **Städa upp.** Omkategorisera en resurs till en annan grupp, dölj en delad varumärkesresurs du inte använder (med **Visa dolda** för att ta tillbaka den) eller ta bort dina egna uppladdningar helt. Samma gest för flervalsmarkering och svävande åtgärdsfält som i Projekt fungerar här också, så allt det kan göras på ett helt urval samtidigt.
+- <!--i:layers--> **Lyft en video från dess bakgrund.** Öppna en videos detaljvy eller högerklicka på dess kort i valfri resursväljare och välj **Ta bort bakgrund…** för att spara ett transparent alternativ - en animerad WebP eller PNG med riktig alfa. Välj en **Metod**: en **modell på enheten** klipper ut ett motiv ur en händelserik scen, eller en **färgnyckel** som nycklar bort en jämnt belyst, platt bakgrund som en greenscreen eller en enkel vägg, med **Tolerans**, **Mjukhet** och **Spilleliminering** för att finjustera kanten. Färgnyckeln behöver ingen modellhämtning och inget nätverk, så **Ta bort bakgrund** erbjuds för alla videor och är ofta renare på städat material. En **Upplösning**-kontroll (360, 480, 720 eller 1080p, aldrig förbi källan) byter detalj mot en mindre, snabbare fil. Det körs som ett bakgrundsjobb på din enhet. Den färdiga urklippningen sparas bredvid originalet som sin egen resurs och källvideons Content Credential följer med som en ingrediens. (Se [Genererat en gång, renderat likadant](/info/ai-features.html) för varför att ta bort en bakgrund förblir en vanlig redigering.)
 
 ### Ta med din palett och dina typsnitt vart som helst
 
@@ -395,13 +397,13 @@ Se **[Exportera och format](/info/exporting.html)** för hela historien - att v�
 
 För avancerade användare renderar **Batch** (länkad från galleriet, spärrad bakom Pro-funktionsflaggan, som är påslagen som standard) många varianter på en gång - ett rutnät där varje rad är en uppsättning inmatningar, exporterade tillsammans. Perfekt för att lokalisera ett kort till ett dussin språk eller generera varje storleksvariant i en enda omgång. Fyll i rader genom att skriva, klistra in direkt från ett kalkylblad eller importera en CSV-fil (du kan även exportera en tillbaka), och ställ in format, storlek och utdatafilnamn per rad. Spara ett helt rutnät som en namngiven **batch-session** som öppnas igen från galleriet, och ladda ner varje rad som en enda `.zip`.
 
-![Batch-verktygsfältet - zip-namn, enheter, DPI och det format varje rad ärver, med Sessioner och Rendera till höger](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
+![Satsverktygsfältet - zip-namn, enheter, DPI och formatet varje rad ärver, med Sessioner och Rendera till höger](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
 
 Batch är till för att generera **många varianter av en mall** på en gång. För att rendera om sessioner du **redan har sparat**, använd **Projekt → Rendera mapp / Rendera markering** (ovan) - ingen Pro-funktion behövs.
 
 ## Redigera sida vid sida (Multiredigering)
 
-Batch är många varianter av *en* design. **Multiredigering** är den andra halvan av jobbet: flera **olika** sparade designer öppna samtidigt, så att en ändring landar på allihop. Kryssa i mellan **två och åtta** sparade sessioner i **Projekt** och välj **Redigera tillsammans** i markeringsfältet; de öppnas som levande kort sida vid sida på `#/multi?s=<slot>,<slot>…`. Varje kort är en verklig rendering av den sessionen, inte en lagrad miniatyrbild, så det du ser är det som kommer att exporteras.
+Sats är många varianter av *en* design. **Multiredigering** är den andra halvan av arbetet: flera **olika** sparade designer öppna samtidigt, så att en ändring gäller för alla. Kryssa i mellan **två och åtta** sparade sessioner i **Projekt** och välj **Redigera tillsammans** i urvalsfältet; de öppnas som levande kort sida vid sida på `#/multi?s=<slot>,<slot>…`. Varje kort är en riktig rendering av den sessionen, inte en sparad miniatyr, så det du ser är det som exporteras.
 
 En enda sidopanel styr alltihop:
 
@@ -418,3 +420,5 @@ När markeringen är större än åtta, blandar verktyg eller innehåller bilder
 ## Offline och installation
 
 Lolly är en PWA. Efter den första inläsningen fungerar den **offline** - installera den från webbläsarens adressfält (eller *Lägg till på hemskärmen* på mobilen) för en app-liknande, helskärmsupplevelse. Den uppdaterar sig själv när du är uppkopplad igen.
+
+Om uppdateringar: om en vy någonsin skulle misslyckas att laddas precis efter en (en tom panel, ett "failed to fetch" i hörnet), ladda om sidan en gång - appen tar upp den nya versionen felfritt och ditt arbete, dina sessioner och ditt varumärke förblir orörda. Den lagrar allt på din enhet, inte i sidan.

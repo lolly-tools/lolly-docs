@@ -2,14 +2,14 @@
 
 *Última atualização: 11 de agosto de 2026*
 
-> **Em termos simples.** Os documentos, imagens, vídeos e arquivos que você cria no Lolly ficam
-> no seu dispositivo. Não há contas para uso comum, nenhum cookie do próprio
-> aplicativo e nenhum analytics ou rastreador em nenhum lugar do código-fonte - não é "não usamos
-> os dados", eles genuinamente não existem no código-fonte. Existe uma lista curta e completa de
-> exceções para quando o software se comunica com uma rede, e cada uma
-> delas é descrita abaixo em detalhes: o que sai, para quem e quando. A única
-> exceção que envolve algo pessoal é um login que você precisa iniciar explicitamente.
-> Se não estiver neste documento, não acontece.
+> **A versão resumida.** Os documentos, imagens, vídeos e arquivos que você cria no Lolly
+> permanecem no seu dispositivo. Não existem contas para uso comum, nenhum cookie do
+> próprio aplicativo e nenhuma análise ou rastreador em nenhum lugar do código-fonte -
+> não é "nós não usamos os dados", é genuinamente ausente do código-fonte. Existe uma
+> lista curta e completa de exceções para quando o software chega a conversar com uma
+> rede, e cada uma delas é descrita abaixo em detalhes: o que sai, para quem e quando.
+> A única exceção que envolve algo pessoal é um login que você precisa iniciar
+> explicitamente. Se não está neste documento, não acontece.
 
 ## O que esta política cobre
 
@@ -82,20 +82,20 @@ nosso - o objetivo da maioria deles é remover e proteger dados, não adicionar 
 A tabela abaixo é a lista completa de tudo que o aplicativo busca ou envia por uma
 rede. Se não estiver aqui, o aplicativo não faz isso.
 
-| O quê | O que realmente sai do seu dispositivo | Quando (a ação que aciona isso) | Se um operador bloquear |
+| O quê | O que realmente sai do seu dispositivo | Quando (a ação que aciona isso) | Se um operador bloquear isso |
 |---|---|---|---|
-| Sincronização do catálogo de ferramentas | Nada pessoal - uma requisição para o próprio índice público de ferramentas e recursos do Lolly, para a origem do próprio aplicativo | Na inicialização, depois em cache offline | O aplicativo funciona com seu conjunto de ferramentas em cache. Ele só deixa de descobrir novas ferramentas |
-| Uma ferramenta que precisa de dados ao vivo | O que quer que essa ferramenta específica solicite, para o host nomeado em sua própria descrição. Hoje isso é apenas a busca de cidade na ferramenta Meeting Planner, que pede a `geocoding-api.open-meteo.com` para transformar um nome de cidade em coordenadas e fuso horário - sem conta, sem chave e sem identificador além da própria requisição. O campo de entrada informa isso bem onde você digita, e cada resposta é salva no seu dispositivo, para que uma cidade seja buscada apenas uma vez | Somente enquanto você usa essa ferramenta, e somente depois que você insere um local | Apenas essa busca falha. Você ainda pode digitar coordenadas manualmente, e nada mais é afetado |
-| Google Fonts | O nome da família de fontes escolhida e seu endereço IP, para os servidores de fontes do Google (`fonts.googleapis.com` para a folha de estilo, `fonts.gstatic.com` para o arquivo da fonte) | Somente se você adicionar uma Google Font no editor de marca, **e somente depois de concordar em uma caixa de diálogo que diz exatamente isso** - uma busca única por família, que depois passa a residir no seu dispositivo e é usada offline | O seletor de Google Fonts falha de forma segura (fail closed). Envie um arquivo de fonte em vez disso |
-| Send to Google Drive | O único arquivo que você escolheu enviar, para a API do Google Drive (`www.googleapis.com`), depois de um login do Google que você completa na própria janela pop-up do Google. O acesso do Lolly se limita aos arquivos que ele criou (o escopo `drive.file` - ele nunca consegue ler o restante do seu Drive), e o token de login fica em memória apenas durante a sessão, nunca é armazenado | Somente quando você clica em "Send to Google Drive" em uma exportação EMF, e somente em builds nas quais o operador configurou um client id do Google - sem um, o botão não existe | O botão nunca aparece. Baixe o arquivo e envie-o para o Drive você mesmo |
-| Send to Dropbox | O único arquivo que você escolheu enviar, para a API do Dropbox (`api.dropboxapi.com` para login e metadados, `content.dropboxapi.com` para o próprio arquivo), depois de um login do Dropbox que você completa na própria janela do Dropbox. O acesso do Lolly se limita à pasta do aplicativo (ele só consegue ver `Apps/` e sua própria pasta ali - nunca o restante do seu Dropbox), o link "Open" exibido é um link privado de curta duração (nenhum compartilhamento público é criado), e um token de atualização só é armazenado se você marcar "stay connected" | Somente quando você clica em "Send to Dropbox" em um arquivo, e somente em builds nas quais o operador configurou um client id do Dropbox - sem um, o botão não existe | O botão nunca aparece. Baixe o arquivo e envie-o para o Dropbox você mesmo |
-| Send to OneDrive | O único arquivo que você escolheu enviar, para os serviços de identidade e Graph da Microsoft (`login.microsoftonline.com` para login, `graph.microsoft.com` para o envio; um arquivo grande é enviado em partes para um endereço de upload da própria Microsoft em `api.onedrive.com`, `*.up.1drv.com` ou `*.sharepoint.com`), depois de um login da Microsoft que você completa na própria janela da Microsoft. O acesso do Lolly se limita à sua própria pasta em `Apps/` (ele nunca consegue ler o restante do seu OneDrive), além do seu nome de exibição para o rótulo da conta, e um token de atualização só é armazenado se você marcar "stay connected" | Somente quando você clica em "Send to OneDrive" em um arquivo, e somente em builds nas quais o operador configurou um client id da Microsoft - sem um, o botão não existe | O botão nunca aparece. Baixe o arquivo e envie-o para o OneDrive você mesmo |
-| Perfis ICC de impressão | Nada pessoal - uma requisição para um perfil padrão de condição de impressão, para o registro público da ICC (`registry.color.org`, `www.color.org`) | Somente se você clicar em um predefinido ICC no gerenciador de perfis de impressão - uma busca única por perfil, que depois passa a residir no seu dispositivo | Os predefinidos ICC falham. Forneça seu próprio perfil `.icc` em vez disso |
-| Rádio pela internet | Nada pessoal - uma requisição de playlist e um stream de áudio, para a estação (`api.somafm.com` e o servidor icecast que ela indica, `*.somafm.com`) | Somente enquanto você toca o rádio opcional integrado no player de som | O rádio falha. Todos os outros recursos de som continuam funcionando |
-| Uma URL que você pede a uma ferramenta para capturar | Uma requisição para o endereço web exato que você digita, feita pela ferramenta de captura de URL. Seja qual for esse endereço. Esse host não está na política abaixo, porque você o escolhe no momento do uso | Somente quando você insere uma URL nessa ferramenta e inicia a captura | Um operador não pode colocar isso em lista de permissões por host. Para removê-lo, remova a ferramenta |
-| Verificação de assinatura SEAL | **Nada.** O aplicativo web não tem nenhum resolvedor de DNS - veja abaixo | Nunca | Nada a bloquear |
-| Modelos detectores de deep-scan | Nada pessoal - um download único de modelo com a mesma origem (não um terceiro) | Somente se você optar pelo deep scan do Verify | O deep scan fica indisponível. A verificação padrão continua funcionando |
-| Instância remota | O que quer que a instância que você nomeia devolva, pela mesma sincronização de catálogo descrita acima. Você escolhe o host no momento do uso, portanto não está na política abaixo | Somente se você apontar explicitamente o shell para outra implantação do Lolly | A troca de instância falha. Sua instância local não é afetada |
+| Sincronização do catálogo de ferramentas | Nada pessoal - uma requisição para o próprio índice público de ferramentas e ativos do Lolly, para a própria origem do aplicativo | Na inicialização, depois fica em cache offline | O aplicativo continua funcionando com o conjunto de ferramentas em cache. Ele só para de descobrir novas ferramentas |
+| Uma ferramenta que precisa de dados ao vivo | O que quer que essa ferramenta específica solicite, para o host nomeado em sua própria descrição. Hoje isso é apenas a busca de cidade na ferramenta Meeting Planner, que consulta `geocoding-api.open-meteo.com` para transformar um nome de cidade em coordenadas e um fuso horário - sem conta, sem chave e sem identificador além da própria requisição. O campo avisa isso bem onde você digita, e cada resposta é salva no seu dispositivo para que uma cidade seja consultada apenas uma vez | Apenas enquanto você usa essa ferramenta, e apenas depois que você insere um local | Apenas essa busca falha. Você ainda pode digitar coordenadas manualmente, e nada mais é afetado |
+| Google Fonts | O nome da família de fontes escolhida e o seu endereço IP, para os servidores de fontes do Google (`fonts.googleapis.com` para a folha de estilo, `fonts.gstatic.com` para o arquivo de fonte) | Apenas se você adicionar uma Google Font no editor de marca, **e somente depois de concordar em uma caixa de diálogo que diz exatamente isso** - uma busca única por família, que depois fica no seu dispositivo e é usada offline | O seletor de Google Fonts falha de forma segura. Envie um arquivo de fonte em vez disso |
+| Enviar para o Google Drive | O único arquivo que você escolheu enviar, para a API do Google Drive (`www.googleapis.com`), depois de um login do Google que você completa na própria janela pop-up do Google. O acesso do Lolly é limitado aos arquivos que ele criou (o escopo `drive.file` - ele nunca pode ler o restante do seu Drive), e o token de login fica em memória durante a sessão, nunca é armazenado | Apenas quando você clica em "Send to Google Drive" em uma exportação EMF, e apenas em builds em que o operador configurou um id de cliente do Google - sem um, o botão não existe | O botão nunca aparece. Baixe o arquivo e envie-o você mesmo para o Drive |
+| Enviar para o Dropbox | O único arquivo que você escolheu enviar, para a API do Dropbox (`api.dropboxapi.com` para login e metadados, `content.dropboxapi.com` para o próprio arquivo), depois de um login do Dropbox que você completa na própria janela do Dropbox. O acesso do Lolly é restrito à pasta do aplicativo (ele só consegue ver `Apps/` e sua própria pasta ali - nunca o restante do seu Dropbox), o link "Open" que ele mostra a você é um link privado de curta duração (nenhum compartilhamento público é criado), e um token de atualização só é armazenado se você marcar "stay connected" | Apenas quando você clica em "Send to Dropbox" em um arquivo, e apenas em builds em que o operador configurou um id de cliente do Dropbox - sem um, o botão não existe | O botão nunca aparece. Baixe o arquivo e envie-o você mesmo para o Dropbox |
+| Enviar para o OneDrive | O único arquivo que você escolheu enviar, para os serviços de identidade e Graph da Microsoft (`login.microsoftonline.com` para login, `graph.microsoft.com` para o envio; um arquivo grande é enviado em partes para um endereço de upload da própria Microsoft em `api.onedrive.com`, `*.up.1drv.com` ou `*.sharepoint.com`), depois de um login da Microsoft que você completa na própria janela da Microsoft. O acesso do Lolly é limitado à sua própria pasta em `Apps/` (ele nunca pode ler o restante do seu OneDrive), além do seu nome de exibição para o rótulo da conta, e um token de atualização só é armazenado se você marcar "stay connected" | Apenas quando você clica em "Send to OneDrive" em um arquivo, e apenas em builds em que o operador configurou um id de cliente da Microsoft - sem um, o botão não existe | O botão nunca aparece. Baixe o arquivo e envie-o você mesmo para o OneDrive |
+| Perfis de impressão ICC | Nada pessoal - uma requisição para um perfil padrão de condição de impressão, para o registro público da ICC (`registry.color.org`, `www.color.org`) | Apenas se você clicar em uma predefinição ICC no gerenciador de perfis de impressão - uma busca única por perfil, que depois fica no seu dispositivo | As predefinições ICC falham. Forneça o seu próprio perfil `.icc` em vez disso |
+| Rádio via internet | Nada pessoal - uma requisição de playlist e um stream de áudio, para a estação (`api.somafm.com` e o servidor icecast que ela indica, `*.somafm.com`) | Apenas enquanto você reproduz o rádio embutido opcional no player de som | O rádio falha. Todos os outros recursos de som continuam funcionando |
+| Uma URL que você pede a uma ferramenta para capturar | Uma requisição para o endereço web exato que você digita, feita pela ferramenta de captura de tela de URL. Seja qual for esse endereço. Esse host não está na política abaixo, porque você o escolhe no momento do uso | Apenas quando você insere uma URL nessa ferramenta e inicia a captura | Um operador não pode colocar isso em lista de permissões por host. Para removê-lo, remova a ferramenta |
+| Verificação de assinatura SEAL | **Nada.** O aplicativo web não possui nenhum resolvedor de DNS - veja abaixo | Nunca | Nada para bloquear |
+| Modelos de detecção de deep-scan | Nada pessoal - um download único de modelo com a mesma origem (não é de terceiros) | Apenas se você optar pelo deep scan do Verify | O deep scan fica indisponível. A verificação padrão continua funcionando |
+| Instância remota | O que quer que a instância nomeada devolva, através da mesma sincronização de catálogo descrita acima - além de uma tag de versão nas requisições feitas a ela (tipo de shell e versão do engine, a mesma informação que um user agent carrega), para que seu operador possa ver quais versões do Lolly estão em uso. Em uma instância gerenciada, enquanto você está conectado, essa tag também carrega um id de instalação por dispositivo, para que a lista de dispositivos do operador consiga diferenciar esta instalação. Ela viaja apenas em requisições que o seu próprio uso já faz - não há temporizador e nada entra em contato por conta própria - e sair da instância apaga o id, de modo que um dispositivo que se reconectar depois apresenta um novo. Você escolhe o host no momento do uso, então ele não está na política abaixo | Apenas se você apontar explicitamente o shell para outra implantação do Lolly | A troca de instância falha. Sua instância local não é afetada |
 
 Todo host fixo nessa tabela também é a lista de permissões completa na
 Content-Security-Policy do aplicativo, que o navegador aplica. Portanto, a lista não é apenas uma
@@ -145,17 +145,19 @@ escritas na URL.
 - <!--i:usercheck--> **Sem contas, sem cookies, sem estado.** O endpoint é anônimo, e nada
   no seu dispositivo é lido. Seus documentos, sessões e envios nunca saem do seu
   navegador - eles não podem aparecer nesses links de jeito nenhum.
-- <!--i:document--> **Mas a própria URL é registrada.** A query string de uma URL faz parte da linha
-  de requisição, portanto ela vai parar nos logs de acesso comuns da plataforma de hospedagem, da mesma forma que
-  todo caminho requisitado vai. Se as entradas de um link contêm o nome ou o e-mail de alguém -
-  um crachá com nome, uma assinatura de e-mail - **esse texto fica nesses logs**, e nenhuma
-  redação de política muda isso. Essa é a razão específica pela qual o recurso está
-  desativado aqui, e não ativado.
-- <!--i:globe--> **As entradas são públicas por construção** de qualquer forma - são o que quer que o
-  autor do link tenha digitado na URL, legível por qualquer pessoa que o link alcance. Não coloque
-  segredos em um link compartilhado. O Lolly oferece criptografia de link para conteúdo sensível.
-- <!--i:eyeoff--> As respostas são **cacheadas e limitadas por taxa (rate-limited)** como qualquer imagem pública, e marcadas
-  como `noindex` para que os mecanismos de busca não indexem suas renderizações.
+- <!--i:document--> **Mas a própria URL é registrada.** A query string de uma URL faz parte da
+  linha de requisição, então ela aparece nos registros de acesso comuns da plataforma
+  de hospedagem, da mesma forma que todo caminho requisitado aparece. Se as entradas de
+  um link contêm o nome ou e-mail de alguém - um crachá, uma assinatura de e-mail -
+  **esse texto fica nesses registros**, e nenhuma redação de política muda isso. Esse é
+  o motivo específico de o recurso estar desligado aqui, e não ligado.
+- <!--i:globe--> **As entradas são públicas por construção** de qualquer forma - são o que quer
+  que o autor do link tenha digitado na URL, legível por qualquer um que o link alcance.
+  Não coloque segredos em um link compartilhado. O Lolly oferece criptografia de link
+  para conteúdo sensível.
+- <!--i:eyeoff--> As respostas ficam **em cache e com limite de taxa** como qualquer imagem
+  pública, e marcadas como `noindex` para que os mecanismos de busca não indexem suas
+  renderizações.
 
 Está autogerenciando o Lolly e não quer uma superfície pública de renderização? Defina
 `LOLLY_DISABLE_RENDER_GET=1` - o que o próprio lolly.tools faz atualmente - e todas

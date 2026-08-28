@@ -64,7 +64,7 @@ Lolly가 무엇인지 가장 분명하게 보는 방법은 기능 목록이 아�
 
 두 번째 단계의 '새 차트'는 바로 이런 렌더링입니다. 데이터 문자열과 몇 가지 매개변수만으로 만들어지며, 디자인 파일을 여는 사람은 아무도 없습니다:
 
-![제목이 있는 누적 영역 차트. 세 개의 시리즈가 차분한 팔레트로 구분되어 있고, 축과 범례와 제목 모두 손이 아니라 템플릿이 배치했습니다](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![제목이 있는 누적 영역 차트로, 세 개의 시리즈가 차분한 색상 팔레트로 나뉘어 있고, 축, 범례, 제목 모두 손으로가 아니라 템플릿이 배치했어요](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 요점은 Lolly가 디자이너에게도 좋고 *또* 개발자에게도 좋고 *또* 영업에도 좋다는, 각각 별개로 좋다는 것이 아닙니다. 이것은 **이어달리기**입니다: 크리에이티브의 초기 작업을 개발자가 확장하고, 그것이 다시 프로듀서에게 힘을 실어줍니다. 비행기 안의 비기술직 영업 담당자가 누리는 수고 없는 경험은 오직 디자이너가 세우고 개발자가 배포한 엄격함 덕분에 *가능*한 것입니다.
 
@@ -82,7 +82,7 @@ Lolly가 무엇인지 가장 분명하게 보는 방법은 기능 목록이 아�
 - <!--i:code--> **명령줄에서, 개발자가.** CLI는 *동일한* 엔진과 *동일한* 렌더링 경로를 헤드리스로 실행하므로, 스크립트나 야간 파이프라인에서 도구를 1만 행 전체에 순차적으로 적용할 수 있습니다. 반복문 안의 `lolly <tool> --field=…` 호출 하나가 통합의 전부입니다.
 - <!--i:cpu--> **MCP를 통해, 시스템이나 AI 에이전트가.** 같은 도구가 같은 충실도로, 심지어 더 큰 규모로 프로그래밍 방식으로 동작합니다 - 수천 개의 파일이 쏟아져도 기계는 지치지 않으니까요.
 
-![새로 설치한 상태의 배치 모드: 도구를 기다리는 빈 행 하나, 데이터가 들어오기 전부터 준비된 전체 스프레드시트 화면과 Render 버튼](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+![새로 설치한 상태의 Batch 모드 - 도구를 기다리는 빈 행 하나와 함께, 데이터가 들어오기 전부터 전체 스프레드시트 화면과 Render 버튼이 준비되어 있어요](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
 
 디자이너가 한 번 정한 하나의 브랜드 제약 세트, 동일한 사전 승인 결과물로 가는 세 가지 경로 - 그중 기계 경로가 가장 멀리까지 확장됩니다. 파일이 쏟아지는 동안에도 지치지 않기 때문입니다.
 
@@ -247,7 +247,7 @@ SUSE가 관리하는 URL에서 호스팅됩니다. 서비스 워커가 도구와
 
 같은 도구를 휴대폰 너비에서 보면, 유지해야 할 두 번째 레이아웃이 없습니다: 컨트롤은 상단의 시트가 되고, 프리뷰가 화면 전체를 차지하며, 렌더 필이 그 위에 떠 있습니다.
 
-![430px 너비 화면의 오디오그램 - 위쪽은 컨트롤 시트, 아래쪽은 완성된 정사각형 아트워크, 그리고 떠 있는 렌더 필](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![너비 430px 화면의 오디오그램 - 위쪽에는 컨트롤 시트, 아래쪽에는 완성된 정사각형 아트워크, 그리고 떠 있는 렌더 알약(pill) 버튼](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **배치 모드(`/pro`).** 웹 셸에는 하나 또는 여러 도구에 걸쳐 여러 행을 한 번에 렌더링하는 스프레드시트 스타일의 배치 그리드(`shells/web/src/pro/`)도 포함되어 있습니다. CSV/TSV 왕복 변환과 스프레드시트 붙여넣기, 행별 템플릿/포맷/크기/단위/dpi, 실시간 프리뷰가 있는 블록 편집기 사이드 패널, 접을 수 있는 내보내기 열, 행별 "관련성" 태그 바, 왼쪽 드래그 핸들을 이용한 행 재정렬, 2단계 삭제 확인, 저장된 배치 세션, `.zip` 다운로드를 제공합니다. 이것이 "대량 콘텐츠 생성" 포지셔닝 뒤에 있는 일대다 화면입니다.
 
@@ -281,10 +281,10 @@ CLI의 대화형 짝입니다: 도구를 탐색하고, 입력을 채우고, 프�
 
 행은 갤러리 섹션 순서로 나열됩니다. `utility` 섹션은 (향후 추가될 카테고리를 포함한) 다른 모든 카테고리 뒤, 갤러리에서 항상 **마지막**에 렌더링됩니다 - 이는 온디바이스 "오프라인 유틸리티" 서랍입니다.
 
-| 카테고리 | 예시 | 예정 |
+| 카테고리 | 예시 | 계획 중 |
 |---|---|---|
 | `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
-| `designer` | Brand Lockup, Design, Chart Creator, D3 Chart Studio, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `designer` | Brand Lockup, Design, Chart, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
 | `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Unit/format converters, more on-device privacy utilities |
@@ -342,14 +342,14 @@ CLI의 대화형 짝입니다: 도구를 탐색하고, 입력을 채우고, 프�
 
 무엇을 다루는지 보여주기 위한 대표적인 표면 몇 가지입니다 - [Host API](/info/host-api.html)가 전부 문서화하며, `packages/core/src/host-v1.ts`가 계약 그 자체입니다:
 
-| 표면 | 도입 버전 | 추가하는 것 |
+| 표면(Surface) | 도입 버전 | 추가되는 기능 |
 |---|---|---|
-| `host.tokens` | 1.0 | DTCG 디자인 토큰 - 브랜드 고유의 프리미티브 |
-| `host.text` | 1.0 | HarfBuzz WASM을 통한 텍스트→패스 변환(`wasm` 기능 플래그가 이를 의존하는 도구를 표시) |
-| `host.media` | 1.4 | `onFrame` 훅을 구동하는 실시간 카메라 프레임. 점진적 향상 방식으로, 의도적으로 `camera` 플래그로 게이팅되지 않습니다 - 그런 도구도 일반 스틸 이미지 도구로서 여전히 동작합니다 |
-| `host.color` | 1.40 | 지각적 색상 수학: ΔEOK, WCAG + APCA 대비, OKLab 램프, 클래스 구간, 카테고리 팔레트, 조화 스킴(1.60), CSS Color 4 혼합과 그래디언트 베이킹(1.68). 순수하고 동기적입니다 - 셸이 무언가를 구현하는 대신 엔진의 `makeColorApi()`를 붙이므로 어긋날 수 없습니다 |
-| `host.images` | 1.60 | 온디바이스에서 바이트를 디코드/리사이즈/재인코딩 - 변환 경로(HEIC → JPEG, WebP로 압축, 다운스케일). 웹 셸에서는 지연 파사드로 제공되어 HEIC 디코더가 부팅 청크에 실리지 않습니다 |
-| `host.geom` | 1.64 | 정확한 벡터 기하: 패스 불리언 연산, 오프셋, 스트로크→채우기 변환, 스플라인 로어링, 단순화, 히트 테스트. 이 역시 순수하고 동기적이며 엔진에서 붙여집니다(`makeGeomApi()`); 실패는 던져지지 않고 *반환*됩니다 |
+| `host.tokens` | 1.0 | DTCG 디자인 토큰 - 브랜드 고유의 기본 요소 |
+| `host.text` | 1.0 | HarfBuzz WASM을 통한 텍스트-패스 변환(`wasm` 기능 플래그가 이를 사용하는 도구를 표시해요) |
+| `host.media` | 1.4 | `onFrame` 훅을 구동하는 실시간 카메라 프레임. 점진적 향상 방식으로, 의도적으로 `camera` 플래그로 제한되지 *않아요* - 이런 도구는 일반 정지 이미지 도구로도 여전히 작동해요 |
+| `host.color` | 1.40 | 지각적 색상 연산: ΔEOK, WCAG + APCA 대비, OKLab 램프, 클래스 구간, 범주형 팔레트, 조화 스킴(1.60), CSS Color 4 혼합 및 그레이디언트 베이킹(1.68). 순수하고 동기적이에요 - 셸은 직접 구현하지 않고 엔진의 `makeColorApi()`를 연결하므로 어긋날 수 없어요 |
+| `host.images` | 1.60 | 기기에서 바이트를 디코딩/크기 조정/재인코딩 - 변환 경로예요(HEIC → JPEG, WebP로 압축, 축소). 웹 셸에서는 지연 로딩 파사드로 제공되어, HEIC 디코더가 부팅 청크에 절대 포함되지 않아요 |
+| `host.geom` | 1.64 | 정확한 벡터 기하 연산: 경로 불리언, 오프셋, 스트로크-투-필, 스플라인 저차화, 단순화, 히트 테스트. 이 또한 순수하고 동기적이며 엔진에서 연결돼요(`makeGeomApi()`). 실패는 예외를 던지지 않고 *반환*돼요 |
 
 나머지는 같은 규칙을 따르며 그 옆에 함께 문서화되어 있습니다: 온디바이스 문서 수술을 위한 `pdf`(1.8)와 `pptx`(1.58), 클립 분석과 온디바이스 TTS/전사를 위한 `audio`(1.71)와 `speech`(1.96), MilkDrop 플레이스홀더 계약을 위한 `viz`(1.72), 딥비트와 레이어드 비트맵 출력을 위한 `codec`(1.100)과 `layers`(1.102), 온디바이스 모델을 위한 `upscale`(1.101)과 `matte`(1.103), 직접 픽셀 작업을 하는 훅을 위한 `raster`(1.105), 내보내기 안전 화살표를 위한 `connectors`(1.106), 완성된 바이트에 서명하기 위한 `c2pa`(1.85)입니다. 개수는 늘어나지만 규칙은 그대로입니다.
 

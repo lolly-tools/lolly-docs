@@ -2,7 +2,7 @@
 
 Ekstensi **Lolly URL Screenshot** memungkinkan aplikasi web mengambil tangkapan layar halaman web mana pun dari dalam browser Anda. Tanpanya, menangkap URL memerlukan aplikasi desktop - halaman browser tidak bisa membaca piksel dari situs lain dengan sendirinya. Ekstensi ini bisa, menggunakan mekanisme tangkap yang sama dengan yang dipakai aplikasi desktop.
 
-Ekstensi ini melakukan satu tugas lain dengan mekanisme yang sama: membaca satu halaman yang Anda tentukan agar Brand Studio bisa menarik brand dari situs web yang aktif. Keduanya dibahas di bawah.
+Ia melakukan satu tugas lain dengan cara yang sama: membaca satu halaman yang Anda sebutkan sehingga Brand Studio bisa menarik sebuah brand dari sebuah website live. Keduanya dibahas di bawah.
 
 Berjalan di browser berbasis Chromium: **Chrome, Edge, Brave, Arc, Opera** - Chrome 111 atau lebih baru.
 

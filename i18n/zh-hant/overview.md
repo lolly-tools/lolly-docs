@@ -65,7 +65,7 @@ Lolly 也劃出同樣的界線。以機率性的方式探索：一個模型、�
 
 第二步中的「最新圖表」就像這樣的算繪結果，由一段資料字串與少數幾個參數產生，完全沒有人開啟設計檔案：
 
-![一張帶標題的堆疊區域圖，三個資料系列以冷色調配色呈現，座標軸、圖例與標題全都由範本自動排版，而非手動放置](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![一張附標題的堆疊區域圖,三個資料序列以冷色調色盤呈現,座標軸、圖例與標題皆由範本自動排版,而非手動配置](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 重點不在於 Lolly 分別對設計師好、對開發人員好、對業務人員也好，各自獨立不相干。而是一場**接力賽**：創意人員最初的成果由開發人員加以規模化，進而賦能給製作人。飛機上那位非技術背景業務代表所享有的毫不費力的體驗，*之所以可能*，正是因為設計師訂下的嚴謹規範以及開發人員的部署工作。
 
@@ -83,7 +83,7 @@ Lolly 也劃出同樣的界線。以機率性的方式探索：一個模型、�
 - <!--i:code--> **一位開發人員，透過命令列。** CLI 以無頭模式執行*相同*的引擎與*相同*的算繪路徑，因此可以在腳本或夜間管線中對全部 10,000 列依序執行該工具。在迴圈中呼叫 `lolly <tool> --field=…` 就是整個整合工作。
 - <!--i:cpu--> **一個系統或 AI 代理，透過 MCP。** 同一個工具以程式化方式操作，保持相同的精確度，甚至能達到更大的規模 - 因為機器不會在數千份檔案陸續產生時感到厭倦。
 
-![全新安裝後的批次模式：一列空白資料等待選擇工具，整個試算表介面與 Render 按鈕都已就緒，尚未輸入任何資料](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+![全新安裝後的批次模式:一列空白等待選擇工具,整個試算表介面與「算繪」按鈕在任何資料到來之前就已就緒](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
 
 一套品牌限制，由設計師一次訂定；三條路徑通往完全相同、已預先核准的輸出 - 而機器這條路徑能擴展得最遠，因為它在檔案陸續產生時永遠不會疲倦。
 
@@ -248,7 +248,7 @@ web 殼層採用單一版面配置做響應式設計。在桌面版上，工具�
 
 同一個工具在手機寬度下，不需要維護第二種版面：控制項變成頂端的表單頁，預覽佔滿整個畫面，輸出按鈕則浮在其上。
 
-![430px 寬螢幕上的 Audiogram - 上方是控制項表單，下方是完成的方形作品，以及浮動的輸出按鈕](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![在 430px 寬螢幕上顯示的音頻圖——上方為控制項面板,下方為完成的方形作品,以及浮動的算繪標籤](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **批次模式（`/pro`）。** Web shell 也提供一個試算表風格的批次網格（`shells/web/src/pro/`），可一次跨一個或多個工具算繪多列。它支援 CSV/TSV 雙向轉換與試算表貼上、逐列的樣板/格式/尺寸/單位/dpi、附即時預覽的 blocks 編輯側欄、可收合的輸出欄、逐列「相關性」標籤列、左側拖曳把手可重新排序、兩階段刪除確認、已儲存的批次工作階段，以及 `.zip` 下載。這就是「大量內容產出」定位背後的一對多介面。
 
@@ -284,11 +284,11 @@ CLI 的互動版對應物：一個以鍵盤操作為主的全螢幕終端機應�
 
 | 分類 | 範例 | 規劃中 |
 |---|---|---|
-| `everyone` | QR Code Generator、Quote Card、Email Signature、Logo、Wordmark、Audiogram、Battlecards、Sequence Studio、Record | Employee Image Stationery |
-| `designer` | Brand Lockup、Design、Chart Creator、D3 Chart Studio、Darkroom、Filter、Pose Geeko、Multi-Page PDF | Font Outliner |
-| `event` | Meeting Planner、Event Name Badge、Wayfinding Signage、Calendar ICS、Booth Studio | Event Stationery、Bulk Name Badges、Room Agenda Cards |
-| `product` | - | CVE Alert、Product Release Announcement、Blog OG Image |
-| `utility` | Strip Hidden Data、Text Helper、Compress PDF、Convert Image、Convert Font、Redact、Run Web Code、Screen Capture、URL Screenshot | 單位／格式轉換器、更多裝置端隱私工具 |
+| `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | 員工形象套版素材 |
+| `designer` | Brand Lockup, Design, Chart, Darkroom, Filter, Pose Geeko, Multi-Page PDF | 字型外框工具 |
+| `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | 活動文具、批次姓名識別證、會議室議程卡 |
+| `product` | - | CVE 警示、產品發布公告、部落格 OG 圖片 |
+| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | 單位/格式轉換工具、更多裝置端隱私公用程式 |
 
 這些欄位是**範例，不是完整清單**。哪些工具存在，取決於你所掛載的 profile，而不是這個頁面 - 品牌套件會加入自己的工具，也可以排除某個它不想提供的社群工具。`catalog/tools/index.json` - 由 manifest 產生，也是藝廊實際讀取的登錄檔 - 才是權威清單；要計算某個 profile 掛載了多少工具，應清點 manifest（`ls community/*/tool.json brands/*/tools/*/tool.json`），而不是信任這裡寫下的數字。（同一個工具 id 若出現在兩個套件中，只會掛載一次，以優先的套件為準。）
 
@@ -343,14 +343,14 @@ Web 與 Tauri 應用程式會在啟動時，從已知的 URL 擷取工具與資�
 
 以下列出幾個代表性介面，用以說明其涵蓋範圍 - [Host API](/info/host-api.html) 記載了每一個項目，而 `packages/core/src/host-v1.ts` 本身就是合約：
 
-| 介面 | 自版本 | 新增內容 |
+| 介面 | 自 | 新增內容 |
 |---|---|---|
-| `host.tokens` | 1.0 | DTCG 設計 tokens - 品牌自身的基本元素 |
-| `host.text` | 1.0 | 透過 HarfBuzz WASM 的文字轉路徑（`wasm` 能力旗標標示仰賴此功能的工具） |
-| `host.media` | 1.4 | 驅動 `onFrame` 掛鉤的即時相機影格。屬於漸進增強，刻意*不*被 `camera` 旗標閘控 - 這類工具即使沒有此能力，仍可作為一般靜態圖片工具運作 |
-| `host.color` | 1.40 | 感知式色彩數學：ΔEOK、WCAG 與 APCA 對比度、OKLab 漸層、分級斷點、分類調色盤、調和方案（1.60）、CSS Color 4 混色與漸層烘焙（1.68）。純函式且同步 - shell 直接掛上引擎的 `makeColorApi()`，而非自行實作，因此不會出現偏差 |
-| `host.images` | 1.60 | 在裝置端解碼／縮放／重新編碼位元組 - 也就是轉檔路徑（HEIC → JPEG、壓縮成 WebP、縮小尺寸）。在 web shell 中以延遲載入的門面（facade）方式提供，因此 HEIC 解碼器不會進入開機主要區塊 |
-| `host.geom` | 1.64 | 精確的向量幾何：路徑布林運算、外擴（offsetting）、描邊轉填色、雲形線降階、簡化、命中測試。同樣是純函式、同步，並由引擎掛載（`makeGeomApi()`）；失敗會被*回傳*，而非拋出例外 |
+| `host.tokens` | 1.0 | DTCG 設計權杖——品牌自己的基本元素 |
+| `host.text` | 1.0 | 透過 HarfBuzz WASM 將文字轉換為路徑(`wasm` 能力旗標會標記依賴此功能的工具) |
+| `host.media` | 1.4 | 即時攝影機畫格驅動 `onFrame` 掛鉤。屬於漸進式增強功能,刻意*不*受 `camera` 旗標限制——這類工具在沒有攝影機時仍可作為一般靜態圖片工具運作 |
+| `host.color` | 1.40 | 知覺色彩運算:ΔEOK、WCAG + APCA 對比度、OKLab 漸層、分級斷點、類別調色盤、和諧配色方案(1.60)、CSS Color 4 混色與漸層烘焙(1.68)。純函式且同步執行——殼層是掛接引擎的 `makeColorApi()`,而非自行實作,因此不會產生落差 |
+| `host.images` | 1.60 | 在裝置端解碼/縮放/重新編碼位元組——即轉換路徑(HEIC → JPEG、壓縮為 WebP、縮小尺寸)。在網頁殼層中以延遲載入的外觀模式提供,因此 HEIC 解碼器永遠不會進入開機區塊 |
+| `host.geom` | 1.64 | 精確向量幾何運算:路徑布林運算、偏移、筆畫轉填色、雲形線降階、簡化、命中測試。同樣是純函式、同步執行,並由引擎掛接(`makeGeomApi()`);失敗會以*回傳值*表示,而非拋出例外 |
 
 其餘部分遵循相同規則，並在其旁一併記載：`pdf`（1.8）與 `pptx`（1.58）用於裝置端文件加工，`audio`（1.71）與 `speech`（1.96）用於片段分析與裝置端 TTS／轉錄，`viz`（1.72）用於 MilkDrop 佔位合約，`codec`（1.100）與 `layers`（1.102）用於深位元與分層點陣輸出，`upscale`（1.101）與 `matte`（1.103）用於裝置端模型，`raster`（1.105）供自行處理像素運算的 hooks 使用，`connectors`（1.106）用於輸出安全的箭頭，以及 `c2pa`（1.85）用於為完成的位元組簽章。數量會持續增加；規則不會。
 

@@ -153,7 +153,7 @@ Titres, code et italique retombent chacun sur la primaire tant que tu ne les as 
 
 La scène s'ouvre **en ligne dans la salle**, pas dans une boîte de dialogue, si bien que les cartes d'où tu viens restent à l'écran. Recherche une famille Google Fonts (Inter, Fraunces, Space Grotesk...) ou dépose un fichier de police, appuie sur **Ajouter à la comparaison** et les candidates se retrouvent côte à côte dans les mêmes mots avant qu'aucune ne s'installe. Échap annule et rend le clavier à la carte depuis laquelle tu l'as ouverte.
 
-C'est la seule porte d'entrée, ce pourquoi rien n'atterrit dans ta marque sans être vu au préalable. Sous la scène se trouvent les deux panneaux de gestion :
+C'est la seule porte d'entrée, c'est pourquoi rien n'entre dans ta marque sans être vu. Sous la scène se trouvent les deux panneaux de gestion :
 
 - **Polices sur cet appareil** - chaque famille installée, les rôles qu'elle sert et une suppression. **Ajouter une police** ici ouvre la même scène de comparaison sans restriction.
 - **Tes polices** - téléverse un **TTF**, **OTF** ou **WOFF** depuis ta propre machine. C'est le chemin pour une police d'entreprise sous licence que tu possèdes déjà.
@@ -211,13 +211,13 @@ Faire revenir une marque se fait via **Ajouter depuis... → Design tokens ou un
 
 ## Versions
 
-**Versions** au bas du panneau, c'est l'endroit où un système de design arrête d'être une cible mouvante. Publie une version et tu obtiens une **copie permanente et nommée** conservée sur cet appareil : elle ne change plus jamais ensuite, donc un outil qui l'épingle continue de dessiner la même chose. Le panneau reste caché tant qu'il n'y a rien à toi à publier, donc un studio qui ne publie jamais ne voit jamais la mécanique.
+**Versions**, au pied de la barre, c'est là qu'un design system arrête d'être une cible mouvante. Publie-en une et tu obtiens une **copie permanente et nommée** conservée sur cet appareil : elle ne change plus jamais ensuite, donc un outil qui l'épingle continue de dessiner la même chose. Le panneau reste masqué tant qu'il n'y a rien à toi à publier, donc un studio qui ne publie jamais ne voit jamais les contrôles.
 
 Trois choses à savoir avant d'appuyer sur quoi que ce soit, et le panneau annonce les trois avant l'action plutôt qu'après :
 
-- **Une version est permanente.** Il n'y a pas encore de suppression, donc le panneau indique ce qui a été conservé et que ça reste conservé, plutôt que de proposer un bouton qui mentirait.
-- **Les suppressions passent en tête de la carte de compatibilité.** Un token ajouté ou modifié, c'est une info ; un token *supprimé*, c'est ce qui casse un outil, donc il est nommé en premier et appelé par son nom.
-- **Publier ne peut pas s'annuler ; restaurer, oui.** *Restore latest from this version* est une modification ordinaire de la tête, donc elle atterrit sur la pile d'annulation du studio et le panneau te propose **Undo** immédiatement.
+- **Une version est permanente.** Il n'y a pas encore de suppression, donc le panneau indique ce qui a été conservé et que ça reste conservé plutôt que de proposer un bouton qui mentirait.
+- **Les suppressions sont en tête de la carte de compatibilité.** Les tokens ajoutés et modifiés sont des nouveautés ; un token *supprimé* est ce qui casse un outil, donc il est nommé en premier et appelé par son nom.
+- **Publier ne peut pas être annulé ; restaurer, si.** *Restaurer le dernier état depuis cette version* est une modification ordinaire de la tête, donc ça atterrit sur la pile d'annulation du studio et le panneau t'offre aussitôt le bouton **Annuler**.
 
 Tu peux **Publish only**, ou **Publish and make active** - la différence étant que les outils et l'app suivent désormais cette version ou continuent de suivre ta dernière modification. **Follow the latest again** met chaque modification en ligne dès qu'elle est faite. `#/start?area=versions` ouvre le panneau directement.
 

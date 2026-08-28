@@ -21,6 +21,8 @@ The tool definitions most contributors come to edit are 12 MB of history in `com
 
 Two things a fresh clone never downloads, whatever path you take: `brands/suse` (the private SUSE brand pack, marked `update = none` - public clones fall back to the neutral `lolly-start` profile and everything still builds) and `shells/web/public/models` (the on-device AI models are untracked local staging; the app fetches them on demand at runtime).
 
+To build with the models bundled into your own `dist` instead of fetched at runtime, vendor them first with `npm run models:vendor` (~1.2 GB, opt-in - never run by install or CI). It downloads every family from its pinned upstream, verifies each file's hash before writing, and skips anything already present, so re-running only fetches what's missing (`--only=kokoro,matte` for a subset, `--list` to see the families). The files stay gitignored; nothing to commit.
+
 ---
 
 ## The full clone

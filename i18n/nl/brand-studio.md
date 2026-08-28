@@ -153,7 +153,7 @@ Koppen, code en cursief vallen elk terug op het primaire lettertype totdat je ze
 
 Het scherm opent **inline in de ruimte**, niet in een dialoogvenster, zodat de kaarten waar je vandaan kwam op het scherm blijven staan. Zoek een Google Fonts-familie (Inter, Fraunces, Space Grotesk...) of sleep een lettertypebestand erop, druk op **Toevoegen aan de vergelijking** en de kandidaten staan naast elkaar in dezelfde woorden voordat een van hen wordt geïnstalleerd. Escape annuleert en geeft het toetsenbord terug aan de kaart van waaruit je het opende.
 
-Dat is de enige deur naar binnen, en daarom komt er nooit ongezien iets in je merk terecht. Onder het scherm staan de twee beheerpanelen:
+Dat is de ene deur naar binnen, en dat is waarom niets ongezien je merk binnenkomt. Onder het podium bevinden zich de twee beheerpanelen:
 
 - **Lettertypen op dit apparaat** - elke geïnstalleerde familie, de rollen die ze vervult en een verwijderknop. **Een lettertype toevoegen** opent hier hetzelfde vergelijkingsscherm, niet afgestemd op een rol.
 - **Jouw lettertypen** - upload een **TTF**, **OTF** of **WOFF** vanaf je eigen machine. Dat is het pad voor een gelicentieerd bedrijfslettertype dat je al bezit.
@@ -211,13 +211,13 @@ Er een terugbrengen doe je via **Toevoegen vanuit... → Design tokens of een on
 
 ## Versies
 
-**Versies** onderaan de zijbalk is waar een designsysteem stopt met een bewegend doel te zijn. Publiceer er een en je krijgt een **permanente, benoemde kopie** die op dit apparaat wordt bewaard: hij verandert daarna nooit meer, dus een tool die hem vastpint blijft hetzelfde tekenen. Het paneel blijft verborgen tot er iets van jezelf te publiceren valt, dus een studio die nooit publiceert krijgt de machinerie nooit te zien.
+**Versions** onderaan de rail is waar een designsysteem stopt een bewegend doel te zijn. Publiceer er een en je krijgt een **permanente, benoemde kopie** die op dit apparaat wordt bewaard: die verandert daarna nooit meer, dus een tool die eraan vastpint blijft hetzelfde tekenen. Het paneel blijft verborgen totdat er iets van jezelf te publiceren valt, dus een studio die nooit publiceert, ziet de bediening nooit.
 
 Drie dingen om te weten voordat je ergens op drukt, en het paneel noemt alle drie voor het drukken in plaats van erna:
 
-- **Een versie is permanent.** Er is nog geen verwijderoptie, dus het paneel geeft aan wat er is bewaard en dat het bewaard blijft, in plaats van een knop aan te bieden die liegt.
-- **Verwijderingen staan bovenaan op de compatibiliteitskaart.** Toegevoegde en gewijzigde tokens zijn nieuws; een *verwijderd* token is wat een tool breekt, dus die wordt als eerste genoemd en benoemd zoals het is.
-- **Publiceren kan niet ongedaan worden gemaakt; herstellen wel.** *Nieuwste herstellen vanaf deze versie* is een gewone bewerking van de kop, dus die belandt op de undo-stack van de studio en het paneel biedt je meteen **Ongedaan maken** aan.
+- **Een versie is permanent.** Er is nog geen verwijderoptie, dus het paneel vermeldt wat er is bewaard en dat het bewaard blijft, in plaats van een knop aan te bieden die liegt.
+- **Verwijderingen staan bovenaan de compatibiliteitskaart.** Toegevoegde en gewijzigde tokens zijn nieuws; een *verwijderd* token is wat een tool breekt, dus dat wordt als eerste genoemd en bij naam genoemd.
+- **Publiceren kan niet ongedaan worden gemaakt; herstellen wel.** *Restore latest from this version* is een gewone bewerking op de head, dus die komt op de undo-stack van de studio terecht en het paneel biedt je meteen **Undo** aan.
 
 Je kunt **Alleen publiceren**, of **Publiceren en actief maken** - het verschil is of tools en de app vanaf nu die versie volgen of je laatste bewerking blijven volgen. **Weer de nieuwste volgen** zet elke bewerking live zodra hij gemaakt is. `#/start?area=versions` opent het paneel direct.
 

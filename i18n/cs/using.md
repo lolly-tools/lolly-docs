@@ -12,7 +12,7 @@ Domovská obrazovka je **galerie** - všechny nástroje, seskupené podle katego
 
 Každý nástroj je rozdělené zobrazení: na jedné straně **ovládací prvky**, na druhé živý **náhled** (plátno). Změň libovolný ovládací prvek a náhled se okamžitě aktualizuje.
 
-![Rozdělené zobrazení nástroje - vlevo sloupec ovládacích prvků, vpravo živý skupinový sloupcový graf, který nástroj kreslí](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
+![Rozdělené zobrazení nástroje - sada ovládacích prvků vlevo a živě vykreslovaný skupinový sloupcový graf vpravo](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
 
 > Několik nástrojů (jako **Design**) se místo toho otevře jako **volné plátno** - plocha bez rozhraní pro přímou manipulaci, kde přetahuješ, měníš velikost, otáčíš a přichytáváš boxy s textem, tvary a obrázky a dvojklikem upravuješ text přímo na místě. Exportuje se stejnou vykreslovací cestou jako každý jiný nástroj, takže plátno *je* soubor. Viz [Volné plátno](#the-free-canvas-design) níže.
 
@@ -167,7 +167,7 @@ Vyber klip a inspektor ti nabídne tytéž úpravy jako čísla: **Délka**, **O
 
 Pár mezí, na které je dobré myslet: sekvence je omezená na jednu hodinu, GIF a animované PNG si snímky drží v paměti, takže zůstávají krátké, zvuk je u klipu s jinou rychlostí než ×1 tichý (časové roztažení zatím není) a **Nahrávat naživo** je tady skryté, protože kompozitor je lepší cesta.
 
-**Za hranicí předvoleb: klíčové snímky, hloubka a kamera.** Přechod animuje klip, když přichází a odchází. Když chceš box naaranžovat *uvnitř* klipu - nechat ho plout, zeslabit ho, rozostřit ho, zvednout ho ze stránky a zase usadit - přidej klíčové snímky: vyber klip, stiskni **+Klíčový snímek** (kosočtverec ve skupině nástrojů časové osy, kosočtverec na liště objektu na plátně nebo `K`) a poloha přehrávací hlavy rozhodne, kterou pózu tvoje další úprava zapíše. Stejný mechanismus dává každé časované kompozici **kameru**, která najíždí, přejíždí a přeostřuje, a mění jedno ploché SVG ve stoh vrstev, mezi kterými se dá prolétávat. **[Animace](/info/animating.html)** je kompletní průvodce.
+**Za hranicí přednastavení: klíčové snímky, hloubka a kamera.** Přechod animuje klip ve chvíli, kdy se objevuje a mizí. Abys pozicoval prvek *uvnitř* klipu - posunul ho, prolnul, rozmazal, zvedl ho nad stránku a zase usadil - přidej klíčové snímky: vyber klip, stiskni **+Keyframe** (kosočtverec v klastru nástrojů na časové ose, kosočtverec na liště objektu na plátně nebo `K`) a pozice přehrávací hlavy určí, jakou pozici zapíše tvoje další úprava. Stejný systém klíčových snímků dává každé časované kompozici **kameru**, která najíždí, panoramuje a mění ostření a mění jeden plochý SVG na hromadu vrstev, mezi kterými můžeš prolétat. **[Animace](/info/animating.html)** je kompletní návod.
 
 Nástroj Design má stejnou časovou osu, takže rozložení můžeš načasovat, aniž bys musel/a přecházet do jiného nástroje, a exportuje pohyb také.
 
@@ -180,7 +180,7 @@ Dokument v Designu složený z **kresebných ploch** je už hotová prezentace. 
 - **Kroky odhalení.** Klikni na box pravým tlačítkem a vyber **Odhalit v kroku 1**, **2** nebo **3** místo výchozího **Vždy viditelné**. Ten box pak počká, dokud se na jeho krok nedostaneš, takže snímek může přicházet po částech; boxy se stejným číslem přijdou společně.
 - **Zobrazení pro řečníka** (`S`) otevře druhé okno s aktuálním snímkem, tím následujícím, tvými poznámkami k němu a běžícími hodinami. Když prohlížeč vyskakovací okno zablokuje, zobrazí se místo něj panel přes prezentaci. Poznámky se nastavují u každé kresebné plochy a na samotném snímku se nikdy neobjeví.
 - `B` podrží černou obrazovku (jakákoli klávesa snímek vrátí), `F` se vrátí na celou obrazovku a **Escape** loupe po jedné vrstvě: z přehledu zpět do prezentace, z prezentace zpět do editoru.
-- **Kiosek.** Dej kresebné ploše **Délku** a prezentace se tam na tu dobu zastaví, pak se pod tenkým ukazatelem průběhu posune sama; `K` (nebo tlačítko pauzy, které se objeví, teprve když má něco délku) to zastaví a zase spustí. Přidej do odkazu `loop` a prezentace se na konci zacyklí, což z ní dělá informační panel.
+- **Kiosek.** Dej kresebné ploše **Délku** a prezentace se tam na tu dobu zastaví, pak se pod tenkým ukazatelem průběhu posune sama; `K` (nebo tlačítko pauzy, které se objeví, teprve když má něco délku) to zastaví a zase spustí. Přidej do odkazu `kiosk` a prezentace se na konci zacyklí, což z ní dělá informační panel.
 
 Prezentace je zároveň odkaz. `?present` ji rovnou otevře, `s=` pojmenuje snímek - pozici, id kresebné plochy nebo `id.step` pro krok odhalení - a adresa se při přesunu aktualizuje, takže posíláš přesně ten snímek, na kterém jsi. Autoři nástrojů: tyhle parametry jsou popsané na stránce [Režim URL](/info/url-mode.html#reserved-parameters).
 
@@ -210,7 +210,7 @@ Nástroje zpřístupňují jen ty vstupy, které se mají měnit - všechno osta
 - **Dokud je kurzor v textovém poli**, patří Cmd/Ctrl-Z samotnému poli, znak po znaku. Lolly přebírá řízení u ovládacích prvků, které vlastní použitelné vracení nemají: u posuvníků, rozbalovacích nabídek, barev a přepínačů.
 - **Výběr souboru** ve vstupu typu **soubor** není krok - ty bajty se drží jen po dobu relace, takže by nebylo co vracet.
 
-Při živé [spolupráci](/info/collaborate.html) zůstává historie jen tvoje. Změna, která přijde z druhého zařízení, se do tvého zásobníku nikdy nedostane, takže vrácení zpět může vzít zpátky jenom to, co jsi udělal/a ty.
+Při živé [spolupráci](/info/collaborate.html) zůstává historie jen tvoje. Změna přicházející z druhého zařízení se nikdy nedostane na tvůj zásobník, takže zpět můžeš vzít jen to, co jsi udělal ty sám.
 
 ## Tvoje údaje a fotka
 
@@ -266,10 +266,10 @@ alt text names them - do not re-caption this as "the sort menu".
 
 > Jedna past na popisky: **Zobrazit relace** existuje, jen když je něco *vybrané*. Kliknutí pravým tlačítkem na jednu nevybranou kartu místo toho nabídne **N uložených relací**, což otevře vlastní dialog historie daného nástroje, místo aby přešlo do Projektů.
 
-![Dvě zaškrtnuté karty nástrojů v galerii Nástroje s plovoucí lištou výběru, na které je 2 vybrané a nabídky Dostupné offline, Zobrazit relace, Oblíbené a Skrýt](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
+![Dvě zaškrtnuté karty nástrojů v galerii Tools, s plovoucí lištou výběru zobrazující 2 selected a nabízející Available offline, View sessions, Favourite a Hide](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
 <!--
 SHOT NOTE (misc-bulkbar-gallery): drive targets `[data-select="qr-code"]` /
-`[data-select="d3"]` - the `.tile-check[data-select="<ref>"]` checkbox button
+`[data-select="gradient"]` - the `.tile-check[data-select="<ref>"]` checkbox button
 confirmed directly in views/gallery.ts's card markup (the same attribute
 cardMarkup gives every tile), so these two clicks tick both cards without
 opening either tool.
@@ -291,14 +291,16 @@ Návrh jde ven jednou ze dvou cest: jako odkaz, nebo jako soubor. Dialog Sdílet
 
 ### Odkaz
 
-![Jump Page in the editor - the heading, three link scenes each with its own wash and a Made with Lolly footer, laid out as one page in the canvas](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
-
 Každý vstup je zachycený v URL adrese stránky, takže odkaz *je* návrh. Nahoře v dialogu je odkaz připravený ke zkopírování a pod ním dvě sbalené sekce.
 
 - **Možnosti odkazu** obsahují **Nejkratší odkaz** (velký návrh dělá dlouhou URL, takže tohle sbalí celý stav do kompaktního tokenu a ukáže ti úsporu ve znacích; čitelná podoba je tam vždycky taky), **Chránit tento odkaz heslem** (AES-256 přes celý odkaz, heslo v něm nikdy není) a **Připnout tuto verzi nástroje** - příznak `_v`, který odkaz přibije k verzi nástroje, na kterou se právě díváš, aby pozdější aktualizace nemohla změnit, co vykreslí.
 - **Chování odkazu** je to, co se stane, když ho příjemce otevře: celá obrazovka, rovnou rozbalený panel exportu, stažení při otevření pomocí `&export` nebo zkopírování do schránky pomocí `&copy`.
 
 Pošli odkaz kolegovi, přidej si ho do záložek nebo ho commitni. (Plné detaily: [Režim URL](/info/url-mode.html).)
+
+**Některé nástroje udělají z odkazu celý produkt.** Jump Page shromáždí tvoje odkazy na jednu stránku k rozdání - odkaz na bio, konferenční přednášku, výlohu obchodu. Není co hostovat a nestojí za tím žádný účet: stránka je odkaz, takže se otevře tak rychle, jak cestuje URL adresa. V editoru vidíš hotovou stránku vedle polí; návštěvník, který odkaz otevře, ji dostane na celou šířku, jeden odkaz na scénu, jak scrolluje.
+
+![Jump Page v editoru - nadpis, tři scény odkazů, každá s vlastní barevnou podmalbou, a patička Made with Lolly, uspořádané jako jedna stránka na plátně](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
 
 **Dialog říká, co odkaz unést nedokáže.** Do URL se nevejdou tři věci: obrázek nebo soubor, který jsi přidal/a z tohoto zařízení, hodně dlouhá textová hodnota nebo hodně velký seznam. Každá z nich se při stavbě odkazu spočítá. Pokud se něco muselo vypustit, dialog to pojmenuje a nasměruje tě na soubor níže, místo aby ti podal odkaz, který se otevře bez obrázku. Odkaz, který je jen *dlouhý*, dostane mírnější poznámku s počtem znaků, protože délku ještě může zachránit sbalení.
 
@@ -314,7 +316,7 @@ Tři věci jsou před odesláním na tobě:
 - **Zda tam jde licencovaný obsah.** Licencované a značkou uzamčené assety se ve výchozím stavu zadrží. Pokud design nějaké používá, dialog uvede kolik a nabídne dvě tlačítka - *Download without them* nebo *Include and download* - protože jejich zahrnutí předá skutečné soubory komukoli, kdo `.lolly` otevře.
 - **Zda tam jde nástroj.** **Include the tool** zabalí vlastní soubory nástroje spolu s designem, aby se otevřel i na zařízení, které ten nástroj nemá. U vlastního nástroje - forku nebo soukromého značkového nástroje, který tvůj příjemce pravděpodobně nemá - přijde zaškrtnuté, u nástroje uvedeného v podepsaném katalogu nezaškrtnuté, protože jeho kopie pochází ze stejného zdroje. (Na sestavení bez podepsaného katalogu se každý nástroj počítá jako vlastní a políčko začíná zaškrtnuté.)
 
-**Otevření.** Přetáhni `.lolly` na aplikaci: assety přistanou v tvojí knihovně, relace v Projektech a nástroj se na ní otevře. Nic tvého se nepřepíše: relace přijde jako nový uložený slot a asset, který na zařízení už je, se porovná kontrolním součtem a použije znovu, místo aby se zdvojil. Každá část se na cestě dovnitř kontroluje proti vlastním kontrolním součtům souboru, takže kopie poškozená při přenosu se odmítne, místo aby se naimportovala napůl.
+**Otevření souboru.** Přetáhni soubor `.lolly` na appku: zdroje se dostanou do tvé knihovny, relace do Projects a nástroj se na ní otevře. Nic tvého se nepřepíše: relace se objeví jako nový uložený slot, zatímco zdroj, který už na tomto zařízení je, se spáruje podle kontrolního součtu a znovu použije místo duplikování. Každá část se při importu ověřuje proti vlastním kontrolním součtům souboru, takže kopie poškozená při přenosu je odmítnuta místo napůl importována.
 
 Pokud soubor nese nástroj, který nemáš, Lolly se zeptá dřív, než ten nástroj může běžet: **Důvěřovat tomuto nástroji?** ho pojmenuje i s jeho autorem a rovnou řekne, že jeho otevřením poběží na tvém zařízení kód toho nástroje, a **Důvěřovat a nainstalovat** je cesta dál. Odmítni a sdílená práce se do tvých projektů uloží tak jako tak a počká tam na den, kdy si nástroj přidáš. (Jeden druh nástroje zatím načíst nejde - takový, jehož kód přichází jako modul - a odmítne se stejným způsobem.)
 
@@ -334,10 +336,10 @@ Když ti nástroj umožní přidat obrázek z tvého zařízení, zůstane přes
 
 ![Katalog - assety značky, vzorky a písma plus tvoje vlastní nahrané soubory](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=2400&css=.plat-swatch-grid~%2A%7Bdisplay%3Anone%7D&walker=1&format=svg&localize=1&dark=1&filename=catalogue)
 
-- <!--i:upload--> **Přines si svoje soubory.** Přetáhni jakýkoli obrázek, SVG, zvukový klip, video, Lottie, PDF nebo prezentaci PowerPoint do plochy pro nahrání - nebo klikni a vyber - a okamžitě to přistane ve tvém katalogu, připravené v každém výběru assetů v každém nástroji. Vícestránkové PDF nebo `.pptx` se zeptá, které stránky nebo snímky ponechat - z každého se stane asset SVG. Ingestuj, kolik chceš; nikdy to neopustí tvé zařízení.
-- <!--i:star--> **Ohvězdičkuj to, po čem saháš.** ★ asset (nebo vzorník barvy značky) a připne se nahoru v každém výběru, takže tvé oblíbené logo nebo barva je jeden klik daleko.
-- <!--i:folder--> **Ukliď.** Přeřaď asset do jiné skupiny, skryj sdílený asset značky, který nepoužíváš (pomocí **Show hidden** ho vrátíš zpět), nebo úplně smaž vlastní nahrávky. Stejné gesto vícenásobného výběru a plovoucí panel akcí jako u Projektů fungují i tady, takže to všechno lze udělat i najednou pro celý výběr.
-- <!--i:layers--> **Odděl video od pozadí.** Otevři detail videa nebo klikni pravým na jeho kartu v kterémkoli výběru assetů a zvol **Remove background…**, čímž uložíš průhlednou alternativu - animovaný WebP nebo PNG se skutečnou alfou. Vyber **Method**: **On-device model** vyřízne subjekt z rušné scény, nebo **Colour key** vyklíčuje rovnoměrně nasvícené, plošné pozadí jako zelené plátno nebo obyčejnou zeď, s **Tolerance**, **Softness** a **Spill removal** pro doladění hrany. Barevný klíč nepotřebuje stahování modelu ani síť, takže **Remove background** je nabízeno u každého videa a bývá čistší na upraveném záběru. Ovládací prvek **Resolution** (360, 480, 720 nebo 1080p, nikdy nad zdroj) mění detail za menší, rychlejší soubor. Běží jako úloha na pozadí na tvém zařízení. Hotový výřez přistane vedle originálu jako vlastní asset a Content Credential zdrojového videa jede s ním jako ingredience. (Proč zůstává odstranění pozadí obyčejnou úpravou, viz [Vygenerováno jednou, vykresleno stejně](/info/ai-features.html).)
+- <!--i:upload--> **Vnes svoje soubory dovnitř.** Přetáhni jakýkoli obrázek, SVG, zvukový klip, video, Lottie, PDF nebo prezentaci PowerPoint na plochu pro nahrávání - nebo klikni a vyber - a okamžitě se objeví v tvém katalogu, připravený ve výběru zdrojů každého nástroje. Vícestránkový PDF nebo soubor `.pptx` se zeptá, které stránky nebo snímky zachovat - z každého se stane samostatný zdroj SVG. Nahrávej, kolik chceš; nikdy to neopustí tvoje zařízení.
+- <!--i:star--> **Označ hvězdičkou to, po čem saháš.** Označ hvězdičkou ★ zdroj (nebo vzorník barvy značky) a připne se navrch každého výběru, takže tvoje oblíbené logo nebo barva jsou na jedno kliknutí.
+- <!--i:folder--> **Udělej si pořádek.** Přeřaď zdroj do jiné skupiny, skryj sdílený zdroj značky, který nepoužíváš (s možností **Show hidden** ho vrátit zpět) nebo úplně smaž vlastní nahrané soubory. Stejné gesto vícenásobného výběru a plovoucí lišta akcí jako v Projects fungují i tady, takže cokoli z toho lze udělat na celý výběr najednou.
+- <!--i:layers--> **Odstraň pozadí z videa.** Otevři detail videa nebo klikni pravým tlačítkem na jeho kartu v libovolném výběru zdrojů a zvol **Remove background…**, aby se uložila průhledná alternativa - animovaný WebP nebo PNG se skutečnou alfou. Vyber **Method**: **On-device model** vyřízne objekt z rušné scény, nebo **Colour key** odstraní rovnoměrně nasvícené, jednolité pozadí jako green screen nebo obyčejnou stěnu, s doladěním hrany pomocí **Tolerance**, **Softness** a **Spill removal**. Barevný klíč nevyžaduje stažení modelu ani síť, takže **Remove background** je nabízeno u každého videa a na uklizeném záběru bývá čistší. Ovládání **Resolution** (360, 480, 720 nebo 1080p, nikdy nad rámec zdroje) mění detail za menší, rychlejší soubor. Běží jako úloha na pozadí na tvém zařízení. Hotový výřez se ukládá vedle originálu jako vlastní zdroj a Content Credential zdrojového videa jede s ním jako přísada. (Viz [Vygenerováno jednou, vykresleno stejně](/info/ai-features.html), proč odstranění pozadí zůstává obyčejnou úpravou.)
 
 ### Vezmi si svou paletu a písma kamkoli
 
@@ -395,13 +397,13 @@ Kompletní příběh najdeš v **[Export a formáty](/info/exporting.html)** - v
 
 Pro pokročilé uživatele **Dávkové zpracování** (odkaz z galerie, uzamčené za feature flagem Pro, který je ve výchozím stavu zapnutý) vykreslí spoustu variant najednou - mřížku, kde je každý řádek sadou vstupů, exportovaných dohromady. Ideální pro lokalizaci karty do desítky jazyků nebo pro vygenerování každé velikostní varianty na jeden zátah. Řádky vyplníš psaním, vložením přímo z tabulkového procesoru nebo importem CSV (jedno si můžeš i exportovat zpátky) a pro každý řádek nastavíš formát, velikost a název výstupního souboru. Celou mřížku ulož jako pojmenovanou **dávkovou relaci**, která se znovu otevře z galerie, a stáhni každý řádek jako jeden `.zip`.
 
-![Lišta dávkového zpracování - název zipu, jednotky, DPI a formát, který dědí každý řádek, vpravo Relace a Vykreslit](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
+![Panel nástrojů dávkového režimu - název zipu, jednotky, DPI a formát, který dědí každý řádek, se Sessions a Render vpravo](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
 
 Dávkové zpracování slouží k vygenerování **mnoha variant jedné šablony** najednou. Pro opětovné vykreslení relací, které jsi **už uložil/a**, použij **Projekty → Vykreslit složku / Vykreslit výběr** (výše) - Pro k tomu není potřeba.
 
 ## Úpravy vedle sebe (Hromadné úpravy)
 
-Dávkové zpracování je mnoho variant *jednoho* návrhu. **Hromadné úpravy** jsou druhá půlka práce: několik **různých** uložených návrhů otevřených naráz, takže jedna změna dopadne na všechny. Zaškrtni v **Projektech** **dvě až osm** uložených relací a vyber z lišty výběru **Upravit společně**; otevřou se jako živé karty vedle sebe na `#/multi?s=<slot>,<slot>…`. Každá karta je skutečné vykreslení té relace, ne uložený náhled, takže co vidíš, to se vyexportuje.
+Batch je mnoho variant *jednoho* návrhu. **Multi-edit** je druhá polovina úkolu: několik **různých** uložených návrhů otevřených najednou, takže jedna změna platí pro všechny. Zaškrtni **dva až osm** uložených relací v **Projects** a z lišty výběru zvol **Edit together**; otevřou se jako živé karty vedle sebe na adrese `#/multi?s=<slot>,<slot>…`. Každá karta je skutečný render dané relace, ne uložená miniatura, takže to, co vidíš, je to, co se exportuje.
 
 Všechno řídí jeden postranní panel:
 
@@ -418,3 +420,5 @@ Když je výběr větší než osm, míchá nástroje nebo obsahuje kromě relac
 ## Offline a instalace
 
 Lolly je PWA. Po prvním načtení funguje **offline** - nainstaluj si ji z adresního řádku prohlížeče (nebo přes *Add to Home Screen* na mobilu) pro zážitek podobný aplikaci, na celou obrazovku. Aktualizuje se sama, jakmile jsi znovu online.
+
+K aktualizacím: pokud se zobrazení někdy nenačte hned po jedné z nich (prázdný panel, \"failed to fetch\" v rohu), načti stránku znovu jednou - appka čistě přejde na novou verzi a tvoje práce, relace a značka zůstanou nedotčené. Všechno ukládá na tvém zařízení, ne na stránce.

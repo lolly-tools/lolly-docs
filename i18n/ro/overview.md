@@ -66,7 +66,7 @@ Cel mai clar mod de a vedea ce este Lolly nu e o listă de funcții - e să urm�
 
 „Diagrama nouă” din pasul doi este o randare precum aceasta, produsă dintr-un șir de date și câțiva parametri, fără ca nimeni să deschidă un fișier de design:
 
-![O diagramă de arie stivuită cu titlu, cele trei serii în benzi dintr-o paletă rece, cu axe, legendă și titlu poziționate toate de șablon, nu manual](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![Un grafic de arie stivuit cu titlu, ale cărui trei serii sunt colorate într-o paletă rece, cu axe, legendă și titlu plasate toate de șablon, nu manual](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 Ideea nu este că Lolly e bun pentru designeri *și* bun pentru dezvoltatori *și* bun pentru vânzări, fiecare izolat. Este o **cursă de ștafetă**: munca inițială a celui din echipa creativă este scalată de dezvoltator, care la rândul lui capacitează producătorul. Experiența fără efort pentru reprezentantul netehnic din avion este posibilă *doar* datorită rigorii stabilite de designer și implementate de dezvoltator.
 
@@ -84,7 +84,7 @@ Aceeași unealtă determinist atinge acea scară în trei moduri, toate producâ
 - <!--i:code--> **Un dezvoltator, din linia de comandă.** CLI rulează *același* motor și *aceeași* cale de randare fără interfață grafică, astfel încât unealta poate fi secvențiată peste toate cele 10.000 de rânduri într-un script sau un pipeline nocturn. Un apel `lolly <tool> --field=…` într-o buclă e toată integrarea.
 - <!--i:cpu--> **Un sistem sau un agent AI, prin MCP.** Aceeași unealtă operată programatic, la aceeași fidelitate și la o scară chiar mai mare - pentru că o mașină nu se plictisește în timp ce mii de fișiere continuă să sosească.
 
-![Modul batch pe o instalare nouă: un rând gol care așteaptă o unealtă, cu întreaga suprafață de tip foaie de calcul și butonul ei Render deja în loc, înainte să sosească vreun date](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+![Modul Batch la o instalare nouă: un rând gol care așteaptă un instrument, cu întreaga suprafață a foii de calcul și butonul ei Render deja la locul lor, înainte de sosirea oricăror date](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
 
 Un singur set de constrângeri de brand, fixat o dată de un designer; trei rute către rezultatul identic pre-aprobat - iar ruta automată scalează cel mai departe dintre toate, pentru că nu obosește niciodată cât timp fișierele continuă să sosească.
 
@@ -249,7 +249,7 @@ Shell-ul web este responsive dintr-un singur layout. Pe desktop, o unealtă este
 
 Același instrument la lățime de telefon, fără un al doilea layout de întreținut: controalele devin o foaie (sheet) în partea de sus, previzualizarea ocupă tot ecranul, iar pastila de randare plutește deasupra.
 
-![O audiogramă pe un ecran lat de 430px - foaia de controale deasupra, imaginea pătrată finalizată dedesubt și pastila de randare plutitoare](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![O audiogramă pe un ecran lat de 430 px - fișa de comenzi deasupra, grafica pătrată finalizată dedesubt și pastila plutitoare de randare](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **Modul batch (`/pro`).** Shell-ul web include și o grilă batch în stil foaie de calcul (`shells/web/src/pro/`) care randează multe rânduri deodată, pe unul sau mai multe instrumente. Face round-trip CSV/TSV plus lipire din foaia de calcul, template/format/dimensiune/unitate/dpi per rând, un panou lateral editor de blocuri cu previzualizare live, coloane de export pliabile, o bară de etichete "relevanță" per rând, reordonare de rânduri prin mâner de tragere în stânga, confirmare de ștergere în doi pași, sesiuni batch salvate și descărcare `.zip`. Aceasta este suprafața one-to-many din spatele poziționării "generare de conținut în masă".
 
@@ -286,10 +286,10 @@ Rândurile sunt listate în ordinea secțiunilor din galerie. Secțiunea `utilit
 | Categorie | Exemple | Planificat |
 |---|---|---|
 | `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
-| `designer` | Brand Lockup, Design, Chart Creator, D3 Chart Studio, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `designer` | Brand Lockup, Design, Chart, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Unit/format converters, more on-device privacy utilities |
+| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Convertoare de unități/formate, mai multe utilitare de confidențialitate pe dispozitiv |
 
 Acele celule sunt **exemple, nu inventare**. Ce instrumente există este o proprietate a profilului pe care l-ai montat, nu a acestei pagini: un pachet de brand își adaugă propriile instrumente și poate exclude un instrument din community pe care preferă să nu-l livreze. `catalog/tools/index.json` - generat din manifeste, și registrul pe care galeria îl citește efectiv - este lista autoritară; pentru a număra ce montează un profil, numără manifestele (`ls community/*/tool.json brands/*/tools/*/tool.json`) în loc să te bazezi pe un număr scris aici. (Un id de instrument prezent în două pachete se montează o singură dată, din pachetul câștigător.)
 
@@ -344,14 +344,14 @@ Suprafețele opționale, aditive apar doar când un shell le furnizează. Unele 
 
 Câteva suprafețe principale, ca să arate ce acoperă - [Host API](/info/host-api.html) le documentează pe fiecare, iar `packages/core/src/host-v1.ts` este chiar contractul:
 
-| Suprafață | De la | Ce adaugă |
+| Interfață | Din versiunea | Ce adaugă |
 |---|---|---|
-| `host.tokens` | 1.0 | Token-uri de design DTCG - primitivele proprii ale brandului |
-| `host.text` | 1.0 | Text-to-path prin HarfBuzz WASM (capabilitatea `wasm` marchează instrumentele care depind de ea) |
-| `host.media` | 1.4 | Cadre live de la cameră care alimentează hook-ul `onFrame`. Îmbunătățire progresivă, în mod deliberat *nu* condiționată de flag-ul `camera` - un astfel de instrument funcționează în continuare ca un instrument obișnuit pentru imagini statice |
-| `host.color` | 1.40 | Matematică perceptuală a culorii: ΔEOK, contrast WCAG + APCA, rampe OKLab, praguri de clasă, palete categoriale, scheme de armonie (1.60), amestecare CSS Color 4 și generare de gradient (1.68). Pură și sincronă - shell-urile atașează `makeColorApi()` al engine-ului în loc să implementeze ceva, astfel încât nu poate să deraieze |
-| `host.images` | 1.60 | Decodează / redimensionează / recodează byte-i on-device - calea de conversie (HEIC → JPEG, comprimare la WebP, micșorare). Livrat în shell-ul web ca o fațadă leneșă, astfel încât decodorul HEIC nu ajunge niciodată în chunk-ul de boot |
-| `host.geom` | 1.64 | Geometrie vectorială exactă: operații booleene pe path-uri, offsetting, stroke-to-fill, coborâre de spline, simplificare, hit testing. De asemenea pură, sincronă și atașată din engine (`makeGeomApi()`); eșecurile sunt *returnate*, niciodată aruncate |
+| `host.tokens` | 1.0 | Tokenuri de design DTCG - primitivele proprii ale brandului |
+| `host.text` | 1.0 | Conversie text-în-cale via HarfBuzz WASM (flagul de capabilitate `wasm` marchează instrumentele care depind de el) |
+| `host.media` | 1.4 | Cadre live de la cameră care alimentează hook-ul `onFrame`. Îmbunătățire progresivă, în mod deliberat *ne*condiționată de flagul `camera` - un astfel de instrument funcționează în continuare ca un instrument obișnuit pentru imagini statice |
+| `host.color` | 1.40 | Matematică perceptuală a culorii: ΔEOK, contrast WCAG + APCA, rampe OKLab, praguri de clasă, palete categoriale, scheme de armonie (1.60), amestecare CSS Color 4 și coacerea gradientelor (1.68). Pur și sincron - shell-urile atașează `makeColorApi()` al motorului în loc să implementeze ceva, astfel încât nu poate devia |
+| `host.images` | 1.60 | Decodare / redimensionare / recodare de bytes pe dispozitiv - calea de conversie (HEIC → JPEG, comprimare în WebP, micșorare). Livrat în shell-ul web ca o fațadă leneșă, astfel încât decodorul HEIC nu ajunge niciodată în pachetul de pornire |
+| `host.geom` | 1.64 | Geometrie vectorială exactă: operații booleene pe căi, offsetare, conversie contur-în-umplere, coborâre de spline-uri, simplificare, testare de coliziune. De asemenea pur, sincron și atașat din motor (`makeGeomApi()`); erorile sunt *returnate*, niciodată aruncate |
 
 Restul urmează aceleași reguli și sunt documentate alături de ele: `pdf` (1.8) și `pptx` (1.58) pentru chirurgie de documente on-device, `audio` (1.71) și `speech` (1.96) pentru analiza clipurilor și TTS/transcriere on-device, `viz` (1.72) pentru contractul placeholder MilkDrop, `codec` (1.100) și `layers` (1.102) pentru ieșire bitmap pe biți adânci și stratificată, `upscale` (1.101) și `matte` (1.103) pentru modelele on-device, `raster` (1.105) pentru hook-uri care își fac propria muncă de pixeli, `connectors` (1.106) pentru săgeți sigure la export și `c2pa` (1.85) pentru semnarea byte-ilor finali. Numărul crește; regulile nu.
 

@@ -1,10 +1,10 @@
 
 # Lolly - Landingspaginatekst
 
-Jij maakt het, jij houdt het: afgewerkte bestanden in seconden, op je eigen apparaat.
-Kies een tool, vul je tekst in, en het klopt meteen: kleuren, lettertypes en opmaak zijn al geregeld.
-Identiek waar je dat wilt, anders waar je dat wilt.
-Gratis, en het blijft gratis: geen account, geen creditcard, geen addertje.
+Bestanden van studiokwaliteit in seconden, op je eigen apparaat.
+
+Identiek wanneer je dat wilt, anders wanneer je dat nodig hebt.
+Gratis & open source: geen account, geen kaart, geen addertje onder het gras.
 
 
 ---
@@ -55,10 +55,10 @@ Bouw je info-redactionele stijl één keer op en genereer daarna assets van publ
 
 Niet alles is marketing. Vrachtlabels, badgeoplages, compliance-onepagers, incidentmeldingen - output waarbij de opmaak de betekenis draagt en de data niet fout mag zijn. Lolly behandelt een vrachtlabel met dezelfde nauwkeurigheid als een campagneposter.
 
-- **Gestructureerde data erin, exacte output eruit.** Voer een CSV- of JSON-tabel in en elk veld belandt precies waar de template het verwacht - één afgewerkt bestand per rij.
-- **Fysieke precisie.** Echte eenheden (mm/cm/in/pt), echte DPI, afloop en snijtekens. Een labelprinter of een drukkerij krijgt precies wat nodig is.
-- **De logica draait in de tool.** Barcodes, datumberekeningen, voorwaardelijke opmaak, contrastcontroles - berekend bij het renderen, niet met de hand.
-- **Deterministisch van opzet.** Dezelfde invoer, hetzelfde bestand, elke keer. Controleerbaar, herhaalbaar en te automatiseren vanaf de CLI of in een pipeline.
+- **Gestructureerde data erin, exacte output.** Voer een CSV- of JSON-tabel in en elk veld komt precies terecht waar het sjabloon het verwacht - één afgewerkt bestand per rij.
+- **Fysieke precisie.** Echte eenheden (mm/cm/in/pt), echte DPI, afloop en snijlijnen. Een labelprinter of drukkerij krijgt precies wat hij nodig heeft.
+- **Logica draait binnen de tool.** Barcodes, datumberekeningen, voorwaardelijke lay-outs, contrastcontroles - berekend op het moment van renderen, niet met de hand.
+- **Deterministisch door ontwerp.** Dezelfde invoer, hetzelfde bestand, elke keer weer. Controleerbaar, herhaalbaar, automatiseerbaar vanaf de CLI of een pipeline.
 
 ---
 
@@ -82,11 +82,11 @@ Je ontwerpt systemen en lost problemen op, geen eenmalige klussen. Lolly is de u
 
 Afbeeldingen zijn buildartefacten. Behandel ze zo. Lolly draait vanaf de CLI, zodat je assets net zo genereert als al het andere - herhaalbaar, automatisch en als onderdeel van je workflow.
 
-- **Zet het model in bij de schets, niet bij de drukpers.** Media van drukkwaliteit genereren met een prompt is duur en komt in de buurt in plaats van precies goed. Een tool maakt elke keer hetzelfde bestand, voor niets.
-- **Reproduceerbare output.** Dezelfde invoer levert elke keer hetzelfde bestand op. Commit een URL en genereer opnieuw wanneer je wilt - geen afbeeldingen meer inchecken of de nieuwste versie achterna zitten in Slack.
-- **Haal media uit je codebase.** Genereer OG-afbeeldingen, QR-codes, socialkaarten en datavisualisaties tijdens de build in plaats van binaries in Git te bewaren.
-- **Voer logica uit binnen assets.** Met tools als Code Canvas en Chart Creator plaats je echte inhoud - codefragmenten, gestructureerde data, live waarden - in templates van productiekwaliteit, zonder zelf een renderer te bouwen.
-- **Nul lock-in.** Open source engine, lokale rekenkracht, geen API-sleutels, geen rate limits.
+- **Zet het model in op de schets, niet op de drukpers.** Media van drukkwaliteit genereren via een prompt is kostbaar en komt dichtbij in plaats van precies goed uit te komen. Een tool maakt elke keer hetzelfde bestand, voor niets.
+- **Reproduceerbare output.** Dezelfde invoer levert elke keer hetzelfde bestand op. Commit een URL, regenereer op aanvraag - geen afbeeldingen meer inchecken of de laatste versie via Slack achternalopen.
+- **Haal media uit je codebase.** Genereer OG-afbeeldingen, QR-codes, social cards en datavisuals op het moment van bouwen, in plaats van binaries op te slaan in Git.
+- **Voer logica uit binnen assets.** Met tools als Code Canvas en Chart Creator plaats je echte content - codefragmenten, gestructureerde data, live waarden - binnen sjablonen van productiekwaliteit, zonder een eigen renderer te bouwen.
+- **Geen lock-in.** Open source engine, lokale verwerking, geen API-sleutels, geen ratelimieten.
 
 ```bash
 lolly qr-code --url=https://suse.com --output=og-qr.svg

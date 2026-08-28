@@ -66,7 +66,7 @@ Cách rõ ràng nhất để thấy Lolly là gì không phải là một danh s
 
 "Biểu đồ mới" ở bước hai là một bản kết xuất như thế này, được tạo ra từ một chuỗi dữ liệu và vài tham số mà không ai mở file thiết kế:
 
-![Một biểu đồ vùng xếp chồng có tiêu đề, ba chuỗi dữ liệu được dải màu theo bảng màu lạnh với trục, chú giải và tiêu đề đều do template đặt chứ không phải làm thủ công](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![Một biểu đồ vùng xếp chồng có tiêu đề, ba chuỗi dữ liệu của nó được tô theo dải màu lạnh, với trục, chú giải và tiêu đề đều được đặt bởi mẫu (template) chứ không phải thủ công](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 Điểm mấu chốt không phải là Lolly tốt cho nhà thiết kế *và* tốt cho nhà phát triển *và* tốt cho bán hàng, mỗi thứ trong khoảng chân không riêng. Đó là một **cuộc chạy tiếp sức**: công việc ban đầu của người sáng tạo được nhà phát triển mở rộng, từ đó trao quyền cho nhà sản xuất. Trải nghiệm không tốn công cho đại diện phi kỹ thuật trên máy bay chỉ *khả thi* nhờ vào sự nghiêm ngặt mà nhà thiết kế đặt ra và nhà phát triển triển khai.
 
@@ -84,7 +84,7 @@ Cùng một công cụ tất định đạt tới quy mô đó theo ba cách, t�
 - <!--i:code--> **Một nhà phát triển, từ dòng lệnh.** CLI chạy *cùng* engine và *cùng* đường kết xuất không giao diện, nên công cụ có thể được xếp chuỗi chạy qua toàn bộ 10.000 hàng trong một script hay một pipeline chạy đêm. Một lệnh gọi `lolly <tool> --field=…` trong một vòng lặp là toàn bộ tích hợp.
 - <!--i:cpu--> **Một hệ thống hoặc một tác nhân AI, qua MCP.** Cùng công cụ được vận hành theo chương trình, với cùng độ trung thực và ở quy mô còn lớn hơn - vì một cỗ máy sẽ không thấy chán khi hàng nghìn file lần lượt đổ về.
 
-![Chế độ hàng loạt trên một bản cài mới: một hàng trống chờ một công cụ, với toàn bộ bề mặt bảng tính và nút Render đã sẵn sàng trước khi có dữ liệu nào tới](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+![Chế độ Batch trên một bản cài đặt mới: một hàng trống đang chờ một công cụ, với toàn bộ bề mặt bảng tính và nút Render đã sẵn sàng trước khi có bất kỳ dữ liệu nào](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
 
 Một bộ ràng buộc thương hiệu duy nhất, được một nhà thiết kế ấn định một lần; ba con đường dẫn tới cùng một đầu ra đã được phê duyệt trước - và con đường máy móc mở rộng xa nhất trong tất cả, vì nó không bao giờ mệt mỏi khi các file lần lượt đổ về.
 
@@ -249,7 +249,7 @@ Shell web đáp ứng đa thiết bị từ một bố cục duy nhất. Trên d
 
 Cùng một công cụ ở độ rộng điện thoại, không cần duy trì layout thứ hai: các control trở thành một sheet ở phía trên, bản xem trước chiếm toàn màn hình và nút render nổi trên đó.
 
-![Một audiogram trên màn hình rộng 430px - sheet điều khiển ở trên, tác phẩm vuông hoàn chỉnh ở dưới và nút render nổi](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![Một audiogram trên màn hình rộng 430px - bảng điều khiển ở trên, tác phẩm vuông hoàn chỉnh ở dưới và viên (pill) kết xuất nổi](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **Chế độ hàng loạt (`/pro`).** Web shell cũng đi kèm một lưới hàng loạt kiểu bảng tính (`shells/web/src/pro/`) render nhiều hàng cùng lúc trên một hoặc nhiều công cụ. Nó hỗ trợ chuyển đổi qua lại CSV/TSV cộng với dán từ bảng tính, template/format/kích thước/đơn vị/dpi theo từng hàng, một side panel blocks-editor với bản xem trước trực tiếp, các cột export có thể thu gọn, một thanh nhãn "mức độ liên quan" theo từng hàng, sắp xếp lại hàng bằng tay kéo bên trái, xác nhận xóa hai bước, các phiên hàng loạt đã lưu và tải xuống dạng `.zip`. Đây là bề mặt một-đến-nhiều đứng sau định vị "tạo nội dung hàng loạt".
 
@@ -283,13 +283,13 @@ Các công cụ được gắn thẻ `category` trong manifest để nhóm trong
 
 Các hàng được liệt kê theo thứ tự phần trong gallery. Phần `utility` luôn hiển thị **cuối cùng** trong gallery (sau mọi danh mục khác, kể cả những danh mục tương lai) - đây là ngăn kéo "Offline Utilities" chạy trên thiết bị.
 
-| Category | Ví dụ | Dự kiến |
+| Danh mục | Ví dụ | Dự kiến |
 |---|---|---|
 | `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
-| `designer` | Brand Lockup, Design, Chart Creator, D3 Chart Studio, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `designer` | Brand Lockup, Design, Chart, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Bộ chuyển đổi đơn vị/định dạng, thêm các tiện ích riêng tư chạy trên thiết bị |
+| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Unit/format converters, more on-device privacy utilities |
 
 Các ô đó là **ví dụ, không phải danh mục đầy đủ**. Những công cụ nào tồn tại là thuộc tính của profile bạn đã mount, không phải của trang này: một brand pack thêm công cụ riêng của nó, và có thể loại trừ một công cụ cộng đồng mà nó không muốn phân phối. `catalog/tools/index.json` - được tạo ra từ các manifest, và là registry mà gallery thực sự đọc - là danh sách chính thức; để đếm những gì một profile mount, hãy đếm các manifest (`ls community/*/tool.json brands/*/tools/*/tool.json`) thay vì tin vào một con số ghi ở đây. (Một tool id xuất hiện trong hai pack chỉ mount một lần, từ pack thắng.)
 
@@ -344,14 +344,14 @@ Các bề mặt tùy chọn, bổ sung chỉ xuất hiện khi một shell cung 
 
 Một vài bề mặt tiêu biểu, để cho thấy phạm vi bao phủ - [Host API](/info/host-api.html) ghi lại từng cái một, và `packages/core/src/host-v1.ts` chính là hợp đồng:
 
-| Bề mặt | Từ phiên bản | Bổ sung gì |
+| Surface | Từ phiên bản | Nó thêm gì |
 |---|---|---|
-| `host.tokens` | 1.0 | Design token DTCG - các nguyên thể (primitives) riêng của brand |
-| `host.text` | 1.0 | Chuyển văn bản thành path qua HarfBuzz WASM (cờ capability `wasm` đánh dấu các công cụ phụ thuộc vào nó) |
-| `host.media` | 1.4 | Khung hình camera trực tiếp điều khiển hook `onFrame`. Tăng cường lũy tiến, cố tình *không* bị khóa bởi cờ `camera` - một công cụ như vậy vẫn hoạt động như một công cụ ảnh tĩnh bình thường |
-| `host.color` | 1.40 | Toán học màu cảm nhận: ΔEOK, độ tương phản WCAG + APCA, dải OKLab, các ngưỡng phân lớp, bảng màu phân loại, các sơ đồ hài hòa (1.60), pha trộn CSS Color 4 và nướng gradient (1.68). Thuần túy và đồng bộ - các shell gắn `makeColorApi()` của engine thay vì tự cài đặt bất cứ thứ gì, nên không thể bị lệch |
-| `host.images` | 1.60 | Giải mã / thay đổi kích thước / mã hóa lại byte trên thiết bị - đường chuyển đổi (HEIC → JPEG, nén thành WebP, giảm kích thước). Được phân phối trong web shell dưới dạng lazy facade, nên bộ giải mã HEIC không bao giờ nằm trong chunk khởi động |
-| `host.geom` | 1.64 | Hình học vector chính xác: phép boolean trên path, offsetting, stroke-to-fill, hạ cấp spline, đơn giản hóa, kiểm tra va chạm (hit testing). Cũng thuần túy, đồng bộ và được gắn từ engine (`makeGeomApi()`); lỗi được *trả về*, không bao giờ throw |
+| `host.tokens` | 1.0 | Design token DTCG - các nguyên tố (primitives) riêng của thương hiệu |
+| `host.text` | 1.0 | Chuyển văn bản thành path qua HarfBuzz WASM (cờ khả năng `wasm` đánh dấu các công cụ phụ thuộc vào nó) |
+| `host.media` | 1.4 | Khung hình camera trực tiếp điều khiển hook `onFrame`. Tăng cường tiệm tiến, cố tình *không* bị chặn bởi cờ `camera` - một công cụ như vậy vẫn hoạt động như một công cụ ảnh tĩnh thông thường |
+| `host.color` | 1.40 | Toán học màu theo tri giác: ΔEOK, độ tương phản WCAG + APCA, dải màu OKLab, class-break, bảng màu phân loại, sơ đồ hài hòa (1.60), pha trộn CSS Color 4 và bake gradient (1.68). Thuần túy và đồng bộ - các shell gắn `makeColorApi()` của engine thay vì tự triển khai bất cứ điều gì, nên nó không thể trôi lệch |
+| `host.images` | 1.60 | Giải mã / thay đổi kích thước / mã hóa lại byte ngay trên thiết bị - đường chuyển đổi (HEIC → JPEG, nén sang WebP, giảm kích thước). Được cung cấp trong web shell dưới dạng một lazy facade, nên bộ giải mã HEIC không bao giờ vào chunk khởi động |
+| `host.geom` | 1.64 | Hình học vector chính xác: phép toán boolean trên path, offset, chuyển nét thành fill, hạ cấp spline, đơn giản hóa, kiểm tra va chạm (hit testing). Cũng thuần túy, đồng bộ và được gắn từ engine (`makeGeomApi()`); lỗi được *trả về*, không bao giờ ném ra (throw) |
 
 Phần còn lại tuân theo cùng quy tắc và được ghi lại cùng với chúng: `pdf` (1.8) và `pptx` (1.58) cho phẫu thuật tài liệu trên thiết bị, `audio` (1.71) và `speech` (1.96) cho phân tích clip và TTS/phiên âm trên thiết bị, `viz` (1.72) cho hợp đồng placeholder MilkDrop, `codec` (1.100) và `layers` (1.102) cho đầu ra bit sâu và bitmap phân lớp, `upscale` (1.101) và `matte` (1.103) cho các model trên thiết bị, `raster` (1.105) cho các hook tự xử lý pixel riêng, `connectors` (1.106) cho mũi tên an toàn khi export và `c2pa` (1.85) để ký byte đã hoàn tất. Số lượng tăng lên; quy tắc thì không.
 

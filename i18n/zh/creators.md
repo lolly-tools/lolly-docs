@@ -52,13 +52,23 @@ Street Map 就是这种取舍的一个恰当例子:你选一座城市和几种�
 
 高级滤镜、合成、动画、实时摄像头特效、生成式设计 - 模板作者可以使用任何一种 Web 技术,因此上限很高。
 
-![Mesh Gradient 的输出效果 - 一片完全由你品牌调色板令牌构建而成的柔和生成式色彩场](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Mesh Gradient 的输出效果——完全由你品牌调色板令牌生成的柔和色彩生成场](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+
+### 生长而成,而非绘制而成
+
+**Growth** 是让图像“生长”出来,而不是“画”出来的:一个带种子的系统会从一个圆环、一条线、你自己的文字或你的徽标开始向外扩散,直到以你的调色板填满整个画面。相同的种子始终会生长出相同的作品,因此同一个链接每次都能精确复现。生成的结果是普通的 SVG 几何图形,而不是一张“画作的图片”,因此它可以打印、绘图和切割——而且同一个设计还能以视频形式,从最初的种子一直生长到最终形态。
+
+![Growth 的默认绽放效果——从一个圆环向外生长出的密集循环线条场,每条线都是真实的 SVG 路径,颜色采用品牌色](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
+### 随音乐而动的动效
+
+**Synth** 会在显卡上求解一个流体场,并用你的颜色为其上色。给它一段音轨,流体场就会随声音而动;它可以导出为 MP4、WebM、GIF,或首尾能无缝衔接的动画 PNG 循环——这些都是按驱动时钟逐帧渲染出来的,而不是从屏幕录制得到的,因此动效永远不会与配乐产生偏移,而且同一个链接在任意长度下都能渲染出相同的片段。
+
+![Synth 墨水场景的一帧画面——一片以品牌绿色打光的深色流体场,定格在旋涡之中](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 编写*工具*,而非文件:构建能生成一万张卡片的东西,而不是手工做一万张卡片。把不该变的东西锁定;只暴露那些本就该变化的部分。
 
 ## 你会注意到的细节
-
-![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
 
 - **印刷,做到位。** 真实的物理单位(mm/cm/in/pt)与 DPI、出血和裁切线、CMYK 与 PDF/X-4 输出意图 - 印刷厂拿到的正是它需要的。参见[导出](/info/exporting.html#size-print-units)。
 - **视频与动效。** 导出 WebM/MP4(含音轨)、动态 PNG/WebP 和动态 SVG - 都出自制作静态图的同一模板。**Sequence Studio** 更进一步:画布下方是真正的时间线,带有吸附对齐的片段行、自由的叠加轨道、修剪与分割、转场预设、配音录制和音乐混音 - 由确定性合成器渲染为 MP4、WebM、GIF 或 APNG,而非屏幕录制。Lottie 文件可作为动态素材*导入*,并渲染为上述任一格式。片段上方是**关键帧**:在某一瞬间摆好一个方框姿态,用真实的深度把它从页面上抬起,再让摄像机掠过结果。参见[使用 Lolly → 时间线](/info/using.html#timeline-sequence-studio)与[制作动画](/info/animating.html)。
@@ -70,8 +80,6 @@ Street Map 就是这种取舍的一个恰当例子:你选一座城市和几种�
 - **需要时更沉静的界面。** **Profile → Accessibility** 下的四个开关 - *Reduce motion*(减少动效)、*Hide colourful previews*(隐藏彩色预览)、*High contrast*(高对比度)和 *Large text*(大字体) - 让应用围绕你的工作安静下来。每个开关在你打开之前都处于关闭状态,且都不会触及画布或改变导出结果的任何一个像素。参见[你的个人资料 → 无障碍](/info/profile.html#accessibility)。
 
 ## 充分发挥它的价值
-
-![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[快速入门](/info/quickstart.html)** - 导入品牌,产出第一个文件。
 - **[品牌工作室](/info/brand-studio.html)** - 打造你的标志、色彩、字体和设计令牌(`#/start`)。

@@ -66,7 +66,7 @@ Il modo più chiaro per vedere cos'è Lolly non è un elenco di funzionalità - 
 
 Il "nuovo grafico" del secondo passaggio è un rendering come questo, prodotto da una stringa di dati e da alcuni parametri senza che nessuno apra un file di design:
 
-![Un grafico ad area impilata con titolo, le sue tre serie in fasce con una palette fredda, con assi, legenda e titolo posizionati tutti dal template anziché a mano](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![Un grafico ad area impilata con titolo, le sue tre serie a bande in una palette fredda con assi, legenda e titolo posizionati tutti dal modello anziché a mano](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 Il punto non è che Lolly sia buono per i designer *e* buono per gli sviluppatori *e* buono per le vendite, ciascuno nel vuoto. È una **staffetta**: il lavoro iniziale del creativo viene scalato dallo sviluppatore, che a sua volta abilita il produttore. L'esperienza senza sforzo per il rappresentante non tecnico sull'aereo è possibile solo grazie al rigore fissato dal designer e implementato dallo sviluppatore.
 
@@ -84,7 +84,7 @@ Lo stesso strumento deterministico raggiunge quella scala in tre modi, tutti pro
 - <!--i:code--> **Uno sviluppatore, dalla riga di comando.** La CLI esegue *lo stesso* motore e *lo stesso* percorso di rendering in modalità headless, così lo strumento può essere sequenziato su tutte le 10.000 righe in uno script o in una pipeline notturna. Una chiamata `lolly <tool> --field=…` in un ciclo è l'intera integrazione.
 - <!--i:cpu--> **Un sistema o un agente IA, tramite MCP.** Lo stesso strumento azionato in modo programmatico, alla stessa fedeltà e su una scala ancora maggiore - perché una macchina non si annoia mentre arrivano migliaia di file.
 
-![La modalità batch su un'installazione pulita: una riga vuota in attesa di uno strumento, con l'intera superficie del foglio di calcolo e il suo pulsante Render già presenti prima dell'arrivo di qualsiasi dato](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+![La modalità Batch su un'installazione appena fatta: una riga vuota in attesa di uno strumento, con l'intera superficie tipo foglio di calcolo e il suo pulsante Rendi già al loro posto prima che arrivino dati](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
 
 Un insieme di vincoli di brand, fissato una volta da un designer; tre percorsi verso lo stesso output identico e pre-approvato - e il percorso macchina scala più di tutti gli altri, perché non si stanca mai mentre i file arrivano.
 
@@ -249,7 +249,7 @@ La shell web è responsive a partire da un unico layout. Su desktop uno strument
 
 Lo stesso strumento in larghezza telefono, senza un secondo layout da mantenere: i controlli diventano un foglio in alto, l'anteprima occupa tutto lo schermo e la pillola di rendering fluttua sopra.
 
-![Un audiogramma su uno schermo largo 430px - il foglio dei controlli sopra, l'artwork quadrato finito sotto e la pillola di rendering fluttuante](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![Un audiogramma su uno schermo largo 430px - il foglio dei controlli sopra, l'artwork quadrato finito sotto e la pillola di rendering flottante](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **Modalità batch (`/pro`).** La shell web include anche una griglia batch in stile foglio di calcolo (`shells/web/src/pro/`) che renderizza molte righe insieme su uno o più strumenti. Gestisce round-trip CSV/TSV più incolla da foglio di calcolo, template/formato/dimensione/unità/dpi per riga, un pannello laterale editor di blocchi con anteprima live, colonne di export comprimibili, una barra di tag "rilevanza" per riga, riordino righe con maniglia di trascinamento a sinistra, conferma di eliminazione in due passaggi, sessioni batch salvate e download in `.zip`. È la superficie uno-a-molti dietro il posizionamento "generazione di contenuti di massa".
 
@@ -283,13 +283,13 @@ Gli strumenti sono etichettati con una `category` nel loro manifest per il raggr
 
 Le righe sono elencate nell'ordine delle sezioni della galleria. La sezione `utility` viene sempre renderizzata **per ultima** nella galleria (dopo ogni altra categoria, incluse quelle future) - è il cassetto "Offline Utilities" on-device.
 
-| Categoria | Esempi | Pianificati |
+| Categoria | Esempi | Previsto |
 |---|---|---|
 | `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
-| `designer` | Brand Lockup, Design, Chart Creator, D3 Chart Studio, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `designer` | Brand Lockup, Design, Chart, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Convertitori di unità/formato, altre utility di privacy on-device |
+| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Unit/format converters, more on-device privacy utilities |
 
 Quelle celle sono **esempi, non inventari**. Quali strumenti esistano è una proprietà del profilo che hai montato, non di questa pagina: un pacchetto brand aggiunge i propri, e può escludere uno strumento community che preferisce non distribuire. `catalog/tools/index.json` - generato dai manifest, ed è il registro che la galleria legge davvero - è la lista autorevole; per contare cosa monta un profilo, conta i manifest (`ls community/*/tool.json brands/*/tools/*/tool.json`) invece di fidarti di un numero scritto qui. (Un id di strumento presente in due pacchetti viene montato una sola volta, dal pacchetto vincente.)
 
@@ -346,12 +346,12 @@ Una manciata di superfici principali, per mostrare cosa copre - [Host API](/info
 
 | Superficie | Da | Cosa aggiunge |
 |---|---|---|
-| `host.tokens` | 1.0 | Design token DTCG - le primitive proprie del brand |
-| `host.text` | 1.0 | Testo-in-path tramite HarfBuzz WASM (il flag di capability `wasm` marca gli strumenti che ne dipendono) |
-| `host.media` | 1.4 | Frame della fotocamera live che guidano l'hook `onFrame`. Progressive enhancement, deliberatamente *non* gated dal flag `camera` - un tale strumento funziona comunque come un normale strumento a immagine fissa |
-| `host.color` | 1.40 | Matematica del colore percettiva: ΔEOK, contrasto WCAG + APCA, rampe OKLab, class-breaks, palette categoriche, schemi di armonia (1.60), miscelazione CSS Color 4 e generazione di gradienti (1.68). Pura e sincrona - le shell allegano semplicemente il `makeColorApi()` del motore invece di implementare qualcosa, così non può divergere |
-| `host.images` | 1.60 | Decodifica / ridimensiona / ricodifica byte on-device - il percorso di conversione (HEIC → JPEG, compressione a WebP, downscale). Distribuito nella shell web come facade lazy, così il decoder HEIC non finisce mai nel chunk di avvio |
-| `host.geom` | 1.64 | Geometria vettoriale esatta: booleane su path, offsetting, stroke-to-fill, lowering di spline, semplificazione, hit testing. Anche questa pura, sincrona e allegata dal motore (`makeGeomApi()`); i fallimenti vengono *restituiti*, mai lanciati |
+| `host.tokens` | 1.0 | Token di design DTCG - le primitive proprie del marchio |
+| `host.text` | 1.0 | Testo-a-tracciato tramite HarfBuzz WASM (il flag di capacità `wasm` contrassegna gli strumenti che ne dipendono) |
+| `host.media` | 1.4 | Fotogrammi camera dal vivo che pilotano l'hook `onFrame`. Miglioramento progressivo, deliberatamente *non* vincolato dal flag `camera` - un tale strumento funziona comunque come un normale strumento per immagini statiche |
+| `host.color` | 1.40 | Matematica del colore percettiva: ΔEOK, contrasto WCAG e APCA, rampe OKLab, soglie di classe, palette categoriche, schemi di armonia (1.60), miscelazione CSS Color 4 e cottura dei gradienti (1.68). Puro e sincrono - le shell collegano il `makeColorApi()` del motore invece di implementare qualcosa, quindi non può divergere |
+| `host.images` | 1.60 | Decodifica / ridimensiona / ricodifica byte sul dispositivo - il percorso di conversione (HEIC → JPEG, compressione in WebP, riduzione di scala). Distribuito nella shell web come facciata pigra, così il decodificatore HEIC non entra mai nel chunk di avvio |
+| `host.geom` | 1.64 | Geometria vettoriale esatta: booleani di tracciati, offset, da contorno a riempimento, riduzione di spline, semplificazione, rilevamento delle collisioni. Anch'esso puro, sincrono e collegato dal motore (`makeGeomApi()`); i fallimenti vengono *restituiti*, mai sollevati |
 
 Il resto segue le stesse regole ed è documentato insieme a esse: `pdf` (1.8) e `pptx` (1.58) per la chirurgia di documenti on-device, `audio` (1.71) e `speech` (1.96) per l'analisi delle clip e TTS/trascrizione on-device, `viz` (1.72) per il contratto placeholder MilkDrop, `codec` (1.100) e `layers` (1.102) per output deep-bit e bitmap a livelli, `upscale` (1.101) e `matte` (1.103) per i modelli on-device, `raster` (1.105) per hook che fanno da soli il lavoro sui pixel, `connectors` (1.106) per frecce export-safe e `c2pa` (1.85) per firmare byte finiti. Il conteggio cresce; le regole no.
 

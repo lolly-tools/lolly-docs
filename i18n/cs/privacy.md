@@ -2,13 +2,14 @@
 
 *Naposledy aktualizováno: 11. srpna 2026*
 
-> **Jednoduše řečeno.** Dokumenty, obrázky, videa a soubory, které v Lolly vytvoříš, zůstávají
-> na tvém zařízení. Pro běžné použití neexistují žádné účty, žádné cookies od samotné
-> aplikace a v kódu není nikde žádná analytika ani sledovací nástroje - ne že bychom "data
-> nepoužívali", opravdu nejsou ve zdrojovém kódu přítomné. Existuje krátký a úplný seznam
-> výjimek pro případy, kdy software vůbec komunikuje se sítí, a každá z nich je níže popsána
-> konkrétně: co odchází, komu a kdy. Jediná výjimka, která se týká čehokoli osobního, je
-> přihlášení, které musíš výslovně sám zahájit. Pokud to není v tomto dokumentu, tak se to neděje.
+> **Krátká verze.** Dokumenty, obrázky, videa a soubory, které v Lolly vytvoříš, zůstávají
+> na tvém zařízení. Pro běžné použití nejsou potřeba žádné účty, appka sama
+> nepoužívá žádné cookies a v kódu není nikde žádná analytika ani sledovací prvky -
+> netvrdíme jen "data nepoužíváme", opravdu v kódu nejsou. Existuje krátký, úplný
+> seznam výjimek pro případy, kdy software vůbec komunikuje se sítí, a každá
+> z nich je níže popsána konkrétně: co odchází, komu a kdy. Jediná výjimka, která
+> se týká čehokoli osobního, je přihlášení, které musíš výslovně sám spustit.
+> Pokud to není v tomto dokumentu, tak se to neděje.
 
 ## Co tyto zásady pokrývají
 
@@ -77,20 +78,20 @@ smyslem většiny z nich je data odstranit a chránit, ne přidávat riziko.
 Tabulka níže je úplný seznam všeho, co aplikace přes síť stahuje nebo odesílá. Pokud to
 tady není, aplikace to nedělá.
 
-| Co | Co skutečně opustí tvé zařízení | Kdy (akce, která to spouští) | Pokud to provozovatel zablokuje |
+| Co | Co skutečně opouští tvé zařízení | Kdy (co to spouští) | Pokud to operátor zablokuje |
 |---|---|---|---|
-| Synchronizace katalogu nástrojů | Nic osobního - požadavek na vlastní veřejný index nástrojů a assetů Lolly, na vlastní origin aplikace | Při startu, poté uloženo offline do mezipaměti | Aplikace běží na svém uloženém souboru nástrojů. Přestane jen objevovat nové nástroje |
-| Nástroj, který potřebuje živá data | Cokoli, co daný konkrétní nástroj požaduje, na hostitele uvedeného v jeho vlastním popisu. Dnes je to jen vyhledávání měst v nástroji Meeting Planner, které se dotazuje `geocoding-api.open-meteo.com`, aby proměnilo název města na souřadnice a časové pásmo - žádný účet, žádný klíč a žádný identifikátor nad rámec samotného požadavku. Vstupní pole to říká přímo tam, kde píšeš, a každá odpověď se uloží na tvém zařízení, takže se město hledá jen jednou | Jen při použití daného nástroje a jen po zadání polohy | Selže jen to jedno vyhledání. Souřadnice můžeš stále zadat ručně a nic jiného to neovlivní |
-| Google Fonts | Název zvoleného rodiny fontu a tvoje IP adresa, na fontové servery Googlu (`fonts.googleapis.com` pro styl, `fonts.gstatic.com` pro soubor fontu) | Jen pokud přidáš Google Font v editoru značky, **a jen poté, co s tím souhlasíš v dialogu, který přesně tohle říká** - jednorázové stažení na rodinu, poté žije na tvém zařízení a používá se offline | Výběr Google Fonts selže uzavřeně. Nahraj místo toho vlastní soubor fontu |
-| Odeslání na Google Drive | Ten jeden soubor, který jsi zvolil odeslat, na Drive API Googlu (`www.googleapis.com`), po přihlášení přes Google, které dokončíš ve vlastním vyskakovacím okně Googlu. Přístup Lolly je omezen na soubory, které sama vytvořila (rozsah `drive.file` - nikdy nemůže číst zbytek tvého Drive), a přihlašovací token je držen v paměti jen po dobu relace, nikdy se neukládá | Jen když stiskneš "Send to Google Drive" u exportu EMF, a jen na sestaveních, kde má provozovatel nastavené Google client id - bez něj tlačítko neexistuje | Tlačítko se nikdy nezobrazí. Stáhni soubor a nahraj ho na Drive sám |
-| Odeslání na Dropbox | Ten jeden soubor, který jsi zvolil odeslat, na API Dropboxu (`api.dropboxapi.com` pro přihlášení a metadata, `content.dropboxapi.com` pro samotný soubor), po přihlášení přes Dropbox, které dokončíš ve vlastním okně Dropboxu. Přístup Lolly je omezen jen na aplikační složku (vidí jen `Apps/` a svou vlastní složku tam - nikdy zbytek tvého Dropboxu), odkaz "Open", který ti zobrazí, je krátkodobý soukromý odkaz (nevytváří se žádné veřejné sdílení) a obnovovací token se ukládá jen pokud zaškrtneš "stay connected" | Jen když u souboru stiskneš "Send to Dropbox", a jen na sestaveních, kde má provozovatel nastavené Dropbox client id - bez něj tlačítko neexistuje | Tlačítko se nikdy nezobrazí. Stáhni soubor a nahraj ho na Dropbox sám |
-| Odeslání na OneDrive | Ten jeden soubor, který jsi zvolil odeslat, na identitní a Graph služby Microsoftu (`login.microsoftonline.com` pro přihlášení, `graph.microsoft.com` pro nahrání; velký soubor se nahrává po částech na nahrávací adresu vlastněnou Microsoftem na `api.onedrive.com`, `*.up.1drv.com` nebo `*.sharepoint.com`), po přihlášení přes Microsoft, které dokončíš ve vlastním okně Microsoftu. Přístup Lolly je omezen na vlastní složku pod `Apps/` (nikdy nemůže číst zbytek tvého OneDrive) plus tvoje zobrazované jméno pro označení účtu, a obnovovací token se ukládá jen pokud zaškrtneš "stay connected" | Jen když u souboru stiskneš "Send to OneDrive", a jen na sestaveních, kde má provozovatel nastavené Microsoft client id - bez něj tlačítko neexistuje | Tlačítko se nikdy nezobrazí. Stáhni soubor a nahraj ho na OneDrive sám |
-| Tiskové profily ICC | Nic osobního - požadavek na standardní profil tiskových podmínek, na veřejný registr ICC (`registry.color.org`, `www.color.org`) | Jen pokud klikneš na předvolbu ICC ve správci tiskových profilů - jednorázové stažení na profil, poté žije na tvém zařízení | Předvolby ICC selžou. Dodej místo toho vlastní profil `.icc` |
-| Internetové rádio | Nic osobního - požadavek na playlist a audio stream, na stanici (`api.somafm.com` a icecast server, který uvádí, `*.somafm.com`) | Jen když v přehrávači zvuku spustíš volitelné vestavěné rádio | Rádio selže. Všechny ostatní zvukové funkce dál fungují |
-| URL, kterou požádáš nástroj zachytit | Požadavek na přesnou webovou adresu, kterou zadáš, z nástroje pro snímky URL. Ať je tou adresou cokoli. Tento hostitel není v zásadách níže, protože si ho volíš v okamžiku použití | Jen když v daném nástroji zadáš URL a spustíš zachycení | Provozovatel to nemůže povolit podle hostitele. Aby se to odstranilo, je třeba odstranit nástroj |
-| Kontrola podpisu SEAL | **Nic.** Webová aplikace nemá vůbec žádný DNS resolver - viz níže | Nikdy | Není co blokovat |
-| Modely detektoru hloubkového skenu | Nic osobního - jednorázové stažení modelu ze stejného originu (ne od třetí strany) | Jen pokud se ve Verify přihlásíš k hloubkovému skenu | Hloubkový sken není dostupný. Standardní ověření dál funguje |
-| Vzdálená instance | Cokoli, co ti vrátí instance, kterou uvedeš, přes stejnou synchronizaci katalogu popsanou výše. Hostitele si volíš v okamžiku použití, takže není v zásadách níže | Jen pokud shell výslovně nasměruješ na jiné nasazení Lolly | Přepnutí instance selže. Tvoje místní instance je neovlivněná |
+| Synchronizace katalogu nástrojů | Nic osobního - dotaz na vlastní veřejný index nástrojů a zdrojů Lolly, směřovaný na vlastní server appky | Při spuštění, pak se ukládá do mezipaměti pro offline použití | Appka běží na svojí uložené sadě nástrojů. Přestane jen objevovat nové nástroje |
+| Nástroj, který potřebuje živá data | Cokoli si konkrétní nástroj vyžádá, na hostitele uvedeného v jeho vlastním popisu. Dnes je to jen vyhledávání měst v nástroji Meeting Planner, který se ptá `geocoding-api.open-meteo.com`, aby proměnil název města na souřadnice a časové pásmo - bez účtu, bez klíče a bez jakéhokoli identifikátoru kromě samotného dotazu. Vstup to říká přímo tam, kde píšeš, a každá odpověď se ukládá na tvém zařízení, takže se město vyhledá jen jednou | Jen při používání tohoto nástroje a jen po zadání místa | Toto jedno vyhledání selže. Souřadnice můžeš pořád zadat ručně a nic jiného není ovlivněno |
+| Google Fonts | Název zvolené rodiny písma a tvoje IP adresa, na servery písem Google (`fonts.googleapis.com` pro styl, `fonts.gstatic.com` pro soubor písma) | Jen pokud přidáš písmo Google v editoru značky, **a jen po odsouhlasení v dialogu, který přesně tohle říká** - jednorázové stažení pro každou rodinu, pak zůstává na tvém zařízení a používá se offline | Výběr písem Google bezpečně selže. Místo toho nahraj soubor písma |
+| Odeslat do Google Drive | Jeden soubor, který jsi vybral k odeslání, na API Google Drive (`www.googleapis.com`), po přihlášení Google, které dokončíš ve vlastním vyskakovacím okně Google. Přístup Lolly je omezen na soubory, které sama vytvořila (rozsah `drive.file` - nikdy nemůže číst zbytek tvého Disku), a přihlašovací token se drží jen v paměti po dobu relace a nikdy se neukládá | Jen po stisknutí "Send to Google Drive" u exportu EMF a jen v buildech, kde operátor nastavil Google client id - bez něj tlačítko neexistuje | Tlačítko se nikdy neobjeví. Soubor si stáhni a na Disk nahraj sám |
+| Odeslat do Dropboxu | Jeden soubor, který jsi vybral k odeslání, na API Dropboxu (`api.dropboxapi.com` pro přihlášení a metadata, `content.dropboxapi.com` pro samotný soubor), po přihlášení do Dropboxu, které dokončíš ve vlastním okně Dropboxu. Přístup Lolly je omezen jen na složku appky (vidí jen `Apps/` a svou vlastní složku v ní - nikdy zbytek tvého Dropboxu), zobrazený odkaz "Open" je krátkodobý soukromý odkaz (nevzniká žádné veřejné sdílení) a obnovovací token se ukládá jen pokud zaškrtneš "stay connected" | Jen po stisknutí "Send to Dropbox" u souboru a jen v buildech, kde operátor nastavil Dropbox client id - bez něj tlačítko neexistuje | Tlačítko se nikdy neobjeví. Soubor si stáhni a do Dropboxu nahraj sám |
+| Odeslat do OneDrive | Jeden soubor, který jsi vybral k odeslání, na identitní a Graph služby Microsoftu (`login.microsoftonline.com` pro přihlášení, `graph.microsoft.com` pro nahrání; velký soubor se nahrává po částech na adresu vlastněnou Microsoftem na `api.onedrive.com`, `*.up.1drv.com` nebo `*.sharepoint.com`), po přihlášení Microsoft, které dokončíš ve vlastním okně Microsoftu. Přístup Lolly je omezen na vlastní složku pod `Apps/` (nikdy nemůže číst zbytek tvého OneDrive) plus tvoje zobrazované jméno pro popisek účtu, a obnovovací token se ukládá jen pokud zaškrtneš "stay connected" | Jen po stisknutí "Send to OneDrive" u souboru a jen v buildech, kde operátor nastavil Microsoft client id - bez něj tlačítko neexistuje | Tlačítko se nikdy neobjeví. Soubor si stáhni a do OneDrive nahraj sám |
+| Tiskové profily ICC | Nic osobního - dotaz na standardní profil tiskových podmínek, na veřejný registr ICC (`registry.color.org`, `www.color.org`) | Jen po kliknutí na předvolbu ICC ve správci tiskových profilů - jednorázové stažení pro každý profil, pak zůstává na tvém zařízení | Předvolby ICC selžou. Místo toho dodej vlastní profil `.icc` |
+| Internetové rádio | Nic osobního - dotaz na playlist a audio stream, na stanici (`api.somafm.com` a jí uvedený icecast server, `*.somafm.com`) | Jen když přehráváš volitelné vestavěné rádio v přehrávači zvuku | Rádio selže. Každá jiná zvuková funkce dál funguje |
+| URL adresa, kterou necháš nástroj zachytit | Dotaz na přesně tu webovou adresu, kterou zadáš, z nástroje pro snímek obrazovky URL. Bez ohledu na to, jaká ta adresa je. Tento hostitel není v níže uvedené politice, protože si ho vybíráš v okamžiku použití | Jen po zadání URL adresy do tohoto nástroje a spuštění zachycení | Operátor to nemůže povolit podle hostitele. Aby to odstranil, musí odstranit nástroj |
+| Kontrola podpisu SEAL | **Nic.** Webová appka vůbec nemá DNS resolver - viz níže | Nikdy | Není co blokovat |
+| Modely detektoru hloubkového skenování | Nic osobního - jednorázové stažení modelu ze stejného původu (ne od třetí strany) | Jen pokud zapneš hloubkové skenování ve funkci Verify | Hloubkové skenování není k dispozici. Standardní ověření dál funguje |
+| Vzdálená instance | Cokoli, co vrátí instance, kterou pojmenuješ, v rámci stejné synchronizace katalogu popsané výše - plus verzní značka u dotazů na ni (druh shellu a verze jádra, stejná informace, jakou nese user agent), díky čemuž její operátor vidí, jaké verze Lolly jsou v provozu. Ve spravované instanci, když jsi přihlášený, tato značka nese i instalační id pro dané zařízení, díky čemuž seznam zařízení operátora dokáže tuto instalaci odlišit. Jezdí jen na dotazech, které tak jako tak vyvolá tvoje vlastní používání - není tu žádný časovač a nic samo od sebe "nevolá domů" - a opuštěním instance se toto id smaže, takže zařízení, které se později znovu připojí, představí nové. Hostitele si vybíráš v okamžiku použití, takže není v níže uvedené politice | Jen pokud shellu výslovně určíš jiné nasazení Lolly | Přepnutí instance selže. Tvoje lokální instance zůstává nedotčena |
 
 Každý pevný hostitel v této tabulce je zároveň úplným seznamem povolených adres v
 Content-Security-Policy aplikace, který prosazuje prohlížeč. Tento seznam tedy není jen
@@ -138,16 +139,17 @@ v URL.
 - <!--i:usercheck--> **Žádné účty, žádné cookies, žádný stav.** Endpoint je anonymní a nic
   na tvém zařízení se nečte. Tvoje dokumenty, relace a nahrané soubory nikdy neopustí
   tvůj prohlížeč - v těchto odkazech se vůbec nemohou objevit.
-- <!--i:document--> **Ale samotná URL se zaznamenává.** Dotazovací řetězec URL je součástí
-  řádku požadavku, takže se dostane do běžných přístupových logů hostingové platformy
-  stejně jako každá požadovaná cesta. Pokud vstupy odkazu obsahují něčí jméno nebo e-mail -
-  jmenovku, e-mailový podpis - **tento text v těch logách je**, a žádná formulace zásad
-  to nezmění. To je konkrétní důvod, proč je tato funkce tady vypnutá, ne zapnutá.
-- <!--i:globe--> **Vstupy jsou svou podstatou veřejné** stejně - je to to, co autor odkazu
-  zapsal do URL, čitelné pro kohokoli, koho odkaz zasáhne. Nedávej tajnosti do sdíleného
-  odkazu. Lolly nabízí šifrování odkazu pro citlivý obsah.
-- <!--i:eyeoff--> Odpovědi jsou **ukládány do mezipaměti a rate-limitovány** jako jakýkoli
-  veřejný obrázek a označeny `noindex`, aby vyhledávače neindexovaly tvoje výstupy.
+- <!--i:document--> **Ale samotná URL adresa se zaznamenává.** Query řetězec URL je součástí
+  žádosti, takže se objeví v běžných přístupových logách hostingové platformy stejně
+  jako každá požadovaná cesta. Pokud vstupy odkazu obsahují něčí jméno nebo e-mail -
+  jmenovku, e-mailový podpis - **tento text skončí v těchto logách**, a žádná
+  formulace zásad to nezmění. To je konkrétní důvod, proč je tato funkce
+  zde vypnutá, a ne zapnutá.
+- <!--i:globe--> **Vstupy jsou svou podstatou veřejné** stejně tak - jsou to cokoli, co
+  autor odkazu napsal do URL adresy, čitelné pro kohokoli, koho odkaz zasáhne. Nedávej
+  tajné informace do sdíleného odkazu. Lolly nabízí šifrování odkazů pro citlivý obsah.
+- <!--i:eyeoff--> Odpovědi jsou **ukládány do mezipaměti a omezovány rychlostí** jako každý veřejný obrázek a označené
+  jako `noindex`, takže je vyhledávače neindexují.
 
 Provozuješ Lolly sám (self-hosting) a nechceš veřejný render povrch? Nastav
 `LOLLY_DISABLE_RENDER_GET=1` - což momentálně dělá i samotné lolly.tools - a každá

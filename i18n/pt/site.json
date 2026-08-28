@@ -58,6 +58,7 @@
   "Formats": "Formatos",
   "Everywhere": "Em todo lugar",
   "FAQ": "FAQ",
+  "Make it yours": "Torne-o seu",
   "Lolly opens {in} kinds of file and makes {out}, and {both} of them go both ways.": "O Lolly abre {in} tipos de arquivo e cria {out}, e {both} deles funcionam nos dois sentidos.",
   "See everything Lolly can open and make": "Veja tudo que o Lolly abre e cria",
   "Already have designs? They aren't stranded - bring Figma, Penpot, Illustrator, InDesign or any SVG.": "Já tem designs? Eles não ficam presos - traga Figma, Penpot, Illustrator, InDesign ou qualquer SVG.",
@@ -76,6 +77,10 @@
   "Free, no account": "Grátis, sem conta",
   "What Lolly supports": "O que o Lolly suporta",
   "Everything happens on your device, so it works with the Wi-Fi off.": "Tudo acontece no seu dispositivo, então funciona com o Wi-Fi desligado.",
+  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "O conversor move a descrição, o autor, os direitos autorais e a data de captura para o novo arquivo. A localização fica de fora, a menos que você a ative, e um Content Credential não pode ser copiado: ele está vinculado aos bytes originais.",
+  "Every table in the font, its name and licence records included, passes through untouched.": "Toda tabela na fonte, incluindo seus registros de nome e licença, passa sem alterações.",
+  "Nothing embedded carries over: the new file is written fresh with Lolly\\'s own details, and your original keeps its own.": "Nada incorporado é levado adiante: o novo arquivo é escrito do zero com os próprios detalhes do Lolly, e o seu original mantém os dele.",
+  "What carries over": "O que é levado adiante",
   "Convert": "Converter",
   "What goes in": "O que entra",
   "What comes out": "O que sai",
@@ -202,9 +207,5 @@
   "Parser Inventory": "Inventário de parsers",
   "Server Surface": "Superfície do servidor",
   "Generated once, rendered the same": "Gerado uma vez, renderizado igual",
-  "AI marking and the EU AI Act": "Marcação de IA e a Lei de IA da UE",
-  "What carries over": "O que é mantido",
-  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "O conversor leva a descrição, o autor, o copyright e a data de captura para o novo ficheiro. A localização fica de fora a não ser que a ative, e um Content Credential não pode ser copiado: está ligado aos bytes originais.",
-  "Every table in the font, its name and licence records included, passes through untouched.": "Cada tabela do tipo de letra, incluindo os registos de nome e licença, passa intacta.",
-  "Nothing embedded carries over: the new file is written fresh with Lolly's own details, and your original keeps its own.": "Nada de incorporado é mantido: o novo ficheiro é escrito de raiz com os dados do próprio Lolly, e o seu original mantém os dele."
+  "AI marking and the EU AI Act": "Marcação de IA e a Lei de IA da UE"
 }

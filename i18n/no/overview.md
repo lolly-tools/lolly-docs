@@ -84,7 +84,7 @@ Det samme deterministiske verktøyet når den skalaen på tre måter, alle med i
 - <!--i:code--> **En utvikler, fra kommandolinjen.** CLI-en kjører *samme* motor og *samme* rendringsvei uten grensesnitt, slik at verktøyet kan kjøres i sekvens over alle 10 000 radene i et skript eller en nattlig pipeline. Et `lolly <tool> --field=…`-kall i en løkke er hele integrasjonen.
 - <!--i:cpu--> **Et system eller en KI-agent, over MCP.** Det samme verktøyet betjent programmatisk, med samme troskap og enda større skala - fordi en maskin ikke blir lei mens tusenvis av filer ruller inn.
 
-![Batch-modus på en fersk installasjon: én tom rad som venter på et verktøy, med hele regnearkflaten og Render-knappen på plass før noen data kommer inn](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+![Batch-modus på en fersk installasjon: én tom rad som venter på et verktøy, med hele regnearkflaten og Rendre-knappen på plass før noen data ankommer](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
 
 Ett sett merkevarebegrensninger, fastsatt én gang av en designer; tre veier til den identiske, forhåndsgodkjente outputen - og maskinveien skalerer lengst av alle, fordi den aldri blir sliten mens filene ruller inn.
 
@@ -249,7 +249,7 @@ Web-skallet er responsivt fra ett enkelt oppsett. På desktop er et verktøy et 
 
 Samme verktøy i telefonbredde, uten et andre layout å vedlikeholde: kontrollene blir et ark øverst, forhåndsvisningen fyller hele skjermen og render-pillen flyter over den.
 
-![Et audiogram på en 430px bred skjerm - kontrollarket over, det ferdige kvadratiske verket under og den flytende render-pillen](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![Et audiogram på en 430px bred skjerm - kontrollarket over, det ferdige kvadratiske kunstverket under og den flytende rendre-pillen](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **Batch-modus (`/pro`).** Web-skallet leverer også et regnearklignende batch-rutenett (`shells/web/src/pro/`) som rendrer mange rader på én gang på tvers av ett eller flere verktøy. Det håndterer CSV/TSV-rundtur pluss innliming fra regneark, per-rad mal/format/størrelse/enhet/dpi, et sidepanel for blokk-redigering med levende forhåndsvisning, sammenleggbare eksportkolonner, en per-rad "relevans"-tagglinje, dra-håndtak for radomorganisering til venstre, to-trinns slettebekreftelse, lagrede batch-økter og nedlasting som `.zip`. Dette er en-til-mange-flaten bak posisjoneringen "masseproduksjon av innhold".
 
@@ -285,11 +285,11 @@ Radene listes i galleriets seksjonsrekkefølge. `utility`-seksjonen rendres allt
 
 | Kategori | Eksempler | Planlagt |
 |---|---|---|
-| `everyone` | QR-kodegenerator, Sitatkort, E-postsignatur, Logo, Ordmerke, Audiogram, Battlecards, Sekvensstudio, Record | Ansattbilde-stasjonært materiell |
-| `designer` | Merkevare-lockup, Design, Chart Creator, D3 Chart Studio, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
-| `event` | Møteplanlegger, Navneskilt for arrangement, Skiltsystem, Kalender-ICS, Booth Studio | Stasjonært materiell for arrangementer, Navneskilt i bulk, Romagenda-kort |
-| `product` | - | CVE-varsel, Produktlanseringskunngjøring, Blogg-OG-bilde |
-| `utility` | Fjern skjulte data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Enhets-/formatkonvertere, flere personvernverktøy på enheten |
+| `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
+| `designer` | Brand Lockup, Design, Chart, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | Event Stationery, Bulk Name Badges, Room Agenda Cards |
+| `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
+| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Enhets-/formatkonvertere, flere personvernverktøy på enheten |
 
 Disse cellene er **eksempler, ikke inventarlister**. Hvilke verktøy som finnes, er en egenskap ved profilen du har montert, ikke ved denne siden: en merkevarepakke legger til sine egne, og kan utelate et fellesverktøy den heller ikke vil levere. `catalog/tools/index.json` - generert fra manifestene, og registeret galleriet faktisk leser - er den autoritative listen; for å telle hva en profil monterer, tell manifestene (`ls community/*/tool.json brands/*/tools/*/tool.json`) i stedet for å stole på et tall skrevet ned her. (En verktøy-id som finnes i to pakker, monteres kun én gang, fra den vinnende pakken.)
 
@@ -344,14 +344,14 @@ Valgfrie, additive overflater vises kun når et skall leverer dem. Noen er **kap
 
 Et lite utvalg toppoverflater, for å vise hva den dekker - [Host API](/info/host-api.html) dokumenterer hver eneste én, og `packages/core/src/host-v1.ts` er selve kontrakten:
 
-| Overflate | Siden | Hva den legger til |
+| Grensesnitt | Siden | Hva det legger til |
 |---|---|---|
-| `host.tokens` | 1.0 | DTCG designtokener - merkevarens egne primitiver |
-| `host.text` | 1.0 | Tekst-til-bane via HarfBuzz WASM (kapabilitetsflagget `wasm` merker verktøy som er avhengige av det) |
-| `host.media` | 1.4 | Levende kamerabilder som driver `onFrame`-hooken. Progressiv forbedring, bevisst *ikke* styrt av `camera`-flagget - et slikt verktøy fungerer fortsatt som et vanlig stillbildeverktøy |
-| `host.color` | 1.40 | Perseptuell fargematematikk: ΔEOK, WCAG- og APCA-kontrast, OKLab-ramper, klassebrudd, kategoriske paletter, harmonisemaer (1.60), fargeblanding og gradientbaking etter CSS Color 4 (1.68). Ren og synkron - skall kobler til motorens `makeColorApi()` i stedet for å implementere noe selv, så den kan ikke avvike |
-| `host.images` | 1.60 | Dekode / endre størrelse / re-enkode byte på enheten - konverteringsstien (HEIC → JPEG, komprimer til WebP, nedskaler). Levert i web-skallet som en lat fasade, slik at HEIC-dekoderen aldri havner i oppstartsblokken |
-| `host.geom` | 1.64 | Eksakt vektorgeometri: bane-boolske operasjoner, forskyvning, strøk-til-fyll, spline-nedgradering, forenkling, trefftesting. Også ren, synkron og koblet til fra motoren (`makeGeomApi()`); feil *returneres*, kastes aldri |
+| `host.tokens` | 1.0 | DTCG-designtokens - merkevarens egne primitiver |
+| `host.text` | 1.0 | Tekst-til-bane via HarfBuzz WASM (funksjonsflagget `wasm` markerer verktøy som er avhengige av den) |
+| `host.media` | 1.4 | Direktekamerabilder som driver `onFrame`-kroken. Progressiv forbedring, bevisst *ikke* sperret av `camera`-flagget - et slikt verktøy fungerer fortsatt som et vanlig stillbildeverktøy |
+| `host.color` | 1.40 | Perseptuell fargematematikk: ΔEOK, WCAG + APCA-kontrast, OKLab-overganger, klassebrytninger, kategoriske paletter, harmoniskjemaer (1.60), CSS Color 4-blanding og gradientbaking (1.68). Ren og synkron - skallene kobler til motorens `makeColorApi()` i stedet for å implementere noe selv, så den kan ikke gli fra hverandre |
+| `host.images` | 1.60 | Dekode / endre størrelse / omkode bytes på enheten - konverteringsveien (HEIC → JPEG, komprimer til WebP, nedskaler). Levert i nettskallet som en lat fasade, slik at HEIC-dekoderen aldri havner i oppstartsbiten |
+| `host.geom` | 1.64 | Eksakt vektorgeometri: baneboolske operasjoner, forskyvning, strøk-til-fyll, splinereduksjon, forenkling, trefftesting. Også ren, synkron og koblet til fra motoren (`makeGeomApi()`); feil *returneres*, aldri kastes |
 
 Resten følger de samme reglene og er dokumentert sammen med dem: `pdf` (1.8) og `pptx` (1.58) for dokumentkirurgi på enheten, `audio` (1.71) og `speech` (1.96) for klippanalyse og TTS/transkripsjon på enheten, `viz` (1.72) for MilkDrop-plassholderkontrakten, `codec` (1.100) og `layers` (1.102) for dyp bitdybde og lagdelt bitmap-utdata, `upscale` (1.101) og `matte` (1.103) for modellene på enheten, `raster` (1.105) for hooks som gjør sitt eget pikselarbeid, `connectors` (1.106) for eksportsikre piler og `c2pa` (1.85) for signering av ferdige byte. Antallet vokser; reglene gjør det ikke.
 

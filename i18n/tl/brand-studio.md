@@ -153,7 +153,7 @@ Ang headings, code at italic ay bumabalik sa primary hanggang italaga mo sila, k
 
 Ang stage ay bumubukas **inline sa silid**, hindi sa isang dialog, kaya nananatili sa screen ang mga card na pinanggalingan mo. Maghanap ng Google Fonts family (Inter, Fraunces, Space Grotesk...) o mag-drop ng font file, pindutin ang **Add to the comparison** at ang mga candidate ay nagtatayuan nang magkatabi sa parehong mga salita bago pa man ma-install ang alinman sa kanila. Kinakansela ng Escape at ibinabalik ang keyboard sa card na pinagmulan mo ng pagbukas.
 
-Iyon ang tanging pintuan pasok, kaya walang napupunta sa brand mo nang hindi mo nakita. Sa ibaba ng stage ay nakaupo ang dalawang management panel:
+Iyon ang tanging pintuan papasok, kaya walang makakapasok sa brand mo nang hindi nakikita. Sa ilalim ng stage ay nakaupo ang dalawang management panel:
 
 - **Fonts on this device** - bawat naka-install na family, ang mga role na pinaglilingkuran nito at isang delete. Ang **Add a face** dito ay nagbubukas ng parehong compare stage na walang focus.
 - **Your fonts** - mag-upload ng **TTF**, **OTF** o **WOFF** mula sa sarili mong makina. Iyon ang daan para sa isang licensed corporate typeface na taglay mo na.
@@ -211,13 +211,13 @@ Ang pagbabalik ng isa ay **Add from... → Design tokens or a design file** (sa 
 
 ## Mga Bersyon
 
-Ang **Versions** sa ilalim ng rail ay kung saan huminto ang isang design system sa pagiging gumagalaw na target. Mag-publish ng isa at makakakuha ka ng **permanente, pinangalanang kopya** na nakatago sa device na ito: hindi na ito magbabago pagkatapos, kaya ang isang tool na nag-pin dito ay patuloy na iginuguhit ang parehong bagay. Nakatago ang panel hanggang may sarili kang bagay na ipa-publish, kaya ang isang studio na hindi kailanman nag-publish ay hindi kailanman ipinapakita ang machinery.
+Ang **Versions** sa ibaba ng rail ang lugar kung saan huminto na ang isang design system sa pagiging isang lumilipat na target. Mag-publish ng isa at makakakuha ka ng isang **permanente, may-pangalang kopya** na nakatago sa device na ito: hindi na ito magbabago pagkatapos, kaya ang isang tool na nag-pin dito ay lagi nang gagawa ng parehong bagay. Nananatiling nakatago ang panel hanggang sa may isang bagay ng sarili mong ipe-publish, kaya ang isang studio na hindi kailanman nag-publish ay hindi kailanman makikita ang mga kontrol.
 
 Tatlong bagay na dapat malaman bago ka mag-pindot ng anuman, at sinasabi ng panel ang tatlo bago ang pag-pindot sa halip na pagkatapos:
 
-- **Ang isang version ay permanente.** Wala pang delete, kaya ang panel ay nagsasaad kung ano ang napanatili at na mananatili itong napanatili sa halip na mag-alok ng button na nagsisinungaling.
-- **Ang mga pag-alis ang nangunguna sa compatibility card.** Ang mga naidagdag at nabagong token ay balita; ang isang *tinanggal* ay ang bagay na sumisira sa isang tool, kaya ito ang unang binabanggit at tinatawag sa kung ano ito.
-- **Ang pag-publish ay hindi na-uundo; ang pag-restore ay pwede.** Ang *Restore latest from this version* ay isang ordinaryong edit sa head, kaya napupunta ito sa undo stack ng studio at inaalok ka agad ng panel ng **Undo**.
+- **Permanente ang isang version.** Wala pang delete ngayon, kaya sinasabi ng panel kung ano ang naitago at na patuloy itong mananatiling naka-imbak sa halip na mag-alok ng isang button na nagsisinungaling.
+- **Ang mga tinanggal ang nangunguna sa compatibility card.** Balita ang mga token na idinagdag at binago; ang isang *tinanggal* na token ang siyang sumisira sa isang tool, kaya ito ang unang pinangalanan at tinatawag sa tunay nitong katangian.
+- **Hindi na maaaring i-undo ang pag-publish; ang pag-restore ay maaari.** Ang *Restore latest from this version* ay isang ordinaryong edit sa head, kaya napupunta ito sa undo stack ng studio at inaalok agad sa iyo ng panel ang **Undo**.
 
 Puwede kang **Publish only**, o **Publish and make active** - ang pagkakaiba ay kung susundan ng mga tool at ng app ang version na iyon mula ngayon o patuloy na susundan ang iyong pinakahuling edit. **Follow the latest again** ang naglalagay sa bawat edit na live sa sandaling gawin ito. Binubuksan ng `#/start?area=versions` ang panel nang direkta.
 

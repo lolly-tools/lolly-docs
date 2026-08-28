@@ -153,7 +153,7 @@ Headings, code và italic đều mặc định quay về primary cho đến khi 
 
 Khu vực so sánh mở **ngay trong khu vực đó**, không phải trong hộp thoại, nên các thẻ bạn vừa rời khỏi vẫn còn trên màn hình. Tìm một họ font Google Fonts (Inter, Fraunces, Space Grotesk…) hoặc thả một tệp font vào, nhấn **Add to the comparison** và các ứng viên đứng cạnh nhau với cùng một đoạn chữ trước khi bất kỳ cái nào được cài đặt. Escape hủy bỏ và trả bàn phím lại cho thẻ mà bạn đã mở nó từ đó.
 
-Đó là cánh cửa duy nhất để vào, đó là lý do không có gì lọt vào thương hiệu của bạn mà bạn chưa nhìn thấy. Bên dưới khu vực so sánh là hai bảng quản lý:
+Đó là cánh cửa duy nhất để đi vào, đó là lý do không có gì có thể lọt vào thương hiệu của bạn mà không bị nhìn thấy. Bên dưới stage là hai bảng quản lý:
 
 - **Fonts on this device** - mọi họ font đã cài, các vai trò nó đang phục vụ và một nút xóa. **Add a face** ở đây mở cùng compare stage nhưng không giới hạn vai trò.
 - **Your fonts** - tải lên một tệp **TTF**, **OTF** hoặc **WOFF** từ chính máy của bạn. Đây là con đường cho một font doanh nghiệp có bản quyền mà bạn đã sở hữu.
@@ -211,13 +211,13 @@ Một lượt cài đặt từ nguồn sẽ **chụp lại điểm khôi phục 
 
 ## Phiên bản
 
-**Phiên bản** ở cuối thanh bên là nơi một hệ thống thiết kế thôi trở thành mục tiêu di động. Xuất bản một phiên bản và bạn sẽ có **một bản sao vĩnh viễn, có tên** được lưu trên thiết bị này: nó không bao giờ thay đổi sau đó, nên một công cụ ghim vào nó sẽ luôn vẽ ra cùng một thứ. Bảng điều khiển vẫn ẩn cho đến khi có thứ gì đó của riêng bạn để xuất bản, nên một studio chưa từng xuất bản sẽ không bao giờ thấy cơ chế này.
+**Versions** ở cuối rail là nơi một hệ thống thiết kế ngừng là một mục tiêu di động. Publish một phiên bản và bạn có được một **bản sao vĩnh viễn, có tên** được giữ trên thiết bị này: nó không bao giờ thay đổi sau đó, nên một công cụ ghim vào nó sẽ luôn vẽ ra cùng một thứ. Bảng điều khiển này vẫn ẩn cho đến khi có điều gì đó của riêng bạn để publish, nên một studio chưa bao giờ publish sẽ không bao giờ thấy các điều khiển này.
 
 Ba điều cần biết trước khi bạn nhấn bất cứ nút nào, và bảng điều khiển nói cả ba điều đó trước khi bạn nhấn chứ không phải sau:
 
-- **Một phiên bản là vĩnh viễn.** Chưa có tính năng xóa, nên bảng điều khiển nêu rõ điều gì đã được giữ lại và nó sẽ luôn được giữ lại, thay vì đưa ra một nút bấm nói dối.
-- **Các thay đổi bị gỡ bỏ được nêu đầu tiên trong thẻ tương thích.** Token được thêm và thay đổi là tin tức; một token bị *gỡ bỏ* là thứ làm hỏng một công cụ, nên nó được nêu tên đầu tiên và gọi đúng bản chất.
-- **Xuất bản thì không thể hoàn tác; khôi phục thì có thể.** *Khôi phục bản mới nhất từ phiên bản này* là một chỉnh sửa bình thường vào đầu bản ghi, nên nó nằm trên ngăn xếp hoàn tác của studio và bảng điều khiển đưa ra ngay lựa chọn **Hoàn tác**.
+- **Một phiên bản là vĩnh viễn.** Hiện chưa có chức năng xóa, nên bảng điều khiển nói rõ điều gì đã được giữ lại và rằng nó sẽ tiếp tục được giữ lại, thay vì đưa ra một nút bấm nói dối.
+- **Việc gỡ bỏ dẫn đầu thẻ tương thích.** Các token được thêm và thay đổi là tin tức; một token bị *gỡ bỏ* mới là điều làm hỏng một công cụ, nên nó được nêu tên đầu tiên và được gọi đúng bản chất của nó.
+- **Việc publish không thể hoàn tác; việc khôi phục thì có thể.** *Restore latest from this version* là một chỉnh sửa thông thường vào head, nên nó được đưa vào ngăn xếp undo của studio và bảng điều khiển sẽ cung cấp cho bạn **Undo** ngay lập tức.
 
 Bạn có thể **Chỉ xuất bản**, hoặc **Xuất bản và đặt làm bản đang dùng** - khác biệt ở chỗ liệu công cụ và ứng dụng có theo phiên bản đó từ nay trở đi hay tiếp tục theo chỉnh sửa mới nhất của bạn. **Theo bản mới nhất trở lại** đưa mọi chỉnh sửa lên trực tiếp ngay khi nó được thực hiện. `#/start?area=versions` mở bảng điều khiển này trực tiếp.
 

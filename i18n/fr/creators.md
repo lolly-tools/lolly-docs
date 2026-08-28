@@ -104,15 +104,25 @@ Filtres avancés, compositing, animation, effets de caméra en direct, design
 génératif - chaque technologie web est disponible pour l'auteur d'un template,
 le plafond est donc élevé.
 
-![Le résultat de Mesh Gradient - un champ génératif de couleurs douces construit entièrement à partir des tokens de palette de ta marque](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Le résultat de Mesh Gradient - un champ génératif de couleur douce entièrement construit à partir des tokens de palette de ta marque](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+
+### Cultivé, pas dessiné
+
+**Growth** fait pousser l'image au lieu de la dessiner : un système à partir d'une graine se propage depuis un anneau, une ligne, tes propres mots ou ton logo jusqu'à remplir le cadre, dans ta palette. La même graine fait toujours pousser la même pièce, donc un lien la reproduit exactement. Ce qui en sort est de la géométrie SVG ordinaire plutôt que l'image d'un dessin, donc ça s'imprime, se trace et se découpe - et le même design s'anime de la première graine jusqu'à la forme finale en vidéo.
+
+![La floraison par défaut de Growth - un champ dense de lignes en boucle aux couleurs de la marque, ayant poussé depuis un anneau, chaque ligne étant un vrai chemin SVG](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
+### Un mouvement qui répond à la musique
+
+**Synth** résout un champ fluide sur la carte graphique et le peint dans tes couleurs. Donne-lui un morceau et le champ bouge avec le son ; il s'exporte en MP4, WebM, GIF ou boucle PNG animée qui se raccorde proprement bout à bout, rendue image par image à partir d'une horloge pilotée plutôt qu'enregistrée depuis l'écran - donc le mouvement ne dérive jamais par rapport à la bande son, et le même lien rend le même clip à n'importe quelle longueur.
+
+![Une image de la scène d'encre de Synth - un champ fluide sombre éclairé dans les verts de la marque, saisi en plein tourbillon](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 Crée des *outils*, pas des fichiers : construis la chose qui génère 10 000
 cartes plutôt que de faire 10 000 cartes. Verrouille ce qui ne doit pas
 changer ; n'expose que ce qui est censé varier.
 
 ## Les détails que tu remarqueras
-
-![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
 
 - **L'impression, bien faite.** De vraies unités physiques (mm/cm/in/pt) et le DPI, les fonds perdus et les repères de coupe, la sortie CMJN et PDF/X-4 - un imprimeur obtient exactement ce dont il a besoin. Voir [Exporter](/info/exporting.html#size-print-units).
 - **Vidéo et animation.** Exporte en WebM/MP4 (avec pistes audio), en PNG/WebP animés et en SVG animé - depuis le même modèle qui produit tes images fixes. **Sequence Studio** va plus loin : une vraie timeline sous le canevas, avec une rangée magnétique de clips, des pistes de superposition libres, le découpage et la scission, des préréglages de transition, l'enregistrement de voix off et un mixage musical - le tout restitué en MP4, WebM, GIF ou APNG par un compositeur déterministe plutôt qu'un enregistrement d'écran. Les fichiers Lottie entrent comme ressources animées et se restituent dans n'importe lequel de ces formats. Au-dessus des clips se trouvent les **images clés** : pose une boîte à un instant précis, détache-la de la page avec une vraie profondeur et fais survoler la scène par une caméra. Voir [Utiliser Lolly → Timeline](/info/using.html#timeline-sequence-studio) et [Animer](/info/animating.html).
@@ -124,8 +134,6 @@ changer ; n'expose que ce qui est censé varier.
 - **Une interface plus calme quand tu en as besoin.** Quatre interrupteurs sous **Profil → Accessibilité** - *Réduire les animations*, *Masquer les aperçus colorés*, *Contraste élevé* et *Texte large* - apaisent l'app autour de ton travail. Chacun est désactivé jusqu'à ce que tu l'actives, et aucun ne touche à ton canevas ni ne déplace un pixel de ce que tu exportes. Voir [Ton profil → Accessibilité](/info/profile.html#accessibility).
 
 ## En tirer le meilleur parti
-
-![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[Démarrage rapide](/info/quickstart.html)** - la marque entre, le premier fichier sort.
 - **[Le Brand Studio](/info/brand-studio.html)** - façonne tes logos, couleurs, typographie et tokens (`#/start`).

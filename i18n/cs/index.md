@@ -1,10 +1,10 @@
 
 # Lolly - text úvodní stránky
 
-Tvoje tvorba, tvoje soubory: hotové výstupy během vteřin, přímo na tvém zařízení.
-Vyber nástroj, doplň slova a výsledek sedí: barvy, písma i rozvržení jsou už vyřešené.
-Stejné tam, kde chceš, jiné tak, jak chceš.
-Zdarma - a zdarma zůstane: bez účtu, bez karty, bez háčku.
+Soubory ve studiové kvalitě během vteřin, na tvém vlastním zařízení.
+
+Identické, kdykoli chceš, jiné, kdykoli potřebuješ.
+Zdarma a open source: bez účtu, bez karty, bez háčku.
 
 
 ---
@@ -55,10 +55,10 @@ Nastav si infografický styl redakce jednou a pak generuj podklady v publikačn�
 
 Ne všechno je marketing. Přepravní štítky, série jmenovek, jednostránkové souhrny pro compliance, oznámení o incidentech - výstupy, kde význam nese rozvržení a data nesmějí být špatně. Lolly řeší přepravní štítek se stejnou precizností jako kampaňový plakát.
 
-- **Strukturovaná data dovnitř, přesný výstup.** Předej tabulku v CSV nebo JSON a každé pole dopadne přesně tam, kde ho šablona čeká - jeden hotový soubor na řádek.
-- **Fyzická přesnost.** Skutečné jednotky (mm/cm/in/pt), reálné DPI, spadávka a ořezové značky. Tiskárna štítků i tiskárna dostanou přesně to, co potřebují.
-- **Logika běží uvnitř nástroje.** Čárové kódy, počítání s daty, podmíněná rozvržení, kontroly kontrastu - spočítané při vykreslení, ne ručně.
-- **Deterministické už z principu.** Stejné vstupy, stejný soubor, pokaždé. Auditovatelné, opakovatelné, automatizovatelné z CLI nebo z pipeline.
+- **Strukturovaná data na vstupu, přesný výstup.** Dej tomu tabulku CSV nebo JSON a každé pole se dostane přesně tam, kde ho šablona očekává - jeden hotový soubor na řádek.
+- **Fyzická přesnost.** Skutečné jednotky (mm/cm/in/pt), skutečné DPI, spadávka a ořezové značky. Tiskárna štítků nebo tiskárna dostane přesně to, co potřebuje.
+- **Logika běží uvnitř nástroje.** Čárové kódy, výpočty s daty, podmíněné rozvržení, kontrola kontrastu - spočítané v okamžiku vykreslení, ne ručně.
+- **Deterministické z podstaty.** Stejný vstup, stejný soubor, pokaždé. Auditovatelné, opakovatelné, automatizovatelné z CLI nebo pipeline.
 
 ---
 
@@ -82,11 +82,11 @@ Navrhuješ systémy a řešíš problémy, ne jednorázovky. Lolly je prováděc
 
 Obrázky jsou artefakty buildu. Tak s nimi taky zacházej. Lolly běží z CLI, takže podklady generuješ stejně jako všechno ostatní - opakovatelně, automaticky a jako součást svého workflow.
 
-- **Model nasaď na skicu, ne na tiskový stroj.** Generovat média v tiskové kvalitě promptem je drahé a výsledek je spíš blízko než správně. Nástroj vyrobí pokaždé stejný soubor, a to zadarmo.
-- **Reprodukovatelné výstupy.** Stejné vstupy dají pokaždé stejný soubor. Zacommituj URL a vygeneruj znovu, kdy potřebuješ - už žádné commitování obrázků ani shánění poslední verze po Slacku.
-- **Dostaň média ven z repozitáře.** OG obrázky, QR kódy, karty na sociální sítě a datové vizualizace generuj při buildu, místo abys v Gitu skladoval binárky.
-- **Spouštěj logiku uvnitř podkladů.** Nástroje jako Code Canvas a Chart Creator ti dovolí vložit skutečný obsah - úryvky kódu, strukturovaná data, živé hodnoty - do šablon v produkční kvalitě, aniž bys psal vlastní renderer.
-- **Nulový lock-in.** Open source engine, výpočty lokálně, žádné API klíče, žádné limity.
+- **Dej model na skicu, ne na tisk.** Generování médií v tiskové kvalitě podle promptu je nákladné a výsledek je jen přibližný, ne přesný. Nástroj vytvoří stejný soubor pokaždé, a to zadarmo.
+- **Reprodukovatelné výstupy.** Stejný vstup vytvoří stejný soubor, pokaždé. Zapiš URL adresu, regeneruj na vyžádání - konec kontrolování obrázků nebo honění nejnovější verze ze Slacku.
+- **Dostaň média ven ze své codebase.** Generuj OG obrázky, QR kódy, karty pro sítě a datové vizualizace v čase buildu místo ukládání binárek do Gitu.
+- **Spouštěj logiku uvnitř zdrojů.** Nástroje jako Code Canvas a Chart Creator ti umožní umístit skutečný obsah - úryvky kódu, strukturovaná data, živé hodnoty - dovnitř šablon v produkční kvalitě bez stavby vlastního rendereru.
+- **Žádná závislost na dodavateli.** Open source jádro, lokální výpočet, žádné API klíče, žádné limity požadavků.
 
 ```bash
 lolly qr-code --url=https://suse.com --output=og-qr.svg

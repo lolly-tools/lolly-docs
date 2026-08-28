@@ -12,7 +12,7 @@
 
 도구마다 화면이 둘로 나뉘어요. 한쪽에는 **컨트롤**, 다른 쪽에는 실시간 **미리보기**(캔버스)가 있어요. 컨트롤을 바꾸면 미리보기가 즉시 갱신돼요.
 
-![도구의 분할 화면 - 왼쪽에는 컨트롤 묶음, 오른쪽에는 그것이 그려 내는 실시간 그룹 막대 차트](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
+![도구의 분할 화면 - 왼쪽에는 컨트롤 스택, 오른쪽에는 실시간으로 그려지는 그룹형 막대 차트](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
 
 > 일부 도구(예를 들면 **Design**)는 대신 **자유 캔버스**로 열려요 - 조작 틀이 없는 직접 조작 화면에서 텍스트와 도형, 이미지 상자를 끌고, 크기를 바꾸고, 돌리고, 맞물리게 놓고, 더블클릭해 그 자리에서 텍스트를 편집해요. 다른 모든 도구와 똑같은 렌더 경로로 내보내니, 캔버스가 *그대로* 파일이에요. 아래 [자유 캔버스](#the-free-canvas-design)를 참고하세요.
 
@@ -167,7 +167,7 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 
 염두에 둘 제한이 몇 가지 있어요. 시퀀스는 최대 한 시간이고, GIF와 애니메이션 PNG는 프레임을 쌓아 두기 때문에 짧게 유지되며, 속도가 ×1이 아닌 클립은 소리가 나지 않고(아직 타임 스트레칭이 없어요), **Record live**는 합성 경로가 더 낫기 때문에 여기서는 숨겨 뒀어요.
 
-**프리셋 너머 - 키프레임, 깊이, 카메라.** 트랜지션은 클립이 들어오고 나갈 때를 애니메이션해요. 클립 *안에서* 상자에 자세를 주려면 - 흘러가게 하고, 서서히 사라지게 하고, 흐리게 하고, 지면에서 들어 올렸다가 다시 내려놓으려면 - 키프레임을 더하세요. 클립을 선택하고 **+Keyframe**(타임라인 도구 묶음의 마름모, 캔버스 개체 바의 마름모, 또는 `K`)을 누르면, 재생 헤드의 위치가 다음 편집이 어느 자세로 기록될지 정해요. 같은 장치가 시간이 있는 모든 구성에 **카메라**를 줘서 밀고 들어가고, 가로지르고, 초점을 옮기며, 평평한 SVG 하나를 사이사이 날아다닐 수 있는 레이어 더미로 바꿔요. **[애니메이션](/info/animating.html)**에 전체 안내가 있어요.
+**프리셋을 넘어서: 키프레임, 깊이, 카메라.** 트랜지션은 클립이 들어오고 나갈 때 애니메이션을 적용해요. 클립 *안에서* 요소를 배치하려면 - 이동시키거나, 페이드하거나, 블러 처리하거나, 화면 밖으로 들어 올렸다가 다시 내려놓으려면 - 키프레임을 추가하세요: 클립을 선택하고 **+Keyframe**(타임라인 도구 모음의 다이아몬드, 캔버스 객체 바의 다이아몬드, 또는 `K`)을 누르면 재생 헤드의 위치가 다음 편집이 기록할 포즈를 결정해요. 같은 키프레임 시스템이 모든 타임드 컴포지션에 밀어 들어가고, 가로로 패닝하고, 초점을 당기는 **카메라**를 제공하며, 평면 SVG 하나를 층층이 넘나들 수 있는 레이어 스택으로 바꿔줘요. **[애니메이션 만들기](/info/animating.html)**가 전체 가이드예요.
 
 Design 도구에도 같은 타임라인이 있어요. 그래서 다른 도구로 옮기지 않고도 레이아웃에 시간을 입힐 수 있고, 모션으로 내보내기도 해요.
 
@@ -180,7 +180,7 @@ Design 도구에도 같은 타임라인이 있어요. 그래서 다른 도구로
 - **단계별로 드러내기.** 상자를 오른쪽 클릭해 기본값 **Always visible** 대신 **Reveal at step 1**, **2**, **3** 중 하나를 고르세요. 그 상자는 해당 단계로 넘어갈 때까지 기다리니 슬라이드가 나눠서 도착하고, 같은 번호를 가진 상자는 함께 도착해요.
 - **Speaker view**(`S`)는 현재 슬라이드와 다음 슬라이드, 그 슬라이드의 메모, 흐르는 시계를 담은 두 번째 창을 열어요. 브라우저가 팝업을 막으면 덱 위의 패널로 대신 떠요. 메모는 아트보드마다 따로 정하고 슬라이드 자체에는 절대 나타나지 않아요.
 - `B`는 검은 화면을 유지하고(아무 키나 누르면 슬라이드가 돌아와요), `F`는 전체 화면으로 되돌리며, **Escape**는 한 겹씩 벗겨 내요. 개요에서 덱으로, 덱에서 편집기로요.
-- **키오스크.** 아트보드에 **Length**를 주면 덱이 그만큼 머물렀다가 얇은 진행 막대와 함께 스스로 넘어가요. `K`(또는 길이가 정해진 것이 생겨야만 나타나는 일시정지 버튼)로 멈추고 다시 시작해요. 링크에 `loop`를 더하면 덱이 끝에서 처음으로 돌아가고, 그래서 안내 사이니지가 돼요.
+- **키오스크.** 아트보드에 **Length**를 주면 덱이 그만큼 머물렀다가 얇은 진행 막대와 함께 스스로 넘어가요. `K`(또는 길이가 정해진 것이 생겨야만 나타나는 일시정지 버튼)로 멈추고 다시 시작해요. 링크에 `kiosk`를 더하면 덱이 끝에서 처음으로 돌아가고, 그래서 안내 사이니지가 돼요.
 
 덱은 링크이기도 해요. `?present`는 곧장 덱으로 열고, `s=`는 슬라이드를 지정하며(위치, 아트보드 id, 또는 등장 단계까지 지정하는 `id.step`), 이동할 때마다 주소가 갱신되니 보내는 링크가 곧 지금 보고 있는 슬라이드예요. 도구 제작자를 위해: 이 매개변수는 [URL 모드](/info/url-mode.html#reserved-parameters) 페이지에 정리돼 있어요.
 
@@ -210,7 +210,7 @@ Design 도구에도 같은 타임라인이 있어요. 그래서 다른 도구로
 - **텍스트 상자에 커서가 있는 동안**에는 Cmd/Ctrl-Z가 그 칸의 몫이라 글자 단위로 되돌아가요. Lolly는 쓸 만한 자체 실행 취소가 없는 컨트롤, 즉 슬라이더와 드롭다운, 색, 스위치를 맡아요.
 - **file** 입력에서 **파일을 고르는 것**은 한 단계가 아니에요. 그 바이트는 세션 동안만 들고 있어서 되돌릴 것이 없거든요.
 
-실시간 [협업](/info/collaborate.html) 중에도 기록은 오롯이 내 것이에요. 다른 기기에서 온 변경은 내 스택에 쌓이지 않으니, 실행 취소는 언제나 내가 한 일만 되돌려요.
+실시간 [협업](/info/collaborate.html) 중에도 히스토리는 오직 나만의 것으로 유지돼요. 다른 기기에서 들어온 변경 사항은 절대 내 스택에 올라가지 않으므로, 실행 취소는 언제나 내가 한 작업만 되돌릴 수 있어요.
 
 ## 내 정보와 프로필 사진
 
@@ -266,10 +266,10 @@ alt text names them - do not re-caption this as "the sort menu".
 
 > 이름 때문에 헷갈리기 쉬운 지점 하나. **View sessions**는 무언가 *선택된* 뒤에만 있어요. 선택하지 않은 카드 하나를 오른쪽 클릭하면 대신 **N saved sessions**가 나오는데, 이건 Projects로 이동하는 대신 그 도구의 기록 대화상자를 열어요.
 
-![Tools 갤러리에서 도구 카드 두 개가 체크된 모습 - 떠 있는 선택 바가 2 selected라고 표시하며 Available offline, View sessions, Favourite, Hide를 내주고 있어요](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
+![Tools 갤러리에서 도구 카드 두 개가 선택된 상태이고, 떠 있는 선택 표시줄에 2 selected라고 표시되며 Available offline, View sessions, Favourite, Hide가 제공돼요](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
 <!--
 SHOT NOTE (misc-bulkbar-gallery): drive targets `[data-select="qr-code"]` /
-`[data-select="d3"]` - the `.tile-check[data-select="<ref>"]` checkbox button
+`[data-select="gradient"]` - the `.tile-check[data-select="<ref>"]` checkbox button
 confirmed directly in views/gallery.ts's card markup (the same attribute
 cardMarkup gives every tile), so these two clicks tick both cards without
 opening either tool.
@@ -291,14 +291,16 @@ storage-seeding hook.
 
 ### 링크
 
-![Jump Page in the editor - the heading, three link scenes each with its own wash and a Made with Lolly footer, laid out as one page in the canvas](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
-
 모든 입력이 페이지 URL에 담기니, 링크가 *곧* 디자인이에요. 대화상자 맨 위에는 바로 복사할 수 있는 링크가 있고, 그 아래에 접힌 구역이 둘 있어요.
 
 - **Link options**에는 **Shortest link**(큰 디자인은 URL이 길어지니, 상태 전체를 작은 토큰으로 담고 글자 수가 얼마나 줄었는지 보여 줘요. 읽을 수 있는 형태도 언제나 함께 있어요), **Password-protect this link**(링크 전체에 AES-256을 씌우고, 비밀번호는 링크에 담기지 않아요), **Pin this tool version**(지금 보고 있는 도구 버전에 링크를 못 박는 `_v` 플래그로, 나중에 업데이트돼도 렌더 결과가 바뀌지 않아요)이 있어요.
 - **Link behaviour**는 받는 사람이 링크를 열었을 때 무슨 일이 일어날지예요. 전체 화면, 내보내기 패널이 이미 펼쳐진 상태, `&export`로 열자마자 다운로드하기, `&copy`로 클립보드에 복사하기요.
 
 링크를 동료에게 붙여넣거나, 즐겨찾기에 넣거나, 저장소에 커밋하세요. (자세한 내용: [URL 모드](/info/url-mode.html).)
+
+**어떤 도구는 링크 자체가 곧 완성된 제품이에요.** Jump Page는 여러 링크를 나눠줄 페이지 하나로 모아줘요 - 바이오 링크, 컨퍼런스 발표, 매장 소개 페이지 등이에요. 호스팅할 것도 없고 뒤에 계정도 없어요: 페이지가 곧 링크이므로 URL이 도달하는 속도만큼 빠르게 열려요. 편집기에서는 완성된 페이지를 입력 필드 옆에서 볼 수 있고, 링크를 여는 방문자는 전체 너비로, 스크롤할 때마다 장면당 링크 하나씩 보게 돼요.
+
+![편집기에서 본 Jump Page - 제목, 각각 고유한 색조를 가진 세 개의 링크 장면, 그리고 Made with Lolly 푸터가 캔버스 안에 하나의 페이지로 배치돼 있어요](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
 
 **링크가 담을 수 없는 것은 대화상자가 말해 줘요.** URL에 들어가지 못하는 것이 셋 있어요. 이 기기에서 추가한 이미지나 파일, 아주 긴 텍스트 값, 아주 큰 목록이에요. 링크를 만들면서 각각을 세어 둬요. 빠뜨릴 수밖에 없는 것이 있으면, 그림이 빠진 채 열리는 링크를 건네는 대신 무엇이 빠졌는지 짚어 주고 아래의 파일 쪽으로 안내해요. 단지 *길기만* 한 링크에는 글자 수와 함께 더 가벼운 안내가 붙어요. 길이는 압축으로 아직 구할 수 있으니까요.
 
@@ -314,7 +316,7 @@ storage-seeding hook.
 - **라이선스 아트 포함 여부.** 라이선스가 걸려 있거나 브랜드에 잠긴 에셋은 기본적으로 제외됩니다. 디자인에 그런 에셋이 있으면 대화상자에 몇 개인지 표시되고 두 가지 버튼 중 하나를 선택할 수 있습니다 - *Download without them* 또는 *Include and download* - 포함하면 `.lolly`를 여는 사람에게 실제 파일이 넘어가기 때문입니다.
 - **도구 포함 여부.** **Include the tool**을 선택하면 도구 자체의 파일이 디자인과 함께 패키징되어 그 도구가 없는 기기에서도 열립니다. 커스텀 도구 - 수신자가 갖고 있을 가능성이 낮은 포크나 비공개 브랜드 도구 - 는 기본적으로 체크되어 있고, 서명된 카탈로그에 등재된 도구는 상대방도 같은 출처에서 받으므로 기본적으로 체크되어 있지 않습니다. (서명된 카탈로그가 없는 빌드에서는 모든 도구가 커스텀으로 취급되어 체크박스가 처음부터 켜져 있습니다.)
 
-**여는 방법.** `.lolly`를 앱 위로 끌어다 놓으세요. 자산은 내 라이브러리로, 세션은 Projects로 들어가고 도구가 그 세션으로 열려요. 내 것은 하나도 덮어쓰이지 않아요. 세션은 새 저장 칸으로 들어오고, 이 기기에 이미 있는 자산은 체크섬으로 대조해 복제하지 않고 다시 써요. 들어오는 길에 모든 부분을 파일 자체의 체크섬과 대조하니, 전송 중에 손상된 사본은 절반만 들어오는 대신 아예 거절돼요.
+**파일 열기.** 앱에 `.lolly` 파일을 놓으면: 애셋은 라이브러리로, 세션은 프로젝트로 들어가고 도구가 그 세션을 열어요. 기존 항목은 아무것도 덮어쓰지 않아요: 세션은 새로 저장된 슬롯으로 도착하고, 이 기기에 이미 있는 애셋은 체크섬으로 대조해 중복 생성 없이 재사용돼요. 모든 부분은 들어오는 과정에서 파일 자체의 체크섬으로 검사되므로, 전송 중 손상된 사본은 절반만 가져오는 대신 거부돼요.
 
 파일에 내게 없는 도구가 실려 있으면, Lolly는 그 도구가 실행되기 전에 먼저 물어요. **Trust this tool?**은 도구 이름과 제작자를 밝히고, 이것을 열면 도구 자체의 코드가 내 기기에서 실행된다고 분명하게 말해 줘요. 계속하는 길은 **Trust & install**이에요. 거절해도 공유받은 작업물은 프로젝트에 저장돼서, 그 도구를 추가하는 날까지 거기서 기다려요. (아직 곁에서 설치할 수 없는 도구가 한 종류 있어요. 코드가 모듈로 배포되는 도구인데, 같은 방식으로 돌려보내져요.)
 
@@ -334,10 +336,10 @@ storage-seeding hook.
 
 ![카탈로그 - 브랜드 자산과 색 견본, 글꼴, 그리고 내가 올린 파일](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=2400&css=.plat-swatch-grid~%2A%7Bdisplay%3Anone%7D&walker=1&format=svg&localize=1&dark=1&filename=catalogue)
 
-- <!--i:upload--> **파일 가져오기.** 이미지, SVG, 오디오 클립, 동영상, Lottie, PDF, PowerPoint 파일을 업로드 영역에 드래그하거나 클릭해서 선택하면 즉시 카탈로그에 들어가 모든 도구의 에셋 선택기에서 바로 쓸 수 있습니다. 여러 페이지 PDF나 `.pptx`는 어떤 페이지나 슬라이드를 남길지 물어보며, 각각이 SVG 에셋이 됩니다. 얼마든지 많이 가져와도 기기 밖으로 나가지 않습니다.
-- <!--i:star--> **자주 쓰는 항목 즐겨찾기.** 에셋(또는 브랜드 색상 견본)에 ★를 누르면 모든 선택기 맨 위에 고정되어, 자주 쓰는 로고나 색상을 클릭 한 번으로 쓸 수 있습니다.
-- <!--i:folder--> **정리하기.** 에셋을 다른 그룹으로 재분류하고, 쓰지 않는 공유 브랜드 에셋을 숨기고(**Show hidden**으로 다시 표시), 자신이 업로드한 에셋은 완전히 삭제할 수 있습니다. 프로젝트와 동일한 다중 선택 제스처와 플로팅 액션 바를 여기서도 사용할 수 있어, 선택한 항목 전체에 한 번에 적용할 수 있습니다.
-- <!--i:layers--> **동영상 배경 제거하기.** 어떤 에셋 선택기에서든 동영상의 상세 정보를 열거나 카드를 우클릭한 뒤 **Remove background…**를 선택하면 실제 알파 채널이 있는 애니메이션 WebP 또는 PNG로 투명 버전을 저장할 수 있습니다. **Method**를 고를 수 있습니다: **On-device model**은 복잡한 장면에서 피사체를 잘라내고, **Colour key**는 그린 스크린이나 단색 벽처럼 고르게 조명된 단색 배경을 **Tolerance**, **Softness**, **Spill removal**로 경계를 다듬어 제거합니다. 컬러 키는 모델 다운로드도 네트워크도 필요 없으므로 **Remove background**는 어떤 동영상에도 제공되며, 깔끔한 촬영본일수록 결과가 더 좋은 경우가 많습니다. **Resolution** 옵션(360, 480, 720 또는 1080p, 원본을 넘지 않음)으로 화질과 더 작고 빠른 파일 크기를 맞바꿀 수 있습니다. 이 작업은 기기에서 백그라운드 작업으로 실행됩니다. 완성된 컷아웃은 원본 옆에 별도 에셋으로 나타나며 원본 동영상의 Content Credential이 재료(ingredient)로 함께 따라갑니다. (배경 제거가 왜 단순 편집으로 남는지는 [한 번 생성되면 같은 결과로 렌더링됩니다](/info/ai-features.html) 참고.)
+- <!--i:upload--> **파일을 가져오세요.** 이미지, SVG, 오디오 클립, 동영상, Lottie, PDF, PowerPoint 덱을 업로드 영역에 드래그하거나 - 클릭해서 선택하면 - 즉시 카탈로그에 도착해 모든 도구의 애셋 선택기에서 바로 사용할 수 있어요. 여러 페이지의 PDF나 `.pptx`는 유지할 페이지나 슬라이드를 물어보고, 각각이 SVG 애셋이 돼요. 원하는 만큼 가져오세요. 기기 밖으로 나가지 않아요.
+- <!--i:star--> **자주 쓰는 항목을 즐겨찾기하세요.** 애셋(또는 브랜드 색상 견본)에 ★를 표시하면 모든 선택기 맨 위에 고정되어, 자주 쓰는 로고나 색상을 클릭 한 번으로 사용할 수 있어요.
+- <!--i:folder--> **정리하세요.** 애셋을 다른 그룹으로 다시 분류하거나, 사용하지 않는 공유 브랜드 애셋을 숨기거나(**Show hidden**(숨긴 항목 표시)으로 다시 불러올 수 있어요), 직접 업로드한 항목을 완전히 삭제할 수 있어요. Projects와 같은 다중 선택 제스처와 플로팅 작업 표시줄을 여기서도 사용할 수 있어서, 선택한 전체 항목에 한 번에 적용할 수 있어요.
+- <!--i:layers--> **동영상에서 배경을 제거하세요.** 애셋 선택기에서 동영상의 세부 정보를 열거나 카드를 오른쪽 클릭해 **Remove background…**(배경 제거…)를 선택하면 투명 버전을 저장할 수 있어요 - 실제 알파값을 가진 애니메이션 WebP 또는 PNG예요. **Method**(방법)를 선택하세요: **On-device model**(온디바이스 모델)은 복잡한 장면에서 피사체를 오려내고, **Colour key**(컬러 키)는 그린 스크린이나 단색 벽처럼 조명이 고른 단색 배경을 제거하며, **Tolerance**(허용 오차), **Softness**(부드러움), **Spill removal**(번짐 제거)로 경계를 다듬을 수 있어요. 컬러 키는 모델 다운로드도 네트워크도 필요 없어서 **Remove background**(배경 제거)는 모든 동영상에서 제공되며, 깔끔하게 촬영된 영상에서 더 좋은 결과를 낼 때가 많아요. **Resolution**(해상도) 설정(360, 480, 720 또는 1080p, 원본을 넘지 않음)은 화질과 더 작고 빠른 파일 사이에서 절충할 수 있게 해줘요. 이 작업은 기기에서 백그라운드 작업으로 실행돼요. 완성된 오려내기는 원본 옆에 별도의 애셋으로 저장되고, 원본 동영상의 Content Credential이 재료(ingredient)로 함께 따라가요. (배경 제거가 왜 평범한 편집으로 유지되는지는 [한 번 생성하면 똑같이 렌더링](/info/ai-features.html)을 참고하세요.)
 
 ### 팔레트와 글꼴을 어디로든 가져가기
 
@@ -395,13 +397,13 @@ Sound 스위치 옆에는 **Neurospicy Mode**가 있어요 - 일하는 동안 �
 
 고급 사용자를 위한 **Batch**(갤러리에서 연결되고, 기본으로 켜져 있는 Pro 기능 플래그 뒤에 있어요)는 여러 변형을 한 번에 렌더링해요. 각 행이 입력 한 벌인 격자를 함께 내보내는 방식이에요. 카드 하나를 열두 개 언어로 현지화하거나, 모든 크기 변형을 한 번에 만들 때 딱 맞아요. 행은 직접 입력하거나 스프레드시트에서 그대로 붙여넣거나 CSV를 가져와 채우고(다시 CSV로 내보낼 수도 있어요), 행마다 형식과 크기, 출력 파일 이름을 정하세요. 격자 전체를 이름 붙인 **배치 세션**으로 저장하면 갤러리에서 다시 열리고, 모든 행을 하나의 `.zip`으로 내려받을 수 있어요.
 
-![배치 툴바 - zip 이름, 단위, DPI, 모든 행이 물려받는 형식, 그리고 오른쪽의 Sessions와 Render](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
+![일괄 처리 도구 모음 - zip 이름, 단위, DPI, 모든 행이 상속하는 형식이 있고 오른쪽에는 Sessions와 Render가 있어요](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
 
 Batch는 **한 템플릿의 여러 변형**을 한 번에 만드는 기능이에요. **이미 저장한** 세션을 다시 렌더링하려면 위에서 설명한 **Projects → Render folder / Render selection**을 쓰세요 - Pro는 필요 없어요.
 
 ## 나란히 편집하기(Multi-edit)
 
-Batch가 디자인 *하나*의 여러 변형이라면, **Multi-edit**은 그 일의 나머지 절반이에요. **서로 다른** 저장 디자인 여럿을 한 번에 열어서, 한 번의 변경이 그 전부에 닿아요. **Projects**에서 저장한 세션을 **두 개에서 여덟 개**까지 고르고 선택 바에서 **Edit together**를 누르면, `#/multi?s=<slot>,<slot>…`에서 살아 있는 카드로 나란히 열려요. 각 카드는 저장된 썸네일이 아니라 그 세션을 실제로 렌더링한 것이라, 보이는 그대로가 내보내질 결과예요.
+일괄 처리(Batch)는 *하나의* 디자인에 대한 여러 변형이에요. **Multi-edit**은 그 반대편 절반을 담당해요: **서로 다른** 저장된 디자인 여러 개를 한 번에 열어서, 하나의 변경이 모두에 적용돼요. **Projects**에서 **2개에서 8개** 사이의 저장된 세션을 선택하고 선택 표시줄에서 **Edit together**(함께 편집)를 선택하세요. 그러면 `#/multi?s=<slot>,<slot>…`에서 나란히 놓인 실시간 카드로 열려요. 각 카드는 저장된 썸네일이 아니라 해당 세션의 실제 렌더링이므로, 보이는 그대로 내보내져요.
 
 사이드바 하나가 전부를 움직여요:
 
@@ -418,3 +420,5 @@ Batch가 디자인 *하나*의 여러 변형이라면, **Multi-edit**은 그 일
 ## 오프라인과 설치
 
 Lolly는 PWA예요. 처음 한 번 불러온 뒤로는 **오프라인**에서도 동작해요 - 브라우저 주소창에서 설치하면(모바일에서는 *Add to Home Screen*) 앱처럼 전체 화면으로 쓸 수 있어요. 다시 온라인이 되면 스스로 업데이트해요.
+
+업데이트에 대해: 업데이트 직후 화면이 로드되지 않는다면(빈 패널이나 구석에 뜨는 "failed to fetch" 메시지), 페이지를 한 번 새로고침하세요 - 앱은 새 버전을 깔끔하게 받아들이고, 작업물과 세션, 브랜드는 그대로 유지돼요. 모든 것은 페이지가 아니라 기기에 저장돼요.

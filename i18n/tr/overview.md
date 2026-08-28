@@ -66,7 +66,7 @@ Lolly'nin ne olduğunu görmenin en net yolu bir özellik listesi değil - tek b
 
 İkinci adımdaki "yeni grafik", kimsenin bir tasarım dosyası açmadan, bir veri dizesi ve bir avuç parametreden üretilen, tam olarak buna benzer bir render'dır:
 
-![Başlıklı yığılmış alan grafiği, üç serisi eksenleri, açıklaması ve başlığı elle değil şablon tarafından yerleştirilmiş soğuk bir palette bantlanmış](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![Başlıklı yığılmış bir alan grafiği; üç serisi soğuk bir palette bantlanmış, eksenler, açıklama ve başlık hepsi elle değil şablon tarafından yerleştirilmiş](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 Mesele Lolly'nin tasarımcılar için iyi *ve* geliştiriciler için iyi *ve* satış için iyi olması değil, her biri kendi başına. Bu bir **bayrak yarışı**: yaratıcının ilk işi geliştirici tarafından ölçeklendirilir, bu da üreticiyi güçlendirir. Uçaktaki teknik olmayan temsilci için zahmetsiz deneyim, ancak tasarımcının belirlediği ve geliştiricinin devreye aldığı titizlik sayesinde *mümkündür*.
 
@@ -84,7 +84,7 @@ Aynı deterministik araç bu ölçeğe üç yoldan ulaşır, hepsi aynı, önced
 - <!--i:code--> **Komut satırından bir geliştirici.** CLI, *aynı* motoru ve *aynı* render yolunu başsız çalıştırır, böylece araç bir betikte veya gece çalışan bir hatta 10.000 satırın tamamı üzerinde sıralanabilir. Bir döngüde bir `lolly <tool> --field=…` çağrısı bütün entegrasyondur.
 - <!--i:cpu--> **MCP üzerinden bir sistem veya bir yapay zeka ajanı.** Aynı araç, aynı doğrulukla ve daha da büyük ölçekte programatik olarak çalıştırılır - çünkü binlerce dosya gelirken bir makine sıkılmaz.
 
-![Yeni bir kurulumda toplu mod: bir araç bekleyen tek bir boş satır, veri gelmeden önce yerinde duran tüm e-tablo yüzeyi ve Render düğmesiyle birlikte](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+![Yeni bir kurulumda toplu mod: bir araç bekleyen boş bir satır, henüz hiçbir veri gelmeden yerinde duran tüm hesap tablosu yüzeyi ve Render düğmesiyle birlikte](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
 
 Bir tasarımcı tarafından bir kez sabitlenmiş tek bir marka kısıtları kümesi; aynı önceden onaylanmış çıktıya giden üç yol - ve makine yolu hepsinden daha uzağa ölçeklenir, çünkü dosyalar gelirken hiç yorulmaz.
 
@@ -249,7 +249,7 @@ Web kabuğu tek bir düzenden duyarlıdır. Masaüstünde bir araç, imleç etra
 
 Aynı araç telefon genişliğinde, korunması gereken ikinci bir düzen olmadan: kontroller üstte bir sayfaya dönüşür, önizleme tüm ekranı kaplar ve render hapı üzerinde yüzer.
 
-![430px genişliğinde bir ekranda audiogram - üstte kontroller sayfası, altta bitmiş kare görsel ve yüzen render hapı](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![430 piksel genişliğinde bir ekranda bir audiogram - üstte kontrol sayfası, altta bitmiş kare grafik ve yüzen render hapı](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **Toplu mod (`/pro`).** Web kabuğu ayrıca bir veya birçok araç genelinde tek seferde birçok satır render eden, tablo tarzı bir toplu ızgara da (`shells/web/src/pro/`) sunar. CSV/TSV gidiş-dönüşü ve tablodan yapıştırma, satır başına şablon/format/boyut/birim/dpi, canlı önizlemeli bir bloklar-editörü yan paneli, daraltılabilir dışa aktarma sütunları, satır başına bir "ilgililik" etiket çubuğu, soldan sürükle-tutamaçlı satır yeniden sıralama, iki adımlı silme onayı, kaydedilmiş toplu iş oturumları ve bir `.zip` indirmesi sunar. "Kitlesel içerik üretimi" konumlandırmasının arkasındaki bire-çok yüzey budur.
 
@@ -286,10 +286,10 @@ Satırlar galeri bölüm sırasına göre listelenir. `utility` bölümü her za
 | Kategori | Örnekler | Planlanan |
 |---|---|---|
 | `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
-| `designer` | Brand Lockup, Design, Chart Creator, D3 Chart Studio, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `designer` | Brand Lockup, Design, Chart, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Unit/format converters, more on-device privacy utilities |
+| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Birim/format dönüştürücüleri, cihaz üzerinde daha fazla gizlilik aracı |
 
 Bu hücreler **örneklerdir, envanter değil**. Hangi araçların var olduğu bu sayfanın değil, mount ettiğin profilin bir özelliğidir: bir marka paketi kendi araçlarını ekler ve göndermek istemediği bir topluluk aracını hariç tutabilir. `catalog/tools/index.json` - manifestlerden üretilen ve galerinin fiilen okuduğu kayıt defteri - yetkili listedir; bir profilin ne mount ettiğini saymak için, burada yazılı bir sayıya güvenmek yerine manifestleri say (`ls community/*/tool.json brands/*/tools/*/tool.json`). (İki pakette bulunan bir araç id'si, kazanan paketten bir kez mount edilir.)
 
@@ -344,14 +344,14 @@ Araçlar şablon alanları dışında DOM'a asla dokunmaz, `fetch`'i asla doğru
 
 Kapsadığını göstermek için birkaç önemli yüzey - [Host API](/info/host-api.html) her birini belgeler ve `packages/core/src/host-v1.ts` sözleşmenin kendisidir:
 
-| Yüzey | Beri | Ne ekler |
+| Yüzey | Sürümden beri | Ne ekler |
 |---|---|---|
-| `host.tokens` | 1.0 | DTCG tasarım token'ları - markanın kendi ilkelleri |
-| `host.text` | 1.0 | HarfBuzz WASM ile metinden yola (`wasm` yetenek bayrağı buna dayanan araçları işaretler) |
-| `host.media` | 1.4 | `onFrame` hook'unu yönlendiren canlı kamera kareleri. Kademeli iyileştirme, kasıtlı olarak `camera` bayrağına bağlı *değil* - böyle bir araç sıradan bir durgun görsel aracı olarak da çalışır |
-| `host.color` | 1.40 | Algısal renk matematiği: ΔEOK, WCAG + APCA kontrastı, OKLab geçişleri, sınıf aralıkları, kategorik paletler, uyum şemaları (1.60), CSS Color 4 karıştırma ve gradyan pişirme (1.68). Saf ve eşzamanlı - kabuklar herhangi bir şey uygulamak yerine motorun `makeColorApi()`sini takar, böylece sapamaz |
-| `host.images` | 1.60 | Baytları cihazda çöz / yeniden boyutlandır / yeniden kodla - dönüştürme yolu (HEIC → JPEG, WebP'ye sıkıştır, küçült). Web kabuğunda tembel bir cephe olarak gönderilir, böylece HEIC çözücü asla önyükleme parçasına inmez |
-| `host.geom` | 1.64 | Kesin vektör geometrisi: yol Boole işlemleri, ofsetleme, vuruştan-dolguya, spline indirgeme, sadeleştirme, çarpışma testi. Ayrıca saf, eşzamanlı ve motordan takılı (`makeGeomApi()`); hatalar asla fırlatılmaz, *döndürülür* |
+| `host.tokens` | 1.0 | DTCG tasarım tokenları - markanın kendi ilkel öğeleri |
+| `host.text` | 1.0 | HarfBuzz WASM üzerinden metinden yola dönüşüm (`wasm` yetenek bayrağı buna dayanan araçları işaretler) |
+| `host.media` | 1.4 | `onFrame` hook'unu tetikleyen canlı kamera kareleri. Kademeli iyileştirme, kasıtlı olarak `camera` bayrağına bağlı *değildir* - böyle bir araç yine de sıradan bir sabit görsel aracı gibi çalışır |
+| `host.color` | 1.40 | Algısal renk matematiği: ΔEOK, WCAG + APCA kontrastı, OKLab rampaları, sınıf kesimleri, kategorik paletler, uyum şemaları (1.60), CSS Color 4 karıştırma ve gradyan pişirme (1.68). Saf ve senkron - kabuklar herhangi bir şey uygulamak yerine motorun `makeColorApi()`'sini ekler, böylece sapma olamaz |
+| `host.images` | 1.60 | Cihazda bayt kodunu çözme / yeniden boyutlandırma / yeniden kodlama - dönüştürme yolu (HEIC → JPEG, WebP'ye sıkıştırma, küçültme). Web kabuğunda tembel bir cephe olarak sunulur, böylece HEIC kod çözücü asla başlangıç paketine girmez |
+| `host.geom` | 1.64 | Kesin vektör geometrisi: yol boole işlemleri, ofsetleme, kontur-doldurmaya dönüştürme, spline düşürme, basitleştirme, çarpışma testi. Ayrıca saf, senkron ve motordan eklenir (`makeGeomApi()`); hatalar asla fırlatılmaz, *döndürülür* |
 
 Geri kalanı aynı kuralları izler ve onların yanında belgelenir: cihaz üzerinde belge ameliyatı için `pdf` (1.8) ve `pptx` (1.58), klip analizi ve cihaz üzerinde TTS/transkripsiyon için `audio` (1.71) ve `speech` (1.96), MilkDrop yer tutucu sözleşmesi için `viz` (1.72), derin-bit ve katmanlı-bitmap çıktısı için `codec` (1.100) ve `layers` (1.102), cihaz üzerinde modeller için `upscale` (1.101) ve `matte` (1.103), kendi piksel işini yapan hook'lar için `raster` (1.105), dışa aktarıma dayanıklı oklar için `connectors` (1.106) ve bitmiş baytları imzalamak için `c2pa` (1.85). Sayı büyüyor; kurallar büyümüyor.
 

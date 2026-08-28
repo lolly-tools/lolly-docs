@@ -2,7 +2,7 @@
 
 Tiện ích mở rộng **Lolly URL Screenshot** cho phép ứng dụng web chụp ảnh màn hình bất kỳ trang web nào ngay từ trong trình duyệt của bạn. Không có nó, việc chụp một URL cần đến ứng dụng desktop - một trang trình duyệt không thể tự đọc pixel từ một trang khác. Tiện ích mở rộng thì có thể, dùng cùng cơ chế chụp mà ứng dụng desktop sử dụng.
 
-Nó còn làm một việc khác với cùng cơ chế đó: đọc một trang duy nhất mà bạn chỉ định để Brand Studio có thể lấy thương hiệu từ một trang web đang hoạt động. Cả hai được trình bày bên dưới.
+Nó còn làm một việc khác theo cùng cách đó: đọc một trang duy nhất mà bạn nêu tên để Brand Studio có thể rút ra một thương hiệu từ một trang web trực tiếp. Cả hai đều được trình bày bên dưới.
 
 Nó chạy trên các trình duyệt dựa trên Chromium: **Chrome, Edge, Brave, Arc, Opera** - Chrome 111 trở lên.
 

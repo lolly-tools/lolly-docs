@@ -153,7 +153,7 @@ Headings, code e italic ricadono ciascuno sul primario finché non li assegni, q
 
 Il palco si apre **all'interno della sezione**, non in una finestra di dialogo, quindi le card da cui sei partito restano a schermo. Cerca una famiglia di Google Fonts (Inter, Fraunces, Space Grotesk...) o trascina un file di font, premi **Add to the comparison** e i candidati si affiancano nelle stesse parole prima che uno qualsiasi venga installato. Escape annulla e restituisce la tastiera alla card da cui l'hai aperto.
 
-Quella è l'unica porta d'ingresso, motivo per cui nulla entra nel tuo brand a tua insaputa. Sotto il palco si trovano i due pannelli di gestione:
+Questa è l'unica porta d'ingresso, motivo per cui niente entra nel tuo marchio senza essere visto. Sotto il palco si trovano i due pannelli di gestione:
 
 - **Fonts on this device** - ogni famiglia installata, i ruoli che serve e un'eliminazione. **Add a face** qui apre lo stesso palco di confronto senza restrizioni.
 - **Your fonts** - carica un **TTF**, **OTF** o **WOFF** dal tuo computer. È il percorso per un carattere aziendale con licenza che possiedi già.
@@ -211,13 +211,13 @@ Riportarne uno indietro è **Add from… → Design tokens or a design file** (s
 
 ## Versioni
 
-**Versioni** in fondo alla barra laterale è dove un design system smette di essere un bersaglio mobile. Pubblicane una e ottieni una **copia permanente e nominata** conservata su questo dispositivo: non cambia più in seguito, quindi uno strumento che la fissa continua a disegnare la stessa cosa. Il pannello resta nascosto finché non c'è qualcosa di tuo da pubblicare, quindi a uno studio che non pubblica mai non viene mai mostrato il meccanismo.
+**Versioni**, in fondo alla barra, è dove un design system smette di essere un bersaglio mobile. Pubblicane una e ottieni una **copia permanente e con nome** conservata su questo dispositivo: non cambia mai più dopo, quindi uno strumento che la fissa continua a disegnare la stessa cosa. Il pannello resta nascosto finché non c'è qualcosa di tuo da pubblicare, quindi uno studio che non pubblica mai non vede mai i controlli.
 
 Tre cose da sapere prima di premere qualsiasi cosa, e il pannello le dice tutte e tre prima della pressione, non dopo:
 
-- **Una versione è permanente.** Non c'è ancora l'eliminazione, quindi il pannello dichiara cosa è stato conservato e che resta conservato, invece di offrire un pulsante che mente.
-- **Le rimozioni guidano la scheda di compatibilità.** I token aggiunti e modificati sono una notizia; uno *rimosso* è la cosa che rompe uno strumento, quindi viene nominato per primo e chiamato con il suo nome.
-- **Pubblicare non si può annullare; ripristinare sì.** *Ripristina l'ultima versione da questa versione* è una normale modifica alla testa, quindi finisce nello stack di annullamento dello studio e il pannello ti offre subito **Annulla**.
+- **Una versione è permanente.** Non c'è ancora l'eliminazione, quindi il pannello dichiara cosa è stato conservato e che resta conservato, invece di offrire un pulsante che mentirebbe.
+- **Le rimozioni guidano la scheda di compatibilità.** I token aggiunti e modificati sono novità; uno *rimosso* è ciò che rompe uno strumento, quindi viene nominato per primo e chiamato per quello che è.
+- **La pubblicazione non si può annullare; il ripristino sì.** *Ripristina l'ultima versione da questa versione* è una modifica ordinaria alla testa, quindi finisce sulla pila di annullamento dello studio e il pannello ti offre subito il pulsante **Annulla**.
 
 Puoi **Pubblicare soltanto**, oppure **Pubblicare e rendere attiva** - la differenza è se da quel momento gli strumenti e l'app seguono quella versione oppure continuano a seguire la tua ultima modifica. **Segui di nuovo l'ultima** rende ogni modifica live nel momento in cui viene fatta. `#/start?area=versions` apre il pannello direttamente.
 

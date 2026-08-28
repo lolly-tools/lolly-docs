@@ -58,6 +58,7 @@
   "Formats": "فارمیٹس",
   "Everywhere": "ہر جگہ",
   "FAQ": "سوالات",
+  "Make it yours": "اسے اپنا بنائیں",
   "Lolly opens {in} kinds of file and makes {out}, and {both} of them go both ways.": "Lolly {in} قسم کی فائلیں کھولتا ہے اور {out} بناتا ہے، اور ان میں سے {both} دونوں طرف چلتی ہیں۔",
   "See everything Lolly can open and make": "دیکھیں Lolly کیا کچھ کھول اور بنا سکتا ہے",
   "Already have designs? They aren't stranded - bring Figma, Penpot, Illustrator, InDesign or any SVG.": "پہلے سے ڈیزائن موجود ہیں؟ وہ پھنسے نہیں رہتے - Figma، Penpot، Illustrator، InDesign یا کوئی بھی SVG لے آئیں۔",
@@ -76,6 +77,10 @@
   "Free, no account": "مفت، اکاؤنٹ کے بغیر",
   "What Lolly supports": "Lolly کیا سپورٹ کرتا ہے",
   "Everything happens on your device, so it works with the Wi-Fi off.": "سب کچھ آپ کے ڈیوائس پر ہوتا ہے، اس لیے Wi-Fi بند ہونے پر بھی چلتا ہے۔",
+  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "کنورٹر تفصیل، مصنف، کاپی رائٹ اور کیپچر کی تاریخ کو نئی فائل میں منتقل کرتا ہے۔ مقام اس وقت تک پیچھے رہتا ہے جب تک آپ اسے آن نہ کریں، اور Content Credential کاپی نہیں کیا جا سکتا: یہ اصل بائٹس سے منسلک ہوتا ہے۔",
+  "Every table in the font, its name and licence records included, passes through untouched.": "فونٹ کی ہر ٹیبل، بشمول اس کے نام اور لائسنس ریکارڈز، بغیر کسی تبدیلی کے گزرتی ہے۔",
+  "Nothing embedded carries over: the new file is written fresh with Lolly\\'s own details, and your original keeps its own.": "کوئی بھی سرایت شدہ چیز منتقل نہیں ہوتی: نئی فائل Lolly کی اپنی تفصیلات کے ساتھ نئے سرے سے لکھی جاتی ہے، اور آپ کی اصل فائل اپنی تفصیلات برقرار رکھتی ہے۔",
+  "What carries over": "کیا منتقل ہوتا ہے",
   "Convert": "تبدیل کریں",
   "What goes in": "کیا اندر جاتا ہے",
   "What comes out": "کیا باہر آتا ہے",
@@ -202,9 +207,5 @@
   "Parser Inventory": "پارسر فہرست",
   "Server Surface": "سرور کی سطح",
   "Generated once, rendered the same": "ایک بار تیار، ہر بار ایک جیسا رینڈر",
-  "AI marking and the EU AI Act": "AI مارکنگ اور EU AI ایکٹ",
-  "What carries over": "کیا ساتھ جاتا ہے",
-  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "کنورٹر تفصیل، مصنف، کاپی رائٹ اور تصویر لینے کی تاریخ نئی فائل میں لے جاتا ہے۔ جب تک آپ اسے آن نہ کریں، مقام پیچھے رہ جاتا ہے، اور Content Credential کی نقل نہیں ہو سکتی: یہ اصل بائٹس سے بندھا ہوتا ہے۔",
-  "Every table in the font, its name and licence records included, passes through untouched.": "فونٹ کی ہر ٹیبل، بشمول نام اور لائسنس ریکارڈ، جوں کی توں چلی جاتی ہے۔",
-  "Nothing embedded carries over: the new file is written fresh with Lolly's own details, and your original keeps its own.": "ایمبیڈ شدہ کچھ بھی ساتھ نہیں جاتا: نئی فائل Lolly کی اپنی تفصیلات کے ساتھ نئے سرے سے لکھی جاتی ہے، اور آپ کی اصل فائل اپنی رکھتی ہے۔"
+  "AI marking and the EU AI Act": "AI مارکنگ اور EU AI ایکٹ"
 }

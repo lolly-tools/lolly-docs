@@ -52,13 +52,23 @@ Street Map 就是這種取捨的一個公道範例:你選一座城市和幾個�
 
 進階濾鏡、合成、動畫、即時鏡頭效果、生成式設計 - 每一項網頁技術都能供範本作者使用,因此上限很高。
 
-![Mesh Gradient 的輸出結果 - 一個完全由你品牌調色盤 token 構成的柔和色彩生成場域](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Mesh Gradient 的輸出結果——完全以你品牌調色盤權杖建構而成的柔和色彩生成場域](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+
+### 生長而成,而非繪製而成
+
+**Growth** 讓圖像生長出來,而不是畫出來:一個帶種子的系統會從一個環、一條線、你自己的文字或你的標誌向外擴散,直到填滿整個畫面,並使用你的調色盤配色。相同的種子永遠會長出相同的作品,因此連結能精確重現它。產出的是一般的 SVG 幾何圖形,而不是一張「繪圖的圖片」,因此可以列印、繪圖機描繪與裁切——而且同一份設計還能以影片形式,從最初的種子動畫呈現到最終形態。
+
+![Growth 的預設綻放效果——從一個環向外生長出的密集迴圈狀品牌色線條場,每一條線都是真正的 SVG 路徑](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
+### 隨音樂而動的動態效果
+
+**Synth** 會在顯示卡上運算流體場,並以你的色彩繪製。提供一段音軌,場域就會隨著聲音而動;匯出格式為 MP4、WebM、GIF,或是能首尾無縫銜接的動態 PNG 循環動畫,並以驅動時脈逐格算繪,而非螢幕錄影——因此動態永遠不會與音軌產生偏移,而且同一個連結在任何長度下都能算繪出相同的片段。
+
+![Synth 墨韻場景的一個畫格——以品牌綠色調照亮的深色流體場,捕捉於旋轉正中間的瞬間](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 編寫*工具*,而非檔案:打造能產生一萬張卡片的東西,而不是親手做出一萬張卡片。鎖定不該變動的部分;只開放真正應該變動的部分。
 
 ## 你會注意到的細節
-
-![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
 
 - **列印，做得恰到好處。** 真實的實體單位（mm/cm/in/pt）與 DPI、出血與裁切標記、CMYK 與 PDF/X-4 輸出意圖 - 印刷廠能拿到完全符合需求的檔案。詳見[匯出](/info/exporting.html#size-print-units)。
 - **影片與動態效果。** 匯出 WebM/MP4（含音軌）、動態 PNG/WebP 與動態 SVG - 全都出自製作靜態圖的同一個範本。**Sequence Studio** 更進一步：畫布下方有一條真正的時間軸，具有磁吸式的片段列、自由的疊加軌道、修剪與分割、轉場預設、旁白錄音與混音功能 - 由確定性的合成器輸出成 MP4、WebM、GIF 或 APNG，而非螢幕錄影。Lottie 檔案可作為動態素材*匯入*，並輸出成上述任一格式。片段上方是**關鍵影格**：在某一瞬間擺好一個方框姿勢、以真實深度將它從頁面上抬起，並讓攝影機掠過成果。詳見[使用 Lolly → 時間軸](/info/using.html#timeline-sequence-studio)與[製作動畫](/info/animating.html)。
@@ -70,8 +80,6 @@ Street Map 就是這種取捨的一個公道範例:你選一座城市和幾個�
 - **需要時可以更沉靜的介面。** **Profile → Accessibility** 下有四個開關 - *Reduce motion*、*Hide colourful previews*、*High contrast* 與 *Large text* - 讓應用程式安靜下來配合你的工作。每一項在你開啟之前都是關閉的，而且都不會影響你的畫布，也不會動到匯出結果的任何一個像素。詳見[你的個人檔案 → 無障礙功能](/info/profile.html#accessibility)。
 
 ## 充分發揮它的效益
-
-![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[快速入門](/info/quickstart.html)** - 匯入品牌，產出第一個檔案。
 - **[Brand Studio](/info/brand-studio.html)** - 打造你的標誌、色彩、字體與設計權杖（`#/start`）。

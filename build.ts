@@ -1497,8 +1497,12 @@ function appHref(lang: Lang, hash: string): string {
  */
 interface Scene { tool: string; look: string; query: string; scene: string; line: string; alt: string }
 const LANDING_SCENES: Scene[] = [
+  // The prefilled URL is the VISITOR's job, not ours (plans/168 WP-5): the card sells
+  // "a code for the invitation", so the first artifact a stranger makes must be that
+  // invitation. rsvp.example is a reserved example domain (RFC 2606) - obviously not a
+  // real organisation's link, per the no-invented-history rule.
   { tool: 'qr-code', look: 'qr-code.look0.svg',
-    query: 'url=https%3A%2F%2Flolly.tools&color=%231a1a2e&background=%23faf7f2',
+    query: 'url=https%3A%2F%2Frsvp.example%2Fmidsummer-party&color=%231a1a2e&background=%23faf7f2',
     scene: 'A code for the invitation',
     line: 'Print it on the invite or pin it to the noticeboard, and everyone lands in the right place.',
     alt: 'A square QR code in dark ink on warm paper' },
@@ -1573,7 +1577,9 @@ function aiBlock(lang: Lang): string {
     { title: t('It stops costing'), desc: t('If AI helps make something once, the result is yours. Using it again is free, however many times you need it.') },
     { title: t('It stays honest'), desc: t('A piece made by AI says so, and what you make carries your name instead of pretending to be someone else. Even the built-in help works this way: ask it a question and it answers with the manual’s own sentence and a link, never a made-up answer.') },
   ];
-  return `<section class="ai-section" id="ai">
+  // id="ai-terms", not "ai": the machines band's agents card already slugs its own
+  // "AI Agents" heading to id="ai", and two of them made #ai ambiguous (plans/167 L5).
+  return `<section class="ai-section" id="ai-terms">
   <div class="ai-inner">
     <div class="ai-head reveal">
       <h2>${esc(t('AI, on your terms'))}</h2>
@@ -1895,9 +1901,17 @@ ${humanTabs.map(({ h2 }, i) => `  <label class="audience-tab" for="aud-${tabSlug
 (function(){
   var nav=document.querySelector('nav');
   var hero=document.querySelector('.hero');
+  // The floating Listen pill rides the same measurement (plans/168 WP-6). At 393px the
+  // hero's CTA stack fills the bottom of the first screen, so a bottom-right pill lands
+  // on the "Learn more" button - a tap collision, not just a smudge. While the hero is
+  // on screen the pill docks under the top nav instead; everywhere else it is the
+  // ordinary bottom-right float. Class is toggled at every width, the move is CSS-gated
+  // to phones (LISTEN_STYLE), so desktop is untouched.
+  var listen=document.querySelector('.listen-bar-float');
   function updateNav(){
     var heroBottom=hero?hero.getBoundingClientRect().bottom:0;
     nav.classList.toggle('nav-solid',heroBottom<=0);
+    if(listen)listen.classList.toggle('over-hero',heroBottom>0);
   }
   window.addEventListener('scroll',updateNav,{passive:true});
   updateNav();
@@ -1921,14 +1935,31 @@ ${humanTabs.map(({ h2 }, i) => `  <label class="audience-tab" for="aud-${tabSlug
   // `faq-`) so other surfaces can deep-link straight to it - e.g. the app's gallery
   // "Utilities" strip links to #faq-what-makes-utilities-different-from-tools. The
   // FAQ_JS script below opens the matching <details> and scrolls it into view.
-  const faqSlug = (q: string) =>
-    'faq-' + q.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  // The slug is always built from the ENGLISH question, so one #faq-… anchor points at
+  // the same item on every locale page (docs/adoption-governance.md links one, and it
+  // is the same href in all 27 translations). Every docs/i18n/<lang>/faq.md is the same
+  // list in the same order, so pair by index; a translation that has drifted out of
+  // step falls back to its own text for that entry. The Latin-only rule strips
+  // non-Latin scripts to nothing, which used to collapse several Arabic, Hindi,
+  // Japanese, Ukrainian, … questions onto one id: an empty slug becomes its 1-based
+  // position, and a repeat gets a document-order suffix, so ids stay unique and
+  // identical from one build to the next.
+  const enFaqs = lang === 'en' ? FAQS : loadFaqs('en');
+  const slugSeen = new Map<string, number>();
+  const faqSlug = (q: string, i: number) => {
+    const base =
+      (enFaqs[i]?.q ?? q).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') ||
+      String(i + 1);
+    const n = (slugSeen.get(base) ?? 0) + 1;
+    slugSeen.set(base, n);
+    return `faq-${base}${n > 1 ? `-${n}` : ''}`;
+  };
   const faqHtml = `<section class="faq-section" id="faq">
   <div class="faq-inner reveal">
     <h2>Questions &amp; answers</h2>
     <p class="faq-lead">The things people ask most.</p>
     <div class="faq-list">
-      ${FAQS.map(f => `<details class="faq-item" id="${faqSlug(f.q)}">
+      ${FAQS.map((f, i) => `<details class="faq-item" id="${faqSlug(f.q, i)}">
         <summary class="faq-q"><span>${inline(f.q)}</span><span class="faq-chevron">${FAQ_CHEVRON}</span></summary>
         <div class="faq-a">${mdToHtml(f.a)}</div>
       </details>`).join('\n      ')}
@@ -2125,6 +2156,7 @@ ${humanTabs.map(({ h2 }, i) => `  <label class="audience-tab" for="aud-${tabSlug
     <a href="#trust">${esc(t('Trust'))}</a>
     <a href="#everywhere">${esc(t('Everywhere'))}</a>
     <a href="#faq">${esc(t('FAQ'))}</a>
+    <a class="quicknav-app" href="${esc(appHref(lang, '#/start'))}">${esc(t('Make it yours'))} <span aria-hidden="true">→</span></a>
   </div>
 </nav>${makeSomethingBlock(lang)}
 ${WHY_MATRIX_HTML}
@@ -2489,6 +2521,13 @@ strong{font-weight:600}
 /* Nav */
 nav{display:flex;align-items:center;gap:.25rem;padding:0 1.5rem;height:3.75rem;background:transparent;position:fixed;width:100%;top:0;z-index:100;overflow-x:auto;transition:background .25s}
 nav.nav-solid{background:hsl(var(--band-dark))}
+/* Phones: the top nav always carries its ground (plans/168 WP-6). Transparent-over-hero
+   is a desktop luxury - at 393px the hero's trust-chip row scrolls straight under the
+   bar and two rows of small text collide with the nav links. The :not()s keep this off
+   the quicknav and the doc jump nav, which paint their own surfaces. */
+@media(max-width:600px){
+  nav:not(.quicknav):not(.doc-jump-nav){background:hsl(var(--band-dark) / .94);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+}
 /* On-page quick nav - a sticky jump bar under the top nav, on the landing only. */
 html{scroll-behavior:smooth}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -3718,11 +3757,14 @@ const SHOT_CRED_SCRIPT = `<script>(function(){
 })();</script>`;
 
 const SCROLL_REVEAL_SCRIPT = `<script>(function(){var els=document.querySelectorAll('.reveal');if(!els.length)return;
-  // Mobile is trigger-happy: a positive bottom rootMargin pre-reveals elements as
-  // they approach (so they're faded in by the time you reach them), with threshold 0.
-  // Desktop keeps a subtler trigger just inside the viewport.
-  var eager=window.matchMedia('(max-width:768px)').matches;
-  var opts=eager?{threshold:0,rootMargin:'0px 0px 20% 0px'}:{threshold:0.1,rootMargin:'0px 0px -32px 0px'};
+  // Pre-reveal on BOTH widths (plans/168 WP-3). Desktop used to wait for 10% of a band
+  // to be inside the viewport minus 32px, which on this page's tall bands meant a
+  // normally-paced scroller met an empty screen before the content faded in - the
+  // un-revealed band still holds its layout space, so the gap is real, not perceived.
+  // A positive bottom rootMargin starts the fade while the band is still below the fold.
+  var opts={threshold:0,rootMargin:window.matchMedia('(max-width:768px)').matches
+    ?'0px 0px 20% 0px'
+    :'0px 0px 25% 0px'};
   var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},opts);
   els.forEach(function(el){io.observe(el);});})();</script>`;
 
@@ -4987,6 +5029,9 @@ const LISTEN_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" 
 const LISTEN_STYLE = `<style>
 .listen-bar{display:flex;justify-content:flex-end;margin:0 0 -8px}
 .listen-bar-float{position:fixed;right:16px;bottom:16px;z-index:89;margin:0}
+/* Phones only: docked under the top nav while the landing hero owns the screen, so the
+   pill never sits on a hero CTA (plans/168 WP-6; the class comes from NAV_SOLID_JS). */
+@media(max-width:600px){.listen-bar-float.over-hero{bottom:auto;top:calc(3.75rem + 8px)}}
 .docs-listen{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border-radius:999px;border:1px solid hsl(var(--muted-foreground) / .25);background:hsl(var(--popover) / .9);color:hsl(var(--popover-foreground));font:600 13px/1 inherit;font-family:inherit;cursor:pointer;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .docs-listen:hover{border-color:hsl(var(--primary) / .5)}
 .docs-listen svg{width:15px;height:15px}

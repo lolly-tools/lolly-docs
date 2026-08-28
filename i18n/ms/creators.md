@@ -92,15 +92,25 @@ dimuatkan; ia tidak pernah menjadi gambar rata.
 Penapis lanjutan, penyusunan, animasi, kesan kamera langsung, reka bentuk generatif -
 setiap teknologi web tersedia untuk penulis templat, jadi silingnya tinggi.
 
-![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Output Mesh Gradient - satu medan generatif warna lembut yang dibina sepenuhnya daripada token palet jenama anda](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+
+### Ditumbuhkan, bukan dilukis
+
+**Growth** menumbuhkan gambar dan bukannya melukisnya: satu sistem yang diberi seed merebak daripada satu bulatan, satu garisan, kata-kata anda sendiri atau logo anda sehingga ia memenuhi bingkai, dalam palet anda. Seed yang sama sentiasa menumbuhkan karya yang sama, jadi satu pautan menghasilkan semulanya dengan tepat. Apa yang terhasil ialah geometri SVG biasa dan bukannya gambar bagi suatu lukisan, jadi ia boleh dicetak, diplot dan dipotong - dan reka bentuk yang sama beranimasi daripada seed pertama sehingga bentuk siapnya sebagai video.
+
+![Bloom lalai Growth - medan padat garisan berwarna jenama yang berbulat-bulat, ditumbuhkan daripada satu bulatan, setiap garisan ialah laluan SVG sebenar](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
+### Pergerakan yang menjawab muzik
+
+**Synth** menyelesaikan medan bendalir pada kad grafik dan mewarnakannya dengan warna anda. Berikan satu trek dan medan itu bergerak mengikut bunyi; ia dieksport sebagai gelung MP4, WebM, GIF atau PNG beranimasi yang bercantum bersih dari hujung ke hujung, dirender bingkai demi bingkai daripada jam yang dipacu dan bukannya dirakam daripada skrin - jadi pergerakan itu tidak pernah menyimpang daripada trek bunyi, dan pautan yang sama merender klip yang sama pada sebarang tempoh.
+
+![Satu bingkai daripada adegan dakwat Synth - medan bendalir gelap yang disinari warna hijau jenama, ditangkap di tengah-tengah pusaran](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 Karang *alat*, bukan fail: bina benda yang menjana 10,000 kad dan bukannya membuat 10,000
 kad. Kunci apa yang tidak sepatutnya berubah; dedahkan hanya apa yang dimaksudkan untuk
 berubah-ubah.
 
 ## Sentuhan yang anda akan perasan
-
-![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
 
 - **Cetakan, dilakukan dengan betul.** Unit fizikal sebenar (mm/cm/in/pt) dan DPI, bleed dan tanda potong, CMYK dan output-intent PDF/X-4 - kedai cetak mendapat tepat apa yang diperlukan. Lihat [Mengeksport](/info/exporting.html#size-print-units).
 - **Video dan pergerakan.** Eksport WebM/MP4 (dengan trek audio), PNG/WebP animasi dan SVG animasi - daripada templat yang sama yang menghasilkan imej pegun anda. **Sequence Studio** pergi lebih jauh: garis masa sebenar di bawah kanvas, dengan barisan klip magnetik, laluan overlay bebas, potong dan pisah, praset peralihan, rakaman suara latar dan campuran muzik - dirender sebagai MP4, WebM, GIF atau APNG oleh penggubah deterministik dan bukannya rakaman skrin. Fail Lottie *masuk* sebagai aset animasi dan dirender keluar kepada mana-mana daripadanya. Di atas klip terletak **kerangka utama (keyframes)**: pose kotak pada satu ketika, angkat ia dari halaman dengan kedalaman sebenar dan terbangkan kamera merentasi hasilnya. Lihat [Menggunakan Lolly → Garis masa](/info/using.html#timeline-sequence-studio) dan [Menganimasikan](/info/animating.html).
@@ -112,8 +122,6 @@ berubah-ubah.
 - **Antara muka yang lebih tenang apabila anda mahukannya.** Empat suis di bawah **Profile → Accessibility** - *Reduce motion*, *Hide colourful previews*, *High contrast* dan *Large text* - menenangkan apl di sekeliling kerja anda. Setiap satu dimatikan sehingga anda menghidupkannya, dan tiada satu pun menyentuh kanvas anda atau menggerakkan sebarang piksel apa yang anda eksport. Lihat [Profil anda → Kebolehcapaian](/info/profile.html#accessibility).
 
 ## Dapatkan yang terbaik daripadanya
-
-![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[Panduan Pantas](/info/quickstart.html)** - brand masuk, fail pertama keluar.
 - **[The Brand Studio](/info/brand-studio.html)** - bentuk logo, warna, jenis taip dan token anda (`#/start`).

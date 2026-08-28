@@ -2,7 +2,7 @@
 
 Utvidelsen **Lolly URL Screenshot** lar webappen ta skjermbilde av en hvilken som helst nettside fra innsiden av nettleseren din. Uten den krever fangst av en URL skrivebordsappen - en nettleserside kan ikke lese piksler fra en annen side på egen hånd. Utvidelsen kan, ved å bruke samme fangst som skrivebordsappen bruker.
 
-Den gjør én annen jobb med samme maskineri: å lese en enkelt side du oppgir, slik at Brand Studio kan hente en merkevare ut fra et livesnettsted. Begge er dekket nedenfor.
+Den gjør én annen jobb på samme måte: leser en enkelt side du oppgir, slik at Brand Studio kan hente en merkevare ut av et livenettsted. Begge er dekket under.
 
 Den kjører på Chromium-baserte nettlesere: **Chrome, Edge, Brave, Arc, Opera** - Chrome 111 eller nyere.
 

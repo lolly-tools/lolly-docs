@@ -19,7 +19,7 @@ Semua yang ada dalam profil disimpan **pada peranti**, dalam pangkalan data temp
 | **Kebolehcapaian** | Empat suis keselesaan - *Reduce motion*, *Hide colourful previews*, *High contrast*, *Large text* - disimpan pada rekod profil, jadi ia turut serta dalam eksport profil. Lihat [Kebolehcapaian](#accessibility). |
 | **Kerja anda** | Sesi yang disimpan (dengan lakaran kecil) - disusun ke dalam folder bersarang dalam **[Projects](/info/using.html)** - pustaka **My images** anda dan statistik aktiviti tempatan, semuanya dikaitkan dengan profil ini. |
 
-![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&walker=1&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
 
 ![Skrin Profile - nama, hubungan, gambar kepala pilihan dan keutamaan anda](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&dark=1&filename=profile-details)
 
@@ -35,7 +35,7 @@ Perkataan "profil" memberi kesan seolah-olah ia satu individu yang tetap, tetapi
 
 ### Sebagai individu
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
 
 ![Kawalan gambar kepala, kosong sehingga anda memuat naik foto yang kemudiannya kekal pada peranti ini](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
 
@@ -53,7 +53,7 @@ Dalam Lolly, peranan itu hanyalah **satu lagi profil yang anda simpan berdekatan
 
 Pada bila-bila masa, satu pemasangan mempunyai **satu profil aktif** - butiran yang dilihat oleh sesuatu alat pada masa itu. Tiada penukar profil dalam aplikasi; sebaliknya, setiap profil ialah **bungkusan mudah alih** (satu `.zip` sahaja, lihat [di bawah](#moving-a-profile-to-a-new-device)). Ini sengaja menggunakan mekanisme yang sama seperti berpindah ke peranti baharu - profil ialah fail yang boleh anda simpan, salin dan muatkan.
 
-![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
 
 - <!--i:trash--> **Penukaran paling bersih:** **Profile → Storage → Clear all my data**, kemudian **Import** bungkusan untuk konteks yang anda masuki. Anda kini mencipta semata-mata sebagai profil itu.
 - <!--i:layers--> **Berlapis:** mengimport *tanpa* mengosongkan dahulu akan **bercantum** - profil, sesi dan imej yang diimport mendarat di atas apa yang sudah ada, menggantikan mana-mana yang mempunyai nama sama dan membiarkan selebihnya. Berguna untuk menarik sesi tersimpan sesuatu pasukan ke dalam persediaan anda sendiri; bukan pilihan yang sesuai jika anda memerlukan sempadan peranan yang bersih.
@@ -104,7 +104,7 @@ Jika pelayar belum memberikan storan berterusan, bahagian ini menyatakannya dan 
 
 ## Memindahkan profil ke peranti baharu
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
 
 Oleh sebab profil adalah sepenuhnya tempatan, satu-satunya cara untuk memasukkannya ke dalam pemasangan kosong - komputer riba baharu, pelayar yang baru sahaja ditetapkan semula, komputer rakan sekerja, atau kotak luar talian - adalah dengan **membawa fail itu sendiri**. Tiada log masuk yang memulihkannya untuk anda, dan itulah intinya: tiada apa-apa pun yang pernah meninggalkan peranti anda pada mulanya.
 
@@ -122,7 +122,7 @@ Untuk susun atur bandel yang tepat, dasar versi dan peraturan integriti, lihat *
 
 ## Bagaimana alat menggunakan profil anda
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&dark=1&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
 
 Sesuatu alat hanya sekali-kali *pra-isi* medan profil yang direka khusus untuknya:
 

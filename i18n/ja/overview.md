@@ -61,7 +61,7 @@ Lollyが何であるかを理解する最も明快な方法は、機能一覧を
 
 ステップ2の「新しいチャート」とは、まさにこのようなレンダリングのことです。データ文字列といくつかのパラメーターだけから、誰もデザインファイルを開くことなく生成されます。
 
-![タイトル付きの積み上げエリアチャート。3つの系列がクールな配色で帯状に表示され、軸・凡例・タイトルはすべて手作業ではなくテンプレートによって配置されている](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![タイトル付きの積み上げエリアチャート。3つの系列がクールなパレットで色分けされ、軸・凡例・タイトルはすべて手動ではなくテンプレートによって配置されている](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 重要なのは、Lollyがデザイナーにとって良い、*かつ*開発者にとって良い、*かつ*営業にとって良い、という話がそれぞれ独立して成り立つことではありません。これは**リレー競走**です。クリエイティブが最初に行った仕事を開発者がスケールさせ、それが今度はプロデューサーの力になります。飛行機の中の非技術者の担当者が労せずして得られる体験は、デザイナーが定めて開発者が展開した厳密さがあってこそ*初めて可能*になるのです。
 
@@ -79,7 +79,7 @@ Lollyが何であるかを理解する最も明快な方法は、機能一覧を
 - <!--i:code--> **開発者が、コマンドラインから。** CLIは*同じ*エンジンと*同じ*レンダーパスをヘッドレスで実行するため、スクリプトや夜間パイプラインの中で1万行すべてにわたってツールを連続実行できます。ループの中で`lolly <tool> --field=…`を呼び出すだけで統合は完結します。
 - <!--i:cpu--> **システムやAIエージェントが、MCP経由で。** 同じツールをプログラムから操作でき、同じ忠実度で、さらに大きな規模にも対応します - 何千ものファイルが次々と生成されていっても、機械は飽きることがないからです。
 
-![新規インストール直後のバッチモード。ツールを待つ空の1行と、データが入る前から用意されたスプレッドシート全体とRenderボタン](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+![新規インストール直後のBatchモード:ツールを待つ1つの空の行。データが届く前から、スプレッドシート全体とRenderボタンが用意されている](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
 
 デザイナーによって一度定められた1組のブランド制約。同一の事前承認済み出力へと至る3つの経路 - そして機械による経路がもっとも遠くまでスケールします。ファイルが次々と生成される間、決して疲れることがないからです。
 
@@ -244,7 +244,7 @@ Webシェルは1つのレイアウトからレスポンシブに対応します�
 
 同じツールをスマートフォン幅で表示した場合も、維持すべき第2のレイアウトはありません。コントロールは上部のシートになり、プレビューが画面全体を占め、レンダーピルがその上に浮かびます。
 
-![430px幅の画面に表示されたオーディオグラム - 上部にコントロールシート、下部に完成した正方形のアートワーク、そして浮遊するレンダーピル](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![幅430pxの画面上のオーディオグラム - 上部にコントロールシート、下部に完成した正方形のアートワーク、フローティングのレンダリングピル](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **バッチモード（`/pro`）。** Webシェルには、1つまたは複数のツールにまたがる多数の行を一度にレンダリングする、スプレッドシート形式のバッチグリッド（`shells/web/src/pro/`）も搭載されています。CSV/TSVの相互変換とスプレッドシートからの貼り付け、行ごとのテンプレート/フォーマット/サイズ/単位/DPI、ライブプレビュー付きのブロックエディタサイドパネル、折りたたみ可能なエクスポート列、行ごとの「関連性」タグバー、左側のドラッグハンドルによる行の並べ替え、2段階の削除確認、保存されたバッチセッション、`.zip`ダウンロードを備えています。これが「大量コンテンツ生成」というポジショニングを支える1対多のサーフェスです。
 
@@ -278,10 +278,10 @@ CLIに対応するインタラクティブな存在です。ツールの閲覧�
 
 行はギャラリーのセクション順に並んでいます。`utility`セクションは、（将来追加されるものも含め）他のすべてのカテゴリの後、ギャラリー内で常に**最後**に表示されます - これはオンデバイスの「Offline Utilities」ドロワーです。
 
-| カテゴリ | 例 | 予定 |
+| カテゴリ | 例 | 計画中 |
 |---|---|---|
 | `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
-| `designer` | Brand Lockup, Design, Chart Creator, D3 Chart Studio, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `designer` | Brand Lockup, Design, Chart, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
 | `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Unit/format converters, more on-device privacy utilities |
@@ -339,14 +339,14 @@ WebアプリとTauriアプリは、起動時に既知のURLからツールとア
 
 カバー範囲を示すための、主要なサーフェスをいくつか紹介します - [Host API](/info/host-api.html)がそのすべてを文書化しており、`packages/core/src/host-v1.ts`が契約そのものです:
 
-| サーフェス | 追加バージョン | 何を追加するか |
+| サーフェス | 導入バージョン | 追加される機能 |
 |---|---|---|
 | `host.tokens` | 1.0 | DTCGデザイントークン - ブランド自身のプリミティブ |
-| `host.text` | 1.0 | HarfBuzz WASM経由のテキスト→パス変換（`wasm`ケイパビリティが、これに依存するツールにフラグを立てます） |
-| `host.media` | 1.4 | `onFrame`フックを駆動するライブカメラフレーム。プログレッシブエンハンスメントであり、意図的に`camera`フラグによるゲートは*かけていません* - そのようなツールも通常の静止画ツールとして動作します |
-| `host.color` | 1.40 | 知覚的な色の計算: ΔEOK、WCAG + APCAコントラスト、OKLabランプ、クラスブレイク、カテゴリカルパレット、ハーモニースキーム（1.60）、CSS Color 4のミキシングとグラデーションベイキング（1.68）。純粋かつ同期的 - シェルは何も実装せず、エンジンの`makeColorApi()`をアタッチするだけなので、ずれが生じ得ません |
-| `host.images` | 1.60 | バイトのオンデバイスでのデコード/リサイズ/再エンコード - 変換パス（HEIC → JPEG、WebPへの圧縮、ダウンスケール）。Webシェルでは遅延ファサードとして提供されるため、HEICデコーダーが起動チャンクに含まれることはありません |
-| `host.geom` | 1.64 | 正確なベクター幾何学: パスのブール演算、オフセット、ストローク→フィル変換、スプラインの低次化、簡略化、ヒットテスト。こちらも純粋、同期的で、エンジンからアタッチされます（`makeGeomApi()`）。失敗は決してスローされず、常に*返り値として*返されます |
+| `host.text` | 1.0 | HarfBuzz WASMによるテキストからパスへの変換(`wasm`ケイパビリティがこれに依存するツールを示します) |
+| `host.media` | 1.4 | `onFrame`フックを駆動するライブカメラフレーム。プログレッシブエンハンスメントであり、意図的に`camera`フラグでゲートされていません - そのようなツールも通常の静止画ツールとして動作します |
+| `host.color` | 1.40 | 知覚的なカラー演算:ΔEOK、WCAG + APCAコントラスト、OKLabランプ、クラスブレーク、カテゴリカルパレット、ハーモニー配色(1.60)、CSS Color 4によるミキシングとグラデーションベイク(1.68)。純粋かつ同期的で、シェルは何かを独自実装するのではなくエンジンの`makeColorApi()`をアタッチするだけなので、ずれが生じません |
+| `host.images` | 1.60 | デバイス上でのバイトのデコード/リサイズ/再エンコード - 変換パス(HEIC → JPEG、WebPへの圧縮、ダウンスケール)。Webシェルではレイジーファサードとして提供されるため、HEICデコーダーがブートチャンクに含まれることはありません |
+| `host.geom` | 1.64 | 正確なベクタージオメトリ:パスのブーリアン演算、オフセット、ストローク→フィル変換、スプラインの低次化、単純化、ヒットテスト。こちらも純粋・同期的でエンジンからアタッチされ(`makeGeomApi()`)、失敗は例外を投げず*戻り値として返されます* |
 
 残りも同じルールに従っており、それらと並んで文書化されています: オンデバイスでのドキュメント編集のための`pdf`（1.8）と`pptx`（1.58）、クリップ解析とオンデバイスTTS/文字起こしのための`audio`（1.71）と`speech`（1.96）、MilkDropプレースホルダー契約のための`viz`（1.72）、ディープビットおよびレイヤー化ビットマップ出力のための`codec`（1.100）と`layers`（1.102）、オンデバイスモデルのための`upscale`（1.101）と`matte`（1.103）、独自のピクセル処理を行うフックのための`raster`（1.105）、エクスポートセーフな矢印のための`connectors`（1.106）、完成したバイト列に署名するための`c2pa`（1.85）。数は増えていきますが、ルールは変わりません。
 

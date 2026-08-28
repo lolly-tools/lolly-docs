@@ -58,6 +58,7 @@
   "Formats": "Format",
   "Everywhere": "Di mana saja",
   "FAQ": "FAQ",
+  "Make it yours": "Jadikan milik Anda",
   "Lolly opens {in} kinds of file and makes {out}, and {both} of them go both ways.": "Lolly membuka {in} jenis file dan membuat {out}, dan {both} di antaranya berlaku dua arah.",
   "See everything Lolly can open and make": "Lihat semua yang bisa dibuka dan dibuat Lolly",
   "Already have designs? They aren't stranded - bring Figma, Penpot, Illustrator, InDesign or any SVG.": "Sudah punya desain? Tidak akan terlantar - bawa Figma, Penpot, Illustrator, InDesign atau SVG apa pun.",
@@ -76,6 +77,10 @@
   "Free, no account": "Gratis, tanpa akun",
   "What Lolly supports": "Yang didukung Lolly",
   "Everything happens on your device, so it works with the Wi-Fi off.": "Semuanya terjadi di perangkat Anda, jadi tetap berfungsi meski Wi-Fi mati.",
+  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "Konverter memindahkan deskripsi, penulis, hak cipta dan tanggal pengambilan ke file baru. Lokasi tertinggal kecuali Anda mengaktifkannya, dan sebuah Content Credential tidak dapat disalin: ia terikat pada byte aslinya.",
+  "Every table in the font, its name and licence records included, passes through untouched.": "Setiap tabel dalam font, termasuk nama dan catatan lisensinya, diteruskan tanpa perubahan.",
+  "Nothing embedded carries over: the new file is written fresh with Lolly\\'s own details, and your original keeps its own.": "Tidak ada yang tertanam yang ikut terbawa: file baru ditulis ulang dengan detail milik Lolly sendiri, dan file asli Anda tetap menyimpan detailnya sendiri.",
+  "What carries over": "Apa yang ikut terbawa",
   "Convert": "Konversi",
   "What goes in": "Yang masuk",
   "What comes out": "Yang keluar",
@@ -202,9 +207,5 @@
   "Parser Inventory": "Inventaris Parser",
   "Server Surface": "Permukaan Server",
   "Generated once, rendered the same": "Dibuat sekali, dirender sama",
-  "AI marking and the EU AI Act": "Penandaan AI dan UU AI Uni Eropa",
-  "What carries over": "Apa yang ikut terbawa",
-  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "Pengonversi memindahkan deskripsi, penulis, hak cipta, dan tanggal pengambilan ke berkas baru. Lokasi ditinggalkan kecuali Anda menyalakannya, dan Content Credential tidak bisa disalin: ia terikat pada byte aslinya.",
-  "Every table in the font, its name and licence records included, passes through untouched.": "Setiap tabel dalam fon, termasuk catatan nama dan lisensinya, lewat tanpa berubah.",
-  "Nothing embedded carries over: the new file is written fresh with Lolly's own details, and your original keeps its own.": "Tidak ada yang tertanam ikut terbawa: berkas baru ditulis dari awal dengan data Lolly sendiri, dan berkas asli Anda tetap menyimpan miliknya."
+  "AI marking and the EU AI Act": "Penandaan AI dan UU AI Uni Eropa"
 }

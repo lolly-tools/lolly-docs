@@ -2,7 +2,7 @@
 
 Tillägget **Lolly URL Screenshot** låter webbappen ta en skärmdump av vilken webbsida som helst inifrån din webbläsare. Utan det behöver man skrivbordsappen för att fånga en URL - en webbläsarsida kan inte läsa pixlar från en annan sajt på egen hand. Tillägget kan, med samma fångst som skrivbordsappen använder.
 
-Det gör ett annat jobb med samma maskineri: läsa en enskild sida du anger så att Brand Studio kan hämta ett varumärke från en levande webbplats. Båda beskrivs nedan.
+Den gör ett annat jobb på samma sätt: läser en enskild sida du anger så att Brand Studio kan dra ut ett varumärke från en levande webbplats. Båda täcks nedan.
 
 Det körs på Chromium-baserade webbläsare: **Chrome, Edge, Brave, Arc, Opera** - Chrome 111 eller senare.
 

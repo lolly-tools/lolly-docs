@@ -2,14 +2,15 @@
 
 *Laatst bijgewerkt: 11 augustus 2026*
 
-> **In gewone taal.** De documenten, afbeeldingen, video's en bestanden die je in Lolly maakt, blijven
-> op je apparaat. Er zijn geen accounts voor gewoon gebruik, geen cookies van de app
-> zelf en nergens in de codebase analyse of trackers - niet "we gebruiken
-> de data niet", maar echt niet aanwezig in de broncode. Er is een korte, volledige lijst met
-> uitzonderingen waar de software überhaupt met een netwerk praat, en elk daarvan
-> wordt hieronder specifiek beschreven: wat er weggaat, naar wie en wanneer. De enige
-> uitzondering die iets persoonlijks betreft, is een aanmelding die je expliciet zelf
-> moet starten. Staat het niet in dit document, dan gebeurt het niet.
+> **De korte versie.** De documenten, afbeeldingen, video's en bestanden die je in Lolly
+> maakt, blijven op je apparaat. Er zijn geen accounts nodig voor gewoon gebruik, geen
+> cookies van de app zelf en nergens in de codebase analytics of trackers - niet "we
+> gebruiken de data niet," maar écht niet aanwezig in de bron. Er bestaat een korte,
+> volledige lijst uitzonderingen voor de gevallen waarin de software überhaupt met een
+> netwerk praat, en elk daarvan wordt hieronder concreet beschreven: wat er weggaat,
+> naar wie en wanneer. De enige uitzondering die iets persoonlijks betreft, is een
+> aanmelding die je expliciet moet starten. Staat het niet in dit document, dan gebeurt
+> het niet.
 
 ## Wat dit beleid dekt
 
@@ -82,20 +83,20 @@ ons - het doel van de meeste ervan is juist om data te verwijderen & te bescherm
 De onderstaande tabel is de volledige lijst van alles wat de app ophaalt of verzendt over een
 netwerk. Staat het hier niet, dan doet de app het niet.
 
-| Wat | Wat er daadwerkelijk je apparaat verlaat | Wanneer (de handeling die het activeert) | Als een operator het blokkeert |
+| Wat | Wat er werkelijk je apparaat verlaat | Wanneer (de handeling die het activeert) | Als een operator het blokkeert |
 |---|---|---|---|
-| Synchronisatie toolcatalogus | Niets persoonlijks - een verzoek voor Lolly's eigen publieke tool- en asset-index, naar de eigen origin van de app | Bij het opstarten, daarna offline gecachet | De app draait op de gecachete toolset. Alleen het ontdekken van nieuwe tools stopt |
-| Een tool die live data nodig heeft | Wat die specifieke tool ook opvraagt, naar de host die in de eigen beschrijving genoemd wordt. Vandaag is dat alleen de plaatsopzoeking in de tool Meeting Planner, die `geocoding-api.open-meteo.com` vraagt om een plaatsnaam om te zetten naar coördinaten en een tijdzone - geen account, geen sleutel en geen identifier buiten het verzoek zelf. Het invoerveld vermeldt dit precies waar je typt, en elk antwoord wordt op je apparaat opgeslagen zodat een plaats maar één keer wordt opgezocht | Alleen tijdens gebruik van die tool, en alleen zodra je een locatie invoert | Die ene opzoeking mislukt. Je kunt nog steeds handmatig coördinaten typen, en verder wordt niets beïnvloed |
-| Google Fonts | De gekozen lettertypenaam en je IP-adres, naar Google's font-servers (`fonts.googleapis.com` voor het stylesheet, `fonts.gstatic.com` voor het lettertypebestand) | Alleen als je een Google Font toevoegt in de merkeditor, **en pas nadat je hiermee akkoord gaat in een dialoog die precies dit vermeldt** - een eenmalige ophaling per familie, die daarna op je apparaat blijft en offline gebruikt wordt | De Google Fonts-kiezer faalt gesloten. Upload in plaats daarvan een lettertypebestand |
-| Versturen naar Google Drive | Het ene bestand dat je koos te versturen, naar Google's Drive API (`www.googleapis.com`), na een Google-aanmelding die je voltooit in Google's eigen pop-upvenster. Lolly's toegang is beperkt tot bestanden die het zelf heeft aangemaakt (de scope `drive.file` - het kan nooit de rest van je Drive lezen), en het aanmeldtoken wordt alleen in het geheugen bewaard voor de sessie, nooit opgeslagen | Alleen wanneer je op "Send to Google Drive" drukt bij een EMF-export, en alleen bij builds waar de operator een Google client-id heeft geconfigureerd - zonder die bestaat de knop niet | De knop verschijnt nooit. Download het bestand en upload het zelf naar Drive |
-| Versturen naar Dropbox | Het ene bestand dat je koos te versturen, naar Dropbox's API (`api.dropboxapi.com` voor aanmelden en metadata, `content.dropboxapi.com` voor het bestand zelf), na een Dropbox-aanmelding die je voltooit in Dropbox's eigen venster. Lolly's toegang is beperkt tot de app-map (het kan alleen ooit `Apps/` en zijn eigen map daarin zien - nooit de rest van je Dropbox), de "Open"-link die je te zien krijgt is een kortstondige privélink (er wordt geen publieke share aangemaakt), en een refresh-token wordt alleen opgeslagen als je "verbonden blijven" aanvinkt | Alleen wanneer je op "Send to Dropbox" drukt bij een bestand, en alleen bij builds waar de operator een Dropbox client-id heeft geconfigureerd - zonder die bestaat de knop niet | De knop verschijnt nooit. Download het bestand en upload het zelf naar Dropbox |
-| Versturen naar OneDrive | Het ene bestand dat je koos te versturen, naar Microsoft's identiteits- en Graph-diensten (`login.microsoftonline.com` voor aanmelden, `graph.microsoft.com` voor de upload; een groot bestand wordt in delen geüpload naar een door Microsoft beheerd upload-adres op `api.onedrive.com`, `*.up.1drv.com` of `*.sharepoint.com`), na een Microsoft-aanmelding die je voltooit in Microsoft's eigen venster. Lolly's toegang is beperkt tot de eigen map onder `Apps/` (het kan nooit de rest van je OneDrive lezen), plus je weergavenaam voor het accountlabel, en een refresh-token wordt alleen opgeslagen als je "verbonden blijven" aanvinkt | Alleen wanneer je op "Send to OneDrive" drukt bij een bestand, en alleen bij builds waar de operator een Microsoft client-id heeft geconfigureerd - zonder die bestaat de knop niet | De knop verschijnt nooit. Download het bestand en upload het zelf naar OneDrive |
-| ICC-drukprofielen | Niets persoonlijks - een verzoek voor een standaard drukconditie-profiel, naar het publieke register van ICC (`registry.color.org`, `www.color.org`) | Alleen als je een ICC-preset aanklikt in de printprofielbeheerder - een eenmalige ophaling per profiel, die daarna op je apparaat blijft | ICC-presets falen. Lever in plaats daarvan je eigen `.icc`-profiel aan |
-| Internetradio | Niets persoonlijks - een afspeellijstverzoek en een audiostream, naar het station (`api.somafm.com` en de icecast-server die het noemt, `*.somafm.com`) | Alleen terwijl je de optionele ingebouwde radio in de geluidsspeler afspeelt | De radio faalt. Elke andere geluidsfunctie werkt nog steeds |
-| Een URL die je een tool laat vastleggen | Een verzoek naar het exacte webadres dat je invoert, van de URL-screenshot-tool. Wat dat adres ook is. Deze host staat niet in het onderstaande beleid, omdat je hem op het moment van gebruik zelf kiest | Alleen wanneer je een URL invoert in die tool en de opname start | Een operator kan dit niet per host toestaan. Om het te verwijderen, verwijder je de tool |
-| SEAL-handtekeningcontrole | **Niets.** De webapp heeft helemaal geen DNS-resolver - zie hieronder | Nooit | Niets om te blokkeren |
-| Deep-scan-detectormodellen | Niets persoonlijks - een eenmalige download van een model vanaf dezelfde origin (geen derde partij) | Alleen als je kiest voor de deep scan van Verify | Deep scan is niet beschikbaar. Standaardverificatie werkt nog steeds |
-| Externe instantie | Wat de instantie die je noemt ook teruggeeft, via dezelfde catalogussynchronisatie als hierboven beschreven. Je kiest de host op het moment van gebruik, dus die staat niet in het onderstaande beleid | Alleen als je de shell expliciet naar een andere Lolly-implementatie wijst | Het wisselen van instantie faalt. Je lokale instantie wordt niet beïnvloed |
+| Synchronisatie toolcatalogus | Niets persoonlijks - een verzoek voor Lolly's eigen publieke tool- en asset-index, naar de herkomst van de app zelf | Bij het opstarten, daarna offline gecachet | De app draait op zijn gecachete toolset. Alleen het ontdekken van nieuwe tools stopt |
+| Een tool die live data nodig heeft | Wat die specifieke tool ook opvraagt, naar de host die in de eigen beschrijving wordt genoemd. Vandaag is dat alleen de plaatsopzoeking in de tool Meeting Planner, die `geocoding-api.open-meteo.com` vraagt om een plaatsnaam om te zetten naar coördinaten en een tijdzone - geen account, geen sleutel en geen identifier buiten het verzoek zelf. De invoer vermeldt dit direct waar je typt, en elk antwoord wordt op je apparaat opgeslagen zodat een plaats maar één keer wordt opgezocht | Alleen tijdens het gebruik van die tool, en alleen zodra je een locatie invoert | Die ene opzoeking mislukt. Je kunt coördinaten nog steeds handmatig invoeren en verder wordt niets beïnvloed |
+| Google Fonts | De gekozen lettertypefamilienaam en je IP-adres, naar Googles lettertypeservers (`fonts.googleapis.com` voor het stijlblad, `fonts.gstatic.com` voor het lettertypebestand) | Alleen als je een Google Font toevoegt in de merkeditor, **en alleen nadat je akkoord gaat in een dialoogvenster dat precies dit zegt** - een eenmalige download per familie, die daarna op je apparaat blijft en offline wordt gebruikt | De Google Fonts-kiezer werkt niet (fail closed). Upload in plaats daarvan een lettertypebestand |
+| Versturen naar Google Drive | Het ene bestand dat je koos om te versturen, naar Googles Drive-API (`www.googleapis.com`), na een Google-aanmelding die je afrondt in Googles eigen pop-upvenster. Lolly's toegang is beperkt tot bestanden die het zelf heeft aangemaakt (het bereik `drive.file` - het kan nooit de rest van je Drive lezen), en het aanmeldtoken wordt alleen in het geheugen bewaard voor de sessie, nooit opgeslagen | Alleen wanneer je op "Send to Google Drive" drukt bij een EMF-export, en alleen in builds waarin de operator een Google client-id heeft geconfigureerd - zonder dat bestaat de knop niet | De knop verschijnt nooit. Download het bestand en upload het zelf naar Drive |
+| Versturen naar Dropbox | Het ene bestand dat je koos om te versturen, naar Dropbox's API (`api.dropboxapi.com` voor aanmelding en metadata, `content.dropboxapi.com` voor het bestand zelf), na een Dropbox-aanmelding die je afrondt in Dropbox's eigen venster. Lolly's toegang is beperkt tot de app-map (het ziet alleen ooit `Apps/` en zijn eigen map daarin - nooit de rest van je Dropbox), de link "Open" die het je toont is een kortstondige privélink (er wordt geen publieke share aangemaakt), en een refresh-token wordt alleen opgeslagen als je "stay connected" aanvinkt | Alleen wanneer je op "Send to Dropbox" drukt bij een bestand, en alleen in builds waarin de operator een Dropbox client-id heeft geconfigureerd - zonder dat bestaat de knop niet | De knop verschijnt nooit. Download het bestand en upload het zelf naar Dropbox |
+| Versturen naar OneDrive | Het ene bestand dat je koos om te versturen, naar Microsofts identiteits- en Graph-diensten (`login.microsoftonline.com` voor aanmelding, `graph.microsoft.com` voor de upload; een groot bestand wordt in delen geüpload naar een door Microsoft beheerd uploadadres op `api.onedrive.com`, `*.up.1drv.com` of `*.sharepoint.com`), na een Microsoft-aanmelding die je afrondt in Microsofts eigen venster. Lolly's toegang is beperkt tot zijn eigen map onder `Apps/` (het kan nooit de rest van je OneDrive lezen) plus je weergavenaam voor het accountlabel, en een refresh-token wordt alleen opgeslagen als je "stay connected" aanvinkt | Alleen wanneer je op "Send to OneDrive" drukt bij een bestand, en alleen in builds waarin de operator een Microsoft client-id heeft geconfigureerd - zonder dat bestaat de knop niet | De knop verschijnt nooit. Download het bestand en upload het zelf naar OneDrive |
+| ICC-drukprofielen | Niets persoonlijks - een verzoek voor een standaard drukconditieprofiel, naar het publieke register van het ICC (`registry.color.org`, `www.color.org`) | Alleen als je op een ICC-voorinstelling klikt in de printprofielbeheerder - een eenmalige download per profiel, die daarna op je apparaat blijft | ICC-voorinstellingen mislukken. Lever in plaats daarvan je eigen `.icc`-profiel aan |
+| Internetradio | Niets persoonlijks - een playlistverzoek en een audiostream, naar het station (`api.somafm.com` en de icecast-server die het noemt, `*.somafm.com`) | Alleen terwijl je de optionele ingebouwde radio in de geluidsspeler afspeelt | De radio faalt. Elke andere geluidsfunctie blijft werken |
+| Een URL die je een tool laat vastleggen | Een verzoek naar precies het webadres dat je intypt, vanuit de URL-schermafbeeldingstool. Wat dat adres ook is. Deze host staat niet in het beleid hieronder, omdat je hem kiest op het moment van gebruik | Alleen wanneer je een URL in die tool invoert en de opname start | Een operator kan dit niet per host op de allowlist zetten. Om het te verwijderen, verwijder je de tool |
+| SEAL-handtekeningcontrole | **Niets.** De webapp heeft helemaal geen DNS-resolver - zie hieronder | Nooit | Niets te blokkeren |
+| Deep-scan-detectormodellen | Niets persoonlijks - een eenmalige download van hetzelfde domein (geen derde partij) | Alleen als je kiest voor Verify's deep scan | Deep scan is niet beschikbaar. Standaardverificatie blijft werken |
+| Externe instantie | Wat de instantie die je opgeeft ook teruggeeft, via dezelfde catalogussynchronisatie als hierboven beschreven - plus een versietag bij verzoeken ernaartoe (shell-soort en engineversie, dezelfde informatie die een user agent meedraagt), zodat de operator kan zien welke Lolly-versies in het veld zijn. Op een beheerde instantie, terwijl je bent aangemeld, draagt die tag ook een install-id per apparaat, zodat de apparatenlijst van de operator deze installatie kan onderscheiden. Dit lift alleen mee op verzoeken die je eigen gebruik al doet - er is geen timer en niets belt naar huis - en de instantie verlaten verwijdert het id, zodat een apparaat dat later opnieuw verbindt een nieuw id krijgt. Je kiest de host op het moment van gebruik, dus die staat niet in het beleid hieronder | Alleen als je de shell expliciet naar een andere Lolly-implementatie wijst | Instantiewisseling mislukt. Je lokale instantie is niet beïnvloed |
 
 Elke vaste host in die tabel is ook de volledige allowlist in het Content-Security-Policy van de
 app, die de browser afdwingt. De lijst is dus niet alleen een beschrijving van wat de code vandaag
@@ -141,20 +142,20 @@ link kan verschijnen als levende afbeelding in een README, een wiki of een dashb
 vraagt de server om **publieke tool- en catalogusdata** te renderen met de invoer
 die in de URL staat geschreven.
 
-- <!--i:usercheck--> **Geen accounts, geen cookies, geen status.** Het endpoint is anoniem, en er wordt niets
-  op je apparaat gelezen. Je documenten, sessies en uploads verlaten nooit je
-  browser - ze kunnen helemaal niet in deze links verschijnen.
-- <!--i:document--> **Maar de URL zelf wordt vastgelegd.** De querystring van een URL maakt deel uit van de request-
-  regel, dus die komt terecht in de gewone toegangslogboeken van het hostingplatform, net zoals
-  elk aangevraagd pad. Als de invoer van een link iemands naam of e-mailadres bevat -
-  een naambadge, een e-mailhandtekening - **dan staat die tekst in die logboeken**, en
-  geen enkele beleidsformulering verandert dat. Dit is de specifieke reden waarom de functie hier
-  uit staat in plaats van aan.
-- <!--i:globe--> **De invoer is sowieso publiek van aard** - het is wat de auteur van de link ook
-  typte in de URL, leesbaar voor iedereen die de link bereikt. Zet geen geheimen in een
-  gedeelde link. Lolly biedt linkversleuteling voor gevoelige content.
-- <!--i:eyeoff--> Antwoorden worden **gecachet en snelheidsbegrensd** zoals elke publieke afbeelding, en gemarkeerd
-  als `noindex`, zodat zoekmachines je renders niet indexeren.
+- <!--i:usercheck--> **Geen accounts, geen cookies, geen status.** Het eindpunt is anoniem, en er wordt
+  niets op je apparaat gelezen. Je documenten, sessies en uploads verlaten nooit je
+  browser - ze kunnen helemaal niet in deze links voorkomen.
+- <!--i:document--> **Maar de URL zelf wordt vastgelegd.** De query-string van een URL maakt deel uit van de
+  requestregel, dus die verschijnt in de gewone toegangslogs van het hostingplatform, op
+  dezelfde manier als elk opgevraagd pad. Als de invoer van een link iemands naam of e-mail
+  bevat - een naamplaatje, een e-mailhandtekening - **staat die tekst in die logs**, en
+  geen enkele beleidstekst verandert daar iets aan. Dit is precies de reden waarom de functie
+  hier uit staat in plaats van aan.
+- <!--i:globe--> **De invoer is sowieso openbaar door constructie** - het is wat de auteur van de
+  link ook in de URL heeft getypt, leesbaar voor iedereen die de link bereikt. Zet geen
+  geheimen in een gedeelde link. Lolly biedt linkversleuteling voor gevoelige content.
+- <!--i:eyeoff--> Antwoorden worden **gecachet en rate-limited** zoals elke publieke afbeelding, en gemarkeerd
+  als `noindex` zodat zoekmachines je renders niet indexeren.
 
 Self-hostend Lolly en wil je geen publiek render-oppervlak? Stel
 `LOLLY_DISABLE_RENDER_GET=1` in - wat lolly.tools zelf momenteel doet - en

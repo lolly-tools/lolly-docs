@@ -3,7 +3,7 @@
   "heading": "Everyday creative work\nshouldn’t be hard.",
   "lead": "Most people don’t want a design studio. They want one correct file, now - without breaking the style, without waiting on someone and without being asked to sign up and pay before they can start. Lolly can help.",
   "frustrations": [
-    { "icon": "anxiety", "title": "aesthetic anxiety", "desc": "The quiet fear of picking the wrong colour or font. Over-thinking what was meant to be simple." },
+    { "icon": "anxiety", "title": "Aesthetic anxiety", "desc": "The quiet fear of picking the wrong colour or font. Over-thinking what was meant to be simple." },
     { "icon": "bottleneck", "title": "The bottleneck", "desc": "Every asset stuck with a busy human queue, a slow tool, or one more approval." },
     { "icon": "tollGate", "title": "The toll gate", "desc": "An account before you can start, a subscription that outlives the job, and predatory pricing ladders holding your work hostage." }
   ],

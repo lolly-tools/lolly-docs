@@ -83,7 +83,7 @@ Kapag aktibo na ang isang brand at nasa kamay mo na ang iyong materyal, gumagawa
 
 Literal ang "ang URL mismo ang API". Walang taong gumuhit ng chart sa ibaba: ang type nito, ang heading nito at ang buong data table nito ay tinipa sa address bar, at ang parehong link ay nagre-render ng parehong chart sa anumang device.
 
-![Isang area chart ng buwanang signups, kung saan ang bawat halaga ay dumating bilang query parameter sa halip na bilang isang click](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-d3-url-chart)
+![Isang area chart ng buwanang signup, kung saan ang bawat value ay dumating bilang isang query parameter sa halip na isang click](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-d3-url-chart)
 
 ## Saan susunod
 

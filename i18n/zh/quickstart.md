@@ -83,7 +83,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 “URL 就是 API”是字面意思。下面这张图表没有人画过：它的类型、标题和整张数据表都是敲进地址栏的，而同一个链接在任何设备上都会渲染出同一张图表。
 
-![一张每月注册量的面积图，其中每一个数值都来自查询参数，而不是来自点击](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-d3-url-chart)
+![月度注册量面积图,图中的每个数值都以查询参数的形式传入,而非通过点击生成](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-d3-url-chart)
 
 ## 接下来去哪里
 

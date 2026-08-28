@@ -52,13 +52,23 @@ Street Map इस अदला-बदली का एक उचित उदा
 
 एडवांस्ड फ़िल्टर, कंपोज़िटिंग, एनिमेशन, लाइव कैमरा इफ़ेक्ट, जनरेटिव डिज़ाइन - हर वेब तकनीक एक टेम्पलेट लेखक के लिए उपलब्ध है, इसलिए छत ऊंची है।
 
-![Mesh Gradient का आउटपुट - आपके ब्रांड के पैलेट टोकन से पूरी तरह से बना नरम रंग का एक जनरेटिव क्षेत्र](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Mesh Gradient का आउटपुट - आपके ब्रांड के पैलेट टोकन से पूरी तरह बना नरम रंग का एक जेनरेटिव फ़ील्ड](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+
+### उगाया गया, खींचा नहीं
+
+**Growth** तस्वीर को खींचने के बजाय उगाता है: एक सीड (seed) की गई सिस्टम एक रिंग, एक लाइन, आपके अपने शब्दों या आपके लोगो से फैलती है जब तक कि वह फ़्रेम को आपके पैलेट में भर न दे। वही सीड हमेशा वही टुकड़ा उगाती है, इसलिए एक लिंक उसे बिल्कुल वैसा ही दोबारा बनाता है। जो बाहर आता है वह किसी ड्रॉइंग की तस्वीर नहीं बल्कि सामान्य SVG ज्यामिति है, इसलिए यह प्रिंट, प्लॉट और कट होता है - और वही डिज़ाइन पहले सीड से तैयार रूप तक वीडियो के रूप में एनिमेट होता है।
+
+![Growth का डिफ़ॉल्ट ब्लूम - एक रिंग से उगी ब्रांड-रंग की लूप होती रेखाओं का घना फ़ील्ड, हर रेखा एक असली SVG पाथ](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
+### गति जो संगीत का जवाब देती है
+
+**Synth** ग्राफ़िक्स कार्ड पर एक फ़्लूइड फ़ील्ड को हल करता है और उसे आपके रंगों में रंगता है। इसे कोई ट्रैक दें और फ़ील्ड आवाज़ के साथ चलती है; यह MP4, WebM, GIF या एनिमेटेड PNG लूप के रूप में एक्सपोर्ट होता है जो शुरू से आखिर तक साफ़-साफ़ जुड़ता है, स्क्रीन से रिकॉर्ड करने के बजाय एक ड्रिवन क्लॉक से फ़्रेम-दर-फ़्रेम रेंडर होता है - इसलिए गति कभी साउंडट्रैक से भटकती नहीं, और वही लिंक किसी भी लंबाई में वही क्लिप रेंडर करता है।
+
+![Synth के इंक सीन का एक फ़्रेम - ब्रांड के हरे रंगों में जगमगाता एक गहरा फ़्लूइड फ़ील्ड, बीच घुमाव में कैद](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 फ़ाइलें नहीं, *टूल्स* बनाएं: 10,000 कार्ड बनाने के बजाय वह चीज़ बनाएं जो 10,000 कार्ड जनरेट करती है। जो नहीं बदलना चाहिए उसे लॉक करें; केवल वही एक्सपोज़ करें जिसे बदलना है।
 
 ## आपको जो बदलाव नज़र आएँगे
-
-![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
 
 - **प्रिंट, सही तरीक़े से।** असली भौतिक इकाइयाँ (mm/cm/in/pt) और DPI, ब्लीड और क्रॉप मार्क्स, CMYK और PDF/X-4 आउटपुट-इंटेंट - प्रिंट शॉप को वही मिलता है जिसकी उसे ज़रूरत है। देखें [एक्सपोर्ट करना](/info/exporting.html#size-print-units)।
 - **वीडियो और गति।** WebM/MP4 (ऑडियो ट्रैक सहित), एनिमेटेड PNG/WebP और एनिमेटेड SVG एक्सपोर्ट करें - उसी टेम्पलेट से जो आपकी स्टिल इमेज बनाता है। **Sequence Studio** और आगे जाता है: कैनवास के नीचे एक असली टाइमलाइन, क्लिप्स की एक चुंबकीय पंक्ति, स्वतंत्र ओवरले लेन, ट्रिम और स्प्लिट, ट्रांज़िशन प्रीसेट, वॉयसओवर रिकॉर्डिंग और म्यूज़िक मिक्स के साथ - जो स्क्रीन रिकॉर्डिंग की बजाय एक डिटरमिनिस्टिक कंपोज़िटर द्वारा MP4, WebM, GIF या APNG के रूप में रेंडर होता है। Lottie फ़ाइलें एनिमेटेड एसेट के रूप में *अंदर* आती हैं और इनमें से किसी भी फ़ॉर्मेट में रेंडर होती हैं। क्लिप्स के ऊपर **कीफ़्रेम** होते हैं: एक क्षण में बॉक्स को पोज़ करें, उसे असली गहराई के साथ पेज से ऊपर उठाएँ और परिणाम पर कैमरा उड़ाएँ। देखें [Lolly का उपयोग → टाइमलाइन](/info/using.html#timeline-sequence-studio) और [एनिमेट करना](/info/animating.html)।
@@ -70,8 +80,6 @@ Street Map इस अदला-बदली का एक उचित उदा
 - **जब चाहें एक शांत इंटरफ़ेस।** **Profile → Accessibility** के नीचे चार स्विच - *Reduce motion*, *Hide colourful previews*, *High contrast* और *Large text* - ऐप को आपके काम के इर्द-गिर्द व्यवस्थित करते हैं। हर एक तब तक बंद रहता है जब तक आप उसे चालू न करें, और इनमें से कोई भी आपके कैनवास को नहीं छूता या आपके एक्सपोर्ट के किसी पिक्सेल को नहीं हिलाता। देखें [आपकी प्रोफ़ाइल → Accessibility](/info/profile.html#accessibility)।
 
 ## इसका पूरा फ़ायदा उठाएँ
-
-![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[Quickstart](/info/quickstart.html)** - ब्रांड अंदर, पहली फ़ाइल बाहर।
 - **[The Brand Studio](/info/brand-studio.html)** - अपने लोगो, रंग, टाइप और टोकन तय करें (`#/start`)।

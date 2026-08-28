@@ -66,7 +66,7 @@ De duidelijkste manier om te zien wat Lolly is, is geen functielijst - het is é
 
 De "nieuwe grafiek" in stap twee is een render zoals deze, gegenereerd uit een datastring en een handvol parameters zonder dat iemand een ontwerpbestand opent:
 
-![Een gestapeld vlakdiagram met titel, de drie reeksen in banden in een koel palet met assen, legenda en titel allemaal door de sjabloon geplaatst in plaats van handmatig](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![Een gestapeld vlakdiagram met titel, waarvan de drie reeksen zijn gebandeerd in een koel palet, met assen, legenda en titel allemaal geplaatst door het sjabloon in plaats van met de hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 Het punt is niet dat Lolly goed is voor ontwerpers *en* goed voor developers *en* goed voor sales, elk op zichzelf. Het is een **estafette**: het aanvankelijke werk van de ontwerper wordt door de developer geschaald, wat op zijn beurt de producer versterkt. De moeiteloze ervaring voor de niet-technische verkoper in het vliegtuig is alleen *mogelijk* dankzij de precisie die de ontwerper vastlegde en de developer implementeerde.
 
@@ -84,7 +84,7 @@ Dezelfde deterministische tool bereikt die schaal op drie manieren, allemaal met
 - <!--i:code--> **Een developer, vanaf de command line.** De CLI draait *dezelfde* engine en *hetzelfde* renderpad headless, zodat de tool over alle 10.000 rijen kan worden doorlopen in een script of een nachtelijke pipeline. Een `lolly <tool> --field=…`-aanroep in een lus is de hele integratie.
 - <!--i:cpu--> **Een systeem of een AI-agent, via MCP.** Dezelfde tool programmatisch bediend, met dezelfde nauwkeurigheid en zelfs grotere schaal - omdat een machine zich niet verveelt terwijl duizenden bestanden binnenkomen.
 
-![Batchmodus bij een verse installatie: één lege rij wachtend op een tool, met het hele spreadsheetoppervlak en de Render-knop al aanwezig voordat er data binnenkomt](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+![Batch-modus bij een verse installatie: één lege rij die op een tool wacht, met het volledige spreadsheetoppervlak en de Render-knop al aanwezig voordat er data binnenkomt](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
 
 Eén set merkregels, eenmalig vastgelegd door een ontwerper; drie routes naar dezelfde vooraf goedgekeurde output - en de machineroute schaalt het verst van alle drie, omdat ze nooit moe wordt terwijl de bestanden binnenkomen.
 
@@ -249,7 +249,7 @@ De webshell is responsive vanuit één layout. Op desktop is een tool een resiza
 
 Dezelfde tool op telefoonbreedte, zonder tweede layout om te onderhouden: de bediening wordt een sheet bovenaan, de preview vult het hele scherm en de renderpil zweeft eroverheen.
 
-![Een audiogram op een 430px breed scherm - de bedieningssheet erboven, het afgeronde vierkante werk eronder en de zwevende renderpil](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![Een audiogram op een 430px-breed scherm - het bedieningsblad erboven, de afgewerkte vierkante artwork eronder en de zwevende renderpil](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **Batchmodus (`/pro`).** De webshell levert ook een spreadsheet-achtig batchraster (`shells/web/src/pro/`) dat veel rijen tegelijk rendert over één of meerdere tools. Het doet CSV/TSV-round-trip plus spreadsheet-plakken, per-rij sjabloon/formaat/afmeting/eenheid/dpi, een blocks-editor zijpaneel met live preview, inklapbare exportkolommen, een per-rij "relevantie"-tagbalk, links een sleepgreep om rijen te herschikken, tweestaps verwijderbevestiging, opgeslagen batchsessies en een `.zip`-download. Dit is het one-to-many oppervlak achter de "massale contentgeneratie"-positionering.
 
@@ -286,7 +286,7 @@ Rijen staan in de volgorde van de gallerysecties. De sectie `utility` wordt alti
 | Categorie | Voorbeelden | Gepland |
 |---|---|---|
 | `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
-| `designer` | Brand Lockup, Design, Chart Creator, D3 Chart Studio, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `designer` | Brand Lockup, Design, Chart, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
 | `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Unit/format converters, more on-device privacy utilities |
@@ -344,14 +344,14 @@ Optionele, additieve oppervlakken verschijnen alleen wanneer een shell ze levert
 
 Een handvol kernoppervlakken, om te laten zien wat het bestrijkt - [Host API](/info/host-api.html) documenteert ze allemaal, en `packages/core/src/host-v1.ts` is het contract zelf:
 
-| Oppervlak | Sinds | Wat het toevoegt |
+| Surface | Sinds | Wat het toevoegt |
 |---|---|---|
 | `host.tokens` | 1.0 | DTCG-designtokens - de eigen primitieven van het merk |
-| `host.text` | 1.0 | Tekst-naar-pad via HarfBuzz WASM (de capability `wasm` markeert tools die hierop leunen) |
-| `host.media` | 1.4 | Live camerabeelden die de `onFrame`-hook aansturen. Progressive enhancement, bewust *niet* gated door de `camera`-flag - zo'n tool werkt nog steeds als een gewone stilstaande-beeldtool |
-| `host.color` | 1.40 | Perceptuele kleurwiskunde: ΔEOK, WCAG- + APCA-contrast, OKLab-ramps, class-breaks, categorische paletten, harmonieschema's (1.60), CSS Color 4-menging en gradiëntbaking (1.68). Puur en synchroon - shells koppelen de `makeColorApi()` van de engine in plaats van zelf iets te implementeren, zodat het niet kan afwijken |
-| `host.images` | 1.60 | Bytes on device decoderen/schalen/opnieuw coderen - het convert-pad (HEIC → JPEG, comprimeren naar WebP, downscalen). In de webshell geleverd als lazy facade, zodat de HEIC-decoder nooit in de bootchunk terechtkomt |
-| `host.geom` | 1.64 | Exacte vectorgeometrie: padbooleans, offsetting, stroke-naar-fill, spline-verlaging, vereenvoudiging, hit testing. Ook puur, synchroon en gekoppeld vanuit de engine (`makeGeomApi()`); fouten worden *geretourneerd*, nooit gethrowd |
+| `host.text` | 1.0 | Tekst-naar-pad via HarfBuzz WASM (de capability-vlag `wasm` markeert tools die hierop leunen) |
+| `host.media` | 1.4 | Live cameraframes die de hook `onFrame` aansturen. Progressieve verbetering, bewust *niet* afgeschermd door de vlag `camera` - zo'n tool werkt nog steeds als een gewone stilstaande-beeldtool |
+| `host.color` | 1.40 | Perceptuele kleurwiskunde: ΔEOK, WCAG- + APCA-contrast, OKLab-verlopen, klassegrenzen, categorische paletten, harmonieschema's (1.60), CSS Color 4-menging en gradient-baking (1.68). Zuiver en synchroon - shells koppelen de `makeColorApi()` van de engine in plaats van zelf iets te implementeren, zodat het niet kan afwijken |
+| `host.images` | 1.60 | Bytes op het apparaat decoderen / herschalen / hercoderen - het convert-pad (HEIC → JPEG, comprimeren naar WebP, verkleinen). In de webshell geleverd als een lazy facade, zodat de HEIC-decoder nooit in de bootchunk terechtkomt |
+| `host.geom` | 1.64 | Exacte vectorgeometrie: padbooleans, offsetting, stroke-naar-fill, splineverlaging, vereenvoudiging, hittesten. Ook zuiver, synchroon en gekoppeld vanuit de engine (`makeGeomApi()`); fouten worden *geretourneerd*, nooit gethrowd |
 
 De rest volgt dezelfde regels en is er samen mee gedocumenteerd: `pdf` (1.8) en `pptx` (1.58) voor on-device documentchirurgie, `audio` (1.71) en `speech` (1.96) voor clipanalyse en on-device TTS/transcriptie, `viz` (1.72) voor het MilkDrop-placeholdercontract, `codec` (1.100) en `layers` (1.102) voor deep-bit- en layered-bitmap-output, `upscale` (1.101) en `matte` (1.103) voor de on-device modellen, `raster` (1.105) voor hooks die hun eigen pixelwerk doen, `connectors` (1.106) voor exportveilige pijlen en `c2pa` (1.85) voor het ondertekenen van afgeronde bytes. Het aantal groeit; de regels niet.
 

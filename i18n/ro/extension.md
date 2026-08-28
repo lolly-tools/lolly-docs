@@ -2,7 +2,7 @@
 
 Extensia **Lolly URL Screenshot** permite aplicației web să captureze o captură de ecran a oricărei pagini web din interiorul browserului tău. Fără ea, capturarea unui URL are nevoie de aplicația desktop - o pagină de browser nu poate citi pixeli de pe alt site de una singură. Extensia poate, folosind aceeași capturare pe care o folosește aplicația desktop.
 
-Ea face încă o sarcină cu aceeași mecanică: citește o singură pagină pe care o numești, astfel încât Brand Studio poate extrage un brand dintr-un site web live. Ambele sunt tratate mai jos.
+Face un alt lucru în același mod: citește o singură pagină pe care o numești, astfel încât Brand Studio poate extrage un brand dintr-un site web live. Ambele sunt descrise mai jos.
 
 Rulează pe browsere bazate pe Chromium: **Chrome, Edge, Brave, Arc, Opera** - Chrome 111 sau mai nou.
 

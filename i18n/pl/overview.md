@@ -66,7 +66,7 @@ Najjaśniejszym sposobem zobaczenia, czym jest Lolly, nie jest lista funkcji - t
 
 "Świeży wykres" z kroku drugiego to render taki jak ten, wygenerowany z ciągu danych i garści parametrów, bez otwierania przez nikogo pliku projektowego:
 
-![Zatytułowany wykres warstwowy typu area, jego trzy serie w chłodnej palecie barw, z osiami, legendą i tytułem rozmieszczonymi przez szablon, a nie ręcznie](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![Wykres warstwowy skumulowany z tytułem, którego trzy serie są ułożone w chłodnej palecie, z osiami, legendą i tytułem rozmieszczonymi przez szablon, a nie ręcznie](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 Chodzi nie o to, że Lolly jest dobre dla projektantów *i* dobre dla deweloperów *i* dobre dla sprzedaży, każde z osobna. To **sztafeta**: początkową pracę twórcy skaluje deweloper, co z kolei daje siłę producentowi. Bezwysiłkowe doświadczenie nietechnicznego handlowca w samolocie jest *możliwe* wyłącznie dzięki rygorowi, który ustalił projektant, a wdrożył deweloper.
 
@@ -84,7 +84,7 @@ To samo deterministyczne narzędzie osiąga tę skalę na trzy sposoby, z który
 - <!--i:code--> **Deweloper, z linii poleceń.** CLI uruchamia *ten sam* silnik i *tę samą* ścieżkę renderowania bez interfejsu, więc narzędzie można wywołać sekwencyjnie dla wszystkich 10 000 wierszy w skrypcie lub nocnym pipeline'ie. Wywołanie `lolly <tool> --field=…` w pętli to cała integracja.
 - <!--i:cpu--> **System lub agent AI, przez MCP.** To samo narzędzie obsługiwane programistycznie, z tą samą wiernością i jeszcze większą skalą - bo maszyna się nie znudzi, gdy napływają tysiące plików.
 
-![Tryb wsadowy na świeżej instalacji: jeden pusty wiersz czekający na narzędzie, z całą powierzchnią arkusza i przyciskiem Render już na miejscu, zanim pojawią się jakiekolwiek dane](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+![Tryb wsadowy przy świeżej instalacji: jeden pusty wiersz czekający na narzędzie, z całą powierzchnią arkusza i przyciskiem Render już na miejscu, zanim pojawią się jakiekolwiek dane](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
 
 Jeden zestaw ograniczeń marki, ustalony raz przez projektanta; trzy drogi do identycznego, wcześniej zaakceptowanego wyniku - a droga maszynowa skaluje się najdalej ze wszystkich, bo nigdy się nie męczy, gdy napływają pliki.
 
@@ -249,7 +249,7 @@ Powłoka web jest responsywna z jednego układu. Na desktopie narzędzie to zmie
 
 To samo narzędzie na szerokości telefonu, bez drugiego układu do utrzymywania: kontrolki stają się arkuszem u góry, podgląd zajmuje cały ekran, a pigułka renderowania unosi się nad nim.
 
-![Audiogram na ekranie o szerokości 430px - arkusz kontrolek powyżej, gotowa kwadratowa grafika poniżej i unosząca się pigułka renderowania](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![Audiogram na ekranie o szerokości 430 px - arkusz sterowania u góry, gotowa kwadratowa grafika poniżej oraz pływająca pigułka renderowania](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **Tryb wsadowy (`/pro`).** Powłoka webowa udostępnia też siatkę wsadową w stylu arkusza kalkulacyjnego (`shells/web/src/pro/`), która renderuje wiele wierszy naraz w jednym lub wielu narzędziach. Obsługuje odczyt i zapis CSV/TSV oraz wklejanie z arkusza, per-wierszowy szablon/format/rozmiar/jednostkę/dpi, panel boczny edytora bloków z podglądem na żywo, zwijalne kolumny eksportu, pasek tagów "relevance" na wiersz, zmianę kolejności wierszy przez uchwyt przeciągania po lewej, dwuetapowe potwierdzenie usunięcia, zapisane sesje wsadowe i pobieranie w formacie `.zip`. To jest powierzchnia jeden-do-wielu stojąca za pozycjonowaniem "masowego generowania treści".
 
@@ -286,10 +286,10 @@ Wiersze są wymienione w kolejności sekcji galerii. Sekcja `utility` zawsze ren
 | Kategoria | Przykłady | Planowane |
 |---|---|---|
 | `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
-| `designer` | Brand Lockup, Design, Chart Creator, D3 Chart Studio, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `designer` | Brand Lockup, Design, Chart, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Unit/format converters, more on-device privacy utilities |
+| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Konwertery jednostek/formatów, więcej narzędzi prywatności działających na urządzeniu |
 
 Te komórki to **przykłady, nie inwentarze**. To, jakie narzędzia istnieją, jest właściwością zamontowanego profilu, nie tej strony: pakiet marki dodaje własne i może wykluczyć narzędzie społecznościowe, którego wolałby nie dostarczać. `catalog/tools/index.json` - wygenerowany z manifestów, rejestr faktycznie odczytywany przez galerię - jest listą autorytatywną; aby policzyć, co montuje profil, policz manifesty (`ls community/*/tool.json brands/*/tools/*/tool.json`) zamiast ufać liczbie zapisanej tutaj. (Id narzędzia obecne w dwóch pakietach montuje się raz, z pakietu, który wygrywa.)
 
@@ -344,14 +344,14 @@ Opcjonalne, addytywne powierzchnie pojawiają się tylko wtedy, gdy dostarcza je
 
 Garść flagowych powierzchni, by pokazać zakres - [Host API](/info/host-api.html) dokumentuje każdą z nich, a `packages/core/src/host-v1.ts` jest samą umową:
 
-| Powierzchnia | Od | Co dodaje |
+| Interfejs | Od wersji | Co dodaje |
 |---|---|---|
 | `host.tokens` | 1.0 | Tokeny projektowe DTCG - własne prymitywy marki |
-| `host.text` | 1.0 | Tekst-na-ścieżkę przez HarfBuzz WASM (flaga możliwości `wasm` oznacza narzędzia, które na tym polegają) |
-| `host.media` | 1.4 | Klatki kamery na żywo napędzające hook `onFrame`. Stopniowe ulepszenie, celowo *nie* bramkowane flagą `camera` - takie narzędzie nadal działa jak zwykłe narzędzie na obrazie statycznym |
-| `host.color` | 1.40 | Matematyka koloru percepcyjnego: ΔEOK, kontrast WCAG + APCA, rampy OKLab, podziały klasowe, palety kategoryczne, schematy harmonii (1.60), mieszanie CSS Color 4 i wypiekanie gradientów (1.68). Czysta i synchroniczna - powłoki dołączają `makeColorApi()` silnika zamiast implementować cokolwiek, więc nie może dryfować |
-| `host.images` | 1.60 | Dekodowanie / zmiana rozmiaru / rekodowanie bajtów na urządzeniu - ścieżka konwersji (HEIC → JPEG, kompresja do WebP, zmniejszanie skali). Dostarczone w powłoce webowej jako leniwa fasada, więc dekoder HEIC nigdy nie trafia do łańcucha rozruchowego |
-| `host.geom` | 1.64 | Dokładna geometria wektorowa: operacje boolowskie na ścieżkach, offsetowanie, konwersja obrysu na wypełnienie, obniżanie splajnów, upraszczanie, testowanie trafień. Też czysta, synchroniczna i dołączona z silnika (`makeGeomApi()`); błędy są *zwracane*, nigdy rzucane |
+| `host.text` | 1.0 | Zamiana tekstu na ścieżki przez HarfBuzz WASM (flaga możliwości `wasm` oznacza narzędzia, które z tego korzystają) |
+| `host.media` | 1.4 | Klatki z kamery na żywo napędzające hook `onFrame`. Stopniowe udoskonalenie, celowo *nie* uzależnione od flagi `camera` - takie narzędzie nadal działa jako zwykłe narzędzie do nieruchomych obrazów |
+| `host.color` | 1.40 | Percepcyjna matematyka koloru: ΔEOK, kontrast WCAG + APCA, rampy OKLab, podziały na klasy, palety kategoryczne, schematy harmonii (1.60), mieszanie CSS Color 4 i wypalanie gradientów (1.68). Czyste i synchroniczne - powłoki dołączają `makeColorApi()` silnika zamiast czegokolwiek implementować, więc nie może dojść do rozjazdu |
+| `host.images` | 1.60 | Dekodowanie / zmiana rozmiaru / ponowne kodowanie bajtów na urządzeniu - ścieżka konwersji (HEIC → JPEG, kompresja do WebP, pomniejszanie). Dostarczane w powłoce webowej jako leniwa fasada, więc dekoder HEIC nigdy nie trafia do fragmentu startowego |
+| `host.geom` | 1.64 | Dokładna geometria wektorowa: operacje logiczne na ścieżkach, offsetowanie, zamiana obrysu na wypełnienie, obniżanie splajnów, uproszczanie, wykrywanie trafień. Także czyste, synchroniczne i dołączane z silnika (`makeGeomApi()`); błędy są *zwracane*, nigdy nie rzucane |
 
 Reszta stosuje się do tych samych zasad i jest dokumentowana obok nich: `pdf` (1.8) i `pptx` (1.58) do chirurgii dokumentów on-device, `audio` (1.71) i `speech` (1.96) do analizy klipów i TTS/transkrypcji on-device, `viz` (1.72) do umowy zastępczej MilkDrop, `codec` (1.100) i `layers` (1.102) do wyjścia głębokich bitów i warstwowej mapy bitowej, `upscale` (1.101) i `matte` (1.103) do modeli on-device, `raster` (1.105) dla hooków wykonujących własną pracę na pikselach, `connectors` (1.106) dla strzałek bezpiecznych przy eksporcie i `c2pa` (1.85) do podpisywania gotowych bajtów. Liczba rośnie; zasady nie.
 

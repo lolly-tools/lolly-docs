@@ -83,7 +83,7 @@ Con un brand attivo e il tuo materiale a portata di mano, ogni strumento produce
 
 "Un URL è l'API" va preso alla lettera. Il grafico qui sotto non l'ha disegnato nessuno: il suo tipo, il suo titolo e tutta la sua tabella di dati sono stati scritti nella barra degli indirizzi, e lo stesso link renderizza lo stesso grafico su qualsiasi dispositivo.
 
-![Un grafico ad area delle iscrizioni mensili, in cui ogni valore è arrivato come parametro di query anziché con un clic](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-d3-url-chart)
+![Un grafico ad area delle iscrizioni mensili, i cui valori sono arrivati tutti come parametro di query anziché con un clic](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-d3-url-chart)
 
 ## Dove andare adesso
 

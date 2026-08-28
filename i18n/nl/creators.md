@@ -52,13 +52,23 @@ Eén tool kan de live output van een andere tool insluiten als asset - een naamb
 
 Geavanceerde filters, compositing, animatie, live cameraeffecten, generatief ontwerp - elke webtechnologie staat een templateauteur ter beschikking, dus het plafond ligt hoog.
 
-![De output van Mesh Gradient - een generatief veld van zachte kleur, volledig opgebouwd uit de paletttokens van je merk](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Mesh Gradient's output - een generatief veld van zachte kleur, volledig opgebouwd uit de paletttokens van je merk](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+
+### Gegroeid, niet getekend
+
+**Growth** laat het beeld groeien in plaats van het te tekenen: een systeem met een kiem breidt zich uit vanaf een ring, een lijn, je eigen woorden of je logo, totdat het het kader vult, in je palet. Dezelfde kiem laat altijd hetzelfde werk groeien, dus een link reproduceert het exact. Wat eruit komt is gewone SVG-geometrie in plaats van een afbeelding van een tekening, dus het print, plot en snijdt - en hetzelfde ontwerp animeert van de eerste kiem tot de uiteindelijke vorm als video.
+
+![Growth's standaardbloei - een dicht veld van lussende, merkgekleurde lijnen die uit een ring zijn gegroeid, elke lijn een echt SVG-pad](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
+### Beweging die antwoord geeft op de muziek
+
+**Synth** berekent een vloeistofveld op de grafische kaart en schildert het in jouw kleuren. Geef het een track en het veld beweegt mee met het geluid; het exporteert als een MP4, WebM, GIF of geanimeerde PNG-loop die naadloos begin en eind aan elkaar sluit, frame voor frame gerenderd vanuit een aangestuurde klok in plaats van van het scherm opgenomen - zodat de beweging nooit afdrijft ten opzichte van de soundtrack, en dezelfde link dezelfde clip op elke lengte rendert.
+
+![Een frame van Synth's inktscène - een donker vloeistofveld belicht in de merkgroene tinten, vastgelegd midden in een draaikolk](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 Schrijf *tools*, geen bestanden: bouw het ding dat 10.000 kaarten genereert in plaats van 10.000 kaarten te maken. Vergrendel wat niet mag veranderen; stel alleen bloot wat bedoeld is om te variëren.
 
 ## Details die je zult opmerken
-
-![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
 
 - **Print, goed gedaan.** Echte fysieke eenheden (mm/cm/in/pt) en DPI, afloop en snijlijnen, CMYK en PDF/X-4 output-intent - een drukkerij krijgt precies wat hij nodig heeft. Zie [Exporteren](/info/exporting.html#size-print-units).
 - **Video en beweging.** Exporteer WebM/MP4 (met audiotracks), geanimeerde PNG/WebP en geanimeerde SVG - vanuit dezelfde template die je stills maakt. **Sequence Studio** gaat verder: een echte tijdlijn onder het canvas, met een magnetische rij clips, vrije overlaylanen, trimmen en splitsen, overgangspresets, voice-overopname en een muziekmix - uitgevoerd als MP4, WebM, GIF of APNG door een deterministische compositor in plaats van een schermopname. Lottie-bestanden komen *binnen* als geanimeerde assets en renderen uit naar elk van die formaten. Boven de clips zitten **keyframes**: zet een box op één moment neer, til hem met echte diepte van de pagina en vlieg een camera over het resultaat. Zie [Lolly gebruiken → Tijdlijn](/info/using.html#timeline-sequence-studio) en [Animeren](/info/animating.html).
@@ -70,8 +80,6 @@ Schrijf *tools*, geen bestanden: bouw het ding dat 10.000 kaarten genereert in p
 - **Een rustigere interface wanneer je die wilt.** Vier schakelaars onder **Profiel → Toegankelijkheid** - *Beweging beperken*, *Kleurrijke previews verbergen*, *Hoog contrast* en *Grote tekst* - kalmeren de app rond je werk. Elk staat uit tot je hem aanzet, en geen ervan raakt je canvas of verplaatst een pixel van wat je exporteert. Zie [Je profiel → Toegankelijkheid](/info/profile.html#accessibility).
 
 ## Er het meeste uit halen
-
-![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[Snel starten](/info/quickstart.html)** - merk erin, eerste bestand eruit.
 - **[De Brand Studio](/info/brand-studio.html)** - vorm je logo's, kleuren, typografie en tokens (`#/start`).

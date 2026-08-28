@@ -180,7 +180,7 @@ A Design document made of **artboards** is already a deck. Open the **Lolly menu
 - **Reveal steps.** Right-click a box and choose **Reveal at step 1**, **2** or **3** instead of the default **Always visible**. That box then waits until you advance onto its step, so a slide can arrive in pieces; boxes sharing a number arrive together.
 - **Speaker view** (`S`) opens a second window with the current slide, the one coming next, your notes for that slide and a running clock. If the browser blocks the pop-up it falls back to a panel over the deck. Notes are set per artboard and never appear on the slide itself.
 - `B` holds a black screen (any key brings the slide back), `F` returns to fullscreen and **Escape** peels one layer at a time: overview back to the deck, deck back to the editor.
-- **Kiosk.** Give an artboard a **Length** and the deck holds there for that long, then advances itself behind a thin progress bar; `K` (or the pause button, which appears only once something has a length) stops and restarts that. Add `loop` to the link and the deck wraps at the end, which is what makes it signage.
+- **Kiosk.** Give an artboard a **Length** and the deck holds there for that long, then advances itself behind a thin progress bar; `K` (or the pause button, which appears only once something has a length) stops and restarts that. Add `kiosk` to the link and the deck wraps at the end, which is what makes it signage.
 
 The deck is a link as well. `?present` opens straight into it, `s=` names the slide - a position, an artboard id or `id.step` for a build step - and the address updates as you move, so what you send is the slide you're on. Tool authors: those parameters are documented on the [URL Mode](/info/url-mode.html#reserved-parameters) page.
 
@@ -420,3 +420,5 @@ When the selection is bigger than eight, mixes tools or includes images as well 
 ## Offline & install
 
 Lolly is a PWA. After the first load it works **offline** - install it from your browser's address bar (or *Add to Home Screen* on mobile) for an app-like, full-screen experience. It updates itself when you're back online.
+
+About updates: if a view ever fails to load right after one (a blank panel, a "failed to fetch" in the corner), reload the page once - the app picks up the new version cleanly and your work, sessions and brand are untouched. It stores everything on your device, not in the page.

@@ -12,7 +12,7 @@ Hjemskjermen er **galleriet** - alle verktøy, gruppert etter kategori. Klikk p�
 
 Hvert verktøy er en delt visning: **kontroller** på den ene siden, en levende **forhåndsvisning** (canvaset) på den andre. Endre en kontroll, så oppdateres forhåndsvisningen umiddelbart.
 
-![Et verktøys delte visning - kontrollstabelen til venstre, og det grupperte stolpediagrammet det tegner i sanntid til høyre](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
+![Et verktøys delte visning - kontrollstabelen til venstre, og det live grupperte stolpediagrammet det tegner til høyre](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
 
 > Noen få verktøy (som **Design**) åpnes i stedet som et **fritt canvas** - en kromfri flate for direkte manipulasjon der du drar, endrer størrelse på, roterer og fester bokser med tekst, former og bilder, og dobbeltklikker for å redigere tekst på stedet. Det eksporteres via samme renderingsvei som alle andre verktøy, så canvaset *er* filen. Se [Det frie canvaset](#the-free-canvas-design) nedenfor.
 
@@ -167,7 +167,7 @@ Velg et klipp, så gir inspektøren deg de samme endringene som tall: **Lengde**
 
 Noen grenser å ha i bakhodet: en sekvens er begrenset til én time, GIF og animert PNG bufrer rammene sine og holder seg derfor korte, lyden er stum på et klipp med en annen hastighet enn ×1 (det finnes ingen tidsstrekking ennå), og **Ta opp live** er skjult her fordi sammensetteren er den bedre veien.
 
-**Utover forhåndsinnstillinger: nøkkelbilder, dybde og et kamera.** En overgang animerer et klipp når det kommer og går. For å posisjonere en boks *inne i* et klipp - la den drive, tone den, gjøre den uskarp, løfte den av siden og legge den ned igjen - legger du til nøkkelbilder: velg klippet, trykk **+Nøkkelbilde** (diamanten i tidslinjens verktøyklynge, diamanten på objektlinjen på canvaset eller `K`), og avspillingsposisjonen avgjør hvilken positur neste endring skriver. Det samme maskineriet gir hver tidsatte komposisjon et **kamera** som kjører inn, panorerer og trekker fokus, og gjør én flat SVG om til en stabel av lag du kan fly mellom. **[Animere](/info/animating.html)** er den fullstendige veiledningen.
+**Utover forhåndsinnstillinger: nøkkelbilder, dybde og et kamera.** En overgang animerer et klipp idet det ankommer og forlater. For å posisjonere en boks *inni* et klipp - la den drive, tone den, uskarpgjøre den, løfte den av siden og sette den ned igjen - legg til nøkkelbilder: velg klippet, trykk **+Nøkkelbilde** (diamanten i tidslinjens verktøyklynge, diamanten på lerretets objektlinje eller `K`), og avspillingshodets posisjon avgjør hvilken positur den neste redigeringen din skriver. Det samme nøkkelbildesystemet gir hver tidsstyrte komposisjon et **kamera** som kjører inn, panorerer over og trekker fokus, og gjør ett flatt SVG-bilde om til en stabel med lag du kan fly mellom. **[Animasjon](/info/animating.html)** er den fullstendige guiden.
 
 Design-verktøyet har den samme tidslinjen, så du kan tidsette en layout uten å bytte verktøy, og det eksporterer bevegelse også.
 
@@ -180,7 +180,7 @@ Et Design-dokument som består av **tegnebrett** er allerede en presentasjon. Å
 - **Trinnvis visning.** Høyreklikk en boks og velg **Vis ved trinn 1**, **2** eller **3** i stedet for standardvalget **Alltid synlig**. Boksen venter da til du går videre til sitt trinn, så et lysbilde kan komme stykkevis; bokser med samme nummer kommer sammen.
 - **Presentatørvisning** (`S`) åpner et andre vindu med lysbildet du står på, det neste, notatene dine for det lysbildet og en klokke som går. Blokkerer nettleseren sprettoppvinduet, faller den tilbake til et panel over presentasjonen. Notater settes per tegnebrett og vises aldri på selve lysbildet.
 - `B` holder en svart skjerm (en hvilken som helst tast henter lysbildet tilbake), `F` går tilbake til fullskjerm, og **Escape** skreller av ett lag om gangen: oversikten tilbake til presentasjonen, presentasjonen tilbake til editoren.
-- **Kiosk.** Gi et tegnebrett en **Lengde**, så blir presentasjonen stående der så lenge og går videre av seg selv bak en tynn framdriftslinje; `K` (eller pauseknappen, som først dukker opp når noe har en lengde) stopper og starter det igjen. Legg `loop` til lenken, så går presentasjonen rundt på nytt til slutt, og det er det som gjør den til skilting.
+- **Kiosk.** Gi et tegnebrett en **Lengde**, så blir presentasjonen stående der så lenge og går videre av seg selv bak en tynn framdriftslinje; `K` (eller pauseknappen, som først dukker opp når noe har en lengde) stopper og starter det igjen. Legg `kiosk` til lenken, så går presentasjonen rundt på nytt til slutt, og det er det som gjør den til skilting.
 
 Presentasjonen er også en lenke. `?present` åpner rett inn i den, `s=` navngir lysbildet - en posisjon, en tegnebrett-id eller `id.step` for et byggetrinn - og adressen oppdateres mens du beveger deg, så det du sender er lysbildet du står på. Verktøyforfattere: de parameterne er dokumentert på siden [URL-modus](/info/url-mode.html#reserved-parameters).
 
@@ -210,7 +210,7 @@ Verktøy viser bare de feltene som er ment å variere - alt annet (farger, layou
 - **Mens markøren står i et tekstfelt** tilhører Cmd/Ctrl-Z feltet selv, tegn for tegn. Lolly tar over for de kontrollene som ikke har noen nyttig angring selv: glidebrytere, nedtrekksmenyer, farger og brytere.
 - **Å velge en fil** i et **fil**-felt er ikke et steg - de bytene holdes bare for økten, så det ville ikke være noe å legge tilbake.
 
-I et direkte [samarbeid](/info/collaborate.html) forblir historikken bare din. En endring som kommer fra den andre enheten havner aldri på din stabel, så angre kan bare ta tilbake noe du selv gjorde.
+I et [samarbeid](/info/collaborate.html) i sanntid forblir historikken din alene. En endring som kommer fra den andre enheten, havner aldri på din stabel, så angre kan bare noensinne reversere noe du selv gjorde.
 
 ## Opplysningene og portrettbildet ditt
 
@@ -266,10 +266,10 @@ alt text names them - do not re-caption this as "the sort menu".
 
 > En felle i merkingen: **Vis økter** finnes bare når noe er *valgt*. Høyreklikker du et enkelt kort som ikke er valgt, får du i stedet **N lagrede økter**, som åpner verktøyets egen historikkdialog i stedet for å navigere til Prosjekter.
 
-![To verktøykort krysset av i verktøygalleriet, med den flytende utvalgslinjen som viser 2 valgt og tilbyr Tilgjengelig offline, Vis økter, Favoritt og Skjul](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
+![To verktøykort haket av i Verktøy-galleriet, med den flytende valglinjen som viser 2 valgt og tilbyr Tilgjengelig offline, Vis økter, Favoritt og Skjul](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
 <!--
 SHOT NOTE (misc-bulkbar-gallery): drive targets `[data-select="qr-code"]` /
-`[data-select="d3"]` - the `.tile-check[data-select="<ref>"]` checkbox button
+`[data-select="gradient"]` - the `.tile-check[data-select="<ref>"]` checkbox button
 confirmed directly in views/gallery.ts's card markup (the same attribute
 cardMarkup gives every tile), so these two clicks tick both cards without
 opening either tool.
@@ -291,14 +291,16 @@ Et design går ut på én av to måter: som en lenke eller som en fil. Delingsdi
 
 ### Lenken
 
-![Jump Page in the editor - the heading, three link scenes each with its own wash and a Made with Lolly footer, laid out as one page in the canvas](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
-
 Hvert felt fanges opp i side-URL-en, så en lenke *er* designet. Øverst i dialogen ligger lenken klar til kopiering, med to sammenslåtte seksjoner under.
 
 - **Lenkevalg** inneholder **Korteste lenke** (et stort design gir en lang URL, så dette pakker hele tilstanden inn i et kompakt token og viser deg besparelsen i tegn; den lesbare formen er alltid der også), **Passordbeskytt denne lenken** (AES-256 over hele lenken, passordet aldri i den) og **Lås til denne verktøyversjonen** - flagget `_v`, som fester lenken til den verktøyversjonen du ser på, slik at en senere oppdatering ikke kan endre det den rendrer.
 - **Lenkeoppførsel** er hva som skjer når mottakeren åpner den: fullskjerm, eksportpanelet allerede utvidet, nedlasting ved åpning med `&export` eller kopiering til utklippstavlen med `&copy`.
 
 Lim lenken inn til en kollega, bokmerk den eller sjekk den inn i koden. (Alle detaljer: [URL-modus](/info/url-mode.html).)
+
+**Noen verktøy gjør lenken til hele produktet.** Jump Page samler lenkene dine på én side å dele ut - en bio-lenke, et konferanseforedrag, en butikkfront. Det er ingenting å hoste og ingen konto bak det: siden er lenken, så den åpner like raskt som URL-en reiser. I redigeringsverktøyet ser du den ferdige siden ved siden av feltene; en besøkende som åpner lenken, får den i full bredde, én lenke per scene etter hvert som de ruller.
+
+![Jump Page i redigeringsverktøyet - overskriften, tre lenkescener hver med sin egen fargevask og en Made with Lolly-footer, lagt ut som én side på lerretet](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
 
 **Dialogen sier hva en lenke ikke kan bære.** Tre ting får ikke plass i en URL: et bilde eller en fil du la til fra denne enheten, en svært lang tekstverdi eller en svært stor liste. Hver av dem telles mens lenken bygges. Måtte noe utelates, navngir dialogen det og peker deg til filen nedenfor, i stedet for å gi deg en lenke som åpnes uten bildet. En lenke som bare er *lang*, får en mildere merknad med antall tegn, siden pakking fortsatt kan redde lengden.
 
@@ -314,7 +316,7 @@ Tre ting bestemmer du før den går:
 - **Om lisensiert grafikk tas med.** Lisensierte og merkevarelåste ressurser holdes tilbake som standard. Hvis designet bruker noen, forteller dialogen hvor mange, og tilbyr to knapper - *Download without them* eller *Include and download* - fordi å inkludere dem gir de faktiske filene til den som åpner `.lolly`-filen.
 - **Om verktøyet tas med.** **Include the tool** pakker verktøyets egne filer sammen med designet, slik at det åpnes på en enhet som ikke har det verktøyet. Den kommer forhåndsavkrysset for et tilpasset verktøy - en fork eller et privat merkevareverktøy mottakeren neppe har - og ikke avkrysset for et verktøy den signerte katalogen lister opp, siden deres kopi kommer fra samme kilde. (På en build uten signert katalog telles alle verktøy som tilpassede, og boksen starter avkrysset.)
 
-**Åpne en.** Slipp en `.lolly` på appen: ressursene havner i biblioteket ditt, økten havner i Prosjekter, og verktøyet åpnes på den. Ingenting av ditt blir overskrevet: økten kommer inn som en ny lagret plass, mens en ressurs som allerede finnes på enheten kjennes igjen på sjekksummen og gjenbrukes i stedet for å dupliseres. Hver del kontrolleres mot filens egne sjekksummer på vei inn, så en kopi som er skadet underveis avvises i stedet for å bli halvveis importert.
+**Å åpne en.** Slipp en `.lolly` på appen: ressursene går til biblioteket ditt, økten går til Prosjekter, og verktøyet åpner på den. Ingenting av ditt overskrives: økten ankommer som en ny lagret plass, mens en ressurs som allerede finnes på denne enheten, matches via sjekksum og gjenbrukes i stedet for duplisert. Hver del sjekkes mot filens egne sjekksummer på vei inn, slik at en kopi skadet under overføring avvises i stedet for halvveis importert.
 
 Bærer filen med seg et verktøy du ikke har, spør Lolly før det verktøyet kan kjøre: **Stole på dette verktøyet?** navngir det og forfatteren og sier rett ut at å åpne det kjører verktøyets egen kode på enheten din, med **Stol på og installer** som veien videre. Sier du nei, blir det delte arbeidet likevel lagret i prosjektene dine, og venter der til den dagen du legger til verktøyet. (Én type verktøy kan ikke sidelastes ennå - et der koden leveres som en modul - og det avvises på samme måte.)
 
@@ -334,10 +336,10 @@ Når et verktøy lar deg legge til et bilde fra enheten din, beholdes det nøyak
 
 ![Katalogen - merkevareressurser, fargeprøver og skrifter, pluss dine egne opplastinger](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=2400&css=.plat-swatch-grid~%2A%7Bdisplay%3Anone%7D&walker=1&format=svg&localize=1&dark=1&filename=catalogue)
 
-- <!--i:upload--> **Hent inn filene dine.** Dra et hvilket som helst bilde, SVG, lydklipp, video, Lottie, PDF eller PowerPoint-presentasjon inn på opplastingsområdet - eller klikk for å velge - og det havner i katalogen din umiddelbart, klart i hvert verktøys ressursvelger. En flersidig PDF eller en `.pptx` spør hvilke sider eller lysbilder som skal beholdes - hver blir en SVG-ressurs. Ta inn så mye du vil; det forlater aldri enheten din.
-- <!--i:star--> **Favorittmerk det du griper etter.** ★ en ressurs (eller en merkevarefarge) og den festes øverst i hver velger, slik at favorittlogoen eller -fargen din er ett klikk unna.
-- <!--i:folder--> **Rydd opp.** Omkategoriser en ressurs til en annen gruppe, skjul en delt merkevareressurs du ikke bruker (med **Show hidden** for å hente den tilbake), eller slett dine egne opplastinger helt. Den samme flervalgsbevegelsen og flytende handlingslinjen som i Projects fungerer her også, slik at alt dette kan gjøres på et helt utvalg samtidig.
-- <!--i:layers--> **Løft en video av bakgrunnen.** Åpne detaljene til en video eller høyreklikk på kortet i en ressursvelger og velg **Remove background…** for å lagre et gjennomsiktig alternativ - en animert WebP eller PNG med ekte alfa. Velg en **Method**: en **On-device model** klipper ut et motiv fra en travel scene, eller en **Colour key** nøkler ut en jevnt belyst, flat bakgrunn som en grønnskjerm eller en enkel vegg, med **Tolerance**, **Softness** og **Spill removal** for å finjustere kanten. Fargenøkkelen krever ingen modellnedlasting og ingen nettverkstilkobling, så **Remove background** tilbys på enhver video og gir ofte et renere resultat på ryddig opptak. En **Resolution**-kontroll (360, 480, 720 eller 1080p, aldri utover kilden) bytter detaljer mot en mindre, raskere fil. Den kjører som en bakgrunnsjobb på enheten din. Det ferdige utklippet havner ved siden av originalen som sin egen ressurs, og kildevideoens Content Credential blir med som en ingrediens. (Se [Generert én gang, rendret likt](/info/ai-features.html) for hvorfor det å fjerne en bakgrunn forblir en enkel redigering.)
+- <!--i:upload--> **Ta med filene dine inn.** Dra et hvilket som helst bilde, SVG, lydklipp, video, Lottie, PDF eller PowerPoint-presentasjon inn på opplastingsområdet - eller klikk for å velge - og det havner i katalogen din øyeblikkelig, klart i hvert verktøys ressursvelger. En flersides PDF eller en `.pptx` spør hvilke sider eller lysbilder som skal beholdes - hver blir en SVG-ressurs. Ta inn så mye du vil; det forlater aldri enheten din.
+- <!--i:star--> **Favoritt-merk det du bruker ofte.** ★ en ressurs (eller en merkevarefarge) og den festes øverst i hver velger, slik at logoen eller fargen du bruker mest, er ett klikk unna.
+- <!--i:folder--> **Rydd opp.** Omkategoriser en ressurs til en annen gruppe, skjul en delt merkevareressurs du ikke bruker (med **Vis skjulte** for å hente den tilbake), eller slett dine egne opplastinger for godt. Samme flervalgsgest og flytende handlingslinje som i Prosjekter fungerer her også, slik at alt dette kan gjøres på et helt utvalg samtidig.
+- <!--i:layers--> **Løft en video av bakgrunnen dens.** Åpne en videos detaljvisning eller høyreklikk kortet dens i en hvilken som helst ressursvelger, og velg **Fjern bakgrunn…** for å lagre et transparent alternativ - en animert WebP eller PNG med ekte alfa. Velg en **Metode**: en **modell på enheten** klipper et motiv ut av en travel scene, eller en **fargenøkkel** nøkler ut en jevnt belyst, flat bakgrunn som en grønnskjerm eller en enkel vegg, med **Toleranse**, **Mykhet** og **Fargelekkasjefjerning** for å finjustere kanten. Fargenøkkelen trenger ingen modellnedlasting og ingen nettverkstilgang, så **Fjern bakgrunn** tilbys på enhver video og er ofte renere på ryddig opptak. En **Oppløsning**-kontroll (360, 480, 720 eller 1080p, aldri forbi kilden) bytter detaljer mot en mindre, raskere fil. Den kjører som en bakgrunnsjobb på enheten din. Det ferdige utklippet lagres ved siden av originalen som sin egen ressurs, og kildevideoens Content Credential blir med som en ingrediens. (Se [Generert én gang, rendret likt](/info/ai-features.html) for hvorfor det å fjerne en bakgrunn forblir en enkel redigering.)
 
 ### Ta paletten og skriftene dine med overalt
 
@@ -401,7 +403,7 @@ Batch er til å lage **mange varianter av én mal** på én gang. For å rendre 
 
 ## Redigere side om side (Multiredigering)
 
-Batch er mange varianter av *ett* design. **Multiredigering** er den andre halvdelen av jobben: flere **forskjellige** lagrede design åpne samtidig, slik at én endring treffer alle sammen. Kryss av mellom **to og åtte** lagrede økter i **Prosjekter** og velg **Rediger sammen** fra utvalgslinjen; de åpnes som levende kort side om side på `#/multi?s=<slot>,<slot>…`. Hvert kort er en ekte rendring av den økten, ikke et lagret miniatyrbilde, så det du ser er det den vil eksportere.
+Batch er mange varianter av *ett* design. **Multi-edit** er den andre halvparten av jobben: flere **forskjellige** lagrede design åpne samtidig, slik at én endring gjelder for alle sammen. Hak av mellom **to og åtte** lagrede økter i **Prosjekter** og velg **Rediger sammen** fra valglinjen; de åpnes som levende kort side om side på `#/multi?s=<slot>,<slot>…`. Hvert kort er en ekte rendring av den økten, ikke et lagret miniatyrbilde, så det du ser, er det som vil eksporteres.
 
 Ett sidepanel styrer hele settet:
 
@@ -418,3 +420,5 @@ Når utvalget er større enn åtte, blander verktøy eller inneholder bilder i t
 ## Offline og installasjon
 
 Lolly er en PWA. Etter første lasting virker den **offline** - installer den fra nettleserens adressefelt (eller *Legg til på startskjermen* på mobil) for en app-lignende opplevelse i fullskjerm. Den oppdaterer seg selv når du er på nett igjen.
+
+Om oppdateringer: hvis en visning noen gang ikke klarer å laste rett etter en (et tomt panel, en "failed to fetch" i hjørnet), last inn siden på nytt én gang - appen tar i bruk den nye versjonen problemfritt, og arbeidet, øktene og merkevaren din er urørt. Den lagrer alt på enheten din, ikke på siden.

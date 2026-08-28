@@ -52,13 +52,23 @@ Maaaring i-embed ng isang tool ang live output ng ibang tool bilang isang asset 
 
 Advanced na filter, compositing, animation, live camera effect, generative design - available sa may-akda ng template ang bawat web technology, kaya mataas ang kisame.
 
-![Output ng Mesh Gradient - isang generative field ng malambot na kulay na binuo nang lubusan mula sa palette tokens ng iyong brand](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Output ng Mesh Gradient - isang generative na field ng malambot na kulay na ginawa nang buo mula sa mga palette token ng brand mo](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+
+### Pinalaki, hindi iginuhit
+
+**Growth** pinapalaki ang larawan sa halip na iguhit ito: isang sistemang may seed ang kumakalat mula sa isang ring, isang linya, ang sarili mong mga salita, o ang logo mo hanggang mapuno nito ang frame, ayon sa palette mo. Ang parehong seed ay laging pinapalaki ang parehong piraso, kaya eksaktong ginagawa itong muli ng isang link. Ang lumalabas ay ordinaryong SVG geometry sa halip na isang larawan ng isang guhit, kaya nagagawa itong i-print, i-plot, at gupitin - at ang parehong disenyo ay may animation mula sa unang seed hanggang sa tapos na anyo bilang video.
+
+![Default na bloom ng Growth - isang siksik na field ng mga naka-loop na linyang kulay-brand, pinalaki mula sa isang ring, bawat linya ay isang tunay na SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
+### Motion na tumutugon sa musika
+
+**Synth** nilulutas ang isang fluid field sa graphics card at pininturahan ito ng mga kulay mo. Bigyan ito ng track at gagalaw ang field kasabay ng tunog; ini-export ito bilang isang MP4, WebM, GIF, o animated PNG loop na magkasya nang malinis mula simula hanggang dulo, na naka-render frame by frame mula sa isang driven na orasan sa halip na na-record mula sa screen - kaya kailanman hindi lumalayo ang motion mula sa soundtrack, at ang parehong link ay nag-re-render ng parehong clip sa anumang haba.
+
+![Isang frame mula sa ink scene ng Synth - isang madilim na fluid field na naiilawan ng berdeng kulay ng brand, nahuli sa gitna ng isang pag-ikot](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 Sumulat ng *mga tool*, hindi mga file: buuin ang bagay na gumagawa ng 10,000 card sa halip na gumawa ng 10,000 card. I-lock ang hindi dapat magbago; ilantad lamang ang sinadyang mag-iba.
 
 ## Mga bagay na mapapansin mo
-
-![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
 
 - **Print, tama ang pagkakagawa.** Tunay na pisikal na yunit (mm/cm/in/pt) at DPI, bleed at crop marks, CMYK at PDF/X-4 output-intent - eksaktong makukuha ng print shop ang kailangan nito. Tingnan ang [Exporting](/info/exporting.html#size-print-units).
 - **Video at galaw.** I-export ang WebM/MP4 (may audio tracks), animated PNG/WebP at animated SVG - mula sa parehong template na gumagawa ng iyong mga still. Higit pang sinusulong ito ng **Sequence Studio**: tunay na timeline sa ilalim ng canvas, may magnetic na hanay ng mga clip, malayang overlay lanes, trim at split, transition presets, pag-record ng voiceover at music mix - ini-render bilang MP4, WebM, GIF o APNG ng isang deterministic na compositor sa halip na screen recording. Pumapasok ang mga Lottie file bilang animated assets at ini-render papunta sa alinman sa mga ito. Sa ibabaw ng mga clip ay ang **keyframes**: i-pose ang isang box sa isang sandali, itaas ito mula sa pahina gamit ang tunay na lalim at lipadin ang isang camera sa ibabaw ng resulta. Tingnan ang [Using Lolly → Timeline](/info/using.html#timeline-sequence-studio) at [Animating](/info/animating.html).
@@ -70,8 +80,6 @@ Sumulat ng *mga tool*, hindi mga file: buuin ang bagay na gumagawa ng 10,000 car
 - **Mas kalmadong interface kapag gusto mo.** Apat na switch sa ilalim ng **Profile → Accessibility** - *Reduce motion*, *Hide colourful previews*, *High contrast* at *Large text* - nagpapakalma sa app sa paligid ng iyong ginagawa. Naka-off ang bawat isa hanggang sa i-on mo ito, at wala sa mga ito ang humihipo sa iyong canvas o gumagalaw ng kahit isang pixel ng ie-export mo. Tingnan ang [Your profile → Accessibility](/info/profile.html#accessibility).
 
 ## Sulitin ang paggamit nito
-
-![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[Quickstart](/info/quickstart.html)** - ipasok ang brand, ilabas ang unang file.
 - **[The Brand Studio](/info/brand-studio.html)** - hubugin ang iyong mga logo, kulay, uri ng titik at tokens (`#/start`).

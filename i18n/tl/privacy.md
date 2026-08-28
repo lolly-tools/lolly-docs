@@ -2,15 +2,14 @@
 
 *Huling na-update: 11 Agosto 2026*
 
-> **Sa simpleng salita.** Ang mga dokumento, larawan, video at file na ginagawa mo sa
-> Lolly ay nananatili sa iyong device. Walang account para sa karaniwang paggamit,
-> walang cookies mula mismo sa app, at walang analytics o trackers kahit saan sa
-> codebase - hindi ito "hindi namin ginagamit ang data," talagang wala ito sa source.
-> May maikli, kumpletong listahan ng mga eksepsiyon kung saan nakikipag-ugnayan ang
-> software sa network, at bawat isa sa mga ito ay inilalarawan sa ibaba nang detalyado:
-> ano ang lumalabas, kanino, at kailan. Ang tanging eksepsiyon na may kinalaman sa
-> anumang personal ay isang sign-in na kailangan mong simulan nang tahasan. Kung wala
-> ito sa dokumentong ito, hindi ito nangyayari.
+> **Ang maikling bersyon.** Ang mga dokumento, larawan, video, at file na ginagawa mo sa Lolly ay
+> nananatili sa device mo. Walang account para sa ordinaryong paggamit, walang cookie mula sa
+> app mismo, at walang analytics o tracker kahit saan sa codebase - hindi ito kaso ng "hindi namin
+> ginagamit ang datos," kundi talagang wala ito sa source. May maikli, kumpletong listahan ng
+> mga eksepsiyon kung saan nakikipag-ugnayan ang software sa network, at bawat isa
+> sa mga ito ay inilalarawan nang detalyado sa ibaba: ano ang umaalis, kanino, at kailan. Ang
+> tanging eksepsiyon na may kinalaman sa anumang personal ay isang sign-in na kailangan mong
+> sadyang simulan. Kung wala ito sa dokumentong ito, hindi ito nangyayari.
 
 ## Ano ang sinasaklaw ng patakarang ito
 
@@ -89,20 +88,20 @@ ito ay alisin at protektahan ang data, hindi magdagdag ng panganib.
 Ang talahanayan sa ibaba ang kumpletong listahan ng lahat ng kinukuha o
 ipinapadala ng app sa network. Kung wala ito rito, hindi ito ginagawa ng app.
 
-| Ano | Ano talaga ang lumalabas sa iyong device | Kailan (ang aksyon na nag-trigger nito) | Kung babawalan ito ng operator |
+| Ano | Ano talaga ang umaalis sa device mo | Kailan (ang aksyong nag-trigger nito) | Kung ito'y ibinlock ng operator |
 |---|---|---|---|
-| Pag-sync ng tool catalogue | Walang personal - isang request para sa sariling pampublikong tool at asset index ng Lolly, papunta sa sariling origin ng app | Sa startup, pagkatapos ay naka-cache offline | Tumatakbo ang app gamit ang naka-cache nitong tool set. Tumitigil lamang ito sa pagtuklas ng bagong tool |
-| Isang tool na nangangailangan ng live data | Anuman ang hinihiling ng partikular na tool na iyon, papunta sa host na nakasaad sa sarili nitong deskripsiyon. Sa ngayon, ito lang ang city lookup sa Meeting Planner tool, na humihiling sa `geocoding-api.open-meteo.com` para gawing coordinates at time zone ang pangalan ng lungsod - walang account, walang key, at walang identifier maliban sa mismong request. Sinasabi ito ng input mismo kung saan ka nagta-type, at bawat sagot ay naiimbak sa iyong device para minsan lang tinitingnan ang isang lungsod | Habang ginagamit lang ang tool na iyon, at kapag naglagay ka ng lokasyon | Mabibigo lang ang isang lookup na iyon. Puwede ka pa ring mag-type ng coordinates nang manu-mano, at wala nang iba pang naaapektuhan |
-| Google Fonts | Ang napiling pangalan ng font family at ang iyong IP address, papunta sa mga font server ng Google (`fonts.googleapis.com` para sa stylesheet, `fonts.gstatic.com` para sa font file) | Kapag lang nagdagdag ka ng Google Font sa brand editor, **at kapag lang sumang-ayon ka rito sa isang dialog na eksaktong ganito ang sinasabi** - isang beses na fetch bawat family, pagkatapos ay nananatili ito sa iyong device at ginagamit offline | Nabibigo ang Google Fonts picker nang closed. Mag-upload na lang ng font file |
-| Send to Google Drive | Ang isang file na pinili mong ipadala, papunta sa Drive API ng Google (`www.googleapis.com`), pagkatapos ng Google sign-in na kinumpleto mo sa sarili ng popup window ng Google. Limitado ang access ng Lolly sa mga file na nilikha nito (ang `drive.file` scope - hindi nito kailanman mababasa ang natitira sa iyong Drive), at ang sign-in token ay iniimbak sa memory para lang sa session, hindi kailanman naka-store | Kapag lang pinindot mo ang "Send to Google Drive" sa isang EMF export, at sa mga build lang kung saan naka-configure ng Google client id ng operator - kung wala nito, hindi umiiral ang button | Hindi kailanman lalabas ang button. I-download ang file at i-upload ito sa Drive sa iyong sarili |
-| Send to Dropbox | Ang isang file na pinili mong ipadala, papunta sa API ng Dropbox (`api.dropboxapi.com` para sa sign-in at metadata, `content.dropboxapi.com` para sa mismong file), pagkatapos ng Dropbox sign-in na kinumpleto mo sa sarili ng window ng Dropbox. App-folder lang ang access ng Lolly (makikita lang nito ang `Apps/` at ang sariling folder nito roon - hindi kailanman ang natitira sa iyong Dropbox), ang link na "Open" na ipinapakita nito sa iyo ay isang panandaliang pribadong link (walang ginagawang pampublikong share), at ang refresh token ay naka-store lamang kung tsine-check mo ang "stay connected" | Kapag lang pinindot mo ang "Send to Dropbox" sa isang file, at sa mga build lang kung saan naka-configure ng Dropbox client id ng operator - kung wala nito, hindi umiiral ang button | Hindi kailanman lalabas ang button. I-download ang file at i-upload ito sa Dropbox sa iyong sarili |
-| Send to OneDrive | Ang isang file na pinili mong ipadala, papunta sa mga serbisyo ng identity at Graph ng Microsoft (`login.microsoftonline.com` para sa sign-in, `graph.microsoft.com` para sa upload; ang malaking file ay ina-upload nang paisa-isang chunk papunta sa upload address na pag-aari ng Microsoft sa `api.onedrive.com`, `*.up.1drv.com` o `*.sharepoint.com`), pagkatapos ng Microsoft sign-in na kinumpleto mo sa sarili ng window ng Microsoft. Limitado ang access ng Lolly sa sarili nitong folder sa ilalim ng `Apps/` (hindi nito kailanman mababasa ang natitira sa iyong OneDrive) kasama ang iyong display name para sa label ng account, at ang refresh token ay naka-store lamang kung tsine-check mo ang "stay connected" | Kapag lang pinindot mo ang "Send to OneDrive" sa isang file, at sa mga build lang kung saan naka-configure ng Microsoft client id ng operator - kung wala nito, hindi umiiral ang button | Hindi kailanman lalabas ang button. I-download ang file at i-upload ito sa OneDrive sa iyong sarili |
-| Mga ICC press profile | Walang personal - isang request para sa standard na printing-condition profile, papunta sa pampublikong registry ng ICC (`registry.color.org`, `www.color.org`) | Kapag lang nag-click ka ng ICC preset sa print-profile manager - isang beses na fetch bawat profile, pagkatapos ay nananatili ito sa iyong device | Mabibigo ang mga ICC preset. Magbigay na lang ng sarili mong `.icc` profile |
-| Internet radio | Walang personal - isang playlist request at audio stream, papunta sa istasyon (`api.somafm.com` at ang icecast server na pinapangalanan nito, `*.somafm.com`) | Habang lang pinapatugtog mo ang opsyonal na built-in na radyo sa sound player | Mabibigo ang radyo. Gumagana pa rin ang bawat iba pang feature ng tunog |
-| Isang URL na hinihiling mong kunan ng litrato ng tool | Isang request papunta sa eksaktong web address na tina-type mo, mula sa URL screenshot tool. Anuman ang address na iyon. Ang host na ito ay wala sa patakaran sa ibaba, dahil pinipili mo ito sa sandali ng paggamit | Kapag lang naglagay ka ng URL sa tool na iyon at sinimulan ang pag-capture | Hindi maaaring i-allowlist ito ng operator ayon sa host. Para alisin ito, alisin ang tool |
-| Pagsusuri ng SEAL signature | **Wala.** Walang DNS resolver ang web app - tingnan sa ibaba | Hindi kailanman | Walang babawalan |
-| Mga modelo ng deep-scan detector | Walang personal - isang beses na same-origin na model download (hindi third party) | Kapag lang nag-opt in ka sa deep scan ng Verify | Hindi available ang deep scan. Gumagana pa rin ang standard verification |
-| Remote instance | Anuman ang ibinabalik ng instance na pinangalanan mo, sa parehong catalogue sync na inilarawan sa itaas. Pinipili mo ang host sa sandali ng paggamit, kaya wala ito sa patakaran sa ibaba | Kapag lang tahasang itinuro mo ang shell sa ibang Lolly deployment | Mabibigo ang pagpapalit ng instance. Hindi naaapektuhan ang lokal mong instance |
+| Pag-sync ng tool catalogue | Walang personal - isang request para sa sariling pampublikong tool at asset index ng Lolly, papunta sa sariling origin ng app | Sa startup, pagkatapos ay naka-cache offline | Tumatakbo ang app gamit ang naka-cache nitong tool set. Titigil lang ito sa pag-discover ng mga bagong tool |
+| Isang tool na nangangailangan ng live data | Anuman ang hiningi ng partikular na tool na iyon, papunta sa host na nakasaad sa sarili nitong deskripsyon. Sa ngayon, ito lang ang city lookup sa Meeting Planner tool, na humihingi sa `geocoding-api.open-meteo.com` para i-convert ang pangalan ng lungsod sa coordinates at time zone - walang account, walang key, at walang identifier maliban sa mismong request. Nakasaad ito mismo sa kung saan ka nagta-type, at bawat sagot ay naka-save sa device mo para minsan lang tinitingnan ang isang lungsod | Habang ginagamit lang ang tool na iyon, at kapag naglagay ka ng lokasyon | Mabibigo lang ang isang lookup na iyon. Puwede ka pa ring mag-type ng coordinates nang manu-mano, at wala nang iba pang maaapektuhan |
+| Google Fonts | Ang napiling pangalan ng font family at ang IP address mo, papunta sa mga font server ng Google (`fonts.googleapis.com` para sa stylesheet, `fonts.gstatic.com` para sa font file) | Kapag lang nagdagdag ka ng Google Font sa brand editor, **at kapag lang pumayag ka sa isang dialog na eksaktong sinasabi ito** - isang beses na fetch kada family, pagkatapos ay nasa device mo na ito at nagagamit offline | Mabibigo ang Google Fonts picker sa ligtas na paraan (fails closed). Mag-upload na lang ng font file |
+| Send to Google Drive | Ang isang file na pinili mong ipadala, papunta sa Drive API ng Google (`www.googleapis.com`), pagkatapos ng Google sign-in na kino-complete mo sa sarili nitong popup window ng Google. Limitado ang access ng Lolly sa mga file na nilikha nito (ang `drive.file` scope - hindi kailanman nito mababasa ang ibang bahagi ng Drive mo), at ang sign-in token ay itinatago lang sa memory habang tumatagal ang session, hindi kailanman ini-store | Kapag lang pinindot mo ang "Send to Google Drive" sa isang EMF export, at sa mga build lang kung saan na-configure ng operator ang isang Google client id - kung wala nito, wala ring button | Hindi kailanman lalabas ang button. I-download ang file at i-upload mismo ito sa Drive |
+| Send to Dropbox | Ang isang file na pinili mong ipadala, papunta sa API ng Dropbox (`api.dropboxapi.com` para sa sign-in at metadata, `content.dropboxapi.com` para sa mismong file), pagkatapos ng Dropbox sign-in na kino-complete mo sa sariling window ng Dropbox. App-folder lang ang access ng Lolly (makikita lang nito ang `Apps/` at ang sarili nitong folder doon - hindi kailanman ang ibang bahagi ng Dropbox mo), ang link na "Open" na ipinapakita nito sa iyo ay isang pribadong link na may maikling buhay (walang public share na nalilikha), at isang refresh token ay iniimbak lang kung tsine-check mo ang "stay connected" | Kapag lang pinindot mo ang "Send to Dropbox" sa isang file, at sa mga build lang kung saan na-configure ng operator ang isang Dropbox client id - kung wala nito, wala ring button | Hindi kailanman lalabas ang button. I-download ang file at i-upload mismo ito sa Dropbox |
+| Send to OneDrive | Ang isang file na pinili mong ipadala, papunta sa mga serbisyo ng identity at Graph ng Microsoft (`login.microsoftonline.com` para sa sign-in, `graph.microsoft.com` para sa pag-upload; ang isang malaking file ay ina-upload nang paputol-putol papunta sa isang upload address na pag-aari ng Microsoft sa `api.onedrive.com`, `*.up.1drv.com`, o `*.sharepoint.com`), pagkatapos ng Microsoft sign-in na kino-complete mo sa sariling window ng Microsoft. Limitado ang access ng Lolly sa sarili nitong folder sa ilalim ng `Apps/` (hindi kailanman nito mababasa ang ibang bahagi ng OneDrive mo) kasama ang display name mo para sa label ng account, at isang refresh token ay iniimbak lang kung tsine-check mo ang "stay connected" | Kapag lang pinindot mo ang "Send to OneDrive" sa isang file, at sa mga build lang kung saan na-configure ng operator ang isang Microsoft client id - kung wala nito, wala ring button | Hindi kailanman lalabas ang button. I-download ang file at i-upload mismo ito sa OneDrive |
+| ICC press profiles | Walang personal - isang request para sa isang standard printing-condition profile, papunta sa pampublikong registry ng ICC (`registry.color.org`, `www.color.org`) | Kapag lang nag-click ka ng isang ICC preset sa print-profile manager - isang beses na fetch kada profile, pagkatapos ay nasa device mo na ito | Mabibigo ang mga ICC preset. Magbigay na lang ng sarili mong `.icc` profile |
+| Internet radio | Walang personal - isang playlist request at isang audio stream, papunta sa station (`api.somafm.com` at ang icecast server na pinangalanan nito, `*.somafm.com`) | Habang lang pinapatugtog mo ang opsyonal na built-in na radio sa sound player | Mabibigo ang radio. Gumagana pa rin ang bawat ibang sound feature |
+| Isang URL na hiniling mong kunan ng litrato ng isang tool | Isang request papunta sa eksaktong web address na tine-type mo, mula sa URL screenshot tool. Anuman ang address na iyon. Wala ang host na ito sa patakaran sa ibaba, dahil ikaw mismo ang pumipili nito sa sandaling gamitin ito | Kapag lang naglagay ka ng URL sa tool na iyon at sinimulan ang pagkuha | Hindi maaaring i-allowlist ito ng operator base sa host. Para alisin ito, alisin ang tool |
+| SEAL signature check | **Wala.** Ang web app ay walang DNS resolver mismo - tingnan sa ibaba | Kailanman hindi | Walang dapat i-block |
+| Mga modelo ng deep-scan detector | Walang personal - isang beses na same-origin na pag-download ng modelo (hindi third party) | Kapag lang pumili kang sumali sa deep scan ng Verify | Hindi available ang deep scan. Gumagana pa rin ang standard verification |
+| Remote instance | Anuman ang isinasauli ng instance na pinangalanan mo, sa pamamagitan ng parehong pag-sync ng catalogue na inilarawan sa itaas - dagdag pa ang isang version tag sa mga request papunta rito (uri ng shell at bersyon ng engine, kaparehong impormasyon na dala ng isang user agent), para makita ng operator nito kung aling mga bersyon ng Lolly ang ginagamit. Sa isang managed instance, habang naka-sign in ka, ang tag na iyon ay may dala ring per-device install id para makilala ng listahan ng device ng operator ang install na ito. Sumasakay lang ito sa mga request na ginagawa na ng sarili mong paggamit - walang timer at walang "tumatawag pauwi" - at ang pag-alis sa instance ay nagbubura ng id, kaya ang isang device na muling kumokonekta mamaya ay magpapakita ng bago. Ikaw ang pumipili ng host sa sandaling gamitin ito, kaya wala ito sa patakaran sa ibaba | Kapag lang sinadya mong itinuro ang shell sa ibang Lolly deployment | Mabibigo ang paglipat ng instance. Hindi maaapektuhan ang lokal mong instance |
 
 Bawat fixed host sa talahanayang iyon ay kumpletong allowlist din sa
 Content-Security-Policy ng app, na ipinatutupad ng browser. Kaya hindi lang ito
@@ -160,24 +159,20 @@ README, wiki, o dashboard. Ang pag-fetch ng isa ay humihiling sa server na
 i-render ang **pampublikong data ng tool at catalogue** gamit ang mga input na
 nakasulat sa URL.
 
-- <!--i:usercheck--> **Walang account, walang cookies, walang state.** Anonymous ang endpoint, at
-  walang binabasa sa iyong device. Ang iyong mga dokumento, session, at upload ay
-  hindi kailanman umaalis sa iyong browser - hindi sila kailanman puwedeng lumabas
-  sa mga link na ito.
-- <!--i:document--> **Pero ang URL mismo ay naitatala.** Ang query string ng isang URL ay bahagi
-  ng request line, kaya napupunta ito sa karaniwang access log ng hosting
-  platform sa parehong paraan ng bawat hiniling na path. Kung ang mga input ng
-  isang link ay may laman na pangalan o email ng isang tao - isang name badge,
-  isang email signature - **naroon ang tekstong iyon sa mga log na iyon**, at
-  walang dami ng pagbabalangkas ng patakaran ang makapagbabago nito. Ito ang
-  partikular na dahilan kung bakit naka-off dito ang feature sa halip na naka-on.
-- <!--i:globe--> **Pampubliko ang mga input sa likas nitong pagkakabuo** kahit paano - anuman
-  ang tina-type ng may-akda ng link sa URL, mababasa ito ng kahit sinong marating
-  ng link. Huwag maglagay ng sikreto sa isang ibinahaging link. Nag-aalok ang
-  Lolly ng link encryption para sa sensitibong nilalaman.
-- <!--i:eyeoff--> Ang mga tugon ay **naka-cache at rate-limited** tulad ng anumang pampublikong
-  larawan, at minarkahang `noindex` para hindi i-index ng mga search engine ang
-  iyong mga render.
+- <!--i:usercheck--> **Walang account, walang cookie, walang state.** Anonymous ang endpoint, at wala
+  sa device mo ang nababasa. Ang mga dokumento, session, at upload mo ay hindi kailanman umaalis sa
+  browser mo - hindi sila kailanman lalabas sa mga link na ito.
+- <!--i:document--> **Pero ang URL mismo ay naitatala.** Ang query string ng isang URL ay bahagi ng request
+  line, kaya lumalabas ito sa ordinaryong access log ng hosting platform sa parehong paraan gaya ng
+  bawat hiniling na path. Kung ang mga input ng isang link ay naglalaman ng pangalan o email ng isang tao -
+  isang name badge, isang email signature - **nananatili ang tekstong iyon sa mga log na iyon**, at wala
+  kahit anong salita ng patakaran ang makakapagbago nito. Ito mismo ang dahilan kung bakit naka-off
+  ang feature na ito rito sa halip na naka-on.
+- <!--i:globe--> **Pampubliko na ang mga input sa likas nitong pagkakabuo** kahit papaano - anuman ang
+  itinype ng may-akda ng link sa URL, mababasa ng sinumang mararating ng link. Huwag maglagay ng
+  mga sekreto sa isang shared link. Nag-aalok ang Lolly ng link encryption para sa sensitibong content.
+- <!--i:eyeoff--> Ang mga tugon ay **naka-cache at may rate-limit** gaya ng anumang pampublikong larawan, at minarkahang
+  `noindex` para hindi i-index ng mga search engine ang mga render mo.
 
 Nag-self-host ng Lolly at ayaw ng pampublikong render surface? I-set ang
 `LOLLY_DISABLE_RENDER_GET=1` - ang ginagawa mismo ngayon ng lolly.tools - at ang

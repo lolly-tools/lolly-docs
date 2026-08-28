@@ -58,6 +58,7 @@
   "Formats": "形式",
   "Everywhere": "どこでも",
   "FAQ": "FAQ",
+  "Make it yours": "自分仕様にする",
   "Lolly opens {in} kinds of file and makes {out}, and {both} of them go both ways.": "Lolly は {in} 種類のファイルを開き、{out} 種類を作成します。そのうち {both} 種類は双方向に対応します。",
   "See everything Lolly can open and make": "Lolly が開ける・作れるすべてを見る",
   "Already have designs? They aren't stranded - bring Figma, Penpot, Illustrator, InDesign or any SVG.": "すでにデザインがありますか。取り残されません - Figma、Penpot、Illustrator、InDesign、どんな SVG でも持ち込めます。",
@@ -76,6 +77,10 @@
   "Free, no account": "無料、アカウント不要",
   "What Lolly supports": "Lolly の対応状況",
   "Everything happens on your device, so it works with the Wi-Fi off.": "すべて端末上で処理されるので、Wi-Fi を切っても動きます。",
+  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "コンバーターは説明、作成者、著作権、撮影日時を新しいファイルに移します。位置情報はオンにしない限り引き継がれず、Content Credentialはコピーできません。元のバイト列に紐づいているためです。",
+  "Every table in the font, its name and licence records included, passes through untouched.": "フォント内のすべてのテーブルは、名前やライセンス情報を含め、そのまま変更されずに引き継がれます。",
+  "Nothing embedded carries over: the new file is written fresh with Lolly\\'s own details, and your original keeps its own.": "埋め込まれていた情報は一切引き継がれません。新しいファイルはLolly独自の情報で新規に書き出され、元のファイルはそれぞれの情報をそのまま保持します。",
+  "What carries over": "引き継がれる情報",
   "Convert": "変換",
   "What goes in": "入力できるもの",
   "What comes out": "出力できるもの",
@@ -202,9 +207,5 @@
   "Parser Inventory": "パーサー一覧",
   "Server Surface": "サーバー攻撃面",
   "Generated once, rendered the same": "一度生成すれば、同じように描画されます",
-  "AI marking and the EU AI Act": "AI表示とEU AI法",
-  "What carries over": "引き継がれるもの",
-  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "コンバーターは説明、作成者、著作権、撮影日時を新しいファイルに引き継ぎます。位置情報はオンにしない限り残されず、Content Credential は複製できません。元のバイト列に結び付いているためです。",
-  "Every table in the font, its name and licence records included, passes through untouched.": "フォント内のすべてのテーブルは、名前とライセンスのレコードを含めてそのまま引き継がれます。",
-  "Nothing embedded carries over: the new file is written fresh with Lolly's own details, and your original keeps its own.": "埋め込まれた情報は引き継がれません。新しいファイルは Lolly 自身の情報で新規に書き出され、元のファイルは自分の情報を保ちます。"
+  "AI marking and the EU AI Act": "AI表示とEU AI法"
 }

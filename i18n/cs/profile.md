@@ -35,7 +35,7 @@ Slovo „profil" navozuje dojem jedné pevně dané osoby, ale v Lolly je to sp�
 
 ### Jako jednotlivec
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
 
 ![Ovládací prvek fotky, prázdný, dokud nenahraješ snímek, který pak zůstane na tomto zařízení](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
 
@@ -104,7 +104,7 @@ Pokud prohlížeč neudělil trvalé úložiště, sekce to uvede a nabídne **C
 
 ## Přesun profilu na nové zařízení
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
 
 Protože je profil čistě lokální, jediný způsob, jak ho dostat do čisté instalace - na nový notebook, čerstvě resetovaný prohlížeč, kolegův počítač, offline stroj - je **přenést soubor**. Žádné přihlášení ti ho neobnoví, a to je právě smysl: nic z tvého zařízení nikdy neodešlo.
 
@@ -122,7 +122,7 @@ Přesné rozvržení balíčku, zásady verzí a pravidla integrity najdeš v **
 
 ## Jak nástroje používají tvůj profil
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&dark=1&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
 
 Nástroj vždy jen *předvyplní* ta pole profilu, pro která byl výslovně postavený:
 

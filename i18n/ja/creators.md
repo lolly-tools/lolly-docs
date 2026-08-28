@@ -52,13 +52,23 @@ Street Mapはその交換条件をよく表す一例です。都市といくつ�
 
 高度なフィルター、合成、アニメーション、ライブカメラエフェクト、生成的デザイン - あらゆるウェブ技術がテンプレート作者に開放されているため、天井は非常に高くなっています。
 
-![Mesh Gradientの出力 - あなたのブランドのパレットトークンだけから構築された、柔らかな色彩の生成的フィールド](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Mesh Gradientの出力 - あなたのブランドのパレットトークンだけから作られる、柔らかな色彩の生成フィールド](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+
+### 描くのではなく、育てる
+
+**Growth**は絵を描くのではなく育てます。種となるシステムがリング、線、あなた自身の言葉、あるいはロゴから広がり出し、あなたのパレットでフレームを埋め尽くすまで成長します。同じシード値は常に同じ作品を育てるため、リンクは正確に再現されます。出力されるのは絵の画像ではなく通常のSVGジオメトリなので、印刷も、プロッターへの出力も、カットもできます - そして同じデザインは最初のシードから完成形まで動画としてアニメーションします。
+
+![Growthのデフォルトの咲き方 - リングから育ったループ状のブランドカラーの線が密集したフィールド。すべての線が実際のSVGパス](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
+### 音楽に呼応するモーション
+
+**Synth**はグラフィックカード上で流体場を解いて、あなたの配色で彩色します。トラックを与えれば流体場は音に合わせて動き、MP4、WebM、GIF、あるいは継ぎ目なくループするアニメーションPNGとして書き出されます。画面録画ではなく駆動クロックから1フレームずつレンダリングされるため、モーションがサウンドトラックとずれることは決してなく、同じリンクは常に同じ長さの同じクリップをレンダリングします。
+
+![Synthのインクシーンの1フレーム - ブランドグリーンで照らされた暗い流体場が渦を巻いている瞬間](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 *ファイル*ではなく*ツール*を作成する。1万枚のカードを作るのではなく、1万枚のカードを生成するものを作る。変わってはならないものは固定し、変わってよいものだけを公開する。
 
 ## 気づく細部
-
-![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
 
 - **印刷を正しく。** 実寸単位(mm/cm/in/pt)とDPI、ドブと断ち落としマーク、CMYKとPDF/X-4アウトプットインテント - 印刷会社が必要とするものをそのまま渡せます。[エクスポート](/info/exporting.html#size-print-units)を参照してください。
 - **動画とモーション。** WebM/MP4(音声トラック付き)、アニメーションPNG/WebP、アニメーションSVGを書き出せます - 静止画を作るのと同じテンプレートから。**Sequence Studio**はさらに一歩進み、キャンバスの下に本物のタイムラインを備えます。クリップがマグネットのように並ぶ行、自由なオーバーレイレーン、トリムと分割、トランジションプリセット、ボイスオーバー録音、音楽ミックス - これらを画面録画ではなく決定論的なコンポジターでMP4、WebM、GIF、APNGとして書き出します。Lottieファイルはアニメーションアセットとして*取り込め*、それらのどの形式にも書き出せます。クリップの上には**キーフレーム**があり、ある瞬間にボックスをポーズさせ、実際の奥行きでページから持ち上げ、その結果の上をカメラで飛ばせます。[Lollyの使い方 → タイムライン](/info/using.html#timeline-sequence-studio)と[アニメーション](/info/animating.html)を参照してください。
@@ -70,8 +80,6 @@ Street Mapはその交換条件をよく表す一例です。都市といくつ�
 - **必要なときは、より落ち着いたインターフェースに。** **Profile → Accessibility**にある4つのスイッチ - *Reduce motion*、*Hide colourful previews*、*High contrast*、*Large text* - がアプリを作業に合わせて落ち着かせます。それぞれオンにするまではオフのままで、キャンバスにも書き出し結果の1ピクセルにも影響しません。[プロフィール → アクセシビリティ](/info/profile.html#accessibility)を参照してください。
 
 ## 最大限に活用する
-
-![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[クイックスタート](/info/quickstart.html)** - ブランドを入れて、最初のファイルを出す。
 - **[The Brand Studio](/info/brand-studio.html)** - ロゴ、色、タイプ、トークンを作り込む(`#/start`)。

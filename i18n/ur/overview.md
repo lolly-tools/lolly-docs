@@ -62,7 +62,7 @@ Lolly وہی حد کھینچتا ہے۔ امکانی طور پر تلاش کری
 
 مرحلہ دو میں "تازہ چارٹ" اسی طرح کا ایک رینڈر ہے، جو ایک ڈیٹا اسٹرنگ اور چند پیرامیٹرز سے تیار کیا گیا ہے بغیر کسی کے ڈیزائن فائل کھولے:
 
-![ایک عنوان والا اسٹیکڈ ایریا چارٹ، جس کی تین سیریز ٹھنڈے پیلیٹ میں بینڈ کی گئی ہیں محوروں، لیجنڈ اور عنوان کے ساتھ جو سب ٹیمپلیٹ نے ہاتھ کے بجائے خود رکھے ہیں](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![ایک عنوان والا stacked area چارٹ، جس کی تین سیریز ایک ٹھنڈی پیلیٹ میں بینڈ کی گئی ہیں، محور، legend اور عنوان سب template نے رکھے ہیں، ہاتھ سے نہیں](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 نکتہ یہ نہیں ہے کہ Lolly ڈیزائنرز کے لیے اچھا ہے *اور* ڈیولپرز کے لیے اچھا ہے *اور* سیلز کے لیے اچھا ہے، ہر ایک الگ الگ۔ یہ ایک **ریلے ریس** ہے: تخلیق کار کا ابتدائی کام ڈیولپر کے ذریعے پیمانہ بنایا جاتا ہے، جو بدلے میں پروڈیوسر کو بااختیار بناتا ہے۔ ہوائی جہاز میں غیر تکنیکی نمائندے کے لیے بے تکلف تجربہ صرف اس لیے *ممکن* ہے کیونکہ ڈیزائنر نے سختی طے کی اور ڈیولپر نے اسے تعینات کیا۔
 
@@ -80,7 +80,7 @@ Lolly وہی حد کھینچتا ہے۔ امکانی طور پر تلاش کری
 - <!--i:code--> **ایک ڈیولپر، کمانڈ لائن سے۔** CLI *وہی* انجن اور *وہی* رینڈر پاتھ ہیڈ لیس چلاتا ہے، تو ٹول کو ایک اسکرپٹ یا رات کی پائپ لائن میں تمام 10,000 قطاروں پر ترتیب دیا جا سکتا ہے۔ ایک لوپ میں `lolly <tool> --field=…` کال پوری انٹیگریشن ہے۔
 - <!--i:cpu--> **ایک سسٹم یا AI ایجنٹ، MCP کے ذریعے۔** وہی ٹول پروگرام کے ذریعے چلایا گیا، اسی وفاداری اور یہاں تک کہ زیادہ پیمانے پر - کیونکہ ایک مشین بور نہیں ہو گی جبکہ ہزاروں فائلیں آتی رہیں گی۔
 
-![ایک تازہ انسٹال پر بیچ موڈ: ایک خالی قطار ایک ٹول کا انتظار کر رہی ہے، پوری اسپریڈشیٹ سطح اور اس کا Render بٹن کسی ڈیٹا کے آنے سے پہلے جگہ پر](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+![ایک تازہ install پر Batch موڈ: ایک خالی row کسی tool کا انتظار کر رہی ہے، جس میں پوری spreadsheet سطح اور اس کا Render بٹن کسی بھی ڈیٹا کے آنے سے پہلے ہی موجود ہے](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
 
 برانڈ پابندیوں کا ایک سیٹ، ایک ڈیزائنر نے ایک بار طے کیا؛ یکساں پہلے سے منظور شدہ آؤٹ پٹ کے تین راستے - اور مشین کا راستہ سب سے زیادہ آگے تک پیمانہ بناتا ہے، کیونکہ یہ کبھی نہیں تھکتا جبکہ فائلیں آتی رہتی ہیں۔
 
@@ -245,7 +245,7 @@ lolly/
 
 فون کی چوڑائی پر وہی ٹول، بغیر کسی دوسرے لے آؤٹ کو برقرار رکھے: کنٹرولز اوپر ایک شیٹ بن جاتے ہیں، پیش نظارہ پوری اسکرین پر ہوتا ہے اور رینڈر پِل اس کے اوپر تیرتی ہے۔
 
-![430px چوڑی اسکرین پر ایک آڈیوگرام - اوپر کنٹرولز شیٹ، نیچے مکمل مربع آرٹ ورک اور تیرتی ہوئی رینڈر پِل](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![430px چوڑی اسکرین پر ایک audiogram - اوپر controls کی شیٹ، نیچے مکمل شدہ مربع آرٹ ورک اور فلوٹنگ render pill](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **بیچ موڈ (`/pro`)۔** ویب شیل ایک اسپریڈشیٹ طرز کا بیچ گرڈ بھی فراہم کرتا ہے (`shells/web/src/pro/`) جو ایک یا کئی ٹولز میں بیک وقت متعدد قطاریں رینڈر کرتا ہے۔ یہ CSV/TSV راؤنڈ ٹرپ اور اسپریڈشیٹ پیسٹ، فی قطار ٹیمپلیٹ/فارمیٹ/سائز/یونٹ/dpi، ایک لائیو پیش نظارے کے ساتھ بلاکس-ایڈیٹر سائیڈ پینل، سکڑنے والے ایکسپورٹ کالمز، فی قطار "مطابقت" ٹیگ بار، بائیں جانب ڈریگ ہینڈل سے قطار کی ترتیب نو، دو مرحلوں پر مشتمل حذف کی تصدیق، محفوظ شدہ بیچ سیشنز اور ایک `.zip` ڈاؤن لوڈ فراہم کرتا ہے۔ یہ "بڑے پیمانے پر مواد کی تخلیق" کی پوزیشننگ کے پیچھے موجود ایک سے کئی سطح ہے۔
 
@@ -279,10 +279,10 @@ CLI کا انٹرایکٹو ہم منصب: ایک فل اسکرین، کی بو�
 
 قطاریں گیلری سیکشن کی ترتیب میں درج ہوتی ہیں۔ `utility` سیکشن گیلری میں ہمیشہ **آخر میں** رینڈر ہوتا ہے (ہر دوسری کیٹیگری کے بعد، بشمول مستقبل کی کیٹیگریز) - یہ آن-ڈیوائس "Offline Utilities" دراز ہے۔
 
-| کیٹیگری | مثالیں | منصوبہ بند |
+| قسم | مثالیں | منصوبہ بند |
 |---|---|---|
 | `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
-| `designer` | Brand Lockup, Design, Chart Creator, D3 Chart Studio, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `designer` | Brand Lockup, Design, Chart, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
 | `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Unit/format converters, more on-device privacy utilities |
@@ -340,14 +340,14 @@ CLI کا انٹرایکٹو ہم منصب: ایک فل اسکرین، کی بو�
 
 یہ ظاہر کرنے کے لیے کہ اس کا احاطہ کیا ہے، چند نمایاں سطحیں - [Host API](/info/host-api.html) ہر ایک کو دستاویزی شکل دیتا ہے، اور `packages/core/src/host-v1.ts` خود معاہدہ ہے:
 
-| سطح | کب سے | یہ کیا اضافہ کرتا ہے |
+| سطح (Surface) | کب سے | یہ کیا شامل کرتا ہے |
 |---|---|---|
-| `host.tokens` | 1.0 | DTCG ڈیزائن ٹوکنز - برانڈ کے اپنے پرائمیٹوز |
-| `host.text` | 1.0 | HarfBuzz WASM کے ذریعے متن سے پاتھ (`wasm` کیپبیلٹی فلیگ ان ٹولز کو نشان زد کرتا ہے جو اس پر انحصار کرتے ہیں) |
-| `host.media` | 1.4 | `onFrame` ہک چلانے والے لائیو کیمرہ فریمز۔ بتدریج بہتری، جان بوجھ کر `camera` فلیگ سے گیٹڈ نہیں - ایسا ٹول اب بھی ایک عام اسٹِل-امیج ٹول کی طرح کام کرتا ہے |
-| `host.color` | 1.40 | پرسیپچوئل کلر ریاضی: ΔEOK، WCAG + APCA کنٹراسٹ، OKLab ریمپس، کلاس-بریکس، زمرہ جاتی پیلیٹس، ہارمونی اسکیمز (1.60)، CSS Color 4 مکسنگ اور گریڈینٹ بیکنگ (1.68)۔ خالص اور سنکرونس - شیلز انجن کا `makeColorApi()` منسلک کرتے ہیں بجائے کچھ خود نافذ کرنے کے، اس لیے یہ ڈرفٹ نہیں کر سکتا |
-| `host.images` | 1.60 | ڈیوائس پر بائٹس کو ڈی کوڈ / ری سائز / ری-اینکوڈ کرنا - کنورٹ پاتھ (HEIC → JPEG، WebP میں کمپریس، ڈاؤن اسکیل)۔ ویب شیل میں ایک لیزی فیسیڈ کے طور پر شپ کیا گیا، تاکہ HEIC ڈی کوڈر کبھی بوٹ چنک میں شامل نہ ہو |
-| `host.geom` | 1.64 | درست ویکٹر جیومیٹری: پاتھ بولینز، آفسیٹنگ، اسٹروک-ٹو-فِل، اسپلائن لوورنگ، سادگی، ہٹ ٹیسٹنگ۔ یہ بھی خالص، سنکرونس اور انجن سے منسلک ہے (`makeGeomApi()`)؛ ناکامیاں کبھی *پھینکی* نہیں جاتیں، ہمیشہ *واپس کی* جاتی ہیں |
+| `host.tokens` | 1.0 | DTCG ڈیزائن ٹوکنز - برانڈ کے اپنے primitives |
+| `host.text` | 1.0 | HarfBuzz WASM کے ذریعے text-to-path (`wasm` capability فلیگ ان tools کو نشان زد کرتا ہے جو اس پر انحصار کرتے ہیں) |
+| `host.media` | 1.4 | `onFrame` ہک کو چلانے والے لائیو کیمرہ فریمز۔ Progressive enhancement، جان بوجھ کر `camera` فلیگ سے مشروط *نہیں* - ایسا tool بدستور ایک عام still-image tool کے طور پر کام کرتا ہے |
+| `host.color` | 1.40 | Perceptual رنگ ریاضی: ΔEOK، WCAG + APCA تضاد، OKLab ramps، class-breaks، categorical palettes، harmony schemes (1.60)، CSS Color 4 mixing اور gradient baking (1.68)۔ خالص اور synchronous - shells کچھ بھی خود نافذ کرنے کے بجائے engine کا اپنا `makeColorApi()` منسلک کرتی ہیں، اس لیے یہ ہرگز مختلف نہیں ہو سکتا |
+| `host.images` | 1.60 | آلے پر bytes کو decode / resize / re-encode کرنا - convert راستہ (HEIC → JPEG، WebP میں compress، downscale)۔ ویب shell میں ایک lazy facade کے طور پر شپ کیا گیا، اس لیے HEIC decoder کبھی boot chunk میں داخل نہیں ہوتا |
+| `host.geom` | 1.64 | درست vector جیومیٹری: path booleans، offsetting، stroke-to-fill، spline lowering، simplification، hit testing۔ یہ بھی خالص، synchronous اور engine سے منسلک ہے (`makeGeomApi()`)؛ ناکامیاں *واپس کی جاتی ہیں*، کبھی throw نہیں کی جاتیں |
 
 باقی سب انہی اصولوں کی پیروی کرتے ہیں اور انہی کے ساتھ دستاویزی ہیں: آن-ڈیوائس دستاویز سرجری کے لیے `pdf` (1.8) اور `pptx` (1.58)، کلپ تجزیے اور آن-ڈیوائس TTS/ٹرانسکرپشن کے لیے `audio` (1.71) اور `speech` (1.96)، MilkDrop پلیس ہولڈر معاہدے کے لیے `viz` (1.72)، ڈیپ-بٹ اور لیئرڈ-بٹ میپ آؤٹ پٹ کے لیے `codec` (1.100) اور `layers` (1.102)، آن-ڈیوائس ماڈلز کے لیے `upscale` (1.101) اور `matte` (1.103)، اپنا خود کا پکسل کام کرنے والے ہکس کے لیے `raster` (1.105)، ایکسپورٹ-سیف تیروں کے لیے `connectors` (1.106) اور مکمل شدہ بائٹس پر دستخط کرنے کے لیے `c2pa` (1.85)۔ گنتی بڑھتی ہے؛ اصول نہیں بدلتے۔
 

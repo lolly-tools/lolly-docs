@@ -52,13 +52,23 @@ Jeden nástroj může vložit živý výstup jiného nástroje jako asset - jmen
 
 Pokročilé filtry, skládání, animace, efekty živé kamery, generativní design - autorovi šablony je k dispozici každá webová technologie, takže strop je vysoko.
 
-![Výstup Mesh Gradientu - generativní pole jemné barvy postavené výhradně z tokenů palety tvé značky](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Výstup Mesh Gradient - generativní pole měkké barvy postavené celé z tokenů palety tvé značky](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+
+### Vypěstované, ne nakreslené
+
+**Growth** obrázek pěstuje místo toho, aby ho kreslil: systém založený na semínku se rozrůstá z prstence, čáry, tvých vlastních slov nebo tvého loga, dokud nevyplní rám, ve tvé paletě. Stejné semínko vždy vypěstuje stejné dílo, takže odkaz ho reprodukuje přesně. To, co vznikne, je obyčejná geometrie SVG, a ne obrázek kresby, takže se to dá tisknout, plotrovat a řezat - a stejný návrh animuje od prvního semínka až po hotovou podobu jako video.
+
+![Výchozí rozkvět Growth - husté pole smyčkových linek v barvách značky vypěstovaných z prstence, kde každá linka je skutečná cesta SVG](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
+### Pohyb, který odpovídá hudbě
+
+**Synth** počítá pole tekutiny na grafické kartě a maluje ho ve tvých barvách. Dej mu skladbu a pole se pohybuje se zvukem; exportuje se jako MP4, WebM, GIF nebo animovaná smyčka PNG, která se čistě spojí od začátku do konce, vykreslená snímek po snímku z řízených hodin, a ne nahraná z obrazovky - takže pohyb se nikdy neodchýlí od zvukové stopy a stejný odkaz vykreslí stejný klip v libovolné délce.
+
+![Snímek scény \"ink\" v Synth - tmavé pole tekutiny nasvícené zelenými barvami značky, zachycené uprostřed víru](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 Vytvářej *nástroje*, ne soubory: postav věc, která vygeneruje 10 000 karet, místo abys vytvořil 10 000 karet. Uzamkni to, co se nemá měnit; odkryj jen to, co se má měnit.
 
 ## Detaily, kterých si všimneš
-
-![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
 
 - **Tisk, jak má být.** Skutečné fyzické jednotky (mm/cm/in/pt) a DPI, spadávka a ořezové značky, CMYK a výstupní záměr PDF/X-4 - tiskárna dostane přesně to, co potřebuje. Viz [Export](/info/exporting.html#size-print-units).
 - **Video a pohyb.** Export WebM/MP4 (se zvukovými stopami), animované PNG/WebP a animované SVG - ze stejné šablony, která tvoří tvé statické snímky. **Sequence Studio** jde dál: skutečná časová osa pod plátnem, s magnetickým řádkem klipů, volnými překryvovými dráhami, ořezáváním a dělením, přednastavenými přechody, nahráváním voiceoveru a hudebním mixem - vyrenderováno jako MP4, WebM, GIF nebo APNG deterministickým kompozitorem, ne obrazovkovým záznamem. Soubory Lottie přicházejí *dovnitř* jako animované assety a vyrenderují se do kteréhokoli z nich. Nad klipy sedí **klíčové snímky**: nastav box do jednoho okamžiku, zvedni ho ze stránky se skutečnou hloubkou a přeleť kamerou nad výsledkem. Viz [Použití Lolly → Timeline](/info/using.html#timeline-sequence-studio) a [Animace](/info/animating.html).
@@ -70,8 +80,6 @@ Vytvářej *nástroje*, ne soubory: postav věc, která vygeneruje 10 000 karet,
 - **Klidnější rozhraní, když ho chceš.** Čtyři přepínače pod **Profil → Přístupnost** - *Omezit pohyb*, *Skrýt barevné náhledy*, *Vysoký kontrast* a *Velký text* - zklidní aplikaci kolem tvé práce. Každý je vypnutý, dokud ho nezapneš, a žádný z nich se nedotkne tvého plátna ani nepohne pixelem toho, co exportuješ. Viz [Tvůj profil → Přístupnost](/info/profile.html#accessibility).
 
 ## Vytěž z toho maximum
-
-![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[Rychlý start](/info/quickstart.html)** - značka dovnitř, první soubor ven.
 - **[Brand Studio](/info/brand-studio.html)** - tvaruj svá loga, barvy, písmo a tokeny (`#/start`).

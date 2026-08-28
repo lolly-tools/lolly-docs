@@ -58,6 +58,7 @@
   "Formats": "Формати",
   "Everywhere": "Навсякъде",
   "FAQ": "ЧЗВ",
+  "Make it yours": "Направи го свое",
   "Lolly opens {in} kinds of file and makes {out}, and {both} of them go both ways.": "Lolly отваря {in} вида файлове и прави {out}, а {both} от тях работят в двете посоки.",
   "See everything Lolly can open and make": "Виж всичко, което Lolly отваря и прави",
   "Already have designs? They aren't stranded - bring Figma, Penpot, Illustrator, InDesign or any SVG.": "Вече имаш дизайни? Не остават заключени - донеси Figma, Penpot, Illustrator, InDesign или какъвто и да е SVG.",
@@ -76,6 +77,10 @@
   "Free, no account": "Безплатно, без акаунт",
   "What Lolly supports": "Какво поддържа Lolly",
   "Everything happens on your device, so it works with the Wi-Fi off.": "Всичко се случва на твоето устройство, затова работи и с изключен Wi-Fi.",
+  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "Конверторът пренася описанието, автора, авторските права и датата на заснемане в новия файл. Местоположението остава назад, освен ако не го включиш, а Content Credential не може да бъде копиран: той е обвързан с оригиналните байтове.",
+  "Every table in the font, its name and licence records included, passes through untouched.": "Всяка таблица в шрифта, включително записите за име и лиценз, преминава непокътната.",
+  "Nothing embedded carries over: the new file is written fresh with Lolly\\'s own details, and your original keeps its own.": "Нищо вградено не се пренася: новият файл се записва изцяло наново със собствените данни на Lolly, а оригиналът ти запазва своите.",
+  "What carries over": "Какво се пренася",
   "Convert": "Конвертиране",
   "What goes in": "Какво влиза",
   "What comes out": "Какво излиза",
@@ -202,9 +207,5 @@
   "Parser Inventory": "Инвентар на парсерите",
   "Server Surface": "Сървърна повърхност",
   "Generated once, rendered the same": "Генерирано веднъж, рендерирано еднакво",
-  "AI marking and the EU AI Act": "Маркиране на ИИ и Законът на ЕС за ИИ",
-  "What carries over": "Какво се пренася",
-  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "Конверторът пренася описанието, автора, авторското право и датата на заснемане в новия файл. Местоположението остава настрана, освен ако не го включите, а Content Credential не може да се копира: той е свързан с оригиналните байтове.",
-  "Every table in the font, its name and licence records included, passes through untouched.": "Всяка таблица в шрифта, включително записите за име и лиценз, преминава непокътната.",
-  "Nothing embedded carries over: the new file is written fresh with Lolly's own details, and your original keeps its own.": "Нищо вградено не се пренася: новият файл се записва наново със собствените данни на Lolly, а вашият оригинал запазва своите."
+  "AI marking and the EU AI Act": "Маркиране на ИИ и Законът на ЕС за ИИ"
 }

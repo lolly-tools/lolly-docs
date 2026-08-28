@@ -1,10 +1,10 @@
 
 # Lolly - Text der Startseite
 
-Sie gestalten es, Sie behalten es: fertige Dateien in Sekunden, auf Ihrem eigenen Gerät.
-Tool auswählen, Ihre Worte eintragen, fertig ist das Ergebnis: Farben, Schriften und Layout stimmen bereits.
-Gleich, wo es gleich sein soll, anders, wo es anders sein soll.
-Kostenlos, und das bleibt so: kein Konto, keine Karte, kein Haken.
+Dateien in Studioqualität in Sekunden, auf Ihrem eigenen Gerät.
+
+Identisch, wenn Sie es wollen, verschieden, wenn Sie es brauchen.
+Kostenlos & Open Source: kein Konto, keine Karte, kein Haken.
 
 
 ---
@@ -55,10 +55,10 @@ Legen Sie Ihren infografischen Redaktionsstil einmal an und erzeugen Sie daraus 
 
 Nicht alles ist Marketing. Versandetiketten, Namensschild-Serien, Compliance-Einseiter, Störungsmeldungen - Ausgaben, bei denen das Layout die Bedeutung trägt und die Daten nicht falsch sein dürfen. Lolly behandelt ein Versandetikett mit derselben Sorgfalt wie ein Kampagnenplakat.
 
-- **Strukturierte Daten hinein, exakte Ausgabe.** Übergeben Sie eine CSV- oder JSON-Tabelle, und jedes Feld landet genau dort, wo die Vorlage es erwartet - pro Zeile eine fertige Datei.
-- **Physische Präzision.** Echte Einheiten (mm/cm/in/pt), echte DPI, Beschnitt und Schnittmarken. Ein Etikettendrucker oder eine Druckerei bekommt genau das, was sie braucht.
-- **Die Logik läuft im Tool.** Barcodes, Datumsberechnungen, bedingte Layouts, Kontrastprüfungen - beim Rendern berechnet, nicht von Hand.
-- **Deterministisch von Grund auf.** Gleiche Eingaben, gleiche Datei, jedes Mal. Prüfbar, wiederholbar, aus der CLI oder einer Pipeline automatisierbar.
+- **Strukturierte Daten rein, exaktes Ergebnis.** Füttern Sie eine CSV- oder JSON-Tabelle, und jedes Feld landet genau dort, wo die Vorlage es erwartet - eine fertige Datei pro Zeile.
+- **Physische Präzision.** Echte Einheiten (mm/cm/in/pt), echtes DPI, Beschnitt und Schnittmarken. Ein Etikettendrucker oder eine Druckerei bekommt genau das, was gebraucht wird.
+- **Logik läuft innerhalb des Tools.** Barcodes, Datumsrechnung, bedingte Layouts, Kontrastprüfungen - berechnet zum Renderzeitpunkt, nicht von Hand.
+- **Deterministisch von Grund auf.** Gleiche Eingaben, gleiche Datei, jedes Mal. Prüfbar, wiederholbar, automatisierbar über die CLI oder eine Pipeline.
 
 ---
 
@@ -82,11 +82,11 @@ Sie entwerfen Systeme und lösen Probleme, keine Einzelstücke. Lolly ist die Au
 
 Bilder sind Build-Artefakte. Behandeln Sie sie auch so. Lolly läuft über die CLI, sodass Sie Assets genauso erzeugen wie alles andere - wiederholbar, automatisch und als Teil Ihres Workflows.
 
-- **Setzen Sie das Modell an den Entwurf, nicht an die Druckmaschine.** Medien in Druckqualität per Prompt zu erzeugen ist teuer und trifft es ungefähr statt genau. Ein Tool erzeugt jedes Mal dieselbe Datei, und das umsonst.
-- **Reproduzierbare Ergebnisse.** Gleiche Eingaben ergeben jedes Mal dieselbe Datei. Committen Sie eine URL und erzeugen Sie sie bei Bedarf neu - keine eingecheckten Bilder mehr und keine Jagd nach der neuesten Fassung in Slack.
-- **Medien aus der Codebasis heraushalten.** Erzeugen Sie OG-Bilder, QR-Codes, Social Cards und Datengrafiken zur Build-Zeit, statt Binärdateien in Git abzulegen.
-- **Logik in Assets ausführen.** Mit Tools wie Code Canvas und Chart Creator platzieren Sie echte Inhalte - Codeausschnitte, strukturierte Daten, aktuelle Werte - in Vorlagen in Produktionsqualität, ohne einen eigenen Renderer zu bauen.
-- **Kein Lock-in.** Open-Source-Engine, lokale Rechenleistung, keine API-Schlüssel, keine Ratenbegrenzungen.
+- **Das Modell für die Skizze nutzen, nicht für die Druckvorlage.** Medien in Druckqualität per Prompt zu erzeugen ist teuer und kommt nahe heran, statt genau zu treffen. Ein Tool erstellt jedes Mal dieselbe Datei, für nichts.
+- **Reproduzierbare Ergebnisse.** Gleiche Eingaben erzeugen jedes Mal dieselbe Datei. Eine URL committen, bei Bedarf neu erzeugen - kein Einchecken von Bildern mehr und kein Hinterherjagen der neuesten Version aus Slack.
+- **Medien aus Ihrer Codebasis heraushalten.** OG-Bilder, QR-Codes, Social Cards und Datenvisualisierungen zum Build-Zeitpunkt erzeugen, statt Binärdateien in Git zu speichern.
+- **Logik innerhalb von Assets ausführen.** Tools wie Code Canvas und Chart Creator lassen Sie echten Inhalt - Codeschnipsel, strukturierte Daten, Live-Werte - in Vorlagen in Produktionsqualität platzieren, ohne einen eigenen Renderer zu bauen.
+- **Kein Lock-in.** Open-Source-Engine, lokale Berechnung, keine API-Schlüssel, keine Ratenlimits.
 
 ```bash
 lolly qr-code --url=https://suse.com --output=og-qr.svg

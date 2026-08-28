@@ -12,7 +12,7 @@ Ecranul principal e **galeria** - toate instrumentele, grupate pe categorii. Dă
 
 Fiecare instrument e o vedere împărțită în două: **comenzile** pe o parte, o **previzualizare** live (canvasul) pe cealaltă. Schimbi orice comandă și previzualizarea se actualizează instantaneu.
 
-![Vederea împărțită a unui instrument - stiva de comenzi în stânga și graficul cu bare grupate pe care îl desenează, live, în dreapta](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
+![Vizualizarea împărțită a unui instrument - stiva de comenzi în stânga și graficul cu bare grupate randat live pe care îl desenează în dreapta](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Dbar%26t%3DExample%2520data%26st%3DSample%2520values%252C%2520not%2520a%2520real%2520dataset%26d%3DMonth%252CSeries%2520A%252CSeries%2520B%252CSeries%2520C%250AJan%252C12%252C9%252C5%250AFeb%252C18%252C14%252C7%250AMar%252C24%252C17%252C11%250AApr%252C29%252C23%252C15%26lg%3D1&width=1440&height=900&dpi=192&waitMs=2500&walker=1&format=svg&dark=1&filename=vt-tool-split-view)
 
 > Câteva instrumente (cum e **Design**) se deschid în schimb ca un **canvas liber** - o suprafață fără interfață în jur, cu manipulare directă, unde tragi, redimensionezi, rotești și aliniezi casete de text, forme și imagini și dai dublu clic ca să editezi textul pe loc. Exportă pe aceeași cale de randare ca orice alt instrument, așa că pânza *este* fișierul. Vezi [Canvasul liber](#the-free-canvas-design) mai jos.
 
@@ -167,7 +167,7 @@ Selectează un clip și inspectorul îți dă aceleași modificări sub formă d
 
 Câteva limite de reținut: o secvență e plafonată la o oră, GIF și PNG animat își stochează cadrele în memorie, deci rămân scurte, sunetul e mut pe un clip a cărui viteză nu e ×1 (încă nu există întindere în timp), iar **Record live** e ascuns aici fiindcă compozitorul e calea mai bună.
 
-**Dincolo de presetări: cadre-cheie, adâncime și o cameră.** O tranziție animează un clip când sosește și când pleacă. Ca să poziționezi o casetă *în interiorul* unui clip - s-o faci să plutească, să se estompeze, să se încețoșeze, s-o ridici de pe pagină și s-o așezi înapoi - adaugă cadre-cheie: selectează clipul, apasă **+Keyframe** (rombul din grupul de instrumente al cronologiei, rombul de pe bara obiectului de pe canvas sau `K`), iar poziția capului de citire decide ce poziție scrie următoarea ta modificare. Aceeași mecanică dă fiecărei compoziții sincronizate o **cameră** care se apropie, panoramează și schimbă focalizarea și transformă un singur SVG plat într-un teanc de straturi printre care poți zbura. **[Animarea](/info/animating.html)** e ghidul complet.
+**Dincolo de presetări: chei de animație, adâncime și o cameră.** O tranziție animă un clip pe măsură ce apare și dispare. Pentru a poziționa un element *în interiorul* unui clip - să-l deplasezi, să-l estompezi, să-l încețoșezi, să-l ridici de pe pagină și să-l așezi la loc - adaugă chei de animație: selectează clipul, apasă **+Keyframe** (romboul din clusterul de instrumente al cronologiei, romboul din bara obiectului de pe pânză sau `K`), iar poziția cursorului de redare decide ce poziție scrie următoarea ta modificare. Același sistem de chei de animație dă fiecărei compoziții temporizate o **cameră** care avansează, panoramează și schimbă focalizarea, transformând un SVG plat într-o stivă de straturi între care poți zbura. **[Animație](/info/animating.html)** este ghidul complet.
 
 Instrumentul Design are aceeași cronologie, așa că poți sincroniza o machetă fără să treci la alt instrument, și exportă și mișcare.
 
@@ -180,7 +180,7 @@ Un document Design făcut din **planșe de lucru** e deja o prezentare. Deschide
 - **Pași de dezvăluire.** Clic dreapta pe o casetă și alege **Reveal at step 1**, **2** sau **3** în locul valorii implicite **Always visible**. Caseta aceea așteaptă apoi până ajungi la pasul ei, așa că un diapozitiv poate sosi pe bucăți; casetele care au același număr sosesc împreună.
 - **Speaker view** (`S`) deschide o a doua fereastră cu diapozitivul curent, cel care urmează, notițele tale pentru el și un ceas care merge. Dacă browserul blochează fereastra pop-up, se retrage într-un panou peste prezentare. Notițele se setează pe fiecare planșă de lucru și nu apar niciodată pe diapozitivul propriu-zis.
 - `B` ține un ecran negru (orice tastă readuce diapozitivul), `F` revine la ecran complet, iar **Escape** desface câte un strat pe rând: din vederea de ansamblu înapoi la prezentare, din prezentare înapoi la editor.
-- **Kiosk.** Dă-i unei planșe de lucru o **Length** și prezentarea se oprește acolo atâta timp, apoi înaintează singură în spatele unei bare subțiri de progres; `K` (sau butonul de pauză, care apare doar după ce ceva are o durată) oprește și repornește asta. Adaugă `loop` în link și prezentarea o ia de la capăt la final, ceea ce o transformă în semnalistică.
+- **Kiosk.** Dă-i unei planșe de lucru o **Length** și prezentarea se oprește acolo atâta timp, apoi înaintează singură în spatele unei bare subțiri de progres; `K` (sau butonul de pauză, care apare doar după ce ceva are o durată) oprește și repornește asta. Adaugă `kiosk` în link și prezentarea o ia de la capăt la final, ceea ce o transformă în semnalistică.
 
 Prezentarea e și un link. `?present` deschide direct în ea, `s=` numește diapozitivul - o poziție, un id de planșă de lucru sau `id.step` pentru un pas de construcție - iar adresa se actualizează pe măsură ce înaintezi, așa că ce trimiți e diapozitivul la care ești. Autori de instrumente: parametrii aceia sunt documentați pe pagina [URL Mode](/info/url-mode.html#reserved-parameters).
 
@@ -210,7 +210,7 @@ Instrumentele expun doar câmpurile care sunt menite să varieze - tot restul (c
 - **Cât timp cursorul tău e într-o casetă de text**, Cmd/Ctrl-Z aparține câmpului însuși, caracter cu caracter. Lolly preia comanda pentru controalele care nu au o anulare proprie utilă: glisoare, liste derulante, culori și comutatoare.
 - **Alegerea unui fișier** într-un câmp **file** nu e un pas - octeții aceia sunt ținuți doar pe durata sesiunii, așa că nu ar fi nimic de pus la loc.
 
-Într-o [colaborare](/info/collaborate.html) live istoricul rămâne doar al tău. O modificare venită de pe celălalt dispozitiv nu ajunge niciodată pe stiva ta, așa că anularea poate lua înapoi numai ceva ce ai făcut tu.
+Într-o [colaborare](/info/collaborate.html) live, istoricul rămâne doar al tău. O modificare venită de pe celălalt dispozitiv nu ajunge niciodată pe stiva ta, astfel încât anularea poate readuce doar ceva ce ai făcut tu.
 
 ## Datele tale & fotografia de profil
 
@@ -266,10 +266,10 @@ alt text names them - do not re-caption this as "the sort menu".
 
 > O capcană de etichetă: **View sessions** există doar după ce ceva e *selectat*. Clic dreapta pe o singură cartelă neselectată oferă în schimb **N saved sessions**, care deschide dialogul de istoric al instrumentului aceluia, în loc să te ducă la Projects.
 
-![Două cartele de instrumente bifate în galeria Tools, cu bara de selecție plutitoare care afișează 2 selected și oferă Available offline, View sessions, Favourite și Hide](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
+![Două carduri de instrumente bifate în galeria Tools, cu bara plutitoare de selecție afișând 2 selected și oferind Available offline, View sessions, Favourite și Hide](/t/url-shot?url=%2F%23%2F&width=1440&height=900&dpi=192&waitMs=1600&css=.welcome-dialog%2C.personalize-nudge%7Bdisplay%3Anone!important%7D&drive=click%3A%5Bdata-select%3D%22qr-code%22%5D%3Bclick%3A%5Bdata-select%3D%22gradient%22%5D&waitSelector=.gallery-view%5Bdata-shots-settled%5D&walker=1&format=svg&dark=1&filename=misc-bulkbar-gallery)
 <!--
 SHOT NOTE (misc-bulkbar-gallery): drive targets `[data-select="qr-code"]` /
-`[data-select="d3"]` - the `.tile-check[data-select="<ref>"]` checkbox button
+`[data-select="gradient"]` - the `.tile-check[data-select="<ref>"]` checkbox button
 confirmed directly in views/gallery.ts's card markup (the same attribute
 cardMarkup gives every tile), so these two clicks tick both cards without
 opening either tool.
@@ -291,14 +291,16 @@ Un design pleacă în două feluri: ca link sau ca fișier. Dialogul Share le of
 
 ### Linkul
 
-![Jump Page in the editor - the heading, three link scenes each with its own wash and a Made with Lolly footer, laid out as one page in the canvas](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
-
 Fiecare câmp e cuprins în URL-ul paginii, așa că un link *este* designul. În capul dialogului stă linkul gata de copiat, cu două secțiuni restrânse sub el.
 
 - **Link options** conține **Shortest link** (un design mare face un URL lung, așa că asta împachetează toată starea într-un jeton compact și îți arată economia în caractere; forma lizibilă rămâne mereu disponibilă), **Password-protect this link** (AES-256 peste tot linkul, iar parola nu e niciodată în el) și **Pin this tool version** - indicatorul `_v`, care fixează linkul la versiunea de instrument pe care o vezi, ca o actualizare ulterioară să nu poată schimba ce randează.
 - **Link behaviour** e ce se întâmplă când destinatarul îl deschide: ecran complet, panoul de export deja extins, descărcare la deschidere cu `&export` sau copiere în clipboard cu `&copy`.
 
 Trimite linkul unui coleg, pune-l la favorite sau comite-l în cod. (Detalii complete: [URL Mode](/info/url-mode.html).)
+
+**Unele instrumente fac din link întregul produs.** Jump Page adună linkurile tale pe o singură pagină de distribuit - un link bio, o prezentare de conferință, o vitrină de magazin. Nu este nimic de găzduit și niciun cont în spate: pagina este linkul, așa că se deschide la fel de repede pe cât călătorește adresa URL. În editor vezi pagina finalizată lângă câmpuri; un vizitator care deschide linkul o primește pe toată lățimea, un link per scenă pe măsură ce derulează.
+
+![Jump Page în editor - titlul, trei scene de linkuri, fiecare cu propriul fundal colorat, și un subsol Made with Lolly, aranjate ca o singură pagină pe pânză](/t/url-shot?url=%2F%23%2Ftool%2Fjump%3Ffull&width=900&height=1300&dpi=96&waitMs=2000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-jump-page)
 
 **Dialogul spune ce nu poate duce un link.** Trei lucruri nu încap într-un URL: o imagine sau un fișier adăugat de pe dispozitivul ăsta, o valoare de text foarte lungă sau o listă foarte mare. Fiecare e numărat pe măsură ce se construiește linkul. Dacă a trebuit să se renunțe la ceva, dialogul îl numește și te trimite la fișierul de mai jos, în loc să-ți dea un link care se deschide fără poză. Un link doar *lung* primește o notă mai blândă, cu numărul de caractere, fiindcă împachetarea încă poate salva situația.
 
@@ -314,7 +316,7 @@ Trei lucruri sunt ale tale de decis înainte să plece:
 - **Dacă arta licențiată intră sau nu.** Activele licențiate și cele blocate de brand sunt reținute implicit. Dacă designul folosește vreunul, dialogul spune câte sunt și oferă două butoane - *Download without them* sau *Include and download* - pentru că includerea lor înmânează fișierele reale oricui deschide `.lolly`-ul.
 - **Dacă unealta intră sau nu.** **Include the tool** ambalează fișierele proprii ale uneltei alături de design, ca acesta să se deschidă pe un dispozitiv care nu are unealta respectivă. Vine bifat pentru o unealtă personalizată - o ramificație (fork) sau o unealtă de brand privată pe care destinatarul e puțin probabil să o aibă - și nebifat pentru o unealtă listată în catalogul semnat, deoarece copia lor provine din aceeași sursă. (Pe o versiune fără catalog semnat, orice unealtă contează drept personalizată și caseta pornește bifată.)
 
-**Cum deschizi unul.** Lasă un `.lolly` peste aplicație: resursele ajung în biblioteca ta, sesiunea ajunge în Projects, iar instrumentul se deschide pe ea. Nimic din ce e al tău nu e suprascris: sesiunea sosește ca un slot salvat nou, iar o resursă care e deja pe dispozitivul ăsta e recunoscută după sumă de control și refolosită, nu duplicată. Fiecare parte e verificată la intrare față de sumele de control ale fișierului, așa că un exemplar deteriorat pe drum e refuzat, nu importat pe jumătate.
+**Deschiderea unui fișier.** Trage un fișier `.lolly` peste aplicație: resursele ajung în biblioteca ta, sesiunea ajunge în Projects, iar instrumentul se deschide pe ea. Nimic al tău nu este suprascris: sesiunea apare ca un nou slot salvat, în timp ce o resursă deja existentă pe acest dispozitiv este potrivită după suma de control și reutilizată în loc să fie duplicată. Fiecare parte este verificată față de propriile sume de control ale fișierului la import, astfel încât o copie deteriorată în tranzit este refuzată în loc să fie importată pe jumătate.
 
 Dacă fișierul aduce un instrument pe care nu-l ai, Lolly întreabă înainte ca instrumentul acela să poată rula: **Trust this tool?** îl numește pe el și pe autorul lui și spune limpede că deschiderea rulează codul propriu al instrumentului pe dispozitivul tău, cu **Trust & install** ca trecere mai departe. Refuză și lucrarea partajată tot se salvează în proiectele tale, așteptând acolo ziua în care adaugi instrumentul. (Un fel de instrument nu poate fi încărcat lateral încă - unul al cărui cod vine ca modul - și e refuzat în același fel.)
 
@@ -334,10 +336,10 @@ Când un instrument te lasă să adaugi o imagine de pe dispozitiv, ea e păstra
 
 ![Catalogul - resurse de brand, mostre și fonturi, plus propriile tale încărcări](/t/url-shot?url=%2F%23%2Fc%3Fsection%3Dswatches%2Cfonts&width=1440&height=900&dpi=96&waitMs=2400&css=.plat-swatch-grid~%2A%7Bdisplay%3Anone%7D&walker=1&format=svg&localize=1&dark=1&filename=catalogue)
 
-- <!--i:upload--> **Adu-ți fișierele.** Trage orice imagine, SVG, clip audio, video, Lottie, PDF sau prezentare PowerPoint peste zona de încărcare - sau dă clic pentru a alege - și ajunge instantaneu în catalogul tău, gata în selectorul de active al fiecărei unelte. Un PDF cu mai multe pagini sau un `.pptx` întreabă ce pagini sau slide-uri să păstreze - fiecare devine un activ SVG. Încarcă oricât de mult vrei; nu părăsește niciodată dispozitivul tău.
-- <!--i:star--> **Marchează ca favorit ce folosești des.** ★ un activ (sau o mostră de brand) și se fixează în vârful fiecărui selector, ca logo-ul sau culoarea ta preferată să fie la un clic distanță.
-- <!--i:folder--> **Fă ordine.** Recategorizează un activ într-un alt grup, ascunde un activ de brand comun pe care nu îl folosești (cu **Show hidden** pentru a-l aduce înapoi) sau șterge definitiv propriile încărcări. Aceleași gesturi de selecție multiplă și aceeași bară de acțiuni plutitoare de la Proiecte funcționează și aici, deci oricare dintre acestea se poate face pentru o întreagă selecție dintr-o dată.
-- <!--i:layers--> **Detașează un video de fundalul lui.** Deschide detaliul unui video sau dă clic dreapta pe cardul lui în orice selector de active și alege **Remove background…** pentru a salva o alternativă transparentă - un WebP sau PNG animat cu alfa real. Alege o **Method**: un **On-device model** decupează un subiect dintr-o scenă aglomerată, sau un **Colour key** decupează un fundal uniform luminat și plat, cum ar fi un ecran verde sau un perete simplu, cu **Tolerance**, **Softness** și **Spill removal** pentru a regla marginea. Colour key nu are nevoie de nicio descărcare de model și de nicio rețea, deci **Remove background** este oferit pentru orice video și e adesea mai curat pe imagini ordonate. Un control **Resolution** (360, 480, 720 sau 1080p, niciodată peste sursă) schimbă detaliul pentru un fișier mai mic și mai rapid. Rulează ca sarcină de fundal pe dispozitivul tău. Decupajul finit ajunge lângă originalul ca activ propriu, iar Content Credential al videoclipului sursă îl însoțește ca ingredient. (Vezi [Generat o dată, randat la fel](/info/ai-features.html) pentru motivul pentru care eliminarea unui fundal rămâne o editare simplă.)
+- <!--i:upload--> **Adu-ți fișierele.** Trage orice imagine, SVG, clip audio, video, Lottie, PDF sau prezentare PowerPoint pe zona de încărcare - sau dă clic pentru a alege - și apare instantaneu în catalogul tău, gata în selectorul de resurse al fiecărui instrument. Un PDF cu mai multe pagini sau un fișier `.pptx` întreabă ce pagini sau diapozitive să păstreze - fiecare devine o resursă SVG. Încarcă oricât de mult vrei; nu părăsește niciodată dispozitivul tău.
+- <!--i:star--> **Marchează ca favorit ce folosești des.** Marchează cu ★ o resursă (sau o mostră de brand) și se fixează în partea de sus a fiecărui selector, astfel încât logo-ul sau culoarea ta preferată sunt la un clic distanță.
+- <!--i:folder--> **Fă ordine.** Recategorizează o resursă într-un alt grup, ascunde o resursă de brand partajată pe care n-o folosești (cu **Show hidden** pentru a o aduce înapoi) sau șterge definitiv propriile fișiere încărcate. Același gest de selecție multiplă și aceeași bară de acțiuni plutitoare ca în Projects funcționează și aici, astfel încât oricare dintre acestea poate fi făcută pentru o întreagă selecție deodată.
+- <!--i:layers--> **Elimină fundalul dintr-un video.** Deschide detaliile unui video sau dă clic dreapta pe cardul lui în orice selector de resurse și alege **Remove background…** pentru a salva o alternativă transparentă - un WebP sau PNG animat cu alfa reală. Alege o **Method**: un **On-device model** decupează un subiect dintr-o scenă aglomerată, sau o **Colour key** elimină un fundal uniform luminat și plat, cum ar fi un green screen sau un perete simplu, cu **Tolerance**, **Softness** și **Spill removal** pentru a regla marginea. Cheia de culoare nu necesită nicio descărcare de model și nicio rețea, așa că **Remove background** este oferit la orice video și este adesea mai curat pe imagini îngrijite. Un control **Resolution** (360, 480, 720 sau 1080p, niciodată peste sursă) schimbă detaliul pentru un fișier mai mic și mai rapid. Rulează ca sarcină în fundal pe dispozitivul tău. Decuparea finalizată este salvată lângă original ca resursă proprie, iar Content Credential-ul videoclipului sursă călătorește alături ca ingredient. (Vezi [Generat o dată, randat la fel](/info/ai-features.html) pentru de ce eliminarea fundalului rămâne o editare simplă.)
 
 ### Ia-ți paleta și fonturile oriunde
 
@@ -395,13 +397,13 @@ Vezi **[Export & formate](/info/exporting.html)** pentru povestea completă - al
 
 Pentru utilizatorii avansați, **Batch** (accesibil din galerie, în spatele indicatorului de funcționalitate Pro, care e activ implicit) randează multe variante deodată - o grilă în care fiecare rând e un set de valori, exportate împreună. Ideal pentru localizarea unui card în douăsprezece limbi sau pentru generarea tuturor variantelor de dimensiune dintr-o singură trecere. Umple rândurile tastând, lipind direct dintr-o foaie de calcul sau importând un CSV (poți și exporta unul înapoi) și setează formatul, dimensiunea și numele fișierului de ieșire pentru fiecare rând. Salvează o grilă întreagă ca **sesiune de lot** cu nume, care se redeschide din galerie, și descarcă toate rândurile ca un singur `.zip`.
 
-![Bara de instrumente Batch - numele arhivei zip, unitățile, DPI-ul și formatul pe care îl moștenește fiecare rând, cu Sessions și Render în dreapta](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
+![Bara de instrumente a modului Batch - numele arhivei zip, unități, DPI și formatul moștenit de fiecare rând, cu Sessions și Render în dreapta](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&cropSelector=.pro-toolbar&walker=1&format=svg&dark=1&filename=use-batch-toolbar)
 
 Batch e pentru generarea **multor variante ale unui singur șablon** deodată. Ca să randezi din nou sesiuni pe care le-ai **salvat deja**, folosește **Projects → Render folder / Render selection** (mai sus) - fără Pro.
 
 ## Editarea una lângă alta (Multi-edit)
 
-Batch înseamnă multe variante ale *unui singur* design. **Multi-edit** e cealaltă jumătate a treburilor: mai multe designuri salvate **diferite** deschise deodată, ca o singură modificare să ajungă pe toate. Bifează între **două și opt** sesiuni salvate în **Projects** și alege **Edit together** din bara de selecție; se deschid ca fișe live una lângă alta, la `#/multi?s=<slot>,<slot>…`. Fiecare fișă e o randare reală a sesiunii aceleia, nu o miniatură stocată, așa că ce vezi e ce va exporta.
+Batch înseamnă multe variante ale *unui singur* design. **Multi-edit** este cealaltă jumătate a sarcinii: mai multe designuri salvate **diferite**, deschise deodată, astfel încât o singură modificare se aplică tuturor. Bifează între **două și opt** sesiuni salvate în **Projects** și alege **Edit together** din bara de selecție; se deschid ca și carduri live unul lângă altul la `#/multi?s=<slot>,<slot>…`. Fiecare card este o randare reală a acelei sesiuni, nu o miniatură stocată, așa că ceea ce vezi este ceea ce se va exporta.
 
 O singură bară laterală le conduce pe toate:
 
@@ -418,3 +420,5 @@ Când selecția e mai mare de opt, amestecă instrumente sau include și imagini
 ## Offline & instalare
 
 Lolly e un PWA. După prima încărcare funcționează **offline** - instaleaz-o din bara de adrese a browserului (sau *Add to Home Screen* pe mobil) pentru o experiență de tip aplicație, pe tot ecranul. Se actualizează singură când ești din nou online.
+
+Despre actualizări: dacă o vizualizare nu se încarcă vreodată imediat după una (un panou gol, un \"failed to fetch\" în colț), reîncarcă pagina o dată - aplicația trece curat la noua versiune, iar munca ta, sesiunile și brandul rămân neatinse. Stochează totul pe dispozitivul tău, nu în pagină.

@@ -8,7 +8,7 @@ Het zero-trust organisatorische immuunsysteem dat om wat je al doet heen wordt g
 
 Lolly is geen tweederangs creatieve tool: het legt productiekwaliteit output in ieders handen, en de merkgestuurde creatie-ervaring is ongeëvenaard. De reden dat het *veilig* is om breed uit te delen zit in de architectuur: er wordt niets geüpload wat jij er niet zelf op zette, elk resultaat is reproduceerbaar en elke export kan meerdere lagen toonaangevende cryptografische registraties dragen. Ongeacht hoe een document jouw bureau bereikte, kun je de volledige herkomst zien, of ermee geknoeid is en of je het pixelperfect kunt reconstrueren.
 
-> **Waar het vandaag staat.** De securityeigenschappen van Lolly zijn sterk door ontwerp, en de cryptografie- en bestandsparse-engines doorlopen SUSE's enterprise-grade infrastructuurverharding. De zegels, on-device ondertekening en versleuteling hieronder zijn nu al reëel en verdedigbaar, en groeien toe naar onafhankelijke certificering - dus waar een contract certificeerde zekerheid vereist, zet ze in als defence-in-depth terwijl dat proces zich voltrekt.
+> **De huidige stand van zaken.** Lolly's beveiligingseigenschappen zijn sterk door ontwerp, en de cryptografie- en file-parsing-engines doorlopen momenteel SUSE's enterprise-grade infrastructuurharding. De zegels, on-device ondertekening en versleuteling hieronder zijn nu al echt en verdedigbaar, en groeien toe naar onafhankelijke certificering - dus waar een contract om gecertificeerde zekerheid vraagt, zet je ze in als defence-in-depth terwijl dat proces wordt afgerond.
 
 ## Het strategische voordeel
 
@@ -16,9 +16,9 @@ De gebruikelijke manier waarop routinematig creatief werk gebeurt is een aanspra
 
 Lolly draait het om. Het werk dat die lekken *veroorzaakte* - de citaatkaart, de gelokaliseerde banner, het eventbadge, de geredigeerde schermafbeelding - gebeurt nu op een tool die draait op het eigen apparaat van de medewerker, tegen jouw merk, zonder server ertussen. Je voegde geen controle toe boven op een risicovolle workflow; je verving de risicovolle workflow door een die om te beginnen geen exfiltratiepad heeft.
 
-- **Configuratie is van jou.** De engine en shells zijn open source (MPL-2.0). Overlay je eigen auth, telemetrie of CA; host het of niet; jij hebt volledige controle over functies en kosten, git-tracked, niet vastgezet in een SaaS-database.
-- **Governance kan data zijn, geen dashboard.** Wanneer je die controle wilt, beheer je de tool-catalogus als een Git-repository - pull-request review wordt merkgoedkeuring, met een volledig audittrail en directe rollback van elk template dat jouw workforce kan aanraken. Het is een optie, geen verplichting, en het landt op precies één bureau: makers werken volledig in-app, slaan wat ze maken op als een **sessie** en geven het door als een deel-link, een back-up of een live samenwerking - niets daarvan vereist git. Wanneer zo'n sessie het verdient om een permanent startpunt te worden, opent degene die de implementatie beheert de link, legt de waarden vast als een **template** op die tool in het merkpakket en commit. Vanaf dat moment verschijnt het in de "Nieuw van template"-keuzelijst van de tool en is het deep-linkbaar als `?template=<id>`. Git is de vergrendelingsstap van de beheerder, eenmalig gebruikt, en nooit iets waar een maker mee te maken krijgt. Zie [Adoptie & Governance](/info/adoption-governance.html).
-- **Guard-rails zijn structureel.** Merkbeperkingen zijn hard-coded in templates, niet gepubliceerd als richtlijnen die mensen kunnen negeren. De verkeerde output wordt niet afgeraden - ze is onvoorstelbaar.
+- **De configuratie is van jou.** De engine en shells zijn open source (MPL-2.0). Voeg je eigen auth, telemetrie of CA toe; host het of niet; jij hebt volledige controle over functies en kosten, git-tracked, niet vastgezet in een SaaS-database.
+- **Governance kan data zijn, geen dashboard.** Als je die controle wilt, beheer je de toolcatalogus als een Git-repository - pull-requestreview wordt merkgoedkeuring, met een volledig audittrail en directe rollback van elk sjabloon dat je medewerkers kunnen aanraken. Het is een optie, geen verplichting, en het hoort bij precies één bureau: makers werken volledig in de app, slaan wat ze maken op als een **sessie** en geven het door als een deellink, een back-up of een live samenwerking - niets daarvan heeft git nodig. Wanneer een van die sessies het verdient om een permanent startpunt te worden, opent wie de implementatie beheert de link, legt de waarden ervan vast als een **sjabloon** op die tool in het merkpakket en committeert. Vanaf dat moment verschijnt het in de "New from template"-kiezer van de tool en is het deep-linkbaar als `?template=<id>`. Git is de vergrendelingsstap van de beheerder, eenmalig gebruikt, en nooit iets waar een maker zelf aan hoeft te komen. Zie [Adoptie & governance](/info/adoption-governance.html).
+- **Guard-rails zijn structureel.** Merkbeperkingen zijn hardgecodeerd in sjablonen, niet gepubliceerd als richtlijnen die mensen kunnen negeren. De verkeerde output wordt niet afgeraden - hij is onmogelijk om te representeren.
 
 > **Jij bestuurt de hele estafette.** Een creative stelt de regels op en een developer schaalt ze, maar het is de operator die die levenscyclus veilig maakt om organisatiebreed te draaien - dezelfde tool waarmee een vertegenwoordiger zichzelf kan bedienen in een vliegtuig, kun je afschermen via Git-review, uitrollen via jouw MDM en cryptografisch verifiëren. Zie hoe de rollen zich opstapelen in [De levenscyclus van een campagne](/info/overview.html#the-lifecycle-of-a-campaign), en hoe je het bestuurt in [Adoptie & Governance](/info/adoption-governance.html).
 
@@ -50,7 +50,7 @@ Krimp een te grote PDF on-device, zodat niemand naar een website van derden voor
 
 Dit zijn allemaal on-device transformaties: jouw bestand of data gaat erin, opgeschoonde bytes komen eruit en **er is geen server om naar te uploaden**. Ze zijn het bewuste tegenovergestelde van de typische "upload je bestand naar de website van een vreemde om het te reinigen"-tool waar een goedbedoelende medewerker anders naar grijpt.
 
-![Strip Hidden Data: het bestand landt op het canvas en het label vermeldt duidelijk dat er niets wordt geüpload](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
+![Strip Hidden Data: het bestand komt op het canvas terecht en het label stelt duidelijk dat er niets wordt geüpload](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
 
 Text Helper is dezelfde deal voor tekst in plaats van bestanden. Het is de werkbank met tabbladen die een medewerker anders op de site van een vreemde zou gaan zoeken, en hij geeft helemaal geen invoer op omdat niets wat hij aanraakt de pagina ooit verlaat.
 
@@ -69,7 +69,7 @@ Elke tool-invoer is uit te drukken als een URL-parameter, en dezelfde invoer pro
 
 Prompt to Image is determinisme op zijn eenvoudigst: de tekst is de hele invoer, de gezette afbeelding is de hele uitvoer en dezelfde tekst zet altijd op dezelfde manier.
 
-![Prompt to Image - een blok prompttekst gezet in een vierkante afbeelding, zonder iets in het resultaat dat niet in de invoer zat](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - een blok prompttekst gezet in een vierkante afbeelding, waarbij niets in het resultaat staat dat niet ook in de invoer stond](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## Herkomst & Content Credentials
 
@@ -108,6 +108,10 @@ Een paar dingen die het waard zijn helder te hebben voordat je het uitrolt:
 - **Tool-hooks zijn *geen* security sandbox.** De optionele `hooks.js` van een tool draait met de host-bridge geïnjecteerd, maar in een browsershell voert hij uit in het realm van de pagina en *kan* `window`/`document`/`fetch` bereiken. Behandel toolcode zoals je elke code behandelt die je uitvoert - review hem. Dit is waarom een organisatie die een gedeelde catalogus draait, die kan afschermen via Git-review; hoe dan ook, draai alleen tools die je hebt gereviewd totdat Worker-isolatie verschijnt.
 - **Content Credentials zijn tamper-evident.** Ze detecteren manipulatie in plaats van die te voorkomen - zie de interoperabiliteitsopmerkingen hierboven.
 - **Twee versleutelingsniveaus.** *Standaard*-vergrendelingen zijn snelle, universele afschrikkingen; *Sterk* (AES-256) is volledige bescherming - grijp naar Sterk voor alles wat gevoelig is, met de kanttekening dat het een moderne reader vereist.
+
+## Standalone, of beheerd door een control plane
+
+Twee vormen, en je kiest per implementatie. **Standalone is de standaard en heeft geen server nodig:** Lolly rendert on-device, elke maker werkt in de app, en de git-as-data governance hierboven is volledig optioneel - één organisatie kan deze repo draaien zonder ook maar iets te hosten. **Wil je organisatiebrede controle, voeg dan een control plane toe.** [lolly.work](https://lolly.work) is een aparte, open source (MPL-2.0) dienst die je zelf host - of evalueert op de gehoste sandbox - die de shell live bestuurt: SSO-gated aanmelding, feature-flag- / export- / watermerkbeleid, tool-inputoverlays, catalogusfederatie, goedkeuringen en een hash-chained auditlog, allemaal aan de shell geleverd zonder dat hier iets aan de code hoeft te veranderen. Het is merkagnostisch (configuratie plus een pack mount), gebruikt de engine en packs van deze repo ongewijzigd, en wordt nooit het renderpad: Lolly rendert nog steeds on-device, door ontwerp. OSS = individuele vrijheid; OSS + control plane = organisatorische vrijheid.
 
 ## Waar je hierna heen kunt
 

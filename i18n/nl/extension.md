@@ -2,7 +2,7 @@
 
 Met de extensie **Lolly URL Screenshot** kan de webapp elke webpagina vanuit je browser fotograferen. Zonder de extensie heb je voor het vastleggen van een URL de desktopapp nodig - een browserpagina kan namelijk niet zelf pixels van een andere site lezen. De extensie kan dat wel, met dezelfde capture die de desktopapp gebruikt.
 
-Met dezelfde machinerie doet hij nog één andere taak: het lezen van één pagina die jij aanwijst, zodat Brand Studio een merk van een live website kan afleiden. Beide worden hieronder behandeld.
+Het doet nog één andere taak op dezelfde manier: een enkele pagina lezen die jij aanwijst, zodat Brand Studio een merk uit een live website kan halen. Beide worden hieronder behandeld.
 
 Hij werkt op Chromium-gebaseerde browsers: **Chrome, Edge, Brave, Arc, Opera** - Chrome 111 of nieuwer.
 

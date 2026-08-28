@@ -65,7 +65,7 @@ Lolly 划的是同一条线。以概率的方式探索:一个模型、一位设�
 
 第二步中提到的“新图表”,就是像下面这样的渲染结果 - 由一段数据字符串和几个参数生成,全程没有任何人打开设计文件:
 
-![一张带标题的堆叠面积图,三个系列以冷色调色板分区,坐标轴、图例和标题均由模板自动排布而非手工放置](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![一张带标题的堆叠面积图,三个数据系列以冷色调分层显示,坐标轴、图例和标题均由模板自动排布,而非手动放置](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 重点不在于 Lolly 对设计师好用,*而且*对开发者好用,*而且*对销售也好用,三者各自孤立。它是一场**接力赛**:创意人员的初始工作被开发者放大规模,进而赋能制作者。飞机上那位非技术背景代表所体验到的毫不费力,*之所以可能*,正是因为设计师定下了严谨标准,开发者又将其部署落地。
 
@@ -83,7 +83,7 @@ Lolly 划的是同一条线。以概率的方式探索:一个模型、一位设�
 - <!--i:code--> **一位开发者,从命令行。** CLI 以无界面方式运行*同一个*引擎和*同一条*渲染路径,因此该工具可以在脚本或夜间流水线中依次处理全部 10,000 行数据。循环中的一句 `lolly <tool> --field=…` 调用就是全部集成工作。
 - <!--i:cpu--> **一个系统或一个 AI 代理,通过 MCP。** 同一个工具以编程方式运行,保真度相同,规模甚至更大 - 因为当成千上万个文件持续涌入时,机器不会感到厌倦。
 
-![全新安装状态下的批量模式:一行空白等待选择工具,整个表格界面和 Render 按钮在任何数据到来之前就已就绪](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+![全新安装下的批量模式:一行空白等待选择工具,整个表格界面及其 Render 按钮在任何数据到来之前就已就绪](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
 
 一套由设计师一次性定下的品牌约束;三条通往同一份预先获批产出的路径 - 而机器路径的规模化能力最强,因为文件源源不断涌入时它永不疲倦。
 
@@ -248,7 +248,7 @@ web 宿主是基于单一布局的响应式设计。桌面端上,工具由一个
 
 同一个工具在手机宽度下,无需维护第二套布局:控件变成顶部的面板,预览占据整个屏幕,渲染按钮悬浮其上。
 
-![430px 宽屏幕上的音频图 - 上方是控件面板,下方是完成的方形作品,渲染按钮悬浮其上](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![430px 宽屏幕上的 Audiogram——上方是控制面板,下方是成品方形作品,还有浮动的渲染按钮](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **批处理模式(`/pro`)。** Web 端还提供一个电子表格式的批处理网格(`shells/web/src/pro/`),可跨一个或多个工具一次渲染多行。它支持 CSV/TSV 往返导入导出以及电子表格粘贴、按行设置模板/格式/尺寸/单位/dpi、带实时预览的区块编辑器侧边栏、可折叠的导出列、按行的"相关性"标签栏、左侧拖拽手柄行重排、两步删除确认、已保存的批处理会话和 `.zip` 下载。这就是"批量内容生成"定位背后的一对多界面。
 
@@ -285,7 +285,7 @@ CLI 的交互式对应物:一个全屏、以键盘为先的终端应用(基于 I
 | 类别 | 示例 | 计划中 |
 |---|---|---|
 | `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
-| `designer` | Brand Lockup, Design, Chart Creator, D3 Chart Studio, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `designer` | Brand Lockup, Design, Chart, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
 | `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Unit/format converters, more on-device privacy utilities |
@@ -343,14 +343,14 @@ Web 和 Tauri 应用在启动时从已知 URL 拉取工具和资产目录,将其
 
 这里列出少数几个代表性接口,展示其覆盖范围 - [Host API](/info/host-api.html) 记录了每一个,`packages/core/src/host-v1.ts` 就是契约本身:
 
-| 接口 | 起始版本 | 新增内容 |
+| 接口 | 起始版本 | 提供的功能 |
 |---|---|---|
-| `host.tokens` | 1.0 | DTCG 设计令牌 - 品牌自己的原语 |
+| `host.tokens` | 1.0 | DTCG 设计令牌——品牌自身的基础元素 |
 | `host.text` | 1.0 | 通过 HarfBuzz WASM 实现文本转路径(`wasm` 能力标记依赖它的工具) |
-| `host.media` | 1.4 | 驱动 `onFrame` 钩子的实时摄像头帧。渐进增强,刻意*不*受 `camera` 标志限制 - 这类工具依然可以当作普通静态图片工具使用 |
-| `host.color` | 1.40 | 感知色彩数学:ΔEOK、WCAG + APCA 对比度、OKLab 渐变阶梯、分级断点、分类调色板、和声配色方案(1.60)、CSS Color 4 混色以及渐变烘焙(1.68)。纯函数且同步 - 各端接入的是引擎的 `makeColorApi()`,而不是各自实现,因此不会产生偏差 |
-| `host.images` | 1.60 | 在设备上解码/缩放/重新编码字节 - 即转换路径(HEIC → JPEG、压缩为 WebP、缩小尺寸)。在 Web 端以惰性 facade 形式发布,因此 HEIC 解码器永远不会进入启动分块 |
-| `host.geom` | 1.64 | 精确的矢量几何:路径布尔运算、偏移、描边转填充、样条降阶、简化、命中测试。同样是纯函数、同步,并从引擎接入(`makeGeomApi()`);失败会被*返回*,从不抛出异常 |
+| `host.media` | 1.4 | 驱动 `onFrame` 钩子的实时摄像头帧。属于渐进增强,特意*不*受 `camera` 标志门控——这类工具在没有摄像头时仍能作为普通静态图像工具正常工作 |
+| `host.color` | 1.40 | 感知色彩数学:ΔEOK、WCAG + APCA 对比度、OKLab 渐变、分级断点、分类调色板、和谐配色方案(1.60)、CSS Color 4 混色与渐变烘焙(1.68)。纯函数且同步——外壳只需接入引擎的 `makeColorApi()`,无需自行实现任何逻辑,因此不会产生偏差 |
+| `host.images` | 1.60 | 在设备端解码 / 缩放 / 重新编码字节——即转换路径(HEIC → JPEG、压缩为 WebP、降采样)。在 Web 外壳中以惰性门面(lazy facade)形式提供,因此 HEIC 解码器永远不会进入启动分块 |
+| `host.geom` | 1.64 | 精确的矢量几何运算:路径布尔运算、偏移、描边转填充、样条降阶、简化、命中检测。同样是纯函数、同步,并从引擎接入(`makeGeomApi()`);失败情况会被*返回*,而不是被抛出 |
 
 其余接口遵循相同的规则,并与之一并记录:`pdf`(1.8)和 `pptx`(1.58)用于本地设备文档处理,`audio`(1.71)和 `speech`(1.96)用于片段分析和本地设备 TTS/转录,`viz`(1.72)用于 MilkDrop 占位契约,`codec`(1.100)和 `layers`(1.102)用于深位色和分层位图输出,`upscale`(1.101)和 `matte`(1.103)用于本地设备模型,`raster`(1.105)供自行处理像素的 hooks 使用,`connectors`(1.106)用于导出安全的箭头,`c2pa`(1.85)用于对最终字节签名。数量在增长;规则不会变。
 

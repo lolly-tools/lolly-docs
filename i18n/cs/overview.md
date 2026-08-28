@@ -66,7 +66,7 @@ Nejjasnější způsob, jak vidět, co Lolly je, není seznam funkcí - je to sl
 
 "Nový graf" ve druhém kroku je render jako tento, vytvořený z datového řetězce a hrstky parametrů, aniž by kdokoli otevřel designový soubor:
 
-![Skládaný plošný graf s titulkem, jeho tři řady v chladné paletě s osami, legendou a titulkem umístěnými šablonou, ne ručně](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![Skládaný plošný graf s titulkem, jehož tři řady jsou v chladné paletě, s osami, legendou a titulkem rozmístěnými šablonou, a ne ručně](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 Smysl není v tom, že Lolly je dobrá pro designéry *a* dobrá pro vývojáře *a* dobrá pro obchod, každého zvlášť ve vakuu. Je to **štafeta**: počáteční práci kreativce škáluje vývojář, což zase posiluje producenta. Bezproblémový zážitek pro netechnického zástupce v letadle je vůbec *možný* jen díky rigoróznosti, kterou nastavil designér a nasadil vývojář.
 
@@ -84,7 +84,7 @@ Stejný deterministický nástroj dosahuje toho škálování třemi způsoby, v
 - <!--i:code--> **Vývojář, z příkazové řádky.** CLI spouští *stejný* engine a *stejnou* renderovací cestu bez hlavičky, takže nástroj lze provést sekvenčně přes všech 10 000 řádků ve skriptu nebo nočním pipeline. Volání `lolly <tool> --field=…` ve smyčce je celá integrace.
 - <!--i:cpu--> **Systém nebo AI agent, přes MCP.** Stejný nástroj ovládaný programaticky, se stejnou věrností a ještě větším měřítkem - protože stroj se nenudí, zatímco přicházejí tisíce souborů.
 
-![Dávkový režim na čerstvé instalaci: jeden prázdný řádek čekající na nástroj, s celou plochou tabulky a tlačítkem Render připraveným ještě před příchodem jakýchkoli dat](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+![Dávkový režim při čerstvé instalaci: jeden prázdný řádek čekající na nástroj, s celou plochou tabulky a tlačítkem Render už na místě, než dorazí jakákoli data](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
 
 Jedna sada brand omezení, jednou pevně stanovená designérem; tři cesty ke stejnému předem schválenému výstupu - a strojová cesta škáluje nejdál ze všech, protože se nikdy neunaví, zatímco soubory přicházejí.
 
@@ -249,7 +249,7 @@ Webový shell je responzivní z jednoho layoutu. Na desktopu je nástroj měnite
 
 Stejný nástroj na šířku telefonu, bez druhého layoutu k udržování: ovládání se stává listem nahoře, náhled zabírá celou obrazovku a pilulka renderu se nad ním vznáší.
 
-![Audiogram na obrazovce široké 430px - list s ovládáním nahoře, hotové čtvercové dílo dole a plovoucí pilulka renderu](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![Audiogram na obrazovce o šířce 430 px - list ovládacích prvků nahoře, hotová čtvercová grafika dole a plovoucí pilulka renderování](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **Dávkový režim (`/pro`).** Webový shell dodává i dávkovou mřížku ve stylu tabulky (`shells/web/src/pro/`), která vykresluje mnoho řádků najednou napříč jedním nebo více nástroji. Zvládá roundtrip CSV/TSV plus vkládání z tabulek, šablonu/formát/velikost/jednotku/dpi na řádek, boční panel editoru bloků s živým náhledem, sbalitelné exportní sloupce, lištu tagů "relevance" na řádek, přeuspořádání řádků tažením za levý úchyt, dvoukrokové potvrzení smazání, uložené dávkové relace a stažení `.zip`. Toto je povrch jeden-k-mnoha za pozicováním "hromadné generování obsahu".
 
@@ -286,10 +286,10 @@ Nástroje jsou ve svém manifestu označeny `category` pro seskupení v galerii.
 | Kategorie | Příklady | Plánováno |
 |---|---|---|
 | `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
-| `designer` | Brand Lockup, Design, Chart Creator, D3 Chart Studio, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `designer` | Brand Lockup, Design, Chart, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Unit/format converters, more on-device privacy utilities |
+| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Převodníky jednotek/formátů, další nástroje pro soukromí fungující na zařízení |
 
 Tyto buňky jsou **příklady, ne úplný výčet**. Které nástroje existují, je vlastnost namontovaného profilu, ne této stránky: brand pack přidává vlastní nástroje a může vyloučit komunitní nástroj, který dodávat nechce. `catalog/tools/index.json` - generovaný z manifestů, a registr, který galerie skutečně čte - je autoritativní seznam; chceš-li spočítat, co profil namontuje, spočítej manifesty (`ls community/*/tool.json brands/*/tools/*/tool.json`), místo abys věřil číslu zapsanému zde. (Id nástroje přítomné ve dvou packech se namontuje jednou, z vítězného packu.)
 
@@ -344,14 +344,14 @@ Volitelné, přídavné plochy se objeví jen tehdy, když je shell poskytne. N�
 
 Několik hlavních ploch pro ilustraci, co to pokrývá - [Host API](/info/host-api.html) dokumentuje každou z nich a `packages/core/src/host-v1.ts` je samotná smlouva:
 
-| Plocha | Od verze | Co přidává |
+| Rozhraní | Od verze | Co přidává |
 |---|---|---|
-| `host.tokens` | 1.0 | Designové tokeny DTCG - vlastní primitiva brandu |
-| `host.text` | 1.0 | Text-na-cestu přes HarfBuzz WASM (příznak schopnosti `wasm` označuje nástroje, které na tom závisí) |
-| `host.media` | 1.4 | Živé snímky z kamery řídící hook `onFrame`. Postupné vylepšení, záměrně *neřízené* příznakem `camera` - takový nástroj stále funguje jako běžný nástroj na statický obrázek |
-| `host.color` | 1.40 | Percepční barevná matematika: ΔEOK, kontrast WCAG + APCA, rampy OKLab, dělení do tříd, kategorické palety, harmonická schémata (1.60), míchání CSS Color 4 a pečení přechodů (1.68). Čisté a synchronní - shelly připojují enginový `makeColorApi()`, místo aby cokoli implementovaly samy, takže to nemůže odchylovat |
-| `host.images` | 1.60 | Dekódování / změna velikosti / překódování bajtů na zařízení - konverzní cesta (HEIC → JPEG, komprese do WebP, zmenšení). Ve webovém shellu dodáno jako líný (lazy) fasádní modul, takže dekodér HEIC nikdy nepřistane v boot chunku |
-| `host.geom` | 1.64 | Přesná vektorová geometrie: booleovské operace nad cestami, offsetování, stroke-to-fill, snížení řádu spline, zjednodušení, testování zásahu. Také čisté, synchronní a připojené z enginu (`makeGeomApi()`); selhání se *vracejí*, nikdy se nevyhazují |
+| `host.tokens` | 1.0 | Designové tokeny DTCG - vlastní primitiva značky |
+| `host.text` | 1.0 | Převod textu na cestu přes HarfBuzz WASM (schopnostní flag `wasm` označuje nástroje, které na tom závisí) |
+| `host.media` | 1.4 | Živé snímky z kamery pohánějící hook `onFrame`. Postupné vylepšení, záměrně *ne* podmíněné flagem `camera` - takový nástroj dál funguje jako obyčejný nástroj pro statické obrázky |
+| `host.color` | 1.40 | Percepční matematika barev: ΔEOK, kontrast WCAG + APCA, rampy OKLab, dělení do tříd, kategorické palety, harmonická schémata (1.60), míchání CSS Color 4 a pečení gradientů (1.68). Čisté a synchronní - shelly připojují `makeColorApi()` jádra místo toho, aby cokoli implementovaly, takže to nemůže rozjet |
+| `host.images` | 1.60 | Dekódování / změna velikosti / překódování bajtů na zařízení - cesta konverze (HEIC → JPEG, komprese do WebP, zmenšení). Dodáváno ve webovém shellu jako líný fasádový modul, takže se dekodér HEIC nikdy nedostane do startovacího balíčku |
+| `host.geom` | 1.64 | Přesná vektorová geometrie: booleovské operace nad cestami, offsetování, převod obrysu na výplň, snížení splajnů, zjednodušení, testování zásahů. Také čisté, synchronní a připojené z jádra (`makeGeomApi()`); chyby se *vracejí*, nikdy se nevyhazují |
 
 Zbytek se řídí stejnými pravidly a je zdokumentován vedle nich: `pdf` (1.8) a `pptx` (1.58) pro chirurgii dokumentů na zařízení, `audio` (1.71) a `speech` (1.96) pro analýzu klipů a TTS/přepis na zařízení, `viz` (1.72) pro zástupnou smlouvu MilkDrop, `codec` (1.100) a `layers` (1.102) pro hloubkově-bitový a vrstvený bitmapový výstup, `upscale` (1.101) a `matte` (1.103) pro modely na zařízení, `raster` (1.105) pro hooky dělající vlastní pixelovou práci, `connectors` (1.106) pro exportu-bezpečné šipky a `c2pa` (1.85) pro podepisování hotových bajtů. Počet roste; pravidla ne.
 

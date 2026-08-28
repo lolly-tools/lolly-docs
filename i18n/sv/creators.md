@@ -100,14 +100,24 @@ det är aldrig en platt bild.
 Avancerade filter, sammansättning, animation, live-kameraeffekter, generativ design -
 varje webbteknik är tillgänglig för en mallskapare, så taket är högt.
 
-![Mesh Gradients output - ett generativt fält av mjuk färg byggt helt från ditt varumärkes palett-tokens](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+![Mesh Gradients utdata - ett genererat fält av mjuk färg helt uppbyggt av ditt varumärkes palettoken](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
+
+### Odlat, inte ritat
+
+**Growth** odlar bilden istället för att rita den: ett fröbaserat system sprider ut sig från en ring, en linje, dina egna ord eller din logotyp tills det fyller ramen, i din palett. Samma frö odlar alltid samma verk, så en länk återskapar det exakt. Det som kommer ut är vanlig SVG-geometri snarare än en bild av en ritning, så det går att skriva ut, plotta och skära - och samma design animeras från det första fröet till den färdiga formen som video.
+
+![Growths standardblomning - ett tätt fält av slingrande varumärkesfärgade linjer odlade ut från en ring, varje linje en riktig SVG-bana](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
+### Rörelse som svarar mot musiken
+
+**Synth** löser ett vätskefält på grafikkortet och målar det i dina färger. Ge det ett spår och fältet rör sig med ljudet; det exporteras som en MP4, WebM, GIF eller animerad PNG-loop som fogas samman sömlöst ände mot ände, renderad bildruta för bildruta från en driven klocka snarare än inspelad från skärmen - så rörelsen glider aldrig ur takt med ljudspåret, och samma länk renderar samma klipp i valfri längd.
+
+![En bildruta ur Synths bläckscen - ett mörkt vätskefält belyst i varumärkets gröna nyanser, fångat mitt i en virvel](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 Skapa *verktyg*, inte filer: bygg det som genererar 10 000 kort istället för att göra 10 000
 kort för hand. Lås det som inte ska ändras; exponera bara det som är tänkt att variera.
 
 ## Detaljer du kommer att märka
-
-![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
 
 - **Tryck, gjort rätt.** Riktiga fysiska enheter (mm/cm/in/pt) och DPI, utfall och skärmärken, CMYK och PDF/X-4-utdataavsikt - ett tryckeri får exakt det de behöver. Se [Exportera](/info/exporting.html#size-print-units).
 - **Video och rörelse.** Exportera WebM/MP4 (med ljudspår), animerad PNG/WebP och animerad SVG - från samma mall som skapar dina stillbilder. **Sequence Studio** går längre: en riktig tidslinje under duken, med en magnetisk rad av klipp, fria overlay-spår, trimning och delning, övergångsförinställningar, voiceover-inspelning och en musikmix - renderad ut som MP4, WebM, GIF eller APNG av en deterministisk kompositör snarare än en skärminspelning. Lottie-filer kommer *in* som animerade tillgångar och renderas ut till valfritt av dessa format. Ovanför klippen finns **keyframes**: posera en box i ett ögonblick, lyft den från sidan med riktigt djup och flyg en kamera över resultatet. Se [Använda Lolly → Tidslinje](/info/using.html#timeline-sequence-studio) och [Animera](/info/animating.html).
@@ -119,8 +129,6 @@ kort för hand. Lås det som inte ska ändras; exponera bara det som är tänkt 
 - **Ett lugnare gränssnitt när du vill ha det.** Fyra reglage under **Profil → Tillgänglighet** - *Minska rörelse*, *Dölj färgstarka förhandsvisningar*, *Hög kontrast* och *Stor text* - lugnar ner appen kring ditt arbete. Var och en är avstängd tills du slår på den, och ingen av dem rör din duk eller flyttar en pixel av det du exporterar. Se [Din profil → Tillgänglighet](/info/profile.html#accessibility).
 
 ## Få ut det mesta av det
-
-![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[Snabbstart](/info/quickstart.html)** - varumärke in, första fil ut.
 - **[Varumärkesstudion](/info/brand-studio.html)** - forma dina loggor, färger, typsnitt och tokens (`#/start`).

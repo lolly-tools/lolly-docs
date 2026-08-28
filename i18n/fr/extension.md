@@ -2,7 +2,7 @@
 
 L'extension **Lolly URL Screenshot** permet à l'appli web de capturer n'importe quelle page web depuis ton navigateur. Sans elle, capturer une URL nécessite l'appli de bureau - une page de navigateur ne peut pas lire les pixels d'un autre site par elle-même. L'extension le peut, en utilisant la même capture que l'appli de bureau.
 
-Elle accomplit une autre tâche avec la même mécanique : lire une seule page que tu désignes pour que Brand Studio puisse en extraire une marque à partir d'un site en ligne. Les deux sont couvertes ci-dessous.
+Il fait un autre travail de la même façon : lire une seule page que tu nommes pour que Brand Studio puisse extraire une marque d'un site web en direct. Les deux sont couverts ci-dessous.
 
 Elle fonctionne sur les navigateurs basés sur Chromium : **Chrome, Edge, Brave, Arc, Opera** - Chrome 111 ou plus récent.
 

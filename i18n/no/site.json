@@ -58,6 +58,7 @@
   "Formats": "Formater",
   "Everywhere": "Overalt",
   "FAQ": "FAQ",
+  "Make it yours": "Gjør det til ditt eget",
   "Lolly opens {in} kinds of file and makes {out}, and {both} of them go both ways.": "Lolly åpner {in} filtyper og lager {out}, og {both} av dem går begge veier.",
   "See everything Lolly can open and make": "Se alt Lolly kan åpne og lage",
   "Already have designs? They aren't stranded - bring Figma, Penpot, Illustrator, InDesign or any SVG.": "Har du design fra før? De er ikke strandet - ta med Figma, Penpot, Illustrator, InDesign eller hvilken som helst SVG.",
@@ -76,6 +77,10 @@
   "Free, no account": "Gratis, ingen konto",
   "What Lolly supports": "Hva Lolly støtter",
   "Everything happens on your device, so it works with the Wi-Fi off.": "Alt skjer på enheten din, så det virker med Wi-Fi avslått.",
+  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "Konverteringen flytter beskrivelsen, forfatteren, opphavsretten og opptaksdatoen inn i den nye filen. Posisjon blir igjen med mindre du slår det på, og en Content Credential kan ikke kopieres: den er bundet til de opprinnelige bytene.",
+  "Every table in the font, its name and licence records included, passes through untouched.": "Hver tabell i skriften, inkludert navne- og lisensoppføringene, føres videre uendret.",
+  "Nothing embedded carries over: the new file is written fresh with Lolly\\'s own details, and your original keeps its own.": "Ingenting innebygd føres videre: den nye filen skrives fra bunnen av med Lollys egne opplysninger, og originalen din beholder sine egne.",
+  "What carries over": "Hva som føres videre",
   "Convert": "Konverter",
   "What goes in": "Hva som går inn",
   "What comes out": "Hva som kommer ut",
@@ -202,9 +207,5 @@
   "Parser Inventory": "Parseroversikt",
   "Server Surface": "Serverens angrepsflate",
   "Generated once, rendered the same": "Generert én gang, rendret likt",
-  "AI marking and the EU AI Act": "AI-merking og EUs AI-forordning",
-  "What carries over": "Hva som følger med",
-  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "Konvertereren tar med beskrivelse, opphavsperson, opphavsrett og opptaksdato til den nye filen. Posisjonen blir igjen med mindre du slår den på, og en Content Credential kan ikke kopieres: den er bundet til de opprinnelige bytene.",
-  "Every table in the font, its name and licence records included, passes through untouched.": "Hver tabell i skriften, inkludert navne- og lisensdataene, følger med uendret.",
-  "Nothing embedded carries over: the new file is written fresh with Lolly's own details, and your original keeps its own.": "Ingenting innebygd følger med: den nye filen skrives fra bunnen med Lollys egne opplysninger, og originalen din beholder sine."
+  "AI marking and the EU AI Act": "AI-merking og EUs AI-forordning"
 }

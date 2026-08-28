@@ -54,11 +54,21 @@ Zaawansowane filtry, kompozycja, animacja, efekty kamery na żywo, projektowanie
 
 ![Wynik Mesh Gradient - generatywne pole miękkiego koloru zbudowane w całości z tokenów palety Twojej marki](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
 
+### Wyhodowane, nie narysowane
+
+**Growth** hoduje obraz zamiast go rysować: system oparty na ziarnie rozrasta się z pierścienia, linii, Twoich własnych słów lub Twojego logo, aż wypełni kadr, w Twojej palecie. To samo ziarno zawsze hoduje to samo dzieło, więc link odtwarza je dokładnie. To, co powstaje, to zwykła geometria SVG, a nie obraz rysunku, więc da się to drukować, plotować i wycinać - a ten sam projekt animuje się od pierwszego ziarna do gotowej formy jako wideo.
+
+![Domyślny rozkwit Growth - gęste pole pętli linii w kolorach marki, wyhodowanych z pierścienia, gdzie każda linia to prawdziwa ścieżka SVG](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
+
+### Ruch, który odpowiada muzyce
+
+**Synth** rozwiązuje pole płynów na karcie graficznej i maluje je w Twoich kolorach. Podaj mu utwór, a pole porusza się w rytm dźwięku; eksportuje się jako MP4, WebM, GIF lub zapętlony animowany PNG, który łączy się czysto od początku do końca, renderowany klatka po klatce z napędzanego zegara, a nie nagrywany z ekranu - dzięki czemu ruch nigdy nie rozjeżdża się ze ścieżką dźwiękową, a ten sam link renderuje ten sam klip w dowolnej długości.
+
+![Klatka ze sceny \"ink\" w Synth - ciemne pole płynów oświetlone zieleniami marki, uchwycone w połowie wiru](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
+
 Twórz *narzędzia*, nie pliki: zbuduj coś, co generuje 10 000 kart, zamiast tworzyć 10 000 kart ręcznie. Zablokuj to, co nie powinno się zmieniać; udostępniaj tylko to, co ma się różnić.
 
 ## Szczegóły, które zauważysz
-
-![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
 
 - **Druk zrobiony jak trzeba.** Prawdziwe jednostki fizyczne (mm/cm/in/pt) i DPI, spady i znaczniki cięcia, CMYK oraz output-intent PDF/X-4 - drukarnia dostaje dokładnie to, czego potrzebuje. Zobacz [Eksportowanie](/info/exporting.html#size-print-units).
 - **Wideo i ruch.** Eksport WebM/MP4 (ze ścieżkami audio), animowanego PNG/WebP i animowanego SVG - z tego samego szablonu, który tworzy twoje statyczne obrazy. **Sequence Studio** idzie dalej: prawdziwa oś czasu pod płótnem, z magnetycznym rzędem klipów, wolnymi ścieżkami nakładek, przycinaniem i dzieleniem, gotowymi przejściami, nagrywaniem lektora i miksem muzycznym - renderowane jako MP4, WebM, GIF lub APNG przez deterministyczny kompozytor, a nie nagranie ekranu. Pliki Lottie *wchodzą* jako animowane zasoby i renderują się do dowolnego z tych formatów. Nad klipami znajdują się **klatki kluczowe**: ustaw pozycję ramki w jednej chwili, unieś ją nad stronę z prawdziwą głębią i przelot kamerą nad wynikiem. Zobacz [Using Lolly → Timeline](/info/using.html#timeline-sequence-studio) i [Animowanie](/info/animating.html).
@@ -70,8 +80,6 @@ Twórz *narzędzia*, nie pliki: zbuduj coś, co generuje 10 000 kart, zamiast tw
 - **Spokojniejszy interfejs, kiedy tego chcesz.** Cztery przełączniki w **Profile → Accessibility** - *Reduce motion*, *Hide colourful previews*, *High contrast* i *Large text* - dostosowują aplikację do twojej pracy. Każdy jest domyślnie wyłączony, dopóki go nie włączysz, i żaden z nich nie dotyka twojego płótna ani nie przesuwa piksela w eksportowanym pliku. Zobacz [Twój profil → Dostępność](/info/profile.html#accessibility).
 
 ## Wykorzystaj to w pełni
-
-![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
 
 - **[Szybki start](/info/quickstart.html)** - marka na wejściu, pierwszy plik na wyjściu.
 - **[Brand Studio](/info/brand-studio.html)** - kształtuj swoje logo, kolory, typografię i tokeny (`#/start`).

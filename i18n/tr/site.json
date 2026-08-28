@@ -58,6 +58,7 @@
   "Formats": "Formatlar",
   "Everywhere": "Her yerde",
   "FAQ": "SSS",
+  "Make it yours": "Kendine özgü yap",
   "Lolly opens {in} kinds of file and makes {out}, and {both} of them go both ways.": "Lolly {in} tür dosyayı açar ve {out} tür üretir; bunların {both} tanesi iki yönde de çalışır.",
   "See everything Lolly can open and make": "Lolly'nin açabildiği ve üretebildiği her şeyi gör",
   "Already have designs? They aren't stranded - bring Figma, Penpot, Illustrator, InDesign or any SVG.": "Hazır tasarımların mı var? Elde kalmazlar - Figma, Penpot, Illustrator, InDesign ya da herhangi bir SVG getir.",
@@ -76,6 +77,10 @@
   "Free, no account": "Ücretsiz, hesap yok",
   "What Lolly supports": "Lolly neleri destekler",
   "Everything happens on your device, so it works with the Wi-Fi off.": "Her şey cihazında olur, bu yüzden Wi-Fi kapalıyken de çalışır.",
+  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "Dönüştürücü, açıklamayı, yazarı, telif hakkını ve çekim tarihini yeni dosyaya taşır. Konum, sen açmadıkça geride kalır ve bir Content Credential kopyalanamaz: orijinal baytlara bağlıdır.",
+  "Every table in the font, its name and licence records included, passes through untouched.": "Yazı tipindeki her tablo, adı ve lisans kayıtları dahil, değişmeden geçer.",
+  "Nothing embedded carries over: the new file is written fresh with Lolly\\'s own details, and your original keeps its own.": "Hiçbir gömülü bilgi taşınmaz: yeni dosya, Lolly'nin kendi bilgileriyle sıfırdan yazılır ve orijinalin kendi bilgilerini korur.",
+  "What carries over": "Ne taşınır",
   "Convert": "Dönüştür",
   "What goes in": "Ne girer",
   "What comes out": "Ne çıkar",
@@ -202,9 +207,5 @@
   "Parser Inventory": "Ayrıştırıcı Envanteri",
   "Server Surface": "Sunucu Yüzeyi",
   "Generated once, rendered the same": "Bir kez üretilir, hep aynı işlenir",
-  "AI marking and the EU AI Act": "Yapay zeka işaretleme ve AB Yapay Zeka Yasası",
-  "What carries over": "Neler aktarılır",
-  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "Dönüştürücü açıklamayı, yazarı, telif hakkını ve çekim tarihini yeni dosyaya taşır. Konum, siz açmadıkça geride kalır ve bir Content Credential kopyalanamaz: özgün baytlara bağlıdır.",
-  "Every table in the font, its name and licence records included, passes through untouched.": "Yazı tipindeki her tablo, ad ve lisans kayıtları dahil, olduğu gibi aktarılır.",
-  "Nothing embedded carries over: the new file is written fresh with Lolly's own details, and your original keeps its own.": "Gömülü hiçbir şey aktarılmaz: yeni dosya Lolly'nin kendi bilgileriyle sıfırdan yazılır, özgün dosyanız kendi bilgilerini korur."
+  "AI marking and the EU AI Act": "Yapay zeka işaretleme ve AB Yapay Zeka Yasası"
 }

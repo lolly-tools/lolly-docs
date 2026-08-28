@@ -2,14 +2,14 @@
 
 *Son güncelleme: 11 Ağustos 2026*
 
-> **Açık söylemek gerekirse.** Lolly'de oluşturduğun belgeler, görseller, videolar ve
-> dosyalar kendi cihazında kalır. Sıradan kullanım için hesap yoktur, uygulamanın
-> kendisinden gelen çerez yoktur ve kod tabanının hiçbir yerinde analiz veya
-> izleyici yoktur - "verileri kullanmıyoruz" değil, kaynak kodda gerçekten yok.
-> Yazılımın ağa hiç dokunduğu yerlerde kısa ve eksiksiz bir istisna listesi vardır
-> ve bunların her biri aşağıda somut biçimde açıklanır: neyin, kime ve ne zaman
-> gittiği. Kişisel herhangi bir şey içeren tek istisna, senin açıkça başlatman
-> gereken bir oturum açma işlemidir. Bu belgede yoksa, gerçekleşmiyor demektir.
+> **Kısa versiyon.** Lolly'de oluşturduğun belgeler, görseller, videolar ve dosyalar
+> cihazında kalır. Sıradan kullanım için hesap yoktur, uygulamanın kendisinden
+> gelen çerez yoktur ve kod tabanının hiçbir yerinde analitik veya izleyici yoktur -
+> "verileri kullanmıyoruz" demiyoruz, gerçekten kaynak kodda yoklar. Yazılımın
+> herhangi bir şekilde bir ağla konuştuğu her durum için kısa, eksiksiz bir
+> istisna listesi var, ve her biri aşağıda ayrıntılarıyla açıklanıyor: ne çıkıyor,
+> kime ve ne zaman. Kişisel herhangi bir şey içeren tek istisna, açıkça senin
+> başlatman gereken bir oturum açmadır. Bu belgede yoksa, olmuyor demektir.
 
 ## Bu politikanın kapsamı
 
@@ -87,20 +87,20 @@ risk eklemek değil.
 Aşağıdaki tablo, uygulamanın ağ üzerinden getirdiği veya gönderdiği her şeyin
 eksiksiz listesidir. Burada yoksa, uygulama onu yapmıyor demektir.
 
-| Ne | Cihazından gerçekte ne çıkıyor | Ne zaman (tetikleyen eylem) | Bir işletmeci bunu engellerse |
+| Ne | Cihazından gerçekte ne çıkıyor | Ne zaman (bunu tetikleyen eylem) | Bir operatör bunu engellerse |
 |---|---|---|---|
-| Araç kataloğu eşitleme | Kişisel hiçbir şey yok - Lolly'nin kendi genel araç ve varlık dizini için, uygulamanın kendi kaynağına yapılan bir istek | Başlangıçta, ardından çevrimdışı önbelleğe alınır | Uygulama önbelleğe alınmış araç kümesiyle çalışır. Yalnızca yeni araçları keşfetmeyi durdurur |
-| Canlı veri gerektiren bir araç | Bu belirli aracın istediği her şey, kendi açıklamasında adı geçen sunucuya gider. Bugün bu yalnızca Meeting Planner aracındaki şehir arama işlemidir; bu araç bir şehir adını koordinatlara ve saat dilimine çevirmek için `geocoding-api.open-meteo.com` adresine sorar - hesap yok, anahtar yok, isteğin kendisinin ötesinde herhangi bir tanımlayıcı yok. Girdi alanı bunu tam yazdığın yerde belirtir ve her cevap cihazında saklanır, böylece bir şehir yalnızca bir kez aranır | Yalnızca o aracı kullanırken ve yalnızca bir konum girdiğinde | Yalnızca o arama başarısız olur. Koordinatları elle yazmaya devam edebilirsin, başka hiçbir şey etkilenmez |
-| Google Fonts | Seçilen yazı tipi ailesinin adı ve IP adresin, Google'ın yazı tipi sunucularına gider (stil sayfası için `fonts.googleapis.com`, yazı tipi dosyası için `fonts.gstatic.com`) | Yalnızca marka düzenleyicisinde bir Google Fonts eklersen **ve yalnızca tam olarak bunu söyleyen bir iletişim kutusunda onayladıktan sonra** - aile başına tek seferlik bir indirme, ardından cihazında kalır ve çevrimdışı kullanılır | Google Fonts seçici kapalı biçimde başarısız olur. Bunun yerine bir yazı tipi dosyası yükle |
-| Send to Google Drive | Göndermeyi seçtiğin tek dosya, Google'ın kendi açılır penceresinde tamamladığın bir Google oturum açma işleminin ardından Google'ın Drive API'sine (`www.googleapis.com`) gider. Lolly'nin erişimi yalnızca kendi oluşturduğu dosyalarla sınırlıdır (`drive.file` kapsamı - Drive'ının geri kalanını asla okuyamaz) ve oturum açma jetonu yalnızca oturum süresince bellekte tutulur, hiçbir yerde saklanmaz | Yalnızca bir EMF dışa aktarımında "Send to Google Drive" düğmesine bastığında ve yalnızca işletmecinin bir Google istemci kimliği yapılandırdığı sürümlerde - kimlik yoksa düğme mevcut değildir | Düğme hiç görünmez. Dosyayı indirip Drive'a kendin yükleyebilirsin |
-| Send to Dropbox | Göndermeyi seçtiğin tek dosya, Dropbox'ın kendi penceresinde tamamladığın bir Dropbox oturum açma işleminin ardından Dropbox'ın API'sine gider (oturum açma ve meta veri için `api.dropboxapi.com`, dosyanın kendisi için `content.dropboxapi.com`). Lolly'nin erişimi yalnızca uygulama klasörüyle sınırlıdır (yalnızca `Apps/` ve oradaki kendi klasörünü görebilir - Dropbox'ının geri kalanını asla göremez), sana gösterilen "Open" bağlantısı kısa ömürlü, özel bir bağlantıdır (genel paylaşım oluşturulmaz) ve bir yenileme jetonu yalnızca "stay connected" seçeneğini işaretlersen saklanır | Yalnızca bir dosyada "Send to Dropbox" düğmesine bastığında ve yalnızca işletmecinin bir Dropbox istemci kimliği yapılandırdığı sürümlerde - kimlik yoksa düğme mevcut değildir | Düğme hiç görünmez. Dosyayı indirip Dropbox'a kendin yükleyebilirsin |
-| Send to OneDrive | Göndermeyi seçtiğin tek dosya, Microsoft'un kendi penceresinde tamamladığın bir Microsoft oturum açma işleminin ardından Microsoft'un kimlik ve Graph hizmetlerine gider (oturum açma için `login.microsoftonline.com`, yükleme için `graph.microsoft.com`; büyük bir dosya `api.onedrive.com`, `*.up.1drv.com` veya `*.sharepoint.com` üzerindeki Microsoft'a ait bir yükleme adresine parçalar halinde yüklenir). Lolly'nin erişimi yalnızca `Apps/` altındaki kendi klasörüyle (OneDrive'ının geri kalanını asla okuyamaz) ve hesap etiketi için görünen adınla sınırlıdır, bir yenileme jetonu yalnızca "stay connected" seçeneğini işaretlersen saklanır | Yalnızca bir dosyada "Send to OneDrive" düğmesine bastığında ve yalnızca işletmecinin bir Microsoft istemci kimliği yapılandırdığı sürümlerde - kimlik yoksa düğme mevcut değildir | Düğme hiç görünmez. Dosyayı indirip OneDrive'a kendin yükleyebilirsin |
-| ICC baskı profilleri | Kişisel hiçbir şey yok - ICC'nin genel kayıt defterine (`registry.color.org`, `www.color.org`) standart bir baskı koşulu profili için yapılan bir istek | Yalnızca baskı profili yöneticisinde bir ICC ön ayarına tıklarsan - profil başına tek seferlik bir indirme, ardından cihazında kalır | ICC ön ayarları başarısız olur. Bunun yerine kendi `.icc` profilini sağla |
-| İnternet radyosu | Kişisel hiçbir şey yok - istasyona (`api.somafm.com` ve adını verdiği icecast sunucusu, `*.somafm.com`) yapılan bir çalma listesi isteği ve bir ses akışı | Yalnızca ses oynatıcısındaki isteğe bağlı yerleşik radyoyu çalarken | Radyo başarısız olur. Diğer tüm ses özellikleri çalışmaya devam eder |
-| Bir aracın yakalamasını istediğin bir URL | URL ekran görüntüsü aracından, tam olarak yazdığın web adresine yapılan bir istek. O adres her ne ise. Bu sunucu aşağıdaki politikada yer almaz, çünkü onu kullanım anında sen seçersin | Yalnızca o araca bir URL girip yakalamayı başlattığında | Bir işletmeci bunu sunucuya göre izin listesine alamaz. Kaldırmak için aracı kaldırman gerekir |
-| SEAL imza kontrolü | **Hiçbir şey.** Web uygulamasının hiçbir DNS çözümleyicisi yoktur - aşağıya bak | Asla | Engellenecek hiçbir şey yok |
-| Derin tarama dedektör modelleri | Kişisel hiçbir şey yok - tek seferlik, aynı kaynaktan bir model indirmesi (üçüncü taraf değil) | Yalnızca Verify'ın derin taramasını etkinleştirirsen | Derin tarama kullanılamaz. Standart doğrulama çalışmaya devam eder |
-| Uzak örnek | Adını verdiğin örneğin, yukarıda açıklanan aynı katalog eşitlemesi üzerinden geri gönderdiği her şey. Sunucuyu kullanım anında sen seçersin, bu yüzden aşağıdaki politikada yer almaz | Yalnızca kabuğu açıkça başka bir Lolly dağıtımına yönlendirirsen | Örnek değiştirme başarısız olur. Yerel örneğin etkilenmez |
+| Araç kataloğu senkronizasyonu | Kişisel hiçbir şey yok - Lolly'nin kendi genel araç ve içerik dizini için, uygulamanın kendi kaynağına yapılan bir istek | Başlangıçta, ardından çevrimdışı için önbelleğe alınır | Uygulama önbelleğe alınmış araç setiyle çalışır. Sadece yeni araçları keşfetmeyi durdurur |
+| Canlı veriye ihtiyaç duyan bir araç | O belirli aracın istediği her şey, kendi açıklamasında adı geçen sunucuya gider. Bugün bu, yalnızca Meeting Planner aracındaki şehir aramasıdır; bu araç `geocoding-api.open-meteo.com`'a bir şehir adını koordinatlara ve saat dilimine çevirmesi için sorar - hesap yok, anahtar yok ve isteğin kendisi dışında hiçbir tanımlayıcı yok. Giriş alanı bunu tam olarak yazdığın yerde belirtir ve her yanıt cihazına kaydedilir, böylece bir şehir yalnızca bir kez sorgulanır | Yalnızca o aracı kullanırken ve yalnızca bir konum girdiğinde | Yalnızca o arama başarısız olur. Koordinatları yine de elle yazabilirsin ve başka hiçbir şey etkilenmez |
+| Google Fonts | Seçilen yazı tipi ailesinin adı ve IP adresin, Google'ın yazı tipi sunucularına gider (`fonts.googleapis.com` stil sayfası için, `fonts.gstatic.com` yazı tipi dosyası için) | Yalnızca marka düzenleyicisinde bir Google Font eklersen, **ve yalnızca tam olarak bunu söyleyen bir iletişim kutusunda kabul ettikten sonra** - aile başına tek seferlik bir indirme, ardından cihazında kalır ve çevrimdışı kullanılır | Google Fonts seçici güvenli şekilde başarısız olur. Bunun yerine bir yazı tipi dosyası yükle |
+| Google Drive'a gönder | Göndermeyi seçtiğin tek dosya, Google'ın Drive API'sine gider (`www.googleapis.com`), Google'ın kendi açılır penceresinde tamamladığın bir Google oturum açma işleminden sonra. Lolly'nin erişimi yalnızca kendi oluşturduğu dosyalarla sınırlıdır (`drive.file` kapsamı - Drive'ının geri kalanını asla okuyamaz) ve oturum açma jetonu yalnızca oturum süresince bellekte tutulur, asla saklanmaz | Yalnızca bir EMF dışa aktarımında "Send to Google Drive"a bastığında ve yalnızca operatörün bir Google client id yapılandırdığı derlemelerde - biri olmadan düğme mevcut değildir | Düğme hiçbir zaman görünmez. Dosyayı indir ve kendin Drive'a yükle |
+| Dropbox'a gönder | Göndermeyi seçtiğin tek dosya, Dropbox'ın API'sine gider (`api.dropboxapi.com` oturum açma ve meta veri için, `content.dropboxapi.com` dosyanın kendisi için), Dropbox'ın kendi penceresinde tamamladığın bir Dropbox oturum açma işleminden sonra. Lolly'nin erişimi yalnızca uygulama klasörüyle sınırlıdır (yalnızca `Apps/` ve oradaki kendi klasörünü görebilir - Dropbox'ının geri kalanını asla göremez), sana gösterdiği "Open" bağlantısı kısa ömürlü bir özel bağlantıdır (herhangi bir genel paylaşım oluşturulmaz) ve bir yenileme jetonu yalnızca "stay connected"ı işaretlersen saklanır | Yalnızca bir dosyada "Send to Dropbox"a bastığında ve yalnızca operatörün bir Dropbox client id yapılandırdığı derlemelerde - biri olmadan düğme mevcut değildir | Düğme hiçbir zaman görünmez. Dosyayı indir ve kendin Dropbox'a yükle |
+| OneDrive'a gönder | Göndermeyi seçtiğin tek dosya, Microsoft'un kimlik ve Graph hizmetlerine gider (`login.microsoftonline.com` oturum açma için, `graph.microsoft.com` yükleme için; büyük bir dosya, `api.onedrive.com`, `*.up.1drv.com` veya `*.sharepoint.com` üzerinde Microsoft'a ait bir yükleme adresine parçalar halinde yüklenir), Microsoft'un kendi penceresinde tamamladığın bir Microsoft oturum açma işleminden sonra. Lolly'nin erişimi `Apps/` altındaki kendi klasörüyle sınırlıdır (OneDrive'ının geri kalanını asla okuyamaz), artı hesap etiketi için görünen adın, ve bir yenileme jetonu yalnızca "stay connected"ı işaretlersen saklanır | Yalnızca bir dosyada "Send to OneDrive"a bastığında ve yalnızca operatörün bir Microsoft client id yapılandırdığı derlemelerde - biri olmadan düğme mevcut değildir | Düğme hiçbir zaman görünmez. Dosyayı indir ve kendin OneDrive'a yükle |
+| ICC baskı profilleri | Kişisel hiçbir şey yok - standart bir baskı koşulu profili için, ICC'nin genel kayıt defterine yapılan bir istek (`registry.color.org`, `www.color.org`) | Yalnızca baskı profili yöneticisinde bir ICC ön ayarına tıklarsan - profil başına tek seferlik bir indirme, ardından cihazında kalır | ICC ön ayarları başarısız olur. Bunun yerine kendi `.icc` profilini sağla |
+| İnternet radyosu | Kişisel hiçbir şey yok - bir çalma listesi isteği ve bir ses akışı, istasyona gider (`api.somafm.com` ve onun adlandırdığı icecast sunucusu, `*.somafm.com`) | Yalnızca ses çalarındaki isteğe bağlı yerleşik radyoyu çalarken | Radyo başarısız olur. Diğer tüm ses özellikleri çalışmaya devam eder |
+| Bir aracın yakalamasını istediğin bir URL | URL ekran görüntüsü aracından, tam olarak yazdığın web adresine yapılan bir istek. O adres her ne ise. Bu sunucu aşağıdaki politikada yer almaz, çünkü onu kullanım anında sen seçiyorsun | Yalnızca o araca bir URL girip yakalamayı başlattığında | Bir operatör bunu sunucuya göre izin listesine ekleyemez. Kaldırmak için aracı kaldırman gerekir |
+| SEAL imza kontrolü | **Hiçbir şey.** Web uygulamasının hiç DNS çözümleyicisi yok - aşağıya bak | Asla | Engellenecek bir şey yok |
+| Derin tarama dedektör modelleri | Kişisel hiçbir şey yok - tek seferlik, aynı kaynaktan bir model indirmesi (üçüncü taraftan değil) | Yalnızca Verify'ın derin taramasını etkinleştirirsen | Derin tarama kullanılamaz. Standart doğrulama çalışmaya devam eder |
+| Uzak örnek | Adlandırdığın örneğin geri döndürdüğü her şey, yukarıda açıklanan aynı katalog senkronizasyonu üzerinden - artı ona yapılan isteklere eklenen bir sürüm etiketi (kabuk türü ve motor sürümü, bir user agent'ın taşıdığı aynı bilgi), böylece operatörü hangi Lolly sürümlerinin kullanımda olduğunu görebilir. Yönetilen bir örnekte, oturum açıkken, bu etiket cihaz başına bir kurulum kimliği de taşır, böylece operatörün cihaz listesi bu kurulumu ayırt edebilir. Bu yalnızca zaten kendi kullanımının yaptığı isteklere biner - bir zamanlayıcı yoktur ve kendiliğinden "eve telefon eden" hiçbir şey yoktur - ve örnekten ayrılmak bu kimliği siler, böylece daha sonra yeniden bağlanan bir cihaz yenisini sunar. Sunucuyu kullanım anında sen seçersin, bu yüzden aşağıdaki politikada yer almaz | Yalnızca kabuğu açıkça başka bir Lolly dağıtımına yönlendirirsen | Örnek değiştirme başarısız olur. Yerel örneğin etkilenmez |
 
 O tablodaki her sabit sunucu, aynı zamanda tarayıcının uyguladığı uygulamanın
 Content-Security-Policy'sindeki eksiksiz izin listesidir. Yani bu liste yalnızca
@@ -155,22 +155,20 @@ README'de, bir wiki'de veya bir panoda canlı bir görsel olarak görünebilir.
 Birini getirmek, sunucudan URL'ye yazılmış girdilerle **genel araç ve katalog
 verisini** render etmesini ister.
 
-- <!--i:usercheck--> **Hesap yok, çerez yok, durum yok.** Uç nokta anonimdir ve cihazındaki
-  hiçbir şey okunmaz. Belgelerin, oturumların ve yüklemelerin tarayıcından
-  asla çıkmaz - bu bağlantılarda hiçbir şekilde görünemezler.
+- <!--i:usercheck--> **Hesap yok, çerez yok, durum yok.** Uç nokta anonimdir ve cihazından
+  hiçbir şey okunmaz. Belgelerin, oturumların ve yüklemelerin tarayıcını
+  hiçbir zaman terk etmez - bu bağlantılarda hiç görünemezler.
 - <!--i:document--> **Ama URL'nin kendisi kaydedilir.** Bir URL'nin sorgu dizesi istek satırının
-  bir parçasıdır, bu yüzden istenen her yol gibi barındırma platformunun
-  sıradan erişim günlüklerine de düşer. Bir bağlantının girdileri birinin
-  adını veya e-postasını içeriyorsa - bir isim rozeti, bir e-posta imzası -
-  **o metin o günlüklerde durur** ve hiçbir politika ifadesi bunu değiştirmez.
-  Özelliğin burada açık değil kapalı olmasının özel nedeni budur.
-- <!--i:globe--> **Girdiler zaten yapısı gereği herkese açıktır** - bağlantının yazarının
-  URL'ye ne yazdığıysa odur, bağlantının ulaştığı herkes tarafından
-  okunabilir. Paylaşılan bir bağlantıya sır koyma. Lolly, hassas içerik için
-  bağlantı şifrelemesi sunar.
-- <!--i:eyeoff--> Yanıtlar, herhangi bir genel görsel gibi **önbelleğe alınır ve hız
-  sınırlamasına tabidir** ve arama motorları render'larını dizine eklemesin
-  diye `noindex` olarak işaretlenir.
+  bir parçasıdır, bu yüzden barındırma platformunun sıradan erişim günlüklerinde,
+  istenen her yol gibi görünür. Bir bağlantının girdileri birinin adını veya
+  e-postasını içeriyorsa - bir isim rozeti, bir e-posta imzası - **bu metin o
+  günlüklere işlenir**, ve hiçbir politika ifadesi bunu değiştirmez. Bu özelliğin
+  burada açık değil kapalı olmasının özel nedeni tam olarak budur.
+- <!--i:globe--> **Girdiler zaten yapı gereği herkese açıktır** - bunlar bağlantının
+  yazarının URL'ye yazdığı her neyse, bağlantıya ulaşan herkes tarafından okunabilir.
+  Paylaşılan bir bağlantıya gizli bilgi koyma. Lolly, hassas içerik için bağlantı şifrelemesi sunar.
+- <!--i:eyeoff--> Yanıtlar herhangi bir genel görsel gibi **önbelleğe alınır ve hız sınırlandırılır**, ve arama motorlarının
+  render'larını dizine eklememesi için `noindex` olarak işaretlenir.
 
 Lolly'yi kendin barındırıyorsun ve genel bir render yüzeyi istemiyor musun?
 `LOLLY_DISABLE_RENDER_GET=1` ayarını yap - lolly.tools'un kendisinin şu anda

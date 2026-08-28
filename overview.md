@@ -84,7 +84,7 @@ The same deterministic tool reaches that scale three ways, all producing identic
 - <!--i:code--> **A developer, from the command line.** The CLI runs the *same* engine and the *same* render path headless, so the tool can be sequenced over all 10,000 rows in a script or a nightly pipeline. A `lolly <tool> --field=…` call in a loop is the whole integration.
 - <!--i:cpu--> **A system or an AI agent, over MCP.** The same tool operated programmatically, at the same fidelity and even greater scale - because a machine won't get bored while thousands of files roll in.
 
-![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+![Batch mode on a fresh install: one empty row waiting for a tool, with the whole spreadsheet surface and its Render button in place before any data arrives](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
 
 One set of brand constraints, fixed once by a designer; three routes to the identical pre-approved output - and the machine route scales furthest of all, because it never tires while the files roll in.
 

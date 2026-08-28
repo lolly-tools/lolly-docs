@@ -2,7 +2,7 @@
 
 A extensão **Lolly URL Screenshot** permite que o app web tire screenshot de qualquer página web de dentro do seu navegador. Sem ela, capturar uma URL exige o app desktop - uma página do navegador não consegue ler pixels de outro site por conta própria. A extensão consegue, usando a mesma captura que o app desktop usa.
 
-Ela faz outra tarefa com a mesma engrenagem: ler uma única página que você indicar, para que o Brand Studio possa extrair uma marca de um site ao vivo. Ambas são cobertas abaixo.
+Ele faz mais uma tarefa da mesma forma: ler uma única página que você indica para que o Brand Studio consiga extrair uma marca de um site ao vivo. Ambas são cobertas abaixo.
 
 Ela roda em navegadores baseados em Chromium: **Chrome, Edge, Brave, Arc, Opera** - Chrome 111 ou mais recente.
 

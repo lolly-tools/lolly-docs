@@ -153,7 +153,7 @@ Nadpisy, kód a kurzíva se každý vrátí k primárnímu, dokud je nepřiřad�
 
 Scéna se otevře **přímo v místnosti**, ne v dialogu, takže karty, ze kterých jsi přišel, zůstanou na obrazovce. Vyhledej rodinu z Google Fonts (Inter, Fraunces, Space Grotesk…) nebo přetáhni soubor s fontem, stiskni **Přidat do srovnání** a kandidáti stojí vedle sebe ve stejných slovech dřív, než se kterýkoli z nich nainstaluje. Escape zruší akci a vrátí klávesnici kartě, ze které jsi scénu otevřel.
 
-To je jediný vstup, a proto se do tvé značky nic nedostane bez povšimnutí. Pod scénou sedí dva správcovské panely:
+To jsou jediné dveře dovnitř, a proto se do tvé značky nic nedostane bez povšimnutí. Pod pódiem sedí dva správní panely:
 
 - **Fonty v tomto zařízení** - každá nainstalovaná rodina, role, kterým slouží, a smazání. **Přidat řez** zde otevře stejnou srovnávací scénu bez omezení.
 - **Tvé fonty** - nahraj **TTF**, **OTF** nebo **WOFF** z vlastního počítače. To je cesta pro licencované firemní písmo, které už vlastníš.
@@ -211,13 +211,13 @@ Vrátit jeden zpátky se dělá přes **Přidat z… → Design tokeny nebo soub
 
 ## Verze
 
-**Verze** v patě lišty jsou místo, kde design systém přestává být pohyblivým cílem. Publikuj verzi a dostaneš **trvalou pojmenovanou kopii** uloženou na tomto zařízení: už se poté nemění, takže nástroj, který si ji připne, kreslí pořád to samé. Panel zůstává skrytý, dokud nemáš co publikovat vlastního, takže studio, které nikdy nic nepublikuje, nikdy neuvidí tuto mašinérii.
+**Versions** v patě lišty je místo, kde designový systém přestává být pohyblivým cílem. Publikuj jednu a dostaneš **trvalou, pojmenovanou kopii** uloženou na tomto zařízení: potom už se nikdy nezmění, takže nástroj, který ji připíná, dál kreslí to samé. Panel zůstává skrytý, dokud není co vlastního publikovat, takže studio, které nikdy nepublikuje, tyto ovládací prvky nikdy nevidí.
 
 Tři věci, které stojí za to vědět předtím, než na cokoliv klikneš - a panel je uvádí všechny tři před stiskem, ne až po něm:
 
-- **Verze je trvalá.** Mazání zatím neexistuje, takže panel říká, co bylo uloženo a že to uložené zůstane, místo aby nabízel tlačítko, které lže.
-- **Odebrání vedou na kartě kompatibility.** Přidané a změněné tokeny jsou novinka; *odebraný* token je to, co rozbije nástroj, takže je jmenován první a nazván pravým jménem.
-- **Publikování nelze vzít zpět; obnovení ano.** *Restore latest from this version* je běžná úprava hlavy, takže se objeví na zásobníku kroků zpět studia a panel ti hned nabídne **Undo**.
+- **Verze je trvalá.** Zatím neexistuje mazání, takže panel uvádí, co bylo zachováno a že to zachované zůstává, místo aby nabízel tlačítko, které lže.
+- **Odstranění vede kartu kompatibility.** Přidané a změněné tokeny jsou novinka; *odstraněný* je to, co rozbíjí nástroj, takže je jmenován první a nazván tím, čím je.
+- **Publikování nelze vzít zpět; obnovení ano.** *Restore latest from this version* je obyčejná úprava hlavy, takže jde na zásobník zpětných kroků studia a panel ti hned nabídne **Undo**.
 
 Můžeš zvolit **Publish only**, nebo **Publish and make active** - rozdíl je v tom, zda nástroje a aplikace od teď sledují danou verzi, nebo zůstávají u tvé nejnovější úpravy. **Follow the latest again** dá každou úpravu naživo v okamžiku, kdy vznikne. `#/start?area=versions` otevře panel přímo.
 

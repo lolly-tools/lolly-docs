@@ -84,7 +84,7 @@ Le même outil déterministe atteint cette échelle de trois façons, toutes pro
 - <!--i:code--> **Un développeur, depuis la ligne de commande.** La CLI exécute le *même* moteur et le *même* chemin de restitution en mode headless, si bien que l'outil peut être enchaîné sur les 10 000 lignes dans un script ou un pipeline nocturne. Un appel `lolly <tool> --field=…` dans une boucle constitue toute l'intégration.
 - <!--i:cpu--> **Un système ou un agent IA, via MCP.** Le même outil piloté de façon programmatique, avec la même fidélité et une échelle encore plus grande - car une machine ne s'ennuiera pas pendant que des milliers de fichiers défilent.
 
-![Le mode lot sur une installation neuve : une ligne vide en attente d'un outil, avec toute la surface du tableur et son bouton Render déjà en place avant l'arrivée de toute donnée](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+![Le mode Batch sur une installation fraîche : une ligne vide attend un outil, avec toute la surface façon tableur et son bouton Rendre déjà en place avant l'arrivée de données](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
 
 Un seul jeu de contraintes de marque, fixé une fois par un designer ; trois voies vers la même sortie pré-approuvée - et la voie machine passe à l'échelle plus loin que toutes les autres, car elle ne se fatigue jamais pendant que les fichiers défilent.
 
@@ -249,7 +249,7 @@ La coquille web est responsive depuis une seule mise en page. Sur ordinateur, un
 
 Le même outil en largeur téléphone, sans second layout à maintenir : les contrôles deviennent une feuille en haut, l'aperçu occupe tout l'écran et la pastille de rendu flotte par-dessus.
 
-![Un audiogramme sur un écran de 430px de large - la feuille de contrôles au-dessus, l'illustration carrée finie en dessous et la pastille de rendu flottante](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![Un audiogramme sur un écran de 430px de large - la feuille de contrôles en haut, l'illustration carrée finie en bas et la pastille de rendu flottante](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **Mode batch (`/pro`).** Le shell web embarque aussi une grille batch façon tableur (`shells/web/src/pro/`) qui rend de nombreuses lignes à la fois sur un ou plusieurs outils. Il gère l'aller-retour CSV/TSV plus le collage tableur, le template/format/taille/unité/dpi par ligne, un panneau latéral éditeur de blocs avec aperçu en direct, des colonnes d'export repliables, une barre de tags de « pertinence » par ligne, la réorganisation des lignes par poignée de glisser à gauche, une confirmation de suppression en deux temps, des sessions batch sauvegardées et un téléchargement `.zip`. C'est la surface un-vers-plusieurs derrière le positionnement « génération de contenu en masse ».
 
@@ -286,10 +286,10 @@ Les lignes sont listées dans l'ordre des sections de la galerie. La section `ut
 | Catégorie | Exemples | Prévu |
 |---|---|---|
 | `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
-| `designer` | Brand Lockup, Design, Chart Creator, D3 Chart Studio, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `designer` | Brand Lockup, Design, Chart, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Convertisseurs d'unités/formats, d'autres utilitaires de confidentialité sur l'appareil |
+| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Unit/format converters, more on-device privacy utilities |
 
 Ces cellules sont des **exemples, pas des inventaires**. Les outils existants dépendent du profil que tu as monté, pas de cette page : un pack de marque ajoute les siens, et peut exclure un outil communautaire qu'il préfère ne pas livrer. `catalog/tools/index.json` - généré depuis les manifestes, et le registre que la galerie lit réellement - est la liste faisant autorité ; pour compter ce qu'un profil monte, compte les manifestes (`ls community/*/tool.json brands/*/tools/*/tool.json`) plutôt que de te fier à un nombre écrit ici. (Un id d'outil présent dans deux packs se monte une seule fois, depuis le pack gagnant.)
 
@@ -347,11 +347,11 @@ Quelques surfaces phares, pour montrer l'étendue - [Host API](/info/host-api.ht
 | Surface | Depuis | Ce qu'elle ajoute |
 |---|---|---|
 | `host.tokens` | 1.0 | Tokens de design DTCG - les primitives propres à la marque |
-| `host.text` | 1.0 | Texte vers tracé via HarfBuzz WASM (le drapeau de capacité `wasm` marque les outils qui en dépendent) |
-| `host.media` | 1.4 | Images caméra en direct pilotant le hook `onFrame`. Amélioration progressive, délibérément *non* conditionnée par le drapeau `camera` - un tel outil fonctionne quand même comme un outil image fixe ordinaire |
-| `host.color` | 1.40 | Maths de couleur perceptuelles : ΔEOK, contraste WCAG + APCA, rampes OKLab, seuils de classe, palettes catégorielles, schémas d'harmonie (1.60), mélange CSS Color 4 et fabrication de dégradés (1.68). Pure et synchrone - les shells attachent le `makeColorApi()` du moteur plutôt que d'implémenter quoi que ce soit, donc ça ne peut pas diverger |
-| `host.images` | 1.60 | Décoder / redimensionner / réencoder des octets sur l'appareil - le chemin de conversion (HEIC → JPEG, compression en WebP, réduction d'échelle). Livré dans le shell web comme une façade paresseuse, pour que le décodeur HEIC n'atterrisse jamais dans le chunk de démarrage |
-| `host.geom` | 1.64 | Géométrie vectorielle exacte : booléens de tracés, décalage, conversion trait-vers-remplissage, réduction de spline, simplification, test de collision. Pure, synchrone et attachée depuis le moteur également (`makeGeomApi()`) ; les échecs sont *retournés*, jamais levés |
+| `host.text` | 1.0 | Texte-vers-chemin via HarfBuzz WASM (le flag de capacité `wasm` signale les outils qui en dépendent) |
+| `host.media` | 1.4 | Images de caméra en direct pilotant le hook `onFrame`. Amélioration progressive, délibérément *pas* conditionnée par le flag `camera` - un tel outil fonctionne quand même comme un outil ordinaire d'image fixe |
+| `host.color` | 1.40 | Mathématiques de couleur perceptuelles : ΔEOK, contraste WCAG et APCA, dégradés OKLab, seuils de classes, palettes catégorielles, schémas d'harmonie (1.60), mélange CSS Color 4 et cuisson de dégradés (1.68). Pur et synchrone - les shells rattachent le `makeColorApi()` du moteur plutôt que d'implémenter quoi que ce soit, donc ça ne peut pas diverger |
+| `host.images` | 1.60 | Décoder / redimensionner / réencoder des octets sur l'appareil - le chemin de conversion (HEIC → JPEG, compression en WebP, réduction d'échelle). Livré dans le shell web comme une façade paresseuse, donc le décodeur HEIC n'entre jamais dans le chunk de démarrage |
+| `host.geom` | 1.64 | Géométrie vectorielle exacte : booléens de chemins, décalage, contour-vers-remplissage, réduction de splines, simplification, détection de collision. Également pur, synchrone et rattaché depuis le moteur (`makeGeomApi()`) ; les échecs sont *retournés*, jamais levés |
 
 Le reste suit les mêmes règles et est documenté avec elles : `pdf` (1.8) et `pptx` (1.58) pour la chirurgie de documents sur l'appareil, `audio` (1.71) et `speech` (1.96) pour l'analyse de clips et la synthèse/transcription vocale sur l'appareil, `viz` (1.72) pour le contrat de remplacement MilkDrop, `codec` (1.100) et `layers` (1.102) pour la sortie en profondeur de bits et en bitmap par couches, `upscale` (1.101) et `matte` (1.103) pour les modèles sur l'appareil, `raster` (1.105) pour les hooks qui font leur propre travail de pixels, `connectors` (1.106) pour les flèches compatibles export et `c2pa` (1.85) pour signer des octets finis. Le nombre grandit ; les règles non.
 

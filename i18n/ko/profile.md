@@ -1,4 +1,4 @@
-# 프로필 - 창작할 때의 나
+# 프로필 — 창작할 때의 나
 
 **프로필**은 Lolly가 그 이름으로 제작 활동을 하는 작업 정체성입니다. 도구가 매번 다시 입력하지 않도록 가져다 쓸 수 있는 소소한 정보 모음으로 - 이름, 연락처, 선택적 프로필 사진, 몇 가지 환경설정 - 그리고 작업하면서 쌓이는 모든 것, 즉 저장된 세션, 업로드한 이미지, 로컬 활동 집계까지 포함합니다.
 
@@ -19,7 +19,7 @@
 | **접근성** | 네 가지 편의 스위치 - *동작 줄이기*, *화려한 미리보기 숨기기*, *고대비*, *큰 텍스트* - 는 프로필 레코드에 저장되므로 프로필 내보내기에도 함께 담깁니다. [Accessibility](#accessibility) 참고. |
 | **작업물** | (썸네일이 있는) 저장된 세션 - **[Projects](/info/using.html)**의 중첩 폴더로 정리됨 - 사용자의 **My images** 라이브러리, 그리고 이 프로필에 연결된 로컬 활동 통계. |
 
-![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&walker=1&format=svg&cropSelector=.profile-card--appearance&dark=1&filename=pd-theme-picker)
+![Three theme cards, each previewing its own type and colour, with the active one flagged](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=1400&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-card--appearance&filename=pd-theme-picker)
 
 ![프로필 화면 - 이름, 연락처, 선택적 프로필 사진, 환경설정](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&walker=1&localize=1&dark=1&filename=profile-details)
 
@@ -31,11 +31,11 @@
 
 ## 프로필은 사람이 아니라 맥락이에요
 
-"프로필"이라는 단어는 고정된 한 사람을 떠올리게 하지만, Lolly에서 프로필은 사실 **창작 맥락**이에요 - *이걸 만드는 동안 나는 누구인가*를 뜻해요. 이 맥락은 세 가지 다른 형태를 취할 수 있고, Lolly는 이 셋을 모두 똑같은 방식으로 다뤄요.
+"프로필"이라는 단어는 고정된 한 사람을 떠올리게 하지만, Lolly에서 프로필은 사실 **창작 맥락**이에요 — *이걸 만드는 동안 나는 누구인가*를 뜻해요. 이 맥락은 세 가지 다른 형태를 취할 수 있고, Lolly는 이 셋을 모두 똑같은 방식으로 다뤄요.
 
 ### 개인으로서
 
-![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
+![The headshot control, empty until you upload a photo that then stays on this device](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&filename=pd-profile-headshot)
 
 ![프로필 사진 컨트롤 - 사진을 업로드하기 전까지는 비어 있고, 업로드하면 이 기기에 보관됨](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-side&walker=1&dark=1&filename=pd-profile-headshot)
 
@@ -43,17 +43,17 @@
 
 프로필이 반드시 한 사람이어야 하는 것은 아닙니다. **조직 내 팀이나 부서**를 대신할 수도 있습니다: 팀의 공유 이름, 그룹 수신함 주소(`events@…`), 부서, 팀의 프로필 사진이나 유닛 마크 등입니다. 한 사람이 설정하고 내보내면(아래 참고) 나머지 팀원들은 같은 프로필을 불러옵니다 - 그러면 누구도 다시 입력할 필요 없이 팀이 만드는 모든 결과물이 일관된 정보를 담게 됩니다. 공용 키오스크나 대여용 데모 노트북도 그 뒤에 서는 모두가 같은 이름으로 제작하는 단일 팀 프로필로 운영할 수 있습니다.
 
-### 기능으로서 - 가끔 걸치는 역할
+### 기능으로서 — 가끔 걸치는 역할
 
 고정된 "한 사람, 하나의 프로필" 모델로는 담아낼 수 없는 경우예요. 누군가는 **1년에 사흘만 이벤트 매니저**이고, 나머지 기간은 완전히 다른 무언가일 수 있어요. 그 사흘 동안은 이벤트 정보, 이벤트 수신함, 어쩌면 배지와 사이니지에 들어갈 이벤트 서브 브랜드가 필요하고, 나머지 362일은 평소의 정체성으로 돌아가고 싶을 거예요.
 
-Lolly에서 그 역할은 그저 **손 닿는 곳에 두는 또 하나의 프로필**이에요 - 이벤트를 위해 불러오고 끝나면 치워두는 저장된 번들(다음 절 참고)이죠. 역할은 새로운 계정이 아니라 모자예요. 필요할 때 쓰고, 끝나면 벗으면 돼요.
+Lolly에서 그 역할은 그저 **손 닿는 곳에 두는 또 하나의 프로필**이에요 — 이벤트를 위해 불러오고 끝나면 치워두는 저장된 번들(다음 절 참고)이죠. 역할은 새로운 계정이 아니라 모자예요. 필요할 때 쓰고, 끝나면 벗으면 돼요.
 
-## 설치본 하나에 활성 프로필 하나 - 보관할 수 있는 수는 제한 없어요
+## 설치본 하나에 활성 프로필 하나 — 보관할 수 있는 수는 제한 없어요
 
 어느 순간이든 설치본에는 **활성 프로필 하나**만 있습니다 - 도구가 지금 보고 있는 정보입니다. 앱 안에 프로필 전환기는 없습니다. 대신 각 프로필은 **이동 가능한 번들**입니다(하나의 `.zip` 파일, [아래](#moving-a-profile-to-a-new-device) 참고). 이는 새 기기로 옮길 때와 의도적으로 같은 방식입니다 - 프로필은 저장하고 복사하고 불러올 수 있는 파일입니다.
 
-![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.store-meter&dark=1&filename=pd-storage-meter)
+![The storage meter, breaking down saved sessions, images and cache against what the browser actually reports](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%2C.storage-subsection%2C.storage-actions%7Bdisplay%3Anone%7D&format=svg&cropSelector=.store-meter&filename=pd-storage-meter)
 
 - <!--i:trash--> **가장 깔끔한 전환:** **Profile → Storage → Clear all my data**를 실행한 다음, 새로 들어갈 맥락에 맞는 번들을 **Import**합니다. 이제부터는 오직 그 프로필로만 제작합니다.
 - <!--i:layers--> **레이어링:** 먼저 지우지 *않고* 가져오면 **병합**됩니다 - 가져온 프로필, 세션, 이미지가 기존 내용 위에 얹혀, 이름이 같은 항목은 대체하고 나머지는 그대로 둡니다. 한 팀의 저장된 세션을 내 설정에 끌어오고 싶을 때 유용하지만, 깔끔한 역할 경계가 필요할 때는 적합하지 않습니다.
@@ -104,9 +104,9 @@ Lolly는 사용하는 동안 계속 캐시를 쌓지만, 이런 자연스러운 
 
 ## 프로필을 새 기기로 옮기기
 
-![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&walker=1&format=svg&cropSelector=.storage-subsection&dark=1&filename=pd-transfer-controls)
+![The two buttons that move a whole install: Export my data writes one zip, Import data reads it back](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dstorage-section&width=1440&height=1800&dpi=192&waitMs=2400&css=.store-manages%7Bdisplay%3Anone%7D&format=svg&cropSelector=.storage-subsection&filename=pd-transfer-controls)
 
-프로필은 완전히 로컬에만 있기 때문에, 이를 새 설치본 - 새 노트북, 방금 초기화한 브라우저, 동료의 컴퓨터, 오프라인 기기 - 으로 옮기는 유일한 방법은 **파일을 직접 옮기는 것**이에요. 로그인으로는 복원되지 않아요. 그게 핵심이에요 - 애초에 기기 밖으로 나간 적이 없으니까요.
+프로필은 완전히 로컬에만 있기 때문에, 이를 새 설치본 — 새 노트북, 방금 초기화한 브라우저, 동료의 컴퓨터, 오프라인 기기 — 으로 옮기는 유일한 방법은 **파일을 직접 옮기는 것**이에요. 로그인으로는 복원되지 않아요. 그게 핵심이에요 — 애초에 기기 밖으로 나간 적이 없으니까요.
 
 - <!--i:download--> **내 데이터 내보내기**는 `LollyTools-<First>-<Last>-<YYYY-MM-DD>-<n>.zip` 파일 하나를 다운로드합니다 - 해당하는 프로필 이름을 따르며, 반복 내보내기가 충돌하지 않도록 일별 일련번호가 붙습니다(프로필에 해당 항목이 없으면 이름 부분은 생략됩니다). 여기에는 프로필, 저장된 모든 세션(썸네일 포함), 업로드한 이미지 - 브랜드 토큰과 설치된 폰트도 사용자 자산으로 함께 포함됩니다 - 그리고 환경설정(테마, 레이아웃, 로컬 활동 통계)이 담깁니다.
 - <!--i:upload--> 다른 설치본의 **데이터 가져오기…**는 그 파일을 다시 읽어들여 중단했던 지점 그대로 이어갑니다.
@@ -122,7 +122,7 @@ Lolly는 사용하는 동안 계속 캐시를 쌓지만, 이런 자연스러운 
 
 ## 도구가 프로필을 사용하는 방식
 
-![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&walker=1&dark=1&filename=pd-use-my-details)
+![The single Use my details switch, sitting beside Save Profile and off until you turn it on](/t/url-shot?url=%2F%23%2Fprofile&width=1440&height=900&dpi=192&waitMs=1600&format=svg&cropSelector=.profile-check&filename=pd-use-my-details)
 
 도구는 명시적으로 연결하도록 만들어진 프로필 필드만 *미리 채워요*.
 
@@ -140,7 +140,7 @@ Lolly는 사용하는 동안 계속 캐시를 쌓지만, 이런 자연스러운 
 
 프로필은 에셋이 *누구로부터* 나온 것인지를 바꾸고, 플랫폼은 그게 *어떻게 보이는지*를 바꾸며, 기능은 *무엇을 만들 수 있는지*를 결정해요.
 
-### 다른 곳의 "프로필" - 이 페이지의 프로필이 아니에요
+### 다른 곳의 "프로필" — 이 페이지의 프로필이 아니에요
 
 이 단어는 프로젝트 전반에서 여러 의미로 쓰여요. 아래 둘 다 이 페이지에서 다루는 개인 프로필과는 달라요.
 

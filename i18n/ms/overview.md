@@ -66,7 +66,7 @@ Cara paling jelas untuk melihat apa itu Lolly bukanlah senarai ciri - tetapi men
 
 "Carta baharu" dalam langkah kedua ialah render seperti yang ini, dihasilkan daripada rentetan data dan segelintir parameter tanpa sesiapa membuka fail reka bentuk:
 
-![Carta kawasan bertindan bertajuk, tiga sirinya berjalur dalam palet sejuk dengan paksi, legenda dan tajuk semuanya diletakkan oleh templat dan bukan secara manual](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![Satu carta kawasan bertindan yang bertajuk, tiga siri-nya dijalur dalam palet sejuk dengan paksi, legenda dan tajuk kesemuanya diletakkan oleh templat dan bukannya secara manual](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 Intinya bukanlah Lolly bagus untuk pereka *dan* bagus untuk pembangun *dan* bagus untuk jualan, setiap satu secara berasingan. Ia ialah **larian berganti-ganti (relay)**: kerja awal pihak kreatif diskalakan oleh pembangun, yang seterusnya memperkasakan pengeluar. Pengalaman tanpa usaha untuk wakil bukan-teknikal di dalam kapal terbang hanya *mungkin* kerana ketelitian yang ditetapkan oleh pereka dan digunakan oleh pembangun.
 
@@ -84,7 +84,7 @@ Alat deterministik yang sama mencapai skala itu dengan tiga cara, semuanya mengh
 - <!--i:code--> **Seorang pembangun, daripada baris arahan.** CLI menjalankan engine yang *sama* dan laluan render yang *sama* tanpa antara muka, supaya alat boleh dijujukkan merentasi kesemua 10,000 baris dalam skrip atau saluran paip harian. Panggilan `lolly <tool> --field=…` dalam gelung ialah keseluruhan integrasi.
 - <!--i:cpu--> **Sistem atau ejen AI, melalui MCP.** Alat yang sama dikendalikan secara berprogram, pada kesetiaan yang sama dan skala yang lebih besar lagi - kerana mesin tidak akan bosan semasa beribu-ribu fail masuk.
 
-![Mod kelompok pada pemasangan baharu: satu baris kosong menunggu alat, dengan keseluruhan permukaan hamparan dan butang Render sudah tersedia sebelum sebarang data tiba](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+![Mod Batch pada pemasangan baharu: satu baris kosong menunggu sesuatu alat, dengan keseluruhan permukaan hamparan dan butang Render-nya sudah tersedia sebelum sebarang data tiba](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
 
 Satu set kekangan jenama, ditetapkan sekali oleh pereka; tiga laluan kepada output yang serupa dan telah diluluskan - dan laluan mesin berskala paling jauh sekali, kerana ia tidak pernah penat semasa fail masuk.
 
@@ -249,7 +249,7 @@ Web shell responsif daripada satu susun atur. Pada desktop, alat ialah sidebar k
 
 Alat yang sama pada lebar telefon, tanpa susun atur kedua untuk diselenggara: kawalan menjadi helaian di bahagian atas, pratonton mengambil keseluruhan skrin dan pil render terapung di atasnya.
 
-![Audiogram pada skrin lebar 430px - helaian kawalan di atas, karya seni segi empat sama yang siap di bawah dan pil render terapung](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![Satu audiogram pada skrin selebar 430px - helaian kawalan di atas, karya seni segi empat siap di bawah dan pil render terapung](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **Mod kelompok (`/pro`).** Cangkerang web juga membawakan grid kelompok bergaya hamparan (`shells/web/src/pro/`) yang merender banyak baris sekali gus merentasi satu atau banyak alat. Ia melakukan pusing ulang CSV/TSV serta tampal hamparan, templat/format/saiz/unit/dpi setiap baris, panel sisi editor blok dengan pratonton langsung, lajur eksport yang boleh dikuncupkan, bar tag "relevance" setiap baris, susun semula baris melalui pemegang seret di sebelah kiri, pengesahan padam dua langkah, sesi kelompok yang disimpan dan muat turun `.zip`. Inilah permukaan satu-kepada-banyak di sebalik pemposisian "penjanaan kandungan pukal".
 
@@ -286,10 +286,10 @@ Baris disenaraikan mengikut susunan bahagian galeri. Bahagian `utility` sentiasa
 | Kategori | Contoh | Dirancang |
 |---|---|---|
 | `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
-| `designer` | Brand Lockup, Design, Chart Creator, D3 Chart Studio, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `designer` | Brand Lockup, Design, Chart, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Penukar unit/format, lebih banyak utiliti privasi pada peranti |
+| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Unit/format converters, more on-device privacy utilities |
 
 Sel-sel itu adalah **contoh, bukan inventori**. Alat mana yang wujud adalah ciri profil yang anda pasang, bukan ciri halaman ini: pek jenama menambah miliknya sendiri, dan boleh mengecualikan alat komuniti yang tidak mahu dibawakannya. `catalog/tools/index.json` - dijana daripada manifes, dan daftar yang sebenarnya dibaca oleh galeri - adalah senarai yang berwibawa; untuk mengira apa yang dipasang oleh sesuatu profil, kira manifesnya (`ls community/*/tool.json brands/*/tools/*/tool.json`) dan bukan mempercayai nombor yang ditulis di sini. (Id alat yang hadir dalam dua pek dipasang sekali sahaja, daripada pek yang menang.)
 
@@ -344,14 +344,14 @@ Permukaan pilihan dan tambahan hanya muncul apabila cangkerang menyediakannya. S
 
 Beberapa permukaan utama, untuk menunjukkan skopnya - [Host API](/info/host-api.html) mendokumenkan setiap satu, dan `packages/core/src/host-v1.ts` adalah kontrak itu sendiri:
 
-| Permukaan | Sejak | Apa yang ditambah |
+| Surface | Sejak | Apa yang ditambahnya |
 |---|---|---|
-| `host.tokens` | 1.0 | Token reka bentuk DTCG - primitif jenama itu sendiri |
-| `host.text` | 1.0 | Teks-ke-laluan melalui HarfBuzz WASM (bendera keupayaan `wasm` menanda alat yang bergantung padanya) |
-| `host.media` | 1.4 | Bingkai kamera langsung memacu hook `onFrame`. Peningkatan progresif, sengaja *tidak* berpagar oleh bendera `camera` - alat sedemikian masih berfungsi sebagai alat imej pegun biasa |
-| `host.color` | 1.40 | Matematik warna perseptual: ΔEOK, kontras WCAG + APCA, tanjakan OKLab, pemisahan kelas, palet kategori, skema harmoni (1.60), pencampuran CSS Color 4 dan pembakaran kecerunan (1.68). Tulen dan segerak - cangkerang melampirkan `makeColorApi()` enjin dan bukan melaksanakan apa-apa, jadi ia tidak boleh menyimpang |
-| `host.images` | 1.60 | Nyahkod / saiz semula / kod semula bait pada peranti - laluan penukaran (HEIC → JPEG, mampat ke WebP, saiz turun). Dibawakan dalam cangkerang web sebagai fasad malas, supaya penyahkod HEIC tidak sekali-kali masuk ke dalam ketulan but |
-| `host.geom` | 1.64 | Geometri vektor tepat: boolean laluan, ofset, lejang-ke-isi, penurunan splin, permudahan, ujian kena. Turut tulen, segerak dan dilampirkan daripada enjin (`makeGeomApi()`); kegagalan *dipulangkan*, tidak pernah dilontar |
+| `host.tokens` | 1.0 | Token reka bentuk DTCG - primitif milik jenama sendiri |
+| `host.text` | 1.0 | Text-to-path melalui HarfBuzz WASM (keupayaan `wasm` menandakan alat yang bergantung kepadanya) |
+| `host.media` | 1.4 | Bingkai kamera langsung yang menggerakkan hook `onFrame`. Peningkatan progresif, sengaja *tidak* digating oleh flag `camera` - alat sedemikian masih berfungsi sebagai alat still-image biasa |
+| `host.color` | 1.40 | Matematik warna perseptual: ΔEOK, kontras WCAG + APCA, ramp OKLab, class-break, palet kategori, skema harmoni (1.60), pencampuran CSS Color 4 dan gradient baking (1.68). Tulen dan segerak - shell menyambungkan `makeColorApi()` milik enjin dan bukannya melaksanakan apa-apa sendiri, jadi ia tidak boleh menyimpang |
+| `host.images` | 1.60 | Nyahkod / saiz semula / kod semula byte pada peranti - laluan penukaran (HEIC → JPEG, mampatkan ke WebP, downscale). Dihantar dalam web shell sebagai lazy facade, jadi penyahkod HEIC tidak pernah masuk ke dalam boot chunk |
+| `host.geom` | 1.64 | Geometri vektor tepat: boolean laluan, offsetting, stroke-to-fill, spline lowering, penyederhanaan, hit testing. Turut tulen, segerak dan disambungkan daripada enjin (`makeGeomApi()`); kegagalan *dikembalikan*, tidak pernah di-throw |
 
 Selebihnya mengikut peraturan yang sama dan didokumenkan bersama: `pdf` (1.8) dan `pptx` (1.58) untuk pembedahan dokumen pada peranti, `audio` (1.71) dan `speech` (1.96) untuk analisis klip dan TTS/transkripsi pada peranti, `viz` (1.72) untuk kontrak pengganti MilkDrop, `codec` (1.100) dan `layers` (1.102) untuk output bit-dalam dan bitmap berlapis, `upscale` (1.101) dan `matte` (1.103) untuk model pada peranti, `raster` (1.105) untuk hooks yang melakukan kerja piksel sendiri, `connectors` (1.106) untuk anak panah selamat-eksport dan `c2pa` (1.85) untuk menandatangani bait siap. Bilangannya berkembang; peraturannya tidak.
 

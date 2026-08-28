@@ -153,7 +153,7 @@ Títulos, código e itálico caem de volta na primária até você atribuí-los,
 
 O palco abre **dentro da própria sala**, não numa caixa de diálogo, então os cartões de onde você veio permanecem na tela. Pesquise uma família do Google Fonts (Inter, Fraunces, Space Grotesk...) ou solte um arquivo de fonte, pressione **Adicionar à comparação** e as candidatas ficam lado a lado nas mesmas palavras antes de qualquer uma delas ser instalada. Esc cancela e devolve o teclado ao cartão de onde você abriu.
 
-Essa é a única porta de entrada, por isso nada chega à sua marca sem você ver antes. Abaixo do palco ficam os dois painéis de gerenciamento:
+Essa é a única porta de entrada, e é por isso que nada entra na sua marca sem ser visto. Abaixo do palco ficam os dois painéis de gerenciamento:
 
 - **Fontes neste dispositivo** - toda família instalada, os papéis que ela atende e uma opção de excluir. **Adicionar uma fonte** aqui abre o mesmo palco de comparação sem restrição.
 - **Suas fontes** - envie um **TTF**, **OTF** ou **WOFF** da sua própria máquina. Esse é o caminho para uma tipografia corporativa licenciada que você já possui.
@@ -211,13 +211,13 @@ Trazer um de volta é **Adicionar de... → Tokens de design ou um arquivo de de
 
 ## Versões
 
-**Versões**, na parte inferior da barra lateral, é onde um sistema de design deixa de ser um alvo em movimento. Publique uma e você obtém uma **cópia permanente e nomeada** mantida neste dispositivo: ela nunca muda depois disso, então uma ferramenta que a fixa continua desenhando a mesma coisa. O painel permanece oculto até que haja algo seu para publicar, então um estúdio que nunca publica nunca vê o mecanismo.
+**Versões**, no rodapé do painel lateral, é onde um sistema de design deixa de ser um alvo móvel. Publique uma e você obtém uma **cópia permanente e nomeada** guardada neste dispositivo: ela nunca muda depois disso, então uma ferramenta que a fixa continua desenhando a mesma coisa. O painel fica oculto até que haja algo seu para publicar, então um estúdio que nunca publica nunca vê os controles.
 
 Três coisas para saber antes de pressionar qualquer coisa, e o painel diz as três antes do clique, não depois:
 
 - **Uma versão é permanente.** Ainda não há exclusão, então o painel declara o que foi mantido e que continua mantido, em vez de oferecer um botão que mente.
-- **As remoções lideram o cartão de compatibilidade.** Tokens adicionados e alterados são novidade; um token *removido* é o que quebra uma ferramenta, então ele é citado primeiro e chamado pelo que é.
-- **Publicar não pode ser desfeito; restaurar pode.** *Restore latest from this version* é uma edição comum ao topo, então ela entra na pilha de desfazer do estúdio e o painel oferece o **Undo** imediatamente.
+- **As remoções lideram o cartão de compatibilidade.** Tokens adicionados e alterados são notícia; um token *removido* é o que quebra uma ferramenta, então ele é citado primeiro e chamado pelo que é.
+- **Publicar não pode ser desfeito; restaurar pode.** *Restore latest from this version* é uma edição comum à ponta (head), então ela entra na pilha de desfazer do estúdio e o painel oferece o **Undo** imediatamente.
 
 Você pode **Publish only** ou **Publish and make active** - a diferença é se as ferramentas e o aplicativo passam a seguir essa versão dali em diante ou continuam seguindo sua edição mais recente. **Follow the latest again** coloca cada edição no ar assim que é feita. `#/start?area=versions` abre o painel diretamente.
 

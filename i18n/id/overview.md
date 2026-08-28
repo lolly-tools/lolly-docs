@@ -66,7 +66,7 @@ Cara paling jelas untuk melihat apa itu Lolly bukanlah daftar fitur - melainkan 
 
 "Chart segar" pada langkah kedua adalah render seperti ini, dihasilkan dari sebuah string data dan segenggam parameter tanpa seorang pun membuka file desain:
 
-![Chart area bertumpuk berjudul, tiga serinya berpita dalam palet dingin dengan sumbu, legenda dan judul semuanya ditempatkan oleh template, bukan secara manual](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![Sebuah stacked area chart berjudul, tiga seri-nya diberi pita dalam palet cool dengan axis, legend dan judul semuanya ditempatkan oleh templat, bukan secara manual](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 Intinya bukan bahwa Lolly bagus untuk desainer *dan* bagus untuk developer *dan* bagus untuk sales, masing-masing dalam ruang hampa. Ini adalah **lomba estafet**: pekerjaan awal sang kreatif diskalakan oleh developer, yang pada gilirannya memberdayakan produser. Pengalaman tanpa hambatan bagi sales rep non-teknis di pesawat itu hanya *mungkin* karena kedisiplinan yang ditetapkan desainer dan diterapkan developer.
 
@@ -84,7 +84,7 @@ Alat deterministik yang sama mencapai skala itu dengan tiga cara, semuanya mengh
 - <!--i:code--> **Seorang developer, dari baris perintah.** CLI menjalankan engine yang *sama* dan jalur render yang *sama* secara headless, sehingga alat itu bisa dijalankan berurutan di seluruh 10.000 baris dalam sebuah skrip atau pipeline malam hari. Panggilan `lolly <tool> --field=…` dalam sebuah loop adalah keseluruhan integrasinya.
 - <!--i:cpu--> **Sebuah sistem atau agen AI, lewat MCP.** Alat yang sama dijalankan secara programatik, dengan fidelitas yang sama dan skala yang bahkan lebih besar - karena mesin tidak akan bosan sementara ribuan file terus masuk.
 
-![Mode batch pada instalasi baru: satu baris kosong menunggu sebuah alat, dengan seluruh permukaan spreadsheet dan tombol Render-nya sudah siap sebelum data apa pun tiba](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+![Mode Batch pada instalasi baru: satu baris kosong menunggu sebuah alat, dengan seluruh permukaan spreadsheet dan tombol Render-nya sudah siap sebelum data apa pun tiba](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
 
 Satu set batasan brand, ditetapkan sekali oleh seorang desainer; tiga rute menuju output identik yang sudah disetujui sebelumnya - dan rute mesin berskala paling jauh dari semuanya, karena ia tidak pernah lelah selagi file terus mengalir masuk.
 
@@ -249,7 +249,7 @@ Shell web bersifat responsif dari satu tata letak. Di desktop, sebuah alat adala
 
 Tool yang sama pada lebar ponsel, tanpa layout kedua yang perlu dipelihara: kontrol menjadi sheet di bagian atas, preview memenuhi seluruh layar dan pill render mengambang di atasnya.
 
-![Audiogram pada layar selebar 430px - sheet kontrol di atas, artwork persegi yang sudah jadi di bawah dan pill render yang mengambang](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![Sebuah audiogram di layar selebar 430px - lembar kontrol di atas, artwork persegi jadi di bawah dan pil render mengambang](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **Mode batch (`/pro`).** Web shell juga menyediakan grid batch bergaya spreadsheet (`shells/web/src/pro/`) yang me-render banyak baris sekaligus di satu atau banyak tool. Ia melakukan round-trip CSV/TSV plus tempel spreadsheet, template/format/ukuran/unit/dpi per baris, panel samping blocks-editor dengan preview langsung, kolom ekspor yang bisa dilipat, bar tag "relevance" per baris, susun ulang baris dengan drag-handle di kiri, konfirmasi hapus dua langkah, sesi batch tersimpan dan unduhan `.zip`. Inilah permukaan satu-ke-banyak di balik positioning "mass content generation".
 
@@ -286,10 +286,10 @@ Baris didaftar sesuai urutan bagian galeri. Bagian `utility` selalu dirender **t
 | Kategori | Contoh | Direncanakan |
 |---|---|---|
 | `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
-| `designer` | Brand Lockup, Design, Chart Creator, D3 Chart Studio, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `designer` | Brand Lockup, Design, Chart, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Konverter unit/format, lebih banyak utilitas privasi on-device |
+| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Unit/format converters, more on-device privacy utilities |
 
 Sel-sel tersebut adalah **contoh, bukan inventaris**. Tool apa saja yang ada adalah properti dari profil yang Anda pasang, bukan dari halaman ini: sebuah brand pack menambahkan miliknya sendiri, dan dapat mengecualikan tool community yang tidak ingin dikirimkannya. `catalog/tools/index.json` - dihasilkan dari manifest, dan registry yang sebenarnya dibaca galeri - adalah daftar otoritatif; untuk menghitung apa yang dipasang sebuah profil, hitung manifest-nya (`ls community/*/tool.json brands/*/tools/*/tool.json`) daripada mempercayai angka yang tertulis di sini. (Sebuah id tool yang ada di dua pack hanya terpasang sekali, dari pack yang menang.)
 
@@ -347,11 +347,11 @@ Beberapa permukaan utama, untuk menunjukkan cakupannya - [Host API](/info/host-a
 | Surface | Sejak | Apa yang ditambahkannya |
 |---|---|---|
 | `host.tokens` | 1.0 | Token desain DTCG - primitif milik brand sendiri |
-| `host.text` | 1.0 | Text-to-path via HarfBuzz WASM (capability `wasm` menandai tool yang bergantung padanya) |
-| `host.media` | 1.4 | Frame kamera langsung yang menggerakkan hook `onFrame`. Progressive enhancement, sengaja *tidak* di-gate oleh flag `camera` - tool semacam itu tetap berfungsi sebagai tool still-image biasa |
-| `host.color` | 1.40 | Matematika warna perseptual: ΔEOK, kontras WCAG + APCA, ramp OKLab, class-breaks, palet kategorikal, skema harmoni (1.60), pencampuran CSS Color 4 dan gradient baking (1.68). Murni dan sinkron - shell melampirkan `makeColorApi()` milik engine alih-alih mengimplementasikan apa pun, sehingga tidak bisa menyimpang |
-| `host.images` | 1.60 | Decode / resize / re-encode byte di device - jalur convert (HEIC → JPEG, kompres ke WebP, downscale). Dirilis di web shell sebagai lazy facade, sehingga decoder HEIC tidak pernah masuk ke boot chunk |
-| `host.geom` | 1.64 | Geometri vektor eksak: path boolean, offsetting, stroke-to-fill, spline lowering, simplifikasi, hit testing. Juga murni, sinkron dan dilampirkan dari engine (`makeGeomApi()`); kegagalan *dikembalikan*, tidak pernah di-throw |
+| `host.text` | 1.0 | Text-to-path lewat HarfBuzz WASM (kapabilitas `wasm` menandai alat yang bergantung padanya) |
+| `host.media` | 1.4 | Frame kamera live yang menggerakkan hook `onFrame`. Progressive enhancement, sengaja *tidak* di-gate oleh flag `camera` - alat semacam itu tetap berfungsi sebagai alat still-image biasa |
+| `host.color` | 1.40 | Matematika warna perseptual: ΔEOK, kontras WCAG + APCA, ramp OKLab, class-break, palet kategorikal, skema harmoni (1.60), pencampuran CSS Color 4 dan gradient baking (1.68). Murni dan sinkron - shell menyambungkan `makeColorApi()` milik engine, bukan mengimplementasikan apa pun sendiri, jadi tidak bisa melenceng |
+| `host.images` | 1.60 | Decode / resize / re-encode byte di perangkat - jalur konversi (HEIC → JPEG, kompres ke WebP, downscale). Dikirim di web shell sebagai lazy facade, jadi decoder HEIC tidak pernah masuk ke boot chunk |
+| `host.geom` | 1.64 | Geometri vektor presisi: boolean path, offsetting, stroke-to-fill, spline lowering, penyederhanaan, hit testing. Juga murni, sinkron dan tersambung dari engine (`makeGeomApi()`); kegagalan *dikembalikan*, tidak pernah di-throw |
 
 Sisanya mengikuti aturan yang sama dan didokumentasikan bersamanya: `pdf` (1.8) dan `pptx` (1.58) untuk operasi dokumen on-device, `audio` (1.71) dan `speech` (1.96) untuk analisis klip dan TTS/transkripsi on-device, `viz` (1.72) untuk kontrak placeholder MilkDrop, `codec` (1.100) dan `layers` (1.102) untuk output deep-bit dan layered-bitmap, `upscale` (1.101) dan `matte` (1.103) untuk model on-device, `raster` (1.105) untuk hook yang melakukan pekerjaan pixel sendiri, `connectors` (1.106) untuk panah yang aman diekspor dan `c2pa` (1.85) untuk menandatangani byte yang sudah jadi. Jumlahnya bertambah; aturannya tidak.
 

@@ -83,7 +83,7 @@ npm run ingest:brand -- ./my-tokens.json --name acme --label "Acme" --activate
 
 "URL-ই হলো API" কথাটা আক্ষরিক। নিচের চার্টটা কেউ আঁকেনি: এর ধরন, এর শিরোনাম আর এর গোটা ডেটা টেবিল অ্যাড্রেস বারে টাইপ করা হয়েছিল, আর একই লিঙ্ক যেকোনো ডিভাইসে একই চার্ট রেন্ডার করে।
 
-![মাসিক সাইনআপের একটি এরিয়া চার্ট, যার প্রতিটি মান ক্লিকের বদলে কোয়েরি প্যারামিটার হিসেবে এসেছে](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-d3-url-chart)
+![মাসিক সাইনআপের একটি এরিয়া চার্ট, যার প্রতিটি মান ক্লিকের বদলে একটি কোয়েরি প্যারামিটার হিসেবে এসেছে](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3Fct%3Darea%26d%3DMonth%2CSignups%250AJan%2C120%250AFeb%2C180%250AMar%2C265%250AApr%2C340%250AMay%2C455%26t%3DSignups%2520this%2520year%26full&width=1440&height=900&dpi=192&waitMs=2600&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-d3-url-chart)
 
 ## এরপর কোথায় যাবেন
 

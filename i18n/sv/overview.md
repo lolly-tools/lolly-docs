@@ -66,7 +66,7 @@ Det tydligaste sättet att se vad Lolly är är inte en funktionslista - det är
 
 Det "nya diagrammet" i steg två är en rendering som den här, framställd från en datasträng och en handfull parametrar utan att någon öppnar en designfil:
 
-![Ett titulerat staplat ytdiagram, dess tre serier bandade i en sval palett med axlar, förklaring och titel alla placerade av mallen snarare än för hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
+![Ett rubricerat staplat ytdiagram, dess tre serier bandade i en sval palett med axlar, förklaring och rubrik alla placerade av mallen snarare än för hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart%3FchartType%3Darea%26stackMode%3Dstacked%26palette%3Dcool%26heading%3DProduct%2520mix%2520by%2520quarter%26full&width=1440&height=900&dpi=192&waitMs=2600&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-lifecycle-chart)
 
 Poängen är inte att Lolly är bra för designers *och* bra för utvecklare *och* bra för säljare, var och en i ett vakuum. Det är ett **stafettlopp**: den kreativas första arbete skalas av utvecklaren, som i sin tur ger producenten kraft. Den enkla upplevelsen för den icke-tekniska säljaren på planet är bara *möjlig* på grund av den noggrannhet designern satte och utvecklaren driftsatte.
 
@@ -84,7 +84,7 @@ Samma deterministiska verktyg når den skalan på tre sätt, alla med identisk, 
 - <!--i:code--> **En utvecklare, från kommandoraden.** CLI:n kör *samma* motor och *samma* renderväg headless, så verktyget kan köras i sekvens över alla 10 000 rader i ett skript eller en nattlig pipeline. Ett `lolly <tool> --field=…`-anrop i en loop är hela integrationen.
 - <!--i:cpu--> **Ett system eller en AI-agent, via MCP.** Samma verktyg drivet programmatiskt, med samma fidelitet och ännu större skala - eftersom en maskin inte tröttnar medan tusentals filer rullar in.
 
-![Batchläge på en ny installation: en tom rad som väntar på ett verktyg, med hela kalkylbladsytan och dess Render-knapp på plats innan någon data anländer](/t/url-shot?url=%2F%23%2Fpro&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
+![Satsläge på en ny installation: en tom rad som väntar på ett verktyg, med hela kalkylbladsytan och dess Rendera-knapp på plats innan någon data kommit in](/t/url-shot?url=%2F%23%2Fbatch&width=1440&height=900&dpi=192&waitMs=3500&walker=1&format=svg&dark=1&filename=ov2-batch-grid)
 
 En uppsättning varumärkesbegränsningar, fastställd en gång av en designer; tre vägar till identisk förgodkänd utdata - och maskinvägen skalar längst av alla, eftersom den aldrig tröttnar medan filerna rullar in.
 
@@ -249,7 +249,7 @@ Webbskalet är responsivt från en enda layout. På desktop är ett verktyg ett 
 
 Samma verktyg i telefonbredd, utan en andra layout att underhålla: kontrollerna blir ett ark högst upp, förhandsvisningen tar hela skärmen och rendera-knappen flyter ovanpå.
 
-![Ett ljudogram på en 430px bred skärm - kontrollarket ovanför, det färdiga kvadratiska verket nedanför och den flytande rendera-knappen](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
+![Ett audiogram på en 430px bred skärm - kontrollarket ovanför, det färdiga kvadratiska konstverket nedanför och den svävande rendera-pillen](/t/url-shot?url=%2F%23%2Ftool%2Faudiogram%3Faudio%3Dlolly%2Floops%2Ffireplace-loop%26title%3DField%2520notes%26subtitle%3DEpisode%252012%26style%3Dwave&width=430&height=900&dpi=192&waitMs=3200&css=%23ag-wave%7Bdisplay%3Anone!important%7D.ag-ph%7Bdisplay%3Ablock!important%7D&walker=1&format=svg&rasterDpi=110&dark=1&filename=ov2-phone-audiogram)
 
 **Batchläge (`/pro`).** Webbskalet levererar också ett kalkylbladsliknande batch-rutnät (`shells/web/src/pro/`) som renderar många rader samtidigt över ett eller flera verktyg. Det hanterar CSV/TSV-tur-och-retur plus inklistring från kalkylblad, mall/format/storlek/enhet/dpi per rad, en sidopanel för blockredigering med levande förhandsvisning, hopfällbara exportkolumner, en relevanstaggrad per rad, dragreglage till vänster för radordning, tvåstegsbekräftelse för borttagning, sparade batch-sessioner och en `.zip`-nedladdning. Det här är den en-till-många-ytan bakom positioneringen "generering av innehåll i massor".
 
@@ -286,10 +286,10 @@ Raderna listas i galleriets sektionsordning. Sektionen `utility` renderas alltid
 | Kategori | Exempel | Planerat |
 |---|---|---|
 | `everyone` | QR Code Generator, Quote Card, Email Signature, Logo, Wordmark, Audiogram, Battlecards, Sequence Studio, Record | Employee Image Stationery |
-| `designer` | Brand Lockup, Design, Chart Creator, D3 Chart Studio, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
+| `designer` | Brand Lockup, Design, Chart, Darkroom, Filter, Pose Geeko, Multi-Page PDF | Font Outliner |
 | `event` | Meeting Planner, Event Name Badge, Wayfinding Signage, Calendar ICS, Booth Studio | Event Stationery, Bulk Name Badges, Room Agenda Cards |
 | `product` | - | CVE Alert, Product Release Announcement, Blog OG Image |
-| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Unit/format converters, more on-device privacy utilities |
+| `utility` | Strip Hidden Data, Text Helper, Compress PDF, Convert Image, Convert Font, Redact, Run Web Code, Screen Capture, URL Screenshot | Enhets-/formatkonverterare, fler integritetsverktyg på enheten |
 
 De cellerna är **exempel, inte inventarier**. Vilka verktyg som finns är en egenskap hos profilen du monterat, inte hos den här sidan: ett varumärkespaket lägger till sina egna och kan utesluta ett community-verktyg det hellre inte levererar. `catalog/tools/index.json` - genererad från manifesten och registret som galleriet faktiskt läser - är den auktoritativa listan; för att räkna vad en profil monterar, räkna manifesten (`ls community/*/tool.json brands/*/tools/*/tool.json`) i stället för att lita på ett tal skrivet här. (Ett verktygs-id som finns i två paket monteras en gång, från det vinnande paketet.)
 
@@ -344,14 +344,14 @@ Valfria, additiva ytor visas endast när ett skal tillhandahåller dem. Vissa ä
 
 En handfull flaggskeppsytor, för att visa vad det täcker - [Host API](/info/host-api.html) dokumenterar var och en, och `packages/core/src/host-v1.ts` är själva kontraktet:
 
-| Yta | Sedan | Vad den lägger till |
+| Yta | Sedan | Vad det tillför |
 |---|---|---|
-| `host.tokens` | 1.0 | DTCG-designtoken - varumärkets egna primitiver |
-| `host.text` | 1.0 | Text-till-bana via HarfBuzz WASM (kapabilitetsflaggan `wasm` markerar verktyg som är beroende av det) |
-| `host.media` | 1.4 | Levande kamerabildrutor som driver hooken `onFrame`. Progressiv förbättring, medvetet *inte* spärrad av flaggan `camera` - ett sådant verktyg fungerar fortfarande som ett vanligt stillbildsverktyg |
-| `host.color` | 1.40 | Perceptuell färgmatematik: ΔEOK, WCAG- och APCA-kontrast, OKLab-ramper, klassgränser, kategoriska paletter, harmonischeman (1.60), CSS Color 4-blandning och gradientbakning (1.68). Ren och synkron - skal fäster motorns `makeColorApi()` i stället för att implementera något, så det kan inte glida isär |
-| `host.images` | 1.60 | Avkoda / ändra storlek / omkoda bytes på enheten - omvandlingsvägen (HEIC → JPEG, komprimera till WebP, nedskala). Levererad i webbskalet som en lat fasad, så att HEIC-avkodaren aldrig hamnar i uppstartschunken |
-| `host.geom` | 1.64 | Exakt vektorgeometri: bankbooleaner, offsetting, stroke-till-fyllning, splineförenkling, förenkling, träffprövning. Också ren, synkron och fäst från motorn (`makeGeomApi()`); fel *returneras*, kastas aldrig |
+| `host.tokens` | 1.0 | DTCG designtoken - varumärkets egna primitiv |
+| `host.text` | 1.0 | Text-till-bana via HarfBuzz WASM (funktionsflaggan `wasm` markerar verktyg som är beroende av det) |
+| `host.media` | 1.4 | Livebildrutor från kameran som driver `onFrame`-kroken. Progressiv förbättring, medvetet *inte* spärrad av flaggan `camera` - ett sådant verktyg fungerar ändå som ett vanligt stillbildsverktyg |
+| `host.color` | 1.40 | Perceptuell färgmatematik: ΔEOK, WCAG- + APCA-kontrast, OKLab-ramper, klassbrytningar, kategoriska paletter, harmonischeman (1.60), CSS Color 4-mixning och gradientbakning (1.68). Ren och synkron - skalen kopplar in motorns `makeColorApi()` istället för att implementera något själva, så den kan inte glida iväg |
+| `host.images` | 1.60 | Avkoda / ändra storlek / omkoda bytes på enheten - konverteringsvägen (HEIC → JPEG, komprimera till WebP, nedskalning). Levereras i webbskalet som en lat fasad, så HEIC-avkodaren hamnar aldrig i startbunten |
+| `host.geom` | 1.64 | Exakt vektorgeometri: booleska bansoperationer, offset, kontur-till-fyllning, spline-nedgradering, förenkling, träffdetektering. Också ren, synkron och inkopplad från motorn (`makeGeomApi()`); fel *returneras*, kastas aldrig |
 
 Resten följer samma regler och dokumenteras tillsammans med dem: `pdf` (1.8) och `pptx` (1.58) för dokumentkirurgi på enheten, `audio` (1.71) och `speech` (1.96) för klippanalys och TTS/transkribering på enheten, `viz` (1.72) för MilkDrop-platshållarkontraktet, `codec` (1.100) och `layers` (1.102) för djupbit- och lagerbitmapsutdata, `upscale` (1.101) och `matte` (1.103) för modellerna på enheten, `raster` (1.105) för hooks som gör eget pixelarbete, `connectors` (1.106) för exportsäkra pilar och `c2pa` (1.85) för signering av färdiga bytes. Antalet växer; reglerna gör det inte.
 

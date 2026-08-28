@@ -58,6 +58,7 @@
   "Formats": "Mga format",
   "Everywhere": "Kahit saan",
   "FAQ": "FAQ",
+  "Make it yours": "Gawin itong iyo",
   "Lolly opens {in} kinds of file and makes {out}, and {both} of them go both ways.": "Nagbubukas ang Lolly ng {in} uri ng file at gumagawa ng {out}, at {both} sa mga ito ay gumagana sa magkabilang direksyon.",
   "See everything Lolly can open and make": "Tingnan ang lahat ng kayang buksan at gawin ng Lolly",
   "Already have designs? They aren't stranded - bring Figma, Penpot, Illustrator, InDesign or any SVG.": "May mga disenyo ka na? Hindi sila naiiwan - dalhin ang Figma, Penpot, Illustrator, InDesign o kahit anong SVG.",
@@ -76,6 +77,10 @@
   "Free, no account": "Libre, walang account",
   "What Lolly supports": "Ano ang sinusuportahan ng Lolly",
   "Everything happens on your device, so it works with the Wi-Fi off.": "Nangyayari ang lahat sa device mo, kaya gumagana ito kahit patay ang Wi-Fi.",
+  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "Inililipat ng converter ang deskripsyon, may-akda, copyright, at petsa ng pagkuha papunta sa bagong file. Hindi kasama ang lokasyon maliban kung i-on mo ito, at hindi makokopya ang Content Credential: nakatali ito sa orihinal na bytes.",
+  "Every table in the font, its name and licence records included, passes through untouched.": "Bawat table sa font, kasama ang pangalan at rekord ng lisensya nito, ay dumadaan nang hindi nagbabago.",
+  "Nothing embedded carries over: the new file is written fresh with Lolly\\'s own details, and your original keeps its own.": "Walang naka-embed na inililipat: isinusulat ang bagong file mula sa simula gamit ang sariling detalye ng Lolly, at pananatilihin ng orihinal mo ang sarili nitong detalye.",
+  "What carries over": "Ano ang inililipat",
   "Convert": "I-convert",
   "What goes in": "Ano ang pumapasok",
   "What comes out": "Ano ang lumalabas",
@@ -202,9 +207,5 @@
   "Parser Inventory": "Imbentaryo ng Parser",
   "Server Surface": "Server Surface",
   "Generated once, rendered the same": "Isang beses na-generate, pareho ang render",
-  "AI marking and the EU AI Act": "Pagmamarka ng AI at ang EU AI Act",
-  "What carries over": "Ano ang kasamang nadadala",
-  "The converter moves the description, author, copyright and capture date into the new file. Location stays behind unless you turn it on, and a Content Credential cannot be copied: it is bound to the original bytes.": "Inililipat ng converter ang paglalarawan, may-akda, copyright at petsa ng pagkuha sa bagong file. Naiiwan ang lokasyon maliban kung buksan mo ito, at hindi makokopya ang Content Credential: nakatali ito sa orihinal na mga byte.",
-  "Every table in the font, its name and licence records included, passes through untouched.": "Bawat talahanayan sa font, kasama ang mga tala ng pangalan at lisensya, ay dumadaan nang buo.",
-  "Nothing embedded carries over: the new file is written fresh with Lolly's own details, and your original keeps its own.": "Walang naka-embed na nadadala: isinusulat nang bago ang file gamit ang sariling detalye ng Lolly, at nananatili sa orihinal mo ang sarili nitong detalye."
+  "AI marking and the EU AI Act": "Pagmamarka ng AI at ang EU AI Act"
 }

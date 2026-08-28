@@ -8,7 +8,7 @@ Det noll-tillit-organisatoriska immunförsvaret som lindas runt det ni redan gö
 
 Lolly är inget andraklassens kreativt verktyg: det lägger utdata av produktionskvalitet i allas händer, och den varumärkesstyrda skapandeupplevelsen är oöverträffad. Anledningen till att det är *säkert* att dela ut i stor skala är arkitektonisk: inget laddas upp som du inte själv lagt dit, varje resultat är reproducerbart och varje export kan bära flera lager av branschledande kryptografiska register. Oavsett hur ett dokument nått ditt skrivbord kan du se dess fullständiga proveniens, om det manipulerats och om du kan återskapa det pixelperfekt.
 
-> **Var det står i dag.** Lollys säkerhetsegenskaper är starka genom design, och dess kryptografi- och filtolkningsmotorer genomgår SUSE:s infrastrukturhärdning i företagsklass. Sigillen, signeringen på enheten och krypteringen nedan är verkliga och försvarbara redan nu, och mognar mot oberoende certifiering - så där ett avtal kräver certifierad säkerhet, driftsätt dem som försvar på djupet medan den processen slutförs.
+> **Nuläget.** Lollys säkerhetsegenskaper är starka från grunden, och dess kryptografi- och filtolkningsmotorer genomgår SUSE:s infrastrukturhärdning i företagsklass. Förseglingarna, signeringen på enheten och krypteringen nedan är verkliga och försvarbara redan nu, och mognar mot oberoende certifiering - så där ett avtal kräver certifierad säkerhet, använd dem som försvar på djupet medan den processen slutförs.
 
 ## Den strategiska fördelen
 
@@ -16,9 +16,9 @@ Det vanliga sättet rutinmässigt kreativt arbete utförs på är en ansvarsyta:
 
 Lolly vänder på det. Arbetet som *drev* de där läckorna - citatkortet, den lokaliserade bannern, evenemangsbrickan, den redigerade skärmdumpen - sker nu i ett verktyg som körs på medarbetarens egen enhet, mot ert varumärke, utan någon server inblandad. Ni lade inte till en kontroll ovanpå ett riskabelt arbetsflöde; ni ersatte det riskabla arbetsflödet med ett som inte har någon läckväg över huvud taget.
 
-- **Konfigurationen är er.** Motorn och skalen är öppen källkod (MPL-2.0). Lägg på er egen autentisering, telemetri eller CA; hosta det eller låt bli; ni har full kontroll över funktioner och kostnad, git-spårat, inte inlåst i en SaaS-databas.
-- **Styrning kan vara data, inte en instrumentpanel.** När ni vill ha den kontrollen kan ni hantera verktygskatalogen som ett Git-repo - granskning av pull-requests blir varumärkesgodkännande, med ett fullständigt granskningsspår och omedelbar återställning av varje mall era medarbetare kan komma åt. Det är ett alternativ, inte en skyldighet, och det landar på precis ett skrivbord: skaparna arbetar helt i appen, sparar det de gör som en **session** och lämnar den vidare som en delningslänk, en säkerhetskopia eller ett live-samarbete - inget av det kräver git. När en av de sessionerna förtjänar att bli en permanent startpunkt öppnar den som driftsätter länken, spelar in dess värden som en **mall** på det verktyget i varumärkespaketet och committar. Därefter dyker den upp i verktygets "Ny från mall"-väljare och kan djuplänkas som `?template=<id>`. Git är administratörens låssteg, använt en gång, och aldrig något en skapare behöver röra. Se [Adoption och styrning](/info/adoption-governance.html).
-- **Skyddsräcken är strukturella.** Varumärkesbegränsningar är hårdkodade i mallar, inte publicerade som riktlinjer folk kan ignorera. Fel utdata avskräcks inte - den kan inte ens uppstå.
+- **Konfigurationen är din.** Motorn och skalen är öppen källkod (MPL-2.0). Lägg på din egen autentisering, telemetri eller CA; hosta det eller låt bli; du har full kontroll över funktioner och kostnader, git-spårat, inte inlåst i en SaaS-databas.
+- **Styrning kan vara data, inte en instrumentpanel.** När du vill ha den kontrollen, hantera verktygskatalogen som ett Git-repo - pull request-granskning blir varumärkesgodkännande, med en fullständig granskningslogg och omedelbar återställning av varje mall din personal kan komma åt. Det är ett alternativ, inte en skyldighet, och det tillhör precis ett skrivbord: skapare arbetar helt i appen, sparar det de gör som en **session** och för det vidare som en delningslänk, en säkerhetskopia eller ett livesamarbete - inget av det behöver git. När en av de sessionerna förtjänar att bli en permanent utgångspunkt öppnar den som sköter driftsättningen länken, sparar dess värden som en **mall** på det verktyget i varumärkespaketet och committar. Från och med då dyker den upp i verktygets "Ny från mall"-väljare och kan djuplänkas som `?template=<id>`. Git är administratörens låsande steg, används en gång, och aldrig något en skapare behöver röra. Se [Införande och styrning](/info/adoption-governance.html).
+- **Skyddsräcken är strukturella.** Varumärkesbegränsningar är inbyggda i mallarna, inte publicerade som riktlinjer folk kan ignorera. Fel utdata avråds inte - den kan inte ens uppstå.
 
 > **Ni styr hela stafetten.** En kreatör skriver reglerna och en utvecklare skalar dem, men det är operatören som gör den livscykeln säker att köra i hela organisationen - samma verktyg som låter en säljare självbetjäna sig på ett flygplan är ett ni kan grinda genom Git-granskning, driftsätta genom er MDM och verifiera kryptografiskt. Se hur rollerna samverkar i [Livscykeln för en kampanj](/info/overview.html#the-lifecycle-of-a-campaign), och hur ni styr den i [Adoption och styrning](/info/adoption-governance.html).
 
@@ -50,7 +50,7 @@ Krymp en för stor PDF på enheten, så att ingen behöver ta till en tredjepart
 
 Alla dessa är transformationer på enheten: din fil eller data går in, rensade byte kommer ut och **det finns ingen server att ladda upp till**. De är den medvetna motsatsen till det typiska "ladda upp din fil till en främlings webbplats för att rensa den"-verktyget som en välmenande medarbetare annars tar till.
 
-![Strip Hidden Data: filen hamnar på canvasen och märket anger tydligt att inget laddas upp](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
+![Strip Hidden Data: filen anländer på ritytan och emblemet anger tydligt att inget laddas upp](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
 
 Text Helper är samma affär för text i stället för filer. Det är den flikade arbetsbänken en medarbetare annars skulle leta efter på en främlings webbplats, och den deklarerar inga inmatningar alls eftersom inget den rör vid någonsin lämnar sidan.
 
@@ -69,7 +69,7 @@ Varje verktygsinmatning kan uttryckas som en URL-parameter, och samma inmatning 
 
 Prompt to Image är determinism i sin enklaste form: texten är hela inmatningen, den typsatta bilden är hela utmatningen och samma text sätts alltid likadant.
 
-![Prompt to Image - ett block av promptext typsatt till en kvadratisk bild, med inget i resultatet som inte fanns i inmatningen](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
+![Prompt to Image - ett textblock med en prompt satt i en kvadratisk bild, utan något i resultatet som inte fanns i indata](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
 
 ## Proveniens och Content Credentials
 
@@ -108,6 +108,10 @@ Några saker värda att ha klart för sig innan du rullar ut det:
 - **Verktygshooks är *inte* en säkerhetssandlåda.** Ett verktygs valfria `hooks.js` körs med värdbryggan injicerad, men i ett webbläsarskal exekverar det i sidans realm och *kan* nå `window`/`document`/`fetch`. Behandla verktygskod som du behandlar all kod du kör - granska den. Det är därför en organisation som driver en delad katalog kan grinda den via Git-granskning; kör i vilket fall bara verktyg du har granskat tills Worker-isolering lanseras.
 - **Content Credentials är manipulations-synliga.** De upptäcker ändringar snarare än förhindrar dem - se anteckningarna om interoperabilitet ovan.
 - **Två krypteringsnivåer.** *Standard*-lås är snabba, universella avskräckningsmedel; *Strong* (AES-256) är fullt skydd - ta till Strong för allt känsligt, med tanke på att det kräver en modern läsare.
+
+## Fristående, eller styrt av ett kontrollplan
+
+Två former, och du väljer per driftsättning. **Fristående är standard och behöver ingen server:** Lolly renderar på enheten, varje producent arbetar i appen, och git-som-data-styrningen ovan är helt valfri - en enskild organisation kan köra det här repot helt utan något hostat. **När du vill ha organisationsövergripande kontroll, lägg till ett kontrollplan.** [lolly.work](https://lolly.work) är en separat, öppen källkods-tjänst (MPL-2.0) du hostar - eller utvärderar i den hostade sandlådan - som styr skalet live: SSO-spärrad inloggning, policy för funktionsflaggor / export / vattenstämpel, overlägg för verktygsindata, katalogfederation, godkännanden och en hash-kedjad granskningslogg, allt levererat till skalet utan någon kodändring här. Den är varumärkesagnostisk (konfiguration plus en paketmontering), använder det här repots motor och paket omodifierade, och blir aldrig renderingsvägen: Lolly renderar fortfarande på enheten från grunden. OSS = individuell frihet; OSS + kontrollplan = organisatorisk frihet.
 
 ## Vart du ska gå härnäst
 

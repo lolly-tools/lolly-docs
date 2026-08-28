@@ -153,7 +153,7 @@ Overskrifter, kode og kursiv faller hver tilbake til primærskriften til du tild
 
 Stadiet åpnes **inline i rommet**, ikke i en dialogboks, slik at kortene du kom fra blir stående på skjermen. Søk i en Google Fonts-familie (Inter, Fraunces, Space Grotesk...) eller slipp en skriftfil, trykk **Legg til i sammenligningen**, og kandidatene stilles side om side i de samme ordene før noen av dem installeres. Escape avbryter og gir tastaturet tilbake til kortet du åpnet det fra.
 
-Det er den ene inngangsdøren, og derfor havner ingenting i merkevaren din usett. Under stadiet ligger de to administrasjonspanelene:
+Det er den ene døren inn, og det er derfor ingenting kommer inn i merkevaren din usett. Under scenen ligger de to administrasjonspanelene:
 
 - **Skrifter på denne enheten** - hver installerte familie, rollene den tjener og en slett-knapp. **Legg til en skrift** her åpner det samme sammenligningsstadiet uten avgrensning.
 - **Dine skrifter** - last opp en **TTF**, **OTF** eller **WOFF** fra din egen maskin. Det er veien for en lisensiert bedriftsskrift du allerede eier.
@@ -211,13 +211,13 @@ En kildeinstallasjon tar et **sjekkpunkt først**, slik at «tilbakestill til f�
 
 ## Versjoner
 
-**Versjoner** nederst i rekken er der et designsystem slutter å være et bevegelig mål. Publiser én og du får en **permanent, navngitt kopi** lagret på denne enheten: den endrer seg aldri etterpå, så et verktøy som fester seg til den, fortsetter å tegne det samme. Panelet forblir skjult til det finnes noe eget å publisere, så et studio som aldri publiserer, får aldri se maskineriet.
+**Versjoner** nederst på skinnen er der et designsystem slutter å være et bevegelig mål. Publiser én, og du får en **permanent, navngitt kopi** oppbevart på denne enheten: den endres aldri etterpå, så et verktøy som fester seg til den, fortsetter å tegne det samme. Panelet forblir skjult til det finnes noe eget å publisere, slik at et studio som aldri publiserer, aldri ser kontrollene.
 
 Tre ting å vite før du trykker på noe, og panelet sier alle tre før trykket i stedet for etterpå:
 
-- **En versjon er permanent.** Det finnes ingen sletting ennå, så panelet oppgir hva som er bevart og at det forblir bevart, i stedet for å tilby en knapp som lyver.
-- **Fjerninger står øverst på kompatibilitetskortet.** Nye og endrede tokens er nyheter; et *fjernet* et er det som ødelegger et verktøy, så det nevnes først og kalles det det er.
-- **Publisering kan ikke angres; gjenoppretting kan.** *Gjenopprett siste fra denne versjonen* er en vanlig redigering av hodet, så den havner på studioets angre-stabel, og panelet tilbyr deg **Angre** med det samme.
+- **En versjon er permanent.** Det finnes ingen slettefunksjon ennå, så panelet forteller hva som er beholdt og at det forblir beholdt, i stedet for å tilby en knapp som lyver.
+- **Fjerninger leder kompatibilitetskortet.** Lagt til og endrede tokens er nyheter; en *fjernet* en er det som ødelegger et verktøy, så den nevnes først og kalles det den er.
+- **Publisering kan ikke angres; gjenoppretting kan.** *Gjenopprett nyeste fra denne versjonen* er en ordinær redigering av hodet, så den havner på studioets angre-stabel, og panelet tilbyr deg **Angre** med det samme.
 
 Du kan **Bare publisere**, eller **Publiser og gjør aktiv** - forskjellen er om verktøyene og appen følger den versjonen fra nå av eller fortsetter å følge din siste redigering. **Følg det siste igjen** setter hver redigering live i det den gjøres. `#/start?area=versions` åpner panelet direkte.
 

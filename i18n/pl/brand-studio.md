@@ -153,7 +153,7 @@ Headings, code i italic domyślnie sięgają do kroju primary, dopóki ich nie p
 
 Etap otwiera się **w tym samym pokoju**, a nie w oknie dialogowym, więc karty, z których wyszedłeś, zostają na ekranie. Wyszukaj rodzinę Google Fonts (Inter, Fraunces, Space Grotesk…) albo upuść plik czcionki, naciśnij **Add to the comparison**, a kandydaci staną obok siebie w tych samych słowach, zanim którykolwiek się zainstaluje. Escape anuluje i oddaje klawiaturę karcie, z której go otworzono.
 
-To jedyne drzwi wejściowe, dlatego nic nie trafia do Twojej marki niezauważone. Pod etapem znajdują się dwa panele zarządzania:
+To jedyne drzwi wejściowe, dlatego nic nie wchodzi do Twojej marki niezauważone. Pod sceną znajdują się dwa panele zarządzania:
 
 - **Fonts on this device** - każda zainstalowana rodzina, role, którym służy, i usuwanie. **Add a face** otwiera tu ten sam etap porównania, tym razem bez ograniczenia do roli.
 - **Your fonts** - prześlij plik **TTF**, **OTF** lub **WOFF** z własnego urządzenia. To ścieżka dla licencjonowanego kroju firmowego, który już posiadasz.
@@ -211,13 +211,13 @@ Wczytanie marki z powrotem to **Add from… → Design tokens or a design file**
 
 ## Wersje
 
-**Wersje** u dołu panelu to miejsce, w którym system projektowy przestaje być ruchomym celem. Publikując jedną, otrzymujesz **trwałą, nazwaną kopię** przechowywaną na tym urządzeniu: nigdy się już nie zmienia, więc narzędzie, które ją przypina, wciąż rysuje to samo. Panel pozostaje ukryty, dopóki nie ma niczego własnego do opublikowania, więc studio, które nigdy nic nie publikuje, nigdy nie widzi tego mechanizmu.
+**Versions** u dołu paska to miejsce, w którym system projektowy przestaje być ruchomym celem. Opublikuj jedną i otrzymasz **trwałą, nazwaną kopię** przechowywaną na tym urządzeniu: później już się nie zmienia, więc narzędzie, które ją przypina, wciąż rysuje to samo. Panel pozostaje ukryty, dopóki nie ma niczego własnego do opublikowania, więc studio, które nigdy nie publikuje, nigdy nie widzi tych elementów sterujących.
 
 Trzy rzeczy, które warto wiedzieć, zanim cokolwiek naciśniesz - i panel mówi o wszystkich trzech przed naciśnięciem, a nie po nim:
 
-- **Wersja jest trwała.** Na razie nie da się jej usunąć, więc panel mówi wprost, co zostało zachowane i że pozostaje zachowane, zamiast oferować przycisk, który kłamie.
-- **Usunięcia prowadzą w karcie zgodności.** Dodane i zmienione tokeny to nowości; *usunięty* token to coś, co psuje narzędzie, więc jest wymieniany jako pierwszy i nazywany po imieniu.
-- **Publikacji nie da się cofnąć; przywrócenia - tak.** *Restore latest from this version* to zwykła edycja głowy (head), więc trafia na stos cofnięć studia, a panel od razu oferuje **Undo**.
+- **Wersja jest trwała.** Nie ma jeszcze usuwania, więc panel stwierdza, co zostało zachowane i że pozostaje zachowane, zamiast oferować przycisk, który kłamie.
+- **Usunięcia prowadzą kartę zgodności.** Dodane i zmienione tokeny to nowości; ten *usunięty* jest tym, co psuje narzędzie, więc jest wymieniany jako pierwszy i nazywany po imieniu.
+- **Publikacji nie można cofnąć; przywrócenia można.** *Restore latest from this version* to zwykła edycja głowy, więc trafia na stos cofania studia, a panel od razu oferuje Ci **Undo**.
 
 Możesz **Publish only** albo **Publish and make active** - różnica polega na tym, czy narzędzia i aplikacja zaczynają odtąd podążać za tą wersją, czy nadal podążają za twoją najnowszą edycją. **Follow the latest again** sprawia, że każda edycja staje się aktywna w chwili jej wprowadzenia. `#/start?area=versions` otwiera panel bezpośrednio.
 
