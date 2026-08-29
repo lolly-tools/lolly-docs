@@ -2169,7 +2169,7 @@ ${humanTabs.map(({ h2 }, i) => `  <label class="audience-tab" for="aud-${tabSlug
 <section class="hero">
   <div class="hero-inner">
   <div class="hero-heading">
-    <div class="hero-logo-slot"><div class="hero-logo-mark"><a href="${esc(localizeHref(lang, '/'))}" class="hero-logo-link" aria-label="Open Lolly - browse all tools"><img src="/info/icon.svg" alt="Lolly" class="hero-logo"><img src="/icons/icon-512.png" alt="" aria-hidden="true" class="hero-logo-still"></a></div>${HERO_VERIFY(lang)}</div>
+    <div class="hero-logo-slot"><div class="hero-logo-mark"><a href="${esc(localizeHref(lang, '/'))}" class="hero-logo-link" aria-label="Open Lolly - browse all tools"><img src="/info/icon.svg" alt="Lolly" class="hero-logo"><img src="/icons/hero-still.png" alt="" aria-hidden="true" class="hero-logo-still"></a></div>${HERO_VERIFY(lang)}</div>
   </div>
   <div class="hero-details">
     <h1 class="hero-statement">${esc(heroChrome.statement)}</h1>
