@@ -106,6 +106,30 @@ planned; the manifest and the local build steps are in
 
 ---
 
+## Arch
+
+**Arch and its derivatives, from the AUR.**
+
+Install `lolly-desktop-bin` with an AUR helper, or build it by hand:
+
+```bash
+paru -S lolly-desktop-bin
+# or, without a helper:
+git clone https://aur.archlinux.org/lolly-desktop-bin.git
+cd lolly-desktop-bin && makepkg -si
+```
+
+The package repacks the official 1.0.1 desktop build and installs the whole
+desktop integration - the `.lolly` MIME type, the thumbnailer, the GNOME Shell
+search provider, the D-Bus services, and the KDE service menu.
+
+On Hyprland and other wlroots compositors the colour picker and the wallpaper
+feature go through the desktop portal, so an `xdg-desktop-portal` backend must
+be running (Hyprland ships its own); the desktop search integration is a
+GNOME/KDE feature.
+
+---
+
 ## Android
 
 **Phone and tablet, `.apk`, installed directly.**
