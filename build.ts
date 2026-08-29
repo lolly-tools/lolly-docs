@@ -1269,7 +1269,7 @@ function englishAudienceH2s(): string[] {
  * Every tile links STRAIGHT at the file on lolli.li - the stable `lolly-latest.*`
  * alias, overwritten in place on each release, so the link never rots on a version
  * bump (which is what the section-anchor indirection used to guard against, and no
- * longer needs to). The "more" link still lands on /info/install.html for the
+ * longer needs to). The "more" link still opens /info/install.html for the
  * platforms without a tile (Windows, iOS, the terminal) and the checksum step.
  * URLs come from DOWNLOAD_FILE below, keyed by tile, not from the locale JSON, so
  * they cannot drift per language.
