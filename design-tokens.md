@@ -93,6 +93,16 @@ Nothing in the link below names a colour. Its three colour params are token path
 
 ![The download pill parked at the palette's bottom edge, with the format menu that carries the same colours back out as DTCG JSON](/t/url-shot?url=%2F%23%2Fstart%3Ftab%3Dcolor&width=1440&height=900&dpi=192&waitMs=1800&cropSelector=.be-pal-dock&format=svg&walker=1&dark=1&filename=bs-palette-download)
 
+## Take your tokens to Penpot
+
+The round trip above, step by step - no code involved.
+
+**Export from Lolly.** Open the [Brand Studio](/info/brand-studio.html) and go to the Colours room. The download pill parked at the bottom of the palette pane offers several formats; choose **Design tokens (JSON)**. The file you get is a W3C design-tokens document - the format Penpot and Tokens Studio read. If you have chosen faces in the Type room (Primary, Headings, Code, Italic), those travel in the same file as font tokens. Roles you left on the platform default stay out of the file: the export only carries choices you actually made.
+
+**Import into Penpot.** Open a Penpot file and switch to the Tokens panel in the left sidebar. Import the JSON you just downloaded. Your sets appear in the panel, and the colours and fonts can be applied to shapes and text from there.
+
+Two more paths exist beyond the token file. Once Penpot is connected under Profile → Connected services, a finished render can be sent from Lolly into a Penpot project as an image. And the Lolly bridge plugin for Penpot - installed by URL from a Lolly instance - can place a working Lolly session on the Penpot canvas as editable shapes.
+
 ## Migration & status
 
 The brand colours moved into tokens without changing what anyone sees: `scripts/build-brand-tokens.ts` derives the token document from the existing palette, so the picker shows the same colours - now sourced canonically. The shell palette remains the fallback (and, for now, the source of CMYK anchors on export). With dimension/typography tokens and user import/export now shipped, most of the app resolves from tokens and the standalone palette recedes; template-level token *injection* is the main piece still to land.
