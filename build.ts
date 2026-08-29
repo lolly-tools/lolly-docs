@@ -1314,6 +1314,7 @@ function downloadsRail(lang: Lang): string {
       <div class="dl-grid">
       ${tiles}
       </div>
+      <a class="dl-verify" href="${RELEASE}/SHA256SUMS.txt">${docIcon('shieldcheck')}<span>${esc(t('Verify downloads (SHA-256)'))}</span></a>
       <a class="dl-more" href="${esc(localeHref(lang, d.more.slug))}">${esc(d.more.label)} <span aria-hidden="true">&rarr;</span></a>
     </div>`;
 }
