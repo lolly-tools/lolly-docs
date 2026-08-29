@@ -1266,11 +1266,13 @@ function englishAudienceH2s(): string[] {
  * mark on purpose - the distribution is the thing being recognised, and the line
  * under it is what separates Tumbleweed from Leap.
  *
- * Every tile links to a SECTION of /info/install.html rather than straight at a
- * file. A packaged build is a decision (which architecture, which repository,
- * what to trust), and the install page is where that decision is answerable; a
- * bare file link would also rot the day an artifact is renamed, whereas the
- * anchors are ours. The install page holds the actual URLs.
+ * Every tile links STRAIGHT at the file on lolli.li - the stable `lolly-latest.*`
+ * alias, overwritten in place on each release, so the link never rots on a version
+ * bump (which is what the section-anchor indirection used to guard against, and no
+ * longer needs to). The "more" link still lands on /info/install.html for the
+ * platforms without a tile (Windows, iOS, the terminal) and the checksum step.
+ * URLs come from DOWNLOAD_FILE below, keyed by tile, not from the locale JSON, so
+ * they cannot drift per language.
  */
 function downloadsRail(lang: Lang): string {
   const d = loadSiteJson('downloads.json', lang) as {
@@ -1282,7 +1284,18 @@ function downloadsRail(lang: Lang): string {
   // visual order (mark, badge, name, meta) is a scanning order, not a sentence, and
   // "DMG macOS Apple silicon M1 and later" is what the spans read as. One composed
   // label says the same thing once, so the internals are all aria-hidden.
-  const tiles = d.items.map((it, i) => `<a class="dl-tile" data-dl="${esc(it.logo)}" href="${esc(localeHref(lang, it.slug))}#${esc(it.hash)}" style="--dl-i:${i}" aria-label="${esc(
+  // Stable release aliases on lolli.li, keyed by tile hash. A tile with no entry
+  // falls back to the old install-section anchor. Both openSUSE tiles resolve to the
+  // one x86_64 rpm for now; split them when distro-specific rpms ship.
+  const RELEASE = 'https://lolli.li';
+  const DOWNLOAD_FILE: Record<string, string> = {
+    macos: 'lolly-latest.dmg', tumbleweed: 'lolly-latest.rpm', leap: 'lolly-latest.rpm',
+    flatpak: 'lolly-latest.flatpak', android: 'lolly-latest.apk',
+  };
+  const tiles = d.items.map((it, i) => {
+    const file = DOWNLOAD_FILE[it.hash];
+    const href = file ? `${RELEASE}/${file}` : `${localeHref(lang, it.slug)}#${it.hash}`;
+    return `<a class="dl-tile" data-dl="${esc(it.logo)}" href="${esc(href)}"${file ? ' download' : ''} style="--dl-i:${i}" aria-label="${esc(
       t('Install for {os}: {name}, {ext} file').replace('{os}', it.os).replace('{name}', it.name).replace('{ext}', it.ext))}">
         <span class="dl-top" aria-hidden="true">
           <span class="dl-mark">${docLogo(it.logo)}</span>
@@ -1291,7 +1304,8 @@ function downloadsRail(lang: Lang): string {
         </span>
         <span class="dl-name" aria-hidden="true">${esc(it.name)}</span>
         <span class="dl-meta" aria-hidden="true"><span class="dl-os">${esc(it.os)}</span><span class="dl-note">${esc(it.note)}</span></span>
-      </a>`).join('\n      ');
+      </a>`;
+  }).join('\n      ');
   return `<div class="hero-downloads">
       <div class="dl-head">
         <span class="dl-label">${esc(d.label)}</span>

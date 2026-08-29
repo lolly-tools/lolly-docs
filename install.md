@@ -9,12 +9,13 @@ The app is the same either way. Same tools, same brand packs, same files out -
 the packaged builds add native file dialogs, a home in your application menu and
 a copy that keeps working with the network unplugged.
 
-> **The first tagged release is not out yet.** The build pipeline for every
-> package below is written, tested and in the repository, and the artifacts
-> appear here the moment a `v*` tag is cut. Until then each section gives you the
-> build-it-yourself route, which produces the same file from the same source.
-> If you want the app right now and do not want to build it, use
-> [the web app](/) - it needs no install at all.
+> **Direct downloads are live.** Every packaged build below links straight to the
+> file on `lolli.li`. Each platform has a stable `lolly-latest.*` link that always
+> points at the newest build, alongside versioned files that never change. Signed
+> system repositories (openSUSE OBS, Flathub) are planned and will land here when
+> they do; until then these direct files - and the build-it-yourself route in each
+> section - are the way in. Prefer no install at all? Use [the web app](/); it
+> needs no install and is the same application.
 
 ---
 
@@ -25,8 +26,8 @@ a copy that keeps working with the network unplugged.
 Download the disk image, open it, and drag Lolly to Applications. Nothing else
 is needed - the app carries its own engine and tool catalogue.
 
-- **File:** `Lolly_<version>_aarch64.dmg`
-- **From:** [the releases page](https://github.com/lolly-tools/lolly/releases)
+- **Download:** [`lolly-latest.dmg`](https://lolli.li/lolly-latest.dmg) - always the newest build.
+- **Versioned:** `https://lolli.li/Lolly_<version>_aarch64.dmg` (for example `Lolly_1.0.0_aarch64.dmg`) - pinned, never overwritten.
 - **Intel Macs:** not published. Tauri does not cross-compile, so an
   `x86_64-apple-darwin` build has to run on Intel hardware or a rosetta CI
   runner; if you need one, build it yourself with the steps below.
@@ -46,39 +47,33 @@ Full prerequisites are in the [Build Guide](/info/build-guide.html).
 
 ## Tumbleweed
 
-**openSUSE Tumbleweed, `.rpm`, from the Open Build Service.**
-
-Adding the repository is the route to prefer over a one-off file: the package is
-signed, `zypper` checks that signature on every install, and updates arrive with
-the rest of your system.
+**openSUSE Tumbleweed, `.rpm`, x86_64.**
 
 ```bash
-sudo zypper addrepo --refresh \
-  https://download.opensuse.org/repositories/home:/lolly/openSUSE_Tumbleweed/ lolly
-sudo zypper refresh
-sudo zypper install lolly-desktop
+sudo zypper install https://lolli.li/lolly-latest.rpm
 ```
 
-`zypper` asks you to trust the repository key the first time. Compare its
-fingerprint against the one shown on the project page before you accept it.
+Or download [`lolly-latest.rpm`](https://lolli.li/lolly-latest.rpm) and install the
+file directly. The versioned build sits beside it, for example
+`https://lolli.li/lolly-desktop-1.0.0-0.x86_64.rpm`.
 
-The package is built on OBS from prebuilt source tarballs rather than from a
-plain checkout, because an OBS build is offline and this app needs the network
-during its frontend build. The reasons and the exact mechanism are in
+A signed OBS repository - so updates arrive with the rest of your system - is
+planned; until it is live a direct `.rpm` does not auto-update, so check back here
+for a newer build. The package build itself is described in
 `shells/tauri-desktop/rpm/README.md`.
 
 ---
 
 ## Leap
 
-**openSUSE Leap 16, `.rpm`, from the same project.**
+**openSUSE Leap 16, `.rpm`, x86_64.**
 
 ```bash
-sudo zypper addrepo --refresh \
-  https://download.opensuse.org/repositories/home:/lolly/openSUSE_Leap_16.0/ lolly
-sudo zypper refresh
-sudo zypper install lolly-desktop
+sudo zypper install https://lolli.li/lolly-latest.rpm
 ```
+
+The same x86_64 `.rpm` serves Tumbleweed and Leap 16 for now; a distro-specific
+split will come with the signed repository.
 
 **Leap 15.6 is not a target.** The dependency tree needs Rust 1.88 or newer and
 15.6's default toolchain is older, so supporting it would mean pinning a second
@@ -96,22 +91,17 @@ The Flatpak is the right choice on Fedora, Debian, Ubuntu, Arch, Leap 15.6, an
 immutable desktop, or anything else that is not one of the two RPM targets. It
 brings its own runtime, so it does not care what your distribution ships.
 
-From Flathub, once the submission is accepted:
+Download the single-file bundle and install it:
 
 ```bash
-flatpak install flathub tools.lolly.Desktop
+curl -LO https://lolli.li/lolly-latest.flatpak
+flatpak install --user ./lolly-latest.flatpak
 flatpak run tools.lolly.Desktop
 ```
 
-From a downloaded single-file bundle:
-
-```bash
-flatpak install --user ./Lolly.flatpak
-```
-
 The app id is `tools.lolly.Desktop` and the runtime is `org.gnome.Platform`
-version 49. The bundle is produced by `.github/workflows/flatpak.yml` on every
-`v*` tag; the manifest and the local build steps are in
+version 49. A Flathub listing - which would carry updates automatically - is
+planned; the manifest and the local build steps are in
 `shells/tauri-desktop/flatpak/README.md`.
 
 ---
@@ -124,15 +114,16 @@ No store account, and no store. Download the APK, open it, and allow your
 browser or file manager to install applications this once. Android will ask -
 that prompt is the system working correctly, not a warning about this file.
 
-- **File:** `lolly-<version>.apk`
+- **Download:** [`lolly-latest.apk`](https://lolli.li/lolly-latest.apk) - always the newest build.
+- **Versioned:** `https://lolli.li/Lolly-<version>.apk` (for example `Lolly-1.0.0.apk`).
 - **Minimum:** Android 8.0
 - **Architecture:** `arm64-v8a`
 
-Check the file before installing it. Every release publishes a `SHA256SUMS`
-file next to the artifacts:
+Check the file before installing it. Every release publishes a checksums file at
+`https://lolli.li/SHA256SUMS.txt`:
 
 ```bash
-sha256sum lolly-1.0.0.apk
+sha256sum lolly-latest.apk
 ```
 
 Compare the result with the line for that filename. If they differ, do not
@@ -161,15 +152,20 @@ Android SDK and NDK prerequisites are in the
 
 ## Checking what you downloaded
 
-Every published artifact ships with a `SHA256SUMS` file. Download both, then:
+Every release publishes a checksums file at
+[`https://lolli.li/SHA256SUMS.txt`](https://lolli.li/SHA256SUMS.txt). Put it next
+to your file, then:
 
 ```bash
-sha256sum --check --ignore-missing SHA256SUMS
+curl -LO https://lolli.li/SHA256SUMS.txt
+sha256sum --check --ignore-missing SHA256SUMS.txt
 ```
 
 A line reading `OK` means the file on your disk is byte-for-byte the file the
-build produced. A mismatch means it changed somewhere between there and here,
-and the answer is always to download it again rather than to install it anyway.
+build produced. A `lolly-latest.*` file is a copy of the current versioned build,
+so it carries that build's hash - compare the value, not the name, if you kept the
+`latest` name. A mismatch means it changed somewhere between there and here, and
+the answer is always to download it again rather than to install it anyway.
 
 The files Lolly itself makes carry their own seal, which is a separate and
 stronger check - see [Verify It Yourself](/info/verify-yourself.html).

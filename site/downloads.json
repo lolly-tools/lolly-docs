@@ -16,7 +16,7 @@
       "os": "openSUSE",
       "name": "Tumbleweed",
       "ext": "RPM",
-      "note": "zypper repo",
+      "note": "x86_64",
       "slug": "install",
       "hash": "tumbleweed"
     },
@@ -25,7 +25,7 @@
       "os": "openSUSE",
       "name": "Leap 16",
       "ext": "RPM",
-      "note": "zypper repo",
+      "note": "x86_64",
       "slug": "install",
       "hash": "leap"
     },
