@@ -37,6 +37,7 @@ security posture).
 | [site.md](site.md) | end user | Copy for the `/info` landing page. Registered as the `index` page with `isLanding: true`, so it renders as the front door rather than an article. |
 | [quickstart.md](quickstart.md) | end user | The one page to read first: make Lolly wear your brand, bring in the design files and tokens you already have, then pick a pathway. Its own pathway hub. |
 | [make-something.md](make-something.md) | end user | Make something in 60 seconds: three short walkthroughs (a QR code, a wordmark, a filtered photo) that need no account, no setup and no design skill. The first click for a brand-new visitor. |
+| [install.md](install.md) | end user | Every packaged build in one list: the macOS disk image, the openSUSE Tumbleweed and Leap 16 RPMs, the Flatpak, the Android APK, plus Windows, iOS, the CLI and the TUI. The destination of the landing hero's download rail. |
 
 ## For Creators
 

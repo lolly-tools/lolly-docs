@@ -173,6 +173,12 @@ const pages: Page[] = [
   // ── Primary article ──────────────────────────────────────────────────────
   { slug: 'quickstart',       title: 'Quickstart', src: 'quickstart.md', pathway: 'quickstart', isHub: true },
   { slug: 'make-something',   title: 'Make something in 60 seconds', src: 'make-something.md', pathway: 'quickstart', description: "Pick a tool, type a few words and download the finished file: three short walkthroughs that need no account, no setup and no design skill." },
+  // The destination of the hero's download rail (downloadsRail). Its own page rather
+  // than five direct file links, because picking a package is a decision - which
+  // architecture, which repository, what to trust - and a bare link cannot answer any
+  // of it. Registered under Quickstart: a reader who wants the app installed is at the
+  // very start of the path, not deep in Operators.
+  { slug: 'install',          title: 'Install Lolly', src: 'install.md', pathway: 'quickstart', description: "Every packaged build in one list: the macOS disk image, the openSUSE Tumbleweed and Leap RPMs, the Flatpak, the Android APK, and how to check the file you downloaded is the one we made." },
 
   // ── Pathway hubs ─────────────────────────────────────────────────────────
   { slug: 'creators',         title: 'Lolly for Creators',  src: 'creators.md',  pathway: 'creators',  isHub: true },
@@ -365,7 +371,8 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
     groups: [
       { label: 'Start here', items: [
         { slug: 'make-something', label: 'Make something' },
-        { slug: 'quickstart',     label: 'Quickstart' } ] },
+        { slug: 'quickstart',     label: 'Quickstart' },
+        { slug: 'install',        label: 'Install Lolly' } ] },
       { label: 'Then pick a path', items: [
         { slug: 'creators',  label: 'For Creators' },
         { slug: 'builders',  label: 'For Builders' },
@@ -1245,6 +1252,58 @@ function englishAudienceH2s(): string[] {
 // rules are marked CLAIMS-ALLOW, each with the reason on the line - and the test
 // excuses exactly those, so an unmarked exception fails the build's test run.
 
+/**
+ * The hero's download rail - the five packaged builds, above the fold.
+ *
+ * Placed INSIDE the hero rather than in a band of its own because "above the fold"
+ * is the whole requirement: a band under the hero falls off a 720px laptop screen
+ * the moment the H1 wraps to two lines, and the one thing a returning visitor
+ * wants is the file for their own machine.
+ *
+ * Each tile carries the OTHER party's mark (docLogo, from docs/logos.ts) rather
+ * than one of our own glyphs, because the reader is scanning for a mark they
+ * already recognise, not reading five labels. Two openSUSE tiles wear the same
+ * mark on purpose - the distribution is the thing being recognised, and the line
+ * under it is what separates Tumbleweed from Leap.
+ *
+ * Every tile links to a SECTION of /info/install.html rather than straight at a
+ * file. A packaged build is a decision (which architecture, which repository,
+ * what to trust), and the install page is where that decision is answerable; a
+ * bare file link would also rot the day an artifact is renamed, whereas the
+ * anchors are ours. The install page holds the actual URLs.
+ */
+function downloadsRail(lang: Lang): string {
+  const d = loadSiteJson('downloads.json', lang) as {
+    label: string; lead: string;
+    items: { logo: string; os: string; name: string; ext: string; note: string; slug: string; hash: string }[];
+    more: { label: string; slug: string };
+  };
+  // aria-label rather than letting the four spans be read in DOM order: the tile's
+  // visual order (mark, badge, name, meta) is a scanning order, not a sentence, and
+  // "DMG macOS Apple silicon M1 and later" is what the spans read as. One composed
+  // label says the same thing once, so the internals are all aria-hidden.
+  const tiles = d.items.map((it, i) => `<a class="dl-tile" data-dl="${esc(it.logo)}" href="${esc(localeHref(lang, it.slug))}#${esc(it.hash)}" style="--dl-i:${i}" aria-label="${esc(
+      t('Install for {os}: {name}, {ext} file').replace('{os}', it.os).replace('{name}', it.name).replace('{ext}', it.ext))}">
+        <span class="dl-top" aria-hidden="true">
+          <span class="dl-mark">${docLogo(it.logo)}</span>
+          <span class="dl-go">${docIcon('download')}</span>
+          <span class="dl-ext">${esc(it.ext)}</span>
+        </span>
+        <span class="dl-name" aria-hidden="true">${esc(it.name)}</span>
+        <span class="dl-meta" aria-hidden="true"><span class="dl-os">${esc(it.os)}</span><span class="dl-note">${esc(it.note)}</span></span>
+      </a>`).join('\n      ');
+  return `<div class="hero-downloads">
+      <div class="dl-head">
+        <span class="dl-label">${esc(d.label)}</span>
+        <span class="dl-lead">${esc(d.lead)}</span>
+      </div>
+      <div class="dl-grid">
+      ${tiles}
+      </div>
+      <a class="dl-more" href="${esc(localeHref(lang, d.more.slug))}">${esc(d.more.label)} <span aria-hidden="true">&rarr;</span></a>
+    </div>`;
+}
+
 // The landing page states positions; the docs hold the reasoning, the caveats and
 // the mechanisms, and they are kept current in a way marketing copy never is. So
 // the trust section ends by handing the reader over to them rather than trying to
@@ -2118,6 +2177,7 @@ ${humanTabs.map(({ h2 }, i) => `  <label class="audience-tab" for="aud-${tabSlug
     <div class="hero-cta">
       ${heroChrome.ctas.map(c => `<a href="${esc(localizeHref(lang, c.href))}" class="${esc(c.class)}">${esc(c.label)}</a>`).join('\n      ')}
     </div>
+    ${downloadsRail(lang)}
     <div class="hero-trust">
       ${heroChrome.trustChips.map(c => `<span>${esc(c)}</span>`).join('\n      <span class="trust-dot">·</span>\n      ')}
       <span class="trust-dot">·</span>
@@ -4706,7 +4766,7 @@ const PATHWAY_HUB: Record<Pathway, string> = {
  */
 interface SitemapSection { hub: Pathway; label: string; slugs: string[] }
 const FOOTER_SECTIONS: SitemapSection[] = [
-  { hub: 'quickstart', label: 'Quickstart', slugs: ['index', 'make-something', 'positioning', 'compare',
+  { hub: 'quickstart', label: 'Quickstart', slugs: ['index', 'make-something', 'install', 'positioning', 'compare',
     'compare-canva', 'compare-adobe', 'compare-figma', 'compare-render-apis', 'compare-converters',
     'compare-penpot', 'compare-brand-portals'] },
   // Keeps the pathway's own name rather than the rail's "Make things", because the
@@ -4833,7 +4893,7 @@ const SIDEBAR_ICON: Record<string, string> = {
   'sequence-editor': 'clock', animating: 'layers', exporting: 'download', formats: 'convert', positioning: 'sliders', compare: 'checklist',
   'compare-canva': 'checklist', 'compare-adobe': 'checklist', 'compare-figma': 'checklist', 'compare-render-apis': 'checklist', 'compare-converters': 'checklist',
   'compare-penpot': 'checklist', 'compare-brand-portals': 'checklist',
-  'make-something': 'pentool',
+  'make-something': 'pentool', install: 'download',
   // Concepts: the locked rule set, the same-every-time check, the link as the artifact.
   constraints: 'lock', determinism: 'check', reproducibility: 'link',
   'sovereign-production': 'server',
