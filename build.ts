@@ -1290,7 +1290,7 @@ function downloadsRail(lang: Lang): string {
   const RELEASE = 'https://lolli.li';
   const DOWNLOAD_FILE: Record<string, string> = {
     macos: 'lolly-latest.dmg', tumbleweed: 'lolly-latest.rpm', leap: 'lolly-latest.rpm',
-    flatpak: 'lolly-latest.flatpak', android: 'lolly-latest.apk',
+    flatpak: 'lolly-latest.flatpak', android: 'lolly-latest.apk', deb: 'lolly-latest.deb',
   };
   const tiles = d.items.map((it, i) => {
     const file = DOWNLOAD_FILE[it.hash];

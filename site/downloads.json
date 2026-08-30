@@ -46,6 +46,15 @@
       "note": "no store",
       "slug": "install",
       "hash": "android"
+    },
+    {
+      "logo": "debian",
+      "os": "Linux",
+      "name": "Debian, Ubuntu",
+      "ext": "DEB",
+      "note": "x86_64",
+      "slug": "install",
+      "hash": "deb"
     }
   ],
   "more": {
