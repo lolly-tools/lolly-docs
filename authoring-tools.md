@@ -897,6 +897,14 @@ npm run dev:web
 # open localhost - your tool appears in the gallery
 ```
 
+### Try it without the monorepo
+
+You do not need the full clone to run a tool you wrote. Zip the tool folder and drop the zip on [lolly.tools](https://lolly.tools) or any Lolly instance. The drop sheet offers **Install this tool**; take it and the tool installs on that device and opens. Zipping the folder and zipping its contents both work, because a single top-level folder is stripped. Nothing is uploaded: the zip is read in the page, and the files go to the same device-local store a `.lolly`'s carried tool uses.
+
+Your `hooks.js` is code that runs in the page, so the install asks the same **Trust this tool?** consent a `.lolly` asks, and you should read a stranger's tool before you accept it. Drop an edited zip again and Lolly offers to replace your copy, which is the loop to use while you iterate. An id the catalogue already lists is refused rather than installed, because an installed tool never shadows a catalogue one, so give yours its own id.
+
+When it works, open a pull request against [`lolly-tools`](https://github.com/lolly-tools/lolly-tools), the small public repo of community tools. To test hooks without a browser, `@lolly-tools/core` exports `createMockHost`, an in-memory host bridge a plain node test can drive.
+
 ### Sharing a tool without a catalog (`.lolly`)
 
 Neither route above helps if you have no catalog to build into and no repo to push to. The third path is the share file: open your tool, choose **Share → Download .lolly** and tick **Include the tool**. The file then carries `tool.json`, `template.html`, `styles.css`, `hooks.js`, `icon.svg`, whichever sibling text templates the declared formats call for and the sidecar for the active language, all alongside the design, so it opens on a device that has never seen the tool. The checkbox arrives ticked for any tool the deployment's signed catalog doesn't list, which is the state of anything you just authored (and of every tool on a build that signs nothing).

@@ -59,6 +59,27 @@ https://lolly.tools/#/tool/qr-code?url=https://suse.com&format=svg&export
 
 Then change one input in the app, copy the link out of the Share dialog and read it. Every value you set is visible in it, which is the whole claim in one glance.
 
+## Prove it yourself
+
+Reading a link is one kind of proof. Rebuilding the file is the other. Give the CLI a finished artifact and the `.lolly` of the session that made it, and it renders the session again on your machine and compares:
+
+```
+lolly validate ./poster.svg --rebuild ./poster.lolly
+```
+
+`IDENTICAL` (exit 0) means the session you kept still produces those exact bytes. `DIFFERENT` (exit 1) names every reason it could check, and only the ones it could check:
+
+| Reason | What it means |
+|---|---|
+| `engine-version` | The artifact's credential names an engine version, and this machine runs a different one. |
+| `tool-version` | The tool version recorded in the artifact, in the `.lolly` and in this catalog do not all agree. |
+| `font` | A face the `.lolly` names is missing here, or resolves to a file with a different sha256. The `.lolly` records each face the render used as family, weight, style and the digest of the whole source font file. No font bytes travel in the file, so this is a name check against your own copy. |
+| `content` | The bytes differ and none of the above explains it, reported with the offset where they first diverge. |
+
+The scope is narrow on purpose. Only `svg`, `emf`, `eps`, `dxf` and `csv` can be compared, because those are the formats whose output comes from the engine's own emitters and is byte-stable across a double render. Asking to rebuild a `png`, `jpg`, `webp` or `pdf` is refused with exit 2 rather than answered: raster and PDF output is laid out and rasterised by a browser engine whose version is part of the result, which is a [determinism](/info/determinism.html) question with a format-by-format answer. Content Credentials are switched off for the rebuild and stripped from the delivered SVG before comparing, since a credential is signed with a fresh key at a fresh timestamp and can never be byte-equal to itself.
+
+One more honest limit: the rebuild renders through the CLI. A file exported from the browser was serialised by the web shell, whose SVG writer is not byte-identical to the terminal's, so comparing one of those reports `content`. Compare a CLI export with the CLI, and use the reason list on a web export to see whether the engine, the tool or a font moved under it.
+
 ## The receipts
 
 | Claim | Enforced by |
@@ -71,6 +92,9 @@ Then change one input in the app, copy the link out of the Share dialog and read
 | A tool-sourced asset is re-rendered on every load rather than cached as pixels | `tests/tool-url-asset.test.ts` |
 | A token reference survives a shared link and resolves before the template | `tests/tokens-value-path.test.ts` |
 | Compact block encoding round-trips a value containing its own delimiter | `tests/engine.test.ts` - `url-mode: a block value containing a ~ round-trips losslessly via the JSON form` |
+| An artifact and its session rebuild to the same bytes, and a changed input reports why | `tests/reproducibility-rebuild.test.ts` |
+| A raster or PDF rebuild is refused rather than answered with a coin flip | `tests/reproducibility-rebuild.test.ts` - `a raster or PDF artifact is refused, not guessed at` |
+| A `.lolly` whose parts do not match its integrity map is refused before anything is believed | `tests/reproducibility-rebuild.test.ts` - `the node reader refuses a .lolly whose parts do not match its integrity map` |
 
 ## Limits
 

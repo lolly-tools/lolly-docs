@@ -102,6 +102,16 @@ work stays. The control plane's own endpoints, storage
 and data handling are that product's documentation, not this page's - this
 page keeps its promise for what *Lolly* ships.
 
+That is the whole of what the app does about enrolment, and it is deliberate.
+Three arrangements follow from it. Plain Lolly has no instance and nothing to
+leave. The community app connected to a governed instance honours that
+instance's policy while you are signed in, and Leave is one tap: the
+organisation's brand, tools and catalogue go, your own work stays. An
+organisation that needs more than that - a client that cannot leave, or one
+that removes the organisation's content after a set time offline - builds and
+ships its own client from this open-source code. Nothing in the app prevents
+that, and nothing in the app does it, because this app is the individual's.
+
 ## What is deliberately *not* here
 
 - **No render server for the app.** The app never uploads your inputs or
