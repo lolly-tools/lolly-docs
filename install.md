@@ -108,15 +108,31 @@ planned; the manifest and the local build steps are in
 
 ## Arch
 
-**Arch and its derivatives, from the AUR.**
+**Arch and its derivatives, from the Lolly pacman repository.**
 
-Install `lolly-desktop-bin` with an AUR helper, or build it by hand:
+Add the repository to `/etc/pacman.conf`:
+
+```ini
+[lolly]
+SigLevel = Optional TrustAll
+Server = https://lolli.li/arch/$arch
+```
+
+then install - and from here on, update - with pacman itself:
 
 ```bash
-paru -S lolly-desktop-bin
-# or, without a helper:
-git clone https://aur.archlinux.org/lolly-desktop-bin.git
-cd lolly-desktop-bin && makepkg -si
+sudo pacman -Syu lolly-desktop-bin
+```
+
+The `SigLevel` line is needed because the repository is not yet
+GPG-signed; it scopes the exception to this one repository only.
+An AUR package under the same name is planned once AUR account
+registration reopens; the recipe is maintained in
+`shells/tauri-desktop/linux/arch/`, and you can build it by hand today:
+
+```bash
+git clone https://github.com/lolly-tools/lolly-desktop.git
+cd lolly-desktop/linux/arch && makepkg -si
 ```
 
 The package repacks the official 1.0.1 desktop build and installs the whole
