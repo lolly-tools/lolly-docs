@@ -55,7 +55,7 @@ sudo zypper install https://lolli.li/lolly-latest.rpm
 
 Or download [`lolly-latest.rpm`](https://lolli.li/lolly-latest.rpm) and install the
 file directly. The versioned build sits beside it, for example
-`https://lolli.li/lolly-desktop-1.0.0-0.x86_64.rpm`.
+`https://lolli.li/lolly-desktop-1.0.5-0.x86_64.rpm`.
 
 A signed OBS repository - so updates arrive with the rest of your system - is
 planned; until it is live a direct `.rpm` does not auto-update, so check back here
