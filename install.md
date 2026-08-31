@@ -135,7 +135,7 @@ git clone https://github.com/lolly-tools/lolly-desktop.git
 cd lolly-desktop/linux/arch && makepkg -si
 ```
 
-The package repacks the official 1.0.1 desktop build and installs the whole
+The package repacks the official 1.0.5 desktop build and installs the whole
 desktop integration - the `.lolly` MIME type, the thumbnailer, the GNOME Shell
 search provider, the D-Bus services, and the KDE service menu.
 
@@ -143,6 +143,30 @@ On Hyprland and other wlroots compositors the colour picker and the wallpaper
 feature go through the desktop portal, so an `xdg-desktop-portal` backend must
 be running (Hyprland ships its own); the desktop search integration is a
 GNOME/KDE feature.
+
+---
+
+## Debian / Ubuntu
+
+**Debian, Ubuntu and derivatives, `.deb`.**
+
+Pick the build for your architecture and install it with `apt`:
+
+- **amd64 (Intel/AMD):** [`lolly-latest.deb`](https://lolli.li/lolly-latest.deb)
+- **arm64 (ARM servers, Raspberry Pi, ARM VMs):** [`lolly-latest-arm64.deb`](https://lolli.li/lolly-latest-arm64.deb)
+
+```bash
+# amd64
+curl -LO https://lolli.li/lolly-latest.deb && sudo apt install ./lolly-latest.deb
+# arm64
+curl -LO https://lolli.li/lolly-latest-arm64.deb && sudo apt install ./lolly-latest-arm64.deb
+```
+
+Versioned files sit beside them, for example
+`https://lolli.li/lolly-desktop-1.0.5_amd64.deb` and
+`lolly-desktop-1.0.5_arm64.deb`. A direct `.deb` does not auto-update, so check
+back here for a newer build, or use the Flatpak above, which updates in place
+once its Flathub listing is live.
 
 ---
 
@@ -182,7 +206,7 @@ Android SDK and NDK prerequisites are in the
 | **Web** | [Open it](/) | Nothing to install. Add it to your home screen or dock and it keeps working with the network unplugged. |
 | **Windows** | `.msi` or an NSIS `.exe` | Built by `npm run build:desktop` on Windows. Not yet published as a signed release. |
 | **iOS** | `.ipa` | Needs an Apple developer identity to sign with, so there is no download to hand out. See [Building for iOS](/info/ios-build.html). |
-| **Linux, other** | `.deb`, `.AppImage` | Both fall out of the same desktop build. The Flatpak above is the supported Linux package. |
+| **Linux, other** | `.AppImage` | Falls out of the same desktop build. For Debian/Ubuntu use the `.deb` above; the Flatpak is the supported cross-distro package. |
 | **Terminal** | `npm run cli` | The same engine, headless. See [the CLI guide](/info/cli.html). |
 | **Terminal, interactive** | `npm run tui` | A full-screen terminal interface. See [the TUI guide](/info/tui.html). |
 | **Tool-author SDK** | `npm i -D @lolly-tools/core` | Published on npm. The `HostV1` contract types, the manifest validator and a mock host for testing a tool without the app or a clone of the repository. See [Authoring Tools](/info/authoring-tools.html#try-it-without-the-monorepo). |
