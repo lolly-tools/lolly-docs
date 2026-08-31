@@ -185,6 +185,7 @@ Android SDK and NDK prerequisites are in the
 | **Linux, other** | `.deb`, `.AppImage` | Both fall out of the same desktop build. The Flatpak above is the supported Linux package. |
 | **Terminal** | `npm run cli` | The same engine, headless. See [the CLI guide](/info/cli.html). |
 | **Terminal, interactive** | `npm run tui` | A full-screen terminal interface. See [the TUI guide](/info/tui.html). |
+| **Tool-author SDK** | `npm i -D @lolly-tools/core` | Published on npm. The `HostV1` contract types, the manifest validator and a mock host for testing a tool without the app or a clone of the repository. See [Authoring Tools](/info/authoring-tools.html#try-it-without-the-monorepo). |
 | **Browser extension** | Load unpacked | See [Browser Extension](/info/extension.html). |
 | **Your own server** | Self-host the web shell | A static bundle behind any web server, including an air-gapped one. See [Deployment](/info/deployment.html). |
 

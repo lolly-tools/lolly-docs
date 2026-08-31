@@ -506,6 +506,25 @@ The data-format helpers `{{icsStamp}}`, `{{rfcText}}` and `{{csvCell}}` are for 
 
 Scoped automatically. Write top-level selectors targeting your own classes. Don't write global rules (`body`, `html`); they'll be scoped to `#tool-canvas` and probably won't do what you want.
 
+### What the vector export keeps
+
+SVG and PDF exports are not screenshots. The exporter reads each element's computed style and re-emits it as vector, so the CSS you choose decides whether a feature survives as geometry, is rasterised into the file, or is dropped. A row marked *raster* still exports correctly, but that one element becomes a bitmap inside an otherwise vector file.
+
+| You write | In the SVG / PDF |
+|---|---|
+| `border` (one width and colour all round), `border-radius`, `dashed`, `dotted` | Kept as a stroke, dash pattern included. |
+| A border that differs per side | Kept as flat edges. A corner radius or dash on a mixed border is lost. |
+| `outline` | Not exported. Use `border`, or `box-shadow` spread, for a visible ring. |
+| `box-shadow` (outer and `inset`), `text-shadow`, `filter: drop-shadow()` | Kept: native SVG filters, or the shape redrawn; PDF bakes only a blurred shadow. |
+| `filter: blur()` | Kept in SVG. PDF rasterises the element. |
+| `opacity`, `mix-blend-mode` | Kept in SVG. Blend modes rasterise in PDF. |
+| `overflow: hidden`; `clip-path` with `circle()`, `ellipse()`, `inset()` or `polygon()` | Kept as a clip. `clip-path: url()` or `path()` rasterises. |
+| `mask-image`, `mask` | Raster. |
+| `backdrop-filter` | A plain `blur()` is kept in snapshot exports; anything richer rasterises. |
+| Text | Outlined to paths with the real font, including `-webkit-text-stroke` and `paint-order`. A glyph the font lacks (an emoji, say) keeps that whole line as live `<text>`, which then needs the font on the viewer's machine. |
+| `background-image` | Gradients become real gradients and a single image an `<image>`; `conic-gradient` rasterises. |
+| `transform` | 2-D transforms are kept. 3-D (`rotateY`, `perspective`) is not. |
+
 ### Letting the DOCUMENT bring its own CSS
 
 A tool can also give the person using it a stylesheet - Design does, as its `customCss`
@@ -903,7 +922,13 @@ You do not need the full clone to run a tool you wrote. Zip the tool folder and 
 
 Your `hooks.js` is code that runs in the page, so the install asks the same **Trust this tool?** consent a `.lolly` asks, and you should read a stranger's tool before you accept it. Drop an edited zip again and Lolly offers to replace your copy, which is the loop to use while you iterate. An id the catalogue already lists is refused rather than installed, because an installed tool never shadows a catalogue one, so give yours its own id.
 
-When it works, open a pull request against [`lolly-tools`](https://github.com/lolly-tools/lolly-tools), the small public repo of community tools. To test hooks without a browser, `@lolly-tools/core` exports `createMockHost`, an in-memory host bridge a plain node test can drive.
+When it works, open a pull request against [`lolly-tools`](https://github.com/lolly-tools/lolly-tools), the small public repo of community tools. To test hooks without a browser, install the tool-author SDK from npm:
+
+```bash
+npm i -D @lolly-tools/core
+```
+
+It exports `createMockHost`, an in-memory host bridge a plain node test can drive, `validateTool`, the same manifest check the catalog CI runs, and the `HostV1` types for your editor. It depends only on `ajv`, so nothing from the platform comes with it. The package [README on npm](https://www.npmjs.com/package/@lolly-tools/core) walks a four-file tool through that test.
 
 ### Sharing a tool without a catalog (`.lolly`)
 
