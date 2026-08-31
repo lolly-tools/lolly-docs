@@ -69,11 +69,17 @@ for a newer build. The package build itself is described in
 **openSUSE Leap 16, `.rpm`, x86_64.**
 
 ```bash
-sudo zypper install https://lolli.li/lolly-latest.rpm
+sudo zypper install https://lolli.li/lolly-latest-leap16.rpm
 ```
 
-The same x86_64 `.rpm` serves Tumbleweed and Leap 16 for now; a distro-specific
-split will come with the signed repository.
+Leap 16 has its own build, and you need it: the Tumbleweed `.rpm`
+(`lolly-latest.rpm`) is compiled against a newer glibc and refuses to install
+here with `nothing provides 'libm.so.6(GLIBC_2.43)'`. The versioned build sits
+beside the alias, for example
+`https://lolli.li/lolly-desktop-1.0.5-0.leap16.x86_64.rpm`.
+
+The two packages are otherwise identical in content; only the toolchain they
+were built against differs.
 
 **Leap 15.6 is not a target.** The dependency tree needs Rust 1.88 or newer and
 15.6's default toolchain is older, so supporting it would mean pinning a second
