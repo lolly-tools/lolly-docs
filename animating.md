@@ -67,6 +67,12 @@ Depth on its own changes how the camera sees the box: lifted layers move further
 
 The first time you move Depth, a **Camera** appears in the Always on strip. Depth already works without it - the camera box is what makes the shot itself editable.
 
+## Tilt a box
+
+A box can hold a **perspective pose** of its own: pitch and yaw, up to 75 degrees each way, with the vanishing point at the box's centre. The object bar's **More** panel has a **Perspective tilt** section with the two sliders; the timeline's Keyframes popup carries the same pair as pose fields, so a tilt can be keyframed like depth - the keyed value replaces the authored one for its segment, and everything the arc grammar says about coming home applies.
+
+A tilted box renders with real perspective everywhere - the canvas, a still, a frame of video - and one honest trade: because a tilted plane is beyond what the vector formats can say, an SVG or PDF export embeds that box as an image (the export says so), and a **video** export of a tilted scene runs on the slower capture path. Choreograph's **Tumble** option rides this feature and is off by default for exactly that reason.
+
 ## The camera
 
 Select the **Camera** chip and the inspector swaps its Time and Animate groups for a **Camera** group.
