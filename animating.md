@@ -100,6 +100,27 @@ Right-click a box holding an SVG and choose **Lift layers** (it is also in the *
 
 The list is a plan, not a promise. On a screenshot exported from a Lolly canvas the layers really are the objects the editor knows about. On anything else - a page you captured, a drawing from another app - the split is read off the artwork's own groups and geometry, so read the list before you accept it. Artwork that is genuinely one layer says so and offers nothing to do.
 
+## Choreograph: one click, a whole motion arc
+
+A lifted stack, a grouped selection or a grid of swatches is a set of boxes that want to move together. **Choreograph** writes that motion for you: every box gets its own keyframes, staggered a little after the box before it, and the camera gets a move of its own, all in one commit. Nothing is stored by name - what you get is ordinary keyframes, so you can retime, split or delete any of them afterwards, and one undo takes the whole arc back.
+
+Select two or more boxes, right-click and choose **Choreograph…** (it is also in the **More** panel). Pick a showcase:
+
+| Showcase | The arc |
+| --- | --- |
+| **Buildup** | Assembles from nothing: each box fades in from a little way out and settles into place, in reading order. |
+| **Deconstruct** | The reverse: everything rests, then flies apart, and stays apart. |
+| **The Loop** | Assembles, holds, flies apart. It ends exactly where it began, so an exported GIF or APNG cycles without a jump. |
+| **Hero arc** | Explodes outward while the camera flies through the stack at an angle, then everything comes home. |
+| **Trench run** | A small lift, with the camera inside the stack drifting along it so the layers stream past above and below. |
+| **Map-scan** | The boxes hardly rise; the camera starts far back, glides in at an angle, then pans across the page in a few thrown-map moves before settling. |
+
+Below the showcases: **Length** in seconds (each showcase has its own, and follows the one you pick until you type a length), **Stagger** in milliseconds between one box and the next, **Order** (reading order, reversed, from the centre, by depth or random), **Camera move** and **Float** - a breath of scale as each box settles, so a grid never ticks like a metronome.
+
+Two rules the generated moves keep. Every showcase except Deconstruct ends at rest: each box back at its own depth, the camera home. And a showcase over boxes that already have a timeline runs on that timeline - it starts where the earliest of them starts, and a box that enters late joins the move at the pose it has reached rather than replaying the opening.
+
+Boxes with no timeline yet are given one: each becomes a clip from the start of the sequence for the arc's length, which is what makes the motion play and export at all.
+
 ## Exporting a move
 
 The preview and the file are the same arithmetic, so what you see is what you get.
