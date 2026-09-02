@@ -1,94 +1,54 @@
 # Yaratıcılar için Lolly
 
-İyi bir şey yapmak, hızlıca ve doğru çıkmasını istiyorsun. Lolly tam olarak bunun için yapıldı: birkaç alanı doldur, bitmiş bir dosya al - düzen, tipografi, kurallar senin gözün tarafından değil araç tarafından uygulanır (istersen değil - o zaman parmaklarının ucunda tüm bir medya gücü var). Tasarım yazılımı yok, bekleme yok. Kendi cihazında çalışır ve çevrimdışı da işler.
+Birkaç alanı doldurursun ve yazı tipleri, renkler ve düzen zaten kendi cihazında karara bağlanmış, bitmiş bir dosya çıkar. Dakikalar içinde teslim edersin ve saatler harcamış gibi görünür, marka kuralları aracın içine gömülü olduğu için de marka dışı dosyada asla senin adın olmaz. Bugün yaptığın işe uyan aşağıdaki şeridi seç.
 
-**Senin için faydası:** dakikalar içinde teslim edersin ve saatler harcamışsın gibi görünür. Bir tasarımcıyı beklemek zorunda kalmazsın ve marka kuralları içine gömülü olduğundan, marka dışı bir varlıkta senin adın hiçbir zaman yer almaz. Sadece hızlı, cilalı ve güvenilir görünürsün.
+Bir bayrak yarışındaki ellerden birisin: bir geliştirici kullandığın aracı bir işlem hattına ölçeklendirebilir, bir meslektaşın onu kendi kendine çalıştırabilir, bu yüzden [Bir kampanyanın yaşam döngüsü](/info/overview.html#the-lifecycle-of-a-campaign) tek bir varlığı bu üç çift elin tamamından geçerken izler.
 
-Bu sayfa, Lolly'den en iyi şekilde yararlanmak için bilmen gereken her şeyi anlatıyor.
+Yeni misin? **[60 saniyede bir şey yap](/info/make-something.html)** ile başla, hangi bölüme daha derin bakmak istediğini öğrendiğinde geri dön. [Sorular ve yanıtlar](/info/faq.html), insanların ücretsiz bir araca güvenmeden önce sorduklarını ele alır. [Lolly nasıl karşılaştırılır](/info/positioning.html), ne zaman başka bir şeye yönelmen gerektiğinin dürüst anlatımıdır.
 
-> **Bir bayrak yarışındaki bir eldivensin.** Yazdığın araçlar seninle bitmiyor - bir geliştirici onları otomatik bir işlem hattına bağlayabilir ([Lolly for Builders](/info/builders.html)) ve tasarımcı olmayan bir meslektaşın onları kendi kendine çalıştırıp seni sürece sokmadan bitmiş, marka uyumlu bir dosya elde edebilir. Bütün yaşam döngüsünün nasıl bileşik büyüdüğünü [Bir kampanyanın yaşam döngüsü](/info/overview.html#the-lifecycle-of-a-campaign)'nde gör.
+## Oluştur
 
-## Neden Lolly - avantajların
+Bir araç seç, birkaç alanı doldur ve bitmiş dosyayı indir. Ya da Design tuvalini aç ve serbest elle düzenle: her iki durumda da renkler, yazı tipi ve boşluklar hafızandan değil markandan gelir ve hiçbiri hesap gerektirmez.
 
-- **Fiddling değil, bitmiş.** Araç fontları, renkleri, logoyu, boşlukları zaten biliyor. Sen kelimeleri getir; o sana varlığı geri versin. Şüphe edilecek bir şey yok.
-- **Yapı gereği doğru.** Tasarım kuralları, düzen kısıtları ve çalışma mantığı şablonda yaşar - aracın yazarı bilerek bir şeyi açık bırakmadıkça çıktı özelliklerden sapamaz. Sınırları koruyan korkuluklar içinde vahşi bir yaratıcı aralık.
-- **Tek kaynak, her format.** Aynı tasarım SVG, baskıya hazır PDF, yüksek çözünürlüklü PNG veya 60fps video olarak dışa aktarılır. Bir kez yap; her yere gönder.
-- **Sonsuz permütasyon.** Bir kartı bir düzine dile yerelleştir, her yerleşim için her boyutu üret, bir logo takımını kırk kampanya arasında değiştir - hepsi bir tasarımdan, bir e-tablo tarafından yönlendirilerek.
-- **Senin, çevrimdışı, özel.** İşin kendi cihazında kalır - hesap gerekmez, bir varlık oluşturmak veya dışa aktarmak için hiçbir şey yüklenmez, denetlenecek bir lisans yok. Uçakta laptop kapağını kapat ve çalışmaya devam et. (İki isteğe bağlı sunucu eklentisi vardır ve tamamen göz ardı edilebilir - bkz. [Server Surface](/info/server-surface.html).)
-- **Açık, kilitli değil.** Motor açık kaynaktır ve işin bir tedarikçinin veritabanında değil, sade URL'lerde yaşar.
-- **İstediğinde süper güçler.** Tasarım yapmak *zorunda* değilsin - ama karar verdiğin anda, tavan yüksektir. Design canvas üzerinde sayfaları serbestçe düzenle. Sequence Studio'da bir zaman çizelgesinde klipleri, kartları ve müziği kes. Canlı koçlukla temiz ses ve kamera çekimleri kaydet. Çoğu tasarım paketinin sana bir renk hakkında hiç anlatamayacağı kadarını anlatan bir renk seçici rehberliğinde bütün bir markayı kendin ayağa kaldır.
+- **[60 saniyede bir şey yap](/info/make-something.html)** - Lolly'yi daha önce hiç açmadıysan, kurulum gerektirmeyen üç kısa anlatım.
+- **[Lolly'yi kullanma](/info/using.html)** - tuval, denetimler, kaydetme, Projeler ve telefon kullanımı: uygulamanın kendisi nasıl davranır.
+- **[Brand Studio](/info/brand-studio.html)** - logoların, renklerin ve yazı tipinin varsayılanlar yerine kendine ait olması gerektiğinde.
+- **[Bir tasarımı içe aktar](/info/design-import.html)** - çalışma zaten bir `.fig`, `.penpot`, `.ai`, `.idml` veya SVG dosyası olarak varsa ve onu düzleştirilmiş değil düzenlenebilir istiyorsan.
+- **[Yardımcı görünümler](/info/utilities.html)** - bir araç render'ı olmayan işler için elektronik tablo, dönüştürücü, Colour Lab, PDF çıkarıcı ve Script audio.
+- **[Tarayıcı Uzantısı](/info/extension.html)** - canlı bir web sayfasını yakala ve kendi tasarımlarında bir varlık olarak yeniden kullan.
+- **[Arama](/info/search.html)** - araçlarına, kaydedilmiş çalışmana, kataloğa ve ayarlarına ulaşan tek bir alan.
+- **[Lolly'ye sor](/info/ask.html)** - bir soru yaz ve bu kılavuzların eşleşen bölümünü, doğrudan içine giden bir bağlantıyla birlikte al.
+- **[Kontrol Paneli](/info/dashboard.html)** - bu cihazın neler yapabildiği, tasarım sistemin salt okunur biçimde ve depolamaya kısa bir bakış.
+- **[Favorilerin](/info/favourites.html)** - sık kullandığını yıldızla, böylece ızgaranın üstünde kendine ait bir kutucuk kazansın.
+- **[Profiller](/info/profile.html)** - araçların önceden dolduracağı bilgiler ve dışa aktardığın hiçbir pikseli oynatmadan uygulamayı sakinleştiren dört erişilebilirlik anahtarı.
 
-> **Kısıtlamalar seni kafeslemez - seni yakalar.** Korkulukları bowling'deki bumper hatları gibi düşün: topu yine de sen atarsın - kelimeler, görsel, fikir - kod sadece onu oyuktan uzak tutar, böylece marka asla bozulamaz. Otomatikleştirilerek devre dışı bırakılmıyorsun; sıkıcı olan kısım şudur: marka kontrolü, her boyutta yeniden dışa aktarma, bir düzine dile elle yerelleştirme. Geriye kalan, seni gerektiren karardır. Ve *senin* yazdığın araç, şirketin geri kalanının seni her varlığa dahil etmeden iyi iş çıkarmasını sağlayan şeydir: senin değer yargın, ölçeklenmiş.
+## Canlandır
 
-## Nasıl karşılaştırılır
+Hareket eden metin, bir zaman çizelgesindeki sahneler ve markaya sadık kalan hareket. Bir hareket dışa aktarımı ekrandan kaydedilmek yerine kare kare, yönlendirilmiş bir saatten bileştirilir, bu yüzden zamanlama asla kaymaz ve aynı bağlantı her uzunlukta aynı klibi oluşturur.
 
-Lolly, Canva veya Figma olmaya çalışmıyor. *Kuralların, tekrarlanabilirliğin ve sert kısıtların serbest çizim esnekliğinden daha önemli olduğu* yerde durur - tasarım kararlarını, her varlıkta seni sürece sokmadan tüm ekibinin kullanabileceği araçlara dönüştürür.
+- **[Canlandırma](/info/animating.html)** - anahtar kareler, gerçek derinlik ve sonucun üzerinde uçmak için bir sahne kamerası.
+- **[Sıra düzenleyici](/info/sequence-editor.html)** - zaman çizelgesinin kendisi: klipler, kaplama şeritleri, kırpma ve bölme, geçişler ve ses karışımı.
+- **[Dışa Aktarma ve Biçimler](/info/exporting.html)** - hareket doğru olduğunda, dışa aktarma panelinin video, GIF ve animasyonlu PNG tarafı.
 
-Ürün ürün ayrıntı, tarihli [karşılaştırma sayfalarında](/info/compare.html) yaşar - Canva, Adobe, Figma, Penpot, marka portalları, render API'leri ve dosya dönüştürücüler - önce tavizler yazılı, ardından bir [yetenek tablosu](/info/positioning.html).
+## Kaydet
 
-Tekrar tekrar yaptığın varlıklar için **Lolly'ye başvur** - etkinlik tabelaları, alıntı kartları, yerelleştirilmiş bannerlar, e-posta imzaları, kargo etiketleri, sosyal medya varyantları, veri odaklı grafikler ve haritalar. Özel kahraman parça, tek seferlik kampanya konsepti, sistemden *kaçması amaçlanan* fikir üretimi için **bir tasarım aracına başvur**. Lolly sistemi yürütür; stüdyonun yerini almaz.
+Geri sayım, bir seviye ölçer ve nazik yönlendirmelerle temiz bir çekim kaydet, ya da bir sesli notu sesle birlikte hareket eden bitmiş bir videoya dönüştür. Henüz ayrı bir Kaydet sayfası yok: bunu Lolly'yi Kullanma sayfası, zaman çizelgesi bölümünde ele alır.
 
-## Neler yapabilirsin
+- **[Lolly'yi kullanma](/info/using.html#timeline-sequence-studio)** - bir seslendirmeyi doğrudan zaman çizelgesine kaydetme, çekimin nerede kaydedildiği ve karışıma nasıl ulaştığı.
+- **[60 saniyede bir şey yap](/info/make-something.html#make)** - görülmek yerine duyulmayı tercih ettiğinde, ses grafiği sahnesi.
+- **[Yardımcı görünümler](/info/utilities.html)** - önce kelimeler geldiğinde ve ses sonra geldiğinde, Script audio.
 
-### Bekleme olmadan her şey doğru
+## İş Birliği Yap
 
-Birkaç alanı doldur, bitmiş varlığı al - seçilecek font yok, şüphe edilecek renk yok, "bu doğru logo mu?" yok. Araç zaten biliyor. E-posta imzaları, etkinlik geri sayımları, alıntı kartları, rozetler, sokak haritaları - salı günü saat 16:00'da ekibinin ihtiyaç duyduğu her şey, kendi kendine hizmet ederek. Ve hiçbir müşteri verisi cihazdan çıkmadığından, iş birliğinde herhangi bir uyumluluk riski yoktur.
+İki kişi, iki cihaz, tek oturum, canlı düzenlenir. Masanın karşısında bir kodu tara ve her iki ekran da aynı çalışmayı tutar; aralarında hesap yok, sunucu yok - ve her iki cihaz da aynı ağdaysa internet bile gerekmez.
 
-Street Map bu değiş tokuşun adil bir örneğidir: bir şehir ve birkaç renk seçersin, kartografya, yol ağırlıkları ve su senin için belirlenir.
+- **[Birlikte çalışma](/info/collaborate.html)** - bir oturum başlatmak, cihazlar arasında neyin taşındığı ve ağ koptuğunda ne olduğu.
+- **[Lolly'yi kullanma](/info/using.html#sharing-your-work)** - çalışmayı devretmenin daha sessiz yolları: tüm durumu taşıyan bir paylaşım bağlantısı ya da tek bir `.lolly` dosyası.
 
-![Bir şehir açılır menüsü ve iki renk seçiciyle üretilmiş, neredeyse siyah zemin üzerinde neon renkli bir Tokyo Street Map render'ı](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-street-map-poster)
+## Yayınla
 
-### Canlı veriden bitmiş görsele
+İstenen yere gönder: tasarımı taşıyan bir bağlantı, baskıya sadık bir PDF, bir video, bir sunum ya da bir varyant klasörü. Hepsini aynı kaynak üretir, bu yüzden bir kez inşa edersin.
 
-Bir **CSV** veya **JSON** tablosunu bir grafik, harita veya tablo şablonuna bağla ve sayıları güncelle - düzen kendi kendine halleder. Seçim sonuçları, çeyreklik kazançlar, hava olayları: formatı bir kez oluştur ve hikaye her tekrarlandığında yeniden kullan. Kurumsal stilini *tam olarak* eşleştir, çünkü gevşek bir kılavuz olarak değil, şablon düzeyinde uygulanır.
-
-![Chart Creator'dan doğrudan çıkan bir halka grafik - etiketler, değerler ve renkler elle değil şablon tarafından yerleştirilmiş](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
-
-### Araçları bileşen olarak kullanan araçlar
-
-Bir araç, başka bir aracın canlı çıktısını bir varlık olarak gömebilir - kendi QR kodunu render eden bir isim rozeti, canlı bir grafiği içine bırakan bir kart - tasarım aracı yok, manuel birleştirme yok. Gömülü render canlı kalır ve yüklendiğinde yeniden render edilir; asla düzleştirilmiş bir görsel olmaz.
-
-### İhtiyacın olduğunda sınır ötesi
-
-Gelişmiş filtreler, kompozisyon, animasyon, canlı kamera efektleri, üretken tasarım - her web teknolojisi bir şablon yazarına açıktır, bu yüzden tavan yüksektir.
-
-![Mesh Gradient'ın çıktısı - tamamen markanın palet tokenlarından oluşturulan yumuşak renkten üretken bir alan](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
-
-### Çizilmedi, yetiştirildi
-
-**Growth**, görseli çizmek yerine yetiştirir: tohumla başlayan bir sistem, bir halkadan, bir çizgiden, kendi kelimelerinden veya logondan dışa doğru yayılarak kareyi doldurana kadar büyür, senin paletinde. Aynı tohum her zaman aynı eseri yetiştirir, bu yüzden bir bağlantı onu tam olarak yeniden üretir. Ortaya çıkan şey bir çizimin resmi değil, sıradan SVG geometrisidir, bu yüzden basılabilir, plotlanabilir ve kesilebilir - ve aynı tasarım ilk tohumdan bitmiş forma kadar video olarak animasyon yapar.
-
-![Growth'un varsayılan çiçeklenmesi - bir halkadan dışa doğru yetiştirilen, döngü yapan marka renkli çizgilerden oluşan yoğun bir alan, her çizgi gerçek bir SVG yolu](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
-
-### Müziğe cevap veren hareket
-
-**Synth**, grafik kartında bir akışkan alanını çözer ve onu senin renklerinde boyar. Ona bir parça ver, alan sesle birlikte hareket etsin; MP4, WebM, GIF veya baştan sona temiz bir şekilde birleşen animasyonlu bir PNG döngüsü olarak dışa aktarılır, ekrandan kaydedilmek yerine yönlendirilen bir saatten kare kare render edilir - böylece hareket asla ses parçasına göre kaymaz ve aynı bağlantı aynı klibi herhangi bir uzunlukta render eder.
-
-![Synth'in \"ink\" sahnesinden bir kare - marka yeşilleriyle aydınlatılmış, girdabın ortasında yakalanmış karanlık bir akışkan alan](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
-
-*Dosya* değil, *araç* yaz: 10.000 kart üreten aracı yap, 10.000 kart yapmak yerine. Değişmemesi gerekeni kilitle; yalnızca değişmesi gereken şeyi açığa çıkar.
-
-## Fark edeceğin dokunuşlar
-
-- **Baskı, doğru yapılır.** Gerçek fiziksel birimler (mm/cm/in/pt) ve DPI, taşma payı ve kesim işaretleri, CMYK ve PDF/X-4 çıktı amacı - bir matbaa tam olarak ihtiyacı olanı alır. Bkz. [Dışa Aktarma](/info/exporting.html#size-print-units).
-- **Video ve hareket.** WebM/MP4 (ses izleriyle birlikte), animasyonlu PNG/WebP ve animasyonlu SVG dışa aktar - sabit görsellerini oluşturan aynı şablondan. **Sequence Studio** daha da ileri gider: tuvalin altında gerçek bir zaman çizelgesi, klipslerin mıknatıslı bir sırası, serbest bindirme şeritleri, kırpma ve bölme, geçiş ön ayarları, seslendirme kaydı ve müzik miksajıyla - bir ekran kaydı yerine deterministik bir kompozitör tarafından MP4, WebM, GIF veya APNG olarak render edilir. Lottie dosyaları animasyonlu varlık olarak *içeri* girer ve bunların herhangi birine render edilebilir. Klipslerin üzerinde **anahtar kareler** yer alır: bir kutuyu tek bir anda konumlandır, sayfadan gerçek derinlikle kaldır ve sonucun üzerinde bir kamera uçur. Bkz. [Lolly'yi Kullanma → Zaman Çizelgesi](/info/using.html#timeline-sequence-studio) ve [Canlandırma](/info/animating.html).
-- **Ses.** Bir sesli not kaydet ve tamamen cihaz üzerinde MP3 (veya kendi M4A/OGG/WebM biçiminde) olarak kaydet - ve bir video altında müzik altyapısı veya Neurospicy Mode'da bir ortam parçası olarak MP3, WAV, OGG, M4A, FLAC, MIDI veya tracker modülleri (MOD/XM/IT/…) getir.
-- **Çiz, idare etme.** Design aracında gerçek bir **kalem** var: noktaları yerleştirmek için tıkla, eğri oluşturmak için sürükle ve içlerinden geçen eğri türünü seç. Şekilleri **birleştirme, çıkarma, kesişim ve dışlama** ile birleştir, bir vuruşu ana hatlarıyla çiz, bir silueti ötele, bir yolu sadeleştir - geometri kesin Bezier matematiğidir, bu yüzden çizdiğin bir şekil her boyutta keskin kalır ve bir bağlantıdan veya CLI'dan aynı şekilde render edilir. Bkz. [Lolly'yi Kullanma → Kendi şekillerini çizmek](/info/using.html#drawing-your-own-shapes-the-pen).
-- **Düzenlenebilir vektörler.** SVG, EPS, EMF ve DXF dışa aktarma. Metin, vektör çıktısında ana hatlı yollara dönüşür, böylece bir matbaa veya kesim makinesi her yerde açılan keskin geometri alır. (Ana hatlı metin artık Illustrator'da *yeniden yazılabilir* değildir - font olmadan kusursuz sadakatin bedeli budur.)
-- **Toplamda fark yaratan kolaylık.** Bir e-tabloyu bir varlık klasörüne toplu işle; oturumları kaydet ve Projeler halinde organize et; herhangi bir durumu URL olarak paylaş; tüm bir klasörü tek bir zip olarak render et.
-- **Gerçekten keyifli bir arayüz.** Her yerde geri al/yinele, kapatabileceğin bir ses katmanı, bir tema döngüsü, canlı kamera filtreleri - ve kendi dokunda uygulama boyunca seni takip eden bir arka plan odak-müziği çaları olan **Neurospicy Mode**.
-- **İstediğinde daha sakin bir arayüz.** **Profile → Accessibility** altındaki dört anahtar - *Reduce motion*, *Hide colourful previews*, *High contrast* ve *Large text* - uygulamayı çalışmanın etrafında sakinleştirir. Her biri sen açana kadar kapalıdır ve hiçbiri tuvaline dokunmaz veya dışa aktardığın bir pikseli bile oynatmaz. Bkz. [Profilin → Erişilebilirlik](/info/profile.html#accessibility).
-
-## Ondan en iyi şekilde yararlan
-
-- **[Quickstart](/info/quickstart.html)** - marka içeri, ilk dosya dışarı.
-- **[The Brand Studio](/info/brand-studio.html)** - logolarını, renklerini, tipografini ve tokenlarını şekillendir (`#/start`).
-- **[Using Lolly](/info/using.html)** - tuval, kontroller, kaydetme, projeler ve telefon kullanımı.
-- **[Your profile](/info/profile.html)** - araçların önceden doldurduğu bilgiler ve bunları cihazlar arasında nasıl taşıyacağın.
-- **[Import a design](/info/design-import.html)** - Figma / Penpot / Illustrator / InDesign çalışmanı ve PowerPoint sunumlarını getir - cihaz üzerinde düzenlenmiş veya yeniden markalanmış olarak.
-- **[Working together](/info/collaborate.html)** - hesap ve aradaki bir sunucu olmadan, cihazdan cihaza canlı olarak tek bir oturumu düzenleyen iki kişi.
-- **[Search](/info/search.html)** - galerinin, Utilities, Projects, Catalogue, Dashboard ve Profile'ın altındaki tek bir alan; araçlarına, kayıtlı çalışmana, katalog ve ayarlarına ulaşır.
-- **[Ask Lolly](/info/using.html#ask-lolly)** (`#/ask`) - bir soru yaz ve bu kılavuzların eşleşen bölümünü, doğrudan bağlantısıyla birlikte olduğu gibi geri al.
-- **The Dashboard** (`#/d`) - gösterge paneli: salt okunur olarak gösterilen tasarım sistemin, tam yetenek haritası, bu cihazın yapabildikleri ve etkinliğine ve depolamana göz atma.
-- **[Your favourites](/info/favourites.html)** - bir varlığı (veya bir marka renk örneğini) yıldızla ve ızgaranın üstünde kendi döşemesini alır.
-- **[Exporting & formats](/info/exporting.html)** - her format, baskı birimleri, video ve toplu işlem.
+- **[Dışa Aktarma ve Biçimler](/info/exporting.html)** - baskı birimleri, DPI, taşma payı ve kesim işaretleri, video, toplu çalıştırmalar ve dışa aktarma panelinin kendisi.
+- **[Lolly'nin açabildiği ve yapabildiği her biçim](/info/formats.html)** - her çipin arkasında sade bir dille yazılmış bir kartla, eksiksiz giriş-çıkış listesi.
+- **[Veri Aktarımı](/info/data-transfer.html)** - yaptığın her şeyi başka bir cihaza taşımak için yedekleme paketi.

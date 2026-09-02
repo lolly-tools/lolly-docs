@@ -38,6 +38,14 @@ Các công cụ ở đây nhân rộng những gì một người đã quyết �
 
 Chúng tôi tôn trọng điều đó từ đầu đến cuối, và chúng tôi ghi lại nó: vì lịch sử, vì trách nhiệm giải trình, vì niềm tin và vì ngày mai.
 
+## AI, theo cách của bạn
+
+Bạn không bao giờ bắt buộc phải dùng AI ở đây. Nếu bạn chọn dùng nó, ba điều sau luôn đúng:
+
+- <!--i:people--> **Bạn nắm quyền kiểm soát.** AI chỉ trợ giúp khi bạn yêu cầu, và chỉ với đúng phần bạn chỉ đến. Không có gì được quyết định thay bạn.
+- <!--i:check--> **Nó ngừng tốn phí.** Nếu AI giúp tạo ra thứ gì đó một lần, kết quả đó là của bạn. Dùng lại nó là miễn phí, dù bạn cần bao nhiêu lần đi nữa.
+- <!--i:shieldcheck--> **Nó luôn trung thực.** Một phần do AI tạo ra sẽ ghi rõ điều đó, và những gì bạn làm ra mang tên bạn thay vì giả vờ là ai khác. Ngay cả phần trợ giúp tích hợp sẵn cũng hoạt động theo cách này: [Hỏi Lolly](/info/ask.html) trả lời bằng chính câu chữ trong tài liệu hướng dẫn cùng một liên kết, không bao giờ là một câu trả lời bịa ra.
+
 ## Đây không phải là
 
 - <!--i:check--> **Không phải một lệnh cấm.** Các công cụ có thể sử dụng AI khi nó phục vụ cho công việc, và các tác nhân là một nhóm người dùng được hỗ trợ - xem [Tác nhân AI](/info/ai-agents.html).

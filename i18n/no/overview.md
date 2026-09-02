@@ -30,6 +30,8 @@ Denne plattformen er det direkte svaret:
 
 > **Programmatisk kreativt innhold i stor skala** - ressursgenerering uten arbeidsinnsats, med reglene under sentral kontroll, for ansatte, leverandører og partnere.
 
+Lolly er ikke stedet et designsystem blir oppfunnet - det er stedet det blir produsert. Tenk på det som en salgsautomat for design: gjør et valg, få et resultat. Hver gang. Motoren jobber for den høyeste kvaliteten hvert format kan produsere på maskinvaren foran deg, og den samme motoren lager den samme filen på hver flate den leveres til.
+
 Resultatet er **overflod**: hvert arrangement har korrekt skilting, hvert CVE-varsel matcher husstilen, hver etikett skrives ut rent, hver e-postsignatur er oppdatert - alt uten en designsak. Plattformen håndterer tilbakevendende, operasjonalisert kreativt arbeid. Det er bevisst ikke et skreddersydd kreativt verktøy - designere eier fortsatt flaggskipsarbeidet.
 
 ### Innoverer probabilistisk, skalerer deterministisk
@@ -431,11 +433,11 @@ Komponer renderingen av et hvilket som helst verktøy: et **SVG**-barn forblir e
 
 ## Hva vi eksplisitt valgte å ikke gjøre
 
-- **Ingen EJS / ingen vilkårlig JS i maler.** XSS-flaten er null. Logikk bor i `hooks.js`.
-- **Ingen obligatorisk ressurs-CMS.** Enkeltpersoner tar inn sine egne kreative filer rett inn i katalogen sin i appen (visningen [Catalogue](/info/using.html) og Brand Studio) - ingen server, ingen adminkonsoll. Arbeid overleveres som en **økt**: en delingslenke bærer hele tilstanden, og den samme økten følger med i en sikkerhetskopi eller over en samarbeidsøkt. Den som kontrollerer utrullingen kan deretter låse en delt økt som en **mal** - åpne lenken, registrere verdiene som en maloppføring i det verktøyets mappe i merkevarepakken og commit - hvoretter den vises i verktøyets "New from template"-velger og kan lenkes direkte som `?template=<id>`. Git er utrullingseierens låsesteg, aldri skaperens. For en *delt, styrt* katalog **kan** en organisasjon forvalte ressursmappen på samme måte og sperre oppdateringer gjennom PR-gjennomgang - en tilgjengelig styringsmodell, ikke et krav fra appen.
-- **Ingen tvungen RBAC.** Den åpne appen er offentlig tilgjengelig som standard; merkevarerisiko håndteres med modenhetsmerker + vannmerker. En organisasjon som vil ha strammere kontroll legger på sin egen autentisering og den git-gjennomgåtte katalogen ovenfor.
+- **Ingen EJS / ingen vilkårlig JS i maler.** XSS-overflaten er null. Logikk lever i `hooks.js`.
+- **Ingen obligatorisk ressurs-CMS.** Enkeltpersoner tar sine egne kreative filer rett inn i katalogen sin i appen (visningen [Katalog](/info/using.html) og Brand Studio) - ingen server, ingen adminkonsoll. Arbeid gis videre som en **økt**: en delingslenke bærer hele tilstanden, og den samme økten reiser i en sikkerhetskopi eller over en samarbeidsøkt. Den som kontrollerer utrullingen, kan da låse en delt økt som en **mal** - åpne lenken, registrer verdiene som en maloppføring i det verktøyets mappe i merkevarepakken og commit - hvoretter den vises i verktøyets «New from template»-velger og kan dyplenkes som `?template=<id>`. Git er utrullingseierens låsesteg, aldri skaperens. For en *delt, styrt* katalog **kan** en organisasjon administrere ressursmappen på samme måte og styre oppdateringer gjennom PR-gjennomgang - en tilgjengelig styringsmodell, ikke et krav fra appen.
+- **Ingen tvungen RBAC.** Den åpne appen er offentlig tilgjengelig som standard; merkevarerisiko håndteres med modenhetsmerker + vannmerker. En organisasjon som vil ha strammere kontroll, legger sin egen autentisering og den git-gjennomgåtte katalogen ovenfor på toppen.
 - **Ingen sentral database.** All brukertilstand er per enhet. SUSE ID-integrasjon er på veikartet, men ikke en lanseringssperre.
-- **Ingen delt verktøy-/motorkodesti.** Motoren er åpen kildekode; `tools/` og `assets/` forblir proprietært SUSE-innhold i sine egne depoter. Skillet håndheves (ingen kryssimporter) slik at delingen forblir ren.
+- **Ingen delt kodesti for verktøy/motor.** Motoren er åpen kildekode, og det er også de merkevareuavhengige verktøyene i `community/`; en merkevarepakke som den private `brands/suse/` bærer sine egne verktøy og katalog på egne vilkår. Uansett håndheves adskillelsen (ingen kryssimporter fra `engine/` inn i verktøyinnhold), slik at delingen forblir ren.
 
 ---
 
@@ -460,9 +462,13 @@ Samme livssyklus i Tauri. Samme livssyklus i CLI - jsdom leverer den hodeløse D
 
 ## Status for åpen kildekode
 
-Mappene `engine/`, `shells/`, `schemas/` og `docs/` er åpen kildekode under **MPL-2.0** - en leverandørnøytral stillasplattform for merkevareverktøy, der hver leveringsklare enhet er delt opp i sitt eget depot under [github.com/lolly-tools](https://github.com/lolly-tools). `tools/` og `catalog/assets/` er SUSE-spesifikt innhold og forblir **proprietært for SUSE** (alle rettigheter forbeholdt - se hvert depots `NOTICE.md`); de dekkes ikke av MPL.
+**Kode er MPL-2.0.** `engine/`, `shells/*`, `services/*`, `schemas/` og `docs/` er åpen kildekode under **MPL-2.0** - en leverandørnøytral stillasplattform for merkevareverktøy, hvor hver leverbare enhet ligger i sitt eget repositorium under [github.com/lolly-tools](https://github.com/lolly-tools).
 
-Skillet håndheves - det finnes ingen kryssimporter fra `engine/` til `tools/` eller `assets/` - slik at grensen mellom plattform og innhold forblir ren.
+**Verktøyinnhold leveres som merkevarepakker**, hver med sine egne vilkår (se pakkens `NOTICE.md`). `community/` er det offentlige [`lolly-tools`](https://github.com/lolly-tools/lolly-tools)-repositoriet, og de merkevareuavhengige verktøyene der er også MPL-2.0. `brands/suse/` er den private `suse-lolly`-pakken: SUSE-verktøyene og SUSE-katalogen, **proprietær for SUSE**, inkludert dens lisensierte PremiumBeat-musikk. `brands/lolly-start/` er den blanke startmerkevaren dette repositoriet eier. Skrifter leveres inne i en pakke under **SIL Open Font License 1.1** - SUSE-pakken bærer skrifttypene SUSE og SUSE Mono.
+
+`tools/` og `catalog/` i repositoriets rot er gitignorerte *visninger*: en profil setter dem sammen fra `community/` pluss den aktive merkevarepakken, og det er derfor hvert skript og skall leser disse to stiene og aldri en pakke direkte.
+
+Delingen håndheves - det finnes ingen kryssimporter fra `engine/` inn i verktøyinnhold - slik at grensen mellom plattform og innhold forblir ren.
 
 ---
 

@@ -38,6 +38,14 @@ As ferramentas aqui ampliam o que uma pessoa decidiu. Elas não decidem no lugar
 
 Honramos isso do início ao fim, e registramos: para a história, para a responsabilização, para a confiança e para o futuro.
 
+## IA, nos seus termos
+
+Você nunca precisa de IA aqui. Se você optar por usá-la, três coisas valem:
+
+- <!--i:people--> **Você está no controle.** A IA ajuda só quando você pede, e só com a parte que você aponta para ela. Nada é decidido por você.
+- <!--i:check--> **Ela para de custar.** Se a IA ajuda a fazer algo uma vez, o resultado é seu. Usar de novo é grátis, quantas vezes você precisar.
+- <!--i:shieldcheck--> **Ela permanece honesta.** Uma peça feita por IA diz isso, e o que você faz carrega o seu nome em vez de fingir ser outra pessoa. Até a ajuda embutida funciona assim: [Pergunte à Lolly](/info/ask.html) responde com a própria frase do manual e um link, nunca uma resposta inventada.
+
 ## O que isto não é
 
 - <!--i:check--> **Não é uma proibição.** As ferramentas podem usar IA onde ela serve ao trabalho, e agentes são um público suportado - veja [Agentes de IA](/info/ai-agents.html).

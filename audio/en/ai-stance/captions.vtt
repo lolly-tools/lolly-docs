@@ -492,68 +492,128 @@ it: for history, for accountability, for
 00:08:22.001 --> 00:08:24.194
 trust and for tomorrow.
 
-00:08:25.326 --> 00:08:27.237
+00:08:25.315 --> 00:08:27.595
+AI, on your terms
+
+00:08:28.590 --> 00:08:31.568
+You never need AI here.
+
+00:08:32.332 --> 00:08:35.569
+If you choose it, three things hold:
+
+00:08:36.375 --> 00:08:38.968
+You are in control.
+
+00:08:39.730 --> 00:08:43.178
+AI helps only when you ask, and only with
+
+00:08:43.237 --> 00:08:45.495
+the piece you point it at.
+
+00:08:46.302 --> 00:08:49.543
+Nothing is decided for you.
+
+00:08:50.302 --> 00:08:52.469
+It stops costing.
+
+00:08:53.223 --> 00:08:55.940
+If AI helps make something once, the
+
+00:08:56.002 --> 00:08:57.944
+result is yours.
+
+00:08:58.726 --> 00:09:02.061
+Using it again is free, however many times
+
+00:09:02.123 --> 00:09:03.569
+you need it.
+
+00:09:04.332 --> 00:09:06.469
+It stays honest.
+
+00:09:07.231 --> 00:09:10.847
+A piece made by AI says so, and what you
+
+00:09:10.902 --> 00:09:13.306
+make carries your name instead of
+
+00:09:13.368 --> 00:09:15.894
+pretending to be someone else.
+
+00:09:16.657 --> 00:09:19.812
+Even the built-in help works this way: Ask
+
+00:09:19.873 --> 00:09:22.097
+Lolly answers with the manual's own
+
+00:09:22.195 --> 00:09:24.860
+sentence and a link, never a made-up
+
+00:09:24.921 --> 00:09:26.045
+answer.
+
+00:09:27.176 --> 00:09:29.087
 What this is not
 
-00:08:28.225 --> 00:08:30.068
+00:09:30.075 --> 00:09:31.918
 Not a ban.
 
-00:08:30.843 --> 00:08:34.422
+00:09:32.693 --> 00:09:36.272
 Tools may use AI where it serves the work,
 
-00:08:34.491 --> 00:08:37.385
+00:09:36.341 --> 00:09:39.235
 and agents are a supported audience - see
 
-00:08:37.477 --> 00:08:39.269
+00:09:39.327 --> 00:09:41.119
 AI Agents.
 
-00:08:40.081 --> 00:08:42.818
+00:09:41.931 --> 00:09:44.668
 Not a purity claim.
 
-00:08:43.611 --> 00:08:46.474
+00:09:45.461 --> 00:09:48.324
 Lolly reads provenance broadly and writes
 
-00:08:46.537 --> 00:08:50.182
+00:09:48.387 --> 00:09:52.032
 it honestly; it does not pretend to detect
 
-00:08:50.275 --> 00:08:53.594
+00:09:52.125 --> 00:09:55.444
 every generated pixel on the internet.
 
-00:08:54.402 --> 00:08:56.918
+00:09:56.252 --> 00:09:58.768
 Not a moral panic.
 
-00:08:57.702 --> 00:09:00.743
+00:09:59.552 --> 00:10:02.593
 The flood is not the enemy.
 
-00:09:01.520 --> 00:09:04.370
+00:10:03.370 --> 00:10:06.220
 Unattributed water is.
 
-00:09:05.510 --> 00:09:08.175
+00:10:07.360 --> 00:10:10.025
 How to hold us to it
 
-00:09:09.157 --> 00:09:11.563
+00:10:11.007 --> 00:10:13.413
 Every commitment above is enforced in the
 
-00:09:11.631 --> 00:09:15.803
+00:10:13.481 --> 00:10:17.653
 open codebase, not in a policy PDF: the
 
-00:09:15.876 --> 00:09:19.268
+00:10:17.726 --> 00:10:21.118
 provenance path, the GEN AI labelling and
 
-00:09:19.311 --> 00:09:21.978
+00:10:21.161 --> 00:10:23.828
 the no-trackers guarantee all ship with
 
-00:09:22.048 --> 00:09:25.270
+00:10:23.898 --> 00:10:27.120
 tests, and the Verify It Yourself page
 
-00:09:25.330 --> 00:09:27.410
+00:10:27.180 --> 00:10:29.260
 walks you through checking the claims
 
-00:09:27.464 --> 00:09:29.719
+00:10:29.314 --> 00:10:31.569
 against a real export.
 
-00:09:30.467 --> 00:09:33.058
+00:10:32.317 --> 00:10:34.908
 If you find a place where the code and
 
-00:09:33.096 --> 00:09:36.869
+00:10:34.946 --> 00:10:38.719
 this page disagree, the code is the bug.

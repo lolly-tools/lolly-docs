@@ -38,6 +38,14 @@ Instrumentele de aici extind ceea ce a decis o persoană. Nu decid în locul ei 
 
 Respectăm asta de la un capăt la altul și o înregistrăm: pentru istorie, pentru responsabilitate, pentru încredere și pentru ziua de mâine.
 
+## AI, în termenii tăi
+
+Nu ai nevoie de AI aici, niciodată. Dacă alegi să-l folosești, trei lucruri rămân valabile:
+
+- <!--i:people--> **Tu deții controlul.** AI ajută doar când ceri, și doar cu piesa spre care îl îndrepți. Nimic nu se decide pentru tine.
+- <!--i:check--> **Nu mai costă a doua oară.** Dacă AI ajută să faci ceva o dată, rezultatul este al tău. Să-l folosești din nou este gratuit, oricâte ori ai nevoie.
+- <!--i:shieldcheck--> **Rămâne onest.** O piesă făcută de AI spune asta, iar ce faci tu poartă numele tău, în loc să se dea drept altcineva. Chiar și ajutorul integrat funcționează așa: [Întreabă Lolly](/info/ask.html) răspunde cu propria frază din manual și un link, niciodată cu un răspuns inventat.
+
 ## Ce nu este acest lucru
 
 - <!--i:check--> **Nu este o interdicție.** Instrumentele pot folosi AI acolo unde servește munca, iar agenții sunt un public susținut - vezi [Agenți AI](/info/ai-agents.html).

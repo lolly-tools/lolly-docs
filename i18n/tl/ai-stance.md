@@ -38,6 +38,14 @@ Pinapalawak ng mga tool dito ang napagpasyahan ng isang tao. Hindi sila nagpapas
 
 Iginagalang namin ito hanggang sa dulo, at itinatala namin ito: para sa kasaysayan, para sa accountability, para sa tiwala at para sa bukas.
 
+## AI, Ayon sa Iyong mga Tuntunin
+
+Hindi mo kailanman kailangan ang AI dito. Kung pipiliin mo ito, may tatlong bagay na nananatili:
+
+- <!--i:people--> **Ikaw ang may kontrol.** Tumutulong lang ang AI kapag hiniling mo, at sa piraso lamang na itinuro mo rito. Walang ipinasyang para sa iyo.
+- <!--i:check--> **Tumitigil itong maningil.** Kung nakatulong ang AI na gumawa ng isang bagay nang isang beses, sa iyo na ang resulta. Libre ang muling paggamit nito, gaano man karaming beses mo itong kailanganin.
+- <!--i:shieldcheck--> **Nananatili itong tapat.** Sinasabi ng isang piraso na ginawa ng AI na ginawa ito ng AI, at dala ng ginawa mo ang pangalan mo sa halip na magpanggap na ibang tao. Kahit ang built-in help ay ganito rin gumana: sumasagot ang [Ask Lolly](/info/ask.html) gamit ang sariling pangungusap ng manual at isang link, hindi kailanman ng gawa-gawang sagot.
+
 ## Ang hindi nito
 
 - <!--i:check--> **Hindi isang pagbabawal.** Maaaring gumamit ng AI ang mga tool kung saan makakatulong ito sa trabaho, at ang mga agent ay suportadong audience - tingnan ang [AI Agents](/info/ai-agents.html).

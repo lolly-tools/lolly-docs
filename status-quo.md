@@ -25,6 +25,8 @@ This page is about that accumulation. Not about villains, because most of it was
 
 None of it was carelessness. Each step was the reasonable one available at the time, and the incentives underneath were pointing the same way for everyone.
 
+Living inside it gave the trade its textures. The quiet fear of picking the wrong colour or font for something that was meant to be simple. Every file stuck behind a busy queue, a slow tool or one more approval. An account before we could start, a subscription that outlived the job, pricing ladders built to hold our own work hostage.
+
 ## The old way and the new way
 
 | | The usual way | Here |
@@ -34,6 +36,19 @@ None of it was carelessness. Each step was the reasonable one available at the t
 | **Quality** | Silently re-encoded, resolution capped on the free tier, a watermark you pay to remove | Real vector out, print-ready colour, the same render on every device, nothing withheld |
 | **Trust** | A policy you have to believe, rewritable at any time without telling you | An architecture you can check, and a signed credential travelling inside every export |
 | **Ethics** | Your work becomes training data or an ad profile by default, and consent is a wall you click through | Nothing is collected, so nothing can be repurposed. AI declares itself, and access needs are settings rather than requests |
+
+And the same trade, scene by scene:
+
+| The usual way | Here |
+|---|---|
+| Your work lives where you do not get a vote: the rules can change, and you find out later | Your work stays with you. Every choice about it is yours, and you can leave with everything at any time |
+| A subscription that keeps charging long after the job is done | Free, forever: a version that has been released is licensed so it can never be taken back - see [How Lolly compares](/info/positioning.html) |
+| The template that is almost right, with the part you need locked behind an upgrade | What should change is yours to change; what should not is already handled - see [Constraints](/info/constraints.html) |
+| Pay the AI again for something it already made, and get it back slightly different | AI answers to you: if it helps make something once, the result is yours, and re-making it is free - see [Our AI Stance](/info/ai-stance.html) |
+| Email a brief, then wait days for one small graphic we knew every detail of | Fill in a few fields. The finished file is ready in seconds - see [Make something](/info/make-something.html) |
+| Guess at the right font and colour, and hope it passes review | The design rules are baked into the tool. They bend, not break |
+| Re-make the same badge, card or banner a hundred times by hand | Paste a spreadsheet. Get a hundred finished, print-ready files at once - see [Using Lolly](/info/using.html) |
+| "Which version is the latest?", hunted through chat threads and shared drives | The file is a link: same inputs, same file, every single time - see [Reproducibility](/info/reproducibility.html) |
 
 Each row is a claim you can test rather than a slogan, which is what the rest of this section is for.
 

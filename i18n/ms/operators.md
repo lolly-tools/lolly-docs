@@ -1,123 +1,60 @@
 # Lolly untuk Operator
 
-### Strategi keselamatan & risikan pertahanan-berlapis - yang kebetulan menjadi platform pengeluaran kreatif
+Anda berpeluang menjadi orang yang berkata ya kepada sesuatu yang selamat sekali gus popular. Anda menutup lubang pengeksfiltrasian, memperoleh keupayaan dan memadamkan satu baris giliran permintaan dalam satu langkah, iaitu kemenangan keselamatan yang jarang berlaku yang menjadikan anda lebih disenangi dan bukannya kurang: tiada panggilan pukul 3 pagi kerana fail bersifat embargo sampai ke satu alat web yang sembarangan, lebih sedikit vendor dan kontrak di atas meja anda serta satu rekod yang boleh anda tunjukkan apabila seseorang bertanya. Pilih laluan di bawah yang sepadan dengan fungsi yang anda bertanggungjawab menjawabnya.
 
-Sistem imun organisasi zero-trust yang membalut apa yang anda sudah lakukan - supaya kerja kreatif rutin yang diperlukan pasukan anda setiap hari berlaku *di dalam* perimeter anda dan bukannya bocor keluar daripadanya.
+Anda mentadbir keseluruhan larian berganti-ganti itu: seorang kreatif mengarang peraturan dan seorang pembangun mengembangkannya, dan pengendalilah yang menjadikannya selamat untuk dijalankan merentasi sesebuah organisasi, yang diikuti oleh [Kitaran hayat kempen](/info/overview.html#the-lifecycle-of-a-campaign) dari hujung ke hujung.
 
-**Apa manfaatnya untuk anda.** Anda dapat menjadi orang yang berkata ya kepada sesuatu yang selamat *dan* popular. Anda menutup lubang eksfiltrasi, memperoleh keupayaan dan memadam barisan permintaan dalam satu langkah - kemenangan keselamatan yang jarang yang membuatkan anda lebih disukai, bukan kurang. Tiada panggilan jam 3 pagi daripada peguam kerana fail terperingkat atau data pelanggan tersasar ke dalam alat web sembarangan; lebih sedikit vendor SaaS, kontrak dan audit di atas meja anda; dan jejak audit yang boleh dihasilkan semula sepenuhnya yang boleh anda tunjukkan apabila seseorang bertanya. Anda tidur lebih lena, dan menceriakan beberapa hari sambil melakukannya.
+Baru di sini? [Penerimaan & Tadbir Urus](/info/adoption-governance.html) ialah pelaksanaan secara penuh. [Penggunaan](/info/deployment.html) merangkumi deploy, serve dan hibrid, dan [Konfigurasi](/info/configuration.html) ialah apa yang membentuk satu instans tunggal.
 
-Lolly bukan alat kreatif kelas kedua: ia meletakkan output berkualiti pengeluaran di tangan semua orang, dan pengalaman penciptaan berpandukan jenama tiada tandingan. Sebab ia *selamat* untuk diagihkan secara meluas adalah seni bina: tiada apa yang dimuat naik yang anda tidak letakkan di sana, setiap hasil boleh dihasilkan semula dan setiap eksport boleh membawa pelbagai lapisan rekod kriptografi terkemuka industri. Tidak kira bagaimana dokumen sampai ke meja anda, anda boleh melihat provenans penuhnya, sama ada ia telah diganggu dan sama ada anda boleh menciptanya semula sempurna-piksel.
+## Jualan
 
-> **Keadaan semasa.** Ciri-ciri keselamatan Lolly kukuh sejak dari reka bentuk, dan enjin kriptografi serta pemprosesan failnya sedang menjalani hardening infrastruktur setaraf enterprise milik SUSE. Meterai, penandatanganan on-device dan penyulitan di bawah adalah nyata dan boleh dipertahankan sekarang, dan sedang matang ke arah pensijilan bebas - jadi apabila sesuatu kontrak menuntut jaminan bersijil, gunakan semua ini sebagai defence-in-depth semasa proses itu diselesaikan.
+Masuk ke dalam mesyuarat dengan tepat fail yang anda perlukan, yang dihasilkan dalam perjalanan ke sana. Masukkan dek yang sudah anda ada dan bina semula ia setajam fail dek asli, tanpa baris giliran permintaan antara anda dan aset itu.
 
-## Kelebihan strategik
+- **[Lolly untuk pasukan jualan](/info/sales.html)** - buku panduan: membaiki dek yang anda ada, membinanya semula secara asli dan menghasilkan aset sekali sahaja itu sendiri.
+- **[Eksport & Format](/info/exporting.html)** - bahagian dek, PDF dan imej pada panel eksport, apabila fail itu perlu dibuka pada komputer riba orang lain.
 
-Cara biasa kerja kreatif rutin dilakukan ialah permukaan liabiliti: fail dihantar melalui e-mel kepada kontraktor reka bentuk luar, aset jenama dimuat naik ke sedozen editor SaaS, data pelanggan ditampal ke dalam alat web orang asing untuk "cuma buat grafik pantas." Setiap satu daripadanya adalah data meninggalkan kawalan anda.
+## Media
 
-Lolly membalikkannya. Kerja yang *mendorong* kebocoran itu - kad petikan, sepanduk yang disetempatkan, lencana acara, tangkapan skrin yang dihitamkan - kini berlaku pada alat yang berjalan pada peranti pekerja sendiri, terhadap jenama anda, tanpa pelayan dalam gelung. Anda bukan menambah kawalan di atas aliran kerja berisiko; anda menggantikan aliran kerja berisiko itu dengan satu yang tiada laluan eksfiltrasi sejak awal.
+Data langsung menjadi carta, peta dan jadual yang sudah menepati gaya editorial dalaman. Bina format cerita itu sekali dan guna semula setiap kali cerita itu disiarkan, untuk cetak dan untuk skrin.
 
-- **Konfigurasi adalah milik anda.** Enjin dan shell bersifat sumber terbuka (MPL-2.0). Overlaykan auth, telemetri atau CA anda sendiri; hosting sendiri atau tidak; anda memegang kawalan penuh ke atas ciri dan kos, git-tracked, tidak terkunci dalam pangkalan data SaaS.
-- **Governance boleh menjadi data, bukan papan pemuka.** Apabila anda mahukan kawalan itu, uruskan katalog alat sebagai satu repositori Git - semakan pull-request menjadi kelulusan jenama, dengan jejak audit yang lengkap dan rollback segera bagi setiap templat yang boleh disentuh oleh tenaga kerja anda. Ini satu pilihan, bukan kewajipan, dan ia menjadi tanggungjawab satu meja sahaja: pencipta bekerja sepenuhnya dalam aplikasi, menyimpan apa yang mereka hasilkan sebagai satu **sesi** dan meneruskannya sebagai pautan kongsi, satu sandaran atau satu kerjasama langsung - tiada satu pun daripadanya memerlukan git. Apabila salah satu sesi itu wajar menjadi titik permulaan kekal, sesiapa sahaja yang menjalankan penggunaan itu membuka pautan tersebut, merekodkan nilai-nilainya sebagai satu **templat** pada alat itu dalam brand pack lalu melakukan commit. Sejak itu ia muncul dalam pemilih "New from template" milik alat itu dan boleh di-deep-link sebagai `?template=<id>`. Git ialah langkah penguncian milik admin, digunakan sekali sahaja, dan bukan sesuatu yang perlu disentuh oleh seorang pencipta. Lihat [Adoption & Governance](/info/adoption-governance.html).
-- **Guard-rail bersifat struktur.** Kekangan jenama di-hard-code ke dalam templat, bukan diterbitkan sebagai garis panduan yang boleh diabaikan orang. Output yang salah bukan sekadar tidak digalakkan - ia langsung tidak dapat diwakilkan.
+- **[Lolly untuk bilik berita](/info/press.html)** - buku panduan: gaya info-editorial, data langsung masuk dan output bertaraf penerbitan.
+- **[Paparan utiliti](/info/utilities.html)** - hamparan dan penukar, untuk langkah sebelum carta.
 
-> **Anda mentadbir seluruh geganti.** Seorang kreatif mengarang peraturan dan pembangun meningkatkannya, tetapi operatorlah yang menjadikan kitaran hayat itu selamat untuk dijalankan seluruh organisasi - alat yang sama yang membolehkan wakil membuat sendiri di atas kapal terbang ialah satu yang boleh anda gerbangkan melalui semakan Git, gunakan melalui MDM anda dan sahkan secara kriptografi. Lihat bagaimana peranan itu bergabung dalam [Kitaran hayat kempen](/info/overview.html#the-lifecycle-of-a-campaign), dan bagaimana anda mentadbirnya dalam [Penerimagunaan & Tadbir Urus](/info/adoption-governance.html).
+## Pemasaran
 
-## Padam barisan permintaan sambil merebakkan kandungan.
+Setiap saiz, setiap bahasa, satu sumber kebenaran. Tampalkan satu hamparan dan dapatkan satu fail siap bagi setiap baris, tanpa agensi di tengah-tengah fail rutin.
 
-Satu matlamat Lolly ialah **pesongan permintaan reka bentuk**: permintaan rutin yang tidak pernah perlu sampai kepada pereka kerana orang yang memerlukan aset itu menghasilkannya sendiri, dengan betul, dalam beberapa minit. Setiap tiket yang dipesongkan adalah kedua-dua kemenangan produktiviti dan satu lagi fail yang tidak berpindah tangan.
+- **[Lolly untuk pasukan pemasaran](/info/marketing.html)** - buku panduan: varian dalam jumlah besar, penyetempatan dan apa yang tidak lagi menjadi kesesakan.
+- **[Menggunakan Lolly](/info/using.html#batch-pro-mode)** - larian kelompok itu sendiri: satu helaian masuk, satu folder aset keluar.
 
-Lolly dibina untuk sesuai dengan cara organisasi anda sebenarnya beroperasi - tiada satu cara betul untuk menggunakannya:
+## Keselamatan
 
-- **Gunakan, jangan layani.** Hantar Lolly ke peranti melalui MDM sedia ada anda (Intune, Jamf, Munki…). Ia berjalan secara tempatan sebagai apl desktop/mudah alih atau PWA luar talian - berfungsi di sebalik mana-mana tembok api, dalam mana-mana persekitaran jurang udara, tanpa pelayan untuk diselenggara dan IT mengawal kadar kemas kini.
-- **Layani sahaja.** Jalankan satu tika di dalam rangkaian anda (atau di sebalik VPN); pengguna mencapainya dalam pelayar, tiada apa dipasang. Terbitkan satu alat sekali, semua orang mempunyainya serta-merta; gandingkan dengan IdP anda untuk kawalan akses.
-- **Hibrid.** Apl tempatan untuk kerja lapangan luar talian, versi pelayar yang sentiasa terkini untuk mesin yang dipinjam - kedua-duanya menuju ke pustaka alat yang sama.
+Cara biasa kerja kreatif rutin dilaksanakan ialah satu permukaan liabiliti: fail dihantar melalui e-mel kepada kontraktor luar, aset jenama dimuat naik ke belasan editor web, data pelanggan ditampal ke laman orang asing hanya untuk menghasilkan satu grafik pantas. Lolly ialah tindak balas imun kepada itu, kerana ia menggantikan kerja itu dan bukannya menambah satu kawalan di atasnya: kad petikan, sepanduk yang disetempatkan dan tangkapan skrin yang disunting itu dihasilkan pada peranti pekerja sendiri terhadap jenama anda, jadi tiada apa yang dimuat naik yang tidak anda letakkan di situ dan setiap hasil boleh dihasilkan semula daripada inputnya. Eksport boleh membawa beberapa lapisan rekod kriptografi - satu Content Credential C2PA yang ditandatangani oleh kunci yang dijana pada peranti dan tidak pernah boleh dibaca di luarnya, Lolly Imprint yang tidak kelihatan dan satu tanda tahan lasak pilihan yang bertahan melangkaui simpan semula - setiap satunya boleh dikesan gangguan dan boleh dibuang: satu credential menandakan perubahan dan bukannya menghalangnya, dan itulah tepatnya yang menjadikan pengesahan sepenuhnya luar talian mungkin dilakukan. Kriptografi dan penghurai fail sedang melalui pengukuhan bertaraf perusahaan SUSE: meterai, penandatanganan atas peranti dan penyulitan adalah nyata dan boleh dipertahankan sekarang, jadi di mana satu kontrak memerlukan jaminan yang disahkan, gunakannya sebagai pertahanan berlapis semasa proses itu selesai.
 
-Model penggunaan penuh dan panduan pentadbiran tinggal dalam [Penggunaan](/info/deployment.html) dan [Konfigurasi](/info/configuration.html).
+- **[Amanah](/info/trust.html)** - setiap dakwaan yang dibuat oleh laman ini, berserta mekanisme yang menguatkuasakannya di sebelahnya.
+- **[Keselamatan & Pengesahan](/info/security.html)** - piawaian, primitif, model amanah dan pengujian, ditulis untuk seorang pengulas.
+- **[Model Ancaman & Sempadan Amanah](/info/threat-model.html)** - apa yang dipertahankan oleh Lolly, apa yang secara jelas tidak dipertahankannya dan di mana setiap sempadan itu terletak.
+- **[Permukaan Pelayan](/info/server-surface.html)** - inventori lengkap apa yang berjalan di bahagian pelayan (dua komponen pilihan) berbanding apa yang berjalan pada peranti.
+- **[Inventori Penghurai](/info/parser-inventory.html)** - setiap penghurai yang menyentuh fail yang dibuka oleh pengguna dan apa yang dikukuhkan terhadap setiap satunya.
+- **[Sahkan Sendiri](/info/verify-yourself.html)** - semak dakwaan itu terhadap satu eksport sebenar, langkah demi langkah, tanpa apa-apa yang anda tidak boleh jalankan sendiri.
+- **[Dasar Privasi](/info/privacy.html)** - kenyataan formal tentang apa yang dikumpul dan tidak dikumpul, disimpan dan dihantar.
+- **[Pengeluaran kreatif berdaulat](/info/sovereign-production.html)** - penggunaan bersifat air-gapped, rangkaian berpintukan persetujuan dan penandatanganan atas peranti.
+- **[Penerimaan & Tadbir Urus](/info/adoption-governance.html)** - siapa yang meluluskan satu alat, bagaimana peraturan jenama menjadi boleh dikuatkuasakan dan apa yang diperoleh oleh pilihan katalog-sebagai-repositori.
 
-## Utiliti anti-eksfiltrasi
+## Perundangan
 
-Satu kategori alat Lolly - utiliti privasi - wujud *khusus* untuk memastikan fail kekal di dalam perimeter.
+MPL-2.0 tanpa perjanjian lesen penyumbang, dinyatakan dengan jelas, dengan apa yang tidak didakwa dinyatakan sejelas apa yang didakwa. Content Credentials boleh dikesan gangguan dan boleh dibuang, jadi halaman di bawah menyatakan apa yang sebenarnya ditegaskan oleh satu tandatangan sebelum sesiapa menuliskannya ke dalam satu kontrak.
 
+- **[Penandaan AI dan EU AI Act](/info/eu-ai-act.html)** - Artikel 50, Code of Practice yang merujuk kepada C2PA dan kesesuaian jujur Lolly.
+- **[Bagaimana Lolly dibandingkan](/info/positioning.html)** - fakta lesen: MPL-2.0, tiada perjanjian lesen penyumbang dan apa yang menjadi asas sebenar "percuma selama-lamanya".
+- **[Content Credentials Identity](/info/content-credentials-identity.html)** - apa yang ditegaskan oleh satu credential yang ditandatangani, apa yang tidak ditegaskannya dan siapa yang dinamakan oleh sijil itu.
+- **[Pemindahan Data](/info/data-transfer.html)** - bungkusan sandaran yang menjadi jawapan kepada satu permintaan rekod atau serah peranti.
 
-- **Buang data tersembunyi**
- Buang lokasi dan semua maklumat pengenalan tersembunyi daripada dokumen dan fail media.
+## AI
 
-- **Text Helper**  
-Nyahnama, enkod, format dan manipulasi teks berstruktur dan tidak berstruktur. 
+Ejen membekalkan input, tidak pernah satu persona. AI membantu apabila diminta, apa yang dihasilkannya menyatakan sedemikian dan kerja anda membawa nama anda dan bukannya nama satu model.
 
-- **Compress PDF**
-Kecilkan PDF yang terlalu besar terus di peranti, supaya tiada siapa perlu mencari laman web pihak ketiga "compress my PDF" sebaik sahaja fail terlalu besar untuk dihantar melalui e-mel - itulah tepatnya titik di mana data tergelincir keluar. 
-
-Semua ini ialah transformasi terus di peranti: fail atau data anda masuk, bait yang telah dibersihkan keluar dan **tiada pelayan untuk dimuat naik**. Ia adalah lawan yang disengajakan bagi alat "muat naik fail anda ke laman web orang asing untuk membersihkannya" yang biasa dicari oleh pekerja yang bermaksud baik.
-
-![Strip Hidden Data: fail itu tiba di kanvas dan lencana itu menyatakan dengan jelas bahawa tiada apa-apa dimuat naik](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
-
-Text Helper ialah tawaran yang sama tetapi untuk teks dan bukannya fail. Ia adalah ruang kerja bertab yang sepatutnya dicari oleh seorang pekerja di laman orang asing, dan ia tidak mengisytiharkan sebarang input kerana tiada apa yang disentuhnya pernah meninggalkan halaman ini.
-
-![Ruang kerja Text Helper - susunan tab operasi di atas kad yang menyatakan bahawa tiada apa yang anda tampal meninggalkan peranti anda](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1200&height=750&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
-
-Compress PDF melengkapkan set ini: lampiran yang terlalu besar mengecil mengikut tetapan kualiti yang anda pilih, pada mesin yang sudah menyimpannya.
-
-![Compress PDF - paras kualiti dan suis skala kelabu di sebelah kiri, zon lepas untuk PDF anda sendiri di sebelah kanan dan tiada muat naik di mana-mana](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=ov2-compress-pdf)
-
-## Determinisme & kebolehulangan semula
-
-Setiap input alat boleh dinyatakan sebagai parameter URL, dan input yang sama menghasilkan fail yang sama. Ini membawa dua akibat kepada pengendali:
-
-- **URL adalah artifak itu sendiri.** Komit pautan itu, jana semula aset mengikut permintaan - tiada binari yang disimpan dalam Git, tiada perlu mengejar "versi terkini" dalam sembang. ID aset dan alat adalah kontrak kekal, jadi pautan yang dicipta hari ini masih boleh diselesaikan kemudian.
-- **CLI menggunakan laluan render yang sama** seperti GUI, jadi saluran binaan dan aplikasi tidak akan tersasar. Jana imej OG, kad sosial dan visual data semasa waktu binaan, secara boleh ulang.
-
-Prompt to Image ialah determinisme dalam bentuk paling ringkas: teks adalah keseluruhan input, imej yang ditaip huruf adalah keseluruhan output dan teks yang sama sentiasa disusun dengan cara yang sama.
-
-![Prompt to Image - satu blok teks prom yang ditaip atur ke dalam imej segi empat, tanpa apa-apa dalam hasilnya yang tiada dalam input](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
-
-## Asal-usul & Content Credentials
-
-![Zon lepas Verify menerima sebarang fail, daripada sebarang sumber, dan membacanya tanpa sebarang panggilan rangkaian](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
-
-Eksport boleh membawa **Content Credentials** - manifes [C2PA](https://c2pa.org) yang ditandatangani dan terikat kepada cincangan (hash) bait fail tersebut. Sebarang perubahan kemudian pada fail akan memecahkan meterai itu, jadi pengesah yang menyokong C2PA **mengesan pengubahsuaian secara kriptografi, luar talian**. Bukti kelayakan ini bersifat *ketara-gangguan* (tamper-evident): ia menandakan pengubahsuaian dan bukannya menghalangnya, dan itulah tepatnya yang menjadikan pengesahan sepenuhnya luar talian mungkin.
-
-- **Aktif secara lalai, di peranti.** Kunci penandatanganan dijana pada peranti, tidak boleh diekstrak (malah Lolly sendiri tidak dapat membacanya) dan penandatanganan berlaku secara tempatan - hanya *pendaftaran* identiti pilihan yang pernah menyentuh rangkaian.
-- **Peringkat kepercayaan.** Eksport yang tidak didaftarkan adalah terbentuk dengan baik tetapi ditandatangani secara tanpa nama (`untrusted`). Daftarkan **identiti disahkan** (sijil jangka pendek daripada Lolly CA, terikat kepada e-mel) dan pengesah yang menyematkan root Lolly akan melaporkan `trusted` + e-mel penandatangan. Pihak berkuasa cap masa dipercayai dan lampu hijau pengesah pihak ketiga (pematuhan C2PA) berada dalam peta hala tuju. Setiap peringkat adalah jelas, dan sesuatu fail hanya pernah mendakwa kepercayaan yang dapat dibuktikannya.
-- **Tempoh sah bukti kelayakan** adalah pilihan pengendali/pengguna semasa penandatanganan: 7 / 30 / 90 / 365 hari, lalai 30.
-- **Lolly Imprint.** Isyarat kedua yang saling melengkapi dan **aktif secara lalai**: tera air piksel tidak kelihatan yang dibakar ke dalam eksport raster (dan raster yang dirender oleh Lolly di dalam PDF/PPTX, bukan imej terbenam milik pengguna sendiri). Apabila bukti kelayakan itu musnah akibat sebarang perubahan bekas (container), Imprint terus bertahan selepas simpan-semula atau tangkapan skrin - petunjuk tahan lasak "piksel ini pernah melalui Lolly", kehadiran sahaja, tiada data peribadi. Ia adalah keselamatan-melalui-kekaburan, bukan pertahanan yang diperkukuh, dan ia melengkapi bukti kelayakan itu dan bukannya menggantikannya. `imprint=0` untuk menarik diri.
-- **Content Credentials Tahan Lasak (pilihan).** Eksport raster boleh juga membawa tanda *tahan lasak* yang tidak kelihatan yang mengekod pengecam pengikatan-lembut (soft-binding), supaya bukti kelayakan C2PA dapat dipulihkan walaupun selepas muat naik ke media sosial atau simpan-semula telah menanggalkan metadata fail itu - iaitu keadaan di mana bukti kelayakan biasa akan hilang. Ia khusus untuk raster sahaja dan memerlukan langkah enkod-neural, jadi ia tidak aktif secara lalai (`durable=1` untuk mengaktifkannya). Lolly mengenali tanda tahan lasaknya sendiri secara luar talian di `/verify` pada hari ini; pemulihan oleh alat pihak ketiga (contohnya Adobe) akan menyusul sebaik sahaja resolusi pengikatan-lembut industri berada di tempatnya.
-- **Pengesahan berlaku di peranti.** Lepaskan sebarang fail pada `/verify` (atau `lolly validate <file>`) untuk mendapatkan laporan luar talian sama ada ia benar-benar dihasilkan dengan Lolly dan tidak berubah sejak itu. Paparan Verify web juga menandakan kandungan janaan AI, mengesan Lolly Imprint, mengesahkan tandatangan **SEAL** (tandatangan peringkat bait - tanpa sebarang permintaan rangkaian: enjin menerima penyelesai kunci DNS yang *disuntik* dan tiada shell yang menyuntiknya pada hari ini, jadi rekod yang membawa kunci `pk=` sendiri secara terbenam akan disahkan sepenuhnya secara luar talian manakala rekod berasaskan DNS akan melaporkan "no key resolver and no inline key" dan bukannya menghubungi rangkaian - lihat `SealPublicKeyResolver` dalam `engine/src/seal.ts`), secara pilihan mengimbas mendalam untuk tera air piksel pihak ketiga (muat turun model di peranti sekali sahaja), dan mendedahkan data tersembunyi - semuanya tanpa memuat naik fail itu. Lihat [Identiti Content Credentials](/info/content-credentials-identity.html).
-
-> **Nota kebolehoperasian.** Lolly mengesahkan bukti kelayakannya sendiri dan banyak bukti kelayakan pihak ketiga secara luar talian pada hari ini, termasuk membaca manifes tuntutan C2PA **v2** daripada pengeluar lain. Dua bekas (container) masih dalam pembangunan, kedua-duanya kerana C2PA masih belum mempunyai pemetaan piawai untuknya, jadi Lolly membawa bukti kelayakan itu di tempatnya sendiri dan pengesah Lolly itulah yang membacanya semula: **WebM** (manifes itu dibawa sebagai lampiran Matroska) dan **Ogg/Opus** (medan `C2PA=` dalam pengepala komen OpusTags, dengan julat bait itu dikecualikan daripada pengikatan supaya audio itu masih mencincang secara sama). Semua yang lain mengikut spesifikasi sepenuhnya - alat pihak ketiga mengesahkan MP4, M4A, MP3, WAV, PNG, JPEG dan PDF Lolly tanpa sebarang persediaan tambahan. Lihat `engine/src/c2pa-containers.ts` untuk kedua-dua pemetaan; ia akan menumpu kepada piawai itu sebaik sahaja ia stabil.
-
-## Penyulitan & kata laluan
-
-Bagi fail yang perlu dihantar terkunci, semuanya berlaku di peranti:
-
-![Kad kunci dalam panel eksport: kata laluan, dan pilihan jelas antara dua peringkat](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&walker=1&format=svg&dark=1&filename=aud-pdf-lock)
-
-- **Kata laluan buka PDF** - *Standard* ialah pencegah RC4 40-bit (boleh dibuka di mana-mana, boleh dihantar dalam pautan); *Strong* ialah **AES-256** (PDF 2.0), ditaip semasa eksport dan tidak pernah diletakkan dalam pautan.
-- **Muat turun terkunci** - satu ZIP, folder Projects atau larian kelompok boleh dikunci sepenuhnya: *Standard* ZipCrypto (lemah, sejagat) atau *Strong* **AES-256** (WinZip AE-2). Pertahanan berlapis: mana-mana PDF di dalam zip Strong *juga* dikunci AES-256 secara berasingan, jadi ia kekal terkunci selepas dibuka bungkusannya.
-- **Pautan kongsi berkunci kata laluan** - keseluruhan keadaan pautan disulitkan AES-256 di bawah kunci terbitan PBKDF2; hanya teks sifer yang dihantar, kata laluan tidak pernah berada dalam pautan dan penyahsulitan berlaku dalam pelayar penerima.
-
-## Sedia untuk air-gap
-
-Air-gap ialah **penggunaan kelas pertama**, bukan mod istimewa - Lolly berfungsi tanpa rangkaian semasa waktu render secara lalai, terus dari kotak. Shell web ialah PWA luar-talian-dahulu (service worker); fon dan WASM disimpan di peranti; keadaan alat dikekalkan secara tempatan melalui host bridge, tidak pernah `localStorage`. Cara yang disokong untuk sesuatu alat mencapai rangkaian ialah keupayaan `host.net` yang **disenarai-benar**, yang diisytiharkannya dalam manifesnya - shell yang tidak boleh (atau tidak mahu) memenuhinya akan menggantikannya dengan stub. Itu adalah kontrak kebolehalihan dan bukan sempadan yang dikuatkuasakan (lihat nota hooks di bawah), itulah sebabnya menyemak kod alat itu kekal sebagai kawalan sebenar - walaupun pada peranti air-gap tiada apa untuk dicapai sama ada pun. Hantar shell ke peranti melalui MDM anda, atau layan satu instans di dalam rangkaian anda, dan pemasangan air-gap sepenuhnya akan merender, mengeksport, menyulitkan dan mengesahkan bukti kelayakan tanpa apa-apa untuk dihubungi ke rumah.
-
-## Perkara yang perlu diketahui
-
-Beberapa perkara yang berbaloi difahami dengan jelas sebelum anda melancarkannya:
-
-- **Pengukuhan sedang dijalankan.** Kriptografi dan penghurai (parser) sedang melalui pengukuhan berskala perusahaan SUSE (lihat di atas) - kukuh mengikut reka bentuk pada hari ini; gunakan sebagai pertahanan berlapis di mana kontrak menuntut jaminan bersijil.
-- **Hook alat *bukan* sandbox keselamatan.** `hooks.js` pilihan sesuatu alat berjalan dengan host bridge disuntik, tetapi dalam shell pelayar ia dilaksanakan dalam realm halaman itu dan *boleh* mencapai `window`/`document`/`fetch`. Layan kod alat sebagaimana anda melayan sebarang kod yang anda jalankan - semaknya. Inilah sebabnya organisasi yang menjalankan katalog kongsi boleh mengawalnya melalui semakan Git; walau apa pun, jalankan hanya alat yang telah anda semak sehingga pengasingan Worker dilancarkan.
-- **Content Credentials bersifat ketara-gangguan.** Ia mengesan pengubahsuaian dan bukannya menghalangnya - lihat nota kebolehoperasian di atas.
-- **Dua peringkat penyulitan.** Kunci *Standard* ialah pencegah pantas dan sejagat; *Strong* (AES-256) ialah perlindungan penuh - gunakan Strong untuk apa-apa yang sensitif, dengan catatan ia memerlukan pembaca moden.
-
-## Standalone, atau diurus oleh satu control plane
-
-Dua bentuk, dan anda memilih mengikut setiap penggunaan. **Standalone ialah lalai dan tidak memerlukan pelayan:** Lolly merender pada peranti, setiap penghasil bekerja dalam aplikasi, dan governance git-as-data di atas sepenuhnya pilihan - satu organisasi sahaja boleh menjalankan repo ini tanpa sebarang hosting langsung. **Apabila anda mahukan kawalan seluruh organisasi, tambah satu control plane.** [lolly.work](https://lolly.work) ialah perkhidmatan berasingan, sumber terbuka (MPL-2.0) yang anda hosting sendiri - atau anda nilai pada sandbox yang dihosting - yang mengurus shell itu secara langsung: log masuk yang digating SSO, dasar feature-flag / eksport / tera air, overlay tool-input, federasi katalog, kelulusan dan satu log audit berantai-hash, kesemuanya disajikan kepada shell tanpa sebarang perubahan kod di sini. Ia bersifat brand-agnostic (config ditambah satu pack mount), menggunakan enjin dan pack repo ini tanpa pengubahsuaian, dan tidak pernah menjadi laluan render: Lolly tetap merender pada peranti sejak dari reka bentuk. OSS = kebebasan individu; OSS + control plane = kebebasan organisasi.
-
-## Ke mana seterusnya
-
-- **[Keselamatan & Pengesahan](/info/security.html)** - piawaian, primitif, model kepercayaan dan pengujian di sebalik bukti kelayakan dan penyulitan di atas.
-- **[Penerimagunaan & Tadbir Urus](/info/adoption-governance.html)** - persona, metrik pengalihan dan tadbir urus-sebagai-data secara lengkap.
-- **[Penggunaan (Deployment)](/info/deployment.html)** - deploy/serve/hibrid, MDM dan pengehosan sendiri perkhidmatan.
-- **[Konfigurasi](/info/configuration.html)** - profil, pek jenama, sekatan keupayaan dan bendera ciri.
-- **[Dasar Privasi](/info/privacy.html)** - kenyataan formal tentang apa yang dikumpul, disimpan dan dihantar, dan apa yang tidak.
-- **[Permukaan Pelayan](/info/server-surface.html)** - inventori lengkap apa yang berjalan di sisi pelayan (dua komponen pilihan) berbanding di peranti.
+- **[Pendirian AI Kami](/info/ai-stance.html)** - apa yang Lolly lakukan dan tidak lakukan dengan kandungan yang dijana, dan apa yang menguatkuasakan setiap komitmen.
+- **[Dijana sekali, dipapar sama](/info/ai-features.html)** - ciri AI yang dihantar, dan sebab mencipta piksel ditanda sedangkan membuangnya tidak.
+- **[Input, bukan penyamaran](/info/input-not-impersonation.html)** - sebab seorang ejen membekalkan input dan tidak sekali-kali satu persona, bagaimana itu dikuatkuasakan dan apa yang masih tidak boleh dilakukan oleh ejen yang menyeleweng.
+- **[Ejen AI](/info/ai-agents.html)** - apa yang sebenarnya boleh dikendalikan oleh seorang ejen, jika pasukan anda sudah mengarahkan satu ejen kepada ini.

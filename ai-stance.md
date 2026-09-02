@@ -38,6 +38,14 @@ Tools here scale what a person decided. They do not decide instead of them, and 
 
 We honour that end to end, and we record it: for history, for accountability, for trust and for tomorrow.
 
+## AI, on your terms
+
+You never need AI here. If you choose it, three things hold:
+
+- <!--i:people--> **You are in control.** AI helps only when you ask, and only with the piece you point it at. Nothing is decided for you.
+- <!--i:check--> **It stops costing.** If AI helps make something once, the result is yours. Using it again is free, however many times you need it.
+- <!--i:shieldcheck--> **It stays honest.** A piece made by AI says so, and what you make carries your name instead of pretending to be someone else. Even the built-in help works this way: [Ask Lolly](/info/ask.html) answers with the manual's own sentence and a link, never a made-up answer.
+
 ## What this is not
 
 - <!--i:check--> **Not a ban.** Tools may use AI where it serves the work, and agents are a supported audience - see [AI Agents](/info/ai-agents.html).

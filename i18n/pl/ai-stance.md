@@ -38,6 +38,14 @@ Narzędzia tutaj skalują to, co postanowił człowiek. Nie decydują za niego i
 
 Honorujemy to od początku do końca i to zapisujemy: dla historii, dla odpowiedzialności, dla zaufania i dla jutra.
 
+## AI na twoich warunkach
+
+Nigdy nie musisz tu korzystać z AI. Jeśli jednak z niej skorzystasz, obowiązują trzy zasady:
+
+- <!--i:people--> **Masz kontrolę.** AI pomaga tylko wtedy, gdy o to poprosisz, i tylko w tym fragmencie, na który wskażesz. Nic nie jest decydowane za ciebie.
+- <!--i:check--> **Przestaje kosztować.** Jeśli AI pomoże coś stworzyć raz, wynik jest twój. Ponowne użycie jest darmowe, bez względu na to, ile razy tego potrzebujesz.
+- <!--i:shieldcheck--> **Pozostaje uczciwa.** Fragment stworzony przez AI sam o tym mówi, a to, co tworzysz, niesie twoje nazwisko, zamiast udawać kogoś innego. Nawet wbudowana pomoc działa w ten sposób: [Ask Lolly](/info/ask.html) odpowiada własnym zdaniem z podręcznika i linkiem, nigdy zmyśloną odpowiedzią.
+
 ## Czym to nie jest
 
 - <!--i:check--> **Nie jest zakazem.** Narzędzia mogą używać AI tam, gdzie służy to pracy, a agenci są wspieraną grupą odbiorców - zobacz [Agenci AI](/info/ai-agents.html).

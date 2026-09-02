@@ -10,6 +10,8 @@ That trade buys the things a tool cannot have. A view can use the shell's own co
 
 They live in the **Utilities** tab (`#/u`), alongside the on-device utility *tools* - Strip Hidden Data, Compress PDF, Convert Image, Convert Font, Redact, Screen Capture, Text Helper and the rest - because to anyone using them they are the same kind of thing: something you open from that grid. A view's tile can be starred like a tool's ([Your favourites](/info/favourites.html) covers the strip that puts starred things on top), and each carries a details dialog. What a view's tile does not offer is *keep offline* or *saved sessions*, for the reasons above.
 
+![Strip Hidden Data: the file arrives on the canvas and the badge states plainly that nothing is uploaded](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
+
 > **Verify & Inspect** (`#/verify`) is the sixth member of the family and has pages of its own: [Verify It Yourself](/info/verify-yourself.html) and [Security & Verification](/info/security.html).
 
 ## Spreadsheet - `#/data`

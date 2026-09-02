@@ -43,7 +43,7 @@ security posture).
 
 | Doc | Audience | What it covers |
 |---|---|---|
-| [creators.md](creators.md) | end user | Pathway hub. Why a non-designer would use Lolly, and where each creator task is documented. |
+| [creators.md](creators.md) | end user | Pathway hub. A router: one lane per activity - make, animate, record, collaborate, post - each listing the pages that carry it. |
 | [using.md](using.md) | end user | Driving the app: opening a tool, working the canvas, exporting, saving, sharing, moving to another device. |
 | [brand-studio.md](brand-studio.md) | end user | The Brand Studio at `#/start`: logos, colours, type, tokens and files, plus how a brand pack moves between devices. |
 | [profile.md](profile.md) | end user | Profiles as the on-device working identity a tool pre-fills from, and how they differ from the platform brand and from capabilities. |
@@ -67,7 +67,7 @@ security posture).
 
 | Doc | Audience | What it covers |
 |---|---|---|
-| [builders.md](builders.md) | tool author | Pathway hub. The technical map: author tools, integrate, self-host, extend. |
+| [builders.md](builders.md) | tool author | Pathway hub. A router: three lanes - designers, developers, infrastructure - each listing the pages that carry it. |
 | [overview.md](overview.md) | contributor | **The architecture document.** The three-layer separation (engine, shells, tool/brand packs), the capability-bridge boundary, the repository layout, the ten architectural commitments, and where the engine ends and the host begins. Opens with the product rationale, so use its navigation note to jump straight to the architecture. |
 | [design-tokens.md](design-tokens.md) | tool author | The DTCG token model as the single source of truth for brand primitives, and what round-trips with Penpot and Tokens Studio. |
 | [constraints.md](constraints.md) | end user | The constraints concept page: why output comes out right by construction, with the mechanism, the enforcing tests and the limits. |
@@ -92,7 +92,11 @@ The Builders sidebar also carries an **About** entry, which renders the repo-roo
 
 | Doc | Audience | What it covers |
 |---|---|---|
-| [operators.md](operators.md) | operator | Pathway hub. The security and governance case for handing a creative tool to everyone. |
+| [operators.md](operators.md) | operator | Pathway hub. A router: one lane per function that answers for what goes out - sales, press, marketing, security, legal and AI. |
+| [sales.md](sales.md) | operator | Playbook. Walk into the meeting with the file you need: fixing the deck you already have, rebuilding it natively, making the asset on the way there. |
+| [press.md](press.md) | operator | Playbook. The info-editorial style built once, then live data into publication-quality charts, maps and tables for print and screen. |
+| [marketing.md](marketing.md) | operator | Playbook. Every size and every language from one source: a spreadsheet in, one finished file per row, no agency bottleneck for routine files. |
+| [legal.md](legal.md) | operator | Playbook. Redact, anonymise, strip metadata, compress and verify with nothing sent anywhere, plus the licence, AI-marking and data positions stated plainly. |
 | [adoption-governance.md](adoption-governance.md) | operator | The honest pilot account: current status, who it is for, how adoption is measured, who governs the output. |
 | [cli-signing.md](cli-signing.md) | operator | Setting up a real signing identity for the CLI, so files made from the terminal carry a verifiable name rather than an anonymous on-device key. Its own pathway is Operators; the Builders sidebar carries it too. |
 | [deployment.md](deployment.md) | operator | Where each piece runs, and the delivery postures (distribute to devices, host the PWA, run the services). |
@@ -127,7 +131,7 @@ The fifth pathway, and the one the other four link into whenever a claim needs i
 
 | Doc | Audience | What it covers |
 |---|---|---|
-| [faq.md](faq.md) | end user | Intentionally not a page. `loadFaqs` in `build.ts` parses each `##` heading as a question and compiles the lot into the landing page's FAQ accordion, with per-question `#faq-…` anchors other surfaces deep-link to. |
+| [faq.md](faq.md) | end user | Questions and answers, rendered as its own page (/info/start/faq.html) since plans/177: `loadFaqs` in `build.ts` parses each `##` heading as a question and `renderFaqPage` compiles the accordion, with per-question `#faq-…` anchors other surfaces deep-link to. |
 | README.md | contributor | This index. |
 
 Every page above now has both a `pages` entry and a `SIDEBARS` item, so nothing in the index is
@@ -150,6 +154,6 @@ for as long as it existed.
 |---|---|
 | `build.ts` | The `/info` site generator. Owns `pages`, `NAV`, `SIDEBARS`, the FAQ loader, and the inline CSS. |
 | `og-image.ts` | Per-page Open Graph image generation. A page only gets its own `og/<slug>.png` reference when that image exists. |
-| `site/` | Landing-page content fragments (`about.md`, `opensource.md` and the sibling JSON), loaded by the landing build rather than published as pages. |
+| `site/` | The landing page's content, as data: `hero-chrome.json` (the cycling claims + CTAs), `covers.json`, `whatwhy.json`, `persona.json`, `behind.json` for the five beats, plus `downloads.json`, `import.json`, `formats.json` and `formats-catalog.json` for the bands other pages host. Read by the landing build, never published as pages - see `site/README.md` for which file localises how. |
 | `i18n/<lang>/` | Translations of the localised subset (currently 26 locales). A translated file is used when present, and the English source is the fallback, never a 404. |
 | `shots/` | Screenshot assets used by the docs. |

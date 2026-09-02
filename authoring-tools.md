@@ -152,6 +152,8 @@ Some tools aren't finished when the render is. An email signature is finished th
 
 Each declaration becomes a real control, built by the shell from the input model - you never write the UI. Six lines of `inputs` in `qr-code`'s manifest produce this entire sidebar.
 
+![One declared input, one generated control: a url, a colour, a select, a number, a boolean](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code&width=1440&height=900&dpi=192&waitMs=2000&cropSelector=.tool-inputs&walker=1&format=svg&dark=1&filename=aud-manifest-controls)
+
 ![The QR tool's sidebar - a URL field, two colour swatches, an error-correction dropdown, a quiet-zone slider and a joined-modules toggle, all generated from the manifest](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-inputs&dark=1&filename=auth-input-controls)
 
 | Type             | What it produces                                          | UI control          |
@@ -524,6 +526,8 @@ SVG and PDF exports are not screenshots. The exporter reads each element's compu
 | Text | Outlined to paths with the real font, including `-webkit-text-stroke` and `paint-order`. A glyph the font lacks (an emoji, say) keeps that whole line as live `<text>`, which then needs the font on the viewer's machine. |
 | `background-image` | Gradients become real gradients and a single image an `<image>`; `conic-gradient` rasterises. |
 | `transform` | 2-D transforms are kept. 3-D (`rotateY`, `perspective`) is not. |
+
+The `penpot` format keeps this same vector set, as editable Penpot shapes instead of SVG elements, and falls back to a single picture wherever a render leans on an effect this table marks as rasterised or lost.
 
 ### Letting the DOCUMENT bring its own CSS
 

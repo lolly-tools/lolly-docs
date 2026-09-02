@@ -30,6 +30,8 @@ Tahle platforma je přímá odpověď:
 
 > **Programová tvorba kreativy a obsahu ve velkém měřítku** - generování assetů bez lidské práce, s pravidly pod centrální kontrolou, pro zaměstnance, dodavatele a partnery.
 
+Lolly není místo, kde design systém vzniká - je to místo, kde se vyrábí. Představ si to jako prodejní automat na design: vyber si, dostaneš výsledek. Pokaždé. Engine usiluje o nejvyšší kvalitu, jakou daný formát dokáže na hardwaru před tebou vyprodukovat, a stejný engine vytvoří stejný soubor na každé platformě, na kterou se dodává.
+
 Výsledkem je **hojnost**: každá akce má správnou signage, každé upozornění na CVE odpovídá firemnímu stylu, každý štítek se vytiskne čistě, každý e-mailový podpis je aktuální - to vše bez designového ticketu. Platforma zvládá opakující se operacionalizovanou kreativu. Záměrně to není nástroj pro zakázkovou kreativu - vlajkovou práci si stále vlastní designéři.
 
 ### Inovuj pravděpodobnostně, škáluj deterministicky
@@ -431,11 +433,11 @@ Skládat lze vykreslení jakéhokoli nástroje: potomek **SVG** zůstane skuteč
 
 ## Co jsme se záměrně rozhodli nedělat
 
-- **Žádné EJS / žádný libovolný JS v šablonách.** Plocha pro XSS je nulová. Logika žije v `hooks.js`.
-- **Žádný povinný asset CMS.** Jednotlivci si nahrávají vlastní kreativní soubory přímo do svého katalogu v aplikaci (pohled [Katalog](/info/using.html) a Brand Studio) - žádný server, žádná administrátorská konzole. Práce se předává jako **relace**: odkaz ke sdílení nese celý stav a stejná relace cestuje i v zálohách nebo přes kolaborativní relaci. Kdokoli má správu nad nasazením, může pak sdílenou relaci uzamknout jako **šablonu** - otevře odkaz, zaznamená její hodnoty jako položku šablony v adresáři daného nástroje ve brand packu a commitne - poté se objeví v nabídce nástroje "Nový ze šablony" a lze na ni odkazovat přímo jako `?template=<id>`. Git je uzamykacím krokem vlastníka nasazení, nikdy tvůrce. Pro *sdílený, řízený* katalog může organizace **volitelně** spravovat adresář assetů stejným způsobem a hlídat aktualizace přes revizi PR - dostupný model správy, ne požadavek aplikace.
-- **Žádné vynucené RBAC.** Otevřená aplikace je ve výchozím stavu veřejně přístupná; riziko pro značku se řídí značkami zralosti a vodoznaky. Organizace, která chce těsnější kontrolu, si navrství vlastní autentizaci a výše popsaný katalog kontrolovaný gitem.
-- **Žádná centrální databáze.** Veškerý uživatelský stav je per-device. Integrace SUSE ID je na roadmapě, ale není blokátorem spuštění.
-- **Žádná sdílená cesta kódu tools/engine.** Engine je open source; `tools/` a `assets/` zůstávají proprietárním obsahem SUSE ve vlastních repozitářích. Oddělení je vynucené (žádné importy napříč) tak, aby rozdělení zůstalo čisté.
+- **Žádné EJS / žádné libovolné JS v šablonách.** Plocha pro XSS je nulová. Logika žije v `hooks.js`.
+- **Žádný povinný asset CMS.** Jednotlivci nahrávají vlastní kreativní soubory přímo do svého katalogu v aplikaci (zobrazení [Catalogue](/info/using.html) a Brand Studio) - žádný server, žádná administrátorská konzole. Práce se předává dál jako **relace**: sdílený odkaz nese celý stav a stejná relace putuje v záloze nebo přes kolaborativní relaci. Ten, kdo řídí nasazení, pak může sdílenou relaci uzamknout jako **šablonu** - otevři odkaz, zaznamenej její hodnoty jako položku šablony v adresáři daného nástroje v brand packu a commitni - poté se objeví ve výběru nástroje "New from template" a lze na ni odkazovat přímo jako `?template=<id>`. Git je zamykacím krokem vlastníka nasazení, nikdy tvůrce. Pro *sdílený, řízený* katalog může organizace **stejným způsobem** spravovat adresář assetů a podmínit aktualizace revizí PR - dostupný model správy, ne požadavek aplikace.
+- **Žádné vynucené RBAC.** Otevřená aplikace je ve výchozím stavu veřejně přístupná; riziko pro značku se řídí pomocí štítků zralosti + vodoznaků. Organizace, která chce přísnější kontrolu, si navrství vlastní autentizaci a výše popsaný katalog s revizí přes git.
+- **Žádná centrální databáze.** Veškerý stav uživatele je vázaný na dané zařízení. Integrace SUSE ID je na roadmapě, ale není blokátorem spuštění.
+- **Žádná sdílená cesta kódu nástrojů/enginu.** Engine je open source a stejně tak i nástroje nezávislé na značce v `community/`; brand pack jako privátní `brands/suse/` nese vlastní nástroje a katalog za vlastních podmínek. Tak či onak je oddělení vynuceno (žádné cross-importy z `engine/` do obsahu nástrojů), takže dělení zůstává čisté.
 
 ---
 
@@ -460,9 +462,13 @@ Stejný životní cyklus v Tauri. Stejný životní cyklus v CLI - jsdom poskytu
 
 ## Stav open source
 
-Adresáře `engine/`, `shells/`, `schemas/` a `docs/` jsou open source pod licencí **MPL-2.0** - vendorsky neutrální platforma pro brandové nástroje, kde je každá vydatelná jednotka rozdělena do vlastního repozitáře pod [github.com/lolly-tools](https://github.com/lolly-tools). `tools/` a `catalog/assets/` jsou obsah specifický pro SUSE a zůstávají **proprietární pro SUSE** (všechna práva vyhrazena - viz `NOTICE.md` v každém repozitáři); MPL se na ně nevztahuje.
+**Kód je pod MPL-2.0.** `engine/`, `shells/*`, `services/*`, `schemas/` a `docs/` jsou open source pod **MPL-2.0** - platforma pro scaffolding nezávislá na dodavateli pro nástroje značky, kde každá dodávaná jednotka má vlastní repozitář pod [github.com/lolly-tools](https://github.com/lolly-tools).
 
-Rozdělení je vynucené - z `engine/` nejsou žádné importy do `tools/` ani `assets/` - takže hranice platforma/obsah zůstává čistá.
+**Obsah nástrojů se dodává jako brand packy**, každý s vlastními podmínkami (viz `NOTICE.md` daného packu). `community/` je veřejný repozitář [`lolly-tools`](https://github.com/lolly-tools/lolly-tools) a jeho nástroje nezávislé na značce jsou také pod MPL-2.0. `brands/suse/` je privátní pack `suse-lolly`: nástroje SUSE a katalog SUSE, **proprietární pro SUSE**, včetně licencované hudby PremiumBeat. `brands/lolly-start/` je prázdná startovní značka, kterou vlastní tento repozitář. Písma se dodávají uvnitř packu pod licencí **SIL Open Font License 1.1** - pack SUSE nese písma SUSE a SUSE Mono.
+
+`tools/` a `catalog/` v kořeni repozitáře jsou *pohledy* ignorované gitem: profil je sestaví z `community/` plus aktivního brand packu, a proto každý skript a shell čte tyto dvě cesty a nikdy pack přímo.
+
+Toto oddělení je vynucené - neexistují cross-importy z `engine/` do obsahu nástrojů - takže hranice mezi platformou a obsahem zůstává čistá.
 
 ---
 

@@ -38,6 +38,14 @@ Buradaki araçlar, bir kişinin verdiği kararı büyütür. Onun yerine karar v
 
 Bunu baştan sona onurlandırıyor ve kaydediyoruz: tarih için, hesap verebilirlik için, güven için ve yarın için.
 
+## AI, kendi koşullarınla
+
+Burada AI'ya asla ihtiyacın yok. Onu seçersen, üç şey geçerli olur:
+
+- <!--i:people--> **Kontrol sende.** AI yalnızca istediğinde ve yalnızca yönlendirdiğin parçayla yardım eder. Hiçbir şey senin yerine karar verilmez.
+- <!--i:check--> **Maliyet çıkarmayı bırakır.** AI bir şeyi yapmana bir kez yardım ederse, sonuç senindir. Onu tekrar kullanmak ücretsizdir, kaç kez ihtiyacın olursa olsun.
+- <!--i:shieldcheck--> **Dürüst kalır.** AI tarafından yapılan bir parça bunu belirtir ve yaptığın şey, başka biri gibi davranmak yerine senin adını taşır. Yerleşik yardım bile bu şekilde çalışır: [Lolly'ye sor](/info/ask.html), kılavuzun kendi cümlesiyle ve bir bağlantıyla yanıt verir, asla uydurma bir yanıt değil.
+
 ## Bu ne değildir
 
 - <!--i:check--> **Bir yasak değil.** Araçlar, işe hizmet ettiği yerde yapay zeka kullanabilir ve ajanlar desteklenen bir kitledir - bkz. [Yapay Zeka Ajanları](/info/ai-agents.html).

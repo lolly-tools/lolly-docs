@@ -38,6 +38,14 @@ Gli strumenti qui amplificano ciò che una persona ha deciso. Non decidono al po
 
 Onoriamo questo principio dall'inizio alla fine, e lo registriamo: per la storia, per la responsabilità, per la fiducia e per il domani.
 
+## AI, alle tue condizioni
+
+Qui non hai mai bisogno dell'AI. Se la scegli, valgono tre cose:
+
+- <!--i:people--> **Sei tu ad avere il controllo.** L'AI aiuta solo quando lo chiedi, e solo sull'elemento verso cui la punti. Niente viene deciso per te.
+- <!--i:check--> **Smette di costare.** Se l'AI aiuta a creare qualcosa una volta, il risultato è tuo. Usarlo di nuovo è gratis, quante volte ti serva.
+- <!--i:shieldcheck--> **Resta onesta.** Un elemento creato dall'AI lo dichiara, e ciò che crei porta il tuo nome invece di fingere di essere qualcun altro. Persino l'aiuto integrato funziona così: [Chiedi a Lolly](/info/ask.html) risponde con la frase stessa del manuale e un link, mai una risposta inventata.
+
 ## Cosa non è
 
 - <!--i:check--> **Non è un divieto.** Gli strumenti possono usare l'IA dove serve al lavoro, e gli agenti sono un pubblico supportato - vedi [AI Agents](/info/ai-agents.html).

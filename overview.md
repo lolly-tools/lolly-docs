@@ -30,6 +30,8 @@ This platform is the direct answer:
 
 > **Programmatic creative and content at scale** - zero-labor asset generation, with the rules under central control, for employees, vendors and partners.
 
+Lolly isn't where a design system gets invented - it's where it gets produced. Think of it like a vending machine for design: make a selection, get a result. Every time. The engine works for the highest quality each format can produce on the hardware in front of you, and the same engine makes the same file on every surface it ships to.
+
 The outcome is **abundance**: every event has correct signage, every CVE alert matches the house style, every label prints clean, every email signature is current - all without a design ticket. The platform handles recurring operationalised creative. It is deliberately not a bespoke creative tool - designers still own flagship work.
 
 ### Innovate probabilistically, scale deterministically
@@ -435,7 +437,7 @@ Compose any tool's render: an **SVG** child stays a true vector when the parent 
 - **No mandatory asset CMS.** Individuals ingest their own creative files straight into their catalogue in-app (the [Catalogue](/info/using.html) view and the Brand Studio) - no server, no admin console. Work is handed on as a **session**: a share link carries the whole state, and the same session travels in a backup or over a collab session. Whoever controls the deployment can then lock a shared session in as a **template** - open the link, record its values as a template entry in that tool's directory in the brand pack and commit - after which it appears in the tool's "New from template" chooser and is deep-linkable as `?template=<id>`. Git is the deployment owner's locking step, never the creator's. For a *shared, governed* catalog, an organisation **can** manage the asset directory the same way and gate updates through PR review - an available governance model, not a requirement of the app.
 - **No forced RBAC.** The open app is public-access by default; brand risk is managed by maturity tags + watermarks. An org that wants tighter control layers on its own auth and the git-reviewed catalog above.
 - **No central database.** All user state is per-device. SUSE ID integration is on the roadmap but not a launch blocker.
-- **No shared tools/engine code path.** The engine is open source; `tools/` and `assets/` remain proprietary SUSE content in their own repositories. The separation is enforced (no cross-imports) so the split stays clean.
+- **No shared tools/engine code path.** The engine is open source and so are the brand-agnostic tools in `community/`; a brand pack such as the private `brands/suse/` carries its own tools and catalog under its own terms. Either way the separation is enforced (no cross-imports from `engine/` into tool content) so the split stays clean.
 
 ---
 
@@ -460,9 +462,13 @@ Same lifecycle in Tauri. Same lifecycle in CLI - jsdom provides the headless DOM
 
 ## Open-source status
 
-The `engine/`, `shells/`, `schemas/` and `docs/` directories are open source under **MPL-2.0** - a vendor-neutral scaffolding platform for brand tooling, with each shippable unit split into its own repository under [github.com/lolly-tools](https://github.com/lolly-tools). `tools/` and `catalog/assets/` are SUSE-specific content and remain **proprietary to SUSE** (all rights reserved - see each repo's `NOTICE.md`); they are not covered by the MPL.
+**Code is MPL-2.0.** `engine/`, `shells/*`, `services/*`, `schemas/` and `docs/` are open source under **MPL-2.0** - a vendor-neutral scaffolding platform for brand tooling, with each shippable unit in its own repository under [github.com/lolly-tools](https://github.com/lolly-tools).
 
-The split is enforced - there are no cross-imports from `engine/` to `tools/` or `assets/` - so the platform/content boundary stays clean.
+**Tool content ships as brand packs**, each with its own terms (see the pack's `NOTICE.md`). `community/` is the public [`lolly-tools`](https://github.com/lolly-tools/lolly-tools) repository and its brand-agnostic tools are MPL-2.0 too. `brands/suse/` is the private `suse-lolly` pack: the SUSE tools and the SUSE catalog, **proprietary to SUSE**, including its licensed PremiumBeat music. `brands/lolly-start/` is the blank starter brand this repository owns. Fonts ship inside a pack under the **SIL Open Font License 1.1** - the SUSE pack carries the SUSE and SUSE Mono typefaces.
+
+The repo-root `tools/` and `catalog/` are gitignored *views*: a profile assembles them from `community/` plus the active brand pack, which is why every script and shell reads those two paths and never a pack directly.
+
+The split is enforced - there are no cross-imports from `engine/` into tool content - so the platform/content boundary stays clean.
 
 ---
 

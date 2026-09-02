@@ -1,910 +1,484 @@
 WEBVTT
 
-00:00:00.386 --> 00:00:03.511
-A defence-in-depth security & intelligence
-
-00:00:03.557 --> 00:00:06.798
-strategy - that just happens to be a
-
-00:00:06.861 --> 00:00:09.328
-creative production platform
-
-00:00:10.212 --> 00:00:12.950
-The zero-trust organizational immune
-
-00:00:13.032 --> 00:00:16.091
-system that wraps around what you already
-
-00:00:16.172 --> 00:00:19.288
-do - so the routine creative work your
-
-00:00:19.349 --> 00:00:22.322
-teams need every day happens inside your
-
-00:00:22.383 --> 00:00:25.845
-perimeter instead of leaking out of it.
-
-00:00:26.629 --> 00:00:29.169
-What's in it for you.
-
-00:00:29.942 --> 00:00:32.800
+00:00:00.392 --> 00:00:03.250
 You get to be the person who said yes to
 
-00:00:32.862 --> 00:00:35.645
+00:00:03.312 --> 00:00:06.095
 something both safe and popular.
 
-00:00:36.431 --> 00:00:39.395
+00:00:06.866 --> 00:00:09.412
 You close an exfiltration hole, gain
 
-00:00:39.456 --> 00:00:42.767
+00:00:09.472 --> 00:00:12.042
 capability and delete a request queue in
 
-00:00:42.828 --> 00:00:45.349
-one move - the rare security win that
+00:00:12.101 --> 00:00:15.116
+one move, which is the rare security win
 
-00:00:45.402 --> 00:00:48.144
-makes you more liked, not less.
+00:00:15.172 --> 00:00:17.018
+that makes you more liked rather than
 
-00:00:48.935 --> 00:00:52.550
-No 3am call from legal because embargoed
+00:00:17.077 --> 00:00:21.192
+less: no 3am call because embargoed files
 
-00:00:52.617 --> 00:00:55.333
-files or customer data found their way
+00:00:21.267 --> 00:00:24.132
+reached a random web tool, fewer vendors
 
-00:00:55.383 --> 00:00:58.603
-into a random web tool; fewer SaaS
+00:00:24.192 --> 00:00:26.835
+and contracts on your plate and a record
 
-00:00:58.663 --> 00:01:01.337
-vendors, contracts and audits on your
+00:00:26.894 --> 00:00:29.770
+you can point at when someone asks.
 
-00:01:01.397 --> 00:01:04.362
-plate; and a fully reproducible audit
+00:00:30.513 --> 00:00:32.963
+Pick the lane below that matches the
 
-00:01:04.421 --> 00:01:07.845
-trail you can point to when someone asks.
+00:00:33.055 --> 00:00:35.294
+function you answer for.
 
-00:01:08.623 --> 00:01:11.580
-You sleep better, and brighten a few days
+00:00:36.089 --> 00:00:38.991
+You govern the whole relay: a creative
 
-00:01:11.643 --> 00:01:12.919
-doing it.
+00:00:39.079 --> 00:00:42.140
+authors the rules and a developer scales
 
-00:01:13.723 --> 00:01:17.453
-Lolly is no second-class creative tool: it
+00:00:42.197 --> 00:00:45.369
+them, and it is the operator who makes
 
-00:01:17.515 --> 00:01:19.769
-puts production-quality output in
+00:00:45.425 --> 00:00:49.143
+that safe to run across an organisation,
 
-00:01:19.831 --> 00:01:22.661
-everyone's hands, and the brand-guided
+00:00:49.203 --> 00:00:52.162
+which The lifecycle of a campaign follows
 
-00:01:22.722 --> 00:01:26.144
-creation experience is second to none.
+00:00:52.250 --> 00:00:53.869
+end to end.
 
-00:01:26.924 --> 00:01:30.217
-The reason it is safe to hand out widely
+00:00:54.669 --> 00:00:56.106
+New here?
 
-00:01:30.292 --> 00:01:33.747
-is architectural: nothing uploads that you
+00:00:56.905 --> 00:01:00.107
+Adoption & Governance is the rollout in
 
-00:01:33.809 --> 00:01:36.369
-didn't put there, every result is
+00:01:00.229 --> 00:01:01.268
+full.
 
-00:01:36.431 --> 00:01:39.443
-reproducible and every export can carry
+00:01:02.034 --> 00:01:04.642
+Deployment covers deploy, serve and
 
-00:01:39.549 --> 00:01:42.036
-multiple layers of industry-leading
+00:01:04.703 --> 00:01:08.023
+hybrid, and Configuration is what shapes a
 
-00:01:42.098 --> 00:01:44.244
-cryptographic records.
+00:01:08.127 --> 00:01:09.844
+single instance.
 
-00:01:45.031 --> 00:01:47.527
-No matter how a document reached your
+00:01:10.992 --> 00:01:11.920
+Sales
 
-00:01:47.587 --> 00:01:50.758
-desk, you can see its full provenance,
+00:01:12.919 --> 00:01:15.385
+Walk into the meeting with exactly the
 
-00:01:50.817 --> 00:01:53.263
-whether it has been tampered with and
+00:01:15.482 --> 00:01:18.719
+file you need, made on the way there.
 
-00:01:53.323 --> 00:01:56.770
-whether you can recreate it pixel-perfect.
+00:01:19.484 --> 00:01:21.805
+Drop the deck you already have in and
 
-00:01:57.550 --> 00:01:59.593
-The current state.
+00:01:21.860 --> 00:01:25.100
+rebuild it sharp as a native deck file,
 
-00:02:00.389 --> 00:02:03.337
-Lolly's security properties are strong by
+00:01:25.158 --> 00:01:27.796
+with no request queue between you and the
 
-00:02:03.398 --> 00:02:06.478
-design, and its cryptography and
+00:01:27.858 --> 00:01:28.995
+asset.
 
-00:02:06.572 --> 00:02:09.240
-file-parsing engines are going through
+00:01:29.788 --> 00:01:32.611
+Lolly for sales teams - the playbook:
 
-00:02:09.377 --> 00:02:11.687
-SUSE's enterprise-grade infrastructure
+00:01:32.686 --> 00:01:35.288
+fixing the deck you have, rebuilding it
 
-00:02:11.748 --> 00:02:12.994
-hardening.
+00:01:35.359 --> 00:01:37.891
+natively and making the one-off asset
 
-00:02:13.767 --> 00:02:16.140
-The seals, on-device signing and
+00:01:37.945 --> 00:01:39.169
+yourself.
 
-00:02:16.189 --> 00:02:18.978
-encryption below are real and defensible
+00:01:39.944 --> 00:01:43.535
+Exporting & Formats - the deck, PDF and
 
-00:02:19.037 --> 00:02:22.144
-now, and maturing toward independent
+00:01:43.609 --> 00:01:46.700
+image side of the export panel, when the
 
-00:02:22.204 --> 00:02:25.554
-certification - so where a contract calls
+00:01:46.790 --> 00:01:50.519
+file has to open on someone else's laptop.
 
-00:02:25.638 --> 00:02:28.870
-for certified assurance, deploy them as
+00:01:51.633 --> 00:01:52.446
+Press
 
-00:02:28.931 --> 00:02:31.174
-defence-in-depth while that process
+00:01:53.475 --> 00:01:56.749
+Live data into charts, maps and tables
 
-00:02:31.235 --> 00:02:32.520
-completes.
+00:01:56.797 --> 00:01:59.419
+that already match the house style.
 
-00:02:33.664 --> 00:02:36.412
-The strategic advantage
+00:02:00.190 --> 00:02:03.181
+Build the story format once and reuse it
 
-00:02:37.383 --> 00:02:40.235
+00:02:03.247 --> 00:02:06.379
+every time the story runs, for print and
+
+00:02:06.474 --> 00:02:07.944
+for screen.
+
+00:02:08.744 --> 00:02:11.726
+Lolly for the newsroom - the playbook: the
+
+00:02:11.809 --> 00:02:15.179
+info-editorial style, live data in and
+
+00:02:15.242 --> 00:02:17.819
+publication-quality output.
+
+00:02:18.594 --> 00:02:21.190
+Utility views - the spreadsheet and the
+
+00:02:21.251 --> 00:02:24.844
+converter, for the step before the chart.
+
+00:02:25.993 --> 00:02:27.212
+Marketing
+
+00:02:28.111 --> 00:02:31.169
+Every size, every language, one source of
+
+00:02:31.263 --> 00:02:32.319
+truth.
+
+00:02:33.071 --> 00:02:35.679
+Paste a spreadsheet and get one finished
+
+00:02:35.750 --> 00:02:39.221
+file per row, with no agency in the middle
+
+00:02:39.281 --> 00:02:41.495
+of the routine files.
+
+00:02:42.286 --> 00:02:45.264
+Lolly for marketing teams - the playbook:
+
+00:02:45.342 --> 00:02:48.565
+variants at volume, localisation and what
+
+00:02:48.627 --> 00:02:50.919
+stops being a bottleneck.
+
+00:02:51.702 --> 00:02:54.498
+Using Lolly - the batch run itself: a
+
+00:02:54.621 --> 00:02:57.594
+sheet in, a folder of assets out.
+
+00:02:58.737 --> 00:03:00.223
+Security
+
+00:03:01.134 --> 00:03:04.075
 The usual way routine creative work gets
 
-00:02:40.297 --> 00:02:44.208
+00:03:04.142 --> 00:03:08.164
 done is a liability surface: files emailed
 
-00:02:44.303 --> 00:02:47.303
-to external design contractors, brand
+00:03:08.255 --> 00:03:11.348
+to outside contractors, brand assets
 
-00:02:47.377 --> 00:02:51.211
-assets uploaded to a dozen SaaS editors,
+00:03:11.419 --> 00:03:14.811
+uploaded to a dozen web editors, customer
 
-00:02:51.275 --> 00:02:54.185
-customer data pasted into a stranger's web
+00:03:14.871 --> 00:03:18.047
+data pasted into a stranger's site to make
 
-00:02:54.245 --> 00:02:57.445
-tool to "just make a quick graphic."
+00:03:18.099 --> 00:03:19.795
+a quick graphic.
 
-00:02:58.221 --> 00:03:01.158
-Every one of those is data leaving your
+00:03:20.589 --> 00:03:23.184
+Lolly is the immune response to that,
 
-00:03:01.221 --> 00:03:02.569
-control.
+00:03:23.241 --> 00:03:25.628
+because it replaces the work rather than
 
-00:03:03.369 --> 00:03:05.694
-Lolly inverts it.
+00:03:25.713 --> 00:03:29.006
+adding a control on top of it: the quote
 
-00:03:06.461 --> 00:03:08.484
-The work that drove those leaks - the
+00:03:29.067 --> 00:03:31.533
+card, the localised banner and the
 
-00:03:08.544 --> 00:03:11.316
-quote card, the localized banner, the
+00:03:31.593 --> 00:03:33.806
+redacted screenshot are made on the
 
-00:03:11.375 --> 00:03:14.615
-event badge, the redacted screenshot - now
+00:03:33.863 --> 00:03:36.995
+employee's own device against your brand,
 
-00:03:14.675 --> 00:03:16.897
-happens on a tool that runs on the
+00:03:37.069 --> 00:03:39.491
+so nothing uploads that you did not put
 
-00:03:16.956 --> 00:03:20.375
-employee's own device, against your brand,
+00:03:39.550 --> 00:03:42.163
+there and every result is reproducible
 
-00:03:20.424 --> 00:03:22.645
-with no server in the loop.
+00:03:42.224 --> 00:03:43.970
+from its inputs.
 
-00:03:23.424 --> 00:03:26.632
-You didn't add a control on top of a risky
+00:03:44.720 --> 00:03:46.807
+Exports can carry several layers of
 
-00:03:26.693 --> 00:03:29.973
-workflow; you replaced the risky workflow
+00:03:46.866 --> 00:03:50.055
+cryptographic record - a C2PA Content
 
-00:03:30.038 --> 00:03:33.079
-with one that has no exfiltration path to
+00:03:50.113 --> 00:03:52.560
+Credential signed by a key generated on
 
-00:03:33.140 --> 00:03:34.569
-begin with.
+00:03:52.596 --> 00:03:55.370
+the device and never readable off it, the
 
-00:03:34.950 --> 00:03:38.450
-Configuration is yours.
+00:03:55.431 --> 00:03:57.808
+invisible Lolly Imprint and an opt-in
 
-00:03:38.800 --> 00:03:44.700
-The engine and shells are open source «MPL-2 point 0».
+00:03:57.868 --> 00:04:00.164
+durable mark that outlives a re-save -
 
-00:03:45.050 --> 00:03:56.600
-Overlay your own auth, telemetry or CA; host it or don't; you hold full feature and cost control, git-tracked, not locked in a SaaS database.
+00:04:00.222 --> 00:04:02.198
+each of which is tamper-evident and
 
-00:03:57.344 --> 00:04:01.069
-Governance can be data, not a dashboard.
+00:04:02.250 --> 00:04:05.240
+strippable: a credential flags a change
 
-00:04:01.841 --> 00:04:04.573
-When you want that control, manage the
+00:04:05.300 --> 00:04:07.834
+rather than preventing one, and that is
 
-00:04:04.667 --> 00:04:07.635
-tool catalog as a Git repository -
+00:04:07.894 --> 00:04:10.146
+precisely what makes fully offline
 
-00:04:07.698 --> 00:04:09.787
-pull-request review becomes brand
+00:04:10.206 --> 00:04:11.658
+verification
 
-00:04:09.824 --> 00:04:12.972
-approval, with a full audit trail and
+00:04:12.499 --> 00:04:13.741
+possible.
 
-00:04:13.066 --> 00:04:15.681
-instant rollback of every template your
+00:04:14.510 --> 00:04:17.208
+The cryptography and the file parsers are
 
-00:04:15.742 --> 00:04:17.819
-workforce can touch.
+00:04:17.268 --> 00:04:19.484
+going through SUSE's enterprise-grade
 
-00:04:18.570 --> 00:04:21.820
-It's an option, not an obligation, and it
+00:04:19.544 --> 00:04:22.944
+hardening: the seals, on-device signing
 
-00:04:21.880 --> 00:04:25.458
-belongs to exactly one desk: creators work
+00:04:23.026 --> 00:04:25.534
+and encryption are real and defensible
 
-00:04:25.516 --> 00:04:28.524
-entirely in-app, saving what they make as
+00:04:25.593 --> 00:04:28.561
+now, so where a contract calls for
 
-00:04:28.580 --> 00:04:31.453
-a session and passing it on as a share
+00:04:28.658 --> 00:04:31.453
+certified assurance, deploy them as
 
-00:04:31.514 --> 00:04:34.693
-link, a backup or a live collaboration -
+00:04:31.513 --> 00:04:33.621
+defence-in-depth while that process
 
-00:04:34.771 --> 00:04:36.894
-none of that needs git.
+00:04:33.681 --> 00:04:34.945
+completes.
 
-00:04:37.671 --> 00:04:40.309
-When one of those sessions deserves to
+00:04:35.712 --> 00:04:38.624
+Trust - every claim this site makes, with
 
-00:04:40.369 --> 00:04:43.453
-become a permanent starting point, whoever
+00:04:38.686 --> 00:04:42.544
+the mechanism that enforces it beside it.
 
-00:04:43.544 --> 00:04:46.542
-runs the deployment opens the link,
-
-00:04:46.619 --> 00:04:49.782
-records its values as a template on that
-
-00:04:49.854 --> 00:04:52.994
-tool in the brand pack and commits.
-
-00:04:53.776 --> 00:04:56.446
-From then on it shows up in the tool's
-
-00:04:56.524 --> 00:04:58.915
-"New from template" chooser and is
-
-00:04:59.001 --> 00:05:00.819
-deep-linkable as ?
-
-00:05:01.595 --> 00:05:03.693
-template= .
-
-00:05:04.460 --> 00:05:07.167
-Git is the admin's locking step, used
-
-00:05:07.227 --> 00:05:10.301
-once, and never something a creator has to
-
-00:05:10.364 --> 00:05:11.419
-touch.
-
-00:05:12.213 --> 00:05:15.094
-See Adoption & Governance.
-
-00:05:15.878 --> 00:05:18.644
-Guard-rails are structural.
-
-00:05:19.404 --> 00:05:21.939
-Brand constraints are hard-coded into
-
-00:05:22.001 --> 00:05:24.889
-templates, not published as guidelines
-
-00:05:24.950 --> 00:05:26.819
-people can ignore.
-
-00:05:27.611 --> 00:05:30.819
-The wrong output isn't discouraged - it's
-
-00:05:30.912 --> 00:05:32.743
-unrepresentable.
-
-00:05:33.540 --> 00:05:36.344
-You govern the whole relay.
-
-00:05:37.104 --> 00:05:39.655
-A creative authors the rules and a
-
-00:05:39.712 --> 00:05:42.203
-developer scales them, but it's the
-
-00:05:42.275 --> 00:05:45.259
-operator who makes that lifecycle safe to
-
-00:05:45.320 --> 00:05:48.254
-run org-wide - the same tool that lets a
-
-00:05:48.314 --> 00:05:51.128
-rep self-serve on a plane is one you can
-
-00:05:51.194 --> 00:05:53.795
-gate through Git review, deploy through
-
-00:05:53.879 --> 00:05:57.620
-your MDM and verify cryptographically.
-
-00:05:58.411 --> 00:06:00.688
-See how the roles compound in The
-
-00:06:00.750 --> 00:06:04.059
-lifecycle of a campaign, and how you
-
-00:06:04.123 --> 00:06:07.144
-govern it in Adoption & Governance.
-
-00:06:08.264 --> 00:06:10.403
-Delete the request queue while
-
-00:06:10.466 --> 00:06:12.719
-proliferating content.
-
-00:06:13.504 --> 00:06:15.991
-One goal of Lolly is design-request
-
-00:06:16.034 --> 00:06:19.211
-deflection: routine requests that never
-
-00:06:19.272 --> 00:06:22.017
-need to reach a designer because the
-
-00:06:22.090 --> 00:06:24.531
-person who needed the asset made it
-
-00:06:24.587 --> 00:06:27.744
-themselves, correctly, in minutes.
-
-00:06:28.509 --> 00:06:30.927
-Every deflected ticket is both a
-
-00:06:30.988 --> 00:06:33.804
-productivity win and one fewer file
-
-00:06:33.865 --> 00:06:35.594
-changing hands.
-
-00:06:36.385 --> 00:06:38.551
-Lolly is built to fit how your
-
-00:06:38.616 --> 00:06:41.624
-organisation actually operates - there's
-
-00:06:41.701 --> 00:06:44.869
-no single right way to deploy it:
-
-00:06:45.250 --> 00:06:48.075
-Deploy, don't serve.
-
-00:06:48.425 --> 00:06:55.000
-Ship Lolly to devices through your existing MDM «Intune, Jamf, Munki…»
-
-00:06:55.350 --> 00:07:12.800
-It runs locally as a desktop/mobile app or an offline PWA - works behind any firewall, in any air-gapped environment, with no server to maintain and IT in control of the update cadence.
-
-00:07:13.150 --> 00:07:15.350
-Serve only.
-
-00:07:15.700 --> 00:07:25.325
-Run one instance inside your network «or behind a VPN»; users reach it in a browser, nothing installed.
-
-00:07:25.675 --> 00:07:33.825
-Publish a tool once, everyone has it immediately; pair with your IdP for access control.
-
-00:07:34.569 --> 00:07:35.893
-Hybrid.
-
-00:07:36.683 --> 00:07:40.002
-Local apps for offline field work, an
-
-00:07:40.103 --> 00:07:42.374
-always-current browser version for
-
-00:07:42.437 --> 00:07:44.928
-borrowed machines - both pointed at the
-
-00:07:45.022 --> 00:07:46.994
-same tool library.
-
-00:07:47.759 --> 00:07:50.770
-The full deploy models and administration
-
-00:07:50.853 --> 00:07:53.329
-walkthrough live in Deployment and
-
-00:07:53.389 --> 00:07:55.069
-Configuration.
-
-00:07:56.206 --> 00:07:59.376
-Anti-exfiltration utilities
-
-00:08:00.305 --> 00:08:03.158
-A category of Lolly tools - the privacy
-
-00:08:03.219 --> 00:08:06.654
-utilities - exists specifically to keep
-
-00:08:06.717 --> 00:08:09.394
-files inside the perimeter.
-
-00:08:10.172 --> 00:08:12.155
-Strip hidden data
-
-00:08:13.193 --> 00:08:16.757
-Remove location and all hidden identifying
-
-00:08:16.788 --> 00:08:19.429
-information from documents and media
-
-00:08:19.510 --> 00:08:20.719
-files.
-
-00:08:21.499 --> 00:08:22.870
-Text Helper
-
-00:08:23.827 --> 00:08:27.129
-Anonymize, encode, format and manipulate
-
-00:08:27.194 --> 00:08:30.093
-structured and unstructured text.
-
-00:08:30.860 --> 00:08:32.861
-Compress PDF
-
-00:08:33.866 --> 00:08:37.379
-Shrink an oversized PDF on-device, so
-
-00:08:37.443 --> 00:08:40.489
-nobody reaches for a third-party "compress
-
-00:08:40.549 --> 00:08:44.392
-my PDF" website the moment a file is too
-
-00:08:44.463 --> 00:08:47.574
-big to email - which is exactly where data
-
-00:08:47.665 --> 00:08:49.570
-slips out the window.
-
-00:08:50.341 --> 00:08:53.494
-All of these are on-device transforms:
-
-00:08:53.563 --> 00:08:56.581
-your file or data goes in, cleaned bytes
-
-00:08:56.643 --> 00:08:59.493
-come out and there is no server to upload
-
-00:08:59.584 --> 00:09:00.569
-to.
-
-00:09:01.336 --> 00:09:03.619
-They are the deliberate opposite of the
-
-00:09:03.707 --> 00:09:07.422
-typical "upload your file to a stranger's
-
-00:09:07.482 --> 00:09:10.116
-website to clean it" tool that a
-
-00:09:10.179 --> 00:09:12.293
-well-meaning employee reaches for
-
-00:09:12.352 --> 00:09:13.719
-otherwise.
-
-00:09:14.484 --> 00:09:17.701
-Text Helper is the same bargain for text
-
-00:09:17.765 --> 00:09:19.769
-rather than files.
-
-00:09:20.528 --> 00:09:23.473
-It is the tabbed workbench an employee
-
-00:09:23.536 --> 00:09:25.886
-would otherwise go looking for on a
-
-00:09:25.951 --> 00:09:29.602
-stranger's site, and it declares no inputs
-
-00:09:29.668 --> 00:09:32.238
-at all because nothing it touches ever
-
-00:09:32.299 --> 00:09:34.119
-leaves the page.
-
-00:09:34.876 --> 00:09:38.068
-Compress PDF completes the set: the
-
-00:09:38.147 --> 00:09:40.711
-oversized attachment shrinks under a
-
-00:09:40.772 --> 00:09:43.930
-quality setting you choose, on the machine
-
-00:09:43.986 --> 00:09:46.044
-that already holds it.
-
-00:09:47.169 --> 00:09:50.639
-Determinism & reproducibility
-
-00:09:51.531 --> 00:09:55.120
-Every tool input is expressible as a URL
-
-00:09:55.181 --> 00:09:58.306
-parameter, and the same inputs produce the
-
-00:09:58.385 --> 00:09:59.894
-same file.
-
-00:10:00.679 --> 00:10:04.343
-That has two operator consequences:
-
-00:10:05.129 --> 00:10:08.543
-A URL is the artifact.
-
-00:10:09.293 --> 00:10:12.098
-Commit the link, regenerate the asset on
-
-00:10:12.152 --> 00:10:15.396
-demand - no binaries checked into Git, no
-
-00:10:15.456 --> 00:10:18.695
-chasing "the latest version" in chat.
-
-00:10:19.469 --> 00:10:22.234
-Asset and tool ID'S are permanent
-
-00:10:22.296 --> 00:10:25.563
-contracts, so a link minted today still
-
-00:10:25.622 --> 00:10:27.319
-resolves later.
-
-00:10:28.081 --> 00:10:30.766
-The CLI is the same render path as the
-
-00:10:30.845 --> 00:10:34.254
-GUI, so build pipelines and the app never
-
-00:10:34.335 --> 00:10:35.419
-drift.
-
-00:10:36.184 --> 00:10:39.667
-Generate OG images, social cards and data
-
-00:10:39.727 --> 00:10:43.145
-visuals at build time, reproducibly.
-
-00:10:43.892 --> 00:10:46.905
-Prompt to Image is determinism at its
-
-00:10:46.975 --> 00:10:50.409
-plainest: the text is the whole input, the
-
-00:10:50.478 --> 00:10:53.274
-typeset image is the whole output and the
-
-00:10:53.362 --> 00:10:56.545
-same text always sets the same way.
-
-00:10:57.644 --> 00:11:00.848
-Provenance & Content Credentials
-
-00:11:01.777 --> 00:11:05.009
-Exports can carry Content Credentials - a
-
-00:11:05.102 --> 00:11:08.696
-signed C2PA manifest bound to a hash of
-
-00:11:08.744 --> 00:11:10.570
-the file's bytes.
-
-00:11:11.336 --> 00:11:14.036
-Any later change to the file breaks the
-
-00:11:14.141 --> 00:11:18.246
-seal, so a C2PA-aware verifier detects
-
-00:11:18.302 --> 00:11:21.619
-alteration cryptographically, offline.
-
-00:11:22.393 --> 00:11:26.011
-The credential is tamper-evident: it flags
-
-00:11:26.098 --> 00:11:29.179
-tampering rather than preventing it, which
-
-00:11:29.269 --> 00:11:32.060
-is precisely what makes fully offline
-
-00:11:32.122 --> 00:11:34.244
-verification possible.
-
-00:11:34.625 --> 00:11:37.900
-On by default, on-device.
-
-00:11:38.250 --> 00:11:52.925
-The signing key is generated on the device, is non-extractable «even Lolly can't read it» and signing happens locally - only optional identity enrolment ever touches the network.
-
-00:11:53.275 --> 00:11:55.525
-Trust tiers.
-
-00:11:55.875 --> 00:12:02.250
-An un-enrolled export is well-formed but signed anonymously «untrusted».
-
-00:12:02.600 --> 00:12:16.075
-Enrol a verified identity «short-lived certificate from the Lolly CA, tied to an email» and verifiers pinning the Lolly root report trusted + the signer's email.
-
-00:12:16.425 --> 00:12:25.250
-A trusted timestamp authority and third-party-validator green «C2PA conformance» are on the roadmap.
-
-00:12:25.600 --> 00:12:32.675
-Every tier is explicit, and a file only ever claims the trust it can prove.
-
-00:12:33.405 --> 00:12:37.020
-Credential lifetime is the operator/user's
-
-00:12:37.086 --> 00:12:41.570
-call at signing time: 7 / 30 / 90
-
-00:12:41.649 --> 00:12:46.244
-/ 365 days, default 30.
-
-00:12:46.625 --> 00:12:49.325
-The Lolly Imprint.
-
-00:12:49.675 --> 00:13:07.950
-A second, complementary signal that is on by default: an invisible pixel watermark baked into raster exports «and the Lolly-rendered rasters inside a PDF/PPTX, never a user's own embedded image».
-
-00:13:08.300 --> 00:13:22.800
-Where the credential dies to any container change, the Imprint survives a re-save or screenshot - a durable "these pixels passed through Lolly" hint, presence-only, no personal data.
-
-00:13:23.150 --> 00:13:32.875
-It is security-through-obscurity, not a hardened defence, and complements the credential rather than replacing it.
-
-00:13:33.225 --> 00:13:36.975
-imprint=0 opts out.
-
-00:13:37.325 --> 00:13:41.325
-Durable Content Credentials «opt-in».
-
-00:13:41.675 --> 00:14:03.350
-A raster export can additionally carry an invisible durable mark that encodes a soft-binding identifier, so the C2PA credential can be recovered even after a social upload or re-save has stripped the file's metadata - the case where a normal credential would be lost.
-
-00:14:03.700 --> 00:14:13.550
-It is raster-only and costs a neural-encode pass, so it is off by default «durable=1 to turn it on».
-
-00:14:13.900 --> 00:14:23.925
-Lolly recognises its own durable mark offline on /verify today; recovery by third-party tools «e-g.
-
-00:14:24.275 --> 00:14:30.700
-Adobe» follows once the industry soft-binding resolution is in place.
-
-00:14:31.050 --> 00:14:34.600
-Verification is on-device.
-
-00:14:34.950 --> 00:14:46.700
-Drop any file on /verify «or lolly validate » for an offline report of whether it was genuinely made with Lolly and unchanged since.
-
-00:14:47.050 --> 00:15:15.400
-The web Verify view also flags AI-generated content, detects the Lolly Imprint, verifies SEAL signatures «a byte-level signature - with zero network requests: the engine takes an injected DNS key resolver and no shell injects one today, so a record carrying its own inline pk= key verifies fully offline while a DNS-keyed one reports "no key resolver and no inline key" rather than reaching out - see
-
-00:15:15.750 --> 00:15:33.700
-SealPublicKeyResolver in engine/src/seal-ts», optionally deep-scans for third-party pixel watermarks «a one-time on-device model download» and surfaces hidden data - all without uploading the file.
-
-00:15:34.050 --> 00:15:38.025
-See Content Credentials Identity.
-
-00:15:38.375 --> 00:15:41.475
-Interoperability notes.
-
-00:15:41.825 --> 00:15:54.075
-Lolly verifies its own credentials and many third-party ones offline today, including reading C2PA claim v2 manifests from other producers.
-
-00:15:54.425 --> 00:16:22.200
-Two containers remain in progress, both because C2PA has no standardised mapping for them yet, so Lolly carries the credential in a place of its own and Lolly's verifier is the one that reads it back: WebM «the manifest rides as a Matroska attachment» and Ogg/Opus «a C2PA= field in the OpusTags comment header, with that byte range excluded from the binding so the audio still hashes identically».
-
-00:16:22.550 --> 00:16:35.325
-Everything else stamps to spec - third-party tools verify Lolly's MP4, M4A, MP3, WAV, PNG, JPEG and PDF out of the box.
-
-00:16:35.675 --> 00:16:45.900
-See engine/src/c2pa-containers-ts for both mappings; they converge on the standard once it settles.
-
-00:16:47.005 --> 00:16:49.684
-Encryption & passwording
-
-00:16:50.571 --> 00:16:53.079
-For files that must travel locked,
-
-00:16:53.147 --> 00:16:55.695
-everything happens on-device:
-
-00:16:56.075 --> 00:17:14.100
-PDF open-password - Standard is a 40-bit RC4 deterrent «opens anywhere, may travel in a link»; Strong is AES-256 «PDF 2 point 0», typed at export and never put in a link.
-
-00:17:14.450 --> 00:17:28.925
-Locked downloads - a ZIP, a Projects folder or a batch run can be locked whole: Standard ZipCrypto «weak, universal» or Strong AES-256 «WinZip AE-2».
-
-00:17:29.275 --> 00:17:42.050
-Defence-in-depth: any PDF inside a Strong zip is also individually AES-256-locked, so it stays locked after unpacking.
-
-00:17:42.774 --> 00:17:45.020
-Password-gated share links - the whole
-
-00:17:45.080 --> 00:17:49.958
-link state is AES-256-encrypted under a
-
-00:17:50.036 --> 00:17:54.117
-PBKDF2-derived key; only ciphertext
-
-00:17:54.171 --> 00:17:57.239
-travels, the password is never in the link
-
-00:17:57.327 --> 00:17:59.733
-and decryption happens in the recipient's
-
-00:17:59.794 --> 00:18:01.020
-browser.
-
-00:18:02.145 --> 00:18:03.611
-Air-gap ready
-
-00:18:04.150 --> 00:18:14.050
-Air-gap is a first-class deployment, not a special mode - Lolly runs with no network at render time out of the box.
-
-00:18:14.400 --> 00:18:28.925
-The web shell is an offline-first PWA «service worker»; fonts and WASM are stored on-device; tool state is persisted locally through the host bridge, never localStorage.
-
-00:18:29.275 --> 00:18:43.675
-The supported way for a tool to reach the network is an allowlisted host-net capability it declares in its manifest - a shell that can't «or won't» fulfil it stubs it out.
-
-00:18:44.025 --> 00:19:00.400
-That is a portability contract rather than an enforced boundary «see the hooks note below», which is why reviewing tool code stays the control - though on an air-gapped device there is nothing to reach either way.
-
-00:19:00.750 --> 00:19:17.450
-Ship the shells to devices through your MDM, or serve one instance inside your network, and a fully air-gapped install renders, exports, encrypts and verifies credentials with nothing to phone home to.
-
-00:19:18.539 --> 00:19:20.071
-Good to know
-
-00:19:21.051 --> 00:19:23.638
-A few things worth having straight before
-
-00:19:23.716 --> 00:19:25.570
-you roll it out:
-
-00:19:25.950 --> 00:19:28.925
-Hardening in progress.
-
-00:19:29.275 --> 00:19:44.075
-The cryptography and parsers are going through SUSE's enterprise-scale hardening «see above» - strong by design today; deploy as defence-in-depth where a contract calls for certified assurance.
-
-00:19:44.820 --> 00:19:49.344
-*Tool hooks are not a security sandbox.
-
-00:19:50.106 --> 00:19:53.214
-A tool's optional hooks-js runs with the
-
-00:19:53.275 --> 00:19:56.514
-host bridge injected, but in a browser
-
-00:19:56.609 --> 00:19:59.700
-shell it executes in the page's realm and
-
-00:19:59.761 --> 00:20:04.244
-can* reach window/document/fetch.
-
-00:20:05.020 --> 00:20:08.043
-Treat tool code the way you treat any code
-
-00:20:08.111 --> 00:20:10.093
-you run - review it.
-
-00:20:10.862 --> 00:20:13.775
-This is why an org that runs a shared
-
-00:20:13.836 --> 00:20:17.075
-catalog can gate it through Git review;
-
-00:20:17.149 --> 00:20:20.238
-either way, run only tools you've reviewed
-
-00:20:20.305 --> 00:20:23.019
-until Worker isolation ships.
-
-00:20:23.789 --> 00:20:27.518
-Content Credentials are tamper-evident.
-
-00:20:28.281 --> 00:20:31.394
-They detect alteration rather than prevent
-
-00:20:31.493 --> 00:20:35.144
-it - see the interoperability notes above.
-
-00:20:35.525 --> 00:20:38.475
-Two encryption tiers.
-
-00:20:38.825 --> 00:20:53.025
-Standard locks are quick, universal deterrents; Strong «AES-256» is full protection - reach for Strong for anything sensitive, noting it wants a modern reader.
-
-00:20:54.115 --> 00:20:57.275
-Standalone, or governed by a control plane
-
-00:20:57.950 --> 00:21:01.900
-Two shapes, and you choose per deployment.
-
-00:21:02.250 --> 00:21:20.525
-Standalone is the default and needs no server: Lolly renders on-device, every producer works in-app, and the git-as-data governance above is entirely optional - a single organisation can run this repo with nothing hosted at all.
-
-00:21:20.875 --> 00:21:25.925
-When you want org-wide control, add a control plane.
-
-00:21:26.275 --> 00:21:51.075
-lolly-work is a separate, open-source «MPL-2 point 0» service you host - or evaluate on the hosted sandbox - that governs the shell live: SSO-gated sign-in, feature-flag / export / watermark policy, tool-input overlays, catalog federation, approvals and a hash-chained audit log, all served to the shell without a code change here.
-
-00:21:51.425 --> 00:22:06.150
-It is brand-agnostic «config plus a pack mount», consumes this repo's engine and packs unmodified, and never becomes the render path: Lolly still renders on-device by design.
-
-00:22:06.500 --> 00:22:14.600
-OSS = individual freedom; OSS + control plane = organizational freedom.
-
-00:22:15.709 --> 00:22:17.772
-Where to go next
-
-00:22:18.810 --> 00:22:22.394
+00:04:43.326 --> 00:04:46.507
 Security & Verification - the standards,
 
-00:22:22.459 --> 00:22:25.900
-primitives, trust model and testing behind
+00:04:46.569 --> 00:04:49.221
+primitives, trust model and testing,
 
-00:22:25.946 --> 00:22:29.118
-the credentials and encryption above.
+00:04:49.283 --> 00:04:51.594
+written for a reviewer.
 
-00:22:29.900 --> 00:22:32.901
-Adoption & Governance - personas, the
+00:04:52.376 --> 00:04:54.865
+Threat Model & Trust Boundaries - what
 
-00:22:32.963 --> 00:22:35.876
-deflection metric and governance-as-data
+00:04:54.929 --> 00:04:58.180
+Lolly defends against, what it explicitly
 
-00:22:35.944 --> 00:22:37.244
-in full.
+00:04:58.242 --> 00:05:01.544
+does not and where each boundary falls.
 
-00:22:38.003 --> 00:22:42.448
-Deployment - deploy/serve/hybrid, MDM and
+00:05:01.925 --> 00:05:11.825
+Server Surface - the complete inventory of what runs server-side «two optional components» against what runs on the device.
 
-00:22:42.540 --> 00:22:44.945
-self-hosting the services.
+00:05:12.549 --> 00:05:15.026
+Parser Inventory - every parser that
 
-00:22:45.693 --> 00:22:48.752
-Configuration - profiles, brand packs,
+00:05:15.093 --> 00:05:18.949
+touches a file a user opens and what each
 
-00:22:48.812 --> 00:22:51.945
-capability gating and feature flags.
+00:05:18.989 --> 00:05:21.219
+one is hardened against.
 
-00:22:52.691 --> 00:22:55.543
+00:05:22.005 --> 00:05:24.540
+Verify It Yourself - check the claims
+
+00:05:24.587 --> 00:05:28.192
+against a real export, step by step, with
+
+00:05:28.263 --> 00:05:30.844
+nothing you cannot run yourself.
+
+00:05:31.592 --> 00:05:34.386
 Privacy Policy - the formal statement of
 
-00:22:55.606 --> 00:22:58.551
-what is and isn't collected, stored and
+00:05:34.448 --> 00:05:37.673
+what is and is not collected, stored and
 
-00:22:58.651 --> 00:22:59.694
+00:05:37.774 --> 00:05:38.819
 sent.
 
-00:23:00.075 --> 00:23:09.050
-Server Surface - the complete inventory of what runs server-side «two optional components» versus on-device.
+00:05:39.617 --> 00:05:42.281
+Sovereign creative production - air-gapped
+
+00:05:42.342 --> 00:05:45.475
+deployment, consent-gated networking and
+
+00:05:45.537 --> 00:05:47.369
+on-device signing.
+
+00:05:48.155 --> 00:05:50.776
+Adoption & Governance - who approves a
+
+00:05:50.873 --> 00:05:54.522
+tool, how brand rules become enforceable
+
+00:05:54.611 --> 00:05:57.003
+and what the catalog-as-a-repository
+
+00:05:57.066 --> 00:05:59.019
+option buys you.
+
+00:06:00.172 --> 00:06:01.125
+Legal
+
+00:06:02.019 --> 00:06:05.971
+MPL-2 point 0 with no contributor licence
+
+00:06:06.017 --> 00:06:09.200
+agreement, stated plainly, with what is
+
+00:06:09.263 --> 00:06:13.119
+not claimed stated as clearly as what is.
+
+00:06:13.878 --> 00:06:16.908
+Content Credentials are tamper-evident and
+
+00:06:16.980 --> 00:06:20.536
+strippable, so the pages below say what a
+
+00:06:20.634 --> 00:06:23.425
+signature actually asserts before anyone
+
+00:06:23.486 --> 00:06:25.995
+writes it into a contract.
+
+00:06:26.770 --> 00:06:31.353
+AI marking and the EU AI Act - Article 50,
+
+00:06:31.415 --> 00:06:34.562
+the Code of Practice that points at C2PA
+
+00:06:34.623 --> 00:06:36.769
+and Lolly's honest fit.
+
+00:06:37.544 --> 00:06:40.685
+How Lolly compares - the licence facts:
+
+00:06:40.761 --> 00:06:44.429
+MPL-2 point 0, no contributor licence
+
+00:06:44.478 --> 00:06:47.114
+agreement and what free forever actually
+
+00:06:47.175 --> 00:06:48.520
+rests on.
+
+00:06:49.283 --> 00:06:52.272
+Content Credentials Identity - what a
+
+00:06:52.367 --> 00:06:55.408
+signed credential asserts, what it does
+
+00:06:55.470 --> 00:06:58.394
+not and who the certificate names.
+
+00:06:59.162 --> 00:07:01.983
+Data Transfer - the backup bundle a
+
+00:07:02.045 --> 00:07:05.230
+records request or a device handover is
+
+00:07:05.327 --> 00:07:06.844
+answered with.
+
+00:07:07.974 --> 00:07:08.887
+AI
+
+00:07:09.922 --> 00:07:13.793
+Agents supply inputs, never a persona.
+
+00:07:14.562 --> 00:07:17.889
+AI helps when it is asked, what it made
+
+00:07:17.949 --> 00:07:20.405
+says so and your work carries your name
+
+00:07:20.465 --> 00:07:22.495
+rather than a model's.
+
+00:07:23.284 --> 00:07:26.412
+Our AI Stance - what Lolly does and does
+
+00:07:26.474 --> 00:07:29.664
+not do with generated content, and what
+
+00:07:29.727 --> 00:07:32.194
+enforces each commitment.
+
+00:07:32.957 --> 00:07:36.267
+Generated once, rendered the same - the AI
+
+00:07:36.359 --> 00:07:39.166
+features that ship, and why inventing
+
+00:07:39.226 --> 00:07:41.682
+pixels is marked while removing them is
+
+00:07:41.742 --> 00:07:42.720
+not.
+
+00:07:43.484 --> 00:07:46.681
+Input, not impersonation - why an agent
+
+00:07:46.742 --> 00:07:50.370
+supplies inputs and never a persona, how
+
+00:07:50.419 --> 00:07:53.241
+that is enforced and what a rogue agent
+
+00:07:53.310 --> 00:07:55.069
+still cannot do.
+
+00:07:55.846 --> 00:07:59.040
+AI Agents - what an agent can actually
+
+00:07:59.107 --> 00:08:02.335
+drive, if your teams are already pointing
+
+00:08:02.396 --> 00:08:03.819
+one at this.

@@ -6,8 +6,10 @@ build: what each one is, how to install it, and how to check you got the file we
 made.
 
 The app is the same either way. Same tools, same brand packs, same files out -
-the packaged builds add native file dialogs, a home in your application menu and
-a copy that keeps working with the network unplugged.
+on the web, macOS, Windows, Linux, iOS and Android, plus the [CLI](/info/cli.html)
+and the terminal [TUI](/info/tui.html). Install it, open a hosted address, or run
+both at once. The packaged builds add native file dialogs, a home in your
+application menu and a copy that keeps working with the network unplugged.
 
 > **Direct downloads are live.** Every packaged build below links straight to the
 > file on `lolli.li`. Each platform has a stable `lolly-latest.*` link that always

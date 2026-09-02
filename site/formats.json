@@ -22,7 +22,7 @@
     { "category": "Layered", "list": "PSD" },
     { "category": "Motion", "list": "MP4 · WEBM · GIF · APNG · Animated WebP · Animated SVG" },
     { "category": "Audio", "list": "MP3 · M4A" },
-    { "category": "Document", "list": "PPTX · HTML · MD · TXT" },
+    { "category": "Document", "list": "PPTX · PENPOT · HTML · MD · TXT" },
     { "category": "Data", "list": "CSV · JSON · ICS · VCF" },
     { "category": "Bundle", "list": "ZIP" }
   ]

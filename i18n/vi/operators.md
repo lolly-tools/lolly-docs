@@ -1,123 +1,60 @@
 # Lolly dành cho người vận hành
 
-### Một chiến lược an ninh & tình báo phòng thủ theo chiều sâu - vô tình cũng là một nền tảng sản xuất sáng tạo
+Bạn được là người đã gật đầu với một thứ vừa an toàn vừa được ưa chuộng. Bạn khép lại một lỗ hổng rò rỉ dữ liệu, có thêm năng lực và xóa bỏ một hàng đợi yêu cầu chỉ trong một bước, đây là kiểu thắng lợi bảo mật hiếm có khiến bạn được yêu mến hơn chứ không phải ít hơn: không còn cuộc gọi lúc 3 giờ sáng vì tệp bị hạn chế lọt vào một công cụ web ngẫu nhiên nào đó, ít nhà cung cấp và hợp đồng hơn trên bàn làm việc của bạn và một hồ sơ bạn có thể chỉ ra khi có ai đó hỏi. Hãy chọn lối đi bên dưới phù hợp với chức năng bạn phụ trách.
 
-Hệ miễn dịch tổ chức zero-trust bao bọc quanh những gì bạn đã làm - để công việc sáng tạo thường ngày mà các đội của bạn cần mỗi ngày diễn ra *bên trong* vành đai của bạn thay vì rò rỉ ra ngoài.
+Bạn quản trị toàn bộ cuộc chạy tiếp sức: một người làm sáng tạo soạn ra các quy tắc và một nhà phát triển mở rộng chúng, còn chính quản trị viên là người khiến việc đó an toàn để vận hành trên toàn bộ tổ chức, điều mà [Vòng đời của một chiến dịch](/info/overview.html#the-lifecycle-of-a-campaign) theo dõi từ đầu đến cuối.
 
-**Bạn được gì.** Bạn trở thành người đã nói có với một thứ vừa an toàn *vừa* phổ biến. Bạn bịt một lỗ hổng rò rỉ dữ liệu, đạt được năng lực mới và xóa bỏ một hàng đợi yêu cầu trong một bước - một chiến thắng an ninh hiếm hoi khiến bạn được yêu thích hơn, không phải ít hơn. Không còn cuộc gọi lúc 3 giờ sáng từ bộ phận pháp lý vì tệp bị hạn chế hoặc dữ liệu khách hàng lọt vào một công cụ web ngẫu nhiên; ít nhà cung cấp SaaS, hợp đồng và kiểm toán hơn trên bàn làm việc của bạn; và một dấu vết kiểm toán có thể tái tạo hoàn toàn mà bạn có thể chỉ ra khi ai đó hỏi. Bạn ngủ ngon hơn, và làm sáng sủa thêm vài ngày khi làm điều đó.
+Mới đến đây? [Áp dụng & Quản trị](/info/adoption-governance.html) trình bày toàn bộ quá trình triển khai. [Triển khai](/info/deployment.html) bao quát việc deploy, phục vụ và mô hình lai, còn [Cấu hình](/info/configuration.html) là những gì định hình một instance đơn lẻ.
 
-Lolly không phải công cụ sáng tạo hạng hai: nó đặt đầu ra chất lượng sản xuất vào tay mọi người, và trải nghiệm sáng tạo theo hướng dẫn thương hiệu không hề kém cạnh. Lý do khiến nó *an toàn* để trao rộng rãi nằm ở kiến trúc: không có gì được tải lên mà bạn không tự đặt vào đó, mọi kết quả đều có thể tái tạo được và mọi bản xuất có thể mang nhiều lớp hồ sơ mật mã hàng đầu ngành. Bất kể một tài liệu đến bàn làm việc của bạn bằng cách nào, bạn có thể thấy toàn bộ nguồn gốc của nó, liệu nó có bị can thiệp hay không và liệu bạn có thể tái tạo nó chính xác từng pixel hay không.
+## Kinh doanh
 
-> **Tình trạng hiện tại.** Các đặc tính bảo mật của Lolly vốn mạnh mẽ theo thiết kế, và các engine mật mã và phân tích tệp của nó đang trải qua quá trình gia cố hạ tầng cấp doanh nghiệp của SUSE. Các con dấu (seal), việc ký và mã hóa trên thiết bị bên dưới đây là có thật và có thể bảo vệ được ngay bây giờ, và đang trưởng thành hướng tới chứng nhận độc lập - vì vậy khi một hợp đồng yêu cầu đảm bảo đã được chứng nhận, hãy triển khai chúng như một lớp phòng thủ theo chiều sâu (defence-in-depth) trong khi quá trình đó hoàn tất.
+Bước vào cuộc họp với đúng tệp bạn cần, được làm ngay trên đường đến đó. Thả bộ slide bạn đã có sẵn vào và dựng lại nó sắc nét thành một tệp slide gốc, không có hàng đợi yêu cầu nào chen giữa bạn và tài sản.
 
-## Lợi thế chiến lược
+- **[Lolly cho đội ngũ kinh doanh](/info/sales.html)** - cẩm nang: sửa lại bộ slide bạn đang có, dựng lại nó theo kiểu gốc và tự làm tài sản dùng một lần.
+- **[Xuất & Định dạng](/info/exporting.html)** - phần slide, PDF và hình ảnh trong bảng xuất, khi tệp phải mở được trên laptop của người khác.
 
-Cách công việc sáng tạo thường ngày thường được thực hiện là một bề mặt rủi ro: tệp gửi qua email cho nhà thầu thiết kế bên ngoài, tài sản thương hiệu tải lên hàng chục trình chỉnh sửa SaaS, dữ liệu khách hàng dán vào công cụ web của người lạ để "chỉ làm nhanh một hình ảnh." Mỗi trường hợp đó đều là dữ liệu rời khỏi tầm kiểm soát của bạn.
+## Báo chí
 
-Lolly đảo ngược điều đó. Công việc từng *thúc đẩy* những rò rỉ đó - thẻ trích dẫn, banner bản địa hóa, thẻ tên sự kiện, ảnh chụp màn hình đã ẩn danh - giờ diễn ra trên một công cụ chạy ngay trên thiết bị của nhân viên, dựa trên thương hiệu của bạn, không có máy chủ nào tham gia. Bạn không thêm một lớp kiểm soát lên trên một quy trình rủi ro; bạn đã thay thế quy trình rủi ro đó bằng một quy trình không có đường rò rỉ dữ liệu ngay từ đầu.
+Dữ liệu trực tiếp biến thành biểu đồ, bản đồ và bảng biểu đã sẵn khớp với house style. Dựng định dạng bài viết một lần và tái sử dụng nó mỗi khi bài chạy, cho cả bản in lẫn màn hình.
 
-- **Cấu hình thuộc về bạn.** Engine và các shell đều là mã nguồn mở (MPL-2.0). Phủ lên đó hệ thống xác thực, telemetry hay CA của riêng bạn; tự host hoặc không; bạn nắm toàn quyền kiểm soát tính năng và chi phí, được theo dõi qua git, không bị khóa trong một cơ sở dữ liệu SaaS.
-- **Quản trị có thể là dữ liệu, không phải một bảng điều khiển.** Khi bạn muốn có quyền kiểm soát đó, hãy quản lý danh mục công cụ như một kho Git - việc xem xét pull-request trở thành phê duyệt thương hiệu, với một dấu vết kiểm toán đầy đủ và khả năng rollback tức thì cho mọi mẫu mà đội ngũ của bạn có thể chạm vào. Đây là một tùy chọn, không phải một nghĩa vụ, và nó thuộc về đúng một bộ phận: người sáng tạo làm việc hoàn toàn trong ứng dụng, lưu những gì họ tạo ra thành một **phiên làm việc (session)** và chuyển tiếp nó dưới dạng một liên kết chia sẻ, một bản sao lưu hoặc một buổi cộng tác trực tiếp - không điều nào trong số đó cần đến git. Khi một trong những phiên làm việc đó xứng đáng trở thành một điểm khởi đầu vĩnh viễn, bất kỳ ai vận hành việc triển khai sẽ mở liên kết, ghi lại các giá trị của nó thành một **mẫu (template)** cho công cụ đó trong gói thương hiệu và commit. Từ đó trở đi, nó sẽ xuất hiện trong bộ chọn "New from template" của công cụ và có thể được liên kết trực tiếp dưới dạng `?template=<id>`. Git là bước khóa của quản trị viên, chỉ dùng một lần, và không bao giờ là điều mà người sáng tạo phải đụng đến. Xem [Áp dụng & Quản trị](/info/adoption-governance.html).
-- **Rào chắn mang tính cấu trúc.** Các ràng buộc thương hiệu được mã hóa cứng vào trong các mẫu, không được công bố như những hướng dẫn mà người dùng có thể bỏ qua. Kết quả sai không bị ngăn cản - nó hoàn toàn không thể tồn tại được.
+- **[Lolly cho tòa soạn](/info/press.html)** - cẩm nang: phong cách info-editorial, dữ liệu trực tiếp đầu vào và đầu ra chất lượng xuất bản.
+- **[Các khung nhìn tiện ích](/info/utilities.html)** - bảng tính và bộ chuyển đổi, cho bước trước khi vẽ biểu đồ.
 
-> **Bạn quản trị toàn bộ chuỗi tiếp sức.** Một nhà sáng tạo soạn ra các quy tắc và một nhà phát triển mở rộng chúng, nhưng chính người vận hành mới khiến vòng đời đó an toàn để chạy trên toàn tổ chức - cùng một công cụ cho phép một nhân viên bán hàng tự phục vụ trên máy bay cũng là công cụ bạn có thể giới hạn qua xét duyệt Git, triển khai qua MDM của bạn và xác minh bằng mật mã. Xem cách các vai trò cộng hưởng trong [Vòng đời của một chiến dịch](/info/overview.html#the-lifecycle-of-a-campaign), và cách bạn quản trị nó trong [Adoption & Governance](/info/adoption-governance.html).
+## Marketing
 
-## Xóa bỏ hàng đợi yêu cầu trong khi nhân rộng nội dung.
+Mọi kích thước, mọi ngôn ngữ, một nguồn dữ liệu chuẩn duy nhất. Dán vào một bảng tính và nhận về một tệp hoàn chỉnh cho mỗi hàng, không cần agency nào chen vào giữa những tệp thường nhật.
 
-Một mục tiêu của Lolly là **giảm tải yêu cầu thiết kế**: các yêu cầu thường ngày không bao giờ cần đến tay nhà thiết kế vì người cần tài sản đó tự tạo ra nó, đúng cách, trong vài phút. Mỗi ticket được giảm tải vừa là một chiến thắng năng suất vừa là một tệp ít hơn phải chuyển tay.
+- **[Lolly cho đội ngũ marketing](/info/marketing.html)** - cẩm nang: tạo biến thể quy mô lớn, bản địa hóa và những gì không còn là nút thắt cổ chai.
+- **[Sử dụng Lolly](/info/using.html#batch-pro-mode)** - chính lượt chạy hàng loạt: một bảng tính vào, một thư mục tài sản ra.
 
-Lolly được xây dựng để phù hợp với cách tổ chức của bạn thực sự vận hành - không có một cách triển khai đúng duy nhất:
+## Bảo mật
 
-- **Triển khai, đừng phục vụ (serve).** Chuyển Lolly tới các thiết bị qua MDM hiện có của bạn (Intune, Jamf, Munki…). Nó chạy cục bộ như một ứng dụng desktop/di động hoặc một PWA ngoại tuyến - hoạt động sau bất kỳ tường lửa nào, trong bất kỳ môi trường cách ly mạng nào, không cần máy chủ để duy trì và IT kiểm soát nhịp độ cập nhật.
-- **Chỉ phục vụ (serve).** Chạy một instance trong mạng của bạn (hoặc sau VPN); người dùng truy cập nó qua trình duyệt, không cài đặt gì. Xuất bản một công cụ một lần, mọi người có nó ngay lập tức; kết hợp với IdP của bạn để kiểm soát truy cập.
-- **Kết hợp.** Ứng dụng cục bộ cho công việc thực địa ngoại tuyến, phiên bản trình duyệt luôn cập nhật cho các máy mượn - cả hai đều trỏ tới cùng một thư viện công cụ.
+Cách công việc sáng tạo thường nhật vẫn hay được thực hiện chính là một bề mặt rủi ro: tệp được gửi email cho nhà thầu bên ngoài, tài sản thương hiệu được tải lên hàng chục trình chỉnh sửa web, dữ liệu khách hàng được dán vào trang web của người lạ chỉ để làm nhanh một hình ảnh. Lolly là phản ứng miễn dịch trước điều đó, vì nó thay thế chính công việc đó thay vì chỉ thêm một lớp kiểm soát lên trên: thẻ trích dẫn, banner bản địa hóa và ảnh chụp màn hình đã được che thông tin đều được làm ngay trên thiết bị của nhân viên theo đúng thương hiệu của bạn, nên không có gì được tải lên ngoài những gì bạn tự đưa vào, và mọi kết quả đều có thể tái tạo lại từ chính đầu vào của nó. Bản xuất có thể mang theo nhiều lớp ghi nhận mật mã học - một Content Credential theo chuẩn C2PA được ký bằng một khóa được tạo ra ngay trên thiết bị và không bao giờ có thể đọc được ra ngoài, Lolly Imprint vô hình và một dấu bền vững tùy chọn tồn tại qua cả những lần lưu lại - mỗi lớp trong số đó đều có thể phát hiện can thiệp và có thể bị gỡ bỏ: một credential chỉ báo hiệu một thay đổi chứ không ngăn chặn nó, và chính điều đó mới là thứ khiến việc xác minh hoàn toàn ngoại tuyến trở nên khả thi. Mật mã học và các bộ phân tích tệp đang trải qua quá trình gia cố cấp doanh nghiệp của SUSE: các con dấu, việc ký trên thiết bị và mã hóa đã là thật và có thể bảo vệ được ngay bây giờ, nên ở nơi hợp đồng yêu cầu đảm bảo có chứng nhận, hãy triển khai chúng như một lớp phòng thủ theo chiều sâu trong khi quá trình đó hoàn tất.
 
-Các mô hình triển khai đầy đủ và hướng dẫn quản trị nằm trong [Deployment](/info/deployment.html) và [Configuration](/info/configuration.html).
+- **[Trust](/info/trust.html)** - mọi tuyên bố trang này đưa ra, kèm theo cơ chế thực thi nó ngay bên cạnh.
+- **[Bảo mật & Xác minh](/info/security.html)** - các tiêu chuẩn, nguyên hàm mật mã, mô hình tin cậy và việc kiểm thử, viết cho một người thẩm định.
+- **[Mô hình đe dọa & Ranh giới tin cậy](/info/threat-model.html)** - Lolly phòng vệ trước điều gì, nó rõ ràng không phòng vệ trước điều gì và mỗi ranh giới nằm ở đâu.
+- **[Bề mặt máy chủ](/info/server-surface.html)** - bản kiểm kê đầy đủ những gì chạy phía máy chủ (hai thành phần tùy chọn) đối chiếu với những gì chạy trên thiết bị.
+- **[Danh mục bộ phân tích](/info/parser-inventory.html)** - mọi bộ phân tích chạm vào một tệp mà người dùng mở, và mỗi bộ được gia cố chống lại điều gì.
+- **[Tự mình xác minh](/info/verify-yourself.html)** - đối chiếu các tuyên bố với một bản xuất thật, từng bước một, không có gì mà bạn không thể tự chạy được.
+- **[Chính sách quyền riêng tư](/info/privacy.html)** - tuyên bố chính thức về những gì được và không được thu thập, lưu trữ và gửi đi.
+- **[Sản xuất sáng tạo có chủ quyền](/info/sovereign-production.html)** - triển khai air-gapped, kết nối mạng có cổng đồng ý và ký trên thiết bị.
+- **[Áp dụng & Quản trị](/info/adoption-governance.html)** - ai phê duyệt một công cụ, quy tắc thương hiệu trở nên thực thi được như thế nào và tùy chọn danh mục dưới dạng repository mang lại lợi ích gì.
 
-## Tiện ích chống rò rỉ dữ liệu
+## Pháp lý
 
-Một nhóm công cụ của Lolly - các tiện ích quyền riêng tư - tồn tại *đặc biệt* để giữ tệp bên trong vành đai.
+MPL-2.0 không kèm thỏa thuận cấp phép người đóng góp, được nói rõ ràng, với những gì không được tuyên bố cũng được nói rõ như những gì được tuyên bố. Content Credentials có thể phát hiện can thiệp và có thể bị gỡ bỏ, nên các trang bên dưới nói rõ một chữ ký thực sự khẳng định điều gì trước khi ai đó đưa nó vào một hợp đồng.
 
+- **[Gắn nhãn AI và Đạo luật AI của EU](/info/eu-ai-act.html)** - Article 50, Code of Practice chỉ đến C2PA và vị trí thực sự phù hợp của Lolly.
+- **[So sánh Lolly với các lựa chọn khác](/info/positioning.html)** - các sự thật về giấy phép: MPL-2.0, không thỏa thuận cấp phép người đóng góp và điều gì thực sự làm nền cho việc miễn phí mãi mãi.
+- **[Định danh Content Credentials](/info/content-credentials-identity.html)** - một credential đã ký khẳng định điều gì, không khẳng định điều gì và chứng chỉ nêu tên ai.
+- **[Chuyển dữ liệu](/info/data-transfer.html)** - gói sao lưu dùng để đáp ứng một yêu cầu hồ sơ hoặc một lượt bàn giao thiết bị.
 
-- **Xóa dữ liệu ẩn**
- Loại bỏ vị trí và toàn bộ thông tin nhận dạng ẩn khỏi tài liệu và tệp phương tiện.
+## AI
 
-- **Text Helper**  
-Ẩn danh hóa, mã hóa, định dạng và xử lý văn bản có cấu trúc lẫn phi cấu trúc. 
+Agent chỉ cung cấp đầu vào, không bao giờ đóng vai một nhân vật. AI trợ giúp khi được yêu cầu, những gì nó tạo ra đều ghi rõ điều đó, và công việc của bạn mang tên bạn chứ không phải tên một mô hình.
 
-- **Compress PDF**
-Thu nhỏ một file PDF quá khổ ngay trên thiết bị, để không ai phải tìm đến một trang web "nén PDF giúp tôi" của bên thứ ba mỗi khi file quá lớn để gửi email - đúng chỗ dữ liệu dễ lọt ra ngoài. 
-
-Tất cả các công cụ này đều là phép biến đổi trên thiết bị: file hoặc dữ liệu của bạn đi vào, các byte đã được làm sạch đi ra, và **không có server nào để tải lên**. Chúng là điều ngược lại có chủ ý với công cụ "tải file của bạn lên trang web của người lạ để làm sạch nó" mà một nhân viên có thiện chí thường tìm đến.
-
-![Strip Hidden Data: tệp xuất hiện trên canvas và huy hiệu (badge) nói rõ ràng rằng không có gì được tải lên](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
-
-Text Helper là thỏa thuận tương tự dành cho văn bản thay vì file. Đó là bàn làm việc dạng tab mà một nhân viên lẽ ra phải đi tìm trên trang web của người lạ, và nó không khai báo bất kỳ input nào vì không có gì nó chạm vào từng rời khỏi trang.
-
-![Bàn làm việc của Text Helper - một dải tab thao tác phía trên một thẻ ghi rằng không có gì bạn dán vào rời khỏi thiết bị của bạn](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1200&height=750&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
-
-Compress PDF hoàn thiện bộ ba: file đính kèm quá khổ thu nhỏ theo mức chất lượng bạn chọn, trên chính máy đang chứa nó.
-
-![Compress PDF - một mức chất lượng và một công tắc thang xám ở bên trái, một vùng thả file PDF của bạn ở bên phải và không có tải lên ở bất kỳ đâu](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=ov2-compress-pdf)
-
-## Tính tất định & khả năng tái tạo
-
-Mọi input của công cụ đều có thể biểu diễn dưới dạng tham số URL, và cùng một input luôn tạo ra cùng một file. Điều đó kéo theo hai hệ quả cho người vận hành:
-
-- **URL chính là sản phẩm.** Commit đường link, tạo lại tài sản khi cần - không có file nhị phân nào phải commit vào Git, không phải chạy theo "phiên bản mới nhất" trong chat. ID tài sản và ID công cụ là hợp đồng vĩnh viễn, nên một link tạo hôm nay vẫn phân giải được về sau.
-- **CLI đi cùng một đường render** như GUI, nên pipeline build và ứng dụng không bao giờ lệch nhau. Tạo ảnh OG, thẻ mạng xã hội và hình trực quan dữ liệu ngay tại thời điểm build, một cách tái tạo được.
-
-Prompt to Image là tính tất định ở dạng thuần túy nhất: văn bản là toàn bộ input, ảnh đã dàn chữ là toàn bộ output, và cùng một văn bản luôn dàn chữ giống hệt nhau.
-
-![Prompt to Image - một khối văn bản prompt được dàn trang thành một hình ảnh vuông, không có gì trong kết quả mà không có trong đầu vào](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
-
-## Nguồn gốc & Content Credentials
-
-![Vùng thả của Verify chấp nhận bất kỳ file nào, từ bất kỳ nguồn nào, và đọc nó mà không gọi mạng](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
-
-Bản xuất có thể mang **Content Credentials** - một manifest [C2PA](https://c2pa.org) đã ký, gắn với hash của các byte trong file. Bất kỳ thay đổi nào sau đó với file đều phá vỡ con dấu, nên một trình xác minh hiểu C2PA **phát hiện việc bị thay đổi bằng mật mã học, ngoại tuyến**. Chứng chỉ này có tính *chỉ báo* can thiệp: nó gắn cờ việc bị can thiệp thay vì ngăn chặn nó, và chính điều đó khiến việc xác minh hoàn toàn ngoại tuyến trở nên khả thi.
-
-- **Bật mặc định, ngay trên thiết bị.** Khóa ký được tạo trên thiết bị, không thể trích xuất (kể cả Lolly cũng không đọc được) và việc ký diễn ra cục bộ - chỉ *đăng ký* danh tính tùy chọn mới chạm tới mạng.
-- **Các cấp độ tin cậy.** Một bản xuất chưa đăng ký vẫn đúng định dạng nhưng được ký ẩn danh (`untrusted`). Đăng ký một **danh tính đã xác minh** (chứng chỉ ngắn hạn từ Lolly CA, gắn với một email) và trình xác minh nào ghim gốc Lolly sẽ báo `trusted` cùng email của người ký. Cơ quan cấp dấu thời gian đáng tin và huy hiệu xanh xác thực bởi bên thứ ba (tuân thủ C2PA) đang nằm trong lộ trình. Mỗi cấp độ đều tường minh, và một file chỉ bao giờ tuyên bố mức tin cậy mà nó có thể chứng minh.
-- **Thời hạn chứng chỉ** do người vận hành/người dùng tự chọn tại thời điểm xuất: 7 / 30 / 90 / 365 ngày, mặc định 30.
-- **Lolly Imprint.** Một tín hiệu thứ hai, bổ trợ, **bật mặc định**: một watermark pixel vô hình được nướng vào các bản xuất raster (và các ảnh raster do Lolly render bên trong PDF/PPTX, không bao giờ là ảnh nhúng của chính người dùng). Trong khi chứng chỉ mất hiệu lực khi container thay đổi, Imprint vẫn sống sót qua một lần lưu lại hoặc chụp màn hình - một dấu hiệu bền "các pixel này từng đi qua Lolly", chỉ báo hiện diện, không có dữ liệu cá nhân. Đây là bảo mật-qua-che-giấu, không phải một tuyến phòng thủ vững chắc, và bổ trợ cho chứng chỉ chứ không thay thế nó. `imprint=0` để từ chối.
-- **Durable Content Credentials (tùy chọn).** Một bản xuất raster có thể mang thêm một dấu *bền* vô hình mã hóa một định danh liên kết mềm, để chứng chỉ C2PA có thể được khôi phục ngay cả sau khi một lượt tải lên mạng xã hội hoặc lưu lại đã tước bỏ metadata của file - trường hợp mà một chứng chỉ thường sẽ bị mất. Nó chỉ áp dụng cho raster và tốn một lượt mã hóa bằng mạng nơ-ron, nên mặc định tắt (`durable=1` để bật). Lolly nhận diện dấu bền của chính mình ngoại tuyến trên `/verify` ngay từ hôm nay; việc khôi phục bởi công cụ bên thứ ba (ví dụ Adobe) sẽ theo sau khi giải pháp liên kết mềm của toàn ngành hoàn thiện.
-- **Xác minh diễn ra trên thiết bị.** Thả bất kỳ file nào vào `/verify` (hoặc `lolly validate <file>`) để nhận báo cáo ngoại tuyến về việc nó có thực sự được tạo bằng Lolly và không bị thay đổi kể từ đó hay không. Chế độ xem Verify trên web cũng gắn cờ nội dung do AI tạo, phát hiện Lolly Imprint, xác minh chữ ký **SEAL** (một chữ ký cấp byte - không có yêu cầu mạng nào: engine nhận một bộ phân giải khóa DNS được *tiêm vào*, và chưa có shell nào tiêm một cái vào hôm nay, nên một bản ghi mang sẵn khóa `pk=` nội tuyến sẽ xác minh hoàn toàn ngoại tuyến, trong khi một bản ghi khóa-theo-DNS sẽ báo "không có bộ phân giải khóa và không có khóa nội tuyến" thay vì gọi ra ngoài - xem `SealPublicKeyResolver` trong `engine/src/seal.ts`), tùy chọn quét sâu để tìm watermark pixel của bên thứ ba (tải mô hình trên thiết bị một lần) và hiển thị dữ liệu ẩn - tất cả mà không tải file lên. Xem [Content Credentials Identity](/info/content-credentials-identity.html).
-
-> **Ghi chú về khả năng liên thông.** Lolly xác minh chứng chỉ của chính mình và nhiều chứng chỉ bên thứ ba ngoại tuyến ngay hôm nay, kể cả đọc manifest C2PA claim **v2** từ các nhà sản xuất khác. Hai loại container vẫn đang trong quá trình hoàn thiện, cả hai đều vì C2PA chưa có ánh xạ chuẩn hóa cho chúng, nên Lolly mang chứng chỉ ở một vị trí riêng và trình xác minh của chính Lolly là bên đọc lại nó: **WebM** (manifest đi kèm như một tệp đính kèm Matroska) và **Ogg/Opus** (một trường `C2PA=` trong header comment OpusTags, với dải byte đó bị loại khỏi việc gắn kết để âm thanh vẫn hash giống hệt). Mọi thứ khác đều đóng dấu đúng chuẩn - công cụ bên thứ ba xác minh MP4, M4A, MP3, WAV, PNG, JPEG và PDF của Lolly ngay lập tức. Xem `engine/src/c2pa-containers.ts` để biết cả hai ánh xạ; chúng sẽ hội tụ về chuẩn một khi chuẩn ổn định.
-
-## Mã hóa & đặt mật khẩu
-
-Với các file cần được khóa khi di chuyển, mọi việc đều diễn ra trên thiết bị:
-
-![Thẻ khóa trong bảng xuất: một mật khẩu, và một lựa chọn tường minh giữa hai cấp độ](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&walker=1&format=svg&dark=1&filename=aud-pdf-lock)
-
-- **Mật khẩu mở PDF** - *Standard* là mức răn đe RC4 40-bit (mở được ở bất kỳ đâu, có thể đi kèm trong một link); *Strong* là **AES-256** (PDF 2.0), gõ lúc xuất và không bao giờ đặt trong link.
-- **File tải xuống có khóa** - một ZIP, một thư mục Projects hay một lượt chạy hàng loạt có thể được khóa toàn bộ: *Standard* ZipCrypto (yếu, phổ dụng) hoặc *Strong* **AES-256** (WinZip AE-2). Phòng thủ theo lớp: bất kỳ PDF nào trong một zip Strong *cũng* được khóa AES-256 riêng, nên nó vẫn bị khóa sau khi giải nén.
-- **Link chia sẻ có khóa mật khẩu** - toàn bộ trạng thái của link được mã hóa AES-256 dưới một khóa dẫn xuất bằng PBKDF2; chỉ ciphertext di chuyển, mật khẩu không bao giờ nằm trong link, và việc giải mã diễn ra trong trình duyệt của người nhận.
-
-## Sẵn sàng air-gap
-
-Air-gap là một **cách triển khai hạng nhất**, không phải một chế độ đặc biệt - Lolly chạy không cần mạng lúc render ngay từ đầu. Web shell là một PWA offline-first (service worker); font và WASM được lưu trên thiết bị; trạng thái công cụ được lưu cục bộ qua host bridge, không bao giờ dùng `localStorage`. Cách được hỗ trợ để một công cụ chạm tới mạng là năng lực `host.net` **có trong danh sách cho phép** mà nó khai báo trong manifest - một shell không thể (hoặc không muốn) đáp ứng sẽ trả về một bản giả lập trống. Đó là một hợp đồng về khả năng tương thích chứ không phải một ranh giới được cưỡng chế (xem ghi chú về hooks bên dưới), đó là lý do việc rà soát mã công cụ vẫn là biện pháp kiểm soát chính - dù trên một thiết bị air-gapped thì cũng chẳng có gì để chạm tới theo cách nào. Triển khai các shell tới thiết bị qua MDM của bạn, hoặc phục vụ một instance trong mạng nội bộ, và một bản cài đặt air-gapped hoàn toàn vẫn render, xuất, mã hóa và xác minh chứng chỉ mà không có gì để gọi về.
-
-## Điều nên biết
-
-Vài điều đáng nắm rõ trước khi bạn triển khai:
-
-- **Đang trong quá trình gia cố.** Mật mã học và các bộ phân tích đang trải qua quá trình gia cố ở quy mô doanh nghiệp của SUSE (xem ở trên) - đã vững chắc theo thiết kế ngay hôm nay; triển khai như một lớp phòng thủ bổ sung khi hợp đồng đòi hỏi mức đảm bảo được chứng nhận.
-- **Tool hooks *không phải* là một sandbox bảo mật.** `hooks.js` tùy chọn của một công cụ chạy với host bridge được tiêm vào, nhưng trong một shell trình duyệt nó thực thi trong realm của trang và *có thể* chạm tới `window`/`document`/`fetch`. Hãy đối xử với mã công cụ như bất kỳ mã nào bạn chạy - rà soát nó. Đây là lý do một tổ chức vận hành một catalog dùng chung có thể kiểm soát qua rà soát Git; dù thế nào, chỉ chạy các công cụ bạn đã rà soát cho tới khi cách ly Worker ra mắt.
-- **Content Credentials mang tính chỉ báo can thiệp.** Chúng phát hiện việc bị thay đổi thay vì ngăn chặn nó - xem ghi chú về khả năng liên thông ở trên.
-- **Hai cấp độ mã hóa.** Khóa *Standard* là mức răn đe nhanh, phổ dụng; *Strong* (AES-256) là bảo vệ toàn diện - hãy chọn Strong cho bất cứ thứ gì nhạy cảm, lưu ý là nó cần một trình đọc hiện đại.
-
-## Độc lập, hoặc được quản trị bởi một control plane
-
-Có hai hình thái, và bạn chọn theo từng lần triển khai. **Standalone là mặc định và không cần máy chủ:** Lolly kết xuất ngay trên thiết bị, mọi người sáng tạo làm việc trong ứng dụng, và việc quản trị git-as-data ở trên là hoàn toàn tùy chọn - một tổ chức đơn lẻ có thể chạy repo này mà không cần host bất cứ thứ gì cả. **Khi bạn muốn kiểm soát trên toàn tổ chức, hãy thêm một control plane.** [lolly.work](https://lolly.work) là một dịch vụ mã nguồn mở (MPL-2.0) riêng biệt mà bạn tự host - hoặc đánh giá trên sandbox được host sẵn - quản trị shell theo thời gian thực: đăng nhập được chặn bởi SSO, chính sách feature-flag / xuất tệp / watermark, lớp phủ đầu vào công cụ, liên kết liên bang danh mục (catalog federation), phê duyệt và một nhật ký kiểm toán theo chuỗi hash, tất cả được phục vụ cho shell mà không cần thay đổi mã nguồn ở đây. Nó không phụ thuộc thương hiệu (cấu hình cộng với một pack được mount), sử dụng engine và các pack của repo này mà không sửa đổi, và không bao giờ trở thành đường kết xuất: Lolly vẫn kết xuất ngay trên thiết bị theo đúng thiết kế. OSS = tự do cho cá nhân; OSS + control plane = tự do cho tổ chức.
-
-## Đi tiếp từ đâu
-
-- **[Security & Verification](/info/security.html)** - các chuẩn, thành phần nguyên thủy, mô hình tin cậy và kiểm thử đằng sau chứng chỉ và mã hóa ở trên.
-- **[Adoption & Governance](/info/adoption-governance.html)** - các persona, chỉ số chuyển hướng (deflection) và governance-as-data đầy đủ.
-- **[Deployment](/info/deployment.html)** - triển khai/phục vụ/kết hợp, MDM và tự lưu trữ các dịch vụ.
-- **[Configuration](/info/configuration.html)** - profile, brand pack, gating năng lực và cờ tính năng.
-- **[Privacy Policy](/info/privacy.html)** - tuyên bố chính thức về những gì được và không được thu thập, lưu trữ và gửi đi.
-- **[Server Surface](/info/server-surface.html)** - danh mục đầy đủ những gì chạy phía server (hai thành phần tùy chọn) so với trên thiết bị.
+- **[Lập trường của chúng tôi về AI](/info/ai-stance.html)** - Lolly làm gì và không làm gì với nội dung do AI tạo ra, và điều gì thực thi từng cam kết đó.
+- **[Tạo một lần, kết xuất giống nhau](/info/ai-features.html)** - các tính năng AI được đưa vào sản phẩm, và vì sao việc bịa ra pixel bị đánh dấu trong khi việc loại bỏ chúng thì không.
+- **[Đầu vào, không phải mạo danh](/info/input-not-impersonation.html)** - vì sao một agent chỉ cung cấp đầu vào chứ không bao giờ đóng vai một nhân vật, điều đó được thực thi ra sao và một agent lệch hướng vẫn không thể làm được gì.
+- **[AI Agents](/info/ai-agents.html)** - một agent thực sự có thể điều khiển những gì, nếu đội ngũ của bạn đã đang hướng một agent vào việc này.

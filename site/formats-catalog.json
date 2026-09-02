@@ -162,8 +162,8 @@
     ],
     "Penpot": [
       "Reads .penpot export bundle",
-      "Text and shapes stay editable",
-      "DTCG tokens round-trip both ways"
+      "Writes .penpot with boards, editable shapes and text",
+      "Brand colours, typographies and DTCG tokens travel both ways"
     ],
     "HEIC": [
       "Bundled decoder, any browser",
@@ -854,17 +854,18 @@
       "name": "Penpot",
       "full": "Penpot Export (.penpot)",
       "category": "Vector",
-      "dir": "in",
+      "dir": "both",
       "features": [
         "vector",
         "editable-text",
         "embeds-bitmaps"
       ],
-      "desc": "The export bundle from Penpot, the open-source design tool. It imports as an editable Lolly session with text and shapes intact. Penpot is also where brand tokens round-trip both ways, since Lolly's palette uses the same DTCG design-token format Penpot reads and writes natively.",
+      "desc": "The export bundle from Penpot, the open-source design tool. It imports as an editable Lolly session with text and shapes intact, and Lolly writes one back: a Design's frames become boards, boxes become editable shapes and text, any other tool's vector render becomes shapes or one picture, and the brand's colours, typographies and design tokens ride inside the file. Penpot is where brand tokens round-trip both ways, since Lolly's palette uses the same DTCG design-token format Penpot reads and writes natively.",
       "metadata": {
         "reads": [],
         "writes": [],
-        "preserves": "n/a"
+        "preserves": "none",
+        "note": "A .penpot archive carries no document-metadata block: the boards, shapes, colours, typographies and tokens are the payload. An imported file's own metadata is not re-exported."
       }
     },
     {

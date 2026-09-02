@@ -1,94 +1,54 @@
 # Lolly pro tvůrce
 
-Chceš vytvořit něco dobrého, rychle, a chceš, aby to vyšlo správně. Lolly je postavena přesně na to: vyplň pár polí, dostaň hotový soubor - rozvržení, typografii, pravidla vynucuje nástroj, ne tvé oko (pokud ovšem sám nechceš - pak máš po ruce mediální mocninu). Žádný designový software, žádné čekání. Běží na tvém vlastním zařízení a funguje offline.
+Vyplníš pár polí a vyjede hotový soubor, s písmy, barvami a rozvržením už rozhodnutými přímo na tvém zařízení. Dodáš za minuty a vypadá to, že jsi strávil hodiny, a protože pravidla značky jsou zapečená přímo do nástroje, nikdy to není tvé jméno na souboru mimo značku. Vyber si níže dráhu, která odpovídá tomu, co dnes děláš.
 
-**Co z toho máš:** dodáš to za pár minut a vypadá to, jako by ti to trvalo hodiny. Nikdy nečekáš na designéra a protože pravidla brandu jsou zabudovaná, nikdy to není tvé jméno na neznačkovém výstupu. Prostě vypadáš rychle, upraveně a spolehlivě.
+Jsi jednou rukou ve štafetě: vývojář může nástroj, který používáš, rozšířit do pipeline a kolega ho může spustit samoobslužně, takže [Životní cyklus kampaně](/info/overview.html#the-lifecycle-of-a-campaign) sleduje jeden asset skrz všechny tři páry rukou.
 
-Tahle stránka ti řekne všechno, co potřebuješ vědět, abys z Lolly vytěžil maximum.
+Jsi tu nový? Začni na **[Vytvoř něco za 60 sekund](/info/make-something.html)** a vrať se, až budeš vědět, kterou část chceš prozkoumat hlouběji. [Otázky a odpovědi](/info/faq.html) pokrývá to, na co se lidé ptají, než začnou důvěřovat bezplatnému nástroji. [Jak si Lolly stojí ve srovnání](/info/positioning.html) je upřímný přehled toho, kdy sáhnout po něčem jiném.
 
-> **Jsi jedna ruka ve štafetě.** Nástroje, které autorizuješ, s tebou nekončí - vývojář je může zapojit do automatizovaného procesu ([Lolly pro tvůrce nástrojů](/info/builders.html)) a kolega, který není designér, je může spustit samoobslužně a dostat hotový, na brand navázaný soubor bez tvé účasti. Podívej se, jak se celý životní cyklus násobí v [Životní cyklus kampaně](/info/overview.html#the-lifecycle-of-a-campaign).
+## Tvorba
 
-## Proč Lolly - tvé výhody
+Vyber si nástroj, vyplň pár polí a stáhni si hotový soubor. Nebo otevři plátno Design a rozvrhni si to od ruky: tak jako tak barvy, písmo a rozestupy vycházejí z tvé značky, ne z paměti, a nic nevyžaduje účet.
 
-- **Hotové, ne kutilské.** Nástroj už zná fonty, barvy, logo, rozestupy. Ty dodáš slova, on vrátí hotový asset. Není co dolaďovat.
-- **Správné z podstaty.** Designová pravidla, layoutová omezení a řídicí logika žijí v šabloně - výstup se nemůže odchýlit od zadání, pokud to autor nástroje záměrně nedovolí. Divoký tvůrčí rozsah, uvnitř mantinelů, které drží.
-- **Jeden zdroj, každý formát.** Stejný design se exportuje jako SVG, tiskové PDF, PNG ve vysokém rozlišení nebo 60fps video. Vytvoříš jednou, dodáš všude.
-- **Nekonečné permutace.** Lokalizuj kartu do desítky jazyků, vygeneruj každou velikost pro každé umístění, vyměň logotyp napříč čtyřiceti kampaněmi - to vše z jednoho designu, řízené tabulkou.
-- **Je to tvoje, offline, soukromé.** Tvá práce zůstává na tvém zařízení - žádný účet, nic se nenahrává, aby se asset vytvořil nebo exportoval, žádná licence k auditu. Zavři víko notebooku v letadle a pokračuj v práci. (Existují dva volitelné serverové doplňky a lze je úplně ignorovat - viz [Server Surface](/info/server-surface.html).)
-- **Otevřené, ne uzamčené.** Engine je open source a tvá práce žije na obyčejných URL, ne v databázi nějakého dodavatele.
-- **Superschopnosti, když je chceš.** Nikdy *nemusíš* navrhovat - ale ve chvíli, kdy se rozhodneš, je strop vysoko. Rozvrhni stránky volně na plátně Design. Stříhej klipy, karty a hudbu na časové ose ve Sequence Studiu. Nahrávej čistý hlas a záběry z kamery s živým koučováním. Postav si celou značku sám, veden výběrem barev, který ti o barvě řekne víc, než většina designových sad kdy dokáže.
+- **[Vytvoř něco za 60 sekund](/info/make-something.html)** - tři krátké návody bez čehokoliv k nastavování, pokud jsi Lolly ještě nikdy neotevřel.
+- **[Používání Lolly](/info/using.html)** - plátno, ovládací prvky, ukládání, Projects a použití na telefonu: jak se aplikace samotná chová.
+- **[Brand Studio](/info/brand-studio.html)** - kdy by loga, barvy a písmo měly být tvoje vlastní, ne výchozí.
+- **[Importuj návrh](/info/design-import.html)** - když grafika už existuje jako soubor `.fig`, `.penpot`, `.ai`, `.idml` nebo SVG a chceš ji editovatelnou, ne zploštělou.
+- **[Pomocná zobrazení](/info/utilities.html)** - tabulkový procesor, konvertor, Colour Lab, PDF extraktor a Script audio, pro úkoly, které nejsou renderem nástroje.
+- **[Rozšíření pro prohlížeč](/info/extension.html)** - zachyť živou webovou stránku a znovu ji použij jako asset ve vlastních návrzích.
+- **[Hledání](/info/search.html)** - jedno pole, které dosáhne na tvé nástroje, uloženou práci, katalog a nastavení.
+- **[Ask Lolly](/info/ask.html)** - napiš otázku a dostaneš zpět odpovídající část těchto průvodců, s odkazem přímo do ní.
+- **[Dashboard](/info/dashboard.html)** - co tohle zařízení umí, tvůj design systém jen ke čtení a pohled na úložiště.
+- **[Tvoje oblíbené](/info/favourites.html)** - označ hvězdičkou, co používáš často, a získá to vlastní dlaždici nad mřížkou.
+- **[Profily](/info/profile.html)** - údaje, ze kterých se nástroje předvyplňují, a čtyři přepínače přístupnosti, které zklidní aplikaci, aniž by pohnuly jediným pixelem toho, co exportuješ.
 
-> **Omezení tě neuvěznila - chytila tě.** Mysli na mantinely jako na okrajové dráhy: pořád házíš míč - slova, obrázek, myšlenku - a kód ho jen udrží mimo žlab, aby nikdy nemohl porušit značku. Nejsi automatizovaný pryč; automatizovaná je ta zdlouhavá část: kontrola značky, přeexportování v každé velikosti, ruční lokalizace do desítky jazyků. Zbývá rozhodnutí, které tě potřebovalo. A nástroj, který *ty* vytvoříš, umožní zbytku firmy dělat dobrou práci, aniž by tě zatahovali do každého assetu: tvůj úsudek, zvětšený do měřítka.
+## Animace
 
-## Jak to obstojí ve srovnání
+Text, který se hýbe, scény na časové ose a pohyb, který zůstává v souladu se značkou. Export pohybu se skládá snímek po snímku z řízených hodin, ne zaznamenáváním z obrazovky, takže časování nikdy neujíždí a stejný odkaz vykreslí stejný klip v libovolné délce.
 
-Lolly se nesnaží být Canva nebo Figma. Sedí tam, kde *pravidla, opakovatelnost a pevná omezení záleží víc než volná flexibilita* - proměňuje designová rozhodnutí v nástroje, které může používat celý tým bez tebe u každého assetu.
+- **[Animace](/info/animating.html)** - klíčové snímky, skutečná hloubka a scénická kamera pro přelet nad výsledkem.
+- **[Editor sekvencí](/info/sequence-editor.html)** - samotná časová osa: klipy, překryvné dráhy, ořez a rozdělení, přechody a mix zvuku.
+- **[Export a formáty](/info/exporting.html)** - část exportního panelu pro video, GIF a animovaný PNG, jakmile je pohyb hotový.
 
-Podrobnosti produkt po produktu žijí na datovaných [srovnávacích stránkách](/info/compare.html) - Canva, Adobe, Figma, Penpot, brandové portály, render API a konvertory souborů - s ústupky napsanými napřed a [tabulí schopností](/info/positioning.html) za nimi.
+## Nahrávání
 
-**Sáhni po Lolly** pro assety, které vytváříš pořád dokola - eventová signage, citátové karty, lokalizované bannery, e-mailové podpisy, přepravní štítky, varianty na sociální sítě, datově řízené grafy a mapy. **Sáhni po designovém nástroji** pro zakázkový hero kus, jednorázový koncept kampaně, ideaci, která *má* uniknout systému. Lolly vykonává systém, nenahrazuje studio.
+Nahraj čistý záběr s odpočtem, měřičem úrovně a jemným koučováním, nebo proměň hlasovou poznámku v hotové video, které se hýbe se zvukem. Samostatná stránka Nahrávání zatím neexistuje: nese ji Používání Lolly, v sekci časové osy.
 
-## Co s tím můžeš vytvořit
+- **[Používání Lolly](/info/using.html#timeline-sequence-studio)** - nahrávání komentáře přímo na časovou osu, kam se záběr uloží a jak se dostane do mixu.
+- **[Vytvoř něco za 60 sekund](/info/make-something.html#make)** - scéna audiogramu, pro chvíle, kdy chceš být spíš slyšet než vidět.
+- **[Pomocná zobrazení](/info/utilities.html)** - Script audio, když jsou slova první a hlas přijde až po nich.
 
-### Všechno správně, bez čekání
+## Spolupráce
 
-Vyplň pár polí, dostaneš hotový asset - žádné vybírání fontů, žádné dohadování barev, žádné "je tohle správné logo?". Nástroj to už ví. E-mailové podpisy, eventové odpočty, citátové karty, odznaky, mapy měst - všechno, co tým potřebuje v úterý v 16 hodin, samoobslužně. A protože žádná zákaznická data neopouštějí zařízení, spolupráce nenese žádné compliance riziko.
+Dva lidé, dvě zařízení, jedna relace, upravovaná naživo. Naskenuj kód přes stůl a obě obrazovky drží stejnou práci, bez účtu a bez serveru uprostřed - a bez internetu vůbec, pokud jsou obě zařízení na stejné síti.
 
-Street Map je slušný příklad té výměny: vybereš město a pár barev a kartografie, tloušťky silnic a voda jsou rozhodnuté za tebe.
+- **[Práce společně](/info/collaborate.html)** - jak zahájit relaci, co putuje mezi zařízeními a co se stane, když síť vypadne.
+- **[Používání Lolly](/info/using.html#sharing-your-work)** - tišší způsoby, jak práci předat dál: sdílený odkaz, který nese celý stav, nebo jeden soubor `.lolly`.
 
-![Render Street Map Tokia v neonu na téměř černé, vytvořený z rozbalovacího výběru města a dvou výběrů barvy](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-street-map-poster)
+## Publikace
 
-### Od živých dat k hotovému vizuálu
+Pošli to tam, kam to bylo požadováno: odkaz, který nese návrh, tiskově věrné PDF, video, prezentaci nebo složku variant. Stejný zdroj vytvoří každou z nich, takže to postavíš jen jednou.
 
-Připoj tabulku **CSV** nebo **JSON** ke grafu, mapě nebo tabulkové šabloně a aktualizuj čísla - o layout se postará sám. Výsledky voleb, čtvrtletní hospodaření, počasí: postav formát jednou a použij ho znovu pokaždé, když se příběh opakuje. Přesně odpovídej svému firemnímu stylu, protože je vynucen na úrovni šablony, ne ponechán jako volné doporučení.
-
-![Koláčový graf přímo z Chart Creatoru - popisky, hodnoty a barvy umístěné šablonou, ne ručně](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
-
-### Nástroje, které skládají nástroje
-
-Jeden nástroj může vložit živý výstup jiného nástroje jako asset - jmenovka, která si vykreslí vlastní QR kód, karta, do níž se vloží živý graf - bez designového nástroje a bez ručního skládání. Vložený render zůstává živý a při načtení se znovu vykreslí; nikdy to není zploštěný obrázek.
-
-### Hranice možností, když je potřebuješ
-
-Pokročilé filtry, skládání, animace, efekty živé kamery, generativní design - autorovi šablony je k dispozici každá webová technologie, takže strop je vysoko.
-
-![Výstup Mesh Gradient - generativní pole měkké barvy postavené celé z tokenů palety tvé značky](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
-
-### Vypěstované, ne nakreslené
-
-**Growth** obrázek pěstuje místo toho, aby ho kreslil: systém založený na semínku se rozrůstá z prstence, čáry, tvých vlastních slov nebo tvého loga, dokud nevyplní rám, ve tvé paletě. Stejné semínko vždy vypěstuje stejné dílo, takže odkaz ho reprodukuje přesně. To, co vznikne, je obyčejná geometrie SVG, a ne obrázek kresby, takže se to dá tisknout, plotrovat a řezat - a stejný návrh animuje od prvního semínka až po hotovou podobu jako video.
-
-![Výchozí rozkvět Growth - husté pole smyčkových linek v barvách značky vypěstovaných z prstence, kde každá linka je skutečná cesta SVG](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
-
-### Pohyb, který odpovídá hudbě
-
-**Synth** počítá pole tekutiny na grafické kartě a maluje ho ve tvých barvách. Dej mu skladbu a pole se pohybuje se zvukem; exportuje se jako MP4, WebM, GIF nebo animovaná smyčka PNG, která se čistě spojí od začátku do konce, vykreslená snímek po snímku z řízených hodin, a ne nahraná z obrazovky - takže pohyb se nikdy neodchýlí od zvukové stopy a stejný odkaz vykreslí stejný klip v libovolné délce.
-
-![Snímek scény \"ink\" v Synth - tmavé pole tekutiny nasvícené zelenými barvami značky, zachycené uprostřed víru](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
-
-Vytvářej *nástroje*, ne soubory: postav věc, která vygeneruje 10 000 karet, místo abys vytvořil 10 000 karet. Uzamkni to, co se nemá měnit; odkryj jen to, co se má měnit.
-
-## Detaily, kterých si všimneš
-
-- **Tisk, jak má být.** Skutečné fyzické jednotky (mm/cm/in/pt) a DPI, spadávka a ořezové značky, CMYK a výstupní záměr PDF/X-4 - tiskárna dostane přesně to, co potřebuje. Viz [Export](/info/exporting.html#size-print-units).
-- **Video a pohyb.** Export WebM/MP4 (se zvukovými stopami), animované PNG/WebP a animované SVG - ze stejné šablony, která tvoří tvé statické snímky. **Sequence Studio** jde dál: skutečná časová osa pod plátnem, s magnetickým řádkem klipů, volnými překryvovými dráhami, ořezáváním a dělením, přednastavenými přechody, nahráváním voiceoveru a hudebním mixem - vyrenderováno jako MP4, WebM, GIF nebo APNG deterministickým kompozitorem, ne obrazovkovým záznamem. Soubory Lottie přicházejí *dovnitř* jako animované assety a vyrenderují se do kteréhokoli z nich. Nad klipy sedí **klíčové snímky**: nastav box do jednoho okamžiku, zvedni ho ze stránky se skutečnou hloubkou a přeleť kamerou nad výsledkem. Viz [Použití Lolly → Timeline](/info/using.html#timeline-sequence-studio) a [Animace](/info/animating.html).
-- **Zvuk.** Nahraj hlasovou poznámku a ulož ji jako MP3 (nebo její nativní M4A/OGG/WebM), vše na zařízení - a přines MP3, WAV, OGG, M4A, FLAC, MIDI nebo trackerové moduly (MOD/XM/IT/…) jako hudební podklad pod video nebo ambientní stopu v Neurospicy Mode.
-- **Kresli, nespokoj se s méně.** Nástroj Design má skutečné **pero**: klikáním umísťuj body, tažením zakřivuj a vyber druh křivky, která jimi prochází. Kombinuj tvary pomocí **sjednocení, odečtení, průniku a vyloučení**, obtáhni tah, posuň siluetu, zjednoduš cestu - geometrie je přesná Bezierova matematika, takže tvar, který nakreslíš, zůstává ostrý v jakékoli velikosti a vykresluje se identicky z odkazu i z CLI. Viz [Použití Lolly → Kreslení vlastních tvarů](/info/using.html#drawing-your-own-shapes-the-pen).
-- **Editovatelné vektory.** Export SVG, EPS, EMF a DXF. Text se ve vektorovém výstupu mění na obtažené cesty, takže tiskárna nebo řezací plotr dostane ostrou geometrii, která se otevře kdekoli. (Obtažený text už v Illustratoru není *znovu editovatelný jako text* - to je cena za dokonalou věrnost bez fontu.)
-- **Pohodlí, které se sčítá.** Dávkově zpracuj tabulku do složky assetů; ukládej relace a organizuj je do Projektů; sdílej jakýkoli stav jako URL; vyrenderuj celou složku jako jeden zip.
-- **Rozhraní, které je vážně příjemné.** Zpět/znovu všude, zvuková vrstva, kterou lze vypnout, cyklus motivů, filtry živé kamery - a **Neurospicy Mode**, hudební přehrávač pro soustředění na pozadí, který tě sleduje po celé aplikaci ve vlastním doku.
-- **Klidnější rozhraní, když ho chceš.** Čtyři přepínače pod **Profil → Přístupnost** - *Omezit pohyb*, *Skrýt barevné náhledy*, *Vysoký kontrast* a *Velký text* - zklidní aplikaci kolem tvé práce. Každý je vypnutý, dokud ho nezapneš, a žádný z nich se nedotkne tvého plátna ani nepohne pixelem toho, co exportuješ. Viz [Tvůj profil → Přístupnost](/info/profile.html#accessibility).
-
-## Vytěž z toho maximum
-
-- **[Rychlý start](/info/quickstart.html)** - značka dovnitř, první soubor ven.
-- **[Brand Studio](/info/brand-studio.html)** - tvaruj svá loga, barvy, písmo a tokeny (`#/start`).
-- **[Používání Lolly](/info/using.html)** - plátno, ovládací prvky, ukládání, projekty a použití na telefonu.
-- **[Tvůj profil](/info/profile.html)** - údaje, z nichž se nástroje předvyplňují, a jak je přenést mezi zařízeními.
-- **[Import designu](/info/design-import.html)** - přines svou práci z Figmy / Penpotu / Illustratoru / InDesignu a své prezentace PowerPoint - upravené nebo přeznačkované na zařízení.
-- **[Práce společně](/info/collaborate.html)** - dva lidé upravují jednu relaci naživo, zařízení k zařízení, bez účtu a bez serveru uprostřed.
-- **[Hledat](/info/search.html)** - jedno pole u paty galerie, Utilit, Projektů, Katalogu, Dashboardu a Profilu, které dosáhne na tvé nástroje, uloženou práci, katalog i nastavení.
-- **[Zeptej se Lolly](/info/using.html#ask-lolly)** (`#/ask`) - napiš otázku a dostaneš odpovídající část těchto příruček doslovně zpět, s odkazem přímo na ni.
-- **Dashboard** (`#/d`) - přístrojová deska: tvůj designový systém zobrazený jen ke čtení, celá mapa schopností, co tohle zařízení umí a přehled tvé aktivity a úložiště.
-- **[Tvé oblíbené](/info/favourites.html)** - ohvězdičkuj, co používáš, a dostane to vlastní dlaždici nad mřížkou.
-- **[Export a formáty](/info/exporting.html)** - každý formát, tiskové jednotky, video a dávkové zpracování.
+- **[Export a formáty](/info/exporting.html)** - tiskové jednotky, DPI, spadávka a ořezové značky, video, dávkové běhy a samotný exportní panel.
+- **[Každý formát, který Lolly umí otevřít a vytvořit](/info/formats.html)** - úplný seznam vstupů a výstupů, s kartou ve srozumitelném jazyce za každým čipem.
+- **[Přenos dat](/info/data-transfer.html)** - záložní balíček, pro přesun všeho, co jsi vytvořil, na jiné zařízení.

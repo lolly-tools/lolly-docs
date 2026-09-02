@@ -1,145 +1,54 @@
 # Lolly per i Creator
 
-Vuoi realizzare qualcosa di buono, velocemente, e farlo venire bene. Lolly è
-costruito esattamente per questo: compila alcuni campi, ottieni un file finito -
-il layout, i caratteri, le regole sono applicati dallo strumento, non dal tuo
-occhio (a meno che tu non lo voglia - allora hai una centrale multimediale a
-portata di mano). Nessun software di design, nessuna attesa. Funziona sul tuo
-dispositivo e offline.
+Compili alcuni campi ed esce un file finito, con i font, i colori e il layout già decisi sul tuo stesso dispositivo. Pubblichi in pochi minuti e sembra che tu ci abbia messo ore, e poiché le regole del brand sono incorporate nello strumento, non è mai il tuo nome a finire su un file fuori brand. Scegli qui sotto il percorso che corrisponde a ciò che stai facendo oggi.
 
-**Cosa ci guadagni:** consegni in pochi minuti e sembra che tu ci abbia messo
-ore. Non resti mai in attesa di un designer, e poiché le regole del brand sono
-integrate, non è mai il tuo nome sull'asset fuori brand. Sembri semplicemente
-veloce, curato e affidabile.
+Sei una mano in una staffetta: uno sviluppatore può trasformare in una pipeline lo strumento che usi e un collega può farlo girare in autonomia, così [Il ciclo di vita di una campagna](/info/overview.html#the-lifecycle-of-a-campaign) segue un singolo asset attraverso tutte e tre le paia di mani.
 
-Questa pagina ti dice tutto ciò che devi sapere per ottenere il massimo da Lolly.
+Sei nuovo qui? Inizia con **[Crea qualcosa in 60 secondi](/info/make-something.html)** e torna quando saprai quale parte vuoi approfondire. [Domande e risposte](/info/faq.html) copre ciò che le persone chiedono prima di fidarsi di uno strumento gratuito. [Come si confronta Lolly](/info/positioning.html) è il resoconto onesto di quando cercare altrove.
 
-> **Sei una mano in una staffetta.** Gli strumenti che crei non si fermano con
-te - uno sviluppatore può collegarli a una pipeline automatizzata ([Lolly for
-Builders](/info/builders.html)) e un collega non designer può eseguirli in
-autoservizio per ottenere un file finito e in brand senza di te nel mezzo.
-Guarda come l'intero ciclo di vita si moltiplica in [The lifecycle of a
-campaign](/info/overview.html#the-lifecycle-of-a-campaign).
+## Crea
 
-## Perché Lolly - i tuoi vantaggi
+Scegli uno strumento, compila alcuni campi e scarica il file finito. Oppure apri la tela di Design e componi liberamente: in entrambi i casi i colori, i caratteri e le spaziature provengono dal tuo brand invece che a memoria, e niente richiede un account.
 
-- **Finito, non fastidioso.** Lo strumento conosce già i caratteri, i colori, il logo, la spaziatura. Tu porti le parole; lui ti restituisce l'asset. Niente da rimettere in dubbio.
-- **Corretto per costruzione.** Le regole di design, i vincoli di layout e la logica di funzionamento vivono nel template - l'output non può discostarsi dalle specifiche a meno che l'autore dello strumento non lasci deliberatamente qualcosa di aperto. Gamma creativa selvaggia, dentro guard-rail che tengono.
-- **Una sola fonte, ogni formato.** Lo stesso design si esporta come SVG, PDF pronto per la stampa, PNG ad alta risoluzione o video a 60fps. Fallo una volta; spediscilo ovunque.
-- **Permutazioni infinite.** Localizza una card in una dozzina di lingue, genera ogni dimensione per ogni posizionamento, cambia un lockup su quaranta campagne - tutto da un unico design, guidato da un foglio di calcolo.
-- **È tuo, offline, privato.** Il tuo lavoro resta sul tuo dispositivo - nessun account necessario, niente caricato per creare o esportare un asset, nessuna licenza da verificare. Chiudi il coperchio del portatile su un aereo e continua a lavorare. (Esistono due componenti server opzionali che possono essere ignorati del tutto - vedi [Server Surface](/info/server-surface.html).)
-- **Aperto, non vincolante.** Il motore è open source e il tuo lavoro vive a URL semplici, non dentro il database di un fornitore.
-- **Superpoteri quando li vuoi.** Non *devi* mai progettare - ma nel momento in cui decidi di farlo, il tetto è alto. Impagina liberamente sulla tela Design. Taglia clip, card e musica su una timeline in Sequence Studio. Registra riprese vocali e video pulite con coaching dal vivo. Costruisci tu stesso un intero brand, guidato da un selettore di colori che ti dice più su un colore di quanto la maggior parte delle suite di design farà mai.
+- **[Crea qualcosa in 60 secondi](/info/make-something.html)** - tre brevi percorsi guidati senza nulla da configurare, se non hai mai aperto Lolly prima d'ora.
+- **[Usare Lolly](/info/using.html)** - la tela, i controlli, il salvataggio, Progetti e l'uso da telefono: come si comporta l'app stessa.
+- **[Il Brand Studio](/info/brand-studio.html)** - per quando i loghi, i colori e i caratteri devono essere i tuoi invece dei valori predefiniti.
+- **[Importa un design](/info/design-import.html)** - per quando la grafica esiste già come file `.fig`, `.penpot`, `.ai`, `.idml` o SVG e la vuoi modificabile invece che appiattita.
+- **[Viste utilità](/info/utilities.html)** - il foglio di calcolo, il convertitore, il Colour Lab, l'estrattore PDF e Script audio, per i lavori che non sono un render di strumento.
+- **[Estensione browser](/info/extension.html)** - cattura una pagina web dal vivo e riusala come asset nei tuoi stessi progetti.
+- **[Ricerca](/info/search.html)** - un unico campo che raggiunge i tuoi strumenti, il tuo lavoro salvato, il catalogo e le tue impostazioni.
+- **[Chiedi a Lolly](/info/ask.html)** - digita una domanda e ricevi indietro la sezione corrispondente di queste guide, con un link diretto.
+- **[La Dashboard](/info/dashboard.html)** - cosa può fare questo dispositivo, il tuo design system in sola lettura e un colpo d'occhio sull'archiviazione.
+- **[I tuoi preferiti](/info/favourites.html)** - segna con una stella ciò che usi spesso così ottiene un riquadro tutto suo sopra la griglia.
+- **[Profili](/info/profile.html)** - i dati da cui gli strumenti si precompilano e i quattro interruttori di accessibilità che calmano l'app senza spostare un pixel di ciò che esporti.
 
-> **I vincoli non ti ingabbiano - ti proteggono.** Pensa alle guard-rail come
-corsie con paraurti: tu lanci comunque la palla - le parole, l'immagine, l'idea
-- e il codice la tiene semplicemente fuori dal canale di scolo, così non può
-mai rompere il brand. Non ti stanno automatizzando via: la parte noiosa è: il
-controllo del brand, la ri-esportazione a ogni dimensione, la localizzazione
-manuale in una dozzina di lingue. Ciò che resta è la decisione che aveva
-bisogno di te. E lo strumento che *tu* crei è ciò che permette al resto
-dell'azienda di produrre un buon lavoro senza tirarti dentro ogni asset: il
-tuo giudizio, portato su scala.
+## Anima
 
-## Come si confronta
+Testo che si muove, scene su una timeline e movimento che resta in brand. Un'esportazione in movimento viene composta fotogramma per fotogramma da un orologio pilotato invece che registrata dallo schermo, così il tempismo non deriva mai e lo stesso link rende la stessa clip a qualsiasi lunghezza.
 
-Lolly non cerca di essere Canva o Figma. Si colloca dove *regole, ripetibilità
-e vincoli rigidi contano più della flessibilità a mano libera* - trasformando
-le decisioni di design in strumenti che tutto il tuo team può usare senza di
-te nel mezzo per ogni asset.
+- **[Animare](/info/animating.html)** - keyframe, profondità reale e una telecamera di scena per sorvolare il risultato.
+- **[L'editor di sequenza](/info/sequence-editor.html)** - la timeline stessa: clip, corsie overlay, taglio e divisione, transizioni e mix audio.
+- **[Esportazione e formati](/info/exporting.html)** - il lato video, GIF e PNG animato del pannello di esportazione, una volta che il movimento è a posto.
 
-Il dettaglio prodotto per prodotto vive nelle [pagine di confronto](/info/compare.html)
-datate - Canva, Adobe, Figma, Penpot, portali brand, API di rendering e
-convertitori di file - con le concessioni scritte per prime e una [tabella
-delle capacità](/info/positioning.html) dietro di esse.
+## Registra
 
-**Scegli Lolly** per gli asset che fai ancora e ancora - segnaletica per
-eventi, quote card, banner localizzati, firme email, etichette di spedizione,
-varianti social, grafici e mappe basati sui dati. **Scegli uno strumento di
-design** per il pezzo hero su misura, il concept di campagna una tantum,
-l'ideazione che è *pensata* per sfuggire al sistema. Lolly esegue il sistema;
-non sostituisce lo studio.
+Registra una ripresa pulita con un conto alla rovescia, un misuratore di livello e un supporto discreto, oppure trasforma una nota vocale in un video finito che si muove con il suono. Non esiste ancora una pagina Registra separata: la trovi in Usare Lolly, nella sezione sulla timeline.
 
-## Cosa puoi creare
+- **[Usare Lolly](/info/using.html#timeline-sequence-studio)** - registrare una voce fuori campo direttamente sulla timeline, dove viene salvata la ripresa e come arriva al mix.
+- **[Crea qualcosa in 60 secondi](/info/make-something.html#make)** - la scena audiogramma, per quando preferisci farti sentire piuttosto che vedere.
+- **[Viste utilità](/info/utilities.html)** - Script audio, per quando le parole vengono prima e la voce dopo.
 
-### Tutto corretto, senza l'attesa
+## Collabora
 
-Compila alcuni campi, ottieni l'asset finito - nessun carattere da scegliere,
-nessun colore da rimettere in dubbio, nessun "è questo il logo giusto?". Lo
-strumento lo sa già. Firme email, countdown per eventi, quote card, badge,
-mappe stradali - tutto ciò di cui il tuo team ha bisogno un martedì alle 16,
-in autoservizio. E poiché nessun dato cliente lascia il dispositivo, non c'è
-rischio di conformità nel collaborare.
+Due persone, due dispositivi, una sessione, modificata dal vivo. Scansiona un codice attraverso il tavolo e entrambi gli schermi contengono lo stesso lavoro, senza account e senza server in mezzo - e senza alcuna connessione a internet quando entrambi i dispositivi sono sulla stessa rete.
 
-Street Map è un esempio corretto dello scambio: scegli una città e un paio di
-colori, e la cartografia, i pesi delle strade e l'acqua sono decisi per te.
+- **[Lavorare insieme](/info/collaborate.html)** - avviare una sessione, cosa viaggia tra i dispositivi e cosa succede quando la rete cade.
+- **[Usare Lolly](/info/using.html#sharing-your-work)** - i modi più discreti per passare il lavoro: un link di condivisione che porta con sé l'intero stato, oppure un singolo file `.lolly`.
 
-![Un render di Street Map di Tokyo al neon su nero quasi totale, prodotto da un menu a discesa città e due selettori di colore](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-street-map-poster)
+## Pubblica
 
-### Dai dati in tempo reale al visual finito
+Mandalo dove è stato richiesto: un link che porta con sé il design, un PDF fedele alla stampa, un video, una presentazione o una cartella di varianti. La stessa fonte li produce tutti, quindi lo costruisci una volta sola.
 
-Collega una tabella **CSV** o **JSON** a un template di grafico, mappa o
-tabella e aggiorna i numeri - il layout si occupa di sé stesso. Risultati
-elettorali, utili trimestrali, eventi meteorologici: costruisci il formato
-una volta e riutilizzalo ogni volta che la storia si ripete. Rispetta il tuo
-stile aziendale *esattamente*, perché è applicato a livello di template, non
-lasciato come linea guida generica.
-
-![Un grafico a ciambella direttamente da Chart Creator - etichette, valori e colori tutti posizionati dal template, non a mano](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
-
-### Strumenti che compongono strumenti
-
-Uno strumento può incorporare l'output dal vivo di un altro strumento come
-asset - un badge nominativo che genera il proprio codice QR, una card che
-inserisce un grafico dal vivo - senza strumento di design e senza
-compositing manuale. Il render incorporato resta dal vivo e si ri-renderizza
-al caricamento; non è mai un'immagine appiattita.
-
-### La frontiera, quando ti serve
-
-Filtri avanzati, compositing, animazione, effetti fotocamera dal vivo, design
-generativo - ogni tecnologia web è disponibile per chi crea un template, quindi
-il tetto è alto.
-
-![Il risultato di Mesh Gradient - un campo generativo di colore morbido costruito interamente a partire dai token della palette del tuo marchio](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
-
-### Coltivato, non disegnato
-
-**Growth** fa crescere l'immagine invece di disegnarla: un sistema con un seme si espande da un anello, una linea, le tue parole o il tuo logo finché non riempie il riquadro, nella tua palette. Lo stesso seme fa sempre crescere lo stesso pezzo, quindi un link lo riproduce esattamente. Ciò che ne esce è geometria SVG normale anziché l'immagine di un disegno, quindi si stampa, si traccia e si taglia - e lo stesso design si anima dal primo seme alla forma finale come video.
-
-![La fioritura predefinita di Growth - un campo denso di linee ad anello dei colori del marchio, cresciute da un anello, ogni linea un vero tracciato SVG](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
-
-### Un movimento che risponde alla musica
-
-**Synth** risolve un campo fluido sulla scheda grafica e lo dipinge nei tuoi colori. Dagli una traccia e il campo si muove con il suono; si esporta come MP4, WebM, GIF o loop PNG animato che si ricongiunge in modo pulito da un capo all'altro, renderizzato fotogramma per fotogramma a partire da un orologio pilotato invece che registrato dallo schermo - così il movimento non va mai fuori sincrono rispetto alla colonna sonora, e lo stesso link renderizza la stessa clip a qualsiasi durata.
-
-![Un fotogramma della scena a inchiostro di Synth - un campo fluido scuro illuminato nei verdi del marchio, colto in pieno vortice](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
-
-Crea *strumenti*, non file: costruisci la cosa che genera 10.000 card invece
-di fare 10.000 card. Blocca ciò che non deve cambiare; esponi solo ciò che è
-pensato per variare.
-
-## Cosa noterai
-
-- **Stampa, fatta bene.** Unità fisiche reali (mm/cm/in/pt) e DPI, abbondanza e crocini di taglio, output CMYK e PDF/X-4 - una tipografia riceve esattamente ciò di cui ha bisogno. Vedi [Esportazione](/info/exporting.html#size-print-units).
-- **Video e animazione.** Esporta WebM/MP4 (con tracce audio), PNG/WebP animati e SVG animato - dallo stesso template che genera le tue immagini statiche. **Sequence Studio** va oltre: una vera timeline sotto la tela, con una riga magnetica di clip, corsie di overlay libere, taglio e divisione, preset di transizione, registrazione voce fuori campo e mix musicale - renderizzata come MP4, WebM, GIF o APNG da un compositore deterministico anziché da una registrazione dello schermo. I file Lottie entrano *come* asset animati e si esportano in uno qualsiasi di questi formati. Sopra le clip ci sono i **fotogrammi chiave**: posiziona un riquadro in un istante, sollevalo dalla pagina con una vera profondità e fai volare una telecamera sul risultato. Vedi [Usare Lolly → Timeline](/info/using.html#timeline-sequence-studio) e [Animazione](/info/animating.html).
-- **Audio.** Registra un appunto vocale e salvalo come MP3 (o nel suo formato nativo M4A/OGG/WebM), tutto sul dispositivo - e importa MP3, WAV, OGG, M4A, FLAC, MIDI o moduli tracker (MOD/XM/IT/…) come base musicale sotto un video o come traccia d'ambiente in Neurospicy Mode.
-- **Disegna, non accontentarti.** Lo strumento Design ha una vera **penna**: clicca per posizionare i punti, trascina per curvare e scegli il tipo di curva che li attraversa. Combina forme con **unione, sottrazione, intersezione ed esclusione**, contorna un tratto, sposta una sagoma, semplifica un percorso - la geometria è matematica Bezier esatta, quindi una forma che disegni resta nitida a qualsiasi dimensione e si renderizza in modo identico da un link o dalla CLI. Vedi [Usare Lolly → Disegnare le tue forme](/info/using.html#drawing-your-own-shapes-the-pen).
-- **Vettori modificabili.** Esportazione SVG, EPS, EMF e DXF. Il testo diventa percorsi contornati nell'output vettoriale, così una tipografia o un plotter da taglio riceve una geometria nitida che si apre ovunque. (Il testo contornato non è più *ridigitabile* in Illustrator - è il compromesso per una fedeltà perfetta senza il font.)
-- **Comodità che si accumula.** Trasforma un foglio di calcolo in una cartella di asset in batch; salva le sessioni e organizzale in Progetti; condividi qualsiasi stato come URL; renderizza un'intera cartella come un unico zip.
-- **Un'interfaccia davvero piacevole.** Annulla/ripeti ovunque, un livello sonoro disattivabile, un ciclo di temi, filtri con telecamera dal vivo - e **Neurospicy Mode**, un lettore di musica di sottofondo per la concentrazione che ti segue in tutta l'app nel proprio dock.
-- **Un'interfaccia più calma quando la vuoi.** Quattro interruttori sotto **Profilo → Accessibilità** - *Riduci il movimento*, *Nascondi le anteprime colorate*, *Alto contrasto* e *Testo grande* - rendono l'app più tranquilla intorno al tuo lavoro. Ognuno è disattivato finché non lo attivi, e nessuno tocca la tua tela o sposta un pixel di ciò che esporti. Vedi [Il tuo profilo → Accessibilità](/info/profile.html#accessibility).
-
-## Sfruttalo al massimo
-
-- **[Avvio rapido](/info/quickstart.html)** - dal brand al primo file in uscita.
-- **[Il Brand Studio](/info/brand-studio.html)** - modella i tuoi loghi, colori, tipografia e token (`#/start`).
-- **[Usare Lolly](/info/using.html)** - la tela, i controlli, il salvataggio, i progetti e l'uso da telefono.
-- **[Il tuo profilo](/info/profile.html)** - i dettagli che gli strumenti precompilano e come portarli tra dispositivi.
-- **[Importa un design](/info/design-import.html)** - importa i tuoi lavori Figma / Penpot / Illustrator / InDesign, e le tue presentazioni PowerPoint - modificati o ribrandizzati sul dispositivo.
-- **[Lavorare insieme](/info/collaborate.html)** - due persone che modificano una sessione dal vivo, da dispositivo a dispositivo, senza account e senza server intermedio.
-- **[Ricerca](/info/search.html)** - un unico campo in fondo alla galleria, Utility, Progetti, il Catalogo, la Dashboard e il Profilo che raggiunge i tuoi strumenti, il tuo lavoro salvato, il catalogo e le tue impostazioni.
-- **[Chiedi a Lolly](/info/using.html#ask-lolly)** (`#/ask`) - digita una domanda e ricevi la sezione corrispondente di queste guide parola per parola, con un link diretto.
-- **La Dashboard** (`#/d`) - il pannello strumenti: il tuo design system mostrato in sola lettura, la mappa completa delle capacità, cosa può fare questo dispositivo e uno sguardo alla tua attività e allo spazio di archiviazione.
-- **[I tuoi preferiti](/info/favourites.html)** - metti una stella su un asset (o su una tonalità del brand) e ottiene un riquadro tutto suo sopra la griglia.
-- **[Esportazione e formati](/info/exporting.html)** - ogni formato, le unità di stampa, il video e il batch.
+- **[Esportazione e formati](/info/exporting.html)** - unità di stampa, DPI, abbondanza e crocini di taglio, video, esecuzioni in batch e il pannello di esportazione stesso.
+- **[Ogni formato che Lolly può aprire e creare](/info/formats.html)** - l'elenco completo in entrata e in uscita, con una scheda in linguaggio semplice dietro ogni chip.
+- **[Trasferimento dati](/info/data-transfer.html)** - il pacchetto di backup, per spostare tutto ciò che hai creato su un altro dispositivo.

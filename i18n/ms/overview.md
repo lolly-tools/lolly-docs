@@ -30,6 +30,8 @@ Platform ini ialah jawapan langsung:
 
 > **Kreatif dan kandungan berprogram pada skala** - penjanaan aset sifar-tenaga kerja, dengan peraturan di bawah kawalan pusat, untuk pekerja, vendor dan rakan kongsi.
 
+Lolly bukan tempat sistem jenama dicipta - ia tempat sistem itu dihasilkan. Anggap ia seperti mesin layan diri untuk reka bentuk: buat pilihan, dapatkan hasil. Setiap kali. Enjin itu berusaha untuk kualiti tertinggi yang boleh dihasilkan oleh setiap format pada perkakasan yang ada di hadapan anda, dan enjin yang sama menghasilkan fail yang sama pada setiap permukaan yang menerimanya.
+
 Hasilnya ialah **kelimpahan**: setiap acara mempunyai papan tanda yang betul, setiap amaran CVE sepadan dengan gaya rumah, setiap label dicetak bersih, setiap tandatangan e-mel terkini - semuanya tanpa tiket reka bentuk. Platform ini mengendalikan kerja kreatif berulang yang telah dioperasikan. Ia sengaja bukan alat kreatif tersuai - pereka masih memiliki kerja unggulan (flagship).
 
 ### Berinovasi secara kebarangkalian, berskala secara deterministik
@@ -431,11 +433,11 @@ Gubah render mana-mana alat: anak **SVG** kekal sebagai vektor sebenar apabila i
 
 ## Apa yang kami sengaja pilih untuk tidak dilakukan
 
-- **Tiada EJS / tiada JS sembarangan dalam templat.** Permukaan XSS adalah sifar. Logik tinggal dalam `hooks.js`.
-- **Tiada CMS aset wajib.** Individu memasukkan fail kreatif mereka sendiri terus ke dalam katalog mereka dalam-apl (paparan [Katalog](/info/using.html) dan Studio Jenama) - tiada pelayan, tiada konsol admin. Kerja diserahkan sebagai **sesi**: pautan kongsi membawa keseluruhan keadaan, dan sesi yang sama bergerak dalam sandaran atau melalui sesi kerjasama. Sesiapa yang mengawal penggunaan boleh kemudian mengunci sesi kongsi sebagai **templat** - buka pautan itu, rekod nilainya sebagai entri templat dalam direktori alat itu dalam pek jenama dan lakukan komit - selepas itu ia muncul dalam pemilih "Baharu daripada templat" alat itu dan boleh dipautkan mendalam sebagai `?template=<id>`. Git ialah langkah kunci pemilik penggunaan, tidak pernah pencipta. Untuk katalog yang *dikongsi, ditadbir*, sebuah organisasi **boleh** mengurus direktori aset dengan cara yang sama dan menggerbangkan kemas kini melalui semakan PR - satu model tadbir urus yang tersedia, bukan keperluan apl.
-- **Tiada RBAC dipaksa.** Apl terbuka adalah akses awam secara lalai; risiko jenama diuruskan oleh tag kematangan + tanda air. Organisasi yang mahukan kawalan lebih ketat berlapis pengesahan mereka sendiri dan katalog yang disemak git di atas.
-- **Tiada pangkalan data pusat.** Semua keadaan pengguna adalah setiap peranti. Integrasi SUSE ID berada dalam pelan hala tuju tetapi bukan penghalang pelancaran.
-- **Tiada laluan kod tools/enjin yang dikongsi.** Enjin adalah sumber terbuka; `tools/` dan `assets/` kekal sebagai kandungan proprietari SUSE dalam repositori mereka sendiri. Pemisahan itu dikuatkuasakan (tiada import silang) supaya pembahagian kekal bersih.
+- **Tiada EJS / tiada JS sewenang-wenangnya dalam templat.** Permukaan XSS adalah sifar. Logik berada dalam `hooks.js`.
+- **Tiada CMS aset yang wajib.** Individu memasukkan fail kreatif mereka sendiri terus ke dalam katalog mereka di dalam aplikasi (paparan [Katalog](/info/using.html) dan Studio Jenama) - tiada pelayan, tiada konsol pentadbir. Kerja diserahkan sebagai satu **sesi**: pautan kongsi membawa seluruh keadaan, dan sesi yang sama turut serta dalam sandaran atau melalui sesi kerjasama. Sesiapa yang mengawal penggunaan itu kemudiannya boleh mengunci satu sesi kongsi sebagai satu **templat** - buka pautan itu, rekodkan nilainya sebagai entri templat dalam direktori alat itu di dalam pek jenama dan commit - selepas itu ia muncul dalam pemilih "New from template" alat itu dan boleh dipaut terus sebagai `?template=<id>`. Git ialah langkah kunci pemilik penggunaan, bukan sekali-kali langkah pencipta. Untuk katalog yang *dikongsi dan ditadbir*, sesebuah organisasi **boleh** menguruskan direktori aset dengan cara yang sama dan mengawal kemas kini melalui semakan PR - satu model tadbir urus yang tersedia, bukan satu keperluan aplikasi.
+- **Tiada RBAC yang dipaksa.** Aplikasi terbuka bersifat akses awam secara lalai; risiko jenama diuruskan melalui tag kematangan + tera air. Organisasi yang mahukan kawalan lebih ketat melapiskan pengesahan miliknya sendiri di atas katalog yang disemak git di atas.
+- **Tiada pangkalan data pusat.** Semua keadaan pengguna adalah bagi setiap peranti. Integrasi SUSE ID berada dalam pelan hala tuju tetapi bukan penghalang pelancaran.
+- **Tiada laluan kod alat/enjin yang dikongsi.** Enjin itu bersumber terbuka dan begitu juga alat tanpa jenama dalam `community/`; satu pek jenama seperti `brands/suse/` yang persendirian membawa alat dan katalog miliknya sendiri di bawah terma tersendiri. Walau apa pun caranya, pemisahan itu dikuatkuasakan (tiada import silang daripada `engine/` ke dalam kandungan alat) supaya pemisahan itu kekal bersih.
 
 ---
 
@@ -460,9 +462,13 @@ Kitaran hayat sama dalam Tauri. Kitaran hayat sama dalam CLI - jsdom menyediakan
 
 ## Status sumber terbuka
 
-Direktori `engine/`, `shells/`, `schemas/` dan `docs/` adalah sumber terbuka di bawah **MPL-2.0** - platform perancah neutral vendor untuk alatan jenama, dengan setiap unit boleh hantar dipisahkan ke dalam repositorinya sendiri di bawah [github.com/lolly-tools](https://github.com/lolly-tools). `tools/` dan `catalog/assets/` ialah kandungan khusus SUSE dan kekal **proprietari kepada SUSE** (semua hak terpelihara - lihat `NOTICE.md` setiap repo); ia tidak diliputi oleh MPL.
+**Kod adalah MPL-2.0.** `engine/`, `shells/*`, `services/*`, `schemas/` dan `docs/` bersumber terbuka di bawah **MPL-2.0** - platform perancah neutral vendor untuk alat jenama, dengan setiap unit boleh hantar dalam repositori tersendiri di bawah [github.com/lolly-tools](https://github.com/lolly-tools).
 
-Pemisahan itu dikuatkuasakan - tiada import silang daripada `engine/` kepada `tools/` atau `assets/` - supaya sempadan platform/kandungan kekal bersih.
+**Kandungan alat dihantar sebagai pek jenama**, masing-masing dengan terma tersendiri (lihat `NOTICE.md` pek itu). `community/` ialah repositori awam [`lolly-tools`](https://github.com/lolly-tools/lolly-tools) dan alat tanpa jenamanya juga MPL-2.0. `brands/suse/` ialah pek `suse-lolly` yang persendirian: alat SUSE dan katalog SUSE, **hak milik SUSE**, termasuk muzik PremiumBeat berlesennya. `brands/lolly-start/` ialah jenama permulaan kosong yang dimiliki oleh repositori ini. Fon dihantar di dalam pek di bawah **SIL Open Font License 1.1** - pek SUSE membawa taip aksara SUSE dan SUSE Mono.
+
+`tools/` dan `catalog/` pada root repo ialah *paparan* yang gitignored: satu profil menyusunnya daripada `community/` ditambah pek jenama aktif, itulah sebabnya setiap skrip dan shell membaca kedua-dua laluan itu dan tidak sekali-kali satu pek secara langsung.
+
+Pemisahan itu dikuatkuasakan - tiada import silang daripada `engine/` ke dalam kandungan alat - supaya sempadan platform/kandungan kekal bersih.
 
 ---
 

@@ -38,6 +38,14 @@ Tools hier vergroten wat een mens besloot. Ze beslissen niet in iemands plaats e
 
 Dat eren we van begin tot eind, en we leggen het vast: voor de geschiedenis, voor verantwoording, voor vertrouwen en voor morgen.
 
+## AI, op jouw voorwaarden
+
+Je hebt hier nooit AI nodig. Als je ervoor kiest, gelden drie dingen:
+
+- <!--i:people--> **Jij hebt de controle.** AI helpt alleen wanneer je erom vraagt, en alleen met het onderdeel waar je hem op richt. Niets wordt voor jou beslist.
+- <!--i:check--> **Het stopt met kosten.** Als AI eenmaal helpt iets te maken, is het resultaat van jou. Het opnieuw gebruiken is gratis, hoe vaak je het ook nodig hebt.
+- <!--i:shieldcheck--> **Het blijft eerlijk.** Een stuk gemaakt door AI zegt dat het dat is, en wat jij maakt draagt jouw naam in plaats van zich voor te doen als iemand anders. Zelfs de ingebouwde hulp werkt zo: [Ask Lolly](/info/ask.html) antwoordt met de eigen zin van de handleiding en een link, nooit een verzonnen antwoord.
+
 ## Wat dit niet is
 
 - <!--i:check--> **Geen verbod.** Tools mogen AI gebruiken waar dat het werk dient, en agents zijn een ondersteunde doelgroep - zie [AI Agents](/info/ai-agents.html).

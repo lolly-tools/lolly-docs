@@ -30,6 +30,8 @@ Platform ini adalah jawaban langsungnya:
 
 > **Kreatif dan konten programatik dalam skala besar** - pembuatan aset tanpa tenaga kerja, dengan aturan di bawah kendali terpusat, untuk karyawan, vendor dan mitra.
 
+Lolly bukan tempat sebuah design system diciptakan - melainkan tempat design system itu diproduksi. Anggap seperti sebuah vending machine untuk desain: buat pilihan, dapatkan hasil. Setiap saat. Engine ini bekerja untuk kualitas tertinggi yang bisa dihasilkan setiap format pada perangkat keras di hadapan Anda, dan engine yang sama membuat berkas yang sama pada setiap platform tempatnya dirilis.
+
 Hasilnya adalah **kelimpahan**: setiap acara memiliki signage yang benar, setiap peringatan CVE cocok dengan gaya perusahaan, setiap label tercetak bersih, setiap tanda tangan email selalu terkini - semua tanpa tiket desain. Platform ini menangani kreatif operasional yang berulang. Ini sengaja bukan alat kreatif custom - desainer tetap memegang kendali atas karya unggulan.
 
 ### Berinovasi secara probabilistik, berskala secara deterministik
@@ -431,11 +433,11 @@ Menyusun render tool apa pun: anak **SVG** tetap menjadi vektor sejati saat indu
 
 ## Apa yang secara sengaja tidak kami lakukan
 
-- **Tidak ada EJS / tidak ada JS bebas dalam template.** Permukaan XSS nol. Logika berada di `hooks.js`.
-- **Tidak ada CMS aset wajib.** Individu memasukkan file kreatif mereka sendiri langsung ke katalognya di dalam aplikasi (tampilan [Katalog](/info/using.html) dan Brand Studio) - tanpa server, tanpa konsol admin. Pekerjaan diteruskan sebagai **sesi**: tautan berbagi membawa seluruh state, dan sesi yang sama berpindah lewat backup atau sesi kolaborasi. Siapa pun yang mengendalikan deployment kemudian bisa mengunci sesi bersama itu menjadi sebuah **template** - buka tautannya, catat nilainya sebagai entri template di direktori tool itu dalam brand pack lalu commit - setelah itu ia muncul di pemilih "New from template" tool tersebut dan bisa ditautkan langsung sebagai `?template=<id>`. Git adalah langkah penguncian milik pemilik deployment, bukan milik pembuatnya. Untuk katalog yang *dibagikan dan diatur*, sebuah organisasi **bisa** mengelola direktori aset dengan cara yang sama dan menggerbangi pembaruan lewat review PR - sebuah model governance yang tersedia, bukan keharusan aplikasi.
-- **Tidak ada RBAC paksaan.** Aplikasi terbuka bersifat akses publik secara default; risiko brand dikelola lewat tag kematangan + watermark. Organisasi yang menginginkan kontrol lebih ketat melapiskan autentikasi miliknya sendiri dan katalog yang direview lewat git di atas.
-- **Tidak ada database terpusat.** Semua state pengguna bersifat per perangkat. Integrasi SUSE ID ada di roadmap tetapi bukan penghalang peluncuran.
-- **Tidak ada jalur kode tools/engine bersama.** Engine bersifat open source; `tools/` dan `assets/` tetap konten SUSE proprietary di repositorinya sendiri. Pemisahan ini ditegakkan (tanpa impor silang) agar pembagian tetap bersih.
+- **Tanpa EJS / tanpa JS arbitrer dalam template.** Permukaan XSS-nya nol. Logika berada di `hooks.js`.
+- **Tanpa CMS aset wajib.** Setiap individu mengingest berkas kreatif mereka sendiri langsung ke katalog mereka di dalam aplikasi (tampilan [Katalog](/info/using.html) dan Brand Studio) - tanpa server, tanpa konsol admin. Pekerjaan diteruskan sebagai sebuah **session**: sebuah tautan share membawa seluruh state, dan session yang sama berpindah dalam sebuah backup atau melalui sebuah sesi kolaborasi. Siapa pun yang mengontrol deployment kemudian dapat mengunci sebuah session bersama sebagai sebuah **template** - buka tautannya, catat nilai-nilainya sebagai sebuah entri template di direktori alat tersebut dalam brand pack, lalu commit - setelah itu template tersebut muncul di pemilih "New from template" pada alat itu dan dapat di-deep-link sebagai `?template=<id>`. Git adalah langkah penguncian milik pemilik deployment, bukan milik pembuatnya. Untuk sebuah katalog yang *dibagikan dan diatur (governed)*, sebuah organisasi **dapat** mengelola direktori aset dengan cara yang sama dan menjaga pembaruan melalui review PR - sebuah model governance yang tersedia, bukan sebuah keharusan dari aplikasi.
+- **Tanpa RBAC yang dipaksakan.** Aplikasi terbuka ini bersifat public-access secara default; risiko brand dikelola melalui tag maturity + watermark. Sebuah organisasi yang menginginkan kontrol lebih ketat melapiskan auth-nya sendiri dan katalog yang di-review lewat git di atas.
+- **Tanpa database terpusat.** Semua state pengguna bersifat per perangkat. Integrasi SUSE ID ada dalam roadmap tetapi bukan penghalang peluncuran.
+- **Tanpa jalur kode tools/engine bersama.** Engine ini open source, begitu pula alat-alat brand-agnostic di `community/`; sebuah brand pack seperti `brands/suse/` yang privat membawa alat dan katalognya sendiri dengan persyaratannya sendiri. Bagaimanapun juga, pemisahan ini ditegakkan (tanpa cross-import dari `engine/` ke konten alat) sehingga pemisahannya tetap bersih.
 
 ---
 
@@ -460,9 +462,13 @@ Siklus hidup yang sama di Tauri. Siklus hidup yang sama di CLI - jsdom menyediak
 
 ## Status open source
 
-Direktori `engine/`, `shells/`, `schemas/` dan `docs/` bersifat open source di bawah **MPL-2.0** - sebuah platform scaffolding brand tooling yang netral vendor, dengan setiap unit yang bisa dikirim dipisahkan ke repositorinya sendiri di bawah [github.com/lolly-tools](https://github.com/lolly-tools). `tools/` dan `catalog/assets/` adalah konten khusus SUSE dan tetap **proprietary milik SUSE** (semua hak dilindungi - lihat `NOTICE.md` masing-masing repo); keduanya tidak tercakup oleh MPL.
+**Kode ini MPL-2.0.** `engine/`, `shells/*`, `services/*`, `schemas/`, dan `docs/` adalah open source di bawah **MPL-2.0** - sebuah platform scaffolding yang vendor-neutral untuk tooling brand, dengan setiap unit yang dirilis berada dalam repositorinya sendiri di bawah [github.com/lolly-tools](https://github.com/lolly-tools).
 
-Pemisahan ini ditegakkan - tidak ada impor silang dari `engine/` ke `tools/` atau `assets/` - sehingga batas platform/konten tetap bersih.
+**Konten alat dirilis sebagai brand pack**, masing-masing dengan persyaratannya sendiri (lihat `NOTICE.md` milik pack tersebut). `community/` adalah repositori publik [`lolly-tools`](https://github.com/lolly-tools/lolly-tools) dan alat-alat brand-agnostic-nya juga MPL-2.0. `brands/suse/` adalah pack privat `suse-lolly`: alat-alat SUSE dan katalog SUSE, **milik eksklusif SUSE (proprietary)**, termasuk musik PremiumBeat berlisensinya. `brands/lolly-start/` adalah brand starter kosong yang dimiliki repositori ini. Font dirilis di dalam sebuah pack di bawah **SIL Open Font License 1.1** - pack SUSE membawa typeface SUSE dan SUSE Mono.
+
+`tools/` dan `catalog/` di root repo adalah *view* yang di-gitignore: sebuah profile menyusunnya dari `community/` ditambah brand pack yang aktif, itulah sebabnya setiap script dan shell membaca kedua path tersebut dan tidak pernah membaca sebuah pack secara langsung.
+
+Pemisahan ini ditegakkan - tidak ada cross-import dari `engine/` ke konten alat - sehingga batas antara platform dan konten tetap bersih.
 
 ---
 

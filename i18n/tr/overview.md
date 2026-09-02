@@ -30,6 +30,8 @@ Bu platform bunun doğrudan cevabıdır:
 
 > **Ölçekte programatik yaratıcılık ve içerik** - kuralların merkezi kontrol altında olduğu, çalışanlar, tedarikçiler ve iş ortakları için sıfır emekle varlık üretimi.
 
+Lolly bir tasarım sisteminin icat edildiği yer değil - üretildiği yerdir. Onu tasarım için bir otomat gibi düşün: bir seçim yap, bir sonuç al. Her seferinde. Motor, önündeki donanımın her biçimde üretebileceği en yüksek kaliteyi hedefler ve aynı motor, dağıtıldığı her yüzeyde aynı dosyayı üretir.
+
 Sonuç **bolluktur**: her etkinliğin doğru tabelası vardır, her CVE uyarısı kurumsal stille eşleşir, her etiket temiz basılır, her e-posta imzası günceldir - hepsi bir tasarım talebi olmadan. Platform, tekrar eden, operasyonelleştirilmiş yaratıcı işleri yönetir. Bilinçli olarak özel bir yaratıcı araç değildir - tasarımcılar amiral gemisi işleri hâlâ kendi ellerinde tutar.
 
 ### Olasılıksal olarak yenilik yap, deterministik olarak ölçeklendir
@@ -431,11 +433,11 @@ Herhangi bir aracın çıktısını bileştir: bir **SVG** alt öğe, üst öğe
 
 ## Bilinçli olarak yapmamayı seçtiğimiz şeyler
 
-- **Şablonlarda EJS yok / keyfi JS yok.** XSS yüzeyi sıfırdır. Mantık `hooks.js` içinde yaşar.
-- **Zorunlu varlık CMS'i yok.** Bireyler kendi yaratıcı dosyalarını uygulama içinde doğrudan kendi kataloglarına alır ([Katalog](/info/using.html) görünümü ve Brand Studio) - sunucu yok, yönetici konsolu yok. İş bir **oturum** olarak devredilir: bir paylaşım bağlantısı tüm durumu taşır ve aynı oturum bir yedeklemede veya bir işbirliği oturumu üzerinden yolculuk eder. Dağıtımı kontrol eden kişi, paylaşılan bir oturumu **şablon** olarak kilitleyebilir - bağlantıyı açar, değerlerini marka paketindeki o aracın dizininde bir şablon girdisi olarak kaydeder ve commit eder - bundan sonra aracın "Şablondan yeni" seçicisinde görünür ve `?template=<id>` olarak derin bağlantı verilebilir. Git, oluşturucunun değil dağıtım sahibinin kilitleme adımıdır. *Paylaşılan, yönetilen* bir katalog için, bir kuruluş varlık dizinini aynı şekilde yönetebilir ve güncellemeleri PR incelemesiyle sınırlayabilir - bu, uygulamanın bir gerekliliği değil, mevcut bir yönetişim modelidir.
-- **Zorunlu RBAC yok.** Açık uygulama varsayılan olarak herkese açıktır; marka riski olgunluk etiketleri ve filigranlarla yönetilir. Daha sıkı kontrol isteyen bir kuruluş, kendi kimlik doğrulamasını ve yukarıdaki git ile incelenen kataloğu üzerine ekler.
-- **Merkezi veritabanı yok.** Tüm kullanıcı durumu cihaz başınadır. SUSE ID entegrasyonu yol haritasındadır ancak bir lansman engelleyicisi değildir.
-- **Paylaşılan araçlar/motor kod yolu yok.** Motor açık kaynaktır; `tools/` ve `assets/`, kendi depolarında SUSE'ye özel içerik olarak kalır. Ayrım zorunlu kılınır (çapraz içe aktarım yok), böylece ayrım temiz kalır.
+- **Şablonlarda EJS yok / rastgele JS yok.** XSS yüzeyi sıfırdır. Mantık `hooks.js` içinde yaşar.
+- **Zorunlu bir varlık CMS'i yok.** Bireyler kendi yaratıcı dosyalarını uygulama içinde doğrudan kataloglarına aktarır ([Katalog](/info/using.html) görünümü ve Brand Studio) - sunucu yok, yönetim konsolu yok. Çalışma bir **oturum** olarak devredilir: bir paylaşım bağlantısı tüm durumu taşır ve aynı oturum bir yedeklemede ya da bir iş birliği oturumu üzerinden yolculuk eder. Dağıtımı kim kontrol ediyorsa, paylaşılan bir oturumu bir **şablon** olarak kilitleyebilir - bağlantıyı aç, değerlerini marka paketindeki o aracın dizininde bir şablon girdisi olarak kaydet ve commit'le - bundan sonra aracın "New from template" seçicisinde görünür ve `?template=<id>` olarak derin bağlantı verilebilir. Git, oluşturanın değil dağıtım sahibinin kilitleme adımıdır. *Paylaşılan, yönetilen* bir katalog için bir kuruluş varlık dizinini aynı şekilde **yönetebilir** ve güncellemeleri PR incelemesinden geçirebilir - bu, uygulamanın bir zorunluluğu değil, mevcut bir yönetişim modelidir.
+- **Zorunlu RBAC yok.** Açık uygulama varsayılan olarak herkese açık erişimlidir; marka riski olgunluk etiketleri ve filigranlarla yönetilir. Daha sıkı kontrol isteyen bir kuruluş, kendi kimlik doğrulamasını ve yukarıdaki git ile incelenen kataloğu üzerine katman olarak ekler.
+- **Merkezi veritabanı yok.** Tüm kullanıcı durumu cihaz başınadır. SUSE ID entegrasyonu yol haritasında var ama bir lansman engelleyicisi değil.
+- **Paylaşılan araçlar/motor kod yolu yok.** Motor açık kaynaktır, `community/` içindeki markadan bağımsız araçlar da öyle; özel `brands/suse/` gibi bir marka paketi kendi araçlarını ve kataloğunu kendi koşulları altında taşır. Her iki durumda da ayrım zorlanır (`engine/`'den araç içeriğine çapraz içe aktarma yok), böylece bölünme temiz kalır.
 
 ---
 
@@ -460,9 +462,13 @@ Tauri'de aynı yaşam döngüsü. CLI'de aynı yaşam döngüsü - jsdom başsı
 
 ## Açık kaynak durumu
 
-`engine/`, `shells/`, `schemas/` ve `docs/` dizinleri **MPL-2.0** altında açık kaynaktır - her gönderilebilir birimin [github.com/lolly-tools](https://github.com/lolly-tools) altında kendi deposuna ayrıldığı, satıcıdan bağımsız bir marka araçlama iskelet platformu. `tools/` ve `catalog/assets/`, SUSE'ye özel içeriktir ve **SUSE'ye ait mülkiyet olarak kalır** (tüm hakları saklıdır - her deponun `NOTICE.md` dosyasına bakın); bunlar MPL kapsamında değildir.
+**Kod MPL-2.0'dır.** `engine/`, `shells/*`, `services/*`, `schemas/` ve `docs/`, marka araçları için satıcıdan bağımsız bir iskele platformu olarak **MPL-2.0** altında açık kaynaktır; her dağıtılabilir birim [github.com/lolly-tools](https://github.com/lolly-tools) altında kendi deposundadır.
 
-Ayrım zorunlu kılınır - `engine/`'den `tools/` veya `assets/`'e çapraz içe aktarım yoktur - böylece platform/içerik sınırı temiz kalır.
+**Araç içeriği marka paketleri olarak dağıtılır**, her biri kendi koşullarıyla (paketin `NOTICE.md` dosyasına bak). `community/`, herkese açık [`lolly-tools`](https://github.com/lolly-tools/lolly-tools) deposudur ve markadan bağımsız araçları da MPL-2.0'dır. `brands/suse/`, özel `suse-lolly` paketidir: SUSE araçları ve SUSE kataloğu, lisanslı PremiumBeat müziği dahil, **SUSE'ye özeldir**. `brands/lolly-start/`, bu deponun sahip olduğu boş başlangıç markasıdır. Yazı tipleri bir paket içinde **SIL Open Font License 1.1** altında dağıtılır - SUSE paketi SUSE ve SUSE Mono yazı tiplerini taşır.
+
+Depo kökündeki `tools/` ve `catalog/`, gitignore'lanmış *görünümlerdir*: bir profil bunları `community/` ve etkin marka paketinden bir araya getirir; bu yüzden her betik ve kabuk bu iki yolu okur, hiçbir zaman bir paketi doğrudan okumaz.
+
+Bu ayrım zorlanır - `engine/`'den araç içeriğine çapraz içe aktarma yoktur - böylece platform/içerik sınırı temiz kalır.
 
 ---
 

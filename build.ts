@@ -161,10 +161,10 @@ const FORMATS_TABLE_MARK = '<!-- the three-zone formats table renders here -->';
 interface Stub { slug: string; target: string; }
 const stubs: Stub[] = [
   // Old front-door entry; the friendly start is now the Quickstart primary article.
-  { slug: 'getting-started', target: '/info/quickstart.html' },
+  { slug: 'getting-started', target: '/info/start/quickstart.html' },
   // Retitled the same day it shipped: "labour" read as an invitation to the very
   // work Lolly exists to remove, and an agent's real surface is the tool's inputs.
-  { slug: 'labour-not-impersonation', target: '/info/input-not-impersonation.html' },
+  { slug: 'labour-not-impersonation', target: '/info/trust/input-not-impersonation.html' },
 ];
 
 const pages: Page[] = [
@@ -172,7 +172,10 @@ const pages: Page[] = [
 
   // ── Primary article ──────────────────────────────────────────────────────
   { slug: 'quickstart',       title: 'Quickstart', src: 'quickstart.md', pathway: 'quickstart', isHub: true },
-  { slug: 'make-something',   title: 'Make something in 60 seconds', src: 'make-something.md', pathway: 'quickstart', description: "Pick a tool, type a few words and download the finished file: three short walkthroughs that need no account, no setup and no design skill." },
+  { slug: 'make-something',   title: 'Make something in 60 seconds', src: 'make-something.md', pathway: 'quickstart', description: "Pick a tool, type a few words and download the finished file: three short walkthroughs that need no account, no setup and no design skill.", render: renderMakeSomethingPage },
+  // The FAQ, previously an accordion inside the landing (plans/177 moved it out;
+  // the gallery's #faq-… deep links now land here).
+  { slug: 'faq',              title: 'Questions & answers', src: 'faq.md', pathway: 'quickstart', description: "The things people ask most: why it is free, what the catch is not, what happens to your files and where Lolly is going.", render: renderFaqPage },
   // The destination of the hero's download rail (downloadsRail). Its own page rather
   // than five direct file links, because picking a package is a decision - which
   // architecture, which repository, what to trust - and a bare link cannot answer any
@@ -253,6 +256,12 @@ const pages: Page[] = [
   { slug: 'about',            title: 'About',             src: '../README.md',       pathway: 'builders', description: "What Lolly is, who builds it, and how the pieces fit together. The project's own README." },
 
   // ── Operators pathway ────────────────────────────────────────────────────
+  // The function playbooks (plans/177 section 5): job-first pages harvested from
+  // the retired landing audience tabs; the landing's persona device links them.
+  { slug: 'sales',     title: 'Lolly for sales teams', src: 'sales.md',     pathway: 'operators', description: "Walk into every meeting with exactly the file you need: fix the deck you already have, rebuild it as a native deck file, and make the asset on the way there." },
+  { slug: 'press',     title: 'Lolly for the newsroom', src: 'press.md',    pathway: 'operators', description: "Build the info-editorial style once, then generate publication-quality charts, maps and tables from live data, in the house style, for print and screen." },
+  { slug: 'marketing', title: 'Lolly for marketing teams', src: 'marketing.md', pathway: 'operators', description: "Every size, every language, one source of truth: paste a spreadsheet and get one finished file per row, with no agency bottleneck for routine files." },
+  { slug: 'legal',     title: 'Lolly for legal teams', src: 'legal.md',     pathway: 'operators', description: "Redact, anonymise, verify and compress on the device the file already lives on, so nothing leaves the building to be cleaned, with the licence and the EU AI Act position stated plainly." },
   { slug: 'adoption-governance', title: 'Adoption & Governance', src: 'adoption-governance.md', pathway: 'operators', description: "Adopting Lolly across a team: who approves tools, how brand rules become enforceable, and what changes in a creative workflow." },
   { slug: 'sovereign-production', title: 'Sovereign creative production', src: 'sovereign-production.md', pathway: 'operators', description: "Creative production with no server in the render path: air-gapped deployment, consent-gated networking, on-device signing and the tools as files you hold." },
   { slug: 'security',         title: 'Security & Verification', src: 'security-verification.md', pathway: 'trust', description: "The cryptography behind Lolly's Content Credentials, verification and encryption, summarised for a security reviewer with the limits stated as clearly as the guarantees." },
@@ -267,6 +276,49 @@ const pages: Page[] = [
   { slug: 'eu-ai-act',        title: 'AI marking and the EU AI Act', src: 'eu-ai-act.md', pathway: 'trust', description: "Article 50 has applied since 2 August 2026, and its Code of Practice points at C2PA. Lolly's honest fit: it preserves arriving AI marks, declares its own AI operations and verifies files on-device." },
   { slug: 'beatrice-warde',   title: 'Beatrice Warde',    src: 'beatrice-warde.md',  pathway: 'trust', description: "The typographer whose 1932 lines this project adapted, who proved that the types the whole trade called Garamond had been cut by somebody else entirely." },
 ];
+
+// ── Door-structured URLs (plans/177 P1) ──────────────────────────────────────
+// Every hand-authored page lives under its pathway's DOOR directory as a real
+// file: /info/<door>/<slug>.html (locales: /info/<lang>/<door>/<slug>.html).
+// The landing stays at /info/, and the generated side doors keep their frozen
+// directory URLs (formats/…, convert/… are the adoption engine, never moved).
+// Derived from the one `pages` registry so URL, nav, sidebar, search, sitemap
+// and stubs cannot disagree about which door a page is behind. The old flat
+// URL of every doored page gets a meta-refresh stub for one release cycle
+// (appended to `stubs` below); delete that loop to end the grace period.
+const DOOR: Record<Pathway, string> = {
+  quickstart: 'start',
+  creators:   'create',
+  builders:   'build',
+  operators:  'operate',
+  trust:      'trust',
+};
+const DOOR_DIRS = new Set(Object.values(DOOR));
+// slug → door directory, from the registry.
+const PAGE_DOOR: Record<string, string> = Object.fromEntries(
+  pages.filter(p => !p.isLanding && p.pathway).map(p => [p.slug, DOOR[p.pathway!]]),
+);
+/** The path form of a page slug: 'create/using' for doored pages, bare otherwise. */
+function pathSlug(slug: string): string {
+  return PAGE_DOOR[slug] ? `${PAGE_DOOR[slug]}/${slug}` : slug;
+}
+for (const p of pages) {
+  if (PAGE_DOOR[p.slug]) stubs.push({ slug: p.slug, target: `/info/${pathSlug(p.slug)}.html` });
+}
+/**
+ * Rewrite the flat internal links a page's rendered HTML carries (hand-authored
+ * markdown cross-links, JSON content hrefs, template literals) to the doored
+ * URLs, in one pass over the final document - so no source file needs its links
+ * rewritten and the markdown twins stay verbatim. Locale-prefixed links keep
+ * their prefix. Runs on every written page; the flat-URL stubs remain the net
+ * under anything this pass cannot see (external references, bookmarks).
+ */
+function doorizeLinks(html: string): string {
+  const langAlt = LANGS.filter(l => l !== 'en').join('|');
+  const re = new RegExp(`/info/((?:${langAlt})/)?([\\w-]+)\\.html`, 'g');
+  return html.replace(re, (m, langPrefix: string | undefined, slug: string) =>
+    PAGE_DOOR[slug] ? `/info/${langPrefix ?? ''}${pathSlug(slug)}.html` : m);
+}
 
 /**
  * Which page opens on which BANKED masthead - `slug → docs/mastheads/<id>` (plans/105 section 6).
@@ -372,7 +424,8 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
       { label: 'Start here', items: [
         { slug: 'make-something', label: 'Make something' },
         { slug: 'quickstart',     label: 'Quickstart' },
-        { slug: 'install',        label: 'Install Lolly' } ] },
+        { slug: 'install',        label: 'Install Lolly' },
+        { slug: 'faq',            label: 'Questions & answers' } ] },
       { label: 'Then pick a path', items: [
         { slug: 'creators',  label: 'For Creators' },
         { slug: 'builders',  label: 'For Builders' },
@@ -391,14 +444,18 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
       { label: 'Creators', items: [
         { slug: 'creators',   label: 'Why Lolly' },
         { slug: 'quickstart', label: 'Quickstart' } ] },
-      { label: 'Make things', items: [
+      // The lane groups mirror the landing's persona side tabs (plans/177:
+      // Make / Animate / Collaborate / Post), so the door and this rail are one
+      // mental model. Record has no page of its own - Using Lolly carries it.
+      { label: 'Make', items: [
         { slug: 'using',           label: 'Using Lolly' },
         { slug: 'brand-studio',    label: 'The Brand Studio' },
         { slug: 'design-import',   label: 'Import a design' },
-        { slug: 'sequence-editor', label: 'The sequence editor' },
-        { slug: 'animating',       label: 'Animating' },
         { slug: 'utilities',       label: 'Utility views' },
         { slug: 'extension',       label: 'Browser Extension' } ] },
+      { label: 'Animate', items: [
+        { slug: 'sequence-editor', label: 'The sequence editor' },
+        { slug: 'animating',       label: 'Animating' } ] },
       // Search, favourites and the profile are the three pages about getting back to
       // your own things - finding them, keeping them to hand, and the on-device record
       // both of the other two are written onto.
@@ -408,9 +465,9 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
         { slug: 'dashboard',   label: 'The Dashboard' },
         { slug: 'favourites',  label: 'Your favourites' },
         { slug: 'profile',     label: 'Your profile' } ] },
-      { label: 'Share & collaborate', items: [
+      { label: 'Collaborate', items: [
         { slug: 'collaborate', label: 'Working together' } ] },
-      { label: 'Formats & export', items: [
+      { label: 'Post', items: [
         { slug: 'formats',     label: 'What Lolly opens and makes' },
         { slug: 'exporting',   label: 'Exporting a file' } ] },
       { label: 'Compare', items: [
@@ -473,6 +530,13 @@ const SIDEBARS: Record<Pathway, { title: string; groups: SideGroup[] }> = {
       { label: 'Operators', items: [
         { slug: 'operators',  label: 'Overview' },
         { slug: 'quickstart', label: 'Quickstart' } ] },
+      // The function playbooks (plans/177): the landing's Operators pane links
+      // straight into these.
+      { label: 'Playbooks', items: [
+        { slug: 'sales',     label: 'For sales teams' },
+        { slug: 'press',     label: 'For the newsroom' },
+        { slug: 'marketing', label: 'For marketing teams' },
+        { slug: 'legal',     label: 'For legal teams' } ] },
       { label: 'Adopt & govern', items: [
         { slug: 'adoption-governance', label: 'Adoption & Governance' },
         { slug: 'sovereign-production', label: 'Sovereign production' },
@@ -1016,9 +1080,6 @@ function siteContentPath(name: string, lang: Lang): string {
 function loadSiteJson(name: string, lang: Lang = 'en'): any {
   return JSON.parse(readFileSync(siteContentPath(name, lang), 'utf8'));
 }
-function loadSiteMd(name: string, lang: Lang = 'en'): string {
-  return readFileSync(siteContentPath(name, lang), 'utf8');
-}
 // `\n` in a JSON string field becomes a literal <br> - the convention every
 // multi-line heading/copy field in docs/site/*.json uses.
 const br = (s: string) => esc(s).replace(/\n/g, '<br>');
@@ -1130,6 +1191,10 @@ const DOC_ICONS: Record<string, string> = {
   sliders: '', lock: '', layers: '', globe: '', people: '', shieldcheck: '', check: '', code: '',
   download: '', database: '', server: '', monitor: '',
 };
+// `shield` is what docs/profile.md (and its 26 twins) name the Verify glyph;
+// the drawn glyph is `shieldcheck`. An alias here keeps the marker valid without
+// editing a translated block in 27 files.
+DOC_ICONS.shield = DOC_ICONS.shieldcheck!;
 DOC_ICONS.eyeoff = SITE_ICONS.assureEyeOff!;
 DOC_ICONS.sliders = BICONS.sliders;
 DOC_ICONS.lock = BICONS.lock;
@@ -1253,12 +1318,14 @@ function englishAudienceH2s(): string[] {
 // excuses exactly those, so an unmarked exception fails the build's test run.
 
 /**
- * The hero's download rail - the five packaged builds, above the fold.
+ * The download rail - the packaged builds, one tile each.
  *
- * Placed INSIDE the hero rather than in a band of its own because "above the fold"
- * is the whole requirement: a band under the hero falls off a 720px laptop screen
- * the moment the H1 wraps to two lines, and the one thing a returning visitor
- * wants is the file for their own machine.
+ * It closed the hero from its first day (the argument then: "above the fold" was
+ * the whole requirement, and a band under the hero falls off a 720px laptop the
+ * moment the H1 wraps). On 2026-09-02 Andy moved it down to its own band between
+ * the persona device and lolly.work: a reader meets the tiles after the pitch.
+ * The rail itself is unchanged; .downloads-section paints the hero's dark surface
+ * under it so the on-band-dark tile colours still hold.
  *
  * Each tile carries the OTHER party's mark (docLogo, from docs/logos.ts) rather
  * than one of our own glyphs, because the reader is scanning for a mark they
@@ -1292,10 +1359,10 @@ function downloadsRail(lang: Lang): string {
     macos: 'lolly-latest.dmg', tumbleweed: 'lolly-latest.rpm', leap: 'lolly-latest.rpm',
     flatpak: 'lolly-latest.flatpak', android: 'lolly-latest.apk', deb: 'lolly-latest.deb',
   };
-  const tiles = d.items.map((it, i) => {
+  const tiles = d.items.map((it) => {
     const file = DOWNLOAD_FILE[it.hash];
     const href = file ? `${RELEASE}/${file}` : `${localeHref(lang, it.slug)}#${it.hash}`;
-    return `<a class="dl-tile" data-dl="${esc(it.logo)}" href="${esc(href)}"${file ? ' download' : ''} style="--dl-i:${i}" aria-label="${esc(
+    return `<a class="dl-tile" data-dl="${esc(it.logo)}" href="${esc(href)}"${file ? ' download' : ''} aria-label="${esc(
       t('Install for {os}: {name}, {ext} file').replace('{os}', it.os).replace('{name}', it.name).replace('{ext}', it.ext))}">
         <span class="dl-top" aria-hidden="true">
           <span class="dl-mark">${docLogo(it.logo)}</span>
@@ -1624,405 +1691,18 @@ function makeSomethingBlock(lang: Lang): string {
 }
 
 /**
- * Block 3 - the sovereignty statement. The ONE place on this page the offline /
- * nothing-leaves claim is made in full (the hero's "on your own device" decode is
- * the only other mention, and section 6's test holds that line). Andy's maxim, 2026-08-15.
+ * The FAQ, its own page since plans/177 (/info/start/faq.html): the same native
+ * <details> accordion the landing used to inline, plus the deep-link opener.
+ * NAMED function (not an inline arrow) so scripts/check-docs-nav.ts can recover
+ * the page entry with a brace-free match.
  */
-function sovereigntyBlock(lang: Lang): string {
-  // CLAIMS-ALLOW: offline-statement - block 3 IS the home of the claim (plan 117 section 1).
-  const statement = t('**The internet is optional with Lolly: use it when it helps, never surrender control.** A font you pick, a place you look up, a link you share - things happen online only because you asked. Nothing you make ever leaves your device without your control and informed consent, Nobody is listening in. Go offline and everything you have works. **Freedom is sweet.**');
-  // CLAIMS-ALLOW END
-  return `<section class="sovereign-section" id="sovereign">
-  <div class="sovereign-inner reveal">
-    <p class="sovereign-statement">${inline(statement)}</p>
-    <div class="sovereign-receipts">
-      <a href="${esc(localeHref(lang, 'privacy'))}">${esc(t('The privacy policy'))}</a>
-      <span class="sovereign-dot" aria-hidden="true">·</span>
-      <a href="${esc(localeHref(lang, 'verify-yourself'))}">${esc(t('Verify it yourself'))}</a>
-    </div>
-  </div>
-</section>`;
-}
-
-/**
- * Block 5 - AI, on your terms. Three short answers to the three things the
- * front-door reader does NOT know: who is in control, what it keeps costing, and
- * how it stays honest (plans/116 section 9). No tool-authoring claim here - that one is
- * gated on save-to-tool.
- */
-function aiBlock(lang: Lang): string {
-  const points: { title: string; desc: string }[] = [
-    { title: t('You are in control'), desc: t('AI helps only when you ask, and only with the piece you point it at. Nothing is decided for you.') },
-    { title: t('It stops costing'), desc: t('If AI helps make something once, the result is yours. Using it again is free, however many times you need it.') },
-    { title: t('It stays honest'), desc: t('A piece made by AI says so, and what you make carries your name instead of pretending to be someone else. Even the built-in help works this way: ask it a question and it answers with the manual’s own sentence and a link, never a made-up answer.') },
-  ];
-  // id="ai-terms", not "ai": the machines band's agents card already slugs its own
-  // "AI Agents" heading to id="ai", and two of them made #ai ambiguous (plans/167 L5).
-  return `<section class="ai-section" id="ai-terms">
-  <div class="ai-inner">
-    <div class="ai-head reveal">
-      <h2>${esc(t('AI, on your terms'))}</h2>
-      <p class="ai-lead">${esc(t('You never need AI here. If you want it, three things are worth knowing.'))}</p>
-    </div>
-    <div class="ai-points">
-      ${points.map((p, i) => `<div class="ai-point reveal reveal-${i + 1}"><strong>${esc(p.title)}</strong><p>${esc(p.desc)}</p></div>`).join('\n      ')}
-    </div>
-    <div class="section-more-row"><a class="section-more" href="${esc(localeHref(lang, 'ai-stance'))}">${esc(t('Where we stand on AI'))} <span aria-hidden="true">→</span></a></div>
-  </div>
-</section>`;
-}
-
-/**
- * Block 7 - who is behind this, and why. The progressive-disclosure turn, and the
- * only block on the page where "we" is the subject. Origin and stewardship only:
- * no roadmap, no commitments, no product copy.
- *
- * The paragraph has three homes (here, docs/faq.md, docs/trust.md) and one
- * wording; tests/docs-claims.test.ts pins the three byte-identical.
- */
-function whoIsBehindBlock(lang: Lang): string {
-  // CLAIMS-ALLOW: sceptic-paragraph - FINAL copy, pinned identical in three homes (plan 117 blocks 7 + section 6).
-  const scepticParagraph = '**We built Lolly for ourselves.** SUSE needed thousands of on-brand files, each with its name sealed inside, made without handing anything to outside services. So we built a tool that does all of it on the device, and released it as open source, like everything else we make. We keep maintaining it because we use it every day. **There is no obligation:** everything here works with or without us.';
-  // CLAIMS-ALLOW END
-  // The assurance, beside the pinned paragraph (plan 122 directive 4): the credential
-  // as fact, the unexpected-entrant motive as the interest-conflict answer. "We" is
-  // allowed in this block only. Public facts only: "more than three decades" is on
-  // record; function headcount and reporting lines never appear in public copy.
-  const assurance = t('Didn\'t expect an infrastructure company here? The problem with everyday creative tools and modern AI is where your data goes, and that is the problem SUSE has worked on for more than three decades, securing IT for the largest enterprises in the world.  We solve this challenge the way we fix everything:  in the open, used in confidence, zero-trust creative sovereignty for all.');
-  return `<section class="behind-section" id="behind">
-  <div class="behind-inner reveal">
-    <span class="behind-eyebrow">${esc(t('Who is behind this'))}</span>
-    <div class="behind-cols">
-      <p class="behind-para">${inline(t(scepticParagraph))}</p>
-      <p class="behind-para behind-assure">${inline(assurance)}</p>
-    </div>
-    <div class="behind-foot">
-      ${FOUNDED_BY}
-      <div class="behind-links">
-        <a href="${esc(localeHref(lang, 'trust'))}">${esc(t('Trust'))}</a>
-        <span class="behind-dot" aria-hidden="true">·</span>
-        <a href="${esc(localeHref(lang, 'about'))}">${esc(t('About'))}</a>
-      </div>
-    </div>
-  </div>
-</section>`;
-}
-
-/**
- * The refusal (plan 122 block 11) - replaces the social-proof and open-source bands.
- * The trio stated once, simply: free, open, blind - plus the visible vote. No "we"
- * here: the who-is-behind block owns that voice; the subjects are Lolly and the reader.
- */
-function refusalBlock(lang: Lang): string {
-  const beats: { title: string; desc: string }[] = [
-    { title: t('Free, and it stays free'), desc: t('A version that has been released is licensed so it can never be taken back. The free Lolly always exists, whatever happens next.') },
-    { title: t('Open source'), desc: t('Read it, run it, fork it, keep it. Nothing on this page needs to be believed: the code is public and the claims are checkable.') },
-    { title: t('Blind by design'), desc: t('Lolly reports nothing back. Nobody, the makers included, can see who runs it or what they make. A tool that cannot see you has nothing to sell about you.') },
-    { title: t('Your vote, visible'), desc: t('Your work never goes where you have no say. Anything that touches the internet happens because you chose it, at the moment you chose it, and the code that keeps that promise is open for anyone to read.') },
-  ];
-  return `<section class="refusal-section" id="refusal">
-  <div class="assure-inner">
-    <h2 class="refusal-title reveal">${esc(t('Nothing to sell you, nothing to take'))}</h2>
-    <div class="refusal-row">
-      <div class="tool-features refusal-beats">
-        ${beats.map((b, i) => `<div class="tool-feature reveal reveal-${(i % 6) + 1}"><strong>${esc(b.title)}</strong><p>${esc(b.desc)}</p></div>`).join('\n        ')}
-      </div>
-      ${credentialedMascot('/info/mascots/ringtail-possum.webp', 'refusal-mascot')}
-    </div>
-  </div>
-</section>`;
-}
-
-/**
- * Block 9 - the teasers left behind by the two bands that moved to their own
- * pages. One plain line, one link, the reference content one click away.
- */
-function teaserSection(o: { id?: string; text: string; cta: string; href: string }): string {
-  return `<section class="teaser-section"${o.id ? ` id="${o.id}"` : ''}>
-  <div class="teaser-inner reveal">
-    <p class="teaser-line">${esc(o.text)}</p>
-    <a class="section-more" href="${esc(o.href)}">${esc(o.cta)} <span aria-hidden="true">→</span></a>
-  </div>
-</section>`;
-}
-
-function buildLandingContent(md: string, lang: Lang = 'en') {
-  const rawSections = md.split(/\n---\n/);
-  const heroSection      = rawSections[0]!;
-  const audienceSections = rawSections.slice(1, -1);
-  const tailSection      = rawSections[rawSections.length - 1]!;
-
-  const heroSubtitle = heroSection.split('\n')
-    .filter(l => l.trim() && !l.startsWith('#'))
-    .map(l => esc(l.trim())).join('<br>').trim();
-
-  function parseAudienceCard(section: string) {
-    const lines = section.split('\n');
-    const h2 = lines.find(l => l.startsWith('## '))?.slice(3).trim() ?? '';
-    const h3 = lines.find(l => l.startsWith('### '))?.slice(4).trim() ?? '';
-    const bullets = lines.filter(l => /^- /.test(l)).map(l => l.slice(2).trim());
-    // Extract first prose paragraph after the h3
-    let intro = '';
-    const h3Idx = lines.findIndex(l => l.startsWith('### '));
-    if (h3Idx >= 0) {
-      for (let j = h3Idx + 1; j < lines.length; j++) {
-        const l = lines[j]!.trim();
-        if (!l) continue;
-        if (l.startsWith('#') || l.startsWith('-') || l.startsWith('`')) break;
-        intro = l; break;
-      }
-    }
-    let inCode = false, codeLang = '', codeLines: string[] = [];
-    const codeBlocks: { lang: string; code: string }[] = [];
-    for (const l of lines) {
-      if (l.startsWith('```') && !inCode)  { inCode = true; codeLang = l.slice(3); codeLines = []; }
-      else if (l.startsWith('```') && inCode) { inCode = false; codeBlocks.push({ lang: codeLang, code: codeLines.join('\n') }); }
-      else if (inCode) codeLines.push(l);
-    }
-    return { h2, h3, intro, bullets, codeBlocks };
-  }
-
-  const cardData = audienceSections.map(s => parseAudienceCard(s));
-
-  // English heading per card, for locale-stable icons + slugs. For English this IS the
-  // card's own heading; for every other locale it's the same-index English heading.
-  const enH2 = lang === 'en' ? cardData.map(c => c.h2) : englishAudienceH2s();
-  const iconOf = (i: number, h2: string) => getIcon(enH2[i] ?? h2);
-  const slugOf = (i: number, h2: string) => toSlug(enH2[i] ?? h2);
-
-  // Plan 122 block 7: the last two authored sections (AI Agents, IT & Security) are
-  // not human roles, so they leave the tab strip for their own quiet band below. The
-  // split is by POSITION, so every locale twin (same section order) splits identically
-  // with its index-keyed icons intact - no site.md restructure, no locale desync.
-  const MACHINE_TABS = 2;
-  const humanData = cardData.slice(0, Math.max(0, cardData.length - MACHINE_TABS));
-  const machineData = cardData.slice(Math.max(0, cardData.length - MACHINE_TABS));
-
-  // The everyday audience's own tab, first and default (plan 122 block 7). Authored
-  // here with t() rather than in site.md so every locale falls back to English until
-  // the wave, and the index-keyed icon/slug wiring for the authored tabs never shifts.
-  const anyoneCard = {
-    h2: t('Anyone with something to make'),
-    h3: t('The everyday jobs, finished properly.'),
-    intro: t('A poster for the fete, a price list for the stall, an invitation with a code that just works. You type the words; the layout, colours and type are already right.'),
-    bullets: [
-      t('**No account, no set-up.** Open it and start; the first file takes about a minute.'),
-      t('**It comes out right.** The design decisions are already made, so you cannot pick the wrong font.'),
-      t('**The old way was waiting for a favour or fighting a template site.** Here it is type, look, done.'),
-      t('**Make three now.** [Make something in 60 seconds](/info/make-something.html) walks you through.'),
-    ],
-    codeBlocks: [] as { lang: string; code: string }[],
-  };
-  const humanTabs = [anyoneCard, ...humanData];
-  const tabSlug = (i: number, h2: string) => (i === 0 ? 'anyone' : slugOf(i - 1, h2));
-  const tabIcon = (i: number, h2: string) => (i === 0 ? ICONS.platform : iconOf(i - 1, h2));
-
-  // Tab strip with header. Plan 123 D1 final form (Andy, 2026-08-17): CSS-ONLY tabs.
-  // Hidden radio inputs sit as direct siblings ahead of the strip and the panels; each
-  // compact pill is a <label> for its radio, and docs-landing.css's
-  // `:checked ~ .audience-panels` pairing rules (index-matched nth-of-type/nth-child)
-  // show exactly one card. No script on either surface - the in-app reader rehosts this
-  // markup untouched and it just works. Keyboard is the native radio group (labels
-  // focus/arrow through the radios; the focus ring rides the paired pill). An old
-  // #slug deep link still opens its card through the `.audience-card:target` hatch.
-  const audienceChrome = loadSiteJson('audience-chrome.json', lang) as { title: string; subtitle: string };
-  const tabsHtml = `<div class="audience-header reveal">
-  ${credentialedMascot('/info/mascots/quoll.webp', 'audience-mascot')}
-  <div class="audience-header-text">
-    <h2 class="audience-title">${esc(audienceChrome.title)}</h2>
-    <p class="audience-sub">${esc(audienceChrome.subtitle)}</p>
-  </div>
-</div>
-${humanTabs.map(({ h2 }, i) => `<input class="aud-radio" type="radio" name="audience" id="aud-${tabSlug(i, h2)}"${i === 0 ? ' checked' : ''}>`).join('\n')}
-<div class="audience-tabs">
-${humanTabs.map(({ h2 }, i) => `  <label class="audience-tab" for="aud-${tabSlug(i, h2)}">
-    <span class="tab-icon">${tabIcon(i, h2)}</span>
-    <span class="tab-label">${esc(tabLabel(h2))}</span>
-  </label>`).join('\n')}
-</div>`;
-
-  // The card ids are unchanged across every D1 iteration, so old #slug links keep
-  // landing. The machines band's cards are NEVER gated: the hide rule anchors on a
-  // preceding .aud-radio sibling, and that section has none.
-  const renderAudienceCard = (
-    { h2, h3, intro, bullets, codeBlocks }: ReturnType<typeof parseAudienceCard>,
-    opts: { id: string; icon: string },
-  ) => `<div class="audience-card" id="${opts.id}">
-  <div class="card-main">
-    <div class="card-icon">${opts.icon}</div>
-    <div class="card-audience">${esc(h2)}</div>
-    <div class="card-tagline">${inline(h3)}</div>
-    ${intro ? `<p class="card-intro">${inline(intro)}</p>` : ''}
-    ${codeBlocks[0] ? `<pre><code class="language-${esc(codeBlocks[0]!.lang)}">${esc(codeBlocks[0]!.code)}</code></pre>` : ''}
-  </div>
-  <ul class="card-benefits">${bullets.map(b => `<li><span class="bullet-icon">${getBulletIcon(b)}</span><span>${inline(b)}</span></li>`).join('')}</ul>
-</div>`;
-
-  // Cards as full-width panels (two-column on desktop)
-  const cardsHtml = humanTabs.map((card, i) =>
-    renderAudienceCard(card, { id: tabSlug(i, card.h2), icon: tabIcon(i, card.h2) })).join('\n');
-
-  // The machines band's two sections wear CONTRASTING treatments (Andy, 2026-08-17):
-  // the same card grid twice read as one undifferentiated slab. By POSITION, matching
-  // the plan-122 split rule so every locale renders identically: the FIRST machine
-  // section (AI Agents, the one with a code block) is a deep split panel where the
-  // prompt IS the hero, framed as a terminal pane; every other section is a light
-  // ruled audit sheet, one claim per row. Copy untouched; card ids keep their slugs.
-  const renderMachineCard = (
-    { h2, h3, intro, bullets, codeBlocks }: ReturnType<typeof parseAudienceCard>,
-    opts: { id: string; icon: string; kind: 'agents' | 'audit' },
-  ) => {
-    const eyebrow = `<div class="mc-eyebrow"><span class="mc-ic">${opts.icon}</span>${esc(h2)}</div>`;
-    const head = `${eyebrow}
-    <h3 class="mc-title">${inline(h3)}</h3>
-    ${intro ? `<p class="mc-intro">${inline(intro)}</p>` : ''}`;
-    const rows = bullets.map(b =>
-      `<li><span class="bullet-icon">${getBulletIcon(b)}</span><span>${inline(b)}</span></li>`).join('');
-    if (opts.kind === 'agents') {
-      return `<div class="machine-card machine-card--agents reveal" id="${opts.id}">
-  <div class="mc-main">
-    ${head}
-    <ul class="mc-points">${rows}</ul>
-  </div>
-  ${codeBlocks[0] ? `<div class="mc-term">
-    
-    <pre><code class="language-${esc(codeBlocks[0]!.lang)}">${esc(codeBlocks[0]!.code)}</code></pre>
-  </div>` : ''}
-</div>`;
-    }
-    return `<div class="machine-card machine-card--audit reveal" id="${opts.id}">
-  <div class="mc-main">${head}</div>
-  <ul class="mc-audit">${rows}</ul>
-</div>`;
-  };
-
-  // The machines band: always visible, no tabs - a reader is either sent here or
-  // scrolls past it, and neither needs a click (plan 122 block 7).
-  const machinesHtml = machineData.length ? `<section class="audience-section machines-section">
-  <div class="audience-header reveal">
-    <div class="audience-header-text">
-      <h2 class="audience-title machines-title">${esc(t('Also built for machines'))}</h2>
-      <p class="audience-sub">${esc(t('An agent fills in the same tools a person does, and the people who answer for them get the security case at technical depth.'))}</p>
-    </div>
-  </div>
-  <div class="machines-band">
-    ${machineData.map((card, i) =>
-      renderMachineCard(card, {
-        id: slugOf(humanData.length + i, card.h2),
-        icon: iconOf(humanData.length + i, card.h2),
-        kind: i === 0 && card.codeBlocks.length ? 'agents' : 'audit',
-      })).join('\n')}
-  </div>
-</section>` : '';
-
-  // Parse platform features and "What's a tool?" from tail. Locate the two `## `
-  // headings ("The Creator", "The Tools" in the English source) by ORDINAL
-  // POSITION, not literal English text - a translated tail section keeps the
-  // same two headings in the same order, but with translated text, so a
-  // startsWith('## The Tools')-style match would find nothing (findIndex → -1)
-  // for every non-English locale and silently drop the whole whats-a-tool
-  // section (whatsLines.length gates it) instead of falling back to English.
-  const tailLines  = tailSection.split('\n');
-  const tailH2Indices = tailLines.map((l, i) => (l.startsWith('## ') ? i : -1)).filter(i => i >= 0);
-  const platformIdx = tailH2Indices[0] ?? -1;
-  const whatsIdx    = tailH2Indices[1] ?? -1;
-
-  const platformFeatures = tailLines
-    .slice(platformIdx + 1, whatsIdx >= 0 ? whatsIdx : undefined)
-    .filter(l => l.startsWith('**'))
-    .map(l => {
-      const m = l.match(/^\*\*([^*]+)\*\*\.?\s*(.*)/);
-      return m ? { title: m[1]!, desc: m[2]! } : null;
-    // filter(Boolean) drops the nulls but doesn't narrow the type; cast to the non-null shape.
-    }).filter(Boolean) as { title: string; desc: string }[];
-
-  const whatsLines = whatsIdx >= 0
-    ? tailLines.slice(whatsIdx + 1).filter(l => l.trim() && !l.startsWith('#'))
-    : [];
-
-  // Platform feature renderer. A bullet whose description is a "·"-separated chip
-  // list still renders as chips (kept for flexibility); everything else - including
-  // the formats bullet, now a plain "creates N / ingests N" fact - renders as prose.
-  // The full format breakdown lives in its own Formats section, not this box.
-  function renderPlatformFeature(f: { title: string; desc: string }, idx = 0) {
-    const isChipList = f.desc.includes('·') &&
-      (f.title.toLowerCase().includes('format') || f.title.toLowerCase().includes('huge'));
-    const body = isChipList
-      ? `<div class="format-chips">${f.desc.split(/\s·\s|·/).map(fmt => `<span class="format-chip">${esc(fmt.trim())}</span>`).join('')}</div>`
-      : `<p>${inline(f.desc)}</p>`;
-    return `<div class="platform-feature reveal reveal-${(idx % 6) + 1}">
-  <div class="platform-feature-icon">${getPlatformIcon(f.title)}</div>
-  <strong>${esc(f.title)}</strong>
-  ${body}
-</div>`;
-  }
-
-  const whatsATool = loadSiteJson('whats-a-tool.json', lang) as {
-    heading: string; lead: string;
-    anatomy: { file: string; name: string; desc: string }[];
-    features: { icon: string; title: string; desc: string }[];
-    tryNow: { title: string; desc: string; cta: string; href: string };
-  };
-  const ANATOMY_HTML = `<div class="tool-anatomy reveal reveal-1">
-  ${whatsATool.anatomy.map((p, i) => `${i > 0 ? '<div class="tool-plus">+</div>' : ''}
-  <div class="tool-part">
-    <div class="tool-part-file">${esc(p.file)}</div>
-    <div class="tool-part-name">${esc(p.name)}</div>
-    <div class="tool-part-desc">${inline(p.desc)}</div>
-  </div>`).join('\n  ')}
-</div>`;
-
-  // Plan 123 D1: the audience strip is anchor pills over stacked cards, so the old tab
-  // activation script is gone. What survives of it is the one behaviour that never was
-  // about tabs: the top nav turning solid once the hero scrolls away. (querySelector
-  // 'nav' still finds the TOP nav - it is emitted before every other nav on the page.)
-  const NAV_SOLID_JS = `<script>
-(function(){
-  var nav=document.querySelector('nav');
-  var hero=document.querySelector('.hero');
-  // The floating Listen pill rides the same measurement (plans/168 WP-6). At 393px the
-  // hero's CTA stack fills the bottom of the first screen, so a bottom-right pill lands
-  // on the "Learn more" button - a tap collision, not just a smudge. While the hero is
-  // on screen the pill docks under the top nav instead; everywhere else it is the
-  // ordinary bottom-right float. Class is toggled at every width, the move is CSS-gated
-  // to phones (LISTEN_STYLE), so desktop is untouched.
-  var listen=document.querySelector('.listen-bar-float');
-  function updateNav(){
-    var heroBottom=hero?hero.getBoundingClientRect().bottom:0;
-    nav.classList.toggle('nav-solid',heroBottom<=0);
-    if(listen)listen.classList.toggle('over-hero',heroBottom>0);
-  }
-  window.addEventListener('scroll',updateNav,{passive:true});
-  updateNav();
-})();
-</script>`;
-
-  const everywhere = loadSiteJson('everywhere.json', lang) as {
-    heading: string; copy: string;
-    surfaces: { icon: string; label: string }[];
-    modelsIntro: string;
-    models: { n: string; icon: string; label: string; desc: string }[];
-  };
-
-  // Frequently asked questions - rendered as native <details> accordions (no JS,
-  // keyboard-accessible, works offline). Answers are markdown; blank lines split
-  // paragraphs. Add or edit an item in docs/faq.md (see loadFaqs above).
+function renderFaqPage(_md: string, lang: Lang): string {
   const FAQ_CHEVRON = `<svg viewBox="0 0 24 24" ${SITE_ICON_S}><polyline points="6 9 12 15 18 9"/></svg>`;
   const FAQS = loadFaqs(lang);
-
-  // Each question gets a stable slug id (same rule as markdown headings, prefixed
-  // `faq-`) so other surfaces can deep-link straight to it - e.g. the app's gallery
-  // "Utilities" strip links to #faq-what-makes-utilities-different-from-tools. The
-  // FAQ_JS script below opens the matching <details> and scrolls it into view.
-  // The slug is always built from the ENGLISH question, so one #faq-… anchor points at
-  // the same item on every locale page (docs/adoption-governance.md links one, and it
-  // is the same href in all 27 translations). Every docs/i18n/<lang>/faq.md is the same
-  // list in the same order, so pair by index; a translation that has drifted out of
-  // step falls back to its own text for that entry. The Latin-only rule strips
-  // non-Latin scripts to nothing, which used to collapse several Arabic, Hindi,
-  // Japanese, Ukrainian, … questions onto one id: an empty slug becomes its 1-based
-  // position, and a repeat gets a document-order suffix, so ids stay unique and
-  // identical from one build to the next.
+  // Stable per-question ids built from the ENGLISH question (same rule as markdown
+  // headings, prefixed `faq-`), so one #faq-… anchor points at the same item on
+  // every locale page. An empty slug (non-Latin question) becomes its 1-based
+  // position; a repeat gets a document-order suffix.
   const enFaqs = lang === 'en' ? FAQS : loadFaqs('en');
   const slugSeen = new Map<string, number>();
   const faqSlug = (q: string, i: number) => {
@@ -2033,22 +1713,6 @@ ${humanTabs.map(({ h2 }, i) => `  <label class="audience-tab" for="aud-${tabSlug
     slugSeen.set(base, n);
     return `faq-${base}${n > 1 ? `-${n}` : ''}`;
   };
-  const faqHtml = `<section class="faq-section" id="faq">
-  <div class="faq-inner reveal">
-    <h2>Questions &amp; answers</h2>
-    <p class="faq-lead">The things people ask most.</p>
-    <div class="faq-list">
-      ${FAQS.map((f, i) => `<details class="faq-item" id="${faqSlug(f.q, i)}">
-        <summary class="faq-q"><span>${inline(f.q)}</span><span class="faq-chevron">${FAQ_CHEVRON}</span></summary>
-        <div class="faq-a">${mdToHtml(f.a)}</div>
-      </details>`).join('\n      ')}
-    </div>
-  </div>
-</section>`;
-
-  // Deep-link an individual FAQ open: a #faq-… fragment (on load or via history
-  // back/forward) opens that <details> and scrolls it into view. A bare #faq still
-  // relies on the browser's native scroll to the section.
   const FAQ_JS = `<script>
 (function(){
   function openFaq(){
@@ -2064,285 +1728,398 @@ ${humanTabs.map(({ h2 }, i) => `  <label class="audience-tab" for="aud-${tabSlug
   window.addEventListener('hashchange', openFaq);
 })();
 </script>`;
+  return `<section class="faq-section faq-page" id="faq">
+  <div class="faq-inner">
+    <h2>${esc(t('Questions & answers'))}</h2>
+    <p class="faq-lead">${esc(t('The things people ask most.'))}</p>
+    <div class="faq-list">
+      ${FAQS.map((f, i) => `<details class="faq-item" id="${faqSlug(f.q, i)}">
+        <summary class="faq-q"><span>${inline(f.q)}</span><span class="faq-chevron">${FAQ_CHEVRON}</span></summary>
+        <div class="faq-a">${mdToHtml(f.a)}</div>
+      </details>`).join('\n      ')}
+    </div>
+  </div>
+</section>
+${FAQ_JS}`;
+}
 
-  const QUICKNAV_JS = `<script>(function(){
-  var nav=document.querySelector('.quicknav');if(!nav)return;
-  var links=[].slice.call(nav.querySelectorAll('a'));
-  var targets=links.map(function(a){return {a:a,el:document.getElementById(a.getAttribute('href').slice(1))};}).filter(function(x){return x.el;});
-  if(!targets.length)return;var raf=0;
-  function update(){raf=0;var line=window.innerHeight*0.35,cur=targets[0];
-    for(var i=0;i<targets.length;i++){if(targets[i].el.getBoundingClientRect().top<=line)cur=targets[i];}
-    links.forEach(function(a){a.classList.toggle('is-current',a===cur.a);});}
-  function onScroll(){if(!raf)raf=requestAnimationFrame(update);}
-  addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll,{passive:true});update();
-})();</script>`;
+/** /info/start/make-something.html opens with the three worked scenes - they moved
+ *  here from the landing (plans/177 disposition; the covers carry the show-me job
+ *  on the door now). NAMED function for check-docs-nav's brace-free match. */
+function renderMakeSomethingPage(md: string, lang: Lang): string {
+  return `${makeSomethingBlock(lang)}\n${mdToHtml(md)}`;
+}
 
-  const qol = loadSiteJson('qol.json', lang) as { panels: { heading: string; desc: string }[] };
-  const QOL_HTML = `<section class="qol-section">
-  <div class="qol-inner">
-    ${qol.panels.map((p, i) => `<div class="qol-panel reveal${i > 0 ? ` reveal-${i}` : ''}">
-      <div class="qol-text">
-        <h3>${esc(p.heading)}</h3>
-        <p>${inline(p.desc)}</p>
+// ── The landing's copy is DATA: docs/site/*.json (plans/177 P4) ─────────────
+// One file per beat - hero-chrome (the cycle + CTAs), covers, whatwhy, persona,
+// behind - documented in docs/site/README.md. build.ts is the RENDERER only.
+// Every copy string is read through localizeSiteJson, which looks it up in the
+// site catalogue (t(), English-as-key, identity fallback) and leaves the keys in
+// LANDING_I18N_SKIP alone: routes, slugs, file names, css classes, counter
+// names and code notes are never copy. scripts/translate.ts carries the SAME
+// list (its site corpus walks these files with it) and
+// tests/docs-landing-i18n.test.ts pins the two lists and the file list equal,
+// so a key added on one side cannot be quietly missed on the other.
+const LANDING_I18N_SKIP = ['href', 'slug', 'class', 'img', 'video', 'mascot', 'id', 'count', 'note'];
+function localizeSiteJson<T>(value: T, key = ''): T {
+  if (typeof value === 'string') return (LANDING_I18N_SKIP.includes(key) ? value : t(value)) as T;
+  if (Array.isArray(value)) return value.map((v) => localizeSiteJson(v, key)) as T;
+  if (value && typeof value === 'object') {
+    const out: Record<string, unknown> = {};
+    for (const [k, v] of Object.entries(value as Record<string, unknown>)) out[k] = localizeSiteJson(v, k);
+    return out as T;
+  }
+  return value;
+}
+/** A landing beat file, localised. English-only on disk by design: no locale
+ *  twin lookup here (siteContentPath is the older twin mechanism the import and
+ *  formats bands still use). */
+function loadLandingJson<T>(name: string): T {
+  return localizeSiteJson(JSON.parse(readFileSync(resolve(__dirname, 'site', name), 'utf8')) as T);
+}
+
+interface HeroChrome {
+  lead: string;
+  cycle: Array<{ word: string; slug: string }>;
+  ctas: Array<{ href: string; label: string; class: string }>;
+}
+interface LandingCover { img: string; video?: string; name: string; promise: string; href: string; alt: string }
+interface CoversJson { label: string; open: string; prev: string; next: string; pick: string; covers: LandingCover[] }
+interface WhatWhyJson {
+  what: { eyebrow: string; heading: string; body: string; more: { label: string; slug: string } };
+  stats: Array<{ count: string; label: string; slug: string }>;
+  why: { eyebrow: string; heading: string; statement: string; receipts: Array<{ label: string; slug: string }>; more: { label: string; slug: string } };
+}
+interface Lane { tab: string; pitch: string; mascot?: string; links?: Array<{ label: string; slug?: string; href?: string; note?: string }>; cta?: { label: string; href: string }; doc: { label: string; slug: string } }
+interface Door { id: string; name: string; sub: string; mascot: string; lanes: Lane[] }
+interface PersonaJson { title: string; doors: Door[] }
+interface BehindJson { eyebrow: string; sceptic: string; links: Array<{ label: string; slug: string }>; quiet: string }
+interface WorkJson { eyebrow: string; heading: string; body: string; links: Array<{ label: string; href: string }> }
+
+/** An app route (`#/tool/design`) goes through appHref (carries the reader's
+ *  locale); anything else is a site path through localizeHref. */
+const landingCtaHref = (lang: Lang, href: string): string => (href.startsWith('#') ? appHref(lang, href) : localizeHref(lang, href));
+
+/**
+ * The Cover Flow motion: shells/web/src/lib/covers-flow.ts, bundled ONCE per
+ * build into the landing's inline covers script. It is the very module the
+ * in-app reader imports for #/docs/index (lib/docs-landing.ts), so the two
+ * surfaces cannot drift - the earlier hand-kept twin (COVERS_JS here plus a
+ * TypeScript copy there) is gone. esbuild is already the docs player's bundler.
+ */
+let _coversJs: string | null = null;
+function coversScript(): string {
+  if (_coversJs === null) {
+    const out = buildSync({
+      entryPoints: [resolve(repoRoot, 'shells/web/src/lib/covers-flow.ts')],
+      bundle: true,
+      write: false,
+      format: 'iife',
+      globalName: 'LollyCoverFlow',
+      minify: true,
+      platform: 'browser',
+      target: 'es2019',
+      logLevel: 'silent',
+    });
+    _coversJs = out.outputFiles[0]!.text.trim();
+  }
+  return `<script>\n${_coversJs}\nLollyCoverFlow.mountCoverFlow(document);\n</script>`;
+}
+
+/**
+ * The lolly.work band (Andy, 2026-09-02): one small beat for the organisation that
+ * wants the same tools with governance around them - the control plane that lives
+ * in the public lolly-work repository and the hosted sandbox at lolly.work. Copy:
+ * docs/site/work.json; the two links are external, so they open in a new tab.
+ * Product-level only: what it does, where the code is, where to try it.
+ */
+function workBand(lang: Lang): string {
+  const w = loadLandingJson<WorkJson>('work.json');
+  void lang;
+  return `<section class="work-section" id="work">
+  <div class="work-inner reveal">
+    <span class="work-eyebrow">${esc(w.eyebrow)}</span>
+    <div class="work-cols">
+      <div class="work-copy">
+        <h2 class="work-heading">${esc(w.heading)}</h2>
+        <p class="work-body">${esc(w.body)}</p>
       </div>
-    </div>`).join('\n    ')}
+      <div class="work-links">
+        ${w.links.map((l, i) => `<a class="${i === 0 ? 'btn btn-primary btn-compact' : 'work-link'}" href="${esc(l.href)}" target="_blank" rel="noopener">${esc(l.label)}</a>`).join('\n        ')}
+      </div>
+    </div>
   </div>
 </section>`;
+}
 
-  const assure = loadSiteJson('assure.json', lang) as {
-    eyebrow: string; heading: string; lead: string;
-    checks: { title: string; desc: string }[];
-    cards: { icon: string; title: string; desc: string }[];
-    cta: string; ctaHref: string;
-  };
-  const ASSURE_HTML = `<section class="assure-section" id="trust">
-  <div class="assure-inner">
-    <div class="assure-lede-row reveal">
-      <div class="assure-lede">
-        <span class="assure-eyebrow">${esc(assure.eyebrow)}</span>
-        <h2>${br(assure.heading)}</h2>
-        <p class="assure-lead">${inline(assure.lead)}</p>
+/**
+ * Block 5 - who is behind this, and why. The progressive-disclosure turn, and the
+ * only block on the page where "we" is the subject. Origin and stewardship only:
+ * no roadmap, no commitments, no product copy. Copy: docs/site/behind.json.
+ *
+ * The sceptic paragraph has three homes (behind.json, docs/faq.md, docs/trust.md)
+ * and one wording; tests/docs-claims.test.ts pins the three byte-identical. It
+ * stands alone since 2026-09-02 (Andy: "shorten the Who is behind this section") -
+ * the SUSE assurance paragraph that used to sit beside it lives on trust.md and the
+ * operators' Security lane. Public facts only, never headcounts.
+ */
+function whoIsBehindBlock(lang: Lang): string {
+  const b = loadLandingJson<BehindJson>('behind.json');
+  return `<section class="behind-section" id="behind">
+  <div class="behind-inner reveal">
+    <span class="behind-eyebrow">${esc(b.eyebrow)}</span>
+    <p class="behind-para behind-para--solo">${inline(b.sceptic)}</p>
+    <div class="behind-foot">
+      ${FOUNDED_BY}
+      <div class="behind-links">
+        ${b.links.map((l) => `<a href="${esc(localeHref(lang, l.slug))}">${esc(l.label)}</a>`).join('\n        <span class="behind-dot" aria-hidden="true">·</span>\n        ')}
       </div>
-      ${credentialedMascot('/info/mascots/magpie.webp', 'assure-mascot')}
     </div>
-    <div class="assure-main reveal reveal-1">
-      <ul class="assure-checks">
-        ${assure.checks.map(c => `<li><span class="assure-check-ic">${siteIcon('assureCheck')}</span><div><strong>${esc(c.title)}</strong><span>${inline(c.desc)}</span></div></li>`).join('\n        ')}
-      </ul>
-    </div>
-    <div class="assure-grid reveal reveal-2">
-      ${assure.cards.map(c => `<div class="assure-card"><span class="assure-card-ic">${siteIcon(c.icon)}</span><strong>${esc(c.title)}</strong><p>${inline(c.desc)}</p></div>`).join('\n      ')}
-    </div>
-    <div class="assure-cta reveal reveal-3"><a href="${esc(localizeHref(lang, assure.ctaHref))}">${esc(assure.cta)}</a></div>
-    <p class="assure-status reveal reveal-3">${esc(t('Lolly is very new: cryptography and security testing are undergoing SUSE’s infrastructure hardening now. Content Credentials and local encryption are strong by design'))}</p>
-    ${ASSURE_DOC_LINKS(lang)}
+    <p class="behind-quiet">${esc(b.quiet)}</p>
   </div>
 </section>`;
+}
 
-  // ── "Why we built Lolly" + old-way vs Lolly-way matrix ──────────────────────
-  // The emotional hook for the people who actually have to adopt Lolly - the
-  // non-designers. Names the three everyday frustrations, then puts the old way
-  // and the Lolly way literally side by side (friction → relief), left vs right.
-  const why = loadSiteJson('why.json', lang) as {
-    eyebrow: string; heading: string; lead: string;
-    frustrations: { icon: string; title: string; desc: string }[];
-    matrix: { pain: string; relief: string }[];
-  };
-  const WHY_MATRIX_HTML = `<section class="why-section" id="why">
-  <div class="why-inner">
-    <div class="why-lede reveal">
-      <div class="why-lede-text">
-        <span class="why-eyebrow">${esc(why.eyebrow)}</span>
-        <h2>${br(why.heading)}</h2>
-        <p class="why-lead">${inline(why.lead)}</p>
-      </div>
-      ${credentialedMascot('/info/mascots/quokka.webp', 'why-mascot')}
-    </div>
-    <div class="why-frustrations reveal reveal-1">
-      ${why.frustrations.map(f => `<div class="why-frustration"><span class="why-frustration-ic">${siteIcon(f.icon)}</span><strong>${esc(f.title)}</strong><p>${inline(f.desc)}</p></div>`).join('\n      ')}
-    </div>
-    <div class="matrix reveal reveal-2" role="table" aria-label="The old way compared with the Lolly way">
-      <div class="matrix-head matrix-head--old" role="columnheader">The old way</div>
-      <div class="matrix-head matrix-head--new" role="columnheader">The Lolly way</div>
-      ${why.matrix.map(r => `<div class="matrix-cell matrix-cell--old" role="cell"><span class="matrix-mark" aria-hidden="true">✕</span><span>${esc(r.pain)}</span></div>
-      <div class="matrix-cell matrix-cell--new" role="cell"><span class="matrix-mark" aria-hidden="true">✓</span><span>${esc(r.relief)}</span></div>`).join('\n      ')}
-    </div>
-    <div class="section-more-row"><a class="section-more" href="${esc(localeHref(lang, 'status-quo'))}">${esc(t('The trade we never agreed to: the full story'))} <span aria-hidden="true">→</span></a></div>
-  </div>
-</section>`;
+// ── The landing (plans/177: five beats, top to bottom) ───────────────────────
+// 1 hero ("Lolly is …" cycling its five claims) · 2 covers (the studios in the
+// app's own Cover Flow gesture) · 3 what/why (the counts; the sovereignty
+// statement's one home) · 4 the persona device (top tabs + side tabs, CSS-only
+// radios so the in-app reader rehosts it working, scripts stripped) · 5 who is
+// behind this. Everything the previous landing carried beyond these lives on
+// the docs page the plan's disposition table names. The copy is docs/site/*.json;
+// only the hero's tagline and one-liner come from site.md.
+function buildLandingContent(md: string, lang: Lang = 'en') {
+  const rawSections = md.split(/\n---\n/);
+  const heroSection = rawSections[0]!;
+  // The hero tag + one-liner: site.md section[0]'s non-heading lines. A locale
+  // twin not yet re-translated still carries its old multi-line subtitle; the
+  // extra lines simply render as further subtitle rows until the wave.
+  const heroLines = heroSection.split('\n')
+    .filter(l => l.trim() && !l.startsWith('#'))
+    .map(l => esc(l.trim()));
 
-  // The pilot chip left the hero on 2026-08-16 (plan 122 block 1): nothing that says
-  // "closed" may share a screen with "Launch App". The honest status line lives in the
-  // assure band instead (ASSURE_STATUS below), capability-first. Locale twins may still
-  // carry the retired pilot* keys; they are simply unread.
-  const heroChrome = loadSiteJson('hero-chrome.json', lang) as {
-    statement: string;
-    ctas: { href: string; label: string; class: string }[];
-    trustChips: string[]; toolCountSuffix: string;
-  };
-  const pathways = loadSiteJson('pathways.json', lang) as {
-    title: string; lead: string;
-    cards: { href: string; icon: string; eyebrow: string; name: string; desc: string; cta: string }[];
-  };
-  const platformChrome = loadSiteJson('platform-chrome.json', lang) as { whatsLabel: string; heading: string; tagline: string };
-  // social-proof.json and opensource.md retired from the landing 2026-08-16 (plan 122
-  // block 11): both bands folded into refusalBlock(). The files stay for the locale
-  // twins' sake until the wave, unread by this build.
-  const aboutItems = loadSiteJson('about-items.json', lang) as { icon: string; desc: string }[];
-  // about.md: heading / lead paragraph / subheading, 3 blocks split on a blank line
-  // (kept a dedicated parse rather than mdToHtml so the lead paragraph keeps its
-  // `.about-lead` styling class, which generic markdown has no way to express).
-  const aboutMdBlocks = loadSiteMd('about.md', lang).trim().split(/\n\s*\n/);
-  const aboutMd = {
-    heading: (aboutMdBlocks[0] ?? '').replace(/^#+\s*/, '').trim(),
-    lead: (aboutMdBlocks[1] ?? '').trim(),
-    subheading: (aboutMdBlocks[2] ?? '').replace(/^#+\s*/, '').trim(),
-  };
-  return `
-<div class="hero-wrap">
-<canvas id="heroCanvas" aria-hidden="true"></canvas>
-<section class="hero">
+  const hero = loadLandingJson<HeroChrome>('hero-chrome.json');
+  if (hero.cycle.length < 2) throw new Error('docs/site/hero-chrome.json: the hero cycle needs at least two words');
+  const cycleData = hero.cycle.map(c => ({ w: c.word, h: localeHref(lang, c.slug) }));
+
+  const HERO_CYCLE_JS = `<script>
+(function(){
+  var a=document.getElementById('heroCycle');if(!a)return;
+  var data;try{data=JSON.parse(a.getAttribute('data-cycle'))}catch(e){return}
+  if(!data||data.length<2)return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return; // the first word stands
+  var word=a.querySelector('span')||a,i=0,hold=0;
+  function set(n){
+    i=(n+data.length)%data.length;
+    a.classList.add('is-swapping');
+    setTimeout(function(){word.textContent=data[i].w;a.setAttribute('href',data[i].h);a.classList.remove('is-swapping');},240);
+  }
+  // Hovering or focusing the word holds the cycle so it stays clickable.
+  a.addEventListener('mouseenter',function(){hold=Math.max(hold,Date.now()+6000);});
+  a.addEventListener('focus',function(){hold=Math.max(hold,Date.now()+6000);});
+  setInterval(function(){if(Date.now()>hold&&!document.hidden)set(i+1);},2800);
+})();
+</script>`;
+
+  // ── beat 1: hero ───────────────────────────────────────────────────────────
+  const heroHtml = `<section class="hero">
   <div class="hero-inner">
   <div class="hero-heading">
     <div class="hero-logo-slot"><div class="hero-logo-mark"><a href="${esc(localizeHref(lang, '/'))}" class="hero-logo-link" aria-label="Open Lolly - browse all tools"><img src="/info/icon.svg" alt="Lolly" class="hero-logo"><img src="/icons/hero-still.png" alt="" aria-hidden="true" class="hero-logo-still"></a></div>${HERO_VERIFY(lang)}</div>
   </div>
   <div class="hero-details">
-    <h1 class="hero-statement">${esc(heroChrome.statement)}</h1>
-    <p class="subtitle">${heroSubtitle}</p>
+    <h1 class="hero-statement hero-statement--cycle"><span class="cycle-lead">${esc(hero.lead)}</span>
+      <a id="heroCycle" class="cycle-word" data-cycle="${esc(JSON.stringify(cycleData)).replace(/"/g, '&quot;')}" href="${esc(localeHref(lang, hero.cycle[0]!.slug))}"><span>${esc(hero.cycle[0]!.word)}</span></a>
+      <span class="sr-only">${esc(hero.cycle.slice(1).map(c => c.word).join(', '))}</span></h1>
+    <p class="subtitle">${heroLines.join('<br>')}</p>
     <div class="hero-cta">
-      ${heroChrome.ctas.map(c => `<a href="${esc(localizeHref(lang, c.href))}" class="${esc(c.class)}">${esc(c.label)}</a>`).join('\n      ')}
+      ${hero.ctas.map(c => `<a href="${esc(localizeHref(lang, c.href))}" class="${esc(c.class)}">${esc(c.label)}</a>`).join('\n      ')}
     </div>
+  </div>
+  </div>
+</section>`;
+
+  // ── beat 2: the covers ─────────────────────────────────────────────────────
+  // Ten studios in the app's own Cover Flow. Day-one images are committed docs
+  // shots (/info/shots/); a cover with `video` becomes a WebM loop with `img`
+  // as its poster (the posed-cover follow-up drops files in and edits JSON).
+  // The base layout is a scroll-snap filmstrip that swipes natively (and works
+  // with scripts stripped); coversScript() upgrades it to the 3-D fan from
+  // 720px up. `href` is an app route (appHref carries the reader's locale).
+  const cv = loadLandingJson<CoversJson>('covers.json');
+  const coverMedia = (c: LandingCover): string => c.video
+    ? `<video src="/info/shots/${esc(c.video)}" poster="/info/shots/${esc(c.img)}" autoplay muted loop playsinline preload="metadata" aria-label="${esc(c.alt)}"></video>`
+    : `<img src="/info/shots/${esc(c.img)}" alt="${esc(c.alt)}" loading="lazy" decoding="async">`;
+  // No heading row above the fan (Andy, 2026-09-02: "remove this row of text,
+  // it's not needed") - the covers speak for themselves.
+  const coversHtml = `<section class="covers-section" id="covers">
+  <div class="covers-inner">
+    <div class="covers" id="coversRoot" role="region" aria-roledescription="carousel" aria-label="${esc(cv.label)}" tabindex="0">
+      <div class="covers-strip" id="coversStrip">
+        ${cv.covers.map((c, i) => `<a class="cover-card${i === 0 ? ' is-cur' : ''}" data-i="${i}" href="${esc(appHref(lang, c.href))}">
+          ${coverMedia(c)}
+          <span class="cover-cap"><b>${esc(c.name)}</b><i>${esc(c.promise)}</i></span>
+        </a>`).join('\n        ')}
+      </div>
+      <a class="covers-open-btn" id="coversOpen" data-tpl="${esc(cv.open)}" href="#"><span></span> <span aria-hidden="true">→</span></a>
+      <div class="covers-nav" hidden>
+        <button type="button" class="covers-btn" data-covers="prev" aria-label="${esc(cv.prev)}">‹</button>
+        <div class="covers-dots" role="tablist" aria-label="${esc(cv.pick)}"></div>
+        <button type="button" class="covers-btn" data-covers="next" aria-label="${esc(cv.next)}">›</button>
+      </div>
+    </div>
+  </div>
+</section>`;
+
+  // ── beat 3: what / why ─────────────────────────────────────────────────────
+  // The Why column is the home of the offline claim (plans/177 moved it here
+  // from the retired standalone block; still said once) - the short form, Andy
+  // 2026-09-02; the full statement lives on docs/trust.md verbatim. The counts
+  // are LIVE: whatwhy.json names a counter, never a number.
+  const ww = loadLandingJson<WhatWhyJson>('whatwhy.json');
+  const counts = formatCounts();
+  const LIVE_COUNTS: Record<string, number> = { tools: TOOL_COUNT, formatsOut: counts.out, formatsIn: counts.in, languages: LANGS.length };
+  const stats = ww.stats.map((s) => {
+    const n = LIVE_COUNTS[s.count];
+    if (n === undefined) throw new Error(`docs/site/whatwhy.json: unknown live counter "${s.count}" (one of ${Object.keys(LIVE_COUNTS).join(', ')})`);
+    return { n: String(n), label: s.label, slug: s.slug };
+  });
+  const whatWhyHtml = `<section class="whatwhy-section" id="why">
+  <div class="whatwhy-inner">
+    <div class="whatwhy-col reveal">
+      <span class="whatwhy-eyebrow">${esc(ww.what.eyebrow)}</span>
+      <h2 class="whatwhy-big">${esc(ww.what.heading)}</h2>
+      <p class="whatwhy-body">${esc(ww.what.body)}</p>
+      <div class="whatwhy-stats">
+        ${stats.map(s => `<a class="whatwhy-stat" href="${esc(localeHref(lang, s.slug))}"><b>${esc(s.n)}</b><span>${esc(s.label)}</span></a>`).join('\n        ')}
+      </div>
+      <a class="whatwhy-more" href="${esc(localeHref(lang, ww.what.more.slug))}">${esc(ww.what.more.label)} <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="whatwhy-col reveal reveal-2">
+      <span class="whatwhy-eyebrow">${esc(ww.why.eyebrow)}</span>
+      <h2 class="whatwhy-big">${esc(ww.why.heading)}</h2>
+      <p class="whatwhy-maxim">${inline(ww.why.statement)}</p>
+
+      <div class="whatwhy-receipts">
+        ${ww.why.receipts.map((r) => `<a href="${esc(localeHref(lang, r.slug))}">${esc(r.label)}</a>`).join('\n        <span class="sovereign-dot" aria-hidden="true">·</span>\n        ')}
+      </div>
+      <a class="whatwhy-more" href="${esc(localeHref(lang, ww.why.more.slug))}">${esc(ww.why.more.label)} <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>`;
+
+  // ── beat 4: the persona device ─────────────────────────────────────────────
+  // Top tabs (Creators / Builders / Operators) with SIDE TABS for the
+  // sub-sections (Andy, 2026-09-02): detail without leaving the door. CSS-ONLY,
+  // the audience-strip precedent: hidden radios + labels + nth-matched pairing
+  // rules in docs-landing.css, so the in-app reader (which strips scripts)
+  // rehosts a fully working device. Keyboard is the native radio group. Each
+  // pane's primary call to action jumps into the APP; the docs page is the
+  // compromise (plans/177 CTA policy - the URLs are pinned in docs-claims).
+  // The door tabs wear the quokka / koala / echidna. A lane with `mascot` (the
+  // magpie guards Security) shows it figure-sized beside its pane's copy, at the
+  // inline end, through the same credentialed wrapper as the import band's
+  // kookaburra - not on the side tab, where a 24px glyph read as an icon (Andy,
+  // 2026-09-02). It is emitted BEFORE the copy so the phone stylesheet can float
+  // it and wrap the copy around it; desktop `order` moves it to the end of the
+  // row. Drop a credentialed .webp into shells/web/public/info/mascots/ and
+  // name it in persona.json.
+  const persona = loadLandingJson<PersonaJson>('persona.json');
+  const lanePane = (l: Lane): string => `<div class="lane-pane">
+    ${l.mascot ? credentialedMascot(`/info/mascots/${esc(l.mascot)}.webp`, 'lane-mascot') : ''}
+    <div class="lane-copy">
+      <h3>${esc(l.tab)}</h3>
+      <p class="lane-pitch">${esc(l.pitch)}</p>
+      ${l.links ? `<ul class="lane-links">${l.links.map(k => `<li><a href="${esc(k.href ? landingCtaHref(lang, k.href) : localeHref(lang, k.slug ?? 'index'))}"><span>${esc(k.label)}</span>${k.note ? `<code>${esc(k.note)}</code>` : ''}</a></li>`).join('')}</ul>` : ''}
+      <div class="lane-cta">
+        ${l.cta ? `<a class="btn btn-primary btn-compact" href="${esc(landingCtaHref(lang, l.cta.href))}">${esc(l.cta.label)}</a>` : ''}
+        <a class="lane-doc" href="${esc(localeHref(lang, l.doc.slug))}">${esc(l.doc.label)} <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>`;
+  const doorPane = (d: Door): string => `<div class="persona-pane" data-door="${esc(d.id)}">
+    ${d.lanes.map((l, i) => `<input class="lane-radio" type="radio" name="lane-${esc(d.id)}" id="lane-${esc(d.id)}-${i}"${i === 0 ? ' checked' : ''} aria-label="${esc(l.tab)}">`).join('\n    ')}
+    <div class="lane-cols">
+      <div class="lane-tabs">
+        ${d.lanes.map((l, i) => `<label class="lane-tab" for="lane-${esc(d.id)}-${i}"><span>${esc(l.tab)}</span></label>`).join('\n        ')}
+      </div>
+      <div class="lane-panes">
+        ${d.lanes.map(lanePane).join('\n        ')}
+      </div>
+    </div>
+  </div>`;
+  const personaHtml = `<section class="persona-section" id="who">
+  <div class="persona-inner">
+    <h2 class="persona-title reveal">${esc(persona.title)}</h2>
+    ${persona.doors.map((d, i) => `<input class="persona-radio" type="radio" name="persona-door" id="door-${esc(d.id)}"${i === 0 ? ' checked' : ''} aria-label="${esc(d.name)}">`).join('\n    ')}
+    <div class="persona-tabs">
+      ${persona.doors.map((d) => `<label class="persona-tab" for="door-${esc(d.id)}"><span class="persona-name">${esc(d.name)}</span><span class="persona-sub">${esc(d.sub)}</span><img class="persona-mascot" src="/info/mascots/${esc(d.mascot)}.webp" alt="" loading="lazy" decoding="async"></label>`).join('\n      ')}
+    </div>
+    <div class="persona-panes">
+      ${persona.doors.map(doorPane).join('\n      ')}
+    </div>
+  </div>
+</section>`;
+
+  // ── beat 4a: get the app ───────────────────────────────────────────────────
+  // The download rail closed the hero until 2026-09-02; it now sits between the
+  // persona device and the lolly.work band (Andy), so a reader meets the tiles
+  // after the pitch rather than before it. Same rail, same tile styles: the band
+  // paints the hero's dark surface under it so the on-band-dark colours hold.
+  const downloadsHtml = `<section class="downloads-section" id="get-the-app">
+  <div class="downloads-inner reveal">
     ${downloadsRail(lang)}
-    <div class="hero-trust">
-      ${heroChrome.trustChips.map(c => `<span>${esc(c)}</span>`).join('\n      <span class="trust-dot">·</span>\n      ')}
-      <span class="trust-dot">·</span>
-      <span>${heroChrome.toolCountSuffix.includes('{count}')
-        ? esc(heroChrome.toolCountSuffix).replace('{count}', String(TOOL_COUNT))
-        : `${TOOL_COUNT} ${esc(heroChrome.toolCountSuffix)}`}</span>
-    </div>
-    <div class="hero-founded">${FOUNDED_BY}</div>
   </div>
-  </div>
+</section>`;
 
-</section>
-<section class="pathways-section reveal" id="start">
-  <div class="pathways-inner">
-    <div class="pathways-head">
-      ${credentialedMascot('/info/mascots/echidna.webp', 'pathways-mascot')}
-      <div class="pathways-headtext">
-        <h2 class="pathways-title">${esc(pathways.title)}</h2>
-        <p class="pathways-lead">${inline(pathways.lead)}</p>
-      </div>
-    </div>
-    <div class="pathways-grid">
-      ${pathways.cards.map(c => `<a class="pathway-card" href="${esc(c.href)}">
-        <span class="pathway-ic" aria-hidden="true">${(ICONS as Record<string, string>)[c.icon] ?? ''}</span>
-        <span class="pathway-eyebrow">${esc(c.eyebrow)}</span>
-        <span class="pathway-name">${esc(c.name)}</span>
-        <span class="pathway-desc">${esc(c.desc)}</span>
-        <span class="pathway-go">${esc(c.cta)}</span>
-      </a>`).join('\n      ')}
-    </div>
-  </div>
-</section>
-</div>
-<nav class="quicknav" aria-label="${esc(t('On this page'))}">
-  <div class="quicknav-inner">
-    <a href="#start">${esc(t('Start here'))}</a>
-    <a href="#make">${esc(t('Make something'))}</a>
-    <a href="#why">${esc(t('Why Lolly'))}</a>
-    <a href="#tools">${esc(t('Tools'))}</a>
-    <a href="#formats">${esc(t('Formats'))}</a>
-    <a href="#trust">${esc(t('Trust'))}</a>
-    <a href="#everywhere">${esc(t('Everywhere'))}</a>
-    <a href="#faq">${esc(t('FAQ'))}</a>
-    <a class="quicknav-app" href="${esc(appHref(lang, '#/start'))}">${esc(t('Make it yours'))} <span aria-hidden="true">→</span></a>
-  </div>
-</nav>${makeSomethingBlock(lang)}
-${WHY_MATRIX_HTML}
-${sovereigntyBlock(lang)}
-${aiBlock(lang)}
-<section class="audience-section">
-  ${tabsHtml}
-  <div class="audience-panels">
-    ${cardsHtml}
-  </div>
-</section>
-${machinesHtml}
-<div class="platform-whats-wrap">
-<div class="whats-label">${esc(platformChrome.whatsLabel)}</div>
-<section class="platform-section">
-  <div class="platform-inner">
-    <div class="platform-header reveal">
-      <h2>${esc(platformChrome.heading)}</h2>
-      <p class="platform-tagline">${esc(platformChrome.tagline)}</p>
-    </div>
-    <div class="platform-features">
-      ${platformFeatures.map((f, i) => renderPlatformFeature(f, i)).join('\n      ')}
-    </div>
-  </div>
-</section>
-${whatsLines.length ? `<section class="whats-a-tool" id="tools">
-  <div class="whats-inner">
-  <h2 class="reveal">${esc(whatsATool.heading)}</h2>
-  <p class="tool-lead reveal reveal-1">${br(whatsATool.lead)}</p>
-  ${ANATOMY_HTML}
-  <div class="tool-features">
-    ${whatsATool.features.map((f, i) => `<div class="tool-feature reveal reveal-${((i + 1) % 6) + 1}">
-      <div class="tool-feature-icon">${siteIcon(f.icon)}</div>
-      <strong>${esc(f.title)}</strong>
-      <p>${inline(f.desc)}</p>
-    </div>`).join('\n    ')}
-  </div>
-  <div class="try-now-callout">
-    <div class="try-now-text">
-      <strong>${esc(whatsATool.tryNow.title)}</strong>
-      <p>${esc(whatsATool.tryNow.desc)}</p>
-    </div>
-    <a href="${esc(localizeHref(lang, whatsATool.tryNow.href))}" class="btn btn-primary">${esc(whatsATool.tryNow.cta)}</a>
-  </div>
-  </div>
-</section>` : ''}
-</div>
-${teaserSection({
-  id: 'formats',
-  text: t('Lolly opens {in} kinds of file and makes {out}, and {both} of them go both ways.')
-    .replace('{in}', String(formatCounts().in))
-    .replace('{out}', String(formatCounts().out))
-    .replace('{both}', String(formatCounts().both)),
-  cta: t('See everything Lolly can open and make'),
-  href: localeHref(lang, 'formats'),
-})}
-${QOL_HTML}
+  const NAV_SOLID_JS = `<script>
+(function(){
+  var nav=document.querySelector('nav');
+  var hero=document.querySelector('.hero');
+  // The floating Listen pill rides the same measurement (plans/168 WP-6). At 393px the
+  // hero's CTA stack fills the bottom of the first screen, so a bottom-right pill would
+  // sit on the hero's controls - a tap collision, not just a smudge. While the hero is
+  // on screen the pill docks under the top nav instead; everywhere else it is the
+  // ordinary bottom-right float. Class is toggled at every width, the move is CSS-gated
+  // to phones (LISTEN_STYLE), so desktop is untouched.
+  var listen=document.querySelector('.listen-bar-float');
+  // The dark wrap holds the hero AND the covers band (one chip field behind both);
+  // its gradient is sized to the hero through --hero-h so the covers stay flat.
+  var wrap=document.querySelector('.hero-wrap');
+  function fitHero(){if(wrap&&hero)wrap.style.setProperty('--hero-h',hero.offsetHeight+'px');}
+  if(window.ResizeObserver&&hero)new ResizeObserver(fitHero).observe(hero);
+  fitHero();
+  function updateNav(){
+    var heroBottom=hero?hero.getBoundingClientRect().bottom:0;
+    nav.classList.toggle('nav-solid',heroBottom<=0);
+    if(listen)listen.classList.toggle('over-hero',heroBottom>0);
+  }
+  window.addEventListener('scroll',updateNav,{passive:true});
+  updateNav();
+})();
+</script>`;
+
+  // The hero and the covers band share one dark surface: the wrap holds both, so
+  // the chip field (#heroCanvas, absolute inset:0) runs on behind the covers
+  // (Andy, 2026-09-02). The wrap's gradient is sized to the hero alone (--hero-h,
+  // measured in NAV_SOLID_JS), so the covers keep the flat colour they had as a
+  // band of their own.
+  const darkBandHtml = `<div class="hero-wrap">
+<canvas id="heroCanvas" aria-hidden="true"></canvas>
+${heroHtml}
+${coversHtml}
+</div>`;
+  return `${darkBandHtml}
+${whatWhyHtml}
+${personaHtml}
+${downloadsHtml}
+${workBand(lang)}
 ${whoIsBehindBlock(lang)}
-${ASSURE_HTML}
-${teaserSection({
-  // CLAIMS-ALLOW: app-names - Figma/Penpot/Illustrator/InDesign here are the names of
-  // FILES a reader already owns, which is interop vocabulary, not a competitive claim.
-  text: t("Already have designs? They aren't stranded - bring Figma, Penpot, Illustrator, InDesign or any SVG."),
-  // CLAIMS-ALLOW END
-  cta: t('How importing a design works'),
-  href: localeHref(lang, 'design-import'),
-})}
-<section class="everywhere-section" id="everywhere">
-  <div class="everywhere-inner reveal">
-    <div class="everywhere-head">
-      ${credentialedMascot('/info/mascots/wedge-tailed-eagle.webp', 'everywhere-mascot')}
-      <h2>${br(everywhere.heading)}</h2>
-    </div>
-    <p class="everywhere-copy">${br(everywhere.copy)}</p>
-    <div class="everywhere-chips">
-      ${everywhere.surfaces.map(s => `<span class="everywhere-chip">${siteIcon(s.icon)}<span>${esc(s.label)}</span></span>`).join('')}
-    </div>
-  </div>
-  <div class="section-more-row reveal"><a class="section-more" href="${esc(localeHref(lang, 'deployment'))}">${esc(t('Run it yourself'))} <span aria-hidden="true">→</span></a></div>
-</section>
-${refusalBlock(lang)}
-<section class="about-section">
-  <div class="about-inner reveal">
-    <div class="about-header">
-      ${credentialedMascot('/info/mascots/koala.webp', 'about-mascot')}
-      <div class="about-header-text">
-        <h2>${esc(aboutMd.heading)}</h2>
-        <p class="about-lead">${inline(aboutMd.lead)}</p>
-      </div>
-    </div>
-
-    <h3>${esc(aboutMd.subheading)}</h3>
-    <div class="about-items">
-      ${aboutItems.map(it => `<div class="about-item">
-        <div class="about-item-icon">${siteIcon(it.icon)}</div>
-        <p>${inline(it.desc)}</p>
-      </div>`).join('\n      ')}
-    </div>
-
-  </div>
-</section>
-${faqHtml}
 ${NAV_SOLID_JS}
-${FAQ_JS}
-${QUICKNAV_JS}`;
+${HERO_CYCLE_JS}
+${coversScript()}`;
 }
+
 // ═══ LANDING COPY REGION END ═════════════════════════════════════════════════
 
 // ── Format side-door pages (plan 116 workstream A) ───────────────────────────
@@ -3935,7 +3712,11 @@ const LIQUID_GLASS_SCRIPT = `<script>(function(){
     // Clear any filters from a previous pass so a re-run (e.g. after webfonts change
     // the button size) rebuilds cleanly instead of stacking duplicate-id filters.
     document.querySelectorAll('svg.lg-svg').forEach(function(s){ s.remove(); });
-    document.querySelectorAll('.btn-primary,.btn-secondary').forEach(function(btn,i){
+    // .btn-compact (the persona lanes, plans/177) opts OUT: over the pane's flat
+    // ground the displacement backdrop paints the button blank in some renderers,
+    // and the glass reads as hero jewellery anyway - small utility buttons keep
+    // their plain fill.
+    document.querySelectorAll('.btn-primary:not(.btn-compact),.btn-secondary:not(.btn-compact)').forEach(function(btn,i){
       try{ buildGlass(btn,i); }catch(e){ if(window.console)console.warn('liquid-glass failed',e); }
     });
   }
@@ -4011,8 +3792,10 @@ window.__lollyChipField=function(canvas,opt){
   var palette=opt.palette||defaultPal;
   var pal=palette();
   // Ambient chip population scales with canvas width so wide heroes aren't sparse
-  // and narrow/mobile ones aren't crowded.
-  function targetFloaters(){ return Math.max(5, Math.min(14, Math.round(cw/100))); }
+  // and narrow/mobile ones aren't crowded - and with height past a hero's worth,
+  // since the landing's field runs on behind the covers band: twice the height at
+  // the same count would be half the density. Short mastheads are unaffected.
+  function targetFloaters(){ return Math.max(5, Math.min(22, Math.round(cw/100*Math.max(1, ch/600)))); }
   // Logical (CSS-pixel) canvas size. The backing store is scaled by devicePixelRatio
   // so the animation stays crisp on HiDPI/Retina displays instead of being a 1x
   // bitmap the browser upscales; all motion math below stays in these logical units.
@@ -4552,19 +4335,21 @@ function resolvePageSrc(page: Page, lang: Lang): string {
   return resolve(__dirname, page.src);
 }
 
-// English lives at /info/<slug>.html (unprefixed, unchanged URLs); every other
-// locale lives under /info/<lang>/<slug>.html.
+// English lives at /info/<door>/<slug>.html (the landing at /info/); every
+// other locale mirrors the tree under /info/<lang>/… (plans/177 P1).
 function localeHref(lang: Lang, slug: string): string {
   // A generated side-door page carries a directory-style slug (formats/svg,
   // convert/heic-to-jpg) and is served from its own folder as .../index.html,
   // so its URL is the directory, not a .html file. No hand-authored page slug
   // has a slash, so this branch only ever fires for the generated pages.
   if (slug.includes('/')) return lang === 'en' ? `/info/${slug}/` : `/info/${lang}/${slug}/`;
-  const file = slug === 'index' ? 'index.html' : `${slug}.html`;
+  const file = slug === 'index' ? 'index.html' : `${pathSlug(slug)}.html`;
   return lang === 'en' ? `/info/${file}` : `/info/${lang}/${file}`;
 }
 function hrefToSlug(href: string): string {
-  return href.replace(/^\/info\//, '').replace(/\.html$/, '');
+  const bare = href.replace(/^\/info\//, '').replace(/\.html$/, '');
+  const m = bare.match(/^([\w-]+)\/([\w-]+)$/);
+  return m && DOOR_DIRS.has(m[1]!) ? m[2]! : bare;
 }
 
 // Rewrite an href authored in the (always-English) landing-page JSON content -
@@ -4576,8 +4361,12 @@ function hrefToSlug(href: string): string {
 // it has no per-locale path to link to instead.
 function localizeHref(lang: Lang, href: string): string {
   if (href === '/') return lang === 'en' ? '/' : `/?lang=${lang}`;
-  const m = href.match(/^\/info\/([\w-]+)\.html$/);
-  return m ? localeHref(lang, m[1]!) : href;
+  // Accept both the flat authored form (/info/<slug>.html - content JSON keeps
+  // writing this; localeHref doorizes it) and an already-doored href.
+  const m = href.match(/^\/info\/(?:([\w-]+)\/)?([\w-]+)\.html$/);
+  if (!m) return href;
+  if (m[1] && !DOOR_DIRS.has(m[1])) return href;
+  return localeHref(lang, m[2]!);
 }
 
 // Language-switcher indicator (~/Build/language-icon.svg), inlined with
@@ -4781,7 +4570,7 @@ const PATHWAY_HUB: Record<Pathway, string> = {
  */
 interface SitemapSection { hub: Pathway; label: string; slugs: string[] }
 const FOOTER_SECTIONS: SitemapSection[] = [
-  { hub: 'quickstart', label: 'Quickstart', slugs: ['index', 'make-something', 'install', 'positioning', 'compare',
+  { hub: 'quickstart', label: 'Quickstart', slugs: ['index', 'make-something', 'install', 'faq', 'positioning', 'compare',
     'compare-canva', 'compare-adobe', 'compare-figma', 'compare-render-apis', 'compare-converters',
     'compare-penpot', 'compare-brand-portals'] },
   // Keeps the pathway's own name rather than the rail's "Make things", because the
@@ -4794,6 +4583,7 @@ const FOOTER_SECTIONS: SitemapSection[] = [
   { hub: 'builders', label: 'For Builders', slugs: [
     'overview', 'design-tokens', 'authoring-tools', 'authoring-assets', 'host-api', 'url-mode'] },
   { hub: 'operators', label: 'For Operators', slugs: [
+    'sales', 'press', 'marketing', 'legal',
     'adoption-governance', 'sovereign-production', 'deployment', 'configuration', 'build-guide', 'cli-signing'] },
   { hub: 'creators', label: 'Find your way', slugs: [
     'search', 'ask', 'dashboard', 'favourites', 'profile'] },
@@ -4908,7 +4698,9 @@ const SIDEBAR_ICON: Record<string, string> = {
   'sequence-editor': 'clock', animating: 'layers', exporting: 'download', formats: 'convert', positioning: 'sliders', compare: 'checklist',
   'compare-canva': 'checklist', 'compare-adobe': 'checklist', 'compare-figma': 'checklist', 'compare-render-apis': 'checklist', 'compare-converters': 'checklist',
   'compare-penpot': 'checklist', 'compare-brand-portals': 'checklist',
-  'make-something': 'pentool', install: 'download',
+  'make-something': 'pentool', install: 'download', faq: 'document',
+  // Operator playbooks (plans/177)
+  sales: 'people', press: 'document', marketing: 'photos', legal: 'lock',
   // Concepts: the locked rule set, the same-every-time check, the link as the artifact.
   constraints: 'lock', determinism: 'check', reproducibility: 'link',
   'sovereign-production': 'server',
@@ -5510,7 +5302,7 @@ function buildLlmsTxt(mdBySlug: Map<string, string>): string {
   const sections = LLMS_SECTIONS.map(({ pathway, label }) => {
     const lines = pages
       .filter((p) => p.pathway === pathway && mdBySlug.has(p.slug))
-      .map((p) => `- [${p.title}](${SITE_URL}/info/${p.slug}.md): ${mdDescription(mdBySlug.get(p.slug)!)}`);
+      .map((p) => `- [${p.title}](${SITE_URL}/info/${pathSlug(p.slug)}.md): ${mdDescription(mdBySlug.get(p.slug)!)}`);
     return `## ${label}\n\n${lines.join('\n')}`;
   });
   return `# Lolly
@@ -5525,7 +5317,7 @@ Reading this as an agent? Lolly speaks MCP, so you can act, not just read:
 connect at https://mcp.lolly.tools/mcp (full render tier) or
 ${SITE_URL}/api/mcp (browser-free tier: vector and data output). Access
 tokens come from the instance operator; endpoints, auth and the tool list:
-${SITE_URL}/info/mcp.md and ${SITE_URL}/info/ai-agents.md. Machine-readable
+${SITE_URL}/info/${pathSlug('mcp')}.md and ${SITE_URL}/info/${pathSlug('ai-agents')}.md. Machine-readable
 format claims: ${SITE_URL}/info/capabilities.json
 
 ${sections.join('\n\n')}
@@ -5577,6 +5369,15 @@ async function build() {
     mkdirSync(resolve(outDir, 'shots'), { recursive: true });
     for (const f of readdirSync(shotsSrc)) {
       if (/\.(png|svg|jpg)$/.test(f)) copyFileSync(resolve(shotsSrc, f), resolve(outDir, 'shots', f));
+    }
+    // The landing's cover media (plans/177): stills AND the short animated loops
+    // (webp/webm), one subdirectory, mirrored like the shots above it.
+    const coversSrc = resolve(shotsSrc, 'covers');
+    if (existsSync(coversSrc)) {
+      mkdirSync(resolve(outDir, 'shots', 'covers'), { recursive: true });
+      for (const f of readdirSync(coversSrc)) {
+        if (/\.(png|svg|jpg|webp|webm)$/.test(f)) copyFileSync(resolve(coversSrc, f), resolve(outDir, 'shots', 'covers', f));
+      }
     }
   }
 
@@ -5706,13 +5507,16 @@ async function build() {
       const content = page.isLanding ? buildLandingContent(md, lang)
         : page.render ? page.render(md, lang)
         : mdToHtml(md);
-      const html    = wrapPage(lang, page, content, ogSlugs, md);
-      const outFile = page.slug === 'index' ? 'index.html' : `${page.slug}.html`;
+      const html    = doorizeLinks(wrapPage(lang, page, content, ogSlugs, md));
+      const outFile = page.slug === 'index' ? 'index.html' : `${pathSlug(page.slug)}.html`;
+      if (outFile.includes('/')) mkdirSync(dirname(resolve(localeOutDir, outFile)), { recursive: true });
       writeFileSync(resolve(localeOutDir, outFile), html, 'utf-8');
       // Indexed from `content`, this locale's actual rendered body - so a locale
       // with no sidecar (English body inside translated chrome) indexes the English
       // it really shows, rather than claiming a translation it doesn't have.
-      searchRecords.push(...indexSections(content, page.slug, t(page.title)));
+      // The record's `p` is the PATH slug (create/using): the search script builds
+      // hrefs as /info/<p>.html, which is exactly the doored file.
+      searchRecords.push(...indexSections(content, pathSlug(page.slug), t(page.title)));
       console.log(`✓  ${localeHref(lang, page.slug)}`);
       if (lang === 'en') {
         sitemapUrls.push({ slug: page.slug, isLanding: page.isLanding });
@@ -5727,7 +5531,11 @@ async function build() {
         // Markdown twin: the verbatim English source, published next to the HTML
         // so agents (and llms.txt below) can read the docs without a DOM.
         const twin = stripLogoMarkers(unwrapFigureFences(unwrapProvenanceMarkers(commentStandaloneProvenanceLines(stripFrontMatter(md)))));
-        writeFileSync(resolve(outDir, `${page.slug}.md`), twin, 'utf-8');
+        // Written at the DOORED path beside its HTML (/info/<door>/<slug>.md):
+        // the search index records carry the doored path and the in-app Ask
+        // fetches `/info/<p>.md` from it (lib/ask/answer.ts), so a flat twin
+        // was a 404 for every moved page and the answer fell back to the snippet.
+        writeFileSync(resolve(outDir, `${pathSlug(page.slug)}.md`), twin, 'utf-8');
         mdBySlug.set(page.slug, twin);
       }
     }
@@ -5746,7 +5554,7 @@ async function build() {
       const html = wrapPage(lang, gp, content, ogSlugs, '');
       const dir = resolve(localeOutDir, 'formats', model.slug);
       mkdirSync(dir, { recursive: true });
-      writeFileSync(resolve(dir, 'index.html'), html, 'utf-8');
+      writeFileSync(resolve(dir, 'index.html'), doorizeLinks(html), 'utf-8');
       // One record per page (no id'd headings inside): the searcher who types a
       // format name must find its page, not only the formats table.
       searchRecords.push(...indexSections(content, slug, gp.title));
@@ -5761,7 +5569,7 @@ async function build() {
       const html = wrapPage(lang, gp, content, ogSlugs, '');
       const dir = resolve(localeOutDir, 'convert', model.slug);
       mkdirSync(dir, { recursive: true });
-      writeFileSync(resolve(dir, 'index.html'), html, 'utf-8');
+      writeFileSync(resolve(dir, 'index.html'), doorizeLinks(html), 'utf-8');
       searchRecords.push(...indexSections(content, slug, gp.title));
       if (lang === 'en') sitemapUrls.push({ slug });
       sideDoorCount++;

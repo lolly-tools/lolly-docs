@@ -30,6 +30,8 @@ Ta platforma jest bezpośrednią odpowiedzią:
 
 > **Programistyczna kreacja i treści na skalę** - generowanie zasobów bez pracy ręcznej, z regułami pod centralną kontrolą, dla pracowników, dostawców i partnerów.
 
+Lolly to nie miejsce, w którym powstaje system projektowy - to miejsce, w którym jest on produkowany. Pomyśl o tym jak o automacie do projektowania: dokonujesz wyboru, dostajesz wynik. Za każdym razem. Silnik dąży do najwyższej jakości, jaką dany format może uzyskać na sprzęcie, który masz przed sobą, a ten sam silnik tworzy ten sam plik na każdej platformie, na jaką trafia.
+
 Efektem jest **obfitość**: każde wydarzenie ma poprawne oznakowanie, każdy alert CVE pasuje do stylu firmowego, każda etykieta drukuje się czysto, każda stopka e-mail jest aktualna - wszystko bez zgłoszenia do działu projektowego. Platforma obsługuje powtarzalną, zoperacjonalizowaną kreację. Celowo nie jest to narzędzie do twórczości na zamówienie - projektanci nadal odpowiadają za flagowe prace.
 
 ### Innowacja probabilistyczna, skalowanie deterministyczne
@@ -431,11 +433,11 @@ Można komponować render dowolnego narzędzia: dziecko w formacie **SVG** pozos
 
 ## Czego celowo nie zrobiliśmy
 
-- **Brak EJS / brak dowolnego JS w szablonach.** Powierzchnia XSS wynosi zero. Logika żyje w `hooks.js`.
-- **Brak obowiązkowego CMS zasobów.** Poszczególne osoby wczytują własne pliki kreatywne bezpośrednio do swojego katalogu w aplikacji (widok [Katalog](/info/using.html) i Brand Studio) - bez serwera, bez konsoli administracyjnej. Praca jest przekazywana dalej jako **sesja**: link do udostępnienia niesie cały stan, a ta sama sesja podróżuje w kopii zapasowej lub przez sesję współpracy. Osoba kontrolująca wdrożenie może następnie zablokować udostępnioną sesję jako **szablon** - otworzyć link, zapisać jego wartości jako wpis szablonu w katalogu tego narzędzia w pakiecie marki i zatwierdzić commitem - po czym pojawia się on w selektorze "Nowy z szablonu" tego narzędzia i jest dostępny przez głęboki link jako `?template=<id>`. Git to krok blokujący właściciela wdrożenia, nigdy twórcy. Dla katalogu *współdzielonego i zarządzanego*, organizacja **może** zarządzać katalogiem zasobów w ten sam sposób i bramkować aktualizacje przez recenzję PR - to dostępny model zarządzania, nie wymóg aplikacji.
-- **Brak wymuszonego RBAC.** Otwarta aplikacja domyślnie ma publiczny dostęp; ryzyko dla marki jest zarządzane przez znaczniki dojrzałości i znaki wodne. Organizacja, która chce ściślejszej kontroli, nakłada własne uwierzytelnianie i powyższy katalog recenzowany przez git.
-- **Brak centralnej bazy danych.** Cały stan użytkownika jest lokalny na urządzeniu. Integracja z SUSE ID jest w planach, ale nie blokuje uruchomienia.
-- **Brak współdzielonej ścieżki kodu narzędzi/silnika.** Silnik jest open source; `tools/` i `assets/` pozostają zastrzeżoną treścią SUSE we własnych repozytoriach. Rozdzielenie jest egzekwowane (brak importów wzajemnych), dzięki czemu podział pozostaje czysty.
+- **Brak EJS / brak dowolnego JS w szablonach.** Powierzchnia ataku XSS wynosi zero. Logika mieszka w `hooks.js`.
+- **Brak obowiązkowego CMS-a zasobów.** Poszczególne osoby wprowadzają własne pliki kreatywne prosto do swojego katalogu w aplikacji (widok [Katalog](/info/using.html) oraz Brand Studio) - bez serwera, bez konsoli administracyjnej. Praca jest przekazywana dalej jako **sesja**: link udostępniający niesie cały stan, a ta sama sesja podróżuje w kopii zapasowej lub przez sesję współpracy. Kto kontroluje wdrożenie, może następnie zablokować udostępnioną sesję jako **szablon** - otworzyć link, zapisać jego wartości jako wpis szablonu w katalogu tego narzędzia w paczce marki i zatwierdzić commitem - po czym pojawia się on w selektorze narzędzia "New from template" i jest dostępny przez głęboki link jako `?template=<id>`. Git jest krokiem blokującym po stronie właściciela wdrożenia, nigdy twórcy. Dla katalogu *współdzielonego i zarządzanego* organizacja **może** zarządzać katalogiem zasobów w ten sam sposób i bramkować aktualizacje przez przegląd PR - to dostępny model zarządzania, a nie wymóg aplikacji.
+- **Brak wymuszonego RBAC.** Otwarta aplikacja jest domyślnie publicznie dostępna; ryzyko dla marki zarządzane jest przez znaczniki dojrzałości i znaki wodne. Organizacja, która chce ściślejszej kontroli, dokłada własne uwierzytelnianie oraz katalog recenzowany przez git opisany wyżej.
+- **Brak centralnej bazy danych.** Cały stan użytkownika jest przypisany do urządzenia. Integracja z SUSE ID jest w planach, ale nie blokuje startu.
+- **Brak wspólnej ścieżki kodu narzędzi/silnika.** Silnik jest open source, podobnie jak narzędzia niezależne od marki w `community/`; paczka marki, taka jak prywatna `brands/suse/`, niesie własne narzędzia i katalog na własnych warunkach. Tak czy inaczej rozdzielenie jest egzekwowane (brak importów krzyżowych z `engine/` do treści narzędzi), więc podział pozostaje czysty.
 
 ---
 
@@ -460,9 +462,13 @@ Ten sam cykl życia w Tauri. Ten sam cykl życia w CLI - jsdom dostarcza bezgło
 
 ## Status open source
 
-Katalogi `engine/`, `shells/`, `schemas/` i `docs/` są open source na licencji **MPL-2.0** - neutralna wobec dostawców platforma szkieletowa dla narzędzi marki, z każdą wydawalną jednostką podzieloną na własne repozytorium pod [github.com/lolly-tools](https://github.com/lolly-tools). `tools/` i `catalog/assets/` to treści specyficzne dla SUSE i pozostają **zastrzeżoną własnością SUSE** (wszelkie prawa zastrzeżone - zobacz `NOTICE.md` każdego repozytorium); nie są objęte licencją MPL.
+**Kod jest na licencji MPL-2.0.** `engine/`, `shells/*`, `services/*`, `schemas/` i `docs/` są open source na licencji **MPL-2.0** - neutralna wobec dostawców platforma szkieletowa dla narzędzi marki, z każdą jednostką wydawniczą we własnym repozytorium pod [github.com/lolly-tools](https://github.com/lolly-tools).
 
-Podział jest egzekwowany - nie ma importów wzajemnych z `engine/` do `tools/` ani `assets/` - dzięki czemu granica między platformą a treścią pozostaje czysta.
+**Treść narzędzi jest dostarczana jako paczki marki**, każda na własnych warunkach (zobacz `NOTICE.md` danej paczki). `community/` to publiczne repozytorium [`lolly-tools`](https://github.com/lolly-tools/lolly-tools), a jego narzędzia niezależne od marki także są na licencji MPL-2.0. `brands/suse/` to prywatna paczka `suse-lolly`: narzędzia SUSE i katalog SUSE, **własność SUSE**, w tym licencjonowana muzyka PremiumBeat. `brands/lolly-start/` to pusta marka startowa, której właścicielem jest to repozytorium. Czcionki są dostarczane wewnątrz paczki na licencji **SIL Open Font License 1.1** - paczka SUSE niesie kroje SUSE i SUSE Mono.
+
+`tools/` i `catalog/` w katalogu głównym repozytorium to ignorowane przez git *widoki*: profil składa je z `community/` oraz aktywnej paczki marki, dlatego każdy skrypt i każda powłoka odczytują te dwie ścieżki, nigdy paczkę bezpośrednio.
+
+Podział jest egzekwowany - nie ma importów krzyżowych z `engine/` do treści narzędzi - dzięki czemu granica między platformą a treścią pozostaje czysta.
 
 ---
 

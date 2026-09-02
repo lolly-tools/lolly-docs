@@ -80,7 +80,7 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 - **缩小到超过“适应”比例**（最小可到 20%），当你把元素暂存到离画框很远的地方时，可以借此看到整个粘贴板。
 - **可调整大小的画板。** 更改导出尺寸会原地调整画框大小；方框保持原有位置，因此你可以围绕现有内容重新取景。
 
-![Design 的自由画布——画板及其周围的粘贴板](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D17VVRa9swEP41ekyQLrbjPOyhVeeOrSsbG3lXbLkYZCnISmn264tO9irFhdJCoZQIpBNn9N2dvu_k3cOX1opeEuCTpeNkG0BDy8ljZe28pyDA74UlUC4WOyt0sxgOthW1JJAD9wv1y6rFQWCDMB6BAK-NdqLTBLg2thcqeAnk68vaKGOXg-yFdl29dPLBef8VAZ6V_qjUTloCvO-aRvlcc0QdhB58iCWDMVNnD1iSUIOcAvASY2qsEUeex-XSOEJ6koaT_6Q1iY89IY4mw4TCmmJYc9BNZKPQ00ywxxJS-BlqcnL2KfJF3xhZf3WdwwsMd8xZ4VEgEF6EGornaH-ByW_iHkVAj-aAtpcO7Y1R6kggX1Uz7ext1wt7PNEOk7BZ7UbtYCpKtj4NZ_YE-Doh_hOwHnff-1K_M83xlPmyiJhn8AbmL5C61nZSN8g00OlFoK2xkyjCRofOBro3g5N2OdPE2PqxIGjL1iCCIPA1SPSQpQ_B6qyIVyiCsp8s-_Gn2P76fpHfVlt6WV3_Lv5e5_6mul7cSVRFhiWhOIrsaaVTMbKZaUWNbQ-VMncGN__b_fwn-CAKeAQ&width=1360&height=850&dpi=192&waitMs=3000&format=png&localize=1&dark=1&filename=design)
+![Design's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D17VVRa9swEP41ekyQLrbjPOyhVeeOrSsbG3lXbLkYZCnISmn264tO9irFhdJCoZQIpBNn9N2dvu_k3cOX1opeEuCTpeNkG0BDy8ljZe28pyDA74UlUC4WOyt0sxgOthW1JJAD9wv1y6rFQWCDMB6BAK-NdqLTBLg2thcqeAnk68vaKGOXg-yFdl29dPLBef8VAZ6V_qjUTloCvO-aRvlcc0QdhB58iCWDMVNnD1iSUIOcAvASY2qsEUeex-XSOEJ6koaT_6Q1iY89IY4mw4TCmmJYc9BNZKPQ00ywxxJS-BlqcnL2KfJF3xhZf3WdwwsMd8xZ4VEgEF6EGornaH-ByW_iHkVAj-aAtpcO7Y1R6kggX1Uz7ext1wt7PNEOk7BZ7UbtYCpKtj4NZ_YE-Doh_hOwHnff-1K_M83xlPmyiJhn8AbmL5C61nZSN8g00OlFoK2xkyjCRofOBro3g5N2OdPE2PqxIGjL1iCCIPA1SPSQpQ_B6qyIVyiCsp8s-_Gn2P76fpHfVlt6WV3_Lv5e5_6mul7cSVRFhiWhOIrsaaVTMbKZaUWNbQ-VMncGN__b_fwn-CAKeAQ&width=1360&height=850&dpi=192&waitMs=3000&format=png&localize=1&dark=1&filename=design)
 
 **翻转所选内容。** 右键点击任意方框,选择 **Flip horizontal**(水平翻转)或 **Flip vertical**(垂直翻转)即可原地镜像,或按键盘上的 `Shift+H` / `Shift+V` - 之所以要加 Shift,是因为单独的 `V` 是 Pointer 工具。每个被选中的方框都沿自己的轴镜像,并作为一个撤销步骤记录;镜像是真正的变换,因此它会保留在导出的 SVG、PDF 和 PNG 中,而不只是停留在画布上。
 
@@ -161,7 +161,7 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 
 **转场**是预设，不是关键帧：淡入淡出、弹出、扩展、上升、下落、四种滑入、放大与缩小、倾斜、俯冲、旋转、漂移，或**硬切（无动画）**。位移距离会随对象大小缩放，因此同一个预设在整幅卡片和小小的徽标上都读得通。序列轨上相邻两个片段之间有一个**接缝标记**：点击它并选择**硬切**或**交叉淡化**，选择后立即生效并关闭。再次打开同一个标记可修改**时长（毫秒）**，然后按**完成**。交叉淡化会被存成前一个片段的淡出加后一个片段的淡入，导出时再由这一对推导出真正的叠化——这就是为什么交叉淡化在预览里看起来像两次淡变，在文件里却是一次真正的交接。
 
-**声音。** 添加一个**音频**片段，它会像其他片段一样待在时间轴上：波形、修剪、静音。（默认会话自带的那条生成式背景音乐是唯一的例外——它在导出时才合成，所以在你渲染之前，它的条形一直是空白且无声的。）按下麦克风即可把**旁白录制**直接录到时间轴上，带有预备倒数和电平表，录下的这一条会作为你自己的素材，保存在你开始录制的位置。音乐、对白和片段自带的声音都会进入导出的混音。（导出面板里的**音轨**是另一回事：一条铺在整段成片下方的背景音乐，带淡变和自动闪避。两者可以并存。）
+**声音。** 添加一个**音频**片段，它会像其他片段一样待在时间轴上：波形、修剪、静音。（默认会话自带的那条生成式背景音乐是唯一的例外——它在导出时才合成，所以在你渲染之前，它的条形一直是空白且无声的。）按下麦克风即可把**旁白录制**直接录到时间轴上，带有预备倒数和电平表，录下的这一条会作为你自己的素材，保存在你开始录制的位置。按下旁边的摄像头即可用同样的方式**录制视频**：拍摄过程中画面会按画板的导出尺寸裁切，因此这个小小的自拍预览显示的，正是会以满幅画面进入播放头处序列的内容——这也是从共享链接收集同事素材的方式。音乐、对白和片段自带的声音都会进入导出的混音。（导出面板里的**音轨**是另一回事：一条铺在整段成片下方的背景音乐，带淡变和自动闪避。两者可以并存。）
 
 **渲染它。** 动态导出是一次**确定性合成**，不是屏幕录制——每一帧都在精确的时间点被解码、绘制和编码，因此文件不取决于你的机器跟不跟得上，MP4 或 WebM 也没有实际的帧数上限。除非你自己填写时长，否则时长由时间轴本身的长度决定。Content Credentials 会像其他任何导出一样被打上。静帧导出给你的是播放头处的那一帧，或者通过输出尺寸旁的**帧数**字段导出一整张连拍表——见[导出](/info/exporting.html#stills-from-a-timed-composition)。
 
@@ -175,12 +175,12 @@ Design 工具拥有同一条时间轴，因此你不必换到另一个工具就�
 
 由多个**画板**组成的 Design 文档本身就是一套幻灯片。打开工具栏上的 **Lolly 菜单**并选择**演示**（最后一行），每个画板就会变成一张全屏幻灯片，顺序与画板在画布上的排列一致。演示运行在渲染后画板的副本上，因此底下的编辑器不会被碰到，退出后你会回到原来的位置。
 
-- 用**空格键**、`→`、**Page Down** 或点击屏幕右缘的长条**前进**；用 `←`、**Page Up** 或左缘的长条后退。**Home** 和 **End** 跳到第一张和最后一张。你一移动指针就会淡入一条小小的控制栏，停下后它会自行隐藏。
-- **总览**（`O` 或网格按钮）把每个画板按你在画布上给它们的排列一次铺开；点击其中一张即可打开。
-- **分步显示。** 右键点击一个方框，选择**在第 1 步显示**、**第 2 步**或**第 3 步**，取代默认的**始终可见**。该方框会等到你翻到它那一步才出现，于是一张幻灯片可以分批到齐；编号相同的方框一起出现。
-- **演讲者视图**（`S`）会打开第二个窗口，里面有当前这张、下一张、你为这张写的备注，以及一个走动的计时器。如果浏览器拦下了弹出窗口，它会退回为覆盖在演示之上的一个面板。备注按画板设置，绝不会出现在幻灯片本身上。
-- `B` 保持黑屏（按任意键让幻灯片回来），`F` 回到全屏，**Escape** 一次剥掉一层：从总览回到演示，从演示回到编辑器。
-- **展台模式。** 给某个画板设定**时长**，演示就会在那里停留这么久，然后在一条细进度条的伴随下自行前进；`K`（或暂停按钮，只有当某处设了时长时才出现）可以停止和重新开始。在链接里加上 `kiosk`，演示到末尾会绕回开头，这正是它能当作展示标牌的原因。
+- **前进(Advance)**:按 **Space** 键、`→`、**Page Down** 键,或点击屏幕右边缘的色带;按 `←`、**Page Up** 键或左边缘色带可返回上一步。**Home** 和 **End** 可跳转到第一张和最后一张画板。只要移动指针,一小条控制栏就会淡入显示,停止移动后又会自动隐藏。
+- **总览(Overview)**(按 `O` 或点击网格按钮)会按您在画布上排定的布局,一次性展示所有画板;点击其中一个即可打开。
+- **逐步显现。** 右键点击某个方框,选择 **Reveal at step 1**(第 1 步显现)、**2** 或 **3**,替代默认的 **Always visible**(始终可见)。该方框此后会一直等到您推进到对应步骤才会出现,幻灯片因此可以分批呈现;共用同一编号的方框会同时出现。
+- **演讲者视图(Speaker view)**(`S`)会打开第二个窗口,显示当前幻灯片、下一张幻灯片、该画板的备注,以及一个持续运行的计时器。如果浏览器阻止了弹出窗口,则会退回为叠加在演示上方的面板。备注按画板逐一设置,绝不会出现在幻灯片本身上。
+- `B` 会定格为黑屏(按任意键恢复幻灯片),`F` 返回全屏,**Escape** 则逐层退出:先从总览退回演示,再从演示退回编辑器。
+- **展台模式(Kiosk)。** 为画板设置一个 **Length**(时长),演示就会在该画板停留相应时间,随后在一条细进度条的提示下自动前进;`K`(或暂停按钮,只有当某个画板设置了时长后才会出现)可以停止并重新开始该流程。在链接中加上 `kiosk`,演示到末尾就会循环播放,这正是它能用作数字标牌的原因。
 
 演示本身也是一个链接。`?present` 直接进入演示，`s=` 指定幻灯片——序号、画板 id，或用 `id.step` 指定某个分步——而地址会随你翻页更新，所以你发出去的就是你正停在的那一张。工具作者请注意：这些参数记录在 [URL 模式](/info/url-mode.html#reserved-parameters)页面上。
 

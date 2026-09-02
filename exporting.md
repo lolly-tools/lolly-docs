@@ -124,6 +124,16 @@ Layout is approximate by design - the goal is faithful, reusable **content**, no
 
 PowerPoint is also a way **in** - the format round-trips. **Deck Builder** opens an existing `.pptx` as editable slides, snapped to your brand, and the **Rebrand a Deck** utility re-themes a deck in place - theme palette, hardcoded colours and fonts - without touching its charts, SmartArt or animations, handing back a `.pptx`. See [Import a design → Decks and documents](/info/design-import.html#decks-and-documents).
 
+## Penpot
+
+Any tool that can export SVG can also export a **Penpot file** (`.penpot`) - the document, ready to keep editing in Penpot rather than just to look at.
+
+- <!--i:layout--> From **Design**, each frame becomes a Penpot **board**, and every box on it carries over as its own editable shape - rectangle, ellipse, text, image or path - not a locked picture.
+- <!--i:pentool--> From any other tool, its vector render carries over the same way, as editable shapes. Where the render leans on an effect Penpot has no equivalent for, the whole render comes across as one picture instead - still on the board, just not editable piece by piece.
+- <!--i:palette--> The brand's colours and typographies land in the file's **Assets** panel, and the brand's design tokens land in its **Tokens** panel - the same DTCG token set Lolly's own palette uses, so a token edited in Penpot is a token edited in the brand.
+
+To open it, start Penpot, pick a project and choose **Import**. Signed in to Penpot from the export panel, **Send to Penpot** does that step for you - pick a project there and the file goes straight into it.
+
 ## DXF (cut files)
 
 Vector tools (Brand Lockup, QR Code, Street Map, Wayfinding Signage, Pose Geeko, the logo lockups, Diagram Builder) can export **DXF** - the AutoCAD R12 interchange format that laser cutters, vinyl plotters and CNC/CAD software read. Geometry is written as outline **paths in millimetres** (curves flattened to a fine tolerance), text is outlined to paths and colour maps to the nearest AutoCAD Color Index (which typically drives the tool/operation on a cutter). DXF is line-art only - a photographic or filtered region has no cut-path form and is dropped (Lolly warns), so use SVG/PDF when you need to keep raster content.
@@ -284,7 +294,7 @@ Every id the host can render, grouped. These are also the values for the URL `fo
 |---|---|
 | Raster | `png` · `jpg`/`jpeg` · `webp` · `avif` · `tiff` (RGB TIFF) · `cmyk-tiff` (Print TIFF) · `bmp` · `ico` |
 | Vector | `svg` · `svgz` (gzipped SVG) · `emf` · `wmf` · `eps` · `eps-cmyk` (EPS CMYK) · `dxf` (cut file) |
-| Page & document | `pdf` · `pdf-cmyk` (Print PDF) · `pptx` (PowerPoint) · `docx` (Word) · `odt` (OpenDocument Text) |
+| Page & document | `pdf` · `pdf-cmyk` (Print PDF) · `pptx` (PowerPoint) · `penpot` (Penpot design file) · `docx` (Word) · `odt` (OpenDocument Text) |
 | Motion | `gif` · `apng` (Animated PNG) · `webp-anim` (Animated WebP) · `svg-anim` (Animated SVG) · `webm` · `mp4` |
 | Audio | `wav` · `mp3` · `m4a` · `opus` |
 | Text & data | `html` · `md` · `txt` · `json` · `csv` · `ics` · `vcf` · `css` · `scss` · `gpl` (GIMP palette) |

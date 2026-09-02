@@ -1,94 +1,54 @@
 # Lolly pentru creatori
 
-Vrei să creezi ceva bun, rapid, și să iasă corect. Lolly este construit exact pentru asta: completezi câteva câmpuri, primești un fișier finit - aspectul, tipografia, regulile sunt impuse de unealtă, nu de ochiul tău (dacă nu vrei asta - atunci ai la îndemână o forță de producție media). Fără software de design, fără așteptare. Rulează pe propriul tău dispozitiv și funcționează offline.
+Completezi câteva câmpuri și iese un fișier finit, cu fonturile, culorile și layoutul deja decise pe propriul tău dispozitiv. Livrezi în câteva minute și arată de parcă ai petrecut ore întregi, iar pentru că regulile de brand sunt integrate în instrument, nu este niciodată numele tău pe fișierul care iese din brand. Alege mai jos direcția care se potrivește cu ce faci astăzi.
 
-**Ce câștigi:** livrezi în minute și arată ca și cum ai petrecut ore. Nu ești niciodată blocat așteptând un designer și, pentru că regulile de brand sunt integrate, numele tău nu apare niciodată pe un asset care nu respectă brandul. Pur și simplu arăți rapid, elegant și de încredere.
+Ești o mână într-o ștafetă: un developer poate extinde instrumentul pe care îl folosești într-un pipeline, iar un coleg îl poate rula autonom (self-serve), așa că [Ciclul de viață al unei campanii](/info/overview.html#the-lifecycle-of-a-campaign) urmărește o resursă prin toate cele trei perechi de mâini.
 
-Această pagină îți spune tot ce trebuie să știi pentru a obține maximul din Lolly.
+Nou aici? Începe cu **[Fă ceva în 60 de secunde](/info/make-something.html)** și revino odată ce știi ce parte vrei să aprofundezi. [Întrebări și răspunsuri](/info/faq.html) acoperă ce întreabă lumea înainte să aibă încredere într-un instrument gratuit. [Cum se compară Lolly](/info/positioning.html) este relatarea onestă despre când să alegi altceva.
 
-> **Ești o verigă într-o ștafetă.** Uneltele pe care le creezi nu se opresc la tine - un dezvoltator le poate conecta într-un flux automatizat ([Lolly for Builders](/info/builders.html)) și un coleg non-designer le poate rula pe cont propriu pentru a obține un fișier finit, aliniat brandului, fără să fii tu implicat. Vezi cum se acumulează întregul ciclu de viață în [The lifecycle of a campaign](/info/overview.html#the-lifecycle-of-a-campaign).
+## Creează
 
-## De ce Lolly - avantajele tale
+Alege un instrument, completează câteva câmpuri și descarcă fișierul finit. Sau deschide canvasul Design și așază totul de mână liberă: în ambele cazuri, culorile, tipografia și spațierea vin din brandul tău, nu din memorie, și nimic nu are nevoie de cont.
 
-- **Finit, nu migălos.** Unealta știe deja fonturile, culorile, logo-ul, spațierea. Tu aduci cuvintele; ea îți dă înapoi asset-ul. Nimic de pus la îndoială.
-- **Corect prin construcție.** Regulile de design, constrângerile de layout și logica de funcționare trăiesc în șablon - rezultatul nu se poate abate de la specificație decât dacă autorul uneltei lasă deliberat ceva deschis. O gamă creativă sălbatică, în interiorul unor limite de siguranță care rezistă.
-- **O singură sursă, orice format.** Același design se exportă ca SVG, PDF pregătit pentru tipar, PNG de rezoluție înaltă sau video la 60fps. Îl faci o dată; îl livrezi peste tot.
-- **Permutări infinite.** Localizează un card în o duzină de limbi, generează fiecare dimensiune pentru fiecare plasament, schimbă un lockup în patruzeci de campanii - toate dintr-un singur design, dirijate de un tabel.
-- **Este al tău, offline, privat.** Munca ta rămâne pe dispozitivul tău - fără cont necesar, nimic încărcat pentru a crea sau exporta un asset, nicio licență de auditat. Închizi capacul laptopului într-un avion și continui să lucrezi. (Există două module opționale de server care pot fi ignorate complet - vezi [Server Surface](/info/server-surface.html).)
-- **Deschis, nu blocat la un furnizor.** Motorul este open source, iar munca ta trăiește la URL-uri simple, nu în baza de date a unui furnizor.
-- **Superputeri atunci când le vrei.** Nu *trebuie* niciodată să faci design - dar în momentul în care decizi să o faci, plafonul este ridicat. Aranjează pagini liber pe canvasul Design. Taie clipuri, carduri și muzică pe o linie temporală în Sequence Studio. Înregistrează voce și cameră curate cu coaching live. Ridică un întreg brand singur, ghidat de un selector de culoare care îți spune despre o culoare mai mult decât majoritatea suitelor de design vor face vreodată.
+- **[Fă ceva în 60 de secunde](/info/make-something.html)** - trei ghiduri scurte fără nimic de configurat, dacă n-ai mai deschis Lolly până acum.
+- **[Folosirea Lolly](/info/using.html)** - canvasul, comenzile, salvarea, Proiectele și folosirea pe telefon: cum se comportă aplicația în sine.
+- **[Brand Studio](/info/brand-studio.html)** - când siglele, culorile și tipografia trebuie să fie ale tale, nu cele implicite.
+- **[Importă un design](/info/design-import.html)** - când desenul există deja ca fișier `.fig`, `.penpot`, `.ai`, `.idml` sau SVG și vrei să fie editabil, nu aplatizat.
+- **[Vizualizări utilitare](/info/utilities.html)** - foaia de calcul, convertorul, Colour Lab, extractorul PDF și Script audio, pentru sarcinile care nu sunt o randare de instrument.
+- **[Extensia de browser](/info/extension.html)** - captează o pagină web live și refolosește-o ca resursă în propriile tale desene.
+- **[Căutare](/info/search.html)** - un singur câmp care ajunge la instrumentele tale, la lucrările salvate, la catalog și la setările tale.
+- **[Întreabă Lolly](/info/ask.html)** - tastează o întrebare și primești înapoi secțiunea corespunzătoare din aceste ghiduri, cu un link direct spre ea.
+- **[Dashboard](/info/dashboard.html)** - ce poate face acest dispozitiv, sistemul tău de design doar-citire și o privire rapidă asupra spațiului de stocare.
+- **[Favoritele tale](/info/favourites.html)** - marchează cu stea ce folosești des, ca să primească propria dală deasupra grilei.
+- **[Profiluri](/info/profile.html)** - detaliile din care se precompletează instrumentele și cele patru comutatoare de accesibilitate care calmează aplicația fără să miște niciun pixel din ce exporți.
 
-> **Constrângerile nu te încarcerează - te prind.** Gândește-te la limitele de siguranță ca la culoarele cu perete: tot tu arunci mingea - cuvintele, imaginea, ideea - iar codul doar o ține departe de rigolă, astfel încât brandul să nu poată fi niciodată încălcat. Nu ești automatizat în afara jocului; partea plictisitoare este: verificarea brandului, re-exportarea la fiecare dimensiune, localizarea manuală în o duzină de limbi. Ce rămâne este decizia care avea nevoie de tine. Iar unealta pe care *tu* o creezi este ceea ce permite restului companiei să facă o treabă bună fără să te implice în fiecare asset: judecata ta, scalată.
+## Animă
 
-## Cum se compară
+Text care se mișcă, scene pe o cronologie (timeline) și mișcare care rămâne în brand. Un export de mișcare este compus cadru cu cadru pornind de la un ceas condus (driven clock), nu înregistrat de pe ecran, așa că sincronizarea nu deviază niciodată, iar același link randează același clip la orice lungime.
 
-Lolly nu încearcă să fie Canva sau Figma. Se poziționează acolo unde *regulile, repetabilitatea și constrângerile stricte contează mai mult decât flexibilitatea liberă* - transformând deciziile de design în unelte pe care întreaga ta echipă le poate folosi fără tine implicat în fiecare asset.
+- **[Animație](/info/animating.html)** - keyframes, adâncime reală și o cameră de scenă pentru a survola rezultatul.
+- **[Editorul de secvențe](/info/sequence-editor.html)** - cronologia în sine: clipuri, piste de suprapunere, trim și split, tranziții și mixajul audio.
+- **[Export și formate](/info/exporting.html)** - partea de video, GIF și PNG animat a panoului de export, odată ce mișcarea este cum trebuie.
 
-Detaliul produs-cu-produs se află pe [paginile de comparație](/info/compare.html) datate - Canva, Adobe, Figma, Penpot, portaluri de brand, API-uri de randare și convertoare de fișiere - cu concesiile scrise primele și un [tablou de capacități](/info/positioning.html) în spatele lor.
+## Înregistrează
 
-**Apelează la Lolly** pentru asset-urile pe care le faci iar și iar - semnalizare de eveniment, carduri cu citate, bannere localizate, semnături de email, etichete de expediere, variante sociale, grafice și hărți dirijate de date. **Apelează la o unealtă de design** pentru piesa vedetă personalizată, conceptul de campanie unic, ideația care *e menită* să scape sistemului. Lolly execută sistemul; nu înlocuiește studioul.
+Înregistrează o priză curată cu numărătoare inversă, un indicator de nivel și îndrumare blândă, sau transformă o notă vocală într-un video finit care se mișcă odată cu sunetul. Nu există încă o pagină separată pentru Înregistrare: Folosirea Lolly o conține, în secțiunea despre cronologie.
 
-## Ce poți crea
+- **[Folosirea Lolly](/info/using.html#timeline-sequence-studio)** - înregistrarea unei voci direct pe cronologie, unde se salvează priza și cum ajunge ea în mixaj.
+- **[Fă ceva în 60 de secunde](/info/make-something.html#make)** - scena audiogramă, pentru când preferi să fii auzit decât văzut.
+- **[Vizualizări utilitare](/info/utilities.html)** - Script audio, când cuvintele vin primele și vocea vine după.
 
-### Totul corect, fără așteptare
+## Colaborează
 
-Completezi câteva câmpuri, obții asset-ul finit - fără fonturi de ales, fără culori de pus la îndoială, fără "acesta e logo-ul corect?" Unealta știe deja. Semnături de email, numărători inverse de evenimente, carduri cu citate, ecusoane, hărți stradale - tot ce are nevoie echipa ta marți la ora 16:00, pe cont propriu. Și pentru că nicio dată de client nu părăsește dispozitivul, nu există niciun risc de conformitate în a colabora.
+Două persoane, două dispozitive, o singură sesiune, editată live. Scanează un cod peste masă și ambele ecrane țin aceeași lucrare, fără cont și fără server la mijloc - și fără internet deloc, când ambele dispozitive sunt în aceeași rețea.
 
-Street Map este un exemplu corect al compromisului: alegi un oraș și câteva culori, iar cartografia, greutățile drumurilor și apa sunt decise pentru tine.
+- **[Lucrul împreună](/info/collaborate.html)** - pornirea unei sesiuni, ce circulă între dispozitive și ce se întâmplă când rețeaua cade.
+- **[Folosirea Lolly](/info/using.html#sharing-your-work)** - modurile mai discrete de a preda o lucrare: un link de partajare care poartă întreaga stare, sau un singur fișier `.lolly`.
 
-![O randare Street Map a Tokyo în neon pe negru aproape pur, produsă dintr-un dropdown de oraș și doi selectori de culoare](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-street-map-poster)
+## Publică
 
-### De la date live la vizual finit
+Trimite-l acolo unde a fost cerut: un link care poartă designul, un PDF fidel pentru tipar, un video, un deck sau un folder de variante. Aceeași sursă produce fiecare dintre ele, așa că îl construiești o singură dată.
 
-Conectează un tabel **CSV** sau **JSON** la un șablon de grafic, hartă sau tabel și actualizează cifrele - aspectul se ocupă singur de el însuși. Rezultate electorale, câștiguri trimestriale, evenimente meteo: construiește formatul o dată și refolosește-l de fiecare dată când rulează povestea. Se potrivește *exact* cu stilul propriu al casei, pentru că este impus la nivelul șablonului, nu lăsat ca o îndrumare liberă.
-
-![Un grafic tip gogoașă direct din Chart Creator - etichete, valori și culori plasate toate de șablon, nu manual](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
-
-### Unelte care compun unelte
-
-O unealtă poate încorpora rezultatul live al altei unelte ca asset - un ecuson de nume care își randează propriul cod QR, un card care include un grafic live - fără nicio unealtă de design și fără compoziție manuală. Randarea încorporată rămâne live și se re-randează la încărcare; nu este niciodată o imagine aplatizată.
-
-### Frontiera, atunci când ai nevoie de ea
-
-Filtre avansate, compoziție, animație, efecte de cameră live, design generativ - fiecare tehnologie web este disponibilă unui autor de șablon, deci plafonul este ridicat.
-
-![Rezultatul Mesh Gradient - un câmp generativ de culoare fină, construit în întregime din tokenurile paletei brandului tău](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
-
-### Crescut, nu desenat
-
-**Growth** cultivă imaginea în loc s-o deseneze: un sistem pornit de la o sămânță se răspândește dintr-un inel, o linie, propriile tale cuvinte sau logo-ul tău, până umple cadrul, în paleta ta. Aceeași sămânță crește mereu aceeași lucrare, așa că un link o reproduce exact. Ce rezultă este geometrie SVG obișnuită, nu imaginea unui desen, așa că se poate tipări, plota și tăia - iar același design animă de la prima sămânță până la forma finală ca video.
-
-![Înflorirea implicită a Growth - un câmp dens de linii în culorile brandului, care se buclează, crescute dintr-un inel, fiecare linie fiind o cale SVG reală](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
-
-### Mișcare care răspunde muzicii
-
-**Synth** calculează un câmp de fluid pe placa grafică și îl pictează în culorile tale. Dă-i o piesă și câmpul se mișcă odată cu sunetul; se exportă ca MP4, WebM, GIF sau buclă animată PNG care se unește curat de la capăt la capăt, randată cadru cu cadru dintr-un ceas controlat, nu înregistrată de pe ecran - astfel încât mișcarea nu se abate niciodată de la coloana sonoră, iar același link randează același clip la orice lungime.
-
-![Un cadru din scena \"ink\" a Synth - un câmp de fluid întunecat luminat în verdele brandului, surprins în mijlocul unui vârtej](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
-
-Creează *unelte*, nu fișiere: construiește lucrul care generează 10.000 de carduri în loc să faci manual 10.000 de carduri. Blochează ce nu ar trebui să se schimbe; expune doar ce este menit să varieze.
-
-## Detalii pe care le vei observa
-
-- **Tipar, făcut corect.** Unități fizice reale (mm/cm/in/pt) și DPI, semne de bleed și crop marks, ieșire CMYK și PDF/X-4 - o tipografie primește exact ce îi trebuie. Vezi [Exportarea](/info/exporting.html#size-print-units).
-- **Video și mișcare.** Exportă WebM/MP4 (cu piste audio), PNG/WebP animate și SVG animat - din același șablon care produce și imaginile tale statice. **Sequence Studio** merge mai departe: o cronologie reală sub canvas, cu un rând magnetic de clipuri, benzi libere de suprapunere, tăiere și divizare, presetări de tranziție, înregistrare voiceover și mixaj muzical - randate ca MP4, WebM, GIF sau APNG de un compozitor determinist, nu de o înregistrare a ecranului. Fișierele Lottie *intră* ca active animate și se randează în oricare dintre acele formate. Deasupra clipurilor stau **keyframe-urile**: poziționează o casetă la un moment dat, ridic-o de pe pagină cu adâncime reală și zboară o cameră peste rezultat. Vezi [Folosirea Lolly → Cronologie](/info/using.html#timeline-sequence-studio) și [Animarea](/info/animating.html).
-- **Audio.** Înregistrează o notă vocală și salveaz-o ca MP3 (sau în formatul nativ M4A/OGG/WebM), totul pe dispozitiv - și adu MP3, WAV, OGG, M4A, FLAC, MIDI sau module tracker (MOD/XM/IT/…) ca fundal muzical sub un video sau ca pistă ambientală în Neurospicy Mode.
-- **Desenează, nu te mulțumi cu mai puțin.** Instrumentul Design are un **pen** real: dă clic pentru a plasa puncte, trage pentru a curba și alege tipul de curbă care trece prin ele. Combină forme cu **union, subtract, intersect și exclude**, conturează o linie, decalează o siluetă, simplifică o traiectorie - geometria este matematică Bezier exactă, așa că o formă pe care o desenezi rămâne clară la orice dimensiune și se randează identic dintr-un link sau din CLI. Vezi [Folosirea Lolly → Desenarea propriilor forme](/info/using.html#drawing-your-own-shapes-the-pen).
-- **Vectori editabili.** Export SVG, EPS, EMF și DXF. Textul devine traiectorii conturate în ieșirea vectorială, așa că o tipografie sau un plotter de tăiere primește o geometrie clară care se deschide oriunde. (Textul conturat nu mai este *retastabil* în Illustrator - acesta e compromisul pentru fidelitate perfectă fără font.)
-- **Comoditate care se adună.** Transformă un tabel într-un folder întreg de active printr-un batch; salvează sesiuni și organizează-le în Proiecte; distribuie orice stare ca URL; randează un folder întreg ca un singur zip.
-- **O interfață chiar plăcută.** Undo/redo peste tot, un strat de sunet pe care îl poți opri, un ciclu de teme, filtre live-camera - și **Neurospicy Mode**, un player de muzică de focus care rulează în fundal și te urmărește prin toată aplicația în propriul dock.
-- **O interfață mai calmă, când vrei una.** Patru comutatoare sub **Profil → Accesibilitate** - *Reduce mișcarea*, *Ascunde previzualizările colorate*, *Contrast ridicat* și *Text mare* - liniștesc aplicația în jurul muncii tale. Fiecare e oprit până îl activezi, și niciunul nu atinge canvas-ul sau nu mișcă vreun pixel din ce exporți. Vezi [Profilul tău → Accesibilitate](/info/profile.html#accessibility).
-
-## Cum să obții tot ce poți din ea
-
-- **[Ghid rapid](/info/quickstart.html)** - brandul intră, primul fișier iese.
-- **[Brand Studio](/info/brand-studio.html)** - modelează-ți logo-urile, culorile, tipografia și token-urile (`#/start`).
-- **[Folosirea Lolly](/info/using.html)** - canvas-ul, comenzile, salvarea, proiectele și folosirea de pe telefon.
-- **[Profilul tău](/info/profile.html)** - detaliile pe care le pre-completează uneltele și cum le transporți între dispozitive.
-- **[Importarea unui design](/info/design-import.html)** - adu munca ta din Figma / Penpot / Illustrator / InDesign, și prezentările PowerPoint - editate sau rebrandate pe dispozitiv.
-- **[Lucrul împreună](/info/collaborate.html)** - două persoane care editează live aceeași sesiune, de la dispozitiv la dispozitiv, fără cont și fără server la mijloc.
-- **[Căutare](/info/search.html)** - un singur câmp în josul galeriei, Utilitare, Proiecte, Catalog, Dashboard și Profil, care ajunge la uneltele tale, munca salvată, catalog și setările tale.
-- **[Ask Lolly](/info/using.html#ask-lolly)** (`#/ask`) - scrie o întrebare și primești înapoi, cuvânt cu cuvânt, secțiunea potrivită din aceste ghiduri, cu un link direct la ea.
-- **Dashboard-ul** (`#/d`) - panoul de instrumente: sistemul tău de brand afișat doar pentru citire, harta completă a capacităților, ce poate face acest dispozitiv și o privire asupra activității și spațiului tău de stocare.
-- **[Favoritele tale](/info/favourites.html)** - marchează cu ★ ce folosești și primește propria casetă deasupra grilei.
-- **[Exportare și formate](/info/exporting.html)** - fiecare format, unități de tipar, video și batch.
+- **[Export și formate](/info/exporting.html)** - unități de tipar, DPI, bleed și cropmark-uri, video, rulări în serie (batch) și panoul de export propriu-zis.
+- **[Fiecare format pe care Lolly îl poate deschide și crea](/info/formats.html)** - lista completă de intrare și ieșire, cu o fișă în limbaj simplu în spatele fiecărui chip.
+- **[Transfer de date](/info/data-transfer.html)** - pachetul de backup, pentru a muta tot ce ai creat pe un alt dispozitiv.

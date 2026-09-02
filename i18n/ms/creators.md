@@ -1,136 +1,54 @@
 # Lolly untuk Pencipta
 
-Anda mahu mencipta sesuatu yang baik, dengan pantas dan hasilnya betul. Lolly dibina untuk
-tepat itu: isi beberapa medan, dapatkan fail siap - susun atur, jenis huruf, peraturan
-dikuatkuasakan oleh alat, bukan oleh mata anda (melainkan anda mahu - maka anda mempunyai kuasa media
-di hujung jari anda). Tiada perisian reka bentuk, tiada menunggu. Ia berjalan pada peranti anda sendiri
-dan berfungsi luar talian.
+Anda isikan beberapa medan dan fail siap pun terhasil, dengan fon, warna dan susun atur yang sudah ditentukan pada peranti anda sendiri. Anda menghasilkannya dalam beberapa minit tetapi ia kelihatan seperti mengambil masa berjam-jam, dan kerana peraturan jenama sudah terbina dalam alat itu, bukan nama anda yang tercatat pada fail yang menyimpang daripada jenama. Pilih laluan di bawah yang sepadan dengan apa yang anda lakukan hari ini.
 
-**Apa yang anda perolehi:** anda hantar dalam beberapa minit dan ia kelihatan seperti anda mengambil masa
-berjam-jam. Anda tidak pernah terperangkap menunggu pereka bentuk, dan kerana peraturan jenama
-tersepadu, ia tidak pernah nama anda pada aset di luar jenama. Anda cuma kelihatan pantas, kemas dan
-boleh dipercayai.
+Anda ialah satu peringkat dalam larian berganti-ganti: seorang pembangun boleh mengembangkan alat yang anda guna menjadi satu saluran paip, dan seorang rakan sekerja boleh menjalankannya secara layan diri, jadi [Kitaran hayat kempen](/info/overview.html#the-lifecycle-of-a-campaign) mengikuti satu aset melalui ketiga-tiga pasangan tangan itu.
 
-Halaman ini memberitahu anda segala yang anda perlu tahu untuk mendapat manfaat terbaik daripada Lolly.
+Baru di sini? Mulakan dengan **[Buat sesuatu dalam 60 saat](/info/make-something.html)** dan kembali semula sebaik sahaja anda tahu bahagian mana yang anda mahu terokai dengan lebih mendalam. [Soalan & jawapan](/info/faq.html) merangkumi apa yang orang tanya sebelum mereka mempercayai alat percuma. [Bagaimana Lolly dibandingkan](/info/positioning.html) ialah penjelasan jujur tentang bila anda patut menggunakan sesuatu yang lain.
 
-> **Anda satu tangan dalam geganti.** Alat yang anda karang tidak berhenti dengan anda - pembangun
-boleh menghubungkannya ke dalam saluran paip automatik ([Lolly for Builders](/info/builders.html))
-dan rakan sekerja bukan pereka bentuk boleh menjalankannya secara layan diri untuk mendapat fail siap,
-bertepatan jenama tanpa anda dalam gelung. Lihat cara keseluruhan kitaran hayat berganda dalam
-[The lifecycle of a campaign](/info/overview.html#the-lifecycle-of-a-campaign).
+## Cipta
 
-## Mengapa Lolly - kelebihan anda
+Pilih satu alat, isikan beberapa medan dan muat turun fail siap. Atau buka kanvas Reka Bentuk dan susun aturnya secara bebas: apa jua caranya, warna, jenis huruf dan jarak datang daripada jenama anda dan bukan daripada ingatan, dan tiada satu pun memerlukan akaun.
 
-- **Siap, bukan rumit.** Alat itu sudah tahu fon, warna, logo, jarak. Anda bawa kata-kata; ia mengembalikan aset. Tiada apa untuk dipersoalkan semula.
-- **Betul mengikut binaan.** Peraturan reka bentuk, kekangan susun atur dan logik yang berjalan tinggal dalam templat - output tidak boleh menyimpang daripada spesifikasi melainkan penulis alat sengaja membiarkan sesuatu terbuka. Julat kreatif yang luas, di dalam pagar pelindung yang teguh.
-- **Satu sumber, setiap format.** Reka bentuk yang sama dieksport sebagai SVG, PDF sedia cetak, PNG resolusi tinggi, atau video 60fps. Buat sekali; hantar ke mana-mana.
-- **Kombinasi tanpa had.** Terjemahkan kad ke belasan bahasa, jana setiap saiz untuk setiap penempatan, tukar lockup merentasi empat puluh kempen - semuanya daripada satu reka bentuk, dipacu oleh helaian kerja.
-- **Ia milik anda, luar talian, peribadi.** Kerja anda kekal pada peranti anda - tiada akaun diperlukan, tiada apa dimuat naik untuk mencipta atau mengeksport aset, tiada lesen untuk diaudit. Tutup penutup komputer riba dalam kapal terbang dan teruskan bekerja. (Dua tambahan pelayan pilihan wujud dan boleh diabaikan sepenuhnya - lihat [Server Surface](/info/server-surface.html).)
-- **Terbuka, tidak terkunci.** Enjin adalah sumber terbuka dan kerja anda tinggal pada URL biasa, bukan di dalam pangkalan data vendor.
-- **Kuasa super apabila anda mahukannya.** Anda tidak pernah *perlu* mereka bentuk - tetapi sebaik anda memutuskan untuk berbuat demikian, siling adalah tinggi. Susun atur halaman secara bebas pada kanvas Design. Potong klip, kad dan muzik pada garis masa dalam Sequence Studio. Rakam suara dan rakaman kamera yang bersih dengan bimbingan langsung. Bina keseluruhan jenama sendiri, dipandu oleh pemilih warna yang memberitahu anda lebih banyak tentang warna daripada kebanyakan suit reka bentuk.
+- **[Buat sesuatu dalam 60 saat](/info/make-something.html)** - tiga panduan ringkas tanpa apa-apa persediaan, jika anda belum pernah membuka Lolly sebelum ini.
+- **[Menggunakan Lolly](/info/using.html)** - kanvas, kawalan, penyimpanan, Projects dan penggunaan telefon: cara aplikasi itu sendiri berkelakuan.
+- **[Studio Jenama](/info/brand-studio.html)** - apabila logo, warna dan jenis huruf patut menjadi milik anda dan bukannya lalai.
+- **[Import reka bentuk](/info/design-import.html)** - apabila karya seni sudah wujud sebagai fail `.fig`, `.penpot`, `.ai`, `.idml` atau SVG dan anda mahukannya boleh disunting dan bukan diratakan.
+- **[Paparan utiliti](/info/utilities.html)** - hamparan, penukar, Colour Lab, pengekstrak PDF dan Script audio, untuk kerja yang bukan renderan alat.
+- **[Sambungan Pelayar](/info/extension.html)** - tangkap halaman web langsung dan guna semula sebagai aset dalam reka bentuk anda sendiri.
+- **[Carian](/info/search.html)** - satu medan yang menjangkau alat anda, kerja tersimpan anda, katalog dan tetapan anda.
+- **[Tanya Lolly](/info/ask.html)** - taip satu soalan dan dapatkan bahagian panduan ini yang sepadan, berserta pautan terus ke dalamnya.
+- **[Papan Pemuka](/info/dashboard.html)** - apa yang peranti ini boleh lakukan, sistem reka bentuk anda dalam mod baca sahaja dan pandangan sepintas lalu pada storan.
+- **[Kegemaran anda](/info/favourites.html)** - bintangkan apa yang kerap anda guna supaya ia mendapat jubin tersendiri di atas grid.
+- **[Profil](/info/profile.html)** - butiran yang menjadi sumber pra-isi alat dan empat suis kebolehcapaian yang menenangkan aplikasi tanpa menggerakkan sepiksel pun apa yang anda eksport.
 
-> **Kekangan tidak mengurung anda - ia menangkap anda.** Anggap pagar pelindung sebagai lorin
-penimbal boling: anda masih melontar bola - kata-kata, imej, idea - dan kod itu hanya
-memastikannya tidak jatuh ke dalam longkang supaya jenama tidak boleh dipecahkan. Anda tidak
-sedang diautomasikan keluar; bahagian yang membosankan ialah: pemeriksaan jenama,
-pengeksportan semula pada setiap saiz, penterjemahan tangan ke belasan bahasa. Yang tinggal ialah
-keputusan yang memerlukan anda. Dan alat yang *anda* karang adalah apa yang membolehkan selebihnya
-syarikat menghasilkan kerja yang baik tanpa menarik anda ke dalam setiap aset: pertimbangan anda,
-diskalakan.
+## Animasi
 
-## Bagaimana ia dibandingkan
+Teks yang bergerak, adegan pada garis masa dan gerakan yang kekal menepati jenama. Eksport gerakan digubah bingkai demi bingkai daripada jam yang dipacu dan bukannya dirakam daripada skrin, jadi masa tidak pernah menyimpang dan pautan yang sama menghasilkan klip yang sama pada sebarang panjang.
 
-Lolly tidak cuba menjadi Canva atau Figma. Ia berada di tempat *peraturan, kebolehulangan
-dan kekangan tegas lebih penting daripada fleksibiliti bebas tangan* - mengubah keputusan reka
-bentuk menjadi alat yang boleh digunakan seluruh pasukan anda tanpa anda dalam gelung untuk
-setiap aset.
+- **[Animasi](/info/animating.html)** - bingkai kunci, kedalaman sebenar dan kamera adegan untuk terbang melepasi hasilnya.
+- **[Editor jujukan](/info/sequence-editor.html)** - garis masa itu sendiri: klip, lorong lapisan, potong dan pisah, peralihan dan campuran audio.
+- **[Eksport & Format](/info/exporting.html)** - bahagian video, GIF dan PNG beranimasi pada panel eksport, sebaik sahaja gerakan sudah betul.
 
-Perincian produk demi produk tinggal pada [halaman perbandingan](/info/compare.html) bertarikh -
-Canva, Adobe, Figma, Penpot, portal jenama, API penyajian dan penukar fail - dengan pengakuan
-ditulis dahulu dan [papan keupayaan](/info/positioning.html) di belakangnya.
+## Rakam
 
-**Gunakan Lolly** untuk aset yang anda buat berulang kali - papan tanda acara, kad petikan,
-sepanduk yang diterjemahkan, tandatangan e-mel, label penghantaran, variasi sosial, carta dan
-peta dipacu data. **Gunakan alat reka bentuk** untuk karya utama tersendiri, konsep kempen
-sekali sahaja, ideasi yang *dimaksudkan* untuk terlepas daripada sistem. Lolly melaksanakan
-sistem; ia tidak menggantikan studio.
+Rakam satu ambilan yang bersih dengan kiraan masuk, meter aras dan bimbingan lembut, atau tukar nota suara menjadi video siap yang bergerak seiring bunyi. Belum ada halaman Rakam yang berasingan lagi: Menggunakan Lolly membawanya, dalam bahagian garis masa.
 
-## Apa yang boleh anda cipta
+- **[Menggunakan Lolly](/info/using.html#timeline-sequence-studio)** - merakam alih suara terus ke garis masa, di mana ambilan itu disimpan dan bagaimana ia sampai ke campuran.
+- **[Buat sesuatu dalam 60 saat](/info/make-something.html#make)** - adegan audiogram, untuk ketika anda lebih suka didengar daripada dilihat.
+- **[Paparan utiliti](/info/utilities.html)** - Script audio, apabila kata-kata datang dahulu dan suara menyusul kemudian.
 
-### Segalanya betul, tanpa menunggu
+## Kerjasama
 
-Isi beberapa medan, dapatkan aset siap - tiada fon untuk dipilih, tiada warna untuk
-dipersoalkan semula, tiada "adakah ini logo yang betul?" Alat itu sudah tahu. Tandatangan e-mel,
-kiraan detik acara, kad petikan, lencana, peta jalan - segala yang pasukan anda perlukan
-pada hari Selasa jam 4 petang, layan diri. Dan kerana tiada data pelanggan meninggalkan
-peranti, tiada risiko pematuhan untuk bekerjasama.
+Dua orang, dua peranti, satu sesi, disunting secara langsung. Imbas satu kod merentasi meja dan kedua-dua skrin memaparkan kerja yang sama, tanpa akaun dan tanpa pelayan di tengah-tengah - malah tanpa internet langsung apabila kedua-dua peranti berada pada rangkaian yang sama.
 
-Street Map ialah contoh adil bagi pertukaran ini: anda pilih sebuah bandar dan beberapa
-warna, dan kartografi, berat jalan dan air ditentukan untuk anda.
+- **[Bekerja bersama](/info/collaborate.html)** - memulakan satu sesi, apa yang bergerak antara peranti dan apa yang berlaku apabila rangkaian terputus.
+- **[Menggunakan Lolly](/info/using.html#sharing-your-work)** - cara yang lebih senyap untuk menyerahkan kerja: pautan kongsi yang membawa seluruh keadaan, atau satu fail `.lolly`.
 
-![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-street-map-poster)
+## Terbit
 
-### Daripada data langsung kepada visual siap
+Hantarkannya ke tempat yang diminta: pautan yang membawa reka bentuk itu, PDF setepat cetakan, video, satu dek atau folder varian. Sumber yang sama menghasilkan setiap satunya, jadi anda hanya membinanya sekali.
 
-Sambungkan jadual **CSV** atau **JSON** kepada templat carta, peta atau jadual dan kemas
-kini nombornya - susun atur menguruskan dirinya sendiri. Keputusan pilihan raya, pendapatan
-suku tahunan, peristiwa cuaca: bina format sekali dan guna semula setiap kali cerita
-dijalankan. Padankan gaya rumah anda *dengan tepat*, kerana ia dikuatkuasakan pada peringkat
-templat, bukan dibiarkan sebagai garis panduan longgar.
-
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
-
-### Alat yang menggabungkan alat
-
-Satu alat boleh membenamkan output langsung alat lain sebagai aset - lencana nama yang
-menyajikan kod QR sendiri, kad yang memasukkan carta langsung - tanpa alat reka bentuk dan
-tanpa penyusunan manual. Penyajian terbenam kekal langsung dan disaji semula apabila
-dimuatkan; ia tidak pernah menjadi gambar rata.
-
-### Sempadan, apabila anda memerlukannya
-
-Penapis lanjutan, penyusunan, animasi, kesan kamera langsung, reka bentuk generatif -
-setiap teknologi web tersedia untuk penulis templat, jadi silingnya tinggi.
-
-![Output Mesh Gradient - satu medan generatif warna lembut yang dibina sepenuhnya daripada token palet jenama anda](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
-
-### Ditumbuhkan, bukan dilukis
-
-**Growth** menumbuhkan gambar dan bukannya melukisnya: satu sistem yang diberi seed merebak daripada satu bulatan, satu garisan, kata-kata anda sendiri atau logo anda sehingga ia memenuhi bingkai, dalam palet anda. Seed yang sama sentiasa menumbuhkan karya yang sama, jadi satu pautan menghasilkan semulanya dengan tepat. Apa yang terhasil ialah geometri SVG biasa dan bukannya gambar bagi suatu lukisan, jadi ia boleh dicetak, diplot dan dipotong - dan reka bentuk yang sama beranimasi daripada seed pertama sehingga bentuk siapnya sebagai video.
-
-![Bloom lalai Growth - medan padat garisan berwarna jenama yang berbulat-bulat, ditumbuhkan daripada satu bulatan, setiap garisan ialah laluan SVG sebenar](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
-
-### Pergerakan yang menjawab muzik
-
-**Synth** menyelesaikan medan bendalir pada kad grafik dan mewarnakannya dengan warna anda. Berikan satu trek dan medan itu bergerak mengikut bunyi; ia dieksport sebagai gelung MP4, WebM, GIF atau PNG beranimasi yang bercantum bersih dari hujung ke hujung, dirender bingkai demi bingkai daripada jam yang dipacu dan bukannya dirakam daripada skrin - jadi pergerakan itu tidak pernah menyimpang daripada trek bunyi, dan pautan yang sama merender klip yang sama pada sebarang tempoh.
-
-![Satu bingkai daripada adegan dakwat Synth - medan bendalir gelap yang disinari warna hijau jenama, ditangkap di tengah-tengah pusaran](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
-
-Karang *alat*, bukan fail: bina benda yang menjana 10,000 kad dan bukannya membuat 10,000
-kad. Kunci apa yang tidak sepatutnya berubah; dedahkan hanya apa yang dimaksudkan untuk
-berubah-ubah.
-
-## Sentuhan yang anda akan perasan
-
-- **Cetakan, dilakukan dengan betul.** Unit fizikal sebenar (mm/cm/in/pt) dan DPI, bleed dan tanda potong, CMYK dan output-intent PDF/X-4 - kedai cetak mendapat tepat apa yang diperlukan. Lihat [Mengeksport](/info/exporting.html#size-print-units).
-- **Video dan pergerakan.** Eksport WebM/MP4 (dengan trek audio), PNG/WebP animasi dan SVG animasi - daripada templat yang sama yang menghasilkan imej pegun anda. **Sequence Studio** pergi lebih jauh: garis masa sebenar di bawah kanvas, dengan barisan klip magnetik, laluan overlay bebas, potong dan pisah, praset peralihan, rakaman suara latar dan campuran muzik - dirender sebagai MP4, WebM, GIF atau APNG oleh penggubah deterministik dan bukannya rakaman skrin. Fail Lottie *masuk* sebagai aset animasi dan dirender keluar kepada mana-mana daripadanya. Di atas klip terletak **kerangka utama (keyframes)**: pose kotak pada satu ketika, angkat ia dari halaman dengan kedalaman sebenar dan terbangkan kamera merentasi hasilnya. Lihat [Menggunakan Lolly → Garis masa](/info/using.html#timeline-sequence-studio) dan [Menganimasikan](/info/animating.html).
-- **Audio.** Rakam nota suara dan simpan sebagai MP3 (atau format asalnya M4A/OGG/WebM), semuanya pada peranti - dan bawa masuk MP3, WAV, OGG, M4A, FLAC, MIDI atau modul tracker (MOD/XM/IT/…) sebagai alas muzik di bawah video atau trek ambien dalam Neurospicy Mode.
-- **Lukis, jangan berpuas hati sahaja.** Alat Design mempunyai **pen** sebenar: klik untuk meletak titik, seret untuk melengkung dan pilih jenis lengkung yang melalui titik tersebut. Gabungkan bentuk dengan **union, subtract, intersect dan exclude**, garis luar strok, ofset siluet, permudahkan laluan - geometri adalah matematik Bezier yang tepat, jadi bentuk yang anda lukis kekal tajam pada sebarang saiz dan dirender secara sama daripada pautan atau CLI. Lihat [Menggunakan Lolly → Melukis bentuk anda sendiri](/info/using.html#drawing-your-own-shapes-the-pen).
-- **Vektor boleh edit.** Eksport SVG, EPS, EMF dan DXF. Teks menjadi laluan bergaris luar dalam output vektor, jadi kedai cetak atau pemotong mendapat geometri tajam yang boleh dibuka di mana-mana. (Teks bergaris luar tidak lagi boleh *ditaip semula* dalam Illustrator - itulah pertukaran untuk kesetiaan sempurna tanpa fon.)
-- **Kemudahan yang terkumpul.** Kelompokkan hamparan ke dalam folder aset; simpan sesi dan susun ke dalam Projek; kongsi mana-mana keadaan sebagai URL; render seluruh folder sebagai satu zip.
-- **UI yang benar-benar menyenangkan.** Undo/redo di mana-mana, lapisan bunyi yang boleh dimatikan, kitaran tema, penapis kamera langsung - dan **Neurospicy Mode**, pemain muzik fokus latar belakang yang mengikuti anda merentasi apl dalam dok tersendiri.
-- **Antara muka yang lebih tenang apabila anda mahukannya.** Empat suis di bawah **Profile → Accessibility** - *Reduce motion*, *Hide colourful previews*, *High contrast* dan *Large text* - menenangkan apl di sekeliling kerja anda. Setiap satu dimatikan sehingga anda menghidupkannya, dan tiada satu pun menyentuh kanvas anda atau menggerakkan sebarang piksel apa yang anda eksport. Lihat [Profil anda → Kebolehcapaian](/info/profile.html#accessibility).
-
-## Dapatkan yang terbaik daripadanya
-
-- **[Panduan Pantas](/info/quickstart.html)** - brand masuk, fail pertama keluar.
-- **[The Brand Studio](/info/brand-studio.html)** - bentuk logo, warna, jenis taip dan token anda (`#/start`).
-- **[Menggunakan Lolly](/info/using.html)** - kanvas, kawalan, penyimpanan, projek dan penggunaan telefon.
-- **[Profil anda](/info/profile.html)** - butiran yang diprapenuhkan oleh alat, dan cara membawanya antara peranti.
-- **[Import reka bentuk](/info/design-import.html)** - bawa masuk kerja Figma / Penpot / Illustrator / InDesign anda, dan dek PowerPoint anda - disunting atau dijenamakan semula pada peranti.
-- **[Bekerja bersama](/info/collaborate.html)** - dua orang menyunting satu sesi secara langsung, peranti ke peranti, tanpa akaun dan tanpa pelayan di tengah-tengah.
-- **[Carian](/info/search.html)** - satu medan di kaki galeri, Utilities, Projects, Catalogue, Dashboard dan Profile yang mencapai alat anda, kerja tersimpan anda, katalog dan tetapan anda.
-- **[Tanya Lolly](/info/using.html#ask-lolly)** (`#/ask`) - taip soalan dan dapatkan bahagian panduan ini yang sepadan secara verbatim, dengan pautan terus kepadanya.
-- **The Dashboard** (`#/d`) - panel instrumen: sistem reka bentuk anda dipaparkan baca sahaja, peta keupayaan penuh, apa yang peranti ini boleh lakukan dan sekilas pandang aktiviti dan storan anda.
-- **[Kegemaran anda](/info/favourites.html)** - tandakan bintang apa yang anda gunakan dan ia mendapat jubin sendiri di atas grid.
-- **[Mengeksport & format](/info/exporting.html)** - setiap format, unit cetakan, video dan kelompok.
+- **[Eksport & Format](/info/exporting.html)** - unit cetakan, DPI, bleed dan tanda potong, video, larian kelompok dan panel eksport itu sendiri.
+- **[Setiap format yang Lolly boleh buka dan hasilkan](/info/formats.html)** - senarai masuk-keluar yang lengkap, dengan kad berbahasa mudah di sebalik setiap cip.
+- **[Pemindahan Data](/info/data-transfer.html)** - bungkusan sandaran, untuk memindahkan segala yang telah anda hasilkan ke peranti lain.

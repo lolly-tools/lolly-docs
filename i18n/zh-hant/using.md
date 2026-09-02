@@ -80,7 +80,7 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 - **縮到比 Fit 更小**（最小到 20%），當你把東西擱在離畫框很遠的地方時，可以看到整片檯面。
 - **可調整大小的畫板。** 變更匯出尺寸會就地調整畫框大小；方塊的位置保持不變，因此你可以圍著既有內容重新取景。
 
-![Design 的自由畫布：畫板與其周圍的檯面](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D17VVRa9swEP41ekyQLrbjPOyhVeeOrSsbG3lXbLkYZCnISmn264tO9irFhdJCoZQIpBNn9N2dvu_k3cOX1opeEuCTpeNkG0BDy8ljZe28pyDA74UlUC4WOyt0sxgOthW1JJAD9wv1y6rFQWCDMB6BAK-NdqLTBLg2thcqeAnk68vaKGOXg-yFdl29dPLBef8VAZ6V_qjUTloCvO-aRvlcc0QdhB58iCWDMVNnD1iSUIOcAvASY2qsEUeex-XSOEJ6koaT_6Q1iY89IY4mw4TCmmJYc9BNZKPQ00ywxxJS-BlqcnL2KfJF3xhZf3WdwwsMd8xZ4VEgEF6EGornaH-ByW_iHkVAj-aAtpcO7Y1R6kggX1Uz7ext1wt7PNEOk7BZ7UbtYCpKtj4NZ_YE-Doh_hOwHnff-1K_M83xlPmyiJhn8AbmL5C61nZSN8g00OlFoK2xkyjCRofOBro3g5N2OdPE2PqxIGjL1iCCIPA1SPSQpQ_B6qyIVyiCsp8s-_Gn2P76fpHfVlt6WV3_Lv5e5_6mul7cSVRFhiWhOIrsaaVTMbKZaUWNbQ-VMncGN__b_fwn-CAKeAQ&width=1360&height=850&dpi=192&waitMs=3000&format=png&localize=1&dark=1&filename=design)
+![Design 的自由畫布 - 工作區域及其周圍的貼上板](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D17VVRa9swEP41ekyQLrbjPOyhVeeOrSsbG3lXbLkYZCnISmn264tO9irFhdJCoZQIpBNn9N2dvu_k3cOX1opeEuCTpeNkG0BDy8ljZe28pyDA74UlUC4WOyt0sxgOthW1JJAD9wv1y6rFQWCDMB6BAK-NdqLTBLg2thcqeAnk68vaKGOXg-yFdl29dPLBef8VAZ6V_qjUTloCvO-aRvlcc0QdhB58iCWDMVNnD1iSUIOcAvASY2qsEUeex-XSOEJ6koaT_6Q1iY89IY4mw4TCmmJYc9BNZKPQ00ywxxJS-BlqcnL2KfJF3xhZf3WdwwsMd8xZ4VEgEF6EGornaH-ByW_iHkVAj-aAtpcO7Y1R6kggX1Uz7ext1wt7PNEOk7BZ7UbtYCpKtj4NZ_YE-Doh_hOwHnff-1K_M83xlPmyiJhn8AbmL5C61nZSN8g00OlFoK2xkyjCRofOBro3g5N2OdPE2PqxIGjL1iCCIPA1SPSQpQ_B6qyIVyiCsp8s-_Gn2P76fpHfVlt6WV3_Lv5e5_6mul7cSVRFhiWhOIrsaaVTMbKZaUWNbQ-VMncGN__b_fwn-CAKeAQ&width=1360&height=850&dpi=192&waitMs=3000&format=png&localize=1&dark=1&filename=design)
 
 **翻轉選取項目。** 在任何方框上按右鍵，選擇 **Flip horizontal** 或 **Flip vertical** 即可原地鏡射，或以鍵盤按下 `Shift+H` / `Shift+V` - 之所以要按 Shift，是因為單獨的 `V` 是 Pointer 工具。每個選取的方框都會依自己的軸鏡射，並在一個復原步驟內完成，而且鏡射是真正的變形，因此會保留在匯出的 SVG、PDF 與 PNG 中，而不僅僅是畫布上。
 
@@ -161,7 +161,7 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 
 **轉場**是預設效果，不是關鍵影格：淡入淡出、彈出、放大、上升、落下、四種滑入、放大與縮小、傾斜、俯衝、旋轉、飄移，或**硬切（無動畫）**。距離會隨物件大小縮放，因此同一個預設在滿版卡片與小徽章上都讀得對。序列列上兩個相鄰片段之間有一個**接縫標籤**：點它並選擇**硬切**或**交叉淡入淡出**，會立即套用並關閉。再開啟同一個標籤可以改**長度（毫秒）**，然後按**完成**。交叉淡入淡出會存成前一段的淡出加下一段的淡入，匯出時再從這一對推導出真正的溶接，這就是為什麼預覽裡看起來像兩次淡化，在檔案裡卻是真正的交接。
 
-**聲音。** 加入一段**音訊**片段，它就和其他片段一樣活在時間軸上：波形、修剪、靜音。（預設工作階段附帶的生成配樂是唯一的例外，它在匯出時才合成，所以在你算圖之前，它的長條都是素面而且沒有聲音。）按麥克風可直接在時間軸上**錄製旁白**，附有預備計數與音量表，錄好的內容會存成你自己的素材，放在你開始錄的位置。音樂、對白與片段本身的聲音都會進入匯出的混音。（匯出面板的**音訊軌**是另一回事：鋪在整段影片底下的單一配樂，帶有淡化與閃避。兩者可以並存。）
+**聲音。** 加入一段**音訊**片段，它就和其他片段一樣活在時間軸上：波形、修剪、靜音。（預設工作階段附帶的生成配樂是唯一的例外，它在匯出時才合成，所以在你算圖之前，它的長條都是素面而且沒有聲音。）按麥克風可直接在時間軸上**錄製旁白**，附有預備計數與音量表，錄好的內容會存成你自己的素材，放在你開始錄的位置。按旁邊的攝影機可用同樣的方式**錄製影片**：拍攝時畫面會依畫板的匯出尺寸裁切，因此那個小小的自拍預覽顯示的，正是會以滿版畫面進入播放頭處序列的內容——這也是透過共享連結收集同事素材的方式。音樂、對白與片段本身的聲音都會進入匯出的混音。（匯出面板的**音訊軌**是另一回事：鋪在整段影片底下的單一配樂，帶有淡化與閃避。兩者可以並存。）
 
 **算圖。** 動態匯出是一次**確定性的合成**，不是螢幕錄影：每一格都在精確的時間點解碼、繪製與編碼，因此檔案不取決於你的機器跟不跟得上，MP4 或 WebM 在實務上也沒有影格數上限。除非你自己輸入，否則時間軸本身的長度就決定片長。Content Credentials 會像其他任何匯出一樣蓋上。靜態匯出給你的是播放磁頭處的那一格，或是用輸出尺寸旁的**影格**欄位一次做出整張連拍表，見[匯出](/info/exporting.html#stills-from-a-timed-composition)。
 
@@ -175,12 +175,12 @@ Design 工具有同一條時間軸，因此你不必換到別的工具就能為�
 
 由**畫板**組成的 Design 文件本身就是一份簡報。開啟工具列上的 **Lolly 選單**，選擇最後一列的**簡報播放**，每個畫板就會變成一張全螢幕投影片，順序依畫板在畫布上的排列而定。簡報跑的是已算圖畫板的副本，因此底下的編輯器完全不會被動到，離開時你會回到原來的位置。
 
-- **前進**用 **Space**、`→`、**Page Down**，或點螢幕右緣的長條；後退用 `←`、**Page Up** 或左緣的長條。**Home** 與 **End** 跳到第一張與最後一張。只要移動指標，一小排控制項就會淡入，停下之後又會自己隱藏。
-- **總覽**（`O` 或格狀按鈕）把每個畫板依你在畫布上的排列一次攤開；點其中一個即可開啟。
-- **分段顯示。** 在方塊上按右鍵，選**在第 1 步顯示**、**2** 或 **3**，取代預設的**一直顯示**。該方塊就會等到你前進到它那一步才出現，所以一張投影片可以分段抵達；共用同一個編號的方塊會一起出現。
-- **講者檢視**（`S`）會開啟第二個視窗，顯示目前這張投影片、下一張、你為該張寫的備忘稿與一個計時器。若瀏覽器擋下彈出視窗，它會退回成疊在簡報上的面板。備忘稿是逐一畫板設定的，永遠不會出現在投影片上。
-- `B` 維持黑畫面（按任意鍵就回到投影片），`F` 回到全螢幕，**Escape** 一次剝一層：從總覽回到簡報，從簡報回到編輯器。
-- **展場模式。** 給畫板一個**長度**，簡報就會在那裡停留那麼久，然後在一條細細的進度條後自行前進；`K`（或暫停按鈕，只有在有東西設了長度時才會出現）可以停止與重新開始。在連結後面加上 `kiosk`，簡報播到最後會繞回開頭，這就是它能當數位看板的原因。
+- 按 **Space**、`→`、**Page Down** 或點選畫面右側邊緣的長條即可**前進**;按 `←`、**Page Up** 或點選左側邊緣的長條則可後退。**Home** 與 **End** 可跳至第一張與最後一張投影片。只要移動指標,便會淡入一小列控制項,停止移動後又會再度隱藏。
+- **總覽**(按 `O` 或格線按鈕)會一次排列出所有工作區域,依您在畫布上安排的順序呈現;點選其中一個即可開啟。
+- **顯示步驟。** 在方塊上按右鍵,選擇 **Reveal at step 1**、**2** 或 **3**,取代預設的 **Always visible**。該方塊便會等到您前進至對應步驟時才出現,讓投影片可以分段呈現;共用同一編號的方塊會一起出現。
+- **講者檢視**(`S`)會開啟第二個視窗,顯示目前的投影片、下一張投影片、該投影片的備忘稿,以及即時計時器。若瀏覽器封鎖彈出視窗,則會改以覆蓋在簡報上的面板呈現。備忘稿是依每個工作區域個別設定,絕不會出現在投影片本身上。
+- `B` 會停留在黑畫面(按任意鍵可讓投影片回復),`F` 會回到全螢幕,**Escape** 則會逐層退出:從總覽退回簡報,再從簡報退回編輯器。
+- **Kiosk。** 為工作區域設定**長度(Length)**,簡報便會在該處停留該段時間,然後在一條細進度列的引導下自動前進;`K`(或暫停按鈕,僅在有項目設定了長度後才會出現)可停止並重新啟動此流程。在連結中加上 `kiosk`,簡報便會在結尾處循環,這正是讓它成為看板顯示的關鍵。
 
 簡報同時也是一個連結。`?present` 會直接開進簡報，`s=` 指名投影片：一個位置、一個畫板 id，或用 `id.step` 指到某個分段步驟，而網址會隨你移動更新，因此你送出的就是你正看著的那一張。工具作者請注意：這些參數記載於 [URL Mode](/info/url-mode.html#reserved-parameters) 頁面。
 

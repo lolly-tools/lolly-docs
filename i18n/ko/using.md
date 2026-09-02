@@ -80,7 +80,7 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 - **Fit보다 더 축소**(20%까지)하면 프레임에서 멀리 떨어진 곳까지 세워 뒀을 때 작업대 전체를 볼 수 있어요.
 - **크기를 바꿀 수 있는 아트보드.** 내보내기 크기를 바꾸면 프레임이 제자리에서 리사이즈돼요. 상자는 위치를 지키니, 기존 내용을 중심으로 레이아웃을 다시 잡을 수 있어요.
 
-![Design의 자유 캔버스 - 아트보드와 그것을 둘러싼 작업대](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D17VVRa9swEP41ekyQLrbjPOyhVeeOrSsbG3lXbLkYZCnISmn264tO9irFhdJCoZQIpBNn9N2dvu_k3cOX1opeEuCTpeNkG0BDy8ljZe28pyDA74UlUC4WOyt0sxgOthW1JJAD9wv1y6rFQWCDMB6BAK-NdqLTBLg2thcqeAnk68vaKGOXg-yFdl29dPLBef8VAZ6V_qjUTloCvO-aRvlcc0QdhB58iCWDMVNnD1iSUIOcAvASY2qsEUeex-XSOEJ6koaT_6Q1iY89IY4mw4TCmmJYc9BNZKPQ00ywxxJS-BlqcnL2KfJF3xhZf3WdwwsMd8xZ4VEgEF6EGornaH-ByW_iHkVAj-aAtpcO7Y1R6kggX1Uz7ext1wt7PNEOk7BZ7UbtYCpKtj4NZ_YE-Doh_hOwHnff-1K_M83xlPmyiJhn8AbmL5C61nZSN8g00OlFoK2xkyjCRofOBro3g5N2OdPE2PqxIGjL1iCCIPA1SPSQpQ_B6qyIVyiCsp8s-_Gn2P76fpHfVlt6WV3_Lv5e5_6mul7cSVRFhiWhOIrsaaVTMbKZaUWNbQ-VMncGN__b_fwn-CAKeAQ&width=1360&height=850&dpi=192&waitMs=3000&format=png&localize=1&dark=1&filename=design)
+![Design의 자유 캔버스 - 아트보드와 그 주변의 페이스트보드](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D17VVRa9swEP41ekyQLrbjPOyhVeeOrSsbG3lXbLkYZCnISmn264tO9irFhdJCoZQIpBNn9N2dvu_k3cOX1opeEuCTpeNkG0BDy8ljZe28pyDA74UlUC4WOyt0sxgOthW1JJAD9wv1y6rFQWCDMB6BAK-NdqLTBLg2thcqeAnk68vaKGOXg-yFdl29dPLBef8VAZ6V_qjUTloCvO-aRvlcc0QdhB58iCWDMVNnD1iSUIOcAvASY2qsEUeex-XSOEJ6koaT_6Q1iY89IY4mw4TCmmJYc9BNZKPQ00ywxxJS-BlqcnL2KfJF3xhZf3WdwwsMd8xZ4VEgEF6EGornaH-ByW_iHkVAj-aAtpcO7Y1R6kggX1Uz7ext1wt7PNEOk7BZ7UbtYCpKtj4NZ_YE-Doh_hOwHnff-1K_M83xlPmyiJhn8AbmL5C61nZSN8g00OlFoK2xkyjCRofOBro3g5N2OdPE2PqxIGjL1iCCIPA1SPSQpQ_B6qyIVyiCsp8s-_Gn2P76fpHfVlt6WV3_Lv5e5_6mul7cSVRFhiWhOIrsaaVTMbKZaUWNbQ-VMncGN__b_fwn-CAKeAQ&width=1360&height=850&dpi=192&waitMs=3000&format=png&localize=1&dark=1&filename=design)
 
 **선택 항목 뒤집기.** 아무 박스나 우클릭한 뒤 **Flip horizontal** 또는 **Flip vertical**을 선택하면 그 자리에서 좌우 또는 상하로 뒤집힙니다. 키보드로는 `Shift+H` / `Shift+V`를 누르면 됩니다 - Shift를 쓰는 이유는 단독 `V`가 포인터 도구이기 때문입니다. 선택한 각 박스는 자신의 축을 기준으로 실행 취소 한 단계 안에서 뒤집히며, 이 뒤집기는 실제 변형이므로 캔버스뿐 아니라 내보낸 SVG, PDF, PNG에도 그대로 유지됩니다.
 
@@ -161,7 +161,7 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 
 **Transitions**는 키프레임이 아니라 프리셋이에요. Fade, Pop, Grow, Rise, Drop, 네 방향 Slide, Zoom in과 out, Tilt, Swoop, Spin, Drift, 그리고 **Cut (no animation)**이 있어요. 이동 거리는 개체 크기에 맞춰 조정되니, 같은 프리셋이 화면을 가득 채운 카드에서도 작은 배지에서도 제대로 읽혀요. 시퀀스 행에서 맞붙은 두 클립 사이에는 **이음매 칩**이 있어요. 칩을 클릭해 **Cut**이나 **Crossfade**를 고르면 곧바로 적용되고 닫혀요. 같은 칩을 다시 열면 **Length (ms)**를 바꾸고 **Done**을 누를 수 있어요. 크로스페이드는 앞 클립의 페이드 아웃과 뒤 클립의 페이드 인으로 저장되고, 내보내기가 그 한 쌍에서 실제 디졸브를 만들어 내요 - 그래서 크로스페이드가 미리보기에서는 페이드 두 개처럼 보이고 파일에서는 진짜 전환으로 나와요.
 
-**소리.** **Audio** 클립을 넣으면 다른 클립과 똑같이 타임라인에 자리 잡아요. 파형이 보이고, 다듬고, 음소거할 수 있어요. (기본 세션에 딸려 오는 생성 배경음만 예외예요 - 내보낼 때 합성되기 때문에, 렌더링하기 전까지는 막대가 밋밋하고 소리도 나지 않아요.) 마이크를 누르면 카운트인과 레벨 미터와 함께 **보이스오버를 녹음**해 곧바로 타임라인에 올릴 수 있고, 녹음본은 시작한 지점에 내 자산으로 저장돼요. 음악과 대사, 클립 자체의 사운드트랙이 모두 내보낸 믹스에 담겨요. (내보내기 패널의 **Audio track**은 다른 것이에요. 클립 전체 아래에 깔리는 배경음 하나로, 페이드와 더킹이 붙어요. 둘은 함께 있을 수 있어요.)
+**소리.** **Audio** 클립을 넣으면 다른 클립과 똑같이 타임라인에 자리 잡아요. 파형이 보이고, 다듬고, 음소거할 수 있어요. (기본 세션에 딸려 오는 생성 배경음만 예외예요 - 내보낼 때 합성되기 때문에, 렌더링하기 전까지는 막대가 밋밋하고 소리도 나지 않아요.) 마이크를 누르면 카운트인과 레벨 미터와 함께 **보이스오버를 녹음**해 곧바로 타임라인에 올릴 수 있고, 녹음본은 시작한 지점에 내 자산으로 저장돼요. 그 옆의 카메라를 누르면 같은 방식으로 **영상을 녹화**할 수 있어요. 녹화하는 동안 테이크가 아트보드의 내보내기 크기에 맞춰 계속 잘리기 때문에, 작은 셀프뷰에는 재생 헤드 위치의 시퀀스에 그대로 들어갈 내용이 풀프레임으로 정확히 보여요 - 공유 링크로 동료의 클립을 받아 오는 방법이기도 해요. 음악과 대사, 클립 자체의 사운드트랙이 모두 내보낸 믹스에 담겨요. (내보내기 패널의 **Audio track**은 다른 것이에요. 클립 전체 아래에 깔리는 배경음 하나로, 페이드와 더킹이 붙어요. 둘은 함께 있을 수 있어요.)
 
 **렌더링하기.** 모션 내보내기는 화면 녹화가 아니라 **결정적인 합성**이에요 - 프레임마다 정확한 시각에 디코딩되고 그려지고 인코딩되니, 파일이 내 기기가 따라오는지에 좌우되지 않고 MP4나 WebM에는 사실상 프레임 상한도 없어요. 길이를 직접 입력하지 않으면 타임라인 자체의 길이가 재생 시간이 돼요. Content Credentials는 다른 내보내기와 똑같이 새겨져요. 스틸로 내보내면 재생 헤드 위치의 프레임을 얻고, 출력 크기 옆 **Frames** 칸을 쓰면 통째로 컨택트 시트를 얻어요 - [내보내기](/info/exporting.html#stills-from-a-timed-composition)를 보세요.
 
@@ -175,12 +175,12 @@ Design 도구에도 같은 타임라인이 있어요. 그래서 다른 도구로
 
 **아트보드**로 이루어진 Design 문서는 그 자체로 이미 슬라이드 덱이에요. 도구 막대의 **Lolly menu**를 열고 맨 아래 줄의 **Present**를 고르면, 캔버스에 놓인 순서 그대로 아트보드마다 전체 화면 슬라이드가 돼요. 덱은 렌더링된 아트보드의 사본으로 돌아가니 아래의 편집기는 전혀 건드리지 않고, 나가면 있던 자리로 정확히 돌아와요.
 
-- **Space**, `→`, **Page Down** 또는 화면 오른쪽 끝 띠를 클릭하면 **다음으로 넘어가고**, `←`, **Page Up** 또는 왼쪽 끝 띠로 되돌아가요. **Home**과 **End**는 첫 슬라이드와 마지막 슬라이드로 건너뛰어요. 포인터를 움직이면 작은 컨트롤 바가 떠오르고, 멈추면 스스로 다시 숨어요.
-- **Overview**(`O` 또는 격자 버튼)는 캔버스에서 배치한 그대로 모든 아트보드를 한 번에 펼쳐 놓아요. 하나를 클릭하면 그 슬라이드가 열려요.
-- **단계별로 드러내기.** 상자를 오른쪽 클릭해 기본값 **Always visible** 대신 **Reveal at step 1**, **2**, **3** 중 하나를 고르세요. 그 상자는 해당 단계로 넘어갈 때까지 기다리니 슬라이드가 나눠서 도착하고, 같은 번호를 가진 상자는 함께 도착해요.
-- **Speaker view**(`S`)는 현재 슬라이드와 다음 슬라이드, 그 슬라이드의 메모, 흐르는 시계를 담은 두 번째 창을 열어요. 브라우저가 팝업을 막으면 덱 위의 패널로 대신 떠요. 메모는 아트보드마다 따로 정하고 슬라이드 자체에는 절대 나타나지 않아요.
-- `B`는 검은 화면을 유지하고(아무 키나 누르면 슬라이드가 돌아와요), `F`는 전체 화면으로 되돌리며, **Escape**는 한 겹씩 벗겨 내요. 개요에서 덱으로, 덱에서 편집기로요.
-- **키오스크.** 아트보드에 **Length**를 주면 덱이 그만큼 머물렀다가 얇은 진행 막대와 함께 스스로 넘어가요. `K`(또는 길이가 정해진 것이 생겨야만 나타나는 일시정지 버튼)로 멈추고 다시 시작해요. 링크에 `kiosk`를 더하면 덱이 끝에서 처음으로 돌아가고, 그래서 안내 사이니지가 돼요.
+- **Space**, `→`, **Page Down** 키 또는 화면 오른쪽 가장자리의 스트립을 클릭하면 **다음으로 넘어가고**, `←`, **Page Up** 키 또는 왼쪽 가장자리의 스트립을 클릭하면 되돌아가요. **Home**과 **End**는 각각 첫 슬라이드와 마지막 슬라이드로 이동해요. 포인터를 움직이면 작은 컨트롤 바가 나타났다가 멈추면 다시 사라져요.
+- **개요 보기**(`O` 또는 그리드 버튼)는 캔버스에서 배치한 순서 그대로 모든 아트보드를 한 번에 늘어놓아요. 하나를 클릭하면 열려요.
+- **단계 공개.** 박스를 우클릭해 기본값인 **항상 표시** 대신 **1단계에서 공개**, **2**, **3** 중 하나를 선택하세요. 그러면 해당 박스는 자신의 단계로 넘어갈 때까지 기다리므로 슬라이드가 여러 조각으로 나뉘어 등장할 수 있고, 같은 번호를 공유하는 박스는 함께 등장해요.
+- **발표자 보기**(`S`)는 현재 슬라이드, 다음 슬라이드, 해당 슬라이드의 메모, 진행 시계를 담은 두 번째 창을 열어요. 브라우저가 팝업을 막으면 덱 위에 패널로 대신 표시돼요. 메모는 아트보드마다 설정되며 슬라이드 자체에는 절대 나타나지 않아요.
+- `B`는 검은 화면을 유지하고(아무 키나 누르면 슬라이드로 돌아와요), `F`는 전체 화면으로 되돌리고, **Escape**는 한 번에 한 단계씩 벗겨내요: 개요 보기는 덱으로, 덱은 에디터로요.
+- **키오스크.** 아트보드에 **Length**를 지정하면 덱이 그 시간만큼 머물다가 얇은 진행 표시줄 뒤에서 스스로 다음으로 넘어가요; `K`(또는 무언가에 Length가 지정된 뒤에만 나타나는 일시정지 버튼)로 멈추고 다시 시작할 수 있어요. 링크에 `kiosk`를 추가하면 덱이 끝에서 처음으로 되돌아가는데, 이것이 바로 사이니지가 되는 지점이에요.
 
 덱은 링크이기도 해요. `?present`는 곧장 덱으로 열고, `s=`는 슬라이드를 지정하며(위치, 아트보드 id, 또는 등장 단계까지 지정하는 `id.step`), 이동할 때마다 주소가 갱신되니 보내는 링크가 곧 지금 보고 있는 슬라이드예요. 도구 제작자를 위해: 이 매개변수는 [URL 모드](/info/url-mode.html#reserved-parameters) 페이지에 정리돼 있어요.
 

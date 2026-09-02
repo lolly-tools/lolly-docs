@@ -29,6 +29,8 @@ Adoption succeeds or fails on the **producer** - the non-designer who has to mak
 
 The pilot's centre of gravity is the **producer**. If producers don't self-serve, nothing else matters - the developer integrations and the governance model are means to that end.
 
+One producer case is easy to miss because it is not marketing at all: **critical communications**. Incident notices, compliance reports and executive briefings are structured data that needs to become a clear, finished document in minutes, at any hour, with no design bottleneck in the path. A tool authored once for each of those formats means the 2am incident notice comes out as correct as the campaign poster did.
+
 ## What onboarding looks like
 
 ### The first 15 minutes (any producer)
@@ -133,7 +135,7 @@ And git is not the only way to govern live. Everything above is self-owned gover
 
 ![Every part of Lolly as its own switch, so turning a whole category of tools off is one click, not a support ticket](/t/url-shot?url=%2F%23%2Fprofile%3Ffocus%3Dfeature-flags&width=1440&height=1800&dpi=192&waitMs=2000&cropSelector=%23feature-flags-section&format=svg&walker=1&dark=1&filename=aud-feature-switches)
 
-The most common adoption set-back is not technical; it's **framing and change management**. Existing processes work today even when the output is off-brand, and "we can already make files" becomes the excuse not to migrate. The counter is to convert one high-visibility output well and let the before/after make the case. See the [FAQ on adoption hurdles](/info/index.html#faq-what-hurdles-could-i-expect-adopting-lolly).
+The most common adoption set-back is not technical; it's **framing and change management**. Existing processes work today even when the output is off-brand, and "we can already make files" becomes the excuse not to migrate. The counter is to convert one high-visibility output well and let the before/after make the case. See the [FAQ on adoption hurdles](/info/faq.html#faq-what-hurdles-could-i-expect-adopting-lolly).
 
 ## We need your story
 

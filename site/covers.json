@@ -1,0 +1,81 @@
+{
+  "label": "The Lolly studios",
+  "open": "Open {name}",
+  "prev": "Previous",
+  "next": "Next",
+  "pick": "Pick a cover",
+  "covers": [
+    {
+      "img": "design.png",
+      "name": "Design",
+      "href": "#/tool/design",
+      "promise": "Free-form layouts on an open canvas, held to the design system",
+      "alt": "The Design canvas with a finished poster layout"
+    },
+    {
+      "img": "seq-studio-timeline.svg",
+      "name": "Sequence",
+      "href": "#/tool/design",
+      "promise": "Design's video timeline: clips, music and voiceover, cut in place",
+      "alt": "The Sequence timeline with clips laid out"
+    },
+    {
+      "img": "aif-audiogram.svg",
+      "video": "covers/audiogram.webm",
+      "name": "Audiogram",
+      "href": "#/tool/audiogram",
+      "promise": "A voice note becomes a finished video that moves with the sound",
+      "alt": "An audiogram cover with a waveform moving to the voice"
+    },
+    {
+      "img": "bs-colour-wheel.svg",
+      "name": "Colours",
+      "href": "#/start",
+      "promise": "A palette built on a real colour wheel, kept in step everywhere",
+      "alt": "The colour wheel in the Brand Studio"
+    },
+    {
+      "img": "covers/darkroom.webp",
+      "name": "Darkroom",
+      "href": "#/tool/darkroom",
+      "promise": "Film looks, LUTs and grading for photos",
+      "alt": "A photo graded with a film look in the Darkroom"
+    },
+    {
+      "img": "covers/filter.webp",
+      "name": "Filter",
+      "href": "#/tool/filter",
+      "promise": "Halftone, dither, duotone, ASCII and more, on a picture or live camera",
+      "alt": "A halftone treatment over a photo"
+    },
+    {
+      "img": "um-color-mesh.svg",
+      "name": "Gradient",
+      "href": "#/tool/gradient",
+      "promise": "Five ways to build a gradient from the swatches you set",
+      "alt": "A mesh gradient built from brand swatches"
+    },
+    {
+      "img": "covers/backdrop.webp",
+      "name": "Backdrop",
+      "href": "#/tool/backdrop",
+      "promise": "Living backgrounds in the colours you set",
+      "alt": "Metaballs drifting in a generated backdrop"
+    },
+    {
+      "img": "catalogue.svg",
+      "name": "Catalogue",
+      "href": "#/c",
+      "promise": "Every file, font and colour in one place",
+      "alt": "The Catalogue grid of files, fonts and colours"
+    },
+    {
+      "img": "covers/3d-poster.png",
+      "video": "covers/3d.webm",
+      "name": "3D",
+      "href": "#/tool/3d",
+      "promise": "Pose a model, render a still or a turntable",
+      "alt": "A 3D model turning on a turntable"
+    }
+  ]
+}

@@ -30,6 +30,8 @@ Această platformă este răspunsul direct:
 
 > **Creativitate și conținut programatice la scară** - generare de active fără muncă manuală, cu regulile sub control central, pentru angajați, furnizori și parteneri.
 
+Lolly nu este locul unde se inventează un sistem de design - este locul unde acesta se produce. Gândește-te la el ca la un automat de vending pentru design: faci o alegere, obții un rezultat. De fiecare dată. Motorul (engine) urmărește cea mai bună calitate pe care fiecare format o poate produce pe hardware-ul din fața ta, iar același motor produce același fișier pe fiecare platformă către care este livrat.
+
 Rezultatul este **abundența**: fiecare eveniment are semnalistica corectă, fiecare alertă CVE se potrivește cu stilul casei, fiecare etichetă se tipărește curat, fiecare semnătură de e-mail este actuală - totul fără un tichet de design. Platforma se ocupă de creativitatea operaționalizată recurentă. Deliberat nu este o unealtă creativă la comandă - designerii continuă să dețină munca de vârf.
 
 ### Inovează probabilistic, scalează determinist
@@ -432,10 +434,10 @@ Compune randarea oricărei unelte: un copil **SVG** rămâne un vector adevărat
 ## Ce am ales în mod explicit să nu facem
 
 - **Fără EJS / fără JS arbitrar în șabloane.** Suprafața XSS este zero. Logica trăiește în `hooks.js`.
-- **Fără CMS de active obligatoriu.** Persoanele își introduc propriile fișiere creative direct în catalogul lor din aplicație (vizualizarea [Catalog](/info/using.html) și Brand Studio) - fără server, fără consolă de administrare. Lucrul este predat mai departe ca o **sesiune**: un link de partajare transportă întreaga stare, iar aceeași sesiune călătorește într-o copie de rezervă sau printr-o sesiune de colaborare. Cel care controlează implementarea poate apoi bloca o sesiune partajată ca **șablon** - deschide linkul, înregistrează valorile acesteia ca intrare de șablon în directorul acelei unelte din pachetul de brand și face commit - după care apare în selectorul "New from template" al uneltei și este accesibil printr-un link direct ca `?template=<id>`. Git este pasul de blocare al deținătorului implementării, niciodată al creatorului. Pentru un catalog *partajat, guvernat*, o organizație **poate** gestiona directorul de active în același mod și poate condiționa actualizările prin revizuire PR - un model de guvernanță disponibil, nu o cerință a aplicației.
-- **Fără RBAC forțat.** Aplicația deschisă este cu acces public în mod implicit; riscul de brand este gestionat prin etichete de maturitate + filigrane. O organizație care dorește un control mai strict adaugă deasupra propria autentificare și catalogul revizuit prin git de mai sus.
+- **Fără CMS de resurse obligatoriu.** Persoanele își introduc propriile fișiere creative direct în catalogul lor, în aplicație (vizualizarea [Catalog](/info/using.html) și Brand Studio) - fără server, fără consolă de administrare. Lucrarea se predă mai departe ca o **sesiune**: un link de partajare poartă întreaga stare, iar aceeași sesiune călătorește într-un backup sau printr-o sesiune de colaborare. Cine controlează deployment-ul poate apoi bloca o sesiune partajată ca **șablon** - deschide linkul, înregistrează valorile sale ca intrare de șablon în directorul acelui instrument din pachetul de brand și fă commit - după care apare în selectorul "New from template" al instrumentului și poate fi accesat direct ca `?template=<id>`. Git este pasul de blocare al deținătorului deployment-ului, niciodată al creatorului. Pentru un catalog *partajat, guvernat*, o organizație **poate** gestiona directorul de resurse în același mod și poate condiționa actualizările printr-o revizuire de PR - un model de guvernanță disponibil, nu o cerință a aplicației.
+- **Fără RBAC forțat.** Aplicația deschisă este cu acces public implicit; riscul de brand este gestionat prin etichete de maturitate + filigrane. O organizație care vrea un control mai strict adaugă un strat cu propria autentificare și catalogul revizuit prin git de mai sus.
 - **Fără bază de date centrală.** Toată starea utilizatorului este per dispozitiv. Integrarea SUSE ID este pe foaia de parcurs, dar nu este un blocaj pentru lansare.
-- **Fără cale de cod partajată pentru tools/engine.** Engine-ul este open source; `tools/` și `assets/` rămân conținut proprietar SUSE în propriile lor repository-uri. Separarea este impusă (fără importuri încrucișate), astfel încât despărțirea rămâne curată.
+- **Fără cale de cod comună pentru instrumente/engine.** Engine-ul este open source, la fel și instrumentele agnostice de brand din `community/`; un pachet de brand precum cel privat `brands/suse/` poartă propriile instrumente și catalog sub propriii termeni. În ambele cazuri, separarea este impusă (fără importuri încrucișate din `engine/` în conținutul instrumentelor), astfel încât divizarea rămâne curată.
 
 ---
 
@@ -460,9 +462,13 @@ Același ciclu de viață în Tauri. Același ciclu de viață în CLI - jsdom o
 
 ## Statutul open-source
 
-Directoarele `engine/`, `shells/`, `schemas/` și `docs/` sunt open source sub **MPL-2.0** - o platformă de schelărie neutră din punct de vedere al furnizorului pentru unelte de brand, cu fiecare unitate expediabilă separată în propriul repository sub [github.com/lolly-tools](https://github.com/lolly-tools). `tools/` și `catalog/assets/` sunt conținut specific SUSE și rămân **proprietate exclusivă SUSE** (toate drepturile rezervate - vezi `NOTICE.md` din fiecare repository); nu sunt acoperite de MPL.
+**Codul este MPL-2.0.** `engine/`, `shells/*`, `services/*`, `schemas/` și `docs/` sunt open source sub **MPL-2.0** - o platformă de schelărie (scaffolding) neutră din punct de vedere al furnizorului pentru instrumentele de brand, fiecare unitate livrabilă având propriul repository sub [github.com/lolly-tools](https://github.com/lolly-tools).
 
-Despărțirea este impusă - nu există importuri încrucișate din `engine/` către `tools/` sau `assets/` - astfel încât granița platformă/conținut rămâne curată.
+**Conținutul instrumentelor este livrat ca pachete de brand**, fiecare cu propriii termeni (vezi `NOTICE.md` al pachetului). `community/` este repository-ul public [`lolly-tools`](https://github.com/lolly-tools/lolly-tools), iar instrumentele sale agnostice de brand sunt tot MPL-2.0. `brands/suse/` este pachetul privat `suse-lolly`: instrumentele SUSE și catalogul SUSE, **proprietate SUSE**, inclusiv muzica sa licențiată PremiumBeat. `brands/lolly-start/` este brandul de pornire gol, deținut de acest repository. Fonturile sunt livrate în interiorul unui pachet sub **SIL Open Font License 1.1** - pachetul SUSE poartă fonturile SUSE și SUSE Mono.
+
+`tools/` și `catalog/` din rădăcina repository-ului sunt *vizualizări* ignorate de git: un profil le asamblează din `community/` plus pachetul de brand activ, motiv pentru care fiecare script și shell citește aceste două căi și niciodată un pachet direct.
+
+Separarea este impusă - nu există importuri încrucișate din `engine/` în conținutul instrumentelor - astfel încât granița dintre platformă și conținut rămâne curată.
 
 ---
 

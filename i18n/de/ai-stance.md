@@ -38,6 +38,14 @@ Tools hier skalieren, was ein Mensch entschieden hat. Sie entscheiden nicht an s
 
 Wir halten uns von Anfang bis Ende daran, und wir zeichnen es auf: für die Geschichte, für Rechenschaft, für Vertrauen und für morgen.
 
+## KI, zu Ihren Bedingungen
+
+Sie brauchen hier nie KI. Wenn Sie sich dafür entscheiden, gelten drei Dinge:
+
+- <!--i:people--> **Sie behalten die Kontrolle.** KI hilft nur, wenn Sie danach fragen, und nur bei dem Stück, auf das Sie sie ansetzen. Nichts wird für Sie entschieden.
+- <!--i:check--> **Es hört auf zu kosten.** Wenn KI einmal hilft, etwas zu erstellen, gehört Ihnen das Ergebnis. Es erneut zu nutzen ist kostenlos, so oft Sie es brauchen.
+- <!--i:shieldcheck--> **Es bleibt ehrlich.** Ein von KI erstelltes Stück sagt das auch, und was Sie erstellen, trägt Ihren Namen, statt vorzugeben, jemand anderes zu sein. Sogar die eingebaute Hilfe funktioniert so: [Ask Lolly](/info/ask.html) antwortet mit dem eigenen Satz aus dem Handbuch und einem Link, nie mit einer erfundenen Antwort.
+
 ## Was das nicht ist
 
 - <!--i:check--> **Kein Verbot.** Tools dürfen KI einsetzen, wo sie der Arbeit dient, und Agenten sind eine unterstützte Zielgruppe - siehe [KI-Agenten](/info/ai-agents.html).

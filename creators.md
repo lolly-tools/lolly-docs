@@ -1,94 +1,54 @@
 # Lolly for Creators
 
-You want to make something good, quickly and have it come out right. Lolly is built for exactly that: fill in a few fields, get a finished file - the layout, the type, the rules are enforced by the tool, not by your eye (unless you want to - then you have a media powerhouse at your fingertips). No design software, no waiting. It runs on your own device and works offline.
+You fill in a few fields and a finished file comes out, with the fonts, the colours and the layout already decided on your own device. You ship in minutes and it looks like you spent hours, and because the brand rules are baked into the tool, it is never your name on the off-brand file. Pick the lane below that matches what you are doing today.
 
-**What's in it for you:** you ship in minutes and it looks like you spent hours. You're never stuck waiting on a designer, and because the brand rules are baked in, it's never your name on the off-brand asset. You just look fast, polished and reliable.
+You are one hand in a relay: a developer can scale the tool you use into a pipeline and a colleague can run it self-serve, so [The lifecycle of a campaign](/info/overview.html#the-lifecycle-of-a-campaign) follows one asset through all three pairs of hands.
 
-This page tells you everything you need to know about getting the most out of Lolly.
+New here? Start with **[Make something in 60 seconds](/info/make-something.html)** and come back once you know which part you want to go deeper on. [Questions & answers](/info/faq.html) covers what people ask before they trust a free tool. [How Lolly compares](/info/positioning.html) is the honest account of what to reach for something else for.
 
-> **You're one hand in a relay.** The tools you author don't stop with you - a developer can wire them into an automated pipeline ([Lolly for Builders](/info/builders.html)) and a non-designer colleague can run them self-serve to get a finished, on-brand file without you in the loop. See how the whole lifecycle compounds in [The lifecycle of a campaign](/info/overview.html#the-lifecycle-of-a-campaign).
+## Make
 
-## Why Lolly - your advantages
+Pick a tool, fill in a few fields and download the finished file. Or open the Design canvas and lay it out freehand: either way the colours, the type and the spacing come from your brand rather than from memory, and nothing needs an account.
 
-- **Finished, not fiddly.** The tool already knows the fonts, the colours, the logo, the spacing. You bring the words; it hands back the asset. Nothing to second-guess.
-- **Correct by construction.** Design rules, layout constraints and running logic live in the template - output can't drift from spec unless the tool's author deliberately leaves something open. Wild creative range, inside guard-rails that hold.
-- **One source, every format.** The same design exports as SVG, print-ready PDF, high-res PNG, or 60fps video. Make it once; ship it everywhere.
-- **Infinite permutations.** Localise a card into a dozen languages, generate every size for every placement, swap a lockup across forty campaigns - all from one design, driven by a spreadsheet.
-- **It's yours, offline, private.** Your work stays on your device - no account needed, nothing uploaded to make or export an asset, no licence to audit. Close the laptop lid on a plane and keep working. (Two optional server add-ons exist and can be ignored entirely - see [Server Surface](/info/server-surface.html).)
-- **Open, not locked in.** The engine is open source and your work lives at plain URLs, not inside a vendor's database.
-- **Superpowers when you want them.** You never *have* to design - but the moment you decide to, the ceiling is high. Lay out pages freehand on the Design canvas. Cut clips, cards and music on a timeline in Sequence Studio. Record clean voice and camera takes with live coaching. Stand up an entire brand yourself, guided by a colour picker that tells you more about a colour than most design suites ever will.
+- **[Make something in 60 seconds](/info/make-something.html)** - three short walkthroughs with nothing to set up, if you have never opened Lolly before.
+- **[Using Lolly](/info/using.html)** - the canvas, the controls, saving, Projects and phone use: how the app itself behaves.
+- **[The Brand Studio](/info/brand-studio.html)** - when the logos, colours and type should be yours rather than the defaults.
+- **[Import a design](/info/design-import.html)** - when the artwork already exists as a `.fig`, `.penpot`, `.ai`, `.idml` or SVG file and you want it editable rather than flattened.
+- **[Utility views](/info/utilities.html)** - the spreadsheet, the converter, the Colour Lab, the PDF extractor and Script audio, for the jobs that are not a tool render.
+- **[Browser Extension](/info/extension.html)** - capture a live web page and reuse it as an asset in your own designs.
+- **[Search](/info/search.html)** - one field that reaches your tools, your saved work, the catalogue and your settings.
+- **[Ask Lolly](/info/ask.html)** - type a question and get the matching section of these guides back, with a link straight into it.
+- **[The Dashboard](/info/dashboard.html)** - what this device can do, your design system read-only and a glance at storage.
+- **[Your favourites](/info/favourites.html)** - star what you use often so it gets a tile of its own above the grid.
+- **[Profiles](/info/profile.html)** - the details tools pre-fill from and the four accessibility switches that calm the app without moving a pixel of what you export.
 
-> **The constraints don't cage you - they catch you.** Think of the guard-rails as bumper lanes: you still throw the ball - the words, the image, the idea - and the code just keeps it out of the gutter so it can never break the brand. You're not being automated away; the tedious part is: the brand-checking, the re-exporting at every size, the hand-localizing into a dozen languages. What's left is the call that needed you. And the tool *you* author is what lets the rest of the company make good work without pulling you into every asset: your judgment, scaled.
+## Animate
 
-## How it compares
+Text that moves, scenes on a timeline and motion that stays on-brand. A motion export is composited frame by frame from a driven clock rather than recorded off the screen, so the timing never drifts and the same link renders the same clip at any length.
 
-Lolly isn't trying to be Canva or Figma. It sits where *rules, repeatability and hard constraints matter more than freehand flexibility* - turning design decisions into tools your whole team can use without you in the loop for every asset.
+- **[Animating](/info/animating.html)** - keyframes, real depth and a scene camera to fly over the result.
+- **[The sequence editor](/info/sequence-editor.html)** - the timeline itself: clips, overlay lanes, trim and split, transitions and the audio mix.
+- **[Exporting & Formats](/info/exporting.html)** - the video, GIF and animated PNG side of the export panel, once the motion is right.
 
-The product-by-product detail lives on the dated [comparison pages](/info/compare.html) - Canva, Adobe, Figma, Penpot, brand portals, render APIs and file converters - with the concessions written first and a [capability board](/info/positioning.html) behind them.
+## Record
 
-**Reach for Lolly** for the assets you make again and again - event signage, quote cards, localized banners, email signatures, shipping labels, social variants, data-driven charts and maps. **Reach for a design tool** for the bespoke hero piece, the one-off campaign concept, the ideation that's *meant* to escape the system. Lolly executes the system; it doesn't replace the studio.
+Record a clean take with a count-in, a level meter and gentle coaching, or turn a voice note into a finished video that moves with the sound. There is no separate Record page yet: Using Lolly carries it, in the timeline section.
 
-## What you can make
+- **[Using Lolly](/info/using.html#timeline-sequence-studio)** - recording a voiceover straight onto the timeline, where the take is saved and how it reaches the mix.
+- **[Make something in 60 seconds](/info/make-something.html#make)** - the audiogram scene, for when you would rather be heard than seen.
+- **[Utility views](/info/utilities.html)** - Script audio, when the words come first and the voice comes after.
 
-### Everything correct, without the wait
+## Collaborate
 
-Fill in a few fields, get the finished asset - no fonts to pick, no colours to second-guess, no "is this the right logo?" The tool already knows. Email signatures, event countdowns, quote cards, badges, street maps - everything your team needs on a Tuesday at 4pm, self-serve. And because no customer data leaves the device, there's no compliance risk to collaborating.
+Two people, two devices, one session, edited live. Scan a code across the table and both screens hold the same work, with no account and no server in the middle - and no internet at all when both devices are on the same network.
 
-Street Map is a fair example of the trade: you pick a city and a couple of colours, and the cartography, the road weights and the water are decided for you.
+- **[Working together](/info/collaborate.html)** - starting a session, what travels between the devices and what happens when the network drops.
+- **[Using Lolly](/info/using.html#sharing-your-work)** - the quieter ways to hand work on: a share link that carries the whole state, or one `.lolly` file.
 
-![A Street Map render of Tokyo in neon on near-black, produced from a city dropdown and two colour pickers](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-street-map-poster)
+## Post
 
-### From live data to finished visual
+Send it where it was asked for: a link that carries the design, a print-true PDF, a video, a deck or a folder of variants. The same source makes every one of them, so you build it once.
 
-Connect a **CSV** or **JSON** table to a chart, map, or table template and update the numbers - the layout takes care of itself. Election results, quarterly earnings, weather events: build the format once and reuse it every time the story runs. Match your house style *exactly*, because it's enforced at the template level, not left as a loose guideline.
-
-![A donut chart straight out of Chart Creator - labels, values and colours all placed by the template, not by hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
-
-### Tools that compose tools
-
-One tool can embed another tool's live output as an asset - a name badge that renders its own QR code, a card that drops in a live chart - with no design tool and no manual compositing. The embedded render stays live and re-renders on load; it's never a flattened picture.
-
-### The frontier, when you need it
-
-Advanced filters, compositing, animation, live camera effects, generative design - every web technology is available to a template author, so the ceiling is high.
-
-![Mesh Gradient's output - a generative field of soft colour built entirely from your brand's palette tokens](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
-
-### Grown, not drawn
-
-**Growth** grows the picture instead of drawing it: a seeded system spreads out from a ring, a line, your own words or your logo until it fills the frame, in your palette. The same seed always grows the same piece, so a link reproduces it exactly. What comes out is ordinary SVG geometry rather than a picture of a drawing, so it prints, plots and cuts - and the same design animates from the first seed to the finished form as video.
-
-![Growth's default bloom - a dense field of looping brand-coloured lines grown out from a ring, every line a real SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
-
-### Motion that answers the music
-
-**Synth** solves a fluid field on the graphics card and paints it in your colours. Give it a track and the field moves with the sound; it exports as an MP4, WebM, GIF or animated PNG loop that joins cleanly end to end, rendered frame by frame from a driven clock rather than recorded off the screen - so the motion never drifts against the soundtrack, and the same link renders the same clip at any length.
-
-![A frame of Synth's ink scene - a dark fluid field lit in the brand greens, caught mid-swirl](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
-
-Author *tools*, not files: build the thing that generates 10,000 cards rather than making 10,000 cards. Lock what shouldn't change; expose only what's meant to vary.
-
-## Touches you'll notice
-
-- **Print, done right.** Real physical units (mm/cm/in/pt) and DPI, bleed and crop marks, CMYK and PDF/X-4 output-intent - a print shop gets exactly what it needs. See [Exporting](/info/exporting.html#size-print-units).
-- **Video and motion.** Export WebM/MP4 (with audio tracks), animated PNG/WebP and animated SVG - from the same template that makes your stills. **Sequence Studio** goes further: a real timeline under the canvas, with a magnetic row of clips, free overlay lanes, trim and split, transition presets, voiceover recording and a music mix - rendered out as MP4, WebM, GIF or APNG by a deterministic compositor rather than a screen recording. Lottie files come *in* as animated assets and render out to any of those. Above the clips sit **keyframes**: pose a box at one instant, lift it off the page with real depth and fly a camera over the result. See [Using Lolly → Timeline](/info/using.html#timeline-sequence-studio) and [Animating](/info/animating.html).
-- **Audio.** Record a voice note and save it as MP3 (or its native M4A/OGG/WebM), all on-device - and bring in MP3, WAV, OGG, M4A, FLAC, MIDI or tracker modules (MOD/XM/IT/…) as a music bed under a video or an ambient track in Neurospicy Mode.
-- **Draw, don't settle.** The Design tool has a real **pen**: click to place points, drag to curve and pick the kind of curve that runs through them. Combine shapes with **union, subtract, intersect and exclude**, outline a stroke, offset a silhouette, simplify a path - the geometry is exact Bezier maths, so a shape you draw stays crisp at any size and renders identically from a link or the CLI. See [Using Lolly → Drawing your own shapes](/info/using.html#drawing-your-own-shapes-the-pen).
-- **Editable vectors.** SVG, EPS, EMF and DXF export. Text becomes outlined paths in vector output, so a print shop or a cutter gets crisp geometry that opens anywhere. (Outlined text is no longer *re-typable* in Illustrator - that's the trade for perfect fidelity without the font.)
-- **Convenience that adds up.** Batch a spreadsheet into a folder of assets; save sessions and organise them into Projects; share any state as a URL; render a whole folder as one zip.
-- **A UI that's actually pleasant.** Undo/redo everywhere, a sound layer you can turn off, a theme cycle, live-camera filters - and **Neurospicy Mode**, a background focus-music player that follows you across the app in its own dock.
-- **A calmer interface when you want one.** Four switches under **Profile → Accessibility** - *Reduce motion*, *Hide colourful previews*, *High contrast* and *Large text* - settle the app around your work. Each is off until you turn it on, and none of them touch your canvas or move a pixel of what you export. See [Your profile → Accessibility](/info/profile.html#accessibility).
-
-## Get the most out of it
-
-- **[Quickstart](/info/quickstart.html)** - brand in, first file out.
-- **[The Brand Studio](/info/brand-studio.html)** - shape your logos, colours, type and tokens (`#/start`).
-- **[Using Lolly](/info/using.html)** - the canvas, controls, saving, projects and phone use.
-- **[Your profile](/info/profile.html)** - the details tools pre-fill from, and how to carry them between devices.
-- **[Import a design](/info/design-import.html)** - bring in your Figma / Penpot / Illustrator / InDesign work, and your PowerPoint decks - edited or rebranded on-device.
-- **[Working together](/info/collaborate.html)** - two people editing one session live, device to device, with no account and no server in the middle.
-- **[Search](/info/search.html)** - one field at the foot of the gallery, Utilities, Projects, the Catalogue, the Dashboard and Profile that reaches your tools, your saved work, the catalogue and your settings.
-- **[Ask Lolly](/info/using.html#ask-lolly)** (`#/ask`) - type a question and get the matching section of these guides back verbatim, with a link straight to it.
-- **The Dashboard** (`#/d`) - the instrument panel: your design system shown read-only, the full capability map, what this device can do and a glance at your activity and storage.
-- **[Your favourites](/info/favourites.html)** - star what you use and it gets a tile of its own above the grid.
-- **[Exporting & formats](/info/exporting.html)** - every format, print units, video and batch.
+- **[Exporting & Formats](/info/exporting.html)** - print units, DPI, bleed and crop marks, video, batch runs and the export panel itself.
+- **[Every format Lolly can open and make](/info/formats.html)** - the full in-and-out list, with a plain-language card behind every chip.
+- **[Data Transfer](/info/data-transfer.html)** - the backup bundle, for moving everything you have made to another device.

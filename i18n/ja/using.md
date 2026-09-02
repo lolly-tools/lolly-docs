@@ -80,7 +80,7 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 - フレームの遠くに要素を置いたときは、**Fit より先までズームアウト**（20% まで）すると台紙全体が見えます。
 - **アートボードはサイズを変えられます。** 書き出しサイズを変えるとフレームがその場でリサイズされます。ボックスの位置は変わらないので、既存の内容に合わせてレイアウトを取り直せます。
 
-![Design のフリーキャンバス。アートボードとそれを囲む台紙](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D17VVRa9swEP41ekyQLrbjPOyhVeeOrSsbG3lXbLkYZCnISmn264tO9irFhdJCoZQIpBNn9N2dvu_k3cOX1opeEuCTpeNkG0BDy8ljZe28pyDA74UlUC4WOyt0sxgOthW1JJAD9wv1y6rFQWCDMB6BAK-NdqLTBLg2thcqeAnk68vaKGOXg-yFdl29dPLBef8VAZ6V_qjUTloCvO-aRvlcc0QdhB58iCWDMVNnD1iSUIOcAvASY2qsEUeex-XSOEJ6koaT_6Q1iY89IY4mw4TCmmJYc9BNZKPQ00ywxxJS-BlqcnL2KfJF3xhZf3WdwwsMd8xZ4VEgEF6EGornaH-ByW_iHkVAj-aAtpcO7Y1R6kggX1Uz7ext1wt7PNEOk7BZ7UbtYCpKtj4NZ_YE-Doh_hOwHnff-1K_M83xlPmyiJhn8AbmL5C61nZSN8g00OlFoK2xkyjCRofOBro3g5N2OdPE2PqxIGjL1iCCIPA1SPSQpQ_B6qyIVyiCsp8s-_Gn2P76fpHfVlt6WV3_Lv5e5_6mul7cSVRFhiWhOIrsaaVTMbKZaUWNbQ-VMncGN__b_fwn-CAKeAQ&width=1360&height=850&dpi=192&waitMs=3000&format=png&localize=1&dark=1&filename=design)
+![Design's free canvas - the artboard with its surrounding pasteboard](/t/url-shot?url=%2F%23%2Ftool%2Fdesign%3Fz%3D17VVRa9swEP41ekyQLrbjPOyhVeeOrSsbG3lXbLkYZCnISmn264tO9irFhdJCoZQIpBNn9N2dvu_k3cOX1opeEuCTpeNkG0BDy8ljZe28pyDA74UlUC4WOyt0sxgOthW1JJAD9wv1y6rFQWCDMB6BAK-NdqLTBLg2thcqeAnk68vaKGOXg-yFdl29dPLBef8VAZ6V_qjUTloCvO-aRvlcc0QdhB58iCWDMVNnD1iSUIOcAvASY2qsEUeex-XSOEJ6koaT_6Q1iY89IY4mw4TCmmJYc9BNZKPQ00ywxxJS-BlqcnL2KfJF3xhZf3WdwwsMd8xZ4VEgEF6EGornaH-ByW_iHkVAj-aAtpcO7Y1R6kggX1Uz7ext1wt7PNEOk7BZ7UbtYCpKtj4NZ_YE-Doh_hOwHnff-1K_M83xlPmyiJhn8AbmL5C61nZSN8g00OlFoK2xkyjCRofOBro3g5N2OdPE2PqxIGjL1iCCIPA1SPSQpQ_B6qyIVyiCsp8s-_Gn2P76fpHfVlt6WV3_Lv5e5_6mul7cSVRFhiWhOIrsaaVTMbKZaUWNbQ-VMncGN__b_fwn-CAKeAQ&width=1360&height=850&dpi=192&waitMs=3000&format=png&localize=1&dark=1&filename=design)
 
 **選択範囲を反転する。** 任意のボックスを右クリックして**Flip horizontal**または**Flip vertical**を選ぶと、その場で反転できます。あるいはキーボードで`Shift+H` / `Shift+V`を押します - Shiftが必要なのは、単独の`V`がPointerツールに割り当てられているためです。選択された各ボックスはそれぞれの軸で反転し、1回のUndoステップにまとまります。反転は実際の変形なので、キャンバス上だけでなく書き出したSVG、PDF、PNGにも保持されます。
 
@@ -161,7 +161,7 @@ confirmed in lib/bulk-bar.ts), then click the grey reveal tile
 
 **トランジション**はキーフレームではなくプリセットです。Fade、Pop、Grow、Rise、Drop、4 種類の Slide、Zoom in と Zoom out、Tilt、Swoop、Spin、Drift、そして **Cut (no animation)** があります。移動量はオブジェクトに応じて拡大縮小するので、画面いっぱいのカードでも小さなバッジでも同じプリセットが正しく見えます。シーケンス行で隣り合う 2 つのクリップの間には**継ぎ目チップ**があります。クリックして **Cut** か **Crossfade** を選ぶと即座に適用され、閉じます。同じチップをもう一度開くと **Length (ms)** を変更でき、**Done** を押します。クロスフェードは一方のフェードアウトと次のフェードインの組として保存され、書き出しではその組から実際のディゾルブを導きます。そのため、プレビューでは 2 つのフェードに見え、ファイルでは本当の受け渡しになります。
 
-**音。** **Audio** クリップを追加すると、他のクリップと同じようにタイムライン上に置かれます。波形、トリミング、ミュートが使えます。（既定のセッションに入っている生成音のベッドだけは例外で、書き出し時に合成されるため、レンダリングするまでバーは無地のまま無音です。）マイクを押すと、カウントインとレベルメーター付きで**ナレーションをそのままタイムラインに録音**でき、録ったテイクは開始した位置に自分のアセットとして保存されます。音楽、会話、クリップ自身のサウンドはすべて書き出し時のミックスに入ります。（書き出しパネルの **Audio track** は別物で、クリップ全体の下に敷く 1 本のベッドをフェードとダッキング付きで扱います。両者は併存します。）
+**音。** **Audio** クリップを追加すると、他のクリップと同じようにタイムライン上に置かれます。波形、トリミング、ミュートが使えます。（既定のセッションに入っている生成音のベッドだけは例外で、書き出し時に合成されるため、レンダリングするまでバーは無地のまま無音です。）マイクを押すと、カウントインとレベルメーター付きで**ナレーションをそのままタイムラインに録音**でき、録ったテイクは開始した位置に自分のアセットとして保存されます。その隣にあるカメラを押すと、同じ要領で**動画を録画**できます。録画中、テイクはアートボードの書き出しサイズに合わせて随時トリミングされるため、小さなセルフビューには再生ヘッド位置のシーケンスに入る内容がフルフレームでそのまま映ります - 共有リンクから同僚のクリップを取り込む方法でもあります。音楽、会話、クリップ自身のサウンドはすべて書き出し時のミックスに入ります。（書き出しパネルの **Audio track** は別物で、クリップ全体の下に敷く 1 本のベッドをフェードとダッキング付きで扱います。両者は併存します。）
 
 **書き出し。** モーションの書き出しは画面録画ではなく**決定論的な合成**です。各フレームは正確な時刻で復号、描画、符号化されるため、ファイルの内容はマシンの処理速度に左右されず、MP4 や WebM では実用上のフレーム数の上限もありません。長さを入力しない限り、尺はタイムライン自身の長さになります。Content Credentials は他の書き出しと同様に付与されます。静止画で書き出すと再生ヘッド位置のフレームが得られ、出力サイズの隣の **Frames** 欄からはコンタクトシート全体も作れます。[書き出し](/info/exporting.html#stills-from-a-timed-composition)をご覧ください。
 
@@ -175,12 +175,12 @@ Design ツールにも同じタイムラインがあるので、別のツール�
 
 **アートボード**で構成された Design のドキュメントは、それだけでスライドです。ツールレールの **Lolly メニュー**を開いて最下段の **Present** を選ぶと、各アートボードがキャンバス上の並び順どおりに全画面のスライドになります。スライドはレンダリング済みアートボードの複製で動くため、下にあるエディターには一切触れず、終了すると元の状態にそのまま戻ります。
 
-- **次へ進む**には **Space**、`→`、**Page Down**、または画面右端の帯をクリックします。戻るには `←`、**Page Up**、左端の帯を使います。**Home** と **End** で最初と最後のスライドに移動します。ポインターを動かすと小さな操作バーが現れ、止めると再び隠れます。
-- **Overview**（`O` またはグリッドボタン）は、キャンバス上で並べたとおりの配置ですべてのアートボードを一度に表示します。クリックするとそのスライドが開きます。
-- **段階表示。** ボックスを右クリックし、既定の **Always visible** ではなく **Reveal at step 1**、**2**、**3** を選びます。そのボックスは該当の段階に進むまで待つので、スライドを少しずつ見せられます。同じ番号のボックスは同時に現れます。
-- **Speaker view**（`S`）は、現在のスライド、次のスライド、そのスライドのノート、経過時計を表示する 2 つ目のウィンドウを開きます。ブラウザーがポップアップを遮断した場合は、スライドに重ねたパネルに切り替わります。ノートはアートボードごとに設定し、スライド本体には表示されません。
-- `B` で画面を黒くしたままにできます（どのキーでもスライドに戻ります）。`F` で全画面に戻り、**Escape** は一段ずつ戻します。一覧からスライドへ、スライドからエディターへ。
-- **キオスク。** アートボードに **Length** を与えると、その長さだけそこで止まり、細いプログレスバーとともに自動で次へ進みます。`K`（または、いずれかに長さが設定されたときだけ現れる一時停止ボタン）で停止と再開ができます。リンクに `kiosk` を加えると最後で先頭に戻り、サイネージとして使えます。
+- **Advance**(進む)は **Space**、`→`、**Page Down**、または画面右端のストリップのクリックで行います。戻るには `←`、**Page Up**、または左端のストリップを使います。**Home** と **End** で最初と最後のスライドへジャンプします。ポインターを動かすと小さなコントロールバーがフェードインし、止まると再び隠れます。
+- **Overview**(概観)(`O` またはグリッドボタン)は、すべてのアートボードをキャンバス上で指定した配置のまま一度に並べます。クリックすると開きます。
+- **Reveal steps**(ステップごとの表示)。ボックスを右クリックし、既定の **Always visible**(常に表示)の代わりに **Reveal at step 1**、**2**、**3** のいずれかを選びます。そのボックスは対応するステップまで進むまで表示を待つため、スライドを段階的に見せられます。同じ番号を共有するボックスは同時に現れます。
+- **Speaker view**(発表者ビュー)(`S`)は、現在のスライド、次に来るスライド、そのスライドのメモ、経過時間を表示する第2ウィンドウを開きます。ブラウザがポップアップをブロックした場合は、デッキ上のパネルにフォールバックします。メモはアートボードごとに設定され、スライド自体には表示されません。
+- `B` で画面を黒くします(何かキーを押すとスライドに戻ります)。`F` はフルスクリーンに戻り、**Escape** は一段階ずつ戻ります: 概観からデッキへ、デッキからエディタへ。
+- **Kiosk**(キオスク)。アートボードに **Length**(表示時間)を設定すると、デッキはその時間だけそこに留まり、細い進行バーの後ろで自動的に次へ進みます。`K`(または、何かに表示時間が設定されて初めて現れる一時停止ボタン)でこれを停止・再開できます。リンクに `kiosk` を追加すると、デッキは終端で最初に戻るようになり、これによってサイネージとして機能します。
 
 スライドはリンクでもあります。`?present` で直接開き、`s=` でスライドを指定します（位置、アートボードの id、段階表示なら `id.step`）。移動に合わせてアドレスも更新されるので、送るのは今見ているスライドになります。ツール作者の方へ。これらのパラメーターは [URL Mode](/info/url-mode.html#reserved-parameters) のページに記載しています。
 

@@ -30,6 +30,8 @@ Diese Plattform ist die direkte Antwort darauf:
 
 > **Programmatische Kreativ- und Content-Erstellung im großen Maßstab** - Asset-Erzeugung ohne manuellen Aufwand, mit den Regeln unter zentraler Kontrolle, für Mitarbeitende, Lieferanten und Partner.
 
+Lolly ist nicht der Ort, an dem ein Designsystem erfunden wird - es ist der Ort, an dem es produziert wird. Denken Sie an einen Verkaufsautomaten für Design: Sie treffen eine Auswahl, Sie erhalten ein Ergebnis. Jedes Mal. Die Engine arbeitet auf die höchste Qualität hin, die jedes Format auf der Hardware vor Ihnen erzeugen kann, und dieselbe Engine erzeugt dieselbe Datei auf jeder Oberfläche, auf der sie ausgeliefert wird.
+
 Das Ergebnis ist **Fülle**: jede Veranstaltung hat korrekte Beschilderung, jeder CVE-Alert entspricht dem Hausstil, jedes Etikett druckt sauber, jede E-Mail-Signatur ist aktuell - alles ohne Design-Ticket. Die Plattform übernimmt wiederkehrende, operationalisierte Kreativarbeit. Sie ist bewusst kein Tool für maßgeschneiderte Kreativarbeit - Designer verantworten weiterhin die Flaggschiff-Arbeit.
 
 ### Probabilistisch innovieren, deterministisch skalieren
@@ -432,10 +434,10 @@ Das Rendering jedes beliebigen Tools lässt sich zusammensetzen: Ein **SVG**-Kin
 ## Was wir bewusst nicht getan haben
 
 - **Kein EJS / kein beliebiges JS in Templates.** Die XSS-Angriffsfläche ist null. Logik lebt in `hooks.js`.
-- **Kein verpflichtendes Asset-CMS.** Einzelpersonen nehmen ihre eigenen kreativen Dateien direkt in der App in ihren Katalog auf (die Ansicht [Katalog](/info/using.html) und das Brand Studio) - kein Server, keine Admin-Konsole. Arbeit wird als **Sitzung** weitergegeben: Ein Link mit Freigabe trägt den gesamten Zustand, und dieselbe Sitzung reist auch in einem Backup oder über eine Collab-Sitzung mit. Wer die Bereitstellung kontrolliert, kann eine geteilte Sitzung dann als **Template** festschreiben - den Link öffnen, ihre Werte als Template-Eintrag im Verzeichnis dieses Tools im Markenpaket erfassen und committen - woraufhin sie im "Neu aus Template"-Auswähler des Tools erscheint und als `?template=<id>` deep-verlinkbar ist. Git ist der Festschreibungsschritt des Bereitstellungsverantwortlichen, niemals der des Erstellers. Für einen *geteilten, geregelten* Katalog **kann** eine Organisation das Asset-Verzeichnis auf dieselbe Weise verwalten und Aktualisierungen über PR-Review gatekeepen - ein verfügbares Governance-Modell, keine Voraussetzung der App.
-- **Keine erzwungene RBAC.** Die offene App ist standardmäßig öffentlich zugänglich; das Markenrisiko wird über Reifegrad-Tags und Wasserzeichen gesteuert. Eine Organisation, die strengere Kontrolle will, legt ihre eigene Authentifizierung und den git-geprüften Katalog von oben darüber.
-- **Keine zentrale Datenbank.** Aller Nutzerzustand ist gerätebezogen. Die SUSE-ID-Integration steht auf der Roadmap, ist aber kein Startblocker.
-- **Kein gemeinsamer Code-Pfad für Tools/Engine.** Die Engine ist Open Source; `tools/` und `assets/` bleiben proprietärer SUSE-Inhalt in eigenen Repositorys. Die Trennung wird erzwungen (keine Cross-Importe), damit die Aufteilung sauber bleibt.
+- **Kein verpflichtendes Asset-CMS.** Einzelpersonen nehmen ihre eigenen Kreativdateien direkt in der App in ihren Katalog auf (die Ansicht [Katalog](/info/using.html) und das Brand Studio) - kein Server, keine Admin-Konsole. Arbeit wird als **Sitzung** weitergegeben: Ein Freigabelink trägt den gesamten Zustand, und dieselbe Sitzung reist in einem Backup oder über eine Collab-Sitzung mit. Wer auch immer das Deployment kontrolliert, kann eine geteilte Sitzung dann als **Template** festschreiben - den Link öffnen, ihre Werte als Template-Eintrag im Verzeichnis dieses Tools im Brand-Pack festhalten und committen -, wonach sie in der "New from template"-Auswahl des Tools erscheint und als `?template=<id>` direkt verlinkbar ist. Git ist der Festschreibungsschritt des Deployment-Betreibers, nie der der erstellenden Person. Für einen *geteilten, geregelten* Katalog **kann** eine Organisation das Asset-Verzeichnis auf dieselbe Weise verwalten und Aktualisierungen über PR-Review absichern - ein verfügbares Governance-Modell, keine Anforderung der App.
+- **Kein erzwungenes RBAC.** Die offene App ist standardmäßig öffentlich zugänglich; Markenrisiko wird über Reifegrad-Kennzeichnungen und Wasserzeichen gesteuert. Eine Organisation, die strengere Kontrolle möchte, legt ihre eigene Authentifizierung und den oben beschriebenen git-geprüften Katalog darüber.
+- **Keine zentrale Datenbank.** Aller Nutzerzustand liegt pro Gerät. Die SUSE-ID-Integration steht auf der Roadmap, ist aber kein Startblocker.
+- **Kein gemeinsamer Tools-/Engine-Codepfad.** Die Engine ist Open Source, ebenso die markenneutralen Tools in `community/`; ein Brand-Pack wie das private `brands/suse/` trägt seine eigenen Tools und seinen eigenen Katalog nach eigenen Bedingungen. So oder so wird die Trennung erzwungen (keine Cross-Imports von `engine/` in Tool-Inhalte), damit die Aufteilung sauber bleibt.
 
 ---
 
@@ -460,9 +462,13 @@ Derselbe Lebenszyklus in Tauri. Derselbe Lebenszyklus in der CLI - jsdom stellt 
 
 ## Open-Source-Status
 
-Die Verzeichnisse `engine/`, `shells/`, `schemas/` und `docs/` sind Open Source unter **MPL-2.0** - eine herstellerneutrale Gerüstplattform für Marken-Tooling, wobei jede ausliefer bare Einheit in ein eigenes Repository unter [github.com/lolly-tools](https://github.com/lolly-tools) aufgeteilt ist. `tools/` und `catalog/assets/` sind SUSE-spezifischer Inhalt und bleiben **proprietäres Eigentum von SUSE** (alle Rechte vorbehalten - siehe `NOTICE.md` jedes Repositorys); sie sind nicht von der MPL erfasst.
+**Code steht unter MPL-2.0.** `engine/`, `shells/*`, `services/*`, `schemas/` und `docs/` sind Open Source unter **MPL-2.0** - eine anbieterneutrale Scaffolding-Plattform für Markentooling, wobei jede eigenständig auslieferbare Einheit in ihrem eigenen Repository unter [github.com/lolly-tools](https://github.com/lolly-tools) liegt.
 
-Die Trennung wird erzwungen - es gibt keine Cross-Importe von `engine/` nach `tools/` oder `assets/` - damit die Grenze zwischen Plattform und Inhalt sauber bleibt.
+**Tool-Inhalte werden als Brand-Packs ausgeliefert**, jeder mit eigenen Bedingungen (siehe die `NOTICE.md` des jeweiligen Packs). `community/` ist das öffentliche Repository [`lolly-tools`](https://github.com/lolly-tools/lolly-tools), und auch seine markenneutralen Tools stehen unter MPL-2.0. `brands/suse/` ist das private Pack `suse-lolly`: die SUSE-Tools und der SUSE-Katalog, **proprietär für SUSE**, einschließlich seiner lizenzierten PremiumBeat-Musik. `brands/lolly-start/` ist die leere Starter-Marke, die dieses Repository besitzt. Schriften werden innerhalb eines Packs unter der **SIL Open Font License 1.1** ausgeliefert - das SUSE-Pack trägt die Schriftfamilien SUSE und SUSE Mono.
+
+Die `tools/`- und `catalog/`-Verzeichnisse im Repo-Root sind von Git ignorierte *Ansichten*: Ein Profil setzt sie aus `community/` plus dem aktiven Brand-Pack zusammen, weshalb jedes Skript und jede Shell diese beiden Pfade liest und niemals ein Pack direkt.
+
+Die Trennung wird erzwungen - es gibt keine Cross-Imports von `engine/` in Tool-Inhalte -, sodass die Grenze zwischen Plattform und Inhalt sauber bleibt.
 
 ---
 

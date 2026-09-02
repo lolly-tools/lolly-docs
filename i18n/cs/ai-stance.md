@@ -38,6 +38,14 @@ Nástroje tady zvětšují to, co se rozhodl člověk. Nerozhodují za něj a ni
 
 Ctíme to od začátku do konce a zaznamenáváme to: kvůli historii, kvůli odpovědnosti, kvůli důvěře a kvůli zítřku.
 
+## AI za tvých podmínek
+
+AI tu nikdy nepotřebuješ. Pokud si ji zvolíš, platí tři věci:
+
+- <!--i:people--> **Máš to pod kontrolou.** AI pomáhá jen když o to požádáš, a jen s částí, na kterou ukážeš. Nic se nerozhoduje za tebe.
+- <!--i:check--> **Přestává to stát.** Pokud ti AI jednou pomůže něco vytvořit, výsledek je tvůj. Použít to znovu je zdarma, ať už to potřebuješ kolikrát chceš.
+- <!--i:shieldcheck--> **Zůstává to poctivé.** Část vytvořená AI to uvádí, a to, co vytvoříš, nese tvé jméno místo předstírání, že jsi někdo jiný. Dokonce i vestavěná nápověda funguje takhle: [Ask Lolly](/info/ask.html) odpovídá vlastní větou z manuálu a odkazem, nikdy vymyšlenou odpovědí.
+
 ## Co tohle není
 
 - <!--i:check--> **Není to zákaz.** Nástroje mohou AI použít, kde to práci prospívá, a agenti jsou podporovaným publikem - viz [AI Agents](/info/ai-agents.html).

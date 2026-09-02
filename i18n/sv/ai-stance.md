@@ -38,6 +38,14 @@ Verktyg här skalar det en person beslutade. De beslutar inte i deras ställe, o
 
 Vi hedrar det från början till slut, och vi registrerar det: för historien, för ansvarsskyldighet, för förtroende och för morgondagen.
 
+## AI, på dina villkor
+
+Du behöver aldrig AI här. Om du väljer det gäller tre saker:
+
+- <!--i:people--> **Du har kontrollen.** AI hjälper bara när du ber om det, och bara med den del du pekar den mot. Inget bestäms åt dig.
+- <!--i:check--> **Det slutar kosta.** Om AI hjälper till att göra något en gång är resultatet ditt. Att använda det igen är gratis, hur många gånger du än behöver det.
+- <!--i:shieldcheck--> **Det förblir ärligt.** Ett verk gjort av AI säger det, och det du skapar bär ditt namn istället för att låtsas vara någon annan. Även den inbyggda hjälpen fungerar så här: [Fråga Lolly](/info/ask.html) svarar med manualens egen mening och en länk, aldrig ett hittepåsvar.
+
 ## Vad detta inte är
 
 - <!--i:check--> **Inte ett förbud.** Verktyg får använda AI där det gagnar arbetet, och agenter är en stödd målgrupp - se [AI-agenter](/info/ai-agents.html).

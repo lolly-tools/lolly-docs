@@ -1,21 +1,14 @@
 {
-  "statement": "Content Sovereignty",
+  "lead": "Lolly",
+  "cycle": [
+    { "word": "is sovereign", "slug": "trust" },
+    { "word": "is inclusive", "slug": "inclusive-design" },
+    { "word": "is ethical AI", "slug": "ai-stance" },
+    { "word": "is private", "slug": "privacy" },
+    { "word": "is free", "slug": "positioning" }
+  ],
   "ctas": [
-    {
-      "href": "/",
-      "label": "Launch App ↗",
-      "class": "btn btn-primary"
-    },
-    {
-      "href": "/info/about.html",
-      "label": "Documentation",
-      "class": "btn btn-secondary"
-    }
-  ],
-  "trustChips": [
-    "No Cookies",
-    "No Analytics",
-    "No Worries"
-  ],
-  "toolCountSuffix": "Tools Ready"
+    { "href": "/", "label": "Launch App ↗", "class": "btn btn-primary" },
+    { "href": "/info/quickstart.html", "label": "Documentation", "class": "btn btn-secondary" }
+  ]
 }

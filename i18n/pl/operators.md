@@ -1,123 +1,60 @@
 # Lolly dla operatorów
 
-### Strategia bezpieczeństwa i wywiadu w głębi warstw - która akurat jest platformą do produkcji kreatywnej
+Możesz być osobą, która powiedziała tak czemuś, co jest jednocześnie bezpieczne i popularne. Jednym ruchem zamykasz lukę eksfiltracji danych, zyskujesz możliwości i kasujesz kolejkę zgłoszeń - to rzadkie zwycięstwo bezpieczeństwa, które sprawia, że jesteś bardziej, a nie mniej lubiany: żadnego telefonu o 3 nad ranem, bo objęte embargiem pliki trafiły do przypadkowego narzędzia webowego, mniej dostawców i umów na twoim biurku oraz zapis, na który możesz wskazać, gdy ktoś zapyta. Wybierz poniżej ścieżkę pasującą do funkcji, za którą odpowiadasz.
 
-System immunologiczny organizacji oparty na zero-trust, który otacza to, co już robisz - dzięki czemu rutynowa praca kreatywna, której twoje zespoły potrzebują na co dzień, odbywa się *wewnątrz* twojego perymetru zamiast z niego wyciekać.
+Nadzorujesz całą sztafetę: kreatywny autoryzuje reguły, a deweloper je skaluje, a to operator sprawia, że można to bezpiecznie uruchomić w całej organizacji - to śledzi [Cykl życia kampanii](/info/overview.html#the-lifecycle-of-a-campaign) od początku do końca.
 
-**Co ty z tego masz.** Zostajesz osobą, która powiedziała tak czemuś zarazem bezpiecznemu *i* popularnemu. Jednym ruchem zamykasz lukę eksfiltracji, zyskujesz możliwości i kasujesz kolejkę zgłoszeń - rzadki przypadek wygranej w bezpieczeństwie, która sprawia, że jesteś bardziej lubiany, nie mniej. Żadnego telefonu z działu prawnego o 3 nad ranem, bo pliki objęte embargiem albo dane klientów trafiły do przypadkowego narzędzia webowego; mniej dostawców SaaS, umów i audytów na twoim biurku; oraz w pełni odtwarzalna ścieżka audytu, na którą możesz wskazać, gdy ktoś zapyta. Śpisz lepiej i przy okazji poprawiasz komuś dzień.
+Pierwszy raz tutaj? [Przyjęcie i zarządzanie](/info/adoption-governance.html) to pełny opis wdrożenia. [Wdrożenie](/info/deployment.html) obejmuje wdrażanie, hosting i model hybrydowy, a [Konfiguracja](/info/configuration.html) opisuje, co kształtuje pojedynczą instancję.
 
-Lolly to nie narzędzie kreatywne drugiej kategorii: daje każdemu w ręce wynik jakości produkcyjnej, a doświadczenie tworzenia prowadzone marką nie ma sobie równych. Powód, dla którego *bezpiecznie* jest udostępniać je szeroko, ma naturę architektoniczną: nic się nie przesyła, czego sam tam nie umieściłeś, każdy wynik jest odtwarzalny, a każdy eksport może nieść wiele warstw wiodących w branży kryptograficznych zapisów. Bez względu na to, jak dokument trafił na twoje biurko, widzisz jego pełne pochodzenie, czy został zmodyfikowany i czy możesz go odtworzyć piksel w piksel.
+## Sprzedaż
 
-> **Obecny stan.** Właściwości bezpieczeństwa Lolly są mocne z założenia projektowego, a jej silniki kryptografii i parsowania plików przechodzą przez utwardzanie infrastruktury na poziomie klasy korporacyjnej SUSE. Poniższe pieczęcie, podpisywanie na urządzeniu i szyfrowanie są realne i obronne już teraz, i dojrzewają w kierunku niezależnej certyfikacji - więc tam, gdzie umowa wymaga certyfikowanej gwarancji, wdrażaj je jako obronę warstwową, dopóki ten proces się nie zakończy.
+Wejdź na spotkanie z dokładnie tym plikiem, którego potrzebujesz, zrobionym po drodze. Wrzuć prezentację, którą już masz, i przebuduj ją na ostrą, natywną prezentację, bez kolejki zgłoszeń między tobą a zasobem.
 
-## Przewaga strategiczna
+- **[Lolly dla zespołów sprzedaży](/info/sales.html)** - poradnik: naprawianie prezentacji, którą już masz, przebudowa jej natywnie i samodzielne tworzenie jednorazowego zasobu.
+- **[Eksportowanie i formaty](/info/exporting.html)** - część panelu eksportu dotycząca prezentacji, PDF i obrazów, gdy plik musi otworzyć się na cudzym laptopie.
 
-Zwyczajny sposób wykonywania rutynowej pracy kreatywnej to powierzchnia ryzyka: pliki wysyłane e-mailem do zewnętrznych podwykonawców projektowych, zasoby marki przesyłane do kilkunastu edytorów SaaS, dane klientów wklejane do obcego narzędzia webowego, żeby "po prostu szybko zrobić grafikę". Każde z tych działań to dane wymykające się spod twojej kontroli.
+## Prasa
 
-Lolly to odwraca. Praca, która *napędzała* te wycieki - karta z cytatem, zlokalizowany baner, plakietka wydarzenia, zredagowany zrzut ekranu - odbywa się teraz w narzędziu działającym na własnym urządzeniu pracownika, względem twojej marki, bez serwera w pętli. Nie dodałeś kontroli na wierzchu ryzykownego procesu; zastąpiłeś ryzykowny proces takim, który od początku nie ma żadnej ścieżki eksfiltracji.
+Dane na żywo zamienione w wykresy, mapy i tabele, które już pasują do stylu redakcyjnego. Zbuduj format materiału raz i użyj go ponownie za każdym razem, gdy materiał się ukazuje, do druku i na ekran.
 
-- **Konfiguracja należy do Ciebie.** Silnik i powłoki są open source (MPL-2.0). Nałóż własne uwierzytelnianie, telemetrię czy CA; hostuj to albo nie; masz pełną kontrolę nad funkcjami i kosztami, śledzoną w git, a nie zamkniętą w bazie danych SaaS.
-- **Zarządzanie może być danymi, a nie panelem.** Gdy chcesz tej kontroli, zarządzaj katalogiem narzędzi jako repozytorium Git - przegląd pull requesta staje się zatwierdzeniem marki, z pełną ścieżką audytu i natychmiastowym cofnięciem każdego szablonu, do którego ma dostęp Twój zespół. To opcja, nie obowiązek, i należy dokładnie do jednego stanowiska: twórcy pracują całkowicie w aplikacji, zapisując to, co tworzą, jako **sesję** i przekazując to dalej jako link do udostępnienia, kopię zapasową lub współpracę na żywo - nic z tego nie wymaga gita. Gdy jedna z tych sesji zasługuje na to, by stać się trwałym punktem wyjścia, ktokolwiek zarządza wdrożeniem, otwiera link, zapisuje jej wartości jako **szablon** dla tego narzędzia w pakiecie marki i zatwierdza commit. Od tej pory pojawia się w selektorze "New from template" tego narzędzia i można się do niego odwołać przez `?template=<id>`. Git to krok blokujący administratora, wykonywany raz, i nigdy coś, czego musi dotykać twórca. Zobacz [Adopcja i zarządzanie](/info/adoption-governance.html).
-- **Bariery ochronne są strukturalne.** Ograniczenia marki są zakodowane na sztywno w szablonach, a nie publikowane jako wytyczne, które można zignorować. Błędny wynik nie jest odradzany - jest niemożliwy do przedstawienia.
+- **[Lolly dla redakcji](/info/press.html)** - poradnik: styl info-redakcyjny, dane na żywo na wejściu i wyjście w jakości publikacyjnej.
+- **[Widoki narzędziowe](/info/utilities.html)** - arkusz kalkulacyjny i konwerter, na etap przed wykresem.
 
-> **Zarządzasz całą sztafetą.** Twórca autoryzuje reguły, a deweloper skaluje je, ale to operator sprawia, że ten cykl życia jest bezpieczny do uruchomienia w całej organizacji - to samo narzędzie, które pozwala przedstawicielowi obsłużyć się samemu w samolocie, możesz bramkować przez recenzję Git, wdrażać przez swój MDM i weryfikować kryptograficznie. Zobacz, jak te role się sumują w [Cyklu życia kampanii](/info/overview.html#the-lifecycle-of-a-campaign), i jak nimi zarządzać w [Wdrażanie i zarządzanie](/info/adoption-governance.html).
+## Marketing
 
-## Skasuj kolejkę zgłoszeń, mnożąc jednocześnie treści.
+Każdy rozmiar, każdy język, jedno źródło prawdy. Wklej arkusz kalkulacyjny i otrzymaj jeden gotowy plik na wiersz, bez agencji pośrodku rutynowych plików.
 
-Jednym z celów Lolly jest **odciążanie od zgłoszeń projektowych**: rutynowe prośby, które nigdy nie muszą dotrzeć do projektanta, ponieważ osoba potrzebująca zasobu stworzyła go sama, poprawnie, w kilka minut. Każde odciążone zgłoszenie to zarazem wygrana produktywności i o jeden plik mniej zmieniający ręce.
+- **[Lolly dla zespołów marketingu](/info/marketing.html)** - poradnik: warianty na dużą skalę, lokalizacja i to, co przestaje być wąskim gardłem.
+- **[Korzystanie z Lolly](/info/using.html#batch-pro-mode)** - sam przebieg wsadowy: arkusz na wejściu, folder zasobów na wyjściu.
 
-Lolly jest zbudowana tak, by pasować do tego, jak twoja organizacja faktycznie działa - nie ma jednego słusznego sposobu jej wdrożenia:
+## Bezpieczeństwo
 
-- **Wdrażaj, nie serwuj.** Dystrybuuj Lolly na urządzenia przez istniejący MDM (Intune, Jamf, Munki…). Działa lokalnie jako aplikacja desktopowa/mobilna albo offline'owy PWA - działa za dowolnym firewallem, w dowolnym środowisku odizolowanym od sieci, bez serwera do utrzymania, a IT ma kontrolę nad tempem aktualizacji.
-- **Tylko serwuj.** Uruchom jedną instancję wewnątrz swojej sieci (lub za VPN); użytkownicy dostają się do niej w przeglądarce, bez instalacji niczego. Opublikuj narzędzie raz, wszyscy mają je natychmiast; połącz z własnym IdP dla kontroli dostępu.
-- **Hybrydowo.** Lokalne aplikacje do pracy w terenie offline, zawsze aktualna wersja przeglądarkowa na pożyczonych maszynach - obie wskazują na tę samą bibliotekę narzędzi.
+Zwykły sposób wykonywania rutynowej pracy kreatywnej to powierzchnia odpowiedzialności: pliki wysyłane e-mailem do zewnętrznych kontrahentów, zasoby marki wgrywane do kilkunastu edytorów webowych, dane klientów wklejane na stronę obcej firmy, by szybko zrobić grafikę. Lolly jest odpowiedzią odpornościową na to, ponieważ zastępuje tę pracę, zamiast dokładać do niej kontrolę: karta cytatu, zlokalizowany baner i zredagowany zrzut ekranu powstają na własnym urządzeniu pracownika, względem twojej marki, więc nic nie jest wgrywane poza tym, co sam tam umieściłeś, a każdy wynik jest odtwarzalny z jego danych wejściowych. Eksporty mogą nieść kilka warstw zapisu kryptograficznego - Content Credential C2PA podpisany kluczem wygenerowanym na urządzeniu i nigdy z niego nieodczytywalnym, niewidoczny Lolly Imprint oraz opcjonalny trwały znak, który przetrwa ponowny zapis - każdy z nich jest odporny na manipulację i możliwy do usunięcia: poświadczenie sygnalizuje zmianę, zamiast jej zapobiegać, i to właśnie umożliwia w pełni offline'ową weryfikację. Kryptografia i parsery plików przechodzą przez hartowanie klasy enterprise firmy SUSE: pieczęcie, podpisywanie na urządzeniu i szyfrowanie są już dziś rzeczywiste i uzasadnione, więc tam, gdzie umowa wymaga certyfikowanego zapewnienia, wdrażaj je jako obronę w głąb (defence-in-depth), dopóki ten proces się nie zakończy.
 
-Pełne modele wdrożenia i przewodnik po administracji znajdują się w [Wdrożenie](/info/deployment.html) i [Konfiguracja](/info/configuration.html).
+- **[Zaufanie](/info/trust.html)** - każde twierdzenie tej witryny, wraz z mechanizmem, który je egzekwuje.
+- **[Bezpieczeństwo i weryfikacja](/info/security.html)** - standardy, prymitywy, model zaufania i testowanie, napisane z myślą o recenzencie.
+- **[Model zagrożeń i granice zaufania](/info/threat-model.html)** - przed czym broni Lolly, przed czym wyraźnie nie broni i gdzie przebiega każda granica.
+- **[Powierzchnia serwerowa](/info/server-surface.html)** - pełny spis tego, co działa po stronie serwera (dwa opcjonalne komponenty), w zestawieniu z tym, co działa na urządzeniu.
+- **[Spis parserów](/info/parser-inventory.html)** - każdy parser, który dotyka pliku otwieranego przez użytkownika, i przed czym każdy z nich jest zabezpieczony.
+- **[Zweryfikuj to sam](/info/verify-yourself.html)** - sprawdź twierdzenia na realnym eksporcie, krok po kroku, bez niczego, czego nie mógłbyś uruchomić samodzielnie.
+- **[Polityka prywatności](/info/privacy.html)** - formalne oświadczenie o tym, co jest, a co nie jest zbierane, przechowywane i wysyłane.
+- **[Suwerenna produkcja kreatywna](/info/sovereign-production.html)** - wdrożenie odizolowane od sieci (air-gapped), sieciowanie bramkowane zgodą i podpisywanie na urządzeniu.
+- **[Przyjęcie i zarządzanie](/info/adoption-governance.html)** - kto zatwierdza narzędzie, jak reguły marki stają się egzekwowalne i co daje opcja katalogu jako repozytorium.
 
-## Narzędzia przeciw eksfiltracji
+## Prawne
 
-Kategoria narzędzi Lolly - narzędzia prywatności - istnieje *specjalnie* po to, by utrzymać pliki wewnątrz perymetru.
+MPL-2.0 bez umowy licencyjnej dla współtwórców (CLA), powiedziane wprost, z tym, czego się nie twierdzi, wyrażonym równie jasno jak to, co się twierdzi. Content Credentials są odporne na manipulację i możliwe do usunięcia, więc poniższe strony mówią, co podpis faktycznie stwierdza, zanim ktokolwiek wpisze to do umowy.
 
+- **[Znakowanie treści AI a unijny AI Act](/info/eu-ai-act.html)** - artykuł 50, Kodeks postępowania, który wskazuje na C2PA, i uczciwe dopasowanie Lolly.
+- **[Jak Lolly wypada na tle innych](/info/positioning.html)** - fakty licencyjne: MPL-2.0, brak umowy licencyjnej dla współtwórców i na czym naprawdę opiera się "darmowe na zawsze".
+- **[Tożsamość w Content Credentials](/info/content-credentials-identity.html)** - co stwierdza podpisane poświadczenie, czego nie stwierdza i kogo wskazuje certyfikat.
+- **[Transfer danych](/info/data-transfer.html)** - paczka kopii zapasowej, którą odpowiada się na wniosek o dane albo przekazanie urządzenia.
 
-- **Usuń ukryte dane**
- Usuń lokalizację i wszystkie ukryte informacje identyfikujące z dokumentów i plików multimedialnych.
+## AI
 
-- **Text Helper**  
-Anonimizuj, koduj, formatuj i przetwarzaj tekst strukturalny i niestrukturalny. 
+Agenci dostarczają dane wejściowe, nigdy personę. AI pomaga, gdy zostanie o to poproszona, to, co stworzyła, samo o tym mówi, a twoja praca niesie twoje nazwisko, a nie nazwę modelu.
 
-- **Compress PDF**
-Zmniejsz zbyt duży plik PDF na urządzeniu, żeby nikt nie sięgał po zewnętrzną stronę typu "compress my PDF" w chwili, gdy plik jest za duży, by wysłać go mailem - a to dokładnie tam dane wymykają się na zewnątrz. 
-
-Wszystkie to przekształcenia wykonywane na urządzeniu: Twój plik lub dane wchodzą, oczyszczone bajty wychodzą, a **nie ma żadnego serwera, na który trzeba by je wysłać**. To celowe przeciwieństwo typowego narzędzia "prześlij plik na stronę obcej firmy, żeby go oczyścić", po które sięga dobrze myślący pracownik w innym wypadku.
-
-![Strip Hidden Data: plik trafia na płótno, a plakietka wprost stwierdza, że nic nie jest przesyłane](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
-
-Text Helper to ta sama umowa, tylko dla tekstu zamiast plików. To warsztat z zakładkami, którego pracownik szukałby inaczej na obcej stronie, i nie deklaruje żadnych danych wejściowych, bo nic, czego dotyka, nigdy nie opuszcza strony.
-
-![Warsztat Text Helper - pasek zakładek operacji nad kartą stwierdzającą, że nic, co wklejasz, nie opuszcza Twojego urządzenia](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1200&height=750&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
-
-Compress PDF dopełnia zestaw: zbyt duży załącznik kurczy się zgodnie z wybranym przez Ciebie ustawieniem jakości, na komputerze, na którym już się znajduje.
-
-![Compress PDF - poziom jakości i przełącznik skali szarości po lewej, strefa upuszczania własnego pliku PDF po prawej i żadnego przesyłania nigdzie](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=ov2-compress-pdf)
-
-## Determinizm i powtarzalność
-
-Każde dane wejściowe narzędzia można wyrazić jako parametr URL, a te same dane wejściowe tworzą ten sam plik. Ma to dwie konsekwencje operacyjne:
-
-- **URL jest artefaktem.** Zatwierdź link w commicie, generuj zasób na żądanie - żadnych plików binarnych w Git, żadnego pogoni za "najnowszą wersją" na czacie. Identyfikatory zasobów i narzędzi to trwałe kontrakty, więc link utworzony dziś nadal działa później.
-- **CLI korzysta z tej samej ścieżki renderowania** co GUI, więc pipeline'y budowania i aplikacja nigdy się nie rozjeżdżają. Generuj obrazy OG, karty społecznościowe i wizualizacje danych w czasie budowania, w sposób powtarzalny.
-
-Prompt to Image to determinizm w najczystszej postaci: tekst jest całym wejściem, złożony obraz jest całym wyjściem, a ten sam tekst zawsze składa się tak samo.
-
-![Prompt to Image - blok tekstu promptu złożony w kwadratowym obrazie, gdzie w wyniku nie ma niczego, czego nie było na wejściu](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
-
-## Pochodzenie i Content Credentials
-
-![Strefa upuszczania Verify przyjmuje dowolny plik, z dowolnego źródła, i odczytuje go bez żadnego zapytania sieciowego](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
-
-Eksporty mogą nieść **Content Credentials** - podpisany manifest [C2PA](https://c2pa.org) powiązany z hashem bajtów pliku. Każda późniejsza zmiana pliku łamie pieczęć, więc weryfikator zgodny z C2PA **wykrywa zmiany kryptograficznie, offline**. Poświadczenie jest odporne na manipulację w sensie *wykrywalności*: sygnalizuje manipulację, zamiast jej zapobiegać, co właśnie umożliwia w pełni offline'ową weryfikację.
-
-- **Domyślnie włączone, na urządzeniu.** Klucz podpisujący jest generowany na urządzeniu, jest nieeksportowalny (nawet Lolly nie może go odczytać), a podpisywanie odbywa się lokalnie - jedynie opcjonalna *rejestracja* tożsamości kiedykolwiek łączy się z siecią.
-- **Poziomy zaufania.** Eksport bez rejestracji jest poprawnie sformowany, ale podpisany anonimowo (`untrusted`). Zarejestruj **zweryfikowaną tożsamość** (krótkotrwały certyfikat z Lolly CA, powiązany z adresem e-mail), a weryfikatory przypinające root Lolly zgłoszą `trusted` + adres e-mail podpisującego. Zaufany urząd znacznika czasu i zielone światło zewnętrznego walidatora (zgodność z C2PA) są w planach. Każdy poziom jest jawny, a plik zawsze rości sobie tylko tyle zaufania, ile może udowodnić.
-- **Czas życia poświadczenia** to decyzja operatora/użytkownika w momencie podpisywania: 7 / 30 / 90 / 365 dni, domyślnie 30.
-- **Lolly Imprint.** Drugi, uzupełniający sygnał, który jest **domyślnie włączony**: niewidoczny znak wodny na pikselach wypiekany w eksportach rastrowych (oraz rastrach renderowanych przez Lolly wewnątrz PDF/PPTX, nigdy we własnym osadzonym obrazie użytkownika). Tam, gdzie poświadczenie ginie przy każdej zmianie kontenera, Imprint przetrwa ponowny zapis lub zrzut ekranu - trwała wskazówka "te piksele przeszły przez Lolly", tylko obecność, bez danych osobowych. To bezpieczeństwo przez zaciemnienie, a nie utwardzona obrona, i uzupełnia poświadczenie zamiast je zastępować. `imprint=0` pozwala zrezygnować.
-- **Trwałe Content Credentials (opcjonalne).** Eksport rastrowy może dodatkowo nieść niewidoczny znak *trwały*, kodujący identyfikator miękkiego powiązania, dzięki czemu poświadczenie C2PA można odzyskać nawet po tym, jak przesłanie do serwisu społecznościowego lub ponowny zapis usunęły metadane pliku - w przypadku, gdy zwykłe poświadczenie zostałoby utracone. Działa wyłącznie na rastrach i kosztuje przebieg kodowania neuronowego, więc jest domyślnie wyłączony (`durable=1`, by go włączyć). Lolly rozpoznaje dziś swój trwały znak offline w `/verify`; odzyskiwanie przez narzędzia zewnętrzne (np. Adobe) nastąpi, gdy branżowe rozwiązanie miękkiego powiązania zostanie wdrożone.
-- **Weryfikacja odbywa się na urządzeniu.** Upuść dowolny plik w `/verify` (lub `lolly validate <file>`), by uzyskać offline'owy raport, czy plik rzeczywiście powstał w Lolly i nie zmienił się od tego czasu. Widok Verify w wersji webowej oznacza też treści wygenerowane przez AI, wykrywa Lolly Imprint, weryfikuje podpisy **SEAL** (podpis na poziomie bajtów - bez żadnych zapytań sieciowych: silnik przyjmuje *wstrzykiwany* resolver kluczy DNS, a żadna powłoka go dziś nie wstrzykuje, więc rekord niosący własny wbudowany klucz `pk=` weryfikuje się w pełni offline, podczas gdy rekord kluczowany przez DNS zgłasza "brak resolvera kluczy i brak klucza wbudowanego", zamiast łączyć się z siecią - zobacz `SealPublicKeyResolver` w `engine/src/seal.ts`), opcjonalnie skanuje dogłębnie w poszukiwaniu zewnętrznych znaków wodnych na pikselach (jednorazowe pobranie modelu na urządzenie) i ujawnia ukryte dane - wszystko bez przesyłania pliku. Zobacz [Content Credentials Identity](/info/content-credentials-identity.html).
-
-> **Uwagi o interoperacyjności.** Lolly weryfikuje dziś offline zarówno własne poświadczenia, jak i wiele poświadczeń firm trzecich, w tym odczyt manifestów claim **v2** C2PA od innych producentów. Dwa kontenery są wciąż w toku, oba dlatego, że C2PA nie ma dla nich jeszcze ustandaryzowanego mapowania, więc Lolly przechowuje poświadczenie we własnym miejscu, a to weryfikator Lolly je odczytuje: **WebM** (manifest jedzie jako załącznik Matroska) oraz **Ogg/Opus** (pole `C2PA=` w nagłówku komentarza OpusTags, przy czym ten zakres bajtów jest wykluczony z powiązania, więc audio nadal hashuje się identycznie). Wszystko inne jest znakowane zgodnie ze specyfikacją - narzędzia firm trzecich weryfikują pliki MP4, M4A, MP3, WAV, PNG, JPEG i PDF z Lolly od razu. Zobacz `engine/src/c2pa-containers.ts` dla obu mapowań; zbiegają się one ze standardem, gdy ten się ustabilizuje.
-
-## Szyfrowanie i hasła
-
-Dla plików, które muszą podróżować zablokowane, wszystko dzieje się na urządzeniu:
-
-![Karta blokady w panelu eksportu: hasło i jawny wybór między dwoma poziomami](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&walker=1&format=svg&dark=1&filename=aud-pdf-lock)
-
-- **Hasło otwarcia PDF** - *Standard* to 40-bitowe zabezpieczenie RC4 (otwiera się wszędzie, może podróżować w linku); *Strong* to **AES-256** (PDF 2.0), wpisywane przy eksporcie i nigdy nieumieszczane w linku.
-- **Zablokowane pobrania** - ZIP, folder Projects lub przebieg wsadowy można zablokować w całości: *Standard* ZipCrypto (słabe, uniwersalne) lub *Strong* **AES-256** (WinZip AE-2). Ochrona wielowarstwowa: każdy PDF wewnątrz zipu Strong jest *dodatkowo* zablokowany indywidualnie AES-256, więc pozostaje zablokowany po rozpakowaniu.
-- **Linki udostępniania chronione hasłem** - cały stan linku jest zaszyfrowany AES-256 pod kluczem wyprowadzonym przez PBKDF2; podróżuje wyłącznie szyfrogram, hasło nigdy nie znajduje się w linku, a deszyfrowanie odbywa się w przeglądarce odbiorcy.
-
-## Gotowość do pracy w trybie air-gap
-
-Praca w izolacji sieciowej (air-gap) to **wdrożenie pierwszej klasy**, a nie tryb specjalny - Lolly działa bez sieci w czasie renderowania od razu po instalacji. Powłoka webowa to PWA typu offline-first (service worker); czcionki i WASM są przechowywane na urządzeniu; stan narzędzia jest zapisywany lokalnie przez most hosta, nigdy w `localStorage`. Wspieranym sposobem, w jaki narzędzie może dotrzeć do sieci, jest funkcja `host.net` z **listą dozwolonych adresów**, którą deklaruje w swoim manifeście - powłoka, która tego nie potrafi (lub nie chce), zastępuje ją zaślepką. To kontrakt przenośności, a nie wymuszona granica (zobacz uwagę o hookach poniżej), dlatego przegląd kodu narzędzia pozostaje mechanizmem kontroli - choć na urządzeniu w izolacji i tak nie ma dokąd sięgnąć. Dostarcz powłoki na urządzenia przez swoje MDM albo udostępnij jedną instancję wewnątrz swojej sieci, a w pełni odizolowana instalacja renderuje, eksportuje, szyfruje i weryfikuje poświadczenia bez niczego, do czego mogłaby zadzwonić do domu.
-
-## Warto wiedzieć
-
-Kilka rzeczy warto mieć jasnych, zanim to wdrożysz:
-
-- **Utwardzanie w toku.** Kryptografia i parsery przechodzą przez utwardzanie w skali korporacyjnej SUSE (patrz wyżej) - dziś mocne z założenia; wdrażaj jako ochronę wielowarstwową tam, gdzie kontrakt wymaga certyfikowanej gwarancji.
-- **Hooki narzędzi *nie są* piaskownicą bezpieczeństwa.** Opcjonalny plik `hooks.js` narzędzia działa z wstrzykniętym mostem hosta, ale w powłoce przeglądarkowej wykonuje się w obrębie strony i *może* sięgnąć do `window`/`document`/`fetch`. Traktuj kod narzędzia tak, jak każdy kod, który uruchamiasz - przeglądaj go. Dlatego organizacja prowadząca wspólny katalog może kontrolować go przez przegląd w Git; tak czy inaczej, uruchamiaj tylko narzędzia, które przejrzałeś, dopóki nie pojawi się izolacja Worker.
-- **Content Credentials są odporne na manipulację w sensie wykrywalności.** Wykrywają zmiany, zamiast im zapobiegać - zobacz uwagi o interoperacyjności powyżej.
-- **Dwa poziomy szyfrowania.** Blokady *Standard* to szybkie, uniwersalne zabezpieczenia odstraszające; *Strong* (AES-256) to pełna ochrona - sięgaj po Strong przy wszystkim wrażliwym, pamiętając, że wymaga nowoczesnego czytnika.
-
-## Samodzielnie albo pod kontrolą warstwy zarządzania
-
-Dwa kształty, a Ty wybierasz dla każdego wdrożenia. **Samodzielny jest domyślny i nie wymaga serwera:** Lolly renderuje na urządzeniu, każdy twórca pracuje w aplikacji, a opisane wyżej zarządzanie git-jako-dane jest całkowicie opcjonalne - jedna organizacja może uruchomić to repozytorium bez niczego hostowanego. **Gdy chcesz kontroli w skali całej organizacji, dodaj warstwę zarządzania.** [lolly.work](https://lolly.work) to osobna, open source'owa (MPL-2.0) usługa, którą hostujesz sam - albo testujesz w hostowanej piaskownicy - i która zarządza powłoką na żywo: logowanie bramkowane przez SSO, politykę flag funkcji / eksportu / znaku wodnego, nakładki na dane wejściowe narzędzi, federację katalogów, zatwierdzenia i dziennik audytu połączony hashami, wszystko dostarczane do powłoki bez zmiany kodu tutaj. Jest niezależna od marki (konfiguracja plus zamontowany pakiet), korzysta z silnika i pakietów tego repozytorium bez modyfikacji i nigdy nie staje się ścieżką renderowania: Lolly nadal renderuje na urządzeniu z założenia. OSS = wolność jednostki; OSS + warstwa zarządzania = wolność organizacyjna.
-
-## Dokąd dalej
-
-- **[Security & Verification](/info/security.html)** - standardy, prymitywy, model zaufania i testy stojące za poświadczeniami i szyfrowaniem opisanymi powyżej.
-- **[Adoption & Governance](/info/adoption-governance.html)** - persony, wskaźnik odchylenia i governance-as-data w pełni.
-- **[Deployment](/info/deployment.html)** - deploy/serve/hybrid, MDM i samodzielne hostowanie usług.
-- **[Configuration](/info/configuration.html)** - profile, pakiety marki, bramkowanie funkcji i flagi funkcji.
-- **[Privacy Policy](/info/privacy.html)** - formalne oświadczenie o tym, co jest, a co nie jest zbierane, przechowywane i wysyłane.
-- **[Server Surface](/info/server-surface.html)** - pełny spis tego, co działa po stronie serwera (dwa opcjonalne komponenty), w porównaniu z tym, co działa na urządzeniu.
+- **[Nasze stanowisko wobec AI](/info/ai-stance.html)** - co Lolly robi, a czego nie robi z treścią generowaną, i co egzekwuje każde z tych zobowiązań.
+- **[Wygenerowane raz, renderowane tak samo](/info/ai-features.html)** - funkcje AI, które trafiają do produktu, i dlaczego wymyślanie pikseli jest oznaczane, a ich usuwanie nie.
+- **[Dane wejściowe, nie podszywanie się](/info/input-not-impersonation.html)** - dlaczego agent dostarcza dane wejściowe i nigdy personę, jak jest to egzekwowane i czego nieuczciwy agent nadal nie może zrobić.
+- **[Agenci AI](/info/ai-agents.html)** - czym agent może faktycznie sterować, jeśli twoje zespoły już kierują nim w tę stronę.

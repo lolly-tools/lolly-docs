@@ -38,6 +38,14 @@ Alat di sini memperbesarkan apa yang diputuskan oleh seseorang. Ia tidak membuat
 
 Kami menghormati itu dari hujung ke hujung, dan kami merekodkannya: untuk sejarah, untuk akauntabiliti, untuk kepercayaan dan untuk masa depan.
 
+## AI, mengikut syarat anda
+
+Anda tidak sekali-kali memerlukan AI di sini. Jika anda memilihnya, tiga perkara ini terpakai:
+
+- <!--i:people--> **Anda memegang kawalan.** AI membantu hanya apabila anda minta, dan hanya pada bahagian yang anda tujukan kepadanya. Tiada apa-apa yang diputuskan bagi pihak anda.
+- <!--i:check--> **Ia berhenti dikenakan kos.** Jika AI membantu menghasilkan sesuatu sekali, hasil itu milik anda. Menggunakannya semula adalah percuma, walau berapa kali sekalipun anda memerlukannya.
+- <!--i:shieldcheck--> **Ia kekal jujur.** Satu hasil yang dibuat oleh AI menyatakan sedemikian, dan apa yang anda hasilkan membawa nama anda dan bukannya berpura-pura menjadi orang lain. Malah bantuan terbina dalam pun berfungsi sedemikian: [Tanya Lolly](/info/ask.html) menjawab dengan ayat manual itu sendiri berserta satu pautan, tidak pernah satu jawapan rekaan.
+
 ## Apa yang ini bukan
 
 - <!--i:check--> **Bukan larangan.** Alat boleh menggunakan AI di mana ia membantu kerja, dan agen ialah khalayak yang disokong - lihat [AI Agents](/info/ai-agents.html).

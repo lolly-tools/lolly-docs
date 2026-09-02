@@ -38,6 +38,14 @@ Verktøyene her skalerer det en person bestemte. De bestemmer ikke i stedet for 
 
 Vi ærer dette fra ende til annen, og vi registrerer det: for historien, for ansvarlighet, for tillit og for morgendagen.
 
+## KI, på dine premisser
+
+Du trenger aldri KI her. Hvis du velger det, gjelder tre ting:
+
+- <!--i:people--> **Du har kontrollen.** KI hjelper bare når du spør, og bare med delen du peker den mot. Ingenting blir bestemt for deg.
+- <!--i:check--> **Det slutter å koste.** Hvis KI hjelper til med å lage noe én gang, er resultatet ditt. Å bruke det igjen er gratis, uansett hvor mange ganger du trenger det.
+- <!--i:shieldcheck--> **Det forblir ærlig.** En del laget av KI sier ifra om det, og det du lager bærer navnet ditt i stedet for å late som det er noen andre. Selv den innebygde hjelpen fungerer slik: [Ask Lolly](/info/ask.html) svarer med håndbokens egen setning og en lenke, aldri et oppdiktet svar.
+
 ## Hva dette ikke er
 
 - <!--i:check--> **Ikke et forbud.** Verktøy kan bruke AI der det gagner arbeidet, og agenter er et støttet publikum - se [AI-agenter](/info/ai-agents.html).

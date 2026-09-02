@@ -38,6 +38,14 @@ Alat di sini memperbesar skala apa yang diputuskan seseorang. Alat tidak memutus
 
 Kami menghormati hal itu dari ujung ke ujung, dan kami mencatatnya: untuk sejarah, untuk akuntabilitas, untuk kepercayaan, dan untuk masa depan.
 
+## AI, sesuai ketentuan Anda
+
+Anda tidak pernah wajib menggunakan AI di sini. Jika Anda memilihnya, tiga hal ini berlaku:
+
+- <!--i:people--> **Anda yang mengendalikan.** AI membantu hanya saat Anda memintanya, dan hanya pada bagian yang Anda tunjuk. Tidak ada yang diputuskan untuk Anda.
+- <!--i:check--> **Biayanya berhenti.** Jika AI membantu membuat sesuatu sekali, hasilnya milik Anda. Menggunakannya lagi gratis, berapa kali pun Anda membutuhkannya.
+- <!--i:shieldcheck--> **Tetap jujur.** Sebuah bagian yang dibuat oleh AI menyatakan demikian, dan apa yang Anda buat membawa nama Anda, bukan berpura-pura menjadi orang lain. Bahkan bantuan bawaan bekerja dengan cara ini: [Tanya Lolly](/info/ask.html) menjawab dengan kalimat asli dari manual dan sebuah tautan, tidak pernah jawaban karangan.
+
 ## Apa yang bukan ini
 
 - <!--i:check--> **Bukan larangan.** Alat boleh menggunakan AI di mana itu bermanfaat bagi pekerjaan, dan agen adalah audiens yang didukung - lihat [Agen AI](/info/ai-agents.html).

@@ -397,6 +397,7 @@ Supported values:
 | `pdf-cmyk` | Print PDF - CMYK with output intent (see print marks & bleed) |
 | `cmyk-tiff` | Print TIFF - flattened CMYK raster |
 | `pptx` | PowerPoint deck - native editable text/shapes + extractable images/vectors |
+| `penpot` | Penpot design file - boards, editable shapes and the brand's colours, typographies and design tokens |
 | `docx` / `odt` | Word / OpenDocument text - headings and paragraphs read off the render, editable, not a picture of the page |
 | `ico` | Icon bundle (e.g. `tool-logo`) |
 | `zip` | Multi-file bundle (optionally password-locked - see Exporting → Locked downloads) |

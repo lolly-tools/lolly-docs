@@ -30,6 +30,8 @@ Nền tảng này là câu trả lời trực tiếp:
 
 > **Sáng tạo và nội dung theo chương trình ở quy mô lớn** - tạo tài sản không tốn nhân lực, với các quy tắc được kiểm soát tập trung, dành cho nhân viên, nhà cung cấp và đối tác.
 
+Lolly không phải nơi một hệ thống thiết kế được phát minh ra - đó là nơi nó được sản xuất ra. Hãy hình dung nó như một máy bán hàng tự động cho thiết kế: chọn một lựa chọn, nhận về một kết quả. Mọi lần đều vậy. Engine luôn hướng tới chất lượng cao nhất mà mỗi định dạng có thể tạo ra trên phần cứng trước mặt bạn, và cùng một engine đó tạo ra cùng một tệp trên mọi nền tảng nó chạy trên.
+
 Kết quả là **sự dồi dào**: mọi sự kiện có bảng hiệu đúng chuẩn, mọi cảnh báo CVE khớp phong cách công ty, mọi nhãn in sạch, mọi chữ ký email luôn cập nhật - tất cả không cần một phiếu yêu cầu thiết kế. Nền tảng xử lý công việc sáng tạo mang tính vận hành lặp lại. Nó cố tình không phải là một công cụ sáng tạo tùy biến - các nhà thiết kế vẫn giữ quyền sở hữu các công việc chủ lực.
 
 ### Đổi mới theo xác suất, mở rộng theo tất định
@@ -431,11 +433,11 @@ Ghép bản kết xuất của bất kỳ công cụ nào: một công cụ con 
 
 ## Những gì chúng tôi cố tình chọn không làm
 
-- **Không EJS / không JS tùy ý trong template.** Bề mặt XSS bằng không. Logic nằm trong `hooks.js`.
-- **Không có CMS tài sản bắt buộc.** Cá nhân nhập trực tiếp các tệp sáng tạo của riêng họ vào danh mục của họ ngay trong ứng dụng (khung nhìn [Danh mục](/info/using.html) và Brand Studio) - không máy chủ, không bảng quản trị. Công việc được bàn giao dưới dạng một **phiên làm việc**: một liên kết chia sẻ mang toàn bộ trạng thái, và cùng phiên đó di chuyển trong một bản sao lưu hoặc qua một phiên cộng tác. Bất kỳ ai kiểm soát việc triển khai sau đó có thể khóa một phiên được chia sẻ lại thành một **template** - mở liên kết, ghi lại các giá trị của nó thành một mục template trong thư mục của công cụ đó trong gói thương hiệu và commit - sau đó nó xuất hiện trong bộ chọn "Tạo mới từ template" của công cụ và có thể liên kết sâu dưới dạng `?template=<id>`. Git là bước khóa của chủ triển khai, không bao giờ là của người sáng tạo. Với một catalog *được chia sẻ, có quản trị*, một tổ chức **có thể** quản lý thư mục tài sản theo cùng cách đó và giới hạn cập nhật qua xét duyệt PR - một mô hình quản trị khả dụng, không phải yêu cầu bắt buộc của ứng dụng.
-- **Không RBAC bắt buộc.** Ứng dụng mở mặc định cho phép truy cập công khai; rủi ro thương hiệu được quản lý bằng nhãn độ trưởng thành + watermark. Một tổ chức muốn kiểm soát chặt hơn có thể xếp chồng lớp xác thực riêng của mình và catalog được xét duyệt qua git ở trên.
-- **Không có cơ sở dữ liệu trung tâm.** Toàn bộ trạng thái người dùng là theo từng thiết bị. Tích hợp SUSE ID nằm trong lộ trình nhưng không phải điều kiện chặn ra mắt.
-- **Không có đường dẫn mã tools/engine dùng chung.** Engine là mã nguồn mở; `tools/` và `assets/` vẫn là nội dung độc quyền của SUSE trong các kho riêng của chúng. Sự tách biệt này được thực thi (không import chéo) để ranh giới tách biệt luôn sạch sẽ.
+- **Không có EJS / không có JS tùy ý trong template.** Bề mặt tấn công XSS bằng không. Logic nằm trong `hooks.js`.
+- **Không bắt buộc dùng CMS tài sản.** Từng cá nhân đưa thẳng các tệp sáng tạo của riêng mình vào danh mục ngay trong ứng dụng (khung nhìn [Danh mục](/info/using.html) và Brand Studio) - không máy chủ, không bảng điều khiển quản trị. Công việc được bàn giao dưới dạng một **phiên**: một liên kết chia sẻ mang theo toàn bộ trạng thái, và cùng phiên đó di chuyển theo trong một bản sao lưu hoặc qua một phiên cộng tác. Bất kỳ ai quản lý việc triển khai sau đó có thể khóa một phiên đã chia sẻ lại thành một **mẫu** - mở liên kết, ghi lại các giá trị của nó thành một mục mẫu trong thư mục của công cụ đó trong gói thương hiệu rồi commit - sau đó nó xuất hiện trong bộ chọn "New from template" của công cụ và có thể liên kết trực tiếp dưới dạng `?template=<id>`. Git là bước khóa lại thuộc về chủ sở hữu việc triển khai, không bao giờ thuộc về người tạo. Với một danh mục *được chia sẻ, có quản trị*, một tổ chức **có thể** quản lý thư mục tài sản theo cách tương tự và chặn các cập nhật qua việc xét duyệt PR - đây là một mô hình quản trị khả dụng, không phải một yêu cầu bắt buộc của ứng dụng.
+- **Không ép buộc RBAC.** Ứng dụng mở này mặc định truy cập công khai; rủi ro thương hiệu được quản lý bằng nhãn độ trưởng thành + watermark. Một tổ chức muốn kiểm soát chặt hơn có thể lớp thêm hệ thống xác thực của riêng mình và danh mục được xét duyệt qua git ở trên.
+- **Không có cơ sở dữ liệu trung tâm.** Mọi trạng thái người dùng đều theo từng thiết bị. Tích hợp SUSE ID nằm trong lộ trình nhưng không phải điều kiện chặn ra mắt.
+- **Không có đường dẫn mã công cụ/engine dùng chung.** Engine là mã nguồn mở và các công cụ trung lập về thương hiệu trong `community/` cũng vậy; một gói thương hiệu như `brands/suse/` riêng tư mang theo công cụ và danh mục riêng của nó theo các điều khoản riêng. Dù theo cách nào, sự tách biệt này đều được thực thi (không import chéo từ `engine/` vào nội dung công cụ) để việc chia tách luôn gọn gàng.
 
 ---
 
@@ -460,9 +462,13 @@ Cùng vòng đời trong Tauri. Cùng vòng đời trong CLI - jsdom cung cấp 
 
 ## Trạng thái mã nguồn mở
 
-Các thư mục `engine/`, `shells/`, `schemas/` và `docs/` là mã nguồn mở theo giấy phép **MPL-2.0** - một nền tảng dàn dựng trung lập với nhà cung cấp cho công cụ thương hiệu, mỗi đơn vị có thể phát hành được tách thành kho riêng dưới [github.com/lolly-tools](https://github.com/lolly-tools). `tools/` và `catalog/assets/` là nội dung dành riêng cho SUSE và vẫn **độc quyền thuộc về SUSE** (bảo lưu mọi quyền - xem `NOTICE.md` của từng kho); chúng không thuộc phạm vi MPL.
+**Mã nguồn theo giấy phép MPL-2.0.** `engine/`, `shells/*`, `services/*`, `schemas/` và `docs/` là mã nguồn mở theo **MPL-2.0** - một nền tảng khung dựng trung lập về nhà cung cấp dành cho công cụ thương hiệu, với mỗi đơn vị có thể phát hành nằm trong repository riêng của nó dưới [github.com/lolly-tools](https://github.com/lolly-tools).
 
-Sự tách biệt được thực thi - không có import chéo nào từ `engine/` sang `tools/` hoặc `assets/` - để ranh giới nền tảng/nội dung luôn sạch sẽ.
+**Nội dung công cụ được phát hành dưới dạng các gói thương hiệu**, mỗi gói có điều khoản riêng (xem `NOTICE.md` của gói đó). `community/` là repository công khai [`lolly-tools`](https://github.com/lolly-tools/lolly-tools) và các công cụ trung lập về thương hiệu của nó cũng theo MPL-2.0. `brands/suse/` là gói riêng tư `suse-lolly`: các công cụ SUSE và danh mục SUSE, **thuộc sở hữu độc quyền của SUSE**, bao gồm cả nhạc PremiumBeat được cấp phép của nó. `brands/lolly-start/` là thương hiệu khởi đầu trống mà repository này sở hữu. Phông chữ được phát hành bên trong một gói theo **SIL Open Font License 1.1** - gói SUSE mang theo các kiểu chữ SUSE và SUSE Mono.
+
+`tools/` và `catalog/` ở gốc repo là các *view* bị gitignore: một profile lắp ráp chúng từ `community/` cộng với gói thương hiệu đang hoạt động, đó là lý do mọi script và shell đều đọc hai đường dẫn đó chứ không bao giờ đọc trực tiếp một gói.
+
+Sự tách biệt này được thực thi - không có import chéo nào từ `engine/` vào nội dung công cụ - nên ranh giới giữa nền tảng và nội dung luôn gọn gàng.
 
 ---
 

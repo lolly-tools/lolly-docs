@@ -30,6 +30,8 @@ Den här plattformen är det direkta svaret:
 
 > **Programmatiskt kreativt innehåll i stor skala** - tillgångsgenerering utan arbetsinsats, med reglerna under central kontroll, för anställda, leverantörer och partners.
 
+Lolly är inte platsen där ett designsystem uppfinns - det är platsen där det produceras. Tänk på det som en varuautomat för design: gör ett val, få ett resultat. Varje gång. Motorn strävar efter den högsta kvalitet varje format kan producera på hårdvaran framför dig, och samma motor skapar samma fil på varje yta den levereras till.
+
 Resultatet är **överflöd**: varje event har korrekt skyltning, varje CVE-varning matchar husstilen, varje etikett skrivs ut rent, varje e-postsignatur är aktuell - allt utan en designbeställning. Plattformen hanterar återkommande operationaliserat kreativt arbete. Den är medvetet inte ett skräddarsytt kreativt verktyg - designers äger fortfarande flaggskeppsarbetet.
 
 ### Innovera probabilistiskt, skala deterministiskt
@@ -431,11 +433,11 @@ Komponera vilket verktygs rendering som helst: ett **SVG**-barn förblir en äkt
 
 ## Vad vi uttryckligen valde att inte göra
 
-- **Ingen EJS/ingen godtycklig JS i mallar.** XSS-ytan är noll. Logik bor i `hooks.js`.
-- **Inget obligatoriskt tillgångs-CMS.** Individer matar in sina egna kreativa filer direkt i sin katalog i appen (vyn [Katalog](/info/using.html) och Brand Studio) - ingen server, ingen adminkonsol. Arbete lämnas vidare som en **session**: en delningslänk bär hela tillståndet, och samma session följer med i en säkerhetskopia eller via en samarbetssession. Den som styr driftsättningen kan sedan låsa fast en delad session som en **mall** - öppna länken, spela in dess värden som en mallpost i det verktygets katalog i varumärkespaketet och committa - varefter den dyker upp i verktygets "Ny från mall"-väljare och kan djuplänkas som `?template=<id>`. Git är driftsättningsägarens låssteg, aldrig skaparens. För en *delad, styrd* katalog **kan** en organisation hantera tillgångskatalogen på samma sätt och grinda uppdateringar genom PR-granskning - en tillgänglig styrningsmodell, inget krav från appen.
-- **Ingen påtvingad RBAC.** Den öppna appen är fritt tillgänglig som standard; varumärkesrisk hanteras med mognadstaggar + vattenmärken. En organisation som vill ha strängare kontroll lägger sin egen autentisering och den git-granskade katalogen ovanpå.
-- **Ingen central databas.** Allt användartillstånd är per enhet. SUSE ID-integration finns på färdplanen men är inget lanseringshinder.
-- **Ingen delad kodväg för verktyg/motor.** Motorn är öppen källkod; `tools/` och `assets/` förblir SUSE:s proprietära innehåll i sina egna repon. Uppdelningen upprätthålls (inga korsimporter) så att delningen förblir ren.
+- **Ingen EJS / ingen godtycklig JS i mallar.** XSS-ytan är noll. Logiken finns i `hooks.js`.
+- **Inget obligatoriskt CMS för tillgångar.** Enskilda tar in sina egna kreativa filer direkt i sin katalog i appen (vyn [Katalog](/info/using.html) och Brand Studio) - ingen server, ingen adminkonsol. Arbete lämnas vidare som en **session**: en delningslänk bär hela tillståndet, och samma session följer med i en säkerhetskopia eller via en samarbetssession. Den som styr driftsättningen kan sedan låsa fast en delad session som en **mall** - öppna länken, spara dess värden som en mallpost i det verktygets katalog i varumärkespaketet och commita - varefter den dyker upp i verktygets väljare "New from template" och kan djuplänkas som `?template=<id>`. Git är driftsättningsägarens låsningssteg, aldrig skaparens. För en *delad, styrd* katalog **kan** en organisation hantera tillgångskatalogen på samma sätt och grinda uppdateringar genom PR-granskning - en tillgänglig styrningsmodell, inte ett krav i appen.
+- **Ingen påtvingad RBAC.** Den öppna appen är öppet tillgänglig som standard; varumärkesrisk hanteras genom mognadstaggar och vattenstämplar. En organisation som vill ha striktare kontroll lägger på sin egen autentisering och den git-granskade katalogen ovan.
+- **Ingen central databas.** Allt användartillstånd är per enhet. SUSE ID-integration finns på färdplanen men är ingen lanseringsspärr.
+- **Ingen delad kodväg för verktyg/motor.** Motorn är öppen källkod, och det är även de varumärkesneutrala verktygen i `community/`; ett varumärkespaket som det privata `brands/suse/` bär sina egna verktyg och sin egen katalog på egna villkor. Oavsett vilket upprätthålls separationen (inga korsimporter från `engine/` till verktygsinnehåll) så att uppdelningen förblir ren.
 
 ---
 
@@ -460,9 +462,13 @@ Samma livscykel i Tauri. Samma livscykel i CLI - jsdom tillhandahåller den huvu
 
 ## Status för öppen källkod
 
-Katalogerna `engine/`, `shells/`, `schemas/` och `docs/` är öppen källkod under **MPL-2.0** - en leverantörsneutral scaffolding-plattform för varumärkesverktyg, där varje leveransbar enhet delas upp i sitt eget repo under [github.com/lolly-tools](https://github.com/lolly-tools). `tools/` och `catalog/assets/` är SUSE-specifikt innehåll och förblir **SUSE:s egendom** (alla rättigheter förbehållna - se respektive repos `NOTICE.md`); de täcks inte av MPL.
+**Koden är MPL-2.0.** `engine/`, `shells/*`, `services/*`, `schemas/` och `docs/` är öppen källkod under **MPL-2.0** - en leverantörsneutral ställningsplattform för varumärkesverktyg, där varje leveransbar enhet ligger i sitt eget repository under [github.com/lolly-tools](https://github.com/lolly-tools).
 
-Uppdelningen upprätthålls - det finns inga korsimporter från `engine/` till `tools/` eller `assets/` - så gränsen mellan plattform och innehåll förblir ren.
+**Verktygsinnehåll levereras som varumärkespaket**, vart och ett med sina egna villkor (se paketets `NOTICE.md`). `community/` är det publika [`lolly-tools`](https://github.com/lolly-tools/lolly-tools)-repositoryt, och dess varumärkesneutrala verktyg är också MPL-2.0. `brands/suse/` är det privata `suse-lolly`-paketet: SUSE-verktygen och SUSE-katalogen, **proprietär för SUSE**, inklusive dess licensierade PremiumBeat-musik. `brands/lolly-start/` är det tomma startvarumärket som det här repositoryt äger. Typsnitt levereras inuti ett paket under **SIL Open Font License 1.1** - SUSE-paketet bär typsnitten SUSE och SUSE Mono.
+
+`tools/` och `catalog/` i repots rot är gitignorerade *vyer*: en profil bygger ihop dem från `community/` plus det aktiva varumärkespaketet, vilket är varför varje skript och skal läser just dessa två sökvägar och aldrig ett paket direkt.
+
+Uppdelningen upprätthålls - det finns inga korsimporter från `engine/` till verktygsinnehåll - så gränsen mellan plattform och innehåll förblir ren.
 
 ---
 

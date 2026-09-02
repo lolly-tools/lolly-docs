@@ -1,94 +1,54 @@
 # Lolly für Kreative
 
-Sie wollen etwas Gutes erstellen, schnell, und es soll gleich richtig herauskommen. Lolly ist genau dafür gebaut: ein paar Felder ausfüllen, eine fertige Datei erhalten - Layout, Typografie, Regeln werden vom Werkzeug durchgesetzt, nicht von Ihrem Auge (es sei denn, Sie möchten das - dann haben Sie ein Medien-Kraftpaket zur Hand). Keine Design-Software, kein Warten. Es läuft auf Ihrem eigenen Gerät und funktioniert offline.
+Sie füllen ein paar Felder aus, und heraus kommt eine fertige Datei, bei der Schriften, Farben und Layout bereits auf Ihrem eigenen Gerät entschieden sind. Sie liefern in Minuten, und es sieht aus, als hätten Sie Stunden investiert, und weil die Markenregeln fest im Tool verankert sind, steht nie Ihr Name auf der markenfremden Datei. Wählen Sie unten die Spur, die zu dem passt, was Sie heute vorhaben.
 
-**Was Sie davon haben:** Sie liefern in Minuten, und es sieht aus, als hätten Sie Stunden gebraucht. Sie warten nie auf eine Designerin oder einen Designer, und weil die Markenregeln fest eingebaut sind, steht nie Ihr Name auf dem markenfremden Asset. Sie wirken einfach schnell, professionell und verlässlich.
+Sie sind eine Hand in einer Staffel: Ein Entwickler kann das Tool, das Sie nutzen, zu einer Pipeline ausbauen, und eine Kollegin oder ein Kollege kann es im Selbstbedienungsmodus ausführen, daher verfolgt [Der Lebenszyklus einer Kampagne](/info/overview.html#the-lifecycle-of-a-campaign) ein Asset durch alle drei Paar Hände.
 
-Diese Seite sagt Ihnen alles, was Sie wissen müssen, um das Beste aus Lolly herauszuholen.
+Neu hier? Beginnen Sie mit **[In 60 Sekunden etwas erstellen](/info/make-something.html)** und kommen Sie zurück, sobald Sie wissen, welchen Teil Sie vertiefen möchten. [Fragen & Antworten](/info/faq.html) behandelt, was Menschen fragen, bevor sie einem kostenlosen Tool vertrauen. [Wie Lolly im Vergleich abschneidet](/info/positioning.html) ist die ehrliche Einschätzung, wofür Sie besser zu etwas anderem greifen.
 
-> **Sie sind ein Glied in einer Staffel.** Die Werkzeuge, die Sie erstellen, enden nicht bei Ihnen - eine Entwicklerin oder ein Entwickler kann sie in eine automatisierte Pipeline einbinden ([Lolly für Builder](/info/builders.html)), und eine nicht designerfahrene Kollegin oder ein Kollege kann sie eigenständig ausführen, um eine fertige, markenkonforme Datei zu erhalten, ohne Sie einzubeziehen. Sehen Sie, wie sich der gesamte Lebenszyklus summiert, unter [Der Lebenszyklus einer Kampagne](/info/overview.html#the-lifecycle-of-a-campaign).
+## Erstellen
 
-## Warum Lolly - Ihre Vorteile
+Wählen Sie ein Tool, füllen Sie ein paar Felder aus und laden Sie die fertige Datei herunter. Oder öffnen Sie die Design-Leinwand und legen Sie frei Hand an: In beiden Fällen kommen Farben, Schrift und Abstände aus Ihrer Marke statt aus dem Gedächtnis, und nichts erfordert ein Konto.
 
-- **Fertig, nicht fummelig.** Das Tool kennt bereits die Schriften, die Farben, das Logo, die Abstände. Sie liefern die Worte; es liefert das fertige Asset zurück. Nichts, was man in Frage stellen müsste.
-- **Korrekt durch Konstruktion.** Designregeln, Layout-Beschränkungen und Ablauflogik stecken im Template - die Ausgabe kann nicht von der Spezifikation abweichen, es sei denn, der Autor des Tools lässt bewusst etwas offen. Große kreative Bandbreite, innerhalb von Leitplanken, die halten.
-- **Eine Quelle, jedes Format.** Dasselbe Design wird als SVG, druckfertiges PDF, hochauflösendes PNG oder 60fps-Video exportiert. Einmal erstellen, überall ausliefern.
-- **Unendliche Variationen.** Lokalisieren Sie eine Karte in ein Dutzend Sprachen, erzeugen Sie jede Größe für jeden Platzierungsort, tauschen Sie ein Lockup in vierzig Kampagnen aus - alles aus einem Design, gesteuert von einer Tabelle.
-- **Es gehört Ihnen, offline, privat.** Ihre Arbeit bleibt auf Ihrem Gerät - kein Konto nötig, nichts wird hochgeladen, um ein Asset zu erstellen oder zu exportieren, keine Lizenz zu prüfen. Klappen Sie im Flugzeug den Laptop-Deckel zu und arbeiten Sie weiter. (Es gibt zwei optionale Server-Ergänzungen, die Sie vollständig ignorieren können - siehe [Server Surface](/info/server-surface.html).)
-- **Offen, nicht eingesperrt.** Die Engine ist Open Source, und Ihre Arbeit liegt an einfachen URLs, nicht in der Datenbank eines Anbieters.
-- **Superkräfte, wenn Sie sie wollen.** Sie müssen nie gestalten - aber sobald Sie sich dazu entscheiden, ist die Decke hoch. Legen Sie Seiten freihand auf der Design-Leinwand an. Schneiden Sie Clips, Karten und Musik auf einer Zeitleiste im Sequence Studio zusammen. Nehmen Sie saubere Stimm- und Kameraaufnahmen mit Live-Coaching auf. Bauen Sie selbst eine ganze Marke auf, geführt von einem Farbwähler, der Ihnen mehr über eine Farbe verrät, als es die meisten Design-Suiten je tun.
+- **[In 60 Sekunden etwas erstellen](/info/make-something.html)** - drei kurze Rundgänge ganz ohne Einrichtung, falls Sie Lolly noch nie geöffnet haben.
+- **[Lolly nutzen](/info/using.html)** - die Leinwand, die Steuerelemente, das Speichern, Projekte und die Nutzung am Telefon: wie sich die App selbst verhält.
+- **[Das Brand Studio](/info/brand-studio.html)** - wann Logos, Farben und Schrift Ihre eigenen sein sollen statt der Standardvorgaben.
+- **[Ein Design importieren](/info/design-import.html)** - wenn die Grafik bereits als `.fig`-, `.penpot`-, `.ai`-, `.idml`- oder SVG-Datei vorliegt und Sie sie bearbeitbar statt geplättet haben möchten.
+- **[Utility-Ansichten](/info/utilities.html)** - die Tabellenkalkulation, der Konverter, das Colour Lab, der PDF-Extraktor und Script Audio, für die Aufgaben, die kein Tool-Render sind.
+- **[Browser-Erweiterung](/info/extension.html)** - erfassen Sie eine lebende Webseite und nutzen Sie sie als Asset in Ihren eigenen Designs weiter.
+- **[Suche](/info/search.html)** - ein Feld, das Ihre Tools, Ihre gespeicherte Arbeit, den Katalog und Ihre Einstellungen erreicht.
+- **[Ask Lolly](/info/ask.html)** - tippen Sie eine Frage ein und erhalten Sie den passenden Abschnitt dieser Anleitungen zurück, mit einem Link direkt hinein.
+- **[Das Dashboard](/info/dashboard.html)** - was dieses Gerät kann, Ihr Designsystem schreibgeschützt und ein Blick auf den Speicherplatz.
+- **[Ihre Favoriten](/info/favourites.html)** - markieren Sie mit einem Stern, was Sie häufig nutzen, damit es eine eigene Kachel über dem Raster erhält.
+- **[Profile](/info/profile.html)** - die Angaben, aus denen Tools vorausfüllen, und die vier Barrierefreiheits-Schalter, die die App beruhigen, ohne ein Pixel dessen zu verschieben, was Sie exportieren.
 
-> **Die Beschränkungen sperren Sie nicht ein - sie fangen Sie auf.** Denken Sie an die Leitplanken wie an Bumperbahnen: Sie werfen den Ball trotzdem - die Worte, das Bild, die Idee - und der Code sorgt nur dafür, dass er nicht in der Rinne landet, damit die Marke nie brechen kann. Sie werden nicht wegautomatisiert; der mühsame Teil ist es: die Markenprüfung, das erneute Exportieren in jeder Größe, die manuelle Lokalisierung in ein Dutzend Sprachen. Was übrig bleibt, ist die Entscheidung, für die es Sie brauchte. Und das Tool, das *Sie* entwerfen, ist das, was den Rest des Unternehmens gute Arbeit machen lässt, ohne Sie bei jedem Asset einzubeziehen: Ihr Urteilsvermögen, skaliert.
+## Animieren
 
-## Wie es sich vergleicht
+Text, der sich bewegt, Szenen auf einer Zeitleiste und Bewegung, die markenkonform bleibt. Ein Bewegtbild-Export wird Bild für Bild aus einer gesteuerten Uhr zusammengesetzt statt vom Bildschirm aufgezeichnet, sodass das Timing nie driftet und derselbe Link denselben Clip in jeder Länge rendert.
 
-Lolly versucht nicht, Canva oder Figma zu sein. Es setzt dort an, wo *Regeln, Wiederholbarkeit und feste Beschränkungen wichtiger sind als freihändige Flexibilität* - und macht Designentscheidungen zu Tools, die Ihr gesamtes Team nutzen kann, ohne dass Sie bei jedem Asset eingebunden sind.
+- **[Animieren](/info/animating.html)** - Keyframes, echte Tiefe und eine Szenenkamera, um über das Ergebnis zu fliegen.
+- **[Der Sequenz-Editor](/info/sequence-editor.html)** - die Zeitleiste selbst: Clips, Overlay-Spuren, Trimmen und Teilen, Übergänge und die Audiomischung.
+- **[Exportieren & Formate](/info/exporting.html)** - die Video-, GIF- und Animated-PNG-Seite des Exportfensters, sobald die Bewegung stimmt.
 
-Die produktbezogenen Details finden Sie auf den datierten [Vergleichsseiten](/info/compare.html) - Canva, Adobe, Figma, Penpot, Markenportale, Render-APIs und Dateikonverter - mit den Zugeständnissen zuerst und einem [Fähigkeiten-Board](/info/positioning.html) dahinter.
+## Aufnehmen
 
-**Greifen Sie zu Lolly** für die Assets, die Sie immer wieder erstellen - Veranstaltungsbeschilderung, Zitatkarten, lokalisierte Banner, E-Mail-Signaturen, Versandetiketten, Social-Varianten, datengetriebene Diagramme und Karten. **Greifen Sie zu einem Design-Tool** für das maßgeschneiderte Hero-Stück, das einmalige Kampagnenkonzept, die Ideenfindung, die *dazu bestimmt ist*, dem System zu entkommen. Lolly führt das System aus; es ersetzt nicht das Studio.
+Nehmen Sie einen sauberen Take mit Einzähler, Pegelanzeige und sanftem Coaching auf, oder verwandeln Sie eine Sprachnotiz in ein fertiges Video, das sich mit dem Ton bewegt. Es gibt noch keine eigene Record-Seite: Lolly nutzen trägt sie im Abschnitt zur Zeitleiste.
 
-## Was Sie erstellen können
+- **[Lolly nutzen](/info/using.html#timeline-sequence-studio)** - eine Voiceover direkt auf die Zeitleiste aufnehmen, wo der Take gespeichert wird und wie er in die Mischung gelangt.
+- **[In 60 Sekunden etwas erstellen](/info/make-something.html#make)** - die Audiogramm-Szene, für wenn Sie lieber gehört als gesehen werden möchten.
+- **[Utility-Ansichten](/info/utilities.html)** - Script Audio, wenn die Worte zuerst kommen und die Stimme danach.
 
-### Alles korrekt, ohne Wartezeit
+## Zusammenarbeiten
 
-Füllen Sie ein paar Felder aus, erhalten Sie das fertige Asset - keine Schriften auszuwählen, keine Farben zu hinterfragen, kein „Ist das das richtige Logo?“ Das Tool weiß es bereits. E-Mail-Signaturen, Event-Countdowns, Zitatkarten, Badges, Stadtpläne - alles, was Ihr Team an einem Dienstag um 16 Uhr braucht, im Selbstbedienungsmodus. Und weil keine Kundendaten das Gerät verlassen, gibt es kein Compliance-Risiko bei der Zusammenarbeit.
+Zwei Menschen, zwei Geräte, eine Sitzung, live bearbeitet. Scannen Sie einen Code über den Tisch hinweg, und beide Bildschirme zeigen dieselbe Arbeit, ganz ohne Konto und ohne Server dazwischen - und ganz ohne Internet, wenn beide Geräte im selben Netzwerk sind.
 
-Street Map ist ein gutes Beispiel für diesen Tausch: Sie wählen eine Stadt und ein paar Farben, und die Kartografie, die Straßenbreiten und das Wasser werden für Sie entschieden.
+- **[Gemeinsam arbeiten](/info/collaborate.html)** - eine Sitzung starten, was zwischen den Geräten übertragen wird und was passiert, wenn das Netzwerk ausfällt.
+- **[Lolly nutzen](/info/using.html#sharing-your-work)** - die stilleren Wege, Arbeit weiterzugeben: ein Freigabelink, der den gesamten Zustand trägt, oder eine einzelne `.lolly`-Datei.
 
-![Ein Street-Map-Render von Tokio in Neon auf fast Schwarz, erzeugt aus einer Stadt-Dropdown-Liste und zwei Farbwählern](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-street-map-poster)
+## Veröffentlichen
 
-### Von Live-Daten zum fertigen Visual
+Schicken Sie es dorthin, wo es verlangt wurde: ein Link, der das Design trägt, ein druckgetreues PDF, ein Video, eine Präsentation oder ein Ordner voller Varianten. Dieselbe Quelle erzeugt jedes davon, Sie bauen es also nur einmal.
 
-Verbinden Sie eine **CSV**- oder **JSON**-Tabelle mit einer Diagramm-, Karten- oder Tabellenvorlage und aktualisieren Sie die Zahlen - das Layout kümmert sich um sich selbst. Wahlergebnisse, Quartalszahlen, Wetterereignisse: erstellen Sie das Format einmal und verwenden Sie es jedes Mal wieder, wenn die Story läuft. Treffen Sie Ihren Hausstil *exakt*, weil er auf Template-Ebene durchgesetzt wird, nicht als lose Richtlinie belassen.
-
-![Ein Donut-Diagramm direkt aus Chart Creator - Beschriftungen, Werte und Farben alle vom Template platziert, nicht von Hand](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
-
-### Tools, die Tools zusammensetzen
-
-Ein Tool kann die Live-Ausgabe eines anderen Tools als Asset einbetten - ein Namensschild, das seinen eigenen QR-Code rendert, eine Karte, in die ein Live-Diagramm eingefügt wird - ganz ohne Design-Tool und ohne manuelles Compositing. Das eingebettete Render bleibt live und wird beim Laden neu gerendert; es ist nie ein flach gedrücktes Bild.
-
-### Die Grenze, wenn Sie sie brauchen
-
-Erweiterte Filter, Compositing, Animation, Live-Kameraeffekte, generatives Design - jede Web-Technologie steht einem Template-Autor zur Verfügung, deshalb ist die Decke hoch.
-
-![Das Ergebnis von Mesh Gradient - ein generatives Feld aus weicher Farbe, vollständig aus den Palette-Tokens Ihrer Marke aufgebaut](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
-
-### Gewachsen, nicht gezeichnet
-
-**Growth** lässt das Bild wachsen, statt es zu zeichnen: Ein System mit einem Startwert breitet sich von einem Ring, einer Linie, Ihren eigenen Worten oder Ihrem Logo aus, bis es den Rahmen füllt, in Ihrer Palette. Derselbe Startwert lässt immer dasselbe Stück wachsen, sodass ein Link es exakt reproduziert. Was dabei herauskommt, ist gewöhnliche SVG-Geometrie statt eines Abbilds einer Zeichnung, daher lässt es sich drucken, plotten und schneiden - und dasselbe Design animiert als Video vom ersten Startwert bis zur fertigen Form.
-
-![Growths Standard-Blüte - ein dichtes Feld schleifenförmiger, markenfarbener Linien, aus einem Ring herausgewachsen, jede Linie ein echter SVG-Pfad](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
-
-### Bewegung, die auf die Musik antwortet
-
-**Synth** löst ein Strömungsfeld auf der Grafikkarte und malt es in Ihren Farben. Geben Sie ihm einen Track, und das Feld bewegt sich mit dem Klang; es exportiert als MP4, WebM, GIF oder animierte PNG-Schleife, die sauber Ende an Anfang anschließt, Bild für Bild aus einer gesteuerten Uhr gerendert statt vom Bildschirm aufgezeichnet - sodass die Bewegung nie gegenüber dem Soundtrack driftet, und derselbe Link denselben Clip in jeder beliebigen Länge rendert.
-
-![Ein Frame aus Synths Tinten-Szene - ein dunkles Strömungsfeld, beleuchtet in den Markengrüntönen, mitten im Wirbel eingefangen](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
-
-Erstellen Sie *Tools*, keine Dateien: bauen Sie das, was 10.000 Karten erzeugt, statt 10.000 Karten von Hand zu machen. Sperren Sie, was sich nicht ändern soll; geben Sie nur frei, was variieren soll.
-
-## Details, die Ihnen auffallen
-
-- **Druck, richtig gemacht.** Echte physische Einheiten (mm/cm/in/pt) und DPI, Beschnitt und Schnittmarken, CMYK und PDF/X-4 Output-Intent - eine Druckerei bekommt genau, was sie braucht. Siehe [Exportieren](/info/exporting.html#size-print-units).
-- **Video und Bewegung.** Exportieren Sie WebM/MP4 (mit Audiospuren), animierte PNG/WebP und animierte SVG - aus demselben Template, das auch Ihre Standbilder erzeugt. **Sequence Studio** geht weiter: eine echte Zeitleiste unter der Leinwand, mit einer magnetischen Clip-Reihe, freien Overlay-Spuren, Trimmen und Teilen, Übergangs-Presets, Voiceover-Aufnahme und einer Musikmischung - ausgegeben als MP4, WebM, GIF oder APNG von einem deterministischen Compositor statt einer Bildschirmaufnahme. Lottie-Dateien kommen als animierte Assets *hinein* und werden zu jedem dieser Formate gerendert. Über den Clips sitzen **Keyframes**: positionieren Sie eine Box in einem Moment, heben Sie sie mit echter Tiefe von der Seite ab und fliegen Sie mit einer Kamera über das Ergebnis. Siehe [Lolly verwenden → Timeline](/info/using.html#timeline-sequence-studio) und [Animieren](/info/animating.html).
-- **Audio.** Nehmen Sie eine Sprachnotiz auf und speichern Sie sie als MP3 (oder im nativen M4A/OGG/WebM), alles auf dem Gerät - und bringen Sie MP3, WAV, OGG, M4A, FLAC, MIDI oder Tracker-Module (MOD/XM/IT/…) als Musikbett unter ein Video oder als Ambient-Track im Neurospicy Mode ein.
-- **Zeichnen statt sich begnügen.** Das Design-Tool hat einen echten **Stift**: klicken, um Punkte zu setzen, ziehen, um zu kurven, und die Art der Kurve wählen, die durch sie verläuft. Kombinieren Sie Formen mit **Vereinigung, Subtraktion, Schnittmenge und Ausschluss**, konturieren Sie eine Linie, versetzen Sie eine Silhouette, vereinfachen Sie einen Pfad - die Geometrie ist exakte Bezier-Mathematik, sodass eine gezeichnete Form bei jeder Größe scharf bleibt und von einem Link oder der CLI identisch gerendert wird. Siehe [Lolly verwenden → Eigene Formen zeichnen](/info/using.html#drawing-your-own-shapes-the-pen).
-- **Bearbeitbare Vektoren.** SVG-, EPS-, EMF- und DXF-Export. Text wird im Vektor-Output zu konturierten Pfaden, sodass eine Druckerei oder ein Schneideplotter überall öffnbare, scharfe Geometrie bekommt. (Konturierter Text ist in Illustrator nicht mehr *neu eintippbar* - das ist der Tausch für perfekte Treue ohne die Schrift.)
-- **Komfort, der sich summiert.** Verarbeiten Sie eine Tabelle stapelweise zu einem Ordner voller Assets; speichern Sie Sitzungen und organisieren Sie sie in Projekte; teilen Sie jeden Zustand als URL; rendern Sie einen ganzen Ordner als ein Zip.
-- **Eine UI, die tatsächlich angenehm ist.** Undo/Redo überall, eine Sound-Ebene, die Sie abschalten können, ein Theme-Zyklus, Live-Kamerafilter - und **Neurospicy Mode**, ein im Hintergrund laufender Fokus-Musik-Player, der Sie in seinem eigenen Dock durch die ganze App begleitet.
-- **Eine ruhigere Oberfläche, wenn Sie eine wollen.** Vier Schalter unter **Profile → Accessibility** - *Reduce motion*, *Hide colourful previews*, *High contrast* und *Large text* - beruhigen die App rund um Ihre Arbeit. Jeder ist aus, bis Sie ihn einschalten, und keiner von ihnen berührt Ihre Leinwand oder verschiebt auch nur ein Pixel dessen, was Sie exportieren. Siehe [Ihr Profil → Barrierefreiheit](/info/profile.html#accessibility).
-
-## Holen Sie das Beste heraus
-
-- **[Schnellstart](/info/quickstart.html)** - Marke rein, erste Datei raus.
-- **[Das Brand Studio](/info/brand-studio.html)** - gestalten Sie Ihre Logos, Farben, Schriften und Tokens (`#/start`).
-- **[Lolly verwenden](/info/using.html)** - die Leinwand, die Steuerelemente, Speichern, Projekte und die Nutzung auf dem Handy.
-- **[Ihr Profil](/info/profile.html)** - die Details, aus denen Tools vorausfüllen, und wie Sie diese zwischen Geräten mitnehmen.
-- **[Ein Design importieren](/info/design-import.html)** - bringen Sie Ihre Figma-/Penpot-/Illustrator-/InDesign-Arbeit sowie Ihre PowerPoint-Präsentationen mit - bearbeitet oder umgebrandet auf dem Gerät.
-- **[Zusammenarbeiten](/info/collaborate.html)** - zwei Personen bearbeiten live eine Sitzung, Gerät zu Gerät, ohne Konto und ohne Server dazwischen.
-- **[Suche](/info/search.html)** - ein Feld am unteren Rand von Galerie, Utilities, Projekten, dem Katalog, dem Dashboard und Profil, das Ihre Tools, Ihre gespeicherte Arbeit, den Katalog und Ihre Einstellungen erreicht.
-- **[Lolly fragen](/info/using.html#ask-lolly)** (`#/ask`) - stellen Sie eine Frage und erhalten Sie den passenden Abschnitt dieser Anleitungen wortwörtlich zurück, mit einem Link direkt dorthin.
-- **Das Dashboard** (`#/d`) - das Armaturenbrett: Ihr Designsystem schreibgeschützt angezeigt, die vollständige Fähigkeitenkarte, was dieses Gerät kann, und ein Blick auf Ihre Aktivität und Ihren Speicher.
-- **[Ihre Favoriten](/info/favourites.html)** - markieren Sie mit einem Stern, was Sie nutzen, und es erhält eine eigene Kachel über dem Raster.
-- **[Exportieren & Formate](/info/exporting.html)** - jedes Format, Druckeinheiten, Video und Stapelverarbeitung.
+- **[Exportieren & Formate](/info/exporting.html)** - Druckeinheiten, DPI, Beschnitt und Schnittmarken, Video, Stapelläufe und das Exportfenster selbst.
+- **[Jedes Format, das Lolly öffnen und erzeugen kann](/info/formats.html)** - die vollständige Liste der Ein- und Ausgabeformate, mit einer verständlichen Karte hinter jedem Chip.
+- **[Datenübertragung](/info/data-transfer.html)** - das Backup-Bündel, um alles, was Sie erstellt haben, auf ein anderes Gerät zu übertragen.

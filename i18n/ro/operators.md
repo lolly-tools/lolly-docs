@@ -1,123 +1,60 @@
 # Lolly pentru operatori
 
-### O strategie de securitate și informații pe mai multe straturi de apărare - care se întâmplă să fie și o platformă de producție creativă
+Ajungi să fii persoana care a spus da la ceva sigur și, în același timp, popular. Închizi o breșă de exfiltrare, câștigi capacitate și elimini o coadă de cereri dintr-o singură mișcare, ceea ce este acel câștig rar de securitate care te face mai apreciat, nu mai puțin: fără telefon la 3 dimineața pentru că fișiere sub embargo au ajuns la un instrument web oarecare, mai puțini furnizori și contracte pe masa ta, și o dovadă la care poți arăta când te întreabă cineva. Alege mai jos direcția care se potrivește cu funcția pentru care răspunzi.
 
-Sistemul imunitar organizațional zero-trust care se înfășoară în jurul a ceea ce faci deja - astfel încât munca creativă de rutină de care echipele tale au nevoie zilnic se întâmplă *în interiorul* perimetrului tău, în loc să se scurgă din el.
+Guvernezi întreaga ștafetă: un creativ scrie regulile, un developer le extinde, iar operatorul este cel care face ca asta să poată rula în siguranță într-o organizație întreagă - lucru pe care [Ciclul de viață al unei campanii](/info/overview.html#the-lifecycle-of-a-campaign) îl urmărește de la un capăt la altul.
 
-**Ce câștigi tu.** Ajungi să fii persoana care a spus da unui lucru deopotrivă sigur *și* popular. Închizi o gaură de exfiltrare, câștigi capabilitate și ștergi o coadă de cereri dintr-o singură mișcare - victoria rară de securitate care te face mai apreciat, nu mai puțin. Fără telefon de la legal la 3 dimineața pentru că fișiere sub embargo sau date despre clienți și-au găsit drumul într-o unealtă web oarecare; mai puțini furnizori SaaS, contracte și audituri pe masa ta; și o pistă de audit complet reproductibilă pe care o poți arăta când cineva întreabă. Dormi mai bine și, pe deasupra, luminezi câteva zile făcând-o.
+Nou aici? [Adopție și guvernanță](/info/adoption-governance.html) este planul complet de implementare. [Deployment](/info/deployment.html) acoperă deploy, serve și hibrid, iar [Configurare](/info/configuration.html) este ce dă formă unei instanțe individuale.
 
-Lolly nu este o unealtă creativă de mâna a doua: pune în mâinile tuturor ieșiri de calitate de producție, iar experiența de creație ghidată de brand nu are egal. Motivul pentru care este *sigur* să fie distribuită pe scară largă este arhitectural: nimic nu se încarcă în afară de ce ai pus tu acolo, fiecare rezultat este reproductibil, iar fiecare export poate purta mai multe straturi de înregistrări criptografice de top în domeniu. Indiferent cum a ajuns un document pe biroul tău, poți vedea proveniența lui completă, dacă a fost modificat și dacă îl poți recrea pixel cu pixel.
+## Vânzări
 
-> **Starea actuală.** Proprietățile de securitate ale Lolly sunt puternice prin design, iar motoarele ei de criptografie și parsare de fișiere trec printr-o consolidare a infrastructurii la nivel enterprise al SUSE. Sigiliile, semnarea pe dispozitiv și criptarea de mai jos sunt reale și susținute chiar acum și se maturizează spre o certificare independentă - deci acolo unde un contract cere o asigurare certificată, implementează-le ca apărare în profunzime cât timp acest proces se finalizează.
+Intră în ședință exact cu fișierul de care ai nevoie, făcut pe drum până acolo. Lasă deck-ul pe care îl ai deja și reconstruiește-l impecabil, ca fișier de deck nativ, fără nicio coadă de cereri între tine și resursă.
 
-## Avantajul strategic
+- **[Lolly pentru echipele de vânzări](/info/sales.html)** - ghidul practic: repararea deck-ului pe care îl ai, reconstruirea lui nativă și crearea singur a resursei unice.
+- **[Export și formate](/info/exporting.html)** - partea de deck, PDF și imagine a panoului de export, când fișierul trebuie să se deschidă pe laptopul altcuiva.
 
-Modul obișnuit în care se face munca creativă de rutină este o suprafață de risc: fișiere trimise prin e-mail către contractori de design externi, active de brand încărcate în zeci de editoare SaaS, date despre clienți lipite într-o unealtă web a unui necunoscut ca "să facem repede un grafic". Fiecare dintre acestea înseamnă date care ies din controlul tău.
+## Presă
 
-Lolly inversează situația. Munca ce *a determinat* acele scurgeri - cardul cu citat, bannerul localizat, ecusonul de eveniment, captura de ecran cu date redactate - se întâmplă acum într-o unealtă care rulează pe dispozitivul propriu al angajatului, față de brandul tău, fără niciun server implicat. Nu ai adăugat un control peste un flux de lucru riscant; ai înlocuit fluxul de lucru riscant cu unul care nu are, de la bun început, nicio cale de exfiltrare.
+Date live transformate în grafice, hărți și tabele care se potrivesc deja cu stilul casei (house style). Construiește formatul poveștii o singură dată și refolosește-l de fiecare dată când povestea rulează, pentru tipar și pentru ecran.
 
-- **Configurația îți aparține.** Motorul și shell-urile sunt open source (MPL-2.0). Suprapune-ți propria autentificare, telemetrie sau CA; găzduiește-l sau nu; deții control complet asupra funcțiilor și costurilor, urmărit în git, nu blocat într-o bază de date SaaS.
-- **Guvernanța poate fi date, nu un dashboard.** Când vrei acel control, gestionează catalogul de instrumente ca un repozitoriu Git - revizuirea unui pull request devine aprobarea brandului, cu o urmă de audit completă și revenirea instantanee a fiecărui șablon la care echipa ta are acces. Este o opțiune, nu o obligație, și aparține exact unui singur birou: creatorii lucrează în întregime în aplicație, salvând ce creează ca o **sesiune** și transmițând-o mai departe ca un link de partajare, o copie de rezervă sau o colaborare live - nimic din asta nu necesită git. Când una dintre acele sesiuni merită să devină un punct de plecare permanent, oricine gestionează implementarea deschide linkul, înregistrează valorile ei ca un **șablon** la acel instrument în pachetul de brand și face commit. De atunci încolo apare în selectorul "New from template" al instrumentului și poate fi accesat direct ca `?template=<id>`. Git este pasul de blocare al administratorului, folosit o singură dată, și niciodată ceva ce un creator trebuie să atingă. Vezi [Adoptare și guvernanță](/info/adoption-governance.html).
-- **Barierele de protecție sunt structurale.** Constrângerile de brand sunt codificate direct în șabloane, nu publicate ca ghiduri pe care oamenii le pot ignora. Rezultatul greșit nu este descurajat - este irealizabil.
+- **[Lolly pentru redacție](/info/press.html)** - ghidul practic: stilul info-editorial, date live la intrare și rezultate la calitate de publicație.
+- **[Vizualizări utilitare](/info/utilities.html)** - foaia de calcul și convertorul, pentru pasul dinaintea graficului.
 
-> **Guvernezi întreaga ștafetă.** Un creativ scrie regulile, iar un dezvoltator le scalează, dar operatorul este cel care face acel ciclu de viață sigur de rulat la nivelul întregii organizații - aceeași unealtă care îi permite unui reprezentant să se autodeservească într-un avion este una pe care o poți condiționa prin revizuire Git, o poți implementa prin MDM-ul tău și o poți verifica criptografic. Vezi cum se combină rolurile în [The lifecycle of a campaign](/info/overview.html#the-lifecycle-of-a-campaign) și cum o guvernezi în [Adoption & Governance](/info/adoption-governance.html).
+## Marketing
 
-## Șterge coada de cereri în timp ce multiplici conținutul.
+Fiecare dimensiune, fiecare limbă, o singură sursă de adevăr. Lipește o foaie de calcul și obții câte un fișier finit pentru fiecare rând, fără nicio agenție la mijloc pentru fișierele de rutină.
 
-Unul dintre obiectivele Lolly este **devierea cererilor de design**: cereri de rutină care nu mai trebuie niciodată să ajungă la un designer, pentru că persoana care avea nevoie de activ l-a făcut singură, corect, în câteva minute. Fiecare tichet deviat este deopotrivă un câștig de productivitate și un fișier în minus care trece din mână în mână.
+- **[Lolly pentru echipele de marketing](/info/marketing.html)** - ghidul practic: variante în volum, localizare și ce încetează să mai fie un blocaj.
+- **[Folosirea Lolly](/info/using.html#batch-pro-mode)** - rularea în serie (batch) în sine: o foaie la intrare, un folder de resurse la ieșire.
 
-Lolly este construit să se potrivească cu felul în care organizația ta funcționează efectiv - nu există un singur mod corect de a-l implementa:
+## Securitate
 
-- **Implementează, nu servi.** Livrează Lolly pe dispozitive prin MDM-ul tău existent (Intune, Jamf, Munki…). Rulează local ca aplicație desktop/mobil sau ca PWA offline - funcționează în spatele oricărui firewall, în orice mediu izolat de rețea, fără server de întreținut și cu IT-ul în controlul ritmului de actualizare.
-- **Doar servire.** Rulează o instanță în interiorul rețelei tale (sau în spatele unui VPN); utilizatorii ajung la ea printr-un browser, fără nimic instalat. Publică o unealtă o dată, toată lumea o are imediat; asociază cu IdP-ul tău pentru controlul accesului.
-- **Hibrid.** Aplicații locale pentru munca offline pe teren, o versiune de browser mereu actualizată pentru mașini împrumutate - ambele îndreptate spre aceeași bibliotecă de unelte.
+Modul obișnuit în care se face munca creativă de rutină este o suprafață de risc: fișiere trimise prin email către contractori externi, resurse de brand încărcate în zeci de editoare web, date de clienți lipite pe site-ul unui străin ca să faci rapid un grafic. Lolly este răspunsul imunitar la asta, pentru că înlocuiește munca în loc să adauge un control peste ea: cardul cu citat, bannerul localizat și captura de ecran redactată sunt făcute pe dispozitivul propriu al angajatului, în raport cu brandul tău, așa că nu se încarcă nimic ce nu ai pus tu acolo, iar fiecare rezultat este reproductibil din datele sale de intrare. Exporturile pot purta mai multe straturi de înregistrare criptografică - un Content Credential C2PA semnat cu o cheie generată pe dispozitiv și niciodată citibilă în afara lui, filigranul invizibil Lolly Imprint și o marcă durabilă opțională care supraviețuiește unei resalvări - fiecare dintre ele fiind detectabilă la manipulare (tamper-evident) și eliminabilă: un credential semnalează o modificare în loc să o prevină, iar exact asta face posibilă verificarea complet offline. Criptografia și parserele de fișiere trec prin întărirea de nivel enterprise a SUSE: sigiliile, semnarea pe dispozitiv și criptarea sunt reale și susținute chiar acum, așa că acolo unde un contract cere asigurare certificată, desfășoară-le ca apărare în profunzime (defence-in-depth) cât timp acel proces se finalizează.
 
-Modelele complete de implementare și ghidul de administrare se află în [Deployment](/info/deployment.html) și [Configuration](/info/configuration.html).
+- **[Încredere](/info/trust.html)** - fiecare afirmație pe care o face acest site, cu mecanismul care o impune alături.
+- **[Securitate și verificare](/info/security.html)** - standardele, primitivele, modelul de încredere și testarea, scrise pentru un evaluator.
+- **[Modelul de amenințări și granițele de încredere](/info/threat-model.html)** - împotriva a ce se apără Lolly, ce anume nu face în mod explicit și unde cade fiecare graniță.
+- **[Suprafața de server](/info/server-surface.html)** - inventarul complet al ce rulează pe server (două componente opționale) față de ce rulează pe dispozitiv.
+- **[Inventarul de parsere](/info/parser-inventory.html)** - fiecare parser care atinge un fișier deschis de un utilizator și împotriva a ce este întărit fiecare.
+- **[Verifică singur](/info/verify-yourself.html)** - verifică afirmațiile față de un export real, pas cu pas, fără nimic ce nu poți rula tu însuți.
+- **[Politica de confidențialitate](/info/privacy.html)** - declarația formală despre ce se colectează, stochează și trimite, și ce nu.
+- **[Producție creativă suverană](/info/sovereign-production.html)** - deployment izolat de rețea (air-gapped), rețea condiționată de consimțământ și semnare pe dispozitiv.
+- **[Adopție și guvernanță](/info/adoption-governance.html)** - cine aprobă un instrument, cum devin regulile de brand impuse și ce îți aduce opțiunea de catalog-ca-repository.
 
-## Utilitare anti-exfiltrare
+## Juridic
 
-O categorie de unelte Lolly - utilitarele de confidențialitate - există *special* pentru a păstra fișierele în interiorul perimetrului.
+MPL-2.0 fără acord de licență pentru contribuitori, declarat clar, cu ce nu se afirmă spus la fel de răspicat ca ce se afirmă. Content Credentials sunt detectabile la manipulare și eliminabile, așa că paginile de mai jos spun ce afirmă de fapt o semnătură, înainte ca cineva s-o scrie într-un contract.
 
+- **[Marcarea AI și Legea AI a UE](/info/eu-ai-act.html)** - Articolul 50, Codul de bune practici care indică spre C2PA și potrivirea onestă a Lolly.
+- **[Cum se compară Lolly](/info/positioning.html)** - faptele despre licență: MPL-2.0, fără acord de licență pentru contribuitori și pe ce se sprijină de fapt „gratuit pentru totdeauna”.
+- **[Identitatea Content Credentials](/info/content-credentials-identity.html)** - ce afirmă un credential semnat, ce nu afirmă și pe cine numește certificatul.
+- **[Transfer de date](/info/data-transfer.html)** - pachetul de backup cu care se răspunde la o cerere de înregistrări sau la predarea unui dispozitiv.
 
-- **Strip hidden data**
- Elimină locația și toate informațiile de identificare ascunse din documente și fișiere media.
+## AI
 
-- **Text Helper**  
-Anonimizează, codează, formatează și manipulează text structurat și nestructurat. 
+Agenții furnizează date de intrare, niciodată o persona. AI ajută atunci când i se cere, ce a făcut o spune, iar lucrarea ta poartă numele tău, nu al unui model.
 
-- **Compress PDF**
-Micșorează un PDF supradimensionat pe dispozitiv, ca nimeni să nu apeleze la un site terț de tipul „comprimă-mi PDF-ul” în momentul în care un fișier e prea mare pentru a fi trimis prin email - exact locul pe unde scapă datele. 
-
-Toate acestea sunt transformări pe dispozitiv: fișierul sau datele tale intră, ies octeți curățați și **nu există niciun server pe care să se încarce ceva**. Sunt opusul deliberat al instrumentului tipic „încarcă-ți fișierul pe site-ul unui străin ca să-l cureți”, la care un angajat bine intenționat ar apela altfel.
-
-![Strip Hidden Data: fișierul ajunge pe pânză, iar insigna declară clar că nimic nu este încărcat](/t/url-shot?url=%2F%23%2Ftool%2Fstrip-data&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=aud-strip-data)
-
-Text Helper oferă aceeași înțelegere, dar pentru text în loc de fișiere. Este banca de lucru cu file pe care un angajat ar căuta-o altfel pe site-ul unui străin și nu declară deloc intrări, pentru că nimic din ce atinge nu părăsește vreodată pagina.
-
-![Banca de lucru Text Helper - un șir de file de operații deasupra unui card care afirmă că nimic din ce lipești nu părăsește dispozitivul tău](/t/url-shot?url=%2F%23%2Ftool%2Ftext-helper&width=1200&height=750&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-content&dark=1&filename=ov2-text-helper)
-
-Compress PDF completează setul: atașamentul supradimensionat se micșorează sub o setare de calitate pe care o alegi tu, pe mașina care îl deține deja.
-
-![Compress PDF - un nivel de calitate și un comutator pentru tonuri de gri în stânga, o zonă de plasare pentru propriul tău PDF în dreapta și nicio încărcare nicăieri](/t/url-shot?url=%2F%23%2Ftool%2Fcompress-pdf&width=1200&height=750&dpi=192&waitMs=2000&walker=1&format=svg&dark=1&filename=ov2-compress-pdf)
-
-## Determinism și reproductibilitate
-
-Fiecare intrare a unui instrument poate fi exprimată ca parametru URL, iar aceleași intrări produc același fișier. Asta are două consecințe pentru operator:
-
-- **Un URL este artefactul.** Fă commit la link, regenerează activul la cerere - fără fișiere binare încărcate în Git, fără căutarea „ultimei versiuni” prin chat. ID-urile de activ și de instrument sunt contracte permanente, deci un link creat azi tot se rezolvă mai târziu.
-- **CLI-ul folosește aceeași cale de randare** ca interfața grafică, deci pipeline-urile de build și aplicația nu se abat niciodată una de la alta. Generează imagini OG, carduri sociale și vizuale de date la momentul build-ului, în mod reproductibil.
-
-Prompt to Image este determinismul în forma sa cea mai simplă: textul este întreaga intrare, imaginea culeasă este întreaga ieșire, iar același text se culege mereu la fel.
-
-![Prompt to Image - un bloc de text de prompt cules într-o imagine pătrată, unde în rezultat nu există nimic ce nu a fost în intrare](/t/url-shot?url=%2F%23%2Ftool%2Fprompt-card%3Ffull&width=1440&height=900&dpi=192&waitMs=2200&walker=1&format=svg&cropSelector=%23tool-canvas&dark=1&filename=ov2-prompt-to-image)
-
-## Proveniență și Content Credentials
-
-![Zona de plasare Verify acceptă orice fișier, din orice sursă, și îl citește fără nicio solicitare de rețea](/t/url-shot?url=%2F%23%2Fverify&width=1440&height=900&dpi=192&waitMs=1800&waitSelector=.valid-drop&cropSelector=.valid-drop&format=svg&walker=1&dark=1&filename=aud-verify-drop)
-
-Exporturile pot purta **Content Credentials** - un manifest [C2PA](https://c2pa.org) semnat, legat de un hash al octeților fișierului. Orice modificare ulterioară a fișierului rupe sigiliul, astfel încât un verificator compatibil C2PA **detectează alterarea criptografic, offline**. Acreditarea este *evidentă* la manipulare: semnalează manipularea în loc să o prevină, ceea ce este exact ce face posibilă verificarea complet offline.
-
-- **Activ implicit, pe dispozitiv.** Cheia de semnare este generată pe dispozitiv, este ne-extractibilă (nici măcar Lolly nu o poate citi), iar semnarea are loc local - doar *înrolarea* opțională de identitate ajunge vreodată la rețea.
-- **Niveluri de încredere.** Un export ne-înrolat este bine format, dar semnat anonim (`untrusted`). Înrolează o **identitate verificată** (certificat de scurtă durată de la CA-ul Lolly, legat de un email), iar verificatorii care fixează rădăcina Lolly raportează `trusted` + emailul semnatarului. O autoritate de marcare temporală de încredere și un semn verde de validator terț (conformitate C2PA) se află pe foaia de parcurs. Fiecare nivel este explicit, iar un fișier revendică vreodată doar încrederea pe care o poate dovedi.
-- **Durata de viață a acreditării** este decizia operatorului/utilizatorului la momentul semnării: 7 / 30 / 90 / 365 de zile, implicit 30.
-- **Lolly Imprint.** Un al doilea semnal, complementar, activ **implicit**: un filigran invizibil de pixeli inclus în exporturile raster (și în imaginile raster randate de Lolly dintr-un PDF/PPTX, niciodată în imaginea proprie încorporată de utilizator). Acolo unde acreditarea moare la orice modificare a containerului, Imprint supraviețuiește unei resalvări sau unei capturi de ecran - un indiciu durabil de tipul „acești pixeli au trecut prin Lolly”, doar de prezență, fără date personale. Este securitate prin obscuritate, nu o apărare consolidată, și completează acreditarea în loc s-o înlocuiască. `imprint=0` renunță.
-- **Content Credentials durabile (opțional).** Un export raster poate purta suplimentar un marcaj *durabil* invizibil care codează un identificator de legare flexibilă (soft-binding), astfel încât acreditarea C2PA poate fi recuperată chiar și după ce o încărcare pe rețele sociale sau o resalvare a eliminat metadatele fișierului - cazul în care o acreditare normală s-ar pierde. Este disponibil doar pentru raster și costă o etapă de codare neuronală, deci este dezactivat implicit (`durable=1` pentru a-l activa). Lolly recunoaște azi propriul marcaj durabil offline pe `/verify`; recuperarea de către instrumente terțe (de exemplu Adobe) va urma odată ce rezoluția industrială pentru soft-binding va fi implementată.
-- **Verificarea are loc pe dispozitiv.** Plasează orice fișier pe `/verify` (sau `lolly validate <file>`) pentru un raport offline despre dacă a fost creat cu adevărat cu Lolly și rămas neschimbat de atunci. Vizualizarea web Verify semnalează și conținutul generat de AI, detectează Lolly Imprint, verifică semnăturile **SEAL** (o semnătură la nivel de octet - cu zero solicitări de rețea: motorul primește un rezolvator de chei DNS *injectat*, iar niciun shell nu injectează unul astăzi, așa că o înregistrare care poartă propria cheie inline `pk=` se verifică complet offline, în timp ce una cu cheie prin DNS raportează „no key resolver and no inline key” în loc să contacteze rețeaua - vezi `SealPublicKeyResolver` în `engine/src/seal.ts`), opțional scanează în profunzime pentru filigrane de pixeli terțe (o descărcare unică de model pe dispozitiv) și scoate la iveală date ascunse - totul fără a încărca fișierul. Vezi [Content Credentials Identity](/info/content-credentials-identity.html).
-
-> **Note de interoperabilitate.** Lolly își verifică propriile acreditări și multe dintre cele terțe offline, azi, inclusiv citirea manifestelor de revendicare C2PA **v2** de la alți producători. Două containere rămân în lucru, ambele pentru că C2PA nu are încă o mapare standardizată pentru ele, așa că Lolly poartă acreditarea într-un loc propriu, iar verificatorul Lolly este cel care o citește înapoi: **WebM** (manifestul călătorește ca atașament Matroska) și **Ogg/Opus** (un câmp `C2PA=` în antetul de comentarii OpusTags, cu acel interval de octeți exclus din legare, astfel încât audio-ul continuă să aibă același hash). Restul respectă specificația - instrumentele terțe verifică din start MP4, M4A, MP3, WAV, PNG, JPEG și PDF produse de Lolly. Vezi `engine/src/c2pa-containers.ts` pentru ambele mapări; ele converg spre standard odată ce acesta se stabilizează.
-
-## Criptare și parolare
-
-Pentru fișierele care trebuie să călătorească blocate, totul se întâmplă pe dispozitiv:
-
-![Cardul de blocare din panoul de export: o parolă și o alegere explicită între cele două niveluri](/t/url-shot?url=%2F%23%2Ftool%2Fqr-code%3Furl%3Dhttps%3A%2F%2Flolly.tools%26format%3Dpdf%26password%3Ddemo%26options&width=1440&height=900&dpi=192&waitMs=2200&cropSelector=.export-pdfpass&walker=1&format=svg&dark=1&filename=aud-pdf-lock)
-
-- **Parolă de deschidere PDF** - *Standard* este un descurajator RC4 pe 40 de biți (se deschide oriunde, poate călători într-un link); *Strong* este **AES-256** (PDF 2.0), tastat la export și niciodată pus într-un link.
-- **Descărcări blocate** - un ZIP, un folder de Projects sau o rulare în lot pot fi blocate integral: *Standard* ZipCrypto (slab, universal) sau *Strong* **AES-256** (WinZip AE-2). Apărare în profunzime: orice PDF dintr-un zip Strong este *și* blocat individual cu AES-256, deci rămâne blocat după despachetare.
-- **Linkuri de partajare protejate prin parolă** - întreaga stare a linkului este criptată AES-256 sub o cheie derivată prin PBKDF2; doar textul cifrat călătorește, parola nu se află niciodată în link, iar decriptarea are loc în browserul destinatarului.
-
-## Pregătit pentru air-gap
-
-Air-gap este o **implementare de prim rang**, nu un mod special - Lolly rulează din start fără rețea la momentul randării. Shell-ul web este un PWA offline-first (service worker); fonturile și WASM sunt stocate pe dispozitiv; starea instrumentelor este persistată local prin bridge-ul gazdă, niciodată prin `localStorage`. Modalitatea acceptată prin care un instrument ajunge la rețea este o capabilitate `host.net` **pe listă albă**, declarată în manifestul său - un shell care nu poate (sau nu vrea) să o îndeplinească o simulează cu un stub. Acesta este un contract de portabilitate, nu o limită impusă (vezi nota despre hooks de mai jos), motiv pentru care revizuirea codului instrumentului rămâne mijlocul de control - deși pe un dispozitiv air-gapped nu există oricum nimic de atins. Livrează shell-urile către dispozitive prin MDM-ul tău, sau servește o instanță în interiorul rețelei tale, iar o instalare complet air-gapped randează, exportă, criptează și verifică acreditări fără nimic către care să „sune acasă”.
-
-## Bine de știut
-
-Câteva lucruri bune de clarificat înainte de a-l implementa:
-
-- **Consolidare în curs.** Criptografia și parserele trec prin procesul de consolidare la scară enterprise al SUSE (vezi mai sus) - solid prin proiectare azi; implementează ca apărare în profunzime acolo unde un contract cere asigurare certificată.
-- **Hook-urile instrumentelor *nu* sunt un sandbox de securitate.** `hooks.js`-ul opțional al unui instrument rulează cu bridge-ul gazdă injectat, dar într-un shell de browser execută în domeniul paginii și *poate* ajunge la `window`/`document`/`fetch`. Tratează codul instrumentelor așa cum tratezi orice cod pe care îl rulezi - revizuiește-l. De aceea o organizație care rulează un catalog partajat poate condiționa accesul printr-o revizuire în Git; oricum ar fi, rulează doar instrumente pe care le-ai revizuit până când izolarea prin Worker va fi disponibilă.
-- **Content Credentials sunt evidente la manipulare.** Detectează alterarea în loc s-o prevină - vezi notele de interoperabilitate de mai sus.
-- **Două niveluri de criptare.** Blocajele *Standard* sunt descurajatori rapizi, universali; *Strong* (AES-256) este protecție completă - alege Strong pentru orice e sensibil, ținând cont că necesită un cititor modern.
-
-## De sine stătător, sau guvernat de un plan de control
-
-Două forme, iar tu alegi pentru fiecare implementare. **Modul de sine stătător este cel implicit și nu necesită server:** Lolly randează pe dispozitiv, fiecare creator lucrează în aplicație, iar guvernanța git-ca-date descrisă mai sus este complet opțională - o singură organizație poate rula acest repozitoriu fără nimic găzduit. **Când vrei control la nivelul întregii organizații, adaugă un plan de control.** [lolly.work](https://lolly.work) este un serviciu separat, open source (MPL-2.0), pe care îl găzduiești tu - sau îl testezi în sandbox-ul găzduit - și care guvernează shell-ul live: autentificare condiționată de SSO, politică de feature flag / export / filigran, suprapuneri de intrare pentru instrumente, federare de cataloage, aprobări și un jurnal de audit înlănțuit prin hash, toate livrate către shell fără nicio modificare de cod aici. Este agnostic în privința brandului (configurație plus un pachet montat), consumă motorul și pachetele acestui repozitoriu nemodificate și nu devine niciodată calea de randare: Lolly randează în continuare pe dispozitiv prin design. OSS = libertate individuală; OSS + plan de control = libertate organizațională.
-
-## Ce urmează
-
-- **[Security & Verification](/info/security.html)** - standardele, primitivele, modelul de încredere și testarea din spatele acreditărilor și criptării de mai sus.
-- **[Adoption & Governance](/info/adoption-governance.html)** - persoanele, metrica de deviere și guvernanța-ca-date, în întregime.
-- **[Deployment](/info/deployment.html)** - deploy/servire/hibrid, MDM și găzduirea proprie a serviciilor.
-- **[Configuration](/info/configuration.html)** - profiluri, pachete de brand, condiționarea capabilităților și feature flags.
-- **[Privacy Policy](/info/privacy.html)** - declarația formală despre ce se colectează, stochează și trimite și ce nu.
-- **[Server Surface](/info/server-surface.html)** - inventarul complet al a ceea ce rulează pe server (două componente opționale) față de pe dispozitiv.
+- **[Poziția noastră privind AI](/info/ai-stance.html)** - ce face și ce nu face Lolly cu conținutul generat, și ce impune fiecare angajament.
+- **[Generat o dată, randat identic](/info/ai-features.html)** - funcțiile AI livrate, și de ce inventarea de pixeli este marcată, în timp ce eliminarea lor nu este.
+- **[Date de intrare, nu impersonare](/info/input-not-impersonation.html)** - de ce un agent furnizează date de intrare și niciodată o persona, cum este impus asta și ce tot nu poate face un agent necontrolat.
+- **[Agenți AI](/info/ai-agents.html)** - ce poate conduce de fapt un agent, dacă echipele tale îndreaptă deja unul spre asta.

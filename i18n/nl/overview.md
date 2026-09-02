@@ -30,6 +30,8 @@ Dit platform is het directe antwoord:
 
 > **Programmatisch creatief en content op schaal** - asset-generatie zonder arbeid, met de regels centraal onder controle, voor medewerkers, leveranciers en partners.
 
+Lolly is niet waar een design system wordt bedacht - het is waar het wordt geproduceerd. Zie het als een verkoopautomaat voor ontwerp: maak een keuze, krijg een resultaat. Elke keer. De engine streeft naar de hoogste kwaliteit die elk formaat kan leveren op de hardware die voor je staat, en dezelfde engine maakt hetzelfde bestand op elk platform waarop hij wordt uitgebracht.
+
 Het resultaat is **overvloed**: elk evenement heeft correcte bewegwijzering, elke CVE-melding past bij de huisstijl, elk label print schoon, elke e-mailhandtekening is actueel - allemaal zonder ontwerpticket. Het platform behandelt terugkerend, geoperationaliseerd creatief werk. Het is bewust geen tool voor maatwerkcreativiteit - ontwerpers blijven eigenaar van het vlaggenschipwerk.
 
 ### Innoveer probabilistisch, schaal deterministisch
@@ -431,11 +433,11 @@ Stel de render van elke tool samen: een **SVG**-kind blijft een echte vector wan
 
 ## Wat we expliciet niet deden
 
-- **Geen EJS / geen willekeurige JS in templates.** XSS-oppervlak is nul. Logica leeft in `hooks.js`.
-- **Geen verplicht assets-CMS.** Individuen nemen hun eigen creatieve bestanden rechtstreeks op in hun catalogus in de app (de [Catalogus](/info/using.html)-weergave en de Brand Studio) - geen server, geen beheerconsole. Werk wordt overgedragen als een **sessie**: een deellink draagt de volledige status, en dezelfde sessie reist mee in een back-up of via een collab-sessie. Wie de implementatie beheert kan een gedeelde sessie vervolgens vastzetten als een **template** - open de link, leg de waarden vast als templatevermelding in de map van die tool in het merkpakket en commit - waarna het verschijnt in de "Nieuw vanuit template"-kiezer van de tool en diep te linken is als `?template=<id>`. Git is de vastzetstap van de eigenaar van de implementatie, nooit die van de maker. Voor een *gedeelde, gereguleerde* catalogus **kan** een organisatie de assetmap op dezelfde manier beheren en updates poorten via PR-review - een beschikbaar governancemodel, geen vereiste van de app.
-- **Geen verplichte RBAC.** De open app is standaard publiek toegankelijk; merkrisico wordt beheerd via volwassenheidslabels + watermerken. Een organisatie die strakkere controle wil, legt haar eigen auth en de git-beoordeelde catalogus hierboven erover heen.
-- **Geen centrale database.** Alle gebruikersstatus is per apparaat. SUSE ID-integratie staat op de roadmap maar is geen lanceerblokkade.
-- **Geen gedeeld tools/engine-codepad.** De engine is opensource; `tools/` en `assets/` blijven eigen SUSE-content in hun eigen repositories. De scheiding wordt afgedwongen (geen cross-imports) zodat de splitsing schoon blijft.
+- **Geen EJS / geen willekeurige JS in templates.** Het XSS-oppervlak is nul. Logica leeft in `hooks.js`.
+- **Geen verplicht asset-CMS.** Individuen nemen hun eigen creatieve bestanden rechtstreeks in de app op in hun catalogus (de [Catalogus](/info/using.html)-weergave en de Brand Studio) - geen server, geen beheerconsole. Werk wordt overgedragen als een **sessie**: een share-link draagt de hele status mee, en dezelfde sessie reist mee in een back-up of via een collab-sessie. Wie de implementatie beheert, kan een gedeelde sessie vervolgens vastzetten als een **template** - open de link, leg de waarden ervan vast als een template-item in de map van die tool in het merkpakket en commit - waarna het verschijnt in de "New from template"-kiezer van de tool en deep-linkbaar is als `?template=<id>`. Git is de vastzetstap van de implementatie-eigenaar, nooit die van de maker. Voor een *gedeelde, governed* catalogus **kan** een organisatie de asset-map op dezelfde manier beheren en updates laten verlopen via PR-review - een beschikbaar governancemodel, geen vereiste van de app.
+- **Geen verplichte RBAC.** De open app is standaard publiek toegankelijk; merkrisico wordt beheerd met maturity tags + watermerken. Een organisatie die strakkere controle wil, legt daar zijn eigen auth en de hierboven beschreven git-gereviewde catalogus overheen.
+- **Geen centrale database.** Alle gebruikersstatus is per apparaat. SUSE ID-integratie staat op de roadmap, maar is geen lanceervereiste.
+- **Geen gedeelde tools/engine-codepath.** De engine is open source, net als de merkneutrale tools in `community/`; een merkpakket zoals het private `brands/suse/` bevat zijn eigen tools en catalogus onder zijn eigen voorwaarden. Hoe dan ook wordt de scheiding afgedwongen (geen cross-imports vanuit `engine/` naar toolcontent), zodat de splitsing schoon blijft.
 
 ---
 
@@ -460,9 +462,13 @@ Zelfde levenscyclus in Tauri. Zelfde levenscyclus in CLI - jsdom levert de headl
 
 ## Opensourcestatus
 
-De mappen `engine/`, `shells/`, `schemas/` en `docs/` zijn opensource onder **MPL-2.0** - een leveranciersneutraal scaffoldingplatform voor merktooling, waarbij elke uitleverbare eenheid gesplitst is in zijn eigen repository onder [github.com/lolly-tools](https://github.com/lolly-tools). `tools/` en `catalog/assets/` zijn SUSE-specifieke content en blijven **eigendom van SUSE** (alle rechten voorbehouden - zie het `NOTICE.md`-bestand van elke repo); ze vallen niet onder de MPL.
+**Code is MPL-2.0.** `engine/`, `shells/*`, `services/*`, `schemas/` en `docs/` zijn open source onder **MPL-2.0** - een leveranciersneutraal scaffoldingplatform voor merktooling, waarbij elke uitleverbare eenheid in zijn eigen repository staat onder [github.com/lolly-tools](https://github.com/lolly-tools).
 
-De splitsing wordt afgedwongen - er zijn geen cross-imports van `engine/` naar `tools/` of `assets/` - zodat de grens tussen platform en content schoon blijft.
+**Toolcontent wordt uitgeleverd als merkpakketten**, elk met eigen voorwaarden (zie het `NOTICE.md`-bestand van het pakket). `community/` is de publieke [`lolly-tools`](https://github.com/lolly-tools/lolly-tools)-repository en de merkneutrale tools daarin zijn ook MPL-2.0. `brands/suse/` is het private `suse-lolly`-pakket: de SUSE-tools en de SUSE-catalogus, **eigendom van SUSE**, inclusief de gelicentieerde PremiumBeat-muziek. `brands/lolly-start/` is het lege startmerk dat deze repository bezit. Fonts worden binnen een pakket uitgeleverd onder de **SIL Open Font License 1.1** - het SUSE-pakket bevat de SUSE- en SUSE Mono-lettertypes.
+
+De `tools/` en `catalog/` in de repo-root zijn gitignored *views*: een profiel stelt ze samen uit `community/` plus het actieve merkpakket, en daarom lezen elk script en elke shell die twee paden en nooit een pakket rechtstreeks.
+
+De scheiding wordt afgedwongen - er zijn geen cross-imports vanuit `engine/` naar toolcontent - zodat de grens tussen platform en content schoon blijft.
 
 ---
 

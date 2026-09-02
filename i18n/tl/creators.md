@@ -1,94 +1,54 @@
 # Lolly para sa mga Creator
 
-Gusto mong gumawa ng magandang bagay, nang mabilis at tama ang labas. Ginawa ang Lolly para dito mismo: punan ang ilang field, makakuha ng tapos na file - ang layout, ang type, ang mga patakaran ay ipinapatupad ng tool, hindi ng iyong mata (maliban kung gusto mo - sa ganoong pagkakataon, isang media powerhouse ang nasa iyong mga daliri). Walang design software, walang paghihintay. Tumatakbo ito sa iyong sariling device at gumagana offline.
+Punan mo ang ilang field at lalabas ang isang tapos na file, na may mga font, kulay at layout na naisaayos na sa sarili mong device. Naipapadala mo ito sa loob ng ilang minuto pero mukhang ilang oras kang naubos, at dahil nakabaon na sa tool ang mga alituntunin ng brand, hindi kailanman ang pangalan mo ang nasa off-brand na file. Piliin ang landas sa ibaba na tumutugma sa ginagawa mo ngayon.
 
-**Ano ang pakinabang para sa iyo:** naglalabas ka sa loob ng ilang minuto at parang gumugol ka ng mga oras. Hindi ka kailanman naiipit sa paghihintay sa isang designer, at dahil nakapaloob na ang mga patakaran ng brand, hindi kailanman ang iyong pangalan ang nakakabit sa off-brand na asset. Mukha ka lang mabilis, makinis at maaasahan.
+Ikaw ay isang kamay sa isang relay: maaaring i-scale ng isang developer ang tool na ginagamit mo tungo sa isang pipeline, at maaari itong patakbuhin nang self-serve ng isang kasamahan, kaya sinusubaybayan ng [Ang Siklo ng Buhay ng Isang Kampanya](/info/overview.html#the-lifecycle-of-a-campaign) ang isang asset sa lahat ng tatlong pares ng kamay.
 
-Sinasabi sa iyo ng pahinang ito ang lahat ng kailangan mong malaman para masulit ang Lolly.
+Bago ka lang dito? Magsimula sa **[Gumawa ng Bagay sa 60 Segundo](/info/make-something.html)** at bumalik kapag alam mo na kung aling bahagi ang gusto mong palalimin pa. Tinatalakay ng [Mga Tanong at Sagot](/info/faq.html) ang mga itinatanong ng mga tao bago sila magtiwala sa isang libreng tool. Ang [Paano Ihahambing ang Lolly](/info/positioning.html) ay ang tapat na paglalahad kung kailan mas mainam pumili ng iba.
 
-> **Isa kang kamay sa isang relay.** Ang mga tool na isinulat mo ay hindi natatapos sa iyo - maaaring ikabit ito ng isang developer sa isang awtomatikong pipeline ([Lolly for Builders](/info/builders.html)) at maaaring patakbuhin ito ng isang kasamahang hindi designer nang self-serve para makakuha ng tapos, on-brand na file nang wala ka sa loop. Tingnan kung paano nagtutulong-tulong ang buong lifecycle sa [The lifecycle of a campaign](/info/overview.html#the-lifecycle-of-a-campaign).
+## Gumawa
 
-## Bakit Lolly - ang iyong mga bentahe
+Pumili ng tool, punan ang ilang field at i-download ang tapos na file. O buksan ang Design canvas at ilatag ito nang malaya: sa magkabilang paraan, ang mga kulay, uri ng titik at espasyo ay nagmumula sa iyong brand sa halip na sa alaala, at wala sa mga ito ang nangangailangan ng account.
 
-- **Tapos na, hindi maligoy.** Alam na ng tool ang mga font, ang mga kulay, ang logo, ang spacing. Dadalhin mo ang mga salita; ibabalik nito ang asset. Walang paguulit-ulit isipin.
-- **Tama mula sa konstruksyon.** Ang mga patakaran sa disenyo, hadlang sa layout at umiikot na logic ay nasa template - hindi maaaring lumihis ang output mula sa spec maliban kung sinadya ng may-akda ng tool na iwang bukas ang isang bagay. Malawak na creative range, sa loob ng mga guard-rail na matibay.
-- **Isang pinagmulan, bawat format.** Ang parehong disenyo ay iniiksport bilang SVG, print-ready na PDF, high-res na PNG, o 60fps na video. Gawin ito nang isang beses; ipadala ito kahit saan.
-- **Walang katapusang permutasyon.** I-localize ang isang card sa isang dosenang wika, gumawa ng bawat sukat para sa bawat placement, palitan ang isang lockup sa apatnapung kampanya - lahat mula sa isang disenyo, dinidiktahan ng isang spreadsheet.
-- **Iyo ito, offline, pribado.** Nananatili ang iyong trabaho sa iyong device - walang kailangang account, walang ina-upload para gumawa o mag-export ng isang asset, walang lisensyang su-suriin. Isara ang takip ng laptop sa isang eroplano at magpatuloy sa pagtatrabaho. (May dalawang opsyonal na server add-on na maaaring balewalain nang lubusan - tingnan ang [Server Surface](/info/server-surface.html).)
-- **Bukas, hindi nakakulong.** Open source ang engine at nasa mga simpleng URL nakatira ang iyong trabaho, hindi sa loob ng database ng isang vendor.
-- **Mga superpower kapag gusto mo.** Hindi mo kailanman *kailangang* mag-disenyo - pero sa sandaling magpasya kang gawin ito, mataas ang kisame. Mag-layout ng mga pahina nang freehand sa Design canvas. Mag-cut ng mga clip, card at musika sa isang timeline sa Sequence Studio. Mag-record ng malinaw na boses at camera takes na may live coaching. Magtayo ng buong brand mag-isa, ginagabayan ng isang colour picker na nagsasabi sa iyo ng higit pa tungkol sa isang kulay kaysa sa halos lahat ng design suite.
+- **[Gumawa ng Bagay sa 60 Segundo](/info/make-something.html)** - tatlong maikling walkthrough na walang kailangang i-set up, kung hindi mo pa nabubuksan ang Lolly noon.
+- **[Paggamit ng Lolly](/info/using.html)** - ang canvas, ang mga control, pag-save, Projects at paggamit sa telepono: kung paano kumikilos ang app mismo.
+- **[Ang Brand Studio](/info/brand-studio.html)** - kung kailan dapat sarili mo ang mga logo, kulay at uri ng titik sa halip na ang mga default.
+- **[Mag-import ng Disenyo](/info/design-import.html)** - kung kailan umiiral na ang artwork bilang isang `.fig`, `.penpot`, `.ai`, `.idml` o SVG file at gusto mo itong maging editable sa halip na flattened.
+- **[Mga View ng Utility](/info/utilities.html)** - ang spreadsheet, ang converter, ang Colour Lab, ang PDF extractor at Script audio, para sa mga trabahong hindi tool render.
+- **[Extension ng Browser](/info/extension.html)** - kunin ang isang live web page at muling gamitin ito bilang asset sa sarili mong mga disenyo.
+- **[Paghahanap](/info/search.html)** - isang field na umaabot sa iyong mga tool, sa naka-save mong trabaho, sa catalogue at sa iyong mga setting.
+- **[Ask Lolly](/info/ask.html)** - mag-type ng tanong at makuha ang katugmang seksyon ng mga gabay na ito, may link na diretso rito.
+- **[Ang Dashboard](/info/dashboard.html)** - kung ano ang kaya ng device na ito, ang iyong design system nang read-only at isang tingin sa storage.
+- **[Ang Iyong Mga Paborito](/info/favourites.html)** - markahan ng star ang madalas mong gamitin para magkaroon ito ng sarili nitong tile sa itaas ng grid.
+- **[Mga Profile](/info/profile.html)** - ang mga detalyeng ginagamit ng mga tool para mag-pre-fill at ang apat na accessibility switch na nagpapakalma sa app nang hindi ginagalaw ang isang pixel man lang ng iyong ie-export.
 
-> **Hindi ka kinukulong ng mga hadlang - hinuhuli ka nila.** Isipin ang mga guard-rail bilang bumper lane: ikaw pa rin ang naghahagis ng bola - ang mga salita, ang larawan, ang ideya - at pinapanatili lamang ito ng code na hindi malaglag sa gutter para hindi ito kailanman makasira sa brand. Hindi ka in-automate palabas; ang nakakapagod na bahagi ay: ang brand-checking, ang paulit-ulit na pag-export sa bawat sukat, ang manual na pag-localize sa isang dosenang wika. Ang natitira ay ang desisyong kailangan ka talaga. At ang tool na *ikaw* ang sumulat ang nagbibigay-daan sa iba pang bahagi ng kumpanya na gumawa ng magandang trabaho nang hindi ka nahihila sa bawat asset: ang iyong paghuhusga, pinalaki.
+## Mag-animate
 
-## Paano ito ikinukumpara
+Text na gumagalaw, mga eksena sa isang timeline at motion na nananatiling on-brand. Ang motion export ay kino-composite frame by frame mula sa isang driven clock sa halip na nire-record mula sa screen, kaya hindi kailanman lumilihis ang timing at ang parehong link ay nagre-render ng parehong clip sa kahit anong haba.
 
-Hindi sinusubukan ng Lolly na maging Canva o Figma. Nakaposisyon ito kung saan *mas mahalaga ang mga patakaran, ang paulit-ulit na kakayahan at mahigpit na hadlang kaysa sa freehand na kakayahang umangkop* - ginagawang mga tool ang mga desisyon sa disenyo na magagamit ng buong team mo nang wala ka sa loop para sa bawat asset.
+- **[Pag-a-animate](/info/animating.html)** - mga keyframe, tunay na depth at isang scene camera na lumilipad sa ibabaw ng resulta.
+- **[Ang Sequence Editor](/info/sequence-editor.html)** - ang timeline mismo: mga clip, overlay lane, trim at split, transition at ang audio mix.
+- **[Pag-export at Mga Format](/info/exporting.html)** - ang bahagi ng video, GIF at animated PNG ng export panel, kapag tama na ang motion.
 
-Ang detalyeng product-by-product ay nasa pinetsahang [comparison pages](/info/compare.html) - Canva, Adobe, Figma, Penpot, mga brand portal, render API at mga file converter - na may mga pagkilala sa limitasyon na isinulat muna at isang [capability board](/info/positioning.html) sa likod nila.
+## Mag-record
 
-**Umasa sa Lolly** para sa mga asset na paulit-ulit mong ginagawa - event signage, quote card, localized banner, email signature, shipping label, social variant, data-driven na chart at mapa. **Umasa sa isang design tool** para sa custom na hero piece, one-off na campaign concept, ang ideation na *sinadyang* makatakas sa system. Ipinapatupad ng Lolly ang system; hindi nito pinapalitan ang studio.
+Mag-record ng malinaw na take gamit ang count-in, level meter at magiliw na coaching, o gawing tapos na video ang isang voice note na gumagalaw kasabay ng tunog. Wala pang hiwalay na Record page: dala ito ng Paggamit ng Lolly, sa seksyon ng timeline.
 
-## Ano ang maaari mong gawin
+- **[Paggamit ng Lolly](/info/using.html#timeline-sequence-studio)** - pag-record ng voiceover nang diretso sa timeline, kung saan naka-save ang take at kung paano ito umaabot sa mix.
+- **[Gumawa ng Bagay sa 60 Segundo](/info/make-something.html#make)** - ang audiogram scene, para sa mga pagkakataong mas gusto mong marinig kaysa makita.
+- **[Mga View ng Utility](/info/utilities.html)** - Script audio, kapag ang mga salita ang nauna at ang boses ang sumusunod.
 
-### Lahat ay tama, nang walang paghihintay
+## Makipagtulungan
 
-Punan ang ilang field, kunin ang tapos na asset - walang piliing font, walang aalinlanganang kulay, walang "ito ba ang tamang logo?" Alam na ng tool. Email signature, event countdown, quote card, badge, street map - lahat ng kailangan ng team mo sa isang Martes ng 4pm, self-serve. At dahil walang customer data na umaalis sa device, walang compliance risk sa pakikipagtulungan.
+Dalawang tao, dalawang device, isang session, in-edit nang live. Mag-scan ng code sa kabilang panig ng mesa at magkakaroon ng parehong trabaho ang dalawang screen, walang account at walang server sa gitna - at walang internet kahit konti kapag magkasama ang dalawang device sa iisang network.
 
-Ang Street Map ay isang magandang halimbawa ng kalakaran: pumili ka ng isang lungsod at ilang kulay, at ang cartography, ang bigat ng mga kalsada at ang tubig ay napagpasyahan na para sa iyo.
+- **[Pagtutulungan](/info/collaborate.html)** - pagsisimula ng session, kung ano ang naglalakbay sa pagitan ng mga device at kung ano ang mangyayari kapag naputol ang network.
+- **[Paggamit ng Lolly](/info/using.html#sharing-your-work)** - ang tahimik na mga paraan ng paghahatid ng trabaho: isang share link na dala ang buong state, o isang `.lolly` file.
 
-![Isang Street Map render ng Tokyo sa neon sa halos-itim, ginawa mula sa isang city dropdown at dalawang colour picker](/t/url-shot?url=%2F%23%2Ftool%2Fstreet-map%3Fcity%3Dtokyo%26theme%3Ddark%26roadColor%3D22d3ee%26waterColor%3D0e7490%26background%3D0b1021%26full&width=1440&height=900&dpi=96&waitMs=3200&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=vt-street-map-poster)
+## Mag-post
 
-### Mula sa live na data patungo sa tapos na visual
+Ipadala ito kung saan ito hiniling: isang link na dala ang disenyo, isang print-true na PDF, isang video, isang deck o isang folder ng mga variant. Ang parehong source ang gumagawa sa bawat isa sa mga ito, kaya minsan mo lang itong bubuuin.
 
-Ikonekta ang isang **CSV** o **JSON** table sa isang chart, mapa, o table template at i-update ang mga numero - inaalagaan na ng layout ang sarili nito. Mga resulta ng eleksyon, quarterly earnings, mga kaganapan sa panahon: buuin ang format nang isang beses at gamitin muli tuwing tatakbo ang kwento. Eksaktong itugma ang house style mo, dahil ipinapatupad ito sa antas ng template, hindi iniiwan bilang isang maluwag na gabay.
-
-![Isang donut chart diretso mula sa Chart Creator - mga label, halaga at kulay na inilagay lahat ng template, hindi kamay](/t/url-shot?url=%2F%23%2Ftool%2Fchart-creator%3Ffull&width=1440&height=900&dpi=192&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-chart-output)
-
-### Mga tool na bumubuo ng mga tool
-
-Maaaring i-embed ng isang tool ang live output ng ibang tool bilang isang asset - isang name badge na nagre-render ng sarili nitong QR code, isang card na naglalagay ng live chart - nang walang design tool at walang manual na compositing. Ang naka-embed na render ay nananatiling live at nagre-render muli sa pag-load; hindi ito kailanman isang pinatag na larawan.
-
-### Ang frontier, kapag kailangan mo ito
-
-Advanced na filter, compositing, animation, live camera effect, generative design - available sa may-akda ng template ang bawat web technology, kaya mataas ang kisame.
-
-![Output ng Mesh Gradient - isang generative na field ng malambot na kulay na ginawa nang buo mula sa mga palette token ng brand mo](/t/url-shot?url=%2F%23%2Ftool%2Fgradient%3Ffull&width=880&height=560&dpi=96&waitMs=2500&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-mesh-output)
-
-### Pinalaki, hindi iginuhit
-
-**Growth** pinapalaki ang larawan sa halip na iguhit ito: isang sistemang may seed ang kumakalat mula sa isang ring, isang linya, ang sarili mong mga salita, o ang logo mo hanggang mapuno nito ang frame, ayon sa palette mo. Ang parehong seed ay laging pinapalaki ang parehong piraso, kaya eksaktong ginagawa itong muli ng isang link. Ang lumalabas ay ordinaryong SVG geometry sa halip na isang larawan ng isang guhit, kaya nagagawa itong i-print, i-plot, at gupitin - at ang parehong disenyo ay may animation mula sa unang seed hanggang sa tapos na anyo bilang video.
-
-![Default na bloom ng Growth - isang siksik na field ng mga naka-loop na linyang kulay-brand, pinalaki mula sa isang ring, bawat linya ay isang tunay na SVG path](/t/url-shot?url=%2F%23%2Ftool%2Fgrowth%3Ffull&width=880&height=880&dpi=96&waitMs=3000&cropSelector=%23tool-canvas&walker=1&format=svg&dark=1&filename=use-growth-bloom)
-
-### Motion na tumutugon sa musika
-
-**Synth** nilulutas ang isang fluid field sa graphics card at pininturahan ito ng mga kulay mo. Bigyan ito ng track at gagalaw ang field kasabay ng tunog; ini-export ito bilang isang MP4, WebM, GIF, o animated PNG loop na magkasya nang malinis mula simula hanggang dulo, na naka-render frame by frame mula sa isang driven na orasan sa halip na na-record mula sa screen - kaya kailanman hindi lumalayo ang motion mula sa soundtrack, at ang parehong link ay nag-re-render ng parehong clip sa anumang haba.
-
-![Isang frame mula sa ink scene ng Synth - isang madilim na fluid field na naiilawan ng berdeng kulay ng brand, nahuli sa gitna ng isang pag-ikot](/t/url-shot?url=%2F%23%2Ftool%2Fsynth%3Flive%3D0%26full&width=880&height=560&dpi=96&waitMs=4500&cropSelector=%23tool-canvas&format=png&tolerance=1&dark=1&filename=use-synth-field)
-
-Sumulat ng *mga tool*, hindi mga file: buuin ang bagay na gumagawa ng 10,000 card sa halip na gumawa ng 10,000 card. I-lock ang hindi dapat magbago; ilantad lamang ang sinadyang mag-iba.
-
-## Mga bagay na mapapansin mo
-
-- **Print, tama ang pagkakagawa.** Tunay na pisikal na yunit (mm/cm/in/pt) at DPI, bleed at crop marks, CMYK at PDF/X-4 output-intent - eksaktong makukuha ng print shop ang kailangan nito. Tingnan ang [Exporting](/info/exporting.html#size-print-units).
-- **Video at galaw.** I-export ang WebM/MP4 (may audio tracks), animated PNG/WebP at animated SVG - mula sa parehong template na gumagawa ng iyong mga still. Higit pang sinusulong ito ng **Sequence Studio**: tunay na timeline sa ilalim ng canvas, may magnetic na hanay ng mga clip, malayang overlay lanes, trim at split, transition presets, pag-record ng voiceover at music mix - ini-render bilang MP4, WebM, GIF o APNG ng isang deterministic na compositor sa halip na screen recording. Pumapasok ang mga Lottie file bilang animated assets at ini-render papunta sa alinman sa mga ito. Sa ibabaw ng mga clip ay ang **keyframes**: i-pose ang isang box sa isang sandali, itaas ito mula sa pahina gamit ang tunay na lalim at lipadin ang isang camera sa ibabaw ng resulta. Tingnan ang [Using Lolly → Timeline](/info/using.html#timeline-sequence-studio) at [Animating](/info/animating.html).
-- **Audio.** Mag-record ng voice note at i-save ito bilang MP3 (o ang katutubong M4A/OGG/WebM nito), lahat on-device - at magdala ng MP3, WAV, OGG, M4A, FLAC, MIDI o tracker modules (MOD/XM/IT/…) bilang music bed sa ilalim ng isang video o ambient track sa Neurospicy Mode.
-- **Gumuhit, huwag makuntento.** Mayroong tunay na **pen** ang Design tool: mag-click para maglagay ng mga punto, mag-drag para gumawa ng kurba at piliin ang uri ng kurbang dadaan sa mga ito. Pagsamahin ang mga hugis gamit ang **union, subtract, intersect at exclude**, i-outline ang isang stroke, i-offset ang isang silhouette, i-simplify ang isang path - eksaktong Bezier math ang geometry, kaya ang isang hugis na iginuhit mo ay nananatiling malinaw sa anumang sukat at nagre-render nang magkatulad mula sa isang link o sa CLI. Tingnan ang [Using Lolly → Drawing your own shapes](/info/using.html#drawing-your-own-shapes-the-pen).
-- **Nae-edit na vectors.** SVG, EPS, EMF at DXF export. Nagiging outlined paths ang teksto sa vector output, kaya nakukuha ng print shop o cutter ang malinaw na geometry na bubukas kahit saan. (Hindi na *matai-type ulit* ang outlined text sa Illustrator - iyon ang kapalit para sa perpektong fidelity kahit walang font.)
-- **Kaginhawaang naipupon.** I-batch ang isang spreadsheet papunta sa isang folder ng assets; i-save ang mga session at ayusin ang mga ito sa Projects; ibahagi ang anumang state bilang URL; i-render ang isang buong folder bilang isang zip.
-- **UI na talagang kaaya-aya.** Undo/redo kahit saan, isang sound layer na puwede mong i-off, isang theme cycle, live-camera filters - at ang **Neurospicy Mode**, isang background focus-music player na susunod sa iyo sa buong app sa sarili nitong dock.
-- **Mas kalmadong interface kapag gusto mo.** Apat na switch sa ilalim ng **Profile → Accessibility** - *Reduce motion*, *Hide colourful previews*, *High contrast* at *Large text* - nagpapakalma sa app sa paligid ng iyong ginagawa. Naka-off ang bawat isa hanggang sa i-on mo ito, at wala sa mga ito ang humihipo sa iyong canvas o gumagalaw ng kahit isang pixel ng ie-export mo. Tingnan ang [Your profile → Accessibility](/info/profile.html#accessibility).
-
-## Sulitin ang paggamit nito
-
-- **[Quickstart](/info/quickstart.html)** - ipasok ang brand, ilabas ang unang file.
-- **[The Brand Studio](/info/brand-studio.html)** - hubugin ang iyong mga logo, kulay, uri ng titik at tokens (`#/start`).
-- **[Using Lolly](/info/using.html)** - ang canvas, mga kontrol, pag-save, projects at paggamit sa telepono.
-- **[Your profile](/info/profile.html)** - ang mga detalye na pinagmumulan ng pre-fill ng mga tool, at kung paano dalhin ang mga ito sa iba't ibang device.
-- **[Import a design](/info/design-import.html)** - dalhin ang iyong gawa mula sa Figma / Penpot / Illustrator / InDesign, at ang iyong mga PowerPoint deck - ine-edit o ire-rebrand nang on-device.
-- **[Working together](/info/collaborate.html)** - dalawang taong nag-e-edit ng isang session nang live, device-to-device, walang account at walang server sa gitna.
-- **[Search](/info/search.html)** - isang field sa ibaba ng gallery, Utilities, Projects, the Catalogue, the Dashboard at Profile na umaabot sa iyong mga tool, sa iyong na-save na gawa, sa catalogue at sa iyong mga setting.
-- **[Ask Lolly](/info/using.html#ask-lolly)** (`#/ask`) - mag-type ng tanong at makuha ang tumutugmang seksyon ng mga gabay na ito nang verbatim, kasama ang direktang link papunta rito.
-- **The Dashboard** (`#/d`) - ang instrument panel: ang iyong design system na ipinapakita bilang read-only, ang buong capability map, kung ano ang kaya ng device na ito at isang tingin sa iyong aktibidad at storage.
-- **[Your favourites](/info/favourites.html)** - i-star ang ginagamit mo at makakakuha ito ng sarili nitong tile sa itaas ng grid.
-- **[Exporting & formats](/info/exporting.html)** - bawat format, print units, video at batch.
+- **[Pag-export at Mga Format](/info/exporting.html)** - mga print unit, DPI, bleed at crop mark, video, batch run at ang export panel mismo.
+- **[Bawat Format na Kayang Buksan at Gawin ng Lolly](/info/formats.html)** - ang buong listahan ng papasok at palabas, may card na simpleng wika sa likod ng bawat chip.
+- **[Paglipat ng Data](/info/data-transfer.html)** - ang backup bundle, para sa paglipat ng lahat ng nagawa mo sa ibang device.
