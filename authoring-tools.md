@@ -527,7 +527,7 @@ SVG and PDF exports are not screenshots. The exporter reads each element's compu
 | `background-image` | Gradients become real gradients and a single image an `<image>`; `conic-gradient` rasterises. |
 | `transform` | 2-D transforms are kept. 3-D (`rotateY`, `perspective`) is not. |
 
-The `penpot` format keeps this same vector set, as editable Penpot shapes instead of SVG elements, and falls back to a single picture wherever a render leans on an effect this table marks as rasterised or lost.
+The `penpot` format keeps this same vector set, as editable Penpot shapes instead of SVG elements. What costs you those shapes is not the *raster* column: the lowering reads the exported SVG, and one `<clipPath>`, `<filter>`, `<pattern>`, `<mask>`, `<use>` or inline `<style>` anywhere in it puts the **whole** render on the board as a single picture instead. On an HTML layout those come from a rounded `overflow: hidden` box whose content reaches a corner, an `object-fit: cover` or circular image crop, a `background-image`, a `clip-path` and a blurred `text-shadow`. `box-shadow` is not one of them: the Penpot render draws shadows as geometry rather than as an SVG filter.
 
 ### Letting the DOCUMENT bring its own CSS
 

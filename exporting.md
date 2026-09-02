@@ -129,8 +129,9 @@ PowerPoint is also a way **in** - the format round-trips. **Deck Builder** opens
 Any tool that can export SVG can also export a **Penpot file** (`.penpot`) - the document, ready to keep editing in Penpot rather than just to look at.
 
 - <!--i:layout--> From **Design**, each frame becomes a Penpot **board**, and every box on it carries over as its own editable shape - rectangle, ellipse, text, image or path - not a locked picture.
-- <!--i:pentool--> From any other tool, its vector render carries over the same way, as editable shapes. Where the render leans on an effect Penpot has no equivalent for, the whole render comes across as one picture instead - still on the board, just not editable piece by piece.
-- <!--i:palette--> The brand's colours and typographies land in the file's **Assets** panel, and the brand's design tokens land in its **Tokens** panel - the same DTCG token set Lolly's own palette uses, so a token edited in Penpot is a token edited in the brand.
+- <!--i:pentool--> From a tool whose render is **plain geometry** - the vector tools such as QR Code, Street Map, Wordmark and Palette Lab - every path, rectangle, text run and gradient carries over the same way, as its own editable shape.
+- <!--i:layers--> A tool that lays its render out in **HTML** usually comes across as **one picture** instead. One clip path, filter, pattern, mask, `<use>` or inline `<style>` anywhere in the render puts the whole thing on the board as a single image, and an HTML layout reaches for those readily: a rounded box that clips its content, a cropped photo, a blurred text shadow. The picture is the full render at full fidelity, so nothing is dropped. It is simply not separable into shapes in Penpot.
+- <!--i:palette--> The brand's colours and typographies land in the file's **Assets** panel, and the brand's design tokens land in its **Tokens** panel - the same DTCG token set Lolly's own palette uses. Penpot keeps its own copy from there: an edit made in its Tokens panel comes back into the brand through [Brand Studio's import](/info/design-import.html), not on its own.
 
 To open it, start Penpot, pick a project and choose **Import**. Signed in to Penpot from the export panel, **Send to Penpot** does that step for you - pick a project there and the file goes straight into it.
 
